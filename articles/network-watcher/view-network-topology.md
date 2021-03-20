@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 05/09/2018
 ms.author: damendo
 ms.openlocfilehash: c04da65af27ebd5ac654bc059ae004c157a20f33
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "84737526"
 ---
 # <a name="view-the-topology-of-an-azure-virtual-network"></a>De topologie van een virtueel Azure-netwerk weer geven
@@ -30,7 +30,7 @@ U kunt de [Azure Portal](#azure-portal), de [Azure cli](#azure-cli)of [Power she
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) met een account dat over de benodigde [machtigingen](required-rbac-permissions.md)beschikt.
 2. Selecteer in de linkerbovenhoek van de portal **alle services**.
-3. Voer in het vak **alle services** filteren de *Network Watcher*in. Selecteer **Network Watcher** in de resultaten.
+3. Voer in het vak **alle services** filteren de *Network Watcher* in. Selecteer **Network Watcher** in de resultaten.
 4. Selecteer **Topologie**. Voor het genereren van een topologie is een Network Watcher vereist in dezelfde regio waarin het virtuele netwerk waarvan u de topologie wilt genereren, bestaat. Als u geen Network Watcher hebt ingeschakeld in de regio waarin het virtuele netwerk waarvoor u een topologie wilt genereren, in is opgenomen, worden de netwerk-volgers automatisch voor u in alle regio's gemaakt. De netwerk-volgers worden gemaakt in een resource groep met de naam **NetworkWatcherRG**.
 5. Selecteer een abonnement, de resource groep van een virtueel netwerk waarvan u de topologie wilt weer geven en selecteer vervolgens het virtuele netwerk. In de volgende afbeelding wordt een topologie weer gegeven voor een virtueel netwerk met de naam *MyVnet*, in de resource groep met de naam *MyResourceGroup*:
 
@@ -41,7 +41,7 @@ U kunt de [Azure Portal](#azure-portal), de [Azure cli](#azure-cli)of [Power she
     - Binnen dezelfde resource groep en regio als het virtuele *myVnet* -netwerk. Bijvoorbeeld, een netwerk beveiligings groep die bestaat in een andere resource groep dan *MyResourceGroup*, wordt niet weer gegeven, zelfs niet als de netwerk beveiligings groep is gekoppeld aan een subnet in het virtuele *MyVnet* -netwerk.
     - Binnen, of gekoppeld aan resources binnen, het virtuele *myVnet* -netwerk. Bijvoorbeeld, een netwerk beveiligings groep die niet is gekoppeld aan een subnet of netwerk interface in het virtuele netwerk *myVnet* wordt niet weer gegeven, zelfs niet als de netwerk beveiligings groep zich in de *MyResourceGroup* -resource groep bevindt.
 
-   De topologie die in de afbeelding wordt weer gegeven, is voor het virtuele netwerk dat is gemaakt na het implementeren van het **route verkeer via een voor beeld van een virtueel netwerk**voor het uitvoeren van netwerken, dat u kunt implementeren met behulp van [Azure cli](../virtual-network/scripts/virtual-network-cli-sample-route-traffic-through-nva.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json)of [Power shell](../virtual-network/scripts/virtual-network-powershell-sample-route-traffic-through-nva.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json).
+   De topologie die in de afbeelding wordt weer gegeven, is voor het virtuele netwerk dat is gemaakt na het implementeren van het **route verkeer via een voor beeld van een virtueel netwerk** voor het uitvoeren van netwerken, dat u kunt implementeren met behulp van [Azure cli](../virtual-network/scripts/virtual-network-cli-sample-route-traffic-through-nva.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json)of [Power shell](../virtual-network/scripts/virtual-network-powershell-sample-route-traffic-through-nva.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json).
 
 6. Selecteer **down load topologie** om de installatie kopie te downloaden als een bewerkbaar bestand, in SVG-indeling.
 
@@ -70,7 +70,7 @@ Het account dat u gebruikt, moet over de vereiste [machtigingen](required-rbac-p
       --enabled true
     ```
 
-3. Bekijk de topologie met [AZ Network Watcher show-topologie](/cli/azure/network/watcher#az-network-watcher-show-topology). In het volgende voor beeld wordt de topologie voor een resource groep met de naam *MyResourceGroup*weer gegeven:
+3. Bekijk de topologie met [AZ Network Watcher show-topologie](/cli/azure/network/watcher#az-network-watcher-show-topology). In het volgende voor beeld wordt de topologie voor een resource groep met de naam *MyResourceGroup* weer gegeven:
 
     ```azurecli-interactive
     az network watcher show-topology --resource-group MyResourceGroup

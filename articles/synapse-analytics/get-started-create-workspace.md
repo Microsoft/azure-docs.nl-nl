@@ -9,13 +9,13 @@ ms.reviewer: jrasnick
 ms.service: synapse-analytics
 ms.subservice: workspace
 ms.topic: tutorial
-ms.date: 12/31/2020
-ms.openlocfilehash: 94d069a283249f2880743ba911c32bf3821d28c8
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.date: 03/17/2021
+ms.openlocfilehash: 2923dea8339df9d5e4b539d21cf83b85cda94a67
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102171480"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104669760"
 ---
 # <a name="creating-a-synapse-workspace"></a>Een Synapse-werkruimte maken
 
@@ -27,14 +27,19 @@ Om alle stappen van deze zelfstudie te kunnen voltooien, moet u toegang hebben t
 
 ## <a name="create-a-synapse-workspace-in-the-azure-portal"></a>Maak een Synapse-werkruimte in Azure Portal
 
+### <a name="start-the-process"></a>Het proces starten
 1. Open de [Azure Portal](https://portal.azure.com), typ **Synapse** in de zoek balk zonder ENTER.
 1. Selecteer in de zoekresultaten onder **Services** de optie **Azure Synapse Analytics**.
 1. Selecteer **Toevoegen** om een werkruimte te maken.
-1. Ga naar het tabblad **basis** informatie en vul onder **Project Details** de volgende velden in:
+
+## <a name="basics-tab--project-details"></a>Tabblad basis beginselen > project Details
+3. Ga naar het tabblad **basis** informatie en vul onder **Project Details** de volgende velden in:
       1. **Abonnement** : Kies een abonnement.
       2. **Resource groep** : gebruik een resource groep.
       3. **Resource groep** : laat dit veld leeg.
-1. Vul op het tabblad **basis beginselen** onder **werkruimte Details** de volgende velden in:
+
+## <a name="basics-tab--workspace-details"></a>Tabblad basis informatie > werkruimte Details
+4. Vul op het tabblad **basis beginselen** onder **werkruimte Details** de volgende velden in:
       1. **Werkruimte naam** : Kies een wereld wijd unieke naam. In deze zelfstudie gebruiken we **myworkspace**.
       1. **Regio** : Kies een wille keurige regio.
       1. **Data Lake Storage gen 2 selecteren**
@@ -42,7 +47,7 @@ Om alle stappen van deze zelfstudie te kunnen voltooien, moet u toegang hebben t
         1. Klik op **account naam** op **Nieuw** en geef de naam van het nieuwe opslag account **contosolake** of soortgelijk op als deze naam uniek moet zijn.
         1. Op **naam van bestands systeem**, klikt u op **nieuwe maken** en de naam **gebruikers** benoemen. Hiermee maakt u een opslag container die **gebruikers** wordt genoemd. In de werkruimte wordt dit opslagaccount gebruikt als het primaire opslagaccount voor logboeken voor Spark-tabellen en Spark-toepassingen.
         1. Schakel het selectie vakje ' de rol van de BLOB voor het koppelen van gegevens in het Data Lake Storage Gen2-account toewijzen ' in. 
-1. Selecteer **Beoordelen en maken** > **Maken**. Uw werkruimte is binnen een paar minuten klaar.
+5. Selecteer **Beoordelen en maken** > **Maken**. Uw werkruimte is binnen een paar minuten klaar.
 
 > [!NOTE]
 > Als u werkruimtefuncties wilt inschakelen vanuit een bestaande toegewezen SQL-pool (voorheen SQL DW), raadpleegt u [Een werkruimte inschakelen voor uw toegewezen SQL-pool (voorheen SQL DW)](./sql-data-warehouse/workspace-connected-create.md).
@@ -56,38 +61,16 @@ Wanneer uw Azure Synapse-werkruimte is gemaakt, kunt u Synapse Studio op twee ma
 * Ga naar `https://web.azuresynapse.net` en meld u aan bij uw werkruimte.
 
 
-## <a name="the-built-in-serverless-sql-pool"></a>De ingebouwde serverloze SQL-pool
-
-Elke werkruimte wordt geleverd met een vooraf gemaakte serverloze SQL-pool met de naam **Ingebouwd**. Deze pool kan niet worden verwijderd. Met serverloze SQL-pools kunt u SQL gebruiken zonder dat er capaciteit hoeft te worden gereserveerd in toegewezen SQL-pools. In tegenstelling tot de toegewezen SQL-pools is facturering voor een serverloze SQL-pool gebaseerd op de hoeveelheid gegevens die zijn gescand om de query uit te voeren en niet op de hoeveelheid capaciteit die aan de pool wordt toegewezen.
 
 
-## <a name="create-a-dedicated-sql-pool"></a>Een toegewezen SQL-pool maken
-
-1. Selecteer in Synapse Studio in het linkerdeelvenster de optie **Beheren** > **SQL-pools**.
-1. Selecteer **Nieuw**
-1. Selecteer **SQLPOOL1** voor **Naam van SQL-pool**
-1. Kies **DW100C** voor **Prestatieniveau**
-1. Selecteer **Beoordelen en maken** > **Maken**. Uw toegewezen SQL-pool is binnen een paar minuten klaar. Uw toegewezen SQL-pool is gekoppeld aan een toegewezen SQL-pooldatabase die ook **SQLPOOL1** heet.
-
-Een toegewezen SQL-pool verbruikt factureerbare resources zolang deze worden uitgevoerd. U kunt de pool later onderbreken om de kosten te verlagen.
-
-> [!NOTE] 
-> Bij het maken van een nieuwe toegewezen SQL-pool (voorheen SQL DW) in uw werkruimte, wordt de pagina voor het inrichten van de toegewezen SQL-pool geopend. Het inrichten vindt plaats op de logische SQL-server.
 
 
-## <a name="create-a-serverless-apache-spark-pool"></a>Een serverloze Apache Spark-pool maken
 
-1. Selecteer in Synapse Studio in het linkerdeelvenster **Beheren** > **Apache Spark-pools**.
-1. Selecteer **Nieuw** 
-1. Voer **Spark1** in voor **Naam van Apache Spark-pool**.
-1. Voer **Klein** in voor **Grootte van knooppunt**.
-1. Stel voor **Aantal knooppunten** het minimum in op 3 en het maximum op 3
-1. Selecteer **Beoordelen en maken** > **Maken**. Uw Apache Spark-pool is binnen een paar seconden gereed.
 
-De Spark-pool informeert Azure Synapse hoeveel Apache Spark-resources moeten worden gebruikt. U betaalt alleen voor de resources die u gebruikt. Wanneer u de pool niet meer actief gebruikt, treedt er automatisch een time-out op in de resources en worden ze gerecycled.
+
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Analyseren met een toegewezen SQL-pool](get-started-analyze-sql-pool.md)
+> [Analyseren met behulp van een serverloze SQL-groep](get-started-analyze-sql-on-demand.md)

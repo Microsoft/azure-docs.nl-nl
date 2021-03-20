@@ -15,10 +15,10 @@ manager: cgronlun
 ms.date: 05/29/2019
 ROBOTS: NOINDEX
 ms.openlocfilehash: 2e32a4abeae78aa7105f21ecffbb18c2eae841a4
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96185620"
 ---
 # <a name="quickstart-use-r-with-azure-sql-database-machine-learning-services-preview-to-query-a-database"></a>Quickstart: R gebruiken met Azure SQL Database Machine Learning Services (preview) om een query uit te voeren op een database 
@@ -55,11 +55,11 @@ Haal de verbindingsgegevens op die u nodig hebt om verbinding te maken met de da
 
 1. Open **SQL Server Management Studio** en maak verbinding met de database.
 
-   Als u hulp nodig hebt bij het tot stand brengen van een verbinding, raadpleegt u [Snelstart: SQL Server Management Studio gebruiken om verbinding te maken en query's uit te voeren op een database in Azure SQL Database](connect-query-ssms.md).
+   Als u hulp nodig hebt bij het tot stand brengen van een verbinding, raadpleegt u [quickstart: SQL Server Management Studio gebruiken om verbinding te maken en query's uit te voeren op een database in Azure SQL Database](connect-query-ssms.md).
 
 1. Geef het volledige R-script door aan de [sp_execute_external_script](/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql) opgeslagen procedure.
 
-   Het script wordt door gegeven via het argument `@script`. Alles binnen het argument `@script` moet geldige R-code zijn.
+   Het script wordt doorgegeven via het argument `@script`. Alles binnen het argument `@script` moet geldige R-code zijn.
    
    >[!IMPORTANT]
    >Voor de code in dit voorbeeld worden de voorbeeldgegevens gebruikt van AdventureWorksLT, die u als bron kunt kiezen bij het maken van uw database. Als in uw database andere gegevens staan, kunt u tabellen uit uw eigen database gebruiken in de SELECT-query. 

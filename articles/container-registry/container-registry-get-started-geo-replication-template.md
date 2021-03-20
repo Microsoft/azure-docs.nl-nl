@@ -9,10 +9,10 @@ ms.custom: subject-armqs
 ms.author: danlep
 ms.date: 10/06/2020
 ms.openlocfilehash: 97b556e0329644b973def8333ddb5e70e370b0bc
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91826971"
 ---
 # <a name="quickstart-create-a-geo-replicated-container-registry-by-using-an-arm-template"></a>Quickstart: Meer informatie over het maken van een geo-gerepliceerd Azure Container Registry met behulp van een ARM-sjabloon
@@ -65,7 +65,7 @@ Meer voorbeelden van Azure Container Registry-exemplaren vindt u in de [galerie 
 
 1. Nadat het register is gemaakt, krijgt u een melding:
 
-     :::image type="content" source="media/container-registry-get-started-geo-replication-template/deployment-notification.png" alt-text="Sjablooneigenschappen":::
+     :::image type="content" source="media/container-registry-get-started-geo-replication-template/deployment-notification.png" alt-text="Melding in de portal":::
 
  Voor het implementeren van de sjabloon wordt de Azure-portal gebruikt. Naast de Azure-portal kunt u de Azure PowerShell, Azure CLI en REST API gebruiken. Zie [Sjablonen implementeren](../azure-resource-manager/templates/deploy-cli.md) voor meer informatie over andere implementatiemethoden.
 
@@ -77,11 +77,11 @@ Gebruik de Azure-portal of een hulpprogramma zoals de Azure CLI om de eigenschap
 
 1. Op de pagina **Overzicht** noteert u de **aanmeldingsserver** van het register. Gebruik deze URI wanneer u Docker gebruikt om installatiekopieën te taggen en te pushen naar het register. Zie [Uw eerste installatiekopie pushen met de Docker-CLI](container-registry-get-started-docker-cli.md) voor meer informatie.
 
-    :::image type="content" source="media/container-registry-get-started-geo-replication-template/registry-overview.png" alt-text="Sjablooneigenschappen":::
+    :::image type="content" source="media/container-registry-get-started-geo-replication-template/registry-overview.png" alt-text="Overzicht van register":::
 
 1. Controleer op de pagina **Replicaties** de locaties van de startreplica en de replica die u via de sjabloon hebt toegevoegd. Voeg desgewenst meer replica's toe op deze pagina.
 
-    :::image type="content" source="media/container-registry-get-started-geo-replication-template/registry-replications.png" alt-text="Sjablooneigenschappen":::
+    :::image type="content" source="media/container-registry-get-started-geo-replication-template/registry-replications.png" alt-text="Registerreplicaties":::
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
@@ -99,4 +99,4 @@ In deze quickstart hebt u een Azure Container Registry gemaakt met behulp van ee
 Zie voor een stapsgewijze zelfstudie die u door het proces van het maken van een sjabloon leidt:
 
 > [!div class="nextstepaction"]
-> Uw eerste ARM-sjabloon maken en implementeren[
+> [Zelfstudie: Uw eerste ARM-sjabloon maken en implementeren](../azure-resource-manager/templates/template-tutorial-create-first-template.md)

@@ -1,21 +1,21 @@
 ---
-title: Realtime Twitter-sentiment analyse met Azure Stream Analytics
-description: In dit artikel wordt beschreven hoe u Stream Analytics gebruikt voor realtime Twitter-sentiment analyse. Stapsgewijze richt lijnen voor het genereren van gebeurtenissen naar gegevens op een live dash board.
+title: Analyse van sociale media met Azure Stream Analytics
+description: In dit artikel wordt beschreven hoe u Stream Analytics gebruikt voor de analyse van sociale media met behulp van de Twitter-client-API. Stapsgewijze richt lijnen voor het genereren van gebeurtenissen naar gegevens op een live dash board.
 services: stream-analytics
 author: enkrumah
 ms.author: ebnkruma
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: how-to
-ms.date: 02/10/2020
-ms.openlocfilehash: 6a461ad906f7611c8a13e2ee495f4d2f62fedd53
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.date: 03/16/2021
+ms.openlocfilehash: e2369e8f4349a3b4a83c1729c6414d319dd8419e
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98734832"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104589664"
 ---
-# <a name="real-time-twitter-sentiment-analysis-in-azure-stream-analytics"></a>Analyse van realtime Twitter-gevoel in Azure Stream Analytics
+# <a name="social-media-analysis-with-azure-stream-analytics"></a>Analyse van sociale media met Azure Stream Analytics
 
 In dit artikel leert u hoe u een sentiment-analyse oplossing voor sociale media bouwt door real-time Twitter-gebeurtenissen in te brengen in azure Event Hubs. U schrijft een Azure Stream Analytics query om de gegevens te analyseren en de resultaten op te slaan voor later gebruik of om een [Power bi](https://powerbi.com/) -dash board te maken om inzicht in realtime te bieden.
 

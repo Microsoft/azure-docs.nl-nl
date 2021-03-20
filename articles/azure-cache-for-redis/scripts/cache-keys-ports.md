@@ -10,10 +10,10 @@ ms.topic: sample
 ms.date: 08/30/2017
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: d3e8e359a97c091e025049ac8a978e1beca1d759
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96184214"
 ---
 # <a name="get-the-hostname-ports-and-keys-for-azure-cache-for-redis"></a>De hostnaam, poorten en sleutels opvragen van een exemplaar van Azure Cache voor Redis

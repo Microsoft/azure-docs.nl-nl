@@ -6,13 +6,13 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
 author: trkeya
 ms.author: trkeya
-ms.date: 11/09/2020
-ms.openlocfilehash: 60eeceac916a7f8c64214b7a74a8cf60fd1ec8ac
-ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
+ms.date: 03/16/2020
+ms.openlocfilehash: a7f12891bf394e54ee46c60598536faed1731202
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98986121"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104600875"
 ---
 # <a name="set-up-an-azure-marketplace-subscription-for-hosted-test-drives"></a>Een Azure Marketplace-abonnement instellen voor gehoste test stations
 
@@ -43,26 +43,18 @@ In dit artikel wordt uitgelegd hoe u een Azure Marketplace-abonnement en **dynam
     5. Onder ondersteunde account typen selecteert u **account in een organisatie Directory en persoonlijke micro soft-accounts**.
     6. Selecteer **maken** en wacht tot uw app is gemaakt.
     7. Nadat de app is gemaakt, noteert u de **toepassings-id** die wordt weer gegeven op het scherm overzicht. U hebt deze waarde later nodig bij het configureren van uw test drive.
-    8. Selecteer de Blade **verificatie** om een omleidings-URI voor nativeclient toe te voegen. Onder **platform configuratie** selecteert u de tegel **platform**  >  **Mobile**  >  **Desktop** -toepassing toevoegen. Kies de omleidings-URI voor **nativeclient** en selecteer **configureren**.
-
-        :::image type="content" source="./media/test-drive/configure-desktop-devices.png" alt-text="Een nativeclient-omleidings-URI toevoegen.":::
-
-    9. Onder **toepassing beheren** selecteert u **API-machtigingen**.
-    10. Selecteer **een machtiging toevoegen** en vervolgens **Microsoft Graph-API**.
-    11. Selecteer de categorie **toepassings** machtiging en vervolgens de **Directory. Read. all** -en **Directory. readwrite. all** -machtigingen.
+    8. Onder **toepassing beheren** selecteert u **API-machtigingen**.
+    9. Selecteer **een machtiging toevoegen** en vervolgens **Microsoft Graph-API**.
+    10. Selecteer de categorie **toepassings** machtiging en vervolgens de **gebruikers. readwrite. all**, **map. Read. all** en **Directory. readwrite. all** machtigingen.
 
         :::image type="content" source="./media/test-drive/microsoft-graph.png" alt-text="De toepassings machtigingen instellen.":::
 
-    12. Als u **Dynamics CRM-gebruikers** imitatie toegang wilt toevoegen voor de Azure AD-App voor acceptatie lijst, selecteert u opnieuw **toevoegen machtiging** .
-
-        :::image type="content" source="./media/test-drive/request-api-permissions.png" alt-text="De toepassings machtigingen aanvragen.":::
-
-    13. Zodra de machtiging is toegevoegd, selecteert u **toestemming van beheerder verlenen voor micro soft**.
-    14. Selecteer **Ja** in het bericht waarschuwing.
+    11. Zodra de machtiging is toegevoegd, selecteert u **toestemming van beheerder verlenen voor micro soft**.
+    12. Selecteer **Ja** in het bericht waarschuwing.
 
         [![Hier worden de toepassings machtigingen weer gegeven die zijn verleend.](media/test-drive/api-permissions-confirmation-customer.png)](media/test-drive/api-permissions-confirmation-customer.png#lightbox)
 
-    15. Een geheim genereren voor de Azure AD-app:
+    13. Een geheim genereren voor de Azure AD-app:
         1. Selecteer bij **toepassing beheren** de optie **certificaat en geheimen**.
         2. Onder client geheimen selecteert u **Nieuw client geheim**.
         3. Voer een beschrijving in, zoals *test station*, en selecteer een geschikte duur. De test drive wordt gebreekt zodra deze sleutel is verlopen, op welk moment moet u een nieuwe sleutel genereren en AppSource geven.
@@ -70,8 +62,7 @@ In dit artikel wordt uitgelegd hoe u een Azure Marketplace-abonnement en **dynam
 
             :::image type="content" source="./media/test-drive/add-client-secret.png" alt-text="Een client geheim toevoegen.":::
 
-5. Soms duurt het langer dan verwacht om een gebruiker van Azure AD te synchroniseren met een CRM-exemplaar. Ter ondersteuning hiervan hebben we een proces voor het afdwingen van de synchronisatie gebruiker toegevoegd, maar moet de Azure AD-toepassing worden allowlisted door het partner centrum. Zie [gebruikers synchroniseren met klant engagement instantie](https://github.com/microsoft/AppSource/blob/master/Microsoft%20Hosted%20Test%20Drive/CDS_Utility_to_ForceUserSync_in_CRM_Instance.md)om dit te doen.
-6. Voeg de functie van de Service-Principal toe aan de toepassing zodat de Azure AD-app gebruikers uit uw Azure-Tenant kan verwijderen.
+5. Voeg de functie van de Service-Principal toe aan de toepassing zodat de Azure AD-app gebruikers uit uw Azure-Tenant kan verwijderen.
     1. Open een Power shell-opdracht prompt op beheer niveau.
     2. Install-Module MSOnline (Voer deze opdracht uit als MSOnline niet is geïnstalleerd).
     3. Connect-MsolService (er wordt een pop-upvenster weer gegeven; Meld u aan met de zojuist gemaakte organisatie-Tenant).
@@ -81,7 +72,7 @@ In dit artikel wordt uitgelegd hoe u een Azure Marketplace-abonnement en **dynam
 
         :::image type="content" source="./media/test-drive/sign-in-to-account.png" alt-text="Meld u aan bij uw account.":::
 
-7. Voeg de hierboven gemaakte Azure-app als een toepassings gebruiker toe aan uw test drive CRM-exemplaar.
+6. Voeg de hierboven gemaakte Azure-app als een toepassings gebruiker toe aan uw test drive CRM-exemplaar.
     1. Voeg een nieuwe gebruiker toe in **Azure Active Directory**. Alleen **naam** -en **gebruikersnaam** waarden (die horen bij dezelfde Tenant) zijn vereist voor het maken van deze gebruiker. Wijzig de andere velden als standaard. Kopieer de waarde van de gebruikers naam.
     2. Meld u aan bij **CRM-exemplaar** en selecteer   >  **beveiligings**  >  **gebruikers** instellen.
     3. Wijzig de weer gave in **toepassings gebruikers**.
@@ -97,7 +88,8 @@ In dit artikel wordt uitgelegd hoe u een Azure Marketplace-abonnement en **dynam
 
         :::image type="content" source="./media/test-drive/security-roles-selection.png" alt-text="De rol privileges selecteren.":::
 
-    10. Wijs de gebruiker van de toepassing de aangepaste beveiligingsrol toe die u hebt gemaakt voor uw test drive.
+    10. Schakel ook de actie **handelen namens een andere gebruiker in** .
+    11. Wijs de gebruiker van de toepassing de aangepaste beveiligingsrol toe die u hebt gemaakt voor uw test drive.
 
 ## <a name="set-up-for-dynamics-365-for-operations"></a>Instellen voor Dynamics 365 voor bewerkingen
 
@@ -130,7 +122,7 @@ In dit artikel wordt uitgelegd hoe u een Azure Marketplace-abonnement en **dynam
     12. Zodra de machtiging is toegevoegd, selecteert u **toestemming van beheerder verlenen voor micro soft**.
     13. Selecteer **Ja** in het bericht waarschuwing.
 
-        [![Hiermee worden toepassings machtigingen weer gegeven die zijn verleend.](media/test-drive/api-permissions-confirmation-operations.png)](media/test-drive/api-permissions-confirmation-operations.png#lightbox)
+        [![Toont de toepassings machtigingen die zijn verleend.](media/test-drive/api-permissions-confirmation-operations.png)](media/test-drive/api-permissions-confirmation-operations.png#lightbox)
 
     14. Een geheim genereren voor de Azure AD-app:
         1. Selecteer bij **toepassing beheren** de optie **certificaat en geheimen**.

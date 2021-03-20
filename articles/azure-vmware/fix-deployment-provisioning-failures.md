@@ -4,10 +4,10 @@ description: Informatie ophalen uit de privécloud van uw Azure VMware-oplossing
 ms.topic: how-to
 ms.date: 10/28/2020
 ms.openlocfilehash: 27b645f4ca225fdd74bca6499b6581b3803e41a4
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94542402"
 ---
 # <a name="open-a-support-request-for-an-azure-vmware-solution-deployment-or-provisioning-failure"></a>Een ondersteunings aanvraag openen voor een implementatie van een Azure VMware-oplossing of een inrichtings fout
@@ -55,7 +55,7 @@ Het implementatie logboek openen:
 
    :::image type="content" source="media/fix-deployment-provisioning-failures/open-notifications.png" alt-text="Scherm opname van het pictogram meldingen in het Azure Portal.":::
 
-1. Selecteer in **Notifications** het deel venster meldingen **meer gebeurtenissen in het activiteiten logboek** :
+1. Selecteer in  het deel venster meldingen **meer gebeurtenissen in het activiteiten logboek**:
 
     :::image type="content" source="media/fix-deployment-provisioning-failures/more-events-in-activity-log.png" alt-text="Scherm afbeelding met de meer gebeurtenissen in de koppeling activiteiten logboek die is geselecteerd in het deel venster meldingen.":::
 
@@ -112,7 +112,7 @@ Een ondersteunings aanvraag maken voor een implementatie van een Azure VMware-op
 
 1. Voer de vereiste gegevens in of Selecteer deze:
 
-   1. Op het tabblad **Basis** :
+   1. Op het tabblad **Basis**:
 
       1. Selecteer bij **probleem type** **configuratie-en installatie problemen**.
 

@@ -9,10 +9,10 @@ ms.date: 5/11/2020
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: b6f0f77da639bceaea680f015dad5c0d3d6dbda6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "84464987"
 ---
 Als u een privé-eindpunt wilt maken voor uw opslagaccount, moet u eerst een verwijzing naar uw opslagaccount opvragen, evenals naar het subnet in het virtuele netwerk waaraan u het privé-eindpunt wilt toevoegen. Vervang `<storage-account-resource-group-name>`, `<storage-account-name>`, `<vnet-resource-group-name>`, `<vnet-name>` en `<vnet-subnet-name>` hieronder:

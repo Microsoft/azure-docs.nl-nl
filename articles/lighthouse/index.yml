@@ -10,12 +10,12 @@ metadata:
   author: JnHs
   ms.author: jenhayes
   ms.date: 01/26/2021
-  ms.openlocfilehash: 08c6275a9202f8d52e4e3f72f18822633cd113bc
-  ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+  ms.openlocfilehash: dae3705f71362cf1ca6ee8005c2c864533b3fbd0
+  ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 01/27/2021
-  ms.locfileid: "98881768"
+  ms.lasthandoff: 03/19/2021
+  ms.locfileid: "104590276"
 landingContent:
 - title: Over Azure Lighthouse
   linkLists:
@@ -85,15 +85,11 @@ landingContent:
       url: ./how-to/manage-sentinel-workspaces.md
     - text: Azure Monitor-logboeken gebruiken
       url: ./how-to/monitor-at-scale.md
-    - text: Delegatiewijzigingen bewaken
-      url: ./how-to/monitor-delegation-changes.md
     - text: Azure Policy implementeren
       url: ./how-to/policy-at-scale.md
-    - text: Beleid implementeren dat kan worden hersteld
-      url: ./how-to/deploy-policy-remediation.md
     - text: Hybride machines beheren met Azure Arc
       url: ./how-to/manage-hybrid-infrastructure-arc.md
-    - text: Migratieprojecten beheren
+    - text: Azure Migrate projecten beheren
       url: ./how-to/migration-at-scale.md
 - title: Naslag - SDK's
   linkLists:

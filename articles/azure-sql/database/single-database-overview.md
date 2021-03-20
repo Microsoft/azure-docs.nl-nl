@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 04/08/2019
 ms.openlocfilehash: 8f92fe8e4a4ebbc2d970bf28e415859249b9f67c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "84343316"
 ---
 # <a name="what-is-a-single-database-in-azure-sql-database"></a>Wat is een enkele data base in Azure SQL Database?
@@ -36,7 +36,7 @@ U kunt één data base verplaatsen naar of van een [elastische pool](elastic-poo
 
 ## <a name="monitoring-and-alerting"></a>Bewaking en waarschuwingen
 
-U gebruikt de ingebouwde [hulpprogram ma's](alerts-insights-configure-portal.md)voor [prestatie bewaking](performance-guidance.md) en waarschuwingen, gecombineerd met de prestatie classificaties. Met behulp van deze tools kunt u snel beoordelen wat de impact is van het aanpassen van de schaal op basis van uw huidige prestatiebehoeften of de prestatiebehoeften van uw project. Daarnaast kunnen SQL Database [metrische gegevens en bron logboeken verzenden](metrics-diagnostic-telemetry-logging-streaming-export-configure.md) voor een betere controle.
+U gebruikt de ingebouwde [hulpprogram ma's](alerts-insights-configure-portal.md)voor [prestatie bewaking](performance-guidance.md) en waarschuwingen, gecombineerd met de prestatie classificaties. Met behulp van deze tools kunt u snel beoordelen wat de impact is van het aanpassen van de schaal op basis van uw huidige prestatiebehoeften of de prestatiebehoeften van uw project. Daarnaast kan SQL Database [metrische gegevens en resourcelogboeken verzenden](metrics-diagnostic-telemetry-logging-streaming-export-configure.md) die bewaking eenvoudiger maken.
 
 ## <a name="availability-capabilities"></a>Beschikbaarheid
 
@@ -55,7 +55,7 @@ Zie voor meer informatie [Transact-SQL-verschillen oplossen tijdens de migratie 
 SQL Database biedt een reeks ingebouwde functies voor [beveiliging en naleving](security-overview.md) om uw toepassing te helpen voldoen aan verschillende vereisten op het gebied van beveiliging en naleving.
 
 > [!IMPORTANT]
-> Azure SQL Database is gecertificeerd op basis van een aantal nalevings standaarden. Raadpleeg voor meer informatie het [vertrouwens centrum van Microsoft Azure](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942), waar u de meest recente lijst met SQL database nalevings certificeringen kunt vinden.
+> Azure SQL Database is gecertificeerd op basis van een aantal nalevings standaarden. Raadpleeg het [Vertrouwenscentrum van Microsoft Azure](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942) voor meer informatie. Hier vindt u de meest recente lijst met SQL Database-nalevingscertificeringen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

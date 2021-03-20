@@ -16,10 +16,10 @@ ms.date: 07/22/2020
 ms.author: markvi
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f3c9ec3b1e96e47dbf46c6acb2c81147b614d069
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87117428"
 ---
 # <a name="troubleshoot-audit-data-on-verified-domain-change"></a>Problemen oplossen: gegevens over geverifieerde domein wijzigingen controleren 
@@ -33,7 +33,7 @@ Ik controleer de audit logboeken van Azure AD en Bekijk meerdere gebruikers upda
 
 ### <a name="cause"></a>Oorzaak
 
- Een veelvoorkomende reden achter wijzigingen in massa objecten is een niet-synchrone back-end-bewerking met de naam **ProxyCalc**.  **ProxyCalc** is de logica waarmee de juiste **userPrincipalName** -en **proxy adressen**worden bepaald, die worden bijgewerkt in azure AD-gebruikers,-groepen of-contact personen. Het ontwerp achter **ProxyCalc** is om ervoor te zorgen dat alle **userPrincipalName** -en **proxy adressen** op elk gewenst moment consistent zijn in azure AD. **ProxyCalc** moet worden geactiveerd door een expliciete wijziging zoals een geverifieerde domein wijziging en wordt niet op de achtergrond uitgevoerd als een taak. 
+ Een veelvoorkomende reden achter wijzigingen in massa objecten is een niet-synchrone back-end-bewerking met de naam **ProxyCalc**.  **ProxyCalc** is de logica waarmee de juiste **userPrincipalName** -en **proxy adressen** worden bepaald, die worden bijgewerkt in azure AD-gebruikers,-groepen of-contact personen. Het ontwerp achter **ProxyCalc** is om ervoor te zorgen dat alle **userPrincipalName** -en **proxy adressen** op elk gewenst moment consistent zijn in azure AD. **ProxyCalc** moet worden geactiveerd door een expliciete wijziging zoals een geverifieerde domein wijziging en wordt niet op de achtergrond uitgevoerd als een taak. 
 
   
 
@@ -55,7 +55,7 @@ Voor gesynchroniseerde gebruikers betekent consistentie dat de proxy adressen ov
 > Voor gesynchroniseerde objecten om te voor komen dat **ProxyCalc** Logic onverwachte resultaten berekent, is het het beste om proxy adressen in te stellen op een geverifieerd Azure AD-domein op het on-premises object.  
 
   
-Een van de beheer taken die **ProxyCalc** kunnen activeren, is telkens wanneer er een geverifieerd domein wordt gewijzigd. Deze taak vindt plaats wanneer een geverifieerd domein wordt toegevoegd aan of verwijderd uit een Azure AD-Tenant, waarmee **ProxyCalc**intern wordt geactiveerd.  
+Een van de beheer taken die **ProxyCalc** kunnen activeren, is telkens wanneer er een geverifieerd domein wordt gewijzigd. Deze taak vindt plaats wanneer een geverifieerd domein wordt toegevoegd aan of verwijderd uit een Azure AD-Tenant, waarmee **ProxyCalc** intern wordt geactiveerd.  
 
 Als u bijvoorbeeld een geverifieerd domein Fabrikam.com toevoegt aan uw Contoso.onmicrosoft.com-Tenant, wordt met deze actie een ProxyCalc-bewerking geactiveerd op alle objecten in de Tenant. Deze gebeurtenis wordt vastgelegd in de audit logboeken van Azure AD als **Update gebruikers** gebeurtenissen, voorafgegaan door een gebeurtenis voor het toevoegen van een **geverifieerd domein** . Aan de andere kant, als Fabrikam.com is verwijderd uit de Contoso.onmicrosoft.com-Tenant, worden alle **gebruikers** gebeurtenissen van de update voorafgegaan door een gebeurtenis voor het verwijderen van een **gecontroleerd domein** .   
 

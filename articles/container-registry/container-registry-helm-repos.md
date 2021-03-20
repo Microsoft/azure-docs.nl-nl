@@ -4,10 +4,10 @@ description: Meer informatie over het opslaan van helm-grafieken voor uw Kuberne
 ms.topic: article
 ms.date: 06/12/2020
 ms.openlocfilehash: 69b16f35589586787e1c31a0e9755b9030af755d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86537864"
 ---
 # <a name="push-and-pull-helm-charts-to-an-azure-container-registry"></a>Helm-grafieken pushen en pullen naar een Azure container Registry
@@ -93,7 +93,7 @@ Zie [aan](https://helm.sh/docs/chart_template_guide/getting_started/) de slag in
 
 Wijzig de map naar de submap `hello-world` . Vervolgens voert `helm chart save` u uit om een kopie van de grafiek lokaal op te slaan en maakt u ook een alias met de volledig gekwalificeerde naam van het REGI ster (alle kleine letters) en de doel opslagplaats en-tag. 
 
-In het volgende voor beeld is de register naam *mycontainerregistry*, de doel-opslag plaats is *Hallo wereld*en de label van de doel grafiek is *v1*, maar vervangt waarden voor uw omgeving:
+In het volgende voor beeld is de register naam *mycontainerregistry*, de doel-opslag plaats is *Hallo wereld* en de label van de doel grafiek is *v1*, maar vervangt waarden voor uw omgeving:
 
 ```console
 cd ..
@@ -239,7 +239,7 @@ version: 0.1.0
 
 ## <a name="install-helm-chart"></a>Helm-grafiek installeren
 
-Voer uit `helm install` om de helm-grafiek te installeren die u hebt opgehaald naar de lokale cache en hebt geëxporteerd. Geef een release naam op zoals *myhelmtest*of voer de `--generate-name` para meter door. Bijvoorbeeld:
+Voer uit `helm install` om de helm-grafiek te installeren die u hebt opgehaald naar de lokale cache en hebt geëxporteerd. Geef een release naam op zoals *myhelmtest* of voer de `--generate-name` para meter door. Bijvoorbeeld:
 
 ```console
 helm install myhelmtest ./hello-world

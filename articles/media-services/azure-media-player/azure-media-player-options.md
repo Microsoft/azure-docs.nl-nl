@@ -7,11 +7,11 @@ ms.service: media-services
 ms.topic: reference
 ms.date: 04/20/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 67f1f2fe3f6ac1061f1edcd22532bffaf0a1e815
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 392ecff2ab120e713a07d130493a4a8339dae5ab
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92366867"
 ---
 # <a name="options"></a>Opties #
@@ -102,7 +102,7 @@ Als u deze optie instelt op True video-element krijgt de volledige breedte van d
 `<video ... data-setup='{"playbackSpeed": {"enabled": true}}'>`
 
 
-Andere eigenschappen van de `playbackSpeed` instelling worden gegeven door het object [PlaybackSpeedOptions](/javascript/api/azuremediaplayer/playbackspeedoptions) .
+Andere eigenschappen van de `playbackSpeed` instelling worden gegeven door het object [PlaybackSpeedOptions](/javascript/api/azuremediaplayer/amp.player.playbackspeedoptions) .
 
 Voor beeld van het instellen van opties voor afspeel snelheid in Java script:
 

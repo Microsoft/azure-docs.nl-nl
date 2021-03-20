@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: harshacs
 ms.openlocfilehash: 367aba09f84da1e227c08721077aa1b2132a62bf
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92367970"
 ---
 # <a name="network-security-groups-with-azure-site-recovery"></a>Netwerkbeveiligingsgroepen met Azure Site Recovery
@@ -27,7 +27,7 @@ In dit artikel wordt beschreven hoe u netwerk beveiligings groepen kunt gebruike
 Een afzonderlijk subnet kan een of meer gekoppelde NSG hebben. Een afzonderlijke netwerk interface kan ook nul of één gekoppelde NSG hebben. Daarom kunt u de beperking van het dubbele verkeer voor een virtuele machine effectief doen door eerst een NSG aan een subnet te koppelen en vervolgens een andere NSG aan de netwerk interface van de VM. De toepassing van NSG-regels in dit geval is afhankelijk van de richting van het verkeer en de prioriteit van toegepaste beveiligings regels.
 
 U kunt als volgt een eenvoudig voor beeld met één virtuele machine beschouwen:
--    De virtuele machine wordt in het **Contoso-subnet**geplaatst.
+-    De virtuele machine wordt in het **Contoso-subnet** geplaatst.
 -    Het **Contoso-subnet** is gekoppeld aan het **subnet NSG**.
 -    De VM-netwerk interface is ook gekoppeld aan de **VM-NSG**.
 

@@ -27,6 +27,8 @@
         - name: Migratie met minimale downtime met DMS
           href: howto-migrate-online.md
           displayName: 'dms, data migration service'
+        - name: Migreren vanuit Oracle
+          href: howto-migrate-from-oracle.md
     - name: Versiebeleid
       href: concepts-version-policy.md
       displayName: 'version, postgresql'

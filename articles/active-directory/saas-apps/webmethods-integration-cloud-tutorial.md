@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
 ms.openlocfilehash: 52ad0d0356f4d309db89db6527d7fd2d7dec253d
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92636813"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-webmethods-integration-suite"></a>Zelfstudie: Azure Active Directory-integratie met webMethods Integration Suite
@@ -43,7 +43,7 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 * webMethods Integration Suite ondersteunt door **SP** en **IDP** geïnitieerde eenmalige aanmelding
 
-* webMethods Integration Suite biedt ondersteuning voor **Just-In-Time** -inrichting van gebruikers
+* webMethods Integration Suite biedt ondersteuning voor **Just-In-Time**-inrichting van gebruikers
 
 ## <a name="adding-webmethods-integration-suite-from-the-gallery"></a>webMethods Integration Suite toevoegen vanuit de galerie
 
@@ -51,11 +51,11 @@ Voor het configureren van de integratie van webMethods Integration Suite met Azu
 
 **Als u webMethods Integration Suite vanuit de galerie wilt toevoegen, moet u de volgende stappen uitvoeren:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -69,7 +69,7 @@ Voor het configureren van de integratie van webMethods Integration Suite met Azu
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In deze sectie configureert en test u eenmalige aanmelding van Azure AD met webMethods Integration Suite op basis van een testgebruiker met de naam **Britta Simon** .
+In deze sectie configureert en test u eenmalige aanmelding van Azure AD met webMethods Integration Suite op basis van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in webMethods Integration Suite tot stand is gebracht.
 
 Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met webMethods Integration Suite te configureren en te testen:
@@ -87,7 +87,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voer de volgende stappen uit als u Azure AD-eenmalige aanmelding wilt configureren met webMethods Integration Suite:
 
-1. Ga in [Azure Portal](https://portal.azure.com/) naar de pagina voor integratie van de toepassing **webMethods Integration Suite** en selecteer **Eenmalige aanmelding** .
+1. Ga in [Azure Portal](https://portal.azure.com/) naar de pagina voor integratie van de toepassing **webMethods Integration Suite** en selecteer **Eenmalige aanmelding**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -99,7 +99,7 @@ Voer de volgende stappen uit als u Azure AD-eenmalige aanmelding wilt configurer
 
     ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
-4. Als u de **webMethods Integration Suite** wilt configureren in de sectie **Standaard SAML-configuratie** , als u de toepassing in de door **IDP** geïnitieerde modus wilt configureren, voert u de volgende stappen uit:
+4. Als u de **webMethods Integration Suite** wilt configureren in de sectie **Standaard SAML-configuratie**, als u de toepassing in de door **IDP** geïnitieerde modus wilt configureren, voert u de volgende stappen uit:
 
     ![Schermopname die de Standaard SAML-configuratie toont, waar u de id en URL kunt invoeren en vervolgens Opslaan selecteert.](common/idp-intiated.png)
 
@@ -129,7 +129,7 @@ Voer de volgende stappen uit als u Azure AD-eenmalige aanmelding wilt configurer
     > [!NOTE]
     > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke-id, de antwoord-URL en de aanmeldings-URL. Neem contact op met het [ondersteuningsteam van webMethods Integration Suite](https://empower.softwareag.com/) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
-5. Als u de **webMethods API Cloud** wilt configureren in de sectie **Standaard SAML-configuratie** , als u de toepassing in de door **IDP** geïnitieerde modus wilt configureren, voert u de volgende stappen uit:
+5. Als u de **webMethods API Cloud** wilt configureren in de sectie **Standaard SAML-configuratie**, als u de toepassing in de door **IDP** geïnitieerde modus wilt configureren, voert u de volgende stappen uit:
 
     ![Schermopname die de Standaard SAML-configuratie toont, waar u de id en URL kunt invoeren en vervolgens Opslaan selecteert.](common/idp-intiated.png)
 
@@ -180,7 +180,7 @@ Als u eenmalige aanmelding aan de zijde van **webMethods Integration Suite** wil
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -199,13 +199,13 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 
-    d. Klik op **Create** .
+    d. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot webMethods Integration Suite.
 
-1. Selecteer in Azure Portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **webMethods Integration Suite** .
+1. Selecteer in Azure Portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **webMethods Integration Suite**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -213,11 +213,11 @@ In deze sectie gaat u Britta Simon toestemming geven voor gebruik van eenmalige 
 
     ![De webMethods Integration Suite-koppeling in de lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -225,7 +225,7 @@ In deze sectie gaat u Britta Simon toestemming geven voor gebruik van eenmalige 
 
 6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="create-webmethods-integration-suite-test-user"></a>Een testgebruiker voor webMethods Integration Suite maken
 

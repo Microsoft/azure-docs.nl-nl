@@ -8,10 +8,10 @@ author: keferna
 ms.author: keferna
 ms.date: 08/18/2020
 ms.openlocfilehash: 90267f2b75b7b9c1e77a45d7e3faa4b0bf6dd63a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91708540"
 ---
 # <a name="iot-edge-modules"></a>IoT Edge-modules
@@ -42,7 +42,7 @@ Het IoT Edge-module aanbod type is een specifiek type container dat wordt uitgev
 
 IoT Edge modules worden alleen gepubliceerd op de Azure Marketplace. AppSource is niet van toepassing. Zie [uw publicatie optie bepalen](determine-your-listing-type.md)voor meer informatie over de verschillen tussen online winkels.
 
-**Facturerings opties**
+**Factureringsopties**
 
 De Marketplace ondersteunt momenteel **gratis** en **BYOL-facturerings opties (uw eigen licentie)** voor IOT Edge modules.
 

@@ -12,10 +12,10 @@ ms.date: 06/08/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 2b6001932b6f53a60eda76b6136611a10011391a
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96928678"
 ---
 # <a name="tutorial-for-configuring-idology-with-azure-active-directory-b2c"></a>Zelf studie voor het configureren van IDology met Azure Active Directory B2C 
@@ -75,7 +75,7 @@ U hebt de URL van de geïmplementeerde service nodig om Azure AD te configureren
 
 Toepassings instellingen kunnen worden [geconfigureerd in app service in azure](../app-service/configure-common.md#configure-app-settings). Met deze methode kunnen instellingen veilig worden geconfigureerd zonder deze in een opslag plaats te controleren. U moet de volgende instellingen opgeven voor de rest-API:
 
-| Toepassingsinstellingen | Bron | Opmerkingen |
+| Toepassingsinstellingen | Bron | Notities |
 | :-------- | :------------| :-----------|
 |IdologySettings:ApiUsername | IDology-account configuratie |     |
 |IdologySettings:ApiPassword | IDology-account configuratie |     |
@@ -129,7 +129,7 @@ In het voorbeeld beleid worden de volgende sleutel namen gebruikt:
 
    1. **Antwoord-URL** : Selecteer de **omleidings-URL**.
 
-   1. Selecteer **gebruikers stroom uitvoeren**.
+   1. Selecteer **Gebruikersstroom uitvoeren**.
 
 4. Ga door naar de registratie stroom en maak een account.
 

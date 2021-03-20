@@ -9,10 +9,10 @@ ms.topic: include
 ms.date: 5/22/2020
 ms.author: derekol
 ms.openlocfilehash: e2804c8f9b1af89ac0ea86ec14136df66d900060
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "83846123"
 ---
 1. Selecteer **een resource maken**  >  **Alles bekijken**.
@@ -36,7 +36,7 @@ ms.locfileid: "83846123"
     > ![Tabblad basis informatie over peering](../media/setup-basics-tab.png)
 
     * Selecteer uw Azure- **abonnement**.
-    * Voor **resource groep**kunt u een bestaande resource groep in de vervolg keuzelijst kiezen of een nieuwe groep maken door **Nieuw maken**te selecteren. We maken een nieuwe resource groep voor dit voor beeld.
+    * Voor **resource groep** kunt u een bestaande resource groep in de vervolg keuzelijst kiezen of een nieuwe groep maken door **Nieuw maken** te selecteren. We maken een nieuwe resource groep voor dit voor beeld.
     * De **naam** komt overeen met de naam van de resource en kan alles zijn wat u kiest.
     * De **regio** wordt geselecteerd als u een bestaande resource groep hebt gekozen. Als u ervoor hebt gekozen om een nieuwe resource groep te maken, moet u ook de Azure-regio kiezen waar u de resource wilt opslaan.
 

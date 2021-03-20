@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: how-to
 ms.date: 6/10/2020
 ms.openlocfilehash: 26b503e7d55ed3d2f9bd06837551655e7af05a17
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94541937"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mysql-using-the-azure-portal"></a>Lees replica's maken en beheren in Azure Database for MySQL met behulp van de Azure Portal
@@ -31,7 +31,7 @@ In dit artikel leert u hoe u in de Azure Database for MySQL-service Lees replica
 
 Een lees replica-server kan worden gemaakt met behulp van de volgende stappen:
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
+1. Meld u aan bij de [Azure Portal](https://portal.azure.com/).
 
 2. Selecteer de bestaande Azure Database for MySQL-server die u wilt gebruiken als een Master. Met deze actie wordt de pagina **overzicht** geopend.
 
@@ -125,7 +125,7 @@ Gebruik de volgende stappen om een bron server te verwijderen uit de Azure Porta
 
 1. Selecteer in de [Azure Portal](https://portal.azure.com/)de replica Azure database for mysql server die u wilt bewaken.
 
-2. Onder de sectie **bewaking** van de zijbalk selecteert u **metrische gegevens** :
+2. Onder de sectie **bewaking** van de zijbalk selecteert u **metrische gegevens**:
 
 3. Selecteer **replicatie vertraging in seconden in** de vervolg keuzelijst met beschik bare metrische gegevens.
 

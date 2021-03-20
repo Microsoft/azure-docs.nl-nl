@@ -13,10 +13,10 @@ ms.date: 12/14/2017
 ms.author: damendo
 ms.custom: ''
 ms.openlocfilehash: 938315dac80ae51984851083753a9cb8f77662b2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "84737900"
 ---
 # <a name="view-relative-latency-to-azure-regions-from-specific-locations"></a>De relatieve latentie naar Azure-regio's vanuit specifieke locatie weergeven
@@ -134,7 +134,7 @@ Get-AzNetworkWatcherReachabilityProvidersList -NetworkWatcherName NetworkWatcher
 
 Gegevens zijn alleen beschikbaar voor de landen/regio's, provincies en steden die worden geretourneerd door de vorige opdracht. Voor de vorige opdracht moet u een bestaande netwerk-Watcher opgeven. In het voor beeld is de *NetworkWatcher_eastus* Network Watcher opgegeven in een resource groep met de naam *NetworkWatcherRG*, maar u kunt een bestaande netwerk-Watcher opgeven. Als u geen bestaande netwerk-Watcher hebt, maakt u er een door de taken in [een netwerk-Watcher maken](#create-a-network-watcher)uit te voeren. 
 
-Nadat u de vorige opdracht hebt uitgevoerd, kunt u de geretourneerde uitvoer filteren door geldige waarden voor **land**, **provincie**en **plaats**op te geven, indien gewenst.  Als u bijvoorbeeld de lijst met Internet serviceproviders die beschikbaar zijn in Seattle, Washington wilt weer geven, voert u de volgende opdracht in Verenigde Staten in:
+Nadat u de vorige opdracht hebt uitgevoerd, kunt u de geretourneerde uitvoer filteren door geldige waarden voor **land**, **provincie** en **plaats** op te geven, indien gewenst.  Als u bijvoorbeeld de lijst met Internet serviceproviders die beschikbaar zijn in Seattle, Washington wilt weer geven, voert u de volgende opdracht in Verenigde Staten in:
 
 ```powershell
 Get-AzNetworkWatcherReachabilityProvidersList `
@@ -146,4 +146,4 @@ Get-AzNetworkWatcherReachabilityProvidersList `
 ```
 
 > [!WARNING]
-> De waarde die is opgegeven voor het **land** , moet een hoofd letter of kleine letters zijn. De opgegeven waarden voor de **status** en de **plaats** moeten kleine letters zijn. De waarden moeten worden weer gegeven in de uitvoer die wordt geretourneerd na het uitvoeren van de opdracht zonder waarden voor **land**, **provincie**en **plaats**. Als u de onjuiste situatie opgeeft of een waarde opgeeft voor **land**, **provincie**of **plaats** die niet in de uitvoer wordt geretourneerd na het uitvoeren van de opdracht zonder waarden voor deze eigenschappen, is de geretourneerde uitvoer leeg.
+> De waarde die is opgegeven voor het **land** , moet een hoofd letter of kleine letters zijn. De opgegeven waarden voor de **status** en de **plaats** moeten kleine letters zijn. De waarden moeten worden weer gegeven in de uitvoer die wordt geretourneerd na het uitvoeren van de opdracht zonder waarden voor **land**, **provincie** en **plaats**. Als u de onjuiste situatie opgeeft of een waarde opgeeft voor **land**, **provincie** of **plaats** die niet in de uitvoer wordt geretourneerd na het uitvoeren van de opdracht zonder waarden voor deze eigenschappen, is de geretourneerde uitvoer leeg.

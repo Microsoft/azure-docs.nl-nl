@@ -17,10 +17,10 @@ ms.workload: infrastructure-services
 ms.date: 02/16/2017
 ms.author: allensu
 ms.openlocfilehash: c34ab73422d8dd41feb9da542ed63fdba060fe3f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "84708158"
 ---
 # <a name="configure-private-ip-addresses-for-a-virtual-machine-using-the-azure-cli"></a>Privé IP-adressen configureren voor een virtuele machine met behulp van de Azure CLI
@@ -35,7 +35,7 @@ ms.locfileid: "84708158"
 
 ## <a name="specify-a-static-private-ip-address-when-creating-a-vm"></a>Een statisch privé-IP-adres opgeven tijdens het maken van een VM
 
-Als u een virtuele machine met de naam *DNS01* in het *frontend* -subnet van een VNet met de naam *TestVNet* met een statisch privé-IP van *192.168.1.101*wilt maken, voert u de volgende stappen uit:
+Als u een virtuele machine met de naam *DNS01* in het *frontend* -subnet van een VNet met de naam *TestVNet* met een statisch privé-IP van *192.168.1.101* wilt maken, voert u de volgende stappen uit:
 
 1. Als u dit nog niet hebt gedaan, installeert en configureert u de nieuwste [Azure cli](/cli/azure/install-azure-cli) en meldt u zich aan bij een Azure-account met behulp van [AZ login](/cli/azure/reference-index).
 
@@ -127,7 +127,7 @@ Het is raadzaam dat u het privé-IP-adres dat is toegewezen aan de virtuele mach
 
 ## <a name="retrieve-static-private-ip-address-information-for-a-vm"></a>Informatie over statisch privé-IP-adres ophalen voor een virtuele machine
 
-Voer de volgende Azure CLI-opdracht uit om de waarden voor de *persoonlijke IP-toewijzings methode* en het *privé-IP-adres*te bekijken:
+Voer de volgende Azure CLI-opdracht uit om de waarden voor de *persoonlijke IP-toewijzings methode* en het *privé-IP-adres* te bekijken:
 
 ```azurecli
 az vm show -g TestRG -n DNS01 --show-details --query 'privateIps'

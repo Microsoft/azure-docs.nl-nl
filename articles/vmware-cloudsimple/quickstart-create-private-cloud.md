@@ -10,10 +10,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 487308aca3231650aee3fac5ae127006649e19b9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87073914"
 ---
 # <a name="quickstart---configure-a-private-cloud-environment"></a>Snelstartgids-een Privécloud configureren
@@ -37,14 +37,14 @@ Persoonlijke Clouds worden beheerd via de CloudSimple-Portal. Ze hebben hun eige
 1. Selecteer **Alle services**.
 2. Zoek naar **CloudSimple Services**.
 3. Selecteer de CloudSimple-service waarop u uw Privécloud wilt maken.
-4. Klik in **overzicht**op **privécloud maken** om een nieuw browser tabblad voor CloudSimple portal te openen.  Meld u aan met uw aanmeldings referenties voor Azure als u hierom wordt gevraagd.  
+4. Klik in **overzicht** op **privécloud maken** om een nieuw browser tabblad voor CloudSimple portal te openen.  Meld u aan met uw aanmeldings referenties voor Azure als u hierom wordt gevraagd.  
 
     ![Een Privécloud maken van Azure](media/create-private-cloud-from-azure.png)
 
 5. Geef in de CloudSimple-Portal een naam op voor de Privécloud.
 6. Selecteer de **locatie** van de privécloud.
-7. Selecteer het **knooppunt type**in overeenstemming met wat u in azure hebt ingericht.
-8. Geef het **aantal knoop punten**op.  Er zijn ten minste drie knoop punten vereist voor het maken van een Privécloud.
+7. Selecteer het **knooppunt type** in overeenstemming met wat u in azure hebt ingericht.
+8. Geef het **aantal knoop punten** op.  Er zijn ten minste drie knoop punten vereist voor het maken van een Privécloud.
 
     ![Een persoonlijke Cloud maken-basis gegevens](media/create-private-cloud-basic-info.png)
 
@@ -58,7 +58,7 @@ Persoonlijke Clouds worden beheerd via de CloudSimple-Portal. Ze hebben hun eige
 
 11. Klik op **volgende: controleren en maken**.
 12. Controleer de instellingen. Als u instellingen wilt wijzigen, klikt u op **vorige**.
-13. Klik op **Maken**.
+13. Klik op **Create**.
 
 Het inrichtings proces voor de privécloud wordt gestart.  Het kan tot twee uur duren voordat de Privécloud is ingericht.
 
@@ -85,14 +85,14 @@ Een punt-naar-site-VPN-verbinding is de eenvoudigste manier om vanaf uw computer
 
     ![Een VPN-gateway maken](media/create-vpn-gateway.png)
 
-4. Geef voor **Gateway configuratie**de volgende instellingen op en klik op **volgende**.
+4. Geef voor **Gateway configuratie** de volgende instellingen op en klik op **volgende**.
 
     * Selecteer **punt-naar-site-VPN** als het gateway type.
     * Voer een naam in om de gateway te identificeren.
     * Selecteer de Azure-locatie waar uw CloudSimple-service is geïmplementeerd.
     * Geef het client subnet op voor de punt-naar-site-gateway.  Wanneer u verbinding maakt, worden er DHCP-adressen van dit subnet gegeven.
 
-5. Geef voor **verbinding/gebruiker**de volgende instellingen op en klik op **volgende**.
+5. Geef voor **verbinding/gebruiker** de volgende instellingen op en klik op **volgende**.
 
     * Als u wilt dat alle huidige en toekomstige gebruikers automatisch toegang hebben tot de Privécloud via deze punt-naar-site-gateway, selecteert u **automatisch alle gebruikers toevoegen**. Wanneer u deze optie selecteert, worden alle gebruikers in de lijst met gebruikers automatisch geselecteerd. U kunt de automatische optie onderdrukken door afzonderlijke gebruikers in de lijst uit te scha kelen.
     * Als u alleen afzonderlijke gebruikers wilt selecteren, klikt u op de selectie vakjes in de gebruikers lijst.
@@ -101,7 +101,7 @@ Een punt-naar-site-VPN-verbinding is de eenvoudigste manier om vanaf uw computer
 
     * Met de opties voor **automatisch toevoegen** wordt het globale beleid voor deze gateway ingesteld. De instellingen zijn van toepassing op de huidige gateway. De instellingen kunnen worden overschreven in het gebied **selecteren** .
     * Selecteer **vlan's voor beheer/subnetten van persoonlijke Clouds toevoegen**.
-    * Klik op door de gebruiker gedefinieerde vlan's  **/subnetten toevoegen**om alle door de gebruiker gedefinieerde vlan's/subnetten toe te voegen.
+    * Klik op door de gebruiker gedefinieerde vlan's  **/subnetten toevoegen** om alle door de gebruiker gedefinieerde vlan's/subnetten toe te voegen.
     * De **selectie** -instellingen overschrijven de algemene instellingen onder **automatisch toevoegen**.
 
 7. Klik op **volgende** om de instellingen te controleren. Klik op de pictogrammen bewerken om wijzigingen aan te brengen.
@@ -154,7 +154,7 @@ CloudSimple biedt u een ExpressRoute-circuit voor uw Privécloud. U kunt uw virt
 
 U kunt zich nu aanmelden bij vCenter om virtuele machines en beleids regels in te stellen.
 
-1. Als u toegang wilt krijgen tot vCenter, start u vanuit de CloudSimple-Portal. Klik op de start pagina onder **algemene taken**op **VSphere-client starten**.  Selecteer de privécloud en klik vervolgens op **vSphere-client starten** op de privécloud.
+1. Als u toegang wilt krijgen tot vCenter, start u vanuit de CloudSimple-Portal. Klik op de start pagina onder **algemene taken** op **VSphere-client starten**.  Selecteer de privécloud en klik vervolgens op **vSphere-client starten** op de privécloud.
 
     ![VSphere-client starten](media/launch-vcenter-from-cloudsimple-portal.png)
 

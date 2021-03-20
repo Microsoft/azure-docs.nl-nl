@@ -8,10 +8,10 @@ author: keferna
 ms.author: keferna
 ms.date: 03/20/2020
 ms.openlocfilehash: bfdae8de4c1a460844b09f82048e1e1d6abdb2ad
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91708030"
 ---
 # <a name="how-to-purchase-software-on-microsoft-appsource"></a>Software aanschaffen op Microsoft AppSource
@@ -51,7 +51,7 @@ Voor het kopen van SaaS-aanbiedingen hebt u het volgende nodig:
 
 Nadat uw bestelling is ontvangen, kan het enkele seconden duren voordat deze wordt bevestigd. U ontvangt een koppeling om uw SaaS-abonnement op de pagina te configureren, evenals een e-mail met een bevestiging van de aankoop en de koppeling om de configuratie te volt ooien.
 
-1. Selecteer **configureren**op de pagina **order bevestiging** . U kunt ook de configuratie koppeling die u in de bevestigings-e-mail naar u hebt verzonden, in plaats daarvan gebruiken.
+1. Selecteer **configureren** op de pagina **order bevestiging** . U kunt ook de configuratie koppeling die u in de bevestigings-e-mail naar u hebt verzonden, in plaats daarvan gebruiken.
 1. Het inrichten en instellen op de website van de software provider volt ooien.
 
     > [!Note]
@@ -65,4 +65,4 @@ Een [ondersteunings ticket](https://admin.microsoft.com/Adminportal/Home?source=
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Micro soft Marketplace-klant documentatie](/marketplace/)
+- [Klantdocumentatie voor Microsoft Marketplace](/marketplace/)

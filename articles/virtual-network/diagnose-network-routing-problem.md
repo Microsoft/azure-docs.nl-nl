@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 05/30/2018
 ms.author: kumud
 ms.openlocfilehash: 1c23244707179e05c63ed44b5915e58eefd3f4a3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "84705046"
 ---
 # <a name="diagnose-a-virtual-machine-routing-problem"></a>Een routerings probleem van een virtuele machine vaststellen
@@ -30,19 +30,19 @@ In dit artikel leert u hoe u een routerings probleem kunt vaststellen door de ro
 
 U probeert verbinding te maken met een virtuele machine, maar de verbinding is mislukt. Als u wilt bepalen waarom u geen verbinding kunt maken met de virtuele machine, kunt u de efficiënte routes voor een netwerk interface weer geven met behulp van de Azure- [Portal](#diagnose-using-azure-portal), [Power shell](#diagnose-using-powershell)of de [Azure cli](#diagnose-using-azure-cli).
 
-In de volgende stappen wordt ervan uitgegaan dat u een bestaande virtuele machine hebt om de juiste routes voor te bekijken. Als u geen bestaande VM hebt, implementeert u eerst een [Linux](../virtual-machines/linux/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) -of [Windows](../virtual-machines/windows/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) -VM om de taken in dit artikel uit te voeren met. De voor beelden in dit artikel zijn voor een virtuele machine met de naam *myVM* met een netwerk interface met de naam *myVMNic1*. De virtuele machine en netwerk interface bevinden zich in een resource groep met de naam *myResourceGroup*en bevinden zich in de regio *VS-Oost* . Wijzig de waarden in de stappen, indien van toepassing, voor de virtuele machine waarvoor u het probleem wilt vaststellen.
+In de volgende stappen wordt ervan uitgegaan dat u een bestaande virtuele machine hebt om de juiste routes voor te bekijken. Als u geen bestaande VM hebt, implementeert u eerst een [Linux](../virtual-machines/linux/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) -of [Windows](../virtual-machines/windows/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) -VM om de taken in dit artikel uit te voeren met. De voor beelden in dit artikel zijn voor een virtuele machine met de naam *myVM* met een netwerk interface met de naam *myVMNic1*. De virtuele machine en netwerk interface bevinden zich in een resource groep met de naam *myResourceGroup* en bevinden zich in de regio *VS-Oost* . Wijzig de waarden in de stappen, indien van toepassing, voor de virtuele machine waarvoor u het probleem wilt vaststellen.
 
 ## <a name="diagnose-using-azure-portal"></a>Problemen vaststellen met behulp van Azure Portal
 
 1. Meld u aan bij Azure [Portal](https://portal.azure.com) met een Azure-account dat over de [benodigde machtigingen](virtual-network-network-interface.md#permissions)beschikt.
 2. Voer boven aan de Azure Portal de naam in van een virtuele machine die de status wordt uitgevoerd in het zoekvak. Wanneer de naam van de virtuele machine wordt weer gegeven in de zoek resultaten, selecteert u deze.
-3. Onder **instellingen** aan de linkerkant selecteert u **netwerken**en navigeert u naar de netwerk interface bron door de naam ervan te selecteren.
+3. Onder **instellingen** aan de linkerkant selecteert u **netwerken** en navigeert u naar de netwerk interface bron door de naam ervan te selecteren.
      ![Netwerk interfaces weer geven](./media/diagnose-network-routing-problem/view-nics.png)
 4. Selecteer aan de linkerkant de optie **efficiënte routes**. De actieve routes voor een netwerk interface met de naam **myVMNic1** worden weer gegeven in de volgende afbeelding: ![ werkelijke routes weer geven](./media/diagnose-network-routing-problem/view-effective-routes.png)
 
     Als er meerdere netwerk interfaces aan de virtuele machine zijn gekoppeld, kunt u de werkelijke routes voor elke netwerk interface weer geven door deze te selecteren. Aangezien elke netwerk interface zich in een ander subnet kan bevinden, kan elke netwerk interface verschillende efficiënte routes hebben.
 
-    In het voor beeld dat in de vorige afbeelding wordt weer gegeven, zijn de vermelde routes standaard routes die Azure voor elk subnet maakt. De lijst bevat ten minste deze routes, maar kan extra routes bevatten, afhankelijk van de mogelijkheden die u hebt ingeschakeld voor uw virtuele netwerk, zoals het peeren met een ander virtueel netwerk of een verbinding met uw on-premises netwerk via een Azure VPN-gateway. Zie [virtueel netwerk verkeer routeren](virtual-networks-udr-overview.md)voor meer informatie over elk van de routes en andere routes die u kunt zien voor uw netwerk interface. Als uw lijst een groot aantal routes bevat, is het wellicht eenvoudiger om **downloaden**te selecteren, een. CSV-bestand te downloaden met de lijst met routes.
+    In het voor beeld dat in de vorige afbeelding wordt weer gegeven, zijn de vermelde routes standaard routes die Azure voor elk subnet maakt. De lijst bevat ten minste deze routes, maar kan extra routes bevatten, afhankelijk van de mogelijkheden die u hebt ingeschakeld voor uw virtuele netwerk, zoals het peeren met een ander virtueel netwerk of een verbinding met uw on-premises netwerk via een Azure VPN-gateway. Zie [virtueel netwerk verkeer routeren](virtual-networks-udr-overview.md)voor meer informatie over elk van de routes en andere routes die u kunt zien voor uw netwerk interface. Als uw lijst een groot aantal routes bevat, is het wellicht eenvoudiger om **downloaden** te selecteren, een. CSV-bestand te downloaden met de lijst met routes.
 
 Hoewel bij de vorige stappen daad werkelijke routes werden bekeken via de VM, kunt u ook efficiënte routes weer geven via een:
 - **Afzonderlijke netwerk interface**: meer informatie over het [weer geven van een netwerk interface](virtual-network-network-interface.md#view-network-interface-settings).
@@ -54,7 +54,7 @@ Hoewel bij de vorige stappen daad werkelijke routes werden bekeken via de VM, ku
 
 U kunt de opdrachten uitvoeren die volgen in de [Azure Cloud shell](https://shell.azure.com/powershell), of door Power shell uit te voeren vanaf uw computer. De Azure Cloud Shell is een gratis interactieve shell. In deze shell zijn algemene Azure-hulpprogramma's vooraf geïnstalleerd en geconfigureerd voor gebruik met uw account. Als u Power shell vanaf uw computer uitvoert, hebt u de Azure PowerShell module versie 1.0.0 of hoger nodig. Voer uit `Get-Module -ListAvailable Az` op uw computer om de geïnstalleerde versie te vinden. Als u PowerShell wilt upgraden, raadpleegt u [De Azure PowerShell-module installeren](/powershell/azure/install-Az-ps). Als u Power shell lokaal uitvoert, moet u ook uitvoeren `Connect-AzAccount` om u aan te melden bij Azure met een account dat over de [benodigde machtigingen](virtual-network-network-interface.md#permissions)beschikt.
 
-Haal de efficiënte routes op voor een netwerk interface met [Get-AzEffectiveRouteTable](/powershell/module/az.network/get-azeffectiveroutetable). In het volgende voor beeld worden de efficiënte routes opgehaald voor een netwerk interface met de naam *myVMNic1*, die zich in een resource groep met de naam *myResourceGroup*bevindt:
+Haal de efficiënte routes op voor een netwerk interface met [Get-AzEffectiveRouteTable](/powershell/module/az.network/get-azeffectiveroutetable). In het volgende voor beeld worden de efficiënte routes opgehaald voor een netwerk interface met de naam *myVMNic1*, die zich in een resource groep met de naam *myResourceGroup* bevindt:
 
 ```azurepowershell-interactive
 Get-AzEffectiveRouteTable `
@@ -87,7 +87,7 @@ In de vorige uitvoer is de naam van de netwerk interface *myVMNic1*.
 
 U kunt de opdrachten uitvoeren die volgen in de  [Azure Cloud shell](https://shell.azure.com/bash), of door de CLI vanaf uw computer uit te voeren. Voor dit artikel is de Azure CLI-versie 2.0.32 of hoger vereist. Voer `az --version` uit om te kijken welke versie is geïnstalleerd. Zie [Azure CLI installeren](/cli/azure/install-azure-cli) als u de CLI wilt installeren of een upgrade wilt uitvoeren. Als u de Azure CLI lokaal uitvoert, moet u ook uitvoeren en u `az login` Aanmelden bij Azure met een account dat over de [benodigde machtigingen](virtual-network-network-interface.md#permissions)beschikt.
 
-Haal de meest efficiënte routes op voor een netwerk interface met [AZ Network NIC show-ingangsdatum-route tabel](/cli/azure/network/nic#az-network-nic-show-effective-route-table). In het volgende voor beeld worden de efficiënte routes opgehaald voor een netwerk interface met de naam *myVMNic1* die zich in een resource groep met de naam *myResourceGroup*bevindt:
+Haal de meest efficiënte routes op voor een netwerk interface met [AZ Network NIC show-ingangsdatum-route tabel](/cli/azure/network/nic#az-network-nic-show-effective-route-table). In het volgende voor beeld worden de efficiënte routes opgehaald voor een netwerk interface met de naam *myVMNic1* die zich in een resource groep met de naam *myResourceGroup* bevindt:
 
 ```azurecli-interactive
 az network nic show-effective-route-table \

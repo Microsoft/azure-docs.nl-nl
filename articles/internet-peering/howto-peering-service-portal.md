@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 3/18/2020
 ms.author: derekol
 ms.openlocfilehash: a52e6038b622c004dc0d133394cd4f53600b2935
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "84700039"
 ---
 # <a name="enable-azure-peering-service-on-a-direct-peering-by-using-the-azure-portal"></a>Azure peering service inschakelen op een directe peering met behulp van de Azure Portal
@@ -46,6 +46,6 @@ Als u de verbindings instellingen wilt wijzigen, raadpleegt u de sectie ' een di
 * [Exchange-peering maken of wijzigen met behulp van de portal](howto-exchange-portal.md)
 * [Een verouderde Exchange-peering converteren naar een Azure-resource met behulp van de portal](howto-legacy-exchange-portal.md)
 
-## <a name="additional-resources"></a>Aanvullende resources
+## <a name="additional-resources"></a>Aanvullende bronnen
 
 Zie [Veelgestelde vragen over peering-service](service-faqs.md)voor meer informatie.

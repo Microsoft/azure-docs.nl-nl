@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 01/09/2018
 ms.author: alkohli
 ms.openlocfilehash: 113b72ddf7e5d508c8a0b577d4004d4fbd83e8e5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "84699104"
 ---
 # <a name="unpack-rack-mount-and-cable-your-storsimple-8100-device"></a>Uw StorSimple 8100-apparaat uitpakken, aan het rek koppelen en bekabelen
@@ -98,7 +98,7 @@ De 8100-behuizing is ontworpen voor installatie in een standaard 19-inch rack be
 Er wordt een reeks montage rails meegeleverd voor gebruik met de 19-inch rack behuizing. De rails zijn getest om het gewicht van de maximale behuizing te verwerken. Deze rails bieden ook de mogelijkheid om meerdere behuizingen te installeren zonder dat er ruimte in het rek verloren gaat.
 
 #### <a name="to-install-the-device-on-the-rails"></a>Het apparaat op de rails installeren
-1. Voer deze stap alleen uit als de interne rails niet op uw apparaat zijn geïnstalleerd. Normaal gesp roken worden de interne rails in de fabriek geïnstalleerd. Als er geen rails zijn geïnstalleerd, installeert u de dia's uit de linker-en rechter rails aan de zijkanten van het behuizing-chassis. Ze worden aan elke zijde gekoppeld met zes metrische schroeven. Om u te helpen bij het bezorgen van de afdruk stand, worden de Rail dia's als **LH-front** en **RH-front**en wordt het uiteinde dat zich op de achterkant van de behuizing bevindt, verzegeld.<br/>
+1. Voer deze stap alleen uit als de interne rails niet op uw apparaat zijn geïnstalleerd. Normaal gesp roken worden de interne rails in de fabriek geïnstalleerd. Als er geen rails zijn geïnstalleerd, installeert u de dia's uit de linker-en rechter rails aan de zijkanten van het behuizing-chassis. Ze worden aan elke zijde gekoppeld met zes metrische schroeven. Om u te helpen bij het bezorgen van de afdruk stand, worden de Rail dia's als **LH-front** en **RH-front** en wordt het uiteinde dat zich op de achterkant van de behuizing bevindt, verzegeld.<br/>
    
     ![Rail dia's koppelen aan het behuizing-chassis](./media/storsimple-8100-hardware-installation/HCSAttachingRailSlidestoEnclosureChassis.png)
 
@@ -109,7 +109,7 @@ Er wordt een reeks montage rails meegeleverd voor gebruik met de 19-inch rack be
     1     | M 3x4 knop-Head schroefs
     2     | Chassis dia's
 
-2. Koppel de buitenste Rail-en buitenste rechter rails aan de verticale leden van het rek-Cabinet. De vier Kante haken zijn gemarkeerd **LH**, **RH**en **deze kant** om u door de juiste stand te leiden.
+2. Koppel de buitenste Rail-en buitenste rechter rails aan de verticale leden van het rek-Cabinet. De vier Kante haken zijn gemarkeerd **LH**, **RH** en **deze kant** om u door de juiste stand te leiden.
 3. Zoek de pennen van de rails aan voor- en achterzijde van de rail. Breid de rails uit voor de rack berichten en plaats de pincodes in de voor-en achterliggende leden van het rek post verticaal. Zorg ervoor dat de Rail-assembly niveau is.
 4. Gebruik twee van de verschafte metrische schroeven om de Rail-assembly te beveiligen met de verticale leden van het rek. Gebruik één schroef aan de voor zijde en een aan de achterzijde.
 5. Herhaal deze stappen voor de andere Rail-assembly.<br/>

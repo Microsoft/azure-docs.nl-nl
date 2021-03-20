@@ -27,6 +27,8 @@
       href: tutorial-connect-virtual-networks-portal.md
     - name: NAT-gateway maken en valideren
       href: tutorial-create-nat-gateway-portal.md
+    - name: Open bare load balancer van de NAT-gateway integreren
+      href: tutorial-nat-gateway-load-balancer-public-portal.md
 - name: Voorbeelden
   items:
     - name: Azure CLI

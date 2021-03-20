@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 12/24/2019
 ms.author: ramamill
 ms.openlocfilehash: 01aef3aca4f6967b1681bff9598c7dd7a24739cd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "84692516"
 ---
 # <a name="manage-vmware-vcenter-server"></a>VMware vCenter Server beheren
@@ -48,9 +48,9 @@ Wanneer u herstel na nood gevallen instelt voor on-premises VMware-Vm's, moet Si
 
 Wanneer u herstel na nood gevallen instelt voor on-premises VMware-Vm's, voegt u de vCenter Server-vSphere-host waarop u de virtuele machines op de Site Recovery kluis detecteert, als volgt toe:
 
-1. Open de configuratie server in kluis > site Recovery configuratie servers van de **infra structuur**  >  **Configuration Severs**.
+1. Open de configuratie server in kluis > site Recovery configuratie servers van de **infra structuur**  >  .
 1. Klik op de pagina **Details** op **vCenter**.
-1. Geef in **VCenter toevoegen**een beschrijvende naam op voor de vSphere-host of vCenter-Server.
+1. Geef in **VCenter toevoegen** een beschrijvende naam op voor de vSphere-host of vCenter-Server.
 1. Geef het IP-adres of de FQDN van de server op.
 1. Behoud poort 443 tenzij de VMware-servers zijn geconfigureerd om te luisteren naar aanvragen van een andere poort.
 1. Selecteer het account dat wordt gebruikt om verbinding te maken met de VMware vCenter-of vSphere ESXi-server. Klik vervolgens op **OK**.
@@ -66,16 +66,16 @@ Als dat nodig is, kunt u de referenties die worden gebruikt om verbinding te mak
    ![add-account](./media/vmware-azure-manage-vcenter/addaccount.png)
 
 1. Geef de nieuwe account gegevens op en klik op **OK**. Het account heeft de machtigingen nodig die worden vermeld in de tabel [account machtigingen](#account-permissions) .
-1. Open de configuratie server in de kluis > site Recovery configuratie servers van de **infra structuur**  >  **Configuration Severs**.
-1. Klik in **Details**op **server vernieuwen**.
+1. Open de configuratie server in de kluis > site Recovery configuratie servers van de **infra structuur**  >  .
+1. Klik in **Details** op **server vernieuwen**.
 1. Nadat de taak server vernieuwen is voltooid, selecteert u de vCenter Server.
-1. In **samen vatting**selecteert u het zojuist toegevoegde account in **VCenter server/vSphere host-account**en klikt u op **Opslaan**.
+1. In **samen vatting** selecteert u het zojuist toegevoegde account in **VCenter server/vSphere host-account** en klikt u op **Opslaan**.
 
    ![wijzigen-account](./media/vmware-azure-manage-vcenter/modify-vcente-creds.png)
 
 ## <a name="delete-a-vcenter-server"></a>Een vCenter Server verwijderen
 
-1. Open de configuratie server in de kluis > site Recovery configuratie servers van de **infra structuur**  >  **Configuration Severs**.
+1. Open de configuratie server in de kluis > site Recovery configuratie servers van de **infra structuur**  >  .
 1. Selecteer op de pagina **Details** de vCenter-Server.
 1. Klik op de knop **verwijderen** .
 
@@ -85,9 +85,9 @@ Als dat nodig is, kunt u de referenties die worden gebruikt om verbinding te mak
 
 U kunt het IP-adres van de vCenter Server wijzigen of de poorten die worden gebruikt voor communicatie tussen de server en Site Recovery. Site Recovery heeft standaard toegang tot de hostgegevens vCenter Server/vSphere via poort 443.
 
-1. Klik in de kluis > **site Recovery infrastructuur**  >  **configuratie servers**op de configuratie server waaraan de vCenter Server is toegevoegd.
-1. Klik in **vCenter-servers**op de vCenter Server u wilt wijzigen.
-1. Werk in **samen vatting**het IP-adres en de poort bij en sla de wijzigingen op.
+1. Klik in de kluis > **site Recovery infrastructuur**  >  **configuratie servers** op de configuratie server waaraan de vCenter Server is toegevoegd.
+1. Klik in **vCenter-servers** op de vCenter Server u wilt wijzigen.
+1. Werk in **samen vatting** het IP-adres en de poort bij en sla de wijzigingen op.
 
    ![add_ip_new_vcenter](media/vmware-azure-manage-vcenter/add-ip.png)
 
@@ -97,9 +97,9 @@ U kunt het IP-adres van de vCenter Server wijzigen of de poorten die worden gebr
 
 Als u alle Vm's wilt migreren om een nieuwe vCenter Server te gebruiken, hoeft u alleen het IP-adres bij te werken dat aan de vCenter Server is toegewezen. Voeg nog geen VMware-account toe, omdat dit kan leiden tot dubbele vermeldingen. Werk het adres als volgt bij:
 
-1. Klik in de kluis > **site Recovery infrastructuur**  >  **configuratie servers**op de configuratie server waaraan de vCenter Server is toegevoegd.
+1. Klik in de kluis > **site Recovery infrastructuur**  >  **configuratie servers** op de configuratie server waaraan de vCenter Server is toegevoegd.
 1. Klik in de sectie **vCenter-servers** op de vCenter Server waaruit u wilt migreren.
-1. Werk in **samen vatting**het IP-adres bij naar dat van de nieuwe vCenter Server en sla de wijzigingen op.
+1. Werk in **samen vatting** het IP-adres bij naar dat van de nieuwe vCenter Server en sla de wijzigingen op.
 1. Zodra het IP-adres is bijgewerkt, begint Site Recovery met het ontvangen van de detectie gegevens van de virtuele machine vanuit de nieuwe vCenter Server. Dit heeft geen invloed op lopende replicatie activiteiten.
 
 ## <a name="migrate-a-few-vms-to-a-new-server"></a>Een aantal virtuele machines migreren naar een nieuwe server

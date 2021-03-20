@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: tutorial
 ms.date: 5/6/2019
 ms.openlocfilehash: a12068259d82e833826bcac5e6c58059fb51c56c
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93336976"
 ---
 # <a name="tutorial-monitor-and-tune-azure-database-for-postgresql---single-server"></a>Zelfstudie: Bewaken en afstemmen van Azure Database for PostgreSQL - één server
@@ -27,7 +27,7 @@ Azure Database for PostgreSQL bevat functies die u helpen om inzicht te krijgen 
 U hebt een Azure Database for PostgreSQL-server met PostgreSQL versie 9.6 of 10 nodig. U kunt de stappen in de zelfstudie [Maken](tutorial-design-database-using-azure-portal.md) volgen als u een server wilt maken.
 
 > [!IMPORTANT]
-> **Query Store** , **Query Performance Insight** en **Prestatieaanbeveling** bevinden zich in openbare preview.
+> **Query Store**, **Query Performance Insight** en **Prestatieaanbeveling** bevinden zich in openbare preview.
 
 ## <a name="enabling-data-collection"></a>Gegevensverzameling inschakelen
 [Query Store](concepts-query-store.md) legt de geschiedenis van query's en wachtstatistieken op uw server vast en slaat deze op in de database **azure_sys** database op uw server. Het is een optionele functie. U schakelt deze als volgt in:
@@ -83,7 +83,7 @@ De functie [Prestatieaanbevelingen](concepts-performance-recommendations.md) ana
 
 4. Het venster **Prestatieaanbevelingen** toont een lijst met aanbevelingen als deze zijn gevonden. 
 
-5. Een aanbeveling bevat informatie over de relevante **Database** , **Tabel** , **Kolom** en **Indexgrootte**.
+5. Een aanbeveling bevat informatie over de relevante **Database**, **Tabel**, **Kolom** en **Indexgrootte**.
 
    :::image type="content" source="./media/tutorial-performance-intelligence/performance-recommendations-result.png" alt-text="Resultaat van Prestatieaanbevelingen":::
 

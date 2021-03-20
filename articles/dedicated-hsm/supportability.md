@@ -13,10 +13,10 @@ ms.custom: seodec18
 ms.date: 03/27/2019
 ms.author: mbaldwin
 ms.openlocfilehash: d83d688707baf6098d63dfde9b4181eb04fb9729
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "70881018"
 ---
 # <a name="azure-dedicated-hsm-supportability"></a>Exclusieve HSM-ondersteuning van Azure
@@ -24,7 +24,7 @@ ms.locfileid: "70881018"
 De speciale HSM-service van Azure biedt een fysiek apparaat voor exclusief gebruik door de klant met volledige administratieve beheer-en beheer verantwoordelijkheid. Het apparaat dat beschikbaar is gemaakt is een [Gemalto SafeNet Luna 7 HSM model A790](https://safenet.gemalto.com/data-encryption/hardware-security-modules-hsms/safenet-network-hsm/). Micro soft heeft geen administratieve toegang meer nadat een klant, buiten de fysieke seriële poort van de bijlage, is ingericht als een bewakings functie.  Zonder toegang kan micro soft geen voortdurende onderhouds-en systeem beheer verantwoordelijkheden hebben. Als gevolg hiervan zijn klanten verantwoordelijk voor typische operationele activiteiten.
 Klanten zijn volledig verantwoordelijk voor toepassingen die gebruikmaken van de Hsm's en moeten samen werken met Gemalto voor ondersteuning of advies. Vanwege de omvang van de eigendom van de operationele hygiëne is het niet mogelijk dat micro soft een gegarandeerde garantie voor hoge Beschik baarheid biedt voor deze service. Het is de verantwoordelijkheid van de klant om ervoor te zorgen dat hun toepassingen op de juiste wijze zijn geconfigureerd om hoge Beschik baarheid te garanderen. Micro soft controleert en beheert de status van het apparaat en de netwerk verbinding.
 
-## <a name="getting-support"></a>Ondersteuning zoeken
+## <a name="getting-support"></a>Ondersteuning
 
 Klanten ondersteuning voor toegewezen HSM is een gezamenlijke inspanning tussen micro soft en Gemalto. Eventuele hardwareproblemen of problemen met het netwerkpad worden door micro soft verholpen, en alles wat u kunt doen met de daad werkelijke HSM, zoals configuratie, software, firmware en toepassings ontwikkeling, wordt geadresseerd door Gemalto. Dit ondersteunings model zorgt voor een snelle route naar de meest efficiënte ondersteuning. Als u twijfelt met een bepaald probleem, verhoogt u een ondersteunings aanvraag met micro soft en zorgt u ervoor dat u op de juiste wijze omgaat. Micro soft blijft in de ondersteunings scenario's werken en streeft naar de beste ondersteunings ervaring voor onze klanten.
 

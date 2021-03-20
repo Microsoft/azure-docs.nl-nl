@@ -6,10 +6,10 @@ ms.subservice: personalizer
 ms.topic: conceptual
 ms.date: 04/23/2020
 ms.openlocfilehash: cd0d85be5447aad0f2a3c37041e7d5d5d047a468
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91777289"
 ---
 # <a name="personalizer-terminology"></a>Aangepaste terminologie
@@ -67,7 +67,7 @@ Personaler is geconfigureerd vanuit het [Azure Portal](https://portal.azure.com)
 
 * **Misbruik**: de personaler-service gebruikt het huidige model om de beste actie te bepalen op basis van gegevens in het verleden.
 
-* **Duur**van het experiment: de hoeveelheid tijd die de personaler-service wacht op een beloning, vanaf het moment dat de positie oproep voor die gebeurtenis is opgetreden.
+* **Duur** van het experiment: de hoeveelheid tijd die de personaler-service wacht op een beloning, vanaf het moment dat de positie oproep voor die gebeurtenis is opgetreden.
 
 * **Inactieve gebeurtenissen**: een inactieve gebeurtenis is de locatie waar u positie noemt, maar u weet niet zeker dat de gebruiker het resultaat ooit zal zien vanwege beslissingen van de client toepassing. Inactieve gebeurtenissen bieden u de mogelijkheid om persoonlijke resultaten te maken en op te slaan. vervolgens besluit u deze later te negeren zonder dat dit van invloed is op het machine learning model.
 
@@ -84,7 +84,7 @@ Personaler is geconfigureerd vanuit het [Azure Portal](https://portal.azure.com)
 
 ### <a name="apprentice-mode-evaluations"></a>Evaluaties van de leerlingen-modus
 
-De leerling-modus biedt de volgende **metrische gegevens**over de evaluatie:
+De leerling-modus biedt de volgende **metrische gegevens** over de evaluatie:
 * **Basis lijn**: gemiddelde beloning: gemiddelde beloningen van de standaard waarde van de toepassing (basis lijn).
 * **Persoonlijkere – gemiddelde beloning**: gemiddelde van het totale aantal beloningen personaler zou mogelijk zijn bereikt.
 * **Gemiddelde algemene compensatie**: verhouding van de prijs van de basis lijn en Personaliteit, genormaliseerd via de meest recente 1000-gebeurtenissen.

@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: wellsi
 ms.openlocfilehash: c590e0972de289a36890a75b220eddbded701ea8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "74815564"
 ---
 # <a name="troubleshoot-the-speech-devices-sdk"></a>Probleem oplossen met de Speech Devices-SDK
@@ -25,11 +25,11 @@ In dit artikel vindt u informatie over het oplossen van problemen die kunnen opt
 
 Als er certificaat fouten optreden bij het gebruik van de spraak service, moet u ervoor zorgen dat uw apparaat de juiste datum en tijd heeft:
 
-1. Ga naar **Settings**. Onder **systeem**selecteert u **datum & tijd**.
+1. Ga naar **Settings**. Onder **systeem** selecteert u **datum & tijd**.
 
     ![Onder instellingen selecteert u datum & tijd](media/speech-devices-sdk/qsg-12.png)
 
-1. Zorg ervoor dat de optie **automatische datum & tijd** is geselecteerd. Onder **tijd zone selecteren**selecteert u de huidige tijd zone.
+1. Zorg ervoor dat de optie **automatische datum & tijd** is geselecteerd. Onder **tijd zone selecteren** selecteert u de huidige tijd zone.
 
     ![Opties voor datum-en tijd zones selecteren](media/speech-devices-sdk/qsg-13.png)
 
@@ -37,4 +37,4 @@ Als er certificaat fouten optreden bij het gebruik van de spraak service, moet u
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [De release opmerkingen bekijken](devices-sdk-release-notes.md)
+* [Releaseopmerkingen doorlezen](devices-sdk-release-notes.md)

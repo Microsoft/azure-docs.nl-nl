@@ -9,12 +9,12 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 03/03/2021
 ms.author: cynthn
-ms.openlocfilehash: 1f7eb3b38b4ae04e81839fce2b14c1a84f3f0204
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.openlocfilehash: 84960e6247edc708bedb899c96ebf7522397269a
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102564591"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104580365"
 ---
 # <a name="install-and-configure-xrdp-to-use-remote-desktop-with-ubuntu"></a>Xrdp installeren en configureren voor het gebruik van Extern bureaublad met Ubuntu
 
@@ -138,7 +138,7 @@ tail -f /var/log/syslog
 
 Andere Linux-distributies zoals Red Hat Enterprise Linux en SUSE kunnen verschillende manieren hebben om services en andere locaties van het logboek bestand om te controleren.
 
-Als er geen antwoord wordt ontvangen in uw extern bureau blad-client en er geen gebeurtenissen in het systeem logboek worden weer gegeven, betekent dit gedrag dat extern bureau blad-verkeer de virtuele machine niet kan bereiken. Controleer de regels voor de netwerk beveiligings groep om ervoor te zorgen dat u een regel hebt voor het toestaan van TCP op poort 3389. Zie problemen [met toepassings connectiviteit oplossen](../troubleshooting/troubleshoot-app-connection.md)voor meer informatie.
+Als er geen antwoord wordt ontvangen in uw extern bureau blad-client en er geen gebeurtenissen in het systeem logboek worden weer gegeven, betekent dit gedrag dat extern bureau blad-verkeer de virtuele machine niet kan bereiken. Controleer de regels voor de netwerk beveiligings groep om ervoor te zorgen dat u een regel hebt voor het toestaan van TCP op poort 3389. Zie problemen [met toepassings connectiviteit oplossen](/troubleshoot/azure/virtual-machines/troubleshoot-app-connection)voor meer informatie.
 
 
 ## <a name="next-steps"></a>Volgende stappen

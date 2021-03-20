@@ -7,10 +7,10 @@ ms.date: 03/27/2018
 ms.author: srrengar
 ms.custom: devx-track-csharp
 ms.openlocfilehash: a36425acf42a469c7f48b2e954bdacfdfcce1b10
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89011477"
 ---
 # <a name="add-logging-to-your-service-fabric-application"></a>Logboekregistratie toevoegen aan uw Service Fabric-toepassing
@@ -126,7 +126,7 @@ Het ASP.NET Core logboek registratie ([micro soft. Extensions. logging NuGet-pak
 
 Sommige providers van derden gebruiken de benadering die wordt beschreven in de voor gaande sectie, waaronder [Serilog](https://serilog.net/), [NLog](https://nlog-project.org/)en [Loggr](https://github.com/imobile3/Loggr.Extensions.Logging). U kunt deze koppelen aan ASP.NET Core logboek registratie of u kunt ze afzonderlijk gebruiken. Serilog heeft een functie die alle berichten verrijkt die vanuit een logboek worden verzonden. Deze functie kan nuttig zijn bij het uitvoeren van de service naam, het type en de partitie-informatie. Ga als volgt te werk om deze mogelijkheid te gebruiken in de ASP.NET Core-infra structuur:
 
-1. Voeg de **Serilog**, **Serilog. Extensions. logging**, **Serilog. Sinks. transcrib**en **Serilog. sinks** toe aan het project. 
+1. Voeg de **Serilog**, **Serilog. Extensions. logging**, **Serilog. Sinks. transcrib** en **Serilog. sinks** toe aan het project. 
 2. Maak een `LoggerConfiguration` en het logboek exemplaar.
 
    ```csharp
@@ -139,7 +139,7 @@ Sommige providers van derden gebruiken de benadering die wordt beschreven in de 
    ServiceRuntime.RegisterServiceAsync("StatelessType", context => new Stateless(context, Log.Logger)).GetAwaiter().GetResult();
    ```
 
-4. In de service-constructor maakt eigenschaps verrijkers voor **ServiceTypeName**, **ServiceName**, **PartitionId**en **InstanceId**.
+4. In de service-constructor maakt eigenschaps verrijkers voor **ServiceTypeName**, **ServiceName**, **PartitionId** en **InstanceId**.
 
    ```csharp
    public Stateless(StatelessServiceContext context, Serilog.ILogger serilog)
@@ -162,7 +162,7 @@ Sommige providers van derden gebruiken de benadering die wordt beschreven in de 
 5. Instrumenteer de code op dezelfde wijze als wanneer u ASP.NET Core zonder Serilog gebruikt.
 
    >[!NOTE]
-   >Het is raadzaam om *don't* de statische `Log.Logger` met het vorige voor beeld niet te gebruiken. Service Fabric kunnen in één proces meerdere exemplaren van hetzelfde service type hosten. Als u de statische gebruikt `Log.Logger` , worden in de laatste schrijver van de eigenschaps verrijkingen waarden weer gegeven voor alle exemplaren die worden uitgevoerd. Dit is een reden waarom de variabele _logger een persoonlijk lidvariabele van de service klasse is. U moet ook de `_logger` beschik bare algemene code maken, die in meerdere services kan worden gebruikt.
+   >Het is raadzaam om  de statische `Log.Logger` met het vorige voor beeld niet te gebruiken. Service Fabric kunnen in één proces meerdere exemplaren van hetzelfde service type hosten. Als u de statische gebruikt `Log.Logger` , worden in de laatste schrijver van de eigenschaps verrijkingen waarden weer gegeven voor alle exemplaren die worden uitgevoerd. Dit is een reden waarom de variabele _logger een persoonlijk lidvariabele van de service klasse is. U moet ook de `_logger` beschik bare algemene code maken, die in meerdere services kan worden gebruikt.
 
 ## <a name="next-steps"></a>Volgende stappen
 

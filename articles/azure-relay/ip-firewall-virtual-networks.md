@@ -4,10 +4,10 @@ description: In dit artikel wordt beschreven hoe u firewall regels gebruikt om v
 ms.topic: article
 ms.date: 06/23/2020
 ms.openlocfilehash: ad8feed5df49dcc4503226a5fae50195bb9d48aa
-ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91999499"
 ---
 # <a name="configure-ip-firewall-for-an-azure-relay-namespace"></a>IP-Firewall configureren voor een Azure Relay naam ruimte
@@ -32,7 +32,7 @@ In deze sectie wordt beschreven hoe u de Azure Portal kunt gebruiken om IP-firew
     ![Scherm afbeelding toont de pagina netwerken met de optie alle netwerken geselecteerd.](./media/ip-firewall/all-networks-selected.png)
 1. Selecteer de optie **geselecteerde netwerken** om de toegang tot specifieke netwerken en IP-adressen te beperken. Voer de volgende stappen uit in de sectie **firewall** :
     1. Selecteer **de optie uw IP-adres voor client toevoegen** om uw huidige client-IP de toegang tot de naam ruimte te geven. 
-    2. Voer bij **adres bereik**een specifiek IPv4-adres of een bereik van IPv4-adres in CIDR-notatie in. 
+    2. Voer bij **adres bereik** een specifiek IPv4-adres of een bereik van IPv4-adres in CIDR-notatie in. 
 
         ![Optie Firewall: alle netwerken geselecteerd](./media/ip-firewall/selected-networks-trusted-access-disabled.png)
 3. Selecteer **Opslaan** op de werk balk om de instellingen op te slaan. Wacht een paar minuten totdat de bevestiging op de portal meldingen wordt weer gegeven.
@@ -51,7 +51,7 @@ De sjabloon heeft één para meter: **ipMask**, een enkel IPv4-adres of een blok
 > ```json
 > "defaultAction": "Allow"
 > ```
-> in op
+> tot
 > ```json
 > "defaultAction": "Deny"
 > ```

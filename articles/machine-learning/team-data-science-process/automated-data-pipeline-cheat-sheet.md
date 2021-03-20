@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=garyericson, previous-ms.author=garye
 ms.openlocfilehash: f60b62faa36352ab1221b23332fca695f32a3d74
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91250637"
 ---
 # <a name="cheat-sheet-for-an-automated-data-pipeline-for-azure-machine-learning-predictions"></a>Overzichtskaart voor een geautomatiseerde pijplijn voor voorspellingen van Azure Machine Learning
@@ -27,7 +27,7 @@ In dit Cheat-venster wordt stapsgewijs uitgelegd wat u moet doen en vindt u kopp
 ## <a name="download-the-machine-learning-automated-data-pipeline-cheat-sheet"></a>Machine Learning het Cheat-werk blad voor automatische gegevens pijplijn downloaden
 Nadat u het Cheat-venster hebt gedownload, kunt u het afdrukken in tabloid formaat (11 x 17 inch).
 
-Down load het Cheat-blad hier: ** [Microsoft Azure machine learning model voor automatische gegevens pijplijn Cheat](https://download.microsoft.com/download/C/C/7/CC726F8B-2E6F-4C20-9B6F-AFBEE8253023/microsoft-machine-learning-operationalization-cheat-sheet_v1.pdf)**
+Down load het Cheat-blad hier: **[Microsoft Azure machine learning model voor automatische gegevens pijplijn Cheat](https://download.microsoft.com/download/C/C/7/CC726F8B-2E6F-4C20-9B6F-AFBEE8253023/microsoft-machine-learning-operationalization-cheat-sheet_v1.pdf)**
 
 ![Overzicht van de mogelijkheden van Microsoft Azure Machine Learning Studio (klassiek)][op-cheat-sheet]
 

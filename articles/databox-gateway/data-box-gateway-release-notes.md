@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 11/11/2020
 ms.author: alkohli
 ms.openlocfilehash: 2984f7990b9570c5ec57633de7f7e50162fb6f46
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96582319"
 ---
 # <a name="azure-data-box-edgeazure-data-box-gateway-general-availability-release-notes"></a>Opmerkingen bij de release van Azure Data Box Edge/Azure Data Box Gateway algemene Beschik baarheid
@@ -29,7 +29,7 @@ De GA-release komt overeen met de software versies:
 - **Data Box Edge 1903 (1.5.814.447)**
 
 
-## <a name="whats-new"></a>Nieuwe functies
+## <a name="whats-new"></a>Nieuw
 
 - **Nieuwe installatie kopieën van virtuele schijven** : nieuwe VHDX en VMDK zijn nu beschikbaar in de Azure Portal. Down load deze installatie kopieën om nieuwe Data Box Gateway GA-apparaten in te richten, te configureren en te implementeren. De Data Box Gateway-apparaten die zijn gemaakt in de eerdere Preview-versies, kunnen niet worden bijgewerkt naar deze versie. Ga voor meer informatie naar [Voorbereiding voor implementatie van Azure Data Box Gateway](data-box-gateway-deploy-prep.md).
 - **Ondersteuning voor NFS** : NFS-ondersteuning is momenteel beschikbaar in de preview-versie van v 3.0 en v 4.1-clients die toegang hebben tot de Data Box Edge en data Box gateway apparaten.

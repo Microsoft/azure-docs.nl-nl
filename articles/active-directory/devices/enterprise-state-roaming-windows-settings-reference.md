@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: na
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6048ee9237640799b7bec37083e607fc74ffb8e4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85252964"
 ---
 # <a name="windows-10-roaming-settings-reference"></a>Naslaginformatie over roaminginstellingen voor Windows 10
@@ -26,7 +26,7 @@ Hier volgt een lijst met de instellingen die worden geroamd of waarvan een back-
 
 Raadpleeg de volgende tabel voor een overzicht van de apparaten en account typen die worden ondersteund door het Framework Sync, backup en Restore in Windows 10.
 
-| Account type en-bewerking | Bureaublad | Mobiele telefoon |
+| Account type en-bewerking | Bureaublad | Mobiel |
 | --- | --- | --- |
 | Azure Active Directory: synchroniseren |Ja |Nee |
 | Azure Active Directory: back-up/herstellen |Nee |Nee |
@@ -69,13 +69,13 @@ In de volgende tabel verwijzen andere vermeldingen in de kolom instellingen groe
 Interne vermeldingen in de kolom instellingen groep verwijzen naar instellingen en apps die alleen kunnen worden uitgeschakeld voor synchronisatie binnen de app zelf of door synchronisatie uit te scha kelen voor het hele apparaat met behulp van Mobile Device Management (MDM) of groepsbeleid instellingen.
 Instellingen die niet worden geroamd of gesynchroniseerd, behoren niet tot een groep.
 
-| Instellingen | Bureaublad | Mobiele telefoon | Groep |
+| Instellingen | Bureaublad | Mobiel | Groep |
 | --- | --- | --- | --- |
 | **Accounts**: account afbeelding |synchroniseren |X |Thema |
 | **Accounts**: andere account instellingen |X |X | |
 | **Geavanceerde mobiele breedband**: netwerk naam voor delen van Internet verbinding (automatische detectie van mobiele Wi-Fi HOTS pots via Bluetooth inschakelen) |X |X |Wachtwoorden |
 | **App-gegevens**: individuele apps kunnen gegevens synchroniseren |back-up synchroniseren |back-up synchroniseren |binnen |
-| **App-lijst**: lijst met geïnstalleerde apps |X |Back-up |Overige |
+| **App-lijst**: lijst met geïnstalleerde apps |X |Back-up |Anders |
 | **Bluetooth**: alle Bluetooth-instellingen |X |X | |
 | **Opdracht prompt**: instellingen voor opdracht prompt "defaults" |synchroniseren |X |binnen |
 | **Referenties**: referentie kluis |synchroniseren |synchroniseren |wachtwoord |

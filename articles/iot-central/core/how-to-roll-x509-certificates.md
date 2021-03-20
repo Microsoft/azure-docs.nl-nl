@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.service: iot-central
 services: iot-central
 ms.openlocfilehash: a9e35c7d4d64279c65971dd512bcd2107dad6594
-ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92000060"
 ---
 # <a name="how-to-roll-x509-device-certificates-in-iot-central-application"></a>Hoe kan ik X. 509-certificaat voor apparaten in IoT Central toepassing
@@ -31,7 +31,7 @@ Als u een groeps registratie wilt bijwerken in reactie op een schending van de b
 
 1. Navigeer naar **beheer**  in het linkerdeel venster en selecteer **apparaat-verbinding**.
 
-2. Selecteer **registratie groepen**en selecteer de groeps naam in de lijst.
+2. Selecteer **registratie groepen** en selecteer de groeps naam in de lijst.
 
 3. Selecteer voor certificaat update de optie **primair beheren** of **secundair beheren**.
 
@@ -45,7 +45,7 @@ Als u certificaten doorloopt voor het afhandelen van certificaat verloop, gebrui
 
 1. Navigeer naar **beheer**  in het linkerdeel venster en selecteer **apparaat-verbinding**.
 
-2. Selecteer **registratie groepen**en selecteer de groeps naam in de lijst.
+2. Selecteer **registratie groepen** en selecteer de groeps naam in de lijst.
 
 3. Selecteer voor certificaat update de optie **primair beheren**.
 
@@ -57,9 +57,9 @@ Als u certificaten doorloopt voor het afhandelen van certificaat verloop, gebrui
 
 Als u certificaten doorgeeft als reactie op een schending van de beveiliging, gebruikt u de volgende aanpak om het huidige certificaat direct bij te werken:
 
-1. Selecteer **apparaten**en selecteer het apparaat.
+1. Selecteer **apparaten** en selecteer het apparaat.
 
-2. Selecteer **verbinding maken**en selecteer methode verbinden als **afzonderlijke registratie**
+2. Selecteer **verbinding maken** en selecteer methode verbinden als **afzonderlijke registratie**
 
 3. Selecteer **certificaten (X. 509)** als mechanisme.
 
@@ -75,9 +75,9 @@ Als u certificaten laat verlopen voor het afhandelen van certificaat verloopt, m
 
 Wanneer het secundaire certificaat bijna is verlopen en moet worden gedistribueerd, kunt u met de primaire configuratie draaien. Als u de primaire en secundaire certificaten op deze manier draait, vermindert u de downtime voor apparaten die worden ingericht.
 
-1. Selecteer **apparaten**en selecteer het apparaat.
+1. Selecteer **apparaten** en selecteer het apparaat.
 
-2. Selecteer **verbinding maken**en selecteer methode verbinden als **afzonderlijke registratie**
+2. Selecteer **verbinding maken** en selecteer methode verbinden als **afzonderlijke registratie**
 
 3. Selecteer **certificaten (X. 509)** als mechanisme.
 

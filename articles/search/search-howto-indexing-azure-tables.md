@@ -10,10 +10,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 07/11/2020
 ms.openlocfilehash: 2c67cd4d071660da2ca5714623695ca434329263
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91275180"
 ---
 # <a name="how-to-index-tables-from-azure-table-storage-with-azure-cognitive-search"></a>Tabellen indexeren vanuit Azure-tabel opslag met Azure Cognitive Search
@@ -70,7 +70,7 @@ Zie [Create Data Source](/rest/api/searchservice/create-data-source)voor meer in
 U kunt de referenties voor de tabel op een van de volgende manieren opgeven: 
 
 - **Beheerde identiteits Connection String**: voor `ResourceId=/subscriptions/<your subscription ID>/resourceGroups/<your resource group name>/providers/Microsoft.Storage/storageAccounts/<your storage account name>/;` Deze Connection String is geen account sleutel vereist, maar u moet de instructies voor het [instellen van een verbinding met een Azure Storage-account volgen met behulp van een beheerde identiteit](search-howto-managed-identities-storage.md).
-- **Volledig Access Storage-account Connection String**: `DefaultEndpointsProtocol=https;AccountName=<your storage account>;AccountKey=<your account key>` u kunt de Connection String van de Azure Portal ophalen door naar de **Blade**instellingen sleutels voor het opslag account te gaan  >  **Settings**  >  **Keys** (voor klassieke opslag accounts) of **instellingen**  >  **toegangs sleutels** (voor Azure Resource Manager Storage-accounts).
+- **Volledig Access Storage-account Connection String**: `DefaultEndpointsProtocol=https;AccountName=<your storage account>;AccountKey=<your account key>` u kunt de Connection String van de Azure Portal ophalen door naar de **Blade** instellingen sleutels voor het opslag account te gaan  >    >   (voor klassieke opslag accounts) of **instellingen**  >  **toegangs sleutels** (voor Azure Resource Manager Storage-accounts).
 - **Opslag account gedeelde toegangs handtekening Connection String**: `TableEndpoint=https://<your account>.table.core.windows.net/;SharedAccessSignature=?sv=2016-05-31&sig=<the signature>&spr=https&se=<the validity end time>&srt=co&ss=t&sp=rl` de Shared Access-hand tekening moet de lijst en lees machtigingen hebben voor containers (tabellen in dit geval) en objecten (tabel rijen).
 -  **Gedeelde toegangs handtekening** `ContainerSharedAccessUri=https://<your storage account>.table.core.windows.net/<table name>?tn=<table name>&sv=2016-05-31&sig=<the signature>&se=<the validity end time>&sp=r` van de tabel: de Shared Access-hand tekening moet de machtiging query (lezen) hebben voor de tabel.
 

@@ -4,10 +4,10 @@ description: Meer informatie over het maken van een sjabloon-VM met meerdere vir
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 5ae50bd11ab9a8adb769920f6d473a2ff2ce9342
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91251492"
 ---
 # <a name="enable-nested-virtualization-on-a-template-virtual-machine-in-azure-lab-services-using-a-script"></a>Geneste virtualisatie inschakelen op een virtuele machine van een sjabloon in Azure Lab Services met behulp van een script
@@ -24,7 +24,7 @@ De stappen in dit artikel zijn gericht op het instellen van geneste virtualisati
 1. Als u Internet Explorer gebruikt, moet u mogelijk toevoegen `https://github.com` aan de lijst met vertrouwde websites.
     1. Open Internet Explorer.
     1. Selecteer het tandwiel pictogram en kies **Internet opties**.  
-    1. Wanneer het dialoog venster **Internet opties** wordt weer gegeven, selecteert u **beveiliging**, selecteer **vertrouwde sites**en klikt u op de knop **sites** .
+    1. Wanneer het dialoog venster **Internet opties** wordt weer gegeven, selecteert u **beveiliging**, selecteer **vertrouwde sites** en klikt u op de knop **sites** .
     1. Wanneer het dialoog venster **vertrouwde sites** wordt weer gegeven, voegt `https://github.com` u toe aan de lijst met vertrouwde websites en selecteert u **sluiten**.
 
         ![Vertrouwde sites](./media/how-to-enable-nested-virtualization-template-vm-using-script/trusted-sites-dialog.png)

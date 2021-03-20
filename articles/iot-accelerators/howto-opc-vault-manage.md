@@ -9,10 +9,10 @@ ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
 ms.openlocfilehash: 0829d4b3fca068ddb0db2df53dd635ab7ad80bed
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91281912"
 ---
 # <a name="manage-the-opc-vault-certificate-service"></a>De OPC-kluis certificaat service beheren
@@ -31,7 +31,7 @@ Nadat de OPC-kluis is geïmplementeerd, moet u het basis-CA-certificaat maken. Z
 1. Open uw certificaat service op `https://myResourceGroup-app.azurewebsites.net` en meld u aan.
 2. Ga naar **certificaat groepen**.
 3. Er wordt één standaard certificaat groep vermeld. Selecteer **Bewerken**.
-4. In **Details van certificaat groep bewerken**kunt u de onderwerpnaam en de levens duur van uw CA-en toepassings certificaten wijzigen. Het onderwerp en de levens duur mogen slechts eenmaal worden ingesteld voordat het eerste CA-certificaat wordt uitgegeven. Wijzigingen in de levens duur tijdens bewerkingen kunnen leiden tot inconsistente levens duur van uitgegeven certificaten en Crl's.
+4. In **Details van certificaat groep bewerken** kunt u de onderwerpnaam en de levens duur van uw CA-en toepassings certificaten wijzigen. Het onderwerp en de levens duur mogen slechts eenmaal worden ingesteld voordat het eerste CA-certificaat wordt uitgegeven. Wijzigingen in de levens duur tijdens bewerkingen kunnen leiden tot inconsistente levens duur van uitgegeven certificaten en Crl's.
 5. Voer een geldig onderwerp in (bijvoorbeeld `CN=My CA Root, O=MyCompany, OU=MyDepartment` ).<br>
    > [!IMPORTANT]
    > Als u het onderwerp wijzigt, moet u het certificaat van de verlener vernieuwen of kunnen toepassings certificaten niet worden ondertekend door de service. Het onderwerp van de configuratie wordt gecontroleerd op basis van het onderwerp van het actieve certificaat van de certificerings instantie. Als de onderwerpen niet overeenkomen, wordt het ondertekenen van certificaten geweigerd.
@@ -39,7 +39,7 @@ Nadat de OPC-kluis is geïmplementeerd, moet u het basis-CA-certificaat maken. Z
 7. Als er op dit moment een ' verboden ' fout optreedt, zijn uw gebruikers referenties niet gemachtigd om een nieuw basis certificaat te wijzigen of te maken. De gebruiker die de service heeft geïmplementeerd, heeft standaard de rol Beheerder en ondertekend met de service. Andere gebruikers moeten worden toegevoegd aan de goed keurder, schrijver of beheerder rollen, zoals van toepassing is in de registratie van de Azure Active Directory (Azure AD).
 8. Selecteer **Details**. Hiermee wordt de bijgewerkte informatie weer gegeven.
 9. Selecteer **CA-certificaat vernieuwen** om het eerste certificaat van de certificerings instantie te verlenen, of om het certificaat van de verlener te vernieuwen. Selecteer vervolgens **OK**.
-10. Na een paar seconden worden de **certificaat gegevens**weer geven. Als u het meest recente CA-certificaat en de CRL wilt downloaden voor distributie naar uw OPC UA-toepassingen, selecteert u **verlener** of **CRL**.
+10. Na een paar seconden worden de **certificaat gegevens** weer geven. Als u het meest recente CA-certificaat en de CRL wilt downloaden voor distributie naar uw OPC UA-toepassingen, selecteert u **verlener** of **CRL**.
 
 De OPC UA Certificate Management-service is nu gereed voor het uitgeven van certificaten voor OPC UA-toepassingen.
 
@@ -58,7 +58,7 @@ In de volgende werk stroom worden alle certificaat aanvragen in de verwijderde s
 2. Ga naar de pagina **certificaat groepen** .
 3. Selecteer **Details**. Hier worden het huidige certificaat en de CRL-informatie weer gegeven.
 4. Selecteer **Update CRL-intrekkings lijst (CRL)** om een bijgewerkte CRL uit te geven voor alle actieve certificaat verlener in de OPC-kluis opslag.
-5. Na een paar seconden worden de **certificaat gegevens**weer geven. Als u het meest recente CA-certificaat en de CRL wilt downloaden voor distributie naar uw OPC UA-toepassingen, selecteert u **verlener** of **CRL**.
+5. Na een paar seconden worden de **certificaat gegevens** weer geven. Als u het meest recente CA-certificaat en de CRL wilt downloaden voor distributie naar uw OPC UA-toepassingen, selecteert u **verlener** of **CRL**.
 
 ## <a name="manage-user-roles"></a>Gebruikersrollen beheren
 
@@ -101,11 +101,11 @@ De service-identiteit heeft standaard slechts beperkte machtigingen voor toegang
 4. Ga naar **toegangs beleid**.
 5. Selecteer **Nieuw toevoegen**.
 6. Sla de sjabloon over. Er is geen sjabloon die voldoet aan de vereisten.
-7. Kies **Principal selecteren**en selecteer de gebruiker die u wilt toevoegen, of als u een nieuwe gebruiker wilt uitnodigen voor de Tenant.
-8. Selecteer de volgende **belang rijke machtigingen**: **ophalen**, **weer geven**en **ondertekenen**.
-9. Selecteer de volgende **geheime machtigingen**: **ophalen**, **weer geven**, **instellen**en **verwijderen**.
+7. Kies **Principal selecteren** en selecteer de gebruiker die u wilt toevoegen, of als u een nieuwe gebruiker wilt uitnodigen voor de Tenant.
+8. Selecteer de volgende **belang rijke machtigingen**: **ophalen**, **weer geven** en **ondertekenen**.
+9. Selecteer de volgende **geheime machtigingen**: **ophalen**, **weer geven**, **instellen** en **verwijderen**.
 10. Selecteer de volgende **machtigingen voor certificaten**: **ophalen** en **weer geven**.
-11. Selecteer **OK**en selecteer **Opslaan**.
+11. Selecteer **OK** en selecteer **Opslaan**.
 
 #### <a name="for-an-administrator-role-the-following-permissions-must-be-added-to-key-vault"></a>Voor een beheerdersrol moeten de volgende machtigingen worden toegevoegd aan Key Vault
 
@@ -115,11 +115,11 @@ De service-identiteit heeft standaard slechts beperkte machtigingen voor toegang
 4. Ga naar **toegangs beleid**.
 5. Selecteer **Nieuw toevoegen**.
 6. Sla de sjabloon over. Er is geen sjabloon die voldoet aan de vereisten.
-7. Kies **Principal selecteren**en selecteer de gebruiker die u wilt toevoegen, of als u een nieuwe gebruiker wilt uitnodigen voor de Tenant.
-8. Selecteer de volgende **belang rijke machtigingen**: **ophalen**, **weer geven**en **ondertekenen**.
-9. Selecteer de volgende **geheime machtigingen**: **ophalen**, **weer geven**, **instellen**en **verwijderen**.
-10. Selecteer de volgende **machtigingen voor certificaten**: **ophalen**, **weer geven**, **bijwerken**, **maken**en **importeren**.
-11. Selecteer **OK**en selecteer **Opslaan**.
+7. Kies **Principal selecteren** en selecteer de gebruiker die u wilt toevoegen, of als u een nieuwe gebruiker wilt uitnodigen voor de Tenant.
+8. Selecteer de volgende **belang rijke machtigingen**: **ophalen**, **weer geven** en **ondertekenen**.
+9. Selecteer de volgende **geheime machtigingen**: **ophalen**, **weer geven**, **instellen** en **verwijderen**.
+10. Selecteer de volgende **machtigingen voor certificaten**: **ophalen**, **weer geven**, **bijwerken**, **maken** en **importeren**.
+11. Selecteer **OK** en selecteer **Opslaan**.
 
 ### <a name="remove-user-access-policy-from-azure-key-vault"></a>Gebruikers toegangs beleid verwijderen uit Azure Key Vault
 

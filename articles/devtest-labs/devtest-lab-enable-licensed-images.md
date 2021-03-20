@@ -4,10 +4,10 @@ description: Meer informatie over het inschakelen van een gelicentieerde install
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: e2b6e495be2257548782143517f5a970b424860c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91276353"
 ---
 # <a name="enable-a-licensed-image-in-your-lab-in-azure-devtest-labs"></a>Een gelicentieerde installatie kopie inschakelen in uw Lab in Azure DevTest Labs
@@ -19,13 +19,13 @@ De eerste stap om gebruikers toe te staan Vm's te maken op basis van een gelicen
 
 1. Meld u aan bij [Azure Portal](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 
-1. Selecteer **alle services**en selecteer vervolgens **DevTest Labs** in de lijst.
+1. Selecteer **alle services** en selecteer vervolgens **DevTest Labs** in de lijst.
 
 1. Selecteer in de lijst met Labs het gewenste Lab.  
 
-1. Selecteer in het linkerdeel venster onder **instellingen**de optie **configuratie en beleid**.
+1. Selecteer in het linkerdeel venster onder **instellingen** de optie **configuratie en beleid**.
 
-1. Selecteer in het linkerdeel venster onder basis van **virtuele machine**de optie **Marketplace-installatie kopieën**. 
+1. Selecteer in het linkerdeel venster onder basis van **virtuele machine** de optie **Marketplace-installatie kopieën**. 
 
     ![Menu-item Marketplace-installatie kopieën](./media/devtest-lab-create-custom-image-from-licensed-image/devtest-lab-marketplace-images.png)
 
@@ -45,7 +45,7 @@ U kunt de programmatische implementatie voor een gelicentieerde installatie kopi
 
 1. Ga in het [Azure Portal](https://go.microsoft.com/fwlink/p/?LinkID=525040)naar de lijst met **installatie kopieën voor Marketplace**.
 
-1. Identificeer een gelicentieerde installatie kopie waarvoor gebruikers toegang mogen hebben, maar waarvan de voor waarden niet zijn geaccepteerd. U ziet bijvoorbeeld een Data Science Virtual Machine waarin de status van de **geaccepteerde voor waarden** of de **vereiste voor waarden**worden weer gegeven.
+1. Identificeer een gelicentieerde installatie kopie waarvoor gebruikers toegang mogen hebben, maar waarvan de voor waarden niet zijn geaccepteerd. U ziet bijvoorbeeld een Data Science Virtual Machine waarin de status van de **geaccepteerde voor waarden** of de **vereiste voor waarden** worden weer gegeven.
 
     ![Scherm opname van Data Science Virtual Machine afbeeldingen met de status van de aanbieding geaccepteerd en voor waarden controleren vereist](./media/devtest-lab-create-custom-image-from-licensed-image/devtest-lab-licensed-images.png)
 
@@ -56,7 +56,7 @@ U kunt de programmatische implementatie voor een gelicentieerde installatie kopi
 
 1. Selecteer in de kolom **aanbiedings status** voor de installatie kopie de optie voor het controleren van de **voor waarden**.
 
-1. Selecteer **inschakelen**in het venster programmatische implementatie configureren.
+1. Selecteer **inschakelen** in het venster programmatische implementatie configureren.
 
     ![Het venster programmatische implementatie configureren](./media/devtest-lab-create-custom-image-from-licensed-image/devtest-lab-enable-programmatic-deployment.png)
 

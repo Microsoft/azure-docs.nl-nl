@@ -20,15 +20,15 @@ translation.priority.mt:
 - zh-cn
 - zh-tw
 ms.openlocfilehash: d04311fce81d147a0830918aee1d4a2a9c0808d4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88923395"
 ---
 # <a name="odata-language-overview-for-filter-orderby-and-select-in-azure-cognitive-search"></a>Overzicht van OData-taal voor `$filter` , `$orderby` en `$select` in azure Cognitive Search
 
-Azure Cognitive Search ondersteunt een subset van de syntaxis van de OData-expressie voor **$filter**, **$OrderBy**en **$Select** expressies. Filter expressies worden geëvalueerd tijdens het parseren van query's, het beperken van zoek opdrachten naar specifieke velden of het toevoegen van match criteria die worden gebruikt tijdens index scans. Order-by-expressies worden toegepast als een verwerkings stap van een resultaatset om de geretourneerde documenten te sorteren. Expressies selecteren bepalen welke document velden worden opgenomen in de resultatenset. De syntaxis van deze expressies verschilt van de [eenvoudige](query-simple-syntax.md) of [volledige](query-lucene-syntax.md) query syntaxis die wordt gebruikt in de **Zoek** parameter, hoewel er wel een overlap is in de syntaxis voor verwijzende velden.
+Azure Cognitive Search ondersteunt een subset van de syntaxis van de OData-expressie voor **$filter**, **$OrderBy** en **$Select** expressies. Filter expressies worden geëvalueerd tijdens het parseren van query's, het beperken van zoek opdrachten naar specifieke velden of het toevoegen van match criteria die worden gebruikt tijdens index scans. Order-by-expressies worden toegepast als een verwerkings stap van een resultaatset om de geretourneerde documenten te sorteren. Expressies selecteren bepalen welke document velden worden opgenomen in de resultatenset. De syntaxis van deze expressies verschilt van de [eenvoudige](query-simple-syntax.md) of [volledige](query-lucene-syntax.md) query syntaxis die wordt gebruikt in de **Zoek** parameter, hoewel er wel een overlap is in de syntaxis voor verwijzende velden.
 
 Dit artikel bevat een overzicht van de taal van de OData-expressie die wordt gebruikt in filters, order-by en expressies selecteren. De taal wordt ' bottom-up ' weer gegeven, te beginnen met de meest elementaire elementen en op basis hiervan te bouwen. De syntaxis op het hoogste niveau voor elke para meter wordt beschreven in een afzonderlijk artikel:
 
@@ -39,7 +39,7 @@ Dit artikel bevat een overzicht van de taal van de OData-expressie die wordt geb
 OData-expressies variëren van eenvoudig tot zeer complex, maar ze hebben allemaal algemene elementen. De meest elementaire onderdelen van een OData-expressie in azure Cognitive Search zijn:
 
 - **Veld paden**, die verwijzen naar specifieke velden van uw index.
-- **Constanten**zijn letterlijke waarden van een bepaald gegevens type.
+- **Constanten** zijn letterlijke waarden van een bepaald gegevens type.
 
 > [!NOTE]
 > De terminologie in azure Cognitive Search wijkt op een paar manieren af van de [OData-standaard](https://www.odata.org/documentation/) . Het aanroepen van een **veld** in azure Cognitive Search wordt een **eigenschap** genoemd in OData en op dezelfde manier als het **pad naar** een **eigenschap**. Een **index** met **documenten** in azure Cognitive Search wordt in OData meer algemeen aangeduid als een **entiteitset** met **entiteiten**. De terminologie van Azure Cognitive Search wordt overal in deze referentie gebruikt.
@@ -79,7 +79,7 @@ Voor beelden van veld paden worden weer gegeven in de volgende tabel:
 | `room/Type` | Verwijst naar het `Type` subveld van de `room` variabele Range, bijvoorbeeld in de filter expressie `Rooms/any(room: room/Type eq 'deluxe')` |
 | `store/Address/Country` | Verwijst naar het `Country` subveld van het `Address` subveld van de `store` bereik variabele, bijvoorbeeld in de filter expressie `Stores/any(store: store/Address/Country eq 'Canada')` |
 
-De betekenis van een pad naar een veld verschilt, afhankelijk van de context. In filters verwijst een veld pad naar de waarde van *één exemplaar* van een veld in het huidige document. In andere contexten, zoals **$OrderBy**, **$Select**of in een [Zoek opdracht in de volledige lucene-syntaxis](query-lucene-syntax.md#bkmk_fields)verwijst een pad naar het veld zelf. Dit verschil heeft een aantal gevolgen voor de manier waarop u veld paden in filters gebruikt.
+De betekenis van een pad naar een veld verschilt, afhankelijk van de context. In filters verwijst een veld pad naar de waarde van *één exemplaar* van een veld in het huidige document. In andere contexten, zoals **$OrderBy**, **$Select** of in een [Zoek opdracht in de volledige lucene-syntaxis](query-lucene-syntax.md#bkmk_fields)verwijst een pad naar het veld zelf. Dit verschil heeft een aantal gevolgen voor de manier waarop u veld paden in filters gebruikt.
 
 Overweeg het pad naar het veld `Address/City` . In een filter verwijst dit naar één plaats voor het huidige document, zoals ' San Francisco '. Verwijst daarentegen `Rooms/Type` naar het `Type` subveld voor veel kamers (zoals ' standaard ' voor de eerste kamer ' Deluxe ' voor de tweede kamer, enzovoort). Omdat `Rooms/Type` niet naar *één exemplaar* van het subveld verwijst `Type` , kan het niet rechtstreeks worden gebruikt in een filter. In plaats daarvan gebruikt u een [lambda-expressie](search-query-odata-collection-operators.md) met een bereik variabele, als u wilt filteren op room-type:
 
@@ -211,7 +211,7 @@ Veld paden en constanten vormen het meest eenvoudige deel van een OData-expressi
 
 In de meeste gevallen hebt u echter complexere expressies nodig die naar meer dan een veld en constante verwijzen. Deze expressies zijn op verschillende manieren gebouwd, afhankelijk van de para meter.
 
-In de volgende EBNF ([Extended Backus-Naur Form](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) wordt de grammatica voor de para meters **$filter**, **$OrderBy**en **$Select** gedefinieerd. Deze zijn gebaseerd op eenvoudige expressies die verwijzen naar veld paden en constanten:
+In de volgende EBNF ([Extended Backus-Naur Form](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) wordt de grammatica voor de para meters **$filter**, **$OrderBy** en **$Select** gedefinieerd. Deze zijn gebaseerd op eenvoudige expressies die verwijzen naar veld paden en constanten:
 
 <!-- Upload this EBNF using https://bottlecaps.de/rr/ui to create a downloadable railroad diagram. -->
 
@@ -233,7 +233,7 @@ Er is ook een interactief syntaxis diagram beschikbaar:
 
 De para meters **$OrderBy** en **$Select** zijn zowel door komma's gescheiden lijsten met eenvoudigere expressies. De para meter **$filter** is een booleaanse expressie die bestaat uit een eenvoudiger subexpressie. Deze subexpressies worden gecombineerd met behulp van logische Opera tors zoals [ `and` ,, `or` en `not` ](search-query-odata-logical-operators.md), vergelijkings operatoren zoals [ `eq` ,, `lt` `gt` ,](search-query-odata-comparison-operators.md)enzovoort, en verzamelings operators, zoals [ `any` en `all` ](search-query-odata-collection-operators.md).
 
-De para meters **$filter**, **$OrderBy**en **$Select** worden uitgebreid beschreven in de volgende artikelen:
+De para meters **$filter**, **$OrderBy** en **$Select** worden uitgebreid beschreven in de volgende artikelen:
 
 - [OData-$filter syntaxis in azure Cognitive Search](search-query-odata-filter.md)
 - [OData-$orderby syntaxis in azure Cognitive Search](search-query-odata-orderby.md)

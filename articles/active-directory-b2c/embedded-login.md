@@ -9,14 +9,15 @@ ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
 ms.date: 03/16/2021
+ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 9e248c10c15ba0318c6b23fcbf88be04dd9896a2
-ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
+ms.openlocfilehash: 1255c4962de1fce19efa9c0b0e1d28fc348463ef
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103573061"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104580144"
 ---
 # <a name="embedded-sign-in-experience"></a>Inge sloten aanmeldings ervaring
 
@@ -35,7 +36,7 @@ Houd bij het gebruik van iframe rekening met het volgende:
 - Inge sloten aanmelding ondersteunt alleen lokale accounts. De meeste leveranciers van sociale identiteiten (bijvoorbeeld Google en Facebook) blok keren dat hun aanmeldings pagina's worden weer gegeven in inline frames.
 - Omdat Azure AD B2C sessie cookies binnen een IFRAME worden beschouwd als cookies van derden, blok keren of wissen van bepaalde browsers (bijvoorbeeld Safari of Chrome in Incognito-modus), worden deze cookies geblokkeerd, wat een ongewenste gebruikers ervaring oplevert. U kunt dit probleem voor komen door ervoor te zorgen dat de domein naam van uw toepassing en uw Azure AD B2C domein *dezelfde oorsprong* hebben. Als u dezelfde oorsprong wilt gebruiken, [schakelt u aangepaste domeinen](custom-domain.md) voor Azure AD B2C Tenant in en configureert u uw web-app met dezelfde oorsprong. Een toepassing die wordt gehost op https://app.contoso.com heeft bijvoorbeeld dezelfde oorsprong als Azure AD B2C uitgevoerd op https://login.contoso.com .
 
-## <a name="perquisites"></a>Vereisten
+## <a name="prerequisites"></a>Vereisten
 
 * Voer de stappen uit in het [Active Directory B2C aan de slag met aangepaste beleids regels](custom-policy-get-started.md).
 * [Schakel aangepaste domeinen in](custom-domain.md) voor uw beleid.
@@ -87,7 +88,7 @@ div.api_container{
 
 In sommige gevallen wilt u mogelijk op de hoogte brengen van de Azure AD B2C pagina die momenteel wordt weer gegeven. Wanneer een gebruiker bijvoorbeeld de registratie optie selecteert, wilt u mogelijk dat de toepassing reageert door de koppelingen te verbergen om u aan te melden met een sociaal account of de iframe-grootte aan te passen.
 
-Om uw toepassing op de hoogte te stellen van de huidige Azure AD B2C pagina, [schakelt u uw beleid in voor Java script](javascript-samples.md)en gebruikt u HTML5 post-berichten. Met de volgende Java script-code wordt een post-bericht verzonden naar de app met `signUp` :
+Om uw toepassing op de hoogte te stellen van de huidige Azure AD B2C pagina, [schakelt u uw beleid in voor Java script](./javascript-and-page-layout.md)en gebruikt u HTML5 post-berichten. Met de volgende Java script-code wordt een post-bericht verzonden naar de app met `signUp` :
 
 ```javascript
 window.parent.postMessage("signUp", '*');
@@ -155,5 +156,5 @@ Raadpleeg de volgende verwante artikelen:
 
 - [Aanpassing van de gebruikersinterface](customize-ui.md)
 - Verwijzing naar [RelyingParty](relyingparty.md) -element
-- [Uw beleid voor Java script inschakelen](javascript-samples.md)
+- [Uw beleid voor Java script inschakelen](./javascript-and-page-layout.md)
 - [Codevoorbeelden](code-samples.md)

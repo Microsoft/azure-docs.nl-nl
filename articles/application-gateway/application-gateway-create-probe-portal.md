@@ -9,16 +9,16 @@ ms.topic: how-to
 ms.date: 07/09/2020
 ms.author: victorh
 ms.openlocfilehash: 5d2760415e4f4ef3b181f2fb69802659fec3ef66
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95975952"
 ---
 # <a name="create-a-custom-probe-for-application-gateway-by-using-the-portal"></a>Een aangepaste test maken voor Application Gateway met behulp van de portal
 
 > [!div class="op_single_selector"]
-> * [Azure Portal](application-gateway-create-probe-portal.md)
+> * [Azure-portal](application-gateway-create-probe-portal.md)
 > * [Azure Resource Manager PowerShell](application-gateway-create-probe-ps.md)
 > * [Azure Classic PowerShell](application-gateway-create-probe-classic-ps.md)
 
@@ -34,7 +34,7 @@ Tests worden in een proces in twee stappen geconfigureerd via de portal. De eers
 
 ### <a name="enter-probe-properties"></a><a name="createprobe"></a>Test eigenschappen invoeren
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Als u nog geen account hebt, kunt u zich aanmelden voor een [gratis proef versie van één maand](https://azure.microsoft.com/free)
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). Als u nog geen account hebt, kunt u zich aanmelden voor een [gratis proef versie van één maand](https://azure.microsoft.com/free)
 
 2. Klik in het deelvenster Favorieten van Azure Portal op Alle resources. Klik in de Blade alle resources op de toepassings gateway. Als het abonnement dat u hebt geselecteerd, al verschillende resources heeft, kunt u partners.contoso.net invoeren in het vak Filteren op naam… voor eenvoudige toegang tot de toepassingsgateway.
 
@@ -55,7 +55,7 @@ Tests worden in een proces in twee stappen geconfigureerd via de portal. De eers
    |**Pad**|/of een geldig pad|De rest van de volledige URL voor de aangepaste test. Er begint een geldig pad met '/'. Gebruik voor het standaardpad van http: \/ /contoso.com alleen '/' |
    |**Interval (sec.)**|30|Hoe vaak de test wordt uitgevoerd om de status te controleren. Het wordt afgeraden om de lagere dan 30 seconden in te stellen.|
    |**Time-out (SEC)**|30|De hoeveelheid tijd die de test wacht voordat een time-out optreedt. Als er binnen deze time-outperiode geen geldig antwoord wordt ontvangen, wordt de test als mislukt gemarkeerd. Het time-outinterval moet hoog genoeg zijn dat er een http-aanroep kan worden uitgevoerd om ervoor te zorgen dat de status van de back-end beschikbaar is. Houd er rekening mee dat de time-outwaarde niet groter mag zijn dan de interval waarde die is gebruikt in deze test instelling of de waarde van de time-out van de aanvraag in de HTTP-instelling die wordt gekoppeld aan deze test.|
-   |**Drempelwaarde voor beschadigd**|3|Aantal opeenvolgende mislukte pogingen om te worden beschouwd als een slechte status. De drempel waarde kan worden ingesteld op 1 of meer.|
+   |**Drempelwaarde voor onjuiste status**|3|Aantal opeenvolgende mislukte pogingen om te worden beschouwd als een slechte status. De drempel waarde kan worden ingesteld op 1 of meer.|
    |**Vergelijkings voorwaarden voor testen gebruiken**|Ja of nee|Standaard wordt een HTTP (S)-antwoord met de status code tussen 200 en 399 als gezond beschouwd. U kunt het acceptabele bereik van back-end-respons code of back-end-antwoord tekst wijzigen. [Meer informatie](./application-gateway-probe-overview.md#probe-matching)|
    |**HTTP-instellingen**|selectie uit vervolg keuzelijst|De test wordt gekoppeld aan de HTTP-instelling (en) die u hier selecteert, waardoor de status van de back-end-groep die is gekoppeld aan de geselecteerde HTTP-instelling wordt gecontroleerd. Het gebruikt de poort voor de test aanvraag, zoals die wordt gebruikt in de geselecteerde HTTP-instelling. U kunt alleen die HTTP-instellingen kiezen die niet zijn gekoppeld aan een andere aangepaste test. <br>Houd er rekening mee dat alleen deze HTTP-instellingen beschikbaar zijn voor koppelingen die hetzelfde protocol hebben als het protocol dat is gekozen in deze test configuratie en dezelfde status hebben als de *naam van de gekozen host van de back-end-HTTP-instelling* .|
    
@@ -85,7 +85,7 @@ Tests worden in een proces in twee stappen geconfigureerd via de portal. De eers
 
 ### <a name="create-the-probe"></a><a name="createprobe"></a>De test maken
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Als u nog geen account hebt, kunt u zich aanmelden voor een [gratis proef versie van één maand](https://azure.microsoft.com/free)
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). Als u nog geen account hebt, kunt u zich aanmelden voor een [gratis proef versie van één maand](https://azure.microsoft.com/free)
 
 2. Selecteer in het deelvenster Favorieten in Azure Portal **Alle resources**. Selecteer de toepassings gateway op de pagina **alle resources** . Als het abonnement dat u hebt geselecteerd, al verschillende resources heeft, kunt u partners.contoso.net invoeren in het vak Filteren op naam… voor eenvoudige toegang tot de toepassingsgateway.
 
@@ -104,7 +104,7 @@ Tests worden in een proces in twee stappen geconfigureerd via de portal. De eers
    |**Pad**|/of een geldig pad|De rest van de volledige URL voor de aangepaste test. Er begint een geldig pad met '/'. Gebruik voor het standaardpad van http: \/ /contoso.com alleen '/' |
    |**Interval (sec.)**|30|Hoe vaak de test wordt uitgevoerd om de status te controleren. Het wordt afgeraden om de lagere dan 30 seconden in te stellen.|
    |**Time-out (SEC)**|30|De hoeveelheid tijd die de test wacht voordat een time-out optreedt. Als er binnen deze time-outperiode geen geldig antwoord wordt ontvangen, wordt de test als mislukt gemarkeerd. Het time-outinterval moet hoog genoeg zijn dat er een http-aanroep kan worden uitgevoerd om ervoor te zorgen dat de status van de back-end beschikbaar is. Houd er rekening mee dat de time-outwaarde niet groter mag zijn dan de interval waarde die is gebruikt in deze test instelling of de waarde van de time-out van de aanvraag in de HTTP-instelling die wordt gekoppeld aan deze test.|
-   |**Drempelwaarde voor beschadigd**|3|Aantal opeenvolgende mislukte pogingen om te worden beschouwd als een slechte status. De drempel waarde kan worden ingesteld op 1 of meer.|
+   |**Drempelwaarde voor onjuiste status**|3|Aantal opeenvolgende mislukte pogingen om te worden beschouwd als een slechte status. De drempel waarde kan worden ingesteld op 1 of meer.|
    |**Vergelijkings voorwaarden voor testen gebruiken**|Ja of nee|Standaard wordt een HTTP (S)-antwoord met de status code tussen 200 en 399 als gezond beschouwd. U kunt het acceptabele bereik van back-end-respons code of back-end-antwoord tekst wijzigen. [Meer informatie](./application-gateway-probe-overview.md#probe-matching)|
 
    > [!IMPORTANT]

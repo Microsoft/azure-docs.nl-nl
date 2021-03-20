@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 04/10/2019
 ms.author: jeedes
 ms.openlocfilehash: 27512ac694f20544f1fdd5b79b27d7bf2cabdd66
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92675504"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sensoscientific-wireless-temperature-monitoring-system"></a>Zelfstudie: Azure Active Directory-integratie met SensoScientific Wireless Temperature Monitoring System
@@ -49,7 +49,7 @@ Om de integratie van SensoScientific Wireless Temperature Monitoring System in A
 
 **Voer de volgende stappen uit om SensoScientific Wireless Temperature Monitoring System toe te voegen uit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -61,7 +61,7 @@ Om de integratie van SensoScientific Wireless Temperature Monitoring System in A
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **SensoScientific Wireless Temperature Monitoring System** , selecteer **SensoScientific Wireless Temperature Monitoring System** in het resultatenvenster en klik op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **SensoScientific Wireless Temperature Monitoring System**, selecteer **SensoScientific Wireless Temperature Monitoring System** in het resultatenvenster en klik op de knop **Toevoegen** om de toepassing toe te voegen.
 
     ![SensoScientific Wireless Temperature Monitoring System in de resultatenlijst](common/search-new-app.png)
 
@@ -139,7 +139,7 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure AD met SensoScien
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -163,7 +163,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In deze sectie geeft u Britta Simon toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot SensoScientific Wireless Temperature Monitoring System.
 
-1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **SensoScientific Wireless Temperature Monitoring System**.
+1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **SensoScientific Wireless Temperature Monitoring System**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 

@@ -4,10 +4,10 @@ description: Azure Service Fabric accepteert de indeling docker opstellen, waarm
 ms.topic: conceptual
 ms.date: 2/23/2018
 ms.openlocfilehash: f84dd0ecb7a4002182c8455bfd86354d794a6f7c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "84691285"
 ---
 # <a name="docker-compose-deployment-support-in-azure-service-fabric-preview"></a>Docker-ondersteuning voor implementatie in azure Service Fabric (preview-versie)
@@ -127,8 +127,8 @@ Stel het cluster in voor het afdwingen van resource limieten, zoals beschreven i
 ### <a name="ports-section"></a>Sectie poorten
 
 Geef het HTTP-of HTTPS-protocol op in de sectie poorten die wordt gebruikt door de Service Fabric service-listener. Op deze manier zorgt u ervoor dat het eindpunt protocol correct wordt gepubliceerd met de naamgevings service, zodat de aanvragen kunnen worden doorgestuurd door een omgekeerde proxy:
-* Geef **/http**op om te routeren naar onbeveiligde service Fabric opstellen van services. Bijvoorbeeld:- **"80:80/http"**.
-* Geef **/https**op om te routeren naar beveiligde service Fabric opstellen van services. Bijvoorbeeld:: **443, 443/https**.
+* Geef **/http** op om te routeren naar onbeveiligde service Fabric opstellen van services. Bijvoorbeeld:- **"80:80/http"**.
+* Geef **/https** op om te routeren naar beveiligde service Fabric opstellen van services. Bijvoorbeeld:: **443, 443/https**.
 
 > [!NOTE]
 > De syntaxis van de sectie/http-en/HTTPS-poorten is specifiek voor Service Fabric om de juiste Service Fabric listener-URL te registreren.  Als de bestands syntaxis van docker opstellen programmatisch is gevalideerd, kan dit een validatie fout veroorzaken.

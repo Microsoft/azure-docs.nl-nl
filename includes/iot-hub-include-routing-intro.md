@@ -9,10 +9,10 @@ ms.date: 03/05/2019
 ms.author: robinsh
 ms.custom: include file
 ms.openlocfilehash: 552a40be0c069d1002ebc7ea4dafe0d6f93a5755
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85128209"
 ---
 Met [berichtroutering](../articles/iot-hub/iot-hub-devguide-messages-d2c.md) kunt u telemetriegegevens verzenden van uw IoT-apparaten naar ingebouwde, met Event Hub compatibele eindpunten of aangepaste eindpunten zoals blobopslag, Service Bus-wachtrijen, Service Bus-onderwerpen en Event Hubs. Als u een aangepaste berichtroutering wilt configureren, maakt u [routeringsquery’s](../articles/iot-hub/iot-hub-devguide-routing-query-syntax.md) om een route aan te passen die overeenkomt met een bepaalde regel. Zodra u deze hebt ingesteld, worden de inkomende gegevens automatisch door de IoT Hub doorgestuurd naar de eindpunten. Als een bericht niet overeenkomt met een van de gedefinieerde routeringsquery's, wordt het doorgestuurd naar het standaardeindpunt.

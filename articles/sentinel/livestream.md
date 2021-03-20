@@ -16,13 +16,13 @@ ms.workload: na
 ms.date: 06/14/2020
 ms.author: yelevin
 ms.openlocfilehash: 14928d3c94ced8d1cd0c12e76428be73b68b91d9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "84783160"
 ---
-# <a name="use-hunting-livestream-in-azure-sentinel-to-detect-threats"></a>Jacht Livestream in azure Sentinel gebruiken om bedreigingen te detecteren
+# <a name="use-hunting-livestream-in-azure-sentinel-to-detect-threats"></a>De opsporingslivestream in Azure Sentinel gebruiken om bedreigingen te detecteren
 
 Gebruik jacht Livestream om interactieve sessies te maken waarmee u nieuw gemaakte query's kunt testen wanneer er gebeurtenissen optreden, meldingen van de sessies ontvangen wanneer een overeenkomst wordt gevonden en indien nodig onderzoek starten. U kunt snel een livestream-sessie maken met behulp van een Log Analytics-query.
 
@@ -72,11 +72,11 @@ U kunt een livestream-sessie maken op basis van een bestaande zoek opdracht of e
 
 1. Selecteer **Opslaan** vanaf de opdracht balk.
     
-    Tenzij u **onderbreken**selecteert, blijft de sessie actief totdat u bent afgemeld bij de Azure Portal.
+    Tenzij u **onderbreken** selecteert, blijft de sessie actief totdat u bent afgemeld bij de Azure Portal.
 
 ## <a name="view-your-livestream-sessions"></a>Uw Livestream-sessies weer geven
 
-1. Ga in het Azure Portal naar de Livestream-tabblad voor **Sentinel**  >  **Threat Management**-  >  **jacht**  >  **Livestream** .
+1. Ga in het Azure Portal naar de Livestream-tabblad voor **Sentinel**  >  **Threat Management**-  >  **jacht**  >   .
 
 1. Selecteer de Livestream-sessie die u wilt weer geven of bewerken. Bijvoorbeeld:
     

@@ -12,10 +12,10 @@ ms.custom: mvc
 ms.topic: troubleshooting
 ms.date: 02/20/2020
 ms.openlocfilehash: 819fe5ced6c91819c817065305a31fca456ea5c0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91291840"
 ---
 # <a name="known-issuesmigration-limitations-with-using-hybrid-mode"></a>Bekende problemen/migratie beperkingen bij het gebruik van de hybride modus
@@ -32,7 +32,7 @@ Als de service als offline wordt weer gegeven nadat het installatie proces is vo
 
 1. Ga in het Azure Portal naar uw exemplaar van Azure Database Migration Service en navigeer naar het tabblad **Hybrid** Settings en controleer of de werk nemer is geregistreerd door het raster van geregistreerde werk rollen te controleren.
 
-    De status van deze werk nemer moet **online**zijn, maar kan worden weer gegeven als **offline** als er een probleem is.
+    De status van deze werk nemer moet **online** zijn, maar kan worden weer gegeven als **offline** als er een probleem is.
 
 2. Controleer de status van de service op de werk computer door de volgende Power shell-opdracht uit te voeren:
 
@@ -73,9 +73,9 @@ Standaard wordt de Azure Database Migration Service Hybrid Worker-service uitgev
     - Setup-sleutel voor het DMS-Hybrid Worker
     - Sleutel paar van de DMS-scenario-engine
 
-    b. Klik met de rechter muisknop op de sleutel vermelding voor de **DMS hybride-app** , wijs **alle taken**aan en selecteer **persoonlijke sleutels beheren**.
+    b. Klik met de rechter muisknop op de sleutel vermelding voor de **DMS hybride-app** , wijs **alle taken** aan en selecteer **persoonlijke sleutels beheren**.
 
-    c. Selecteer op het tabblad **beveiliging** de optie **toevoegen**en voer vervolgens de naam van het account in.
+    c. Selecteer op het tabblad **beveiliging** de optie **toevoegen** en voer vervolgens de naam van het account in.
 
     d. Gebruik dezelfde stappen om een persoonlijke sleutel machtiging te verlenen voor het nieuwe account aan het **sleutel paar** certificaat van de DMS-scenario-engine.
 
@@ -85,7 +85,7 @@ Als u geen toegang meer hebt tot de werk computer, kunt u de registratie van de 
 
 1. Ga in het Azure Portal naar uw Azure Database Migration Service-exemplaar en navigeer vervolgens naar de pagina met **hybride** instellingen.
 
-   Uw werk item wordt weer gegeven in de lijst, met de status **offline**weer gegeven.
+   Uw werk item wordt weer gegeven in de lijst, met de status **offline** weer gegeven.
 
 2. Rechts van de vermelding van het werk item selecteert u de weglatings tekens en selecteert u vervolgens **registratie ongedaan maken**.
 

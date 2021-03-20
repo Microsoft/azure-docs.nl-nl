@@ -4,15 +4,15 @@ description: Leer hoe u een proef concept kunt leveren, zodat Azure DevTest Labs
 ms.topic: article
 ms.date: 06/2/2020
 ms.openlocfilehash: 9c28cf9eebd8a39a2edce48e4fb8b96dc7608d80
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87288028"
 ---
 # <a name="deliver-a-proof-of-concept"></a>Een proef van het concept leveren 
 
-Een van de belangrijkste scenario's voor Azure DevTest Labs is het inschakelen van ontwikkel-en test omgevingen in de Cloud. Voorbeelden zijn:
+Een van de belangrijkste scenario's voor Azure DevTest Labs is het inschakelen van ontwikkel-en test omgevingen in de Cloud. Enkele voorbeelden:
 
 * Ontwikkel aars Bureau bladen maken in de Cloud.
 * Omgevingen configureren voor testen.
@@ -37,7 +37,7 @@ Om aan de slag te gaan met het leveren van een concept. Het is belang rijk om en
 
 Er zijn enkele vereisten voor het volt ooien van een pilot of proef concept met DevTest Labs: 
 
-* **Azure-abonnement**: ondernemingen beschikken vaak over een bestaande [Enterprise Agreement](https://azure.microsoft.com/pricing/purchase-options/enterprise-agreement/) die toegang tot Azure mogelijk maakt en ze kunnen een bestaand of nieuw abonnement voor DevTest Labs gebruiken. Ondernemingen kunnen ook een [Visual Studio-abonnement](https://azure.microsoft.com/pricing/member-offers/visual-studio-subscriptions/) gebruiken tijdens de pilot (profiteren van de gratis Azure-tegoed). Als geen van deze opties beschikbaar is, kan een onderneming een [gratis Azure-account](https://azure.microsoft.com/free/search/?&OCID=AID719825_SEM_g4lyBqgB&lnkd=Bing_Azure_Brand&msclkid=ecc4275a31b61375749e7a5322c20de8&dclid=CMGW5-m78-ICFaLt4QodmUwGtQ)maken en gebruiken. Als er een Enterprise Agreement is, is het gebruik van een [Enterprise dev/test-abonnement](https://azure.microsoft.com/offers/ms-azr-0148p/) een uitstekende optie om toegang te krijgen tot Windows 10/Windows 8,1 client-besturings systemen en kortings tarieven voor werk belastingen voor ontwikkelen en testen. 
+* **Azure-abonnement**: ondernemingen beschikken vaak over een bestaande [Enterprise overeenkomst](https://azure.microsoft.com/pricing/purchase-options/enterprise-agreement/) die toegang tot Azure mogelijk maakt en ze kunnen een bestaand of nieuw abonnement voor DevTest Labs gebruiken. Ondernemingen kunnen ook een [Visual Studio-abonnement](https://azure.microsoft.com/pricing/member-offers/visual-studio-subscriptions/) gebruiken tijdens de pilot (profiteren van de gratis Azure-tegoed). Als geen van deze opties beschikbaar is, kan een onderneming een [gratis Azure-account](https://azure.microsoft.com/free/search/?&OCID=AID719825_SEM_g4lyBqgB&lnkd=Bing_Azure_Brand&msclkid=ecc4275a31b61375749e7a5322c20de8&dclid=CMGW5-m78-ICFaLt4QodmUwGtQ)maken en gebruiken. Als er een Enterprise Overeenkomst is, is het gebruik van een [Enterprise dev/test-abonnement](https://azure.microsoft.com/offers/ms-azr-0148p/) een uitstekende optie om toegang te krijgen tot Windows 10/Windows 8,1 client-besturings systemen en kortings tarieven voor werk belastingen voor ontwikkelen en testen. 
 * **Azure Active Directory Tenant**: als u gebruikers wilt beheren (bijvoorbeeld het toevoegen van gebruikers of het toevoegen van Lab-eigen aars), moeten die gebruikers deel uitmaken van de [Azure Active Directory Tenant](https://azure.microsoft.com/services/active-directory/) die wordt gebruikt in het Azure-abonnement voor de pilot. Vaak wordt een [hybride identiteit](../active-directory/hybrid/whatis-hybrid-identity.md) ingesteld om gebruikers in staat te stellen hun on-premises identiteit in de cloud te gebruiken, maar dit is niet vereist voor de DevTest Labs-pilot. 
 
 ## <a name="scoping-of-the-pilot"></a>Bereik van de pilot 

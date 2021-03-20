@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 11/04/2019
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 05be5295ae5f8c73c916a21bba7dbc98ab0c5e87
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89002789"
 ---
 # <a name="how-to-implement-faceted-navigation-in-azure-cognitive-search"></a>Facet navigatie in azure Cognitive Search implementeren
@@ -255,7 +255,7 @@ Als uw toepassing uitsluitend gebruikmaakt van facet navigatie (dat wil zeggen, 
 
 U kunt het schema van de index gebruiken om te bepalen welke velden beschikbaar zijn voor gebruik als een facet. Ervan uitgaande dat een veld facetbaar is, geeft de query aan welke velden moeten worden gefacett door. Het veld waarover u facetten levert de waarden die onder het label worden weer gegeven. 
 
-De waarden onder elk label worden opgehaald uit de index. Als het facet veld bijvoorbeeld *kleur*is, zijn de waarden die beschikbaar zijn voor aanvullende filters de waarden voor dat veld-rood, zwart, enzovoort.
+De waarden onder elk label worden opgehaald uit de index. Als het facet veld bijvoorbeeld *kleur* is, zijn de waarden die beschikbaar zijn voor aanvullende filters de waarden voor dat veld-rood, zwart, enzovoort.
 
 Alleen voor numerieke en datum/tijd-waarden kunt u expliciet waarden instellen voor het facet veld (bijvoorbeeld `facet=Rating,values:1|2|3|4|5` ). Een waarden lijst is toegestaan voor deze veld typen om de schei ding van facet resultaten te vereenvoudigen in aaneengesloten bereiken (bereiken op basis van numerieke waarden of tijds perioden). 
 

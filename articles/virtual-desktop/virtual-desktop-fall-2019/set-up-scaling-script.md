@@ -7,10 +7,10 @@ ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: fd14af6c95654708f339f4a68cd333d0e3162553
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89078177"
 ---
 # <a name="scale-windows-virtual-desktop-classic-session-hosts-using-azure-automation"></a>Windows Virtual Desktop (klassieke) sessie-hosts schalen met behulp van Azure Automation
@@ -138,7 +138,7 @@ Elke gebruiker die lid is van de rol abonnements beheerders en mede beheerder va
 
 Een uitvoeren als-account maken in uw Azure Automation-account:
 
-1. Selecteer in de Azure-portal de optie **Alle services**. In de lijst met resources voert u **Automation-accounts**in en selecteert u deze.
+1. Selecteer in de Azure-portal de optie **Alle services**. In de lijst met resources voert u **Automation-accounts** in en selecteert u deze.
 
 2. Selecteer op de pagina **Automation-accounts** de naam van uw Azure Automation-account.
 
@@ -299,7 +299,7 @@ Navigeer naar het runbook in de resource groep die als host fungeert voor het Az
 
 ### <a name="check-the-runbook-script-version-number"></a>Het versie nummer van het runbook-script controleren
 
-U kunt controleren welke versie van het runbook-script u gebruikt door het runbook-bestand te openen in uw Azure Automation-account en **weer gave**te selecteren. Er wordt een script voor het runbook weer gegeven aan de rechter kant van het scherm. In het script ziet u het versie nummer in de indeling `v#.#.#` onder de `SYNOPSIS` sectie. U kunt [hier](https://github.com/Azure/RDS-Templates/blob/master/wvd-templates/wvd-scaling-script/basicScale.ps1#L1)het meest recente versie nummer vinden. Als u geen versie nummer in uw runbook-script ziet, betekent dit dat u een eerdere versie van het script gebruikt en dit meteen moet bijwerken. Als u uw runbook-script moet bijwerken, volgt u de instructies in [een Azure Automation-account maken of bijwerken](#create-or-update-an-azure-automation-account).
+U kunt controleren welke versie van het runbook-script u gebruikt door het runbook-bestand te openen in uw Azure Automation-account en **weer gave** te selecteren. Er wordt een script voor het runbook weer gegeven aan de rechter kant van het scherm. In het script ziet u het versie nummer in de indeling `v#.#.#` onder de `SYNOPSIS` sectie. U kunt [hier](https://github.com/Azure/RDS-Templates/blob/master/wvd-templates/wvd-scaling-script/basicScale.ps1#L1)het meest recente versie nummer vinden. Als u geen versie nummer in uw runbook-script ziet, betekent dit dat u een eerdere versie van het script gebruikt en dit meteen moet bijwerken. Als u uw runbook-script moet bijwerken, volgt u de instructies in [een Azure Automation-account maken of bijwerken](#create-or-update-an-azure-automation-account).
 
 ### <a name="reporting-issues"></a>Rapportage problemen
 
@@ -317,7 +317,7 @@ Wanneer u een probleem meldt, moet u de volgende informatie opgeven om problemen
     - OMSIngestionAPI
     - Micro soft. RDInfra. RDPowershell
 
-- De verval datum voor het [Run as-account](#create-an-azure-automation-run-as-account). Als u dit wilt vinden, opent u uw Azure Automation-account en selecteert u **uitvoeren als-accounts** onder **account instellingen** in het deel venster aan de linkerkant van het venster. De verval datum moet onder het **Azure uitvoeren als-account**vallen.
+- De verval datum voor het [Run as-account](#create-an-azure-automation-run-as-account). Als u dit wilt vinden, opent u uw Azure Automation-account en selecteert u **uitvoeren als-accounts** onder **account instellingen** in het deel venster aan de linkerkant van het venster. De verval datum moet onder het **Azure uitvoeren als-account** vallen.
 
 ### <a name="log-analytics"></a>Log Analytics
 

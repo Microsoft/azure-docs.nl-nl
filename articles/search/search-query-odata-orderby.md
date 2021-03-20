@@ -20,10 +20,10 @@ translation.priority.mt:
 - zh-cn
 - zh-tw
 ms.openlocfilehash: 83ab2c6b97435ace0d2bc508cbf522600391b60b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88926827"
 ---
 # <a name="odata-orderby-syntax-in-azure-cognitive-search"></a>OData-$orderby syntaxis in azure Cognitive Search
@@ -58,7 +58,7 @@ Als meerdere documenten dezelfde Sorteer criteria hebben en de `search.score` fu
 
 U kunt meerdere Sorteer criteria opgeven. De volg orde van expressies bepaalt de uiteindelijke sorteer volgorde. Als u bijvoorbeeld aflopend op Score wilt sorteren, gevolgd door classificatie, zou de syntaxis zijn `$orderby=search.score() desc,Rating desc` .
 
-De syntaxis voor `geo.distance` in **$OrderBy** is hetzelfde als in **$filter**. Wanneer u `geo.distance` in **$OrderBy**gebruikt, moet het veld waarop het van toepassing is, van het type zijn `Edm.GeographyPoint` en het moet ook zijn `sortable` .
+De syntaxis voor `geo.distance` in **$OrderBy** is hetzelfde als in **$filter**. Wanneer u `geo.distance` in **$OrderBy** gebruikt, moet het veld waarop het van toepassing is, van het type zijn `Edm.GeographyPoint` en het moet ook zijn `sortable` .
 
 De syntaxis voor `search.score` in **$OrderBy** is `search.score()` . De functie `search.score` voert geen para meters uit.
 

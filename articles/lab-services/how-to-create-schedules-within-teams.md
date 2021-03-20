@@ -4,10 +4,10 @@ description: Meer informatie over het maken van planningen voor Lab-Services in 
 ms.topic: article
 ms.date: 10/07/2020
 ms.openlocfilehash: 202b202f99868875a51d13e95fbcac677246cc05
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92042334"
 ---
 # <a name="create-and-manage-lab-services-schedules-within-teams"></a>Schema's voor Lab-Services maken en beheren in teams
@@ -28,7 +28,7 @@ Gebruikers kunnen Lab-schema's maken, bewerken en verwijderen in teams, net zoal
 ## <a name="automatic-shutdown-and-disconnect-settings"></a>Instellingen voor automatisch afsluiten en verbreken
 
 U kunt verschillende functies voor het automatisch afsluiten van kosten beheer inschakelen om extra kosten te voor komen wanneer de virtuele machines niet actief worden gebruikt. De combi natie van de volgende drie functies voor automatisch afsluiten en verbreken van de meeste gevallen, waarbij gebruikers per ongeluk hun virtuele machines verlaten:
- 
+ 
 - Automatisch de verbinding van gebruikers met virtuele machines die het besturings systeem inactief bewaart.
 - Virtuele machines automatisch uitschakelen wanneer gebruikers de verbinding verbreken.
 - Virtuele machines die zijn gestart automatisch afsluiten, maar gebruikers maken geen verbinding.

@@ -13,16 +13,16 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 02/12/2021
 ms.author: hirsin
-ms.openlocfilehash: 67cb1003e139a085d45d01617cd44647bad420f5
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 53dfdfaf37695059d6d52428c2ba109970d9f7f7
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101693043"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104589375"
 ---
 # <a name="disable-auto-acceleration-to-a-federated-idp-during-user-sign-in-with-home-realm-discovery-policy"></a>Automatische versnelling naar een federatieve IDP uitschakelen tijdens het aanmelden van de gebruiker met het beleid voor het detecteren van een thuis domein
 
-[Home realm Discovery-beleid](https://docs.microsoft.com/graph/api/resources/homeRealmDiscoveryPolicy) (hrd) biedt beheerders meerdere manieren om te bepalen hoe en waar gebruikers worden geverifieerd. De `domainHintPolicy` sectie van het HRD-beleid wordt gebruikt om federatieve gebruikers te migreren naar beheerde referenties voor de Cloud, zoals [Fido](../authentication/howto-authentication-passwordless-security-key.md), door ervoor te zorgen dat ze altijd de aanmeldings pagina van Azure AD bezoeken en niet automatisch worden versneld naar een gefedereerde IDP vanwege domein hints.
+[Home realm Discovery-beleid](/graph/api/resources/homeRealmDiscoveryPolicy) (hrd) biedt beheerders meerdere manieren om te bepalen hoe en waar gebruikers worden geverifieerd. De `domainHintPolicy` sectie van het HRD-beleid wordt gebruikt om federatieve gebruikers te migreren naar beheerde referenties voor de Cloud, zoals [Fido](../authentication/howto-authentication-passwordless-security-key.md), door ervoor te zorgen dat ze altijd de aanmeldings pagina van Azure AD bezoeken en niet automatisch worden versneld naar een gefedereerde IDP vanwege domein hints.
 
 Dit beleid is vereist in situaties waarin toepassingen een beheerder tijdens het aanmelden geen hints voor domein toevoegen kan beheren of bijwerken.  Bijvoorbeeld, `outlook.com/contoso.com` verzendt de gebruiker naar een aanmeldings pagina met de `&domain_hint=contoso.com` para meter toegevoegd, zodat de gebruiker rechtstreeks kan worden versneld naar het federatieve IDP voor het `contoso.com` domein. Gebruikers met beheerde referenties die worden verzonden naar een federatieve IDP kunnen zich niet aanmelden met hun beheerde referenties, waardoor beveiligings-en frustrerende gebruikers worden gereduceerd met wille keurige aanmeld ervaring. Beheerders die beheerde referenties implementeren, [moeten dit beleid ook instellen](#suggested-use-within-a-tenant) om ervoor te zorgen dat gebruikers altijd hun beheerde referenties kunnen gebruiken.
 
@@ -101,7 +101,7 @@ Nadat stap 4 is voltooid, kunnen alle gebruikers, met uitzonde ring van die in `
 
 ## <a name="configuring-policy-through-graph-explorer"></a>Beleid configureren via Graph Explorer
 
-Stel het [hrd-beleid](https://docs.microsoft.com/graph/api/resources/homeRealmDiscoveryPolicy) zoals gebruikelijk in met behulp van Microsoft Graph.  
+Stel het [hrd-beleid](/graph/api/resources/homeRealmDiscoveryPolicy) zoals gebruikelijk in met behulp van Microsoft Graph.  
 
 1. Verleen de machtiging beleid. ReadWrite. ApplicationConfiguration in [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).  
 1. De URL gebruiken `https://graph.microsoft.com/v1.0/policies/homeRealmDiscoveryPolicies`

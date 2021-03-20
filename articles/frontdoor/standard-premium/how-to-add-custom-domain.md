@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 02/18/2021
 ms.author: amsriva
-ms.openlocfilehash: 164e06024844fb5262586450b737db9c807e373a
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: 36cb5720e409c86fcb4bc1a97863e5d3523cd3bc
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101099102"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104588746"
 ---
 # <a name="create-a-custom-domain-on-azure-front-door-standardpremium-sku-preview-using-the-azure-portal"></a>Een aangepast domein maken op basis van Azure front deur Standard/Premium SKU (preview) met behulp van de Azure Portal
 
@@ -38,6 +38,9 @@ Nadat u een Azure front deur Standard/Premium-profiel hebt gemaakt, heeft de sta
 * Als u Azure gebruikt voor het hosten van uw [DNS-domeinen](../../dns/dns-overview.md), moet u de DNS-naam (Domain Name System) van de domein provider overdragen aan een Azure DNS. Zie [Delegate a domain to Azure DNS](../../dns/dns-delegate-domain-azure-dns.md) (Een domein aan Azure DNS overdragen) voor meer informatie. Als u echter een domein provider gebruikt voor het verwerken van uw DNS-domein, moet u het domein hand matig valideren door desgevraagd DNS TXT-records in te voeren.
 
 ## <a name="add-a-new-custom-domain"></a>Een nieuw aangepast domein toevoegen
+
+> [!NOTE]
+> In de open bare preview-versie wordt het gebruik van Azure DNS voor het maken van Apex-domeinen niet ondersteund in de Azure front-deur standaard/Premium. Er zijn andere DNS-providers die ondersteuning bieden voor CNAME afvlakking of DNS-Chasing, waarmee APEX-domeinen kunnen worden gebruikt voor de standaard/Premium van Azure front deur.
 
 De sectie een aangepast domein wordt beheerd door domeinen in de portal. Een aangepast domein kan worden gemaakt en gevalideerd vóór de koppeling met een eind punt. Een aangepast domein en de bijbehorende subdomeinen kunnen alleen worden gekoppeld aan één eind punt tegelijk. U kunt echter verschillende subdomeinen van hetzelfde aangepaste domein gebruiken voor verschillende front deuren. U kunt ook aangepaste domeinen met verschillende subdomeinen toewijzen aan hetzelfde eind punt van de voor deur.
 

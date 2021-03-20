@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 06/28/2017
 ms.custom: mqtt, devx-track-js
 ms.openlocfilehash: db4f78e14696c421adaedd16b0b3f8d598f12846
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91251895"
 ---
 # <a name="upload-files-from-your-device-to-the-cloud-with-iot-hub-nodejs"></a>Bestanden van uw apparaat uploaden naar de Cloud met IoT Hub (Node.js)
@@ -85,7 +85,7 @@ In deze sectie maakt u de app apparaat om een bestand te uploaden naar IoT hub.
     var clientFromConnectionString = require('azure-iot-device-mqtt').clientFromConnectionString;
     ```
 
-5. Voeg een `deviceconnectionstring`-variabele toe en gebruik deze om een **client**exemplaar te maken.  Vervang door `{deviceconnectionstring}` de naam van het apparaat dat u hebt gemaakt in de sectie *een IOT hub maken* :
+5. Voeg een `deviceconnectionstring`-variabele toe en gebruik deze om een **client** exemplaar te maken.  Vervang door `{deviceconnectionstring}` de naam van het apparaat dat u hebt gemaakt in de sectie *een IOT hub maken* :
 
     ```javascript
     var connectionString = '{deviceconnectionstring}';
@@ -156,7 +156,7 @@ U kunt de **iothubowner** -Connection String van uw IOT hub gebruiken om deze se
     var Client = require('azure-iothub').Client;
     ```
 
-5. Voeg een `iothubconnectionstring`-variabele toe en gebruik deze om een **client**exemplaar te maken.  Vervang de `{iothubconnectionstring}` waarde van de tijdelijke aanduiding door de IOT hub-Connection String die u eerder hebt gekopieerd in [de IOT hub-Connection String ophalen](#get-the-iot-hub-connection-string):
+5. Voeg een `iothubconnectionstring`-variabele toe en gebruik deze om een **client** exemplaar te maken.  Vervang de `{iothubconnectionstring}` waarde van de tijdelijke aanduiding door de IOT hub-Connection String die u eerder hebt gekopieerd in [de IOT hub-Connection String ophalen](#get-the-iot-hub-connection-string):
 
     ```javascript
     var connectionString = '{iothubconnectionstring}';

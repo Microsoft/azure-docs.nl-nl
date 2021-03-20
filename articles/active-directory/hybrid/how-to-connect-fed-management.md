@@ -19,10 +19,10 @@ ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cc0c8c40e370579100c562e0289c97e3f5ce4236
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91274109"
 ---
 # <a name="manage-and-customize-active-directory-federation-services-by-using-azure-ad-connect"></a>Active Directory Federation Services beheren en aanpassen met behulp van Azure AD Connect
@@ -58,7 +58,7 @@ U kunt Azure AD Connect gebruiken om de huidige status van de AD FS en Azure AD-
 
    ![Scherm opname van de pagina ' Remote Access credentials ' met voor beelden van referenties ingevoerd.](./media/how-to-connect-fed-management/RepairADTrust3.PNG)
 
-    Nadat u op **volgende**hebt geklikt, controleert Azure AD Connect de status van het certificaat en worden eventuele problemen weer gegeven.
+    Nadat u op **volgende** hebt geklikt, controleert Azure AD Connect de status van het certificaat en worden eventuele problemen weer gegeven.
 
     ![Status van certificaten](./media/how-to-connect-fed-management/RepairADTrust4.PNG)
 
@@ -92,7 +92,7 @@ Het configureren van de alternatieve aanmeldings-ID voor AD FS bestaat uit twee 
 > [!NOTE]
 > Azure AD Connect vereist het PFX-certificaat om een AD FS server toe te voegen. Daarom kunt u deze bewerking alleen uitvoeren als u de AD FS farm hebt geconfigureerd met behulp van Azure AD Connect.
 
-1. Selecteer **een extra Federatie server implementeren**en klik op **volgende**.
+1. Selecteer **een extra Federatie server implementeren** en klik op **volgende**.
 
    ![Aanvullende Federatie server](./media/how-to-connect-fed-management/AddNewADFSServer1.PNG)
 
@@ -114,7 +114,7 @@ Het configureren van de alternatieve aanmeldings-ID voor AD FS bestaat uit twee 
 
    ![AD FS-servers](./media/how-to-connect-fed-management/AddNewADFSServer6.PNG)
 
-6. Klik op **volgende**en ga door de pagina definitieve **configuratie** . Nadat Azure AD Connect het toevoegen van de servers aan de AD FS-farm hebt voltooid, krijgt u de mogelijkheid om de verbinding te controleren.
+6. Klik op **volgende** en ga door de pagina definitieve **configuratie** . Nadat Azure AD Connect het toevoegen van de servers aan de AD FS-farm hebt voltooid, krijgt u de mogelijkheid om de verbinding te controleren.
 
    ![Scherm opname van de pagina gereed voor configuratie met een lijst met te volt ooien acties nadat u op installeren hebt geklikt.](./media/how-to-connect-fed-management/AddNewADFSServer7.PNG)
 
@@ -225,7 +225,7 @@ c:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccou
 
 In deze regel zoekt u een query uit op de waarden **MS-DS-consistencyguid** en **objectGuid** voor de gebruiker van Active Directory. Wijzig de archief naam in een geschikte archief naam in uw AD FS-implementatie. Wijzig ook het claim type in een juist claim type voor uw Federatie, zoals gedefinieerd voor **objectGuid** en **MS-DS-consistencyguid**.
 
-Daarnaast kunt u met behulp van **toevoegen** en niet bij niet- **probleem**voor komen dat u een uitgaand probleem voor de entiteit toevoegt en de waarden als tussenliggende waarden gebruiken. U geeft de claim op in een latere regel nadat u hebt vastgesteld welke waarde moet worden gebruikt als de onveranderlijke ID.
+Daarnaast kunt u met behulp van **toevoegen** en niet bij niet- **probleem** voor komen dat u een uitgaand probleem voor de entiteit toevoegt en de waarden als tussenliggende waarden gebruiken. U geeft de claim op in een latere regel nadat u hebt vastgesteld welke waarde moet worden gebruikt als de onveranderlijke ID.
 
 **Regel 2: controleren of MS-DS-consistencyguid bestaat voor de gebruiker**
 

@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: 3ebff5a40528e9e3ea0e75c4b51529638de34b5d
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.openlocfilehash: a9394a5e117a577c903eccdf91cf22d0c359df2b
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102505763"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104581113"
 ---
 # <a name="media-services-v3-frequently-asked-questions"></a>Veelgestelde vragen over Media Services v3
 
@@ -86,12 +86,12 @@ Uw webtoepassing moet de gebruiker vragen of de uitzending moet worden beëindig
 
 #### <a name="server-side"></a>Server zijde
 
-U kunt live-gebeurtenissen bewaken door zich te abonneren op Azure Event Grid-gebeurtenissen. Zie het [EventGrid-gebeurtenis schema](media-services-event-schemas.md#live-event-types)voor meer informatie.
+U kunt live-gebeurtenissen bewaken door zich te abonneren op Azure Event Grid-gebeurtenissen. Zie het [EventGrid-gebeurtenis schema](monitoring/media-services-event-schemas.md#live-event-types)voor meer informatie.
 
 U hebt de volgende mogelijkheden:
 
-* [Abonneer](reacting-to-media-services-events.md) u op de gebeurtenissen op het niveau van [micro soft. media. LiveEventEncoderDisconnected](media-services-event-schemas.md#liveeventencoderdisconnected) en controleer of er gedurende een tijdje geen reconnects beschikbaar zijn om uw live-gebeurtenis te stoppen en te verwijderen.
-* [Abonneer](reacting-to-media-services-events.md) u op de [heartbeat](media-services-event-schemas.md#liveeventingestheartbeat) -gebeurtenissen op traceer niveau. Als alle sporen een binnenkomende bitrate hebben die niet langer is dan 0 of als de laatste tijds tempel niet meer stijgt, kunt u de live-gebeurtenis veilig afsluiten. De heartbeat-gebeurtenissen bevinden zich elke 20 seconden voor elk spoor, waardoor het mogelijk een beetje uitgebreid is.
+* [Abonneer](monitoring/reacting-to-media-services-events.md) u op de gebeurtenissen op het niveau van [micro soft. media. LiveEventEncoderDisconnected](monitoring/media-services-event-schemas.md#liveeventencoderdisconnected) en controleer of er gedurende een tijdje geen reconnects beschikbaar zijn om uw live-gebeurtenis te stoppen en te verwijderen.
+* [Abonneer](monitoring/reacting-to-media-services-events.md) u op de [heartbeat](monitoring/media-services-event-schemas.md#liveeventingestheartbeat) -gebeurtenissen op traceer niveau. Als alle sporen een binnenkomende bitrate hebben die niet langer is dan 0 of als de laatste tijds tempel niet meer stijgt, kunt u de live-gebeurtenis veilig afsluiten. De heartbeat-gebeurtenissen bevinden zich elke 20 seconden voor elk spoor, waardoor het mogelijk een beetje uitgebreid is.
 
 ###  <a name="how-do-i-insert-breaksvideos-and-image-slates-during-a-live-stream"></a>Hoe kan ik invoegen van pauzes/Video's en afbeeldings pastels tijdens een live stream?
 
@@ -117,7 +117,7 @@ Zie [uw inhoud beveiligen met Media Services Dynamic Encryption](content-protect
 
 ### <a name="how-and-where-did-i-get-a-jwt-token-before-using-it-to-request-a-license-or-key"></a>Hoe en wanneer krijg ik een JWT-token voordat ik dit gebruik om een licentie of sleutel aan te vragen?
 
-Voor productie moet u een beveiligde token service (dat wil zeggen, een webservice) hebben die een JWT-token op een HTTPS-aanvraag afgeeft. Voor test kunt u de code gebruiken die wordt weer gegeven in de methode die is `GetTokenAsync` gedefinieerd in [Program.cs](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/EncryptWithDRM/Program.cs).
+Voor productie moet u een beveiligde token service (dat wil zeggen, een webservice) hebben die een JWT-token op een HTTPS-aanvraag afgeeft. Voor test kunt u de code gebruiken die wordt weer gegeven in de methode die is `GetTokenAsync` gedefinieerd in [programma. cs](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/EncryptWithDRM/Program.cs).
 
 De speler maakt een aanvraag nadat een gebruiker is geverifieerd, op STS voor een dergelijk token en wijst deze toe als de waarde van het token. U kunt de [Azure Media Player-API](https://amp.azure.net/libs/amp/latest/docs/)gebruiken.
 

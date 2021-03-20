@@ -10,10 +10,10 @@ ms.topic: quickstart
 ms.date: 06/01/2020
 ms.custom: subject-armqs
 ms.openlocfilehash: b97702bb84eb38d185fe97ffcc596e374f28fbe2
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93339662"
 ---
 # <a name="quickstart-create-an-azure-cosmos-db-and-a-container-by-using-an-arm-template"></a>Quickstart: Een Azure Cosmos DB en een container maken met behulp van een ARM-sjabloon
@@ -63,20 +63,20 @@ Meer voorbeelden van Azure Cosmos DB-sjablonen vindt u in de [galerie met quicks
 
     Gebruik de standaardwaarden om de Azure Cosmos-resources te maken, tenzij er iets anders is aangegeven.
 
-    * **Abonnement** : selecteer een Azure-abonnement.
-    * **Resourcegroep** : selecteer **Nieuwe maken** , geef een unieke naam op voor de resourcegroep en klik op **OK**.
-    * **Locatie** : selecteer een locatie.  Bijvoorbeeld **VS - centraal**.
-    * **Accountnaam** : voer een naam in voor het Azure Cosmos-account. De naam moet wereldwijd uniek zijn.
-    * **Locatie** : geef aan waar u uw Azure Cosmos-account wilt maken. Het Azure Cosmos-account kan zich op dezelfde locatie bevinden als de resourcegroep.
-    * **Primaire regio** : De primaire-replicaregio voor het Azure Cosmos-account.
-    * **Secundaire regio** : De secundaire-replicaregio voor het Azure Cosmos-account.
-    * **Standaardconsistentieniveau** : Het standaardconsistentieniveau voor het Azure Cosmos-account.
-    * **Voorvoegsel max. veroudering** : Max. aantal verouderde aanvragen. Vereist voor BoundedStaleness.
-    * **Max. interval in seconden** : Maximale vertragingstijd. Vereist voor BoundedStaleness.
-    * **Databasenaam** : De naam van de Azure Cosmos-database.
-    * **Containernaam** : De naam van de Azure Cosmos-container.
-    * **Doorvoer** :  De doorvoer van de container. De minimale doorvoerwaarde is 400 RU/s.
-    * **Ik ga akkoord met de bovenstaande voorwaarden** : Selecteren.
+    * **Abonnement**: selecteer een Azure-abonnement.
+    * **Resourcegroep**: selecteer **Nieuwe maken**, geef een unieke naam op voor de resourcegroep en klik op **OK**.
+    * **Locatie**: selecteer een locatie.  Bijvoorbeeld **VS - centraal**.
+    * **Accountnaam**: voer een naam in voor het Azure Cosmos-account. De naam moet wereldwijd uniek zijn.
+    * **Locatie**: geef aan waar u uw Azure Cosmos-account wilt maken. Het Azure Cosmos-account kan zich op dezelfde locatie bevinden als de resourcegroep.
+    * **Primaire regio**: De primaire-replicaregio voor het Azure Cosmos-account.
+    * **Secundaire regio**: De secundaire-replicaregio voor het Azure Cosmos-account.
+    * **Standaardconsistentieniveau**: Het standaardconsistentieniveau voor het Azure Cosmos-account.
+    * **Voorvoegsel max. veroudering**: Max. aantal verouderde aanvragen. Vereist voor BoundedStaleness.
+    * **Max. interval in seconden**: Maximale vertragingstijd. Vereist voor BoundedStaleness.
+    * **Databasenaam**: De naam van de Azure Cosmos-database.
+    * **Containernaam**: De naam van de Azure Cosmos-container.
+    * **Doorvoer**:  De doorvoer van de container. De minimale doorvoerwaarde is 400 RU/s.
+    * **Ik ga akkoord met de bovenstaande voorwaarden**: Selecteren.
 
 3. Selecteer **Aankoop**. Nadat het Azure Cosmos-account is geïmplementeerd, ontvangt u een melding:
 

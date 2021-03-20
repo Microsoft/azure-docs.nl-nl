@@ -8,10 +8,10 @@ ms.date: 06/26/2019
 ms.topic: conceptual
 keywords: kinect, azure, sensor, SDK, diepte camera, tof, principes, prestaties, ongeldigheid
 ms.openlocfilehash: 22f04b983ed7c6a2ab19a5c1c709621655ee31c0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85277298"
 ---
 # <a name="azure-kinect-dk-depth-camera"></a>Diepte camera Azure Kinect DK
@@ -56,7 +56,7 @@ Systematische fout wordt gedefinieerd als het verschil tussen de gemeten diepte 
 
 ![Uitgebreide, systematische fout](./media/concepts/depth-camera-systematic-error.png)
 
-Waarbij *d<sub>t</sub> * de diepte van de meting op tijdstip *t*aanduidt, *N* is het aantal frames dat in de procedure voor het berekenen van het gemiddelde wordt gebruikt en *d<sub>gt</sub> * de diepte van de grond.
+Waarbij *d <sub>t</sub>* de diepte van de meting op tijdstip *t* aanduidt, *N* is het aantal frames dat in de procedure voor het berekenen van het gemiddelde wordt gebruikt en *d <sub>gt</sub>* de diepte van de grond.
 
 De systematische fout specificatie van de diepte camera is exclusief Multi-Path interferentie (MPI). MPI is wanneer een sensor pixel het licht integreert dat door meer dan één object wordt weer gegeven. MPI is deels verkleind in onze diepte camera met hogere modulatie frequenties, samen met de diep gaande validatie, die later wordt geïntroduceerd.
 
@@ -66,7 +66,7 @@ We gaan ervan uitgaan dat er 100 installatie kopieën van hetzelfde object worde
 
 ![Wille keurige fout](./media/concepts/depth-camera-random-error.png)
 
-Waarbij *N* het aantal diepte metingen aangeeft, is *d<sub>t</sub> * de diepte meting op tijdstip *t* en *d* de gemiddelde waarde die wordt berekend over alle diepte metingen *d<sub>t</sub>*.
+Waarbij *N* het aantal diepte metingen aangeeft, is *d <sub>t</sub>* de diepte meting op tijdstip *t* en *d* de gemiddelde waarde die wordt berekend over alle diepte metingen *d <sub>t</sub>*.
 
 ## <a name="invalidation"></a>Ongeldig maken
 

@@ -9,10 +9,10 @@ ms.date: 10/08/2020
 ms.author: duau
 ms.custom: seodec18
 ms.openlocfilehash: 90d4def5a1c08e305b9315f299e83e2187b6be2c
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91969871"
 ---
 # <a name="tutorial-configure-route-filters-for-microsoft-peering-using-powershell"></a>Zelfstudie: Routefilters voor Microsoft-peering configureren met behulp van PowerShell
@@ -29,11 +29,11 @@ Microsoft 365-services zoals Exchange Online, SharePoint online en Skype voor Be
 
 Wanneer Microsoft-peering wordt geconfigureerd in een ExpressRoute-circuit, worden alle voorvoegsels die betrekking hebben op deze services, geadverteerd via de BGP-sessies die tot stand zijn gebracht. Er wordt aan elk voorvoegsel een BGP-communitywaarde gekoppeld om de service te identificeren die via het voorvoegsel wordt aangeboden. Zie [BGP-community's](expressroute-routing.md#bgp) voor een lijst met de BGP-communitywaarden en de services waaraan ze zijn gekoppeld.
 
-Dankzij de connectiviteit met alle Azure- en Microsoft 365-services wordt een groot aantal voorvoegsels geadverteerd via BGP. Door het grote aantal voorvoegsels neemt de grootte van de routetabellen die worden beheerd door routers in uw netwerk, aanzienlijk toe. Als u van plan bent slechts een subset van services te gebruiken die worden aangeboden via Microsoft-peering, kunt u de grootte van uw routetabellen op twee manieren verkleinen. U kunt:
+Dankzij de connectiviteit met alle Azure- en Microsoft 365-services wordt een groot aantal voorvoegsels geadverteerd via BGP. Door het grote aantal voorvoegsels neemt de grootte van de routeringstabellen die worden beheerd via routers in uw netwerk, aanzienlijk toe. Als u slechts een subset van services die worden aangeboden via Microsoft-peering wilt gebruiken, kunt u de grootte van de routeringstabellen op twee manieren verkleinen. U kunt:
 
-* Ongewenste voorvoegsels uitfilteren door routefilters op BGP-community's toe te passen. Het toepassen van routefilters is een gangbare werkwijze en wordt gebruikt in veel netwerken.
+* Ongewenste voorvoegsels uitfilteren door routefilters toe te passen op BGP-community's. Het toepassen van routefilters is een gangbare werkwijze en wordt gebruikt in veel netwerken.
 
-* Definieer routefilters en pas deze toe op uw ExpressRoute-circuit. Een routefilter is een nieuwe resource waarmee u de lijst met services die u wilt gebruiken via Microsoft-peering kunt selecteren. ExpressRoute-routers verzenden alleen de lijst met voorvoegsels die horen bij de services die zijn gedefinieerd in het routefilter.
+* Definieer routefilters en pas deze toe op uw ExpressRoute-circuit. Een routefilter is een nieuwe resource waarmee u de lijst met services kunt selecteren die u wilt gebruiken via Microsoft-peering. ExpressRoute-routers verzenden alleen de lijst met voorvoegsels die horen bij de services die zijn gedefinieerd in het routefilter.
 
 In deze zelfstudie leert u het volgende:
 > [!div class="checklist"]
@@ -45,9 +45,9 @@ In deze zelfstudie leert u het volgende:
 
 Wanneer Microsoft-peering wordt geconfigureerd voor uw ExpressRoute-circuit, zetten de Microsoft Edge-routers twee BGP-sessies op met de Edge-routers via uw connectiviteitsprovider. Er worden geen routes geadverteerd naar uw netwerk. Als u dit wel wilt doen, moet u een routefilter koppelen.
 
-Via een routefilter kunt u services identificeren die u wilt gebruiken via Microsoft-peering op uw ExpressRoute-circuit. Het is in feite een lijst met alle toegestane BGP-communitywaarden. Zodra er een routefilter wordt gedefinieerd en aan een ExpressRoute-circuit wordt gekoppeld, worden alle voorvoegsels die overeenkomen met de BGP-communitywaarden naar uw netwerk geadverteerd.
+Via een routefilter kunt u services identificeren die u wilt gebruiken via Microsoft-peering op uw ExpressRoute-circuit. Het is in feite een lijst met alle toegestane BGP-communitywaarden. Zodra een routefilter is gedefinieerd en gekoppeld aan een ExpressRoute-circuit, worden alle voorvoegsels die overeenkomen met de BGP-communitywaarden, geadverteerd naar uw netwerk.
 
-Als u routefilters aan Microsoft 365-services wilt koppelen, moet u gemachtigd zijn om Microsoft 365-services te gebruiken via ExpressRoute. Als u niet gemachtigd bent om Microsoft 365-services te gebruiken via ExpressRoute, mislukt de bewerking voor het koppelen van routefilters. Zie [Azure ExpressRoute voor Microsoft 365](/microsoft-365/enterprise/azure-expressroute) voor meer informatie over het autorisatieproces.
+Als u routefilters aan Microsoft 365-services wilt koppelen, moet u zijn gemachtigd om Microsoft 365-services te gebruiken via ExpressRoute. Als u niet bent gemachtigd om Microsoft 365-services te gebruiken via ExpressRoute, mislukt de bewerking voor het koppelen van routefilters. Zie [Azure ExpressRoute voor Microsoft 365](/microsoft-365/enterprise/azure-expressroute) voor meer informatie over het autorisatieproces.
 
 > [!IMPORTANT]
 > Microsoft-peering van ExpressRoute-circuits die zijn geconfigureerd vóór 1 augustus 2017, heeft alle servicevoorvoegsels die worden geadverteerd via Microsoft-peering, zelfs als er geen routefilters zijn gedefinieerd. Microsoft-peering van ExpressRoute-circuits die zijn geconfigureerd op of na 1 augustus 2017, heeft geen voorvoegsels die worden geadverteerd totdat een routefilter aan het circuit is gekoppeld.
@@ -57,7 +57,7 @@ Als u routefilters aan Microsoft 365-services wilt koppelen, moet u gemachtigd z
 - Bekijk de [vereisten](expressroute-prerequisites.md) en [werkstromen](expressroute-workflows.md) voordat u begint met de configuratie.
 
 - U moet een actief ExpressRoute-circuit hebben waarvoor Microsoft-peering is ingericht. U kunt de volgende instructies gebruiken om deze taken uit te voeren:
-  - [Maak een ExpressRoute-circuit](expressroute-howto-circuit-arm.md) en laat het circuit inschakelen door de connectiviteitsprovider voordat u verder gaat. Het ExpressRoute-circuit moet ingericht en ingeschakeld zijn.
+  - [Maak een ExpressRoute-circuit](expressroute-howto-circuit-arm.md) en laat het circuit inschakelen door de connectiviteitsprovider voordat u verdergaat. Het ExpressRoute-circuit moet zijn ingericht en ingeschakeld.
   - [Maak Microsoft-peering](expressroute-circuit-peerings.md) als u de BGP-sessie rechtstreeks beheert. Of zorg ervoor dat uw connectiviteitsprovider Microsoft-peering voor uw circuit inricht.
   
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
@@ -78,7 +78,7 @@ Als u routefilters aan Microsoft 365-services wilt koppelen, moet u gemachtigd z
 
 ## <a name="create-a-route-filter-and-a-filter-rule"></a><a name="filter"></a>Een routefilter en een filterregel maken
 
-Een routefilter kan slechts één regel bevatten en de regel moet van het type 'Toestaan' zijn. Aan deze regel kan een lijst met BGP-communitywaarden zijn gekoppeld. Met de opdracht `az network route-filter create` wordt alleen een resource voor een routefilter gemaakt. Nadat u de resource hebt gemaakt, moet u een regel maken en deze koppelen aan het routefilterobject.
+Een routefilter kan slechts één regel bevatten, en de regel moet van het type Toestaan zijn. Aan deze regel kan een lijst met BGP-communitywaarden zijn gekoppeld. Met de opdracht `az network route-filter create` wordt alleen een resource voor een routefilter gemaakt. Nadat u de resource hebt gemaakt, moet u een regel maken en deze koppelen aan het routefilterobject.
 
 1. Voer de volgende opdracht uit om een resource voor een routefilter te maken:
 
@@ -157,7 +157,7 @@ Remove-AzRouteFilter -Name "MyRouteFilter" -ResourceGroupName "MyResourceGroup"
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie voor informatie over voorbeelden van de configuratie van een router:
+Zie voor informatie over voorbeelden van routerconfiguratie:
 
 > [!div class="nextstepaction"]
 > [Voorbeelden van routerconfiguraties voor het instellen en beheren van routering](expressroute-config-samples-routing.md)

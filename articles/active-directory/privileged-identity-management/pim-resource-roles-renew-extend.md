@@ -17,10 +17,10 @@ ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0f0d22fc540aae448a3da731b709a3b4ea13a69d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "84742230"
 ---
 # <a name="extend-or-renew-azure-resource-role-assignments-in-privileged-identity-management"></a>De toewijzingen van Azure-resource rollen in Privileged Identity Management uitbreiden of vernieuwen
@@ -55,7 +55,7 @@ Als u een uitbrei ding van deze roltoewijzing wilt aanvragen, selecteert u **uit
 
 ![Deel venster roltoewijzing uitbreiden met een reden veld](media/pim-resource-roles-renew-extend/aadpim-rbac-extend-role-assignment-request.png)
 
-Als u informatie over de oorspronkelijke toewijzing wilt weer geven, vouwt u **toewijzings Details**uit. Voer een reden in voor de uitbreidings aanvraag en selecteer vervolgens **uitbreiden**.
+Als u informatie over de oorspronkelijke toewijzing wilt weer geven, vouwt u **toewijzings Details** uit. Voer een reden in voor de uitbreidings aanvraag en selecteer vervolgens **uitbreiden**.
 
 >[!NOTE]
 >We raden u aan om de details van de uitbrei ding op te nemen en te bepalen hoe lang de uitbrei ding moet worden verleend (als u deze informatie hebt).
@@ -78,7 +78,7 @@ Naast het gebruik van de koppeling van e-mail kunnen beheerders aanvragen goed k
 
 ![Azure-resources-aanvragen goed keuren pagina aanvragen en koppelingen die moeten worden goedgekeurd of geweigerd](media/pim-resource-roles-renew-extend/aadpim-rbac-extend-admin-approve-grid.png)
 
-Wanneer een beheerder **goed keuren** of **weigeren**selecteert, worden de details van de aanvraag weer gegeven, samen met een veld om een zakelijke rechtvaardiging voor de audit logboeken te bieden.
+Wanneer een beheerder **goed keuren** of **weigeren** selecteert, worden de details van de aanvraag weer gegeven, samen met een veld om een zakelijke rechtvaardiging voor de audit logboeken te bieden.
 
 ![Aanvraag voor roltoewijzing goed keuren met de reden van de aanvrager, toewijzings type, begin tijd, eind tijd en reden](media/pim-resource-roles-renew-extend/aadpim-rbac-extend-admin-approve-blade.png)
 
@@ -116,7 +116,7 @@ Resource beheerders hebben toegang tot de vernieuwings aanvraag via de koppeling
 
 ![Azure-resources-aanvragen goed keuren pagina aanvragen en koppelingen die moeten worden goedgekeurd of geweigerd](media/pim-resource-roles-renew-extend/aadpim-rbac-extend-admin-approve-grid.png)
 
-Wanneer een beheerder **goed keuren** of **weigeren**selecteert, worden de details van de aanvraag samen met een veld weer gegeven om een zakelijke rechtvaardiging voor de audit logboeken te bieden.
+Wanneer een beheerder **goed keuren** of **weigeren** selecteert, worden de details van de aanvraag samen met een veld weer gegeven om een zakelijke rechtvaardiging voor de audit logboeken te bieden.
 
 ![Aanvraag voor roltoewijzing goed keuren met de reden van de aanvrager, toewijzings type, begin tijd, eind tijd en reden](media/pim-resource-roles-renew-extend/aadpim-rbac-extend-admin-approve-blade.png)
 
@@ -126,7 +126,7 @@ Bij het goed keuren van een aanvraag voor het vernieuwen van roltoewijzing moete
 
 Resource beheerders kunnen verlopen roltoewijzingen vernieuwen vanaf het tabblad **leden** in het navigatie menu aan de linkerkant van een resource. Ze kunnen ook verlopen roltoewijzingen vernieuwen vanuit het tabblad **verlopen** rollen van een resource-rol.
 
-Als u een lijst met alle verlopen roltoewijzingen wilt weer geven, selecteert u **verlopen rollen**op het scherm **leden** .
+Als u een lijst met alle verlopen roltoewijzingen wilt weer geven, selecteert u **verlopen rollen** op het scherm **leden** .
 
 ![Azure-resources-leden pagina met een lijst met verlopen rollen met koppelingen naar renew](media/pim-resource-roles-renew-extend/aadpim-rbac-renew-from-member-blade.png)
 

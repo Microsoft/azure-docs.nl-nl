@@ -8,15 +8,15 @@ ms.topic: how-to
 ms.service: iot-pnp
 services: iot-pnp
 ms.openlocfilehash: d61ca10612a0935f8483745d164835d7498280c0
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92042810"
 ---
 # <a name="implement-iot-plug-and-play-on-constrained-devices"></a>IoT-Plug en Play op beperkte apparaten implementeren
 
-Als u voor *beperkte apparaten*ontwikkelt, kunt u IoT-Plug en Play gebruiken met de [Azure SDK voor Embedded C IOT-client bibliotheken](https://aka.ms/embeddedcsdk) of met [Azure rto's](/azure/rtos/overview-rtos). Dit artikel bevat koppelingen en bronnen voor deze beperkte scenario's.
+Als u voor *beperkte apparaten* ontwikkelt, kunt u IoT-Plug en Play gebruiken met de [Azure SDK voor Embedded C IOT-client bibliotheken](https://aka.ms/embeddedcsdk) of met [Azure rto's](/azure/rtos/overview-rtos). Dit artikel bevat koppelingen en bronnen voor deze beperkte scenario's.
 
 ## <a name="use-the-sdk-for-embedded-c"></a>De SDK voor Embedded C gebruiken
 

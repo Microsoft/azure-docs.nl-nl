@@ -5,10 +5,10 @@ ms.date: 10/14/2019
 ms.topic: troubleshooting
 ms.reviewer: brendal
 ms.openlocfilehash: 20c0f9bdd6f820a73b1ba6660de805268c0d8714
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85212850"
 ---
 # <a name="azure-blockchain-workbench-preview-troubleshooting"></a>Preview-versie van Azure Block Chain Workbench oplossen
@@ -44,7 +44,7 @@ Het script accepteert de volgende para meters:
 
 | Parameter  | Beschrijving | Vereist |
 |---------|---------|----|
-| Abonnements | SubscriptionID om alle resources te maken of te zoeken. | Ja |
+| SubscriptionID | SubscriptionID om alle resources te maken of te zoeken. | Ja |
 | ResourceGroupName | De naam van de Azure-resource groep waar Block Chain Workbench is geïmplementeerd. | Ja |
 | Output directory | Pad om de uitvoer te maken. ZIP-bestand. Als niet wordt opgegeven, wordt standaard de huidige map gebruikt. | Nee |
 | LookbackHours | Het aantal uren dat moet worden gebruikt bij het ophalen van telemetrie. De standaard waarde is 24 uur. De maximum waarde is 90 uur | Nee |

@@ -4,10 +4,10 @@ description: Overzicht van het gebruik van Azure Functions-proxy's
 ms.topic: conceptual
 ms.date: 01/22/2018
 ms.openlocfilehash: fb263239f99bcb4ec4c893b700d5c1cce078659f
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96601370"
 ---
 # <a name="work-with-azure-functions-proxies"></a>Werken met Azure Functions-proxy's
@@ -28,7 +28,7 @@ In deze sectie wordt beschreven hoe u een proxy maakt in de functions-Portal.
 3. Geef een naam op voor uw proxy.
 4. Configureer het eind punt dat wordt weer gegeven in deze functie-app door de **route sjabloon** en **http-methoden** op te geven. Deze para meters gedragen zich op basis van de regels voor [http-triggers].
 5. Stel de **back-end-URL** in op een ander eind punt. Dit eind punt kan een functie zijn in een andere functie-app of een andere API. De waarde hoeft niet statisch te zijn en kan verwijzen naar [Toepassings instellingen] en- [para meters van de oorspronkelijke client aanvraag].
-6. Klik op **Maken**.
+6. Klik op **Create**.
 
 Uw proxy bestaat nu als een nieuw eind punt in uw functie-app. Vanuit een client perspectief is het gelijk aan een http trigger in Azure Functions. U kunt de nieuwe proxy proberen door de proxy-URL te kopiëren en deze te testen met uw favoriete HTTP-client.
 

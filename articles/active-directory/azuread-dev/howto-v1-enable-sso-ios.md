@@ -16,10 +16,10 @@ ms.reviewer: brandwe
 ms.custom: aaddev
 ROBOTS: NOINDEX
 ms.openlocfilehash: 08b018082c753b9524cb12a72d637fe5458d9114
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85383696"
 ---
 # <a name="how-to-enable-cross-app-sso-on-ios-using-adal"></a>Procedure: cross-app SSO inschakelen op iOS met ADAL
@@ -50,7 +50,7 @@ In deze procedure wordt ervan uitgegaan dat u weet hoe u:
 
 ### <a name="identity-brokers"></a>Identiteits Brokers
 
-Micro soft biedt toepassingen voor elk mobiel platform dat de bridging van referenties voor toepassingen van verschillende leveranciers mogelijk maakt, en voor verbeterde functies waarvoor een enkele veilige locatie is vereist voor het valideren van referenties. Deze worden **makelaars**genoemd.
+Micro soft biedt toepassingen voor elk mobiel platform dat de bridging van referenties voor toepassingen van verschillende leveranciers mogelijk maakt, en voor verbeterde functies waarvoor een enkele veilige locatie is vereist voor het valideren van referenties. Deze worden **makelaars** genoemd.
 
 Op iOS en Android worden makelaars geleverd via download bare toepassingen die door klanten afzonderlijk of naar het apparaat worden gepusht door een bedrijf dat sommige of alle apparaten beheert voor hun werk nemers. Makelaars ondersteunen het beheer van beveiliging alleen voor sommige toepassingen of het hele apparaat op basis van de IT-beheerders configuratie. In Windows wordt deze functionaliteit geleverd door een account kiezer die is ingebouwd in het besturings systeem, technisch aangeduid als de Web authentication Broker.
 
@@ -243,7 +243,7 @@ Dat is alles. De SDK zal nu referenties delen in al uw toepassingen. De gebruike
 
 ### <a name="turning-on-sso-for-broker-assisted-sso"></a>EENMALIGe aanmelding inschakelen voor SSO met Broker-ondersteuning
 
-De mogelijkheid voor een toepassing voor het gebruik van elke Broker die op het apparaat is geïnstalleerd, is **standaard**uitgeschakeld. Als u uw toepassing met de Broker wilt gebruiken, moet u aanvullende configuratie stappen uitvoeren en code toevoegen aan uw toepassing.
+De mogelijkheid voor een toepassing voor het gebruik van elke Broker die op het apparaat is geïnstalleerd, is **standaard** uitgeschakeld. Als u uw toepassing met de Broker wilt gebruiken, moet u aanvullende configuratie stappen uitvoeren en code toevoegen aan uw toepassing.
 
 De stappen die u moet volgen:
 

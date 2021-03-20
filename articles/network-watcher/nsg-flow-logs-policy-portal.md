@@ -13,16 +13,16 @@ ms.workload: infrastructure-services
 ms.date: 01/07/2021
 ms.author: damendo
 ms.openlocfilehash: 8da1130809c1802f4db963f4b4b000a848e9abaa
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98011098"
 ---
 # <a name="quickstart-deploy-and-manage-nsg-flow-logs-using-azure-policy"></a>Quick Start: NSG-stroom logboeken implementeren en beheren met behulp van Azure Policy 
 
 ## <a name="overview"></a>Overzicht
-Azure Policy helpt bij het afdwingen van organisatiestandaarden en bij het beoordelen van de naleving op schaal. Veelvoorkomende use-cases voor Azure Policy zijn onder andere het implementeren van governance voor consistentie van resources, naleving van de regelgeving, beveiliging, kosten en beheer. In dit artikel gebruiken we twee ingebouwde beleids regels die beschikbaar zijn voor NSG-stroom Logboeken om de installatie van uw stroom logboeken te beheren. Het eerste beleid markeert alle Nsg's zonder dat er stroom logboeken zijn ingeschakeld. Het tweede beleid implementeert automatisch stroom logboeken voor Nsg's zonder dat er stroom logboeken zijn ingeschakeld. 
+Met Azure Policy kunt u organisatiestandaarden afdwingen en compliance op schaal beoordelen. Veelvoorkomende use-cases voor Azure Policy zijn onder andere het implementeren van governance voor consistentie van resources, naleving van de regelgeving, beveiliging, kosten en beheer. In dit artikel gebruiken we twee ingebouwde beleids regels die beschikbaar zijn voor NSG-stroom Logboeken om de installatie van uw stroom logboeken te beheren. Het eerste beleid markeert alle Nsg's zonder dat er stroom logboeken zijn ingeschakeld. Het tweede beleid implementeert automatisch stroom logboeken voor Nsg's zonder dat er stroom logboeken zijn ingeschakeld. 
 
 Als u voor de eerste keer een Azure-beleid maakt, kunt u het volgende lezen: 
 - [Overzicht van Azure-beleid](../governance/policy/overview.md) 

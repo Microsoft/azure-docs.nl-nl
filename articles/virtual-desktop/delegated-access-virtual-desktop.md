@@ -7,10 +7,10 @@ ms.date: 04/30/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: f2aa2c74704cf89c082d2837b39e82902efa0a62
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88010052"
 ---
 # <a name="delegated-access-in-windows-virtual-desktop"></a>Gedelegeerde toegang in Windows Virtual Desktop
@@ -22,7 +22,7 @@ Het virtuele bureau blad van Windows beschikt over een gedelegeerd toegangs mode
 
 Het Windows-bureau blad gedelegeerde toegang ondersteunt de volgende waarden voor elk element van de roltoewijzing:
 
-* Beveiligings-principal
+* Beveiligingsprincipal
     * Gebruikers
     * Gebruikersgroepen
     * Service-principals
@@ -32,7 +32,7 @@ Het Windows-bureau blad gedelegeerde toegang ondersteunt de volgende waarden voo
 * Bereik
     * Hostgroepen
     * App-groepen
-    * Werkruimten
+    * Workspaces
 
 ## <a name="powershell-cmdlets-for-role-assignments"></a>Power shell-cmdlets voor roltoewijzingen
 

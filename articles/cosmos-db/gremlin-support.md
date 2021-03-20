@@ -8,10 +8,10 @@ ms.topic: overview
 ms.date: 11/11/2020
 ms.author: sngun
 ms.openlocfilehash: 036338e90a3e7b466924d419400c0dcc692dec5f
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97630748"
 ---
 # <a name="azure-cosmos-db-gremlin-graph-support-and-compatibility-with-tinkerpop-features"></a>Gremlin-graafondersteuning voor Azure Cosmos DB en compatibiliteit met TinkerPop-functies
@@ -169,31 +169,31 @@ De voor schrijven geoptimaliseerde engine van Azure Cosmos DB biedt standaard on
 
 ## <a name="behavior-differences"></a>Gedragsverschillen
 
-* De Azure Cosmos DB Graph-engine voert de doorkruising ***breedte-eerst** _ uit, terwijl TinkerPop Gremlin diepte-eerst is. Dit gedrag behaalt betere prestaties in horizontaal schaalbare systemen zoals Cosmos DB.
+* De Azure Cosmos DB Graph-engine voert ***breedte-eerst***-doorkruising uit, terwijl TinkerPop Gremlin diepte-eerst is. Dit gedrag behaalt betere prestaties in horizontaal schaalbare systemen zoals Cosmos DB.
 
 ## <a name="unsupported-features"></a>Niet-ondersteunde functies
 
-_ * **[Gremlin Bytecode](https://tinkerpop.apache.org/docs/current/tutorials/gremlin-language-variants/)** _ is een programmeertaal-agnostische specificatie voor het doorkruisen van grafieken. Cosmos DB Graph ondersteunt dit nog niet. Gebruik `GremlinClient.SubmitAsync()` en geef doorkruising door als een tekenreeks.
+* ***[Gremlin Bytecode](https://tinkerpop.apache.org/docs/current/tutorials/gremlin-language-variants/)*** is een programmeertaal-agnostische specificatie voor het doorkruisen van grafieken. Cosmos DB Graph ondersteunt dit nog niet. Gebruik `GremlinClient.SubmitAsync()` en geef doorkruising door als een tekenreeks.
 
-Instellen van kardinaliteit met _ * **`property(set, 'xyz', 1)`** _ wordt momenteel niet ondersteund. Gebruik in plaats daarvan `property(list, 'xyz', 1)`. Zie [Vertex properties with TinkerPop](http://tinkerpop.apache.org/docs/current/reference/#vertex-properties) voor meer informatie.
+* Instellen van kardinaliteit met ***`property(set, 'xyz', 1)`*** wordt momenteel niet ondersteund. Gebruik in plaats daarvan `property(list, 'xyz', 1)`. Zie [Vertex properties with TinkerPop](http://tinkerpop.apache.org/docs/current/reference/#vertex-properties) voor meer informatie.
 
-_ De ***stap `match()`** _ is momenteel niet beschikbaar. Deze stap biedt declaratieve querymogelijkheden.
+* De ***stap `match()`*** is momenteel niet beschikbaar. Deze stap biedt declaratieve querymogelijkheden.
 
-_ ***Objecten als eigenschappen** _ op hoekpunten of randen worden niet ondersteund. Eigenschappen kunnen alleen primitieve typen of matrices zijn.
+* ***Objecten als eigenschappen*** op hoekpunten of randen worden niet ondersteund. Eigenschappen kunnen alleen primitieve typen of matrices zijn.
 
-_ ***Sorteren op matrixeigenschappen** _ `order().by(<array property>)` wordt niet ondersteund. Alleen sorteren op primitieve typen wordt ondersteund.
+* ***Sorteren op matrixeigenschappen*** `order().by(<array property>)` wordt niet ondersteund. Alleen sorteren op primitieve typen wordt ondersteund.
 
-_ ***Niet-primitieve JSON-typen** _ worden niet ondersteund. Gebruik de typen `string`, `number` of `true`/`false`. `null`-waarden worden niet ondersteund. 
+* ***Niet-primitieve JSON-typen*** worden niet ondersteund. Gebruik de typen `string`, `number` of `true`/`false`. `null`-waarden worden niet ondersteund. 
 
-Serialisatiefunctie _ ***GraphSONv3** _ wordt momenteel niet ondersteund. Gebruik `GraphSONv2` Serializer-, Reader- en Writer-klassen in de configuratie van de verbinding. De resultaten die door de Azure Cosmos DB Gremlin API worden geretourneerd, hebben niet dezelfde indeling als de GraphSON-indeling. 
+* ***GraphSONv3***-serialisatiefunctie wordt momenteel niet ondersteund. Gebruik `GraphSONv2` Serializer-, Reader- en Writer-klassen in de configuratie van de verbinding. De resultaten die door de Azure Cosmos DB Gremlin API worden geretourneerd, hebben niet dezelfde indeling als de GraphSON-indeling. 
 
-_ **Lambda-expressies en functies** worden momenteel niet ondersteund. Dit geldt ook voor de functies `.map{<expression>}`, `.by{<expression>}`en `.filter{<expression>}`. Zie [A Note on Lambdas](http://tinkerpop.apache.org/docs/current/reference/#a-note-on-lambdas) voor meer informatie en om te leren hoe u deze functies kunt herschrijven met behulp van Gremlin-stappen.
+* **Lambda-expressies en functies** worden momenteel niet ondersteund. Dit geldt ook voor de functies `.map{<expression>}`, `.by{<expression>}`en `.filter{<expression>}`. Zie [A Note on Lambdas](http://tinkerpop.apache.org/docs/current/reference/#a-note-on-lambdas) voor meer informatie en om te leren hoe u deze functies kunt herschrijven met behulp van Gremlin-stappen.
 
-* ***Transacties** _ worden niet ondersteund vanwege de gedistribueerde aard van het systeem.  Configureer het juiste consistentie model op het Gremlin-account om uw eigen schrijfbewerkingen te lezen en gebruik optimistische gelijktijdigheid om conflicterende schrijfbewerkingen op te lossen.
+* ***Transacties*** worden niet ondersteund vanwege de gedistribueerde aard van het systeem.  Configureer het juiste consistentie model op het Gremlin-account om uw eigen schrijfbewerkingen te lezen en gebruik optimistische gelijktijdigheid om conflicterende schrijfbewerkingen op te lossen.
 
 ## <a name="known-limitations"></a>Bekende beperkingen
 
-_ **Indexgebruik voor Gremlin-query's met `.V()`-stappen binnen doorkruising**: Momenteel gebruikt alleen de eerste aanroep van `.V()` in een doorkruising gebruik van de index om gekoppelde filters of predicaten op te lossen. Bij volgende aanroepen wordt de index niet geraadpleegd, wat de latentie en de kosten van de query zou kunnen verhogen.
+* **Indexgebruik voor Gremlin-query's met `.V()`-stappen binnen doorkruising**: Momenteel gebruikt alleen de eerste aanroep van `.V()` in een doorkruising gebruik van de index om gekoppelde filters of predicaten op te lossen. Bij volgende aanroepen wordt de index niet geraadpleegd, wat de latentie en de kosten van de query zou kunnen verhogen.
     
 Uitgaande van standaardindexering, zou een typische Gremlin-query die begint met de stap `.V()` in de gekoppelde filterstappen parameters zoals `.has()` of `.where()` gebruiken om de kosten en de prestaties van de query te optimaliseren. Bijvoorbeeld:
 

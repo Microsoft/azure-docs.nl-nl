@@ -12,10 +12,10 @@ ms.date: 11/30/2018
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 6064bd2c62922abea44508b8bf6cdfa3e7ecbc92
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94953301"
 ---
 # <a name="azure-ad-b2c-sign-in-using-an-ios-application"></a>Azure AD B2C: aanmelden met een iOS-toepassing
@@ -23,7 +23,7 @@ ms.locfileid: "94953301"
 Op het Microsoft Identity-platform wordt gebruikgemaakt van open standaarden, zoals OAuth2 en OpenID Connect. Het gebruik van een open standaard-protocol biedt meer keuze voor ontwikkel aars bij het selecteren van een bibliotheek om te integreren met onze services. We hebben deze walkthrough en andere gebruikers hiervan op de hulp om ontwikkel aars te helpen bij het schrijven van toepassingen die verbinding maken met het micro soft-identiteits platform. De meeste bibliotheken die [de RFC6749 OAuth2-spec](https://tools.ietf.org/html/rfc6749) implementeren, kunnen verbinding maken met het micro soft-identiteits platform.
 
 > [!WARNING]
-> Micro soft biedt geen oplossingen voor bibliotheken van derden en heeft geen beoordeling uitgevoerd van die bibliotheken. In dit voor beeld wordt een bibliotheek van derden gebruikt met de naam AppAuth die is getest op compatibiliteit in basis scenario's met de Azure AD B2C. Problemen en functie aanvragen moeten worden omgeleid naar het open-source project van de bibliotheek. Zie [dit artikel](../active-directory/develop/reference-v2-libraries.md)voor meer informatie.
+> Micro soft biedt geen oplossingen voor bibliotheken van derden en heeft geen beoordeling uitgevoerd van die bibliotheken. In dit voor beeld wordt een bibliotheek van derden gebruikt met de naam AppAuth die is getest op compatibiliteit in basis scenario's met de Azure AD B2C. Problemen en functie aanvragen moeten worden omgeleid naar het open-source project van de bibliotheek. Raadpleeg [dit artikel](../active-directory/develop/reference-v2-libraries.md) voor meer informatie.
 >
 >
 

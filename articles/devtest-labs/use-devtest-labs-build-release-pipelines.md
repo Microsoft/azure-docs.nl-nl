@@ -4,10 +4,10 @@ description: Meer informatie over het gebruik van Azure DevTest Labs in azure-pi
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: d04ed5dd7bebac0c8f24deb9145c3d2e4b77122e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88080331"
 ---
 # <a name="use-devtest-labs-in-azure-pipelines-build-and-release-pipelines"></a>DevTest Labs in Azure Pipelines gebruiken om pijplijnen te ontwikkelen en uit te brengen
@@ -81,7 +81,7 @@ U maakt een release pijplijn met twee taken: **Azure-implementatie: resource gro
 
 Geef voor de eerste taak de naam en de locatie van de resource groep op. De locatie van de sjabloon is een gekoppeld artefact. Als de Resource Manager-sjabloon gekoppelde sjablonen bevat, moet een aangepaste implementatie van een resource groep worden geïmplementeerd. De sjabloon bevindt zich in het gepubliceerde drop-artefact. Temp late para meters voor de Resource Manager-sjabloon negeren. U kunt de resterende instellingen met standaard waarden laten staan. 
 
-Voor de tweede taak **implementeren Azure app service**, geeft u het Azure-abonnement op, selecteert u **Web-app** voor het **app-type**en **$ (website)** voor de naam van de **app service**. U kunt de resterende instellingen met standaard waarden laten staan. 
+Voor de tweede taak **implementeren Azure app service**, geeft u het Azure-abonnement op, selecteert u **Web-app** voor het **app-type** en **$ (website)** voor de naam van de **app service**. U kunt de resterende instellingen met standaard waarden laten staan. 
 
 ## <a name="test-run"></a>Test uitvoering
 Nu beide pijp lijnen zijn ingesteld, kunt u een build hand matig in de wachtrij plaatsen en de IT-afdeling weer geven. De volgende stap is het instellen van de juiste trigger voor de build en het maken van de build met de release pijplijn.

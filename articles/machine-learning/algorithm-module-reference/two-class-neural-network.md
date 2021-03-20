@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 04/22/2020
 ms.openlocfilehash: 9131a2439facef00cae818bffef38e536a40a2fd
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93421155"
 ---
 # <a name="two-class-neural-network-module"></a>Neural-netwerk module Two-Class
@@ -22,7 +22,7 @@ In dit artikel wordt een module in Azure Machine Learning Designer beschreven.
 
 Gebruik deze module voor het maken van een Neural-netwerk model dat kan worden gebruikt voor het voors pellen van een doel met slechts twee waarden.
 
-Classificatie met behulp van Neural-netwerken is een bewaakte leer methode en vereist daarom een *gecodeerde gegevensset* , die een kolom Label bevat. U kunt dit Neural-netwerk model bijvoorbeeld gebruiken om binaire resultaten te voors pellen, zoals of een patiënt al een bepaalde ziekte heeft of een machine waarschijnlijk niet kan worden uitgevoerd binnen een bepaald tijd venster.  
+Classificatie met behulp van Neural-netwerken is een bewaakte leer methode en vereist daarom een *gecodeerde gegevensset*, die een kolom Label bevat. U kunt dit Neural-netwerk model bijvoorbeeld gebruiken om binaire resultaten te voors pellen, zoals of een patiënt al een bepaalde ziekte heeft of een machine waarschijnlijk niet kan worden uitgevoerd binnen een bepaald tijd venster.  
 
 Nadat u het model hebt gedefinieerd, traint u het met een gecodeerde gegevensset en het model als invoer voor het [trainen van modellen](./train-model.md). Het getrainde model kan vervolgens worden gebruikt om waarden voor nieuwe invoer te voors pellen.
 
@@ -38,17 +38,17 @@ Voor het berekenen van de uitvoer van het netwerk voor een bepaalde invoer wordt
   
 ## <a name="how-to-configure"></a>Configureren
 
-1.  Voeg de **Neural-netwerk module met twee klassen** toe aan de pijp lijn. U kunt deze module vinden onder **machine learning** , **initialiseren** , in de categorie **classificatie** .  
+1.  Voeg de **Neural-netwerk module met twee klassen** toe aan de pijp lijn. U kunt deze module vinden onder **machine learning**, **initialiseren**, in de categorie **classificatie** .  
   
 2.  Geef op hoe u wilt dat het model wordt getraind door de optie **trainer modus maken** in te stellen.  
   
-    -   **Eén para meter** : Kies deze optie als u al weet hoe u het model wilt configureren.
+    -   **Eén para meter**: Kies deze optie als u al weet hoe u het model wilt configureren.
 
-    -   **Parameter bereik** : als u niet zeker weet wat de beste para meters zijn, kunt u de optimale para meters vinden met behulp van de Hyper parameters-module voor het [afstemmen van modellen](tune-model-hyperparameters.md) . U geeft een aantal waarden op, en de trainer herhaalt meerdere combi Naties van de instellingen om de combi natie van waarden te bepalen die het beste resultaat oplevert.  
+    -   **Parameter bereik**: als u niet zeker weet wat de beste para meters zijn, kunt u de optimale para meters vinden met behulp van de Hyper parameters-module voor het [afstemmen van modellen](tune-model-hyperparameters.md) . U geeft een aantal waarden op, en de trainer herhaalt meerdere combi Naties van de instellingen om de combi natie van waarden te bepalen die het beste resultaat oplevert.  
 
 3.  Selecteer bij **verborgen laag specificatie** het type netwerk architectuur dat moet worden gemaakt.  
   
-    -   **Volledig gekoppelde Case** : maakt gebruik van de standaard Neural-netwerk architectuur, die als volgt is gedefinieerd voor Neural-netwerken met twee klassen:
+    -   **Volledig gekoppelde Case**: maakt gebruik van de standaard Neural-netwerk architectuur, die als volgt is gedefinieerd voor Neural-netwerken met twee klassen:
   
         -   Heeft één verborgen laag.
   
@@ -76,9 +76,9 @@ Voor het berekenen van de uitvoer van het netwerk voor een bepaalde invoer wordt
   
 13. Voeg een gegevensset met een label toe aan de pijp lijn en Train het model:
 
-    + Als u de **modus trainer maken** instelt op **één para meter** , verbindt u een gecodeerde gegevensset en de module [Train model](train-model.md) .  
+    + Als u de **modus trainer maken** instelt op **één para meter**, verbindt u een gecodeerde gegevensset en de module [Train model](train-model.md) .  
   
-    + Als u de **modus trainer maken** instelt op het **parameter bereik** , verbindt u een gecodeerde gegevensset en traint u het model met behulp van [Hyper parameters model](tune-model-hyperparameters.md).  
+    + Als u de **modus trainer maken** instelt op het **parameter bereik**, verbindt u een gecodeerde gegevensset en traint u het model met behulp van [Hyper parameters model](tune-model-hyperparameters.md).  
   
     > [!NOTE]
     > 

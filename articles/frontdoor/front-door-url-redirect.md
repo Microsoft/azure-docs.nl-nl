@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 09/28/2020
 ms.author: duau
 ms.openlocfilehash: 61077c7900530fd4c5be64054bedd9c5d087fe77
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91442055"
 ---
 # <a name="url-redirect"></a>URL-omleiding
@@ -37,7 +37,7 @@ U kunt het protocol instellen dat voor omleiding wordt gebruikt. De meest voorko
 
 - **Alleen https**: Stel het protocol in op https alleen als u het verkeer van http naar https wilt omleiden. De Azure front-deur raadt u aan om de omleiding altijd in te stellen op HTTPS.
 - **Alleen http**: stuurt de inkomende aanvraag om naar http. Gebruik deze waarde alleen als u het verkeer HTTP wilt laten, niet-versleuteld.
-- **Overeenkomende aanvraag: met**deze optie wordt het protocol bijgehouden dat door de binnenkomende aanvraag wordt gebruikt. Een HTTP-aanvraag blijft dus HTTP en een HTTPS-aanvraag blijft HTTPS post-omleiding.
+- **Overeenkomende aanvraag: met** deze optie wordt het protocol bijgehouden dat door de binnenkomende aanvraag wordt gebruikt. Een HTTP-aanvraag blijft dus HTTP en een HTTPS-aanvraag blijft HTTPS post-omleiding.
 
 ## <a name="destination-host"></a>Doelhost
 Als onderdeel van het configureren van een omleidings routering kunt u de hostnaam of het domein voor de omleidings aanvraag ook wijzigen. U kunt dit veld instellen om de hostnaam in de URL voor de omleiding te wijzigen of op een andere manier de hostnaam van de inkomende aanvraag te behouden. Met dit veld kunt u dus alle aanvragen omleiden die zijn verzonden `https://www.contoso.com/*` naar `https://www.fabrikam.com/*` .

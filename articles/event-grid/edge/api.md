@@ -8,10 +8,10 @@ ms.reviewer: spelluru
 ms.date: 07/08/2020
 ms.topic: article
 ms.openlocfilehash: 414487d460d897eff787b11915db560706b29eb4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86171751"
 ---
 # <a name="rest-api"></a>REST-API
@@ -31,9 +31,9 @@ Voor alle API-aanvragen is de volgende query teken reeks parameter vereist:
 ```?api-version=2019-01-01-preview```
 
 ### <a name="request-content-type"></a>Type aanvraag inhoud
-Alle API-aanvragen moeten een **inhouds type**hebben.
+Alle API-aanvragen moeten een **inhouds type** hebben.
 
-In het geval van **EventGridSchema** of **CustomSchema**kan de waarde van het inhouds type een van de volgende waarden hebben:
+In het geval van **EventGridSchema** of **CustomSchema** kan de waarde van het inhouds type een van de volgende waarden hebben:
 
 ```Content-Type: application/json```
 

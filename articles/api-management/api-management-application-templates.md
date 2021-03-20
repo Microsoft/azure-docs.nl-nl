@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: 1452f380cec711fb224f532ccb02d11c5bbad697
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86255180"
 ---
 # <a name="application-templates-in-azure-api-management"></a>Toepassings sjablonen in azure API Management
@@ -27,7 +27,7 @@ Azure API Management biedt u de mogelijkheid om de inhoud van de pagina's van de
   
 -   [Lijst met toepassingen](#ProductList)  
   
--   [App](#Application)  
+-   [Toepassing](#Application)  
   
 > [!NOTE]
 >  Voor beelden van standaard sjablonen zijn opgenomen in de volgende documentatie, maar zijn onderhevig aan wijzigingen als gevolg van voortdurende verbeteringen. U kunt de Live standaard sjablonen in de ontwikkelaars portal weer geven door te navigeren naar de gewenste afzonderlijke sjablonen. Zie [de API Management ontwikkelaars portal aanpassen met behulp van sjablonen](./api-management-developer-portal-templates.md)voor meer informatie over het werken met sjablonen.  

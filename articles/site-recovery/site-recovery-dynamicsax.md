@@ -6,10 +6,10 @@ manager: rochakm
 ms.topic: how-to
 ms.date: 11/27/2018
 ms.openlocfilehash: dfa3c108d00aeba9c7d42e96e7a40736a087a508
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86133811"
 ---
 # <a name="set-up-disaster-recovery-for-a-multitier-dynamics-ax-application"></a>Herstel na nood geval instellen voor een Dynamics AX-toepassing met meerdere lagen   
@@ -99,7 +99,7 @@ U kunt een herstel plan maken in Site Recovery om het failoverproces te automati
 
 1. Selecteer de Site Recovery kluis in uw abonnement en selecteer de tegel **herstel plannen** .
 
-2. Selecteer **+ herstel plan**en geef een naam op.
+2. Selecteer **+ herstel plan** en geef een naam op.
 
 3. Selecteer de **bron** en het **doel**. Het doel kan Azure of een secundaire site zijn. Als u Azure kiest, moet u het implementatie model opgeven.
 
@@ -153,7 +153,7 @@ Zie [failover testen naar Azure in site Recovery](site-recovery-test-failover-to
 
 2. Selecteer het herstel plan dat voor Dynamics AX is gemaakt.
 
-3. Selecteer **failover**en selecteer **failover**.
+3. Selecteer **failover** en selecteer **failover**.
 
 4. Selecteer het doelnet werk en selecteer **✓** om het failoverproces te starten.
 
@@ -167,7 +167,7 @@ Zie [toepassingen repliceren met SQL Server en Azure site Recovery](site-recover
 
 2. Selecteer het herstel plan dat voor Dynamics AX is gemaakt.
 
-3. Selecteer **failover**en selecteer **failover**.
+3. Selecteer **failover** en selecteer **failover**.
 
 4. Selecteer **richting wijzigen**.
 

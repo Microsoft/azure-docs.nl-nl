@@ -8,10 +8,10 @@ ms.date: 10/17/2016
 ms.author: ccompy
 ms.custom: seodec18
 ms.openlocfilehash: 0e665ec27da0a898e754817f946b965ac7360fda
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86220555"
 ---
 # <a name="scaling-apps-in-an-app-service-environment-v1"></a>Apps schalen in een App Service Environment v1
@@ -39,11 +39,11 @@ U kunt meerdere app service-plannen maken met behulp van reken resources uit ver
 ### <a name="scaling-the-number-of-instances"></a>Het aantal exemplaren schalen
 Wanneer u uw web-app voor het eerst in een App Service Environment maakt, begint deze met 1 instantie.  U kunt vervolgens uitschalen naar aanvullende instanties om extra reken resources te bieden voor uw app.   
 
-Als uw ASE voldoende capaciteit heeft, is dit tamelijk eenvoudig.  U gaat naar uw App Service-abonnement dat de sites bevat die u omhoog wilt schalen en schalen selecteren.  Hiermee opent u de gebruikers interface waar u de schaal voor uw ASP hand matig kunt instellen of regels voor automatisch schalen voor uw ASP wilt configureren.  Als u uw app hand matig wilt schalen, stelt u de ***schaal in*** op ***een aantal exemplaren dat ik hand matig heb ingevoerd***.  Sleep de schuif regelaar naar het gewenste aantal of typ deze in het vak naast de schuif regelaar.  
+Als uw ASE voldoende capaciteit heeft, is dit tamelijk eenvoudig.  U gaat naar uw App Service-abonnement dat de sites bevat die u omhoog wilt schalen en schalen selecteren.  Hiermee opent u de gebruikers interface waar u de schaal voor uw ASP hand matig kunt instellen of regels voor automatisch schalen voor uw ASP wilt configureren.  Als u uw app hand matig wilt schalen **,** stelt u * in op _ *_een aantal exemplaren dat hand matig wordt ingevoerd_* *.  Sleep de schuif regelaar naar het gewenste aantal of typ deze in het vak naast de schuif regelaar.  
 
 ![Scherm afbeelding die laat zien waar u de schaal voor uw ASP kunt instellen of regels voor automatisch schalen voor uw ASP wilt configureren.][2] 
 
-De regels voor automatisch schalen voor een ASP in een ASE werken op dezelfde manier als normaal.  U kunt een ***CPU-percentage*** selecteren onder ***schalen door*** en regels voor automatisch SCHALEN maken voor uw ASP op basis van het CPU-percentage of u kunt complexere regels maken met behulp van ***schema-en prestatie regels***.  Meer informatie over het configureren van automatisch schalen vindt u in de hand leiding hier [schaalt u een app in azure app service][AppScale]. 
+De regels voor automatisch schalen voor een ASP in een ASE werken op dezelfde manier als normaal.  U kunt ***CPU-percentage** _ selecteren onder _*_schalen op_*_ en regels voor automatisch schalen maken voor uw ASP op basis van het CPU-percentage of u kunt complexere regels maken met behulp van de regels van het _schema en de prestaties_* *.  Meer informatie over het configureren van automatisch schalen vindt u in de hand leiding hier [schaalt u een app in azure app service][AppScale]. 
 
 ### <a name="worker-pool-selection"></a>Selectie van werknemers groep
 Zoals eerder is vermeld, wordt de selectie van de werknemers groep geopend vanuit de ASP-gebruikers interface.  Open de Blade voor de ASP die u wilt schalen en selecteer werknemers groep.  U ziet alle worker-groepen die u in uw App Service Environment hebt geconfigureerd.  Als u slechts één werk groep hebt, ziet u alleen de ene groep die wordt vermeld.  Als u wilt wijzigen in welke werk groep uw ASP zich bevindt, selecteert u alleen de werk groep waaraan u het App Service plan wilt verplaatsen.  

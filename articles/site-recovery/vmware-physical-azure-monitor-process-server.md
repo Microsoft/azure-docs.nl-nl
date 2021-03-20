@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 11/14/2019
 ms.author: raynew
 ms.openlocfilehash: eebaa70cee99380ac67b8f6516a5b08ff2832c86
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86134740"
 ---
 # <a name="monitor-the-process-server"></a>De proces server bewaken
@@ -76,12 +76,12 @@ De proces server genereert een aantal status waarschuwingen die in de volgende t
 
 U kunt de status van uw proces servers als volgt bewaken: 
 
-1. Als u de replicatie status en-status van een gerepliceerde machine en van de proces server wilt controleren, klikt u in de kluis > **gerepliceerde items**op de computer die u wilt bewaken.
-2. In **replicatie status**kunt u de status van de VM controleren. Klik op de status om in te zoomen op fout Details.
+1. Als u de replicatie status en-status van een gerepliceerde machine en van de proces server wilt controleren, klikt u in de kluis > **gerepliceerde items** op de computer die u wilt bewaken.
+2. In **replicatie status** kunt u de status van de VM controleren. Klik op de status om in te zoomen op fout Details.
 
     ![Status van de proces server in het VM-dash board](./media/vmware-physical-azure-monitor-process-server/vm-ps-health.png)
 
-4. In de status van de **proces server**kunt u de status van de proces server bewaken. Inzoomen voor meer informatie.
+4. In de status van de **proces server** kunt u de status van de proces server bewaken. Inzoomen voor meer informatie.
 
     ![Details van de proces server in het VM-dash board](./media/vmware-physical-azure-monitor-process-server/ps-summary.png)
 
@@ -90,7 +90,7 @@ U kunt de status van uw proces servers als volgt bewaken:
     - Als de proces server wordt uitgevoerd in de standaard implementatie op de configuratie server, wordt de configuratie server dienovereenkomstig gemarkeerd.
     - Als u wilt inzoomen, klikt u op de configuratie server of de proces server. Noteer alle problemen en eventuele aanbevelingen voor herstel.
 
-U kunt ook proces servers in de kluis bewaken onder **site Recovery-infra structuur**. Klik in **uw site Recovery-infra structuur beheren**op **configuratie servers**. Selecteer de configuratie server die aan de proces server is gekoppeld en zoom in op de details van de proces server.
+U kunt ook proces servers in de kluis bewaken onder **site Recovery-infra structuur**. Klik in **uw site Recovery-infra structuur beheren** op **configuratie servers**. Selecteer de configuratie server die aan de proces server is gekoppeld en zoom in op de details van de proces server.
 
 
 ## <a name="next-steps"></a>Volgende stappen

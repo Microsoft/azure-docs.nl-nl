@@ -4,10 +4,10 @@ description: Microsoft Azure Backup Server biedt uitgebreide back-upmogelijkhede
 ms.topic: conceptual
 ms.date: 05/24/2020
 ms.openlocfilehash: 39050d0f658e29b82f270f1fe53026e2fb80bfa1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91332760"
 ---
 # <a name="whats-new-in-microsoft-azure-backup-server-mabs"></a>Wat is er nieuw in Microsoft Azure Backup Server (MABS)
@@ -128,6 +128,6 @@ Meer informatie over de installatie-en upgrade stappen voor MABS vindt u [hier](
 Meer informatie over het voorbereiden van uw server of het beveiligen van een workload:
 
 * [Werk belastingen voor de back-upserver voorbereiden](backup-azure-microsoft-azure-backup.md)
-* [Back-upserver gebruiken om een back-up te maken van een VMware-Server](backup-azure-backup-server-vmware.md)
-* [Back-upserver gebruiken om back-ups te maken van SQL Server](backup-azure-sql-mabs.md)
+* [Backup Server gebruiken om back-ups te maken van een VMware-server](backup-azure-backup-server-vmware.md)
+* [Backup Server gebruiken om back-ups te maken van SQL Server](backup-azure-sql-mabs.md)
 * [Modern Backup Storage gebruiken met een back-upserver](backup-mabs-add-storage.md)

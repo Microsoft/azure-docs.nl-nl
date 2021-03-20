@@ -12,10 +12,10 @@ ms.date: 09/10/2018
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: c60cecb9d6bfeeefc0569a1a57185d13f0c6442f
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94953114"
 ---
 # <a name="social-accounts-claims-transformations"></a>Sociale accounts claim transformaties
@@ -41,7 +41,7 @@ In dit artikel vindt u voor beelden van het gebruik van de claim transformaties 
 
 Hiermee maakt u een JSON-weer gave van de eigenschap alternativeSecurityId van de gebruiker die kan worden gebruikt in de aanroepen van Azure Active Directory. Zie het [AlternativeSecurityId](/graph/api/resources/alternativesecurityid) -schema voor meer informatie.
 
-| Item | TransformationClaimType | Gegevenstype | Opmerkingen |
+| Item | TransformationClaimType | Gegevenstype | Notities |
 | ---- | ----------------------- | --------- | ----- |
 | Input claim | sleutel | tekenreeks | Het claim type dat de unieke gebruikers-id specificeert die wordt gebruikt door de ID-provider voor sociale netwerken. |
 | Input claim | Identity provider | tekenreeks | Het claim type dat de naam van de ID-provider van de sociale account opgeeft, zoals facebook.com. |
@@ -73,7 +73,7 @@ Gebruik deze claim transformatie om een claim type te genereren `alternativeSecu
 
 Hiermee voegt `AlternativeSecurityId` u een aan een `alternativeSecurityIdCollection` claim toe.
 
-| Item | TransformationClaimType | Gegevenstype | Opmerkingen |
+| Item | TransformationClaimType | Gegevenstype | Notities |
 | ---- | ----------------------- | --------- | ----- |
 | Input claim | item | tekenreeks | Het claim type dat aan de uitvoer claim moet worden toegevoegd. |
 | Input claim | verzameling | alternativeSecurityIdCollection | De ClaimTypes die worden gebruikt door de claim transformatie, indien beschikbaar in het beleid. Als deze wordt vermeld, wordt aan het `item` einde van de verzameling de claim transformatie toegevoegd. |
@@ -110,7 +110,7 @@ In het volgende voor beeld wordt een nieuwe sociale identiteit gekoppeld aan een
 
 Retourneert een lijst met verleners van de claim **alternativeSecurityIdCollection** naar een nieuwe **stringCollection** -claim.
 
-| Item | TransformationClaimType | Gegevenstype | Opmerkingen |
+| Item | TransformationClaimType | Gegevenstype | Notities |
 | ---- | ----------------------- | --------- | ----- |
 | Input claim | alternativeSecurityIdCollection | alternativeSecurityIdCollection | Het claim type dat moet worden gebruikt om de lijst met id-providers (verlener) op te halen. |
 | Output claim | identityProvidersCollection | stringCollection | De ClaimTypes die worden geproduceerd nadat deze ClaimsTransformation is aangeroepen. Lijst met id-providers die zijn gekoppeld aan de invoer claim alternativeSecurityIdCollection |
@@ -137,7 +137,7 @@ De volgende claim transformatie leest de claim van de gebruiker **alternativeSec
 
 Hiermee verwijdert u een **AlternativeSecurityId** van een **alternativeSecurityIdCollection** -claim.
 
-| Item | TransformationClaimType | Gegevenstype | Opmerkingen |
+| Item | TransformationClaimType | Gegevenstype | Notities |
 | ---- | ----------------------- | --------- | ----- |
 | Input claim | Identity provider | tekenreeks | Het claim type dat de naam van de identiteits provider bevat die uit de verzameling moet worden verwijderd. |
 | Input claim | verzameling | alternativeSecurityIdCollection | De ClaimTypes die worden gebruikt door de claim transformatie. De claim transformatie verwijdert de Identity provider uit de verzameling. |

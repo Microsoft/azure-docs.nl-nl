@@ -14,10 +14,10 @@ ms.date: 11/15/2017
 ms.author: apimpm
 ms.custom: mvc
 ms.openlocfilehash: 85fa79cdfc7036be5b0ab20e49986a1d075152c5
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86254653"
 ---
 # <a name="about-api-management"></a>Meer informatie over API Management
@@ -42,9 +42,9 @@ Het systeem bestaat uit de volgende onderdelen:
   
   * API-aanroepen worden geaccepteerd en naar uw back-ends worden doorgestuurd.
   * API-sleutels, JWT-tokens, certificaten en andere referenties worden geverifieerd.
-  * Quota voor gebruik en frequentielimieten worden afgedwongen.
-  * Uw API snel kan worden getransformeerd zonder codewijzigingen.
-  * Antwoorden van de back-end in de cache worden opgeslagen indien ingesteld.
+  * Gebruiksquota en snelheidsbeperkingen worden gehandhaafd.
+  * Uw API wordt ter plekke omgezet zonder codewijzigingen.
+  * Back-endreacties worden in de cache opgeslagen waar ze zijn ingesteld.
   * Aanroepmetagegevens worden voor analysedoeleinden aan het logboek toegevoegd.
 * **Azure Portal** is de beheerinterface waar u uw API-programma instelt. Gebruik deze voor het volgende:
   
@@ -56,8 +56,8 @@ Het systeem bestaat uit de volgende onderdelen:
 * De **portal voor ontwikkelaars** fungeert als de belangrijkste informatiebron op het web voor ontwikkelaars. Ze kunnen hier het volgende doen:
   
   * API-documentatie lezen.
-  * Een API uitproberen via de interactieve console.
-  * Een account maken en zich abonneren om API-sleutels op te halen.
+  * Probeer een API uit via de interactieve console.
+  * Maak een account en abonneer u om API-sleutels op te halen.
   * Analytische gegevens openen over hun eigen gebruik.
 
 Raadpleeg het technische document in PDF-indeling [API Management in de cloud: de mogelijkheden van API's benutten](https://j.mp/ms-apim-whitepaper) voor meer informatie. In dit inleidende technische document over API Management door CITO Research wordt het volgende besproken: 

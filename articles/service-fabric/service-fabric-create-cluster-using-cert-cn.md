@@ -4,10 +4,10 @@ description: Meer informatie over het maken van een Service Fabric cluster met b
 ms.topic: conceptual
 ms.date: 09/06/2019
 ms.openlocfilehash: c852b40d35f936753d3c16420159676da239b6c6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86246432"
 ---
 # <a name="deploy-a-service-fabric-cluster-that-uses-certificate-common-name-instead-of-thumbprint"></a>Een Service Fabric cluster implementeren dat de algemene certificaat naam gebruikt in plaats van een vinger afdruk
@@ -78,7 +78,7 @@ Open eerst de *azuredeploy.parameters.jsin* het bestand in een tekst editor en v
 },
 ```
 
-Stel vervolgens de para meters *certificateCommonName*, *sourceVaultValue*en *certificateUrlValue* in op de parameter waarden die worden geretourneerd door het voor gaande script:
+Stel vervolgens de para meters *certificateCommonName*, *sourceVaultValue* en *certificateUrlValue* in op de parameter waarden die worden geretourneerd door het voor gaande script:
 ```json
 "certificateCommonName": {
     "value": "myclustername.southcentralus.cloudapp.azure.com"
@@ -94,7 +94,7 @@ Stel vervolgens de para meters *certificateCommonName*, *sourceVaultValue*en *ce
 },
 ```
 
-### <a name="update-the-template-file"></a>Het sjabloon bestand bijwerken
+### <a name="update-the-template-file"></a>Het sjabloonbestand bijwerken
 Open vervolgens de *azuredeploy.jsin* het bestand in een tekst editor en maak drie updates ter ondersteuning van de algemene naam van het certificaat.
 
 1. Voeg in de sectie **para meters** een *certificateCommonName* -para meter toe:
@@ -113,14 +113,14 @@ Open vervolgens de *azuredeploy.jsin* het bestand in een tekst editor en maak dr
     },
     ```
 
-    U kunt ook de *certificateThumbprint*verwijderen. Dit is mogelijk niet meer nodig.
+    U kunt ook de *certificateThumbprint* verwijderen. Dit is mogelijk niet meer nodig.
 
 2. Stel de waarde van de variabele *sfrpApiVersion* in op ' 2018-02-01 ':
     ```json
     "sfrpApiVersion": "2018-02-01",
     ```
 
-3. In de resource **micro soft. Compute/virtualMachineScaleSets** werkt u de extensie van de virtuele machine bij voor het gebruik van de algemene naam in certificaat instellingen in plaats van de vinger afdruk.  In instellingen voor eigenschappen van **virtualMachineProfile** -> **extensionProfile** -> -**extensies** -> **properties** -> **settings** -> **certificaat**toevoegen 
+3. In de resource **micro soft. Compute/virtualMachineScaleSets** werkt u de extensie van de virtuele machine bij voor het gebruik van de algemene naam in certificaat instellingen in plaats van de vinger afdruk.  In instellingen voor eigenschappen van **virtualMachineProfile** -> **extensionProfile** -> -**extensies** ->  ->  -> **certificaat** toevoegen 
     ```json
        "commonNames": [
         "[parameters('certificateCommonName')]"

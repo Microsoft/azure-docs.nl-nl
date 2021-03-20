@@ -12,10 +12,10 @@ ms.custom:
 - 'Role: Cloud Development'
 - 'Role: IoT Device'
 ms.openlocfilehash: 6d6b7122963b51619f26b8d02a8be4ad39261afb
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92147691"
 ---
 # <a name="create-and-read-iot-hub-messages"></a>IoT Hub-berichten maken en lezen
@@ -70,7 +70,7 @@ Zie [Azure IOT sdk's](iot-hub-devguide-sdks.md)(Engelstalig) voor meer informati
 | --- | --- | --- |
 | bericht-id |Een door de gebruiker instel bare id voor het bericht dat wordt gebruikt voor de aanvraag/antwoord patronen. Indeling: een hoofdletter gevoelige teken reeks (Maxi maal 128 tekens lang) van ASCII 7-bits alfanumerieke tekens + `{'-', ':', '.', '+', '%', '_', '#', '*', '?', '!', '(', ')', ',', '=', '@', ';', '$', '''}` .  |Ja|
 | Volg nummer |Een getal (uniek per apparaat wachtrij) toegewezen door IoT Hub aan elk bericht van de Cloud naar het apparaat. |Nee|
-| in op |Een doel dat is opgegeven in [Cloud-naar-apparaat-](iot-hub-devguide-c2d-guidance.md) berichten. |Nee|
+| tot |Een doel dat is opgegeven in [Cloud-naar-apparaat-](iot-hub-devguide-c2d-guidance.md) berichten. |Nee|
 | absoluut-verloop tijd |De datum en tijd waarop het bericht is verlopen. |Nee|   |
 | correlation-id |Een teken reeks eigenschap in een antwoord bericht dat normaal gesp roken de MessageId van de aanvraag bevat, in antwoord patronen voor aanvragen. |Ja|
 | user-id |Een ID die wordt gebruikt om de oorsprong van berichten op te geven. Wanneer berichten door IoT Hub worden gegenereerd, wordt deze ingesteld op `{iot hub name}` . |Ja|

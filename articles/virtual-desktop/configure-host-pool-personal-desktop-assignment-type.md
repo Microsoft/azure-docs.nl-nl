@@ -7,10 +7,10 @@ ms.date: 07/09/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: 446dae3c064f5f23d35cb12b2b24bdfea9e27012
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88007808"
 ---
 # <a name="configure-the-personal-desktop-host-pool-assignment-type"></a>Het toewijzings type voor de hostgroep voor persoonlijk bureau blad configureren
@@ -71,12 +71,12 @@ Om een gebruiker rechtstreeks toe te wijzen aan een sessiehost in de Azure Porta
 
 1. Meld u aan bij Azure Portal op <https://portal.azure.com>.
 2. Voer **Windows virtueel bureau blad** in op de zoek balk.
-3. Onder **Services**selecteert u **virtueel bureau blad voor Windows**.
+3. Onder **Services** selecteert u **virtueel bureau blad voor Windows**.
 4. Ga op de pagina virtueel bureau blad van Windows naar het menu aan de linkerkant van het venster en selecteer **groepen hosten**.
 5. Selecteer de naam van de hostgroep die u wilt bijwerken.
 6. Ga vervolgens naar het menu aan de linkerkant van het venster en selecteer **toepassings groepen**.
 7. Selecteer de naam van de bureau blad-app-groep die u wilt bewerken en selecteer vervolgens **toewijzingen** in het menu aan de linkerkant van het venster.
-8. Selecteer **+ toevoegen**en selecteer vervolgens de gebruikers of gebruikers groepen waarop u deze app-groep wilt publiceren.
+8. Selecteer **+ toevoegen** en selecteer vervolgens de gebruikers of gebruikers groepen waarop u deze app-groep wilt publiceren.
 9. Selecteer **virtuele machine toewijzen** in de informatie balk om een sessie-host aan een gebruiker toe te wijzen.
 10. Selecteer de sessiehost die u aan de gebruiker wilt toewijzen en selecteer vervolgens **toewijzen**.
 11. Selecteer de gebruiker aan wie u de sessiehost wilt toewijzen in de lijst met beschik bare gebruikers.

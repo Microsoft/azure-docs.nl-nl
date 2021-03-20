@@ -12,10 +12,10 @@ ms.date: 08/20/2020
 ms.author: gasinh
 ms.subservice: B2C
 ms.openlocfilehash: d1b2c7513562e951e1098cf327780387ddf6a495
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94953539"
 ---
 # <a name="tutorial-for-configuring-whoiam-with-azure-active-directory-b2c"></a>Zelf studie voor het configureren van WhoIAM met Azure Active Directory B2C
@@ -92,7 +92,7 @@ Raadpleeg de [product documentatie](https://www.whoiam.ai/brims/)voor meer infor
 
    b. Selecteer de **omleidings-URL** voor de **antwoord-URL**.
 
-   c. Selecteer **gebruikers stroom uitvoeren**.
+   c. Selecteer **Gebruikersstroom uitvoeren**.
 
 4. Ga door naar de registratie stroom en maak een account.
 

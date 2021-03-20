@@ -7,10 +7,10 @@ ms.date: 05/07/2020
 ms.reviewer: azfuncdf, antchu
 ms.custom: devx-track-js
 ms.openlocfilehash: f8ffa90ba0f1ac32d4691165fabf3d8eb9fb7605
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91335446"
 ---
 # <a name="create-your-first-durable-function-in-javascript"></a>Uw eerste duurzame functie maken in JavaScript
@@ -47,7 +47,7 @@ In deze sectie gebruikt u Visual Studio Code om een lokaal Azure Functions-proje
 
 1. Kies een lege map voor uw project en kies **Selecteren**.
 
-1. Volg de meldingen en geef de volgende informatie op:
+1. Volg de instructies en geef de volgende informatie op:
 
     | Vraag | Waarde | Beschrijving |
     | ------ | ----- | ----------- |
@@ -82,7 +82,7 @@ U gebruikt een sjabloon om de code van de Durable Function te maken in uw projec
 
 1. In het opdrachtenpalet zoekt en selecteert u `Azure Functions: Create Function...`.
 
-1. Volg de meldingen en geef de volgende informatie op:
+1. Volg de instructies en geef de volgende informatie op:
 
     | Vraag | Waarde | Beschrijving |
     | ------ | ----- | ----------- |
@@ -97,7 +97,7 @@ Vervolgens voegt u de `Hello`-activiteitsfunctie toe waarnaar wordt verwezen.
 
 1. In het opdrachtenpalet zoekt en selecteert u `Azure Functions: Create Function...`.
 
-1. Volg de meldingen en geef de volgende informatie op:
+1. Volg de instructies en geef de volgende informatie op:
 
     | Vraag | Waarde | Beschrijving |
     | ------ | ----- | ----------- |
@@ -112,7 +112,7 @@ Ten slotte voegt u een door HTTP geactiveerde functie toe waarmee de indeling wo
 
 1. In het opdrachtenpalet zoekt en selecteert u `Azure Functions: Create Function...`.
 
-1. Volg de meldingen en geef de volgende informatie op:
+1. Volg de instructies en geef de volgende informatie op:
 
     | Vraag | Waarde | Beschrijving |
     | ------ | ----- | ----------- |
@@ -153,7 +153,7 @@ Met Azure Functions Core-hulpprogramma's kunt u een Azure Functions-project uitv
 
 1. Verzend met behulp van uw browser of een hulpprogramma zoals [Postman](https://www.getpostman.com/) of [cURL](https://curl.haxx.se/) een HTTP POST-aanvraag naar het URL-eindpunt. Vervang het laatste segment door de naam van de Orchestrator-functie (`HelloOrchestrator`). De URL moet vergelijkbaar zijn met `http://localhost:7071/api/orchestrators/HelloOrchestrator`.
 
-   De reactie is het eerste resultaat van de HTTP-functie om u te laten weten dat de orchestrator is gestart. Dit is nog niet het eindresultaat van de orchestrator. De reactie bevat enkele nuttige URL's. Maar eerst gaan we de status van de orchestrator opvragen.
+   De reactie is het eerste resultaat van de HTTP-functie dat u laat weten dat de duurzame indeling is gestart. Dit is nog niet het eindresultaat van de orchestrator. De reactie bevat enkele nuttige URL's. Maar eerst gaan we de status van de orchestrator opvragen.
 
 1. Kopieer de URL-waarde voor `statusQueryGetUri`, plak deze in de adresbalk van de browser en voer de aanvraag uit. Eventueel kunt u Postman blijven gebruiken om de GET-aanvraag uit te voeren.
 

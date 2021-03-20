@@ -9,10 +9,10 @@ ms.date: 04/19/2018
 ms.author: kgremban
 ms.custom: mqtt
 ms.openlocfilehash: 15c0df33b8f09ec71f2be913d72f0785dc766375
-ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93027530"
 ---
 # <a name="send-cloud-to-device-messages-with-iot-hub-ios"></a>Cloud-naar-apparaat-berichten verzenden met IoT Hub (iOS)
@@ -27,15 +27,15 @@ In deze zelfstudie ontdekt u hoe u:
 
 * Cloud-naar-apparaat-berichten op een apparaat ontvangen.
 
-* Van de back-end van uw oplossing, aanvraag bezorgings bevestiging ( *feedback* ) aanvragen voor berichten die worden verzonden naar een apparaat vanuit IOT hub.
+* Van de back-end van uw oplossing, aanvraag bezorgings bevestiging (*feedback*) aanvragen voor berichten die worden verzonden naar een apparaat vanuit IOT hub.
 
 Meer informatie over Cloud-naar-apparaat-berichten vindt u in de [berichten sectie van de IOT hub-ontwikkelaars handleiding](iot-hub-devguide-messaging.md).
 
 Aan het einde van dit artikel voert u twee snelle iOS-projecten uit:
 
-* voor **beeld-apparaat** , dezelfde app die is gemaakt in [telemetrie verzenden van een apparaat naar een IOT-hub](quickstart-send-telemetry-ios.md), die verbinding maakt met uw IOT-hub en Cloud-naar-apparaat-berichten ontvangt.
+* voor **beeld-apparaat**, dezelfde app die is gemaakt in [telemetrie verzenden van een apparaat naar een IOT-hub](quickstart-send-telemetry-ios.md), die verbinding maakt met uw IOT-hub en Cloud-naar-apparaat-berichten ontvangt.
 
-* voor **beeld-service** : Hiermee wordt een Cloud-naar-apparaat-bericht naar de gesimuleerde apparaat-app verzonden via IOT hub, waarna de ontvangst bevestiging wordt ontvangen.
+* voor **beeld-service**: Hiermee wordt een Cloud-naar-apparaat-bericht naar de gesimuleerde apparaat-app verzonden via IOT hub, waarna de ontvangst bevestiging wordt ontvangen.
 
 > [!NOTE]
 > IoT Hub heeft SDK-ondersteuning voor veel platformen en talen (waaronder C, Java, python en Java script) via Azure IoT-apparaat-Sdk's. Zie het [Azure IOT-ontwikkelaars centrum](https://www.azure.com/develop/iot)voor stapsgewijze instructies voor het verbinden van uw apparaat met de code van deze zelf studie en over het algemeen tot Azure IOT hub.
@@ -70,7 +70,7 @@ Navigeer in een terminalvenster naar de Azure-IoT-Samples-iOS-map die u hebt ged
 cd quickstart/sample-device
 ```
 
-Zorg ervoor dat XCode is gesloten en voer vervolgens de volgende opdracht uit om de CocoaPods te installeren die worden gedeclareerd in het **podfile** -bestand:
+Zorg ervoor dat XCode is gesloten en voer vervolgens de volgende opdracht uit om de CocoaPods te installeren die worden gedeclareerd in het **podfile**-bestand:
 
 ```sh
 pod install
@@ -100,7 +100,7 @@ Naast het installeren van de pods die nodig zijn voor uw project, heeft de insta
 
 5. Sla uw wijzigingen op. 
 
-6. Voer het project in de apparaatemulator uit met de knop **Build and run** of de toetscombinatie **command+r** .
+6. Voer het project in de apparaatemulator uit met de knop **Build and run** of de toetscombinatie **command+r**.
 
    ![Scherm afbeelding toont de knop opbouwen en uitvoeren in de emulator van het apparaat.](media/iot-hub-ios-swift-c2d/run-sample.png)
 
@@ -124,7 +124,7 @@ Navigeer naar de map Azure IoT iOS-voor beelden die u hebt gedownload in de vere
 cd quickstart/sample-service
 ```
 
-Zorg ervoor dat XCode is gesloten en voer vervolgens de volgende opdracht uit om de CocoaPods te installeren die worden gedeclareerd in het **podfile** -bestand:
+Zorg ervoor dat XCode is gesloten en voer vervolgens de volgende opdracht uit om de CocoaPods te installeren die worden gedeclareerd in het **podfile**-bestand:
 
 ```sh
 pod install
@@ -152,7 +152,7 @@ Naast het installeren van de pods die nodig zijn voor uw project, heeft de insta
 
    ![Het Emulator-apparaat wijzigen](media/iot-hub-ios-swift-c2d/change-device.png)
 
-7. Voer het project uit in de emulator van het apparaat met de knop **opbouwen en uitvoeren** of de toetsen combinatie **opdracht + r** .
+7. Voer het project uit in de emulator van het apparaat met de knop **opbouwen en uitvoeren** of de toetsen combinatie **opdracht + r**.
 
    ![Scherm afbeelding toont de knop bouwen en uitvoeren.](media/iot-hub-ios-swift-c2d/run-app.png)
 
@@ -160,13 +160,13 @@ Naast het installeren van de pods die nodig zijn voor uw project, heeft de insta
 
 U bent nu klaar om de twee toepassingen te gebruiken om Cloud-naar-apparaat-berichten te verzenden en te ontvangen.
 
-1. Klik in de app voor **beeld van Ios-app** die wordt uitgevoerd op het gesimuleerde IOT-apparaat op **Start** . De toepassing begint met het verzenden van apparaat-naar-Cloud-berichten, maar begint ook met Luis teren naar Cloud-naar-apparaat-berichten.
+1. Klik in de app voor **beeld van Ios-app** die wordt uitgevoerd op het gesimuleerde IOT-apparaat op **Start**. De toepassing begint met het verzenden van apparaat-naar-Cloud-berichten, maar begint ook met Luis teren naar Cloud-naar-apparaat-berichten.
 
    ![Voor beeld van IoT-apparaat-app weer geven](media/iot-hub-ios-swift-c2d/view-d2c.png)
 
 2. Voer in de **IoTHub service-client voor beeld** -app die wordt uitgevoerd op het gesimuleerde service-apparaat de id in voor het IOT-apparaat waarnaar u een bericht wilt verzenden. 
 
-3. Schrijf een bericht met een lees bare tekst en klik vervolgens op **verzenden** .
+3. Schrijf een bericht met een lees bare tekst en klik vervolgens op **verzenden**.
 
     Zodra u op verzenden klikt, worden er verschillende acties uitgevoerd. Het service voorbeeld verzendt het bericht naar uw IoT-hub, waartoe de app toegang heeft vanwege de service connection string die u hebt ingevoerd. Uw IoT-hub controleert de apparaat-ID, verzendt het bericht naar het doel apparaat en stuurt een bevestigings bevestiging naar het bron apparaat. De app die op uw gesimuleerde IoT-apparaat wordt uitgevoerd, controleert op berichten van IoT Hub en drukt de tekst af van de meest recente op het scherm.
 

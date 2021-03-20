@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 09/02/2020
 ms.author: cherylmc
 ms.openlocfilehash: e6d811e19bb19c8c8bf96764cfcca2b1294f4a85
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91440055"
 ---
 # <a name="create-and-install-vpn-client-configuration-files-for-p2s-radius-authentication"></a>VPN-client configuratie bestanden maken en installeren voor P2S RADIUS-verificatie
@@ -27,7 +27,7 @@ Wanneer u RADIUS-verificatie gebruikt, zijn er meerdere verificatie opties: gebr
 De configuratie werk stroom voor P2S RADIUS-verificatie is als volgt:
 
 1. [Stel de Azure VPN-gateway in voor P2S-connectiviteit](point-to-site-how-to-radius-ps.md).
-2. [Stel uw RADIUS-server in voor verificatie](point-to-site-how-to-radius-ps.md#radius). 
+2. [Stel uw RADIUS-server in voor verificatie](point-to-site-how-to-radius-ps.md#radius). 
 3. **Verkrijg de VPN-client configuratie voor de verificatie optie van uw keuze en gebruik deze om de VPN-client in te stellen** (dit artikel).
 4. [Voltooi uw P2S-configuratie en maak verbinding](point-to-site-how-to-radius-ps.md).
 
@@ -66,13 +66,13 @@ VPN-client configuratie bestanden genereren voor gebruik met gebruikers naam/wac
 New-AzVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW" -AuthenticationMethod "EapMSChapv2"
 ```
  
-Als u de opdracht uitvoert, wordt een koppeling geretourneerd. Kopieer en plak de koppeling naar een webbrowser om **VpnClientConfiguration.zip**te downloaden. Pak het bestand uit om de volgende mappen weer te geven: 
+Als u de opdracht uitvoert, wordt een koppeling geretourneerd. Kopieer en plak de koppeling naar een webbrowser om **VpnClientConfiguration.zip** te downloaden. Pak het bestand uit om de volgende mappen weer te geven: 
  
-* **WindowsAmd64** en **WindowsX86**: deze mappen bevatten respectievelijk de Windows 64-bits en 32-bits installatie pakketten. 
+* **WindowsAmd64** en **WindowsX86**: deze mappen bevatten respectievelijk de Windows 64-bits en 32-bits installatie pakketten. 
 * **Algemeen**: deze map bevat algemene informatie die u gebruikt om uw eigen VPN-client configuratie te maken. U hebt deze map niet nodig voor configuraties met gebruikers naam-en wachtwoord verificatie.
 * **Mac**: als u IKEv2 hebt geconfigureerd tijdens het maken van de gateway van het virtuele netwerk, ziet u een map met de naam **Mac** die een **mobileconfig** -bestand bevat. U kunt dit bestand gebruiken om Mac-clients te configureren.
 
-Als u al client configuratie bestanden hebt gemaakt, kunt u deze ophalen met behulp van de- `Get-AzVpnClientConfiguration` cmdlet. Maar als u wijzigingen aanbrengt in uw P2S VPN-configuratie, zoals het type VPN-protocol of het verificatie type, wordt de configuratie niet automatisch bijgewerkt. U moet de  `New-AzVpnClientConfiguration` cmdlet uitvoeren om een nieuwe configuratie-down load te maken.
+Als u al client configuratie bestanden hebt gemaakt, kunt u deze ophalen met behulp van de- `Get-AzVpnClientConfiguration` cmdlet. Maar als u wijzigingen aanbrengt in uw P2S VPN-configuratie, zoals het type VPN-protocol of het verificatie type, wordt de configuratie niet automatisch bijgewerkt. U moet de `New-AzVpnClientConfiguration` cmdlet uitvoeren om een nieuwe configuratie-down load te maken.
 
 Als u eerder gegenereerde client configuratie bestanden wilt ophalen, gebruikt u de volgende opdracht:
 
@@ -96,7 +96,7 @@ Gebruik de volgende stappen om de systeem eigen Windows VPN-client te configurer
 
 1. Selecteer de VPN-clientconfiguratiebestanden die overeenkomen met de architectuur van de Windows-computer. Kies het **VpnClientSetupAmd64** Installer-pakket voor een 64-bits processor architectuur. Kies het **VpnClientSetupX86** Installer-pakket voor een 32-bits processor architectuur. 
 2. Dubbel klik op het pakket om het te installeren. Als er een pop-upvenster van SmartScreen wordt weer gegeven, selecteert u **meer info**  >  **toch uitvoeren**.
-3. Blader op de client computer naar **netwerk instellingen** en selecteer **VPN**. De VPN-verbinding bevat de naam van het virtuele netwerk waarmee verbinding wordt gemaakt. 
+3. Blader op de client computer naar **netwerk instellingen** en selecteer **VPN**. De VPN-verbinding bevat de naam van het virtuele netwerk waarmee verbinding wordt gemaakt. 
 
 #### <a name="mac-os-x-vpn-client-setup"></a><a name="admaccli"></a>Setup van Mac OS X-VPN-client
 
@@ -127,13 +127,13 @@ Gebruik de volgende stappen om de systeem eigen Windows VPN-client te configurer
 5. Selecteer **door gaan** om de afzender van het profiel te vertrouwen en door te gaan met de installatie.
 
    ![Bevestigingsbericht](./media/point-to-site-vpn-client-configuration-radius/adcontinue.png)
-6. Tijdens de installatie van het profiel hebt u de optie om de gebruikers naam en het wacht woord op te geven voor VPN-verificatie. Het is niet verplicht deze gegevens in te voeren. Als u dat wel doet, wordt de informatie opgeslagen en automatisch gebruikt wanneer u een verbinding initieert.Selecteer **installeren** om door te gaan.
+6. Tijdens de installatie van het profiel hebt u de optie om de gebruikers naam en het wacht woord op te geven voor VPN-verificatie. Het is niet verplicht deze gegevens in te voeren. Als u dat wel doet, wordt de informatie opgeslagen en automatisch gebruikt wanneer u een verbinding initieert. Selecteer **installeren** om door te gaan.
 
    ![Gebruikers naam en wacht woord in de vakken voor VPN](./media/point-to-site-vpn-client-configuration-radius/adsettings.png)
 7. Voer een gebruikers naam en wacht woord in voor de bevoegdheden die vereist zijn om het profiel op uw computer te installeren. Selecteer **OK**.
 
    ![Gebruikers naam en wacht woord in de vakken voor profiel installatie](./media/point-to-site-vpn-client-configuration-radius/adusername.png)
-8. Nadat het profiel is geïnstalleerd, wordt het weer gegeven in het dialoog venster **profielen** . U kunt dit dialoog venster ook later in **systeem voorkeuren**openen.
+8. Nadat het profiel is geïnstalleerd, wordt het weer gegeven in het dialoog venster **profielen** . U kunt dit dialoog venster ook later in **systeem voorkeuren** openen.
 
    ![Het dialoog venster profielen](./media/point-to-site-vpn-client-configuration-radius/adsystempref.png)
 9. Als u toegang wilt krijgen tot de VPN-verbinding, opent u het dialoog venster **netwerk** in **systeem voorkeuren**.
@@ -145,7 +145,7 @@ Gebruik de volgende stappen om de systeem eigen Windows VPN-client te configurer
 11. Selecteer **verificatie-instellingen**. Selecteer in de lijst de optie **gebruikers naam** en voer uw referenties in. Als u eerder de referenties hebt opgegeven, wordt de **gebruikers naam** automatisch gekozen in de lijst en worden de gebruikers naam en het wacht woord vooraf ingevuld. Selecteer **OK** om de instellingen op te slaan.
 
     ![Scherm opname waarin de vervolg keuzelijst verificatie-instellingen wordt weer gegeven en ' gebruikers naam ' is geselecteerd.](./media/point-to-site-vpn-client-configuration-radius/adauthentication.png)
-12. Klik in het dialoog venster **netwerk** op **Toep assen** om de wijzigingen op te slaan. Selecteer **verbinding maken**om de verbinding te initiëren.
+12. Klik in het dialoog venster **netwerk** op **Toep assen** om de wijzigingen op te slaan. Selecteer **verbinding maken** om de verbinding te initiëren.
 
 #### <a name="linux-vpn-client-setup-through-strongswan"></a><a name="adlinuxcli"></a>Setup van Linux VPN-client via strongSwan
 
@@ -169,7 +169,7 @@ De volgende instructies zijn gemaakt via strongSwan 5.5.1 op Ubuntu 17.0.4. De w
 
    ![Inhoud van het VpnSettings.xml bestand](./media/point-to-site-vpn-client-configuration-radius/VpnSettings.png)
 6. Plak deze naam in het **adres** veld van uw nieuwe VPN-verbinding in de sectie **Gateway** . Selecteer vervolgens het mappictogram aan het einde van het veld **certificaat** , blader naar de **algemene** map en selecteer het **VpnServerRoot** -bestand.
-7. Selecteer in de sectie **client** van de verbinding **EAP** voor **verificatie**en voer uw gebruikers naam en wacht woord in. Mogelijk moet u aan de rechter kant het vergrendelings pictogram selecteren om deze informatie op te slaan. Selecteer vervolgens **Opslaan**.
+7. Selecteer in de sectie **client** van de verbinding **EAP** voor **verificatie** en voer uw gebruikers naam en wacht woord in. Mogelijk moet u aan de rechter kant het vergrendelings pictogram selecteren om deze informatie op te slaan. Selecteer vervolgens **Opslaan**.
 
    ![Verbindings instellingen bewerken](./media/point-to-site-vpn-client-configuration-radius/editconnectionsettings.png)
 8. Selecteer het pictogram **netwerk beheerder** (pijl-omhoog en pijl-omlaag) en beweeg de muis aanwijzer over **VPN-verbindingen**. U ziet de VPN-verbinding die u hebt gemaakt. Als u de verbinding wilt initiëren, selecteert u deze.
@@ -200,10 +200,10 @@ New-AzVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW" -Authen
 
 Als u de opdracht uitvoert, wordt een koppeling geretourneerd. Kopieer en plak de koppeling naar een webbrowser om VpnClientConfiguration.zip te downloaden. Pak het bestand uit om de volgende mappen weer te geven:
 
-* **WindowsAmd64** en **WindowsX86**: deze mappen bevatten respectievelijk de Windows 64-bits en 32-bits installatie pakketten. 
+* **WindowsAmd64** en **WindowsX86**: deze mappen bevatten respectievelijk de Windows 64-bits en 32-bits installatie pakketten. 
 * **GenericDevice**: deze map bevat algemene informatie die wordt gebruikt voor het maken van uw eigen VPN-client configuratie.
 
-Als u al client configuratie bestanden hebt gemaakt, kunt u deze ophalen met behulp van de- `Get-AzVpnClientConfiguration` cmdlet. Maar als u wijzigingen aanbrengt in uw P2S VPN-configuratie, zoals het type VPN-protocol of het verificatie type, wordt de configuratie niet automatisch bijgewerkt. U moet de  `New-AzVpnClientConfiguration` cmdlet uitvoeren om een nieuwe configuratie-down load te maken.
+Als u al client configuratie bestanden hebt gemaakt, kunt u deze ophalen met behulp van de- `Get-AzVpnClientConfiguration` cmdlet. Maar als u wijzigingen aanbrengt in uw P2S VPN-configuratie, zoals het type VPN-protocol of het verificatie type, wordt de configuratie niet automatisch bijgewerkt. U moet de `New-AzVpnClientConfiguration` cmdlet uitvoeren om een nieuwe configuratie-down load te maken.
 
 Als u eerder gegenereerde client configuratie bestanden wilt ophalen, gebruikt u de volgende opdracht:
 
@@ -243,13 +243,13 @@ Gebruik de volgende stappen om de systeem eigen VPN-client te configureren op ee
 2. Voor elke client is een client certificaat vereist voor verificatie. Installeer het client certificaat op het client apparaat.
 3. Open het dialoog venster **netwerk** onder **netwerk voorkeuren**. Selecteer **+** deze optie om een nieuw VPN-client verbindings profiel te maken voor een P2S-verbinding met het virtuele Azure-netwerk.
 
-   De waarde van de **Interface** is **VPN**en de waarde van het **VPN-type** is **IKEv2**. Geef een naam op voor het profiel in het vak **service naam** en selecteer vervolgens **maken** om het VPN-client verbindings profiel te maken.
+   De waarde van de **Interface** is **VPN** en de waarde van het **VPN-type** is **IKEv2**. Geef een naam op voor het profiel in het vak **service naam** en selecteer vervolgens **maken** om het VPN-client verbindings profiel te maken.
 
    ![Informatie over de interface en de service naam](./media/point-to-site-vpn-client-configuration-radius/network.png)
 4. Kopieer de waarde van de **VpnServer** -code uit het **VpnSettings.xml** -bestand in de **algemene** map. Plak deze waarde in het vak **server adres** en **externe ID** van het profiel. Laat het vak **lokale id** leeg.
 
    ![Server gegevens](./media/point-to-site-vpn-client-configuration-radius/servertag.png)
-5. Selecteer **verificatie-instellingen**en selecteer **certificaat**. 
+5. Selecteer **verificatie-instellingen** en selecteer **certificaat**. 
 
    ![Verificatie-instellingen](./media/point-to-site-vpn-client-configuration-radius/certoption.png)
 6. Klik op **selecteren** om het certificaat te kiezen dat u voor verificatie wilt gebruiken.

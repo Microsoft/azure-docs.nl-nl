@@ -6,10 +6,10 @@ ms.topic: how-to
 ms.date: 01/14/2020
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 4393c6797f5a164a063b55f8994d7d37d278f3c4
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98929197"
 ---
 # <a name="process-events-from-azure-event-hubs-with-apache-storm-on-hdinsight-c"></a>Gebeurtenissen uit Azure Event Hubs verwerken met Apache Storm in HDInsight (C#)
@@ -121,7 +121,7 @@ Event Hubs is de gegevens bron voor dit voor beeld. Gebruik de informatie in de 
 
 1. Nadat de Event Hub is gemaakt, bekijkt u de instellingen voor **EventHub** in de Azure Portal en selecteert u **beleid voor gedeelde toegang**. Selecteer **+ toevoegen** om het volgende beleid te maken:
 
-   | Naam | Machtigingen |
+   | Name | Machtigingen |
    | --- | --- |
    | Writer |Verzenden |
    | gelezen |Luisteren |

@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 04/01/2020
 ms.author: aahi
 ms.openlocfilehash: 2f608843e27b79d02697df8e2a7f2aba6695e10a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "80878422"
 ---
 # <a name="configure-face-docker-containers"></a>Face docker-containers configureren
@@ -51,7 +51,7 @@ Deze instelling bevindt zich op de volgende locatie:
 
 Vergeet niet om het _gezichts_ routering toe te voegen aan de URI van het eind punt zoals weer gegeven in het voor beeld. 
 
-|Vereist| Naam | Gegevenstype | Beschrijving |
+|Vereist| Name | Gegevenstype | Beschrijving |
 |--|------|-----------|-------------|
 |Ja| `Billing` | Tekenreeks | URL van het facturerings eindpunt. Zie [vereiste para meters verzamelen](face-how-to-install-containers.md#gathering-required-parameters)voor meer informatie over het verkrijgen van de facturerings-URI. Zie [Aangepaste subdomeinnamen voor Cognitive Services](../cognitive-services-custom-subdomains.md) voor meer informatie en een volledige lijst met regionale eindpunten. |
 
@@ -61,7 +61,7 @@ Vergeet niet om het _gezichts_ routering toe te voegen aan de URI van het eind p
 
 De configuratie-instellingen in de `CloudAI` sectie bieden specifieke opties die uniek zijn voor uw container. De volgende instellingen en objecten worden ondersteund voor de face-container in de `CloudAI` sectie
 
-| Naam | Gegevenstype | Beschrijving |
+| Name | Gegevenstype | Beschrijving |
 |------|-----------|-------------|
 | `Storage` | Object | Het opslag scenario dat wordt gebruikt door de face-container. Zie voor meer informatie over opslag scenario's en bijbehorende instellingen voor het `Storage` object [opslag scenario-instellingen](#storage-scenario-settings) |
 
@@ -72,7 +72,7 @@ Afhankelijk van wat er is opgeslagen, worden de blob-, cache-, meta gegevens-en 
 * Geheugen  
   Alle vier de typen gegevens worden opgeslagen in het geheugen. Ze worden niet gedistribueerd en blijven niet behouden. Als de face-container is gestopt of verwijderd, worden alle gegevens in de opslag voor die container vernietigd.  
   Dit is het standaard opslag scenario voor de face-container.
-* Azuur  
+* Azure  
   De face-container gebruikt Azure Storage en Azure Cosmos DB om deze vier typen gegevens te verdelen over permanente opslag. BLOB-en wachtrij gegevens worden verwerkt door Azure Storage. Meta gegevens en cache gegevens worden verwerkt door Azure Cosmos DB. Als de face-container is gestopt of verwijderd, blijven alle gegevens in de opslag voor die container opgeslagen in Azure Storage en Azure Cosmos DB.  
   Voor de resources die worden gebruikt door het Azure Storage-scenario gelden de volgende aanvullende vereisten
   * De Azure Storage Resource moet het StorageV2-account type gebruiken
@@ -80,7 +80,7 @@ Afhankelijk van wat er is opgeslagen, worden de blob-, cache-, meta gegevens-en 
 
 De opslag scenario's en de bijbehorende configuratie-instellingen worden beheerd door het `Storage` -object, onder de `CloudAI` configuratie sectie. De volgende configuratie-instellingen zijn beschikbaar in het `Storage` object:
 
-| Naam | Gegevenstype | Beschrijving |
+| Name | Gegevenstype | Beschrijving |
 |------|-----------|-------------|
 | `StorageScenario` | Tekenreeks | Het opslag scenario dat door de container wordt ondersteund. De volgende waarden zijn beschikbaar<br/>`Memory` -Standaard waarde. Container maakt gebruik van niet-permanente, niet-gedistribueerde en in-Memory opslag, voor tijdelijk gebruik met één knoop punt. Als de container wordt gestopt of verwijderd, wordt de opslag voor die container vernietigd.<br/>`Azure` -Container maakt gebruik van Azure-bronnen voor opslag. Als de container wordt gestopt of verwijderd, wordt de opslag voor die container bewaard.|
 | `ConnectionStringOfAzureStorage` | Tekenreeks | De connection string voor de Azure Storage resource die wordt gebruikt door de container.<br/>Deze instelling is alleen van toepassing als `Azure` voor de `StorageScenario` configuratie-instelling is opgegeven. |
@@ -122,7 +122,7 @@ De face-containers gebruiken geen invoer-of uitvoer koppelingen om training of s
 
 De exacte syntaxis van de locatie voor het koppelen van de host varieert, afhankelijk van het besturings systeem van de host. Daarnaast is de koppel locatie van de [hostcomputer](face-how-to-install-containers.md#the-host-computer)mogelijk niet toegankelijk als gevolg van een conflict tussen de machtigingen die worden gebruikt door het docker-service account en de machtigingen voor het koppelen van de host-locatie. 
 
-|Optioneel| Naam | Gegevenstype | Beschrijving |
+|Optioneel| Name | Gegevenstype | Beschrijving |
 |-------|------|-----------|-------------|
 |Niet toegestaan| `Input` | Tekenreeks | Bij face-containers worden deze niet gebruikt.|
 |Optioneel| `Output` | Tekenreeks | Het doel van de uitvoer koppeling. De standaardwaarde is `/output`. Dit is de locatie van de logboeken. Dit omvat container Logboeken. <br><br>Voorbeeld:<br>`--mount type=bind,src=c:\output,target=/output`|

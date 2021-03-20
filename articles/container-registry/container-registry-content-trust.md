@@ -4,10 +4,10 @@ description: Meer informatie over het inschakelen van inhouds vertrouwen voor uw
 ms.topic: article
 ms.date: 09/18/2020
 ms.openlocfilehash: f44cea09521dc235ad0d555264b165c9a3842a14
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92148578"
 ---
 # <a name="content-trust-in-azure-container-registry"></a>Inhoud vertrouwen in Azure Container Registry
@@ -38,7 +38,7 @@ Inhoud vertrouwen wordt beheerd met behulp van cryptografische ondertekeningssle
 
 Uw eerste stap is het inschakelen van inhoud vertrouwen op het niveau van het register. Na het inschakelen kunnen clients (gebruikers of services) ondertekende installatiekopieën pushen naar uw register. Als u inhoud vertrouwen voor uw register inschakelt, wordt het gebruik van het register niet beperkt tot consumenten waarvoor inhoud vertrouwen is ingeschakeld. Ook gebruikers waarvoor inhoud vertrouwen niet is ingeschakeld, kunnen uw register gewoon blijven gebruiken. Gebruikers die inhoud vertrouwen op hun clients hebben ingeschakeld, kunnen echter *alleen* ondertekende installatiekopieën in uw register zien.
 
-Als u inhoud vertrouwen voor uw register wilt inschakelen, navigeert u eerst naar het register in Azure Portal. Selecteer onder **beleid**de optie **inhouds vertrouwensrelatie**  >  **ingeschakeld**  >  **Opslaan**. U kunt ook de opdracht [AZ ACR config content-Trust update][az-acr-config-content-trust-update] in de Azure CLI gebruiken.
+Als u inhoud vertrouwen voor uw register wilt inschakelen, navigeert u eerst naar het register in Azure Portal. Selecteer onder **beleid** de optie **inhouds vertrouwensrelatie**  >  **ingeschakeld**  >  **Opslaan**. U kunt ook de opdracht [AZ ACR config content-Trust update][az-acr-config-content-trust-update] in de Azure CLI gebruiken.
 
 ![Scherm opname toont het inschakelen van inhouds vertrouwen voor een REGI ster in de Azure Portal.][content-trust-01-portal]
 
@@ -195,7 +195,7 @@ Als de hoofdsleutel verloren gaat, hebt u geen toegang meer tot de ondertekende 
 > [!WARNING]
 > Door inhoud vertrouwen voor het register uit te schakelen en opnieuw in te schakelen, **verwijdert u alle gegevens van de vertrouwensrelatie voor alle ondertekende tags in elke opslagplaats in uw register**. Deze actie kan niet ongedaan worden gemaakt. Gegevens van vertrouwensrelaties kunnen nooit worden hersteld in Azure Container Registry. Bij het uitschakelen van inhoud vertrouwen worden de installatiekopieën zelf niet verwijderd.
 
-Als u inhoud vertrouwen voor uw register wilt uitschakelen, navigeert u naar het register in Azure Portal. Onder **beleids regels**selecteert u **inhouds vertrouwensrelatie**  >  **uitgeschakeld**  >  **Opslaan**. U wordt gewaarschuwd dat hierdoor alle handtekeningen in het register verloren gaan. Selecteer **OK** om alle handtekeningen in het register permanent te verwijderen.
+Als u inhoud vertrouwen voor uw register wilt uitschakelen, navigeert u naar het register in Azure Portal. Onder **beleids regels** selecteert u **inhouds vertrouwensrelatie**  >  **uitgeschakeld**  >  **Opslaan**. U wordt gewaarschuwd dat hierdoor alle handtekeningen in het register verloren gaan. Selecteer **OK** om alle handtekeningen in het register permanent te verwijderen.
 
 ![Inhoud vertrouwen voor een register uitschakelen in Azure Portal][content-trust-03-portal]
 

@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 3/13/2020
 ms.author: raynew
 ms.openlocfilehash: 64d1084fd7025c74676977f065062e5e94dabf1d
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97652242"
 ---
 # <a name="azure-to-azure-disaster-recovery-architecture"></a>Architectuur voor herstel na noodgevallen van Azure naar Azure
@@ -62,7 +62,7 @@ U kunt doel resources als volgt beheren:
 
 Wanneer u Azure VM-replicatie inschakelt, Site Recovery standaard een nieuw replicatie beleid maken met de standaard instellingen in de tabel.
 
-**Beleidsinstelling** | **Details** | **Standaard**
+**Beleidsinstelling** | **Details** | **Prijs**
 --- | --- | ---
 **Bewaarperiode van herstelpunt** | Hiermee geeft u op hoelang Site Recovery herstel punten bewaard | 24 uur
 **Frequentie van de app-consistente momentopname** | Hoe vaak Site Recovery een app-consistente moment opname gebruikt. | Elke vier uur
@@ -146,7 +146,7 @@ Details van de vereisten voor netwerk connectiviteit vindt u in het [technisch d
 
 **Regel** |  **Details** | **Servicetag**
 --- | --- | --- 
-HTTPS-uitgaand toestaan: poort 443 | Bereiken toestaan die overeenkomen met opslag accounts in de bron regio | Opslag.\<region-name>
+HTTPS-uitgaand toestaan: poort 443 | Bereiken toestaan die overeenkomen met opslag accounts in de bron regio | Opslagpad.\<region-name>
 HTTPS-uitgaand toestaan: poort 443 | Bereiken toestaan die overeenkomen met Azure Active Directory (Azure AD)  | AzureActiveDirectory
 HTTPS-uitgaand toestaan: poort 443 | Sta bereiken toe die overeenkomen met de hub van gebeurtenissen in de doel regio. | EventsHub.\<region-name>
 HTTPS-uitgaand toestaan: poort 443 | Bereiken toestaan die overeenkomen met Azure Site Recovery  | AzureSiteRecovery
@@ -157,7 +157,7 @@ HTTPS-uitgaand toestaan: poort 443 | Bereiken toestaan die overeenkomen met Azur
 
 **Regel** |  **Details** | **Servicetag**
 --- | --- | --- 
-HTTPS-uitgaand toestaan: poort 443 | Bereiken toestaan die overeenkomen met opslag accounts in de doel regio | Opslag.\<region-name>
+HTTPS-uitgaand toestaan: poort 443 | Bereiken toestaan die overeenkomen met opslag accounts in de doel regio | Opslagpad.\<region-name>
 HTTPS-uitgaand toestaan: poort 443 | Bereiken toestaan die overeenkomen met Azure AD  | AzureActiveDirectory
 HTTPS-uitgaand toestaan: poort 443 | Sta bereiken toe die overeenkomen met de hub van gebeurtenissen in de bron regio. | EventsHub.\<region-name>
 HTTPS-uitgaand toestaan: poort 443 | Bereiken toestaan die overeenkomen met Azure Site Recovery  | AzureSiteRecovery

@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 08/23/2018
 tags: connectors
 ms.openlocfilehash: 097db6683127b410e713be53e6de838cf7734ddc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91400720"
 ---
 # <a name="manage-excel-online-data-with-azure-logic-apps"></a>Excel online-gegevens beheren met Azure Logic Apps
@@ -46,7 +46,7 @@ Als u geen ervaring hebt met Logic apps, raadpleegt u [Wat is Azure Logic apps?]
 
 1. Open in de [Azure Portal](https://portal.azure.com)uw logische app in de ontwerp functie voor logische apps, als deze nog niet is geopend.
 
-1. Kies **nieuwe stap**onder de trigger.
+1. Kies **nieuwe stap** onder de trigger.
 
 1. Voer in het zoekvak ' Excel ' in als uw filter. Selecteer in de lijst acties de gewenste actie.
 

@@ -4,10 +4,10 @@ description: Meer informatie over het versleutelen van uw toepassings gegevens i
 ms.topic: article
 ms.date: 03/06/2020
 ms.openlocfilehash: 5524b749b1e15342dd0133920d7190e33ced18ad
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92146042"
 ---
 # <a name="encryption-at-rest-using-customer-managed-keys"></a>Versleuteling in rust met door de klant beheerde sleutels
@@ -71,7 +71,7 @@ Wanneer u deze toepassings instelling bijwerkt, wordt uw web-app opnieuw opgesta
 
 Het is best practice om regel matig de SAS-sleutel van uw opslag account te draaien. Als u er zeker van wilt zijn dat de web-app onopzettelijk toegang heeft, moet u ook de SAS-URL in Key Vault bijwerken.
 
-1. Draai de SAS-sleutel door te navigeren naar uw opslag account in de Azure Portal. Klik onder **instellingen**  >  **toegangs sleutels**op het pictogram om de SAS-sleutel te roteren.
+1. Draai de SAS-sleutel door te navigeren naar uw opslag account in de Azure Portal. Klik onder **instellingen**  >  **toegangs sleutels** op het pictogram om de SAS-sleutel te roteren.
 
 1. Kopieer de nieuwe SAS-URL en gebruik de volgende opdracht om de bijgewerkte SAS-URL in uw sleutel kluis in te stellen:
 

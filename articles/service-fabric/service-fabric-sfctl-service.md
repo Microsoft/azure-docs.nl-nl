@@ -6,10 +6,10 @@ ms.topic: reference
 ms.date: 1/16/2020
 ms.author: jejarry
 ms.openlocfilehash: 426220f38e6ddfaaf8b24bf4f7d34473d881ae56
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86245599"
 ---
 # <a name="sfctl-service"></a>sfctl service
@@ -25,7 +25,7 @@ Services, service typen en service pakketten maken, verwijderen en beheren.
 | delete | Hiermee verwijdert u een bestaande Service Fabric-service. |
 | geïmplementeerd-type | Hiermee wordt de informatie opgehaald over een opgegeven service type van de toepassing die is geïmplementeerd op een knoop punt in een Service Fabric cluster. |
 | geïmplementeerd-type-lijst | Hiermee wordt de lijst opgehaald met de informatie over service typen van de toepassingen die zijn geïmplementeerd op een knoop punt in een Service Fabric cluster. |
-| description | Hiermee wordt de beschrijving van een bestaande Service Fabric-service opgehaald. |
+| beschrijving | Hiermee wordt de beschrijving van een bestaande Service Fabric-service opgehaald. |
 | Get-container-logboeken | Hiermee worden de container logboeken opgehaald voor de container die op een Service Fabric knoop punt is geïmplementeerd. |
 | status | Hiermee wordt de status van de opgegeven Service Fabric service opgehaald. |
 | Info | Hiermee wordt de informatie opgehaald over de specifieke service die bij de Service Fabric toepassing hoort. |

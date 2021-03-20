@@ -10,10 +10,10 @@ ms.date: 08/29/2017
 ms.author: robinsh
 ms.custom: amqp
 ms.openlocfilehash: f33521dd9110d7ba6ee84650345b38c8c6a4950b
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92149135"
 ---
 # <a name="azure-iot-device-sdk-for-c--more-about-iothubclient"></a>Azure IoT Device SDK voor C: meer informatie over IoTHubClient
@@ -67,11 +67,11 @@ Er zijn aanvullende functies voor elk van deze Api's:
 
 Deze functies bevatten allemaal **ll** in de API-naam. Andere het **ll** deel van de naam, de para meters van elk van deze functies zijn identiek aan de niet-ll equivalenten. Het gedrag van deze functies verschilt echter op een belang rijke manier.
 
-Wanneer u **IoTHubClient \_ API createfromconnectionstring**aanroept, maken de onderliggende bibliotheken een nieuwe thread die op de achtergrond wordt uitgevoerd. Deze thread verzendt gebeurtenissen naar en ontvangt berichten van IoT Hub. Er wordt geen thread gemaakt wanneer u met de **ll** -api's werkt. Het maken van de achtergrond thread is een gemak voor de ontwikkelaar. U hoeft zich geen zorgen te maken over het expliciet verzenden van gebeurtenissen en het ontvangen van berichten van IoT Hub. dit gebeurt automatisch op de achtergrond. De **ll** -api's bieden daarentegen expliciet controle over de communicatie met IOT hub, indien nodig.
+Wanneer u **IoTHubClient \_ API createfromconnectionstring** aanroept, maken de onderliggende bibliotheken een nieuwe thread die op de achtergrond wordt uitgevoerd. Deze thread verzendt gebeurtenissen naar en ontvangt berichten van IoT Hub. Er wordt geen thread gemaakt wanneer u met de **ll** -api's werkt. Het maken van de achtergrond thread is een gemak voor de ontwikkelaar. U hoeft zich geen zorgen te maken over het expliciet verzenden van gebeurtenissen en het ontvangen van berichten van IoT Hub. dit gebeurt automatisch op de achtergrond. De **ll** -api's bieden daarentegen expliciet controle over de communicatie met IOT hub, indien nodig.
 
 Voor een beter begrip van dit concept bekijken we een voor beeld:
 
-Wanneer u **IoTHubClient \_ SendEventAsync**aanroept, wordt de gebeurtenis in een buffer geplaatst. De achtergrond thread die wordt gemaakt wanneer u **IoTHubClient \_ API createfromconnectionstring** aanroept, bewaakt deze buffer voortdurend en stuurt alle gegevens die deze bevat naar IOT hub. Dit gebeurt op de achtergrond op hetzelfde moment dat de hoofd thread andere werkzaamheden uitvoert.
+Wanneer u **IoTHubClient \_ SendEventAsync** aanroept, wordt de gebeurtenis in een buffer geplaatst. De achtergrond thread die wordt gemaakt wanneer u **IoTHubClient \_ API createfromconnectionstring** aanroept, bewaakt deze buffer voortdurend en stuurt alle gegevens die deze bevat naar IOT hub. Dit gebeurt op de achtergrond op hetzelfde moment dat de hoofd thread andere werkzaamheden uitvoert.
 
 En wanneer u een call back-functie voor berichten registreert met **IoTHubClient \_ SetMessageCallback**, geeft u de SDK de opdracht de call back-functie aan te roepen wanneer een bericht wordt ontvangen, onafhankelijk van de hoofd thread.
 
@@ -87,7 +87,7 @@ message.messageHandle = IoTHubMessage_CreateFromByteArray((const unsigned char*)
 IoTHubClient_LL_SendEventAsync(iotHubClientHandle, message.messageHandle, SendConfirmationCallback, &message)
 ```
 
-De eerste drie regels maken het bericht en de laatste regel verzendt de gebeurtenis. Zoals eerder vermeld, betekent het verzenden van de gebeurtenis echter dat de gegevens eenvoudigweg in een buffer worden geplaatst. Er wordt niets verzonden op het netwerk wanneer **IoTHubClient \_ ll \_ SendEventAsync**wordt aangeroepen. Als u de gegevens die u wilt IoT Hub daad werkelijk wilt intrekken, moet u **IoTHubClient \_ ll \_ DoWork**aanroepen, zoals in dit voor beeld:
+De eerste drie regels maken het bericht en de laatste regel verzendt de gebeurtenis. Zoals eerder vermeld, betekent het verzenden van de gebeurtenis echter dat de gegevens eenvoudigweg in een buffer worden geplaatst. Er wordt niets verzonden op het netwerk wanneer **IoTHubClient \_ ll \_ SendEventAsync** wordt aangeroepen. Als u de gegevens die u wilt IoT Hub daad werkelijk wilt intrekken, moet u **IoTHubClient \_ ll \_ DoWork** aanroepen, zoals in dit voor beeld:
 
 ```C
 while (1)
@@ -134,7 +134,7 @@ Welk model u kiest, zorg ervoor dat u consistent bent met de Api's die u gebruik
 
 Het tegenovergestelde is ook waar. Als u begint met **IoTHubClient \_ API createfromconnectionstring**, gebruikt u de niet-ll api's voor aanvullende verwerking.
 
-In de Azure IoT Device SDK voor C raadpleegt u **de \_ iothub \_ client \_ -voorbeeld-http-** toepassing voor een volledig voor beeld van de api's van het lagere niveau. Er kan worden verwezen naar de ** \_ \_ \_ AMQP** -toepassing van de iothub-client voor een volledig voor beeld van de niet-ll api's.
+In de Azure IoT Device SDK voor C raadpleegt u **de \_ iothub \_ client \_ -voorbeeld-http-** toepassing voor een volledig voor beeld van de api's van het lagere niveau. Er kan worden verwezen naar de **\_ \_ \_ AMQP** -toepassing van de iothub-client voor een volledig voor beeld van de niet-ll api's.
 
 ## <a name="property-handling"></a>Afhandeling van eigenschappen
 
@@ -197,7 +197,7 @@ U hoeft geen eigenschappen in uw toepassing te gebruiken. Als u ze echter wilt i
 
 ## <a name="message-handling"></a>Afhandeling van berichten
 
-Zoals eerder is aangegeven, reageert het aanroepen van een geregistreerde call back-functie wanneer berichten binnenkomen van IoT Hub de **IoTHubClient** -bibliotheek. Er is een retour parameter van deze functie die een extra uitleg verdient. Hier volgt een fragment van de call back-functie in de voor ** \_ \_ beeld \_ -http-voorbeeld toepassing iothub client** :
+Zoals eerder is aangegeven, reageert het aanroepen van een geregistreerde call back-functie wanneer berichten binnenkomen van IoT Hub de **IoTHubClient** -bibliotheek. Er is een retour parameter van deze functie die een extra uitleg verdient. Hier volgt een fragment van de call back-functie in de voor **\_ \_ beeld \_ -http-voorbeeld toepassing iothub client** :
 
 ```C
 static IOTHUBMESSAGE_DISPOSITION_RESULT ReceiveMessageCallback(IOTHUB_MESSAGE_HANDLE message, void* userContextCallback)
@@ -207,7 +207,7 @@ static IOTHUBMESSAGE_DISPOSITION_RESULT ReceiveMessageCallback(IOTHUB_MESSAGE_HA
 }
 ```
 
-Houd er rekening mee dat het retour type **IOTHUBMESSAGE \_ \_ ** is en in dit specifieke geval retour neren **IOTHUBMESSAGE \_ geaccepteerd**. Er zijn andere waarden die we kunnen retour neren van deze functie die wijzigen hoe de **IoTHubClient** -bibliotheek op de bericht terugroeping reageert. Dit zijn de opties.
+Houd er rekening mee dat het retour type **IOTHUBMESSAGE \_ \_** is en in dit specifieke geval retour neren **IOTHUBMESSAGE \_ geaccepteerd**. Er zijn andere waarden die we kunnen retour neren van deze functie die wijzigen hoe de **IoTHubClient** -bibliotheek op de bericht terugroeping reageert. Dit zijn de opties.
 
 * **IOTHUBMESSAGE \_ GEACCEPTEERD** : het bericht is verwerkt. De **IoTHubClient** -bibliotheek roept de call back-functie niet opnieuw aan met hetzelfde bericht.
 
@@ -252,7 +252,7 @@ IOTHUB_CLIENT_HANDLE iotHubClientHandle = IoTHubClient_LL_Create(&iotHubClientCo
 
 Dit heeft hetzelfde effect als **IoTHubClient \_ API createfromconnectionstring**.
 
-Het lijkt erop dat u **IoTHubClient \_ API createfromconnectionstring** wilt gebruiken in plaats van deze uitgebreide initialisatie methode. Houd er echter wel van uit dat wanneer u een apparaat registreert in IoT Hub wat u krijgt, een apparaat-ID en een apparaatcode (niet een connection string). In het hulp programma *device Explorer* SDK dat in het [vorige artikel](iot-hub-device-sdk-c-intro.md) is geïntroduceerd, worden de bibliotheken in de **Azure IOT Service SDK** gebruikt voor het maken van het apparaat Connection String van de apparaat-id, de apparaatcode en de naam van de IOT hub-host. Daarom is het aanroepen van **IoTHubClient \_ ll \_ ** mogelijk voor keur omdat u de stap voor het genereren van een Connection String opslaat. Gebruik de methode die u wilt gebruiken.
+Het lijkt erop dat u **IoTHubClient \_ API createfromconnectionstring** wilt gebruiken in plaats van deze uitgebreide initialisatie methode. Houd er echter wel van uit dat wanneer u een apparaat registreert in IoT Hub wat u krijgt, een apparaat-ID en een apparaatcode (niet een connection string). In het hulp programma *device Explorer* SDK dat in het [vorige artikel](iot-hub-device-sdk-c-intro.md) is geïntroduceerd, worden de bibliotheken in de **Azure IOT Service SDK** gebruikt voor het maken van het apparaat Connection String van de apparaat-id, de apparaatcode en de naam van de IOT hub-host. Daarom is het aanroepen van **IoTHubClient \_ ll \_** mogelijk voor keur omdat u de stap voor het genereren van een Connection String opslaat. Gebruik de methode die u wilt gebruiken.
 
 ## <a name="configuration-options"></a>Configuratie-opties
 
@@ -265,15 +265,15 @@ IoTHubClient_LL_SetOption(iotHubClientHandle, "timeout", &timeout);
 
 Er zijn een aantal opties die vaak worden gebruikt:
 
-* **SetBatching** (BOOL): als deze **waarde True**is, worden gegevens die naar IOT hub worden verzonden, in batches verzonden. Indien **Onwaar**, worden berichten afzonderlijk verzonden. De standaard waarde is **False**. Batch verwerking via AMQP/AMQP-WS, en het toevoegen van systeem eigenschappen op D2C-berichten wordt ondersteund.
+* **SetBatching** (BOOL): als deze **waarde True** is, worden gegevens die naar IOT hub worden verzonden, in batches verzonden. Indien **Onwaar**, worden berichten afzonderlijk verzonden. De standaard waarde is **False**. Batch verwerking via AMQP/AMQP-WS, en het toevoegen van systeem eigenschappen op D2C-berichten wordt ondersteund.
 
 * **Time-out** (niet-ondertekende int): deze waarde wordt weer gegeven in milliseconden. Als het verzenden van een HTTPS-aanvraag of het ontvangen van een reactie langer duurt dan deze tijd, wordt de verbinding verbroken.
 
-De batch optie is belang rijk. Standaard zijn de bibliotheek ingresses-gebeurtenissen afzonderlijk (één gebeurtenis is datgene wat u doorgeeft aan **IoTHubClient \_ ll \_ SendEventAsync**). Als de batch optie **waar**is, verzamelt de bibliotheek zoveel gebeurtenissen als dat kan van de buffer (Maxi maal de maximale bericht grootte die IOT hub accepteert).  De gebeurtenis batch wordt verzonden naar IoT Hub in één HTTPS-aanroep (de afzonderlijke gebeurtenissen worden gebundeld in een JSON-matrix). Het inschakelen van batch verwerking leidt doorgaans tot grote prestatie verbeteringen omdat u de netwerk round-trips reduceert. Ook wordt de band breedte aanzienlijk verminderd omdat u één set HTTPS-headers verzendt met een gebeurtenis batch in plaats van een set kopteksten voor elke afzonderlijke gebeurtenis. Tenzij u een specifieke reden hebt om anders te doen, is het doorgaans verstandig om batch verwerking in te scha kelen.
+De batch optie is belang rijk. Standaard zijn de bibliotheek ingresses-gebeurtenissen afzonderlijk (één gebeurtenis is datgene wat u doorgeeft aan **IoTHubClient \_ ll \_ SendEventAsync**). Als de batch optie **waar** is, verzamelt de bibliotheek zoveel gebeurtenissen als dat kan van de buffer (Maxi maal de maximale bericht grootte die IOT hub accepteert).  De gebeurtenis batch wordt verzonden naar IoT Hub in één HTTPS-aanroep (de afzonderlijke gebeurtenissen worden gebundeld in een JSON-matrix). Het inschakelen van batch verwerking leidt doorgaans tot grote prestatie verbeteringen omdat u de netwerk round-trips reduceert. Ook wordt de band breedte aanzienlijk verminderd omdat u één set HTTPS-headers verzendt met een gebeurtenis batch in plaats van een set kopteksten voor elke afzonderlijke gebeurtenis. Tenzij u een specifieke reden hebt om anders te doen, is het doorgaans verstandig om batch verwerking in te scha kelen.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel wordt gedetailleerde informatie gegeven over het gedrag van de **IoTHubClient** -bibliotheek die in de **Azure IOT Device SDK voor C**is gevonden. Met deze informatie moet u een goed idee hebben van de mogelijkheden van de **IoTHubClient** -bibliotheek. Het tweede artikel in deze reeks is [Azure IOT Device SDK voor C-serializer](iot-hub-device-sdk-c-serializer.md), waarmee vergelijk bare Details worden geboden in de **serialisatiefunctie** -bibliotheek.
+In dit artikel wordt gedetailleerde informatie gegeven over het gedrag van de **IoTHubClient** -bibliotheek die in de **Azure IOT Device SDK voor C** is gevonden. Met deze informatie moet u een goed idee hebben van de mogelijkheden van de **IoTHubClient** -bibliotheek. Het tweede artikel in deze reeks is [Azure IOT Device SDK voor C-serializer](iot-hub-device-sdk-c-serializer.md), waarmee vergelijk bare Details worden geboden in de **serialisatiefunctie** -bibliotheek.
 
 Zie de [Azure IOT sdk's](iot-hub-devguide-sdks.md)voor meer informatie over het ontwikkelen van IOT hub.
 

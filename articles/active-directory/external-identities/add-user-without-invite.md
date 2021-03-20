@@ -13,10 +13,10 @@ manager: celestedg
 ms.reviewer: elisol
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b18279e44bc5a3fd668d2ec4af6be29229af1b6b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87908828"
 ---
 # <a name="add-b2b-collaboration-guest-users-without-an-invitation-link-or-email"></a>Gast gebruikers voor B2B-samen werking toevoegen zonder een uitnodigings koppeling of e-mail adres
@@ -29,7 +29,7 @@ Voordat deze nieuwe methode beschikbaar was, kunt u gast gebruikers uitnodigen z
 2. De beheerder in de organisatie van de host [stelt beleids regels](delegate-invitations.md) in waarmee Sam andere gebruikers kan identificeren en toevoegen van de partner organisatie (litware). (Sam moet worden toegevoegd aan de rol van de **gast-uitnodiging** .)
 3. Sam kan nu andere gebruikers van Litware toevoegen aan de map WoodGrove, groepen of toepassingen zonder dat uitnodigingen moeten worden ingewisseld. Als Sam de juiste inventarisatie privileges heeft in Litware, gebeurt dit automatisch.
  
-Deze oorspronkelijke methode werkt nog steeds. Er is echter wel een klein verschil in het gedrag. Als u Power shell gebruikt, ziet u dat een uitgenodigd gast account nu een **PendingAcceptance** -status heeft in plaats van onmiddellijk **geaccepteerd**te laten zien. Hoewel de status in behandeling is, kan de gast gebruiker zich nog steeds aanmelden en toegang krijgen tot de app zonder op een uitnodiging voor een e-mail bericht te klikken. Met de status in behandeling wordt aangegeven dat de gebruiker de [toestemming](redemption-experience.md#consent-experience-for-the-guest)nog niet heeft door lopen, waar de privacy-voor waarden van de uitnodigende organisatie worden geaccepteerd. De gast gebruiker ziet dit toestemming scherm wanneer deze zich voor de eerste keer aanmeldt. 
+Deze oorspronkelijke methode werkt nog steeds. Er is echter wel een klein verschil in het gedrag. Als u Power shell gebruikt, ziet u dat een uitgenodigd gast account nu een **PendingAcceptance** -status heeft in plaats van onmiddellijk **geaccepteerd** te laten zien. Hoewel de status in behandeling is, kan de gast gebruiker zich nog steeds aanmelden en toegang krijgen tot de app zonder op een uitnodiging voor een e-mail bericht te klikken. Met de status in behandeling wordt aangegeven dat de gebruiker de [toestemming](redemption-experience.md#consent-experience-for-the-guest)nog niet heeft door lopen, waar de privacy-voor waarden van de uitnodigende organisatie worden geaccepteerd. De gast gebruiker ziet dit toestemming scherm wanneer deze zich voor de eerste keer aanmeldt. 
 
 Als u een gebruiker uitnodigt voor de Directory, moet de gast gebruiker rechtstreeks toegang krijgen tot de resource Tenant-specifieke Azure Portal URL (zoals https://portal.azure.com/ *resourcetenant*. onmicrosoft.com) om de privacyverklaringen te bekijken en ermee in te stemmen.
 

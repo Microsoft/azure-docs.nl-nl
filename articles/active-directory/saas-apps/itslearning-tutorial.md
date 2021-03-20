@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/19/2019
 ms.author: jeedes
 ms.openlocfilehash: 04d7e39b3566e777920bacde2f0063e61d6733c8
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92459636"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-itslearning"></a>Zelfstudie: Azure Active Directory-integratie met itslearning
@@ -49,7 +49,7 @@ Als u de integratie van itslearning in Azure AD wilt configureren, moet u itslea
 
 **Voer de volgende stappen uit om itslearning toe te voegen vanuit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -85,7 +85,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voer de volgende stappen uit als u Azure AD-eenmalige aanmelding wilt configureren met itslearning:
 
-1. Selecteer in [Azure Portal](https://portal.azure.com/) op de integratiepagina van de **itslearning** -toepassing de optie **Eenmalige aanmelding**.
+1. Selecteer in [Azure Portal](https://portal.azure.com/) op de integratiepagina van de **itslearning**-toepassing de optie **Eenmalige aanmelding**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -132,7 +132,7 @@ Als u eenmalige aanmelding aan de zijde van **itslearning** wilt configureren, m
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 

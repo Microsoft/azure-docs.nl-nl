@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 02/11/2020
 ms.openlocfilehash: 81b3c113f46428327842c1555fdd1934e9ae8762
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93420849"
 ---
 # <a name="convert-to-indicator-values"></a>Converteren naar indicatorwaarden
@@ -51,7 +51,7 @@ Stel dat u een kolom hebt met scores die aangeven of een server een hoge, gemidd
 | 10302     | Normaal        |
 | 10303     | Hoog          |
 
-Wanneer u **converteren toepast op indicator waarden** , zet de ontwerper één kolom met labels om in meerdere kolommen met Booleaanse waarden:  
+Wanneer u **converteren toepast op indicator waarden**, zet de ontwerper één kolom met labels om in meerdere kolommen met Booleaanse waarden:  
 
 | Server-ID | Fout Score-laag | Fout Score: medium | Fout score-hoog |
 | --------- | ------------------- | ---------------------- | -------------------- |
@@ -71,8 +71,8 @@ U kunt nu de drie indicator kolommen gebruiken als functies in een machine learn
 
 De module retourneert twee uitvoer:
 
-- **Gegevensset voor resultaten** : een gegevensset met geconverteerde indicator waarden kolommen. Kolommen die niet zijn geselecteerd voor het opschonen, zijn ook ' door gegeven '.
-- **Indicator waarden transformeren** : een gegevens transformatie die wordt gebruikt voor het converteren naar indicator waarden die kunnen worden opgeslagen in uw werk ruimte en later worden toegepast op nieuwe gegevens.
+- **Gegevensset voor resultaten**: een gegevensset met geconverteerde indicator waarden kolommen. Kolommen die niet zijn geselecteerd voor het opschonen, zijn ook ' door gegeven '.
+- **Indicator waarden transformeren**: een gegevens transformatie die wordt gebruikt voor het converteren naar indicator waarden die kunnen worden opgeslagen in uw werk ruimte en later worden toegepast op nieuwe gegevens.
 
 ## <a name="apply-a-saved-indicator-values-operation-to-new-data"></a>Een opgeslagen indicator waarden-bewerking Toep assen op nieuwe gegevens
 

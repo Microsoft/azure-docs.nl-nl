@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: jobreen
 ms.openlocfilehash: 68b8bd187d58cd71778b8a922684cc3817a0715d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "80398463"
 ---
 # <a name="azure-custom-resource-providers-overview"></a>Overzicht van aangepaste Azure-resource providers
@@ -37,11 +37,11 @@ Hier volgen enkele voor beelden van wat u kunt doen met aangepaste Azure-resourc
 
 ## <a name="what-is-a-custom-resource-provider"></a>Wat is een aangepaste resource provider?
 
-Aangepaste Azure-resource providers worden gemaakt door een contract te maken tussen Azure en een eind punt. Dit contract definieert een lijst met nieuwe resources en acties via een nieuwe resource, **micro soft. CustomProviders/resourceProviders**. De aangepaste resource provider maakt deze nieuwe Api's vervolgens beschikbaar in Azure. Aangepaste Azure-resource providers bestaan uit drie delen: aangepaste resource provider, **eind punten**en aangepaste resources.
+Aangepaste Azure-resource providers worden gemaakt door een contract te maken tussen Azure en een eind punt. Dit contract definieert een lijst met nieuwe resources en acties via een nieuwe resource, **micro soft. CustomProviders/resourceProviders**. De aangepaste resource provider maakt deze nieuwe Api's vervolgens beschikbaar in Azure. Aangepaste Azure-resource providers bestaan uit drie delen: aangepaste resource provider, **eind punten** en aangepaste resources.
 
 ## <a name="how-to-build-custom-resource-providers"></a>Aangepaste resource providers bouwen
 
-Aangepaste resource providers zijn een lijst met contracten tussen Azure en eind punten. In dit contract wordt beschreven hoe Azure moet communiceren met een eind punt. De resource provider fungeert als een proxy, stuurt aanvragen en antwoorden van en naar het opgegeven **eind punt**. Een resource provider kan twee soorten contracten opgeven: [**resourceTypes**](./custom-providers-resources-endpoint-how-to.md) en [**Actions**](./custom-providers-action-endpoint-how-to.md). Deze zijn ingeschakeld via eindpunt definities. Een eindpunt definitie bestaat uit drie velden: **naam**, **routingType**en **eind punt**.
+Aangepaste resource providers zijn een lijst met contracten tussen Azure en eind punten. In dit contract wordt beschreven hoe Azure moet communiceren met een eind punt. De resource provider fungeert als een proxy, stuurt aanvragen en antwoorden van en naar het opgegeven **eind punt**. Een resource provider kan twee soorten contracten opgeven: [**resourceTypes**](./custom-providers-resources-endpoint-how-to.md) en [**Actions**](./custom-providers-action-endpoint-how-to.md). Deze zijn ingeschakeld via eindpunt definities. Een eindpunt definitie bestaat uit drie velden: **naam**, **routingType** en **eind punt**.
 
 Voor beeld-eind punt:
 

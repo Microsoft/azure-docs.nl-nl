@@ -5,10 +5,10 @@ ms.date: 03/26/2020
 ms.topic: conceptual
 ms.reviewer: janders
 ms.openlocfilehash: 4a98e5ea025894303bc5c77bba0c6154a08315f2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "80348383"
 ---
 # <a name="azure-blockchain-service-development-overview"></a>Overzicht van de ontwikkeling van Azure Block Chain Service
@@ -21,7 +21,7 @@ Er zijn verschillende soorten clients voor Block chain-netwerken, waaronder voll
 
 ### <a name="visual-studio-code"></a>Visual Studio Code
 
-U kunt verbinding maken met consortium leden met behulp van de Azure Block Chain Development Kit Visual Studio code extension. Wanneer u bent verbonden met een consortium, kunt u slimme contracten compileren, bouwen en implementeren in een Azure Block Chain Service consortium-lid.
+U kunt verbinding maken met consortium leden met behulp van de Azure Block Chain Development Kit Visual Studio code extension. Wanneer u bent verbonden met een consortium, kunt u slimme contracten compileren, bouwen en implementeren voor een Azure Block Chain Service-consortiumlid.
 
 Voor het ontwikkelen van geavanceerde oplossingen voor Enter prise Block Chain is een ontwikkelings raamwerk nodig om verbinding te maken met verschillende Block chain-netwerken en om de levens cyclus van Smart contracten te beheren. De meeste projecten communiceren met ten minste twee Block Chain-knoop punten. Ontwikkel aars gebruiken een lokale Block Chain tijdens de ontwikkeling. Wanneer de toepassing gereed is voor test of release, wordt de ontwikkelaar geïmplementeerd op een Block chain-netwerk. Bijvoorbeeld het belangrijkste open bare Ethereum-netwerk of de Azure Block Chain-service. De Azure Block Chain Development Kit voor Ethereum-extensie in Visual Studio code maakt gebruik van truffle. Truffle is een populair Block Chain Development Framework om gedecentraliseerde toepassingen op Ethereum blockchains te schrijven, te compileren, te implementeren en te testen. U kunt Truffle ook beschouwen als een framework dat ervoor probeert slimme contract ontwikkeling en traditionele webontwikkeling naadloos te integreren.
 
@@ -44,7 +44,7 @@ Voor meer informatie raadpleegt u [Quick Start: Geth gebruiken om aan een Azure 
 Quorum is een op Ethereum gebaseerd, gedistribueerd grootboek protocol met trans acties en privacy voor contracten en nieuwe consensus mechanismen. De belangrijkste verbeteringen ten opzichte van Go-Ethereum zijn:
 
 * **Privacy** -quorum ondersteunt persoonlijke trans acties en privé contracten via open bare en persoonlijke status scheiding en maakt gebruik van peer-to-peer versleutelde bericht uitwisselingen voor gerichte overdracht van privé gegevens naar netwerk deelnemers.
-* **Alternatieve consensus mechanismen** : de proef van het werk-of-stake recht is niet nodig voor een netwerk met machtigingen. Quorum biedt meerdere consensus mechanismen die zijn ontworpen voor consortium ketens, zoals elk en IBFT.De Azure Block Chain-service maakt gebruik van het IBFT consensus-mechanisme.
+* **Alternatieve consensus mechanismen** : de proef van het werk-of-stake recht is niet nodig voor een netwerk met machtigingen. Quorum biedt meerdere consensus mechanismen die zijn ontworpen voor consortium ketens, zoals elk en IBFT.  De Azure Block Chain-service maakt gebruik van het IBFT consensus-mechanisme.
 * Machtigingen voor **peering** : machtigingen voor knoop punten en peeren met behulp van slimme contracten zorgt ervoor dat alleen bekende partijen kunnen deel nemen aan het netwerk.
 * **Hogere prestaties** -quorum biedt betere prestaties dan open bare Geth.
 

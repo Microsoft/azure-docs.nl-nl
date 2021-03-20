@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 07/25/2019
 ms.author: alkohli
 ms.openlocfilehash: 6289f335234c9b7efec02a18e12b40a1140c1b3f
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94956548"
 ---
 # <a name="deploy-storsimple-virtual-array--set-up-as-an-iscsi-server-via-azure-portal"></a>StorSimple Virtual array implementeren: ingesteld als een iSCSI-server via Azure Portal
@@ -193,7 +193,7 @@ Voer de volgende stappen uit om uw StorSimple-volumes te koppelen, initialiseren
     ![Portal ontdekken](./media/storsimple-virtual-array-deploy3-iscsi-setup/image22.png)
 3. Geef in het dialoogvenster **Doelportaal detecteren** het IP-adres op van de netwerkinterface met iSCSI-functionaliteit en klik vervolgens op **OK**.
    
-    ![Het IP-adres](./media/storsimple-virtual-array-deploy3-iscsi-setup/image23.png)
+    ![IP-adres](./media/storsimple-virtual-array-deploy3-iscsi-setup/image23.png)
 4. Ga in het venster **Eigenschappen iSCSI-initiator** op het tabblad **Doelen** naar **Gedetecteerde doelen**. (Elk volume zal een gedetecteerd doel zijn.) De apparaatstatus moet worden weer gegeven als **inactief**.
    
     ![gedetecteerde doelen](./media/storsimple-virtual-array-deploy3-iscsi-setup/image24.png)

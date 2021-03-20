@@ -9,10 +9,10 @@ ms.topic: include
 ms.date: 11/27/2019
 ms.author: prmitiki
 ms.openlocfilehash: b8869e93a7156b24d61ac555c95b9ca7f850ae34
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "81678583"
 ---
 1. Vul op de pagina **een peering maken** op het tabblad **configuratie** de selectie vakjes in, zoals hier wordt weer gegeven.
@@ -20,8 +20,8 @@ ms.locfileid: "81678583"
     > [!div class="mx-imgBorder"]
     > ![Een peering-pagina maken peering-type uitwisseling](../media/setup-exchange-conf-tab.png)
 
-    * Selecteer **Exchange**bij **peering-type**.
-    * Selecteer **SKU** als **gratis basis**versie.
+    * Selecteer **Exchange** bij **peering-type**.
+    * Selecteer **SKU** als **gratis basis** versie.
     * Selecteer de **metro** locatie waar u de peering wilt converteren naar een Azure-resource. Als u peering-verbindingen hebt met micro soft in de geselecteerde **metro** locatie die niet worden geconverteerd naar een Azure-resource, worden deze verbindingen weer gegeven in de sectie **peering-verbindingen** , zoals wordt getoond. U kunt deze peering-verbindingen nu converteren naar een Azure-resource.
 
         > [!div class="mx-imgBorder"]
@@ -36,7 +36,7 @@ ms.locfileid: "81678583"
     > [!div class="mx-imgBorder"]
     > ![Tabblad validatie van peering](../media/setup-direct-review-tab-validation.png)
 
-1. Nadat het bericht is gewijzigd in de *validatie*, controleert u uw gegevens. Dien de aanvraag in door **maken**te selecteren. Als u uw aanvraag wilt wijzigen, selecteert u **vorige** en herhaalt u de stappen.
+1. Nadat het bericht is gewijzigd in de *validatie*, controleert u uw gegevens. Dien de aanvraag in door **maken** te selecteren. Als u uw aanvraag wilt wijzigen, selecteert u **vorige** en herhaalt u de stappen.
 
     > [!div class="mx-imgBorder"]
     > ![Verzenden van peering](../media/setup-exchange-review-tab-submit.png)

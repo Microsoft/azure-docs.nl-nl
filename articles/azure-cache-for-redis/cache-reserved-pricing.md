@@ -7,10 +7,10 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 02/20/2020
 ms.openlocfilehash: 2f3472aa495042749410bc0b9635f0924a02e1fd
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98598557"
 ---
 # <a name="prepay-for-azure-cache-for-redis-compute-resources-with-reserved-capacity"></a>Vooruitbetalen voor Azure cache voor redis Compute-resources met gereserveerde capaciteit
@@ -52,11 +52,11 @@ In de volgende tabel worden de vereiste velden beschreven.
 
 | Veld | Beschrijving |
 | :------------ | :------- |
-| Abonnement   | Het abonnement dat wordt gebruikt voor de betaling van de Azure-cache voor gereserveerde capaciteits reservering redis. Voor de betalings methode voor het abonnement worden de kosten vooraf in rekening gebracht voor de Azure-cache voor gereserveerde capaciteits reservering redis. Het abonnements type moet een Enter prise Agreement zijn (nummer van de aanbieding: MS-AZR-0017P of MS-AZR-0148P) of een afzonderlijke overeenkomst met betalen per gebruik-prijs (aanbiedings nummers: MS-AZR-0003P of MS-AZR-0023P). Voor een Enter prise-abonnement worden de kosten afgetrokken van de Azure-voor uitbetaling van de inschrijving (voorheen monetaire toezeg ging genoemd)-saldo of in rekening gebracht als overschrijding. Voor een individueel abonnement met betalen per gebruik-tarieven worden de kosten in rekening gebracht op basis van de credit card of factuur betalings methode voor het abonnement.
+| Abonnement   | Het abonnement dat wordt gebruikt voor de betaling van de Azure-cache voor gereserveerde capaciteits reservering redis. Voor de betalings methode voor het abonnement worden de kosten vooraf in rekening gebracht voor de Azure-cache voor gereserveerde capaciteits reservering redis. Het abonnements type moet een Enter prise Agreement zijn (nummer van de aanbieding: MS-AZR-0017P of MS-AZR-0148P) of een afzonderlijke overeenkomst met betalen per gebruik-prijs (aanbiedings nummers: MS-AZR-0003P of MS-AZR-0023P). Voor een Enterprise-abonnement worden de kosten in mindering gebracht op het saldo van Azure-vooruitbetaling (voorheen financiële toezegging) of in rekening gebracht als overschrijding. Voor een individueel abonnement met betalen per gebruik-tarieven worden de kosten in rekening gebracht op basis van de credit card of factuur betalings methode voor het abonnement.
 | Bereik | Het bereik van de reserve ring kan betrekking hebben op één abonnement of meerdere abonnementen (gedeeld bereik). Als u het volgende selecteert: </br></br> **Gedeeld**, de reserverings korting wordt toegepast op Azure cache voor redis-exemplaren die worden uitgevoerd in abonnementen binnen uw facturerings context. Voor zakelijke klanten is het gedeelde bereik de inschrijving en omvat alle abonnementen binnen de inschrijving. Voor betalen per gebruik-klanten bestaat het gedeelde bereik uit alle abonnementen op gebruiksbasis gemaakt door de accountbeheerder.</br></br> **Eén abonnement**: de reserverings korting wordt toegepast op Azure cache voor redis-exemplaren in dit abonnement. </br></br> **Eén resource groep**, de reserverings korting wordt toegepast op Azure cache voor redis-exemplaren in het geselecteerde abonnement en de geselecteerde resource groep in dat abonnement.
-| Regio | De Azure-regio die wordt gedekt door de Azure-cache voor gereserveerde capaciteits reservering van redis.
+| Region | De Azure-regio die wordt gedekt door de Azure-cache voor gereserveerde capaciteits reservering van redis.
 | Prijscategorie | De servicelaag voor de Azure-cache voor redis-servers.
-| Term | Eén jaar of drie jaar
+| Termijn | Eén jaar of drie jaar
 | Aantal | De hoeveelheid reken resources die in de Azure-cache worden gekocht voor gereserveerde capaciteits reservering redis. De hoeveelheid is een aantal caches in de geselecteerde Azure-regio en service tier die worden gereserveerd en de facturerings korting krijgt. Als u bijvoorbeeld uitvoert of een Azure-cache wilt uitvoeren voor redis-servers met de totale cache capaciteit van 26 GB in de regio VS-Oost, geeft u de hoeveelheid op die u het equivalent van 26 GB geeft om het voor deel van alle caches te maximaliseren. Dit kan 1 P3-of 2 P2-caches zijn.
 
 ## <a name="cancel-exchange-or-refund-reservations"></a>Reserveringen annuleren, ruilen of terugbetalen

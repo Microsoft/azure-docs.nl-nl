@@ -10,10 +10,10 @@ ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 09/05/2019
 ms.openlocfilehash: 58eb92f4d0bc3de4671ca2ece14a178a876e4a6b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91541035"
 ---
 # <a name="build-a-luis-app-programmatically-using-nodejs"></a>Een LUIS-app bouwen via een programma met Node.js
@@ -179,7 +179,7 @@ upload done
 
 
 ## <a name="open-the-luis-app"></a>De LUIS-app openen
-Zodra het script is voltooid, kunt u zich aanmelden bij [Luis](luis-reference-regions.md) en de Luis-app zien die u hebt gemaakt onder **mijn apps**. U zou de uitingen moeten kunnen zien die u hebt toegevoegd onder de **TurnOn**, **TurnOff**en **geen** intenties.
+Zodra het script is voltooid, kunt u zich aanmelden bij [Luis](luis-reference-regions.md) en de Luis-app zien die u hebt gemaakt onder **mijn apps**. U zou de uitingen moeten kunnen zien die u hebt toegevoegd onder de **TurnOn**, **TurnOff** en **geen** intenties.
 
 ![TurnOn intentie](./media/luis-tutorial-node-import-utterances-csv/imported-utterances-661.png)
 

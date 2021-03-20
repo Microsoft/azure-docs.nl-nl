@@ -17,10 +17,10 @@ ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: fb23e60539c704dac457ab6e8706ec0cfe350ed9
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94835319"
 ---
 # <a name="configure-azure-ad-custom-roles-in-privileged-identity-management"></a>Aangepaste Azure AD-rollen configureren in Privileged Identity Management
@@ -64,7 +64,7 @@ U kunt ook een van deze *actieve* toewijzings duur opties kiezen:
 - **Permanente actieve toewijzing toestaan**: beheerders kunnen permanent actief lidmaatschap toewijzen.
 - **Actieve toewijzing laten verlopen na**: beheerders kunnen vereisen dat alle actieve toewijzingen een opgegeven begin-en eind datum hebben.
 
-### <a name="require-azure-ad-multi-factor-authentication"></a>Azure AD-Multi-Factor Authentication vereisen
+### <a name="require-azure-ad-multi-factor-authentication"></a>Azure AD Multi-Factor Authentication vereisen
 
 Privileged Identity Management biedt een optionele afdwinging van Azure AD-Multi-Factor Authentication voor twee verschillende scenario's.
 

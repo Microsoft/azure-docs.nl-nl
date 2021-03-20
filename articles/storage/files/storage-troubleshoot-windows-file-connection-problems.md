@@ -8,10 +8,10 @@ ms.date: 09/13/2019
 ms.author: jeffpatt
 ms.subservice: files
 ms.openlocfilehash: 242c0819e916f3ea7912d4d57b7d3e338152e4d9
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98878507"
 ---
 # <a name="troubleshoot-azure-files-problems-in-windows-smb"></a>Problemen met Azure Files oplossen in Windows (SMB)
@@ -210,7 +210,7 @@ Als u wilt afdwingen dat een bestands ingang wordt gesloten, gebruikt u de Power
 > De cmdlets Get-AzStorageFileHandle en Close-AzStorageFileHandle zijn opgenomen in AZ Power shell-module versie 2,4 of hoger. Zie [de module Azure PowerShell installeren](/powershell/azure/install-az-ps)om de nieuwste AZ Power shell-module te installeren.
 
 ### <a name="cause-2"></a>Oorzaak 2
-Een bestands lease voor komt dat een bestand wordt gewijzigd of verwijderd. U kunt controleren of een bestand een bestands lease heeft met de volgende Power shell, vervangen `<resource-group>` ,, `<storage-account>` `<file-share>` en `<path-to-file>` met de juiste waarden voor uw omgeving:
+Een bestandslease voorkomt dat een bestand kan worden gewijzigd of verwijderd. U kunt controleren of een bestand een bestands lease heeft met de volgende Power shell, vervangen `<resource-group>` ,, `<storage-account>` `<file-share>` en `<path-to-file>` met de juiste waarden voor uw omgeving:
 
 ```PowerShell
 # Set variables 
@@ -236,7 +236,7 @@ $fileClient = $file.ShareFileClient
 $fileClient.GetProperties().Value
 ```
 
-Als een bestand een lease heeft, moet het geretourneerde object de volgende eigenschappen bevatten:
+Als een bestand een lease heeft, moet het geretourneerde object de volgende eigenschappen hebben:
 
 ```Output
 LeaseDuration         : Infinite
@@ -245,7 +245,7 @@ LeaseStatus           : Locked
 ```
 
 ### <a name="solution-2"></a>Oplossing 2
-Als u een lease uit een bestand wilt verwijderen, kunt u de lease vrijgeven of de lease verbreken. Voor het vrijgeven van de lease hebt u de LeaseId van de lease nodig die u instelt wanneer u de lease maakt. U hebt de LeaseId niet nodig om de lease te verstoren.
+Als u een lease uit een bestand wilt verwijderen, kunt u de lease vrijgeven of de lease onderbreken. Voor het vrijgeven van de lease hebt u de LeaseId van de lease nodig. Deze hebt u ingesteld bij het maken van de lease. U hebt de LeaseId niet nodig om de lease te onderbreken.
 
 In het volgende voor beeld ziet u hoe u de lease verbreekt voor het bestand dat is aangegeven in oorzaak 2 (dit voor beeld gaat door met de Power shell-variabelen van oorzaak 2):
 

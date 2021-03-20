@@ -10,10 +10,10 @@ ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 11/08/2019
 ms.openlocfilehash: 4867a065a85fab1e4abc7f19401239e5b76e1da4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91541404"
 ---
 # <a name="how-to-use-the-dashboard-to-improve-your-app"></a>Het dash board gebruiken om uw app te verbeteren
@@ -32,7 +32,7 @@ De drie problemen die worden behandeld in het dash board zijn:
 |--|--|--|
 |Onevenwichtige gegevens|-|Dit gebeurt wanneer het aantal voor beeld-uitingen significant varieert. Alle doel stellingen moeten _ongeveer_ hetzelfde aantal voorbeeld uitingen hebben, behalve de geen intentie. Het mag slechts 10%-15% bevatten van het totale aantal uitingen in de app.<br><br> Als de gegevens niet in balans zijn, maar de intentie nauwkeurigheid boven bepaalde drempel waarde ligt, wordt deze onevenwichtigheid niet gerapporteerd als een probleem.<br><br>**Begin met dit probleem: het kan de hoofd oorzaak van de andere problemen zijn.**|
 |Onduidelijke voor spellingen|Oranje|Dit doet zich voor wanneer het beste doel en de volgende intentie scores dicht genoeg zijn dat ze in de volgende training kunnen spie gelen, vanwege [negatieve steek proeven](luis-how-to-train.md#train-with-all-data) of meer voorbeeld uitingen die aan de intentie zijn toegevoegd. |
-|Onjuiste voor spellingen|Rood|Dit probleem treedt op wanneer een voor beeld-utterance niet wordt voor speld voor de gelabelde intentie (het doel van de intentie).|
+|Onjuiste voor spellingen|Red|Dit probleem treedt op wanneer een voor beeld-utterance niet wordt voor speld voor de gelabelde intentie (het doel van de intentie).|
 
 Corrigerende voor spellingen worden weer gegeven met de kleur blauw.
 

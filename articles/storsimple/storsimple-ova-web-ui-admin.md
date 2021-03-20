@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 12/1/2016
 ms.author: alkohli
 ms.openlocfilehash: 6bea9c9b7807ffb32b6071c968d3186965477009
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96000926"
 ---
 # <a name="use-the-web-ui-to-administer-your-storsimple-virtual-array"></a>De Web-UI gebruiken voor het beheren van uw virtuele StorSimple-matrix
@@ -61,7 +61,7 @@ In sommige gevallen wanneer u het apparaat configureert via de lokale web-UI, wo
 Een logboek pakket bestaat uit alle relevante logboeken die Microsoft Ondersteuning kunnen helpen bij het oplossen van problemen met apparaten. In deze release kan een logboek pakket worden gegenereerd via de lokale webgebruikersinterface.
 
 #### <a name="to-generate-the-log-package"></a>Het logboek pakket genereren
-1. Ga in de lokale web-UI naar **Troubleshooting**  >  **systeem logboeken** voor probleem oplossing.
+1. Ga in de lokale web-UI naar   >  **systeem logboeken** voor probleem oplossing.
    
     ![logboek pakket 1 genereren](./media/storsimple-ova-web-ui-admin/image31.png)
 2. Klik onder aan de pagina op **logboek pakket maken**. Er wordt een pakket van de systeem logboeken gemaakt. Dit kan enkele minuten duren.

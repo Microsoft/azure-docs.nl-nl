@@ -4,10 +4,10 @@ description: Gebruik firewall regels om verbindingen van specifieke IP-adressen 
 ms.topic: article
 ms.date: 02/12/2021
 ms.openlocfilehash: ca5995c3e1b9923d925ddc4deae299c28261d18a
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100560856"
 ---
 # <a name="allow-access-to-azure-event-hubs-namespaces-from-specific-ip-addresses-or-ranges"></a>Toegang tot Azure Event Hubs-naam ruimten van bepaalde IP-adressen of bereiken toestaan

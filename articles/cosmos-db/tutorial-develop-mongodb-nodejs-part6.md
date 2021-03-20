@@ -11,10 +11,10 @@ ms.author: jopapa
 ms.custom: seodec18, devx-track-js
 ms.reviewer: sngun
 ms.openlocfilehash: c8e2c707566b08219b495e76be7f6f6130d876ab
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93081311"
 ---
 # <a name="create-an-angular-app-with-azure-cosmos-dbs-api-for-mongodb---add-crud-functions-to-the-app"></a>Een Angular-app maken met de API voor MongoDB van Azure Cosmos DB - CRUD-functies toevoegen aan de app
@@ -159,7 +159,7 @@ Voltooi de stappen in [deel 5](tutorial-develop-mongodb-nodejs-part5.md) van de 
    }
    ```
 
-3. Exporteer de nieuwe modules in **hero.service.js** :
+3. Exporteer de nieuwe modules in **hero.service.js**:
 
    ```javascript
     module.exports = {

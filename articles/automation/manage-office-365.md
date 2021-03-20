@@ -5,10 +5,10 @@ services: automation
 ms.date: 11/05/2020
 ms.topic: conceptual
 ms.openlocfilehash: 70c8892969a3b13175c60a4e20e0cf9086112abe
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93398042"
 ---
 # <a name="manage-office-365-services"></a>Office 365-services beheren
@@ -98,7 +98,7 @@ U kunt uw script gebruiken in een Azure Automation runbook. We gebruiken bijvoor
 2. Selecteer in uw Automation-account **Runbooks** onder **proces automatisering**.
 3. Selecteer het nieuwe runbook en klik op **bewerken**.
 4. Kopieer uw script en plak het in de tekst editor voor het runbook.
-5. Selecteer **assets** , vouw vervolgens **referenties** uit en controleer of de Office 365-referentie daar aanwezig is.
+5. Selecteer **assets**, vouw vervolgens **referenties** uit en controleer of de Office 365-referentie daar aanwezig is.
 6. Klik op **Opslaan**.
 7. Selecteer **test deel venster** en klik vervolgens op **starten** om te beginnen met het testen van uw runbook. Zie [Runbooks beheren in azure Automation](./manage-runbooks.md).
 8. Wanneer het testen is voltooid, sluit u af vanuit het test venster.

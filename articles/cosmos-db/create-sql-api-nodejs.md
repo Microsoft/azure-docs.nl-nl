@@ -10,10 +10,10 @@ ms.date: 09/22/2020
 ms.author: anfeldma
 ms.custom: devx-track-js
 ms.openlocfilehash: b4ed27e1515e898a71fb503bb0f260c608ef9f6f
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93090202"
 ---
 # <a name="quickstart-use-nodejs-to-connect-and-query-data-from-azure-cosmos-db-sql-api-account"></a>Quickstart: Node.js gebruiken om verbinding te maken en gegevens op te vragen uit Azure Cosmos DB SQL-API-account
@@ -48,7 +48,7 @@ Voor deze quickstart kunt u de optie [Azure Cosmos DB gratis uitproberen](https:
 
 1. Ga naar de pagina [Azure Cosmos DB gratis uitproberen](https://azure.microsoft.com/try/cosmosdb/).
 
-1. Kies het **SQL** -API-account en selecteer **Maken**. Aanmelden met uw Microsoft-account.
+1. Kies het **SQL**-API-account en selecteer **Maken**. Aanmelden met uw Microsoft-account.
 
 1. Nadat het aanmelden is gelukt, moet uw Azure Cosmos-account gereed zijn. Selecteer **Openen in het Azure-portal** om het zojuist gemaakte account te openen.
 
@@ -99,7 +99,7 @@ We gaan nu een Node.js-app klonen vanuit GitHub, de verbindingsreeks instellen e
 
 Deze stap is optioneel. Als u wilt weten hoe de databaseresources van Azure Cosmos in de code worden gemaakt, kunt u de volgende codefragmenten bekijken. Als u deze stap wilt overslaan, kunt u verdergaan naar [Uw verbindingsreeks bijwerken](#update-your-connection-string).
 
-Als u bekend bent met de vorige versie van SQL JavaScript SDK, heeft u misschien de termen _verzameling_ en _document_ gezien terwijl u ermee werkte. Azure Cosmos DB ondersteunt [meerdere API-modellen](introduction.md). Daarom maakt [versie 2.0+ van de JavaScript SDK gebruik](https://www.npmjs.com/package/@azure/cosmos) van de generieke termen _verzameling_ , wat een collectie, een grafiek of tabel kan zijn, en _item_ , om de inhoud van de container te beschrijven.
+Als u bekend bent met de vorige versie van SQL JavaScript SDK, heeft u misschien de termen _verzameling_ en _document_ gezien terwijl u ermee werkte. Azure Cosmos DB ondersteunt [meerdere API-modellen](introduction.md). Daarom maakt [versie 2.0+ van de JavaScript SDK gebruik](https://www.npmjs.com/package/@azure/cosmos) van de generieke termen _verzameling_, wat een collectie, een grafiek of tabel kan zijn, en _item_, om de inhoud van de container te beschrijven.
 
 De Cosmos DB JavaScript SDK wordt "@azure/cosmos" genoemd en kan worden geïnstalleerd via NPM...
 
@@ -176,7 +176,7 @@ De volgende codefragmenten zijn allemaal afkomstig uit het bestand _app.js_.
 
 Ga nu terug naar de Azure-portal om de details van de verbindingsreeks van uw Azure Cosmos-account op te halen. Kopieer de verbindingsreeks in de app zodat deze verbinding kan maken met uw database.
 
-1. Ga in de [Azure-portal](https://portal.azure.com/) naar uw Azure Cosmos DB-account en klik in de linkernavigatie op **Sleutels**. Selecteer vervolgens **Sleutels voor lezen/schrijven**. Gebruik de knoppen voor kopiëren aan de rechterkant van het scherm om de URI en Primaire sleutel in het _app.js_ -bestand in de volgende stap te kopiëren.
+1. Ga in de [Azure-portal](https://portal.azure.com/) naar uw Azure Cosmos DB-account en klik in de linkernavigatie op **Sleutels**. Selecteer vervolgens **Sleutels voor lezen/schrijven**. Gebruik de knoppen voor kopiëren aan de rechterkant van het scherm om de URI en Primaire sleutel in het _app.js_-bestand in de volgende stap te kopiëren.
 
    :::image type="content" source="./media/create-sql-api-dotnet/keys.png" alt-text="Een toegangssleutel weergeven en kopiëren in Azure Portal, blade Sleutels":::
 

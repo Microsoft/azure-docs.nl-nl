@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 10/09/2019
 ms.author: jeedes
 ms.openlocfilehash: a8cf58f49cba1bcc77c96a0da2061a037bb62bf2
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92504740"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-teamphoria"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met Teamphoria
@@ -94,9 +94,9 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
@@ -144,13 +144,13 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
     ![Schermopname van de pagina waarin u de beschreven waarden kunt invoeren.](./media/teamphoria-tutorial/Teamphoria_sso_save.png)
 
-    a. **WEERGAVENAAM** : Voer op de pagina Beheer de weergavenaam van de invoegtoepassing in.
+    a. **WEERGAVENAAM**: Voer op de pagina Beheer de weergavenaam van de invoegtoepassing in.
 
-    b. **KNOPNAAM** : De naam van het tabblad dat wordt weergegeven op de aanmeldingspagina voor aanmelding via eenmalige aanmelding.
+    b. **KNOPNAAM**: De naam van het tabblad dat wordt weergegeven op de aanmeldingspagina voor aanmelding via eenmalige aanmelding.
 
-    c. **CERTIFICAAT** : Open het certificaat dat u eerder hebt gedownload van de Azure-portal, in Kladblok, kopieer de inhoud en plak dit hier in het vak.
+    c. **CERTIFICAAT**: Open het certificaat dat u eerder hebt gedownload van de Azure-portal, in Kladblok, kopieer de inhoud en plak dit hier in het vak.
 
-    d. **INGANGSPUNT** : Plak de **aanmeldings-URL** die u eerder uit de Azure-portal hebt gekopieerd.
+    d. **INGANGSPUNT**: Plak de **aanmeldings-URL** die u eerder uit de Azure-portal hebt gekopieerd.
 
     e. Schakel de optie **in** en klik op **OPSLAAN**.
 

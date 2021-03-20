@@ -5,10 +5,10 @@ ms.date: 09/30/2020
 ms.topic: quickstart
 ms.custom: devx-track-csharp
 ms.openlocfilehash: c4c8f8e9df544b6fc00b5b7701435f5a606f9764
-ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91604548"
 ---
 # <a name="quickstart-create-a-policy-assignment-to-identify-non-compliant-resources-with-net-core"></a>Quickstart: Een beleidstoewijzing maken om niet-compatibele resources met .NET Core te identificeren
@@ -235,7 +235,7 @@ De resultaten in `response` komen overeen met wat u ziet op het tabblad **Resour
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-- Verwijder de beleidstoewijzing _Virtuele machines zonder beheerde schijven controleren_ via de portal. De beleidsdefinitie is ingebouwd, dus is er geen definitie om te verwijderen.
+- Verwijder de beleidstoewijzing _VM's zonder beheerde schijven controleren_ via de portal. De beleidsdefinitie is ingebouwd, dus is er geen definitie om te verwijderen.
 
 - Als u de .NET Core-consoletoepassing en de geïnstalleerde pakketten wilt verwijderen, kunt u dit doen door de projectmappen `policyAssignment` en `policyCompliance` te verwijderen.
 

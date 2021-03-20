@@ -10,10 +10,10 @@ ms.topic: article
 ms.date: 02/03/2021
 tags: connectors
 ms.openlocfilehash: 7873076618125241d9bdf4f225c194572553d060
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99573429"
 ---
 # <a name="integrate-3270-screen-driven-apps-on-ibm-mainframes-with-azure-by-using-azure-logic-apps-and-ibm-3270-connector"></a>Op het scherm gestuurde apps op IBM-mainframes 3270 integreren met Azure met behulp van Azure Logic Apps en IBM 3270-connector
@@ -178,7 +178,7 @@ In deze modus definieert u de stroom of stappen voor het navigeren door de scher
 
 1. Voer onder **nieuwe plan naam kiezen** een naam in voor uw abonnement. Selecteer in de lijst **type** het plan type:
 
-   | Plantype | Description |
+   | Plantype | Beschrijving |
    |-----------|-------------|
    | **Proces** | Voor zelfstandige of gecombineerde abonnementen |
    | **Verbinding maken** | Voor Connect-Abonnementen |
@@ -356,15 +356,15 @@ Wanneer u al deze stappen hebt voltooid, kunt u de actie die u in uw logische ap
    | Eigenschap | Vereist | Waarde | Beschrijving |
    |----------|----------|-------|-------------|
    | **Verbindingsnaam** | Ja | <*verbindings naam*> | De naam voor de verbinding |
-   | **Integratie account-ID** | Yes | <*integratie-account-naam*> | De naam van uw integratie account |
-   | **SAS-URL van integratie account** | Yes | <*integratie-account-SAS-URL*> | De URL van de Shared Access Signature (SAS) van uw integratie account, die u kunt genereren op basis van de instellingen van uw integratie account in de Azure Portal. <p>1. Selecteer in het menu van het integratie account onder **instellingen** de optie **URL voor terugbellen**. <br>2. Kopieer in het rechterdeel venster de waarde voor de **gegenereerde call back-URL** . |
-   | **Server** | Yes | <*TN3270-Server naam*> | De server naam voor uw TN3270-service |
-   | **Poort** | No | <*TN3270-Server-poort*> | De poort die wordt gebruikt door uw TN3270-Server. Als dit veld leeg blijft, wordt de connector `23` als de standaard waarde gebruikt. |
-   | **Apparaattype** | No | <*IBM-Terminal model*> | De naam of het nummer van het model voor de IBM-Terminal dat moet worden geëmuleerd. Als dit veld leeg blijft, gebruikt de connector standaard waarden. |
-   | **Codepagina** | No | <*code-pagina nummer*> | Het nummer van de code pagina voor de host. Als dit veld leeg blijft, wordt de connector `37` als de standaard waarde gebruikt. |
-   | **Naam van logische eenheid** | No | <*naam van logische eenheid*> | De naam van de specifieke logische eenheid die moet worden aangevraagd vanaf de host |
-   | **SSL inschakelen?** | No | In-of uitschakelen | Schakel TLS-code ring in of uit. |
-   | **SSL-certificaat van host valideren?** | No | In-of uitschakelen | De validatie van het server certificaat in-of uitschakelen. |
+   | **Integratie account-ID** | Ja | <*integratie-account-naam*> | De naam van uw integratie account |
+   | **SAS-URL van integratie account** | Ja | <*integratie-account-SAS-URL*> | De URL van de Shared Access Signature (SAS) van uw integratie account, die u kunt genereren op basis van de instellingen van uw integratie account in de Azure Portal. <p>1. Selecteer in het menu van het integratie account onder **instellingen** de optie **URL voor terugbellen**. <br>2. Kopieer in het rechterdeel venster de waarde voor de **gegenereerde call back-URL** . |
+   | **Server** | Ja | <*TN3270-Server naam*> | De server naam voor uw TN3270-service |
+   | **Poort** | Nee | <*TN3270-Server-poort*> | De poort die wordt gebruikt door uw TN3270-Server. Als dit veld leeg blijft, wordt de connector `23` als de standaard waarde gebruikt. |
+   | **Apparaattype** | Nee | <*IBM-Terminal model*> | De naam of het nummer van het model voor de IBM-Terminal dat moet worden geëmuleerd. Als dit veld leeg blijft, gebruikt de connector standaard waarden. |
+   | **Codepagina** | Nee | <*code-pagina nummer*> | Het nummer van de code pagina voor de host. Als dit veld leeg blijft, wordt de connector `37` als de standaard waarde gebruikt. |
+   | **Naam van logische eenheid** | Nee | <*naam van logische eenheid*> | De naam van de specifieke logische eenheid die moet worden aangevraagd vanaf de host |
+   | **SSL inschakelen?** | Nee | In-of uitschakelen | Schakel TLS-code ring in of uit. |
+   | **SSL-certificaat van host valideren?** | Nee | In-of uitschakelen | De validatie van het server certificaat in-of uitschakelen. |
    ||||
 
    Bijvoorbeeld:
@@ -375,8 +375,8 @@ Wanneer u al deze stappen hebt voltooid, kunt u de actie die u in uw logische ap
 
    | Eigenschap | Vereist | Waarde | Beschrijving |
    |----------|----------|-------|-------------|
-   | **Hidx-naam** | Yes | <*HIDX-bestands naam*> | Selecteer het 3270-HIDX-bestand dat u wilt gebruiken. |
-   | **Methode naam** | Yes | <*methode-naam*> | Selecteer de methode in het HIDX-bestand dat u wilt gebruiken. Nadat u een methode hebt geselecteerd, wordt de lijst **nieuwe para meter toevoegen** weer gegeven, zodat u para meters kunt selecteren voor gebruik met deze methode. |
+   | **Hidx-naam** | Ja | <*HIDX-bestands naam*> | Selecteer het 3270-HIDX-bestand dat u wilt gebruiken. |
+   | **Methode naam** | Ja | <*methode-naam*> | Selecteer de methode in het HIDX-bestand dat u wilt gebruiken. Nadat u een methode hebt geselecteerd, wordt de lijst **nieuwe para meter toevoegen** weer gegeven, zodat u para meters kunt selecteren voor gebruik met deze methode. |
    ||||
 
    Bijvoorbeeld:

@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 09/29/2020
 ms.author: yelevin
 ms.openlocfilehash: 011ddb883c028a954a8b0683c220bf6341eddb66
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91578140"
 ---
 # <a name="manage-multiple-tenants-in-azure-sentinel-as-an-mssp"></a>Meerdere tenants beheren in azure Sentinel als een MSSP
@@ -33,17 +33,17 @@ Als u een MSSP (Managed Security service provider) bent en u [Azure Lighthouse](
 
     1. Selecteer **abonnementen** in het Azure Portal en selecteer vervolgens een relevant abonnement in het menu.
 
-    1. Selecteer in het navigatie menu op het venster abonnement onder **instellingen**de optie **resource providers**.
+    1. Selecteer in het navigatie menu op het venster abonnement onder **instellingen** de optie **resource providers**.
 
-    1. Uit de ** *naam* van het abonnement | Bron providers** , zoek naar en selecteer *micro soft. OperationalInsights* en *micro soft. SecurityInsights*en controleer de kolom **status** . Als de status van de provider *NotRegistered*is, selecteert u **registreren**.
+    1. Uit de ***naam* van het abonnement | Bron providers** , zoek naar en selecteer *micro soft. OperationalInsights* en *micro soft. SecurityInsights* en controleer de kolom **status** . Als de status van de provider *NotRegistered* is, selecteert u **registreren**.
     
         :::image type="content" source="media/multiple-tenants-service-providers/check-resource-provider.png" alt-text="Resource providers controleren":::
 
 ## <a name="how-to-access-azure-sentinel-in-managed-tenants"></a>Toegang krijgen tot Azure Sentinel in beheerde tenants
 
-1. Selecteer onder **adres lijst + abonnement**de gedelegeerde directory's (Directory = Tenant) en de abonnementen waar de Azure Sentinel-werk ruimten van uw klant zich bevinden.
+1. Selecteer onder **adres lijst + abonnement** de gedelegeerde directory's (Directory = Tenant) en de abonnementen waar de Azure Sentinel-werk ruimten van uw klant zich bevinden.
 
-    :::image type="content" source="media/multiple-tenants-service-providers/directory-subscription.png" alt-text="Resource providers controleren":::
+    :::image type="content" source="media/multiple-tenants-service-providers/directory-subscription.png" alt-text="Tenants en abonnementen kiezen":::
 
 1. Open Azure Sentinel. U ziet alle werk ruimten in de geselecteerde abonnementen, en u kunt deze probleemloos samen werken, zoals elke werk ruimte in uw eigen Tenant.
 

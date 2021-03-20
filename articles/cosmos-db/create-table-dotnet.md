@@ -10,10 +10,10 @@ ms.date: 05/28/2020
 ms.author: sngun
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 513af71384fd1fa5d38ee3ec367a42892a662444
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93096934"
 ---
 # <a name="quickstart-build-a-table-api-app-with-net-sdk-and-azure-cosmos-db"></a>Quickstart: Een Table-API-app bouwen met .NET SDK en Azure Cosmos DB 
@@ -73,7 +73,7 @@ We gaan nu een Table-app klonen vanaf GitHub, de verbindingsreeks instellen en d
 
 ## <a name="open-the-sample-application-in-visual-studio"></a>De voorbeeldtoepassing openen in Visual Studio
 
-1. In Visual Studio opent u het menu **Bestand** , kiest u **Openen** en vervolgens **Project/oplossing**. 
+1. In Visual Studio opent u het menu **Bestand**, kiest u **Openen** en vervolgens **Project/oplossing**. 
 
    :::image type="content" source="media/create-table-dotnet/azure-cosmosdb-open-solution.png" alt-text="De oplossing openen"::: 
 
@@ -141,7 +141,7 @@ U hebt uw app nu bijgewerkt met alle informatie die nodig is voor de communicati
     
    :::image type="content" source="media/create-table-dotnet/azure-cosmosdb-console.png" alt-text="Console-uitvoer":::
 
-   Als u het eerste onderbrekingspunt bereikt, gaat u terug naar de Data Explorer in Azure Portal. Klik op de knop **Vernieuwen** , vouw de demo*-tabel uit en klik op **Entiteiten**. Het tabblad **Entiteiten** aan de rechterkant geeft de nieuwe entiteit weer die is toegevoegd voor Walter Harp. U ziet dat het telefoonnummer voor de nieuwe entiteit 425-555-0101 is.
+   Als u het eerste onderbrekingspunt bereikt, gaat u terug naar de Data Explorer in Azure Portal. Klik op de knop **Vernieuwen**, vouw de demo*-tabel uit en klik op **Entiteiten**. Het tabblad **Entiteiten** aan de rechterkant geeft de nieuwe entiteit weer die is toegevoegd voor Walter Harp. U ziet dat het telefoonnummer voor de nieuwe entiteit 425-555-0101 is.
 
    :::image type="content" source="media/create-table-dotnet/azure-cosmosdb-entity.png" alt-text="Nieuwe entiteit":::
     

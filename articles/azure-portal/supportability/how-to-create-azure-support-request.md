@@ -5,10 +5,10 @@ ms.assetid: fd6841ea-c1d5-4bb7-86bd-0c708d193b89
 ms.topic: how-to
 ms.date: 06/25/2020
 ms.openlocfilehash: 71aba8f2769a75805f47d90b71a8db4eeb26a97a
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100652391"
 ---
 # <a name="create-an-azure-support-request"></a>Een Azure-ondersteuningsaanvraag maken

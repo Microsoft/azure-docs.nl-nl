@@ -7,10 +7,10 @@ author: kanshiG
 ms.author: govindk
 ms.date: 04/09/2020
 ms.openlocfilehash: d6f0f30d7437b6f8ecc1d915eb3d3195f2504fec
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93098243"
 ---
 # <a name="how-to-monitor-throughput-or-request-unit-usage-of-an-operation-in-azure-cosmos-db"></a>De door Voer of het verbruik van aanvraag eenheden van een bewerking in Azure Cosmos DB controleren
@@ -37,29 +37,29 @@ Als u ziet dat bepaalde query's meer aanvraag eenheden nemen, kunt u acties uitv
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 
-1. Selecteer **monitor** in de navigatie balk aan de linkerkant en selecteer **metrische gegevens** .
+1. Selecteer **monitor** in de navigatie balk aan de linkerkant en selecteer **metrische gegevens**.
 
    :::image type="content" source="./media/monitor-request-unit-usage/monitor-metrics-blade.png" alt-text="Deel venster metrische gegevens in Azure Monitor":::
 
-1. Selecteer in het deel venster **metrieken** > **een resource selecteren** > Kies het vereiste **abonnement** en de **resource groep** . Voor het **bron type** selecteert u **Azure Cosmos DB accounts** , kiest u een van uw bestaande Azure Cosmos-accounts en selecteert u **Toep assen** .
+1. Selecteer in het deel venster **metrieken** > **een resource selecteren** > Kies het vereiste **abonnement** en de **resource groep**. Voor het **bron type** selecteert u **Azure Cosmos DB accounts**, kiest u een van uw bestaande Azure Cosmos-accounts en selecteert u **Toep assen**.
 
-   :::image type="content" source="./media/monitor-request-unit-usage/select-cosmos-db-account.png" alt-text="Deel venster metrische gegevens in Azure Monitor":::
+   :::image type="content" source="./media/monitor-request-unit-usage/select-cosmos-db-account.png" alt-text="Kies het Azure Cosmos DB-account om de metrische gegevens weer te geven":::
 
 1. Selecteer vervolgens de metrische gegevens voor de **totale aanvraag eenheden** in de lijst met beschik bare metrische gegevens. Zie het artikel [metrische gegevens per categorie](monitor-cosmos-db-reference.md) voor meer informatie over alle beschik bare metrische gegevens in deze lijst. In dit voor beeld selecteren we het **Totaal aantal aanvraag eenheden** en **Gem** als de aggregatie waarde. Naast deze details kunt u ook het **tijds bereik** en de **tijd granulatie** van de metrische gegevens selecteren. U kunt Maxi maal de metrische gegevens weer geven voor de afgelopen 30 dagen.  Nadat u het filter hebt toegepast, wordt een grafiek weer gegeven op basis van het filter. U kunt het gemiddelde aantal verbruikte aanvraag eenheden per minuut voor de geselecteerde periode bekijken.  
 
-   :::image type="content" source="./media/monitor-request-unit-usage/request-unit-usage-metric.png" alt-text="Deel venster metrische gegevens in Azure Monitor":::
+   :::image type="content" source="./media/monitor-request-unit-usage/request-unit-usage-metric.png" alt-text="Kies een waarde in het Azure Portal":::
 
 ## <a name="filters-for-request-unit-usage"></a>Filters voor het gebruik van de aanvraag eenheid
 
-U kunt de metrische gegevens ook filteren en de grafieken ophalen die worden weer gegeven met een specifieke naam van de **verzameling** , **database** naam, **OperationType** , **regio** , **status** **, enzovoort.** Met de opties **filter toevoegen** en **splitsing Toep assen** kunt u het gebruik van de aanvraag eenheid filteren en de metrische gegevens groeperen.
+U kunt de metrische gegevens ook filteren en de grafieken ophalen die worden weer gegeven met een specifieke naam van de **verzameling**, **database** naam, **OperationType**, **regio**, **status** **, enzovoort.** Met de opties **filter toevoegen** en **splitsing Toep assen** kunt u het gebruik van de aanvraag eenheid filteren en de metrische gegevens groeperen.
 
 Als u het gebruik van de aanvraag eenheid van elke bewerking wilt ophalen op basis van totaal (som) of gemiddeld, selecteert u **splitsing Toep assen** en kiest u **bewerkings type** en de filter waarde, zoals weer gegeven in de volgende afbeelding:
 
-   :::image type="content" source="./media/monitor-request-unit-usage/request-unit-usage-operations.png" alt-text="Deel venster metrische gegevens in Azure Monitor":::
+   :::image type="content" source="./media/monitor-request-unit-usage/request-unit-usage-operations.png" alt-text="Cosmos DB aanvraag eenheden voor bewerkingen in azure monitor":::
 
 Als u het gebruik van de aanvraag eenheid per verzameling wilt zien, selecteert u **splitsen Toep assen** en kiest u de naam van de verzameling als een filter. U ziet een chat sessie, zoals het volgende, met een keuze aan verzamelingen in het dash board. U kunt vervolgens een specifieke verzamelings naam selecteren om meer details weer te geven:
 
-   :::image type="content" source="./media/monitor-request-unit-usage/request-unit-usage-collection.png" alt-text="Deel venster metrische gegevens in Azure Monitor":::
+   :::image type="content" source="./media/monitor-request-unit-usage/request-unit-usage-collection.png" alt-text="Cosmos DB aanvraag eenheden voor alle bewerkingen door de verzameling in azure monitor":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

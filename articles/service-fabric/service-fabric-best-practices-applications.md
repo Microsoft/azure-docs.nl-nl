@@ -4,10 +4,10 @@ description: Aanbevolen procedures en ontwerp overwegingen voor het ontwikkelen 
 ms.topic: conceptual
 ms.date: 06/18/2019
 ms.openlocfilehash: ddf846e9e3ac6add7cf3f584b702de5accfb22af
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91538495"
 ---
 # <a name="azure-service-fabric-application-design-best-practices"></a>Aanbevolen procedures voor het ontwerpen van Azure Service Fabric-toepassingen
@@ -45,7 +45,7 @@ Overweeg stateful Services wanneer u een scenario voor een lage latentie hebt en
 Bepaal het tijds bestek voor gegevens retentie:
 
 - **Gegevens in cache**. Gebruik caching als latentie voor externe winkels een probleem is. Gebruik een stateful service als uw eigen gegevens cache of overweeg de [open-source SoCreate service Fabric gedistribueerde cache](https://github.com/SoCreate/service-fabric-distributed-cache)te gebruiken. In dit scenario hoeft u zich geen zorgen te maken als alle gegevens in de cache verloren zijn gegaan.
-- **Tijdgebonden gegevens**. In dit scenario moet u gegevens dichtbij houden om gedurende een bepaalde periode voor een latentie te berekenen, maar kunt u de gegevens in een *nood*geval kwijt raken. Zo moeten gegevens in veel IoT-oplossingen dicht bij de hand worden gebracht, bijvoorbeeld wanneer de gemiddelde Tempe ratuur gedurende de afgelopen paar dagen wordt berekend, maar als deze gegevens verloren zijn gegaan, zijn de specifieke gegevens punten die worden geregistreerd niet die belang rijk. In dit scenario is het meestal niet belang rijk dat u een back-up maakt van de afzonderlijke gegevens punten. U kunt alleen een back-up maken van berekende gemiddelde waarden die regel matig worden geschreven naar externe opslag.  
+- **Tijdgebonden gegevens**. In dit scenario moet u gegevens dichtbij houden om gedurende een bepaalde periode voor een latentie te berekenen, maar kunt u de gegevens in een *nood* geval kwijt raken. Zo moeten gegevens in veel IoT-oplossingen dicht bij de hand worden gebracht, bijvoorbeeld wanneer de gemiddelde Tempe ratuur gedurende de afgelopen paar dagen wordt berekend, maar als deze gegevens verloren zijn gegaan, zijn de specifieke gegevens punten die worden geregistreerd niet die belang rijk. In dit scenario is het meestal niet belang rijk dat u een back-up maakt van de afzonderlijke gegevens punten. U kunt alleen een back-up maken van berekende gemiddelde waarden die regel matig worden geschreven naar externe opslag.  
 - **Lange termijn gegevens**. Met betrouw bare verzamelingen kunt u uw gegevens permanent opslaan. Maar in dit geval moet u [voor bereidingen treffen voor herstel na nood gevallen](./service-fabric-disaster-recovery.md), waaronder het [configureren van beleid voor periodieke back-ups](./service-fabric-backuprestoreservice-configure-periodic-backup.md) voor uw clusters. In feite configureert u wat er gebeurt als uw cluster wordt vernietigd in een nood geval, waar u een nieuw cluster zou moeten maken en nieuwe toepassings exemplaren moet implementeren en herstellen van de laatste back-up.
 
 Bespaar kosten en verbeter de beschik baarheid:

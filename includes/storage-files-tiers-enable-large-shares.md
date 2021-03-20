@@ -9,10 +9,10 @@ ms.date: 02/03/2021
 ms.author: fauhse
 ms.custom: include file
 ms.openlocfilehash: a086aae35c9a800c6a4cfc3e872a34438bc84095
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99569446"
 ---
 Standaard-bestands shares kunnen Maxi maal 5 TiB omvatten, maar u kunt de limiet voor delen verhogen tot 100 TiB. Als u de limiet voor delen wilt verhogen, schakelt u **grote bestands share** in voor uw opslag account. Premium Storage-accounts (*FileStorage* -opslag accounts) beschikken niet over de functie voor het maken van een grote bestands share omdat alle Premium-bestands shares al zijn ingeschakeld voor het inrichten van maxi maal 100-TIB capaciteit.

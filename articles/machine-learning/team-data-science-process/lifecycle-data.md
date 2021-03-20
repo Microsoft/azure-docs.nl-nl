@@ -12,10 +12,10 @@ ms.date: 11/17/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: fffb52e333bea1b2be11b127a9eab6656dc1d1f5
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94740325"
 ---
 # <a name="data-acquisition-and-understanding-stage-of-the-team-data-science-process"></a>Gegevens verwerving en uitleg van het team data Science process
@@ -72,7 +72,7 @@ Hieronder vindt u de producten in deze fase:
 
 Hier vindt u koppelingen naar elke stap in de levens cyclus van de TDSP:
 
-   1. [Zakelijke inzichten](lifecycle-business-understanding.md)
+   1. [Inzicht in het bedrijf](lifecycle-business-understanding.md)
    2. [Gegevens verkrijgen en meer informatie](lifecycle-data.md)
    3. [Modelleren](lifecycle-modeling.md)
    4. [Implementatie](lifecycle-deployment.md)

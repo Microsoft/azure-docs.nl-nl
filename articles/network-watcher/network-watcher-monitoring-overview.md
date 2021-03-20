@@ -15,10 +15,10 @@ ms.date: 01/04/2021
 ms.author: damendo
 ms.custom: mvc
 ms.openlocfilehash: 9b19beae43f1d4a5b0788d9d7662828355c3dd2c
-ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97895883"
 ---
 # <a name="what-is-azure-network-watcher"></a>Wat is Azure Network Watcher?

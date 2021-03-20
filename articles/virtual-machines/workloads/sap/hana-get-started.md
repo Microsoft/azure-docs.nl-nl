@@ -16,14 +16,14 @@ ms.workload: infrastructure-services
 ms.date: 03/19/2020
 ms.author: juergent
 ms.openlocfilehash: 54bfd7c6e691efbd754e9ea2b804e16b3e07ebbe
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101670976"
 ---
 # <a name="installation-of-sap-hana-on-azure-virtual-machines"></a>Installatie van SAP HANA op virtuele machines van Azure
-## <a name="introduction"></a>Introductie
+## <a name="introduction"></a>Inleiding
 Deze hand leiding helpt u bij het aanwijzen van de juiste resources om HANA in azure virtual machines te implementeren. Deze hand leiding gaat u naar documentatie bronnen die u moet controleren voordat u SAP HANA installeert in een Azure-VM. Daarom kunt u de juiste stappen uitvoeren om te eindigen met een ondersteunde configuratie van SAP HANA in azure Vm's.  
 
 > [!NOTE]

@@ -9,10 +9,10 @@ ms.date: 10/15/2020
 ms.author: mjbrown
 ms.custom: devx-track-js, devx-track-azurecli, devx-track-csharp
 ms.openlocfilehash: 63b633ed67c03a006a154bc69a1aafb4cb4aa6d0
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93086275"
 ---
 # <a name="provision-database-container-or-autoscale-throughput-on-azure-cosmos-db-cassandra-api-resources"></a>De door Voer van data base, container of automatisch schalen op Azure Cosmos DB Cassandra-API resources inrichten
@@ -28,13 +28,13 @@ Als u een andere API gebruikt, raadpleegt u [SQL API](how-to-provision-container
 
 1. [Maak een nieuw Azure Cosmos-account](create-mongodb-dotnet.md#create-a-database-account)of selecteer een bestaand Azure Cosmos-account.
 
-1. Open het deel venster **Data Explorer** en selecteer **nieuwe tabel** . Geef de volgende gegevens op:
+1. Open het deel venster **Data Explorer** en selecteer **nieuwe tabel**. Geef de volgende gegevens op:
 
    * Geef aan of u een nieuwe spatie maakt of een bestaand gebruikt. Selecteer de optie **doorvoer database inrichten** als u de door voer wilt inrichten op het niveau van de opslag ruimte.
    * Voer de tabel-ID in de CQL-opdracht in.
    * Voer een waarde voor de primaire sleutel in (bijvoorbeeld `/userrID` ).
    * Voer een door Voer in die u wilt inrichten (bijvoorbeeld 1000 RUs).
-   * Selecteer **OK** .
+   * Selecteer **OK**.
 
     :::image type="content" source="./media/how-to-provision-throughput-cassandra/provision-table-throughput-portal-cassandra-api.png" alt-text="Scherm opname van Data Explorer bij het maken van een nieuwe verzameling met een doorvoer capaciteit op database niveau":::
 

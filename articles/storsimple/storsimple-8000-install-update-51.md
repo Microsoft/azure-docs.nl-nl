@@ -13,10 +13,10 @@ ms.workload: TBD
 ms.date: 03/05/2020
 ms.author: alkohli
 ms.openlocfilehash: 5b9958f3dd497aa612a92947b8d968439ef9d0e4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91575959"
 ---
 # <a name="install-update-51-on-your-storsimple-device"></a>Update 5,1 op uw StorSimple-apparaat installeren
@@ -66,7 +66,7 @@ Voer de volgende stappen uit om uw apparaat bij te werken naar [update 5,1](stor
 
     ![Scherm afbeelding van de Blade instellingen met de optie updates van het apparaat wordt aangeroepen en de Blade apparaat bijwerken met de nieuwe reguliere updates is beschikbaar bericht met de naam.](./media/storsimple-8000-install-update-51/update3.png)
 
-4. We raden u aan de releaseopmerkingen te bekijken voordat u een update toepast op uw apparaat. Klik op **updates installeren**om updates toe te passen. Controleer op de Blade **regel matige updates bevestigen** de vereiste onderdelen om te volt ooien voordat u updates toepast. Schakel het selectie vakje in om aan te geven dat u klaar bent voor het bijwerken van het apparaat en klik vervolgens op **installeren**.
+4. We raden u aan de releaseopmerkingen te bekijken voordat u een update toepast op uw apparaat. Klik op **updates installeren** om updates toe te passen. Controleer op de Blade **regel matige updates bevestigen** de vereiste onderdelen om te volt ooien voordat u updates toepast. Schakel het selectie vakje in om aan te geven dat u klaar bent voor het bijwerken van het apparaat en klik vervolgens op **installeren**.
 
     ![Scherm afbeelding van de Blade updates van het apparaat met de optie voor het installeren van updates en de optie regel matige updates bevestigen met de optie akkoord en installeren.](./media/storsimple-8000-install-update-51/update4.png)
 
@@ -92,7 +92,7 @@ Voer de volgende stappen uit om uw apparaat bij te werken naar [update 5,1](stor
 
      ![Scherm opname van de Blade instellingen met taken die worden genoemd en de Blade taken met de voortgang van de update.](./media/storsimple-8000-install-update-51/update7.png)
 
-10. Nadat de taak is voltooid, gaat u naar de **apparaatinstellingen > updates**van het apparaat. De software versie moet nu worden bijgewerkt.
+10. Nadat de taak is voltooid, gaat u naar de **apparaatinstellingen > updates** van het apparaat. De software versie moet nu worden bijgewerkt.
 
 
 Controleer of de **StorSimple 8000 Series Update 5,1 (6.3.9600.17885)** op uw apparaat wordt uitgevoerd. De **laatst bijgewerkte datum** moet worden gewijzigd.

@@ -6,10 +6,10 @@ manager: rochakm
 ms.date: 11/03/2019
 ms.topic: conceptual
 ms.openlocfilehash: d4fa7348df647cf699ebd55dd6415a79454ab5f1
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93397947"
 ---
 # <a name="common-questions-azure-to-azure-disaster-recovery"></a>Veelgestelde vragen: Herstel na noodgeval van Azure naar Azure

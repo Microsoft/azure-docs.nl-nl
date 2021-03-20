@@ -16,10 +16,10 @@ ms.date: 03/13/2018
 ms.author: kumud
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: 9c6399e437fa314aa82e0b41cbf8a170ea3ab72e
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94741770"
 ---
 # <a name="connect-virtual-networks-with-virtual-network-peering-using-the-azure-cli"></a>Virtuele netwerken verbinden met virtuele netwerk peering met behulp van Azure CLI
@@ -35,7 +35,7 @@ U kunt virtuele netwerken met elkaar verbinden met virtueel-netwerk peering. Wan
 
 [!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-- Voor dit artikel is versie 2.0.28 of hoger van de Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
+- Voor dit artikel is versie 2.0.28 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
 ## <a name="create-virtual-networks"></a>Virtuele netwerken maken
 

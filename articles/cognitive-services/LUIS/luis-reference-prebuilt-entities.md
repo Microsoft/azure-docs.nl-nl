@@ -10,10 +10,10 @@ ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 07/20/2020
 ms.openlocfilehash: 7a4654b8f389ad18010bb4ad211103f2816a18ee
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91541999"
 ---
 # <a name="entities-per-culture-in-your-luis-model"></a>Entiteiten per cultuur in uw LUIS-model
@@ -54,7 +54,7 @@ De volgende entiteiten worden ondersteund:
 | --------------- | :---: |
 [Leeftijd](luis-reference-prebuilt-age.md):<br>jaar<br>maand<br>gevormd<br>day   |    V2, V3   |
 [Valuta (Money)](luis-reference-prebuilt-currency.md):<br>Gulden<br>Fractionele eenheid (ex: afronding)  |    V2, V3   |
-[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>datum<br>daterange<br>tijd<br>time Range   |    V2, V3   |
+[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>date<br>daterange<br>tijd<br>time Range   |    V2, V3   |
 [Dimensie](luis-reference-prebuilt-dimension.md):<br>volume<br>gebied<br>gewicht<br>informatie (bijvoorbeeld: bit/byte)<br>lengte (bijvoorbeeld: meter)<br>snelheid (bijvoorbeeld: mijl per uur)  |    V2, V3   |
 [E-mail](luis-reference-prebuilt-email.md)   |    V2, V3   |
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   |
@@ -94,11 +94,11 @@ De volgende entiteiten worden ondersteund:
 
 De volgende entiteiten worden ondersteund:
 
-| Vooraf gebouwde entiteit | nl-NL |
+| Vooraf gebouwde entiteit | en-US |
 | --------------- | :---: |
 [Leeftijd](luis-reference-prebuilt-age.md):<br>jaar<br>maand<br>gevormd<br>day   |    V2, V3   |
 [Valuta (Money)](luis-reference-prebuilt-currency.md):<br>Gulden<br>Fractionele eenheid (ex: afronding)  |    V2, V3   |
-[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>datum<br>daterange<br>tijd<br>time Range   |    V2, V3   |
+[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>date<br>daterange<br>tijd<br>time Range   |    V2, V3   |
 [Dimensie](luis-reference-prebuilt-dimension.md):<br>volume<br>gebied<br>gewicht<br>informatie (bijvoorbeeld: bit/byte)<br>lengte (bijvoorbeeld: meter)<br>snelheid (bijvoorbeeld: mijl per uur)  |    V2, V3   |
 [E-mail](luis-reference-prebuilt-email.md)   |    V2, V3   |
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    V2, V3   |
@@ -120,7 +120,7 @@ De volgende entiteiten worden ondersteund:
 | --------------- | :---: |
 [Leeftijd](luis-reference-prebuilt-age.md):<br>jaar<br>maand<br>gevormd<br>day   |    V2, V3   |
 [Valuta (Money)](luis-reference-prebuilt-currency.md):<br>Gulden<br>Fractionele eenheid (ex: afronding)  |    V2, V3   |
-[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>datum<br>daterange<br>tijd<br>time Range   |    V2, V3   |
+[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>date<br>daterange<br>tijd<br>time Range   |    V2, V3   |
 [Dimensie](luis-reference-prebuilt-dimension.md):<br>volume<br>gebied<br>gewicht<br>informatie (bijvoorbeeld: bit/byte)<br>lengte (bijvoorbeeld: meter)<br>snelheid (bijvoorbeeld: mijl per uur)  |    V2, V3   |
 [E-mail](luis-reference-prebuilt-email.md)   |    V2, V3   |
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   |
@@ -142,7 +142,7 @@ De volgende entiteiten worden ondersteund:
 | --------------- | :---: |
 [Leeftijd](luis-reference-prebuilt-age.md):<br>jaar<br>maand<br>gevormd<br>day   |    V2, V3   |
 [Valuta (Money)](luis-reference-prebuilt-currency.md):<br>Gulden<br>Fractionele eenheid (ex: afronding)  |    V2, V3   |
-[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>datum<br>daterange<br>tijd<br>time Range   |    V2, V3   |
+[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>date<br>daterange<br>tijd<br>time Range   |    V2, V3   |
 [Dimensie](luis-reference-prebuilt-dimension.md):<br>volume<br>gebied<br>gewicht<br>informatie (bijvoorbeeld: bit/byte)<br>lengte (bijvoorbeeld: meter)<br>snelheid (bijvoorbeeld: mijl per uur)  |    V2, V3   |
 [E-mail](luis-reference-prebuilt-email.md)   |    V2, V3   |
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   |
@@ -164,7 +164,7 @@ De volgende entiteiten worden ondersteund:
 | -------------- | :---: |
 [Leeftijd](luis-reference-prebuilt-age.md):<br>jaar<br>maand<br>gevormd<br>day   |    V2, V3   |
 [Valuta (Money)](luis-reference-prebuilt-currency.md):<br>Gulden<br>Fractionele eenheid (ex: afronding)  |    V2, V3   |
-[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>datum<br>daterange<br>tijd<br>time Range   |    V2, V3   |
+[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>date<br>daterange<br>tijd<br>time Range   |    V2, V3   |
 [Dimensie](luis-reference-prebuilt-dimension.md):<br>volume<br>gebied<br>gewicht<br>informatie (bijvoorbeeld: bit/byte)<br>lengte (bijvoorbeeld: meter)<br>snelheid (bijvoorbeeld: mijl per uur)  |    V2, V3   |
 [E-mail](luis-reference-prebuilt-email.md)   |    V2, V3   |
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   |
@@ -254,7 +254,7 @@ De volgende entiteiten worden ondersteund:
 | --------------- | :---: |
 [Leeftijd](luis-reference-prebuilt-age.md):<br>jaar<br>maand<br>gevormd<br>day   |    V2, V3   |
 [Valuta (Money)](luis-reference-prebuilt-currency.md):<br>Gulden<br>Fractionele eenheid (ex: afronding)  |    V2, V3   |
-[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>datum<br>daterange<br>tijd<br>time Range   |    V2, V3   |
+[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>date<br>daterange<br>tijd<br>time Range   |    V2, V3   |
 [Dimensie](luis-reference-prebuilt-dimension.md):<br>volume<br>gebied<br>gewicht<br>informatie (bijvoorbeeld: bit/byte)<br>lengte (bijvoorbeeld: meter)<br>snelheid (bijvoorbeeld: mijl per uur)  |    V2, V3   |
 [E-mail](luis-reference-prebuilt-email.md)   |    V2, V3   |
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   |
@@ -276,7 +276,7 @@ De volgende entiteiten worden ondersteund:
 | --------------- | :---: |
 [Leeftijd](luis-reference-prebuilt-age.md):<br>jaar<br>maand<br>gevormd<br>day   |    V2, V3   |
 [Valuta (Money)](luis-reference-prebuilt-currency.md):<br>Gulden<br>Fractionele eenheid (ex: afronding)  |    V2, V3   |
-[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>datum<br>daterange<br>tijd<br>time Range   |    V2, V3   |
+[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>date<br>daterange<br>tijd<br>time Range   |    V2, V3   |
 [Dimensie](luis-reference-prebuilt-dimension.md):<br>volume<br>gebied<br>gewicht<br>informatie (bijvoorbeeld: bit/byte)<br>lengte (bijvoorbeeld: meter)<br>snelheid (bijvoorbeeld: mijl per uur)  |    V2, V3   |
 [E-mail](luis-reference-prebuilt-email.md)   |    V2, V3   |
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   |
@@ -298,7 +298,7 @@ De volgende entiteiten worden ondersteund:
 | --------------- | :---: |
 [Leeftijd](luis-reference-prebuilt-age.md):<br>jaar<br>maand<br>gevormd<br>day   |    -   |
 [Valuta (Money)](luis-reference-prebuilt-currency.md):<br>Gulden<br>Fractionele eenheid (ex: afronding)  |    -   |
-[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>datum<br>daterange<br>tijd<br>time Range   |    -   |
+[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>date<br>daterange<br>tijd<br>time Range   |    -   |
 [Dimensie](luis-reference-prebuilt-dimension.md):<br>volume<br>gebied<br>gewicht<br>informatie (bijvoorbeeld: bit/byte)<br>lengte (bijvoorbeeld: meter)<br>snelheid (bijvoorbeeld: mijl per uur)  |    -   |
 [E-mail](luis-reference-prebuilt-email.md)   |    V2, V3   |
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   |

@@ -10,10 +10,10 @@ ms.topic: quickstart
 ms.date: 09/22/2020
 ms.custom: devx-track-dotnet
 ms.openlocfilehash: 224a1b67ff0282c216763229593fcfed81d7567b
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93090100"
 ---
 # <a name="quickstart-build-a-console-app-using-the-net-v4-sdk-to-manage-azure-cosmos-db-sql-api-account-resources"></a>Quickstart: Bouw een console-app met behulp van de .NET V4 SDK voor het beheren van Azure Cosmos DB SQL API-accountresources.
@@ -56,7 +56,7 @@ Als u uw eigen Azure-abonnement hebt of een gratis abonnement hebt gemaakt, moet
 
 U kunt Azure Cloud Shell gebruiken om het Azure Cosmos-account te maken. Azure Cloud Shell is een interactieve, geverifieerde en vanuit de browser toegankelijke shell voor het beheer van Azure-resources. Het biedt de flexibiliteit om de shell-ervaring te kiezen die het beste past bij de manier waarop u werkt, dan wel Bash of PowerShell. Kies voor deze quickstart de modus **Bash**. Voor Azure Cloud Shell hebt u ook een opslagaccount nodig. U kunt er een maken wanneer u hierom wordt gevraagd.
 
-Selecteer de knop **Uitproberen** naast de volgende code, kies de modus **Bash** , selecteer **een opslagaccount maken** en meld u aan bij Cloud Shell. Kopieer vervolgens de volgende code en plak deze in Azure Cloud Shell en voer deze uit. De naam van het Azure Cosmos-account moet wereldwijd uniek zijn. Zorg ervoor dat u de `mysqlapicosmosdb`-waarde bijwerkt voordat u de opdracht uitvoert.
+Selecteer de knop **Uitproberen** naast de volgende code, kies de modus **Bash**, selecteer **een opslagaccount maken** en meld u aan bij Cloud Shell. Kopieer vervolgens de volgende code en plak deze in Azure Cloud Shell en voer deze uit. De naam van het Azure Cosmos-account moet wereldwijd uniek zijn. Zorg ervoor dat u de `mysqlapicosmosdb`-waarde bijwerkt voordat u de opdracht uitvoert.
 
 ```azurecli-interactive
 

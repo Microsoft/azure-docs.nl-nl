@@ -8,10 +8,10 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/22/2018
 ms.openlocfilehash: a7042a67081475311341ad6d56e35b2a71b8b12c
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100379332"
 ---
 # <a name="create-predictive-pipelines-using-azure-machine-learning-studio-classic-and-azure-data-factory"></a>Maak voorspellende pijp lijnen met behulp van Azure Machine Learning Studio (klassiek) en Azure Data Factory
@@ -28,7 +28,7 @@ ms.locfileid: "100379332"
 > * [Data Lake Analytics U-SQL-activiteit](data-factory-usql-activity.md)
 > * [Aangepaste .NET-activiteit](data-factory-use-custom-activities.md)
 
-## <a name="introduction"></a>Introductie
+## <a name="introduction"></a>Inleiding
 > [!NOTE]
 > Dit artikel is van toepassing op versie 1 van Data Factory. Als u de huidige versie van de Data Factory-service gebruikt, raadpleegt u [gegevens transformeren met behulp van machine learning in Data Factory](../transform-data-using-machine-learning.md).
 

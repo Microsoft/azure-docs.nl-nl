@@ -7,10 +7,10 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 08/11/2020
 ms.openlocfilehash: 87b5ec5eb13f2bc53bdf993547ce3da1c74404bf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91566785"
 ---
 # <a name="add-replicas-to-azure-cache-for-redis-preview"></a>Replica's toevoegen aan Azure cache voor redis (preview-versie)
@@ -19,11 +19,11 @@ In dit artikel leert u hoe u een Azure-cache-exemplaar met aanvullende replica's
 Azure cache voor de redis Standard en Premium-lagen bieden redundantie door elke cache te hosten op twee toegewezen virtuele machines (Vm's). Deze Vm's zijn geconfigureerd als primair en replica. Wanneer de primaire virtuele machine niet meer beschikbaar is, detecteert de replica dat en wordt automatisch de nieuwe primaire VM overgenomen. U kunt nu het aantal replica's in een Premium-cache verhogen tot drie, waardoor u een totaal van vier Vm's hebt die een cache back-ups maken. Als er meerdere replica's zijn, resulteert dit in hogere toleranties dan wat één replica kan bieden.
 
 > [!IMPORTANT]
-> Deze preview-versie wordt zonder service level agreement gegeven en wordt niet aanbevolen voor productie werkbelastingen. Zie voor meer informatie [aanvullende gebruiks voorwaarden voor Microsoft Azure-previews.](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) 
+> Deze preview wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Zie voor meer informatie [aanvullende gebruiks voorwaarden voor Microsoft Azure-previews.](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) 
 > 
 
 ## <a name="prerequisites"></a>Vereisten
-* Azure-abonnement: [Maak er gratis een](https://azure.microsoft.com/free/)
+* Azure-abonnement: [u kunt een gratis abonnement nemen](https://azure.microsoft.com/free/)
 
 > [!NOTE]
 > Deze functie is momenteel beschikbaar als preview- [contact](mailto:azurecache@microsoft.com) opnemen als u geïnteresseerd bent.
@@ -46,11 +46,11 @@ Voer de volgende stappen uit om een cache te maken:
     | **Resourcegroep** | Selecteer een resource groep of selecteer **nieuwe maken** en voer een nieuwe naam voor de resource groep in. | Naam voor de resourcegroep waarin de cache en andere resources moeten worden gemaakt. Door al uw app-resources in één resourcegroep te plaatsen, kunt u ze eenvoudig beheren of verwijderen. | 
     | **DNS-naam** | Geef een wereldwijd unieke naam op. | De cachenaam is een tekenreeks van 1 tot 63 tekens die alleen cijfers, letters en afbreekstreepjes mag bevatten. De naam moet beginnen en eindigen met een cijfer of letter en mag geen opeenvolgende afbreekstreepjes bevatten. De *hostnaam* van uw cache-exemplaar wordt *\<DNS name>.redis.cache.windows.net*. | 
     | **Locatie** | Selecteer een locatie. | Selecteer een [regio](https://azure.microsoft.com/regions/) in de buurt van andere services die gaan gebruikmaken van de cache. |
-    | **Cache type** | Selecteer een cache voor de [Premium-laag](https://azure.microsoft.com/pricing/details/cache/) . |  De prijscategorie bepaalt de grootte, prestaties en functies die beschikbaar zijn voor de cache. Zie het [Azure Cache voor Redis-overzicht](cache-overview.md) voor meer informatie. |
+    | **Cachetype** | Selecteer een cache voor de [Premium-laag](https://azure.microsoft.com/pricing/details/cache/) . |  De prijscategorie bepaalt de grootte, prestaties en functies die beschikbaar zijn voor de cache. Zie het [Azure Cache voor Redis-overzicht](cache-overview.md) voor meer informatie. |
    
 1. Kies op de pagina **Geavanceerd** de optie **aantal replica's**.
    
-    :::image type="content" source="media/cache-how-to-multi-replicas/create-multi-replicas.png" alt-text="Selecteer Azure Cache voor Redis.":::
+    :::image type="content" source="media/cache-how-to-multi-replicas/create-multi-replicas.png" alt-text="Aantal replica's.":::
 
 1. Wijzig de standaard instellingen van andere opties. 
 
@@ -58,7 +58,7 @@ Voer de volgende stappen uit om een cache te maken:
     > Ondersteuning voor meerdere replica's werkt momenteel alleen met niet-geclusterde caches.
     >
 
-1. Klik op **Maken**.
+1. Klik op **Create**.
    
     Het duurt even voor de cache is gemaakt. U kunt de voortgang bekijken op de **overzichtspagina** van Azure Cache voor Redis. Als u bij **Status** **Wordt uitgevoerd** ziet staan, kunt u de cache gebruiken.
 

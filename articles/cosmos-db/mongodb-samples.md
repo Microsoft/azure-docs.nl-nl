@@ -10,10 +10,10 @@ author: sivethe
 ms.author: sivethe
 ms.custom: devx-track-js
 ms.openlocfilehash: c2117c535cca679d3a7a3b75491bf60ab9567ceb
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93098209"
 ---
 # <a name="build-an-app-using-nodejs-and-azure-cosmos-dbs-api-for-mongodb"></a>Een app bouwen met behulp van Node.js en de API voor MongoDB van Azure Cosmos DB 
@@ -36,7 +36,7 @@ Als u dit voorbeeld wilt gebruiken, moet u het volgende doen:
 
 ## <a name="create-the-app"></a>De app maken
 
-1. Maak een *app.js* -bestand en kopieer en plak de onderstaande code.
+1. Maak een *app.js*-bestand en kopieer en plak de onderstaande code.
 
     ```javascript
     var MongoClient = require('mongodb').MongoClient;
@@ -118,7 +118,7 @@ Als u dit voorbeeld wilt gebruiken, moet u het volgende doen:
     });
     ```
     
-    **Optioneel** : Als u het **MongoDB Node.js 2.2-stuurprogramma** gebruikt, vervangt u het volgende codefragment:
+    **Optioneel**: Als u het **MongoDB Node.js 2.2-stuurprogramma** gebruikt, vervangt u het volgende codefragment:
 
     Oorspronkelijk:
 

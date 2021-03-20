@@ -6,10 +6,10 @@ ms.topic: tutorial
 ms.date: 01/13/2021
 ms.author: jobreen
 ms.openlocfilehash: 54d0df287865d5d92403bf68227a2d4c5faa8bb4
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98200206"
 ---
 # <a name="author-a-restful-endpoint-for-custom-providers"></a>Een RESTful-eindpunt ontwerpen voor aangepaste providers

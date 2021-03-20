@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 05/08/2020
 ms.author: buhollan
 ms.openlocfilehash: 578860883a108bba4b4bcd8cd04e8c08f484d474
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92173687"
 ---
 # <a name="setup-a-custom-domain-in-azure-static-web-apps-preview"></a>Een aangepast domein instellen in de preview-versie van Azure Static Web Apps
@@ -57,7 +57,7 @@ Een CNAME-record wijst één domein aan een andere toe. U kunt een CNAME-record 
 
 2. Ga naar de pagina voor het beheren van DNS-records. Elke domeinprovider heeft zijn eigen interface voor het beheren van DNS-records. Raadpleeg daarom de documentatie van de provider. Doorgaans heeft het sitegedeelte waar u moet zijn, een naam als **Domain Name**, **DNS** of **Name Server Management**.
 
-3. Vaak kunt u de pagina met DNS-records vinden door uw account gegevens weer te geven en vervolgens naar een koppeling zoals **mijn domeinen**te zoeken. Ga naar deze pagina en zoek naar een koppeling met de naam vergelijkbaar met **zone bestand**, **DNS-records**of **Geavanceerde configuratie**.
+3. Vaak kunt u de pagina met DNS-records vinden door uw account gegevens weer te geven en vervolgens naar een koppeling zoals **mijn domeinen** te zoeken. Ga naar deze pagina en zoek naar een koppeling met de naam vergelijkbaar met **zone bestand**, **DNS-records** of **Geavanceerde configuratie**.
 
     In de schermafbeelding hieronder wordt een voorbeeld van een pagina met DNS-records weergegeven:
 
@@ -102,7 +102,7 @@ Soms wilt u al het verkeer dat naar een subdomein wordt verzonden, naar een ande
 
 2. Ga naar de pagina voor het beheren van DNS-records. Elke domeinprovider heeft zijn eigen interface voor het beheren van DNS-records. Raadpleeg daarom de documentatie van de provider. Doorgaans heeft het sitegedeelte waar u moet zijn, een naam als **Domain Name**, **DNS** of **Name Server Management**.
 
-3. Vaak kunt u de pagina met DNS-records vinden door uw account gegevens weer te geven en vervolgens naar een koppeling zoals **mijn domeinen**te zoeken. Ga naar deze pagina en zoek vervolgens naar een koppeling met de naam vergelijkbaar met **zone bestand**, **DNS-records**of **Geavanceerde configuratie**.
+3. Vaak kunt u de pagina met DNS-records vinden door uw account gegevens weer te geven en vervolgens naar een koppeling zoals **mijn domeinen** te zoeken. Ga naar deze pagina en zoek vervolgens naar een koppeling met de naam vergelijkbaar met **zone bestand**, **DNS-records** of **Geavanceerde configuratie**.
 
     In de schermafbeelding hieronder wordt een voorbeeld van een pagina met DNS-records weergegeven:
 

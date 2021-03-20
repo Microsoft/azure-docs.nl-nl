@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 072db1d47abd95844075aeedfeddc4f8cf6bf936
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94835863"
 ---
 # <a name="how-to-configure-the-azure-ad-multi-factor-authentication-registration-policy"></a>Procedure: het Azure AD Multi-Factor Authentication-registratie beleid configureren
@@ -36,7 +36,7 @@ Zie [Wat is Azure AD-multi-factor Authentication?](../authentication/howto-mfa-g
 ## <a name="policy-configuration"></a>Beleidsconfiguratie
 
 1. Navigeer naar [Azure Portal](https://portal.azure.com).
-1. Blader naar **Azure Active Directory**  >  beleid voor MFA-registratie van **beveiligings**  >  **identiteits beveiliging**  >  **MFA registration policy**.
+1. Blader naar **Azure Active Directory**  >  beleid voor MFA-registratie van **beveiligings**  >  **identiteits beveiliging**  >  .
    1. Onder **toewijzingen**
       1. **Gebruikers** : Kies **alle gebruikers** of **Selecteer individuen en groepen** als u de implementatie wilt beperken.
          1. Optioneel kunt u ervoor kiezen om gebruikers uit te sluiten van het beleid.
@@ -59,4 +59,4 @@ Zie voor een overzicht van de gerelateerde gebruikers ervaring:
 
 - [Selfservice voor wachtwoord herstel van Azure AD inschakelen](../authentication/howto-sspr-deployment.md)
 
-- [Azure AD-Multi-Factor Authentication inschakelen](../authentication/howto-mfa-getstarted.md)
+- [Azure AD Multi-Factor Authentication inschakelen](../authentication/howto-mfa-getstarted.md)

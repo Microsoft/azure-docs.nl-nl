@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 09/18/2019
 ms.author: allensu
 ms.openlocfilehash: 68a2cb6926cb41956711a9e3c15d21c250d27f0b
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94698467"
 ---
 # <a name="move-azure-internal-load-balancer-to-another-region-using-the-azure-portal"></a>Verplaats de interne Azure-Load Balancer naar een andere regio met behulp van de Azure Portal
@@ -184,7 +184,7 @@ De volgende stappen laten zien hoe u de interne load balancer voorbereidt voor h
 
 15. Klik op **basis**  >  **bronnen groep** om de resource groep te kiezen waarin het doel-VNET wordt geïmplementeerd.  U kunt op **Nieuw maken** klikken om een nieuwe resource groep te maken voor het doel-VNET.  Zorg ervoor dat de naam niet hetzelfde is als de bron resource groep van het bestaande VNET.
 
-16. De **BASICS**  >  **locatie** van de basis beginselen controleren is ingesteld op de doel locatie waar u het VNET wilt implementeren.
+16. De   >  **locatie** van de basis beginselen controleren is ingesteld op de doel locatie waar u het VNET wilt implementeren.
 
 17. Controleer onder **instellingen** of de naam overeenkomt met de naam die u hebt ingevoerd in de bovenstaande para meters-editor.
 
@@ -220,7 +220,7 @@ De volgende stappen laten zien hoe u de interne load balancer voorbereidt voor h
 
     1. Meld u aan bij de [Azure Portal](https://portal.azure.com)  >  **resource groepen** op een ander browser tabblad of-venster.
     2. Zoek de doel resource groep die het verplaatste virtuele netwerk bevat uit de bovenstaande stappen en klik erop.
-    3. Selecteer Eigenschappen van > **instellingen**  >  **Properties**.
+    3. Selecteer Eigenschappen van > **instellingen**  >  .
     4. Markeer de **resource-id** op de Blade aan de rechter kant en kopieer deze naar het klem bord.  U kunt ook op de knop **kopiëren naar klem bord** rechts van het **resource-id-** pad klikken.
     5. Plak de resource-ID in de eigenschap **DefaultValue** in de editor **para meters bewerken** open in het andere browser venster of tabblad:
 
@@ -381,7 +381,7 @@ De volgende stappen laten zien hoe u de interne load balancer voorbereidt voor h
 
 15. Klik op **basis**  >  **bronnen groep** om de resource groep te kiezen waarin de doel-Load Balancer worden geïmplementeerd.  U kunt op **Nieuw maken** klikken om een nieuwe resource groep te maken voor de interne doel Load Balancer of de bestaande resource groep kiezen die hierboven voor het virtuele netwerk is gemaakt.  Zorg ervoor dat de naam niet hetzelfde is als de bron resource groep van de bestaande interne load balancer van de bron.
 
-16. De **BASICS**  >  **locatie** van de basis beginselen controleren is ingesteld op de doel locatie waar u de interne Load Balancer wilt implementeren.
+16. De   >  **locatie** van de basis beginselen controleren is ingesteld op de doel locatie waar u de interne Load Balancer wilt implementeren.
 
 17. Controleer onder **instellingen** of de naam overeenkomt met de naam die u hebt ingevoerd in de bovenstaande para meters-editor.  Controleer of de resource-Id's zijn ingevuld voor virtuele netwerken in de configuratie.
 

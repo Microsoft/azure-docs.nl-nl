@@ -9,10 +9,10 @@ ms.date: 01/28/2019
 ms.author: sideeksh
 ms.custom: MVC
 ms.openlocfilehash: 5ae930240872c00c8dbb45857e4e77d82766eadf
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93398059"
 ---
 # <a name="move-azure-vms-to-another-azure-region"></a>Azure-VM’s verplaatsen naar een andere Azure-regio
@@ -109,9 +109,9 @@ In Site Recovery wordt een lijst opgehaald met de VM’s die zijn gekoppeld aan 
 1. Ga naar de kluis. Selecteer in **Instellingen** > **Gerepliceerde items** de virtuele machine die u wilt verplaatsen naar de doelregio. Selecteer vervolgens **Failover testen**.
 2. Selecteer in **Failover testen** een herstelpunt om voor de failover te gebruiken:
 
-   - **Laatst verwerkt** : voert een failover van de VM uit naar het laatste herstelpunt dat is verwerkt door de Site Recovery-service. Het tijdstempel wordt weergegeven. Er wordt geen tijd besteed aan het verwerken van gegevens, zodat bij deze optie sprake is van een lage RTO (Recovery Time Objective).
-   - **Laatste toepassingsconsistente punt** : Er wordt een failover uitgevoerd van alle VM's naar het laatste app-consistente herstelpunt. Het tijdstempel wordt weergegeven.
-   - **Aangepast** : selecteer een herstelpunt.
+   - **Laatst verwerkt**: voert een failover van de VM uit naar het laatste herstelpunt dat is verwerkt door de Site Recovery-service. Het tijdstempel wordt weergegeven. Er wordt geen tijd besteed aan het verwerken van gegevens, zodat bij deze optie sprake is van een lage RTO (Recovery Time Objective).
+   - **Laatste toepassingsconsistente punt**: Er wordt een failover uitgevoerd van alle VM's naar het laatste app-consistente herstelpunt. Het tijdstempel wordt weergegeven.
+   - **Aangepast**: selecteer een herstelpunt.
 
 3. Selecteer het Azure-doelnetwerk waar u de Azure VM's naartoe wilt verplaatsen, om de configuratie te testen.
 
@@ -124,7 +124,7 @@ In Site Recovery wordt een lijst opgehaald met de VM’s die zijn gekoppeld aan 
 
 ## <a name="perform-the-move-and-confirm"></a>De verplaatsing uitvoeren en bevestigen
 
-1. Ga naar de kluis in **Instellingen** > **Gerepliceerde items** , selecteer de virtuele machine, en selecteer vervolgens **Failover**.
+1. Ga naar de kluis in **Instellingen** > **Gerepliceerde items**, selecteer de virtuele machine, en selecteer vervolgens **Failover**.
 1. Selecteer voor **Failover** de optie **Meest recent**. 
 2. Selecteer **Sluit de computer af voordat de failover wordt gestart**. Site Recovery probeert de bron-VM af te sluiten voordat de failover wordt geactiveerd. Maar de failover wordt voortgezet, ook als het afsluiten mislukt. U kunt de voortgang van de failover volgen op de pagina **Taken**.
 3. Wanneer de taak is voltooid, controleert u of de VM wordt weergegeven in de Azure-doelregio, zoals verwacht.

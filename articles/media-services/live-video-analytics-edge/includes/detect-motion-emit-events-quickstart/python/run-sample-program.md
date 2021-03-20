@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 766dd13f58268c044435a22fb30c1de816d4d151
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97531823"
 ---
 Volg deze stappen om de voorbeeldcode uit te voeren:

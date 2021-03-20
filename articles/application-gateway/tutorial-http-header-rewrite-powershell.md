@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 11/19/2019
 ms.author: absha
 ms.openlocfilehash: 4a1a122eb7b5b0abcc47cd321c74267a1a4aecda
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93396852"
 ---
 # <a name="create-an-application-gateway-and-rewrite-http-headers"></a>Een toepassings gateway maken en HTTP-headers opnieuw schrijven
@@ -107,11 +107,11 @@ $setting = New-AzApplicationGatewayBackendHttpSettings -Name "BackendHttpSetting
 
 Configureer de nieuwe objecten die vereist zijn voor het herschrijven van de HTTP-headers:
 
-- **RequestHeaderConfiguration** : dit object wordt gebruikt om de velden van de aanvraag header op te geven die u wilt herschrijven en de nieuwe waarde waarnaar de oorspronkelijke headers moeten worden geschreven.
-- **ResponseHeaderConfiguration** : dit object wordt gebruikt om de velden van de antwoord header op te geven die u wilt herschrijven en de nieuwe waarde waarnaar de oorspronkelijke headers moeten worden geschreven.
-- **Actieset** : dit object bevat de configuraties van de hierboven opgegeven aanvraag-en antwoord headers. 
-- **RewriteRule** : dit object bevat alle hierboven opgegeven *actionSets* . 
-- **RewriteRuleSet** : dit object bevat alle *rewriteRules* en moet worden gekoppeld aan een regel voor aanvraag routering-basis-of op basis van een pad.
+- **RequestHeaderConfiguration**: dit object wordt gebruikt om de velden van de aanvraag header op te geven die u wilt herschrijven en de nieuwe waarde waarnaar de oorspronkelijke headers moeten worden geschreven.
+- **ResponseHeaderConfiguration**: dit object wordt gebruikt om de velden van de antwoord header op te geven die u wilt herschrijven en de nieuwe waarde waarnaar de oorspronkelijke headers moeten worden geschreven.
+- **Actieset**: dit object bevat de configuraties van de hierboven opgegeven aanvraag-en antwoord headers. 
+- **RewriteRule**: dit object bevat alle hierboven opgegeven *actionSets* . 
+- **RewriteRuleSet**: dit object bevat alle *rewriteRules* en moet worden gekoppeld aan een regel voor aanvraag routering-basis-of op basis van een pad.
 
    ```azurepowershell
    $requestHeaderConfiguration = New-AzApplicationGatewayRewriteRuleHeaderConfiguration -HeaderName "X-isThroughProxy" -HeaderValue "True"

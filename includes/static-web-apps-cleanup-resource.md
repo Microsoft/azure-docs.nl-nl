@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 05/08/2020
 ms.author: aapowell
 ms.openlocfilehash: e06e1ec848f9553b88578616f38ec70184d79dae
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "83593365"
 ---
 Als u deze toepassing verder niet gaat gebruiken, kunt u de Azure Static Web Apps-resource verwijderen door de volgende stappen te volgen:

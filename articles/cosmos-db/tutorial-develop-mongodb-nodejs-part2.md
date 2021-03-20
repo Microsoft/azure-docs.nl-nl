@@ -11,10 +11,10 @@ ms.author: jopapa
 ms.custom: seodec18
 ms.reviewer: sngun
 ms.openlocfilehash: e3af713d6e120e66a0cde5116f4556bb8caedf55
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93097842"
 ---
 # <a name="create-an-angular-app-with-azure-cosmos-dbs-api-for-mongodb---create-a-nodejs-express-app"></a>Een Angular-app maken met de API van Azure Cosmos DB voor MongoDB - een Node.js Express-app maken
@@ -84,7 +84,7 @@ Voor deze zelfstudie hebt u verder nodig:
 
 1. In Visual Studio Code klikt u in het deelvenster **Explorer** met de rechtermuisknop op de map **src** en klikt u op **New Folder**. Geef de nieuwe map de naam *server*.
 
-2. Klik in het deelvenster **Explorer** met de rechtermuisknop op de map **server** , klik op **New File** en geef het nieuwe bestand de naam *index.js*.
+2. Klik in het deelvenster **Explorer** met de rechtermuisknop op de map **server**, klik op **New File** en geef het nieuwe bestand de naam *index.js*.
 
 3. Ga terug naar de opdrachtprompt en gebruik de volgende opdracht om de body-parser te installeren. Hiermee kan de app de JSON-gegevens parseren die worden doorgegeven via de API's.
 

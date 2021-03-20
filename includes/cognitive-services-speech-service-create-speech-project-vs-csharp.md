@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 08/30/2019
 ms.author: wolfma
 ms.openlocfilehash: c7332177795a45331749225e0f3dc3856e28a6a2
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96001088"
 ---
 Als u een Visual Studio-project voor Windows-ontwikkeling wilt maken, moet u het project maken, Visual Studio voor .NET Desktop Development instellen, de spraak-SDK installeren en de doel architectuur kiezen.

@@ -9,13 +9,13 @@ ms.topic: how-to
 ms.date: 07/23/2019
 ms.author: victorh
 ms.openlocfilehash: e60aa9f072a447af97aa7cc66534e6e893fdbcf6
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93396937"
 ---
-# <a name="generate-an-azure-application-gateway-self-signed-certificate-with-a-custom-root-ca"></a>Een zelfondertekend certificaat van Azure-toepassing gateway genereren met een aangepaste basis-CA
+# <a name="generate-an-azure-application-gateway-self-signed-certificate-with-a-custom-root-ca"></a>Een zelfondertekend certificaat van Azure Application Gateway genereren met een aangepast basiscertificaat
 
 Met de SKU van Application Gateway v2 wordt het gebruik van vertrouwde basis certificaten geïntroduceerd voor het toestaan van back-endservers. Hiermee worden verificatie certificaten verwijderd die vereist waren in de V1-SKU. Het *basis certificaat* is een Base-64 Encoded X. 509 (. CER) basis certificaat van de back-end-certificaat server indelen. Het identificeert de basis certificerings instantie (CA) die het server certificaat heeft uitgegeven en het server certificaat wordt vervolgens gebruikt voor de TLS/SSL-communicatie.
 
@@ -179,7 +179,7 @@ openssl s_client -connect localhost:443 -servername www.fabrikam.com -showcerts
 
 Als u het certificaat in Application Gateway wilt uploaden, moet u het. CRT-certificaat exporteren naar een. CER-indeling basis-64-code ring. Omdat CRT de open bare sleutel in de indeling base-64 bevat, kunt u de bestands extensie alleen wijzigen van. CRT naar. cer. 
 
-### <a name="azure-portal"></a>Azure-portal
+### <a name="azure-portal"></a>Azure Portal
 
 Als u het vertrouwde basis certificaat wilt uploaden vanuit de portal, selecteert u de **http-instellingen** en kiest u het **https** -protocol.
 

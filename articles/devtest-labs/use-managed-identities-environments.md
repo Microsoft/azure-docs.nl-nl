@@ -4,10 +4,10 @@ description: Meer informatie over het gebruik van beheerde identiteiten in azure
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 0f3e4b4d7030eb26c25b291e03caaa430d1979c4
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98185781"
 ---
 # <a name="use-azure-managed-identities-to-deploy-environments-in-a-lab"></a>Door Azure beheerde identiteiten gebruiken voor het implementeren van omgevingen in een Lab 
@@ -27,7 +27,7 @@ Als eigenaar van een lab kunt u een beheerde identiteit gebruiken voor het imple
 
 In deze sectie kunt u als eigenaar van het lab de Azure Portal gebruiken om een door de gebruiker beheerde identiteit toe te voegen aan het lab. 
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Zoek naar **DevTest Labs**.
 1. Selecteer in de lijst met Labs het gewenste Lab.
 1. Selecteer de identiteit van de **configuratie en het beleid**  ->  **(preview-versie)**. 

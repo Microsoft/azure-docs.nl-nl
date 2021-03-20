@@ -10,10 +10,10 @@ ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 09/27/2019
 ms.openlocfilehash: 3fd80389dfa54cb8386c13e0e05a1e71ac4bd956
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91541931"
 ---
 # <a name="ordinal-v2-prebuilt-entity-for-a-luis-app"></a>Rang telwoord v2 vooraf gebouwde entiteit voor een LUIS-app
@@ -91,6 +91,6 @@ In het volgende voor beeld ziet u de oplossing van de **ingebouwde entiteit. ord
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over het [v3-Voorspellings eindpunt](luis-migration-api-v3.md).
+Meer informatie over het [V3-voorspellingseindpunt](luis-migration-api-v3.md).
 
 Meer informatie over het [percentage](luis-reference-prebuilt-percentage.md), het [telefoon nummer](luis-reference-prebuilt-phonenumber.md)en de [temperatuur](luis-reference-prebuilt-temperature.md) entiteiten.

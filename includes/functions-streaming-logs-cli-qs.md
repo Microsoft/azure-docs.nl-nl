@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/18/2020
 ms.author: glenga
 ms.openlocfilehash: 9213bdd8e63fc1e8ab7bdba8ac7a569be0dfe6be
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93424718"
 ---
 Voer de volgende opdracht uit om bijna in realtime [stroomlogboeken](../articles/azure-functions/functions-run-local.md#enable-streaming-logs) weer te geven:

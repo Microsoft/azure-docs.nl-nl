@@ -6,10 +6,10 @@ ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 04/14/2020
 ms.openlocfilehash: 3caccd6766226ce68b371856b081b052c1033f71
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91542186"
 ---
 # <a name="pattern-syntax"></a>Patroonsyntaxis
@@ -113,7 +113,7 @@ Overweeg het patroon [Find] e-mail over {subject} [van {person}].
 
 In de volgende uitingen worden het **onderwerp** en de **persoons** entiteit op de juiste wijze en onjuist opgehaald:
 
-|Utterance|Entiteit|Juiste extractie|
+|Uiting|Entiteit|Juiste extractie|
 |--|--|:--:|
 |e-mail over honden van Chris|onderwerp = honden<br>persoon = Chris|✔|
 |e-mail over de man van La Mancha|onderwerp = de man<br>persoon = La Mancha|X|

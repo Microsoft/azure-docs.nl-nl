@@ -7,10 +7,10 @@ ms.manager: bsiva
 ms.topic: conceptual
 ms.date: 06/14/2020
 ms.openlocfilehash: 4ebc363f29ed8956d10e91f41be1d257cbcc492f
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98703883"
 ---
 # <a name="support-matrix-for-physical-server-migration"></a>Ondersteunings matrix voor de migratie van fysieke servers

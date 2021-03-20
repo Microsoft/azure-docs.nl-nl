@@ -8,10 +8,10 @@ ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 0226ab75d53733b94a9ae5734b42b7340998759c
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100379264"
 ---
 # <a name="push-data-to-an-azure-cognitive-search-index-by-using-azure-data-factory"></a>Gegevens pushen naar een Azure Cognitive Search-index met behulp van Azure Data Factory
@@ -52,9 +52,9 @@ De volgende tabel bevat beschrijvingen van de JSON-elementen die specifiek zijn 
 
 | Eigenschap | Beschrijving | Vereist |
 | -------- | ----------- | -------- |
-| type | De eigenschap type moet worden ingesteld op: **AzureSearch**. | Yes |
-| url | URL voor de zoek service. | Yes |
-| sleutel | De beheerders sleutel voor de zoek service. | Yes |
+| type | De eigenschap type moet worden ingesteld op: **AzureSearch**. | Ja |
+| url | URL voor de zoek service. | Ja |
+| sleutel | De beheerders sleutel voor de zoek service. | Ja |
 
 ## <a name="dataset-properties"></a>Eigenschappen van gegevensset
 
@@ -62,8 +62,8 @@ Zie het artikel [gegevens sets maken](data-factory-create-datasets.md) voor een 
 
 | Eigenschap | Beschrijving | Vereist |
 | -------- | ----------- | -------- |
-| type | De eigenschap type moet worden ingesteld op **AzureSearchIndex**.| Yes |
-| indexName | De naam van de zoek index. Data Factory maakt de index niet. De index moet bestaan in azure Cognitive Search. | Yes |
+| type | De eigenschap type moet worden ingesteld op **AzureSearchIndex**.| Ja |
+| indexName | De naam van de zoek index. Data Factory maakt de index niet. De index moet bestaan in azure Cognitive Search. | Ja |
 
 
 ## <a name="copy-activity-properties"></a>Eigenschappen van de kopieeractiviteit
@@ -73,8 +73,8 @@ Als de Sink van het type **AzureSearchIndexSink** is, zijn de volgende eigenscha
 
 | Eigenschap | Beschrijving | Toegestane waarden | Vereist |
 | -------- | ----------- | -------------- | -------- |
-| WriteBehavior | Hiermee geeft u op of u wilt samen voegen of vervangen wanneer een document al aanwezig is in de index. Zie de [eigenschap WriteBehavior](#writebehavior-property).| Samen voegen (standaard)<br/>Uploaden| No |
-| WriteBatchSize | Uploadt gegevens in de zoek index wanneer de buffer grootte writeBatchSize bereikt. Zie de [eigenschap WriteBatchSize](#writebatchsize-property) voor meer informatie. | 1 tot en met 1.000. De standaard waarde is 1000. | No |
+| WriteBehavior | Hiermee geeft u op of u wilt samen voegen of vervangen wanneer een document al aanwezig is in de index. Zie de [eigenschap WriteBehavior](#writebehavior-property).| Samen voegen (standaard)<br/>Uploaden| Nee |
+| WriteBatchSize | Uploadt gegevens in de zoek index wanneer de buffer grootte writeBatchSize bereikt. Zie de [eigenschap WriteBatchSize](#writebatchsize-property) voor meer informatie. | 1 tot en met 1.000. De standaard waarde is 1000. | Nee |
 
 ### <a name="writebehavior-property"></a>Eigenschap WriteBehavior
 AzureSearchSink upsert bij het schrijven van gegevens. Met andere woorden, wanneer u een document schrijft en de document sleutel al in de zoek index bestaat, werkt Azure Cognitive Search het bestaande document bij in plaats van een conflict uitzondering uit te voeren.

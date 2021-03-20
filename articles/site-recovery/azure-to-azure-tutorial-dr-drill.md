@@ -6,10 +6,10 @@ ms.topic: tutorial
 ms.date: 11/05/2020
 ms.custom: mvc
 ms.openlocfilehash: c7cd1898f27f3b7255009efb40f6bcc8938dbf9e
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93395597"
 ---
 # <a name="tutorial-run-a-disaster-recovery-drill-for-azure-vms"></a>Zelfstudie: Herstelanalyse uitvoeren voor Azure-VM's
@@ -56,7 +56,7 @@ Voordat u deze zelfstudie start, moet u herstel na noodgevallen inschakelen voor
   
    - **Laatst verwerkt**: Gebruikt het laatste door Site Recovery verwerkte herstelpunt. Het tijdstempel wordt weergegeven. Er wordt geen tijd besteed aan het verwerken van gegevens, zodat er sprake is van een lage RTO (Recovery Time Objective).
    -  **Laatste**: Verwerkt alle gegevens die naar Site Recovery worden verzonden, om een herstelpunt voor elke VM te maken voordat er een failover naar wordt uitgevoerd. Biedt de laagste RPO (Recovery Point Objective), omdat alle gegevens worden gerepliceerd naar Site Recovery wanneer de failover wordt geactiveerd.
-   - **Laatste toepassingsconsistente punt**: Met deze optie wordt er een failover uitgevoerd van VM's naar het laatste app-consistente herstelpunt. Het tijdstempel wordt weergegeven.
+   - **Laatste toepassingsconsistente punt**: Met deze optie wordt er een failover uitgevoerd van VM's naar het laatste toepassingsconsistente herstelpunt. Het tijdstempel wordt weergegeven.
    - **Aangepast**: hiermee voert u een failover uit naar een bepaald herstelpunt. Aangepast is alleen beschikbaar wanneer u een failover uitvoert voor één VM en geen herstelplan gebruikt.
 
 3. Selecteer in **Virtueel Azure-netwerk** het doelnetwerk waarin Azure-VM's moeten worden geplaatst die na de failover zijn gemaakt. Selecteer indien mogelijk een niet-productienetwerk, en niet het netwerk dat werd gemaakt toen u replicatie inschakelde.

@@ -13,10 +13,10 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: d2eaf1dce432821dcfc693dc69dcf975a3d8be8d
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92503858"
 ---
 # <a name="tutorial-register-a-single-page-application-spa-in-azure-active-directory-b2c"></a>Zelfstudie: Een toepassing met één pagina (SPA) registreren in Azure Active Directory B2C
@@ -30,7 +30,7 @@ Veel moderne webtoepassingen zijn gebouwd als toepassingen met één pagina (SPA
 Azure AD B2C biedt **twee** opties om toepassingen met één pagina te gebruiken om gebruikers aan te melden en tokens op te halen voor toegang tot back-endservices of web-API’s:
 
 ### <a name="authorization-code-flow-with-pkce"></a>Autorisatiecodestroom (met PKCE)
-- [OAuth 2.0-autorisatiecodestroom (met PKCE)](./authorization-code-flow.md). De autorisatiecodestroom stelt de toepassing in staat een autorisatiecode uit te wisselen voor **id-tokens** , om de geverifieerde gebruiker te vertegenwoordigen, en de benodigde **toegangstokens** om beveiligde API’s aan te roepen. Daarnaast worden met deze stroom **vernieuwingstokens** geretourneerd, die namens gebruikers langetermijntoegang bieden tot resources, zonder dat interactie met deze gebruikers is vereist. 
+- [OAuth 2.0-autorisatiecodestroom (met PKCE)](./authorization-code-flow.md). De autorisatiecodestroom stelt de toepassing in staat een autorisatiecode uit te wisselen voor **id-tokens**, om de geverifieerde gebruiker te vertegenwoordigen, en de benodigde **toegangstokens** om beveiligde API’s aan te roepen. Daarnaast worden met deze stroom **vernieuwingstokens** geretourneerd, die namens gebruikers langetermijntoegang bieden tot resources, zonder dat interactie met deze gebruikers is vereist. 
 
 Dit is de **aanbevolen** methode. Vernieuwingstokens met een beperkte levensduur helpen om uw toepassing aan te passen aan de [privacybeperkingen van cookies van de moderne browser](../active-directory/develop/reference-third-party-cookies-spas.md), zoals Safari ITP.
 
@@ -39,7 +39,7 @@ De toepassing kan een verificatiebibliotheek gebruiken, zoals [MSAL.js 2.x](http
 ![Toepassingen met één pagina - verificatie](./media/tutorial-single-page-app/spa-app-auth.svg)
 
 ### <a name="implicit-grant-flow"></a>Impliciete toekenningsstroom
-- [Impliciete OAuth 2.0-stroom](implicit-flow-single-page-application.md). Sommige frameworks, zoals [MSAL.js 1.x](https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp), bieden alleen ondersteuning voor de impliciete toekenningsstroom. De impliciete toekenningsstroom stelt de toepassing in staat om **id-tokens** en **toegangstokens** op te halen. In tegenstelling tot de autorisatiecodestroom retourneert de impliciete toekenningsstroom geen **vernieuwingstoken** . 
+- [Impliciete OAuth 2.0-stroom](implicit-flow-single-page-application.md). Sommige frameworks, zoals [MSAL.js 1.x](https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp), bieden alleen ondersteuning voor de impliciete toekenningsstroom. De impliciete toekenningsstroom stelt de toepassing in staat om **id-tokens** en **toegangstokens** op te halen. In tegenstelling tot de autorisatiecodestroom retourneert de impliciete toekenningsstroom geen **vernieuwingstoken**. 
 
 ![Toepassingen met één pagina - impliciet](./media/tutorial-single-page-app/spa-app.svg)
 
@@ -56,8 +56,8 @@ Als u nog geen eigen [Azure AD B2C-tenant](tutorial-create-tenant.md) hebt gemaa
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Selecteer het pictogram **Map + Abonnement** in de werkbalk van de portal en selecteer vervolgens de map die uw Azure AD B2C-tenant bevat.
 1. Zoek en selecteer **Azure AD B2C** in de Azure-portal.
-1. Selecteer **App-registraties** en selecteer vervolgens **Nieuwe registratie** .
-1. Voer een **naam** in voor de toepassing. Bijvoorbeeld *spaapp1* .
+1. Selecteer **App-registraties** en selecteer vervolgens **Nieuwe registratie**.
+1. Voer een **naam** in voor de toepassing. Bijvoorbeeld *spaapp1*.
 1. Selecteer onder **Ondersteunde accounttypen** de optie **Accounts in een id-provider of organisatieadreslijst (voor het verifiëren van gebruikers met gebruikersstromen)**
 1. Selecteer onder **Omleidings-URI** de optie **Toepassing met één pagina (SPA)** en voer vervolgens `https://jwt.ms` in het URL-tekstvak in.
 
@@ -68,16 +68,16 @@ Als u nog geen eigen [Azure AD B2C-tenant](tutorial-create-tenant.md) hebt gemaa
     * De antwoord-URL moet beginnen met het schema `https`, tenzij `localhost` wordt gebruikt.
     * De antwoord-URL is hoofdlettergevoelig. Het hoofdlettergebruik moet overeenkomen met het URL-pad van de actieve toepassing. Als uw toepassing bijvoorbeeld `.../abc/response-oidc` als deel van het pad bevat, geeft u `.../ABC/response-oidc` niet op in de antwoord-URL. Omdat de webbrowser paden als hoofdlettergevoelig behandelt, kunnen cookies die zijn gekoppeld aan `.../abc/response-oidc` worden uitgesloten als ze worden omgeleid naar de qua hoofdlettergebruik niet-overeenkomende URL `.../ABC/response-oidc`.
 
-1. Selecteer in **Machtigingen** het selectievakje *Beheerdersgoedkeuring verlenen aan machtigingen van OpenID en offline_access* .
-1. Selecteer **Registreren** .
+1. Selecteer in **Machtigingen** het selectievakje *Beheerdersgoedkeuring verlenen aan machtigingen van OpenID en offline_access*.
+1. Selecteer **Registreren**.
 
 
 ## <a name="enable-the-implicit-flow"></a>De impliciete stroom inschakelen
 Als u de impliciete stroom gebruikt, moet u de impliciete toekenningsstroom inschakelen in de app-registratie.
 
-1. Selecteer hiervoor **Verificatie** in het linkermenu onder **Beheren** .
+1. Selecteer hiervoor **Verificatie** in het linkermenu onder **Beheren**.
 1. Schakel onder **Impliciete toekenning** de selectievakjes **Toegangstokens** en **Id-tokens** in.
-1. Selecteer **Opslaan** .
+1. Selecteer **Opslaan**.
 
 ## <a name="migrate-from-the-implicit-flow"></a>Migreren vanuit de impliciete stroom
 
@@ -85,9 +85,9 @@ Als u een bestaande toepassing hebt die gebruikmaakt van de impliciete stroom, r
 
 Als al uw productietoepassingen met één pagina die worden vertegenwoordigd door een app-registratie, de autorisatiecodestroom gebruiken, schakelt u de instellingen voor de impliciete toekenningsstroom uit. 
 
-1. Selecteer hiervoor **Verificatie** in het linkermenu onder **Beheren** .
+1. Selecteer hiervoor **Verificatie** in het linkermenu onder **Beheren**.
 1. Schakel onder **Impliciete toekenning** de selectievakjes **Toegangstokens** en **Id-tokens** uit.
-1. Selecteer **Opslaan** .
+1. Selecteer **Opslaan**.
 
 Toepassingen die gebruikmaken van de impliciete stroom, kunnen blijven functioneren als u de impliciete stroom ingeschakeld houdt (aangevinkt).
 

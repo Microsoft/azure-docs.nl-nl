@@ -12,10 +12,10 @@ ms.date: 10/15/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: f6907db7f6e53247a8f2fc0042e8c8e6b081dbd3
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97516370"
 ---
 # <a name="secure-your-restful-services"></a>Uw REST-services beveiligen 
@@ -43,7 +43,7 @@ Basis verificatie HTTP is gedefinieerd in [RFC 2617](https://tools.ietf.org/html
 
 Als u een REST API technisch profiel met HTTP-basis verificatie wilt configureren, maakt u de volgende cryptografische sleutels om de gebruikers naam en het wacht woord op te slaan:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 1. Zorg ervoor dat u de map gebruikt die uw Azure AD B2C-Tenant bevat. Selecteer het filter **Directory + abonnement** in het bovenste menu en kies uw Azure AD B2C Directory.
 1. Kies **Alle services** linksboven in de Azure Portal, zoek **Azure AD B2C** en selecteer deze.
 1. Selecteer op de pagina overzicht **identiteits ervaring-Framework**.
@@ -132,7 +132,7 @@ Als u nog geen certificaat hebt, kunt u voor niet-productie omgevingen een zelfo
 
 ### <a name="add-a-client-certificate-policy-key"></a>Een beleids sleutel voor client certificaten toevoegen
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 1. Zorg ervoor dat u de map gebruikt die uw Azure AD B2C-Tenant bevat. Selecteer het filter **Directory + abonnement** in het bovenste menu en kies uw Azure AD B2C Directory.
 1. Kies **Alle services** linksboven in de Azure Portal, zoek **Azure AD B2C** en selecteer deze.
 1. Selecteer op de pagina overzicht **identiteits ervaring-Framework**.
@@ -314,7 +314,7 @@ Nadat u de bovenstaande fragmenten hebt toegevoegd, moet uw technische profiel e
 
 Als u een REST API technisch profiel wilt configureren met een OAuth2 Bearer-token, moet u een toegangs token verkrijgen van de REST API eigenaar. Maak vervolgens de volgende cryptografische sleutel om het Bearer-token op te slaan.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 1. Zorg ervoor dat u de map gebruikt die uw Azure AD B2C-Tenant bevat. Selecteer het filter **Directory + abonnement** in het bovenste menu en kies uw Azure AD B2C Directory.
 1. Kies **Alle services** linksboven in de Azure Portal, zoek **Azure AD B2C** en selecteer deze.
 1. Selecteer op de pagina overzicht **identiteits ervaring-Framework**.
@@ -373,7 +373,7 @@ API-sleutel is een unieke id die wordt gebruikt om een gebruiker te verifiëren 
 
 Als u een REST API technisch profiel met API-sleutel verificatie wilt configureren, maakt u de volgende cryptografische sleutel om de API-sleutel op te slaan:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 1. Zorg ervoor dat u de map gebruikt die uw Azure AD B2C-Tenant bevat. Selecteer het filter **Directory + abonnement** in het bovenste menu en kies uw Azure AD B2C Directory.
 1. Kies **Alle services** linksboven in de Azure Portal, zoek **Azure AD B2C** en selecteer deze.
 1. Selecteer op de pagina overzicht **identiteits ervaring-Framework**.

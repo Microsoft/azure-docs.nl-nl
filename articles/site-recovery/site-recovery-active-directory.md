@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 04/01/2020
 ms.author: mayg
 ms.openlocfilehash: 528a24bb64aa8d323b5d63a27af0a52ccdf1abb6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86132319"
 ---
 # <a name="set-up-disaster-recovery-for-active-directory-and-dns"></a>Herstel na nood geval instellen voor Active Directory en DNS
@@ -79,7 +79,7 @@ De meeste toepassingen moeten de aanwezigheid van een domein controller of een D
 1. Een geïsoleerd netwerk maken. Elk virtueel netwerk dat u in azure maakt, is standaard geïsoleerd van andere netwerken. U wordt aangeraden hetzelfde IP-adres bereik te gebruiken voor dit netwerk dat u gebruikt in uw productie netwerk. Schakel geen site-naar-site-connectiviteit in op dit netwerk.
 1. Geef een DNS IP-adres op in het geïsoleerde netwerk. Gebruik het IP-adres dat u verwacht dat de virtuele DNS-machine wordt opgehaald. Als u repliceert naar Azure, geeft u het IP-adres op voor de virtuele machine die wordt gebruikt voor failover. Als u het IP-adres wilt invoeren, selecteert u in de **berekening-en netwerk** instellingen van de gerepliceerde virtuele machine de **doel-IP-** instellingen.
 
-   :::image type="content" source="./media/site-recovery-active-directory/azure-test-network.png" alt-text="Azure-netwerk":::
+   :::image type="content" source="./media/site-recovery-active-directory/azure-test-network.png" alt-text="Azure-test netwerk":::
 
    > [!TIP]
    > Site Recovery probeert virtuele test machines te maken in een subnet met dezelfde naam en met behulp van hetzelfde IP-adres dat is opgenomen in de **reken-en netwerk** instellingen van de virtuele machine. Als een subnet met dezelfde naam niet beschikbaar is in het virtuele netwerk van Azure dat wordt weer gegeven voor testfailover, wordt de virtuele test machine in het alfabetisch eerste subnet gemaakt.
@@ -102,7 +102,7 @@ Wanneer u een testfailover initieert, neemt u niet alle domein controllers op in
 > [!IMPORTANT]
 > Enkele van de configuraties die in deze sectie worden beschreven, zijn geen standaard configuraties voor domein controllers. Als u deze wijzigingen niet wilt aanbrengen in een productie domein controller, kunt u een domein controller maken die is toegewezen voor Site Recovery voor het gebruik van een testfailover. Breng deze wijzigingen alleen aan in die domein controller.
 
-Vanaf Windows Server 2012 [zijn extra beveiligingen ingebouwd in Active Directory Domain Services (AD DS)](/windows-server/identity/ad-ds/introduction-to-active-directory-domain-services-ad-ds-virtualization-level-100). Deze beveiligingen helpen bij het beveiligen van gevirtualiseerde domein controllers tegen het terugdraaien van Update Sequence Number (USN) als het onderliggende Hyper Visor **-platform VM-GenerationID**ondersteunt. Azure biedt ondersteuning voor **VM-GenerationID**. Daarom hebben domein controllers met Windows Server 2012 of hoger op virtuele machines van Azure deze extra beveiliging.
+Vanaf Windows Server 2012 [zijn extra beveiligingen ingebouwd in Active Directory Domain Services (AD DS)](/windows-server/identity/ad-ds/introduction-to-active-directory-domain-services-ad-ds-virtualization-level-100). Deze beveiligingen helpen bij het beveiligen van gevirtualiseerde domein controllers tegen het terugdraaien van Update Sequence Number (USN) als het onderliggende Hyper Visor **-platform VM-GenerationID** ondersteunt. Azure biedt ondersteuning voor **VM-GenerationID**. Daarom hebben domein controllers met Windows Server 2012 of hoger op virtuele machines van Azure deze extra beveiliging.
 
 Wanneer de **VM-GenerationID** opnieuw wordt ingesteld, wordt de **InvocationID** -waarde van de AD DS data base ook opnieuw ingesteld. Daarnaast wordt de groep relatieve ID (RID) verwijderd en `SYSVOL` is de map gemarkeerd als niet-gemachtigd. Zie [Introduction to Active Directory Domain Services Virtualization](/windows-server/identity/ad-ds/introduction-to-active-directory-domain-services-ad-ds-virtualization-level-100) and safe [Distributed File System Replication (DFSR)](https://techcommunity.microsoft.com/t5/storage-at-microsoft/safely-virtualizing-dfsr/ba-p/424671)voor meer informatie.
 
@@ -118,21 +118,21 @@ Als de beveiliging van de virtualisatie wordt geactiveerd na een testfailover, z
 
 - De waarde van **GenerationID** wordt gewijzigd:
 
-  :::image type="content" source="./media/site-recovery-active-directory/Event2170.png" alt-text="Azure-netwerk":::
+  :::image type="content" source="./media/site-recovery-active-directory/Event2170.png" alt-text="Wijziging van generatie-ID":::
 
 - De waarde van **InvocationID** wordt gewijzigd:
 
-  :::image type="content" source="./media/site-recovery-active-directory/Event1109.png" alt-text="Azure-netwerk":::
+  :::image type="content" source="./media/site-recovery-active-directory/Event1109.png" alt-text="Wijziging van aanroepen-ID":::
 
 - `SYSVOL` map en `NETLOGON` shares zijn niet beschikbaar.
 
-  :::image type="content" source="./media/site-recovery-active-directory/sysvolshare.png" alt-text="Azure-netwerk":::
+  :::image type="content" source="./media/site-recovery-active-directory/sysvolshare.png" alt-text="Share SYSVOL-map":::
 
-  :::image type="content" source="./media/site-recovery-active-directory/Event13565.png" alt-text="Azure-netwerk":::
+  :::image type="content" source="./media/site-recovery-active-directory/Event13565.png" alt-text="Map NtFrs SYSVOL":::
 
 - DFSR-data bases worden verwijderd.
 
-  :::image type="content" source="./media/site-recovery-active-directory/Event2208.png" alt-text="Azure-netwerk":::
+  :::image type="content" source="./media/site-recovery-active-directory/Event2208.png" alt-text="DFSR-data bases zijn verwijderd":::
 
 ### <a name="troubleshoot-domain-controller-issues-during-test-failover"></a>Problemen met de domein controller oplossen tijdens een testfailover
 

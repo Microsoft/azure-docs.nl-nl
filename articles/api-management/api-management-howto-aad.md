@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: 2d3f382635e9a8b8a562f7a7f60f256d68b90b8f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91363202"
 ---
 # <a name="authorize-developer-accounts-by-using-azure-active-directory-in-azure-api-management"></a>Ontwikkelaarsaccounts autoriseren met behulp van Azure Active Directory in Azure API Management
@@ -38,11 +38,11 @@ Dit artikel laat u zien hoe u toegang tot de ontwikkelaars Portal kunt inschakel
 3. Typ **API** in het zoekvak.
 4. Selecteer **API Management Services**.
 5. Selecteer uw service-exemplaar van API Management.
-6. Onder **ontwikkelaars Portal**selecteert u **identiteiten**.
+6. Onder **ontwikkelaars Portal** selecteert u **identiteiten**.
 7. Selecteer **+ toevoegen** aan de bovenkant.
 
     Het deel venster **ID-provider toevoegen** wordt aan de rechter kant weer gegeven.
-8. Selecteer **Azure Active Directory**onder **provider type**.
+8. Selecteer **Azure Active Directory** onder **provider type**.
 
     Besturings elementen waarmee u andere benodigde informatie kunt invoeren, worden weer gegeven in het deel venster. De besturings elementen omvatten **client-id** en **client geheim**. (U krijgt verderop in het artikel informatie over deze besturings elementen.)
 9. Noteer de inhoud van de **omleidings-URL**.
@@ -61,7 +61,7 @@ Dit artikel laat u zien hoe u toegang tot de ontwikkelaars Portal kunt inschakel
 14.  Nadat de toepassing is geregistreerd, kopieert u de **toepassings-id (client)** van de pagina **overzicht** . 
 15. Ga terug naar uw API Management-exemplaar. Plak in het venster **ID-provider toevoegen** de waarde van de **toepassing (client)** in het vak **client-id** .
 16. Ga terug naar de Azure AD-configuratie en selecteer **certificaten & geheimen** onder **beheren**. Selecteer de knop **Nieuw clientgeheim**. Voer een waarde in voor **Beschrijving**, selecteer een optie voor **Verloopt** en kies **Toevoegen**. Kopieer de waarde van het client geheim voordat u de pagina verlaat. U hebt deze gegevens nodig in de volgende stap. 
-17. Selecteer onder **beheren**de optie **verificatie** en selecteer **id-tokens** onder **impliciete toekenning**
+17. Selecteer onder **beheren** de optie **verificatie** en selecteer **id-tokens** onder **impliciete toekenning**
 18. Ga terug naar uw API Management-exemplaar en plak het geheim in het vak **client Secret** .
 
     > [!IMPORTANT]
@@ -87,8 +87,8 @@ Nadat u toegang hebt ingeschakeld voor gebruikers in een Azure AD-Tenant, kunt u
 Als u een externe Azure AD-groep wilt toevoegen aan APIM, moet u eerst de vorige sectie volt ooien. Daarnaast moet de toepassing die u hebt geregistreerd, toegang krijgen tot de Microsoft Graph-API met `Directory.Read.All` toestemming door de volgende stappen te volgen: 
 
 1. Ga terug naar de registratie van uw app die in de vorige sectie is gemaakt.
-2. Selecteer **API-machtigingen**en klik vervolgens op **+ een machtiging toevoegen**. 
-3. Selecteer in het deel venster **API-machtigingen voor aanvragen** het tabblad **micro soft api's** , Schuif omlaag en selecteer vervolgens de tegel **Azure Active Directory grafiek** . Selecteer **toepassings machtigingen**, zoek naar de **map**en selecteer de **map. lezen. alle** machtiging. 
+2. Selecteer **API-machtigingen** en klik vervolgens op **+ een machtiging toevoegen**. 
+3. Selecteer in het deel venster **API-machtigingen voor aanvragen** het tabblad **micro soft api's** , Schuif omlaag en selecteer vervolgens de tegel **Azure Active Directory grafiek** . Selecteer **toepassings machtigingen**, zoek naar de **map** en selecteer de **map. lezen. alle** machtiging. 
 4. Klik onder aan het deel venster op **machtigingen toevoegen** en klik vervolgens op **toestemming beheerder geven voor {tenantnaam}** zodat u toegang verleent aan alle gebruikers in deze map. 
 
 U kunt nu externe Azure AD-groepen toevoegen via het tabblad **groepen** van uw API Management-exemplaar.

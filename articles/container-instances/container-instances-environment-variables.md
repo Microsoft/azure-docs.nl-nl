@@ -4,10 +4,10 @@ description: Meer informatie over het instellen van omgevings variabelen in de c
 ms.topic: article
 ms.date: 04/17/2019
 ms.openlocfilehash: 92ae59f69b7cb43fee1d3ce8190a85fc20a11f60
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86169762"
 ---
 # <a name="set-environment-variables-in-container-instances"></a>Omgevings variabelen instellen in container instanties
@@ -144,12 +144,12 @@ Azure:\
 Als u omgevings variabelen wilt instellen wanneer u een container in de Azure Portal start, geeft u deze op op de pagina **Geavanceerd** wanneer u de container maakt.
 
 1. Stel op de pagina **Geavanceerd** het **beleid voor opnieuw opstarten** in *op bij fout*
-2. Onder **omgevings variabelen**voert u `NumWords` een waarde in `5` voor de eerste variabele en voert u `MinLength` een waarde in `8` voor de tweede variabele. 
+2. Onder **omgevings variabelen** voert u `NumWords` een waarde in `5` voor de eerste variabele en voert u `MinLength` een waarde in `8` voor de tweede variabele. 
 1. Selecteer **controleren + maken** om de container te controleren en vervolgens te implementeren.
 
 ![Portal pagina met de knop voor het inschakelen van de omgevings variabele en tekst vakken][portal-env-vars-01]
 
-Als u de logboeken van de container wilt weer geven, selecteert u onder **instellingen** de optie **containers**en vervolgens **Logboeken**. Net als bij de uitvoer die wordt weer gegeven in de vorige CLI-en Power shell-secties, kunt u zien hoe het gedrag van het script door de omgevings variabelen is gewijzigd. Er worden slechts vijf woorden weer gegeven, elk met een minimum lengte van acht tekens.
+Als u de logboeken van de container wilt weer geven, selecteert u onder **instellingen** de optie **containers** en vervolgens **Logboeken**. Net als bij de uitvoer die wordt weer gegeven in de vorige CLI-en Power shell-secties, kunt u zien hoe het gedrag van het script door de omgevings variabelen is gewijzigd. Er worden slechts vijf woorden weer gegeven, elk met een minimum lengte van acht tekens.
 
 ![Portal met uitvoer van container logboek][portal-env-vars-02]
 

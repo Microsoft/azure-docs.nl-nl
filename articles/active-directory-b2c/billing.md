@@ -12,10 +12,10 @@ ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
 ms.openlocfilehash: a54ed9dc6557d9b613485bf28e74af0c59fc9e5e
-ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/01/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99225205"
 ---
 # <a name="billing-model-for-azure-active-directory-b2c"></a>Facturerings model voor Azure Active Directory B2C
@@ -78,7 +78,7 @@ Een Tenant moet worden gekoppeld aan de juiste prijs categorie van Azure op basi
 
 Voer de volgende stappen uit om uw prijs categorie te wijzigen.
 
-1. Meld u aan bij de Azure-portal.
+1. Meld u aan bij Azure Portal.
 
 2. Selecteer het filter **Directory + abonnement** in het bovenste menu en selecteer vervolgens de map die het Azure-abonnement bevat waaraan uw Azure B2C-Tenant is gekoppeld (Selecteer *niet* de Azure AD B2C Tenant zelf).
 

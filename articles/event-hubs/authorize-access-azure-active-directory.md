@@ -4,10 +4,10 @@ description: In dit artikel vindt u informatie over het verlenen van toegang tot
 ms.topic: conceptual
 ms.date: 06/23/2020
 ms.openlocfilehash: d794b03fdbb5429983788c74cbb05a7c13bf2d76
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92910794"
 ---
 # <a name="authorize-access-to-event-hubs-resources-using-azure-active-directory"></a>Toegang tot Event Hubs resources autoriseren met behulp van Azure Active Directory
@@ -46,11 +46,11 @@ Voordat u een Azure-rol toewijst een beveiligingsprincipal, moet u het toegangsb
 
 In de volgende lijst worden de niveaus beschreven waarmee u toegang tot Event Hubs resources kunt bereiken, te beginnen met het smalle bereik:
 
-- **Consumenten groep** : in dit bereik is roltoewijzing alleen van toepassing op deze entiteit. Momenteel biedt de Azure Portal geen ondersteuning voor het toewijzen van een Azure-rol aan een beveiligingsprincipal op dit niveau. 
-- **Event hub** : roltoewijzing is van toepassing op de Event hub-entiteit en de Consumer groep daaronder.
-- **Naam ruimte** : roltoewijzing omvat de volledige topologie van Event hubs onder de naam ruimte en aan de Consumer groep die eraan is gekoppeld.
-- **Resource groep** : roltoewijzing is van toepassing op alle Event hubs resources onder de resource groep.
-- **Abonnement** : roltoewijzing is van toepassing op alle Event hubs resources in alle resource groepen in het abonnement.
+- **Consumenten groep**: in dit bereik is roltoewijzing alleen van toepassing op deze entiteit. Momenteel biedt de Azure Portal geen ondersteuning voor het toewijzen van een Azure-rol aan een beveiligingsprincipal op dit niveau. 
+- **Event hub**: roltoewijzing is van toepassing op de Event hub-entiteit en de Consumer groep daaronder.
+- **Naam ruimte**: roltoewijzing omvat de volledige topologie van Event hubs onder de naam ruimte en aan de Consumer groep die eraan is gekoppeld.
+- **Resource groep**: roltoewijzing is van toepassing op alle Event hubs resources onder de resource groep.
+- **Abonnement**: roltoewijzing is van toepassing op alle Event hubs resources in alle resource groepen in het abonnement.
 
 > [!NOTE]
 > - Houd er rekening mee dat Azure-roltoewijzingen het Maxi maal vijf minuten kan duren voordat deze wordt door gegeven. 

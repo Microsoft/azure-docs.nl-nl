@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 06/06/2020
 ms.author: vigunase
 ms.subservice: B2C
-ms.openlocfilehash: 1c3c3d38ac0d8334f70f681d8ef86c0d6f86ecfa
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: d8c0a5ce6f3befd41c0e1399363fd73726693837
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96750217"
 ---
 # <a name="recommendations-and-best-practices-for-azure-active-directory-b2c"></a>Aanbevelingen en aanbevolen procedures voor Azure Active Directory B2C
@@ -28,7 +28,7 @@ De volgende aanbevolen procedures en aanbevelingen omvatten enkele van de belang
 |--|--|
 | Gebruikers stromen kiezen voor de meeste scenario's | Het Framework voor identiteits ervaring van Azure AD B2C is de kern sterkte van de service. Het beleid beschrijft volledige identiteits ervaringen, zoals aanmelden, aanmelden of profiel bewerking. Om u te helpen bij het instellen van de meest voorkomende identiteits taken, bevat de Azure AD B2C Portal vooraf gedefinieerde, Configureer bare beleids regels met de naam gebruikers stromen. Met gebruikers stromen kunt u binnen enkele minuten fantastische gebruikers ervaringen maken, met slechts enkele klikken. [Meer informatie over het gebruik van gebruikers stromen versus aangepast beleid](custom-policy-overview.md#comparing-user-flows-and-custom-policies).|
 | App-registraties | Elke toepassing (Web, native) en API die wordt beveiligd, moeten zijn geregistreerd in Azure AD B2C. Als een app zowel een web-als een systeem eigen versie van iOS en Android heeft, kunt u deze registreren als één toepassing in Azure AD B2C met dezelfde client-ID. Meer informatie over het [registreren van OIDC-, SAML-, Web-en systeem eigen apps](./tutorial-register-applications.md?tabs=applications). Meer informatie over [toepassings typen die kunnen worden gebruikt in azure AD B2C](./application-types.md). |
-| Naar facturering van maandelijkse actieve gebruikers verplaatsen | Azure AD B2C is verplaatst van maandelijkse actieve authenticaties naar maandelijkse MAU-facturering (actieve gebruikers). De meeste klanten vinden dit model kosten effectief. Meer [informatie over de facturering van maandelijkse actieve gebruikers](https://azure.microsoft.com/updates/mau-billing/). [Deze koppeling opslaan](b2clogin.md) |
+| Naar facturering van maandelijkse actieve gebruikers verplaatsen | Azure AD B2C is verplaatst van maandelijkse actieve authenticaties naar maandelijkse MAU-facturering (actieve gebruikers). De meeste klanten vinden dit model kosten effectief. Meer [informatie over de facturering van maandelijkse actieve gebruikers](https://azure.microsoft.com/updates/mau-billing/). |
 
 ## <a name="planning-and-design"></a>Planning en ontwerp
 
@@ -84,7 +84,7 @@ Uw Azure AD B2C omgeving beheren.
 | Actieve waarschuwingen en bewaking instellen | [Gebruikers gedrag bijhouden](./analytics-with-application-insights.md) in azure AD B2C met behulp van Application Insights. |
 
 ## <a name="support-and-status-updates"></a>Ondersteuning en status updates
-## <a name="todays-support-and-status-updates"></a>Ondersteuning en status updates voor de huidige generatie
+
 Blijf op de hoogte van de status van de service en vind ondersteunings opties.
 
 | Best practice | Beschrijving |

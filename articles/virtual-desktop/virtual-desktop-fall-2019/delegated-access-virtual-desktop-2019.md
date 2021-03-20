@@ -7,10 +7,10 @@ ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: 0152dc5102fd3f77418448234cab1234d25b97c6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88008148"
 ---
 # <a name="delegated-access-in-windows-virtual-desktop-classic"></a>Gedelegeerde toegang in het virtuele bureau blad van Windows (klassiek)
@@ -22,7 +22,7 @@ Het virtuele bureau blad van Windows beschikt over een gedelegeerd toegangs mode
 
 Het Windows-bureau blad gedelegeerde toegang ondersteunt de volgende waarden voor elk element van de roltoewijzing:
 
-* Beveiligings-principal
+* Beveiligingsprincipal
     * Gebruikers
     * Service-principals
 * Roldefinitie

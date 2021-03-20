@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 08/08/2019
 ms.author: sutalasi
 ms.openlocfilehash: fa4d61599e102f9a2580e704ee7a02486067daa2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86135794"
 ---
 # <a name="replicate-azure-disk-encryption-enabled-virtual-machines-to-another-azure-region"></a>Virtuele machines met Azure Disk Encryption-functionaliteit repliceren naar een andere Azure-regio
@@ -40,7 +40,7 @@ De gebruiker heeft de volgende machtigingen nodig voor de **bron-en doel regio**
     - Cryptografische bewerkingen
         - Ontsleutelen en versleutelen
 
-Als u machtigingen wilt beheren, gaat u naar de resource van de sleutel kluis in de portal. Voeg de vereiste machtigingen voor de gebruiker toe. In het volgende voor beeld ziet u hoe u machtigingen inschakelt voor de sleutel kluis *ContosoWeb2Keyvault*die zich in de bron regio bevindt.
+Als u machtigingen wilt beheren, gaat u naar de resource van de sleutel kluis in de portal. Voeg de vereiste machtigingen voor de gebruiker toe. In het volgende voor beeld ziet u hoe u machtigingen inschakelt voor de sleutel kluis *ContosoWeb2Keyvault* die zich in de bron regio bevindt.
 
 1. Ga naar **Home**-ContosoWeb2KeyVault-  >  **kluizen**  >  **> toegangs beleid**.
 
@@ -78,7 +78,7 @@ Raadpleeg de [belang rijke problemen met machtigingen voor sleutel kluis](#trust
 
 Voor dit voor beeld is de primaire Azure-regio Azië-oost en is de secundaire regio Zuid Azië-oost.
 
-1. Selecteer **+ repliceren**in de kluis.
+1. Selecteer **+ repliceren** in de kluis.
 2. Let op de volgende velden.
     - **Bron**: het herkomst punt van de virtuele machines, in dit geval **Azure**.
     - **Bron locatie**: de Azure-regio waar u uw virtuele machines wilt beveiligen. Voor dit voor beeld is de bron locatie Azië-oost.
@@ -86,9 +86,9 @@ Voor dit voor beeld is de primaire Azure-regio Azië-oost en is de secundaire re
     - **Bron abonnement**: het abonnement waartoe de virtuele bron machines behoren. Dit kan elk abonnement zijn dat zich in dezelfde Azure Active Directory Tenant bevindt als de Recovery Services-kluis.
     - **Resource groep**: de resource groep waartoe de virtuele bron machine behoort. Alle virtuele machines in de geselecteerde resource groep worden in de volgende stap weer gegeven voor beveiliging.
 
-3. Selecteer in **virtual machines**  >  **virtuele machines selecteren**de VM die u wilt repliceren. U kunt alleen machines selecteren waarvoor replicatie kan worden ingeschakeld. Selecteer vervolgens **OK**.
+3. Selecteer in **virtual machines**  >  **virtuele machines selecteren** de VM die u wilt repliceren. U kunt alleen machines selecteren waarvoor replicatie kan worden ingeschakeld. Selecteer vervolgens **OK**.
 
-4. In **instellingen**kunt u de volgende instellingen voor de doel site configureren.
+4. In **instellingen** kunt u de volgende instellingen voor de doel site configureren.
 
     - **Doel locatie**: de locatie waar de gegevens van de virtuele bron machine worden gerepliceerd. Site Recovery biedt een lijst met geschikte doel regio's op basis van de locatie van de geselecteerde machine. U wordt aangeraden dezelfde locatie te gebruiken als de locatie van de Recovery Services kluis.
     - **Doel abonnement**: het doel abonnement dat wordt gebruikt voor herstel na nood gevallen. Standaard is het doelabonnement hetzelfde als het bronabonnement.
@@ -109,14 +109,14 @@ Volg deze stappen om de Site Recovery standaard doel instellingen te wijzigen.
 1. Selecteer **aanpassen** naast doel abonnement om het standaard doel abonnement te wijzigen. Selecteer het abonnement in de lijst met abonnementen die beschikbaar zijn in de Azure AD-Tenant.
 
 2. Selecteer **aanpassen** naast resource groep, netwerk, opslag en beschikbaarheids sets om de volgende standaard instellingen te wijzigen:
-    - Voor **doel resource groep**selecteert u de resource groep in de lijst met resource groepen op de doel locatie van het abonnement.
-    - Voor het **virtuele netwerk**van het doel selecteert u het netwerk in een lijst met virtuele netwerken op de doel locatie.
-    - Voor **beschikbaarheidsset**kunt u instellingen voor beschikbaarheids sets toevoegen aan de VM als deze deel uitmaken van een beschikbaarheidsset in de bron regio.
-    - Selecteer voor **doel opslag accounts**het account dat u wilt gebruiken.
+    - Voor **doel resource groep** selecteert u de resource groep in de lijst met resource groepen op de doel locatie van het abonnement.
+    - Voor het **virtuele netwerk** van het doel selecteert u het netwerk in een lijst met virtuele netwerken op de doel locatie.
+    - Voor **beschikbaarheidsset** kunt u instellingen voor beschikbaarheids sets toevoegen aan de VM als deze deel uitmaken van een beschikbaarheidsset in de bron regio.
+    - Selecteer voor **doel opslag accounts** het account dat u wilt gebruiken.
 
 2. Selecteer **aanpassen** naast versleutelings instellingen om de volgende standaard instellingen te wijzigen:
-   - Selecteer voor de **doel schijf versleutelings sleutel**kluis de doel schijf versleutelings sleutel kluis in de lijst met sleutel kluizen op de doel locatie van het abonnement.
-   - Selecteer de sleutel kluis van **de doel sleutel**versleutelen in de lijst met sleutel kluizen op de doel locatie van het abonnement.
+   - Selecteer voor de **doel schijf versleutelings sleutel** kluis de doel schijf versleutelings sleutel kluis in de lijst met sleutel kluizen op de doel locatie van het abonnement.
+   - Selecteer de sleutel kluis van **de doel sleutel** versleutelen in de lijst met sleutel kluizen op de doel locatie van het abonnement.
 
 3. Selecteer **doel bron maken**  >  **replicatie inschakelen**.
 4. Nadat de Vm's zijn ingeschakeld voor replicatie, kunt u de status van de virtuele machines controleren onder **gerepliceerde items**.
@@ -153,7 +153,7 @@ U hebt alle machtigingen voor de sleutel kluis van de bron regio. Maar tijdens d
 
 Machtiging vereist voor de [doel sleutel kluis](#required-user-permissions)
 
-**Oplossen:** Ga naar **Home**-  >  **Keyvaults**  >  **ContosotargetKeyvault**-  >  **toegangs beleid** en voeg de juiste machtigingen toe.
+**Oplossen:** Ga naar **Home**-  >    >  **ContosotargetKeyvault**-  >  **toegangs beleid** en voeg de juiste machtigingen toe.
 
 ## <a name="next-steps"></a>Volgende stappen
 

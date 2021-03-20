@@ -1,18 +1,18 @@
 ---
 title: Azure Event Grid-gebeurtenis schema
-description: Hierin worden de eigenschappen en schema's beschreven die voor alle gebeurtenissen aanwezig zijn.Gebeurtenissen bestaan uit een set van vijf vereiste teken reeks eigenschappen en een vereist gegevens object.
+description: Hierin worden de eigenschappen en schema's beschreven die voor alle gebeurtenissen aanwezig zijn. Gebeurtenissen bestaan uit een set van vijf vereiste teken reeks eigenschappen en een vereist gegevens object.
 ms.topic: reference
 ms.date: 07/07/2020
 ms.openlocfilehash: 7ddc7c78c5a9e5ba2a57b21c45fb9fab65056ee9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86105877"
 ---
 # <a name="azure-event-grid-event-schema"></a>Azure Event Grid-gebeurtenis schema
 
-In dit artikel worden de eigenschappen en schema's beschreven die voor alle gebeurtenissen aanwezig zijn.Gebeurtenissen bestaan uit een set van vijf vereiste teken reeks eigenschappen en een vereist gegevens object. De eigenschappen zijn gebruikelijk voor alle gebeurtenissen van elke uitgever. Het gegevens object heeft eigenschappen die specifiek zijn voor elke uitgever. Voor systeem onderwerpen zijn deze eigenschappen specifiek voor de resource provider, zoals Azure Storage of Azure Event Hubs.
+In dit artikel worden de eigenschappen en schema's beschreven die voor alle gebeurtenissen aanwezig zijn. Gebeurtenissen bestaan uit een set van vijf vereiste teken reeks eigenschappen en een vereist gegevens object. De eigenschappen zijn gebruikelijk voor alle gebeurtenissen van elke uitgever. Het gegevens object heeft eigenschappen die specifiek zijn voor elke uitgever. Voor systeem onderwerpen zijn deze eigenschappen specifiek voor de resource provider, zoals Azure Storage of Azure Event Hubs.
 
 Gebeurtenis bronnen verzenden gebeurtenissen naar Azure Event Grid in een matrix, die verschillende gebeurtenis objecten kunnen hebben. Bij het posten van gebeurtenissen naar een event grid-onderwerp kan de matrix een totale grootte hebben van Maxi maal 1 MB. Elke gebeurtenis in de matrix is beperkt tot 1 MB. Als een gebeurtenis of de matrix groter is dan de maximale grootte, ontvangt u het antwoord **413 Payload te groot**. Bewerkingen worden in rekening gebracht in stappen van 64 KB. Dit betekent dat gebeurtenissen van meer dan 64 KB bewerkingen in rekening brengen, alsof ze meerdere gebeurtenissen waren. Bijvoorbeeld, een gebeurtenis die 130 KB zou moeten doen, alsof het drie afzonderlijke gebeurtenissen waren.
 

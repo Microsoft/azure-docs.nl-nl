@@ -12,15 +12,15 @@ ms.workload: infrastructure-services
 ms.date: 12/28/2020
 ms.author: yitoh
 ms.openlocfilehash: cc5b3b85d6d13fda532da0993fa7f733126b8eae
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100591870"
 ---
 # <a name="view-and-configure-ddos-diagnostic-logging"></a>Registratie in DDoS-diagnoselogboek bekijken en configureren
 
-Azure DDoS Protection Standard biedt uitgebreide aanval en visualisatie met DDoS-aanvals analyses. Klanten die hun virtuele netwerken beschermen tegen DDoS-aanvallen, hebben een gedetailleerde zicht baarheid van het aanvals verkeer en acties die zijn ondernomen om de aanval via rapporten voor aanvallen te beperken & beperkende stroom Logboeken. Uitgebreide telemetrie wordt weer gegeven via Azure Monitor, met inbegrip van gedetailleerde metrische gegevens tijdens de duur van een DDoS-aanval. U kunt waarschuwingen configureren voor een van de Azure Monitor metrische gegevens die door DDoS Protection worden weer gegeven. Logboek registratie kan verder worden geïntegreerd met [Azure Sentinel](../sentinel/connect-azure-ddos-protection.md), Splunk (Azure Event hubs), OMS Log Analytics en Azure Storage voor geavanceerde analyse via de diagnostische-interface voor Azure monitor.
+Azure DDoS Protection Standard biedt uitgebreide aanval en visualisatie met DDoS-aanvals analyses. Klanten die hun virtuele netwerken beschermen tegen DDoS-aanvallen, hebben een gedetailleerde zicht baarheid van het aanvals verkeer en acties die zijn ondernomen om de aanval via rapporten voor aanvallen te beperken & beperkende stroom Logboeken. Uitgebreide telemetrie wordt weer gegeven via Azure Monitor, met inbegrip van gedetailleerde metrische gegevens tijdens de duur van een DDoS-aanval. U kunt waarschuwingen configureren voor alle gewenste metrische Azure Monitor-gegevens die beschikbaar zijn gemaakt via DDoS Protection. Logboek registratie kan verder worden geïntegreerd met [Azure Sentinel](../sentinel/connect-azure-ddos-protection.md), Splunk (Azure Event hubs), OMS Log Analytics en Azure Storage voor geavanceerde analyse via de diagnostische-interface voor Azure monitor.
 
 De volgende Diagnostische logboeken zijn beschikbaar voor Azure DDoS Protection Standard: 
 
@@ -40,18 +40,18 @@ In deze zelfstudie leert u het volgende:
 
 - Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 - Voordat u de stappen in deze zelf studie kunt volt ooien, moet u eerst een [Azure DDoS Standard-beveiligings plan](manage-ddos-protection.md) maken en moet DDoS Protection standaard zijn ingeschakeld op een virtueel netwerk.
-- DDoS bewaakt open bare IP-adressen die zijn toegewezen aan bronnen in een virtueel netwerk. Als u geen resources met open bare IP-adressen in het virtuele netwerk hebt, moet u eerst een resource met een openbaar IP-adres maken. U kunt het open bare IP-adres van alle resources die zijn geïmplementeerd via Resource Manager (niet klassiek) bewaken in het [virtuele netwerk voor Azure-Services](../virtual-network/virtual-network-for-azure-services.md#services-that-can-be-deployed-into-a-virtual-network) (inclusief Azure load balancers waarbij de virtuele machines in het virtuele netwerk zich bevinden), met uitzonde ring van Azure app service omgevingen. Als u wilt door gaan met deze zelf studie, kunt u snel een virtuele [Windows](../virtual-machines/windows/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) -of [Linux](../virtual-machines/linux/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) -machine maken.    
+- DDoS bewaakt open bare IP-adressen die zijn toegewezen aan bronnen in een virtueel netwerk. Als u geen resources met openbare IP-adressen in het virtuele netwerk hebt, moet u eerst een resource met een openbaar IP-adres maken. U kunt het open bare IP-adres van alle resources die zijn geïmplementeerd via Resource Manager (niet klassiek) bewaken in het [virtuele netwerk voor Azure-Services](../virtual-network/virtual-network-for-azure-services.md#services-that-can-be-deployed-into-a-virtual-network) (inclusief Azure load balancers waarbij de virtuele machines in het virtuele netwerk zich bevinden), met uitzonde ring van Azure app service omgevingen. Als u wilt door gaan met deze zelf studie, kunt u snel een virtuele [Windows](../virtual-machines/windows/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) -of [Linux](../virtual-machines/linux/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) -machine maken.    
 
 ## <a name="configure-ddos-diagnostic-logs"></a>Diagnostische logboeken voor DDoS configureren
 
 Als u diagnostische logboek registratie automatisch wilt inschakelen voor alle open bare IP-adressen binnen een omgeving, gaat u verder met het [inschakelen van diagnostische logboek registratie voor alle open bare ip's](#enable-diagnostic-logging-on-all-public-ips).
 
-1. Selecteer **alle services** bovenaan, links van de portal.
-2. Voer *monitor* in het vak **filter** in. Wanneer de **monitor** wordt weer gegeven in de resultaten, selecteert u deze.
-3. Selecteer bij **instellingen** de optie **Diagnostische instellingen**.
-4. Selecteer het **abonnement** en de **resource groep** die het open bare IP-adres bevatten dat u wilt registreren.
+1. Selecteer bovenaan **Alle services**, aan de linkerkant van de portal.
+2. Voer in het vak **Filteren** in: *Bewaken*. Selecteer **Bewaken** wanneer deze optie wordt weergegeven in de resultaten.
+3. Selecteer onder **Instellingen** de optie **Diagnostische instellingen**.
+4. Selecteer het **abonnement** en de **resourcegroep** die het openbare IP-adres bevatten dat u wilt registreren.
 5. Selecteer **openbaar IP-adres** voor het **bron type** en selecteer vervolgens het specifieke open bare IP-adres waarvoor u logboeken wilt inschakelen.
-6. Selecteer **Diagnostische instellingen toevoegen**. Selecteer onder **categorie Details** zo veel van de volgende opties die u nodig hebt en selecteer vervolgens **Opslaan**.
+6. Selecteer **Diagnostische instellingen toevoegen**. Selecteer onder **Categoriedetails** zoveel van de volgende opties als u nodig hebt, en selecteer vervolgens **Opslaan**.
 
     ![Diagnostische instellingen voor DDoS](./media/ddos-attack-telemetry/ddos-diagnostic-settings.png)
 

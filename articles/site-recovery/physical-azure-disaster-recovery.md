@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 11/12/2019
 ms.author: raynew
 ms.openlocfilehash: 9b05d9952628e550beae5cedc49e051936a9d633
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87927280"
 ---
 # <a name="set-up-disaster-recovery-to-azure-for-on-premises-physical-servers"></a>Herstel na nood gevallen naar Azure instellen voor on-premises fysieke servers
@@ -99,7 +99,7 @@ Selecteer wat u wilt repliceren en waarnaar u het wilt repliceren.
 
 1. Klik op **Recovery Services-kluizen** > kluis.
 2. Klik in het resourcemenu op **Site Recovery** > **Infra structuur voorbereiden** > **Beveiligingsdoel**.
-3. Selecteer in **doel van beveiliging**de optie **naar Azure**  >  **niet gevirtualiseerd/Overig**.
+3. Selecteer in **doel van beveiliging** de optie **naar Azure**  >  **niet gevirtualiseerd/Overig**.
 
 ## <a name="set-up-the-source-environment"></a>De bronomgeving instellen
 

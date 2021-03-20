@@ -4,10 +4,10 @@ description: Gebruik Azure Advisor om uw Azure-implementaties te optimaliseren.
 ms.topic: article
 ms.date: 09/27/2020
 ms.openlocfilehash: 12e56bf44a29a32b2149bca14f7c99f319c9c4ea
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91405204"
 ---
 # <a name="introduction-to-azure-advisor"></a>Inleiding tot Azure Advisor
@@ -51,7 +51,7 @@ U kunt aanbevelingen van Advisor ook weer geven via de resource interface van de
 
 ### <a name="what-permissions-do-i-need-to-access-advisor"></a>Welke machtigingen heb ik nodig voor toegang tot Advisor?
  
-U kunt aanbevelingen van Advisor openen als *eigenaar*, *bijdrager*of *lezer* van een abonnement, resource groep of resource.
+U kunt aanbevelingen van Advisor openen als *eigenaar*, *bijdrager* of *lezer* van een abonnement, resource groep of resource.
 
 ### <a name="what-resources-does-advisor-provide-recommendations-for"></a>Welke resources biedt Advisor aanbevelingen voor?
 

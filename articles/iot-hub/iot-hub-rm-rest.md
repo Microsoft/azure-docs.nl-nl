@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 08/08/2017
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 2f393701b97be76acab49a627a195b337018fa29
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92144437"
 ---
 # <a name="create-an-iot-hub-using-the-resource-provider-rest-api-net"></a>Een IoT-hub maken met behulp van de REST API van de resource provider (.NET)
@@ -24,7 +24,7 @@ U kunt de [IOT hub resource provider rest API](/rest/api/iothub/iothubresource) 
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-U hebt het volgende nodig om deze zelfstudie af te ronden:
+Voor het voltooien van deze zelfstudie hebt u het volgende nodig:
 
 * Visual Studio.
 
@@ -40,11 +40,11 @@ U hebt het volgende nodig om deze zelfstudie af te ronden:
 
 2. Klik in Solution Explorer met de rechter muisknop op uw project en vervolgens op **NuGet-pakketten beheren**.
 
-3. Controleer in NuGet package manager de optie **Prerelease toevoegen**en op de pagina **Bladeren** zoeken naar **micro soft. Azure. Management. Resource Manager**. Selecteer het pakket, klik op **installeren**, klik in **wijzigingen controleren** op **OK**en klik vervolgens op **Ik ga akkoord** om de licenties te accepteren.
+3. Controleer in NuGet package manager de optie **Prerelease toevoegen** en op de pagina **Bladeren** zoeken naar **micro soft. Azure. Management. Resource Manager**. Selecteer het pakket, klik op **installeren**, klik in **wijzigingen controleren** op **OK** en klik vervolgens op **Ik ga akkoord** om de licenties te accepteren.
 
-4. Zoek in NuGet package manager naar **micro soft. Identity model. clients. ActiveDirectory**.  Klik op **installeren**, in **wijzigingen controleren** , klik op **OK**en klik vervolgens op **Ik ga akkoord** om de licentie te accepteren.
+4. Zoek in NuGet package manager naar **micro soft. Identity model. clients. ActiveDirectory**.  Klik op **installeren**, in **wijzigingen controleren** , klik op **OK** en klik vervolgens op **Ik ga akkoord** om de licentie te accepteren.
 
-5. Vervang in Program.cs de bestaande **using** -instructies door de volgende code:
+5. Vervang in Program. cs de bestaande **using** -instructies door de volgende code:
 
     ```csharp
     using System;
@@ -60,7 +60,7 @@ U hebt het volgende nodig om deze zelfstudie af te ronden:
     using System.Threading;
     ```
 
-6. Voeg in Program.cs de volgende statische variabelen toe om de waarden van de tijdelijke aanduidingen te vervangen. U hebt eerder in deze zelf studie de volgende opmerking gemaakt: **ApplicationId**, **SubscriptionId**, **TenantId**en **wacht woord** . De naam van de **resource groep** is de naam van de resource groep die u gebruikt bij het maken van de IOT-hub. U kunt een bestaande of een nieuwe resource groep gebruiken. **IOT hub naam** is de naam van de IOT hub die u maakt, zoals **MyIoTHub**. De naam van uw IoT-hub moet wereld wijd uniek zijn. De naam van de **implementatie** is een naam voor de implementatie, zoals **Deployment_01**.
+6. Voeg in Program. cs de volgende statische variabelen toe om de waarden van de tijdelijke aanduidingen te vervangen. U hebt eerder in deze zelf studie de volgende opmerking gemaakt: **ApplicationId**, **SubscriptionId**, **TenantId** en **wacht woord** . De naam van de **resource groep** is de naam van de resource groep die u gebruikt bij het maken van de IOT-hub. U kunt een bestaande of een nieuwe resource groep gebruiken. **IOT hub naam** is de naam van de IOT hub die u maakt, zoals **MyIoTHub**. De naam van uw IoT-hub moet wereld wijd uniek zijn. De naam van de **implementatie** is een naam voor de implementatie, zoals **Deployment_01**.
 
     ```csharp
     static string applicationId = "{Your ApplicationId}";
@@ -80,7 +80,7 @@ U hebt het volgende nodig om deze zelfstudie af te ronden:
 
 Gebruik de [IOT hub resource provider rest API](/rest/api/iothub/iothubresource) om een IOT-hub in uw resource groep te maken. U kunt ook de REST API van de resource provider gebruiken om wijzigingen aan te brengen in een bestaande IoT-hub.
 
-1. Voeg de volgende methode toe aan Program.cs:
+1. Voeg de volgende methode toe aan Program. CS:
 
     ```csharp
     static void CreateIoTHub(string token)
@@ -162,7 +162,7 @@ U kunt de toepassing nu volt ooien door de **CreateIoTHub** -methode aan te roep
     Console.ReadLine();
     ```
 
-2. Klik op **Build** en **bouw**vervolgens de oplossing. Corrigeer eventuele fouten.
+2. Klik op **Build** en **bouw** vervolgens de oplossing. Corrigeer eventuele fouten.
 
 3. Klik op **fouten opsporen** en **Start de fout opsporing** om de toepassing uit te voeren. Het kan enkele minuten duren voordat de implementatie is uitgevoerd.
 

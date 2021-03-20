@@ -8,10 +8,10 @@ ms.reviewer: spelluru
 ms.date: 07/08/2020
 ms.topic: article
 ms.openlocfilehash: 2a7cc864366bd9a35c96dd453c0dc68f77d8abd9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86171445"
 ---
 # <a name="tutorial-publish-subscribe-to-events-locally"></a>Zelf studie: publiceren, lokaal abonneren op gebeurtenissen
@@ -38,14 +38,14 @@ Er zijn verschillende manieren om modules op een IoT Edge apparaat te implemente
 ### <a name="select-your-iot-edge-device"></a>Uw IoT Edge-apparaat selecteren
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com)
-1. Navigeer naar uw IoT Hub.
+1. Ga naar uw IoT Hub.
 1. Selecteer **IOT Edge** in het menu van het gedeelte **Automatic Device Management** . 
 1. Klik op de ID van het doel apparaat in de lijst met apparaten
 1. Selecteer **modules instellen**. Laat de pagina geopend. U gaat verder met de stappen in de volgende sectie.
 
 ### <a name="configure-a-deployment-manifest"></a>Een implementatie manifest configureren
 
-Een implementatie manifest is een JSON-document waarin wordt beschreven welke modules moeten worden geïmplementeerd, hoe gegevens stromen tussen de modules en gewenste eigenschappen van de module apparaatdubbels. De Azure Portal bevat een wizard die u helpt bij het maken van een implementatie manifest, in plaats van het JSON-document hand matig te bouwen.  Er zijn drie stappen: **modules toevoegen**, **routes opgeven**en de **implementatie controleren**.
+Een implementatie manifest is een JSON-document waarin wordt beschreven welke modules moeten worden geïmplementeerd, hoe gegevens stromen tussen de modules en gewenste eigenschappen van de module apparaatdubbels. De Azure Portal bevat een wizard die u helpt bij het maken van een implementatie manifest, in plaats van het JSON-document hand matig te bouwen.  Er zijn drie stappen: **modules toevoegen**, **routes opgeven** en de **implementatie controleren**.
 
 ### <a name="add-modules"></a>Modules toevoegen
 
@@ -55,7 +55,7 @@ Een implementatie manifest is een JSON-document waarin wordt beschreven welke mo
 
    * **Naam**: eventgridmodule
    * **Afbeeldings-URI**: `mcr.microsoft.com/azure-event-grid/iotedge:latest`
-   * **Opties**voor het maken van containers:
+   * **Opties** voor het maken van containers:
 
    [!INCLUDE [event-grid-edge-module-version-update](../../../includes/event-grid-edge-module-version-update.md)]
 
@@ -96,7 +96,7 @@ In deze sectie wordt beschreven hoe u een andere IoT-module implementeert die al
 
    * **Naam**: abonnee
    * **Afbeeldings-URI**: `mcr.microsoft.com/azure-event-grid/iotedge-samplesubscriber:latest`
-   * **Opties**voor het maken van containers: geen
+   * **Opties** voor het maken van containers: geen
 1. Klik op **Opslaan**.
 1. Klik op **volgende** om door te gaan naar de sectie routes
 
@@ -108,7 +108,7 @@ Behoud de standaard routes en selecteer **volgende** om door te gaan naar de sec
 
 1. In het gedeelte beoordeling ziet u het JSON-implementatie manifest dat is gemaakt op basis van uw selecties in de vorige sectie. Controleer of de modules: **eventgridmodule** en **Subscriber** in de JSON worden weer gegeven. 
 1. Controleer uw implementatie gegevens en selecteer vervolgens **verzenden**. Nadat u de implementatie hebt verzonden, keert u terug naar de pagina **apparaat** .
-1. Controleer in de **sectie modules**of zowel de **eventgrid** -als de **abonnee** modules worden weer gegeven. Controleer of de **opgegeven in-implementatie** en **gerapporteerd door** de kolom apparaat is ingesteld op **Ja**.
+1. Controleer in de **sectie modules** of zowel de **eventgrid** -als de **abonnee** modules worden weer gegeven. Controleer of de **opgegeven in-implementatie** en **gerapporteerd door** de kolom apparaat is ingesteld op **Ja**.
 
     Het kan even duren voordat de module op het apparaat is gestart en vervolgens weer aan IoT Hub is gemeld. Vernieuw de pagina om de bijgewerkte status weer te geven.
 
@@ -177,7 +177,7 @@ Abonnees kunnen zich registreren voor gebeurtenissen die naar een onderwerp word
     ```
 
     >[!NOTE]
-    > De eigenschap **endpointType** geeft aan dat de abonnee een **webhook**is.  De **endpointUrl** geeft de URL aan waar de abonnee naar gebeurtenissen luistert. Deze URL komt overeen met het voor beeld van Azure Subscriber dat u eerder hebt geïmplementeerd.
+    > De eigenschap **endpointType** geeft aan dat de abonnee een **webhook** is.  De **endpointUrl** geeft de URL aan waar de abonnee naar gebeurtenissen luistert. Deze URL komt overeen met het voor beeld van Azure Subscriber dat u eerder hebt geïmplementeerd.
 2. Voer de volgende opdracht uit om een abonnement voor het onderwerp te maken. Controleer of u de HTTP-status code ziet `200 OK` .
 
     ```sh

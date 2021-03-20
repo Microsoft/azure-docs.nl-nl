@@ -11,16 +11,16 @@ ms.topic: conceptual
 ms.date: 09/25/2018
 ms.author: aahi
 ms.openlocfilehash: 73b25ce1093ce697aa0937161d2af49526c231b7
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96352351"
 ---
 # <a name="language-and-region-support-for-the-bing-custom-search-api"></a>Ondersteuning van talen en regio's voor de Bing Custom Search-API
 
 > [!WARNING]
-> Bing Search-API's worden van Cognitive Services naar Bing Search Services overgezet. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](/bing/search-apis/bing-web-search/create-bing-search-service-resource) is beschreven.
+> Bing Search-API's worden van Cognitive Services naar Bing Search Services verplaatst. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](/bing/search-apis/bing-web-search/create-bing-search-service-resource) is beschreven.
 > Bing Search-API's die zijn ingericht met Cognitive Services, worden voor de komende drie jaar of tot het einde van uw Enterprise Agreement ondersteund, afhankelijk van wat het eerst afloopt.
 > Raadpleeg [Bing Search Services](/bing/search-apis/bing-web-search/create-bing-search-service-resource) voor migratie-instructies.
 
@@ -41,7 +41,7 @@ De `Accept-Language` header en de `setLang` query parameter sluiten elkaar weder
 |Oostenrijk|AT|
 |België|BE|
 |Brazilië|BR|
-|Canada|CA|
+|Canada|CA (consistentie en beschikbaarheid)|
 |Chili|CL|
 |Denemarken|DK|
 |Finland|FI|
@@ -116,5 +116,5 @@ De `Accept-Language` header en de `setLang` query parameter sluiten elkaar weder
 |Taiwan|Traditioneel Chinees|zh-TW|
 |Turkije|Turks|tr-TR|
 |Verenigd Koninkrijk|Engels|en-GB|
-|Verenigde Staten|Engels|nl-NL|
+|Verenigde Staten|Engels|en-US|
 |Verenigde Staten|Spaans|es-Verenigde Staten|

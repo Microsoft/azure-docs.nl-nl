@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 12/09/2019
 ms.author: robinsh
 ms.openlocfilehash: 370ea2f16632ae18142f0770742e5a52d3cabae0
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92151649"
 ---
 # <a name="how-to-clone-an-azure-iot-hub-to-another-region"></a>Een Azure IoT hub klonen naar een andere regio
@@ -107,7 +107,7 @@ Deze sectie bevat specifieke instructies voor het migreren van de hub.
 
 ### <a name="find-the-original-hub-and-export-it-to-a-resource-template"></a>Zoek de oorspronkelijke hub en exporteer deze naar een resource sjabloon.
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com). 
+1. Meld u aan bij de [Azure Portal](https://portal.azure.com). 
 
 1. Ga naar **resource groepen** en selecteer de resource groep die de hub bevat die u wilt verplaatsen. U kunt ook naar **resources** gaan en de hub op die manier vinden. Selecteer de hub.
 
@@ -300,7 +300,7 @@ Wanneer u de Resource Manager-sjabloon exporteert voor een hub waarvoor route ri
 
 1. De vereiste sleutels voor een van de routerings resources ophalen en in de sjabloon opnemen. U kunt de sleutel (s) ophalen uit de bron in de [Azure Portal](https://portal.azure.com). 
 
-   Als u bijvoorbeeld berichten naar een opslag container routert, zoek dan het opslag account in de portal. Selecteer in de sectie instellingen de optie **toegangs sleutels**en kopieer een van de sleutels. De sleutel ziet er als volgt uit wanneer u de sjabloon voor het eerst exporteert:
+   Als u bijvoorbeeld berichten naar een opslag container routert, zoek dan het opslag account in de portal. Selecteer in de sectie instellingen de optie **toegangs sleutels** en kopieer een van de sleutels. De sleutel ziet er als volgt uit wanneer u de sjabloon voor het eerst exporteert:
 
    ```json
    "connectionString": "DefaultEndpointsProtocol=https;
@@ -347,7 +347,7 @@ U hebt nu een sjabloon waarmee een nieuwe hub wordt gemaakt die bijna precies zo
 
 Maak de nieuwe hub op de nieuwe locatie met behulp van de sjabloon. Als u routerings resources hebt die u wilt verplaatsen, moeten de resources worden ingesteld op de nieuwe locatie en moeten de verwijzingen in de sjabloon worden bijgewerkt. Als u de routerings resources niet verplaatst, moeten ze zich in de sjabloon bevinden met de bijgewerkte sleutels.
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure Portal](https://portal.azure.com).
 
 1. Selecteer **Een resource maken**. 
 
@@ -526,7 +526,7 @@ Nu hebt u de omgevings variabelen in een bestand met de SET-opdrachten en weet u
     
 1. Klik met de rechter muisknop op het project *ImportExportDevicesSample* en selecteer **instellen als opstart project**.    
     
-1. Stel de variabelen boven aan Program.cs in de map ImportExportDevicesSample voor de vijf opties in.
+1. Stel de variabelen boven aan Program. cs in de map ImportExportDevicesSample voor de vijf opties in.
 
    ``` csharp
    // Add randomly created devices to the source hub.

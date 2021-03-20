@@ -8,10 +8,10 @@ ms.date: 11/14/2019
 ms.author: ant
 ms.topic: conceptual
 ms.openlocfilehash: 483d261a8cc107d01cfb7a405eac43667d7efcc6
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92131833"
 ---
 # <a name="troubleshoot-web-application-firewall-waf-for-azure-application-gateway"></a>Problemen met Web Application firewall (WAF) voor Azure-toepassing gateway oplossen
@@ -172,7 +172,7 @@ Als u Azure PowerShell wilt gebruiken, raadpleegt u [Web Application firewall re
 
 Met de hulp van [Fiddler](https://www.telerik.com/fiddler)kunt u afzonderlijke aanvragen controleren en bepalen welke specifieke velden van een webpagina worden genoemd. Dit kan helpen om bepaalde velden uit te sluiten van inspectie met behulp van uitsluitings lijsten.
 
-In dit voor beeld ziet u dat het veld waarin de teken reeks van *1 = 1* is ingevoerd **text1**heet.
+In dit voor beeld ziet u dat het veld waarin de teken reeks van *1 = 1* is ingevoerd **text1** heet.
 
 :::image type="content" source="../media/web-application-firewall-troubleshoot/fiddler-1.png" alt-text="Scherm opname van de voortgang Telerik Fiddler Web debugger. Op het tabblad onbewerkt, wordt 1 = 1 weer gegeven na de naam Tekst1." border="false":::
 
@@ -301,7 +301,7 @@ Fiddler is opnieuw een handig hulp programma om namen van aanvraag headers te vi
 
 :::image type="content" source="../media/web-application-firewall-troubleshoot/fiddler-2.png" alt-text="Scherm opname van de voortgang Telerik Fiddler Web debugger. Op het tabblad RAW worden details van de aanvraag header weer gegeven, zoals de verbinding, het inhouds type en de gebruikers agent." border="false":::
 
-Een andere manier om aanvraag-en reactie headers weer te geven, is door te kijken in de ontwikkel tools van Chrome. U kunt op F12 drukken of met de rechter muisknop > Ontwikkelhulpprogramma's **inspecteren**  ->  **Developer Tools**en het tabblad **netwerk** selecteren. Laad een webpagina en klik op de aanvraag die u wilt inspecteren.
+Een andere manier om aanvraag-en reactie headers weer te geven, is door te kijken in de ontwikkel tools van Chrome. U kunt op F12 drukken of met de rechter muisknop > Ontwikkelhulpprogramma's **inspecteren**  ->  en het tabblad **netwerk** selecteren. Laad een webpagina en klik op de aanvraag die u wilt inspecteren.
 
 ![Chrome F12](../media/web-application-firewall-troubleshoot/chrome-f12.png)
 

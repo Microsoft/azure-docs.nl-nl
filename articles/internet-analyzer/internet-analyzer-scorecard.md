@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 10/16/2019
 ms.author: mebeatty
 ms.openlocfilehash: f43d094193fb266d1ecec7089b44d8b3fd5e9b43
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91330210"
 ---
 # <a name="interpreting-your-scorecard"></a>Uw scorecard interpreteren
@@ -35,7 +35,7 @@ Het aantal metingen is van invloed op het vertrouwen van de analyse. Hoe hoger h
 
 Latentie, gemeten in milliseconden, is een populaire meet waarde voor het meten van snelheid tussen een bron en bestemming op internet. Latentie gegevens worden normaal gesp roken niet gedistribueerd (dat wil zeggen: geen "klok curve") omdat er een "lange staart" van grote latentie waarden is die de resultaten scheef trekken wanneer statistieken zoals het reken kundige gemiddelde worden gebruikt. Als alternatief bieden percentielen een ' distributie vrije ' manier om gegevens te analyseren. Als voor beeld is het mediaan-of 50e percentiel een samen vatting van het midden van de verdeling-helft van de waarden. Een waarde voor een 75e percentiel betekent dat deze groter is dan 75% van alle waarden in de distributie. Internet Analyzer verwijst naar percentielen in steno als P50, P75 en P95.
 
-Internet Analyzer-percentielen zijn _voorbeeld metrieken_. Dit is in tegens telling tot de werkelijke _metrische gegevens_van de populatie. Zo is de dagelijkse gemiddelde latentie van de populatie tussen studenten in de University of Zuid Californië en micro soft de mediaan latentie waarde van alle aanvragen gedurende die dag. In de praktijk is het meten van de waarde van alle aanvragen niet praktisch, dus we gaan ervan uit dat een redelijkerwijs grote steek proef representatief is voor de echte populatie.
+Internet Analyzer-percentielen zijn _voorbeeld metrieken_. Dit is in tegens telling tot de werkelijke _metrische gegevens_ van de populatie. Zo is de dagelijkse gemiddelde latentie van de populatie tussen studenten in de University of Zuid Californië en micro soft de mediaan latentie waarde van alle aanvragen gedurende die dag. In de praktijk is het meten van de waarde van alle aanvragen niet praktisch, dus we gaan ervan uit dat een redelijkerwijs grote steek proef representatief is voor de echte populatie.
 
 Voor analyse doeleinden is P50 (mediaan) nuttig als een verwachte waarde voor een latentie distributie. Hogere percentielen, zoals P95, zijn handig om te bepalen hoe hoge latentie in de slechtste gevallen is. Als u geïnteresseerd bent in informatie over de latentie van klanten in het algemeen, is P50 de juiste meet waarde om zich te richten op. Als u zich zorgen maakt over de prestaties van de slechtste klanten, moet P95 de focus zijn. P75 is een evenwicht tussen deze twee.
 

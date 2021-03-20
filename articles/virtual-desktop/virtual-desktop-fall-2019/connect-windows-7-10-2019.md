@@ -7,10 +7,10 @@ ms.date: 07/16/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: 420c507361e3e2437366e6ccf2d46a8b78684e59
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88008353"
 ---
 # <a name="connect-with-the-windows-desktop-classic-client"></a>Verbinding maken met de Windows desktop-client (klassiek)
@@ -60,7 +60,7 @@ Er zijn twee manieren waarop u zich kunt abonneren op een werk ruimte. De client
 
 1. Selecteer op de hoofd pagina van de client **abonneren met URL**.
 2. Voer de URL van de werk ruimte of uw e-mail adres in:
-   - Als u de **werk ruimte-URL**gebruikt, gebruikt u de beheerder die u hebt ontvangen. Als u toegang hebt tot resources van virtueel bureau blad van Windows, kunt u een van de volgende Url's gebruiken:
+   - Als u de **werk ruimte-URL** gebruikt, gebruikt u de beheerder die u hebt ontvangen. Als u toegang hebt tot resources van virtueel bureau blad van Windows, kunt u een van de volgende Url's gebruiken:
      - Virtueel bureau blad van Windows (klassiek): `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`
      - Virtueel bureau blad van Windows: `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`
    - Als u in plaats daarvan het **e-mail** veld gebruikt, voert u uw e-mail adres in. Dit geeft de client de opdracht om te zoeken naar een URL die is gekoppeld aan uw e-mail adres als uw beheerder [e-mail detectie](/windows-server/remote/remote-desktop-services/rds-email-discovery)heeft ingesteld.

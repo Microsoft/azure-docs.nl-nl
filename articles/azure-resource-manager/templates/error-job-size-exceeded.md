@@ -4,10 +4,10 @@ description: Hierin wordt beschreven hoe u fouten oplost wanneer de taak grootte
 ms.topic: troubleshooting
 ms.date: 01/19/2021
 ms.openlocfilehash: 1fde4918aff6e3bf494876f83c5b4313b3c5f3d2
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98610400"
 ---
 # <a name="resolve-errors-for-job-size-exceeded"></a>Fouten oplossen voor de taak grootte is overschreden
@@ -22,10 +22,10 @@ Wanneer u een sjabloon implementeert, wordt er een fout melding weer gegeven dat
 
 U krijgt deze fout melding wanneer de implementatie een van de toegestane limieten overschrijdt. Normaal gesp roken ziet u deze fout wanneer uw sjabloon of de taak waarmee de implementatie wordt uitgevoerd te groot is.
 
-De implementatie taak mag niet groter zijn dan 1 MB. De taak bevat meta gegevens over de aanvraag. Voor grote sjablonen kan de meta gegevens die in combi natie met de sjabloon worden gecombineerd de toegestane grootte voor een taak overschrijden.
+De implementatie taak mag niet groter zijn dan 1 MB. De taak omvat metagegevens over de aanvraag. Voor grote sjablonen mogen de metagegevens in combinatie met de sjabloon de toegestane grootte van een taak niet overschrijden.
 
 
-De sjabloon mag niet groter zijn dan 4 MB. De limiet van 4 MB is van toepassing op de uiteindelijke status van de sjabloon nadat deze is uitgebreid voor resource definities die gebruikmaken van [kopiëren](copy-resources.md) om veel instanties te maken. De uiteindelijke status bevat ook de opgeloste waarden voor variabelen en para meters.
+De sjabloon mag niet groter zijn dan 4 MB. De limiet van 4 MB is van toepassing op de uiteindelijke status van de sjabloon nadat deze is uitgebreid voor resource definities die gebruikmaken van [kopiëren](copy-resources.md) om veel instanties te maken. De uiteindelijke status bevat ook de opgeloste waarden voor variabelen en parameters.
 
 Andere limieten voor de sjabloon zijn:
 

@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 580181aaaea975ee07bcec8108297079c5373b92
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96007406"
 ---
 # <a name="the-team-data-science-process-in-action-using-sql-server"></a>Het proces van de team data Science in actie: met behulp van SQL Server
@@ -83,7 +83,7 @@ In deze zelf studie wordt gebruikgemaakt van de parallelle bulkimportbewerking v
 Uw Azure data Science-omgeving instellen:
 
 1. [Een opslagaccount maken](../../storage/common/storage-account-create.md)
-2. [Een Azure Machine Learning-werkruimte maken](../classic/create-workspace.md)
+2. [Een Azure Machine Learning-werk ruimte maken](../classic/create-workspace.md)
 3. [Richt een Data Science virtual machine](../data-science-virtual-machine/overview.md)in dat een SQL Server en een IPython notebook server biedt.
    
    > [!NOTE]

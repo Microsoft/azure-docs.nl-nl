@@ -10,10 +10,10 @@ ms.date: 08/26/2019
 ms.author: elioda
 ms.custom: mqtt, devx-track-js
 ms.openlocfilehash: 65ced3812072bd2650fc36bbb7a7b0f3f75e0def
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91336782"
 ---
 # <a name="get-started-with-device-twins-nodejs"></a>Aan de slag met apparaatdubbels (Node.js)
@@ -151,7 +151,7 @@ In de volgende sectie maakt u een apparaat-app die de connectiviteits gegevens r
 
 ## <a name="create-the-device-app"></a>De apparaat-app maken
 
-In deze sectie maakt u een Node.js-console-app die als **myDeviceId**verbinding maakt met uw hub, en vervolgens de gerapporteerde eigenschappen van het apparaat bijwerkt met de informatie die is verbonden met een mobiel netwerk.
+In deze sectie maakt u een Node.js-console-app die als **myDeviceId** verbinding maakt met uw hub, en vervolgens de gerapporteerde eigenschappen van het apparaat bijwerkt met de informatie die is verbonden met een mobiel netwerk.
 
 1. Maak een nieuwe lege map met de naam **reportconnectivity**. Maak in de map **reportconnectivity** een nieuw package.jsin het bestand met behulp van de volgende opdracht bij de opdracht prompt. De `--yes` para meter accepteert alle standaard waarden.
 

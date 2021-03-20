@@ -8,10 +8,10 @@ ms.topic: troubleshooting
 ms.date: 11/04/2019
 ms.author: cherylmc
 ms.openlocfilehash: 56a8514fc2531ba0b18925427814e5bfef7d64bf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "84988107"
 ---
 # <a name="troubleshoot-an-azure-ad-authentication-vpn-client"></a>Problemen met een VPN-client voor Azure AD-verificatie oplossen
@@ -24,7 +24,7 @@ Het status logboek weer geven voor fout berichten.
 
 ![logboeken](./media/troubleshoot-ad-vpn-client/1.png)
 
-1. Klik op het pictogram met de pijlen aan de rechter benedenhoek van het client venster om de **status logboeken**weer te geven.
+1. Klik op het pictogram met de pijlen aan de rechter benedenhoek van het client venster om de **status logboeken** weer te geven.
 2. Controleer de logboeken op fouten die mogelijk duiden op het probleem.
 3. Fout berichten worden rood weer gegeven.
 

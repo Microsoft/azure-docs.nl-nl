@@ -4,10 +4,10 @@ description: Meer informatie over het toevoegen van een artefact aan een virtuel
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: b4772755d8077f7a659c4d403961ffaeb9e1d483
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85483887"
 ---
 # <a name="add-an-artifact-to-a-vm"></a>Een artefact toevoegen aan een VM
@@ -21,7 +21,7 @@ Zie het artikel: [aangepaste artefacten maken](devtest-lab-artifact-author.md)vo
 
 ## <a name="use-azure-portal"></a>Azure Portal gebruiken 
 1. Meld u aan bij [Azure Portal](https://go.microsoft.com/fwlink/p/?LinkID=525040).
-1. Selecteer **alle services**en selecteer vervolgens **DevTest Labs** in de lijst.
+1. Selecteer **alle services** en selecteer vervolgens **DevTest Labs** in de lijst.
 1. Selecteer in de lijst met Labs het lab met de virtuele machine waarmee u wilt werken.  
 1. Selecteer **mijn virtuele machines**.
 1. Selecteer de gewenste VM.

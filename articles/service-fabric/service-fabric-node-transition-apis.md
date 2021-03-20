@@ -7,10 +7,10 @@ ms.date: 6/12/2017
 ms.author: lemai
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 9c31040ec13084f9e4b08bbc9a347e4ad44975bf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89021252"
 ---
 # <a name="replacing-the-start-node-and-stop-node-apis-with-the-node-transition-api"></a>Het begin knooppunt vervangen en de knoop punt-Api's stoppen met de knooppunt overgangs-API
@@ -23,7 +23,7 @@ Met de stop knooppunt-API (beheerd: [StopNodeAsync ()][stopnode], Power shell: [
 
 Zoals eerder beschreven, is een *gestopt* service Fabric knoop punt een knoop punt waarvoor het doel is de stop knooppunt-API te gebruiken.  Een *omlaag* knoop punt is een knoop punt dat om een andere reden niet beschikbaar is (bijvoorbeeld als de virtuele machine is uitgeschakeld).  Met de knoop punt-API stoppen maakt het systeem geen informatie beschikbaar om onderscheid te *maken tussen gestopte* knoop punten en *dalende* knoop punten.
 
-Bovendien zijn sommige fouten die door deze Api's worden geretourneerd, niet zo beschrijven als ze zouden kunnen zijn.  Als u bijvoorbeeld de stop knooppunt-API aanroept op een al *gestopt* knoop punt, wordt het fout bericht *InvalidAddress*geretourneerd.  Deze ervaring kan worden verbeterd.
+Bovendien zijn sommige fouten die door deze Api's worden geretourneerd, niet zo beschrijven als ze zouden kunnen zijn.  Als u bijvoorbeeld de stop knooppunt-API aanroept op een al *gestopt* knoop punt, wordt het fout bericht *InvalidAddress* geretourneerd.  Deze ervaring kan worden verbeterd.
 
 De duur waarmee een knoop punt wordt gestopt voor is ' oneindig ' totdat de begin knooppunt-API wordt aangeroepen.  Dit kan problemen veroorzaken en is mogelijk gevoelig voor fouten.  We hebben bijvoorbeeld problemen gezien waarbij een gebruiker de knoop punt-API stoppen op een knoop punt heeft aangeroepen en deze vervolgens verg eten.  Later was het onduidelijk als het knoop punt is *ingedrukt* of *gestopt*.
 
@@ -37,7 +37,7 @@ Deze problemen zijn hierboven in een nieuwe set Api's opgelost.  De nieuwe knoop
 Als de knooppunt overgangs-API geen uitzonde ring genereert wanneer deze wordt aangeroepen, is de asynchrone bewerking door het systeem geaccepteerd en wordt deze uitgevoerd.  Een geslaagde aanroep houdt niet in dat de bewerking nog is voltooid.  Als u informatie wilt ophalen over de huidige status van de bewerking, roept u de voortgang van de knooppunt overgangs-API (beheerd: [GetNodeTransitionProgressAsync ()][gntp]) aan met de GUID die wordt gebruikt bij het aanroepen van de knooppunt overgangs-API voor deze bewerking.  De API voor voortgangs overgang van knoop punten retourneert een NodeTransitionProgress-object.  De eigenschap State van dit object geeft de huidige status van de bewerking aan.  Als de status wordt uitgevoerd, wordt de bewerking uitgevoerd.  Als de bewerking is voltooid, is deze zonder fouten voltooid.  Als er een fout optreedt, is er een probleem opgetreden bij het uitvoeren van de bewerking.  De eigenschap Exception van het resultaat wordt aangegeven wat het probleem is.  Zie https://docs.microsoft.com/dotnet/api/system.fabric.testcommandprogressstate voor meer informatie over de eigenschap State en de sectie ' voor beeld gebruik ' hieronder voor code voorbeelden.
 
 
-**Onderscheid tussen een gestopt knoop punt en een omlaag knoop punt** Als een knoop punt wordt *gestopt* met de API voor knooppunt overgang, wordt met de uitvoer van een knooppunt query (beheerd: [GetNodeListAsync ()][nodequery], Power shell: [Get-ServiceFabricNode][nodequeryps]) aangegeven dat dit knoop punt een *IsStopped* eigenschaps waarde True heeft.  Houd er rekening mee dat dit verschilt van de waarde van de eigenschap *NodeStatus* , die wordt *uitgesteld*.  Als de eigenschap *NodeStatus* de waarde *down*heeft, maar *IsStopped* is ingesteld op False, is het knoop punt niet gestopt met de API van het knoop punt. Dit is om een andere reden niet meer *beschikbaar* .  Als de eigenschap *IsStopped* is ingesteld op True en de eigenschap *NodeStatus* is *uitgeschakeld*, is deze gestopt met de API voor knooppunt overgang.
+**Onderscheid tussen een gestopt knoop punt en een omlaag knoop punt** Als een knoop punt wordt *gestopt* met de API voor knooppunt overgang, wordt met de uitvoer van een knooppunt query (beheerd: [GetNodeListAsync ()][nodequery], Power shell: [Get-ServiceFabricNode][nodequeryps]) aangegeven dat dit knoop punt een *IsStopped* eigenschaps waarde True heeft.  Houd er rekening mee dat dit verschilt van de waarde van de eigenschap *NodeStatus* , die wordt *uitgesteld*.  Als de eigenschap *NodeStatus* de waarde *down* heeft, maar *IsStopped* is ingesteld op False, is het knoop punt niet gestopt met de API van het knoop punt. Dit is om een andere reden niet meer *beschikbaar* .  Als de eigenschap *IsStopped* is ingesteld op True en de eigenschap *NodeStatus* is *uitgeschakeld*, is deze gestopt met de API voor knooppunt overgang.
 
 Als u een *gestopt* knoop punt start met behulp van de knooppunt overgangs-API, wordt dit opnieuw gebruikt als een normaal lid van het cluster.  De uitvoer van de query-API van het knoop punt geeft *IsStopped* weer als onwaar en *NodeStatus* als iets dat niet uitvalt (bijvoorbeeld omhoog).
 

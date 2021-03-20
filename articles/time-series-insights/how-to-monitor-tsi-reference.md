@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 12/10/2020
 ms.custom: lyrana
 ms.openlocfilehash: bfd0d04313f0b519b4013a43e29d88400c73ea31
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100591383"
 ---
 # <a name="monitoring-azure-time-series-insights-data-reference"></a>Azure Time Series Insights gegevens referentie bewaken
@@ -28,7 +28,7 @@ In deze sectie vindt u alle automatisch verzamelde platform gegevens die zijn ve
 
 ### <a name="ingress"></a>Inkomend verkeer
  
-|Metrisch|Weergave naam voor metrische gegevens|Eenheid|Aggregatietype|Description|
+|Metrisch|Weergave naam voor metrische gegevens|Eenheid|Aggregatietype|Beschrijving|
 |---|---|---|---|---|
 |IngressReceivedBytes|Ontvangen bytes van binnenkomend verkeer|Bytes|Totaal|Aantal gelezen bytes van de gebeurtenis bron|
 |IngressReceivedInvalidMessages|Ongeldige berichten ontvangen|Aantal|Totaal|Aantal ongeldige berichten gelezen uit de gebeurtenis bron|
@@ -40,7 +40,7 @@ In deze sectie vindt u alle automatisch verzamelde platform gegevens die zijn ve
 
 ### <a name="storage"></a>Storage
 
-|Metrisch|Weergave naam voor metrische gegevens|Eenheid|Aggregatietype|Description|
+|Metrisch|Weergave naam voor metrische gegevens|Eenheid|Aggregatietype|Beschrijving|
 |---|---|---|---|---|
 |WarmStorageMaxProperties|Maximale eigenschappen van warme opslag|Count|Maximum|Maximum aantal eigenschappen dat is toegestaan door de omgeving voor de SKU van S1/S2 en het maximum aantal eigenschappen dat is toegestaan door de warme Store voor PAYG SKU|
 |WarmStorageUsedProperties|Eigenschappen voor warme opslag gebruikt |Count|Maximum|Aantal eigenschappen dat wordt gebruikt door de omgeving voor de SKU van S1/S2 en het aantal eigenschappen dat door warme Store voor PAYG SKU wordt gebruikt|

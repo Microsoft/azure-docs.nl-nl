@@ -16,10 +16,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a6df1347eab57a6971fe2e39c0a55869c8f23939
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91317484"
 ---
 # <a name="troubleshoot-an-attribute-not-synchronizing-in-azure-ad-connect"></a>Problemen oplossen met een kenmerk dat niet wordt gesynchroniseerd in Azure AD Connect
@@ -57,11 +57,11 @@ Voordat u problemen met het synchroniseren van kenmerken kunt onderzoeken, moet 
 
   ![Synchronization Service Manager starten](media/tshoot-connect-attribute-not-syncing/tshoot-connect-attribute-not-syncing/startmenu.png)
 
-* Selecteer op de **Synchronization Service Manager**de **omgekeerde zoek opdracht**, selecteer **bereik per object type**, selecteer het object met een kenmerk en klik op de knop **zoeken** .
+* Selecteer op de **Synchronization Service Manager** de **omgekeerde zoek opdracht**, selecteer **bereik per object type**, selecteer het object met een kenmerk en klik op de knop **zoeken** .
 
   ![Omgekeerde zoek opdracht](media/tshoot-connect-attribute-not-syncing/tshoot-connect-attribute-not-syncing/mvsearch.png)
 
-* Dubbel klik op het object in de **omgekeerde** zoek opdracht om alle kenmerken ervan weer te geven. U kunt op het tabblad **connectors** klikken om het overeenkomende object in alle **connector ruimten**te bekijken.
+* Dubbel klik op het object in de **omgekeerde** zoek opdracht om alle kenmerken ervan weer te geven. U kunt op het tabblad **connectors** klikken om het overeenkomende object in alle **connector ruimten** te bekijken.
 
   ![Omgekeerde object connectors](media/tshoot-connect-attribute-not-syncing/tshoot-connect-attribute-not-syncing/mvattributes.png)
 
@@ -69,7 +69,7 @@ Voordat u problemen met het synchroniseren van kenmerken kunt onderzoeken, moet 
 
   ![Scherm opname van het scherm Eigenschappen van connector ruimte-object met de knop Preview gemarkeerd.](media/tshoot-connect-attribute-not-syncing/tshoot-connect-attribute-not-syncing/csattributes.png)
 
-* Klik nu op de **kenmerk stroom importeren**. Hiermee wordt de stroom van kenmerken van **Active Directory-Connector ruimte** naar de **omgekeerde tekst**weer gegeven. Kolom **synchronisatie regel** toont welke **synchronisatie regel** aan dat kenmerk is bijgedragen. In de kolom **gegevens bron** worden de kenmerken van de **connector ruimte**weer gegeven. De eigenschaps kolom van het **kenmerk autoverse** toont u de kenmerken in de **tekst**. U kunt zoeken naar het kenmerk dat hier niet wordt gesynchroniseerd. Als u het kenmerk hier niet kunt vinden, wordt dit niet toegewezen en moet u nieuwe aangepaste **synchronisatie regel** maken om het kenmerk toe te wijzen.
+* Klik nu op de **kenmerk stroom importeren**. Hiermee wordt de stroom van kenmerken van **Active Directory-Connector ruimte** naar de **omgekeerde tekst** weer gegeven. Kolom **synchronisatie regel** toont welke **synchronisatie regel** aan dat kenmerk is bijgedragen. In de kolom **gegevens bron** worden de kenmerken van de **connector ruimte** weer gegeven. De eigenschaps kolom van het **kenmerk autoverse** toont u de kenmerken in de **tekst**. U kunt zoeken naar het kenmerk dat hier niet wordt gesynchroniseerd. Als u het kenmerk hier niet kunt vinden, wordt dit niet toegewezen en moet u nieuwe aangepaste **synchronisatie regel** maken om het kenmerk toe te wijzen.
 
   ![Kenmerken van connector ruimte](media/tshoot-connect-attribute-not-syncing/tshoot-connect-attribute-not-syncing/cstomvattributeflow.png)
 

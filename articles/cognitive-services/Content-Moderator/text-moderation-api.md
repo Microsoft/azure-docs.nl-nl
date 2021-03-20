@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 05/18/2020
 ms.author: pafarley
 ms.openlocfilehash: ae49a8738ba711ac6c77f2e299852ad61f70be56
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92912902"
 ---
 # <a name="learn-text-moderation-concepts"></a>Concepten van tekst toezicht leren
@@ -47,7 +47,7 @@ Als de API in een van de [ondersteunde talen](./language-support.md)ongepaste te
 ```
 
 > [!NOTE]
-> Voor de para meter **taal** wijst `eng` of laat u het leeg om de door de machine ondersteunde **classificatie** te zien (preview-functie). **Deze functie ondersteunt alleen Engels** .
+> Voor de para meter **taal** wijst `eng` of laat u het leeg om de door de machine ondersteunde **classificatie** te zien (preview-functie). **Deze functie ondersteunt alleen Engels**.
 >
 > Gebruik de [ISO 639-3-code](http://www-01.sil.org/iso639-3/codes.asp) **van de** ondersteunde talen die in dit artikel worden vermeld, of laat het leeg.
 
@@ -86,7 +86,7 @@ De functie persoonlijke gegevens detecteert de mogelijke aanwezigheid van deze g
 
 - E-mailadres
 - Post adres van de Verenigde Staten
-- Het IP-adres
+- IP-adres
 - Telefoon nummer VS
 
 In het volgende voor beeld ziet u een voor beeld van een antwoord:
@@ -142,7 +142,7 @@ Als u voor de automatische correctie vraagt, bevat het antwoord de gecorrigeerde
 De standaard instelling is dat de algemene lijst met termen prima werkt in de meeste gevallen. u kunt het beste een scherm maken met de termen die specifiek zijn voor uw bedrijfs behoeften. U kunt bijvoorbeeld de naam van een concurrerend merk uit berichten van gebruikers filteren.
 
 > [!NOTE]
-> Er is een maximumlimiet van **5 terminologielijsten** waarbij elke lijst **niet meer dan 10.000 termen mag bevatten** .
+> Er is een maximumlimiet van **5 terminologielijsten** waarbij elke lijst **niet meer dan 10.000 termen mag bevatten**.
 >
 
 In het volgende voor beeld ziet u de overeenkomende lijst-ID:

@@ -4,10 +4,10 @@ description: Informatie over het oplossen van problemen die zich voordoen bij he
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: a89b675a1b3bf134b98e09c7278f0eccb594c325
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85483190"
 ---
 # <a name="troubleshoot-issues-when-applying-artifacts-in-an-azure-devtest-labs-virtual-machine"></a>Problemen oplossen bij het Toep assen van artefacten in een Azure DevTest Labs virtuele machine
@@ -22,9 +22,9 @@ Als u op elk gewenst moment meer hulp nodig hebt, kunt u contact opnemen met de 
 Controleer of de virtuele machine wordt uitgevoerd. DevTest Labs vereist dat de VM wordt uitgevoerd en dat de [Microsoft Azure virtuele machine agent (VM-agent)](../virtual-machines/extensions/agent-windows.md) is geïnstalleerd en gereed is.
 
 > [!TIP]
-> Ga in het **Azure Portal**naar de pagina **artefacten beheren** voor de virtuele machine om te zien of de VM gereed is voor het Toep assen van artefacten. Er wordt een bericht aan de bovenkant van de pagina weer gegeven. 
+> Ga in het **Azure Portal** naar de pagina **artefacten beheren** voor de virtuele machine om te zien of de VM gereed is voor het Toep assen van artefacten. Er wordt een bericht aan de bovenkant van de pagina weer gegeven. 
 > 
-> Inspecteer met behulp van **Azure PowerShell**de vlag **canApplyArtifacts**, die alleen wordt geretourneerd wanneer u een Get-bewerking uitvouwt. Raadpleeg de volgende voorbeeld opdracht:
+> Inspecteer met behulp van **Azure PowerShell** de vlag **canApplyArtifacts**, die alleen wordt geretourneerd wanneer u een Get-bewerking uitvouwt. Raadpleeg de volgende voorbeeld opdracht:
 
 ```powershell
 Select-AzSubscription -SubscriptionId $SubscriptionId | Out-Null

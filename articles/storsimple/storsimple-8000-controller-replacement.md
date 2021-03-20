@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 06/05/2017
 ms.author: alkohli
 ms.openlocfilehash: 9d8b75c48da2bb13d843258ead378d3e849da951
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85514072"
 ---
 # <a name="replace-a-controller-module-on-your-storsimple-device"></a>Een controller module op uw StorSimple-apparaat vervangen
@@ -78,7 +78,7 @@ Voer de volgende stappen uit als een van de controllers in uw Microsoft Azure St
 
 
 #### <a name="to-remove-a-single-failed-controller-module"></a>Eén defecte controller module verwijderen
-1. Ga in het Azure Portal naar de StorSimple Apparaatbeheer-service, klik op **apparaten**en klik vervolgens op de naam van het apparaat dat u wilt bewaken.
+1. Ga in het Azure Portal naar de StorSimple Apparaatbeheer-service, klik op **apparaten** en klik vervolgens op de naam van het apparaat dat u wilt bewaken.
 2. Ga naar **Monitor > hardware Health**. De status van controller 0 of controller 1 moet rood zijn, wat duidt op een storing.
    
    > [!NOTE]
@@ -195,7 +195,7 @@ Gebruik de volgende procedure om een door de fabriek geleverde controller module
    > [!NOTE]
    > Het kan tot vijf minuten duren voor de controller en de LED om te activeren.
   
-5. Als u wilt controleren of de vervanging is geslaagd, gaat u in het Azure Portal naar uw apparaat en vervolgens navigeert u naar de status van de hardware **controleren**en controleert u of de  >  **Hardware health**controller 0 en controller 1 in orde zijn (status is groen).
+5. Als u wilt controleren of de vervanging is geslaagd, gaat u in het Azure Portal naar uw apparaat en vervolgens navigeert u naar de status van de hardware **controleren** en controleert u of de  >  controller 0 en controller 1 in orde zijn (status is groen).
 
 ## <a name="identify-the-active-controller-on-your-device"></a>De actieve controller op het apparaat identificeren
 Er zijn veel situaties, zoals het voor de eerste keer registreren van apparaten of het vervangen van de controller, waarvoor u de actieve controller op een StorSimple-apparaat moet zoeken. De actieve controller verwerkt alle firmware-en netwerk bewerkingen van de schijf. U kunt een van de volgende methoden gebruiken om de actieve controller te identificeren:
@@ -207,7 +207,7 @@ Er zijn veel situaties, zoals het voor de eerste keer registreren van apparaten 
 Elk van deze procedures wordt hierna beschreven.
 
 ### <a name="use-the-azure-portal-to-identify-the-active-controller"></a>De Azure Portal gebruiken om de actieve controller te identificeren
-Ga in het Azure Portal naar het apparaat en **Controleer**vervolgens de status van de  >  **Hardware**en schuif naar het gedeelte **controllers** . Hier kunt u controleren welke controller actief is.
+Ga in het Azure Portal naar het apparaat en **Controleer** vervolgens de status van de  >  **Hardware** en schuif naar het gedeelte **controllers** . Hier kunt u controleren welke controller actief is.
 
 ![Actieve controller in Azure Portal identificeren](./media/storsimple-controller-replacement/IC752072.png)
 

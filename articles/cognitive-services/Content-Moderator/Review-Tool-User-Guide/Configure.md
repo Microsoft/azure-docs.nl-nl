@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/15/2019
 ms.author: pafarley
 ms.openlocfilehash: 8812fd1e6c1efb2aa44c77573bc4b8f1c099834d
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92912018"
 ---
 # <a name="configure-the-review-tool"></a>Het beoordelingsprogramma configureren
@@ -35,7 +35,7 @@ In deze sectie wordt uitgelegd hoe u subteamsen maakt en snel Recensies toewijst
 
 ### <a name="create-a-subteam"></a>Een subteam maken
 
-Ga naar de sectie **subteams** en klik op **subteam toevoegen** . Voer de naam van uw subteam in het dialoog venster in en klik op **Opslaan** .
+Ga naar de sectie **subteams** en klik op **subteam toevoegen**. Voer de naam van uw subteam in het dialoog venster in en klik op **Opslaan**.
 
 ![Naam van subteam](images/1-Teams-2.PNG)
 
@@ -60,13 +60,13 @@ Als u inhoud aan een subteam wilt toewijzen, klikt u op het beletsel teken in de
 
 ### <a name="switch-between-subteams"></a>Scha kelen tussen subteams
 
-Als u lid bent van meer dan één subteam, kunt u scha kelen tussen deze subteams om te wijzigen welke inhouds Beoordelingen voor u worden weer gegeven. Op het tabblad **controleren** selecteert u de vervolg keuzelijst met de naam **standaard** en selecteert u **subteam kiezen** . U kunt de inhouds Beoordelingen voor verschillende subteams weer geven, maar alleen degenen waarvan u lid bent.
+Als u lid bent van meer dan één subteam, kunt u scha kelen tussen deze subteams om te wijzigen welke inhouds Beoordelingen voor u worden weer gegeven. Op het tabblad **controleren** selecteert u de vervolg keuzelijst met de naam **standaard** en selecteert u **subteam kiezen**. U kunt de inhouds Beoordelingen voor verschillende subteams weer geven, maar alleen degenen waarvan u lid bent.
 
 ![Scha kelen tussen subteams](images/3-review-image-subteam-2.png)
 
 ## <a name="tags"></a>Tags
 
-Op het tabblad **labels** kunt u naast de twee standaard markeringen &mdash; **isadult** ( **a** ) en **isracy** ( **r** ) aangepaste toezicht Tags definiëren. Wanneer u een aangepaste tag maakt, wordt deze beschikbaar in beoordelingen naast de standaard tags. U kunt wijzigen welke tags worden weer gegeven in beoordelingen door de instellingen voor zicht baarheid van hun voor beeld te scha kelen.
+Op het tabblad **labels** kunt u naast de twee standaard markeringen &mdash; **isadult** (**a**) en **isracy** (**r**) aangepaste toezicht Tags definiëren. Wanneer u een aangepaste tag maakt, wordt deze beschikbaar in beoordelingen naast de standaard tags. U kunt wijzigen welke tags worden weer gegeven in beoordelingen door de instellingen voor zicht baarheid van hun voor beeld te scha kelen.
 
 ![De weer gave Tags, inclusief de selectie vakjes ' is zichtbaar '](images/tags-4-disable.png)
 
@@ -74,9 +74,9 @@ Op het tabblad **labels** kunt u naast de twee standaard markeringen &mdash; **i
 
 Als u een nieuwe tag wilt maken, moet u een korte code, naam en beschrijving in de desbetreffende velden invoeren.
 
-- **Korte code** : Voer een code van twee letters in voor de tag. Voor beeld: **CB**
-- **Naam** : Voer een korte en beschrijvende label naam in in kleine letters zonder spaties. Voor beeld: **isbullying** .
-- **Beschrijving** : (optioneel) Voer een beschrijving in van het type inhoud dat door de tag wordt doel. Voor beeld: **afbeeldingen of instanties van Cyber Bullying** .
+- **Korte code**: Voer een code van twee letters in voor de tag. Voor beeld: **CB**
+- **Naam**: Voer een korte en beschrijvende label naam in in kleine letters zonder spaties. Voor beeld: **isbullying**.
+- **Beschrijving**: (optioneel) Voer een beschrijving in van het type inhoud dat door de tag wordt doel. Voor beeld: **afbeeldingen of instanties van Cyber Bullying**.
 
 Klik op **toevoegen** om een tag toe te voegen en klik op **Opslaan** wanneer u klaar bent met het maken van tags.
 
@@ -86,7 +86,7 @@ Klik op **toevoegen** om een tag toe te voegen en klik op **Opslaan** wanneer u 
 
 U kunt aangepaste tags verwijderen door het prullenbak pictogram naast hun vermeldingen in de lijst Tags te selecteren, maar u kunt de standaard tags niet verwijderen.
 
-## <a name="connectors"></a>Connectors
+## <a name="connectors"></a>Connectoren
 
 Op het tabblad **connectors** kunt u uw connectors beheren. Dit zijn service-specifieke invoeg toepassingen die inhoud op verschillende manieren kunnen verwerken als onderdeel van [werk stromen](../review-api.md#workflows)voor inhoud.
 

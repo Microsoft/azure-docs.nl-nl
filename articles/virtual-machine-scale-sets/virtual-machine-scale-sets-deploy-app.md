@@ -10,10 +10,10 @@ ms.date: 05/29/2018
 ms.reviewer: avverma
 ms.custom: avverma, devx-track-azurepowershell
 ms.openlocfilehash: e7a4ddaf74df6e04c1597b9c106cd458ddebac55
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89079588"
 ---
 # <a name="deploy-your-application-on-virtual-machine-scale-sets"></a>Uw toepassing implementeren op virtuele-machineschaalsets
@@ -82,7 +82,7 @@ Update-AzVmss `
     -VirtualMachineScaleSet $vmss
 ```
 
-Als het upgrade beleid voor uw schaalset *hand matig*is, werkt u uw VM-exemplaren bij met [Update-AzVmssInstance](/powershell/module/az.compute/update-azvmssinstance). Met deze cmdlet wordt de bijgewerkte configuratie van de schaalset toegepast op de VM-exemplaren en wordt uw toepassing geïnstalleerd.
+Als het upgrade beleid voor uw schaalset *hand matig* is, werkt u uw VM-exemplaren bij met [Update-AzVmssInstance](/powershell/module/az.compute/update-azvmssinstance). Met deze cmdlet wordt de bijgewerkte configuratie van de schaalset toegepast op de VM-exemplaren en wordt uw toepassing geïnstalleerd.
 
 
 ## <a name="install-an-app-to-a-linux-vm-with-cloud-init"></a>Een app installeren op een virtuele Linux-machine met Cloud-init

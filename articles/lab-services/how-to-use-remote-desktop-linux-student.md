@@ -4,10 +4,10 @@ description: Meer informatie over het gebruik van extern bureau blad voor virtue
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: d13868477ff2e3378d87d7785789a7498ed17e59
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85443414"
 ---
 # <a name="connect-to-linux-virtual-machines-in-a-classroom-lab-of-azure-lab-services"></a>Verbinding maken met virtuele Linux-machines in een leslokaal Lab van Azure Lab Services
@@ -64,7 +64,7 @@ Studenten moeten erachter komen uit hun docent welke Linux grafische desktop omg
 
 1. Volg de instructies in de [eerste sectie](how-to-use-remote-desktop-linux-student.md#connect-to-the-student-vm-using-ssh) om de SSH-verbindings gegevens voor uw virtuele machine te kopiëren.  U hebt deze informatie nodig om verbinding te maken met behulp van de X2Go-client.
 
-1. Zodra u de gegevens van de SSH-verbinding hebt, opent u de X2Go-client en selecteert u **sessie**  >  **nieuwe**sessie.
+1. Zodra u de gegevens van de SSH-verbinding hebt, opent u de X2Go-client en selecteert u **sessie**  >  **nieuwe** sessie.
    ![X2Go nieuwe sessie maken](./media/how-to-use-classroom-lab/x2go-new-session.png)
 
 1. Voer de waarden in het deel venster **sessie voorkeuren** in op basis van uw SSH-verbindings gegevens.  Zo ziet uw verbindings informatie er ongeveer als volgt uit:

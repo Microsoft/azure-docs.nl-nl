@@ -4,10 +4,10 @@ description: In dit artikel wordt uitgelegd hoe u sequentiëren en volg orde (me
 ms.topic: article
 ms.date: 06/23/2020
 ms.openlocfilehash: fdb18802e576ad114fd3f783d5efd7bb826a5f94
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85341167"
 ---
 # <a name="message-sequencing-and-timestamps"></a>Berichtvolgorde en -timestamps
@@ -30,9 +30,9 @@ U kunt berichten verzenden naar een wachtrij of onderwerp voor vertraagde verwer
 
 Geplande berichten worden niet in de wachtrij realiseren tot de gedefinieerde tijd voor Intijd. De geplande berichten kunnen vóór die tijd worden geannuleerd. Met de annulering wordt het bericht verwijderd.
 
-U kunt berichten plannen door de eigenschap [ScheduledEnqueueTimeUtc](/dotnet/api/microsoft.azure.servicebus.message.scheduledenqueuetimeutc) in te stellen wanneer u een bericht verzendt via het gewone verzend traject of expliciet met de [ScheduleMessageAsync](/dotnet/api/microsoft.azure.servicebus.queueclient.schedulemessageasync#Microsoft_Azure_ServiceBus_QueueClient_ScheduleMessageAsync_Microsoft_Azure_ServiceBus_Message_System_DateTimeOffset_) -API. De laatste retourneert onmiddellijk de **SequenceNumber**van het geplande bericht, dat u later kunt gebruiken om het geplande bericht zo nodig te annuleren. Geplande berichten en hun Volg nummers kunnen ook worden gedetecteerd met behulp van [bericht bladeren](message-browsing.md).
+U kunt berichten plannen door de eigenschap [ScheduledEnqueueTimeUtc](/dotnet/api/microsoft.azure.servicebus.message.scheduledenqueuetimeutc) in te stellen wanneer u een bericht verzendt via het gewone verzend traject of expliciet met de [ScheduleMessageAsync](/dotnet/api/microsoft.azure.servicebus.queueclient.schedulemessageasync#Microsoft_Azure_ServiceBus_QueueClient_ScheduleMessageAsync_Microsoft_Azure_ServiceBus_Message_System_DateTimeOffset_) -API. De laatste retourneert onmiddellijk de **SequenceNumber** van het geplande bericht, dat u later kunt gebruiken om het geplande bericht zo nodig te annuleren. Geplande berichten en hun Volg nummers kunnen ook worden gedetecteerd met behulp van [bericht bladeren](message-browsing.md).
 
-De **SequenceNumber** voor een gepland bericht is alleen geldig wanneer het bericht deze status heeft. Wanneer het bericht wordt overgezet naar de actieve status, wordt het bericht toegevoegd aan de wachtrij, alsof het is in de huidige chat opgenomen, waarbij een nieuwe **SequenceNumber**is toegewezen.
+De **SequenceNumber** voor een gepland bericht is alleen geldig wanneer het bericht deze status heeft. Wanneer het bericht wordt overgezet naar de actieve status, wordt het bericht toegevoegd aan de wachtrij, alsof het is in de huidige chat opgenomen, waarbij een nieuwe **SequenceNumber** is toegewezen.
 
 Omdat de functie verankerd is voor afzonderlijke berichten en berichten slechts eenmaal in de wachtrij kunnen worden geplaatst, ondersteunt Service Bus geen terugkerende schema's voor berichten.
 

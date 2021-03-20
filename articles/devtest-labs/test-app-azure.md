@@ -4,10 +4,10 @@ description: Meer informatie over het maken van een bestands share in een lab en
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: b2dbbf349da4e352fe20a22db03cc9063d801990
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87282242"
 ---
 # <a name="test-your-app-in-azure"></a>Uw app in Azure testen 
@@ -18,7 +18,7 @@ Dit artikel bevat stappen voor het testen van uw toepassing in azure met behulp 
 ## <a name="prerequisites"></a>Vereisten 
 1. [Maak een Azure-abonnement](https://azure.microsoft.com/free/) als u er nog geen hebt en meld u aan [Azure Portal](https://portal.azure.com).
 2. Volg de instructies in [dit artikel](devtest-lab-create-lab.md) om een lab te maken met behulp van Azure DevTest Labs. Vastmaken aan uw dash board, zodat u het eenvoudig kunt terugvinden wanneer u zich aanmeldt. Met Azure DevTest Labs kunt u snel resources maken in azure door verspilling en kosten te beperken. Zie [overzicht](devtest-lab-overview.md)voor meer informatie over DevTest Labs. 
-3. Maak een Azure Storage-account in de resource groep van het lab door de instructies in het artikel [een opslag account maken](../storage/common/storage-account-create.md) te volgen. Selecteer op de pagina **opslag account maken** de optie **bestaande gebruiken** voor **resource groep**en selecteer de **resource groep van de test omgeving**. 
+3. Maak een Azure Storage-account in de resource groep van het lab door de instructies in het artikel [een opslag account maken](../storage/common/storage-account-create.md) te volgen. Selecteer op de pagina **opslag account maken** de optie **bestaande gebruiken** voor **resource groep** en selecteer de **resource groep van de test omgeving**. 
 4. Maak een bestands share in uw Azure-opslag met behulp van de instructies in het artikel [een bestands share maken in azure files](../storage/files/storage-how-to-create-file-share.md) . 
 
 ## <a name="mount-the-file-share-on-your-local-machine"></a>De bestands share op uw lokale machine koppelen
@@ -37,10 +37,10 @@ Dit artikel bevat stappen voor het testen van uw toepassing in azure met behulp 
 3. Selecteer op de pagina **DevTest Lab** voor uw Lab **+ toevoegen** op de werk balk. 
 
     ![Knop toevoegen voor het lab](media/test-app-in-azure/add-button-in-lab.png)
-4. Zoek op de pagina **een basis kiezen** naar **smalldisk**en selecteer **[Smalldisk] Windows Server 2016 Data Center**. 
+4. Zoek op de pagina **een basis kiezen** naar **smalldisk** en selecteer **[Smalldisk] Windows Server 2016 Data Center**. 
 
     ![Small disk Windows Server kiezen](media/test-app-in-azure/choose-small-disk-windows-server.png)
-5. Geef op de pagina **virtuele machine** de **naam van de virtuele machine**, de **gebruikers naam**, het **wacht woord**op en selecteer **maken**.    
+5. Geef op de pagina **virtuele machine** de **naam van de virtuele machine**, de **gebruikers naam**, het **wacht woord** op en selecteer **maken**.    
     
     ![Pagina virtuele machine maken](media/test-app-in-azure/create-virtual-machine-page.png)    
 
@@ -57,8 +57,8 @@ In deze sectie publiceert u uw app vanuit Visual Studio naar een test-VM in de C
 
 1. Een desktop-of webtoepassing maken met behulp van Visual Studio 2019.
 2. Bouw uw app.
-3. Als u uw app wilt publiceren, klikt u met de rechter muisknop op het project in de **Solution Explorer**en selecteert u **publiceren**. 
-4. Voer in de **wizard Publiceren**het **station** in dat is toegewezen aan de bestands share.
+3. Als u uw app wilt publiceren, klikt u met de rechter muisknop op het project in de **Solution Explorer** en selecteert u **publiceren**. 
+4. Voer in de **wizard Publiceren** het **station** in dat is toegewezen aan de bestands share.
 
     **Bureau blad-app:**
 
@@ -78,7 +78,7 @@ In deze sectie publiceert u uw app vanuit Visual Studio naar een test-VM in de C
 3. Selecteer **Verbinding maken**.
 
     ![Pagina virtuele machine](media/test-app-in-azure/virtual-machine-page.png)
-4. Open in de virtuele machine de **bestanden Verkenner**en selecteer **deze PC** om uw bestands share te vinden.
+4. Open in de virtuele machine de **bestanden Verkenner** en selecteer **deze PC** om uw bestands share te vinden.
 
     ![Share op virtuele machine zoeken](media/test-app-in-azure/find-share-on-vm.png)
 

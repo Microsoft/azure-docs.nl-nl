@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 09/26/2020
 ms.openlocfilehash: 2d88069f33995bdbe9dd479afe9a4e72ab9939b6
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93420662"
 ---
 # <a name="train-pytorch-model"></a>Pytorch-model trainen
@@ -47,7 +47,7 @@ In dit artikel wordt beschreven hoe u de **Pytorch-model module Train** in azure
 
 7.  Voor **wille keurig zaad** typt u optioneel een geheel getal dat moet worden gebruikt als seed. Het gebruik van een Seed wordt aanbevolen als u de reproduceer baarheid van het experiment over uitvoeringen wilt garanderen.
 
-8.  Voor **geduld** , geeft u op hoeveel epoche er moet worden getraind als het validatie verlies niet opeenvolgend afneemt. standaard 3.
+8.  Voor **geduld**, geeft u op hoeveel epoche er moet worden getraind als het validatie verlies niet opeenvolgend afneemt. standaard 3.
 
 9.  Verzend de pijp lijn. Als uw gegevensset een grotere grootte heeft, duurt het enige tijd en wordt de GPU-berekening aanbevolen.
 

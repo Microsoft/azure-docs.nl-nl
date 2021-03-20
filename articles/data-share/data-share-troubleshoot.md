@@ -8,10 +8,10 @@ ms.service: data-share
 ms.topic: troubleshooting
 ms.date: 12/16/2020
 ms.openlocfilehash: 3aa1c0b8579bd37d2bb51cbde70997131c696813
-ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97964504"
 ---
 # <a name="troubleshoot-common-problems-in-azure-data-share"></a>Veelvoorkomende problemen in azure data share oplossen 
@@ -50,7 +50,7 @@ De volgende fouten kunnen worden weer gegeven wanneer u een nieuwe share maakt, 
 * U hebt niet de juiste machtigingen voor x.
 * Er kunnen geen schrijf machtigingen voor het Azure data share-account worden toegevoegd aan een of meer van de geselecteerde resources.
 
-U ziet mogelijk een van deze fouten als u onvoldoende machtigingen hebt voor de Azure-gegevens opslag. Zie voor meer informatie [rollen en vereisten](concepts-roles-permissions.md). 
+U ziet mogelijk een van deze fouten als u onvoldoende machtigingen hebt voor de Azure-gegevens opslag. Zie [Rollen en vereisten](concepts-roles-permissions.md) voor meer informatie. 
 
 U hebt de schrijf machtiging nodig om gegevens te delen of te ontvangen van een Azure-gegevens archief. Deze machtiging maakt meestal deel uit van de rol Inzender. 
 
@@ -65,7 +65,7 @@ Een moment opname kan om verschillende redenen mislukken. Open een gedetailleerd
 
 Moment opnamen mislukken meestal om de volgende redenen:
 
-* Gegevens share heeft geen machtiging voor het lezen van het brongegevens archief of het schrijven naar het doel gegevens archief. Zie voor meer informatie [rollen en vereisten](concepts-roles-permissions.md). Als u voor het eerst een moment opname maakt, kan het zijn dat de gegevens share bron enkele minuten nodig heeft om toegang te krijgen tot de Azure-gegevens opslag. Probeer het na een paar minuten opnieuw.
+* Gegevens share heeft geen machtiging voor het lezen van het brongegevens archief of het schrijven naar het doel gegevens archief. Zie [Rollen en vereisten](concepts-roles-permissions.md) voor meer informatie. Als u voor het eerst een moment opname maakt, kan het zijn dat de gegevens share bron enkele minuten nodig heeft om toegang te krijgen tot de Azure-gegevens opslag. Probeer het na een paar minuten opnieuw.
 * De verbinding van de gegevens share met het bron gegevens archief of het doel gegevens archief wordt geblokkeerd door een firewall.
 * Er is een gedeelde gegevensset, brongegevens opslag of doel gegevens opslag verwijderd.
 

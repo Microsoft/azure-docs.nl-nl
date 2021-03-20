@@ -6,10 +6,10 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 04/01/2020
 ms.openlocfilehash: 82f228d5e6f801539c549e16faea371782ad4b59
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91316440"
 ---
 # <a name="concepts-for-enabling-active-learning-by-reviewing-endpoint-utterances"></a>Concepten voor het inschakelen van actief leren door eind punt uitingen te controleren
@@ -24,7 +24,7 @@ LUIS voegt uitingen toe aan de beoordelings lijst wanneer de bovenste ontsteking
 ## <a name="single-pool-for-utterances-per-app"></a>Eén groep voor uitingen per app
 De lijst uitingen van het **controle punt** wordt niet gewijzigd op basis van de versie. Er is één groep uitingen om te beoordelen, ongeacht welke versie van de uiting u actief bewerkt of welke versie van de app wordt gepubliceerd op het eindpunt.
 
-In de [rest API](https://westus.dev.cognitive.microsoft.com/docs/services/luis-programmatic-apis-v3-0-preview/operations/58b6f32139e2bb139ce823c9)is de versie naam vereist en in de toepassing opgenomen, maar deze wordt niet meer gebruikt dan de validatie. De beoordelings uitingen zijn van toepassing op een hele toepassing. Als u uitingen uit de ene _versie_verwijdert, worden alle versies beïnvloed.
+In de [rest API](https://westus.dev.cognitive.microsoft.com/docs/services/luis-programmatic-apis-v3-0-preview/operations/58b6f32139e2bb139ce823c9)is de versie naam vereist en in de toepassing opgenomen, maar deze wordt niet meer gebruikt dan de validatie. De beoordelings uitingen zijn van toepassing op een hele toepassing. Als u uitingen uit de ene _versie_ verwijdert, worden alle versies beïnvloed.
 
 ## <a name="where-are-the-utterances-from"></a>Waar bevinden de uitingen van
 Eind gebruikers van query's op het HTTP-eind punt van de toepassing worden uitingen. Als uw app niet is gepubliceerd of nog geen treffers heeft ontvangen, hebt u geen uitingen om te controleren. Als er geen eindpunt treffers zijn ontvangen voor een specifieke intentie of entiteit, hebt u geen uitingen om deze te controleren.

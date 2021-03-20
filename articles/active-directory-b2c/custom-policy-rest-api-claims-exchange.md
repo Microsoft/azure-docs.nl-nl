@@ -11,10 +11,10 @@ ms.date: 10/15/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 84053df34ffda0d4686ad80a9e5f3af00ac53d72
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94949488"
 ---
 # <a name="walkthrough-add-rest-api-claims-exchanges-to-custom-policies-in-azure-active-directory-b2c"></a>Walkthrough: REST API claims-uitwisselingen toevoegen aan aangepaste beleids regels in Azure Active Directory B2C
@@ -127,7 +127,7 @@ De opmerkingen hierboven `AuthenticationType` en `AllowInsecureAuthInProduction`
 
 ## <a name="add-an-orchestration-step"></a>Een Orchestration-stap toevoegen
 
-[Gebruikers ritten](userjourneys.md) geven expliciete paden op waarmee een relying party toepassing de gewenste claims voor een gebruiker kan verkrijgen. Een gebruikers traject wordt weer gegeven als een indelings reeks die moet worden gevolgd door een geslaagde trans actie. U kunt Orchestration-stappen toevoegen of aftrekken. In dit geval voegt u een nieuwe Orchestration-stap toe die wordt gebruikt om de gegevens die aan de toepassing worden verstrekt, te verbeteren nadat de gebruiker zich heeft aangemeld of zich aanmeldt via de REST API aanroep.
+Met [gebruikersbelevingen](userjourneys.md) worden expliciete paden opgegeven waarmee een op claims gebaseerde toepassing de gewenste claims voor een gebruiker kan verkrijgen. Een gebruikers traject wordt weer gegeven als een indelings reeks die moet worden gevolgd door een geslaagde trans actie. U kunt Orchestration-stappen toevoegen of aftrekken. In dit geval voegt u een nieuwe Orchestration-stap toe die wordt gebruikt om de gegevens die aan de toepassing worden verstrekt, te verbeteren nadat de gebruiker zich heeft aangemeld of zich aanmeldt via de REST API aanroep.
 
 1. Open het basis bestand van uw beleid. Bijvoorbeeld <em>`SocialAndLocalAccounts/`**`TrustFrameworkBase.xml`**</em> .
 1. Zoek het- `<UserJourneys>` element. Kopieer het hele element en verwijder het vervolgens.

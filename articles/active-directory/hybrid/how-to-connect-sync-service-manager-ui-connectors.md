@@ -18,10 +18,10 @@ ms.author: billmath
 ms.custom: H1Hack27Feb2017
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d215c2e200308664f24daa28a0054c8f1bcfc09c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91319874"
 ---
 # <a name="using-connectors-with-the-azure-ad-connect-sync-service-manager"></a>Connectors gebruiken met de Azure AD Connect Sync Service Manager
@@ -65,11 +65,11 @@ De ruimte van de Zoek connector is handig om objecten te vinden en problemen met
 
 ![Scherm afbeelding met het venster Zoek connector ruimte.](./media/how-to-connect-sync-service-manager-ui-connectors/cssearch.png)
 
-Begin door een **bereik**te selecteren. U kunt zoeken op basis van gegevens (RDN, DN, anker, substructuur) of status van het object (alle andere opties).  
+Begin door een **bereik** te selecteren. U kunt zoeken op basis van gegevens (RDN, DN, anker, substructuur) of status van het object (alle andere opties).  
 ![Scherm afbeelding met de vervolg keuzelijst bereik.](./media/how-to-connect-sync-service-manager-ui-connectors/cssearchscope.png)  
 Als u bijvoorbeeld een Sub-Tree zoek actie wilt uitvoeren, krijgt u alle objecten in één organisatie-eenheid.  
 ![Scherm afbeelding met een voor beeld van een ' substructuur ' zoeken.](./media/how-to-connect-sync-service-manager-ui-connectors/cssearchsubtree.png)  
-Vanuit dit raster kunt u een object selecteren, **Eigenschappen**selecteren en dit in de bron connector ruimte [volgen](tshoot-connect-object-not-syncing.md) , via de tekst en de ruimte van de doel connector.
+Vanuit dit raster kunt u een object selecteren, **Eigenschappen** selecteren en dit in de bron connector ruimte [volgen](tshoot-connect-object-not-syncing.md) , via de tekst en de ruimte van de doel connector.
 
 ### <a name="changing-the-ad-ds-account-password"></a>Het wachtwoord voor het AD DS-account wijzigen
 Als u het wacht woord van het account wijzigt, kan de synchronisatie service geen wijzigingen meer importeren/exporteren naar on-premises AD.   U kunt het volgende te zien krijgen:

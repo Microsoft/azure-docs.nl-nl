@@ -14,10 +14,10 @@ ms.author: marsma
 ms.reviewer: oldalton
 ms.custom: aaddev
 ms.openlocfilehash: 06e197a6e445c7dc1179be696318905f2132ee36
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85477733"
 ---
 # <a name="configure-keychain"></a>Sleutelketen configureren
@@ -32,7 +32,7 @@ In dit artikel wordt beschreven hoe u de rechten van een app kunt configureren, 
 
 MSAL op iOS maakt standaard gebruik van de `com.microsoft.adalcache` toegangs groep. Dit is de gedeelde toegangs groep die wordt gebruikt door zowel de MSAL-als de Azure AD Authentication Library (ADAL) Sdk's en zorgt voor de beste SSO-ervaring (eenmalige aanmelding) tussen meerdere apps van dezelfde uitgever.
 
-Voeg op Ios de `com.microsoft.adalcache` sleutel keten groep toe aan het recht van uw app in Xcode onder **project instellingen**  >  **capaciteit**van  >  **sleutel hanger delen**
+Voeg op Ios de `com.microsoft.adalcache` sleutel keten groep toe aan het recht van uw app in Xcode onder **project instellingen**  >  **capaciteit** van  >  **sleutel hanger delen**
 
 ### <a name="macos"></a>macOS
 

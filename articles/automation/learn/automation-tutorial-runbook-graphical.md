@@ -7,10 +7,10 @@ ms.subservice: process-automation
 ms.date: 09/15/2020
 ms.topic: tutorial
 ms.openlocfilehash: 1b6c02778b0ee790d81c713283e653058c29c153
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92899802"
 ---
 # <a name="tutorial-create-a-graphical-runbook"></a>Zelfstudie: Een grafisch runbook maken
@@ -46,9 +46,9 @@ Begin door een eenvoudig runbook te maken waarmee de tekst `Hello World` als uit
 
 3. Maak een nieuw runbook door **Een nieuw runbook maken** te selecteren.
 
-4. Geef het runbook de naam **MyFirstRunbook-Graphical** .
+4. Geef het runbook de naam **MyFirstRunbook-Graphical**.
 
-5. In dit geval gaat u een [grafisch runbook](../automation-graphical-authoring-intro.md) maken. Selecteer **Grafisch** voor **Runbook-type** .
+5. In dit geval gaat u een [grafisch runbook](../automation-graphical-authoring-intro.md) maken. Selecteer **Grafisch** voor **Runbook-type**.
 
     ![Nieuw runbook](../media/automation-tutorial-runbook-graphical/create-new-runbook.png)
 
@@ -62,7 +62,7 @@ Met het besturingselement Bibliotheek aan de linkerkant van de editor kunt u act
 
     ![Microsoft.PowerShell.Utility](../media/automation-tutorial-runbook-graphical/search-powershell-cmdlet-writeoutput.png)
 
-2. Schuif omlaag naar de onderkant van de lijst. Klik met de rechtermuisknop op **Write-output** en selecteer **Toevoegen aan canvas** . U kunt ook op het beletselteken (...) naast de naam van de cmdlet klikken en vervolgens **Toevoegen aan canvas** selecteren.
+2. Schuif omlaag naar de onderkant van de lijst. Klik met de rechtermuisknop op **Write-output** en selecteer **Toevoegen aan canvas**. U kunt ook op het beletselteken (...) naast de naam van de cmdlet klikken en vervolgens **Toevoegen aan canvas** selecteren.
 
 3. Klik op de activiteit **Write-Output** op het papier. Met deze actie opent u de besturingselementpagina Configuratie waarmee u de activiteit kunt configureren.
 
@@ -74,7 +74,7 @@ Met het besturingselement Bibliotheek aan de linkerkant van de editor kunt u act
 
 6. Selecteer de parameter `InputObject`. Dit is de parameter die u gebruikt om de tekst op te geven die naar de uitvoerstroom moet worden verzonden.
 
-7. In de vervolgkeuzelijst **Gegevensbron** staan bronnen die u kunt gebruiken om een parameterwaarde te vullen. Selecteer in dit menu de optie **Power shell-expressie** .
+7. In de vervolgkeuzelijst **Gegevensbron** staan bronnen die u kunt gebruiken om een parameterwaarde te vullen. Selecteer in dit menu de optie **Power shell-expressie**.
 
    U kunt uitvoer van deze bronnen gebruiken, zoals een andere activiteit, een Automation-asset of een PowerShell-expressie. In dit geval is de uitvoer gewoon `Hello World`. U kunt een PowerShell-expressie gebruiken en een tekenreeks opgeven.
 
@@ -126,7 +126,7 @@ Het runbook dat u hebt gemaakt, bevindt zich nog steeds in de modus Concept. Het
 
 9. Sluit het deelvenster Streams en het deelvenster Taak om terug te gaan naar het deelvenster MyFirstRunbook-Graphical.
 
-10. Als u alle taken voor het runbook wilt weergeven, selecteert u **Taken** onder **Resources** . Op de pagina Taken worden alle taken weergegeven die door uw runbook zijn gemaakt. U zou slechts één taak moeten zien, aangezien u de taak slechts eenmaal hebt uitgevoerd.
+10. Als u alle taken voor het runbook wilt weergeven, selecteert u **Taken** onder **Resources**. Op de pagina Taken worden alle taken weergegeven die door uw runbook zijn gemaakt. U zou slechts één taak moeten zien, aangezien u de taak slechts eenmaal hebt uitgevoerd.
 
 11. Klik op de taaknaam om hetzelfde taakvenster te openen dat u hebt bekeken toen u het runbook startte. Gebruik dit deelvenster om de details te bekijken van een taak die is gemaakt voor het runbook.
 
@@ -136,16 +136,16 @@ U hebt het runbook getest en gepubliceerd, maar tot nu toe doet het nog niets nu
 
 1. Kopieer uw abonnements-id uit de optie **Abonnementen** in het deelvenster Navigatie.
 
-2. Selecteer op de pagina Automation Accounts **Variabelen** onder **Gedeelde resources** .
+2. Selecteer op de pagina Automation Accounts **Variabelen** onder **Gedeelde resources**.
 
-3. Selecteer **Een variabele toevoegen** .
+3. Selecteer **Een variabele toevoegen**.
 
 4. Stel op de pagina Nieuwe variabele de volgende instellingen in de velden in.
 
-    * **Naam** : voer `AzureSubscriptionId` in.
-    * **Waarde** : voer de id van uw Azure-abonnement in.
-    * **Type** : houd de tekenreeks geselecteerd.
-    * **Versleuteling** : gebruik de standaardwaarde.
+    * **Naam**: voer `AzureSubscriptionId` in.
+    * **Waarde**: voer de id van uw Azure-abonnement in.
+    * **Type**: houd de tekenreeks geselecteerd.
+    * **Versleuteling**: gebruik de standaardwaarde.
 
 5. Klik op **Maken** om de variabele te maken.
 
@@ -158,9 +158,9 @@ Nu u een variabele hebt die onze abonnements-id kan bevatten, kunt u uw runbook 
 
 1. Ga naar uw runbook en selecteer **Bewerken** op de pagina MyFirstRunbook-Graphical.
 
-2. U hebt de `Write Hello World to output`-vermelding niet meer nodig. Klik op het beletselteken en selecteer **Verwijderen** .
+2. U hebt de `Write Hello World to output`-vermelding niet meer nodig. Klik op het beletselteken en selecteer **Verwijderen**.
 
-3. Vouw in het besturingselement Bibliotheek het item **ASSETS** uit en vervolgens **Verbindingen** . Voeg `AzureRunAsConnection` toe aan het canvas door **Toevoegen aan canvas** te selecteren.
+3. Vouw in het besturingselement Bibliotheek het item **ASSETS** uit en vervolgens **Verbindingen**. Voeg `AzureRunAsConnection` toe aan het canvas door **Toevoegen aan canvas** te selecteren.
 
 4. Naam `AzureRunAsConnection` wijzigen in `Get Run As Connection`.
 
@@ -172,49 +172,49 @@ Nu u een variabele hebt die onze abonnements-id kan bevatten, kunt u uw runbook 
 
     ![Koppeling tussen activiteiten maken](../media/automation-tutorial-runbook-graphical/runbook-link-auth-activities.png)
 
-8. Selecteer `Connect-AzAccount` op het canvas. Typ in het deelvenster Configuratie **Aanmelden bij Azure** in het veld **Label** .
+8. Selecteer `Connect-AzAccount` op het canvas. Typ in het deelvenster Configuratie **Aanmelden bij Azure** in het veld **Label**.
 
-9. Klik op **Parameters** , waarna de pagina Parameterconfiguratie van activiteit verschijnt.
+9. Klik op **Parameters**, waarna de pagina Parameterconfiguratie van activiteit verschijnt.
 
-10. De cmdlet `Connect-AzAccount` heeft meerdere parametersets. U moet er een selecteren voordat u parameterwaarden opgeeft. Klik op **Parameterset** en selecteer vervolgens **ServicePrincipalCertificatewithSubscriptionId** .
+10. De cmdlet `Connect-AzAccount` heeft meerdere parametersets. U moet er een selecteren voordat u parameterwaarden opgeeft. Klik op **Parameterset** en selecteer vervolgens **ServicePrincipalCertificatewithSubscriptionId**.
 
-11. De parameters voor deze parameterset worden weergegeven op de pagina Parameterconfiguratie van activiteit. Klik op **APPLICATIONID** .
+11. De parameters voor deze parameterset worden weergegeven op de pagina Parameterconfiguratie van activiteit. Klik op **APPLICATIONID**.
 
     ![Parameters voor Azure-account toevoegen](../media/automation-tutorial-runbook-graphical/Add-AzureRmAccount-params.png)
 
-12. Voer op de pagina Parameterwaarde de volgende instellingen in en klik vervolgens op **OK** .
+12. Voer op de pagina Parameterwaarde de volgende instellingen in en klik vervolgens op **OK**.
 
-   * **Gegevensbron** : selecteer **Activiteitsuitvoer** .
-   * Lijst met gegevensbronnen: selecteer **Automation-verbinding ophalen** .
-   * **Pad naar veld** : typ `ApplicationId`. U geeft de naam van de eigenschap voor het pad naar het veld op omdat de uitvoer van de activiteit een object met meerdere eigenschappen bevat.
+   * **Gegevensbron**: selecteer **Activiteitsuitvoer**.
+   * Lijst met gegevensbronnen: selecteer **Automation-verbinding ophalen**.
+   * **Pad naar veld**: typ `ApplicationId`. U geeft de naam van de eigenschap voor het pad naar het veld op omdat de uitvoer van de activiteit een object met meerdere eigenschappen bevat.
 
-13. Klik op **CERTIFICATETHUMBPRINT** en stel op de pagina Parameterwaarde de volgende instellingen in en klik vervolgens op **OK** .
+13. Klik op **CERTIFICATETHUMBPRINT** en stel op de pagina Parameterwaarde de volgende instellingen in en klik vervolgens op **OK**.
 
-    * **Gegevensbron** : selecteer **Activiteitsuitvoer** .
-    * Lijst met gegevensbronnen: selecteer **Automation-verbinding ophalen** .
-    * **Pad naar veld** : typ `CertificateThumbprint`.
+    * **Gegevensbron**: selecteer **Activiteitsuitvoer**.
+    * Lijst met gegevensbronnen: selecteer **Automation-verbinding ophalen**.
+    * **Pad naar veld**: typ `CertificateThumbprint`.
 
-14. Klik op **SERVICEPRINCIPAL** en selecteer op de pagina Parameterwaarde **ConstantValue** voor het veld **Gegevensbron** . Klik op de optie **Waar** en klik vervolgens op **OK** .
+14. Klik op **SERVICEPRINCIPAL** en selecteer op de pagina Parameterwaarde **ConstantValue** voor het veld **Gegevensbron**. Klik op de optie **Waar** en klik vervolgens op **OK**.
 
-15. Klik op **TENANTID** en stel de volgende instellingen in op de pagina Parameterwaarde. Als u klaar bent, klikt u tweemaal op **OK** .
+15. Klik op **TENANTID** en stel de volgende instellingen in op de pagina Parameterwaarde. Als u klaar bent, klikt u tweemaal op **OK**.
 
-    * **Gegevensbron** : selecteer **Activiteitsuitvoer** .
-    * Lijst met gegevensbronnen: selecteer **Automation-verbinding ophalen** .
-    * **Pad naar veld** : typ `TenantId`.
+    * **Gegevensbron**: selecteer **Activiteitsuitvoer**.
+    * Lijst met gegevensbronnen: selecteer **Automation-verbinding ophalen**.
+    * **Pad naar veld**: typ `TenantId`.
 
 16. In het besturingselement Bibliotheek typt u `Set-AzContext` in het zoekveld.
 
 17. Voeg `Set-AzContext` toe aan het canvas.
 
-18. Selecteer `Set-AzContext` op het canvas. Voer in het deelvenster Configuratie `Specify Subscription Id` in in het veld **Label** .
+18. Selecteer `Set-AzContext` op het canvas. Voer in het deelvenster Configuratie `Specify Subscription Id` in in het veld **Label**.
 
-19. Klik op **Parameters** , waarna de pagina Parameterconfiguratie van activiteit verschijnt.
+19. Klik op **Parameters**, waarna de pagina Parameterconfiguratie van activiteit verschijnt.
 
-20. De cmdlet `Set-AzContext` heeft meerdere parametersets. U moet er een selecteren voordat u parameterwaarden opgeeft. Klik op **Parameterset** en selecteer vervolgens **SubscriptionId** .
+20. De cmdlet `Set-AzContext` heeft meerdere parametersets. U moet er een selecteren voordat u parameterwaarden opgeeft. Klik op **Parameterset** en selecteer vervolgens **SubscriptionId**.
 
-21. De parameters voor deze parameterset worden weergegeven op de pagina Parameterconfiguratie van activiteit. Klik op **SubscriptionID** .
+21. De parameters voor deze parameterset worden weergegeven op de pagina Parameterconfiguratie van activiteit. Klik op **SubscriptionID**.
 
-22. Selecteer op de pagina Parameterwaarde de optie **Variabele asset** voor het veld **Gegevensbron** en selecteer **AzureSubscriptionId** in de bronnenlijst. Als u klaar bent, klikt u tweemaal op **OK** .
+22. Selecteer op de pagina Parameterwaarde de optie **Variabele asset** voor het veld **Gegevensbron** en selecteer **AzureSubscriptionId** in de bronnenlijst. Als u klaar bent, klikt u tweemaal op **OK**.
 
 23. Beweeg de muisaanwijzer over `Login to Azure` totdat een cirkel wordt weergegeven aan de onderkant van de vorm. Klik op de cirkel en sleep de pijl naar `Specify Subscription Id`. Uw runbook zou er op dit punt als volgt moeten uitzien.
 
@@ -234,9 +234,9 @@ Nu moet u een `Start-AzVM`-activiteit toevoegen om een virtuele machine te start
 
 5. Selecteer **ResourceGroupNameParameterSetName** voor de parameterset. De velden **ResourceGroupName** en **Naam** hebben een uitroepteken ernaast om aan te geven dat het vereiste parameters zijn. Houd er rekening mee dat in beide velden tekenreekswaarden worden verwacht.
 
-6. Selecteer **Name** . Kies **PowerShell-expressie** voor het veld **Gegevensbron** . Voor de virtuele machine die u gebruikt om dit runbook te starten, typt u de naam van de computer tussen dubbele aanhalingstekens. Klik op **OK** .
+6. Selecteer **Name**. Kies **PowerShell-expressie** voor het veld **Gegevensbron**. Voor de virtuele machine die u gebruikt om dit runbook te starten, typt u de naam van de computer tussen dubbele aanhalingstekens. Klik op **OK**.
 
-7. Selecteer **ResourceGroupName** . Gebruik de waarde **PowerShell-expressie** voor de **Gegevensbron** en typ de naam van de resourcegroep tussen dubbele aanhalingstekens. Klik op **OK** .
+7. Selecteer **ResourceGroupName**. Gebruik de waarde **PowerShell-expressie** voor de **Gegevensbron** en typ de naam van de resourcegroep tussen dubbele aanhalingstekens. Klik op **OK**.
 
 8. Klik op **Testvenster** zodat u het runbook kunt testen.
 
@@ -252,20 +252,20 @@ Met uw runbook wordt momenteel de virtuele machine gestart in de resourcegroep d
 
 2. Selecteer **Invoer en uitvoer** en vervolgens **Invoer toevoegen** om het deelvenster Invoerparameter van runbook te openen.
 
-3. Stel de volgende instellingen in de beschikbare velden in en klik vervolgens op **OK** .
-   * **Naam** : geef `VMName` op.
-   * **Type** : behoud de tekenreeksinstelling.
-   * **Verplicht** : wijzig de waarde in **Ja** .
+3. Stel de volgende instellingen in de beschikbare velden in en klik vervolgens op **OK**.
+   * **Naam**: geef `VMName` op.
+   * **Type**: behoud de tekenreeksinstelling.
+   * **Verplicht**: wijzig de waarde in **Ja**.
 
 4. Maak een tweede verplichte invoerparameter met de naam `ResourceGroupName` en klik vervolgens op **OK** om het venster Invoer en uitvoer te sluiten.
 
     ![Invoerparameters van runbook](../media/automation-tutorial-runbook-graphical/start-azurermvm-params-outputs.png)
 
-5. Selecteer de activiteit `Start-AzVM` en klik vervolgens op **Parameters** .
+5. Selecteer de activiteit `Start-AzVM` en klik vervolgens op **Parameters**.
 
-6. Wijzig het veld **Gegevensbron** voor **Naam** in **Runbookinvoer** . Selecteer vervolgens **VMName** .
+6. Wijzig het veld **Gegevensbron** voor **Naam** in **Runbookinvoer**. Selecteer vervolgens **VMName**.
 
-7. Wijzig het veld **gegevensbron** voor **ResourceGroupName** in **Runbookinvoer** en selecteer vervolgens **ResourceGroupName** .
+7. Wijzig het veld **gegevensbron** voor **ResourceGroupName** in **Runbookinvoer** en selecteer vervolgens **ResourceGroupName**.
 
     ![Start-AzVM-parameters](../media/automation-tutorial-runbook-graphical/start-azurermvm-params-runbookinput.png)
 
@@ -295,13 +295,13 @@ U kunt het runbook nu wijzigen zodat alleen wordt geprobeerd de VM te starten al
 
 5. Selecteer `Get-AzVM` en klik vervolgens op **Parameterset** om de sets voor de cmdlet weer te geven.
 
-6. Selecteer de parameterset **GetVirtualMachineInResourceGroupNameParamSet** . De velden **ResourceGroupName** en **Naam** hebben een uitroepteken ernaast, waarmee wordt aangegeven dat hiermee verplichte parameters worden opgegeven. Houd er rekening mee dat in beide velden tekenreekswaarden worden verwacht.
+6. Selecteer de parameterset **GetVirtualMachineInResourceGroupNameParamSet**. De velden **ResourceGroupName** en **Naam** hebben een uitroepteken ernaast, waarmee wordt aangegeven dat hiermee verplichte parameters worden opgegeven. Houd er rekening mee dat in beide velden tekenreekswaarden worden verwacht.
 
-7. Selecteer onder **Gegevensbron** voor **Naam** de optie **Runbookinvoer** en vervolgens **VMName** . Klik op **OK** .
+7. Selecteer onder **Gegevensbron** voor **Naam** de optie **Runbookinvoer** en vervolgens **VMName**. Klik op **OK**.
 
-8. Selecteer onder **Gegevensbron** voor **ResourceGroupName** de optie **Runbookinvoer** en vervolgens **ResourceGroupName** . Klik op **OK** .
+8. Selecteer onder **Gegevensbron** voor **ResourceGroupName** de optie **Runbookinvoer** en vervolgens **ResourceGroupName**. Klik op **OK**.
 
-9. Selecteer onder **Gegevensbron** voor **Status** de optie **Constante waarde** en vervolgens **Waar** . Klik op **OK** .
+9. Selecteer onder **Gegevensbron** voor **Status** de optie **Constante waarde** en vervolgens **Waar**. Klik op **OK**.
 
 10. Maak een koppeling van `Specify Subscription Id` naar `Get-AzVM`.
 
@@ -309,7 +309,7 @@ U kunt het runbook nu wijzigen zodat alleen wordt geprobeerd de VM te starten al
 
 12. Maak een koppeling van `Get-AzVM` naar `Code`.  
 
-13. Klik op `Code` en wijzig in het deelvenster Configuratie het label in **Status ophalen** .
+13. Klik op `Code` en wijzig in het deelvenster Configuratie het label in **Status ophalen**.
 
 14. Selecteer `Code` en de pagina Code-editor wordt weergegeven.  
 
@@ -331,19 +331,19 @@ U kunt het runbook nu wijzigen zodat alleen wordt geprobeerd de VM te starten al
 
     ![Runbook met codemodule](../media/automation-tutorial-runbook-graphical/runbook-startvm-get-status.png)  
 
-17. Selecteer de koppeling en wijzig in het deelvenster Configuratie **Voorwaarde toepassen** in **Ja** . De koppeling wordt een gestreepte lijn waarmee wordt aangegeven dat de doelactiviteit alleen wordt uitgevoerd als de voorwaarde 'waar' is.  
+17. Selecteer de koppeling en wijzig in het deelvenster Configuratie **Voorwaarde toepassen** in **Ja**. De koppeling wordt een gestreepte lijn waarmee wordt aangegeven dat de doelactiviteit alleen wordt uitgevoerd als de voorwaarde 'waar' is.  
 
 18. Voor een **Voorwaarde-expressie** typt u `$ActivityOutput['Get Status'] -eq "Stopped"`. `Start-AzVM` wordt nu alleen uitgevoerd als de VM is gestopt.
 
-19. Vouw in het besturingselement Bibliotheek **Cmdlets** uit en vervolgens **Microsoft.PowerShell.Utility** .
+19. Vouw in het besturingselement Bibliotheek **Cmdlets** uit en vervolgens **Microsoft.PowerShell.Utility**.
 
 20. Voeg `Write-Output` tweemaal toe aan het canvas.
 
-21. In het eerste besturingselement `Write-Output` klikt u op **Parameters** en wijzigt u de waarde voor **Label** in **VM gestart melden** .
+21. In het eerste besturingselement `Write-Output` klikt u op **Parameters** en wijzigt u de waarde voor **Label** in **VM gestart melden**.
 
 22. Voor **InputObject** wijzigt u **Gegevensbron** in **PowerShell-expressie** en typt u de expressie `$VMName successfully started.`.
 
-23. In het tweede besturingselement `Write-Output` klikt u op **Parameters** en wijzigt u de waarde voor **Label** in **Starten VM mislukt melden** .
+23. In het tweede besturingselement `Write-Output` klikt u op **Parameters** en wijzigt u de waarde voor **Label** in **Starten VM mislukt melden**.
 
 24. Voor **InputObject** wijzigt u **Gegevensbron** in **PowerShell-expressie** en typt u de expressie `$VMName could not start`.
 

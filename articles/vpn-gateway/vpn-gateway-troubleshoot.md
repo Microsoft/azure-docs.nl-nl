@@ -8,15 +8,15 @@ ms.topic: troubleshooting
 ms.date: 01/31/2018
 ms.author: cherylmc
 ms.openlocfilehash: 0718a1b211fe6365af30a330fe6a3742cff2ff63
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "84984424"
 ---
 # <a name="troubleshoot-vpn-gateway"></a>Problemen met VPN Gateway oplossen
 
-VPN Gateway verbindingen kunnen om verschillende redenen mislukken. Dit artikel bevat koppelingen om aan de slag te gaan met probleem oplossing. Zie voor een volledige lijst de artikelen in de inhouds opgave onder **problemen oplossen**aan de linkerkant van deze pagina.
+VPN Gateway verbindingen kunnen om verschillende redenen mislukken. Dit artikel bevat koppelingen om aan de slag te gaan met probleem oplossing. Zie voor een volledige lijst de artikelen in de inhouds opgave onder **problemen oplossen** aan de linkerkant van deze pagina.
 
 ## <a name="troubleshooting-scenarios-and-solutions"></a>Scenario's en oplossingen voor problemen oplossen
 

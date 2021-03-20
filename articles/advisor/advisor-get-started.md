@@ -4,10 +4,10 @@ description: Aan de slag met Azure Advisor.
 ms.topic: article
 ms.date: 02/01/2019
 ms.openlocfilehash: e91049077502a6c0eedf0a4f979c073690c214da
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85117859"
 ---
 # <a name="get-started-with-azure-advisor"></a>Aan de slag met Azure Advisor
@@ -19,7 +19,7 @@ Meer informatie over het openen van Advisor via de Azure Portal, het ophalen van
 
 ## <a name="get-recommendations"></a>Aanbevelingen ophalen
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 
 1. Klik in het linkerdeel venster op **Advisor**.  Als u Advisor niet in het linkerdeel venster ziet, klikt u op **alle services**.  Klik in het menu venster Service, onder **bewaking en beheer**, op **Advisor**. Het Advisor-dash board wordt weer gegeven.
 
@@ -27,7 +27,7 @@ Meer informatie over het openen van Advisor via de Azure Portal, het ophalen van
 
 1. In het Advisor-dashboard geeft een samenvatting weer van uw aanbevelingen voor alle geselecteerde abonnementen.  U kunt de abonnementen kiezen waarvoor u aanbevelingen wilt weergeven voor het gebruik van de vervolgkeuzelijst met het abonnementsfilter.
 
-1. Als u aanbevelingen voor een specifieke categorie wilt ontvangen, klikt u op een van de tabbladen: **betrouw baarheid**, **beveiliging**, **prestaties**of **kosten**. 
+1. Als u aanbevelingen voor een specifieke categorie wilt ontvangen, klikt u op een van de tabbladen: **betrouw baarheid**, **beveiliging**, **prestaties** of **kosten**. 
 
    ![Azure Advisor dash board](./media/advisor-overview/advisor-dashboard.png)
 
@@ -82,7 +82,7 @@ Mogelijk hebt u resource groepen of-abonnementen waarvoor u geen aanbevelingen v
 
     ![Voor beeld van Advisor-bronnen configureren](./media/advisor-get-started/advisor-configure-resources.png)
 
-1. Klik op de knop **Toepassen**.
+1. Klik op de knop **Apply** (Toepassen).
 
 ## <a name="configure-low-usage-vm-recommendation"></a>Aanbeveling voor VM van laag gebruik configureren
 
@@ -93,7 +93,7 @@ Advisor bewaakt het gebruik van uw virtuele machines gedurende 7 dagen en identi
 Als u meer wilt weten over het identificeren van virtuele machines met een laag gebruik, kunt u het gemiddelde CPU-gebruiks regel niveau op basis van een abonnement aanpassen.  De regel voor het CPU-gebruik kan worden ingesteld op 5%, 10%, 15% of 20%.
 
 > [!NOTE]
-> Als u de regel gemiddeld CPU-gebruik voor het identificeren van virtuele machines met een laag gebruik wilt aanpassen, moet u *eigenaar*van het abonnement zijn.  Als u niet beschikt over de vereiste machtigingen voor een abonnement of resource groep, wordt de optie om deze op te nemen of uit te sluiten, uitgeschakeld in de gebruikers interface. 
+> Als u de regel gemiddeld CPU-gebruik voor het identificeren van virtuele machines met een laag gebruik wilt aanpassen, moet u *eigenaar* van het abonnement zijn.  Als u niet beschikt over de vereiste machtigingen voor een abonnement of resource groep, wordt de optie om deze op te nemen of uit te sluiten, uitgeschakeld in de gebruikers interface. 
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com)en open vervolgens [Advisor](https://aka.ms/azureadvisordashboard).
 

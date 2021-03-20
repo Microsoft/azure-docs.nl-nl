@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 04/04/2017
 ms.author: alkohli
 ms.openlocfilehash: 3adbd292d42fd6fd2a0e149e103c17968a6f084b
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94950751"
 ---
 # <a name="safely-install-and-operate-your-storsimple-device"></a>Uw StorSimple-apparaat veilig installeren en uitvoeren
@@ -38,7 +38,7 @@ Hier vindt u de pictogrammen die u zult vinden wanneer u de veiligheids maatrege
 | ![Meldings pictogram ](./media/storsimple-safety/IC740881.png) **:** |Geeft aan dat de informatie die belang rijk is, maar niet met een risico is betrokken. |
 | ![Elektrisch schok-pictogram ](./media/storsimple-safety/IC740882.png) **risico op elektrische schokken** |Hoge spanning |
 | ![Pictogram voor dik gewicht ](./media/storsimple-safety/IC740883.png) **dik gewicht** | |
-| ![Er zijn geen onderdelen die door de gebruiker kan ](./media/storsimple-safety/IC740879.png) **No User Serviceable Parts** worden onderhouden |Doe geen toegang tenzij het goed is getraind. |
+| ![Er zijn geen onderdelen die door de gebruiker kan ](./media/storsimple-safety/IC740879.png)  worden onderhouden |Doe geen toegang tenzij het goed is getraind. |
 | ![Lees het pictogram beveiligings melding](./media/storsimple-safety/IC740885.png)**eerst alle instructies lezen** | |
 | ![Waarschuwings pictogram tip ](./media/storsimple-safety/IC740886.png) **-risico** | |
 

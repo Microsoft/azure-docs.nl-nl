@@ -5,10 +5,10 @@ ms.date: 03/30/2020
 ms.topic: how-to
 ms.reviewer: ravastra
 ms.openlocfilehash: a151c28d31bf0bb7f21185fb161315d42f9563d8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85200678"
 ---
 # <a name="configure-blockchain-data-manager-using-the-azure-portal"></a>Blockchain Data Manager configureren met behulp van Azure Portal
@@ -32,7 +32,7 @@ Een Blockchain Data Manager-instantie maakt verbinding met een Azure Blockchain 
 
 Een uitgaande verbinding verzendt blockchain-gegevens naar Azure Event Grid. Wanneer u de instantie maakt, configureert u één uitgaande verbinding. Block Chain Data Manager ondersteunt meerdere uitgaande verbindingen van Event Grid onderwerp voor een gegeven block Chain Data Manager exemplaar. U kunt Block Chain-gegevens naar één bestemming verzenden of block Chain-gegevens verzenden naar meerdere bestemmingen. Als u een andere bestemming wilt toevoegen, voegt u extra uitgaande verbindingen toe aan het exemplaar.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Ga naar het lid van de Azure Block Chain-service waarmee u verbinding wilt maken met block Chain Data Manager. Selecteer **Blockchain Data Manager**.
 1. Selecteer **Toevoegen**.
 
@@ -42,7 +42,7 @@ Een uitgaande verbinding verzendt blockchain-gegevens naar Azure Event Grid. Wan
 
     Instelling | Beschrijving
     --------|------------
-    Naam | Voer een unieke naam in voor een verbonden Blockchain Data Manager. De naam van de Block Chain-Data Manager mag kleine letters en cijfers bevatten en mag Maxi maal 20 tekens lang zijn.
+    Name | Voer een unieke naam in voor een verbonden Blockchain Data Manager. De naam van de Block Chain-Data Manager mag kleine letters en cijfers bevatten en mag Maxi maal 20 tekens lang zijn.
     Transactieknooppunt | Kies een transactie knooppunt. Alleen transactie knooppunten waarvoor u lees toegang hebt, worden weer gegeven.
     Verbindingsnaam | Voer een unieke naam in voor de uitgaande verbinding waarmee blockchain-transactiegegevens worden verzonden.
     Event grid-eindpunt | Kies een event grid-onderwerp in hetzelfde abonnement als de Block Chain-Data Manager instantie.

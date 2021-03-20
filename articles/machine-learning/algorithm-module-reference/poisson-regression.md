@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 07/13/2020
 ms.openlocfilehash: 2dfd8b3d919f9eeb3e183135ef543f417c878977
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93420696"
 ---
 # <a name="poisson-regression"></a>Regressie Poisson
@@ -57,13 +57,13 @@ Omdat de reactie variabele een Poisson-verdeling heeft, maakt het model verschil
 
 3. Geef in het rechterdeel venster van de **Poisson-regressie** -module op hoe u wilt dat het model wordt getraind door de optie **trainer modus maken** in te stellen.  
   
-    - **Eén para meter** : als u weet hoe u het model wilt configureren, geeft u een specifieke set waarden als argumenten op.
+    - **Eén para meter**: als u weet hoe u het model wilt configureren, geeft u een specifieke set waarden als argumenten op.
   
-    - **Parameter bereik** : als u niet zeker weet wat de beste para meters zijn, kunt u een para meter opruimen met behulp van de Hyper parameters-module [model](tune-model-hyperparameters.md) . De trainer herhaalt over meerdere waarden die u opgeeft om de optimale configuratie te vinden.
+    - **Parameter bereik**: als u niet zeker weet wat de beste para meters zijn, kunt u een para meter opruimen met behulp van de Hyper parameters-module [model](tune-model-hyperparameters.md) . De trainer herhaalt over meerdere waarden die u opgeeft om de optimale configuratie te vinden.
   
-4. **Optimalisatie tolerantie** : Typ een waarde die het tolerantie-interval tijdens de optimalisatie definieert. Hoe lager de waarde, hoe langzamer en nauw keuriger de fitting.
+4. **Optimalisatie tolerantie**: Typ een waarde die het tolerantie-interval tijdens de optimalisatie definieert. Hoe lager de waarde, hoe langzamer en nauw keuriger de fitting.
 
-5. **L1-regularisatie gewicht** en **L2-regularisatie gewicht** : Typ de waarden die moeten worden gebruikt voor L1 en L2-regularisatie. *Regularisatie* voegt beperkingen toe aan het algoritme met betrekking tot aspecten van het model die onafhankelijk zijn van de trainings gegevens. Regularisatie wordt vaak gebruikt om overmontage te voor komen. 
+5. **L1-regularisatie gewicht** en **L2-regularisatie gewicht**: Typ de waarden die moeten worden gebruikt voor L1 en L2-regularisatie. *Regularisatie* voegt beperkingen toe aan het algoritme met betrekking tot aspecten van het model die onafhankelijk zijn van de trainings gegevens. Regularisatie wordt vaak gebruikt om overmontage te voor komen. 
 
     - L1 regularisatie is handig als het doel een model moet hebben dat zo sparst mogelijk is.
 
@@ -75,7 +75,7 @@ Omdat de reactie variabele een Poisson-verdeling heeft, maakt het model verschil
 
     Voor een goede bespreking van L1 en L2-regularisatie raadpleegt u [L1 en L2-regularisatie voor machine learning](/archive/msdn-magazine/2015/february/test-run-l1-and-l2-regularization-for-machine-learning).
 
-6. **Geheugen grootte voor L-BFGS** : Geef de hoeveelheid geheugen op die moet worden gereserveerd voor model fitting en-optimalisatie.
+6. **Geheugen grootte voor L-BFGS**: Geef de hoeveelheid geheugen op die moet worden gereserveerd voor model fitting en-optimalisatie.
 
      L-BFGS is een specifieke methode voor optimalisatie, gebaseerd op het algoritme Broyden – Fletcher – Goldfarb – Shanno (BFGS). De methode maakt gebruik van een beperkte hoeveelheid geheugen (L) om de richting van de volgende stap te berekenen.
 
@@ -83,9 +83,9 @@ Omdat de reactie variabele een Poisson-verdeling heeft, maakt het model verschil
 
 7. Verbind de trainings-gegevensset en het niet-getrainde model met een van de trainings modules: 
 
-    - Als u de **modus trainer maken** instelt op **één para meter** , gebruikt u de module [Train model](train-model.md) .
+    - Als u de **modus trainer maken** instelt op **één para meter**, gebruikt u de module [Train model](train-model.md) .
 
-    - Als u de **modus trainer maken** instelt op het **parameter bereik** , gebruikt u de Hyper parameters-module voor het [afstemmen van modellen](tune-model-hyperparameters.md) .
+    - Als u de **modus trainer maken** instelt op het **parameter bereik**, gebruikt u de Hyper parameters-module voor het [afstemmen van modellen](tune-model-hyperparameters.md) .
 
     > [!WARNING]
     > 

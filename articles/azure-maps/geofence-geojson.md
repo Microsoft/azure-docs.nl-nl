@@ -9,10 +9,10 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.openlocfilehash: e880710b93a6764df50780e685c89b5f569b4ec0
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92897191"
 ---
 # <a name="geofencing-geojson-data"></a>Geojson-gegevens geoomheining
@@ -34,7 +34,7 @@ De gegevens voor geofence of set geofences worden vertegenwoordigd door `Feature
 | :------------ |:------------: |:---------------:| :-----|
 | startTime | Datum/tijd  | true | De begin datum en-tijd van de geldigheids periode. |
 | endTime   | Datum/tijd  | true |  De eind datum van de geldigheids periode. |
-| recurrenceType | tekenreeks | false |   Het terugkeer type van de periode. De waarde kan `Daily` ,, `Weekly` of zijn `Monthly` `Yearly` . De standaardwaarde is `Daily`.|
+| recurrenceType | tekenreeks | onjuist |   Het terugkeer type van de periode. De waarde kan `Daily` ,, `Weekly` of zijn `Monthly` `Yearly` . De standaardwaarde is `Daily`.|
 | businessDayOnly | Boolean-waarde | onjuist |  Geef aan of de gegevens alleen geldig zijn tijdens werk dagen. De standaardwaarde is `false`.|
 
 

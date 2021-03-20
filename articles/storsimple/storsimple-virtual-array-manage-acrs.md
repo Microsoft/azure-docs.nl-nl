@@ -16,10 +16,10 @@ ms.date: 02/27/2017
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: bad0d7adfd77dff53b1582e63a91f2cd87a9233d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85507616"
 ---
 # <a name="use-storsimple-device-manager-to-manage-access-control-records-for-storsimple-virtual-array"></a>StorSimple Apparaatbeheer gebruiken voor het beheren van Access Control records voor StorSimple Virtual array
@@ -69,7 +69,7 @@ Voer de volgende stappen uit om een ACR toe te voegen.
    
     1. Geef een **naam** voor uw ACR op.
     
-    2. Geef onder **naam van iSCSI-initiator**de IQN-naam van uw Windows-host op. Ga als volgt te werk om de IQN van uw Windows Server-host op te halen:
+    2. Geef onder **naam van iSCSI-initiator** de IQN-naam van uw Windows-host op. Ga als volgt te werk om de IQN van uw Windows Server-host op te halen:
    
     3. Start de Microsoft iSCSI-initiator op uw Windows-host. Selecteer en kopieer in het venster Eigenschappen iSCSI-initiator op het tabblad **Configuratie** de tekenreeks in het veld **Naam van initiator**.
     Plak deze teken reeks in het veld **IQN** op de Blade **ACR toevoegen** .

@@ -4,10 +4,10 @@ description: Meer informatie over het instellen van een Lab met Azure Lab Servic
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 97cdf13f39cc73ee7f35fb402229469195f1456c
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97616419"
 ---
 # <a name="set-up-a-lab-to-teach-ethical-hacking-class"></a>Een Lab instellen om ethische hacking-klasse te leren
@@ -51,11 +51,11 @@ Kali is een Linux-distributie met hulpprogram ma's voor indringings tests en bev
     1. Pak het. 7z-bestand uit.  Als u nog geen 7-post code hebt, kunt u deze downloaden van [https://www.7-zip.org/download.html](https://www.7-zip.org/download.html) . Onthoud de locatie van de uitgepakte map zoals u deze later nodig hebt.
 1. Converteer het uitgepakte VMDK-bestand naar een vhdx-bestand, zodat u het vhdx-bestand kunt gebruiken met Hyper-V. Er zijn verschillende hulpprogram ma's beschikbaar om VMware-installatie kopieën te converteren naar Hyper-V-installatie kopieën.  We gebruiken het [Star wind V2V-conversie programma](https://www.starwindsoftware.com/starwind-v2v-converter).  Zie [Star wind V2V Converter-Download pagina](https://www.starwindsoftware.com/starwind-v2v-converter#download)om te downloaden.
     1. Start het **Star wind V2V-conversie programma**.
-    1. Kies **lokaal bestand** op de pagina **Selecteer de locatie van de afbeelding die u wilt converteren** .  Selecteer **Volgende**.
-    1. Ga op de pagina **bron installatie kopie** naar en selecteer het Kali Linux VMDK-bestand dat u in de vorige stap hebt geëxtraheerd voor de instelling van de **Bestands naam** .  Het bestand heeft de indeling Kali-Linux-{version}-VMware-amd64. vmdk.  Selecteer **Volgende**.
-    1. Kies **lokaal bestand** op de **locatie van de doel installatie kopie selecteren**.  Selecteer **Volgende**.
-    1. Kies op de pagina **indeling van doel afbeelding selecteren** de optie **VHD/VHDX**.  Selecteer **Volgende**.
-    1. Kies op de **optie selecteren voor de pagina afbeeldings indeling voor VHD/vhdx** een **groter formaat voor VHDX**.  Selecteer **Volgende**.
+    1. Kies **lokaal bestand** op de pagina **Selecteer de locatie van de afbeelding die u wilt converteren** .  Selecteer **Next**.
+    1. Ga op de pagina **bron installatie kopie** naar en selecteer het Kali Linux VMDK-bestand dat u in de vorige stap hebt geëxtraheerd voor de instelling van de **Bestands naam** .  Het bestand heeft de indeling Kali-Linux-{version}-VMware-amd64. vmdk.  Selecteer **Next**.
+    1. Kies **lokaal bestand** op de **locatie van de doel installatie kopie selecteren**.  Selecteer **Next**.
+    1. Kies op de pagina **indeling van doel afbeelding selecteren** de optie **VHD/VHDX**.  Selecteer **Next**.
+    1. Kies op de **optie selecteren voor de pagina afbeeldings indeling voor VHD/vhdx** een **groter formaat voor VHDX**.  Selecteer **Next**.
     1. Accepteer op de pagina Selecteer de naam van het **doel bestand** de standaard naam van het bestand.  Selecteer **converteren**.
     1. Wacht op de pagina **converteren** naar de afbeelding die moet worden geconverteerd.  Dit kan enkele minuten duren.  Selecteer **volt ooien** wanneer de conversie is voltooid.
 1. Maak een nieuwe Hyper-V-virtuele machine.
@@ -85,11 +85,11 @@ De Rapid7 Metasploitable-installatie kopie is een installatie kopie die als doel
     3. Wanneer het zip-bestand is gedownload, pakt u het zip-bestand uit en herinnert u de locatie van het Metasploitable. VMDK-bestand.
 1. Converteer het uitgepakte VMDK-bestand naar een vhdx-bestand, zodat u het vhdx-bestand kunt gebruiken met Hyper-V. Er zijn verschillende hulpprogram ma's beschikbaar om VMware-installatie kopieën te converteren naar Hyper-V-installatie kopieën.  Het [Star wind V2V-conversie programma](https://www.starwindsoftware.com/starwind-v2v-converter) wordt opnieuw gebruikt.  Zie [Star wind V2V Converter-Download pagina](https://www.starwindsoftware.com/starwind-v2v-converter#download)om te downloaden.
     1. Start het **Star wind V2V-conversie programma**.
-    1. Kies **lokaal bestand** op de pagina **Selecteer de locatie van de afbeelding die u wilt converteren** .  Selecteer **Volgende**.
-    1. Ga op de pagina **bron installatie kopie** naar en selecteer de Metasploitable. vmdk geëxtraheerd in de vorige stap voor de instelling van de **Bestands naam** .  Selecteer **Volgende**.
-    1. Kies **lokaal bestand** op de **locatie van de doel installatie kopie selecteren**.  Selecteer **Volgende**.
-    1. Kies op de pagina **indeling van doel afbeelding selecteren** de optie **VHD/VHDX**.  Selecteer **Volgende**.
-    1. Kies op de **optie selecteren voor de pagina afbeeldings indeling voor VHD/vhdx** een **groter formaat voor VHDX**.  Selecteer **Volgende**.
+    1. Kies **lokaal bestand** op de pagina **Selecteer de locatie van de afbeelding die u wilt converteren** .  Selecteer **Next**.
+    1. Ga op de pagina **bron installatie kopie** naar en selecteer de Metasploitable. vmdk geëxtraheerd in de vorige stap voor de instelling van de **Bestands naam** .  Selecteer **Next**.
+    1. Kies **lokaal bestand** op de **locatie van de doel installatie kopie selecteren**.  Selecteer **Next**.
+    1. Kies op de pagina **indeling van doel afbeelding selecteren** de optie **VHD/VHDX**.  Selecteer **Next**.
+    1. Kies op de **optie selecteren voor de pagina afbeeldings indeling voor VHD/vhdx** een **groter formaat voor VHDX**.  Selecteer **Next**.
     1. Accepteer op de pagina Selecteer de naam van het **doel bestand** de standaard naam van het bestand.  Selecteer **converteren**.
     1. Wacht op de pagina **converteren** naar de afbeelding die moet worden geconverteerd.  Dit kan enkele minuten duren.  Selecteer **volt ooien** wanneer de conversie is voltooid.
 1. Maak een nieuwe Hyper-V-virtuele machine.

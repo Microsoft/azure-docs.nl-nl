@@ -5,17 +5,17 @@ ms.topic: article
 ms.date: 06/23/2020
 ms.custom: devx-track-csharp
 ms.openlocfilehash: fd71edd12e478bcd5f14815c105c14482cf7e2bd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89020028"
 ---
 # <a name="message-transfers-locks-and-settlement"></a>Berichten overdragen, vergrendelen en verwerken
 
 De centrale mogelijkheid van een Message Broker, zoals Service Bus, is het accepteren van berichten in een wachtrij of onderwerp en om ze beschikbaar te houden voor later ophalen. *Send* is de term die meestal wordt gebruikt voor de overdracht van een bericht naar de Message Broker. *Ontvangen* is de term die wordt gebruikt voor de overdracht van een bericht naar een client die wordt opgehaald.
 
-Wanneer een client een bericht verzendt, wil het meestal weten of het bericht juist is overgedragen aan en wordt geaccepteerd door de Broker, of dat er een fout is opgetreden bij het sorteren van het probleem. Deze positieve of negatieve bevestiging bezinkt de client en de broker die de overdrachts status van het bericht kennen en wordt daarom *vereffend*genoemd.
+Wanneer een client een bericht verzendt, wil het meestal weten of het bericht juist is overgedragen aan en wordt geaccepteerd door de Broker, of dat er een fout is opgetreden bij het sorteren van het probleem. Deze positieve of negatieve bevestiging bezinkt de client en de broker die de overdrachts status van het bericht kennen en wordt daarom *vereffend* genoemd.
 
 Evenzo, wanneer de broker een bericht naar een client overdraagt, willen de Broker en client weten of het bericht is verwerkt en daarom kan worden verwijderd, of dat het bericht niet kan worden bezorgd of verwerkt, en dat het bericht mogelijk opnieuw moet worden bezorgd.
 

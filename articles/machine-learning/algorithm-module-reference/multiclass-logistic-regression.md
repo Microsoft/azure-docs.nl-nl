@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 04/22/2020
 ms.openlocfilehash: e2bbc28735bcbfd952c4941453956acd0568ea67
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93420730"
 ---
 # <a name="multiclass-logistic-regression-module"></a>Module logistiek-regressie voor multi klasse
@@ -38,13 +38,13 @@ In een logistiek-regressie met meerdere klassen kan de classificatie worden gebr
 
 2. Geef op hoe u wilt dat het model wordt getraind door de optie **trainer modus maken** in te stellen.
 
-    + **Eén para meter** : gebruik deze optie als u weet hoe u het model wilt configureren en geef een specifieke set waarden als argumenten op.
+    + **Eén para meter**: gebruik deze optie als u weet hoe u het model wilt configureren en geef een specifieke set waarden als argumenten op.
 
-    + **Parameter bereik** : Selecteer deze optie als u niet zeker weet wat de beste para meters zijn en u een parameter sweep wilt uitvoeren. Selecteer een bereik met waarden om over te sporen en het [model Hyper parameters](tune-model-hyperparameters.md) wordt herhaald op alle mogelijke combi Naties van de instellingen die u hebt verstrekt om de Hyper parameters te bepalen die de optimale resultaten opleveren.  
+    + **Parameter bereik**: Selecteer deze optie als u niet zeker weet wat de beste para meters zijn en u een parameter sweep wilt uitvoeren. Selecteer een bereik met waarden om over te sporen en het [model Hyper parameters](tune-model-hyperparameters.md) wordt herhaald op alle mogelijke combi Naties van de instellingen die u hebt verstrekt om de Hyper parameters te bepalen die de optimale resultaten opleveren.  
 
-3. **Optimalisatie tolerantie** , geeft u de drempel waarde voor optimalisatie convergentie op. Als de verbetering tussen herhalingen kleiner is dan de drempel waarde, wordt het algoritme gestopt en wordt het huidige model geretourneerd.
+3. **Optimalisatie tolerantie**, geeft u de drempel waarde voor optimalisatie convergentie op. Als de verbetering tussen herhalingen kleiner is dan de drempel waarde, wordt het algoritme gestopt en wordt het huidige model geretourneerd.
 
-4. **L1 regularisatie Weight** , **L2-regularisatie gewicht** : Typ een waarde die moet worden gebruikt voor de regularisatie-para meters L1 en L2. Een andere waarde dan nul wordt aanbevolen voor beide.
+4. **L1 regularisatie Weight**, **L2-regularisatie gewicht**: Typ een waarde die moet worden gebruikt voor de regularisatie-para meters L1 en L2. Een andere waarde dan nul wordt aanbevolen voor beide.
 
     Regularisatie is een methode voor het voor komen van overmontage door het bestraffen van modellen met extreme coëfficiënt waarden. Regularisatie werkt door de sanctie toe te voegen die is gekoppeld aan coëfficiënt waarden voor de fout van de hypo these. Een nauw keurig model met extreme coëfficiënt waarden wordt meer bestraft, maar een minder nauw keurig model met meer conservatieve waarden zou minder worden bestraft.
 
@@ -52,13 +52,13 @@ In een logistiek-regressie met meerdere klassen kan de classificatie worden gebr
 
      Er zijn verschillende lineaire combi Naties van L1-en L2-termen ontwikkeld voor logistieke regressie modellen, zoals [elastische net regularisatie](https://wikipedia.org/wiki/Elastic_net_regularization).
 
-6. **Wille keurig getal Seed** : Typ een geheel getal dat moet worden gebruikt als seed voor het algoritme als u wilt dat de resultaten herhaaldelijk worden uitgevoerd. Anders wordt een waarde van de systeem klok gebruikt als seed, waardoor er iets andere resultaten kunnen worden geproduceerd in uitvoeringen van dezelfde pijp lijn.
+6. **Wille keurig getal Seed**: Typ een geheel getal dat moet worden gebruikt als seed voor het algoritme als u wilt dat de resultaten herhaaldelijk worden uitgevoerd. Anders wordt een waarde van de systeem klok gebruikt als seed, waardoor er iets andere resultaten kunnen worden geproduceerd in uitvoeringen van dezelfde pijp lijn.
 
 8. Verbind een gegevensset met een label en Train het model:
 
-    + Als u de **modus trainer maken** instelt op **één para meter** , verbindt u een gecodeerde gegevensset en de module [Train model](train-model.md) .  
+    + Als u de **modus trainer maken** instelt op **één para meter**, verbindt u een gecodeerde gegevensset en de module [Train model](train-model.md) .  
   
-    + Als u de **modus trainer maken** instelt op het **parameter bereik** , verbindt u een gecodeerde gegevensset en traint u het model met behulp van [Hyper parameters model](tune-model-hyperparameters.md).  
+    + Als u de **modus trainer maken** instelt op het **parameter bereik**, verbindt u een gecodeerde gegevensset en traint u het model met behulp van [Hyper parameters model](tune-model-hyperparameters.md).  
   
     > [!NOTE]
     > 

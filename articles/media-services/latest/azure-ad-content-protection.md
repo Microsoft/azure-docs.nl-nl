@@ -14,10 +14,10 @@ ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-js
 ms.openlocfilehash: 9415d66c49992bc31f773dec908a861f1126e714
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92427214"
 ---
 # <a name="tutorial-end-to-end-content-protection-using-azure-ad"></a>Zelfstudie: End-to-end beveiliging van inhoud met behulp van Azure Active Directory
@@ -155,7 +155,7 @@ Kies een Azure Active Directory-tenant om voor het end-to-end voorbeeld te gebru
 1. Selecteer **App-registraties** in het menu.
 1. Klik op **+ Nieuwe registratie**.
 1. Noem de app *LicenseDeliveryResource2* (waarbij 2 staat voor AAD v2-eindpunten).
-1. Selecteer **Alleen accounts in deze organisatiemap (alleen [ *de naam van de tenant* ] - één tenant)** . Als u toegang tot meerdere tenants wilt inschakelen, selecteert u een van de andere opties voor meerdere tenants.
+1. Selecteer **Alleen accounts in deze organisatiemap (alleen [*de naam van de tenant*] - één tenant)** . Als u toegang tot meerdere tenants wilt inschakelen, selecteert u een van de andere opties voor meerdere tenants.
 1. De **omleidings-URI** is optioneel en kan later worden gewijzigd.
 1. Klik op **Registreren**. App-registraties wordt weergegeven.
 1. Selecteer **Manifest** in het menu. De weergave Manifest wordt weergegeven.
@@ -182,13 +182,13 @@ Kies een Azure Active Directory-tenant om voor het end-to-end voorbeeld te gebru
 1. Selecteer **App-registraties** in het menu.
 1. Klik op **+ Nieuwe registratie**.
 1. Geef de client-app een naam, bijvoorbeeld *AMS AAD Content Protection*.
-1. Selecteer **Alleen accounts in deze organisatiemap (alleen [ *de naam van de tenant* ] - één tenant)** . Als u toegang tot meerdere tenants wilt inschakelen, selecteert u een van de andere opties voor meerdere tenants.
+1. Selecteer **Alleen accounts in deze organisatiemap (alleen [*de naam van de tenant*] - één tenant)** . Als u toegang tot meerdere tenants wilt inschakelen, selecteert u een van de andere opties voor meerdere tenants.
 1. De **omleidings-URI** is optioneel en kan later worden gewijzigd.
 1. Klik op **Registreren**.
 1. Selecteer **API-machtigingen** in het menu.
 1. Klik op **+ Een machtiging toevoegen**. De weergave API-machtigingen aanvragen wordt geopend.
-1. Klik op het tabblad **Mijn API** en selecteer de *LicenseDeliveryResource2* -app die u in de vorige sectie hebt gemaakt.
-1. Klik op de DRM-pijl en controleer de *DRM.License.Delivery* -machtiging.
+1. Klik op het tabblad **Mijn API** en selecteer de *LicenseDeliveryResource2*-app die u in de vorige sectie hebt gemaakt.
+1. Klik op de DRM-pijl en controleer de *DRM.License.Delivery*-machtiging.
 1. Klik op **Machtigingen toevoegen**. De weergave Machtigingen toevoegen wordt gesloten.
 1. Selecteer **Manifest** in het menu. De weergave Manifest wordt weergegeven.
 1. Zoek de volgende waardeparen en voeg deze toe aan het `replyUrlsWithType`-kenmerk:
@@ -250,7 +250,7 @@ Wijzig de waarden voor `ida_AADOpenIdDiscoveryDocument`, `ida_audience` en `ida_
 1. Selecteer de AAD-tenant die u eerder hebt gebruikt, klik in het menu op **App-registraties** en klik vervolgens op de link **Eindpunten**.
 1. Selecteer en kopieer de waarde in het veld **OpenIdConnect-metagegevensdocument** en plak deze in de code als de waarde `ida_AADOpenIdDiscoveryDocument`.
 1. De waarde `ida_audience` is de toepassings-id (client-id) van de geregistreerde app *LicenseDeliveryResource2*.
-1. De waarde `ida_issuer` is de URL `https://login.microsoftonline.com/[tenant_id]/v2.0`. Vervang [ *tenant_id* ] door uw tenant-id.
+1. De waarde `ida_issuer` is de URL `https://login.microsoftonline.com/[tenant_id]/v2.0`. Vervang [*tenant_id*] door uw tenant-id.
 
 ## <a name="set-up-the-sample-player-app"></a>De speler-voorbeeldapp instellen
 
@@ -264,7 +264,7 @@ U hebt twee opties voor het instellen van de speler-app:
 ### <a name="option-1"></a>Optie 1
 
 1. Start Visual Studio Code.
-1. Om het project te openen, klikt u op Bestand -> Map openen -> blader naar en selecteer de bovenliggende map van het *package.json* -bestand.
+1. Om het project te openen, klikt u op Bestand -> Map openen -> blader naar en selecteer de bovenliggende map van het *package.json*-bestand.
 1. Open het JavaScript-bestand *public/javascript/constants.js*.
 1. Vervang `OAUTH2_CONST.CLIENT_ID` door de `client_id` van uw geregistreerde client-app in de AAD-tenant.  U kunt de `client_id` vinden in het gedeelte Overzicht van de geregistreerde app in de Azure-portal. Opmerking: het gaat om de client-id, niet om de object-id.
 1. Vervang `OAUTH2_CONST.TENANT_ID` door de `tenant_id` van uw Azure Active Directory-tenant. U kunt uw `tenant_id` vinden door te klikken op het Azure Active Directory-menu. De tenant_id wordt weergegeven in de sectie Overzicht.
@@ -346,8 +346,8 @@ De claim *groups* is lid van een [beperkte claimset](../../active-directory/deve
 
 #### <a name="test"></a>Testen
 
-1. Meld u aan met het *premium_user* -account. U hoort de beveiligde inhoud te kunnen afspelen.
-1. Meld u aan met het *basic_user* -account. Er hoort een foutbericht te worden weergegeven waarin staat dat de video is versleuteld, maar er geen sleutel is om deze te ontsleutelen. Als u de gebeurtenissen, fouten en downloads weergeeft met de vervolgkeuzelijst aan de onderkant van de diagnostische overlay van de speler, moet het foutbericht aangeven dat het ophalen van de licentie is mislukt vanwege de ontbrekende claimwaarde voor de groepsclaims in de JWT die is uitgegeven door het Azure Active Directory-tokeneindpunt.
+1. Meld u aan met het *premium_user*-account. U hoort de beveiligde inhoud te kunnen afspelen.
+1. Meld u aan met het *basic_user*-account. Er hoort een foutbericht te worden weergegeven waarin staat dat de video is versleuteld, maar er geen sleutel is om deze te ontsleutelen. Als u de gebeurtenissen, fouten en downloads weergeeft met de vervolgkeuzelijst aan de onderkant van de diagnostische overlay van de speler, moet het foutbericht aangeven dat het ophalen van de licentie is mislukt vanwege de ontbrekende claimwaarde voor de groepsclaims in de JWT die is uitgegeven door het Azure Active Directory-tokeneindpunt.
 
 ### <a name="supporting-multiple-media-service-accounts-across-multiple-subscriptions"></a>Ondersteuning voor meerdere mediaserviceaccounts (op meerdere abonnementen)
 

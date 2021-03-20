@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 05/06/2020
 ms.author: dayshen
 ms.openlocfilehash: 24e56736e0d033420f9aaf976b0fb7d9727c1a5b
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92143231"
 ---
 # <a name="configure-network-access-control"></a>Netwerk toegangs beheer configureren
@@ -48,7 +48,7 @@ U kunt netwerk toegangs beheer voor de Azure signalerings service beheren via de
 1. Als u de standaard actie wilt bewerken, schakelt u de knop **toestaan/weigeren** in.
 
     > [!TIP]
-    > De standaard actie is de actie die wordt uitgevoerd wanneer er geen regels voor de toegangs beheer lijst worden gevonden. Als de standaard actie bijvoorbeeld **weigeren**is, worden aanvraag typen die niet expliciet zijn goedgekeurd hieronder, geweigerd.
+    > De standaard actie is de actie die wordt uitgevoerd wanneer er geen regels voor de toegangs beheer lijst worden gevonden. Als de standaard actie bijvoorbeeld **weigeren** is, worden aanvraag typen die niet expliciet zijn goedgekeurd hieronder, geweigerd.
 
 1. Als u de regel voor het open bare netwerk wilt bewerken, selecteert u toegestane typen aanvragen onder **openbaar netwerk**.
 

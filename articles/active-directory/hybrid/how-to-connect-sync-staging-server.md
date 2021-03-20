@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 48584fa4042cf53fa1084e519dca0e64f530ca59
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90090122"
 ---
 # <a name="azure-ad-connect-staging-server-and-disaster-recovery"></a>Azure AD Connect: staging-server en herstel na nood gevallen
@@ -33,7 +33,7 @@ De faserings modus kan worden gebruikt voor verschillende scenario's, waaronder:
 * Test en implementeer nieuwe configuratie wijzigingen.
 * Een nieuwe server introduceren en de oude buiten gebruik stellen.
 
-Tijdens de installatie kunt u de server in de **faserings modus**selecteren. Met deze actie wordt de server actief voor importeren en synchroniseren, maar worden er geen export bewerkingen uitgevoerd. Een server in de faserings modus voert geen wachtwoord synchronisatie of het terugschrijven van wacht woorden uit, zelfs niet als u deze functies tijdens de installatie hebt geselecteerd. Wanneer u de faserings modus uitschakelt, wordt het exporteren van de server gestart, wordt wachtwoord synchronisatie ingeschakeld en wordt het terugschrijven van wacht woorden ingeschakeld.
+Tijdens de installatie kunt u de server in de **faserings modus** selecteren. Met deze actie wordt de server actief voor importeren en synchroniseren, maar worden er geen export bewerkingen uitgevoerd. Een server in de faserings modus voert geen wachtwoord synchronisatie of het terugschrijven van wacht woorden uit, zelfs niet als u deze functies tijdens de installatie hebt geselecteerd. Wanneer u de faserings modus uitschakelt, wordt het exporteren van de server gestart, wordt wachtwoord synchronisatie ingeschakeld en wordt het terugschrijven van wacht woorden ingeschakeld.
 
 > [!NOTE]
 > Stel dat u een Azure AD Connect hebt met de synchronisatie functie voor wachtwoord hash ingeschakeld. Wanneer u de faserings modus inschakelt, stopt de server met het synchroniseren van wachtwoord wijzigingen van on-premises AD. Wanneer u de faserings modus uitschakelt, wordt het synchroniseren van wachtwoord wijzigingen door de server hervat vanaf waar deze de laatste keer is gestopt. Als de server gedurende lange tijd in de faserings modus blijft, kan het even duren voordat de server alle wachtwoord wijzigingen synchroniseert die zijn opgetreden tijdens de periode.
@@ -56,18 +56,18 @@ Voer de volgende stappen uit om deze methode toe te passen:
 5. [Scha kelen tussen actieve server](#switch-active-server)
 
 #### <a name="prepare"></a>Voorbereiden
-1. Installeer Azure AD Connect, selecteer de **faserings modus**en maak de selectie van **synchronisatie starten** op de laatste pagina in de installatie wizard. In deze modus kunt u de synchronisatie-engine hand matig uitvoeren.
+1. Installeer Azure AD Connect, selecteer de **faserings modus** en maak de selectie van **synchronisatie starten** op de laatste pagina in de installatie wizard. In deze modus kunt u de synchronisatie-engine hand matig uitvoeren.
    ![Scherm afbeelding toont de pagina gereed om te configureren in het dialoog venster Azure AD Connect.](./media/how-to-connect-sync-staging-server/readytoconfigure.png)
-2. Meld u af/Meld u aan en selecteer **synchronisatie service**in het menu Start.
+2. Meld u af/Meld u aan en selecteer **synchronisatie service** in het menu Start.
 
 #### <a name="configuration"></a>Configuratie
 Als u aangepaste wijzigingen hebt aangebracht aan de primaire server en de configuratie wilt vergelijken met de staging-server, gebruikt u [Azure AD Connect-configuratie Documenter](https://github.com/Microsoft/AADConnectConfigDocumenter).
 
 #### <a name="import-and-synchronize"></a>Importeren en synchroniseren
-1. Selecteer **connectors**en selecteer de eerste connector met het type **Active Directory Domain Services**. Klik op **uitvoeren**, selecteer **volledig importeren**en **OK**. Voer de volgende stappen uit voor alle connectors van dit type.
-2. Selecteer de connector met het type **Azure Active Directory (micro soft)**. Klik op **uitvoeren**, selecteer **volledig importeren**en **OK**.
-3. Zorg ervoor dat de tabs-connectors nog steeds zijn geselecteerd. Klik voor elke connector met type **Active Directory Domain Services**op **uitvoeren**, selecteer **Delta synchronisatie**en **OK**.
-4. Selecteer de connector met het type **Azure Active Directory (micro soft)**. Klik op **uitvoeren**, selecteer **Delta synchronisatie**en **OK**.
+1. Selecteer **connectors** en selecteer de eerste connector met het type **Active Directory Domain Services**. Klik op **uitvoeren**, selecteer **volledig importeren** en **OK**. Voer de volgende stappen uit voor alle connectors van dit type.
+2. Selecteer de connector met het type **Azure Active Directory (micro soft)**. Klik op **uitvoeren**, selecteer **volledig importeren** en **OK**.
+3. Zorg ervoor dat de tabs-connectors nog steeds zijn geselecteerd. Klik voor elke connector met type **Active Directory Domain Services** op **uitvoeren**, selecteer **Delta synchronisatie** en **OK**.
+4. Selecteer de connector met het type **Azure Active Directory (micro soft)**. Klik op **uitvoeren**, selecteer **Delta synchronisatie** en **OK**.
 
 U hebt nu gefaseerd wijzigingen naar Azure AD en on-premises AD exporteren (als u Exchange Hybrid Deployment gebruikt). Met de volgende stappen kunt u controleren wat er moet worden gewijzigd voordat u de export naar de directory's start.
 
@@ -89,7 +89,7 @@ U hebt nu gefaseerd wijzigingen naar Azure AD en on-premises AD exporteren (als 
 
 #### <a name="switch-active-server"></a>Scha kelen tussen actieve server
 1. Schakel op de huidige actieve server de server (DirSync/FIM/Azure AD Sync) uit zodat deze niet wordt geëxporteerd naar Azure AD of stel deze in de faserings modus (Azure AD Connect) in.
-2. Voer de installatie wizard uit op de server in de **faserings modus** en schakel de **faserings modus**uit.
+2. Voer de installatie wizard uit op de server in de **faserings modus** en schakel de **faserings modus** uit.
    ![ReadyToConfigure](./media/how-to-connect-sync-staging-server/additionaltasks.png)
 
 ## <a name="disaster-recovery"></a>Herstel na noodgeval
@@ -102,7 +102,7 @@ Een deel van het implementatie ontwerp is het plannen van wat er moet gebeuren a
 Afhankelijk van de antwoorden op deze vragen en het beleid van uw organisatie, kan een van de volgende strategieën worden geïmplementeerd:
 
 * Opnieuw samen stellen wanneer dit nodig is.
-* Beschikken over een reserve server voor stand-by, ook wel de **faserings modus**genoemd.
+* Beschikken over een reserve server voor stand-by, ook wel de **faserings modus** genoemd.
 * Virtuele machines gebruiken.
 
 Als u de ingebouwde SQL Express-data base niet gebruikt, raadpleegt u ook de sectie [SQL maximale Beschik baarheid](#sql-high-availability) .
@@ -113,7 +113,7 @@ Een geschikte strategie is het plannen van het opnieuw bouwen van een server als
 De synchronisatie-engine-server slaat geen status over de objecten op, zodat de data base opnieuw kan worden samengesteld op basis van de gegevens in Active Directory en Azure AD. Het kenmerk **Source Anchor** wordt gebruikt om de objecten van on-premises en de Cloud samen te voegen. Als u de server opnieuw opbouwt met bestaande objecten on-premises en de Cloud, komt de synchronisatie-engine opnieuw overeen met die objecten bij het opnieuw installeren. De dingen die u nodig hebt om documenten te documenteren en op te slaan, zijn de configuratie wijzigingen die zijn aangebracht op de server, zoals filter-en synchronisatie regels. Deze aangepaste configuraties moeten opnieuw worden toegepast voordat u begint met synchronisatie.
 
 ### <a name="have-a-spare-standby-server---staging-mode"></a>Een reserve server voor stand-by-staging hebben
-Als u een complexere omgeving hebt, is het raadzaam om een of meer stand-by-servers te hebben. Tijdens de installatie kunt u instellen dat een server zich in de **faserings modus**bevindt.
+Als u een complexere omgeving hebt, is het raadzaam om een of meer stand-by-servers te hebben. Tijdens de installatie kunt u instellen dat een server zich in de **faserings modus** bevindt.
 
 Zie voor meer informatie de [faserings modus](#staging-mode).
 
@@ -151,9 +151,9 @@ write-host "Importing XML" -ForegroundColor Yellow
 $resolvedXMLtoimport=Resolve-Path -Path ([Environment]::ExpandEnvironmentVariables($xmltoimport))
 
 #use an XmlReader to deal with even large files
-$result=$reader = [System.Xml.XmlReader]::Create($resolvedXMLtoimport) 
+$result=$reader = [System.Xml.XmlReader]::Create($resolvedXMLtoimport) 
 $result=$reader.ReadToDescendant('cs-object')
-do 
+do 
 {
     #create the object placeholder
     #adding them up here means we can enforce consistency
@@ -270,5 +270,5 @@ $objOutputUsers | Export-Csv -path processedusers${outputfilecount}.csv -NoTypeI
 ## <a name="next-steps"></a>Volgende stappen
 **Overzichts onderwerpen**  
 
-* [Azure AD Connect synchronisatie: synchronisatie begrijpen en aanpassen](how-to-connect-sync-whatis.md)  
+* [Azure AD Connect synchroniseren: Synchronisatie begrijpen en aanpassen](how-to-connect-sync-whatis.md)  
 * [Integrating your on-premises identities with Azure Active Directory (Engelstalig)](whatis-hybrid-identity.md)  

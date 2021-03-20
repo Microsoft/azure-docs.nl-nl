@@ -12,10 +12,10 @@ manager: celestedg
 ms.workload: identity
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 983a803245467145a0b1161a4495e8045759e7ab
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92442062"
 ---
 # <a name="billing-model-for-azure-ad-external-identities"></a>Facturerings model voor externe Azure AD-identiteiten
@@ -51,24 +51,24 @@ Een Azure AD-Tenant moet worden gekoppeld aan een Azure-abonnement voor juiste f
 
     ![Het pictogram van de map en het abonnement selecteren](media/external-identities-pricing/portal-mau-pick-directory.png)
 
-3. Onder **Azure-Services**selecteert u **Azure Active Directory**.
+3. Onder **Azure-Services** selecteert u **Azure Active Directory**.
 
 4. Selecteer in het linkermenu **externe identiteiten**.
 
-5. Onder **abonnementen**selecteert u **gekoppelde abonnementen**.
+5. Onder **abonnementen** selecteert u **gekoppelde abonnementen**.
 
 6. Selecteer in de lijst Tenant het selectie vakje naast de Tenant en selecteer vervolgens **abonnement koppelen**.
 
     ![De Tenant selecteren en een abonnement koppelen](media/external-identities-pricing/linked-subscriptions.png)
 
-7. Selecteer een **abonnement** en een **resource groep**in het deel venster een abonnement koppelen. Selecteer vervolgens **Toepassen**.
+7. Selecteer een **abonnement** en een **resource groep** in het deel venster een abonnement koppelen. Selecteer vervolgens **Toepassen**.
 
    > [!NOTE]
    > Als er geen abonnementen worden weer gegeven, kunt u [een abonnement koppelen aan uw Tenant](../fundamentals/active-directory-how-subscriptions-associated-directory.md). U kunt ook een nieuw abonnement toevoegen door de koppeling te selecteren **Als u nog geen abonnement hebt, kunt u hier een maken**.
 
     ![Een abonnement en resource groep selecteren](media/external-identities-pricing/link-subscription-resource.png)
 
-Nadat u deze stappen hebt voltooid, wordt uw Azure-abonnement gefactureerd op basis van uw Azure direct-of Enterprise Agreement-gegevens, indien van toepassing.
+Nadat u deze stappen hebt voltooid, wordt uw Azure-abonnement gefactureerd op basis van uw Azure direct-of Enterprise Overeenkomst-gegevens, indien van toepassing.
 
 ## <a name="next-steps"></a>Volgende stappen
 

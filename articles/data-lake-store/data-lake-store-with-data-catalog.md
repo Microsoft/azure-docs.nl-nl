@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: 02544489816f5711ca6e599c2bce03737c747934
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92106617"
 ---
 # <a name="register-data-from-azure-data-lake-storage-gen1-in-azure-data-catalog"></a>Gegevens van Azure Data Lake Storage Gen1 in Azure Data Catalog registreren
@@ -35,10 +35,10 @@ Voordat u met deze zelfstudie begint, moet u het volgende hebben of hebben gedaa
 
     ![Een gegevensbron registreren](./media/data-lake-store-with-data-catalog/register-data-source.png "Een gegevensbron registreren")
 1. Klik op de volgende pagina op **toepassing starten**. Hiermee wordt het manifest bestand van de toepassing op uw computer gedownload. Dubbel klik op het manifest bestand om de toepassing te starten.
-1. Klik op de pagina Welkom op **Aanmelden**en voer uw referenties in.
+1. Klik op de pagina Welkom op **Aanmelden** en voer uw referenties in.
 
     ![Welkomstscherm](./media/data-lake-store-with-data-catalog/welcome.screen.png "Welkomstscherm")
-1. Selecteer **Azure data Lake Store**op de pagina een gegevens bron selecteren en klik vervolgens op **volgende**.
+1. Selecteer **Azure data Lake Store** op de pagina een gegevens bron selecteren en klik vervolgens op **volgende**.
 
     ![Gegevens bron selecteren](./media/data-lake-store-with-data-catalog/select-source.png "Gegevensbron selecteren")
 1. Geef op de volgende pagina de Data Lake Storage Gen1-account naam op die u wilt registreren in Data Catalog. Wijzig de andere opties als standaard en klik vervolgens op **verbinding maken**.

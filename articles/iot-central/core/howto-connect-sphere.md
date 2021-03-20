@@ -9,10 +9,10 @@ author: sandeeppujar
 ms.date: 04/30/2020
 ms.custom: device-developer
 ms.openlocfilehash: 770f6e56a669ab2d9b425a7a2879eeef5d37377b
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92123420"
 ---
 # <a name="connect-an-azure-sphere-device-to-your-azure-iot-central-application"></a>Een Azure Sphere-apparaat toevoegen aan uw Azure IoT Central-toepassing
@@ -47,13 +47,13 @@ U hebt de volgende resources nodig om de stappen in dit artikel uit te voeren:
 
 Een Azure Sphere-apparaat maken in IoT Central:
 
-1. Selecteer in uw Azure IoT Central-toepassing het tabblad **Apparaatinstellingen** en selecteer **+ Nieuw**. Selecteer **Azure Sphere voorbeeld apparaat**in de sectie **een sjabloon met een aanbevolen apparaat gebruiken**.
+1. Selecteer in uw Azure IoT Central-toepassing het tabblad **Apparaatinstellingen** en selecteer **+ Nieuw**. Selecteer **Azure Sphere voorbeeld apparaat** in de sectie **een sjabloon met een aanbevolen apparaat gebruiken**.
 
     :::image type="content" source="media/howto-connect-sphere/sphere-create-template.png" alt-text="Device-sjabloon voor Azure Sphere DevKit":::
 
-1. Bewerk in de sjabloon met de weer gave met de naam **overzicht** om de **Tempe ratuur** en de **knop indrukken**weer te geven.
+1. Bewerk in de sjabloon met de weer gave met de naam **overzicht** om de **Tempe ratuur** en de **knop indrukken** weer te geven.
 
-1. Selecteer het **bewerkings type apparaat en** de weer gave Cloud gegevens om een andere weer gave toe te voegen waarin de **LED**van de eigenschap lezen/schrijven wordt weer gegeven. Sleep de eigenschap LED van de **status** naar de lege, gestippelde rechthoek aan de rechter kant van het formulier. Selecteer **Opslaan**.
+1. Selecteer het **bewerkings type apparaat en** de weer gave Cloud gegevens om een andere weer gave toe te voegen waarin de **LED** van de eigenschap lezen/schrijven wordt weer gegeven. Sleep de eigenschap LED van de **status** naar de lege, gestippelde rechthoek aan de rechter kant van het formulier. Selecteer **Opslaan**.
 
 ## <a name="prepare-the-device"></a>Het apparaat voorbereiden
 
@@ -67,7 +67,7 @@ Als u het voor beeld wilt inschakelen om verbinding te maken met IoT Central, mo
 
 Wanneer het apparaat is verbonden met IoT Central, ziet u de telemetrie op het dash board.
 
-:::image type="content" source="media/howto-connect-sphere/sphere-view.png" alt-text="Device-sjabloon voor Azure Sphere DevKit":::
+:::image type="content" source="media/howto-connect-sphere/sphere-view.png" alt-text="Dash board voor Azure Sphere DevKit":::
 
 ## <a name="create-a-simulated-device"></a>Een gesimuleerd apparaat maken
 
@@ -77,7 +77,7 @@ Een gesimuleerd apparaat maken:
 
 - **Apparaten selecteren > Azure IOT-bol**
 - Selecteer **+ Nieuw**.
-- Voer een unieke **apparaat-id** en een beschrijvende naam voor het **apparaat**in.
+- Voer een unieke **apparaat-id** en een beschrijvende naam voor het **apparaat** in.
 - Schakel de **gesimuleerde** instelling in.
 - Selecteer **Maken**.
 

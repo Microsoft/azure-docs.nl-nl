@@ -9,10 +9,10 @@ ms.topic: troubleshooting
 ms.date: 03/26/2020
 ms.author: genli
 ms.openlocfilehash: c316aaf02979008b9d2ebc691d54c0fb95a5a52d
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95994856"
 ---
 # <a name="troubleshooting-azure-point-to-site-connection-problems"></a>Problemen oplossen: Azure Point-to-site-verbindings problemen
@@ -178,7 +178,7 @@ Pak het configuratie pakket voor de VPN-client uit en zoek het CER-bestand. Voer
 
 Wanneer u probeert de wijzigingen voor de VPN-gateway op te slaan in de Azure Portal, wordt het volgende fout bericht weer gegeven:
 
-**Kan de gateway naam van de virtuele netwerk gateway niet opslaan &lt; *gateway name* &gt; . De gegevens voor de certificaat &lt; *certificaat-id* &gt; zijn ongeldig.**
+**Kan de gateway naam van de virtuele netwerk gateway niet opslaan &lt;  &gt; . De gegevens voor de certificaat &lt; *certificaat-id* &gt; zijn ongeldig.**
 
 ### <a name="cause"></a>Oorzaak 
 
@@ -215,7 +215,7 @@ e8Jcej7mzunzyjz4chN0/WVF94MtxbUkLkqP
 
 Wanneer u probeert de wijzigingen voor de VPN-gateway op te slaan in de Azure Portal, wordt het volgende fout bericht weer gegeven: 
 
-Kan de gateway naam van de **virtuele netwerk gateway niet opslaan &lt; *gateway name* &gt; . De naam van het resource naam &lt; *certificaat dat u wilt uploaden* &gt; , is ongeldig**.
+Kan de gateway naam van de **virtuele netwerk gateway niet opslaan &lt;  &gt; . De naam van het resource naam &lt; *certificaat dat u wilt uploaden* &gt; , is ongeldig**.
 
 ### <a name="cause"></a>Oorzaak
 

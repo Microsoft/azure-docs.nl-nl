@@ -8,10 +8,10 @@ ms.service: data-lake-analytics
 ms.topic: how-to
 ms.date: 07/03/2018
 ms.openlocfilehash: 5f9410cc91174420662bb5efc67c8904b5d5e647
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96018984"
 ---
 # <a name="run-u-sql-scripts-on-your-local-machine"></a>U-SQL-scripts uitvoeren op uw lokale computer
@@ -72,7 +72,7 @@ Een U-SQL-project beheert de geïsoleerde lokale uitvoerings omgeving via een pr
 
 Een U-SQL-project maakt een lokale data root-map en stelt gegevens in voor een account voor een **lokaal project** . Een map met tijdelijke gegevens wordt gereinigd en opnieuw gemaakt in de werkmap van het U-SQL-project telkens wanneer een nieuwe build en een lokale uitvoering plaatsvinden. Alle gegevens bronnen die door het U-SQL-project zijn geconfigureerd, worden gekopieerd naar deze tijdelijke lokale data root-map voordat de lokale taak wordt uitgevoerd. 
 
-U kunt de hoofdmap van uw gegevens bronnen configureren. Klik **met** de rechter muisknop op de  >  **Property**  >  **gegevens bron test** van de eigenschap U-SQL project. Wanneer u een U-SQL-script uitvoert op een account van een **lokaal project** , worden alle bestanden en submappen in de map **test gegevens** gekopieerd naar de hoofdmap van de tijdelijke lokale data. Bestanden onder submappen zijn opgenomen. Nadat een lokale taak is uitgevoerd, kunnen uitvoer resultaten ook worden gevonden in de map met tijdelijke lokale data-hoofdmap in de werkmap van het project. Al deze uitvoer wordt verwijderd en gereinigd wanneer het project opnieuw wordt opgebouwd en gereinigd. 
+U kunt de hoofdmap van uw gegevens bronnen configureren. Klik **met** de rechter muisknop op de  >    >  **gegevens bron test** van de eigenschap U-SQL project. Wanneer u een U-SQL-script uitvoert op een account van een **lokaal project** , worden alle bestanden en submappen in de map **test gegevens** gekopieerd naar de hoofdmap van de tijdelijke lokale data. Bestanden onder submappen zijn opgenomen. Nadat een lokale taak is uitgevoerd, kunnen uitvoer resultaten ook worden gevonden in de map met tijdelijke lokale data-hoofdmap in de werkmap van het project. Al deze uitvoer wordt verwijderd en gereinigd wanneer het project opnieuw wordt opgebouwd en gereinigd. 
 
 ![De test gegevens bron van een project configureren](./media/data-lake-analytics-data-lake-tools-local-run/data-lake-tools-configure-project-test-data-source.png)
 
@@ -93,7 +93,7 @@ In de volgende tabel ziet u meer verschillen tussen accounts voor **lokale compu
 |----------------|---------------|---------------|
 |Lokale toegang|Kan worden gebruikt door alle projecten.|Alleen het bijbehorende project heeft toegang tot dit account.|
 |Hoofdmap van lokale gegevens|Een permanente lokale map. Geconfigureerd via **hulpprogram ma's**  >  **Data Lake**  >  **Opties en instellingen**.|Een tijdelijke map die wordt gemaakt voor elke lokale uitvoering onder de U-SQL-project werkmap. De map wordt gereinigd wanneer er opnieuw wordt opgebouwd of opnieuw wordt uitgevoerd.|
-|Invoer gegevens voor een U-SQL-script|Het relatieve pad onder de permanente lokale data root-map.|Stel de gegevens bron voor de eigenschap test van **U-SQL-project** in  >  **Test Data Source**. Alle bestanden en submappen worden gekopieerd naar de basismap van de tijdelijke gegevens voordat een lokale uitvoering wordt uitgevoerd.|
+|Invoer gegevens voor een U-SQL-script|Het relatieve pad onder de permanente lokale data root-map.|Stel de gegevens bron voor de eigenschap test van **U-SQL-project** in  >  . Alle bestanden en submappen worden gekopieerd naar de basismap van de tijdelijke gegevens voordat een lokale uitvoering wordt uitgevoerd.|
 |Uitvoer gegevens voor een U-SQL-script|Relatief pad onder de permanente lokale gegevens basismap.|Uitvoer naar de basismap van de tijdelijke gegevens. De resultaten worden gereinigd wanneer een nieuwe build wordt gemaakt of opnieuw wordt uitgevoerd.|
 |Data base-implementatie waarnaar wordt verwezen|Data bases waarnaar wordt verwezen, worden niet automatisch geïmplementeerd wanneer ze worden uitgevoerd op een **lokale machine** account. Dit is hetzelfde voor het indienen van een Azure Data Lake Analytics-account.|Data bases waarnaar wordt verwezen, worden automatisch geïmplementeerd op het **lokale-project** account vóór een lokale uitvoering. Alle database omgevingen worden gereinigd en opnieuw geïmplementeerd wanneer er opnieuw wordt opgebouwd of opnieuw wordt uitgevoerd.|
 

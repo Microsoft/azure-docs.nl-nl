@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 4/23/2019
 ms.author: ramamill
 ms.openlocfilehash: 40f912122e6ffb9cccbd32a747f6f0d46fd6c330
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96019129"
 ---
 # <a name="scale-with-additional-process-servers"></a>Schalen met extra proces servers
@@ -52,7 +52,7 @@ De vereisten voor de extra proces server worden in de volgende tabel samenvatten
 Down load het installatie bestand voor de proces server als volgt:
 
 1. Meld u aan bij de Azure Portal en blader naar uw Recovery Services kluis.
-2. Open **site Recovery Infrastructure**  >  -configuratie servers voor **VMware en fysieke machines**  >  **Configuration Servers** (onder voor VMware & fysieke machines).
+2. Open **site Recovery Infrastructure**  >  -configuratie servers voor **VMware en fysieke machines**  >   (onder voor VMware & fysieke machines).
 3. Selecteer de configuratie server om in te zoomen op de server details. Klik vervolgens op **+ proces server**.
 4. In **proces server toevoegen**  >   **kiest u waar u uw proces server wilt implementeren**, selecteert u **een scale-out proces server on-premises implementeren**.
 

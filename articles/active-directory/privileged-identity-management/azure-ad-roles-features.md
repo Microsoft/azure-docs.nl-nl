@@ -15,10 +15,10 @@ ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e4478c9c286c06d5d6c5593195a0e93abd286b8c
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92371508"
 ---
 # <a name="management-capabilities-for-azure-ad-roles-in-privileged-identity-management"></a>Beheer mogelijkheden voor Azure AD-rollen in Privileged Identity Management
@@ -42,8 +42,8 @@ In veel gevallen, zelfs als u niet wilt dat gebruikers een geschikte toewijzing 
 
 We voegen ook nieuwe instellingen voor Azure AD-rollen toe.
 
-- **Voorheen**kon u activerings instellingen alleen per rol configureren. Dat wil zeggen dat activerings instellingen, zoals vereisten voor multi-factor Authentication en vereisten voor incidenten/aanvraag ticket, worden toegepast op alle gebruikers die in aanmerking komen voor een opgegeven rol.
-- U kunt **nu**configureren of een afzonderlijke gebruiker multi-factor Authentication moet uitvoeren voordat ze een rol kunnen activeren. U kunt ook geavanceerde controle hebben over uw Privileged Identity Management-e-mails die betrekking hebben op specifieke rollen.
+- **Voorheen** kon u activerings instellingen alleen per rol configureren. Dat wil zeggen dat activerings instellingen, zoals vereisten voor multi-factor Authentication en vereisten voor incidenten/aanvraag ticket, worden toegepast op alle gebruikers die in aanmerking komen voor een opgegeven rol.
+- U kunt **nu** configureren of een afzonderlijke gebruiker multi-factor Authentication moet uitvoeren voordat ze een rol kunnen activeren. U kunt ook geavanceerde controle hebben over uw Privileged Identity Management-e-mails die betrekking hebben op specifieke rollen.
 
 ## <a name="extend-and-renew-assignments"></a>Toewijzingen uitbreiden en vernieuwen
 

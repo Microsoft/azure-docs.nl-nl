@@ -8,10 +8,10 @@ author: emuench
 ms.author: mingshen
 ms.date: 10/19/2020
 ms.openlocfilehash: 7030ffeb49c0a3919894f6dcf81e7252777267c5
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94629594"
 ---
 # <a name="how-to-configure-virtual-machine-offer-listing-details"></a>Details van de aanbieding van de virtuele machine configureren
@@ -39,7 +39,7 @@ Geef een korte beschrijving van uw aanbieding om weer te geven in azure Marketpl
 
 Geef een langere beschrijving van uw aanbieding om weer te geven in de zoek resultaten voor Azure Marketplace. De naam mag Maxi maal 256 tekens bevatten.
 
-### <a name="description"></a>Description
+### <a name="description"></a>Beschrijving
 
 [!INCLUDE [Long description-1](includes/long-description-1.md)]
 
@@ -55,8 +55,8 @@ Voer het webadres (URL) in van het privacybeleid van uw organisatie. Zorg ervoor
 
 Bied aanvullende online documenten over uw aanbieding. Selecteer **een koppeling toevoegen** en vul de volgende velden in om een koppeling toe te voegen:
 
-- **Naam** : klanten zien de naam op de pagina Details.
-- **Koppeling** : Voer een webadres in waarmee klanten uw online document kunnen bekijken.
+- **Naam**: klanten zien de naam op de pagina Details.
+- **Koppeling**: Voer een webadres in waarmee klanten uw online document kunnen bekijken.
 
 ## <a name="customer-support-links"></a>Koppelingen voor klant ondersteuning
 
@@ -67,15 +67,15 @@ Geef de ondersteunings website op waar klanten uw ondersteunings team kunnen ber
 
 ## <a name="partner-support-contact"></a>Contact opnemen met partner ondersteuning
 
-Geef de **naam** , het **e-mail adres** en het **telefoon nummer** op voor micro soft-partners die u kunt gebruiken wanneer uw klanten een ondersteunings ticket openen. Deze informatie wordt niet vermeld op Azure Marketplace.
+Geef de **naam**, het **e-mail adres** en het **telefoon nummer** op voor micro soft-partners die u kunt gebruiken wanneer uw klanten een ondersteunings ticket openen. Deze informatie wordt niet vermeld op Azure Marketplace.
 
 ## <a name="engineering-contact"></a>Technische contact persoon
 
-Geef de **naam** , het **e-mail adres** en het **telefoon nummer** op die micro soft moet gebruiken wanneer er problemen zijn met uw aanbieding, met inbegrip van problemen met certificering. Deze informatie wordt niet vermeld op Azure Marketplace.
+Geef de **naam**, het **e-mail adres** en het **telefoon nummer** op die micro soft moet gebruiken wanneer er problemen zijn met uw aanbieding, met inbegrip van problemen met certificering. Deze informatie wordt niet vermeld op Azure Marketplace.
 
 ## <a name="cloud-solution-provider-program-contact"></a>Contact persoon Cloud Solution Provider-programma
 
-Geef de **naam** , het **e-mail adres** en het **telefoon nummer** op van de persoon die uw CSP-programma afhandelt (indien van toepassing). Deze informatie wordt niet vermeld op Azure Marketplace. Voor het **CSP-programma marketing materiaal** voert u het webadres in waar partners in dit programma uw marketing materiaal kunnen bekijken.
+Geef de **naam**, het **e-mail adres** en het **telefoon nummer** op van de persoon die uw CSP-programma afhandelt (indien van toepassing). Deze informatie wordt niet vermeld op Azure Marketplace. Voor het **CSP-programma marketing materiaal** voert u het webadres in waar partners in dit programma uw marketing materiaal kunnen bekijken.
 
 ## <a name="marketplace-media"></a>Media voor Marketplace
 

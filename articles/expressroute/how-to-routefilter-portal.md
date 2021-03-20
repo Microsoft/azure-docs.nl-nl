@@ -9,10 +9,10 @@ ms.date: 10/15/2020
 ms.author: duau
 ms.custom: seodec18
 ms.openlocfilehash: d142028d197f9e279b5f1e05757946dc40d2c153
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92109133"
 ---
 # <a name="tutorial-configure-route-filters-for-microsoft-peering-using-the-azure-portal"></a>Zelfstudie: Routefilters voor Microsoft-peering configureren met behulp van de Azure-portal
@@ -79,27 +79,27 @@ Een routefilter kan slechts één regel bevatten, en de regel moet van het type 
 
 1. Plaats het routefilter in een resourcegroep. Zorg ervoor dat de locatie hetzelfde is als het ExpressRoute-circuit. Selecteer **Controleren en maken** en vervolgens **Maken**.
 
-    :::image type="content" source="./media/how-to-routefilter-portal/create-route-filter-basic.png" alt-text="Schermopname van de pagina Routefilter":::
+    :::image type="content" source="./media/how-to-routefilter-portal/create-route-filter-basic.png" alt-text="Schermopname van de pagina Routefilter maken, met ingevoerde voorbeeldwaarden":::
 
 ### <a name="create-a-filter-rule"></a>Een filterregel maken
 
 1. Als u regels wilt toevoegen en bijwerken, selecteert u het tabblad Regel beheren voor het routefilter.
 
-    :::image type="content" source="./media/how-to-routefilter-portal/manage-route-filter.png" alt-text="Schermopname van de pagina Routefilter":::
+    :::image type="content" source="./media/how-to-routefilter-portal/manage-route-filter.png" alt-text="Schermopname van de pagina Overzicht, met de actie Regel beheren gemarkeerd":::
 
 1. Selecteer de services waarmee u verbinding wilt maken in de vervolgkeuzelijst, en sla de regel op wanneer u klaar bent.
 
-    :::image type="content" source="./media/how-to-routefilter-portal/add-route-filter-rule.png" alt-text="Schermopname van de pagina Routefilter":::
+    :::image type="content" source="./media/how-to-routefilter-portal/add-route-filter-rule.png" alt-text="Schermopname van het venster Regel beheren, met services die zijn geselecteerd in de vervolgkeuzelijst Toegestane servicecommunity's":::
 
 ## <a name="attach-the-route-filter-to-an-expressroute-circuit"></a><a name="attach"></a>Het routefilter koppelen aan een ExpressRoute-circuit
 
 Koppel het routefilter aan een circuit door de knop **+ Circuit toevoegen** te selecteren, en selecteer het ExpressRoute-circuit in de vervolgkeuzelijst.
 
-:::image type="content" source="./media/how-to-routefilter-portal/add-circuit-to-route-filter.png" alt-text="Schermopname van de pagina Routefilter":::
+:::image type="content" source="./media/how-to-routefilter-portal/add-circuit-to-route-filter.png" alt-text="Schermopname van de pagina Overzicht, met de actie Circuit toevoegen geselecteerd":::
 
 Als met de connectiviteitsprovider peering is geconfigureerd voor uw ExpressRoute-circuit, vernieuwt u het circuit op de pagina ExpressRoute-circuit vóórdat u de knop **+ Circuit toevoegen** selecteert.
 
-:::image type="content" source="./media/how-to-routefilter-portal/refresh-express-route-circuit.png" alt-text="Schermopname van de pagina Routefilter":::
+:::image type="content" source="./media/how-to-routefilter-portal/refresh-express-route-circuit.png" alt-text="Schermopname van de pagina Overzicht, met de actie Vernieuwen geselecteerd.":::
 
 ## <a name="common-tasks"></a><a name="tasks"></a>Algemene taken
 
@@ -107,30 +107,30 @@ Als met de connectiviteitsprovider peering is geconfigureerd voor uw ExpressRout
 
 U kunt de eigenschappen van een routefilter bekijken, wanneer u de resource opent in de portal.
 
-:::image type="content" source="./media/how-to-routefilter-portal/view-route-filter.png" alt-text="Schermopname van de pagina Routefilter":::
+:::image type="content" source="./media/how-to-routefilter-portal/view-route-filter.png" alt-text="Schermopname met de pagina Overzicht":::
 
 ### <a name="to-update-the-properties-of-a-route-filter"></a><a name="updateproperties"></a>De eigenschappen van een routefilter bijwerken
 
 1. U kunt de lijst met BGP-communitywaarden bijwerken die zijn gekoppeld aan een circuit, door de knop **Regel beheren** te selecteren.
 
-    :::image type="content" source="./media/how-to-routefilter-portal/update-route-filter.png" alt-text="Schermopname van de pagina Routefilter":::
+    :::image type="content" source="./media/how-to-routefilter-portal/update-route-filter.png" alt-text="Routefilters bijwerken met de actie Regel beheren":::
 
 1. Selecteer de servicecommunity's en selecteer vervolgens **Opslaan**.
 
-    :::image type="content" source="./media/how-to-routefilter-portal/add-route-filter-rule.png" alt-text="Schermopname van de pagina Routefilter":::
+    :::image type="content" source="./media/how-to-routefilter-portal/add-route-filter-rule.png" alt-text="Schermopname van het venster Regel beheren, met services geselecteerd":::
 
 ### <a name="to-detach-a-route-filter-from-an-expressroute-circuit"></a><a name="detach"></a>Een routefilter loskoppelen van een ExpressRoute-circuit
 
 Als u een circuit wilt loskoppelen van het routefilter, klikt u met de rechtermuisknop op het circuit en selecteert u **Loskoppelen**.
 
-:::image type="content" source="./media/how-to-routefilter-portal/detach-route-filter.png" alt-text="Schermopname van de pagina Routefilter":::
+:::image type="content" source="./media/how-to-routefilter-portal/detach-route-filter.png" alt-text="Schermopname van de pagina Overzicht, met de actie Loskoppelen gemarkeerd":::
 
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
 U kunt een routefilter verwijderen door de knop **Verwijderen** te selecteren. Zorg ervoor dat het routefilter niet is gekoppeld aan circuits voordat u dit doet.
 
-:::image type="content" source="./media/how-to-routefilter-portal/delete-route-filter.png" alt-text="Schermopname van de pagina Routefilter":::
+:::image type="content" source="./media/how-to-routefilter-portal/delete-route-filter.png" alt-text="Een routefilter verwijderen":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

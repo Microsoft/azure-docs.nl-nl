@@ -10,10 +10,10 @@ services: iot-dps
 manager: eliotgra
 ms.custom: mvc
 ms.openlocfilehash: 78005ba46952bcf05b19c7627feecb1ec30ac651
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92429229"
 ---
 # <a name="quickstart-provision-a-symmetric-key-device-using-nodejs"></a>Quickstart: Een apparaat met een symmetrische sleutel inrichten met behulp van Node.js
@@ -51,9 +51,9 @@ Dit artikel is gericht op een Windows-gebaseerd werkstation. U kunt de procedure
 
    - **Mechanisme:** selecteer **Symmetrische sleutel** als *mechanisme* voor identiteitscontrole.
 
-   - **Automatisch sleutels genereren** : schakel dit selectievakje in.
+   - **Automatisch sleutels genereren**: schakel dit selectievakje in.
 
-   - **Registratie-ID** : voer een registratie-ID voor het identificeren van de inschrijving. Gebruik alleen kleine alfanumerieke tekens en streepjes ('-'). Bijvoorbeeld **symm-key-nodejs-device-01**.
+   - **Registratie-ID**: voer een registratie-ID voor het identificeren van de inschrijving. Gebruik alleen kleine alfanumerieke tekens en streepjes ('-'). Bijvoorbeeld **symm-key-nodejs-device-01**.
 
    - **IoT Hub apparaat-ID:** voer een apparaat-ID in. Bijvoorbeeld, **nodejs-device-01**.
 
@@ -78,7 +78,7 @@ Dit artikel is gericht op een Windows-gebaseerd werkstation. U kunt de procedure
 
 ## <a name="prepare-the-device-provisioning-code"></a>De apparaatinrichtingscode voorbereiden
 
-In deze sectie voegt u de volgende vier omgevingsvariabelen toe die worden gebruikt als parameters voor de voorbeeldcode voor de apparaatinrichting om uw symmetrische-sleutelapparaat in te richten. 
+In deze sectie voegt u de volgende vier omgevingsvariabelen toe die worden gebruikt als parameters voor de voorbeeldcode voor het inrichten van apparaten om uw symmetrische-sleutelapparaat in te richten. 
 
 * `PROVISIONING_HOST`
 * `PROVISIONING_IDSCOPE`

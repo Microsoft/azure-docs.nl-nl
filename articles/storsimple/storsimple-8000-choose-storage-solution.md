@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 04/01/2019
 ms.author: alkohli
 ms.openlocfilehash: 4fc92146d6f076287fe37f64734bb07e8250792b
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98882209"
 ---
 # <a name="compare-storsimple-with-azure-file-sync-and-data-box-edge-data-transfer-options"></a>StorSimple vergelijken met overdrachtsopties van Azure File Sync en Data Box Edge 
@@ -30,7 +30,7 @@ In dit document vindt u een overzicht van de opties voor on-premises gegevens ov
 |---------------------------|----------------------------------------|-------------------------------|-----------------------------------------|
 |**Overzicht**     |Gelaagde hybride opslag en archivering|Algemene bestands Server opslag met Cloud lagen en multi-site synchronisatie.  |Opslag oplossing om gegevens vooraf te verwerken en deze via netwerk naar Azure te verzenden.        |
 |**Scenario's**    |Bestands server, archivering, back-updoel |Bestands server, archivering (meerdere locaties)   |Gegevens overdracht, vooraf verwerkingen van gegevens, inclusief ML, IoT, archivering    |
-|**Edge-rekenproces** |Niet beschikbaar |Niet beschikbaar |Ondersteunt het uitvoeren van containers met behulp van Azure IoT Edge    |
+|**Edge compute** |Niet beschikbaar |Niet beschikbaar |Ondersteunt het uitvoeren van containers met behulp van Azure IoT Edge    |
 |**Vorm factor**  |Fysiek apparaat   |Agent geïnstalleerd op Windows Server |Fysiek apparaat   |
 |**Hardware**     |Fysiek apparaat dat door micro soft is meegeleverd als onderdeel van de service | Klant |Fysiek apparaat dat door micro soft is meegeleverd als onderdeel van de service  |
 |**Gegevens indeling**  |Aangepaste notatie   |Bestanden         |Blobs of bestanden    |

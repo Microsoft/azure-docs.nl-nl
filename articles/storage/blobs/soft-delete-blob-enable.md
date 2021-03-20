@@ -11,10 +11,10 @@ ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurecli, devx-track-csharp
 ms.openlocfilehash: a74860b7adf4dade5aedc71a4960595cbe55eaf0
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95995298"
 ---
 # <a name="enable-and-manage-soft-delete-for-blobs"></a>Zacht verwijderen voor blobs inschakelen en beheren
@@ -31,7 +31,7 @@ Zie voor meer informatie over het inschakelen van voorlopig verwijderen voor con
 
 Schakel de optie voor het voorlopig verwijderen van blobs in uw opslag account in met behulp van Azure Portal:
 
-1. Ga in het [Azure-portal](https://portal.azure.com/) naar uw opslagaccount.
+1. Ga in [Azure Portal](https://portal.azure.com/) naar uw opslagaccount.
 1. Zoek de optie **gegevens bescherming** onder **BLOB service**.
 1. Stel de eigenschap **zacht verwijderen voor BLOB** in op *ingeschakeld*.
 1. Geef onder **Bewaar beleid** op hoe lang voorlopig verwijderde blobs worden bewaard door Azure Storage.
@@ -134,7 +134,7 @@ block_blob_service.set_blob_service_properties(
     delete_retention_policy=DeleteRetentionPolicy(enabled=True, days=7))
 ```
 
-# <a name="net-v12"></a>[.NET-V12](#tab/dotnet)
+# <a name="net-v12"></a>[.NET v12](#tab/dotnet)
 
 Als u zacht verwijderen wilt inschakelen, werkt u de service-eigenschappen van een BLOB-client bij:
 
@@ -148,7 +148,7 @@ Als u wilt herstellen naar een specifieke BLOB-versie, roept u eerst undelete aa
 
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/DataProtection.cs" id="Snippet_RecoverSpecificBlobVersion":::
 
-# <a name="net-v11"></a>[.NET-V11](#tab/dotnet11)
+# <a name="net-v11"></a>[.NET v11](#tab/dotnet11)
 
 Als u zacht verwijderen wilt inschakelen, werkt u de service-eigenschappen van een BLOB-client bij:
 

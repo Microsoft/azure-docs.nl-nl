@@ -11,10 +11,10 @@ ms.author: vakrishn
 ms.reviewer: sstein
 ms.date: 11/24/2020
 ms.openlocfilehash: e078fb91b3279b6f4321cd51dfb094f82bbe5f14
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98696376"
 ---
 # <a name="azure-sql-edge-release-notes"></a>Release opmerkingen bij Azure SQL Edge 
@@ -40,7 +40,7 @@ SQL engine build 15.0.2000.1554
 
 SQL engine build 15.0.2000.1553
 
-### <a name="whats-new"></a>Wat is nieuw?
+### <a name="whats-new"></a>Wat is er nieuw?
 
 - Toestaan dat Date_Bucket expressies worden gedefinieerd in berekende kolommen.
 
@@ -55,7 +55,7 @@ SQL engine build 15.0.2000.1553
 
 SQL engine build 15.0.2000.1552
 
-### <a name="whats-new"></a>Wat is nieuw?
+### <a name="whats-new"></a>Wat is er nieuw?
 - Container installatie kopieën op basis van Ubuntu 18,04 
 - Ondersteuning voor `IGNORE NULL` en- `RESPECT NULL` syntaxis met `LAST_VALUE()` en- `FIRST_VALUE()` functies 
 - Verbeteringen van de betrouw baarheid van voor SPELing met ONNX
@@ -89,7 +89,7 @@ SQL engine build 15.0.2000.1552
 
 ## <a name="ctp-23"></a>CTP 2,3
 SQL engine build 15.0.2000.1549
-### <a name="whats-new"></a>Wat is nieuw?
+### <a name="whats-new"></a>Wat is er nieuw?
 - Ondersteuning voor aangepaste oorsprongen in de functie Date_Bucket () 
 - Ondersteuning voor BACPAC-bestanden als onderdeel van SQL-implementatie
 - Ondersteuning voor opschonen op basis van het beleid voor gegevens behoud:      
@@ -107,7 +107,7 @@ SQL engine build 15.0.2000.1549
 
 ## <a name="ctp-22"></a>CTP 2,2
 SQL engine build 15.0.2000.1546
-### <a name="whats-new"></a>Wat is nieuw?
+### <a name="whats-new"></a>Wat is er nieuw?
 - Ondersteuning voor niet-hoofd containers 
 - Ondersteuning voor het verzamelen van gebruiks-en diagnostische gegevens 
 - Updates voor T-SQL-streaming:
@@ -129,7 +129,7 @@ SQL engine build 15.0.2000.1545
 
 ## <a name="ctp-20"></a>CTP 2,0 
 SQL engine build 15.0.2000.1401
-### <a name="whats-new"></a>Wat is nieuw?
+### <a name="whats-new"></a>Wat is er nieuw?
 -   Product naam is bijgewerkt naar *Azure SQL Edge*
 -  Date_Bucket functie:
     - Ondersteuning voor datum-, tijd-en DateTime-typen
@@ -153,7 +153,7 @@ U kunt ondersteuning aanvragen op de [ondersteunings pagina](https://ms.portal.a
 
 ## <a name="ctp-15"></a>CTP 1,5
 SQL engine build 15.0.2000.1331
-### <a name="whats-new"></a>Wat is nieuw?
+### <a name="whats-new"></a>Wat is er nieuw?
 - Date_Bucket functie:
     - Ondersteuning voor het type Date Time offset
 - Voors PELLEn met ONNX-modellen:
@@ -161,7 +161,7 @@ SQL engine build 15.0.2000.1331
  
 ## <a name="ctp-14"></a>CTP 1,4
 SQL engine build 15.0.2000.1247
-### <a name="whats-new"></a>Wat is nieuw?
+### <a name="whats-new"></a>Wat is er nieuw?
 -   Voors PELLEn met ONNX-modellen:
     - VARCHAR-ondersteuning
     - Migratie naar ONNX runtime versie 1,0 
@@ -175,7 +175,7 @@ SQL engine build 15.0.2000.1247
  
 ## <a name="ctp-13"></a>CTP 1,3
 SQL engine build 15.0.2000.1147
-### <a name="whats-new"></a>Wat is nieuw?
+### <a name="whats-new"></a>Wat is er nieuw?
 - Implementatie van Azure IoT portal: 
     - Ondersteuning voor het implementeren van AMD64-en ARM-installatie kopieën
     - Ondersteuning voor het maken van streaming-taken

@@ -11,10 +11,10 @@ ms.custom:
 - 'Role: Cloud Development'
 - 'Role: IoT Device'
 ms.openlocfilehash: 0e017f4df413d6db528bb99756646859d9a74aea
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92545392"
 ---
 # <a name="automatic-iot-device-and-module-management-using-the-azure-portal"></a>Automatisch beheer van IoT-apparaat en module met Azure Portal
@@ -31,7 +31,7 @@ Automatische Apparaatbeheer werkt door het bijwerken van een set apparaatdubbels
 
 * De **doel inhoud** definieert de gewenste eigenschappen die moeten worden toegevoegd of bijgewerkt in de apparaatdubbels of module apparaatdubbels van het doel apparaat. De inhoud bevat een pad naar de sectie met gewenste eigenschappen die moeten worden gewijzigd.
 
-* De **metrische gegevens** bepalen het aantal samen vattingen van de verschillende configuratie statussen, zoals **geslaagd** , **in uitvoering** en **fout** . Aangepaste metrische gegevens worden opgegeven als query's op dubbele gerapporteerde eigenschappen.  Systeem metrieken zijn de standaard waarden die de dubbele update status meten, zoals het aantal apparaatdubbels dat is gericht en het aantal apparaatdubbels dat is bijgewerkt.
+* De **metrische gegevens** bepalen het aantal samen vattingen van de verschillende configuratie statussen, zoals **geslaagd**, **in uitvoering** en **fout**. Aangepaste metrische gegevens worden opgegeven als query's op dubbele gerapporteerde eigenschappen.  Systeem metrieken zijn de standaard waarden die de dubbele update status meten, zoals het aantal apparaatdubbels dat is gericht en het aantal apparaatdubbels dat is bijgewerkt.
 
 Automatische configuraties worden voor de eerste keer uitgevoerd, kort nadat de configuratie is gemaakt en vervolgens vijf minuten. Metrische query's worden uitgevoerd telkens wanneer de automatische configuratie wordt uitgevoerd.
 
@@ -58,9 +58,9 @@ Voordat u een configuratie maakt, moet u opgeven welke apparaten of modules u wi
 
 1. Ga in het [Azure Portal](https://portal.azure.com)naar uw IOT-hub. 
 
-2. Selecteer **IOT-apparaatconfiguratie** .
+2. Selecteer **IOT-apparaatconfiguratie**.
 
-3. Selecteer **apparaatconfiguratie toevoegen** of **module configuratie toevoegen** .
+3. Selecteer **apparaatconfiguratie toevoegen** of **module configuratie toevoegen**.
 
    ![Apparaatconfiguratie of module configuratie toevoegen](./media/iot-hub-automatic-device-management/create-automatic-configuration.png)
 
@@ -70,7 +70,7 @@ Er zijn vijf stappen voor het maken van een configuratie. In de volgende secties
 
 1. Geef uw configuratie een unieke naam van Maxi maal 128 kleine letters. Vermijd spaties en de volgende ongeldige tekens: `& ^ [ ] { } \ | " < > /` .
 
-2. Voeg labels toe om uw configuraties bij te houden. Labels zijn **naam** - **, waardeparen die** uw configuratie beschrijven. Bijvoorbeeld `HostPlatform, Linux` of `Version, 3.0.1`.
+2. Voeg labels toe om uw configuraties bij te houden. Labels zijn **naam**- **, waardeparen die** uw configuratie beschrijven. Bijvoorbeeld `HostPlatform, Linux` of `Version, 3.0.1`.
 
 3. Selecteer **volgende** om naar de volgende stap te gaan. 
 
@@ -104,9 +104,9 @@ Metrische gegevens bieden een overzicht van de verschillende statussen die een a
 
 Elke configuratie kan Maxi maal vijf aangepaste metrische gegevens bevatten. 
 
-1. Voer een naam in voor de naam van de **metrische gegevens** .
+1. Voer een naam in voor de naam van de **metrische gegevens**.
 
-2. Voer een query in voor **metrische criteria** .  De query is gebaseerd op dubbele gerapporteerde eigenschappen van het apparaat.  De metriek vertegenwoordigt het aantal rijen dat door de query wordt geretourneerd.
+2. Voer een query in voor **metrische criteria**.  De query is gebaseerd op dubbele gerapporteerde eigenschappen van het apparaat.  De metriek vertegenwoordigt het aantal rijen dat door de query wordt geretourneerd.
 
 Bijvoorbeeld:
 
@@ -138,7 +138,7 @@ Automatische configuraties van apparaten kunnen alleen dubbele Tags van het appa
 
 Aangezien meerdere configuraties kunnen worden gericht op hetzelfde apparaat of dezelfde module, moet elke configuratie een prioriteits nummer hebben. Als er zich ooit een conflict voordoet, wordt de configuratie met de hoogste prioriteit wint. 
 
-1. Voer een positief geheel getal in voor de configuratie **prioriteit** . De hoogste numerieke waarde wordt gezien als de hoogste prioriteit. Als twee configuraties hetzelfde prioriteits nummer hebben, is het het meest recent gemaakte WINS-account. 
+1. Voer een positief geheel getal in voor de configuratie **prioriteit**. De hoogste numerieke waarde wordt gezien als de hoogste prioriteit. Als twee configuraties hetzelfde prioriteits nummer hebben, is het het meest recent gemaakte WINS-account. 
 
 2. Geef een **doel voorwaarde** op om te bepalen welke apparaten of modules met deze configuratie worden benaderd. De voor waarde is gebaseerd op dubbele Tags of dubbele gerapporteerde eigenschappen en moet overeenkomen met de indeling van de expressie. 
 
@@ -150,7 +150,7 @@ Aangezien meerdere configuraties kunnen worden gericht op hetzelfde apparaat of 
 
 ### <a name="review-configuration"></a>Configuratie controleren
 
-Controleer uw configuratie gegevens en selecteer vervolgens **verzenden** .
+Controleer uw configuratie gegevens en selecteer vervolgens **verzenden**.
 
 ## <a name="monitor-a-configuration"></a>Een configuratie controleren
 
@@ -158,7 +158,7 @@ Voer de volgende stappen uit om de details van een configuratie te bekijken en d
 
 1. Ga in het [Azure Portal](https://portal.azure.com)naar uw IOT-hub. 
 
-2. Selecteer **IOT-apparaatconfiguratie** .
+2. Selecteer **IOT-apparaatconfiguratie**.
 
 3. Inspecteer de configuratie lijst. Voor elke configuratie kunt u de volgende gegevens bekijken:
 
@@ -202,7 +202,7 @@ Als u een configuratie wilt wijzigen, gebruikt u de volgende stappen:
 
 1. Ga in het [Azure Portal](https://portal.azure.com)naar uw IOT-hub. 
 
-2. Selecteer **IOT-apparaatconfiguratie** . 
+2. Selecteer **IOT-apparaatconfiguratie**. 
 
 3. Selecteer de configuratie die u wilt wijzigen. 
 
@@ -213,7 +213,7 @@ Als u een configuratie wilt wijzigen, gebruikt u de volgende stappen:
    * Prioriteit 
    * Metrische gegevens
 
-4. Selecteer **Opslaan** .
+4. Selecteer **Opslaan**.
 
 5. Volg de stappen in [een configuratie controleren](#monitor-a-configuration) om de wijzigingen door te voeren. 
 
@@ -223,11 +223,11 @@ Wanneer u een configuratie verwijdert, nemen alle apparaatdubbels van het appara
 
 1. Ga in het [Azure Portal](https://portal.azure.com)naar uw IOT-hub. 
 
-2. Selecteer **IOT-apparaatconfiguratie** . 
+2. Selecteer **IOT-apparaatconfiguratie**. 
 
 3. Gebruik het selectie vakje om de configuratie te selecteren die u wilt verwijderen. 
 
-4. Selecteer **Verwijderen** .
+4. Selecteer **Verwijderen**.
 
 5. U wordt gevraagd om te bevestigen.
 

@@ -10,10 +10,10 @@ ms.reviewer: klam, estfan
 ms.topic: article
 ms.date: 02/29/2020
 ms.openlocfilehash: 0e9ca2c7b5d15fcc6be451bbe215c8b85d5309eb
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92368261"
 ---
 # <a name="migrate-azure-scheduler-jobs-to-azure-logic-apps"></a>Azure Scheduler-taken migreren naar Azure Logic Apps
@@ -67,7 +67,7 @@ U kunt meerdere eenmalige taken uitvoeren door slechts één logische app te mak
 
    1. Selecteer in de trigger voor de aanvraag een **voor beeld-nettolading gebruiken om een schema te genereren**.
 
-   1. Geef in het vak **een voor beeld van een JSON-nettolading op of plak hier**de voor beeld-nettolading op en selecteer **gereed**, bijvoorbeeld:
+   1. Geef in het vak **een voor beeld van een JSON-nettolading op of plak hier** de voor beeld-nettolading op en selecteer **gereed**, bijvoorbeeld:
 
       ![Voorbeeld lading](./media/migrate-from-scheduler-to-logic-apps/sample-payload.png)
 
@@ -78,7 +78,7 @@ U kunt meerdere eenmalige taken uitvoeren door slechts één logische app te mak
       }
       ```
 
-1. Selecteer **volgende stap**onder de trigger.
+1. Selecteer **volgende stap** onder de trigger.
 
 1. Voer in het zoekvak `delay until` als uw filter in. Selecteer in de lijst acties de optie deze actie: **vertraging tot**
 
@@ -114,9 +114,9 @@ Als u een eenmalige taak hand matig wilt uitvoeren of activeren, stuurt u een aa
 
 Als u bijvoorbeeld de Postman-app gebruikt, kunt u een POST-aanvraag maken met de instellingen die vergelijkbaar zijn met dit voor beeld en vervolgens **verzenden** selecteren om de aanvraag te doen.
 
-| Aanvraagmethode | URL | Hoofdtekst | Headers |
+| Aanvraagmethode | URL | Hoofdtekst | Kopteksten |
 |----------------|-----|------|---------|
-| **POST** | <*eind punt-URL*> | **uitgang** <p>**JSON (toepassing/JSON)** <p>Voer in het vak **onbewerkt** de lading in die u in de aanvraag wilt verzenden. <p>**Opmerking**: met deze instelling worden de waarden van de **headers** automatisch geconfigureerd. | **Sleutel**: inhouds type <br>**Waarde**: Application/JSON |
+| **Verzenden** | <*eind punt-URL*> | **uitgang** <p>**JSON (toepassing/JSON)** <p>Voer in het vak **onbewerkt** de lading in die u in de aanvraag wilt verzenden. <p>**Opmerking**: met deze instelling worden de waarden van de **headers** automatisch geconfigureerd. | **Sleutel**: inhouds type <br>**Waarde**: Application/JSON |
 |||||
 
 ![Aanvraag verzenden om uw logische app hand matig te activeren](./media/migrate-from-scheduler-to-logic-apps/postman-send-post-request.png)
@@ -151,7 +151,7 @@ In Logic Apps wordt elke eenmalige taak uitgevoerd als een run-exemplaar van een
 
    Zie [terugkerende taken en werk stromen maken en uitvoeren met Azure Logic apps](../connectors/connectors-native-recurrence.md)voor meer informatie over geavanceerde plannings opties.
 
-1. U kunt andere acties toevoegen door te kiezen uit [honderden gebruiks klare](../connectors/apis-list.md). Selecteer **volgende stap**onder de trigger. Zoek de gewenste acties en selecteer deze.
+1. U kunt andere acties toevoegen door te kiezen uit [honderden gebruiks klare](../connectors/apis-list.md). Selecteer **volgende stap** onder de trigger. Zoek de gewenste acties en selecteer deze.
 
    U kunt bijvoorbeeld een HTTP-actie toevoegen die een aanvraag verzendt naar een URL of acties die werken met opslag wachtrijen, Service Bus wachtrijen of Service Bus onderwerpen:
 
@@ -193,7 +193,7 @@ Als de standaard actie in azure scheduler niet kan worden uitgevoerd, kunt u een
 
    ![Uitvoeren na configureren](./media/migrate-from-scheduler-to-logic-apps/configure-run-after.png)
 
-1. Schakel het selectie vakje in voor de eigenschap **is geslaagd** . Selecteer deze eigenschappen: **mislukt**, **wordt overgeslagen**en er is **een time-out opgetreden**
+1. Schakel het selectie vakje in voor de eigenschap **is geslaagd** . Selecteer deze eigenschappen: **mislukt**, **wordt overgeslagen** en er is **een time-out opgetreden**
 
    ![Eigenschappen van ' uitvoeren na ' instellen](./media/migrate-from-scheduler-to-logic-apps/select-run-after-properties.png)
 
@@ -224,7 +224,7 @@ Zie voor meer informatie over het afhandelen van uitzonde [ringen afhandelen en 
 
 Als uw Azure-abonnement een betaald ondersteunings plan heeft, kunt u een aanvraag voor technische ondersteuning in het Azure Portal maken. Anders kunt u een andere ondersteunings optie selecteren.
 
-1. Selecteer in [Azure portal](https://portal.azure.com) het hoofd menu van Azure Portal **Help + ondersteuning**.
+1. Selecteer in [](https://portal.azure.com) het hoofd menu van Azure Portal **Help + ondersteuning**.
 
 1. Selecteer in het menu **ondersteuning** de optie **nieuwe ondersteunings aanvraag**. Geef deze informatie op over uw aanvraag:
 
@@ -232,7 +232,7 @@ Als uw Azure-abonnement een betaald ondersteunings plan heeft, kunt u een aanvra
    |---------|-------|
    | **Type probleem** | **Technisch** |
    | **Abonnement** | <*uw Azure-abonnement*> |
-   | **Service** | Selecteer **scheduler**onder **bewaking van & beheer**. Als u **scheduler**niet kunt vinden, selecteert u eerst **alle services** . |
+   | **Service** | Selecteer **scheduler** onder **bewaking van & beheer**. Als u **scheduler** niet kunt vinden, selecteert u eerst **alle services** . |
    ||| 
 
 1. Selecteer de gewenste ondersteunings optie. Als u een betaald ondersteunings abonnement hebt, selecteert u **volgende**.

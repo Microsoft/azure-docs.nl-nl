@@ -8,10 +8,10 @@ ms.date: 09/19/2017
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: bb74ab16e51fbb3a157757353d5743e889f993dd
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94629696"
 ---
 # <a name="develop-for-azure-files-with-c"></a>Ontwikkelen voor Azure Files met C++
@@ -185,7 +185,7 @@ for (auto it = directory.list_files_and_directories(); it != end_of_results; ++i
 }
 ```
 
-## <a name="upload-a-file"></a>Bestand uploaden
+## <a name="upload-a-file"></a>Een bestand uploaden
 
 Een Azure-bestands share bevat ten minste een hoofdmap waarin bestanden kunnen worden opgeslagen. In deze sectie leert u hoe u een bestand van de lokale opslag uploadt naar de hoofdmap van een share.
 
@@ -369,5 +369,5 @@ Zie de volgende bronnen voor meer informatie over Azure Storage:
 
 * [Opslagclientbibliotheek voor C++](https://github.com/Azure/azure-storage-cpp)
 * [Voor beelden van bestands service Azure Storage in C++](https://github.com/Azure-Samples/storage-file-cpp-getting-started)
-* [Azure Storage Explorer](https://go.microsoft.com/fwlink/?LinkID=822673&clcid=0x409)
+* [Azure-opslagverkenner](https://go.microsoft.com/fwlink/?LinkID=822673&clcid=0x409)
 * [Documentatie over Azure Storage](https://azure.microsoft.com/documentation/services/storage/)

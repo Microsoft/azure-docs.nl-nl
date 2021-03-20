@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 01/12/2021
 ms.author: aahi
 ms.openlocfilehash: dda3ece27fd2c687647e0aa289bd1596a87b274f
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98186019"
 ---
 # <a name="telemetry-and-troubleshooting"></a>Telemetrie en probleem oplossing
@@ -103,7 +103,7 @@ Zodra de telegrafie module is geïmplementeerd, zijn de gerapporteerde metrische
 
 ### <a name="system-health-events"></a>Systeem status gebeurtenissen
 
-| Naam van de gebeurtenis | Beschrijving|
+| Gebeurtenisnaam | Beschrijving|
 |------|---------|
 |archon_exit    |Verzonden wanneer een gebruiker de status van de ruimtelijke analyse module wijzigt van *actief* in *gestopt*.  |
 |archon_error   |Wordt verzonden wanneer een van de processen in de container vastloopt. Dit is een kritieke fout.  |
@@ -216,9 +216,9 @@ Logboeken worden op aanvraag geüpload met de `getRTCVLogs` methode IOT Edge in 
 
 
 1. Ga naar de pagina IoT Hub Portal, selecteer **edge-apparaten** en selecteer vervolgens uw apparaat en de module diagnostiek. 
-2. Ga naar de pagina Details van de module en klik op het tabblad **_directe methode_* _.
+2. Ga naar de pagina Details van de module en klik op het tabblad ***directe methode*** .
 3. Typ `getRTCVLogs` de naam van de methode en een JSON-indelings teken reeks in payload. U kunt `{}` een lege Payload opgeven. 
-4. Stel de time-out voor de verbinding en de methode in en klik op _ * methode Invoke * *.
+4. Stel de time-out voor de verbinding en de methode in en klik op **methode aanroepen**.
 5. Selecteer uw doel container en bouw een JSON-teken reeks voor de nettolading op met de para meters die worden beschreven in de sectie **syntaxis van logboek registratie** . Klik op **methode aanroepen** om de aanvraag uit te voeren.
 
 >[!NOTE]
@@ -245,7 +245,7 @@ De volgende tabel bevat de kenmerken in de query-antwoord.
 
 | Zoek | Beschrijving|
 |--|--|
-|DoPost| *Waar* of *Onwaar*. Hiermee wordt aangegeven of Logboeken zijn geüpload of niet. Wanneer u ervoor kiest geen logboeken te uploaden, retourneert de API informatie ***synchroon** _. Wanneer u ervoor kiest om logboeken te uploaden, retourneert de API 200, als de aanvraag geldig is, waarna logboeken _*_asynchroon_*_ worden geüpload.|
+|DoPost| *Waar* of *Onwaar*. Hiermee wordt aangegeven of Logboeken zijn geüpload of niet. Wanneer u ervoor kiest geen logboeken te uploaden, retourneert de API informatie ***synchroon** _. Wanneer u ervoor kiest om logboeken te uploaden, retourneert de API 200, als de aanvraag geldig is en het uploaden van Logboeken _ *_asynchroon_* * wordt gestart.|
 |TimeFilter| Tijd filter toegepast op de logboeken.|
 |ValueFilters| Tref woorden filters die worden toegepast op de logboeken. |
 |Neem| Start tijd van methode-uitvoering. |
@@ -298,7 +298,7 @@ De volgende tabel bevat de kenmerken in de query-antwoord.
 }
 ```
 
-Controleer de regels voor het ophaal logboek, de tijden en de grootte als deze instellingen goed worden vervangen _*_DoPost_*_ naar `true` en dat de logboeken met dezelfde filters naar bestemmingen pusht. 
+Controleer de regels voor het ophaal logboek, de tijden en de grootte als deze instellingen goed worden vervangen ***DoPost*** naar `true` en dat de logboeken met dezelfde filters naar bestemmingen pusht. 
 
 U kunt Logboeken exporteren vanuit de Azure-Blob Storage bij het oplossen van problemen. 
 
@@ -316,7 +316,7 @@ In de volgende sectie vindt u informatie over fout opsporing en verificatie van 
 
 ### <a name="access-the-kubernetes-api-endpoint"></a>Toegang tot het Kubernetes API-eind punt. 
 
-1. Ga in de lokale gebruikers interface van het apparaat naar de pagina _ *apparaten**. 
+1. Ga in de lokale gebruikers interface van het apparaat naar de pagina **apparaten** . 
 2. Kopieer het eind punt van de Kubernetes API-service onder de **eind punten** van het apparaat. Dit eindpunt is een tekenreeks met de volgende indeling: `https://compute..[device-IP-address]`.
 3. Sla de tekenreeks met het eindpunt op. U gebruikt dit later bij het configureren `kubectl` voor toegang tot het Kubernetes-cluster.
 

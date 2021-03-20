@@ -4,10 +4,10 @@ description: Versleutel uw toepassings gegevens in Azure Storage en implementeer
 ms.topic: article
 ms.date: 03/06/2020
 ms.openlocfilehash: 6e4cf16118e748e3ee1d1ff4899730463565ec70
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92108028"
 ---
 # <a name="encrypt-your-application-data-at-rest-using-customer-managed-keys"></a>Versleutel uw toepassings gegevens in rust met door de klant beheerde sleutels
@@ -71,7 +71,7 @@ Het bijwerken van deze toepassings instelling zorgt ervoor dat de functie-app op
 
 Het is best practice om regel matig de SAS-sleutel van uw opslag account te draaien. Om ervoor te zorgen dat de functie-app niet per ongeluk toegang kan krijgen, moet u ook de SAS-URL in Key Vault bijwerken.
 
-1. Draai de SAS-sleutel door te navigeren naar uw opslag account in de Azure Portal. Klik onder **instellingen**  >  **toegangs sleutels**op het pictogram om de SAS-sleutel te roteren.
+1. Draai de SAS-sleutel door te navigeren naar uw opslag account in de Azure Portal. Klik onder **instellingen**  >  **toegangs sleutels** op het pictogram om de SAS-sleutel te roteren.
 
 1. Kopieer de nieuwe SAS-URL en gebruik de volgende opdracht om de bijgewerkte SAS-URL in uw sleutel kluis in te stellen:
 

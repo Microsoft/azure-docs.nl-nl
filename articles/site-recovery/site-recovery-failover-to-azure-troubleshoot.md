@@ -10,10 +10,10 @@ ms.workload: storage-backup-recovery
 ms.date: 01/08/2020
 ms.author: mayg
 ms.openlocfilehash: d2a0444483c382da7c54accf7dca49d097671771
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92371984"
 ---
 # <a name="troubleshoot-errors-when-failing-over-vmware-vm-or-physical-machine-to-azure"></a>Problemen oplossen bij het uitvoeren van een failover van een virtuele VMware-machine of fysieke machine naar Azure
@@ -46,7 +46,7 @@ Site Recovery kan geen virtuele machine met een failover in azure maken. Dit kan
 
 Voor het beschikbaar maken van elke machine in azure, moeten sommige Stuur Programma's in de Azure-omgeving worden opgestart en moeten de services, zoals DHCP, actief zijn in de modus automatisch starten. Daarom converteert Hydration-activiteit, op het moment van de failover, het opstart type van **ATAPI-, Intelide-, storflt-, vmbus-en storvsc-Stuur Programma's** om de opstart procedure te starten. Ook wordt het opstart type van een paar Services, zoals DHCP, geconverteerd naar automatisch starten. Deze activiteit kan mislukken vanwege specifieke omgevings problemen. 
 
-Volg de onderstaande stappen om het opstart type van Stuur Programma's voor **Windows-gast besturingssystemen**hand matig te wijzigen:
+Volg de onderstaande stappen om het opstart type van Stuur Programma's voor **Windows-gast besturingssystemen** hand matig te wijzigen:
 
 1. [Down load](https://download.microsoft.com/download/5/D/6/5D60E67C-2B4F-4C51-B291-A97732F92369/Script-no-hydration.ps1) het script no-Hydration en voer dit als volgt uit. Met dit script wordt gecontroleerd of Hydration vereist is voor de VM.
 
@@ -84,12 +84,12 @@ Raadpleeg [de documentatie voor](../virtual-machines/troubleshooting/troubleshoo
 
 Als de knop **verbinden** op de virtuele machine waarvoor een failover is uitgevoerd in azure grijs is en u niet met Azure bent verbonden via een snelle route of een site-naar-site-VPN-verbinding, dan,
 
-1. Ga naar **Virtual machine**  >  **netwerken**van de virtuele machine en klik op de naam van de vereiste netwerk interface.  ![Scherm afbeelding toont de netwerk pagina voor een virtuele machine waarvoor de netwerk interface naam is geselecteerd.](media/site-recovery-failover-to-azure-troubleshoot/network-interface.PNG)
-2. Navigeer naar **IP-configuraties**en klik vervolgens op het veld naam van de vereiste IP-configuratie. ![Scherm afbeelding toont de pagina I P-configuraties voor de netwerk interface waarvoor de configuratie naam I P is geselecteerd.](media/site-recovery-failover-to-azure-troubleshoot/IpConfigurations.png)
+1. Ga naar   >  **netwerken** van de virtuele machine en klik op de naam van de vereiste netwerk interface.  ![Scherm afbeelding toont de netwerk pagina voor een virtuele machine waarvoor de netwerk interface naam is geselecteerd.](media/site-recovery-failover-to-azure-troubleshoot/network-interface.PNG)
+2. Navigeer naar **IP-configuraties** en klik vervolgens op het veld naam van de vereiste IP-configuratie. ![Scherm afbeelding toont de pagina I P-configuraties voor de netwerk interface waarvoor de configuratie naam I P is geselecteerd.](media/site-recovery-failover-to-azure-troubleshoot/IpConfigurations.png)
 3. Als u openbaar IP-adres wilt inschakelen, klikt u op **inschakelen**. ![IP inschakelen](media/site-recovery-failover-to-azure-troubleshoot/Enable-Public-IP.png)
 4. Klik op **vereiste instellingen configureren**  >  **nieuwe maken**. ![Nieuwe maken](media/site-recovery-failover-to-azure-troubleshoot/Create-New-Public-IP.png)
-5. Voer de naam van het open bare adres in, kies de standaard opties voor **SKU** en **toewijzing**en klik vervolgens op **OK**.
-6. Klik nu op **Opslaan**om de gemaakte wijzigingen op te slaan.
+5. Voer de naam van het open bare adres in, kies de standaard opties voor **SKU** en **toewijzing** en klik vervolgens op **OK**.
+6. Klik nu op **Opslaan** om de gemaakte wijzigingen op te slaan.
 7. Sluit de deel Vensters en navigeer naar **overzicht** sectie van de virtuele machine om verbinding te maken/RDP.
 
 ## <a name="unable-to-connectrdpssh---vm-connect-button-available"></a>Kan geen verbinding maken/RDP/SSH: er is een VM-verbinding beschikbaar

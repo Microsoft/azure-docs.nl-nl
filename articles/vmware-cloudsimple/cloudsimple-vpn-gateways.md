@@ -9,10 +9,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 6e013bb96990a8f3a0ef7d3a58529b200919e276
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88140629"
 ---
 # <a name="vpn-gateways-overview"></a>Overzicht van VPN-gateways
@@ -52,7 +52,7 @@ Een site-naar-site-VPN-verbinding maakt gebruik van de volgende standaard crypto
 | Hash-algoritme| SHA 256 | SHA 256 | SHA 1 |
 | Diffie Hellman-groep (DH-groep) | 2 | 2 | 2 |
 | Levens duur | 28.800 seconden | 28.800 seconden | 28.800 seconden |
-| Gegevens grootte | 4 GB | 4 GB | 4 GB |
+| Gegevensgrootte | 4 GB | 4 GB | 4 GB |
 
 #### <a name="phase-2-proposals"></a>Voorst Ellen voor fase 2
 
@@ -62,7 +62,7 @@ Een site-naar-site-VPN-verbinding maakt gebruik van de volgende standaard crypto
 | Hash-algoritme| SHA 256 | SHA 256 | SHA 1 |
 | Perfecte Forward Secrecy-groep (PFS-groep) | Geen | Geen | Geen |
 | Levens duur | 1.800 seconden | 1.800 seconden | 1.800 seconden |
-| Gegevens grootte | 4 GB | 4 GB | 4 GB |
+| Gegevensgrootte | 4 GB | 4 GB | 4 GB |
 
 
 > [!IMPORTANT]

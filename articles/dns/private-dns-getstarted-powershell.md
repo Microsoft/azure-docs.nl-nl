@@ -8,10 +8,10 @@ ms.topic: quickstart
 ms.date: 10/20/2020
 ms.author: rohink
 ms.openlocfilehash: ee6dde6b34cccd415f9bf2052f65dcbe940715c1
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92424386"
 ---
 # <a name="quickstart-create-an-azure-private-dns-zone-using-azure-powershell"></a>Snelstart: een privé- Azure DNS-zone maken met behulp van Azure PowerShell
@@ -42,7 +42,7 @@ New-AzResourceGroup -name MyAzureResourceGroup -location "eastus"
 
 Een DNS-zone wordt gemaakt met de cmdlet `New-AzPrivateDnsZone`.
 
-In het volgende voorbeeld wordt een virtueel netwerk gemaakt met de naam **myAzureVNet**. Vervolgens wordt een DNS-zone met de naam **private.contoso.com** gemaakt in de resourcegroep **MyAzureResourceGroup** , wordt de DNS-zone gekoppeld aan het virtuele netwerk **MyAzureVnet** en wordt automatische registratie ingeschakeld.
+In het volgende voorbeeld wordt een virtueel netwerk gemaakt met de naam **myAzureVNet**. Vervolgens wordt een DNS-zone met de naam **private.contoso.com** gemaakt in de resourcegroep **MyAzureResourceGroup**, wordt de DNS-zone gekoppeld aan het virtuele netwerk **MyAzureVnet** en wordt automatische registratie ingeschakeld.
 
 ```azurepowershell
 Install-Module -Name Az.PrivateDns -force
@@ -167,7 +167,7 @@ Herhaal voor myVM02.
    PS C:\>
    ```
 
-2. Ping nu de **db** -naam die u eerder hebt gemaakt:
+2. Ping nu de **db**-naam die u eerder hebt gemaakt:
 
    ```
    ping db.private.contoso.com

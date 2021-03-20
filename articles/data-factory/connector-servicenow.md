@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 08/01/2019
 ms.openlocfilehash: 4e7ebc422a9fd8503c5a3b004e1d06cb5ebfb987
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100378448"
 ---
 # <a name="copy-data-from-servicenow-using-azure-data-factory"></a>Gegevens kopiëren van ServiceNow met behulp van Azure Data Factory
@@ -42,16 +42,16 @@ De volgende eigenschappen worden ondersteund voor ServiceNow gekoppelde service:
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type moet worden ingesteld op: **ServiceNow** | Yes |
-| endpoint | Het eind punt van de ServiceNow-server ( `http://<instance>.service-now.com` ).  | Yes |
-| authenticationType | Het verificatie type dat moet worden gebruikt. <br/>Toegestane waarden zijn: **Basic**, **OAuth2** | Yes |
-| gebruikersnaam | De gebruikers naam die wordt gebruikt om verbinding te maken met de ServiceNow-server voor Basic-en OAuth2-verificatie.  | Yes |
-| wachtwoord | Het wacht woord dat overeenkomt met de gebruikers naam voor Basic-en OAuth2-verificatie. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Yes |
-| clientId | De client-ID voor OAuth2-verificatie.  | No |
-| clientSecret | Het client geheim voor OAuth2-verificatie. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | No |
-| useEncryptedEndpoints | Hiermee geeft u op of de eind punten van de gegevens bron moeten worden versleuteld met HTTPS. De standaardwaarde is waar.  | No |
-| useHostVerification | Hiermee geeft u op of de hostnaam in het certificaat van de server moet overeenkomen met de hostnaam van de server bij het maken van verbinding via TLS. De standaardwaarde is waar.  | No |
-| usePeerVerification | Hiermee wordt aangegeven of de identiteit van de server moet worden gecontroleerd wanneer er verbinding wordt gemaakt via TLS. De standaardwaarde is waar.  | No |
+| type | De eigenschap type moet worden ingesteld op: **ServiceNow** | Ja |
+| endpoint | Het eind punt van de ServiceNow-server ( `http://<instance>.service-now.com` ).  | Ja |
+| authenticationType | Het verificatie type dat moet worden gebruikt. <br/>Toegestane waarden zijn: **Basic**, **OAuth2** | Ja |
+| gebruikersnaam | De gebruikers naam die wordt gebruikt om verbinding te maken met de ServiceNow-server voor Basic-en OAuth2-verificatie.  | Ja |
+| wachtwoord | Het wacht woord dat overeenkomt met de gebruikers naam voor Basic-en OAuth2-verificatie. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Ja |
+| clientId | De client-ID voor OAuth2-verificatie.  | Nee |
+| clientSecret | Het client geheim voor OAuth2-verificatie. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Nee |
+| useEncryptedEndpoints | Hiermee geeft u op of de eind punten van de gegevens bron moeten worden versleuteld met HTTPS. De standaardwaarde is waar.  | Nee |
+| useHostVerification | Hiermee geeft u op of de hostnaam in het certificaat van de server moet overeenkomen met de hostnaam van de server bij het maken van verbinding via TLS. De standaardwaarde is waar.  | Nee |
+| usePeerVerification | Hiermee wordt aangegeven of de identiteit van de server moet worden gecontroleerd wanneer er verbinding wordt gemaakt via TLS. De standaardwaarde is waar.  | Nee |
 
 **Voorbeeld:**
 
@@ -81,7 +81,7 @@ Als u gegevens van ServiceNow wilt kopiëren, stelt u de eigenschap type van de 
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de gegevensset moet worden ingesteld op: **ServiceNowObject** | Yes |
+| type | De eigenschap type van de gegevensset moet worden ingesteld op: **ServiceNowObject** | Ja |
 | tableName | De naam van de tabel. | Nee (als "query" in activiteit bron is opgegeven) |
 
 **Voorbeeld**
@@ -111,7 +111,7 @@ Als u gegevens wilt kopiëren uit ServiceNow, stelt u het bron type in de Kopiee
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **ServiceNowSource** | Yes |
+| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **ServiceNowSource** | Ja |
 | query | Gebruik de aangepaste SQL-query om gegevens te lezen. Bijvoorbeeld: `"SELECT * FROM Actual.alm_asset"`. | Nee (als ' Tablename ' in gegevensset is opgegeven) |
 
 Let op het volgende wanneer u het schema en de kolom voor ServiceNow in query opgeeft en **Raadpleeg de [prestatie tips](#performance-tips) bij het kopiëren van de prestatie implicaties**.

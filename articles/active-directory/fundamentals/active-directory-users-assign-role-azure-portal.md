@@ -14,10 +14,10 @@ ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: fe0c7eec5c023fcba3152ad6329d318210a0c2ab
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92370930"
 ---
 # <a name="assign-administrator-and-non-administrator-roles-to-users-with-azure-active-directory"></a>Beheerders-en niet-beheerders rollen toewijzen aan gebruikers met Azure Active Directory
@@ -49,7 +49,7 @@ Een gemeen schappelijke manier om Azure AD-rollen aan een gebruiker toe te wijze
 
       ![Pagina alle gebruikers: Selecteer de gebruiker](media/active-directory-users-assign-role-azure-portal/directory-role-select-user.png)
 
-5. Selecteer **toegewezen rollen**op de pagina **Alain Charon-profiel** .
+5. Selecteer **toegewezen rollen** op de pagina **Alain Charon-profiel** .
 
     De pagina **Alain Charon-administratieve rollen** wordt weer gegeven.
 
@@ -67,7 +67,7 @@ Als u de roltoewijzing van een gebruiker wilt verwijderen, kunt u dit ook doen o
 
 1. Selecteer **Azure Active Directory**, selecteer **gebruikers**, zoek naar en selecteer de gebruiker die de roltoewijzing heeft verwijderd. Bijvoorbeeld _Alain Charon_.
 
-2. Selecteer **toegewezen rollen**, selecteer **toepassings beheerder**en selecteer vervolgens **toewijzing verwijderen**.
+2. Selecteer **toegewezen rollen**, selecteer **toepassings beheerder** en selecteer vervolgens **toewijzing verwijderen**.
 
     ![Pagina toegewezen functies, waarin de geselecteerde rol en de optie verwijderen worden weer gegeven](media/active-directory-users-assign-role-azure-portal/directory-role-remove-role.png)
 

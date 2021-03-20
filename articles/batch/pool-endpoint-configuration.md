@@ -4,10 +4,10 @@ description: Toegang tot SSH-of RDP-poorten op reken knooppunten in een Azure Ba
 ms.topic: how-to
 ms.date: 02/13/2018
 ms.openlocfilehash: 4e7df7da539be75ef1befdff4b4e1fe5244c1702
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92109303"
 ---
 # <a name="configure-or-disable-remote-access-to-compute-nodes-in-an-azure-batch-pool"></a>Externe toegang tot reken knooppunten in een Azure Batch groep configureren of uitschakelen
@@ -71,7 +71,7 @@ pool.network_configuration = batchmodels.NetworkConfiguration(
 
 ## <a name="example-allow-rdp-traffic-from-a-specific-ip-address"></a>Voor beeld: RDP-verkeer van een specifiek IP-adres toestaan
 
-In het volgende C#-code fragment ziet u hoe u het RDP-eind punt op reken knooppunten in een Windows-groep configureert om alleen RDP-toegang vanaf het IP-adres *198.51.100.7*toe te staan. De tweede NSG-regel weigert verkeer dat niet overeenkomt met het IP-adres.
+In het volgende C#-code fragment ziet u hoe u het RDP-eind punt op reken knooppunten in een Windows-groep configureert om alleen RDP-toegang vanaf het IP-adres *198.51.100.7* toe te staan. De tweede NSG-regel weigert verkeer dat niet overeenkomt met het IP-adres.
 
 ```csharp
 pool.NetworkConfiguration = new NetworkConfiguration

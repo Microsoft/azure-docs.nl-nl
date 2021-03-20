@@ -6,10 +6,10 @@ manager: rochakm
 ms.topic: how-to
 ms.date: 01/29/2019
 ms.openlocfilehash: f438fadb73f7e3bd25cd7ab9aef0bc46285e30e2
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92424826"
 ---
 # <a name="replicate-azure-vms-running-storage-spaces-direct-to-another-region"></a>Virtuele Azure-machines met Opslagruimten Direct repliceren naar een andere regio
@@ -80,7 +80,7 @@ De knoop punten van de virtuele machines moeten een failover uitvoeren met het S
 3.  Selecteer **Failover testen**.
 4.  Als u het proces testfailover wilt starten, selecteert u het herstel punt en het virtuele Azure-netwerk.
 5.  Voer validaties uit wanneer de secundaire omgeving actief is.
-6.  Wanneer de validaties zijn voltooid, selecteert u testfailover **opschonen**om de failover-omgeving op te schonen.
+6.  Wanneer de validaties zijn voltooid, selecteert u testfailover **opschonen** om de failover-omgeving op te schonen.
 
 Zie [failover testen naar Azure in site Recovery](site-recovery-test-failover-to-azure.md)voor meer informatie.
 

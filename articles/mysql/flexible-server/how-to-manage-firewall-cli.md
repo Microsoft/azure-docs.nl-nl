@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 9/21/2020
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: 84fdd3045d5a1d44ff611134d88fc9793ee203de
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92545069"
 ---
 # <a name="create-and-manage-azure-database-for-mysql---flexible-server-firewall-rules-using-the-azure-cli"></a>Azure Database for MySQL-flexibele server firewall regels maken en beheren met de Azure CLI
@@ -89,11 +89,11 @@ Raadpleeg de [naslag documentatie](/cli/azure/mysql/flexible-server) van Azure C
 De opdracht **AZ mysql Flexible-Server firewall-Rule** wordt gebruikt vanuit de Azure CLI om firewall regels te maken, verwijderen, weer geven en bijwerken.
 
 Opdrachten:
-- **maken** : een flexibele server firewall regel maken.
-- **lijst** : de flexibele server firewall regels weer geven.
-- **Update** : een flexibele server firewall regel bijwerken.
-- **weer geven** : de details van een flexibele server firewall regel weer geven.
-- **verwijderen** : een flexibele server firewall regel verwijderen.
+- **maken**: een flexibele server firewall regel maken.
+- **lijst**: de flexibele server firewall regels weer geven.
+- **Update**: een flexibele server firewall regel bijwerken.
+- **weer geven**: de details van een flexibele server firewall regel weer geven.
+- **verwijderen**: een flexibele server firewall regel verwijderen.
 
 Raadpleeg de [naslag documentatie](/cli/azure/mysql/flexible-server) van Azure CLI voor de volledige lijst met CONFIGUREER bare cli-para meters. In de onderstaande opdrachten kunt u optioneel de resource groep opgeven.
 

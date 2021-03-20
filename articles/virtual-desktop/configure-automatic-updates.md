@@ -8,10 +8,10 @@ ms.author: helohr
 ms.reviewer: v-cawood; clemr
 manager: lizross
 ms.openlocfilehash: bfc797e0c11a1804d27c6c97fea8cb2ba62dca7a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88010120"
 ---
 # <a name="configure-microsoft-endpoint-configuration-manager"></a>Micro soft endpoint Configuration Manager configureren
@@ -47,9 +47,9 @@ Een verzameling maken:
 
 1. Selecteer **activa en naleving**.
 2. Ga naar **overzicht**  >  **Apparaatsets** en klik met de rechter muisknop op **apparaat** Collections en selecteer **apparaat-verzameling maken** in de vervolg keuzelijst.
-3. Voer op het tabblad **Algemeen** van het menu dat wordt geopend een naam in die uw verzameling beschrijft in het veld **naam** . In het veld **Opmerking** kunt u aanvullende informatie geven over de werking van de verzameling. In de **verzameling beperken**definieert u welke machines u wilt opnemen in de verzamelings query.
-4. Voeg op het tabblad **lidmaatschaps regels** een regel toe voor uw query door **regel toevoegen**te selecteren en vervolgens **query regel**te selecteren.
-5. Voer in de **query regel eigenschappen**een naam in voor de regel en definieer vervolgens de para meters van de regel door **query-instructie bewerken**te selecteren.
+3. Voer op het tabblad **Algemeen** van het menu dat wordt geopend een naam in die uw verzameling beschrijft in het veld **naam** . In het veld **Opmerking** kunt u aanvullende informatie geven over de werking van de verzameling. In de **verzameling beperken** definieert u welke machines u wilt opnemen in de verzamelings query.
+4. Voeg op het tabblad **lidmaatschaps regels** een regel toe voor uw query door **regel toevoegen** te selecteren en vervolgens **query regel** te selecteren.
+5. Voer in de **query regel eigenschappen** een naam in voor de regel en definieer vervolgens de para meters van de regel door **query-instructie bewerken** te selecteren.
 6. Selecteer **query-instructie weer geven**.
 7. Voer in de instructie de volgende teken reeks in:
 

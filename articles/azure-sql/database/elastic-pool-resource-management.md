@@ -12,10 +12,10 @@ ms.author: dfurman
 ms.reviewer: sstein
 ms.date: 09/16/2020
 ms.openlocfilehash: 40b6c5a86184860cf3e7a9840f980706485ae977
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100572242"
 ---
 # <a name="resource-management-in-dense-elastic-pools"></a>Resourcebeheer in dichte elastische pools
@@ -52,7 +52,7 @@ Om te voor komen dat de prestaties afnemen als gevolg van bron conflicten, moete
 
 Azure SQL Database biedt diverse metrische gegevens die relevant zijn voor dit type bewaking. Het overschrijden van de aanbevolen gemiddelde waarde voor elke metriek duidt op bron conflicten in de groep en moet worden aangepakt met een van de eerder genoemde acties.
 
-|Naam van metrische gegevens|Description|Aanbevolen gemiddelde waarde|
+|Naam van metrische gegevens|Beschrijving|Aanbevolen gemiddelde waarde|
 |----------|--------------------------------|------------|
 |`avg_instance_cpu_percent`|CPU-gebruik van het SQL-proces dat is gekoppeld aan een elastische pool, zoals gemeten door het onderliggende besturings systeem. Beschikbaar in de weer gave [sys.dm_db_resource_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database) in elke Data Base en in de [sys.elastic_pool_resource_stats](/sql/relational-databases/system-catalog-views/sys-elastic-pool-resource-stats-azure-sql-database) weer gave in de- `master` Data Base. Deze metrische gegevens worden ook verzonden naar Azure Monitor, waar ze worden [genoemd](../../azure-monitor/essentials/metrics-supported.md#microsoftsqlserverselasticpools) `sqlserver_process_core_percent` en kunnen worden weer gegeven in azure Portal. Deze waarde is hetzelfde voor elke data base in dezelfde elastische pool.|Minder dan 70%. Incidentele korte pieken tot 90% kunnen acceptabel zijn.|
 |`max_worker_percent`|Gebruik van [worker-thread]( https://docs.microsoft.com/sql/relational-databases/thread-and-task-architecture-guide) . Voor elke data base in de groep, evenals voor de groep zelf. Er zijn verschillende limieten voor het aantal werkthreads op database niveau en op groeps niveau, daarom is het raadzaam deze metrische gegevens op beide niveaus te controleren. Beschikbaar in de weer gave [sys.dm_db_resource_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database) in elke Data Base en in de [sys.elastic_pool_resource_stats](/sql/relational-databases/system-catalog-views/sys-elastic-pool-resource-stats-azure-sql-database) weer gave in de- `master` Data Base. Deze metrische gegevens worden ook verzonden naar Azure Monitor, waar ze worden [genoemd](../../azure-monitor/essentials/metrics-supported.md#microsoftsqlserverselasticpools) `workers_percent` en kunnen worden weer gegeven in azure Portal.|Minder dan 80%. Pieken tot 100% leidt ertoe dat verbindings pogingen en query's mislukken.|
@@ -66,7 +66,7 @@ Azure SQL Database biedt diverse metrische gegevens die relevant zijn voor dit t
 
 Naast deze metrische gegevens bevat Azure SQL Database een weer gave die de werkelijke governance limieten van resources retourneert, evenals aanvullende weer gaven die de statistieken van het resource gebruik op het niveau van de resource groep retour neren, en op het niveau van de werkbelasting groep.
 
-|Weergave naam|Description|  
+|Weergave naam|Beschrijving|  
 |-----------------|--------------------------------|  
 |[sys.dm_user_db_resource_governance](/sql/relational-databases/system-dynamic-management-views/sys-dm-user-db-resource-governor-azure-sql-database)|Retourneert werkelijke configuratie-en capaciteits instellingen die worden gebruikt door resource governance mechanismen in de huidige data base of elastische pool.|
 |[sys.dm_resource_governor_resource_pools](/sql/relational-databases/system-dynamic-management-views/sys-dm-resource-governor-resource-pools-transact-sql)|Retourneert informatie over de huidige status van de resource groep, de huidige configuratie van resource groepen en de statistieken van de cumulatieve resource groep.|

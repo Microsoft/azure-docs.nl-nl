@@ -15,10 +15,10 @@ ms.author: curtand
 ms.custom: pim ; H1Hack27Feb2017
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4662e9fb537a93cb87c554e319256e2eca40d2e7
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92372426"
 ---
 # <a name="discovery-and-insights-preview-for-azure-ad-roles-formerly-security-wizard"></a>Detectie en inzichten (preview) voor Azure AD-rollen (voorheen beveiligings wizard)
@@ -35,7 +35,7 @@ Zorg er ook voor dat de roltoewijzingen permanent blijven als een gebruiker een 
 
 ## <a name="open-discovery-and-insights-preview"></a>Detectie en inzichten openen (preview-versie)
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 
 1. Open **Azure AD privileged Identity Management**.
 
@@ -51,7 +51,7 @@ Zorg er ook voor dat de roltoewijzingen permanent blijven als een gebruiker een 
 
     ![Het deel venster globale beheerders beperken-rollen die alle globale beheerders weer geven](./media/pim-security-wizard/new-global-administrator-list.png)
 
-1. Selecteer **volgende** om de gebruikers of groepen te selecteren die u in aanmerking wilt nemen, en selecteer vervolgens **in aanmerking komende** of **Verwijder toewijzing**maken.
+1. Selecteer **volgende** om de gebruikers of groepen te selecteren die u in aanmerking wilt nemen, en selecteer vervolgens **in aanmerking komende** of **Verwijder toewijzing** maken.
 
     ![Leden converteren naar een in aanmerking komende pagina met opties om leden te selecteren die u in aanmerking wilt stellen voor rollen](./media/pim-security-wizard/new-global-administrator-buttons.png)
 

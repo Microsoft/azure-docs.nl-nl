@@ -9,10 +9,10 @@ ms.date: 07/10/2020
 ms.author: alkohli
 ms.subservice: pod
 ms.openlocfilehash: 178ad169c1b576458f38b440ca79f4bb9eb012f5
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92124908"
 ---
 # <a name="use-customer-lockbox-for-azure-data-box-preview"></a>Klanten-lockbox gebruiken voor Azure Data Box (preview-versie)
@@ -62,7 +62,7 @@ Voer de volgende stappen uit om een aanvraag voor toegang tot klant gegevens bij
 
     ![Aanvraag in Azure Portal](./media/data-box-customer-lockbox/3-lockbox-request-azure-portal.png)
 
-    Als u de lockbox-aanvraag wilt goed keuren vanuit de portal, kunt u **goed keuren**selecteren.
+    Als u de lockbox-aanvraag wilt goed keuren vanuit de portal, kunt u **goed keuren** selecteren.
 
     ![Aanvraag goed keuren](./media/data-box-customer-lockbox/4-lockbox-request-details-azure-portal.png)
 

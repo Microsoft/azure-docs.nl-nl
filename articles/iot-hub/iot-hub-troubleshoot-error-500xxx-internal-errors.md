@@ -9,10 +9,10 @@ ms.topic: troubleshooting
 ms.date: 01/30/2020
 ms.author: jlian
 ms.openlocfilehash: 1333a135f3e123757e268513f73e8329537e630b
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92538201"
 ---
 # <a name="500xxx-internal-errors"></a>500xxx Internal errors
@@ -23,13 +23,13 @@ In dit artikel worden de oorzaken en oplossingen voor **500Xxx interne fouten** 
 
 Uw aanvraag voor IoT Hub mislukt met een fout die begint met 500 en/of een sortering van ' server fout '. Enkele mogelijkheden zijn:
 
-* **500001 server error** : er is IOT hub een probleem aan de server zijde opgetreden.
+* **500001 server error**: er is IOT hub een probleem aan de server zijde opgetreden.
 
-* **500008 GenericTimeout** : IOT hub kan de verbindings aanvraag niet volt ooien voordat de time-out is opgelopen.
+* **500008 GenericTimeout**: IOT hub kan de verbindings aanvraag niet volt ooien voordat de time-out is opgelopen.
 
-* **ServiceUnavailable (geen fout code)** : er is een interne fout opgetreden in IOT hub.
+* **ServiceUnavailable (geen fout code)**: er is een interne fout opgetreden in IOT hub.
 
-* **InternalServerError (geen fout code)** : er is een interne fout opgetreden in IOT hub.
+* **InternalServerError (geen fout code)**: er is een interne fout opgetreden in IOT hub.
 
 ## <a name="cause"></a>Oorzaak
 

@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 10/01/2020
 ms.custom: shresha
 ms.openlocfilehash: 15f1a814b302611029cf6459b8d2df93a32a2d36
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97740552"
 ---
 # <a name="migrating-to-new-azure-time-series-insights-gen2-api-versions"></a>Migreren naar nieuwe Azure Time Series Insights API-versies Gen2
@@ -42,7 +42,7 @@ Om gebruikers te helpen hun [Time Series-model variabelen](./concepts-variables.
 
 1. U wordt gevraagd om de syntaxis bij te werken die wordt gebruikt door uw time series model-variabelen en opgeslagen query's.
 
-    [![Vraag](media/api-migration/ux-prompt.png)](media/v2-update-overview/overview-one.png#lightbox)
+    [![Prompt](media/api-migration/ux-prompt.png)](media/v2-update-overview/overview-one.png#lightbox)
 
     Als u de melding per ongeluk hebt gesloten, kunt u deze vinden in het deel venster meldingen.
 
@@ -84,7 +84,7 @@ Als uw aangepaste toepassing aanroepen naar de volgende REST-eind punten aanroep
 
 - Api's voor time series model
   - Api's voor model instellingen
-    - [Toevoegen](/rest/api/time-series-insights/dataaccessgen2/modelsettings/get)
+    - [Ophalen](/rest/api/time-series-insights/dataaccessgen2/modelsettings/get)
     - [Bijwerken](/rest/api/time-series-insights/dataaccessgen2/modelsettings/update)
   - Exemplaar-Api's
     - [Alle batch bewerkingen](/rest/api/time-series-insights/dataaccessgen2/timeseriesinstances/executebatch)

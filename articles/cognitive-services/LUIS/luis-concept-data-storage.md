@@ -10,10 +10,10 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 12/07/2020
 ms.openlocfilehash: a58bcff4e39c4a4a907cd8567b47b074ff299bd5
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97008449"
 ---
 # <a name="data-storage-and-removal-in-language-understanding-luis-cognitive-services"></a>Gegevens opslag en verwijderen in Language Understanding (LUIS) Cognitive Services
@@ -27,7 +27,7 @@ LUIS slaat gegevens op die zijn versleuteld in een Azure-gegevens opslag die ove
 ## <a name="export-and-delete-app"></a>App exporteren en verwijderen
 Gebruikers hebben volledige controle over het [exporteren](luis-how-to-start-new-app.md#export-app) en [verwijderen](luis-how-to-start-new-app.md#delete-app) van de app. 
 
-## <a name="utterances"></a>Utterances
+## <a name="utterances"></a>Uitingen
 
 Uitingen kan op twee verschillende plaatsen worden opgeslagen. 
 

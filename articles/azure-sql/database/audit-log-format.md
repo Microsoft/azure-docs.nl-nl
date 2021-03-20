@@ -11,10 +11,10 @@ ms.reviewer: vanto
 ms.custom: sqldbrb=1
 ms.date: 06/03/2020
 ms.openlocfilehash: f5c176db4f679c79bb42c6ceb46b3588e9440874
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100572215"
 ---
 # <a name="sql-database-audit-log-format"></a>Indeling van SQL Database audit logboek
@@ -38,15 +38,15 @@ Voor de Data Base `Database1` op `Server1` het volgende is bijvoorbeeld een moge
 
 ### <a name="event-hub"></a>Event Hub
 
-Controle gebeurtenissen worden geschreven naar de naam ruimte en Event Hub die tijdens de controle configuratie zijn gedefinieerd, en worden vastgelegd in de hoofd tekst van [Apache Avro](https://avro.apache.org/) -gebeurtenissen en opgeslagen met JSON-indeling met UTF-8-code ring. Als u de audit logboeken wilt lezen, kunt u [Avro-Hulpprogram ma's](../../event-hubs/event-hubs-capture-overview.md#use-avro-tools) of gelijksoortige hulp middelen gebruiken waarmee deze indeling wordt verwerkt.
+Controlegebeurtenissen worden geschreven naar de naamruimte en Event Hub die tijdens de controleconfiguratie zijn gedefinieerd. Ze worden vastgelegd in de hoofdtekst van [Apache Avro](https://avro.apache.org/)-gebeurtenissen en opgeslagen met behulp van een JSON-indeling met UTF-8-codering. Als u de auditlogboeken wilt lezen, kunt u [Avro-hulpprogramma's](../../event-hubs/event-hubs-capture-overview.md#use-avro-tools) of gelijksoortige hulpmiddelen gebruiken waarmee deze indeling wordt verwerkt.
 
 ### <a name="log-analytics"></a>Log Analytics
 
-Controle gebeurtenissen worden geschreven naar Log Analytics werk ruimte die tijdens de controle configuratie is gedefinieerd, naar de `AzureDiagnostics` tabel met de categorie `SQLSecurityAuditEvents` . Zie [log Analytics Search Reference](../../azure-monitor/logs/log-query-overview.md)(Engelstalig) voor meer nuttige informatie over log Analytics Zoek taal en-opdrachten.
+Controlegebeurtenissen worden geschreven naar de `AzureDiagnostics` tabel met de categorie `SQLSecurityAuditEvents` naar de Log Analytics-werkruimte die tijdens de controleconfiguratie is gedefinieerd. Zie [Naslag voor Log Analytics](../../azure-monitor/logs/log-query-overview.md) voor meer nuttige informatie over de zoektaal en -opdrachten in Log Analytics.
 
 ## <a name="audit-log-fields"></a><a id="subheading-1"></a>Controle logboek velden
 
-| Naam (BLOB) | Naam (Event Hubs/Log Analytics) | Description | Blob-type | Type Event Hubs/Log Analytics |
+| Naam (BLOB) | Naam (Event Hubs/Log Analytics) | Beschrijving | Blob-type | Type Event Hubs/Log Analytics |
 |-------------|---------------------------------|-------------|-----------|-------------------------------|
 | action_id | action_id_s | ID van de actie | varchar (4) | tekenreeks |
 | action_name | action_name_s | De naam van de actie | N.v.t. | tekenreeks |

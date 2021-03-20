@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 12/10/2019
 ms.author: rohogue
 ms.openlocfilehash: 5cc4678b082aa5a4a3f90518ff8fac448f414f1a
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92342243"
 ---
 # <a name="disaster-recovery-guidance-for-avere-vfxt-for-azure"></a>Richt lijnen voor herstel na nood gevallen voor avere vFXT voor Azure
@@ -108,7 +108,7 @@ Ga als volgt te werk om toegang te krijgen tot de back-upcontainer van een avere
 
 1. Voeg een nieuwe Cloud core-bestands extensie toe die naar de dubbele BLOB-container verwijst.
 
-   Zorg ervoor dat de doel container al gegevens bevat in de instelling van de **Bucket inhoud** van de wizard kern bestand maken. (Het systeem moet u waarschuwen als u per ongeluk deze set **leeg**laat.)  <!-- you can't add a populated volume at cluster creation time via template, only create a fresh one -->
+   Zorg ervoor dat de doel container al gegevens bevat in de instelling van de **Bucket inhoud** van de wizard kern bestand maken. (Het systeem moet u waarschuwen als u per ongeluk deze set **leeg** laat.)  <!-- you can't add a populated volume at cluster creation time via template, only create a fresh one -->
 
 1. Als dat nodig is, werkt u de clients bij zodat ze het nieuwe cluster of de nieuwe kern bestand koppelen in plaats van het origineel. (Als u de vervangende kern bestand met dezelfde naam en hetzelfde pad als de oorspronkelijke container toevoegt, hoeft u de client processen alleen bij te werken als u het nieuwe cluster moet koppelen aan een nieuw IP-adres.)
 

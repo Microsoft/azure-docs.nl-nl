@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/07/2020
 ms.author: raynew
 ms.openlocfilehash: 22a7738c2d4d3cc02c03c233e0821f07b459dd94
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96452088"
 ---
 # <a name="support-for-moving-azure-sql-resources-between-azure-regions"></a>Ondersteuning voor het verplaatsen van Azure SQL-resources tussen Azure-regio's
@@ -31,12 +31,12 @@ In de volgende tabel vindt u een overzicht van de vereisten.
 **Transparent Data Encryption (TDE) met Bring Your Own Key (BYOK)** | Ondersteund | Meer [informatie](../key-vault/general/move-region.md) over het verplaatsen van sleutel kluizen in verschillende regio's.
 **TDE met door de service beheerde sleutel** | Ondersteund. |  Meer [informatie](../key-vault/general/move-region.md) over het verplaatsen van sleutel kluizen in verschillende regio's.
 **Regels voor dynamische gegevens maskering** | Ondersteund. | Regels worden automatisch naar de doel regio gekopieerd als onderdeel van de verplaatsing. [Meer informatie](../azure-sql/database/dynamic-data-masking-configure-portal.md).
-**Advanced data security** | Niet ondersteund. | Tijdelijke oplossing: Stel in het doel gebied het SQL Server niveau in. [Meer informatie](../azure-sql/database/azure-defender-for-sql.md).
-**Firewall-regels** | Niet ondersteund. | Tijdelijke oplossing: Stel firewall regels in voor SQL Server in de doel regio. Firewall regels op database niveau worden van de bron server naar de doel server gekopieerd. [Meer informatie](../azure-sql/database/firewall-create-server-level-portal-quickstart.md).
-**Controle beleid** | Niet ondersteund. | Het beleid wordt na de verplaatsing opnieuw ingesteld op de standaard waarde. [Meer informatie](../azure-sql/database/auditing-overview.md) over hoe u opnieuw kunt instellen.
+**Advanced data security** | Wordt niet ondersteund. | Tijdelijke oplossing: Stel in het doel gebied het SQL Server niveau in. [Meer informatie](../azure-sql/database/azure-defender-for-sql.md).
+**Firewall-regels** | Wordt niet ondersteund. | Tijdelijke oplossing: Stel firewall regels in voor SQL Server in de doel regio. Firewall regels op database niveau worden van de bron server naar de doel server gekopieerd. [Meer informatie](../azure-sql/database/firewall-create-server-level-portal-quickstart.md).
+**Controle beleid** | Wordt niet ondersteund. | Het beleid wordt na de verplaatsing opnieuw ingesteld op de standaard waarde. [Meer informatie](../azure-sql/database/auditing-overview.md) over hoe u opnieuw kunt instellen.
 **Back-upretentie** | Ondersteund. | Het bewaarbeleid voor back-ups van de brondatabase wordt meegenomen naar de doeldatabase. [Meer informatie](../azure-sql/database/long-term-backup-retention-configure.md) over het wijzigen van instellingen na de verplaatsing.
-**Automatisch afstemmen** | Niet ondersteund. | Tijdelijke oplossing: Stel de instellingen voor automatisch afstemmen in na de verplaatsing. [Meer informatie](../azure-sql/database/automatic-tuning-enable.md).
-**Database waarschuwingen** | Niet ondersteund. | Tijdelijke oplossing: Stel waarschuwingen in na de verplaatsing. [Meer informatie](../azure-sql/database/alerts-insights-configure-portal.md).
+**Automatisch afstemmen** | Wordt niet ondersteund. | Tijdelijke oplossing: Stel de instellingen voor automatisch afstemmen in na de verplaatsing. [Meer informatie](../azure-sql/database/automatic-tuning-enable.md).
+**Database waarschuwingen** | Wordt niet ondersteund. | Tijdelijke oplossing: Stel waarschuwingen in na de verplaatsing. [Meer informatie](../azure-sql/database/alerts-insights-configure-portal.md).
 **Azure SQL Server stretch data base** | Niet ondersteund | Kan SQL Server stretch-data bases niet verplaatsen met resource-overdrijfing.
 **Azure Synapse Analytics** | Niet ondersteund | Kan Azure Synapse Analytics niet verplaatsen met resource-overdrijfing.
 ## <a name="next-steps"></a>Volgende stappen

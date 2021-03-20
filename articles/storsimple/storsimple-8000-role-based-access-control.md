@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 10/11/2017
 ms.author: alkohli
 ms.openlocfilehash: 49c38e23ddbbfe983ff82ad25363c744292d4d69
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92518973"
 ---
 # <a name="azure-role-based-access-control-for-storsimple"></a>Toegangs beheer op basis van rollen in azure voor StorSimple
@@ -58,7 +58,7 @@ In het volgende voor beeld beginnen we met de ingebouwde functie **lezer** waarm
     Get-AzRoleDefinition -Name "Reader" | ConvertTo-Json | Out-File C:\ssrbaccustom.json
     ```
 
-4. Open het JSON-bestand in Visual Studio. U ziet dat een typische Azure-rol bestaat uit drie hoofd secties, **acties**, **intacte**en **AssignableScopes**.
+4. Open het JSON-bestand in Visual Studio. U ziet dat een typische Azure-rol bestaat uit drie hoofd secties, **acties**, **intacte** en **AssignableScopes**.
 
     In de sectie **actie** worden alle toegestane bewerkingen voor deze rol weer gegeven. Elke actie wordt toegewezen van een resource provider. Voor een StorSimple-infrastructuur beheerder gebruikt u de `Microsoft.StorSimple` resource provider.
 
@@ -70,7 +70,7 @@ In het volgende voor beeld beginnen we met de ingebouwde functie **lezer** waarm
 
     In de secties **intact** worden alle beperkte acties voor een bepaalde Azure-rol weer gegeven. In dit voor beeld zijn geen acties beperkt.
     
-    Onder de **AssignableScopes**worden de abonnements-id's weer gegeven. Zorg ervoor dat de rol Azure de expliciete abonnements-ID bevat waarin deze wordt gebruikt. Als de juiste abonnements-ID niet is opgegeven, is het niet toegestaan om de rol in uw abonnement te importeren.
+    Onder de **AssignableScopes** worden de abonnements-id's weer gegeven. Zorg ervoor dat de rol Azure de expliciete abonnements-ID bevat waarin deze wordt gebruikt. Als de juiste abonnements-ID niet is opgegeven, is het niet toegestaan om de rol in uw abonnement te importeren.
 
     Bewerk het bestand om de voor gaande overwegingen te onthouden.
 

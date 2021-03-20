@@ -17,10 +17,10 @@ ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 75e004980ada23a616b57e3c7eb1afb241e09598
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92371644"
 ---
 # <a name="assign-an-azure-ad-custom-role-in-privileged-identity-management"></a>Een aangepaste Azure AD-rol toewijzen in Privileged Identity Management
@@ -66,7 +66,7 @@ Privileged Identity Management kunt aangepaste rollen beheren die u kunt maken i
 
     ![Het roltoewijzing-type instellen op in aanmerking komend of actief](./media/azure-ad-custom-roles-assign/membership-settings.png)
 
-1. Selecteer in **aanmerking komend** of **actief**op de pagina **lidmaatschaps instellingen** :
+1. Selecteer in **aanmerking komend** of **actief** op de pagina **lidmaatschaps instellingen** :
 
     - Voor **in aanmerking komende** toewijzingen moet de gebruiker aan de rol zijn toegewezen om een actie uit te voeren voordat de rol kan worden gebruikt. Acties kunnen omvatten het door geven van een multi-factor Authentication-controle, het leveren van een zakelijke reden of het aanvragen van goed keuring van aangewezen goed keurders.
     - Voor **actieve** toewijzingen hoeft de toegewezen gebruiker geen actie te ondernemen om de rol te gebruiken. Actieve gebruikers hebben te allen tijde de bevoegdheden toegewezen aan de rol.

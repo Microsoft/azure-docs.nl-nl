@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/04/2019
 ms.author: jeedes
 ms.openlocfilehash: bafec2c1b857d3220089e2ca41190987de33edb6
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92519468"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-namely"></a>Zelfstudie: Azure Active Directory-integratie met Namely
@@ -49,11 +49,11 @@ Om de integratie van Namely te configureren in Azure AD, moet u Namely uit de ga
 
 **Voer de volgende stappen uit om Namely toe te voegen uit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -61,13 +61,13 @@ Om de integratie van Namely te configureren in Azure AD, moet u Namely uit de ga
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **Namely** , selecteer **Namely** in het resultatenvenster en klik op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **Namely**, selecteer **Namely** in het resultatenvenster en klik op de knop **Toevoegen** om de toepassing toe te voegen.
 
      ![Namely in de lijst met resultaten](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In dit gedeelte configureert en test u eenmalige aanmelding van Azure AD met Namely op basis van een testgebruiker met de naam **Britta Simon** .
+In dit gedeelte configureert en test u eenmalige aanmelding van Azure AD met Namely op basis van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in Namely tot stand is gebracht.
 
 Om Azure AD eenmalige aanmelding met Namely te configureren en testen, moet u de volgende bouwstenen voltooien:
@@ -85,7 +85,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voer de volgende stappen uit als u eenmalige aanmelding van Azure AD wilt configureren voor Namely:
 
-1. In de [Azure-portal](https://portal.azure.com/) selecteert u **Eenmalige aanmelding** op de integratiepagina van de toepassing **Namely** .
+1. In de [Azure-portal](https://portal.azure.com/) selecteert u **Eenmalige aanmelding** op de integratiepagina van de toepassing **Namely**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -126,15 +126,15 @@ Voer de volgende stappen uit als u eenmalige aanmelding van Azure AD wilt config
 
 1. Meld u in een ander browservenster als beheerder aan bij de bedrijfssite van Namely.
 
-2. Klik in de werkbalk bovenaan op **Bedrijf** .
+2. Klik in de werkbalk bovenaan op **Bedrijf**.
    
     ![Schermopname met de geselecteerde waarde Bedrijf.](./media/namely-tutorial/tutorial_namely_06.png) 
 
-3. Klik op het tabblad **Settings** .
+3. Klik op het tabblad **Settings**.
    
     ![Schermopname met het tabblad Bedrijfsinstellingen geselecteerd.](./media/namely-tutorial/tutorial_namely_07.png) 
 
-4. Klik op **SAML** .
+4. Klik op **SAML**.
    
     ![Schermopname met SAML geselecteerd.](./media/namely-tutorial/tutorial_namely_08.png) 
 
@@ -142,19 +142,19 @@ Voer de volgende stappen uit als u eenmalige aanmelding van Azure AD wilt config
    
     ![Schermopname van SAML-instellingen, waarin u de beschreven waarden kunt invoeren.](./media/namely-tutorial/tutorial_namely_09.png)
  
-    a. Klik op **Enable SAML** . 
+    a. Klik op **Enable SAML**. 
 
     b. Plak in het tekstvak **URL voor eenmalige aanmelding van identiteitsprovider** de waarde van de **aanmeldings-URL** die u hebt gekopieerd uit Azure Portal.
     
-    c. Open het gedownloade certificaat in Kladblok, kopieer de inhoud en plak deze in het tekstvak **Certificaat van identiteitsprovider** .
+    c. Open het gedownloade certificaat in Kladblok, kopieer de inhoud en plak deze in het tekstvak **Certificaat van identiteitsprovider**.
      
-    d. Klik op **Opslaan** .
+    d. Klik op **Opslaan**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -173,13 +173,13 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 
-    d. Klik op **Create** .
+    d. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot Namely.
 
-1. Selecteer **Bedrijfstoepassingen** in de Azure-portal, selecteer **Alle toepassingen** en selecteer vervolgens **Namely** .
+1. Selecteer **Bedrijfstoepassingen** in de Azure-portal, selecteer **Alle toepassingen** en selecteer vervolgens **Namely**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -187,11 +187,11 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
     ![De Namely-koppeling in de lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -199,7 +199,7 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
 6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="create-namely-test-user"></a>Namely-testgebruiker maken
 
@@ -209,19 +209,19 @@ Het doel van dit gedeelte is het maken van een gebruiker met de naam Britta Simo
 
 1. Meld u als beheerder aan bij de bedrijfssite van Namely.
 
-2. Klik in de werkbalk bovenaan op **Personen** .
+2. Klik in de werkbalk bovenaan op **Personen**.
    
     ![Schermopname met de waarde Mensen geselecteerd.](./media/namely-tutorial/tutorial_namely_10.png) 
 
-3. Klik op het tabblad **Map** .
+3. Klik op het tabblad **Map**.
    
     ![Schermopname met het tabblad Personenlijst geselecteerd.](./media/namely-tutorial/tutorial_namely_11.png) 
 
-4. Klik op **Nieuwe persoon toevoegen** .
+4. Klik op **Nieuwe persoon toevoegen**.
 
     ![Schermopname met de optie Nieuwe persoon toevoegen.](./media/namely-tutorial/tutorial_namely_12.png)
 
-5. Voer de volgende stappen uit in het dialoogvenster **Nieuwe persoon toevoegen** :
+5. Voer de volgende stappen uit in het dialoogvenster **Nieuwe persoon toevoegen**:
 
     a. In het vak **Voornaam** voert u **Britta** in.
 
@@ -229,7 +229,7 @@ Het doel van dit gedeelte is het maken van een gebruiker met de naam Britta Simo
 
     c. In het tekstvak **E-mail** voert u het **e-mailadres** van BrittaSimon in.
 
-    d. Klik op **Opslaan** .
+    d. Klik op **Opslaan**.
 
 ### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen 
 

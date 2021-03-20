@@ -11,10 +11,10 @@ ms.author: ronmat
 ms.reviewer: vanto
 ms.date: 12/01/2020
 ms.openlocfilehash: 1425003c718ca52c0bea712e9d25cd3e4c035cf1
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96453962"
 ---
 # <a name="configure-advanced-threat-protection-for-azure-sql-database"></a>Geavanceerde bedreigings beveiliging voor Azure SQL Database configureren
@@ -28,7 +28,7 @@ U kunt meldingen over de gedetecteerde bedreigingen ontvangen via [e-mail meldin
 
 ## <a name="set-up-advanced-threat-protection-in-the-azure-portal"></a>Geavanceerde beveiliging tegen bedreigingen instellen in de Azure Portal
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure Portal](https://portal.azure.com).
 2. Ga naar de configuratie pagina van de server die u wilt beveiligen. Selecteer **Security Center** in de beveiligings instellingen.
 3. Op de pagina **Azure Defender voor SQL** -configuratie:
 
@@ -45,7 +45,7 @@ Zie voor een script voorbeeld [controle configureren en geavanceerde bedreiginge
 
 - Meer informatie over [geavanceerde beveiliging tegen bedreigingen](threat-detection-overview.md).
 - Meer informatie over [Advanced Threat Protection in SQL Managed instance](../managed-instance/threat-detection-configure.md).  
-- Meer informatie over [Azure Defender voor SQL](azure-defender-for-sql.md).
+- Lees meer informatie over [Azure Defender voor SQL](azure-defender-for-sql.md).
 - Meer informatie over [auditing](../../azure-sql/database/auditing-overview.md)
 - Meer informatie over [Azure Security Center](../../security-center/security-center-introduction.md)
 - Zie de [pagina met prijzen voor SQL database](https://azure.microsoft.com/pricing/details/sql-database/) voor meer informatie over prijzen.

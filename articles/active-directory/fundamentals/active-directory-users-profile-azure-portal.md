@@ -13,10 +13,10 @@ ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 27896bac6f5436fb6717e4bc1ab0a1f9381904ad
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92370913"
 ---
 # <a name="add-or-update-a-users-profile-information-using-azure-active-directory"></a>De profielgegevens van een gebruiker toevoegen of bijwerken met behulp van Azure Active Directory
@@ -28,7 +28,7 @@ Zoals u ziet, is er meer informatie beschikbaar in het profiel van een gebruiker
 ## <a name="to-add-or-change-profile-information"></a>Profiel gegevens toevoegen of wijzigen
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com/) als een gebruikers beheerder voor de organisatie.
 
-2. Selecteer **Azure Active Directory**, selecteer **gebruikers**en selecteer vervolgens een gebruiker. Bijvoorbeeld _Alain Charon_.
+2. Selecteer **Azure Active Directory**, selecteer **gebruikers** en selecteer vervolgens een gebruiker. Bijvoorbeeld _Alain Charon_.
 
     De pagina **Alain Charon-profiel** wordt weer gegeven.
 

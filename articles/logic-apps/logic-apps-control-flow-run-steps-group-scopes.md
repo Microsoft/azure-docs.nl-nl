@@ -7,10 +7,10 @@ ms.reviewer: klam, logicappspm
 ms.date: 10/03/2018
 ms.topic: article
 ms.openlocfilehash: 95b5cc191ac6857bf8e1b09e70b22d928473fe03
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92314848"
 ---
 # <a name="run-actions-based-on-group-status-by-using-scopes-in-azure-logic-apps"></a>Acties uitvoeren op basis van de groeps status met behulp van scopes in Azure Logic Apps
@@ -185,10 +185,10 @@ Vervolgens voegt u een bereik toe zodat u specifieke acties kunt groeperen en de
   
 1. Voeg in de voor waarde deze expressies toe om te controleren of de status van het bereik gelijk is aan "Failed" of "Aborted". 
 
-   1. Kies **toevoegen**om een andere rij toe te voegen. 
+   1. Kies **toevoegen** om een andere rij toe te voegen. 
 
    1. In elke rij klikt u in het linkervak zodat de lijst met dynamische inhoud wordt weer gegeven. 
-   Kies **expressie**in de lijst met dynamische inhoud. Voer in het invoervak deze expressie in en kies vervolgens **OK**: 
+   Kies **expressie** in de lijst met dynamische inhoud. Voer in het invoervak deze expressie in en kies vervolgens **OK**: 
    
       `result('Scope')[0]['status']`
 
@@ -209,7 +209,7 @@ Vervolgens voegt u een bereik toe zodat u specifieke acties kunt groeperen en de
 
       ![De eigenschap runAfter configureren](./media/logic-apps-control-flow-run-steps-group-scopes/configure-run-after.png)
 
-   1. Alle volgende Scope statussen selecteren: **is geslaagd**, is **mislukt**, **wordt overgeslagen**en er is **een time-out opgetreden**
+   1. Alle volgende Scope statussen selecteren: **is geslaagd**, is **mislukt**, **wordt overgeslagen** en er is **een time-out opgetreden**
 
       ![Scope status selecteren](./media/logic-apps-control-flow-run-steps-group-scopes/select-run-after-statuses.png)
 
@@ -228,7 +228,7 @@ Uw voltooide logische app ziet er nu uit als in dit voor beeld:
 
 ## <a name="test-your-work"></a>Uw werk testen
 
-Kies **uitvoeren**op de werk balk van de ontwerp functie. Als alle acties binnen het bereik zijn geslaagd, wordt het bericht ' scope geslaagd ' weer gegeven. Als er geen acties met een bereik zijn voltooid, krijgt u het bericht ' scope failed '. 
+Kies **uitvoeren** op de werk balk van de ontwerp functie. Als alle acties binnen het bereik zijn geslaagd, wordt het bericht ' scope geslaagd ' weer gegeven. Als er geen acties met een bereik zijn voltooid, krijgt u het bericht ' scope failed '. 
 
 <a name="scopes-json"></a>
 

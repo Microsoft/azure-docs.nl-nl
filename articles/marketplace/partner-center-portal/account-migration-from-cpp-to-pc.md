@@ -8,10 +8,10 @@ author: parthpandyaMSFT
 ms.author: parthp
 ms.date: 09/23/2019
 ms.openlocfilehash: 9e9f3b7ea3d99de51b9398bda82b690d2c249a1d
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92520962"
 ---
 # <a name="how-to-migrate-your-account-from-cloud-partner-portal-to-partner-center"></a>Uw account migreren van Cloud Partner-portal naar het partner centrum
@@ -73,7 +73,7 @@ Volg de onderstaande instructies voor specifieke informatie over wat u moet doen
 1. Als uw MPN-lidmaatschaps account oorspronkelijk is gemaakt in het Partner Membership Center (PMC), meldt u zich aan bij het [partner centrum](https://partner.microsoft.com/pcv/accountsettings/connectedpartnerprofile) om te bevestigen dat uw account is gemigreerd. Als er een profiel scherm met uw MPN-ID wordt weer gegeven, bent u klaar om door te gaan. Als dat niet het geval is, moet u uw account migratie starten door de prompts in het [Partner Membership Center](https://partners.microsoft.com/partnerprogram/Welcome.aspx)te volgen. Als u hulp nodig hebt, gaat u naar [ondersteuning](https://partner.microsoft.com/support?issueid=100-0077).
 2. Ga naar de [overzichts pagina voor commerciële Marketplace in partner centrum](https://partner.microsoft.com/dashboard/commercial-marketplace/overview). Als u ' commerciële Marketplace ' ziet in het navigatie deel venster aan de linkerkant, bent u Inge schreven en gaat u verder met de volgende stap. Als dat niet het geval is, moet u zich nu [inschrijven in de commerciële Marketplace](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership) .
 3. Bevestig dat uw aanbiedingen zich in AppSource bevinden door te [zoeken naar uw aanbiedingen](https://appsource.microsoft.com/). Als uw aanbiedingen al AppSource zijn, gaat u verder met de volgende stap. Voor elke aanbieding die niet in AppSource is, maakt u een nieuwe aanbieding voor [dynamics 365-klanten](create-new-customer-engagement-offer.md) of een [nieuwe aanbieding voor Dynamics 365](create-new-operations-offer.md).
-4. Controleer op de [pagina overeenkomsten](https://partner.microsoft.com/dashboard/account/agreements)van het partner centrum of u de **Business Applications ISV-addendum**hebt bekeken en geaccepteerd.
+4. Controleer op de [pagina overeenkomsten](https://partner.microsoft.com/dashboard/account/agreements)van het partner centrum of u de **Business Applications ISV-addendum** hebt bekeken en geaccepteerd.
 5. Controleer in de [account instellingen](https://partner.microsoft.com/dashboard/account/v3/accountsettings/billingprofile)van het partner centrum of uw facturerings gegevens zijn voltooid.
 6. Verzend elke nieuwe en bestaande aanbieding voor certificering en publicatie, zelfs als uw aanbiedingen eerder zijn gecertificeerd.
     * Vul de informatie schermen in, met inbegrip van uw app voor certificering, en marketing gegevens. Selecteer **verzenden** (rechter bovenhoek van het scherm) op **15 oktober 2019**. Deze stappen moeten worden uitgevoerd om te voor komen dat dit van invloed is op de beschik baarheid van de aanbieding.

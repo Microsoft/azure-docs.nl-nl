@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
 ms.openlocfilehash: 6bf3eccec70619bf73397e315c6d851f753ec52f
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92521829"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-uberflip"></a>Zelfstudie: Azure Active Directory-integratie met Uberflip
@@ -86,7 +86,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voor het configureren van eenmalige aanmelding bij Azure AD met Uberflip voert u de volgende stappen uit:
 
-1. Selecteer in de [Azure-portal](https://portal.azure.com/) op de integratiepagina van de **Uberflip** -toepassing de optie **Eenmalige aanmelding**.
+1. Selecteer in de [Azure-portal](https://portal.azure.com/) op de integratiepagina van de **Uberflip**-toepassing de optie **Eenmalige aanmelding**.
 
     ![De optie voor eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -98,7 +98,7 @@ Voor het configureren van eenmalige aanmelding bij Azure AD met Uberflip voert u
 
    ![Schermopname van de Basic SAML-configuratie, waar u een antwoord-URL kunt invoeren.](common/edit-urls.png)
 
-1. Voer een van de volgende stappen uit in het deelvenster **Standaard SAML-configuratie** , afhankelijk van de SSO-modus die u wilt configureren:
+1. Voer een van de volgende stappen uit in het deelvenster **Standaard SAML-configuratie**, afhankelijk van de SSO-modus die u wilt configureren:
 
    * Als u de toepassing in de door IDP geïnitieerde modus wilt configureren, voert u in het vak **Antwoord-URL (URL voor Assertion Consumer Service)** een URL in die voldoet aan het volgende patroon:
 
@@ -119,7 +119,7 @@ Voor het configureren van eenmalige aanmelding bij Azure AD met Uberflip voert u
 
    ![De optie voor het downloaden van het XML-bestand met federatieve metagegevens](common/metadataxml.png)
 
-1. Kopieer de URL('s) die u nodig hebt in het deelvenster **Uberflip instellen** :
+1. Kopieer de URL('s) die u nodig hebt in het deelvenster **Uberflip instellen**:
 
    * **Aanmeldings-URL**
    * **Azure AD-id**

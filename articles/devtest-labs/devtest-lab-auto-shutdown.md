@@ -4,10 +4,10 @@ description: Meer informatie over het instellen van het beleid voor automatisch 
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: cd7974580ea30c9d0591c88380a4e626711bad1e
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93318969"
 ---
 # <a name="configure-autoshutdown-for-lab-and-compute-virtual-machines-in-azure-devtest-labs"></a>Automatisch afsluiten configureren voor Lab-en Compute-virtuele machines in Azure DevTest Labs
@@ -72,7 +72,7 @@ Als u uw Lab instelt op dit beleid, kunnen Lab-gebruikers het lab-schema niet ov
 
 1. Selecteer op de pagina **virtuele machine** **automatisch afsluiten** in het menu links in het gedeelte **bewerkingen** .
 2. Selecteer op de pagina **automatisch afsluiten** de optie **aan om** dit beleid in te scha kelen en **uit** te scha kelen.
-3. Als u dit beleid inschakelt, geeft u de **tijd** (en **tijd zone** ) op waarop de virtuele machine moet worden afgesloten.
+3. Als u dit beleid inschakelt, geeft u de **tijd** (en **tijd zone**) op waarop de virtuele machine moet worden afgesloten.
 4. Kies **Ja** of **Nee** voor de optie om een melding te verzenden 30 minuten voor de opgegeven tijd voor automatisch afsluiten. Als u **Ja** kiest, voert u het eind punt van de webhook-URL of het e-mail adres in waarmee u wilt dat de melding wordt gepost of verzonden. De gebruiker ontvangt een melding en krijgt de mogelijkheid om het afsluiten te vertragen. Zie de sectie [meldingen](#notifications) voor meer informatie.
 5. Selecteer **Opslaan**.
 
@@ -130,7 +130,7 @@ Als u aan de slag wilt gaan, maakt u een logische app in uw Azure-abonnement met
     ![Menu nieuwe logische app](./media/devtest-lab-auto-shutdown/new-logic-app.png)
 2. Voer de volgende stappen uit op de pagina **logische app-maken** :
     1. Voer een **naam** in voor de logische app.
-    2. Selecteer uw Azure- **abonnement**.
+    2. Selecteer uw Azure-**abonnement**.
     3. Maak een nieuwe **resource groep** of selecteer een bestaande resource groep.
     4. Selecteer een **locatie** voor de logische app.
 

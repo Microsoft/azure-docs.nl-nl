@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 01/21/2020
 ms.author: rohogue
 ms.openlocfilehash: 9f852ec056f3252005bba0bc142c05a9cfbe6c20
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92342396"
 ---
 # <a name="plan-your-avere-vfxt-system"></a>Uw Avere vFXT-systeem plannen
@@ -86,7 +86,7 @@ Het avere vFXT-cluster maakt gebruik van de volgende IP-adressen:
 
 * Eén IP-adres voor cluster beheer. Dit adres kan van het ene naar het andere knoop punt in het cluster worden verplaatst, zodat deze altijd beschikbaar is. Gebruik dit adres om verbinding te maken met het configuratie hulpprogramma van het avere configuratie scherm.
 * Voor elk cluster knooppunt:
-  * Ten minste één client gerichte IP-adres. (Alle client adressen worden beheerd door de *vserver*van het cluster, waardoor de IP-adressen naar wens kunnen worden verplaatst tussen de knoop punten.)
+  * Ten minste één client gerichte IP-adres. (Alle client adressen worden beheerd door de *vserver* van het cluster, waardoor de IP-adressen naar wens kunnen worden verplaatst tussen de knoop punten.)
   * Eén IP-adres voor cluster communicatie
   * Een IP-adres van een exemplaar (toegewezen aan de virtuele machine)
 
@@ -117,7 +117,7 @@ Zorg ervoor dat uw abonnement de capaciteit heeft om het avere vFXT-cluster uit 
 
 ## <a name="back-end-data-storage"></a>Back-end-gegevens opslag
 
-Back-end-opslag systemen leveren beide bestanden aan de cache van het cluster en ontvangen ook gewijzigde gegevens van de cache. Bepaal of uw werkset lange termijn wordt opgeslagen in een nieuwe BLOB-container of in een bestaand opslag systeem (Cloud of hardware). Deze back-end-opslag systemen worden *kern bestanden*genoemd.
+Back-end-opslag systemen leveren beide bestanden aan de cache van het cluster en ontvangen ook gewijzigde gegevens van de cache. Bepaal of uw werkset lange termijn wordt opgeslagen in een nieuwe BLOB-container of in een bestaand opslag systeem (Cloud of hardware). Deze back-end-opslag systemen worden *kern bestanden* genoemd.
 
 ### <a name="hardware-core-filers"></a>Kern bestanden voor hardware
 
@@ -161,7 +161,7 @@ Ter verbetering van de beveiliging van een controller met een openbaar IP-adres,
 
 Wanneer u het cluster maakt, kunt u kiezen of u een openbaar IP-adres op de cluster controller wilt maken.
 
-* Als u een **nieuw virtueel netwerk** of een **Nieuw subnet**maakt, wordt aan de cluster controller een **openbaar** IP-adres toegewezen.
+* Als u een **nieuw virtueel netwerk** of een **Nieuw subnet** maakt, wordt aan de cluster controller een **openbaar** IP-adres toegewezen.
 * Als u een bestaand virtueel netwerk en een subnet selecteert, heeft de cluster controller alleen **privé** -IP-adressen.
 
 ## <a name="vm-access-roles"></a>VM-toegangs rollen

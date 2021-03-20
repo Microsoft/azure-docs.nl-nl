@@ -4,10 +4,10 @@ description: Dit artikel bevat informatie over het verifiëren van een toepassin
 ms.topic: conceptual
 ms.date: 06/23/2020
 ms.openlocfilehash: c4e19c0ab26d491ba0b95159e274383431aefaee
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92518225"
 ---
 # <a name="authenticate-and-authorize-an-application-with-azure-active-directory-to-access-azure-service-bus-entities"></a>Een toepassing met Azure Active Directory voor toegang tot Azure Service Bus entiteiten verifiëren en autoriseren
@@ -43,7 +43,7 @@ Voordat u een Azure-rol toewijst een beveiligingsprincipal, moet u het toegangsb
 
 In de volgende lijst worden de niveaus beschreven waarmee u toegang tot Service Bus resources kunt bereiken, te beginnen met het smalle bereik:
 
-- **Wachtrij**, **onderwerp**of **abonnement**: roltoewijzing is van toepassing op de specifieke service bus entiteit. Op dit moment biedt de Azure Portal geen ondersteuning voor het toewijzen van gebruikers/groepen/beheerde identiteiten aan Service Bus Azure-rollen op abonnements niveau. 
+- **Wachtrij**, **onderwerp** of **abonnement**: roltoewijzing is van toepassing op de specifieke service bus entiteit. Op dit moment biedt de Azure Portal geen ondersteuning voor het toewijzen van gebruikers/groepen/beheerde identiteiten aan Service Bus Azure-rollen op abonnements niveau. 
 - **Service Bus naam ruimte**: roltoewijzing omvat de volledige topologie van service bus onder de naam ruimte en aan de Consumer groep die eraan is gekoppeld.
 - **Resource groep**: roltoewijzing is van toepassing op alle service bus resources onder de resource groep.
 - **Abonnement**: roltoewijzing is van toepassing op alle service bus resources in alle resource groepen in het abonnement.
@@ -112,7 +112,7 @@ De toepassing heeft een client geheim nodig om de identiteit ervan te bewijzen w
 
 1. Ga naar de registratie van uw app in de Azure Portal als u zich nog niet op de pagina bevindt.
 1. Selecteer **certificaten & geheimen** in het menu links.
-1. Onder **client geheimen**selecteert u **Nieuw client geheim** om een nieuw geheim te maken.
+1. Onder **client geheimen** selecteert u **Nieuw client geheim** om een nieuw geheim te maken.
 
     ![Nieuw client geheim-knop](./media/authenticate-application/new-client-secret-button.png)
 1. Geef een beschrijving op voor het geheim, kies het gewenste verloop interval en selecteer vervolgens **toevoegen**.

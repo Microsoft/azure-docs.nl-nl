@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
 ms.openlocfilehash: c522f5f194adae793f0676b24f95abc98dd89010
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92520132"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-workrite"></a>Zelfstudie: Integratie van Azure Active Directory met Workrite
@@ -49,11 +49,11 @@ Als u de integratie van Workrite met Azure AD wilt configureren, dient u Workrit
 
 **Voer de volgende stappen uit als u Workrite vanuit de galerie wilt toevoegen:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -67,7 +67,7 @@ Als u de integratie van Workrite met Azure AD wilt configureren, dient u Workrit
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In dit gedeelte gaat u eenmalige aanmelding via Azure AD configureren en testen voor Workrite op basis van een testgebruiker met de naam **Britta Simon** .
+In dit gedeelte gaat u eenmalige aanmelding via Azure AD configureren en testen voor Workrite op basis van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in Workrite tot stand is gebracht.
 
 Als u eenmalige aanmelding via Azure AD bij Workrite wilt testen en configureren, dient u de volgende bouwstenen te voltooien:
@@ -85,7 +85,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voer de volgende stappen uit als u eenmalige aanmelding via Azure AD bij Workrite wilt configureren:
 
-1. In de [Azure Portal](https://portal.azure.com/) op de pagina voor integratie van toepassingen met **Workrite** selecteert u **Eenmalige aanmelding** .
+1. In de [Azure Portal](https://portal.azure.com/) op de pagina voor integratie van toepassingen met **Workrite** selecteert u **Eenmalige aanmelding**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -128,7 +128,7 @@ Als u eenmalige aanmelding aan de zijde van **Workrite** wilt configureren, moet
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -146,25 +146,25 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 
-    d. Klik op **Create** .
+    d. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In dit gedeelte stelt u Britta Simon in staat gebruik te maken van eenmalige aanmelding van Azure door haar toegang te geven tot Workrite.
 
-1. Selecteer **Bedrijfstoepassingen** in de Azure Portal, selecteer **Alle toepassingen** en selecteer vervolgens **Workrite** .
+1. Selecteer **Bedrijfstoepassingen** in de Azure Portal, selecteer **Alle toepassingen** en selecteer vervolgens **Workrite**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
-2. In de lijst met toepassingen selecteert u **Workrite** .
+2. In de lijst met toepassingen selecteert u **Workrite**.
 
     ![De link naar Workrite in de lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -172,7 +172,7 @@ In dit gedeelte stelt u Britta Simon in staat gebruik te maken van eenmalige aan
 
 6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="create-workrite-test-user"></a>Een testgebruiker in Workrite maken
 
@@ -182,11 +182,11 @@ Het doel van deze sectie is het maken van een gebruiker met de naam Britta Simon
 
 1. Meld u bij de bedrijfssite van Workrite aan als beheerder.
 
-2. Klik in het navigatievenster op **Beheerder** .
+2. Klik in het navigatievenster op **Beheerder**.
    
     ![Beheerdersbevoegdheden][400]
 
-3. Ga naar de snelle koppelingen en klik vervolgens op **Een gebruiker maken** .
+3. Ga naar de snelle koppelingen en klik vervolgens op **Een gebruiker maken**.
    
     ![Sectie ‘Gebruiker maken’][401]
 
@@ -200,9 +200,9 @@ Het doel van deze sectie is het maken van een gebruiker met de naam Britta Simon
 
     c. Typ in het tekstvak **Achternaam** de achternaam van de gebruiker, bijvoorbeeld Simon.
     
-    d. Selecteer **Clientbeheerder** bij **Rol kiezen** .
+    d. Selecteer **Clientbeheerder** bij **Rol kiezen**.
     
-    e. Klik op **Opslaan** .
+    e. Klik op **Opslaan**.
 
 ### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen 
 

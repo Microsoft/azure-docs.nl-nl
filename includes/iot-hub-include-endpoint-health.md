@@ -9,10 +9,10 @@ ms.date: 04/28/2019
 ms.author: robinsh
 ms.custom: include file
 ms.openlocfilehash: 24a07109fc8f4d6ebd283dee7ee00107f0eb49b7
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95556204"
 ---
 U kunt de REST API status van [eind punt ophalen](/rest/api/iothub/iothubresource/getendpointhealth#iothubresource_getendpointhealth) gebruiken om de status van de eind punten op te halen. We raden u aan om de [IOT hub routerings gegevens](../articles/iot-hub/monitor-iot-hub-reference.md#routing-metrics) met betrekking tot de latentie van de route ring te gebruiken om fouten op te sporen en op te sporen wanneer de status van het eind punt inactief of beschadigd is, omdat er een latentie wordt verwacht wanneer het eind punt in een van deze statussen wordt weer gegeven. Zie [IOT hub bewaken](../articles/iot-hub/monitor-iot-hub.md)voor meer informatie over het gebruik van IOT hub metrische gegevens.

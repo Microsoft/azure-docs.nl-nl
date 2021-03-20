@@ -15,10 +15,10 @@ ms.reviewer: jroth
 manager: jroth
 ms.custom: seo-lt-2019
 ms.openlocfilehash: b016987162cc8202b7ad28d4dd8e5ab2953469d1
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95024242"
 ---
 # <a name="enable-transparent-data-encryption-tde-for-stretch-database-on-azure"></a>Transparent Data Encryption (TDE) inschakelen voor Stretch Database in azure
@@ -38,7 +38,7 @@ Ga als volgt te werk om TDE in te scha kelen voor een Azure-Data Base waarin de 
 1. Open de data base in de [Azure Portal](https://portal.azure.com)
 2. Klik op de Blade Data Base op de knop **instellingen**
 3. Selecteer de scherm afbeelding van de optie **transparante gegevens versleuteling** ![ van het Azure Portal, met de Blade instellingen zichtbaar. In de sectie algemeen is de transparante gegevens versleuteling gemarkeerd.][1]
-4. Selecteer de **on** -instelling en selecteer **Save** 
+4. Selecteer de **on** -instelling en selecteer  
     ![ scherm opname van de Azure Portal opslaan, met de transparante Blade gegevens versleuteling zichtbaar. Gegevens versleuteling is ingeschakeld en de knop Opslaan is gemarkeerd.][2]
 
 ## <a name="disabling-encryption"></a>Versleuteling uitschakelen

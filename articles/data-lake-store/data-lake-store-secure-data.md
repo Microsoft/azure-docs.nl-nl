@@ -13,10 +13,10 @@ ms.topic: how-to
 ms.date: 03/26/2018
 ms.author: twooley
 ms.openlocfilehash: ac7666f4c4e68d24499f9c097dc9bd021d270355
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92370692"
 ---
 # <a name="securing-data-stored-in-azure-data-lake-storage-gen1"></a>Gegevens beveiligen die zijn opgeslagen in Azure Data Lake Storage Gen1
@@ -53,7 +53,7 @@ Zie [beveiligings groepen beheren in azure Active Directory](../active-directory
 ## <a name="assign-users-or-security-groups-to-data-lake-storage-gen1-accounts"></a>Gebruikers of beveiligings groepen toewijzen aan Data Lake Storage Gen1 accounts
 Wanneer u gebruikers of beveiligings groepen toewijst aan Data Lake Storage Gen1 accounts, beheert u de toegang tot de beheer bewerkingen op het account met behulp van de Azure Portal-en Azure Resource Manager-Api's. 
 
-1. Open een Data Lake Storage Gen1-account. Klik in het linkerdeel venster op **alle resources**en klik vervolgens op de Blade alle resources op de account naam waaraan u een gebruiker of beveiligings groep wilt toewijzen.
+1. Open een Data Lake Storage Gen1-account. Klik in het linkerdeel venster op **alle resources** en klik vervolgens op de Blade alle resources op de account naam waaraan u een gebruiker of beveiligings groep wilt toewijzen.
 
 2. Klik op de Blade Data Lake Storage Gen1 account op **Access Control (IAM)**. In de Blade worden standaard de abonnements eigenaren weer gegeven als de eigenaar.
    
@@ -68,7 +68,7 @@ Wanneer u gebruikers of beveiligings groepen toewijst aan Data Lake Storage Gen1
     Voor gegevens bewerkingen worden de afzonderlijke bestandssysteem machtigingen gedefinieerd wat gebruikers kunnen doen. Daarom kan een gebruiker met een rol van lezer alleen de beheer instellingen weer geven die zijn gekoppeld aan het account, maar kunnen ze gegevens lezen en schrijven op basis van bestandssysteem machtigingen die eraan zijn toegewezen. Data Lake Storage Gen1 machtigingen voor bestands systemen worden beschreven in [beveiligings groep als Acl's toewijzen aan het Azure data Lake Storage gen1 bestands systeem](#filepermissions).
 
     > [!IMPORTANT]
-    > Alleen de rol **eigenaar** maakt automatisch toegang tot het bestands systeem mogelijk. De **Inzender**, **lezer**en alle andere rollen hebben acl's nodig om elk niveau van toegang tot mappen en bestanden in te scha kelen.  De rol van **eigenaar** biedt bestands-en mapmachtigingen voor Super gebruikers die niet kunnen worden overschreven via acl's. Zie voor meer informatie over hoe Azure RBAC-beleid wordt toegewezen aan gegevens toegang [Azure RBAC voor account beheer](data-lake-store-security-overview.md#azure-rbac-for-account-management).
+    > Alleen de rol **eigenaar** maakt automatisch toegang tot het bestands systeem mogelijk. De **Inzender**, **lezer** en alle andere rollen hebben acl's nodig om elk niveau van toegang tot mappen en bestanden in te scha kelen.  De rol van **eigenaar** biedt bestands-en mapmachtigingen voor Super gebruikers die niet kunnen worden overschreven via acl's. Zie voor meer informatie over hoe Azure RBAC-beleid wordt toegewezen aan gegevens toegang [Azure RBAC voor account beheer](data-lake-store-security-overview.md#azure-rbac-for-account-management).
 
 4. Als u een groep/gebruiker wilt toevoegen die niet wordt weer gegeven op de Blade **machtigingen toevoegen** , kunt u ze uitnodigen door hun e-mail adres te typen in het tekstvak **selecteren** en deze vervolgens te selecteren in de lijst.
    
@@ -99,7 +99,7 @@ Door gebruikers/beveiligings groepen toe te wijzen aan het Data Lake Storage Gen
    * **Toegewezen machtigingen** komen overeen met de POSIX-acl's waarmee u machtigingen kunt instellen voor specifieke benoemde gebruikers of groepen buiten de eigenaar of groep van het bestand. 
      
      Zie voor meer informatie [HDFS acl's](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsPermissionsGuide.html#ACLs_Access_Control_Lists). Zie [Access Control in data Lake Storage gen1](data-lake-store-access-control.md)voor meer informatie over de implementatie van acl's in data Lake Storage gen1.
-4. Klik op het pictogram **toevoegen** om de Blade **machtigingen toewijzen** te openen. Klik in deze Blade op **gebruiker of groep selecteren**en zoek in de Blade **gebruiker of groep** naar de beveiligings groep die u eerder hebt gemaakt in azure Active Directory. Als u veel groepen wilt doorzoeken, gebruikt u het tekstvak bovenaan om de groeps naam te filteren. Klik op de groep die u wilt toevoegen en klik vervolgens op **selecteren**.
+4. Klik op het pictogram **toevoegen** om de Blade **machtigingen toewijzen** te openen. Klik in deze Blade op **gebruiker of groep selecteren** en zoek in de Blade **gebruiker of groep** naar de beveiligings groep die u eerder hebt gemaakt in azure Active Directory. Als u veel groepen wilt doorzoeken, gebruikt u het tekstvak bovenaan om de groeps naam te filteren. Klik op de groep die u wilt toevoegen en klik vervolgens op **selecteren**.
    
     ![Een groep toevoegen](./media/data-lake-store-secure-data/adl.acl.3.png "Een groep toevoegen")
 5. Klik op **machtigingen selecteren**, selecteer de machtigingen, of de machtigingen moeten worden toegepast op recursief en of u de machtigingen wilt toewijzen als toegangs-ACL, standaard-ACL of beide. Klik op **OK**.
@@ -112,7 +112,7 @@ Door gebruikers/beveiligings groepen toe te wijzen aan het Data Lake Storage Gen
     ![Scherm afbeelding van de Access-Blade met de optie voor gegevens techniek genoemd.](./media/data-lake-store-secure-data/adl.acl.5.png "Machtigingen toewijzen aan groep")
    
    > [!IMPORTANT]
-   > In de huidige versie kunt u Maxi maal 28 vermeldingen onder **toegewezen machtigingen**hebben. Als u meer dan 28 gebruikers wilt toevoegen, moet u beveiligings groepen maken, gebruikers toevoegen aan beveiligings groepen en toegang bieden tot deze beveiligings groepen voor het Data Lake Storage Gen1-account.
+   > In de huidige versie kunt u Maxi maal 28 vermeldingen onder **toegewezen machtigingen** hebben. Als u meer dan 28 gebruikers wilt toevoegen, moet u beveiligings groepen maken, gebruikers toevoegen aan beveiligings groepen en toegang bieden tot deze beveiligings groepen voor het Data Lake Storage Gen1-account.
    > 
    > 
 7. Indien nodig kunt u ook de toegangs machtigingen wijzigen nadat u de groep hebt toegevoegd. Schakel het selectie vakje voor elk type machtiging (lezen, schrijven, uitvoeren) in of uit, op basis van het feit of u die machtiging wilt verwijderen of toewijzen aan de beveiligings groep. Klik op **Opslaan** om de wijzigingen op te slaan of op **verwijderen** om de wijzigingen ongedaan te maken.

@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 04/03/2019
 ms.author: jeedes
 ms.openlocfilehash: 07d3d24dc66cf8293d073709db3e064277a8b177
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92520197"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-workfront"></a>Zelfstudie: Azure Active Directory-integratie met Workfront
@@ -49,11 +49,11 @@ Om de integratie van Workfront te configureren in Azure AD, moet u Workfront uit
 
 **Voer de volgende stappen uit om Workfront toe te voegen vanuit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -61,13 +61,13 @@ Om de integratie van Workfront te configureren in Azure AD, moet u Workfront uit
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **Workfront** , selecteer **Workfront** in het resultatenvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **Workfront**, selecteer **Workfront** in het resultatenvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
     ![Workfront in de resultatenlijst](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In deze sectie gaat u Azure AD-eenmalige aanmelding met Workfront configureren en testen met behulp van een testgebruiker met de naam **Britta Simon** .
+In deze sectie gaat u Azure AD-eenmalige aanmelding met Workfront configureren en testen met behulp van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure Active Directory-gebruiker en de daaraan gerelateerde gebruiker in Workfront tot stand is gebracht.
 
 Als u Azure AD-eenmalige aanmelding met Workfront wilt configureren en testen, moet u de volgende stappen uitvoeren:
@@ -85,7 +85,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voer de volgende stappen uit om Azure AD-eenmalige aanmelding te configureren voor Workfront:
 
-1. Ga in [Azure Portal](https://portal.azure.com/) naar de pagina voor integratie van de toepassing **Workfront** en selecteer **Eenmalige aanmelding** .
+1. Ga in [Azure Portal](https://portal.azure.com/) naar de pagina voor integratie van de toepassing **Workfront** en selecteer **Eenmalige aanmelding**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -126,29 +126,29 @@ Voer de volgende stappen uit om Azure AD-eenmalige aanmelding te configureren vo
 
 1. Meld u als beheerder aan bij de bedrijfssite van Workfront.
 
-2. Ga naar **Single Sign On Configuration** .
+2. Ga naar **Single Sign On Configuration**.
 
 3. Voer in het dialoogvenster **Single Sign-On** de volgende stappen uit
     
     ![Eenmalige aanmelding configureren][23]
    
-    a. Selecteer **SAML 2.0** als **type** .
+    a. Selecteer **SAML 2.0** als **type**.
    
-    b. Selecteer **Service Provider ID** .
+    b. Selecteer **Service Provider ID**.
    
-    c. Plak de **Aanmeldings-URL** in het tekstvak **Login Portal URL** .
+    c. Plak de **Aanmeldings-URL** in het tekstvak **Login Portal URL**.
    
-    d. Plak de **Afmeldings-URL** in het tekstvak **Sign-Out URL** .
+    d. Plak de **Afmeldings-URL** in het tekstvak **Sign-Out URL**.
    
-    e. Plak de **URL voor het wijzigen van het wachtwoord** in het tekstvak **Change Password URL** .
+    e. Plak de **URL voor het wijzigen van het wachtwoord** in het tekstvak **Change Password URL**.
    
-    f. Klik op **Opslaan** .
+    f. Klik op **Opslaan**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -166,25 +166,25 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 
-    d. Klik op **Create** .
+    d. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie geeft u Britta Simon toestemming om eenmalige aanmelding van Azure te gebruiken door haar toegang te verlenen tot Workfront.
 
-1. Selecteer **Bedrijfstoepassingen** in Azure Portal, selecteer **Alle toepassingen** en selecteer vervolgens **Workfront** .
+1. Selecteer **Bedrijfstoepassingen** in Azure Portal, selecteer **Alle toepassingen** en selecteer vervolgens **Workfront**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
-2. In de lijst met toepassingen selecteert u **Workfront** .
+2. In de lijst met toepassingen selecteert u **Workfront**.
 
     ![De Workfront-link in de lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -192,7 +192,7 @@ In deze sectie geeft u Britta Simon toestemming om eenmalige aanmelding van Azur
 
 6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="create-workfront-test-user"></a>Testgebruiker voor Workfront maken
 
@@ -202,21 +202,21 @@ Het doel van deze sectie is het maken van een gebruiker met de naam Britta Simon
 
 1. Meld u bij de bedrijfssite van Workfront aan als beheerder.
  
-2. Klik in het menu bovenaan op **People** .
+2. Klik in het menu bovenaan op **People**.
  
-3. Klik op **New Person** . 
+3. Klik op **New Person**. 
 
 4. Voer de volgende stappen uit in het dialoogvenster New Person:
    
     ![Een testgebruiker voor Workfront maken][21] 
    
-    a. Typ 'Britta' in het tekstvak **First Name** .
+    a. Typ 'Britta' in het tekstvak **First Name**.
    
-    b. Typ 'Simon' in het tekstvak **Last Name** .
+    b. Typ 'Simon' in het tekstvak **Last Name**.
    
     c. Typ in het tekstvak **Email Address** het e-mailadres van Britta Simon in Azure Active Directory.
    
-    d. Klik op **Add Person** .
+    d. Klik op **Add Person**.
 
 ### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen 
 

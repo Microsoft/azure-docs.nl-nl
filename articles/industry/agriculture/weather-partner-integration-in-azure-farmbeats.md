@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 07/09/2020
 ms.author: sunasing
 ms.openlocfilehash: f0fbd93e2a5f4e92089e10e75dc17e304ff80bf6
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/01/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93147076"
 ---
 # <a name="weather-partner-integration-with-farmbeats"></a>Weer partner integratie met FarmBeats
@@ -75,7 +75,7 @@ De API-service serializeert deze dicteer en slaat deze op in een [sleutel kluis]
 
 [Azure Data Factory](../../data-factory/introduction.md) wordt gebruikt om weer taken te organiseren. Het draait om resources om de docker-code uit te voeren. Data Factory biedt ook een mechanisme om gegevens veilig te pushen naar de virtuele machine waarop de docker-taak wordt uitgevoerd. De API-referenties worden vervolgens veilig opgeslagen in de sleutel kluis. 
 
-Referenties worden gelezen als beveiligde teken reeksen uit de sleutel kluis. Ze worden gegeven als uitgebreide eigenschappen in de werkmap van de docker-container. Het bestandspad is */mnt/working_dir/activity.jsop* . 
+Referenties worden gelezen als beveiligde teken reeksen uit de sleutel kluis. Ze worden gegeven als uitgebreide eigenschappen in de werkmap van de docker-container. Het bestandspad is */mnt/working_dir/activity.jsop*. 
 
 De docker-code kan de referenties van *activity.js* tijdens runtime lezen om api's aan de partner zijde voor de klant te krijgen. In het JSON-bestand zien de referenties eruit als in het volgende code voorbeeld:
 
@@ -99,7 +99,7 @@ Zie [schema en gegevens type toewijzing](../../data-factory/copy-activity-schema
 
 De volgende tabel bevat de meest voorkomende aanvraag headers die u moet opgeven wanneer u een API-aanroep naar FarmBeats maakt.
 
-Koptekst | Beschrijving en voor beeld
+Header | Beschrijving en voor beeld
 --- | ---
 Content-Type | De aanvraag indeling. Voorbeeld: `Content-Type: application/<format>` <br/>Voor FarmBeats Datahub-Api's is de indeling JSON. Voorbeeld: ` Content-Type: application/json`
 Autorisatie | Het toegangs token dat vereist is om een API-aanroep uit te voeren. Voorbeeld: `Authorization: Bearer <Access-Token>`
@@ -117,8 +117,8 @@ Het docker-programma heeft twee onderdelen nodig: de Boots trap en de taak. Het 
 
 Het Boots trap-onderdeel moet worden uitgevoerd wanneer de klant de docker-registratie op FarmBeats start. De volgende argumenten ( `arg1` en `arg2` ) worden door gegeven aan het programma:
 
-- **FARMBEATS API-eind punt** : het FarmBeats API-eind punt voor API-aanvragen. Met dit eind punt maakt u API-aanroepen naar de FarmBeats-implementatie.
-- **Azure functions URL** : uw eigen eind punt. Deze URL biedt uw toegangs token voor FarmBeats-Api's. U kunt `GET` op deze URL aanroepen om het toegangs token op te halen.
+- **FARMBEATS API-eind punt**: het FarmBeats API-eind punt voor API-aanvragen. Met dit eind punt maakt u API-aanroepen naar de FarmBeats-implementatie.
+- **Azure functions URL**: uw eigen eind punt. Deze URL biedt uw toegangs token voor FarmBeats-Api's. U kunt `GET` op deze URL aanroepen om het toegangs token op te halen.
 
 De Boots trap maakt de meta gegevens die gebruikers nodig hebben om uw taken uit te voeren om weer gegevens op te halen. Zie de [referentie-implementatie](https://github.com/azurefarmbeats/noaa_docker)voor meer informatie. 
 
@@ -127,8 +127,8 @@ Als u de *bootstrap_manifest.jsin* het bestand aanpast, worden de vereiste meta 
  > [!NOTE]
  > Als u de *bootstrap_manifest.jsin* het bestand bijwerkt als de [referentie-implementatie](https://github.com/azurefarmbeats/noaa_docker) beschrijft, hoeft u de volgende meta gegevens niet te maken. Het Boots trap-programma gebruikt uw manifest bestand om de benodigde meta gegevens te maken.
 
-- /**WeatherDataModel** : de WeatherDataModel-meta gegevens vertegenwoordigen weers gegevens. Dit komt overeen met gegevens sets die door de bron worden geleverd. Een DailyForecastSimpleModel kan bijvoorbeeld een gemiddelde Tempe ratuur, vochtigheids graad en informatie eenmaal per dag bevatten. Een DailyForecastAdvancedModel kan daarentegen veel meer informatie bieden op het uurloon. U kunt een wille keurig aantal weer gegeven gegevens modellen maken.
-- /**Taak type** : FarmBeats heeft een uitbreidbaar taak beheersysteem. Als weer gegeven gegevens provider hebt u diverse gegevens sets en Api's (bijvoorbeeld GetDailyForecasts). U kunt deze gegevens sets en Api's in FarmBeats inschakelen met behulp van taak type. Nadat een taak type is gemaakt, kan een klant taken van dat type activeren om weer gegevens op te halen voor hun locatie of voor hun eigen bedrijf. Zie taak type and job Api's (Engelstalig) in de [FarmBeats Swagger](https://aka.ms/farmbeatsswagger)voor meer informatie.
+- /**WeatherDataModel**: de WeatherDataModel-meta gegevens vertegenwoordigen weers gegevens. Dit komt overeen met gegevens sets die door de bron worden geleverd. Een DailyForecastSimpleModel kan bijvoorbeeld een gemiddelde Tempe ratuur, vochtigheids graad en informatie eenmaal per dag bevatten. Een DailyForecastAdvancedModel kan daarentegen veel meer informatie bieden op het uurloon. U kunt een wille keurig aantal weer gegeven gegevens modellen maken.
+- /**Taak type**: FarmBeats heeft een uitbreidbaar taak beheersysteem. Als weer gegeven gegevens provider hebt u diverse gegevens sets en Api's (bijvoorbeeld GetDailyForecasts). U kunt deze gegevens sets en Api's in FarmBeats inschakelen met behulp van taak type. Nadat een taak type is gemaakt, kan een klant taken van dat type activeren om weer gegevens op te halen voor hun locatie of voor hun eigen bedrijf. Zie taak type and job Api's (Engelstalig) in de [FarmBeats Swagger](https://aka.ms/farmbeatsswagger)voor meer informatie.
 
 ### <a name="jobs"></a>Taken
 
@@ -142,7 +142,7 @@ Als onderdeel van de taak moet het programma een/WeatherDataLocation maken op ba
 
 WeatherDataModel | Beschrijving |
 --- | ---
-Naam  | De naam van het weer gegeven gegevens model. |
+Name  | De naam van het weer gegeven gegevens model. |
 Beschrijving  | Een duidelijke beschrijving van het model. |
 Eigenschappen  | Aanvullende eigenschappen die zijn gedefinieerd door de gegevens provider. |
 > naam weatherMeasures  | De naam van de weer maat meting. Bijvoorbeeld humidity_max. |
@@ -156,7 +156,7 @@ Beschrijving van weatherMeasures->  | Een duidelijke beschrijving van de meting.
 
 Taak type | Beschrijving |
 --- | ---
-Naam  | De naam van de taak. Bijvoorbeeld Get_Daily_Forecast. De klant zal deze taak uitvoeren om weer gegevens op te halen.|
+Name  | De naam van de taak. Bijvoorbeeld Get_Daily_Forecast. De klant zal deze taak uitvoeren om weer gegevens op te halen.|
 pipelineDetails > para meters > naam  | De naam van de para meter. |
 pipelineDetails > para meters > type | Het parameter type. Mogelijke waarden zijn String, int, float, BOOL en array. |
 pipelineDetails >-para meters > isRequired | De Booleaanse waarde van de para meter. De waarde is True als de para meter is vereist. Anders is de waarde false. De standaard waarde is True. |
@@ -169,7 +169,7 @@ WeatherDataLocation | Beschrijving |
 --- | ---
 weatherDataModelId  | De ID van de bijbehorende WeatherDataModel die is gemaakt tijdens het Boots trap proces.|
 location  | Breedte graad, lengte graad en uitbrei ding. |
-Naam | De naam van het object. |
+Name | De naam van het object. |
 Beschrijving | Beschrijving van de weer gegevens locatie. |
 farmId | Beschrijving ID van de farm. De klant levert deze ID als onderdeel van de taak parameter. |
 Eigenschappen  | Aanvullende eigenschappen van de fabrikant.

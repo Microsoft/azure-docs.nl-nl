@@ -9,10 +9,10 @@ ms.author: rogarana
 ms.subservice: tables
 ms.custom: devx-track-azurepowershell
 ms.openlocfilehash: 9a7502d48095fe18b983c1971d5145f51e766c95
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93306910"
 ---
 # <a name="perform-azure-table-storage-operations-with-azure-powershell"></a>Azure Table Storage-bewerkingen uitvoeren met Azure PowerShell 
@@ -57,7 +57,7 @@ Add-AzAccount
 
 ## <a name="retrieve-list-of-locations"></a>Lijst met locaties ophalen
 
-Als u niet weet welke locatie u kunt gebruiken, kunt u een lijst met de beschikbare locaties weergeven. Selecteer de gewenste locatie in de lijst. In deze voor beelden wordt **Oost** -US gebruikt. Sla deze waarde op in de **locatie** van de variabele voor toekomstig gebruik.
+Als u niet weet welke locatie u kunt gebruiken, kunt u een lijst met de beschikbare locaties weergeven. Selecteer de gewenste locatie in de lijst. In deze voor beelden wordt **Oost**-US gebruikt. Sla deze waarde op in de **locatie** van de variabele voor toekomstig gebruik.
 
 ```powershell
 Get-AzLocation | select Location
@@ -120,7 +120,7 @@ $storageTable = Get-AzStorageTable –Name $tableName –Context $ctx
 > [!IMPORTANT]
 > Het gebruik van CloudTable is verplicht bij het werken met de **AzTable** Power shell-module. Roep de opdracht **Get-AzStorageTable** om de verwijzing naar dit object op te halen. Met deze opdracht wordt ook de tabel gemaakt als deze nog niet bestaat.
 
-Als u bewerkingen wilt uitvoeren voor een tabel met behulp van **AzTable** , moet u een verwijzing naar de eigenschap CloudTable van een specifieke tabel hebben.
+Als u bewerkingen wilt uitvoeren voor een tabel met behulp van **AzTable**, moet u een verwijzing naar de eigenschap CloudTable van een specifieke tabel hebben.
 
 ```powershell
 $cloudTable = (Get-AzStorageTable –Name $tableName –Context $ctx).CloudTable

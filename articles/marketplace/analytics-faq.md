@@ -8,10 +8,10 @@ ms.date: 11/10/2020
 author: sayantanroy83
 ms.author: sroy
 ms.openlocfilehash: 1b98948100c06868cd14f636f2049ca515fec18d
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94564801"
 ---
 # <a name="commercial-marketplace-analytics-common-questions"></a>Veelgestelde vragen over commerciële Marketplace Analytics
@@ -30,7 +30,7 @@ Waarom het volgende bericht wordt weer gegeven:
 
 - Er zijn momenteel geen acquisities voor uw gepubliceerde aanbiedingen in de commerciële Marketplace. Dit kan betekenen dat uw aanbiedingen zich in de commerciële Marketplace bevinden en dat klanten uw product aanbiedings pagina's bekijken, maar dat klanten nog geen actie hebben ondernomen om ze te kopen en te implementeren.
 - Het kan zijn dat uw aanbieding wordt gepubliceerd, maar nog niet actief is. Alleen live-aanbiedingen kunnen door klanten worden aangeschaft. Zie de pagina **samen vatting** in het [dash board analyseren](https://partner.microsoft.com/dashboard/commercial-marketplace/analytics/summary)om de status van uw aanbiedingen te controleren. Zie [Summary dash board in Commercial Marketplace Analytics](summary-dashboard.md)(Engelstalig) voor meer informatie.
-- Uw aanbiedingen kunnen worden vermeld als **contact persoon** , die alleen lijst aanbiedingen zijn en die niet door klanten kunnen worden aangeschaft in de commerciële Marketplace. Hoewel deze aanbiedingen leads genereren en met u worden gedeeld, worden er geen orders gemaakt voor deze aanbiedingen omdat ze niet kunnen worden gekocht. Als u het aanbiedings type wilt controleren, gaat u naar de pagina instellen van uw aanbieding.
+- Uw aanbiedingen kunnen worden vermeld als **contact persoon**, die alleen lijst aanbiedingen zijn en die niet door klanten kunnen worden aangeschaft in de commerciële Marketplace. Hoewel deze aanbiedingen leads genereren en met u worden gedeeld, worden er geen orders gemaakt voor deze aanbiedingen omdat ze niet kunnen worden gekocht. Als u het aanbiedings type wilt controleren, gaat u naar de pagina instellen van uw aanbieding.
 
 ### <a name="i-know-i-have-analytics-data-so-why-does-the-no-analytics-available-message-appear"></a>Ik weet dat ik Analytics-gegevens heb, dus waarom verschijnt er geen bericht over een beschik bare analyse?
 

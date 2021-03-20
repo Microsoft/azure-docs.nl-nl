@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
 ms.openlocfilehash: fc6b90be8e951c0e30c99d0bb16f85e49cf991f2
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92522322"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-orgchart-now"></a>Zelfstudie: Azure Active Directory-integratie met OrgChart Now
@@ -49,11 +49,11 @@ Om de integratie van OrgChart Now te configureren in Azure AD, moet u OrgChart N
 
 **Als u OrgChart Now wilt toevoegen uit de galerie, moet u de volgende stappen uitvoeren:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -61,13 +61,13 @@ Om de integratie van OrgChart Now te configureren in Azure AD, moet u OrgChart N
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **OrgChart Now** , selecteer **OrgChart Now** in het resultatenvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **OrgChart Now**, selecteer **OrgChart Now** in het resultatenvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
      ![OrgChart Now in de resultatenlijst](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In deze sectie gaat u Azure AD-eenmalige aanmelding met OrgChart Now configureren en testen met behulp van een testgebruiker met de naam **Britta Simon** .
+In deze sectie gaat u Azure AD-eenmalige aanmelding met OrgChart Now configureren en testen met behulp van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in OrgChart Now tot stand is gebracht.
 
 Als u Azure AD-eenmalige aanmelding met OrgChart Now wilt configureren en testen, moet u de volgende stappen uitvoeren:
@@ -85,7 +85,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voer de volgende stappen uit om Azure AD-eenmalige aanmelding te configureren voor OrgChart Now:
 
-1. Ga in [Azure Portal](https://portal.azure.com/) naar de pagina voor integratie van de toepassing **OrgChart Now** en selecteer **Eenmalige aanmelding** .
+1. Ga in [Azure Portal](https://portal.azure.com/) naar de pagina voor integratie van de toepassing **OrgChart Now** en selecteer **Eenmalige aanmelding**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -110,7 +110,7 @@ Voer de volgende stappen uit om Azure AD-eenmalige aanmelding te configureren vo
     In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://sso2.orgchartnow.com/Shibboleth.sso/Login?entityID=<YourEntityID>&target=https://sso2.orgchartnow.com`
 
     > [!NOTE]
-    > `<YourEntityID>` is de **Azure AD-id** die u hebt gekopieerd uit de sectie **OrgChart Now instellen** , die verderop in de zelfstudie wordt beschreven.
+    > `<YourEntityID>` is de **Azure AD-id** die u hebt gekopieerd uit de sectie **OrgChart Now instellen**, die verderop in de zelfstudie wordt beschreven.
 
 6. Op de pagina **Eenmalige aanmelding met SAML instellen** in het gedeelte **SAML-handtekeningcertificaat** klikt u op **Downloaden** om het **XML-bestand met federatieve metagegevens**  te downloaden uit de gegeven opties overeenkomstig met wat u nodig hebt, en slaat u dit op uw computer op.
 
@@ -134,7 +134,7 @@ Als u eenmalige aanmelding aan de zijde van **OrgChart Now** wilt configureren, 
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -153,13 +153,13 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 
-    d. Klik op **Create** .
+    d. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie geeft u Britta Simon toestemming om eenmalige aanmelding van Azure te gebruiken door haar toegang te verlenen tot OrgChart Now.
 
-1. Selecteer in Azure Portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **OrgChart Now** .
+1. Selecteer in Azure Portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **OrgChart Now**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -167,11 +167,11 @@ In deze sectie geeft u Britta Simon toestemming om eenmalige aanmelding van Azur
 
     ![De OrgChart Now-link in de lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -179,7 +179,7 @@ In deze sectie geeft u Britta Simon toestemming om eenmalige aanmelding van Azur
 
 6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="create-orgchart-now-test-user"></a>Testgebruiker voor OrgChart Now maken
 
@@ -191,7 +191,7 @@ Als u wilt dat Microsoft Azure Active Directory-gebruikers zich kunnen aanmelden
 
     ![Groepen in OrgChart Now](./media/orgchartnow-tutorial/tutorial_orgchartnow_manage.png)    
 
-    b. Selecteer het pictogram **Toevoegen** , geef de groep de naam **General** en klik op **OK** . 
+    b. Selecteer het pictogram **Toevoegen**, geef de groep de naam **General** en klik op **OK**. 
 
     ![Toevoegen in OrgChart Now](./media/orgchartnow-tutorial/tutorial_orgchartnow_add.png)
 
@@ -199,7 +199,7 @@ Als u wilt dat Microsoft Azure Active Directory-gebruikers zich kunnen aanmelden
 
     ![Mappen in OrgChart Now](./media/orgchartnow-tutorial/tutorial_orgchartnow_chart.png)
 
-    d. Vergrendel de mappen (met **Lock** ) zodat alleen gebruikers met beheerdersrechten deze kunnen wijzigen. Druk vervolgens op **OK** .
+    d. Vergrendel de mappen (met **Lock**) zodat alleen gebruikers met beheerdersrechten deze kunnen wijzigen. Druk vervolgens op **OK**.
 
     ![Vergrendelen in OrgChart Now](./media/orgchartnow-tutorial/tutorial_orgchartnow_lock.png)
 
@@ -215,11 +215,11 @@ Als u wilt dat Microsoft Azure Active Directory-gebruikers zich kunnen aanmelden
 
     ![Beheren in OrgChart Now](./media/orgchartnow-tutorial/tutorial_orgchartnow_manageusers.png)
 
-    * Voer in het tekstvak **User ID** de gebruikers-id in, bijvoorbeeld **brittasimon\@contoso.com** .
+    * Voer in het tekstvak **User ID** de gebruikers-id in, bijvoorbeeld **brittasimon\@contoso.com**.
 
-    * Voer in het tekstvak **Email Address** het e-mailadres van de gebruiker in, bijvoorbeeld **brittasimon\@contoso.com** .
+    * Voer in het tekstvak **Email Address** het e-mailadres van de gebruiker in, bijvoorbeeld **brittasimon\@contoso.com**.
 
-    * Klik op **Add** .
+    * Klik op **Add**.
 
 ### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen 
 

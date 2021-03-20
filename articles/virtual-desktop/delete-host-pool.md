@@ -7,10 +7,10 @@ ms.date: 07/11/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: dfc9858bea468389d8ce90677f048e5d1fd3bb82
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88007586"
 ---
 # <a name="delete-a-host-pool"></a>Een hostgroep verwijderen
@@ -43,13 +43,13 @@ Een hostgroep verwijderen in de Azure Portal:
 
 3. Selecteer **hostgroepen** in het menu aan de linkerkant van de pagina en selecteer vervolgens de naam van de hostgroep die u wilt verwijderen.
 
-4. Selecteer **toepassings groepen**in het menu aan de linkerkant van de pagina.
+4. Selecteer **toepassings groepen** in het menu aan de linkerkant van de pagina.
 
 5. Selecteer alle toepassings groepen in de hostgroep die u wilt verwijderen en selecteer vervolgens **verwijderen**.
 
 6. Wanneer u de app-groepen hebt verwijderd, gaat u naar het menu aan de linkerkant van de pagina en selecteert u **overzicht**.
 
-7. Selecteer **verwijderen**.
+7. Selecteer **Verwijderen**.
 
 8. Als er sessie-hosts aanwezig zijn in de hostgroep die u wilt verwijderen, wordt er een bericht weer gegeven waarin u wordt gevraagd of u toestemming wilt geven om door te gaan. Selecteer **Ja**.
 

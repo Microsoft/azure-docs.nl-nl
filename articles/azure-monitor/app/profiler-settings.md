@@ -7,10 +7,10 @@ ms.author: cweining
 ms.date: 08/06/2018
 ms.reviewer: mbullwin
 ms.openlocfilehash: 9d9cc377ead0c297e8334d34255bd2c7c7cd39fc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86499406"
 ---
 # <a name="configure-application-insights-profiler"></a>Application Insights Profiler configureren
@@ -78,7 +78,7 @@ In de volgende secties ziet u hoe dit scenario werkt:
 
 Als uw web-app al inkomend verkeer heeft of als u alleen hand matig verkeer wilt genereren, slaat u deze sectie over en gaat u verder met stap 2.
 
-1. Selecteer in de Application Insights Portal de **Configure**optie  >  **prestatie testen**configureren. 
+1. Selecteer in de Application Insights Portal de optie  >  **prestatie testen** configureren. 
 
 1. Selecteer de knop **Nieuw** om een nieuwe prestatie test te starten.
 

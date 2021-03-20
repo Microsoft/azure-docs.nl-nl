@@ -8,10 +8,10 @@ ms.date: 05/06/2019
 ms.author: heidist
 ms.custom: include file
 ms.openlocfilehash: ee430241173a6c19e2a32e176f28411631d9cb19
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "80272900"
 ---
 U kunt meerdere services in een abonnement maken. Elke service kan op een specifieke laag worden ingericht. U wordt alleen beperkt door het aantal services dat op elke laag is toegestaan. U kunt bijvoorbeeld maximaal 12 services op de Basic-laag en nog eens 12 services op de S1-laag maken in hetzelfde abonnement. Zie [Een SKU of laag kiezen voor Azure Cognitive Search](../articles/search/search-sku-tier.md) voor meer informatie over lagen.

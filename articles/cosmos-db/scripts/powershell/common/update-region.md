@@ -7,10 +7,10 @@ ms.topic: sample
 ms.date: 05/01/2020
 ms.author: mjbrown
 ms.openlocfilehash: febe03b7f2f34302ed57ceffe96191f3541abc73
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98684889"
 ---
 # <a name="update-an-azure-cosmos-accounts-regions-using-powershell"></a>Regio's van een Azure Cosmos-account bijwerken met behulp van PowerShell

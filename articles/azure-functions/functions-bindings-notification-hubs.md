@@ -7,10 +7,10 @@ ms.custom: devx-track-csharp
 ms.date: 11/21/2017
 ms.author: cshoe
 ms.openlocfilehash: c4198a1b73f76d61e39324befc85b55bd260e363
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88212228"
 ---
 # <a name="notification-hubs-output-binding-for-azure-functions"></a>Notification Hubs uitvoer binding voor Azure Functions
@@ -287,7 +287,7 @@ Als u een notification hub-uitvoer binding wilt gebruiken, moet u de connection 
 
 De connection string configureren voor een bestaande notification hub:
 
-1. Navigeer naar uw notification hub in de [Azure Portal](https://portal.azure.com), kies **toegangs beleid**en selecteer de knop kopiëren naast het **DefaultFullSharedAccessSignature** -beleid. Hiermee wordt de connection string voor het *DefaultFullSharedAccessSignature* -beleid naar uw notification hub gekopieerd. Met deze connection string kunt u met de functie meldings berichten verzenden naar de hub.
+1. Navigeer naar uw notification hub in de [Azure Portal](https://portal.azure.com), kies **toegangs beleid** en selecteer de knop kopiëren naast het **DefaultFullSharedAccessSignature** -beleid. Hiermee wordt de connection string voor het *DefaultFullSharedAccessSignature* -beleid naar uw notification hub gekopieerd. Met deze connection string kunt u met de functie meldings berichten verzenden naar de hub.
     ![De notification hub kopiëren connection string](./media/functions-bindings-notification-hubs/get-notification-hub-connection.png)
 1. Navigeer naar uw functie-app in de Azure Portal, kies **Toepassings instellingen**, voeg een sleutel toe, zoals **MyHubConnectionString**, plak de gekopieerde *DefaultFullSharedAccessSignature*  voor uw notification hub als waarde en klik vervolgens op **Opslaan**.
 
@@ -295,11 +295,11 @@ De naam van deze toepassings instelling is wat er gebeurt in de instelling voor 
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
-## <a name="exceptions-and-return-codes"></a>Uitzonde ringen en retour codes
+## <a name="exceptions-and-return-codes"></a>Uitzonderingen en retourcodes
 
-| Binding | Naslaginformatie |
+| Binding | Referentie |
 |---|---|
-| Notification hub | [Bedienings handleiding](/rest/api/notificationhubs/) |
+| Notification Hub | [Operations Guide](/rest/api/notificationhubs/) (Bedieningshandleiding) |
 
 ## <a name="next-steps"></a>Volgende stappen
 

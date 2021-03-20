@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/03/2019
 ms.openlocfilehash: 91bcd998849c619a328a198c97bb8c977b9d8232
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92792222"
 ---
 # <a name="using-the-recoverymanager-class-to-fix-shard-map-problems"></a>Problemen met shard-toewijzingen oplossen met de RecoveryManager-klasse
@@ -33,11 +33,11 @@ Zie de [woordenlijst voor hulpprogramma's van de elastische database](elastic-sc
 
 ## <a name="why-use-the-recovery-manager"></a>Waarom de Recovery Manager gebruiken?
 
-In een Shard-database omgeving is er één Tenant per data base en veel data bases per server. Er kunnen ook veel servers in de omgeving zijn. Elke Data Base is toegewezen in de Shard-kaart, zodat aanroepen kunnen worden doorgestuurd naar de juiste server en data base. Data bases worden getraceerd op basis van een **sharding-sleutel** en elke Shard wordt toegewezen aan een **reeks sleutel waarden** . Een sharding-sleutel kan bijvoorbeeld de klant namen van D tot en met F vertegenwoordigen. De toewijzing van alle Shards (ook wel bekend als data bases genoemd) en de bijbehorende toewijzings bereik bevinden zich in de **Global Shard map (GSM)** . Elke Data Base bevat ook een kaart van de bereiken die zich bevinden in de Shard die wordt aangeduid als de **lokale Shard-toewijzing (LSM)** . Wanneer een app verbinding maakt met een Shard, wordt de toewijzing in de cache opgeslagen met de app voor snel ophalen. De LSM wordt gebruikt om gegevens in de cache te valideren.
+In een Shard-database omgeving is er één Tenant per data base en veel data bases per server. Er kunnen ook veel servers in de omgeving zijn. Elke Data Base is toegewezen in de Shard-kaart, zodat aanroepen kunnen worden doorgestuurd naar de juiste server en data base. Data bases worden getraceerd op basis van een **sharding-sleutel** en elke Shard wordt toegewezen aan een **reeks sleutel waarden**. Een sharding-sleutel kan bijvoorbeeld de klant namen van D tot en met F vertegenwoordigen. De toewijzing van alle Shards (ook wel bekend als data bases genoemd) en de bijbehorende toewijzings bereik bevinden zich in de **Global Shard map (GSM)**. Elke Data Base bevat ook een kaart van de bereiken die zich bevinden in de Shard die wordt aangeduid als de **lokale Shard-toewijzing (LSM)**. Wanneer een app verbinding maakt met een Shard, wordt de toewijzing in de cache opgeslagen met de app voor snel ophalen. De LSM wordt gebruikt om gegevens in de cache te valideren.
 
 De GSM-en LSM kunnen om de volgende redenen niet meer worden gesynchroniseerd:
 
-1. Het verwijderen van een Shard waarvan het bereik is aangenomen, is niet meer in gebruik of de naam van een Shard wordt gewijzigd. Het verwijderen van een Shard resulteert in een **zwevende Shard-toewijzing** . Op dezelfde manier kan een hernoemde Data Base een zwevende Shard-toewijzing veroorzaken. Afhankelijk van de bedoeling van de wijziging moet de Shard mogelijk worden verwijderd, of moet de Shard-locatie worden bijgewerkt. Zie [een verwijderde data base herstellen](recovery-using-backups.md)als u een verwijderde data base wilt herstellen.
+1. Het verwijderen van een Shard waarvan het bereik is aangenomen, is niet meer in gebruik of de naam van een Shard wordt gewijzigd. Het verwijderen van een Shard resulteert in een **zwevende Shard-toewijzing**. Op dezelfde manier kan een hernoemde Data Base een zwevende Shard-toewijzing veroorzaken. Afhankelijk van de bedoeling van de wijziging moet de Shard mogelijk worden verwijderd, of moet de Shard-locatie worden bijgewerkt. Zie [een verwijderde data base herstellen](recovery-using-backups.md)als u een verwijderde data base wilt herstellen.
 2. Er treedt een geo-failover-gebeurtenis op. Als u wilt door gaan, moet de server naam en de database naam van Shard-toewijzings beheer in de toepassing worden bijgewerkt en vervolgens de gegevens van de Shard voor alle Shards in een Shard-toewijzing bijwerken. Als er sprake is van een geo-failover, moet deze herstel logica worden geautomatiseerd binnen de failover-werk stroom. Het automatiseren van herstel acties maakt het mogelijk dat er een wrijvings beheer kan worden uitgevoerd voor geo-compatibele data bases en dat hand matige acties worden voor komen. Zie [bedrijfs continuïteit](business-continuity-high-availability-disaster-recover-hadr-overview.md) en [herstel na nood gevallen](disaster-recovery-guidance.md)voor meer informatie over de opties om een Data Base te herstellen als er sprake is van een storing in een Data Center.
 3. Een Shard of de ShardMapManager-data base wordt hersteld naar een eerder tijdstip. Zie [herstel met behulp van back-ups](recovery-using-backups.md)voor meer informatie over herstel naar een bepaald tijdstip met behulp van back-ups.
 

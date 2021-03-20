@@ -7,10 +7,10 @@ ms.custom: devx-track-csharp
 ms.date: 11/21/2017
 ms.author: cshoe
 ms.openlocfilehash: 5ea58cc3d9f3615a74249b36f3f9ffb79caddda1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88212239"
 ---
 # <a name="mobile-apps-bindings-for-azure-functions"></a>Mobile Apps bindingen voor Azure Functions 
@@ -287,7 +287,7 @@ public static object Run(
 }
 ```
 
-Zie [output-C#-](#output---c-example)voor beeld voor een volledig voor beeld.
+Zie [Uitvoer: C#-voorbeeld](#output---c-example) voor een volledig voorbeeld.
 
 ## <a name="output---configuration"></a>Uitvoer-configuratie
 

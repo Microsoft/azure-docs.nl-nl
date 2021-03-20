@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 07/21/2020
 ms.author: jeedes
 ms.openlocfilehash: a47a3ae27fd1a18b7e9acd7d8b25748f6274c3e9
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92456990"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-blogin"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met BlogIn
@@ -89,7 +89,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
     In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://<SUBDOMAIN>.blogin.co/`
 
     > [!NOTE]
-    > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke id, antwoord-URL en aanmeldings-URL. U kunt de exacte waarden voor deze velden verkrijgen op de pagina **Instellingen** op BlogIn (tabblad **Gebruikersverificatie** > **SSO configureren en Gebruikers inrichten** ). U kunt ook contact opnemen met [het klantondersteuningsteam van BlogIn](mailto:support@blogin.co) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
+    > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke id, antwoord-URL en aanmeldings-URL. U kunt de exacte waarden voor deze velden verkrijgen op de pagina **Instellingen** op BlogIn (tabblad **Gebruikersverificatie** > **SSO configureren en Gebruikers inrichten**). U kunt ook contact opnemen met [het klantondersteuningsteam van BlogIn](mailto:support@blogin.co) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
 1. De BlogIn-toepassing verwacht dat de SAML-asserties een specifieke indeling hebben. Hiervoor moet u aangepaste kenmerktoewijzingen toevoegen aan de configuratie van uw SAML-tokenkenmerken. In de volgende schermafbeelding wordt de lijst met standaardkenmerken weergegeven.
 
@@ -110,9 +110,9 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
@@ -143,7 +143,7 @@ Als u eenmalige aanmelding in **BlogIn** wilt configureren, meld u zich bij uw B
 1. Ga naar **Instellingen** > **Verificatie van de gebruiker** > **Eenmalige aanmelding configureren en Gebruikers inrichten**.
 2. Wijzig op het volgende scherm de status voor eenmalige aanmelding in **Aan** en kies een aangepaste naam voor de SSO-aanmeldingsknop die wordt weer gegeven in het aanmeldingsscherm.
 
-3. Als u de **App-URL voor federatieve metagegevens** hebt opgeslagen in de laatste stap van de vorige sectie, kiest u de configuratiemethode **Metagegevens-URL** en plakt u **App-URL voor federatieve metagegevens** in het veld Metagegevens-URL. Anders wijzigt u de configuratiemethode in **handmatig** , vult u de **SSO-URL van de id-provider (aanmeldings-URL)** en **URL van de id-provider (entiteits-id)** handmatig in en uploadt u het **certificaat (base64)** dat u hebt ontvangen van Azure AD.
+3. Als u de **App-URL voor federatieve metagegevens** hebt opgeslagen in de laatste stap van de vorige sectie, kiest u de configuratiemethode **Metagegevens-URL** en plakt u **App-URL voor federatieve metagegevens** in het veld Metagegevens-URL. Anders wijzigt u de configuratiemethode in **handmatig**, vult u de **SSO-URL van de id-provider (aanmeldings-URL)** en **URL van de id-provider (entiteits-id)** handmatig in en uploadt u het **certificaat (base64)** dat u hebt ontvangen van Azure AD.
 
 4. Kies de standaardgebruikersrol voor nieuwe gebruikers die deelnemen aan BlogIn via eenmalige aanmelding.
 

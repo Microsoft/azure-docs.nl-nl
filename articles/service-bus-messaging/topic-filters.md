@@ -4,10 +4,10 @@ description: In dit artikel wordt uitgelegd hoe abonnees kunnen bepalen welke be
 ms.topic: conceptual
 ms.date: 02/17/2021
 ms.openlocfilehash: f28b26ee112b47b9782823f6c79670dee9a3f082
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100651660"
 ---
 # <a name="topic-filters-and-actions"></a>Onderwerpfilters en acties

@@ -12,10 +12,10 @@ ms.author: mlandzic
 ms.reviewer: sstein
 ms.date: 01/25/2019
 ms.openlocfilehash: c507a4c618713ba83d25b9defa918092db1a3c8e
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92792086"
 ---
 # <a name="query-across-cloud-databases-with-different-schemas-preview"></a>Query's uitvoeren in Cloud databases met verschillende schema's (preview-versie)
@@ -63,7 +63,7 @@ Syntaxis:
     CREDENTIAL = <credential_name>) [;]
 
 > [!IMPORTANT]
-> De TYPE parameter moet worden ingesteld op **RDBMS** .
+> De TYPE parameter moet worden ingesteld op **RDBMS**.
 
 ### <a name="example"></a>Voorbeeld
 
@@ -120,8 +120,8 @@ select * from sys.external_tables;
 
 Met elastische query's wordt de bestaande syntaxis van de externe tabel uitgebreid met het definiëren van externe tabellen die gebruikmaken van externe gegevens bronnen van het type RDBMS. Een externe tabel definitie voor verticale partitionering heeft betrekking op de volgende aspecten:
 
-* **Schema** : de externe tabel DDL definieert een schema dat door uw query's kan worden gebruikt. Het schema dat is opgegeven in de definitie van de externe tabel moet overeenkomen met het schema van de tabellen in de externe data base waarin de daad werkelijke gegevens zijn opgeslagen.
-* **Externe database referentie** : de externe tabel DDL verwijst naar een externe gegevens bron. De externe gegevens bron geeft de naam van de server en de data base van de externe data base waar de gegevens van de actuele tabel worden opgeslagen.
+* **Schema**: de externe tabel DDL definieert een schema dat door uw query's kan worden gebruikt. Het schema dat is opgegeven in de definitie van de externe tabel moet overeenkomen met het schema van de tabellen in de externe data base waarin de daad werkelijke gegevens zijn opgeslagen.
+* **Externe database referentie**: de externe tabel DDL verwijst naar een externe gegevens bron. De externe gegevens bron geeft de naam van de server en de data base van de externe data base waar de gegevens van de actuele tabel worden opgeslagen.
 
 Als u een externe gegevens bron gebruikt, zoals beschreven in de vorige sectie, is de syntaxis voor het maken van externe tabellen als volgt:
 
@@ -135,7 +135,7 @@ De volgende DDL-instructie verwijdert een bestaande definitie van een externe ta
 DROP EXTERNAL TABLE [ [ schema_name ] . | schema_name. ] table_name[;]  
 ```
 
-**Machtigingen voor maken/verwijderen van externe tabel** : machtigingen voor externe gegevens bronnen wijzigen is vereist voor de DDL van externe tabellen die ook nodig is om te verwijzen naar de onderliggende gegevens bron.  
+**Machtigingen voor maken/verwijderen van externe tabel**: machtigingen voor externe gegevens bronnen wijzigen is vereist voor de DDL van externe tabellen die ook nodig is om te verwijzen naar de onderliggende gegevens bron.  
 
 ## <a name="security-considerations"></a>Beveiligingsoverwegingen
 

@@ -9,10 +9,10 @@ ms.date: 10/15/2020
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: c3236f9c60cb359349d96e93f674c3e278e44f1e
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93375916"
 ---
 ## <a name="1-create-the-azure-ad-tenant"></a><a name="tenant"></a>1. de Azure AD-Tenant maken
@@ -83,7 +83,7 @@ Registreer de VPN-client in de Azure AD-Tenant.
 
     ![Scherm afbeelding toont een venster met de bericht machtigingen die zijn aangevraagd voor de organisatie en informatie over de aanvraag.](./media/openvpn-azure-ad-tenant-multi-app/accept.jpg)
 
-7. Onder uw Azure AD, in **bedrijfs toepassingen** , wordt **Azure VPN** weer gegeven.
+7. Onder uw Azure AD, in **bedrijfs toepassingen**, wordt **Azure VPN** weer gegeven.
 
      ![Azure VPN](./media/openvpn-azure-ad-tenant-multi-app/azure-vpn.png)
 

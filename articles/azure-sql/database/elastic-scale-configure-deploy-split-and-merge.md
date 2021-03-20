@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 12/04/2018
 ms.openlocfilehash: 71aad7699c5af6ce2a1b9d82a340138200cfb5e1
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92792069"
 ---
 # <a name="deploy-a-split-merge-service-to-move-data-between-sharded-databases"></a>Een service voor splitsen en samen voegen implementeren om gegevens te verplaatsen tussen Shard-data bases
@@ -39,9 +39,9 @@ De bestanden worden geplaatst in een map met de naam **micro soft. Azure. SqlDat
 
 ## <a name="prerequisites"></a>Vereisten
 
-1. Maak een Azure SQL Database-data base die wordt gebruikt als de Data Base voor splitsen en samen voegen. Ga naar [Azure Portal](https://portal.azure.com). Maak een nieuwe **SQL database** . Geef de Data Base een naam en maak een nieuwe beheerder en een nieuw wacht woord. Zorg ervoor dat u de naam en het wacht woord noteert voor later gebruik.
+1. Maak een Azure SQL Database-data base die wordt gebruikt als de Data Base voor splitsen en samen voegen. Ga naar de [Azure Portal](https://portal.azure.com). Maak een nieuwe **SQL database**. Geef de Data Base een naam en maak een nieuwe beheerder en een nieuw wacht woord. Zorg ervoor dat u de naam en het wacht woord noteert voor later gebruik.
 
-1. Zorg ervoor dat de server met Azure-Services verbinding kan maken. Zorg er in de portal in de **firewall instellingen** voor dat de instelling **toegang tot Azure-Services toestaan** is ingesteld op **aan** . Klik op het pictogram opslaan.
+1. Zorg ervoor dat de server met Azure-Services verbinding kan maken. Zorg er in de portal in de **firewall instellingen** voor dat de instelling **toegang tot Azure-Services toestaan** is ingesteld op **aan**. Klik op het pictogram opslaan.
 
 1. Maak een Azure Storage-account voor diagnostische uitvoer.
 
@@ -51,7 +51,7 @@ De bestanden worden geplaatst in een map met de naam **micro soft. Azure. SqlDat
 
 ### <a name="split-merge-service-configuration"></a>Configuratie van Split-Merge-service
 
-1. Maak in de map waarin u de Split-Merge assembly's hebt gedownload een kopie van het bestand *ServiceConfiguration. Temp late. cscfg* dat naast *SplitMergeService. cspkg* is geleverd en wijzig de naam *ServiceConfiguration. cscfg* .
+1. Maak in de map waarin u de Split-Merge assembly's hebt gedownload een kopie van het bestand *ServiceConfiguration. Temp late. cscfg* dat naast *SplitMergeService. cspkg* is geleverd en wijzig de naam *ServiceConfiguration. cscfg*.
 
 1. Open *ServiceConfiguration. cscfg* in een tekst editor, zoals Visual Studio, waarmee invoer wordt gevalideerd, zoals de indeling van certificaat vingerafdrukken.
 
@@ -99,17 +99,17 @@ Voer de volgende opdracht uit vanuit hetzelfde venster waarin makecert is uitgev
 
 ### <a name="import-the-client-certificate-into-the-personal-store"></a>Importeer het client certificaat in het persoonlijke archief
 
-1. Dubbel klik in Windows Verkenner op *MyCert. pfx* .
-2. Selecteer in de **wizard Certificaat importeren** de optie **huidige gebruiker** en klik op **volgende** .
-3. Bevestig het bestandspad en klik op **volgende** .
-4. Typ het wacht woord, behoud **alle uitgebreide eigenschappen zijn** ingeschakeld en klik op **volgende** .
-5. **Selecteer het certificaat archief [...] niet automatisch selecteren** en klik op **volgende** .
-6. Klik op **volt ooien** en **OK** .
+1. Dubbel klik in Windows Verkenner op *MyCert. pfx*.
+2. Selecteer in de **wizard Certificaat importeren** de optie **huidige gebruiker** en klik op **volgende**.
+3. Bevestig het bestandspad en klik op **volgende**.
+4. Typ het wacht woord, behoud **alle uitgebreide eigenschappen zijn** ingeschakeld en klik op **volgende**.
+5. **Selecteer het certificaat archief [...] niet automatisch selecteren** en klik op **volgende**.
+6. Klik op **volt ooien** en **OK**.
 
 ### <a name="upload-the-pfx-file-to-the-cloud-service"></a>Upload het PFX-bestand naar de Cloud service
 
-1. Ga naar [Azure Portal](https://portal.azure.com).
-2. Selecteer **Cloud Services** .
+1. Ga naar de [Azure Portal](https://portal.azure.com).
+2. Selecteer **Cloud Services**.
 3. Selecteer de Cloud service die u hierboven hebt gemaakt voor de service voor splitsen en samen voegen.
 4. Klik op **certificaten** in het bovenste menu.
 5. Klik op **uploaden** in de onderste balk.
@@ -143,8 +143,8 @@ Houd er rekening mee dat voor productie-implementaties afzonderlijke certificate
 
 1. Ga naar de [Azure-portal](https://portal.azure.com)
 2. Selecteer de Cloud service die u eerder hebt gemaakt.
-3. Klik op **Overzicht** .
-4. Kies de faserings omgeving en klik vervolgens op **uploaden** .
+3. Klik op **Overzicht**.
+4. Kies de faserings omgeving en klik vervolgens op **uploaden**.
 5. Voer in het dialoog venster een implementatie label in. Voor zowel ' package ' als ' configuratie ' klikt u op ' van lokale ' en kiest u het bestand *SplitMergeService. cspkg* en uw cscfg-bestand dat u eerder hebt geconfigureerd.
 6. Zorg ervoor dat het selectie vakje is gemarkeerd **als geïmplementeerd, zelfs als een of meer functies één exemplaar bevatten** wordt gecontroleerd.
 7. Klik op de knop met het maat streepje in de rechter benedenhoek om te beginnen met de implementatie. Het duurt enkele minuten voordat de bewerking is voltooid.
@@ -161,7 +161,7 @@ Als uw werknemersrol niet online kan worden gebracht, maar uw webrole slaagt, is
 
    `Server=<serverName>.database.windows.net; Database=<databaseName>;User ID=<user>; Password=<password>; Encrypt=True; Connection Timeout=30`
 
-- Zorg ervoor dat de server naam niet begint met **https://** .
+- Zorg ervoor dat de server naam niet begint met **https://**.
 - Zorg ervoor dat de server met Azure-Services verbinding kan maken. U doet dit door uw data base te openen in de portal en ervoor te zorgen dat de instelling **toegang tot Azure-Services toestaan** is ingesteld op * * op * * * *.
 
 ## <a name="test-the-service-deployment"></a>De service-implementatie testen
@@ -325,7 +325,7 @@ Als u een bewerking voor splitsen en samen voegen wilt uitvoeren, moet u de Shar
 2. Maak voor elke verwijzings tabel een **ReferenceTableInfo** -object dat de naam van het bovenliggende schema van de tabel beschrijft (optioneel, standaard ingesteld op ' dbo ') en de tabel naam.
 3. Voeg de bovenstaande TableInfo-objecten toe aan een nieuw **waarde** -object.
 4. Een verwijzing naar een **ShardMapManager** -object ophalen en **GetSchemaInfoCollection** aanroepen.
-5. Voeg de **waarde** toe aan de **SchemaInfoCollection** , waarbij u de naam van de Shard-toewijzing opgeeft.
+5. Voeg de **waarde** toe aan de **SchemaInfoCollection**, waarbij u de naam van de Shard-toewijzing opgeeft.
 
 Een voor beeld hiervan is te zien in het SetupSampleSplitMergeEnvironment.ps1 script.
 
@@ -343,7 +343,7 @@ Als u geen aanvragen kunt indienen, ziet u mogelijk het volgende:
 
    `[Exception] System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'dbo.InsertRequest'.`
 
-Controleer in dit geval het configuratie bestand, met name de instelling voor **WorkerRoleSynchronizationStorageAccountConnectionString** . Deze fout geeft meestal aan dat de werk rollen de meta gegevens database niet kan initialiseren bij het eerste gebruik.
+Controleer in dit geval het configuratie bestand, met name de instelling voor **WorkerRoleSynchronizationStorageAccountConnectionString**. Deze fout geeft meestal aan dat de werk rollen de meta gegevens database niet kan initialiseren bij het eerste gebruik.
 
 [!INCLUDE [elastic-scale-include](../../../includes/elastic-scale-include.md)]
 

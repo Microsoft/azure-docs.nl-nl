@@ -15,10 +15,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3afeadff71bd373354b891bd6690d94d28fc0805
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92096348"
 ---
 # <a name="custom-installation-of-azure-active-directory-connect"></a>Aangepaste installatie van Azure Active Directory Connect
@@ -46,10 +46,10 @@ Wanneer u de synchronisatie Services installeert, kunt u de sectie optionele con
 
 ![Scherm afbeelding met optionele selecties voor de vereiste installatie onderdelen in Azure AD Connect.](./media/how-to-connect-install-custom/requiredcomponents2.png)
 
-| Optionele configuratie | Description |
+| Optionele configuratie | Beschrijving |
 | --- | --- |
 |Een aangepaste installatie locatie opgeven| Hiermee kunt u het installatiepad voor Azure AD Connect wijzigen.|
-| Een bestaande SQL Server gebruiken |Hiermee kunt u de SQL Server naam en de naam van het exemplaar opgeven. Kies deze optie als u al een database server hebt die u wilt gebruiken. Voer bij **instantie naam**de naam van het exemplaar, een komma en het poort nummer in als uw SQL Server-exemplaar geen Blader functie heeft ingeschakeld.  Geef vervolgens de naam op van de Azure AD Connect-Data Base.  Uw SQL-bevoegdheden bepalen of een nieuwe Data Base kan worden gemaakt of dat de SQL-beheerder de data base vooraf moet maken.  Zie [Install Azure AD Connect met behulp van een bestaande data base](how-to-connect-install-existing-database.md)als u over SQL Server Administrator-machtigingen (SA) beschikt.  Zie [Install Azure AD Connect met behulp van SQL delegated Administrator Permissions](how-to-connect-install-sql-delegation.md)(Engelstalig) als u over gedelegeerde machtigingen (dbo) beschikt. |
+| Een bestaande SQL Server gebruiken |Hiermee kunt u de SQL Server naam en de naam van het exemplaar opgeven. Kies deze optie als u al een database server hebt die u wilt gebruiken. Voer bij **instantie naam** de naam van het exemplaar, een komma en het poort nummer in als uw SQL Server-exemplaar geen Blader functie heeft ingeschakeld.  Geef vervolgens de naam op van de Azure AD Connect-Data Base.  Uw SQL-bevoegdheden bepalen of een nieuwe Data Base kan worden gemaakt of dat de SQL-beheerder de data base vooraf moet maken.  Zie [Install Azure AD Connect met behulp van een bestaande data base](how-to-connect-install-existing-database.md)als u over SQL Server Administrator-machtigingen (SA) beschikt.  Zie [Install Azure AD Connect met behulp van SQL delegated Administrator Permissions](how-to-connect-install-sql-delegation.md)(Engelstalig) als u over gedelegeerde machtigingen (dbo) beschikt. |
 | Een bestaand serviceaccount gebruiken |Azure AD Connect biedt standaard een virtueel service account voor de synchronisatie Services. Als u een extern exemplaar van SQL Server gebruikt of een proxy gebruikt waarvoor authenticatie is vereist, kunt u een *beheerd service account* of een met een wacht woord beveiligd service account in het domein gebruiken. In die gevallen voert u het account in dat u wilt gebruiken. Als u de installatie wilt uitvoeren, moet u een SA in SQL hebben zodat u aanmeldings referenties voor het service account kunt maken. Zie [Azure AD Connect accounts en-machtigingen](reference-connect-accounts-permissions.md#adsync-service-account)voor meer informatie. </br></br>Als u de nieuwste versie gebruikt, kan de SQL-beheerder de data base nu buiten-band inrichten. Vervolgens kan de Azure AD Connect-beheerder deze installeren met de rechten van de data base-eigenaar.  Zie [Install Azure AD Connect met behulp van SQL delegated Administrator Permissions](how-to-connect-install-sql-delegation.md)voor meer informatie.|
 | Aangepaste synchronisatiegroepen opgeven |Wanneer de synchronisatie Services zijn geïnstalleerd, maakt Azure AD Connect standaard vier groepen die lokaal zijn voor de-server. Deze groepen zijn beheerders, Opera Tors, bladeren en wacht woord opnieuw instellen. U kunt hier uw eigen groepen opgeven. De groepen moeten lokaal op de server zijn. Ze kunnen zich niet in het domein bevinden. |
 |Synchronisatie-instellingen importeren (preview-versie)|Hiermee kunt u instellingen importeren uit andere versies van Azure AD Connect.  Zie Azure AD Connect-configuratie- [Instellingen importeren en exporteren](how-to-connect-import-export-config.md)voor meer informatie.|
@@ -59,7 +59,7 @@ Nadat u de vereiste onderdelen hebt geïnstalleerd, selecteert u de methode voor
 
 ![Scherm opname waarin de pagina gebruikers aanmelding wordt weer gegeven. De optie voor wachtwoord hash-synchronisatie is geselecteerd.](./media/how-to-connect-install-custom/usersignin4.png)
 
-| Optie voor eenmalige aanmelding | Description |
+| Optie voor eenmalige aanmelding | Beschrijving |
 | --- | --- |
 | Synchronisatie van wachtwoord-hashes |Gebruikers kunnen zich aanmelden bij micro soft-Cloud Services, zoals Microsoft 365, door gebruik te maken van hetzelfde wacht woord dat ze gebruiken in hun on-premises netwerk. Gebruikers wachtwoorden worden als wacht woord-hash gesynchroniseerd met Azure AD. Verificatie vindt plaats in de Cloud. Zie [Password Hash Synchronization](how-to-connect-password-hash-synchronization.md)(Engelstalig) voor meer informatie. |
 |Pass-through-verificatie|Gebruikers kunnen zich aanmelden bij micro soft-Cloud Services, zoals Microsoft 365, door gebruik te maken van hetzelfde wacht woord dat ze gebruiken in hun on-premises netwerk.  Gebruikers wachtwoorden worden gevalideerd door door te gegeven aan de on-premises Active Directory domein controller.
@@ -92,17 +92,17 @@ Azure AD Connect moet de forestnaam en referenties van een account met voldoende
 
 ![Scherm opname van de pagina ' Connect your directory's '.](./media/how-to-connect-install-custom/connectdir01.png)
 
-Nadat u de naam van het forest hebt ingevoerd en  **Directory toevoegen**selecteert, wordt er een venster weer gegeven. In de volgende tabel worden de opties beschreven.
+Nadat u de naam van het forest hebt ingevoerd en  **Directory toevoegen** selecteert, wordt er een venster weer gegeven. In de volgende tabel worden de opties beschreven.
 
 | Optie | Beschrijving |
 | --- | --- |
-| Nieuw account maken | Maak het Azure AD DS-account dat Azure AD Connect nodig heeft om verbinding te maken met het Active Directory forest tijdens Directory synchronisatie. Nadat u deze optie hebt geselecteerd, voert u de gebruikers naam en het wacht woord in voor een ondernemings Administrator-account.  Azure AD Connect maakt gebruik van het opgegeven account voor ondernemings Administrator om het vereiste Azure AD DS-account te maken. U kunt het domein onderdeel invoeren in de NetBIOS-indeling of de FQDN-indeling. Dat wil zeggen, Voer *FABRIKAM\administrator* of *FABRIKAM. com\administrator*in. |
-| Bestaand account gebruiken | Geef een bestaand Azure AD DS-account op dat Azure AD Connect kan gebruiken om verbinding te maken met het Active Directory forest tijdens adreslijst synchronisatie. U kunt het domein onderdeel invoeren in de NetBIOS-indeling of de FQDN-indeling. Dat wil zeggen, Voer *FABRIKAM\syncuser* of *FABRIKAM. com\syncuser*in. Dit account kan een normaal gebruikers account zijn omdat het alleen de standaard machtigingen voor lezen nodig heeft. Maar afhankelijk van uw scenario hebt u mogelijk meer machtigingen nodig. Zie [Azure AD Connect accounts en-machtigingen](reference-connect-accounts-permissions.md#create-the-ad-ds-connector-account)voor meer informatie. |
+| Nieuw account maken | Maak het Azure AD DS-account dat Azure AD Connect nodig heeft om verbinding te maken met het Active Directory forest tijdens Directory synchronisatie. Nadat u deze optie hebt geselecteerd, voert u de gebruikers naam en het wacht woord in voor een ondernemings Administrator-account.  Azure AD Connect maakt gebruik van het opgegeven account voor ondernemings Administrator om het vereiste Azure AD DS-account te maken. U kunt het domein onderdeel invoeren in de NetBIOS-indeling of de FQDN-indeling. Dat wil zeggen, Voer *FABRIKAM\administrator* of *FABRIKAM. com\administrator* in. |
+| Bestaand account gebruiken | Geef een bestaand Azure AD DS-account op dat Azure AD Connect kan gebruiken om verbinding te maken met het Active Directory forest tijdens adreslijst synchronisatie. U kunt het domein onderdeel invoeren in de NetBIOS-indeling of de FQDN-indeling. Dat wil zeggen, Voer *FABRIKAM\syncuser* of *FABRIKAM. com\syncuser* in. Dit account kan een normaal gebruikers account zijn omdat het alleen de standaard machtigingen voor lezen nodig heeft. Maar afhankelijk van uw scenario hebt u mogelijk meer machtigingen nodig. Zie [Azure AD Connect accounts en-machtigingen](reference-connect-accounts-permissions.md#create-the-ad-ds-connector-account)voor meer informatie. |
 
 ![Scherm opname van de pagina ' Connect Directory ' en het venster A D forest-account, waarin u kunt kiezen of u een nieuw account wilt maken of een bestaand account wilt gebruiken.](./media/how-to-connect-install-custom/connectdir02.png)
 
 >[!NOTE]
-> Vanaf build 1.4.18.0 kunt u geen account voor ondernemings Administrator of domein beheerder gebruiken als het account van de Azure AD DS-connector. Als u een **bestaand account gebruiken**selecteert en u probeert om een ondernemings Administrator-account of een domein beheerders account in te voeren, ziet u de volgende fout: ' een ondernemings-of domein beheerders account voor uw AD-forest-account gebruiken is niet toegestaan. Laat Azure AD Connect het account voor u maken of een synchronisatie account met de juiste machtigingen opgeven. "
+> Vanaf build 1.4.18.0 kunt u geen account voor ondernemings Administrator of domein beheerder gebruiken als het account van de Azure AD DS-connector. Als u een **bestaand account gebruiken** selecteert en u probeert om een ondernemings Administrator-account of een domein beheerders account in te voeren, ziet u de volgende fout: ' een ondernemings-of domein beheerders account voor uw AD-forest-account gebruiken is niet toegestaan. Laat Azure AD Connect het account voor u maken of een synchronisatie account met de juiste machtigingen opgeven. "
 >
 
 ### <a name="azure-ad-sign-in-configuration"></a>Aanmeldconfiguratie Azure AD
@@ -114,7 +114,7 @@ Controleer elk domein dat is gemarkeerd als **niet toegevoegd** of **niet gecont
 
 Gebruikers gebruiken het kenmerk *userPrincipalName* wanneer ze zich aanmelden bij Azure AD en Microsoft 365. Azure AD moet de domeinen, ook wel bekend als het UPN-achtervoegsel, verifiëren voordat gebruikers worden gesynchroniseerd. Micro soft raadt u aan het standaard kenmerk userPrincipalName te hand haven. 
 
-Als het kenmerk userPrincipalName nonroutable is en niet kan worden geverifieerd, kunt u een ander kenmerk selecteren. U kunt bijvoorbeeld e-mail selecteren als het kenmerk dat de aanmeldings-ID bevat. Wanneer u een ander kenmerk dan userPrincipalName gebruikt, wordt dit een *alternatieve id*genoemd. 
+Als het kenmerk userPrincipalName nonroutable is en niet kan worden geverifieerd, kunt u een ander kenmerk selecteren. U kunt bijvoorbeeld e-mail selecteren als het kenmerk dat de aanmeldings-ID bevat. Wanneer u een ander kenmerk dan userPrincipalName gebruikt, wordt dit een *alternatieve id* genoemd. 
 
 De waarde van het kenmerk alternatieve ID moet voldoen aan de RFC 822-norm. U kunt een alternatieve ID gebruiken voor de synchronisatie van hashes van wacht woorden, Pass Through-verificatie en Federatie. In Active Directory kan het kenmerk niet worden gedefinieerd als meerdere waarden, zelfs als het slechts één waarde heeft. Zie [Pass-Through-verificatie: veelgestelde vragen](./how-to-connect-pta-faq.md#does-pass-through-authentication-support-alternate-id-as-the-username-instead-of-userprincipalname)voor meer informatie over de alternatieve id.
 
@@ -171,7 +171,7 @@ Omdat het kenmerk source Anchor niet kan worden gewijzigd, moet u een geschikt k
 
 U kunt geen kenmerken gebruiken die een apen staartje (@) bevatten, zodat u geen e-mail en userPrincipalName kunt gebruiken. Het kenmerk is ook hoofdletter gevoelig, dus wanneer u een object tussen forests verplaatst, moet u hoofd letters en kleine letters behouden. Binaire kenmerken zijn base64-gecodeerd, maar andere kenmerk typen blijven niet-versleutelde status. 
 
-In Federatie scenario's en sommige Azure AD-interfaces wordt het kenmerk source Anchor ook wel *immutableID*genoemd. 
+In Federatie scenario's en sommige Azure AD-interfaces wordt het kenmerk source Anchor ook wel *immutableID* genoemd. 
 
 Zie [ontwerp concepten](plan-connect-design-concepts.md#sourceanchor)voor meer informatie over het bron anker.
 
@@ -205,7 +205,7 @@ Op de volgende pagina kunt u optionele functies voor uw scenario selecteren.
 
 
 
-| Optionele functies | Description |
+| Optionele functies | Beschrijving |
 | --- | --- |
 | Hybride implementatie van Exchange |Met de functie hybride implementatie van Exchange kunnen Exchange-post vakken zowel on-premises als in Microsoft 365 worden uitgewisseld. Azure AD Connect synchroniseert een specifieke set [kenmerken](reference-connect-sync-attributes-synchronized.md#exchange-hybrid-writeback) van Azure AD terug naar uw on-premises Directory. |
 | Exchange-e-mail-open bare mappen | Met de functie open bare mappen van Exchange mail kunt u e-mail berichten met open bare mappen synchroniseren van uw on-premises exemplaar van Active Directory naar Azure AD. |
@@ -260,7 +260,7 @@ Op een computer met groepsbeleid-beheer hulpprogramma's:
 
 1.  Open de groepsbeleid-beheer hulpprogramma's.
 2.  Bewerk het groeps beleid dat wordt toegepast op alle gebruikers. Bijvoorbeeld het standaard domein beleid.
-3.  Ga naar **gebruikers configuratie**  >  **Beheersjablonen**  >  **Windows-onderdelen**  >  **Internet Explorer**Internet  >  **configuratie scherm**  >  **beveiligings pagina**. Selecteer vervolgens de **lijst site naar zone toewijzing**.
+3.  Ga naar **gebruikers configuratie**  >  **Beheersjablonen**  >  **Windows-onderdelen**  >  **Internet Explorer** Internet  >  **configuratie scherm**  >  **beveiligings pagina**. Selecteer vervolgens de **lijst site naar zone toewijzing**.
 4.  Schakel het beleid in. Voer vervolgens in het dialoog venster de waarde naam `https://autologon.microsoftazuread-sso.com` en waarde van in `1` . Uw installatie kopie moet er als volgt uitzien.
   
     ![Scherm opname met intranet zones.](./media/how-to-connect-install-custom/sitezone.png)
@@ -431,7 +431,7 @@ Als u end-to-end-verificatie wilt valideren, voert u hand matig een of meer van 
 ## <a name="troubleshoot"></a>Problemen oplossen
 Deze sectie bevat informatie over het oplossen van problemen die u kunt gebruiken als u een probleem ondervindt tijdens de installatie van Azure AD Connect.
 
-Wanneer u een Azure AD Connect-installatie aanpast, kunt u op de pagina **vereiste onderdelen installeren** de optie **een bestaande SQL Server gebruiken**selecteren. Mogelijk wordt de volgende fout weer gegeven: ' de ADSync-Data Base bevat al gegevens en kan niet worden overschreven. Verwijder de bestaande data base en probeer het opnieuw. "
+Wanneer u een Azure AD Connect-installatie aanpast, kunt u op de pagina **vereiste onderdelen installeren** de optie **een bestaande SQL Server gebruiken** selecteren. Mogelijk wordt de volgende fout weer gegeven: ' de ADSync-Data Base bevat al gegevens en kan niet worden overschreven. Verwijder de bestaande data base en probeer het opnieuw. "
 
 ![Scherm afbeelding met de pagina vereiste onderdelen installeren. Onder aan de pagina wordt een fout weer gegeven.](./media/how-to-connect-install-custom/error1.png)
 
@@ -448,7 +448,7 @@ U kunt dit probleem als volgt oplossen:
 3. De data base verwijderen:
     1. Gebruik **Microsoft SQL Server Management Studio** om verbinding te maken met het SQL-exemplaar. 
     1. Zoek de **ADSync** -data base en klik er met de rechter muisknop op.
-    1. Selecteer **verwijderen**in het context menu.
+    1. Selecteer **verwijderen** in het context menu.
     1. Selecteer **OK** om de data base te verwijderen.
 
 ![Scherm opname met Microsoft SQL Server Management Studio. Er is een D-synchronisatie geselecteerd.](./media/how-to-connect-install-custom/error2.png)

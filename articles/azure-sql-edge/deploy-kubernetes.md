@@ -10,10 +10,10 @@ ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 09/22/2020
 ms.openlocfilehash: 31a454c93ad5192f387306a8ec557c4e4d3ae991
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93395288"
 ---
 # <a name="deploy-an-azure-sql-edge-container-in-kubernetes"></a>Het implementeren van een Azure SQL Edge-container in Kubernetes
@@ -108,7 +108,7 @@ Configureer een [permanent volume](https://kubernetes.io/docs/concepts/storage/p
          storage: 8Gi
    ```
 
-   Sla het bestand op (bijvoorbeeld **pvc.yaml** ).
+   Sla het bestand op (bijvoorbeeld **pvc.yaml**).
 
 2. Maak de permanente volumeclaim in Kubernetes.
 
@@ -241,7 +241,7 @@ spec:
    >[!NOTE]
    >Met behulp van het servicetype `LoadBalancer` is de Azure SQL Edge-instantie extern toegankelijk (via internet) op poort 1433.
 
-   Sla het bestand op (bijvoorbeeld **sqledgedeploy.yaml** ).
+   Sla het bestand op (bijvoorbeeld **sqledgedeploy.yaml**).
 
 2. Maak de implementatie.
 

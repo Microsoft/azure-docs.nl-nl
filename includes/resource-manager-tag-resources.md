@@ -9,10 +9,10 @@ ms.date: 03/19/2020
 ms.author: tomfitz
 ms.custom: include file
 ms.openlocfilehash: a00291182059506aeab9cde965fa4cbd5177ecf7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "80132183"
 ---
 Als een gebruiker niet beschikt over de vereiste toegang voor het toepassen van tags, kunt u de rol **Inzender van tag** toewijzen aan de gebruiker. Zie [Zelfstudie: Verleen een gebruiker toegang tot Azure-resources verlenen met behulp van RBAC en Azure Portal](../articles/role-based-access-control/quickstart-assign-role-user-portal.md).
@@ -35,7 +35,7 @@ Als een gebruiker niet beschikt over de vereiste toegang voor het toepassen van 
 
    ![Tags weergeven](./media/resource-manager-tag-resources/view-new-tags.png)
 
-1. Selecteer **wijzigen**om een tag toe te voegen of te verwijderen.
+1. Selecteer **wijzigen** om een tag toe te voegen of te verwijderen.
 
 1. Als u een tag wilt verwijderen, selecteert u het prullenbakpictogram. Selecteer vervolgens **Opslaan**.
 

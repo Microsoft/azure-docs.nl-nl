@@ -4,10 +4,10 @@ description: Toegang bieden tot installatie kopieën in uw persoonlijke containe
 ms.topic: article
 ms.date: 10/04/2019
 ms.openlocfilehash: 8d49628576a1c337efaea3e5286fef00e39def17
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86259152"
 ---
 # <a name="azure-container-registry-authentication-with-service-principals"></a>Verificatie Azure Container Registry met Service-principals
@@ -49,8 +49,8 @@ U kunt de voor gaande voorbeeld scripts voor Azure CLI vinden op GitHub, evenals
 
 Zodra u een Service-Principal hebt die u toegang tot uw container register hebt verleend, kunt u de referenties voor toegang tot ' headless ' Services en toepassingen configureren of ze invoeren met behulp van de `docker login` opdracht. Gebruik de volgende waarden:
 
-* **Gebruikers naam** -id van de Service-Principal-toepassing (ook wel *client-id*genoemd)
-* **Wacht** woord-Service-Principal-wacht woord (ook wel *client geheim*genoemd)
+* **Gebruikers naam** -id van de Service-Principal-toepassing (ook wel *client-id* genoemd)
+* **Wacht** woord-Service-Principal-wacht woord (ook wel *client geheim* genoemd)
 
 Elke waarde is een GUID van het formulier `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` . 
 

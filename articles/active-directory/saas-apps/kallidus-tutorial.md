@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 07/05/2019
 ms.author: jeedes
 ms.openlocfilehash: a8401589d804a9f1a89820a357495cb703e7a542
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92459217"
 ---
 # <a name="tutorial-integrate-kallidus-with-azure-active-directory"></a>Zelfstudie: Kallidus integreren met Azure Active Directory
@@ -86,15 +86,15 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 ### <a name="configure-kallidus"></a>Kallidus configureren
 
-Als u eenmalige aanmelding wilt configureren in **Kallidus** , moet u de **URL voor de federatieve metagegevens van de app** en een kopie van het **handtekeningcertificaat (openbaar)** naar het [ondersteuningsteam van Kallidus](https://kallidus.zendesk.com) sturen. Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding wilt configureren in **Kallidus**, moet u de **URL voor de federatieve metagegevens van de app** en een kopie van het **handtekeningcertificaat (openbaar)** naar het [ondersteuningsteam van Kallidus](https://kallidus.zendesk.com) sturen. Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.

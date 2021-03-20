@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: a7283ad4c4c61ecc293a55ffc4cb9626bb28d630
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92108725"
 ---
 # <a name="create-an-hdinsight-cluster-with-azure-data-lake-storage-gen1-using-azure-resource-manager-template"></a>Een HDInsight-cluster met Azure Data Lake Storage Gen1 maken met behulp van Azure Resource Manager sjabloon
@@ -74,7 +74,7 @@ De sjabloon implementeert deze resource typen:
 De Resource Manager-sjabloon maakt een nieuw opslag account met Data Lake Storage Gen1 en koppelt het aan het HDInsight-cluster. U moet nu enkele voorbeeld gegevens uploaden naar Data Lake Storage Gen1. U hebt deze gegevens later in de zelf studie nodig om taken uit te voeren vanuit een HDInsight-cluster die toegang hebben tot gegevens in het opslag account met Data Lake Storage Gen1. Zie [een bestand uploaden naar Data Lake Storage gen1](data-lake-store-get-started-portal.md#uploaddata)voor instructies over het uploaden van gegevens. Als u nog geen voorbeeldgegevens hebt om te uploaden, kunt u de map **Ambulance Data** uit de [Azure Data Lake Git-opslagplaats](https://github.com/Azure/usql/tree/master/Examples/Samples/Data/AmbulanceData) gebruiken.
 
 ## <a name="set-relevant-acls-on-the-sample-data"></a>Relevante Acl's instellen voor de voorbeeld gegevens
-Om ervoor te zorgen dat de gegevens die u uploadt, toegankelijk zijn vanuit het HDInsight-cluster, moet u ervoor zorgen dat de Azure AD-toepassing die wordt gebruikt voor het instellen van de identiteit tussen het HDInsight-cluster en Data Lake Storage Gen1 toegang heeft tot het bestand of de map waartoe u toegang wilt krijgen. U doet dit door de volgende stappen uit te voeren.
+Om ervoor te zorgen dat de gegevens die u uploadt, toegankelijk zijn vanuit het HDInsight-cluster, moet u ervoor zorgen dat de Azure AD-toepassing die wordt gebruikt voor het instellen van de identiteit tussen het HDInsight-cluster en Data Lake Storage Gen1 toegang heeft tot het bestand of de map waartoe u toegang wilt krijgen. Volg de volgende stappen om dit te doen.
 
 1. Zoek de naam van de Azure AD-toepassing die aan het HDInsight-cluster en het opslag account met Data Lake Storage Gen1 is gekoppeld. U kunt de naam ook controleren door de Blade HDInsight-cluster te openen die u hebt gemaakt met behulp van de Resource Manager-sjabloon, op het tabblad **cluster Azure AD-identiteit** te klikken en de waarde van de naam van de **Service-Principal weer te geven**.
 2. Geef nu toegang tot deze Azure AD-toepassing op het bestand of de map waartoe u toegang wilt krijgen vanuit het HDInsight-cluster. Zie [gegevens beveiligen in data Lake Storage gen1](data-lake-store-secure-data.md#filepermissions)om de juiste acl's in te stellen voor het bestand of de map in data Lake Storage gen1.
@@ -82,7 +82,7 @@ Om ervoor te zorgen dat de gegevens die u uploadt, toegankelijk zijn vanuit het 
 ## <a name="run-test-jobs-on-the-hdinsight-cluster-to-use-data-lake-storage-gen1"></a>Test taken uitvoeren op het HDInsight-cluster om Data Lake Storage Gen1 te gebruiken
 Nadat u een HDInsight-cluster hebt geconfigureerd, kunt u test taken uitvoeren op het cluster om te testen of het HDInsight-cluster toegang heeft tot Data Lake Storage Gen1. Hiervoor wordt een voor beeld van een Hive-taak uitgevoerd waarmee een tabel wordt gemaakt met behulp van de voorbeeld gegevens die u eerder hebt geüpload naar uw opslag account met Data Lake Storage Gen1.
 
-In deze sectie gaat u SSH naar een HDInsight Linux-cluster en voert u de voor beeld-Hive-query uit. Als u een Windows-client gebruikt, kunt u het beste **putty**gebruiken. deze kan worden gedownload van [https://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](https://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) .
+In deze sectie gaat u SSH naar een HDInsight Linux-cluster en voert u de voor beeld-Hive-query uit. Als u een Windows-client gebruikt, kunt u het beste **putty** gebruiken. deze kan worden gedownload van [https://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](https://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) .
 
 Zie [SSH gebruiken met Hadoop op basis van Linux in HDInsight via Windows](../hdinsight/hdinsight-hadoop-linux-use-ssh-unix.md)voor meer informatie over het gebruik van putty.
 
@@ -118,7 +118,7 @@ Zie [SSH gebruiken met Hadoop op basis van Linux in HDInsight via Windows](../hd
 ## <a name="access-data-lake-storage-gen1-using-hdfs-commands"></a>Toegang tot Data Lake Storage Gen1 met HDFS-opdrachten
 Zodra u het HDInsight-cluster hebt geconfigureerd voor het gebruik van Data Lake Storage Gen1, kunt u de HDFS-shell opdrachten gebruiken om toegang te krijgen tot de Store.
 
-In deze sectie gaat u SSH naar een HDInsight Linux-cluster en voert u de HDFS-opdrachten uit. Als u een Windows-client gebruikt, kunt u het beste **putty**gebruiken. deze kan worden gedownload van [https://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](https://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) .
+In deze sectie gaat u SSH naar een HDInsight Linux-cluster en voert u de HDFS-opdrachten uit. Als u een Windows-client gebruikt, kunt u het beste **putty** gebruiken. deze kan worden gedownload van [https://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](https://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) .
 
 Zie [SSH gebruiken met Hadoop op basis van Linux in HDInsight via Windows](../hdinsight/hdinsight-hadoop-linux-use-ssh-unix.md)voor meer informatie over het gebruik van putty.
 

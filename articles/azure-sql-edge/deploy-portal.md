@@ -10,10 +10,10 @@ ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 09/22/2020
 ms.openlocfilehash: 5d7d232ada814d5d3c30e7b012c6289f847d641f
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93395084"
 ---
 # <a name="deploy-azure-sql-edge"></a>Azure SQL Edge implementeren 
@@ -52,7 +52,7 @@ Azure Marketplace is een online Marketplace voor toepassingen en services waar u
 
 4. Op de pagina **modules op apparaat instellen:** klikt u op de Azure SQL Edge-module onder **IOT Edge modules**. De standaard module naam is ingesteld op *AzureSQLEdge*. 
 
-5. Geef in de sectie *module-instellingen* van de Blade **Update IOT Edge module** de gewenste waarden op voor de naam van de *IOT Edge module* , *Start het beleid opnieuw* op en de *gewenste status*. 
+5. Geef in de sectie *module-instellingen* van de Blade **Update IOT Edge module** de gewenste waarden op voor de naam van de *IOT Edge module*, *Start het beleid opnieuw* op en de *gewenste status*. 
 
    > [!IMPORTANT]    
    > Wijzig of werk de URI-instellingen voor de **installatie kopie** niet bij in de module.
@@ -112,7 +112,7 @@ Azure Marketplace is een online Marketplace voor toepassingen en services waar u
 
 ## <a name="connect-to-azure-sql-edge"></a>Verbinding maken met Azure SQL Edge
 
-In de volgende stappen wordt het Azure SQL Edge-opdrachtregelprogramma, **sqlcmd** , in de container gebruikt om verbinding te maken met Azure SQL Edge.
+In de volgende stappen wordt het Azure SQL Edge-opdrachtregelprogramma, **sqlcmd**, in de container gebruikt om verbinding te maken met Azure SQL Edge.
 
 > [!NOTE]      
 > SQL-opdracht regel programma's (Sqlcmd) zijn niet beschikbaar in de ARM64-versie van Azure SQL Edge-containers.
@@ -132,7 +132,7 @@ In de volgende stappen wordt het Azure SQL Edge-opdrachtregelprogramma, **sqlcmd
    > [!TIP]    
    > U kunt het wachtwoord op de opdrachtregel weglaten om te worden gevraagd het in te voeren.
 
-3. Als dit is gelukt, krijgt u een opdrachtprompt voor **sqlcmd** : `1>`.
+3. Als dit is gelukt, krijgt u een opdrachtprompt voor **sqlcmd**: `1>`.
 
 ## <a name="create-and-query-data"></a>Gegevens maken en er query's op uitvoeren
 
@@ -202,7 +202,7 @@ Voer nu een query uit om gegevens op te halen uit de tabel `Inventory`.
 
 ### <a name="exit-the-sqlcmd-command-prompt"></a>De sqlcmd-opdrachtprompt afsluiten
 
-1. Als u uw **sqlcmd** -sessie wilt beëindigen, typt u `QUIT`:
+1. Als u uw **sqlcmd**-sessie wilt beëindigen, typt u `QUIT`:
 
    ```sql
    QUIT

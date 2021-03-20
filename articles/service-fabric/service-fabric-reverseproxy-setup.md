@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 11/13/2018
 ms.author: pepogors
 ms.openlocfilehash: f8a9025a50b2815f0e6030e7baf317b261c8c462
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86256340"
 ---
 # <a name="set-up-and-configure-reverse-proxy-in-azure-service-fabric"></a>Een omgekeerde proxy instellen en configureren in azure Service Fabric
@@ -20,10 +20,10 @@ Azure Portal biedt een optie om omgekeerde proxy in te scha kelen wanneer u een 
 
 Voor het configureren van een omgekeerde proxy wanneer u [een cluster met Azure Portal maakt](./service-fabric-cluster-creation-via-portal.md), moet u het volgende doen:
 
-1. Selecteer in **stap 2: cluster configuratie**, onder **configuratie van knooppunt type**de optie **omgekeerde proxy inschakelen**.
+1. Selecteer in **stap 2: cluster configuratie**, onder **configuratie van knooppunt type** de optie **omgekeerde proxy inschakelen**.
 
    ![Omgekeerde proxy inschakelen op de portal](./media/service-fabric-reverseproxy-setup/enable-rp-portal.png)
-2. Beschrijving Als u een beveiligde omgekeerde proxy wilt configureren, moet u een TLS/SSL-certificaat configureren. In **stap 3: beveiliging**, op **cluster beveiligings instellingen configureren**onder **configuratie type**, selecteert u **aangepast**. Selecteer vervolgens onder **omgekeerde proxy SSL-certificaat**de optie **een SSL-certificaat voor reverse proxy toevoegen** en voer uw certificaat details in.
+2. Beschrijving Als u een beveiligde omgekeerde proxy wilt configureren, moet u een TLS/SSL-certificaat configureren. In **stap 3: beveiliging**, op **cluster beveiligings instellingen configureren** onder **configuratie type**, selecteert u **aangepast**. Selecteer vervolgens onder **omgekeerde proxy SSL-certificaat** de optie **een SSL-certificaat voor reverse proxy toevoegen** en voer uw certificaat details in.
 
    ![Beveiligde omgekeerde proxy configureren op de portal](./media/service-fabric-reverseproxy-setup/configure-rp-certificate-portal.png)
 
@@ -74,7 +74,7 @@ Nadat u een resource manager-sjabloon hebt, kunt u de reverse proxy inschakelen 
         ...
     }
     ```
-3. Als u TLS/SSL-certificaten op de poort voor de omgekeerde proxy wilt configureren, voegt u het certificaat toe aan de eigenschap ***reverseProxyCertificate*** in de [sectie resource type](../azure-resource-manager/templates/template-syntax.md) **micro soft. ServiceFabric/clusters** .
+3. Als u TLS/SSL-certificaten op de poort voor de omgekeerde proxy wilt configureren, voegt u het certificaat toe aan de eigenschap ***reverseProxyCertificate** _ in de sectie van het bron type *micro soft. ServiceFabric/clusters* *  [](../azure-resource-manager/templates/template-syntax.md).
 
     ```json
     {
@@ -243,10 +243,10 @@ Als u een omgekeerde proxy openbaar wilt maken voor een zelfstandig cluster, is 
 ### <a name="expose-the-reverse-proxy-using-azure-portal"></a>De omgekeerde proxy beschikbaar maken met behulp van Azure Portal 
 
 1. Klik op de Azure Portal op de resource groep voor uw cluster en klik vervolgens op de load balancer voor uw cluster.
-2. Als u een status test wilt toevoegen voor de omgekeerde proxy poort, klikt u in het linkerdeel venster van het load balancer venster onder **instellingen**op **status controles**. Klik vervolgens op **toevoegen** boven in het venster status controles en voer Details in voor de omgekeerde proxy poort en klik vervolgens op **OK**. De omgekeerde proxy poort is standaard 19081, tenzij u deze hebt gewijzigd tijdens het maken van het cluster.
+2. Als u een status test wilt toevoegen voor de omgekeerde proxy poort, klikt u in het linkerdeel venster van het load balancer venster onder **instellingen** op **status controles**. Klik vervolgens op **toevoegen** boven in het venster status controles en voer Details in voor de omgekeerde proxy poort en klik vervolgens op **OK**. De omgekeerde proxy poort is standaard 19081, tenzij u deze hebt gewijzigd tijdens het maken van het cluster.
 
    ![Health probe reverse proxy configureren](./media/service-fabric-reverseproxy-setup/lb-rp-probe.png)
-3. Als u een Load Balancer regel wilt toevoegen om de omgekeerde proxy poort zichtbaar te maken, klikt u in het linkerdeel venster van het venster load balancer onder **instellingen**op taakverdelings **regels**. Klik vervolgens boven aan het venster taakverdelings regels op **toevoegen** en voer Details in voor de omgekeerde proxy poort. Zorg ervoor dat u de **poort** waarde instelt op de poort waarop u de omgekeerde proxy wilt weer geven, de waarde van de **back-endserver** naar de poort die u instelt bij het inschakelen van omgekeerde proxy en de **status test** waarde voor de status test die u in de vorige stap hebt geconfigureerd. Stel zo nodig andere velden in en klik op **OK**.
+3. Als u een Load Balancer regel wilt toevoegen om de omgekeerde proxy poort zichtbaar te maken, klikt u in het linkerdeel venster van het venster load balancer onder **instellingen** op taakverdelings **regels**. Klik vervolgens boven aan het venster taakverdelings regels op **toevoegen** en voer Details in voor de omgekeerde proxy poort. Zorg ervoor dat u de **poort** waarde instelt op de poort waarop u de omgekeerde proxy wilt weer geven, de waarde van de **back-endserver** naar de poort die u instelt bij het inschakelen van omgekeerde proxy en de **status test** waarde voor de status test die u in de vorige stap hebt geconfigureerd. Stel zo nodig andere velden in en klik op **OK**.
 
    ![load balancer regel voor reverse proxy configureren](./media/service-fabric-reverseproxy-setup/lb-rp-rule.png)
 

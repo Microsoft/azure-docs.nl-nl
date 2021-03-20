@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 07/10/2019
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 225ccb67153a33ed47af68ebb1549dce37426278
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96573458"
 ---
 # <a name="getting-started-with-reliable-actors"></a>Aan de slag met Reliable Actors
@@ -44,15 +44,15 @@ De oplossing bevat drie projecten:
 
 * **Het interface project (HelloWorld. interfaces)**. Dit project bevat de interface definitie voor de actor. Actor-interfaces kunnen in elk project met een wille keurige naam worden gedefinieerd.  De interface definieert het actor-contract dat wordt gedeeld door de actor-implementatie en de clients die de actor aanroepen.  Omdat client projecten hiervan afhankelijk kunnen zijn, is het doorgaans zinvol om deze te definiëren in een assembly die is gescheiden van de actor-implementatie.
 
-* **Het actor service-project (HelloWorld)**. Dit project definieert de Service Fabric-service die de actor gaat hosten. Deze bevat de implementatie van de actor, *HelloWorld.cs*. Een actor-implementatie is een klasse die is afgeleid van het basis type `Actor` en de interfaces implementeert die in het project *MyActor. interfaces* zijn gedefinieerd. Een actor-klasse moet ook een constructor implementeren die een `ActorService` exemplaar accepteert en een `ActorId` en deze door geven aan de basis `Actor` klasse.
+* **Het actor service-project (HelloWorld)**. Dit project definieert de Service Fabric-service die de actor gaat hosten. Het bevat de implementatie van de actor, *HelloWorld. cs*. Een actor-implementatie is een klasse die is afgeleid van het basis type `Actor` en de interfaces implementeert die in het project *MyActor. interfaces* zijn gedefinieerd. Een actor-klasse moet ook een constructor implementeren die een `ActorService` exemplaar accepteert en een `ActorId` en deze door geven aan de basis `Actor` klasse.
     
-    Dit project bevat ook *Program.cs*, waarmee actor klassen worden geregistreerd bij de service Fabric-runtime met `ActorRuntime.RegisterActorAsync<T>()` . De `HelloWorld` klasse is al geregistreerd. Eventuele extra actor-implementaties die aan het project worden toegevoegd, moeten ook worden geregistreerd in de- `Main()` methode.
+    Dit project bevat ook *programma. cs*, dat actor klassen registreert met de service Fabric runtime met behulp van `ActorRuntime.RegisterActorAsync<T>()` . De `HelloWorld` klasse is al geregistreerd. Eventuele extra actor-implementaties die aan het project worden toegevoegd, moeten ook worden geregistreerd in de- `Main()` methode.
 
 ## <a name="customize-the-helloworld-actor"></a>De acteur van HelloWorld aanpassen
 
 De project sjabloon definieert een aantal methoden in de `IHelloWorld` interface en implementeert deze in de `HelloWorld` actor-implementatie.  Vervang deze methoden zodat de actor-service een eenvoudige teken reeks ' Hallo wereld ' retourneert.
 
-Vervang in het project *HelloWorld. interfaces* in het bestand *IHelloWorld.cs* de interface definitie als volgt:
+Vervang in het project *HelloWorld. interfaces* in het bestand *IHelloWorld. cs* de interface definitie als volgt:
 
 ```csharp
 public interface IHelloWorld : IActor
@@ -61,7 +61,7 @@ public interface IHelloWorld : IActor
 }
 ```
 
-Vervang in het project **HelloWorld** , in **HelloWorld.cs**, de volledige klassedefinitie als volgt:
+Vervang in het project **HelloWorld** in **HelloWorld. cs** de volledige klassedefinitie als volgt:
 
 ```csharp
 [StatePersistence(StatePersistence.Persisted)]
@@ -85,7 +85,7 @@ Druk op **CTRL-SHIFT-B** om het project te bouwen en te controleren of alles com
 
 Maak een eenvoudige console toepassing om de actor-service aan te roepen.
 
-1. Klik met de rechter muisknop op de oplossing in **Add** Solution Explorer >  >  **Nieuw project toevoegen...**.
+1. Klik met de rechter muisknop op de oplossing in Solution Explorer >  >  **Nieuw project toevoegen...**.
 
 2. Kies onder de **.net core** -project typen de optie **console-app (.net core)**.  Geef het project de naam *ActorClient*.
     
@@ -110,7 +110,7 @@ Maak een eenvoudige console toepassing om de actor-service aan te roepen.
     
     ![Dialoog venster referentie toevoegen][7]
 
-6. Vervang in het project ActorClient de volledige inhoud van *Program.cs* met de volgende code:
+6. Vervang in het project ActorClient de volledige inhoud van *programma. cs* door de volgende code:
     
     ```csharp
     using System;

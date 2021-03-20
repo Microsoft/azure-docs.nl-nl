@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 04/23/2018
 ms.subservice: tables
 ms.openlocfilehash: f84707e454a8b1f5d5947478fe65108a142a9757
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88236315"
 ---
 # <a name="guidelines-for-table-design"></a>Richtlijnen voor tabelontwerp
@@ -22,10 +22,10 @@ Het ontwerpen van tabellen voor gebruik met de Azure Storage Table-service wijkt
 ## <a name="design-your-table-service-solution-to-be-read-efficient"></a>Uw Table service-oplossing zo ontwerpen dat deze kan worden gelezen
 
 * ***Ontwerpen voor het uitvoeren van query's in lees-en zware toepassingen.*** Wanneer u uw tabellen ontwerpt, moet u nadenken over de query's (met name de latentie gevoelige waarden) die u wilt uitvoeren voordat u denkt dat u uw entiteiten wilt bijwerken. Dit resulteert doorgaans in een efficiënte en beste oplossing.  
-* ***Geef zowel PartitionKey als RowKey op in uw query's.*** *Punt query's* zoals dit zijn de meest efficiënte query's voor de tabel service.  
+* ***Geef zowel PartitionKey als RowKey op in uw query's.** _ _Point query's * zoals dit zijn de meest efficiënte query's voor de tabel service.  
 * ***Overweeg dubbele exemplaren van entiteiten op te slaan.*** Table Storage is goedkope, dus overweeg om dezelfde entiteit meerdere keren (met verschillende sleutels) op te slaan om efficiëntere query's mogelijk te maken.  
 * ***Overweeg uw gegevens te denormaliseren.*** Table Storage is goedkope manier om uw gegevens te denormaliseren. Zo kunt u bijvoorbeeld overzichts entiteiten opslaan zodat query's voor statistische gegevens alleen toegang hebben tot één entiteit.  
-* ***Samengestelde sleutel waarden gebruiken.*** De enige sleutels die u hebt, zijn **PartitionKey** en **RowKey**. Gebruik bijvoorbeeld samengestelde sleutel waarden om alternatieve toegangs paden naar entiteiten in te scha kelen.  
+* ***Samengestelde sleutel waarden gebruiken.** _ De enige sleutels die u hebt, zijn _ *PartitionKey** en **RowKey**. Gebruik bijvoorbeeld samengestelde sleutel waarden om alternatieve toegangs paden naar entiteiten in te scha kelen.  
 * ***Query projectie gebruiken.*** U kunt de hoeveelheid gegevens die u via het netwerk overdraagt verminderen met behulp van query's waarmee u alleen de gewenste velden selecteert.  
 
 ## <a name="design-your-table-service-solution-to-be-write-efficient"></a>Uw Table service-oplossing zo ontwerpen dat deze efficiënt kan worden geschreven  

@@ -4,10 +4,10 @@ description: Configureer omgekeerde proxy zo dat beveiligde end-to-end-communica
 ms.topic: conceptual
 ms.date: 08/10/2017
 ms.openlocfilehash: b01ce559b3c790164992d6618149afa9df069466
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86256132"
 ---
 # <a name="connect-to-a-secure-service-with-the-reverse-proxy"></a>Verbinding maken met een beveiligde service met de omgekeerde proxy
@@ -20,7 +20,7 @@ In dit artikel wordt uitgelegd hoe u een veilige verbinding tot stand brengt tus
 ## <a name="secure-connection-establishment-between-the-reverse-proxy-and-services"></a>Beveiligde verbinding tot stand brengen tussen de omgekeerde proxy en services 
 
 ### <a name="reverse-proxy-authenticating-to-services"></a>Omgekeerde proxy verificatie bij Services:
-De omgekeerde proxy identificeert zichzelf bij Services met behulp van het certificaat. Voor Azure-clusters wordt het certificaat opgegeven met de eigenschap ***reverseProxyCertificate*** in het [resource type](../azure-resource-manager/templates/template-syntax.md) [**micro soft. ServiceFabric/clusters**](/azure/templates/microsoft.servicefabric/clusters) van de Resource Manager-sjabloon. Voor zelfstandige clusters wordt het certificaat opgegeven met de ***ReverseProxyCertificate*** of de eigenschap ***ReverseProxyCertificateCommonNames*** in het gedeelte **beveiliging** van ClusterConfig.jsop. Zie [reverse proxy inschakelen op zelfstandige clusters](service-fabric-reverseproxy-setup.md#enable-reverse-proxy-on-standalone-clusters)voor meer informatie. 
+De omgekeerde proxy identificeert zichzelf bij Services met behulp van het certificaat. Voor Azure-clusters wordt het certificaat met de eigenschap ***reverseProxyCertificate** _ opgegeven in de sectie met het [resource type](../azure-resource-manager/templates/template-syntax.md) [*micro soft. ServiceFabric/clusters* *](/azure/templates/microsoft.servicefabric/clusters) van de Resource Manager-sjabloon. Voor zelfstandige clusters wordt het certificaat opgegeven met de **eigenschap _ReverseProxyCertificate_*_ of _*_ReverseProxyCertificateCommonNames_*_ in het gedeelte _* beveiliging** van ClusterConfig.jsop. Zie [reverse proxy inschakelen op zelfstandige clusters](service-fabric-reverseproxy-setup.md#enable-reverse-proxy-on-standalone-clusters)voor meer informatie. 
 
 Services kunnen de logica implementeren om het certificaat te verifiëren dat door de omgekeerde proxy wordt aangeboden. De services kunnen de geaccepteerde client certificaat gegevens opgeven als configuratie-instellingen in het configuratie pakket. Dit kan tijdens runtime worden gelezen en wordt gebruikt om het certificaat te valideren dat door de omgekeerde proxy wordt aangeboden. Raadpleeg [toepassings parameters beheren](service-fabric-manage-multiple-environment-app-configuration.md) om de configuratie-instellingen toe te voegen. 
 
@@ -73,7 +73,7 @@ Geef de **ApplicationCertificateValidationPolicy** op met de waarde **none** in 
    }
    ```
 
-   Als u de lijst met algemene en uitgevers van services wilt opgeven, voegt u een sectie [**toepassings Gateway/http/ServiceCommonNameAndIssuer**](./service-fabric-cluster-fabric-settings.md#applicationgatewayhttpservicecommonnameandissuer) onder **fabricSettings**toe, zoals hieronder wordt weer gegeven. Er kunnen meerdere algemene naam-en verleners vingerafdruk paren worden toegevoegd in de **parameter** matrix. 
+   Als u de lijst met algemene en uitgevers van services wilt opgeven, voegt u een sectie [**toepassings Gateway/http/ServiceCommonNameAndIssuer**](./service-fabric-cluster-fabric-settings.md#applicationgatewayhttpservicecommonnameandissuer) onder **fabricSettings** toe, zoals hieronder wordt weer gegeven. Er kunnen meerdere algemene naam-en verleners vingerafdruk paren worden toegevoegd in de **parameter** matrix. 
 
    Als de reverse-proxy van het eind punt verbinding maakt met een certificaat dat de algemene naam en de verleners-vinger afdruk overeenkomt met een van de waarden die hier zijn opgegeven, wordt er een TLS-kanaal tot stand gebracht.
    Als de certificaat details niet overeenkomen, mislukt de aanvraag van de client met de status code 502 (ongeldige gateway). De HTTP-status regel bevat ook de zin ' ongeldig SSL-certificaat '. 

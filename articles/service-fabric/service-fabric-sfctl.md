@@ -6,10 +6,10 @@ ms.topic: reference
 ms.date: 1/16/2020
 ms.author: jejarry
 ms.openlocfilehash: fc317345155a6807a20d342e2cefd0701b20f180
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86257050"
 ---
 # <a name="sfctl"></a>sfctl
@@ -26,9 +26,9 @@ Opdrachten volgen het patroon van de zelfstandig naam woord. Zie subgroepen voor
 | [Compose](service-fabric-sfctl-compose.md) | Docker opstellen toepassingen maken, verwijderen en beheren. |
 | [verpakking](service-fabric-sfctl-container.md) | Container gerelateerde opdrachten uitvoeren op een cluster knooppunt. |
 | [evenementen](service-fabric-sfctl-events.md) | Gebeurtenissen ophalen uit het gebeurtenissen archief (als de Event Store-service al is geïnstalleerd). |
-| [is](service-fabric-sfctl-is.md) | Query's uitvoeren en opdrachten verzenden naar de infrastructuur service. |
+| [ontbreekt](service-fabric-sfctl-is.md) | Query's uitvoeren en opdrachten verzenden naar de infrastructuur service. |
 | [strekt](service-fabric-sfctl-mesh.md) | Service Fabric-mesh-toepassingen verwijderen en beheren. |
-| [subknooppuntsleutels](service-fabric-sfctl-node.md) | De knoop punten beheren die een cluster vormen. |
+| [node](service-fabric-sfctl-node.md) | De knoop punten beheren die een cluster vormen. |
 | [partitie](service-fabric-sfctl-partition.md) | Zoek en beheer partities voor elke service. |
 | [eigenschap](service-fabric-sfctl-property.md) | Eigenschappen voor opslaan en opvragen onder Service Fabric namen. |
 | [exacte](service-fabric-sfctl-replica.md) | De replica's beheren die deel uitmaken van service partities. |

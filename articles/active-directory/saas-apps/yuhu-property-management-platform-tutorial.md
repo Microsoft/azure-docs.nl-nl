@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 12/18/2019
 ms.author: jeedes
 ms.openlocfilehash: 2b5e852e3a32c4fb40dbe7ebc50a00302b4b82b4
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92519090"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-yuhu-property-management-platform"></a>Zelfstudie: SSO-integratie (eenmalige aanmelding) van Azure Active Directory met Yuhu Property Management Platform
@@ -108,9 +108,9 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
@@ -136,7 +136,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
 ## <a name="configure-yuhu-property-management-platform-sso"></a>Eenmalige aanmelding Yuhu Property Management Platform configureren
 
-Als u eenmalige aanmelding aan de **Yuhu Property Management Platform** -zijde wilt configureren, moet u het gedownloade **Certificaat (Base64)** en de correct van de Azure-portal gekopieerde URL's naar het [ondersteuningsteam van Yuhu Property Management Platform](mailto:hello@yuhu.io) verzenden. Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding aan de **Yuhu Property Management Platform**-zijde wilt configureren, moet u het gedownloade **Certificaat (Base64)** en de correct van de Azure-portal gekopieerde URL's naar het [ondersteuningsteam van Yuhu Property Management Platform](mailto:hello@yuhu.io) verzenden. Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-yuhu-property-management-platform-test-user"></a>Testgebruiker voor Yuhu Property Management Platform maken
 

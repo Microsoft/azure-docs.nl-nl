@@ -12,10 +12,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 869d60d4ccb3bae58924fe4221f83b1b0125ae04
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98613239"
 ---
 # <a name="writing-expressions-for-attribute-mappings-in-azure-active-directory"></a>Expressies schrijven voor kenmerk toewijzingen in Azure Active Directory
@@ -383,7 +383,7 @@ Als de expressie kan worden geëvalueerd als een teken reeks type, wordt de func
 Wordt gebruikt om te bepalen of CStr () kan worden uitgevoerd om de expressie te parseren.
 
 ---
-### <a name="join"></a>Koppelen
+### <a name="join"></a>Deelnemen
 **Functieassembly**<br> Samen voegen (scheidings teken, source1, source2,...)
 
 **Beschrijving:**<br> Samen voegen () is vergelijkbaar met Append (), behalve dat het meerdere **bron** teken reeks waarden kan combi neren in één teken reeks en elke waarde wordt gescheiden door een **scheidings** teken reeks.
@@ -789,4 +789,4 @@ Op basis van de voor naam van de gebruiker, de middelste naam en de achternaam, 
 ## <a name="next-steps"></a>Volgende stappen 
 
 - [Wat is inrichting?](what-is-provisioning.md)
-- [Wat is Azure AD Connect Cloud synchronisatie?](what-is-cloud-sync.md)
+- [Wat is Azure AD Connect--cloudsynchronisatie?](what-is-cloud-sync.md)

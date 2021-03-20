@@ -10,10 +10,10 @@ ms.custom: mvc, amqp, devx-track-csharp
 ms.date: 11/06/2018
 ms.author: dobett
 ms.openlocfilehash: 77a795b8f704084b612a2dcbd364b8d5be0a3333
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96852146"
 ---
 # <a name="serialize-telemetry-using-protocol-buffers"></a>Telemetrie serialiseren met protocol buffers
@@ -180,7 +180,7 @@ Wanneer u een **proto** -bestand hebt, is de volgende stap het genereren van de 
     protoc -I c:\temp\device-simulation-dotnet-master\Services\Models\Protobuf\proto --csharp_out=C:\temp\device-simulation-dotnet-master\Services\Models\Protobuf assettracker.proto
     ```
 
-    Met deze opdracht wordt een **Assettracker.cs** -bestand gegenereerd in de map **Services\Models\Protobuf** .
+    Met deze opdracht wordt een bestand **Assettracker. cs** in de map **Services\Models\Protobuf** gegenereerd.
 
 ## <a name="test-protobuf-locally"></a>Protobuf lokaal testen
 
@@ -249,7 +249,7 @@ Postman instellen:
 
 1. Klik op **bestand \> importeren**. Klik vervolgens op **bestanden kiezen**.
 
-1. Selecteer de **Azure IOT-oplossings versneller voor apparaat simulatie. postman \_ verzameling** en **Azure IOT- \_ oplossings versneller.** **Open**
+1. Selecteer de **Azure IOT-oplossings versneller voor apparaat simulatie. postman \_ verzameling** en **Azure IOT- \_ oplossings versneller.** 
 
 1. Vouw de **Azure IOT Device simulatie Solution Accelerator** uit om de aanvragen weer te geven die u kunt verzenden.
 

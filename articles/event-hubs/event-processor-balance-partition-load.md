@@ -4,10 +4,10 @@ description: Hierin wordt beschreven hoe u de belasting van partities op meerder
 ms.topic: conceptual
 ms.date: 06/23/2020
 ms.openlocfilehash: af307058d0eda6b96c0811bccc245c09e2bdd27d
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95025041"
 ---
 # <a name="balance-partition-load-across-multiple-instances-of-your-application"></a>De verdeling van partities verdelen over meerdere exemplaren van uw toepassing
@@ -49,7 +49,7 @@ De partitie van de eigendoms records in de controlepunt opslag houden de naam va
 
 
 
-| Event Hubs-naamruimte               | Event Hub-naam | **Consumenten groep** | Eigenaar                                | Partitie-id | Tijdstip laatst gewijzigd  |
+| Event Hubs-naamruimte               | Naam van de Event Hub | **Consumenten groep** | Eigenaar                                | Partitie-id | Tijdstip laatst gewijzigd  |
 | ---------------------------------- | -------------- | :----------------- | :----------------------------------- | :----------- | :------------------ |
 | mynamespace.servicebus.windows.net | myeventhub     | myconsumergroup    | 3be3f9d3-9d9e-4c50-9491-85ece8334ff6 | 0            | 2020-01-15T01:22:15 |
 | mynamespace.servicebus.windows.net | myeventhub     | myconsumergroup    | f5cc5176-ce96-4bb4-bbaa-a0e3a9054ecf | 1            | 2020-01-15T01:22:17 |

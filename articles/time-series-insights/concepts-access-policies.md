@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 12/02/2020
 ms.custom: seodec18
 ms.openlocfilehash: 84b973dfa016b069b18fda47a4336fe952f73b3c
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96780855"
 ---
 # <a name="grant-data-access-to-an-environment"></a>Gegevens toegang verlenen tot een omgeving
@@ -24,7 +24,7 @@ In dit artikel worden de twee soorten Azure Time Series Insights toegangs beleid
 
 ## <a name="sign-in-to-azure-time-series-insights"></a>Aanmelden bij Azure Time Series Insights
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 1. Zoek uw Azure Time Series Insights omgeving door `Time Series Insights environments` in het **zoekvak** te typen. Selecteer `Time Series Insights environments` in de zoek resultaten.
 1. Selecteer uw Azure Time Series Insights omgeving in de lijst.
 

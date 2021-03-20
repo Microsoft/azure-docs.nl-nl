@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
 ms.openlocfilehash: ea9e2154b3f6a8863b5ca20d2dd54774b0d3fc99
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92515044"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-reflektive"></a>Zelfstudie: Azure Active Directory-integratie met Reflektive
@@ -49,7 +49,7 @@ Voor het configureren van de integratie van Reflektive in Microsoft Azure Active
 
 **Voer de volgende stappen uit om Reflektive toe te voegen vanuit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -61,7 +61,7 @@ Voor het configureren van de integratie van Reflektive in Microsoft Azure Active
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **Reflektive** , selecteer **Reflektive** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **Reflektive**, selecteer **Reflektive** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
      ![Reflektive in de lijst met resultaten](common/search-new-app.png)
 
@@ -113,7 +113,7 @@ Voer de volgende stappen uit om eenmalige aanmelding van Microsoft Azure AD met 
     In het tekstvak **Aanmeldings-URL** typt u een URL: `https://www.reflektive.com/app`
 
     > [!NOTE]
-    > Voor de SP-modus moet u de e-mail-id ophalen die bij het [Reflektive-ondersteuningsteam](https://support@reflektive.com) is geregistreerd. Wanneer u uw id invoert in het tekstvak **E-mail** , wordt de optie voor eenmalige aanmelding ingeschakeld. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
+    > Voor de SP-modus moet u de e-mail-id ophalen die bij het [Reflektive-ondersteuningsteam](https://support@reflektive.com) is geregistreerd. Wanneer u uw id invoert in het tekstvak **E-mail**, wordt de optie voor eenmalige aanmelding ingeschakeld. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
 6. Op de pagina **Eenmalige aanmelding met SAML instellen** in het gedeelte **SAML-handtekeningcertificaat** klikt u op **Downloaden** om het **XML-bestand met federatieve metagegevens**  te downloaden uit de gegeven opties overeenkomstig met wat u nodig hebt, en slaat u dit op uw computer op.
 
@@ -137,7 +137,7 @@ Als u eenmalige aanmelding aan de zijde van **Reflektive** wilt configureren, mo
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 

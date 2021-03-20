@@ -10,10 +10,10 @@ ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 09/27/2019
 ms.openlocfilehash: 13594886b83d4474ee2531185db5868a5198ca64
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91541952"
 ---
 # <a name="number-prebuilt-entity-for-a-luis-app"></a>Aantal vooraf samengestelde entiteiten voor een LUIS-app
@@ -24,7 +24,7 @@ Nummer wordt beheerd vanuit de map [recognizers-text](https://github.com/Microso
 
 ## <a name="examples-of-number-resolution"></a>Voor beelden van nummer omzetting
 
-| Utterance        | Entiteit   | Oplossing |
+| Uiting        | Entiteit   | Oplossing |
 | ------------- |:----------------:| --------------:|
 | ```one thousand times```  | ```"one thousand"``` |   ```"1000"```      |
 | ```1,000 people```        | ```"1,000"```    |   ```"1000"```      |
@@ -103,6 +103,6 @@ In het volgende voor beeld ziet u een JSON-reactie van LUIS, die de resolutie va
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over het [v3-Voorspellings eindpunt](luis-migration-api-v3.md).
+Meer informatie over het [V3-voorspellingseindpunt](luis-migration-api-v3.md).
 
 Meer informatie over de [valuta](luis-reference-prebuilt-currency.md), het [rang telwoord](luis-reference-prebuilt-ordinal.md)en het [percentage](luis-reference-prebuilt-percentage.md).

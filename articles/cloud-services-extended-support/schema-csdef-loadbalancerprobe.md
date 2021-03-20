@@ -9,10 +9,10 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.custom: ''
 ms.openlocfilehash: 10e42e502a1f435d06d52d22d5c1e1924a46e575
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98744556"
 ---
 # <a name="azure-cloud-services-extended-support-definition-loadbalancerprobe-schema"></a>Azure Cloud Services (Extended support) definitie LoadBalancerProbe-schema

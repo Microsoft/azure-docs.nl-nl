@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/15/2020
 ms.author: erhopf
 ms.openlocfilehash: 7386cfaaf410614c6eeee19669f8f769ad691c1f
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99215000"
 ---
 Als u een Visual Studio-project voor UWP-ontwikkeling (Universeel Windows-platform) wilt maken, moet u ontwikkelingsopties voor Visual Studio instellen, het project maken, de doelarchitectuur selecteren, audio-opname instellen en de Speech-SDK installeren.
@@ -63,7 +63,7 @@ Maak vervolgens uw project:
 
    ![helloworld-project: Visual Studio](../articles/cognitive-services/Speech-Service/media/sdk/vs-enable-uwp-helloworld.png)
 
-Selecteer nu de doelplatformarchitectuur. Ga op de werkbalk van Visual Studio naar de vervolgkeuzelijst **Solution Platforms** (Oplossingsplatforms). (Als u deze niet ziet, kiest u **View** (Beeld) > **Toolbars** (Werkbalken) > **Standard** (Standaard) om de werkbalk met **Solution Platforms** weer te geven.) Als u een 64-bits versie van Windows gebruikt, kiest u **x64** in de vervolgkeuzelijst. Met 64-bits Windows kunt u ook 32-bits toepassingen uitvoeren, dus u kunt **x86** kiezen als u dat liever hebt.
+Selecteer nu de doelplatformarchitectuur. Ga op de werkbalk van Visual Studio naar de vervolgkeuzelijst **Oplossingsplatformen**. (Als u deze niet ziet, kiest u **Beeld** > **Werkbalken** > **Standaard** om de werkbalk met **Oplossingsplatformen** weer te geven.) Als u een 64-bits versie van Windows gebruikt, kiest u **x64** in de vervolgkeuzelijst. Met 64-bits Windows kunt u ook 32-bits toepassingen uitvoeren, dus u kunt **x86** kiezen als u dat liever hebt.
 
 > [!NOTE]
 > De Speech-SDK ondersteunt alle Intel-compatibele processors, maar **alleen x64**-versies van ARM-processors.
@@ -84,9 +84,9 @@ Mogelijk maken dat het project audio-invoer vastlegt:
 
 ### <a name="install-the-speech-sdk"></a>De Speech-SDK installeren
 
-Installeer tot slot het [Speech SDK NuGet package](https://aka.ms/csspeech/nuget) en verwijs in uw project naar de Speech-SDK:
+Installeer tot slot het [Speech SDK NuGet-pakket](https://aka.ms/csspeech/nuget) en verwijs in uw project naar de Speech SDK:
 
-1. Klik in **Solution Explorer** met de rechtermuisknop op de oplossing en kies **Manage NuGet Packages for Solution** (NuGet-pakketten voor oplossing beheren) om naar het venster **NuGet - Solution** te gaan.
+1. Klik in **Solution Explorer** met de rechtermuisknop op de oplossing en kies **NuGet-pakketten voor oplossing beheren** om naar het venster **NuGet - Oplossing** te gaan.
 
 1. Selecteer **Bladeren**.
 
@@ -102,6 +102,6 @@ Installeer tot slot het [Speech SDK NuGet package](https://aka.ms/csspeech/nuget
 
 1. Selecteer **Installeren**.
 
-1. Selecteer **OK** in het dialoog venster **Preview Changes** (Voorbeeld van wijzigingen bekijken).
+1. Selecteer **OK** in het dialoogvenster **Voorbeeld van wijzigingen bekijken**.
 
-1. Lees de licentie in het dialoogvenster **License Acceptance** (Acceptatie van licentie) en selecteer **I Accept** (Ik ga akkoord). De installatie van het pakket wordt gestart, en wanneer de installatie is voltooid, wordt in het deelvenster **Output** (Uitvoer) een bericht weergegeven met een bericht als `Successfully installed 'Microsoft.CognitiveServices.Speech 1.15.0' to helloworld`.
+1. Lees de licentie in het dialoogvenster **Acceptatie van licentie** en selecteer **Ik ga akkoord**. De installatie van het pakket wordt gestart, en wanneer de installatie is voltooid, wordt in het deelvenster **Uitvoer** een bericht weergegeven met een bericht als `Successfully installed 'Microsoft.CognitiveServices.Speech 1.15.0' to helloworld`.

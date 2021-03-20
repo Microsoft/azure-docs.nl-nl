@@ -9,10 +9,10 @@ ms.date: 01/19/2021
 ms.author: tamram
 ms.custom: include file
 ms.openlocfilehash: 0914cf9515930e23e4134181ffe8332e36eacffe
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98612900"
 ---
 Azure Blob Storage is Microsoft's oplossing voor de opslag van objecten in de cloud. Blob Storage is geoptimaliseerd voor het opslaan van enorme hoeveelheden niet-structureerde gegevens. Ongestructureerde gegevens zijn gegevens die niet voldoen aan een bepaald gegevensmodel of bepaalde definitie, zoals tekst of binaire gegevens.

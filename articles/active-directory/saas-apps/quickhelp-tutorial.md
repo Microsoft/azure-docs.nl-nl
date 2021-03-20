@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
 ms.openlocfilehash: 2f74314f28e4f2f7c8c084169356c8fa7992519d
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92515233"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-quickhelp"></a>Zelfstudie: Azure Active Directory-integratie met QuickHelp
@@ -43,7 +43,7 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 * QuickHelp biedt ondersteuning voor met **SP** geïnitieerde eenmalige aanmelding
 
-* QuickHelp biedt ondersteuning voor **Just-In-Time** -inrichting van gebruikers
+* QuickHelp biedt ondersteuning voor **Just-In-Time**-inrichting van gebruikers
 
 ## <a name="adding-quickhelp-from-the-gallery"></a>QuickHelp toevoegen uit de galerie
 
@@ -51,11 +51,11 @@ Voor het configureren van de integratie van QuickHelp in Azure AD, moet u QuickH
 
 **Ga als volgt te werk om QuickHelp vanuit de galerie toe te voegen:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -63,13 +63,13 @@ Voor het configureren van de integratie van QuickHelp in Azure AD, moet u QuickH
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **QuickHelp** , selecteer **QuickHelp** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **QuickHelp**, selecteer **QuickHelp** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
      ![QuickHelp in de lijst met resultaten](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In deze sectie gaat u eenmalige aanmelding met Azure AD bij QuickHelp configureren en testen op basis van een testgebruiker met de naam **Britta Simon** .
+In deze sectie gaat u eenmalige aanmelding met Azure AD bij QuickHelp configureren en testen op basis van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tot stand is gebracht tussen een Azure AD-gebruiker en de gerelateerde gebruiker in QuickHelp.
 
 Als u eenmalige aanmelding van Azure AD wilt configureren en testen met QuickHelp, voert u de volgende stappen uit:
@@ -87,7 +87,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voer de volgende stappen uit als u eenmalige aanmelding met Azure AD bij QuickHelp wilt configureren:
 
-1. In de [Azure Portal](https://portal.azure.com/) selecteert u **Eenmalige aanmelding** op de integratiepagina van de toepassing **QuickHelp** .
+1. In de [Azure Portal](https://portal.azure.com/) selecteert u **Eenmalige aanmelding** op de integratiepagina van de toepassing **QuickHelp**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -128,37 +128,37 @@ Voer de volgende stappen uit als u eenmalige aanmelding met Azure AD bij QuickHe
 
 1. Meld u als beheerder aan bij de bedrijfssite van QuickHelp.
 
-2. Klik in het menu bovenaan op **Admin** .
+2. Klik in het menu bovenaan op **Admin**.
    
     ![Schermopname van de menuopdracht Admin voor Brainstorm.][21]
 
-3. Klik in het menu **QuickHelp Admin** op **Settings** .
+3. Klik in het menu **QuickHelp Admin** op **Settings**.
    
     ![Schermopname met Settings geselecteerd in het menu Admin van QuickHelp.][22]
 
-4. Klik op **Verificatie-instellingen** .
+4. Klik op **Verificatie-instellingen**.
 
 5. Voer op de pagina **Verificatie-instellingen** de volgende stappen uit
    
     ![Schermopname van de pagina Verificatie-instellingen waarin u de beschreven waarden kunt invoeren.][23]
    
-    a. Selecteer **WSFederation** als **SSO-type** .
+    a. Selecteer **WSFederation** als **SSO-type**.
    
-    b. Als u uw gedownloade Azure-metagegevensbestand wilt uploaden, klikt u op **Bladeren** , navigeert u naar het bestand en klikt u op **Metagegevens uploaden** .
+    b. Als u uw gedownloade Azure-metagegevensbestand wilt uploaden, klikt u op **Bladeren**, navigeert u naar het bestand en klikt u op **Metagegevens uploaden**.
    
-    c. Typ `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress` in het tekstvak **E-mailadres** .
+    c. Typ `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress` in het tekstvak **E-mailadres**.
    
-    d. In het tekstvak **Voornaam** , `type http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`.
+    d. In het tekstvak **Voornaam**, `type http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`.
    
-    e. In het tekstvak **Achternaam** , `type http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`.
+    e. In het tekstvak **Achternaam**, `type http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`.
    
-    f. Klik in de **Actiebalk** op **Opslaan** .
+    f. Klik in de **Actiebalk** op **Opslaan**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -176,13 +176,13 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 
-    d. Klik op **Create** .
+    d. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot QuickHelp.
 
-1. Selecteer **Bedrijfstoepassingen** in Azure Portal, selecteer **Alle toepassingen** en selecteer vervolgens **QuickHelp** .
+1. Selecteer **Bedrijfstoepassingen** in Azure Portal, selecteer **Alle toepassingen** en selecteer vervolgens **QuickHelp**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -190,11 +190,11 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
     ![De koppeling naar QuickHelp in de lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -202,7 +202,7 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
 6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="create-quickhelp-test-user"></a>Een QuickHelp-testgebruiker maken
 

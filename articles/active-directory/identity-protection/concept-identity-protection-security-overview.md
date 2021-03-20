@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 95c589289d77597be2550673944c8fa21902e0fb
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93098464"
 ---
 # <a name="azure-active-directory-identity-protection---security-overview"></a>Azure Active Directory Identity Protection: overzicht van de beveiliging
@@ -45,7 +45,7 @@ Dit diagram toont het aantal Risk ante aanmeldingen dat tijdens de gekozen tijds
 
 De tegel gebruikers met een hoog risico toont het nieuwste aantal gebruikers met een hoge kans op inbreuk op de identiteit. Deze moeten de hoogste prioriteit voor onderzoek zijn. Als u op de tegel ' gebruikers van hoog risico ' klikt, wordt een omleiding naar een gefilterde weer gave van het rapport Risk ante gebruikers weer gegeven met alleen gebruikers met een risico niveau hoog. Met dit rapport kunt u meer informatie vinden en deze gebruikers herstellen met een wacht woord opnieuw instellen.
 
-:::image type="content" source="./media/concept-identity-protection-security-overview/02.png" alt-text="Scherm afbeelding van het Azure Portal Security-overzicht. Staaf diagrammen laten het aantal Risico's in de loop van de tijd zien. Tegels beschrijven informatie over gebruikers en aanmeldingen." border="false":::
+:::image type="content" source="./media/concept-identity-protection-security-overview/02.png" alt-text="Scherm afbeelding van het overzicht van de Azure Portal beveiliging, met tegels die zichtbaar zijn voor gebruikers met een hoog risico en middel grote Risico's en andere risico factoren." border="false":::
 
 ### <a name="medium-risk-users"></a>Gebruikers met een gemiddeld risico
 De tegel gebruikers met een gemiddeld risico toont het nieuwste aantal gebruikers met een gemiddelde kans op inbreuk op de identiteit. Als u op de tegel ' gebruikers van middel grote risico ' klikt, wordt een gefilterde weer gave van het rapport Risk ante gebruikers omgeleid naar een gemiddeld risico niveau. Met dit rapport kunt u deze gebruikers verder onderzoeken en oplossen.

@@ -9,10 +9,10 @@ ms.date: 12/27/2019
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: b7c097306ba46d4f0024aecc55994508e2d8a090
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96011699"
 ---
 Om uw gegevens in uw Azure-bestandsshares te beschermen tegen gegevensverlies of beschadiging, bewaren alle Azure-bestandsshares meerdere kopieën van elk bestand wanneer ze worden geschreven. Afhankelijk van de vereisten van uw werkbelasting, kan u aanvullende maten van redundantie selecteren. Azure Files ondersteunt momenteel de volgende opties voor gegevensredundantie:

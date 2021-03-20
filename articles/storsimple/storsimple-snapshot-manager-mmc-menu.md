@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 06/05/2017
 ms.author: alkohli
 ms.openlocfilehash: 01064c3668b673baea7aedd9a65c92b03c48dc10
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90056000"
 ---
 # <a name="use-the-mmc-menu-actions-in-storsimple-snapshot-manager"></a>Gebruik de acties van het MMC-menu in StorSimple Snapshot Manager
@@ -40,7 +40,7 @@ U kunt de **weergave** optie gebruiken om de weer gave van het deel venster met 
 #### <a name="to-change-the-results-pane-view"></a>De weer gave van het resultaten venster wijzigen
 1. Klik op het pictogram bureau blad om StorSimple Snapshot Manager te starten.
 2. Klik in het deel venster **bereik** met de rechter muisknop op een knoop punt of vouw het knoop punt uit en klik met de rechter muisknop op een item in het **resultaten** venster en klik vervolgens op de **weergave** optie. 
-3. Klik op **kolommen toevoegen/verwijderen**om de kolommen toe te voegen aan of te verwijderen die worden weer gegeven in het **resultaten** venster. Het dialoog venster **kolommen toevoegen/verwijderen** wordt weer gegeven.
+3. Klik op **kolommen toevoegen/verwijderen** om de kolommen toe te voegen aan of te verwijderen die worden weer gegeven in het **resultaten** venster. Het dialoog venster **kolommen toevoegen/verwijderen** wordt weer gegeven.
    
     ![Kolommen toevoegen aan of verwijderen uit het resultaten venster](./media/storsimple-snapshot-manager-mmc-menu/HCS_SSM_Add_remove_columns.png) 
 4. Vul het formulier als volgt in:
@@ -53,7 +53,7 @@ U kunt de **weergave** optie gebruiken om de weer gave van het deel venster met 
 
 #### <a name="to-change-the-console-window-view"></a>De weer gave van het console venster wijzigen
 1. Klik op het pictogram bureau blad om StorSimple Snapshot Manager te starten.
-2. Klik in het deel venster **bereik** met de rechter muisknop op een knoop punt, klik op **weer geven**en klik vervolgens op **aanpassen**. Het dialoog venster **aanpassen** wordt weer gegeven.
+2. Klik in het deel venster **bereik** met de rechter muisknop op een knoop punt, klik op **weer geven** en klik vervolgens op **aanpassen**. Het dialoog venster **aanpassen** wordt weer gegeven.
    
     ![Het console venster aanpassen](./media/storsimple-snapshot-manager-mmc-menu/HCS_SSM_Customize.png) 
 3. Schakel de selectie vakjes in of uit om items in het console venster weer te geven of te verbergen. Wanneer u klaar bent met uw selecties, klikt u op **OK**.

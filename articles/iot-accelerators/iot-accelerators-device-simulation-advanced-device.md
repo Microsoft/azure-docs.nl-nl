@@ -14,10 +14,10 @@ ms.custom:
 - mqtt
 - devx-track-js
 ms.openlocfilehash: 58891bdb4601744129c97454f43202d3ba07b709
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96852554"
 ---
 # <a name="create-an-advanced-device-model"></a>Een geavanceerd apparaatmodel maken
@@ -30,11 +30,11 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 
 Als u de stappen in deze hand leiding wilt volgen, hebt u een geïmplementeerd exemplaar van Device simulatie in uw Azure-abonnement nodig.
 
-Zie [device simulatie Deployment](https://github.com/Azure/device-simulation-dotnet/blob/master/README.md) op github als u nog geen apparaat simulatie hebt geïmplementeerd.
+Als u nog geen apparaatsimulatie hebt geïmplementeerd, raadpleegt u [Apparaatsimulatie implementeren](https://github.com/Azure/device-simulation-dotnet/blob/master/README.md) in GitHub.
 
 ### <a name="open-device-simulation"></a>Apparaatsimulatie openen
 
-Zie [device simulatie Deployment](https://github.com/Azure/device-simulation-dotnet/blob/master/README.md) op github als u nog geen apparaat simulatie hebt geïmplementeerd.
+Als u nog geen apparaatsimulatie hebt geïmplementeerd, raadpleegt u [Apparaatsimulatie implementeren](https://github.com/Azure/device-simulation-dotnet/blob/master/README.md) in GitHub.
 
 ## <a name="device-models"></a>Apparaatmodellen
 

@@ -11,10 +11,10 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.date: 03/12/2020
 ms.openlocfilehash: 67b398194d9094cd99fccaa85ed0df3be362ce2b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91618009"
 ---
 # <a name="enabling-service-aided-subnet-configuration-for-azure-sql-managed-instance"></a>De configuratie van het service-geaidede subnet inschakelen voor een beheerd exemplaar van Azure SQL
@@ -22,7 +22,7 @@ ms.locfileid: "91618009"
 
 Service-aided subnet-configuratie biedt geautomatiseerd netwerk configuratie beheer voor subnetten die als host fungeren voor beheerde instanties. Met Service-aided subnet-configuratie gebruiker behoudt de volledige controle over de toegang tot gegevens (TDS-verkeer stromen) terwijl het beheerde exemplaar verantwoordelijk is voor een ononderbroken stroom van beheer verkeer om te voldoen aan de SLA.
 
-Automatisch geconfigureerde netwerk beveiligings groepen en route tabel regels zijn zichtbaar voor de klant en worden gemarkeerd met het voor voegsel _micro soft. SQL-managedInstances_UseOnly__.
+Automatisch geconfigureerde netwerk beveiligings groepen en route tabel regels zijn zichtbaar voor de klant en worden gemarkeerd met het voor voegsel _micro soft. SQL-managedInstances_UseOnly_ _.
 
 De service-geaidede configuratie wordt automatisch ingeschakeld wanneer u [subnet-delegering](../../virtual-network/subnet-delegation-overview.md) voor de resource provider inschakelt `Microsoft.Sql/managedInstances` .
 

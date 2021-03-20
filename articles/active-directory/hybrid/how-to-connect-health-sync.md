@@ -17,10 +17,10 @@ ms.author: billmath
 ms.custom: H1Hack27Feb2017
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e803614a02e76d179579a2258abd563b5c58e63a
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98016980"
 ---
 # <a name="monitor-azure-ad-connect-sync-with-azure-ad-connect-health"></a>De Azure AD Connect synchronisatie met Azure AD Connect Health bewaken
@@ -88,7 +88,7 @@ In het rapport worden de bestaande synchronisatiefouten in de volgende categorie
 | Gegevensvalidatiefout |Fouten vanwege ongeldige gegevens, zoals niet-ondersteunde tekens in essentiële kenmerken, zoals UserPrincipalName, indelingsfouten die de validatie niet doorstaan voordat ze naar Azure AD worden geschreven. |
 | Federatief domein wijzigen | Fouten wanneer accounts een ander federatief domein gebruiken. |
 | Groot-kenmerk |Fouten wanneer een of meer kenmerken groter zijn dan de toegestane grootte, lengte of aantal. |
-| Overig |Alle andere fouten die niet in de bovenstaande categorieën passen. Op basis van feedback wordt deze categorie in subcategorieën gesplitst. |
+| Anders |Alle andere fouten die niet in de bovenstaande categorieën passen. Op basis van feedback wordt deze categorie in subcategorieën gesplitst. |
 
 ![Overzicht van synchronisatiefoutenrapport](./media/how-to-connect-health-sync/errorreport01.png)
 ![Categorieën in synchronisatiefoutenrapport](./media/how-to-connect-health-sync/SyncErrorByTypes.PNG)

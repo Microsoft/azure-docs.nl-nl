@@ -13,10 +13,10 @@ ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a805f643e5f93270fe4721f527073baa9a1e4c8d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87908762"
 ---
 # <a name="auditing-and-reporting-a-b2b-collaboration-user"></a>Een B2B-samenwerkings gebruiker controleren en rapporteren
@@ -27,7 +27,7 @@ U kunt toegangs beoordelingen gebruiken om periodiek te controleren of gast gebr
 
 ## <a name="audit-logs"></a>Auditlogboeken
 
-De audit logboeken van Azure AD bieden records van systeem-en gebruikers activiteiten, waaronder activiteiten die worden geïnitieerd door gast gebruikers. Als u de controle logboeken wilt openen, selecteert u in **Azure Active Directory** **controle logboeken**onder **bewaking**. Hier volgt een voor beeld van de uitnodiging en de geschiedenis van de genodigden van de SAM oogle:
+De audit logboeken van Azure AD bieden records van systeem-en gebruikers activiteiten, waaronder activiteiten die worden geïnitieerd door gast gebruikers. Als u de controle logboeken wilt openen, selecteert u in **Azure Active Directory** **controle logboeken** onder **bewaking**. Hier volgt een voor beeld van de uitnodiging en de geschiedenis van de genodigden van de SAM oogle:
 
 ![Scherm afbeelding met een voor beeld van een controle logboek uitvoer](./media/auditing-and-reporting/audit-log.png)
 

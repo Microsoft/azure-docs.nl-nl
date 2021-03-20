@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 06/05/2016
 ms.author: alkohli
 ms.openlocfilehash: 16d782c6a25d8d2d8e1323b7cb683f41d8c99649
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90054973"
 ---
 # <a name="use-storsimple-snapshot-manager-to-administer-your-storsimple-solution"></a>StorSimple Snapshot Manager gebruiken om uw StorSimple-oplossing te beheren
@@ -50,7 +50,7 @@ U kunt de StorSimple-Snapshot Manager gebruiken om huidige, geplande en voltooid
 |:--- |:--- |
 | Meer informatie over StorSimple Snapshot Manager |[Wat is StorSimple Snapshot Manager?](storsimple-what-is-snapshot-manager.md) |
 | StorSimple installeren Snapshot Manager<br>StorSimple opnieuw installeren Snapshot Manager<br>StorSimple verwijderen Snapshot Manager |[StorSimple implementeren Snapshot Manager](storsimple-snapshot-manager-deployment.md) |
-| Gebruik StorSimple Snapshot Manager menu's en-functies:<ul><li>Menu balk</li><li>Werk balk</li><li>Deel venster bereik</li><li>Resultaten deel venster</li><li>Acties deel venster</li><li>Toetsenbord navigatie en snelkoppelingen</li></ul> |[StorSimple Snapshot Manager gebruikers interface](storsimple-use-snapshot-manager.md) |
+| Gebruik StorSimple Snapshot Manager menu's en-functies:<ul><li>Menubalk</li><li>Werk balk</li><li>Deel venster bereik</li><li>Resultaten deel venster</li><li>Acties deel venster</li><li>Toetsenbord navigatie en snelkoppelingen</li></ul> |[StorSimple Snapshot Manager gebruikers interface](storsimple-use-snapshot-manager.md) |
 | Gebruik de algemene MMC-functies die zijn opgenomen in StorSimple Snapshot Manager:<ul><li>Weergave</li><li>Nieuw venster vanaf hier</li><li>Vernieuwen</li><li>Lijst exporteren</li><li>Help</li></ul> |[Gebruik de acties van het MMC-menu in StorSimple Snapshot Manager](storsimple-snapshot-manager-mmc-menu.md) |
 | Een apparaat toevoegen of vervangen<br>Een apparaat verbinden<br>Geïmporteerde volume groepen controleren<br>Verbonden apparaten vernieuwen<br>Een apparaat verifiëren<br>Apparaatdetails weergeven<br>Een apparaatconfiguratie verwijderen<br>Een apparaatwachtwoord wijzigen<br>Een mislukt apparaat vervangen<br> |[StorSimple Snapshot Manager gebruiken om verbinding te maken en StorSimple-apparaten te beheren](storsimple-snapshot-manager-manage-devices.md) |
 | Volumes koppelen<br>Informatie over volumes weer geven<br>Een volume verwijderen<br>Volumes opnieuw scannen<br>Een standaard volume configureren en een back-up maken<br>Een dynamisch gespiegeld volume configureren en een back-up maken |[StorSimple Snapshot Manager gebruiken om volumes weer te geven en te beheren](storsimple-snapshot-manager-manage-volumes.md) |

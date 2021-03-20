@@ -6,10 +6,10 @@ ms.author: flborn
 ms.date: 02/10/2020
 ms.topic: article
 ms.openlocfilehash: 49027899d66a2192cc311fb4dba66e441155b527
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92206846"
 ---
 # <a name="scene-lighting"></a>Afbeeldingsbelichting
@@ -46,7 +46,7 @@ In azure-rendering op afstand `PointLightComponent` kan het niet alleen licht va
 
 ## <a name="spot-light"></a>Spot licht
 
-Het `SpotLightComponent` is vergelijkbaar met het `PointLightComponent` licht, maar het lampje is beperkt tot de vorm van een kegel. De afdruk stand van de kegel wordt gedefinieerd door de *negatieve z-as van de eigenaar*van de entiteit.
+Het `SpotLightComponent` is vergelijkbaar met het `PointLightComponent` licht, maar het lampje is beperkt tot de vorm van een kegel. De afdruk stand van de kegel wordt gedefinieerd door de *negatieve z-as van de eigenaar* van de entiteit.
 
 ### <a name="spotlightcomponent-properties"></a>SpotLightComponent-eigenschappen
 

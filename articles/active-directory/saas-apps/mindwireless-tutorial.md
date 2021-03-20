@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 10/15/2019
 ms.author: jeedes
 ms.openlocfilehash: 7ad7676981173400c4c5f13ec276d0c376ac704f
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92518939"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-mindwireless"></a>Zelfstudie: Eenmalige aanmelding (SSO) van Azure Active Directory integreren met mindWireless
@@ -95,7 +95,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
     | Werknemers-id | `http://schemas.xmlsoap.org/ws/2005/05/identity/claims`| user.employeeid |
 
     > [!NOTE]
-    > De naam van de claim is altijd **Werknemers-id** en heeft de waarde die we hebben toegewezen aan **user.employeeid** , die de werknemers-id van de gebruiker bevat. De gebruikerstoewijzing van Azure AD naar mindWireless wordt uitgevoerd op basis van de werknemers-id, maar u kunt een andere waarde gebruiken op basis van de toepassingsinstellingen. Overleg eerst met het [ondersteuningsteam van mindWireless](mailto:sdulloor@mindwireless.com) om de juiste id van een gebruiker te gebruiken en wijs die waarde toe met de **werknemers-id** -claim.
+    > De naam van de claim is altijd **Werknemers-id** en heeft de waarde die we hebben toegewezen aan **user.employeeid**, die de werknemers-id van de gebruiker bevat. De gebruikerstoewijzing van Azure AD naar mindWireless wordt uitgevoerd op basis van de werknemers-id, maar u kunt een andere waarde gebruiken op basis van de toepassingsinstellingen. Overleg eerst met het [ondersteuningsteam van mindWireless](mailto:sdulloor@mindwireless.com) om de juiste id van een gebruiker te gebruiken en wijs die waarde toe met de **werknemers-id**-claim.
 
 1. Op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** gaat u naar **Certificaat (Base64)** en selecteert u **Downloaden** om het certificaat te downloaden en op te slaan op uw computer.
 
@@ -109,9 +109,9 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
@@ -137,7 +137,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
 ## <a name="configure-mindwireless-sso"></a>Eenmalige aanmelding van mindWireless configureren
 
-Als u eenmalige aanmelding wilt configureren in **mindWireless** , moet u het gedownloade **Certificaat (Base64)** en de juiste gekopieerde URL’s uit Azure Portal verzenden naar het [ondersteuningsteam van mindWireless](mailto:sdulloor@mindwireless.com). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding wilt configureren in **mindWireless**, moet u het gedownloade **Certificaat (Base64)** en de juiste gekopieerde URL’s uit Azure Portal verzenden naar het [ondersteuningsteam van mindWireless](mailto:sdulloor@mindwireless.com). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-mindwireless-test-user"></a>mindWireless-testgebruiker maken
 

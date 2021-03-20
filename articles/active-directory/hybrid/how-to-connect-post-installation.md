@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7d6689b4b67b8462e983ae9b111e0fbc60c422b7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89657111"
 ---
 # <a name="next-steps-and-how-to-manage-azure-ad-connect"></a>Volgende stappen en het beheren van Azure AD Connect
@@ -38,7 +38,7 @@ Nu uw gebruikers zijn gesynchroniseerd met de Cloud, moet u ze een licentie toew
 2. Selecteer aan de linkerkant **Active Directory**.
 3. Dubbel klik op de pagina **Active Directory** op de map met de gebruikers die u wilt instellen.
 4. Selecteer boven aan de pagina met de adreslijst **Licenties**.
-5. Selecteer op de pagina **licenties** **Active Directory Premium** -of **Enter prise Mobility Suite**en klik vervolgens op **toewijzen**.
+5. Selecteer op de pagina **licenties** **Active Directory Premium** -of **Enter prise Mobility Suite** en klik vervolgens op **toewijzen**.
 6. Selecteer in het dialoogvenster de gebruikers aan wie u een licentie wilt toewijzen en klik op het vinkje om de wijzigingen op te slaan.
 
 ## <a name="verify-the-scheduled-synchronization-task"></a>De geplande synchronisatie taak controleren

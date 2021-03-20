@@ -6,10 +6,10 @@ ms.topic: reference
 ms.date: 1/16/2020
 ms.author: jejarry
 ms.openlocfilehash: 4682eee93b5ff9f01e65611e8d5e0920930776a5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86257248"
 ---
 # <a name="sfctl-mesh"></a>sfctl mesh
@@ -23,7 +23,7 @@ Service Fabric-mesh-toepassingen verwijderen en beheren.
 | [inhoudsdistributiepad](service-fabric-sfctl-mesh-deployment.md) | Service Fabric netresources maken. |
 | [#b0](service-fabric-sfctl-mesh-gateway.md) | Netgateway-resources ophalen en verwijderen. |
 | [netwerk](service-fabric-sfctl-mesh-network.md) | Net-netwerk resources ophalen en verwijderen. |
-| [gescheiden](service-fabric-sfctl-mesh-secret.md) | Geheim bronnen van het net ophalen en verwijderen. |
+| [geheim](service-fabric-sfctl-mesh-secret.md) | Geheim bronnen van het net ophalen en verwijderen. |
 | [secretvalue](service-fabric-sfctl-mesh-secretvalue.md) | Net secretvalue-resources ophalen en verwijderen. |
 | [service](service-fabric-sfctl-mesh-service.md) | Haal service Details en lijst Services van een toepassings bron op. |
 | [Service-replica](service-fabric-sfctl-mesh-service-replica.md) | Replica Details ophalen en replica's van een bepaalde service in een toepassings bron weer geven. |

@@ -6,10 +6,10 @@ ms.service: data-lake-analytics
 ms.topic: troubleshooting
 ms.date: 10/11/2019
 ms.openlocfilehash: ab03ea8a88187289f5dce55f8a396a9d51346a3f
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92217674"
 ---
 # <a name="azure-data-lake-analytics-is-upgrading-to-the-net-framework-v472"></a>Azure Data Lake Analytics wordt bijgewerkt naar de .NET Framework v-4.7.2
@@ -61,7 +61,7 @@ De meest voorkomende achterwaartse incompatibiliteiten die de controle waarschij
   - Aanbevolen actie: Zorg ervoor dat TaskFactory. FromAsync correct retourneert
 
 - Data object. GetData haalt gegevens nu op als UTF-8
-  - Voor apps die zijn gericht op de .NET Framework 4 of die worden uitgevoerd op de .NET Framework 4.5.1 of eerdere versies, wordt met Data object. GetData HTML-gegevens opgehaald als een ASCII-teken reeks. Als gevolg hiervan worden niet-ASCII-tekens (tekens waarvan de ASCII-codes groter zijn dan 0x7F) weer gegeven met twee wille keurige tekens. #N # #N # voor apps die zijn gericht op de .NET Framework 4,5 of hoger en die worden uitgevoerd op de .NET Framework 4.5.2, `DataObject.GetData` haalt gegevens op die zijn opgemaakt als UTF-8, wat tekens groter dan 0x7F bevat.
+  - Voor apps die zijn gericht op de .NET Framework 4 of die worden uitgevoerd op de .NET Framework 4.5.1 of eerdere versies, wordt met Data object. GetData HTML-gegevens opgehaald als een ASCII-teken reeks. Als gevolg hiervan worden niet-ASCII-tekens (tekens waarvan de ASCII-codes groter zijn dan 0x7F) vertegenwoordigd door twee wille keurige tekens. #N # #N#For-apps die zijn gericht op de .NET Framework 4,5 of hoger en die worden uitgevoerd op de .NET Framework 4.5.2, `DataObject.GetData` haalt gegevens op in HTML-indeling als UTF-8, wat tekens bevat die groter zijn dan 0x7F.
   - Beïnvloede bibliotheken: Glo
   - Aanbevolen actie: Zorg ervoor dat de opgehaalde gegevens de gewenste indeling hebben
 

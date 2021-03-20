@@ -16,10 +16,10 @@ ms.reviewer: thsomasu
 ms.lastreviewed: 01/04/2019
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 33626b7aee615d07ef88dd9fbca46e6512e2cafc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90090360"
 ---
 # <a name="azure-notification-hubs-rich-push"></a>Azure Notification Hubs Rich push
@@ -142,18 +142,18 @@ Op hoog niveau:
 Nu u de back-end van uw app hebt gewijzigd om alleen de *id* van een melding te verzenden, wijzigt u de IOS-app voor het verwerken van die id en haalt u het uitgebreide bericht op van uw back-end:
 
 1. Open uw iOS-project en Schakel externe meldingen in door naar uw hoofd doel van de app in de sectie **doelen** te gaan.
-2. Selecteer **mogelijkheden**, Schakel **achtergrond modi**in en schakel het selectie vakje **externe meldingen** in.
+2. Selecteer **mogelijkheden**, Schakel **achtergrond modi** in en schakel het selectie vakje **externe meldingen** in.
 
     ![Scherm afbeelding van het iOS-project waarin het scherm mogelijkheden wordt weer gegeven. De achtergrond modi zijn ingeschakeld en het selectie vakje externe meldingen is ingeschakeld.][IOS3]
 3. Open `Main.storyboard` en zorg ervoor dat u over een weergave controller (Home view-controller in deze zelf studie) beschikt vanuit de zelf studie voor de [gebruiker melden](notification-hubs-aspnet-backend-ios-apple-apns-notification.md) .
 4. Voeg een **Navigatie controller** toe aan het Story Board en houd Control ingedrukt en sleep de controller van de start weergave om de **hoofd weergave** van de navigatie te maken. Zorg ervoor dat de controller van de **eerste weer gave** in de kenmerken controle alleen is geselecteerd voor de navigatie controller.
-5. Een **weergave controller** toevoegen aan het Story Board en een **afbeeldings weergave**toevoegen. Dit is de pagina die gebruikers te zien krijgen wanneer ze kiezen om meer te weten te komen door te klikken op de melding. Het Story Board moet er als volgt uitzien:
+5. Een **weergave controller** toevoegen aan het Story Board en een **afbeeldings weergave** toevoegen. Dit is de pagina die gebruikers te zien krijgen wanneer ze kiezen om meer te weten te komen door te klikken op de melding. Het Story Board moet er als volgt uitzien:
 
     ![Scherm afbeelding van een Story Board. Er zijn drie app-schermen zichtbaar: een navigatie weergave, een start weergave en een afbeeldings weergave.][IOS4]
 6. Klik op de **Start weergave controller** in het Story Board en zorg ervoor dat deze **HomeViewController** als de **aangepaste klasse** en het bijbehorende **Story Board-id** onder de identiteits controle.
 7. Doe hetzelfde voor de afbeeldings weergave controller als **imageViewController**.
 8. Maak vervolgens een nieuwe weergave controller klasse met de naam **imageViewController** om de gebruikers interface die u zojuist hebt gemaakt, te verwerken.
-9. Voeg in **imageViewController. h**de volgende code toe aan de interface declaraties van de controller. Zorg ervoor dat u Control ingedrukt houden en slepen van de Story Board-afbeeldings weergave naar deze eigenschappen om de twee te koppelen:
+9. Voeg in **imageViewController. h** de volgende code toe aan de interface declaraties van de controller. Zorg ervoor dat u Control ingedrukt houden en slepen van de Story Board-afbeeldings weergave naar deze eigenschappen om de twee te koppelen:
 
     ```objc
     @property (weak, nonatomic) IBOutlet UIImageView *myImage;
@@ -379,7 +379,7 @@ Nu u de back-end van uw app hebt gewijzigd om alleen de *id* van een melding te 
 
 1. In XCode voert u de app uit op een fysiek iOS-apparaat (push meldingen werken niet in de simulator).
 2. Voer in de gebruikers interface van de iOS-app een gebruikers naam en wacht woord in met dezelfde waarde voor verificatie en klik op **Aanmelden**.
-3. Klik op **Push verzenden** om een waarschuwing in de app weer te geven. Als u op **meer**klikt, wordt u naar de installatie kopie geleid die u in de back-end van uw app hebt gekozen.
+3. Klik op **Push verzenden** om een waarschuwing in de app weer te geven. Als u op **meer** klikt, wordt u naar de installatie kopie geleid die u in de back-end van uw app hebt gekozen.
 4. U kunt ook op **Push verzenden** klikken en direct op de knop Start op het apparaat drukken. Over enkele ogen blikken ontvangt u een push melding. Als u erop tikt of op meer klikt, wordt u naar uw app en de inhoud van de uitgebreide afbeelding geleid.
 
 [IOS1]: ./media/notification-hubs-aspnet-backend-ios-rich-push/rich-push-ios-1.png

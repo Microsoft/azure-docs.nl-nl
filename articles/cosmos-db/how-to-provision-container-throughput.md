@@ -9,10 +9,10 @@ ms.date: 10/14/2020
 ms.author: mjbrown
 ms.custom: devx-track-js, devx-track-azurecli, devx-track-csharp
 ms.openlocfilehash: 4caf43cb972b44dd1482b9e6e467e41cae294708
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93100096"
 ---
 # <a name="provision-standard-manual-throughput-on-an-azure-cosmos-container---sql-api"></a>Standaard doorvoer (hand matig) door Voer voor een Azure Cosmos-container-SQL API
@@ -24,17 +24,17 @@ Als u een andere API gebruikt, raadpleegt u [API voor MongoDb](how-to-provision-
 
 ## <a name="azure-portal"></a>Azure Portal
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 
 1. [Maak een nieuw Azure Cosmos-account](create-sql-api-dotnet.md#create-account)of selecteer een bestaand Azure Cosmos-account.
 
-1. Open het deel venster **Data Explorer** en selecteer **nieuwe container** . Geef de volgende gegevens op:
+1. Open het deel venster **Data Explorer** en selecteer **nieuwe container**. Geef de volgende gegevens op:
 
    * Geef aan of u een nieuwe database maakt of een bestaande database gebruikt.
    * Voer een container-ID in.
    * Voer een waarde voor de partitiesleutel in (bijvoorbeeld `/ItemID`).
    * Voer een door Voer in die u wilt inrichten (bijvoorbeeld 1000 RUs).
-   * Selecteer **OK** .
+   * Selecteer **OK**.
 
     :::image type="content" source="./media/how-to-provision-container-throughput/provision-container-throughput-portal-sql-api.png" alt-text="Schermopname van Data Explorer met Nieuwe verzameling gemarkeerd":::
 

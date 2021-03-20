@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 5/18/2020
 ms.author: derekol
 ms.openlocfilehash: 22cb179925f95fd0762371cc904fcbd02675339a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91540265"
 ---
 # <a name="associate-peer-asn-to-azure-subscription-using-the-portal"></a>Peer-ASN koppelen aan Azure-abonnement met de portal
@@ -39,7 +39,7 @@ Registreer u voor de resource provider voor de peering in uw abonnement door de 
     > [!div class="mx-imgBorder"]
     > ![Abonnement starten](./media/rp-subscriptions-launch.png)
 
-1. Zodra het abonnement wordt geopend, klikt u aan de linkerkant op **resource providers**. Zoek vervolgens in het rechterdeel venster op *peering* in het zoek venster of gebruik de schuif balk om **micro soft. peering** te zoeken en de **status**te bekijken. Als de status is ***geregistreerd***, kunt u de onderstaande stappen overs Laan en door gaan naar de sectie **PeerAsn maken**. Als de status ***NotRegistered***is, selecteert u **micro soft. peering** en klikt u op **REGI ster**.
+1. Zodra het abonnement wordt geopend, klikt u aan de linkerkant op **resource providers**. Zoek vervolgens in het rechterdeel venster op *peering* in het zoek venster of gebruik de schuif balk om **micro soft. peering** te zoeken en de **status** te bekijken. Als de status is **_geregistreerd_*, kunt u de onderstaande stappen overs Laan en door gaan naar sectie _* Create PeerAsn**. Als de status **_NotRegistered_*_ is, selecteert u _* micro soft. peering** en klikt u op **registreren**.
 
     > [!div class="mx-imgBorder"]
     > ![Begin registratie](./media/rp-register-start.png)
@@ -49,7 +49,7 @@ Registreer u voor de resource provider voor de peering in uw abonnement door de 
     > [!div class="mx-imgBorder"]
     > ![Registratie wordt uitgevoerd](./media/rp-register-progress.png)
 
-1. Wacht totdat de registratie is voltooid. Klik vervolgens op **vernieuwen** en controleer of de status is ***geregistreerd***.
+1. Wacht totdat de registratie is voltooid. Klik vervolgens op **vernieuwen** en controleer of de status is **_geregistreerd_**.
 
     > [!div class="mx-imgBorder"]
     > ![Registratie is voltooid](./media/rp-register-completed.png)
@@ -72,7 +72,7 @@ Als Internet provider of provider van Internet Exchange kunt u een nieuwe PeerAs
     > [!div class="mx-imgBorder"]
     > ![Scherm afbeelding toont het tabblad een peer A S N-basis beginselen koppelen.](./media/peerasn-review-tab-validation.png)
 
-1. Wanneer het bericht in het lint wordt *gevalideerd*, controleert u uw gegevens en verzendt u de aanvraag door op **maken**te klikken. Als de validatie niet is geslaagd, klikt u op **vorige** en herhaalt u de bovenstaande stappen om uw aanvraag aan te passen en te controleren of de ingevoerde waarden geen fouten bevatten.
+1. Wanneer het bericht in het lint wordt *gevalideerd*, controleert u uw gegevens en verzendt u de aanvraag door op **maken** te klikken. Als de validatie niet is geslaagd, klikt u op **vorige** en herhaalt u de bovenstaande stappen om uw aanvraag aan te passen en te controleren of de ingevoerde waarden geen fouten bevatten.
 
     > [!div class="mx-imgBorder"]
     > ![Scherm afbeelding toont het tabblad een peer A S N-basis beginselen koppelen waarvoor validatie is geslaagd.](./media/peerasn-review-tab.png)

@@ -8,13 +8,13 @@ author: trkeya
 ms.author: trkeya
 ms.date: 10/01/2020
 ms.openlocfilehash: 1d5f2248d94796d5e3ee76301642a95abddebfe4
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94489332"
 ---
-# <a name="customer-leads-from-your-commercial-marketplace-offer"></a>Leads van klanten van uw aanbieding voor commerciële Marketplace
+# <a name="customer-leads-from-your-commercial-marketplace-offer"></a>Leads van uw aanbieding in de commerciële marketplace
 
 Leads zijn klanten die geïnteresseerd zijn in of implementeren van uw aanbiedingen van [Microsoft AppSource](https://appsource.microsoft.com) en [Azure Marketplace](https://azuremarketplace.microsoft.com). U kunt leads van klanten ontvangen nadat uw aanbieding naar de commerciële Marketplace is gepubliceerd. In dit artikel worden de volgende concepten voor lead management beschreven:
 
@@ -48,21 +48,21 @@ Hier vindt u plaatsen waar een lead wordt gegenereerd:
 
 ## <a name="understand-lead-data"></a>Informatie over leads
 
-Elke lead die u ontvangt tijdens het klant verwervings proces heeft gegevens in specifieke velden. Het eerste veld dat moet worden uitgecheckt `LeadSource` , is het veld, dat de volgende indeling heeft: de aanbieding voor de **bron actie**  |  **Offer**.
+Elke lead die u ontvangt tijdens het klant verwervings proces heeft gegevens in specifieke velden. Het eerste veld dat moet worden uitgecheckt `LeadSource` , is het veld, dat de volgende indeling heeft: de aanbieding voor de **bron actie**  |  .
 
-**Bronnen** : de waarde voor dit veld wordt ingevuld op basis van de Marketplace die de lead heeft gegenereerd. Mogelijke waarden zijn `"AzureMarketplace"` , `"AzurePortal"` en `"AppSource (SPZA)"` .
+**Bronnen**: de waarde voor dit veld wordt ingevuld op basis van de Marketplace die de lead heeft gegenereerd. Mogelijke waarden zijn `"AzureMarketplace"` , `"AzurePortal"` en `"AppSource (SPZA)"` .
 
-**Acties** : de waarde voor dit veld wordt ingevuld op basis van de actie die de klant heeft ondernomen op de Marketplace die de lead heeft gegenereerd.
+**Acties**: de waarde voor dit veld wordt ingevuld op basis van de actie die de klant heeft ondernomen op de Marketplace die de lead heeft gegenereerd.
 
 Mogelijke waarden zijn:
 
-- **' Ins '** : staat voor *installatie*. Deze actie bevindt zich in azure Marketplace of AppSource wanneer een klant uw product aanschaft.
-- **"PLT"** : staat voor een door de *partner geleide proef versie*. Deze actie bevindt zich in AppSource wanneer een klant de optie **contact opnemen** selecteert.
-- **"DNC"** : staat voor *geen contact persoon*. Deze actie bevindt zich in AppSource wanneer een partner die op uw app-pagina is genoteerd, wordt gevraagd om contact met u op te nemen. Er wordt een melding weer gegeven dat deze klant door de gebruiker is opgenomen in uw app, maar waarmee geen contact moet worden opgenomen.
-- **' Maken '** : deze actie bevindt zich alleen in de Azure Portal en wordt gegenereerd wanneer een klant uw aanbieding aan hun account koopt.
-- **"StartTestDrive"** : deze actie is alleen voor de optie **test drive** en wordt gegenereerd wanneer een klant hun test drive start.
+- **' Ins '**: staat voor *installatie*. Deze actie bevindt zich in azure Marketplace of AppSource wanneer een klant uw product aanschaft.
+- **"PLT"**: staat voor een door de *partner geleide proef versie*. Deze actie bevindt zich in AppSource wanneer een klant de optie **contact opnemen** selecteert.
+- **"DNC"**: staat voor *geen contact persoon*. Deze actie bevindt zich in AppSource wanneer een partner die op uw app-pagina is genoteerd, wordt gevraagd om contact met u op te nemen. Er wordt een melding weer gegeven dat deze klant door de gebruiker is opgenomen in uw app, maar waarmee geen contact moet worden opgenomen.
+- **' Maken '**: deze actie bevindt zich alleen in de Azure Portal en wordt gegenereerd wanneer een klant uw aanbieding aan hun account koopt.
+- **"StartTestDrive"**: deze actie is alleen voor de optie **test drive** en wordt gegenereerd wanneer een klant hun test drive start.
 
-**Aanbiedingen** : mogelijk hebt u meerdere aanbiedingen in de commerciële Marketplace. De waarde voor dit veld wordt ingevuld op basis van de aanbieding die de lead heeft gegenereerd. De uitgevers-ID en aanbiedings-ID worden beide in dit veld verzonden en zijn de waarden die u hebt ingevoerd tijdens het publiceren van de aanbieding naar de Marketplace.
+**Aanbiedingen**: mogelijk hebt u meerdere aanbiedingen in de commerciële Marketplace. De waarde voor dit veld wordt ingevuld op basis van de aanbieding die de lead heeft gegenereerd. De uitgevers-ID en aanbiedings-ID worden beide in dit veld verzonden en zijn de waarden die u hebt ingevoerd tijdens het publiceren van de aanbieding naar de Marketplace.
 
 In de volgende voor beelden worden waarden in de verwachte indeling weer gegeven `publisherid.offerid` : 
 
@@ -89,10 +89,10 @@ De gegevens van de klant worden verzonden via meerdere velden. In het volgende v
 
 Hier volgen enkele aanbevelingen voor het aansturen van leads via uw verkoop cyclus:
 
-- **Proces** : Definieer een duidelijk verkoop proces met mijl palen, analyses en duidelijke team eigendom.
-- **Kwalificatie** : Definieer vereisten, die aangeven of een lead volledig is gekwalificeerd. Zorg ervoor dat verkoop-of marketing vertegenwoordigers leads goed kwalificeren voordat ze via het volledige verkoop proces door lopen.
-- **Follow-up** : Vergeet niet binnen 24 uur om te volgen. U krijgt de lead in uw CRM-keuze onmiddellijk nadat de klant een test drive heeft geïmplementeerd. u kunt ze in een e-mail verzenden terwijl ze nog steeds warm zijn. Vraag een telefoon gesprek aan te vragen om beter te kunnen begrijpen of uw product een goede oplossing voor het probleem is. Verwacht wordt dat de gebruikelijke trans actie talloze opvolgings aanroepen vereist.
-- **Nurture** : nurture uw leads om u op weg te helpen met een hogere winst marge. Inchecken, maar niet BOMBARD. We raden u aan om ten minste een paar keer e-mail berichten te verzenden voordat u deze sluit. Geef na de eerste poging niets op. Houd er rekening mee dat deze klanten rechtstreeks samen werken met uw product en tijd hebben besteed aan een gratis proef versie. Dit zijn fantastische kandidaten.
+- **Proces**: Definieer een duidelijk verkoop proces met mijl palen, analyses en duidelijke team eigendom.
+- **Kwalificatie**: Definieer vereisten, die aangeven of een lead volledig is gekwalificeerd. Zorg ervoor dat verkoop-of marketing vertegenwoordigers leads goed kwalificeren voordat ze via het volledige verkoop proces door lopen.
+- **Follow-up**: Vergeet niet binnen 24 uur om te volgen. U krijgt de lead in uw CRM-keuze onmiddellijk nadat de klant een test drive heeft geïmplementeerd. u kunt ze in een e-mail verzenden terwijl ze nog steeds warm zijn. Vraag een telefoon gesprek aan te vragen om beter te kunnen begrijpen of uw product een goede oplossing voor het probleem is. Verwacht wordt dat de gebruikelijke trans actie talloze opvolgings aanroepen vereist.
+- **Nurture**: nurture uw leads om u op weg te helpen met een hogere winst marge. Inchecken, maar niet BOMBARD. We raden u aan om ten minste een paar keer e-mail berichten te verzenden voordat u deze sluit. Geef na de eerste poging niets op. Houd er rekening mee dat deze klanten rechtstreeks samen werken met uw product en tijd hebben besteed aan een gratis proef versie. Dit zijn fantastische kandidaten.
 
 Nadat de technische installatie is uitgevoerd, moet u deze leads opnemen in uw huidige verkoop-en marketing strategie en operationele processen. We zijn geïnteresseerd in een beter inzicht in uw algehele verkoop proces en willen nauw keurig samen werken om leads van hoge kwaliteit en voldoende gegevens te bieden om u te laten slagen. We stellen uw feedback op de manier waarop we u kunnen helpen bij het optimaliseren en verbeteren van de leads die wij u met aanvullende gegevens sturen om deze klanten succesvol te maken. Laat het ons weten als u geïnteresseerd bent in [feedback](mailto:AzureMarketOnboard@microsoft.com) en suggesties zodat uw verkoop team succes voller kan maken met leads voor commerciële Marketplace.
 

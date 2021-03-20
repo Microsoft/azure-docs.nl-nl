@@ -4,10 +4,10 @@ description: In dit artikel leest u hoe een beheerder een gebruiker kan toevoege
 ms.topic: article
 ms.date: 09/04/2020
 ms.openlocfilehash: 4b46dd08a3b9527cdfc7bdf766ee4976e67656d0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89482666"
 ---
 # <a name="how-to-add-additional-owners-to-an-existing-lab-in-azure-lab-services"></a>Aanvullende eigen aars toevoegen aan een bestaand Lab in Azure Lab Services
@@ -17,7 +17,7 @@ Dit artikel laat u zien hoe u, als beheerder, extra eigen aren kunt toevoegen aa
 Als u een gebruiker wilt toevoegen als een extra eigenaar van een bestaand Lab, moet u eerst de gebruiker **Lees** machtigingen geven voor het lab-account.
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
-2. Selecteer in het menu links **Alle services**. Zoek naar **test services**en selecteer deze.
+2. Selecteer in het menu links **Alle services**. Zoek naar **test services** en selecteer deze.
 3. Selecteer uw **Lab-account** in de lijst. 
 2. Selecteer op de **pagina Lab**-account **Access Control (IAM)** in het menu links. 
 2. Selecteer op de pagina **toegangs beheer (IAM)** de optie **toevoegen** op de werk balk en selecteer **functie toewijzing toevoegen**.

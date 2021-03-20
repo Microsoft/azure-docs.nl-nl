@@ -9,10 +9,10 @@ ms.date: 11/23/2019
 ms.author: masoucou
 ms.custom: include file
 ms.openlocfilehash: 02586d38903c60ba8982753ca0bd3e15192d5deb
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "83006235"
 ---
 ### <a name="copy-your-credentials-from-the-azure-portal"></a>Kopieer uw referenties van de Azure Portal

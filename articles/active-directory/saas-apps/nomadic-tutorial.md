@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/05/2019
 ms.author: jeedes
 ms.openlocfilehash: d8a28d053b71c937d9a2c0ade55b7b15f33ca801
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92518701"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-nomadic"></a>Zelfstudie: Azure Active Directory-integratie met Nomadic
@@ -49,7 +49,7 @@ Als u de integratie van Nomadic in Azure AD wilt configureren, moet u Nomadic va
 
 **Voer de volgende stappen uit om Nomadic toe te voegen vanuit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -135,7 +135,7 @@ Als u eenmalige aanmelding aan de zijde van **Nomadic** wilt configureren, moet 
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -160,7 +160,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In deze sectie gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding voor Azure door haar toegang te geven tot Nomadic.
 
-1. Selecteer in Azure Portal achtereenvolgens **Ondernemingstoepassingen** , **Alle toepassingen** en **Nomadic**.
+1. Selecteer in Azure Portal achtereenvolgens **Ondernemingstoepassingen**, **Alle toepassingen** en **Nomadic**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 

@@ -9,10 +9,10 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 ms.date: 11/06/2020
 ms.openlocfilehash: 6f92c138a02c9dbdc1d22ca04c733cfbee69dcd0
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94488516"
 ---
 # <a name="how-to-configure-your-azure-application-offer-properties"></a>De eigenschappen van uw Azure-toepassing-aanbod configureren
@@ -58,7 +58,7 @@ Voer in de voor **waarden voor universele wijzigingen in het standaard contract 
 
 #### <a name="add-one-or-more-custom-amendments"></a>Een of meer aangepaste wijzigingen toevoegen
 
-1. Onder aanpassingen **aan het standaard contract voor de commerciële Marketplace van micro soft** , selecteert u de koppeling **aangepaste wijzigings termijn toevoegen (max. 10)** .
+1. Onder aanpassingen **aan het standaard contract voor de commerciële Marketplace van micro soft**, selecteert u de koppeling **aangepaste wijzigings termijn toevoegen (max. 10)** .
 1. Voer in het vak **aangepaste wijzigings voorwaarden** uw wijzigings voorwaarden in.
 1. Voer in het vak **Tenant-id** een Tenant-id in. Alleen klanten die zijn gekoppeld aan de Tenant-Id's die u voor deze aangepaste voor waarden opgeeft, worden weer gegeven in de inkoop stroom van de aanbieding in de Azure Portal.
 

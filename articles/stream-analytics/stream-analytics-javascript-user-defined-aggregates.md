@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 10/28/2017
 ms.custom: devx-track-js
 ms.openlocfilehash: e9695a268d1c6ec43a737afd36536e4ec2a41a41
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98012475"
 ---
 # <a name="azure-stream-analytics-javascript-user-defined-aggregates"></a>Door de gebruiker gedefinieerde Java script-functies Azure Stream Analytics
@@ -223,7 +223,7 @@ Maak een lokaal JSON-bestand met onderstaande inhoud, upload het bestand naar St
 ]
 ```
 
-## <a name="get-help"></a>Help opvragen
+## <a name="get-help"></a>Hulp vragen
 
 Voor meer informatie kunt u onze [micro soft Q&een vraag pagina voor Azure stream Analytics](/answers/topics/azure-stream-analytics.html).
 

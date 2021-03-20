@@ -1,5 +1,5 @@
 ---
-title: Kosten voor Azure Blob Storage plannen en beheren
+title: Kosten plannen en beheren voor Azure Blob-opslag
 description: Meer informatie over het plannen en beheren van de kosten voor Azure Blob-opslag met behulp van kosten analyse in Azure Portal.
 services: storage
 author: normesta
@@ -10,13 +10,13 @@ ms.author: normesta
 ms.subservice: common
 ms.custom: subject-cost-optimization
 ms.openlocfilehash: 0bad4637f13bbcf02047416499e4f82fdc53eb4f
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98601304"
 ---
-# <a name="plan-and-manage-costs-for-azure-blob-storage"></a>Kosten voor Azure Blob Storage plannen en beheren
+# <a name="plan-and-manage-costs-for-azure-blob-storage"></a>Kosten plannen en beheren voor Azure Blob-opslag
 
 Dit artikel helpt u bij het plannen en beheren van de kosten voor Azure Blob-opslag. U kunt eerst kosten ramen met behulp van de Azure-prijs calculator. Nadat u uw opslag account hebt gemaakt, optimaliseert u het account zodat u alleen betaalt voor wat u nodig hebt. Gebruik functies voor kosten beheer om budgetten in te stellen en kosten te bewaken. U kunt ook de geraamde kosten bekijken en de uitgaven trends controleren om gebieden te identificeren waar u mogelijk wilt handelen.
 
@@ -88,7 +88,7 @@ Wanneer u kosten analyse gebruikt, kunt u de kosten van Azure Storage in grafiek
 
 Azure Storage kosten voor de kosten analyse weer geven:
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure Portal](https://portal.azure.com).
 
 2. Open het venster **Cost Management en facturering** , selecteer **kosten beheer** in het menu en selecteer vervolgens **kosten analyse**. U kunt vervolgens het bereik voor een specifiek abonnement wijzigen in de vervolg keuzelijst **bereik** .
 

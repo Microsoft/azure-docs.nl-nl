@@ -17,10 +17,10 @@ ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 31c44f2423cdc5c43638fe2515757bcb11a9814c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87798440"
 ---
 # <a name="self-review-of-an-access-package-in-azure-ad-entitlement-management"></a>Zelf beoordeling van een toegangs pakket in het beheer van rechten van Azure AD
@@ -54,7 +54,7 @@ Zodra u de toegangs beoordeling hebt geopend, ziet u uw toegang. Gebruik de volg
     >[!NOTE]
     >Als u hebt opgegeven dat u geen toegang meer nodig hebt, wordt u niet direct uit het toegangs pakket verwijderd. Wanneer de controle eindigt of als een beheerder de controle stopt, wordt het toegangs pakket verwijderd.
 
-1.  Als u op **Ja**hebt geklikt, moet u mogelijk een instructie voor de motivering in het vak **reden** toevoegen.
+1.  Als u op **Ja** hebt geklikt, moet u mogelijk een instructie voor de motivering in het vak **reden** toevoegen.
 
 1.  Klik op **Submit**
 

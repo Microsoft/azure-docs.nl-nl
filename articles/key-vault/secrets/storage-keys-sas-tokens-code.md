@@ -10,10 +10,10 @@ manager: rkarlin
 ms.date: 09/10/2019
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 2a0202c5259ccebedf03ade217f57b6305b9fa1b
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94444925"
 ---
 # <a name="create-sas-definition-and-fetch-shared-access-signature-tokens-in-code"></a>SAS-definitie maken en gedeelde toegangstokens ophalen in code

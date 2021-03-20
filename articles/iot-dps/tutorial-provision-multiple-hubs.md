@@ -9,10 +9,10 @@ ms.service: iot-dps
 services: iot-dps
 ms.custom: mvc
 ms.openlocfilehash: 6cca34774038156cfb01e872e751338c1c96efaa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91315997"
 ---
 # <a name="tutorial-provision-devices-across-load-balanced-iot-hubs"></a>Zelfstudie: Apparaten inrichten in IoT-hubs met gelijke taakverdeling
@@ -45,10 +45,10 @@ Via de registratielijst wordt voor de Device Provisioning Service aangegeven wel
 
 ## <a name="set-the-device-provisioning-service-allocation-policy"></a>Het toewijzingsbeleid instellen van de Device Provisioning Service
 
-Het toewijzingsbeleid is een instelling voor de Device Provisioning Service die bepaalt hoe apparaten aan een IoT-hub worden toegewezen. Er worden drie soorten toewijzingsbeleid ondersteund: 
+Het toewijzingsbeleid is een instelling voor de Device Provisioning Service die bepaalt hoe apparaten aan een IoT-hub worden toegewezen. Er worden drie soorten toewijzingsbeleid ondersteund: 
 
 1. **Laagste latentie**: apparaten worden ingericht voor een IoT-hub op basis van de hub met de laagste latentie voor het apparaat.
-2. **Gelijk gewogen distributie** (standaardinstelling): gekoppelde IoT-hubs hebben evenveel kans dat apparaten voor ze worden ingericht. Dit is de standaardinstelling. Als u apparaten voor slechts één IoT-hub inricht, kunt u deze instelling bewaren. 
+2. **Gelijk gewogen distributie** (standaardinstelling): gekoppelde IoT-hubs hebben evenveel kans dat apparaten voor ze worden ingericht. Dit is de standaardinstelling. Als u apparaten voor slechts één IoT-hub inricht, kunt u deze instelling bewaren. 
 3. **Statische configuratie via de lijst inschrijving**: specificatie van de gewenste IoT-hub in de registratielijst heeft voorrang boven het toewijzingsbeleid op het niveau van de Device Provisioning Service.
 
 Volg deze stappen om het toewijzingsbeleid in te stellen:

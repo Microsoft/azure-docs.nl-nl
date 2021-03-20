@@ -7,22 +7,22 @@ ms.reviewer: divswa, logicappspm
 ms.topic: conceptual
 ms.date: 06/05/2020
 ms.openlocfilehash: 2a5204be638f108b40e431b148c9cb97788c4a52
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91400754"
 ---
 # <a name="data-security-and-privacy-policies-for-google-connectors-in-azure-logic-apps"></a>Beleid voor gegevens beveiliging en privacy voor Google connectors in Azure Logic Apps
 
-Vanaf **1 mei 2020**kunnen wijzigingen worden aangebracht door het [beleid voor gegevens beveiliging en privacy](https://www.blog.google/technology/safety-security/project-strobe/) van Google, wat van invloed is op uw logische app-werk stromen die gebruikmaken van de [Gmail-connector](/connectors/gmail/). Als uw Logic apps de Gmail-connector gebruiken met een Gmail-consument account (e-mail adres dat eindigt op @gmail.com of @googlemail.com ), kunnen uw Logic apps alleen specifieke [door Google goedgekeurde triggers, acties en connectors](#approved-connectors)gebruiken.
+Vanaf **1 mei 2020** kunnen wijzigingen worden aangebracht door het [beleid voor gegevens beveiliging en privacy](https://www.blog.google/technology/safety-security/project-strobe/) van Google, wat van invloed is op uw logische app-werk stromen die gebruikmaken van de [Gmail-connector](/connectors/gmail/). Als uw Logic apps de Gmail-connector gebruiken met een Gmail-consument account (e-mail adres dat eindigt op @gmail.com of @googlemail.com ), kunnen uw Logic apps alleen specifieke [door Google goedgekeurde triggers, acties en connectors](#approved-connectors)gebruiken.
 
 > [!NOTE]
 > Als uw Logic apps de Gmail-connector gebruiken met een G-Suite Business-account (e-mail adres met een aangepast domein), heeft dit geen invloed op uw Logic apps en gelden er geen beperkingen voor het gebruik van de Gmail-connector.
 
 ## <a name="affected-logic-apps"></a>Betrokken Logic apps
 
-Als u Logic apps hebt die de Gmail-connector gebruiken, ontvangt u een e-mail over potentieel betrokken Logic apps. Vanaf **15 juni 2020**worden niet-compatibele werk stromen echter uitgeschakeld. U kunt een van de volgende acties uitvoeren:
+Als u Logic apps hebt die de Gmail-connector gebruiken, ontvangt u een e-mail over potentieel betrokken Logic apps. Vanaf **15 juni 2020** worden niet-compatibele werk stromen echter uitgeschakeld. U kunt een van de volgende acties uitvoeren:
 
 * Werk de betreffende Logic apps bij door [de stappen in dit onderwerp te volgen](#update-affected-workflows). U moet een Google-client-app maken, die een client-ID en client geheim biedt die u voor verificatie gebruikt in uw Gmail-trigger of-actie.
 

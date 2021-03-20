@@ -8,10 +8,10 @@ ms.date: 02/18/2020
 ms.author: tisande
 ms.reviewer: sngun
 ms.openlocfilehash: 5c2d1d286572b21879742a1a9c6ab3975441373d
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98602691"
 ---
 # <a name="optimize-cost-with-reserved-capacity-in-azure-cosmos-db"></a>Kosten met gereserveerde capaciteit optimaliseren in Azure Cosmos DB
@@ -35,7 +35,7 @@ De omvang van de inkoop met gereserveerde capaciteit moet worden gebaseerd op de
 
 We berekenen aankoop aanbevelingen op basis van het gebruiks patroon van uw uur. Het gebruik van de afgelopen 7, 30 en 60 dagen is geanalyseerd en de aanschaf van gereserveerde capaciteit waarmee uw besparing wordt gemaximaliseerd, wordt aanbevolen. Met de volgende stappen kunt u de aanbevolen reserverings grootten weer geven in de Azure Portal:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).  
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).  
 
 2. Selecteer **alle services**-  >  **reserve ringen**  >  **toevoegen**.
 
@@ -59,7 +59,7 @@ Deze aanbeveling om een 30.000 RU/s-reserve ring te kopen, geeft aan dat de rese
 
 ## <a name="buy-azure-cosmos-db-reserved-capacity"></a>Azure Cosmos DB gereserveerde capaciteit kopen
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).  
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).  
 
 2. Selecteer **alle services**-  >  **reserve ringen**  >  **toevoegen**.  
 
@@ -72,9 +72,9 @@ Deze aanbeveling om een 30.000 RU/s-reserve ring te kopen, geeft aan dat de rese
    |Veld  |Beschrijving  |
    |---------|---------|
    |Bereik   |   Optie die bepaalt hoeveel abonnementen het facturerings voordeel kunnen gebruiken dat is gekoppeld aan de reserve ring. Het bepaalt ook hoe de reserve ring wordt toegepast op specifieke abonnementen. <br/><br/>  Als u **gedeeld** selecteert, wordt de reserverings korting toegepast op Azure Cosmos DB exemplaren die worden uitgevoerd in een abonnement binnen uw facturerings context. De facturerings context is gebaseerd op de manier waarop u zich hebt geregistreerd voor Azure. Voor zakelijke klanten is het gedeelde bereik de inschrijving en omvat alle abonnementen binnen de inschrijving. Voor betalen naar gebruik-klanten is de gedeelde Scope alle afzonderlijke abonnementen met betalen per gebruik-tarieven die door de account beheerder zijn gemaakt.  <br/><br/>  Als u **één abonnement** selecteert, wordt de reserverings korting toegepast op Azure Cosmos DB exemplaren in het geselecteerde abonnement. <br/><br/> Als u **één resource groep** selecteert, wordt de reserverings korting toegepast op Azure Cosmos DB exemplaren in het geselecteerde abonnement en de geselecteerde resource groep in dat abonnement. <br/><br/> U kunt het reserverings bereik wijzigen nadat u de gereserveerde capaciteit hebt gekocht.  |
-   |Abonnement  |   Het abonnement dat wordt gebruikt om te betalen voor de Azure Cosmos DB gereserveerde capaciteit. De betalings wijze voor het geselecteerde abonnement wordt gebruikt bij het opladen van de kosten. Het abonnement moet een van de volgende typen zijn: <br/><br/>  Enterprise Agreement (nummers van aanbiedingen: MS-AZR-0017P of MS-AZR-0148P): voor een Enter prise-abonnement worden de kosten in rekening gebracht op basis van de Azure-voor uitbetaling van de inschrijving (voorheen monetaire toezeg ging genoemd)-saldo of in rekening gebracht als overschrijding. <br/><br/> Individueel abonnement met betalen per gebruik-tarieven (aanbiedings nummers: MS-AZR-0003P of MS-AZR-0023P): voor een afzonderlijk abonnement met betalen per gebruik-tarieven, worden de kosten in rekening gebracht op de credit card-of factuur betalings methode voor het abonnement.    |
+   |Abonnement  |   Het abonnement dat wordt gebruikt om te betalen voor de Azure Cosmos DB gereserveerde capaciteit. De betalings wijze voor het geselecteerde abonnement wordt gebruikt bij het opladen van de kosten. Het abonnement moet een van de volgende typen zijn: <br/><br/>  Enterprise Overeenkomst (nummers van aanbiedingen: MS-AZR-0017P of MS-AZR-0148P): voor een Enter prise-abonnement worden de kosten in rekening gebracht op basis van de Azure-voor uitbetaling van de inschrijving (voorheen monetaire toezeg ging genoemd)-saldo of in rekening gebracht als overschrijding. <br/><br/> Individueel abonnement met betalen per gebruik-tarieven (aanbiedings nummers: MS-AZR-0003P of MS-AZR-0023P): voor een afzonderlijk abonnement met betalen per gebruik-tarieven, worden de kosten in rekening gebracht op de credit card-of factuur betalings methode voor het abonnement.    |
    | Resourcegroep | De resource groep waarop de gereserveerde capaciteits korting wordt toegepast. |
-   |Term  |   Eén jaar of drie jaar.   |
+   |Termijn  |   Eén jaar of drie jaar.   |
    |Type door Voer   |  De door Voer is ingericht als aanvraag eenheden. U kunt een reserve ring voor de ingerichte door voer kopen voor zowel de installatie van één regio als voor meerdere schrijf bewerkingen in regio's. Het doorvoer type heeft twee waarden waaruit u kunt kiezen: 100 RU/s per uur en 100 multi-regio schrijft RU/s per uur.|
    | Gereserveerde capaciteits eenheden| De hoeveelheid door Voer die u wilt reserveren. U kunt deze waarde berekenen door de door voer te bepalen die nodig is voor al uw Cosmos DB resources (bijvoorbeeld data bases of containers) per regio. Vervolgens vermenigvuldigt u deze met het aantal regio's dat u koppelt aan uw Cosmos-data base. Bijvoorbeeld: als u vijf regio's met 1.000.000 RU per seconde in elke regio hebt, selecteert u 5.000.000 RU per seconde voor de aanschaf van de reserve ring capaciteit. |
 
@@ -109,6 +109,6 @@ De reserverings korting wordt automatisch toegepast op de Azure Cosmos DB resour
    * [Inzicht in het gebruik van reserveringen voor uw abonnement met betalen per gebruik](../cost-management-billing/reservations/understand-reserved-instance-usage.md)
    * [Azure-reserve ringen in het Partner Center CSP-programma](/partner-center/azure-reservations)
 
-## <a name="need-help-contact-us"></a>Hebt u hulp nodig? Neem contact met ons op.
+## <a name="need-help-contact-us"></a>Hulp nodig? Neem contact met ons op.
 
 Als u vragen hebt of hulp nodig hebt, [kunt u een ondersteuningsaanvraag maken](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).

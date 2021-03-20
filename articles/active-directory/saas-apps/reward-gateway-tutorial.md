@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
 ms.openlocfilehash: 202c9d8075a45b1c5479d9cd1fc9f3392ba026f9
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92515002"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-reward-gateway"></a>Zelfstudie: Azure Active Directory-integratie met Reward Gateway
@@ -49,7 +49,7 @@ Als de integratie van Reward Gateway in Azure AD wilt configureren, moet u Rewar
 
 **Voer de volgende stappen uit als u Reward Gateway wilt toevoegen vanuit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -140,7 +140,7 @@ Begin met het instellen van een integratie in de Reward Manager-portal om eenmal
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -165,7 +165,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In deze sectie gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot Reward Gateway.
 
-1. Selecteer in Azure Portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **Reward Gateway**.
+1. Selecteer in Azure Portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **Reward Gateway**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 

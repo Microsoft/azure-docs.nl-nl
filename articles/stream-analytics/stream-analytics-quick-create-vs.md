@@ -7,10 +7,10 @@ ms.date: 06/11/2019
 ms.topic: quickstart
 ms.service: stream-analytics
 ms.openlocfilehash: 7a02d0914ae111d6e2e00493fe27613e27d836b1
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98012356"
 ---
 # <a name="quickstart-create-an-azure-stream-analytics-job-by-using-visual-studio"></a>Quickstart: Een Azure Stream Analytics-taak maken met behulp van Visual Studio

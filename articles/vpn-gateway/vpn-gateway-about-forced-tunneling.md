@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 10/15/2020
 ms.author: cherylmc
 ms.openlocfilehash: af4359efb48898c12bb8ee7ffb882448b5012d19
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92151342"
 ---
 # <a name="configure-forced-tunneling-using-the-classic-deployment-model"></a>Geforceerde tunneling met het klassieke implementatiemodel configureren
@@ -23,7 +23,7 @@ Met geforceerde tunneling kunt u alle voor internet bestemde verkeer geforceerd 
 Dit artikel begeleidt u bij het configureren van geforceerde tunneling voor virtuele netwerken die zijn gemaakt met het klassieke implementatie model. Geforceerde tunneling kan worden geconfigureerd met behulp van Power shell, niet via de portal. Als u geforceerde tunneling wilt configureren voor het Resource Manager-implementatie model, selecteert u Resource Manager-artikel in de volgende vervolg keuzelijst:
 
 > [!div class="op_single_selector"]
-> * [Klassiek](vpn-gateway-about-forced-tunneling.md)
+> * [Klassieke](vpn-gateway-about-forced-tunneling.md)
 > * [Resource Manager](vpn-gateway-forced-tunneling-rm.md)
 > 
 

@@ -5,10 +5,10 @@ ms.date: 08/31/2020
 ms.topic: how-to
 ms.reviewer: caleteet
 ms.openlocfilehash: 411337908553e58c252a0ed1a42d17f76195c720
-ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96763788"
 ---
 # <a name="use-the-ethereum-blockchain-connector-with-azure-logic-apps"></a>De Ethereum Block Chain-connector gebruiken met Azure Logic Apps
@@ -182,7 +182,7 @@ Het RPC-eindpunt adres van de Azure Block Chain-service is vereist om verbinding
 
     ![Pagina transactie knooppunten met de (standaard knooppunt) selectie](./media/ethereum-logic-app/transaction-nodes.png)
 
-1. Selecteer **Connection strings**  >  **toegangs sleutels** voor verbindings reeksen.
+1. Selecteer   >  **toegangs sleutels** voor verbindings reeksen.
 1. Kopieer het eindpunt adres van **https (toegangs sleutel 1)** of **https (toegangs sleutel 2)**.
 
     ![Azure Portal met de connection string toegangs sleutels](./media/ethereum-logic-app/connection-string.png)

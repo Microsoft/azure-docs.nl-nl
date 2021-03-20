@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 09/25/2020
 ms.openlocfilehash: cd21197d6d1559b681ae622b974f6eb7ba95ad3d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91397365"
 ---
 # <a name="design-patterns-for-multitenant-saas-applications-and-azure-cognitive-search"></a>Ontwerp patronen voor SaaS-toepassingen met meerdere tenants en Azure Cognitive Search
@@ -95,7 +95,7 @@ Als het totale aantal indexen te groot is voor één service, moet een andere se
 
 ## <a name="2-service-per-tenant"></a>2. service per Tenant
 
-:::image type="content" source="media/search-modeling-multitenant-saas-applications/azure-search-service-per-tenant.png" alt-text="Een portrayal van het model van de index-per-Tenant" border="false":::
+:::image type="content" source="media/search-modeling-multitenant-saas-applications/azure-search-service-per-tenant.png" alt-text="Een portrayal van het service-per-Tenant model" border="false":::
 
 In een architectuur met een service-per-Tenant heeft elke Tenant een eigen zoek service.
 

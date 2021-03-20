@@ -8,10 +8,10 @@ ms.date: 06/26/2019
 ms.topic: conceptual
 keywords: Azure, kinect, sensor, viewer, visualisatie, diepte, RGB, kleur, IMU, audio, microfoon, punt-Cloud
 ms.openlocfilehash: f411de5854d516586dc64701cca729c692ce40e0
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92166102"
 ---
 # <a name="azure-kinect-viewer"></a>Azure Kinect viewer
@@ -40,7 +40,7 @@ Start de toepassing door uit te voeren `k4aviewer.exe` .
 
 ### <a name="use-the-viewer-with-live-data"></a>De viewer gebruiken met Live gegevens
 
-1. Selecteer in de sectie **apparaat openen** het **serie nummer** van het apparaat dat u wilt openen. Selecteer vervolgens **vernieuwen**als het apparaat ontbreekt.
+1. Selecteer in de sectie **apparaat openen** het **serie nummer** van het apparaat dat u wilt openen. Selecteer vervolgens **vernieuwen** als het apparaat ontbreekt.
 2. Selecteer de knop **apparaat openen** .
 3. Selecteer **starten** om te beginnen met het streamen van gegevens met de standaard instellingen.
 
@@ -61,7 +61,7 @@ In dit geval wordt de 1.5.63 van de diepte camera bijvoorbeeld uitgevoerd op FW-
 In de diepte Camera-Viewer worden twee vensters weer gegeven:
 
 * Een wordt ' *actieve helderheid* ' genoemd. Dit is een grijs waarden afbeelding die een IR-helderheid weergeeft.
-* De tweede wordt *dieper*genoemd. Dit heeft een gekleurde weer gave van de diepte gegevens.
+* De tweede wordt *dieper* genoemd. Dit heeft een gekleurde weer gave van de diepte gegevens.
 
 Houd de muis aanwijzer op de pixel in het diepte venster om de waarde van de diepte sensor weer te geven, zoals hieronder weer gegeven.
 

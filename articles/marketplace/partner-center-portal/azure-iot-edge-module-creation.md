@@ -8,10 +8,10 @@ author: keferna
 ms.author: keferna
 ms.date: 08/07/2020
 ms.openlocfilehash: 23af7b3f7cfd5ec0531c5cac73cf8a334ef4aa62
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99096437"
 ---
 # <a name="create-an-iot-edge-module-offer"></a>Aanbieding voor IoT Edge-module maken
@@ -149,7 +149,7 @@ Geef een korte beschrijving van uw aanbieding. Dit kan Maxi maal 100 tekens lang
 
 Geef een gedetailleerdere beschrijving van uw aanbieding. Dit kan Maxi maal 256 tekens lang zijn en wordt gebruikt in Zoek resultaten voor Marketplace.
 
-### <a name="description"></a>Description
+### <a name="description"></a>Beschrijving
 
 [!INCLUDE [Long description-1](./includes/long-description-1.md)]
 
@@ -236,7 +236,7 @@ Hier volgt een voor beeld van hoe de aanbiedings gegevens worden weer gegeven in
 5. Adres van privacybeleid (koppeling)
 6. Name
 7. Samenvatting
-8. Description
+8. Beschrijving
 9. Handige koppelingen
 10. Scherm afbeeldingen/Video's
 

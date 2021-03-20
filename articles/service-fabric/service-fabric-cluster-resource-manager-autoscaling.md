@@ -7,10 +7,10 @@ ms.date: 04/17/2018
 ms.author: miradic
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 060bb9dcdd504846c76ab4c782b2857fdddfa394
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91354799"
 ---
 # <a name="introduction-to-auto-scaling"></a>Inleiding tot automatisch schalen
@@ -131,7 +131,7 @@ Hetzelfde als bij het mechanisme dat gebruikmaakt van schalen door instanties to
 * _Minimum aantal exemplaren_ definieert de ondergrens voor schalen. Als het aantal partities van de service deze limiet bereikt, wordt de service niet geschaald, ongeacht de belasting.
 
 > [!WARNING] 
-> Wanneer AddRemoveIncrementalNamedPartitionScalingMechanism wordt gebruikt met stateful Services, worden er door Service Fabric partities toegevoegd of verwijderd zonder dat er een **melding of waarschuwing**wordt weer gegeven. Het opnieuw partitioneren van gegevens wordt niet uitgevoerd wanneer het schaal mechanisme wordt geactiveerd. In het geval van een uitschaal bewerking worden nieuwe partities leeg en in het geval van een schaal bewerking **wordt de partitie met alle gegevens die deze bevat, verwijderd**.
+> Wanneer AddRemoveIncrementalNamedPartitionScalingMechanism wordt gebruikt met stateful Services, worden er door Service Fabric partities toegevoegd of verwijderd zonder dat er een **melding of waarschuwing** wordt weer gegeven. Het opnieuw partitioneren van gegevens wordt niet uitgevoerd wanneer het schaal mechanisme wordt geactiveerd. In het geval van een uitschaal bewerking worden nieuwe partities leeg en in het geval van een schaal bewerking **wordt de partitie met alle gegevens die deze bevat, verwijderd**.
 
 ## <a name="setting-auto-scaling-policy-for-partition-based-scaling"></a>Beleid voor automatisch schalen instellen voor schalen op basis van partities
 

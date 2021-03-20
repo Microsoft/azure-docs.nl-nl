@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 08/16/2019
 ms.custom: mqtt, devx-track-js
 ms.openlocfilehash: e1992c806619154fa7b3c33500b2e54fbc919f20
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92151435"
 ---
 # <a name="schedule-and-broadcast-jobs-nodejs"></a>Taken plannen en uitzenden (Node.js)
@@ -39,7 +39,7 @@ Meer informatie over elk van deze mogelijkheden vindt u in de volgende artikelen
 
 In deze zelfstudie ontdekt u hoe u:
 
-* Maak een Node.js gesimuleerde apparaat-app die een directe methode heeft, waardoor **lockDoor**kan worden aangeroepen door de back-end van de oplossing.
+* Maak een Node.js gesimuleerde apparaat-app die een directe methode heeft, waardoor **lockDoor** kan worden aangeroepen door de back-end van de oplossing.
 
 * Maak een Node.js-console-app die de directe methode **lockDoor** aanroept in de gesimuleerde apparaat-app met behulp van een taak en de gewenste eigenschappen bijwerkt met behulp van een apparaat taak.
 
@@ -92,7 +92,7 @@ In deze sectie maakt u een Node.js-console-app die reageert op een directe metho
     var Protocol = require('azure-iot-device-mqtt').Mqtt;
     ```
 
-5. Voeg een **connectionString**-variabele toe en gebruik deze om een **client**exemplaar te maken. Vervang de `{yourDeviceConnectionString}` waarde van de tijdelijke aanduiding door het apparaat Connection String u eerder hebt gekopieerd.
+5. Voeg een **connectionString**-variabele toe en gebruik deze om een **client** exemplaar te maken. Vervang de `{yourDeviceConnectionString}` waarde van de tijdelijke aanduiding door het apparaat Connection String u eerder hebt gekopieerd.
 
     ```javascript
     var connectionString = '{yourDeviceConnectionString}';
@@ -169,7 +169,7 @@ In deze sectie maakt u een Node.js-console-app die een externe **lockDoor** op e
     var JobClient = require('azure-iothub').JobClient;
     ```
 
-5. Voeg de volgende variabelen declaraties toe. Vervang de `{iothubconnectionstring}` waarde van de tijdelijke aanduiding door de waarde die u hebt gekopieerd in [de IOT hub ophalen Connection String](#get-the-iot-hub-connection-string). Als u een ander apparaat dan **myDeviceId**hebt geregistreerd, moet u dit wijzigen in de query voorwaarde.
+5. Voeg de volgende variabelen declaraties toe. Vervang de `{iothubconnectionstring}` waarde van de tijdelijke aanduiding door de waarde die u hebt gekopieerd in [de IOT hub ophalen Connection String](#get-the-iot-hub-connection-string). Als u een ander apparaat dan **myDeviceId** hebt geregistreerd, moet u dit wijzigen in de query voorwaarde.
 
     ```javascript
     var connectionString = '{iothubconnectionstring}';
@@ -292,7 +292,7 @@ U kunt nu de toepassingen gaan uitvoeren.
 
    Hieronder ziet u de service plannings taken voor de directe methode en dubbele update van het apparaat, en de taken die worden uitgevoerd voor voltooiing:
 
-   ![De app gesimuleerde apparaten uitvoeren](./media/iot-hub-node-node-schedule-jobs/schedule-job-service.png)
+   ![De app voor een gesimuleerd apparaat uitvoeren](./media/iot-hub-node-node-schedule-jobs/schedule-job-service.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 

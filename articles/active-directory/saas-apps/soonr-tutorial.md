@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 04/08/2019
 ms.author: jeedes
 ms.openlocfilehash: 64c4eabf665fe64290f484adc1b4dfe7483170fe
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92514755"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-soonr-workplace"></a>Zelfstudie: Azure Active Directory-integratie met Soonr Workplace
@@ -139,7 +139,7 @@ Als u eenmalige aanmelding aan de zijde van **Soonr Workplace** wilt configurere
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -163,7 +163,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In deze sectie stelt u Britta Simon in staat gebruik te maken van eenmalige aanmelding van Azure door haar toegang te verlenen tot Soonr Workplace.
 
-1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **Soonr Workplace**.
+1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **Soonr Workplace**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 

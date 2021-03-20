@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 04/14/2019
 ms.author: ramamill
 ms.openlocfilehash: afd3979690b8952c915a49099ee04b3d416031fd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88189738"
 ---
 # <a name="set-up-the-source-environment-for-vmware-to-azure-replication"></a>De bron omgeving instellen voor de replicatie van VMware naar Azure
@@ -35,7 +35,7 @@ In het artikel wordt ervan uitgegaan dat u al hebt:
 4. In **Waarnaartoe wilt u de machines repliceren** selecteert u **Naar Azure**.
 5. In **Zijn de machines gevirtualiseerd** selecteert **Ja, met VMware vSphere Hypervisor**. Selecteer vervolgens **OK**.
 
-## <a name="set-up-the-configuration-server"></a>De configuratie server instellen
+## <a name="set-up-the-configuration-server"></a>De configuratieserver instellen
 
 U kunt de configuratie server instellen als een on-premises virtuele VMware-machine via een eicellen-sjabloon (open Virtualization Application). Meer [informatie](./vmware-azure-architecture.md) over de onderdelen die worden geïnstalleerd op de virtuele VMWare-machine.
 

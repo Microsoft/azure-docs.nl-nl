@@ -14,10 +14,10 @@ ms.custom:
 - mqtt
 - devx-track-js
 ms.openlocfilehash: e398138f12c38e5235a0004679d9574dbde607db
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91446881"
 ---
 # <a name="send-cloud-to-device-messages-with-iot-hub-nodejs"></a>Cloud-naar-apparaat-berichten verzenden met IoT Hub (Node.js)
@@ -186,7 +186,7 @@ U kunt nu de toepassingen gaan uitvoeren.
     node SimulatedDevice.js
     ```
 
-    ![De app gesimuleerde apparaten uitvoeren](./media/iot-hub-node-node-c2d/receivec2d.png)
+    ![De app voor een gesimuleerd apparaat uitvoeren](./media/iot-hub-node-node-c2d/receivec2d.png)
 
 2. Voer bij een opdracht prompt in de map **sendcloudtodevicemessage** de volgende opdracht uit om een Cloud-naar-apparaat-bericht te verzenden en te wachten op de bevestigings feedback:
 

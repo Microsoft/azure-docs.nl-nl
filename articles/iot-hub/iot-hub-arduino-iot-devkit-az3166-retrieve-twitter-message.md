@@ -11,10 +11,10 @@ ms.date: 03/07/2018
 ms.author: liydu
 ms.custom: devx-track-csharp
 ms.openlocfilehash: af1685f6455c0642800cba7dd604fcc836bcd7a4
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92147895"
 ---
 # <a name="shake-shake-for-a-tweet----retrieve-a-twitter-message-with-azure-functions"></a>Schud, schud voor een Tweet--een Twitter-bericht ophalen met Azure Functions
@@ -50,10 +50,10 @@ Begin met het openen van de projectmap.
 
 ### <a name="open-the-arduino-examples-folder"></a>Open de map Arduino-voor beelden
 
-Vouw de sectie **ARDUINO-voor beelden** aan de linkerkant uit, blader naar voor **beelden voor MXCHIP AZ3166 > AzureIoT**en selecteer **ShakeShake**. Er wordt een nieuw versus code venster geopend met daarin de projectmap. Als u de sectie MXCHIP AZ3166 niet kunt zien, controleert u of het apparaat juist is verbonden en Start Visual Studio code opnieuw.  
+Vouw de sectie **ARDUINO-voor beelden** aan de linkerkant uit, blader naar voor **beelden voor MXCHIP AZ3166 > AzureIoT** en selecteer **ShakeShake**. Er wordt een nieuw versus code venster geopend met daarin de projectmap. Als u de sectie MXCHIP AZ3166 niet kunt zien, controleert u of het apparaat juist is verbonden en Start Visual Studio code opnieuw.  
 de ![ Mini-Solution-voor beelden](media/iot-hub-arduino-iot-devkit-az3166-retrieve-twitter-message/vscode_examples.png)
 
-U kunt het voorbeeld project ook openen vanuit het opdracht palet. Klik op `Ctrl+Shift+P` (macOS: `Cmd+Shift+P` ) om het opdracht palet te openen, typ **Arduino**en zoek en selecteer vervolgens **Arduino: voor beelden**.
+U kunt het voorbeeld project ook openen vanuit het opdracht palet. Klik op `Ctrl+Shift+P` (macOS: `Cmd+Shift+P` ) om het opdracht palet te openen, typ **Arduino** en zoek en selecteer vervolgens **Arduino: voor beelden**.
 
 ## <a name="provision-azure-services"></a>Azure-Services inrichten
 

@@ -18,10 +18,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 56f9976faf2a803e747bce8b851a3555e6d746b0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89231143"
 ---
 # <a name="azure-ad-audit-activity-reference"></a>Referentie voor auditactiviteiten van Azure AD
@@ -32,11 +32,11 @@ De rapportstructuur in Azure AD bestaat uit de volgende onderdelen:
 
 - **Activiteitsrapporten** 
     - [Aanmeldingen](concept-sign-ins.md) : bevat informatie over het gebruik van beheerde toepassingen en aanmeldings activiteiten voor gebruikers
-    - [Auditlogboeken](concept-audit-logs.md): traceerbaarheid via logboeken voor alle door diverse functies binnen Azure AD uitgevoerde wijzigingen. 
+    - [Audit logboeken](concept-audit-logs.md) : voorziet in traceer baarheid via Logboeken voor alle wijzigingen die worden uitgevoerd door diverse functies in azure AD. 
     
 - **Beveiligingsrapporten** 
-    - [Riskante aanmeldingen](../identity-protection/overview-identity-protection.md) - Een riskante aanmelding is een indicator van een aanmeldingspoging die mogelijk is uitgevoerd door iemand die geen rechtmatige eigenaar van een gebruikersaccount is. 
-    - [Gebruikers voor wie wordt aangegeven dat ze risico lopen](../identity-protection/overview-identity-protection.md) - Een riskante gebruiker is een indicator van een gebruikersaccount dat mogelijk is aangetast. 
+    - [Risk ante aanmeldingen](../identity-protection/overview-identity-protection.md) : een Risk ante aanmelding is een indicator voor een aanmeldings poging die mogelijk is uitgevoerd door iemand die geen rechtmatige eigenaar van een gebruikers account is. 
+    - [Gebruikers die zijn gemarkeerd voor risico](../identity-protection/overview-identity-protection.md) : een Risk ante gebruiker is een indicator voor een gebruikers account dat mogelijk is aangetast. 
 
 In dit artikel worden de auditactiviteiten vermeld die in uw auditlogboeken kunnen worden geregistreerd.
 
@@ -500,7 +500,7 @@ In dit artikel worden de auditactiviteiten vermeld die in uw auditlogboeken kunn
 
 
 
-## <a name="identity-protection"></a>Identiteitsbescherming
+## <a name="identity-protection"></a>Identiteitsbeveiliging
 
 |Controlecategorie|Activiteit|
 |---|---|

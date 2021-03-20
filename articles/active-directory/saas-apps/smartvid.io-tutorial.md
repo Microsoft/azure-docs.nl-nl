@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 02/26/2019
 ms.author: jeedes
 ms.openlocfilehash: 40579331630eb62fc7b34d63e9945c90db2214f5
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92514874"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-smartvidio"></a>Zelfstudie: Integratie van Azure Active Directory met smartvid.io
@@ -49,7 +49,7 @@ Voor het configureren van de integratie van smartvid.io met Azure AD moet u smar
 
 **Als u smartvid.io wilt toevoegen vanuit de galerie, voert u de volgende stappen uit:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -61,7 +61,7 @@ Voor het configureren van de integratie van smartvid.io met Azure AD moet u smar
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **smartvid.io** , selecteer **smartvid.io** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **smartvid.io**, selecteer **smartvid.io** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
      ![smartvid.io in de lijst met resultaten](common/search-new-app.png)
 
@@ -73,10 +73,10 @@ Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure 
 Als u Azure AD-eenmalige aanmelding wilt configureren en testen met smartvid.io, dient u de volgende bouwstenen te voltooien:
 
 1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[smartvid.io-eenmalige aanmelding configureren](#configure-smartvidio-single-sign-on)** : als u de instellingen voor eenmalige aanmelding aan de clientzijde wilt configureren.
+2. **[smartvid.io-eenmalige aanmelding configureren](#configure-smartvidio-single-sign-on)**: als u de instellingen voor eenmalige aanmelding aan de clientzijde wilt configureren.
 3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
 4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
-5. **[Testgebruiker voor smartvid.io maken](#create-smartvidio-test-user)** : als u een tegenhanger van Britta Simon in smartvid.io wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
+5. **[Testgebruiker voor smartvid.io maken](#create-smartvidio-test-user)**: als u een tegenhanger van Britta Simon in smartvid.io wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
 6. **[Eenmalige aanmelding testen](#test-single-sign-on)** : als u wilt controleren of de configuratie werkt.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
@@ -117,13 +117,13 @@ Voer de volgende stappen uit als u Azure AD-eenmalige aanmelding wilt configurer
 
 ### <a name="configure-smartvidio-single-sign-on"></a>Eenmalige aanmelding voor smartvid.io configureren
 
-Als u eenmalige aanmelding aan de **smartvid.io** -zijde wilt configureren, moet u het gedownloade **Certificaat (Raw)** en de correcte uit de Azure-portal gekopieerde URL's verzenden naar het [smartvid.io-ondersteuningsteam](mailto:vgorsky@smartvid.io). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding aan de **smartvid.io**-zijde wilt configureren, moet u het gedownloade **Certificaat (Raw)** en de correcte uit de Azure-portal gekopieerde URL's verzenden naar het [smartvid.io-ondersteuningsteam](mailto:vgorsky@smartvid.io). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -148,7 +148,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In deze sectie gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot smartvid.io.
 
-1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **smartvid.io**.
+1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **smartvid.io**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 

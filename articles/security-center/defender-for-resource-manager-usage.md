@@ -8,13 +8,13 @@ ms.topic: how-to
 ms.service: security-center
 manager: rkarlin
 ms.openlocfilehash: 54790795aab8aac247e17198159130d7139dd38c
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96754649"
 ---
-# <a name="respond-to-azure-defender-for-resource-manager-alerts"></a>Reageren op waarschuwingen van Azure Defender voor Resource Manager
+# <a name="respond-to-azure-defender-for-resource-manager-alerts"></a>Reageren op Azure Defender voor Resource Manager-waarschuwingen
 
 Wanneer u een waarschuwing ontvangt van Azure Defender voor Resource Manager, raden we u aan de waarschuwing te onderzoeken en erop te reageren, zoals hieronder wordt beschreven. Azure Defender voor Resource Manager beveiligt alle verbonden resources, zelfs als u bekend bent met de toepassing of gebruiker die de waarschuwing heeft geactiveerd, is het belang rijk om de situatie rondom elke waarschuwing te controleren.  
 
@@ -49,6 +49,6 @@ Wanneer u een waarschuwing ontvangt van Azure Defender voor Resource Manager, ra
 
 Op deze pagina wordt het proces van het reageren op een waarschuwing van Azure Defender voor Resource Manager uitgelegd. Raadpleeg de volgende pagina's voor verwante informatie:
 
-- [Inleiding tot Azure Defender voor Resource Manager](defender-for-resource-manager-introduction.md)
+- [Inleiding op Azure Defender voor Resource Manager](defender-for-resource-manager-introduction.md)
 - [Waarschuwingen van Azure Defender onderdrukken](alerts-suppression-rules.md)
 - [Security Center-gegevens continu exporteren](continuous-export.md)

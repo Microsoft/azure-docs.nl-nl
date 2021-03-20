@@ -9,10 +9,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: ccff5b4dc6ed5a571e25ab0569b9fa92674e1340
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88140731"
 ---
 # <a name="provision-nodes-for-azure-vmware-solution-by-cloudsimple"></a>Knoop punten inrichten voor Azure VMware-oplossing op CloudSimple
@@ -36,7 +36,7 @@ Meld u aan bij de Azure Portal op [https://portal.azure.com](https://portal.azur
     ![CloudSimple-knoop punten toevoegen](media/create-cloudsimple-node-add.png)
 
 5. Selecteer het abonnement waar u de CloudSimple-knoop punten wilt inrichten.
-6. Selecteer de resource groep voor de knoop punten. Klik op **nieuwe maken**om een nieuwe resource groep toe te voegen.
+6. Selecteer de resource groep voor de knoop punten. Klik op **nieuwe maken** om een nieuwe resource groep toe te voegen.
 7. Voer het voor voegsel in om de knoop punten te identificeren.
 8. Selecteer de locatie voor de knooppunt resources.
 9. Selecteer de toegewezen locatie om de knooppunt resources te hosten.

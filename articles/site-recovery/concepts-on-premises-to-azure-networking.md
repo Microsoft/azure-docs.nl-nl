@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 10/13/2019
 ms.author: harshacs
 ms.openlocfilehash: 123a68885346062b9e8a53b8d5066204b6b20f5e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89568775"
 ---
 # <a name="connect-to-azure-vms-after-failover-from-on-premises"></a>Verbinding maken met virtuele Azure-machines na een failover van on-premises 
@@ -96,7 +96,7 @@ Voor het bewaren van IP-adressen zijn de volgende stappen vereist:
 
 ### <a name="failover-example"></a>Voor beeld van failover
 
-We bekijken een voorbeeld.
+We kijken naar een voorbeeld.
 
 - De fictieve onderneming Woodgrove Bank fungeert als host voor hun zakelijke apps on-premises, die hun mobiele apps in Azure.
 - Ze maken verbinding vanaf on-premises met Azure via site-naar-site-VPN. 
@@ -138,10 +138,10 @@ Als u de adressen wilt behouden, gaat u als volgt te werk.
 Geef vóór failover de netwerk instellingen en het IP-adres op voor de doel-Azure-VM.
 
 1.  Selecteer de on-premises computer in de Recovery Services kluis-> **gerepliceerde items**.
-2. Klik op de pagina **Compute and Network** voor de machine op **bewerken**om netwerk-en adapter instellingen te configureren voor de Azure-doel-VM.
-3. Selecteer in het **dialoog netwerk eigenschappen**het doelnet doel waarin de virtuele Azure-machine zich bevindt wanneer deze wordt gemaakt na een failover.
-4. Configureer in **netwerk interfaces**de netwerk adapters in het doelnet-netwerk. Standaard Site Recovery worden alle gedetecteerde Nic's op de on-premises computer weer gegeven.
-    - In het **interface type** van het doelnet werk kunt u elke NIC instellen als **primair**, **secundair**of **niet maken** als u die specifieke NIC niet nodig hebt in het doelnet werk. Eén netwerk adapter moet worden ingesteld als primair voor failover. Houd er rekening mee dat het wijzigen van het doelnet netwerk van invloed is op alle Nic's voor de virtuele Azure-machine.
+2. Klik op de pagina **Compute and Network** voor de machine op **bewerken** om netwerk-en adapter instellingen te configureren voor de Azure-doel-VM.
+3. Selecteer in het **dialoog netwerk eigenschappen** het doelnet doel waarin de virtuele Azure-machine zich bevindt wanneer deze wordt gemaakt na een failover.
+4. Configureer in **netwerk interfaces** de netwerk adapters in het doelnet-netwerk. Standaard Site Recovery worden alle gedetecteerde Nic's op de on-premises computer weer gegeven.
+    - In het **interface type** van het doelnet werk kunt u elke NIC instellen als **primair**, **secundair** of **niet maken** als u die specifieke NIC niet nodig hebt in het doelnet werk. Eén netwerk adapter moet worden ingesteld als primair voor failover. Houd er rekening mee dat het wijzigen van het doelnet netwerk van invloed is op alle Nic's voor de virtuele Azure-machine.
     - Klik op de NIC-naam om het subnet op te geven waarin de Azure VM wordt geïmplementeerd.
     - Overschrijf **dynamische** met het privé-IP-adres dat u wilt toewijzen aan de doel-Azure-VM. Als er geen IP-adres is opgegeven Site Recovery wordt het volgende beschik bare IP-adres in het subnet aan de NIC toegewezen bij een failover.
     - Meer [informatie](site-recovery-manage-network-interfaces-on-premises-to-azure.md) over het beheren van nic's voor on-premises failover naar Azure.

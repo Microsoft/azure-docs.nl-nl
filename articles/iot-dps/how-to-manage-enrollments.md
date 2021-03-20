@@ -9,10 +9,10 @@ ms.service: iot-dps
 services: iot-dps
 manager: eliotgra
 ms.openlocfilehash: 6ec146a05df1b896f8ca594d29cf13341b70765a
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96010959"
 ---
 # <a name="how-to-manage-device-enrollments-with-azure-portal"></a>Inschrijvingen van apparaten beheren met Azure Portal
@@ -40,11 +40,11 @@ Er zijn twee manieren waarop u uw apparaten kunt inschrijven bij de inrichtings 
      
         [![Een registratie groep toevoegen aan de portal](./media/how-to-manage-enrollments/group-enrollment.png)](./media/how-to-manage-enrollments/group-enrollment.png#lightbox)
         
-        | Veld | Description |
+        | Veld | Beschrijving |
         | :--- | :--- |
         | **Groepsnaam** | De vereiste naam voor uw groep apparaten. |
         | **Type verklaring** | Klik op **certificaat** of **symmetrische sleutel** voor het Attestation-type, afhankelijk van de Attestation-methode die uw apparaten zullen gebruiken. |
-        | **Certificaat type** | Beschikbaar als u certificaat Attestation gebruikt. Selecteer **CA-certificaat** of **tussenliggende** waarde op basis van het certificaat dat uw apparaat certificaten heeft ondertekend. |
+        | **Certificaattype** | Beschikbaar als u certificaat Attestation gebruikt. Selecteer **CA-certificaat** of **tussenliggende** waarde op basis van het certificaat dat uw apparaat certificaten heeft ondertekend. |
         | **Primair certificaat** | Als u de certificaten van uw apparaat wilt ondertekenen met een basis-CA-certificaat, moet het certificaat [van](how-to-verify-certificates.md) de basis-CA zijn voltooid. Vervolgens kunt u deze selecteren als **primair certificaat** voor de groep apparaten.<br><br>Als u de certificaten van uw apparaat met een tussenliggend certificaat ondertekent, is een knop uploaden beschikbaar waarmee u uw tussenliggende certificaat kunt uploaden. Voor het certificaat dat de tussenliggende hand tekening heeft ondertekend, moet ook het [bewijs worden genoteerd](how-to-verify-certificates.md) . |
 
         
@@ -64,11 +64,11 @@ Er zijn twee manieren waarop u uw apparaten kunt inschrijven bij de inrichtings 
      
         [![Afzonderlijke inschrijving in de portal](./media/how-to-manage-enrollments/individual-enrollment.png)](./media/how-to-manage-enrollments/individual-enrollment.png#lightbox)
     
-        | Veld | Description |
+        | Veld | Beschrijving |
         | :--- | :--- |
         | **Mechanisme** | Selecteer **X. 509**, **TPM** of **symmetrische sleutel** voor het Attestation-mechanisme dat moet worden gebruikt, afhankelijk van de Attestation-methode die uw apparaten gebruiken. |
         | Attestation-instellingen | Voor stapsgewijze instructies over het maken en gebruiken van afzonderlijke inschrijvingen met symmetrische sleutels of X. 509-certificaten, zie een van de [richt lijnen voor een symmetrisch apparaat](quick-create-simulated-device-symmetric-key-java.md#create-a-device-enrollment) of het [inrichten van een X. 509-certificaat apparaat](quick-create-simulated-device-x509-java.md#create-a-self-signed-x509-device-certificate-and-individual-enrollment-entry) Quick starts.<br><br>Zie een van de voor beelden van [een gesimuleerd TPM-apparaat](quick-create-simulated-device-tpm-java.md#create-a-device-enrollment-entry) voor stapsgewijze instructies voor het maken en gebruiken van afzonderlijke inschrijvingen met behulp van TPM-Attestation.|
-        | **IoT Hub apparaat-ID** |  Deze ID geeft uw apparaat weer. Het moet de regels voor een apparaat-ID volgen. Zie Eigenschappen van identiteit van [apparaat](../iot-hub/iot-hub-devguide-identity-registry.md#device-identity-properties)voor meer informatie.<br><br>Wanneer u X. 509-certificaten gebruikt, moet deze tekst de onderwerpnaam zijn van het certificaat van het apparaat dat u voor de registratie uploadt. De onderwerpnaam moet voldoen aan de regels voor een apparaat-ID.|
+        | **IoT Hub apparaat-ID** |  Deze ID geeft uw apparaat weer. Het moet de regels voor een apparaat-id volgen. Zie [Eigenschappen van apparaat-id](../iot-hub/iot-hub-devguide-identity-registry.md#device-identity-properties) voor meer informatie.<br><br>Wanneer u X. 509-certificaten gebruikt, moet deze tekst de onderwerpnaam zijn van het certificaat van het apparaat dat u voor de registratie uploadt. De onderwerpnaam moet voldoen aan de regels voor een apparaat-ID.|
             
 
 

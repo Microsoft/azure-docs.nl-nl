@@ -9,10 +9,10 @@ ms.topic: tutorial
 ms.date: 09/15/2020
 ms.author: ambapat
 ms.openlocfilehash: a5ecd8f13a3255a565168f62f358a6a38e3cbab4
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94445214"
 ---
 # <a name="managed-hsm-local-rbac-built-in-roles"></a>Lokale, ingebouwde RBAC-rollen van de beheerde HSM

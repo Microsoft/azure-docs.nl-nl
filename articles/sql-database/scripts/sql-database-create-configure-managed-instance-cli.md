@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: carlrab
 ms.date: 03/25/2019
 ms.openlocfilehash: 54e1aa993f177a4d3bc255287ae8c2fb14cf65af
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87497270"
 ---
 # <a name="use-cli-to-create-an-azure-sql-managed-instance"></a>CLI gebruiken om een beheerd exemplaar van Azure SQL te maken
@@ -39,7 +39,7 @@ Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, moet u voor 
 
 ### <a name="clean-up-deployment"></a>Opschonen van implementatie
 
-Gebruik de volgende opdracht om de resourcegroep en alle resources die er aan zijn gekoppeld te verwijderen.
+Gebruik de volgende opdracht om de resourcegroep en alle resources die eraan zijn gekoppeld te verwijderen.
 
 ```azurecli-interactive
 az group delete --name $resource

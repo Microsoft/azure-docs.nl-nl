@@ -9,10 +9,10 @@ ms.date: 07/06/2020
 ms.author: tamram
 ms.custom: include file
 ms.openlocfilehash: f014ce55dc40723faf1b60f908814f9fa0428b8e
-ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99215294"
 ---
 Azure bevat de volgende ingebouwde Azure-rollen voor het autoriseren van toegang tot blob- en wachtrijgegevens met behulp van Azure AD en OAuth:

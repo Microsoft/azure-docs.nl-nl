@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 02/18/2020
 ms.openlocfilehash: 169a90c12b30e0d083ce5c53ab7c6dd2495c4c23
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100592383"
 ---
 # <a name="monitor-query-requests-in-azure-cognitive-search"></a>Query aanvragen bewaken in azure Cognitive Search
@@ -36,7 +36,7 @@ Volume wordt gemeten als **Zoek Query's per seconde** (qps), een ingebouwde metr
 
 Het is gebruikelijk om query's uit te voeren in milliseconden, zodat alleen query's die als seconden worden gemeten, worden weer gegeven in metrische gegevens.
 
-| Aggregatietype | Description |
+| Aggregatietype | Beschrijving |
 |------------------|-------------|
 | Gemiddeld | Het gemiddelde aantal seconden binnen een minuut gedurende welke de uitvoering van de query heeft plaatsgevonden.|
 | Count | Het aantal metrische gegevens dat is verzonden naar het logboek binnen het interval van één minuut. |

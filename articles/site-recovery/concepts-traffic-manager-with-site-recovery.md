@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: mayg
 ms.openlocfilehash: bb112e0b2d1c64e65ecaf6749a25707d8632c0cb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86134962"
 ---
 # <a name="azure-traffic-manager-with-azure-site-recovery"></a>Azure Traffic Manager met Azure Site Recovery
@@ -87,7 +87,7 @@ Wereld wijde ondernemingen verbeteren de ervaring van klanten vaak door hun toep
 
 Laten we eens kijken naar een voor beeld waarbij **bedrijf D** de eind punten van de toepassing heeft gesplitst zodat deze afzonderlijk Duitsland en de rest van de wereld kunnen behandelen. **Bedrijf D** maakt gebruik van de [geografische](../traffic-manager/traffic-manager-configure-geographic-routing-method.md) routerings methode van Azure Traffic Manager om dit in te stellen. Verkeer dat afkomstig is van Duitsland, wordt omgeleid naar **eind punt 1** en alle verkeer van buiten Duitsland wordt omgeleid naar **eind punt 2**.
 
-Het probleem met deze installatie is dat als **eind punt 1** om de een of andere reden niet meer werkt, het verkeer naar **eind punt 2**niet kan worden omgeleid. Verkeer dat afkomstig is van Duitsland, blijft gericht op **eind punt 1** , ongeacht de status van het eind punt, waardoor Duitse gebruikers zonder toegang tot de toepassing van het **bedrijf D**. Op dezelfde manier wordt het verkeer naar **eind punt 1**niet omgeleid als **eind punt 2** offline gaat.
+Het probleem met deze installatie is dat als **eind punt 1** om de een of andere reden niet meer werkt, het verkeer naar **eind punt 2** niet kan worden omgeleid. Verkeer dat afkomstig is van Duitsland, blijft gericht op **eind punt 1** , ongeacht de status van het eind punt, waardoor Duitse gebruikers zonder toegang tot de toepassing van het **bedrijf D**. Op dezelfde manier wordt het verkeer naar **eind punt 1** niet omgeleid als **eind punt 2** offline gaat.
 
 ![Toepassing met meerdere regio's voordat](./media/concepts-traffic-manager-with-site-recovery/geographic-application-before.png)
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 09/03/2020
 ms.author: cherylmc
 ms.openlocfilehash: 61732f66aef58f5a9edcb9e095782e19e8aaffdd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91397212"
 ---
 # <a name="vpn-gateway-design"></a>VPN Gateway ontwerp
@@ -77,7 +77,7 @@ Zolang het virtuele netwerk voldoet aan bepaalde vereisten, kunt u VNet-peering 
 
 ## <a name="expressroute-private-connection"></a><a name="ExpressRoute"></a>ExpressRoute (privéverbinding)
 
-Met ExpressRoute kunt u uw on-premises netwerken in de Microsoft Cloud uitbreiden via een privéverbinding die wordt gefaciliteerd door een connectiviteitsprovider. Met ExpressRoute kunt u verbindingen tot stand brengen met micro soft-Cloud Services, zoals Microsoft Azure, Microsoft 365 en CRM Online. De connectiviteit kan van een wille keurig netwerk (IP VPN), een Point-to-Point Ethernet-netwerk of een virtuele Kruis verbinding via een connectiviteits provider op een functie voor samen locatie zijn.
+Met ExpressRoute kunt u uw on-premises netwerken uitbreiden naar de Microsoft Cloud via een privéverbinding van een connectiviteitsprovider. Met ExpressRoute kunt u verbindingen tot stand brengen met micro soft-Cloud Services, zoals Microsoft Azure, Microsoft 365 en CRM Online. Via een connectiviteitsprovider in een colocatiefaciliteit is connectiviteit mogelijk vanuit een any-to-any (IP VPN) netwerk, een point-to-point Ethernet-netwerk of een virtuele overlappende verbinding.
 
 ExpressRoute-verbindingen gaan niet via het openbare internet. Daardoor zijn ExpressRoute-verbindingen betrouwbaarder en sneller en hebben ze lagere latenties en betere beveiliging dan gewone verbindingen via internet.
 

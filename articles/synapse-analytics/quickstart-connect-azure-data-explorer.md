@@ -10,10 +10,10 @@ ms.date: 10/07/2020
 ms.author: maraheja
 ms.reviewer: jrasnick
 ms.openlocfilehash: ee9d137973bfa4eeb28bc6526437e76e781f3199
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92172270"
 ---
 # <a name="connect-to-azure-data-explorer-using-apache-spark-for-azure-synapse-analytics"></a>Verbinding maken met Azure Data Explorer met behulp van Apache Spark voor Azure Synapse Analytics
@@ -30,7 +30,7 @@ In dit artikel wordt beschreven hoe u toegang krijgt tot Azure Data Explorer-dat
 
 ## <a name="go-to-synapse-studio"></a>Ga naar Synapse Studio
 
-Selecteer **Synapse Studio starten** vanuit een Azure Synapse-werkruimte. Selecteer op de startpagina van Synapse Studio de optie **Gegevens** . U wordt nu naar **Data Object Explorer** geleid.
+Selecteer **Synapse Studio starten** vanuit een Azure Synapse-werkruimte. Selecteer op de startpagina van Synapse Studio de optie **Gegevens**. U wordt nu naar **Data Object Explorer** geleid.
 
 ## <a name="connect-an-azure-data-explorer-database-to-an-azure-synapse-workspace"></a>Een Azure Data Explorer-database verbinden met een Azure Synapse-werkruimte
 
@@ -38,23 +38,23 @@ Het verbinden van een Azure Data Explorer-database met een werkruimte wordt uitg
 
 Voer de volgende stappen uit vanuit Data Object Explorer om een rechtstreekse verbinding met een Azure Data Explorer-cluster te maken:
 
-1. Selecteer het pictogram **+** bij de optie **Gegevens** .
+1. Selecteer het pictogram **+** bij de optie **Gegevens**.
 1. Selecteer **Verbinding maken** om verbinding te maken met externe gegevens.
 1. Selecteer **Azure Data Explorer (Kusto)** .
-1. Selecteer **Doorgaan** .
+1. Selecteer **Doorgaan**.
 1. Gebruik een beschrijvende naam voor de gekoppelde service. De naam wordt weergegeven in Data Object Explorer en wordt tijdens Azure Synapse-uitvoeringen gebruikt om verbinding te maken met de database.
 1. Selecteer het Azure Data Explorer-cluster in uw abonnement of voer de URI in.
 1. Voer de **id** en de **sleutel** van de service-principal in. Zorg ervoor dat deze service-principal toegang heeft tot de database voor leesbewerkingen en toegang tot de ingestor voor het opnemen van gegevens.
 1. Voer de naam van de Azure Data Explorer-database in.
 1. Selecteer **Verbinding testen** om te controleren of u over de juiste machtigingen beschikt.
-1. Selecteer **Maken** .
+1. Selecteer **Maken**.
 
     ![Schermopname van een nieuw gekoppelde service.](./media/quickstart-connect-azure-data-explorer/003-new-linked-service.png)
 
     > [!NOTE]
     > (Optioneel) **Verbinding testen** valideert geen schrijftoegang. Zorg ervoor dat uw service-principal-id schrijftoegang heeft tot de Azure Data Explorer-database.
 
-1. Azure Data Explorer-clusters en -databases worden weergegeven op het tabblad **Gekoppeld** onder de sectie **Azure Data Explorer** .
+1. Azure Data Explorer-clusters en -databases worden weergegeven op het tabblad **Gekoppeld** onder de sectie **Azure Data Explorer**.
 
     ![Schermopname van het zoeken naar clusters.](./media/quickstart-connect-azure-data-explorer/004-browse-clusters.png)
 

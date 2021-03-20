@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 02/22/2020
 ms.openlocfilehash: cd48b32afee320aa3d252540d566317c374c73a8
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93420781"
 ---
 # <a name="feature-hashing-module-reference"></a>Naslag informatie over functie hashing-module
@@ -39,7 +39,7 @@ Neem bijvoorbeeld een aantal eenvoudige zinnen zoals deze, gevolgd door een sent
 
 Intern maakt de functie hashing-module een woorden lijst van n-gram. De lijst met bigrams voor deze gegevensset zou er bijvoorbeeld als volgt moeten uitzien:
 
-|Term (bigrams)|Frequency|
+|Term (bigrams)|Frequentie|
 |------------|---------------|
 |Dit boek|3|
 |Ik gek|1|
@@ -48,7 +48,7 @@ Intern maakt de functie hashing-module een woorden lijst van n-gram. De lijst me
 
 U kunt de grootte van het n-gram instellen met behulp van de eigenschap **n-gram** . Als u kiest voor bigrams, worden unigrams ook berekend. De woorden lijst bevat ook enkele voor waarden, zoals de volgende:
 
-|Term (unigrams)|Frequency|
+|Term (unigrams)|Frequentie|
 |------------|---------------|
 |boek|3|
 |I|3|

@@ -15,10 +15,10 @@ ms.topic: conceptual
 ms.date: 12/14/2020
 ms.author: phjensen
 ms.openlocfilehash: b168167ce4f44d87c396746cca3f271f95f83163
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97632683"
 ---
 # <a name="what-is-azure-application-consistent-snapshot-tool-preview"></a>Wat is Azure-toepassing consistent momentopname programma (preview-versie)
@@ -27,7 +27,7 @@ Azure-toepassing consistent snap shot tool (AzAcSnap) is een opdracht regel prog
 
 ## <a name="benefits-of-using-azacsnap"></a>Voor delen van het gebruik van AzAcSnap
 
-AzAcSnap maakt gebruik van de moment opname van de volume-en replicatie functionaliteit in Azure NetApp Files en een grote Azure-instantie.  Het biedt de volgende voor delen:
+AzAcSnap maakt gebruik van de functie voor momentopnames en replicatie van volumes in Azure NetApp Files en Azure grote instantie.  Dit biedt de volgende voordelen:
 
 - **Toepassings consistente gegevens beveiliging** AzAcSnap is een gecentraliseerde oplossing voor het maken van back-ups van essentiële database bestanden. Het zorgt voor consistentie van de Data Base voordat u een moment opname van een opslag volume uitvoert. Als gevolg hiervan zorgt u ervoor dat de moment opname van het opslag volume kan worden gebruikt voor het herstellen van de data base.
 - **Database catalogus beheer** Wanneer u AzAcSnap gebruikt met een Data Base met een ingebouwde back-upcatalogus, worden de records in de catalogus actueel gehouden met opslag momentopnamen.  Met deze mogelijkheid kan een database beheerder de back-upactiviteit bekijken.

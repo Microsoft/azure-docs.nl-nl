@@ -8,10 +8,10 @@ ms.custom:
 - seodec18
 - fasttrack-edit
 ms.openlocfilehash: 11c913b12b4dcb7d2a5ffa532064b347b82904ef
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "80519916"
 ---
 # <a name="configure-your-app-service-or-azure-functions-app-to-use-twitter-login"></a>Uw App Service of Azure Functions app configureren voor het gebruik van Twitter-aanmelding
@@ -27,7 +27,7 @@ Voor het volt ooien van de procedure in dit artikel hebt u een Twitter-account n
 1. Meld u aan bij de [Azure Portal] en ga naar uw toepassing. Kopieer uw **URL**. U gebruikt deze om uw Twitter-app te configureren.
 1. Ga naar de website van de [Twitter-ontwikkel aars] , Meld u aan met de referenties van uw Twitter-account en selecteer **een app maken**.
 1. Voer de **naam** van de app en de **toepassings beschrijving** in voor uw nieuwe app. Plak de **URL** van uw toepassing in het veld URL van de **website** . Voer in de sectie **url's van aanroepen** de HTTPS-URL van uw app service-app in en voeg het pad toe `/.auth/login/twitter/callback` . Bijvoorbeeld `https://contoso.azurewebsites.net/.auth/login/twitter/callback`.
-1. Typ aan de onderkant van de pagina ten minste 100 tekens in **vertel ons hoe deze app wordt gebruikt**en selecteer vervolgens **maken**. Klik opnieuw op **maken** in het pop-upvenster. De details van de toepassing worden weer gegeven.
+1. Typ aan de onderkant van de pagina ten minste 100 tekens in **vertel ons hoe deze app wordt gebruikt** en selecteer vervolgens **maken**. Klik opnieuw op **maken** in het pop-upvenster. De details van de toepassing worden weer gegeven.
 1. Selecteer het tabblad **sleutels en toegangs tokens** .
 
    Noteer deze waarden:
@@ -40,7 +40,7 @@ Voor het volt ooien van de procedure in dit artikel hebt u een Twitter-account n
 ## <a name="add-twitter-information-to-your-application"></a><a name="secrets"> </a>Twitter-gegevens toevoegen aan uw toepassing
 
 1. Ga naar uw toepassing in de [Azure Portal].
-1. Selecteer **instellingen**  >  **verificatie/autorisatie**en zorg ervoor dat **app service-verificatie** is **ingeschakeld**.
+1. Selecteer **instellingen**  >  **verificatie/autorisatie** en zorg ervoor dat **app service-verificatie** is **ingeschakeld**.
 1. Selecteer **Twitter**.
 1. Plak de `API key` en `API secret key` waarden die u eerder hebt verkregen.
 1. Selecteer **OK**.

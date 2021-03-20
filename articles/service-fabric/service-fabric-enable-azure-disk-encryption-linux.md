@@ -4,10 +4,10 @@ description: In dit artikel wordt beschreven hoe u schijf versleuteling inschake
 ms.topic: article
 ms.date: 03/22/2019
 ms.openlocfilehash: c600d822d20b0e5a0ca613935b1dfa4be838fcec
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "78252819"
 ---
 # <a name="enable-disk-encryption-for-azure-service-fabric-cluster-nodes-in-linux"></a>Schijf versleuteling inschakelen voor Azure Service Fabric cluster knooppunten in Linux 
@@ -203,7 +203,7 @@ az vmss encryption enable -g <resourceGroupName> -n <VMSS name> --disk-encryptio
 
 ### <a name="validate-if-disk-encryption-is-enabled-for-a-virtual-machine-scale-set-in-linux"></a>Valideren of schijf versleuteling is ingeschakeld voor een schaalset voor virtuele machines in Linux
 Voer de volgende opdrachten uit om de status van een volledige schaalset voor virtuele machines of een wille keurig exemplaar in een schaalset op te halen.
-Daarnaast kunt u zich aanmelden bij de virtuele Linux-cluster-VM en de opdracht **LSBLK** uitvoeren. In de uitvoer moet de toegevoegde gegevens schijf worden weer gegeven in de kolom **koppel punt** , en de kolom **type** moet *crypt*lezen.
+Daarnaast kunt u zich aanmelden bij de virtuele Linux-cluster-VM en de opdracht **LSBLK** uitvoeren. In de uitvoer moet de toegevoegde gegevens schijf worden weer gegeven in de kolom **koppel punt** , en de kolom **type** moet *crypt* lezen.
 
 ```powershell
 

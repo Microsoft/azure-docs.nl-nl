@@ -5,10 +5,10 @@ ms.topic: tutorial
 ms.date: 10/28/2020
 ms.custom: ''
 ms.openlocfilehash: a71ff438feaef555a85c33d818c287c64621d40d
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92913837"
 ---
 # <a name="tutorial-deploy-a-multi-container-group-using-docker-compose"></a>Zelfstudie: Een groep met meerdere containers implementeren met behulp van Docker Compose 
@@ -35,9 +35,9 @@ In dit artikel leert u het volgende:
 
 ## <a name="prerequisites"></a>Vereisten
 
-* **Azure CLI** : de Azure CLI moet op uw lokale computer zijn geïnstalleerd. Versie 2.10.1 of hoger wordt aanbevolen. Voer `az --version` uit om de versie te bekijken. Als u uw CLI wilt installeren of upgraden, raadpleegt u [De Azure CLI installeren](/cli/azure/install-azure-cli).
+* **Azure CLI**: de Azure CLI moet op uw lokale computer zijn geïnstalleerd. Versie 2.10.1 of hoger wordt aanbevolen. Voer `az --version` uit om de versie te bekijken. Als u uw CLI wilt installeren of upgraden, raadpleegt u [De Azure CLI installeren](/cli/azure/install-azure-cli).
 
-* **Docker Desktop** : u moet Docker Desktop versie 2.3.0.5 of hoger gebruiken. Deze versie is beschikbaar voor [Windows](https://desktop.docker.com/win/edge/Docker%20Desktop%20Installer.exe) of [macOS](https://desktop.docker.com/mac/edge/Docker.dmg). U kunt ook de [Docker ACI Integration CLI voor Linux](https://docs.docker.com/engine/context/aci-integration/#install-the-docker-aci-integration-cli-on-linux) installeren.
+* **Docker Desktop**: u moet Docker Desktop versie 2.3.0.5 of hoger gebruiken. Deze versie is beschikbaar voor [Windows](https://desktop.docker.com/win/edge/Docker%20Desktop%20Installer.exe) of [macOS](https://desktop.docker.com/mac/edge/Docker.dmg). U kunt ook de [Docker ACI Integration CLI voor Linux](https://docs.docker.com/engine/context/aci-integration/#install-the-docker-aci-integration-cli-on-linux) installeren.
 
 [!INCLUDE [container-instances-create-registry](../../includes/container-instances-create-registry.md)]
 
@@ -216,7 +216,7 @@ azurevotingappredis_azure-vote-front   myregistry.azurecr.io/azure-vote-front   
 
 Als u de actieve toepassing in de cloud wilt zien, voert u het weergegeven IP-adres in een lokale webbrowser in. In dit voorbeeld voert u `52.179.23.131` in. De voorbeeldtoepassing wordt dan geladen, zoals wordt weergegeven in het volgende voorbeeld:
 
-:::image type="content" source="media/tutorial-docker-compose/azure-vote-aci.png" alt-text="Installatiekopie van stem-app":::
+:::image type="content" source="media/tutorial-docker-compose/azure-vote-aci.png" alt-text="Installatiekopie van stem-app in ACI":::
 
 Als u de logboeken van de front-endcontainer wilt weergeven, voert u de opdracht [docker logs](https://docs.docker.com/engine/reference/commandline/logs) uit. Bijvoorbeeld:
 

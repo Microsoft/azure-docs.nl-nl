@@ -9,10 +9,10 @@ ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
 ms.openlocfilehash: a1b7564988c8a4d63a37b53d18ed3a7359e65d72
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92926407"
 ---
 # <a name="use-the-opc-vault-certificate-management-service"></a>De OPC-kluis certificaat beheer service gebruiken
@@ -40,7 +40,7 @@ Als u dit nog niet hebt gedaan, maakt u het CA-certificaat van de certificaat ve
 > De rol schrijver is vereist voor het registreren van een toepassing.
 
 1. Open uw certificaat service op `https://myResourceGroup-app.azurewebsites.net` en meld u aan.
-2. Ga naar **Nieuw registreren** . Voor een toepassings registratie moet aan een gebruiker ten minste de rol van schrijver zijn toegewezen.
+2. Ga naar **Nieuw registreren**. Voor een toepassings registratie moet aan een gebruiker ten minste de rol van schrijver zijn toegewezen.
 2. Het invoer formulier volgt naam conventies in OPC UA. Zo wordt in de volgende scherm afbeelding de instellingen voor het voor beeld van het [OPC UA-referentie server](https://github.com/OPCFoundation/UA-.NETStandard/tree/master/Applications/ReferenceServer) in de OPC ua .NET Standard stack weer gegeven:
 
    ![Scherm afbeelding van registratie van UA-referentie server](media/howto-opc-vault-secure/reference-server-registration.png "Registratie van UA-referentie server")
@@ -53,7 +53,7 @@ Beveilig uw OPC UA-toepassing door een ondertekend certificaat uit te geven op b
 
 #### <a name="request-a-new-certificate-with-a-new-keypair"></a>Een nieuw certificaat aanvragen met een nieuw sleutel paar
 
-1. Ga naar **toepassingen** .
+1. Ga naar **toepassingen**.
 3. Selecteer een **nieuwe aanvraag** voor een vermelde toepassing.
 
    ![Scherm afbeelding van nieuw certificaat aanvragen](media/howto-opc-vault-secure/request-new-certificate.png "Nieuw certificaat aanvragen")
@@ -78,7 +78,7 @@ Nu is het afhankelijk van het OPC UA-apparaat hoe het nieuwe sleutel paar moet w
 
 #### <a name="request-a-new-certificate-with-a-csr"></a>Een nieuw certificaat aanvragen bij een CSR 
 
-1. Ga naar **toepassingen** .
+1. Ga naar **toepassingen**.
 3. Selecteer een **nieuwe aanvraag** voor een vermelde toepassing.
 
    ![Scherm afbeelding van nieuw certificaat aanvragen](media/howto-opc-vault-secure/request-new-certificate.png "Nieuw certificaat aanvragen")
@@ -87,7 +87,7 @@ Nu is het afhankelijk van het OPC UA-apparaat hoe het nieuwe sleutel paar moet w
 
    ![Scherm opname van een nieuw certificaat genereren](media/howto-opc-vault-secure/generate-new-certificate.png "Nieuw certificaat genereren")
 
-4. Upload CSR door een lokaal bestand te selecteren of door een met base64 gecodeerde CSR in het formulier te plakken. Selecteer **Nieuw certificaat genereren** .
+4. Upload CSR door een lokaal bestand te selecteren of door een met base64 gecodeerde CSR in het formulier te plakken. Selecteer **Nieuw certificaat genereren**.
 
    ![Scherm opname van Details van certificaat aanvraag weer geven](media/howto-opc-vault-secure/approve-reject-csr.png "CSR goed keuren")
 

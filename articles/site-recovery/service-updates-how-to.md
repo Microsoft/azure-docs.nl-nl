@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 07/31/2019
 ms.author: ramamill
 ms.openlocfilehash: a1ea8b6fb9800d796670161288be0d86ce6ffc42
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89424936"
 ---
 # <a name="service-updates-in-site-recovery"></a>Service-updates in Site Recovery
@@ -92,7 +92,7 @@ In dit scenario wordt u ten zeerste aangeraden [Automatische updates in te scha 
 
 Als u updates hand matig wilt beheren, kunt u een van de volgende opties kiezen:
 
-1. Wanneer een nieuwe agent update beschikbaar is, geeft Site Recovery een melding in de kluis aan de bovenkant van de pagina. Klik in de kluis > **gerepliceerde items**op deze melding aan de bovenkant van het scherm: 
+1. Wanneer een nieuwe agent update beschikbaar is, geeft Site Recovery een melding in de kluis aan de bovenkant van de pagina. Klik in de kluis > **gerepliceerde items** op deze melding aan de bovenkant van het scherm: 
     
     **Er is een nieuwe Site Recovery update voor de replicatie agent beschikbaar. Klik om te installeren->** <br/><br/>Selecteer de Vm's waarvoor u de update wilt Toep assen en klik vervolgens op **OK**.
 
@@ -112,7 +112,7 @@ Opnieuw opstarten is niet verplicht, tenzij het verschil tussen de agent versie 
 
 In het voor beeld in de tabel ziet u hoe dit werkt.
 
-|**Agent versie (laatste keer opnieuw opstarten)** | **Upgrade uitvoeren naar** | **Verplicht opnieuw opstarten?**|
+|**Agent versie (laatste keer opnieuw opstarten)** | **Upgrade naar** | **Verplicht opnieuw opstarten?**|
 |---------|---------|---------|
 |9,16 |  9,18 | Niet verplicht|
 |9,16 | 9,19 | Niet verplicht|

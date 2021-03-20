@@ -4,10 +4,10 @@ description: Meer informatie over het opgeven van een resource groep voor Vm's i
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 7b72048405d3025ca21b324b6ad3168dd0c9ac95
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85483360"
 ---
 # <a name="specify-a-resource-group-for-lab-virtual-machines-in-azure-devtest-labs"></a>Geef een resource groep op voor Lab-virtuele machines in Azure DevTest Labs
@@ -105,7 +105,7 @@ Deze instelling is van toepassing op nieuwe virtuele machines die zijn gemaakt i
 Deze API gebruiken:
 - Gebruik API-versie **2018_10_15_preview**.
 - Als u een nieuwe resource groep opgeeft, moet u ervoor zorgen dat u **schrijf machtigingen hebt voor resource groepen** in uw abonnement. Als u geen schrijf machtigingen hebt, zullen het maken van nieuwe virtuele machines in de opgegeven resource groep mislukken.
-- Geef tijdens het gebruik van de API de **volledige resource groep-ID**door. Bijvoorbeeld: `/subscriptions/<SubscriptionID>/resourceGroups/<ResourceGroupName>`. Zorg ervoor dat de resource groep zich in hetzelfde abonnement bevindt als het lab. 
+- Geef tijdens het gebruik van de API de **volledige resource groep-ID** door. Bijvoorbeeld: `/subscriptions/<SubscriptionID>/resourceGroups/<ResourceGroupName>`. Zorg ervoor dat de resource groep zich in hetzelfde abonnement bevindt als het lab. 
 
 
 ## <a name="next-steps"></a>Volgende stappen

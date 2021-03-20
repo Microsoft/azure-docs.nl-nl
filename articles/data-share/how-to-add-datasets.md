@@ -7,10 +7,10 @@ ms.service: data-share
 ms.topic: how-to
 ms.date: 07/30/2020
 ms.openlocfilehash: 3bfa911921e9bacde2649ee8c4f0d4bc31b56f54
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92910539"
 ---
 # <a name="how-to-add-datasets-to-an-existing-share-in-azure-data-share"></a>Gegevens sets toevoegen aan een bestaande share in een Azure-gegevens share
@@ -25,7 +25,7 @@ In azure data share gaat u naar de verzonden share en selecteert u het tabblad *
 
 ![Scherm opname toont de geselecteerde gegevens sets toevoegen.](./media/how-to/how-to-add-datasets/add-datasets.png)
 
-Selecteer in het deel venster aan de rechter kant het type gegevensset dat u wilt toevoegen en klik vervolgens op **volgende** . Selecteer het abonnement en de resource groep van de gegevens die u wilt toevoegen. Zoek met de vervolg keuzelijst pijlen het selectie vakje naast de gegevens die u wilt toevoegen.
+Selecteer in het deel venster aan de rechter kant het type gegevensset dat u wilt toevoegen en klik vervolgens op **volgende**. Selecteer het abonnement en de resource groep van de gegevens die u wilt toevoegen. Zoek met de vervolg keuzelijst pijlen het selectie vakje naast de gegevens die u wilt toevoegen.
 
 ![Scherm afbeelding toont het deel venster Blob Storage toevoegen waarin u gegevens kunt selecteren.](./media/how-to/how-to-add-datasets/add-datasets-side.png)
 

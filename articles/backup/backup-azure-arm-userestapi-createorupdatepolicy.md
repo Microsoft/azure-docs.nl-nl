@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 08/21/2018
 ms.assetid: 5ffc4115-0ae5-4b85-a18c-8a942f6d4870
 ms.openlocfilehash: e4e6f5b5cf28c3830a91a494ea60680eee1546f6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89179603"
 ---
 # <a name="create-azure-recovery-services-backup-policies-using-rest-api"></a>Back-upbeleid voor Azure Recovery Services maken met behulp van REST API
@@ -29,9 +29,9 @@ De `{policyName}` en `{vaultName}` zijn aanwezig in de URI. Meer informatie vind
 
 Als u bijvoorbeeld een beleid voor Azure VM backup wilt maken, volgt u de onderdelen van de hoofd tekst van de aanvraag.
 
-|Naam  |Vereist  |Type  |Beschrijving  |
+|Name  |Vereist  |Type  |Beschrijving  |
 |---------|---------|---------|---------|
-|properties     |   True      |  ProtectionPolicy:[AzureIaaSVMProtectionPolicy](/rest/api/backup/protectionpolicies/createorupdate#azureiaasvmprotectionpolicy)      | ProtectionPolicyResource-eigenschappen        |
+|properties     |   Waar      |  ProtectionPolicy:[AzureIaaSVMProtectionPolicy](/rest/api/backup/protectionpolicies/createorupdate#azureiaasvmprotectionpolicy)      | ProtectionPolicyResource-eigenschappen        |
 |tags     |         | Object        |  Resourcetags       |
 
 Raadpleeg het [back-upbeleid rest API document](/rest/api/backup/protectionpolicies/createorupdate)voor een volledige lijst met definities in de hoofd tekst van de aanvraag.

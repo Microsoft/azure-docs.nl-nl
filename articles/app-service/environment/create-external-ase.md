@@ -8,10 +8,10 @@ ms.date: 06/13/2017
 ms.author: ccompy
 ms.custom: seodec18
 ms.openlocfilehash: c953c31792b8d01199d409cbd91124138a6ebb15
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92927444"
 ---
 # <a name="create-an-external-app-service-environment"></a>Een externe App Service omgeving maken
@@ -47,9 +47,9 @@ Nadat u uw ASE hebt gemaakt, kunt u het volgende niet meer wijzigen:
 
 Er zijn drie manieren om een ASE te maken:
 
-- **Tijdens het maken van een app service-abonnement** . Met deze methode maakt u de ASE en het App Service plan in één stap.
-- **Als een zelfstandige actie** . Met deze methode maakt u een zelfstandige ASE. Dit is een ASE met niets. Deze methode is een geavanceerder proces voor het maken van een ASE. U kunt deze gebruiken om een ASE te maken met een ILB.
-- **Vanuit een Azure Resource Manager sjabloon** . Deze methode is voor ervaren gebruikers. Zie [een ASE maken op basis van een sjabloon][MakeASEfromTemplate]voor meer informatie.
+- **Tijdens het maken van een app service-abonnement**. Met deze methode maakt u de ASE en het App Service plan in één stap.
+- **Als een zelfstandige actie**. Met deze methode maakt u een zelfstandige ASE. Dit is een ASE met niets. Deze methode is een geavanceerder proces voor het maken van een ASE. U kunt deze gebruiken om een ASE te maken met een ILB.
+- **Vanuit een Azure Resource Manager sjabloon**. Deze methode is voor ervaren gebruikers. Zie [een ASE maken op basis van een sjabloon][MakeASEfromTemplate]voor meer informatie.
 
 Een extern-ASE heeft een openbaar VIP, wat betekent dat alle HTTP/HTTPS-verkeer naar de apps in de ASE een IP-adres is dat toegankelijk is via internet. Een ASE met een ILB heeft een IP-adres uit het subnet dat door de ASE wordt gebruikt. De apps die worden gehost in een ILB-ASE, worden niet rechtstreeks op internet weer gegeven.
 
@@ -59,7 +59,7 @@ Het App Service plan is een container met apps. Wanneer u een app maakt in App S
 
 Een ASE maken tijdens het maken van een App Service-abonnement:
 
-1. Selecteer in de [Azure Portal](https://portal.azure.com/) **een resource maken**  >  **Web en mobiel**  >  **Web-app** .
+1. Selecteer in de [Azure Portal](https://portal.azure.com/) **een resource maken**  >  **Web en mobiel**  >  **Web-app**.
 
     ![Scherm opname van de Azure Portal weer geven Web en mobiel geselecteerd in de Azure Marketplace en het scherm voor het maken van een nieuwe web-app aan de rechter kant.][1]
 
@@ -69,21 +69,21 @@ Een ASE maken tijdens het maken van een App Service-abonnement:
 
 4. Selecteer uw besturings systeem (Windows, Linux of docker). 
 
-5. Selecteer het App Service plan en selecteer vervolgens **nieuwe maken** . Linux-web-apps en Windows Web apps kunnen zich niet in hetzelfde App Service plan bevindt, maar kunnen zich in dezelfde App Service Environment. 
+5. Selecteer het App Service plan en selecteer vervolgens **nieuwe maken**. Linux-web-apps en Windows Web apps kunnen zich niet in hetzelfde App Service plan bevindt, maar kunnen zich in dezelfde App Service Environment. 
 
     ![Scherm opname van de Azure Portal het deel venster Web-app, het deel venster app service-plan weer te geven en het deel venster Nieuw App Service plan wordt geopend.][2]
 
 6. Selecteer in de vervolg keuzelijst **locatie** de regio waar u de ASE wilt maken. Als u een bestaande ASE selecteert, wordt er geen nieuwe ASE gemaakt. Het App Service plan wordt gemaakt in de ASE die u hebt geselecteerd. 
 
-7. Selecteer **prijs categorie** en kies een van de **afzonderlijke** sku's voor prijzen. Als u kiest voor een **geïsoleerde** SKU-kaart en een locatie die geen ASE is, wordt er een nieuwe ASE op die locatie gemaakt. Selecteer **selecteren** om het proces voor het maken van een ASE te starten. De **geïsoleerde** SKU is alleen beschikbaar in combi natie met een ASE. U kunt ook geen enkele andere prijs-SKU gebruiken in een andere ASE dan **geïsoleerd** . 
+7. Selecteer **prijs categorie** en kies een van de **afzonderlijke** sku's voor prijzen. Als u kiest voor een **geïsoleerde** SKU-kaart en een locatie die geen ASE is, wordt er een nieuwe ASE op die locatie gemaakt. Selecteer **selecteren** om het proces voor het maken van een ASE te starten. De **geïsoleerde** SKU is alleen beschikbaar in combi natie met een ASE. U kunt ook geen enkele andere prijs-SKU gebruiken in een andere ASE dan **geïsoleerd**. 
 
     ![Prijs categorie selecteren][3]
 
-8. Voer de naam voor uw ASE in. Deze naam wordt gebruikt in de adresseer bare naam voor uw apps. Als de naam van de ASE _appsvcenvdemo_ is, is de domein naam *. appsvcenvdemo.p.azurewebsites.net* . Als u een app met de naam *mytestapp* maakt, is deze beschikbaar op mytestapp.appsvcenvdemo.p.azurewebsites.net. U kunt geen witruimte gebruiken in de naam. Als u hoofd letters gebruikt, is de domein naam de totale kleine letters versie van die naam.
+8. Voer de naam voor uw ASE in. Deze naam wordt gebruikt in de adresseer bare naam voor uw apps. Als de naam van de ASE _appsvcenvdemo_ is, is de domein naam *. appsvcenvdemo.p.azurewebsites.net*. Als u een app met de naam *mytestapp* maakt, is deze beschikbaar op mytestapp.appsvcenvdemo.p.azurewebsites.net. U kunt geen witruimte gebruiken in de naam. Als u hoofd letters gebruikt, is de domein naam de totale kleine letters versie van die naam.
 
     ![Naam van nieuw App Service plan][4]
 
-9. Geef de details op van uw virtuele Azure-netwerk. Selecteer **Nieuw maken** of **Selecteer bestaande** . De optie om een bestaand VNet te selecteren, is alleen beschikbaar als u een VNet hebt in de geselecteerde regio. Als u **Nieuw maken** selecteert, voert u een naam in voor het VNet. Er wordt een nieuw Resource Manager VNet met die naam gemaakt. Er wordt gebruikgemaakt van de adres ruimte `192.168.250.0/23` in de geselecteerde regio. Als u **bestaande selecteren** selecteert, moet u het volgende doen:
+9. Geef de details op van uw virtuele Azure-netwerk. Selecteer **Nieuw maken** of **Selecteer bestaande**. De optie om een bestaand VNet te selecteren, is alleen beschikbaar als u een VNet hebt in de geselecteerde regio. Als u **Nieuw maken** selecteert, voert u een naam in voor het VNet. Er wordt een nieuw Resource Manager VNet met die naam gemaakt. Er wordt gebruikgemaakt van de adres ruimte `192.168.250.0/23` in de geselecteerde regio. Als u **bestaande selecteren** selecteert, moet u het volgende doen:
 
     a. Selecteer het VNet-adres blok als u meer dan één hebt.
 
@@ -97,7 +97,7 @@ Een ASE maken tijdens het maken van een App Service-abonnement:
 
 ## <a name="create-an-ase-and-a-linux-web-app-using-a-custom-docker-image-together"></a>Een ASE en een Linux-web-app maken met behulp van een aangepaste docker-installatie kopie
 
-1. Maak in [Azure portal](https://portal.azure.com/)de Azure Portal **een resource**  >  **Web en mobiel**  >  **Web App for containers.** 
+1. Maak in [](https://portal.azure.com/)de Azure Portal **een resource**  >  **Web en mobiel**  >  **Web App for containers.** 
 
     ![Scherm afbeelding van de Azure Portal weer geven Web en mobiel geselecteerd in de Azure Marketplace en het Web App for Containers deel venster aan de rechter kant geopend.][7]
 
@@ -105,21 +105,21 @@ Een ASE maken tijdens het maken van een App Service-abonnement:
 
 1. Selecteer of maak een resourcegroep. Met resource groepen kunt u gerelateerde Azure-resources beheren als een eenheid. Resource groepen zijn ook handig wanneer u Role-Based Access Control regels voor uw apps instelt. Zie [Overzicht van Azure Resource Manager][ARMOverview] voor meer informatie.
 
-1. Selecteer het App Service plan en selecteer vervolgens **nieuwe maken** . Linux-web-apps en Windows Web apps kunnen zich niet in hetzelfde App Service plan bevindt, maar kunnen zich in dezelfde App Service Environment. 
+1. Selecteer het App Service plan en selecteer vervolgens **nieuwe maken**. Linux-web-apps en Windows Web apps kunnen zich niet in hetzelfde App Service plan bevindt, maar kunnen zich in dezelfde App Service Environment. 
 
     ![Scherm opname van de Azure Portal het deel venster Web App for Containers, het deel venster app service-plan, en het deel venster Nieuw App Service plan worden geopend.][8]
 
 1. Selecteer in de vervolg keuzelijst **locatie** de regio waar u de ASE wilt maken. Als u een bestaande ASE selecteert, wordt er geen nieuwe ASE gemaakt. Het App Service plan wordt gemaakt in de ASE die u hebt geselecteerd. 
 
-1. Selecteer **prijs categorie** en kies een van de **afzonderlijke** sku's voor prijzen. Als u kiest voor een **geïsoleerde** SKU-kaart en een locatie die geen ASE is, wordt er een nieuwe ASE op die locatie gemaakt. Selecteer **selecteren** om het proces voor het maken van een ASE te starten. De **geïsoleerde** SKU is alleen beschikbaar in combi natie met een ASE. U kunt ook geen enkele andere prijs-SKU gebruiken in een andere ASE dan **geïsoleerd** . 
+1. Selecteer **prijs categorie** en kies een van de **afzonderlijke** sku's voor prijzen. Als u kiest voor een **geïsoleerde** SKU-kaart en een locatie die geen ASE is, wordt er een nieuwe ASE op die locatie gemaakt. Selecteer **selecteren** om het proces voor het maken van een ASE te starten. De **geïsoleerde** SKU is alleen beschikbaar in combi natie met een ASE. U kunt ook geen enkele andere prijs-SKU gebruiken in een andere ASE dan **geïsoleerd**. 
 
     ![Prijs categorie selecteren][3]
 
-1. Voer de naam voor uw ASE in. Deze naam wordt gebruikt in de adresseer bare naam voor uw apps. Als de naam van de ASE _appsvcenvdemo_ is, is de domein naam *. appsvcenvdemo.p.azurewebsites.net* . Als u een app met de naam *mytestapp* maakt, is deze beschikbaar op mytestapp.appsvcenvdemo.p.azurewebsites.net. U kunt geen witruimte gebruiken in de naam. Als u hoofd letters gebruikt, is de domein naam de totale kleine letters versie van die naam.
+1. Voer de naam voor uw ASE in. Deze naam wordt gebruikt in de adresseer bare naam voor uw apps. Als de naam van de ASE _appsvcenvdemo_ is, is de domein naam *. appsvcenvdemo.p.azurewebsites.net*. Als u een app met de naam *mytestapp* maakt, is deze beschikbaar op mytestapp.appsvcenvdemo.p.azurewebsites.net. U kunt geen witruimte gebruiken in de naam. Als u hoofd letters gebruikt, is de domein naam de totale kleine letters versie van die naam.
 
     ![Naam van nieuw App Service plan][4]
 
-1. Geef de details op van uw virtuele Azure-netwerk. Selecteer **Nieuw maken** of **Selecteer bestaande** . De optie om een bestaand VNet te selecteren, is alleen beschikbaar als u een VNet hebt in de geselecteerde regio. Als u **Nieuw maken** selecteert, voert u een naam in voor het VNet. Er wordt een nieuw Resource Manager VNet met die naam gemaakt. Er wordt gebruikgemaakt van de adres ruimte `192.168.250.0/23` in de geselecteerde regio. Als u **bestaande selecteren** selecteert, moet u het volgende doen:
+1. Geef de details op van uw virtuele Azure-netwerk. Selecteer **Nieuw maken** of **Selecteer bestaande**. De optie om een bestaand VNet te selecteren, is alleen beschikbaar als u een VNet hebt in de geselecteerde regio. Als u **Nieuw maken** selecteert, voert u een naam in voor het VNet. Er wordt een nieuw Resource Manager VNet met die naam gemaakt. Er wordt gebruikgemaakt van de adres ruimte `192.168.250.0/23` in de geselecteerde regio. Als u **bestaande selecteren** selecteert, moet u het volgende doen:
 
     a. Selecteer het VNet-adres blok als u meer dan één hebt.
 
@@ -141,9 +141,9 @@ Een ASE maken tijdens het maken van een App Service-abonnement:
 
 Als u een zelfstandige ASE maakt, heeft deze niets. Een lege ASE maakt nog steeds een maandelijkse kosten voor de infra structuur. Volg deze stappen om een ASE te maken met een ILB of om een ASE in een eigen resource groep te maken. Nadat u uw ASE hebt gemaakt, kunt u er apps in maken met behulp van het normale proces. Selecteer de nieuwe ASE als de locatie.
 
-1. Zoek in de Azure Marketplace naar **app service Environment** of selecteer **een resource maken**  >  **Web mobiele**  >  **app service Environment** . 
+1. Zoek in de Azure Marketplace naar **app service Environment** of selecteer **een resource maken**  >  **Web mobiele**  >  **app service Environment**. 
 
-1. Voer de naam van uw ASE in. Deze naam wordt gebruikt voor de apps die in de ASE zijn gemaakt. Als de naam *mynewdemoase* is, is de naam van het subdomein *. mynewdemoase.p.azurewebsites.net* . Als u een app met de naam *mytestapp* maakt, is deze beschikbaar op mytestapp.mynewdemoase.p.azurewebsites.net. U kunt geen witruimte gebruiken in de naam. Als u hoofd letters gebruikt, is de domein naam de totale kleine letters versie van de naam. Als u een ILB gebruikt, wordt uw ASE-naam niet gebruikt in uw subdomein, maar wordt in plaats daarvan expliciet aangegeven tijdens het maken van ASE.
+1. Voer de naam van uw ASE in. Deze naam wordt gebruikt voor de apps die in de ASE zijn gemaakt. Als de naam *mynewdemoase* is, is de naam van het subdomein *. mynewdemoase.p.azurewebsites.net*. Als u een app met de naam *mytestapp* maakt, is deze beschikbaar op mytestapp.mynewdemoase.p.azurewebsites.net. U kunt geen witruimte gebruiken in de naam. Als u hoofd letters gebruikt, is de domein naam de totale kleine letters versie van de naam. Als u een ILB gebruikt, wordt uw ASE-naam niet gebruikt in uw subdomein, maar wordt in plaats daarvan expliciet aangegeven tijdens het maken van ASE.
 
     ![Naam van ASE][5]
 
@@ -159,9 +159,9 @@ Als u een zelfstandige ASE maakt, heeft deze niets. Een lege ASE maakt nog steed
     
     * Het nieuwe VNet heeft het adres bereik 192.168.250.0/23 en een subnet met de naam default. Het subnet is gedefinieerd als 192.168.250.0/24. U kunt alleen een resource manager-VNet selecteren. De selectie van het **VIP-type** bepaalt of uw ASE rechtstreeks toegankelijk is vanaf internet (extern) of dat er een ILB wordt gebruikt. Zie [een interne Load Balancer maken en gebruiken met een app service omgeving][MakeILBASE]voor meer informatie over deze opties. 
 
-      * Als u **extern** selecteert voor het **VIP-type** , kunt u selecteren hoeveel externe IP-adressen het systeem moet maken voor op IP gebaseerde SSL-doel einden. 
+      * Als u **extern** selecteert voor het **VIP-type**, kunt u selecteren hoeveel externe IP-adressen het systeem moet maken voor op IP gebaseerde SSL-doel einden. 
     
-      * Als u **intern** selecteert voor het **VIP-type** , moet u het domein opgeven dat door uw ASE wordt gebruikt. U kunt een ASE implementeren in een VNet dat gebruikmaakt van open bare of particuliere adresbereiken. Als u een VNet met een openbaar adres bereik wilt gebruiken, moet u het VNet vooraf van de tijd maken. 
+      * Als u **intern** selecteert voor het **VIP-type**, moet u het domein opgeven dat door uw ASE wordt gebruikt. U kunt een ASE implementeren in een VNet dat gebruikmaakt van open bare of particuliere adresbereiken. Als u een VNet met een openbaar adres bereik wilt gebruiken, moet u het VNet vooraf van de tijd maken. 
     
     * Als u een bestaand VNet selecteert, wordt er een nieuw subnet gemaakt wanneer de ASE wordt gemaakt. *U kunt een vooraf gemaakt subnet niet gebruiken in de portal. Als u een resource manager-sjabloon gebruikt, kunt u een ASE maken met een bestaand subnet.* Zie [een app service Environment maken op basis van een sjabloon][MakeASEfromTemplate]om een ASE te maken op basis van een sjabloon.
 

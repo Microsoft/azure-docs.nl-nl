@@ -10,10 +10,10 @@ ms.author: vakrishn
 ms.reviewer: sourabha, sstein
 ms.date: 09/22/2020
 ms.openlocfilehash: 75e6ebaea4c5ba883820d2309212b35fed128142
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93422124"
 ---
 # <a name="set-up-iot-edge-modules-and-connections"></a>IoT Edge-modules en -verbindingen instellen

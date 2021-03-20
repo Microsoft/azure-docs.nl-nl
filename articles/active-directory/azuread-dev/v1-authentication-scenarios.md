@@ -15,10 +15,10 @@ ms.reviewer: saeeda, sureshja, hirsin
 ms.custom: aaddev
 ROBOTS: NOINDEX
 ms.openlocfilehash: 36b39f3706db615e40ebfadebf36be4d8b29c33e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "80154726"
 ---
 # <a name="what-is-authentication"></a>Wat is verificatie?
@@ -69,7 +69,7 @@ Afhankelijk van hoe uw client is gebouwd, kunnen er één (of meerdere) verifica
 |[Hybride OIDC-stroom](v1-protocols-openid-connect-code.md#get-access-tokens)| | x  | |          |            x   |
 |[Aflossingen van token vernieuwen](v1-protocols-oauth-code.md#refreshing-the-access-tokens) | token vernieuwen | x | x | x| |
 |[Namens-stroom](v1-oauth2-on-behalf-of-flow.md) | toegangs token| x| x| x| |
-|[Clientreferenties](v1-oauth2-client-creds-grant-flow.md) | | | x (alleen app)| | |
+|[Client referenties](v1-oauth2-client-creds-grant-flow.md) | | | x (alleen app)| | |
 
 Tokens die zijn uitgegeven via de impliciete modus, hebben een beperkte lengte omdat ze via de URL worden teruggestuurd naar de browser (waarbij `response_mode` `query` of `fragment` ).  Voor sommige browsers geldt een limiet voor de grootte van de URL die in de browser balk kan worden geplaatst en die kan worden uitgevoerd als deze te lang is.  Daarom hebben deze tokens geen `groups` `wids` claims. 
 
@@ -132,7 +132,7 @@ In de onderstaande tabel staat een korte beschrijving van elk type claim dat doo
 | Uitgegeven om | Registreert de tijd waarop het token is uitgegeven (vaak gebruikt om te controleren hoe nieuw het token is). |
 | Verlener | Identificeert de beveiligingstokenservice die het token heeft uitgegeven en de Azure AD-tenant. |
 | Achternaam | Biedt de achternaam van de gebruiker, zoals ingesteld in Azure AD. |
-| Naam | Biedt een voor mensen leesbare waarde waarmee het onderwerp van het token wordt geïdentificeerd. |
+| Name | Biedt een voor mensen leesbare waarde waarmee het onderwerp van het token wordt geïdentificeerd. |
 | Object-id | Bevat een onveranderbare, unieke id voor het onderwerp in Azure AD. |
 | Rollen | Bevat beschrijvende namen voor de Azure AD-toepassingsrollen die zijn toegewezen aan de gebruiker. |
 | Bereik | Geeft aan welke machtigingen zijn verleend aan de clienttoepassing. |

@@ -7,10 +7,10 @@ ms.service: load-balancer
 ms.topic: how-to
 ms.date: 03/25/2020
 ms.openlocfilehash: cb7bfb9ac4b10b807ac186d087b0037953abd559
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91439527"
 ---
 # <a name="configure-a-virtual-machine-scale-set-with-an-existing-azure-load-balancer-using-the-azure-portal"></a>Een schaalset voor virtuele machines configureren met een bestaande Azure Load Balancer met behulp van de Azure Portal
@@ -36,20 +36,20 @@ In deze sectie maakt u een schaalset voor virtuele machines in de Azure Portal m
 > [!NOTE]
 > Bij de volgende stappen wordt ervan uitgegaan dat een virtueel netwerk met de naam **myVNet** en een Azure-Load Balancer met de naam **myLoadBalancer** eerder is geïmplementeerd.
 
-1. Klik in de linkerbovenhoek van het scherm op **een resource maken**  >  **Compute**  >  **virtuele-machine schaalset** of zoek naar **schaalset voor virtuele machines** in de zoek functie voor Marketplace.
+1. Klik in de linkerbovenhoek van het scherm op **een resource maken**  >    >  **virtuele-machine schaalset** of zoek naar **schaalset voor virtuele machines** in de zoek functie voor Marketplace.
 
 2. Selecteer **Maken**.
 
-3. Voer in **een schaalset voor virtuele machines maken**in of Selecteer deze informatie op het tabblad **basis beginselen** :
+3. Voer in **een schaalset voor virtuele machines maken** in of Selecteer deze informatie op het tabblad **basis beginselen** :
 
     | Instelling                        | Waarde                                                                                                 |
     |--------------------------------|-------------------------------------------------------------------------------------------------------|
     | **Projectgegevens**            |                                                                                                       |
     | Abonnement                   | Selecteer uw Azure-abonnement                                                                        |
-    | Resourcegroep                 | Selecteer Nieuw maken, Voer **myResourceGroup**in en selecteer OK of selecteer een bestaande resource groep. |
+    | Resourcegroep                 | Selecteer Nieuw maken, Voer **myResourceGroup** in en selecteer OK of selecteer een bestaande resource groep. |
     | **Details van schaal sets**          |                                                                                                       |
     | Naam van virtuele-machineschaalset | **MyVMSS** invoeren                                                                                      |
-    | Regio                         | Selecteer **VS Oost 2**                                                                                    |
+    | Regio                         | Selecteer **US - oost 2**                                                                                    |
     | Beschikbaarheidszone              | Selecteer **Geen**                                                                                       |
     | **Exemplaardetails**           |                                                                                                       |
     | Installatiekopie                          | Selecteer **Ubuntu Server 18,04 LTS**                                                                    |
@@ -64,13 +64,13 @@ In deze sectie maakt u een schaalset voor virtuele machines in de Azure Portal m
 
     :::image type="content" source="./media/vm-scale-sets/create-vm-scale-set-01.png" alt-text="Scherm afbeelding toont het tabblad basis principes voor het maken van virtuele-machine schaal sets." border="true":::
 
-4. Selecteer het tabblad **netwerken** .
+4. Selecteer het tabblad **Netwerken**.
 
 5. Typ of Selecteer deze informatie op het tabblad **netwerk** :
 
      Instelling                           | Waarde                                                    |
     |-----------------------------------|----------------------------------------------------------|
-    | **Virtual Network configuratie** |                                                          |
+    | **Configuratie van virtueel netwerk** |                                                          |
     | Virtueel netwerk                   | Selecteer **myVNet** of uw bestaande virtuele netwerk.      |
     | **Taakverdeling**                |                                                          |
     | Een load balancer gebruiken               | Selecteer **Ja**                                           |
@@ -79,7 +79,7 @@ In deze sectie maakt u een schaalset voor virtuele machines in de Azure Portal m
     | Een load balancer selecteren            | **MyLoadBalancer** of uw bestaande Load Balancer selecteren |
     | Een back-endpool selecteren             | Selecteer **myBackendPool** of uw bestaande back-end-pool.  |
 
-    :::image type="content" source="./media/vm-scale-sets/create-vm-scale-set-02.png" alt-text="Scherm afbeelding toont het tabblad basis principes voor het maken van virtuele-machine schaal sets." border="true":::
+    :::image type="content" source="./media/vm-scale-sets/create-vm-scale-set-02.png" alt-text="Scherm afbeelding toont het tabblad netwerk met schaal sets voor virtuele machines maken." border="true":::
 
 6. Selecteer het tabblad **beheer** .
 

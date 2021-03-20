@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: pafarley
 ms.openlocfilehash: 542fadd5e5ab91be7b7113064bf8c998dae08d12
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92912936"
 ---
 # <a name="moderate-images-from-the-api-console"></a>Gematige installatie kopieën van de API-console
@@ -40,7 +40,7 @@ Voordat u de API in de online console kunt testen, moet u uw abonnements sleutel
 
 4. Gebruik de standaard voorbeeld afbeelding in het vak **hoofd tekst van aanvraag** of geef een afbeelding op die u wilt scannen. U kunt de installatie kopie zelf als binaire-bits gegevens verzenden of een openbaar toegankelijke URL voor een installatie kopie opgeven. 
 
-   Voor dit voor beeld gebruikt u het pad in het vak **hoofd tekst van aanvraag** en selecteert u **verzenden** . 
+   Voor dit voor beeld gebruikt u het pad in het vak **hoofd tekst van aanvraag** en selecteert u **verzenden**. 
 
    ![Afbeelding proberen: de hoofd tekst van de console evalueren](images/try-image-api-2.PNG)
 
@@ -48,9 +48,9 @@ Voordat u de API in de online console kunt testen, moet u uw abonnements sleutel
 
    ![Afbeelding proberen-voorbeeld installatie kopie van console evalueren](images/sample-image.jpg) 
 
-5. Selecteer **Verzenden** .
+5. Selecteer **Verzenden**.
 
-6. De API retourneert een waarschijnlijkheids score voor elke classificatie. Er wordt ook een bepalen of de installatie kopie voldoet aan de voor waarden ( **True** of **False** ). 
+6. De API retourneert een waarschijnlijkheids score voor elke classificatie. Er wordt ook een bepalen of de installatie kopie voldoet aan de voor waarden (**True** of **False**). 
 
    ![Afbeelding uitproberen-test-en voorwaarde bepaling van de console evalueren](images/try-image-api-3.PNG)
 
@@ -58,7 +58,7 @@ Voordat u de API in de online console kunt testen, moet u uw abonnements sleutel
 
 U kunt de afbeeldings toezicht-API gebruiken om gezichten te vinden in een afbeelding. Deze optie kan nuttig zijn wanneer u privacy-problemen hebt en u wilt voor komen dat een specifiek gezicht wordt gepost op uw platform. 
 
-1. Selecteer in de [afbeeldings toezicht-API-verwijzing](https://westus.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66c)in het linkermenu onder **afbeelding** **zoeken naar gezichten** . 
+1. Selecteer in de [afbeeldings toezicht-API-verwijzing](https://westus.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66c)in het linkermenu onder **afbeelding** **zoeken naar gezichten**. 
 
    De pagina **gezichten zoeken** wordt geopend.
 
@@ -74,7 +74,7 @@ U kunt de afbeeldings toezicht-API gebruiken om gezichten te vinden in een afbee
 
    ![Afbeelding van voor beeld van gezichten zoeken](images/try-image-api-face-request.png)
 
-4. Selecteer **Verzenden** . In dit voor beeld vindt de API twee gezichten en worden de coördinaten ervan in de afbeelding geretourneerd.
+4. Selecteer **Verzenden**. In dit voor beeld vindt de API twee gezichten en worden de coördinaten ervan in de afbeelding geretourneerd.
 
    ![Afbeelding proberen: voor beeld van gezichten zoeken](images/try-image-api-face-response.png)
 
@@ -82,7 +82,7 @@ U kunt de afbeeldings toezicht-API gebruiken om gezichten te vinden in een afbee
 
 U kunt de Content Moderator OCR-mogelijkheid gebruiken om tekst in afbeeldingen te detecteren.
 
-1. Selecteer in de [afbeeldings toezicht-API-verwijzing](https://westus.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66c)in het linkermenu, onder **afbeelding** , **OCR** . 
+1. Selecteer in de [afbeeldings toezicht-API-verwijzing](https://westus.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66c)in het linkermenu, onder **afbeelding**, **OCR**. 
 
    De pagina **afbeelding-OCR** wordt geopend.
 
@@ -96,7 +96,7 @@ U kunt de Content Moderator OCR-mogelijkheid gebruiken om tekst in afbeeldingen 
 
 4. Gebruik de standaard voorbeeld afbeelding in het vak **hoofd tekst van aanvraag** . Dit is de afbeelding die wordt gebruikt in de vorige sectie.
 
-5. Selecteer **Verzenden** . De geëxtraheerde tekst wordt weer gegeven in JSON:
+5. Selecteer **Verzenden**. De geëxtraheerde tekst wordt weer gegeven in JSON:
 
    ![Afbeelding: vak voor beeld van OCR-voorbeeld reactie](images/try-image-api-ocr.PNG)
 

@@ -4,10 +4,10 @@ description: Symptomen, oorzaken en oplossingen voor veelvoorkomende problemen m
 ms.topic: article
 ms.date: 08/11/2020
 ms.openlocfilehash: 15129ebe1da2e52fac106a34863f609c440549ad
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92148413"
 ---
 # <a name="troubleshoot-registry-performance"></a>Problemen met registerprestaties oplossen
@@ -43,7 +43,7 @@ Controleer de grootte van de afbeelding met de Maxi maal ondersteunde grootte en
 
 Voor implementatie van een installatie kopie naar andere services, controleert u de regio's waar het REGI ster en het doel zich bevinden. Overweeg het REGI ster en het implementatie doel te vinden in dezelfde regio of in het netwerk om de prestaties te verbeteren.
 
-Gerelateerde koppelingen:
+Gerelateerde links:
 
 * [Service lagen Azure Container Registry](container-registry-skus.md)    
 * [Veelgestelde vragen over container Registry](container-registry-faq.md)
@@ -61,7 +61,7 @@ Controleer de configuratie van de docker-daemon voor het maximale aantal gelijkt
 
 Omdat elke afbeelding slaag een afzonderlijke Lees-of schrijf bewerking van het REGI ster vereist, controleert u het aantal lagen in uw afbeeldingen. Houd rekening met strategieën om het aantal afbeeldings lagen te verminderen.
 
-Gerelateerde koppelingen:
+Gerelateerde links:
 
 * [Service lagen Azure Container Registry](container-registry-skus.md)
 * [dockerd](https://docs.docker.com/engine/reference/commandline/dockerd/)
@@ -74,7 +74,7 @@ Als u de DNS-omzetting naar de dichtstbijzijnde replica tijdens het pushen van i
 
 Als u bewerkingen wilt uitvoeren met een geo-gerepliceerd REGI ster, kunt u Traffic Manager route ring ook tijdelijk uitschakelen voor een of meer replicaties.
 
-Gerelateerde koppelingen:
+Gerelateerde links:
 
 * [Geo-replicatie in Azure Container Registry](container-registry-geo-replication.md)
 
@@ -88,7 +88,7 @@ nslookup myregistry.azurecr.io
 
 Een mogelijke oplossing is het configureren van een dichter DNS-server.
 
-Gerelateerde koppelingen:
+Gerelateerde links:
 
 * [Geo-replicatie in Azure Container Registry](container-registry-geo-replication.md)
 * [Problemen met push bewerkingen met geo-gerepliceerde registers oplossen](container-registry-geo-replication.md#troubleshoot-push-operations-with-geo-replicated-registries)
@@ -101,7 +101,7 @@ Als uw machtigingen voor register bronnen zijn toegestaan, [controleert u de sta
 
 Als het [verzamelen van bron logboeken](container-registry-diagnostics-audit-logs.md) is ingeschakeld in het REGI ster, raadpleegt u het ContainterRegistryRepositoryEvents-logboek. In dit logboek worden gegevens opgeslagen voor bewerkingen, zoals push-of pull-gebeurtenissen. Query het logboek op [mislukte bewerkingen op opslagplaats niveau](container-registry-diagnostics-audit-logs.md#repository-level-operation-failures). 
 
-Gerelateerde koppelingen:
+Gerelateerde links:
 
 * [Logboeken voor diagnostische evaluaties en controles](container-registry-diagnostics-audit-logs.md)
 * [Veelgestelde vragen over container Registry](container-registry-faq.md)

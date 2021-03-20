@@ -4,10 +4,10 @@ description: In dit artikel wordt uitgelegd hoe docenten toegang hebben tot de V
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: ad4f9cfd11b372e5c6da5c17eaeba82b0cd8a91f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85445097"
 ---
 # <a name="access-virtual-machines-as-a-student-from-the-educator-view"></a>Toegang tot virtuele machines als student vanuit de weer gave docenten
@@ -25,7 +25,7 @@ Hier volgt een scenario waarin deze functie helpt. Een onderwijs assistent is ee
 ## <a name="next-steps"></a>Volgende stappen
 Zie de volgende artikelen:
 
-- [Verbinding maken met een VM](how-to-use-classroom-lab.md#connect-to-the-vm)
+- [Verbinding maken met een virtuele machine](how-to-use-classroom-lab.md#connect-to-the-vm)
 - [Verbinding maken met een virtuele machine met behulp van RDP op een Mac](connect-virtual-machine-mac-remote-desktop.md)
 - [Verbinding maken met een virtuele machine met behulp van RDP in een Chromebook](connect-virtual-machine-chromebook-remote-desktop.md)
 - [Extern bureau blad voor virtuele Linux-machines gebruiken](how-to-use-remote-desktop-linux-student.md)

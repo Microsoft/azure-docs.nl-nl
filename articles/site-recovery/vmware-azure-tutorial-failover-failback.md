@@ -6,10 +6,10 @@ ms.topic: tutorial
 ms.date: 12/16/2019
 ms.custom: MVC
 ms.openlocfilehash: bf47f08ac555cf60f59ba2b1a84750b6a9e2e0a1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86132007"
 ---
 # <a name="fail-over--vmware-vms"></a>Failover uitvoeren van virtuele VMware-machines
@@ -44,7 +44,7 @@ Voordat u een failover uitvoert, controleert u de eigenschappen van de VM om erv
 
 Controleer de eigenschappen als volgt:
 
-1. Selecteer in **Beveiligde items**de optie **Gerepliceerde items** en selecteer vervolgens de VM die u wilt controleren.
+1. Selecteer in **Beveiligde items** de optie **Gerepliceerde items** en selecteer vervolgens de VM die u wilt controleren.
 
 2. In het deelvenster **Gerepliceerd item** bevindt zich een overzicht van VM-informatie, status, en de laatste beschikbare herstelpunten. Selecteer **Eigenschappen** om meer details te bekijken.
 

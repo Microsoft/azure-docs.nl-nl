@@ -4,10 +4,10 @@ description: Hierin wordt beschreven hoe de eigenaar van een Lab-account onderst
 ms.date: 06/26/2020
 ms.topic: how-to
 ms.openlocfilehash: 17456f61352b1e26a33c042b27faa2d3aa44d73a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85445080"
 ---
 # <a name="set-up-support-information-lab-account-owner-in-azure-lab-services"></a>Ondersteunings informatie instellen (eigenaar van het lab-account in Azure Lab Services)
@@ -16,18 +16,18 @@ In dit artikel wordt uitgelegd hoe u (als eigenaar van een Lab-account) onderste
 De ondersteunings informatie omvat:
 
 - URL
-- E-mail
+- Email
 - Telefoon
 - Aanvullende instructies 
 
 ## <a name="specify-support-information"></a>Ondersteunings informatie opgeven
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
-2. Voer in de zoek balk **Lab-Services**in en selecteer **Lab-Services** in de zoek resultaten. 
+2. Voer in de zoek balk **Lab-Services** in en selecteer **Lab-Services** in de zoek resultaten. 
 3. Selecteer uw Lab-account in de lijst met Lab-accounts. 
 4. Ga naar de pagina **interne ondersteuning** en voer de volgende stappen uit:
-    1. Voer de **ondersteunings-URL**in. 
-     2. Voer het **e-mail adres voor ondersteuning**in. 
-     3. Voer het **telefoon nummer voor ondersteuning**in.
+    1. Voer de **ondersteunings-URL** in. 
+     2. Voer het **e-mail adres voor ondersteuning** in. 
+     3. Voer het **telefoon nummer voor ondersteuning** in.
      4. Voer gedetailleerde **ondersteunings instructies** in (optioneel). Lab-eigen aars en gebruikers zien deze tekst samen met de contact gegevens voor ondersteuning. Url's worden automatisch omgezet in koppelingen. 
      5. Selecteer **Opslaan** op de werkbalk.
 

@@ -11,17 +11,17 @@ ms.date: 09/10/2018
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 37d9bd78a80ac52d2a790537bf47e33807720349
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85202956"
 ---
 # <a name="claimstransformations"></a>ClaimsTransformations
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Het **ClaimsTransformations** -element bevat een lijst met functies voor het transformeren van claims die kunnen worden gebruikt in gebruikers ritten als onderdeel van een [aangepast beleid](custom-policy-overview.md). Een claim transformatie zet een opgegeven claim om in een andere. In de claim transformatie geeft u de transformatie methode op, bijvoorbeeld het toevoegen van een item aan een teken reeks verzameling of het wijzigen van het hoofdletter gebruik van een teken reeks.
+Het **ClaimsTransformations** -element bevat een lijst met functies voor het transformeren van claims die kunnen worden gebruikt in gebruikers ritten als onderdeel van een [aangepast beleid](custom-policy-overview.md). Een claimtransformatie zet een bepaalde claim om in een andere. In de claim transformatie geeft u de transformatie methode op, bijvoorbeeld het toevoegen van een item aan een teken reeks verzameling of het wijzigen van het hoofdletter gebruik van een teken reeks.
 
 Als u de lijst met functies voor het transformeren van claims wilt opnemen die kunnen worden gebruikt in de gebruikers ritten, moet een ClaimsTransformations XML-element worden gedeclareerd onder de sectie BuildingBlocks van het beleid.
 
@@ -163,7 +163,7 @@ Voor voor beelden van claim transformaties raadpleegt u de volgende referentie p
 - [Datum](date-transformations.md)
 - [Geheel getal](integer-transformations.md)
 - [JSON](json-transformations.md)
-- [Telefoon nummer](phone-number-claims-transformations.md)
+- [Telefoonnummer](phone-number-claims-transformations.md)
 - [Algemeen](general-transformations.md)
 - [Sociaal account](social-transformations.md)
 - [Tekenreeks](string-transformations.md)

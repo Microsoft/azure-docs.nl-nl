@@ -9,10 +9,10 @@ ms.topic: include
 ms.date: 11/27/2019
 ms.author: prmitiki
 ms.openlocfilehash: 268703081a2a40e8bcc665889eaeaf8edd673bfd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "81680961"
 ---
 1. Vul op de pagina **een peering maken** op het tabblad **configuratie** de vakken in zoals weer gegeven.
@@ -20,15 +20,15 @@ ms.locfileid: "81680961"
     > [!div class="mx-imgBorder"]
     > ![Een peering-pagina maken peering-type uitwisseling](../media/setup-exchange-conf-tab.png)
 
-    * Selecteer **Exchange**bij **peering-type**.
-    * Selecteer **SKU** als **gratis basis**versie.
+    * Selecteer **Exchange** bij **peering-type**.
+    * Selecteer **SKU** als **gratis basis** versie.
     * Selecteer de **metro** locatie waar u peering wilt instellen.
 
         > [!NOTE]
         > Als u al peering-verbindingen met micro soft hebt in de geselecteerde **metro** locatie en u de portal voor het eerst gebruikt om peering in te stellen op die locatie, worden uw bestaande peering-verbindingen weer gegeven in de sectie **peering-verbindingen** , zoals wordt weer gegeven. Deze peering verbindingen worden door micro soft automatisch geconverteerd naar een Azure-resource, zodat u ze allemaal kunt beheren, samen met de nieuwe verbindingen op één plek. Zie [een verouderde Exchange-peering converteren naar een Azure-resource met behulp van de portal](../howto-legacy-exchange-portal.md)voor meer informatie.
         >
 
-1. Onder **peering-verbindingen**selecteert u **nieuwe maken** om een regel toe te voegen voor elke nieuwe verbinding die u wilt instellen.
+1. Onder **peering-verbindingen** selecteert u **nieuwe maken** om een regel toe te voegen voor elke nieuwe verbinding die u wilt instellen.
 
     * Als u de verbindings instellingen wilt configureren of wijzigen, selecteert u de knop bewerken voor een regel.
 
@@ -62,7 +62,7 @@ ms.locfileid: "81680961"
     > [!div class="mx-imgBorder"]
     > ![Tabblad validatie van peering](../media/setup-direct-review-tab-validation.png)
 
-1. Nadat het bericht is gewijzigd in de *validatie*, controleert u uw gegevens. Dien de aanvraag in door **maken**te selecteren. Als u uw aanvraag wilt wijzigen, selecteert u **vorige** en herhaalt u de stappen.
+1. Nadat het bericht is gewijzigd in de *validatie*, controleert u uw gegevens. Dien de aanvraag in door **maken** te selecteren. Als u uw aanvraag wilt wijzigen, selecteert u **vorige** en herhaalt u de stappen.
 
     > [!div class="mx-imgBorder"]
     > ![Verzenden van peering](../media/setup-exchange-review-tab-submit.png)

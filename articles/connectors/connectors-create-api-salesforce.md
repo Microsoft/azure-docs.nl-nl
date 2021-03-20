@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 08/24/2018
 tags: connectors
 ms.openlocfilehash: 9950951ab5189c8c7b72de78bca9465ec5f22748
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87290598"
 ---
 # <a name="monitor-create-and-manage-salesforce-resources-by-using-azure-logic-apps"></a>Salesforce-bestanden bewaken, maken en beheren met behulp van Azure Logic Apps
@@ -46,7 +46,7 @@ U kunt Sales Force-triggers gebruiken die antwoorden krijgen van Sales Force en 
 
      -of-
 
-   * Kies **nieuwe stap**onder de stap waar u een actie wilt toevoegen voor bestaande Logic apps. In het zoekvak voert u "Sales Force" in als uw filter. Selecteer in de lijst acties de gewenste actie.
+   * Kies **nieuwe stap** onder de stap waar u een actie wilt toevoegen voor bestaande Logic apps. In het zoekvak voert u "Sales Force" in als uw filter. Selecteer in de lijst acties de gewenste actie.
 
 1. Als u wordt gevraagd om u aan te melden bij Sales Force, meldt u zich nu aan en verleent u toegang.
 

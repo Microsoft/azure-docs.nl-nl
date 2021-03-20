@@ -4,10 +4,10 @@ description: Profiteren van de grootte van HPC en GPU-virtuele machines in Azure
 ms.topic: how-to
 ms.date: 12/17/2018
 ms.openlocfilehash: 016da7669c9e6a6586a53d379f9665c9ea048b64
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86147333"
 ---
 # <a name="use-rdma-or-gpu-instances-in-batch-pools"></a>RDMA-of GPU-instanties gebruiken in batch-Pools
@@ -105,7 +105,7 @@ Als u CUDA-toepassingen wilt uitvoeren op een groep Windows NC-knoop punten, moe
 | **SKU** | 2016-Data Center |
 | **Knooppuntgrootte** | NC6-standaard |
 | **Toepassings pakket verwijzingen** | GPUDriver, versie 411,82 |
-| **Taak starten is ingeschakeld** | True<br>**Opdracht regel** - `cmd /c "%AZ_BATCH_APP_PACKAGE_GPUDriver#411.82%\\GPUDriverSetup.exe /s"`<br/>**Gebruikers identiteit** : groeps beleidsgebruiker, beheerder<br/>**Wachten op geslaagd** -True
+| **Taak starten is ingeschakeld** | Waar<br>**Opdracht regel** - `cmd /c "%AZ_BATCH_APP_PACKAGE_GPUDriver#411.82%\\GPUDriverSetup.exe /s"`<br/>**Gebruikers identiteit** : groeps beleidsgebruiker, beheerder<br/>**Wachten op geslaagd** -True
 
 ## <a name="example-nvidia-gpu-drivers-on-a-linux-nc-vm-pool"></a>Voor beeld: NVIDIA GPU-Stuur Programma's in een Linux NC-VM-groep
 
@@ -142,7 +142,7 @@ Als u Windows MPI-toepassingen wilt uitvoeren op een groep Azure H16r VM-knoop p
 | **Aangepaste installatie kopie** | *Naam van de afbeelding* |
 | **SKU van knoop punt agent** | batch. node. Windows amd64 |
 | **Knooppuntgrootte** | H16r-standaard |
-| **Communicatie tussen knoop punten is ingeschakeld** | True |
+| **Communicatie tussen knoop punten is ingeschakeld** | Waar |
 | **Maximum aantal taken per knoop punt** | 1 |
 
 ## <a name="example-intel-mpi-on-a-linux-h16r-vm-pool"></a>Voor beeld: Intel MPI op een Linux H16r VM-groep
@@ -158,7 +158,7 @@ Maak met behulp van de batch-Api's of de Azure Portal een pool met behulp van de
 | **Aanbieding** | CentOS-HPC |
 | **SKU** | 7.4 |
 | **Knooppuntgrootte** | H16r-standaard |
-| **Communicatie tussen knoop punten is ingeschakeld** | True |
+| **Communicatie tussen knoop punten is ingeschakeld** | Waar |
 | **Maximum aantal taken per knoop punt** | 1 |
 
 ## <a name="next-steps"></a>Volgende stappen

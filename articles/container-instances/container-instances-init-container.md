@@ -4,10 +4,10 @@ description: Voer init-containers uit in Azure Container Instances om installati
 ms.topic: article
 ms.date: 06/01/2020
 ms.openlocfilehash: 5a729263ee632eb9227694ec8684eb6889c6324b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85954278"
 ---
 # <a name="run-an-init-container-for-setup-tasks-in-a-container-group"></a>Een init-container uitvoeren voor installatie taken in een container groep
@@ -38,8 +38,8 @@ Begin door de volgende JSON te kopiëren naar een nieuw bestand met de naam `azu
 
 * De *init1* -container voert de [busybox](https://hub.docker.com/_/busybox) -installatie kopie uit vanuit docker hub. De slaap stand duurt 60 seconden en schrijft vervolgens een opdracht regel teken reeks naar een bestand in een [emptyDir-volume](container-instances-volume-emptydir.md).
 * In beide toepassings containers wordt de micro soft `aci-wordcount` container-installatie kopie uitgevoerd:
-    * De *Hamlet* -container voert de WordCount-app uit in de standaard configuratie, waarbij het tellen van de woord frequenties in de Play- *Hamlet*van Shakespeare.
-    * De *Juliet* -app-container leest de opdracht regel teken reeks van het emptDir-volume om de WordCount-app uit te voeren in plaats van de *Romeo en Juliet*van Shakespeare.
+    * De *Hamlet* -container voert de WordCount-app uit in de standaard configuratie, waarbij het tellen van de woord frequenties in de Play- *Hamlet* van Shakespeare.
+    * De *Juliet* -app-container leest de opdracht regel teken reeks van het emptDir-volume om de WordCount-app uit te voeren in plaats van de *Romeo en Juliet* van Shakespeare.
 
 `aci-wordcount`Zie [omgevings variabelen instellen in container instanties](container-instances-environment-variables.md)voor meer informatie en voor beelden met behulp van de installatie kopie.
 
@@ -213,7 +213,7 @@ Uitvoer:
 
 Init-containers helpen u bij het uitvoeren van installatie-en initialisatie taken voor uw toepassings containers. Zie voor meer informatie over het uitvoeren van taak containers [container taken uitvoeren met beleids regels voor opnieuw opstarten](container-instances-restart-policy.md).
 
-Azure Container Instances biedt andere opties voor het wijzigen van het gedrag van toepassings containers. Voorbeelden zijn:
+Azure Container Instances biedt andere opties voor het wijzigen van het gedrag van toepassings containers. Enkele voorbeelden:
 
 * [Omgevings variabelen instellen in container instanties](container-instances-environment-variables.md)
 * [Stel de opdracht regel in een container exemplaar in om de standaard opdracht regel bewerking te overschrijven](container-instances-start-command.md)

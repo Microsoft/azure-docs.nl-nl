@@ -8,10 +8,10 @@ ms.topic: article
 ms.custom: mvc
 ms.date: 04/29/2020
 ms.openlocfilehash: cde8db5310e3ede2721ba327b28c789ccd0b7dd0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87280763"
 ---
 # <a name="manage-logic-apps-with-visual-studio"></a>Logische apps beheren met Visual Studio
@@ -111,7 +111,7 @@ U kunt Logic apps [downloaden](../azure-resource-manager/templates/export-templa
 
    De logische app wordt geopend in de ontwerp functie voor logische apps.
 
-1. Selecteer **downloaden**op de werk balk van de ontwerp functie.
+1. Selecteer **downloaden** op de werk balk van de ontwerp functie.
 
    ![Logische app downloaden van Azure Portal](./media/manage-logic-apps-with-visual-studio/download-logic-app-from-portal.png)
 
@@ -178,7 +178,7 @@ Als u het locatie type of de locatie van uw logische app wilt wijzigen, moet u h
 
 1. Als u het locatie type wilt wijzigen, opent u de lijst **locatie type kiezen** en selecteert u het gewenste locatie type.
 
-   Als bijvoorbeeld het locatie type **Integratieserviceomgeving**is, kunt u **regio**selecteren.
+   Als bijvoorbeeld het locatie type **Integratieserviceomgeving** is, kunt u **regio** selecteren.
 
    ![Eigenschap type locatie kiezen-locatie type wijzigen](./media/manage-logic-apps-with-visual-studio/change-location-type.png)
 
@@ -218,7 +218,7 @@ Wanneer u klaar bent om uw Logic app-updates te implementeren vanuit Visual Stud
 
 ## <a name="manually-run-your-logic-app"></a>Logische app handmatig uitvoeren
 
-U kunt een logische app die is geïmplementeerd in azure, hand matig activeren vanuit Visual Studio. Selecteer **trigger uitvoeren**op de werk balk van de Logic app-ontwerp functie.
+U kunt een logische app die is geïmplementeerd in azure, hand matig activeren vanuit Visual Studio. Selecteer **trigger uitvoeren** op de werk balk van de Logic app-ontwerp functie.
 
 ![De trigger hand matig uitvoeren voor uw logische app](./media/manage-logic-apps-with-visual-studio/manually-run-logic-app.png)
 

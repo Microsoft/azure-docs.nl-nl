@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 03/11/2020
 ms.author: twooley
 ms.openlocfilehash: 240018381a3139a6378141d78514e43ae469de5d
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92146304"
 ---
 # <a name="security-in-azure-data-lake-storage-gen1"></a>Beveiliging in Azure Data Lake Storage Gen1
@@ -99,7 +99,7 @@ Om te voldoen aan de voor Schriften, kan een organisatie een adequaat controle s
 
 Bekijk en selecteer de kolommen die u wilt registreren voor de controle sporen van account beheer. U kunt ook activiteiten logboeken exporteren naar Azure Storage.
 
-![Activiteiten logboek](./media/data-lake-store-security-overview/activity-logs.png "Activiteitenlogboek")
+![Activiteitenlogboek](./media/data-lake-store-security-overview/activity-logs.png "Activiteitenlogboek")
 
 Zie [activiteiten logboeken weer geven om acties op resources te controleren](../azure-resource-manager/management/view-activity-logs.md)voor meer informatie over het werken met activiteiten Logboeken.
 

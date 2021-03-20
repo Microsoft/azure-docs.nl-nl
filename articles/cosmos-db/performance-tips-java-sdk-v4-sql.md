@@ -10,10 +10,10 @@ ms.date: 10/13/2020
 ms.author: anfeldma
 ms.custom: devx-track-java, contperf-fy21q2
 ms.openlocfilehash: 8aad9df4720c833a74659b5cd36b7f5aafdf9b60
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97631836"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-java-sdk-v4"></a>Tips voor betere prestaties van Azure Cosmos DB Java SDK v4
@@ -150,15 +150,15 @@ Standaard worden de directe modus Cosmos DB aanvragen via TCP verzonden wanneer 
 
 In Azure Cosmos DB Java SDK v4 is de directe modus de beste keuze om de database prestaties te verbeteren met de meeste werk belastingen. 
 
-* ***Overzicht van de directe modus** _
+* ***Overzicht van directe modus***
 
 :::image type="content" source="./media/performance-tips-async-java/rntbdtransportclient.png" alt-text="Afbeelding van de architectuur van de directe modus" border="false":::
 
-De architectuur aan de client zijde die in directe modus wordt gebruikt, maakt voorspel bare netwerk gebruik en multiplex toegang tot Azure Cosmos DB replica's mogelijk. In het bovenstaande diagram ziet u hoe directe modus client aanvragen naar replica's in de Cosmos DB back-end stuurt. De architectuur van de directe modus wijst Maxi maal 10 _ *kanalen** toe aan de client zijde per database replica. Een kanaal is een TCP-verbinding voorafgegaan door een aanvraag buffer, die 30 aanvragen diep is. De kanalen die deel uitmaken van een replica, worden dynamisch toegewezen naar behoefte aan het **service-eind punt** van de replica. Wanneer de gebruiker een aanvraag uitgeeft in de directe modus, stuurt de **TransportClient** de aanvraag naar het juiste service-eind punt op basis van de partitie sleutel. De **aanvraag wachtrij** buffers aanvragen vóór het service-eind punt.
+De architectuur aan de client zijde die in directe modus wordt gebruikt, maakt voorspel bare netwerk gebruik en multiplex toegang tot Azure Cosmos DB replica's mogelijk. In het bovenstaande diagram ziet u hoe directe modus client aanvragen naar replica's in de Cosmos DB back-end stuurt. De architectuur van de directe modus wijst Maxi maal 10 **kanalen** aan de client zijde per database replica toe. Een kanaal is een TCP-verbinding voorafgegaan door een aanvraag buffer, die 30 aanvragen diep is. De kanalen die deel uitmaken van een replica, worden dynamisch toegewezen naar behoefte aan het **service-eind punt** van de replica. Wanneer de gebruiker een aanvraag uitgeeft in de directe modus, stuurt de **TransportClient** de aanvraag naar het juiste service-eind punt op basis van de partitie sleutel. De **aanvraag wachtrij** buffers aanvragen vóór het service-eind punt.
 
-* ***Configuratie opties voor directe modus** _
+* ***Configuratie opties voor directe modus***
 
-Als niet-standaard gedrag van de directe modus gewenst is, maakt u een _DirectConnectionConfig *-exemplaar en past u de eigenschappen aan. vervolgens geeft u het aangepaste eigenschaps exemplaar door met de methode *directMode ()* in de Azure Cosmos DB client builder.
+Als niet-standaard gedrag van directe modus gewenst is, maakt u een *DirectConnectionConfig* -exemplaar en past u de eigenschappen aan en geeft u vervolgens de aangepaste eigenschaps instantie door aan de methode *directMode ()* in de Azure Cosmos DB client builder.
 
 Deze configuratie-instellingen bepalen het gedrag van de onderliggende direct-modus architectuur die hierboven wordt beschreven.
 
@@ -176,19 +176,19 @@ Als eerste stap gebruikt u de volgende aanbevolen configuratie-instellingen hier
 
 Azure Cosmos DB Java SDK v4 ondersteunt parallelle query's, waarmee u parallel een gepartitioneerde verzameling kunt uitvoeren. Zie [code voorbeelden](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-samples) met betrekking tot het werken met Azure Cosmos DB Java SDK v4 voor meer informatie. Parallelle query's zijn ontworpen om de latentie en door Voer van query's te verbeteren ten opzichte van hun serieel equivalent.
 
-* ***SetMaxDegreeOfParallelism \: afstemmen** _
+* ***SetMaxDegreeOfParallelism afstemmen\:***
     
 Parallelle query's werken door meerdere partities parallel te doorzoeken. Gegevens uit een afzonderlijke gepartitioneerde verzameling worden echter serieel opgehaald ten opzichte van de query. Gebruik setMaxDegreeOfParallelism daarom om het aantal partities in te stellen dat de maximale kans heeft om de meest uitvoering van de query te bereiken, mits alle andere systeem omstandigheden hetzelfde blijven. Als u het aantal partities niet weet, kunt u setMaxDegreeOfParallelism gebruiken om een hoog nummer in te stellen en het systeem kiest het minimum (aantal partities, door de gebruiker opgegeven invoer) als de maximale mate van parallelle uitvoering.
 
 Het is belang rijk te weten dat parallelle query's de beste voor delen opleveren als de gegevens gelijkmatig worden verdeeld over alle partities met betrekking tot de query. Als de gepartitioneerde verzameling zodanig is gepartitioneerd dat alle of een meerderheid van de gegevens die door een query zijn geretourneerd, in een paar partities is geconcentreerd (één partitie in het ergste geval), wordt de prestaties van de query door deze partities beïnvloed.
 
-_ ***Afstemmen \: setMaxBufferedItemCount** _
+* ***SetMaxBufferedItemCount afstemmen\:***
     
 Parallelle query is ontworpen om de resultaten vooraf op te halen terwijl de huidige batch met resultaten door de client wordt verwerkt. Het vooraf ophalen helpt bij de algehele latentie verbetering van een query. setMaxBufferedItemCount beperkt het aantal vooraf opgehaalde resultaten. Als u setMaxBufferedItemCount instelt op het verwachte aantal geretourneerde resultaten (of een hoger getal), kan de query het maximale voor deel van het vooraf ophalen van het bericht ontvangen.
 
 Het vooraf ophalen van werkt op dezelfde manier, onafhankelijk van de MaxDegreeOfParallelism en er is één buffer voor de gegevens van alle partities.
 
-_ **Uw client opschalen-workload**
+* **Uw client opschalen-workload**
 
 Als u test op hoog doorvoer niveau, kan de client toepassing het knel punt worden als gevolg van de machine die de CPU of het netwerk gebruik afgetopteert. Als u dit punt bereikt, kunt u het Azure Cosmos DB-account nog verder pushen door uw client toepassingen op meerdere servers te schalen.
 
@@ -233,11 +233,11 @@ Raadpleeg de [Cosmos DB Directory van de Azure SDK voor Java monorepo op github]
 
 U kunt het beste om een aantal redenen logboek registratie toevoegen aan een thread die hoge door Voer van aanvragen genereert. Als uw doel is de ingerichte door Voer van een container volledig te verzadigen met aanvragen die door deze thread worden gegenereerd, kunnen logboek registratie optimalisaties de prestaties aanzienlijk verbeteren.
 
-* ***Een asynchrone logboek registratie configureren** _
+* ***Een async-logboek registratie configureren***
 
 De latentie van een synchrone logboek registratie per definitie in de berekening van de totale latentie van de thread voor het genereren van een aanvraag. Een asynchrone logger, zoals [log4j2](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Flogging.apache.org%2Flog4j%2Flog4j-2.3%2Fmanual%2Fasync.html&data=02%7C01%7CCosmosDBPerformanceInternal%40service.microsoft.com%7C36fd15dea8384bfe9b6b08d7c0cf2113%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637189868158267433&sdata=%2B9xfJ%2BWE%2F0CyKRPu9AmXkUrT3d3uNA9GdmwvalV3EOg%3D&reserved=0) , wordt aangeraden om logboek registratie overhead van uw hoogwaardige toepassings threads te loskoppelen.
 
-_ ***Logboek registratie van Netty uitschakelen** _
+* ***Logboek registratie van Netty uitschakelen***
 
 Logboek registratie van de Netty-bibliotheek is intensieve en moet worden uitgeschakeld (de configuratie kan niet worden onderdrukt) om extra CPU-kosten te voor komen. Als u zich niet in de foutopsporingsmodus bevindt, schakelt u de logboek registratie van Netty uit. Als u dus log4j gebruikt om de extra CPU-kosten te verwijderen die zijn gemaakt door ``org.apache.log4j.Category.callAppenders()`` van Netty, voegt u de volgende regel toe aan de code basis:
 
@@ -245,7 +245,7 @@ Logboek registratie van de Netty-bibliotheek is intensieve en moet worden uitges
 org.apache.log4j.Logger.getLogger("io.netty").setLevel(org.apache.log4j.Level.OFF);
 ```
 
- **Bron limiet voor open files van het besturings systeem**
+ * **Bron limiet voor open files van besturings systeem**
  
 Voor sommige Linux-systemen (zoals Red Hat) geldt een bovengrens voor het aantal geopende bestanden en dus het totale aantal verbindingen. Voer de volgende handelingen uit om de huidige limieten te bekijken:
 
@@ -361,7 +361,7 @@ Als u meer dan één client cumulatief op dezelfde manier hebt uitgevoerd, is he
 
 Hoewel het gedrag voor automatische pogingen helpt om de flexibiliteit en bruikbaarheid voor de meeste toepassingen te verbeteren, is het mogelijk om conflicteert bij het uitvoeren van benchmarks voor prestaties, met name bij het meten van latentie. De door de client waargenomen latentie krijgt een waarschuwing als het experiment de server beperking bereikt en zorgt ervoor dat de client-SDK op de achtergrond opnieuw probeert. Om latentie pieken te voor komen tijdens prestatie experimenten, meet u de kosten die worden geretourneerd door elke bewerking en zorgt u ervoor dat aanvragen onder het gereserveerde aanvraag tarief vallen. Zie [aanvraag eenheden](request-units.md)voor meer informatie.
 
-* **Ontwerpen voor kleinere documenten voor een hogere door Voer**
+* **Maak een ontwerp voor kleinere documenten voor een hogere doorvoer**
 
 De aanvraag kosten (de verwerkings kosten van aanvragen) van een bepaalde bewerking worden rechtstreeks gecorreleerd aan de grootte van het document. Bewerkingen voor grote documenten kosten meer dan bewerkingen voor kleine documenten. Stel in het ideale geval uw toepassing en werk stromen in om de grootte van uw object te verg Roten ~ 1 KB of een vergelijk bare volg orde of grootte. Voor wacht tijd gevoelige toepassingen moeten grote items worden vermeden: met multi-MB documenten wordt uw toepassing trager.
 

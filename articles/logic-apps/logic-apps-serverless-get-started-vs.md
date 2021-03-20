@@ -7,10 +7,10 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 06/20/2019
 ms.openlocfilehash: 1758cca902eb77ffc66824cb56b8add9446fabf9
-ms.sourcegitcommit: 003ac3b45abcdb05dc4406661aca067ece84389f
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96749144"
 ---
 # <a name="build-your-first-serverless-app-by-using-azure-logic-apps-and-azure-functions-in-visual-studio"></a>Uw eerste serverloze app bouwen met behulp van Azure Logic Apps en Azure Functions in Visual Studio
@@ -73,7 +73,7 @@ Om aan de slag te gaan, moet u een [Azure-resource groep-project](../azure-resou
 
    1. Selecteer in het vak **een nieuw project maken** de project sjabloon **Azure-resource groep** voor Visual C# of Visual Basic en selecteer vervolgens **volgende**.
 
-   1. Geef de naam en andere project gegevens op die u wilt gebruiken voor de Azure-resource groep. Als u gereed bent, selecteert u **Maken**.
+   1. Geef de naam en andere project gegevens op die u wilt gebruiken voor de Azure-resource groep. Selecteer **Maken** als u klaar bent.
 
 1. Geef uw project een naam en een locatie en selecteer **OK**.
 
@@ -100,7 +100,7 @@ Om aan de slag te gaan, moet u een [Azure-resource groep-project](../azure-resou
 
 Voordat u uw logische app kunt openen in de ontwerp functie voor logische apps in Visual Studio, moet u een Azure-resource groep hebben die al is geïmplementeerd in Azure. De ontwerper kan vervolgens verbindingen maken met bronnen en services in uw logische app. Voor deze taak voert u de volgende stappen uit om uw oplossing te implementeren vanuit Visual Studio naar de Azure Portal:
 
-1. Selecteer in Solution Explorer, in het snelmenu van het resource project, **Deploy** de optie  >  **nieuwe** implementeren.
+1. Selecteer in Solution Explorer, in het snelmenu van het resource project, de optie  >  **nieuwe** implementeren.
 
    ![Nieuwe implementatie voor resource groep maken](./media/logic-apps-serverless-get-started-vs/deploy.png)
 

@@ -4,10 +4,10 @@ description: Log Analytics Diagnostische instellingen configureren voor alle klu
 ms.topic: conceptual
 ms.date: 02/14/2020
 ms.openlocfilehash: 55461937381f7551c42714c835d4755ab65f175b
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92171529"
 ---
 # <a name="configure-vault-diagnostics-settings-at-scale"></a>Diagnostische instellingen voor de kluis op schaal configureren
@@ -22,7 +22,7 @@ Azure Backup biedt een ingebouwde [Azure Policy](../governance/policy/index.yml)
 
 * Het beleid kan in één keer worden toegepast op alle Recovery Services kluizen in een bepaald abonnement (of op een resource groep in het abonnement). De gebruiker die het beleid toewijst, moet **eigenaar** toegang hebben tot het abonnement waaraan het beleid is toegewezen.
 
-* De werk ruimte LA zoals opgegeven door de gebruiker (waarnaar diagnostische gegevens worden verzonden) kan zich in een ander abonnement bevinden dan de kluizen waaraan het beleid is toegewezen. De gebruiker moet toegang hebben tot de **lezer**, **Inzender**of **eigenaar** van het abonnement waarin de opgegeven La-werk ruimte zich bevindt.
+* De werk ruimte LA zoals opgegeven door de gebruiker (waarnaar diagnostische gegevens worden verzonden) kan zich in een ander abonnement bevinden dan de kluizen waaraan het beleid is toegewezen. De gebruiker moet toegang hebben tot de **lezer**, **Inzender** of **eigenaar** van het abonnement waarin de opgegeven La-werk ruimte zich bevindt.
 
 * Het bereik van de beheer groep wordt momenteel niet ondersteund.
 
@@ -46,11 +46,11 @@ Volg de onderstaande stappen om het beleid voor kluizen toe te wijzen in het ver
 
 5. Selecteer de knop **toewijzen** boven aan het deel venster. Hiermee wordt u omgeleid naar het deel venster **beleid toewijzen** .
 
-6. Selecteer onder **basis beginselen**de drie punten naast het veld **bereik** . Hiermee opent u een context paneel met de rechter muisknop waarin u het abonnement kunt selecteren waarop het beleid moet worden toegepast. U kunt desgewenst ook een resource groep selecteren, zodat het beleid alleen wordt toegepast op kluizen in een bepaalde resource groep.
+6. Selecteer onder **basis beginselen** de drie punten naast het veld **bereik** . Hiermee opent u een context paneel met de rechter muisknop waarin u het abonnement kunt selecteren waarop het beleid moet worden toegepast. U kunt desgewenst ook een resource groep selecteren, zodat het beleid alleen wordt toegepast op kluizen in een bepaalde resource groep.
 
     ![Basis principes van beleids toewijzing](./media/backup-azure-policy-configure-diagnostics/policy-assignment-basics.png)
 
-7. Onder **para meters**voert u de volgende gegevens in:
+7. Onder **para meters** voert u de volgende gegevens in:
 
     * **Profiel naam** : de naam die wordt toegewezen aan de diagnostische instellingen die door het beleid zijn gemaakt.
     * **Log Analytics-werk ruimte** : de log Analytics werk ruimte waaraan de diagnostische instelling moet worden gekoppeld. Diagnostische gegevens van alle kluizen in het bereik van de beleids toewijzing worden gepusht naar de opgegeven LA-werk ruimte.
@@ -59,7 +59,7 @@ Volg de onderstaande stappen om het beleid voor kluizen toe te wijzen in het ver
 
     ![Beleids toewijzings parameters](./media/backup-azure-policy-configure-diagnostics/policy-assignment-parameters.png)
 
-8. **Een herstel taak maken** : zodra het beleid is toegewezen aan een bereik, krijgen nieuwe kluizen die in dat bereik zijn gemaakt automatisch de instellingen voor de diagnostische gegevens van de la die zijn geconfigureerd (binnen 30 minuten vanaf het moment waarop de kluis is gemaakt). Als u een diagnostische instelling wilt toevoegen aan bestaande kluizen in het bereik, kunt u een herstel taak activeren op het moment van de beleids toewijzing. Schakel het selectie vakje **een herstel taak maken**in om een herstel taak te activeren.
+8. **Een herstel taak maken** : zodra het beleid is toegewezen aan een bereik, krijgen nieuwe kluizen die in dat bereik zijn gemaakt automatisch de instellingen voor de diagnostische gegevens van de la die zijn geconfigureerd (binnen 30 minuten vanaf het moment waarop de kluis is gemaakt). Als u een diagnostische instelling wilt toevoegen aan bestaande kluizen in het bereik, kunt u een herstel taak activeren op het moment van de beleids toewijzing. Schakel het selectie vakje **een herstel taak maken** in om een herstel taak te activeren.
 
     ![Herstel van beleids toewijzing](./media/backup-azure-policy-configure-diagnostics/policy-assignment-remediation.png)
 

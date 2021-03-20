@@ -11,10 +11,10 @@ ms.date: 08/26/2019
 ms.author: robinsh
 ms.custom: mqtt, devx-track-csharp
 ms.openlocfilehash: 267a69486dc91ef95c0de704346eeb1d1780ef48
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89013755"
 ---
 # <a name="get-started-with-device-twins-net"></a>Aan de slag met Device apparaatdubbels (.NET)
@@ -57,9 +57,9 @@ In deze zelf studie maakt u deze .NET-console-apps:
 
 In deze sectie maakt u een .NET-console-app met behulp van C#, waarmee de meta gegevens van een locatie worden toegevoegd aan het apparaat dat is gekoppeld aan **myDeviceId**. Vervolgens wordt een query uitgevoerd op de apparaat-apparaatdubbels die zijn opgeslagen in de IoT-hub en de apparaten die zich in de Verenigde Staten bevinden, en vervolgens die die een mobiele verbinding hebben gerapporteerd.
 
-1. Selecteer **Een nieuw project maken** in Visual Studio. Selecteer in **Nieuw project maken**de optie **console-app (.NET Framework)** en selecteer vervolgens **volgende**.
+1. Selecteer **Een nieuw project maken** in Visual Studio. Selecteer in **Nieuw project maken** de optie **console-app (.NET Framework)** en selecteer vervolgens **volgende**.
 
-1. Geef het project de naam **AddTagsAndQuery**in **uw nieuwe project configureren**.
+1. Geef het project de naam **AddTagsAndQuery** in **uw nieuwe project configureren**.
 
     ![Uw AddTagsAndQuery-project configureren](./media/iot-hub-csharp-csharp-twin-getstarted/config-addtagsandquery-app.png)
 
@@ -129,7 +129,7 @@ In deze sectie maakt u een .NET-console-app met behulp van C#, waarmee de meta g
     Console.ReadLine();
     ```
 
-1. Voer deze toepassing uit door met de rechter muisknop op het **AddTagsAndQuery** -project te klikken en vervolgens **debug**te selecteren, gevolgd door **nieuwe instantie starten**. U ziet één apparaat in de resultaten voor de query die vraagt naar alle apparaten in **Redmond43** en geen voor de query waarmee de resultaten worden beperkt tot apparaten die gebruikmaken van een mobiel netwerk.
+1. Voer deze toepassing uit door met de rechter muisknop op het **AddTagsAndQuery** -project te klikken en vervolgens **debug** te selecteren, gevolgd door **nieuwe instantie starten**. U ziet één apparaat in de resultaten voor de query die vraagt naar alle apparaten in **Redmond43** en geen voor de query waarmee de resultaten worden beperkt tot apparaten die gebruikmaken van een mobiel netwerk.
 
     ![Query resultaten in venster](./media/iot-hub-csharp-csharp-twin-getstarted/addtagapp.png)
 
@@ -137,11 +137,11 @@ In de volgende sectie maakt u een apparaat-app die de connectiviteits gegevens r
 
 ## <a name="create-the-device-app"></a>De apparaat-app maken
 
-In deze sectie maakt u een .NET-console-app die als **myDeviceId**verbinding maakt met uw hub, en vervolgens de gerapporteerde eigenschappen bijwerkt om de informatie te bevatten die is verbonden met een mobiel netwerk.
+In deze sectie maakt u een .NET-console-app die als **myDeviceId** verbinding maakt met uw hub, en vervolgens de gerapporteerde eigenschappen bijwerkt om de informatie te bevatten die is verbonden met een mobiel netwerk.
 
-1. Selecteer in Visual Studio **Bestand** > **Nieuw** > **Project**. In **Nieuw project maken**kiest u **console-app (.NET Framework)** en selecteert u vervolgens **volgende**.
+1. Selecteer in Visual Studio **Bestand** > **Nieuw** > **Project**. In **Nieuw project maken** kiest u **console-app (.NET Framework)** en selecteert u vervolgens **volgende**.
 
-1. Geef het project de naam **ReportConnectivity**in **uw nieuwe project configureren**. Kies voor **oplossing**de optie **toevoegen aan oplossing**en selecteer vervolgens **maken**.
+1. Geef het project de naam **ReportConnectivity** in **uw nieuwe project configureren**. Kies voor **oplossing** de optie **toevoegen aan oplossing** en selecteer vervolgens **maken**.
 
 1. Klik in Solution Explorer met de rechter muisknop op het project **ReportConnectivity** en selecteer vervolgens **NuGet-pakketten beheren**.
 
@@ -232,9 +232,9 @@ In deze sectie maakt u een .NET-console-app die als **myDeviceId**verbinding maa
 
 1. Klik in Solution Explorer met de rechter muisknop op uw oplossing en selecteer vervolgens **opstart projecten instellen**.
 
-1. Selecteer in **algemene eigenschappen**  >  **opstart project** **meerdere opstart projecten**. Selecteer voor **ReportConnectivity**de optie **Start** als **actie**. Selecteer **OK** om uw wijzigingen op te slaan.  
+1. Selecteer in **algemene eigenschappen**  >  **opstart project** **meerdere opstart projecten**. Selecteer voor **ReportConnectivity** de optie **Start** als **actie**. Selecteer **OK** om uw wijzigingen op te slaan.  
 
-1. Voer deze app uit door met de rechter muisknop op het **ReportConnectivity** -project te klikken en vervolgens **debug**te selecteren en vervolgens **nieuw exemplaar te starten**. U ziet dat de app de dubbele gegevens ophaalt en vervolgens de connectiviteit verzendt als een ***gerapporteerde eigenschap***.
+1. Voer deze app uit door met de rechter muisknop op het **ReportConnectivity** -project te klikken en vervolgens **debug** te selecteren en vervolgens **nieuw exemplaar te starten**. U ziet dat de app de dubbele gegevens ophaalt en vervolgens de connectiviteit verzendt als een **_gerapporteerde eigenschap_**.
 
     ![De app van het apparaat uitvoeren voor het rapporteren van de connectiviteit](./media/iot-hub-csharp-csharp-twin-getstarted/rundeviceapp.png)
 

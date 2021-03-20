@@ -10,10 +10,10 @@ ms.author: normesta
 ms.reviewer: sumameh
 ms.custom: devx-track-csharp
 ms.openlocfilehash: f5fa4ad357e937fed7df5be24a1fc78409a0259b
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100516393"
 ---
 # <a name="tutorial-implement-the-data-lake-capture-pattern-to-update-a-databricks-delta-table"></a>Zelfstudie: Het Data Lake Capture-patroon implementeren om een Databricks Delta-tabel bij te werken

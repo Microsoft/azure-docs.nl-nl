@@ -12,10 +12,10 @@ ms.date: 10/24/2019
 ms.author: pafarley
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 93d90232fb530a6c14c40558fc6a9974a1da42de
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92900917"
 ---
 # <a name="check-text-against-a-custom-term-list-in-c"></a>Tekst controleren aan de hand van een aangepaste termenlijst in C#
@@ -43,7 +43,7 @@ Om de Content Moderator-services via de REST-API of de SDK te kunnen gebruiken, 
 
 1. Voeg een nieuw project van het type **Console-app (.NET Framework)** toe aan uw oplossing.
 
-1. Geef het project de naam **TermLists** . Selecteer dit project als het enige opstartproject voor de oplossing.
+1. Geef het project de naam **TermLists**. Selecteer dit project als het enige opstartproject voor de oplossing.
 
 ### <a name="install-required-packages"></a>De vereiste pakketten installeren
 
@@ -134,10 +134,10 @@ private const double latencyDelay = 0.5;
 
 ## <a name="create-a-term-list"></a>Een termenlijst maken
 
-U maakt een termenlijst met **ContentModeratorClient.ListManagementTermLists.Create** . De eerste parameter voor **Create** is een tekenreeks met een MIME-type, dat moet zijn ingesteld op 'application/json'. Zie voor meer informatie de [API-naslaghandleiding](https://westus2.dev.cognitive.microsoft.com/docs/services/57cf755e3f9b070c105bd2c2/operations/57cf755e3f9b070868a1f67f). De tweede parameter is een **Body** -object met een naam en beschrijving voor de nieuwe termenlijst.
+U maakt een termenlijst met **ContentModeratorClient.ListManagementTermLists.Create**. De eerste parameter voor **Create** is een tekenreeks met een MIME-type, dat moet zijn ingesteld op 'application/json'. Zie voor meer informatie de [API-naslaghandleiding](https://westus2.dev.cognitive.microsoft.com/docs/services/57cf755e3f9b070c105bd2c2/operations/57cf755e3f9b070868a1f67f). De tweede parameter is een **Body**-object met een naam en beschrijving voor de nieuwe termenlijst.
 
 > [!NOTE]
-> Er is een maximumlimiet van **5 terminologielijsten** waarbij elke lijst **niet meer dan 10.000 termen mag bevatten** .
+> Er is een maximumlimiet van **5 terminologielijsten** waarbij elke lijst **niet meer dan 10.000 termen mag bevatten**.
 
 Voeg de volgende methodedefinitie toe aan de naamruimte TermLists, klasse Program.
 
@@ -172,7 +172,7 @@ static string CreateTermList (ContentModeratorClient client)
 
 ## <a name="update-term-list-name-and-description"></a>Naam en beschrijving van termenlijst bijwerken
 
-U kunt de gegevens van de termenlijst bijwerken met **ContentModeratorClient.ListManagementTermLists.Update** . De eerste parameter voor **Update** is de id van de termenlijst. De tweede parameter is een MIME-type, met de waarde 'application/json'. Zie voor meer informatie de [API-naslaghandleiding](https://westus2.dev.cognitive.microsoft.com/docs/services/57cf755e3f9b070c105bd2c2/operations/57cf755e3f9b070868a1f685). De derde parameter is een **Body** -object, dat de nieuwe naam en beschrijving bevat.
+U kunt de gegevens van de termenlijst bijwerken met **ContentModeratorClient.ListManagementTermLists.Update**. De eerste parameter voor **Update** is de id van de termenlijst. De tweede parameter is een MIME-type, met de waarde 'application/json'. Zie voor meer informatie de [API-naslaghandleiding](https://westus2.dev.cognitive.microsoft.com/docs/services/57cf755e3f9b070c105bd2c2/operations/57cf755e3f9b070868a1f685). De derde parameter is een **Body**-object, dat de nieuwe naam en beschrijving bevat.
 
 Voeg de volgende methodedefinitie toe aan de naamruimte TermLists, klasse Program.
 
@@ -239,7 +239,7 @@ static void GetAllTerms(ContentModeratorClient client, string list_id)
 
 Nadat u een termenlijst hebt gewijzigd, moet u de zoekindex van de lijst vernieuwen zodat de wijzigingen zijn verwerkt wanneer u de termenlijst de volgende keer gebruikt om tekst te screenen. Dit is vergelijkbaar met hoe een zoekmachine op het bureaublad (indien ingeschakeld) of een zoekmachine op internet voortdurend de eigen index vernieuwt om nieuwe bestanden of pagina's toe te voegen.
 
-U vernieuwt de zoekindex van een termenlijst met **ContentModeratorClient.ListManagementTermLists.RefreshIndexMethod** .
+U vernieuwt de zoekindex van een termenlijst met **ContentModeratorClient.ListManagementTermLists.RefreshIndexMethod**.
 
 Voeg de volgende methodedefinitie toe aan de naamruimte TermLists, klasse Program.
 
@@ -259,7 +259,7 @@ static void RefreshSearchIndex (ContentModeratorClient client, string list_id)
 
 ## <a name="screen-text-using-a-term-list"></a>Tekst screenen met behulp van een termenlijst
 
-U kunt tekst screenen met behulp van een termenlijst met **ContentModeratorClient.TextModeration.ScreenText** . Deze opdracht accepteert de volgende parameters.
+U kunt tekst screenen met behulp van een termenlijst met **ContentModeratorClient.TextModeration.ScreenText**. Deze opdracht accepteert de volgende parameters.
 
 - De taal van de termen in de termenlijst.
 - Een MIME-type, te weten 'text/html', 'text/xml', 'text/markdown' of 'text/plain'.
@@ -270,7 +270,7 @@ U kunt tekst screenen met behulp van een termenlijst met **ContentModeratorClien
 
 Zie voor meer informatie de [API-naslaghandleiding](https://westus2.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66f).
 
-**ScreenText** retourneert een **Screen** -object, dat een eigenschap **Terms** heeft met daarin alle termen die Content Moderator tijdens het screenen heeft gedetecteerd. Als Content Moderator geen termen heeft gedetecteerd tijdens het screenen, heeft de eigenschap **Terms** de waarde **null** .
+**ScreenText** retourneert een **Screen**-object, dat een eigenschap **Terms** heeft met daarin alle termen die Content Moderator tijdens het screenen heeft gedetecteerd. Als Content Moderator geen termen heeft gedetecteerd tijdens het screenen, heeft de eigenschap **Terms** de waarde **null**.
 
 Voeg de volgende methodedefinitie toe aan de naamruimte TermLists, klasse Program.
 
@@ -304,9 +304,9 @@ static void ScreenText (ContentModeratorClient client, string list_id, string te
 
 U kunt eenvoudig term of lijsten verwijderen. Gebruik de SDK om de volgende taken uit te voeren:
 
-- Een term verwijderen. ( **ContentModeratorClient.ListManagementTerm.DeleteTerm** )
-- Alle termen in een lijst verwijderen zonder de lijst te verwijderen. ( **ContentModeratorClient.ListManagementTerm.DeleteAllTerms** )
-- Een lijst en alle inhoud verwijderen. ( **ContentModeratorClient.ListManagementTermLists.Delete** )
+- Een term verwijderen. (**ContentModeratorClient.ListManagementTerm.DeleteTerm**)
+- Alle termen in een lijst verwijderen zonder de lijst te verwijderen. (**ContentModeratorClient.ListManagementTerm.DeleteAllTerms**)
+- Een lijst en alle inhoud verwijderen. (**ContentModeratorClient.ListManagementTermLists.Delete**)
 
 ### <a name="delete-a-term"></a>Een term verwijderen
 
@@ -365,7 +365,7 @@ static void DeleteTermList (ContentModeratorClient client, string list_id)
 
 ## <a name="compose-the-main-method"></a>De methode Main opstellen
 
-Voeg de definitie van de **hoofd** methode toe aan naam ruimte **TermLists** , Class- **programma** . Sluit ten slotte de **programma** klasse en de **TermLists** -naam ruimte.
+Voeg de definitie van de **hoofd** methode toe aan naam ruimte **TermLists**, Class- **programma**. Sluit ten slotte de **programma** klasse en de **TermLists** -naam ruimte.
 
 ```csharp
 static void Main(string[] args)

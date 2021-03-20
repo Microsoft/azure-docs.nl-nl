@@ -11,10 +11,10 @@ ms.custom:
 - amqp
 - mqtt
 ms.openlocfilehash: 7b3dcfc51df7f0fe4291e9c5babccc1444ad32e9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "81730757"
 ---
 # <a name="communicate-with-your-iot-hub-by-using-the-amqp-protocol"></a>Communiceren met uw IoT-hub met behulp van het AMQP-Protocol
@@ -131,7 +131,7 @@ for msg in batch:
 
 Zoals u in de voor gaande code kunt zien, heeft een feedback bericht van Cloud naar apparaat het inhouds type *toepassing/vnd.microsoft.iothub.feedback.jsop*. U kunt de eigenschappen in de JSON-hoofd tekst van het bericht gebruiken om de leverings status van het oorspronkelijke bericht af te leiden:
 
-* `statusCode`De sleutel in de feedback tekst heeft een van de volgende waarden: *geslaagd*, *verlopen*, *DeliveryCountExceeded*, *afgewezen*of *verwijderd*.
+* `statusCode`De sleutel in de feedback tekst heeft een van de volgende waarden: *geslaagd*, *verlopen*, *DeliveryCountExceeded*, *afgewezen* of *verwijderd*.
 
 * De sleutel `deviceId` in de feedback tekst heeft de id van het doel apparaat.
 

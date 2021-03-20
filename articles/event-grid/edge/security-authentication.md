@@ -8,10 +8,10 @@ ms.reviewer: spelluru
 ms.date: 07/08/2020
 ms.topic: article
 ms.openlocfilehash: 42f6107ff79d6262cdc0a35cf972cf65d3a9a802
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86171377"
 ---
 # <a name="security-and-authentication"></a>Verificatie en beveiliging
@@ -60,7 +60,7 @@ Verificatie op basis van certificaten is standaard ingeschakeld. U kunt ervoor k
 
 | Mogelijke waarde(n) | Beschrijving |
 | ----------------  | ------------ |
-| true | Standaard. Vereist dat alle aanvragen in de module Event Grid een client certificaat presen teren. Daarnaast moet u **inbound__clientAuth__clientCert__source**configureren.
+| true | Standaard. Vereist dat alle aanvragen in de module Event Grid een client certificaat presen teren. Daarnaast moet u **inbound__clientAuth__clientCert__source** configureren.
 | onjuist | Laat een client niet afdwingen dat het certificaat wordt weer gegeven.
 
 In de volgende tabel worden mogelijke waarden voor **inbound__clientAuth__clientCert__source** vastgelegd
@@ -105,7 +105,7 @@ De configuratie voor het beheren van de uitgaande client verificatie is **outbou
 
 | Mogelijke waarde(n) | Beschrijving |
 | ----------------  | ------------ |
-| true | Standaard. Vereist dat alle uitgaande aanvragen van de module Event Grid een certificaat presen teren. **Outbound__clientAuth__clientCert__source**moet worden geconfigureerd.
+| true | Standaard. Vereist dat alle uitgaande aanvragen van de module Event Grid een certificaat presen teren. **Outbound__clientAuth__clientCert__source** moet worden geconfigureerd.
 | onjuist | Event Grid-module niet vereist om het certificaat weer te geven.
 
 De configuratie voor het beheren van de bron voor het certificaat is **outbound__clientAuth__clientCert__source**.
@@ -125,14 +125,14 @@ De configuratie voor het beheren van het webhook-doel beleid **outbound__webhook
 | true | Standaard. Alleen abonnees met een HTTPS-eind punt zijn toegestaan.
 | onjuist | Hiermee kunnen abonnees een HTTP-of HTTPS-eind punt hebben.
 
-Event Grid-module valideert standaard het server certificaat van de abonnee. U kunt de validatie overs Laan door **outbound__webhook__skipServerCertValidation**te overschrijven. Mogelijke waarden zijn:
+Event Grid-module valideert standaard het server certificaat van de abonnee. U kunt de validatie overs Laan door **outbound__webhook__skipServerCertValidation** te overschrijven. Mogelijke waarden zijn:
 
 | Mogelijke waarde(n) | Beschrijving |
 | ----------------  | ------------ |
 | true | Valideer het server certificaat van de abonnee niet.
 | onjuist | Standaard. Het server certificaat van de abonnee valideren.
 
-Als het certificaat van de abonnee zelf is ondertekend, worden deze abonnees door standaard Event Grid-module geweigerd. Als u een zelfondertekend certificaat wilt toestaan, kunt u **outbound__webhook__allowUnknownCA**onderdrukken. In de volgende tabel worden de mogelijke waarden vastgelegd.
+Als het certificaat van de abonnee zelf is ondertekend, worden deze abonnees door standaard Event Grid-module geweigerd. Als u een zelfondertekend certificaat wilt toestaan, kunt u **outbound__webhook__allowUnknownCA** onderdrukken. In de volgende tabel worden de mogelijke waarden vastgelegd.
 
 | Mogelijke waarde(n) | Beschrijving |
 | ----------------  | ------------ |

@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 03/16/2017
 ms.author: duau
 ms.openlocfilehash: 21076fe23301c189d9987f78706cc81691ce7a4f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89400531"
 ---
 # <a name="using-powershell-to-manage-traffic-manager"></a>Power shell gebruiken voor het beheren van Traffic Manager
@@ -61,7 +61,7 @@ De volgende tabel beschrijft de para meters:
 
 | Parameter | Beschrijving |
 | --- | --- |
-| Naam |De resource naam voor de Traffic Manager-profiel bron. Profielen in dezelfde resource groep moeten unieke namen hebben. Deze naam is gescheiden van de DNS-naam die wordt gebruikt voor DNS-query's. |
+| Name |De resource naam voor de Traffic Manager-profiel bron. Profielen in dezelfde resource groep moeten unieke namen hebben. Deze naam is gescheiden van de DNS-naam die wordt gebruikt voor DNS-query's. |
 | ResourceGroupName |De naam van de resource groep die de profiel bron bevat. |
 | TrafficRoutingMethod |Hiermee geeft u de routerings methode voor verkeer die wordt gebruikt om te bepalen welk eind punt wordt geretourneerd als antwoord op een DNS-query. Mogelijke waarden zijn ' performance ', ' Weightd ' of ' Priority '. |
 | RelativeDnsName |Hiermee geeft u het gedeelte hostnaam van de DNS-naam op die door dit Traffic Manager profiel wordt opgegeven. Deze waarde wordt gecombineerd met de DNS-domein naam die wordt gebruikt door Azure Traffic Manager om de Fully Qualified Domain Name (FQDN) van het profiel te vormen. De waarde van ' Contoso ' wordt bijvoorbeeld ingesteld op ' contoso.trafficmanager.net '. |

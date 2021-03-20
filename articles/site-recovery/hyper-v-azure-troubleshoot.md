@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 04/14/2019
 ms.author: sharrai
 ms.openlocfilehash: c804e13029dcec42a43885cbf0d9b227b3d0338f
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96750799"
 ---
 # <a name="troubleshoot-hyper-v-to-azure-replication-and-failover"></a>Problemen oplossen met replicatie en failover voor Hyper-V naar Azure
@@ -121,7 +121,7 @@ Een app-consistente momentopname is een momentopname van de toepassingsgegevens 
     ![Dynamische schijf](media/hyper-v-azure-troubleshoot/dynamic-disk.png)
     
 4. Controleer of er geen iSCSI-schijf is gekoppeld aan de virtuele machine. Nee, dit wordt niet ondersteund.
-5. Controleer of de back-upservice is ingeschakeld. Controleer of de functie is ingeschakeld in de integratie services van **Hyper-V-instellingen**  >  **Integration Services**.
+5. Controleer of de back-upservice is ingeschakeld. Controleer of de functie is ingeschakeld in de integratie services van **Hyper-V-instellingen**  >  .
 6. Zorg ervoor dat er geen conflicten zijn met apps die VSS-moment opnamen maken. Als meerdere apps op hetzelfde moment een VSS-moment opname proberen te maken, kunnen er conflicten optreden. Als een back-uptoepassing bijvoorbeeld VSS-moment opnamen maakt wanneer Site Recovery door het replicatie beleid wordt gepland om een moment opname te maken.   
 7. Controleer of de virtuele machine een hoog verloop tempo ondervindt:
     - U kunt de dagelijkse gegevens wijzigings snelheid voor de gast-Vm's meten, met behulp van prestatie meter items op de Hyper-V-host. Schakel de volgende teller in om de wijzigings frequentie van gegevens te meten. Verzamel een voor beeld van deze waarde op de VM-schijven gedurende 5-15 minuten om het verloop van de VM op te halen.

@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 04/15/2020
 ms.author: Zhchia
 ms.openlocfilehash: b371baec663ffc7ff5909e04965353e79acb9708
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96177069"
 ---
 # <a name="tutorial-configure-hootsuite-for-automatic-user-provisioning"></a>Zelfstudie: Hootsuite configureren voor automatische gebruikersinrichting
@@ -80,7 +80,7 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
     ![Schermopname van de opties onder Beheren met de optie Inrichten gemarkeerd.](common/provisioning.png)
 
-    ![De blade Aan de slag](./media/hootsuite-provisioning-tutorial/get-started.png)
+    ![Blade Aan de slag](./media/hootsuite-provisioning-tutorial/get-started.png)
 
 4. Stel de **Inrichtingsmodus** in op **Automatisch**.
 

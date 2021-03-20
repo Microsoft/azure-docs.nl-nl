@@ -6,10 +6,10 @@ ms.topic: reference
 ms.date: 1/16/2020
 ms.author: jejarry
 ms.openlocfilehash: 635bddef1a98d6ed2b112662d8c9c44fe65e9e32
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "76906102"
 ---
 # <a name="sfctl-events"></a>sfctl-gebeurtenissen
@@ -17,7 +17,7 @@ Gebeurtenissen ophalen uit het gebeurtenissen archief (als de Event Store-servic
 
 De Event Store-systeem service kan worden toegevoegd via een configuratie-upgrade naar elk SFRP-cluster met >= 6,4. Controleer de volgende URL \: https \: //docs.Microsoft.com/azure/service-Fabric/service-Fabric-Diagnostics-eventstore.
 
-## <a name="commands"></a>Opdrachten
+## <a name="commands"></a>Opdracht
 
 |Opdracht|Beschrijving|
 | --- | --- |

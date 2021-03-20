@@ -13,10 +13,10 @@ ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.openlocfilehash: b851e52141cf93aba4aab9b2768658f0aac4660f
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98879912"
 ---
 # <a name="frequently-asked-questions"></a>Veelgestelde vragen
@@ -192,11 +192,11 @@ Een inhouds zoekmachine wordt als volgt gedefinieerd:
 
 #### <a name="what-are-common-errors-when-using-the-roslyn-analyzers-task"></a>Wat zijn veelvoorkomende fouten bij het gebruik van de Roslyn-analyse taken?
 
-##### <a name="the-project-was-restored-using-a-wrong-microsoftnetcoreapp-version"></a>Het project is hersteld met een onjuiste versie van micro soft. NetCore. app
+##### <a name="the-project-was-restored-using-a-wrong-microsoftnetcoreapp-version"></a>Het project is hersteld met een onjuiste Microsoft.NETCore.App-versie
 
 Het volledige fout bericht:
 
-"Fout: het project is hersteld met behulp van micro soft. NetCore. app versie *x. x. x*, maar met de huidige instellingen wordt versie *y. y. y* in plaats daarvan gebruikt. Om dit probleem op te lossen, moet u ervoor zorgen dat dezelfde instellingen worden gebruikt voor herstel en voor volgende bewerkingen, zoals bouwen of publiceren. Dit probleem kan zich doorgaans voordoen als de eigenschap RuntimeIdentifier is ingesteld tijdens het maken of publiceren, maar niet tijdens het terugzetten.
+"Fout: het project is hersteld met Microsoft.NETCore.App versie *x. x. x*, maar met de huidige instellingen wordt versie *y. y. y* in plaats daarvan gebruikt. Om dit probleem op te lossen, moet u ervoor zorgen dat dezelfde instellingen worden gebruikt voor herstel en voor volgende bewerkingen, zoals bouwen of publiceren. Dit probleem kan zich doorgaans voordoen als de eigenschap RuntimeIdentifier is ingesteld tijdens het maken of publiceren, maar niet tijdens het terugzetten.
 
 Omdat Roslyn-analyse taken worden uitgevoerd als onderdeel van compilatie, moet de bron structuur op de build-machine een samenstelbaar status hebben.
 

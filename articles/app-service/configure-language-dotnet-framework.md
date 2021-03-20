@@ -6,10 +6,10 @@ ms.custom: devx-track-csharp, devx-track-azurecli
 ms.topic: article
 ms.date: 06/02/2020
 ms.openlocfilehash: 8ed6835583cc4881b19eee14ed392b193324535e
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92744170"
 ---
 # <a name="configure-an-aspnet-app-for-azure-app-service"></a>Een ASP.NET-app configureren voor Azure App Service
@@ -71,7 +71,7 @@ ConfigurationManager.ConnectionStrings["MyConnection"];
 }
 ```
 
-Als u een app-instelling met dezelfde naam in App Service configureert en in *web.config* , heeft de app service waarde voor rang boven de *web.config* waarde. Met de lokale *web.config* waarde kunt u de app lokaal fouten opsporen, maar met de app service waarde kunt u de app uitvoeren in het product met productie-instellingen. Verbindings reeksen werken op dezelfde manier. Op deze manier kunt u uw toepassings geheimen buiten uw code opslagplaats houden en toegang krijgen tot de juiste waarden zonder uw code te wijzigen.
+Als u een app-instelling met dezelfde naam in App Service configureert en in *web.config*, heeft de app service waarde voor rang boven de *web.config* waarde. Met de lokale *web.config* waarde kunt u de app lokaal fouten opsporen, maar met de app service waarde kunt u de app uitvoeren in het product met productie-instellingen. Verbindings reeksen werken op dezelfde manier. Op deze manier kunt u uw toepassings geheimen buiten uw code opslagplaats houden en toegang krijgen tot de juiste waarden zonder uw code te wijzigen.
 
 ## <a name="deploy-multi-project-solutions"></a>Oplossingen voor meerdere projecten implementeren
 
@@ -91,7 +91,7 @@ Wanneer uw ASP.NET-app een uitzonde ring genereert in het Visual Studio-fout ops
 </system.web>
 ```
 
-Implementeer uw app opnieuw met de bijgewerkte *Web.config* . U ziet nu dezelfde gedetailleerde uitzonderings pagina.
+Implementeer uw app opnieuw met de bijgewerkte *Web.config*. U ziet nu dezelfde gedetailleerde uitzonderings pagina.
 
 ## <a name="access-diagnostic-logs"></a>Toegang tot diagnostische logboeken
 
@@ -108,4 +108,4 @@ Trace.TraceInformation("GET /Home/Index"); // Information trace
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Zelfstudie: Een ASP.NET-app in Azure bouwen met behulp van SQL Database](app-service-web-tutorial-dotnet-sqldatabase.md)
+> [Zelfstudie: Een ASP.NET-app bouwen in Azure met SQL Database](app-service-web-tutorial-dotnet-sqldatabase.md)

@@ -4,10 +4,10 @@ description: Dit artikel bevat informatie over de client-Sdk's voor Azure Event 
 ms.topic: article
 ms.date: 06/23/2020
 ms.openlocfilehash: 9f4eec603245f1e4ea6fa4d97b843ca6a770f2ad
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88930873"
 ---
 # <a name="azure-event-hubs---client-sdks"></a>Azure Event Hubs-client-Sdk's
@@ -20,7 +20,7 @@ Dit artikel bevat de volgende informatie voor de Sdk's die worden ondersteund do
 ## <a name="client-sdks"></a>Client-SDK 's
 In de volgende tabel worden alle momenteel beschik bare Azure Event Hubs runtime-clients beschreven. Hoewel sommige van deze bibliotheken ook beperkte beheer functionaliteit bevatten, zijn er ook specifieke bibliotheken die zijn toegewezen aan beheer bewerkingen. De belangrijkste focus van deze bibliotheken is het **verzenden en ontvangen van berichten** van een event hub.
 
-| Taal | Pakket | Naslaginformatie | 
+| Taal | Pakket | Referentie | 
 | -------- | ------- | --------------- | 
 | . NET Standard (**meest recent** en ondersteunt zowel .net Core als .NET Framework) | [Azure. Messa ging. Event hubs](https://www.nuget.org/packages/Azure.Messaging.EventHubs/) |<ul><li>[Locatie van GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Azure.Messaging.EventHubs)</li><li>[Zelfstudie](event-hubs-dotnet-standard-getstarted-send.md)</li></ul> |
 |       | [Azure. Messa ging. Event hubs. processor](https://www.nuget.org/packages/Azure.Messaging.EventHubs.Processor/) | <ul><li>[Locatie van GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Azure.Messaging.EventHubs.Processor)</li><li>[Zelfstudie](event-hubs-dotnet-standard-getstarted-send.md)</li></ul> |
@@ -39,7 +39,7 @@ In de volgende tabel worden alle momenteel beschik bare Azure Event Hubs runtime
 ## <a name="management-sdks"></a>Management-Sdk's
 De volgende tabel geeft een lijst van alle momenteel beschik bare beheer bibliotheken. Geen van deze bibliotheken bevat runtime-bewerkingen en is uitsluitend bedoeld voor het **beheren van Event hubs entiteiten**.
 
-| Taal | Pakket | Naslaginformatie | 
+| Taal | Pakket | Referentie | 
 | -------- | ------- | --------------- | 
 | .NET Standard | [Microsoft.Azure.Management.EventHub](https://www.nuget.org/packages/Microsoft.Azure.Management.EventHub) |<ul><li>[Locatie van GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Microsoft.Azure.Management.EventHub)</li><li>[Zelfstudie](event-hubs-dotnet-standard-getstarted-send.md)</li></ul> |
 

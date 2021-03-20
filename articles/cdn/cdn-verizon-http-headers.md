@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 04/16/2018
 ms.author: allensu
 ms.openlocfilehash: e20f6ce9540d357b61ae2cfdf0e8f96d127dc6c0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "84343214"
 ---
 # <a name="verizon-specific-http-headers-for-azure-cdn-rules-engine"></a>Verizon-specifieke HTTP-headers voor de engine van Azure CDN-regels
@@ -42,7 +42,7 @@ X-host | Geeft de hostnaam van de aanvraag aan. | cdn.mydomain.com
 X-Midgress | Geeft aan of de aanvraag via een extra CDN-server via een proxy is verzonden. Een voor beeld: een POP server-to-Origin Shield-Server of een POP-server-naar-ADN-Gateway server. <br />Deze header wordt alleen toegevoegd aan de aanvraag wanneer midgress verkeer plaatsvindt. In dit geval wordt de header ingesteld op 1 om aan te geven dat de aanvraag via een extra CDN-server via een proxy is verzonden.| 1
 [Host](#host-request-header) | Identificeert de host en de poort waarop de aangevraagde inhoud kan worden gevonden. | marketing.mydomain.com:80
 [X-gateway-lijst](#x-gateway-list-request-header) | ADN: identificeert de failoverlijst van ADN Gateway servers die zijn toegewezen aan de oorsprong van een klant. <br />Schild van oorsprong: geeft de set van originele afschermings servers aan die zijn toegewezen aan de oorsprong van een klant. | `icn1,hhp1,hnd1`
-X-EG-_ &lt; naam &gt; _ | Aanvraag headers die beginnen met *x-EG* (bijvoorbeeld x-EG-tag, [x-EG-debug](cdn-http-debug-headers.md)) zijn gereserveerd voor gebruik door het CDN.| WAF-productie
+X-EG-_&lt; naam &gt;_ | Aanvraag headers die beginnen met *x-EG* (bijvoorbeeld x-EG-tag, [x-EG-debug](cdn-http-debug-headers.md)) zijn gereserveerd voor gebruik door het CDN.| WAF-productie
 
 ## <a name="via-request-header"></a>Via aanvraag header
 De indeling waarmee de `Via` aanvraag header een pop-server identificeert, wordt opgegeven met de volgende syntaxis:

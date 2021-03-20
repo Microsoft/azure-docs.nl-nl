@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 07/26/2019
 ms.author: zhchia
 ms.openlocfilehash: 2fcb85b2c16bc2dd418c2260420733dd8663382a
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96179249"
 ---
 # <a name="tutorial-configure-fuze-for-automatic-user-provisioning"></a>Zelfstudie: Fuze configureren voor automatische gebruikersinrichting
@@ -151,9 +151,9 @@ Nadat u het inrichten hebt geconfigureerd, gebruikt u de volgende resources om u
 
 ## <a name="additional-resources"></a>Aanvullende resources
 
-* [De inrichting van gebruikersaccounts voor bedrijfstoepassingen beheren](../app-provisioning/configure-automatic-user-provisioning-portal.md)
+* [Gebruikersaccounts inrichten voor zakelijke apps](../app-provisioning/configure-automatic-user-provisioning-portal.md).
 * [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Informatie over het controleren van logboeken en het ophalen van rapporten over inrichtingsactiviteit](../app-provisioning/check-status-user-account-provisioning.md)
+* [Meer informatie over het controleren van logboeken en het ophalen van rapporten over de inrichtingsactiviteit](../app-provisioning/check-status-user-account-provisioning.md).

@@ -12,17 +12,17 @@ ms.workload: infrastructure-services
 ms.date: 09/28/2020
 ms.author: yitoh
 ms.openlocfilehash: 69f9b5a74566879ecf8f15f23e689ebb731da45a
-ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97814139"
 ---
 # <a name="quickstart-create-and-configure-azure-ddos-protection-standard-using-azure-powershell"></a>Snelstartgids: Azure DDoS Protection standaard maken en configureren met behulp van Azure PowerShell
 
 Ga aan de slag met Azure DDoS Protection Standard met behulp van Azure PowerShell. 
 
-In een DDoS-beschermings plan wordt een set virtuele netwerken gedefinieerd waarvoor DDoS-beschermings standaard is ingeschakeld, via abonnementen. U kunt één DDoS-beveiligings plan configureren voor uw organisatie en virtuele netwerken vanuit meerdere abonnementen koppelen aan hetzelfde abonnement. 
+In een DDoS-beschermings plan wordt een set virtuele netwerken gedefinieerd waarvoor DDoS-beschermings standaard is ingeschakeld, via abonnementen. U kunt voor uw organisatie één DDoS-beschermingsplan configureren en virtuele netwerken vanuit meerdere abonnementen aan hetzelfde plan koppelen. 
 
 In deze Quick Start maakt u een DDoS-beschermings plan en koppelt u het aan een virtueel netwerk. 
 
@@ -111,7 +111,7 @@ Als u een DDoS-beschermings plan wilt verwijderen, moet u eerst alle virtuele ne
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Ga door naar de zelf studies voor meer informatie over het weer geven en configureren van telemetrie voor uw DDoS-beveiligings plan.
+Ga door naar de zelfstudies voor meer informatie over het weergeven en configureren van telemetrie voor uw DDoS-beschermingsplan.
 
 > [!div class="nextstepaction"]
 > [DDoS-beschermingstelemetrie bekijken en configureren](telemetry.md)

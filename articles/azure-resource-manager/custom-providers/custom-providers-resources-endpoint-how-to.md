@@ -6,10 +6,10 @@ ms.author: jobreen
 author: jjbfour
 ms.date: 06/20/2019
 ms.openlocfilehash: b6c5f5b8e437ad2dc2e8a3be3f3f2ed03a613b44
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "75650524"
 ---
 # <a name="adding-custom-resources-to-azure-rest-api"></a>Aangepaste resources toevoegen aan Azure REST API
@@ -106,7 +106,7 @@ Parameter | Vereist | Beschrijving
 ---|---|---
 is-full-object | *klikt* | Geeft aan dat het eigenschappen object andere opties bevat, zoals locatie, tags, SKU en/of plan.
 id | *klikt* | De resource-id van de aangepaste resource. Dit moet bestaan uit de **resource provider**
-properties | *klikt* | De hoofd tekst van de aanvraag die naar het **eind punt**wordt verzonden.
+properties | *klikt* | De hoofd tekst van de aanvraag die naar het **eind punt** wordt verzonden.
 
 Een aangepaste Azure-resource verwijderen:
 
@@ -131,7 +131,7 @@ id | *klikt* | De resource-id van de aangepaste resource. Dit moet bestaan uit d
 ### <a name="azure-resource-manager-template"></a>Azure Resource Manager-sjabloon
 
 > [!NOTE]
-> Resources vereisen dat het antwoord een geschikte `id` , `name` , en `type` van het **eind punt**bevat.
+> Resources vereisen dat het antwoord een geschikte `id` , `name` , en `type` van het **eind punt** bevat.
 
 Azure Resource Manager sjablonen vereisen dat `id` , `name` en `type` correct worden geretourneerd vanaf het downstream-eind punt. Een geretourneerd resource antwoord moet de volgende indeling hebben:
 

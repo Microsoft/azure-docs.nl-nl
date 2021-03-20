@@ -11,10 +11,10 @@ ms.date: 09/25/2020
 ms.author: jmprieur
 ms.custom: include file
 ms.openlocfilehash: 79952ad04df4780e1b30eb9cf5c7a35f49cc34c2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91257063"
 ---
 Als u geen ervaring hebt met het beheren van identiteits-en toegangs beheer (IAM) met OAuth 2,0 en OpenID Connect Connect, of zelfs alleen voor de IAM op het micro soft Identity-platform, moet de volgende set artikelen hoog zijn in uw Lees lijst.

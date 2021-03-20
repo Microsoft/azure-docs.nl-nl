@@ -7,10 +7,10 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 09/22/2017
 ms.openlocfilehash: 5e0dcd478c6eb6696a0e07d35d4dccddac68ac1c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95993173"
 ---
 # <a name="increase-security-for-calls-to-custom-apis-from-azure-logic-apps"></a>Verbeter de beveiliging van aanroepen naar aangepaste Api's van Azure Logic Apps
@@ -199,11 +199,11 @@ Open de definitie van de logische app in de code weergave, ga naar de **http-** 
 
 | Eigenschap | Vereist | Beschrijving | 
 | -------- | -------- | ----------- | 
-| tenant | Yes | De GUID voor de Azure AD-Tenant | 
-| gericht | Yes | De GUID voor de doel resource waartoe u toegang wilt krijgen, wat de client-ID is van de toepassings identiteit voor uw web-app of API-app | 
-| clientId | Yes | De GUID voor de client die toegang vraagt, de client-ID van de toepassings identiteit voor uw logische app | 
-| geheim | Yes | De sleutel of het wacht woord van de toepassings-id voor de client die het toegangs token aanvraagt | 
-| type | Yes | Het verificatie type. De waarde is voor ActiveDirectoryOAuth-verificatie `ActiveDirectoryOAuth` . | 
+| tenant | Ja | De GUID voor de Azure AD-Tenant | 
+| gericht | Ja | De GUID voor de doel resource waartoe u toegang wilt krijgen, wat de client-ID is van de toepassings identiteit voor uw web-app of API-app | 
+| clientId | Ja | De GUID voor de client die toegang vraagt, de client-ID van de toepassings identiteit voor uw logische app | 
+| geheim | Ja | De sleutel of het wacht woord van de toepassings-id voor de client die het toegangs token aanvraagt | 
+| type | Ja | Het verificatie type. De waarde is voor ActiveDirectoryOAuth-verificatie `ActiveDirectoryOAuth` . | 
 |||| 
 
 Bijvoorbeeld:
@@ -251,8 +251,8 @@ Neem de volgende eigenschappen op in de sectie **autorisatie** :
 | Eigenschap | Vereist | Beschrijving |
 | -------- | -------- | ----------- |
 | `type` | Ja | Het verificatie type. Voor TLS/SSL-client certificaten moet de waarde zijn `ClientCertificate` . |
-| `password` | No | Het wacht woord voor toegang tot het client certificaat (PFX-bestand) |
-| `pfx` | Yes | De met base64 gecodeerde inhoud van het client certificaat (PFX-bestand) |
+| `password` | Nee | Het wacht woord voor toegang tot het client certificaat (PFX-bestand) |
+| `pfx` | Ja | De met base64 gecodeerde inhoud van het client certificaat (PFX-bestand) |
 ||||
 
 <a name="basic"></a>
@@ -273,9 +273,9 @@ Neem de volgende eigenschappen op in de sectie **autorisatie** :
 
 | Eigenschap | Vereist | Beschrijving | 
 | -------- | -------- | ----------- | 
-| type | Yes | Het verificatie type dat u wilt gebruiken. Voor basis verificatie moet de waarde zijn `Basic` . | 
-| gebruikersnaam | Yes | De gebruikers naam die u wilt gebruiken voor verificatie | 
-| wachtwoord | Yes | Het wacht woord dat u wilt gebruiken voor verificatie | 
+| type | Ja | Het verificatie type dat u wilt gebruiken. Voor basis verificatie moet de waarde zijn `Basic` . | 
+| gebruikersnaam | Ja | De gebruikers naam die u wilt gebruiken voor verificatie | 
+| wachtwoord | Ja | Het wacht woord dat u wilt gebruiken voor verificatie | 
 |||| 
 
 <a name="azure-ad-code"></a>

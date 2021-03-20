@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 1/13/2021
 ms.openlocfilehash: 4b5020b6cf7ac2f7aec586d7e6499285c1447b68
-ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98209760"
 ---
 # <a name="hyperscale-service-tier"></a>Hyperscale-servicelaag
@@ -105,7 +105,7 @@ De logboek service accepteert logboek records van de primaire Compute-replica, s
 
 Azure Storage bevat alle gegevens bestanden in een Data Base. Pagina servers houden gegevens bestanden in Azure Storage up-to-date. Deze opslag wordt gebruikt voor back-updoeleinden en voor replicatie tussen Azure-regio's. Back-ups worden geïmplementeerd met behulp van opslag momentopnamen van gegevens bestanden. Herstel bewerkingen met behulp van moment opnamen zijn snel, ongeacht de grootte van de gegevens. Gegevens kunnen worden hersteld naar elk gewenst moment binnen de Bewaar periode van de back-up van de data base.
 
-## <a name="backup-and-restore"></a>Back-ups en herstellen
+## <a name="backup-and-restore"></a>Back-up en herstel
 
 Back-ups zijn gebaseerd op bestands momentopnamen en zijn daarom bijna direct. Met opslag-en Compute-schei ding kunt u de bewerking voor back-up/herstel naar de opslaglaag beperken om de verwerkings belasting van de primaire Compute replica te verminderen. Als gevolg hiervan heeft de back-up van de data base geen invloed op de prestaties van het primaire reken knooppunt. Op dezelfde manier wordt Point-in-time herstel (PITR) uitgevoerd door terug te keren naar moment opnamen van bestanden. Dit is geen grootte van de gegevens bewerking. Het herstellen van een grootschalige-data base in dezelfde Azure-regio is een constante tijd en zelfs meerdere terabyte-data bases kunnen in enkele minuten worden hersteld in plaats van uren of dagen. Het maken van nieuwe data bases door het herstellen van een bestaande back-up heeft ook voor deel van deze functie: het maken van database kopieën voor ontwikkelings-of test doeleinden, zelfs multi-terabyte-data bases, is doable binnen enkele minuten.
 
@@ -201,7 +201,7 @@ Ingeschakelde regio's:
 - Noorwegen - oost
 - Noorwegen - west
 - Zuid-Afrika - noord
-- South Central US
+- VS - zuid-centraal
 - Azië - zuidoost
 - Zwitserland - west
 - Verenigd Koninkrijk Zuid

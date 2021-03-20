@@ -9,10 +9,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: bfb170036293dc9f519259dc92737f30380aa84a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "77025007"
 ---
 # <a name="networking-prerequisites-for-azure-vmware-solution-by-cloudsimple"></a>Netwerk vereisten voor de Azure VMware-oplossing op CloudSimple
@@ -45,7 +45,7 @@ Voor het verbinden van een [on-premises netwerk met het particuliere cloud netwe
 | Adres/adres bereik | Beschrijving                                                                                                                                                                                                                                                           |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Peer-IP               | Openbaar IP-adres van on-premises VPN-gateway. Vereist voor het tot stand brengen van een site-naar-site-VPN-verbinding tussen een on-premises Data Center en de CloudSimple-service regio. Dit IP-adres is vereist tijdens het maken van de site-naar-site-VPN-gateway.                                         |
-| Peer-id       | De peer-id van de on-premises VPN-gateway. Dit is meestal hetzelfde als het **IP-adres**van de peer.  Als er een unieke id is opgegeven op uw on-premises VPN-gateway, moet de id worden opgegeven.  De peer-ID is vereist tijdens het maken van de site-naar-site-VPN-gateway.   |
+| Peer-id       | De peer-id van de on-premises VPN-gateway. Dit is meestal hetzelfde als het **IP-adres** van de peer.  Als er een unieke id is opgegeven op uw on-premises VPN-gateway, moet de id worden opgegeven.  De peer-ID is vereist tijdens het maken van de site-naar-site-VPN-gateway.   |
 | On-premises netwerken   | On-premises voor voegsels waarvoor toegang is vereist tot CloudSimple netwerken in de regio.  Neem alle voor voegsels van een on-premises netwerk op dat toegang heeft tot het CloudSimple-netwerk, met inbegrip van het client netwerk van waaruit gebruikers toegang hebben tot het netwerk.                                         |
 
 ## <a name="network-address-range-required-for-using-point-to-site-vpn-connections"></a>Het netwerk adres bereik dat is vereist voor het gebruik van punt-naar-site-VPN-verbindingen

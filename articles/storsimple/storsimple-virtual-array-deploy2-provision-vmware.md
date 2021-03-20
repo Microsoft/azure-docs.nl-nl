@@ -9,14 +9,14 @@ ms.date: 07/25/2019
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 9810a34021aa039354aad24f84aff373229c0190
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87021474"
 ---
 # <a name="deploy-storsimple-virtual-array---provision-in-vmware"></a>StorSimple Virtual array implementeren-inrichten in VMware
-![Diagram met de stappen die nodig zijn voor het implementeren van een virtuele matrix.Het tweede deel van de tweede stap is voorzien van het label inrichten op VMware en is gemarkeerd.](./media/storsimple-virtual-array-deploy2-provision-vmware/vmware4.png)
+![Diagram met de stappen die nodig zijn voor het implementeren van een virtuele matrix. Het tweede deel van de tweede stap is voorzien van het label inrichten op VMware en is gemarkeerd.](./media/storsimple-virtual-array-deploy2-provision-vmware/vmware4.png)
 
 ## <a name="overview"></a>Overzicht
 
@@ -83,7 +83,7 @@ Voer de volgende stappen uit voor het inrichten van een virtueel apparaat in de 
 3. Selecteer in de vSphere-client in de sectie inventaris in het linkerdeel venster de ESXi-server.
 
    ![Scherm afbeelding van de hoofd pagina van de vSphere-client. In de sectie inventarisatie wordt de ESXi-server gemarkeerd.](./media/storsimple-virtual-array-deploy2-provision-vmware/image2.png)
-4. Upload de VMDK naar de ESXi-server. Ga naar het tabblad **configuratie** in het rechterdeel venster. Onder **Hardware**selecteert u **opslag**.
+4. Upload de VMDK naar de ESXi-server. Ga naar het tabblad **configuratie** in het rechterdeel venster. Onder **Hardware** selecteert u **opslag**.
 
    ![Scherm opname van het tabblad Configuratie van de vSphere-client. In de sectie hardware is opslag gemarkeerd.](./media/storsimple-virtual-array-deploy2-provision-vmware/image3.png)
 5. In het rechterdeelvenster bij **Gegevensopslag** selecteert u de gegevensopslag waarin u de VMDK wilt uploaden. Het gegevens archief moet voldoende beschik bare ruimte hebben voor het besturings systeem en de gegevens schijven.
@@ -127,7 +127,7 @@ Voer de volgende stappen uit voor het inrichten van een virtueel apparaat in de 
 18. Selecteer op de pagina **versie van virtuele machine** de versie van de **virtuele machine: 8**.
 
     ![Scherm afbeelding van de versie pagina van de virtuele machine. De optie versie 8 van de virtuele machine is geselecteerd en de knop volgende is gemarkeerd.](./media/storsimple-virtual-array-deploy2-provision-vmware/image19.png)
-19. Op de pagina **gast besturingssysteem** selecteert u het **gast besturingssysteem** als **Windows**. Selecteer voor **versie**in de vervolg keuzelijst de optie **micro soft Windows Server 2012 (64-bits)**.
+19. Op de pagina **gast besturingssysteem** selecteert u het **gast besturingssysteem** als **Windows**. Selecteer voor **versie** in de vervolg keuzelijst de optie **micro soft Windows Server 2012 (64-bits)**.
 
     ![Scherm afbeelding van de pagina gast besturingssysteem met Windows geselecteerd, de versie die is ingesteld op micro soft Windows Server 2012 (64-bits) en volgende gemarkeerd.](./media/storsimple-virtual-array-deploy2-provision-vmware/image20.png)
 20. Pas op de pagina **cpu's** het **aantal virtuele sockets** en het **aantal kernen per virtuele socket** aan zodat het **totale aantal kernen** 4 (of meer) is. Klik op **Volgende**.
@@ -145,25 +145,25 @@ Voer de volgende stappen uit voor het inrichten van een virtueel apparaat in de 
 24. Kies op de pagina **een schijf selecteren** de optie **een bestaande virtuele schijf gebruiken**. Klik op **Volgende**.
 
     ![Scherm afbeelding van de pagina een schijf selecteren met de optie een bestaande virtuele schijf gebruiken geselecteerd en de knop Volgende gemarkeerd.](./media/storsimple-virtual-array-deploy2-provision-vmware/image25.png)
-25. Klik op de pagina **bestaande schijf selecteren** onder **schijf bestands pad**op **Bladeren**. Hiermee opent u het dialoog venster **Bladeren in data stores** . Navigeer naar de locatie waar u de VMDK hebt geüpload. U ziet nu slechts één bestand in de gegevens opslag als de twee bestanden die u in eerste instantie hebt geüpload, zijn samengevoegd. Selecteer het bestand en klik op **OK**. Klik op **Volgende**.
+25. Klik op de pagina **bestaande schijf selecteren** onder **schijf bestands pad** op **Bladeren**. Hiermee opent u het dialoog venster **Bladeren in data stores** . Navigeer naar de locatie waar u de VMDK hebt geüpload. U ziet nu slechts één bestand in de gegevens opslag als de twee bestanden die u in eerste instantie hebt geüpload, zijn samengevoegd. Selecteer het bestand en klik op **OK**. Klik op **Volgende**.
 
     ![Scherm afbeelding van de pagina bestaande schijf selecteren. De knop Bladeren is gemarkeerd en een dialoog venster bevat één bestand en een gemarkeerde knop OK.](./media/storsimple-virtual-array-deploy2-provision-vmware/image26.png)
 26. Accepteer de standaard instellingen op de pagina **Geavanceerde opties** en klik op **volgende**.
 
     ![Scherm afbeelding van de pagina Geavanceerde opties. De knop volgende is gemarkeerd.](./media/storsimple-virtual-array-deploy2-provision-vmware/image27.png)
-27. Op de pagina **Gereed om te voltooien** controleert u alle instellingen voor de nieuwe virtuele machine. Controleer **de instellingen voor de virtuele machine voordat u de bewerking hebt voltooid**. Klik op **Doorgaan**.
+27. Op de pagina **Gereed om te voltooien** controleert u alle instellingen voor de nieuwe virtuele machine. Controleer **de instellingen voor de virtuele machine voordat u de bewerking hebt voltooid**. Klik op **Continue**.
 
     ![Scherm afbeelding van de pagina gereed voor volt ooien met een gemarkeerde knop door gaan. De optie de instellingen voor de virtuele machine bewerken voordat deze is voltooid is ingeschakeld.](./media/storsimple-virtual-array-deploy2-provision-vmware/image28.png)
 28. Zoek op de pagina **virtual machines eigenschappen** op het tabblad **Hardware** de hardware van het apparaat. Selecteer **nieuwe harde schijf**. Klik op **Add**.
 
     ![Scherm afbeelding van het tabblad Hardware van de pagina met Virtual Machines eigenschappen. Er wordt een nieuwe harde schijf geselecteerd in de hardwarelijst. De knop toevoegen is gemarkeerd.](./media/storsimple-virtual-array-deploy2-provision-vmware/image29.png)
-29. U ziet het venster **Hardware toevoegen** . Selecteer op de pagina **type apparaat** onder **Kies het type apparaat dat u wilt toevoegen de**optie **harde schijf**en klik op **volgende**.
+29. U ziet het venster **Hardware toevoegen** . Selecteer op de pagina **type apparaat** onder **Kies het type apparaat dat u wilt toevoegen de** optie **harde schijf** en klik op **volgende**.
 
     ![Scherm afbeelding van de pagina apparaattype van het venster hardware toevoegen. De harde schijf is geselecteerd en de knop volgende is gemarkeerd.](./media/storsimple-virtual-array-deploy2-provision-vmware/image30.png)
 30. Kies op de pagina **een schijf selecteren** de optie **een nieuwe virtuele schijf maken**. Klik op **Volgende**.
 
     ![Scherm afbeelding van de pagina een schijf selecteren. De optie een nieuwe virtuele schijf maken is geselecteerd en de knop volgende is gemarkeerd.](./media/storsimple-virtual-array-deploy2-provision-vmware/image31.png)
-31. Op de pagina **een schijf maken** wijzigt u de **schijf grootte** in 500 GB (of meer). Hoewel 500 GB de minimale vereiste is, kunt u altijd een grotere schijf inrichten. Houd er rekening mee dat u de schijf niet kunt uitbreiden of verkleinen wanneer deze eenmaal is ingericht. Raadpleeg de sectie grootte in het [document best practices](storsimple-ova-best-practices.md)voor meer informatie over de grootte van de schijf die moet worden ingericht. Onder **schijf inrichting**selecteert u **Thin Provisioning**. Klik op **Volgende**.
+31. Op de pagina **een schijf maken** wijzigt u de **schijf grootte** in 500 GB (of meer). Hoewel 500 GB de minimale vereiste is, kunt u altijd een grotere schijf inrichten. Houd er rekening mee dat u de schijf niet kunt uitbreiden of verkleinen wanneer deze eenmaal is ingericht. Raadpleeg de sectie grootte in het [document best practices](storsimple-ova-best-practices.md)voor meer informatie over de grootte van de schijf die moet worden ingericht. Onder **schijf inrichting** selecteert u **Thin Provisioning**. Klik op **Volgende**.
 
     ![Scherm afbeelding van de pagina een schijf maken. De schijf grootte is ingesteld op 500 GB, de optie voor thin provisioning is geselecteerd en de knop volgende is gemarkeerd.](./media/storsimple-virtual-array-deploy2-provision-vmware/image32.png)
 32. Accepteer de standaard instellingen op de pagina **Geavanceerde opties** .
@@ -216,7 +216,7 @@ Voer de volgende stappen uit om uw virtuele apparaat te starten en verbinding te
     `Set-HcsIpAddress –Name Ethernet –IpAddress 10.161.22.90 –Netmask 255.255.255.0 –Gateway 10.161.22.1`
 
     ![Scherm afbeelding met een console venster met de uitvoer van de Get-Help Set-HcsIpAddress opdracht en het juiste gebruik van de Set-HcsIpAddress opdracht.](./media/storsimple-virtual-array-deploy2-provision-vmware/image44.png)
-9. Nadat de initiële installatie voltooid is en het apparaat is opgestart, ziet u de bannertekst van het apparaat. Noteer het IP-adres en de URL die wordt weergegeven in de bannertekst om het apparaat te beheren. U gebruikt dit IP-adres om verbinding te maken met de Web-UI van uw virtuele apparaat en de lokale installatie en registratie te volt ooien.
+9. Wanneer de initiële installatie is voltooid en het apparaat is opgestart, ziet u de bannertekst van het apparaat. Noteer het IP-adres en de URL die in de bannertekst worden weergegeven om het apparaat te beheren. U gebruikt dit IP-adres om verbinding te maken met de Web-UI van uw virtuele apparaat en de lokale installatie en registratie te volt ooien.
 
    ![Scherm opname van een console venster met de banner tekst van het apparaat. Deze tekst bevat het IP-adres en de URL van het apparaat.](./media/storsimple-virtual-array-deploy2-provision-vmware/image45.png)
 10. Beschrijving Voer deze stap alleen uit als u uw apparaat in de Government Cloud implementeert. U schakelt nu de FIPS-modus (Verenigde Staten Federal Information Processing Standard) op het apparaat in. De FIPS 140-standaard definieert cryptografische algoritmen die zijn goedgekeurd voor gebruik door Amerikaanse Federal Government-computer systemen voor de beveiliging van gevoelige gegevens.

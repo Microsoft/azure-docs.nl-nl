@@ -8,10 +8,10 @@ author: mingshen
 ms.author: mingshen
 ms.date: 09/02/2020
 ms.openlocfilehash: e97171e61814b832e78f7bd815d8d6f341a90840
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91858169"
 ---
 # <a name="plans-and-pricing-for-commercial-marketplace-offers"></a>Abonnementen en prijzen voor commerciële Marketplace-aanbiedingen
@@ -115,12 +115,12 @@ Controleer uw prijzen zorgvuldig voordat u deze publiceert. er zijn enkele beper
 Prijzen die zijn ingesteld in Verenigde Staten dollars (USD), worden omgezet in de lokale valuta van alle geselecteerde markten met de huidige wissel koersen wanneer deze worden opgeslagen. Valideer deze prijzen vóór de publicatie door het prijs werk blad te exporteren en de prijs op elke geselecteerde markt te bekijken.
 
 1. U moet uw prijs wijzigingen eerst opslaan om het exporteren van prijs gegevens in te scha kelen. Klik onder aan het tabblad **prijzen en beschik baarheid** op **concept opslaan**.
-1. Selecteer onder **prijzen**de koppeling **prijs gegevens exporteren** .
+1. Selecteer onder **prijzen** de koppeling **prijs gegevens exporteren** .
 1. Open het exportedPrice.xlsx-bestand in micro soft Excel.
 1. Breng de gewenste wijzigingen aan in de prijs informatie in het werk blad en sla het op. CSV-bestand.
     > [!NOTE]
     > Mogelijk moet u bewerken in Excel inschakelen voordat u het bestand kunt bijwerken.
-1. Selecteer op het tabblad **prijzen en beschik baarheid** onder **prijzen**de koppeling **prijs gegevens importeren** .
+1. Selecteer op het tabblad **prijzen en beschik baarheid** onder **prijzen** de koppeling **prijs gegevens importeren** .
 1. In het dialoog venster dat wordt weer gegeven, selecteert u **Ja**.
 1. Selecteer het exportedPrice.xlsx bestand dat u hebt bijgewerkt en selecteer vervolgens **openen**.
 

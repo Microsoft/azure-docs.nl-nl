@@ -2,13 +2,13 @@
 title: Quickstart voor het maken van een Azure Recovery Services-kluis met behulp van een Azure Resource Manager-sjabloon.
 description: In deze quickstart leert u hoe u met een sjabloon van Azure Resource Manager (ARM-sjabloon) een Azure Recovery Services-kluis maakt.
 ms.topic: quickstart
-ms.custom: subject-armqs, devx-track-azurecli
+ms.custom: subject-armqs
 ms.date: 04/29/2020
-ms.openlocfilehash: c1c6d625c67130a4e3608cee6134b8c81404c01b
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
-ms.translationtype: HT
+ms.openlocfilehash: 62bfe71c397367282c696eecdf55ab9c900c69a1
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92745873"
 ---
 # <a name="quickstart-create-a-recovery-services-vault-using-an-arm-template"></a>Quickstart: Een Recovery Services-kluis maken met behulp van een ARM-sjabloon
@@ -17,7 +17,7 @@ In deze quickstart wordt beschreven hoe u een Recovery Services-kluis instelt me
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
-Als uw omgeving voldoet aan de vereisten en u benkend bent met het gebruik van ARM-sjablonen, selecteert u de knop **Implementeren naar Azure** . De sjabloon wordt in Azure Portal geopend.
+Als uw omgeving voldoet aan de vereisten en u benkend bent met het gebruik van ARM-sjablonen, selecteert u de knop **Implementeren naar Azure**. De sjabloon wordt in Azure Portal geopend.
 
 [![Implementeren in Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-recovery-services-vault-create%2Fazuredeploy.json)
 
@@ -42,7 +42,7 @@ Zie [Azure Quickstart-sjablonen](https://azure.microsoft.com/resources/templates
 
 ## <a name="deploy-the-template"></a>De sjabloon implementeren
 
-Als u de sjabloon wilt implementeren, zijn de **Abonnement** , **Resourcegroep** en **Kluisnaam** vereist.
+Als u de sjabloon wilt implementeren, zijn de **Abonnement**, **Resourcegroep** en **Kluisnaam** vereist.
 
 1. Selecteer **Implementeren in Azure** om u aan te melden bij Azure en de sjabloon te openen.
 
@@ -52,18 +52,18 @@ Als u de sjabloon wilt implementeren, zijn de **Abonnement** , **Resourcegroep**
 
    :::image type="content" source="media/quickstart-create-vault-template/create-vault-template.png" alt-text="Sjabloon voor het maken van een Recovery Services-kluis.":::
 
-   - **Abonnement** : selecteer uw Azure-abonnement.
-   - **Resourcegroep** : Selecteer een bestaande groep of selecteer **Nieuwe maken** om een groep toe te voegen.
-   - **Locatie** : wordt standaard ingesteld op de locatie van de resourcegroep en is niet meer beschikbaar nadat u een resourcegroep hebt geselecteerd.
-   - **Kluisnaam** : Geef een naam op voor de kluis.
-   - **Opslagtype wijzigen** : De standaardinstelling is **onwaar** . Selecteer **waar** alleen als u het opslagtype van de kluis moet wijzigen.
-   - **Kluisopslagtype** : De standaardinstelling is **GloballyRedundant** . Als het opslagtype is ingesteld op **waar** , selecteert u **LocallyRedundant** .
-   - **Locatie** : de functie `[resourceGroup().location]` is standaard ingesteld op de locatie van de resourcegroep. Als u de locatie wilt wijzigen, voert u een waarde in, zoals **westus** .
+   - **Abonnement**: selecteer uw Azure-abonnement.
+   - **Resourcegroep**: Selecteer een bestaande groep of selecteer **Nieuwe maken** om een groep toe te voegen.
+   - **Locatie**: wordt standaard ingesteld op de locatie van de resourcegroep en is niet meer beschikbaar nadat u een resourcegroep hebt geselecteerd.
+   - **Kluisnaam**: Geef een naam op voor de kluis.
+   - **Opslagtype wijzigen**: De standaardinstelling is **onwaar**. Selecteer **waar** alleen als u het opslagtype van de kluis moet wijzigen.
+   - **Kluisopslagtype**: De standaardinstelling is **GloballyRedundant**. Als het opslagtype is ingesteld op **waar**, selecteert u **LocallyRedundant**.
+   - **Locatie**: de functie `[resourceGroup().location]` is standaard ingesteld op de locatie van de resourcegroep. Als u de locatie wilt wijzigen, voert u een waarde in, zoals **westus**.
    - Schakel het selectievakje **Ik ga akkoord met de bovenstaande voorwaarden** in.
 
-1. Als u de implementatie van de kluis wilt starten, selecteert u de knop **Kopen** . Na een geslaagde implementatie wordt er een melding weergegeven.
+1. Als u de implementatie van de kluis wilt starten, selecteert u de knop **Kopen**. Na een geslaagde implementatie wordt er een melding weergegeven.
 
-   :::image type="content" source="media/quickstart-create-vault-template/deployment-success.png" alt-text="Sjabloon voor het maken van een Recovery Services-kluis.":::
+   :::image type="content" source="media/quickstart-create-vault-template/deployment-success.png" alt-text="De kluisimplementatie is voltooid.":::
 
 ## <a name="validate-the-deployment"></a>De implementatie valideren
 

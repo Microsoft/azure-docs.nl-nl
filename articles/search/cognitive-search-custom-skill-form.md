@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/21/2020
 ms.openlocfilehash: a3b073cdb90e0c427bfbca15c1440b9122672610
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98880132"
 ---
 # <a name="example-create-a-form-recognizer-custom-skill"></a>Voor beeld: een aangepaste vaardigheid voor het herkennen van een formulier maken
@@ -43,7 +43,7 @@ Voeg eerst omgevings variabelen op project niveau toe. Zoek het project **Analyz
 * `FORMS_RECOGNIZER_RETRY_DELAY` waarvan de waarde is ingesteld op 1000. Deze waarde is de tijd in milliseconden die het programma wacht voordat de query opnieuw wordt uitgevoerd.
 * `FORMS_RECOGNIZER_MAX_ATTEMPTS` waarvan de waarde is ingesteld op 100. Deze waarde is het aantal keren dat het programma de service zal opvragen tijdens het ophalen van een geslaagd antwoord.
 
-Open vervolgens _AnalyzeForm.cs_ en zoek de `fieldMappings` variabele, die verwijst naar de *field-mappings.jsin* het bestand. Dit bestand (en de variabele waarmee ernaar wordt verwezen) definieert de lijst met sleutels die u wilt extra heren uit uw formulieren en een aangepast label voor elke sleutel. Zo betekent een waarde `{ "Address:", "address" }, { "Invoice For:", "recipient" }` dat het script alleen de waarden voor de gedetecteerde `Address:` en `Invoice For:` velden opslaat, en worden deze waarden labelen met `"address"` `"recipient"` respectievelijk.
+Open vervolgens _AnalyzeForm. cs_ en zoek de `fieldMappings` variabele, die verwijst naar de *field-mappings.jsin* het bestand. Dit bestand (en de variabele waarmee ernaar wordt verwezen) definieert de lijst met sleutels die u wilt extra heren uit uw formulieren en een aangepast label voor elke sleutel. Zo betekent een waarde `{ "Address:", "address" }, { "Invoice For:", "recipient" }` dat het script alleen de waarden voor de gedetecteerde `Address:` en `Invoice For:` velden opslaat, en worden deze waarden labelen met `"address"` `"recipient"` respectievelijk.
 
 Let ten slotte op de `contentType` variabele. Met dit script wordt het opgegeven formulier Recognizer-model uitgevoerd op externe documenten waarnaar wordt verwezen door de URL, zodat het inhouds type `application/json` . Als u lokale bestanden wilt analyseren door de byte-streams in de HTTP-aanvragen op te nemen, moet u het `contentType` juiste [MIME-type](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types) voor het bestand wijzigen.
 

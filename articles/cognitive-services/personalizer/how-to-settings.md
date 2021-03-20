@@ -6,10 +6,10 @@ ms.subservice: personalizer
 ms.topic: how-to
 ms.date: 04/29/2020
 ms.openlocfilehash: 9b7347cb98bcbf2e1d92f115d404197083acef4d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91292605"
 ---
 # <a name="configure-personalizer-learning-loop"></a>De learning-lus van Personaler configureren
@@ -51,7 +51,7 @@ Configureer de service voor het gebruik van beloningen van uw leer proces. Als u
 |Standaardbeloning|Als er geen belonings oproep wordt ontvangen door Personaler tijdens het venster belonings wachttijd dat is gekoppeld aan een rang nummer, zal Personaler de standaard beloning toewijzen. In de meeste scenario's is de standaard beloning standaard nul (0).|
 |Belonings aggregatie|Als er meerdere beloningen worden ontvangen voor dezelfde positie-API-aanroep, wordt deze samenvoegings methode gebruikt: **Sum** of **oudste**. De eerste keer kiest de eerste ontvangen Score en wordt de rest verwijderd. Dit is handig als u een unieke beloning wilt voor mogelijk dubbele aanroepen. |
 
-Nadat u deze waarden hebt gewijzigd, moet u **Opslaan**selecteren.
+Nadat u deze waarden hebt gewijzigd, moet u **Opslaan** selecteren.
 
 ## <a name="configure-exploration-to-allow-the-learning-loop-to-adapt"></a>Verkennen configureren zodat de learning-lus kan worden aangepast
 
@@ -61,7 +61,7 @@ Als u deze waarde wijzigt, wordt het huidige personalisatie model opnieuw ingest
 
 ![De waarde voor verkennen bepaalt welk percentage van de Rangings aanroepen met verkennen wordt beantwoord](media/settings/configure-exploration-setting.png)
 
-Nadat u deze waarde hebt gewijzigd, moet u **Opslaan**selecteren.
+Nadat u deze waarde hebt gewijzigd, moet u **Opslaan** selecteren.
 
 <a name="model-update-frequency"></a>
 
@@ -77,13 +77,13 @@ Met de frequentie van de **model updates** wordt aangegeven hoe vaak het model w
 
 ![Met de model update frequentie stelt u in hoe vaak een nieuw Personalr model opnieuw wordt getraind.](media/settings/configure-model-update-frequency-settings-15-minutes.png)
 
-Nadat u deze waarde hebt gewijzigd, moet u **Opslaan**selecteren.
+Nadat u deze waarde hebt gewijzigd, moet u **Opslaan** selecteren.
 
-## <a name="data-retention"></a>Bewaartijd voor gegevens
+## <a name="data-retention"></a>Gegevensretentie
 
 **Gegevens retentie periode** instellen hoeveel dagen persoonlijke gegevens logboeken worden bewaard. Eerdere gegevens logboeken zijn vereist voor het uitvoeren van [offline-evaluaties](concepts-offline-evaluation.md), die worden gebruikt om de effectiviteit van personaler te meten en het trainings beleid te optimaliseren.
 
-Nadat u deze waarde hebt gewijzigd, moet u **Opslaan**selecteren.
+Nadat u deze waarde hebt gewijzigd, moet u **Opslaan** selecteren.
 
 
 

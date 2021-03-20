@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 05/26/2020
 ms.author: allensu
 ms.openlocfilehash: efd6e6a93cd4ca79e6c4b6de69f8514e2d71b252
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "84323311"
 ---
 # <a name="azure-cdn-from-verizon-premium-rules-engine-match-conditions"></a>Azure CDN van de overeenkomst voor waarden van de Verizon Premium-regels engine
@@ -63,11 +63,11 @@ Deze matching-voor waarden zijn ontworpen om aanvragen te identificeren op basis
 | [Is Windows Phone?](https://docs.vdms.com/cdn/Content/HRE/M/D-Is-Windows-Phone.htm) | Identificeert aanvragen door te controleren of het apparaat een Windows Mobile 6.5/Windows Phone 7 of hoger is. |
 | [Is het draadloze apparaat?](https://docs.vdms.com/cdn/Content/HRE/M/D-Is-Wireless-Device.htm) | Hiermee worden aanvragen geïdentificeerd door de vraag of het apparaat draadloos is. 
 | Marketing naam | Identificeert aanvragen door te bepalen of de marketing naam van het apparaat overeenkomt met een: <br> **-** Specifieke waarde ([letterlijke marketing naam](https://docs.vdms.com/cdn/Content/HRE/M/D-Marketing-Name-Literal.htm)) <br> **-** Reguliere expressie ([marketing naam regex](https://docs.vdms.com/cdn/Content/HRE/M/D-Marketing-Name-Regex.htm)) <br> **-** Specifiek patroon ([naam](https://docs.vdms.com/cdn/Content/HRE/M/D-Marketing-Name-Wildcard.htm)van de marketing) |
-| Mobiele browser | Identificeert aanvragen door te controleren of de browser van het apparaat overeenkomt met een: <br> **-** Specifieke waarde ([letterlijke mobiele browser](https://docs.vdms.com/cdn/Content/HRE/M/D-Mobile-Browser-Literal.htm)) <br> **-** Reguliere expressie (door[mobiele browser regex](https://docs.vdms.com/cdn/Content/HRE/M/D-Mobile-Browser-Regex.htm)) <br> **-** Specifiek patroon ([mobiele browser Joker teken](https://docs.vdms.com/cdn/Content/HRE/M/D-Mobile-Browser-Wildcard.htm)) |
+| Mobiele browser | Identificeert aanvragen door te controleren of de browser van het apparaat overeenkomt met een: <br> **-** Specifieke waarde ([letterlijke mobiele browser](https://docs.vdms.com/cdn/Content/HRE/M/D-Mobile-Browser-Literal.htm)) <br> **-** Reguliere expressie (door [mobiele browser regex](https://docs.vdms.com/cdn/Content/HRE/M/D-Mobile-Browser-Regex.htm)) <br> **-** Specifiek patroon ([mobiele browser Joker teken](https://docs.vdms.com/cdn/Content/HRE/M/D-Mobile-Browser-Wildcard.htm)) |
 | Mobiele browser versie | Identificeert aanvragen door te controleren of de browser versie van het apparaat overeenkomt met een: <br> **-** Specifieke waarde ([letterlijke versie van de Mobile browser version](https://docs.vdms.com/cdn/Content/HRE/M/D-Mobile-Browser-Version-Literal.htm)) <br> **-** Reguliere expressie ([regex van mobiele browser versie](https://docs.vdms.com/cdn/Content/HRE/M/D-Mobile-Browser-Version-Regex.htm)) <br> **-** Specifiek patroon ([Joker teken voor de mobiele browser versie](https://docs.vdms.com/cdn/Content/HRE/M/D-Mobile-Browser-Version-Wildcard.htm)) |
 | Model naam | Identificeert aanvragen door te controleren of de model naam van het apparaat overeenkomt met een: <br> **-** Specifieke waarde ([letterlijke model naam](https://docs.vdms.com/cdn/Content/HRE/M/D-Model-Name-Literal.htm)) <br> **-** Reguliere expressie ([model naam regex](https://docs.vdms.com/cdn/Content/HRE/M/D-Model-Name-Regex.htm)) <br> **-** Specifiek patroon ([model naam Joker teken](https://docs.vdms.com/cdn/Content/HRE/M/D-Model-Name-Wildcard.htm)) |
 | [Progressief downloaden?](https://docs.vdms.com/cdn/Content/HRE/M/D-Progressive-Download.htm) | Identificeert aanvragen door te controleren of het apparaat progressieve down load ondersteunt. |
-| Release datum | Hiermee worden aanvragen geïdentificeerd door de vraag of de release datum van het apparaat overeenkomt met een: <br> **-** Specifieke waarde ([letterlijke versie datum](https://docs.vdms.com/cdn/Content/HRE/M/D-Release-Date-Literal.htm)) <br> **-** Reguliere expressie (reguliere[versie datum](https://docs.vdms.com/cdn/Content/HRE/M/D-Release-Date-Regex.htm)) <br> **-** Specifiek patroon ([Joker teken datum](https://docs.vdms.com/cdn/Content/HRE/M/D-Release-Date-Wildcard.htm)) |
+| Releasedatum | Hiermee worden aanvragen geïdentificeerd door de vraag of de release datum van het apparaat overeenkomt met een: <br> **-** Specifieke waarde ([letterlijke versie datum](https://docs.vdms.com/cdn/Content/HRE/M/D-Release-Date-Literal.htm)) <br> **-** Reguliere expressie (reguliere [versie datum](https://docs.vdms.com/cdn/Content/HRE/M/D-Release-Date-Regex.htm)) <br> **-** Specifiek patroon ([Joker teken datum](https://docs.vdms.com/cdn/Content/HRE/M/D-Release-Date-Wildcard.htm)) |
 | [Resolutie hoogte](https://docs.vdms.com/cdn/Content/HRE/M/D-Resolution-Height.htm) | Hiermee worden aanvragen geïdentificeerd op basis van de hoogte van het apparaat. |
 | [Resolutie breedte](https://docs.vdms.com/cdn/Content/HRE/M/D-Resolution-Width.htm) | Hiermee worden aanvragen geïdentificeerd op basis van de breedte van het apparaat. |
 
@@ -80,14 +80,14 @@ Deze matching-voor waarden zijn ontworpen om aanvragen te identificeren op basis
 | Name       | Doel                                                           |
 |------------|-------------------------------------------------------------------|
 | [Als getal](https://docs.vdms.com/cdn/Content/HRE/M/AS-Number.htm) | Identificeert aanvragen die afkomstig zijn van een bepaald netwerk. |
-| Plaatsnaam | Identificeert aanvragen door te controleren of ze afkomstig zijn van een stad waarvan de naam overeenkomt met een: <br> **-** Specifieke waarde ([letterlijke stad naam](https://docs.vdms.com/cdn/Content/HRE/M/City-Name-Literal.htm)) <br> **-** Reguliere expressie (locatie[naam van plaats](https://docs.vdms.com/cdn/Content/HRE/M/City-Name-Regex.htm)) |
+| Plaatsnaam | Identificeert aanvragen door te controleren of ze afkomstig zijn van een stad waarvan de naam overeenkomt met een: <br> **-** Specifieke waarde ([letterlijke stad naam](https://docs.vdms.com/cdn/Content/HRE/M/City-Name-Literal.htm)) <br> **-** Reguliere expressie (locatie [naam van plaats](https://docs.vdms.com/cdn/Content/HRE/M/City-Name-Regex.htm)) |
 | [Continent](https://docs.vdms.com/cdn/Content/HRE/M/Continent.htm) | Identificeert aanvragen die afkomstig zijn van de opgegeven continenten. |
 | [Land](https://docs.vdms.com/cdn/Content/HRE/M/Country.htm) | Identificeert aanvragen die afkomstig zijn uit de opgegeven landen. |
 | [DMA-code](https://docs.vdms.com/cdn/Content/HRE/M/DMA-Code.htm) | Identificeert aanvragen die afkomstig zijn van de opgegeven metro lijnen (aangeduide markt gebieden). |
 | [Breedte graad](https://docs.vdms.com/cdn/Content/HRE/M/Latitude.htm) | Identificeert aanvragen die afkomstig zijn van de opgegeven Latitudes. |
 | [Lengte graad](https://docs.vdms.com/cdn/Content/HRE/M/Longitude.htm) | Identificeert aanvragen die afkomstig zijn van de opgegeven lengte graad. |
 | [Metro code](https://docs.vdms.com/cdn/Content/HRE/M/Metro-Code.htm) | Identificeert aanvragen die afkomstig zijn van de opgegeven metro lijnen (aangeduide markt gebieden). |
-| [Post code](https://docs.vdms.com/cdn/Content/HRE/M/Postal-Code.htm) | Identificeert aanvragen die afkomstig zijn van de opgegeven post codes. |
+| [Postcode](https://docs.vdms.com/cdn/Content/HRE/M/Postal-Code.htm) | Identificeert aanvragen die afkomstig zijn van de opgegeven post codes. |
 | [Regio code](https://docs.vdms.com/cdn/Content/HRE/M/Region-Code.htm) | Identificeert aanvragen die afkomstig zijn uit de opgegeven regio's. |
 
 > [!NOTE]

@@ -9,10 +9,10 @@ ms.topic: tutorial
 ms.date: 9/25/2018
 ms.author: rohink
 ms.openlocfilehash: 4bdfc950cc1277809811dc2c548a57cc2138a8e4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "77149946"
 ---
 # <a name="tutorial-configure-an-alias-record-to-support-apex-domain-names-with-traffic-manager"></a>Zelfstudie: een Azure DNS-aliasrecord configureren om het gebruik van hoofddomeinnaam met Traffic Manager te ondersteunen 
@@ -52,7 +52,7 @@ Maak eerst een virtueel netwerk en een subnet waaraan u de webservers gaat toevo
 4. Selecteer voor **Instellingen** het virtuele netwerk **VNet-Servers** en het subnet **SN-Web**.
 5. Selecteer **Openbaar IP-adres**. Bij **Toewijzing** selecteer t u **Statisch** en selecteert u vervolgens **OK**.
 6. Selecteer voor openbare inkomende poorten **HTTP** > **HTTPS** > **RDP (3389)** en selecteer vervolgens **OK**.
-7. Op de pagina**Overzicht** selecteert u **Maken**. Deze procedure duurt een paar minuten.
+7. Op de pagina **Overzicht** selecteert u **Maken**. Deze procedure duurt een paar minuten.
 
 Herhaal dit proces om nog een virtuele machine te maken, genaamd **Web-02**.
 

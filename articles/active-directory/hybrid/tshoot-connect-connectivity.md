@@ -18,10 +18,10 @@ ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
 ms.openlocfilehash: 56e9820c5e3a750a35b7271b86750df00eb4784e
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92677059"
 ---
 # <a name="troubleshoot-azure-ad-connectivity"></a>Problemen met Azure AD-connectiviteit oplossen
@@ -95,7 +95,7 @@ PowerShell maakt gebruik van de configuratie in machine.config om contact op te 
 
 Als de proxy correct is geconfigureerd, krijgt u de status geslaagd: ![ scherm opname waarin de status geslaagd wordt weer gegeven wanneer de proxy op de juiste wijze is geconfigureerd.](./media/tshoot-connect-connectivity/invokewebrequest200.png)
 
-Als u **geen verbinding kunt maken met de externe server** , probeert Power shell een directe aanroep uit te voeren zonder de proxy of DNS te gebruiken onjuist geconfigureerd. Controleer of het **machine.config** -bestand juist is geconfigureerd.
+Als u **geen verbinding kunt maken met de externe server**, probeert Power shell een directe aanroep uit te voeren zonder de proxy of DNS te gebruiken onjuist geconfigureerd. Controleer of het **machine.config** -bestand juist is geconfigureerd.
 ![unabletoconnect](./media/tshoot-connect-connectivity/invokewebrequestunable.png)
 
 Als de proxy niet juist is geconfigureerd, wordt een fout bericht weer geven: ![ proxy200 ](./media/tshoot-connect-connectivity/invokewebrequest403.png)
@@ -117,7 +117,7 @@ Als u al deze voor gaande stappen hebt gevolgd en nog steeds geen verbinding kun
 * De eind punten adminwebservice en provisioningapi zijn detectie-eind punten en worden gebruikt om het werkelijke eind punt te vinden dat moet worden gebruikt. Deze eind punten verschillen afhankelijk van uw regio.
 
 ### <a name="reference-proxy-logs"></a>Naslag informatie over proxy logboeken
-Hier volgt een dump van een echt proxy logboek en de pagina van de wizard installatie van waar het is gemaakt (dubbele vermeldingen voor hetzelfde eind punt zijn verwijderd). Deze sectie kan worden gebruikt als referentie voor uw eigen proxy en netwerk Logboeken. De werkelijke eind punten zijn mogelijk anders in uw omgeving (met name de Url's *cursief* ).
+Hier volgt een dump van een echt proxy logboek en de pagina van de wizard installatie van waar het is gemaakt (dubbele vermeldingen voor hetzelfde eind punt zijn verwijderd). Deze sectie kan worden gebruikt als referentie voor uw eigen proxy en netwerk Logboeken. De werkelijke eind punten zijn mogelijk anders in uw omgeving (met name de Url's *cursief*).
 
 **Verbinding maken met Azure AD**
 
@@ -125,26 +125,26 @@ Hier volgt een dump van een echt proxy logboek en de pagina van de wizard instal
 | --- | --- |
 | 1/11/2016 8:31 |connect://login.microsoftonline.com:443 |
 | 1/11/2016 8:31 |connect://adminwebservice.microsoftonline.com:443 |
-| 1/11/2016 8:32 |connect:// *bba800-Anchor* . microsoftonline.com:443 |
+| 1/11/2016 8:32 |connect://*bba800-Anchor*. microsoftonline.com:443 |
 | 1/11/2016 8:32 |connect://login.microsoftonline.com:443 |
 | 1/11/2016 8:33 |connect://provisioningapi.microsoftonline.com:443 |
-| 1/11/2016 8:33 |connect:// *bwsc02-relay* . microsoftonline.com:443 |
+| 1/11/2016 8:33 |connect://*bwsc02-relay*. microsoftonline.com:443 |
 
 **Configureerer**
 
 | Tijd | URL |
 | --- | --- |
 | 1/11/2016 8:43 |connect://login.microsoftonline.com:443 |
-| 1/11/2016 8:43 |connect:// *bba800-Anchor* . microsoftonline.com:443 |
+| 1/11/2016 8:43 |connect://*bba800-Anchor*. microsoftonline.com:443 |
 | 1/11/2016 8:43 |connect://login.microsoftonline.com:443 |
 | 1/11/2016 8:44 |connect://adminwebservice.microsoftonline.com:443 |
-| 1/11/2016 8:44 |connect:// *bba900-Anchor* . microsoftonline.com:443 |
+| 1/11/2016 8:44 |connect://*bba900-Anchor*. microsoftonline.com:443 |
 | 1/11/2016 8:44 |connect://login.microsoftonline.com:443 |
 | 1/11/2016 8:44 |connect://adminwebservice.microsoftonline.com:443 |
-| 1/11/2016 8:44 |connect:// *bba800-Anchor* . microsoftonline.com:443 |
+| 1/11/2016 8:44 |connect://*bba800-Anchor*. microsoftonline.com:443 |
 | 1/11/2016 8:44 |connect://login.microsoftonline.com:443 |
 | 1/11/2016 8:46 |connect://provisioningapi.microsoftonline.com:443 |
-| 1/11/2016 8:46 |connect:// *bwsc02-relay* . microsoftonline.com:443 |
+| 1/11/2016 8:46 |connect://*bwsc02-relay*. microsoftonline.com:443 |
 
 **Initiële synchronisatie**
 
@@ -152,8 +152,8 @@ Hier volgt een dump van een echt proxy logboek en de pagina van de wizard instal
 | --- | --- |
 | 1/11/2016 8:48 |connect://login.windows.net:443 |
 | 1/11/2016 8:49 |connect://adminwebservice.microsoftonline.com:443 |
-| 1/11/2016 8:49 |connect:// *bba900-Anchor* . microsoftonline.com:443 |
-| 1/11/2016 8:49 |connect:// *bba800-Anchor* . microsoftonline.com:443 |
+| 1/11/2016 8:49 |connect://*bba900-Anchor*. microsoftonline.com:443 |
+| 1/11/2016 8:49 |connect://*bba800-Anchor*. microsoftonline.com:443 |
 
 ## <a name="authentication-errors"></a>Verificatiefouten
 In deze sectie worden fouten behandeld die kunnen worden geretourneerd via ADAL (de verificatie bibliotheek die wordt gebruikt door Azure AD Connect) en Power shell. De fout die wordt uitgelegd, zou u kunnen helpen bij het begrijpen van de volgende stappen.
@@ -227,7 +227,7 @@ De verificatie is voltooid. Kan geen bedrijfs gegevens ophalen uit Azure AD.
 De verificatie is voltooid. Kan geen domein gegevens ophalen uit Azure AD.
 
 ### <a name="unspecified-authentication-failure"></a>Niet-opgegeven verificatie fout
-Wordt weer gegeven als onverwachte fout in de installatie wizard. Kan zich voordoen als u een **micro soft-account** wilt gebruiken in plaats van een **school-of organisatie account** .
+Wordt weer gegeven als onverwachte fout in de installatie wizard. Kan zich voordoen als u een **micro soft-account** wilt gebruiken in plaats van een **school-of organisatie account**.
 
 ## <a name="troubleshooting-steps-for-previous-releases"></a>Stappen voor probleem oplossing voor eerdere versies.
 Met releases die beginnen met Build Number 1.1.105.0 (uitgebracht op 2016 februari), is de aanmeld hulp buiten gebruik gesteld. Deze sectie en de configuratie moeten niet meer nodig zijn, maar blijven als referentie.

@@ -9,10 +9,10 @@ ms.date: 02/14/2020
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 410570302eec418f1e4bcb75d6413936a96b5171
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "77471507"
 ---
 Met voorwaardelijke toegang kunt u nauw keurig toegangs beheer per toepassing instellen. Als u voorwaardelijke toegang wilt gebruiken, moet u Azure AD Premium 1 of hoger licentiëring hebben toegepast op de gebruikers die zijn onderworpen aan de regels voor voorwaardelijke toegang.
@@ -40,6 +40,6 @@ Met voorwaardelijke toegang kunt u nauw keurig toegangs beheer per toepassing in
 4. In de sectie **beleid inschakelen** :
 
    - Selecteer **aan**.
-   - Klik op **Maken**.
+   - Klik op **Create**.
 
    ![Beleid inschakelen](./media/vpn-gateway-vwan-openvpn-azure-ad-mfa/mfa-ca-enable-policy.png)

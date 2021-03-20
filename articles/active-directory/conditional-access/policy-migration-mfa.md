@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: nigu
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5cc99241f5fa7c09c69db13dcb3f6c3aaa75e376
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87027390"
 ---
 # <a name="migrate-a-classic-policy-in-the-azure-portal"></a>Een klassiek beleid migreren in de Azure Portal
@@ -32,7 +32,7 @@ Het migratie proces bestaat uit de volgende stappen:
 
 ## <a name="open-a-classic-policy"></a>Een klassiek beleid openen
 
-1. Ga in het [Azure Portal](https://portal.azure.com)naar **Azure Active Directory**  >  **Security**  >  **voorwaardelijke toegang**voor beveiliging.
+1. Ga in het [Azure Portal](https://portal.azure.com)naar **Azure Active Directory**  >    >  **voorwaardelijke toegang** voor beveiliging.
 1. Selecteer **klassiek beleid**.
 
    ![Klassieke beleids weergave](./media/policy-migration-mfa/12.png)
@@ -41,12 +41,12 @@ Het migratie proces bestaat uit de volgende stappen:
 
 ## <a name="create-a-new-conditional-access-policy"></a>Nieuw beleid voor voorwaardelijke toegang maken
 
-1. Ga in het [Azure Portal](https://portal.azure.com)naar **Azure Active Directory**  >  **Security**  >  **voorwaardelijke toegang**voor beveiliging.
+1. Ga in het [Azure Portal](https://portal.azure.com)naar **Azure Active Directory**  >    >  **voorwaardelijke toegang** voor beveiliging.
 1. Als u een nieuw beleid voor voorwaardelijke toegang wilt maken, selecteert u **Nieuw beleid**.
 1. Typ op de pagina **Nieuw** in het tekstvak **naam** een naam voor uw beleid.
 1. Klik in de sectie **toewijzingen** op **gebruikers en groepen**.
    1. Als u alle gebruikers hebt geselecteerd in het klassieke beleid, klikt u op **alle gebruikers**. 
-   1. Als u groepen hebt geselecteerd in het klassieke beleid, klikt u op **gebruikers en groepen selecteren**en selecteert u vervolgens de vereiste gebruikers en groepen.
+   1. Als u groepen hebt geselecteerd in het klassieke beleid, klikt u op **gebruikers en groepen selecteren** en selecteert u vervolgens de vereiste gebruikers en groepen.
    1. Als u de uitgesloten groepen hebt, klikt u op het tabblad **uitsluiten** en selecteert u vervolgens de vereiste gebruikers en groepen. 
    1. Selecteer **Gereed**
 1. Klik in het gedeelte **toewijzing** op **Cloud-apps of-acties**.
@@ -56,8 +56,8 @@ Het migratie proces bestaat uit de volgende stappen:
    1. Selecteer uw Cloud-app op de pagina **selecteren** en klik vervolgens op **selecteren**.
    1. Klik op de pagina **Cloud-apps** op **Gereed**.
 1. Als u **multi-factor Authentication vereisen** hebt ingeschakeld:
-   1. Klik in de sectie**Besturingselementen voor toegang** op **Toekennen**.
-   1. Klik op de pagina **Grant** op **toegang verlenen**en klik vervolgens op **multi-factor Authentication vereisen**.
+   1. Klik in de sectie **Besturingselementen voor toegang** op **Toekennen**.
+   1. Klik op de pagina **Grant** op **toegang verlenen** en klik vervolgens op **multi-factor Authentication vereisen**.
    1. Klik op **Selecteren**.
 1. Klik **op aan om uw** beleid in te scha kelen en selecteer vervolgens **Opslaan**.
 

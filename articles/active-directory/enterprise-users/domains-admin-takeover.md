@@ -14,10 +14,10 @@ ms.reviewer: sumitp
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0af74967e2de47afeb357e2ac31b1a0ee849ef36
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96547097"
 ---
 # <a name="take-over-an-unmanaged-directory-as-administrator-in-azure-active-directory"></a>Als beheerder in Azure Active Directory een niet-beheerde directory overnemen
@@ -45,7 +45,7 @@ Sommige producten die share point en OneDrive bevatten, zoals Microsoft 365, bie
   
    ![eerste scherm afbeelding van de beheerder](./media/domains-admin-takeover/become-admin-first.png)
   
-5. Voeg de TXT-record toe om te bewijzen dat u eigenaar bent van de domein naam **fourthcoffee. xyz** in uw domein naam registratie service. In dit voor beeld is het GoDaddy.com.
+5. Voeg de TXT-record toe om te bewijzen dat u eigenaar bent van de domein naam **fourthcoffee.xyz** bij uw domein naam registratie service. In dit voor beeld is het GoDaddy.com.
   
    ![Een TXT-record voor de domein naam toevoegen](./media/domains-admin-takeover/become-admin-txt-record.png)
 
@@ -71,7 +71,7 @@ Wanneer u de voor gaande stappen hebt voltooid, bent u nu de globale beheerder v
    ![het domein is geverifieerd als toegevoegd aan Azure AD](./media/domains-admin-takeover/add-domain-to-azure-ad.png)
   
 > [!NOTE]
-> Gebruikers van Power BI-of Azure Rights Management-service waaraan licenties zijn toegewezen in de Microsoft 365 organisatie, moeten hun Dash boards opslaan als de domein naam wordt verwijderd. Ze moeten zich aanmelden met een gebruikers naam zoals de *gebruiker \@ fourthcoffeexyz.onmicrosoft.com* in plaats van de *gebruiker \@ fourthcoffee. xyz*.
+> Gebruikers van Power BI-of Azure Rights Management-service waaraan licenties zijn toegewezen in de Microsoft 365 organisatie, moeten hun Dash boards opslaan als de domein naam wordt verwijderd. Ze moeten zich aanmelden met een gebruikers naam zoals de *gebruiker \@ fourthcoffeexyz.onmicrosoft.com* in plaats van de *\@ fourthcoffee.xyz* van de gebruiker.
 
 ## <a name="external-admin-takeover"></a>Externe overname door beheerder
 

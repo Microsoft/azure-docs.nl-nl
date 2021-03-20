@@ -9,10 +9,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 7b5017cdeade14e53778b58154456412507c5ce8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "77024871"
 ---
 # <a name="what-is-azure-vmware-solution-by-cloudsimple"></a>Wat is Azure VMware-oplossing op CloudSimple
@@ -38,7 +38,7 @@ De **Azure VMware-oplossing door CloudSimple** is een volledig beheerde service 
 
 * **Operationele continuïteit**. CloudSimple biedt systeem eigen toegang tot VMware-platforms. De CloudSimple-architectuur is compatibel met uw bestaande:
     * Toepassingen
-    * Bewerkingen
+    * Operations
     * Beveiliging
     * Backup
     * Herstel na noodgeval

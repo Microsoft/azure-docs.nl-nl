@@ -5,10 +5,10 @@ ms.topic: overview
 ms.date: 09/22/2020
 ms.custom: references_regions
 ms.openlocfilehash: a876651b76aa259754623854b8fc4a7c6c8a939e
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92330492"
 ---
 # <a name="azure-schema-registry-in-event-hubs-preview"></a>Azure Schema Registry in Event Hubs (preview)
@@ -18,7 +18,7 @@ Het **Azure-schemaregister** is een functie van Event Hubs die een centrale opsl
 
 > [!NOTE]
 > - De **schemaregister** functie is momenteel beschikbaar in een **preview-versie** en wordt niet aanbevolen voor productieworkloads.
-> - De functie is alleen beschikbaar in de lagen **Standard** en **Dedicated** , maar niet in de laag **Basic** .
+> - De functie is alleen beschikbaar in de lagen **Standard** en **Dedicated**, maar niet in de laag **Basic**.
 
 Met serialisatieframeworks die zijn gebaseerd op een schema, zoals Apache AVRO, kan het externaliseren van serialisatiemetagegevens in gedeelde schema's ook helpen bij het aanzienlijk reduceren van de overhead per bericht van typegegevens en veldnamen die zijn opgenomen in elke gegevensset, zoals het geval is met indelingen met tags zoals JSON. Als u schema's opslaat naast de gebeurtenissen en in de infrastructuur voor gebeurtenissen, zorgt u ervoor dat de metagegevens die nodig zijn voor serialisatie/deserialisatie altijd binnen bereik zijn en de schema's niet verkeerd kunnen worden geplaatst. 
 
@@ -65,7 +65,7 @@ Zie [Een app registreren bij Microsoft Azure Active Directory](../active-directo
 ## <a name="next-steps"></a>Volgende stappen
 
 - Zie [Een Event Hubs-schemaregister maken met behulp van Azure Portal](create-schema-registry.md) voor meer informatie over het maken van een schemaregister met behulp van Azure Portal.
-- Zie de volgende voorbeelden van de **Avro-clientbibliotheek voor schemaregisters** .
+- Zie de volgende voorbeelden van de **Avro-clientbibliotheek voor schemaregisters**.
     - [.NET](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/schemaregistry/Microsoft.Azure.Data.SchemaRegistry.ApacheAvro/tests/Samples)
     - [Java](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/schemaregistry/azure-data-schemaregistry-avro/src/samples)
     - [JavaScript](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/schemaregistry/schema-registry-avro/samples )

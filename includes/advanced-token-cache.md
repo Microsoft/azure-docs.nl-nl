@@ -10,10 +10,10 @@ ms.topic: include
 ms.date: 11/05/2020
 ms.author: kkrishna
 ms.openlocfilehash: 174946667885debc348370ef2c6f93206890e9c1
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94628001"
 ---
 U kunt de implementatie van de token cache van MSAL gebruiken om achtergrond-apps, Api's en services toe te staan de toegangs token cache te gebruiken om namens gebruikers in hun afwezigheid te blijven handelen. Dit is vooral nuttig als de achtergrond-apps en-services moeten blijven werken namens de gebruiker nadat de gebruiker de front-end-web-app heeft afgesloten.

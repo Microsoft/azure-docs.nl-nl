@@ -8,10 +8,10 @@ ms.topic: tutorial
 ms.custom: devx-track-csharp, mvc
 ms.date: 03/30/2018
 ms.openlocfilehash: 90e60044e227ea1a18ea032d302b29abda1ea2e8
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92536841"
 ---
 # <a name="tutorial-create-a-cache-aside-leaderboard-on-aspnet"></a>Zelfstudie: een cache-aside-leaderboard maken in ASP.NET
@@ -45,7 +45,7 @@ In deze sectie van de zelfstudie configureert u het project *ContosoTeamStats* m
 ### <a name="add-the-entity-framework-to-the-project"></a>Het Entity Framework toevoegen aan het project
 
 1. Open in Visual Studio de oplossing *ContosoTeamStats* die u hebt gemaakt in de [Quickstart van ASP.NET voor Azure Cache voor Redis](cache-web-app-howto.md).
-2. Klik op **Tools > NuGet Package Manager > Package Manager Console** .
+2. Klik op **Tools > NuGet Package Manager > Package Manager Console**.
 3. Voer de volgende opdracht uit in het venster **Package Manager Console** om EntityFramework te installeren:
 
     ```powershell
@@ -56,9 +56,9 @@ Meer informatie over dit pakket vindt u op de NuGet-pagina [EntityFramework](htt
 
 ### <a name="add-the-team-model"></a>Het teammodel toevoegen
 
-1. Klik in **Solution Explorer** met de rechtermuisknop op **Models** en kies **Add** , **Class** .
+1. Klik in **Solution Explorer** met de rechtermuisknop op **Models** en kies **Add**, **Class**.
 
-1. Voer `Team` in als de naam van de klasse en klik op **Add** .
+1. Voer `Team` in als de naam van de klasse en klik op **Add**.
 
     ![De modelklasse toevoegen](./media/cache-web-app-cache-aside-leaderboard/cache-model-add-class-dialog.png)
 
@@ -173,9 +173,9 @@ Meer informatie over dit pakket vindt u op de NuGet-pagina [EntityFramework](htt
 
 1. Maak het project in Visual Studio. 
 
-1. Klik in **Solution Explorer** met de rechtermuisknop op de map **Controllers** en kies vervolgens **Add** , **Controller** .
+1. Klik in **Solution Explorer** met de rechtermuisknop op de map **Controllers** en kies vervolgens **Add**, **Controller**.
 
-1. Kies **MVC 5 Controller with views, using Entity Framework** en klik op **Add** . Als er een foutbericht wordt weergegeven nadat u op **Add** hebt geklikt, zorgt u ervoor dat u eerst het project bouwt.
+1. Kies **MVC 5 Controller with views, using Entity Framework** en klik op **Add**. Als er een foutbericht wordt weergegeven nadat u op **Add** hebt geklikt, zorgt u ervoor dat u eerst het project bouwt.
 
     ![Controllerklasse toevoegen](./media/cache-web-app-cache-aside-leaderboard/cache-add-controller-class.png)
 
@@ -216,7 +216,7 @@ Meer informatie over dit pakket vindt u op de NuGet-pagina [EntityFramework](htt
 
 ### <a name="configure-the-layout-view"></a>De indelingsweergave configuren
 
-1. Vouw in **Solution Explorer** de map **Views** uit. Vouw vervolgens de map **Shared** uit en dubbelklik op **_Layout.cshtml** . 
+1. Vouw in **Solution Explorer** de map **Views** uit. Vouw vervolgens de map **Shared** uit en dubbelklik op **_Layout.cshtml**. 
 
     ![_Layout.cshtml](./media/cache-web-app-cache-aside-leaderboard/cache-layout-cshtml.png)
 
@@ -226,7 +226,7 @@ Meer informatie over dit pakket vindt u op de NuGet-pagina [EntityFramework](htt
     <title>@ViewBag.Title - Contoso Team Stats</title>
     ```
 
-1. Voeg in de sectie `body` de volgende nieuwe `Html.ActionLink`-instructie toe voor *Contoso Team Stats* net onder de koppeling voor *Azure Cache voor Redis-test* .
+1. Voeg in de sectie `body` de volgende nieuwe `Html.ActionLink`-instructie toe voor *Contoso Team Stats* net onder de koppeling voor *Azure Cache voor Redis-test*.
 
     ```csharp
     @Html.ActionLink("Contoso Team Stats", "Index", "Teams", new { area = "" }, new { @class = "navbar-brand" })`
@@ -234,7 +234,7 @@ Meer informatie over dit pakket vindt u op de NuGet-pagina [EntityFramework](htt
 
     ![Codewijzigingen](./media/cache-web-app-cache-aside-leaderboard/cache-layout-cshtml-code.png)
 
-1. Druk op **Ctrl+F5** om de toepassing op te bouwen en uit te voeren. Deze versie van de toepassing leest de resultaten rechtstreeks uit de database. De acties **Nieuw** , **Bewerken** , **Details** en **Verwijderen** zijn automatisch aan de toepassing toegevoegd door de structuur **MVC 5 Controller with views, using Entity Framework** . In het volgende gedeelte van de zelfstudie voegt u Azure Cache voor Redis toe om de gegevenstoegang te optimaliseren en om extra functies te bieden voor de toepassing.
+1. Druk op **Ctrl+F5** om de toepassing op te bouwen en uit te voeren. Deze versie van de toepassing leest de resultaten rechtstreeks uit de database. De acties **Nieuw**, **Bewerken**, **Details** en **Verwijderen** zijn automatisch aan de toepassing toegevoegd door de structuur **MVC 5 Controller with views, using Entity Framework**. In het volgende gedeelte van de zelfstudie voegt u Azure Cache voor Redis toe om de gegevenstoegang te optimaliseren en om extra functies te bieden voor de toepassing.
 
     ![Beginnerstoepassing](./media/cache-web-app-cache-aside-leaderboard/cache-starter-application.png)
 
@@ -244,13 +244,13 @@ In dit gedeelte van de zelfstudie configureert u de voorbeeldtoepassing om met b
 
 ### <a name="add-a-cache-connection-to-the-teams-controller"></a>Een cacheverbinding toevoegen aan de Teams-controller
 
-U hebt het clientbibliotheekpakket *StackExchange.Redis* al geïnstalleerd in de snelstartgids. U hebt de app-instelling *CacheConnection* ook al zo geconfigureerd dat deze lokaal wordt gebruikt en met de gepubliceerde App Service. Gebruik deze zelfde clientbibliotheek en de *CacheConnection* -informatie in de *TeamsController* .
+U hebt het clientbibliotheekpakket *StackExchange.Redis* al geïnstalleerd in de snelstartgids. U hebt de app-instelling *CacheConnection* ook al zo geconfigureerd dat deze lokaal wordt gebruikt en met de gepubliceerde App Service. Gebruik deze zelfde clientbibliotheek en de *CacheConnection*-informatie in de *TeamsController*.
 
 1. Vouw in **Solution Explorer** de map **Controllers** uit en dubbelklik op **TeamsController.cs** om dit bestand te openen.
 
     ![TeamsController](./media/cache-web-app-cache-aside-leaderboard/cache-teamscontroller.png)
 
-1. Voeg de volgende twee `using`-instructies toe aan **TeamsController.cs** :
+1. Voeg de volgende twee `using`-instructies toe aan **TeamsController.cs**:
 
     ```csharp
     using System.Configuration;
@@ -574,7 +574,7 @@ De ondersteuningscode die als onderdeel van dit voorbeeld is gegenereerd, bevat 
 
 ### <a name="add-caching-methods-to-the-teams-index-view"></a>Cachemethoden toevoegen aan de weergave Teamindex
 
-1. Vouw in **Solution Explorer** de map **Views** uit. Vouw vervolgens de map **Teams** uit en dubbelklik op **Index.cshtml** .
+1. Vouw in **Solution Explorer** de map **Views** uit. Vouw vervolgens de map **Teams** uit en dubbelklik op **Index.cshtml**.
 
     ![Index.cshtml](./media/cache-web-app-cache-aside-leaderboard/cache-views-teams-index-cshtml.png)
 
@@ -646,9 +646,9 @@ De app lokaal uitvoeren:
 
 In deze sectie richt u een nieuwe database in SQL Database in die de app gaat gebruiken terwijl deze wordt gehost in Azure.
 
-1. Klik linksboven in [Azure Portal](https://portal.azure.com/) op **Een resource maken** .
+1. Klik linksboven in [Azure Portal](https://portal.azure.com/) op **Een resource maken**.
 
-1. Klik op de pagina **Nieuw** op **Databases** > **SQL-database** .
+1. Klik op de pagina **Nieuw** op **Databases** > **SQL-database**.
 
 1. Gebruik de volgende instellingen voor de nieuwe SQL-database:
 
@@ -659,7 +659,7 @@ In deze sectie richt u een nieuwe database in SQL Database in die de app gaat ge
    | **Resourcegroep**  | *TestResourceGroup* | Klik op **Bestaande gebruiken** en gebruik dezelfde resourcegroep als waarin u de cache en App Service hebt geplaatst. |
    | **Bron selecteren** | **Lege database** | Begin met een lege database. |
 
-1. Klik onder **Server** op **Vereiste instellingen configureren** > **Een nieuwe server maken** , geef de volgende gegevens op en klik op de knop **Selecteren** :
+1. Klik onder **Server** op **Vereiste instellingen configureren** > **Een nieuwe server maken**, geef de volgende gegevens op en klik op de knop **Selecteren**:
 
    | Instelling       | Voorgestelde waarde | Beschrijving |
    | ------------ | ------------------ | ------------------------------------------------- |
@@ -670,13 +670,13 @@ In deze sectie richt u een nieuwe database in SQL Database in die de app gaat ge
 
 1. Klik op **Vastmaken aan dashboard** en klik op **Maken** om de nieuwe database en server te maken.
 
-1. Wanneer de nieuwe database is gemaakt, klikt u op **Databaseverbindingsreeksen tonen** en kopieert u de **ADO.NET** -verbindingsreeks.
+1. Wanneer de nieuwe database is gemaakt, klikt u op **Databaseverbindingsreeksen tonen** en kopieert u de **ADO.NET**-verbindingsreeks.
 
     ![Verbindingsreeksen weergeven](./media/cache-web-app-cache-aside-leaderboard/cache-show-connection-strings.png)
 
 1. Navigeer in de Azure Portal naar uw App Service, klik op **Toepassingsinstellingen** en klik op **Nieuwe verbindingsreeks toevoegen** onder de sectie Verbindingsreeksen.
 
-1. Voeg een nieuwe verbindingsreeks toe met de naam *TeamContext* die overeenkomt met de contextklasse van de Entity Framework-database. Plak de verbindingsreeks voor de nieuwe database als de waarde. Vervang de volgende tijdelijke aanduidingen in de verbindingsreeks en klik op **Opslaan** :
+1. Voeg een nieuwe verbindingsreeks toe met de naam *TeamContext* die overeenkomt met de contextklasse van de Entity Framework-database. Plak de verbindingsreeks voor de nieuwe database als de waarde. Vervang de volgende tijdelijke aanduidingen in de verbindingsreeks en klik op **Opslaan**:
 
     | Tijdelijke aanduiding | Voorgestelde waarde |
     | --- | --- |
@@ -689,7 +689,7 @@ In deze sectie richt u een nieuwe database in SQL Database in die de app gaat ge
 
 In deze stap van de zelfstudie publiceert u de toepassingsupdate in Azure om deze uit te voeren in de cloud.
 
-1. Klik in Visual Studio met de rechtermuisknop op het project **ContosoTeamStats** en kies **Publish** .
+1. Klik in Visual Studio met de rechtermuisknop op het project **ContosoTeamStats** en kies **Publish**.
 
     ![Publiceren](./media/cache-web-app-cache-aside-leaderboard/cache-publish-app.png)
 
@@ -723,13 +723,13 @@ Wanneer u klaar bent met de voorbeeldtoepassing uit de zelfstudie, kunt u de Azu
 > Het verwijderen van een resourcegroep kan niet ongedaan worden gemaakt. De resourcegroep en alle bijbehorende resources worden permanent verwijderd. Zorg ervoor dat u niet per ongeluk de verkeerde resourcegroep of resources verwijdert. Als u de resources voor het hosten van dit voorbeeld in een bestaande resourcegroep hebt gemaakt en deze groep ook resources bevat die u wilt behouden, kunt u elke resource afzonderlijk verwijderen via de respectievelijke blades.
 >
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com) en klik op **Resourcegroepen** .
+1. Meld u aan bij [Azure Portal](https://portal.azure.com) en klik op **Resourcegroepen**.
 2. Typ de naam van de resourcegroep in het tekstvak **Items filteren...** .
-3. Klik op **...** rechts van de resourcegroep en klik op **Resourcegroep verwijderen** .
+3. Klik op **...** rechts van de resourcegroep en klik op **Resourcegroep verwijderen**.
 
     ![Verwijderen](./media/cache-web-app-cache-aside-leaderboard/cache-delete-resource-group.png)
 
-4. U wordt gevraagd om het verwijderen van de resourcegroep te bevestigen. Typ de naam van de resourcegroep om te bevestigen en klik op **Verwijderen** .
+4. U wordt gevraagd om het verwijderen van de resourcegroep te bevestigen. Typ de naam van de resourcegroep om te bevestigen en klik op **Verwijderen**.
 
     Na enkele ogenblikken worden de resourcegroep en alle resources in de groep verwijderd.
 

@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 12/01/2020
 ms.author: chlound
 ms.openlocfilehash: 7c801511b6f24cf5ef04d55bb195e3a4c62d7b6d
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96491244"
 ---
 # <a name="refresh-with-azure-automation"></a>Vernieuwen met Azure Automation
@@ -104,7 +104,7 @@ Dit kan als volgt worden geconfigureerd:
 
     ![Planning configureren](./media/analysis-services-refresh-azure-automation/15.png)
 
-3. Klik op **Maken**.
+3. Klik op **Create**.
 
 4. Vul de para meters voor de planning in. Deze worden gebruikt telkens wanneer het Runbook wordt geactiveerd. De para meter **WEBHOOKDATA** moet leeg blijven als deze wordt uitgevoerd via een schema.
 

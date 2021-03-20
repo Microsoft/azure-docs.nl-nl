@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 08/08/2017
 ms.author: robinsh
 ms.openlocfilehash: e2b106e64aed08b0586575d4d77602329454a673
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92536008"
 ---
 # <a name="configure-iot-hub-file-uploads-using-powershell"></a>Uploads van IoT Hub-bestanden configureren met Power shell
@@ -23,13 +23,13 @@ Als u de [functie voor het uploaden van bestanden in IOT hub](iot-hub-devguide-f
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-U hebt het volgende nodig om deze zelfstudie af te ronden:
+Voor het voltooien van deze zelfstudie hebt u het volgende nodig:
 
 * Een actief Azure-account. Als u geen account hebt, kunt u in slechts een paar minuten een [gratis account](https://azure.microsoft.com/pricing/free-trial/) maken.
 
 * [Azure PowerShell-cmdlets](/powershell/azure/install-Az-ps).
 
-* Een Azure IoT hub. Als u geen IoT-hub hebt, kunt u de [cmdlet New-AzIoTHub](/powershell/module/az.iothub/new-aziothub) gebruiken om er een te maken of de portal te gebruiken om [een IOT-hub te maken](iot-hub-create-through-portal.md).
+* Een Azure IoT-hub. Als u geen IoT-hub hebt, kunt u de [cmdlet New-AzIoTHub](/powershell/module/az.iothub/new-aziothub) gebruiken om er een te maken of de portal te gebruiken om [een IOT-hub te maken](iot-hub-create-through-portal.md).
 
 * Een Azure Storage-account. Als u geen Azure Storage-account hebt, kunt u de [Azure Storage Power shell-cmdlets](/powershell/module/az.storage/) gebruiken om er een te maken of de portal te gebruiken voor het [maken van een opslag account](../storage/common/storage-account-create.md)
 
@@ -99,13 +99,13 @@ U kunt nu uw IoT-hub configureren voor [het uploaden van bestanden naar de IOT-h
 
 Voor de configuratie zijn de volgende waarden vereist:
 
-* **Opslag container** : een BLOB-container in een Azure-opslag account in uw huidige Azure-abonnement dat u wilt koppelen aan uw IOT-hub. U hebt de benodigde gegevens voor het opslag account opgehaald in de voor gaande sectie. IoT Hub genereert automatisch SAS-Uri's met schrijf machtigingen voor deze BLOB-container zodat apparaten kunnen worden gebruikt bij het uploaden van bestanden.
+* **Opslag container**: een BLOB-container in een Azure-opslag account in uw huidige Azure-abonnement dat u wilt koppelen aan uw IOT-hub. U hebt de benodigde gegevens voor het opslag account opgehaald in de voor gaande sectie. IoT Hub genereert automatisch SAS-Uri's met schrijf machtigingen voor deze BLOB-container zodat apparaten kunnen worden gebruikt bij het uploaden van bestanden.
 
-* **Meldingen ontvangen voor geüploade bestanden** : meldingen voor het uploaden van bestanden in-of uitschakelen.
+* **Meldingen ontvangen voor geüploade bestanden**: meldingen voor het uploaden van bestanden in-of uitschakelen.
 
-* **SAS TTL** : deze instelling is de time-to-Live van de SAS-uri's die op het apparaat worden geretourneerd door IOT hub. Standaard ingesteld op één uur.
+* **SAS TTL**: deze instelling is de time-to-Live van de SAS-uri's die op het apparaat worden geretourneerd door IOT hub. Standaard ingesteld op één uur.
 
-* **Instellingen voor bestands meldingen standaard-TTL** : de time-to-Live van een melding bij het uploaden van een bestand voordat deze is verlopen. Standaard ingesteld op één dag.
+* **Instellingen voor bestands meldingen standaard-TTL**: de time-to-Live van een melding bij het uploaden van een bestand voordat deze is verlopen. Standaard ingesteld op één dag.
 
 * **Aantal bestands meldingen maximale leverings** duur: het aantal keren dat de IOT hub een melding over het uploaden van een bestand probeert te leveren. Standaard ingesteld op 10.
 

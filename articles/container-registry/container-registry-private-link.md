@@ -4,10 +4,10 @@ description: Stel een persoonlijk eind punt in op een container register en Scha
 ms.topic: article
 ms.date: 10/01/2020
 ms.openlocfilehash: 3193c65a2021d29f03bd9ae6cbc00fd6c349d9bf
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93342297"
 ---
 # <a name="connect-privately-to-an-azure-container-registry-using-azure-private-link"></a>Persoonlijke verbinding maken met een Azure container Registry met behulp van een persoonlijke Azure-koppeling
@@ -50,7 +50,7 @@ VM_NAME=<virtual-machine-name>
 
 Als u deze nog niet hebt, hebt u de namen van een virtueel netwerk en subnet nodig om een persoonlijke koppeling in te stellen. In dit voor beeld gebruikt u hetzelfde subnet voor de virtuele machine en het persoonlijke eind punt van het REGI ster. In veel gevallen zou u het eind punt echter instellen in een afzonderlijk subnet. 
 
-Wanneer u een virtuele machine maakt, maakt Azure standaard een virtueel netwerk in dezelfde resource groep. De naam van het virtuele netwerk is gebaseerd op de naam van de virtuele machine. Als u bijvoorbeeld een *myDockerVM* naam voor de virtuele machine hebt, is de standaard naam van het virtuele netwerk *myDockerVMVNET* , met een subnet met de naam *myDockerVMSubnet*. Stel deze waarden in omgevings variabelen in door de opdracht [AZ Network vnet List][az-network-vnet-list] uit te voeren:
+Wanneer u een virtuele machine maakt, maakt Azure standaard een virtueel netwerk in dezelfde resource groep. De naam van het virtuele netwerk is gebaseerd op de naam van de virtuele machine. Als u bijvoorbeeld een *myDockerVM* naam voor de virtuele machine hebt, is de standaard naam van het virtuele netwerk *myDockerVMVNET*, met een subnet met de naam *myDockerVMSubnet*. Stel deze waarden in omgevings variabelen in door de opdracht [AZ Network vnet List][az-network-vnet-list] uit te voeren:
 
 ```azurecli
 NETWORK_NAME=$(az network vnet list \
@@ -77,7 +77,7 @@ az network vnet subnet update \
  --disable-private-endpoint-network-policies
 ```
 
-### <a name="configure-the-private-dns-zone"></a>De privé-DNS-zone configureren
+### <a name="configure-the-private-dns-zone"></a>Privé-DNS-zone configureren
 
 Maak een [privé-DNS-zone](../dns/private-dns-privatednszone.md) voor het persoonlijke Azure-container register domein. In latere stappen maakt u DNS-records voor uw register domein in deze DNS-zone.
 
@@ -205,7 +205,7 @@ Stel een persoonlijke koppeling in wanneer u een REGI ster maakt of Voeg een per
 ### <a name="create-a-private-endpoint---new-registry"></a>Een persoonlijk eind punt maken-nieuw REGI ster
 
 1. Wanneer u een REGI ster maakt in de portal, selecteert u op het tabblad **basis beginselen** in **SKU** de optie **Premium**.
-1. Selecteer het tabblad **netwerken** .
+1. Selecteer het tabblad **Netwerken**.
 1. Selecteer in **netwerk connectiviteit** **persoonlijke eind punt**  >  **+ toevoegen**.
 1. Voer de volgende informatie in of Selecteer deze:
 
@@ -213,7 +213,7 @@ Stel een persoonlijke koppeling in wanneer u een REGI ster maakt of Voeg een per
     | ------- | ----- |
     | Abonnement | Selecteer uw abonnement. |
     | Resourcegroep | Voer de naam van een bestaande groep in of maak een nieuwe.|
-    | Naam | Voer een unieke naam in. |
+    | Name | Voer een unieke naam in. |
     | Subbron |**REGI ster** selecteren|
     | **Netwerken** | |
     | Virtueel netwerk| Selecteer het virtuele netwerk waarin uw virtuele machine is geïmplementeerd, zoals *myDockerVMVNET*. |

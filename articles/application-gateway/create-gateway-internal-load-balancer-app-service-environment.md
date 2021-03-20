@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 06/09/2020
 ms.author: genli
 ms.openlocfilehash: 8861e850e168169762d95c44a54b6a88a036f396
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "84628536"
 ---
 # <a name="back-end-server-certificate-is-not-allow-listed-for-an-application-gateway-using-an-internal-load-balancer-with-an-app-service-environment"></a>Het back-endserver certificaat is niet toegestaan voor een toepassings gateway die gebruikmaakt van een interne Load Balancer met een App Service Environment
@@ -70,6 +70,6 @@ Wanneer u een Fully Qualified Domain Name (FQDN) gebruikt om toegang te krijgen 
 
 Als u de overhead wilt beperken, kunt u het ILB-certificaat uploaden in de HTTP-instellingen om het probe-pad te laten werken. (Deze stap is alleen bedoeld voor vermelding toestaan. Het wordt niet gebruikt voor TLS-communicatie.) U kunt het ILB-certificaat ophalen door de ILB te openen met het IP-adres van uw browser op HTTPS en vervolgens het TLS/SSL-certificaat te exporteren in een met base64 64 gecodeerde CER-indeling en het certificaat te uploaden naar de respectievelijke HTTP-instellingen.
 
-## <a name="need-help-contact-support"></a>Hebt u hulp nodig? Contact opnemen met ondersteuning
+## <a name="need-help-contact-support"></a>Hulp nodig? Contact opnemen met ondersteuning
 
 Als u nog steeds hulp nodig hebt, neemt u [contact op met de ondersteuning](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) om uw probleem snel op te lossen.

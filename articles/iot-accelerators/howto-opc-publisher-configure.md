@@ -10,10 +10,10 @@ services: iot-industrialiot
 manager: philmea
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 405fa04a3b6af7f0c87888aa48aba9bdffeaf282
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92366952"
 ---
 # <a name="configure-opc-publisher"></a>OPC Publisher configureren
@@ -120,7 +120,7 @@ In deze sectie wordt beschreven hoe u de methode aanroepen kunt gebruiken om OPC
 
 ### <a name="configure-using-opc-ua-method-calls"></a>Configureren met behulp van OPC UA-methode aanroepen
 
-OPC Publisher bevat een OPC UA-server, die toegankelijk is via poort 62222. Als de hostnaam **Uitgever**is, is de URI van het eind punt: `opc.tcp://publisher:62222/UA/Publisher` .
+OPC Publisher bevat een OPC UA-server, die toegankelijk is via poort 62222. Als de hostnaam **Uitgever** is, is de URI van het eind punt: `opc.tcp://publisher:62222/UA/Publisher` .
 
 Met dit eind punt worden de volgende vier methoden getoond:
 

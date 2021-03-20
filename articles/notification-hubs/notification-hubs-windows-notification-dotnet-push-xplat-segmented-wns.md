@@ -18,10 +18,10 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 03/22/2019
 ms.openlocfilehash: 2c77eba69fd914e8ecc7d08a1b16f61ceefe101b
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92320575"
 ---
 # <a name="tutorial-send-notifications-to-specific-devices-running-universal-windows-platform-applications"></a>Zelfstudie: Meldingen verzenden naar specifieke apparaten met Universal Windows Platform-toepassingen
@@ -81,7 +81,7 @@ De eerste stap is het toevoegen van UI-elementen aan de bestaande hoofdpagina, z
     </Grid>
     ```
 
-1. Klik in **Solution Explorer** met de rechtermuisknop op het project en selecteer **Toevoegen** > **Klasse**. Geef in **Nieuw item toevoegen**de klasse de naam *Meldingen*en selecteer **Toevoegen**. Voeg indien nodig de modifier `public` toe aan de klassedefinitie.
+1. Klik in **Solution Explorer** met de rechtermuisknop op het project en selecteer **Toevoegen** > **Klasse**. Geef in **Nieuw item toevoegen** de klasse de naam *Meldingen* en selecteer **Toevoegen**. Voeg indien nodig de modifier `public` toe aan de klassedefinitie.
 
 1. Voegde volgende `using`-instructies toe aan het nieuwe codebestand:
 
@@ -197,7 +197,7 @@ In dit gedeelte registreert u zich tijdens het opstarten bij de meldingshub met 
 1. Als u de klasse `notifications` wilt gebruiken om u te abonneren op basis van categorieën, opent u het bestand *App.xaml.cs* en werkt u vervolgens de `InitNotificationsAsync`-methode bij.
 
     ```csharp
-    // *** Remove or comment out these lines **_
+    // *** Remove or comment out these lines ***
     //var channel = await PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync();
     //var hub = new NotificationHub("your hub name", "your listen connection string");
     //var result = await hub.RegisterNativeAsync(channel.Uri);

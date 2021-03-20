@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 10/15/2020
 ms.author: apimpm
 ms.openlocfilehash: f5105c685de4b3ccdffe69eec8ee8eeb32976c1f
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92325992"
 ---
 # <a name="migrate-to-the-new-developer-portal"></a>Migreren naar de nieuwe ontwikkelaars Portal
@@ -25,7 +25,7 @@ ms.locfileid: "92325992"
 In dit artikel worden de stappen beschreven die u moet uitvoeren om te migreren van de afgeschafte verouderde Portal naar de nieuwe ontwikkelaars Portal in API Management.
 
 > [!IMPORTANT]
-> De verouderde ontwikkelaars Portal is nu afgeschaft en er worden alleen beveiligings updates ontvangen. U kunt deze blijven gebruiken, net zoals gebruikelijk, tot de buiten gebruiks telling in oktober 2023, wanneer deze wordt verwijderd uit alle API Management Services.
+> De verouderde ontwikkelaars Portal is nu afgeschaft en er worden alleen beveiligings updates ontvangen. U kunt deze zoals gebruikelijk blijven gebruiken tot de buitengebruikstelling in oktober 2023, wanneer de portal wordt verwijderd uit alle API Management Services.
 
 ![API Management ontwikkelaars Portal](media/api-management-howto-developer-portal/cover.png)
 
@@ -57,7 +57,7 @@ Wanneer u migreert van de afgeschafte Portal, moet u de volgende wijzigingen aan
 - Als u de standaard sjablonen voor e-mail meldingen hebt gewijzigd om een expliciet gedefinieerde afgeschafte Portal-URL op te geven, wijzigt u deze in de para meter Portal-URL of gaat u naar de nieuwe Portal-URL. Als de sjablonen in plaats daarvan de ingebouwde URL-para meter van de portal gebruiken, zijn er geen wijzigingen vereist.
 - *Problemen* en *toepassingen* worden niet ondersteund in de nieuwe ontwikkelaars Portal.
 - Directe integratie met Facebook, micro soft, Twitter en Google als id-providers wordt niet ondersteund in de nieuwe ontwikkelaars Portal. U kunt met deze providers integreren via Azure AD B2C.
-- Als u delegering gebruikt, wijzigt u de retour-URL in uw toepassingen en gebruikt u het eind punt van het API- [ *gedeelde toegangs Token ophalen* ](/rest/api/apimanagement/2019-12-01/user/getsharedaccesstoken) in plaats van de *URL voor SSO-url's genereren* .
+- Als u delegering gebruikt, wijzigt u de retour-URL in uw toepassingen en gebruikt u het eind punt van het API- [ *gedeelde toegangs Token ophalen*](/rest/api/apimanagement/2019-12-01/user/getsharedaccesstoken) in plaats van de *URL voor SSO-url's genereren* .
 - Als u Azure AD als id-provider gebruikt:
 
     - Wijzig de retour-URL in uw toepassing zodat deze verwijst naar het nieuwe ontwikkelaars Portal-domein.
@@ -67,7 +67,7 @@ Wanneer u migreert van de afgeschafte Portal, moet u de volgende wijzigingen aan
 
     - Wijzig de retour-URL in uw toepassing zodat deze verwijst naar het nieuwe ontwikkelaars Portal-domein.
     - Wijzig het achtervoegsel van de retour-URL in uw toepassing van in `/signin-aad` `/signin` .
-    - Geef de *opgegeven naam* *, de naam en*de *object-id* van de gebruiker op in de toepassings claims.
+    - Geef de *opgegeven naam* *, de naam en* de *object-id* van de gebruiker op in de toepassings claims.
 
 - Als u OAuth 2,0 in de interactieve test console gebruikt, wijzigt u de retour-URL in uw toepassing zodat deze verwijst naar het nieuwe ontwikkelaars Portal-domein en wijzigt u het achtervoegsel:
 
@@ -80,7 +80,7 @@ Wanneer u migreert van de afgeschafte Portal, moet u de volgende wijzigingen aan
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over de ontwikkelaars portal:
+Meer informatie over de ontwikkelaarsportal:
 
 - [Overzicht van de Azure API Management-ontwikkelaarsportal](api-management-howto-developer-portal.md)
 - [De ontwikkelaars Portal openen en aanpassen](api-management-howto-developer-portal-customize.md)

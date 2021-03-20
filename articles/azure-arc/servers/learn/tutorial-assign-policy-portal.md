@@ -4,10 +4,10 @@ description: In deze zelfstudie gebruikt u de Azure-portal om een Azure Policy-t
 ms.topic: tutorial
 ms.date: 10/07/2020
 ms.openlocfilehash: 9a07e490525ce532f8f843b30b3b83715e65ce3c
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91826602"
 ---
 # <a name="tutorial-create-a-policy-assignment-to-identify-non-compliant-resources"></a>Zelfstudie: Een beleidstoewijzing maken om niet-conforme resources te identificeren
@@ -30,11 +30,11 @@ In deze zelfstudie maakt u een beleidstoewijzing en wijst u de _\[Preview] toe: 
 
 1. Selecteer **Toewijzingen** in het linkerdeelvenster van de Azure Policy-pagina. Een toewijzing is een beleid dat is toegewezen om te worden toegepast binnen een bepaald bereik.
 
-   :::image type="content" source="./media/tutorial-assign-policy-portal/select-assignment.png" alt-text="Beleid zoeken in alle services" border="false":::
+   :::image type="content" source="./media/tutorial-assign-policy-portal/select-assignment.png" alt-text="Toewijzingspagina’s selecteren op de pagina Overzicht van beleid" border="false":::
 
 1. Selecteer **Beleid toewijzen** boven in de pagina **Beleidstoewijzingen**.
 
-   :::image type="content" source="./media/tutorial-assign-policy-portal/select-assign-policy.png" alt-text="Beleid zoeken in alle services" border="false":::
+   :::image type="content" source="./media/tutorial-assign-policy-portal/select-assign-policy.png" alt-text="Een beleidsdefinitie toewijzen op de pagina Toewijzingen" border="false":::
 
 1. Selecteer op de pagina **Beleid toewijzen** het **bereik** door te klikken op het beletselteken en een beheergroep of abonnement te selecteren. U kunt ook een resourcegroep selecteren. Het bereik bepaalt op welke resources of groep resources de beleidstoewijzing wordt afgedwongen. Klik vervolgens op **Selecteren** aan de onderkant van de pagina **Bereik**.
 
@@ -52,7 +52,7 @@ In deze zelfstudie maakt u een beleidstoewijzing en wijst u de _\[Preview] toe: 
 
 1. Zoek in de lijst met beleidsdefinities naar de definitie _\[Voorbeeld]: De Log Analytics-agent moet zijn geïnstalleerd op uw Windows Azure Arc-computers_ als u de agent voor Arc-servers hebt ingeschakeld op een Windows-computer. Voor een Linux-computer zoekt u de bijbehorende beleidsdefinitie _\[Voorbeeld]: Log Analytics-agent moet zijn geïnstalleerd op uw Linux Azure Arc-computers_. Klik op dit beleid en vervolgens op **Selecteren**.
 
-   :::image type="content" source="./media/tutorial-assign-policy-portal/select-available-definition.png" alt-text="Beleid zoeken in alle services" border="false":::
+   :::image type="content" source="./media/tutorial-assign-policy-portal/select-available-definition.png" alt-text="De juiste beleidsdefinitie vinden" border="false":::
 
 1. De **Toewijzingsnaam** wordt automatisch ingevuld met de naam van het beleid dat u hebt geselecteerd, maar u kunt dit wijzigen. Laat voor dit voorbeeld _\[Voorbeeld]: Log Analytics-agent moet zijn geïnstalleerd op uw Windows Azure Arc-computers_ of _\[Voorbeeld]: Log Analytics-agent moet zijn geïnstalleerd op uw Linux Azure Arc-computers_ ingeschakeld. U kunt ook een optionele **Beschrijving** opgeven. De beschrijving bevat details over deze beleidstoewijzing.
    **Toegewezen door** wordt automatisch gevuld op basis van de persoon die is aangemeld. Dit veld is optioneel, dus u kunt aangepaste waarden invoeren.
@@ -67,7 +67,7 @@ U kunt nu niet-compatibele resources identificeren om inzicht te krijgen in de n
 
 Selecteer **Naleving** links op de pagina. Zoek vervolgens de beleidstoewijzing **\[Voorbeeld]: Log Analytics-agent moet zijn geïnstalleerd op uw Windows Azure Arc-computers** of **\[Voorbeeld]: Log Analytics-agent moet zijn geïnstalleerd op uw Linux Azure Arc-computers** die u hebt gemaakt.
 
-:::image type="content" source="./media/tutorial-assign-policy-portal/policy-compliance.png" alt-text="Beleid zoeken in alle services" border="false":::
+:::image type="content" source="./media/tutorial-assign-policy-portal/policy-compliance.png" alt-text="Compatibiliteitsdetails op de pagina Naleving van het beleid" border="false":::
 
 Als er bestaande resources zijn die niet conform deze nieuwe toewijzing zijn, worden deze weergegeven bij **Niet-conforme resources**.
 
@@ -75,10 +75,10 @@ Als een voorwaarde wordt geëvalueerd ten opzichte van uw bestaande resources en
 
 | **Resourcestatus** | **Effect** | **Beleidsevaluatie** | **Nalevingsstatus** |
 | --- | --- | --- | --- |
-| Bestaat | Weigeren, Controleren, Toevoegen\*, DeployIfNotExist\*, AuditIfNotExist\* | True | Niet-compatibel |
-| Bestaat | Weigeren, Controleren, Toevoegen\*, DeployIfNotExist\*, AuditIfNotExist\* | False | Compatibel |
-| Nieuw | Controleren, AuditIfNotExist\* | True | Niet-compatibel |
-| Nieuw | Controleren, AuditIfNotExist\* | False | Compatibel |
+| Bestaat | Weigeren, Controleren, Toevoegen\*, DeployIfNotExist\*, AuditIfNotExist\* | Waar | Niet-compatibel |
+| Bestaat | Weigeren, Controleren, Toevoegen\*, DeployIfNotExist\*, AuditIfNotExist\* | Niet waar | Compliant |
+| Nieuw | Controleren, AuditIfNotExist\* | Waar | Niet-compatibel |
+| Nieuw | Controleren, AuditIfNotExist\* | Niet waar | Compliant |
 
 \*Voor de acties Toevoegen, DeployIfNotExist en AuditIfNotExist moet de IF-instructie TRUE zijn.
 De acties vereisen ook dat de bestaansvoorwaarde FALSE is om niet-compatibel te zijn. Indien TRUE, activeert de IF-voorwaarde de evaluatie van de bestaansvoorwaarde voor de gerelateerde resources.
@@ -91,7 +91,7 @@ Als u de gemaakte toewijzing wilt verwijderen, volgt u deze stappen:
 
 1. Klik met de rechtermuisknop op de beleidstoewijzing en selecteer **Toewijzing verwijderen**.
 
-   :::image type="content" source="./media/tutorial-assign-policy-portal/delete-assignment.png" alt-text="Beleid zoeken in alle services" border="false":::
+   :::image type="content" source="./media/tutorial-assign-policy-portal/delete-assignment.png" alt-text="Een toewijzing verwijderen van de pagina Naleving" border="false":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

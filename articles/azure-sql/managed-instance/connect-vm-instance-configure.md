@@ -13,10 +13,10 @@ ms.author: jovanpop
 ms.reviewer: sstein, srbozovi, bonova
 ms.date: 02/18/2019
 ms.openlocfilehash: a1f496d59fa626dc8750493591128f7363afa40d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91620253"
 ---
 # <a name="quickstart-configure-an-azure-vm-to-connect-to-azure-sql-managed-instance"></a>Quickstart: Een Azure-VM configureren om verbinding te maken met Azure SQL Managed Instance
@@ -138,7 +138,7 @@ U bent verbonden met de virtuele machine in het Serverbeheer-dashboard.
 1. Open SQL Server Management Studio op de virtuele machine.
 
    Het duurt even voordat dit wordt geopend, omdat de configuratie moet worden uitgevoerd aangezien dit de eerste keer is dat SSMS is gestart.
-2. Voer in het dialoogvenster **Verbinding maken met de server** in het vak **Servernaam** de volledig gekwalificeerde **hostnaam** in voor uw beheerde instantie. Selecteer **SQL Server-verificatie**, geef uw gebruikersnaam en wachtwoord op en selecteer vervolgens **Verbinding maken**.
+2. Voer in het dialoogvenster **Verbinding maken met de server** in het vak **Servernaam** de volledig gekwalificeerde **hostnaam** in voor uw beheerde instantie. Selecteer **SQL Server-verificatie**, geef uw gebruikersnaam en wachtwoord op, en selecteer vervolgens **Verbinding maken**.
 
     ![SSMS verbinden](./media/connect-vm-instance-configure/ssms-connect.png)  
 
@@ -148,4 +148,4 @@ Nadat u verbinding hebt gemaakt, kunt u uw systeem en gebruikersdatabases bekijk
 
 - Zie [Een punt-naar-site-verbinding configureren](point-to-site-p2s-configure.md) voor een quickstart over verbinding maken vanaf een on-premises clientcomputer met behulp van een punt-naar-site-verbinding.
 - Zie [Uw toepassingen verbinden met SQL Managed Instance](connect-application-instance.md) voor een overzicht van de verbindingsopties voor toepassingen.
-- Als u een bestaande SQL Server-database wilt herstellen van on-premises naar een beheerde instantie, kunt u [Azure Database Migration Service voor migratie](../../dms/tutorial-sql-server-to-managed-instance.md) of [de opdracht T-SQL RESTORE](restore-sample-database-quickstart.md) gebruiken om de database te herstellen vanuit een back-upbestand voor de database.
+- Als u een bestaande SQL Server-database wilt herstellen van on-premises naar een beheerd exemplaar, kunt u [Azure Database Migration Service voor migratie](../../dms/tutorial-sql-server-to-managed-instance.md) of de [opdracht T-SQL RESTORE](restore-sample-database-quickstart.md) gebruiken om de database te herstellen vanuit een back-upbestand voor de database.

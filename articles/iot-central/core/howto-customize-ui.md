@@ -9,10 +9,10 @@ ms.service: iot-central
 services: iot-central
 manager: philmea
 ms.openlocfilehash: 660f6dfae23331455408ae7127274550a3a4cc3a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90019832"
 ---
 # <a name="customize-the-azure-iot-central-ui"></a>De Azure IoT Central-gebruikers interface aanpassen
@@ -54,7 +54,7 @@ U kunt de kleur van de paginakop tekst en de kleur die wordt gebruikt voor accen
 
 ### <a name="changes-for-operators"></a>Wijzigingen voor Opera tors
 
-Als een beheerder een aangepast thema maakt, kunnen Opera tors en andere gebruikers van uw toepassing niet meer een thema in **instellingen**kiezen.
+Als een beheerder een aangepast thema maakt, kunnen Opera tors en andere gebruikers van uw toepassing niet meer een thema in **instellingen** kiezen.
 
 ## <a name="replace-help-links"></a>Help-koppelingen vervangen
 

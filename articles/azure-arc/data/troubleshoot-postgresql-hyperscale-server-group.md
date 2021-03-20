@@ -10,10 +10,10 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
 ms.openlocfilehash: caaab07200a8631935a2b5d5368a0c16ea9a60c5
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92320220"
 ---
 # <a name="troubleshooting-postgresql-hyperscale-server-groups"></a>Problemen met PostgreSQL grootschalige-Server groepen oplossen
@@ -97,7 +97,7 @@ Implementeer de stappen die worden beschreven in  [033-Manage-postgres-with-Azur
 
 :::image type="content" source="media/postgres-hyperscale/ads-controller-postgres-troubleshooting-notebook.jpg" alt-text="Azure Data Studio-open PostgreSQL-probleemoplossings notitieblok":::
 
-De **TSG100-de Azure-postgresql grootschalige** -probleemoplossings notitie blok is geopend: :::image type="content" source="media/postgres-hyperscale/ads-controller-postgres-troubleshooting-notebook2.jpg" alt-text="Azure Data Studio-open PostgreSQL-probleemoplossings notitieblok":::
+De **TSG100-de Azure-postgresql grootschalige** -probleemoplossings notitie blok is geopend: :::image type="content" source="media/postgres-hyperscale/ads-controller-postgres-troubleshooting-notebook2.jpg" alt-text="Azure Data Studio-gebruik postgresql Troubleshooting notebook":::
 
 #### <a name="run-the-scripts"></a>De scripts uitvoeren
 Selecteer de knop alles uitvoeren aan de bovenkant om het notitie blok allemaal tegelijk uit te voeren, of u kunt elke code-cel één voor één stapsgewijs door lopen en uitvoeren.

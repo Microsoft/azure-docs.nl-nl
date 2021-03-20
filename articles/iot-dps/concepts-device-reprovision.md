@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 ms.openlocfilehash: 9653a584382584d982c55008a6e8547de28691b7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91842849"
 ---
 # <a name="iot-hub-device-reprovisioning-concepts"></a>Concepten IoT Hub apparaten opnieuw inrichten
@@ -20,7 +20,7 @@ Tijdens de levens cyclus van een IoT-oplossing is het gebruikelijk om apparaten 
 
 * **Geolocatie/geolatentie**: wanneer een apparaat tussen locaties wordt verplaatst, wordt de netwerk latentie verbeterd doordat het apparaat wordt gemigreerd naar een dichter IOT-hub.
 
-* **Multitenancy: een**apparaat kan worden gebruikt binnen dezelfde IOT-oplossing en opnieuw worden toegewezen aan een nieuwe klant of klant site. Deze nieuwe klant kan worden verwerkt met behulp van een andere IoT-hub.
+* **Multitenancy: een** apparaat kan worden gebruikt binnen dezelfde IOT-oplossing en opnieuw worden toegewezen aan een nieuwe klant of klant site. Deze nieuwe klant kan worden verwerkt met behulp van een andere IoT-hub.
 
 * **Oplossings wijziging**: een apparaat kan worden verplaatst naar een nieuwe of bijgewerkte IOT-oplossing. Bij deze opnieuw toewijzen kan het apparaat worden gecommuniceerd met een nieuwe IoT-hub die is verbonden met andere back-end-onderdelen.
 

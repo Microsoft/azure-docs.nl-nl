@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/30/2020
 ms.author: cherylmc
 ms.openlocfilehash: e602905b461e370189cefed706ddc3a47e0199fe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91839636"
 ---
 # <a name="migrate-to-azure-virtual-wan"></a>Migreren naar Azure Virtual WAN
@@ -33,7 +33,7 @@ Contoso is een wereld wijde financiële organisatie met kant oren in Europa en A
 
 De volgende afbeelding toont een weer gave op hoog niveau van het bestaande wereld wijde netwerk, met inbegrip van connectiviteit met meerdere Azure-regio's.
 
-:::image type="content" source="./media/migrate-from-hub-spoke-topology/contoso-pre-migration.png" alt-text="hub en spoke":::
+:::image type="content" source="./media/migrate-from-hub-spoke-topology/contoso-pre-migration.png" alt-text="Contoso bestaande netwerk topologie":::
 **Afbeelding: contoso bestaande netwerk topologie**
 
 De volgende punten kunnen worden begrepen van de bestaande netwerk topologie:
@@ -61,7 +61,7 @@ Het netwerk team is gewerkt met het leveren van een globaal netwerk model dat de
 
 In de volgende afbeelding ziet u een overzicht op hoog niveau van de bijgewerkte doel topologie met behulp van Azure Virtual WAN om te voldoen aan de vereisten die in de vorige sectie zijn beschreven.
 
-:::image type="content" source="./media/migrate-from-hub-spoke-topology/vwan-architecture.png" alt-text="hub en spoke":::
+:::image type="content" source="./media/migrate-from-hub-spoke-topology/vwan-architecture.png" alt-text="Architectuur van Contoso Virtual WAN":::
 **Afbeelding: virtuele WAN-architectuur van Azure**
 
 Samenvatting:
@@ -82,7 +82,7 @@ In deze sectie worden de verschillende stappen voor het migreren naar Azure Virt
 
 In de volgende afbeelding ziet u een topologie met één regio voor contoso vóór de implementatie van Azure Virtual WAN:
 
-:::image type="content" source="./media/migrate-from-hub-spoke-topology/figure1.png" alt-text="hub en spoke":::
+:::image type="content" source="./media/migrate-from-hub-spoke-topology/figure1.png" alt-text="Topologie met één regio":::
 **Afbeelding 1: hand matige hub en spoke van één regio**
 
 In het kader van de hub-en-spoke-benadering bevat het virtuele netwerk dat door de klant wordt beheerd, meerdere functie blokken:
@@ -103,14 +103,14 @@ Implementeer in elke regio een virtuele WAN-hub. Stel de virtuele WAN-hub in met
 > Azure Virtual WAN moet de standaard-SKU gebruiken om enkele van de verkeers paden die in dit artikel worden weer gegeven, in te scha kelen.
 >
 
-:::image type="content" source="./media/migrate-from-hub-spoke-topology/figure2.png" alt-text="hub en spoke":::
+:::image type="content" source="./media/migrate-from-hub-spoke-topology/figure2.png" alt-text="Virtuele WAN-hubs implementeren":::
 **Afbeelding 2: door de klant beheerde hub en Spaak naar virtuele WAN-migratie**
 
 ### <a name="step-3-connect-remote-sites-expressroute-and-vpn-to-virtual-wan"></a>Stap 3: externe sites (ExpressRoute en VPN) verbinden met virtuele WAN
 
 Verbind de virtuele WAN-hub met de bestaande ExpressRoute-circuits en stel site-naar-site-Vpn's via internet in op externe filialen.
 
-:::image type="content" source="./media/migrate-from-hub-spoke-topology/figure3.png" alt-text="hub en spoke":::
+:::image type="content" source="./media/migrate-from-hub-spoke-topology/figure3.png" alt-text="Externe sites verbinden met virtuele WAN":::
 **Afbeelding 3: door de klant beheerde hub en Spaak naar virtuele WAN-migratie**
 
 Op dit moment zullen on-premises netwerk apparatuur routes ontvangen die overeenkomen met de IP-adres ruimte die is toegewezen aan de virtuele door WAN beheerde hub VNet. Met externe VPN-verbindingen in deze fase worden twee paden naar bestaande toepassingen in de spoke Virtual Networks weer geven. Deze apparaten moeten zo worden geconfigureerd dat ze de tunnel blijven gebruiken voor de door de klant beheerde hub om te zorgen voor symmetrische route ring tijdens de overgangs fase.
@@ -119,14 +119,14 @@ Op dit moment zullen on-premises netwerk apparatuur routes ontvangen die overeen
 
 Voordat u de beheerde virtuele WAN-hub voor productie connectiviteit gebruikt, raden we u aan om een virtueel netwerk met test Spaak en een Virtual WAN VNet-verbinding in te stellen. Controleer of de verbindingen met deze test omgeving via ExpressRoute en site-naar-site VPN werken voordat u verdergaat met de volgende stappen.
 
-:::image type="content" source="./media/migrate-from-hub-spoke-topology/figure4.png" alt-text="hub en spoke":::
+:::image type="content" source="./media/migrate-from-hub-spoke-topology/figure4.png" alt-text="Hybride connectiviteit testen via Virtual WAN":::
 **Afbeelding 4: door de klant beheerde hub en spoke to Virtual WAN Migration**
 
 In deze fase is het belang rijk om te herkennen dat zowel het oorspronkelijke virtuele netwerk dat door de klant wordt beheerd als de nieuwe virtuele WAN-hub zijn verbonden met hetzelfde ExpressRoute-circuit. Daarom hebben we een verkeers traject dat kan worden gebruikt om spokes in beide omgevingen in te scha kelen om te communiceren. Verkeer van een spoke dat is gekoppeld aan het virtuele netwerk dat door de klant wordt beheerd, gaat bijvoorbeeld door de MSEE-apparaten die worden gebruikt voor het ExpressRoute-circuit om een spoke te bereiken die is verbonden via een VNet-verbinding met de nieuwe virtuele WAN-hub. Hiermee kan een gefaseerde migratie van spokes in stap 5 worden gemigreerd.
 
 ### <a name="step-5-transition-connectivity-to-virtual-wan-hub"></a>Stap 5: overgangs verbinding naar virtuele WAN-hub
 
-:::image type="content" source="./media/migrate-from-hub-spoke-topology/figure5.png" alt-text="hub en spoke":::
+:::image type="content" source="./media/migrate-from-hub-spoke-topology/figure5.png" alt-text="Overgangs verbinding met virtuele WAN-hub":::
 **Afbeelding 5: door de klant beheerde hub en spoke to Virtual WAN Migration**
 
 **a**. Verwijder de bestaande peering-verbindingen van spoke Virtual Networks naar de oude door de klant beheerde hub. Toegang tot toepassingen in spoke Virtual Networks is niet beschikbaar totdat de stappen a-c zijn voltooid.
@@ -143,7 +143,7 @@ In deze fase is het belang rijk om te herkennen dat zowel het oorspronkelijke vi
 
 We hebben ons Azure-netwerk nu opnieuw ontworpen om de virtuele WAN-hub het centrale punt in onze nieuwe topologie te maken.
 
-:::image type="content" source="./media/migrate-from-hub-spoke-topology/figure6.png" alt-text="hub en spoke":::
+:::image type="content" source="./media/migrate-from-hub-spoke-topology/figure6.png" alt-text="De oude hub wordt gedeeld Services-spoke":::
 **Afbeelding 6: door de klant beheerde hub en spoke to Virtual WAN Migration**
 
 Omdat de virtuele WAN-hub een beheerde entiteit is en de implementatie van aangepaste resources, zoals virtuele machines, niet toestaat, bestaat het deel blok Shared Services nu als een spoke-virtueel netwerk en fungeert hosts als host voor functies zoals Internet binnenkomend via Azure-toepassing gateway of gevirtualiseerde netwerk apparaat. Verkeer tussen de Shared Services-omgeving en de back-end virtuele machines doorvoert nu de virtuele door WAN beheerde hub.
@@ -152,7 +152,7 @@ Omdat de virtuele WAN-hub een beheerde entiteit is en de implementatie van aange
 
 In deze fase heeft Contoso meestal hun migraties van bedrijfs toepassingen in de Microsoft Cloud voltooid, met slechts enkele oudere toepassingen die resteren binnen de on-premises domein controller.
 
-:::image type="content" source="./media/migrate-from-hub-spoke-topology/figure7.png" alt-text="hub en spoke":::
+:::image type="content" source="./media/migrate-from-hub-spoke-topology/figure7.png" alt-text="On-premises connectiviteit optimaliseren om virtueel WAN volledig te gebruiken":::
 **Afbeelding 7: door de klant beheerde hub en spoke to Virtual WAN Migration**
 
 Om gebruik te maken van de volledige functionaliteit van Azure Virtual WAN, besluit contoso om hun oude on-premises VPN-verbindingen buiten gebruik te stellen. Alle vertakkingen die worden gebruikt voor toegang tot hoofd kantoor of DC-netwerken, kunnen het micro soft Global Network door geven met behulp van de ingebouwde Transit routering van Azure Virtual WAN.
@@ -163,7 +163,7 @@ Om gebruik te maken van de volledige functionaliteit van Azure Virtual WAN, besl
 
 ## <a name="end-state-architecture-and-traffic-paths"></a>Architectuur van de eind status en verkeers paden
 
-:::image type="content" source="./media/migrate-from-hub-spoke-topology/figure8.png" alt-text="hub en spoke":::
+:::image type="content" source="./media/migrate-from-hub-spoke-topology/figure8.png" alt-text="Architectuur van de eind status en verkeers paden":::
 **Afbeelding: virtueel WAN met dubbele regio**
 
 In deze sectie vindt u een overzicht van hoe deze topologie voldoet aan de oorspronkelijke vereisten door te kijken naar een aantal voor beelden van verkeers stromen.
@@ -178,7 +178,7 @@ Het verkeer wordt als volgt gerouteerd:
 
 * Virtuele WAN-hub verkeer routeert lokaal naar verbonden VNet.
 
-:::image type="content" source="./media/migrate-from-hub-spoke-topology/flow1.png" alt-text="hub en spoke":::
+:::image type="content" source="./media/migrate-from-hub-spoke-topology/flow1.png" alt-text="Stroom 1":::
 
 ### <a name="path-2"></a>Pad 2
 
@@ -190,7 +190,7 @@ Het verkeer wordt als volgt gerouteerd:
 
 * Met Virtual WAN hub-to-hub globale connectiviteit kan verkeer worden overgedragen naar VNet dat is verbonden in de externe regio.
 
-:::image type="content" source="./media/migrate-from-hub-spoke-topology/flow2.png" alt-text="hub en spoke":::
+:::image type="content" source="./media/migrate-from-hub-spoke-topology/flow2.png" alt-text="Stroom 2":::
 
 ### <a name="path-3"></a>Pad 3
 
@@ -204,7 +204,7 @@ Het verkeer wordt als volgt gerouteerd:
 
 * Met Virtual WAN hub-to-hub globale connectiviteit kan verkeer worden overgedragen.
 
-:::image type="content" source="./media/migrate-from-hub-spoke-topology/flow3.png" alt-text="hub en spoke":::
+:::image type="content" source="./media/migrate-from-hub-spoke-topology/flow3.png" alt-text="Stroom 3":::
 
 ### <a name="path-4"></a>Pad 4
 
@@ -214,7 +214,7 @@ Het verkeer wordt als volgt gerouteerd:
 
 * Virtual WAN hub-to-hub wereld wijde connectiviteit maakt systeem eigen door Voer van alle verbonden Azure VNets zonder verdere gebruikers configuratie.
 
-:::image type="content" source="./media/migrate-from-hub-spoke-topology/flow4.png" alt-text="hub en spoke":::
+:::image type="content" source="./media/migrate-from-hub-spoke-topology/flow4.png" alt-text="Stroom 4":::
 
 ### <a name="path-5"></a>Pad 5
 
@@ -226,13 +226,13 @@ Het verkeer wordt als volgt gerouteerd:
 
 * Europa-west virtuele WAN-hub stuurt verkeer lokaal naar het verbonden VNet.
 
-:::image type="content" source="./media/migrate-from-hub-spoke-topology/flow5.png" alt-text="hub en spoke":::
+:::image type="content" source="./media/migrate-from-hub-spoke-topology/flow5.png" alt-text="Stroom 5":::
 
 ## <a name="security-and-policy-control-via-azure-firewall"></a>Beveiliging en beleids beheer via Azure Firewall
 
 Contoso heeft nu de connectiviteit voor alle branches en VNets in overeenstemming met de vereisten die eerder in dit artikel zijn besproken. Om te voldoen aan de vereisten voor beveiligings beheer en netwerk isolatie, moeten ze het verkeer blijven scheiden en registreren via het hub-netwerk. Voorheen werd deze functie uitgevoerd door een virtueel netwerk apparaat (NVA). Contoso wil ook hun bestaande proxy services buiten gebruik stellen en systeem eigen Azure-Services gebruiken voor uitgaande internet filters.
 
-:::image type="content" source="./media/migrate-from-hub-spoke-topology/security-policy.png" alt-text="hub en spoke":::
+:::image type="content" source="./media/migrate-from-hub-spoke-topology/security-policy.png" alt-text="Beveiliging en beleids beheer via Azure Firewall":::
 **Afbeelding: Azure Firewall in een virtueel WAN (beveiligde virtuele hub)**
 
 De volgende stappen op hoog niveau zijn vereist voor het introduceren van Azure Firewall in de virtuele WAN-hubs om een uniform punt van beleids beheer mogelijk te maken. Zie [Azure firewall Manager](../firewall-manager/index.yml)voor meer informatie over dit proces en het concept van beveiligde virtuele hubs.
@@ -256,7 +256,7 @@ Het verkeer wordt als volgt gerouteerd:
 
 * Azure Firewall kunt beleid Toep assen op deze stromen.
 
-:::image type="content" source="./media/migrate-from-hub-spoke-topology/flow6.png" alt-text="hub en spoke":::
+:::image type="content" source="./media/migrate-from-hub-spoke-topology/flow6.png" alt-text="Stroom 6":::
 
 ### <a name="path-7"></a>Pad 7
 
@@ -268,7 +268,7 @@ Het verkeer wordt als volgt gerouteerd:
 
 * Dit verkeer kan lokaal worden gefilterd met Azure Firewall FQDN-regels of worden verzonden naar een beveiligings service van derden voor inspectie.
 
-:::image type="content" source="./media/migrate-from-hub-spoke-topology/flow7.png" alt-text="hub en spoke":::
+:::image type="content" source="./media/migrate-from-hub-spoke-topology/flow7.png" alt-text="Stroom 7":::
 
 ### <a name="path-8"></a>Pad 8
 
@@ -280,7 +280,7 @@ Het verkeer wordt als volgt gerouteerd:
 
 * Dit verkeer kan lokaal worden gefilterd met Azure Firewall FQDN-regels of worden verzonden naar een beveiligings service van derden voor inspectie.
 
-:::image type="content" source="./media/migrate-from-hub-spoke-topology/flow8.png" alt-text="hub en spoke":::
+:::image type="content" source="./media/migrate-from-hub-spoke-topology/flow8.png" alt-text="Stroom 8":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

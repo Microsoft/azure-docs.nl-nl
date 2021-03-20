@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 06/26/2020
 ms.reviewer: christianreddington,anthdela,juselph
 ms.openlocfilehash: 29f739c2fb9dd1cc58bf6c400eeee1bebb6243c2
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92328841"
 ---
 # <a name="azure-devtest-labs-reference-architecture-for-enterprises"></a>Azure DevTest Labs referentie architectuur voor ondernemingen
@@ -47,7 +47,7 @@ Hoewel DevTest Labs geen ingebouwde quota's of limieten heeft, hebben andere Azu
 - **Resources per resource groep per resource type**: de standaard limiet voor [resources per resource groep per resource type is 800](../azure-resource-manager/management/azure-subscription-service-limits.md#resource-group-limits).  Wanneer u de *alle virtuele machines naar dezelfde configuratie van de resource groep* gebruikt, bereiken gebruikers deze abonnements limiet veel eerder, met name als de virtuele machines veel extra schijven hebben.
 - **Opslag accounts**: een lab in DevTest Labs wordt geleverd met een opslag account. Het Azure-quotum voor het [aantal opslag accounts per regio per abonnement is 250](../azure-resource-manager/management/azure-subscription-service-limits.md#storage-limits). Het maximum aantal DevTest Labs in dezelfde regio is ook 250.
 - **Roltoewijzingen**: een roltoewijzing geeft een gebruiker of Principal toegang tot een resource (eigenaar, resource, machtigings niveau). In azure geldt een [limiet van 2.000 roltoewijzingen per abonnement](../azure-resource-manager/management/azure-subscription-service-limits.md#azure-role-based-access-control-limits). Standaard maakt de DevTest Labs-service een resource groep voor elke VM. De eigenaar beschikt over de machtiging *eigenaar* voor de DEVTEST Labs VM en *lezers* machtiging voor de resource groep. Op deze manier maakt elke nieuwe VM die u maakt gebruik van twee roltoewijzingen naast de toewijzingen die worden gebruikt wanneer u gebruikers machtigt voor het lab.
-- **Lees-en schrijf bewerkingen**van de API: er zijn verschillende manieren om Azure en DevTest Labs te automatiseren, waaronder rest Api's, Power shell, Azure CLI en Azure SDK. Via Automation kunt u een andere limiet voor API-aanvragen bereiken: elk abonnement biedt Maxi maal [12.000 Lees aanvragen en 1.200 schrijf aanvragen per uur](../azure-resource-manager/management/request-limits-and-throttling.md). Houd rekening met deze limiet wanneer u DevTest Labs automatiseert.
+- **Lees-en schrijf bewerkingen** van de API: er zijn verschillende manieren om Azure en DevTest Labs te automatiseren, waaronder rest Api's, Power shell, Azure CLI en Azure SDK. Via Automation kunt u een andere limiet voor API-aanvragen bereiken: elk abonnement biedt Maxi maal [12.000 Lees aanvragen en 1.200 schrijf aanvragen per uur](../azure-resource-manager/management/request-limits-and-throttling.md). Houd rekening met deze limiet wanneer u DevTest Labs automatiseert.
 
 ## <a name="manageability-considerations"></a>Beheerbaarheidsoverwegingen
 DevTest Labs heeft een fantastische gebruikers interface met beheerders rechten voor het werken met één Lab. Maar in een onderneming hebt u waarschijnlijk meerdere Azure-abonnementen en veel Labs. Voor het consistent maken van wijzigingen in al uw Labs is scripting/Automation vereist. Hier volgen enkele voor beelden en aanbevolen beheer procedures voor een implementatie van DevTest Labs:

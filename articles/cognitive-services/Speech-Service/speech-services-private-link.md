@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 02/04/2021
 ms.author: alexeyo
 ms.openlocfilehash: c9af0cda14261e8eab7f1ecc05c50a289d7ddfdb
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99559661"
 ---
 # <a name="use-speech-services-through-a-private-endpoint"></a>Spraak Services gebruiken via een persoonlijk eind punt
@@ -559,7 +559,7 @@ var config = SpeechConfig.FromSubscription(subscriptionKey, azureRegion);
 
 Zie [prijzen van Azure Private Link](https://azure.microsoft.com/pricing/details/private-link) voor meer informatie over prijzen.
 
-## <a name="learn-more"></a>Lees meer
+## <a name="learn-more"></a>Meer informatie
 
 * [Azure Private Link](../../private-link/private-link-overview.md)
 * [Speech-SDK](speech-sdk.md)

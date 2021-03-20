@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 06/26/2020
 ms.reviewer: christianreddington,anthdela,juselph
 ms.openlocfilehash: dfac69a055c9b0c75032622caf7fb8502fad3406
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92328263"
 ---
 # <a name="governance-of-azure-devtest-labs-infrastructure---manage-cost-and-ownership"></a>Governance van Azure DevTest Labs-infra structuur-kosten en eigendom beheren
@@ -22,12 +22,12 @@ Hoe kan ik de kosten in mijn DevTest Labs-omgeving optimaliseren?
 ### <a name="answer"></a>Antwoord
 Er zijn een aantal ingebouwde functies van DevTest Labs waarmee u de kosten kunt optimaliseren. Zie [kosten beheer, drempels](devtest-lab-configure-cost-management.md) [en](devtest-lab-set-lab-policy.md) artikel artikelen om activiteiten van uw gebruikers te beperken. 
 
-Wanneer u DevTest Labs gebruikt voor een ontwikkelings-en test werkbelasting, kunt u overwegen het [Enterprise dev/test-abonnements voordeel](https://azure.microsoft.com/offers/ms-azr-0148p/)te gebruiken als onderdeel van uw Enterprise Agreement. Als u betaalt als u bent, kunt u ook rekening houden met de [betalen naar gebruik-DevTest aanbieding](https://azure.microsoft.com/offers/ms-azr-0023p/).
+Wanneer u DevTest Labs gebruikt voor een ontwikkelings-en test werkbelasting, kunt u overwegen het [Enterprise dev/test-abonnements voordeel](https://azure.microsoft.com/offers/ms-azr-0148p/)te gebruiken als onderdeel van uw Enterprise overeenkomst. Als u betaalt als u bent, kunt u ook rekening houden met de [betalen naar gebruik-DevTest aanbieding](https://azure.microsoft.com/offers/ms-azr-0023p/).
 
 Deze benadering biedt talloze voor delen:
 
 - Speciale lagere dev/test-tarieven voor virtuele Windows-machines, Cloud Services, HDInsight, App Service en Logic Apps
-- Fantastische tarieven voor Enterprise Agreement (EA) op andere Azure-Services
+- Fantastische tarieven voor Enterprise Overeenkomst (EA) op andere Azure-Services
 - Toegang tot exclusieve dev/test-installatie kopieën in de galerie, waaronder Windows 8,1 en Windows 10
  
 Alleen actieve Visual Studio-abonnees (standaard abonnementen, jaarlijkse Cloud abonnementen en maandelijkse Cloud abonnementen) kunnen gebruikmaken van Azure-resources die worden uitgevoerd in een Enter prise dev/test-abonnement. Eind gebruikers hebben echter toegang tot de toepassing om feedback te geven of acceptatie tests uit te voeren. Het gebruik van resources binnen dit abonnement is beperkt tot het ontwikkelen en testen van toepassingen, en er wordt geen garantie voor de uptime geboden.

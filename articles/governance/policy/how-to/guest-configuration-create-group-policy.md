@@ -4,10 +4,10 @@ description: Meer informatie over het converteren van groepsbeleid van de Window
 ms.date: 08/17/2020
 ms.topic: how-to
 ms.openlocfilehash: 7f7e2af70efa6771d94d7ceaa14d1408175b1d12
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93348641"
 ---
 # <a name="how-to-create-guest-configuration-policy-definitions-from-group-policy-baseline-for-windows"></a>Beleids definities voor gast configuratie maken van groepsbeleid basis lijn voor Windows
@@ -29,7 +29,7 @@ In deze hand leiding wordt het proces door lopen om een Azure Policy-gast config
 
 ## <a name="download-windows-server-2019-security-baseline-and-install-related-powershell-modules"></a>De beveiligings basislijn van Windows Server 2019 downloaden en gerelateerde Power shell-modules installeren
 
-De **DSC** -, **GuestConfiguration** -, **baseline Management** -en gerelateerde Azure-modules in Power Shell installeren:
+De **DSC**-, **GuestConfiguration**-, **baseline Management**-en gerelateerde Azure-modules in Power Shell installeren:
 
 1. Voer de volgende opdracht uit vanuit een Power shell-prompt:
 

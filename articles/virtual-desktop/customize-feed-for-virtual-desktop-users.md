@@ -7,10 +7,10 @@ ms.date: 09/14/2019
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: e47486f29537cb948aaae7cf17e97bae14b60700
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90084291"
 ---
 # <a name="customize-the-feed-for-windows-virtual-desktop-users"></a>De feed aanpassen voor Windows-virtuele bureau blad-gebruikers
@@ -111,7 +111,7 @@ U kunt de weergave naam voor een gepubliceerd extern bureau blad wijzigen door e
 
 5. Selecteer **toepassingen** in het menu aan de linkerkant van het scherm.
 
-6. Selecteer de toepassing die u wilt bijwerken en voer vervolgens een nieuwe **weergave naam**in.
+6. Selecteer de toepassing die u wilt bijwerken en voer vervolgens een nieuwe **weergave naam** in.
 
 7. Selecteer **Opslaan**. De toepassing die u hebt bewerkt, moet nu de bijgewerkte naam weer geven.
 

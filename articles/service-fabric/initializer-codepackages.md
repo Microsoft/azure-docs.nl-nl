@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 03/10/2020
 ms.author: shsha
 ms.openlocfilehash: 3be079b97c2660437344f88203fdda06cc6d6740
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86258974"
 ---
 # <a name="initializer-codepackages"></a>CodePackages voor initialisatiefunctie
@@ -28,7 +28,7 @@ Er wordt verwacht dat een initialisatie functie-code package wordt uitgevoerd op
 ## <a name="specifying-initializer-codepackages"></a>Initialisatie functie CodePackages opgeven
 U kunt een code package markeren als initializer door het **initialisatie** kenmerk in te stellen op **True** in de ServiceManifest. Wanneer er meerdere initialisatie-CodePackages zijn, kan de volg orde van uitvoering worden opgegeven via het kenmerk **ExecOrder** . **ExecOrder** moet een niet-negatief geheel getal zijn en is alleen geldig voor initializer CodePackages. Initialisatie functie CodePackages met lagere waarden van **ExecOrder** worden eerst uitgevoerd. Als **ExecOrder** niet is opgegeven voor een initialisatie functie code Package, wordt aangenomen dat de standaard waarde 0 is. De relatieve uitvoerings volgorde van de initialisatie functie-CodePackages met dezelfde waarde van **ExecOrder** is niet opgegeven.
 
-Het volgende ServiceManifest-code fragment beschrijft drie CodePackages twee die zijn gemarkeerd als initialen. Als deze ServicePackage is geactiveerd, wordt *InitCodePackage0* eerst uitgevoerd, omdat deze de laagste waarde van **ExecOrder**heeft. Als de voltooiing is voltooid (afsluit code 0) van *InitCodePackage0*, wordt *InitCodePackage1* uitgevoerd. Ten slotte wordt *WorkloadCodePackage* uitgevoerd wanneer *InitCodePackage1*is voltooid.
+Het volgende ServiceManifest-code fragment beschrijft drie CodePackages twee die zijn gemarkeerd als initialen. Als deze ServicePackage is geactiveerd, wordt *InitCodePackage0* eerst uitgevoerd, omdat deze de laagste waarde van **ExecOrder** heeft. Als de voltooiing is voltooid (afsluit code 0) van *InitCodePackage0*, wordt *InitCodePackage1* uitgevoerd. Ten slotte wordt *WorkloadCodePackage* uitgevoerd wanneer *InitCodePackage1* is voltooid.
 
 ```xml
 <CodePackage Name="InitCodePackage0" Version="1.0" Initializer="true" ExecOrder="0">

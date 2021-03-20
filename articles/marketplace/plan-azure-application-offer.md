@@ -9,10 +9,10 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/06/2020
 ms.openlocfilehash: f98f128e56810e3dd710ce454c8dc34b333690d1
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98879289"
 ---
 # <a name="plan-an-azure-application-offer-for-the-commercial-marketplace"></a>Een Azure-toepassing aanbieding plannen voor de commerciële Marketplace
@@ -177,7 +177,7 @@ Om uw aanbieding gemakkelijker te maken, moet u enkele van deze items vooraf voo
   - PNG-bestand
   - Moet een bijschrift bevatten
 - **Media – Video's** (optioneel): u kunt Maxi maal vijf Video's toevoegen aan de volgende vereisten, die uw aanbod demonstreren:
-  - Naam
+  - Name
   - URL: moet alleen worden gehost op YouTube of Vimeo.
   - Miniatuur: 1280 x 720. png-bestand
 

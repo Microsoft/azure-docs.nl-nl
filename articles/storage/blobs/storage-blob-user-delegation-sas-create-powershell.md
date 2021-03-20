@@ -12,10 +12,10 @@ ms.reviewer: dineshm
 ms.subservice: blobs
 ms.custom: devx-track-azurepowershell
 ms.openlocfilehash: 875b2a9f35562dd8f0d5df3c631e5ade1e3fbf75
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91714518"
 ---
 # <a name="create-a-user-delegation-sas-for-a-container-or-blob-with-powershell"></a>Een SAS voor gebruikers overdracht maken voor een container of BLOB met Power shell
@@ -26,7 +26,7 @@ In dit artikel wordt beschreven hoe u Azure Active Directory (Azure AD)-referent
 
 [!INCLUDE [storage-auth-user-delegation-include](../../../includes/storage-auth-user-delegation-include.md)]
 
-## <a name="install-the-powershell-module"></a>De Power shell-module installeren
+## <a name="install-the-powershell-module"></a>De PowerShell-module installeren
 
 Als u een gebruikers delegering SA'S met Power shell wilt maken, installeert u versie 1.10.0 of hoger van de module AZ. storage. Volg deze stappen om de meest recente versie van de module te installeren:
 
@@ -77,7 +77,7 @@ Zie [Aanmelden met Azure PowerShell](/powershell/azure/authenticate-azureps)voor
 
 ## <a name="assign-permissions-with-azure-rbac"></a>Machtigingen toewijzen met Azure RBAC
 
-Als u een gebruikers delegering SA'S wilt maken op basis van Azure PowerShell, moet aan het Azure AD-account dat wordt gebruikt om u aan te melden bij Power shell een rol worden toegewezen die de actie **micro soft. Storage/Storage accounts/blobServices/generateUserDelegationKey** bevat. Met deze machtiging is het mogelijk dat Azure AD-account de *gebruikers delegerings sleutel*aanvraagt. De sleutel voor gebruikers overdracht wordt gebruikt voor het ondertekenen van de SA'S van de gebruikers delegering. De rol voor het opgeven van de actie **micro soft. Storage/Storage accounts/blobServices/generateUserDelegationKey** moet worden toegewezen op het niveau van het opslag account, de resource groep of het abonnement. Voor meer informatie over Azure RBAC-machtigingen voor het maken van een SA'S voor het delegeren van gebruikers, zie de sectie **machtigingen toewijzen met Azure RBAC** in [een gebruiker met sa's voor het delegeren van gebruikers maken](/rest/api/storageservices/create-user-delegation-sas).
+Als u een gebruikers delegering SA'S wilt maken op basis van Azure PowerShell, moet aan het Azure AD-account dat wordt gebruikt om u aan te melden bij Power shell een rol worden toegewezen die de actie **micro soft. Storage/Storage accounts/blobServices/generateUserDelegationKey** bevat. Met deze machtiging is het mogelijk dat Azure AD-account de *gebruikers delegerings sleutel* aanvraagt. De sleutel voor gebruikers overdracht wordt gebruikt voor het ondertekenen van de SA'S van de gebruikers delegering. De rol voor het opgeven van de actie **micro soft. Storage/Storage accounts/blobServices/generateUserDelegationKey** moet worden toegewezen op het niveau van het opslag account, de resource groep of het abonnement. Voor meer informatie over Azure RBAC-machtigingen voor het maken van een SA'S voor het delegeren van gebruikers, zie de sectie **machtigingen toewijzen met Azure RBAC** in [een gebruiker met sa's voor het delegeren van gebruikers maken](/rest/api/storageservices/create-user-delegation-sas).
 
 Als u onvoldoende machtigingen hebt voor het toewijzen van Azure-functies aan een Azure AD-beveiligingsprincipal, moet u mogelijk de eigenaar of beheerder van het account vragen de benodigde machtigingen toe te wijzen.
 

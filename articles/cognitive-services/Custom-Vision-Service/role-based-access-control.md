@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 09/11/2020
 ms.author: pafarley
 ms.openlocfilehash: d265b6698a87c1c651dff1413cf48dd4984cd606
-ms.sourcegitcommit: 9706bee6962f673f14c2dc9366fde59012549649
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94616889"
 ---
 # <a name="azure-role-based-access-control"></a>Op rollen gebaseerd toegangsbeheer voor Azure
@@ -30,7 +30,7 @@ U kunt Azure RBAC toewijzen aan een Custom Vision bron. Als u toegang wilt verle
    > U kunt ook Azure RBAC instellen voor volledige resource groepen, abonnementen of beheer groepen. Hiertoe selecteert u het gewenste bereik niveau en gaat u vervolgens naar het gewenste item (bijvoorbeeld **resource groepen** selecteren en klikt u vervolgens op de gewenste resource groep).
 1. Selecteer **toegangs beheer (IAM)** in het navigatie deel venster aan de linkerkant.
 1. Selecteer het **tabblad roltoewijzingen om de roltoewijzingen** voor dit bereik weer te geven.
-1. Selecteer **Add**  ->  **functie toewijzing** toevoegen toevoegen.
+1. Selecteer **Toevoegen** -> **Roltoewijzing toevoegen**.
 1. Selecteer in de vervolg keuzelijst **rol** een rol die u wilt toevoegen.
 1. Selecteer een gebruiker, groep, Service-Principal of beheerde identiteit in de **selectie** lijst. Als de beveiligingsprincipal niet in de lijst wordt weer gegeven, kunt u het selectie vakje typen om in de map te zoeken naar weergave namen, e-mail adressen en object-id's.
 1. Selecteer **Opslaan** om de rol toe te wijzen.

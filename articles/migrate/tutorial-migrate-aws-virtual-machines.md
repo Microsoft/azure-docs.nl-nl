@@ -8,10 +8,10 @@ ms.topic: tutorial
 ms.date: 08/19/2020
 ms.custom: MVC
 ms.openlocfilehash: 430ece58bd3dc1651ac391ba0e29515085ee507b
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98878186"
 ---
 # <a name="discover-assess-and-migrate-amazon-web-services-aws-vms-to-azure"></a>Amazon Web Services-VM's (AWS) ontdekken, beoordelen en migreren naar Azure
@@ -71,7 +71,7 @@ We raden u aan om een evaluatie uit te voeren, maar het uitvoeren van een evalua
 - Controleer of de AWS-VM's die u naar Azure repliceert, voldoen aan de [VM-vereisten voor Azure](./migrate-support-matrix-physical-migration.md#azure-vm-requirements).
 - U moet enkele wijzigingen doorvoeren in de virtuele machines voordat u ze naar Azure migreert.
     - Voor sommige besturingssystemen worden deze wijzigingen automatisch door Azure Migrate aangebracht.
-    - Het is belangrijk dat u deze wijzigingen aanbrengt voordat u begint met de migratie. Als u de VM migreert voordat u de wijzigingen doorvoert, start de VM mogelijk niet op in Azure.
+    - Het is belangrijk dat u deze wijzigingen aanbrengt voordat u begint met de migratie. Als u de virtuele machine migreert voordat u de wijzigingen doorvoert, start de VM mogelijk niet op in Azure.
 Controleer de voor [Windows](prepare-for-migration.md#windows-machines) en [Linux](prepare-for-migration.md#linux-machines) vereiste wijzigingen.
 
 ### <a name="prepare-azure-resources-for-migration"></a>Azure-resources voorbereiden op migratie

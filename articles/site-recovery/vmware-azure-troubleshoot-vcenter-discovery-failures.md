@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 10/29/2019
 ms.author: mayg
 ms.openlocfilehash: 1a8471305af93194ccae7b0928685e10d4d64726
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92366650"
 ---
 # <a name="troubleshoot-vcenter-server-discovery-failures"></a>Problemen met vCenter Server detectie oplossen
@@ -73,7 +73,7 @@ Voor DRA-proxy configuratie:
  
     **CD C:\Program Files\Microsoft Azure Site Recovery provider**
 
-3. Voer de volgende opdracht uit vanaf de opdracht prompt.
+3. Voer vanaf de opdrachtprompt de volgende opdracht uit.
    
    **DRCONFIGURATOR.EXE/configure/AddBypassUrls [IP-adres/FQDN van vCenter Server die is beschikbaar op het moment van het toevoegen van vCenter]**
 

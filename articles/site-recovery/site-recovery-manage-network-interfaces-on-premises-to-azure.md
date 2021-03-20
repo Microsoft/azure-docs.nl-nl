@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 4/9/2019
 ms.author: harshacs
 ms.openlocfilehash: 4dad7f76edf34782131c7c844978763cda53acc7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90068112"
 ---
 # <a name="manage-vm-network-interfaces-for-on-premises-disaster-recovery-to-azure"></a>VM-netwerkinterfaces beheren voor herstel na noodgevallen van on-premises naar Azure
@@ -32,7 +32,7 @@ Voor VMware en fysieke machines en voor Hyper-V (zonder System Center Virtual Ma
 
 2. Selecteer het tabblad **Compute en netwerk** om toegang te krijgen tot de netwerk instellingen voor het gerepliceerde item.
 
-3. Kies onder **netwerk eigenschappen**een virtueel netwerk in de lijst met beschik bare netwerk interfaces.
+3. Kies onder **netwerk eigenschappen** een virtueel netwerk in de lijst met beschik bare netwerk interfaces.
 
     ![Netwerkinstellingen](./media/site-recovery-manage-network-interfaces-on-premises-to-azure/compute-and-network.png)
 
@@ -48,7 +48,7 @@ In het gedeelte **netwerk interfaces** van het deel venster **Compute en netwerk
 - Alle andere geselecteerde netwerk interfaces, indien aanwezig, zijn **secundaire** netwerk interfaces.
 - Selecteer **niet gebruiken** om het maken van een netwerk interface bij een failover uit te sluiten.
 
-Wanneer u replicatie inschakelt, selecteert Site Recovery standaard alle gedetecteerde netwerk interfaces op de on-premises server. Er wordt één as **Primary** en alle andere als **secundair**gemarkeerd. Alle volgende interfaces die zijn toegevoegd op de on-premises server, worden **niet standaard gebruikt** . Wanneer u meer netwerk interfaces toevoegt, moet u ervoor zorgen dat de juiste doel grootte van de virtuele machine van Azure is geselecteerd voor alle vereiste netwerk interfaces.
+Wanneer u replicatie inschakelt, selecteert Site Recovery standaard alle gedetecteerde netwerk interfaces op de on-premises server. Er wordt één as **Primary** en alle andere als **secundair** gemarkeerd. Alle volgende interfaces die zijn toegevoegd op de on-premises server, worden **niet standaard gebruikt** . Wanneer u meer netwerk interfaces toevoegt, moet u ervoor zorgen dat de juiste doel grootte van de virtuele machine van Azure is geselecteerd voor alle vereiste netwerk interfaces.
 
 ## <a name="modify-network-interface-settings"></a>Instellingen voor netwerk interface wijzigen
 

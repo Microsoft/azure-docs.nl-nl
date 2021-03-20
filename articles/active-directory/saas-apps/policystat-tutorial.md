@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
 ms.openlocfilehash: 4d6274f3e1356a8ff8a997e830f0ebee43f50cff
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92893013"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-policystat"></a>Zelfstudie: Azure Active Directory-integratie met PolicyStat
@@ -46,7 +46,7 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 * PolicyStat biedt ondersteuning voor met **SP** geïnitieerde eenmalige aanmelding
 
-* PolicyStat biedt ondersteuning voor **Just-In-Time** -inrichting van gebruikers
+* PolicyStat biedt ondersteuning voor **Just-In-Time**-inrichting van gebruikers
 
 ## <a name="adding-policystat-from-the-gallery"></a>PolicyStat toevoegen vanuit de galerie
 
@@ -54,7 +54,7 @@ Voor het configureren van de integratie van PolicyStat in Azure AD moet u Policy
 
 **Voer de volgende stappen uit om PolicyStat toe te voegen vanuit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -162,7 +162,7 @@ Voor het configureren van eenmalige aanmelding met Azure Active Directory bij Po
    
     ![Menu Beheerder](./media/policystat-tutorial/ic808633.png "Menu Beheerder"):
 
-3. Klik op **Uw IDP-metagegevens** en voer vervolgens de volgende stappen uit in de sectie **Uw IDP-metagegevens** :
+3. Klik op **Uw IDP-metagegevens** en voer vervolgens de volgende stappen uit in de sectie **Uw IDP-metagegevens**:
    
     ![Schermopname waarin de actie Your IDP Metadata is geselecteerd.](./media/policystat-tutorial/ic808636.png "Eenmalige aanmelding configureren")
    
@@ -170,7 +170,7 @@ Voor het configureren van eenmalige aanmelding met Azure Active Directory bij Po
 
     b. Klik op **Wijzigingen opslaan**.
 
-4. Klik op **Kenmerken configureren** en voer vervolgens de volgende stappen uit in de sectie **Kenmerken configureren** :
+4. Klik op **Kenmerken configureren** en voer vervolgens de volgende stappen uit in de sectie **Kenmerken configureren**:
    
     a. In het tekstvak **Kenmerk gebruikersnaam** typt u **uid**.
 

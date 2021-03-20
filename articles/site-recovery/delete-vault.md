@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 11/05/2019
 ms.author: sideeksh
 ms.openlocfilehash: a33e04a24013d5450c98b91048fa418958d16886
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89426381"
 ---
 # <a name="delete-a-site-recovery-services-vault"></a>Een Site Recovery Services-kluis verwijderen
@@ -43,14 +43,14 @@ Voordat u een kluis kunt verwijderen, moet u de geregistreerde servers en items 
 ## <a name="delete-a-vault-hyper-v-vm-with-vmm-to-azure"></a>Een kluis verwijderen-Hyper-V-VM (met VMM) naar Azure
 
 1. Volg [deze stappen](site-recovery-manage-registration-and-protection.md#disable-protection-for-a-hyper-v-virtual-machine-replicating-to-azure-using-the-system-center-vmm-to-azure-scenario) om Hyper-V-vm's te verwijderen die worden beheerd door System Center VMM.
-2. Koppel en verwijder alle replicatie beleidsregels. Doe dit in uw kluis > **site Recovery infra structuur**  >  **voor beleids regels voor VMM-replicatie van System Center**  >  **Replication Policies**.
+2. Koppel en verwijder alle replicatie beleidsregels. Doe dit in uw kluis > **site Recovery infra structuur**  >  **voor beleids regels voor VMM-replicatie van System Center**  >  .
 3. Volg [deze stappen](site-recovery-manage-registration-and-protection.md#unregister-a-vmm-server) om de registratie van een verbonden VMM-server ongedaan te maken.
 4. Verwijder vervolgens de kluis.
 
 ## <a name="delete-a-vault-hyper-v-vm-to-azure"></a>Een kluis verwijderen-Hyper-V VM naar Azure
 
 1. Volg [deze stappen](site-recovery-manage-registration-and-protection.md#disable-protection-for-a-hyper-v-virtual-machine-hyper-v-to-azure) om alle beveiligde vm's te verwijderen.
-2. Koppel en verwijder alle replicatie beleidsregels. Doe dit in uw kluis > **site Recovery-infra structuur**  >  voor het replicatie beleid**van Hyper-V-sites**  >  **Replication Policies**.
+2. Koppel en verwijder alle replicatie beleidsregels. Doe dit in uw kluis > **site Recovery-infra structuur**  >  voor het replicatie beleid **van Hyper-V-sites**  >  .
 3. Volg [deze instructies](site-recovery-manage-registration-and-protection.md#unregister-a-hyper-v-host-in-a-hyper-v-site) voor het opheffen van de registratie van een Hyper-V-host.
 4. Verwijder de Hyper-V-site.
 5. Verwijder vervolgens de kluis.
@@ -60,7 +60,7 @@ Voordat u een kluis kunt verwijderen, moet u de geregistreerde servers en items 
 
 > [!Important]
 > Als u het product test en geen ervaring hebt met het verlies van gegevens, kunt u de methode Force Delete gebruiken om snel de kluis en alle bijbehorende afhankelijkheden te verwijderen.
-> De Power shell-opdracht verwijdert alle inhoud van de kluis en kan **niet onomkeerbaar**zijn.
+> De Power shell-opdracht verwijdert alle inhoud van de kluis en kan **niet onomkeerbaar** zijn.
 
 Als u de Site Recovery kluis wilt verwijderen, zelfs als er beveiligde items zijn, gebruikt u deze opdrachten:
 

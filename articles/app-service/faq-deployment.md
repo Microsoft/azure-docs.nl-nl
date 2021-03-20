@@ -10,10 +10,10 @@ ms.date: 11/01/2018
 ms.author: genli
 ms.custom: seodec18
 ms.openlocfilehash: 163a6940e50d1f8beacc23855fd1e6f9daad0085
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88080470"
 ---
 # <a name="deployment-faqs-for-web-apps-in-azure"></a>Veelgestelde vragen over implementaties voor web-apps in azure
@@ -73,7 +73,7 @@ FTP-problemen oplossen:
 
 ## <a name="how-do-i-publish-my-code-to-app-service"></a>Hoe kan ik mijn code naar App Service publiceren?
 
-De Snelstartgids van Azure is ontworpen om u te helpen uw app te implementeren met behulp van de implementatie stack en de methode van uw keuze. Als u de Snelstartgids wilt gebruiken, gaat u in het Azure Portal naar uw app service onder **implementatie**en selecteert u **Quick**start.
+De Snelstartgids van Azure is ontworpen om u te helpen uw app te implementeren met behulp van de implementatie stack en de methode van uw keuze. Als u de Snelstartgids wilt gebruiken, gaat u in het Azure Portal naar uw app service onder **implementatie** en selecteert u **Quick** start.
 
 ## <a name="why-does-my-app-sometimes-restart-after-deployment-to-app-service"></a>Waarom wordt mijn app soms opnieuw opgestart na de implementatie naar App Service?
 

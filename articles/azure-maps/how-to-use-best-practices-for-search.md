@@ -9,10 +9,10 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.openlocfilehash: 11c1938c3c1ccba533f52336fad81ebeaae53b24
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92895474"
 ---
 # <a name="best-practices-for-azure-maps-search-service"></a>Aanbevolen procedures voor het Azure Maps van Search Service
@@ -59,20 +59,20 @@ Als u de resultaten van de gebruiker wilt geobias, voegt u altijd zoveel mogelij
 
 #### <a name="fuzzy-search-parameters"></a>Zoek parameters voor fuzzy
 
-U wordt aangeraden de Azure Maps [Zoek actie voor fuzzy](/rest/api/maps/search/getsearchfuzzy) te gebruiken wanneer u de invoer van uw gebruikers niet kent voor een zoek opdracht. De invoer van de gebruiker kan bijvoorbeeld een adres zijn of het type van een punt (POI), zoals *winkel centrum* . De API combineert POI-zoek acties en geocodering in een canonieke *Zoek opdracht op één regel* : 
+U wordt aangeraden de Azure Maps [Zoek actie voor fuzzy](/rest/api/maps/search/getsearchfuzzy) te gebruiken wanneer u de invoer van uw gebruikers niet kent voor een zoek opdracht. De invoer van de gebruiker kan bijvoorbeeld een adres zijn of het type van een punt (POI), zoals *winkel centrum*. De API combineert POI-zoek acties en geocodering in een canonieke *Zoek opdracht op één regel*: 
 
 * De `minFuzzyLevel` `maxFuzzyLevel` para meters en kunnen relevante overeenkomsten retour neren, zelfs wanneer de query parameters niet exact overeenkomen met de informatie die de gebruiker wil. Stel Zoek query's in op standaard waarden van en om de prestaties te maximaliseren en ongebruikelijke resultaten te verminderen `minFuzzyLevel=1` `maxFuzzyLevel=2` . 
 
-    Als de `maxFuzzyLevel` para meter bijvoorbeeld is ingesteld op 2, wordt de zoek term *restrant* gekoppeld aan het *restaurant* . U kunt de standaard niveaus voor fuzzy negeren wanneer dat nodig is. 
+    Als de `maxFuzzyLevel` para meter bijvoorbeeld is ingesteld op 2, wordt de zoek term *restrant* gekoppeld aan het *restaurant*. U kunt de standaard niveaus voor fuzzy negeren wanneer dat nodig is. 
 
 * Gebruik de `idxSet` para meter om de prioriteit van de exacte set resultaat typen te bepalen. Als u een exacte set resultaten wilt priori teren, kunt u een door komma's gescheiden lijst met indexen verzenden. In uw lijst is de volg orde van de items niet van belang. Azure Maps ondersteunt de volgende indexen:
 
 * `Addr` - **Adresbereiken: adres** punten die worden geïnterpoleerd vanaf het begin en het einde van de straat. Deze punten worden weer gegeven als adresbereiken.
-* `Geo` - **Geografi** : Administratieve divisies van grond. Een geografie kan bijvoorbeeld een land/regio, staat of plaats zijn.
-* `PAD` - **Punt adressen** : adressen die een straat naam en-nummer bevatten. Punt adressen vindt u in een index. Een voor beeld is *Soquel Dr 2501* . Een punt adres biedt het hoogste nauwkeurigheids niveau dat beschikbaar is voor adressen.  
-* `POI` - Interessante **punten** : punten op een kaart die worden beschouwd als aandacht of die interessant kunnen zijn. De [Zoek adres-API](/rest/api/maps/search/getsearchaddress) retourneert geen poi's.  
-* `Str` - **Streets** : Streets op de kaart.
-* `XStr` - **Kruis straten of snij punten** : koppelingen of plaatsen waar twee straten INTERSECT.
+* `Geo` - **Geografi**: Administratieve divisies van grond. Een geografie kan bijvoorbeeld een land/regio, staat of plaats zijn.
+* `PAD` - **Punt adressen**: adressen die een straat naam en-nummer bevatten. Punt adressen vindt u in een index. Een voor beeld is *Soquel Dr 2501*. Een punt adres biedt het hoogste nauwkeurigheids niveau dat beschikbaar is voor adressen.  
+* `POI` - Interessante **punten**: punten op een kaart die worden beschouwd als aandacht of die interessant kunnen zijn. De [Zoek adres-API](/rest/api/maps/search/getsearchaddress) retourneert geen poi's.  
+* `Str` - **Streets**: Streets op de kaart.
+* `XStr` - **Kruis straten of snij punten**: koppelingen of plaatsen waar twee straten INTERSECT.
 
 
 #### <a name="usage-examples"></a>Gebruiksvoorbeelden
@@ -137,7 +137,7 @@ Zie [Azure Maps ondersteunde talen](./supported-languages.md)voor meer informati
 
 Als u meer overeenkomsten wilt vinden voor gedeeltelijke query's, stelt `typeahead` u de para meter in op `true` . Deze query wordt geïnterpreteerd als gedeeltelijke invoer en de zoek opdracht wordt voorspellende modus ingevoerd. Als u de `typeahead` para meter niet instelt op `true` , wordt ervan uitgegaan dat alle relevante gegevens zijn door gegeven in.
 
-In de volgende voorbeeld query wordt de service Search Address opgevraagd voor *Microsoft* . Hier `typeahead` stelt u de para meter in op `true` . In het antwoord ziet u dat de zoek service de query als gedeeltelijke query heeft geïnterpreteerd. Het antwoord bevat resultaten voor een automatisch voorgestelde query.
+In de volgende voorbeeld query wordt de service Search Address opgevraagd voor *Microsoft*. Hier `typeahead` stelt u de para meter in op `true` . In het antwoord ziet u dat de zoek service de query als gedeeltelijke query heeft geïnterpreteerd. Het antwoord bevat resultaten voor een automatisch voorgestelde query.
 
 #### <a name="sample-query"></a>Voorbeeldquery
 
@@ -405,7 +405,7 @@ https://atlas.microsoft.com/search/address/json?subscription-key={subscription-k
 
 ### <a name="encode-a-uri-to-handle-special-characters"></a>Een URI coderen voor het verwerken van speciale tekens 
 
-U moet de URI coderen voor het afhandelen van speciale tekens in het adres om Cross Street-adressen te vinden. Bekijk dit adres voor beeld: *1e stap & vakbonds straat Seattle* . Codeer hier het & teken ( `&` ) voordat u de aanvraag verzendt. 
+U moet de URI coderen voor het afhandelen van speciale tekens in het adres om Cross Street-adressen te vinden. Bekijk dit adres voor beeld: *1e stap & vakbonds straat Seattle*. Codeer hier het & teken ( `&` ) voordat u de aanvraag verzendt. 
 
 Het is raadzaam om teken gegevens te coderen in een URI. In een URI Codeer u alle tekens met behulp van een procent teken ( `%` ) en een hexadecimale waarde van twee tekens die overeenkomt met de tekens UTF-8.
 
@@ -763,17 +763,17 @@ https://atlas.microsoft.com/search/address/json?subscription-key={subscription-k
 
 ### <a name="supported-types-of-results"></a>Ondersteunde typen resultaten
 
-* **Punt adres** : punten op een kaart die een specifiek adres met een straat naam en nummer hebben. Punt adres biedt het hoogste nauwkeurigheids niveau voor adressen. 
+* **Punt adres**: punten op een kaart die een specifiek adres met een straat naam en nummer hebben. Punt adres biedt het hoogste nauwkeurigheids niveau voor adressen. 
 
-* **Adres bereik** : het adres bereik dat wordt geïnterpoleerd vanaf het begin en het einde van de straat.  
+* **Adres bereik**: het adres bereik dat wordt geïnterpoleerd vanaf het begin en het einde van de straat.  
 
-* **Geografie** : gebieden op een kaart die administratieve divisies van een land vertegenwoordigen, bijvoorbeeld land/regio, staat of plaats. 
+* **Geografie**: gebieden op een kaart die administratieve divisies van een land vertegenwoordigen, bijvoorbeeld land/regio, staat of plaats. 
 
-* **POI** : punten op een kaart die aandacht best Eden en die mogelijk interessant zijn.
+* **POI**: punten op een kaart die aandacht best Eden en die mogelijk interessant zijn.
 
-* **Street** : straten op de kaart. Adressen worden omgezet naar de breedte-en lengte coördinaten van de straat die het adres bevat. Het huis nummer wordt mogelijk niet verwerkt. 
+* **Street**: straten op de kaart. Adressen worden omgezet naar de breedte-en lengte coördinaten van de straat die het adres bevat. Het huis nummer wordt mogelijk niet verwerkt. 
 
-* **Kruis straat** : snij punten. Kruis straten vertegenwoordigen verbindings lijnen waarbij twee straten INTERSECT.
+* **Kruis straat**: snij punten. Kruis straten vertegenwoordigen verbindings lijnen waarbij twee straten INTERSECT.
 
 ### <a name="response"></a>Antwoord
 

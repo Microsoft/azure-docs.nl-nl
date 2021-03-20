@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: ramamill
 ms.openlocfilehash: 78fddb5b4512883f8e78d6ed53f6e3dbbeba0e4f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90524994"
 ---
 # <a name="prepare-source-machine-for-push-installation-of-mobility-agent"></a>Bron machine voorbereiden voor de push-installatie van de Mobility-agent
@@ -53,7 +53,7 @@ Ga als volgt te werk op elke Linux-computer die u wilt beveiligen:
 4. Schakel het SFTP-subsysteem en de wachtwoord verificatie in het sshd_config bestand in. Als u dit wilt doen, meldt u zich aan als **root**.
 5. Zoek in het bestand **/etc/ssh/sshd_config** de regel die begint met **PasswordAuthentication**.
 6. Verwijder de opmerking bij de regel en wijzig de waarde in **Ja**.
-7. Zoek de regel die begint met **subsysteem**en verwijder de opmerking over de regel.
+7. Zoek de regel die begint met **subsysteem** en verwijder de opmerking over de regel.
 
       ![Linux](./media/vmware-azure-install-mobility-service/mobility2.png)
 

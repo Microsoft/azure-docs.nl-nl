@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/12/2019
 ms.openlocfilehash: 5a646ffe1d306d7ea13da002715d5bd9b907107b
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92793463"
 ---
 # <a name="moving-data-between-scaled-out-cloud-databases"></a>Gegevens verplaatsen tussen uitgeschaalde clouddatabases
@@ -27,7 +27,7 @@ Het hulp programma voor splitsen en samen voegen wordt uitgevoerd als een Azure-
 
 ![Overzicht][1]
 
-## <a name="download"></a>Download
+## <a name="download"></a>Downloaden
 
 [Micro soft. Azure. SqlDatabase. ElasticScale. service. SplitMerge](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge/)
 
@@ -260,7 +260,7 @@ De service voert ook validatie query's uit als onderdeel van de normale bewerkin
 
 Daarnaast kunt u met een eigenschap UniqueName met de sharding-sleutel als de eerste kolom een geoptimaliseerde benadering gebruiken waarmee het resource gebruik wordt beperkt in termen van de logboek ruimte en het geheugen. Deze eigenschap UniqueName is vereist voor het verplaatsen van grote gegevens grootten (meestal 1 GB).
 
-## <a name="how-to-upgrade"></a>Een upgrade uitvoeren
+## <a name="how-to-upgrade"></a>Upgrade uitvoeren
 
 1. Volg de stappen in [een service voor splitsen en samen voegen implementeren](elastic-scale-configure-deploy-split-and-merge.md).
 2. Wijzig het configuratie bestand van de Cloud service voor uw implementatie voor splitsen en samen voegen om de nieuwe configuratie parameters weer te geven. Een nieuwe vereiste para meter is de informatie over het certificaat dat wordt gebruikt voor versleuteling. Een eenvoudige manier om dit te doen is door het nieuwe configuratie sjabloon bestand te vergelijken met de down load voor uw bestaande configuratie. Zorg ervoor dat u de instellingen voor ' DataEncryptionPrimaryCertificateThumbprint ' en ' DataEncryptionPrimary ' toevoegt voor zowel het web als de rol Worker.

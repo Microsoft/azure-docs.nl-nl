@@ -5,10 +5,10 @@ ms.topic: how-to
 ms.date: 09/03/2020
 ms.custom: subject-moving-resources
 ms.openlocfilehash: 60a182764639341fcda159356dd9fe6c65cfabd9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89463607"
 ---
 # <a name="move-an-azure-relay-namespace-to-another-region"></a>Een Azure Relay naam ruimte naar een andere regio verplaatsen
@@ -39,7 +39,7 @@ Exporteer een resource manager-sjabloon om aan de slag te gaan. Deze sjabloon be
 1. Zoek de `location` waarde voor de eigenschap en vervang deze door de nieuwe naam voor de regio. Zie [Azure-locaties](https://azure.microsoft.com/global-infrastructure/locations/)voor het verkrijgen van locatie codes. De code voor een regio is de naam van de regio zonder spaties, bijvoorbeeld `West US` is gelijk aan `westus` .
 1. Definities van **dynamische WCF-doorstuur** bronnen verwijderen (type: `Microsoft.Relay/namespaces/WcfRelays` ). Dynamische WCF-relays zijn de ' **isDynamic** -eigenschap ingesteld op **True '** op de pagina **relays** . In het volgende voor beeld is **echo service** een dynamische WCF-relay en de definitie ervan moet worden verwijderd uit de sjabloon. 
 
-    :::image type="content" source="./media/move-across-regions/dynamic-relays.png" alt-text="Resource Manager-sjabloon downloaden":::
+    :::image type="content" source="./media/move-across-regions/dynamic-relays.png" alt-text="Dynamische relays":::
 
 ## <a name="move"></a>Verplaatsen
 Implementeer de sjabloon voor het maken van een relay-naam ruimte in de doel regio. 
@@ -47,46 +47,46 @@ Implementeer de sjabloon voor het maken van een relay-naam ruimte in de doel reg
 1. Selecteer in de Azure Portal **een resource maken**.
 2. In **de Marketplace zoeken**, type **sjabloon implementatie** voor de zoek tekst, selecteer **Sjabloonimlementatie (implementeren met aangepaste sjablonen)** en druk vervolgens op **Enter**.
 
-    :::image type="content" source="./media/move-across-regions/new-template-deployment.png" alt-text="Resource Manager-sjabloon downloaden":::    
+    :::image type="content" source="./media/move-across-regions/new-template-deployment.png" alt-text="Nieuwe sjabloon implementatie":::    
 1. Selecteer op de pagina **Sjabloonimlementatie** **maken**.
 
-    :::image type="content" source="./media/move-across-regions/template-deployment-create-button.png" alt-text="Resource Manager-sjabloon downloaden":::        
+    :::image type="content" source="./media/move-across-regions/template-deployment-create-button.png" alt-text="Nieuwe sjabloon implementatie-knop maken":::        
 1. Selecteer op de pagina **aangepaste implementatie** de optie **uw eigen sjabloon bouwen in de editor**.
 
-    :::image type="content" source="./media/move-across-regions/build-template-link.png" alt-text="Resource Manager-sjabloon downloaden":::            
-1. Selecteer op de pagina **sjabloon bewerken** de optie **bestand laden** op de werk balk en volg de instructies om detemplate.jste laden ** in** het bestand dat u in de laatste sectie hebt gedownload.
+    :::image type="content" source="./media/move-across-regions/build-template-link.png" alt-text="Uw eigen sjabloon bouwen in de editor-koppeling":::            
+1. Selecteer op de pagina **sjabloon bewerken** de optie **bestand laden** op de werk balk en volg de instructies om detemplate.jste laden **in** het bestand dat u in de laatste sectie hebt gedownload.
 
-    :::image type="content" source="./media/move-across-regions/select-template.png" alt-text="Resource Manager-sjabloon downloaden":::                
+    :::image type="content" source="./media/move-across-regions/select-template.png" alt-text="Sjabloon selecteren":::                
 1. Selecteer **Opslaan** om de sjabloon op te slaan. 
 
-    :::image type="content" source="./media/move-across-regions/save-template.png" alt-text="Resource Manager-sjabloon downloaden":::                    
+    :::image type="content" source="./media/move-across-regions/save-template.png" alt-text="Sjabloon opslaan":::                    
 1. Voer op de pagina **aangepaste implementatie** de volgende stappen uit: 
-    1. Selecteer een Azure- **abonnement**. 
+    1. Selecteer een Azure-**abonnement**. 
     2. Selecteer een bestaande **resource groep** of maak een. 
     3. Selecteer de doel **locatie** of-regio. Als u een bestaande resource groep hebt geselecteerd, is deze instelling alleen-lezen. 
     4. Voer een nieuwe **naam in voor de naam ruimte**.
     1. Selecteer **Controleren + maken**. 
 
-        :::image type="content" source="./media/move-across-regions/deploy-template.png" alt-text="Resource Manager-sjabloon downloaden":::
+        :::image type="content" source="./media/move-across-regions/deploy-template.png" alt-text="Resource Manager-sjabloon implementeren":::
     1. Selecteer op de pagina **controleren en maken** onder aan de pagina **maken** . 
     
 ## <a name="verify"></a>Verifiëren
 1. Nadat de implementatie is voltooid, selecteert **u Ga naar resource groep**.
 
-    :::image type="content" source="./media/move-across-regions/resource-group-navigation-link.png" alt-text="Resource Manager-sjabloon downloaden":::    
+    :::image type="content" source="./media/move-across-regions/resource-group-navigation-link.png" alt-text="Ga naar de koppeling naar de resource groep":::    
 1. Selecteer op de pagina **resource groep** de Azure relay naam ruimte. 
 
-    :::image type="content" source="./media/move-across-regions/select-namespace.png" alt-text="Resource Manager-sjabloon downloaden":::    
+    :::image type="content" source="./media/move-across-regions/select-namespace.png" alt-text="Azure Relay naam ruimte selecteren":::    
 1. Selecteer op de pagina **Azure relay naam ruimte** **hybride verbindingen** of **WCF-relays** in het menu links om te controleren of er hybride verbindingen en WCF-relays zijn gemaakt. Als u bent verg eten definities voor dynamische WCF-relays te verwijderen voordat u de sjabloon importeert, verwijdert u deze op de pagina **WCF-relays** . De dynamische WCF-relays worden automatisch gemaakt wanneer clients verbinding maken met de relay-naam ruimte. 
 
 ## <a name="discard-or-clean-up"></a>Verwijderen of opschonen
-Als u na de implementatie wilt beginnen, kunt u de naam ruimte van het **doel Azure relay**verwijderen en herhaalt u de stappen die worden beschreven in de secties [voorbereiden](#prepare) en [verplaatsen](#move) van dit artikel.
+Als u na de implementatie wilt beginnen, kunt u de naam ruimte van het **doel Azure relay** verwijderen en herhaalt u de stappen die worden beschreven in de secties [voorbereiden](#prepare) en [verplaatsen](#move) van dit artikel.
 
 Als u de wijzigingen wilt door voeren en de verplaatsing van een naam ruimte wilt volt ooien, verwijdert u de **Azure relay naam ruimte** in de bron regio. 
 
 Een Azure Relay naam ruimte (bron of doel) verwijderen met behulp van de Azure Portal:
 
-1. Typ in het zoek venster aan de bovenkant van Azure Portal **relays**en selecteer **door sturen** van **Services** in de zoek resultaten. U ziet alle Azure Relay naam ruimten in een lijst.
+1. Typ in het zoek venster aan de bovenkant van Azure Portal **relays** en selecteer **door sturen** van **Services** in de zoek resultaten. U ziet alle Azure Relay naam ruimten in een lijst.
 2. Selecteer de doel naam ruimte die u wilt verwijderen om de **Relay** -pagina te openen. 
 1. Selecteer op de pagina **Relais** de optie **verwijderen** op de werk balk. 
 

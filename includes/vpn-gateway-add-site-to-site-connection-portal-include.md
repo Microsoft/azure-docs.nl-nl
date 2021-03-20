@@ -9,13 +9,13 @@ ms.date: 10/22/2020
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 48f33514510618abadf329a11a9ab71a020be0bd
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92479557"
 ---
-1. Open de pagina voor uw virtuele netwerkgateway. U kunt naar de gateway gaan via **Naam van uw VNet -> Overzicht -> Verbonden apparaten -> Naam van uw gateway** , hoewel er ook nog andere manieren zijn om te navigeren.
+1. Open de pagina voor uw virtuele netwerkgateway. U kunt naar de gateway gaan via **Naam van uw VNet -> Overzicht -> Verbonden apparaten -> Naam van uw gateway**, hoewel er ook nog andere manieren zijn om te navigeren.
 1. Op de pagina voor de gateway selecteert u **Verbindingen**. Selecteer bovenaan de pagina Verbindingen op **+ Toevoegen** om de pagina **Verbinding toevoegen** te openen.
 
    :::image type="content" source="./media/vpn-gateway-add-site-to-site-connection-portal-include/connection.png" alt-text="Site-naar-site-verbinding":::
@@ -29,7 +29,7 @@ ms.locfileid: "92479557"
    * Laat **Privé-IP-adres van Azure gebruiken** uitgeschakeld.
    * Laat **BGP inschakelen** uitgeschakeld.
    * Selecteer **IKEv2**.
-   * De resterende waarden voor **Abonnement** , **Resourcegroep** , en **Locatie** zijn vast.
+   * De resterende waarden voor **Abonnement**, **Resourcegroep**, en **Locatie** zijn vast.
 
 1. Selecteer **OK** om uw verbinding te maken. U ziet *Verbinding maken* op het scherm knipperen.
 1. U kunt de verbinding bekijken op de pagina **Verbindingen** van de virtuele netwerkgateway. De status verandert van *Onbekend* in *Verbinding maken* en vervolgens in *Voltooid*.

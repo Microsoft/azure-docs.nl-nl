@@ -7,10 +7,10 @@ ms.author: sngun
 ms.topic: conceptual
 ms.date: 05/21/2019
 ms.openlocfilehash: 04de6dce6cbab4dc0716ae841707b1d61d6bc375
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93073754"
 ---
 # <a name="common-azure-cosmos-db-use-cases"></a>Gebruikelijke Azure Cosmos DB use cases
@@ -61,11 +61,11 @@ Scenario's voor het gebruik van catalogus gegevens omvatten het opslaan en opvra
 
 Bekijk een voor beeld van een product catalogus voor een leverancier van auto onderdelen. Elk onderdeel kan zijn eigen kenmerken hebben naast de algemene kenmerken die alle onderdelen delen. Bovendien kunnen kenmerken voor een specifiek deel het volgende jaar wijzigen wanneer een nieuw model wordt vrijgegeven. Azure Cosmos DB biedt ondersteuning voor flexibele schema's en hiërarchische gegevens, zodat deze geschikt zijn voor het opslaan van product catalogus gegevens.
 
-:::image type="content" source="./media/use-cases/product-catalog.png" alt-text="IoT-referentie architectuur Azure Cosmos DB" border="false":::
+:::image type="content" source="./media/use-cases/product-catalog.png" alt-text="Referentie architectuur van de retail Catalog Azure Cosmos DB" border="false":::
 
 Azure Cosmos DB wordt vaak gebruikt voor gebeurtenis bronnen voor gestuurde architecturen op basis van de [wijzigings](change-feed.md) functie van de feed. De wijzigings feed biedt downstream micro Services de mogelijkheid om invoegingen en updates (bijvoorbeeld bestel gebeurtenissen) op betrouw bare en incrementele wijze te lezen die zijn aangebracht in een Azure Cosmos DB. Deze functionaliteit kan worden gebruikt om een persistent gebeurtenis archief als een Message Broker te bieden voor status wijzigings gebeurtenissen en werk stroom voor de verwerking van de verwerkings volgorde tussen veel micro Services (die kunnen worden geïmplementeerd als [serverloze Azure functions](https://azure.com/serverless)).
 
-:::image type="content" source="./media/use-cases/event-sourcing.png" alt-text="IoT-referentie architectuur Azure Cosmos DB" border="false":::
+:::image type="content" source="./media/use-cases/event-sourcing.png" alt-text="Pijplijn referentie architectuur Azure Cosmos DB best Ellen" border="false":::
 
 Bovendien kunnen gegevens die zijn opgeslagen in Azure Cosmos DB worden geïntegreerd met HDInsight voor big data Analytics via Apache Spark-taken. Zie [een Spark-taak uitvoeren met Cosmos DB en HDInsight](spark-connector.md)voor meer informatie over de Spark-Connector voor Azure Cosmos db.
 
@@ -80,7 +80,7 @@ Azure Cosmos DB wordt gebruikt door games als de doorlopende [dood: er is geen m
 * Sociale functies met inbegrip van game-chat berichten, Guild-lidmaatschappen van spelers, uitdagingen die zijn voltooid, kwalitatief hoogwaardige klassementen en sociale grafieken zijn eenvoudiger te implementeren met een flexibel schema.
 * Azure Cosmos DB als een beheerde PaaS (platform-as-a-Service) vereist mini maal installatie-en beheer taken om snel te kunnen iteratieen en de tijd op de markt te verminderen.
 
-:::image type="content" source="./media/use-cases/gaming.png" alt-text="IoT-referentie architectuur Azure Cosmos DB" border="false":::
+:::image type="content" source="./media/use-cases/gaming.png" alt-text="Azure Cosmos DB-naslag architectuur voor games" border="false":::
 
 ## <a name="web-and-mobile-applications"></a>Webtoepassingen en mobiele toepassingen
 Azure Cosmos DB wordt doorgaans gebruikt in web- en mobiele toepassingen en is zeer geschikt voor het modelleren van sociale interacties, integratie met services van derden en voor het bouwen van geavanceerde persoonlijke ervaringen. De Cosmos DB Sdk's kunnen worden gebruikt om geavanceerde iOS-en Android-toepassingen te bouwen met behulp van het populaire [Xamarin-Framework](mobile-apps-with-xamarin.md).  
@@ -92,14 +92,14 @@ Toepassingen die met sociale netwerken van derden kunnen worden geïntegreerd, m
 
 Veel van de sociale toepassingen worden uitgevoerd op wereld wijde schaal en kunnen onvoorspelbare gebruiks patronen vertonen. De flexibiliteit bij het schalen van het gegevens archief is essentieel voor de schaal van de toepassingslaag zodat deze overeenkomt met de gebruiks vraag.  U kunt uitschalen door extra gegevens partities toe te voegen onder een Cosmos DB-account.  Daarnaast kunt u ook extra Cosmos DB-accounts maken in meerdere regio's. Zie [Azure-regio's](https://azure.microsoft.com/regions/#services)voor Cosmos DB Beschik baarheid van de service regio.
 
-:::image type="content" source="./media/use-cases/apps-with-global-reach.png" alt-text="IoT-referentie architectuur Azure Cosmos DB" border="false":::
+:::image type="content" source="./media/use-cases/apps-with-global-reach.png" alt-text="Diagram waarin de referentie architectuur van Azure Cosmos DB web-app wordt weer gegeven." border="false":::
 
-### <a name="personalization"></a>Personalisatie
+### <a name="personalization"></a>Persoonlijke instellingen
 Tegenwoordig, moderne toepassingen worden geleverd met complexe weer gaven en ervaringen. Dit zijn doorgaans dynamische, Cate ring voor gebruikers voorkeuren of stemmingen en huismerk vereisten. Daarom moeten toepassingen aangepaste instellingen effectief kunnen ophalen om gebruikers interface-elementen en-ervaringen snel weer te geven. 
 
 JSON, een indeling die wordt ondersteund door Cosmos DB, is een effectief formaat om de indelings gegevens van de gebruikers interface weer te geven, aangezien deze niet alleen lichter zijn, maar ook gemakkelijk kunnen worden geïnterpreteerd door Java script. Cosmos DB biedt instel bare-consistentie niveaus die snelle lees bewerkingen met lage latentie mogelijk maken. Daarom is het opslaan van gegevens over de indeling van de gebruikers interface, inclusief persoonlijke instellingen als JSON-documenten in Cosmos DB een doel matige manier om deze gegevens over de kabel te halen.
 
-:::image type="content" source="./media/use-cases/personalization.png" alt-text="IoT-referentie architectuur Azure Cosmos DB" border="false":::
+:::image type="content" source="./media/use-cases/personalization.png" alt-text="Referentie architectuur voor Azure Cosmos DB web-app" border="false":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

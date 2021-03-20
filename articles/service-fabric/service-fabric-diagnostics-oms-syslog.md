@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 10/23/2018
 ms.author: srrengar
 ms.openlocfilehash: 6a98a833baefa9b1c2d1ebd9ff8147206c2106bf
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100570201"
 ---
 # <a name="service-fabric-linux-cluster-events-in-syslog"></a>Linux-cluster gebeurtenissen Service Fabric in syslog
@@ -18,7 +18,7 @@ Service Fabric beschrijft een reeks platform gebeurtenissen om u te informeren o
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-## <a name="introduction"></a>Introductie
+## <a name="introduction"></a>Inleiding
 
 In de 6,4-release is de SyslogConsumer geïntroduceerd om de Service Fabric-platform gebeurtenissen te verzenden naar syslog voor Linux-clusters. Wanneer deze functie is ingeschakeld, worden gebeurtenissen automatisch gestroomd naar syslog dat kan worden verzameld en verzonden door de Log Analytics-agent.
 

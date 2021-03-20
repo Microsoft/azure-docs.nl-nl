@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d12679e64d690614aaf788837a02af007448f83d
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93393673"
 ---
 # <a name="how-to-manage-stale-devices-in-azure-ad"></a>Procedure: verouderde apparaten beheren in azure AD
@@ -70,7 +70,7 @@ Om verlopen apparaten op een efficiënte manier op te schonen in uw omgeving, mo
 Als u een apparaat wilt bijwerken in Azure AD, hebt u een account nodig waaraan een van de volgende rollen is toegewezen:
 
 - Hoofdbeheerder
-- Beheerder van Cloud apparaat
+- Cloudapparaatbeheerder
 - Intune-servicebeheerder
 
 Selecteer in uw opschoningsbeleid accounts die over de vereiste rollen beschikken. 
@@ -97,7 +97,7 @@ Apparaten die zijn gekoppeld aan hybride Azure AD moeten het beleid volgen voor 
 
 Azure AD opschonen:
 
-- **Windows 10-apparaten** : schakel Windows 10-apparaten uit in uw on-premises AD of verwijder ze, en laat Azure AD Connect de gewijzigde apparaatstatus synchroniseren naar Azure AD.
+- **Windows 10-apparaten**: schakel Windows 10-apparaten uit in uw on-premises AD of verwijder ze, en laat Azure AD Connect de gewijzigde apparaatstatus synchroniseren naar Azure AD.
 - **Windows 7/8** : Schakel eerst Windows 7/8-apparaten in uw on-premises AD in of verwijder deze. U kunt Azure AD Connect niet gebruiken voor het uitschakelen of verwijderen van Windows 7/8-apparaten in Azure AD. In plaats daarvan moet u, wanneer u de wijziging in uw on-premises aanbrengt, u in azure AD uitschakelen of verwijderen.
 
 > [!NOTE]
@@ -176,7 +176,7 @@ Zie [Overzicht van apparaatbeheer](overview.md) voor meer informatie over de ver
 Verificatie waarbij een apparaat wordt gebruikt om te verifiëren bij Azure AD wordt geweigerd. Enkele typische voorbeelden:
 
 - **Hybride Azure AD-aangesloten apparaat** : gebruikers kunnen het apparaat mogelijk gebruiken om zich aan te melden bij hun on-premises domein. Ze hebben echter geen toegang tot Azure AD-resources, zoals Microsoft 365.
-- **Apparaat dat is gekoppeld aan Azure AD** : gebruikers kunnen het apparaat niet gebruiken om zich aan te melden. 
+- **Apparaat dat is gekoppeld aan Azure AD**: gebruikers kunnen het apparaat niet gebruiken om zich aan te melden. 
 - **Mobiele apparaten** : gebruiker heeft geen toegang tot Azure AD-resources zoals Microsoft 365. 
 
 ## <a name="next-steps"></a>Volgende stappen

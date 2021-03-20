@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 12/28/2020
 ms.author: yitoh
 ms.openlocfilehash: 0be184921ff0bd6b98dd2975acb4e0d5c8b26ba0
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101716190"
 ---
 # <a name="view-and-configure-ddos-protection-telemetry"></a>DDoS-beschermingstelemetrie bekijken en configureren
@@ -43,8 +43,8 @@ De volgende [metrische gegevens](../azure-monitor/essentials/metrics-supported.m
 | BytesForwardedDDoS | Doorgestuurde binnenkomende bytes DDoS | BytesPerSecond | Maximum | Doorgestuurde binnenkomende bytes DDoS |
 | BytesInDDoS | Binnenkomende bytes DDoS | BytesPerSecond | Maximum | Binnenkomende bytes DDoS |
 | DDoSTriggerSYNPackets | Inkomende SYN-pakketten om DDoS-beperking te activeren | CountPerSecond | Maximum | Inkomende SYN-pakketten om DDoS-beperking te activeren |
-| DDoSTriggerTCPPackets | Binnenkomende TCP-pakketten om DDoS-beperking te activeren | CountPerSecond | Maximum | Binnenkomende TCP-pakketten om DDoS-beperking te activeren |
-| DDoSTriggerUDPPackets | Binnenkomende UDP-pakketten om DDoS-beperking te activeren | CountPerSecond | Maximum | Binnenkomende UDP-pakketten om DDoS-beperking te activeren |
+| DDoSTriggerTCPPackets | Inkomende TCP-pakketten om DDoS-beperking te activeren | CountPerSecond | Maximum | Inkomende TCP-pakketten om DDoS-beperking te activeren |
+| DDoSTriggerUDPPackets | Inkomende UDP-pakketten om DDoS-beperking te activeren | CountPerSecond | Maximum | Inkomende UDP-pakketten om DDoS-beperking te activeren |
 | IfUnderDDoSAttack | Onder DDoS-aanval of niet | Count | Maximum | Onder DDoS-aanval of niet |
 | PacketsDroppedDDoS | DDoS inkomende pakketten verwijderd | CountPerSecond | Maximum | DDoS inkomende pakketten verwijderd |
 | PacketsForwardedDDoS | DDoS inkomende pakketten doorgestuurd | CountPerSecond | Maximum | DDoS inkomende pakketten doorgestuurd |

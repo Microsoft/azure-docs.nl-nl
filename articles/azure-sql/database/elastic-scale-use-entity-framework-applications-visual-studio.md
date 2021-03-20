@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/04/2019
 ms.openlocfilehash: 48d43cb2d3c51194d0708a2b9b739a0ee87843d0
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92793395"
 ---
 # <a name="elastic-database-client-library-with-entity-framework"></a>Clientbibliotheek van elastische database met Entity Framework
@@ -47,8 +47,8 @@ Entity Framework-ontwikkelaars vertrouwen op een van de volgende vier werkstrome
 
 * **Code First (nieuwe database)** : De EF-ontwikkelaar maakt het model in de toepassingscode en vervolgens genereert EF de database.
 * **Code First (bestaande database)** : De ontwikkelaar laat EF de toepassingscode genereren voor het model vanuit een bestaande database.
-* **Model First** : De ontwikkelaar maakt het model met de ontwerpfunctie van EF en vervolgens maakt EF de database vanuit het model.
-* **Database First** : De ontwikkelaar gebruikt het hulpprogramma van EF om het model van een bestaande database af te leiden.
+* **Model First**: De ontwikkelaar maakt het model met de ontwerpfunctie van EF en vervolgens maakt EF de database vanuit het model.
+* **Database First**: De ontwikkelaar gebruikt het hulpprogramma van EF om het model van een bestaande database af te leiden.
 
 Al deze methoden zijn gebaseerd op de DbContext-klasse voor het transparant beheren van databaseverbindingen en databaseschema voor een toepassing. Verschillende constructors van de DbContext-basisklasse maken verschillende niveaus van controle over het maken van verbindingen, de bootstrapping van databases en het maken van schema's mogelijk. Problemen ontstaan voornamelijk doordat het databaseverbindingsbeheer dat door EF wordt geleverd, kruist met de verbindingsbeheermogelijkheden van de gegevensafhankelijke routeringsinterfaces van de clientbibliotheek van de elastische database.
 
@@ -56,7 +56,7 @@ Al deze methoden zijn gebaseerd op de DbContext-klasse voor het transparant behe
 
 Zie de [woordenlijst voor hulpprogramma's van de elastische database](elastic-scale-glossary.md) voor definities van termen.
 
-Met de clientbibliotheek van de elastische database definieert u de partities van uw toepassingsgegevens, die shardlets worden genoemd. Shardlets worden geïdentificeerd met behulp van een sharding-sleutel en worden toegewezen aan specifieke databases. Een toepassing kan zoveel databases hebben als nodig is en de shardlets distribueren om voldoende capaciteit of prestaties te leveren volgens de huidige bedrijfsvereisten. De toewijzing van sharding-sleutelwaarden aan de databases wordt opgeslagen door een shard-toewijzing die door de client-API's van de elastische database wordt geleverd. Deze mogelijkheid wordt **shard-toewijzingsbeheer** of SMM genoemd. De shard-toewijzing dient ook als broker voor databaseverbindingen voor aanvragen die een sharding-sleutel bevatten. Deze mogelijkheid staat bekend als **gegevensafhankelijke routering** .
+Met de clientbibliotheek van de elastische database definieert u de partities van uw toepassingsgegevens, die shardlets worden genoemd. Shardlets worden geïdentificeerd met behulp van een sharding-sleutel en worden toegewezen aan specifieke databases. Een toepassing kan zoveel databases hebben als nodig is en de shardlets distribueren om voldoende capaciteit of prestaties te leveren volgens de huidige bedrijfsvereisten. De toewijzing van sharding-sleutelwaarden aan de databases wordt opgeslagen door een shard-toewijzing die door de client-API's van de elastische database wordt geleverd. Deze mogelijkheid wordt **shard-toewijzingsbeheer** of SMM genoemd. De shard-toewijzing dient ook als broker voor databaseverbindingen voor aanvragen die een sharding-sleutel bevatten. Deze mogelijkheid staat bekend als **gegevensafhankelijke routering**.
 
 Shard-toewijzingsbeheer beschermt gebruikers tegen inconsistente weergaven in shardlet-gegevens die kunnen optreden wanneer gelijktijdig shardlet-beheerbewerkingen (zoals het verplaatsen van gegevens van de ene shard naar de andere) plaatsvinden. Hiertoe fungeren de shard-toewijzingen die worden beheerd door de clientbibliotheek als broker voor de databaseverbindingen voor een toepassing. Zo kan de shard-toewijzingsfunctionaliteit automatisch een databaseverbinding uitschakelen wanneer de shard-beheerbewerkingen impact kunnen hebben op de shardlet waarvoor de verbinding is gemaakt. Deze aanpak moet worden geïntegreerd met een deel van de functionaliteit van EF, zoals het maken van nieuwe verbindingen vanuit een bestaande verbinding om te controleren of een database bestaat. In het algemeen werken de DbContext-standaardconstructors alleen betrouwbaar voor gesloten databaseverbindingen die veilig kunnen worden gekloond voor EF-werkzaamheden. Het ontwerpprincipe van de elastische database dient in plaats daarvan alleen als broker voor geopende verbindingen. U zou kunnen denken dat het sluiten van een verbinding die door de clientbibliotheek is gebrokerd voordat deze aan de EF DbContext wordt overgedragen, dit probleem kan oplossen. Als u de verbinding sluit en ervan uitgaat dat EF deze weer opent, kan het voorkomen dat de validatie en consistentiecontroles die door de bibliotheek worden uitgevoerd, worden overgeslagen. De migratiefunctionaliteit in EF gebruikt deze verbindingen echter om het onderliggende databaseschema op een voor de toepassing transparante manier te beheren. In de ideale situatie behoudt en combineert u al deze mogelijkheden van de clientbibliotheek van de elastische database en EF in dezelfde toepassing. In de volgende sectie wordt verder ingegaan op deze eigenschappen en vereisten.
 
@@ -64,16 +64,16 @@ Shard-toewijzingsbeheer beschermt gebruikers tegen inconsistente weergaven in sh
 
 Als u met de clientbibliotheek van de elastische database en Entity Framework-API's werkt, is het verstandig om de volgende eigenschappen te behouden:
 
-* **Uitschalen** : Databases uit de gegevenslaag van de shard-toepassing toevoegen of verwijderen als dat nodig is voor de capaciteitseisen van de toepassing. Dit betekent controle over het maken en verwijderen van databases en het gebruik van API's voor het shard-toewijzingsbeheer voor de elastische database API's om databases te beheren en shardlets toe te wijzen.
-* **Consistentie** : De toepassing maakt gebruik van sharding en gebruikt de gegevensafhankelijke routeringsmogelijkheden van de clientbibliotheek. Om beschadigde of verkeerde zoekresultaten te voorkomen, worden de verbindingen via het shard-toewijzingsbeheer tot stand gebracht. Hiermee blijft ook validatie en consistentie behouden.
-* **Code First** : Om het gemak van het Code First-paradigma van EF te behouden. In Code First worden klassen in de toepassing transparant toegewezen aan de onderliggende databasestructuren. De toepassingscode werkt samen met DbSets die de meeste aspecten van de onderliggende databaseverwerking maskeren.
-* **Schema** : Entity Framework maakt het eerste databaseschema en evalueert de daaropvolgende schema's via migraties. Door deze mogelijkheden te behouden, kan uw app eenvoudig worden aangepast naarmate de gegevens veranderen.
+* **Uitschalen**: Databases uit de gegevenslaag van de shard-toepassing toevoegen of verwijderen als dat nodig is voor de capaciteitseisen van de toepassing. Dit betekent controle over het maken en verwijderen van databases en het gebruik van API's voor het shard-toewijzingsbeheer voor de elastische database API's om databases te beheren en shardlets toe te wijzen.
+* **Consistentie**: De toepassing maakt gebruik van sharding en gebruikt de gegevensafhankelijke routeringsmogelijkheden van de clientbibliotheek. Om beschadigde of verkeerde zoekresultaten te voorkomen, worden de verbindingen via het shard-toewijzingsbeheer tot stand gebracht. Hiermee blijft ook validatie en consistentie behouden.
+* **Code First**: Om het gemak van het Code First-paradigma van EF te behouden. In Code First worden klassen in de toepassing transparant toegewezen aan de onderliggende databasestructuren. De toepassingscode werkt samen met DbSets die de meeste aspecten van de onderliggende databaseverwerking maskeren.
+* **Schema**: Entity Framework maakt het eerste databaseschema en evalueert de daaropvolgende schema's via migraties. Door deze mogelijkheden te behouden, kan uw app eenvoudig worden aangepast naarmate de gegevens veranderen.
 
 In de volgende richtlijnen wordt aangegeven hoe aan deze eisen voor Code First-toepassingen kan worden voldaan met behulp van hulpprogramma's voor elastische databases.
 
 ## <a name="data-dependent-routing-using-ef-dbcontext"></a>Gegevensafhankelijke routering met behulp van EF DbContext
 
-Databaseverbindingen met Entity Framework worden doorgaans beheerd via subklassen van **DbContext** . Maak deze subklassen door ze af te leiden van **DbContext** . Hier definieert u uw **DbSets** die de door de database ondersteunde verzamelingen van CLR-objecten voor uw toepassing implementeren. In de context van gegevensafhankelijke routering kunt u verschillende nuttige eigenschappen identificeren die niet noodzakelijkerwijs gelden voor andere Code First-toepassingsscenario's van EF:
+Databaseverbindingen met Entity Framework worden doorgaans beheerd via subklassen van **DbContext**. Maak deze subklassen door ze af te leiden van **DbContext**. Hier definieert u uw **DbSets** die de door de database ondersteunde verzamelingen van CLR-objecten voor uw toepassing implementeren. In de context van gegevensafhankelijke routering kunt u verschillende nuttige eigenschappen identificeren die niet noodzakelijkerwijs gelden voor andere Code First-toepassingsscenario's van EF:
 
 * De database bestaat al en is geregistreerd in de shard-toewijzing van de elastische database.
 * Het schema van de toepassing is al in de database geïmplementeerd (zie de uitleg hieronder).
@@ -82,8 +82,8 @@ Databaseverbindingen met Entity Framework worden doorgaans beheerd via subklasse
 **DbContexts** met gegevensafhankelijke routering voor uitschalen integreren:
 
 1. Maak fysieke databaseverbindingen via de elastische-databaseclientinterfaces van het shard-toewijzingsbeheer.
-2. Verpak de verbinding met de **DbContext** -subklasse
-3. Geef de verbinding door in de **DbContext** -basisklassen om er zeker van te zijn dat alle verwerking ook aan de EF-zijde plaatsvindt.
+2. Verpak de verbinding met de **DbContext**-subklasse
+3. Geef de verbinding door in de **DbContext**-basisklassen om er zeker van te zijn dat alle verwerking ook aan de EF-zijde plaatsvindt.
 
 Het volgende codevoorbeeld illustreert deze aanpak. (Deze code bevindt zich ook in het bijbehorende Visual Studio-project)
 
@@ -159,13 +159,13 @@ using (var db = new ElasticScaleContext<int>(
 }
 ```
 
-De nieuwe constructor opent de verbinding met de shard die de gegevens bevat voor de shardlet die door de waarde van **tenantid1** wordt geïdentificeerd. De code in het blok **using** blijft ongewijzigd voor toegang tot de **DbSet** voor blogs die EF op de shard gebruikt voor **tenantid1** . Dit verandert de semantiek van de code in het blok using zodanig dat alle databasebewerkingen nu worden toegewezen aan de shard waarin **tenantid1** wordt behouden. Een LINQ-query over de blogs **DbSet** zou bijvoorbeeld alleen blogs retourneren die zijn opgeslagen op de huidige shard, maar niet die zijn opgeslagen op andere shards.  
+De nieuwe constructor opent de verbinding met de shard die de gegevens bevat voor de shardlet die door de waarde van **tenantid1** wordt geïdentificeerd. De code in het blok **using** blijft ongewijzigd voor toegang tot de **DbSet** voor blogs die EF op de shard gebruikt voor **tenantid1**. Dit verandert de semantiek van de code in het blok using zodanig dat alle databasebewerkingen nu worden toegewezen aan de shard waarin **tenantid1** wordt behouden. Een LINQ-query over de blogs **DbSet** zou bijvoorbeeld alleen blogs retourneren die zijn opgeslagen op de huidige shard, maar niet die zijn opgeslagen op andere shards.  
 
 ### <a name="transient-faults-handling"></a>Afhandeling van tijdelijke fouten
 
 Het Microsoft-team voor patronen en procedures heeft [het toepassingsblok voor het afhandelen van tijdelijke fouten](/previous-versions/msp-n-p/dn440719(v=pandp.60)) gepubliceerd. De bibliotheek wordt gebruikt met de clientbibliotheek voor elastische schaalaanpassing in combinatie met EF. Controleer of elke tijdelijke uitzondering terugkeert naar een plaats waar u ervoor kunt zorgen dat de nieuwe constructor wordt gebruikt na een tijdelijke fout. Zo kan elke nieuwe verbindingspoging worden uitgevoerd met behulp van de constructors die u hebt aangepast. Anders is een verbinding met de juiste shard niet gegarandeerd en zijn er geen garanties dat de verbinding behouden blijft als er wijzigingen in de shard-toewijzing optreden.
 
-Het volgende codevoorbeeld illustreert hoe een SQL-beleid voor opnieuw proberen kan worden gebruikt voor de nieuwe **DbContext** -subklasseconstructors:
+Het volgende codevoorbeeld illustreert hoe een SQL-beleid voor opnieuw proberen kan worden gebruikt voor de nieuwe **DbContext**-subklasseconstructors:
 
 ```csharp
 SqlDatabaseUtils.SqlRetryPolicy.ExecuteAction(() =>
@@ -185,7 +185,7 @@ SqlDatabaseUtils.SqlRetryPolicy.ExecuteAction(() =>
 
 **SqlDatabaseUtils.SqlRetryPolicy** in de bovenstaande code is gedefinieerd als een **SqlDatabaseTransientErrorDetectionStrategy** met maximaal 10 pogingen en een wachttijd van 5 seconden tussen de pogingen. Deze aanpak is vergelijkbaar met de richtlijnen voor EF en door de gebruiker geïnitieerde transacties (zie [Beperkingen bij uitvoeringsstrategieën voor opnieuw proberen (EF6 en hoger)](/ef/ef6/fundamentals/connection-resiliency/retry-logic)). Beide situaties vereisen dat de toepassing het bereik controleert waarnaar de tijdelijke uitzondering terugkeert: ofwel de transactie heropenen, ofwel (zoals weergegeven) de context opnieuw maken van de juiste constructor die gebruikmaakt van de clientbibliotheek van de elastische database.
 
-De noodzaak om te bepalen waar tijdelijke uitzonderingen ons terugbrengen in het bereik, sluit ook het gebruik van de ingebouwde **SqlAzureExecutionStrategy** van EF uit. **SqlAzureExecutionStrategy** zou een verbinding heropenen, maar geen gebruikmaken van **OpenConnectionForKey** en dus alle validatie omzeilen die wordt uitgevoerd als onderdeel van de **OpenConnectionForKey** -aanroep. In plaats daarvan gebruikt het codevoorbeeld de ingebouwde **DefaultExecutionStrategy** die ook bij EF wordt geleverd. In tegenstelling tot **SqlAzureExecutionStrategy** werkt deze functie correct in combinatie met het beleid voor opnieuw proberen voor afhandeling van tijdelijke fouten. Het uitvoeringsbeleid is ingesteld in de klasse **ElasticScaleDbConfiguration** . We hebben besloten om **DefaultSqlExecutionStrategy** niet te gebruiken, omdat de functie suggereert **SqlAzureExecutionStrategy** te gebruiken als er tijdelijke uitzonderingen voorkomen. Dit zou leiden tot verkeerd gedrag, zoals eerder besproken. Zie voor meer informatie over de verschillende beleidsregels voor opnieuw proberen [Verbindingstolerantie in EF](/ef/ef6/fundamentals/connection-resiliency/retry-logic).
+De noodzaak om te bepalen waar tijdelijke uitzonderingen ons terugbrengen in het bereik, sluit ook het gebruik van de ingebouwde **SqlAzureExecutionStrategy** van EF uit. **SqlAzureExecutionStrategy** zou een verbinding heropenen, maar geen gebruikmaken van **OpenConnectionForKey** en dus alle validatie omzeilen die wordt uitgevoerd als onderdeel van de **OpenConnectionForKey**-aanroep. In plaats daarvan gebruikt het codevoorbeeld de ingebouwde **DefaultExecutionStrategy** die ook bij EF wordt geleverd. In tegenstelling tot **SqlAzureExecutionStrategy** werkt deze functie correct in combinatie met het beleid voor opnieuw proberen voor afhandeling van tijdelijke fouten. Het uitvoeringsbeleid is ingesteld in de klasse **ElasticScaleDbConfiguration**. We hebben besloten om **DefaultSqlExecutionStrategy** niet te gebruiken, omdat de functie suggereert **SqlAzureExecutionStrategy** te gebruiken als er tijdelijke uitzonderingen voorkomen. Dit zou leiden tot verkeerd gedrag, zoals eerder besproken. Zie voor meer informatie over de verschillende beleidsregels voor opnieuw proberen [Verbindingstolerantie in EF](/ef/ef6/fundamentals/connection-resiliency/retry-logic).
 
 #### <a name="constructor-rewrites"></a>Herschrijfbewerkingen voor constructor
 
@@ -205,7 +205,7 @@ De bovenstaande codevoorbeelden illustreren de standaardherschrijfbewerkingen do
 
 Automatisch schemabeheer is een handige functie van Entity Framework. In de context van toepassingen die gebruikmaken van hulpprogramma's voor elastische databases,is het verstandig deze mogelijkheid te behouden om het schema automatisch in te richten op nieuwe shards wanneer databases worden toegevoegd aan de shard-toepassing. Het primaire gebruiksscenario is het verhogen van de capaciteit op de gegevenslaag voor shard-toepassingen met behulp van EF. Door de mogelijkheden van EF te gebruiken voor het beheer van schema's, vermindert u de inspanning voor het beheer van de database met een shard-toepassing die op EF is gebouwd.
 
-Schema-implementatie met behulp van EF-migraties werkt het beste op **ongeopende verbindingen** . Dit in tegenstelling tot het scenario voor gegevensafhankelijke routering dat is gebaseerd op de geopende verbinding die wordt geleverd door de client-API van de elastische database. Een ander verschil is de consistentievereiste: Hoewel het wenselijk is om te zorgen voor consistentie voor alle gegevensafhankelijke routeringsverbindingen ter bescherming tegen gelijktijdige manipulatie van de shard-toewijzing, is het geen punt van zorg bij de initiële implementatie van het schema in een nieuwe database die nog niet is geregistreerd in de shard-toewijzing en nog niet is toegewezen om shardlets te behouden. U kunt voor dit scenario dus vertrouwen op regelmatige databaseverbindingen, in tegenstelling tot gegevensafhankelijke routering.  
+Schema-implementatie met behulp van EF-migraties werkt het beste op **ongeopende verbindingen**. Dit in tegenstelling tot het scenario voor gegevensafhankelijke routering dat is gebaseerd op de geopende verbinding die wordt geleverd door de client-API van de elastische database. Een ander verschil is de consistentievereiste: Hoewel het wenselijk is om te zorgen voor consistentie voor alle gegevensafhankelijke routeringsverbindingen ter bescherming tegen gelijktijdige manipulatie van de shard-toewijzing, is het geen punt van zorg bij de initiële implementatie van het schema in een nieuwe database die nog niet is geregistreerd in de shard-toewijzing en nog niet is toegewezen om shardlets te behouden. U kunt voor dit scenario dus vertrouwen op regelmatige databaseverbindingen, in tegenstelling tot gegevensafhankelijke routering.  
 
 Dit leidt tot een aanpak waarbij de implementatie van schema's met behulp van EF-migraties strak wordt gekoppeld aan de registratie van de nieuwe database als shard in de shard-toewijzing van de toepassing. Dit is afhankelijk van de volgende voorwaarden:
 
@@ -244,7 +244,7 @@ public void RegisterNewShard(string server, string database, string connStr, int
 }
 ```
 
-Dit voorbeeld toont de methode **RegisterNewShard** die de shard registreert in de shard-toewijzing, het schema implementeert met behulp van EF-migraties en een toewijzing van een sharding-sleutel op de shard opslaat. Het is gebaseerd op een constructor van de **DbContext** -subklasse ( **ElasticScaleContext** in het voorbeeld) die een SQL-verbindingsreeks als invoer neemt. De code van deze constructor is eenvoudig, zoals het volgende voorbeeld laat zien:
+Dit voorbeeld toont de methode **RegisterNewShard** die de shard registreert in de shard-toewijzing, het schema implementeert met behulp van EF-migraties en een toewijzing van een sharding-sleutel op de shard opslaat. Het is gebaseerd op een constructor van de **DbContext**-subklasse (**ElasticScaleContext** in het voorbeeld) die een SQL-verbindingsreeks als invoer neemt. De code van deze constructor is eenvoudig, zoals het volgende voorbeeld laat zien:
 
 ```csharp
 // C'tor to deploy schema and migrations to a new shard
@@ -270,13 +270,13 @@ De versie van de constructor die is overgenomen van de basisklasse kan zijn gebr
 
 De in dit document beschreven methoden brengen een aantal beperkingen met zich mee:
 
-* EF-toepassingen die **LocalDb** gebruiken, moeten eerst migreren naar een gewone SQL Server-database voordat ze de clientbibliotheek van de elastische database kunnen gebruiken. Het uitschalen van een toepassing door middel van sharding met elastische schaalaanpassing is niet mogelijk met **LocalDb** . Ontwikkelaars kunnen nog steeds **LocalDb** gebruiken.
+* EF-toepassingen die **LocalDb** gebruiken, moeten eerst migreren naar een gewone SQL Server-database voordat ze de clientbibliotheek van de elastische database kunnen gebruiken. Het uitschalen van een toepassing door middel van sharding met elastische schaalaanpassing is niet mogelijk met **LocalDb**. Ontwikkelaars kunnen nog steeds **LocalDb** gebruiken.
 * Eventuele wijzigingen in de toepassing die wijzigingen in het databaseschema met zich meebrengen, moeten EF-migratie op alle shards ondergaan. De voorbeeldcode voor dit document toont niet aan hoe dit moet worden gedaan. Overweeg om Update-Database met een ConnectionString-parameter op alle shards te herhalen. U kunt ook het T-SQL-script voor de migratie in behandeling extraheren met behulp van Update-Database met de optie -Script en het T-SQL-script op uw shards toepassen.  
-* Bij een aanvraag wordt ervan uitgegaan dat de volledige databaseverwerking in één shard is opgenomen, zoals die wordt geïdentificeerd door de in de aanvraag verstrekte sharding-sleutel. Deze veronderstelling gaat echter niet altijd op. Bijvoorbeeld wanneer het niet mogelijk is om een sharding-sleutel beschikbaar te maken. De clientbibliotheek biedt hiertoe de **MultiShardQuery** -klasse die een verbindingsabstractie implementeert voor het uitvoeren van query's op meerdere shards. Het leren gebruiken van de **MultiShardQuery** in combinatie met EF valt buiten het bereik van dit document
+* Bij een aanvraag wordt ervan uitgegaan dat de volledige databaseverwerking in één shard is opgenomen, zoals die wordt geïdentificeerd door de in de aanvraag verstrekte sharding-sleutel. Deze veronderstelling gaat echter niet altijd op. Bijvoorbeeld wanneer het niet mogelijk is om een sharding-sleutel beschikbaar te maken. De clientbibliotheek biedt hiertoe de **MultiShardQuery**-klasse die een verbindingsabstractie implementeert voor het uitvoeren van query's op meerdere shards. Het leren gebruiken van de **MultiShardQuery** in combinatie met EF valt buiten het bereik van dit document
 
 ## <a name="conclusion"></a>Conclusie
 
-Door middel van de stappen die in dit document worden beschreven, kunnen EF-toepassingen gebruikmaken van de mogelijkheden van de clientbibliotheek van de elastische database voor gegevensafhankelijke routering door constructors van de **DbContext** -subklassen die in de EF-toepassingen worden gebruikt, te herstructureren. Dit beperkt de vereiste veranderingen tot de plaatsen waar **DbContext** -klassen al bestaan. Daarnaast kunnen EF-toepassingen blijven profiteren van automatische implementatie van schema's door de stappen die de noodzakelijke EF-migraties aanroepen, te combineren met de registratie van nieuwe shards en toewijzingen in de shard-toewijzing.
+Door middel van de stappen die in dit document worden beschreven, kunnen EF-toepassingen gebruikmaken van de mogelijkheden van de clientbibliotheek van de elastische database voor gegevensafhankelijke routering door constructors van de **DbContext**-subklassen die in de EF-toepassingen worden gebruikt, te herstructureren. Dit beperkt de vereiste veranderingen tot de plaatsen waar **DbContext**-klassen al bestaan. Daarnaast kunnen EF-toepassingen blijven profiteren van automatische implementatie van schema's door de stappen die de noodzakelijke EF-migraties aanroepen, te combineren met de registratie van nieuwe shards en toewijzingen in de shard-toewijzing.
 
 [!INCLUDE [elastic-scale-include](../../../includes/elastic-scale-include.md)]
 

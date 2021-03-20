@@ -10,15 +10,15 @@ services: azure-maps
 manager: philmea
 ms.custom: devx-track-js
 ms.openlocfilehash: 95a04d763fa5982181cc1c797bce969d9857ae4b
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92890629"
 ---
 # <a name="use-the-drawing-tools-module"></a>De module voor tekenprogramma's gebruiken
 
-De Azure Maps Web-SDK bevat een *module voor teken hulpprogramma's* . Met deze module kunt u gemakkelijk shapes op de kaart tekenen en bewerken met behulp van een invoer apparaat, zoals een muis of aanraak scherm. De kern klasse van deze module is het [teken beheer](/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager#setoptions-drawingmanageroptions-). De teken beheerder biedt alle mogelijkheden die nodig zijn om shapes op de kaart te tekenen en te bewerken. Het kan rechtstreeks worden gebruikt en is geïntegreerd met een aangepaste werk balk GEBRUIKERSINTERFACE. U kunt ook de ingebouwde [werk balk voor tekenen](/javascript/api/azure-maps-drawing-tools/atlas.control.drawingtoolbar) gebruiken. 
+De Azure Maps Web-SDK bevat een *module voor teken hulpprogramma's*. Met deze module kunt u gemakkelijk shapes op de kaart tekenen en bewerken met behulp van een invoer apparaat, zoals een muis of aanraak scherm. De kern klasse van deze module is het [teken beheer](/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager#setoptions-drawingmanageroptions-). De teken beheerder biedt alle mogelijkheden die nodig zijn om shapes op de kaart te tekenen en te bewerken. Het kan rechtstreeks worden gebruikt en is geïntegreerd met een aangepaste werk balk GEBRUIKERSINTERFACE. U kunt ook de ingebouwde [werk balk voor tekenen](/javascript/api/azure-maps-drawing-tools/atlas.control.drawingtoolbar) gebruiken. 
 
 ## <a name="loading-the-drawing-tools-module-in-a-webpage"></a>De module teken hulpprogramma's laden op een webpagina
 
@@ -89,7 +89,7 @@ drawingManager = new atlas.drawing.DrawingManager(map,{
 <br/>
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="Vrije hand tekening" src="//codepen.io/azuremaps/embed/ZEzKoaj/?height=265&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
-Zie Azure Maps () op CodePen () op de pen voor een <a href='https://codepen.io/azuremaps/pen/ZEzKoaj/'>vrije hand tekening</a> <a href='https://codepen.io/azuremaps'>@azuremaps</a> <a href='https://codepen.io'>CodePen</a>.
+Zie Azure Maps () op CodePen () op de pen voor een <a href='https://codepen.io/azuremaps/pen/ZEzKoaj/'>vrije hand tekening</a> <a href='https://codepen.io/azuremaps'>@azuremaps</a> <a href='https://codepen.io'></a>.
 </iframe>
 
 

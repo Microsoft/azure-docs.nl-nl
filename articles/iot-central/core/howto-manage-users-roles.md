@@ -9,10 +9,10 @@ ms.service: iot-central
 services: iot-central
 manager: corywink
 ms.openlocfilehash: f6c45b8d9804f16c4e59d259f562cc03f187e6a0
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92122974"
 ---
 # <a name="manage-users-and-roles-in-your-iot-central-application"></a>Gebruikers en rollen beheren in uw IoT Central-toepassing
@@ -78,7 +78,7 @@ Gebruikers met de **operator** rol kunnen de status en status van het apparaat b
 
 ## <a name="create-a-custom-role"></a>Een aangepaste rol maken
 
-Als uw oplossing nauw keurige toegangs controles vereist, kunt u aangepaste rollen maken met aangepaste sets machtigingen. Als u een aangepaste rol wilt maken, gaat u naar de pagina **rollen** in het gedeelte **beheer** van uw toepassing. Selecteer vervolgens **+ nieuwe rol**en voeg een naam en beschrijving voor uw rol toe. Selecteer de machtigingen die uw rol vereist en selecteer vervolgens **Opslaan**.
+Als uw oplossing nauw keurige toegangs controles vereist, kunt u aangepaste rollen maken met aangepaste sets machtigingen. Als u een aangepaste rol wilt maken, gaat u naar de pagina **rollen** in het gedeelte **beheer** van uw toepassing. Selecteer vervolgens **+ nieuwe rol** en voeg een naam en beschrijving voor uw rol toe. Selecteer de machtigingen die uw rol vereist en selecteer vervolgens **Opslaan**.
 
 U kunt gebruikers toevoegen aan uw aangepaste rol op dezelfde manier als u gebruikers toevoegt aan een ingebouwde rol.
 
@@ -93,7 +93,7 @@ Wanneer u een aangepaste rol definieert, kiest u de set machtigingen die een geb
 
 **Machtigingen voor de apparaataccount**
 
-| Naam | Afhankelijkheden |
+| Name | Afhankelijkheden |
 | ---- | -------- |
 | Weergave | Geen     |
 | Beheren | Weergave <br/> Andere afhankelijkheden: instanties van apparaten weer geven  |
@@ -101,7 +101,7 @@ Wanneer u een aangepaste rol definieert, kiest u de set machtigingen die een geb
 
 **Machtigingen voor apparaatexemplaar**
 
-| Naam | Afhankelijkheden |
+| Name | Afhankelijkheden |
 | ---- | -------- |
 | Weergave | Geen <br/> Andere afhankelijkheden: Device-sjablonen en apparaatgroepen weer geven |
 | Bijwerken | Weergave <br/> Andere afhankelijkheden: Device-sjablonen en apparaatgroepen weer geven  |
@@ -112,7 +112,7 @@ Wanneer u een aangepaste rol definieert, kiest u de set machtigingen die een geb
 
 **Machtigingen voor apparaatgroepen**
 
-| Naam | Afhankelijkheden |
+| Name | Afhankelijkheden |
 | ---- | -------- |
 | Weergave | Geen <br/> Andere afhankelijkheden: Apparaatbeheer en instanties van apparaten weer geven |
 | Bijwerken | Weergave <br/> Andere afhankelijkheden: Apparaatbeheer en instanties van apparaten weer geven   |
@@ -122,7 +122,7 @@ Wanneer u een aangepaste rol definieert, kiest u de set machtigingen die een geb
 
 **Machtigingen voor connectiviteits beheer voor apparaten**
 
-| Naam | Afhankelijkheden |
+| Name | Afhankelijkheden |
 | ---- | -------- |
 | Exemplaar lezen | Geen <br/> Andere afhankelijkheden: Apparaatinstellingen weer geven, apparaatgroepen, exemplaren van apparaten |
 | Exemplaar beheren | Geen |
@@ -132,7 +132,7 @@ Wanneer u een aangepaste rol definieert, kiest u de set machtigingen die een geb
 
 **Taken machtigingen**
 
-| Naam | Afhankelijkheden |
+| Name | Afhankelijkheden |
 | ---- | -------- |
 | Weergave | Geen <br/> Andere afhankelijkheden: Apparaatinstellingen weer geven, exemplaren van apparaten en apparaatgroepen |
 | Bijwerken | Weergave <br/> Andere afhankelijkheden: Apparaatinstellingen weer geven, exemplaren van apparaten en apparaatgroepen |
@@ -143,7 +143,7 @@ Wanneer u een aangepaste rol definieert, kiest u de set machtigingen die een geb
 
 **Machtigingen voor regels**
 
-| Naam | Afhankelijkheden |
+| Name | Afhankelijkheden |
 | ---- | -------- |
 | Weergave | Geen <br/> Andere afhankelijkheden: Apparaatbeheer weer geven |
 | Bijwerken | Weergave <br/> Andere afhankelijkheden: Apparaatbeheer weer geven |
@@ -155,7 +155,7 @@ Wanneer u een aangepaste rol definieert, kiest u de set machtigingen die een geb
 
 **Machtigingen voor toepassings instellingen**
 
-| Naam | Afhankelijkheden |
+| Name | Afhankelijkheden |
 | ---- | -------- |
 | Weergave | Geen     |
 | Bijwerken | Weergave   |
@@ -165,7 +165,7 @@ Wanneer u een aangepaste rol definieert, kiest u de set machtigingen die een geb
 
 **Export machtigingen voor de toepassings sjabloon**
 
-| Naam | Afhankelijkheden |
+| Name | Afhankelijkheden |
 | ---- | -------- |
 | Weergave | Geen     |
 | Exporteren | Weergave <br/> Andere afhankelijkheden: Device-sjablonen weer geven, instanties van apparaten, apparaatgroepen, Dash boards, gegevens exporteren, huis stijl, Help-koppelingen, aangepaste rollen, regels |
@@ -173,7 +173,7 @@ Wanneer u een aangepaste rol definieert, kiest u de set machtigingen die een geb
 
 **Facturerings machtigingen**
 
-| Naam | Afhankelijkheden |
+| Name | Afhankelijkheden |
 | ---- | -------- |
 | Beheren | Geen     |
 | Volledig beheer | Beheren |
@@ -182,7 +182,7 @@ Wanneer u een aangepaste rol definieert, kiest u de set machtigingen die een geb
 
 **Machtigingen voor aangepaste rollen**
 
-| Naam | Afhankelijkheden |
+| Name | Afhankelijkheden |
 | ---- | -------- |
 | Weergave | Geen |
 | Bijwerken | Weergave |
@@ -192,7 +192,7 @@ Wanneer u een aangepaste rol definieert, kiest u de set machtigingen die een geb
 
 **Machtigingen voor gebruikers beheer**
 
-| Naam | Afhankelijkheden |
+| Name | Afhankelijkheden |
 | ---- | -------- |
 | Weergave | Geen <br/> Andere afhankelijkheden: aangepaste rollen weer geven |
 | Toevoegen | Weergave <br/> Andere afhankelijkheden: aangepaste rollen weer geven |
@@ -206,7 +206,7 @@ Wanneer u een aangepaste rol definieert, kiest u de set machtigingen die een geb
 
 **Toepassings dashboard machtigingen**
 
-| Naam | Afhankelijkheden |
+| Name | Afhankelijkheden |
 | ---- | -------- |
 | Weergave | Geen     |
 | Bijwerken | Weergave   |
@@ -216,7 +216,7 @@ Wanneer u een aangepaste rol definieert, kiest u de set machtigingen die een geb
 
 **Machtigingen voor persoonlijke Dash boards**
 
-| Naam | Afhankelijkheden |
+| Name | Afhankelijkheden |
 | ---- | -------- |
 | Weergave | Geen     |
 | Bijwerken | Weergave   |
@@ -226,7 +226,7 @@ Wanneer u een aangepaste rol definieert, kiest u de set machtigingen die een geb
 
 **Machtigingen voor huis stijl, favicon en kleuren**
 
-| Naam | Afhankelijkheden |
+| Name | Afhankelijkheden |
 | ---- | -------- |
 | Weergave | Geen     |
 | Bijwerken | Weergave   |
@@ -234,7 +234,7 @@ Wanneer u een aangepaste rol definieert, kiest u de set machtigingen die een geb
 
 **Machtigingen voor Help links**
 
-| Naam | Afhankelijkheden |
+| Name | Afhankelijkheden |
 | ---- | -------- |
 | Weergave | Geen     |
 | Bijwerken | Weergave   |
@@ -244,7 +244,7 @@ Wanneer u een aangepaste rol definieert, kiest u de set machtigingen die een geb
 
 **Machtigingen voor gegevens export**
 
-| Naam | Afhankelijkheden |
+| Name | Afhankelijkheden |
 | ---- | -------- |
 | Weergave | Geen     |
 | Bijwerken | Weergave   |
@@ -254,7 +254,7 @@ Wanneer u een aangepaste rol definieert, kiest u de set machtigingen die een geb
 
 **API-token machtigingen**
 
-| Naam | Afhankelijkheden |
+| Name | Afhankelijkheden |
 | ---- | -------- |
 | Weergave | Geen     |
 | Maken | Weergave   |

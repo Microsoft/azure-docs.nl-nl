@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 07/09/2020
 ms.author: victorh
 ms.openlocfilehash: f0e5a153efe26640e54f386600f07c7b3d4711d0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89649056"
 ---
 # <a name="application-gateway-health-monitoring-overview"></a>Overzicht van Application Gateway status controle
@@ -64,7 +64,7 @@ De volgende tabel bevat definities voor de eigenschappen van een aangepaste stat
 
 | Probe-eigenschap | Beschrijving |
 | --- | --- |
-| Naam |De naam van de test. Deze naam wordt gebruikt om de test in back-end-HTTP-instellingen te identificeren en te raadplegen. |
+| Name |De naam van de test. Deze naam wordt gebruikt om de test in back-end-HTTP-instellingen te identificeren en te raadplegen. |
 | Protocol |Het protocol dat wordt gebruikt om de test te verzenden. Dit moet overeenkomen met het protocol dat is gedefinieerd in de back-end HTTP-instellingen waaraan het is gekoppeld|
 | Host |De hostnaam waarmee de test wordt verzonden. In v1 SKU wordt deze waarde alleen gebruikt voor de host-header van de test aanvraag. In v2 SKU wordt het gebruikt als host-header, evenals SNI |
 | Pad |Het relatieve pad van de test. Er begint een geldig pad met '/' |

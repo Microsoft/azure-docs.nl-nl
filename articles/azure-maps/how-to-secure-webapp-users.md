@@ -11,10 +11,10 @@ services: azure-maps
 manager: timlt
 ms.custom: devx-track-js
 ms.openlocfilehash: ebdc4b219e0840c18e6bef8ebfe9b8eefa8faf3b
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92895564"
 ---
 # <a name="secure-a-web-application-with-user-sign-in"></a>Een webtoepassing beveiligen met gebruikers aanmelding
@@ -27,7 +27,7 @@ De volgende hand leiding heeft betrekking op een toepassing die wordt gehost op 
 
 U moet de webtoepassing maken in azure AD voor gebruikers om zich aan te melden. Deze webtoepassing delegeert vervolgens de gebruikers toegang tot Azure Maps REST-Api's.
 
-1. Selecteer in het Azure Portal in de lijst met Azure-Services **Azure Active Directory**  >  **app-registraties**  >  **nieuwe registratie** .  
+1. Selecteer in het Azure Portal in de lijst met Azure-Services **Azure Active Directory**  >  **app-registraties**  >  **nieuwe registratie**.  
 
     > [!div class="mx-imgBorder"]
     > ![Appregistratie](./media/how-to-manage-authentication/app-registration.png)
@@ -36,12 +36,12 @@ U moet de webtoepassing maken in azure AD voor gebruikers om zich aan te melden.
 
 3. Zodra de registratie van de toepassing is voltooid, controleert u of de aanmelding van de toepassing voor gebruikers werkt. Zodra het aanmelden werkt, kan de toepassing gedelegeerde toegang krijgen tot Azure Maps REST-Api's.
     
-4.  Als u gedelegeerde API-machtigingen aan Azure Maps wilt toewijzen, gaat u naar de toepassing. Selecteer vervolgens de optie **API-machtigingen** om  >  **een machtiging toe te voegen** . Onder **api's die mijn organisatie gebruikt** , zoekt en selecteert u **Azure Maps** .
+4.  Als u gedelegeerde API-machtigingen aan Azure Maps wilt toewijzen, gaat u naar de toepassing. Selecteer vervolgens de optie **API-machtigingen** om  >  **een machtiging toe te voegen**. Onder **api's die mijn organisatie gebruikt**, zoekt en selecteert u **Azure Maps**.
 
     > [!div class="mx-imgBorder"]
     > ![API-machtigingen voor apps toevoegen](./media/how-to-manage-authentication/app-permissions.png)
 
-5. Schakel het selectie vakje in naast **toegang Azure Maps** en selecteer vervolgens **machtigingen toevoegen** .
+5. Schakel het selectie vakje in naast **toegang Azure Maps** en selecteer vervolgens **machtigingen toevoegen**.
 
     > [!div class="mx-imgBorder"]
     > ![App API-machtigingen selecteren](./media/how-to-manage-authentication/select-app-permissions.png)

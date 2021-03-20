@@ -10,10 +10,10 @@ services: azure-maps
 manager: cpendleton
 ms.custom: codepen, devx-track-js
 ms.openlocfilehash: 5f455a1132a0f63e1ba3eb5d2a57a1f9bfa9a867
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92895678"
 ---
 # <a name="how-to-use-image-templates"></a>Afbeeldingssjablonen gebruiken
@@ -119,7 +119,7 @@ Zie de <a href='https://codepen.io/azuremaps/pen/EqQvzq/'>HTML-markering van de 
 
 Als uw toepassing gebruikmaakt van hetzelfde pictogram met verschillende pictogrammen of als u een module maakt waarmee extra afbeeldings sjablonen worden toegevoegd, kunt u deze pictogrammen eenvoudig toevoegen en ophalen uit de Azure Maps Web-SDK. Gebruik de volgende statische functies in de `atlas` naam ruimte.
 
-| Name | Retour type | Description | 
+| Name | Retour type | Beschrijving | 
 |-|-|-|
 | `addImageTemplate(templateName: string, template: string, override: boolean)` | | Hiermee voegt u een aangepaste SVG-afbeeldings sjabloon toe aan de Atlas-naam ruimte. |
 |  `getImageTemplate(templateName: string, scale?: number)`| tekenreeks | Hiermee wordt een SVG-sjabloon met de naam opgehaald. |
@@ -127,7 +127,7 @@ Als uw toepassing gebruikmaakt van hetzelfde pictogram met verschillende pictogr
 
 SVG-afbeeldings sjablonen ondersteunen de volgende waarden voor de tijdelijke aanduiding:
 
-| Tijdelijke aanduiding | Description |
+| Tijdelijke aanduiding | Beschrijving |
 |-|-|
 | `{color}` | De primaire kleur. | 
 | `{secondaryColor}` | De secundaire kleur. | 
@@ -523,7 +523,7 @@ Meer informatie over de klassen en methoden die in dit artikel worden gebruikt:
 Raadpleeg de volgende artikelen voor meer code voorbeelden waarbij afbeeldings sjablonen kunnen worden gebruikt:
 
 > [!div class="nextstepaction"]
-> [Een symbool laag toevoegen](map-add-pin.md)
+> [Een symboollaag toevoegen](map-add-pin.md)
 
 > [!div class="nextstepaction"]
 > [Een lijnlaag toevoegen](map-add-line-layer.md)

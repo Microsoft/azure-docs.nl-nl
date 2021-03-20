@@ -13,15 +13,15 @@ ms.workload: infrastructure-services
 ms.date: 03/01/2020
 ms.author: juergent
 ms.openlocfilehash: 0ff226a156721382a289af0f2a8a0f898a57bab9
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101667969"
 ---
 # <a name="sap-hana-azure-backup-on-file-level"></a>Azure Backup op bestands niveau SAP HANA
 
-## <a name="introduction"></a>Introductie
+## <a name="introduction"></a>Inleiding
 
 Dit artikel is een verwant artikel voor het maken van een [back-upgids voor SAP Hana op Azure virtual machines](./sap-hana-backup-guide.md), dat een overzicht en informatie bevat over het aan de slag gaan en meer informatie over Azure backup service-en opslag momentopnamen. 
 

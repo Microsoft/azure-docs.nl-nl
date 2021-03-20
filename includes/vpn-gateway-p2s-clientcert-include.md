@@ -8,10 +8,10 @@ ms.topic: include
 ms.date: 10/28/2020
 ms.author: cherylmc
 ms.openlocfilehash: 34986ac80a309bcfd495e5782496ba560f84c5f7
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93041580"
 ---
 Op elke clientcomputer die u verbindt met een VNet via een punt-naar-site-verbinding, moet een clientcertificaat zijn geïnstalleerd. U genereert het clientcertificaat op basis van het basiscertificaat en installeert het clientcertificaat op elke clientcomputer. Als u geen geldig clientcertificaat hebt geïnstalleerd en de client probeert verbinding te maken met het VNet, mislukt de verificatie.
@@ -22,11 +22,11 @@ U kunt clientcertificaten genereren op de volgende manieren:
 
 * **Commercieel certificaat**
 
-  * Als u een commerciële certificeringsoplossing gebruikt, genereert u een clientcertificaat met de algemene indeling voor de naamwaarde *naam\@uwdomein.com* . Gebruik deze indeling in plaats van de indeling *domeinnaam\gebruikersnaam* .
+  * Als u een commerciële certificeringsoplossing gebruikt, genereert u een clientcertificaat met de algemene indeling voor de naamwaarde *naam\@uwdomein.com*. Gebruik deze indeling in plaats van de indeling *domeinnaam\gebruikersnaam*.
 
-  * Zorg ervoor dat het clientcertificaat dat u verleent, is gebaseerd op de certificaatsjabloon voor *Gebruiker met Clientverificatie* als het eerste item in de lijst. U kunt het certificaat controleren door op het clientcertificaat te dubbelklikken en **Enhanced Key Usage** (Uitgebreid sleutelgebruik) weer te geven op het tabblad **Details** .
+  * Zorg ervoor dat het clientcertificaat dat u verleent, is gebaseerd op de certificaatsjabloon voor *Gebruiker met Clientverificatie* als het eerste item in de lijst. U kunt het certificaat controleren door op het clientcertificaat te dubbelklikken en **Enhanced Key Usage** (Uitgebreid sleutelgebruik) weer te geven op het tabblad **Details**.
 
-* **Zelfondertekend basiscertificaat** : Volg de stappen in een van de volgende artikelen over P2S-certificaten zodat de clientcertificaten die u maakt compatibel zijn met P2S-verbindingen.
+* **Zelfondertekend basiscertificaat**: Volg de stappen in een van de volgende artikelen over P2S-certificaten zodat de clientcertificaten die u maakt compatibel zijn met P2S-verbindingen.
 
   Als u een clientcertificaat genereert op basis van een zelfondertekend basiscertificaat, wordt het certificaat automatisch geïnstalleerd op de computer die u hebt gebruikt om het certificaat te genereren. Als u een clientcertificaat op een andere clientcomputer wilt installeren, moet u het certificaat samen met de gehele certificaatketen exporteren als PFX-bestand. Hiermee maakt u een PFX-bestand met alle gegevens van het basiscertificaat die nodig zijn voor de verificatie van de client.
 

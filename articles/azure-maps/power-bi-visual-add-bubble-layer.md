@@ -10,10 +10,10 @@ services: azure-maps
 manager: cpendle
 ms.custom: ''
 ms.openlocfilehash: ff0d2c8e90995222af79d5be63ca3e9da24b3c45
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92896222"
 ---
 # <a name="add-a-bubble-layer"></a>Een bubbellaag toevoegen
@@ -51,13 +51,13 @@ Als een veld wordt door gegeven aan de Bucket **grootte** van het deel venster *
 | Maximale grootte            | De maximale belgrootte bij het schalen van de gegevens.|
 | Schaal methode voor grootte | Schaal algoritme dat wordt gebruikt om de relatieve belgrootte te bepalen.<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;• Lineair bereik van invoer gegevens die lineair zijn toegewezen aan de minimum-en maximum grootte. (standaard)<br/>&nbsp;&nbsp;&nbsp;&nbsp;• Het logboek bereik van invoer gegevens logarithmically toegewezen aan de minimum-en maximum grootte.<br/>&nbsp;&nbsp;&nbsp;&nbsp;• Cubic-Bezier: Geef de waarden x1, y1, x2, y2 van een Cubic-Bezier curve op om een aangepaste schaal methode te maken. |
 
-Wanneer de **methode** voor het schalen van de grootte is ingesteld op **logboek** , worden de volgende opties beschikbaar gesteld.
+Wanneer de **methode** voor het schalen van de grootte is ingesteld op **logboek**, worden de volgende opties beschikbaar gesteld.
 
 | Instelling   | Beschrijving      |
 |-----------|------------------|
 | Logaritmische schaal | De logaritmische schaal die moet worden toegepast bij het berekenen van de grootte van de bellen. |
 
-Wanneer de **methode** voor het schalen van de grootte is ingesteld op **kubieke Bezier** , worden de volgende opties beschikbaar gesteld voor het aanpassen van de schaal curve.
+Wanneer de **methode** voor het schalen van de grootte is ingesteld op **kubieke Bezier**, worden de volgende opties beschikbaar gesteld voor het aanpassen van de schaal curve.
 
 | Instelling | Beschrijving                           |
 |---------|---------------------------------------|
@@ -90,7 +90,7 @@ Meer context toevoegen aan de kaart:
 De Visual aanpassen:
 
 > [!div class="nextstepaction"]
-> [Tips en trucs voor het gebruik van kleuren in Power BI](/power-bi/visuals/service-tips-and-tricks-for-color-formatting)
+> [Tips en trucs voor het gebruik van opmaak in Power BI](/power-bi/visuals/service-tips-and-tricks-for-color-formatting)
 
 > [!div class="nextstepaction"]
 > [Titels, legenda's en achtergronden van visualisaties aanpassen](/power-bi/visuals/power-bi-visualization-customize-title-background-and-legend)

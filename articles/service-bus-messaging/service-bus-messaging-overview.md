@@ -4,10 +4,10 @@ description: Dit artikel bevat een overzicht op hoog niveau van Azure Service Bu
 ms.topic: overview
 ms.date: 02/16/2021
 ms.openlocfilehash: 897729b9748d69ad3c6de507e800dbb3a1a3619c
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100570476"
 ---
 # <a name="what-is-azure-service-bus"></a>Wat is Azure Service Bus?

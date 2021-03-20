@@ -17,16 +17,16 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cea26cb119f64679807bc6c5eaadb41b341e5d5a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89662382"
 ---
-# <a name="azure-ad-connect-sync-understand-and-customize-synchronization"></a>Azure AD Connect synchronisatie: synchronisatie begrijpen en aanpassen
+# <a name="azure-ad-connect-sync-understand-and-customize-synchronization"></a>Azure AD Connect synchroniseren: Synchronisatie begrijpen en aanpassen
 De Azure Active Directory Connect Synchronization Services (Azure AD Connect Sync) is een hoofd onderdeel van Azure AD Connect. Het zorgt voor alle bewerkingen die betrekking hebben op het synchroniseren van identiteits gegevens tussen uw on-premises omgeving en Azure AD. Azure AD Connect Sync is de opvolger van DirSync, Azure AD Sync en Forefront Identity Manager met de Azure Active Directory connector geconfigureerd.
 
-Dit onderwerp is het start punt voor **Azure AD Connect synchronisatie** (ook wel **synchronisatie-engine**genoemd) en bevat koppelingen naar alle andere onderwerpen die hieraan zijn gerelateerd. Zie [uw on-premises identiteiten integreren met Azure Active Directory](whatis-hybrid-identity.md)voor koppelingen naar Azure AD Connect.
+Dit onderwerp is het start punt voor **Azure AD Connect synchronisatie** (ook wel **synchronisatie-engine** genoemd) en bevat koppelingen naar alle andere onderwerpen die hieraan zijn gerelateerd. Zie [uw on-premises identiteiten integreren met Azure Active Directory](whatis-hybrid-identity.md)voor koppelingen naar Azure AD Connect.
 
 De synchronisatie service bestaat uit twee onderdelen: het on-premises **Azure AD Connect synchronisatie** onderdeel en de service zijde in azure AD met de naam **Azure AD Connect synchronisatie service**.
 

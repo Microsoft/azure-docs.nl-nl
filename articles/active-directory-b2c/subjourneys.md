@@ -11,15 +11,15 @@ ms.date: 12/11/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 8f037d4283b4b05081ef47e7223495f6e19d460e
-ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97386864"
 ---
 # <a name="sub-journeys"></a>Subtrajecten
 
-Subtrajecten kunnen worden gebruikt om de stroom van Orchestration-stappen binnen een gebruikers traject te organiseren en te vereenvoudigen. [Gebruikers ritten](userjourneys.md) geven expliciete paden op waarmee een relying party toepassing de gewenste claims voor een gebruiker kan verkrijgen. De gebruiker wordt door deze paden geleid om de claims op te halen die moeten worden weer gegeven aan de Relying Party. Met andere woorden, de gebruikers trajecten definiëren de bedrijfs logica van wat een eind gebruiker doorloopt als het Azure AD B2C identiteits ervarings raamwerk de aanvraag verwerkt. Een gebruikers traject wordt weer gegeven als een indelings reeks die moet worden gevolgd door een geslaagde trans actie. Het [ClaimsExchange](userjourneys.md#claimsexchanges) -element van een Orchestration-stap is gekoppeld aan één [technisch profiel](technicalprofiles.md) dat wordt uitgevoerd.
+Subtrajecten kunnen worden gebruikt om de stroom van Orchestration-stappen binnen een gebruikers traject te organiseren en te vereenvoudigen. Met [gebruikersbelevingen](userjourneys.md) worden expliciete paden opgegeven waarmee een op claims gebaseerde toepassing de gewenste claims voor een gebruiker kan verkrijgen. De gebruiker wordt door deze paden geleid om de claims op te halen die aan de Relying Party moeten worden gepresenteerd. Met andere woorden, de gebruikers trajecten definiëren de bedrijfs logica van wat een eind gebruiker doorloopt als het Azure AD B2C identiteits ervarings raamwerk de aanvraag verwerkt. Een gebruikers traject wordt weer gegeven als een indelings reeks die moet worden gevolgd door een geslaagde trans actie. Het [ClaimsExchange](userjourneys.md#claimsexchanges) -element van een Orchestration-stap is gekoppeld aan één [technisch profiel](technicalprofiles.md) dat wordt uitgevoerd.
 
 Een subtraject is een groepering van Orchestration-stappen die op elk punt binnen een gebruikers traject kan worden aangeroepen. U kunt subtrajecten gebruiken om herbruikbare stap reeksen te maken of vertakkingen te implementeren om de bedrijfs logica beter weer te geven.
 
@@ -124,8 +124,8 @@ Het element **Subtrajecten** bevat de volgende kenmerken:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Id | Yes | De subtraject-id die door de gebruiker kan worden gebruikt om te verwijzen naar de subtraject in het beleid. Het **SubJourneyReferenceId** -element van het element [kandidaat](userjourneys.md#journeylist) wijst naar dit kenmerk. |
-| Type | Yes | Mogelijke waarden: `Call` , of `Transfer` . Zie voor meer informatie [gebruikers reis vertakking](#user-journey-branching)|
+| Id | Ja | De subtraject-id die door de gebruiker kan worden gebruikt om te verwijzen naar de subtraject in het beleid. Het **SubJourneyReferenceId** -element van het element [kandidaat](userjourneys.md#journeylist) wijst naar dit kenmerk. |
+| Type | Ja | Mogelijke waarden: `Call` , of `Transfer` . Zie voor meer informatie [gebruikers reis vertakking](#user-journey-branching)|
 
 Het element **subtraject** bevat het volgende element:
 

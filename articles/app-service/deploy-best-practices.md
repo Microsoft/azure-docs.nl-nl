@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 07/31/2019
 ms.author: jafreebe
 ms.openlocfilehash: 3b49177eb592906e3bf84d359699b354f8c87c6e
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98185662"
 ---
 # <a name="deployment-best-practices"></a>Aanbevolen procedures voor implementatie
@@ -127,7 +127,7 @@ Meld u in uw script aan met `az login --service-principal` en geef de gegevens v
 
 ### <a name="java"></a>Java
 
-Gebruik de kudu [zipdeploy/](deploy-zip.md) API voor het implementeren van jar-toepassingen en [WARDEPLOY/](deploy-zip.md#deploy-war-file) voor War-apps. Als u Jenkins gebruikt, kunt u deze Api's rechtstreeks in uw implementatie fase gebruiken. Zie [dit artikel](/azure/developer/jenkins/deploy-to-azure-app-service-using-azure-cli)voor meer informatie.
+Gebruik de kudu [zipdeploy/](deploy-zip.md) API voor het implementeren van jar-toepassingen en [WARDEPLOY/](deploy-zip.md#deploy-war-file) voor War-apps. Als u Jenkins gebruikt, kunt u deze Api's rechtstreeks in uw implementatie fase gebruiken. Raadpleeg [dit artikel](/azure/developer/jenkins/deploy-to-azure-app-service-using-azure-cli) voor meer informatie.
 
 ### <a name="node"></a>Knooppunt
 

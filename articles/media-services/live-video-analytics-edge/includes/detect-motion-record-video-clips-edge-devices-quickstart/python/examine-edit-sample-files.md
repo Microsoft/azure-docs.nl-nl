@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 6ea9be8e7e67a8e52412e7011cfb1d33c9929191
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97486844"
 ---
 Als een van de vereisten voor deze quickstart hebt u de voorbeeldcode naar een map gedownload. Volg deze stappen om de voorbeeldcode te bekijken e te bewerken.
@@ -12,10 +12,10 @@ Als een van de vereisten voor deze quickstart hebt u de voorbeeldcode naar een m
 
     Het implementatiesjabloon verwijst naar de implementatiemanifest voor het edge-apparaat, waar voor sommige eigenschappen variabelen worden gebruikt. Het *.env*-bestand bevat de waarden voor die variabelen.
 1. Ga naar de map *src/cloud-to-device-console-app*. Hier ziet u het bestand *appsettings.json* en enkele andere bestanden:
-    * ***operations.json** _: de lijst met bewerkingen die u het programma wilt laten uitvoeren.
-    _***main.py** _: de voorbeeldprogrammacode. Deze code:
+    * ***operations.json***: de lijst met bewerkingen die u het programma wilt laten uitvoeren.
+    * ***main.py***: de voorbeeldprogrammacode. Deze code:
 
-        _ laadt de app-instellingen.
+        * De app-instellingen laden.
         * Roept directe methoden aan die worden weergegeven door de module Live Video Analytics in IoT Edge. U kunt de module gebruiken om live-videostreams te analyseren door de bijbehorende [directe methoden](../../../direct-methods.md) aan te roepen. 
         * Pauzeert, zodat u de uitvoer van het programma kunt controleren in het **TERMINAL**-venster en de gebeurtenissen die zijn gegenereerd door de module kunt controleren in het **UITVOER**-venster.
         * Roept directe methoden aan om resources op te schonen.

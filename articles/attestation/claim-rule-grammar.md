@@ -8,10 +8,10 @@ ms.topic: overview
 ms.date: 08/31/2020
 ms.author: mbaldwin
 ms.openlocfilehash: 3ed5c3f8232047787c6f05628f1eef35a7533999
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91285415"
 ---
 # <a name="claim-and-claim-rules"></a>Claim en claimregels
@@ -92,7 +92,7 @@ Hieronder wordt de set acties beschreven die in een beleid zijn toegestaan.
 
 | Actiewerkwoord | Beschrijving | Beleidssecties waarop deze van toepassing zijn |
 |--|--|--|
-| permit() | De binnenkomende claimset kan worden gebruikt om **issuancerules**te berekenen. Gebruikt geen claim als parameter | **authorizationrules** |
+| permit() | De binnenkomende claimset kan worden gebruikt om **issuancerules** te berekenen. Gebruikt geen claim als parameter | **authorizationrules** |
 | deny() | De binnenkomende claimset mag niet worden gebruikt voor het berekenen van **issuancerules**. Gebruikt geen claim als parameter | **authorizationrules** |
 | add(claim) | Voegt de claim toe aan de binnenkomende claimset. Elke claim die wordt toegevoegd aan de binnenkomende claimset is beschikbaar voor de volgende claimregels. |**authorizationrules**, **issuancerules** |
 | issue(claim) | Voegt de claim toe aan de inkomende en uitgaande claimset | **issuancerules** |

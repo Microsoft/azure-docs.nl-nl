@@ -6,10 +6,10 @@ ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 05/08/2020
 ms.openlocfilehash: 667226770d25ef1687420b1c13bc71863f987e33
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91324685"
 ---
 # <a name="migrate-to-v3-authoring-entity"></a>Migreren naar v3-ontwerp entiteit
@@ -45,7 +45,7 @@ Wanneer u migreert, moet u rekening houden met het volgende in uw migratie plan:
 * Huidige metrische voor spelling slagen vastleggen
 * Huidige dashboard gegevens vastleggen als moment opname van de app-status
 * Bestaande intenties, entiteiten, woordgroepen lijsten, patronen en batch tests controleren
-* De volgende elementen kunnen **zonder wijziging**worden gemigreerd:
+* De volgende elementen kunnen **zonder wijziging** worden gemigreerd:
     * Intents
     * Entiteiten
         * Een entiteit in de vorm van een reguliere expressie
@@ -71,8 +71,8 @@ In de volgende tabel ziet u welke entiteiten moeten worden gemigreerd van een v2
 
 |V2-entiteits type voor ontwerpen|Type v3-ontwerp entiteit|Voorbeeld|
 |--|--|--|
-|Samengestelde entiteit|Door machine geleerde entiteit|[Meer informatie](#migrate-v2-composite-entity)|
-|Hiërarchische entiteit|rol van machine leer entiteit|[Meer informatie](#migrate-v2-hierarchical-entity)|
+|Samengestelde entiteit|Door machine geleerde entiteit|[meer informatie](#migrate-v2-composite-entity)|
+|Hiërarchische entiteit|rol van machine leer entiteit|[meer informatie](#migrate-v2-hierarchical-entity)|
 
 ## <a name="migrate-v2-composite-entity"></a>V2 samengestelde entiteit migreren
 
@@ -149,7 +149,7 @@ Deze wijziging is aangebracht in mei 2020 bij de build-conferentie en is alleen 
 
 #### <a name="automatic-migration"></a>Automatische migratie
 
-Vanaf **19 2020 juni**kunt u geen beperkingen maken met behulp van de vorige ontwerp-API die deze functionaliteit beschikbaar maakt.
+Vanaf **19 2020 juni** kunt u geen beperkingen maken met behulp van de vorige ontwerp-API die deze functionaliteit beschikbaar maakt.
 
 Alle bestaande beperkings functies worden automatisch gemigreerd naar de vereiste functie vlag. Er zijn geen programmatische wijzigingen vereist voor uw Voorspellings-API en er is geen gevolg van een wijziging in de kwaliteit van de nauw keurigheid van de voor spelling.
 

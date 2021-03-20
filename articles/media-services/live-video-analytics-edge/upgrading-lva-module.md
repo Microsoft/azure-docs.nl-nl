@@ -6,10 +6,10 @@ ms.topic: how-to
 ms.author: naiteeks
 ms.date: 12/14/2020
 ms.openlocfilehash: 49c17946203bc6c3655b1aaf7b04a1ee3ea67388
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98955646"
 ---
 # <a name="upgrading-live-video-analytics-on-iot-edge-from-10-to-20"></a>Live video Analytics bijwerken op IoT Edge van 1,0 naar 2,0
@@ -19,7 +19,7 @@ In dit artikel worden de verschillen beschreven en de verschillende zaken die u 
 ## <a name="change-list"></a>Lijst wijzigen
 
 > [!div class="mx-tdCol4BreakAll"]
-> |Titel|Live video Analytics 1,0|Live video Analytics 2,0|Description|
+> |Titel|Live video Analytics 1,0|Live video Analytics 2,0|Beschrijving|
 > |-------------|----------|---------|---------|
 > |Container installatie kopie|mcr.microsoft.com/media/live-video-analytics:1|mcr.microsoft.com/media/live-video-analytics:2|Micro soft heeft docker-installatie kopieën gepubliceerd voor live video Analytics op Azure IoT Edge|
 > |**MediaGraph-knoop punten** |    |   |   |

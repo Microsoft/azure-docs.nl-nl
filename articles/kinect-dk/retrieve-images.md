@@ -8,10 +8,10 @@ ms.date: 06/26/2019
 ms.topic: conceptual
 keywords: kinect, azure, ophalen, sensor, camera, SDK, diepte, RGB, afbeeldingen, kleur, vastleg ging, oplossing, buffer
 ms.openlocfilehash: fed5c7340d287d9103ba35f0fd3d80c0fff6e3ec
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87538911"
 ---
 # <a name="retrieve-azure-kinect-image-data"></a>Azure Kinect-installatie kopie gegevens ophalen

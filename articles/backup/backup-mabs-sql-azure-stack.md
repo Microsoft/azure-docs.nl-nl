@@ -4,10 +4,10 @@ description: In dit artikel vindt u informatie over het configureren van Microso
 ms.topic: conceptual
 ms.date: 06/08/2018
 ms.openlocfilehash: 80de7913b010fca69c3703e423109f2ede653590
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91332811"
 ---
 # <a name="back-up-sql-server-on-azure-stack"></a>Back-up maken van SQL Server op Azure Stack
@@ -70,7 +70,7 @@ Het beheer van SQL Server database back-up naar Azure en het herstel van Azure b
 
     ![SQL-data base selecteren](./media/backup-azure-backup-sql/pg-databases.png)
 
-    Alle geselecteerde items worden weer gegeven in de lijst geselecteerde leden. Selecteer **volgende**na het selecteren van de servers of data bases die u wilt beveiligen.
+    Alle geselecteerde items worden weer gegeven in de lijst geselecteerde leden. Selecteer **volgende** na het selecteren van de servers of data bases die u wilt beveiligen.
 
 5. Geef in het scherm **methode voor gegevens beveiliging selecteren** een naam op voor de beveiligings groep en schakel het selectie vakje **Ik wil online beveiliging** in.
 
@@ -89,7 +89,7 @@ Het beheer van SQL Server database back-up naar Azure en het herstel van Azure b
 
 7. Controleer op het scherm **schijf toewijzing controleren** de totale beschik bare opslag ruimte en de mogelijke schijf ruimte. Selecteer **Next**.
 
-8. Kies in de methode voor het maken van een **replica kiezen**hoe u uw eerste herstel punt maakt. U kunt de eerste back-up hand matig overdragen (uit het netwerk) om te voor komen dat er band breedte overbelast of via het netwerk. Als u wilt wachten op het overdragen van de eerste back-up, kunt u de tijd voor de eerste overdracht opgeven. Selecteer **Next**.
+8. Kies in de methode voor het maken van een **replica kiezen** hoe u uw eerste herstel punt maakt. U kunt de eerste back-up hand matig overdragen (uit het netwerk) om te voor komen dat er band breedte overbelast of via het netwerk. Als u wilt wachten op het overdragen van de eerste back-up, kunt u de tijd voor de eerste overdracht opgeven. Selecteer **Next**.
 
     ![Methode van initiële replicatie](./media/backup-azure-backup-sql/pg-manual.png)
 
@@ -124,7 +124,7 @@ Het beheer van SQL Server database back-up naar Azure en het herstel van Azure b
 
     ![Bewaarbeleid](./media/backup-azure-backup-sql/pg-retentionschedule.png)
 
-    In dit voorbeeld geldt het volgende:
+    In dit voorbeeld:
 
     * Back-ups worden eenmaal per dag om 12:00 uur en 8 uur (onderste deel van het scherm) gemaakt en blijven 180 dagen bewaard.
     * De back-up op zaterdag om 12:00 uur wordt 104 weken bewaard
@@ -148,7 +148,7 @@ Terwijl de vorige stappen een back-upbeleid hebben gemaakt, wordt er alleen een 
     ![Online herstel punt maken](./media/backup-azure-backup-sql/sqlbackup-createrp.png)
 3. Kies **online beveiliging** in de vervolg keuzelijst en selecteer **OK** om te beginnen met het maken van een herstel punt in Azure.
 
-    ![Herstelpunt maken](./media/backup-azure-backup-sql/sqlbackup-azure.png)
+    ![Herstel punt maken](./media/backup-azure-backup-sql/sqlbackup-azure.png)
 4. Bekijk de voortgang van de taak in de werk ruimte **bewaking** .
 
     ![Bewakings console](./media/backup-azure-backup-sql/sqlbackup-monitoring.png)

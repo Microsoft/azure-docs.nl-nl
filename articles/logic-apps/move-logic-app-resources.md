@@ -7,10 +7,10 @@ ms.reviewer: logicappspm
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.openlocfilehash: aca2c51ff14b99ba41b159cf32e59dc861de7a53
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87826208"
 ---
 # <a name="move-logic-app-resources-to-other-azure-resource-groups-regions-or-subscriptions"></a>Logische app-resources verplaatsen naar andere Azure-resource groepen,-regio's of-abonnementen
@@ -61,7 +61,7 @@ Voordat u resources tussen groepen verplaatst, kunt u testen of u uw resource ku
 
 1. Zoek in het [Azure Portal](https://portal.azure.com)de logische app-resource die u wilt verplaatsen en selecteer deze.
 
-1. Selecteer op de **overzichts** pagina van de resource naast **resource groep**de **wijzigings** koppeling.
+1. Selecteer op de **overzichts** pagina van de resource naast **resource groep** de **wijzigings** koppeling.
 
 1. Selecteer op de pagina **resources verplaatsen** de logische app-resource en eventuele gerelateerde resources die u wilt verplaatsen.
 
@@ -102,9 +102,9 @@ De sjabloon die u in Visual Studio krijgt, bevat alleen de resource definities v
 
 1. Zoek en open uw integratie account in de [Azure Portal](https://portal.azure.com).
 
-1. Selecteer in het menu van het integratie account onder **instellingen**de optie **sjabloon exporteren**.
+1. Selecteer in het menu van het integratie account onder **instellingen** de optie **sjabloon exporteren**.
 
-1. Selecteer op de werk balk de optie **downloaden**en sla de sjabloon op.
+1. Selecteer op de werk balk de optie **downloaden** en sla de sjabloon op.
 
 1. Open en bewerk de sjabloon om de vereiste waarden voor de implementatie te para meters.
 

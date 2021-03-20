@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 06/28/2018
 ms.author: tomfitz
 ms.openlocfilehash: 711f5293b205c1f500c6d9e08154342285ef959b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87033195"
 ---
 # <a name="microsoftnetworkvirtualnetworkcombo-ui-element"></a>Gebruikers interface-element van micro soft. Network. VirtualNetworkCombo
@@ -112,7 +112,7 @@ Wanneer de gebruiker een bestaand virtueel netwerk kiest, moet de gebruiker elk 
 - Wanneer u een nieuw virtueel netwerk maakt, wordt het adres voorvoegsel van elk subnet automatisch berekend op basis van het adres voorvoegsel van het virtuele netwerk en de respectieve `addressPrefixSize` .
 - Wanneer u een bestaand virtueel netwerk gebruikt, zijn alle subnetten die kleiner zijn dan de respectieve, `constraints.minAddressPrefixSize` niet beschikbaar voor selectie. Bovendien, indien opgegeven, subnetten die geen mini maal `minAddressCount` beschik bare adressen hebben, zijn niet beschikbaar voor selectie. De standaard waarde is **0**. Geef **waar** op als u wilt dat de beschik bare adressen aaneengesloten zijn `requireContiguousAddresses` . De standaard waarde is **True**.
 - Het maken van subnetten in een bestaand virtueel netwerk wordt niet ondersteund.
-- Als `options.hideExisting` de **waarde True**is, kan de gebruiker geen bestaand virtueel netwerk kiezen. De standaardwaarde is **onwaar**.
+- Als `options.hideExisting` de **waarde True** is, kan de gebruiker geen bestaand virtueel netwerk kiezen. De standaardwaarde is **onwaar**.
 
 ## <a name="next-steps"></a>Volgende stappen
 

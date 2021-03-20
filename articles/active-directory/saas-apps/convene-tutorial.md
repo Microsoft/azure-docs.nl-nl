@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 10/22/2019
 ms.author: jeedes
 ms.openlocfilehash: f48c83f01612a907c459419cb4dfbb278ec06fa5
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92455235"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-convene"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met Convene
@@ -109,9 +109,9 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
@@ -137,7 +137,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
 ## <a name="configure-convene-sso"></a>Eenmalige aanmelding voor Convene configureren
 
-Als u eenmalige aanmelding aan de **Convene** -zijde wilt configureren, moet u het gedownloade **Certificaat (Base64)** en de correct van de Azure-portal gekopieerde URL's naar het [Convene-ondersteuningsteam](mailto:support@convene.me.uk) verzenden. Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding aan de **Convene**-zijde wilt configureren, moet u het gedownloade **Certificaat (Base64)** en de correct van de Azure-portal gekopieerde URL's naar het [Convene-ondersteuningsteam](mailto:support@convene.me.uk) verzenden. Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-convene-test-user"></a>Testgebruiker voor Convene maken
 

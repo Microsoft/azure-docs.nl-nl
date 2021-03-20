@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 05/28/2020
 ms.author: jeedes
 ms.openlocfilehash: b813f1f77b7bda2627f5275e772a3ee7c9d12834
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92454351"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-easysso-for-jira"></a>Zelfstudie: Integratie van eenmalige aanmelding bij Azure Active Directory met EasySSO voor Jira
@@ -48,16 +48,16 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 Om de integratie van EasySSO voor Jira in Azure AD te configureren, moet u EasySSO voor Jira uit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
 1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory** .
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
-1. Typ in de sectie **Toevoegen uit de galerie** in het zoekvak: **EasySSO voor Jira** .
+1. Typ in de sectie **Toevoegen uit de galerie** in het zoekvak: **EasySSO voor Jira**.
 1. Selecteer **EasySSO voor Jira** in het resultatenvenster, en voeg de app vervolgens toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
 
 ## <a name="configure-and-test-azure-ad-single-sign-on-for-easysso-for-jira"></a>Eenmalige aanmelding van Azure AD configureren en testen voor EasySSO voor Jira
 
-Configureer en test eenmalige aanmelding van Azure AD met EasySSO voor Jira met behulp van een testgebruiker met de naam **B.Simon** . Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in EasySSO voor Jira.
+Configureer en test eenmalige aanmelding van Azure AD met EasySSO voor Jira met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in EasySSO voor Jira.
 
 Voltooi de volgende bouwstenen om eenmalige aanmelding van Azure AD met EasySSO voor Jira te configureren en te testen:
 
@@ -72,8 +72,8 @@ Voltooi de volgende bouwstenen om eenmalige aanmelding van Azure AD met EasySSO 
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in de Azure-portal.
 
-1. Zoek in de [Azure-portal](https://portal.azure.com/) op de integratiepagina van de toepassing **EasySSO voor Jira** de sectie **Beheren** en selecteer **Eenmalige aanmelding** .
-1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding** .
+1. Zoek in de [Azure-portal](https://portal.azure.com/) op de integratiepagina van de toepassing **EasySSO voor Jira** de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
@@ -105,7 +105,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in de Azu
     | urn:oid:2.5.4.4 | user.surname |
     | urn:oid:2.5.4.42 | user.givenname |
     
-    Als uw Azure AD-gebruikers **sAMAccountName** hebben geconfigureerd, moet u **urn:oid:0.9.2342.19200300.100.1.1** aan het **sAMAccountName** -kenmerk toewijzen.
+    Als uw Azure AD-gebruikers **sAMAccountName** hebben geconfigureerd, moet u **urn:oid:0.9.2342.19200300.100.1.1** aan het **sAMAccountName**-kenmerk toewijzen.
     
 1. Op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** klikt u op de koppeling **Downloaden** voor de optie **Certificaat (Base64)** of **Federation Metadata XML** en slaat u een optie of allebei op uw computer op. U hebt deze later nodig om Jira EasySSO te configureren.
 
@@ -117,43 +117,43 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in de Azu
     
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
-   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord** .
-   1. Klik op **Create** .
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot EasySSO voor Jira.
 
-1. Selecteer in de Azure-portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in de Azure-portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **EasySSO voor Jira** in de lijst met toepassingen.
-1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen** .
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
 
    ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
 
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
 1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-easysso-for-jira-sso"></a>Eenmalige aanmelding bij EasySSO voor Jira configureren
 
-1. Meld u bij uw Atlassian Jira-exemplaar aan met beheerdersmachtigingen en navigeer naar de sectie **Apps beheren** . 
+1. Meld u bij uw Atlassian Jira-exemplaar aan met beheerdersmachtigingen en navigeer naar de sectie **Apps beheren**. 
 
     ![Apps beheren](media/easysso-for-jira-tutorial/jira-admin-1.png)
 
-2. Klik links in het scherm op **EasySSO** .
+2. Klik links in het scherm op **EasySSO**.
 
     ![EasySSO](media/easysso-for-jira-tutorial/jira-admin-2.png)
 
-3. Selecteer de optie **SAML** . U wordt dan naar de sectie SAML-configuratie geleid.
+3. Selecteer de optie **SAML**. U wordt dan naar de sectie SAML-configuratie geleid.
 
     ![SAML](media/easysso-for-jira-tutorial/jira-admin-3.png)
 
@@ -161,7 +161,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
     ![Metagegevens-URL](media/easysso-for-jira-tutorial/jira-admin-4.png)
 
-5. Zoek nu **Certificaat (base64)** of het **metagegevensbestand** dat u hebt opgeslagen in de eerdere stappen van de configuratie voor **Azure AD SSO** . U hebt de volgende opties om verder te gaan:
+5. Zoek nu **Certificaat (base64)** of het **metagegevensbestand** dat u hebt opgeslagen in de eerdere stappen van de configuratie voor **Azure AD SSO**. U hebt de volgende opties om verder te gaan:
 
     a. Gebruik het **Metagegevensbestand** voor app-federatie dat u hebt gedownload naar het lokale bestand op uw computer. Selecteer het keuzerondje **Uploaden** en volg het specifieke dialoogvenster Bestand uploaden voor uw besturingssysteem.
 
@@ -171,7 +171,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
      **OF**
 
-    c. Volledig handmatige configuratie. Open het **Certificaat (Base64)** voor app-federatie om de inhoud van het bestand (in een eenvoudige teksteditor) te bekijken en kopieer deze naar het klembord. Plak de klembordinhoud in het tekstveld **Certificaten voor IdP-tokenondertekening** . Navigeer vervolgens naar het tabblad **Algemeen** en vul de velden **POST-binding-URL** en **Entiteits-id** met respectieve waarden voor **Aanmeldings-URL** en **Azure AD-id** die u eerder hebt opgeslagen.
+    c. Volledig handmatige configuratie. Open het **Certificaat (Base64)** voor app-federatie om de inhoud van het bestand (in een eenvoudige teksteditor) te bekijken en kopieer deze naar het klembord. Plak de klembordinhoud in het tekstveld **Certificaten voor IdP-tokenondertekening**. Navigeer vervolgens naar het tabblad **Algemeen** en vul de velden **POST-binding-URL** en **Entiteits-id** met respectieve waarden voor **Aanmeldings-URL** en **Azure AD-id** die u eerder hebt opgeslagen.
  
 6. Klik op de knop **Opslaan** onderaan de pagina. U ziet dat de inhoud van het bestand Metagegevens of Certificaat wordt geparseerd in de configuratievelden. De configuratie van EasySSO voor Jira is voltooid.
 
@@ -184,7 +184,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
 ### <a name="create-easysso-for-jira-test-user"></a>Testgebruiker voor EasySSO voor Jira maken
 
-In deze sectie wordt een gebruiker met de naam Britta Simon in Jira gemaakt. EasySSO voor Jira ondersteunt het Just-In-Time inrichten van gebruikers, wat standaard is **uitgeschakeld** . Als u het inrichten van gebruikers wilt inschakelen, moet u de optie **Gebruiker maken na geslaagde aanmelding** expliciet inschakelen in de sectie Algemeen van de configuratie van de EasySSO-invoegtoepassing. Als er nog geen gebruiker in Jira bestaat, wordt er een nieuwe gemaakt nadat deze is geverifieerd.
+In deze sectie wordt een gebruiker met de naam Britta Simon in Jira gemaakt. EasySSO voor Jira ondersteunt het Just-In-Time inrichten van gebruikers, wat standaard is **uitgeschakeld**. Als u het inrichten van gebruikers wilt inschakelen, moet u de optie **Gebruiker maken na geslaagde aanmelding** expliciet inschakelen in de sectie Algemeen van de configuratie van de EasySSO-invoegtoepassing. Als er nog geen gebruiker in Jira bestaat, wordt er een nieuwe gemaakt nadat deze is geverifieerd.
 
 Als u het automatisch inrichten van gebruikers na hun eerste aanmelding echter niet wilt inschakelen, moeten gebruikers bestaan in back-end gebruikerslijsten waarvan het Jira-exemplaar gebruikmaakt, zoals LDAP of Atlassian Crowd.
 
@@ -200,7 +200,7 @@ Wanneer u op de tegel EasySSO voor Jira in het toegangsvenster klikt, wordt u au
 
 ### <a name="sp-initiated-workflow"></a>Door SP geïnitieerde werkstroom
 
-In deze sectie gaat u uw configuratie van de eenmalige aanmelding voor Azure AD testen met behulp van de knop **SAML-aanmelding** .
+In deze sectie gaat u uw configuratie van de eenmalige aanmelding voor Azure AD testen met behulp van de knop **SAML-aanmelding**.
 
 ![SAML-aanmelding door gebruiker](media/easysso-for-jira-tutorial/jira-admin-7.png)
 
@@ -210,7 +210,7 @@ Mogelijk ziet u het volgende scherm nadat u bent omgeleid vanuit Azure AD
 
 ![EasySSO-foutvenster](media/easysso-for-jira-tutorial/jira-admin-8.png)
 
-In dit geval volgt u de [instructies op deze pagina]( https://techtime.co.nz/display/TECHTIME/EasySSO+How+to+get+the+logs#EasySSOHowtogetthelogs-RETRIEVINGTHELOGS) om toegang te krijgen tot het bestand **atlassian-jira.log** . Details van de fout zijn beschikbaar via de verwijzings-id op de foutpagina van EasySSO.
+In dit geval volgt u de [instructies op deze pagina]( https://techtime.co.nz/display/TECHTIME/EasySSO+How+to+get+the+logs#EasySSOHowtogetthelogs-RETRIEVINGTHELOGS) om toegang te krijgen tot het bestand **atlassian-jira.log**. Details van de fout zijn beschikbaar via de verwijzings-id op de foutpagina van EasySSO.
 
 Neem contact op met het [ondersteuningsteam van EasySSO](mailto:support@techtime.co.nz) als u geen samenvatting van de logboekberichten kunt weergeven.
 

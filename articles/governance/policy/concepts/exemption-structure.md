@@ -4,10 +4,10 @@ description: Beschrijft de beleids uitsluiting definitie die wordt gebruikt door
 ms.date: 09/22/2020
 ms.topic: conceptual
 ms.openlocfilehash: e6ced56c1dc65ca68998c5c58d3e985b63873e0b
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91950173"
 ---
 # <a name="azure-policy-exemption-structure"></a>Structuur van Azure Policy-uitzonde ring
@@ -20,7 +20,7 @@ De functie Azure Policy uitzonde ringen (preview) wordt gebruikt om een resource
 U gebruikt JSON om een beleids uitsluiting te maken. De beleids uitsluiting bevat elementen voor:
 
 - weergave naam
-- description
+- beschrijving
 - metagegevens
 - beleids toewijzing
 - beleids definities binnen een initiatief
@@ -88,7 +88,7 @@ U gebruikt **DisplayName** en **Beschrijving** om de beleids uitzondering te ide
 
 ## <a name="metadata"></a>Metagegevens
 
-Met de eigenschap **meta gegevens** kunt u een onderliggend element maken dat nodig is voor het opslaan van relevante informatie. In het bovenstaande voor beeld bevat de eigenschappen **requestedBy**, **approvedBy**, **approvedOn**en **ticketRef** klant waarden om informatie te geven over wie de uitzonde ring heeft aangevraagd, wie deze heeft goedgekeurd en wanneer en een intern tracking ticket voor de aanvraag. Deze eigenschappen van **meta gegevens** zijn voor beelden, maar ze zijn niet vereist en **meta gegevens** zijn niet beperkt tot deze onderliggende eigenschappen.
+Met de eigenschap **meta gegevens** kunt u een onderliggend element maken dat nodig is voor het opslaan van relevante informatie. In het bovenstaande voor beeld bevat de eigenschappen **requestedBy**, **approvedBy**, **approvedOn** en **ticketRef** klant waarden om informatie te geven over wie de uitzonde ring heeft aangevraagd, wie deze heeft goedgekeurd en wanneer en een intern tracking ticket voor de aanvraag. Deze eigenschappen van **meta gegevens** zijn voor beelden, maar ze zijn niet vereist en **meta gegevens** zijn niet beperkt tot deze onderliggende eigenschappen.
 
 ## <a name="policy-assignment-id"></a>Toewijzings-ID van beleid
 

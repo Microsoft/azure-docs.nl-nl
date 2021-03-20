@@ -9,10 +9,10 @@ ms.date: 04/24/2020
 ms.author: maquaran
 ms.custom: devx-track-dotnet
 ms.openlocfilehash: 24d6b475964e4bf7745495e9c41d0e89bb76f7e9
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93341277"
 ---
 # <a name="migrate-from-the-bulk-executor-library-to-the-bulk-support-in-azure-cosmos-db-net-v3-sdk"></a>Migreren van de bibliotheek voor bulk-uitvoering naar de bulk ondersteuning in Azure Cosmos DB .NET v3 SDK
@@ -83,7 +83,7 @@ De `BulkOperationResponse` bevat:
 
 ## <a name="retry-configuration"></a>Configuratie opnieuw proberen
 
-De bibliotheek voor bulksgewijs uitvoerder bevat [richt lijnen](bulk-executor-dot-net.md#bulk-import-data-to-an-azure-cosmos-account) voor het instellen `MaxRetryWaitTimeInSeconds` van de RetryOptions en om het `MaxRetryAttemptsOnThrottledRequests` [RetryOptions](/dotnet/api/microsoft.azure.documents.client.connectionpolicy.retryoptions) `0` beheer te delegeren aan de bibliotheek.
+De bibliotheek voor bulksgewijs uitvoerder bevat [richt lijnen](bulk-executor-dot-net.md#bulk-import-data-to-an-azure-cosmos-account) voor het instellen `MaxRetryWaitTimeInSeconds` van de RetryOptions en om het `MaxRetryAttemptsOnThrottledRequests` [](/dotnet/api/microsoft.azure.documents.client.connectionpolicy.retryoptions) `0` beheer te delegeren aan de bibliotheek.
 
 Voor bulk ondersteuning in de .NET SDK is er geen verborgen gedrag. U kunt de opties voor opnieuw proberen rechtstreeks configureren via [CosmosClientOptions. MaxRetryAttemptsOnRateLimitedRequests](/dotnet/api/microsoft.azure.cosmos.cosmosclientoptions.maxretryattemptsonratelimitedrequests) en [CosmosClientOptions. MaxRetryWaitTimeOnRateLimitedRequests](/dotnet/api/microsoft.azure.cosmos.cosmosclientoptions.maxretrywaittimeonratelimitedrequests).
 

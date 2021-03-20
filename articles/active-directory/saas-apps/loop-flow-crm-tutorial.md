@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 09/24/2020
 ms.author: jeedes
 ms.openlocfilehash: eccc10cc50bac2eb2dde0bf9f77ab1ba656d5eb8
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92458358"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-loop-flow-crm"></a>Zelfstudie: eenmalige aanmelding van Azure Active Directory integreren met Loop Flow CRM
@@ -68,7 +68,7 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure Active Directory 
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Ga in Azure Portal op de integratiepagina van de **Loop Flow CRM** -app naar de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Ga in Azure Portal op de integratiepagina van de **Loop Flow CRM**-app naar de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
@@ -87,16 +87,16 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
     > [!NOTE]
     > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke-id, de antwoord-URL en de aanmeldings-URL. Neem contact op met het [Loop Flow CRM-klantondersteuningsteam](mailto:support@loopworks.com) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
-1. Op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** klikt u op de kopieerknop om de **URL voor federatieve metagegevens van de app** te kopiëren en slaat u deze op uw computer op.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u in de sectie **SAML-handtekeningcertificaat** op de kopieerknop om de **URL voor federatieve metagegevens van de app** te kopiëren en slaat u deze op uw computer op.
 
     ![De link om het certificaat te downloaden](common/copy-metadataurl.png)
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.

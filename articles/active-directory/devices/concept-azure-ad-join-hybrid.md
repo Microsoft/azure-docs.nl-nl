@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 259a1324c412dad40d32a8b8e026d84e6f5aa066
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85554919"
 ---
 # <a name="hybrid-azure-ad-joined-devices"></a>Hybride Azure AD-gekoppelde apparaten
@@ -31,7 +31,7 @@ Als uw omgeving een on-premises AD-voetafdruk heeft en u ook wilt profiteren van
 
 | Hybride Azure AD-deelname | Beschrijving |
 | --- | --- |
-| **Definitie** | Lid van on-premises AD en Azure AD waarvoor een organisatie account is vereist om zich aan te melden bij het apparaat |
+| **Definition** | Lid van on-premises AD en Azure AD waarvoor een organisatie account is vereist om zich aan te melden bij het apparaat |
 | **Primaire doel groep** | Geschikt voor hybride organisaties met een bestaande on-premises AD-infra structuur |
 |   | Van toepassing op alle gebruikers in een organisatie |
 | **Apparaateigendom** | Organisatie |

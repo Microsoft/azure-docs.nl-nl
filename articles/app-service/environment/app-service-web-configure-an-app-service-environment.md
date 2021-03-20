@@ -8,10 +8,10 @@ ms.date: 07/11/2017
 ms.author: ccompy
 ms.custom: seodec18
 ms.openlocfilehash: 598e43d07c213cfeb25f0ecbc7bd02b6ec54b7ed
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88962584"
 ---
 # <a name="configuring-an-app-service-environment-v1"></a>Een App Service Environment v1 configureren
@@ -114,7 +114,7 @@ Met de grafieken kunt u diverse prestatie gegevens in elke resource groep bekijk
 
 Meerdere App Service-abonnementen kunnen gebruikmaken van de werk rollen in een werk groep. De werk belasting wordt niet op dezelfde manier gedistribueerd als bij de front-endservers, waardoor het CPU-en geheugen gebruik niet veel op de manier van nuttige informatie wordt geboden. Het is belang rijker om bij te houden hoeveel werk rollen u hebt gebruikt en beschikbaar is, met name als u dit systeem beheert zodat anderen het kunnen gebruiken.  
 
-U kunt ook alle metrische gegevens die in de grafieken kunnen worden bijgehouden, gebruiken om waarschuwingen in te stellen. Het instellen van waarschuwingen is hetzelfde als elders in App Service. U kunt een waarschuwing instellen vanuit het onderdeel **waarschuwingen** van de gebruikers interface of van inzoomen in een metrische gebruikers interface en een **waarschuwing toevoegen**selecteren.
+U kunt ook alle metrische gegevens die in de grafieken kunnen worden bijgehouden, gebruiken om waarschuwingen in te stellen. Het instellen van waarschuwingen is hetzelfde als elders in App Service. U kunt een waarschuwing instellen vanuit het onderdeel **waarschuwingen** van de gebruikers interface of van inzoomen in een metrische gebruikers interface en een **waarschuwing toevoegen** selecteren.
 
 ![Gebruikers interface voor metrische gegevens][3]
 
@@ -147,14 +147,14 @@ Er zijn drie schaal bewerkingen:
 In de portal zijn er drie manieren om te bepalen hoeveel servers u in uw resource groepen hebt:
 
 * Een schaal bewerking vanuit de hoofd-ASE-Blade bovenaan. U kunt meerdere schaal configuratie wijzigingen aanbrengen in de front-end-en worker-groepen. Ze worden allemaal toegepast als één bewerking.
-* Een hand matige schaal bewerking vanaf de Blade van de afzonderlijke resource groep **schaal** , die onder **instellingen**valt.
+* Een hand matige schaal bewerking vanaf de Blade van de afzonderlijke resource groep **schaal** , die onder **instellingen** valt.
 * Automatisch schalen, dat u instelt op de Blade **schaal** van de afzonderlijke resource groep.
 
 Als u de schaal bewerking op de Blade ASE wilt gebruiken, sleept u de schuif regelaar naar de gewenste hoeveelheid en slaat u deze op. Deze gebruikers interface biedt ook ondersteuning voor het wijzigen van de grootte.  
 
 ![Gebruikers interface schalen][6]
 
-Als u de mogelijkheden hand matig of automatisch schalen in een specifieke resource groep wilt gebruiken, gaat u naar de gewenste **instellingen**van de  >  **front-end groep**  /  **werk groepen** . Open vervolgens de groep die u wilt wijzigen. Ga naar **instellingen**  >  **uitschalen** of **instellingen**  >  **Omhoog schalen**. Met de Blade **uitschalen** kunt u de hoeveelheid van het exemplaar bepalen. U kunt de resource grootte bepalen door **omhoog te schalen** .  
+Als u de mogelijkheden hand matig of automatisch schalen in een specifieke resource groep wilt gebruiken, gaat u naar de gewenste **instellingen** van de  >  **front-end groep**  /  **werk groepen** . Open vervolgens de groep die u wilt wijzigen. Ga naar **instellingen**  >  **uitschalen** of **instellingen**  >  **Omhoog schalen**. Met de Blade **uitschalen** kunt u de hoeveelheid van het exemplaar bepalen. U kunt de resource grootte bepalen door **omhoog te schalen** .  
 
 ![Gebruikers interface voor schaal instellingen][7]
 

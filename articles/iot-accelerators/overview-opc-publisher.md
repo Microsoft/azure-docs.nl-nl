@@ -12,10 +12,10 @@ ms.custom:
 - amqp
 - mqtt
 ms.openlocfilehash: 49ca12ed4f408e2a3fce1c8e59f541778f35311e
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91281776"
 ---
 # <a name="what-is-opc-publisher"></a>Wat is OPC Publisher?

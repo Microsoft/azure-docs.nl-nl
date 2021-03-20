@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/27/2021
 ms.openlocfilehash: b5ae38a3dc4a9324a4141314106d67c96c06c8e6
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98955034"
 ---
 # <a name="java-code-samples-for-azure-cognitive-search"></a>Java-code voorbeelden voor Azure Cognitive Search
@@ -30,7 +30,7 @@ Meer informatie over de Java-code voorbeelden die de functionaliteit en werk str
 
 Code voorbeelden uit het ontwikkel team van Azure SDK illustreren het gebruik van de API. U kunt deze voor beelden vinden in [**Azure/Azure-SDK-voor-Java/tree/master/SDK/Search/Azure-Search-documenten/src/samples**](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/search/azure-search-documents/src/samples) op github.
 
-| Voorbeelden | Description |
+| Voorbeelden | Beschrijving |
 |---------|-------------|
 | [Zoek index maken](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/search/azure-search-documents/src/samples/java/com/azure/search/documents/indexes/CreateIndexExample.java) | Laat zien hoe u [zoek indexen](search-what-is-an-index.md)maakt. |
 | [Synoniemen maken](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/search/azure-search-documents/src/samples/java/com/azure/search/documents/SynonymMapsCreateExample.java) | Laat zien hoe u [synoniemen kaarten](search-synonyms.md)maakt.  |
@@ -55,7 +55,7 @@ Code voorbeelden van het Cognitive Search team illustreren de functies en werk s
 
 De volgende voor beelden worden ook gepubliceerd door het Cognitive Search-team, maar er wordt niet naar verwezen in de documentatie. Gekoppelde Leesmij-bestanden bieden gebruiks instructies.
 
-| Voorbeelden | Description |
+| Voorbeelden | Beschrijving |
 |---------|-------------|
 | [zoeken-Java-aan de slag](https://github.com/Azure-Samples/azure-search-java-samples/tree/master/search-java-getting-started) | Maakt gebruik van de Java SDK-client bibliotheek om een zoek index te maken, te laden en op te vragen. Dit voor beeld is momenteel zelfstandig. |
 | [Search-java-indexer-demo](https://github.com/Azure-Samples/azure-search-java-samples/tree/java-rest-api/search-java-indexer-demo) | Toont een Azure Cosmos DB Indexeer functie in Java. Dit voor beeld is niet bijgewerkt voor de Java-SDK. Het aanroepen van de REST-Api's.|

@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 08/20/2020
 ms.author: jeedes
 ms.openlocfilehash: b9bf27ccb390ee41306215a90fccb01747077837
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92454232"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-edx-for-business-saml-integration"></a>Zelfstudie: Integratie van eenmalige aanmelding bij Azure Active Directory met edX for Business SAML Integration
@@ -51,16 +51,16 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 Voor het configureren van de integratie van edX for Business SAML Integration in Azure AD moet u edX for Business SAML Integration vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
 1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory** .
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
-1. Typ **edX for Business SAML Integration** in het zoekvak in het gedeelte **Toevoegen uit de galerie** .
+1. Typ **edX for Business SAML Integration** in het zoekvak in het gedeelte **Toevoegen uit de galerie**.
 1. Selecteer **edX for Business SAML Integration** in de zoekresultaten en voeg de app vervolgens toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
 
 ## <a name="configure-and-test-azure-ad-sso-for-edx-for-business-saml-integration"></a>Eenmalige aanmelding van Azure AD configureren en testen voor edX for Business SAML Integration
 
-Configureer en test Azure AD-eenmalige aanmelding met edX for Business SAML Integration met behulp van een testgebruiker met de naam **B.Simon** . Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in edX for Business SAML Integration.
+Configureer en test Azure AD-eenmalige aanmelding met edX for Business SAML Integration met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in edX for Business SAML Integration.
 
 Voltooi de volgende procedures om eenmalige aanmelding van Azure AD met edX for Business SAML Integration te configureren en te testen:
 
@@ -75,8 +75,8 @@ Voltooi de volgende procedures om eenmalige aanmelding van Azure AD met edX for 
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Zoek in de [Azure-portal](https://portal.azure.com/) op de integratiepagina van de toepassing **edX for Business SAML Integration** de sectie **Beheren** en selecteer **Eenmalige aanmelding** .
-1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding** .
+1. Zoek in de [Azure-portal](https://portal.azure.com/) op de integratiepagina van de toepassing **edX for Business SAML Integration** de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
@@ -105,35 +105,35 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
-   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord** .
-   1. Klik op **Create** .
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot edX for Business SAML Integration.
 
-1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **edX for Business SAML Integration** in de lijst met toepassingen.
-1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen** .
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
 
    ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
 
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
 1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-edx-for-business-saml-integration-sso"></a>Eenmalige aanmelding configureren in edX for Business SAML Integration
 
-Als u eenmalige aanmelding wilt configureren in **edX for Business SAML Integration** , moet u de URL uit het vak **App-URL voor federatieve metagegevens** verzenden naar het [ondersteuningsteam van edX for Business SAML Integration](mailto:api-support@edx.org). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding wilt configureren in **edX for Business SAML Integration**, moet u de URL uit het vak **App-URL voor federatieve metagegevens** verzenden naar het [ondersteuningsteam van edX for Business SAML Integration](mailto:api-support@edx.org). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-edx-for-business-saml-integration-test-user"></a>Testgebruiker maken voor edX for Business SAML Integration
 

@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 05/22/2020
 ms.author: jeedes
 ms.openlocfilehash: 234e8586dd5e250525b37e45def249ee7ec4e8a0
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92457942"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-anyone-home-crm"></a>Zelfstudie: Integratie van een eenmalige aanmelding (SSO) van Azure Active Directory met Anyone Home CRM
@@ -71,7 +71,7 @@ Voltooi de volgende stappen om een eenmalige aanmelding van Azure AD met Anyone 
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Zoek in de [Azure-portal](https://portal.azure.com/) op de integratiepagina van de **Anyone Home CRM** -toepassing de sectie **Beheren** en selecteer **eenmalige aanmelding**.
+1. Zoek in de [Azure-portal](https://portal.azure.com/) op de integratiepagina van de **Anyone Home CRM**-toepassing de sectie **Beheren** en selecteer **eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
@@ -81,7 +81,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
     a. In het tekstvak **Id** typt u een URL met het volgende patroon: `https://app.anyonehome.com/webroot/files/simplesamlphp/www/module.php/saml/sp/metadata.php/<Anyone_Home_Provided_Unique_Value>`
 
-    b. In het tekstvak **Antwoord-URL** typt u een URL met het volgende patroon: `https://app.anyonehome.com/webroot/files/simplesamlphp/www/module.php/saml/sp/saml2-acs.php/<Anyone_Home_Provided_Unique_Value>`
+    b. In het tekstvak **Antwoord-URL** typt u een URL met de volgende notatie: `https://app.anyonehome.com/webroot/files/simplesamlphp/www/module.php/saml/sp/saml2-acs.php/<Anyone_Home_Provided_Unique_Value>`
 
     > [!NOTE]
     > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke id en antwoord-URL. Neem voor deze waarden contact op met het [clientondersteuningsteam van Anyone Home CRM](mailto:support@anyonehome.com). U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
@@ -94,9 +94,9 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
@@ -122,7 +122,7 @@ In deze sectie geeft u B. Simon toestemming om eenmalige aanmelding van Azure te
 
 ## <a name="configure-anyone-home-crm-sso"></a>Eenmalige aanmelding Anyone Home CRM configureren
 
-Als u de eenmalige aanmelding aan de **Anyone Home CRM** -zijde wilt configureren, moet u de **App-URL voor federatieve metagegevens** verzenden naar het [ondersteuningsteam van Anyone Home CRM](mailto:support@anyonehome.com). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u de eenmalige aanmelding aan de **Anyone Home CRM**-zijde wilt configureren, moet u de **App-URL voor federatieve metagegevens** verzenden naar het [ondersteuningsteam van Anyone Home CRM](mailto:support@anyonehome.com). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-anyone-home-crm-test-user"></a>Een testgebruiker voor Anyone Home CRM aanmaken
 

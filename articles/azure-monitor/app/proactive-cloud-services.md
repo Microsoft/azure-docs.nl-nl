@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 06/07/2018
 ms.reviewer: harelbr
 ms.openlocfilehash: 1cdfc6dc3ac74997743512ee07f9293699e3ad10
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87309287"
 ---
 # <a name="alert-on-issues-in-azure-cloud-services-using-the-azure-diagnostics-integration-with-azure-application-insights"></a>Waarschuwen voor problemen in azure Cloud Services met behulp van de Azure Diagnostics-integratie met Azure-toepassing Insights
@@ -80,22 +80,22 @@ EventLogs
 
 ## <a name="create-an-alert"></a>Een waarschuwing maken
 
-Ga in het navigatie menu binnen uw Application Insights resource naar **waarschuwingen**en selecteer **nieuwe waarschuwings regel**.
+Ga in het navigatie menu binnen uw Application Insights resource naar **waarschuwingen** en selecteer **nieuwe waarschuwings regel**.
 
 ![Scherm opname van regel maken](./media/proactive-cloud-services/001.png)
 
-Klik in het venster **regel maken** , onder de sectie **waarschuwings voorwaarde definiëren** , op **criteria toevoegen**en selecteer vervolgens **aangepaste logboeken zoeken**.
+Klik in het venster **regel maken** , onder de sectie **waarschuwings voorwaarde definiëren** , op **criteria toevoegen** en selecteer vervolgens **aangepaste logboeken zoeken**.
 
 ![Scherm afbeelding van criteria voor voor waarden definiëren voor een waarschuwing](./media/proactive-cloud-services/002.png)
 
 Plak in het vak **Zoek opdracht** de gecombineerde query die u in de vorige stap hebt voor bereid.
 
-Ga vervolgens door naar het vak **drempel** en stel de waarde in op 0. U kunt de **velden**voor de **periode** en de frequentie eventueel aanpassen.
+Ga vervolgens door naar het vak **drempel** en stel de waarde in op 0. U kunt de **velden** voor de **periode** en de frequentie eventueel aanpassen.
 Klik op **Gereed**.
 
 ![Scherm opname van de logische query voor het configureren van signalen](./media/proactive-cloud-services/003.png)
 
-Geef in de sectie **waarschuwings Details definiëren** een **naam** en **Beschrijving** op voor de waarschuwings regel en stel de **Ernst**in.
+Geef in de sectie **waarschuwings Details definiëren** een **naam** en **Beschrijving** op voor de waarschuwings regel en stel de **Ernst** in.
 Zorg er ook voor dat de knop **regel inschakelen bij maken** is ingesteld op **Ja**.
 
 ![Details van scherm afbeeldings waarschuwing](./media/proactive-cloud-services/004.png)

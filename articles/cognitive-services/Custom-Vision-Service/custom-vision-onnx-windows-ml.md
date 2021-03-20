@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 04/29/2020
 ms.author: pafarley
 ms.openlocfilehash: 58ced0c45d66223ac3e40112126e92a4539db32d
-ms.sourcegitcommit: 9706bee6962f673f14c2dc9366fde59012549649
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94616073"
 ---
 # <a name="use-an-onnx-model-from-custom-vision-with-windows-ml-preview"></a>Een ONNX-model uit Custom Vision gebruiken met Windows ML (preview)
@@ -55,7 +55,7 @@ Als u uw eigen afbeeldings classificatie model wilt gebruiken, volgt u deze stap
 1. In Solution Explorer klikt u met de rechter muisknop op het ONNX-bestand en selecteert u **Eigenschappen**. Wijzig de volgende eigenschappen voor het bestand:
    * __Actie maken__  ->  __Inhoud__
    * __Naar uitvoermap kopiëren__  ->  __Kopiëren indien nieuwer__
-1. Open vervolgens _MainPage.xaml.cs_ en wijzig de waarde van `_ourOnnxFileName` in de naam van het ONNX-bestand.
+1. Open vervolgens _MainPage. xaml. cs_ en wijzig de waarde van `_ourOnnxFileName` in de naam van het ONNX-bestand.
 1. Gebruik de `F5` om het project te bouwen en uit te voeren.
 1. Klik op de knop om de afbeelding die u wilt evalueren te selecteren.
 

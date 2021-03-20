@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.openlocfilehash: ffee15776a48b6495f78b6becf81c620e1dc4d69
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91336306"
 ---
 # <a name="scheduled-maintenance-in-azure-database-for-postgresql--flexible-server"></a>Gepland onderhoud in Azure Database for PostgreSQL – Flexible server
@@ -30,7 +30,7 @@ Meldingen over gepland onderhoud kunnen het volgende zijn:
 * E-mail verzonden naar een Azure Resource Manager rol
 * Verzonden in een tekst bericht (SMS) naar mobiele apparaten
 * Gepusht als een melding naar een Azure-app
-* Bezorgd als een voicemail bericht
+* Bezorgd als een voicemail-bericht
  
 Wanneer u voorkeuren voor het onderhoudsschema opgeeft, kunt u een dag van de week en een tijdvenster kiezen. Als u geen voorkeuren opgeeft, kiest het systeem een tijd tussen 23:00 uur en 07:00 uur in de regiotijd van uw server. U kunt verschillende schema's definiëren voor elke flexibele server in uw Azure-abonnement. 
  

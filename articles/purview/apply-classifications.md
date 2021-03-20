@@ -8,10 +8,10 @@ ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/19/2020
 ms.openlocfilehash: d12a7d52562fe32126e12a844c2d36c14cf01431
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96553110"
 ---
 # <a name="apply-classifications-on-assets-in-azure-purview"></a>Classificaties Toep assen op assets in azure controle sfeer liggen
@@ -29,7 +29,7 @@ In dit document wordt uitgelegd hoe u classificaties toepast op uw gegevens.
 - Maak aangepaste classificaties op basis van uw behoeften.
 - Stel scan in voor uw gegevens bronnen.
 
-## <a name="apply-classifications"></a>Classificaties Toep assen
+## <a name="apply-classifications"></a>Classificaties toepassen
 U kunt in azure controle sfeer liggen systeem-of aangepaste classificaties Toep assen op een bestand, tabel of kolom element. In dit artikel worden de stappen beschreven voor het hand matig Toep assen van classificaties op uw activa.
 
 ### <a name="apply-classification-to-a-file-asset"></a>Classificatie Toep assen op een bestands Asset
@@ -49,7 +49,7 @@ Volg deze stappen om een aangepaste of systeem classificatie toe te voegen aan e
 
     :::image type="content" source="./media/apply-classifications/select-classifications.png" alt-text="Scherm opname waarin wordt getoond hoe classificaties moeten worden geselecteerd om aan een activum toe te voegen.":::
 
-1. Selecteer **Opslaan**.
+1. Selecteer **Opslaan**
 
 1. Controleer op het tabblad **overzicht** of de classificaties die u hebt geselecteerd, worden weer gegeven onder de sectie **classificaties** .
 
@@ -93,7 +93,7 @@ Een classificatie toevoegen aan een kolom:
 
     :::image type="content" source="./media/apply-classifications/add-classification-to-column.png" alt-text="Scherm opname waarin wordt getoond hoe een classificatie aan een kolom moet worden toegevoegd.":::
 
-1. Selecteer **Opslaan**.
+1. Selecteer **Opslaan**
 
 1. Selecteer het tabblad **schema** en controleer of de classificatie is toegevoegd aan de kolom.
 

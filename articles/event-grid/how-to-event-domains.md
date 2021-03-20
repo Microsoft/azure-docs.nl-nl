@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 07/07/2020
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: e6861e89def10eec391bf302b1ddc726b38bb98c
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97109892"
 ---
 # <a name="manage-topics-and-publish-events-using-event-domains"></a>Onderwerpen beheren en gebeurtenissen publiceren met behulp van gebeurtenis domeinen
@@ -26,7 +26,7 @@ Zie voor meer informatie over gebeurtenis domeinen [begrijpen gebeurtenis domein
 
 Als u grote sets met onderwerpen wilt beheren, maakt u een gebeurtenis domein.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azurecli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azurecli)
 
 ```azurecli-interactive
 az eventgrid domain create \
@@ -69,7 +69,7 @@ Het beheren van toegang tot onderwerpen geschiedt via [roltoewijzing](../role-ba
 
 Event Grid heeft twee ingebouwde rollen, die u kunt gebruiken om bepaalde gebruikers toegang te verlenen voor verschillende onderwerpen binnen een domein. Deze rollen zijn `EventGrid EventSubscription Contributor (Preview)` , waarmee u abonnementen kunt maken en verwijderen, en `EventGrid EventSubscription Reader (Preview)` waarmee u alleen gebeurtenis abonnementen kunt weer geven.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azurecli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azurecli)
 De volgende Azure CLI-opdracht beperkt het `alice@contoso.com` maken en verwijderen van gebeurtenis abonnementen alleen in het onderwerp `demotopic1` :
 
 ```azurecli-interactive
@@ -100,7 +100,7 @@ Abonneren op een onderwerp in een domein is hetzelfde als abonneren op een ander
 
 Normaal gesp roken maakt de gebruiker aan wie u toegang hebt verleend in de voor gaande sectie het abonnement. U kunt dit artikel vereenvoudigen door het abonnement te maken. 
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azurecli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azurecli)
 
 ```azurecli-interactive
 az eventgrid event-subscription create \
@@ -158,7 +158,7 @@ Het publiceren van gebeurtenissen naar een domein is hetzelfde als het [publicer
 }]
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azurecli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azurecli)
 Als u het domein eindpunt wilt ophalen met Azure CLI, gebruikt u
 
 ```azurecli-interactive

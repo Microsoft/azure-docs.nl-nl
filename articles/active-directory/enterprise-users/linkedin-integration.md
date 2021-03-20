@@ -14,10 +14,10 @@ ms.reviewer: beengen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5ffa937f91af7078b28331a655f99397d3821def
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96545890"
 ---
 # <a name="integrate-linkedin-account-connections-in-azure-active-directory"></a>LinkedIn-account verbindingen integreren in Azure Active Directory

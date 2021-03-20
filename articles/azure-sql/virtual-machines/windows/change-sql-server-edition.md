@@ -15,10 +15,10 @@ ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
 ms.openlocfilehash: b6ea6f947b2cd8d7d9c38a0e5e440ce5fd273bb7
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97358823"
 ---
 # <a name="in-place-change-of-sql-server-edition-on-azure-vm"></a>In-place wijziging van SQL Server-editie op Azure VM
@@ -78,7 +78,7 @@ Nadat de SQL Server-editie is gedowngraded, wijzigt u de eigenschap Edition van 
 
 Nadat u de editie van SQL Server hebt gewijzigd met behulp van de installatie media en u uw SQL Server VM hebt geregistreerd met de [SQL IaaS agent-extensie](sql-agent-extension-manually-register-single-vm.md), kunt u vervolgens de Azure Portal gebruiken om de eigenschap Edition van de SQL Server virtuele machine te wijzigen voor facturerings doeleinden. Voer hiervoor de volgende stappen uit: 
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). 
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). 
 1. Ga naar uw SQL Server virtuele machine bron. 
 1. Selecteer **configureren** onder **instellingen**. Selecteer vervolgens de gewenste versie van SQL Server in de vervolg keuzelijst onder **editie**. 
 

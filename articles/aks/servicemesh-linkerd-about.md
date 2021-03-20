@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 10/09/2019
 ms.author: pabouwer
 ms.openlocfilehash: 3181be62a14ec1b3450bd181172b5323ca176427
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "77593764"
 ---
 # <a name="linkerd"></a>Linkerd
@@ -44,7 +44,7 @@ In het volgende architectuur diagram ziet u hoe de verschillende onderdelen binn
 Het is belang rijk dat u de volgende gebieden begrijpt en overweegt om Linkerd te evalueren voor uw workloads:
 
 - [Ontwerp principes](#design-principles)
-- [Functionaliteit](#capabilities)
+- [Functies](#capabilities)
 - [Scenario's](#scenarios)
 
 
@@ -59,7 +59,7 @@ De volgende ontwerp principes [begeleiden][design-principles] het Linkerd-projec
 - U hoeft **alleen maar** de bestaande toepassingen te onderbreken en geen ingewikkelde configuratie te hoeven uitvoeren.
 
 
-### <a name="capabilities"></a>Functionaliteit
+### <a name="capabilities"></a>Functies
 
 Linkerd biedt de volgende mogelijkheden:
 
@@ -69,7 +69,7 @@ Linkerd biedt de volgende mogelijkheden:
 
 - **Security** – Encryption (mTLS), certificaten automatisch geroteerd om de 24 uur
 
-- **Observability** Behulp van behulp van behulp van een gouden metrische waarde, tikken, traceren, service profielen en metrische gegevens van de route, webdashboard met topologie grafieken, Prometheus, grafana
+-  Behulp van behulp van behulp van een gouden metrische waarde, tikken, traceren, service profielen en metrische gegevens van de route, webdashboard met topologie grafieken, Prometheus, grafana
 
 
 ### <a name="scenarios"></a>Scenario's

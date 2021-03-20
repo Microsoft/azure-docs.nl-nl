@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 10/31/2019
 ms.author: jeedes
 ms.openlocfilehash: 422b22c265b6df353b86ff19db7c42f86bce8835
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92453885"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-euromonitor-passport"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met Euromonitor Passport
@@ -80,7 +80,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 1. In de sectie **SAML-basisconfiguratie** hoeft de gebruiker geen enkele stap uit te voeren omdat de app al vooraf is geïntegreerd met Azure.
 
-1. Als u de toepassing wilt configureren in **SP** -geïnitieerde modus, heeft u de aanmeldings-URL van het [Euromonitor Passport-ondersteuningsteam](mailto:passport.support@euromonitor.com) nodig. Nadat u de aanmeldings-URL van het Euromonitor Passport-ondersteuningsteam heeft opgehaald, klikt u op **Extra URL's instellen** en voert u de volgende stap uit:
+1. Als u de toepassing wilt configureren in **SP**-geïnitieerde modus, heeft u de aanmeldings-URL van het [Euromonitor Passport-ondersteuningsteam](mailto:passport.support@euromonitor.com) nodig. Nadat u de aanmeldings-URL van het Euromonitor Passport-ondersteuningsteam heeft opgehaald, klikt u op **Extra URL's instellen** en voert u de volgende stap uit:
 
     Plak de opgehaalde waarde van de aanmeldings-URL van het Euromonitor Passport-ondersteuningsteam in het tekstvak van de aanmeldings-URL.
 
@@ -107,9 +107,9 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.

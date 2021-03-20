@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/30/2020
 ms.openlocfilehash: ba0b02067c032f9038051c169866588ded44af73
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85566014"
 ---
 # <a name="view-a-knowledge-store-with-storage-explorer"></a>Een kennis archief met Storage Explorer weer geven
@@ -29,7 +29,7 @@ In dit artikel leert u hoe u verbinding kunt maken met een kennis archief en hoe
 
 1. Open in het Azure Portal [het opslag account](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Storage%2storageAccounts/) dat u hebt gebruikt om het kennis archief te maken.
 
-1. Klik op **Storage Explorer**in het linkernavigatievenster van het opslag account.
+1. Klik op **Storage Explorer** in het linkernavigatievenster van het opslag account.
 
 1. Vouw de lijst **tabellen** uit om een lijst met Azure-tabel prognoses weer te geven die zijn gemaakt tijdens het uitvoeren van de wizard **gegevens importeren** in uw hotel voor beeld van de voorbeeld gegevens.
 
@@ -37,7 +37,7 @@ Selecteer een tabel om de verrijkte gegevens weer te geven, met inbegrip van bel
 
    ![Tabellen in Storage Explorer weer geven](media/knowledge-store-view-storage-explorer/storage-explorer-tables.png "Tabellen in Storage Explorer weer geven")
 
-Klik op **bewerken**als u het gegevens type voor tabel waarden wilt wijzigen of afzonderlijke waarden in de tabel wilt wijzigen. Wanneer u het gegevens type voor een kolom in één tabelrij wijzigt, wordt deze toegepast op alle rijen.
+Klik op **bewerken** als u het gegevens type voor tabel waarden wilt wijzigen of afzonderlijke waarden in de tabel wilt wijzigen. Wanneer u het gegevens type voor een kolom in één tabelrij wijzigt, wordt deze toegepast op alle rijen.
 
    ![Tabel in Storage Explorer bewerken](media/knowledge-store-view-storage-explorer/storage-explorer-edit-table.png "Tabel in Storage Explorer bewerken")
 

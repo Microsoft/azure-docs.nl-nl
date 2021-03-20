@@ -9,10 +9,10 @@ ms.date: 08/18/2020
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: cfa81b6ec5f10218a70de6b9b55e502d87898194
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96549171"
 ---
 # <a name="date-and-time-functions-azure-cosmos-db"></a>Datum-en tijd functies (Azure Cosmos DB)

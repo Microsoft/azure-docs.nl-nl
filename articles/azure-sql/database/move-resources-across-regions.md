@@ -13,10 +13,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 06/25/2019
 ms.openlocfilehash: ae6c87c9eabea837ba9c43676d4ca712caa385cb
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94594161"
 ---
 # <a name="move-resources-to-new-region---azure-sql-database--azure-sql-managed-instance"></a>Resources verplaatsen naar een nieuwe regio-Azure SQL Database & Azure SQL Managed instance
@@ -68,7 +68,7 @@ Dit artikel bevat een algemene werk stroom voor het verplaatsen van resources na
 
 ### <a name="monitor-the-preparation-process"></a>Het voorbereidings proces bewaken
 
-U kunt periodiek [Get-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/get-azsqldatabasefailovergroup) aanroepen om de replicatie van uw data bases van de bron naar het doel te bewaken. Het uitvoer object van `Get-AzSqlDatabaseFailoverGroup` bevat een eigenschap voor de **Replication State** :
+U kunt periodiek [Get-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/get-azsqldatabasefailovergroup) aanroepen om de replicatie van uw data bases van de bron naar het doel te bewaken. Het uitvoer object van `Get-AzSqlDatabaseFailoverGroup` bevat een eigenschap voor de **Replication State**:
 
 - **Replication State = 2** (CATCH_UP) geeft aan dat de data base is gesynchroniseerd en veilig kan worden uitgevoerd.
 - **Replication State = 0** (seeding) geeft aan dat de data base nog niet is geseedd en dat er een failover wordt uitgevoerd.
@@ -122,7 +122,7 @@ Zodra de verplaatsing is voltooid, verwijdert u de resources in de bron regio om
 
 ### <a name="monitor-the-preparation-process"></a>Het voorbereidings proces bewaken
 
-U kunt periodiek [Get-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/get-azsqldatabasefailovergroup) aanroepen om de replicatie van uw data bases van de bron naar het doel te bewaken. Het uitvoer object van `Get-AzSqlDatabaseFailoverGroup` bevat een eigenschap voor de **Replication State** :
+U kunt periodiek [Get-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/get-azsqldatabasefailovergroup) aanroepen om de replicatie van uw data bases van de bron naar het doel te bewaken. Het uitvoer object van `Get-AzSqlDatabaseFailoverGroup` bevat een eigenschap voor de **Replication State**:
 
 - **Replication State = 2** (CATCH_UP) geeft aan dat de data base is gesynchroniseerd en veilig kan worden uitgevoerd.
 - **Replication State = 0** (seeding) geeft aan dat de data base nog niet is geseedd en dat er een failover wordt uitgevoerd.
@@ -170,7 +170,7 @@ Replicatie van alle data bases op elk exemplaar wordt automatisch gestart. Zie v
 
 ### <a name="monitor-the-preparation-process"></a>Het voorbereidings proces bewaken
 
-U kunt periodiek [Get-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/get-azsqldatabasefailovergroup) aanroepen om de replicatie van uw data bases van de bron naar het doel te bewaken. Het uitvoer object van `Get-AzSqlDatabaseFailoverGroup` bevat een eigenschap voor de **Replication State** :
+U kunt periodiek [Get-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/get-azsqldatabasefailovergroup) aanroepen om de replicatie van uw data bases van de bron naar het doel te bewaken. Het uitvoer object van `Get-AzSqlDatabaseFailoverGroup` bevat een eigenschap voor de **Replication State**:
 
 - **Replication State = 2** (CATCH_UP) geeft aan dat de data base is gesynchroniseerd en veilig kan worden uitgevoerd.
 - **Replication State = 0** (seeding) geeft aan dat de data base nog niet is geseedd en dat er een failover wordt uitgevoerd.

@@ -8,17 +8,17 @@ ms.subservice: purview-data-catalog
 ms.topic: conceptual
 ms.date: 11/13/2020
 ms.openlocfilehash: 8b391438d8d6605e7ef493a6552af634db840ad5
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96553254"
 ---
 # <a name="understand-business-glossary-features-in-azure-purview"></a>Meer informatie over de functies van zakelijke woorden lijst in azure controle sfeer liggen
 
 Dit artikel bevat een overzicht van de functie voor zakelijke woorden lijst in azure controle sfeer liggen. 
 
-## <a name="business-glossary"></a>Zakelijke woorden lijst
+## <a name="business-glossary"></a>Zakelijke woordenlijst
 
 Een woorden lijst geeft een vocabulaire voor zakelijke gebruikers.  Het bestaat uit zakelijke voor waarden die aan elkaar kunnen worden gerelateerd en kunnen worden gecategoriseerd zodat ze in verschillende contexten kunnen worden begrepen. Deze voor waarden kunnen vervolgens worden toegewezen aan assets zoals een Data Base, tabellen, kolommen, enzovoort. Dit helpt bij het samen stellen van het technische jargon dat is gekoppeld aan de gegevensopslag plaatsen en biedt de zakelijke gebruiker de mogelijkheid om gegevens in de vocabulaire te ontdekken en ermee te werken.
 
@@ -33,7 +33,7 @@ Dezelfde term kan ook meerdere zakelijke objecten impliceren. Het is belang rijk
 ## <a name="custom-attributes"></a>Aangepaste kenmerken
 
 Azure controle sfeer liggen ondersteunt acht out-of-the-box-kenmerken voor elke bedrijfs woordenlijst term:
-- Naam
+- Name
 - Definitie
 - Data-webbronnen
 - Data experts

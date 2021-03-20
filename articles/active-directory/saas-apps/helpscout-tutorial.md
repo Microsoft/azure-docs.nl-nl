@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 10/24/2019
 ms.author: jeedes
 ms.openlocfilehash: 7c5e8210bc8b805d72149fd2ef3335c1d637a58f
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92445185"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-help-scout"></a>Zelfstudie: Azure Active Directory-integratie met Help Scout
@@ -42,22 +42,22 @@ Voor het configureren van Azure AD-integratie met Help Scout hebt u de volgende 
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
 * Help Scout ondersteunt door **SP en IDP** geïnitieerde eenmalige aanmelding
-* Help Scout biedt ondersteuning voor **Just-In-Time** -inrichting van gebruikers
+* Help Scout biedt ondersteuning voor **Just-In-Time**-inrichting van gebruikers
 
 ## <a name="adding-help-scout-from-the-gallery"></a>Help Scout toevoegen vanuit de galerie
 
 Voor het configureren van de integratie van Help Scout met Azure AD moet u Help Scout uit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
 1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory** .
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
-1. Typ in de sectie **Toevoegen uit de galerie** in het zoekvak **Help Scout** .
+1. Typ in de sectie **Toevoegen uit de galerie** in het zoekvak **Help Scout**.
 1. Selecteer **Help Scout** uit het resultatenvenster en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In dit gedeelte configureert en test u eenmalige aanmelding van Azure Active Directory met Help Scout op basis van een testgebruiker met de naam **B.Simon** .
+In dit gedeelte configureert en test u eenmalige aanmelding van Azure Active Directory met Help Scout op basis van een testgebruiker met de naam **B.Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in Help Scout tot stand is gebracht.
 
 Voor het configureren en testen van eenmalige aanmelding via Azure AD bij Help Scout moet u de volgende bouwstenen uitvoeren:
@@ -75,7 +75,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voor het configureren van Azure AD-eenmalige aanmelding met Help Scout moet u de volgende stappen uitvoeren:
 
-1. Ga in de [Azure-portal](https://portal.azure.com/) naar de pagina voor integratie van de toepassing **Help Scout** en selecteer **Eenmalige aanmelding** .
+1. Ga in de [Azure-portal](https://portal.azure.com/) naar de pagina voor integratie van de toepassing **Help Scout** en selecteer **Eenmalige aanmelding**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -102,7 +102,7 @@ Voor het configureren van Azure AD-eenmalige aanmelding met Help Scout moet u de
 
     ![Schermopname die Extra URL's instellen toont, waar u een aanmeldings-URL kunt invoeren.](common/metadata-upload-additional-signon.png)
 
-    Typ een URL in het tekstvak **Aanmeldings-URL** , bijvoorbeeld: `https://secure.helpscout.net/members/login/`
+    Typ een URL in het tekstvak **Aanmeldings-URL**, bijvoorbeeld: `https://secure.helpscout.net/members/login/`
 
 1. Op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** klikt u op **Downloaden** om het **Certificaat (Base64)** te downloaden uit de opgegeven opties overeenkomstig uw behoeften, en slaat u dit op uw computer op.
 
@@ -122,7 +122,7 @@ Voor het configureren van Azure AD-eenmalige aanmelding met Help Scout moet u de
 
 Het doel van deze sectie is om in Azure Portal een testgebruiker met de naam B.Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -134,20 +134,20 @@ Het doel van deze sectie is om in Azure Portal een testgebruiker met de naam B.S
 
     ![Het dialoogvenster Gebruiker](common/user-properties.png)
 
-    a. Typ **B.Simon** in het veld **Naam** .
+    a. Typ **B.Simon** in het veld **Naam**.
   
     b. In het veld **Gebruikersnaam** typt u **B.Simon\@yourcompanydomain.extension**  
     Bijvoorbeeld: B.Simon@contoso.com
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 
-    d. Klik op **Create** .
+    d. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie gaat u B.Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot Help Scout.
 
-1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **Help Scout** .
+1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **Help Scout**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -155,11 +155,11 @@ In deze sectie gaat u B.Simon toestemming geven voor gebruik van eenmalige aanme
 
     ![De Help Scout-koppeling in de lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -167,7 +167,7 @@ In deze sectie gaat u B.Simon toestemming geven voor gebruik van eenmalige aanme
 
 6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-help-scout-sso"></a>Eenmalige aanmelding voor Help Scout configureren
 
@@ -205,11 +205,11 @@ In deze sectie gaat u B.Simon toestemming geven voor gebruik van eenmalige aanme
 
     b. Klik op **Certificaat uploaden** om het **certificaat (Base64)** te uploaden dat u uit de Azure-portal hebt gedownload.
 
-    c. Geef uw organisatie-e-maildomein(en), bijvoorbeeld `contoso.com`, op in het tekstvak **E-maildomeinen** . U kunt meerdere domeinen opgeven door ze te scheiden met een komma. Telkens wanneer gebruikers of beheerders van Help Scout dat specifieke domein benaderen op de [aanmeldingspagina van Help Scout](https://secure.helpscout.net/members/login/), worden zij omgeleid naar de identiteitsprovider om zich te verifiëren met hun referenties.
+    c. Geef uw organisatie-e-maildomein(en), bijvoorbeeld `contoso.com`, op in het tekstvak **E-maildomeinen**. U kunt meerdere domeinen opgeven door ze te scheiden met een komma. Telkens wanneer gebruikers of beheerders van Help Scout dat specifieke domein benaderen op de [aanmeldingspagina van Help Scout](https://secure.helpscout.net/members/login/), worden zij omgeleid naar de identiteitsprovider om zich te verifiëren met hun referenties.
 
     d. Ten slotte kunt u **SAML-aanmelding afdwingen** als u wilt dat gebruikers zich alleen op deze manier bij Help Scout kunnen aanmelden. Als u wilt dat ze zich ook nog met hun referenties voor Help Scout kunnen aanmelden, laat u deze optie uitgeschakeld. Zelfs als deze optie is ingeschakeld, kunnen accounteigenaars zich nog altijd bij Help Scout aanmelden met het wachtwoord van hun account.
 
-    e. Klik op **Opslaan** .
+    e. Klik op **Opslaan**.
 
 ### <a name="create-help-scout-test-user"></a>Help Scout-testgebruiker maken
 

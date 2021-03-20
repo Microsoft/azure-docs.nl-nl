@@ -5,10 +5,10 @@ ms.topic: tutorial
 ms.date: 07/22/2019
 ms.custom: mvc, devx-track-azurecli
 ms.openlocfilehash: 995291a783d14a6d2db8ed8319c720f55c009d91
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92738864"
 ---
 # <a name="tutorial-package-and-deploy-containers-as-a-service-fabric-application-using-yeoman"></a>Zelfstudie: Containers verpakken en implementeren als een Service Fabric-toepassing met behulp van Yeoman
@@ -80,7 +80,7 @@ Hieronder ziet u de invoer en uitvoer van de yo-opdracht:
 
 Voer de volgende stappen uit als u nog een containerservice wilt toevoegen aan een toepassing die al is gemaakt met Yeoman:
 
-1. Wijzig de directory naar een niveau hoger dan **TestContainer** , bijvoorbeeld *./TestContainer*
+1. Wijzig de directory naar een niveau hoger dan **TestContainer**, bijvoorbeeld *./TestContainer*
 2. Voer `yo azuresfcontainer:AddService` uit.
 3. Noem de service 'azurevoteback'
 4. Geef het pad van de containerinstallatiekopie voor Redis op: 'alpine:redis'
@@ -99,7 +99,7 @@ Alle items voor het toevoegen van de gebruikte service worden getoond:
    create TestContainer/azurevotebackPkg/code/Dummy.txt
 ```
 
-In de rest van deze zelfstudie werken we in de directory **TestContainer** . Bijvoorbeeld: *./TestContainer/TestContainer* . De inhoud van deze directory moet de volgende zijn.
+In de rest van deze zelfstudie werken we in de directory **TestContainer**. Bijvoorbeeld: *./TestContainer/TestContainer*. De inhoud van deze directory moet de volgende zijn.
 
 ```bash
 $ ls
@@ -108,7 +108,7 @@ ApplicationManifest.xml azurevotefrontPkg azurevotebackPkg
 
 ## <a name="configure-the-application-manifest-with-credentials-for-azure-container-registry"></a>Het toepassingsmanifest configureren met referenties voor Azure Container Registry
 
-Opdat Service Fabric de containerinstallatiekopieën kan ophalen uit de Azure Container Registry, moeten we de referenties opgeven in **ApplicationManifest.xml** .
+Opdat Service Fabric de containerinstallatiekopieën kan ophalen uit de Azure Container Registry, moeten we de referenties opgeven in **ApplicationManifest.xml**.
 
 Meld u aan bij uw ACR-exemplaar. Gebruik de opdracht **az acr login** om de bewerking te voltooien. Geef de unieke naam op die u het containerregister hebt gegeven toen u het maakte.
 
@@ -124,7 +124,7 @@ Voer vervolgens de volgende opdracht uit om het wachtwoord van uw containerregis
 az acr credential show -n <acrName> --query passwords[0].value
 ```
 
-Voeg in **ApplicationManifest.xml** het codefragment toe onder het element **ServiceManifestImport** voor de front-endservice. Voeg uw **acrName** in voor het veld **AccountName** en het wachtwoord dat met de vorige opdracht is geretourneerd wordt gebruikt voor het veld **Wachtwoord** . Aan het einde van dit document vindt u een volledig **ApplicationManifest.xml** -bestand.
+Voeg in **ApplicationManifest.xml** het codefragment toe onder het element **ServiceManifestImport** voor de front-endservice. Voeg uw **acrName** in voor het veld **AccountName** en het wachtwoord dat met de vorige opdracht is geretourneerd wordt gebruikt voor het veld **Wachtwoord**. Aan het einde van dit document vindt u een volledig **ApplicationManifest.xml**-bestand.
 
 ```xml
 <Policies>
@@ -138,7 +138,7 @@ Voeg in **ApplicationManifest.xml** het codefragment toe onder het element **Ser
 
 ### <a name="configure-communication-port"></a>Communicatiepoort configureren
 
-Een HTTP-eindpunt configureren zodat clients met uw service kunnen communiceren. Open het bestand *./TestContainer/azurevotefrontPkg/ServiceManifest.xml* en declareer een eindpuntresource in het element **ServiceManifest** .  Voeg het protocol, de poort en de naam toe. In deze zelfstudie luistert de service op poort 80. Het volgende fragment wordt onder de *ServiceManifest* -tag in de resource geplaatst.
+Een HTTP-eindpunt configureren zodat clients met uw service kunnen communiceren. Open het bestand *./TestContainer/azurevotefrontPkg/ServiceManifest.xml* en declareer een eindpuntresource in het element **ServiceManifest**.  Voeg het protocol, de poort en de naam toe. In deze zelfstudie luistert de service op poort 80. Het volgende fragment wordt onder de *ServiceManifest*-tag in de resource geplaatst.
 
 ```xml
 <Resources>
@@ -152,7 +152,7 @@ Een HTTP-eindpunt configureren zodat clients met uw service kunnen communiceren.
 
 ```
 
-Wijzig het Service Manifest voor de back-endservice op dezelfde manier. Open het bestand *./TestContainer/azurevotebackPkg/ServiceManifest.xml* en declareer een eindpuntresource in het element **ServiceManifest** . Voor deze zelfstudie wordt de Redis-standaardwaarde van 6379 aangehouden. Het volgende fragment wordt onder de *ServiceManifest* -tag in de resource geplaatst.
+Wijzig het Service Manifest voor de back-endservice op dezelfde manier. Open het bestand *./TestContainer/azurevotebackPkg/ServiceManifest.xml* en declareer een eindpuntresource in het element **ServiceManifest**. Voor deze zelfstudie wordt de Redis-standaardwaarde van 6379 aangehouden. Het volgende fragment wordt onder de *ServiceManifest*-tag in de resource geplaatst.
 
 ```xml
 <Resources>
@@ -169,7 +169,7 @@ Door het **UriScheme** op te geven wordt het eindpunt van de container automatis
 
 ### <a name="map-container-ports-to-a-service"></a>Containerpoorten toewijzen aan een service
 
-Om de containers in het cluster beschikbaar te maken, moeten we ook een poortbinding maken in ApplicationManifest.xml. Het **PortBinding** -beleid verwijst naar de **Endpoints** die we hebben gedefinieerd in de **ServiceManifest.xml** -bestanden. Binnenkomende aanvragen voor deze eindpunten worden toegewezen aan de containerpoorten die hier worden geopend en gebonden. Voeg in het bestand **ApplicationManifest.xml** de volgende code toe om poort 80 en 6379 aan de eindpunten te binden. Aan het einde van dit document is een volledig **ApplicationManifest.xml** -bestand beschikbaar.
+Om de containers in het cluster beschikbaar te maken, moeten we ook een poortbinding maken in ApplicationManifest.xml. Het **PortBinding**-beleid verwijst naar de **Endpoints** die we hebben gedefinieerd in de **ServiceManifest.xml**-bestanden. Binnenkomende aanvragen voor deze eindpunten worden toegewezen aan de containerpoorten die hier worden geopend en gebonden. Voeg in het bestand **ApplicationManifest.xml** de volgende code toe om poort 80 en 6379 aan de eindpunten te binden. Aan het einde van dit document is een volledig **ApplicationManifest.xml**-bestand beschikbaar.
 
 ```xml
 <ContainerHostPolicies CodePackageRef="Code">
@@ -185,7 +185,7 @@ Om de containers in het cluster beschikbaar te maken, moeten we ook een poortbin
 
 ### <a name="add-a-dns-name-to-the-backend-service"></a>Een DNS-naam toevoegen aan de back-endservice
 
-Opdat Service Fabric deze DNS-naam kan toewijzen aan de back-endservice, moet de naam worden opgegeven in **ApplicationManifest.xml** . Voeg het kenmerk **ServiceDnsName** als volgt toe aan het **Service** -element:
+Opdat Service Fabric deze DNS-naam kan toewijzen aan de back-endservice, moet de naam worden opgegeven in **ApplicationManifest.xml**. Voeg het kenmerk **ServiceDnsName** als volgt toe aan het **Service**-element:
 
 ```xml
 <Service Name="azurevoteback" ServiceDnsName="redisbackend.testapp">
@@ -264,7 +264,7 @@ Maak verbinding met het Service Fabric-cluster in Azure. Vervang het voorbeeld v
 sfctl cluster select --endpoint https://containertestcluster.eastus.cloudapp.azure.com:19080 --pem containertestcluster22019013100.pem --no-verify
 ```
 
-Gebruik het installatiescript uit de **TestContainer** -directory om het toepassingspakket te kopiëren naar de installatiekopieopslag van het cluster, het toepassingstype te registreren en een exemplaar van de toepassing te maken.
+Gebruik het installatiescript uit de **TestContainer**-directory om het toepassingspakket te kopiëren naar de installatiekopieopslag van het cluster, het toepassingstype te registreren en een exemplaar van de toepassing te maken.
 
 ```bash
 ./install.sh

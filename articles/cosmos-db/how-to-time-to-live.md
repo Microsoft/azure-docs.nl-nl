@@ -9,10 +9,10 @@ ms.date: 10/11/2020
 ms.author: anfeldma
 ms.custom: devx-track-js, devx-track-azurecli, devx-track-csharp
 ms.openlocfilehash: 2ddba95f9ccc25d536638dbc68c41027d26e71c7
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93341005"
 ---
 # <a name="configure-time-to-live-in-azure-cosmos-db"></a>Time to Live configureren in Azure Cosmos DB
@@ -26,7 +26,7 @@ In Azure Cosmos DB kunt u Time to Live (TTL) configureren op containerniveau, ma
 
 Gebruik de volgende stappen om Time to Live in te schakelen op een container zonder vervaldatum. Schakel deze optie in om TTL te overschrijven op itemniveau. U kunt de TTL ook instellen door een waarde (in seconden) ongelijk aan nul in te voeren.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 
 2. Maak een nieuw Azure Cosmos DB-account of selecteer een bestaand account.
 
@@ -210,7 +210,7 @@ U kunt niet alleen de standaardwaarde voor Time to Live voor een container inste
 
 Gebruik de volgende stappen om TTL op een item in te scha kelen:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 
 2. Maak een nieuw Azure Cosmos DB-account of selecteer een bestaand account.
 

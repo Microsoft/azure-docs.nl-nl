@@ -5,10 +5,10 @@ ms.date: 07/07/2020
 ms.topic: quickstart
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: 7c236025f31e10c00b324e5ff3374bd6504b2b7e
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91324107"
 ---
 # <a name="quickstart-route-custom-events-to-azure-event-hubs-with-azure-cli-and-event-grid"></a>Quickstart: Aangepaste gebeurtenissen naar Azure Event Hubs routeren met behulp van Azure CLI en Event Grid

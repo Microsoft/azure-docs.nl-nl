@@ -11,10 +11,10 @@ ms.date: 12/13/2017
 ms.author: cynthn
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: a96c0f7c6fb767b96be273a615149143043e8bc1
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91975124"
 ---
 # <a name="open-ports-and-endpoints-to-a-vm-with-the-azure-cli"></a>Poorten en eind punten openen voor een virtuele machine met Azure CLI
@@ -24,11 +24,11 @@ U opent een poort of maakt een eind punt naar een virtuele machine (VM) in azure
 
 Als u een netwerk beveiligings groep en-regels wilt maken, moet u de nieuwste [Azure cli](/cli/azure/install-az-cli2) installeren en u aanmelden bij een Azure-account met [AZ login](/cli/azure/reference-index).
 
-Vervang in de volgende voor beelden voorbeeld parameter namen door uw eigen waarden. Voor beelden van parameter namen zijn *myResourceGroup*, *myNetworkSecurityGroup*en *myVnet*.
+Vervang in de volgende voor beelden voorbeeld parameter namen door uw eigen waarden. Voor beelden van parameter namen zijn *myResourceGroup*, *myNetworkSecurityGroup* en *myVnet*.
 
 
 ## <a name="quickly-open-a-port-for-a-vm"></a>Snel een poort openen voor een virtuele machine
-Als u snel een poort voor een virtuele machine in een dev/test-scenario moet openen, kunt u de opdracht [AZ VM Open-Port](/cli/azure/vm) gebruiken. Met deze opdracht wordt een netwerk beveiligings groep gemaakt, een regel toegevoegd en toegepast op een VM of subnet. In het volgende voor beeld wordt poort *80* van de virtuele machine met de naam *myVM* in de resource groep met de naam *myResourceGroup*geopend.
+Als u snel een poort voor een virtuele machine in een dev/test-scenario moet openen, kunt u de opdracht [AZ VM Open-Port](/cli/azure/vm) gebruiken. Met deze opdracht wordt een netwerk beveiligings groep gemaakt, een regel toegevoegd en toegepast op een VM of subnet. In het volgende voor beeld wordt poort *80* van de virtuele machine met de naam *myVM* in de resource groep met de naam *myResourceGroup* geopend.
 
 ```azurecli
 az vm open-port --resource-group myResourceGroup --name myVM --port 80

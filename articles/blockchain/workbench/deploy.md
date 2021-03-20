@@ -6,10 +6,10 @@ ms.topic: how-to
 ms.reviewer: ravastra
 ms.custom: references_regions
 ms.openlocfilehash: b46a35b45a51d0cc76942c4ca142c4c7792a28b4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87077023"
 ---
 # <a name="deploy-azure-blockchain-workbench-preview"></a>Azure Block Chain Workbench preview implementeren
@@ -74,7 +74,7 @@ Zodra de vereiste stappen zijn voltooid, bent u klaar voor de implementatie van 
 
 1. Selecteer **OK** om de configuratie sectie basis instelling te volt ooien.
 
-1. Kies in **Geavanceerde instellingen**of u een nieuw Block chain-netwerk wilt maken of een bestaand Block chain-netwerk wilt gebruiken.
+1. Kies in **Geavanceerde instellingen** of u een nieuw Block chain-netwerk wilt maken of een bestaand Block chain-netwerk wilt gebruiken.
 
     Voor **nieuwe maken**:
 
@@ -118,21 +118,21 @@ Zodra de vereiste stappen zijn voltooid, bent u klaar voor de implementatie van 
 De implementatie kan Maxi maal 90 minuten duren. U kunt de Azure Portal gebruiken om de voortgang te bewaken. Selecteer in de zojuist gemaakte resource groep **implementaties > overzicht** om de status van de geïmplementeerde artefacten te bekijken.
 
 > [!IMPORTANT]
-> Na de implementatie moet u Active Directory instellingen volt ooien. Als u **later toevoegen**hebt gekozen, moet u het [Azure AD-configuratie script](#azure-ad-configuration-script)uitvoeren.  Als u **nu toevoegen**hebt gekozen, moet u [de antwoord-URL configureren](#configuring-the-reply-url).
+> Na de implementatie moet u Active Directory instellingen volt ooien. Als u **later toevoegen** hebt gekozen, moet u het [Azure AD-configuratie script](#azure-ad-configuration-script)uitvoeren.  Als u **nu toevoegen** hebt gekozen, moet u [de antwoord-URL configureren](#configuring-the-reply-url).
 
 ## <a name="blockchain-workbench-web-url"></a>Web-URL voor Block Chain workbench
 
 Zodra de implementatie van de Block Chain-Workbench is voltooid, bevat een nieuwe resource groep uw resources van Block Chain Workbench. Block Chain Workbench-Services zijn toegankelijk via een web-URL. De volgende stappen laten zien hoe u de web-URL van het geïmplementeerde Framework kunt ophalen.
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
-1. Selecteer **resource groepen**in het navigatie deel venster aan de linkerkant.
+1. Selecteer **resource groepen** in het navigatie deel venster aan de linkerkant.
 1. Kies de naam van de resource groep die u hebt opgegeven bij het implementeren van Block Chain Workbench.
 1. Selecteer de kolomkop **type** om de lijst alfabetisch te sorteren op type.
 1. Er zijn twee resources met het type **app service**. Selecteer de resource van het type **app service** *zonder* het achtervoegsel '-API '.
 
     ![Lijst met apps](media/deploy/resource-group-list.png)
 
-1. Kopieer in het App Service **overzicht**de **URL** -waarde, die de web-URL voor uw geïmplementeerde Block Chain Workbench vertegenwoordigt.
+1. Kopieer in het App Service **overzicht** de **URL** -waarde, die de web-URL voor uw geïmplementeerde Block Chain Workbench vertegenwoordigt.
 
     ![Essentiële informatie over app service](media/deploy/app-service.png)
 
@@ -231,7 +231,7 @@ Vervolgens moet u het manifest wijzigen om toepassings rollen binnen Azure AD te
 De API-toepassing moet toestemming van de gebruiker aanvragen voor toegang tot de Directory. Stel de volgende vereiste machtiging in voor de API-toepassing:
 
 1. Selecteer in de *Block Chain API* -app registratie de optie **API-machtigingen**. Standaard is de machtiging Graph API **gebruiker. Read** toegevoegd.
-1. Voor de workbench-toepassing is lees toegang tot de basis profiel gegevens van gebruikers vereist. Selecteer **een machtiging toevoegen**in *geconfigureerde machtigingen*. Selecteer **Microsoft Graph**in **micro soft-api's**.
+1. Voor de workbench-toepassing is lees toegang tot de basis profiel gegevens van gebruikers vereist. Selecteer **een machtiging toevoegen** in *geconfigureerde machtigingen*. Selecteer **Microsoft Graph** in **micro soft-api's**.
 1. Aangezien de workbench-toepassing gebruikmaakt van de referenties van de geverifieerde gebruiker, selecteert u **gedelegeerde machtigingen**.
 1. Klik in de categorie *gebruiker* op **User. ReadBasic. all** permission.
 
@@ -239,7 +239,7 @@ De API-toepassing moet toestemming van de gebruiker aanvragen voor toegang tot d
 
     Selecteer **Machtigingen toevoegen**.
 
-1. Selecteer in *geconfigureerde machtigingen*de optie **beheerder toestemming geven** voor het domein en selecteer vervolgens **Ja** voor de verificatie prompt.
+1. Selecteer in *geconfigureerde machtigingen* de optie **beheerder toestemming geven** voor het domein en selecteer vervolgens **Ja** voor de verificatie prompt.
 
    ![Machtigingen verlenen](media/deploy/client-app-grant-permissions.png)
 
@@ -249,7 +249,7 @@ De API-toepassing moet toestemming van de gebruiker aanvragen voor toegang tot d
 
 De toepassings-ID en Tenant gegevens zijn vereist voor de implementatie. Verzamel en bewaar de informatie voor gebruik tijdens de implementatie.
 
-1. Selecteer **overzicht**voor de toepassing die u hebt geregistreerd.
+1. Selecteer **overzicht** voor de toepassing die u hebt geregistreerd.
 1. Kopieer de waarde van de **toepassings-id** en sla deze op voor later gebruik tijdens de implementatie.
 
     ![Eigenschappen van API-app](media/deploy/app-properties.png)

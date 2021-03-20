@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 09/22/2020
 ms.author: cherylmc
 ms.openlocfilehash: 469d7ba9e86751312ebf6a6c82b35f065ee6cb50
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98880369"
 ---
 # <a name="connect-a-vpn-gateway-virtual-network-gateway-to-virtual-wan"></a>Een VPN Gateway (virtuele netwerk gateway) verbinden met een virtueel WAN
@@ -49,7 +49,7 @@ Op de pagina **configuratie** van virtuele netwerk gateway kunt u de **BGP ASN**
 
 ![Scherm afbeelding toont de configuratie pagina van een virtuele netwerk gateway met BGP ASN configureren geselecteerd.](./media/connect-virtual-network-gateway-vwan/bgp.png "BGP")
 
-### <a name="public-ip-addresses"></a><a name="pip"></a>Openbare IP-adressen
+### <a name="public-ip-addresses"></a><a name="pip"></a>Open bare IP-adressen
 
 Wanneer de gateway is gemaakt, gaat u naar de pagina **Eigenschappen** . De eigenschappen en configuratie-instellingen zijn vergelijkbaar met het volgende voor beeld. Let op de twee open bare IP-adressen die worden gebruikt voor de gateway.
 

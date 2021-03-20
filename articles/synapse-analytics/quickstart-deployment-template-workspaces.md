@@ -9,10 +9,10 @@ ms.custom: subject-armqs
 ms.author: jrasnick
 ms.date: 08/07/2020
 ms.openlocfilehash: 2b05220081dde4db6f07f21fb9978d9e466235ca
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92740378"
 ---
 # <a name="quickstart-create-an-azure-synapse-workspace-using-an-arm-template"></a>Quickstart: een Azure Synapse-werkruimte maken met behulp van een ARM-sjabloon
@@ -48,15 +48,15 @@ In de sjabloon zijn twee resources gedefinieerd:
 
 1. Voer de volgende waarden in of werk deze bij:
 
-   - **Abonnement** : Selecteer een Azure-abonnement.
-   - **Resourcegroep** : Selecteer **Nieuwe maken** , geef een unieke naam op voor de resourcegroep en selecteer **OK**. Met een nieuwe resourcegroep kunt u makkelijker resources opschonen.
-   - **Regio** : Selecteer een regio.  Bijvoorbeeld **VS - centraal**.
-   - **Naam** : Voer een naam in voor uw werkruimte.
-   - **Aanmeldgegevens van SQL-beheerder** : Geef de gebruikersnaam van de beheerder voor de SQL-server op.
-   - **Wachtwoord van SQL-beheerder** : Geef het beheerderswachtwoord voor de SQL-server op.
-   - **Tagwaarden** : Accepteer de standaardwaarde.
-   - **Controleren en maken** : Selecteren.
-   - **Maken** : Selecteren.
+   - **Abonnement**: Selecteer een Azure-abonnement.
+   - **Resourcegroep**: Selecteer **Nieuwe maken**, geef een unieke naam op voor de resourcegroep en selecteer **OK**. Met een nieuwe resourcegroep kunt u makkelijker resources opschonen.
+   - **Regio**: Selecteer een regio.  Bijvoorbeeld **VS - centraal**.
+   - **Naam**: Voer een naam in voor uw werkruimte.
+   - **Aanmeldgegevens van SQL-beheerder**: Geef de gebruikersnaam van de beheerder voor de SQL-server op.
+   - **Wachtwoord van SQL-beheerder**: Geef het beheerderswachtwoord voor de SQL-server op.
+   - **Tagwaarden**: Accepteer de standaardwaarde.
+   - **Controleren en maken**: Selecteren.
+   - **Maken**: Selecteren.
 
 ## <a name="next-steps"></a>Volgende stappen
 

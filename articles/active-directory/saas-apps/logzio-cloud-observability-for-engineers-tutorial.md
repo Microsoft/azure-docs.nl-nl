@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 04/08/2020
 ms.author: jeedes
 ms.openlocfilehash: 18160f5bbd6747596a1f0b118574eccd6e3c63f5
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92458391"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-logzio---azure-ad-integration"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met Logz.io - Azure AD-integratie
@@ -70,7 +70,7 @@ Voltooi de volgende procedures om eenmalige aanmelding van Azure AD met Logz.io 
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Zoek in [Azure Portal](https://portal.azure.com/), op de integratiepagina van de toepassing **Logz.io - Azure AD-integratie** , de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Zoek in [Azure Portal](https://portal.azure.com/), op de integratiepagina van de toepassing **Logz.io - Azure AD-integratie**, de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
@@ -109,9 +109,9 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
@@ -137,7 +137,7 @@ In deze sectie stelt u in dat B. Simon eenmalige aanmelding van Azure kan gebrui
 
 ## <a name="configure-logzio-azure-ad-integration-sso"></a>Eenmalige aanmelding voor Logz.io - Azure AD-integratie configureren
 
-Als u eenmalige aanmelding wilt configureren in **Logz.io - Azure AD-integratie** , moet u het gedownloade **Certificaat (Base64)** en de juiste uit Azure Portal gekopieerde URL's verzenden naar het [ondersteuningsteam van Logz.io - Azure AD-integratie](mailto:help@logz.io). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding wilt configureren in **Logz.io - Azure AD-integratie**, moet u het gedownloade **Certificaat (Base64)** en de juiste uit Azure Portal gekopieerde URL's verzenden naar het [ondersteuningsteam van Logz.io - Azure AD-integratie](mailto:help@logz.io). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-logzio-azure-ad-integration-test-user"></a>Testgebruiker maken voor Logz.io - Azure AD-integratie
 

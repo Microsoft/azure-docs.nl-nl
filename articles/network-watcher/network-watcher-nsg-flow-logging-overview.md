@@ -13,15 +13,15 @@ ms.workload: infrastructure-services
 ms.date: 01/04/2021
 ms.author: damendo
 ms.openlocfilehash: bc085163b4f738d022ab9771794ec85293de5ed8
-ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100521676"
 ---
 # <a name="introduction-to-flow-logging-for-network-security-groups"></a>Introductie van stroomlogboeken voor netwerkbeveiligingsgroepen
 
-## <a name="introduction"></a>Introductie
+## <a name="introduction"></a>Inleiding
 
 Stroom logboeken voor [netwerk beveiligings groepen](../virtual-network/network-security-groups-overview.md#security-rules) (NSG) is een functie van Azure Network Watcher waarmee u informatie kunt vastleggen over IP-verkeer dat wordt doorgelopen via een NSG. Stroom gegevens worden verzonden naar Azure Storage accounts van waaruit u toegang hebt, en deze kunt u exporteren naar een wille keurig visualisatie programma, SIEM of ID'S van uw keuze.
 

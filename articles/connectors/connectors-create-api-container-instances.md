@@ -12,10 +12,10 @@ ms.topic: article
 tags: connectors
 ms.date: 01/14/2020
 ms.openlocfilehash: ecb1049d64197f2a60438df7eedfb244907f7327
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "76046290"
 ---
 # <a name="deploy-and-manage-azure-container-instances-by-using-azure-logic-apps"></a>Azure Container Instances implementeren en beheren met behulp van Azure Logic Apps
@@ -49,7 +49,7 @@ Als u geen ervaring hebt met Logic apps, raadpleegt u [Wat is Azure Logic apps?]
 
 1. Kies een pad: 
 
-   * Kies **nieuwe stap**onder de laatste stap waarin u een actie wilt toevoegen. 
+   * Kies **nieuwe stap** onder de laatste stap waarin u een actie wilt toevoegen. 
 
      -of-
 

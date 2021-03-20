@@ -17,10 +17,10 @@ ms.topic: article
 ms.date: 03/22/2019
 ms.author: jegeib
 ms.openlocfilehash: e6f8ba54218f9b5b730ce3454c087d6072930edf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87825868"
 ---
 # <a name="threat-modeling-tool-releases"></a>Threat Modeling Tool releases
@@ -36,7 +36,7 @@ De Microsoft Threat Modeling Tool is momenteel uitgebracht als gratis [Klik-en-d
 - Aanvullende vereisten
   - Er is een Internet verbinding vereist om updates voor het hulp programma en de sjablonen te ontvangen.
 
-## <a name="release-notes"></a>Releaseopmerkingen
+## <a name="release-notes"></a>Opmerkingen bij de release
 
 - [Microsoft Threat Modeling tool Ga versie 7.3.00729.1](threat-modeling-tool-releases-73007291.md) -juli 29 2020
 - [Microsoft Threat Modeling tool Ga versie 7.3.00714.2](threat-modeling-tool-releases-73007142.md) -juli 14 2020

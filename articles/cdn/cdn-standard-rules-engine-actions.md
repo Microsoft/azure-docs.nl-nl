@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 08/04/2020
 ms.author: allensu
 ms.openlocfilehash: 051737a9f5e0d4092cda26a3f7ce3df1d7f535ef
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87760121"
 ---
 # <a name="actions-in-the-standard-rules-engine-for-azure-cdn"></a>Acties in de standaard regels-engine voor Azure CDN

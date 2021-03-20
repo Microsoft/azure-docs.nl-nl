@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 11/21/2016
 ms.author: manuaery
 ms.openlocfilehash: 31220a8f8b012e08d46195b60a26be9cfc261be5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85514529"
 ---
 # <a name="use-the-service-summary-blade-for-storsimple-device-manager-connected-to-storsimple-virtual-array"></a>De Blade service overzicht gebruiken voor StorSimple Apparaatbeheer verbonden met een virtuele StorSimple-matrix

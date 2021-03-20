@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 09/08/2020
 ms.author: Zhchia
 ms.openlocfilehash: b4f24c9beffcd67fb84940c2e159da615496d9aa
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96180367"
 ---
 # <a name="tutorial-configure-apple-business-manager-for-automatic-user-provisioning"></a>Zelfstudie: Apple Business Manager configureren voor automatische inrichting van gebruikers
@@ -54,7 +54,7 @@ In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan d
 
 1. Meld u in Apple Business Manager aan met een account met de rol Beheerder of Personenmanager.
 2. Klik onderaan de zijbalk op Instellingen. Klik onder Organisatie-instellingen op Gegevensbron, en klik vervolgens op Maak verbinding met gegevensbron.
-3. Klik naast SCIM op Verbind. Lees de waarschuwing, klik op Kopieer en vervolgens op Sluit.
+3. Klik naast SCIM op Verbinding maken. Lees de waarschuwing zorgvuldig, klik op Kopiëren, en vervolgens op Sluiten.
 [Het venster Verbind met SCIM, met daarin een token en daaronder de knop Kopieer.] Laat dit venster open om de tenant-URL van Apple Business Manager te kopiëren naar Azure AD: https://federation.apple.com/feeds/business/scim
 
     ![Apple Business Manager](media/applebusinessmanager-provisioning-tutorial/scim-token.png)

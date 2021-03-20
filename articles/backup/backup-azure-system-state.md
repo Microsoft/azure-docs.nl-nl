@@ -4,10 +4,10 @@ description: Meer informatie over het maken van een back-up van de systeem statu
 ms.topic: conceptual
 ms.date: 05/23/2018
 ms.openlocfilehash: 1b3573d757d2f7b1ffec9ae718aa791488960f3b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91332883"
 ---
 # <a name="back-up-windows-system-state-to-azure"></a>Back-up van Windows-systeem status maken in azure
@@ -46,7 +46,7 @@ Nu u een kluis hebt gemaakt, configureert u deze voor het maken van een back-up 
 
 ## <a name="configure-the-vault"></a>De kluis configureren
 
-1. Selecteer in het deel venster Recovery Services kluis (voor de kluis die u zojuist hebt gemaakt) de optie **back-up**in de sectie aan de slag en selecteer in het deel venster aan de slag **met back-up** de optie **back-up van doel**.
+1. Selecteer in het deel venster Recovery Services kluis (voor de kluis die u zojuist hebt gemaakt) de optie **back-up** in de sectie aan de slag en selecteer in het deel venster aan de slag **met back-up** de optie **back-up van doel**.
 
     ![Back-upinstellingen openen](./media/backup-try-azure-backup-in-10-mins/open-backup-settings.png)
 
@@ -58,17 +58,17 @@ Nu u een kluis hebt gemaakt, configureert u deze voor het maken van een back-up 
 
     U kiest **on-premises** omdat uw Windows-Server of Windows-computer een fysieke machine is die zich niet in azure bevindt.
 
-3. Selecteer in het menu **waarvan wilt u een back-up maken?** de optie **systeem status**en selecteer **OK**.
+3. Selecteer in het menu **waarvan wilt u een back-up maken?** de optie **systeem status** en selecteer **OK**.
 
     ![Bestanden en mappen configureren](./media/backup-azure-system-state/backup-goal-system-state.png)
 
-    Nadat u **OK**hebt geselecteerd, wordt er een vinkje weer gegeven naast **back-updoel**en wordt het deel venster **infra structuur voorbereiden** geopend.
+    Nadat u **OK** hebt geselecteerd, wordt er een vinkje weer gegeven naast **back-updoel** en wordt het deel venster **infra structuur voorbereiden** geopend.
 
     ![Nu de back-updoelstelling is geconfigureerd, gaat u de infrastructuur voorbereiden](./media/backup-try-azure-backup-in-10-mins/backup-goal-configed.png)
 
-4. Selecteer **agent voor Windows Server of Windows-client downloaden**in het deel venster **infra structuur voorbereiden** .
+4. Selecteer **agent voor Windows Server of Windows-client downloaden** in het deel venster **infra structuur voorbereiden** .
 
-    ![Infra structuur voorbereiden](./media/backup-try-azure-backup-in-10-mins/choose-agent-for-server-client.png)
+    ![Infrastructuur voorbereiden](./media/backup-try-azure-backup-in-10-mins/choose-agent-for-server-client.png)
 
     Als u Windows Server Essential gebruikt, kunt u ervoor kiezen om de agent voor Windows Server Essential te downloaden. In een pop-upmenu wordt gevraagd of u MARSAgentInstaller.exe wilt uitvoeren of opslaan.
 
@@ -82,11 +82,11 @@ Nu u een kluis hebt gemaakt, configureert u deze voor het maken van een back-up 
 
     U hoeft de agent nog niet te installeren. U kunt de agent installeren nadat u de kluis referenties hebt gedownload.
 
-6. Selecteer **downloaden**in het deel venster **infra structuur voorbereiden** .
+6. Selecteer **downloaden** in het deel venster **infra structuur voorbereiden** .
 
     ![kluisreferenties downloaden](./media/backup-try-azure-backup-in-10-mins/download-vault-credentials.png)
 
-    De kluis referenties worden gedownload naar de map **down loads** . Nadat de kluis referenties zijn gedownload, ziet u een pop-upvenster waarin u wordt gevraagd of u de referenties wilt openen of opslaan. Selecteer **Opslaan**. Als u per ongeluk **openen**selecteert, laat het dialoog venster dat de kluis referenties probeert te openen, mislukken. U kunt de kluis referenties niet meer openen. Ga door naar de volgende stap. De kluis referenties bevinden zich in de map **down loads** .
+    De kluis referenties worden gedownload naar de map **down loads** . Nadat de kluis referenties zijn gedownload, ziet u een pop-upvenster waarin u wordt gevraagd of u de referenties wilt openen of opslaan. Selecteer **Opslaan**. Als u per ongeluk **openen** selecteert, laat het dialoog venster dat de kluis referenties probeert te openen, mislukken. U kunt de kluis referenties niet meer openen. Ga door naar de volgende stap. De kluis referenties bevinden zich in de map **down loads** .
 
     ![kluisreferenties downloaden is voltooid](./media/backup-try-azure-backup-in-10-mins/vault-credentials-downloaded.png)
    > [!NOTE]
@@ -146,7 +146,7 @@ Gebruik de Microsoft Azure Recovery Services-agent om de eerste back-up uit te v
 
     ![Een back-up van de Windows Server plannen](./media/backup-try-azure-backup-in-10-mins/schedule-first-backup.png)
 
-3. Selecteer **volgende**op de pagina **aan de slag** van de wizard Back-up plannen.
+3. Selecteer **volgende** op de pagina **aan de slag** van de wizard Back-up plannen.
 
 4. Selecteer op de pagina **items selecteren voor back-up** de optie **items toevoegen**.
 

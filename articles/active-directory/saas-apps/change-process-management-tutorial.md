@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 05/07/2020
 ms.author: jeedes
 ms.openlocfilehash: 03c78f05566876356e4f486368dc2a5b3a29de43
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92456252"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-change-process-management"></a>Zelfstudie: Integratie van eenmalige aanmelding (SSO) van Azure Active Directory met Change Process Management
@@ -49,7 +49,7 @@ Als u de integratie van Change Process Management in Azure AD wilt configureren,
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com) met een werk- of schoolaccount of een persoonlijk Microsoft-account.
 1. Selecteer de knop **Azure Active Directory** in het linkerdeelvenster.
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een toepassing toe te voegen.
 1. Ga in het gedeelte **Toevoegen uit de galerie** naar het zoekvak en voer **Change Process Management** in.
 1. Selecteer **Change Process Management** in het venster met zoekresultaten en voeg de app vervolgens toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
@@ -71,13 +71,13 @@ Volg deze algemene stappen om Azure AD SSO te configureren en testen met Change 
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Zoek in de [Azure-portal](https://portal.azure.com/) op de integratiepagina van de toepassing **Change Process Management** de sectie **Beheren** en selecteer **Eenmalige aanmelding** .
-1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding** .
+1. Zoek in de [Azure-portal](https://portal.azure.com/) op de integratiepagina van de toepassing **Change Process Management** de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Selecteer op de pagina **Eenmalige aanmelding instellen met SAML** het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken:
 
    ![Potloodpictogram voor Standaard-SAML-configuratie](common/edit-urls.png)
 
-1. Voer deze stappen uit op de pagina **Eenmalige aanmelding instellen met SAML** :
+1. Voer deze stappen uit op de pagina **Eenmalige aanmelding instellen met SAML**:
 
     a. Typ in het vak **Id** een URL met het volgende patroon: `https://<hostname>:8443/`
 
@@ -98,31 +98,31 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in de Azure-portal.
 
-1. Selecteer in de Azure-portal aan de linkerkant **Azure Active Directory** . Selecteer **Gebruikers** en daarna **Alle gebruikers** .
+1. Selecteer in de Azure-portal aan de linkerkant **Azure Active Directory**. Selecteer **Gebruikers** en daarna **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
 1. Ga als volgt te werk in het venster dat verschijnt:
    1. Voer in het vak **Naam** de naam **B.Simon** in.  
    1. Voer in het vak **Gebruikersnaam** \<username>@\<companydomain> in.\<extension>. Bijvoorbeeld `B.Simon@contoso.com`.
-   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord** .
-   1. Selecteer **Maken** .
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Selecteer **Maken**.
 
 ### <a name="grant-access-to-the-test-user"></a>De testgebruiker toegang geven
 
 In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te gebruiken door die gebruiker toegang te verlenen tot Change Process Management.
 
-1. Selecteer in de Azure-portal **Bedrijfstoepassingen** en selecteer **Alle toepassingen** .
+1. Selecteer in de Azure-portal **Bedrijfstoepassingen** en selecteer **Alle toepassingen**.
 1. Selecteer **Change Process Management** in de lijst met toepassingen.
-1. Ga op de overzichtspagina van de app naar de sectie **Beheren** en selecteer **Gebruikers en groepen** :
+1. Ga op de overzichtspagina van de app naar de sectie **Beheren** en selecteer **Gebruikers en groepen**:
 
    ![Gebruikers en groepen selecteren](common/users-groups-blade.png)
 
-1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Gebruiker toevoegen selecteren](common/add-assign-user.png)
 
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** **B.Simon** in de lijst **Gebruikers** en selecteer vervolgens de knop **Selecteren** onderaan het scherm.
 1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Selecteer **Toewijzen** in het dialoogvenster **Toewijzing toevoegen** .
+1. Selecteer **Toewijzen** in het dialoogvenster **Toewijzing toevoegen**.
 
 ## <a name="configure-change-process-management-sso"></a>Eenmalige aanmelding configureren in Change Process Management
 

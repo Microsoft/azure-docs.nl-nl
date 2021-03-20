@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 02/14/2019
 ms.author: jeedes
 ms.openlocfilehash: b30203e25798f758d5a2862f6f4e8069a7e20db2
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92456206"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-chromeriver"></a>Zelfstudie: Azure Active Directory-integratie met Chromeriver
@@ -49,11 +49,11 @@ Voor het configureren van de integratie van Chromeriver met Azure AD moet u Chro
 
 **Als u Chromeriver vanuit de galerie wilt toevoegen, moet u de volgende stappen uitvoeren:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -67,16 +67,16 @@ Voor het configureren van de integratie van Chromeriver met Azure AD moet u Chro
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In deze sectie gaat u Azure AD-eenmalige aanmelding bij Chromeriver configureren en testen op basis van een testgebruiker met de naam **Britta Simon** .
+In deze sectie gaat u Azure AD-eenmalige aanmelding bij Chromeriver configureren en testen op basis van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in Chromeriver tot stand is gebracht.
 
 Voor het configureren en testen van eenmalige aanmelding via Azure AD bij Chromeriver moet u de volgende bouwstenen uitvoeren:
 
 1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[Eenmalige aanmelding voor Chromeriver configureren](#configure-chromeriver-single-sign-on)** : als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wilt configureren.
+2. **[Eenmalige aanmelding voor Chromeriver configureren](#configure-chromeriver-single-sign-on)**: als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wilt configureren.
 3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
 4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
-5. **[Chromeriver-testgebruiker maken](#create-chromeriver-test-user)** : als u een equivalent van Britta Simon in Chromeriver wilt hebben dat gekoppeld is aan de Azure AD-weergave van de gebruiker.
+5. **[Chromeriver-testgebruiker maken](#create-chromeriver-test-user)**: als u een equivalent van Britta Simon in Chromeriver wilt hebben dat gekoppeld is aan de Azure AD-weergave van de gebruiker.
 6. **[Eenmalige aanmelding testen](#test-single-sign-on)** : als u wilt controleren of de configuratie werkt.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
@@ -85,7 +85,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voor het configureren van Azure AD-eenmalige aanmelding met Chromeriver moet u de volgende stappen uitvoeren:
 
-1. Ga in de [Azure-portal](https://portal.azure.com/) naar de pagina voor integratie van de toepassing **Chromeriver** en selecteer **Eenmalige aanmelding** .
+1. Ga in de [Azure-portal](https://portal.azure.com/) naar de pagina voor integratie van de toepassing **Chromeriver** en selecteer **Eenmalige aanmelding**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -130,7 +130,7 @@ Als u eenmalige aanmelding aan de zijde van **Chromeriver** wilt configureren, m
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -149,13 +149,13 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 
-    d. Klik op **Create** .
+    d. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot Chromeriver.
 
-1. Selecteer **Bedrijfstoepassingen** in de Azure-portal, selecteer **Alle toepassingen** en vervolgens **Chromeriver** .
+1. Selecteer **Bedrijfstoepassingen** in de Azure-portal, selecteer **Alle toepassingen** en vervolgens **Chromeriver**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -163,11 +163,11 @@ In deze sectie gaat u Britta Simon toestemming geven voor gebruik van eenmalige 
 
     ![De Chromeriver-koppeling in de lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -175,7 +175,7 @@ In deze sectie gaat u Britta Simon toestemming geven voor gebruik van eenmalige 
 
 6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="create-chromeriver-test-user"></a>Chromeriver-testgebruiker maken
 

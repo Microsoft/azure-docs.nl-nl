@@ -9,10 +9,10 @@ ms.date: 01/09/2018
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: c8f4269235c494ff9dd8d1bf8e0ef940562f8927
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85515263"
 ---
 # <a name="turn-on-or-turn-off-your-storsimple-8000-series-device"></a>Het StorSimple 8000 Series-apparaat in-of uitschakelen
@@ -146,7 +146,7 @@ Als u het apparaat op een ordelijk en gecontroleerde manier wilt afsluiten, kunt
 > [!IMPORTANT]
 > Sluit een actief apparaat niet af met behulp van de aan/uit-knop aan de achterkant van het apparaat.
 > 
-> Voordat u het apparaat afsluit, controleert u of alle onderdelen van het apparaat in orde zijn. Navigeer in het Azure Portal naar **apparaten**  >  **Monitor**  >  **Hardware-status**controleren en controleer of de status van alle onderdelen groen is. Dit geldt alleen voor een goed systeem. Als het systeem wordt afgesloten om een defect onderdeel te vervangen, ziet u de status mislukt (rood) of gedegradeerd (geel) voor het respectieve onderdeel in de **Hardware-status**.
+> Voordat u het apparaat afsluit, controleert u of alle onderdelen van het apparaat in orde zijn. Navigeer in het Azure Portal naar **apparaten**  >    >  **Hardware-status** controleren en controleer of de status van alle onderdelen groen is. Dit geldt alleen voor een goed systeem. Als het systeem wordt afgesloten om een defect onderdeel te vervangen, ziet u de status mislukt (rood) of gedegradeerd (geel) voor het respectieve onderdeel in de **Hardware-status**.
 > 
 > 
 
@@ -154,7 +154,7 @@ Nadat u toegang hebt tot de Windows PowerShell voor StorSimple of de Azure Porta
 
 ### <a name="device-with-ebod-enclosure"></a>Apparaat met EBOD Enclosure <a name="8600a"></a>
 > [!IMPORTANT]
-> Voordat u de primaire behuizing en de EBOD-behuizing afsluit, moet u ervoor zorgen dat alle onderdelen van het apparaat in orde zijn. Navigeer in het Azure Portal naar **apparaten**  >  **Monitor**  >  **Hardware-status**controleren en controleer of alle onderdelen in orde zijn.
+> Voordat u de primaire behuizing en de EBOD-behuizing afsluit, moet u ervoor zorgen dat alle onderdelen van het apparaat in orde zijn. Navigeer in het Azure Portal naar **apparaten**  >    >  **Hardware-status** controleren en controleer of alle onderdelen in orde zijn.
 
 
 #### <a name="to-shut-down-a-running-device-with-ebod-enclosure"></a>Een actief apparaat afsluiten met EBOD Enclosure

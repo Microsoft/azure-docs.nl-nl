@@ -15,10 +15,10 @@ ms.reviewer: hirsin
 ms.custom: aaddev
 ROBOTS: NOINDEX
 ms.openlocfilehash: b719e866852d2e865c16c62fddd8c549ae505b7d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85551560"
 ---
 # <a name="authorize-access-to-web-applications-using-openid-connect-and-azure-active-directory"></a>Toegang verlenen aan webtoepassingen die gebruikmaken van OpenID Connect en Azure Active Directory
@@ -39,18 +39,18 @@ Registreer eerst uw toepassing met uw Azure Active Directory-Tenant (Azure AD). 
    
 1. Zoek en selecteer in de Azure-portal de optie **Azure Active Directory**.
    
-1. Selecteer **app-registraties**In het **Azure Active Directory** menu links en selecteer vervolgens **nieuwe registratie**.
+1. Selecteer **app-registraties** In het **Azure Active Directory** menu links en selecteer vervolgens **nieuwe registratie**.
    
 1. Volg de aanwijzingen en maak een nieuwe toepassing. Het maakt niet uit of het een webtoepassing of een toepassing voor een open bare client (Mobile & bureau blad) voor deze zelf studie is, maar als u specifieke voor beelden wilt voor webtoepassingen of open bare client toepassingen, raadpleegt u onze [Snelstartgids](v1-overview.md).
    
    - **Naam** is de naam van de toepassing en beschrijft de toepassing voor eindgebruikers.
    - Selecteer onder **Ondersteunde accounttypen** de optie **Accounts in een organisatieadreslijst en persoonlijke Microsoft-account**.
-   - Geef de **omleidings-URI**op. Voor webtoepassingen is dit de basis-URL van uw app waarmee gebruikers zich kunnen aanmelden.  Bijvoorbeeld `http://localhost:12345`. Voor de open bare client (mobiel & bureau blad) gebruikt Azure AD deze om token antwoorden te retour neren. Voer een specifieke waarde in voor uw toepassing.  Bijvoorbeeld `http://MyFirstAADApp`.
+   - Geef de **omleidings-URI** op. Voor webtoepassingen is dit de basis-URL van uw app waarmee gebruikers zich kunnen aanmelden.  Bijvoorbeeld `http://localhost:12345`. Voor de open bare client (mobiel & bureau blad) gebruikt Azure AD deze om token antwoorden te retour neren. Voer een specifieke waarde in voor uw toepassing.  Bijvoorbeeld `http://MyFirstAADApp`.
    <!--TODO: add once App ID URI is configurable: The **App ID URI** is a unique identifier for your application. The convention is to use `https://<tenant-domain>/<app-name>`, e.g. `https://contoso.onmicrosoft.com/my-first-aad-app`-->  
    
 1. Zodra u de registratie hebt voltooid, wordt uw toepassing door Azure AD toegewezen aan een unieke client-id (de **toepassings-id**). U hebt deze waarde nodig in de volgende secties, dus kopieer deze van de toepassings pagina.
    
-1. Als u uw toepassing wilt vinden in de Azure Portal, selecteert u **app-registraties**en selecteert u **alle toepassingen weer geven**.
+1. Als u uw toepassing wilt vinden in de Azure Portal, selecteert u **app-registraties** en selecteert u **alle toepassingen weer geven**.
 
 ## <a name="authentication-flow-using-openid-connect"></a>Verificatiestroom waarbij OpenID Connect wordt gebruikt
 
@@ -207,8 +207,8 @@ Wanneer u de gebruiker omleidt naar de `end_session_endpoint` , wordt de sessie 
 
 1. Navigeer naar [Azure Portal](https://portal.azure.com).
 2. Kies uw Active Directory door te klikken op uw account in de rechter bovenhoek van de pagina.
-3. Kies in het navigatie deel venster links de optie **Azure Active Directory**en kies vervolgens **app-registraties** en selecteer uw toepassing.
-4. Klik op **instellingen**en vervolgens op **Eigenschappen** en zoek het tekstvak **afmeldings-URL** . 
+3. Kies in het navigatie deel venster links de optie **Azure Active Directory** en kies vervolgens **app-registraties** en selecteer uw toepassing.
+4. Klik op **instellingen** en vervolgens op **Eigenschappen** en zoek het tekstvak **afmeldings-URL** . 
 
 ## <a name="token-acquisition"></a>Tokens ophalen
 Veel web-apps moeten de gebruiker niet alleen kunnen ondertekenen in, maar hebben ook toegang tot een webservice namens die gebruiker met behulp van OAuth. Dit scenario bevat een combi natie van OpenID Connect Connect voor gebruikers verificatie bij het tegelijkertijd ophalen van een `authorization_code` dat kan worden gebruikt om `access_tokens` de [OAuth-autorisatie code stroom](v1-protocols-oauth-code.md#use-the-authorization-code-to-request-an-access-token)te gebruiken.

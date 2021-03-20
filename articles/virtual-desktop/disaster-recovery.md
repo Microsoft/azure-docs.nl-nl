@@ -9,10 +9,10 @@ ms.date: 10/09/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: 968f82a143872fd282222539ab71a70db488a20d
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91935703"
 ---
 # <a name="set-up-a-business-continuity-and-disaster-recovery-plan"></a>Een plan voor bedrijfs continuïteit en herstel na nood gevallen instellen
@@ -78,7 +78,7 @@ Er zijn drie manieren om de domein controller beschikbaar te maken:
 
 Als u profiel containers gebruikt, is de volgende stap het instellen van gegevens replicatie op de secundaire locatie. U hebt vijf opties voor het opslaan van FSLogix-profielen:
 
-   - Opslagruimten Direct (S2D)
+   - S2D (Storage Spaces Direct)
    - Netwerk stations (VM met extra stations)
    - Azure Files
    - Azure NetApp Files
@@ -104,8 +104,8 @@ De FSLogix-agent kan meerdere profiel locaties ondersteunen als u de Register ve
 
 De Register vermeldingen configureren:
 
-1. Open de **REGI ster-editor**.
-2. Ga naar **computer**  >  **HKEY_LOCAL_MACHINE**-profielen voor  >  **Software**  >  **FSLogix**  >  **Profiles**.
+1. Open de **register-editor**.
+2. Ga naar **computer**  >  **HKEY_LOCAL_MACHINE**-profielen voor  >  **Software**  >  **FSLogix**  >  .
    
      > [!div class="mx-imgBorder"]
      > ![Een scherm opname van het venster profielen in de REGI ster-editor. VHDLocation is geselecteerd.](media/regedit-profiles.png)

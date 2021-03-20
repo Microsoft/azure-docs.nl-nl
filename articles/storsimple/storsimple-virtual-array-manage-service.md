@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 07/25/2019
 ms.author: alkohli
 ms.openlocfilehash: 92041be4d3d5ef4d980c17fa0a5870b740c1784a
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95995000"
 ---
 # <a name="deploy-the-storsimple-device-manager-service-for-storsimple-virtual-array"></a>De StorSimple Apparaatbeheer-service voor de virtuele StorSimple-matrix implementeren
@@ -42,7 +42,7 @@ In deze zelf studie wordt beschreven hoe u elk van de voor gaande taken uitvoert
 
 Als u een service wilt maken, moet u het volgende hebben:
 
-* Een abonnement met een Enterprise Agreement
+* Een abonnement met een Enterprise Overeenkomst
 * Een actief Microsoft Azure Storage-account
 * De facturerings gegevens die worden gebruikt voor toegangs beheer
 

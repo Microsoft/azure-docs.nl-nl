@@ -4,10 +4,10 @@ description: Meer informatie over het maken van een aangepaste installatie kopie
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: cac812a9c38fc1dedfd31659a626b122f9527e63
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87289403"
 ---
 # <a name="create-a-custom-image-from-a-vhd-file"></a>Een aangepaste installatie kopie maken van een VHD-bestand
@@ -24,15 +24,15 @@ De volgende stappen helpen u bij het maken van een aangepaste installatie kopie 
 
 1. Meld u aan bij [Azure Portal](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 
-1. Selecteer **alle services**en selecteer vervolgens **DevTest Labs** in de lijst.
+1. Selecteer **alle services** en selecteer vervolgens **DevTest Labs** in de lijst.
 
 1. Selecteer in de lijst met Labs het gewenste Lab.  
 
-1. Selecteer **configuratie en beleid**in het hoofd venster van het lab. 
+1. Selecteer **configuratie en beleid** in het hoofd venster van het lab. 
 
-1. Selecteer **aangepaste installatie kopieën**in het deel venster **configuratie en beleid** .
+1. Selecteer **aangepaste installatie kopieën** in het deel venster **configuratie en beleid** .
 
-1. Selecteer **+ toevoegen**in het deel venster **aangepaste installatie kopieën** .
+1. Selecteer **+ toevoegen** in het deel venster **aangepaste installatie kopieën** .
 
     ![Aangepaste installatie kopie toevoegen](./media/devtest-lab-create-template/add-custom-image.png)
 
@@ -40,10 +40,10 @@ De volgende stappen helpen u bij het maken van een aangepaste installatie kopie 
 
 1. Voer de beschrijving van de aangepaste installatie kopie in. Deze beschrijving wordt weer gegeven in de lijst met basis installatie kopieën bij het maken van een virtuele machine.
 
-1. Voor **type besturings systeem**selecteert u **Windows** of **Linux**.
+1. Voor **type besturings systeem** selecteert u **Windows** of **Linux**.
 
-    - Als u **Windows**selecteert, geeft u via het selectie vakje op of *Sysprep* is uitgevoerd op de computer. 
-    - Als u **Linux**selecteert, geeft u via het selectie vakje op of ongedaan maken van de *inrichting* op de computer is uitgevoerd. 
+    - Als u **Windows** selecteert, geeft u via het selectie vakje op of *Sysprep* is uitgevoerd op de computer. 
+    - Als u **Linux** selecteert, geeft u via het selectie vakje op of ongedaan maken van de *inrichting* op de computer is uitgevoerd. 
 
 1. Selecteer een **VHD** in de vervolg keuzelijst. Dit is de VHD die wordt gebruikt om de nieuwe aangepaste installatie kopie te maken. Selecteer, indien nodig, om **een VHD te uploaden met behulp van Power shell**.
 

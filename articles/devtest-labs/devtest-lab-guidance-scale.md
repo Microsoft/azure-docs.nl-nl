@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 06/26/2020
 ms.reviewer: christianreddington,anthdela,juselph
 ms.openlocfilehash: 50bf08678a12a1a0499abd08c52a264d03f4a401
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85478787"
 ---
 # <a name="scale-up-your-azure-devtest-labs-infrastructure"></a>Uw Azure DevTest Labs-infra structuur omhoog schalen
@@ -21,7 +21,7 @@ Voordat u DevTest Labs implementeert op het niveau van de onderneming, zijn er v
 ## <a name="networking-and-security"></a>Netwerken en beveiliging
 Netwerken en beveiliging zijn hoek stenen voor alle organisaties. Hoewel een implementatie op ondernemings niveau een veel diepere analyse vereist, is er een kleiner aantal vereisten om een proef van het concept uit te voeren. Enkele belang rijke aspecten van de focus zijn:
 
-- **Azure-abonnement** : als u DevTest Labs wilt implementeren, moet u toegang hebben tot een Azure-abonnement met de juiste rechten voor het maken van resources. Er zijn een aantal manieren om toegang te krijgen tot Azure-abonnementen, met inbegrip van een Enterprise Agreement en betalen naar gebruik. Zie [licenties voor Azure voor ondernemingen](https://azure.microsoft.com/pricing/enterprise-agreement/)voor meer informatie over het verkrijgen van toegang tot een Azure-abonnement.
+- **Azure-abonnement** : als u DevTest Labs wilt implementeren, moet u toegang hebben tot een Azure-abonnement met de juiste rechten voor het maken van resources. Er zijn een aantal manieren om toegang te krijgen tot Azure-abonnementen, met inbegrip van een Enterprise Overeenkomst en betalen naar gebruik. Zie [licenties voor Azure voor ondernemingen](https://azure.microsoft.com/pricing/enterprise-agreement/)voor meer informatie over het verkrijgen van toegang tot een Azure-abonnement.
 - **Toegang tot on-premises resources** : sommige organisaties vereisen dat hun resources in DevTest Labs toegang hebben tot on-premises resources. Er is een beveiligde verbinding van uw on-premises omgeving naar Azure nodig. Daarom is het belang rijk dat u een VPN-of Express route-verbinding instelt of configureert voordat u aan de slag gaat. Zie [overzicht van virtuele netwerken](../virtual-network/virtual-networks-overview.md)voor meer informatie.
 - **Aanvullende beveiligings vereisten** : andere beveiligings vereisten, zoals computer beleid, toegang tot open bare IP-adressen, verbinding maken met internet, zijn scenario's die mogelijk moeten worden beoordeeld voordat een testen van het concept wordt geïmplementeerd. 
 

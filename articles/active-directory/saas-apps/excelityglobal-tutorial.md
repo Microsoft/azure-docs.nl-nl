@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/04/2019
 ms.author: jeedes
 ms.openlocfilehash: 4c9eaf68036531530f844e919bacfae922441b79
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92453827"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-excelityglobal"></a>Zelfstudie: Azure Active Directory-integratie met ExcelityGlobal
@@ -49,7 +49,7 @@ Als u de integratie van ExcelityGlobal met Azure Active Directory wilt configure
 
 **Voer de volgende stappen uit om ExcelityGlobal toe te voegen uit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -61,7 +61,7 @@ Als u de integratie van ExcelityGlobal met Azure Active Directory wilt configure
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **ExcelityGlobal** , selecteer **ExcelityGlobal** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **ExcelityGlobal**, selecteer **ExcelityGlobal** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
      ![ExcelityGlobal in de lijst met resultaten](common/search-new-app.png)
 
@@ -103,15 +103,15 @@ Voer de volgende stappen uit om eenmalige aanmelding met Azure Active Directory 
 
     a. In het tekstvak **Id** typt u een URL met het volgende patroon:
 
-    **Voor de productieomgeving** : `https://ess.excelityglobal.com`
+    **Voor de productieomgeving**: `https://ess.excelityglobal.com`
 
-    **Voor de sandbox-omgeving** : `https://s6.excelityglobal.com`
+    **Voor de sandbox-omgeving**: `https://s6.excelityglobal.com`
 
     b. In het tekstvak **Antwoord-URL** typt u een URL met het volgende patroon:
 
-    **Voor de productieomgeving** : `https://ess.excelityglobal.com/ACS`
+    **Voor de productieomgeving**: `https://ess.excelityglobal.com/ACS`
 
-    **Voor de sandbox-omgeving** : `https://s6.excelityglobal.com/ACS`
+    **Voor de sandbox-omgeving**: `https://s6.excelityglobal.com/ACS`
 
 5. In de ExcelityGlobal-toepassing worden de SAML-asserties in een specifieke indeling verwacht. Hiervoor moet u aangepaste kenmerktoewijzingen toevoegen aan de configuratie van uw SAML-tokenkenmerken. In de volgende schermafbeelding ziet u de lijst met standaardkenmerken, waarbij **nameidentifier** is toegewezen aan **user.userprincipalname**. In de ExcelityGlobal-toepassing wordt verwacht dat **nameidentifier** is toegewezen aan **user.mail**. Daarom moet u de kenmerktoewijzing bewerken door op het pictogram **Bewerken** te klikken en de kenmerktoewijzing te wijzigen.
  
@@ -137,13 +137,13 @@ Voer de volgende stappen uit om eenmalige aanmelding met Azure Active Directory 
 
 ### <a name="configure-excelityglobal-single-sign-on"></a>Eenmalige aanmelding voor ExcelityGlobal configureren
 
-Als u eenmalige aanmelding aan de **ExcelityGlobal** -zijde wilt configureren, moet u de **App-URL voor federatieve metagegevens** verzenden naar het [ondersteuningsteam van ExcelityGlobal](https://www.excelityglobal.com/contact-us). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding aan de **ExcelityGlobal**-zijde wilt configureren, moet u de **App-URL voor federatieve metagegevens** verzenden naar het [ondersteuningsteam van ExcelityGlobal](https://www.excelityglobal.com/contact-us). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 

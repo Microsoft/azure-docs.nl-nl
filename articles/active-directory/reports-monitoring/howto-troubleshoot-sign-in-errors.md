@@ -15,13 +15,13 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4de9f5a21f38f741dcf65d285446d9482716d4f2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85608123"
 ---
-# <a name="how-to-troubleshoot-sign-in-errors-using-azure-active-directory-reports"></a>Procedure: problemen met aanmelden oplossen met behulp van Azure Active Directory-rapporten
+# <a name="how-to-troubleshoot-sign-in-errors-using-azure-active-directory-reports"></a>Procedure: Fouten bij het aanmelden oplossen met behulp van Azure Active Directory-rapporten
 
 Met het [aanmeld rapport](concept-sign-ins.md) in azure Active Directory (Azure AD) kunt u antwoorden vinden op vragen over het beheren van de toegang tot de toepassingen in uw organisatie, waaronder:
 
@@ -37,7 +37,7 @@ Daarnaast kan het rapport aanmeldingen u helpen bij het oplossen van aanmeldings
 U hebt de volgende zaken nodig:
 
 * Een Azure AD-Tenant met een Premium-licentie (P1/P2). Zie [Aan de slag met Azure Active Directory Premium](../fundamentals/active-directory-get-started-premium.md) om uw versie van Azure Active Directory te upgraden.
-* Een gebruiker die zich in de rol **globale beheerder**, **beveiligings beheerder**, **beveiligings lezer**of **rapport lezer** voor de Tenant bevindt. Bovendien kan elke gebruiker toegang krijgen tot eigen aanmeldingen. 
+* Een gebruiker die zich in de rol **globale beheerder**, **beveiligings beheerder**, **beveiligings lezer** of **rapport lezer** voor de Tenant bevindt. Bovendien kan elke gebruiker toegang krijgen tot eigen aanmeldingen. 
 
 ## <a name="troubleshoot-sign-in-errors-using-the-sign-ins-report"></a>Fouten bij het aanmelden oplossen met behulp van het rapport aanmeldingen
 
@@ -47,7 +47,7 @@ U hebt de volgende zaken nodig:
 
     ![Resultaten filteren](./media/howto-troubleshoot-sign-in-errors/filters.png)
         
-4. Identificeer de mislukte aanmelding die u wilt onderzoeken. Selecteer deze optie om het venster met aanvullende details te openen met meer informatie over de mislukte aanmelding. Noteer de **fout code voor aanmelding** en de **reden**van de fout. 
+4. Identificeer de mislukte aanmelding die u wilt onderzoeken. Selecteer deze optie om het venster met aanvullende details te openen met meer informatie over de mislukte aanmelding. Noteer de **fout code voor aanmelding** en de **reden** van de fout. 
 
     ![Record selecteren](./media/howto-troubleshoot-sign-in-errors/sign-in-failures.png)
         

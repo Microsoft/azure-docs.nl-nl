@@ -8,10 +8,10 @@ ms.date: 01/02/2018
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 1da688dfb00b26ca6b561d5aa0fb548c221381c5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85514580"
 ---
 # <a name="connect-remotely-to-your-storsimple-8000-series-device"></a>Extern verbinding maken met uw StorSimple 8000 Series-apparaat
@@ -52,14 +52,14 @@ Voer de volgende stappen uit in de Azure Portal om extern beheer via HTTP in te 
 #### <a name="to-enable-remote-management-through-the-azure-portal"></a>Extern beheer via de Azure Portal inschakelen
 
 1. Ga naar uw StorSimple-apparaatbeheerservice. Selecteer **apparaten** en selecteer en klik vervolgens op het apparaat dat u wilt configureren voor extern beheer. Ga naar **apparaatinstellingen > beveiliging**.
-2. Klik op **extern beheer**op de Blade **beveiligings instellingen** .
+2. Klik op **extern beheer** op de Blade **beveiligings instellingen** .
 3. Stel op de Blade **extern beheer** **extern beheer inschakelen** in op **Ja**.
 4. U kunt nu verbinding maken via HTTP. (De standaard instelling is om verbinding te maken via HTTPS.) Zorg ervoor dat HTTP is geselecteerd.
    
    > [!NOTE]
    > Verbinding maken via HTTP is alleen acceptabel in vertrouwde netwerken.
    
-5. Klik op **Opslaan** en selecteer **Ja**als u om bevestiging wordt gevraagd.
+5. Klik op **Opslaan** en selecteer **Ja** als u om bevestiging wordt gevraagd.
 
 ### <a name="use-the-serial-console-to-enable-remote-management-over-http"></a>De seriële console gebruiken om extern beheer via HTTP in te scha kelen
 Voer de volgende stappen uit op de seriële console van het apparaat om extern beheer in te scha kelen.
@@ -67,9 +67,9 @@ Voer de volgende stappen uit op de seriële console van het apparaat om extern b
 #### <a name="to-enable-remote-management-through-the-device-serial-console"></a>Extern beheer via de seriële console van het apparaat inschakelen
 1. Selecteer optie 1 in het menu van de seriële console. Ga voor meer informatie over het gebruik van de seriële console op het apparaat naar [verbinding maken met Windows PowerShell voor StorSimple via de seriële console](storsimple-8000-windows-powershell-administration.md#connect-to-windows-powershell-for-storsimple-via-the-device-serial-console)van het apparaat.
 2. Typ het volgende bij de prompt: `Enable-HcsRemoteManagement –AllowHttp`
-3. U wordt gewaarschuwd over de beveiligings problemen van het gebruik van HTTP om verbinding te maken met het apparaat. Wanneer u hierom wordt gevraagd, bevestigt u door **Y**te typen.
+3. U wordt gewaarschuwd over de beveiligings problemen van het gebruik van HTTP om verbinding te maken met het apparaat. Wanneer u hierom wordt gevraagd, bevestigt u door **Y** te typen.
 4. Controleer of HTTP is ingeschakeld door het volgende te typen: `Get-HcsSystem`
-5. Controleer of in **RemoteManagementMode** het veld RemoteManagementMode **HttpsAndHttpEnabled**wordt weer gegeven. In de volgende afbeelding ziet u deze instellingen in PuTTy.
+5. Controleer of in  het veld RemoteManagementMode **HttpsAndHttpEnabled** wordt weer gegeven. In de volgende afbeelding ziet u deze instellingen in PuTTy.
    
      ![Seriële HTTPS en HTTP ingeschakeld](./media/storsimple-remote-connect/HCS_SerialHttpsAndHttpEnabled.png)
 
@@ -131,7 +131,7 @@ Voer de volgende stappen uit in de Azure Portal om extern beheer via HTTPS in te
 #### <a name="to-enable-remote-management-over-https-from-the-azure-portal"></a>Extern beheer via HTTPS inschakelen via de Azure Portal
 
 1. Ga naar uw StorSimple-apparaatbeheerservice. Selecteer **apparaten** en selecteer en klik vervolgens op het apparaat dat u wilt configureren voor extern beheer. Ga naar **apparaatinstellingen > beveiliging**.
-2. Klik op **extern beheer**op de Blade **beveiligings instellingen** .
+2. Klik op **extern beheer** op de Blade **beveiligings instellingen** .
 3. Stel **Extern beheer inschakelen** in op **Ja**.
 4. U kunt nu verbinding maken met behulp van HTTPS. (De standaard instelling is om verbinding te maken via HTTPS.) Controleer of HTTPS is geselecteerd.
 5. Klik op... en klik vervolgens op **certificaat voor extern beheer downloaden**. Geef een locatie op voor het opslaan van dit bestand. U moet dit certificaat installeren op de client of hostcomputer die u gaat gebruiken om verbinding te maken met het apparaat.
@@ -152,7 +152,7 @@ Voer de volgende stappen uit op de seriële console van het apparaat om extern b
    
      `Get-HcsSystem`
    
-    Zorg ervoor dat in het veld **RemoteManagementMode** de **HttpsEnabled**wordt weer gegeven. In de volgende afbeelding ziet u deze instellingen in PuTTy.
+    Zorg ervoor dat in het veld **RemoteManagementMode** de **HttpsEnabled** wordt weer gegeven. In de volgende afbeelding ziet u deze instellingen in PuTTy.
    
      ![Seriële HTTPS ingeschakeld](./media/storsimple-remote-connect/HCS_SerialHttpsEnabled.png)
 4. Kopieer vanaf de uitvoer van het `Get-HcsSystem` serie nummer van het apparaat en sla het op voor later gebruik.
@@ -195,7 +195,7 @@ De bovenstaande procedures worden hieronder beschreven.
 
 #### <a name="to-add-device-serial-numbers-to-the-remote-host"></a>Serie nummers van apparaten toevoegen aan de externe host
 1. Start Klad blok als beheerder en open vervolgens het hosts-bestand dat zich bevindt in \Windows\System32\Drivers\etc.
-2. Voeg de volgende drie vermeldingen toe aan het hosts-bestand: **Data 0 IP-adres**, **controller 0 vast IP-adres**en **Controller 1 vast IP-adres**.
+2. Voeg de volgende drie vermeldingen toe aan het hosts-bestand: **Data 0 IP-adres**, **controller 0 vast IP-adres** en **Controller 1 vast IP-adres**.
 3. Voer het serie nummer van het apparaat in dat u eerder hebt opgeslagen. Wijs dit toe aan het IP-adres, zoals wordt weer gegeven in de volgende afbeelding. Voor controller 0 en controller 1 voegt u **Controller0** en **Controller1** toe aan het einde van het serie nummer (CN-naam).
    
     ![De CN-naam wordt toegevoegd aan het hosts-bestand](./media/storsimple-remote-connect/HCS_AddingCNNameToHostsFile.png)

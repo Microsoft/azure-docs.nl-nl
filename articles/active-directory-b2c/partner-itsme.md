@@ -12,10 +12,10 @@ ms.date: 07/30/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: ba7875caa6a1db7638bfeafcfea1efa7b2462152
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87489512"
 ---
 # <a name="configure-itsme-openid-connect-oidc-with-azure-active-directory-b2c"></a>Itsme OpenID Connect Connect (OIDC) configureren met Azure Active Directory B2C
@@ -121,15 +121,15 @@ Please clarify step 1 in the description below - we don't have steps in this tut
 
 ### <a name="register-an-application"></a>Een toepassing registreren
 
-1. Selecteer in uw B2C-Tenant onder **beheren**de optie **app-registraties**  >  **nieuwe registratie**.
+1. Selecteer in uw B2C-Tenant onder **beheren** de optie **app-registraties**  >  **nieuwe registratie**.
 
-2. Geef een **naam** op voor de toepassing en voer de **omleidings-URI**in. Voer in voor test doeleinden `https://jwt.ms` .
+2. Geef een **naam** op voor de toepassing en voer de **omleidings-URI** in. Voer in voor test doeleinden `https://jwt.ms` .
 
 3. Zorg ervoor dat multi-factor Authentication is **uitgeschakeld**.
 
 4. Selecteer **Registreren**.
 
-   a. Voor test doeleinden selecteert u **verificatie**en selecteert u onder **impliciete toekenning**de selectie vakjes **toegangs tokens** en **id-tokens** .  
+   a. Voor test doeleinden selecteert u **verificatie** en selecteert u onder **impliciete toekenning** de selectie vakjes **toegangs tokens** en **id-tokens** .  
 
    b. Selecteer **Opslaan**.
 
@@ -139,7 +139,7 @@ Please clarify step 1 in the description below - we don't have steps in this tut
 
 2. Selecteer de eerder gemaakte gebruikers stroom.
 
-3. Selecteer **gebruikers stroom uitvoeren**.
+3. Selecteer **Gebruikersstroom uitvoeren**.
 
    a. **Toepassing**: *Selecteer de geregistreerde app*
 

@@ -16,10 +16,10 @@ ms.date: 02/27/2017
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 8bc8846d546faec194617ccb753cdbd105e16bf9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85513617"
 ---
 # <a name="change-the-storsimple-virtual-array-device-administrator-password-via-storsimple-device-manager"></a>Wijzig de StorSimple van de virtuele matrix van het apparaat met StorSimple Apparaatbeheer
@@ -63,8 +63,8 @@ Voer de volgende stappen uit om het beheerders wachtwoord van het apparaat te wi
 1. Klik in de lokale web-UI op **onderhoud**  >  **wachtwoord wijziging** voor uw apparaat.
    
     ![Wachtwoord1 wijzigen](./media/storsimple-virtual-array-change-device-admin-password/image40.png)
-2. Voer het **huidige wacht woord**in.
-3. Geef een **Nieuw wacht woord**op. Het wacht woord moet ten minste acht tekens lang zijn. De naam moet 3 van 4 van de volgende tekens bevatten: hoofd letters, kleine letters, cijfers en speciale letters.
+2. Voer het **huidige wacht woord** in.
+3. Geef een **Nieuw wacht woord** op. Het wacht woord moet ten minste acht tekens lang zijn. De naam moet 3 van 4 van de volgende tekens bevatten: hoofd letters, kleine letters, cijfers en speciale letters.
    
     Uw wacht woord mag niet gelijk zijn aan de laatste 24 wacht woorden.
 4. Voer het wachtwoord opnieuw in ter bevestiging.

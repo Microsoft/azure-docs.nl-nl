@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 10/27/2020
 ms.author: tomfitz
 ms.openlocfilehash: 1085b70df67a3f16a7f7f8c5ae85c9ab271b62ac
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92754418"
 ---
 # <a name="microsoftstoragestorageblobselector-ui-element"></a>Micro soft. storage. StorageBlobSelector UI-element
@@ -24,19 +24,19 @@ De gebruiker krijgt de mogelijkheid om te bladeren naar beschik bare opslag-blob
 
 Nadat u **Bladeren** hebt geselecteerd, kan de gebruiker een opslag account selecteren.
 
-:::image type="content" source="./media/managed-application-elements/microsoft-storage-storageblobselector-select.png" alt-text="Micro soft. storage. StorageBlobSelector: bladeren":::
+:::image type="content" source="./media/managed-application-elements/microsoft-storage-storageblobselector-select.png" alt-text="Micro soft. storage. StorageBlobSelector: opslag selecteren":::
 
 De gebruiker ziet de containers in het opslag account en kan er een selecteren.
 
-:::image type="content" source="./media/managed-application-elements/microsoft-storage-storageblobselector-containers.png" alt-text="Micro soft. storage. StorageBlobSelector: bladeren":::
+:::image type="content" source="./media/managed-application-elements/microsoft-storage-storageblobselector-containers.png" alt-text="Micro soft. storage. StorageBlobSelector-container selecteren":::
 
 De gebruiker kan in de container een bestand selecteren.
 
-:::image type="content" source="./media/managed-application-elements/microsoft-storage-storageblobselector-file.png" alt-text="Micro soft. storage. StorageBlobSelector: bladeren":::
+:::image type="content" source="./media/managed-application-elements/microsoft-storage-storageblobselector-file.png" alt-text="Micro soft. storage. StorageBlobSelector-bestand":::
 
 Het besturings element wordt bijgewerkt om de geselecteerde bestands naam weer te geven.
 
-:::image type="content" source="./media/managed-application-elements/microsoft-storage-storageblobselector-result.png" alt-text="Micro soft. storage. StorageBlobSelector: bladeren":::
+:::image type="content" source="./media/managed-application-elements/microsoft-storage-storageblobselector-result.png" alt-text="Micro soft. storage. StorageBlobSelector-bestand selecteren weer geven":::
 
 ## <a name="schema"></a>Schema
 

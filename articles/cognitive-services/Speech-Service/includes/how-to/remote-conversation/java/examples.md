@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 03/09/2020
 ms.author: amishu
 ms.openlocfilehash: 6a73c238cde7fbddfb7aa4c7153b5de5b442e9b5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87284206"
 ---
 ## <a name="upload-the-audio"></a>De audio uploaden
@@ -95,7 +95,7 @@ speechConfig.setServiceProperty("transcriptionMode", "RealTimeAndAsync", Service
 
 ## <a name="get-transcription-results"></a>Transcriptie-resultaten ophalen
 
-Voor de code die hier wordt weer gegeven, hebt u **versie 1.8.0 van de externe conversatie**nodig, die alleen wordt ondersteund voor Java (1.8.0 of hoger) in Windows en Linux. 
+Voor de code die hier wordt weer gegeven, hebt u **versie 1.8.0 van de externe conversatie** nodig, die alleen wordt ondersteund voor Java (1.8.0 of hoger) in Windows en Linux. 
 
 ### <a name="obtaining-the-async-conversation-client-sdk"></a>De client-SDK voor de async-conversatie verkrijgen
 

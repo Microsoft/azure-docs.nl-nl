@@ -11,10 +11,10 @@ ms.date: 08/20/2019
 ms.author: robinsh
 ms.custom: mqtt, devx-track-csharp
 ms.openlocfilehash: 5760c574e64a3b3b4a1df12092cff44374790a90
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89018396"
 ---
 # <a name="get-started-with-device-management-net"></a>Aan de slag met Apparaatbeheer (.NET)
@@ -63,13 +63,13 @@ In deze sectie maakt u een .NET-console-app met behulp van C#, waarmee een appar
 
 1. Selecteer **Een nieuw project maken** in Visual Studio.
 
-1. Zoek in **een nieuw project maken**en selecteer de project sjabloon **console-app (.NET Framework)** en selecteer vervolgens **volgende**.
+1. Zoek in **een nieuw project maken** en selecteer de project sjabloon **console-app (.NET Framework)** en selecteer vervolgens **volgende**.
 
-1. Geef in **uw nieuwe project**de naam project *TriggerReboot*en selecteer versie 4.5.1 of hoger .NET Framework. Selecteer **Maken**.
+1. Geef in **uw nieuwe project** de naam project *TriggerReboot* en selecteer versie 4.5.1 of hoger .NET Framework. Selecteer **Maken**.
 
     ![Nieuw Windows Classic Desktop-project in Visual C#](./media/iot-hub-csharp-csharp-device-management-get-started/create-trigger-reboot-configure.png)
 
-1. Klik in **Solution Explorer**met de rechter muisknop op het project **TriggerReboot** en selecteer vervolgens **NuGet-pakketten beheren**.
+1. Klik in **Solution Explorer** met de rechter muisknop op het project **TriggerReboot** en selecteer vervolgens **NuGet-pakketten beheren**.
 
 1. Selecteer **Bladeren**, zoek naar en selecteer **micro soft. Azure. devices**. Selecteer **installeren** om het **micro soft. Azure. devices** -pakket te installeren.
 
@@ -146,15 +146,15 @@ In deze sectie doet u het volgende:
 
 Als u de gesimuleerde apparaat-app wilt maken, volgt u deze stappen:
 
-1. Selecteer in Visual Studio het **bestand**  >  **Nieuw**  >  **project**in de TriggerReboot-oplossing die u al hebt gemaakt. Zoek in **een nieuw project maken**en selecteer de project sjabloon **console-app (.NET Framework)** en selecteer vervolgens **volgende**.
+1. Selecteer in Visual Studio het **bestand**  >  **Nieuw**  >  **project** in de TriggerReboot-oplossing die u al hebt gemaakt. Zoek in **een nieuw project maken** en selecteer de project sjabloon **console-app (.NET Framework)** en selecteer vervolgens **volgende**.
 
-1. In **uw nieuwe project configureren**, de naam van het project *SimulateManagedDevice*en voor de **oplossing**, selecteert **u toevoegen aan oplossing**. Selecteer **Maken**.
+1. In **uw nieuwe project configureren**, de naam van het project *SimulateManagedDevice* en voor de **oplossing**, selecteert **u toevoegen aan oplossing**. Selecteer **Maken**.
 
     ![Geef uw project een naam en voeg het toe aan de oplossing](./media/iot-hub-csharp-csharp-device-management-get-started/configure-device-app.png)
 
 1. Klik in Solution Explorer met de rechter muisknop op het nieuwe **SimulateManagedDevice** -project en selecteer vervolgens **NuGet-pakketten beheren**.
 
-1. Selecteer **Bladeren**en zoek naar **micro soft. Azure. devices. client**en selecteer deze. Selecteer **Installeren**.
+1. Selecteer **Bladeren** en zoek naar **micro soft. Azure. devices. client** en selecteer deze. Selecteer **Installeren**.
 
     ![NuGet Package Manager-venster Client-App](./media/iot-hub-csharp-csharp-device-management-get-started/create-device-nuget-devices-client.png)
 
@@ -237,7 +237,7 @@ Als u de gesimuleerde apparaat-app wilt maken, volgt u deze stappen:
 
 1. Klik in Solution Explorer met de rechter muisknop op uw oplossing en selecteer vervolgens **opstart projecten instellen**.
 
-1. **Common Properties**  >  Selecteer **één opstart project**voor algemene eigenschappen voor het opstarten van het**project**en selecteer vervolgens het project **SimulateManagedDevice** . Selecteer **OK** om uw wijzigingen op te slaan.
+1.   >  Selecteer **één opstart project** voor algemene eigenschappen voor het opstarten van het **project** en selecteer vervolgens het project **SimulateManagedDevice** . Selecteer **OK** om uw wijzigingen op te slaan.
 
 1. Selecteer **Bouwen** > **Oplossing bouwen**.
 
@@ -248,9 +248,9 @@ Als u de gesimuleerde apparaat-app wilt maken, volgt u deze stappen:
 
 U bent nu klaar om de apps uit te voeren.
 
-1. Als u de .NET- **SimulateManagedDevice**wilt uitvoeren, klikt u in Solution Explorer met de rechter muisknop op het project **SimulateManagedDevice** , selecteert u **fout opsporing**en selecteert u vervolgens **nieuw exemplaar starten**. De app moet beginnen met Luis teren naar methode aanroepen vanuit uw IoT-hub.
+1. Als u de .NET- **SimulateManagedDevice** wilt uitvoeren, klikt u in Solution Explorer met de rechter muisknop op het project **SimulateManagedDevice** , selecteert u **fout opsporing** en selecteert u vervolgens **nieuw exemplaar starten**. De app moet beginnen met Luis teren naar methode aanroepen vanuit uw IoT-hub.
 
-1. Klik met de rechter muisknop op het **TriggerReboot** -project nadat het apparaat is verbonden en er wordt gewacht op de aanroep van de methode, selecteer **fout opsporing**en selecteer vervolgens **nieuw exemplaar starten**.
+1. Klik met de rechter muisknop op het **TriggerReboot** -project nadat het apparaat is verbonden en er wordt gewacht op de aanroep van de methode, selecteer **fout opsporing** en selecteer vervolgens **nieuw exemplaar starten**.
 
    Als het goed is, wordt ' opnieuw opstarten ' weer geven. geschreven in de **SimulatedManagedDevice** -console en de gerapporteerde eigenschappen van het apparaat, waaronder de laatste keer opnieuw opstarten, geschreven in de **TriggerReboot** -console.
 

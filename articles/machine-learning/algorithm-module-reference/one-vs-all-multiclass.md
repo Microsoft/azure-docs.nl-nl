@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 11/13/2020
 ms.openlocfilehash: 4dfe284a00052cbd1915d62355e1d7772f3712ab
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94591866"
 ---
 # <a name="one-vs-all-multiclass"></a>One-vs-All Multiclass
@@ -42,7 +42,7 @@ U verbindt het binaire model met de module One-vs-All Multiclass. Vervolgens tra
 
 Wanneer u de modellen combineert, maakt One-vs-All Multiclass meerdere binaire classificatie modellen, optimaliseert de algoritme voor elke klasse en voegt de modellen vervolgens samen. De module voert deze taken uit, ook al heeft de gegevensset van de training mogelijk meerdere klassen waarden.
 
-1. Voeg de module One-vs-All Multiclass toe aan uw pijp lijn in de ontwerp functie. U kunt deze module vinden onder **machine learning-Initialize** , in de categorie **classificatie** .
+1. Voeg de module One-vs-All Multiclass toe aan uw pijp lijn in de ontwerp functie. U kunt deze module vinden onder **machine learning-Initialize**, in de categorie **classificatie** .
 
    De classificatie van de One-vs-All Multiclass heeft geen Configureer bare para meters. Aanpassingen moeten worden uitgevoerd in het binaire classificatie model dat wordt opgegeven als invoer.
 

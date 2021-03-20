@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 11/13/2020
 ms.author: juliako
 ms.openlocfilehash: fbc77b960cac0db2d077345c74d64485bd7ad8bb
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95994487"
 ---
 Een URL die wordt gebruikt om de klant (met een POST-aanvraag) op de hoogte te stellen van de volgende gebeurtenissen:

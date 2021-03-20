@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 05/13/2020
 ms.custom: devx-track-java, devx-track-azurecli
 ms.openlocfilehash: 2fbdd46b872c4c70999355d457045f4aac8aa34c
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92742803"
 ---
 # <a name="how-to-enable-system-assigned-managed-identity-for-azure-spring-cloud-application"></a>Door het systeem toegewezen beheerde identiteit inschakelen voor de Azure Spring Cloud-toepassing
@@ -34,8 +34,8 @@ Als u een beheerde identiteit in de [Azure Portal](https://portal.azure.com/)wil
 
 1. Maak een app in de portal zoals u dat gewend bent. Navigeer ernaar in de portal.
 2. Schuif omlaag naar de **instellingen** groep in het navigatie deel venster links.
-3. Selecteer **identiteit** .
-4. Schakel op het tabblad **systeem toegewezen** de optie **status** in *op aan* . Klik op **Opslaan** .
+3. Selecteer **identiteit**.
+4. Schakel op het tabblad **systeem toegewezen** de optie **status** in *op aan*. Klik op **Opslaan**.
 
  ![Beheerde identiteit in de portal](./media/spring-cloud-managed-identity/identity-1.png)
 
@@ -72,8 +72,8 @@ Als u een door het systeem toegewezen identiteit verwijdert, wordt deze ook uit 
 Door het systeem toegewezen beheerde identiteit verwijderen uit een app die niet meer nodig is:
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com/) met behulp van een account dat is gekoppeld aan het Azure-abonnement dat het Azure veer Cloud-exemplaar bevat.
-1. Navigeer naar de gewenste VM en selecteer **Identiteit** .
-1. Selecteer onder **systeem toegewezen** / **status** de optie **uit** en klik vervolgens op **Opslaan** :
+1. Navigeer naar de gewenste VM en selecteer **Identiteit**.
+1. Selecteer onder **systeem toegewezen** / **status** de optie **uit** en klik vervolgens op **Opslaan**:
 
  ![Beheerde identiteit](./media/spring-cloud-managed-identity/remove-identity.png)
 

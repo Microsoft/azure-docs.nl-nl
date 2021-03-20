@@ -8,10 +8,10 @@ ms.topic: overview
 ms.date: 08/31/2020
 ms.author: mbaldwin
 ms.openlocfilehash: 3e36de62b79788e2efdc3e9abf711924c4fba0c4
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93341804"
 ---
 # <a name="how-to-author-an-attestation-policy"></a>Attestation-beleid ontwerpen
@@ -128,8 +128,8 @@ Nadat u een beleidsbestand hebt gemaakt, volgt u de onderstaande stappen om een 
      ```
 
 2. (Optioneel) Onderteken het beleid. Azure Attestation ondersteunt de volgende algoritmen:
-     - **Geen** : De payload van het beleid niet ondertekenen.
-     - **RS256** : Ondersteund algoritme voor het ondertekenen van de payload van het beleid
+     - **Geen**: De payload van het beleid niet ondertekenen.
+     - **RS256**: Ondersteund algoritme voor het ondertekenen van de payload van het beleid
 
 3. Upload de JWS en valideer het beleid.
      - Als het beleidsbestand geen syntaxisfouten bevat, wordt het geaccepteerd door de service.

@@ -12,10 +12,10 @@ ms.reviewer: ozge
 ms.subservice: common
 ms.custom: devx-track-csharp
 ms.openlocfilehash: f569fdac19c4f765828d24f4d6615fdd7bafef8a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89010899"
 ---
 # <a name="call-rest-api-operations-with-shared-key-authorization"></a>REST API bewerkingen aanroepen met gedeelde sleutel autorisatie
@@ -66,7 +66,7 @@ Controleer de verwijzing voor de [ListContainers](/rest/api/storageservices/List
 
 **Aanvraag methode**: ophalen. Dit woord is de HTTP-methode die u opgeeft als een eigenschap van het object Request. Andere waarden voor deze term zijn onder andere HEAD, PUT en DELETE, afhankelijk van de API die u aanroept.
 
-**Aanvraag-URI**: `https://myaccount.blob.core.windows.net/?comp=list` .De aanvraag-URI wordt gemaakt op basis van het eind punt van het Blob-opslag account `https://myaccount.blob.core.windows.net` en de bron teken reeks `/?comp=list` .
+**Aanvraag-URI**: `https://myaccount.blob.core.windows.net/?comp=list` .  De aanvraag-URI wordt gemaakt op basis van het eind punt van het Blob-opslag account `https://myaccount.blob.core.windows.net` en de bron teken reeks `/?comp=list` .
 
 [URI-para meters](/rest/api/storageservices/List-Containers2#uri-parameters): er zijn aanvullende query parameters die u kunt gebruiken bij het aanroepen van ListContainers. Enkele van deze para meters zijn *time-out* voor de aanroep (in seconden) en het *voor voegsel*, dat wordt gebruikt voor het filteren.
 
@@ -84,7 +84,7 @@ Als u aanvullende para meters wilt gebruiken, voegt u deze toe aan de resource t
 
 [Status code van antwoord](/rest/api/storageservices/List-Containers2#status-code)**:** geeft een overzicht van de status codes die u moet weten. In dit voor beeld is de HTTP-status code 200 OK. Bekijk de [definities van status](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)codes voor een volledige lijst met HTTP-status codes. Zie [algemene rest API fout codes](/rest/api/storageservices/common-rest-api-error-codes) voor meer informatie over de specifieke fout codes voor de opslag rest api's.
 
-[Antwoord headers](/rest/api/storageservices/List-Containers2#response-headers)**:** dit is het *inhouds type*include; *x-MS-Request-id*, de aanvraag-id is die u hebt opgegeven in; *x-MS-version*, waarmee wordt aangegeven welke versie van de BLOB service gebruikt; en de *datum*, in UTC en geeft aan op welke tijd de aanvraag is gedaan.
+[Antwoord headers](/rest/api/storageservices/List-Containers2#response-headers)**:** dit is het *inhouds type* include; *x-MS-Request-id*, de aanvraag-id is die u hebt opgegeven in; *x-MS-version*, waarmee wordt aangegeven welke versie van de BLOB service gebruikt; en de *datum*, in UTC en geeft aan op welke tijd de aanvraag is gedaan.
 
 [Antwoord tekst](/rest/api/storageservices/List-Containers2#response-body): dit veld is een XML-structuur die de aangevraagde gegevens verschaft. In dit voor beeld is het antwoord een lijst met containers en de bijbehorende eigenschappen.
 
@@ -94,7 +94,7 @@ Gebruik voor beveiliging bij het uitvoeren in productie altijd HTTPS in plaats v
 
 In het voorbeeld project bevindt de code voor het maken van de autorisatie-header zich in een afzonderlijke klasse. Het is raadzaam om de hele klasse te maken en deze toe te voegen aan uw eigen oplossing en deze te gebruiken. De code van de autorisatie-header werkt voor de meeste REST API-aanroepen naar Azure Storage.
 
-Als u de aanvraag wilt bouwen, wat een HttpRequestMessage-object is, gaat u naar ListContainersAsyncREST in Program.cs. De stappen voor het maken van de aanvraag zijn:
+Als u de aanvraag wilt maken, wat een HttpRequestMessage-object is, gaat u naar ListContainersAsyncREST in Program. cs. De stappen voor het maken van de aanvraag zijn:
 
 - Maak de URI die moet worden gebruikt voor het aanroepen van de service.
 - Maak het HttpRequestMessage-object en stel de payload in. De nettolading is null voor ListContainersAsyncREST omdat er niets wordt door gegeven.
@@ -286,19 +286,19 @@ Dit code fragment toont de indeling van de teken reeks voor de gedeelde sleutel 
 
 ```csharp  
 StringToSign = VERB + "\n" +  
-               Content-Encoding + "\n" +  
-               Content-Language + "\n" +  
-               Content-Length + "\n" +  
-               Content-MD5 + "\n" +  
-               Content-Type + "\n" +  
-               Date + "\n" +  
-               If-Modified-Since + "\n" +  
-               If-Match + "\n" +  
-               If-None-Match + "\n" +  
-               If-Unmodified-Since + "\n" +  
-               Range + "\n" +  
-               CanonicalizedHeaders +  
-               CanonicalizedResource;  
+               Content-Encoding + "\n" +  
+               Content-Language + "\n" +  
+               Content-Length + "\n" +  
+               Content-MD5 + "\n" +  
+               Content-Type + "\n" +  
+               Date + "\n" +  
+               If-Modified-Since + "\n" +  
+               If-Match + "\n" +  
+               If-None-Match + "\n" +  
+               If-Unmodified-Since + "\n" +  
+               Range + "\n" +  
+               CanonicalizedHeaders +  
+               CanonicalizedResource;  
 ```
 
 De meeste van deze velden worden zelden gebruikt. Voor Blob-opslag geeft u VERB, MD5, lengte van inhoud, canonieke kopteksten en canonieke bron op. U kunt de andere leeg laten (maar in dat `\n` geval de waarde kent zodat deze leeg zijn).

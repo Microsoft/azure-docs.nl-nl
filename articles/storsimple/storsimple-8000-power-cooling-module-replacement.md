@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 06/02/2017
 ms.author: alkohli
 ms.openlocfilehash: 045cec85174a88d1d608a4adc679461008852768
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85514596"
 ---
 # <a name="replace-a-power-and-cooling-module-on-your-storsimple-device"></a>Stroom- en koelmodule van StorSimple-apparaat vervangen
@@ -55,7 +55,7 @@ Volg deze instructies wanneer u klaar bent voor het verwijderen van een voeding 
    * Als een voeding in PCM 0 is mislukt, wordt de status van de **voeding in PCM 0** rood weer geven.
    * Als een voeding in PCM 1 mislukt, wordt de status van de **voeding in PCM 1** rood weer geven.
    * Als de ventilator in PCM 1 is mislukt, wordt de status van **koeling 0 voor PCM 0** of **koeling 1 voor PCM 0** rood.
-2. Zoek de defecte PCM op de achterkant van de primaire behuizing. Als u een 8600-model gebruikt, identificeert u de primaire behuizing door te kijken naar het id-nummer van de systeem eenheid die wordt weer gegeven op de LED voor het voor paneel. De standaard eenheid-ID die wordt weer gegeven op de primaire behuizing is **00**, terwijl de standaard eenheid-id die wordt weer gegeven in de EBOD Enclosure **01**is. In het volgende diagram en tabel wordt het voor paneel van de LED-weer gave uitgelegd.
+2. Zoek de defecte PCM op de achterkant van de primaire behuizing. Als u een 8600-model gebruikt, identificeert u de primaire behuizing door te kijken naar het id-nummer van de systeem eenheid die wordt weer gegeven op de LED voor het voor paneel. De standaard eenheid-ID die wordt weer gegeven op de primaire behuizing is **00**, terwijl de standaard eenheid-id die wordt weer gegeven in de EBOD Enclosure **01** is. In het volgende diagram en tabel wordt het voor paneel van de LED-weer gave uitgelegd.
    
     ![Systeem-ID op front OPS-paneel](./media/storsimple-power-cooling-module-replacement/IC740991.png)
    
@@ -134,7 +134,7 @@ Volg deze instructies voor het installeren van een PCM op uw StorSimple-apparaat
 5. Verbind de stroom kabels met de voedings bron en de PCM.
 6. De Bales van de stam verlichting beveiligen.
 7. Schakel de PCM in.
-8. Controleer of de vervanging is geslaagd: Ga in de Azure Portal van uw StorSimple Apparaatbeheer-service naar het apparaat en klik vervolgens op **instellingen > de status van > hardware te controleren**. Onder de **gedeelde onderdelen**moet de status van de PCM groen zijn.
+8. Controleer of de vervanging is geslaagd: Ga in de Azure Portal van uw StorSimple Apparaatbeheer-service naar het apparaat en klik vervolgens op **instellingen > de status van > hardware te controleren**. Onder de **gedeelde onderdelen** moet de status van de PCM groen zijn.
    
    > [!NOTE]
    > Het kan enkele minuten duren voordat de vervangende PCM volledig is geïnitialiseerd.

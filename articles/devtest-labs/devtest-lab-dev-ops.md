@@ -4,10 +4,10 @@ description: Meer informatie over het gebruik van Labs van Azure DevTest Labs bi
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 8a5d35a541e079b7d39cae2ec43da608274533f5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85481065"
 ---
 # <a name="integration-of-azure-devtest-labs-and-azure-devops"></a>Integratie van Azure DevTest Labs en Azure DevOps
@@ -32,7 +32,7 @@ Een lab moet worden gericht op een team dat werkt in een functie gebied. Deze al
 ## <a name="cicd-pipeline"></a>CI/CD-pijplijn 
 De CI/CD-pijp lijn is een van de essentiële onderdelen in DevOps die code verplaatsen van een pull-aanvraag van de ontwikkelaar, integreert met de bestaande code en implementeert deze in het productie-ecosysteem. Alle resources hoeven niet binnen een lab te zijn. Een Jenkins-host kan bijvoorbeeld buiten Lab worden ingesteld als een meer persistente resource. Hier volgen enkele specifieke voor beelden van het integreren van Labs in de pijp lijn. 
 
-### <a name="build"></a>Ontwikkelen 
+### <a name="build"></a>Build 
 De build-pijp lijn is gericht op het maken van een pakket met onderdelen dat samen wordt getest om aan de release pijplijn te worden door gegeven. Labs kan deel uitmaken van de build-pijp lijn als de locatie voor Build-agents en andere ondersteunings bronnen. De mogelijkheid om de infra structuur dynamisch te bouwen, biedt meer controle. Met de mogelijkheid om meerdere omgevingen in een lab te hebben, kan elke build asynchroon worden uitgevoerd terwijl de build-ID als onderdeel van de omgevings gegevens wordt gebruikt om de resources op unieke wijze te identificeren voor de specifieke build.   
 
 Voor Build-agents is het mogelijk om de toegang te beperken tot de beveiliging en de kans op onbedoelde beschadigingen te reduceren.  
@@ -43,7 +43,7 @@ Met DevTest Labs kan een CI/CD-pijp lijn het maken van Azure-resource (Vm's, omg
 ### <a name="release"></a>Release 
 DevTest Labs wordt doorgaans gebruikt voor verificatie in het gedeelte release voordat de code wordt geïmplementeerd. Het is vergelijkbaar met testen in de sectie build. Productie resources mogen niet worden geïmplementeerd in DevTest Labs. 
 
-### <a name="customization"></a>Aanpassen 
+### <a name="customization"></a>Aanpassing 
 In azure DevOps zijn er bestaande taken die het manipuleren van Vm's en omgevingen binnen specifieke Labs mogelijk maken. Azure DevOps Services is een manier om de CI/CD-pijp lijn te beheren, maar u kunt het lab integreren in elk systeem dat de mogelijkheid biedt om REST Api's aan te roepen, Power shell-scripts uit te voeren of Azure CLI te gebruiken. 
 
 Sommige CI/CD-pipeline-beheerders hebben bestaande open-source-invoeg toepassingen die resources kunnen beheren in Azure en DevTest Labs. Mogelijk moet u een aangepast script gebruiken om te voldoen aan de specifieke behoeften van de pijp lijn.  Bij het uitvoeren van een taak wordt een Service-Principal gebruikt met de juiste rol om toegang te krijgen tot het lab. Voor de Service-Principal is doorgaans toegang tot het lab vereist voor de rol Inzender. Zie [Azure DevTests Labs integreren in uw Azure DevOpsing-pijp lijn voor continue integratie en levering](devtest-lab-integrate-ci-cd.md)voor meer informatie. 

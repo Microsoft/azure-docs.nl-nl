@@ -9,17 +9,17 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: 81eb0e60befc544a6c3bee8f04e901b6a5e472bc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85560823"
 ---
 # <a name="shaper-cognitive-skill"></a>Cognitieve vaardigheid van shaper
 
 De **shaper** -vaardigheid consolideert diverse invoer in een [complex type](search-howto-complex-data-types.md) waarnaar later in de verrijkings pijplijn kan worden verwezen. Met de **shaper** -vaardigheid kunt u in wezen een structuur maken, de naam van de leden van die structuur definiëren en waarden aan elk lid toewijzen. Voor beelden van geconsolideerde velden die handig zijn in zoek scenario's zijn onder andere het combi neren van een voor-en achternaam in één structuur, plaats en provincie in één structuur, of naam en geboorte datum in één structuur om unieke identiteiten te bepalen.
 
-Daarnaast voegt de **shaper** -vaardigheid die in [scenario 3](#nested-complex-types) wordt geïllustreerd, een optionele eigenschap *sourceContext* toe aan de invoer. De *bron* -en *sourceContext* -eigenschappen sluiten elkaar wederzijds uit. Als de invoer zich in de context van de vaardigheid bevindt, hoeft u alleen *bron*te gebruiken. Als de invoer zich in een *andere* context bevindt dan de context van de kwalificatie, gebruikt u de *sourceContext*. De *sourceContext* vereist dat u een geneste invoer definieert met het specifieke element dat als bron wordt behandeld. 
+Daarnaast voegt de **shaper** -vaardigheid die in [scenario 3](#nested-complex-types) wordt geïllustreerd, een optionele eigenschap *sourceContext* toe aan de invoer. De *bron* -en *sourceContext* -eigenschappen sluiten elkaar wederzijds uit. Als de invoer zich in de context van de vaardigheid bevindt, hoeft u alleen *bron* te gebruiken. Als de invoer zich in een *andere* context bevindt dan de context van de kwalificatie, gebruikt u de *sourceContext*. De *sourceContext* vereist dat u een geneste invoer definieert met het specifieke element dat als bron wordt behandeld. 
 
 De uitvoer naam is altijd "uitvoer". Intern kan de pijp lijn een andere naam toewijzen, zoals ' analyzedText ', zoals wordt weer gegeven in de onderstaande voor beelden, maar de **shaper** -vaardigheid zelf retourneert ' output ' in het antwoord. Dit kan belang rijk zijn als u fouten opspoort in verrijkte documenten en u merkt dat de naam verschilt, of als u een aangepaste vaardigheid bouwt en het antwoord zelf structureert.
 

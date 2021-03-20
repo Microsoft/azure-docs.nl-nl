@@ -4,10 +4,10 @@ description: Meer informatie over het toevoegen van een GitHub-of Azure DevOps S
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 225aae5e0a017b711f29a47829b06f8bb7a6a8ee
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85483139"
 ---
 # <a name="add-a-git-repository-to-store-custom-artifacts-and-resource-manager-templates"></a>Een Git-opslag plaats toevoegen voor het opslaan van aangepaste artefacten en Resource Manager-sjablonen
@@ -36,7 +36,7 @@ Als u een opslag plaats aan uw Lab wilt toevoegen, moet u eerst belang rijke inf
 4. Selecteer de profiel afbeelding in de rechter bovenhoek van GitHub en selecteer vervolgens **instellingen**.
 5. Selecteer in het menu **persoonlijke instellingen** aan de linkerkant **persoonlijke toegangs tokens**.
 6. Selecteer **nieuw token genereren**.
-7. Voer op de pagina **nieuw persoonlijk toegangs token** onder **Beschrijving van token**een beschrijving in. Accepteer de standaard items onder **scopes selecteren**en selecteer vervolgens **token genereren**.
+7. Voer op de pagina **nieuw persoonlijk toegangs token** onder **Beschrijving van token** een beschrijving in. Accepteer de standaard items onder **scopes selecteren** en selecteer vervolgens **token genereren**.
 8. Sla het gegenereerde token op. U kunt het token later gebruiken.
 9. Sluit GitHub.   
 10. Ga door naar de sectie [uw Lab verbinden met de opslag plaats](#connect-your-lab-to-the-repository) .
@@ -49,19 +49,19 @@ Als u een opslag plaats aan uw Lab wilt toevoegen, moet u eerst belang rijke inf
 4. Sla de URL op. U kunt de URL later gebruiken.
 5. Als u een persoonlijk toegangs token wilt maken, selecteert u in de vervolg keuzelijst gebruikers account **Mijn profiel**.
 6. Selecteer op de pagina profiel informatie **beveiliging**.
-7. Selecteer **toevoegen**op het tabblad **beveiliging** .
+7. Selecteer **toevoegen** op het tabblad **beveiliging** .
 8. Op de pagina **een persoonlijk toegangs token maken** :
    1. Voer een **Beschrijving** in voor het token.
-   2. Selecteer **180 dagen**in de lijst **verloopt in** .
+   2. Selecteer **180 dagen** in de lijst **verloopt in** .
    3. Selecteer in de lijst **accounts** **alle toegankelijke accounts**.
    4. Selecteer de optie **alleen-lezen** .
    5. Selecteer **token maken**.
-9. Het nieuwe token wordt weer gegeven in de lijst met **persoonlijke toegangs tokens** . Selecteer **token kopiëren**en sla de token waarde op voor later gebruik.
+9. Het nieuwe token wordt weer gegeven in de lijst met **persoonlijke toegangs tokens** . Selecteer **token kopiëren** en sla de token waarde op voor later gebruik.
 10. Ga door naar de sectie [uw Lab verbinden met de opslag plaats](#connect-your-lab-to-the-repository) .
 
 ## <a name="connect-your-lab-to-the-repository"></a>Uw Lab verbinden met de opslag plaats
 1. Meld u aan bij [Azure Portal](https://go.microsoft.com/fwlink/p/?LinkID=525040).
-2. Selecteer **meer services**en selecteer vervolgens **DevTest Labs** in de lijst met Services.
+2. Selecteer **meer services** en selecteer vervolgens **DevTest Labs** in de lijst met Services.
 3. Selecteer in de lijst met Labs uw Lab. 
 4. Selecteer **configuratie en beleid**  >  **opslag**  >  **plaatsen + toevoegen**.
 

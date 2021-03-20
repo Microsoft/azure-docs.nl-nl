@@ -14,10 +14,10 @@ ms.date: 05/13/2019
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: 68c7805136a7361a64a6ff6dfbb9e7d910b2ea9b
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97357939"
 ---
 # <a name="manage-sql-server-vms-in-azure-by-using-the-azure-portal"></a>SQL Server Vm's in azure beheren door gebruik te maken van de Azure Portal
@@ -37,7 +37,7 @@ In de [Azure Portal](https://portal.azure.com)is de resource van de [**virtuele 
 ## <a name="access-the-sql-virtual-machines-resource"></a>Toegang tot de resource van de virtuele SQL-machines
 Ga als volgt te werk om toegang te krijgen tot de resource van de **virtuele SQL-machines** :
 
-1. Open [Azure Portal](https://portal.azure.com). 
+1. Open de [Azure Portal](https://portal.azure.com). 
 1. Selecteer **alle services**. 
 1. Voer **SQL-virtuele machines** in het zoekvak in.
 1. (Optioneel): Selecteer de ster naast **virtuele machines van SQL** om deze optie toe te voegen aan uw **Favorieten** menu. 
@@ -62,7 +62,7 @@ Het tabblad **SQL Server configuratie** is afgeschaft. Op dit moment is het de e
 
 Ga naar de resource van de **virtuele machines** om toegang te krijgen tot het tabblad afgeschafte **SQL Server configuratie** . Voer de volgende stappen uit:
 
-1. Open [Azure Portal](https://portal.azure.com). 
+1. Open de [Azure Portal](https://portal.azure.com). 
 1. Selecteer **alle services**. 
 1. Voer de **virtuele machines** in het zoekvak in.
 1. (Optioneel): Selecteer de ster naast **virtuele machines** om deze optie toe te voegen aan uw **Favorieten** menu. 

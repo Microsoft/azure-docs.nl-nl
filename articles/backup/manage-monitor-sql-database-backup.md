@@ -4,10 +4,10 @@ description: In dit artikel wordt beschreven hoe u SQL Server-data bases die wor
 ms.topic: conceptual
 ms.date: 09/11/2019
 ms.openlocfilehash: e37e6fc211b34b7e427b66db374a705faafd25f9
-ms.sourcegitcommit: 89c0482c16bfec316a79caa3667c256ee40b163f
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97858727"
 ---
 # <a name="manage-and-monitor-backed-up-sql-server-databases"></a>Back-ups van SQL Server-databases beheren en bewaken
@@ -34,7 +34,7 @@ Omdat logboek back-ups om de 15 minuten worden uitgevoerd, kan het lastig zijn o
 
 Database back-upwaarschuwingen bewaken:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 
 2. Selecteer **back-upwaarschuwingen** op het kluis dashboard.
 

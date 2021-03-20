@@ -6,10 +6,10 @@ ms.subservice: personalizer
 ms.topic: conceptual
 ms.date: 02/20/2020
 ms.openlocfilehash: 7d1044d02ceba1f3d0996b1fe1c8a9a44b31049b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91253646"
 ---
 # <a name="active-and-inactive-events"></a>Actieve en inactieve gebeurtenissen
@@ -33,7 +33,7 @@ Deze scenario's worden meestal uitgevoerd wanneer:
 * U prerendert de gebruikers interface die de gebruiker mogelijk niet kan zien.
 * Uw toepassing doet voorspellende personalisatie waarbij rang gesprekken worden gedaan met weinig realtime context en de toepassing kan de uitvoer mogelijk niet gebruiken.
 
-In dergelijke gevallen gebruikt u persoonlijke instellingen om de positie aan te roepen en vraagt u de gebeurtenis _inactief_te zijn. Personaler verwacht geen beloning voor deze gebeurtenis en past geen standaard beloning toe.
+In dergelijke gevallen gebruikt u persoonlijke instellingen om de positie aan te roepen en vraagt u de gebeurtenis _inactief_ te zijn. Personaler verwacht geen beloning voor deze gebeurtenis en past geen standaard beloning toe.
 
 Als de toepassing de informatie van de classificatie oproep gebruikt, wordt de gebeurtenis later in de bedrijfs logica _geactiveerd_ . Zodra de gebeurtenis actief is, verwacht de Personaler een gebeurtenis beloning. Als er geen expliciete aanroep wordt gedaan naar de belonings-API, past Personaler een standaard beloning toe.
 

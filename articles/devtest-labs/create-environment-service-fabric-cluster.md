@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 06/26/2020
 ms.author: enewman
 ms.openlocfilehash: 530cf3b20820e34913612419d0ffa731a70f6a58
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85484006"
 ---
 # <a name="create-an-environment-with-self-contained-service-fabric-cluster-in-azure-devtest-labs"></a>Een omgeving met een zelfstandig Service Fabric cluster maken in Azure DevTest Labs
@@ -37,7 +37,7 @@ Service Fabric clusters worden gemaakt met omgevingen in DevTest Labs. Elke omge
     2. Selecteer het **besturings systeem (OS)** voor de virtuele cluster machines. De standaard waarde is: **Windows**.
     3. Geef een naam op voor de **beheerder** van het cluster. 
     4. Geef een **wacht woord** op voor de beheerder. 
-    5. Voer voor het **certificaat**uw certificaat gegevens in als een base64-gecodeerde teken reeks. Als u een certificaat wilt maken, voert u de volgende stappen uit:
+    5. Voer voor het **certificaat** uw certificaat gegevens in als een base64-gecodeerde teken reeks. Als u een certificaat wilt maken, voert u de volgende stappen uit:
         1. Down load het **Create-ClusterCertificate.ps1** -bestand vanuit de [Git-opslag plaats](https://github.com/Azure/azure-devtestlab/tree/master/Environments/ServiceFabric-LabCluster). U kunt ook de opslag plaats op uw computer klonen. 
         2. Start **PowerShell**. 
         3. Voer het **PS1** -bestand uit met behulp van de opdracht `.\Create-ClusterCertificate.ps1` . U ziet een tekst bestand dat in Klad blok wordt geopend met de informatie die u nodig hebt om de certificaat velden op deze pagina in te vullen. . 

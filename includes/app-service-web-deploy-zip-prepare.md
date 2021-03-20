@@ -9,10 +9,10 @@ ms.date: 01/14/2020
 ms.author: cephalin
 ms.custom: include file
 ms.openlocfilehash: 035399924216434de85865102db8838ea3fa15a3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85570122"
 ---
 ## <a name="create-a-project-zip-file"></a>Een ZIP-bestand van het project maken
@@ -23,7 +23,7 @@ ms.locfileid: "85570122"
 
 Navigeer in een lokaal Terminal venster naar de hoofdmap van uw app-project. 
 
-Deze map moet het invoer bestand bevatten naar uw web-app, zoals _index.html_, _index. php_en _app.js_. Het kan ook pakket beheer bestanden bevatten, zoals _project.jsop_, _composer.jsop_, _package.json_, _bower.json_en _requirements.txt_.
+Deze map moet het invoer bestand bevatten naar uw web-app, zoals _index.html_, _index. php_ en _app.js_. Het kan ook pakket beheer bestanden bevatten, zoals _project.jsop_, _composer.jsop_, _package.json_, _bower.json_ en _requirements.txt_.
 
 Tenzij u app service de implementatie automatisering voor u wilt uitvoeren, voert u alle build-taken uit (bijvoorbeeld,,, `npm` `bower` `gulp` `composer` en `pip` ) en zorgt u ervoor dat u alle bestanden hebt die u nodig hebt om de app uit te voeren. Deze stap is vereist als u [uw pakket rechtstreeks wilt uitvoeren](../articles/app-service/deploy-run-package.md).
 

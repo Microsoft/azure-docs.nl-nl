@@ -13,10 +13,10 @@ ms.author: srbozovi
 ms.reviewer: sstein, bonova, vanto
 ms.date: 11/09/2018
 ms.openlocfilehash: 3106ec1a45b307207624e5cd077a222acccc83d1
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101692824"
 ---
 # <a name="connect-your-application-to-azure-sql-managed-instance"></a>Uw toepassing verbinden met het beheerde Azure SQL-exemplaar
@@ -139,7 +139,7 @@ Raadpleeg het volgende voor meer informatie over het oplossen van verbindings pr
 
 - Als u gebruikmaakt van peering van virtuele netwerken om verbinding te maken met een Azure App Service gehoste toepassing, en het virtuele SQL Managed instance-netwerk een openbaar IP-adres bereik heeft, moet u ervoor zorgen dat uw gehoste toepassings instellingen uw uitgaand verkeer naar open bare IP-netwerken kunnen routeren. Volg de instructies in [regionale virtuele netwerk integratie](../../app-service/web-sites-integrate-with-vnet.md#regional-vnet-integration).
 
-## <a name="required-versions-of-drivers-and-tools"></a>Vereiste versies van Stuur Programma's en hulpprogram ma's
+## <a name="required-versions-of-drivers-and-tools"></a>Vereiste versies van stuurprogramma's en hulpprogramma's
 
 De volgende minimale versies van de hulpprogram ma's en stuur Programma's worden aanbevolen als u verbinding wilt maken met een SQL Managed instance:
 

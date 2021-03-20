@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 4/28/2020
 ms.custom: devx-track-azurepowershell
 ms.openlocfilehash: 43ce39a1fc05c8ffedd1ae8404cc20c1a498a73f
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94539004"
 ---
 # <a name="how-to-back-up-and-restore-an-azure-database-for-mysql-server-using-powershell"></a>Een back-up van Azure Database for MySQL-server maken en deze terugzetten met behulp van PowerShell
@@ -41,7 +41,7 @@ Bij het maken van de server maakt u de keuze tussen het configureren van uw serv
 > [!NOTE]
 > Nadat een server is gemaakt, is het soort redundantie die het heeft, geografisch redundant versus lokaal redundant en kan niet worden gewijzigd.
 
-Tijdens het maken van een server via de `New-AzMySqlServer` opdracht, bepaalt de para meter **GeoRedundantBackup** de optie voor de redundantie van back-ups. Als deze functie is **ingeschakeld** , worden er geo redundante back-ups gemaakt. Als deze functie is **uitgeschakeld** , worden er lokaal redundante back-ups gemaakt.
+Tijdens het maken van een server via de `New-AzMySqlServer` opdracht, bepaalt de para meter **GeoRedundantBackup** de optie voor de redundantie van back-ups. Als deze functie is **ingeschakeld**, worden er geo redundante back-ups gemaakt. Als deze functie is **uitgeschakeld**, worden er lokaal redundante back-ups gemaakt.
 
 De Bewaar periode voor back-ups is ingesteld met de para meter **BackupRetentionDay** .
 
@@ -106,7 +106,7 @@ Get-AzMySqlServer -Name mydemoserver -ResourceGroupName myresourcegroup |
   Restore-AzMySqlServer -Name mydemoserver-georestored -ResourceGroupName myresourcegroup -Location eastus -Sku GP_Gen5_8 -UseGeoRestore
 ```
 
-In dit voor beeld wordt een nieuwe-server met de naam **mydemoserver-restored** gemaakt in de regio VS-Oost die hoort bij **myresourcegroup**. Het is een Algemeen, Gen 5-server met 8 vCores. De-server wordt gemaakt op basis van de geo-redundante back-up van **mydemoserver** , ook in de resource groep **myresourcegroup**.
+In dit voor beeld wordt een nieuwe-server met de naam **mydemoserver-restored** gemaakt in de regio VS-Oost die hoort bij **myresourcegroup**. Het is een Algemeen, Gen 5-server met 8 vCores. De-server wordt gemaakt op basis van de geo-redundante back-up van **mydemoserver**, ook in de resource groep **myresourcegroup**.
 
 Als u de nieuwe server in een andere resource groep wilt maken op basis van de bestaande server, geeft u de naam van de nieuwe resource groep op met behulp van de para meter **ResourceGroupName** , zoals weer gegeven in het volgende voor beeld:
 

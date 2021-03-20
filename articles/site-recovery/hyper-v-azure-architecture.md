@@ -8,13 +8,13 @@ ms.topic: conceptual
 ms.date: 11/14/2019
 ms.author: raynew
 ms.openlocfilehash: c5025b83619b505728bfdf5c4e1ccc81d3bb225e
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97654758"
 ---
-# <a name="hyper-v-to-azure-disaster-recovery-architecture"></a>Architectuur van herstel na noodgevallen van Hyper-V naar Azure
+# <a name="hyper-v-to-azure-disaster-recovery-architecture"></a>Architectuur van Hyper-V naar Azure voor herstel na nood gevallen
 
 
 In dit artikel worden de architectuur en processen beschreven die worden gebruikt wanneer u virtuele Hyper-V-machines (Vm's) repliceert tussen on-premises Hyper-V-hosts en Azure, met behulp van de [Azure site Recovery](site-recovery-overview.md) -service.

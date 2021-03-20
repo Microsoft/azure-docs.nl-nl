@@ -13,10 +13,10 @@ ms.date: 08/03/2018
 ms.author: curtand
 ms.reviewer: jairoc
 ms.openlocfilehash: efb3ee24add847baf8264eccdf71278be5ee9496
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91536967"
 ---
 # <a name="join-your-work-device-to-your-organizations-network"></a>Uw werk apparaat toevoegen aan het netwerk van uw organisatie
@@ -57,11 +57,11 @@ Als uw apparaat een merk nieuw is dat nog niet is ingesteld, kunt u het OOBE-pro
 ## <a name="to-make-sure-youre-joined-new-device"></a>Om ervoor te zorgen dat u bent aangemeld (nieuw apparaat)
 U kunt er zeker van zijn dat u lid bent van uw instellingen.
 
-1. Open **instellingen**en selecteer vervolgens **accounts**.
+1. Open **instellingen** en selecteer vervolgens **accounts**.
 
     ![Accounts op het scherm instellingen](./media/user-help-join-device-on-network/join-device-settings-accounts.png)
 
-2. Selecteer **toegang tot werk of school**en zorg ervoor dat er tekst wordt weer geven die er ongeveer als volgt uitziet: **verbonden met *\<your_organization>* Azure AD**.
+2. Selecteer **toegang tot werk of school** en zorg ervoor dat er tekst wordt weer geven die er ongeveer als volgt uitziet: **verbonden met *\<your_organization>* Azure AD**.
 
     ![Scherm opname van het venster ' toegang tot werk of school ' met het account ' verbonden met (uw organisatie) Azure AD ' geselecteerd.](./media/user-help-join-device-on-network/join-device-oobe-verify.png)
 
@@ -69,9 +69,9 @@ U kunt er zeker van zijn dat u lid bent van uw instellingen.
 ## <a name="to-join-an-already-configured-windows-10-device"></a>Lid worden van een al geconfigureerd Windows 10-apparaat
 Als u uw apparaat al een tijdje hebt en het reeds is ingesteld, kunt u deze stappen volgen om uw apparaat toe te voegen aan het netwerk.
 
-1. Open **instellingen**en selecteer vervolgens **accounts**.
+1. Open **instellingen** en selecteer vervolgens **accounts**.
 
-2. Selecteer **toegang tot werk of school**en selecteer vervolgens **verbinding maken**.
+2. Selecteer **toegang tot werk of school** en selecteer vervolgens **verbinding maken**.
 
     ![Toegang tot werk of school en koppelingen maken](./media/user-help-join-device-on-network/join-device-access-work-school-connect.png)
 
@@ -95,18 +95,18 @@ Als u uw apparaat al een tijdje hebt en het reeds is ingesteld, kunt u deze stap
 
     ![Controleer of dit het scherm voor de verificatie van uw organisatie is](./media/user-help-join-device-on-network/join-device-setup-confirm.png)
 
-8. Klik op **gereed**in het scherm **u bent alle set** .
+8. Klik op **gereed** in het scherm **u bent alle set** .
 
     ![U bent klaar met het instellen van het scherm](./media/user-help-join-device-on-network/join-device-setup-finish.png)
 
 ## <a name="to-make-sure-youre-joined"></a>Zorg ervoor dat u lid bent van
 U kunt er zeker van zijn dat u lid bent van uw instellingen.
 
-1. Open **instellingen**en selecteer vervolgens **accounts**.
+1. Open **instellingen** en selecteer vervolgens **accounts**.
 
     ![Accounts op het scherm instellingen](./media/user-help-join-device-on-network/join-device-settings-accounts.png)
 
-2. Selecteer **toegang tot werk of school**en zorg ervoor dat er tekst wordt weer geven die er ongeveer als volgt uitziet: **verbonden met *\<your_organization>* Azure AD**.
+2. Selecteer **toegang tot werk of school** en zorg ervoor dat er tekst wordt weer geven die er ongeveer als volgt uitziet: **verbonden met *\<your_organization>* Azure AD**.
 
     ![Het scherm werk of school openen met verbonden contoso-account](./media/user-help-join-device-on-network/join-device-setup-verify.png)
 

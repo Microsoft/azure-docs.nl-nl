@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: 9dc195f98310e63cbde06885effe86ea3c239249
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91576095"
 ---
 # <a name="service-to-service-authentication-with-azure-data-lake-storage-gen1-using-azure-active-directory"></a>Service-naar-service verificatie met Azure Data Lake Storage Gen1 met behulp van Azure Active Directory
@@ -60,7 +60,7 @@ Wanneer u zich programmatisch aanmeldt, hebt u de ID voor uw toepassing nodig. A
 4. Op de Blade **toegang** worden de standaard toegang en aangepaste toegang weer gegeven die al aan de basis zijn toegewezen. Klik op het pictogram **toevoegen** om acl's op aangepaste niveau toe te voegen.
    
     ![Standaard-en aangepaste toegang weer geven](./media/data-lake-store-authenticate-using-active-directory/adl.acl.2.png "Standaard-en aangepaste toegang weer geven")
-5. Klik op het pictogram **toevoegen** om de Blade **aangepaste toegang toevoegen** te openen. Klik in deze Blade op **gebruiker of groep selecteren**en zoek in de Blade **gebruiker of groep** de Azure Active Directory toepassing op die u eerder hebt gemaakt. Als u veel groepen wilt doorzoeken, gebruikt u het tekstvak bovenaan om de groeps naam te filteren. Klik op de groep die u wilt toevoegen en klik vervolgens op **selecteren**.
+5. Klik op het pictogram **toevoegen** om de Blade **aangepaste toegang toevoegen** te openen. Klik in deze Blade op **gebruiker of groep selecteren** en zoek in de Blade **gebruiker of groep** de Azure Active Directory toepassing op die u eerder hebt gemaakt. Als u veel groepen wilt doorzoeken, gebruikt u het tekstvak bovenaan om de groeps naam te filteren. Klik op de groep die u wilt toevoegen en klik vervolgens op **selecteren**.
    
     ![Een groep toevoegen](./media/data-lake-store-authenticate-using-active-directory/adl.acl.3.png "Een groep toevoegen")
 6. Klik op **machtigingen selecteren**, selecteer de machtigingen en geef aan of u de machtigingen wilt toewijzen als standaard-ACL, toegangs-ACL of beide. Klik op **OK**.

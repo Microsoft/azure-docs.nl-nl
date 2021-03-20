@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 3/18/2020
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: eaddd8b2979b30251301ad041ea4b872c23d680b
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94541331"
 ---
 # <a name="create-and-manage-azure-database-for-mysql-firewall-rules-by-using-the-azure-cli"></a>Azure Database for MySQL firewall regels maken en beheren met behulp van de Azure CLI
@@ -28,11 +28,11 @@ Regels voor Virtual Network (VNet) kunnen ook worden gebruikt voor het beveilige
 De opdracht **AZ mysql server firewall-Rule** wordt gebruikt vanuit de Azure CLI om firewall regels te maken, verwijderen, weer geven en bijwerken.
 
 Opdrachten:
-- **maken** : een Azure mysql server-firewall regel maken.
-- **verwijderen** : een Azure mysql server-firewall regel verwijderen.
-- **lijst** : Geef de firewall regels voor de Azure mysql-server weer.
-- **weer geven** : de details van een Azure mysql server-firewall regel weer geven.
-- **Update** : een Azure mysql server-firewall regel bijwerken.
+- **maken**: een Azure mysql server-firewall regel maken.
+- **verwijderen**: een Azure mysql server-firewall regel verwijderen.
+- **lijst**: Geef de firewall regels voor de Azure mysql-server weer.
+- **weer geven**: de details van een Azure mysql server-firewall regel weer geven.
+- **Update**: een Azure mysql server-firewall regel bijwerken.
 
 ## <a name="sign-in-to-azure-and-list-your-azure-database-for-mysql-servers"></a>Meld u aan bij Azure en vermeld uw Azure Database for MySQL-servers
 Maak veilig verbinding met Azure CLI met uw Azure-account met behulp van de opdracht **AZ login** .

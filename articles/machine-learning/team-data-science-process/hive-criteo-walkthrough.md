@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: e66bd0a4e56f63185d8361355d6cf8e0e29bc30b
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93305935"
 ---
 # <a name="the-team-data-science-process-in-action---using-an-azure-hdinsight-hadoop-cluster-on-a-1-tb-dataset"></a>Het proces voor team gegevens wetenschap in actie-een Azure HDInsight Hadoop cluster op een gegevensset van 1 TB gebruiken
@@ -50,11 +50,11 @@ Er ontbreken waarden in de kolommen numeriek en categorische in deze gegevensset
 ## <a name="examples-of-prediction-tasks"></a><a name="mltasks"></a>Voor beelden van voorspellings taken
 Er zijn twee voor beelden van voorspellings problemen opgelost in deze walkthrough:
 
-1. **Binaire classificatie** : Hiermee wordt voor speld of een gebruiker op een add:
+1. **Binaire classificatie**: Hiermee wordt voor speld of een gebruiker op een add:
 
    * Klasse 0: Nee klikken
    * Klasse 1: Klik op
-2. **Regressie** : voor spelt de kans op een AD-klik van de gebruikers functies.
+2. **Regressie**: voor spelt de kans op een AD-klik van de gebruikers functies.
 
 ## <a name="set-up-an-hdinsight-hadoop-cluster-for-data-science"></a><a name="setup"></a>Een HDInsight Hadoop-cluster voor data Science instellen
 > [!NOTE]
@@ -99,7 +99,7 @@ Aan de linkerkant is de ' Hadoop-opdracht regel ', het paard van het verkennen v
 U bent nu klaar om te beginnen met het eerste deel van het scenario: gegevens verkennen met behulp van Hive en gegevens ophalen die gereed zijn voor Azure Machine Learning.
 
 ## <a name="create-hive-database-and-tables"></a><a name="hive-db-tables"></a> Hive-data base en-tabellen maken
-Als u Hive-tabellen voor onze Criteo-gegevensset wilt maken, opent u de * *_Hadoop-opdracht regel_* _ op het bureau blad van het hoofd knooppunt en voert u de Hive-map in door de opdracht in te voeren
+Als u Hive-tabellen voor onze Criteo-gegevensset wilt maken, opent u de ***Hadoop-opdracht regel*** op het bureau blad van het hoofd knooppunt en voert u de Hive-map in door de opdracht in te voeren
 
 ```console
 cd %hive_home%\bin
@@ -118,7 +118,7 @@ Nadat de Hive-functie REPL wordt weer gegeven met het teken ' hive > ', knipt en
 
 Met de volgende code wordt een data base ' Criteo ' gemaakt en worden vervolgens vier tabellen gegenereerd:
 
-_ een *tabel voor het genereren van aantallen* die zijn gebouwd op dagen dag \_ 00 tot en met dag \_ 20,
+* een *tabel voor het genereren van aantallen* die zijn gebouwd op dagen dag \_ 00 tot en met dag \_ 20,
 * een *tabel voor gebruik als de Train-gegevensset die* is gebouwd op dag \_ 21, en
 * twee *tabellen die moeten worden gebruikt als de test gegevens sets die* respectievelijk op dag \_ 22 en 23 zijn gebouwd \_ .
 
@@ -161,7 +161,7 @@ Al deze tabellen zijn extern, zodat u naar de Azure Blob Storage-locaties (wasb)
 
 **Er zijn twee manieren om een Hive-query uit te voeren:**
 
-* **Met behulp van de Hive-opdracht regel** : de eerste is het uitgeven van de opdracht ' hive ' en het kopiëren en plakken van een query op de Hive-opdracht regel van de component repl:
+* **Met behulp van de Hive-opdracht regel**: de eerste is het uitgeven van de opdracht ' hive ' en het kopiëren en plakken van een query op de Hive-opdracht regel van de component repl:
 
   ```console
   cd %hive_home%\bin
@@ -169,7 +169,7 @@ Al deze tabellen zijn extern, zodat u naar de Azure Blob Storage-locaties (wasb)
   ```
 
      Nu kunt u op de REPL-opdracht regel de query knippen en plakken uitvoeren.
-* **Query's opslaan in een bestand en de opdracht uitvoeren** : de tweede is om de query's op te slaan in een. HQL-bestand (voor [beeld&#95;Hive&#95;&#95;Criteo&#95;data base te maken&#95;en&#95;Tables. HQL](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_create_criteo_database_and_tables.hql)) en voer de volgende opdracht uit om de query uit te voeren:
+* **Query's opslaan in een bestand en de opdracht uitvoeren**: de tweede is om de query's op te slaan in een. HQL-bestand (voor [beeld&#95;Hive&#95;&#95;Criteo&#95;data base te maken&#95;en&#95;Tables. HQL](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_create_criteo_database_and_tables.hql)) en voer de volgende opdracht uit om de query uit te voeren:
 
   ```console
   hive -f C:\temp\sample_hive_create_criteo_database_and_tables.hql
@@ -492,7 +492,7 @@ Het bouw proces voor modellen in Azure Machine Learning volgt deze stappen:
 Nu bent u klaar om modellen te bouwen in Azure Machine Learning Studio. De gegevens van een voor beeld worden opgeslagen als Hive-tabellen in het cluster. Gebruik de module Azure Machine Learning **gegevens importeren** om deze gegevens te lezen. De referenties voor toegang tot het opslag account van dit cluster zijn op de volgende manier beschikbaar.
 
 ### <a name="step-1-get-data-from-hive-tables-into-azure-machine-learning-using-the-import-data-module-and-select-it-for-a-machine-learning-experiment"></a><a name="step1"></a> Stap 1: gegevens uit Hive-tabellen ophalen in Azure Machine Learning met behulp van de module gegevens importeren en deze selecteren voor een machine learning experiment
-Begin met het selecteren van een leeg experiment met **+ nieuwe**  ->  **experimenten**  ->  **Blank Experiment**. Zoek vervolgens **in het zoekvak** linksboven op ' gegevens importeren '. Sleep de module **gegevens importeren** naar het canvas op het experiment (het middelste gedeelte van het scherm) om de module voor gegevens toegang te gebruiken.
+Begin met het selecteren van een leeg experiment met **+ nieuwe**  ->  **experimenten**  ->  . Zoek vervolgens **in het zoekvak** linksboven op ' gegevens importeren '. Sleep de module **gegevens importeren** naar het canvas op het experiment (het middelste gedeelte van het scherm) om de module voor gegevens toegang te gebruiken.
 
 Dit is de manier waarop de **import gegevens** eruitzien tijdens het ophalen van gegevens uit de Hive-tabel:
 
@@ -502,13 +502,13 @@ Voor de module **gegevens importeren** zijn de waarden van de para meters die in
 
 1. Kies Hive-query voor de **gegevens bron**
 2. In het **query vak Hive-data base** is dit een eenvoudige SELECT * van <de naam van uw \_ Data Base \_ . de \_ tabel \_ naam>-is voldoende.
-3. **URI van Hcatalog-server** : als uw cluster ' ABC ' is, is dit simpelweg: https: \/ /ABC.azurehdinsight.net
-4. **Hadoop-gebruikers accountnaam** : de gebruikers naam die is gekozen op het moment van het cluster. (Niet de gebruikers naam voor externe toegang.)
-5. **Hadoop-gebruikers account wacht woord** : het wacht woord voor de gebruikers naam die is gekozen op het moment dat het cluster wordt ingesteld. (Niet het wacht woord voor externe toegang!)
-6. **Locatie van uitvoer gegevens** : Kies Azure
-7. **Azure Storage account naam** : het opslag account dat aan het cluster is gekoppeld
-8. **Azure Storage account sleutel** : de sleutel van het opslag account dat aan het cluster is gekoppeld.
-9. **Azure-container naam** : als de cluster naam "ABC" is, is dit gewoon "ABC", meestal.
+3. **URI van Hcatalog-server**: als uw cluster ' ABC ' is, is dit simpelweg: https: \/ /ABC.azurehdinsight.net
+4. **Hadoop-gebruikers accountnaam**: de gebruikers naam die is gekozen op het moment van het cluster. (Niet de gebruikers naam voor externe toegang.)
+5. **Hadoop-gebruikers account wacht woord**: het wacht woord voor de gebruikers naam die is gekozen op het moment dat het cluster wordt ingesteld. (Niet het wacht woord voor externe toegang!)
+6. **Locatie van uitvoer gegevens**: Kies Azure
+7. **Azure Storage account naam**: het opslag account dat aan het cluster is gekoppeld
+8. **Azure Storage account sleutel**: de sleutel van het opslag account dat aan het cluster is gekoppeld.
+9. **Azure-container naam**: als de cluster naam "ABC" is, is dit gewoon "ABC", meestal.
 
 Zodra de gegevens van de **import bewerking** zijn voltooid (u ziet het groene streepje in de module), slaat u deze gegevens op als een gegevensset (met een naam van uw keuze). Dit ziet er als volgt uit:
 

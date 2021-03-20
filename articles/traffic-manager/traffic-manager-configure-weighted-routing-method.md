@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 10/19/2020
 ms.author: duau
 ms.openlocfilehash: abcfce43b90c7371d5b38aa5b7a6d478e9d6a0dd
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92207818"
 ---
 # <a name="tutorial-configure-the-weighted-traffic-routing-method-in-traffic-manager"></a>Zelfstudie: De gewogen verkeersrouteringsmethode configureren in Traffic Manager
@@ -47,7 +47,7 @@ In deze zelfstudie leert u het volgende:
 
     | Instelling         | Waarde                                              |
     | ---             | ---                                                |
-    | Routeringsmethode            | Selecteer **Gewogen** . |    
+    | Routeringsmethode            | Selecteer **Gewogen**. |    
     | DNS time to live (TTL) | Deze waarde bepaalt hoe vaak de lokale cachenaamserver van de client een query op het Traffic Manager-systeem uitvoert naar bijgewerkte DNS-vermeldingen. Dit is de tijd die het duurt voor wijzigingen die zich voordoen met Traffic Manager, zoals het wijzigen van de routeringsmethode van het verkeer of wijzigingen in de beschikbaarheid van toegevoegde eindpunten, in het globale systeem van DNS-servers worden doorgevoerd. |
     | Protocol    | Selecteer een protocol voor eindpuntbewaking. *Opties: HTTP, HTTPS en TCP* |
     | Poort | Geef het poortnummer op. |
@@ -60,23 +60,23 @@ In deze zelfstudie leert u het volgende:
 
 1. Selecteer **Opslaan** om de configuratie te voltooien.
 
-    :::image type="content" source="./media/traffic-manager-weighted-routing-method/traffic-manager-weighted-configuration.png" alt-text="Traffic Manager-profiel zoeken"::: 
+    :::image type="content" source="./media/traffic-manager-weighted-routing-method/traffic-manager-weighted-configuration.png" alt-text="Gewogen configuratie in Traffic Manager"::: 
 
 1. Selecteer **Eindpunt** en configureer het gewicht van elk eindpunt. Het gewicht kan 1-1000 zijn. Hoe hoger het gewicht, hoe hoger de prioriteit.  
 
-    :::image type="content" source="./media/traffic-manager-weighted-routing-method/traffic-manager-configure-endpoints-weighted.png" alt-text="Traffic Manager-profiel zoeken"::: 
+    :::image type="content" source="./media/traffic-manager-weighted-routing-method/traffic-manager-configure-endpoints-weighted.png" alt-text="Configuratie van gewogen eindpunten in Traffic Manager"::: 
 
 ## <a name="use-the-traffic-manager-profile"></a>Het Traffic Manager-profiel gebruiken
 
 Het **Traffic Manager-profiel** geeft de DNS-naam weer van het Traffic Manager-profiel dat u zojuist hebt gemaakt. Deze naam kan door clients worden gebruikt (bijvoorbeeld door ernaar te navigeren met een webbrowser) om naar het juiste eindpunt te gaan, zoals wordt bepaald door het routeringstype. In dit geval worden alle aanvragen naar elk eindpunt gerouteerd op basis van round robin.
 
-:::image type="content" source="./media/traffic-manager-weighted-routing-method/traffic-manager-weighted-overview.png" alt-text="Traffic Manager-profiel zoeken"::: 
+:::image type="content" source="./media/traffic-manager-weighted-routing-method/traffic-manager-weighted-overview.png" alt-text="Overzicht van gewogen routering in Traffic Manager"::: 
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Als u het Traffic Manager-profiel niet meer nodig hebt, zoekt u het profiel op en selecteert u **Profiel verwijderen** .
+Als u het Traffic Manager-profiel niet meer nodig hebt, zoekt u het profiel op en selecteert u **Profiel verwijderen**.
 
-:::image type="content" source="./media/traffic-manager-weighted-routing-method/delete-traffic-manager-weighted-profile.png" alt-text="Traffic Manager-profiel zoeken":::
+:::image type="content" source="./media/traffic-manager-weighted-routing-method/delete-traffic-manager-weighted-profile.png" alt-text="Gewogen profiel in Traffic Manager verwijderen":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

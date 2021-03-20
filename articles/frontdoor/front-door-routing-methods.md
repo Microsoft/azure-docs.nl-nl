@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 09/28/2020
 ms.author: duau
 ms.openlocfilehash: 2bc056620ff964747dfd83e7525cb5bfd2eb8e52
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91449146"
 ---
 # <a name="front-door-routing-methods"></a>Routerings methoden voor voor deur
@@ -24,10 +24,10 @@ Azure front-deur ondersteunt verschillende soorten verkeers routerings methoden 
 
 Er zijn vier methoden voor verkeers routering beschikbaar in de voor deur:
 
-* ** [Latentie](#latency):** Met de latentie gebaseerde route ring zorgt u ervoor dat aanvragen worden verzonden naar de laagste latentie back-end die acceptabel is binnen een gevoeligheids bereik. In principe worden uw gebruikers aanvragen verzonden naar de ' dichtstbijgelegen ' set back-ends met betrekking tot netwerk latentie.
-* ** [Prioriteit](#priority):** U kunt prioriteiten toewijzen aan uw back-ends wanneer u een primaire back-end wilt configureren om al het verkeer te onderhouden. De secundaire back-end kan een back-up zijn voor het geval de primaire back-end niet beschikbaar is.
-* ** [Gewogen](#weighted):** U kunt gewichten toewijzen aan uw back-ends wanneer u verkeer wilt distribueren over een set back-ends. Of u gelijkmatig wilt verdelen of op basis van de gewichts coëfficiënten.
-* ** [Sessie affiniteit](#affinity):** U kunt sessie affiniteit configureren voor uw frontend-hosts of-domeinen om ervoor te zorgen dat aanvragen van dezelfde eind gebruiker naar dezelfde back-end worden verzonden.
+* **[Latentie](#latency):** Met de latentie gebaseerde route ring zorgt u ervoor dat aanvragen worden verzonden naar de laagste latentie back-end die acceptabel is binnen een gevoeligheids bereik. In principe worden uw gebruikers aanvragen verzonden naar de ' dichtstbijgelegen ' set back-ends met betrekking tot netwerk latentie.
+* **[Prioriteit](#priority):** U kunt prioriteiten toewijzen aan uw back-ends wanneer u een primaire back-end wilt configureren om al het verkeer te onderhouden. De secundaire back-end kan een back-up zijn voor het geval de primaire back-end niet beschikbaar is.
+* **[Gewogen](#weighted):** U kunt gewichten toewijzen aan uw back-ends wanneer u verkeer wilt distribueren over een set back-ends. Of u gelijkmatig wilt verdelen of op basis van de gewichts coëfficiënten.
+* **[Sessie affiniteit](#affinity):** U kunt sessie affiniteit configureren voor uw frontend-hosts of-domeinen om ervoor te zorgen dat aanvragen van dezelfde eind gebruiker naar dezelfde back-end worden verzonden.
 
 Alle Front Door-configuraties omvatten bewaking van de back-endstatus en geautomatiseerde, directe failover wereldwijd. Zie voor meer informatie [back-end van front deur controleren](front-door-health-probes.md). De voor deur kan worden gebruikt op basis van één routerings methode. Maar afhankelijk van de behoeften van uw toepassing, kunt u ook meerdere routerings methoden combi neren om een optimale routerings topologie te bouwen.
 
@@ -65,7 +65,7 @@ Met de lijst met beschik bare back-ends die een acceptabele latentie gevoelighei
 
 De methode weighted maakt enkele handige scenario's mogelijk:
 
-* **Geleidelijke upgrade**van de toepassing: geeft een percentage van het verkeer dat naar een nieuwe back-end kan worden gerouteerd en verhoogt het verkeer gedurende een periode geleidelijk om dit gemiddeld met andere back-ends te brengen.
+* **Geleidelijke upgrade** van de toepassing: geeft een percentage van het verkeer dat naar een nieuwe back-end kan worden gerouteerd en verhoogt het verkeer gedurende een periode geleidelijk om dit gemiddeld met andere back-ends te brengen.
 * **Toepassings migratie naar Azure**: Maak een back-end-groep met zowel Azure als externe back-endservers. Pas het gewicht van de back-ends aan om de voor keur te geven aan de nieuwe back-end. U kunt dit geleidelijk instellen, te beginnen met het uitschakelen van de nieuwe back-ups en vervolgens de laagste gewichten toewijzen, waardoor deze langzaam toeneemt op het niveau van het verkeer. Vervolgens worden de minder voorkeurs back-ends uitgeschakeld en verwijderd uit de groep.  
 * **Cloud-bursting voor extra capaciteit**: Vouw snel een on-premises implementatie uit in de Cloud door deze achter de deur te plaatsen. Wanneer u extra capaciteit nodig hebt in de Cloud, kunt u meer back-endservers toevoegen of inschakelen en opgeven welk deel van het verkeer naar elke back-end gaat.
 

@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 11/08/2017
 ms.author: apimpm
 ms.openlocfilehash: 1c4e64251390936e8a63ee904ec69f173cac6114
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/01/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93146702"
 ---
 # <a name="edit-an-api"></a>Een API bewerken
@@ -37,18 +37,18 @@ Deze zelfstudie laat u zien hoe u een API Management (APIM) moet gebruiken om ee
 
 ![Schermopname met markeringen van het proces voor het bewerken van een API in APIM.](./media/edit-api/edit-api001.png)
 
-1. Klik op het tabblad **API's** .
+1. Klik op het tabblad **API's**.
 2. Selecteer een van de API's die u eerder hebt geïmporteerd.
-3. Selecteer het tabblad **Ontwerpen** .
+3. Selecteer het tabblad **Ontwerpen**.
 4. Selecteer een bewerking die u wilt bewerken.
-5. Om de naam van de bewerking te wijzigen, selecteert u een **potlood** in het **Front-end** -venster.
+5. Om de naam van de bewerking te wijzigen, selecteert u een **potlood** in het **Front-end**-venster.
 
 ## <a name="update-the-swagger"></a>Werk de swagger bij
 
 U kunt uw back-end-API van Azure Portal bijwerken met de volgende stappen:
 
 1. Selecteer **Alle bewerkingen**
-2. Klik op het potlood in het **Front-end** -venster.
+2. Klik op het potlood in het **Front-end**-venster.
 
     ![Schermopname met het potloodpictogram in het Frontend-scherm gemarkeerd.](./media/edit-api/edit-api002.png)
 
@@ -57,7 +57,7 @@ U kunt uw back-end-API van Azure Portal bijwerken met de volgende stappen:
     ![Een API bewerken](./media/edit-api/edit-api003.png)
 
 3. Werk de swagger bij.
-4. Klik op **Opslaan** .
+4. Klik op **Opslaan**.
 
 [!INCLUDE [api-management-define-api-topics.md](../../includes/api-management-define-api-topics.md)]
 

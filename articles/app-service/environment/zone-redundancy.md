@@ -8,10 +8,10 @@ ms.date: 07/15/2020
 ms.author: ccompy
 ms.custom: seodec18
 ms.openlocfilehash: 383b5bb5c7295fe54efda883e47b9b2338286de5
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98624722"
 ---
 # <a name="availability-zone-support-for-app-service-environments"></a>Ondersteuning van beschikbaarheids zone voor App Service omgevingen
@@ -41,7 +41,7 @@ Zonegebonden ILB as kunnen worden gemaakt in een van de volgende regio's:
 - Europa -west
 - Azië - zuidoost
 - Verenigd Koninkrijk Zuid
-- West US 2
+- VS - west 2
 
 Toepassingen die zijn geïmplementeerd op een zonegebonden ILB ASE blijven actief en verwerken verkeer op die ASE, zelfs als andere zones in dezelfde regio een storing ondergaan.  Het is mogelijk dat niet-runtime-gedrag, inclusief; het schalen van het toepassings service plan, het maken van toepassingen, toepassings configuratie en het publiceren van toepassingen kan nog steeds worden beïnvloed door een storing in andere beschikbaarheids zones. De door de zone vastgemaakte implementatie van een zonegebonden ILB ASE garandeert alleen voortdurende uptime voor al geïmplementeerde toepassingen.
 
@@ -49,9 +49,9 @@ Toepassingen die zijn geïmplementeerd op een zonegebonden ILB ASE blijven actie
 
 Zonegebonden ILB as moet worden gemaakt met ARM-sjablonen. Zodra een zonegebonden ILB-ASE is gemaakt via een ARM-sjabloon, kan deze worden weer gegeven en ermee worden gecommuniceerd via de Azure Portal en CLI.  Een ARM-sjabloon is alleen nodig voor het eerst maken van een zonegebonden ILB ASE.
 
-De enige wijziging die nodig is in een ARM-sjabloon voor het opgeven van een zonegebonden ILB ASE is de nieuwe *-**zones** _ eigenschap. De eigenschap _*_zones_*_ moet worden ingesteld op de waarde 1, 2 of 3, afhankelijk van de logische beschikbaarheids zone waarnaar de ILB ASE moet worden vastgemaakt.
+De enige wijziging die nodig is in een ARM-sjabloon voor het opgeven van een zonegebonden ILB ASE is de nieuwe *-**zones** _ eigenschap. De eigenschap _ *_zones_** moet worden ingesteld op de waarde ' 1 ', ' 2 ' of ' 3 ', afhankelijk van de logische beschikbaarheids zone waarnaar de ILB ASE moet worden vastgemaakt.
 
-In het volgende voor beeld van een ARM-sjabloon fragment ziet u de eigenschap nieuwe _*_zones_*_ waarmee wordt aangegeven dat de ILB ASE moet worden vastgemaakt aan zone 2.
+In het volgende voor beeld van een ARM-sjabloon fragment ziet u de eigenschap nieuwe ***zones*** waarmee wordt aangegeven dat de ILB ASE moet worden vastgemaakt aan zone 2.
 
 ```
    "resources": [
@@ -89,6 +89,6 @@ Klanten zorgen ervoor dat de gegevens locatie van één regio worden uitgevoerd 
 
 Klanten kunnen controleren of een App Service Environment op de juiste wijze is geconfigureerd voor het opslaan van gegevens in één regio door de volgende stappen te volgen: 
 
-1. Ga in [resource Explorer](https://resources.azure.com)naar de arm-resource voor de app service environment.  As worden vermeld onder _providers/Microsoft.Web/hostingEnvironments *.
+1. Ga in [resource Explorer](https://resources.azure.com)naar de arm-resource voor de app service environment.  As worden vermeld onder *providers/micro soft. Web/hostingEnvironments*.
 2. Als er een *zone* -eigenschap bestaat in de weer gave van de JSON-syntaxis van de arm en deze een JSON-matrix met één waarde bevat met de waarde ' 1 ', ' 2 ' of ' 3 ', dan wordt de ASE zonally geïmplementeerd en blijven de gegevens van de klant in dezelfde regio.
 2. Als een *eigenschap van een zone niet* bestaat, of als de eigenschap niet is opgegeven, is de waarde van het ASE niet zonally geïmplementeerd en worden de klant gegevens niet alleen in dezelfde regio opgeslagen.

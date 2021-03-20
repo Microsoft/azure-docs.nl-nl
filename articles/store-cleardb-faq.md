@@ -13,10 +13,10 @@ ms.author: sumuth
 ROBOTS: NOINDEX,NOFOLLOW
 ms.custom: references_regions
 ms.openlocfilehash: d9d4ae746c192e8b4afd1781c1e072fc0dc70422
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98599793"
 ---
 # <a name="faq-for-cleardb-mysql-databases-with-azure-app-service"></a>Veelgestelde vragen over ClearDB MySql-data bases met Azure App Service
@@ -42,7 +42,7 @@ Dit is afhankelijk van het type abonnement dat u gebruikt. Hier volgen enkele ve
 * [Betalen](https://azure.microsoft.com/offers/ms-azr-0003p/)naar gebruik: er is een credit card vereist en wanneer u een betaalde MySQL-data base koopt, wordt uw credit card in rekening gebracht.
 * [Gratis proef versie](https://azure.microsoft.com/pricing/free-trial/): bevat tegoed voor gebruik met Microsoft Azure Services, maar biedt geen ondersteuning voor resources van derden. Als u services van derden of een betaalde MySQL-data base wilt kopen, moet u een abonnement voor een Credit Card gebruiken. U kunt voor Web Apps een gratis ClearDB MySQL-data base maken.
 * [MSDN-abonnement](https://azure.microsoft.com/pricing/member-offers/msdn-benefits/) en **MSDN dev test betalen** naar gebruik: voor een MSDN-abonnement hebt u een credit card nodig om een betaalde mysql-oplossing van ClearDB te kunnen kopen, vergelijkbaar met een gratis proef versie.
-* [Enterprise Agreement (EA)](https://azure.microsoft.com/pricing/enterprise-agreement/): EA-klanten worden per kwar taal gefactureerd op basis van hun EA voor al hun Azure Marketplace-aankopen (van derden) op een afzonderlijke, geconsolideerde factuur. U wordt buiten de Azure-voor uitbetaling (voorheen monetaire toezeg ging) gefactureerd voor Marketplace-aankopen. De Azure Store is op dit moment niet beschikbaar voor klanten die zijn Inge schreven in Azerbeidzjan, Kroatië, Noor wegen en Porto Rico. 
+* [Enterprise overeenkomst (EA)](https://azure.microsoft.com/pricing/enterprise-agreement/): EA-klanten worden per kwar taal gefactureerd op basis van hun EA voor al hun Azure Marketplace-aankopen (van derden) op een afzonderlijke, geconsolideerde factuur. U wordt buiten de Azure-voor uitbetaling (voorheen monetaire toezeg ging) gefactureerd voor Marketplace-aankopen. De Azure Store is op dit moment niet beschikbaar voor klanten die zijn Inge schreven in Azerbeidzjan, Kroatië, Noor wegen en Porto Rico. 
 
 ## <a name="why-was-i-charged-350-for-a-web-app--mysql-from-the-azure-marketplace"></a>Waarom werd $3,50 van de Azure Marketplace in rekening gebracht voor een web-app + MySQL?
 De standaard optie voor de data base is Titan, een $3,50. De kosten worden niet weer gegeven tijdens het maken van de data base en u kunt per ongeluk een Data Base kopen die u niet wilt. We proberen de ervaring te verbeteren, maar tot nu toe moet u alle geselecteerde prijs categorieën voor web-app en data base controleren voordat u op **maken** klikt en de implementatie van de resources start.

@@ -8,10 +8,10 @@ ms.date: 12/02/2020
 ms.topic: how-to
 ms.service: azure
 ms.openlocfilehash: 6dc2a9683a48f20816adc8ce0ee0c1e8dc57b287
-ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100523665"
 ---
 # <a name="view-alerts"></a>Waarschuwingen weergeven
@@ -32,7 +32,7 @@ Ga als volgt te werk als u waarschuwingen wilt weergeven:
 
 U kunt waarschuwingen weer geven op basis van verschillende categorieën in de hoofd weergave van **waarschuwingen** . Selecteer een waarschuwing om de details te bekijken en de gebeurtenis te beheren.
 
-| Sorteren op type | Description |
+| Sorteren op type | Beschrijving |
 |--|--|
 | **Belang rijke waarschuwingen** | Waarschuwingen die op urgentie zijn gesorteerd. |
 | **Vastgemaakte waarschuwingen** | Waarschuwingen die de gebruiker heeft vastgemaakt voor nader onderzoek. Vastgemaakte waarschuwingen worden niet gearchiveerd en worden 14 dagen opgeslagen in de vastgemaakte map. |

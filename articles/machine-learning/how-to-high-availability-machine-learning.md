@@ -11,10 +11,10 @@ author: jhirono
 ms.reviewer: larryfr
 ms.date: 09/16/2020
 ms.openlocfilehash: 7a1a63893e6e2988fc5f21e84f21c74315d856b4
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93325487"
 ---
 # <a name="increase-azure-machine-learning-resiliency"></a>Azure Machine Learning tolerantie verg Roten
@@ -32,19 +32,19 @@ Azure Machine Learning is afhankelijk van meerdere Azure-Services en heeft meerd
 
 Azure-Services omvatten:
 
-* **Azure machine learning-infra structuur** : een door micro soft beheerde omgeving voor de Azure machine learning-werk ruimte.
+* **Azure machine learning-infra structuur**: een door micro soft beheerde omgeving voor de Azure machine learning-werk ruimte.
 
-* **Gekoppelde resources** : resources die in uw abonnement zijn ingericht tijdens het maken van Azure machine learning werk ruimte. Deze resources omvatten Azure Storage, Azure Key Vault, Azure Container Registry en Application Insights. U bent zelf verantwoordelijk voor het configureren van instellingen voor hoge Beschik baarheid voor deze resources.
+* **Gekoppelde resources**: resources die in uw abonnement zijn ingericht tijdens het maken van Azure machine learning werk ruimte. Deze resources omvatten Azure Storage, Azure Key Vault, Azure Container Registry en Application Insights. U bent zelf verantwoordelijk voor het configureren van instellingen voor hoge Beschik baarheid voor deze resources.
   * De standaard opslag bevat gegevens, zoals model, logboek gegevens van de training en de gegevensset.
   * Key Vault heeft referenties voor Azure Storage, Container Registry en gegevens archieven.
   * Container Registry beschikt over een docker-installatie kopie voor trainings-en detraining omgevingen.
   * Application Insights is voor het bewaken van Azure Machine Learning.
 
-* **Reken resources** : resources die u maakt na de implementatie van de werk ruimte. U kunt bijvoorbeeld een reken instantie of reken cluster maken om een Machine Learning model te trainen.
+* **Reken resources**: resources die u maakt na de implementatie van de werk ruimte. U kunt bijvoorbeeld een reken instantie of reken cluster maken om een Machine Learning model te trainen.
   * Reken instantie en reken cluster: micro soft Managed model ontwikkel omgevingen.
   * Andere bronnen: Micro Soft computing resources die u kunt koppelen aan Azure Machine Learning, zoals Azure Kubernetes service (AKS), Azure Databricks, Azure Container Instances en Azure HDInsight. U bent zelf verantwoordelijk voor het configureren van instellingen voor hoge Beschik baarheid voor deze resources.
 
-* **Aanvullende gegevens archieven** : Azure machine learning kunt extra gegevens archieven zoals Azure Storage, Azure Data Lake Storage en Azure SQL database koppelen voor trainings gegevens.  Deze gegevens archieven worden ingericht binnen uw abonnement. U bent zelf verantwoordelijk voor het configureren van de instellingen voor hoge Beschik baarheid.
+* **Aanvullende gegevens archieven**: Azure machine learning kunt extra gegevens archieven zoals Azure Storage, Azure Data Lake Storage en Azure SQL database koppelen voor trainings gegevens.  Deze gegevens archieven worden ingericht binnen uw abonnement. U bent zelf verantwoordelijk voor het configureren van de instellingen voor hoge Beschik baarheid.
 
 In de volgende tabel ziet u welke Azure-Services worden beheerd door micro soft, die door u worden beheerd en die standaard Maxi maal beschikbaar zijn.
 
@@ -56,7 +56,7 @@ In de volgende tabel ziet u welke Azure-Services worden beheerd door micro soft,
 | Key Vault | U | ✓ |
 | Container Registry | U | |
 | Application Insights | U | NA |
-| **Rekenresources** |
+| **Reken resources** |
 | Rekenproces | Microsoft |  |
 | Rekencluster | Microsoft |  |
 | Andere reken resources, zoals AKS, <br>Azure Databricks, Container Instances, HDInsight | U |  |
@@ -71,30 +71,30 @@ In de rest van dit artikel worden de acties beschreven die u moet uitvoeren om e
 
 Zorg ervoor dat u de instellingen voor hoge Beschik baarheid van elke resource configureert door te verwijzen naar de volgende documentatie:
 
-* **Azure Storage** : Zie [Azure Storage redundantie](../storage/common/storage-redundancy.md)voor het configureren van instellingen voor hoge Beschik baarheid.
-* **Key Vault** : Key Vault biedt standaard een hoge Beschik baarheid en vereist geen gebruikers actie.  Zie [Azure Key Vault Beschik baarheid en redundantie](../key-vault/general/disaster-recovery-guidance.md).
-* **Container Registry** : Kies de optie Premium Registry voor geo-replicatie. Zie [geo-replicatie in azure container Registry](../container-registry/container-registry-geo-replication.md).
-* **Application Insights** : Application Insights biedt geen instellingen voor hoge Beschik baarheid. Zie [gegevens verzameling, retentie en opslag in Application Insights](../azure-monitor/app/data-retention-privacy.md#how-long-is-the-data-kept)om de Bewaar periode voor gegevens en Details aan te passen.
+* **Azure Storage**: Zie [Azure Storage redundantie](../storage/common/storage-redundancy.md)voor het configureren van instellingen voor hoge Beschik baarheid.
+* **Key Vault**: Key Vault biedt standaard een hoge Beschik baarheid en vereist geen gebruikers actie.  Zie [Azure Key Vault Beschik baarheid en redundantie](../key-vault/general/disaster-recovery-guidance.md).
+* **Container Registry**: Kies de optie Premium Registry voor geo-replicatie. Zie [geo-replicatie in azure container Registry](../container-registry/container-registry-geo-replication.md).
+* **Application Insights**: Application Insights biedt geen instellingen voor hoge Beschik baarheid. Zie [gegevens verzameling, retentie en opslag in Application Insights](../azure-monitor/app/data-retention-privacy.md#how-long-is-the-data-kept)om de Bewaar periode voor gegevens en Details aan te passen.
 
 ## <a name="compute-resources"></a>Rekenresources
 
 Zorg ervoor dat u de instellingen voor hoge Beschik baarheid van elke resource configureert door te verwijzen naar de volgende documentatie:
 
-* **Azure Kubernetes service** : Zie [Aanbevolen procedures voor bedrijfs continuïteit en herstel na nood gevallen in azure KUBERNETES service (AKS)](../aks/operator-best-practices-multi-region.md) en [Maak een Azure KUBERNETES service-cluster (AKS) dat gebruikmaakt van beschikbaarheids zones](../aks/availability-zones.md). Als het AKS-cluster is gemaakt met behulp van de Azure Machine Learning Studio, SDK of CLI, wordt de hoge Beschik baarheid voor meerdere regio's niet ondersteund.
-* **Azure Databricks** : Zie [regionale nood herstel voor Azure Databricks clusters](/azure/databricks/scenarios/howto-regional-disaster-recovery).
-* **Container instances** : een Orchestrator is verantwoordelijk voor failover. Zie [Azure container instances en container Orchestrator](../container-instances/container-instances-orchestrator-relationship.md).
-* **HDInsight** : Bekijk [Services met hoge Beschik baarheid die worden ondersteund door Azure HDInsight](../hdinsight/hdinsight-high-availability-components.md).
+* **Azure Kubernetes service**: Zie [Aanbevolen procedures voor bedrijfs continuïteit en herstel na nood gevallen in azure KUBERNETES service (AKS)](../aks/operator-best-practices-multi-region.md) en [Maak een Azure KUBERNETES service-cluster (AKS) dat gebruikmaakt van beschikbaarheids zones](../aks/availability-zones.md). Als het AKS-cluster is gemaakt met behulp van de Azure Machine Learning Studio, SDK of CLI, wordt de hoge Beschik baarheid voor meerdere regio's niet ondersteund.
+* **Azure Databricks**: Zie [regionale nood herstel voor Azure Databricks clusters](/azure/databricks/scenarios/howto-regional-disaster-recovery).
+* **Container instances**: een Orchestrator is verantwoordelijk voor failover. Zie [Azure container instances en container Orchestrator](../container-instances/container-instances-orchestrator-relationship.md).
+* **HDInsight**: Bekijk [Services met hoge Beschik baarheid die worden ondersteund door Azure HDInsight](../hdinsight/hdinsight-high-availability-components.md).
 
 ## <a name="additional-data-stores"></a>Aanvullende gegevens archieven
 
 Zorg ervoor dat u de instellingen voor hoge Beschik baarheid van elke resource configureert door te verwijzen naar de volgende documentatie:
 
-* **Azure Blob container/Azure files/data Lake Storage Gen2** : hetzelfde als standaard opslag.
-* **Data Lake Storage gen1** : Zie de [richt lijnen voor hoge Beschik baarheid en herstel na nood gevallen voor data Lake Storage gen1](../data-lake-store/data-lake-store-disaster-recovery-guidance.md).
-* **SQL database** : Bekijk [hoge Beschik baarheid voor Azure SQL database en SQL Managed instance](../azure-sql/database/high-availability-sla.md).
-* **Azure database for PostgreSQL** : Bekijk [concepten met hoge Beschik baarheid in azure database for PostgreSQL-één server](../postgresql/concepts-high-availability.md).
-* **Azure database for MySQL** : Zie [inzicht in bedrijfs continuïteit in azure database for MySQL](../mysql/concepts-business-continuity.md).
-* **Azure Databricks bestands systeem** : Zie [regionale nood herstel voor Azure Databricks clusters](/azure/databricks/scenarios/howto-regional-disaster-recovery).
+* **Azure Blob container/Azure files/data Lake Storage Gen2**: hetzelfde als standaard opslag.
+* **Data Lake Storage gen1**: Zie de [richt lijnen voor hoge Beschik baarheid en herstel na nood gevallen voor data Lake Storage gen1](../data-lake-store/data-lake-store-disaster-recovery-guidance.md).
+* **SQL database**: Bekijk [hoge Beschik baarheid voor Azure SQL database en SQL Managed instance](../azure-sql/database/high-availability-sla.md).
+* **Azure database for PostgreSQL**: Bekijk [concepten met hoge Beschik baarheid in azure database for PostgreSQL-één server](../postgresql/concepts-high-availability.md).
+* **Azure database for MySQL**: Zie [inzicht in bedrijfs continuïteit in azure database for MySQL](../mysql/concepts-business-continuity.md).
+* **Azure Databricks bestands systeem**: Zie [regionale nood herstel voor Azure Databricks clusters](/azure/databricks/scenarios/howto-regional-disaster-recovery).
 
 ## <a name="azure-cosmos-db"></a>Azure Cosmos DB
 

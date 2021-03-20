@@ -8,10 +8,10 @@ ms.subservice: hyperscale-citus
 ms.topic: how-to
 ms.date: 11/17/2020
 ms.openlocfilehash: 7e68e9f8caad7d7e4bc44bc4e1e55150a78b4a98
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95026400"
 ---
 # <a name="pick-initial-size-for-hyperscale-citus-server-group"></a>Selecteer de begin grootte voor de Server groep grootschalige (Citus)
@@ -29,7 +29,7 @@ Het coördinator knooppunt vereist niet zoveel RAM-geheugen als werk nemers, maa
 
 Totaal aantal vCores: wanneer werk gegevens in het RAM-geheugen passen, kunt u een lineaire prestatie verbetering verwachten op grootschalige (Citus) in verhouding tot het aantal worker-kernen. Als u het juiste aantal vCores voor uw behoeften wilt bepalen, moet u rekening houden met de huidige latentie voor query's in uw data base met één knoop punt en de vereiste latentie in grootschalige (Citus). Deel de huidige latentie door de gewenste latentie en rond het resultaat af.
 
-RAM voor werkrollen: de beste manier is om voldoende geheugen beschikbaar te stellen zodat het merendeel van de werksets in het geheugen past. Het type query's dat door uw toepassing wordt gebruikt, is van invloed op de geheugen vereisten. U kunt uitleg analyseren uitvoeren op een query om te bepalen hoeveel geheugen nodig is. Houd er rekening mee dat vCores en RAM samen worden geschaald, zoals beschreven in het artikel [grootschalige (Citus) configuratie opties](concepts-hyperscale-configuration-options.md) .
+RAM voor werkrollen: de beste manier is om voldoende geheugen beschikbaar te stellen zodat het merendeel van de werksets in het geheugen past. Het type query's dat voor uw toepassing wordt gebruikt, heeft invloed op geheugenvereisten. U kunt uitleg analyseren uitvoeren op een query om te bepalen hoeveel geheugen nodig is. Houd er rekening mee dat vCores en RAM samen worden geschaald, zoals beschreven in het artikel [grootschalige (Citus) configuratie opties](concepts-hyperscale-configuration-options.md) .
 
 ## <a name="next-steps"></a>Volgende stappen
 

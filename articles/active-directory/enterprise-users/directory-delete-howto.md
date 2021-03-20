@@ -15,10 +15,10 @@ ms.reviewer: addimitu
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2edc6fb98359c5360836bc369e5ae1928464df92
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96861027"
 ---
 # <a name="delete-a-tenant-in-azure-active-directory"></a>Een Tenant verwijderen in Azure Active Directory
@@ -52,9 +52,9 @@ U kunt een organisatie in azure AD pas verwijderen als er verschillende controle
 
 ## <a name="if-you-cant-delete-the-organization"></a>Als u de organisatie niet kunt verwijderen
 
-Wanneer u uw Azure AD-organisatie hebt geconfigureerd, hebt u mogelijk ook op licenties gebaseerde abonnementen geactiveerd voor uw organisatie, zoals Azure AD Premium P2, Microsoft 365 Business Standard of Enterprise Mobility + Security E5. Om onbedoeld gegevens verlies te voor komen, kunt u een organisatie pas verwijderen als de abonnementen volledig zijn verwijderd. De abonnementen moeten een niet- **ingerichte** status hebben om het verwijderen van de organisatie toe te staan. Een **verlopen** of **geannuleerde** abonnement wordt verplaatst naar de **Uitgeschakelde** status en de laatste fase is de status provisioned. **Deprovisioned**
+Wanneer u uw Azure AD-organisatie hebt geconfigureerd, hebt u mogelijk ook op licenties gebaseerde abonnementen geactiveerd voor uw organisatie, zoals Azure AD Premium P2, Microsoft 365 Business Standard of Enterprise Mobility + Security E5. Om onbedoeld gegevens verlies te voor komen, kunt u een organisatie pas verwijderen als de abonnementen volledig zijn verwijderd. De abonnementen moeten een niet- **ingerichte** status hebben om het verwijderen van de organisatie toe te staan. Een **verlopen** of **geannuleerde** abonnement wordt verplaatst naar de **Uitgeschakelde** status en de laatste fase is de status provisioned. 
 
-Zie de volgende tabel voor wat u kunt verwachten wanneer een proef Microsoft 365 abonnement verloopt (exclusief betaalde partner/CSP, Enterprise Agreement of volume licenties). Zie [Wat gebeurt er met mijn gegevens en toegang wanneer mijn Microsoft 365 for Business-abonnement wordt beëindigd?](https://support.office.com/article/what-happens-to-my-data-and-access-when-my-office-365-for-business-subscription-ends-4436582f-211a-45ec-b72e-33647f97d8a3)voor meer informatie over Microsoft 365 het bewaren van gegevens en de levens cyclus van een abonnement. 
+Zie de volgende tabel voor wat u kunt verwachten wanneer een proef Microsoft 365 abonnement verloopt (exclusief betaalde partner/CSP, Enterprise Overeenkomst of volume licenties). Zie [Wat gebeurt er met mijn gegevens en toegang wanneer mijn Microsoft 365 for Business-abonnement wordt beëindigd?](https://support.office.com/article/what-happens-to-my-data-and-access-when-my-office-365-for-business-subscription-ends-4436582f-211a-45ec-b72e-33647f97d8a3)voor meer informatie over Microsoft 365 het bewaren van gegevens en de levens cyclus van een abonnement. 
 
 Abonnements status | Gegevens | Toegang tot gegevens
 ----- | ----- | -----
@@ -108,7 +108,7 @@ Wanneer u het verwijderen van het self-service-aanmeldings product start, worden
 
 Zie [beschik bare selfservice Program ma's](/office365/admin/misc/self-service-sign-up#available-self-service-programs)voor meer informatie over momenteel beschik bare self-service voor het aanmelden van services.
 
-Zie de volgende tabel voor wat u kunt verwachten wanneer een proef Microsoft 365 abonnement verloopt (exclusief betaalde partner/CSP, Enterprise Agreement of volume licenties). Zie [Wat gebeurt er met mijn gegevens en toegang wanneer mijn Microsoft 365 for Business-abonnement wordt beëindigd?](/office365/admin/subscriptions-and-billing/what-if-my-subscription-expires)voor meer informatie over Microsoft 365 het bewaren van gegevens en de levens cyclus van een abonnement.
+Zie de volgende tabel voor wat u kunt verwachten wanneer een proef Microsoft 365 abonnement verloopt (exclusief betaalde partner/CSP, Enterprise Overeenkomst of volume licenties). Zie [Wat gebeurt er met mijn gegevens en toegang wanneer mijn Microsoft 365 for Business-abonnement wordt beëindigd?](/office365/admin/subscriptions-and-billing/what-if-my-subscription-expires)voor meer informatie over Microsoft 365 het bewaren van gegevens en de levens cyclus van een abonnement.
 
 Product status | Gegevens | Toegang tot gegevens
 ------------- | ---- | --------------

@@ -12,10 +12,10 @@ ms.date: 11/06/2020
 ms.topic: conceptual
 ms.custom: how-to
 ms.openlocfilehash: 5bd938fce347d439c2acb4e3fcace04d5b27d770
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94447649"
 ---
 # <a name="configure-authentication-for-models-deployed-as-web-services"></a>Verificatie configureren voor modellen die als webservices zijn geïmplementeerd
@@ -24,7 +24,7 @@ Met Azure Machine Learning kunt u uw getrainde machine learning-modellen als web
 
 De model implementaties die door Azure Machine Learning zijn gemaakt, kunnen worden geconfigureerd voor het gebruik van een van de volgende twee verificatie methoden:
 
-* **op basis van sleutels** : een statische sleutel wordt gebruikt om te verifiëren bij de webservice.
+* **op basis van sleutels**: een statische sleutel wordt gebruikt om te verifiëren bij de webservice.
 * **op basis** van een token: er moet een tijdelijk token worden verkregen uit de Azure machine learning-werk ruimte (met behulp van Azure Active Directory) en worden gebruikt voor verificatie bij de webservice. Dit token verloopt na een bepaalde tijd en moet worden vernieuwd om te blijven werken met de webservice.
 
     > [!NOTE]

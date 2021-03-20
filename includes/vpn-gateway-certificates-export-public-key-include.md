@@ -9,10 +9,10 @@ ms.date: 03/19/2020
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 12e9bec0c560f1b068b07a1b6afe218a112e439f
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94553078"
 ---
 Nadat u een zelfondertekend basis certificaat hebt gemaakt, exporteert u het bestand met de open bare sleutel van het basis certificaat (niet de persoonlijke sleutel). U kunt dit bestand later uploaden naar Azure. Met de volgende stappen kunt u het. cer-bestand voor uw zelfondertekende basis certificaat exporteren:
@@ -29,7 +29,7 @@ Nadat u een zelfondertekend basis certificaat hebt gemaakt, exporteert u het bes
 4. Selecteer op de pagina **Bestandsindeling voor export** de optie **Met Base64 gecodeerde X.509 (*.CER)** en klik op **Volgende**.
 
    ![Base-64-code ring](./media/vpn-gateway-certificates-export-public-key-include/base64.png)
-5. Als u het **bestand wilt exporteren** , **bladert** u naar de locatie waarnaar u het certificaat wilt exporteren. Geef bij **Bestandsnaam** de naam van het certificaatbestand op. Klik op **Volgende**.
+5. Als u het **bestand wilt exporteren**, **bladert** u naar de locatie waarnaar u het certificaat wilt exporteren. Geef bij **Bestandsnaam** de naam van het certificaatbestand op. Klik op **Volgende**.
 
    ![Scherm afbeelding toont de wizard Certificaat exporteren met het tekstvak bestands naam en een Blader optie.](./media/vpn-gateway-certificates-export-public-key-include/browse.png)
 6. Klik op **Voltooien** om het certificaat te exporteren.

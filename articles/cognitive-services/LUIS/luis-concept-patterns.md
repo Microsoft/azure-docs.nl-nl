@@ -10,10 +10,10 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 11/11/2019
 ms.openlocfilehash: cda71c6e825ff27ba9b03e1306ccb287663e8613
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95025956"
 ---
 # <a name="patterns-improve-prediction-accuracy"></a>Nauw keurigheid van de voor spelling verbeteren
@@ -24,7 +24,7 @@ Overweeg een Human resources-app die rapporteert over het organigram in relatie 
 
 ![Afbeelding van organigram](./media/luis-concept-patterns/org-chart.png)
 
-|Utterances|Intentie voor speld|Intente Score|
+|Uitingen|Intentie voor speld|Intente Score|
 |--|--|--|
 |Wie is de ondergeschikte van Tom?|GetOrgChart|.30|
 |Wie is de ondergeschikte van Tom?|GetOrgChart|.30|

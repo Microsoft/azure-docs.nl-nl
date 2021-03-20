@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 05/24/2019
 ms.author: alkohli
 ms.openlocfilehash: d0c45626016049424c8028eea7ffbd7f281e9012
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91744148"
 ---
 # <a name="open-a-support-ticket-for-azure-data-box"></a>Open een ondersteunings ticket voor Azure Data Box
@@ -30,12 +30,12 @@ Voer de volgende stappen uit om een ondersteunings aanvraag te maken:
 
     ![Nieuwe ondersteuningsaanvraag](./media/data-box-disk-contact-microsoft-support/data-box-disk-support-request.png)
 
-2. In **nieuwe ondersteunings aanvraag**selecteert u **basis principes**. Voer de volgende stappen uit in de **basis beginselen**:
+2. In **nieuwe ondersteunings aanvraag** selecteert u **basis principes**. Voer de volgende stappen uit in de **basis beginselen**:
 
     1. Selecteer in de vervolg keuzelijst **probleem type** de optie **technisch**.
     2. Kies uw **abonnement**.
-    3. Onder **service**, Controleer **alle services**. Selecteer **Data Box**in de vervolg keuzelijst. 
-    4. Geef uw **ondersteunings plan**op.
+    3. Onder **service**, Controleer **alle services**. Selecteer **Data Box** in de vervolg keuzelijst. 
+    4. Geef uw **ondersteunings plan** op.
     5. Klik op **Volgende**.
 
         ![Basisbeginselen](./media/data-box-disk-contact-microsoft-support/data-box-disk-support1.png)
@@ -44,20 +44,20 @@ Voer de volgende stappen uit om een ondersteunings aanvraag te maken:
 
     1. Kies de **Ernst** als een **C-minimale impact**. Ondersteuning wordt indien nodig bijgewerkt.
     2. Selecteer het **probleem type** in de vervolg keuzelijst.
-    3. Kies een overeenkomende **categorie**op basis van het probleem type dat u hebt geselecteerd.
+    3. Kies een overeenkomende **categorie** op basis van het probleem type dat u hebt geselecteerd.
     4. Geef een **titel** op voor het probleem en meer **Details**.
     5. Geef de begin datum en-tijd op voor het probleem.
-    6. Klik in het **bestand uploaden**op het mappictogram om te bladeren naar de andere bestanden die u wilt uploaden.
+    6. Klik in het **bestand uploaden** op het mappictogram om te bladeren naar de andere bestanden die u wilt uploaden.
     7. Controleer de **Diagnostische gegevens voor delen**.
     8. Klik op **Volgende**.
 
        ![Probleem](./media/data-box-disk-contact-microsoft-support/data-box-disk-support2.png)
 
-4. Klik in **nieuwe ondersteunings aanvraag**op **stap 3 contact gegevens**. Voer bij **contact gegevens**de volgende stappen uit:
+4. Klik in **nieuwe ondersteunings aanvraag** op **stap 3 contact gegevens**. Voer bij **contact gegevens** de volgende stappen uit:
 
-   1. Geef in de **contact opties**uw favoriete contact wijze op (telefoon of e-mail) en de taal. De reactie tijd wordt automatisch geselecteerd op basis van uw abonnement.
-   2. Geef in de **contact gegevens**uw naam, e-mail adres, optionele contact persoon, land/regio. Selecteer **wijzigingen in contact persoon opslaan voor toekomstige ondersteunings aanvragen**.
-   3. Klik op **Maken**.
+   1. Geef in de **contact opties** uw favoriete contact wijze op (telefoon of e-mail) en de taal. De reactie tijd wordt automatisch geselecteerd op basis van uw abonnement.
+   2. Geef in de **contact gegevens** uw naam, e-mail adres, optionele contact persoon, land/regio. Selecteer **wijzigingen in contact persoon opslaan voor toekomstige ondersteunings aanvragen**.
+   3. Klik op **Create**.
 
        ![Contactgegevens](./media/data-box-disk-contact-microsoft-support/data-box-disk-support3.png)   
 
@@ -74,7 +74,7 @@ Nadat u een ondersteuningsticket hebt gemaakt, kunt u de voortgang van het ticke
 
     ![Ondersteunings aanvragen beheren](./media/data-box-disk-contact-microsoft-support/data-box-disk-manage-support-ticket1.png)
 
-2. In **Help en ondersteuning**wordt een lijst in tabel vorm met **recente ondersteunings aanvragen** weer gegeven.
+2. In **Help en ondersteuning** wordt een lijst in tabel vorm met **recente ondersteunings aanvragen** weer gegeven.
 
     ![Ondersteunings aanvragen beheren 2](./media/data-box-disk-contact-microsoft-support/data-box-disk-manage-support-ticket2.png)
 

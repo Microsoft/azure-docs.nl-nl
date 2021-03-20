@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 09/29/2020
 ms.custom: seodec18
 ms.openlocfilehash: 0dadf523c5d17ffb91f4fefa71b52d1d1855c978
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91570223"
 ---
 # <a name="how-to-scale-your-azure-time-series-insights-gen1-environment"></a>Uw Azure Time Series Insights gen1-omgeving schalen
@@ -37,11 +37,11 @@ Het wijzigen van de SKU van de prijs categorie is echter niet toegestaan. Een om
 
 1. Zoek en selecteer uw Azure Time Series Insights omgeving in het Azure Portal.
 
-1. Selecteer **opslag configuratie**in het menu voor uw Azure time series Insights omgeving.
+1. Selecteer **opslag configuratie** in het menu voor uw Azure time series Insights omgeving.
 
    [![Uw Azure Time Series Insights capaciteit configureren](media/scale-your-environment/scale-your-environment-configure.png)](media/scale-your-environment/scale-your-environment-configure.png#lightbox)
 
-1. Pas de schuif regelaar **capaciteit** aan om de capaciteit te selecteren die voldoet aan de vereisten voor uw ingangs tarieven en opslag capaciteit. Let op de **ingangs rente**, **opslag capaciteit**en **geschatte kosten** update dynamisch om de impact van de wijziging weer te geven.
+1. Pas de schuif regelaar **capaciteit** aan om de capaciteit te selecteren die voldoet aan de vereisten voor uw ingangs tarieven en opslag capaciteit. Let op de **ingangs rente**, **opslag capaciteit** en **geschatte kosten** update dynamisch om de impact van de wijziging weer te geven.
 
    [![Configureer uw omgeving met behulp van de schuif regelaar capaciteit](media/scale-your-environment/scale-your-environment-slider.png)](media/scale-your-environment/scale-your-environment-slider.png#lightbox)
 

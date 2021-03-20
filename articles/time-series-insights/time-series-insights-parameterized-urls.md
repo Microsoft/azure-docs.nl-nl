@@ -11,10 +11,10 @@ ms.workload: big-data
 ms.date: 10/02/2020
 ms.custom: seodec18
 ms.openlocfilehash: 9bf857a66643b1e95ea2559601761a7217babad4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91665324"
 ---
 # <a name="share-a-custom-view-using-a-parameterized-url"></a>Een aangepaste weergave delen via een geparameteriseerde URL
@@ -90,7 +90,7 @@ De `timeSeriesDefinitions=<collection of term objects>` para meter bepaalt de vo
 | --- | --- |
 | `multiChartStack=false` | `true` is standaard ingeschakeld, dus door gegeven `false` aan stack. |
 | `multiChartStack=false&multiChartSameScale=true` | Stapelen moet zijn ingeschakeld om dezelfde schaling van de Y-as te gebruiken voor verschillende onderdelen.  `false` `true` Deze functie is standaard ingeschakeld. |
-| `timeBucketUnit=<Unit>&timeBucketSize=<integer>` | Units = `days` ,,, `hours` `minutes` `seconds` , `milliseconds` .  Gebruik altijd een hoofdletter voor de eenheid. </br> Definieer het aantal eenheden door het gewenste gehele getal voor **timeBucketSize**door te geven.  |
+| `timeBucketUnit=<Unit>&timeBucketSize=<integer>` | Units = `days` ,,, `hours` `minutes` `seconds` , `milliseconds` .  Gebruik altijd een hoofdletter voor de eenheid. </br> Definieer het aantal eenheden door het gewenste gehele getal voor **timeBucketSize** door te geven.  |
 | `timezoneOffset=-<integer>` | Het gehele getal is altijd in milliseconden. |
 
 > [!NOTE]
@@ -110,7 +110,7 @@ Gebruik de voor beelden van Time Series-definities voor:
 
 * De omgevings-ID
 * De laatste 60 minuten aan gegevens
-* De voor waarden (**F1PressureID**, **F2TempStation**en **F3VibrationPL**) waaruit de optionele para meters bestaan
+* De voor waarden (**F1PressureID**, **F2TempStation** en **F3VibrationPL**) waaruit de optionele para meters bestaan
 
 U kunt de volgende geparametriseerde URL voor een weer gave maken:
 

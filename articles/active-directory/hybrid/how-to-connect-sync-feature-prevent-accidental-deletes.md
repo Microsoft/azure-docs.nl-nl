@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 16d48cda87b8226ebc3bbab179c1034abf0a486f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90084606"
 ---
 # <a name="azure-ad-connect-sync-prevent-accidental-deletes"></a>Azure AD Connect-synchronisatie: onopzettelijke verwijderingen voorkomen
@@ -54,7 +54,7 @@ Als dit niet werd verwacht, onderzoekt en corrigeert u corrigerende maat regelen
 2. Naar **connectors**.
 3. Selecteer de connector met het type **Azure Active Directory**.
 4. Selecteer onder **acties** aan de rechter kant de **ruimte Zoek connector**.
-5. Selecteer in het pop-upvenster onder **Scope**de optie **verbinding verbroken sinds** en kies een tijd in het verleden. Klik op **Zoeken**. Deze pagina geeft een overzicht van alle objecten die moeten worden verwijderd. Als u op elk item klikt, kunt u aanvullende informatie over het object ophalen. U kunt ook op **kolom instelling** klikken om aanvullende kenmerken toe te voegen die zichtbaar zijn in het raster.
+5. Selecteer in het pop-upvenster onder **Scope** de optie **verbinding verbroken sinds** en kies een tijd in het verleden. Klik op **Zoeken**. Deze pagina geeft een overzicht van alle objecten die moeten worden verwijderd. Als u op elk item klikt, kunt u aanvullende informatie over het object ophalen. U kunt ook op **kolom instelling** klikken om aanvullende kenmerken toe te voegen die zichtbaar zijn in het raster.
 
 ![Zoek connector ruimte](./media/how-to-connect-sync-feature-prevent-accidental-deletes/searchcs.png)
 
@@ -72,5 +72,5 @@ Als alle verwijderingen gewenst zijn, gaat u als volgt te werk:
 ## <a name="next-steps"></a>Volgende stappen
 **Overzichts onderwerpen**
 
-* [Azure AD Connect synchronisatie: synchronisatie begrijpen en aanpassen](how-to-connect-sync-whatis.md)
+* [Azure AD Connect synchroniseren: Synchronisatie begrijpen en aanpassen](how-to-connect-sync-whatis.md)
 * [Integrating your on-premises identities with Azure Active Directory (Engelstalig)](whatis-hybrid-identity.md)

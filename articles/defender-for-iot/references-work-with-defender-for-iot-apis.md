@@ -7,11 +7,11 @@ ms.author: shhazam
 ms.date: 12/14/2020
 ms.topic: reference
 ms.service: azure
-ms.openlocfilehash: ae7965dd319f2ff885f4329262ae4772452afd62
-ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
+ms.openlocfilehash: 73c5d1f31d9e0651ee710593aa4e1b68fe972560
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100523240"
 ---
 # <a name="defender-for-iot-sensor-and-management-console-apis"></a>Defender voor IoT-sensor-en beheer console-Api's
@@ -110,38 +110,38 @@ Matrix van JSON-objecten die apparaten vertegenwoordigen.
 
 | Naam | Type | Null-waarde toegestaan | Lijst met waarden |
 |--|--|--|--|
-| **id** | Numeriek | No | - |
-| **IP-adressen** | JSON-matrix | Yes | IP-adressen (kan meer dan een adres zijn in het geval van Internet adressen of een apparaat met dubbele Nic's) |
-| **name** | Tekenreeks | No | - |
-| **type** | Tekenreeks | No | Onbekend, technisch station, PLC, HMI, historian, domein controller, DB-server, draadloos toegangs punt, router, Switch, Server, werk station, IP-camera, printer, firewall, terminal station, VPN Gateway, Internet of multi cast en broadcast |
-| **macAddresses** | JSON-matrix | Yes | MAC-adressen (kan meer dan een adres zijn in het geval van een apparaat met dubbele Nic's) |
+| **id** | Numeriek | Nee | - |
+| **IP-adressen** | JSON-matrix | Ja | IP-adressen (kan meer dan een adres zijn in het geval van Internet adressen of een apparaat met dubbele Nic's) |
+| **name** | Tekenreeks | Nee | - |
+| **type** | Tekenreeks | Nee | Onbekend, technisch station, PLC, HMI, historian, domein controller, DB-server, draadloos toegangs punt, router, Switch, Server, werk station, IP-camera, printer, firewall, terminal station, VPN Gateway, Internet of multi cast en broadcast |
+| **macAddresses** | JSON-matrix | Ja | MAC-adressen (kan meer dan een adres zijn in het geval van een apparaat met dubbele Nic's) |
 | **operatingSystem** | Tekenreeks | Ja | - |
-| **engineeringStation** | Booleaans | No | Waar of onwaar |
-| **bijbehorende** | Booleaans | No | Waar of onwaar |
-| **daartoe** | Booleaans | No | Waar of onwaar |
+| **engineeringStation** | Booleaans | Nee | Waar of onwaar |
+| **bijbehorende** | Booleaans | Nee | Waar of onwaar |
+| **daartoe** | Booleaans | Nee | Waar of onwaar |
 | **leverancierspecifieke** | Tekenreeks | Ja | - |
-| **protocollen** | JSON-matrix | Yes | Protocol object |
-| **firmware** | JSON-matrix | Yes | Firmware-object |
+| **protocollen** | JSON-matrix | Ja | Protocol object |
+| **firmware** | JSON-matrix | Ja | Firmware-object |
 
 #### <a name="protocol-fields"></a>Protocol velden
 
 | Naam | Type | Null-waarde toegestaan | Lijst met waarden |
 |--|--|--|--|
-| **Naam** | Tekenreeks | No |  |
-| **Adressen** | JSON-matrix | Yes | Hoofd-of numerieke waarden |
+| **Naam** | Tekenreeks | Nee |  |
+| **Adressen** | JSON-matrix | Ja | Hoofd-of numerieke waarden |
 
 #### <a name="firmware-fields"></a>Firmware velden
 
 | Naam | Type | Null-waarde toegestaan | Lijst met waarden |
 |--|--|--|--|
-| **wel** | Tekenreeks | No | N.v.t., of de werkelijke waarde |
-| **activiteitsmodel** | Tekenreeks | No | N.v.t., of de werkelijke waarde |
-| **firmwareversie** | Dubbel | No | N.v.t., of de werkelijke waarde |
-| **additionalData** | Tekenreeks | No | N.v.t., of de werkelijke waarde |
-| **moduleAddress** | Tekenreeks | No | N.v.t., of de werkelijke waarde |
-| **rackgeoptimaliseerde** | Tekenreeks | No | N.v.t., of de werkelijke waarde |
-| **tijdstip** | Tekenreeks | No | N.v.t., of de werkelijke waarde |
-| **Help** | Tekenreeks | No | N.v.t., of de werkelijke waarde |
+| **wel** | Tekenreeks | Nee | N.v.t., of de werkelijke waarde |
+| **activiteitsmodel** | Tekenreeks | Nee | N.v.t., of de werkelijke waarde |
+| **firmwareversie** | Dubbel | Nee | N.v.t., of de werkelijke waarde |
+| **additionalData** | Tekenreeks | Nee | N.v.t., of de werkelijke waarde |
+| **moduleAddress** | Tekenreeks | Nee | N.v.t., of de werkelijke waarde |
+| **rackgeoptimaliseerde** | Tekenreeks | Nee | N.v.t., of de werkelijke waarde |
+| **tijdstip** | Tekenreeks | Nee | N.v.t., of de werkelijke waarde |
+| **Help** | Tekenreeks | Nee | N.v.t., of de werkelijke waarde |
 
 #### <a name="response-example"></a>Voorbeeld van antwoord
 
@@ -335,19 +335,19 @@ Matrix van JSON-objecten die verbindingen met apparaten vertegenwoordigen.
 
 | Naam | Type | Null-waarde toegestaan | Lijst met waarden |
 |--|--|--|--|
-| **firstDeviceId** | Numeriek | No | - |
-| **secondDeviceId** | Numeriek | No | - |
-| **lastSeen** | Numeriek | No | Epoche (UTC) |
-| **opgespoord** | Numeriek | No | Epoche (UTC) |
-| **alsnog** | Nummer matrix | No | - |
-| **protocollen** | JSON-matrix | No | Veld Protocol |
+| **firstDeviceId** | Numeriek | Nee | - |
+| **secondDeviceId** | Numeriek | Nee | - |
+| **lastSeen** | Numeriek | Nee | Epoche (UTC) |
+| **opgespoord** | Numeriek | Nee | Epoche (UTC) |
+| **alsnog** | Nummer matrix | Nee | - |
+| **protocollen** | JSON-matrix | Nee | Veld Protocol |
 
 #### <a name="protocol-field"></a>Veld Protocol
 
 | Naam | Type | Null-waarde toegestaan | Lijst met waarden |
 |--|--|--|--|
-| **name** | Tekenreeks | No | - |
-| **opdrachten** | Stringarray | No | - |
+| **name** | Tekenreeks | Nee | - |
+| **opdrachten** | Stringarray | Nee | - |
 
 #### <a name="response-example"></a>Voorbeeld van antwoord
 
@@ -499,11 +499,11 @@ Matrix van JSON-objecten die CVEs vertegenwoordigen die zijn geïdentificeerd op
 
 | Naam | Type | Null-waarde toegestaan | Lijst met waarden |
 |--|--|--|--|
-| **cveId** | Tekenreeks | No | - |
-| **IPAdres** | Tekenreeks | No | IP-adres |
-| **Score** | Tekenreeks | No | 0,0-10,0 |
-| **attackVector** | Tekenreeks | No | Netwerk, aaneengesloten netwerk, lokaal of fysiek |
-| **beschrijving** | Tekenreeks | No | - |
+| **cveId** | Tekenreeks | Nee | - |
+| **IPAdres** | Tekenreeks | Nee | IP-adres |
+| **Score** | Tekenreeks | Nee | 0,0-10,0 |
+| **attackVector** | Tekenreeks | Nee | Netwerk, aaneengesloten netwerk, lokaal of fysiek |
+| **beschrijving** | Tekenreeks | Nee | - |
 
 #### <a name="response-example"></a>Voorbeeld van antwoord
 
@@ -618,21 +618,21 @@ Matrix van JSON-objecten die waarschuwingen vertegenwoordigen.
 
 | Naam | Type | Null-waarde toegestaan | Lijst met waarden |
 |--|--|--|--|
-| **Id** | Numeriek | No | - |
-| **time** | Numeriek | No | Epoche (UTC) |
-| **title** | Tekenreeks | No | - |
-| **Bericht** | Tekenreeks | No | - |
-| **Ernst** | Tekenreeks | No | Waarschuwing, secundair, primair of kritiek |
-| **mechanisme** | Tekenreeks | No | Schending van het Protocol, schending van het beleid, malware, afwijkingen of operationeel |
-| **sourceDevice** | Numeriek | Yes | Apparaat-ID |
-| **destinationDevice** | Numeriek | Yes | Apparaat-ID |
-| **additionalInformation** | Object voor aanvullende informatie | Yes | - |
+| **Id** | Numeriek | Nee | - |
+| **time** | Numeriek | Nee | Epoche (UTC) |
+| **title** | Tekenreeks | Nee | - |
+| **message** | Tekenreeks | Nee | - |
+| **Ernst** | Tekenreeks | Nee | Waarschuwing, secundair, primair of kritiek |
+| **mechanisme** | Tekenreeks | Nee | Schending van het Protocol, schending van het beleid, malware, afwijkingen of operationeel |
+| **sourceDevice** | Numeriek | Ja | Apparaat-ID |
+| **destinationDevice** | Numeriek | Ja | Apparaat-ID |
+| **additionalInformation** | Object voor aanvullende informatie | Ja | - |
 
 #### <a name="additional-information-fields"></a>Aanvullende informatie velden
 
 | Naam | Type | Null-waarde toegestaan | Lijst met waarden |
 |--|--|--|--|
-| **beschrijving** | Tekenreeks | No | - |
+| **beschrijving** | Tekenreeks | Nee | - |
 | **gegevens** | JSON-matrix | Nee | Tekenreeks |
 
 #### <a name="response-example"></a>Voorbeeld van antwoord
@@ -741,11 +741,11 @@ Matrix van JSON-objecten die waarschuwingen vertegenwoordigen.
 
 | Naam | Type | Null-waarde toegestaan | Lijst met waarden |
 |--|--|--|--|--|
-| **Neem** | Numeriek | No | Epoche (UTC) |
-| **title** | Tekenreeks | No | - |
-| **Ernst** | Tekenreeks | No | INFO, kennisgeving of waarschuwing |
+| **Neem** | Numeriek | Nee | Epoche (UTC) |
+| **title** | Tekenreeks | Nee | - |
+| **Ernst** | Tekenreeks | Nee | INFO, kennisgeving of waarschuwing |
 | **bent** | Tekenreeks | Ja | Als de gebeurtenis hand matig is gemaakt, bevat dit veld de gebruikers naam die de gebeurtenis heeft gemaakt |
-| **inhoud** | Tekenreeks | No | - |
+| **inhoud** | Tekenreeks | Nee | - |
 
 #### <a name="response-example"></a>Voorbeeld van antwoord
 
@@ -854,15 +854,15 @@ Het apparaatobject bevat:
 
 | Naam | Type | Null-waarde toegestaan | Lijst met waarden |
 |--|--|--|--|
-| **name** | Tekenreeks | No | - |
-| **IP-adressen** | JSON-matrix | No | - |
-| **securityScore** | Numeriek | No | - |
+| **name** | Tekenreeks | Nee | - |
+| **IP-adressen** | JSON-matrix | Nee | - |
+| **securityScore** | Numeriek | Nee | - |
 | **leverancierspecifieke** | Tekenreeks | Ja |  |
 | **firmwareversie** | Tekenreeks | Ja | - |
 | **activiteitsmodel** | Tekenreeks | Ja | - |
-| **isWirelessAccessPoint** | Booleaans | No | Waar of onwaar |
-| **operatingSystem** | Object van het besturings systeem | Yes | - |
-| **kwetsbaar** | Beveiligings problemen object | Yes | - |
+| **isWirelessAccessPoint** | Booleaans | Nee | Waar of onwaar |
+| **operatingSystem** | Object van het besturings systeem | Ja | - |
+| **kwetsbaar** | Beveiligings problemen object | Ja | - |
 
 #### <a name="operating-system-fields"></a>Velden van het besturings systeem
 
@@ -877,51 +877,51 @@ Het apparaatobject bevat:
  
 | Naam | Type | Null-waarde toegestaan | Lijst met waarden |
 |--|--|--|--|
-| **Anti Viruss** | JSON-matrix | Yes | Antivirus namen |
-| **plainTextPasswords** | JSON-matrix | Yes | Wachtwoord objecten |
-| **Remote** | JSON-matrix | Yes | RAS-objecten |
-| **isBackupServer** | Booleaans | No | Waar of onwaar |
-| **openedPorts** | JSON-matrix | Yes | Poort objecten geopend |
-| **isEngineeringStation** | Booleaans | No | Waar of onwaar |
-| **isKnownScanner** | Booleaans | No | Waar of onwaar |
-| **cves** | JSON-matrix | Yes | CVE-objecten |
-| **isUnauthorized** | Booleaans | No | Waar of onwaar |
-| **malwareIndicationsDetected** | Booleaans | No | Waar of onwaar |
-| **weakAuthentication** | JSON-matrix | Yes | Gedetecteerde toepassingen die gebruikmaken van zwakke verificatie |
+| **Anti Viruss** | JSON-matrix | Ja | Antivirus namen |
+| **plainTextPasswords** | JSON-matrix | Ja | Wachtwoord objecten |
+| **Remote** | JSON-matrix | Ja | RAS-objecten |
+| **isBackupServer** | Booleaans | Nee | Waar of onwaar |
+| **openedPorts** | JSON-matrix | Ja | Poort objecten geopend |
+| **isEngineeringStation** | Booleaans | Nee | Waar of onwaar |
+| **isKnownScanner** | Booleaans | Nee | Waar of onwaar |
+| **cves** | JSON-matrix | Ja | CVE-objecten |
+| **isUnauthorized** | Booleaans | Nee | Waar of onwaar |
+| **malwareIndicationsDetected** | Booleaans | Nee | Waar of onwaar |
+| **weakAuthentication** | JSON-matrix | Ja | Gedetecteerde toepassingen die gebruikmaken van zwakke verificatie |
 
 #### <a name="password-fields"></a>Wachtwoord velden
 
 | Naam | Type | Null-waarde toegestaan | Lijst met waarden |
 |--|--|--|--|
-| **password** | Tekenreeks | No | - |
-| **protocol** | Tekenreeks | No | - |
-| **hoger** | Tekenreeks | No | Zeer zwak, zwak, normaal of sterk |
+| **password** | Tekenreeks | Nee | - |
+| **protocol** | Tekenreeks | Nee | - |
+| **hoger** | Tekenreeks | Nee | Zeer zwak, zwak, normaal of sterk |
 
 #### <a name="remote-access-fields"></a>Externe toegang velden
 
 | Naam | Type | Null-waarde toegestaan | Lijst met waarden |
 |--|--|--|--|
-| **Importeer** | Numeriek | No | - |
-| **portmap** | Tekenreeks | No | TCP of UDP |
-| **serviceclient** | Tekenreeks | No | IP-adres |
-| **clientSoftware** | Tekenreeks | No | SSH, VNC, extern bureau blad of team viewer |
+| **Importeer** | Numeriek | Nee | - |
+| **portmap** | Tekenreeks | Nee | TCP of UDP |
+| **serviceclient** | Tekenreeks | Nee | IP-adres |
+| **clientSoftware** | Tekenreeks | Nee | SSH, VNC, extern bureau blad of team viewer |
 
 #### <a name="open-port-fields"></a>Poort velden openen
 
 | Naam | Type | Null-waarde toegestaan | Lijst met waarden |
 |--|--|--|--|
-| **Importeer** | Numeriek | No | - |
-| **portmap** | Tekenreeks | No | TCP of UDP |
+| **Importeer** | Numeriek | Nee | - |
+| **portmap** | Tekenreeks | Nee | TCP of UDP |
 | **protocol** | Tekenreeks | Ja | - |
-| **isConflictingWithFirewall** | Booleaans | No | Waar of onwaar |
+| **isConflictingWithFirewall** | Booleaans | Nee | Waar of onwaar |
 
 #### <a name="cve-fields"></a>CVE-velden
 
 | Naam | Type | Null-waarde toegestaan | Lijst met waarden |
 |--|--|--|--|
-| **Id** | Tekenreeks | No | - |
-| **Score** | Numeriek | No | Dubbel |
-| **beschrijving** | Tekenreeks | No | - |
+| **Id** | Tekenreeks | Nee | - |
+| **Score** | Numeriek | Nee | Dubbel |
+| **beschrijving** | Tekenreeks | Nee | - |
 
 #### <a name="response-example"></a>Voorbeeld van antwoord
 
@@ -1542,8 +1542,8 @@ U hebt geen Defender voor IoT-toegangs token nodig om deze API te gebruiken.
 
 | **Naam** | **Type** | **Null-waarde toegestaan** |
 |--|--|--|
-| **gebruikers** | Tekenreeks | No |
-| **password** | Tekenreeks | No |
+| **gebruikers** | Tekenreeks | Nee |
+| **password** | Tekenreeks | Nee |
 
 #### <a name="request-example"></a>Voorbeeld van aanvraag
 
@@ -1655,9 +1655,9 @@ response:
 
 | **Naam** | **Type** | **Null-waarde toegestaan** |
 |--|--|--|
-| **gebruikers** | Tekenreeks | No |
-| **password** | Tekenreeks | No |
-| **new_password** | Tekenreeks | No |
+| **gebruikers** | Tekenreeks | Nee |
+| **password** | Tekenreeks | Nee |
+| **new_password** | Tekenreeks | Nee |
 
 #### <a name="curl-command"></a>Curl-opdracht
 
@@ -1734,10 +1734,10 @@ response:
 
 | **Naam** | **Type** | **Null-waarde toegestaan** |
 |--|--|--|
-| **admin_username** | Tekenreeks | No |
-| **admin_password** | Tekenreeks | No |
-| **gebruikers** | Tekenreeks | No |
-| **new_password** | Tekenreeks | No |
+| **admin_username** | Tekenreeks | Nee |
+| **admin_password** | Tekenreeks | Nee |
+| **gebruikers** | Tekenreeks | Nee |
+| **new_password** | Tekenreeks | Nee |
 
 #### <a name="curl-command"></a>Curl-opdracht
 
@@ -1827,40 +1827,40 @@ Matrix van JSON-objecten die apparaten vertegenwoordigen.
 
 | Naam | Type | Null-waarde toegestaan | Lijst met waarden |
 |--|--|--|--|
-| **sensorId** | Numeriek | No | - |
-| **Zone** | Numeriek | Yes | - |
-| **siteId** | Numeriek | Yes | - |
-| **IP-adressen** | JSON-matrix | Yes | IP-adressen (kan meer dan een adres zijn in het geval van Internet adressen of een apparaat met dubbele Nic's) |
-| **name** | Tekenreeks | No | - |
-| **type** | Tekenreeks | No | Onbekend, technisch station, PLC, HMI, historian, domein controller, DB-server, draadloos toegangs punt, router, Switch, Server, werk station, IP-camera, printer, firewall, terminal station, VPN Gateway, Internet of multi cast en broadcast |
-| **macAddresses** | JSON-matrix | Yes | MAC-adressen (kan meer dan een adres zijn in het geval van een apparaat met dubbele Nic's) |
+| **sensorId** | Numeriek | Nee | - |
+| **Zone** | Numeriek | Ja | - |
+| **siteId** | Numeriek | Ja | - |
+| **IP-adressen** | JSON-matrix | Ja | IP-adressen (kan meer dan een adres zijn in het geval van Internet adressen of een apparaat met dubbele Nic's) |
+| **name** | Tekenreeks | Nee | - |
+| **type** | Tekenreeks | Nee | Onbekend, technisch station, PLC, HMI, historian, domein controller, DB-server, draadloos toegangs punt, router, Switch, Server, werk station, IP-camera, printer, firewall, terminal station, VPN Gateway, Internet of multi cast en broadcast |
+| **macAddresses** | JSON-matrix | Ja | MAC-adressen (kan meer dan een adres zijn in het geval van een apparaat met dubbele Nic's) |
 | **operatingSystem** | Tekenreeks | Ja | - |
-| **engineeringStation** | Booleaans | No | Waar of onwaar |
-| **bijbehorende** | Booleaans | No | Waar of onwaar |
-| **daartoe** | Booleaans | No | Waar of onwaar |
+| **engineeringStation** | Booleaans | Nee | Waar of onwaar |
+| **bijbehorende** | Booleaans | Nee | Waar of onwaar |
+| **daartoe** | Booleaans | Nee | Waar of onwaar |
 | **leverancierspecifieke** | Tekenreeks | Ja | - |
-| **Protocollen** | JSON-matrix | Yes | Protocol object |
-| **firmware** | JSON-matrix | Yes | Firmware-object |
+| **Protocollen** | JSON-matrix | Ja | Protocol object |
+| **firmware** | JSON-matrix | Ja | Firmware-object |
 
 #### <a name="protocol-fields"></a>Protocol velden
 
 | Naam | Type | Null-waarde toegestaan | Lijst met waarden |
 |--|--|--|--|
-| Name | Tekenreeks | No | - |
-| Adressen | JSON-matrix | Yes | Hoofd-of numerieke waarden |
+| Name | Tekenreeks | Nee | - |
+| Adressen | JSON-matrix | Ja | Hoofd-of numerieke waarden |
 
 #### <a name="firmware-fields"></a>Firmware velden
 
 | Naam | Type | Null-waarde toegestaan | Lijst met waarden |
 |--|--|--|--|
-| **wel** | Tekenreeks | No | N.v.t., of de werkelijke waarde |
-| **activiteitsmodel** | Tekenreeks | No | N.v.t., of de werkelijke waarde |
-| **firmwareversie** | Dubbel | No | N.v.t., of de werkelijke waarde |
-| **additionalData** | Tekenreeks | No | N.v.t., of de werkelijke waarde |
-| **moduleAddress** | Tekenreeks | No | N.v.t., of de werkelijke waarde |
-| **rackgeoptimaliseerde** | Tekenreeks | No | N.v.t., of de werkelijke waarde |
-| **tijdstip** | Tekenreeks | No | N.v.t., of de werkelijke waarde |
-| **Help** | Tekenreeks | No | N.v.t., of de werkelijke waarde |
+| **wel** | Tekenreeks | Nee | N.v.t., of de werkelijke waarde |
+| **activiteitsmodel** | Tekenreeks | Nee | N.v.t., of de werkelijke waarde |
+| **firmwareversie** | Dubbel | Nee | N.v.t., of de werkelijke waarde |
+| **additionalData** | Tekenreeks | Nee | N.v.t., of de werkelijke waarde |
+| **moduleAddress** | Tekenreeks | Nee | N.v.t., of de werkelijke waarde |
+| **rackgeoptimaliseerde** | Tekenreeks | Nee | N.v.t., of de werkelijke waarde |
+| **tijdstip** | Tekenreeks | Nee | N.v.t., of de werkelijke waarde |
+| **Help** | Tekenreeks | Nee | N.v.t., of de werkelijke waarde |
 
 #### <a name="response-example"></a>Voorbeeld van antwoord
 
@@ -2048,21 +2048,21 @@ Gebruik deze API om alle of gefilterde waarschuwingen op te halen uit een on-pre
 
 | Naam | Type | Null-waarde toegestaan | Lijst met waarden |
 |--|--|--|--|
-| **Id** | Numeriek | No | - |
-| **time** | Numeriek | No | Epoche (UTC) |
-| **title** | Tekenreeks | No | - |
-| **Bericht** | Tekenreeks | No | - |
-| **Ernst** | Tekenreeks | No | Waarschuwing, secundair, primair of kritiek |
-| **mechanisme** | Tekenreeks | No | Schending van het Protocol, schending van het beleid, malware, afwijkingen of operationeel |
-| **sourceDevice** | Numeriek | Yes | Apparaat-ID |
-| **destinationDevice** | Numeriek | Yes | Apparaat-ID |
-| **additionalInformation** | Object voor aanvullende informatie | Yes | - |
+| **Id** | Numeriek | Nee | - |
+| **time** | Numeriek | Nee | Epoche (UTC) |
+| **title** | Tekenreeks | Nee | - |
+| **message** | Tekenreeks | Nee | - |
+| **Ernst** | Tekenreeks | Nee | Waarschuwing, secundair, primair of kritiek |
+| **mechanisme** | Tekenreeks | Nee | Schending van het Protocol, schending van het beleid, malware, afwijkingen of operationeel |
+| **sourceDevice** | Numeriek | Ja | Apparaat-ID |
+| **destinationDevice** | Numeriek | Ja | Apparaat-ID |
+| **additionalInformation** | Object voor aanvullende informatie | Ja | - |
 
 #### <a name="additional-information-fields"></a>Aanvullende informatie velden
 
 | Naam | Type | Null-waarde toegestaan | Lijst met waarden |
 |--|--|--|--|
-| **beschrijving** | Tekenreeks | No | - |
+| **beschrijving** | Tekenreeks | Nee | - |
 | **gegevens** | JSON-matrix | Nee | Tekenreeks |
 
 #### <a name="response-example"></a>Voorbeeld van antwoord
@@ -2210,7 +2210,7 @@ JSON-object dat de actie vertegenwoordigt die moet worden uitgevoerd op de waars
 
 | Naam | Type | Null-waarde toegestaan | Lijst met waarden |
 |--|--|--|--|
-| **action** | Tekenreeks | No | handle of handleAndLearn |
+| **action** | Tekenreeks | Nee | handle of handleAndLearn |
 
 #### <a name="request-example"></a>Voorbeeld van aanvraag
 
@@ -2232,9 +2232,9 @@ Matrix van JSON-objecten die apparaten vertegenwoordigen.
 #### <a name="response-fields"></a>Antwoord velden
 
 
-| Naam | Type | Null-waarde toegestaan | Description |
+| Naam | Type | Null-waarde toegestaan | Beschrijving |
 |--|--|--|--|
-| **inhoud/fout** | Tekenreeks | No | Als de aanvraag is voltooid, wordt de eigenschap inhoud weer gegeven. Anders wordt de eigenschap error weer gegeven. |
+| **inhoud/fout** | Tekenreeks | Nee | Als de aanvraag is voltooid, wordt de eigenschap inhoud weer gegeven. Anders wordt de eigenschap error weer gegeven. |
 
 #### <a name="possible-content-values"></a>Mogelijke inhouds waarden
 
@@ -2476,8 +2476,8 @@ Bericht teken reeks met de bewerkings status Details:
 
 | **Naam** | **Type** | **Null-waarde toegestaan** |
 |--|--|--|
-| **gebruikers** | Tekenreeks | No |
-| **password** | Tekenreeks | No |
+| **gebruikers** | Tekenreeks | Nee |
+| **password** | Tekenreeks | Nee |
 
 #### <a name="response-example"></a>Voorbeeld van antwoord
 
@@ -2561,9 +2561,9 @@ response:
 
 | **Naam** | **Type** | **Null-waarde toegestaan** |
 |--|--|--|
-| **gebruikers** | Tekenreeks | No |
-| **password** | Tekenreeks | No |
-| **new_password** | Tekenreeks | No |
+| **gebruikers** | Tekenreeks | Nee |
+| **password** | Tekenreeks | Nee |
+| **new_password** | Tekenreeks | Nee |
 
 #### <a name="curl-command"></a>Curl-opdracht
 
@@ -2640,10 +2640,10 @@ response:
 
 | **Naam** | **Type** | **Null-waarde toegestaan** |
 |--|--|--|
-| **admin_username** | Tekenreeks | No |
-| **admin_password** | Tekenreeks | No |
-| **gebruikers** | Tekenreeks | No |
-| **new_password** | Tekenreeks | No |
+| **admin_username** | Tekenreeks | Nee |
+| **admin_password** | Tekenreeks | Nee |
+| **gebruikers** | Tekenreeks | Nee |
+| **new_password** | Tekenreeks | Nee |
 
 #### <a name="curl-command"></a>Curl-opdracht
 
@@ -2654,6 +2654,6 @@ response:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Alle sensordetecties in een apparaatinventaris onderzoeken](how-to-investigate-sensor-detections-in-a-device-inventory.md)
+- [Alle sensordetecties in een apparaatinventaris onderzoeken](how-to-investigate-sensor-detections-in-a-device-inventory.md)
 
-[Alle zakelijke sensordetectie in een apparaatinventaris onderzoeken](how-to-investigate-all-enterprise-sensor-detections-in-a-device-inventory.md)
+- [Alle zakelijke sensordetectie in een apparaatinventaris onderzoeken](how-to-investigate-all-enterprise-sensor-detections-in-a-device-inventory.md)

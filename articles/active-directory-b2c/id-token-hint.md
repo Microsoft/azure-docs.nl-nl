@@ -12,10 +12,10 @@ ms.date: 10/16/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: d77e145cabcef2931d5fe6e76599da7931e576e8
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97669156"
 ---
 # <a name="define-an-id-token-hint-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Een technisch profiel voor ID-token hints definiëren in een Azure Active Directory B2C aangepast beleid
@@ -34,7 +34,7 @@ Met id_token_hint stelt de uitgever van het token (een Relying Party-app of een 
 
 De id_token_hint moet een geldig JWT-token zijn. De volgende tabel geeft een lijst van de claims die verplicht zijn. Aanvullende claims zijn optioneel.
 
-| Naam | Claim | Voorbeeldwaarde | Beschrijving |
+| Name | Claim | Voorbeeldwaarde | Beschrijving |
 | ---- | ----- | ------------- | ----------- |
 | Doelgroep | `aud` | `a489fc44-3cc0-4a78-92f6-e413cd853eae` | Identificeert de beoogde ontvanger van het token. De doel groep is een wille keurige teken reeks die is gedefinieerd door de uitgever van het token. Azure AD B2C valideert deze waarde en wijst het token af als het niet overeenkomt.  |
 | Verlener | `iss` |`https://localhost` | Identificeert de beveiligings token service (token uitgever). De uitgever is een wille keurige URI die is gedefinieerd door de uitgever van het token. Azure AD B2C valideert deze waarde en wijst het token af als het niet overeenkomt.  |
@@ -185,7 +185,7 @@ De uitgever van het token moet de volgende eind punten leveren:
 * `/.well-known/openid-configuration` -Een goed bekend configuratie-eind punt met relevante informatie over het token, zoals de naam van de uitgever van het token en de koppeling naar het JWK-eind punt. 
 * `/.well-known/keys` -het eind punt van de JSON-websleutel (JWK) met de open bare sleutel die wordt gebruikt voor het ondertekenen van de sleutel (met het deel van de persoonlijke sleutel van het certificaat).
 
-Bekijk het voor beeld van de [TokenMetadataController.cs](https://github.com/azure-ad-b2c/id-token-builder/blob/master/source-code/B2CIdTokenBuilder/Controllers/TokenMetadataController.cs) .NET MVC-controller.
+Zie het voor beeld van de .NET MVC-controller [TokenMetadataController. cs](https://github.com/azure-ad-b2c/id-token-builder/blob/master/source-code/B2CIdTokenBuilder/Controllers/TokenMetadataController.cs) .
 
 #### <a name="step-1-prepare-a-self-signed-certificate"></a>Stap 1. Een zelfondertekend certificaat voorbereiden
 

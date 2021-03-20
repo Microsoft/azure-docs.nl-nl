@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 7/16/2020
 ms.author: surmb
 ms.openlocfilehash: ec58c6f97efdbcb91071bcea98bbbc614833246d
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92215770"
 ---
 # <a name="rewrite-url-with-azure-application-gateway---azure-portal-preview"></a>URL opnieuw schrijven met Azure-toepassing gateway-Azure Portal (preview-versie)
@@ -33,11 +33,11 @@ Meld u met uw Azure-account aan bij [Azure Portal](https://portal.azure.com/).
 
 ## <a name="configure-url-rewrite"></a>Opnieuw genereren van URL configureren
 
-In het onderstaande voor beeld wanneer de aanvraag-URL */article*bevat, worden het URL-pad en de URL-query teken reeks herschreven
+In het onderstaande voor beeld wanneer de aanvraag-URL */article* bevat, worden het URL-pad en de URL-query teken reeks herschreven
 
 `contoso.com/article/123/fabrikam` -> `contoso.com/article.aspx?id=123&title=fabrikam`
 
-1. Selecteer **alle resources**en selecteer vervolgens uw toepassings gateway.
+1. Selecteer **alle resources** en selecteer vervolgens uw toepassings gateway.
 
 2. Selecteer **herschrijf bewerkingen** in het linkerdeel venster.
 
@@ -53,17 +53,17 @@ In het onderstaande voor beeld wanneer de aanvraag-URL */article*bevat, worden h
     
     c. Selecteer **Volgende**.
     
-    :::image type="content" source="./media/rewrite-url-portal/rewrite-url-portal-2.png" alt-text="Set voor herschrijven toevoegen":::
+    :::image type="content" source="./media/rewrite-url-portal/rewrite-url-portal-2.png" alt-text="Koppelen aan een regel":::
 
 5. Een herschrijf regel maken:
 
     a. Selecteer **regel voor herschrijven toevoegen**.
     
-    :::image type="content" source="./media/rewrite-url-portal/rewrite-url-portal-3.png" alt-text="Set voor herschrijven toevoegen":::
+    :::image type="content" source="./media/rewrite-url-portal/rewrite-url-portal-3.png" alt-text="Scherm afbeelding die de regel voor herschrijven toevoegen markeert.":::
     
     b. Voer een naam in voor de regel voor herschrijven in het vak **regel naam herschrijven** . Voer een getal in het vak **regel reeks** in.
 
-6. In dit voor beeld wordt het URL-pad en de URL-query teken reeks alleen opnieuw geschreven wanneer het pad */article*bevat. Als u dit wilt doen, voegt u een voor waarde toe om te evalueren of het URL-pad */article* bevat
+6. In dit voor beeld wordt het URL-pad en de URL-query teken reeks alleen opnieuw geschreven wanneer het pad */article* bevat. Als u dit wilt doen, voegt u een voor waarde toe om te evalueren of het URL-pad */article* bevat
 
     a. Selecteer **voor waarde toevoegen** en selecteer vervolgens het vak met de **if** -instructies om het uit te vouwen.
     
@@ -71,7 +71,7 @@ In het onderstaande voor beeld wanneer de aanvraag-URL */article*bevat, worden h
     
     c. Selecteer in de lijst **Server variabelen** uri_path
     
-    d. Onder **hoofdletter gevoelig**selecteert u **Nee**.
+    d. Onder **hoofdletter gevoelig** selecteert u **Nee**.
     
     e. Selecteer in de lijst **operator** de optie **gelijk aan (=)**.
     
@@ -81,7 +81,7 @@ In het onderstaande voor beeld wanneer de aanvraag-URL */article*bevat, worden h
 
     g. Selecteer **OK**.
 
-    :::image type="content" source="./media/rewrite-url-portal/rewrite-url-portal-4.png" alt-text="Set voor herschrijven toevoegen":::
+    :::image type="content" source="./media/rewrite-url-portal/rewrite-url-portal-4.png" alt-text="Condition":::
 
  
 
@@ -91,23 +91,23 @@ In het onderstaande voor beeld wanneer de aanvraag-URL */article*bevat, worden h
 
    b. In de lijst **actie type** selecteert u **instellen**.
 
-   c. Selecteer onder **onderdelen**de optie **URL-pad en URL-query reeks**
+   c. Selecteer onder **onderdelen** de optie **URL-pad en URL-query reeks**
 
-   d. Voer in de waarde van het **URL-pad**de nieuwe waarde van het pad in. In dit voor beeld gebruiken we **/article.aspx** 
+   d. Voer in de waarde van het **URL-pad** de nieuwe waarde van het pad in. In dit voor beeld gebruiken we **/article.aspx** 
 
-   e. Voer in de **URL-query teken reeks waarde**de nieuwe waarde van de URL-query teken reeks in. In dit voor beeld gebruiken we **id = {var_uri_path_1} &titel = {var_uri_path_2}**
+   e. Voer in de **URL-query teken reeks waarde** de nieuwe waarde van de URL-query teken reeks in. In dit voor beeld gebruiken we **id = {var_uri_path_1} &titel = {var_uri_path_2}**
     
     `{var_uri_path_1}` en `{var_uri_path_1}` worden gebruikt voor het ophalen van de subtekenreeksen die zijn vastgelegd tijdens het evalueren van de voor waarde in deze expressie `.*article/(.*)/(.*)`
     
    f. Selecteer **OK**.
 
-    :::image type="content" source="./media/rewrite-url-portal/rewrite-url-portal-5.png" alt-text="Set voor herschrijven toevoegen":::
+    :::image type="content" source="./media/rewrite-url-portal/rewrite-url-portal-5.png" alt-text="Actie":::
 
 8. Klik op **maken** om de set voor opnieuw schrijven te maken.
 
 9. Controleren of de nieuwe set opnieuw schrijven wordt weer gegeven in de lijst met herschrijf sets
 
-    :::image type="content" source="./media/rewrite-url-portal/rewrite-url-portal-6.png" alt-text="Set voor herschrijven toevoegen":::
+    :::image type="content" source="./media/rewrite-url-portal/rewrite-url-portal-6.png" alt-text="Regel voor herschrijven toevoegen":::
 
 ## <a name="verify-url-rewrite-through-access-logs"></a>URL-herschrijven controleren via toegangs logboeken
 

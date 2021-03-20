@@ -7,10 +7,10 @@ ms.service: fxt-edge-filer
 ms.topic: tutorial
 ms.date: 06/20/2019
 ms.openlocfilehash: 7d10c6c1ce440b2ffe964dc78379ef3ab108e78e
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92217521"
 ---
 # <a name="tutorial-add-back-end-storage-and-configure-the-virtual-namespace"></a>Zelfstudie: Back-endopslag toevoegen en de virtuele naamruimte configureren
@@ -30,7 +30,7 @@ In deze zelfstudie leert u:
 
 ## <a name="about-back-end-storage"></a>Over back-endopslag
 
-Het Azure FXT Edge Filer-cluster maakt gebruik van een *kern-filer*definitie om een back-endopslagsysteem te koppelen aan het FXT-cluster.
+Het Azure FXT Edge Filer-cluster maakt gebruik van een *kern-filer* definitie om een back-endopslagsysteem te koppelen aan het FXT-cluster.
 
 Azure FXT Edge Filer is compatibel met verschillende populaire NAS-hardwaresystemen en kan lege containers van Azure Blob of andere cloudopslag gebruiken.
 

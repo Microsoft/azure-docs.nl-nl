@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
 ms.custom: contperf-fy20q4
-ms.openlocfilehash: 9c912b7122a40ae39bcbb703e1387af25fff2bc8
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: efaf6060c0b09e071546038d9e30f2c8065059e7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97029903"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "98600141"
 ---
 # <a name="what-are-security-defaults"></a>Wat zijn de standaard beveiligings instellingen?
 
@@ -76,7 +76,7 @@ We denken meestal dat beheerders accounts de enige accounts zijn die extra authe
 
 Wanneer deze aanvallers toegang krijgen, kunnen ze namens de houder van het oorspronkelijke account toegang tot bevoegde informatie vragen. Ze kunnen de volledige directory zelfs downloaden om een phishing-aanval uit te voeren op uw hele organisatie. 
 
-Een gemeen schappelijke methode voor het verbeteren van de beveiliging van alle gebruikers is het vereisen van een sterkere vorm van account verificatie, zoals Multi-Factor Authentication, voor iedereen. Nadat gebruikers Multi-Factor Authentication registratie hebben voltooid, wordt de gebruiker gevraagd om extra verificatie wanneer dit nodig is. Deze functionaliteit beveiligt alle toepassingen die zijn geregistreerd bij Azure AD met inbegrip van SaaS-toepassingen.
+Een gemeen schappelijke methode voor het verbeteren van de beveiliging van alle gebruikers is het vereisen van een sterkere vorm van account verificatie, zoals Multi-Factor Authentication, voor iedereen. Nadat gebruikers Multi-Factor Authentication registratie hebben voltooid, wordt de gebruiker gevraagd om extra verificatie wanneer dit nodig is. Gebruikers worden primair gevraagd wanneer ze worden geverifieerd met een nieuw apparaat of nieuwe toepassing, of bij het uitvoeren van kritieke rollen en taken. Deze functionaliteit beveiligt alle toepassingen die zijn geregistreerd bij Azure AD met inbegrip van SaaS-toepassingen.
 
 ### <a name="blocking-legacy-authentication"></a>Verouderde verificatie blok keren
 
@@ -128,14 +128,14 @@ Met deze gratis standaard beveiligings instellingen is registratie en gebruik va
 | Verificatie code van de mobiele app of het hardware-token | X * * | X |
 | SMS-bericht naar telefoon |   | X |
 | Bellen naar telefoon |   | X |
-| App-wachtwoorden |   | X * * _ |
+| App-wachtwoorden |   | X * * * |
 
-- _ * Gebruikers kunnen verificatie codes van de app Microsoft Authenticator gebruiken, maar kunnen ze alleen registreren met de meldings optie.
-- * * _ App-wacht woorden zijn alleen beschikbaar in MFA per gebruiker met verouderde verificatie scenario's indien ingeschakeld door beheerders.
+- * * Gebruikers kunnen verificatie codes van de app Microsoft Authenticator gebruiken, maar kunnen ze alleen registreren met de meldings optie.
+- App-wacht woorden zijn alleen beschikbaar in MFA per gebruiker met verouderde verificatie scenario's als deze zijn ingeschakeld door beheerders.
 
 ### <a name="disabled-mfa-status"></a>Status van uitgeschakeld MFA
 
-Als uw organisatie een vorige gebruiker van Azure AD Multi-Factor Authentication op basis van een gebruiker is, wordt niet gealarmd om gebruikers in een _ *ingeschakelde** of **afgedwongen** status te zien als u de multi-factor Authentication-status pagina bekijkt. **Uitgeschakeld** is de juiste status voor gebruikers die gebruikmaken van de standaard instellingen of Azure AD-multi-factor Authentication op basis van voorwaardelijke toegang.
+Als uw organisatie een vorige gebruiker van Azure AD Multi-Factor Authentication op basis van een gebruiker is, wordt niet gealarmd om gebruikers in de status **ingeschakeld** of **afgedwongen** te zien als u de multi-factor Authentication-status pagina bekijkt. **Uitgeschakeld** is de juiste status voor gebruikers die gebruikmaken van de standaard instellingen of Azure AD-multi-factor Authentication op basis van voorwaardelijke toegang.
 
 ### <a name="conditional-access"></a>Voorwaardelijke toegang
 

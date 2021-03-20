@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 09/29/2020
 ms.custom: seodec18
 ms.openlocfilehash: 61af7922318514a7b86a349d1970c59d4d168d85
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95023323"
 ---
 # <a name="create-a-new-azure-time-series-insights-gen1-environment-in-the-azure-portal"></a>Maak een nieuwe Azure Time Series Insights gen1-omgeving in de Azure Portal
@@ -31,7 +31,7 @@ Met Azure Time Series Insights kunt u aan de slag gaan met het visualiseren en o
 
 Volg deze stappen om een omgeving te maken:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 
 1. Selecteer de knop **+ Een resource maken**.
 
@@ -41,7 +41,7 @@ Volg deze stappen om een omgeving te maken:
 
 1. Selecteer op de pagina **Time Series Insights** **maken**.
 
-1. Vul de vereiste para meters in. De volgende tabel bevat uitleg over elke para meter:
+1. Vul de vereiste parameters in. De volgende tabel bevat uitleg over elke para meter:
 
    [![De Azure Time Series Insights resource groep maken](media/time-series-insights-get-started/tsi-configure-and-create.png)](media/time-series-insights-get-started/tsi-configure-and-create.png#lightbox)
 

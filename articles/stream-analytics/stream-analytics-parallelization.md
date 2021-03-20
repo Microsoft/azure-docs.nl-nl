@@ -7,10 +7,10 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/04/2020
 ms.openlocfilehash: 9149413d070bbb5eb8d0f8d0c99fe5ff705bcefb
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98012322"
 ---
 # <a name="leverage-query-parallelization-in-azure-stream-analytics"></a>Gebruik query parallel Lise ring in Azure Stream Analytics
@@ -207,7 +207,7 @@ Wanneer een query is gepartitioneerd, worden de invoer gebeurtenissen verwerkt e
 Alle niet-gepartitioneerde stappen kunnen samen worden geschaald naar zes streaming-eenheden (SUs) voor een Stream Analytics-taak. Daarnaast kunt u voor elke partitie in een gepartitioneerde stap 6 SUs toevoegen.
 In de onderstaande tabel ziet u enkele **voor beelden** .
 
-| Query’s uitvoeren                                               | Max. SUs voor de taak |
+| Query                                               | Max. SUs voor de taak |
 | --------------------------------------------------- | ------------------- |
 | <ul><li>De query bevat één stap.</li><li>De stap is niet gepartitioneerd.</li></ul> | 6 |
 | <ul><li>De gegevens stroom voor invoer is gepartitioneerd met 16.</li><li>De query bevat één stap.</li><li>De stap is gepartitioneerd.</li></ul> | 96 (6 * 16 partities) |
@@ -312,7 +312,7 @@ Alle [streaming bij Azure-voor beelden van gegevens stromen](https://github.com/
 
 Gebruik het deel venster metrieken in uw Azure Stream Analytics-taak om knel punten in uw pijp lijn te identificeren. Bekijk **invoer-en uitvoer gebeurtenissen** voor door Voer en [' watermerk vertraging '](https://azure.microsoft.com/blog/new-metric-in-azure-stream-analytics-tracks-latency-of-your-streaming-pipeline/) of achterstands **gebeurtenissen** om te zien of de taak de invoer snelheid bijhoudt. Voor metrische gegevens van Event hub zoekt u naar **vertraagde aanvragen** en past u de drempel waarden dienovereenkomstig aan. Bekijk voor Cosmos DB metrische gegevens het **maximum aantal gebruikte ru/s per partitie sleutel bereik** onder door Voer om ervoor te zorgen dat de partitie sleutel bereik op gelijke wijze worden verbruikt. Bewaak **logboek-io** en **CPU** voor Azure SQL DB.
 
-## <a name="get-help"></a>Help opvragen
+## <a name="get-help"></a>Hulp vragen
 
 Probeer voor meer hulp onze [micro soft Q&een vraag pagina voor Azure stream Analytics](/answers/topics/azure-stream-analytics.html).
 

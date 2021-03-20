@@ -4,10 +4,10 @@ description: Dit artikel bevat een overzicht van de onderdelen en architectuur d
 ms.topic: conceptual
 ms.date: 02/11/2020
 ms.openlocfilehash: 966636e269043d81912b552711635f34b412f22f
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97654724"
 ---
 # <a name="physical-server-to-azure-disaster-recovery-architecture"></a>Architectuur van herstel na noodgevallen van fysieke server naar Azure

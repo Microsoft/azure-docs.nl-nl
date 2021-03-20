@@ -5,10 +5,10 @@ ms.topic: tutorial
 ms.date: 03/19/2020
 ms.custom: MVC
 ms.openlocfilehash: c806f968bc6530879f64ddbf6fd4c7d45aa7a8d3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89442817"
 ---
 # <a name="set-up-disaster-recovery-of-on-premises-hyper-v-vms-in-vmm-clouds-to-azure"></a>Herstel na noodgevallen voor on-premises Hyper-V-VM's in VMM-clouds naar Azure instellen
@@ -56,7 +56,7 @@ In deze zelfstudie wordt ervan uitgegaan dat u de volgende zelfstudies al hebt v
 Wanneer u de bronomgeving instelt, installeert u de Azure Site Recovery Provider op de VMM-server en registreert u de server in de kluis. Installeer de Azure Recovery Services-agent op elke Hyper-V-host.
 
 1. **Infrastructuur voorbereiden**. Selecteer **Bron**.
-1. **Bron voorbereiden**. Selecteer **+ VMM** om een VMM-server toe te voegen. Controleer in **Server toevoegen**of **System Center VMM-server** wordt weergegeven bij **Servertype**.
+1. **Bron voorbereiden**. Selecteer **+ VMM** om een VMM-server toe te voegen. Controleer in **Server toevoegen** of **System Center VMM-server** wordt weergegeven bij **Servertype**.
 1. Download het installatieprogramma voor de Microsoft Azure Site Recovery Provider.
 1. Download de registratiesleutel voor de kluis. U hebt deze sleutel nodig wanneer u de Provider-installatie uitvoert. De sleutel blijft vijf dagen na het genereren ervan geldig.
 1. Download het installatieprogramma voor de Microsoft Azure Recovery Services-agent.

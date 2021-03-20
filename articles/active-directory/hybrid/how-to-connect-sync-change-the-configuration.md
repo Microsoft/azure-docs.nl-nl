@@ -13,10 +13,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2044653673da10de59d5ff125da44ac1f89e22f9
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96861847"
 ---
 # <a name="azure-ad-connect-sync-make-a-change-to-the-default-configuration"></a>Azure AD Connect synchronisatie: een wijziging in de standaard configuratie aanbrengen
@@ -204,7 +204,7 @@ Het kenmerk User type is standaard niet ingeschakeld voor synchronisatie omdat e
 
 Voordat u synchronisatie van het kenmerk User type inschakelt, moet u eerst bepalen hoe het kenmerk wordt afgeleid van on-premises Active Directory. Hier volgen de meest voorkomende benaderingen:
 
-- Wijs een ongebruikt on-premises AD-kenmerk (zoals extensionAttribute1) aan dat moet worden gebruikt als het bron kenmerk. Het toegewezen on-premises AD-kenmerk moet van het type **teken reeks** zijn, moet een enkele waarde hebben en het lid of het **dimensielid** bevatten. **Guest** 
+- Wijs een ongebruikt on-premises AD-kenmerk (zoals extensionAttribute1) aan dat moet worden gebruikt als het bron kenmerk. Het toegewezen on-premises AD-kenmerk moet van het type **teken reeks** zijn, moet een enkele waarde hebben en het lid of het **dimensielid** bevatten.  
 
     Als u deze aanpak kiest, moet u ervoor zorgen dat het aangewezen kenmerk is gevuld met de juiste waarde voor alle bestaande gebruikers objecten in on-premises Active Directory die zijn gesynchroniseerd met Azure AD voordat u synchronisatie van het kenmerk User type inschakelt.
 
@@ -230,7 +230,7 @@ Om te voor komen dat u onbedoelde wijzigingen naar Azure AD exporteert, moet u e
 
  1. Start een Power shell-sessie op de Azure AD Connect-server.
  2. Schakel de geplande synchronisatie uit door de cmdlet uit te voeren `Set-ADSyncScheduler -SyncCycleEnabled $false` .
- 3. Open de Synchronization Service Manager door de **Start**  >  **synchronisatie service** te starten.
+ 3. Open de Synchronization Service Manager door de   >  **synchronisatie service** te starten.
  4. Ga naar het tabblad **bewerkingen** en controleer of er geen bewerking is met de status wordt *uitgevoerd*.
 
 ### <a name="step-2-add-the-source-attribute-to-the-on-premises-ad-connector-schema"></a>Stap 2: het bron kenmerk toevoegen aan het on-premises AD-connector schema
@@ -257,7 +257,7 @@ Het kenmerk User type wordt standaard niet geïmporteerd in de Azure AD Connect 
 ### <a name="step-4-create-an-inbound-synchronization-rule-to-flow-the-attribute-value-from-on-premises-active-directory"></a>Stap 4: een regel voor binnenkomende synchronisatie maken om de kenmerk waarde van on-premises Active Directory uit te stromen
 De regel voor binnenkomende synchronisatie maakt het mogelijk dat de kenmerk waarde van het bron kenmerk van on-premises Active Directory naar de omgekeerde tekst kan stromen:
 
-1. Open de editor voor synchronisatie regels door te **Start** gaan naar de  >  **Editor voor synchronisatie regels** starten.
+1. Open de editor voor synchronisatie regels door te gaan naar de  >  **Editor voor synchronisatie regels** starten.
 2. Stel de **richting** van het zoek filter in op **binnenkomend**.
 3. Klik op de knop **nieuwe regel toevoegen** om een nieuwe regel voor binnenkomende verbindingen te maken.
 4. Geef onder het tabblad **Beschrijving** de volgende configuratie op:
@@ -265,7 +265,7 @@ De regel voor binnenkomende synchronisatie maakt het mogelijk dat de kenmerk waa
     | Kenmerk | Waarde | Details |
     | --- | --- | --- |
     | Name | *Geef een naam op* | Bijvoorbeeld *in van AD: gebruiker user type* |
-    | Description | *Geef een beschrijving op* |  |
+    | Beschrijving | *Geef een beschrijving op* |  |
     | Verbonden systeem | *Kies de on-premises AD-connector* |  |
     | Type verbonden systeem object | **Gebruiker** |  |
     | Omgekeerd object type | **Person** |  |
@@ -307,7 +307,7 @@ De regel voor uitgaande synchronisatie maakt het mogelijk dat de waarde van het 
     | Kenmerk | Waarde | Details |
     | ----- | ------ | --- |
     | Name | *Geef een naam op* | Bijvoorbeeld voor *Aad: gebruiker user type* |
-    | Description | *Geef een beschrijving op* ||
+    | Beschrijving | *Geef een beschrijving op* ||
     | Verbonden systeem | *De AAD-connector selecteren* ||
     | Type verbonden systeem object | **Gebruiker** ||
     | Omgekeerd object type | **Person** ||
@@ -319,7 +319,7 @@ De regel voor uitgaande synchronisatie maakt het mogelijk dat de waarde van het 
     | Kenmerk | Operator | Waarde |
     | --- | --- | --- |
     | sourceObjectType | WAARD | Gebruiker |
-    | cloudMastered | NOTEQUAL | True |
+    | cloudMastered | NOTEQUAL | Waar |
 
     Het bereik filter bepaalt op welke Azure AD-objecten deze regel voor uitgaande synchronisatie wordt toegepast. In dit voor beeld gebruiken we dezelfde bereik filter van de out-of-Box-synchronisatie regel *out to AD* . Hiermee wordt voor komen dat de synchronisatie regel wordt toegepast op gebruikers objecten die niet zijn gesynchroniseerd vanuit on-premises Active Directory. Mogelijk moet u het bereik filter aanpassen op basis van uw Azure AD Connect-implementatie.
 

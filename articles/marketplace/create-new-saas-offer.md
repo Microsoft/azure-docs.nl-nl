@@ -9,10 +9,10 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 ms.date: 09/02/2020
 ms.openlocfilehash: f689993ce56a1125a1d1de8f65ce05d01f776ea9
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93130065"
 ---
 # <a name="how-to-create-a-saas-offer-in-the-commercial-marketplace"></a>Een SaaS-aanbieding maken in de commerciële Marketplace
@@ -21,13 +21,13 @@ Als commerciële Marketplace-Uitgever kunt u een SaaS-aanbieding (Software as a 
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-Als u dit nog niet hebt gedaan, kunt u [een SaaS-aanbieding plannen voor de commerciële Marketplace](plan-saas-offer.md). Hierin worden de technische vereisten voor uw SaaS-app uitgelegd en worden de gegevens en assets beschreven die u nodig hebt bij het maken van uw aanbieding. Tenzij u van plan bent een eenvoudige vermelding ( **contact opnemen met** uw aanbiedings optie) in de commerciële Marketplace te publiceren, moet uw SaaS-toepassing voldoen aan de technische vereisten rond verificatie.
+Als u dit nog niet hebt gedaan, kunt u [een SaaS-aanbieding plannen voor de commerciële Marketplace](plan-saas-offer.md). Hierin worden de technische vereisten voor uw SaaS-app uitgelegd en worden de gegevens en assets beschreven die u nodig hebt bij het maken van uw aanbieding. Tenzij u van plan bent een eenvoudige vermelding (**contact opnemen met** uw aanbiedings optie) in de commerciële Marketplace te publiceren, moet uw SaaS-toepassing voldoen aan de technische vereisten rond verificatie.
 
 ## <a name="create-a-new-saas-offer"></a>Een nieuwe SaaS-aanbieding maken
 
 1. Meld u aan bij [Partner Center](https://partner.microsoft.com/dashboard/home).
-1. Selecteer in het navigatie menu de optie **commerciële Marketplace** -  >  **overzicht** .
-1. Selecteer op het tabblad **overzicht** **+ nieuwe aanbieding**  >  **software als een service** .
+1. Selecteer in het navigatie menu de optie **commerciële Marketplace**-  >  **overzicht**.
+1. Selecteer op het tabblad **overzicht** **+ nieuwe aanbieding**  >  **software als een service**.
 
    :::image type="content" source="media/new-offer-saas.png" alt-text="Illustreert het navigatie menu en de nieuwe lijst met aanbiedingen.":::
 
@@ -44,14 +44,14 @@ Als u dit nog niet hebt gedaan, kunt u [een SaaS-aanbieding plannen voor de comm
 
 ## <a name="configure-your-saas-offer-setup-details"></a>Details van de installatie van SaaS-aanbiedingen configureren
 
-Op het tabblad installatie van de **aanbieding** , onder **installatie Details** , kiest u of u uw aanbieding via micro soft wilt verkopen of uw trans acties afzonderlijk wilt beheren. Aanbiedingen die worden verkocht via micro soft worden aangeduid als behandel bare _aanbiedingen_ , wat betekent dat micro soft de uitwisseling van geld voor een software licentie voor de uitgever vereenvoudigt. Zie [opties weer](plan-saas-offer.md#listing-options) geven en [de publicatie optie bepalen](determine-your-listing-type.md)voor meer informatie over deze opties.
+Op het tabblad installatie van de **aanbieding** , onder **installatie Details**, kiest u of u uw aanbieding via micro soft wilt verkopen of uw trans acties afzonderlijk wilt beheren. Aanbiedingen die worden verkocht via micro soft worden aangeduid als behandel bare _aanbiedingen_, wat betekent dat micro soft de uitwisseling van geld voor een software licentie voor de uitgever vereenvoudigt. Zie [opties weer](plan-saas-offer.md#listing-options) geven en [de publicatie optie bepalen](determine-your-listing-type.md)voor meer informatie over deze opties.
 
-1. Als u door micro soft wilt verkopen en ons trans acties voor u wilt laten ondersteunen, selecteert u **Ja** . Ga door om [een test drive in te scha kelen](#enable-a-test-drive-optional).
+1. Als u door micro soft wilt verkopen en ons trans acties voor u wilt laten ondersteunen, selecteert u **Ja**. Ga door om [een test drive in te scha kelen](#enable-a-test-drive-optional).
 
 1. Als u uw aanbieding via de commerciële Marketplace en de trans acties afzonderlijk wilt aanbieden, selecteert u **Nee** en gaat u vervolgens op een van de volgende manieren te werk:
-   + Als u een gratis abonnement voor uw aanbieding wilt opgeven, selecteert u **nu downloaden (gratis)** . Voer vervolgens in het vak **aanbiedings-URL** die wordt weer gegeven, de URL in (te beginnen met *http* of *https* ) waar klanten een proef versie met één klik kunnen krijgen met [behulp van Azure Active Directory (Azure AD)](azure-ad-saas.md). Bijvoorbeeld `https://contoso.com/saas-app`.
-   + Als u een gratis proef versie van 30 dagen wilt, selecteert u **gratis proef versie** en voert u in het vak **proef-URL** die wordt weer gegeven, de URL in (te beginnen met *http* of *https* ), waar klanten toegang hebben tot uw gratis proef versie met [beAzure Active Directory hulp van een verificatie met één klik (Azure AD)](azure-ad-saas.md). Bijvoorbeeld `https://contoso.com/trial/saas-app`.
-   + Als u wilt dat potentiële klanten contact met u opnemen om uw aanbieding te kopen, selecteert u **contact met mij opnemen** .
+   + Als u een gratis abonnement voor uw aanbieding wilt opgeven, selecteert u **nu downloaden (gratis)**. Voer vervolgens in het vak **aanbiedings-URL** die wordt weer gegeven, de URL in (te beginnen met *http* of *https*) waar klanten een proef versie met één klik kunnen krijgen met [behulp van Azure Active Directory (Azure AD)](azure-ad-saas.md). Bijvoorbeeld `https://contoso.com/saas-app`.
+   + Als u een gratis proef versie van 30 dagen wilt, selecteert u **gratis proef versie** en voert u in het vak **proef-URL** die wordt weer gegeven, de URL in (te beginnen met *http* of *https*), waar klanten toegang hebben tot uw gratis proef versie met [beAzure Active Directory hulp van een verificatie met één klik (Azure AD)](azure-ad-saas.md). Bijvoorbeeld `https://contoso.com/trial/saas-app`.
+   + Als u wilt dat potentiële klanten contact met u opnemen om uw aanbieding te kopen, selecteert u **contact met mij opnemen**.
 
 ### <a name="enable-a-test-drive-optional"></a>Een test drive inschakelen (optioneel)
 

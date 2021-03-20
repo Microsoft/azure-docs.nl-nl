@@ -7,11 +7,11 @@ ms.author: shhazam
 ms.date: 12/07/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: a7af817074400bedd8f07adaefc35309566dc931
-ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
+ms.openlocfilehash: bfe3e00c4930ba57c930eb1bc2f2dd4ed11886e0
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100522390"
 ---
 # <a name="control-what-traffic-is-monitored"></a>Controleren welk verkeer wordt bewaakt
@@ -295,7 +295,7 @@ Scan resultaten weer geven:
 
 1. Wanneer de scan is voltooid, selecteert u in het deel venster **acties** de optie **scan resultaten weer geven**. Het CSV-bestand met de scan resultaten wordt gedownload naar uw computer.
 
-## <a name="next-steps"></a>Volgende stappen
+## <a name="see-also"></a>Zie ook
 
 [Sensor detecties onderzoeken in een inventaris](how-to-investigate-sensor-detections-in-a-device-inventory.md) 
  van een apparaat [Detectie van sensors in de apparaattoewijzing onderzoeken](how-to-work-with-the-sensor-device-map.md)

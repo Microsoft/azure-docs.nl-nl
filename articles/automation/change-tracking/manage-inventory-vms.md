@@ -7,10 +7,10 @@ keywords: inventaris, automation, wijziging, bijhouden
 ms.date: 10/14/2020
 ms.topic: conceptual
 ms.openlocfilehash: 2acf22ba76acdfa6152ef8966f4000aa325a9e91
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92209637"
 ---
 # <a name="manage-inventory-collection-from-vms"></a>Een inventarisverzameling beheren vanuit VM's
@@ -36,10 +36,10 @@ Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 
 1. Selecteer in het linkerdeelvenster van de Azure-portal de optie **Virtuele machines**.
 2. Selecteer een computer in de lijst met Vm's.
-3. Selecteer in het menu **resource** onder **bewerkingen**de optie **inventaris**.
+3. Selecteer in het menu **resource** onder **bewerkingen** de optie **inventaris**.
 4. Selecteer een Log Analytics-werk ruimte om uw gegevens logboeken op te slaan.
     Als er geen werkruimte beschikbaar is voor deze regio, wordt u gevraagd om een standaardwerkruimte en een Automation-account te maken.
-5. Selecteer **inschakelen**om de computer in te scha kelen.
+5. Selecteer **inschakelen** om de computer in te scha kelen.
 
    ![Opties voor onboarding weergeven](./media/manage-inventory-vms/inventory-onboarding-options.png)
 
@@ -54,7 +54,7 @@ Wanneer de implementatie is voltooid, verdwijnt de statusbalk. Het systeem is no
 Standaard worden software-, Windows Services- en Linux-daemons geconfigureerd voor verzameling. Als u Windows-register- en bestandsinventarisgegevens wilt verzamelen, configureer dan de instellingen voor de inventarisverzameling.
 
 1. Klik boven aan de pagina op **Instellingen bewerken** op de pagina inventarisatie.
-2. Als u een nieuwe instelling voor de verzameling wilt toevoegen, gaat u naar de instellings categorie die u wilt toevoegen door het tabblad **Windows-REGI ster**, **Windows-bestanden**of Linux- **bestanden** te selecteren.
+2. Als u een nieuwe instelling voor de verzameling wilt toevoegen, gaat u naar de instellings categorie die u wilt toevoegen door het tabblad **Windows-REGI ster**, **Windows-bestanden** of Linux- **bestanden** te selecteren.
 3. Selecteer de juiste categorie en klik boven aan de pagina op **toevoegen** .
 
 De volgende secties bevatten informatie over elke eigenschap die kan worden geconfigureerd voor de verschillende categorieën.
@@ -114,7 +114,7 @@ Als u een nieuwe machine groep wilt maken, klikt u op **+ een computer groep mak
 
 Uw virtuele machine verwijderen uit Wijzigingen bijhouden en voorraad beheer:
 
-1. Selecteer **log Analytics**in het linkerdeel venster van de Azure Portal en selecteer vervolgens de werk ruimte die u hebt gebruikt bij het inschakelen van de virtuele machine voor wijzigingen bijhouden en inventarisatie.
+1. Selecteer **log Analytics** in het linkerdeel venster van de Azure Portal en selecteer vervolgens de werk ruimte die u hebt gebruikt bij het inschakelen van de virtuele machine voor wijzigingen bijhouden en inventarisatie.
 2. Open op de pagina **log Analytics** het **resource** menu.
 3. Selecteer **virtual machines** onder **gegevens bronnen voor de werk ruimte**.
 4. Selecteer in de lijst de virtuele machine die u wilt loskoppelen. De machine heeft een groen vinkje naast **deze werk ruimte** in de kolom **OMS-verbinding** .

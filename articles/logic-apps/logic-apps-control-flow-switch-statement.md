@@ -7,10 +7,10 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 10/08/2018
 ms.openlocfilehash: 62f147104cf9e0e1605b02a420cb6d20190361b8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89657449"
 ---
 # <a name="create-switch-statements-that-run-workflow-actions-based-on-specific-values-in-azure-logic-apps"></a>Switch-instructies maken waarmee werk stroom acties worden uitgevoerd op basis van specifieke waarden in Azure Logic Apps
@@ -34,7 +34,7 @@ Stel dat u een logische app wilt die verschillende stappen uitvoert op basis van
      ![Selecteer e-mail voor goed keuring verzenden](./media/logic-apps-control-flow-switch-statement/send-approval-email-action.png)
 
   1. Geef de vereiste velden op, zoals het e-mail adres van de persoon die de goedkeurings-e-mail ontvangt. 
-  Onder **gebruikers opties**voert u ' goed keuren, afwijzen ' in.
+  Onder **gebruikers opties** voert u ' goed keuren, afwijzen ' in.
 
      ![E-mail gegevens invoeren](./media/logic-apps-control-flow-switch-statement/send-approval-email-details.png)
 
@@ -57,7 +57,7 @@ Stel dat u een logische app wilt die verschillende stappen uitvoert op basis van
 
    ![Selecteer ' token '](./media/logic-apps-control-flow-switch-statement/select-selected-option.png)
 
-1. Voor het afhandelen van de gevallen waarin de fiatteur `Approve` `Reject` een andere case selecteert of een andere aanvraag tussen **Case** en **standaard**toevoegt. 
+1. Voor het afhandelen van de gevallen waarin de fiatteur `Approve` `Reject` een andere case selecteert of een andere aanvraag tussen **Case** en **standaard** toevoegt. 
 
    ![Een andere case toevoegen](./media/logic-apps-control-flow-switch-statement/switch-plus.png)
 
@@ -65,7 +65,7 @@ Stel dat u een logische app wilt die verschillende stappen uitvoert op basis van
 
    | Casu # | **Token** | Bewerking |
    |--------|--------------------|--------|
-   | Voor beeld 1 | **Goedkeuren** | Voeg de actie Outlook **een E-mail verzenden** toe om alleen gegevens over het RSS-item te verzenden wanneer de fiatteur **goed keuren**heeft geselecteerd. |
+   | Voor beeld 1 | **Goedkeuren** | Voeg de actie Outlook **een E-mail verzenden** toe om alleen gegevens over het RSS-item te verzenden wanneer de fiatteur **goed keuren** heeft geselecteerd. |
    | Case 2 | **Afwijzen** | Voeg de actie Outlook **een E-mail verzenden** toe voor het melden van andere goed keurders die het RSS-item heeft afgewezen. |
    | Standaard | Geen | Geen actie vereist. In dit voor beeld is de **standaard** situatie leeg, omdat **token** slechts twee opties heeft. |
    |||

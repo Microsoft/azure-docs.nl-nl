@@ -4,10 +4,10 @@ description: In dit artikel wordt beschreven hoe u een gebruiker toevoegt aan de
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: a6c89483744f943926f126701d28988358627a27
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96435957"
 ---
 # <a name="add-lab-creators-to-a-lab-account-in-azure-lab-services"></a>Lab-makers toevoegen aan een Lab-account in Azure Lab Services

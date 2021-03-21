@@ -9,10 +9,10 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.openlocfilehash: e902f313edf22d75f6b183575c3dc8d0dd94bc1f
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96904751"
 ---
 # <a name="azure-maps-mobility-services-preview-coverage"></a>Dekking van Azure Maps Mobility Services (preview)
@@ -22,7 +22,7 @@ ms.locfileid: "96904751"
 > Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 
-De Azure Maps [Mobility Services](/rest/api/maps/mobility) verbetert de ontwikkelings tijd voor toepassingen met open bare doorvoer functies, zoals Transit Routering en zoek opdrachten voor open bare door Voer in de buurt. Gebruikers kunnen gedetailleerde informatie ophalen over OV-haltes, -lijnen en -schema's. Met de mobiliteits Services kunnen gebruikers ook stoppen en lijn geometries, waarschuwingen voor beëindiging, regels en service gebieden en real-time open bare door Voer en service waarschuwingen ophalen. Daarnaast bieden de Mobility-Services mogelijkheden voor route ring met opties voor multimodale reis planning. Met multimodale reisplanning worden de opties voor lopen, fietsen en openbaar vervoer in één reis opgenomen. Gebruikers hebben ook toegang tot gedetailleerde multimodale stapsgewijze routes.
+De Azure Maps [Mobility Services](/rest/api/maps/mobility) verbetert de ontwikkelings tijd voor toepassingen met open bare doorvoer functies, zoals Transit Routering en zoek opdrachten voor open bare door Voer in de buurt. Gebruikers kunnen gedetailleerde informatie ophalen over OV-haltes, -lijnen en -schema's. Met de mobiliteits Services kunnen gebruikers ook stoppen en lijn geometries, waarschuwingen voor beëindiging, regels en service gebieden en real-time open bare door Voer en service waarschuwingen ophalen. Daarnaast bieden de Mobility-services mogelijkheden voor routering met multimodale opties voor reisplanning. Met multimodale reisplanning worden de opties voor lopen, fietsen en openbaar vervoer in één reis opgenomen. Gebruikers hebben ook toegang tot gedetailleerde multimodale stapsgewijze routes.
 
 Azure Maps biedt niet hetzelfde niveau van informatie en nauw keurigheid voor alle steden en landen/regio's. De mogelijkheid om open bare doorvoer gegevens aan te roepen, is afhankelijk van het metro gebied. Daarnaast mogen de kaart gegevens niet alle open bare doorvoer opties en-instanties bevatten die het metro gebied gebruiken.
 

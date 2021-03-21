@@ -12,10 +12,10 @@ ms.author: xiaoyul
 ms.custom: azure-synapse
 ms.reviewer: igorstan
 ms.openlocfilehash: 8144c588d4b6794cadc0577bf63dabc2cc3e0efd
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98677283"
 ---
 # <a name="use-transactions-in-a-sql-pool-in-azure-synapse"></a>Trans acties gebruiken in een SQL-groep in azure Synapse 

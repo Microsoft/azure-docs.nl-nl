@@ -4,10 +4,10 @@ description: Inleiding tot de belangrijkste concepten van Azure-container regist
 ms.topic: article
 ms.date: 01/29/2021
 ms.openlocfilehash: 991be79b10b6061f2034eb19e4e139af65aef3cf
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100578098"
 ---
 # <a name="about-registries-repositories-and-artifacts"></a>Over registers, opslag plaatsen en artefacten

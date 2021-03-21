@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 04/14/2019
 ms.author: jeedes
 ms.openlocfilehash: 9e0b438e0cfa729300099463086248780c69484c
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95019837"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-kontiki"></a>Zelfstudie: Azure Active Directory-integratie met Kontiki
@@ -28,7 +28,7 @@ Kontiki-integratie met Azure AD biedt u de volgende voordelen:
 * Gebruikers kunnen automatisch worden aangemeld bij Kontiki met hun Azure AD-accounts (eenmalige aanmelding).
 * U kunt uw accounts vanaf één locatie beheren, de Azure-portal.
 
-Zie voor meer informatie over de integratie van SaaS-apps (software als een service) met Azure AD [Eenmalige aanmelding voor toepassingen in Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Zie [Eenmalige aanmelding voor toepassingen in Azure Active Directory](../manage-apps/what-is-single-sign-on.md) voor meer informatie over de integratie van SaaS-apps (software als een service) met Azure AD.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -52,7 +52,7 @@ Om Kontiki te integreren met Azure AD moet u Kontiki toevoegen aan de lijst met 
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 
-1. Selecteer in het linkermenu de knop **Azure Active Directory**.
+1. Selecteer de knop **Azure Active Directory** in het linkermenu.
 
     ![De optie voor Azure Active Directory](common/select-azuread.png)
 

@@ -15,13 +15,13 @@ ms.topic: how-to
 ms.date: 11/18/2020
 ms.author: b-juche
 ms.openlocfilehash: 5ce7a591acd8203775808457219b0ec392cd696e
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/22/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95249887"
 ---
-# <a name="delete-volume-replications-or-volumes"></a>Volume replicaties of volumes verwijderen
+# <a name="delete-volume-replications-or-volumes"></a>Volumereplicaties of volumes verwijderen
 
 In dit artikel wordt beschreven hoe u volume replicatie verwijdert. Ook wordt beschreven hoe u het bron-of doel volume verwijdert.
 
@@ -34,10 +34,10 @@ U kunt de replicatie verbinding tussen de bron-en doel volumes beëindigen door 
     1. Selecteer het *doel* volume. Klik op **replicatie** onder Storage-service.  
 
     2.  Controleer de volgende velden voordat u doorgaat:  
-        * Zorg ervoor dat in de spiegel status ***gespiegelde** _ worden weer gegeven.   
-            Probeer replicatie peering niet te verstoren als de spiegel status _Uninitialized * bevat.
-        * Zorg ervoor dat de relatie status wordt weer gegeven ***niet-actieve** _.   
-            Probeer replicatie peering niet te verstoren als de relatie status _Transferring * bevat.   
+        * Zorg ervoor dat ***gespiegelde*** statussen worden weer gegeven.   
+            Probeer replicatie peering niet te verstoren als de status van de mirror niet- *geïnitialiseerd* blijkt.
+        * Zorg ervoor dat de relatie status ***niet-actief*** wordt weer gegeven.   
+            Probeer replicatie peering niet te verstoren als de relatie status de *overdracht* toont.   
 
         Zie de status [van de replicatie relatie weer geven](cross-region-replication-display-health-status.md). 
 

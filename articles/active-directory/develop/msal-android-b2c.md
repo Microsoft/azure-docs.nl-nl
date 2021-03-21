@@ -14,10 +14,10 @@ ms.author: brianmel
 ms.reviewer: rapong
 ms.custom: aaddev
 ms.openlocfilehash: 1a9b9481d0b4086505bbfd3c2cd654ce228d1ae2
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101688872"
 ---
 # <a name="use-msal-for-android-with-b2c"></a>MSAL voor Android gebruiken met B2C
@@ -196,7 +196,7 @@ new AuthenticationCallback() {
 
 Een geslaagde token verwerving resulteert in een `IAuthenticationResult` object. Het bevat het toegangs token, de gebruikers claims en de meta gegevens.
 
-### <a name="get-the-access-token-and-related-properties"></a>Het toegangs token en de bijbehorende eigenschappen ophalen
+### <a name="get-the-access-token-and-related-properties"></a>Het toegangstoken en de bijbehorende eigenschappen ophalen
 
 ```java
 // Get the raw bearer token

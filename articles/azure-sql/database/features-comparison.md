@@ -13,10 +13,10 @@ ms.author: danil
 ms.reviewer: bonova, sstein, danil
 ms.date: 03/08/2021
 ms.openlocfilehash: 8c98ce661e7bb753d4e62d1eaf98702de91c5106
-ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102489766"
 ---
 # <a name="features-comparison-azure-sql-database-and-azure-sql-managed-instance"></a>Vergelijking van functies: Azure SQL Database en Azure SQL Managed instance

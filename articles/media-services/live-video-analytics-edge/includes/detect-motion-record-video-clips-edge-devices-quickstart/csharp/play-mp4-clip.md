@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: dfb887004cd29b5bd9f1d9886b7dfa5f43c83dbe
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99531873"
 ---
 De MP4-bestanden worden geschreven naar een map op het apparaat Edge dat u hebt geconfigureerd in het *. env* -bestand met behulp van de VIDEO_OUTPUT_FOLDER_ON_DEVICE sleutel. Als u de standaardwaarde hebt gebruikt, bevinden de resultaten zich in de map */var/media/* .

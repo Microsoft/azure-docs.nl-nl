@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.custom: mvc
 ms.date: 09/06/2020
 ms.openlocfilehash: 43d7a697b3cb013a73a0b14db8ec1758244ae3b9
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97092187"
 ---
-# <a name="use-jupyter-notebook-to-hunt-for-security-threats"></a>Jupyter Notebook gebruiken om te zoeken naar beveiligings Risico's
+# <a name="use-jupyter-notebook-to-hunt-for-security-threats"></a>Jupyter Notebook gebruiken om beveiligingsbedreigingen op te sporen
 
 De basis van Azure Sentinel is het gegevens archief. Het combineert hoge prestaties voor query's, dynamische schema's en schalen naar enorme gegevens volumes. De Azure Portal en alle Azure Sentinel-hulpprogram ma's gebruiken een gemeen schappelijke API voor toegang tot deze gegevens opslag. Dezelfde API is ook beschikbaar voor externe hulpprogram ma's, zoals [Jupyter](https://jupyter.org/) -notebooks en python. Hoewel veel algemene taken kunnen worden uitgevoerd in de portal, breidt Jupyter het bereik uit van wat u met deze gegevens kunt doen. Hiermee wordt volledige programmeer baarheid gecombineerd met een enorme verzameling bibliotheken voor machine learning, visualisatie en gegevens analyse. Deze kenmerken maken het Jupyter een fascinerend hulp programma voor beveiligings onderzoek en jacht.
 
@@ -66,7 +66,7 @@ Als u de notitie blokken wilt gebruiken, moet u eerst een Azure Machine Learning
     |Abonnement|Selecteer het Azure-abonnement dat u wilt gebruiken.|
     |Resourcegroep|Gebruik een bestaande resourcegroep in uw abonnement of voer een naam in om een nieuwe resourcegroep te maken. Een resourcegroep bevat gerelateerde resources voor een Azure-oplossing. In dit voor beeld gebruiken we **AzureMLRG**.|
     |Werkruimtenaam|Voer een unieke naam in die uw werkruimte aanduidt. In dit voor beeld gebruiken we **testworkspace1**. Namen moeten uniek zijn binnen de resourcegroep. Gebruik een naam die gemakkelijk te onthouden is en te onderscheiden is van door anderen gemaakte werkruimten.|
-    |Regio|Selecteer de locatie die zich het dichtst bij uw gebruikers en de gegevensresources bevindt om uw werkruimte te maken.|
+    |Region|Selecteer de locatie die zich het dichtst bij uw gebruikers en de gegevensresources bevindt om uw werkruimte te maken.|
     |Werkruimte-editie|Selecteer **Basic** als het type werk ruimte in dit voor beeld. Het type werk ruimte (Basic & Enter prise) bepaalt de functies waartoe u toegang hebt en de prijzen.|
 
     > [!div class="mx-imgBorder"]

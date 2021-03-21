@@ -4,10 +4,10 @@ description: Bescherm uw Azure VMware-oplossing-Vm's met de systeem eigen beveil
 ms.topic: how-to
 ms.date: 02/12/2021
 ms.openlocfilehash: 7292ea4486a61f5b0cfd8f656d2763a3ce655e79
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100578250"
 ---
 # <a name="protect-your-azure-vmware-solution-vms-with-azure-security-center-integration"></a>Bescherm uw Azure VMware-oplossing-Vm's met Azure Security Center-integratie

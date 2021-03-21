@@ -1,16 +1,16 @@
 ---
-title: Herstel punten beheren
+title: Herstelpunten beheren
 description: Meer informatie over hoe de Azure Backup-Service herstel punten beheert voor virtuele machines
 ms.topic: conceptual
 ms.date: 11/08/2020
 ms.openlocfilehash: 256df693aba0f799c24bcba6defe846e5c37ccaa
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94428629"
 ---
-# <a name="manage-recovery-points"></a>Herstel punten beheren
+# <a name="manage-recovery-points"></a>Herstelpunten beheren
 
 In dit artikel wordt beschreven hoe retentie werkt voor virtuele machines. Telkens wanneer er back-ups plaatsvinden, worden er herstel punten gemaakt op basis waarvan de herstel bewerkingen kunnen worden uitgevoerd.
 
@@ -82,7 +82,7 @@ Wanneer het eerste herstel punt verloopt, wordt het samengevoegd met het volgend
 
 ### <a name="case-3-on-demand-recovery-point-expires"></a>Voor beeld 3: herstel punt op aanvraag verloopt
 
-In dit voor beeld wordt een schema (dagelijks back-upbeleid) gepland om te worden uitgevoerd met een Bewaar periode van *n* dagen.  Als er een back-up op aanvraag wordt geactiveerd op de vierde dag voordat de volgende geplande back-up en de retentie periode 10 dagen worden opgegeven, wordt er nog steeds een incrementele back-up gemaakt. Er wordt een herstel punt ( *RP1 op aanvraag* ) gemaakt na *herstel punt 3* en vóór *herstel punt 4*.  Aan het einde van de dag 14 wordt het herstel punt op aanvraag ( *RP1 op aanvraag* ) verlopen en wordt het samengevoegd met het volgende beschik bare herstel punt. De gegevens blokken die nog op de server aanwezig zijn, worden samengevoegd, terwijl de gegevens blokken die zijn gewijzigd (overschreven of verwijderd) worden verwijderd uit het verlopen herstel punt.
+In dit voor beeld wordt een schema (dagelijks back-upbeleid) gepland om te worden uitgevoerd met een Bewaar periode van *n* dagen.  Als er een back-up op aanvraag wordt geactiveerd op de vierde dag voordat de volgende geplande back-up en de retentie periode 10 dagen worden opgegeven, wordt er nog steeds een incrementele back-up gemaakt. Er wordt een herstel punt (*RP1 op aanvraag*) gemaakt na *herstel punt 3* en vóór *herstel punt 4*.  Aan het einde van de dag 14 wordt het herstel punt op aanvraag (*RP1 op aanvraag*) verlopen en wordt het samengevoegd met het volgende beschik bare herstel punt. De gegevens blokken die nog op de server aanwezig zijn, worden samengevoegd, terwijl de gegevens blokken die zijn gewijzigd (overschreven of verwijderd) worden verwijderd uit het verlopen herstel punt.
 
 ![Derde geval](./media/manage-recovery-points/third-case.png)
 

@@ -5,13 +5,13 @@ ms.topic: include
 ms.date: 12/10/2020
 ms.author: wolfma
 ms.openlocfilehash: 329241c2660ff7828f57fb21daeb6de20caedc43
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97504454"
 ---
-| Geografie | Regio | Regio-id |
+| Geografie | Region | Regio-id |
 | ----- | ----- | ----- |
 | Noord- en Zuid-Amerika | VS - centraal | `centralus` |
 | Noord- en Zuid-Amerika | VS - oost | `eastus` |
@@ -22,7 +22,7 @@ ms.locfileid: "97504454"
 | Noord- en Zuid-Amerika | VS - west | `westus` |
 | Noord- en Zuid-Amerika | VS - west 2 | `westus2` |
 | Noord- en Zuid-Amerika | Canada - midden | `canadacentral` |
-| Noord- en Zuid-Amerika | Brazil South | `brazilsouth` |
+| Noord- en Zuid-Amerika | Brazilië - zuid | `brazilsouth` |
 | Azië en Stille Oceaan | Azië - oost | `eastasia` |
 | Azië en Stille Oceaan | Azië - zuidoost | `southeastasia` |
 | Azië en Stille Oceaan | Australië - oost | `australiaeast` |

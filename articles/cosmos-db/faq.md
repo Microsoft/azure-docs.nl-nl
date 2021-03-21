@@ -8,10 +8,10 @@ ms.date: 09/01/2019
 ms.author: sngun
 ms.custom: seodec18
 ms.openlocfilehash: 81c959467c4bb3700120917cf150773fb18e866d
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97359826"
 ---
 # <a name="frequently-asked-questions-about-different-apis-in-azure-cosmos-db"></a>Veelgestelde vragen over verschillende API's in Azure Cosmos DB
@@ -180,7 +180,7 @@ De SQL-API ondersteunt aggregatie met lage latentie op elke schaal via statistis
 
 De SQL API ondersteunt optimistische gelijktijdigheids beheer (OCC) via HTTP-entiteit Tags of ETags. Elke SQL-API-resource heeft een ETag en de ETag wordt ingesteld op de server telkens wanneer een document wordt bijgewerkt. De ETag-kop en de huidige waarde zijn opgenomen in alle antwoord berichten. ETags kan worden gebruikt met de If-Match-header om de server toe te staan om te bepalen of een resource moet worden bijgewerkt. De If-Match waarde is de ETag-waarde die moet worden gecontroleerd. Als de ETag-waarde overeenkomt met de server ETag-waarde, wordt de resource bijgewerkt. Als de ETag niet langer actueel is, wordt de bewerking door de server geweigerd met de respons code ' HTTP 412-voor waarde voor fout '. De client haalt de resource vervolgens opnieuw op om de huidige ETag-waarde voor de resource te verkrijgen. Daarnaast kan ETags worden gebruikt in combi natie met de If-None-Match-header om te bepalen of een resource opnieuw moet worden opgehaald.
 
-Als u optimistische gelijktijdigheid wilt gebruiken in .NET, gebruikt u de [AccessCondition](/dotnet/api/microsoft.azure.documents.client.accesscondition) -klasse. Zie [Program.cs](https://github.com/Azure/azure-cosmos-dotnet-v2/blob/master/samples/code-samples/DocumentManagement/Program.cs) in het DocumentManagement-voor beeld op github voor een .net-voor beeld.
+Als u optimistische gelijktijdigheid wilt gebruiken in .NET, gebruikt u de [AccessCondition](/dotnet/api/microsoft.azure.documents.client.accesscondition) -klasse. Zie [Program. cs](https://github.com/Azure/azure-cosmos-dotnet-v2/blob/master/samples/code-samples/DocumentManagement/Program.cs) in het DocumentManagement-voor beeld op github voor een .net-voor beeld.
 
 ### <a name="how-do-i-perform-transactions-in-the-sql-api"></a>Hoe kan ik trans acties uit te voeren in de SQL-API?
 
@@ -204,7 +204,7 @@ Ja. De [Azure Cosmos DB-emulator](local-emulator.md) biedt een zeer betrouw bare
 
 ### <a name="why-are-long-floating-point-values-in-a-document-rounded-when-viewed-from-data-explorer-in-the-portal"></a>Waarom worden lange drijvende-komma waarden in een document afgerond wanneer dit wordt weer gegeven vanuit Data Explorer in de portal.
 
-Dit is een beperking van Java script. Java script maakt gebruik van drijvende-komma notatie nummers met dubbele precisie, zoals is opgegeven in IEEE 754. het kan veilig zijn om getallen tussen-(2<sup>53</sup> -1) en 2<sup>53</sup>-1 (bijvoorbeeld 9007199254740991) op te slaan.
+Dit is een beperking van JavaScript. Java script maakt gebruik van drijvende-komma notatie nummers met dubbele precisie, zoals is opgegeven in IEEE 754. het kan veilig zijn om getallen tussen-(2<sup>53</sup> -1) en 2<sup>53</sup>-1 (bijvoorbeeld 9007199254740991) op te slaan.
 
 ### <a name="where-are-permissions-allowed-in-the-object-hierarchy"></a>Waar zijn de machtigingen toegestaan in de object hiërarchie?
 

@@ -10,10 +10,10 @@ ms.custom: subject-armqs
 ms.date: 10/12/2020
 ms.author: duau
 ms.openlocfilehash: 7521344a2bb6aae67724c8bfbb9131e2ff1e6b94
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92789723"
 ---
 # <a name="quickstart-create-an-expressroute-circuit-with-private-peering-using-an-arm-template"></a>Quickstart: Een ExpressRoute-circuit met persoonlijke peering maken met behulp van een ARM-sjabloon
@@ -22,7 +22,7 @@ In deze quickstart wordt beschreven hoe u een Azure Resource Manager-sjabloon (A
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
-Als uw omgeving voldoet aan de vereisten en u benkend bent met het gebruik van ARM-sjablonen, selecteert u de knop **Implementeren naar Azure** . De sjabloon wordt in Azure Portal geopend.
+Als uw omgeving voldoet aan de vereisten en u benkend bent met het gebruik van ARM-sjablonen, selecteert u de knop **Implementeren naar Azure**. De sjabloon wordt in Azure Portal geopend.
 
 [![Implementeren in Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-expressroute-private-peering-vnet%2Fazuredeploy.json)
 
@@ -34,7 +34,7 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 
 De sjabloon die in deze quickstart wordt gebruikt, komt uit [Azure-quickstartsjablonen](https://azure.microsoft.com/resources/templates/101-expressroute-private-peering-vnet).
 
-In deze quickstart maakt u een ExpressRoute-circuit met *Equinix* als serviceprovider. Het circuit maakt gebruik van een *Premium SKU* , met een bandbreedte van *50 Mbps* en de peeringlocatie *Washington DC-* . Persoonlijke peering wordt ingeschakeld met een primair en secundair subnet van *192.168.10.16/30* en *192.168.10.20/30* . Er wordt ook een virtueel netwerk gemaakt met een *High Performance ExpressRoute-gateway* .
+In deze quickstart maakt u een ExpressRoute-circuit met *Equinix* als serviceprovider. Het circuit maakt gebruik van een *Premium SKU*, met een bandbreedte van *50 Mbps* en de peeringlocatie *Washington DC-* . Persoonlijke peering wordt ingeschakeld met een primair en secundair subnet van *192.168.10.16/30* en *192.168.10.20/30*. Er wordt ook een virtueel netwerk gemaakt met een *High Performance ExpressRoute-gateway*.
 
 :::code language="json" source="~/quickstart-templates/101-expressroute-private-peering-vnet/azuredeploy.json":::
 
@@ -70,7 +70,7 @@ Zie [Azure-quickstartsjablonen](https://azure.microsoft.com/resources/templates/
 
 1. Selecteer **Kopiëren** in het vorige codeblok om het PowerShell-script te kopiëren.
 
-1. Klik met de rechtermuisknop op het shell-consoledeelvenster en selecteer **Plakken** .
+1. Klik met de rechtermuisknop op het shell-consoledeelvenster en selecteer **Plakken**.
 
 1. Voer de waarden in.
 
@@ -92,11 +92,11 @@ Azure PowerShell wordt gebruikt om de sjabloon te implementeren. Naast Azure Pow
 
 1. De resourcegroep moet de volgende resources bevatten die hier worden weergegeven:
 
-     :::image type="content" source="./media/quickstart-create-expressroute-vnet/expressroute-resource-group.png" alt-text="Uitvoer van ExpressRoute Resource Manager-sjabloon PowerShell-implementatie":::
+     :::image type="content" source="./media/quickstart-create-expressroute-vnet/expressroute-resource-group.png" alt-text="Resourcegroep voor implementatie van ExpressRoute":::
 
 1. Selecteer het ExpressRoute-circuit **er-ck01** om te controleren of de status van het circuit **Ingeschakeld** is, de status van de provider **Niet ingericht** is en de status voor persoonlijke peering **Ingericht** is.
 
-    :::image type="content" source="./media/quickstart-create-expressroute-vnet/expressroute-circuit.png" alt-text="Uitvoer van ExpressRoute Resource Manager-sjabloon PowerShell-implementatie":::
+    :::image type="content" source="./media/quickstart-create-expressroute-vnet/expressroute-circuit.png" alt-text="ExpressRoute-implementatiecircuit":::
 
 > [!NOTE]
 > U moet de provider aanroepen om het inrichtingsproces te voltooien voordat u het virtuele netwerk kunt koppelen aan het circuit.

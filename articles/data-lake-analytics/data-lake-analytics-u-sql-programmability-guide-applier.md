@@ -6,13 +6,13 @@ ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 06/30/2017
 ms.openlocfilehash: 0842a2cfa021ef8ea45c19ec885c7dec371730de
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96512570"
 ---
-# <a name="use-user-defined-applier"></a>Door de gebruiker gedefinieerde Applier gebruiken 
+# <a name="use-user-defined-applier"></a>Door de gebruiker gedefinieerde toepassing gebruiken 
 
 ## <a name="u-sql-udo-user-defined-applier"></a>U-SQL UDO: door de gebruiker gedefinieerde Applier
 Met een door de gebruiker gedefinieerde U-SQL-Applier kunt u een aangepaste C#-functie aanroepen voor elke rij die wordt geretourneerd door de buitenste tabel expressie van een query. De juiste invoer wordt geëvalueerd voor elke rij van de linkerkant invoer en de rijen die worden geproduceerd, worden gecombineerd voor de uiteindelijke uitvoer. De lijst met kolommen die worden geproduceerd door de operator APPLY, is de combi natie van de set kolommen aan de linkerkant en de juiste invoer.

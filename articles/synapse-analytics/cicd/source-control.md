@@ -9,10 +9,10 @@ ms.date: 11/20/2020
 ms.author: liud
 ms.reviewer: pimorano
 ms.openlocfilehash: 3564609d869bef090f0a3db5e6040ba0f5ad80b0
-ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98796958"
 ---
 # <a name="source-control-in-azure-synapse-studio"></a>Broncode beheer in azure Synapse Studio
@@ -122,7 +122,7 @@ In het deel venster configuratie worden de volgende instellingen voor de GitHub-
 
 Als u verbinding wilt maken met een GitHub-organisatie, moet de organisatie toestemming geven voor Synapse Studio. Een gebruiker met beheerders machtigingen voor de organisatie moet de onderstaande stappen uitvoeren.
 
-#### <a name="connecting-to-github-for-the-first-time"></a>Voor de eerste keer verbinding maken met GitHub
+#### <a name="connecting-to-github-for-the-first-time"></a>De eerste keer verbinding maken met GitHub
 
 Als u voor de eerste keer verbinding maakt met GitHub vanuit Synapse Studio, volgt u deze stappen om verbinding te maken met een GitHub-organisatie.
 

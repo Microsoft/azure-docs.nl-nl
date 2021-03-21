@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 09/24/2018
 ms.openlocfilehash: 2343800f8801105ca75f285972b441ecb027d1a0
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92793242"
 ---
 # <a name="provision-and-catalog-new-tenants-using-the--application-per-tenant-saas-pattern"></a>Nieuwe tenants inrichten en catalogiseren met behulp van het SaaS-patroon voor een toepassing per tenant
@@ -45,7 +45,7 @@ De tenantcatalogus bevat een toewijzing tussen een tenant-id en een tenantdataba
 
 ## <a name="elastic-database-client-library"></a>Elastic Database Client Library
 
-In de Wingtip-voorbeeldtoepassing wordt de catalogus geïmplementeerd door de shard-beheerfuncties van [Elastic Database Client Library](elastic-database-client-library.md) (EDCL).  Met de bibliotheek kan een toepassing een shard-toewijzing maken, beheren en gebruiken die wordt opgeslagen in een database. In het Wingtip Tickets-voorbeeld wordt de catalogus opgeslagen in de database van de *tenantcatalogus* .  De shard wijst een tenantsleutel toe aan de shard (database) waarin de gegevens van de tenant zijn opgeslagen.  Met EDCL-functies wordt een *globale shard-toewijzing* beheerd die is opgeslagen in tabellen in de database van de *tenantcatalogus* en een *lokale shard-toewijzing* die in elke shard is opgeslagen.
+In de Wingtip-voorbeeldtoepassing wordt de catalogus geïmplementeerd door de shard-beheerfuncties van [Elastic Database Client Library](elastic-database-client-library.md) (EDCL).  Met de bibliotheek kan een toepassing een shard-toewijzing maken, beheren en gebruiken die wordt opgeslagen in een database. In het Wingtip Tickets-voorbeeld wordt de catalogus opgeslagen in de database van de *tenantcatalogus*.  De shard wijst een tenantsleutel toe aan de shard (database) waarin de gegevens van de tenant zijn opgeslagen.  Met EDCL-functies wordt een *globale shard-toewijzing* beheerd die is opgeslagen in tabellen in de database van de *tenantcatalogus* en een *lokale shard-toewijzing* die in elke shard is opgeslagen.
 
 EDCL-functies kunnen worden gebruikt vanuit toepassingen of PowerShell-scripts om de vermeldingen in de shard-toewijzing te maken en beheren. Andere EDCL-functies kunnen worden gebruikt om de set shards op te halen of om verbinding te maken met de juiste database voor de opgegeven tenantsleutel.
 
@@ -82,10 +82,10 @@ In deze taak leert u hoe u de catalogus inricht die wordt gebruikt voor het regi
 * **De catalogusdatabase inrichten** met behulp van een Azure-resourcebeheersjabloon. De database wordt geïnitialiseerd door een BACPAC-bestand te importeren.
 * **Registreer de voorbeeldtenant-apps** die u eerder hebt geïmplementeerd.  Elke tenant wordt geregistreerd met behulp van een sleutel die is gemaakt op basis van een hash van de tenantnaam.  De naam van de tenant wordt ook opgeslagen in een uitbreidingstabel in de catalogus.
 
-1. Open *...\Learning Modules\UserConfig.psm* in PowerShell ISE en werk de waarde **\<user\>** bij naar de waarde die u hebt gebruikt bij het implementeren van de drie voorbeeldtoepassingen.  **Sla het bestand op** .
-1. Open *...\Learning Modules\ProvisionTenants\Demo-ProvisionAndCatalog.ps1* in PowerShell ISE en stel **$Scenario in op 1** . Implementeer de tenantcatalogus en registreer de vooraf gedefinieerde tenants.
+1. Open *...\Learning Modules\UserConfig.psm* in PowerShell ISE en werk de waarde **\<user\>** bij naar de waarde die u hebt gebruikt bij het implementeren van de drie voorbeeldtoepassingen.  **Sla het bestand op**.
+1. Open *...\Learning Modules\ProvisionTenants\Demo-ProvisionAndCatalog.ps1* in PowerShell ISE en stel **$Scenario in op 1**. Implementeer de tenantcatalogus en registreer de vooraf gedefinieerde tenants.
 
-1. Voeg een onderbrekingspunt toe door de cursor ergens op de regel met `& $PSScriptRoot\New-Catalog.ps1` te plaatsen en druk op **F9** .
+1. Voeg een onderbrekingspunt toe door de cursor ergens op de regel met `& $PSScriptRoot\New-Catalog.ps1` te plaatsen en druk op **F9**.
 
     ![een onderbrekingspunt voor tracering instellen](./media/saas-standaloneapp-provision-and-catalog/breakpoint.png)
 
@@ -99,10 +99,10 @@ Zodra het script is voltooid, bestaat de catalogus en worden alle tenantvoorbeel
 Bekijk nu de resources die u hebt gemaakt.
 
 1. Open [Azure Portal](https://portal.azure.com/) en blader naar de resourcegroepen.  Open de resourcegroep **wingtip-sa-catalog-\<user\>** en noteer de catalogusserver en de database.
-1. Open de database in de portal en selecteer *Data Explorer* in het menu aan de linkerkant.  Klik op de aanmeldingsopdracht en voer het wachtwoord, **P\@ssword1** , in.
+1. Open de database in de portal en selecteer *Data Explorer* in het menu aan de linkerkant.  Klik op de aanmeldingsopdracht en voer het wachtwoord, **P\@ssword1**, in.
 
 
-1. Bekijk het schema van de *tenantcatalogusdatabase* .
+1. Bekijk het schema van de *tenantcatalogusdatabase*.
    * De objecten in het `__ShardManagement`-schema worden allemaal verstrekt door Elastic Database Client Library.
    * De `Tenants`-tabel en de `TenantsExtended`-weergave zijn uitbreidingen die in het voorbeeld zijn toegevoegd, en laten zien hoe u de catalogus kunt uitbreiden voor extra waarde.
 1. Voer de query `SELECT * FROM dbo.TenantsExtended` uit.
@@ -120,12 +120,12 @@ In deze taak leert u hoe u één tenanttoepassing kunt inrichten. U gaat het vol
 
 * **Maak een nieuwe resourcegroep** voor de tenant.
 * **Richt de toepassing en database** in de nieuwe resourcegroep in met behulp van een Azure-resourcebeheersjabloon.  Deze actie omvat het initialiseren van de database met algemene schema- en referentiegegevens door een BACPAC-bestand te importeren.
-* **Initialiseer de database met basisinformatie over de tenant** . Deze actie omvat het opgeven van het locatietype, op basis waarvan de foto wordt gemaakt die wordt gebruikt als achtergrond van de evenementenwebsite.
-* **Registreer de database in de catalogusdatabase** .
+* **Initialiseer de database met basisinformatie over de tenant**. Deze actie omvat het opgeven van het locatietype, op basis waarvan de foto wordt gemaakt die wordt gebruikt als achtergrond van de evenementenwebsite.
+* **Registreer de database in de catalogusdatabase**.
 
-1. Open *...\Learning Modules\ProvisionTenants\Demo-ProvisionAndCatalog.ps1* in PowerShell ISE en stel **$Scenario in op 2** . Implementeer de tenantcatalogus en registreer de vooraf gedefinieerde tenants
+1. Open *...\Learning Modules\ProvisionTenants\Demo-ProvisionAndCatalog.ps1* in PowerShell ISE en stel **$Scenario in op 2**. Implementeer de tenantcatalogus en registreer de vooraf gedefinieerde tenants
 
-1. Voeg een onderbrekingspunt aan het script toe door de cursor ergens op regel 49 (die met `& $PSScriptRoot\New-TenantApp.ps1`) te plaatsen en druk op **F9** .
+1. Voeg een onderbrekingspunt aan het script toe door de cursor ergens op regel 49 (die met `& $PSScriptRoot\New-TenantApp.ps1`) te plaatsen en druk op **F9**.
 1. Voer het script uit door op **F5** te drukken.
 1.  Wanneer de uitvoering van het script stopt bij het onderbrekingspunt, drukt u op **F11** om het New-Catalog.ps1-script stapsgewijs uit te voeren.
 1.  Bekijk de uitvoering van het script via opties F10 en F11 van het menu Fouten opsporen om aangeroepen functies over te slaan of stapsgewijs uit te voeren.

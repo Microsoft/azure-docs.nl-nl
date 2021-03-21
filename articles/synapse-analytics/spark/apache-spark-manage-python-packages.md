@@ -9,12 +9,12 @@ ms.date: 02/26/2020
 ms.author: midesa
 ms.reviewer: jrasnick
 ms.subservice: spark
-ms.openlocfilehash: 4bb323e0e8f72456b6a522ede9a98d193e1c3c7e
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.openlocfilehash: 2d6ac02402414f096a46fec0340c3074d8e1784a
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102098771"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104586638"
 ---
 # <a name="manage-python-libraries-for-apache-spark-in-azure-synapse-analytics"></a>Python-bibliotheken voor Apache Spark beheren in azure Synapse Analytics
 
@@ -68,13 +68,13 @@ In dit voor beeld worden de afhankelijkheden Channel en Conda/PyPI opgegeven.
 ```
 name: stats2
 channels:
-  - defaults
+- defaults
 dependencies:
-  - bokeh=0.9.2
-  - numpy=1.9.*
-  - flask
-  - pip:
-    - matplotlib
+- bokeh
+- numpy
+- pip:
+  - matplotlib
+  - koalas==1.7.0
 ```
 Zie [een omgeving maken vanuit een environment. yml-bestand](https://docs.conda.io/projects/conda/latest/user-guide/tasks/manage-environments.html#creating-an-environment-file-manually)voor meer informatie over het maken van een omgeving vanuit deze omgeving. yml-bestand.
 
@@ -140,6 +140,11 @@ Werkruimte pakketten toevoegen:
 
 ![Scherm afbeelding die de werkruimte pakketten markeert.](./media/apache-spark-azure-portal-add-libraries/studio-add-workspace-package.png "Werkruimte pakketten weer geven")
 
+>[!WARNING]
+>- Binnen Azure Synapse kan een Apache Spark groep gebruikmaken van aangepaste bibliotheken die zijn geüpload als werkruimte pakketten of worden geüpload binnen een bekend Azure Data Lake Storage pad. Beide opties kunnen echter niet gelijktijdig worden gebruikt binnen dezelfde Apache Spark groep. Als er met beide methoden pakketten worden opgegeven, worden alleen de wiel bestanden geïnstalleerd die zijn opgegeven in de lijst met werkruimte pakketten. 
+>
+>- Zodra werkruimte pakketten (preview) worden gebruikt om pakketten te installeren op een bepaalde Apache Spark pool, is er een beperking dat u geen pakketten meer kunt opgeven met het pad naar het opslag account in dezelfde groep.  
+
 ### <a name="storage-account"></a>Storage-account
 Aangepaste, ingebouwde wiel pakketten kunnen worden geïnstalleerd op de Apache Spark groep door alle wiel bestanden te uploaden naar het Azure Data Lake Storage-account (Gen2) dat is gekoppeld aan de werk ruimte Synapse. 
 
@@ -149,13 +154,12 @@ De bestanden moeten worden geüpload naar het volgende pad in de standaard conta
 abfss://<file_system>@<account_name>.dfs.core.windows.net/synapse/workspaces/<workspace_name>/sparkpools/<pool_name>/libraries/python/
 ```
 
-Mogelijk moet u de ```python``` map in de map toevoegen ```libraries``` als deze nog niet bestaat.
+>[!WARNING]
+> In sommige gevallen moet u het bestandspad wellicht maken op basis van de bovenstaande structuur als deze nog niet bestaat. Mogelijk moet u de ```python``` map in de ```libraries``` map toevoegen als deze nog niet bestaat.
 
 > [!IMPORTANT]
 > Als u aangepaste bibliotheken wilt installeren met behulp van de Azure DataLake-opslag methode, moet u de machtigingen voor de **opslag-BLOB gegevens Inzender** of de **blobgegevens eigenaar** hebben voor het primaire Gen2-opslag account dat is gekoppeld aan de Azure Synapse Analytics-werk ruimte.
 
->[!WARNING]
-> Bij het leveren van aangepaste wiel bestanden kunnen gebruikers geen wiel bestanden opgeven in zowel het opslag account als in de interface van de werkruimte bibliotheek. Als beide zijn opgegeven, worden alleen de wiel bestanden geïnstalleerd die zijn opgegeven in de lijst met werkruimte pakketten. 
 
 ## <a name="session-scoped-packages-preview"></a>Pakketten met sessie bereik (preview-versie)
 Naast pool level pakketten kunt u ook bibliotheken met sessie bereik aan het begin van een notitieblok sessie opgeven.  Met bibliotheken met sessie bereik kunt u aangepaste python-omgevingen opgeven en gebruiken in een notitieblok sessie. 

@@ -8,10 +8,10 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 08/22/2019
 ms.openlocfilehash: 1fc21b6338accef8e22b2e41ad2017d24ab8bd38
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101710461"
 ---
 # <a name="cognitive-services-and-machine-learning"></a>Cognitive Services en machine learning
@@ -129,7 +129,7 @@ Cognitive Services die export modellen bieden voor andere machine learning-hulpp
 |--|--|
 |[Custom Vision](./custom-vision-service/overview.md)|[Exporteren](./custom-vision-service/export-model-python.md) voor tensor flow voor Android, CoreML voor IOS11, ONNX voor Windows ml|
 
-## <a name="learn-more"></a>Lees meer
+## <a name="learn-more"></a>Meer informatie
 
 * [Architectuur handleiding-wat zijn de machine learning producten van micro soft?](/azure/architecture/data-guide/technology-choices/data-science-and-machine-learning)
 * [Machine learning-Inleiding tot diep gaande informatie versus machine learning](../machine-learning/concept-deep-learning-vs-machine-learning.md)

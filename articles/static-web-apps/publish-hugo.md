@@ -8,10 +8,10 @@ ms.topic: tutorial
 ms.date: 05/08/2020
 ms.author: aapowell
 ms.openlocfilehash: 4539c32a367bb0974212d989176a96b530da21a4
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100652327"
 ---
 # <a name="tutorial-publish-a-hugo-site-to-azure-static-web-apps-preview"></a>Zelfstudie: Een Hugo-site publiceren in Azure Static Web Apps Preview
@@ -99,7 +99,7 @@ De volgende stappen laten zien hoe u een nieuwe statische site-app maakt en deze
 
 1. Ga naar [Azure Portal](https://portal.azure.com)
 1. Klik op **Een resource maken**
-1. Zoek **Static Web Apps**
+1. Ga naar **Static Web Apps**
 1. Klik op **Static Web Apps (preview)**
 1. Klik op **Maken**.
 

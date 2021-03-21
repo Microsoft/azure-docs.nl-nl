@@ -9,10 +9,10 @@ ms.author: shasb
 description: Beschrijft het Arc-validatie programma voor Kubernetes-distributies
 keywords: Kubernetes, Arc, azure, K8s, validatie
 ms.openlocfilehash: 819df906add6275997e01fab310fe8dd57a87b51
-ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102121368"
 ---
 # <a name="azure-arc-validation-program"></a>Azure Arc-validatie programma

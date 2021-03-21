@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 02/28/2020
 ms.author: banders
-ms.openlocfilehash: 1450f03ae72e79daca5a5ae2c04506e6bee5180b
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 2f90d3698156e27780bc57e0ac9355b6811d20d3
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101672283"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104607412"
 ---
 # <a name="save-costs-with-azure-dedicated-host-reservations"></a>Bespaar kosten met Azure dedicated host Reservations
 
@@ -29,7 +29,7 @@ Ga eerst naar de ondersteunde grootten voor [virtuele Windows-machines](./sizes.
 
 Controleer vervolgens of het wordt ondersteund op met Azure toegewezen hosts. De pagina prijs informatie voor [Azure dedicated hosts](https://aka.ms/ADHPricing) bevat de volledige lijst met gereserveerde hosts sku's, hun CPU-gegevens en diverse prijs opties (inclusief gereserveerde instanties).
 
-Mogelijk vindt u verschillende Sku's die u de VM-serie ondersteunen (met verschillende typen). Identificeer de beste SKU door de capaciteit van de host te vergelijken (aantal Vcpu's). Houd er rekening mee dat u de reserve ring kunt Toep assen op meerdere toegewezen hosts Sku's die dezelfde VM-serie ondersteunen (bijvoorbeeld DSv3_Type1 en DSv3_Type2), maar niet in de verschillende VM-reeksen (zoals DSv3 en ESv3).
+Mogelijk vindt u verschillende Sku's die de geselecteerde VM-serie ondersteunen (met verschillende typen). Identificeer de beste SKU door de capaciteit van de host te vergelijken (aantal Vcpu's). Houd er rekening mee dat u de reserve ring kunt Toep assen op meerdere toegewezen hosts Sku's die dezelfde VM-serie ondersteunen (bijvoorbeeld DSv3_Type1 en DSv3_Type2), maar niet in de verschillende VM-reeksen (zoals DSv3 en ESv3).
 
 
 

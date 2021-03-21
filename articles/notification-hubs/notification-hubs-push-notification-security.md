@@ -17,10 +17,10 @@ ms.author: sethm
 ms.reviewer: thsomasu
 ms.lastreviewed: 09/23/2019
 ms.openlocfilehash: 07600b1fe0cb7420989fbbfbe55c2f1a4197d2fc
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100548247"
 ---
 # <a name="notification-hubs-security"></a>Notification Hubs beveiliging
@@ -48,7 +48,7 @@ De sleutel met **listen** -toegang kan een client-app voor elk label registreren
 
 Net als andere entiteiten zijn notification hub-bewerkingen toegestaan voor drie beveiligings claims: **Luis teren**, **verzenden** en **beheren**.
 
-| Claim   | Description                                          | Toegestane bewerkingen |
+| Claim   | Beschrijving                                          | Toegestane bewerkingen |
 | ------- | ---------------------------------------------------- | ------------------ |
 | Luisteren  | Enkelvoudige registraties maken/bijwerken, lezen en verwijderen | Registratie maken/bijwerken<br><br>Registratie lezen<br><br>Alle registraties voor een ingang lezen<br><br>Registratie verwijderen |
 | Verzenden    | Berichten verzenden naar de notification hub                | Bericht verzenden |
@@ -64,7 +64,7 @@ Gebruik het toegangs beleid op naam ruimte niveau (referenties) voor bewerkingen
 
 Ga als volgt te werk om een nieuwe beveiligings claim te maken of om bestaande SAS-sleutels weer te geven:
 
-1. Meld u aan bij de Azure-portal.
+1. Meld u aan bij Azure Portal.
 2. Selecteer **Alle resources**.
 3. Selecteer de naam van de notification hub waarvoor u de claim wilt maken of Bekijk de SAS-sleutel.
 4. Selecteer in het linkermenu **toegangs beleid**.

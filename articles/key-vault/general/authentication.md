@@ -8,10 +8,10 @@ ms.service: key-vault
 ms.subservice: general
 ms.topic: how-to
 ms.openlocfilehash: ed83d52d19df126ef9b0e68f984f88f5dfd40c42
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99492936"
 ---
 # <a name="authenticate-to-azure-key-vault"></a>Verifiëren bij Azure Key Vault
@@ -49,7 +49,7 @@ Key Vault werkt met twee afzonderlijke machtigingsniveaus:
     Raadpleeg de volgende artikelen als u toegangsbeleid wilt toewijzen:
 
     - [Azure Portal](assign-access-policy-portal.md)
-    - [Azure CLI](assign-access-policy-cli.md)
+    - [Azure-CLI](assign-access-policy-cli.md)
     - [Azure PowerShell](assign-access-policy-portal.md)
 
 - **Rolmachtigingen** bepalen of een gebruiker, groep of service-principal is gemachtigd om een Key Vault-resource te maken, verwijderen of anderszins te beheren (soms ook wel bewerkingen op het beheervlak genoemd). Dergelijke rollen worden meestal alleen verleend aan beheerders.
@@ -57,7 +57,7 @@ Key Vault werkt met twee afzonderlijke machtigingsniveaus:
     Raadpleeg de volgende artikelen als u rollen wilt toewijzen en beheren:
 
     - [Azure Portal](../../role-based-access-control/role-assignments-portal.md)
-    - [Azure CLI](../../role-based-access-control/role-assignments-cli.md)
+    - [Azure-CLI](../../role-based-access-control/role-assignments-cli.md)
     - [Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md)
 
     Key Vault biedt momenteel alleen ondersteuning voor de rol [Inzender](../../role-based-access-control/built-in-roles.md#key-vault-contributor), waarmee beheerbewerkingen in Key Vault-resources zijn toegestaan. Een aantal andere rollen is momenteel beschikbaar als preview-versie. U kunt ook aangepaste rollen maken, zoals beschreven in [Aangepaste Azure-rollen](../../role-based-access-control/custom-roles.md).

@@ -2,13 +2,13 @@
 title: Concepten-updates en upgrades voor Privécloud
 description: Meer informatie over de belangrijkste upgrade processen en functies in de Azure VMware-oplossing.
 ms.topic: conceptual
-ms.date: 02/16/2021
-ms.openlocfilehash: d93453cbf6ad744844a04cd298cc18ad181cc0b0
-ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.date: 03/17/2021
+ms.openlocfilehash: 9810de40944f70a4efb7ec81d17868ffdf256c7d
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100634989"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104586145"
 ---
 # <a name="azure-vmware-solution-private-cloud-updates-and-upgrades"></a>Updates en upgrades voor persoonlijke Clouds in azure VMware-oplossing
 
@@ -53,7 +53,9 @@ Azure VMware-oplossing maakt ook een configuratie back-up van de volgende VMware
 
 In het geval van een storing kan de Azure VMware-oplossing deze onderdelen herstellen vanuit de back-up van de configuratie. 
 
-Voor meer informatie over de versies van VMware-software raadpleegt u het [concept artikel private clouds and clusters](concepts-private-clouds-clusters.md) en de [Veelgestelde vragen](faq.yml).
+## <a name="vmware-software-versions"></a>VMware-software versies
+[!INCLUDE [vmware-software-versions](includes/vmware-software-versions.md)]
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

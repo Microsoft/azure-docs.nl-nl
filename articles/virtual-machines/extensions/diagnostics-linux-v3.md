@@ -9,10 +9,10 @@ ms.author: amjads
 ms.collection: linux
 ms.date: 12/13/2018
 ms.openlocfilehash: d063aec3b093f00640d909a6ce3c2cde6d2d2420
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102547421"
 ---
 # <a name="use-linux-diagnostic-extension-30-to-monitor-metrics-and-logs"></a>Linux Diagnostic extension 3,0 gebruiken voor het bewaken van metrische gegevens en Logboeken
@@ -22,7 +22,7 @@ In dit document wordt versie 3,0 en nieuwer van de Linux Diagnostic-extensie bes
 > [!IMPORTANT]
 > Zie [dit document](/previous-versions/azure/virtual-machines/linux/classic/diagnostic-extension-v2)voor meer informatie over versie 2,3 en ouder.
 
-## <a name="introduction"></a>Introductie
+## <a name="introduction"></a>Inleiding
 
 De diagnostische extensie van Linux helpt gebruikers bij het controleren van de status van een virtuele Linux-machine die wordt uitgevoerd op Microsoft Azure. Het heeft de volgende mogelijkheden:
 

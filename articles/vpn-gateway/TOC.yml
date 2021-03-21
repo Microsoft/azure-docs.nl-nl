@@ -262,6 +262,8 @@
     - name: Problemen oplossen
       href: vpn-gateway-troubleshoot.md
       items:
+        - name: Problemen met Azure VPN Gateway oplossen met Diagnostische logboeken
+          href: troubleshoot-vpn-with-azure-diagnostics.md
         - name: Door de community voorgestelde VPN- of firewallinstellingen voor apparaten
           href: vpn-gateway-third-party-settings.md
         - name: VNet- of VPN-verbindingen configureren en valideren

@@ -5,13 +5,13 @@ author: lfittl-msft
 ms.author: lufittl
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 03/05/2021
-ms.openlocfilehash: d223d2c6a83b1389cd70344efdb48c357dda4ac4
-ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
+ms.date: 03/17/2021
+ms.openlocfilehash: 998154376895d8bcfc7cf36665a6a36f5c43e3b4
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102454582"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104594985"
 ---
 # <a name="postgresql-extensions-in-azure-database-for-postgresql---flexible-server"></a>PostgreSQL-extensies in Azure Database for PostgreSQL-flexibele server
 
@@ -128,7 +128,7 @@ De volgende uitbrei dingen zijn beschikbaar in Azure Database for PostgreSQL fle
 
 
 ## <a name="dblink-and-postgres_fdw"></a>dblink en postgres_fdw
-met [dblink](https://www.postgresql.org/docs/current/contrib-dblink-function.html) en [postgres_fdw](https://www.postgresql.org/docs/current/postgres-fdw.html) kunt u verbinding maken met een postgresql-server of een andere Data Base op dezelfde server. De verzendende server moet uitgaande verbindingen met de ontvangende server toestaan. De ontvangende server moet verbindingen van de verzendende server toestaan.
+met [dblink](https://www.postgresql.org/docs/current/contrib-dblink-function.html) en [postgres_fdw](https://www.postgresql.org/docs/current/postgres-fdw.html) kunt u verbinding maken met een postgresql-server of een andere Data Base op dezelfde server. Flexibele server ondersteunt zowel binnenkomende als uitgaande verbindingen met een wille keurige PostgreSQL-server. De verzendende server moet uitgaande verbindingen met de ontvangende server toestaan. Op dezelfde manier moet de ontvangende server verbindingen met de verzendende server toestaan. 
 
 U wordt aangeraden uw servers te implementeren met [VNet-integratie](concepts-networking.md) als u van plan bent om deze twee uitbrei dingen te gebruiken. Standaard maakt VNet-integratie verbindingen mogelijk tussen servers in het VNET. U kunt er ook voor kiezen om de toegang aan te passen met [VNet-netwerk beveiligings groepen](../../virtual-network/manage-network-security-group.md) .
 

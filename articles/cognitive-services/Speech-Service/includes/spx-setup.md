@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/15/2020
 ms.author: v-demjoh
-ms.openlocfilehash: c939c1d061f4e01a00bc2b886056e42f0b059ad5
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.openlocfilehash: a995a110c4f777603e5b0273b6025cd68fe55b67
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102511121"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "102532557"
 ---
 ## <a name="download-and-install"></a>Downloaden en installeren
 
@@ -118,7 +118,7 @@ Als u de opdracht `spx` wilt gebruiken in een container, moet u altijd de volled
 In Windows wordt bijvoorbeeld met deze opdracht de sleutel ingesteld:
 
 ```console
-docker run -it -v c:\spx-data:/data --rm msftspeech/spx config --set @key SUBSCRIPTION-KEY
+docker run -it -v c:\spx-data:/data --rm msftspeech/spx config @key --set SUBSCRIPTION-KEY
 ```
 
 Voor uitgebreidere interactie met het opdrachtregelprogramma kunt u een container starten met een interactieve bash shell door een beginpuntparameter toe te voegen.
@@ -171,8 +171,8 @@ Als u de Speech CLI wilt gaan gebruiken, moet u de sleutel voor het spraakabonne
 Zodra u uw abonnementssleutel en regio-id hebt (bijvoorbeeld `eastus`, `westus`), voert u de volgende opdrachten uit.
 
 ```console
-spx config --set @key SUBSCRIPTION-KEY
-spx config --set @region REGION
+spx config @key --set SUBSCRIPTION-KEY
+spx config @region --set REGION
 ```
 
 Uw abonnementsverificatie wordt nu opgeslagen voor toekomstige SPX-aanvragen. Als u een van deze opgeslagen waarden wilt verwijderen, voert u `spx config @region --clear` of `spx config @key --clear` uit.

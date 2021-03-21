@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 04/13/2020
 ms.author: jingwang
 ms.openlocfilehash: 00c28a9ede01a74f4ae64109d277276050047461
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100653761"
 ---
 # <a name="store-credential-in-azure-key-vault"></a>Referenties opslaan in Azure Key Vault
@@ -40,8 +40,8 @@ De volgende eigenschappen worden ondersteund voor Azure Key Vault gekoppelde ser
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type moet worden ingesteld op: **AzureKeyVault**. | Yes |
-| baseUrl | Geef de Azure Key Vault URL op. | Yes |
+| type | De eigenschap type moet worden ingesteld op: **AzureKeyVault**. | Ja |
+| baseUrl | Geef de Azure Key Vault URL op. | Ja |
 
 **Gebruikers interface voor ontwerpen gebruiken:**
 
@@ -73,10 +73,10 @@ De volgende eigenschappen worden ondersteund wanneer u een veld configureert in 
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van het veld moet worden ingesteld op: **AzureKeyVaultSecret**. | Yes |
-| secretName | De naam van het geheim in Azure Key Vault. | Yes |
-| secretVersion | De versie van het geheim in Azure Key Vault.<br/>Als u niets opgeeft, wordt altijd de meest recente versie van het geheim gebruikt.<br/>Als deze is opgegeven, wordt de opgegeven versie weer gegeven.| No |
-| winkel | Verwijst naar een Azure Key Vault gekoppelde service die u gebruikt om de referentie op te slaan. | Yes |
+| type | De eigenschap type van het veld moet worden ingesteld op: **AzureKeyVaultSecret**. | Ja |
+| secretName | De naam van het geheim in Azure Key Vault. | Ja |
+| secretVersion | De versie van het geheim in Azure Key Vault.<br/>Als u niets opgeeft, wordt altijd de meest recente versie van het geheim gebruikt.<br/>Als deze is opgegeven, wordt de opgegeven versie weer gegeven.| Nee |
+| winkel | Verwijst naar een Azure Key Vault gekoppelde service die u gebruikt om de referentie op te slaan. | Ja |
 
 **Gebruikers interface voor ontwerpen gebruiken:**
 

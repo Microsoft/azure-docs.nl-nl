@@ -1,19 +1,19 @@
 ---
 title: Verbinding maken met een Synapse Studio met behulp van persoonlijke koppelingen
 description: In dit artikel leert u hoe u verbinding kunt maken met uw Azure Synapse Studio met behulp van persoonlijke koppelingen
-author: NanditaV
+author: nanditavalsan
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: security
 ms.date: 12/01/2020
 ms.author: NanditaV
 ms.reviewer: jrasnick
-ms.openlocfilehash: d49868199d8f9f2da97f08dd06f29afd8f553bd9
-ms.sourcegitcommit: 17e9cb8d05edaac9addcd6e0f2c230f71573422c
+ms.openlocfilehash: d39beca60264023c8eb7c1bc78cd1ac15c3b45dc
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "97586972"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104586621"
 ---
 # <a name="connect-to-azure-synapse-studio-using-azure-private-link-hubs"></a>Verbinding maken met Azure Synapse Studio met behulp van Azure private link hubs 
 
@@ -37,7 +37,9 @@ U moet uw virtuele Azure-netwerk verbinden met de Synapse private link hub-resou
 
 :::image type="content" source="./media/synapse-private-link-hubs/synapse-private-links-private-endpoint.png" alt-text="Scherm opname van de pagina verbindingen met privé-eind punten.":::
 
-Zorg ervoor dat u het resource type ' micro soft. Synapse/privateLinkHubs ' kiest op het tabblad Resource. :::image type="content" source="./media/synapse-private-link-hubs/synapse-private-links-resource-type.png" alt-text="scherm opname van de pagina ' een persoonlijk eind punt maken ' met ' resource type ' gemarkeerd.":::
+Zorg ervoor dat u het resource type ' micro soft. Synapse/privateLinkHubs ' kiest op het tabblad Resource.
+
+:::image type="content" source="./media/synapse-private-link-hubs/synapse-private-links-resource-type.png" alt-text="Scherm opname van de pagina ' Maak een persoonlijk eind punt ' met ' resource type ' gemarkeerd.":::
 
 Op het tabblad ' configuratie ' selecteert u ' privatelink.azuresynapse.net ' voor Privé-DNS zones bij het integreren met uw virtuele netwerk en particuliere DNS-zone.
 

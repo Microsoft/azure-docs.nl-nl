@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 02/09/2021
 ms.author: apimpm
 ms.openlocfilehash: 2bc9b1c5724fa7bab1fdf5ac9332d87ba03a6d11
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100545816"
 ---
 # <a name="use-named-values-in-azure-api-management-policies"></a>Benoemde waarden gebruiken in azure API Management-beleid
@@ -25,7 +25,7 @@ ms.locfileid: "100545816"
 
 ## <a name="value-types"></a>Waardetypen
 
-|Type  |Description  |
+|Type  |Beschrijving  |
 |---------|---------|
 |Spoor     |  Expressie voor letterlijke teken reeks of beleid     |
 |Geheim     |   Letterlijke teken reeks of beleids expressie die is versleuteld met API Management      |

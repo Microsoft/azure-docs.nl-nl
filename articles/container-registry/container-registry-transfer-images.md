@@ -4,12 +4,12 @@ description: Verzamelingen van installatie kopieën of andere artefacten overdra
 ms.topic: article
 ms.date: 10/07/2020
 ms.custom: ''
-ms.openlocfilehash: ab6657ecd335a6de8c6c93e3c2ff392ac54c487c
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 30e6c0fa7a33c7a83543fee297c582b15bce4c8b
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98935354"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104606766"
 ---
 # <a name="transfer-artifacts-to-another-registry"></a>Artefacten overdragen naar een ander REGI ster
 
@@ -426,7 +426,8 @@ az resource delete \
   * Niet alle artefacten, of geen, worden overgebracht. Controleer de spelling van artefacten in de export uitvoering en de naam van de BLOB in export-en import uitvoeringen. Bevestig dat u een maximum van 50 artefacten wilt overdragen.
   * De pijplijn uitvoering is mogelijk niet voltooid. Het uitvoeren van een export-of import bewerking kan enige tijd duren. 
   * Voor andere pijplijn problemen geeft u de [correlatie-id](../azure-resource-manager/templates/deployment-history.md) van de implementatie van de export-of import uitvoering op in het Azure container Registry-team.
-
+* **Problemen bij het ophalen van de installatie kopie in een fysiek geïsoleerde omgeving**
+  * Als u fouten ziet met betrekking tot afwijkende lagen of probeert mcr.microsoft.com te herstellen wanneer u een installatie kopie probeert te halen in een fysiek geïsoleerde omgeving, heeft uw installatie kopie manifest waarschijnlijk niet-verdeelde lagen. Vanwege de aard van een fysiek geïsoleerde omgeving zullen deze afbeeldingen vaak niet worden opgehaald. U kunt controleren of dit het geval is door het installatie kopie manifest te controleren op verwijzingen naar externe registers. Als dit het geval is, moet u de niet-gedistribueerde lagen naar uw open bare Cloud ACR pushen voordat u een export pijplijn uitvoert. Zie [Hoe kan ik push niet-distribueer bare lagen naar een REGI ster](./container-registry-faq.md#how-do-i-push-non-distributable-layers-to-a-registry) voor meer informatie over hoe u dit doet.
 
 ## <a name="next-steps"></a>Volgende stappen
 

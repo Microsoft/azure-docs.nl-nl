@@ -6,17 +6,17 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 08/11/2020
 ms.openlocfilehash: 5f694dec6deffde9efb32fefbab91ae3b7a44a2c
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99490857"
 ---
 # <a name="hdinsight-management-ip-addresses"></a>IP-adressen beheren met HDInsight
 
 In dit artikel vindt u de IP-adressen die worden gebruikt door Azure HDInsight Health and Management Services. Als u netwerk beveiligings groepen (Nsg's) of door de gebruiker gedefinieerde routes (Udr's) gebruikt, moet u mogelijk enkele van deze IP-adressen toevoegen aan de acceptatie lijst voor binnenkomend netwerk verkeer.
 
-## <a name="introduction"></a>Introductie
+## <a name="introduction"></a>Inleiding
  
 > [!Important]
 > In de meeste gevallen kunt u nu [service Tags](hdinsight-service-tags.md) gebruiken voor netwerk beveiligings groepen, in plaats van het hand matig toevoegen van IP-adressen. IP-adressen worden niet gepubliceerd voor nieuwe Azure-regio's en ze hebben alleen gepubliceerde service tags. De vaste IP-adressen voor beheer-IP-adressen zullen uiteindelijk worden afgeschaft.

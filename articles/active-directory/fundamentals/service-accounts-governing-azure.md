@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ee6ac21d67f32fbc61db19b348fc29cdf3ee9fd7
-ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
+ms.openlocfilehash: 7f540ab40a14af09aa8667860286021f572eb6f1
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/13/2021
-ms.locfileid: "103418178"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104587896"
 ---
 # <a name="governing-azure-ad-service-accounts"></a>Azure AD-service accounts beheren
 
@@ -32,7 +32,7 @@ Er zijn drie typen service accounts in Azure Active Directory (Azure AD): [behee
 
 Voordat u een service account maakt of een toepassing registreert, documenteert u de sleutel gegevens van het service account. Als er informatie wordt gedocumenteerd, is het eenvoudiger om het account effectief te controleren en te beheren. Het is raadzaam om de volgende gegevens te verzamelen en deze op te volgen in uw gecentraliseerde configuratie beheer database (CMDB).
 
-| Gegevens| Beschrijving| Details |
+| Gegevens| Description| Details |
 | - | - | - |
 | Eigenaar| Gebruiker of groep die verantwoordelijk is voor het beheren en bewaken van het service account.| Richt de eigenaar in met de vereiste machtigingen om het account te bewaken en implementeer een manier om problemen te verhelpen. Het probleem kan worden opgelost door de eigenaar of via een aanvraag naar de oplossing. |
 | Doel| Hoe het account wordt gebruikt.| Het service account toewijzen aan een specifieke service, toepassing of script. Vermijd het maken van service accounts voor meerdere gebruik. |
@@ -53,7 +53,7 @@ U wordt aangeraden de volgende procedures te gebruiken voor service account priv
 
 * Wijs geen ingebouwde rollen toe aan service accounts. Gebruik in plaats daarvan het [OAuth2 machtigings subsidie model voor Microsoft Graph](/graph/api/resources/oauth2permissiongrant),
 
-* Als aan de service-principal een bevoorrechte rol moet worden toegewezen, kunt u een [aangepaste rol](https://docs.microsoft.com/azure/active-directory/roles/custom-create) met specifieke, vereiste privileges op een tijdgebonden manier toewijzen.
+* Als aan de service-principal een bevoorrechte rol moet worden toegewezen, kunt u een [aangepaste rol](../roles/custom-create.md) met specifieke, vereiste privileges op een tijdgebonden manier toewijzen.
 
 * Neem geen service accounts op als leden van groepen met verhoogde machtigingen. 
 
@@ -63,10 +63,10 @@ U wordt aangeraden de volgende procedures te gebruiken voor service account priv
    of gebruik  
 `Get-AzureADServicePrincipal | % { Get-AzureADServiceAppRoleAssignment -ObjectId $_ }`
 
-* [Gebruik OAuth 2,0-bereiken](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent) om de functionaliteit te beperken die een service account kan gebruiken voor een bron.
+* [Gebruik OAuth 2,0-bereiken](../develop/v2-permissions-and-consent.md) om de functionaliteit te beperken die een service account kan gebruiken voor een bron.
 * Service-principals en beheerde identiteiten kunnen OAuth 2,0-bereiken gebruiken in een gedelegeerde context die een aangemelde gebruiker of als service account in de toepassings context imiteert. In de context van de toepassing is aangemeld.
 
-* Controleer de verzoeken om de scopes service accounts om te controleren of ze geschikt zijn. Bijvoorbeeld, als een account bezig is met het aanvragen van bestanden. ReadWrite. all, evalueren of het eigenlijk alleen file. Read. all heeft. Zie voor meer informatie over machtigingen verwijzen naar [Microsoft Graph machtigingen](https://docs.microsoft.com/graph/permissions-reference).
+* Controleer de verzoeken om de scopes service accounts om te controleren of ze geschikt zijn. Bijvoorbeeld, als een account bezig is met het aanvragen van bestanden. ReadWrite. all, evalueren of het eigenlijk alleen file. Read. all heeft. Zie voor meer informatie over machtigingen verwijzen naar [Microsoft Graph machtigingen](/graph/permissions-reference).
 
 * Zorg ervoor dat u de ontwikkelaar van de toepassing of API vertrouwt met de toegang die is aangevraagd voor uw resources.
 
@@ -78,9 +78,9 @@ U wordt aangeraden de volgende procedures te gebruiken voor service account priv
 
 Wanneer u een duidelijk inzicht hebt in het doel, het bereik en de benodigde machtigingen, maakt u uw service account. 
 
-[Beheerde identiteiten maken en gebruiken](https://docs.microsoft.com/azure/app-service/overview-managed-identity?tabs=dotnet)
+[Beheerde identiteiten maken en gebruiken](../../app-service/overview-managed-identity.md?tabs=dotnet)
 
-[Service-principals maken en gebruiken](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal)
+[Service-principals maken en gebruiken](../develop/howto-create-service-principal-portal.md)
 
 Gebruik waar mogelijk een beheerde identiteit. Als u een beheerde identiteit niet kunt gebruiken, gebruikt u een service-principal. Als u een Service-Principal niet kunt gebruiken en vervolgens alleen een Azure AD-gebruikers account gebruikt.
 
@@ -100,7 +100,7 @@ Proactief uw service accounts controleren om te controleren of de gebruiks patro
 
 * Met de Azure AD-Sign-In-Logboeken in de Azure AD-Portal.
 
-* Exporteren van de Azure AD-Sign-In logboeken naar [Azure Storage](https://docs.microsoft.com/azure/storage/), [Azure Event hubs](https://docs.microsoft.com/azure/event-hubs/)of [Azure monitor](https://docs.microsoft.com/azure/azure-monitor/logs/data-platform-logs).
+* Exporteren van de Azure AD-Sign-In logboeken naar [Azure Storage](../../storage/index.yml), [Azure Event hubs](../../event-hubs/index.yml)of [Azure monitor](../../azure-monitor/logs/data-platform-logs.md).
 
 
 ![Scherm opname met het aanmeldings scherm van de Service-Principal.](./media/securing-service-accounts/service-accounts-govern-azure-1.png)
@@ -172,7 +172,7 @@ Stel een beoordelings proces in om ervoor te zorgen dat service accounts regel m
 
 **De processen voor het ongedaan maken van de inrichting moeten de volgende taken bevatten.**
 
-1. Zodra de inrichting van de bijbehorende toepassing of het script is opheffen, controleert u de [aanmeldingen](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-sign-ins#sign-ins-report) en de toegang tot bronnen door het service account.
+1. Zodra de inrichting van de bijbehorende toepassing of het script is opheffen, controleert u de [aanmeldingen](../reports-monitoring/concept-sign-ins.md#sign-ins-report) en de toegang tot bronnen door het service account.
 
    * Als het account nog steeds actief is, bepaalt u hoe het wordt gebruikt voordat u de volgende stappen uitvoert.
  
@@ -196,4 +196,3 @@ Zie voor meer informatie over het beveiligen van Azure-service accounts:
 
  
 
- 

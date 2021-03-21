@@ -12,10 +12,10 @@ ms.date: 04/15/2020
 ms.author: travisw
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 92ab043d4fccbe0764e361eac6f71ef69a5963cb
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98939856"
 ---
 # <a name="implementing-voice-assistants-on-windows"></a>Spraak assistenten implementeren in Windows
@@ -78,7 +78,7 @@ De `ConversationalAgentSession` is een klasse in de Windows SDK waarmee uw app W
 
 ### <a name="listen-to-the-two-activation-signals-the-onbackgroundactivated-and-onsignaldetected"></a>Luister naar de twee activerings signalen: OnBackgroundActivated en OnSignalDetected
 
-Uw app wordt door Windows gesignaleerd wanneer een sleutel woord op een van de volgende twee manieren wordt gedetecteerd. Als de app niet actief is (dat wil zeggen: u hebt geen verwijzing naar een niet-afgestoten exemplaar van `ConversationalAgentSession` ), wordt uw app gestart en wordt de methode OnBackgroundActivated in het app.xaml.CS-bestand van uw toepassing aangeroepen. Als het veld gebeurtenis argumenten `BackgroundActivatedEventArgs.TaskInstance.Task.Name` overeenkomt met de teken reeks ' AgentBackgroundTrigger ', wordt het opstarten van de toepassing geactiveerd door de spraak activering. De toepassing moet deze methode overschrijven en een exemplaar van ConversationalAgentSession ophalen om te Signa leren op Windows die nu actief is. Wanneer de toepassing actief is, geeft Windows een waarschuwing over het optreden van een spraak activering met behulp van de `ConversationalAgentSession.OnSignalDetected` gebeurtenis. Voeg een gebeurtenis-handler toe aan deze gebeurtenis zodra u de hebt opgehaald `ConversationalAgentSession` .
+Uw app wordt door Windows gesignaleerd wanneer een sleutel woord op een van de volgende twee manieren wordt gedetecteerd. Als de app niet actief is (dat wil zeggen: u hebt geen verwijzing naar een niet-afgestoten exemplaar van `ConversationalAgentSession` ), wordt uw app gestart en wordt de OnBackgroundActivated-methode aangeroepen in het bestand app. xaml. CS van uw toepassing. Als het veld gebeurtenis argumenten `BackgroundActivatedEventArgs.TaskInstance.Task.Name` overeenkomt met de teken reeks ' AgentBackgroundTrigger ', wordt het opstarten van de toepassing geactiveerd door de spraak activering. De toepassing moet deze methode overschrijven en een exemplaar van ConversationalAgentSession ophalen om te Signa leren op Windows die nu actief is. Wanneer de toepassing actief is, geeft Windows een waarschuwing over het optreden van een spraak activering met behulp van de `ConversationalAgentSession.OnSignalDetected` gebeurtenis. Voeg een gebeurtenis-handler toe aan deze gebeurtenis zodra u de hebt opgehaald `ConversationalAgentSession` .
 
 ## <a name="keyword-verification"></a>Trefwoord verificatie
 
@@ -122,9 +122,9 @@ Wanneer een app een weer gave boven slot toont, wordt deze als ' kiosk modus ' b
 
 ### <a name="transitioning-above-lock"></a>Overgangen boven slot
 
-Een activering boven slot is vergelijkbaar met een activering onder vergren deling. Als er geen actieve instanties van de toepassing zijn, wordt een nieuw exemplaar gestart op de achtergrond en `OnBackgroundActivated` wordt de app.xaml.cs aangeroepen. Als er een exemplaar van de toepassing is, ontvangt die instantie een melding via de `ConversationalAgentSession.SignalDetected` gebeurtenis.
+Een activering boven slot is vergelijkbaar met een activering onder vergren deling. Als er geen actieve instanties van de toepassing zijn, wordt een nieuw exemplaar gestart op de achtergrond en `OnBackgroundActivated` in app. xaml. CS wordt aangeroepen. Als er een exemplaar van de toepassing is, ontvangt die instantie een melding via de `ConversationalAgentSession.SignalDetected` gebeurtenis.
 
-Als de toepassing nog niet wordt weer gegeven boven de vergren deling, moet deze worden aangeroepen `ConversationalAgentSession.RequestForegroundActivationAsync` . Hiermee wordt de `OnLaunched` methode in app.xaml.cs geactiveerd die moet worden gebruikt om naar de weer gave te navigeren die boven de vergren deling wordt weer gegeven.
+Als de toepassing nog niet wordt weer gegeven boven de vergren deling, moet deze worden aangeroepen `ConversationalAgentSession.RequestForegroundActivationAsync` . Hiermee wordt de `OnLaunched` methode in app. xaml. cs geactiveerd, die naar de weer gave moet navigeren die boven de vergren deling wordt weer gegeven.
 
 ### <a name="detecting-lock-screen-transitions"></a>Overgangen van vergrendelings scherm detecteren
 

@@ -8,10 +8,10 @@ author: amvin87
 ms.author: amitkh
 ms.reviewer: vanto
 ms.openlocfilehash: 0500f4143ad7cbdaaa8406af2b242e0d40b1caa2
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102227395"
 ---
 # <a name="tutorial---setup-a-three-node-always-on-availability-group-with-dh2i-dxenterprise-running-on-linux-based-azure-virtual-machines"></a>Zelf studie: een drie knoop punt altijd on-beschikbaarheids groep instellen met DH2i DxEnterprise die wordt uitgevoerd op op Linux gebaseerde Azure Virtual Machines

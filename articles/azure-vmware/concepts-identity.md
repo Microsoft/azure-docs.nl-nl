@@ -2,23 +2,23 @@
 title: 'Concepten: identiteit en toegang'
 description: Meer informatie over de identiteits-en toegangs concepten van de Azure VMware-oplossing
 ms.topic: conceptual
-ms.date: 02/02/2021
-ms.openlocfilehash: 68f4ce9136cca1cf9bf0824395e31704d8ed1a17
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.date: 03/18/2021
+ms.openlocfilehash: 07a7ac8093524ef4240b8f7607d649520b9439e1
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100364882"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104586247"
 ---
 # <a name="azure-vmware-solution-identity-concepts"></a>Concepten van Azure VMware-oplossings identiteiten
 
-Persoonlijke Clouds van Azure VMware-oplossingen worden ingericht met een vCenter-Server en NSX-T-beheer. U kunt vCenter gebruiken om werk belastingen van virtuele machines (VM) te beheren. U gebruikt de NSX-T-Manager om de privécloud uit te breiden.
+Persoonlijke Clouds van Azure VMware-oplossingen worden ingericht met een vCenter-Server en NSX-T-beheer. U kunt vCenter gebruiken om werk belastingen van virtuele machines (VM) te beheren. U gebruikt de NSX-T-Manager om het particuliere cloud netwerk te beheren en uit te breiden.
 
-Toegang en identiteits beheer gebruiken CloudAdmin groeps rechten voor vCenter en beperkte beheerders rechten voor NSX-T-beheer. Zo zorgt u ervoor dat uw persoonlijke Cloud platform automatisch wordt bijgewerkt met de nieuwste functies en patches.  Zie het [artikel concepten van upgrades][concepts-upgrades]van de privécloud voor meer informatie.
+De vCenter-toegang en identiteits beheer maakt gebruik van de buildin CloudAdmin. De NSX-T-beheerder gebruikt beperkte beheerders machtigingen. Dit is de aard van de beheerde service en zorgt ervoor dat uw persoonlijke Cloud platform wordt bijgewerkt met de nieuwste functies en patches zoals verwacht.  Zie het [artikel concepten van upgrades][concepts-upgrades]van de privécloud voor meer informatie.
 
 ## <a name="vcenter-access-and-identity"></a>toegang tot vCenter en identiteit
 
-De CloudAdmin-groep biedt de bevoegdheden in vCenter. U beheert de groep lokaal in vCenter. Een andere optie is de integratie van de single-aanmelding voor vCenter LDAP met Azure Active Directory. U schakelt deze integratie in nadat u uw privécloud hebt geïmplementeerd. 
+De vCenter-CloudAdmin-groep definieert en biedt de bevoegdheden in vCenter. Een andere optie is om toegang en identiteit te bieden via de integratie van single-aanmelden voor de vCenter LDAP met Azure Active Directory. U schakelt deze integratie in nadat u uw privécloud hebt geïmplementeerd. 
 
 De tabel bevat de **CloudAdmin** -en **CloudGlobalAdmin** -bevoegdheden.
 
@@ -49,7 +49,7 @@ De tabel bevat de **CloudAdmin** -en **CloudGlobalAdmin** -bevoegdheden.
 
 ## <a name="nsx-t-manager-access-and-identity"></a>Toegangs-en identiteits beheer NSX-T
 
-Gebruik het *beheerders* account om toegang te krijgen tot NSX-T-beheer. Het heeft volledige bevoegdheden en stelt u in staat om laag 1 (T1)-gateways, segmenten (logische switches) en alle services te maken en te beheren. De bevoegdheden bieden u toegang tot de gateway NSX-T-laag-0 (T0). Een wijziging in de T0-gateway kan leiden tot gedegradeerde netwerk prestaties of geen toegang tot de privécloud. Open een ondersteunings aanvraag in de Azure Portal om eventuele wijzigingen aan uw NSX-T T0-gateway aan te vragen.
+Gebruik het *beheerders* account om toegang te krijgen tot NSX-T-beheer. Het heeft volledige bevoegdheden en stelt u in staat om laag 1 (T1)-gateways, segmenten (logische switches) en alle services te maken en te beheren. Dit account biedt ook toegang tot de NSX-T-laag-0 (T0)-gateway. Wees mindfull over het aanbrengen van dergelijke wijzigingen, omdat dit kan leiden tot gedegradeerde netwerk prestaties of geen toegang tot de privécloud. Open een ondersteunings aanvraag in de Azure Portal om eventuele wijzigingen aan uw NSX-T T0-gateway aan te vragen.
   
 ## <a name="next-steps"></a>Volgende stappen
 

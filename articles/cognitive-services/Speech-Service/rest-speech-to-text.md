@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/08/2021
 ms.author: trbye
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 90a4ad068f332b198696d96bddbb794c820f42f5
-ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
+ms.openlocfilehash: 76b4a749bff94cbf218d3cd3c7d132eef119b7ef
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103564385"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104606902"
 ---
 # <a name="speech-to-text-rest-api"></a>REST API voor spraak-naar-tekst
 
@@ -51,7 +51,8 @@ Zie de [volledige naslag informatie](https://centralus.dev.cognitive.microsoft.c
 
 ## <a name="speech-to-text-rest-api-for-short-audio"></a>Spraak-naar-tekst REST API voor korte audio
 
-Als alternatief voor de [Speech-SDK](speech-sdk.md)kunt u met de speech-service spraak-naar-tekst converteren met behulp van een rest API. Elk toegankelijk eind punt is gekoppeld aan een regio. Voor uw toepassing is een abonnements sleutel vereist voor het eind punt dat u wilt gebruiken. De REST API voor korte audio is zeer beperkt en mag alleen worden gebruikt in gevallen van de spraak- [SDK](speech-sdk.md) .
+Als alternatief voor de [Speech-SDK](speech-sdk.md)kunt u met de speech-service spraak-naar-tekst converteren met behulp van een rest API.
+De REST API voor korte audio is zeer beperkt en mag alleen worden gebruikt in gevallen van de spraak- [SDK](speech-sdk.md) .
 
 Houd rekening met het volgende voordat u de spraak-naar-tekst REST API voor korte audio gebruikt:
 
@@ -95,7 +96,7 @@ Deze para meters kunnen worden opgenomen in de query reeks van de REST-aanvraag.
 
 Deze tabel bevat de vereiste en optionele kopteksten voor aanvragen voor spraak naar tekst.
 
-|Header| Beschrijving | Vereist/optioneel |
+|Header| Description | Vereist/optioneel |
 |------|-------------|---------------------|
 | `Ocp-Apim-Subscription-Key` | De abonnementssleutel voor de Speech-service. | Deze header of `Authorization` is vereist. |
 | `Authorization` | Een autorisatie token dat wordt voorafgegaan door het woord `Bearer` . Zie [Verificatie](#authentication) voor meer informatie. | Deze header of `Ocp-Apim-Subscription-Key` is vereist. |
@@ -341,3 +342,4 @@ Een typische reactie op erkenning met beoordeling van de uitspraak:
 - [Akoestische modellen aanpassen](./how-to-custom-speech-train-model.md)
 - [Taalmodellen aanpassen](./how-to-custom-speech-train-model.md)
 - [Vertrouwd raken met batch transcriptie](batch-transcription.md)
+

@@ -6,10 +6,10 @@ ms.date: 05/14/2019
 ms.custom: devx-track-csharp
 ms.reviewer: mbullwin
 ms.openlocfilehash: a22a0d112671019d73eb4c9a3853462e4e9c8c75
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98937357"
 ---
 # <a name="telemetry-channels-in-application-insights"></a>Telemetrie-kanalen in Application Insights
@@ -61,7 +61,7 @@ In het volgende gedeelte van [ApplicationInsights.config](configuration-with-app
 
 ### <a name="configuration-in-code-for-aspnet-applications"></a>Configuratie in code voor ASP.NET-toepassingen
 
-Met de volgende code wordt een ServerTelemetryChannel-exemplaar ingesteld met `StorageFolder` ingesteld op een aangepaste locatie. Voeg deze code toe aan het begin van de toepassing, meestal in de `Application_Start()` methode Global.aspx.cs.
+Met de volgende code wordt een ServerTelemetryChannel-exemplaar ingesteld met `StorageFolder` ingesteld op een aangepaste locatie. Voeg deze code toe aan het begin van de toepassing, meestal in `Application_Start()` Global. aspx. cs.
 
 ```csharp
 using Microsoft.ApplicationInsights.Extensibility;

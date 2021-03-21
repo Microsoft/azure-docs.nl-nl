@@ -11,12 +11,12 @@ services: iot-edge
 ms.custom:
 - amqp
 - mqtt
-ms.openlocfilehash: 1fc229b04ac317578e9e90686496cd081b279afd
-ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.openlocfilehash: fda69d582f26b0c9189898bb5c8b0004a1e47360
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103489752"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104722766"
 ---
 # <a name="prepare-to-deploy-your-iot-edge-solution-in-production"></a>De implementatie van uw IoT Edge oplossing in productie voorbereiden
 
@@ -178,7 +178,13 @@ Een tag is een docker-concept dat u kunt gebruiken om onderscheid te maken tusse
 
 Met tags kunt u ook updates op uw IoT Edge-apparaten afdwingen. Wanneer u een bijgewerkte versie van een module naar het container register pusht, verhoogt u de code. Vervolgens kunt u een nieuwe implementatie naar uw apparaten pushen met het label dat wordt verhoogd. De container engine herkent de oplopende code als een nieuwe versie en haalt de meest recente module versie naar uw apparaat.
 
-Voor een voor beeld van een label Conventie raadpleegt u [de IOT Edge runtime bijwerken](how-to-update-iot-edge.md#understand-iot-edge-tags) om te zien hoe IOT Edge gebruik maakt van roulerende Tags en specifieke tags om versies bij te houden.
+#### <a name="tags-for-the-iot-edge-runtime"></a>Labels voor de IoT Edge runtime
+
+De installatie kopieën van IoT Edge agent en IoT Edge hub worden gelabeld met de IoT Edge-versie waaraan ze zijn gekoppeld. Er zijn twee verschillende manieren om labels te gebruiken met de runtime-installatie kopieën:
+
+* **Roulerende Tags** : gebruik alleen de eerste twee waarden van het versie nummer om de meest recente afbeelding op te halen die overeenkomt met die cijfers. Bijvoorbeeld: 1,1 wordt bijgewerkt wanneer er een nieuwe release is om naar de nieuwste versie 1.1. x te verwijzen. Als de container-runtime op uw IoT Edge-apparaat de installatie kopie opnieuw ophaalt, worden de runtime modules bijgewerkt naar de meest recente versie. Implementaties van de Azure Portal standaard naar roulerende Tags. *Deze aanpak wordt aanbevolen voor ontwikkelings doeleinden.*
+
+* **Specifieke labels** : gebruik alle drie de waarden van het versie nummer om de installatie kopie versie expliciet in te stellen. 1.1.0 wordt bijvoorbeeld niet gewijzigd na de eerste release. Wanneer u klaar bent om bij te werken, kunt u een nieuw versie nummer declareren in het implementatie manifest. *Deze aanpak wordt voorgesteld voor productie doeleinden.*
 
 ### <a name="store-runtime-containers-in-your-private-registry"></a>Runtime-containers opslaan in uw persoonlijke REGI ster
 

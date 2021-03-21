@@ -6,25 +6,25 @@ ms.author: anvar
 ms.manager: bsiva
 ms.topic: how-to
 ms.date: 03/02/2021
-ms.openlocfilehash: 1c93002a6dd97aadbf407713ab25091436bd85e0
-ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
+ms.openlocfilehash: 1425eafd92737e08596499e395dc62af3d967207
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102612062"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104607650"
 ---
 # <a name="scale-agentless-migration-of-vmware-virtual-machines-to-azure"></a>De migratie van virtuele VMware-machines in een agent schalen naar Azure
 
-In dit artikel leert u hoe u een scale-out-toestel kunt gebruiken voor het migreren van een groot aantal virtuele VMware-machines naar Azure met behulp van de migratie functie voor het Azure Migrate server-migratie hulpprogramma. 
+In dit artikel leert u hoe u een scale-out-toestel kunt gebruiken voor het migreren van een groot aantal virtuele VMware-machines naar Azure met behulp van de agentloze methode van het Azure Migrate server migratie hulpprogramma voor de migratie van virtuele VMware-machines.
 
-Met de functie voor het migreren van virtuele VMware-machines door agents van het hulp programma voor server migratie kunt u het volgende doen:
+Met de migratie methode zonder agent voor virtuele VMware-machines kunt u het volgende doen:
 
 - U kunt Maxi maal 300 Vm's van één vCenter-Server gelijktijdig repliceren met behulp van een Azure Migrate apparaat.
 - U kunt Maxi maal 500 Vm's gelijktijdig repliceren vanaf één vCenter-Server door een tweede scale-out-toestel te implementeren voor migratie.
 
 In dit artikel leert u het volgende:
 
-- Een scale-out-toestel voor VMware-migratie implementeren
+- Een scale-out-toestel toevoegen voor virtuele VMware-machines die zonder agents worden gemigreerd
 - Migreer Maxi maal 500 Vm's tegelijk met behulp van het scale-out-toestel.
 
 ##  <a name="prerequisites"></a>Vereisten
@@ -37,8 +37,9 @@ Voordat u aan de slag gaat, moet u de volgende stappen uitvoeren:
 > [!IMPORTANT]
 > U moet ten minste één virtuele machine repliceren in het project voordat u een scale-out-toestel voor migratie kunt toevoegen.
 
-## <a name="deploy-a-scale-out-appliance"></a>Een scale-out-toestel implementeren
+Raadpleeg de zelf studie over het [migreren van virtuele VMware-machines naar Azure met de migratie methode zonder agent](./tutorial-migrate-vmware.md)voor meer informatie over het uitvoeren van het bovenstaande.
 
+## <a name="deploy-a-scale-out-appliance"></a>Een scale-out-toestel implementeren
 
 Volg de onderstaande stappen om een scale-out apparaat toe te voegen:
 

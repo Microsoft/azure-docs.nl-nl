@@ -13,10 +13,10 @@ ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e0db5e609a5e6b7d74809810a50f86d72ae85675
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90705507"
 ---
 # <a name="configure-saas-apps-for-b2b-collaboration"></a>SaaS-toepassingen configureren voor B2B-samenwerking
@@ -29,7 +29,7 @@ Voordat u de app-specifieke instructies bekijkt, zijn hier enkele vuist regels:
 
 * Voor apps die ondersteuning bieden voor automatische installatie, zoals Dropbox, worden afzonderlijke uitnodigingen gemaakt op basis van de apps. Gebruikers moeten elke uitnodiging accepteren.
 
-* Stel in de gebruikers kenmerken de **gebruikers-id** altijd in op **gebruiker. mail**om problemen met een vervormde gebruikers profiel schijf (UPD) te beperken in gast gebruikers.
+* Stel in de gebruikers kenmerken de **gebruikers-id** altijd in op **gebruiker. mail** om problemen met een vervormde gebruikers profiel schijf (UPD) te beperken in gast gebruikers.
 
 
 ## <a name="dropbox-business"></a>Dropbox Business
@@ -48,7 +48,7 @@ Als u gebruikers in staat wilt stellen om zich aan te melden met hun organisatie
 
    ![Eenmalige aanmelding voor de app configureren](media/configure-saas-apps/configure-app-sso.png)
 
-4. Als u het certificaat wilt downloaden om te gebruiken voor de Dropbox-configuratie, selecteert u **Dropbox configureren**en selecteert u **URL voor eenmalige aanmelding voor SAML** in de lijst.
+4. Als u het certificaat wilt downloaden om te gebruiken voor de Dropbox-configuratie, selecteert u **Dropbox configureren** en selecteert u **URL voor eenmalige aanmelding voor SAML** in de lijst.
 
    ![Het certificaat voor de Dropbox-configuratie downloaden](media/configure-saas-apps/download-certificate.png)
 
@@ -86,13 +86,13 @@ U kunt gebruikers in staat stellen gast gebruikers te verifiëren met hun Azure 
 
    b. Voer in het vak **gebruikers** -id **gebruiker. mail** in (voor SSO voor gast-accounts).
 
-   c. Klik onder **SAML-handtekening certificaat**op **Nieuw certificaat maken**.
+   c. Klik onder **SAML-handtekening certificaat** op **Nieuw certificaat maken**.
 
    d. Als u de Box.com-Tenant wilt configureren voor het gebruik van Azure AD als id-provider, downloadt u het meta gegevensbestand en slaat u het op uw lokale station op.
 
    e. Stuur het meta gegevensbestand door naar het ondersteunings team van het vak, waarmee eenmalige aanmelding voor u wordt geconfigureerd.
 
-3. Selecteer voor automatische gebruikers installatie van Azure AD in het linkerdeel venster de optie **inrichten**en selecteer vervolgens **autoriseren**.
+3. Selecteer voor automatische gebruikers installatie van Azure AD in het linkerdeel venster de optie **inrichten** en selecteer vervolgens **autoriseren**.
 
    ![Azure AD toestemming geven om verbinding te maken met Box](media/configure-saas-apps/auth-azure-ad-to-connect-to-box.png)
 

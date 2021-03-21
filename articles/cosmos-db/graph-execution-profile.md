@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 03/27/2019
 ms.author: chrande
 ms.openlocfilehash: 18cefb1dd80368a8ccdad9f6f3ffc30881a8a889
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93087482"
 ---
 # <a name="how-to-use-the-execution-profile-step-to-evaluate-your-gremlin-queries"></a>De stap met het uitvoeringsprofiel gebruiken om de Gremlin-query's te evalueren
@@ -139,12 +139,12 @@ Hieronder ziet u een voor beeld van de uitvoer die wordt geretourneerd:
 ## <a name="execution-profile-response-objects"></a>Reactie objecten uitvoerings profiel
 
 Het antwoord van een executionProfile ()-functie levert een hiërarchie van JSON-objecten met de volgende structuur:
-  - **Gremlin-bewerkings object** : vertegenwoordigt de gehele Gremlin-bewerking die is uitgevoerd. Bevat de volgende eigenschappen.
+  - **Gremlin-bewerkings object**: vertegenwoordigt de gehele Gremlin-bewerking die is uitgevoerd. Bevat de volgende eigenschappen.
     - `gremlin`: De expliciete Gremlin-instructie die is uitgevoerd.
     - `totalTime`: De tijd, in milliseconden, die de uitvoering van de stap is gemaakt in. 
     - `metrics`: Een matrix die alle Cosmos DB runtime-Opera tors bevat die zijn uitgevoerd om te voldoen aan de query. Deze lijst wordt in volg orde van uitvoering gesorteerd.
     
-  - **Cosmos DB runtime-Opera tors** : vertegenwoordigt elk van de onderdelen van de hele Gremlin-bewerking. Deze lijst wordt in volg orde van uitvoering gesorteerd. Elk object bevat de volgende eigenschappen:
+  - **Cosmos DB runtime-Opera tors**: vertegenwoordigt elk van de onderdelen van de hele Gremlin-bewerking. Deze lijst wordt in volg orde van uitvoering gesorteerd. Elk object bevat de volgende eigenschappen:
     - `name`: Naam van de operator. Dit is het type fase dat is geëvalueerd en uitgevoerd. Meer informatie vindt u in de onderstaande tabel.
     - `time`: De hoeveelheid tijd, in milliseconden, dat een bepaalde operator heeft geduurd.
     - `annotations`: Bevat aanvullende informatie, specifiek voor de operator die is uitgevoerd.
@@ -177,7 +177,7 @@ Hier volgen enkele voor beelden van algemene optimalisaties die kunnen worden Sp
 
 ### <a name="blind-fan-out-query-patterns"></a>Blinde ventilatoren query patronen
 
-Stel dat de volgende uitvoerings profiel reactie van een **gepartitioneerde grafiek** :
+Stel dat de volgende uitvoerings profiel reactie van een **gepartitioneerde grafiek**:
 
 ```json
 [

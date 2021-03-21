@@ -4,10 +4,10 @@ description: In dit artikel wordt beschreven hoe u Azure Service Bus kunt gebrui
 ms.topic: article
 ms.date: 06/23/2020
 ms.openlocfilehash: 20800363327aefda073cd484dc737b28e60466a7
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98632847"
 ---
 # <a name="use-service-bus-from-net-with-amqp-10"></a>Gebruik Service Bus van .NET met AMQP 1,0
@@ -86,7 +86,7 @@ Gebruik voor het vereenvoudigen van de interoperabiliteit met non-.NET-clients a
 | URI |Beschrijving van de teken reeks (Zie de volgende tabel) |Waarde AMQP |
 | Date time offset |Lange beschrijving (Zie de volgende tabel) |Waarde AMQP |
 | TimeSpan |Lange beschrijving (Zie het volgende) |Waarde AMQP |
-| Stroom |binair |AMQP-gegevens (mogelijk meerdere). De gegevens secties bevatten de onbewerkte bytes die zijn gelezen van het Stream-object. |
+| Stream |binair |AMQP-gegevens (mogelijk meerdere). De gegevens secties bevatten de onbewerkte bytes die zijn gelezen van het Stream-object. |
 | Ander object |binair |AMQP-gegevens (mogelijk meerdere). Bevat het geserialiseerde binaire bestand van het object dat gebruikmaakt van de DataContractSerializer of een serialisatiefunctie die door de toepassing wordt geleverd. |
 
 | .NET-type | Type beschrijving van toegewezen AMQP | Notities |

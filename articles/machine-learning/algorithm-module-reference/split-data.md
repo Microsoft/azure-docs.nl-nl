@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 10/22/2019
 ms.openlocfilehash: a4c93b12ad654e54a7f3c7ee0e75507d5cb45e90
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90907822"
 ---
 # <a name="split-data-module"></a>Module voor splitsen van gegevens
@@ -30,7 +30,7 @@ Deze module is handig wanneer u gegevens moet scheiden in trainings-en test sets
 > Lees alle opties voordat u de Splits modus kiest om te bepalen welk type splitsing u nodig hebt.
 > Als u de Splits modus wijzigt, worden alle andere opties mogelijk opnieuw ingesteld.
 
-1. Voeg de module **gegevens splitsen** toe aan uw pijp lijn in de ontwerp functie. U kunt deze module vinden onder **gegevens transformatie**in de categorie voor **Beeld en splitsen** .
+1. Voeg de module **gegevens splitsen** toe aan uw pijp lijn in de ontwerp functie. U kunt deze module vinden onder **gegevens transformatie** in de categorie voor **Beeld en splitsen** .
 
 1. **Splits modus**: Kies een van de volgende modi, afhankelijk van het type gegevens dat u hebt en hoe u deze wilt delen. Elke Splits modus heeft verschillende opties.
 
@@ -48,7 +48,7 @@ Deze module is handig wanneer u gegevens moet scheiden in trainings-en test sets
 
 1. Voeg de module [gegevens splitsen](./split-data.md) toe aan uw pijp lijn in de ontwerp functie en verbind de gegevensset die u wilt splitsen.
   
-1. Voor de **Splits modus**selecteert u **rijen splitsen**. 
+1. Voor de **Splits modus** selecteert u **rijen splitsen**. 
 
 1. **Fractie van rijen in de eerste uitvoer gegevensset**: gebruik deze optie om te bepalen hoeveel rijen er worden weer gegeven in de eerste (linker) uitvoer. Alle andere rijen worden naar de tweede (rechter kant) uitvoer.
 
@@ -87,7 +87,7 @@ De volgende voor beelden laten zien hoe u een gegevensset kunt verdelen met behu
 
 ### <a name="single-whole-word"></a>Eén heel woord 
 
-In dit voor beeld worden alle rijen die de tekst in de kolom bevatten, in de eerste gegevensset geplaatst `Gryphon` `Text` . Er worden andere rijen in de tweede uitvoer van **gesplitste gegevens**geplaatst.
+In dit voor beeld worden alle rijen die de tekst in de kolom bevatten, in de eerste gegevensset geplaatst `Gryphon` `Text` . Er worden andere rijen in de tweede uitvoer van **gesplitste gegevens** geplaatst.
 
 ```text
     \"Text" Gryphon  
@@ -107,7 +107,7 @@ De eerste resultaat gegevensset bevat alle rijen waar de index kolom met een van
 
 1. Voeg de module [gegevens splitsen](./split-data.md) toe aan uw pijp lijn en verbind deze als invoer met de gegevensset die u wilt splitsen.
   
-1. Voor de **Splits modus**selecteert u **relatieve expressie**.
+1. Voor de **Splits modus** selecteert u **relatieve expressie**.
   
 1. Voer in het vak **relationele expressie** een expressie in waarmee een vergelijkings bewerking wordt uitgevoerd op één kolom.
 

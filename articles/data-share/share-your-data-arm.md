@@ -8,10 +8,10 @@ ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 08/19/2020
 ms.openlocfilehash: 5abe92120c8b822ac86ced90658869a0858d4ff4
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92487684"
 ---
 # <a name="quickstart-share-data-using-azure-data-share-and-arm-template"></a>Quickstart: gegevens delen met behulp van Azure Data Share en een ARM-sjabloon
@@ -69,12 +69,12 @@ Dit komt doordat de implementatie de gegevensset wil maken voordat de Azure-rolt
     [![Implementeren in Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-data-share-share-storage-account%2Fazuredeploy.json)
 1. Typ of selecteer de volgende waarden:
 
-    * **Abonnement** : selecteer een Azure-abonnement dat wordt gebruikt om de gegevensshare en de andere resources te maken.
-    * **Resourcegroep** : selecteer **Nieuwe maken** om een nieuwe resourcegroep te maken of een bestaande resourcegroep te selecteren.
-    * **Locatie** : selecteer een locatie voor de resourcegroep.
-    * **Projectnaam** : voer een projectnaam in.  De projectnaam wordt gebruikt om resourcenamen te genereren.  Zie de variabele definities in de vorige sjabloon.
-    * **Locatie** : selecteer een locatie voor de resources.  U kunt dezelfde locatie gebruiken voor de resourcegroep.
-    * **Uitnodigingse-mail** : voer het Azure e-mailadres van de ontvanger van de gegevensshare in.  E-mailalias werkt niet.
+    * **Abonnement**: selecteer een Azure-abonnement dat wordt gebruikt om de gegevensshare en de andere resources te maken.
+    * **Resourcegroep**: selecteer **Nieuwe maken** om een nieuwe resourcegroep te maken of een bestaande resourcegroep te selecteren.
+    * **Locatie**: selecteer een locatie voor de resourcegroep.
+    * **Projectnaam**: voer een projectnaam in.  De projectnaam wordt gebruikt om resourcenamen te genereren.  Zie de variabele definities in de vorige sjabloon.
+    * **Locatie**: selecteer een locatie voor de resources.  U kunt dezelfde locatie gebruiken voor de resourcegroep.
+    * **Uitnodigingse-mail**: voer het Azure e-mailadres van de ontvanger van de gegevensshare in.  E-mailalias werkt niet.
 
     Gebruik de standaardwaarde voor de overige instellingen.
 1. Selecteer **Ik ga akkoord met de bovenstaande voorwaarden** en selecteer vervolgens **Kopen**.

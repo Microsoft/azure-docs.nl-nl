@@ -11,10 +11,10 @@ ms.author: jopapa
 ms.custom: seodec18, devx-track-js
 ms.reviewer: sngun
 ms.openlocfilehash: 181af5cf26d19a9f51e8d456e777badf7efa224d
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93097818"
 ---
 # <a name="create-an-angular-app-with-azure-cosmos-dbs-api-for-mongodb---build-the-ui-with-angular"></a>Een Angular-app maken met de API voor MongoDB van Azure Cosmos DB - De gebruikersinterface maken met Angular
@@ -104,7 +104,7 @@ Voltooi de stappen in [deel 2](tutorial-develop-mongodb-nodejs-part2.md) van de 
     </div>
     ```
 
-7. Met de HTML op de juiste plaats voegen we deze toe aan het bestand **heroes.component.ts** , waarna we interactie kunnen aangaan met de sjabloon. Met de volgende code wordt de sjabloon aan het componentbestand toegevoegd. Er is een constructor toegevoegd waarmee enkele hero's worden opgehaald en de hero-servicecomponent wordt geïnitialiseerd om alle gegevens op te halen. De code voegt ook alle vereiste methoden toe voor het afhandelen van gebeurtenissen in de gebruikersinterface. U kunt de volgende code over de bestaande code in **heroes.component.ts** heen kopiëren. U ziet nu waarschijnlijk fouten in de gebieden Hero en HeroService omdat de bijbehorende componenten nog niet zijn geïmporteerd. U lost deze fouten op in de volgende sectie. 
+7. Met de HTML op de juiste plaats voegen we deze toe aan het bestand **heroes.component.ts**, waarna we interactie kunnen aangaan met de sjabloon. Met de volgende code wordt de sjabloon aan het componentbestand toegevoegd. Er is een constructor toegevoegd waarmee enkele hero's worden opgehaald en de hero-servicecomponent wordt geïnitialiseerd om alle gegevens op te halen. De code voegt ook alle vereiste methoden toe voor het afhandelen van gebeurtenissen in de gebruikersinterface. U kunt de volgende code over de bestaande code in **heroes.component.ts** heen kopiëren. U ziet nu waarschijnlijk fouten in de gebieden Hero en HeroService omdat de bijbehorende componenten nog niet zijn geïmporteerd. U lost deze fouten op in de volgende sectie. 
 
     ```ts
     import { Component, OnInit } from '@angular/core';
@@ -193,7 +193,7 @@ Voltooi de stappen in [deel 2](tutorial-develop-mongodb-nodejs-part2.md) van de 
 
 1. Open in het deelvenster Explorer het bestand **src/styles.scss**.
 
-2. Kopieer de volgende code in het bestand **styles.scss** , waarmee u de bestaande inhoud van het bestand vervangt.
+2. Kopieer de volgende code in het bestand **styles.scss**, waarmee u de bestaande inhoud van het bestand vervangt.
 
     ```css
     /* You can add global styles to this file, and also import other style files */
@@ -375,7 +375,7 @@ Hoe kunnen we de component nu op het scherm weergeven? We gaan de standaardcompo
 
     ```
 
-2. **heroes.components.ts** bevat andere componenten waarnaar wordt verwezen, bijvoorbeeld de component Hero, dus die moeten we ook maken. Gebruik in de Angular CLI-opdrachtprompt de volgende opdracht om een hero-model en een bestand te maken met de naam **hero.ts** , waarin g=genereren, cl=klasse en hero=naam van de klasse.
+2. **heroes.components.ts** bevat andere componenten waarnaar wordt verwezen, bijvoorbeeld de component Hero, dus die moeten we ook maken. Gebruik in de Angular CLI-opdrachtprompt de volgende opdracht om een hero-model en een bestand te maken met de naam **hero.ts**, waarin g=genereren, cl=klasse en hero=naam van de klasse.
 
     ```bash
     ng g cl hero
@@ -409,7 +409,7 @@ Hoe kunnen we de component nu op het scherm weergeven? We gaan de standaardcompo
 
 ## <a name="create-the-service"></a>De service maken
 
-1. Voer na de opdrachtprompt in Angular CLI de volgende opdracht in om een hero-service te maken in **app.module.ts** , waarin g=genereren, s=service, hero=naam van de service, -m=invoeren in app.module.
+1. Voer na de opdrachtprompt in Angular CLI de volgende opdracht in om een hero-service te maken in **app.module.ts**, waarin g=genereren, s=service, hero=naam van de service, -m=invoeren in app.module.
 
     ```bash
     ng g s hero -m app.module

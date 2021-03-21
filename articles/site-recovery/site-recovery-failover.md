@@ -5,10 +5,10 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 12/10/2019
 ms.openlocfilehash: 6737f64773f91ede1631d42cd7f28c7d961c0454
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92368618"
 ---
 # <a name="run-a-failover-from-on-premises-to-azure"></a>Een failover uitvoeren van on-premises naar Azure
@@ -32,7 +32,7 @@ Als u na een failover verbinding wilt maken met virtuele Azure-machines met behu
 
 **Na een failover** | **Locatie** | **Acties**
 --- | --- | ---
-**Virtuele Azure-machine met Windows** | On-premises machine vóór een failover | Voor toegang tot de Azure-VM via internet schakelt u RDP in en zorgt u ervoor dat de TCP-en UDP-regels voor **openbaar**worden toegevoegd en dat RDP is toegestaan voor alle profielen in **Windows Firewall**  >  **toegestane apps**.<br/><br/> Als u toegang wilt krijgen tot de Azure-VM via een site-naar-site-verbinding, schakelt u RDP in op de machine en zorgt u ervoor dat RDP is toegestaan in de **Windows Firewall**  ->  **toegestane apps en functies**voor **domein-en particuliere** netwerken.<br/><br/> <br/><br/> Verwijder alle statische permanente routes en WinHTTP-proxy. Zorg ervoor dat het SAN-beleid van het besturings systeem is ingesteld op **OnlineAll**. [Meer informatie](https://support.microsoft.com/kb/3031135).<br/><br/> Zorg ervoor dat er geen Windows-updates in behandeling zijn op de virtuele machine wanneer u een failover triggert. Windows Update kan worden gestart wanneer u een failover uitvoert. u kunt zich pas aanmelden bij de VM als de update is voltooid.
+**Virtuele Azure-machine met Windows** | On-premises machine vóór een failover | Voor toegang tot de Azure-VM via internet schakelt u RDP in en zorgt u ervoor dat de TCP-en UDP-regels voor **openbaar** worden toegevoegd en dat RDP is toegestaan voor alle profielen in **Windows Firewall**  >  **toegestane apps**.<br/><br/> Als u toegang wilt krijgen tot de Azure-VM via een site-naar-site-verbinding, schakelt u RDP in op de machine en zorgt u ervoor dat RDP is toegestaan in de **Windows Firewall**  ->  **toegestane apps en functies** voor **domein-en particuliere** netwerken.<br/><br/> <br/><br/> Verwijder alle statische permanente routes en WinHTTP-proxy. Zorg ervoor dat het SAN-beleid van het besturings systeem is ingesteld op **OnlineAll**. [Meer informatie](https://support.microsoft.com/kb/3031135).<br/><br/> Zorg ervoor dat er geen Windows-updates in behandeling zijn op de virtuele machine wanneer u een failover triggert. Windows Update kan worden gestart wanneer u een failover uitvoert. u kunt zich pas aanmelden bij de VM als de update is voltooid.
 **Azure-VM met Linux** | On-premises machine vóór een failover | Zorg ervoor dat de Secure shell-service op de VM is ingesteld om automatisch te starten bij het opstarten van het systeem.<br/><br/> Controleer of er in de firewallregels is ingesteld dat SSH-verbindingen zijn toegestaan.
 
 
@@ -48,12 +48,12 @@ Voer de failover van het herstel plan als volgt uit:
 
     ![Scherm opname van Azure Site Recovery weer geven van het deel venster ADRP met failover geselecteerd in het menu meer.](./media/site-recovery-failover/Failover.png)
 
-3. **Failover**  >  Laat in de**richting**van de failover-failover de standaard waarde weg als u naar Azure repliceert.
-4. Selecteer in **failover**een **herstel punt** waarvoor u een failover wilt uitvoeren.
+3.   >  Laat in de **richting** van de failover-failover de standaard waarde weg als u naar Azure repliceert.
+4. Selecteer in **failover** een **herstel punt** waarvoor u een failover wilt uitvoeren.
 
     - **Meest recent**: gebruik het meest recente punt. Hiermee worden alle gegevens verwerkt die naar Site Recovery service zijn verzonden en wordt voor elke machine een herstel punt gemaakt. Deze optie biedt de laagste RPO (beoogd herstel punt), omdat de VM die is gemaakt na een failover, alle gegevens bevat die naar Site Recovery worden gerepliceerd wanneer de failover werd geactiveerd.
     Houd er rekening mee dat wanneer de bron regio uitvalt, er geen logboek verwerking meer mogelijk is. Daarom moet u een failover naar het meest recente verwerkte herstel punt. Zie het volgende punt voor meer informatie.
-   - **Laatst verwerkte**: gebruik deze optie om virtuele machines over te zetten naar het meest recente herstel punt dat al is verwerkt door site Recovery. U ziet het meest recente verwerkte herstel punt in de **laatste herstel punten**van de virtuele machine. Deze optie biedt een lage RTO omdat er geen tijd wordt besteed aan het verwerken van de niet-verwerkte gegevens
+   - **Laatst verwerkte**: gebruik deze optie om virtuele machines over te zetten naar het meest recente herstel punt dat al is verwerkt door site Recovery. U ziet het meest recente verwerkte herstel punt in de **laatste herstel punten** van de virtuele machine. Deze optie biedt een lage RTO omdat er geen tijd wordt besteed aan het verwerken van de niet-verwerkte gegevens
    - **Nieuwste app-consistent**: gebruik deze optie om virtuele machines uit te zetten naar het nieuwste toepassings consistente herstel punt dat is verwerkt door site Recovery.
    - **Laatste verwerkte multi-VM**: met deze optie-vm's die deel uitmaken van een failover van een replicatie groep naar het meest recente, veelvoorkomende herstel punt voor meerdere vm's. Voor andere virtuele machines wordt een failover uitgevoerd naar het meest recente verwerkte herstel punt. Deze optie is alleen voor herstel plannen waarvoor ten minste één virtuele machine met consistentie tussen meerdere VM'S is ingeschakeld.
    - **Nieuwste multi-VM-app-consistent**: met deze optie-vm's die deel uitmaken van een replicatie groep, wordt een failover uitgevoerd naar het meest recente, veelvoorkomende multi-VM-toepassings consistente herstel punt. Andere failover van virtuele machines naar het meest recente toepassings consistente herstel punt. Alleen voor herstel plannen waarvoor ten minste één virtuele machine met consistentie tussen meerdere VM'S is ingeschakeld.

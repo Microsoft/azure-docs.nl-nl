@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 01/21/2019
 ms.author: jeedes
 ms.openlocfilehash: 4ed46a7bb7fd8600bf35d102259be257adfacb3f
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92458894"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-korn-ferry-alp"></a>Zelfstudie: Azure Active Directory-integratie met Korn Ferry ALP
@@ -49,7 +49,7 @@ Voor het configureren van de integratie van Korn Ferry ALP met Azure AD moet u K
 
 **Als u Korn Ferry ALP wilt toevoegen vanuit de galerie, moet u de volgende stappen uitvoeren:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -61,7 +61,7 @@ Voor het configureren van de integratie van Korn Ferry ALP met Azure AD moet u K
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **Korn Ferry ALP** , selecteer **Korn Ferry ALP** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **Korn Ferry ALP**, selecteer **Korn Ferry ALP** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
      ![Korn Ferry ALP in de lijst met resultaten](common/search-new-app.png)
 
@@ -126,13 +126,13 @@ Om Azure AD-eenmalige aanmelding te configureren met Korn Ferry ALP, voert u de 
 
 ### <a name="configure-korn-ferry-alp-single-sign-on"></a>Eenmalige aanmelding met Korn Ferry ALP configureren
 
-Als u eenmalige aanmelding aan de **Korn Ferry ALP** -zijde wilt configureren, moet u de **URL voor federatieve metagegevens van de app** naar het [Korn Ferry ALP-ondersteuningsteam](mailto:noreply@kornferry.com) verzenden. Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding aan de **Korn Ferry ALP**-zijde wilt configureren, moet u de **URL voor federatieve metagegevens van de app** naar het [Korn Ferry ALP-ondersteuningsteam](mailto:noreply@kornferry.com) verzenden. Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -157,7 +157,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot Korn Ferry ALP.
 
-1. Selecteer in de Azure-portal **Bedrijfstoepassingen** , selecteer **Alle toepassingen** en selecteer vervolgens **Korn Ferry ALP**.
+1. Selecteer in de Azure-portal **Bedrijfstoepassingen**, selecteer **Alle toepassingen** en selecteer vervolgens **Korn Ferry ALP**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 

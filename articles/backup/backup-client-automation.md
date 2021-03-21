@@ -4,10 +4,10 @@ description: In dit artikel leert u hoe u Power shell gebruikt om Azure Backup i
 ms.topic: conceptual
 ms.date: 12/2/2019
 ms.openlocfilehash: 582d8123f16b2d5a543d862b8eb3e45895087e4a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90987100"
 ---
 # <a name="deploy-and-manage-backup-to-azure-for-windows-serverwindows-client-using-powershell"></a>Met behulp van PowerShell back-ups implementeren en beheren in Azure voor een Windows-server/Windows-client
@@ -58,7 +58,7 @@ De volgende stappen leiden u door het maken van een Recovery Services kluis. Een
 
 Gebruik **Get-AzRecoveryServicesVault** om de lijst met alle kluizen in het huidige abonnement weer te geven. U kunt deze opdracht gebruiken om te controleren of een nieuwe kluis is gemaakt, of om te zien welke kluizen beschikbaar zijn in het abonnement.
 
-Voer de opdracht **Get-AzRecoveryServicesVault**uit en alle kluizen in het abonnement worden weer gegeven.
+Voer de opdracht **Get-AzRecoveryServicesVault** uit en alle kluizen in het abonnement worden weer gegeven.
 
 ```powershell
 Get-AzRecoveryServicesVault
@@ -97,7 +97,7 @@ MARSAgentInstaller.exe /q
 
 Hiermee installeert u de agent met alle standaard opties. De installatie duurt enkele minuten op de achtergrond. Als u de optie */nu* niet opgeeft, wordt het venster **Windows Update** geopend aan het einde van de installatie om te controleren of er updates zijn. Zodra de agent is geïnstalleerd, wordt deze weer gegeven in de lijst met geïnstalleerde Program ma's.
 
-Ga naar **configuratie scherm**  >  **Program**ma's  >  **en onderdelen**om de lijst met geïnstalleerde Program ma's weer te geven.
+Ga naar **configuratie scherm**  >  **Program** ma's  >  **en onderdelen** om de lijst met geïnstalleerde Program ma's weer te geven.
 
 ![Agent geïnstalleerd](./media/backup-client-automation/installed-agent-listing.png)
 
@@ -209,7 +209,7 @@ Server properties updated successfully.
 
 De back-upgegevens die naar Azure Backup worden verzonden, worden versleuteld om de vertrouwelijkheid van de gegevens te beveiligen. De wachtwoordzin voor versleuteling is het wacht woord voor het ontsleutelen van de gegevens op het moment van herstel.
 
-U moet een beveiligings pincode genereren door **genereren**te selecteren onder **instellingen**  >  **Eigenschappen**  >  **beveiliging pincode** in het gedeelte **Recovery Services kluis** van de Azure Portal.
+U moet een beveiligings pincode genereren door **genereren** te selecteren onder **instellingen**  >  **Eigenschappen**  >  **beveiliging pincode** in het gedeelte **Recovery Services kluis** van de Azure Portal.
 
 >[!NOTE]
 > De beveiligings pincode kan alleen worden gegenereerd via de Azure Portal.

@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 08/20/2019
 ms.custom: mqtt, devx-track-js
 ms.openlocfilehash: cfc0fa45c08f917b2e0b4a0b055e801173a4ba39
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91252014"
 ---
 # <a name="get-started-with-device-management-nodejs"></a>Aan de slag met Apparaatbeheer (Node.js)
@@ -83,7 +83,7 @@ In deze sectie doet u het volgende:
     var Protocol = require('azure-iot-device-mqtt').Mqtt;
     ```
 
-5. Voeg een **connectionString**-variabele toe en gebruik deze om een **client**exemplaar te maken.  Vervang de `{yourdeviceconnectionstring}` waarde van de tijdelijke aanduiding door het apparaat Connection String u eerder hebt gekopieerd in [een nieuw apparaat registreren in de IOT-hub](#register-a-new-device-in-the-iot-hub).  
+5. Voeg een **connectionString**-variabele toe en gebruik deze om een **client** exemplaar te maken.  Vervang de `{yourdeviceconnectionstring}` waarde van de tijdelijke aanduiding door het apparaat Connection String u eerder hebt gekopieerd in [een nieuw apparaat registreren in de IOT-hub](#register-a-new-device-in-the-iot-hub).  
 
     ```javascript
     var connectionString = '{yourdeviceconnectionstring}';

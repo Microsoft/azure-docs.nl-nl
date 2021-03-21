@@ -9,10 +9,10 @@ ms.service: site-recovery
 ms.date: 12/03/2018
 ms.author: sharrai
 ms.openlocfilehash: b9869ae7dfbf5afd6b8d3b870a2ad4e56fd54c1a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91250063"
 ---
 # <a name="upgrade-windows-server-serversystem-center-2012-r2-vmm-to-windows-servervmm-2016"></a>Upgrade uitvoeren van Windows Server Server/System Center 2012 R2 VMM naar Windows Server/VMM 2016 
@@ -42,7 +42,7 @@ Let op het volgende voordat u een upgrade uitvoert:-
 
 - Als u System Center 2012 R2 VMM gebruikt, 
 
-    - Controleer de database gegevens op VMM: **VMM console**  ->  **settings**  ->  **algemene**  ->  **database verbinding** voor de instellingen van de VMM-console
+    - Controleer de database gegevens op VMM:   ->    ->  **algemene**  ->  **database verbinding** voor de instellingen van de VMM-console
     - Controleer de service accounts die worden gebruikt voor de System Center Virtual Machine Manager Agent-service
     - Zorg ervoor dat u een back-up van de VMM-Data Base hebt.
     - Noteer de naam van de data base van de betrokken SCVMM-servers. Dit kan worden gedaan door te navigeren naar de **VMM-console**-  ->  **instellingen**  ->  **algemene**  ->  **database verbinding**
@@ -75,7 +75,7 @@ Voordat u uw Windows Server 2012 R2-hosts bijwerkt, moet u de SCVMM 2012 R2 upgr
 
 1.  Verwijder de ASR-provider door te navigeren naar configuratie scherm-> Program Ma's-> Program Ma's en onderdelen->Microsoft Azure Site Recovery en klik op verwijderen
 2. [De SCVMM-data base behouden en het besturings systeem upgraden](/system-center/vmm/upgrade-vmm?view=sc-vmm-2016#back-up-and-upgrade-the-operating-system)
-3. Selecteer in **Program ma's toevoegen**de optie **VMM**  >  **verwijderen**. b. Selecteer **onderdelen verwijderen**en selecteer vervolgens V**mm-beheer server en VMM-console**. c. Selecteer in **database opties**de optie **Data Base behouden**. d. Controleer de samen vatting en klik op **verwijderen**.
+3. Selecteer in **Program ma's toevoegen** de optie **VMM**  >  **verwijderen**. b. Selecteer **onderdelen verwijderen** en selecteer vervolgens V **mm-beheer server en VMM-console**. c. Selecteer in **database opties** de optie **Data Base behouden**. d. Controleer de samen vatting en klik op **verwijderen**.
 
 4. [VMM 2016 installeren](/system-center/vmm/upgrade-vmm?view=sc-vmm-2016#install-vmm-2016)
 5. Start SCVMM en controleer de status van elke host onder het tabblad **fabrics** . Klik op **vernieuwen** om de meest recente status te krijgen. U ziet de status ' attentie vereist '. 

@@ -4,10 +4,10 @@ description: Ondersteunde resource typen via Azure resource Health
 ms.topic: conceptual
 ms.date: 01/29/2019
 ms.openlocfilehash: 1b0958732a96786b2fb86b2b145f5cb8d36c0c5a
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97883364"
 ---
 # <a name="resource-types-and-health-checks-in-azure-resource-health"></a>Resource typen en status controles in azure resource Health
@@ -244,7 +244,7 @@ Hieronder vindt u een volledige lijst met alle controles die worden uitgevoerd d
 |---|
 |<ul><li>Hebt u aanmeldingen bij de data base?</li></ul>|
 
-## <a name="microsoftstoragestorageaccounts"></a>Micro soft. Storage/Storage accounts
+## <a name="microsoftstoragestorageaccounts"></a>Microsoft.Storage/storageAccounts
 |Controles uitgevoerd|
 |---|
 |<ul><li>Zijn er aanvragen voor het lezen van gegevens van het opslag account als gevolg van problemen met Azure Storage platform?</li><li>Worden aanvragen voor het schrijven van gegevens naar het opslag account mislukt als gevolg van problemen met de Azure Storage platform?</li><li>Is het opslag cluster waar het opslag account zich bevindt, niet beschikbaar?</li></ul>|

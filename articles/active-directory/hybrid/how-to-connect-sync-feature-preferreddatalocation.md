@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e4c456e7788280b7ca5328342e1cd848ba3a583a
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95972756"
 ---
 # <a name="azure-active-directory-connect-sync-configure-preferred-data-location-for-microsoft-365-resources"></a>Azure Active Directory Connect synchronisatie: de voorkeurs locatie van gegevens voor Microsoft 365 resources configureren
@@ -32,7 +32,7 @@ Microsoft 365 resources voor uw gebruikers bevinden zich standaard in dezelfde g
 Door het kenmerk **preferredDataLocation** in te stellen, kunt u de geo van een gebruiker definiëren. U kunt de Microsoft 365 resources van de gebruiker, zoals het postvak en OneDrive, in dezelfde geografische regio als de gebruiker hebben en nog steeds één Tenant voor uw hele organisatie hebben.
 
 > [!IMPORTANT]
-> Multi-geo is momenteel beschikbaar voor klanten met een actief Enterprise Agreement en een minimum van 250 Microsoft 365 Services-abonnementen. Neem contact op met uw micro soft-vertegenwoordiger voor meer informatie.
+> Multi-geo is momenteel beschikbaar voor klanten met een actief Enterprise Overeenkomst en een minimum van 250 Microsoft 365 Services-abonnementen. Neem contact op met uw micro soft-vertegenwoordiger voor meer informatie.
 >
 >
 
@@ -62,7 +62,7 @@ De geografische gebieden in Microsoft 365 beschikbaar voor meerdere geografische
 
 ### <a name="azure-ad-connect-support-for-synchronization"></a>Azure AD Connect ondersteuning voor synchronisatie
 
-Azure AD Connect ondersteunt synchronisatie van het kenmerk **preferredDataLocation** voor **gebruikers** objecten in versie 1.1.524.0 en hoger. Specifiek:
+Azure AD Connect ondersteunt synchronisatie van het kenmerk **preferredDataLocation** voor **gebruikers** objecten in versie 1.1.524.0 en hoger. Met name:
 
 * Het schema van de **gebruiker** van het object type in de Azure AD-connector wordt uitgebreid met het kenmerk **preferredDataLocation** . Het kenmerk is van het type teken reeks met één waarde.
 * Het schema van de **persoon** van het object type in de tekst wordt uitgebreid met het kenmerk **preferredDataLocation** . Het kenmerk is van het type teken reeks met één waarde.
@@ -92,7 +92,7 @@ Om te voor komen dat onbedoelde wijzigingen worden geëxporteerd naar Azure AD, 
 
 1. Start een Power shell-sessie op de Azure AD Connect-server.
 2. Schakel de geplande synchronisatie uit door deze cmdlet uit te voeren: `Set-ADSyncScheduler -SyncCycleEnabled $false` .
-3. Start de **Synchronization Service Manager** door de **START**  >  **synchronisatie service** te starten.
+3. Start de **Synchronization Service Manager** door de   >  **synchronisatie service** te starten.
 4. Selecteer het tabblad **bewerkingen** en controleer of er geen bewerking is met de status *in behandeling*.
 
 ![Scherm opname van Synchronization Service Manager](./media/how-to-connect-sync-feature-preferreddatalocation/preferreddatalocation-step1.png)
@@ -135,7 +135,7 @@ Het kenmerk **preferredDataLocation** wordt standaard niet in de Azure AD-connec
 ## <a name="step-5-create-an-inbound-synchronization-rule"></a>Stap 5: een regel voor binnenkomende synchronisatie maken
 Met de regel voor binnenkomende synchronisatie kan de kenmerk waarde worden gestroomd van het bron kenmerk in on-premises Active Directory naar de oorspronkelijke tekst.
 
-1. Start de **Editor voor synchronisatie regels** door te **START** gaan met de  >  **Editor voor synchronisatie regels** starten.
+1. Start de **Editor voor synchronisatie regels** door te gaan met de  >  **Editor voor synchronisatie regels** starten.
 2. Stel de **richting** van het zoek filter in op **binnenkomend**.
 3. Selecteer **nieuwe regel toevoegen** om een nieuwe regel voor binnenkomende verbindingen te maken.
 4. Geef onder het tabblad **Beschrijving** de volgende configuratie op:
@@ -143,7 +143,7 @@ Met de regel voor binnenkomende synchronisatie kan de kenmerk waarde worden gest
     | Kenmerk | Waarde | Details |
     | --- | --- | --- |
     | Name | *Geef een naam op* | Bijvoorbeeld ' in van AD: gebruiker preferredDataLocation ' |
-    | Description | *Geef een aangepaste beschrijving op* |  |
+    | Beschrijving | *Geef een aangepaste beschrijving op* |  |
     | Verbonden systeem | *Kies de on-premises Active Directory-connector* |  |
     | Type verbonden systeem object | **Gebruiker** |  |
     | Omgekeerd object type | **Person** |  |
@@ -172,7 +172,7 @@ De regel voor uitgaande synchronisatie maakt het mogelijk dat de waarde van het 
     | Kenmerk | Waarde | Details |
     | ----- | ------ | --- |
     | Name | *Geef een naam op* | Bijvoorbeeld ' naar Azure AD: User preferredDataLocation ' |
-    | Description | *Geef een beschrijving op* ||
+    | Beschrijving | *Geef een beschrijving op* ||
     | Verbonden systeem | *De Azure AD-connector selecteren* ||
     | Type verbonden systeem object | **Gebruiker** ||
     | Omgekeerd object type | **Person** ||
@@ -184,7 +184,7 @@ De regel voor uitgaande synchronisatie maakt het mogelijk dat de waarde van het 
     | Kenmerk | Operator | Waarde |
     | --- | --- | --- |
     | sourceObjectType | WAARD | Gebruiker |
-    | cloudMastered | NOTEQUAL | True |
+    | cloudMastered | NOTEQUAL | Waar |
 
     Het bereik filter bepaalt op welke Azure AD-objecten deze regel voor uitgaande synchronisatie wordt toegepast. In dit voor beeld gebruiken we hetzelfde bereik filter van ' out to Azure AD: User Identity ' OOB (out-of-box)-synchronisatie regel. Hiermee wordt voor komen dat de synchronisatie regel wordt toegepast op **gebruikers** objecten die niet zijn gesynchroniseerd vanuit een on-premises Active Directory. Mogelijk moet u het bereik filter aanpassen op basis van uw Azure AD Connect-implementatie.
 

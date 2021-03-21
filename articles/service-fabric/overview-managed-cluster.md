@@ -4,10 +4,10 @@ description: Beheerde Service Fabric clusters zijn een evolutie van het Azure Se
 ms.topic: overview
 ms.date: 02/15/2021
 ms.openlocfilehash: 271852214097ee96ba6b10de7a94904981cd8ef8
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102041226"
 ---
 # <a name="service-fabric-managed-clusters-preview"></a>Beheerde Service Fabric-clusters (preview)

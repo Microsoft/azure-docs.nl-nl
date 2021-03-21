@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 11/03/2020
 ms.author: jeedes
 ms.openlocfilehash: bad1ccc99575b788e1bb5ea541c6b6690ead6eca
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96180979"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-coupa-risk-assess"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met Coupa Risk Assess

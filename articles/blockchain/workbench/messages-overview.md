@@ -5,10 +5,10 @@ ms.date: 09/05/2019
 ms.topic: article
 ms.reviewer: brendal
 ms.openlocfilehash: 14bd0f84bc9490d95d3dbe0b9f122882f0d2059d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "74324512"
 ---
 # <a name="azure-blockchain-workbench-messaging-integration"></a>Integratie van Azure Block Chain Workbench-berichten
@@ -354,7 +354,7 @@ Als een gebruiker Event Grid wil gebruiken om op de hoogte te worden gesteld van
 Service Bus-onderwerpen kunnen worden gebruikt om gebruikers op de hoogte te stellen van gebeurtenissen die zich in Block Chain Workbench voordoen. 
 
 1. Blader naar de Service Bus in de resource groep van de Workbench.
-2. Selecteer **onderwerpen**.
+2. Selecteer **Onderwerpen**.
 3. Selecteer **uitgangs-onderwerp**.
 4. Maak een nieuw abonnement op dit onderwerp. Schaf hiervoor een sleutel aan.
 5. Een programma maken dat zich abonneert op gebeurtenissen van dit abonnement.
@@ -364,12 +364,12 @@ Service Bus-onderwerpen kunnen worden gebruikt om gebruikers op de hoogte te ste
 1. Maak een nieuwe **Azure Logic-app** in de Azure Portal.
 2. Wanneer u de Azure Logic-app in de portal opent, wordt u gevraagd een trigger te selecteren. Typ **Service Bus** in het zoekvak en selecteer de trigger die geschikt is voor het type interactie dat u wilt hebben met de service bus. Bijvoorbeeld **Service Bus: wanneer een bericht wordt ontvangen in een onderwerps abonnement (automatisch volt ooien)**.
 3. Wanneer de werk stroom ontwerper wordt weer gegeven, geeft u de verbindings gegevens voor de Service Bus op.
-4. Selecteer uw abonnement en geef het onderwerp van **Workbench-extern**op.
+4. Selecteer uw abonnement en geef het onderwerp van **Workbench-extern** op.
 5. Ontwikkel de logica voor uw toepassing die gebruikmaakt van het bericht van deze trigger.
 
 ## <a name="notification-message-reference"></a>Naslag informatie voor meldings berichten
 
-De meldings berichten bevatten afhankelijk van de **bericht**naam een van de volgende bericht typen.
+De meldings berichten bevatten afhankelijk van de **bericht** naam een van de volgende bericht typen.
 
 ### <a name="block-message"></a>Bericht blok keren
 
@@ -401,7 +401,7 @@ Bevat informatie over afzonderlijke blokken. De *BlockMessage* bevat een sectie 
 | transactionId      | De unieke id voor de trans actie in azure Block Chain workbench |
 | transactionHash    | De hash van de trans actie in het groot boek |
 | from               | Unieke id in het groot boek voor de oorsprong van de trans actie |
-| in op                 | Unieke id in het groot boek voor het doel van de trans actie |
+| tot                 | Unieke id in het groot boek voor het doel van de trans actie |
 | provisioningStatus | Identificeert de huidige status van het inrichtings proces voor de trans actie. Mogelijke waarden zijn: </br>0: de trans actie is gemaakt door de API in de data base</br>1: de trans actie is naar het groot boek verzonden</br>2: de trans actie is doorgevoerd voor het groot boek</br>3 of 4: de trans actie kan niet worden doorgevoerd in het groot boek</br>5: de trans actie is doorgevoerd naar het groot boek |
 
 Voor beeld van een *BlockMessage* van Block Chain Workbench:
@@ -463,7 +463,7 @@ Bevat informatie over een contract. Het bericht bevat een sectie met contract ei
 | transactionId | De unieke id voor de trans actie in azure Block Chain workbench |
 | transactionHash | De hash van de trans actie in het groot boek |
 | from | Unieke id in het groot boek voor de oorsprong van de trans actie |
-| in op | Unieke id in het groot boek voor het doel van de trans actie |
+| tot | Unieke id in het groot boek voor het doel van de trans actie |
 
 #### <a name="contract-properties"></a>Eigenschappen van contract
 
@@ -561,7 +561,7 @@ Bevat informatie over het aanroepen van een contract functie, zoals de functie n
 | contractId                  | De unieke id voor het contract in azure Block Chain workbench |
 | contractLedgerIdentifier    | De unieke id voor het contract in het groot boek |
 | functionName                | De naam van de functie |
-| parameters                  | [Parameter informatie](#parameter-information) |
+| parameters                  | [Parametergegevens](#parameter-information) |
 | trans actie                 | Trans actie-informatie |
 | inTransactionSequenceNumber | Het Volg nummer van de trans actie in het blok |
 | connectionId                | De unieke id voor de verbinding |
@@ -577,7 +577,7 @@ Bevat informatie over het aanroepen van een contract functie, zoals de functie n
 | id | De unieke id voor de aanroeper in azure Block Chain workbench |
 | ledgerIdentifier | De unieke id voor de oproepende functie in het groot boek |
 
-#### <a name="parameter-information"></a>Parameter informatie
+#### <a name="parameter-information"></a>Parametergegevens
 
 | Naam | Beschrijving |
 |------|-------------|
@@ -591,7 +591,7 @@ Bevat informatie over het aanroepen van een contract functie, zoals de functie n
 | transactionId      | De unieke id voor de trans actie in azure Block Chain workbench |
 | transactionHash    | De hash van de trans actie in het groot boek |
 | from               | Unieke id in het groot boek voor de oorsprong van de trans actie |
-| in op                 | Unieke id in het groot boek voor het doel van de trans actie |
+| tot                 | Unieke id in het groot boek voor het doel van de trans actie |
 
 Voor beeld van een *EventMessage-ContractFunctionInvocation* van Block Chain Workbench:
 

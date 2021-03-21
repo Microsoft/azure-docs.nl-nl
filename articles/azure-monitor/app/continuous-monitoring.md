@@ -4,10 +4,10 @@ description: Biedt instructies voor het snel instellen van doorlopende bewaking 
 ms.topic: conceptual
 ms.date: 05/01/2020
 ms.openlocfilehash: fd7cd6a107ed45adb60167a57661b60be5dc8212
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86517124"
 ---
 # <a name="add-continuous-monitoring-to-your-release-pipeline"></a>Doorlopende bewaking aan uw release pijplijn toevoegen
@@ -24,7 +24,7 @@ Met continue bewaking kunnen release pijplijnen bewakings gegevens omvatten van 
    
 1. Vervolg de pijl naast **Nieuw** en selecteer **nieuwe release pijplijn**. Als u nog geen pijp lijn hebt, selecteert u **nieuwe pijp lijn** op de pagina die wordt weer gegeven.
    
-1. Zoek en selecteer in het deel venster **sjabloon selecteren** de optie **Azure app service implementatie met doorlopende bewaking**en selecteer vervolgens **Toep assen**. 
+1. Zoek en selecteer in het deel venster **sjabloon selecteren** de optie **Azure app service implementatie met doorlopende bewaking** en selecteer vervolgens **Toep assen**. 
 
    ![Nieuwe release pijplijn voor Azure-pijp lijnen](media/continuous-monitoring/001.png)
 
@@ -47,7 +47,7 @@ Met continue bewaking kunnen release pijplijnen bewakings gegevens omvatten van 
 
 ## <a name="modify-alert-rules"></a>Waarschuwings regels wijzigen
 
-Out of box heeft de **Azure app service-implementatie met continue monitoring** sjabloon vier waarschuwings regels: **Beschik baarheid**, **mislukte aanvragen**, **reactie tijd van server**en **Server uitzonderingen**. U kunt meer regels toevoegen of de regel instellingen wijzigen om te voldoen aan de vereisten van uw service niveau. 
+Out of box heeft de **Azure app service-implementatie met continue monitoring** sjabloon vier waarschuwings regels: **Beschik baarheid**, **mislukte aanvragen**, **reactie tijd van server** en **Server uitzonderingen**. U kunt meer regels toevoegen of de regel instellingen wijzigen om te voldoen aan de vereisten van uw service niveau. 
 
 Instellingen voor waarschuwings regels wijzigen:
 
@@ -71,19 +71,19 @@ Wanneer u implementatie-Gates toevoegt aan uw release pijplijn, voor komt een wa
 
 Implementatie-Gates toevoegen:
 
-1. Selecteer op de hoofd pagina van de pijp lijn onder **stadia**het symbool **voor waarden vóór de implementatie** of na de **implementatie** , afhankelijk van welke fase een continue bewakings poort nodig heeft.
+1. Selecteer op de hoofd pagina van de pijp lijn onder **stadia** het symbool **voor waarden vóór de implementatie** of na de **implementatie** , afhankelijk van welke fase een continue bewakings poort nodig heeft.
    
    ![Voor waarden voorafgaand aan implementatie](media/continuous-monitoring/004.png)
    
 1. Stel in het configuratie venster **voor waarden voor voor implementatie** de **poorten** in op **ingeschakeld**.
    
-1. Selecteer **toevoegen**naast **implementatie poorten**.
+1. Selecteer **toevoegen** naast **implementatie poorten**.
    
 1. Selecteer **Query Azure monitor waarschuwingen** in het vervolg keuzemenu. Met deze optie krijgt u toegang tot zowel Azure Monitor als Application Insights-waarschuwingen.
    
    ![Azure Monitor waarschuwingen voor query's](media/continuous-monitoring/005.png)
    
-1. Onder **evaluatie opties**voert u de gewenste waarden in voor instellingen, zoals **de tijd tussen het opnieuw evalueren van poorten** en **de time-out waarna de poorten mislukken**. 
+1. Onder **evaluatie opties** voert u de gewenste waarden in voor instellingen, zoals **de tijd tussen het opnieuw evalueren van poorten** en **de time-out waarna de poorten mislukken**. 
 
 ## <a name="view-release-logs"></a>Release logboeken weer geven
 
@@ -93,9 +93,9 @@ U kunt het gedrag van de implementatie poort en andere release stappen in de rel
    
 1. Selecteer een release. 
    
-1. Selecteer onder **fases**een wille keurige fase om een release overzicht weer te geven. 
+1. Selecteer onder **fases** een wille keurige fase om een release overzicht weer te geven. 
    
-1. Als u logboeken wilt weer geven, selecteert u **Logboeken weer geven** in het overzicht van de release, selecteert u de Hyper link **geslaagd** of **mislukt** in een wille keurig stadium, of **beweegt u de**muis aanwijzer over een wille keurig 
+1. Als u logboeken wilt weer geven, selecteert u **Logboeken weer geven** in het overzicht van de release, selecteert u de Hyper link **geslaagd** of **mislukt** in een wille keurig stadium, of **beweegt u de** muis aanwijzer over een wille keurig 
    
    ![Release logboeken weer geven](media/continuous-monitoring/006.png)
 

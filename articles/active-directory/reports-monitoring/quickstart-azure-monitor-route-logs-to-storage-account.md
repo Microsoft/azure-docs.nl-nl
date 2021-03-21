@@ -18,10 +18,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: fa2cac7c89a2cb1bd99675727bcd51e82c4a18ef
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "74007851"
 ---
 # <a name="tutorial-archive-azure-ad-logs-to-an-azure-storage-account"></a>Zelfstudie: Azure AD-logboeken archiveren in een Azure-opslagaccount
@@ -69,7 +69,7 @@ U hebt het volgende nodig om deze functie te gebruiken:
 
     ![Diagnostische instellingen](./media/quickstart-azure-monitor-route-logs-to-storage-account/DiagnosticSettings.png)
 
-12. Na circa vijftien minuten controleert u of de logboeken naar uw opslagaccount worden gepusht. Ga naar de [Azure-portal](https://portal.azure.com), klik op **Opslagaccount**s, kies het opslagaccount dat u eerder hebt gebruikt en selecteer **Blobs**. Voor **Auditlogboeken** selecteert u **insights-log-audit**. Voor **Aanmeldingslogboeken** selecteert u **insights-log-signin**.
+12. Na circa vijftien minuten controleert u of de logboeken naar uw opslagaccount worden gepusht. Ga naar de [Azure-portal](https://portal.azure.com), klik op **Opslagaccount** s, kies het opslagaccount dat u eerder hebt gebruikt en selecteer **Blobs**. Voor **Auditlogboeken** selecteert u **insights-log-audit**. Voor **Aanmeldingslogboeken** selecteert u **insights-log-signin**.
 
     ![Storage-account](./media/quickstart-azure-monitor-route-logs-to-storage-account/StorageAccount.png)
 

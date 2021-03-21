@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 08/20/2019
 ms.author: xshi
 ms.openlocfilehash: c56bb7030b2ebc12e3afc24e2d8cb29ce2dda0bf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "74079479"
 ---
 # <a name="use-cloud-explorer-for-visual-studio-to-send-and-receive-messages-between-your-device-and-iot-hub"></a>Gebruik Cloud Explorer voor Visual Studio om berichten tussen uw apparaat en IoT Hub te verzenden en te ontvangen.
@@ -54,7 +54,7 @@ Het onderdeel Cloud Explorer van Visual Studio Installer voor Visual Studio 2017
 
 Voer de volgende stappen uit om toegang te krijgen tot uw hub:
 
-1. Selecteer in Visual Studio **View**  >  **Cloud Explorer** weer geven om Cloud Explorer te openen.
+1. Selecteer in Visual Studio   >  **Cloud Explorer** weer geven om Cloud Explorer te openen.
 
 1. Selecteer het pictogram account beheer om uw abonnementen weer te geven.
 
@@ -64,7 +64,7 @@ Voer de volgende stappen uit om toegang te krijgen tot uw hub:
 
 1. Selecteer de Azure-abonnementen die u wilt gebruiken en klik **op Toep assen**.
 
-1. Breid uw abonnement uit en vouw **IOT-hubs**uit.  Onder elke hub kunt u uw apparaten weer geven voor die hub.
+1. Breid uw abonnement uit en vouw **IOT-hubs** uit.  Onder elke hub kunt u uw apparaten weer geven voor die hub.
 
     ![Apparaten lijst](media/iot-hub-visual-studio-cloud-device-messaging/hub-device-list.png)
 

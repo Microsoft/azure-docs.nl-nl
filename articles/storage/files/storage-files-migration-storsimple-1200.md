@@ -8,10 +8,10 @@ ms.date: 03/09/2020
 ms.author: fauhse
 ms.subservice: files
 ms.openlocfilehash: 8562d63bf227fff665c70674c7fe66922bce9992
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98882277"
 ---
 # <a name="storsimple-1200-migration-to-azure-file-sync"></a>Migratie van Storsimple 1200 naar Azure File Sync
@@ -210,13 +210,13 @@ U bent klaar met het migreren van een share/groep shares naar een gemeen schappe
 U kunt proberen enkele van deze kopieën parallel uit te voeren. Het is raadzaam om het bereik van een Azure-bestands share tegelijk te verwerken.
 
 > [!WARNING]
-> Wanneer u alle gegevens van de StorSimple naar de Windows-Server hebt verplaatst en uw migratie is voltooid, gaat u terug naar ***alle** _ synchronisatie groepen in de Azure Portal en past u de waarde voor het percentage beschik bare ruimte in de Cloud-laag aan om iets beter geschikt te maken voor het gebruik van de cache, bijvoorbeeld 20%. 
+> Wanneer u alle gegevens van de StorSimple naar de Windows-Server hebt verplaatst en uw migratie is voltooid, gaat u terug naar ***alle***  synchronisatie groepen in de Azure Portal en past u de waarde voor het percentage beschik bare ruimte in de Cloud laag aan om iets beter geschikt te maken voor het gebruik van de cache, bijvoorbeeld 20%. 
 
 Het beleid voor beschik bare ruimte op het niveau van de Cloud-laag is een volume dat mogelijk meerdere server eindpunten synchroniseert. Als u vergeet de beschik bare ruimte op zelfs één server eindpunt aan te passen, blijft synchronisatie de meest beperkende regel Toep assen en wordt geprobeerd om 99% vrije schijf ruimte te houden, waardoor de lokale cache niet wordt uitgevoerd zoals u zou verwachten. Tenzij het uw doel is om alleen de naam ruimte te hebben voor een volume dat slechts zelden wordt gebruikt, worden er gegevens gearchiveerd.
 
 ## <a name="troubleshoot"></a>Problemen oplossen
 
-Het meest waarschijnlijke probleem dat u kunt uitvoeren in, is dat de RoboCopy-opdracht mislukt met _ "volume vol" * aan de kant van de Windows-Server. Als dat het geval is, is de download snelheid waarschijnlijk beter dan uw Upload snelheid. Cloud lagen reageert eenmaal elk uur om inhoud te verlaten van de lokale Windows Server-schijf, die is gesynchroniseerd.
+Het meest waarschijnlijke probleem dat u kunt uitvoeren in, is dat de RoboCopy-opdracht mislukt met *' volume vol '* aan de Windows Server-zijde. Als dat het geval is, is de download snelheid waarschijnlijk beter dan uw Upload snelheid. Cloud lagen reageert eenmaal elk uur om inhoud te verlaten van de lokale Windows Server-schijf, die is gesynchroniseerd.
 
 Laat de voortgang van de synchronisatie en Cloud lagen vrij schijf ruimte vrijmaken. U ziet dat in Verkenner op uw Windows-Server.
 

@@ -8,15 +8,15 @@ ms.date: 07/29/2020
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: 64bd9e4a4cf78d2628e946af30c2d290ff002cf7
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93081141"
 ---
 # <a name="install-and-configure-an-on-premises-data-gateway"></a>Een on-premises gegevensgateway installeren en configureren
 
-Een on-premises gegevens gateway is vereist wanneer een of meer Azure Analysis Services servers in dezelfde regio verbinding maken met on-premises gegevens bronnen.  De gateway die u installeert, is hetzelfde als die wordt gebruikt door andere services, zoals Power BI, Power apps en Logic Apps, wanneer u voor Azure Analysis Services installeert, zijn er enkele extra stappen die u moet volt ooien. Dit installatie artikel is specifiek voor **Azure Analysis Services** . 
+Een on-premises gegevens gateway is vereist wanneer een of meer Azure Analysis Services servers in dezelfde regio verbinding maken met on-premises gegevens bronnen.  De gateway die u installeert, is hetzelfde als die wordt gebruikt door andere services, zoals Power BI, Power apps en Logic Apps, wanneer u voor Azure Analysis Services installeert, zijn er enkele extra stappen die u moet volt ooien. Dit installatie artikel is specifiek voor **Azure Analysis Services**. 
 
 Zie [verbinding maken met on-premises gegevens bronnen](analysis-services-gateway.md)voor meer informatie over de werking van Azure Analysis Services met de gateway. Zie de [documentatie over on-premises gegevens gateways](/data-integration/gateway/service-gateway-onprem)voor meer informatie over geavanceerde installatie scenario's en de gateway in het algemeen.
 
@@ -52,11 +52,11 @@ Zie [verbinding maken met on-premises gegevens bronnen](analysis-services-gatewa
 
 1. Voer Setup uit.
 
-2. Selecteer **on-premises gegevens gateway** .
+2. Selecteer **on-premises gegevens gateway**.
 
    ![Selecteer](media/analysis-services-gateway-install/aas-gateway-installer-select.png)
 
-2. Selecteer een locatie, accepteer de voor waarden en klik vervolgens op **installeren** .
+2. Selecteer een locatie, accepteer de voor waarden en klik vervolgens op **installeren**.
 
    ![Installatie locatie en licentie voorwaarden](media/analysis-services-gateway-install/aas-gateway-installer-accept.png)
 
@@ -71,11 +71,11 @@ Zie [verbinding maken met on-premises gegevens bronnen](analysis-services-gatewa
 
 Als u een gateway bron in azure wilt maken, moet u het lokale exemplaar dat u hebt geïnstalleerd met de gateway-Cloud service registreren. 
 
-1.  Selecteer **een nieuwe gateway registreren op deze computer** .
+1.  Selecteer **een nieuwe gateway registreren op deze computer**.
 
     ![Scherm afbeelding die de optie een nieuwe gateway registreren op deze computer markeert.](media/analysis-services-gateway-install/aas-gateway-register-new.png)
 
-2. Typ een naam en herstel sleutel voor uw gateway. De gateway maakt standaard gebruik van de standaard regio van uw abonnement. Als u een andere regio wilt selecteren, selecteert u **regio wijzigen** .
+2. Typ een naam en herstel sleutel voor uw gateway. De gateway maakt standaard gebruik van de standaard regio van uw abonnement. Als u een andere regio wilt selecteren, selecteert u **regio wijzigen**.
 
     > [!IMPORTANT]
     > Sla uw herstel sleutel op een veilige plaats op. De herstel sleutel is vereist in-volg orde voor overname, migratie of herstel van een gateway. 
@@ -87,25 +87,25 @@ Als u een gateway bron in azure wilt maken, moet u het lokale exemplaar dat u he
 
 Nadat u de gateway hebt geïnstalleerd en geregistreerd, moet u een gateway bron maken in Azure. Meld u aan bij Azure met hetzelfde account dat u hebt gebruikt bij het registreren van de gateway.
 
-1. In Azure Portal klikt u op **een resource maken** , zoekt u naar de **on-premises gegevens gateway** en klikt u vervolgens op **maken** .
+1. In Azure Portal klikt u op **een resource maken**, zoekt u naar de **on-premises gegevens gateway** en klikt u vervolgens op **maken**.
 
    ![Een gateway resource maken](media/analysis-services-gateway-install/aas-gateway-new-azure-resource.png)
 
 2. Voer bij **verbindings gateway maken** de volgende instellingen in:
 
-   * **Naam** : Voer een naam in voor de gateway bron. 
+   * **Naam**: Voer een naam in voor de gateway bron. 
 
-   * **Abonnement** : Selecteer het Azure-abonnement dat u wilt koppelen aan uw gateway resource. 
+   * **Abonnement**: Selecteer het Azure-abonnement dat u wilt koppelen aan uw gateway resource. 
    
      Het standaard abonnement is gebaseerd op het Azure-account dat u hebt gebruikt om u aan te melden.
 
-   * **Resourcegroep** : maak een resourcegroep of selecteer een bestaande resourcegroep.
+   * **Resourcegroep**: maak een resourcegroep of selecteer een bestaande resourcegroep.
 
-   * **Locatie** : Selecteer de regio waarin u uw gateway hebt geregistreerd.
+   * **Locatie**: Selecteer de regio waarin u uw gateway hebt geregistreerd.
 
-   * **Installatie naam** : als de gateway-installatie nog niet is geselecteerd, selecteert u de gateway die u op uw computer hebt geïnstalleerd en geregistreerd. 
+   * **Installatie naam**: als de gateway-installatie nog niet is geselecteerd, selecteert u de gateway die u op uw computer hebt geïnstalleerd en geregistreerd. 
 
-     Wanneer u klaar bent, klikt u op **maken** .
+     Wanneer u klaar bent, klikt u op **maken**.
 
 ## <a name="connect-gateway-resource-to-server"></a>Gateway bron verbinden met server
 
@@ -114,11 +114,11 @@ Nadat u de gateway hebt geïnstalleerd en geregistreerd, moet u een gateway bron
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
-1. Klik in het overzicht van Azure Analysis Services server op **on-premises gegevens gateway** .
+1. Klik in het overzicht van Azure Analysis Services server op **on-premises gegevens gateway**.
 
    ![Server verbinden met gateway](media/analysis-services-gateway-install/aas-gateway-connect-server.png)
 
-2. Selecteer in **een on-premises gegevens gateway kiezen om verbinding te maken** de gateway bron en klik vervolgens op **geselecteerde gateway verbinden** .
+2. Selecteer in **een on-premises gegevens gateway kiezen om verbinding te maken** de gateway bron en klik vervolgens op **geselecteerde gateway verbinden**.
 
    ![Verbinding maken tussen server en gateway resource](media/analysis-services-gateway-install/aas-gateway-connect-resource.png)
 

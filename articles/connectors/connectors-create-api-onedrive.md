@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 10/18/2016
 tags: connectors
 ms.openlocfilehash: 9fe4988b5499943f4b11ec5d640209ceb68e84ec
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87040244"
 ---
 # <a name="access-and-manage-files-in-onedrive-connector-by-using-azure-logic-apps"></a>Bestanden in OneDrive connector openen en beheren met behulp van Azure Logic Apps
@@ -28,7 +28,7 @@ Zie [Wat zijn logische apps](../logic-apps/logic-apps-overview.md) en [Maak een 
 
 ## <a name="connect-to-onedrive"></a>Verbinden met OneDrive
 
-Voordat uw logische app toegang kan krijgen tot een service, maakt u eerst een *verbinding* met de service. Een verbinding biedt connectiviteit tussen een logische app en een andere service. Als u bijvoorbeeld verbinding wilt maken met OneDrive, hebt u eerst een OneDrive- *verbinding*nodig. Als u een verbinding wilt maken, voert u de referenties in die u normaal gebruikt voor toegang tot de service waarmee u verbinding wilt maken. In OneDrive voert u de referenties voor uw OneDrive-account in om de verbinding te maken.
+Voordat uw logische app toegang kan krijgen tot een service, maakt u eerst een *verbinding* met de service. Een verbinding biedt connectiviteit tussen een logische app en een andere service. Als u bijvoorbeeld verbinding wilt maken met OneDrive, hebt u eerst een OneDrive- *verbinding* nodig. Als u een verbinding wilt maken, voert u de referenties in die u normaal gebruikt voor toegang tot de service waarmee u verbinding wilt maken. In OneDrive voert u de referenties voor uw OneDrive-account in om de verbinding te maken.
 
 ### <a name="create-the-connection"></a>De verbinding maken
 
@@ -50,7 +50,7 @@ Een trigger is een gebeurtenis die kan worden gebruikt om de werk stroom te star
 
    In dit voor beeld wordt de logische app uitgevoerd wanneer een bestand in de map die u kiest, wordt bijgewerkt. Als u de resultaten van deze trigger wilt zien, voegt u een andere actie toe waarmee u een e-mail ontvangt. Voeg bijvoorbeeld de actie Office 365 Outlook een e-mail verzenden toe die u e *-mailt* wanneer een bestand wordt bijgewerkt.
 
-3. Selecteer de knop **bewerken** en stel de **frequentie** -en **interval** waarden in. Als u bijvoorbeeld wilt dat de trigger om de 15 minuten vraagt, stelt u de **frequentie** in op **minuut**en stelt u het **interval** in op **15**. 
+3. Selecteer de knop **bewerken** en stel de **frequentie** -en **interval** waarden in. Als u bijvoorbeeld wilt dat de trigger om de 15 minuten vraagt, stelt u de **frequentie** in op **minuut** en stelt u het **interval** in op **15**. 
 
    ![Er verschijnt een dialoog venster met de titel ' wanneer een bestand wordt gewijzigd ' vijf vakken met het label: ' map ', ' frequentie ', ' INTERVAL ', ' tijd zone ' en ' begin tijd '. Er zijn vervolg keuzelijsten voor de velden frequentie en tijd ZONE.](./media/connectors-create-api-onedrive/trigger-properties.png)
 
@@ -60,7 +60,7 @@ Een trigger is een gebeurtenis die kan worden gebruikt om de werk stroom te star
 
 Een actie is een bewerking die wordt uitgevoerd door de werk stroom die is gedefinieerd in een logische app. [Meer informatie over acties](../logic-apps/logic-apps-overview.md#logic-app-concepts).
 
-1. Selecteer het plus teken. U ziet verschillende opties: **een actie toevoegen**, **een voor waarde toevoegen**of een van de **meer** opties.
+1. Selecteer het plus teken. U ziet verschillende opties: **een actie toevoegen**, **een voor waarde toevoegen** of een van de **meer** opties.
 
    ![Een scherm opname toont vier knoppen: "+ nieuwe stap", "actie toevoegen", "een voor waarde toevoegen" en "... Meer ".](./media/connectors-create-api-onedrive/add-action.png)
 
@@ -70,7 +70,7 @@ Een actie is een bewerking die wordt uitgevoerd door de werk stroom die is gedef
 
    ![Er wordt een dialoog venster weer gegeven met de titel ' micro soft Managed A P I ' heeft een vak dat ' onedrive ' bevat. Hieronder ziet u een lijst met acht acties. De eerste is OneDrive-Create File en is geselecteerd.](./media/connectors-create-api-onedrive/onedrive-actions.png) 
 
-4. In ons voor beeld kiest u **OneDrive-bestand maken**. Als er al een verbinding bestaat, **selecteert u het mappad om het** bestand te plaatsen, voert u de **Bestands naam**in en kiest u de gewenste **Bestands inhoud** :  
+4. In ons voor beeld kiest u **OneDrive-bestand maken**. Als er al een verbinding bestaat, **selecteert u het mappad om het** bestand te plaatsen, voert u de **Bestands naam** in en kiest u de gewenste **Bestands inhoud** :  
 
    ![In een dialoog venster met de titel ' bestand maken ' worden drie vakken met de naam ' MAPPAD ', ' BESTANDS naam ' en ' MAPINHOUD ' weer gegeven. Er is een knop Bladeren naast het vak mappad.](./media/connectors-create-api-onedrive/sample-action.png)
 

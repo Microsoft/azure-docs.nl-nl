@@ -4,10 +4,10 @@ description: Meer informatie over het implementeren en beheren van Azure Backup 
 ms.topic: conceptual
 ms.date: 01/23/2017
 ms.openlocfilehash: 176cbffe5152462055c4ffdb2367cf9c0ab97c1f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90968307"
 ---
 # <a name="deploy-and-manage-backup-to-azure-for-data-protection-manager-dpm-servers-using-powershell"></a>Met behulp van PowerShell back-ups implementeren en beheren in Azure voor Data Protection Manager (DPM)-servers
@@ -113,7 +113,7 @@ MARSAgentInstaller.exe /q
 
 Hiermee installeert u de agent met alle standaard opties. De installatie duurt enkele minuten op de achtergrond. Als u de optie */nu* niet opgeeft, wordt het venster **Windows Update** geopend aan het einde van de installatie om te controleren of er updates zijn.
 
-De agent wordt weer gegeven in de lijst met geïnstalleerde Program ma's. Ga naar **configuratie scherm**  >  **Program**ma's  >  **en onderdelen**om de lijst met geïnstalleerde Program ma's weer te geven.
+De agent wordt weer gegeven in de lijst met geïnstalleerde Program ma's. Ga naar **configuratie scherm**  >  **Program** ma's  >  **en onderdelen** om de lijst met geïnstalleerde Program ma's weer te geven.
 
 ![Agent geïnstalleerd](./media/backup-dpm-automation/installed-agent-listing.png)
 

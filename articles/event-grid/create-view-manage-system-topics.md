@@ -4,10 +4,10 @@ description: In dit artikel wordt beschreven hoe u een bestaand systeem onderwer
 ms.topic: conceptual
 ms.date: 07/07/2020
 ms.openlocfilehash: 2dbb0893668d72cfebf2d64e6515ff6ab6fed9bc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86115108"
 ---
 # <a name="create-view-and-manage-event-grid-system-topics-in-the-azure-portal"></a>Event Grid systeem onderwerpen maken, weer geven en beheren in de Azure Portal
@@ -20,7 +20,7 @@ U kunt op twee manieren een systeem onderwerp maken voor een Azure-resource (ops
 - Op de pagina met **Event grid systeem onderwerpen** . De volgende stappen zijn voor het maken van een systeem onderwerp met behulp van de pagina **Event grid systeem onderwerpen** . 
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
-2. Typ **Event grid systeem onderwerpen**in het zoekvak bovenaan en druk op **Enter**. 
+2. Typ **Event grid systeem onderwerpen** in het zoekvak bovenaan en druk op **Enter**. 
 
     ![Systeem onderwerpen zoeken](./media/create-view-manage-system-topics/search-system-topics.png)
 3. Selecteer op de pagina **Event grid systeem onderwerpen** **+ toevoegen** op de werk balk.
@@ -50,7 +50,7 @@ U kunt op twee manieren een systeem onderwerp maken voor een Azure-resource (ops
 Volg deze stappen om alle bestaande Event Grid systeem onderwerpen weer te geven. 
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
-2. Typ **Event grid systeem onderwerpen**in het zoekvak bovenaan en druk op **Enter**. 
+2. Typ **Event grid systeem onderwerpen** in het zoekvak bovenaan en druk op **Enter**. 
 
     ![Systeem onderwerpen zoeken](./media/create-view-manage-system-topics/search-system-topics.png)
 3. Op de pagina **Event grid systeem onderwerpen** ziet u alle systeem onderwerpen. 
@@ -83,7 +83,7 @@ Volg deze stappen om alle bestaande Event Grid systeem onderwerpen weer te geven
 2. Selecteer op de pagina **Event grid systeem onderwerp** **+ gebeurtenis abonnement** op de werk balk. 
 
     ![Systeem onderwerp: knop gebeurtenis abonnement toevoegen](./media/create-view-manage-system-topics/add-event-subscription-button.png)
-3. Controleer of het **onderwerp type**, **bron resource**en **onderwerpnaam** automatisch worden ingevuld. Voer een naam in, selecteer een **eindpunt type**en geef het **eind punt**op. Selecteer vervolgens **maken** om het gebeurtenis abonnement te maken. 
+3. Controleer of het **onderwerp type**, **bron resource** en **onderwerpnaam** automatisch worden ingevuld. Voer een naam in, selecteer een **eindpunt type** en geef het **eind punt** op. Selecteer vervolgens **maken** om het gebeurtenis abonnement te maken. 
 
     ![Systeem onderwerp: gebeurtenis abonnement maken](./media/create-view-manage-system-topics/create-event-subscription.png)
 

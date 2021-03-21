@@ -16,13 +16,13 @@ ms.workload: na
 ms.date: 11/06/2020
 ms.author: yelevin
 ms.openlocfilehash: 64f05e18ff757d9f086cf06d74109bf64e32a05c
-ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98795682"
 ---
-# <a name="manage-hunting-and-livestream-queries-in-azure-sentinel-using-rest-api"></a>Jacht-en Livestream query's beheren in azure Sentinel met REST API
+# <a name="manage-hunting-and-livestream-queries-in-azure-sentinel-using-rest-api"></a>Opsporings- en livestreamquery's beheren in Azure Sentinel met behulp van REST API
 
 Met Azure Sentinel, die deel uitmaakt van Azure Monitor Log Analytics, kunt u Log Analytics REST API gebruiken voor het beheren van jacht-en Livestream-query's. Dit document bevat informatie over het maken en beheren van jacht-query's met behulp van de REST API.  Query's die op deze manier zijn gemaakt, worden weer gegeven in de Azure Sentinel-gebruikers interface.
 

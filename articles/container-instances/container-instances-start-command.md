@@ -4,10 +4,10 @@ description: Een opdracht regel instellen om het toegangs punt in een container 
 ms.topic: article
 ms.date: 04/15/2019
 ms.openlocfilehash: 23221de3dc91c37c2e6fb96489539d3954efcd87
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86169626"
 ---
 # <a name="set-the-command-line-in-a-container-instance-to-override-the-default-command-line-operation"></a>Stel de opdracht regel in een container exemplaar in om de standaard opdracht regel bewerking te overschrijven
@@ -52,14 +52,14 @@ De syntaxis van de opdracht regel is afhankelijk van de API of het hulp programm
 
 ### <a name="examples"></a>Voorbeelden
 
-|    |  Azure CLI   | Portal | Template | 
+|    |  Azure CLI   | Portal | Sjabloon | 
 | ---- | ---- | --- | --- |
 | **Eén opdracht** | `--command-line "python myscript.py arg1 arg2"` | **Opdracht negeren**: `python, myscript.py, arg1, arg2` | `"command": ["python", "myscript.py", "arg1", "arg2"]` |
 | **Meerdere opdrachten** | `--command-line "/bin/bash -c 'mkdir test; touch test/myfile; tail -f /dev/null'"` |**Opdracht negeren**: `/bin/bash, -c, mkdir test; touch test/myfile; tail -f /dev/null` | `"command": ["/bin/bash", "-c", "mkdir test; touch test/myfile; tail -f /dev/null"]` |
 
 ## <a name="azure-cli-example"></a>Voor beeld van Azure CLI
 
-Wijzig bijvoorbeeld het gedrag van de container installatie kopie [micro soft/ACI-WordCount][aci-wordcount] , die tekst analyseert in de *Hamlet* van Shakespeare om de meest voorkomende woorden te vinden. In plaats van *Hamlet*te analyseren, kunt u een opdracht regel instellen die naar een andere tekst bron wijst.
+Wijzig bijvoorbeeld het gedrag van de container installatie kopie [micro soft/ACI-WordCount][aci-wordcount] , die tekst analyseert in de *Hamlet* van Shakespeare om de meest voorkomende woorden te vinden. In plaats van *Hamlet* te analyseren, kunt u een opdracht regel instellen die naar een andere tekst bron wijst.
 
 Als u de uitvoer van de [micro soft/ACI-WordCount-][aci-wordcount] container wilt zien bij het analyseren van de standaard tekst, voert u deze uit met de volgende opdracht [AZ container Create][az-container-create] . Er is geen start opdracht regel opgegeven, dus de standaard container opdracht wordt uitgevoerd. Ter illustratie stelt dit voor beeld [omgevings variabelen](container-instances-environment-variables.md) in om de eerste drie woorden te vinden die ten minste vijf letters lang zijn:
 

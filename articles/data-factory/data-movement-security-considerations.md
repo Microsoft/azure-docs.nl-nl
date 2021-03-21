@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 05/26/2020
 ms.openlocfilehash: 1a99fbd3d3163808a364e8b26e770563a901dc18
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100371325"
 ---
 # <a name="security-considerations-for-data-movement-in-azure-data-factory"></a>Beveiligings overwegingen voor het verplaatsen van gegevens in Azure Data Factory
@@ -169,7 +169,7 @@ De volgende installatie kopieën tonen het gebruik van zelf-hostende Integration
 > [!NOTE]
 > Zie [dit artikel](./data-access-strategies.md#data-access-strategies-through-azure-data-factory)voor meer informatie over strategieën voor gegevens toegang via Azure Data Factory.
 
-#### <a name="firewall-requirements-for-on-premisesprivate-network"></a>Firewall vereisten voor on-premises/particulier netwerk
+#### <a name="firewall-requirements-for-on-premisesprivate-network"></a>Firewallvereisten voor on-premises/particulier netwerk
 
 In een onderneming wordt een bedrijfs firewall uitgevoerd op de centrale router van de organisatie. Windows Firewall wordt uitgevoerd als een daemon op de lokale computer waarop de zelf-hostende Integration runtime is geïnstalleerd. 
 
@@ -182,7 +182,7 @@ De volgende tabel bevat uitgaande poort-en domein vereisten voor zakelijke firew
 
 De volgende tabel bevat de binnenkomende poort vereisten voor Windows Firewall:
 
-| Poorten voor inkomend verkeer | Description                              |
+| Poorten voor inkomend verkeer | Beschrijving                              |
 | ------------- | ---------------------------------------- |
 | 8060 (TCP)    | Vereist door de Power shell-versleutelings-cmdlet, zoals beschreven in [referenties versleutelen voor on-premises gegevens archieven in azure Data Factory](encrypt-credentials-self-hosted-integration-runtime.md), en door de toepassing voor referentie beheer om veilig referenties in te stellen voor on-premises gegevens archieven op de zelf-hostende Integration runtime. |
 

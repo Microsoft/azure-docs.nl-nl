@@ -7,13 +7,13 @@ ms.author: bagol
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.topic: conceptual
-ms.date: 03/08/2021
-ms.openlocfilehash: 88ac8bb1bc804604b96d5c90025b8325a6ce4962
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.date: 03/11/2021
+ms.openlocfilehash: 31ba96e0f8772877d7b4881c6bab0561cbe7956e
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102503114"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104604250"
 ---
 # <a name="whats-new-in-azure-sentinel"></a>Wat is er nieuw in azure Sentinel
 
@@ -32,10 +32,54 @@ Genoteerde functies zijn momenteel beschikbaar als PREVIEW-versie. De [Aanvullen
 
 ## <a name="march-2021"></a>2021 maart
 
-- [Microsoft 365 Defender-incident integratie](#microsoft-365-defender-incident-integration) (open bare preview)
+- [Automatiserings regels en door incidenten geactiveerde playbooks](#automation-rules-and-incident-triggered-playbooks) (inclusief alle-nieuwe Playbook-documentatie)
+- [Nieuwe waarschuwings verrijkingen: uitgebreide entiteits toewijzing en aangepaste Details](#new-alert-enrichments-enhanced-entity-mapping-and-custom-details)
+- [Uw Azure Sentinel-werkmappen afdrukken of opslaan als PDF-bestand](#print-your-azure-sentinel-workbooks-or-save-as-pdf)
+- [Incident filters en sorteer voorkeuren die nu zijn opgeslagen in uw sessie (open bare preview)](#incident-filters-and-sort-preferences-now-saved-in-your-session-public-preview)
+- [Microsoft 365 Defender-incident integratie (open bare preview)](#microsoft-365-defender-incident-integration-public-preview)
 - [Nieuwe micro soft-service connectors met behulp van Azure Policy](#new-microsoft-service-connectors-using-azure-policy)
+ 
+### <a name="automation-rules-and-incident-triggered-playbooks"></a>Automatiserings regels en door incidenten geactiveerde playbooks
 
-### <a name="microsoft-365-defender-incident-integration"></a>Integratie van Microsoft 365 Defender-incident
+Automatiserings regels zijn een nieuw concept in azure Sentinel, waarmee u de automatisering van incident verwerking centraal kunt beheren. Naast de mogelijkheid om playbooks toe te wijzen aan incidenten (niet alleen op waarschuwingen zoals voorheen), kunt u met automatiserings regels ook de reacties voor meerdere analyse regels tegelijk automatiseren, automatisch tags toewijzen, toekennen of sluiten van incidenten zonder playbooks, en de volg orde bepalen van de acties die worden uitgevoerd. Met Automation-regels worden automatiserings gebruik in azure Sentinel gestroomlijnd en kunt u complexe werk stromen vereenvoudigen voor de indelings processen van uw incident.
+
+Meer informatie vindt u in deze [volledige uitleg over Automation-regels](automate-incident-handling-with-automation-rules.md).
+
+Zoals hierboven vermeld, kan playbooks nu worden geactiveerd met de trigger voor incidenten naast de waarschuwing. De incident trigger biedt uw playbooks een grotere set ingangen waarmee u kunt werken (aangezien het incident ook alle waarschuwingen en entiteits gegevens bevat), waardoor u nog meer kracht en flexibiliteit hebt in uw antwoord werk stromen. Door incidenten geactiveerde playbooks worden geactiveerd door te worden aangeroepen vanuit Automation-regels.
+
+Meer informatie over [playbooks ' Enhanced mogelijkheden](automate-responses-with-playbooks.md), en hoe u [een antwoord werk stroom](tutorial-respond-threats-playbook.md) maakt met behulp van playbooks in combi natie met automatiserings regels.
+
+### <a name="new-alert-enrichments-enhanced-entity-mapping-and-custom-details"></a>Nieuwe waarschuwings verrijkingen: uitgebreide entiteits toewijzing en aangepaste Details
+
+Verrijk uw waarschuwingen op twee nieuwe manieren om ze bruikbaarder en meer informatie te maken.
+
+Neem eerst uw entiteits toewijzing naar het volgende niveau. U kunt nu bijna 20 soorten entiteiten, van gebruikers, hosts en IP-adressen, aan bestanden en processen toewijzen aan post vakken, Azure-resources en IoT-apparaten. U kunt ook meerdere id's voor elke entiteit gebruiken om hun unieke identificatie te versterken. Dit biedt u een veel rijkere gegevensset in uw incidenten, die voorziet in een bredere correlatie en krachtiger onderzoek. [Meer informatie over de nieuwe manier om entiteiten](map-data-fields-to-entities.md) in uw waarschuwingen toe te wijzen.
+
+[Lees meer over entiteiten](entities-in-azure-sentinel.md) en Bekijk de [volledige lijst met beschik bare entiteiten en hun id's](entities-reference.md).
+
+Geef uw onderzoeken en reacties een nog betere verbetering door uw waarschuwingen aan te passen aan de details van het Opper vlak van uw onbewerkte gebeurtenissen. Breng inzicht in de inhoud van gebeurtenissen in uw incidenten, waardoor u meer kracht en flexibiliteit hebt bij het reageren op beveiligings dreigingen. [Meer informatie over het oppervlak aanpassen van aangepaste Details](surface-custom-details-in-alerts.md) in uw waarschuwingen.
+
+
+
+### <a name="print-your-azure-sentinel-workbooks-or-save-as-pdf"></a>Uw Azure Sentinel-werkmappen afdrukken of opslaan als PDF-bestand
+
+U kunt nu Azure-Sentinel-werkmappen afdrukken, zodat u deze ook kunt exporteren naar Pdf's en lokaal kunt opslaan of delen.
+
+Selecteer in uw werkmap het menu opties > :::image type="icon" source="media/whats-new/print-icon.png" border="false"::: **inhoud afdrukken**. Selecteer vervolgens uw printer of selecteer **Opslaan als PDF-bestand** als dat nodig is.
+
+:::image type="content" source="media/whats-new/print-workbook.png" alt-text="Uw werkmap afdrukken of opslaan als PDF-bestand.":::
+
+Zie [zelf studie: uw gegevens visualiseren en bewaken](tutorial-monitor-your-data.md)voor meer informatie.
+
+### <a name="incident-filters-and-sort-preferences-now-saved-in-your-session-public-preview"></a>Incident filters en sorteer voorkeuren die nu zijn opgeslagen in uw sessie (open bare preview)
+
+Uw incident filters en sorteren worden nu opgeslagen in de Azure-Sentinel-sessie, zelfs wanneer u naar andere gebieden van het product navigeert.
+Als u zich nog steeds in dezelfde sessie bevindt, gaat u terug naar het gebied [incidenten](tutorial-investigate-cases.md) in azure Sentinel, worden uw filters en sorteren op dezelfde manier als u hebt achtergelaten.
+
+> [!NOTE]
+> Incident filters en-sorteringen worden niet opgeslagen na het verlaten van Azure-Sentinel of het vernieuwen van uw browser.
+
+### <a name="microsoft-365-defender-incident-integration-public-preview"></a>Microsoft 365 Defender-incident integratie (open bare preview)
 
 Met de integratie van Azure Sentinel [Microsoft 365 Defender (M365D)](/microsoft-365/security/mtp/microsoft-threat-protection) kunt u alle M365D-incidenten streamen naar Azure Sentinel en ze gesynchroniseerd houden tussen beide portals. Incidenten van M365D (voorheen bekend als micro soft Threat Protection of MTP) bevatten alle gerelateerde waarschuwingen, entiteiten en relevante informatie, zodat u over voldoende context beschikt voor het uitvoeren van sorteren en voorlopig onderzoek in azure Sentinel. Eenmaal in Sentinel blijven incidenten bidirectionele gesynchroniseerd met M365D, zodat u kunt profiteren van de voor delen van beide portals in uw incident onderzoek.
 
@@ -60,8 +104,8 @@ Klanten kunnen de logboeken nog steeds hand matig verzenden voor specifieke exem
 
 - [CMMC-werkmap (Cyber beveiliging vervaldag model Certification)](#cybersecurity-maturity-model-certification-cmmc-workbook)
 - [Gegevens connectors van derden](#third-party-data-connectors)
-- [UEBA Insights op de pagina entiteit](#ueba-insights-in-the-entity-page)
-- [Verbeterde incidenten zoeken](#improved-incident-search)
+- [UEBA Insights op de entiteits pagina (open bare preview)](#ueba-insights-in-the-entity-page-public-preview)
+- [Verbeterd zoeken naar incidenten (open bare preview)](#improved-incident-search-public-preview)
 
 ### <a name="cybersecurity-maturity-model-certification-cmmc-workbook"></a>CMMC-werkmap (Cyber beveiliging vervaldag model Certification)
 
@@ -117,7 +161,7 @@ Onze verzameling integraties van derden blijft groeien, met dertig Connect oren 
 - [Trend Micro XDR](connect-data-sources.md)
 - [VMware ESXi](connect-vmware-esxi.md)
 
-### <a name="ueba-insights-in-the-entity-page"></a>UEBA Insights op de pagina entiteit
+### <a name="ueba-insights-in-the-entity-page-public-preview"></a>UEBA Insights op de entiteits pagina (open bare preview)
 
 De pagina's Details van de Azure-Sentinel-entiteit bieden een [inzichten venster](identify-threats-with-entity-behavior-analytics.md#entity-insights)waarin gedrags inzichten op de entiteit worden weer gegeven en snel afwijkingen en beveiligings Risico's kunnen worden geïdentificeerd.
 
@@ -131,7 +175,7 @@ Als u [UEBA hebt ingeschakeld](ueba-enrichments.md)en een periode van ten minste
 |**Bedreigings indicatoren met betrekking tot de gebruiker**     |  Een lijst met bekende bedreigingen met betrekking tot IP-adressen die worden weer gegeven in de activiteiten van de gebruiker. Bedreigingen worden weer gegeven op het type bedreiging en familie, en worden verrijkt door de Threat Intelligence-Service van micro soft.       |
 |     |         |
 
-### <a name="improved-incident-search"></a>Verbeterde incidenten zoeken
+### <a name="improved-incident-search-public-preview"></a>Verbeterd zoeken naar incidenten (open bare preview)
 
 We hebben de Azure-Zoek ervaring voor Sentinel-incidenten verbeterd, waardoor u sneller kunt navigeren door incidenten wanneer u een specifieke bedreiging onderzoekt.
 
@@ -148,7 +192,7 @@ Bij het zoeken naar incidenten in azure Sentinel kunt u nu zoeken op de volgende
 - [Wizard analyse regel: verbeterde mogelijkheden voor het bewerken van query's (open bare preview)](#analytics-rule-wizard-improved-query-editing-experience-public-preview)
 - [AZ. SecurityInsights Power shell-module (open bare preview)](#azsecurityinsights-powershell-module-public-preview)
 - [SQL database-connector](#sql-database-connector)
-- [Dynamics 365-connector](#dynamics-365-connector)
+- [Dynamics 365-connector (open bare preview)](#dynamics-365-connector-public-preview)
 - [Verbeterde reacties op incidenten](#improved-incident-comments)
 - [Toegewezen Log Analytics clusters](#dedicated-log-analytics-clusters)
 - [Beheerde identiteiten van Logic apps](#logic-apps-managed-identities)
@@ -183,7 +227,7 @@ Azure SQL is een volledig beheerde PaaS-data base-engine (platform-as-a-Service)
 
 Zie voor meer informatie [verbinding maken tussen Azure SQL database-diagnose en controle logboeken](connect-azure-sql-logs.md).
 
-### <a name="dynamics-365-connector"></a>Dynamics 365-connector
+### <a name="dynamics-365-connector-public-preview"></a>Dynamics 365-connector (open bare preview)
 
 Azure Sentinel biedt nu een connector voor micro soft Dynamics 365, waarmee u uw Dynamics 365-toepassingen van de gebruiker, de beheerder en de activiteiten logboeken voor ondersteuning kunt verzamelen in azure Sentinel. U kunt deze gegevens gebruiken om u te helpen bij het controleren van de volledige gegevens verwerkings acties en om deze te analyseren op mogelijke beveiligings schendingen.
 

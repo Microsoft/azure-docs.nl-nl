@@ -12,16 +12,16 @@ ms.workload: identity
 ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 6252e33631fb07a61ed3c1ac2be65762b290600b
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: cf32274a49cb1b790e9d872efe36f2e1cb188d1d
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98753218"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104675937"
 ---
 # <a name="a-web-app-that-calls-web-apis-move-to-production"></a>Een web-app die web-Api's aanroept: verplaatsen naar productie
 
-Nu u weet hoe u een token kunt verkrijgen om Web-Api's aan te roepen, leert u hoe u kunt overstappen op productie.
+Nu u weet hoe u een token kunt verkrijgen om Web-Api's aan te roepen, kunt u overwegen om rekening te houden met de volgende punten wanneer u uw toepassing naar productie gaat verplaatsen.
 
 [!INCLUDE [Common steps to move to production](../../../includes/active-directory-develop-scenarios-production.md)]
 

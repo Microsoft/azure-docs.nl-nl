@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.custom: contperf-fy21q1
 ms.date: 10/13/2020
 ms.author: allensu
-ms.openlocfilehash: 6b73eb51831238f23400ef60d0a6162bca38ea85
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 2fc703e0532c86bfc0874c8dccbb17c6142aeed0
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97033150"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104590208"
 ---
 # <a name="outbound-rules-azure-load-balancer"></a><a name="outboundrules"></a>Azure Load Balancer voor uitgaande regels
 
@@ -36,11 +36,11 @@ Met uitgaande regels kunt u het gedrag voor uitgaande **SNAT** expliciet defini√
 Met uitgaande regels kunt u het volgende beheren:
 
 * **Welke virtuele machines worden omgezet naar de open bare IP-adressen.**
-     * Twee regels zijn back-end-pool A maakt gebruik van IP-adres A en B. back-end-pool B gebruikt IP-adres C en D.
+     * Twee regels zijn back-end-pool 1 maakt gebruik van het blauwe IP-adres 1 en 2. back-end-Pool 2 gebruikt het gele IP-voor voegsel.
 * **Hoe uitgaand SNAT-poorten worden toegewezen.**
-     * Back-end-groep B is de enige groep die uitgaande verbindingen maakt, alle SNAT-poorten naar back-end-groep B en geen naar back-end-groep A heeft.
+     * Als back-endserver 2 de enige pool is die uitgaande verbindingen maakt, geeft u alle SNAT-poorten op back-end-groep 2 en geen naar back-end-groep 1.
 * **De protocollen waarvoor een uitgaande vertaling moet worden geboden.**
-     * Back-end-pool B heeft UDP-poorten voor uitgaand verkeer nodig. Back-end-groep A vereist TCP. Geef TCP-poorten naar een UDP-poort aan B.
+     * Als de back-end-Pool 2 UDP-poorten voor uitgaand verkeer nodig heeft en de back-end-pool 1 TCP heeft, moet u TCP-poorten toewijzen aan 1-en UDP-poorten
 * **Welke duur moet worden gebruikt voor de time-out voor uitgaande verbindingen (4-120 minuten).**
      * Als er langlopende verbindingen met keepalives zijn, reserveert u niet-actieve poorten voor langlopende verbindingen gedurende 120 minuten. Aannemen dat verouderde verbindingen in 4 minuten worden afgebroken en de poorten voor nieuwe verbindingen worden vrijgegeven 
 * **Hiermee wordt aangegeven of een TCP Reset moet worden verzonden bij een time-out voor inactiviteit.**

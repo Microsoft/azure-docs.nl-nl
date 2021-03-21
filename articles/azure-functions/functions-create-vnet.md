@@ -4,10 +4,10 @@ description: Deze zelf studie laat zien hoe u een functie verbindt met een virtu
 ms.topic: article
 ms.date: 2/22/2021
 ms.openlocfilehash: 3dd5e700b3081f1c1ef8e4601385c707a5738321
-ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102630466"
 ---
 # <a name="tutorial-integrate-azure-functions-with-an-azure-virtual-network-by-using-private-endpoints"></a>Zelf studie: Azure Functions integreren met een virtueel Azure-netwerk met behulp van privé-eind punten

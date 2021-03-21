@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: conceptual
 ms.date: 11/06/2020
 ms.author: yajin1
-ms.openlocfilehash: bdda89483661eb6f6d006c3d8ea42b46d162de05
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 8eade7596e36389b1e345dc6f0aab1029dc100e0
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98201651"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104589159"
 ---
 # <a name="troubleshooting-guide-for-azure-signalr-service-common-issues"></a>Probleemoplossings gids voor veelvoorkomende problemen met de Azure signalerings service
 
@@ -19,14 +19,14 @@ In deze richt lijnen vindt u nuttige richt lijnen voor probleem oplossing op bas
 
 ## <a name="access-token-too-long"></a>Toegangs token te lang
 
-### <a name="possible-errors"></a>Mogelijke fouten:
+### <a name="possible-errors"></a>Mogelijke fouten
 
 * Aan de client zijde `ERR_CONNECTION_`
 * 414-URI te lang
 * 413 Payload is te groot
 * Het toegangs token mag niet langer zijn dan 4 KB. de 413-aanvraag entiteit is te groot
 
-### <a name="root-cause"></a>Hoofdoorzaak:
+### <a name="root-cause"></a>Hoofdoorzaak
 
 Voor HTTP/2 is de maximale lengte voor één header **4 K**, dus als u een browser gebruikt om toegang te krijgen tot de Azure-service, wordt er een fout `ERR_CONNECTION_` voor deze beperking weer geven.
 
@@ -34,18 +34,19 @@ Voor HTTP/1.1-of C#-clients is de maximale URI-lengte **12 k**, de maximale head
 
 Met SDK-versie **1.0.6** of hoger `/negotiate` wordt `413 Payload Too Large` de gegenereerde toegangs token groter dan **4 K**.
 
-### <a name="solution"></a>Oplossing:
+### <a name="solution"></a>Oplossing
 
 Standaard worden claims van `context.User.Claims` gebruikt bij het genereren van **een** JWT-toegangs token naar **ASRS**(een zure **S** ignal **R** **s** erviceniveaudoelstelling), zodat de claims behouden blijven en kunnen worden door gegeven vanuit **ASRS** aan de `Hub` wanneer de client verbinding maakt met de `Hub` .
 
-In sommige gevallen wordt `context.User.Claims` gebruikgemaakt van het opslaan van veel informatie voor de app-server, waarvan de meeste worden gebruikt door `Hub` s, maar door andere onderdelen.
+In sommige gevallen wordt `context.User.Claims` gebruikt voor het opslaan van grote hoeveel heden gegevens voor de app-server, waarvan de meeste worden gebruikt door `Hub` s, maar door andere onderdelen.
 
 Het gegenereerde toegangs token wordt door gegeven via het netwerk en voor WebSocket/SSE-verbindingen worden toegangs tokens door gegeven via query reeksen. Als best practice, raden we u aan om de **benodigde** claims van de client via **ASRS** aan uw app-server door te geven wanneer de hub nodig heeft.
 
 Er is een `ClaimsProvider` voor u om de claims aan te passen die worden door gegeven aan **ASRS** binnen het toegangs token.
 
 Voor ASP.NET Core:
-```cs
+
+```csharp
 services.AddSignalR()
         .AddAzureSignalR(options =>
             {
@@ -55,7 +56,8 @@ services.AddSignalR()
 ```
 
 Voor ASP.NET:
-```cs
+
+```csharp
 services.MapAzureSignalR(GetType().FullName, options =>
             {
                 // pick up necessary claims
@@ -67,13 +69,13 @@ services.MapAzureSignalR(GetType().FullName, options =>
 
 ## <a name="tls-12-required"></a>TLS 1,2 vereist
 
-### <a name="possible-errors"></a>Mogelijke fouten:
+### <a name="possible-errors"></a>Mogelijke fouten
 
 * ASP.NET "geen server beschikbaar"-fout [#279](https://github.com/Azure/azure-signalr/issues/279)
 * ASP.NET "de verbinding is niet actief, gegevens kunnen niet naar de service worden verzonden." fout [#324](https://github.com/Azure/azure-signalr/issues/324)
-* ' Er is een fout opgetreden tijdens het maken van de HTTP-aanvraag voor https:// <API endpoint> . Deze fout kan worden veroorzaakt door het feit dat het server certificaat niet correct is geconfigureerd met HTTP.SYS in het HTTPS-geval. Deze fout kan ook worden veroorzaakt doordat de beveiligings binding tussen de client en de server niet overeenkomt.
+* ' Er is een fout opgetreden tijdens het maken van de HTTP-aanvraag voor https:// <API endpoint> . Deze fout kan zijn veroorzaakt doordat het server certificaat niet correct is geconfigureerd met HTTP.SYS in het HTTPS-geval. Deze fout kan ook worden veroorzaakt doordat de beveiligings binding tussen de client en de server niet overeenkomt.
 
-### <a name="root-cause"></a>Hoofdoorzaak:
+### <a name="root-cause"></a>Hoofdoorzaak
 
 Azure service ondersteunt alleen TLS 1.2 voor beveiligings problemen. Met .NET Framework is het mogelijk dat TLS 1.2 niet het standaard protocol is. Als gevolg hiervan kunnen de server verbindingen met ASRS niet tot stand worden gebracht.
 
@@ -93,16 +95,18 @@ Azure service ondersteunt alleen TLS 1.2 voor beveiligings problemen. Met .NET F
         :::image type="content" source="./media/signalr-howto-troubleshoot-guide/tls-throws.png" alt-text="Uitzonde ring wordt gegenereerd":::
 
 2. Voor ASP.NET kunt u ook de volgende code toevoegen aan uw `Startup.cs` om gedetailleerde tracering in te scha kelen en de fouten in het logboek te bekijken.
-```cs
-app.MapAzureSignalR(this.GetType().FullName);
-// Make sure this switch is called after MapAzureSignalR
-GlobalHost.TraceManager.Switch.Level = SourceLevels.Information;
-```
 
-### <a name="solution"></a>Oplossing:
+    ```cs
+    app.MapAzureSignalR(this.GetType().FullName);
+    // Make sure this switch is called after MapAzureSignalR
+    GlobalHost.TraceManager.Switch.Level = SourceLevels.Information;
+    ```
+
+### <a name="solution"></a>Oplossing
 
 Voeg de volgende code toe aan het opstarten:
-```cs
+
+```csharp
 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 ```
 
@@ -158,19 +162,19 @@ Wanneer de [client verbinding](#client_connection_drop)wordt verbroken, maakt de
 
 Er zijn twee mogelijke situaties.
 
-### <a name="concurrent-connection-count-exceeds-limit"></a>Aantal **gelijktijdige** verbindingen overschrijdt de limiet.
+### <a name="concurrent-connection-count-exceeds-limit"></a>Aantal **gelijktijdige** verbindingen overschrijdt de limiet
 
 Voor **gratis** instanties is de limiet voor het aantal **gelijktijdige** verbindingen voor **standaard** instanties 20. de limiet voor het aantal **gelijktijdige** verbindingen **per eenheid** is 1 K, wat betekent dat Unit100 100-K gelijktijdige verbindingen toestaat.
 
 De verbindingen zijn zowel client-als server verbindingen. [hier](./signalr-concept-messages-and-connections.md#how-connections-are-counted) kunt u controleren hoe de verbindingen worden geteld.
 
-### <a name="too-many-negotiate-requests-at-the-same-time"></a>Er zijn te veel onderhandelen over aanvragen op hetzelfde moment.
+### <a name="too-many-negotiate-requests-at-the-same-time"></a>Er zijn te veel onderhandelen over aanvragen op hetzelfde moment
 
 Er wordt een wille keurige vertraging weer gegeven voordat u opnieuw verbinding kunt maken. Controleer [hier](#restart_connection) de voor beelden voor nieuwe pogingen.
 
 [Ondervindt u problemen of feedback over het oplossen van problemen? Laat het ons weten.](https://aka.ms/asrs/survey/troubleshooting)
 
-## <a name="500-error-when-negotiate-azure-signalr-service-is-not-connected-yet-please-try-again-later"></a>500-fout tijdens de onderhandeling: de Azure signalerings service is nog niet verbonden. Probeer het later opnieuw.
+## <a name="500-error-when-negotiate-azure-signalr-service-is-not-connected-yet-please-try-again-later"></a>500-fout tijdens de onderhandeling: de Azure signalerings service is nog niet verbonden. Probeer het later opnieuw
 
 ### <a name="root-cause"></a>Hoofdoorzaak
 
@@ -180,18 +184,21 @@ Deze fout wordt gerapporteerd wanneer er geen server verbinding is met de Azure 
 
 Schakel tracering aan de server zijde in om de fout gegevens te achterhalen wanneer de server verbinding probeert te maken met de Azure signalerings service.
 
-#### <a name="enable-server-side-logging-for-aspnet-core-signalr"></a>Logboek registratie aan de server zijde inschakelen voor ASP.NET Core Signaler
+### <a name="enable-server-side-logging-for-aspnet-core-signalr"></a>Logboek registratie aan de server zijde inschakelen voor ASP.NET Core Signaler
 
-Logboek registratie aan de server zijde voor ASP.NET Core Signalr integreert met de `ILogger` [logboek registratie](/aspnet/core/fundamentals/logging/?tabs=aspnetcore2x&view=aspnetcore-2.1) op basis van het ASP.net core Framework. U kunt logboek registratie aan de server zijde inschakelen door gebruik te maken van `ConfigureLogging` een voorbeeld gebruik:
-```cs
+Logboek registratie aan de server zijde voor ASP.NET Core Signalr integreert met de `ILogger` [logboek registratie](/aspnet/core/fundamentals/logging/?tabs=aspnetcore2x&view=aspnetcore-2.1&preserve-view=true) op basis van het ASP.net core Framework. U kunt logboek registratie aan de server zijde inschakelen door gebruik te maken van `ConfigureLogging` een voorbeeld gebruik:
+
+```csharp
 .ConfigureLogging((hostingContext, logging) =>
         {
             logging.AddConsole();
             logging.AddDebug();
         })
 ```
+
 Logger-categorieën voor Azure signalering worden altijd gestart met `Microsoft.Azure.SignalR` . Als u gedetailleerde logboeken van Azure-Signa lering wilt inschakelen, configureert u de voor gaande voor voegsels op `Debug` niveau in uw **appsettings.jsin** het volgende bestand:
-```JSON
+
+```json
 {
     "Logging": {
         "LogLevel": {
@@ -206,6 +213,7 @@ Logger-categorieën voor Azure signalering worden altijd gestart met `Microsoft.
 #### <a name="enable-server-side-traces-for-aspnet-signalr"></a>Traceringen aan server zijde inschakelen voor ASP.NET-Signa lering
 
 Wanneer u SDK-versie >= gebruikt `1.0.0` , kunt u traceringen inschakelen door het volgende toe te voegen aan `web.config` : ([Details](https://github.com/Azure/azure-signalr/issues/452#issuecomment-478858102))
+
 ```xml
 <system.diagnostics>
     <sources>
@@ -235,14 +243,14 @@ Wanneer u SDK-versie >= gebruikt `1.0.0` , kunt u traceringen inschakelen door h
 
 Wanneer de client is verbonden met de Azure-Signa lering, kan de permanente verbinding tussen de client en de Azure-Signa lering soms om verschillende redenen worden verbroken. In deze sectie worden verschillende mogelijkheden beschreven die een dergelijke verbinding veroorzaken, en vindt u richt lijnen voor het identificeren van de hoofd oorzaak.
 
-### <a name="possible-errors-seen-from-the-client-side"></a>Mogelijke fouten die worden weer gegeven aan de client zijde
+### <a name="possible-errors-seen-from-the-client-side"></a>Mogelijke fouten die aan de client zijde worden weer gegeven
 
 * `The remote party closed the WebSocket connection without completing the close handshake`
 * `Service timeout. 30.00ms elapsed without receiving a message from service.`
 * `{"type":7,"error":"Connection closed with an error."}`
 * `{"type":7,"error":"Internal server error."}`
 
-### <a name="root-cause"></a>Hoofdoorzaak:
+### <a name="root-cause"></a>Hoofdoorzaak
 
 Client verbindingen kunnen onder verschillende omstandigheden worden verwijderd:
 * Bij `Hub` het genereren van uitzonde ringen met de inkomende aanvraag.
@@ -268,13 +276,13 @@ Client verbindingen lopen voortdurend lange tijd in de metrische gegevens van Az
 
 :::image type="content" source="./media/signalr-howto-troubleshoot-guide/client-connection-increasing-constantly.jpg" alt-text="Client verbinding wordt voortdurend verhoogd":::
 
-### <a name="root-cause"></a>Hoofdoorzaak:
+### <a name="root-cause"></a>Hoofdoorzaak
 
 De verbinding van de seingevings client `DisposeAsync` wordt nooit aangeroepen. de verbinding blijft geopend.
 
 ### <a name="troubleshooting-guide"></a>Handleiding voor het oplossen van problemen
 
-1. Controleer of de seingevings client **nooit** is gesloten.
+Controleer of de seingevings client **nooit** wordt gesloten.
 
 ### <a name="solution"></a>Oplossing
 
@@ -282,7 +290,7 @@ Controleer of de verbinding wordt gesloten. Roep hand matig `HubConnection.Dispo
 
 Bijvoorbeeld:
 
-```C#
+```csharp
 var connection = new HubConnectionBuilder()
     .WithUrl(...)
     .Build();
@@ -324,21 +332,95 @@ Op regel matige basis zijn er nieuwe versie releases voor de Azure signalerings 
 
 In deze sectie worden verschillende mogelijkheden voor Server verbinding verwijderen beschreven en vindt u enkele richt lijnen voor het identificeren van de hoofd oorzaak.
 
-### <a name="possible-errors-seen-from-server-side"></a>Mogelijke fouten die worden weer gegeven aan de server zijde:
+### <a name="possible-errors-seen-from-the-server-side"></a>Mogelijke fouten die aan de server zijde worden weer gegeven
 
 * `[Error]Connection "..." to the service was dropped`
 * `The remote party closed the WebSocket connection without completing the close handshake`
 * `Service timeout. 30.00ms elapsed without receiving a message from service.`
 
-### <a name="root-cause"></a>Hoofdoorzaak:
+### <a name="root-cause"></a>Hoofdoorzaak
 
 Verbinding met Server-service is gesloten door **ASRS**(**een** zure **S** ignal **R** **s** erviceniveaudoelstelling).
 
+Voor ping time-out kan dit worden veroorzaakt door een hoog CPU-gebruik of een beroving van de thread groep aan de server zijde.
+
+Voor ASP.NET-Signa lering is een bekend probleem opgelost in SDK 1.6.0. Upgrade uw SDK naar de nieuwste versie.
+
+## <a name="thread-pool-starvation"></a>Beroving thread pool
+
+Als uw server Starving is, betekent dit dat er geen threads werken aan bericht verwerking. Alle threads hangen in een bepaalde methode.
+
+Normaal gesp roken wordt dit scenario veroorzaakt door async over synchronisatie of door middel `Task.Result` / `Task.Wait()` van async-methoden.
+
+Zie [ASP.net core best practices voor prestaties](/aspnet/core/performance/performance-best-practices#avoid-blocking-calls).
+
+Meer informatie over de beroving van de [thread groep](https://docs.microsoft.com/archive/blogs/vancem/diagnosing-net-core-threadpool-starvation-with-perfview-why-my-service-is-not-saturating-all-cores-or-seems-to-stall).
+
+### <a name="how-to-detect-thread-pool-starvation"></a>De beroving van de thread groep detecteren
+
+Controleer het aantal threads. Als er op dat moment geen pieken zijn, voert u de volgende stappen uit:
+* Als u Azure App Service gebruikt, controleert u het aantal threads in metrische gegevens. Controleer de `Max` aggregatie:
+    
+  :::image type="content" source="media/signalr-howto-troubleshoot-guide/metrics-thread-count.png" alt-text="Scherm opname van het deel venster maximum aantal threads in Azure App Service.":::
+
+* Als u de .NET Framework gebruikt, kunt u [metrische gegevens](https://docs.microsoft.com/dotnet/framework/debug-trace-profile/performance-counters#lock-and-thread-performance-counters) vinden in de prestatie meter van de Server-VM.
+* Als u .NET core in een container gebruikt, raadpleegt u [Diagnostische gegevens verzamelen in containers](https://docs.microsoft.com/dotnet/core/diagnostics/diagnostics-in-containers).
+
+U kunt ook code gebruiken om de beroving van de thread groep te detecteren:
+
+```csharp
+public class ThreadPoolStarvationDetector : EventListener
+{
+    private const int EventIdForThreadPoolWorkerThreadAdjustmentAdjustment = 55;
+    private const uint ReasonForStarvation = 6;
+
+    private readonly ILogger<ThreadPoolStarvationDetector> _logger;
+
+    public ThreadPoolStarvationDetector(ILogger<ThreadPoolStarvationDetector> logger)
+    {
+        _logger = logger;
+    }
+
+    protected override void OnEventSourceCreated(EventSource eventSource)
+    {
+        if (eventSource.Name == "Microsoft-Windows-DotNETRuntime")
+        {
+            EnableEvents(eventSource, EventLevel.Informational, EventKeywords.All);
+        }
+    }
+
+    protected override void OnEventWritten(EventWrittenEventArgs eventData)
+    {
+        // See: https://docs.microsoft.com/en-us/dotnet/framework/performance/thread-pool-etw-events#threadpoolworkerthreadadjustmentadjustment
+        if (eventData.EventId == EventIdForThreadPoolWorkerThreadAdjustmentAdjustment &&
+            eventData.Payload[3] as uint? == ReasonForStarvation)
+        {
+            _logger.LogWarning("Thread pool starvation detected!");
+        }
+    }
+}
+```
+    
+Voeg deze toe aan uw service:
+    
+```csharp
+service.AddSingleton<ThreadPoolStarvationDetector>();
+```
+
+Controleer vervolgens uw logboek wanneer de verbinding met de server is verbroken met ping time-out.
+
+### <a name="how-to-find-the-root-cause-of-thread-pool-starvation"></a>De hoofd oorzaak van de thread pool beroving zoeken
+
+De hoofd oorzaak van de thread pool beroving zoeken:
+
+* Dump het geheugen en analyseer vervolgens de aanroep stack. Zie [Geheugen dumps verzamelen en analyseren](https://devblogs.microsoft.com/dotnet/collecting-and-analyzing-memory-dumps/)voor meer informatie.
+* Gebruik [clrmd](https://github.com/microsoft/clrmd) om het geheugen te dumpen wanneer thread pool beroving wordt gedetecteerd. Log vervolgens de aanroep stack in.
+
 ### <a name="troubleshooting-guide"></a>Handleiding voor het oplossen van problemen
 
-1. Logboek van de app-server openen om te zien of er iets abnormaal is gebeurd
-2. Controleer het gebeurtenis logboek van de app-server om te controleren of de app-server opnieuw is opgestart
-3. Maak een probleem aan ons dat het tijds bestek levert en e-mail adres van de resource naar ons verzendt.
+1. Open het logboek van de app-server om te zien of er iets abnormaal is gebeurd.
+2. Controleer het gebeurtenis logboek van de app-server om te controleren of de app-server opnieuw is opgestart.
+3. Maak een probleem. Geef het tijds bestek op en e-mail adres van de resource naar ons.
 
 [Ondervindt u problemen of feedback over het oplossen van problemen? Laat het ons weten.](https://aka.ms/asrs/survey/troubleshooting)
 

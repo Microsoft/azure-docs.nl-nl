@@ -7,15 +7,15 @@ ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 03/31/2020
 ms.openlocfilehash: 0a36cb468ebcb77c0614bffd0afc392df3655c20
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89658206"
 ---
 # <a name="business-continuity-and-disaster-recovery-for-azure-logic-apps"></a>Bedrijfs continuïteit en herstel na nood gevallen voor Azure Logic Apps
 
-Zorg ervoor dat u een oplossing voor [ *herstel na nood* ](https://en.wikipedia.org/wiki/Disaster_recovery) geval hebt, zodat u gegevens kunt beveiligen, snel de resources die essentiële bedrijfs functies ondersteunen en bewerkingen die worden uitgevoerd voor het onderhouden van [ *bedrijfs continuïteit* (BC)](https://en.wikipedia.org/wiki/Business_continuity_planning), om de gevolgen en gevolgen te verminderen die onvoorspelbare gebeurtenissen op uw bedrijf en klanten hebben. Onderbrekingen kunnen bijvoorbeeld uitval bevatten, verlies in onderliggende infra structuur of onderdelen, zoals opslag-, netwerk-of reken bronnen, onherstelbare toepassings fouten of zelfs een volledig Data Center-verlies. Als u een oplossing voor bedrijfs continuïteit en herstel na nood gevallen (BCDR) kunt maken, kan uw bedrijf of organisatie sneller reageren op onderbrekingen, gepland of niet-gepland, en kan de downtime voor uw klanten worden verminderd.
+Zorg ervoor dat u een oplossing voor [ *herstel na nood*](https://en.wikipedia.org/wiki/Disaster_recovery) geval hebt, zodat u gegevens kunt beveiligen, snel de resources die essentiële bedrijfs functies ondersteunen en bewerkingen die worden uitgevoerd voor het onderhouden van [ *bedrijfs continuïteit* (BC)](https://en.wikipedia.org/wiki/Business_continuity_planning), om de gevolgen en gevolgen te verminderen die onvoorspelbare gebeurtenissen op uw bedrijf en klanten hebben. Onderbrekingen kunnen bijvoorbeeld uitval bevatten, verlies in onderliggende infra structuur of onderdelen, zoals opslag-, netwerk-of reken bronnen, onherstelbare toepassings fouten of zelfs een volledig Data Center-verlies. Als u een oplossing voor bedrijfs continuïteit en herstel na nood gevallen (BCDR) kunt maken, kan uw bedrijf of organisatie sneller reageren op onderbrekingen, gepland of niet-gepland, en kan de downtime voor uw klanten worden verminderd.
 
 Dit artikel bevat BCDR-richt lijnen en-strategieën die u kunt Toep assen wanneer u geautomatiseerde werk stromen bouwt met behulp van [Azure Logic apps](../logic-apps/logic-apps-overview.md). Met werk stromen voor logische apps kunt u eenvoudig gegevens integreren en organiseren tussen apps, Cloud Services en on-premises systemen door te verminderen hoeveel code u moet schrijven. Wanneer u van plan bent BCDR te gebruiken, moet u ervoor zorgen dat u niet alleen uw logische apps beschouwt, maar ook deze Azure-resources die u gebruikt met uw Logic apps:
 

@@ -49,8 +49,6 @@
           href: ./linux/tutorial-load-balancer.md
         - name: 8 - Netwerken beheren
           href: ./linux/tutorial-virtual-network.md
-        - name: 9-resources beheren
-          href: ./linux/tutorial-govern-resources.md
     - name: Windows
       items:
         - name: 1 - Een virtuele machine maken/beheren
@@ -69,8 +67,6 @@
           href: ./windows/tutorial-load-balancer.md
         - name: 8 - Netwerken beheren
           href: ./windows/tutorial-virtual-network.md
-        - name: 9-resources beheren
-          href: ./windows/tutorial-govern-resources.md
 - name: Workloads
   items:
     - name: Red Hat
@@ -119,8 +115,8 @@
         - name: De VM-grootte wijzigen
           items:
             - name: CLI
-              href: ./linux/change-vm-size.md
               displayName: 'Change, resize, update size'
+              href: ./linux/change-vm-size.md
             - name: Portal of Power shell
               displayName: 'Change, resize, update size'
               href: ./windows/resize-vm.md
@@ -188,8 +184,8 @@
             - name: Prestaties optimaliseren
               items:
                 - name: Linux
-                  href: ./linux/storage-performance.md
                   displayName: 'performance, Linux, storage performance'
+                  href: ./linux/storage-performance.md
                 - name: Windows
                   displayName: 'performance, Windows, storage performance'
                   href: ./windows/storage-performance.md
@@ -560,7 +556,7 @@
         - name: Problemen met Linux-systemen met Python 3
           href: ./extensions/issues-using-vm-extensions-python-3.md
     - name: Geneste virtualisatie
-      href: ./windows/nested-virtualization.md
+      href: 'https://docs.microsoft.com/virtualization/hyper-v-on-windows/user-guide/nested-virtualization'
     - name: Migreren naar Azure Resource Manager
       items:
         - name: Buiten gebruik gesteld vanaf 1 maart 2023
@@ -653,26 +649,26 @@
             - name: Overzicht van cloud-init
               href: ./linux/using-cloud-init.md
             - name: Grondige kennis
-              displayname: cloud-init
               href: ./linux/cloud-init-deep-dive.md
+              displayname: cloud-init
             - name: Problemen oplossen
-              displayname: cloud-init
               href: ./linux/cloud-init-troubleshooting.md
+              displayname: cloud-init
             - name: VM-hostnaam configureren
-              displayname: cloud-init
               href: ./linux/cloudinit-update-vm-hostname.md
+              displayname: cloud-init
             - name: Pakketten in een virtuele machine bijwerken
-              displayname: cloud-init
               href: ./linux/cloudinit-update-vm.md
+              displayname: cloud-init
             - name: Een gebruiker toevoegen aan een virtuele machine
-              displayname: cloud-init
               href: ./linux/cloudinit-add-user.md
+              displayname: cloud-init
             - name: Wisselbestand configureren
-              displayname: cloud-init
               href: ./linux/cloudinit-configure-swapfile.md
-            - name: Een bestaand bash-script uitvoeren
               displayname: cloud-init
+            - name: Een bestaand bash-script uitvoeren
               href: ./linux/cloudinit-bash-script.md
+              displayname: cloud-init
         - name: Linux-installatie kopieën maken zonder een inrichtings agent
           href: ./linux/no-agent.md
         - name: Inrichten van Linux-agent uitschakelen
@@ -962,64 +958,64 @@
         - name: Versleuteling aan de serverzijde
           items:
             - name: Overzicht van versleuteling aan de server zijde
-              displayname: 'Server side encryption, encryption, ADE'
               href: disk-encryption.md
+              displayname: 'Server side encryption, encryption, ADE'
             - name: Door de klant beheerde sleutels inschakelen
               items:
                 - name: Portal
-                  displayname: 'Server side encryption, encryption, ADE'
                   href: disks-enable-customer-managed-keys-portal.md
+                  displayname: 'Server side encryption, encryption, ADE'
                 - name: PowerShell
-                  displayname: 'Server side encryption, encryption, ADE'
                   href: windows/disks-enable-customer-managed-keys-powershell.md
-                - name: CLI
                   displayname: 'Server side encryption, encryption, ADE'
+                - name: CLI
                   href: linux/disks-enable-customer-managed-keys-cli.md
+                  displayname: 'Server side encryption, encryption, ADE'
             - name: Versleuteling op host inschakelen
               items:
                 - name: Portal
-                  displayname: 'Encryption at host, encryption, ADE'
                   href: disks-enable-host-based-encryption-portal.md
+                  displayname: 'Encryption at host, encryption, ADE'
                 - name: PowerShell
-                  displayname: 'Encryption at host, encryption, ADE'
                   href: windows/disks-enable-host-based-encryption-powershell.md
-                - name: CLI
                   displayname: 'Encryption at host, encryption, ADE'
+                - name: CLI
                   href: linux/disks-enable-host-based-encryption-cli.md
+                  displayname: 'Encryption at host, encryption, ADE'
             - name: Dubbele versleuteling-at-rest inschakelen
               items:
                 - name: Portal
-                  displayname: 'double encryption at rest, encryption, ADE'
                   href: disks-enable-double-encryption-at-rest-portal.md
+                  displayname: 'double encryption at rest, encryption, ADE'
                 - name: PowerShell
-                  displayname: 'double encryption at rest, encryption, ADE'
                   href: windows/disks-enable-double-encryption-at-rest-powershell.md
-                - name: CLI
                   displayname: 'double encryption at rest, encryption, ADE'
+                - name: CLI
                   href: linux/disks-enable-double-encryption-at-rest-cli.md
+                  displayname: 'double encryption at rest, encryption, ADE'
         - name: Azure Disk Encryption
           items:
             - name: Linux
               items:
                 - name: Overzicht
-                  displayname: 'Azure disk encryption, encryption, ADE'
                   href: ./linux/disk-encryption-overview.md
+                  displayname: 'Azure disk encryption, encryption, ADE'
                 - name: Snelstartgidsen
                   items:
                     - name: Azure CLI
-                      displayname: 'Azure disk encryption, encryption, ADE'
                       href: ./linux/disk-encryption-cli-quickstart.md
+                      displayname: 'Azure disk encryption, encryption, ADE'
                     - name: Azure PowerShell
-                      displayname: 'Azure disk encryption, encryption, ADE'
                       href: ./linux/disk-encryption-powershell-quickstart.md
-                    - name: Azure Portal
                       displayname: 'Azure disk encryption, encryption, ADE'
+                    - name: Azure Portal
                       href: ./linux/disk-encryption-portal-quickstart.md
+                      displayname: 'Azure disk encryption, encryption, ADE'
                 - name: Schijfversleutelingsscenario's voor Linux
                   href: ./linux/disk-encryption-linux.md
                 - name: Sleutelkluis voor Azure Disk Encryption
-                  displayname: 'Azure disk encryption, encryption, ADE, Key vault'
                   href: ./linux/disk-encryption-key-vault.md
+                  displayname: 'Azure disk encryption, encryption, ADE, Key vault'
                 - name: Voorbeeldscripts voor schijfversleuteling
                   href: ./linux/disk-encryption-sample-scripts.md
                 - name: Schijfversleuteling op een geïsoleerd netwerk
@@ -1076,40 +1072,40 @@
     - name: Prestaties en kosten optimalisatie
       items:
         - name: Ultraschijven
-          displayname: 'Performance, cost, perf, disks, disk'
           href: disks-enable-ultra-ssd.md
+          displayname: 'Performance, cost, perf, disks, disk'
         - name: Prestaties van virtuele machine en schijf
-          displayname: 'Performance, cost, perf, disks, disk'
           href: disks-performance.md
+          displayname: 'Performance, cost, perf, disks, disk'
         - name: Disk Storage-reservering
-          displayname: 'Performance, cost, perf, disks, disk'
           href: ../cost-management-billing/reservations/understand-disk-reservations.md?context=/azure/virtual-machines/context/context
+          displayname: 'Performance, cost, perf, disks, disk'
         - name: Disk Storage reserveren
-          displayname: 'Performance, cost, perf, disks, disk'
           href: disks-reserved-capacity.md
+          displayname: 'Performance, cost, perf, disks, disk'
         - name: Ontwerp voor hoge prestaties
-          displayname: 'Performance, cost, perf, disks, disk'
           href: premium-storage-performance.md
+          displayname: 'Performance, cost, perf, disks, disk'
         - name: Metrische schijf gegevens
-          displayname: 'Performance, cost, perf, disks, disk'
           href: disks-metrics.md
+          displayname: 'Performance, cost, perf, disks, disk'
         - name: Schijf bursting-modellen
-          displayname: 'Performance, cost, perf, disks, disk'
           href: disk-bursting.md
+          displayname: 'Performance, cost, perf, disks, disk'
         - name: Bursting op aanvraag inschakelen
-          displayname: 'Performance, cost, perf, disks, disk'
           href: disks-enable-bursting.md
-        - name: Schijfprestatielagen
           displayname: 'Performance, cost, perf, disks, disk'
+        - name: Schijfprestatielagen
           href: disks-change-performance.md
+          displayname: 'Performance, cost, perf, disks, disk'
         - name: Laag prestatie niveau wijzigen
           items:
             - name: CLI en Power shell
-              displayname: 'Performance, cost, perf, disks, disk, change disk performance tier'
               href: disks-performance-tiers.md
-            - name: Portal
               displayname: 'Performance, cost, perf, disks, disk, change disk performance tier'
+            - name: Portal
               href: disks-performance-tiers-portal.md
+              displayname: 'Performance, cost, perf, disks, disk, change disk performance tier'
         - name: Write Accelerator inschakelen
           href: how-to-enable-write-accelerator.md
         - name: Een benchmark-test uitvoeren op een schijf
@@ -1167,8 +1163,6 @@
             - name: PowerShell
               displayName: Unmanaged VM to Managed Disks
               href: ./windows/convert-unmanaged-to-managed-disks.md
-        - name: Een VM kopiëren met CLI
-          href: ./linux/copy-vm.md
     - name: Een gegevens schijf toevoegen
       items:
         - name: Linux
@@ -1240,8 +1234,6 @@
           href: ./windows/azure-to-guest-disk-mapping.md
         - name: File Storage
           items:
-            - name: Linux-koppeling met SMB
-              href: ./linux/mount-azure-file-storage-on-linux-using-smb.md
             - name: Bestanden kopiëren naar een virtuele Linux-machine
               href: ./linux/copy-files-to-linux-vm-using-scp.md
         - name: Niet-gekoppelde schijven zoeken
@@ -1335,8 +1327,8 @@
     - name: Beveiligingsbasislijnen
       items:
         - name: Linux
-          displayname: Security baselines
           href: ./linux/security-baseline.md
+          displayname: Security baselines
         - name: Windows
           displayName: Security baselines
           href: ./windows/security-baseline.md
@@ -1345,8 +1337,8 @@
     - name: Vertrouwde start
       items:
         - name: Overzicht
-          DisplayName: 'Trusted Launch, shielded VM'
           href: trusted-launch.md
+          DisplayName: 'Trusted Launch, shielded VM'
         - name: Implementeren met behulp van de portal
           href: trusted-launch-portal.md
     - name: Just-in-time-toegang
@@ -1503,8 +1495,8 @@
         - name: Geplande gebeurtenissen
           items:
             - name: Linux
-              displayname: Scheduled events
               href: ./linux/scheduled-events.md
+              displayname: Scheduled events
             - name: Windows
               displayName: Scheduled events
               href: ./windows/scheduled-events.md
@@ -1649,17 +1641,17 @@
     - name: Een virtuele machine taggen
       items:
         - name: CLI
-          displayname: 'tag, tagging, tag a vm'
           href: tag-cli.md
+          displayname: 'tag, tagging, tag a vm'
         - name: Portal
-          displayname: 'tag, tagging, tag a vm'
           href: tag-portal.md
+          displayname: 'tag, tagging, tag a vm'
         - name: PowerShell
-          displayname: 'tag, tagging, tag a vm'
           href: tag-powershell.md
-        - name: Sjabloon
           displayname: 'tag, tagging, tag a vm'
+        - name: Sjabloon
           href: tag-template.md
+          displayname: 'tag, tagging, tag a vm'
     - name: Metagegevens bewaken
       items:
         - name: CLI
@@ -1682,35 +1674,35 @@
     - name: Back-ups maken van virtuele machines
       items:
         - name: Overzicht
-          dispayName: 'backup VMs, Azure Backup, recovery'
           href: ../backup/backup-azure-vms-introduction.md
+          dispayName: 'backup VMs, Azure Backup, recovery'
         - name: Snelstartgidsen
           items:
             - name: CLI
-              dispayName: 'backup VMs, Azure Backup, recovery'
               href: ../backup/quick-backup-vm-cli.md
+              dispayName: 'backup VMs, Azure Backup, recovery'
             - name: PowerShell
-              dispayName: 'backup VMs, Azure Backup, recovery'
               href: ../backup/quick-backup-vm-powershell.md
+              dispayName: 'backup VMs, Azure Backup, recovery'
             - name: Portal
-              dispayName: 'backup VMs, Azure Backup, recovery'
               href: ../backup/quick-backup-vm-portal.md
-            - name: Sjabloon
               dispayName: 'backup VMs, Azure Backup, recovery'
+            - name: Sjabloon
               href: ../backup/quick-backup-vm-template.md
+              dispayName: 'backup VMs, Azure Backup, recovery'
         - name: Een back-up maken van meerdere virtuele machines
           href: ../backup/tutorial-backup-vm-at-scale.md
         - name: Herstelopties
           href: ../backup/backup-azure-arm-restore-vms.md
         - name: Ondersteuningsmatrix
-          dispayName: 'backup VMs, Azure Backup, recovery'
           href: ../backup/backup-support-matrix-iaas.md
+          dispayName: 'backup VMs, Azure Backup, recovery'
         - name: Prijzen
-          dispayName: 'backup VMs, Azure Backup, recovery'
           href: ../backup/azure-backup-pricing.md
-        - name: Veelgestelde vragen
           dispayName: 'backup VMs, Azure Backup, recovery'
+        - name: Veelgestelde vragen
           href: ../backup/backup-azure-vm-backup-faq.yml
+          dispayName: 'backup VMs, Azure Backup, recovery'
     - name: Herstel na noodgeval
       items:
         - name: Overzicht
@@ -1757,8 +1749,8 @@
             - name: Migreren van Amazon Web Services (AWS) naar Azure
               href: ./windows/aws-to-azure.md
             - name: Een on-premises VM uploaden
-              displayname: Migrate from Amazon Web Services (AWS) to Azure
               href: ./linux/upload-vhd.md
+              displayname: Migrate from Amazon Web Services (AWS) to Azure
             - name: Azure Site Recovery gebruiken
               href: ../site-recovery/migrate-overview.md?context=/azure/virtual-machines/context/context
 - name: Automatisering van infrastructuur

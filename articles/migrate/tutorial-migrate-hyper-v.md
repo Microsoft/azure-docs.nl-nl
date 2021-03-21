@@ -5,16 +5,16 @@ author: bsiva
 ms.author: bsiva
 ms.manager: abhemraj
 ms.topic: tutorial
-ms.date: 06/08/2020
+ms.date: 03/18/2021
 ms.custom:
 - MVC
 - fasttrack-edit
-ms.openlocfilehash: 9d0fa516fefefe4c3d8e67c3e6d592ec4274943c
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 0072ce81fc619c39770eba52e24dc5a0c57280a6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98878169"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104604573"
 ---
 # <a name="migrate-hyper-v-vms-to-azure"></a>Virtuele Hyper-V-machines naar Azure migreren 
 
@@ -135,12 +135,7 @@ Als de detectie is voltooid, kunt u de replicatie van virtuele Hyper-V-machines 
 ## <a name="provision-for-the-first-time"></a>Voor de eerste keer inrichten
 
 Als dit de eerste VM is die u repliceert in het Azure Migrate-project, richt Azure Migrate: Server Migration deze resources automatisch in dezelfde resourcegroep in als het project.
-
-- **Service Bus**: Azure Migrate: Server Migrations gebruikt de Service Bus voor het verzenden van berichten voor replicatie-indeling naar het apparaat.
-- **Gateway-opslagaccount**: Azure Migrate: Server Migration gebruikt het opslagaccount van de gateway om statusinformatie op te slaan over de virtuele machines die worden gerepliceerd.
-- **Logboekopslagaccount**: Het Azure Migrate-apparaat uploadt replicatielogboeken voor VM's naar een logboekopslagaccount. Azure Migrate past de replicatiegegevens toe op door de replica beheerde schijven.
-- **Sleutelkluis**: Het Azure Migrate-apparaat gebruikt de sleutelkluis voor het beheren van verbindingsreeksen voor de Service Bus en toegangssleutels voor de opslagaccounts die worden gebruikt voor replicatie. U moet de machtigingen instellen die de sleutelkluis nodig heeft om toegang te krijgen tot het opslagaccount wanneer u [Azure voorbereidt](./tutorial-discover-hyper-v.md#prepare-an-azure-user-account) voor de evaluatie en migratie van virtuele Hyper-V-machines. 
-
+- **Cache-opslag account**: de Azure site Recovery provider software die is geïnstalleerd op Hyper-V-hosts uploadt replicatie gegevens voor de virtuele machines die zijn geconfigureerd voor replicatie naar een opslag account (ook wel het cache-opslag account of het account voor logboek opslag) in uw abonnement. De Azure Migrate-service kopieert vervolgens de geüploade replicatie gegevens van het opslag account naar de replica-beheerde schijven die overeenkomen met de virtuele machine. Het cache-opslag account moet worden opgegeven tijdens het configureren van de replicatie voor een virtuele machine en de Azure Migrate Portal maakt automatisch een voor het Azure Migrate-project wanneer replicatie wordt geconfigureerd voor de eerste keer in het project.
 
 ## <a name="track-and-monitor"></a>Bijhouden en controleren
 

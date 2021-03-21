@@ -4,10 +4,10 @@ description: In dit artikel vindt u informatie over het maken van een back-up va
 ms.topic: conceptual
 ms.date: 08/13/2020
 ms.openlocfilehash: 4f4ea202ee96e93a621c8dd0025c9ebc8b8d445d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88891654"
 ---
 # <a name="back-up-a-sql-server-from-the-vm-pane"></a>Een back-up maken van een SQL Server vanuit het VM-deel venster
@@ -40,7 +40,7 @@ U kunt back-up op uw SQL Server-VM inschakelen vanuit het deel venster **back-up
 2. Voer de naam van de Recovery Services kluis in. Een kluis is een logische entiteit voor het opslaan en beheren van al uw back-ups. Als u een nieuwe kluis maakt:
 
     - Het wordt gemaakt in hetzelfde abonnement en dezelfde regio als de SQL Server VM die u beveiligt.
-    - Het wordt gemaakt met de instelling voor geo-redundante opslag (GRS) voor alle back-ups. Als u het redundantie type wilt wijzigen, moet u dit doen voordat u de virtuele machine beveiligt. Zie [dit artikel](backup-create-rs-vault.md#set-storage-redundancy)voor meer informatie.
+    - Het wordt gemaakt met de instelling voor geo-redundante opslag (GRS) voor alle back-ups. Als u het redundantie type wilt wijzigen, moet u dit doen voordat u de virtuele machine beveiligt. Raadpleeg [dit artikel](backup-create-rs-vault.md#set-storage-redundancy) voor meer informatie.
 
 3. Kies een **back-upbeleid**. U kunt kiezen uit het standaard beleid of andere bestaande beleids regels die u in de kluis hebt gemaakt. Als u een nieuw beleid wilt maken, raadpleegt u [dit artikel](backup-sql-server-database-azure-vms.md#create-a-backup-policy) voor een stapsgewijze hand leiding.
 

@@ -10,10 +10,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.openlocfilehash: b940da2cf754e7e1cac91df6b517ecebe55e8c40
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94358419"
 ---
 # <a name="set-up-an-indexer-connection-to-azure-sql-database-using-a-managed-identity"></a>Een Indexeer functie verbinding instellen met Azure SQL Database met behulp van een beheerde identiteit
@@ -53,7 +53,7 @@ Volg de onderstaande stappen om de machtiging Search service toe te wijzen om de
 
 2. Verifiëren met uw Azure AD-account
 
-    ![Verifiëren](./media/search-managed-identities/visual-studio-authentication.png "Verifiëren")
+    ![Verifieer](./media/search-managed-identities/visual-studio-authentication.png "Verifiëren")
 
 3. Voer de volgende opdrachten uit:
 
@@ -103,7 +103,7 @@ Wanneer u een gegevens bron maakt met behulp van de [rest API](/rest/api/searchs
 * **aanmeldingsgegevens**
     * Wanneer u een beheerde identiteit gebruikt om te verifiëren, is de notatie van de **referenties** anders dan wanneer u geen beheerd-identiteit gebruikt. Hier geeft u een initiële catalogus-of database naam en een ResourceId op die geen account sleutel of wacht woord heeft. De ResourceId moet de abonnements-ID van Azure SQL Database, de resource groep van SQL Database en de naam van de SQL database bevatten. 
     * Connection string indeling beheerde identiteit:
-        * *Initiële catalogus | Data Base = **database naam** ; ResourceId =/Subscriptions/ **uw abonnements-id** /resourceGroups/ **de naam van uw resource groep** /providers/Microsoft.SQL/servers/ **uw SQL Server naam** /; Verbindingstime-out = verbindingstime **-out** ;*
+        * *Initiële catalogus | Data Base =**database naam**; ResourceId =/Subscriptions/**uw abonnements-id**/resourceGroups/**de naam van uw resource groep**/providers/Microsoft.SQL/servers/**uw SQL Server naam**/; Verbindingstime-out = verbindingstime **-out**;*
 * **container** Hiermee geeft u de naam op van de tabel of weer gave die u wilt indexeren.
 
 Voor beeld van het maken van een Azure SQL-gegevens bron object met behulp van de [rest API](/rest/api/searchservice/create-data-source):

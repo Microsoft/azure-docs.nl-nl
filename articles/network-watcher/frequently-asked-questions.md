@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 01/07/2021
 ms.author: damendo
 ms.openlocfilehash: e7585880b98f62f819ff344c82846c2cfb1fd620
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98019819"
 ---
 # <a name="frequently-asked-questions-faq-about-azure-network-watcher"></a>Veelgestelde vragen over Azure Network Watcher
@@ -30,7 +30,7 @@ Network Watcher is ontworpen om de netwerk status van IaaS-onderdelen (Infrastru
 
 ### <a name="what-tools-does-network-watcher-provide"></a>Welke hulpprogram ma's Network Watcher bieden?
 Network Watcher biedt drie belang rijke sets mogelijkheden
-* Controleren
+* Bewaking
   * In de [topologie weergave](./view-network-topology.md) ziet u de resources in uw virtuele netwerk en de relaties daartussen.
   * Met [verbindings monitor](./connection-monitor.md) kunt u de connectiviteit en latentie tussen een virtuele machine en een andere netwerk bron bewaken.
   * Met [netwerk prestatie meter](../azure-monitor/insights/network-performance-monitor.md) kunt u connectiviteit en latentie bewaken over hybride netwerk architecturen, Expressroute-circuits en service/toepassings eindpunten.  
@@ -81,13 +81,13 @@ Network Watcher hoeft alleen maar één keer te worden ingeschakeld voor een abo
 ### <a name="how-can-i-manage-the-network-watcher-resource"></a>Hoe kan ik de Network Watcher resource beheren? 
 De Network Watcher resource vertegenwoordigt de back-end-service voor Network Watcher en wordt volledig beheerd door Azure. Klanten hoeven deze niet te beheren. Bewerkingen zoals verplaatsen worden niet ondersteund voor de resource. [De resource kan echter worden verwijderd](./network-watcher-create.md#delete-a-network-watcher-in-the-portal). 
 
-## <a name="service-availability-and-redundancy"></a>Beschik baarheid en redundantie van de service 
+## <a name="service-availability-and-redundancy"></a>Servicebeschikbaarheid en redundantie 
 
 ### <a name="is-the-network-watcher-service-zone-resilient"></a>Is de Network Watcher service zone flexibel? 
 Ja. De Network Watcher-service is standaard zone-flexibel. 
 
 ### <a name="how-do-i-configure-the-network-watcher-service-to-be-zone-resilient"></a>Hoe kan ik de Network Watcher-service zo configureren dat deze zone flexibel kan worden? 
-Er is geen klant configuratie nodig om zone tolerantie in te scha kelen. Zone-tolerantie voor Network Watcher resources is standaard beschikbaar en wordt beheerd door de service zelf. 
+Er is geen klantconfiguratie nodig om zonetolerantie in te schakelen. Zone-tolerantie voor Network Watcher resources is standaard beschikbaar en wordt beheerd door de service zelf. 
 
 ## <a name="nsg-flow-logs"></a>NSG-stroom logboeken
 

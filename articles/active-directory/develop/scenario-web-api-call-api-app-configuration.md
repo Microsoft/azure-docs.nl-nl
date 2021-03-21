@@ -13,10 +13,10 @@ ms.date: 09/26/2020
 ms.author: jmprieur
 ms.custom: aaddev
 ms.openlocfilehash: 5072ae58d3a9412237e70a9bc98970296ce1e1fa
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101686577"
 ---
 # <a name="a-web-api-that-calls-web-apis-code-configuration"></a>Een web-API die web-Api's aanroept: code configuratie
@@ -88,7 +88,7 @@ Micro soft. Identity. Web biedt verschillende manieren om certificaten te beschr
 
 ## <a name="startupcs"></a>Startup.cs
 
-De Web-API moet een token aanschaffen voor de downstream API. U geeft deze op door de `.EnableTokenAcquisitionToCallDownstreamApi()` regel na te voegen `.AddMicrosoftIdentityWebApi(Configuration)` . Deze regel beschrijft de `ITokenAcquisition` service, die u kunt gebruiken in de acties van uw besturing/pagina. Zoals u echter in de volgende twee opsommings punten ziet, kunt u nog eenvoudiger werken. U moet ook een implementatie van de token cache kiezen, bijvoorbeeld `.AddInMemoryTokenCaches()` in *Startup.cs*:
+De Web-API moet een token aanschaffen voor de downstream API. U geeft deze op door de `.EnableTokenAcquisitionToCallDownstreamApi()` regel na te voegen `.AddMicrosoftIdentityWebApi(Configuration)` . Deze regel beschrijft de `ITokenAcquisition` service, die u kunt gebruiken in de acties van uw besturing/pagina. Zoals u echter in de volgende twee opsommings punten ziet, kunt u nog eenvoudiger werken. U moet ook een implementatie van de token cache kiezen, bijvoorbeeld `.AddInMemoryTokenCaches()` in *Startup. cs*:
 
 ```csharp
 using Microsoft.Identity.Web;
@@ -116,7 +116,7 @@ Als u het token zelf niet zelf wilt verkrijgen, biedt *micro soft. Identity. Web
 Als u Microsoft Graph wilt aanroepen, kunt u met micro soft. Identity. web rechtstreeks de `GraphServiceClient` (beschikbaar gemaakt door de Microsoft Graph SDK) in uw API-acties gebruiken. Microsoft Graph beschikbaar maken:
 
 1. Voeg het NuGet-pakket [micro soft. Identity. Web. MicrosoftGraph](https://www.nuget.org/packages/Microsoft.Identity.Web.MicrosoftGraph) toe aan uw project.
-1. Voeg toe `.AddMicrosoftGraph()` na `.EnableTokenAcquisitionToCallDownstreamApi()` in het *Startup.cs* -bestand. `.AddMicrosoftGraph()` heeft verschillende onderdrukkingen. Met behulp van de onderdrukking waarvoor een configuratie sectie als para meter wordt gebruikt, wordt de code:
+1. Voeg toe `.AddMicrosoftGraph()` na `.EnableTokenAcquisitionToCallDownstreamApi()` in het bestand *Startup. cs* . `.AddMicrosoftGraph()` heeft verschillende onderdrukkingen. Met behulp van de onderdrukking waarvoor een configuratie sectie als para meter wordt gebruikt, wordt de code:
 
 ```csharp
 using Microsoft.Identity.Web;
@@ -164,7 +164,7 @@ public class Startup
 
 Net als bij Web apps, kunt u verschillende implementaties van de token-cache kiezen. Zie [micro soft Identity Web-token cache serialisatie](https://aka.ms/ms-id-web/token-cache-serialization) op github voor meer informatie.
 
-In de volgende afbeelding ziet u de verschillende mogelijkheden van *micro soft. Identity. Web* en hun impact op het *Startup.cs* -bestand:
+In de volgende afbeelding ziet u de verschillende mogelijkheden van *micro soft. Identity. Web* en de invloed hiervan op het bestand *Startup. cs* :
 
 :::image type="content" source="media/scenarios/microsoft-identity-web-startup-cs.svg" alt-text="Blok diagram met de service configuratie opties in startup dot C S voor het aanroepen van een web-API en het opgeven van een token cache-implementatie":::
 

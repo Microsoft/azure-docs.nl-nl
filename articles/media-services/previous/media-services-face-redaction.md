@@ -15,10 +15,10 @@ ms.date: 03/10/2021
 ms.author: inhenkel
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 7d416810f6a39fb36bfa3c5225301fe87fdd128c
-ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103013462"
 ---
 # <a name="redact-faces-with-azure-media-analytics"></a>Gezichten met Azure Media Analytics redigeren
@@ -46,7 +46,7 @@ Dit produceert automatisch een geredigeerde MP4 zonder hand matige invoer.
 
 | Fase | Bestandsnaam | Notities |
 | --- | --- | --- |
-| Invoer Asset |Foo. Bar |Video in WMV-, MOV-of MP4-indeling |
+| Invoer Asset |foo.bar |Video in WMV-, MOV-of MP4-indeling |
 | Invoer configuratie |Vooraf ingestelde taak configuratie |{' version ': ' 1.0 ', ' opties ': {' mode ': ' gecombineerd '}} |
 | Uitvoer activum |foo_redacted.mp4 |Video met vervaging toegepast |
 
@@ -56,7 +56,7 @@ De **analyse** fase van de werk stroom met twee slagen neemt een video-invoer en
 
 | Fase | Bestandsnaam | Notities |
 | --- | --- | --- |
-| Invoer Asset |Foo. Bar |Video in WMV-, MPV-of MP4-indeling |
+| Invoer Asset |foo.bar |Video in WMV-, MPV-of MP4-indeling |
 | Invoer configuratie |Vooraf ingestelde taak configuratie |{' version ': ' 1.0 ', ' opties ': {' mode ': ' analyse '}} |
 | Uitvoer activum |foo_annotations.jsop |Aantekening gegevens van gezichts locaties in JSON-indeling. Dit kan worden bewerkt door de gebruiker om de vervagings kaders te wijzigen. Zie het voor beeld hieronder. |
 | Uitvoer activum |foo_thumb% 06d.jpg [foo_thumb000001.jpg, foo_thumb000002.jpg] |Een bijgesneden jpg van elk gedetecteerd gezicht, waarbij het nummer de labelId van het gezicht aangeeft |
@@ -122,7 +122,7 @@ De uitvoer van de analyse fase bevat niet de oorspronkelijke video. De video moe
 
 | Fase | Bestandsnaam | Notities |
 | --- | --- | --- |
-| Invoer Asset |Foo. Bar |Video in WMV-, MPV-of MP4-indeling. Dezelfde video als in stap 1. |
+| Invoer Asset |foo.bar |Video in WMV-, MPV-of MP4-indeling. Dezelfde video als in stap 1. |
 | Invoer Asset |foo_annotations.jsop |Meta gegevensbestand van de fase één, met optionele wijzigingen. |
 | Invoer Asset |foo_IDList.txt (optioneel) |Optionele, door de nieuwe gescheiden lijst met gezichts-Id's voor redactie. Als dit veld leeg blijft, worden alle gezichten vervaagd. |
 | Invoer configuratie |Vooraf ingestelde taak configuratie |{' version ': ' 1.0 ', ' opties ': {' mode ': ' redactie '}} |

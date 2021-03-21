@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=alokkirpal, previous-ms.author=alok
 ms.openlocfilehash: e210c1683d5f14181bc0549e73a892eb91d2e746
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93305692"
 ---
 # <a name="machine-learning-anomaly-detection-api"></a>Machine Learning anomalie detectie-API
@@ -28,9 +28,9 @@ De [anomalie detectie-API](https://gallery.azure.ai/MachineLearningAPI/Anomaly-D
 
 Met deze API kunnen de volgende typen afwijkende patronen worden gedetecteerd in time series-gegevens:
 
-* **Positieve en negatieve trends** : als u bijvoorbeeld het geheugen gebruik bewaken in het berekenen van een opwaartse trend, kan dit van belang zijn, omdat dit mogelijk indicatief is voor een geheugenlek,
-* **Wijzigingen in het dynamische waarden bereik** : als u de uitzonde ringen die door een Cloud service worden gegenereerd, bijvoorbeeld bewaken, kunnen eventuele wijzigingen in het dynamische waardebereik duiden op instabiliteit in de status van de service en
-* **Pieken en spannings dips** : als u bijvoorbeeld het aantal mislukte aanmeldingen in een service of het aantal afhandelingen in een e-commerce site bewaken, kunnen pieken of spannings dips duiden op abnormaal gedrag.
+* **Positieve en negatieve trends**: als u bijvoorbeeld het geheugen gebruik bewaken in het berekenen van een opwaartse trend, kan dit van belang zijn, omdat dit mogelijk indicatief is voor een geheugenlek,
+* **Wijzigingen in het dynamische waarden bereik**: als u de uitzonde ringen die door een Cloud service worden gegenereerd, bijvoorbeeld bewaken, kunnen eventuele wijzigingen in het dynamische waardebereik duiden op instabiliteit in de status van de service en
+* **Pieken en spannings dips**: als u bijvoorbeeld het aantal mislukte aanmeldingen in een service of het aantal afhandelingen in een e-commerce site bewaken, kunnen pieken of spannings dips duiden op abnormaal gedrag.
 
 Deze machine learning detectoren volgen dergelijke wijzigingen in waarden gedurende een bepaalde periode en melden de lopende wijzigingen in hun waarden als afwijkende scores. Deze vereisen geen ad hoc-drempel waarde en hun scores kunnen worden gebruikt voor het beheren van het onjuiste positieve aantal. De anomalie detectie-API is handig in verschillende scenario's, zoals service bewaking, door Kpi's te volgen over een bepaalde periode, de gebruiks bewaking via metrische gegevens, zoals het aantal Zoek opdrachten, aantallen klikken, prestatie bewaking via prestatie meter items, zoals geheugen, CPU, lees bewerkingen van bestanden, enzovoort.
 
@@ -115,7 +115,7 @@ In de afbeelding hieronder ziet u een voor beeld van afwijkingen die de Score-AP
 ### <a name="detectors"></a>Detectoren
 De anomalie detectie-API ondersteunt detectoren in drie algemene categorieën. Meer informatie over specifieke invoer parameters en uitvoer voor elke detector vindt u in de volgende tabel.
 
-| Detector categorie | Detectie | Beschrijving | Invoerparameters | Uitvoer |
+| Detector categorie | Detectie | Beschrijving | Invoerparameters | Uitvoerwaarden |
 | --- | --- | --- | --- | --- |
 | Piek detectoren |TSpike detector |Spoor pieken en spannings dips op basis van de waarden uit het eerste en derde kwartiel |*tspikedetector. sensitivity:* Hiermee wordt een geheel getal in het bereik 1-10, standaard waarde: 3, gebruikt. Bij hogere waarden worden er meer extreme waarden onderschept waardoor deze minder gevoelig zijn |TSpike: binaire waarden – ' 1 ' als een Prikker/DIP wordt gedetecteerd, ' 0 ' anders |
 | Piek detectoren | ZSpike detector |Pieken en spannings dips detecteren op basis van de betekenis van de data Points |*zspikedetector. sensitivity:* waarde voor geheel getal in het bereik 1-10 opgeven, standaard: 3; Bij hogere waarden worden er meer extreme waarden onderschept waardoor deze minder gevoelig zijn |ZSpike: binaire waarden – ' 1 ' als een Prikker/DIP wordt gedetecteerd, ' 0 ' anders |
@@ -138,7 +138,7 @@ Meer gedetailleerde informatie over deze invoer parameters vindt u in de volgend
 ### <a name="output"></a>Uitvoer
 De API voert alle detectoren uit op uw tijdreeks gegevens en retourneert afwijkende scores en binaire piek indicatoren voor elk tijdstip. De volgende tabel bevat de uitvoer van de API.
 
-| Uitvoer | Beschrijving |
+| Uitvoerwaarden | Beschrijving |
 | --- | --- |
 | Tijd |Tijds tempels van onbewerkte gegevens, of geaggregeerd (en/of) toegerekende gegevens als aggregatie (en/of) ontbrekende gegevens toerekening is toegepast |
 | Gegevens |Waarden van onbewerkte gegevens, of geaggregeerd (en/of) toegerekende gegevens als aggregatie (en/of) ontbrekende gegevens toerekening is toegepast |
@@ -181,7 +181,7 @@ Meer gedetailleerde informatie over deze invoer parameters vindt u in de volgend
 ### <a name="output"></a>Uitvoer
 De API voert alle detectoren uit op uw tijdreeks gegevens en retourneert afwijkende scores en binaire piek indicatoren voor elk tijdstip. De volgende tabel bevat de uitvoer van de API.
 
-| Uitvoer | Beschrijving |
+| Uitvoerwaarden | Beschrijving |
 | --- | --- |
 | Tijd |Tijds tempels van onbewerkte gegevens, of geaggregeerd (en/of) toegerekende gegevens als aggregatie (en/of) ontbrekende gegevens toerekening is toegepast |
 | OriginalData |Waarden van onbewerkte gegevens, of geaggregeerd (en/of) toegerekende gegevens als aggregatie (en/of) ontbrekende gegevens toerekening is toegepast |

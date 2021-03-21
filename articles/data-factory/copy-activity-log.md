@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 11/11/2020
 ms.author: yexu
 ms.openlocfilehash: 7cb00d62556babbd8e43e2fac2faa815a63943ed
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100385265"
 ---
 #  <a name="session-log-in-copy-activity"></a>Sessie logboek in Kopieer activiteit
@@ -66,12 +66,12 @@ In het volgende voor beeld wordt een JSON-definitie geboden om het sessie logboe
 
 Eigenschap | Beschrijving | Toegestane waarden | Vereist
 -------- | ----------- | -------------- | -------- 
-enableCopyActivityLog | Wanneer u deze instelt op True, hebt u de mogelijkheid om gekopieerde bestanden, overgeslagen bestanden of overgeslagen rijen te registreren.  | Waar<br/>False (standaard) | No
-logLevel | Met "info" worden alle gekopieerde bestanden, overgeslagen bestanden en overgeslagen rijen geregistreerd. Als u ' waarschuwing ' wilt, worden overgeslagen bestanden en overgeslagen rijen alleen door het logboek vastgelegd.  | Info<br/>Waarschuwing (standaard) | No
-enableReliableLogging | Als deze waarde True is, worden logboeken onmiddellijk door de Kopieer activiteit uit de betrouw bare modus gewist zodra elk bestand naar de bestemming is gekopieerd.  Wanneer u grote hoeveel heden bestanden kopieert met een betrouw bare logboek registratie modus die is ingeschakeld in de Kopieer activiteit, zou u kunnen verwachten dat de door Voer van de Kopieer bewerking wordt beïnvloed, omdat dubbele schrijf bewerkingen vereist zijn voor elk gekopieerde bestand. Er is een aanvraag naar het doel archief en een andere aanvraag is aan de archief opslag van het logboek.  Met de Kopieer activiteit in de modus Best effort worden logboeken met Batch records verwijderd binnen een bepaalde periode, waarbij de door Voer van de Kopieer bewerking veel minder gevolgen heeft. De volledigheid en het moment van vastleggen van logboek registraties worden niet gegarandeerd in deze modus, omdat er een aantal mogelijkheden zijn dat de laatste batch met logboek gebeurtenissen niet is leeg gemaakt naar het logboek bestand als de Kopieer activiteit is mislukt. Op dit moment ziet u een aantal bestanden die naar de bestemming zijn gekopieerd, worden niet geregistreerd.  | Waar<br/>False (standaard) | No
-logLocationSettings | Een groep eigenschappen die kan worden gebruikt om de locatie op te geven voor het opslaan van de sessie Logboeken. | | No
-linkedServiceName | De gekoppelde service van [Azure Blob Storage](connector-azure-blob-storage.md#linked-service-properties) of [Azure data Lake Storage Gen2](connector-azure-data-lake-storage.md#linked-service-properties) voor het opslaan van de sessie logboek bestanden. | De namen van een `AzureBlobStorage` of meer `AzureBlobFS` gekoppelde service, die verwijst naar het exemplaar dat u gebruikt om de logboek bestanden op te slaan. | No
-leertraject | Het pad van de logboek bestanden. | Geef het pad op waarin u de logboek bestanden wilt opslaan. Als u geen pad opgeeft, maakt de service een container voor u. | No
+enableCopyActivityLog | Wanneer u deze instelt op True, hebt u de mogelijkheid om gekopieerde bestanden, overgeslagen bestanden of overgeslagen rijen te registreren.  | Waar<br/>False (standaard) | Nee
+logLevel | Met "info" worden alle gekopieerde bestanden, overgeslagen bestanden en overgeslagen rijen geregistreerd. Als u ' waarschuwing ' wilt, worden overgeslagen bestanden en overgeslagen rijen alleen door het logboek vastgelegd.  | Info<br/>Waarschuwing (standaard) | Nee
+enableReliableLogging | Als deze waarde True is, worden logboeken onmiddellijk door de Kopieer activiteit uit de betrouw bare modus gewist zodra elk bestand naar de bestemming is gekopieerd.  Wanneer u grote hoeveel heden bestanden kopieert met een betrouw bare logboek registratie modus die is ingeschakeld in de Kopieer activiteit, zou u kunnen verwachten dat de door Voer van de Kopieer bewerking wordt beïnvloed, omdat dubbele schrijf bewerkingen vereist zijn voor elk gekopieerde bestand. Er is een aanvraag naar het doel archief en een andere aanvraag is aan de archief opslag van het logboek.  Met de Kopieer activiteit in de modus Best effort worden logboeken met Batch records verwijderd binnen een bepaalde periode, waarbij de door Voer van de Kopieer bewerking veel minder gevolgen heeft. De volledigheid en het moment van vastleggen van logboek registraties worden niet gegarandeerd in deze modus, omdat er een aantal mogelijkheden zijn dat de laatste batch met logboek gebeurtenissen niet is leeg gemaakt naar het logboek bestand als de Kopieer activiteit is mislukt. Op dit moment ziet u een aantal bestanden die naar de bestemming zijn gekopieerd, worden niet geregistreerd.  | Waar<br/>False (standaard) | Nee
+logLocationSettings | Een groep eigenschappen die kan worden gebruikt om de locatie op te geven voor het opslaan van de sessie Logboeken. | | Nee
+linkedServiceName | De gekoppelde service van [Azure Blob Storage](connector-azure-blob-storage.md#linked-service-properties) of [Azure data Lake Storage Gen2](connector-azure-data-lake-storage.md#linked-service-properties) voor het opslaan van de sessie logboek bestanden. | De namen van een `AzureBlobStorage` of meer `AzureBlobFS` gekoppelde service, die verwijst naar het exemplaar dat u gebruikt om de logboek bestanden op te slaan. | Nee
+leertraject | Het pad van de logboek bestanden. | Geef het pad op waarin u de logboek bestanden wilt opslaan. Als u geen pad opgeeft, maakt de service een container voor u. | Nee
 
 
 ## <a name="monitoring"></a>Bewaking

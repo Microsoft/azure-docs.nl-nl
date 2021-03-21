@@ -7,10 +7,10 @@ ms.custom: devx-track-csharp, devx-track-js
 ms.date: 03/25/2019
 ms.author: cshoe
 ms.openlocfilehash: f75f42f3879f551a945bdeb2d88450ae3b9d6106
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98674147"
 ---
 # <a name="strategies-for-testing-your-code-in-azure-functions"></a>Strategieën voor het testen van uw code in Azure Functions
@@ -51,7 +51,7 @@ Voor elke functie wordt een instantie van [ILogger](/dotnet/api/microsoft.extens
 
 U maakt een nieuwe klasse met de naam `ListLogger` die een interne lijst met berichten bevat die tijdens het testen moet worden geëvalueerd. Voor het implementeren van de vereiste `ILogger` interface moet de klasse een bereik hebben. De volgende klasse geeft een bereik aan voor de test cases die moeten worden door gegeven aan de `ListLogger` klasse.
 
-Maak een nieuwe klasse in *functions. test* project met de naam **NullScope.cs** en voer de volgende code in:
+Maak een nieuwe klasse in *functions. test* project met de naam **NullScope. cs** en voer de volgende code in:
 
 ```csharp
 using System;
@@ -69,7 +69,7 @@ namespace Functions.Tests
 }
 ```
 
-Maak vervolgens een nieuwe klasse in *functions. test* project met de naam **ListLogger.cs** en voer de volgende code in:
+Maak vervolgens een nieuwe klasse in *functions. test* project met de naam **ListLogger. cs** en voer de volgende code in:
 
 ```csharp
 using Microsoft.Extensions.Logging;
@@ -115,7 +115,7 @@ De `ListLogger` klasse implementeert de volgende leden als een contract van de `
 
 De `Logs` verzameling is een exemplaar van `List<string>` en wordt geïnitialiseerd in de constructor.
 
-Maak vervolgens een nieuw bestand in *functions. test* project met de naam **LoggerTypes.cs** en voer de volgende code in:
+Maak vervolgens een nieuw bestand in *functions. test* project met de naam **LoggerTypes. cs** en voer de volgende code in:
 
 ```csharp
 namespace Functions.Tests
@@ -130,7 +130,7 @@ namespace Functions.Tests
 
 Met deze opsomming geeft u het type logboek registratie op dat wordt gebruikt door de tests.
 
-Maak nu een nieuwe klasse in *functions. test* project met de naam **TestFactory.cs** en voer de volgende code in:
+Maak nu een nieuwe klasse in *functions. test* project met de naam **TestFactory. cs** en voer de volgende code in:
 
 ```csharp
 using Microsoft.AspNetCore.Http;
@@ -201,7 +201,7 @@ De `TestFactory` klasse implementeert de volgende leden:
 
 - **CreateLogger**: op basis van het logboek type retourneert deze methode een logger klasse die wordt gebruikt voor het testen. Hiermee worden `ListLogger` vastgelegde berichten bijgehouden die beschikbaar zijn voor evaluatie in tests.
 
-Maak ten slotte een nieuwe klasse in *functions. test* project met de naam **FunctionsTests.cs** en voer de volgende code in:
+Maak ten slotte een nieuwe klasse in *functions. test* project met de naam **FunctionsTests. cs** en voer de volgende code in:
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;

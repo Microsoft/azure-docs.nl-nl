@@ -13,10 +13,10 @@ ms.author: jovanpop
 ms.reviewer: sstein
 ms.date: 09/21/2020
 ms.openlocfilehash: 17e97503996b53868f12e74ed5a38dba63285426
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102503195"
 ---
 # <a name="azure-sql-managed-instance-frequently-asked-questions-faq"></a>Veelgestelde vragen over Azure SQL Managed Instance (FAQ)
@@ -216,7 +216,7 @@ Ja, u kunt extra opslag aanschaffen, onafhankelijk van compute, tot op zekere ho
 
 Zie [Aanbevolen procedures voor opslag in algemeen](https://techcommunity.microsoft.com)voor het optimaliseren van opslag prestaties.
 
-## <a name="backup-and-restore"></a>Back-ups en herstellen
+## <a name="backup-and-restore"></a>Back-up en herstel
 
 **Wordt de back-upopslag afgetrokken van mijn beheerde exemplaar opslag?**
 

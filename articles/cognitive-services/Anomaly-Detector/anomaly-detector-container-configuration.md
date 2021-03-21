@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 05/07/2020
 ms.author: mbullwin
 ms.openlocfilehash: c175a52259e9cfe5b4d03ce0279bbe24d16a48ae
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94363711"
 ---
 # <a name="configure-anomaly-detector-containers"></a>Anomaly Detector-containers configureren
@@ -59,7 +59,7 @@ Deze instelling bevindt zich op de volgende locatie:
 
 * Azure Portal: overzicht **van anomalie detectie** , gelabeld `Endpoint`
 
-|Vereist| Naam | Gegevenstype | Beschrijving |
+|Vereist| Name | Gegevenstype | Beschrijving |
 |--|------|-----------|-------------|
 |Ja| `Billing` | Tekenreeks | URL van het facturerings eindpunt. Zie [vereiste para meters verzamelen](anomaly-detector-container-howto.md#gathering-required-parameters)voor meer informatie over het verkrijgen van de facturerings-URI. Zie [Aangepaste subdomeinnamen voor Cognitive Services](../cognitive-services-custom-subdomains.md) voor meer informatie en een volledige lijst met regionale eindpunten. |
 
@@ -88,7 +88,7 @@ De afwijkende detector containers gebruiken geen invoer-of uitvoer koppelingen o
 
 De exacte syntaxis van de locatie voor het koppelen van de host varieert, afhankelijk van het besturings systeem van de host. Daarnaast is de koppel locatie van de [hostcomputer](anomaly-detector-container-howto.md#the-host-computer)mogelijk niet toegankelijk als gevolg van een conflict tussen de machtigingen die worden gebruikt door het docker-service account en de machtigingen voor het koppelen van de host-locatie. 
 
-|Optioneel| Naam | Gegevenstype | Beschrijving |
+|Optioneel| Name | Gegevenstype | Beschrijving |
 |-------|------|-----------|-------------|
 |Niet toegestaan| `Input` | Tekenreeks | Afwijkende detector containers gebruiken deze niet.|
 |Optioneel| `Output` | Tekenreeks | Het doel van de uitvoer koppeling. De standaardwaarde is `/output`. Dit is de locatie van de logboeken. Dit omvat container Logboeken. <br><br>Voorbeeld:<br>`--mount type=bind,src=c:\output,target=/output`|
@@ -97,8 +97,8 @@ De exacte syntaxis van de locatie voor het koppelen van de host varieert, afhank
 
 De volgende voor beelden gebruiken de configuratie-instellingen om te laten zien hoe u-opdrachten schrijft en gebruikt `docker run` .  Als de container eenmaal wordt uitgevoerd, blijft deze actief totdat u deze [stopt](anomaly-detector-container-howto.md#stop-the-container) .
 
-* **Regel voortzettings teken** : de docker-opdrachten in de volgende secties gebruiken de back slash, `\` , als een regel voortzettings teken voor een bash-shell. Vervang of verwijder dit op basis van de vereisten van uw host-besturings systeem. Het regel vervolg teken voor Windows is bijvoorbeeld een caret, `^` . Vervang de back slash door het caret. 
-* **Argument volgorde** : Wijzig de volg orde van de argumenten niet, tenzij u bekend bent met docker-containers.
+* **Regel voortzettings teken**: de docker-opdrachten in de volgende secties gebruiken de back slash, `\` , als een regel voortzettings teken voor een bash-shell. Vervang of verwijder dit op basis van de vereisten van uw host-besturings systeem. Het regel vervolg teken voor Windows is bijvoorbeeld een caret, `^` . Vervang de back slash door het caret. 
+* **Argument volgorde**: Wijzig de volg orde van de argumenten niet, tenzij u bekend bent met docker-containers.
 
 Vervang de waarde tussen vier Kante haken, `{}` met uw eigen waarden:
 

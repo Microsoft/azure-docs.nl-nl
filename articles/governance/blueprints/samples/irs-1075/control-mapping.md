@@ -4,10 +4,10 @@ description: Toewijzing van beheeropties voor het blauwdrukvoorbeeld IRS 1075. E
 ms.date: 01/08/2021
 ms.topic: sample
 ms.openlocfilehash: 08ce69d13f201e6f0bd1d649ebfe3bbf5c38f927
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98045220"
 ---
 # <a name="control-mapping-of-the-irs-1075-blueprint-sample"></a>Toewijzing van beheeropties voor het blauwdrukvoorbeeld IRS 1075

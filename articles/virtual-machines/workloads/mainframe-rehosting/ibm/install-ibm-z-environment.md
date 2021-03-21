@@ -14,10 +14,10 @@ ms.date: 04/02/2019
 tags: ''
 keywords: ''
 ms.openlocfilehash: abcaff5979aed38ce47df08cc953829f3003f7b0
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102561548"
 ---
 # <a name="install-ibm-zdt-devtest-environment-on-azure"></a>IBM zD&T dev/test-omgeving installeren op Azure

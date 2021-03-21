@@ -8,10 +8,10 @@ ms.service: synapse-analytics
 ms.topic: how-to
 ms.date: 12/09/2020
 ms.openlocfilehash: 06586b5bf20619f57b2ad1c3d5de84dd61952261
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102561242"
 ---
 # <a name="plan-and-manage-costs-for-azure-synapse-analytics"></a>Kosten voor Azure Synapse Analytics plannen en beheren
@@ -76,7 +76,7 @@ Wanneer u kosten analyse gebruikt, bekijkt u de kosten voor Azure Synapse Analyt
 
 Kosten voor Azure Synapse weer geven in kosten analyse:
 
-1. Meld u aan bij de Azure-portal.
+1. Meld u aan bij Azure Portal.
 2. Open de scope, het abonnement of de resource groep in de Azure Portal en selecteer **kosten analyse** in het menu. Ga bijvoorbeeld naar **abonnementen**, selecteer een abonnement in de lijst en selecteer vervolgens  **kosten analyse** in het menu. Selecteer **bereik** om over te scha kelen naar een ander bereik in cost analysis.
 3. Kosten voor services worden standaard weer gegeven in de eerste cirkel diagram. Selecteer het gebied in het diagram met het label Azure Synapse.
 

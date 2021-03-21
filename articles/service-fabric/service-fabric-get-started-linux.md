@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 10/16/2020
 ms.custom: devx-track-js
 ms.openlocfilehash: 14b8a278605a908b4182c724831b2e42de54a753
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93086887"
 ---
 # <a name="prepare-your-development-environment-on-linux"></a>Uw ontwikkelomgeving voorbereiden in Linux
@@ -300,15 +300,15 @@ U kunt de Eclipse-invoegtoepassing voor Service Fabric installeren vanuit de Ecl
 
 1. Controleer in Eclipse of u Eclipse Neon of later en Buildship versie 2.2.1 of later hebt geïnstalleerd. Controleer de versies van geïnstalleerde onderdelen door **Help**  >  **over** de  >  **installatie Details** van de eclips te selecteren. U kunt Buildship bijwerken met behulp van de instructies in [Eclipse Buildship: Eclipse-invoegtoepassingen voor Gradle][buildship-update].
 
-2. Als u de service Fabric-invoeg toepassing wilt installeren, selecteert u **Help**  >  **nieuwe software installeren** .
+2. Als u de service Fabric-invoeg toepassing wilt installeren, selecteert u **Help**  >  **nieuwe software installeren**.
 
 3. Voer in het vak **werken met** **https: \/ /DL.Microsoft.com/Eclipse** in.
 
-4. Selecteer **Toevoegen** .
+4. Selecteer **Toevoegen**.
 
     ![Pagina met beschikbare software][sf-eclipse-plugin]
 
-5. Selecteer de **Service Fabric** -invoegtoepassing en klik op **Next** .
+5. Selecteer de **Service Fabric**-invoegtoepassing en klik op **Next**.
 
 6. Voer de installatiestappen uit. Ga vervolgens akkoord met de gebruiksrechtovereenkomst.
 

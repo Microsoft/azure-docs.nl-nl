@@ -14,10 +14,10 @@ ms.custom:
 - 'Role: Cloud Development'
 - 'Role: IoT Device'
 ms.openlocfilehash: 2d9b0d97fa1823314f5109a1c7fc79054806c148
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/01/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93146923"
 ---
 # <a name="understand-the-identity-registry-in-your-iot-hub"></a>Inzicht in het identiteits register in uw IoT-hub
@@ -94,7 +94,7 @@ Het *inrichten van apparaten* is het proces van het toevoegen van de initiële g
 
 ## <a name="device-heartbeat"></a>Heartbeat van apparaat
 
-Het IoT Hub identiteits register bevat een veld met de naam **connectionState** . Gebruik het veld **connectionState** alleen tijdens het ontwikkelen en opsporen van fouten. IoT-oplossingen mogen het veld niet in runtime opvragen. Vraag het veld **connectionState** bijvoorbeeld niet op om te controleren of een apparaat is verbonden voordat u een Cloud-naar-apparaat-bericht of SMS verzendt. U kunt het beste abonneren op de [ **verbroken** gebeurtenis](iot-hub-event-grid.md#event-types) van het apparaat op Event grid om waarschuwingen op te halen en de verbindings status van het apparaat te controleren. Gebruik deze [zelf studie](iot-hub-how-to-order-connection-state-events.md) voor meer informatie over het integreren van met het apparaat verbonden en verbroken gebeurtenissen van het apparaat van IOT hub in uw IOT-oplossing.
+Het IoT Hub identiteits register bevat een veld met de naam **connectionState**. Gebruik het veld **connectionState** alleen tijdens het ontwikkelen en opsporen van fouten. IoT-oplossingen mogen het veld niet in runtime opvragen. Vraag het veld **connectionState** bijvoorbeeld niet op om te controleren of een apparaat is verbonden voordat u een Cloud-naar-apparaat-bericht of SMS verzendt. U kunt het beste abonneren op de [ **verbroken** gebeurtenis](iot-hub-event-grid.md#event-types) van het apparaat op Event grid om waarschuwingen op te halen en de verbindings status van het apparaat te controleren. Gebruik deze [zelf studie](iot-hub-how-to-order-connection-state-events.md) voor meer informatie over het integreren van met het apparaat verbonden en verbroken gebeurtenissen van het apparaat van IOT hub in uw IOT-oplossing.
 
 Als uw IoT-oplossing moet weten of een apparaat is verbonden, kunt u het *heartbeat-patroon* implementeren.
 In het heartbeat-patroon verzendt het apparaat ten minste één keer per keer elke vaste periode een apparaat-naar-Cloud-berichten (bijvoorbeeld minstens één keer per uur). Dus zelfs als een apparaat geen gegevens heeft om te verzenden, verzendt het een leeg apparaat-naar-Cloud bericht (meestal met een eigenschap die het als een heartbeat identificeert). Aan de kant van de service onderhoudt de oplossing een kaart met de laatste heartbeat die voor elk apparaat is ontvangen. Als de oplossing geen heartbeat-bericht binnen de verwachte tijd van het apparaat ontvangt, wordt ervan uitgegaan dat er een probleem is met het apparaat.
@@ -106,13 +106,13 @@ Een complexere implementatie kan de informatie bevatten van [Azure monitor](../a
 
 ## <a name="device-and-module-lifecycle-notifications"></a>Levenscyclus meldingen apparaat en module
 
-IoT Hub kunt uw IoT-oplossing waarschuwen wanneer een identiteit wordt gemaakt of verwijderd door levenscyclus meldingen te verzenden. Hiervoor moet uw IoT-oplossing een route maken en de gegevens bron instellen op *DeviceLifecycleEvents* of *ModuleLifecycleEvents* . Standaard worden er geen levenscyclus meldingen verzonden, dat wil zeggen dat er geen dergelijke routes vooraf bestaan. Het meldings bericht bevat eigenschappen en hoofd tekst.
+IoT Hub kunt uw IoT-oplossing waarschuwen wanneer een identiteit wordt gemaakt of verwijderd door levenscyclus meldingen te verzenden. Hiervoor moet uw IoT-oplossing een route maken en de gegevens bron instellen op *DeviceLifecycleEvents* of *ModuleLifecycleEvents*. Standaard worden er geen levenscyclus meldingen verzonden, dat wil zeggen dat er geen dergelijke routes vooraf bestaan. Het meldings bericht bevat eigenschappen en hoofd tekst.
 
 Eigenschappen: eigenschappen van het bericht systeem worden voorafgegaan door het `$` symbool.
 
 Meldings bericht voor het apparaat:
 
-| Naam | Waarde |
+| Name | Waarde |
 | --- | --- |
 |$content-type | application/json |
 |$iothub-enqueuedtime |  Tijdstip waarop de melding is verzonden |
@@ -148,7 +148,7 @@ Hoofd tekst: deze sectie bevindt zich in JSON-indeling en vertegenwoordigt de du
 ```
 Meldings bericht voor module:
 
-| Naam | Waarde |
+| Name | Waarde |
 | --- | --- |
 $content-type | application/json |
 $iothub-enqueuedtime |  Tijdstip waarop de melding is verzonden |
@@ -195,10 +195,10 @@ Apparaat-id's worden weer gegeven als JSON-documenten met de volgende eigenschap
 | ETAG |vereist, alleen-lezen |Een teken reeks die een zwakke ETag vertegenwoordigt voor de apparaat-id, zoals per [RFC7232](https://tools.ietf.org/html/rfc7232). |
 | dienst |optioneel |Een samengesteld object met verificatie-informatie en beveiligings materialen. |
 | auth. symkey |optioneel |Een samengesteld object met een primaire en secundaire sleutel die is opgeslagen in Base64-indeling. |
-| status |vereist |Een toegangs indicator. Kan worden **ingeschakeld** of **uitgeschakeld** . Als deze functie is **ingeschakeld** , mag het apparaat verbinding maken. Indien **uitgeschakeld** , kan dit apparaat geen toegang krijgen tot een eind punt op het apparaat. |
+| status |vereist |Een toegangs indicator. Kan worden **ingeschakeld** of **uitgeschakeld**. Als deze functie is **ingeschakeld**, mag het apparaat verbinding maken. Indien **uitgeschakeld**, kan dit apparaat geen toegang krijgen tot een eind punt op het apparaat. |
 | statusReason |optioneel |Een teken reeks met een lengte van 128 waarmee de reden voor de status van de apparaat-id wordt opgeslagen. Alle UTF-8-tekens zijn toegestaan. |
 | statusUpdateTime |alleen-lezen |Een tijdelijke indicator met de datum en tijd van de laatste status update. |
-| connectionState |alleen-lezen |Een veld dat de verbindings status aangeeft: **verbinding** of **verbroken** . Dit veld vertegenwoordigt de IoT Hub weer gave van de verbindings status van het apparaat. **Belang rijk** : dit veld mag alleen worden gebruikt voor het oplossen van problemen met de ontwikkeling en fout opsporing. De verbindings status wordt alleen bijgewerkt voor apparaten met behulp van MQTT of AMQP. Het is ook gebaseerd op protocol niveau pings (MQTT pings of AMQP pings) en kan Maxi maal vijf minuten duren. Om deze redenen kan er sprake zijn van valse positieven, zoals apparaten die zijn gerapporteerd als verbonden, maar die niet zijn verbonden. |
+| connectionState |alleen-lezen |Een veld dat de verbindings status aangeeft: **verbinding** of **verbroken**. Dit veld vertegenwoordigt de IoT Hub weer gave van de verbindings status van het apparaat. **Belang rijk**: dit veld mag alleen worden gebruikt voor het oplossen van problemen met de ontwikkeling en fout opsporing. De verbindings status wordt alleen bijgewerkt voor apparaten met behulp van MQTT of AMQP. Het is ook gebaseerd op protocol niveau pings (MQTT pings of AMQP pings) en kan Maxi maal vijf minuten duren. Om deze redenen kan er sprake zijn van valse positieven, zoals apparaten die zijn gerapporteerd als verbonden, maar die niet zijn verbonden. |
 | connectionStateUpdatedTime |alleen-lezen |Een tijdelijke indicator, met de datum en laatste keer dat de verbindings status is bijgewerkt. |
 | lastActivityTime |alleen-lezen |Een tijdelijke indicator, met de datum en laatste keer dat het apparaat is verbonden, ontvangen of een bericht heeft verzonden. Deze eigenschap is uiteindelijk consistent, maar kan tot 5 tot 10 minuten worden uitgesteld. Daarom mag deze niet worden gebruikt in productie scenario's. |
 
@@ -206,7 +206,7 @@ Apparaat-id's worden weer gegeven als JSON-documenten met de volgende eigenschap
 > De verbindings status kan alleen de IoT Hub weer gave van de status van de verbinding weer geven. Updates van deze status kunnen worden vertraagd, afhankelijk van de netwerk omstandigheden en configuraties.
 
 > [!NOTE]
-> De Sdk's van het apparaat bieden momenteel geen ondersteuning `+` voor het gebruik van de en- `#` tekens in het **deviceId** .
+> De Sdk's van het apparaat bieden momenteel geen ondersteuning `+` voor het gebruik van de en- `#` tekens in het **deviceId**.
 
 ## <a name="module-identity-properties"></a>Eigenschappen van module-identiteit
 
@@ -220,15 +220,15 @@ Module-identiteiten worden weer gegeven als JSON-documenten met de volgende eige
 | ETAG |vereist, alleen-lezen |Een teken reeks die een zwakke ETag vertegenwoordigt voor de apparaat-id, zoals per [RFC7232](https://tools.ietf.org/html/rfc7232). |
 | dienst |optioneel |Een samengesteld object met verificatie-informatie en beveiligings materialen. |
 | auth. symkey |optioneel |Een samengesteld object met een primaire en secundaire sleutel die is opgeslagen in Base64-indeling. |
-| status |vereist |Een toegangs indicator. Kan worden **ingeschakeld** of **uitgeschakeld** . Als deze functie is **ingeschakeld** , mag het apparaat verbinding maken. Indien **uitgeschakeld** , kan dit apparaat geen toegang krijgen tot een eind punt op het apparaat. |
+| status |vereist |Een toegangs indicator. Kan worden **ingeschakeld** of **uitgeschakeld**. Als deze functie is **ingeschakeld**, mag het apparaat verbinding maken. Indien **uitgeschakeld**, kan dit apparaat geen toegang krijgen tot een eind punt op het apparaat. |
 | statusReason |optioneel |Een teken reeks met een lengte van 128 waarmee de reden voor de status van de apparaat-id wordt opgeslagen. Alle UTF-8-tekens zijn toegestaan. |
 | statusUpdateTime |alleen-lezen |Een tijdelijke indicator met de datum en tijd van de laatste status update. |
-| connectionState |alleen-lezen |Een veld dat de verbindings status aangeeft: **verbinding** of **verbroken** . Dit veld vertegenwoordigt de IoT Hub weer gave van de verbindings status van het apparaat. **Belang rijk** : dit veld mag alleen worden gebruikt voor het oplossen van problemen met de ontwikkeling en fout opsporing. De verbindings status wordt alleen bijgewerkt voor apparaten met behulp van MQTT of AMQP. Het is ook gebaseerd op protocol niveau pings (MQTT pings of AMQP pings) en kan Maxi maal vijf minuten duren. Om deze redenen kan er sprake zijn van valse positieven, zoals apparaten die zijn gerapporteerd als verbonden, maar die niet zijn verbonden. |
+| connectionState |alleen-lezen |Een veld dat de verbindings status aangeeft: **verbinding** of **verbroken**. Dit veld vertegenwoordigt de IoT Hub weer gave van de verbindings status van het apparaat. **Belang rijk**: dit veld mag alleen worden gebruikt voor het oplossen van problemen met de ontwikkeling en fout opsporing. De verbindings status wordt alleen bijgewerkt voor apparaten met behulp van MQTT of AMQP. Het is ook gebaseerd op protocol niveau pings (MQTT pings of AMQP pings) en kan Maxi maal vijf minuten duren. Om deze redenen kan er sprake zijn van valse positieven, zoals apparaten die zijn gerapporteerd als verbonden, maar die niet zijn verbonden. |
 | connectionStateUpdatedTime |alleen-lezen |Een tijdelijke indicator, met de datum en laatste keer dat de verbindings status is bijgewerkt. |
 | lastActivityTime |alleen-lezen |Een tijdelijke indicator, met de datum en laatste keer dat het apparaat is verbonden, ontvangen of een bericht heeft verzonden. |
 
 > [!NOTE]
-> De Sdk's van het apparaat bieden momenteel geen ondersteuning `+` voor het gebruik van de en- `#` tekens in de **deviceId** en **moduleId** .
+> De Sdk's van het apparaat bieden momenteel geen ondersteuning `+` voor het gebruik van de en- `#` tekens in de **deviceId** en **moduleId**.
 
 ## <a name="additional-reference-material"></a>Extra referentie materiaal
 

@@ -4,10 +4,10 @@ description: Meer informatie over het integreren van Azure Event Hubs met de per
 ms.date: 08/22/2020
 ms.topic: article
 ms.openlocfilehash: 996779e103dae2d2d950f447d2ac72667fc9e754
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94427748"
 ---
 # <a name="allow-access-to-azure-event-hubs-namespaces-via-private-endpoints"></a>Toegang tot Azure Event Hubs-naam ruimten toestaan via persoonlijke eind punten 
@@ -41,7 +41,7 @@ Uw privé-eindpunt maakt gebruik van een privé IP-adres in uw virtueel netwerk.
 ### <a name="steps"></a>Stappen
 Als u al een Event Hubs naam ruimte hebt, kunt u een koppeling voor een particuliere verbinding maken door de volgende stappen uit te voeren:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). 
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). 
 2. Typ in de zoek balk in **Event hubs**.
 3. Selecteer de **naam ruimte** in de lijst waaraan u een persoonlijk eind punt wilt toevoegen.
 4. Selecteer **netwerken** onder **instellingen** in het menu links.
@@ -74,7 +74,7 @@ Als u al een Event Hubs naam ruimte hebt, kunt u een koppeling voor een particul
         5. Selecteer **volgende: configuratie >** knop onder aan de pagina. 
         
             ![Privé-eind punt maken-resource pagina](./media/private-link-service/create-private-endpoint-resource-page.png)    
-    2. Als u **verbinding maken met een Azure-resource selecteert op resource-id of alias** , voert u de volgende stappen uit:
+    2. Als u **verbinding maken met een Azure-resource selecteert op resource-id of alias**, voert u de volgende stappen uit:
         1. Voer de **resource-id** of **alias** in. Dit kan de resource-ID of alias zijn die iemand met u heeft gedeeld. De eenvoudigste manier om de resource-ID op te halen, is door te navigeren naar de Event Hubs naam ruimte in de Azure Portal en het gedeelte van de URI te kopiëren vanaf `/subscriptions/` . Zie de volgende afbeelding voor een voor beeld. 
         2. Voer een **naam ruimte** in voor de **subresource** van het doel. Het is het type van de subbron waartoe uw persoonlijke eind punt toegang heeft.
         3. Beschrijving Voer een **aanvraag bericht** in. De resource-eigenaar ziet dit bericht tijdens het beheer van de verbinding met een privé-eind punt.
@@ -193,7 +193,7 @@ Wanneer u een privé-eindpunt maakt, moet de verbinding worden goedgekeurd. Als 
 
 Er zijn vier inrichtingsstatussen:
 
-| Service actie | Status privé-eindpunt serviceconsument | Beschrijving |
+| Serviceactie | Status privé-eindpunt serviceconsument | Beschrijving |
 |--|--|--|
 | Geen | In behandeling | De verbinding wordt handmatig gemaakt en in afwachting van goedkeuring door de resource-eigenaar van de Private Link. |
 | Goedkeuren | Goedgekeurd | De verbinding werd automatisch of handmatig goedgekeurd en is klaar om te worden gebruikt. |
@@ -205,7 +205,7 @@ Er zijn vier inrichtingsstatussen:
 1. Meld u aan bij Azure Portal.
 2. Typ in de zoek balk in **Event hubs**.
 3. Selecteer de **naam ruimte** die u wilt beheren.
-4. Selecteer het tabblad **netwerken** .
+4. Selecteer het tabblad **Netwerken**.
 5. Ga naar de toepasselijke sectie hieronder op basis van de bewerking die u wilt: goed keuren, afwijzen of verwijderen.
 
 ### <a name="approve-a-private-endpoint-connection"></a>Een verbinding met een privé-eind punt goed keuren
@@ -261,11 +261,11 @@ Aliases:  <event-hubs-namespace-name>.servicebus.windows.net
 
 ## <a name="limitations-and-design-considerations"></a>Beperkingen en ontwerp overwegingen
 
-**Pricing** : Zie [Prijs van Azure Private Link](https://azure.microsoft.com/pricing/details/private-link/) voor meer informatie over prijzen.
+**Pricing**: Zie [Prijs van Azure Private Link](https://azure.microsoft.com/pricing/details/private-link/) voor meer informatie over prijzen.
 
-**Beperkingen** : deze functie is beschikbaar in alle open bare Azure-regio's.
+**Beperkingen**: deze functie is beschikbaar in alle open bare Azure-regio's.
 
-**Maximum aantal privé-eind punten per Event hubs naam ruimte** : 120.
+**Maximum aantal privé-eind punten per Event hubs naam ruimte**: 120.
 
 Zie [Azure Private Link-service: beperkingen](../private-link/private-link-service-overview.md#limitations) voor meer informatie
 

@@ -8,13 +8,13 @@ author: keferna
 ms.author: keferna
 ms.date: 07/14/2020
 ms.openlocfilehash: c906d37a01f0fca2d4114e8ba07078fc46eec88b
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93131170"
 ---
-# <a name="cloud-solution-provider-program"></a>Programma Cloud Solution Provider
+# <a name="cloud-solution-provider-program"></a>Cloud Solution Provider-programma
 
 In dit artikel wordt uitgelegd hoe u uw aanbieding zo configureert dat deze beschikbaar is voor het programma Cloud Solution Provider (CSP). Naast het publiceren van uw aanbiedingen via [online winkels voor commerciële Marketplace](overview.md#commercial-marketplace-online-stores)kunt u ook via het CSP-programma verkopen om miljoenen micro soft-klanten te bereiken die het programma gebruikt.
 
@@ -64,11 +64,11 @@ Als u partners wilt machtigen, selecteert u **CSP-partners selecteren** en een m
 
 ![CSP-menu selecteren](media/marketplace-publishers-guide/csp-pop-up-module.png)
 
-U kunt Zoek filters toep assen, zoals **land** , **competentie** of **vaardigheid** .
+U kunt Zoek filters toep assen, zoals **land**, **competentie** of **vaardigheid**.
 
 ![Land-, regio-, competentie-en vaardigheids filters voor het zoeken naar partners](media/marketplace-publishers-guide/csp-add-resellers.png)
 
-Wanneer u de lijst met partners hebt gekozen, selecteert u **toevoegen** .
+Wanneer u de lijst met partners hebt gekozen, selecteert u **toevoegen**.
 
 ![Voor beeld van een lijst met geautoriseerde partners in het CSP-programma](media/marketplace-publishers-guide/csp-add-resellers-details.png)
 
@@ -83,13 +83,13 @@ Als deze aanbieding niet is gepubliceerd, moet u uw aanbieding publiceren om dez
 >[!NOTE]
 >Als u een partner machtigt in het CSP-programma in een bepaalde regio, kunnen ze de aanbieding verkopen aan elke klant die tot die specifieke regio behoort. Voor meer informatie over hoe CSP-aanbiedingen worden geclassificeerd onder regio's, zie de [regionale markten en valuta van het Cloud Solution Provider-programma](/partner-center/regional-authorization-overview).
 
-Als u de lijst met CSP'S van een al gepubliceerde aanbieding bijwerkt, voegt u de aanvullende partners toe en selecteert u **CSP-doel groep synchroniseren** .
+Als u de lijst met CSP'S van een al gepubliceerde aanbieding bijwerkt, voegt u de aanvullende partners toe en selecteert u **CSP-doel groep synchroniseren**.
 
-Als u een aanbieding hebt die al een lijst met geautoriseerde partners heeft en u dezelfde lijst voor een andere aanbieding wilt gebruiken, gebruikt u **importeren/exporteren** . Navigeer naar het aanbod met de lijst met csp's en selecteer **Csp's exporteren** . De functie ontwikkelt een CSV-bestand dat in een andere aanbieding kan worden geïmporteerd.
+Als u een aanbieding hebt die al een lijst met geautoriseerde partners heeft en u dezelfde lijst voor een andere aanbieding wilt gebruiken, gebruikt u **importeren/exporteren**. Navigeer naar het aanbod met de lijst met csp's en selecteer **Csp's exporteren**. De functie ontwikkelt een CSV-bestand dat in een andere aanbieding kan worden geïmporteerd.
 
 #### <a name="option-3-no-partners-in-the-csp-program"></a>Optie 3: geen partners in het CSP-programma
 
-![Geen partners in het CSP-programma](media/marketplace-publishers-guide/csp-reseller-option-three.png)
+![Geen enkele partner in het CSP-programma](media/marketplace-publishers-guide/csp-reseller-option-three.png)
 
 Als u deze optie kiest, kunt u uw aanbieding uit het CSP-programma aansturen. U kunt deze selectie op elk gewenst moment wijzigen.
 
@@ -104,9 +104,9 @@ Als een partner in het CSP-programma uw product niet aan hun klanten heeft verko
    > [!NOTE]
    > Wijzig de vooraf gevulde vervolg menu selecties niet.
 
-2. Selecteer **Live offer Management** voor **de product versie selecteren** .
-3. Voor **een categorie selecteren die het probleem het beste beschrijft** , kiest u de categorie die naar uw aanbieding verwijst.
-4. Voor **een probleem selecteren dat het probleem het beste beschrijft** , selecteert u **bestaande aanbieding bijwerken** .
+2. Selecteer **Live offer Management** voor **de product versie selecteren**.
+3. Voor **een categorie selecteren die het probleem het beste beschrijft**, kiest u de categorie die naar uw aanbieding verwijst.
+4. Voor **een probleem selecteren dat het probleem het beste beschrijft**, selecteert u **bestaande aanbieding bijwerken**.
 5. Selecteer **volgende** om naar de pagina met **Details** van het probleem te verwijzen om meer informatie over uw probleem op te geven.
 6. Gebruik **CSP intrekken** als de titel van het probleem en vul de rest van de vereiste secties in.
 
@@ -123,9 +123,9 @@ Als uw aanbieding momenteel is ingesteld **op ' 1 ': alle partners in het CSP-pr
    > [!NOTE]
    > Wijzig de vooraf gevulde vervolg menu selecties niet.
 
-2. Selecteer **Live offer Management** voor **de product versie selecteren** .
-3. Voor **een categorie selecteren die het probleem het beste beschrijft** , kiest u de categorie die naar uw aanbieding verwijst.
-4. Voor **een probleem selecteren dat het probleem het beste beschrijft** , selecteert u **bestaande aanbieding bijwerken** .
+2. Selecteer **Live offer Management** voor **de product versie selecteren**.
+3. Voor **een categorie selecteren die het probleem het beste beschrijft**, kiest u de categorie die naar uw aanbieding verwijst.
+4. Voor **een probleem selecteren dat het probleem het beste beschrijft**, selecteert u **bestaande aanbieding bijwerken**.
 5. Selecteer **volgende** om naar de pagina met **Details** van het probleem te verwijzen om meer informatie over uw probleem op te geven.
 6. Gebruik **CSP intrekken** als de titel van het probleem en vul de rest van de vereiste secties in.
 
@@ -134,35 +134,35 @@ Als uw aanbieding momenteel is ingesteld **op ' 1 ': alle partners in het CSP-pr
 
 ### <a name="navigate-from-option-two-specific-partners-in-the-csp-program-i-select"></a>Navigeren vanuit de tweede optie: specifieke partners in het CSP-programma dat ik Selecteer
 
-Als uw aanbieding momenteel is ingesteld **op 2: specifieke partners in het CSP-programma dat ik selecteer** en u wilt naar **optie 1 navigeren: een partner in het CSP-programma** , gebruik de volgende instructies om een aanvraag te maken:
+Als uw aanbieding momenteel is ingesteld **op 2: specifieke partners in het CSP-programma dat ik selecteer** en u wilt naar **optie 1 navigeren: een partner in het CSP-programma**, gebruik de volgende instructies om een aanvraag te maken:
 
 1. Ga naar de [pagina ondersteuningsaanvraag](https://aka.ms/marketplacepublishersupport). De eerste paar vervolg keuzemenu's worden automatisch ingevuld.
 
    > [!NOTE]
    > Wijzig de vooraf gevulde vervolg menu selecties niet.
 
-2. Selecteer **Live offer Management** voor **de product versie selecteren** .
-3. Voor **een categorie selecteren die het probleem het beste beschrijft** , kiest u de categorie die naar uw aanbieding verwijst.
-4. Voor **een probleem selecteren dat het probleem het beste beschrijft** , selecteert u **bestaande aanbieding bijwerken** .
+2. Selecteer **Live offer Management** voor **de product versie selecteren**.
+3. Voor **een categorie selecteren die het probleem het beste beschrijft**, kiest u de categorie die naar uw aanbieding verwijst.
+4. Voor **een probleem selecteren dat het probleem het beste beschrijft**, selecteert u **bestaande aanbieding bijwerken**.
 5. Selecteer **volgende** om naar de pagina met **Details** van het probleem te verwijzen om meer informatie over uw probleem op te geven.
 6. Gebruik **CSP intrekken** als de titel van het probleem en vul de rest van de vereiste secties in.
 
- Als uw aanbieding momenteel is ingesteld **op 2: specifieke partners in het CSP-programma dat ik selecteer** en u wilt navigeren naar **optie 3: geen partners in het CSP-programma** , u kunt alleen naar deze optie navigeren als de partners in het CSP-programma dat u eerder hebt geautoriseerd, uw aanbieding niet aan eind klanten hebben verkocht. Gebruik de volgende instructies om een aanvraag te maken:
+ Als uw aanbieding momenteel is ingesteld **op 2: specifieke partners in het CSP-programma dat ik selecteer** en u wilt navigeren naar **optie 3: geen partners in het CSP-programma**, u kunt alleen naar deze optie navigeren als de partners in het CSP-programma dat u eerder hebt geautoriseerd, uw aanbieding niet aan eind klanten hebben verkocht. Gebruik de volgende instructies om een aanvraag te maken:
 
 1. Ga naar de [pagina ondersteuningsaanvraag](https://aka.ms/marketplacepublishersupport). De eerste paar vervolg keuzemenu's worden automatisch ingevuld.
 
    > [!NOTE]
    > Wijzig de vooraf gevulde vervolg menu selecties niet.
 
-2. Selecteer **Live offer Management** voor **de product versie selecteren** .
-3. Voor **een categorie selecteren die het probleem het beste beschrijft** , kiest u de categorie die naar uw aanbieding verwijst.
-4. Voor **een probleem selecteren dat het probleem het beste beschrijft** , selecteert u **bestaande aanbieding bijwerken** .
+2. Selecteer **Live offer Management** voor **de product versie selecteren**.
+3. Voor **een categorie selecteren die het probleem het beste beschrijft**, kiest u de categorie die naar uw aanbieding verwijst.
+4. Voor **een probleem selecteren dat het probleem het beste beschrijft**, selecteert u **bestaande aanbieding bijwerken**.
 5. Selecteer **volgende** om naar de pagina met **Details** van het probleem te verwijzen om meer informatie over uw probleem op te geven.
 6. Gebruik **CSP intrekken** als de titel van het probleem en vul de rest van de vereiste secties in.
 
 ### <a name="navigate-from-option-3-no-partners-in-the-csp-program"></a>Navigeren vanuit optie 3: geen partners in het CSP-programma
 
-Als uw aanbieding momenteel is ingesteld op **3: geen partners in het CSP-programma** , kunt u op elk gewenst moment naar een van de andere twee opties navigeren.
+Als uw aanbieding momenteel is ingesteld op **3: geen partners in het CSP-programma**, kunt u op elk gewenst moment naar een van de andere twee opties navigeren.
 
 ## <a name="sharing-sales-and-support-materials-with-partners-in-the-csp-program"></a>Verkoop-en ondersteunings materialen delen met partners in het CSP-programma
 

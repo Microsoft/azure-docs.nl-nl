@@ -1,5 +1,5 @@
 ---
-title: De opslag kosten in Azure Cosmos DB optimaliseren
+title: Opslagkosten optimaliseren in Azure Cosmos DB
 description: In dit artikel wordt uitgelegd hoe u opslag kosten beheert voor de gegevens die zijn opgeslagen in Azure Cosmos DB
 author: markjbrown
 ms.author: mjbrown
@@ -8,13 +8,13 @@ ms.topic: conceptual
 ms.date: 05/21/2019
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 92bd3ff925080def4b2f074d07e662dfdbdbee01
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93080847"
 ---
-# <a name="optimize-storage-cost-in-azure-cosmos-db"></a>De opslag kosten in Azure Cosmos DB optimaliseren
+# <a name="optimize-storage-cost-in-azure-cosmos-db"></a>Opslagkosten optimaliseren in Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
 
 Azure Cosmos DB biedt onbeperkte opslag en door voer. In tegens telling tot door Voer, die u moet inrichten/configureren in uw Azure Cosmos-containers of-data bases, wordt de opslag gefactureerd op basis van een verbruiks basis. U wordt alleen gefactureerd voor de logische opslag die u gebruikt en u hoeft geen opslag vooraf te reserveren. Storage wordt automatisch omhoog en omlaag geschaald op basis van de gegevens die u toevoegt of verwijdert aan een Azure Cosmos-container.

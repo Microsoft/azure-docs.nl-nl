@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 2d589d6c3394556499daf033c4c1d528a214b0e3
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93319301"
 ---
 # <a name="scenarios-for-advanced-analytics-in-azure-machine-learning"></a>Scenario's voor geavanceerde analyses in Azure Machine Learning
@@ -31,7 +31,7 @@ In elk van de volgende secties wordt een voorbeeld scenario weer gegeven. Voor e
 > 
 > * [Een opslagaccount maken](../../storage/common/storage-account-create.md)
 >   <br/>
-> * [Een Azure Machine Learning-werkruimte maken](../classic/create-workspace.md)
+> * [Een Azure Machine Learning-werk ruimte maken](../classic/create-workspace.md)
 > 
 > 
 

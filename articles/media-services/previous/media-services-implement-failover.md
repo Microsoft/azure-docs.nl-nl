@@ -15,10 +15,10 @@ ms.date: 03/10/2021
 ms.author: inhenkel
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 1636e49099851337d82494ebe168b8ec5194fa20
-ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103011932"
 ---
 # <a name="implement-failover-streaming-with-media-services-v2"></a>Het streamen van failover met Media Services versie 2 implementeren
@@ -68,7 +68,7 @@ In deze sectie maakt en definieert u een C#-console toepassings project.
 2. Maak de map **SupportFiles** op hetzelfde niveau als het project bestand **HandleRedundancyForOnDemandStreaming. csproj** . Maak in de map **SupportFiles** de mappen **OutputFiles** en **MP4Files** . Kopieer een MP4-bestand naar de map **MP4Files** . (In dit voor beeld wordt het **ignite.mp4** -bestand gebruikt.) 
 3. Gebruik **NuGet** om verwijzingen toe te voegen aan dll-bestanden met betrekking tot Media Services. Selecteer in **Visual Studio main-menu** de optie **tools**  >  **NuGet package manager**  >  **Package Manager console**. Typ in het console venster **installeren-package windowsazure. Media Services** en druk op ENTER.
 4. Voeg andere verwijzingen toe die vereist zijn voor dit project: System. runtime. serialisatie en System. Web.
-5. Vervang met **behulp** van-instructies die zijn toegevoegd aan het **programs.cs** -bestand standaard met de volgende:
+5. Vervang met **behulp** van-instructies die zijn toegevoegd aan het bestand **Program ma's. cs** standaard de volgende:
 
 ```csharp
 using System;

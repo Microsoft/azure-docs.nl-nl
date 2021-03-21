@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 02/18/2021
 ms.custom: template-how-to
 ms.openlocfilehash: 66498fabadc0784a4a4ab1c3762daaaa9a5738c4
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102503212"
 ---
 # <a name="dev-tools-pack-installer-overview"></a>Overzicht van het installatie programma dev tools pack
@@ -99,13 +99,13 @@ Het installatie programma voor dev tools pack is een oplossing voor het oplossen
         
     1. Voor Mac:
     
-        1. Na het downloaden verplaatst u het bestand Dev-Tools-Pack-Installer. app naar de map toepassingen.
+        1. Nadat u het bestand hebt gedownload, verplaatst u het Dev-Tools-Pack-Installer.app naar de map toepassingen.
         
-        1. Klik op **dev-tools-Pack-Installer. app** om de installatie wizard te openen.
+        1. Klik op **dev-tools-Pack-Installer.app** om de installatie wizard te openen.
         
         1. Als u het beveiligings dialoogvenster ' onbekende ontwikkelaar ' krijgt:
         
-            1. Ga naar systeem voorkeuren-> Security & privacy-> algemeen en klik op de knop "toch openen" naast "Dev-Tools-Pack-Installer. app"
+            1. Ga naar systeem voorkeuren-> Security & privacy-> algemeen en klik op de knop "toch openen" naast "Dev-Tools-Pack-Installer.app"
         
             1. Klik opnieuw op het pictogram van het Elektroon op de Dock
         

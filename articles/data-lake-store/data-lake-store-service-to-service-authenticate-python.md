@@ -8,10 +8,10 @@ ms.date: 05/29/2018
 ms.author: twooley
 ms.custom: has-adal-ref, devx-track-python
 ms.openlocfilehash: fe987070438c689e899dee18edaf4f708555ab11
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92106753"
 ---
 # <a name="service-to-service-authentication-with-azure-data-lake-storage-gen1-using-python"></a>Service-naar-service verificatie met Azure Data Lake Storage Gen1 met behulp van python
@@ -19,7 +19,7 @@ ms.locfileid: "92106753"
 > * [Java gebruiken](data-lake-store-service-to-service-authenticate-java.md)
 > * [.NET SDK gebruiken](data-lake-store-service-to-service-authenticate-net-sdk.md)
 > * [Python gebruiken](data-lake-store-service-to-service-authenticate-python.md)
-> * [REST API gebruiken](data-lake-store-service-to-service-authenticate-rest-api.md)
+> * [REST-API gebruiken](data-lake-store-service-to-service-authenticate-rest-api.md)
 >
 >
 

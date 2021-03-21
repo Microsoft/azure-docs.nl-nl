@@ -4,10 +4,10 @@ description: Hierin wordt een overzicht gegeven van de manier waarop u kunt onbo
 ms.topic: conceptual
 ms.date: 10/29/2020
 ms.openlocfilehash: 2a2e33395cabd368d5d5d870dd0461e4cbd37e0d
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93081192"
 ---
 # <a name="partner-onboarding-overview-azure-event-grid"></a>Overzicht van partner-onboarding (Azure Event Grid)
@@ -147,7 +147,7 @@ Nadat u hebt gepost naar het eind punt van de partner naam ruimte, ontvangt u ee
 | Onjuist eind punt                 | 404 Niet gevonden         |
 | Matrix of gebeurtenis overschrijdt grootte limieten | 413 Payload is te groot |
 
-## <a name="references"></a>Verwijzingen
+## <a name="references"></a>Referenties
 
   * [Swagger](https://github.com/ahamad-MS/azure-rest-api-specs/blob/master/specification/eventgrid/resource-manager/Microsoft.EventGrid/preview/2020-04-01-preview/EventGrid.json)
   * [ARM-sjabloon](/azure/templates/microsoft.eventgrid/allversions)

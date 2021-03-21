@@ -7,10 +7,10 @@ ms.date: 09/30/2020
 ms.custom: devx-track-csharp, mvc, devcenter, vs-azure, 23113853-34f2-4f
 ROBOTS: NOINDEX,NOFOLLOW
 ms.openlocfilehash: 9e3144738bd259ab9be75059af00f125581bb37c
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102050117"
 ---
 # <a name="quickstart-create-your-first-function-in-azure-using-visual-studio"></a>Quickstart: Uw eerste functie maken in Azure met behulp van Visual Studio
@@ -57,7 +57,7 @@ Als u een wilt maken <abbr title="Een logische container voor een of meer afzond
 
 Met het kenmerk van de `FunctionName`-methode wordt de naam van de functie ingesteld. Deze wordt standaard gegenereerd als `Function1`. Omdat het hulp programma niet in staat is om de standaard functie naam te overschrijven wanneer u het project maakt, moet u een aantal minuten duren om een betere naam te maken voor de functie klasse, het bestand en de meta gegevens.
 
-1. Klik in **Verkenner** met de rechter muisknop op het bestand Function1.cs en wijzig de naam in *HttpExample.cs*.
+1. Klik in **Verkenner** met de rechter muisknop op het bestand Function1. cs en wijzig de naam in *HttpExample. cs*.
 
 1. Wijzig in de code de naam van de klasse Function1 in HttpExample.
 

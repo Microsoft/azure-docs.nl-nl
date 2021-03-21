@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 01/09/2020
 ms.openlocfilehash: 23b9774f28f915596abafbd8c1f6c38fc4f55748
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95995281"
 ---
 # <a name="create-and-manage-private-link-for-azure-database-for-postgresql---single-server-using-portal"></a>Een persoonlijke koppeling maken en beheren voor Azure Database for PostgreSQL-één server met behulp van portal
@@ -130,7 +130,7 @@ In deze sectie maakt u een Azure Database for PostgreSQL-server in Azure.
 
 In deze sectie maakt u een PostgreSQL-server en voegt u hieraan een persoonlijk eind punt toe. 
 
-1. Selecteer in de linkerbovenhoek van het scherm in het Azure Portal de optie **een resource maken**  >  **Networking**  >  **persoonlijke netwerk koppeling**.
+1. Selecteer in de linkerbovenhoek van het scherm in het Azure Portal de optie **een resource maken**  >    >  **persoonlijke netwerk koppeling**.
 2. Selecteer in **Private Link-centrum – Overzicht** bij de optie **Een particuliere verbinding met een service maken** de optie **Start**.
 
     :::image type="content" source="media/concepts-data-access-and-security-private-link/privatelink-overview.png" alt-text="Overzicht van persoonlijke koppelingen":::

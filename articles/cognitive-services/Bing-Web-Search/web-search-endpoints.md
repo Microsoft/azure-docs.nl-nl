@@ -11,16 +11,16 @@ ms.topic: conceptual
 ms.date: 11/14/2018
 ms.author: aahi
 ms.openlocfilehash: c882e3e4d0cd6ba594a700f4fd53c14103a8d1d1
-ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94381249"
 ---
 # <a name="web-search-endpoint"></a>Webzoekopdrachten-eind punt
 
 > [!WARNING]
-> Bing Search-API's worden van Cognitive Services naar Bing Search Services overgezet. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](/bing/search-apis/bing-web-search/create-bing-search-service-resource) is beschreven.
+> Bing Search-API's worden van Cognitive Services naar Bing Search Services verplaatst. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](/bing/search-apis/bing-web-search/create-bing-search-service-resource) is beschreven.
 > Bing Search-API's die zijn ingericht met Cognitive Services, worden voor de komende drie jaar of tot het einde van uw Enterprise Agreement ondersteund, afhankelijk van wat het eerst afloopt.
 > Raadpleeg [Bing Search Services](/bing/search-apis/bing-web-search/create-bing-search-service-resource) voor migratie-instructies.
 
@@ -30,7 +30,7 @@ De **webzoekopdrachten-API** retourneert webpagina's, nieuws, afbeeldingen, Vide
 
 Als u zoek resultaten wilt ophalen met behulp van de Bing API, verzendt `GET` u een aanvraag naar het volgende eind punt. De para meters headers en URL definiëren verdere specificaties.
 
-**Eind punt** : retourneert Webresultaten die relevant zijn voor de zoek query van de gebruiker die is gedefinieerd door `?q=""` .
+**Eind punt**: retourneert Webresultaten die relevant zijn voor de zoek query van de gebruiker die is gedefinieerd door `?q=""` .
 
 ```http
 GET https://api.cognitive.microsoft.com/bing/v7.0/search

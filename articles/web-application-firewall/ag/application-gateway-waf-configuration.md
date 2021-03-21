@@ -8,10 +8,10 @@ ms.date: 02/20/2020
 ms.author: victorh
 ms.topic: conceptual
 ms.openlocfilehash: 2d34641fdecfe334e84347efe1a2f64482cae74b
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93040246"
 ---
 # <a name="web-application-firewall-request-size-limits-and-exclusion-lists"></a>Maximale grootte van de Web Application firewall-aanvraag en uitsluitings lijsten
@@ -38,11 +38,11 @@ U kunt een exacte overeenkomst voor de aanvraag header, hoofd tekst, cookie of q
 
 De volgende Opera tors worden ondersteund:
 
-- **Is gelijk aan** : deze operator wordt gebruikt voor een exacte overeenkomst. Als voor beeld voor het selecteren van een header met de naam **bearerToken** , gebruikt u de operator equals met de selector ingesteld als **bearerToken** .
-- **Begint met** : deze operator komt overeen met alle velden die beginnen met de opgegeven selector-waarde.
-- **Eindigt op** : deze operator komt overeen met alle aanvraag velden die eindigen op de opgegeven selector-waarde.
-- **Contains** : deze operator komt overeen met alle aanvraag velden die de opgegeven selector-waarde bevatten.
-- **Is gelijk aan** : deze operator komt overeen met alle aanvraag velden. * de waarde selector is.
+- **Is gelijk aan**: deze operator wordt gebruikt voor een exacte overeenkomst. Als voor beeld voor het selecteren van een header met de naam **bearerToken**, gebruikt u de operator equals met de selector ingesteld als **bearerToken**.
+- **Begint met**: deze operator komt overeen met alle velden die beginnen met de opgegeven selector-waarde.
+- **Eindigt op**: deze operator komt overeen met alle aanvraag velden die eindigen op de opgegeven selector-waarde.
+- **Contains**: deze operator komt overeen met alle aanvraag velden die de opgegeven selector-waarde bevatten.
+- **Is gelijk aan**: deze operator komt overeen met alle aanvraag velden. * de waarde selector is.
 
 In alle gevallen die overeenkomen, is hoofdletter gevoelig en reguliere expressies niet toegestaan als selecters.
 

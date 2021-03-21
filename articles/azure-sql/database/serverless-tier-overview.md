@@ -12,16 +12,16 @@ ms.author: moslake
 ms.reviewer: sstein
 ms.date: 2/22/2021
 ms.openlocfilehash: 4dd7bbe613b30df2611bfe6631950e121235204a
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "101658585"
 ---
 # <a name="azure-sql-database-serverless"></a>Azure SQL Database serverloos
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
-Serverloos is een compute-laag voor afzonderlijke data bases in Azure SQL Database waarmee de berekening automatisch wordt geschaald op basis van de vraag van de werk belasting en de facturen voor de hoeveelheid reken kracht die per seconde wordt gebruikt. De serverloze compute-laag pauzeert databases ook automatisch tijdens inactieve perioden, zodat er alleen opslag wordt gefactureerd, en hervat databases automatisch wanneer er weer activiteit plaatsvindt.
+Serverloos is een compute-laag voor afzonderlijke databases in Azure SQL Database waarmee de compute-resources automatisch worden geschaald op basis van de eisen van de workload en er wordt gefactureerd op basis van de hoeveelheid rekenkracht die per seconde wordt gebruikt. De serverloze compute-laag pauzeert databases ook automatisch tijdens inactieve perioden, zodat er alleen opslag wordt gefactureerd, en hervat databases automatisch wanneer er weer activiteit plaatsvindt.
 
 ## <a name="serverless-compute-tier"></a>Serverloze compute-laag
 

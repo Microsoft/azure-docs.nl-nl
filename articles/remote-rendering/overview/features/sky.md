@@ -7,10 +7,10 @@ ms.date: 02/07/2020
 ms.topic: article
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 9c5ad4b21b428f38bbd4d9f7d19fa633c5161b5c
-ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99594177"
 ---
 # <a name="sky-reflections"></a>Luchtreflecties
@@ -103,7 +103,7 @@ Gebruik `RenderingSession.Connection.LoadTextureAsync` met `TextureType.Texture2
 
 Externe rendering van Azure biedt een aantal ingebouwde omgevings kaarten die altijd beschikbaar zijn. Alle ingebouwde omgevings kaarten zijn cubemaps.
 
-|Id                         | Description                                              | Zien                                                      |
+|Id                         | Beschrijving                                              | Zien                                                      |
 |-----------------------------------|:---------------------------------------------------------|:-----------------------------------------------------------------:|
 |builtin://Autoshop                 | Diverse Stripe-lampen, heldere basis verlichting    | ![Skybox gebruikt voor het licht van een object](media/autoshop.png)
 |builtin://BoilerRoom               | Lichte instelling voor licht binnenshuis, meerdere venster verlichting      | ![BoilerRoom Skybox gebruikt voor het licht van een object](media/boiler-room.png)

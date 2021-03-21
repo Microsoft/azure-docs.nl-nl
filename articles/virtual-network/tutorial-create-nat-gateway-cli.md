@@ -10,10 +10,10 @@ ms.topic: tutorial
 ms.date: 03/10/2021
 ms.custom: template-tutorial
 ms.openlocfilehash: 5dd431a5a7377c409be0794511c5f402d1c5a3a9
-ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102663275"
 ---
 # <a name="tutorial-create-a-nat-gateway-using-the-azure-cli"></a>Zelf studie: een NAT-gateway maken met behulp van de Azure CLI

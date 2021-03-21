@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 10/21/2020
 ms.author: cherylmc
 ms.openlocfilehash: 1aba87b2139fb8a7d395fb3180d2074e47310fa9
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96010819"
 ---
 # <a name="about-vpn-gateway-configuration-settings"></a>Over VPN Gateway configuratie-instellingen
@@ -53,7 +53,7 @@ New-AzVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
 
 ### <a name="configure-a-gateway-sku"></a>Een gateway-SKU configureren
 
-**Azure Portal**
+**Azure-portal**
 
 Als u de Azure Portal gebruikt om een virtuele netwerk gateway van Resource Manager te maken, kunt u de gateway-SKU selecteren met behulp van de vervolg keuzelijst. De opties die u opgeeft, komen overeen met het gateway type en het VPN-type dat u selecteert.
 
@@ -67,7 +67,7 @@ New-AzVirtualNetworkGateway -Name VNet1GW -ResourceGroupName TestRG1 `
 -GatewayType Vpn -VpnType RouteBased
 ```
 
-**Azure CLI**
+**Azure-CLI**
 
 ```azurecli
 az network vnet-gateway create --name VNet1GW --public-ip-address VNet1GWPIP --resource-group TestRG1 --vnet VNet1 --gateway-type Vpn --vpn-type RouteBased --sku VpnGw1 --no-wait
@@ -173,7 +173,7 @@ Soms moet u de instellingen van de lokale netwerk gateway wijzigen. Wanneer u bi
 
 Zie de volgende pagina's voor aanvullende technische bronnen en specifieke syntaxis vereisten bij het gebruik van REST Api's, Power shell-cmdlets of Azure CLI voor VPN Gateway configuraties:
 
-| **Klassiek** | **Resource Manager** |
+| **Klassieke** | **Resource Manager** |
 | --- | --- |
 | [PowerShell](/powershell/module/az.network/#networking) |[PowerShell](/powershell/module/az.network#vpn) |
 | [REST API](/previous-versions/azure/reference/jj154113(v=azure.100)) |[REST API](/rest/api/network/virtualnetworkgateways) |

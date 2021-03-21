@@ -12,10 +12,10 @@ ms.author: martinle
 ms.reviewer: igorstan
 ms.custom: azure-synapse
 ms.openlocfilehash: d778844fee8cad9359532ffa23e177bf7b13c4b8
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98117687"
 ---
 # <a name="capacity-limits-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Capaciteits limieten voor exclusieve SQL-groep in azure Synapse Analytics
@@ -50,9 +50,9 @@ De maximum waarden die zijn toegestaan voor verschillende onderdelen van een toe
 | Index |Geclusterde indexen per tabel. |1<br><br/>Is van toepassing op zowel rowstore-als column Store-tabellen. |
 | Index |Grootte van index sleutel. |900 bytes.<br/><br/>Is alleen van toepassing op rowstore-indexen.<br/><br/>Indexen op varchar-kolommen met een maximale grootte van meer dan 900 bytes kunnen worden gemaakt als de bestaande gegevens in de kolommen niet groter zijn dan 900 bytes wanneer de index wordt gemaakt. Later worden acties invoegen of bijwerken op de kolommen die ervoor zorgen dat de totale grootte groter is dan 900 bytes. |
 | Index |Sleutel kolommen per index. |16<br/><br/>Is alleen van toepassing op rowstore-indexen. Geclusterde column Store-indexen bevatten alle kolommen. |
-| statistieken |De grootte van de gecombineerde kolom waarden. |900 bytes. |
-| statistieken |Kolommen per statistiek object. |32 |
-| statistieken |Statistieken gemaakt voor kolommen per tabel. |30.000 |
+| Statistieken |De grootte van de gecombineerde kolom waarden. |900 bytes. |
+| Statistieken |Kolommen per statistiek object. |32 |
+| Statistieken |Statistieken gemaakt voor kolommen per tabel. |30.000 |
 | Opgeslagen procedures |Maximum aantal geneste niveaus. |8 |
 | Weergave |Kolommen per weer gave |1\.024 |
 ||||
@@ -68,10 +68,10 @@ De maximum waarden die zijn toegestaan voor verschillende onderdelen van een toe
 
 | Categorie | Beschrijving | Maximum |
 |:--- |:--- |:--- |
-| Query’s uitvoeren |Query's in de wachtrij voor gebruikers tabellen. |1000 |
-| Query’s uitvoeren |Gelijktijdige query's op systeem weergaven. |100 |
-| Query’s uitvoeren |Query's in de wachtrij op systeem weergaven |1000 |
-| Query’s uitvoeren |Maximum aantal para meters |2098 |
+| Query |Query's in de wachtrij voor gebruikers tabellen. |1000 |
+| Query |Gelijktijdige query's op systeem weergaven. |100 |
+| Query |Query's in de wachtrij op systeem weergaven |1000 |
+| Query |Maximum aantal para meters |2098 |
 | Batch |Maximumgrootte |65.536 * 4096 |
 | Resultaten selecteren |Kolommen per rij |4096<br/><br/>U kunt nooit meer dan 4096 kolommen per rij in het selectie resultaat hebben. Er is geen garantie dat u altijd 4096 kunt hebben. Als het query plan een tijdelijke tabel vereist, kunnen de 1024-kolommen per tabel maximum worden toegepast. |
 | SELECT |Geneste subquery's |32<br/><br/>U kunt nooit meer dan 32 geneste subquery's in een SELECT-instructie hebben. Er is geen garantie dat u altijd 32 kunt hebben. Met een koppeling kan bijvoorbeeld een subquery worden geïntroduceerd in het query plan. Het aantal subquery's kan ook worden beperkt door het beschik bare geheugen. |

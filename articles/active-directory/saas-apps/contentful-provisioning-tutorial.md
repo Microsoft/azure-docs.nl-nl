@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 11/11/2020
 ms.author: zhchia
 ms.openlocfilehash: c9d19624d90b1228b2a44caeff7d103af3172ed9
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97516341"
 ---
 # <a name="tutorial-configure-contentful-for-automatic-user-provisioning"></a>Zelf studie: inhoud configureren voor automatische gebruikers inrichting
@@ -62,7 +62,7 @@ In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan d
 
 5. Selecteer **persoonlijk toegangs token genereren**.
 
-    ![URL](media/contentful-provisioning-tutorial/generate.png)
+    ![url](media/contentful-provisioning-tutorial/generate.png)
 
 6. In het modale venster voert u een naam in voor uw persoonlijke toegangs token en selecteert u vervolgens **genereren**.
 
@@ -94,7 +94,7 @@ In deze sectie wordt u begeleid bij de stappen voor het instellen van de Azure A
 
 ### <a name="configure-automatic-user-provisioning-for-contentful-in-azure-ad"></a>Automatische gebruikers inrichting configureren voor inhoud in azure AD
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Selecteer **bedrijfs toepassingen** en selecteer vervolgens **alle toepassingen**.
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). Selecteer **bedrijfs toepassingen** en selecteer vervolgens **alle toepassingen**.
 
    ![Scherm opname van het menu bedrijfs toepassingen in de Azure Portal, waarbij alle toepassingen zijn gemarkeerd.](common/enterprise-applications.png)
 
@@ -149,7 +149,7 @@ In deze sectie wordt u begeleid bij de stappen voor het instellen van de Azure A
 
     ![Scherm opname van de opties die u kunt selecteren in het deel venster bereik.](common/provisioning-scope.png)
 
-15. Selecteer **Opslaan** als u klaar bent voor het inrichten.
+15. Selecteer **Opslaan** als u klaar bent om in te richten.
 
     ![Scherm afbeelding met de knop Opslaan en de knop Annuleren.](common/provisioning-configuration-save.png)
 

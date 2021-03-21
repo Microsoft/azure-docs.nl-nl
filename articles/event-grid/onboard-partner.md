@@ -4,10 +4,10 @@ description: Gebruik Azure Portal om een Azure Event Grid partner onboarding te 
 ms.topic: conceptual
 ms.date: 10/29/2020
 ms.openlocfilehash: 44dece4d46a6d702d48fa49983818986fcd59f7b
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98050949"
 ---
 # <a name="onboard-as-an-azure-event-grid-partner-using-the-azure-portal"></a>Onboarding als een Azure Event Grid partner met behulp van de Azure Portal
@@ -44,7 +44,7 @@ Zorg ervoor dat u over het volgende beschikt om de resterende stappen te volt oo
 - Een Azure- [Tenant](../active-directory/develop/quickstart-create-new-tenant.md).
 
 ## <a name="register-a-partner-topic-type-optional"></a>Een type partner onderwerp registreren (optioneel)
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 2. Selecteer **alle services** in het navigatie deel venster links en typ **Event grid partner registraties** in de zoek balk en selecteer deze. 
 1. Selecteer op de pagina **Event grid partner registraties** **+ toevoegen** op de werk balk. 
 

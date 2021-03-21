@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/27/2021
 ms.openlocfilehash: a7ab48759ac775c1195dedb4143d895bdcdec937
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98956486"
 ---
 # <a name="rest-code-samples-for-azure-cognitive-search"></a>Voor beelden van REST code voor Azure Cognitive Search
@@ -47,6 +47,6 @@ Code voorbeelden van het Cognitive Search team illustreren de functies en werk s
 
 De volgende voor beelden worden ook gepubliceerd door het Cognitive Search-team, maar er wordt niet naar verwezen in de documentatie. Gekoppelde Leesmij-bestanden bieden gebruiks instructies.
 
-| Voorbeelden | Description |
+| Voorbeelden | Beschrijving |
 |---------|-------------|
 | [Query-voor beelden](https://github.com/Azure-Samples/azure-search-postman-samples/tree/master/Query-examples) | Postman-verzamelingen waarbij de verschillende query technieken worden gedemonstreerd, waaronder fuzzy zoeken, RegEx en Joker tekens zoeken, automatisch aanvullen, enzovoort. |

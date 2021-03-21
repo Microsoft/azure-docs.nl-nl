@@ -6,10 +6,10 @@ ms.author: gwallace
 ms.date: 11/08/2018
 ms.topic: conceptual
 ms.openlocfilehash: b9c5053a2a49c942cc89bd50c65e13f3a2f8d9d7
-ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/06/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99625874"
 ---
 # <a name="containerize-an-existing-net-app-for-service-fabric-mesh"></a>Een bestaande .NET-app in een container plaatsen voor Service Fabric Mesh

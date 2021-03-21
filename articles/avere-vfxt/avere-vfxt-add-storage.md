@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 01/13/2020
 ms.author: rohogue
 ms.openlocfilehash: c17d3c7cd2cf6fe5bca725cf94344b2d2cb50bf2
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96001521"
 ---
 # <a name="configure-storage"></a>Opslag configureren
@@ -119,7 +119,7 @@ Voer de volgende stappen uit om Blob-opslag toe te voegen na het maken van het c
 
    ![Azure Portal GUI voor het kopiëren van de sleutel](media/avere-vfxt-copy-storage-key.png)
 
-1. Open het configuratie scherm van AVERE voor uw cluster. Klik op **instellingen** en open **Cluster** vervolgens  >  de referenties van de cluster-**Cloud** in het navigatie deel venster aan de linkerkant. Klik op de pagina Cloud referenties op **referentie toevoegen**.
+1. Open het configuratie scherm van AVERE voor uw cluster. Klik op **instellingen** en open vervolgens  >  de referenties van de cluster-**Cloud** in het navigatie deel venster aan de linkerkant. Klik op de pagina Cloud referenties op **referentie toevoegen**.
 
    ![Klik op de knop referentie toevoegen op de pagina configuratie van Cloud referenties](media/avere-vfxt-new-credential-button.png)
 
@@ -172,7 +172,7 @@ Meer informatie over koppelingen vindt u in de [sectie naam ruimte van de avere-
 
 Volg deze stappen in de interface van het configuratie scherm van AVERE:
 
-* Klik **VServer**  >  in de linkerbovenhoek op vserver-**naam ruimte** .
+* Klik   >  in de linkerbovenhoek op vserver-**naam ruimte** .
 * Geef een naam ruimte-pad op dat begint met/(slash), zoals ``/vfxt/data`` .
 * Kies uw kern bestand.
 * Kies de kern bestands export.

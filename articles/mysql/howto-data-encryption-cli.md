@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 03/30/2020
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: 6d9abc67035b4581a028d8e59ef080b4f1ffa5b9
-ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96519039"
 ---
 # <a name="data-encryption-for-azure-database-for-mysql-by-using-the-azure-cli"></a>Gegevens versleuteling voor Azure Database for MySQL met behulp van de Azure CLI
@@ -52,11 +52,11 @@ Meer informatie over het gebruik van de Azure CLI voor het instellen en beheren 
     ```
 
 * De sleutel moet de volgende kenmerken hebben om te kunnen worden gebruikt als een door de klant beheerde sleutel:
-  * Geen verval datum
+  * Geen vervaldatum
   * Niet uitgeschakeld
   * **Get**-, **wrap**-en **Unwrap** -bewerkingen uitvoeren
   * kenmerk recoverylevel is ingesteld op **hersteld** (hiervoor moet voorlopig verwijderen zijn ingeschakeld met de Bewaar periode ingesteld op 90 dagen)
-  * Beveiliging opschonen ingeschakeld
+  * Beveiliging tegen leegmaken is ingeschakeld
 
 U kunt de bovenstaande kenmerken van de sleutel controleren met behulp van de volgende opdracht:
 

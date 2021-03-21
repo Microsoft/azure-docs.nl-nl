@@ -4,10 +4,10 @@ description: U kunt Service Fabric clusters maken op alle Vm's of computers met 
 ms.topic: conceptual
 ms.date: 01/07/2020
 ms.openlocfilehash: d83ec139c367d9a539db173a42ae909f57d5d71a
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96576125"
 ---
 # <a name="comparing-azure-and-standalone-service-fabric-clusters-on-windows-server-and-linux"></a>Azure en zelfstandige Service Fabric clusters in Windows Server en Linux vergelijken

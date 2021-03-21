@@ -13,10 +13,10 @@ ms.topic: how-to
 ms.date: 03/26/2018
 ms.author: twooley
 ms.openlocfilehash: 0b84e26962b00ee5b9d4c34cab7efbcc9aa0bf01
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100582795"
 ---
 # <a name="accessing-diagnostic-logs-for-azure-data-lake-storage-gen1"></a>Diagnostische logboeken openen voor Azure Data Lake Storage Gen1
@@ -115,7 +115,7 @@ Hier volgt een voor beeld van een vermelding in het aanvraag logboek in JSON-ind
 ```
 
 #### <a name="request-log-schema"></a>Schema voor aanvraag logboek
-| Naam | Type | Description |
+| Naam | Type | Beschrijving |
 | --- | --- | --- |
 | tijd |Tekenreeks |De tijds tempel (in UTC) van het logboek |
 | resourceId |Tekenreeks |De ID van de resource waarop de bewerking plaatsvond |
@@ -128,7 +128,7 @@ Hier volgt een voor beeld van een vermelding in het aanvraag logboek in JSON-ind
 | properties |JSON |Zie hieronder voor meer informatie |
 
 #### <a name="request-log-properties-schema"></a>Schema eigenschappen van het aanvraag logboek
-| Naam | Type | Description |
+| Naam | Type | Beschrijving |
 | --- | --- | --- |
 | HttpMethod |Tekenreeks |De HTTP-methode die wordt gebruikt voor de bewerking. Bijvoorbeeld ophalen. |
 | Pad |Tekenreeks |Het pad waarin de bewerking is uitgevoerd |
@@ -167,7 +167,7 @@ Hier volgt een voor beeld van een vermelding in het audit logboek in JSON-indeli
 ```
 
 #### <a name="audit-log-schema"></a>Schema van auditlogboek
-| Naam | Type | Description |
+| Naam | Type | Beschrijving |
 | --- | --- | --- |
 | tijd |Tekenreeks |De tijds tempel (in UTC) van het logboek |
 | resourceId |Tekenreeks |De ID van de resource waarop de bewerking plaatsvond |
@@ -180,7 +180,7 @@ Hier volgt een voor beeld van een vermelding in het audit logboek in JSON-indeli
 | properties |JSON |Zie hieronder voor meer informatie |
 
 #### <a name="audit-log-properties-schema"></a>Schema eigenschappen van controle logboek
-| Naam | Type | Description |
+| Naam | Type | Beschrijving |
 | --- | --- | --- |
 | StreamName |Tekenreeks |Het pad waarin de bewerking is uitgevoerd |
 

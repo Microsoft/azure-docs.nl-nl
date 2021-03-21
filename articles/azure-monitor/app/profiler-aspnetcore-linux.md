@@ -8,10 +8,10 @@ ms.author: cweining
 ms.date: 02/23/2018
 ms.reviewer: mbullwin
 ms.openlocfilehash: 6ef52e946edb5db8074a9b4e3ce5e4a81ae0bde5
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97561049"
 ---
 # <a name="profile-aspnet-core-azure-linux-web-apps-with-application-insights-profiler"></a>Profiel ASP.NET Core Azure Linux-web-apps met Application Insights Profiler
@@ -48,7 +48,7 @@ De volgende instructies zijn van toepassing op alle ontwikkel omgevingen van Win
    dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore
    ```
 
-1. Application Insights in Program.cs inschakelen:
+1. Inschakelen van Application Insights in programma. CS:
 
     ```csharp
     public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
@@ -57,7 +57,7 @@ De volgende instructies zijn van toepassing op alle ontwikkel omgevingen van Win
             .UseStartup<Startup>();
     ```
 
-1. Profiler inschakelen in Startup.cs:
+1. Profiler inschakelen in opstarten. CS:
 
     ```csharp
     public void ConfigureServices(IServiceCollection services)
@@ -67,7 +67,7 @@ De volgende instructies zijn van toepassing op alle ontwikkel omgevingen van Win
     }
     ```
 
-1. Voeg in de sectie **HomeController.cs** een regel code toe om enkele seconden een wille keurige vertraging uit te stellen:
+1. Voeg in de sectie **HomeController. cs** een regel code toe om een paar seconden een wille keurige vertraging uit te stellen:
 
     ```csharp
     using System.Threading;

@@ -4,10 +4,10 @@ description: Hierin worden resource grafiek tabellen en de beschik bare Kusto-ge
 ms.date: 03/10/2021
 ms.topic: conceptual
 ms.openlocfilehash: f6cb13814fe725ff0253a0a5bf0098f0080fa407
-ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102633798"
 ---
 # <a name="understanding-the-azure-resource-graph-query-language"></a>Informatie over de query taal van Azure resource Graph
@@ -129,7 +129,7 @@ Hier volgt een lijst met KQL-Opera tors die worden ondersteund door resource gra
 
 |KQL |Voorbeeld query resource grafiek |Notities |
 |---|---|---|
-|[aantal](/azure/kusto/query/countoperator) |[Sleutel kluizen tellen](../samples/starter.md#count-keyvaults) | |
+|[count](/azure/kusto/query/countoperator) |[Sleutel kluizen tellen](../samples/starter.md#count-keyvaults) | |
 |[distinct](/azure/kusto/query/distinctoperator) |[Resources weergeven die opslag bevatten](../samples/starter.md#show-storage) | |
 |[uitbreidbaar](/azure/kusto/query/extendoperator) |[Virtuele machines tellen op type besturingssysteem](../samples/starter.md#count-os) | |
 |[Jointypen](/azure/kusto/query/joinoperator) |[Sleutel kluis met de naam van het abonnement](../samples/advanced.md#join) |Ondersteunde jointypen: [innerunique](/azure/kusto/query/joinoperator#default-join-flavor), [inner](/azure/kusto/query/joinoperator#inner-join), [leftouter](/azure/kusto/query/joinoperator#left-outer-join). De limiet van 3 `join` in één query, waarvan 1 een kruis tabel kan zijn `join` . Als alle verschillende tabellen `join` worden gebruikt tussen _resource_ en _ResourceContainers_, is 3 kruis tabel `join` toegestaan. Aangepaste deelname strategieën, zoals broadcast toevoegen, zijn niet toegestaan. `join`Zie [resource Graph Tables](#resource-graph-tables)(Engelstalig) voor welke tabellen kunnen worden gebruikt. |

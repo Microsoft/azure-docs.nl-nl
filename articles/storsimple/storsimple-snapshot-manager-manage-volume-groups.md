@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 06/05/2017
 ms.author: alkohli
 ms.openlocfilehash: df2d74701e21c3773d96564f1b06d80ddb9fce9d
-ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98209216"
 ---
 # <a name="use-storsimple-snapshot-manager-to-create-and-manage-volume-groups"></a>StorSimple Snapshot Manager gebruiken om volume groepen te maken en te beheren
@@ -50,7 +50,7 @@ Als u op het knoop punt **volume groepen** klikt, wordt in het deel venster met 
 
 | Kolom met resultaten | Beschrijving |
 |:--- |:--- |
-| Naam |De **naam** kolom bevat de naam van de volume groep. |
+| Name |De **naam** kolom bevat de naam van de volume groep. |
 | Toepassing |De kolom **toepassingen** toont het aantal VSS-schrijvers dat momenteel is geïnstalleerd en wordt uitgevoerd op de Windows-host. |
 | Geselecteerd |In de **geselecteerde** kolom ziet u het aantal volumes dat is opgenomen in de volume groep. Een nul (0) geeft aan dat er geen toepassing is gekoppeld aan de volumes in de volume groep. |
 | Voeren |In de **geïmporteerde** kolom ziet u het aantal geïmporteerde volumes. Als deze eigenschap is ingesteld op **True**, wordt met deze kolom aangegeven dat een volume groep is geïmporteerd uit het Azure Portal en niet is gemaakt in StorSimple Snapshot Manager. |

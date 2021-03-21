@@ -8,28 +8,28 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/01/2020
 ms.openlocfilehash: 9e4d686f582a202dbc543620c7bf73dc4e7adb22
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100389175"
 ---
 # <a name="azure-private-link-for-azure-data-factory"></a>Azure Private Link voor Azure Data Factory
 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-xxx-md.md)]
 
-Met behulp van een persoonlijke Azure-koppeling kunt u verbinding maken met verschillende platforms als een service (PaaS)-implementaties in azure via een persoonlijk eind punt. Een persoonlijk eind punt is een privé-IP-adres binnen een specifiek virtueel netwerk en subnet. Zie de documentatie van een [persoonlijke koppeling](../private-link/index.yml)voor een lijst met PaaS-implementaties die functionaliteit voor persoonlijke koppelingen ondersteunen. 
+Met behulp van een persoonlijke Azure-koppeling kunt u verbinding maken met verschillende platforms als een service (PaaS)-implementaties in azure via een persoonlijk eind punt. Een privé-eindpunt is een privé-IP-adres binnen een specifiek virtueel netwerk en subnet. Zie de documentatie van een [persoonlijke koppeling](../private-link/index.yml)voor een lijst met PaaS-implementaties die functionaliteit voor persoonlijke koppelingen ondersteunen. 
 
 ## <a name="secure-communication-between-customer-networks-and-azure-data-factory"></a>Beveiligde communicatie tussen klanten netwerken en Azure Data Factory 
-U kunt een virtueel Azure-netwerk instellen als een logische weer gave van uw netwerk in de Cloud. Dit biedt de volgende voor delen:
-* U helpt uw Azure-resources te beschermen tegen aanvallen in open bare netwerken.
-* U kunt de netwerken en Data Factory veilig met elkaar communiceren. 
+U kunt een virtueel Azure-netwerk instellen als een logische weergave van uw netwerk in de cloud. Als u dit doet, heeft dit de volgende voordelen:
+* U helpt uw Azure-resources te beschermen tegen aanvallen in openbare netwerken.
+* De netwerken en data factory kunnen veilig met elkaar communiceren. 
 
-U kunt ook een on-premises netwerk verbinden met uw virtuele netwerk door Internet Protocol een VPN-verbinding (site-naar-site) of een Azure ExpressRoute-verbinding (privé-peering) in te stellen. 
+U kunt ook een on-premises netwerk verbinden met uw virtuele netwerk door een VPN-site-to-site-verbinding met IPsec (Internet Protocol security) of een Azure ExpressRoute-verbinding (persoonlijke peering) in te stellen. 
 
-U kunt ook een zelf-hostende Integration runtime installeren op een on-premises computer of een virtuele machine in het virtuele netwerk. Zo kunt u:
-* Kopieer activiteiten uit te voeren tussen een gegevens archief in de Cloud en een gegevens archief in een particulier netwerk.
-* Verzend transformatie activiteiten op basis van reken bronnen in een on-premises netwerk of een virtueel Azure-netwerk. 
+U kunt ook een zelf-hostende Integration runtime installeren op een on-premises computer of een virtuele machine in het virtuele netwerk. Als u dit doet, kunt u:
+* Kopieeractiviteiten uitvoeren tussen gegevensopslag in de cloud en gegevensopslag in een privénetwerk.
+* Transformatieactiviteiten verzenden voor rekenresources in een on-premises netwerk of in een virtueel Azure-netwerk. 
 
 Er zijn verschillende communicatie kanalen vereist tussen Azure Data Factory en het virtuele netwerk van de klant, zoals wordt weer gegeven in de volgende tabel:
 

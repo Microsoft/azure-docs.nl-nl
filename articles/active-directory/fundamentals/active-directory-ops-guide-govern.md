@@ -12,10 +12,10 @@ ms.subservice: fundamentals
 ms.date: 10/31/2019
 ms.author: martinco
 ms.openlocfilehash: ba3ca140abe36a31ffa03422420ea537bbe4f39a
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97935747"
 ---
 # <a name="azure-active-directory-governance-operations-reference-guide"></a>Naslag Gids voor Azure Active Directory governance-bewerkingen
@@ -113,13 +113,13 @@ Als u wilt voor komen dat uw Tenant per ongeluk wordt vergrendeld omdat u zich n
 
 ### <a name="privileged-access-to-azure-ea-portal"></a>Privileged Access to Azure EA-Portal
 
-Met de [azure Enterprise Agreement-Portal (Azure EA)](https://azure.microsoft.com/blog/create-enterprise-subscription-experience-in-azure-portal-public-preview/) kunt u Azure-abonnementen maken op basis van een hoofd Enterprise Agreement. Dit is een krachtige rol binnen de onderneming. Het is gebruikelijk om het maken van deze portal te Boots trappen voordat u Azure AD hebt geïmplementeerd. het is dus nood zakelijk om Azure AD-identiteiten te gebruiken om deze te vergren delen, persoonlijke accounts uit de portal te verwijderen, ervoor te zorgen dat de juiste delegering is ingesteld en het risico van vergren deling te verminderen.
+Met de [azure Enterprise overeenkomst-Portal (Azure EA)](https://azure.microsoft.com/blog/create-enterprise-subscription-experience-in-azure-portal-public-preview/) kunt u Azure-abonnementen maken op basis van een hoofd Enterprise overeenkomst. Dit is een krachtige rol binnen de onderneming. Het is gebruikelijk om het maken van deze portal te Boots trappen voordat u Azure AD hebt geïmplementeerd. het is dus nood zakelijk om Azure AD-identiteiten te gebruiken om deze te vergren delen, persoonlijke accounts uit de portal te verwijderen, ervoor te zorgen dat de juiste delegering is ingesteld en het risico van vergren deling te verminderen.
 
 Als u dit wilt doen, moet u, als het verificatie niveau van de EA-Portal op dit moment is ingesteld op ' gemengde modus ', een [micro soft-account](https://support.skype.com/en/faq/FA12059/what-is-a-microsoft-account) verwijderen van alle bevoegde toegang in de EA-Portal en de EA-Portal configureren voor het gebruik van Azure AD-accounts. Als de EA-Portal gedelegeerde rollen niet zijn geconfigureerd, moet u ook gedelegeerde rollen voor afdelingen en accounts zoeken en implementeren.
 
 #### <a name="privileged-access-recommended-reading"></a>Bevoegde toegang aanbevolen lezen
 
-- [Machtigingen voor beheerrol in Azure Active Directory](../roles/permissions-reference.md)
+- [Machtigingen voor beheerdersrollen in Azure Active Directory](../roles/permissions-reference.md)
 
 ## <a name="entitlement-management"></a>Rechtenbeheer
 

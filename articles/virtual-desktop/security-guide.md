@@ -7,10 +7,10 @@ ms.date: 12/15/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: 0ddbd4b798d37498af92cec40af6a80a88115fab
-ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103014890"
 ---
 # <a name="security-best-practices"></a>Aanbevolen procedures voor beveiliging

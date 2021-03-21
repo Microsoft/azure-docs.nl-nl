@@ -3,13 +3,13 @@ title: Inkomende/uitgaande IP-adressen
 description: Meer informatie over hoe binnenkomende en uitgaande IP-adressen worden gebruikt in Azure App Service, wanneer ze worden gewijzigd en hoe u de adressen voor uw app kunt vinden.
 ms.topic: article
 ms.date: 08/25/2020
-ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: e5b271cc5cd8cb52267b6ee44bc3965d0e4b0aab
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.custom: seodec18
+ms.openlocfilehash: 4237e51251a7ece05800aa7efa328a9c6cf65e76
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92746157"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104591364"
 ---
 # <a name="inbound-and-outbound-ip-addresses-in-azure-app-service"></a>Binnenkomende en uitgaande IP-adressen in Azure App Service
 
@@ -19,7 +19,7 @@ ms.locfileid: "92746157"
 
 ## <a name="how-ip-addresses-work-in-app-service"></a>Hoe IP-adressen werken in App Service
 
-Een App Service-app wordt uitgevoerd in een App Service plan en App Service plannen worden geïmplementeerd in een van de implementatie-eenheden in de Azure-infra structuur (intern een webruimte genoemd). Elke implementatie-eenheid wordt Maxi maal vijf virtuele IP-adressen toegewezen, die één openbaar inkomend IP-adres en vier uitgaande IP-adressen bevat. Alle App Service plannen in dezelfde implementatie-eenheid en app-exemplaren die hierin worden uitgevoerd, delen dezelfde set virtuele IP-adressen. Voor een App Service Environment (een App Service plan in een [geïsoleerde laag](https://azure.microsoft.com/pricing/details/app-service/)) is het app service plan zelf de implementatie-eenheid, zodat de virtuele IP-adressen hiervoor kunnen worden toegewezen.
+Een App Service-app wordt uitgevoerd in een App Service plan en App Service plannen worden geïmplementeerd in een van de implementatie-eenheden in de Azure-infra structuur (intern een webruimte genoemd). Elke implementatie-eenheid krijgt een set virtuele IP-adressen, die één openbaar inkomend IP-adres en een reeks [uitgaande IP-adressen](#find-outbound-ips)bevat. Alle App Service plannen in dezelfde implementatie-eenheid en app-exemplaren die hierin worden uitgevoerd, delen dezelfde set virtuele IP-adressen. Voor een App Service Environment (een App Service plan in een [geïsoleerde laag](https://azure.microsoft.com/pricing/details/app-service/)) is het app service plan zelf de implementatie-eenheid, zodat de virtuele IP-adressen hiervoor kunnen worden toegewezen.
 
 Omdat u niet gemachtigd bent om een App Service plan tussen implementatie-eenheden te verplaatsen, blijven de virtuele IP-adressen die zijn toegewezen aan uw app meestal hetzelfde, maar zijn er uitzonde ringen.
 
@@ -51,7 +51,7 @@ De set met uitgaande IP-adressen voor uw app wordt gewijzigd wanneer u een van d
 
 - Een app verwijderen en opnieuw maken in een andere resource groep (implementatie-eenheid kan worden gewijzigd).
 - Verwijder de laatste app in een combi natie van resource groep _en_ regio en maak deze opnieuw (implementatie-eenheid kan worden gewijzigd).
-- Schaal uw app tussen de lagere lagen ( **Basic** , **Standard** en **Premium** ) en de **Premium v2** -laag (IP-adressen kunnen worden toegevoegd aan of afgetrokken van de set).
+- Schaal uw app tussen de lagere lagen (**Basic**, **Standard** en **Premium**) en de **Premium v2** -laag (IP-adressen kunnen worden toegevoegd aan of afgetrokken van de set).
 
 U kunt de set met alle mogelijke uitgaande IP-adressen die uw app kan gebruiken, ongeacht de prijs categorieën, door te zoeken naar de `possibleOutboundIpAddresses` eigenschap of in het veld **extra uitgaande IP-adressen** op de Blade **Eigenschappen** in de Azure Portal. Zie [uitgaande Ip's zoeken](#find-outbound-ips).
 
@@ -86,4 +86,4 @@ az webapp show --resource-group <group_name> --name <app_name> --query possibleO
 Meer informatie over het beperken van inkomend verkeer op bron-IP-adressen.
 
 > [!div class="nextstepaction"]
-> [Statische IP-beperkingen](app-service-ip-restrictions.md)
+> [Beperkingen voor statische IP-adressen](app-service-ip-restrictions.md)

@@ -8,13 +8,13 @@ author: vikrambmsft
 ms.author: vikramb
 ms.date: 03/08/2021
 ms.openlocfilehash: 7acf7e8dc9f90c50f3c7d5555e6fe37260b35c93
-ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103022106"
 ---
-# <a name="notifying-microsoft-regarding-the-publisher-agreement"></a>Micro soft informeren over de overeenkomst met de uitgever
+# <a name="notifying-microsoft-regarding-the-publisher-agreement"></a>Microsoft informeren over de Publisher-overeenkomst
 
 Gebruik een ondersteunings ticket om juridische kennisgevingen naar micro soft te verzenden met betrekking tot de micro soft Publisher-overeenkomst om te zorgen voor de juiste actie en tracering
 

@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: wiassaf, sstein
-ms.date: 09/30/2020
-ms.openlocfilehash: 6b56da68b10bc40304097fbe9eeaf200d422b663
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.date: 03/17/2021
+ms.openlocfilehash: 4c9edaea75215bc4b471cd2e0ac50c4e69546bb0
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100592685"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104592129"
 ---
 # <a name="monitoring-and-performance-tuning-in-azure-sql-database-and-azure-sql-managed-instance"></a>Bewaking en prestatieafstemming van Azure SQL Database en Azure SQL Managed Instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -35,6 +35,10 @@ In de Azure Portal, Azure SQL Database en Azure SQL Managed instance bewaken de 
 
 > [!NOTE]
 > Data bases met een extreem laag gebruik kunnen worden weer gegeven in de portal met minder dan het werkelijke gebruik. Als gevolg van de manier waarop telemetrie wordt verzonden bij het converteren van een dubbele waarde naar het dichtstbijzijnde gehele getal, moeten bepaalde gebruiks bedragen kleiner dan 0,5 worden afgerond op 0, waardoor een verlies in granulatie van de verzonden telemetrie wordt veroorzaakt. Zie voor meer informatie de metrische gegevens voor [lage data base en elastische groepen afronden op nul](#low-database-and-elastic-pool-metrics-rounding-to-zero).
+
+### <a name="monitor-with-sql-insights"></a>Bewaken met SQL Insights
+
+[Azure monitor SQL Insights](../../azure-monitor/insights/sql-insights-overview.md) is een hulp programma voor het bewaken van Azure SQL Managed instances, Azure SQL data bases en SQL Server instances in Azure SQL vm's. Deze service maakt gebruik van een externe agent voor het vastleggen van gegevens uit dynamische beheer weergaven (Dmv's) en stuurt de gegevens naar Azure Log Analytics, waar deze kunnen worden bewaakt en geanalyseerd. U kunt deze gegevens weer geven van [Azure monitor](../../azure-monitor/overview.md) in de beschik bare weer gaven of de logboek gegevens rechtstreeks openen om query's uit te voeren en trends te analyseren. Zie [SQL Insights inschakelen](../../azure-monitor/insights/sql-insights-enable.md)om te beginnen met het gebruik van Azure monitor SQL Insights.
 
 ### <a name="azure-sql-database-and-azure-sql-managed-instance-resource-monitoring"></a>Bewakings bron voor Azure SQL Database en Azure SQL Managed instance
 

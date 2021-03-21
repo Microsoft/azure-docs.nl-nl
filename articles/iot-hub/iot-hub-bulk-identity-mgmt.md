@@ -10,10 +10,10 @@ ms.date: 10/02/2019
 ms.author: robinsh
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 8e7a725b78fa828ce1286e212ee7de0205968156
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92536076"
 ---
 # <a name="import-and-export-iot-hub-device-identities-in-bulk"></a>Id's van IoT Hub-apparaten bulksgewijs importeren en exporteren
@@ -21,7 +21,7 @@ ms.locfileid: "92536076"
 Elke IoT-hub beschikt over een id-REGI ster dat u kunt gebruiken voor het maken van resources per apparaat in de service. Met het id-REGI ster kunt u ook de toegang tot de eind punten van het apparaat beheren. In dit artikel wordt beschreven hoe u apparaat-id's in bulk kunt importeren en exporteren naar een identiteits register. Zie [een IOT hub klonen](iot-hub-how-to-clone.md)om een werkend voor beeld in C# te bekijken en te leren hoe u deze mogelijkheid kunt gebruiken bij het klonen van een hub naar een andere regio.
 
 > [!NOTE]
-> IoT Hub heeft onlangs ondersteuning voor het virtuele netwerk in een beperkt aantal regio's toegevoegd. Deze functie beveiligt import-en export bewerkingen en elimineert de nood zaak om sleutels voor verificatie uit te voeren.  De ondersteuning voor het virtuele netwerk is in eerste instantie alleen beschikbaar in deze regio's: *WestUS2* , *eastus* en *SouthCentralUS* . Zie [IOT hub-ondersteuning voor virtuele netwerken](virtual-network-support.md)voor meer informatie over ondersteuning voor virtuele netwerken en de API-aanroepen om deze te implementeren.
+> IoT Hub heeft onlangs ondersteuning voor het virtuele netwerk in een beperkt aantal regio's toegevoegd. Deze functie beveiligt import-en export bewerkingen en elimineert de nood zaak om sleutels voor verificatie uit te voeren.  De ondersteuning voor het virtuele netwerk is in eerste instantie alleen beschikbaar in deze regio's: *WestUS2*, *eastus* en *SouthCentralUS*. Zie [IOT hub-ondersteuning voor virtuele netwerken](virtual-network-support.md)voor meer informatie over ondersteuning voor virtuele netwerken en de API-aanroepen om deze te implementeren.
 
 Import-en export bewerkingen worden uitgevoerd in de context van *taken* waarmee u bulksgewijze service bewerkingen kunt uitvoeren op een IOT-hub.
 
@@ -61,7 +61,7 @@ Als u de connection string voor uw IoT-hub wilt vinden, gaat u in het Azure Port
 
 - Ga naar uw IoT-hub.
 
-- Selecteer **Beleid voor gedeelde toegang** .
+- Selecteer **Beleid voor gedeelde toegang**.
 
 - Selecteer een beleid, waarbij rekening wordt gehouden met de machtigingen die u nodig hebt.
 
@@ -109,7 +109,7 @@ De methode **ExportDevicesAsync** vereist twee para meters:
      | SharedAccessBlobPermissions.Delete
    ```
 
-* Een *Booleaanse waarde* die aangeeft of u verificatie sleutels uit uw export gegevens wilt uitsluiten. Als deze eigenschap **Onwaar** is, worden verificatie sleutels opgenomen in de export uitvoer. Anders worden sleutels geëxporteerd als **Null** .
+* Een *Booleaanse waarde* die aangeeft of u verificatie sleutels uit uw export gegevens wilt uitsluiten. Als deze eigenschap **Onwaar** is, worden verificatie sleutels opgenomen in de export uitvoer. Anders worden sleutels geëxporteerd als **Null**.
 
 In het volgende code fragment van C# ziet u hoe u een export taak initieert die stuur programma-verificatie sleutels bevat in de export gegevens en vervolgens pollen voor voltooiing:
 
@@ -134,7 +134,7 @@ while(true)
 }
 ```
 
-De uitvoer van de taak wordt in de gegeven BLOB-container opgeslagen als een blok-blob met de naam **devices.txt** . De uitvoer gegevens bestaan uit JSON serialized Device Data, met één apparaat per regel.
+De uitvoer van de taak wordt in de gegeven BLOB-container opgeslagen als een blok-blob met de naam **devices.txt**. De uitvoer gegevens bestaan uit JSON serialized Device Data, met één apparaat per regel.
 
 In het volgende voor beeld ziet u de uitvoer gegevens:
 
@@ -226,7 +226,7 @@ De methode **ImportDevicesAsync** heeft twee para meters:
    SharedAccessBlobPermissions.Read
    ```
 
-* Een *teken reeks* die een URI bevat van een [Azure Storage](https://azure.microsoft.com/documentation/services/storage/) BLOB-container die moet worden gebruikt als *uitvoer* van de taak. Met de taak wordt een blok-Blob in deze container gemaakt voor het opslaan van de fout gegevens van de voltooide import **taak** . Het SAS-token moet deze machtigingen bevatten:
+* Een *teken reeks* die een URI bevat van een [Azure Storage](https://azure.microsoft.com/documentation/services/storage/) BLOB-container die moet worden gebruikt als *uitvoer* van de taak. Met de taak wordt een blok-Blob in deze container gemaakt voor het opslaan van de fout gegevens van de voltooide import **taak**. Het SAS-token moet deze machtigingen bevatten:
 
    ```csharp
    SharedAccessBlobPermissions.Write | SharedAccessBlobPermissions.Read 
@@ -262,7 +262,7 @@ Als het import bestand dubbele meta gegevens bevat, worden met deze meta gegeven
 
 Gebruik de optionele eigenschap **importMode** in de import-serialisatie-gegevens voor elk apparaat om het import proces per apparaat te beheren. De eigenschap **importMode** heeft de volgende opties:
 
-| importMode | Description |
+| importMode | Beschrijving |
 | --- | --- |
 | **createOrUpdate** |Als er geen apparaat met de opgegeven **id** bestaat, wordt het pas geregistreerd. <br/>Als het apparaat al bestaat, wordt de bestaande informatie overschreven met de opgegeven invoer gegevens zonder rekening te houden met de **ETAG** -waarde. <br> De gebruiker kan eventueel dubbele gegevens en de apparaatgegevens opgeven. De dubbele ETAG, indien opgegeven, wordt onafhankelijk van de ETAG van het apparaat verwerkt. Als er niet overeenkomt met de bestaande ' ETAG ', wordt er een fout naar het logboek bestand geschreven. |
 | **creëren** |Als er geen apparaat met de opgegeven **id** bestaat, wordt het pas geregistreerd. <br/>Als het apparaat al bestaat, wordt er een fout naar het logboek bestand geschreven. <br> De gebruiker kan eventueel dubbele gegevens en de apparaatgegevens opgeven. De dubbele ETAG, indien opgegeven, wordt onafhankelijk van de ETAG van het apparaat verwerkt. Als er niet overeenkomt met de bestaande ' ETAG ', wordt er een fout naar het logboek bestand geschreven. |

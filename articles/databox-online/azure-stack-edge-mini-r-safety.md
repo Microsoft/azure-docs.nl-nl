@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 02/12/2021
 ms.author: alkohli
 ms.openlocfilehash: eb42a9a77927d8577dfec3c9167294eb8f809fec
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100382618"
 ---
 # <a name="azure-stack-edge-mini-r-safety-instructions"></a>Beveiligings instructies voor de Azure Stack Edge mini-R
@@ -27,14 +27,14 @@ Lees de informatie over de veiligheid in dit artikel voordat u uw Azure Stack Ed
 
 De volgende signaal woorden voor waarschuwings signalen voor waarschuwingen zijn:
 
-| Pictogram | Description |
+| Pictogram | Beschrijving |
 |:--- |:--- |
 | ![Waarschuwings symbool](./media/azure-stack-edge-mini-r-safety/icon-safety-warning.png)| **Gevaar:** Duidt op een gevaarlijke situatie die, indien dat niet wordt vermeden, leidt tot dood of ernstige schade. <br> **Waarschuwing:** Duidt op een gevaarlijke situatie die, indien dat niet wordt vermeden, kan leiden tot overlijden of ernstige schade. <br> **Let op:** Duidt op een gevaarlijke situatie die, indien dat niet wordt vermeden, kan leiden tot kleine of gemiddelde schade.|
 |
 
 De volgende gevaren pictogrammen moeten worden waargenomen bij het instellen en uitvoeren van uw Azure Stack Edge mini-R-apparaat:
 
-| Pictogram | Description |
+| Pictogram | Beschrijving |
 |:--- |:--- |
 | ![Lees eerst alle instructies](./media/azure-stack-edge-mini-r-safety/icon-safety-read-all-instructions.png) | Lees eerst alle instructies |
 | ![Meldings pictogram ](./media/azure-stack-edge-mini-r-safety/icon-safety-notice.png) **:** | Geeft aan dat de informatie die belang rijk is, maar niet met een risico is betrokken. |

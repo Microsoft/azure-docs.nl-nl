@@ -11,10 +11,10 @@ ms.reviewer: sstein
 ms.custom: references_regions
 ms.date: 03/11/2021
 ms.openlocfilehash: bd91c29ca97c2096c4d8f3df19dbb9eab306b8e7
-ms.sourcegitcommit: 6776f0a27e2000fb1acb34a8dddc67af01ac14ac
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103149746"
 ---
 # <a name="maintenance-window-preview"></a>Onderhouds venster (preview-versie)
@@ -131,7 +131,7 @@ Het configureren en wijzigen van het onderhouds venster veroorzaakt een wijzigin
 * [Voorafgaande meldingen](advance-notifications.md)
 * [Onderhouds venster configureren](maintenance-window-configure.md)
 
-## <a name="learn-more"></a>Lees meer
+## <a name="learn-more"></a>Meer informatie
 
 * [Veelgestelde vragen over onderhouds Vensters](maintenance-window-faq.yml)
 * [Azure SQL Database](sql-database-paas-overview.md) 

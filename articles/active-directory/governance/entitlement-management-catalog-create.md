@@ -16,12 +16,12 @@ ms.date: 12/23/2020
 ms.author: ajburnle
 ms.reviewer: hanki
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3c6f37a1b5cc16c80af8316cfeae164d58ea9796
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.openlocfilehash: d21783f0ef32289aad4b7d136dc8200d61fc0852
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102552164"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104592928"
 ---
 # <a name="create-and-manage-a-catalog-of-resources-in-azure-ad-entitlement-management"></a>Een catalogus met resources maken en beheren in azure AD-rechts beheer
 
@@ -83,7 +83,7 @@ Als u resources wilt toevoegen aan een toegangs pakket, moeten de resources aanw
 
 ### <a name="add-a-multi-geo-sharepoint-site"></a>Een multi-geo share point-site toevoegen
 
-1. Als u [multi-geo](https://docs.microsoft.com/microsoft-365/enterprise/multi-geo-capabilities-in-onedrive-and-sharepoint-online-in-microsoft-365) hebt ingeschakeld voor share point, selecteert u de omgeving waarin u de sites wilt selecteren.
+1. Als u [multi-geo](/microsoft-365/enterprise/multi-geo-capabilities-in-onedrive-and-sharepoint-online-in-microsoft-365) hebt ingeschakeld voor share point, selecteert u de omgeving waarin u de sites wilt selecteren.
     
     :::image type="content" source="media/entitlement-management-catalog-create/sharepoint-multigeo-select.png" alt-text="Toegangs pakket-resource rollen toevoegen-Selecteer share point-sites met meerdere geografische locaties":::
 

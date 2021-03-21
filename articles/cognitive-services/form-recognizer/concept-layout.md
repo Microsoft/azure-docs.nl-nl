@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/15/2021
 ms.author: lajanuar
 ms.openlocfilehash: 73bef21f430bde1c6c2c95d7c3f685cccbbd9179
-ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103467014"
 ---
 # <a name="form-recognizer-layout-service"></a>Indelings service voor formulier herkenning
@@ -95,7 +95,7 @@ De JSON-uitvoer bestaat uit twee delen:
 
 De indelings-API extraheert tekst uit documenten (PDF, TIFF) en afbeeldingen (JPG, PNG, BMP) met meerdere tekst hoeken en kleuren. Het accepteert foto's van documenten, faxen, gedrukte en/of handgeschreven tekst (alleen Engels) en gemengde modi. De tekst wordt geëxtraheerd met informatie over lijnen, woorden, omsluitende kaders, betrouw bare scores en stijl (handgeschreven of andere). Alle tekst informatie is opgenomen in de `readResults` sectie van de JSON-uitvoer. 
 
-### <a name="tables"></a>Tabellen
+### <a name="tables"></a>Tables
 
 Indelings-API extraheert tabellen uit documenten (PDF, TIFF) en afbeeldingen (JPG, PNG, BMP). Documenten kunnen worden gescand, fotografeerd of als cijfer worden beschouwd. Tabellen kunnen complex zijn met samengevoegde cellen of kolommen, met of zonder randen, en met oneven hoeken. Geëxtraheerde tabel informatie omvat het aantal kolommen en rijen, het bereik en de kolom reeks. Elke cel wordt geëxtraheerd met het selectie kader en verwijzing naar de tekst die in de sectie is geëxtraheerd `readResults` . Tabel informatie bevindt zich in de `pageResults` sectie van de JSON-uitvoer. 
 

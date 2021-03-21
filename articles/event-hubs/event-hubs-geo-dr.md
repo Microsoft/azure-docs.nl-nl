@@ -3,12 +3,12 @@ title: Geo-nood herstel-Azure Event Hubs | Microsoft Docs
 description: Over het gebruik van geografische regio's om een failover uit te voeren en herstel na nood gevallen in azure Event Hubs
 ms.topic: article
 ms.date: 02/10/2021
-ms.openlocfilehash: eb6ef1a7536b819d1bc973740a0da6fdf3d756d5
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: f3b74b89f47582fbb3f1640f315f413ab86b26b5
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102042365"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104602635"
 ---
 # <a name="azure-event-hubs---geo-disaster-recovery"></a>Azure-Event Hubs-geo-nood herstel 
 
@@ -52,10 +52,10 @@ De volgende combi Naties van primaire en secundaire naam ruimten worden onderste
 
 | Primaire naam ruimte | Secundaire naam ruimte | Ondersteund | 
 | ----------------- | -------------------- | ---------- |
-| Standard | Standard | Ja | 
-| Standard | Toegewezen | Ja | 
-| Toegewezen | Toegewezen | Ja | 
-| Toegewezen | Standard | Nee | 
+| Standard | Standard | Yes | 
+| Standard | Toegewezen | Yes | 
+| Toegewezen | Toegewezen | Yes | 
+| Toegewezen | Standard | No | 
 
 > [!NOTE]
 > U kunt geen naam ruimten koppelen die zich in hetzelfde toegewezen cluster bevinden. U kunt naam ruimten in afzonderlijke clusters koppelen. 
@@ -204,7 +204,7 @@ Voor meer informatie over Event Hubs gaat u naar de volgende koppelingen:
     - [.NET Core](event-hubs-dotnet-standard-getstarted-send.md)
     - [Java](event-hubs-java-get-started-send.md)
     - [Python](event-hubs-python-get-started-send.md)
-    - [JavaScript](event-hubs-java-get-started-send.md)
+    - [JavaScript](event-hubs-node-get-started-send.md)
 * [Veelgestelde vragen over Event Hubs](event-hubs-faq.md)
 * [Voorbeeldtoepassingen die gebruikmaken van Event Hubs](https://github.com/Azure/azure-event-hubs/tree/master/samples)
 

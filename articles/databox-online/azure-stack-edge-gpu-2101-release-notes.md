@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 03/08/2021
 ms.author: alkohli
 ms.openlocfilehash: 922480eb2f4795729919c6ed039ccf61f19875b3
-ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102630364"
 ---
 # <a name="azure-stack-edge-2101-release-notes"></a>Release opmerkingen bij Azure Stack Edge 2101

@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: e235bf90568a1382a5ecee3ff4d2283aaa32f10b
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 1eb4194354a07d5b580f07cfe5962785a4e100bd
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93083213"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104578018"
 ---
 # <a name="troubleshooting-hybrid-azure-active-directory-joined-devices"></a>Problemen met hybride Azure Active Directory-gekoppelde apparaten oplossen
 
@@ -99,7 +99,7 @@ Dit veld geeft aan of het apparaat is gekoppeld aan een on-premises Active Direc
 
 #### <a name="workplacejoined--no"></a>WorkplaceJoined: Nee
 
-Dit veld geeft aan of het apparaat is geregistreerd bij Azure AD als persoonlijk apparaat (gemarkeerd als *toegevoegd aan werk plek* ). Deze waarde mag **niet** worden toegevoegd aan een computer die lid is van een domein en ook hybride Azure AD is toegevoegd. Als de waarde **Ja** is, is er een werk-of school account toegevoegd vóór het volt ooien van de deelname van de hybride Azure AD. In dit geval wordt het account genegeerd wanneer u Windows 10 versie 1607 of hoger gebruikt.
+Dit veld geeft aan of het apparaat is geregistreerd bij Azure AD als persoonlijk apparaat (gemarkeerd als *toegevoegd aan werk plek*). Deze waarde mag **niet** worden toegevoegd aan een computer die lid is van een domein en ook hybride Azure AD is toegevoegd. Als de waarde **Ja** is, is er een werk-of school account toegevoegd vóór het volt ooien van de deelname van de hybride Azure AD. In dit geval wordt het account genegeerd wanneer u Windows 10 versie 1607 of hoger gebruikt.
 
 #### <a name="azureadjoined--yes"></a>AzureAdJoined: Ja
 
@@ -132,12 +132,12 @@ In het veld ' fout fase ' wordt de fase van de fout bij het samen voegen aangege
 
 Gebruik Logboeken Logboeken om de fase en fout code voor het samen voegen van fouten te vinden.
 
-1. Open de gebeurtenis logboeken voor **registratie van gebruikers apparaten** in Logboeken. Deze bevindt zich onder **toepassingen en services**  >  registratie van **micro soft**  >  **Windows** -  >  **gebruikers apparaten**
+1. Open de gebeurtenis logboeken voor **registratie van gebruikers apparaten** in Logboeken. Deze bevindt zich onder **toepassingen en services**  >  registratie van **micro soft**  >  **Windows**-  >  **gebruikers apparaten**
 2. Zoek naar gebeurtenissen met de volgende eventIDs 304, 305, 307.
 
 :::image type="content" source="./media/troubleshoot-hybrid-join-windows-current/1.png" alt-text="Scherm opname van de logboeken. Er wordt een gebeurtenis met I D 304 geselecteerd en de bijbehorende informatie wordt weer gegeven, waarbij de fout code en fase zijn gemarkeerd." border="false":::
 
-:::image type="content" source="./media/troubleshoot-hybrid-join-windows-current/2.png" alt-text="Scherm opname van de logboeken. Er wordt een gebeurtenis met I D 304 geselecteerd en de bijbehorende informatie wordt weer gegeven, waarbij de fout code en fase zijn gemarkeerd." border="false":::
+:::image type="content" source="./media/troubleshoot-hybrid-join-windows-current/2.png" alt-text="Scherm opname van de logboeken. Een gebeurtenis met I D 305 is zichtbaar en de informatie wordt weer gegeven, waarbij de fout code is gemarkeerd." border="false":::
 
 ### <a name="step-4-check-for-possible-causes-and-resolutions-from-the-lists-below"></a>Stap 4: controleren op mogelijke oorzaken en oplossingen in de onderstaande lijsten
 
@@ -207,10 +207,10 @@ Zoek naar ' DRS Discovery test ' in de sectie ' Diagnostische gegevens ' van de 
 
 Gebruik Logboeken Logboeken om de fase en fout code voor het samen voegen van fouten te vinden.
 
-1. Open de gebeurtenis logboeken voor **registratie van gebruikers apparaten** in Logboeken. Deze bevindt zich onder **toepassingen en services**  >  registratie van **micro soft**  >  **Windows** -  >  **gebruikers apparaten**
+1. Open de gebeurtenis logboeken voor **registratie van gebruikers apparaten** in Logboeken. Deze bevindt zich onder **toepassingen en services**  >  registratie van **micro soft**  >  **Windows**-  >  **gebruikers apparaten**
 2. Zoek naar gebeurtenissen met de volgende eventIDs 201
 
-:::image type="content" source="./media/troubleshoot-hybrid-join-windows-current/5.png" alt-text="Scherm opname van de logboeken. Er wordt een gebeurtenis met I D 304 geselecteerd en de bijbehorende informatie wordt weer gegeven, waarbij de fout code en fase zijn gemarkeerd." border="false":::
+:::image type="content" source="./media/troubleshoot-hybrid-join-windows-current/5.png" alt-text="Scherm opname van de logboeken. Er wordt een gebeurtenis met I D 201 geselecteerd en de bijbehorende informatie wordt weer gegeven, waarbij de fout code is gemarkeerd." border="false":::
 
 ###### <a name="network-errors"></a>Netwerk fouten
 
@@ -252,10 +252,10 @@ Redenen voor fout:
 
 Gebruik Logboeken Logboeken om de fout code, subfout code, fout code voor de server en het fout bericht van de server te vinden.
 
-1. Open de gebeurtenis logboeken voor **registratie van gebruikers apparaten** in Logboeken. Deze bevindt zich onder **toepassingen en services**  >  registratie van **micro soft**  >  **Windows** -  >  **gebruikers apparaten**
+1. Open de gebeurtenis logboeken voor **registratie van gebruikers apparaten** in Logboeken. Deze bevindt zich onder **toepassingen en services**  >  registratie van **micro soft**  >  **Windows**-  >  **gebruikers apparaten**
 2. Zoek naar gebeurtenissen met de volgende gebeurtenis-305
 
-:::image type="content" source="./media/troubleshoot-hybrid-join-windows-current/3.png" alt-text="Scherm opname van de logboeken. Er wordt een gebeurtenis met I D 304 geselecteerd en de bijbehorende informatie wordt weer gegeven, waarbij de fout code en fase zijn gemarkeerd." border="false":::
+:::image type="content" source="./media/troubleshoot-hybrid-join-windows-current/3.png" alt-text="Scherm opname van de logboeken. Een gebeurtenis met I D 305 is zichtbaar. De informatie wordt weer gegeven, met een D A L-fout codes en-status gemarkeerd." border="false":::
 
 ##### <a name="configuration-errors"></a>Configuratiefouten
 
@@ -327,10 +327,10 @@ Het veld registratie type geeft het type samen voeging aan dat wordt uitgevoerd.
 
 Gebruik Logboeken Logboeken om de fase en fout code voor het samen voegen van fouten te vinden.
 
-1. Open de gebeurtenis logboeken voor **registratie van gebruikers apparaten** in Logboeken. Deze bevindt zich onder **toepassingen en services**  >  registratie van **micro soft**  >  **Windows** -  >  **gebruikers apparaten**
+1. Open de gebeurtenis logboeken voor **registratie van gebruikers apparaten** in Logboeken. Deze bevindt zich onder **toepassingen en services**  >  registratie van **micro soft**  >  **Windows**-  >  **gebruikers apparaten**
 2. Zoek naar gebeurtenissen met de volgende eventIDs 204
 
-:::image type="content" source="./media/troubleshoot-hybrid-join-windows-current/4.png" alt-text="Scherm opname van de logboeken. Er wordt een gebeurtenis met I D 304 geselecteerd en de bijbehorende informatie wordt weer gegeven, waarbij de fout code en fase zijn gemarkeerd." border="false":::
+:::image type="content" source="./media/troubleshoot-hybrid-join-windows-current/4.png" alt-text="Scherm opname van de logboeken. Informatie over een gebeurtenis met I D 204 wordt weer gegeven, met de fout code, H T/m P status en het bericht gemarkeerd." border="false":::
 
 ##### <a name="http-errors-returned-from-drs-server"></a>HTTP-fouten geretourneerd door de DRS-server
 
@@ -387,9 +387,9 @@ Gebruik Logboeken Logboeken om de fase en fout code voor het samen voegen van fo
 
 ### <a name="step-5-collect-logs-and-contact-microsoft-support"></a>Stap 5: Logboeken verzamelen en contact opnemen met Microsoft Ondersteuning
 
-Down load het bestand Auth.zip van [https://github.com/CSS-Windows/WindowsDiag/tree/master/ADS/AUTH](https://github.com/CSS-Windows/WindowsDiag/tree/master/ADS/AUTH)
+Down load het bestand Auth.zip van [https://github.com/CSS-Identity/DRS/tree/main/Auth](https://github.com/CSS-Identity/DRS/tree/main/Auth)
 
-1. Pak de bestanden uit en wijzig de naam van de Inge sloten bestanden **start-auth.txt** en **stop-auth.txt** in **Start-auth. cmd** en **Stop-auth. cmd** .
+1. Pak de bestanden uit en wijzig de naam van de Inge sloten bestanden **start-auth.txt** en **stop-auth.txt** in **Start-auth. cmd** en **Stop-auth. cmd**.
 1. Voer **Start-auth. cmd** uit vanaf een opdracht prompt met verhoogde bevoegdheid.
 1. Gebruik een ander account om met de probleem gebruiker over te scha kelen naar een andere sessie.
 1. Reproduceer het probleem.

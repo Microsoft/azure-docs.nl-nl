@@ -7,14 +7,14 @@ ms.topic: reference
 ms.workload: identity
 author: rolyon
 ms.author: rolyon
-ms.date: 02/25/2021
+ms.date: 03/15/2021
 ms.custom: generated
-ms.openlocfilehash: baa783d0dfb54e0e606e3f6c6d5397941ae7b7bc
-ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
+ms.openlocfilehash: ba5340fdc12bf3141c5e3f24b6b9d178a5db600d
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "103011626"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104602516"
 ---
 # <a name="azure-built-in-roles"></a>Ingebouwde Azure-rollen
 
@@ -140,6 +140,13 @@ De volgende tabel bevat een korte beschrijving en de unieke ID van elke ingebouw
 > | [Cognitive Services QnA Maker editor](#cognitive-services-qna-maker-editor) | U kunt een KB maken, bewerken, importeren en exporteren. U kunt geen KB publiceren of verwijderen. | f4cc2bf9-21be-47a1-bdf1-5c5804381025 |
 > | [QnA Maker lezer Cognitive Services](#cognitive-services-qna-maker-reader) | Laten we alleen een KB lezen en testen. | 466ccd10-b268-4a11-b098-b4849f024126 |
 > | [Cognitive Services gebruiker](#cognitive-services-user) | Hiermee kunt u de sleutels van Cognitive Services lezen en weer geven. | a97b65f3-24c7-4388-baec-2e87135dc908 |
+> | **Internet of things** |  |  |
+> | [Beheerder apparaat bijwerken](#device-update-administrator) | Biedt volledige toegang tot beheer-en inhouds bewerkingen | 02ca0879-e8e4-47a5-a61e-5c618b76e64a |
+> | [Beheerder van de inhoud van het apparaat bijwerken](#device-update-content-administrator) | Biedt volledige toegang tot inhouds bewerkingen | 0378884a-3af5-44ab-8323-f5b22f9f3c98 |
+> | [Lezer inhoud apparaat bijwerken](#device-update-content-reader) | Hiermee krijgt u lees toegang tot inhouds bewerkingen, maar kunt u geen wijzigingen aanbrengen | d1ee9a80-8b14-47f0-bdc2-f4a351625a7b |
+> | [Beheerder voor update-implementaties van apparaten](#device-update-deployments-administrator) | Biedt volledige toegang tot beheer bewerkingen | e4237640-0e3d-4a46-8fda-70bc94856432 |
+> | [Lezer voor update-implementaties van apparaat](#device-update-deployments-reader) | Geeft u lees toegang tot beheer bewerkingen, maar maakt geen wijzigingen mogelijk | 49e2f5d2-7741-4835-8efa-19e1fe35e47f |
+> | [Apparaat bijwerken lezer](#device-update-reader) | Geeft u lees toegang tot beheer-en inhouds bewerkingen, maar maakt geen wijzigingen mogelijk | e9dba6fb-3d52-4cf0-bce3-f06ce71b9e0f |
 > | **Gemengde realiteit** |  |  |
 > | [Externe rendering-beheerder](#remote-rendering-administrator) | Biedt gebruikers de mogelijkheid om de mogelijkheden voor het omzetten van sessies, rendering en diagnose te beheren voor externe rendering in azure | 3df8b902-2a6f-47c7-8cc5-360e9b272a7e |
 > | [Client voor externe Rendering](#remote-rendering-client) | Biedt gebruikers de mogelijkheid om sessie, rendering en diagnose te beheren voor de externe rendering van Azure. | d39065c4-c120-43c9-ab0a-63eed9795f0a |
@@ -156,6 +163,7 @@ De volgende tabel bevat een korte beschrijving en de unieke ID van elke ingebouw
 > | [Gegevens ontvanger Azure Service Bus](#azure-service-bus-data-receiver) | Hiermee krijgt u toegang tot Azure Service Bus-resources. | 4f6d3b9b-027b-4f4c-9142-0e5a2a2247e0 |
 > | [Afzender van Azure Service Bus gegevens](#azure-service-bus-data-sender) | Hiermee kunt u toegang tot Azure Service Bus resources verzenden. | 69a216fc-b8fb-44d8-bc22-1f3c2cd27a39 |
 > | [Registratie-eigenaar Azure Stack](#azure-stack-registration-owner) | Hiermee kunt u Azure Stack registraties beheren. | 6f12a6df-dd06-4f3e-bcb1-ce8be600526a |
+> | [EventGrid-bijdrager](#eventgrid-contributor) | Hiermee kunt u EventGrid-bewerkingen beheren. | 1e241071-0855-49ea-94dc-649edcd759de |
 > | [EventGrid EventSubscription-bijdrager](#eventgrid-eventsubscription-contributor) | Hiermee kunt u bewerkingen voor EventGrid-gebeurtenis abonnementen beheren. | 428e0ff0-5e57-4d9c-a221-2c70d0e0a443 |
 > | [EventGrid EventSubscription-lezer](#eventgrid-eventsubscription-reader) | Hiermee kunt u EventGrid-gebeurtenis abonnementen lezen. | 2414bbcf-6497-4faf-8c65-045460748405 |
 > | [Inzender voor FHIR-gegevens](#fhir-data-contributor) | Rol maakt gebruiker of Principal volledige toegang tot FHIR-gegevens | 5a1fc7df-4bf1-4951-a576-89034ee01acd |
@@ -222,6 +230,7 @@ De volgende tabel bevat een korte beschrijving en de unieke ID van elke ingebouw
 > | [Lezer beheer groep](#management-group-reader) | Rol van lezer van beheer groep | ac63b705-f282-497d-ac71-919bf39d939d |
 > | [Nieuwe Inzender voor Relic APM-account](#new-relic-apm-account-contributor) | Hiermee kunt u New Relic Application Performance Management accounts en-toepassingen beheren, maar niet de toegang tot ze. | 5d28c62d-5b37-4476-8438-e587778df237 |
 > | [Policy Insights Data Writer (preview-versie)](#policy-insights-data-writer-preview) | Hiermee wordt lees toegang tot bron beleid en schrijf toegang tot bron onderdeel beleids gebeurtenissen toegestaan. | 66bb4e9e-b016-4a94-8249-4c0511c2be84 |
+> | [Rol van operator voor quotum aanvragen](#quota-request-operator-role) | Lees en maak quota aanvragen, haal de status van de quotum aanvraag op en maak ondersteunings tickets. | 0e5f05e5-9ab9-446b-b98d-1e2157c94125 |
 > | [Reserve ring-verkoper](#reservation-purchaser) | Hiermee kunt u reserve ringen kopen | f7b75c60-3036-4b75-91c3-6b41c27c1689 |
 > | [Inzender voor resourcebeleid](#resource-policy-contributor) | Gebruikers met rechten voor het maken/wijzigen van het resource beleid, het maken van een ondersteunings ticket en het lezen van resources/hiërarchie. | 36243c78-bf99-498c-9df9-86d9f8d28608 |
 > | [Site Recovery-inzender](#site-recovery-contributor) | Hiermee kunt u Site Recovery-service beheren, behalve het maken van een kluis en roltoewijzing | 6670b86e-a3f7-4917-ac9b-5d6ab1be4567 |
@@ -4400,6 +4409,7 @@ Hiermee kunt u het beveiligings beleid van SQL-servers en-data bases beheren, ma
 > | [Micro soft. SQL](resource-provider-operations.md#microsoftsql)/servers/databases/vulnerabilityAssessments/* |  |
 > | [Micro soft. SQL](resource-provider-operations.md#microsoftsql)/servers/databases/vulnerabilityAssessmentScans/* |  |
 > | [Micro soft. SQL](resource-provider-operations.md#microsoftsql)/servers/databases/vulnerabilityAssessmentSettings/* |  |
+> | [Micro soft. SQL](resource-provider-operations.md#microsoftsql)/servers/devOpsAuditingSettings/* |  |
 > | [Micro soft. SQL](resource-provider-operations.md#microsoftsql)/servers/firewallRules/* |  |
 > | [Micro soft. SQL](resource-provider-operations.md#microsoftsql)/servers/Read | De lijst met servers retour neren of de eigenschappen voor de opgegeven server ophalen. |
 > | [Micro soft. SQL](resource-provider-operations.md#microsoftsql)/servers/securityAlertPolicies/* | Beveiligings waarschuwingen voor SQL Server maken en beheren |
@@ -4465,6 +4475,7 @@ Hiermee kunt u het beveiligings beleid van SQL-servers en-data bases beheren, ma
         "Microsoft.Sql/servers/databases/vulnerabilityAssessments/*",
         "Microsoft.Sql/servers/databases/vulnerabilityAssessmentScans/*",
         "Microsoft.Sql/servers/databases/vulnerabilityAssessmentSettings/*",
+        "Microsoft.Sql/servers/devOpsAuditingSettings/*",
         "Microsoft.Sql/servers/firewallRules/*",
         "Microsoft.Sql/servers/read",
         "Microsoft.Sql/servers/securityAlertPolicies/*",
@@ -4528,6 +4539,7 @@ Hiermee kunt u SQL-servers en-data bases beheren, maar niet de toegang tot ze en
 > | [Micro soft. SQL](resource-provider-operations.md#microsoftsql)/servers/databases/vulnerabilityAssessments/* |  |
 > | [Micro soft. SQL](resource-provider-operations.md#microsoftsql)/servers/databases/vulnerabilityAssessmentScans/* |  |
 > | [Micro soft. SQL](resource-provider-operations.md#microsoftsql)/servers/databases/vulnerabilityAssessmentSettings/* |  |
+> | [Micro soft. SQL](resource-provider-operations.md#microsoftsql)/servers/devOpsAuditingSettings/* |  |
 > | [Micro soft. SQL](resource-provider-operations.md#microsoftsql)/servers/extendedAuditingSettings/* |  |
 > | [Micro soft. SQL](resource-provider-operations.md#microsoftsql)/servers/securityAlertPolicies/* | Beveiligings waarschuwingen voor SQL server bewerken |
 > | [Micro soft. SQL](resource-provider-operations.md#microsoftsql)/servers/vulnerabilityAssessments/* |  |
@@ -4583,6 +4595,7 @@ Hiermee kunt u SQL-servers en-data bases beheren, maar niet de toegang tot ze en
         "Microsoft.Sql/servers/databases/vulnerabilityAssessments/*",
         "Microsoft.Sql/servers/databases/vulnerabilityAssessmentScans/*",
         "Microsoft.Sql/servers/databases/vulnerabilityAssessmentSettings/*",
+        "Microsoft.Sql/servers/devOpsAuditingSettings/*",
         "Microsoft.Sql/servers/extendedAuditingSettings/*",
         "Microsoft.Sql/servers/securityAlertPolicies/*",
         "Microsoft.Sql/servers/vulnerabilityAssessments/*",
@@ -5724,6 +5737,19 @@ U kunt een KB maken, bewerken, importeren en exporteren. U kunt geen KB publicer
 > | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker.v2/endpointsettings/Read | Hiermee worden de eindpunt instellingen voor een eind punt opgehaald |
 > | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker.v2/endpointsettings/write | Seettings voor een eind punt bijwerken. |
 > | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker.v2/Operations/Read | Hiermee worden details van een specifieke langlopende bewerking opgehaald. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/TextAnalytics/QnAMaker/knowledgebases/Read | Hiermee wordt een lijst opgehaald met de Knowledge bases of Details van een specifieke Knowledge Base. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/TextAnalytics/QnAMaker/knowledgebases/Download/Read | Down load de Knowledge Base. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/TextAnalytics/QnAMaker/knowledgebases/Create/write | Asynchrone bewerking voor het maken van een nieuwe Knowledge Base. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/TextAnalytics/QnAMaker/knowledgebases/write | Asynchrone bewerking om een Knowledge Base te wijzigen of de inhoud van de Knowledge Base te vervangen. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/TextAnalytics/QnAMaker/knowledgebases/generateanswer/Action | GenerateAnswer-aanroep voor het uitvoeren van een query op de Knowledge Base. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/TextAnalytics/QnAMaker/knowledgebases/Train/Action | Train gesprek om suggesties toe te voegen aan de Knowledge Base. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/TextAnalytics/QnAMaker/Alterations/Read | Down loads van runtime. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/TextAnalytics/QnAMaker/Alterations/write | Vervangings gegevens vervangen. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/TextAnalytics/QnAMaker/endpointkeys/Read | Hiermee worden eindpunt sleutels voor een eind punt opgehaald |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/TextAnalytics/QnAMaker/endpointkeys/refreshkeys/Action | Hiermee wordt een eindpunt sleutel opnieuw gegenereerd. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/TextAnalytics/QnAMaker/endpointsettings/Read | Hiermee worden de eindpunt instellingen voor een eind punt opgehaald |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/TextAnalytics/QnAMaker/endpointsettings/write | Seettings voor een eind punt bijwerken. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/TextAnalytics/QnAMaker/Operations/Read | Hiermee worden details van een specifieke langlopende bewerking opgehaald. |
 > | **NotDataActions** |  |
 > | *geen* |  |
 
@@ -5769,7 +5795,20 @@ U kunt een KB maken, bewerken, importeren en exporteren. U kunt geen KB publicer
         "Microsoft.CognitiveServices/accounts/QnAMaker.v2/endpointkeys/refreshkeys/action",
         "Microsoft.CognitiveServices/accounts/QnAMaker.v2/endpointsettings/read",
         "Microsoft.CognitiveServices/accounts/QnAMaker.v2/endpointsettings/write",
-        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/operations/read"
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/operations/read",
+        "Microsoft.CognitiveServices/accounts/TextAnalytics/QnAMaker/knowledgebases/read",
+        "Microsoft.CognitiveServices/accounts/TextAnalytics/QnAMaker/knowledgebases/download/read",
+        "Microsoft.CognitiveServices/accounts/TextAnalytics/QnAMaker/knowledgebases/create/write",
+        "Microsoft.CognitiveServices/accounts/TextAnalytics/QnAMaker/knowledgebases/write",
+        "Microsoft.CognitiveServices/accounts/TextAnalytics/QnAMaker/knowledgebases/generateanswer/action",
+        "Microsoft.CognitiveServices/accounts/TextAnalytics/QnAMaker/knowledgebases/train/action",
+        "Microsoft.CognitiveServices/accounts/TextAnalytics/QnAMaker/alterations/read",
+        "Microsoft.CognitiveServices/accounts/TextAnalytics/QnAMaker/alterations/write",
+        "Microsoft.CognitiveServices/accounts/TextAnalytics/QnAMaker/endpointkeys/read",
+        "Microsoft.CognitiveServices/accounts/TextAnalytics/QnAMaker/endpointkeys/refreshkeys/action",
+        "Microsoft.CognitiveServices/accounts/TextAnalytics/QnAMaker/endpointsettings/read",
+        "Microsoft.CognitiveServices/accounts/TextAnalytics/QnAMaker/endpointsettings/write",
+        "Microsoft.CognitiveServices/accounts/TextAnalytics/QnAMaker/operations/read"
       ],
       "notDataActions": []
     }
@@ -5805,6 +5844,12 @@ Laten we alleen een KB lezen en testen. [Meer informatie](../cognitive-services/
 > | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker.v2/Alterations/Read | Down loads van runtime. |
 > | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker.v2/endpointkeys/Read | Hiermee worden eindpunt sleutels voor een eind punt opgehaald |
 > | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker.v2/endpointsettings/Read | Hiermee worden de eindpunt instellingen voor een eind punt opgehaald |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/TextAnalytics/QnAMaker/knowledgebases/Read | Hiermee wordt een lijst opgehaald met de Knowledge bases of Details van een specifieke Knowledge Base. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/TextAnalytics/QnAMaker/knowledgebases/Download/Read | Down load de Knowledge Base. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/TextAnalytics/QnAMaker/knowledgebases/generateanswer/Action | GenerateAnswer-aanroep voor het uitvoeren van een query op de Knowledge Base. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/TextAnalytics/QnAMaker/Alterations/Read | Down loads van runtime. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/TextAnalytics/QnAMaker/endpointkeys/Read | Hiermee worden eindpunt sleutels voor een eind punt opgehaald |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/TextAnalytics/QnAMaker/endpointsettings/Read | Hiermee worden de eindpunt instellingen voor een eind punt opgehaald |
 > | **NotDataActions** |  |
 > | *geen* |  |
 
@@ -5836,7 +5881,13 @@ Laten we alleen een KB lezen en testen. [Meer informatie](../cognitive-services/
         "Microsoft.CognitiveServices/accounts/QnAMaker.v2/knowledgebases/generateanswer/action",
         "Microsoft.CognitiveServices/accounts/QnAMaker.v2/alterations/read",
         "Microsoft.CognitiveServices/accounts/QnAMaker.v2/endpointkeys/read",
-        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/endpointsettings/read"
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/endpointsettings/read",
+        "Microsoft.CognitiveServices/accounts/TextAnalytics/QnAMaker/knowledgebases/read",
+        "Microsoft.CognitiveServices/accounts/TextAnalytics/QnAMaker/knowledgebases/download/read",
+        "Microsoft.CognitiveServices/accounts/TextAnalytics/QnAMaker/knowledgebases/generateanswer/action",
+        "Microsoft.CognitiveServices/accounts/TextAnalytics/QnAMaker/alterations/read",
+        "Microsoft.CognitiveServices/accounts/TextAnalytics/QnAMaker/endpointkeys/read",
+        "Microsoft.CognitiveServices/accounts/TextAnalytics/QnAMaker/endpointsettings/read"
       ],
       "notDataActions": []
     }
@@ -5907,6 +5958,323 @@ Hiermee kunt u de sleutels van Cognitive Services lezen en weer geven. [Meer inf
     }
   ],
   "roleName": "Cognitive Services User",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+## <a name="internet-of-things"></a>Internet of things
+
+
+### <a name="device-update-administrator"></a>Beheerder apparaat bijwerken
+
+Biedt volledige toegang tot beheer-en inhouds bewerkingen [meer informatie](../iot-hub-device-update/device-update-control-access.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Deployments/* | Een implementatie maken en beheren |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/resourceGroups/Read | Hiermee worden resource groepen opgehaald of weer gegeven. |
+> | [Micro soft. ondersteuning](resource-provider-operations.md#microsoftsupport)/* | Een ondersteunings ticket maken en bijwerken |
+> | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/alertRules/* | Een klassieke waarschuwing voor metrische gegevens maken en beheren |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | [Micro soft. DeviceUpdate](resource-provider-operations.md#microsoftdeviceupdate)/accounts/instances/updates/Read | Voert een lees bewerking met betrekking tot updates uit |
+> | [Micro soft. DeviceUpdate](resource-provider-operations.md#microsoftdeviceupdate)/accounts/instances/updates/write | Voert een schrijf bewerking uit die betrekking heeft op updates |
+> | [Micro soft. DeviceUpdate](resource-provider-operations.md#microsoftdeviceupdate)/accounts/instances/updates/Delete | Hiermee voert u een Verwijder bewerking uit die betrekking heeft op updates |
+> | [Micro soft. DeviceUpdate](resource-provider-operations.md#microsoftdeviceupdate)/accounts/instances/Management/Read | Hiermee wordt een lees bewerking met betrekking tot beheer uitgevoerd |
+> | [Micro soft. DeviceUpdate](resource-provider-operations.md#microsoftdeviceupdate)/accounts/instances/Management/write | Hiermee wordt een schrijf bewerking uitgevoerd met betrekking tot beheer |
+> | [Micro soft. DeviceUpdate](resource-provider-operations.md#microsoftdeviceupdate)/accounts/instances/Management/Delete | Hiermee wordt een Verwijder bewerking met betrekking tot beheer uitgevoerd |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Gives you full access to management and content operations",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/02ca0879-e8e4-47a5-a61e-5c618b76e64a",
+  "name": "02ca0879-e8e4-47a5-a61e-5c618b76e64a",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Resources/deployments/*",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Support/*",
+        "Microsoft.Insights/alertRules/*"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.DeviceUpdate/accounts/instances/updates/read",
+        "Microsoft.DeviceUpdate/accounts/instances/updates/write",
+        "Microsoft.DeviceUpdate/accounts/instances/updates/delete",
+        "Microsoft.DeviceUpdate/accounts/instances/management/read",
+        "Microsoft.DeviceUpdate/accounts/instances/management/write",
+        "Microsoft.DeviceUpdate/accounts/instances/management/delete"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Device Update Administrator",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="device-update-content-administrator"></a>Beheerder van de inhoud van het apparaat bijwerken
+
+Biedt volledige toegang tot inhouds bewerkingen [meer informatie](../iot-hub-device-update/device-update-control-access.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Deployments/* | Een implementatie maken en beheren |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/resourceGroups/Read | Hiermee worden resource groepen opgehaald of weer gegeven. |
+> | [Micro soft. ondersteuning](resource-provider-operations.md#microsoftsupport)/* | Een ondersteunings ticket maken en bijwerken |
+> | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/alertRules/* | Een klassieke waarschuwing voor metrische gegevens maken en beheren |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | [Micro soft. DeviceUpdate](resource-provider-operations.md#microsoftdeviceupdate)/accounts/instances/updates/Read | Voert een lees bewerking met betrekking tot updates uit |
+> | [Micro soft. DeviceUpdate](resource-provider-operations.md#microsoftdeviceupdate)/accounts/instances/updates/write | Voert een schrijf bewerking uit die betrekking heeft op updates |
+> | [Micro soft. DeviceUpdate](resource-provider-operations.md#microsoftdeviceupdate)/accounts/instances/updates/Delete | Hiermee voert u een Verwijder bewerking uit die betrekking heeft op updates |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Gives you full access to content operations",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/0378884a-3af5-44ab-8323-f5b22f9f3c98",
+  "name": "0378884a-3af5-44ab-8323-f5b22f9f3c98",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Resources/deployments/*",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Support/*",
+        "Microsoft.Insights/alertRules/*"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.DeviceUpdate/accounts/instances/updates/read",
+        "Microsoft.DeviceUpdate/accounts/instances/updates/write",
+        "Microsoft.DeviceUpdate/accounts/instances/updates/delete"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Device Update Content Administrator",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="device-update-content-reader"></a>Lezer inhoud apparaat bijwerken
+
+Geeft u lees toegang tot inhouds bewerkingen, maar maakt geen wijzigingen [meer](../iot-hub-device-update/device-update-control-access.md) meer mogelijk
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Deployments/* | Een implementatie maken en beheren |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/resourceGroups/Read | Hiermee worden resource groepen opgehaald of weer gegeven. |
+> | [Micro soft. ondersteuning](resource-provider-operations.md#microsoftsupport)/* | Een ondersteunings ticket maken en bijwerken |
+> | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/alertRules/* | Een klassieke waarschuwing voor metrische gegevens maken en beheren |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | [Micro soft. DeviceUpdate](resource-provider-operations.md#microsoftdeviceupdate)/accounts/instances/updates/Read | Voert een lees bewerking met betrekking tot updates uit |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Gives you read access to content operations, but does not allow making changes",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/d1ee9a80-8b14-47f0-bdc2-f4a351625a7b",
+  "name": "d1ee9a80-8b14-47f0-bdc2-f4a351625a7b",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Resources/deployments/*",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Support/*",
+        "Microsoft.Insights/alertRules/*"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.DeviceUpdate/accounts/instances/updates/read"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Device Update Content Reader",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="device-update-deployments-administrator"></a>Beheerder voor update-implementaties van apparaten
+
+Biedt volledige toegang tot beheer bewerkingen. [meer informatie](../iot-hub-device-update/device-update-control-access.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Deployments/* | Een implementatie maken en beheren |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/resourceGroups/Read | Hiermee worden resource groepen opgehaald of weer gegeven. |
+> | [Micro soft. ondersteuning](resource-provider-operations.md#microsoftsupport)/* | Een ondersteunings ticket maken en bijwerken |
+> | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/alertRules/* | Een klassieke waarschuwing voor metrische gegevens maken en beheren |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | [Micro soft. DeviceUpdate](resource-provider-operations.md#microsoftdeviceupdate)/accounts/instances/Management/Read | Hiermee wordt een lees bewerking met betrekking tot beheer uitgevoerd |
+> | [Micro soft. DeviceUpdate](resource-provider-operations.md#microsoftdeviceupdate)/accounts/instances/Management/write | Hiermee wordt een schrijf bewerking uitgevoerd met betrekking tot beheer |
+> | [Micro soft. DeviceUpdate](resource-provider-operations.md#microsoftdeviceupdate)/accounts/instances/Management/Delete | Hiermee wordt een Verwijder bewerking met betrekking tot beheer uitgevoerd |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Gives you full access to management operations",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/e4237640-0e3d-4a46-8fda-70bc94856432",
+  "name": "e4237640-0e3d-4a46-8fda-70bc94856432",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Resources/deployments/*",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Support/*",
+        "Microsoft.Insights/alertRules/*"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.DeviceUpdate/accounts/instances/management/read",
+        "Microsoft.DeviceUpdate/accounts/instances/management/write",
+        "Microsoft.DeviceUpdate/accounts/instances/management/delete"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Device Update Deployments Administrator",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="device-update-deployments-reader"></a>Lezer voor update-implementaties van apparaat
+
+Geeft u lees toegang tot beheer bewerkingen, maar maakt geen wijzigingen [meer](../iot-hub-device-update/device-update-control-access.md) meer mogelijk
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Deployments/* | Een implementatie maken en beheren |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/resourceGroups/Read | Hiermee worden resource groepen opgehaald of weer gegeven. |
+> | [Micro soft. ondersteuning](resource-provider-operations.md#microsoftsupport)/* | Een ondersteunings ticket maken en bijwerken |
+> | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/alertRules/* | Een klassieke waarschuwing voor metrische gegevens maken en beheren |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | [Micro soft. DeviceUpdate](resource-provider-operations.md#microsoftdeviceupdate)/accounts/instances/Management/Read | Hiermee wordt een lees bewerking met betrekking tot beheer uitgevoerd |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Gives you read access to management operations, but does not allow making changes",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/49e2f5d2-7741-4835-8efa-19e1fe35e47f",
+  "name": "49e2f5d2-7741-4835-8efa-19e1fe35e47f",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Resources/deployments/*",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Support/*",
+        "Microsoft.Insights/alertRules/*"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.DeviceUpdate/accounts/instances/management/read"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Device Update Deployments Reader",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="device-update-reader"></a>Apparaat bijwerken lezer
+
+Geeft u lees toegang tot beheer-en inhouds bewerkingen, maar maakt geen wijzigingen [meer](../iot-hub-device-update/device-update-control-access.md) meer mogelijk
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Deployments/* | Een implementatie maken en beheren |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/resourceGroups/Read | Hiermee worden resource groepen opgehaald of weer gegeven. |
+> | [Micro soft. ondersteuning](resource-provider-operations.md#microsoftsupport)/* | Een ondersteunings ticket maken en bijwerken |
+> | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/alertRules/* | Een klassieke waarschuwing voor metrische gegevens maken en beheren |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | [Micro soft. DeviceUpdate](resource-provider-operations.md#microsoftdeviceupdate)/accounts/instances/updates/Read | Voert een lees bewerking met betrekking tot updates uit |
+> | [Micro soft. DeviceUpdate](resource-provider-operations.md#microsoftdeviceupdate)/accounts/instances/Management/Read | Hiermee wordt een lees bewerking met betrekking tot beheer uitgevoerd |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Gives you read access to management and content operations, but does not allow making changes",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/e9dba6fb-3d52-4cf0-bce3-f06ce71b9e0f",
+  "name": "e9dba6fb-3d52-4cf0-bce3-f06ce71b9e0f",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Resources/deployments/*",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Support/*",
+        "Microsoft.Insights/alertRules/*"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.DeviceUpdate/accounts/instances/updates/read",
+        "Microsoft.DeviceUpdate/accounts/instances/management/read"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Device Update Reader",
   "roleType": "BuiltInRole",
   "type": "Microsoft.Authorization/roleDefinitions"
 }
@@ -6596,6 +6964,55 @@ Hiermee kunt u Azure Stack registraties beheren.
 }
 ```
 
+### <a name="eventgrid-contributor"></a>EventGrid-bijdrager
+
+Hiermee kunt u EventGrid-bewerkingen beheren.
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
+> | [Micro soft. EventGrid](resource-provider-operations.md#microsofteventgrid)/* | Event Grid-resources maken en beheren |
+> | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/alertRules/* | Een klassieke waarschuwing voor metrische gegevens maken en beheren |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Deployments/* | Een implementatie maken en beheren |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/resourceGroups/Read | Hiermee worden resource groepen opgehaald of weer gegeven. |
+> | [Micro soft. ondersteuning](resource-provider-operations.md#microsoftsupport)/* | Een ondersteunings ticket maken en bijwerken |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | *geen* |  |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Lets you manage EventGrid operations.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/1e241071-0855-49ea-94dc-649edcd759de",
+  "name": "1e241071-0855-49ea-94dc-649edcd759de",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Authorization/*/read",
+        "Microsoft.EventGrid/*",
+        "Microsoft.Insights/alertRules/*",
+        "Microsoft.Resources/deployments/*",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Support/*"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "EventGrid Contributor",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
 ### <a name="eventgrid-eventsubscription-contributor"></a>EventGrid EventSubscription-bijdrager
 
 Hiermee kunt u bewerkingen voor EventGrid-gebeurtenis abonnementen beheren. [Meer informatie](../event-grid/security-authorization.md)
@@ -6604,7 +7021,7 @@ Hiermee kunt u bewerkingen voor EventGrid-gebeurtenis abonnementen beheren. [Mee
 > | Acties | Beschrijving |
 > | --- | --- |
 > | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
-> | [Micro soft. EventGrid](resource-provider-operations.md#microsofteventgrid)/eventSubscriptions/* |  |
+> | [Micro soft. EventGrid](resource-provider-operations.md#microsofteventgrid)/eventSubscriptions/* | Regionale gebeurtenis abonnementen maken en beheren |
 > | [Micro soft. EventGrid](resource-provider-operations.md#microsofteventgrid)/topicTypes/eventSubscriptions/Read | Globale gebeurtenis abonnementen weer geven op onderwerps type |
 > | [Micro soft. EventGrid](resource-provider-operations.md#microsofteventgrid)/locations/eventSubscriptions/Read | Regionale gebeurtenis abonnementen weer geven |
 > | [Micro soft. EventGrid](resource-provider-operations.md#microsofteventgrid)/locations/topicTypes/eventSubscriptions/Read | Regionale gebeurtenis abonnementen weer geven op topictype |
@@ -8618,7 +9035,7 @@ Kan alle bewakings gegevens lezen en controle-instellingen bewerken. Zie ook aan
 > | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/Components/* | Insights-onderdelen maken en beheren |
 > | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/dataCollectionRules/* |  |
 > | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/dataCollectionRuleAssociations/* |  |
-> | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/DiagnosticSettings/* | Hiermee wordt de diagnostische instelling voor Analyseserver gemaakt, bijgewerkt of gelezen |
+> | [Microsoft.Insights](resource-provider-operations.md#microsoftinsights)/DiagnosticSettings/* | Hiermee wordt de diagnostische instelling voor Analyseserver gemaakt, bijgewerkt of gelezen |
 > | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/eventtypes/* | Lijst activiteiten logboek gebeurtenissen (beheer gebeurtenissen) in een abonnement. Deze machtiging is van toepassing op zowel toegang via het programma als de portal tot het activiteiten logboek. |
 > | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/LogDefinitions/* | Deze machtiging is nodig voor gebruikers die toegang moeten hebben tot activiteiten logboeken via de portal. Lijst met logboek categorieën in het activiteiten logboek. |
 > | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/metricalerts/* |  |
@@ -9880,6 +10297,61 @@ Hiermee wordt lees toegang tot bron beleid en schrijf toegang tot bron onderdeel
 }
 ```
 
+### <a name="quota-request-operator-role"></a>Rol van operator voor quotum aanvragen
+
+Lees en maak quota aanvragen, haal de status van de quotum aanvraag op en maak ondersteunings tickets. [Meer informatie](/rest/api/reserved-vm-instances/quotaapi)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. capacity](resource-provider-operations.md#microsoftcapacity)/resourceProviders/locations/serviceLimits/Read | De huidige service limiet of het quotum van de opgegeven resource en locatie ophalen |
+> | [Micro soft. capacity](resource-provider-operations.md#microsoftcapacity)/resourceProviders/locations/serviceLimits/write | Een service limiet of-quotum maken voor de opgegeven resource en locatie |
+> | [Micro soft. capacity](resource-provider-operations.md#microsoftcapacity)/resourceProviders/locations/serviceLimitsRequests/Read | Aanvraag voor service limiet voor de opgegeven resource en locatie ophalen |
+> | [Micro soft. capacity](resource-provider-operations.md#microsoftcapacity)/register/Action | Hiermee wordt de resource provider voor capaciteit geregistreerd en wordt het maken van capaciteits resources ingeschakeld. |
+> | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
+> | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/alertRules/* | Een klassieke waarschuwing voor metrische gegevens maken en beheren |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Deployments/* | Een implementatie maken en beheren |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/resourceGroups/Read | Hiermee worden resource groepen opgehaald of weer gegeven. |
+> | [Micro soft. ondersteuning](resource-provider-operations.md#microsoftsupport)/* | Een ondersteunings ticket maken en bijwerken |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | *geen* |  |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Role to read and create Quota Requests and get Quota Request Status.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/0e5f05e5-9ab9-446b-b98d-1e2157c94125",
+  "name": "0e5f05e5-9ab9-446b-b98d-1e2157c94125",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Capacity/resourceProviders/locations/serviceLimits/read",
+        "Microsoft.Capacity/resourceProviders/locations/serviceLimits/write",
+        "Microsoft.Capacity/resourceProviders/locations/serviceLimitsRequests/read",
+        "Microsoft.Capacity/register/action",
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Insights/alertRules/*",
+        "Microsoft.Resources/deployments/*",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Support/*"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Quota Request Operator Role",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
 ### <a name="reservation-purchaser"></a>Reserve ring-verkoper
 
 Hiermee kunt u reserve ringen kopen voor [meer informatie](../cost-management-billing/reservations/prepare-buy-reservation.md)
@@ -10429,7 +10901,7 @@ Hiermee kunt u tags op entiteiten beheren zonder dat u toegang hebt tot de entit
 }
 ```
 
-## <a name="other"></a>Overige
+## <a name="other"></a>Anders
 
 
 ### <a name="azure-digital-twins-data-owner"></a>Azure Digital Apparaatdubbels-gegevens eigenaar

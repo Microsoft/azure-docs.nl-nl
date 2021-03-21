@@ -4,10 +4,10 @@ description: Hierin worden de functies beschreven die u kunt gebruiken in een Az
 ms.topic: conceptual
 ms.date: 10/12/2020
 ms.openlocfilehash: dbda5c635a5189158424363c341b269d331a5fdc
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101707316"
 ---
 # <a name="arm-template-functions"></a>ARM-sjabloon functies

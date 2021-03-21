@@ -8,12 +8,12 @@ ms.date: 10/26/2018
 ms.author: rogarana
 ms.subservice: files
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: dd07c09c4ed5be311bf5a485b9bff938c976a2f5
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
-ms.translationtype: HT
+ms.openlocfilehash: 5611088b76d8acf785fc0951100dcd4a2f439250
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94659230"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104593166"
 ---
 # <a name="quickstart-create-and-manage-azure-file-shares-using-azure-cli"></a>Snelstart: Azure-bestandsshares maken en beheren met Azure CLI
 In deze handleiding worden de basisbeginselen besproken van het werken met [Azure-bestandsshares](storage-files-introduction.md) met behulp van Azure CLI. Azure-bestandsshares zijn net als andere bestandsshares, maar worden in de cloud opgeslagen en ondersteund op het Azure-platform. Azure-bestandsshares ondersteunen het SMB-protocol (Server Message Block) volgens de industriestandaard, (de preview van) het NFS-protocol (Network File System) en bieden de mogelijkheid bestanden te delen tussen meerdere computers, toepassingen en exemplaren. 
@@ -83,7 +83,6 @@ az storage share create \
     --account-key $storageAccountKey \
     --name $shareName \
     --quota 1024 \
-    --enabled-protocols SMB \
     --output none
 ```
 
@@ -175,7 +174,6 @@ az storage share create \
     --account-key $storageAccountKey \
     --name $otherShareName \
     --quota 1024 \
-    --enabled-protocols SMB \
     --output none
 
 az storage directory create \

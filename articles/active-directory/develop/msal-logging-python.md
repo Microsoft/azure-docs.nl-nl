@@ -13,12 +13,12 @@ ms.date: 01/25/2021
 ms.author: marsma
 ms.reviewer: saeeda, jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 8488325613b05d54b352a19a06860e08f1779877
-ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.openlocfilehash: 1d52b017f94785f5fb25a25f127ae52d96e97d8b
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99063111"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104578750"
 ---
 # <a name="logging-in-msal-for-python"></a>Logboekregistratie in MSAL voor Python
 
@@ -26,22 +26,51 @@ ms.locfileid: "99063111"
 
 ## <a name="msal-for-python-logging"></a>MSAL voor python-logboek registratie
 
-Logboek registratie in MSAL python maakt gebruik van het standaard logboek registratie mechanisme van python, bijvoorbeeld `logging.info("msg")` kunt u de MSAL-logboek registratie als volgt configureren (en in de [username_password_sample](https://github.com/AzureAD/microsoft-authentication-library-for-python/blob/1.0.0/sample/username_password_sample.py#L31L32)in actie zien):
+Logboek registratie in MSAL voor python maakt gebruik [van de logboek registratie module in de python-standaard bibliotheek](https://docs.python.org/3/library/logging.html). U kunt MSAL-logboek registratie als volgt configureren (en in de [username_password_sample](https://github.com/AzureAD/microsoft-authentication-library-for-python/blob/1.0.0/sample/username_password_sample.py#L31L32)weer geven in actie):
 
 ### <a name="enable-debug-logging-for-all-modules"></a>Logboek registratie voor fout opsporing inschakelen voor alle modules
 
-De logboek registratie in een python-script is standaard uitgeschakeld. Als u logboek registratie voor fout opsporing wilt inschakelen voor alle modules in het hele python-script, gebruikt u:
+De logboek registratie in een python-script is standaard uitgeschakeld. Als u uitgebreide logboek registratie wilt inschakelen voor **alle** python-modules in uw script, gebruikt u `logging.basicConfig` met een niveau van `logging.DEBUG` :
 
 ```python
+import logging
+
 logging.basicConfig(level=logging.DEBUG)
 ```
 
-### <a name="silence-only-msal-logging"></a>Alleen stilte MSAL-logboek registratie
+Hiermee worden alle logboek berichten die zijn opgegeven in de logboek module, afgedrukt op de standaard uitvoer.
 
-Als u alleen logboek registratie van de MSAL-bibliotheek wilt uitvoeren en logboek registratie voor fout opsporing in alle andere modules in uw python-script wilt inschakelen, schakelt u de logboeken uit die door MSAL python worden gebruikt:
+### <a name="configure-msal-logging-level"></a>MSAL-logboek registratie niveau configureren
 
-```Python
+U kunt het logboek registratie niveau van de MSAL voor python-logboek provider configureren met behulp van de- `logging.getLogger()` methode met de logger naam `"msal"` :
+
+```python
+import logging
+
 logging.getLogger("msal").setLevel(logging.WARN)
+```
+
+### <a name="configure-msal-logging-with-azure-app-insights"></a>MSAL-logboek registratie configureren met Azure-app Insights
+
+Python-logboeken worden toegewezen aan een logboek-handler. Dit is standaard de `StreamHandler` . Als u MSAL-logboeken wilt verzenden naar een Application Insights met een instrumentatie sleutel, gebruikt u de `AzureLogHandler` door de `opencensus-ext-azure` bibliotheek gegeven.
+
+Als u wilt installeren, `opencensus-ext-azure` voegt u het `opencensus-ext-azure` pakket van PyPI toe aan de installatie van uw afhankelijkheden of PIP:
+
+```console
+pip install opencensus-ext-azure
+```
+
+Wijzig vervolgens de standaard-handler van de `"msal"` logboek provider in een exemplaar van `AzureLogHandler` met een instrumentatie sleutel die in de `APP_INSIGHTS_KEY` omgevings variabele is ingesteld:
+
+```python
+import logging
+import os
+
+from opencensus.ext.azure.log_exporter import AzureLogHandler
+
+APP_INSIGHTS_KEY = os.getenv('APP_INSIGHTS_KEY')
+
+logging.getLogger("msal").addHandler(AzureLogHandler(connection_string='InstrumentationKey={0}'.format(APP_INSIGHTS_KEY))
 ```
 
 ### <a name="personal-and-organizational-data-in-python"></a>Persoonlijke en organisatie gegevens in python

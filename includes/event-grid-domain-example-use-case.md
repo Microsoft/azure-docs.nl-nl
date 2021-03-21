@@ -9,10 +9,10 @@ ms.date: 03/04/2021
 ms.author: spelluru
 ms.custom: include file
 ms.openlocfilehash: 2459cf6c5055dcde83dccf37addc160aeeaa64ad
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102198648"
 ---
 Gebeurtenis domeinen worden het eenvoudigst uitgelegd met een voor beeld. Stel dat u contoso-bouw machines uitvoert, waarbij u tractoren, Blijf spitten-apparatuur en andere zware machines produceert. Als onderdeel van het uitvoeren van het bedrijf pusht u real-time informatie naar klanten over het onderhoud van apparaten, systeem status en contract updates. Al deze informatie gaat naar verschillende eind punten, met inbegrip van uw app, klant eindpunten en andere infra structuur die klanten hebben ingesteld.

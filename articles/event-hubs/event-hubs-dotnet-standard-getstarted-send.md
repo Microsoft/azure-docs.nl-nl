@@ -5,10 +5,10 @@ ms.topic: quickstart
 ms.date: 09/25/2020
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 36551a52bc095a37aa5176ab945dd5d27c640954
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97504607"
 ---
 # <a name="send-events-to-and-receive-events-from-azure-event-hubs---net-azuremessagingeventhubs"></a>Gebeurtenissen verzenden naar en ontvangen van Azure Event Hubs - .NET (Azure.Messaging.EventHubs) 

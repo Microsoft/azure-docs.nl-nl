@@ -5,28 +5,31 @@ author: vermagit
 ms.service: virtual-machines
 ms.subservice: hpc
 ms.topic: article
-ms.date: 08/06/2020
+ms.date: 03/18/2021
 ms.author: amverma
 ms.reviewer: cynthn
-ms.openlocfilehash: 9804ed23da4cb9ccbb7515cec03fcc9b4147f749
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 8f071dfe817d15b745575fbfb70ff662a643db70
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/20/2021
-ms.locfileid: "101673256"
+ms.locfileid: "104721365"
 ---
 # <a name="set-up-message-passing-interface-for-hpc"></a>Bericht interface voor het door geven van HPC instellen
 
 De [Message Passing Interface (MPI)](https://en.wikipedia.org/wiki/Message_Passing_Interface) is een open bibliotheek en de meest feitelijke standaard voor gedistribueerde geheugen parallel Lise ring. Dit wordt vaak gebruikt in veel HPC-workloads. HPC-workloads op de [RDMA](../../sizes-hpc.md#rdma-capable-instances) [-](../../sizes-hpc.md) werk belasting en [N-serie-](../../sizes-gpu.md) vm's kunnen mpi gebruiken om te communiceren via het InfiniBand-netwerk met lage latentie en hoge band breedte.
+- Met de VM-grootten van SR-IOV in azure kunt u bijna alle MPI gebruiken met Mellanox OFED.
+- Op Vm's waarvoor geen SR-IOV is ingeschakeld, wordt in ondersteunde MPI-implementaties de micro soft Network direct (ND)-interface gebruikt voor communicatie tussen Vm's. Daarom worden alleen micro soft MPI (MS-MPI) 2012 R2 of hoger en Intel MPI 5. x-versies ondersteund. Latere versies (2017, 2018) van de Intel MPI runtime-bibliotheek kunnen al dan niet compatibel zijn met de Azure RDMA-Stuur Programma's.
 
-Met de VM-grootten van SR-IOV op Azure (HBv2, HB, HC, NCv3, NDv2) kunt u bijna elke MPI-functie gebruiken met Mellanox OFED. Op Vm's waarvoor geen SR-IOV is ingeschakeld, wordt in ondersteunde MPI-implementaties de micro soft Network direct (ND)-interface gebruikt voor communicatie tussen Vm's. Daarom worden alleen micro soft MPI (MS-MPI) 2012 R2 of hoger en Intel MPI 5. x-versies ondersteund. Latere versies (2017, 2018) van de Intel MPI runtime-bibliotheek kunnen al dan niet compatibel zijn met de Azure RDMA-Stuur Programma's.
-
-Voor met SR-IOV ingeschakelde [RDMA-compatibele vm's](../../sizes-hpc.md#rdma-capable-instances), [CentOS-HPC-versie 7,6 of een latere](https://techcommunity.microsoft.com/t5/Azure-Compute/CentOS-HPC-VM-Image-for-SR-IOV-enabled-Azure-HPC-VMs/ba-p/665557) versie van de VM-installatie kopieën in de Marketplace zijn geoptimaliseerd en vooraf geladen met de OFED-Stuur Programma's voor RDMA en diverse veelgebruikte mpi-bibliotheken en weten schappelijke computing pakketten. Dit is de eenvoudigste manier om aan de slag te gaan.
+Voor met SR-IOV ingeschakelde [RDMA-compatibele vm's](../../sizes-hpc.md#rdma-capable-instances), [CENTOS-HPC VM-installatie kopieën](configure.md#centos-hpc-vm-images) versie 7,6 en hoger zijn geschikt. Deze VM-installatie kopieën worden geoptimaliseerd en vooraf geladen met de OFED-Stuur Programma's voor RDMA en verschillende veelgebruikte MPI-bibliotheken en weten schappelijke computing pakketten. Dit is de eenvoudigste manier om aan de slag te gaan.
 
 Hoewel de voor beelden hier zijn voor RHEL/CentOS, maar de stappen algemeen zijn en kunnen worden gebruikt voor elk compatibel Linux-besturings systeem, zoals Ubuntu (16,04, 18,04 19,04, 20,04) en SLES (12 SP4 en 15). Meer voor beelden voor het instellen van andere MPI-implementaties voor andere distributies bevindt zich op de [azhpc-images opslag plaats](https://github.com/Azure/azhpc-images/blob/master/ubuntu/ubuntu-18.x/ubuntu-18.04-hpc/install_mpis.sh).
 
 > [!NOTE]
-> Voor het uitvoeren van MPI-taken op Vm's met SR-IOV is het instellen van partitie sleutels (p-sleutels) in een Tenant toegestaan voor isolatie en beveiliging. Volg de stappen in de sectie [partitie sleutels detecteren](#discover-partition-keys) voor meer informatie over het bepalen van de p-sleutel waarden en het correct instellen van een mpi-taak.
+> Voor het uitvoeren van MPI-taken op SR-IOV ingeschakelde Vm's met bepaalde MPI-bibliotheken (zoals platform MPI) is het instellen van partitie sleutels (p-sleutels) in een Tenant vereist voor isolatie en beveiliging. Volg de stappen in de sectie [partitie sleutels detecteren](#discover-partition-keys) voor meer informatie over het bepalen van de p-sleutel waarden en het correct instellen van een mpi-taak met die mpi-bibliotheek.
+
+> [!NOTE]
+> De onderstaande code fragmenten zijn voor beelden. We raden u aan om de meest recente stabiele versies van de pakketten te gebruiken of om te verwijzen naar de [azhpc-installatie kopieën opslag plaats](https://github.com/Azure/azhpc-images/blob/master/ubuntu/ubuntu-18.x/ubuntu-18.04-hpc/install_mpis.sh).
 
 ## <a name="ucx"></a>UCX
 
@@ -40,9 +43,12 @@ cd ucx-1.4.0
 make -j 8 && make install
 ```
 
+> [!NOTE]
+> Recente builds van UCX hebben een [probleem](https://github.com/openucx/ucx/pull/5965) opgelost waarbij de juiste InfiniBand-interface wordt gekozen in de aanwezigheid van meerdere NIC-interfaces. Meer informatie [vindt u hier](hb-hc-known-issues.md#accelerated-networking-on-hb-hc-hbv2-and-ndv2) over het uitvoeren van MPI via InfiniBand wanneer versneld netwerken zijn ingeschakeld op de VM.
+
 ## <a name="hpc-x"></a>HPC-X
 
-De [HPC-X-software Toolkit](https://www.mellanox.com/products/hpc-x-toolkit) bevat UCX en HCOLL.
+De [HPC-X-software Toolkit](https://www.mellanox.com/products/hpc-x-toolkit) bevat UCX en HCOLL en kan worden gebouwd op basis van UCX.
 
 ```bash
 HPCX_VERSION="v2.6.0"
@@ -58,18 +64,20 @@ HPC-X uitvoeren
 ```bash
 ${HPCX_PATH}mpirun -np 2 --map-by ppr:2:node -x UCX_TLS=rc ${HPCX_PATH}/ompi/tests/osu-micro-benchmarks-5.3.2/osu_latency
 ```
+> [!NOTE] 
+> Met HPC-X 2.7.4 + kan het nodig zijn om LD_LIBRARY_PATH expliciet door te geven als de UCX-versie op MOFED vs. die in HPC-X verschilt.
 
 ## <a name="openmpi"></a>OpenMPI
 
 Installeer UCX zoals hierboven wordt beschreven. HCOLL maakt deel uit van de [HPC-X-software Toolkit](https://www.mellanox.com/products/hpc-x-toolkit) en vereist geen speciale installatie.
 
-Installeer OpenMPI van de pakketten die beschikbaar zijn in de opslag plaats.
+OpenMPI kan worden geïnstalleerd vanuit de pakketten die beschikbaar zijn in de opslag plaats.
 
 ```bash
 sudo yum install –y openmpi
 ```
 
-OpenMPI bouwen.
+We raden u aan een nieuwste, stabiele versie van OpenMPI te bouwen met UCX.
 
 ```bash
 OMPI_VERSION="4.0.3"
@@ -80,7 +88,7 @@ cd openmpi-${OMPI_VERSION}
 ./configure --prefix=${INSTALL_PREFIX}/openmpi-${OMPI_VERSION} --with-ucx=${UCX_PATH} --with-hcoll=${HCOLL_PATH} --enable-mpirun-prefix-by-default --with-platform=contrib/platform/mellanox/optimized && make -j$(nproc) && make install
 ```
 
-Voer OpenMPI uit.
+Voor optimale prestaties voert u OpenMPI uit met `ucx` en `hcoll` .
 
 ```bash
 ${INSTALL_PREFIX}/bin/mpirun -np 2 --map-by node --hostfile ~/hostfile -mca pml ucx --mca btl ^vader,tcp,openib -x UCX_NET_DEVICES=mlx5_0:1  -x UCX_IB_PKEY=0x0003  ./osu_latency
@@ -90,7 +98,10 @@ Controleer de hierboven vermelde partitie sleutel.
 
 ## <a name="intel-mpi"></a>Intel MPI
 
-Down load de gewenste versie van [Intel mpi](https://software.intel.com/mpi-library/choose-download). Wijzig de I_MPI_FABRICS omgevings variabele, afhankelijk van de versie. Voor Intel MPI 2018, gebruik `I_MPI_FABRICS=shm:ofa` en voor 2019, gebruikt u `I_MPI_FABRICS=shm:ofi` .
+Down load de gewenste versie van [Intel mpi](https://software.intel.com/mpi-library/choose-download). Wijzig de I_MPI_FABRICS omgevings variabele, afhankelijk van de versie.
+- Intel MPI 2019 en 2021: gebruik `I_MPI_FABRICS=shm:ofi` , `I_MPI_OFI_PROVIDER=mlx` . De `mlx` provider gebruikt UCX. Het gebruik van termen is onstabiel en minder uitvoerende. Zie het [artikel TechCommunity](https://techcommunity.microsoft.com/t5/azure-compute/intelmpi-2019-on-azure-hpc-clusters/ba-p/1403149) voor meer informatie.
+- Intel MPI 2018: gebruiken `I_MPI_FABRICS=shm:ofa`
+- Intel MPI 2016: gebruiken `I_MPI_DAPL_PROVIDER=ofa-v2-ib0`
 
 ### <a name="non-sr-iov-vms"></a>Virtuele machines die niet zijn SR-IOV
 Voor niet-SR-IOV-Vm's is een voor beeld van het downloaden van de [gratis evaluatie versie](https://registrationcenter.intel.com/en/forms/?productid=1740) van 5. x als volgt:
@@ -108,6 +119,45 @@ Voor SUSE Linux Enterprise Server VM-installatie kopie versies-SLES 12 SP3 voor 
 ```bash
 sudo rpm -v -i --nodeps /opt/intelMPI/intel_mpi_packages/*.rpm
 ```
+
+## <a name="mvapich2"></a>MVAPICH2
+
+MVAPICH2 bouwen.
+
+```bash
+wget http://mvapich.cse.ohio-state.edu/download/mvapich/mv2/mvapich2-2.3.tar.gz
+tar -xv mvapich2-2.3.tar.gz
+cd mvapich2-2.3
+./configure --prefix=${INSTALL_PREFIX}
+make -j 8 && make install
+```
+
+MVAPICH2 uitvoeren.
+
+```bash
+${INSTALL_PREFIX}/bin/mpirun_rsh -np 2 -hostfile ~/hostfile MV2_CPU_MAPPING=48 ./osu_latency
+```
+
+## <a name="platform-mpi"></a>Platform MPI
+
+Installeer de vereiste pakketten voor platform MPI Community Edition.
+
+```bash
+sudo yum install libstdc++.i686
+sudo yum install glibc.i686
+Download platform MPI at https://www.ibm.com/developerworks/downloads/im/mpi/index.html 
+sudo ./platform_mpi-09.01.04.03r-ce.bin
+```
+
+Volg het installatie proces.
+
+De volgende opdrachten zijn voor beelden van het uitvoeren van MPI pingpong en allreduce met platform MPI op HBv3 Vm's met behulp van CentOS-HPC 7,6, 7,8 en 8,1 VM-installatie kopieën.
+
+```bash
+/opt/ibm/platform_mpi/bin/mpirun -hostlist 10.0.0.8:1,10.0.0.9:1 -np 2 -e MPI_IB_PKEY=0x800a  -ibv  /home/jijos/mpi-benchmarks/IMB-MPI1 pingpong
+/opt/ibm/platform_mpi/bin/mpirun -hostlist 10.0.0.8:120,10.0.0.9:120 -np 240 -e MPI_IB_PKEY=0x800a  -ibv  /home/jijos/mpi-benchmarks/IMB-MPI1 allreduce -npmin 240
+```
+
 
 ## <a name="mpich"></a>MPICH
 
@@ -128,37 +178,6 @@ ${INSTALL_PREFIX}/bin/mpiexec -n 2 -hostfile ~/hostfile -env UCX_IB_PKEY=0x0003 
 ```
 
 Controleer de hierboven vermelde partitie sleutel.
-
-## <a name="mvapich2"></a>MVAPICH2
-
-MVAPICH2 bouwen.
-
-```bash
-wget http://mvapich.cse.ohio-state.edu/download/mvapich/mv2/mvapich2-2.3.tar.gz
-tar -xv mvapich2-2.3.tar.gz
-cd mvapich2-2.3
-./configure --prefix=${INSTALL_PREFIX}
-make -j 8 && make install
-```
-
-MVAPICH2 uitvoeren.
-
-```bash
-${INSTALL_PREFIX}/bin/mpirun_rsh -np 2 -hostfile ~/hostfile MV2_CPU_MAPPING=48 ./osu_latency
-```
-
-## <a name="platform-mpi-community-edition"></a>Platform MPI Community Edition
-
-Installeer de vereiste pakketten voor platform MPI.
-
-```bash
-sudo yum install libstdc++.i686
-sudo yum install glibc.i686
-Download platform MPI at https://www.ibm.com/developerworks/downloads/im/mpi/index.html 
-sudo ./platform_mpi-09.01.04.03r-ce.bin
-```
-
-Volg het installatie proces.
 
 ## <a name="osu-mpi-benchmarks"></a>OSU MPI-benchmarks
 
@@ -236,6 +255,6 @@ De bovenstaande syntaxis gaat ervan uit dat een gedeelde basismap, else. ssh-map
 ## <a name="next-steps"></a>Volgende stappen
 
 - Meer informatie over de met [InfiniBand ingeschakelde](../../sizes-hpc.md#rdma-capable-instances) [H-Series](../../sizes-hpc.md) en [N-Series](../../sizes-gpu.md) vm's
-- Bekijk [Overzicht HB-serie](hb-series-overview.md) en [Overzicht HC-serie](hc-series-overview.md) voor meer informatie over het optimaal configureren van workloads ten behoeve van de prestaties en schaalbaarheid.
-- Lees over de laatste aankondigingen en enkele HPC-voorbeelden en -resultaten in de [Azure Compute Tech Community-blogs](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute).
+- Bekijk het overzicht van de [HBv3-serie](hbv3-series-overview.md) en de [HC-serie](hc-series-overview.md).
+- Meer informatie over de laatste aankondigingen, HPC-voor beelden en prestatie resultaten vindt u in de blogs van de [technische community van Azure Compute](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute).
 - Zie [High Performance Computing (HPC) op Azure](/azure/architecture/topics/high-performance-computing/) voor een gedetailleerdere architectuurweergave van HPC-workloads die worden uitgevoerd.

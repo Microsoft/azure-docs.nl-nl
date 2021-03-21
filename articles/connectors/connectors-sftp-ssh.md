@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 03/08/2021
 tags: connectors
 ms.openlocfilehash: 983e0d34692d67302e11c35abac590fefd610b2e
-ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102449625"
 ---
 # <a name="monitor-create-and-manage-sftp-files-by-using-ssh-and-azure-logic-apps"></a>SFTP-bestanden bewaken, maken en beheren met behulp van SSH en Azure Logic Apps
@@ -53,7 +53,7 @@ Zie de sectie [SFTP-SSH versus SFTP vergelijken](#comparison) verderop in dit on
 
   | Bewerking | Ondersteuning voor segmentering | Ondersteuning voor segment grootte negeren |
   |--------|------------------|-----------------------------|
-  | **Bestand kopiëren** | No | Niet van toepassing |
+  | **Bestand kopiëren** | Nee | Niet van toepassing |
   | **Bestand maken** | Ja | Ja |
   | **Map maken** | Niet van toepassing | Niet van toepassing |
   | **Bestand verwijderen** | Niet van toepassing | Niet van toepassing |
@@ -64,7 +64,7 @@ Zie de sectie [SFTP-SSH versus SFTP vergelijken](#comparison) verderop in dit on
   | **Meta gegevens van bestand ophalen met behulp van pad** | Niet van toepassing | Niet van toepassing |
   | **Bestanden in de map weer geven** | Niet van toepassing | Niet van toepassing |
   | **Bestands naam wijzigen** | Niet van toepassing | Niet van toepassing |
-  | **Bestand bijwerken** | No | Niet van toepassing |
+  | **Bestand bijwerken** | Nee | Niet van toepassing |
   ||||
 
 * SFTP-SSH-Triggers bieden geen ondersteuning voor het segmenteren van berichten. Bij het aanvragen van bestands inhoud selecteren triggers alleen bestanden die 15 MB of kleiner zijn. Als u bestanden groter dan 15 MB wilt ophalen, volgt u dit patroon:

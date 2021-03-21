@@ -6,10 +6,10 @@ ms.service: data-lake-analytics
 ms.topic: troubleshooting
 ms.date: 10/10/2019
 ms.openlocfilehash: 1236b83b410057e55015391772e37bd461a448d0
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102030610"
 ---
 # <a name="learn-how-to-troubleshoot-u-sql-runtime-failures-due-to-runtime-changes"></a>Meer informatie over het oplossen van problemen met U-SQL-runtime als gevolg van runtime wijzigingen

@@ -11,10 +11,10 @@ ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
 ms.openlocfilehash: 6dcbf4a570fb5cdb58c914ea5e4b1164ed6a76ca
-ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103564487"
 ---
 # <a name="migration-guide-sql-server-to-sql-managed-instance"></a>Migratie handleiding: SQL Server naar een door SQL beheerd exemplaar
@@ -130,7 +130,7 @@ Zie voor een gedetailleerde stapsgewijze zelf studie van deze migratie optie [SQ
    
 
 
-### <a name="backup-and-restore"></a>Back-ups en herstellen 
+### <a name="backup-and-restore"></a>Back-up en herstel 
 
 Een van de belangrijkste mogelijkheden van een Azure SQL Managed instance om snelle en eenvoudige database migratie mogelijk te maken is de systeem eigen terugzet bewerking van back-upbestanden van data bases () die zijn `.bak` opgeslagen op op [Azure Storage](https://azure.microsoft.com/services/storage/). Backup en Restore is een asynchrone bewerking op basis van de grootte van uw data base. 
 

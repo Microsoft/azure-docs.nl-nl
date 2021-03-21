@@ -14,10 +14,10 @@ ms.date: 09/17/2020
 ms.author: alkemper
 ms.custom: devx-track-csharp, mvc
 ms.openlocfilehash: 327bc687c466a30d4f92810e48dc08f822f752ec
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101726424"
 ---
 # <a name="tutorial-use-feature-flags-in-an-aspnet-core-app"></a>Zelfstudie: Functievlaggen gebruiken in een ASP.NET Core-app
@@ -151,7 +151,7 @@ De eenvoudigste manier om uw ASP.NET Core-toepassing te koppelen aan app-configu
     ```
     ---
 
-2. Open *Startup.cs* en werk de `Configure` `ConfigureServices` methode en bij om de ingebouwde middleware met de naam toe te voegen `UseAzureAppConfiguration` . Met deze middleware kunnen de waarden van de functievlaggen periodiek worden vernieuwd terwijl de ASP.NET Core-web-app aanvragen blijft ontvangen.
+2. Open *Start. cs* en werk de `Configure` `ConfigureServices` methode en bij om de ingebouwde middleware met de naam toe te voegen `UseAzureAppConfiguration` . Met deze middleware kunnen de waarden van de functievlaggen periodiek worden vernieuwd terwijl de ASP.NET Core-web-app aanvragen blijft ontvangen.
 
 
 

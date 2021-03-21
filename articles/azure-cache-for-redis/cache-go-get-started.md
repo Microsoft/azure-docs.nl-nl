@@ -8,10 +8,10 @@ ms.devlang: go
 ms.topic: quickstart
 ms.date: 01/08/2021
 ms.openlocfilehash: 04b582b5ef31e61039c5513ea2a4aa60f1c638e7
-ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102121334"
 ---
 # <a name="quickstart-use-azure-cache-for-redis-with-go"></a>Quickstart: Azure Cache voor Redis met Go gebruiken

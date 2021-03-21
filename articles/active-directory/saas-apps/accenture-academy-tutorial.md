@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/08/2021
 ms.author: jeedes
-ms.openlocfilehash: bb2bed588e212dc8dc8796fb775a3c1cbf42018e
-ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
+ms.openlocfilehash: b2886ab4036f1c0f1c9ef15aedaa970de9fd3aa1
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102450082"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104607191"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-accenture-academy"></a>Zelf studie: Azure Active Directory-integratie met eenmalige aanmelding (SSO) met Accenture Academy
 
@@ -141,10 +141,8 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 * Klik op **test deze toepassing** in azure Portal en u moet automatisch worden aangemeld bij de Accenture-Academy waarvoor u de SSO hebt ingesteld 
 
-U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u klikt op de tegel Accenture Academy in de app mijn apps, wordt u doorgestuurd naar de aanmeldings pagina van de toepassing om de aanmeldings stroom te initiëren en als u deze in de IDP-modus configureert, moet u automatisch worden aangemeld bij de Accenture-Academy waarvoor u de SSO hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u klikt op de tegel Accenture Academy in de app mijn apps, wordt u doorgestuurd naar de aanmeldings pagina van de toepassing om de aanmeldings stroom te initiëren en als u deze in de IDP-modus configureert, moet u automatisch worden aangemeld bij de Accenture-Academy waarvoor u de SSO hebt ingesteld. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nadat u Accenture Academy hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
-
-
+Nadat u Accenture Academy hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

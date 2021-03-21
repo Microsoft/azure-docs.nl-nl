@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: f47a8f1edb4afed41587eac3d539b5ad7cb8180f
-ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.openlocfilehash: 6db817999b415ebe2c4bb7cb4216ed1e9ad9c325
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103488462"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104655985"
 ---
 # <a name="quickstart-handle-sms-events"></a>Quickstart: SMS-gebeurtenissen verwerken
 
@@ -27,7 +27,7 @@ Aan de slag met Azure Communication Services met Azure Event Grid om SMS-gebeurt
 
 ## <a name="about-azure-event-grid"></a>Over Azure Event Grid
 
-[Azure Event Grid](../../../event-grid/overview.md) is een gebeurtenisservice in de cloud. In dit artikel leert u hoe u zich abonneert op gebeurtenissen voor [Communication Service-gebeurtenissen](../../concepts/event-handling.md) en hoe u een gebeurtenis activeert om het resultaat weer te geven. Normaal gesproken verzendt u gebeurtenissen naar een eindpunt dat de gebeurtenisgegevens verwerkt en vervolgens in actie komt. In dit artikel sturen we de gebeurtenissen naar een web-app die de berichten verzamelt en weergeeft.
+[Azure Event Grid](../../../event-grid/overview.md) is een gebeurtenisservice in de cloud. In dit artikel leert u hoe u zich abonneert op gebeurtenissen voor [Communication Service-gebeurtenissen](../../../event-grid/event-schema-communication-services.md) en hoe u een gebeurtenis activeert om het resultaat weer te geven. Normaal gesproken verzendt u gebeurtenissen naar een eindpunt dat de gebeurtenisgegevens verwerkt en vervolgens in actie komt. In dit artikel sturen we de gebeurtenissen naar een web-app die de berichten verzamelt en weergeeft.
 
 ## <a name="prerequisites"></a>Vereisten
 - Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
@@ -68,7 +68,7 @@ U kunt zich op specifieke gebeurtenissen abonneren om Event Grid te laten weten 
 
 Als u wordt gevraagd om de naam van een **Systeemonderwerp** op te geven, kunt u een unieke tekenreeks opgeven. Dit veld heeft geen invloed op uw ervaring en wordt gebruikt voor interne telemetrie.
 
-Bekijk de volledige lijst [door Azure Communication Services ondersteunde gebeurtenissen](../../concepts/event-handling.md).
+Bekijk de volledige lijst [door Azure Communication Services ondersteunde gebeurtenissen](https://docs.microsoft.com/azure/event-grid/event-schema-communication-services).
 
 :::image type="content" source="./media/handle-sms-events/select-events-create-eventsub.png" alt-text="Schermafbeelding met het ontvangen SMS-bericht en SMS-rapport met ontvangen gebeurtenistypen.":::
 
@@ -93,7 +93,7 @@ Om gebeurtenistriggers te bekijken, moeten we allereerst gebeurtenissen generere
 - `SMS Received`-gebeurtenissen worden gegenereerd wanneer het Communication Services-telefoonnummer een sms-bericht ontvangt. Als u een gebeurtenis wilt activeren, stuurt u een bericht van uw telefoon naar het telefoonnummer dat is gekoppeld aan uw Communication Services-resource.
 - `SMS Delivery Report Received`-gebeurtenissen worden gegenereerd wanneer u een sms naar een gebruikers stuurt via een Communication Services-telefoonnummer. Als u een gebeurtenis wilt activeren, moet u `Delivery Report` inschakelen in de opties van het [verstuurde sms-bericht](../telephony-sms/send.md). Probeer een bericht naar uw telefoon te sturen met `Delivery Report`. Voor het voltooien van deze actie worden kosten van een paar dollarcent of minder in rekening gebracht bij uw Azure-account.
 
-Bekijk de volledige lijst [door Azure Communication Services ondersteunde gebeurtenissen](../../concepts/event-handling.md).
+Bekijk de volledige lijst [door Azure Communication Services ondersteunde gebeurtenissen](https://docs.microsoft.com/azure/event-grid/event-schema-communication-services).
 
 ### <a name="receiving-sms-events"></a>SMS-gebeurtenissen ontvangen
 
@@ -103,7 +103,7 @@ Nadat u een van de bovenstaande acties hebt voltooid, ziet u dat de gebeurteniss
 
 :::image type="content" source="./media/handle-sms-events/sms-delivery-report-received.png" alt-text="Schermopname van het Event Grid Schema voor een gerapporteerde SMS-gebeurtenis.":::
 
-Meer informatie over de [gebeurtenisschema's en andere gebeurtenisconcepten](../../concepts/event-handling.md).
+Meer informatie over de [gebeurtenisschema's en andere gebeurtenisconcepten](https://docs.microsoft.com/azure/event-grid/event-schema-communication-services).
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
@@ -118,5 +118,5 @@ In deze quickstart leert u hoe u SMS-gebeurtenis gebruikt. U kunt SMS-berichten 
 
 U wilt mogelijk ook:
 
- - [Meer informatie over de concepten van gebeurtenisverwerking](../../concepts/event-handling.md)
+ - [Meer informatie over de concepten van gebeurtenisverwerking](../../../event-grid/event-schema-communication-services.md)
  - [Meer informatie over Event Grid](../../../event-grid/overview.md)

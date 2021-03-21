@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 01/07/2021
 ms.author: damendo
 ms.openlocfilehash: bcdb91d7516acb8f987a3f302c04fbd2d8594fc7
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98019768"
 ---
 # <a name="manage-packet-captures-with-azure-network-watcher-using-azure-rest-api"></a>Pakket opnames beheren met Azure Network Watcher met behulp van Azure REST API
@@ -24,7 +24,7 @@ ms.locfileid: "98019768"
 > - [Azure-portal](network-watcher-packet-capture-manage-portal.md)
 > - [PowerShell](network-watcher-packet-capture-manage-powershell.md)
 > - [Azure-CLI](network-watcher-packet-capture-manage-cli.md)
-> - [Azure REST API](network-watcher-packet-capture-manage-rest.md)
+> - [Azure REST-API](network-watcher-packet-capture-manage-rest.md)
 
 Met Network Watcher-pakket opname kunt u opname sessies maken om verkeer van en naar een virtuele machine bij te houden. Er worden filters voor de opname sessie gegeven om ervoor te zorgen dat u alleen het gewenste verkeer vastlegt. Met pakket opname kunt u netwerk afwijkingen zowel reactief als proactief vaststellen. Andere gebruiken zijn onder andere het verzamelen van netwerk statistieken, het verkrijgen van informatie over inbreuken op het netwerk, het opsporen van fouten in client-server communicatie en nog veel meer. Doordat pakket opnames op afstand kunnen worden geactiveerd, vereenvoudigt deze mogelijkheid de belasting van het hand matig uitvoeren van een pakket opname en op de gewenste computer, waardoor kost bare tijd wordt bespaard.
 

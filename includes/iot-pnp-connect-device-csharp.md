@@ -4,12 +4,12 @@ ms.author: dobett
 ms.service: iot-pnp
 ms.topic: include
 ms.date: 11/20/2020
-ms.openlocfilehash: 13d0bdf82052ff2c61c5b2c6010956c8fb27574d
-ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
-ms.translationtype: HT
+ms.openlocfilehash: 30ea75a2df63fa935314fc103fe1e7e092f655b2
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96122459"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104613058"
 ---
 In deze quickstart ziet u hoe u een voorbeeld van een IoT Plug and Play-apparaattoepassing maakt, hoe u de toepassing verbindt met uw IoT-hub en hoe u het hulpprogramma Azure IoT Explorer gebruikt om de telemetrie weer te geven die wordt verzonden. De voorbeeldtoepassing wordt geschreven in C# en is inbegrepen in de Azure IoT Samples for C#. Een ontwikkelaar van oplossingen kan het hulpprogramma Azure IoT Explorer gebruiken om inzicht te krijgen in de mogelijkheden van een IoT Plug and Play-apparaat zonder apparaatcode weer te geven.
 
@@ -64,7 +64,7 @@ Nadat het voorbeeld van de apparaatclient is gestart, gebruikt u het hulpprogram
 
 ## <a name="review-the-code"></a>De code bekijken
 
-Met dit voorbeeld wordt een eenvoudig IoT Plug and Play-thermostaatapparaat geïmplementeerd. Het model dat met dit voorbeeld wordt geïmplementeerd, maakt geen gebruik van IoT Plug and Play-[onderdelen](../articles/iot-pnp/concepts-components.md). Het [Digital Twins Definition Language-modelbestand (DTDL) voor het thermostaatapparaat](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/Thermostat.json) definieert de telemetrie, eigenschappen en opdrachten die het apparaat implementeert.
+Met dit voorbeeld wordt een eenvoudig IoT Plug and Play-thermostaatapparaat geïmplementeerd. Het model dat met dit voorbeeld wordt geïmplementeerd, maakt geen gebruik van IoT Plug and Play-[onderdelen](../articles/iot-pnp/concepts-modeling-guide.md). Het [Digital Twins Definition Language-modelbestand (DTDL) voor het thermostaatapparaat](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/Thermostat.json) definieert de telemetrie, eigenschappen en opdrachten die het apparaat implementeert.
 
 De apparaatcode maakt verbinding met uw IoT-hub met behulp van de standaardmethode `CreateFromConnectionString`. Het apparaat verzendt de model-id van het DTDL-model dat het in de verbindingsaanvraag implementeert. Een apparaat dat een model-id verzendt, is een IoT Plug and Play-apparaat:
 

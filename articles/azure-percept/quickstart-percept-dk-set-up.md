@@ -5,208 +5,195 @@ author: mimcco
 ms.author: mimcco
 ms.service: azure-percept
 ms.topic: quickstart
-ms.date: 02/15/2021
+ms.date: 03/17/2021
 ms.custom: template-quickstart
-ms.openlocfilehash: 49bf89d38edef6a9186cbdb5bb89a763339385b4
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: 9567ec2458a01825568cb853728f71db10228ee3
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102175818"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104608258"
 ---
 # <a name="set-up-your-azure-percept-dk-and-deploy-your-first-ai-model"></a>Stel uw Azure percept DK in en implementeer uw eerste AI-model
 
-Ga aan de slag met Azure percept DK en Azure percept Studio met behulp van de Azure percept DK Setup-ervaring om uw apparaat te verbinden met Azure en uw eerste AI-model te implementeren. Nadat u hebt gecontroleerd of uw Azure-account compatibel is met Azure percept Studio, voltooit u de installatie-ervaring om te controleren of uw Azure percept DK is geconfigureerd voor het maken van een Edge AI-proef versie van concepten.
+Voltooi de installatie van Azure percept DK om uw dev kit te configureren en uw eerste AI-model te implementeren. Nadat u hebt gecontroleerd of uw Azure-account compatibel is met Azure percept, doet u het volgende:
 
-Raadpleeg de hand leiding voor het [oplossen](./troubleshoot-dev-kit.md) van mogelijke oplossingen als u problemen ondervindt tijdens deze snel starten.
+- Verbind uw dev kit met een Wi-Fi netwerk
+- Een SSH-aanmelding instellen voor externe toegang tot uw dev kit
+- Een nieuwe IoT Hub maken voor gebruik met Azure percept
+- Verbind uw dev kit met uw IoT Hub en Azure-account
+
+Als u problemen ondervindt tijdens dit proces, raadpleegt u de [hand leiding](./how-to-troubleshoot-setup.md) voor het installeren van problemen voor mogelijke oplossingen.
 
 ## <a name="prerequisites"></a>Vereisten
 
-- Een Azure percept DK.
-- Een op Windows, Linux of OS X gebaseerde hostcomputer met Wi-Fi-functionaliteit en een webbrowser.
-- Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
-- Het Azure-account moet de rol ' eigenaar ' of ' Inzender ' hebben voor het abonnement. Meer informatie over [definities van Azure-rollen](https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles#azure-roles).
+- Een Azure percept DK (dev kit).
+- Een Windows-, Linux-of OS X-hostcomputer met Wi-Fi mogelijkheden en een webbrowser.
+- Een Azure-account met een actief abonnement. [Maak gratis een account.](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
+- Het Azure-account moet de rol **eigenaar** of **Inzender** hebben binnen het abonnement. Volg de onderstaande stappen om de rol van uw Azure-account te controleren. Raadpleeg de [documentatie voor toegangs beheer op basis van rollen](https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles#azure-roles)voor meer informatie over Azure Role-definities.
 
-### <a name="prerequisite-check"></a>Controle van vereisten
+    > [!CAUTION]
+    > Als u meerdere Azure-accounts hebt, kan uw browser referenties van een ander account in de cache opslaan. Om Verwar ring te voor komen, is het raadzaam om alle ongebruikte browser vensters te sluiten en u aan te melden bij de [Azure Portal](https://portal.azure.com/) voordat u de installatie-ervaring start. Raadpleeg de [hand leiding](./how-to-troubleshoot-setup.md) voor het oplossen van problemen voor aanvullende informatie over hoe u zeker weet dat u bent aangemeld met het juiste account.
 
-Volg deze stappen om te controleren of uw Azure-account een ' eigenaar ' of ' Inzender ' is voor het abonnement.
+### <a name="check-your-azure-account-role"></a>Controleer de rol van uw Azure-account
 
-1. Ga naar de Azure Portal en meld u aan met hetzelfde Azure-account dat u wilt gebruiken met Azure percept Studio. 
+Voer de volgende stappen uit om te controleren of uw Azure-account een ' eigenaar ' of ' Inzender ' is binnen het abonnement:
 
-    > [!NOTE]
-    > Als u meerdere Azure-accounts hebt, kan uw browser referenties van een ander account in de cache opslaan. Raadpleeg de gids voor probleem oplossing voor meer informatie over hoe u kunt controleren of u bent aangemeld met het juiste account.
+1. Ga naar de [Azure Portal](https://portal.azure.com/) en meld u aan met hetzelfde Azure-account dat u wilt gebruiken met Azure percept.
 
-1. Vouw het hoofd menu uit de linkerbovenhoek van het scherm uit en klik op abonnementen of selecteer abonnementen in het menu met pictogrammen op de start pagina. 
-    <!---
-    :::image type="content" source="./media/quickstart-percept-dk-setup/prereq-01-subscription.png" alt-text="supscription icon in Azure portal.":::
-    --->
-1. Selecteer uw abonnement in de lijst. Als uw abonnement niet in de lijst wordt weer geven, moet u ervoor zorgen dat u bent aangemeld met het juiste Azure-account. 
-    <!---
-    :::image type="content" source="./media/quickstart-percept-dk-setup/prereq-02-sub-list.png" alt-text="supscription list in Azure portal.":::
-    --->
-Als u een nieuw abonnement wilt maken, voert u [de volgende stappen uit](https://docs.microsoft.com/azure/cost-management-billing/manage/create-subscription).
+1. Klik op het pictogram **abonnementen** (dit lijkt op een gele toets).
 
-1. Selecteer toegangs beheer (IAM) in het menu abonnement
-1. Klik op de knop mijn toegang weer geven
-1. De rol controleren
-    - Als de rol van lezer wordt weer gegeven of als u een bericht ontvangt met de melding dat u geen machtigingen hebt om rollen weer te geven, moet u het nodige proces in uw organisatie volgen om de rol van uw account op te halen.
-    - Als de rol wordt weer gegeven als ' eigenaar ' of ' Inzender ', werkt uw account met Azure percept Studio. 
+1. Selecteer uw abonnement in de lijst. Als u uw abonnement niet ziet, zorg er dan voor dat u bent aangemeld met het juiste Azure-account. Als u een nieuw abonnement wilt maken, voert u [de volgende stappen uit](https://docs.microsoft.com/azure/cost-management-billing/manage/create-subscription).
+
+1. Selecteer **toegangs beheer (IAM)** in het menu abonnement.
+1. Klik op **Mijn toegang weer geven**.
+1. Controleer de rol:
+    - Als uw rol wordt vermeld als **lezer** of als u een bericht ontvangt met de melding dat u niet gemachtigd bent om rollen weer te geven, moet u het nodige proces in uw organisatie volgen om de rol van uw account te verhogen.
+    - Als uw rol wordt vermeld als **eigenaar** of **Inzender**, werkt uw account met Azure percept en kunt u de installatie-ervaring voortzetten.
 
 ## <a name="launch-the-azure-percept-dk-setup-experience"></a>De Setup-ervaring van Azure percept DK starten
 
-<!---
-> [!NOTE]
-> Connecting over ethernet? See [this how-to guide](<link needed>) for detailed instructions.
---->
-1. Verbind uw hostcomputer rechtstreeks met het Wi-Fi-toegangs punt van de dev kit. Dit is net zoals bij het maken van verbinding met een ander Wi-Fi-netwerk
-    - **netwerk naam**: SCZ-xxxx (waarbij ' xxxx ' de laatste vier cijfers van het Mac-netwerk adres van de dev kit is)
-    - **wacht woord**: is te vinden op de welkomst kaart die is geleverd bij de dev kit
+1. Sluit uw hostcomputer rechtstreeks aan op het Wi-Fi toegangs punt van de dev kit. Net als bij het maken van verbinding met een ander Wi-Fi netwerk opent u het netwerk en Internet instellingen op uw computer, klikt u op het volgende netwerk en voert u het netwerk wachtwoord in wanneer u hierom wordt gevraagd:
+
+    - **Netwerk naam**: afhankelijk van de versie van het besturings systeem van de dev kit is de naam van het Wi-Fi toegangs punt **SCZ-xxxx** of **apd-xxxx** (waarbij "xxxx" de laatste vier cijfers van het MAC-adres van de dev kit is)
+    - **Wacht woord**: is te vinden op de welkomst kaart die is geleverd bij de dev kit
 
     > [!WARNING]
-    > Tijdens de verbinding met het Azure percept DK Wi-Fi-toegangs punt, zal de hostcomputer tijdelijk geen verbinding met internet hebben. Actieve video vergaderingen, webstreaming of andere op het netwerk gebaseerde ervaringen worden onderbroken totdat stap 3 van de Azure percept DK Setup-ervaring is voltooid.
+    > Tijdens de verbinding met het Azure percept DK Wi-Fi toegangs punt wordt de verbinding van de hostcomputer met Internet tijdelijk verbroken. Actieve video vergaderingen, webstreaming of andere op het netwerk gebaseerde ervaringen worden onderbroken.
 
-1. Wanneer het apparaat is verbonden met het Wi-Fi-toegangs punt van de dev kit, wordt de Azure percept DK Setup-ervaring automatisch gestart in een nieuw browser venster. Als de app niet automatisch wordt geopend, kunt u deze hand matig starten door een browser venster te openen en naar te navigeren [http://10.1.1.1](http://10.1.1.1) . 
-
-1. Nu u de Azure percept Setup-ervaring hebt gestart, kunt u door gaan met de installatie. 
-
-    > [!NOTE]
-    > De Azure percept DK Setup Experience-webservice wordt afgesloten na 30 minuten van niet-gebruik en het volt ooien van de installatie-ervaring. Als dit gebeurt, wordt het aanbevolen om de dev kit opnieuw te starten om verbindings problemen met het Wi-Fi-toegangs punt van de dev kit te voor komen.
-
-## <a name="complete-the-azure-percept-dk-setup-experience"></a>De Setup-ervaring van Azure percept DK volt ooien
-
-1. Aan de slag: Klik op **volgende** in het welkomst scherm.
+1. Als de hostcomputer eenmaal verbinding heeft met het Wi-Fi toegangs punt van de dev kit, wordt de installatie-ervaring in een nieuw browser venster automatisch gestart met **uw. nieuwe. apparaat/** in de adres balk. Als het tabblad niet automatisch wordt geopend, start u de installatie-ervaring door naar te gaan [http://10.1.1.1](http://10.1.1.1) . Zorg ervoor dat uw browser is aangemeld met dezelfde referenties voor het Azure-account die u wilt gebruiken met Azure percept.
 
     :::image type="content" source="./media/quickstart-percept-dk-setup/main-01-welcome.png" alt-text="Welkomst pagina.":::
 
-1. Verbinding maken met Wi-Fi: Klik op de pagina netwerk verbinding op **verbinding maken met een nieuw WiFi-netwerk** om uw Devkit te verbinden met uw Wi-Fi-netwerk.
+    > [!CAUTION]
+    > De webservice Setup Experience wordt afgesloten na 30 minuten van niet-gebruik. Als dit het geval is, start u de dev kit opnieuw om verbindings problemen te voor komen met het Wi-Fi toegangs punt van de dev kit.
 
-    Als u deze dev kit eerder hebt verbonden met uw Wi-Fi-netwerk of als u al verbinding hebt met de Azure percept DK Setup-ervaring via uw Wi-Fi-netwerk, klikt u op de koppeling **overs Laan** .
+## <a name="complete-the-azure-percept-dk-setup-experience"></a>De Setup-ervaring van Azure percept DK volt ooien
 
-    :::image type="content" source="./media/quickstart-percept-dk-setup/main-02-connect-to-wi-fi.png" alt-text="Verbinding maken met Wi-Fi.":::
+1. Klik op **volgende** in het **welkomst** scherm.
 
-1. Selecteer uw Wi-Fi-netwerk in de beschik bare verbindingen en maak verbinding. (Uw lokale Wi-Fi-wacht woord is vereist)
+1. Klik op de pagina **netwerk verbinding** op **verbinding maken met een nieuw Wi-Fi-netwerk**.
 
-    :::image type="content" source="./media/quickstart-percept-dk-setup/main-03-select-wi-fi.png" alt-text="Selecteer Wi-Fi-netwerk."::: 
+    Als u uw dev kit al hebt verbonden met uw Wi-Fi netwerk, klikt u op **overs Laan**.
 
-1. Uw IP-adres kopiëren: Zodra uw Devkit is verbonden met het netwerk van uw keuze, noteert u het **IPv4-adres** dat op de pagina wordt weer gegeven. **U hebt dit IP-adres later nodig in deze Snelstartgids**. 
+1. Selecteer uw Wi-Fi netwerk in de lijst met beschik bare netwerken en klik op **verbinding maken**. Voer uw netwerk wachtwoord in wanneer u hierom wordt gevraagd.
+
+1. Zodra uw dev kit verbinding heeft gemaakt met het netwerk van uw keuze, wordt op de pagina het IPv4-adres weer gegeven dat is toegewezen aan uw dev kit. **Noteer het IPv4-adres dat op de pagina wordt weer gegeven.** U hebt het IP-adres nodig wanneer u via SSH verbinding maakt met uw dev kit voor het oplossen van problemen en updates van apparaten.
+
+    :::image type="content" source="./media/quickstart-percept-dk-setup/main-04-success-wi-fi.png" alt-text="IP-adres kopiëren.":::
 
     > [!NOTE]
     > Het IP-adres kan tijdens het opstarten van elk apparaat worden gewijzigd.
 
-    :::image type="content" source="./media/quickstart-percept-dk-setup/main-04-success-wi-fi.png" alt-text="IP-adres kopiëren.":::
-
-1. Lees en accepteer de gebruiksrecht overeenkomst-Lees de gebruiksrecht overeenkomst, selecteer ik heb de **licentie overeenkomst gelezen en ga hiermee akkoord** (moet naar de onderkant van de overeenkomst schuiven) en klik op **volgende**.
+1. Lees de gebruiksrecht overeenkomst, selecteer **Ik heb de licentie overeenkomst gelezen en ga hiermee akkoord** (u moet naar de onderkant van de overeenkomst schuiven) en klik op **volgende**.
 
     :::image type="content" source="./media/quickstart-percept-dk-setup/main-05-eula.png" alt-text="OVEREENKOMST accepteren.":::
 
-1. Maak uw SSH-aanmeldings account: Stel SSH in voor externe toegang tot uw Devkit. Maak een SSH-gebruikers naam en-wacht woord. 
+1. Voer de naam en het wacht woord van een SSH-account **in en noteer uw aanmeldings gegevens voor later gebruik**.
 
     > [!NOTE]
-    > SSH (Secure Shell) is een netwerk protocol dat wordt gebruikt voor beveiligde communicatie tussen het hostapparaat en de dev kit. Zie [dit artikel](https://en.wikipedia.org/wiki/SSH_(Secure_Shell))voor meer informatie over SSH.
+    > SSH (Secure Shell) is een netwerk protocol waarmee u op afstand verbinding met de dev kit kunt maken via een hostcomputer.
 
-    :::image type="content" source="./media/quickstart-percept-dk-setup/main-06-ssh-login.png" alt-text="SSH-account maken."::: 
+1. Klik op de volgende pagina op **instellen als nieuw apparaat** om een nieuw apparaat te maken binnen uw Azure-account.
 
-1. Start het verbindings proces van de dev kit: Klik in het volgende scherm op **verbinding maken met een nieuw apparaat** om het proces van het verbinden van uw dev kit met Azure IOT hub te starten. 
+1. Klik op **kopiëren** om de code van uw apparaat te kopiëren. Klik daarna op **Aanmelden bij Azure**.
 
-    <!---
-    Connecting with an existing IoT Edge device connection string? See this [how-to guide](<link needed>) for reference.
-    --->
-    :::image type="content" source="./media/quickstart-percept-dk-setup/main-07-connect-device.png" alt-text="Verbinding maken met Azure."::: 
+    :::image type="content" source="./media/quickstart-percept-dk-setup/main-08-copy-code.png" alt-text="Kopieer de apparaatcode.":::
 
-1. De apparaatcode kopiëren: Klik op de koppeling **kopiëren** om de code van uw apparaat te kopiëren. Klik vervolgens op **Aanmelden bij Azure**. 
+1. Er wordt een nieuw browser tabblad geopend met een venster met de tekst **code invoeren**. Plak de code in het venster en klik op **volgende**. Sluit het tabblad **Welkom** niet met het installatie proces.
 
-    :::image type="content" source="./media/quickstart-percept-dk-setup/main-08-copy-code.png" alt-text="Kopieer de apparaatcode."::: 
+    :::image type="content" source="./media/quickstart-percept-dk-setup/main-09-enter-code.png" alt-text="Voer de code van het apparaat in.":::
 
-1. De code van het apparaat plakken: er wordt een nieuw browser tabblad geopend met een venster waarin u wordt gevraagd om de gekopieerde apparaatcode. Plak de code in het venster en klik op **volgende**.
+1. Meld u aan bij Azure percept met de referenties van het Azure-account die u wilt gebruiken met uw dev kit. Zorg dat het browser tabblad geopend blijft wanneer dit is voltooid.
 
-    :::image type="content" source="./media/quickstart-percept-dk-setup/main-09-enter-code.png" alt-text="Voer de code van het apparaat in."::: 
-
-1. Aanmelden bij Azure: in het volgende venster moet u zich aanmelden met het Azure-account dat u aan het begin van de Snel starten hebt gecontroleerd. Voer de aanmeldings gegevens in en klik op **volgende**. 
-
-    > [!NOTE]
+    > [!CAUTION]
     > Uw browser kan automatisch andere referenties in de cache opslaan. Controleer of u zich met het juiste account aanmeldt.
 
-    :::image type="content" source="./media/quickstart-percept-dk-setup/main-10-azure-sign-in.png" alt-text="Aanmelden bij Azure.":::
- 
-1. Sluit het tabblad Setup-ervaring niet op deze stap-nadat u zich hebt aangemeld, wordt een scherm bevestiging weer gegeven waarin u bent aangemeld. Hoewel u het venster veel sluiten hebt, wordt u **aangeraden geen Windows-vensters te sluiten**. 
+    Nadat u zich hebt aangemeld bij Azure% op het apparaat, keert u terug naar het **welkomst** tabblad om door te gaan met de installatie.
 
-    :::image type="content" source="./media/quickstart-percept-dk-setup/main-11-sign-in-success.png" alt-text="Aanmelden geslaagd."::: 
+1. Wanneer de pagina **uw apparaat toewijzen aan uw Azure IOT hub** wordt weer gegeven op het tabblad **Welkom** , voert u een van de volgende acties uit:
 
-1. Ga terug naar het browser tabblad dat als host fungeert voor de installatie-ervaring.
-1. Selecteer uw IoT Hub optie
-    - Als u al een IoT Hub hebt en deze wordt weer gegeven op deze pagina, kunt u deze selecteren en naar **stap 17 gaan**.
-    - Als u geen IoT Hub hebt of als u een nieuwe wilt maken, gaat u naar de onderkant van de lijst en klikt u op **een nieuwe Azure-IOT hub maken**.
+    - Als u al een IoT Hub hebt dat u wilt gebruiken met Azure percept en dit op deze pagina wordt weer gegeven, selecteert u het item en gaat u naar stap 15.
+    - Als u geen IoT Hub hebt of een nieuw item wilt maken, klikt u op **een nieuwe Azure-IOT hub maken**.
 
-    :::image type="content" source="./media/quickstart-percept-dk-setup/main-13-iot-hub-select.png" alt-text="Selecteer een IoT Hub."::: 
+    > [!IMPORTANT]
+    > Als u een IoT Hub hebt, maar deze niet in de lijst wordt weer gegeven, bent u mogelijk aangemeld bij Azure percept met de verkeerde referenties. Raadpleeg de [hand leiding](./how-to-troubleshoot-setup.md) voor het oplossen van problemen bij het installeren van.
 
-1. Maak uw nieuwe IoT Hub: Vul alle velden op deze pagina in. 
-    - Selecteer het Azure-abonnement dat u wilt gebruiken met Azure percept Studio
-    - Selecteer een bestaande resource groep. Als er nog geen bestaat, klikt u op nieuwe maken en volgt u de aanwijzingen. 
-    - Selecteer de Azure-regio. 
-    - Uw nieuwe IoT Hub een naam geven
-    - De prijs categorie selecteren (deze komt meestal overeen met het abonnement)
+    :::image type="content" source="./media/quickstart-percept-dk-setup/main-13-iot-hub-select.png" alt-text="Selecteer een IoT Hub.":::
 
-    :::image type="content" source="./media/quickstart-percept-dk-setup/main-14-create-iot-hub.png" alt-text="Maak een nieuwe IoT Hub."::: 
+1. Als u een nieuwe IoT Hub wilt maken, voert u de volgende velden in:
 
-1. Wacht totdat de IoT Hub geïmplementeerd is. Dit kan enkele minuten duren
-
-    :::image type="content" source="./media/quickstart-percept-dk-setup/main-15-iot-hub-deploy.png" alt-text="IoT Hub implementeren."::: 
-
-1. Uw dev kit registreren: wanneer de implementatie is voltooid, klikt u op de knop **registreren**
-
-    :::image type="content" source="./media/quickstart-percept-dk-setup/main-16-iot-hub-success.png" alt-text="IoT Hub is geïmplementeerd."::: 
-
-1. Geef een naam op voor de dev kit: Voer een apparaatnaam in voor de dev kit en klik op **volgende**.
-
-    :::image type="content" source="./media/quickstart-percept-dk-setup/main-17-device-name.png" alt-text="Geef het apparaat een naam."::: 
-
-1. Wacht tot de standaard AI-modellen zijn gedownload. Dit kan enkele minuten duren
-
-    :::image type="content" source="./media/quickstart-percept-dk-setup/main-18-finalize.png" alt-text="De installatie wordt voltooid."::: 
-
-1. Zie Vision AI in actie-uw Devkit is gekoppeld aan uw Azure IoT Hub en heeft het standaard Vision AI-object detectie model ontvangen. De Azure percept Vision-camera kan nu een interferentie voor object detectie maken zonder verbinding met de Cloud. 
-
-    :::image type="content" source="./media/quickstart-percept-dk-setup/main-19-2-preview-video-output.png" alt-text="Klik op Preview video-uitvoer."::: 
-       
-    > [!NOTE]
-    > Het voorbereidings proces en de verbinding met de Wi-Fi-toegang van het apparaat op de hostcomputer worden op dit moment uitgeschakeld, maar uw dev kit blijft verbonden met internet.   U kunt de voorbereidings ervaring opnieuw starten met het opnieuw opstarten van de dev kit, waarmee u de onboarding en het apparaat opnieuw verbindt met een andere IOT-hub die is gekoppeld aan hetzelfde of een ander Azure-abonnement.
-
-    :::image type="content" source="./media/quickstart-percept-dk-setup/main-19-0-warning.png" alt-text="Waarschuwing voor het instellen van de verbinding."::: 
-
-1. Ga door naar het Azure Portal-keer terug naar het venster Setup-ervaring en klik op de knop **door gaan naar de Azure Portal** om uw aangepaste AI-modellen in azure percept Studio te maken.
+    - Selecteer het Azure-abonnement dat u wilt gebruiken met Azure percept.
+    - Selecteer een bestaande resource groep. Als er nog geen bestaat, klikt u op **Nieuw maken** en volgt u de aanwijzingen.
+    - Selecteer de Azure-regio die het dichtst bij uw fysieke locatie ligt.
+    - Geef uw nieuwe IoT Hub een naam.
+    - Selecteer de prijs categorie S1 (standaard).
 
     > [!NOTE]
-    > Controleer of de hostcomputer niet meer is verbonden met het toegangs punt van de dev kit in uw WiFi-instellingen en of de computer nu opnieuw verbinding maakt met uw lokale WiFi.
+    > Als u uiteindelijk een hogere [bericht doorvoer](https://docs.microsoft.com/azure/iot-hub/iot-hub-scaling#message-throughput) nodig hebt voor uw Edge AI-toepassingen, kunt u uw IOT hub op elk gewenst moment [bijwerken naar een hogere standaard categorie](https://docs.microsoft.com/azure/iot-hub/iot-hub-upgrade) in azure Portal. B-en F-lagen bieden geen ondersteuning voor Azure percept.
 
-    :::image type="content" source="./media/quickstart-percept-dk-setup/main-20-azure-portal-continue.png" alt-text="Ga naar Azure percept Studio."::: 
+1. IoT Hub implementatie kan enkele minuten duren. Wanneer de implementatie is voltooid, klikt u op **registreren**.
 
-## <a name="view-your-device-in-the-azure-percept-studio-and-deploy-common-prebuilt-sample-apps"></a>Uw apparaat weer geven in azure percept Studio en veelgebruikte, vooraf gebouwde voor beeld-Apps implementeren
+    :::image type="content" source="./media/quickstart-percept-dk-setup/main-16-iot-hub-success.png" alt-text="IoT Hub is geïmplementeerd.":::
 
-1. Bekijk uw lijst met apparaten op de overzichts pagina van [Azure percept Studio](https://go.microsoft.com/fwlink/?linkid=2135819) . De overzichts pagina van Azure percept is uw start punt voor toegang tot veel verschillende werk stromen voor zowel het begin als het geavanceerde AI-rand model en de ontwikkeling van oplossingen
+1. Voer een apparaatnaam in voor de dev kit en klik op **volgende**.
+
+1. Wacht totdat de apparaten zijn gedownload. Dit kan enkele minuten duren.
+
+    :::image type="content" source="./media/quickstart-percept-dk-setup/main-18-finalize.png" alt-text="De installatie wordt voltooid.":::
+
+1. Wanneer de installatie van het **apparaat is voltooid.** de dev kit is gekoppeld aan uw IoT Hub en de benodigde software is gedownload. Uw dev kit verbreekt automatisch de verbinding met het Wi-Fi toegangs punt, wat resulteert in de volgende twee meldingen:
+
+    <!---
+    > [!NOTE]
+    > The onboarding process and connection to the device Wifi access to your host computer shuts down at this point, but your dev kit will stay connected to the internet.   You can restart the onboarding experience with a dev kit reboot, which will allow you to go back through the onboarding and reconnect the device to a different IOT hub associated with the same or a different Azure Subscription..
+    --->
+
+    :::image type="content" source="./media/quickstart-percept-dk-setup/main-19-0-warning.png" alt-text="Waarschuwing voor het instellen van de verbinding.":::
+
+1. Verbind uw hostcomputer met het Wi-Fi netwerk waarmee uw Devkit is verbonden in stap 2.
+
+1. Klik op **door gaan naar de Azure Portal**.
+
+    :::image type="content" source="./media/quickstart-percept-dk-setup/main-20-azure-portal-continue.png" alt-text="Ga naar Azure percept Studio.":::
+
+## <a name="view-your-dev-kit-video-stream-and-deploy-a-sample-model"></a>Bekijk de video stroom van uw dev kit en implementeer een voorbeeld model
+
+1. De [overzichts pagina van Azure percept Studio](https://go.microsoft.com/fwlink/?linkid=2135819) is uw start punt voor het openen van veel verschillende werk stromen voor de ontwikkeling van de eerste en geavanceerde Edge AI-oplossing. Om aan de slag te gaan, klikt u op **apparaten** in het menu links.
 
     :::image type="content" source="./media/quickstart-percept-dk-setup/portal-01-get-device-list.png" alt-text="De lijst met apparaten weer geven.":::
-    
-1. Controleer of het apparaat dat u zojuist hebt gemaakt, is verbonden en klik erop.
+
+1. Controleer of uw dev kit wordt weer gegeven als **verbonden** en klik erop om de pagina apparaat weer te geven.
 
     :::image type="content" source="./media/quickstart-percept-dk-setup/portal-02-select-device.png" alt-text="Selecteer uw apparaat.":::
 
-1. Bekijk de stream van uw apparaat om te zien wat uw ontwikkelaars Kit-camera te zien krijgt. Een standaard object detectie model wordt uit het vak geïmplementeerd en detecteert een aantal algemene objecten.
+1. Klik op **de stream van uw apparaat weer geven**. Als dit de eerste keer is dat de video stroom van uw apparaat wordt weer gegeven, ziet u een melding dat er een nieuw model in de rechter bovenhoek wordt geïmplementeerd. Dit kan enkele minuten duren.
 
-    > [!NOTE]
-    > de eerste keer dat u dit doet op een nieuw apparaat, krijgt u een melding dat er een nieuwe module in de rechter bovenhoek wordt geïmplementeerd.  Zodra dit is voltooid, kunt u het venster met de camera video stream starten. 
-    
     :::image type="content" source="./media/quickstart-percept-dk-setup/portal-03-1-start-video-stream.png" alt-text="Bekijk uw video stroom.":::
-    
+
+    Zodra het model is geïmplementeerd, krijgt u een andere melding met een koppeling naar een **weergave stroom** . Klik op de koppeling om de video stroom van uw Azure percept Vision-camera in een nieuw browser venster weer te geven. De dev kit is vooraf geladen met een AI-model dat automatisch object detectie van veel algemene objecten uitvoert.
+
     :::image type="content" source="./media/quickstart-percept-dk-setup/portal-03-2-object-detection.png" alt-text="Zie object detectie.":::
 
-1. Verken vooraf gemaakte voor beeld-AI-modellen.   Azure precept Studio heeft een aantal gemeen schappelijke vooraf gemaakte steek proeven die met één klik kunnen worden geïmplementeerd.   Selecteer een voorbeeld model implementeren om deze te bekijken en te implementeren.
+1. Azure percept Studio heeft ook een aantal voor beelden van AI-modellen. Als u een voorbeeld model wilt implementeren in uw dev kit, gaat u terug naar de pagina apparaat en klikt u op **een voorbeeld model implementeren**.
 
     :::image type="content" source="./media/quickstart-percept-dk-setup/portal-04-explore-prebuilt.png" alt-text="Verken vooraf ontwikkelde modellen.":::
-    
-1. Implementeer een nieuw vooraf ontworpen voor beeld op het aangesloten apparaat. Selecteer een voor beeld in de bibliotheek en klik op implementeren op apparaat.
+
+1. Selecteer een voorbeeld model in de bibliotheek en klik op **implementeren op apparaat**.
 
     :::image type="content" source="./media/quickstart-percept-dk-setup/portal-05-2-select-journey.png" alt-text="Zie object detectie in actie.":::
 
+1. Zodra het model is geïmplementeerd, ziet u een melding met een koppeling in de **weergave stroom** in de rechter bovenhoek van het scherm. Als u het model dezicht in actie, klikt u op de koppeling in de melding of gaat u terug naar de pagina apparaat en klikt u op de **Stream van uw apparaat weer geven**. Alle modellen die eerder in de dev kit werden uitgevoerd, worden nu vervangen door het nieuwe model.
+
+## <a name="video-walkthrough"></a>Video-overzicht
+
+Voor een visueel overzicht van de stappen die hierboven worden beschreven, raadpleegt u de volgende video (installatie-ervaring begint bij 0:50):
+
+</br>
+
+> [!VIDEO https://www.youtube.com/embed/-dmcE2aQkDE]
+
 ## <a name="next-steps"></a>Volgende stappen
 
-U kunt een vergelijk bare stroom volgen om [vooraf gebouwde spraak modellen](./tutorial-no-code-speech.md)uit te proberen.
+> [!div class="nextstepaction"]
+> [Een oplossing voor No-code Vision maken](./tutorial-nocode-vision.md)

@@ -6,10 +6,10 @@ author: TimothyMothra
 ms.author: tilee
 ms.date: 04/23/2019
 ms.openlocfilehash: 29922f088a51e4876e5e2ec8fe87c3bbce4482f3
-ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102521676"
 ---
 # <a name="application-insights-agent-formerly-named-status-monitor-v2-detailed-instructions"></a>Application Insights-agent (voorheen met de naam Status Monitor v2): gedetailleerde instructies

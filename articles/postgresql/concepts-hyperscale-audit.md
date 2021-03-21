@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 01/29/2021
 ms.openlocfilehash: 8a36062a2d29bcec10279d73211526a0dcba619e
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101702110"
 ---
 # <a name="audit-logging-in-azure-database-for-postgresql---hyperscale-citus"></a>Audit logboek registratie in Azure Database for PostgreSQL-grootschalige (Citus)
@@ -42,7 +42,7 @@ U moet pgAudit-para meters configureren om de logboek registratie te starten. De
 
 > [!NOTE]
 > Als `pgaudit.log_client` wordt ingesteld op aan, worden logboeken omgeleid naar een client proces (zoals psql) in plaats van naar het bestand te schrijven. Deze instelling moet over het algemeen uitgeschakeld blijven. <br> <br>
-> `pgaudit.log_level` is alleen ingeschakeld wanneer `pgaudit.log_client` zich op bevindt.
+> `pgaudit.log_level` wordt alleen ingeschakeld als `pgaudit.log_client` aan is.
 
 > [!NOTE]
 > In Azure Database for PostgreSQL-grootschalige (Citus) `pgaudit.log` kan niet worden ingesteld met behulp van een `-` (minteken) snelkoppeling, zoals beschreven in de pgAudit-documentatie. Alle vereiste instructie klassen (lezen, schrijven, enz.) moeten afzonderlijk worden opgegeven.

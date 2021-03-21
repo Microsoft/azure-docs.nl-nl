@@ -13,10 +13,10 @@ ms.date: 07/17/2020
 ms.author: hahamil
 ms.custom: aaddev, scenarios:getting-started, languages:JavaScript, devx-track-js
 ms.openlocfilehash: dcb82e6cc50a2ff3291d5a900ec9367d69dcdde6
-ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103224908"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-a-javascript-spa-using-the-auth-code-flow-with-pkce"></a>Snelstartgids: gebruikers aanmelden en een toegangs token verkrijgen in een Java script-beveiligd-wachtwoord verificatie met behulp van de auth-code stroom met PKCE 

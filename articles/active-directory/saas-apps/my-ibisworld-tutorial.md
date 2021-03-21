@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 08/31/2020
 ms.author: jeedes
 ms.openlocfilehash: 56aa7c41934506c7de0c8d5cebe84eb5a6bc2164
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102174611"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-my-ibisworld"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met My IBISWorld

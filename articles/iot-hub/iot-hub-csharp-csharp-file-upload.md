@@ -11,10 +11,10 @@ ms.date: 07/04/2017
 ms.author: robinsh
 ms.custom: mqtt, devx-track-csharp
 ms.openlocfilehash: 43cafb8c5efe0581fe7c4136aa41980b3d817be2
-ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99981405"
 ---
 # <a name="upload-files-from-your-device-to-the-cloud-with-iot-hub-net"></a>Bestanden van uw apparaat uploaden naar de Cloud met IoT Hub (.NET)
@@ -70,7 +70,7 @@ In deze sectie wijzigt u de apparaat-app die u hebt gemaakt in [Cloud-naar-appar
 
     ![Weer geven waar de afbeeldings eigenschap moet worden bijgewerkt voor de map kopiëren naar uitvoermap](./media/iot-hub-csharp-csharp-file-upload/image-properties.png)
 
-1. Voeg in het bestand **Program.cs** de volgende instructies toe boven aan het bestand:
+1. Voeg in het bestand **Program. cs** de volgende instructies toe boven aan het bestand:
 
     ```csharp
     using System.IO;
@@ -127,7 +127,7 @@ In deze sectie schrijft u een .NET-console-app die berichten over het uploaden v
 
     Deze stap downloadt, installeert en voegt een verwijzing toe naar het [Azure IOT Service SDK NuGet-pakket](https://www.nuget.org/packages/Microsoft.Azure.Devices/) in het **ReadFileUploadNotification** -project.
 
-1. Voeg in het bestand **Program.cs** voor dit project de volgende instructie toe boven aan het bestand:
+1. Voeg in het bestand **Program. cs** voor dit project de volgende instructie toe boven aan het bestand:
 
     ```csharp
     using Microsoft.Azure.Devices;

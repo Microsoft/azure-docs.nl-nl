@@ -3,14 +3,14 @@ title: Schema's in Azure Automation beheren
 description: In dit artikel leest u hoe u een planning maakt en gebruikt in Azure Automation.
 services: automation
 ms.subservice: shared-capabilities
-ms.date: 09/10/2020
+ms.date: 03/19/2021
 ms.topic: conceptual
-ms.openlocfilehash: f40e3d555d6e1472b9d2368a114ee27d588f6383
-ms.sourcegitcommit: 6776f0a27e2000fb1acb34a8dddc67af01ac14ac
+ms.openlocfilehash: 6f7cd1f3684bb14d25a77fe8e3980e8e2041808a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "103149474"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104669556"
 ---
 # <a name="manage-schedules-in-azure-automation"></a>Schema's in Azure Automation beheren
 
@@ -38,7 +38,7 @@ Met de cmdlets in de volgende tabel worden Automation-schema's gemaakt en beheer
 
 ## <a name="create-a-schedule"></a>Een planning maken
 
-U kunt een nieuw schema maken voor uw runbooks in de Azure Portal of met Power shell. Als u wilt voor komen dat uw runbooks en de processen worden geautomatiseerd, moet u eerst runbooks met gekoppelde planningen testen met een Automation-account dat is toegewezen voor testen. Een test valideert dat uw geplande runbooks correct blijven werken. Als er een probleem wordt weer geven, kunt u problemen oplossen en alle vereiste wijzigingen Toep assen voordat u de bijgewerkte runbook-versie naar productie migreert.
+U kunt een nieuw schema voor uw runbooks maken op basis van de Azure Portal, met Power shell of met een ARM-sjabloon (Azure Resource Manager). Als u wilt voor komen dat uw runbooks en de processen worden geautomatiseerd, moet u eerst runbooks met gekoppelde planningen testen met een Automation-account dat is toegewezen voor testen. Een test valideert dat uw geplande runbooks correct blijven werken. Als er een probleem wordt weer geven, kunt u problemen oplossen en alle vereiste wijzigingen Toep assen voordat u de bijgewerkte runbook-versie naar productie migreert.
 
 > [!NOTE]
 > Uw Automation-account haalt niet automatisch nieuwe versies van modules op, tenzij u deze hand matig hebt bijgewerkt door de optie [Azure-modules bijwerken](../automation-update-azure-modules.md) uit **modules** te selecteren. Azure Automation gebruikt de nieuwste modules in uw Automation-account wanneer een nieuwe geplande taak wordt uitgevoerd. 

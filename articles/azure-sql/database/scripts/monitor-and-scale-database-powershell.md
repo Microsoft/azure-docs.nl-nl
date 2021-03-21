@@ -12,10 +12,10 @@ ms.author: wiassaf
 ms.reviewer: sstein
 ms.date: 03/12/2019
 ms.openlocfilehash: 04c19ca8fbdaed85225b5af128c72d393e5350e8
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100573261"
 ---
 # <a name="use-powershell-to-monitor-and-scale-a-single-database-in-azure-sql-database"></a>PowerShell gebruiken om één individuele database in Azure SQL te bewaken en de schaal ervan aan te passen
@@ -41,7 +41,7 @@ Als u PowerShell lokaal wilt installeren en gebruiken, is voor deze zelfstudie A
 
 ## <a name="clean-up-deployment"></a>Opschonen van implementatie
 
-Gebruik de volgende opdracht om de resourcegroep en alle resources die eraan zijn gekoppeld te verwijderen.
+Gebruik de volgende opdracht om de resourcegroep en alle resources die er aan zijn gekoppeld te verwijderen.
 
 ```powershell
 Remove-AzResourceGroup -ResourceGroupName $resourcegroupname

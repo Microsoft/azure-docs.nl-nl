@@ -6,14 +6,16 @@ ms.author: jasonh
 ms.service: data-catalog
 ms.topic: quickstart
 ms.date: 05/26/2020
-ms.openlocfilehash: a7d575b92bff69c13ded70187005ce1db018ea4c
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
-ms.translationtype: HT
+ms.openlocfilehash: a56e5a4cae7c5a8e931b074f08a7152e53a8eb31
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92151994"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104674730"
 ---
 # <a name="quickstart-create-an-azure-data-catalog"></a>Quickstart: Een Azure Data Catalog maken
+
+[!INCLUDE [Azure Purview redirect](../../includes/data-catalog-use-purview.md)]
 
 Azure Data Catalog is een volledig beheerde cloudservice die als een registratie- en detectiesysteem voor gegevensassets van ondernemingen fungeert. Zie [Wat is Azure Data Catalog?](overview.md) voor een gedetailleerd overzicht.
 

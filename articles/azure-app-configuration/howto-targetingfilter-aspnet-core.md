@@ -1,5 +1,5 @@
 ---
-title: Gefaseerde implementatie van functies voor doel groepen inschakelen
+title: Gefaseerde implementatie van functies voor doelgroepen inschakelen
 titleSuffix: Azure App Configuration
 description: Meer informatie over het inschakelen van de gefaseerde implementatie van functies voor doel groepen
 ms.service: azure-app-configuration
@@ -8,13 +8,13 @@ ms.author: alkemper
 ms.topic: conceptual
 ms.date: 11/20/2020
 ms.openlocfilehash: c415eaeab2edd0a1b324bba4266266201cb50cbf
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96929681"
 ---
-# <a name="enable-staged-rollout-of-features-for-targeted-audiences"></a>Gefaseerde implementatie van functies voor doel groepen inschakelen
+# <a name="enable-staged-rollout-of-features-for-targeted-audiences"></a>Gefaseerde implementatie van functies voor doelgroepen inschakelen
 
 Met functie vlaggen kunt u de functionaliteit van uw toepassing dynamisch activeren of deactiveren. Functie filters bepalen de status van een functie vlag elke keer dat deze wordt geëvalueerd. De `Microsoft.FeatureManagement` bibliotheek bevat `TargetingFilter` , waarmee een functie vlag wordt ingeschakeld voor een opgegeven lijst met gebruikers en groepen, of voor een opgegeven percentage gebruikers. `TargetingFilter` is ' Plak '. Dit betekent dat zodra een afzonderlijke gebruiker een functie heeft ontvangen, deze functie blijft zien voor alle toekomstige aanvragen. U kunt gebruiken `TargetingFilter` om een functie in te scha kelen voor een specifiek account tijdens een demo, zodat u nieuwe functies geleidelijk kunt implementeren voor gebruikers in verschillende groepen of ' belsignalen ' en nog veel meer.
 
@@ -46,7 +46,7 @@ Op dit moment kunt u de functie vlag gebruiken om de functie in of uit te scha k
    dotnet add package Microsoft.FeatureManagement.AspNetCore
    ```
 
-1. Een *TestTargetingContextAccessor.cs* -bestand toevoegen:
+1. Voeg een bestand *TestTargetingContextAccessor. cs* toe:
 
     ```csharp
     using Microsoft.AspNetCore.Http;
@@ -91,7 +91,7 @@ Op dit moment kunt u de functie vlag gebruiken om de functie in of uit te scha k
     }
     ```
 
-1. Voeg in *Startup.cs* een verwijzing toe aan de naam ruimte *micro soft. FeatureManagement. FeatureFilters* :
+1. Voeg in *Startup. cs* een verwijzing toe aan de naam ruimte *micro soft. FeatureManagement. FeatureFilters* :
 
     ```csharp
     using Microsoft.FeatureManagement.FeatureFilters;

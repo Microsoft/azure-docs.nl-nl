@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 02/22/2021
 ms.author: alkohli
 ms.openlocfilehash: a04243093b89b6a2498efc48f80cbd7a47d57337
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102437720"
 ---
 # <a name="create-certificates-for-your-azure-stack-edge-pro-using-azure-stack-hub-readiness-checker-tool"></a>Certificaten maken voor uw Azure Stack Edge Pro met behulp van Azure Stack hub-gereedheids controleprogramma 
@@ -73,7 +73,7 @@ Volg deze stappen om de Azure Stack Edge Pro-apparaten voor te bereiden:
     
 4. Als u een certificaat aanvraag wilt maken, geeft u de volgende informatie op. Als u een VPN-certificaat genereert, zijn sommige van deze invoer niet van toepassing.
     
-    |Invoer |Description  |
+    |Invoer |Beschrijving  |
     |---------|---------|
     |`OutputRequestPath`|Het bestandspad op de lokale client waar u de certificaat aanvragen wilt maken.        |
     |`DeviceName`|De naam van uw apparaat op de pagina **apparaten** in de lokale webgebruikersinterface van uw apparaat. <br> Dit veld is niet vereist voor een VPN-certificaat.         |

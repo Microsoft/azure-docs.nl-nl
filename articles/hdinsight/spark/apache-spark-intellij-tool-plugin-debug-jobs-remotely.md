@@ -6,10 +6,10 @@ ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 11/28/2017
 ms.openlocfilehash: 1daf59c47bf71ad019011036bf42bf6727754345
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98940348"
 ---
 # <a name="use-azure-toolkit-for-intellij-to-debug-apache-spark-applications-remotely-in-hdinsight-through-vpn"></a>Azure-toolkit voor IntelliJ gebruiken om fout opsporing uit te Apache Spark toepassingen op afstand in HDInsight via VPN
@@ -56,11 +56,11 @@ Het is raadzaam om ook een Apache Spark cluster in azure HDInsight te maken dat 
 
     ![Hosts in Apache Ambari selecteren](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/apache-ambari-hosts1.png)
 
-1. U ziet een lijst met hoofd knooppunten, Worker-knoop punten en Zookeeper-knoop punten. De hoofd knooppunten hebben een voor voegsel van **HN** _. Selecteer het eerste hoofd knooppunt.
+1. U ziet een lijst met hoofd knooppunten, Worker-knoop punten en Zookeeper-knoop punten. De hoofd knooppunten hebben een voor voegsel van **HN***. Selecteer het eerste hoofd knooppunt.
 
     ![Het hoofd knooppunt zoeken in Apache Ambari](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/ambari-cluster-headnodes.png)
 
-1. In het deel venster _ *samen vatting** onder aan de pagina die wordt geopend, kopieert u het **IP-adres** van het hoofd knooppunt en de **hostnaam**.
+1. In het deel venster **samen vatting** onder aan de pagina die wordt geopend, kopieert u het **IP-adres** van het hoofd knooppunt en de **hostnaam**.
 
     ![Het IP-adres zoeken in Apache Ambari](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/headnode-ip-address1.png)
 

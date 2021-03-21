@@ -6,13 +6,13 @@ ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 06/30/2017
 ms.openlocfilehash: a6c560cf4ec11197183711656d69024591e7008c
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96512603"
 ---
-# <a name="use-user-defined-combiner"></a>Door de gebruiker gedefinieerde combi natie gebruiken
+# <a name="use-user-defined-combiner"></a>Door de gebruiker gedefinieerde combineerder gebruiken
 
 ## <a name="u-sql-udo-user-defined-combiner"></a>U-SQL UDO: door de gebruiker gedefinieerde combi natie
 Met de door de gebruiker gedefinieerde combi natie of UDC kunt u rijen uit de rijen sets links en rechts combi neren op basis van aangepaste logica. Door de gebruiker gedefinieerde combi natie wordt gebruikt met de combi natie-expressie.

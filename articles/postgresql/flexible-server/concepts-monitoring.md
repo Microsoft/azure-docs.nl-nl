@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/23/2020
 ms.openlocfilehash: 5e7063cd1ae560fa077bd0b1b1279e4515e70464
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100579013"
 ---
 # <a name="monitor-metrics-on-azure-database-for-postgresql---flexible-server"></a>Metrische gegevens controleren op Azure Database for PostgreSQL-flexibele server
@@ -27,7 +27,7 @@ Azure Database for PostgreSQL biedt diverse metrische gegevens die inzicht geven
 De volgende metrische gegevens zijn beschikbaar voor PostgreSQL flexibele server:
 
 
-|Metrisch|Weergave naam voor metrische gegevens|Eenheid|Description|
+|Metrisch|Weergave naam voor metrische gegevens|Eenheid|Beschrijving|
 |---|---|---|---|
 | active_connections | Actieve verbindingen | Count | Het aantal verbindingen met uw server. | 
 | backup_storage_used | Gebruikte back-upopslag | Bytes | Hoeveelheid gebruikte back-upopslag. Deze waarde vertegenwoordigt de som van de opslag die wordt gebruikt door alle back-ups van de volledige data base, differentiële back-ups en logboek back-ups die worden bewaard op basis van de Bewaar periode voor back-ups die is ingesteld voor de server. De frequentie van de back-ups is service beheerd. Voor geo-redundante opslag is het gebruik van back-upopslag twee keer zo dat van de lokaal redundante opslag. |

@@ -17,16 +17,16 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e09dd6a127bd04ae698cb6cad2ffd7f35e3b51c3
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94413425"
 ---
 # <a name="identity-synchronization-and-duplicate-attribute-resiliency"></a>Tolerantie voor synchronisatie- en duplicatiekenmerken identificeren
 Dubbel kenmerk tolerantie is een functie in Azure Active Directory die de wrijvings kracht veroorzaakt door **userPrincipalName** -en SMTP **proxyAddress attribuut** -conflicten bij het uitvoeren van een van de synchronisatie hulpprogramma's van micro soft.
 
-Deze twee kenmerken zijn over het algemeen verplicht uniek te zijn voor alle **gebruikers** -, **groeps** -of **Contact** objecten in een bepaalde Azure Active Directory Tenant.
+Deze twee kenmerken zijn over het algemeen verplicht uniek te zijn voor alle **gebruikers**-, **groeps**-of **Contact** objecten in een bepaalde Azure Active Directory Tenant.
 
 > [!NOTE]
 > Alleen gebruikers kunnen Upn's hebben.
@@ -44,7 +44,7 @@ _**\<OriginalPrefix> + \<4DigitNumber> \@ \<InitialTenantDomain> . onmicrosoft.c
 
 Het kenmerk tolerantie proces verwerkt alleen UPN-en SMTP- **proxyAddress attribuut** -waarden.
 
-Als het kenmerk niet is vereist, zoals een  **proxyAddress attribuut** , wordt het kenmerk conflict door Azure Active Directory eenvoudigweg in quarantaine geplaatst en wordt de object-of bijwerk actie uitgevoerd.
+Als het kenmerk niet is vereist, zoals een  **proxyAddress attribuut**, wordt het kenmerk conflict door Azure Active Directory eenvoudigweg in quarantaine geplaatst en wordt de object-of bijwerk actie uitgevoerd.
 
 Bij het in quarantaine van het kenmerk wordt informatie over het conflict verzonden in hetzelfde fout rapport-e-mail adres dat wordt gebruikt in het oude gedrag. Deze informatie wordt echter slechts één keer weer gegeven in het fouten rapport, wanneer de quarantaine plaatsvindt, wordt het niet meer in toekomstige e-mail berichten geregistreerd. Omdat de export voor dit object is geslaagd, wordt er door de synchronisatieclient geen fout in het logboek geregistreerd en wordt de bewerking maken/bijwerken niet opnieuw geprobeerd bij de volgende synchronisatie cycli.
 
@@ -75,7 +75,7 @@ Er zijn momenteel twee methoden om objecten te identificeren die deze fouten heb
 Voor de Power shell-cmdlets in dit onderwerp is het volgende waar:
 
 * Alle volgende cmdlets zijn hoofdletter gevoelig.
-* De **– ErrorCategory PropertyConflict** moet altijd worden opgenomen. Er zijn momenteel geen andere typen **ErrorCategory** , maar dit kan in de toekomst worden verlengd.
+* De **– ErrorCategory PropertyConflict** moet altijd worden opgenomen. Er zijn momenteel geen andere typen **ErrorCategory**, maar dit kan in de toekomst worden verlengd.
 
 Ga eerst aan de slag door **Connect-MsolService** uit te voeren en referenties in te voeren voor een Tenant beheerder.
 
@@ -106,7 +106,7 @@ of
 `Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict -PropertyName ProxyAddresses`
 
 #### <a name="by-conflicting-value"></a>Op conflicterende waarde
-Als u fouten met betrekking tot een specifieke eigenschap wilt weer geven, voegt u de vlag **-PropertyValue** toe ( **-PropertyName** moet ook worden gebruikt bij het toevoegen van deze vlag):
+Als u fouten met betrekking tot een specifieke eigenschap wilt weer geven, voegt u de vlag **-PropertyValue** toe (**-PropertyName** moet ook worden gebruikt bij het toevoegen van deze vlag):
 
 `Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict -PropertyValue User@domain.com -PropertyName UserPrincipalName`
 
@@ -140,7 +140,7 @@ Het oplossen van problemen met strategieën en oplossingen voor deze fouten mag 
 In het volgende artikel vindt u een overzicht van verschillende strategieën voor probleem oplossing en oplossingen: [dubbele of ongeldige kenmerken voor komen Directory synchronisatie in Office 365](https://support.microsoft.com/kb/2647098).
 
 ## <a name="known-issues"></a>Bekende problemen
-Geen van deze bekende problemen veroorzaakt gegevens verlies of service vermindering. Verschillende hiervan zijn esthetisch, andere veroorzaken standaard ' *pre-tolerantie* '-kenmerk fouten die moeten worden gegenereerd in plaats van het in quarantaine het conflict kenmerk, en een andere heeft tot gevolg dat er voor bepaalde fouten extra hand matige herstel is vereist.
+Geen van deze bekende problemen veroorzaakt gegevens verlies of service vermindering. Verschillende hiervan zijn esthetisch, andere veroorzaken standaard '*pre-tolerantie*'-kenmerk fouten die moeten worden gegenereerd in plaats van het in quarantaine het conflict kenmerk, en een andere heeft tot gevolg dat er voor bepaalde fouten extra hand matige herstel is vereist.
 
 **Kern gedrag:**
 
@@ -154,7 +154,7 @@ Geen van deze bekende problemen veroorzaakt gegevens verlies of service verminde
     c. Bij het exporteren wordt een **proxyAddress attribuut-conflict** fout gegenereerd in plaats van dat de conflict kenmerken in quarantaine worden geplaatst. Bij elke volgende synchronisatie cyclus wordt er opnieuw geprobeerd om de bewerking uit te kunnen laten lopen, net zoals die zou zijn voordat de tolerantie functie was ingeschakeld.
 2. Als twee groepen on-premises zijn gemaakt met hetzelfde SMTP-adres, kan een van de eerste pogingen niet worden ingericht met een standaard dubbele **proxyAddress attribuut** -fout. De dubbele waarde wordt echter wel op de juiste wijze in quarantaine geplaatst tijdens de volgende synchronisatie cyclus.
 
-**Office-Portal rapport** :
+**Office-Portal rapport**:
 
 1. Het gedetailleerde fout bericht voor twee objecten in een UPN-conflict is hetzelfde. Dit geeft aan dat beide UPN-namen zijn gewijzigd, wanneer er slechts één van de gegevens is gewijzigd.
 2. In het gedetailleerde fout bericht voor een UPN-conflict wordt de verkeerde displayName weer gegeven voor een gebruiker die de UPN heeft gewijzigd/in quarantaine is geplaatst. Bijvoorbeeld:
@@ -167,14 +167,14 @@ Geen van deze bekende problemen veroorzaakt gegevens verlies of service verminde
    
     d. In het fout bericht voor **gebruiker B** moet worden aangegeven dat **gebruiker a** al een **gebruiker \@ contoso.com** als UPN heeft, maar **de eigen DisplayName van gebruiker b** wordt weer gegeven.
 
-**Identiteitssynchronisatie fout rapport** :
+**Identiteitssynchronisatie fout rapport**:
 
 De koppeling voor *stappen voor het oplossen van dit probleem* is onjuist:  
     ![Actieve gebruikers](./media/how-to-connect-syncservice-duplicate-attribute-resiliency/6.png "Actieve gebruikers")  
 
 Deze moet verwijzen naar [https://aka.ms/duplicateattributeresiliency]() .
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 * [Azure AD Connect synchronisatie](how-to-connect-sync-whatis.md)
 * [Integrating your on-premises identities with Azure Active Directory (Engelstalig)](whatis-hybrid-identity.md)
 * [Directory synchronisatie fouten in Microsoft 365 identificeren](https://support.office.com/article/Identify-directory-synchronization-errors-in-Office-365-b4fc07a5-97ea-4ca6-9692-108acab74067)

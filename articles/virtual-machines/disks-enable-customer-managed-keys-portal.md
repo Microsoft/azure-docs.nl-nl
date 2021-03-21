@@ -8,10 +8,10 @@ ms.author: rogarana
 ms.service: virtual-machines
 ms.subservice: disks
 ms.openlocfilehash: 5452b1e2ffc3ca8a11f3acb591c6288806445e1b
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96499387"
 ---
 # <a name="use-the-azure-portal-to-enable-server-side-encryption-with-customer-managed-keys-for-managed-disks"></a>Gebruik de Azure Portal om versleuteling aan de server zijde in te scha kelen met door de klant beheerde sleutels voor beheerde schijven
@@ -51,7 +51,7 @@ Het implementatie proces van de VM is vergelijkbaar met het standaard implementa
 
     ![Scherm afbeelding van het maken van de VM, waarbij de regio waarde is gemarkeerd.](media/virtual-machines-disk-encryption-portal/server-side-encryption-create-a-vm-region.png)
 
-1. Selecteer op **Disks** de Blade schijven **versleuteling in rust met een door de klant beheerde sleutel**.
+1. Selecteer op  de Blade schijven **versleuteling in rust met een door de klant beheerde sleutel**.
 1. Selecteer de schijf versleuteling die u hebt ingesteld in de vervolg keuzelijst **schijf versleuteling instellen** .
 1. Breng de resterende selecties naar wens aan.
 

@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 11/09/2020
 ms.openlocfilehash: 89ad9aae7c0d01971bbcfc7e392cb9d455ef85cd
-ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94376839"
 ---
 # <a name="algorithm--module-reference-for-azure-machine-learning-designer"></a>Naslag informatie voor algoritme & module voor Azure Machine Learning Designer
@@ -45,7 +45,7 @@ Zie voor hulp bij het kiezen van algoritmen
 | --- |--- | --- |
 | Regressie | Een waarde voors pellen. | [Regressie versterkte beslissingsstructuur](boosted-decision-tree-regression.md) <br/> [Regressie beslissingsforest](decision-forest-regression.md) <br/> [Regressie snelle forestkwantiel](fast-forest-quantile-regression.md)  <br/> [Lineaire regressie](linear-regression.md)  <br/> [Regressie neuraal netwerk](neural-network-regression.md)  <br/> [Regressie Poisson](poisson-regression.md)  <br/>|
 | Clustering | Groepeert gegevens tegelijk.| [K-means-clustering](k-means-clustering.md)
-| Classificatie | Voors pellen van een klasse.  U kunt kiezen uit binaire (twee klasse) of meerdere klasse-algoritmen.| [Versterkte beslissingsstructuur met meerdere klassen](multiclass-boosted-decision-tree.md) <br/> [Beslissingsforest met meerdere klassen](multiclass-decision-forest.md) <br/> [Logistieke regressie met meerdere klassen](multiclass-logistic-regression.md)  <br/> [Neuraal netwerk met meerdere klassen](multiclass-neural-network.md) <br/> [One-vs- All Multiclass](one-vs-all-multiclass.md) <br/> [Een versus meerdere klassen](one-vs-one-multiclass.md) <br/>[Gemiddeld perceptron met twee klassen](two-class-averaged-perceptron.md) <br/>  [Versterkte beslissingsstructuur met twee klassen](two-class-boosted-decision-tree.md)  <br/> [Beslissingsforest met twee klassen](two-class-decision-forest.md) <br/>  [Logistieke regressie met twee klassen](two-class-logistic-regression.md) <br/> [Neuraal netwerk met twee klassen](two-class-neural-network.md) <br/> [Ondersteuning voor vectormachine met twee klassen](two-class-support-vector-machine.md) | 
+| Classificatie | Voors pellen van een klasse.  U kunt kiezen uit binaire (twee klasse) of meerdere klasse-algoritmen.| [Versterkte beslissingsstructuur met meerdere klassen](multiclass-boosted-decision-tree.md) <br/> [Beslissingsforest met meerdere klassen](multiclass-decision-forest.md) <br/> [Logistieke regressie met meerdere klassen](multiclass-logistic-regression.md)  <br/> [Neuraal netwerk met meerdere klassen](multiclass-neural-network.md) <br/> [One-vs- All Multiclass](one-vs-all-multiclass.md) <br/> [One-vs- One Multiclass](one-vs-one-multiclass.md) <br/>[Gemiddeld perceptron met twee klassen](two-class-averaged-perceptron.md) <br/>  [Versterkte beslissingsstructuur met twee klassen](two-class-boosted-decision-tree.md)  <br/> [Beslissingsforest met twee klassen](two-class-decision-forest.md) <br/>  [Logistieke regressie met twee klassen](two-class-logistic-regression.md) <br/> [Neuraal netwerk met twee klassen](two-class-neural-network.md) <br/> [Ondersteuning voor vectormachine met twee klassen](two-class-support-vector-machine.md) | 
 
 ## <a name="modules-for-building-and-evaluating-models"></a>Modules voor het maken en evalueren van modellen
 

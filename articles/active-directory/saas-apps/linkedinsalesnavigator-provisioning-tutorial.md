@@ -11,10 +11,10 @@ ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: arvinh
 ms.openlocfilehash: 458b527194c1123e266bd6abedf25de18e0cee09
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94359354"
 ---
 # <a name="tutorial-configure-linkedin-sales-navigator-for-automatic-user-provisioning"></a>Zelfstudie: LinkedIn Sales Navigator configureren voor het automatisch inrichten van gebruikers
@@ -55,30 +55,30 @@ In deze sectie wordt u begeleid bij het verbinden van de API voor het inrichten 
 
 ### <a name="to-configure-automatic-user-account-provisioning-to-linkedin-sales-navigator-in-azure-ad"></a>Automatische gebruikersaccountinrichting configureren voor LinkedIn Sales Navigator in Azure AD:
 
-De eerste stap is het ophalen van uw toegangstoken voor LinkedIn. Als u een Enterprise-beheerder bent, kunt u zelf een toegangstoken inrichten. Ga in het Account Center naar **Settings &gt; Global Settings** en open het deelvenster **SCIM Setup**.
+De eerste stap is het ophalen van uw toegangstoken voor LinkedIn. Als u een zakelijke beheerder bent, kunt u een toegangstoken zelf inrichten. Ga in uw accountcentrum naar **Instellingen &gt; Globale instellingen** en open het paneel **SCIM-installatie**.
 
 > [!NOTE]
-> Als u het Account Center rechtstreeks opent in plaats van via een link, gebruikt u de volgende stappen om er te komen.
+> Als u het accountcentrum direct opent in plaats van via een link, kunt u het bereiken met behulp van de volgende stappen.
 
-1. Meld u aan bij het Account Center.
+1. Meld u aan bij het accountcentrum.
 
-2. Selecteer **Admin &gt; Admin Settings**.
+2. Selecteer **Beheerder &gt; Beheerdersinstellingen**.
 
-3. Klik aan de linkerkant op **Advanced Integrations**. U komt nu in het Account Center.
+3. Klik op **Geavanceerde integraties** op de zijbalk links. U wordt omgeleid naar het accountcentrum.
 
-4. Klik op **+ Add new SCIM configuration** en volg de procedure door elk veld in te vullen.
-
-    > [!NOTE]
-    > Als het automatisch toewijzen van licenties (Auto­-assign licenses) niet is ingeschakeld, betekent dit dat alleen gebruikersgegevens worden gesynchroniseerd.
-
-    ![Schermopname met het tabblad Global Settings in het LinkedIn Account Center.](./media/linkedinsalesnavigator-provisioning-tutorial/linkedin_1.PNG)
+4. Klik op **+ Nieuwe SCIM-configuratie toevoegen** en volg de procedure door elk veld in te vullen.
 
     > [!NOTE]
-    > Wanneer het automatisch toewijzen van licenties is ingeschakeld, moet u de instantie en het licentietype van de toepassing noteren. Licenties worden toegewezen op basis van ‘wie het eerst komt, het eerst maalt’, totdat alle licenties zijn vergeven.
+    > Wanneer het automatisch toewijzen van licenties niet is ingeschakeld, betekent dit dat alleen gebruikersgegevens worden gesynchroniseerd.
 
-    ![Schermopname met de pagina S C I M Setup.](./media/linkedinsalesnavigator-provisioning-tutorial/linkedin_2.PNG)
+    ![Schermopname toont de Globale instellingen van het LinkedIn-accountcentrum.](./media/linkedinsalesnavigator-provisioning-tutorial/linkedin_1.PNG)
 
-5. Klik op **Generate token**. Uw toegangstoken wordt vermeld onder het veld **Access token**.
+    > [!NOTE]
+    > Wanneer het automatisch toewijzen van licenties is ingeschakeld, moet u het toepassingsexemplaar en het licentietype noteren. De licenties worden toegewezen op basis van ‘wie het eerst komt, het eerst maalt’, totdat alle licenties zijn afgenomen.
+
+    ![Schermopname toont de pagina S C I M-installatiepagina.](./media/linkedinsalesnavigator-provisioning-tutorial/linkedin_2.PNG)
+
+5. Klik op **Token genereren**. Uw toegangstoken wordt vermeld onder het veld **Access token**.
 
 6. Bewaar het toegangstoken op het klembord of computer voordat u de pagina verlaat.
 
@@ -90,17 +90,17 @@ De eerste stap is het ophalen van uw toegangstoken voor LinkedIn. Als u een Ente
 
 10. Stel de **Inrichtingsmodus** in op **Automatisch**.
 
-    ![Schermopname met de pagina Inrichten van LinkedIn Sales Navigator.](./media/linkedinsalesnavigator-provisioning-tutorial/linkedin_3.PNG)
+    ![Schermopname toont de inrichtingspagina van LinkedIn Elevate.](./media/linkedinsalesnavigator-provisioning-tutorial/linkedin_3.PNG)
 
-11. Vul de volgende velden in onder **Referenties voor beheerder**:
+11. Vul de volgende velden in onder **Beheerdersreferenties** :
 
     * Voer in het veld **Tenant-URL** https://developer.linkedin.com in.
 
     * Voer in het veld **Token voor geheim** het toegangstoken in dat u in stap 1 hebt gegenereerd en klik op **Verbinding testen**.
 
-    * Als het goed is, ziet u rechtsboven een melding dat de test is gelukt.
+    * U ziet een melding van slagen aan de rechterbovenzijde van uw portal.
 
-12. Voer in het veld **E-mailadres voor meldingen** het e-mailadres in van een persoon of groep die meldingen moet ontvangen als er problemen zijn met de inrichting en schakel het selectievakje eronder in.
+12. Voer het e-mailadres in van een persoon of groep die meldingen van inrichtingsfouten moet ontvangen in het veld **E-mailadres voor meldingen** en schakel het selectievakje hieronder in.
 
 13. Klik op **Opslaan**.
 

@@ -9,10 +9,10 @@ ms.date: 03/21/2018
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: b3907882df09bfae1d6453fbffbd3e7562554f7c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96010820"
 ---
 * **Op beleid gebaseerd:** op beleid gebaseerde VPN-verbindingen werden voorheen statische routeringsgateways genoemd in het klassieke implementatiemodel. VPN-verbindingen op basis van beleid versleutelen pakketten en sturen deze via IPsec-tunnels op basis van het IPsec-beleid dat is geconfigureerd met de combinaties van adresvoorvoegsels tussen uw lokale netwerk en het Azure VNET. Het beleid (of de verkeersselector) wordt gewoonlijk gedefinieerd als een toegangslijst in de configuratie van het VPN-apparaat. De waarde voor een op beleid gebaseerd VPN-type is *PolicyBased*. Houd bij het gebruik van een op beleid gebaseerde VPN rekening met de volgende beperkingen:

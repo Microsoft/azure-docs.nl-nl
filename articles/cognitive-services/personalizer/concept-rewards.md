@@ -6,10 +6,10 @@ ms.subservice: personalizer
 ms.date: 02/20/2020
 ms.topic: conceptual
 ms.openlocfilehash: f3249ba2089c3d9650aa46f665353ad392d0e773
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94365564"
 ---
 # <a name="reward-scores-indicate-success-of-personalization"></a>Belonings scores geven aan dat het succes van personalisatie is geslaagd
@@ -72,8 +72,8 @@ U kunt ook de belonings-API aanroepen met dezelfde gebeurtenis-ID, waarbij versc
 
 Aggregatie waarden:
 
-*  **Eerst** : de eerste belonings Score die voor de gebeurtenis is ontvangen, en de rest wordt verwijderd.
-* **Sum** : Hiermee worden alle belonings scores verzameld voor de gebeurtenis-en toegevoegd aan elkaar.
+*  **Eerst**: de eerste belonings Score die voor de gebeurtenis is ontvangen, en de rest wordt verwijderd.
+* **Sum**: Hiermee worden alle belonings scores verzameld voor de gebeurtenis-en toegevoegd aan elkaar.
 
 Alle beloningen voor een gebeurtenis, die na de **wacht tijd** van de beloning worden ontvangen, worden genegeerd en hebben geen invloed op de training van modellen.
 
@@ -81,15 +81,15 @@ Als u belonings scores opneemt, ligt uw definitieve beloning mogelijk buiten het
 
 ## <a name="best-practices-for-calculating-reward-score"></a>Aanbevolen procedures voor het berekenen van de belonings Score
 
-* **Denk aan echte indica toren voor een geslaagde personalisatie** : het is gemakkelijk om op de slag te gaan met klikken, maar een goede beloning is gebaseerd op wat u uw *gebruikers wilt laten doen in plaats van* wat u wilt *doen*.  Een voor beeld: een vergoeding op klikken kan leiden tot het selecteren van inhoud die clickbait gevoelig is.
+* **Denk aan echte indica toren voor een geslaagde personalisatie**: het is gemakkelijk om op de slag te gaan met klikken, maar een goede beloning is gebaseerd op wat u uw *gebruikers wilt laten doen in plaats van* wat u wilt *doen*.  Een voor beeld: een vergoeding op klikken kan leiden tot het selecteren van inhoud die clickbait gevoelig is.
 
-* **Gebruik een belonings score voor de goede persoonlijke instellingen** : door een voor stel van een film te personaliseren, zou u er zeker van zijn dat de gebruiker de film bekijkt en een hoge classificatie krijgt. Omdat de classificatie van films waarschijnlijk afhankelijk is van veel dingen (de kwaliteit van de werking, de stemming van de gebruiker), is het geen goed idee om te bepalen hoe goed *het persoonlijke karakter* heeft gewerkt. De gebruiker die de eerste paar minuten van de film bekijkt, kan echter een beter signaal zijn bij de effectiviteit van de persoonlijke voor keuren en een beloning van 1 na 5 minuten een beter signaal sturen.
+* **Gebruik een belonings score voor de goede persoonlijke instellingen**: door een voor stel van een film te personaliseren, zou u er zeker van zijn dat de gebruiker de film bekijkt en een hoge classificatie krijgt. Omdat de classificatie van films waarschijnlijk afhankelijk is van veel dingen (de kwaliteit van de werking, de stemming van de gebruiker), is het geen goed idee om te bepalen hoe goed *het persoonlijke karakter* heeft gewerkt. De gebruiker die de eerste paar minuten van de film bekijkt, kan echter een beter signaal zijn bij de effectiviteit van de persoonlijke voor keuren en een beloning van 1 na 5 minuten een beter signaal sturen.
 
-* **Beloningen zijn alleen van toepassing op RewardActionID** : personaler past de voor delen toe om inzicht te krijgen in de effectiviteit van de actie die is opgegeven in RewardActionID. Als u ervoor kiest om andere acties weer te geven en de gebruiker erop klikt, moet de beloning nul zijn.
+* **Beloningen zijn alleen van toepassing op RewardActionID**: personaler past de voor delen toe om inzicht te krijgen in de effectiviteit van de actie die is opgegeven in RewardActionID. Als u ervoor kiest om andere acties weer te geven en de gebruiker erop klikt, moet de beloning nul zijn.
 
-* **Houd rekening met onbedoelde gevolgen** : Maak belonings functies die leiden tot de verantwoordelijke uitkomsten met [ethiek en verantwoordelijk gebruik](ethics-responsible-use.md).
+* **Houd rekening met onbedoelde gevolgen**: Maak belonings functies die leiden tot de verantwoordelijke uitkomsten met [ethiek en verantwoordelijk gebruik](ethics-responsible-use.md).
 
-* **Incrementele beloningen gebruiken** : het toevoegen van gedeeltelijke voor delen voor kleinere gebruikers gedrag helpt persoonlijker te maken met betere beloningen. Met deze incrementele beloning kan het algoritme ervoor worden geprofiteerd dat het dichter bij de gebruiker komt in het uiteindelijke gewenste gedrag.
+* **Incrementele beloningen gebruiken**: het toevoegen van gedeeltelijke voor delen voor kleinere gebruikers gedrag helpt persoonlijker te maken met betere beloningen. Met deze incrementele beloning kan het algoritme ervoor worden geprofiteerd dat het dichter bij de gebruiker komt in het uiteindelijke gewenste gedrag.
     * Als er een lijst met films wordt weer gegeven, kunt u, als de gebruiker de eerste keer aanwijst voor een tijdje, bepalen dat er een bepaalde gebruikers betrokkenheid heeft plaatsgevonden. Het gedrag kan tellen met een belonings Score van 0,1.
     * Als de gebruiker de pagina opent en vervolgens afsluit, kan de belonings score 0,2 zijn.
 

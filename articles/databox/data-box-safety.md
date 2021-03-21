@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 08/13/2019
 ms.author: alkohli
 ms.openlocfilehash: f4a0739eb1ab14155a98b17e2427c5b08c9db788
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96020667"
 ---
 # <a name="safely-install-and-operate-your-azure-data-box"></a>Uw Azure Data Box veilig installeren en uitvoeren
@@ -24,7 +24,7 @@ Lees alle veiligheids informatie in dit artikel voordat u Azure Data Box gebruik
 ## <a name="safety-icon-conventions"></a>Conventies voor veiligheids pictogrammen
 Hier vindt u de pictogrammen die u zult vinden wanneer u de veiligheids maatregelen controleert die moeten worden waargenomen bij het instellen en uitvoeren van uw Data Box.
 
-| Pictogram | Description |
+| Pictogram | Beschrijving |
 |:--- |:--- |
 | ![Gevaar voor risico pictogram ](./media/data-box-safety/warning_icon.png) **!** |Duidt op een gevaarlijke situatie die, indien dat niet wordt vermeden, leidt tot dood of ernstige schade. Dit signaal Word is beperkt tot de meest extreme situaties. |
 | ![Waarschuwing voor waarschuwings pictogram ](./media/data-box-safety/warning_icon.png) **.** |Duidt op een gevaarlijke situatie die, indien dat niet wordt vermeden, kan leiden tot overlijden of ernstige schade. |
@@ -32,7 +32,7 @@ Hier vindt u de pictogrammen die u zult vinden wanneer u de veiligheids maatrege
 | ![Meldings pictogram ](./media/data-box-safety/notice_icon.png) **:** |Geeft aan dat de informatie die belang rijk is, maar niet met een risico is betrokken. |
 | ![Elektrisch schok-pictogram ](./media/data-box-safety/electrical_shock_hazard_icon.png) **risico op elektrische schokken** |Hoge spanning. |
 | ![Pictogram voor dik gewicht ](./media/data-box-safety/heavy_weight_hazard_icon.png) **dik gewicht** | |
-| ![Er zijn geen onderdelen die door de gebruiker kan ](./media/data-box-safety/no_user_serviceable_parts_icon.png) **No User Serviceable Parts** worden onderhouden |Doe geen toegang tenzij het goed is getraind. |
+| ![Er zijn geen onderdelen die door de gebruiker kan ](./media/data-box-safety/no_user_serviceable_parts_icon.png)  worden onderhouden |Doe geen toegang tenzij het goed is getraind. |
 | ![Lees het pictogram beveiligings melding ](./media/data-box-safety/read_safety_and_health_information_icon.png) **eerst alle instructies lezen** | |
 | ![Waarschuwings pictogram tip ](./media/data-box-safety/tip_hazard_icon.png) **-risico** | |
 

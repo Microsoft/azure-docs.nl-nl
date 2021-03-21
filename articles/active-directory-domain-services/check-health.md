@@ -12,10 +12,10 @@ ms.topic: how-to
 ms.date: 07/06/2020
 ms.author: justinha
 ms.openlocfilehash: 92cc6157c590d3e05b4002e0f071c08e4ec23a16
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96620321"
 ---
 # <a name="check-the-health-of-an-azure-active-directory-domain-services-managed-domain"></a>De status controleren van een door Azure Active Directory Domain Services beheerd domein

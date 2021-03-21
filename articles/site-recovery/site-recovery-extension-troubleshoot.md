@@ -6,10 +6,10 @@ manager: rochakm
 ms.topic: troubleshooting
 ms.date: 11/27/2018
 ms.openlocfilehash: c1915d108bf9465d3e5b8d6a55053b583ee4f580
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96009701"
 ---
 # <a name="troubleshoot-azure-vm-extension-issues"></a>Problemen met Azure VM-extensies oplossen
@@ -45,7 +45,7 @@ Fout code: "151099"
 
 Deze fout kan optreden als de Azure-gast agent op de virtuele machine niet de status gereed heeft.
 
-U kunt de status van de Azure-gast agent controleren in het [Azure Portal](https://portal.azure.com/). Ga naar de virtuele machine die u wilt beveiligen en controleer de status in de eigenschappen van de **VM**-  >  **instellingen**  >  **Properties**  >  **Agent status**. De meeste tijd is de status van de agent gereed na het opnieuw opstarten van de virtuele machine. Als u echter niet opnieuw kunt opstarten of u nog steeds het probleem ondervindt, voert u de volgende stappen voor probleem oplossing uit:
+U kunt de status van de Azure-gast agent controleren in het [Azure Portal](https://portal.azure.com/). Ga naar de virtuele machine die u wilt beveiligen en controleer de status in de eigenschappen van de **VM**-  >  **instellingen**  >    >  . De meeste tijd is de status van de agent gereed na het opnieuw opstarten van de virtuele machine. Als u echter niet opnieuw kunt opstarten of u nog steeds het probleem ondervindt, voert u de volgende stappen voor probleem oplossing uit:
 
 - [De agent is geïnstalleerd op de VM, maar reageert niet (voor Windows-Vm's)](#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms)
 - [De agent die is geïnstalleerd in de virtuele machine is verouderd (voor Linux-Vm's)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)

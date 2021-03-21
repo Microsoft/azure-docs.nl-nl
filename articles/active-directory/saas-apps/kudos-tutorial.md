@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
 ms.openlocfilehash: 656c7467507c105f492f266f06c05a9f41e8f76a
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92458831"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-kudos"></a>Zelfstudie: Azure Active Directory-integratie met Kudos
@@ -49,11 +49,11 @@ Om de integratie van Kudos te configureren in Azure AD, moet u Kudos vanuit de g
 
 **Als u Kudos wilt toevoegen uit de galerie, moet u de volgende stappen uitvoeren:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -61,13 +61,13 @@ Om de integratie van Kudos te configureren in Azure AD, moet u Kudos vanuit de g
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **Kudos** , selecteer **Kudos** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **Kudos**, selecteer **Kudos** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
      ![Kudos in de resultatenlijst](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In dit gedeelte configureert en test u eenmalige aanmelding van Azure AD met Kudos op basis van een testgebruiker met de naam **Britta Simon** .
+In dit gedeelte configureert en test u eenmalige aanmelding van Azure AD met Kudos op basis van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in Kudos tot stand is gebracht.
 
 Om eenmalige aanmelding van Azure AD met Kudos te configureren en testen, moet u de volgende procedures voltooien:
@@ -85,7 +85,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voer de volgende stappen uit om eenmalige aanmelding van Azure AD te configureren met Kudos:
 
-1. Ga in de [Azure Portal](https://portal.azure.com/) naar de pagina van de integratie van **Kudos** en selecteer **Eenmalige aanmelding** .
+1. Ga in de [Azure Portal](https://portal.azure.com/) naar de pagina van de integratie van **Kudos** en selecteer **Eenmalige aanmelding**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -124,7 +124,7 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure AD te configurere
 
 1. Meld u in een andere webbrowser als beheerder aan bij uw Kudos-bedrijfssite.
 
-1. Klik in het menu aan de bovenkant op **het instellingspictogram** .
+1. Klik in het menu aan de bovenkant op **het instellingspictogram**.
 
     ![Instellingen](./media/kudos-tutorial/ic787806.png "Instellingen")
 
@@ -140,13 +140,13 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure AD te configurere
 
     d. Typ in het tekstvak **Uw Kudos-URL** de naam van uw bedrijf.
 
-    e. Klik op **Opslaan** .
+    e. Klik op **Opslaan**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -165,13 +165,13 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 
-    d. Klik op **Create** .
+    d. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot Kudos.
 
-1. Selecteer **Bedrijfstoepassingen** in Azure Portal, selecteer **Alle toepassingen** en selecteer vervolgens **Kudos** .
+1. Selecteer **Bedrijfstoepassingen** in Azure Portal, selecteer **Alle toepassingen** en selecteer vervolgens **Kudos**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -179,11 +179,11 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
     ![De koppeling naar Kudos in de lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -191,7 +191,7 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
 6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="create-kudos-test-user"></a>Een testgebruiker maken in Kudos
 
@@ -199,15 +199,15 @@ Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij Kudos, moeten ze wo
 
 **Als u een gebruikersaccount wilt inrichten, voert u de volgende stappen uit:**
 
-1. Meld u aan bij uw **Kudos** -bedrijfssite als beheerder.
+1. Meld u aan bij uw **Kudos**-bedrijfssite als beheerder.
 
-1. Klik in het menu aan de bovenkant op **het instellingspictogram** .
+1. Klik in het menu aan de bovenkant op **het instellingspictogram**.
 
    ![Instellingen](./media/kudos-tutorial/ic787806.png "Instellingen")
 
-1. Klik op **Gebruikersbeheerder** .
+1. Klik op **Gebruikersbeheerder**.
 
-1. Klik op het tabblad **Gebruikers** en klik vervolgens op **Een gebruiker toevoegen** .
+1. Klik op het tabblad **Gebruikers** en klik vervolgens op **Een gebruiker toevoegen**.
 
    ![Gebruikersbeheerder](./media/kudos-tutorial/ic787809.png "Gebruikersbeheerder")
 
@@ -215,9 +215,9 @@ Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij Kudos, moeten ze wo
 
     ![Een gebruiker toevoegen](./media/kudos-tutorial/ic787810.png "Een gebruiker toevoegen")
 
-    a. Typ de **voornaam** , **achternaam** , het **e-mailadres** en andere gegevens van een geldig Azure Active Directory-account dat u wilt inrichten in de desbetreffende tekstvakken.
+    a. Typ de **voornaam**, **achternaam**, het **e-mailadres** en andere gegevens van een geldig Azure Active Directory-account dat u wilt inrichten in de desbetreffende tekstvakken.
 
-    b. Klik op **Gebruiker maken** .
+    b. Klik op **Gebruiker maken**.
 
 > [!NOTE]
 > U kunt alle andere door Kudos geleverde hulpprogramma's of API's voor Kudos-gebruikersaccounts gebruiken voor het inrichten van gebruikersaccounts van Azure Active Directory.

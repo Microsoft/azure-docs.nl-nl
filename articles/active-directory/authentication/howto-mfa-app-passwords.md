@@ -12,13 +12,13 @@ manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: dfb38f9fcdba6898b690d0af68b715fea07e80bb
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96743102"
 ---
-# <a name="enable-and-use-azure-ad-multi-factor-authentication-with-legacy-applications-using-app-passwords"></a>Azure AD-Multi-Factor Authentication met verouderde toepassingen inschakelen en gebruiken met behulp van app-wacht woorden
+# <a name="enable-and-use-azure-ad-multi-factor-authentication-with-legacy-applications-using-app-passwords"></a>Meervoudige verificatie van Azure AD inschakelen en gebruiken met verouderde toepassingen, met behulp van app-wachtwoorden
 
 Sommige oudere, niet-browser-apps, zoals Office 2010 of eerder en Apple mail vóór iOS 11, begrijpen onderbrekingen of onderbrekingen in het verificatie proces niet. Als een gebruiker is ingeschakeld voor Azure AD Multi-Factor Authentication en probeert een van deze oudere, niet-browser-apps te gebruiken, kunnen ze niet goed worden geverifieerd. Als u deze toepassingen op een veilige manier wilt gebruiken met Azure AD Multi-Factor Authentication ingeschakeld voor gebruikers accounts, kunt u app-wacht woorden gebruiken. Met deze app-wacht woorden is het traditionele wacht woord vervangen zodat een app multi-factor Authentication omzeilt en goed werkt.
 
@@ -83,7 +83,7 @@ In dit scenario gebruikt u de volgende referenties:
 
 Standaard kunnen gebruikers geen app-wacht woorden maken. De functie voor het maken van app-wacht woorden moet zijn ingeschakeld voordat gebruikers deze kunnen gebruiken. Voer de volgende stappen uit om gebruikers de mogelijkheid te geven om app-wacht woorden te maken:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Zoek en selecteer **Azure Active Directory** en kies vervolgens **gebruikers**.
 3. Selecteer **multi-factor Authentication** in de navigatie balk aan de bovenkant van het venster *gebruikers* .
 4. Onder Multi-Factor Authentication selecteert u **Service-instellingen**.

@@ -4,10 +4,10 @@ description: Meer informatie over het maken en aanpassen van herstel plannen voo
 ms.topic: how-to
 ms.date: 01/23/2020
 ms.openlocfilehash: 0dcde98e8dcaef12896c18c25429f0ba7b1b27d4
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96009718"
 ---
 # <a name="create-and-customize-recovery-plans"></a>Herstelplannen maken en aanpassen
@@ -28,7 +28,7 @@ In dit artikel wordt beschreven hoe u een herstel plan voor failover kunt maken 
    Hyper-V naar Azure | De naam van de Hyper-V-site selecteren | Azure selecteren
    Hyper-V (beheerd door VMM) naar Azure  | De VMM-server selecteren | Azure selecteren
   
-    en let op het volgende:
+    Houd rekening met het volgende:
     - U kunt een herstel plan gebruiken voor zowel failover naar Azure als failback vanuit Azure.
     - De bron locatie moet machines hebben die zijn ingeschakeld voor failover en herstel.
     - Een herstel plan kan machines met dezelfde bron en hetzelfde doel bevatten.

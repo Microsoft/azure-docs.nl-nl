@@ -10,10 +10,10 @@ ms.topic: tutorial
 ms.date: 02/26/2021
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 0a57e45b264badffd0305eb6ac5b3c8f7c42adf3
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101695121"
 ---
 # <a name="tutorial-create-your-first-search-app-using-the-net-sdk"></a>Zelfstudie: Uw eerste zoek-app maken met behulp van de .NET SDK
@@ -130,7 +130,7 @@ De set met **Hotels**, **adres** en **room** -klassen heet [*complexe typen*](se
 
 1. Klik in Solution Explorer met de rechter muisknop op **modellen**  >  **toevoegen**  >  **Nieuw item**.
 
-1. Selecteer de **klasse** en geef het item de naam Hotel.cs. Vervang alle inhoud van Hotel.cs door de volgende code. Let op het **adres** en de **kamer** leden van de klasse. deze velden zijn zelf klassen zelf, zodat u er ook modellen voor nodig hebt.
+1. Selecteer **klasse** en noem het item Hotel. cs. Vervang alle inhoud van Hotel.cs door de volgende code. Let op het **adres** en de **kamer** leden van de klasse. deze velden zijn zelf klassen zelf, zodat u er ook modellen voor nodig hebt.
 
     ```csharp
     using Azure.Search.Documents.Indexes;
@@ -181,7 +181,7 @@ De set met **Hotels**, **adres** en **room** -klassen heet [*complexe typen*](se
     }
     ```
 
-1. Herhaal hetzelfde proces voor het maken van een model voor de **adres** klasse en noem het bestand address.cs. Vervang de inhoud door het volgende.
+1. Herhaal hetzelfde proces voor het maken van een model voor de **adres** klasse, waarbij u het bestands adres. cs een naam geeft. Vervang de inhoud door het volgende.
 
     ```csharp
     using Azure.Search.Documents.Indexes;

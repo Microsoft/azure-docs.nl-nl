@@ -8,10 +8,10 @@ ms.topic: troubleshooting
 ms.date: 10/05/2020
 ms.custom: seodec18
 ms.openlocfilehash: 02a3a7ad73bf0434a215c5ab7a6e89c299e9518b
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98019853"
 ---
 # <a name="troubleshoot-azure-stream-analytics-outputs"></a>Problemen met Azure Stream Analytics uitvoer oplossen
@@ -108,7 +108,7 @@ Zodra de time-out hoger is dan 15 minuten, wordt de maximum waarde voor de Batch
 
 Wanneer u het oorspronkelijke compatibiliteits niveau (1,0) gebruikt, worden de namen van de kolommen Azure Stream Analytics gewijzigd in kleine letters. Dit gedrag is in latere compatibiliteits niveaus verholpen. Als u het probleem wilt behouden, gaat u naar compatibiliteits niveau 1,1 of hoger. Zie [compatibiliteits niveau voor stream Analytics taken](./stream-analytics-compatibility-level.md)voor meer informatie.
 
-## <a name="get-help"></a>Help opvragen
+## <a name="get-help"></a>Hulp vragen
 
 Probeer voor meer hulp onze [micro soft Q&een vraag pagina voor Azure stream Analytics](/answers/topics/azure-stream-analytics.html).
 

@@ -8,10 +8,10 @@ ms.date: 07/11/2017
 ms.author: ccompy
 ms.custom: seodec18
 ms.openlocfilehash: c4e5dedf2075a2e13cc91c5eed2c0f03ba498b97
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96021517"
 ---
 # <a name="using-an-internal-load-balancer-with-an-app-service-environment"></a>Een interne Load Balancer gebruiken met een App Service Environment
@@ -58,12 +58,12 @@ Het maken van een ILB ASE verschilt niet veel van het maken van een ASE. Zie [Ho
 
 In het deel venster Virtual Network bevindt zich een VNet-configuratie optie waarmee u tussen een extern VIP of interne VIP kunt selecteren. De standaard is Extern. Als u deze hebt ingesteld op extern, gebruikt uw ASE een via internet toegankelijke VIP. Als u Intern selecteert, is de AS-omgeving geconfigureerd met een ILB op een IP-adres binnen uw VNet. 
 
-Nadat u intern hebt geselecteerd, is de mogelijkheid om meer IP-adressen aan uw ASE toe te voegen verwijderd en moet u in plaats daarvan het subdomein van de ASE opgeven. In een ASE met een externe VIP wordt de naam van de ASE gebruikt in het subdomein voor apps die zijn gemaakt in die ASE. Als uw ASE de naam **_contosotest_* _ heeft en uw app in dat ASE de naam _*_mytest_*_ heeft, is het subdomein van de indeling _*_contosotest.p.azurewebsites.net_*_ en de URL voor die app is _*_mytest.contosotest.p.azurewebsites.net_*_. Als u het VIP-type instelt op intern, wordt uw ASE-naam niet gebruikt in het subdomein voor de ASE. U geeft het subdomein expliciet op. Als uw subdomein _*_contoso.Corp.net_*_ is en u een app hebt gemaakt in die ASE met de naam _*_timereporting_*_, wordt de URL voor die app _*_timereporting.contoso.Corp.net_*_.
+Nadat u intern hebt geselecteerd, is de mogelijkheid om meer IP-adressen aan uw ASE toe te voegen verwijderd en moet u in plaats daarvan het subdomein van de ASE opgeven. In een ASE met een externe VIP wordt de naam van de ASE gebruikt in het subdomein voor apps die zijn gemaakt in die ASE. Als uw ASE de naam ***contosotest** _ heeft en uw app in dat ASE de naam _*_mytest_*_ heeft, is het subdomein van de indeling _*_contosotest.p.azurewebsites.net_*_ en de URL voor die app _* _mytest.contosotest.p.azurewebsites.net_* *. Als u het VIP-type instelt op intern, wordt uw ASE-naam niet gebruikt in het subdomein voor de ASE. U geeft het subdomein expliciet op. Als uw subdomein ***contoso.Corp.net** is_ en u een app hebt gemaakt in die ASE met de naam _*_TIMEREPORTING_*_, is de URL voor die app _ *_timereporting.contoso.Corp.net_* *.
 
 ## <a name="apps-in-an-ilb-ase"></a>Apps in een ILB-ASE
 Het maken van een app in een ILB ASE is hetzelfde als het maken van een app in een ASE normaal gesp roken. 
 
-1. Selecteer in de Azure Portal _ *een resource maken-> web en mobiel-> Web** of een **mobiele** of **API-app**.
+1. Selecteer in de Azure Portal **een resource maken-> web en mobiel-> Web-** of **mobiele** of **API-app**.
 2. Voer de naam van de app in.
 3. Selecteer uw abonnement.
 4. Selecteer of maak een resourcegroep.

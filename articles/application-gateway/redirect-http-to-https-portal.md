@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 11/13/2019
 ms.author: victorh
 ms.openlocfilehash: 67153fa750fee765dcaa1072eec87a2f6169b918
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93397277"
 ---
 # <a name="create-an-application-gateway-with-http-to-https-redirection-using-the-azure-portal"></a>Een toepassings gateway met HTTP-naar-HTTPS-omleiding maken met behulp van de Azure Portal
@@ -77,7 +77,7 @@ U hebt een virtueel netwerk nodig voor communicatie tussen de resources die u ma
      ![Nieuwe toepassingsgateway maken](./media/create-url-route-portal/application-gateway-create.png)
 
 5. Accepteer de standaardwaarden voor de overige instellingen en klik op **OK**.
-6. Klik op **Een virtueel netwerk kiezen** , klik op **Nieuw maken** en voer deze waarden in voor het virtuele netwerk:
+6. Klik op **Een virtueel netwerk kiezen**, klik op **Nieuw maken** en voer deze waarden in voor het virtuele netwerk:
 
    - *myVnet* als de naam van het virtuele netwerk.
    - *10.0.0.0/16* als de adresruimte van het virtuele netwerk.
@@ -88,7 +88,7 @@ U hebt een virtueel netwerk nodig voor communicatie tussen de resources die u ma
 
 7. Klik op **OK** om het virtuele netwerk en subnet te maken.
 8. Zorg ervoor dat bij **frontend-IP-configuratie** het **IP-adres type** **openbaar** is en **Nieuw maken** is geselecteerd. Voer *myAGPublicIPAddress* in als naam. Accepteer de standaardwaarden voor de overige instellingen en klik op **OK**.
-9. Onder **configuratie** van de listener selecteert u **https** , selecteert u vervolgens **een bestand** en navigeert u naar het *c:\appgwcert.pfx* -bestand en selecteert u **openen**.
+9. Onder **configuratie** van de listener selecteert u **https**, selecteert u vervolgens **een bestand** en navigeert u naar het *c:\appgwcert.pfx* -bestand en selecteert u **openen**.
 10. Typ *appgwcert* voor de certificaat naam en *Azure123456.* als het wachtwoord.
 11. Zorg ervoor dat de Web Application firewall is uitgeschakeld en selecteer **OK**.
 12. Controleer de instellingen op de pagina samen vatting en selecteer vervolgens **OK** om de netwerk resources en de toepassings gateway te maken. Het kan enkele minuten duren voordat de toepassings gateway is gemaakt. wacht tot de implementatie is voltooid voordat u verdergaat met de volgende sectie.
@@ -139,7 +139,7 @@ In dit voorbeeld maakt u een virtuele-machineschaalset om servers op te geven vo
 6. Voor installatie kopie van het besturings systeem, * * zorg ervoor dat **Windows Server 2016 Data Center** is geselecteerd.
 7. Selecteer voor **resource groep** de optie **myResourceGroupAG**.
 8. Typ *azureuser* voor **gebruikers naam**.
-9. Voor **wacht woord** , typt u *Azure123456!* en bevestig het wacht woord.
+9. Voor **wacht woord**, typt u *Azure123456!* en bevestig het wacht woord.
 10. Zorg ervoor dat de waarde **2** is voor het **aantal exemplaren**.
 11. Selecteer **D2s_v3** voor de **instantie grootte**.
 12. Zorg ervoor dat onder **netwerken** de optie **taak verdeling kiezen** is ingesteld op **Application Gateway**.

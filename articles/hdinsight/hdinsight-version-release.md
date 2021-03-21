@@ -5,10 +5,10 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 08/21/2020
 ms.openlocfilehash: 694acc0005e90d8299d46528f83ba68ea3fcf1c0
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98931192"
 ---
 # <a name="azure-hdinsight-40-overview"></a>Overzicht van Azure HDInsight 4,0
@@ -109,4 +109,4 @@ Er wordt geen ondersteund upgradepad van eerdere versies van HDInsight naar HDIn
 * [Kafka-migratie handleiding](./kafka/migrate-versions.md)
 * [Spark-migratie handleiding](./spark/migrate-versions.md)
 * [Documentatie voor Azure HDInsight](index.yml)
-* [Release opmerkingen](hdinsight-release-notes.md)
+* [Releaseopmerkingen](hdinsight-release-notes.md)

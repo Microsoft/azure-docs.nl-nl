@@ -12,18 +12,19 @@ ms.date: 12/10/2019
 ms.author: kenwith
 ms.reviewer: celested
 ms.openlocfilehash: a6cbabe35b223020528d1cf48aa9e0ef9b9f7c05
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99256116"
 ---
 # <a name="skip-deletion-of-user-accounts-that-go-out-of-scope"></a>Verwijdering van gebruikers accounts die buiten het bereik vallen, overs Laan
 
 De Azure AD Provisioning-engine laadt standaard gebruikers die buiten het bereik vallen, of schakelt deze uit. Voor bepaalde scenario's zoals workday voor inrichtende AD-gebruikers is dit gedrag mogelijk niet de verwachte en wilt u dit standaard gedrag negeren.  
 
-In dit artikel wordt beschreven hoe u de Microsoft Graph-API en de Microsoft Graph API Explorer kunt gebruiken om de vlag ***SkipOutOfScopeDeletions** _ in te stellen voor de verwerking van accounts die buiten het bereik vallen. _ Als ***SkipOutOfScopeDeletions** _ is ingesteld op 0 (ONWAAR), worden accounts die buiten het bereik vallen, uitgeschakeld in het doel.
-_ Als ***SkipOutOfScopeDeletions** _ is ingesteld op 1 (waar), worden accounts die zich buiten het bereik bevinden niet in het doel uitgeschakeld. Deze markering wordt ingesteld op het niveau van de app _Provisioning * en kan worden geconfigureerd met behulp van de Graph API. 
+In dit artikel wordt beschreven hoe u de Microsoft Graph-API en de Microsoft Graph API Explorer kunt gebruiken om de vlag ***SkipOutOfScopeDeletions*** in te stellen waarmee de verwerking van accounts die buiten het bereik vallen worden beheerd. 
+* Als ***SkipOutOfScopeDeletions*** is ingesteld op 0 (ONWAAR), worden accounts die buiten het bereik vallen, uitgeschakeld in het doel.
+* Als ***SkipOutOfScopeDeletions** _ is ingesteld op 1 (waar), worden accounts die buiten het bereik vallen, niet in het doel uitgeschakeld. Deze markering wordt ingesteld op het niveau van de app _Provisioning * en kan worden geconfigureerd met behulp van de Graph API. 
 
 Omdat deze configuratie veel wordt gebruikt in combi natie met de *werkdag voor het Active Directory* van de app voor het inrichten van gebruikers, bevatten de volgende stappen scherm opnamen van de werkdag-toepassing. De configuratie kan echter ook worden gebruikt met *alle andere apps*, zoals ServiceNow, Sales Force en Dropbox.
 
@@ -68,9 +69,9 @@ Dit is het JSON-blok dat aan de toewijzing moet worden toegevoegd.
 
 ## <a name="step-4-update-the-secrets-endpoint-with-the-skipoutofscopedeletions-flag"></a>Stap 4: het geheimen-eind punt bijwerken met de vlag SkipOutOfScopeDeletions
 
-Voer in de Graph Explorer de onderstaande opdracht uit om het geheimen-eind punt bij te werken met de vlag **_SkipOutOfScopeDeletions_* _. 
+Voer in de Graph Explorer de onderstaande opdracht uit om het geheimen-eind punt bij te werken met de vlag ***SkipOutOfScopeDeletions*** . 
 
-Vervang in de onderstaande URL [servicePrincipalId] door de _ *servicePrincipalId** geëxtraheerd uit [stap 1](#step-1-retrieve-your-provisioning-app-service-principal-id-object-id). 
+Vervang in de onderstaande URL [servicePrincipalId] door de **servicePrincipalId** geëxtraheerd uit [stap 1](#step-1-retrieve-your-provisioning-app-service-principal-id-object-id). 
 
 ```http
    PUT https://graph.microsoft.com/beta/servicePrincipals/[servicePrincipalId]/synchronization/secrets

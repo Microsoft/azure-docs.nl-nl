@@ -12,10 +12,10 @@ ms.service: storage
 ms.subservice: common
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: 2f7092d8ce184d7021774814e96935e46d1ffb56
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100363165"
 ---
 # <a name="choose-how-to-authorize-access-to-queue-data-with-azure-cli"></a>Kies hoe u de toegang tot de wachtrij gegevens wilt autoriseren met Azure CLI
@@ -101,7 +101,7 @@ az storage queue create \
 
 U kunt autorisatie parameters opgeven in omgevings variabelen om te voor komen dat ze worden opgenomen in elke aanroep van een Azure Storage gegevens bewerking. De volgende tabel beschrijft de beschik bare omgevings variabelen.
 
-| Omgevingsvariabele | Description |
+| Omgevingsvariabele | Beschrijving |
 |--|--|
 | **AZURE_STORAGE_ACCOUNT** | De naam van het opslagaccount. Deze variabele moet worden gebruikt in combi natie met de sleutel van het opslag account of een SAS-token. Als er geen van beide aanwezig is, probeert de Azure CLI de toegangs sleutel voor het opslag account op te halen met behulp van het geverifieerde Azure AD-account. Als een groot aantal opdrachten tegelijk wordt uitgevoerd, is het mogelijk dat de Azure Storage Resource provider beperkings limiet is bereikt. Zie [schaalbaarheids-en prestatie doelen voor de resource provider van Azure Storage](../common/scalability-targets-resource-provider.md)voor meer informatie over limieten voor resource providers. |
 | **AZURE_STORAGE_KEY** | De opslagaccountsleutel. Deze variabele moet worden gebruikt in combi natie met de naam van het opslag account. |

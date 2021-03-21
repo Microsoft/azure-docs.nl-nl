@@ -7,11 +7,11 @@ ms.author: shhazam
 ms.date: 11/30/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 3ae17ebce564de465a91739a210ae7f18f86a3b9
-ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
+ms.openlocfilehash: 00207ffb8480ae99c2f1aad74183fca9ea45ee17
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100523546"
 ---
 # <a name="work-with-alerts-on-your-sensor"></a>Werken met waarschuwingen op uw sensor
@@ -48,7 +48,7 @@ Er zijn extra hulpprogram ma's beschikbaar waarmee u het onderzoek naar waarschu
 
 Waarschuwingen worden geactiveerd wanneer de sensor motoren wijzigingen in het netwerk verkeer en gedrag die uw aandacht nodig hebben, kunnen detecteren. In dit artikel wordt het soort waarschuwingen beschreven dat elke engine activeert.
 
-| Waarschuwingstype | Description |
+| Waarschuwingstype | Beschrijving |
 |-|-|
 | Waarschuwingen voor beleids schendingen | Wordt geactiveerd wanneer de engine voor beleids overtreding een afwijking detecteert van het eerder geleerde verkeer. Bijvoorbeeld: <br /> -Er is een nieuw apparaat gedetecteerd.  <br /> -Er wordt een nieuwe configuratie op een apparaat gedetecteerd. <br /> -Een apparaat dat niet als een programmeer apparaat is gedefinieerd, voert een wijziging in het programma uit. <br /> -Er is een firmware versie gewijzigd. |
 | Waarschuwingen over Protocol schendingen | Wordt geactiveerd wanneer de engine voor protocol overtreding pakket structuren of veld waarden detecteert die niet voldoen aan de protocol specificatie. | 
@@ -68,9 +68,9 @@ Bijvoorbeeld:
 
   - Malware-gebeurtenissen die zijn gedetecteerd op netwerk apparaten worden gerapporteerd in rapporten voor risico analyse. Wanneer waarschuwingen over malware-gebeurtenissen *gedempt* zijn, worden betrokken apparaten niet berekend in het rapport risico beoordeling.
 
-## <a name="next-steps"></a>Volgende stappen
+## <a name="see-also"></a>Zie ook
 
-[Leer-en slimme it-leer modi](how-to-control-what-traffic-is-monitored.md#learning-and-smart-it-learning-modes) 
- [In waarschuwingen](how-to-view-information-provided-in-alerts.md) 
- verstrekte informatie weer geven [De waarschuwings gebeurtenis beheren](how-to-manage-the-alert-event.md) 
- [Waarschuwings werk stromen versnellen](how-to-accelerate-alert-incident-response.md)
+- [Leer-en slimme IT-leer modi](how-to-control-what-traffic-is-monitored.md#learning-and-smart-it-learning-modes)
+- [De informatie in waarschuwingen weergeven](how-to-view-information-provided-in-alerts.md)
+- [De waarschuwingsgebeurtenis beheren](how-to-manage-the-alert-event.md)
+- [Waarschuwings werk stromen versnellen](how-to-accelerate-alert-incident-response.md)

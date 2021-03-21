@@ -7,10 +7,10 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/11/2020
 ms.openlocfilehash: f9dbdb3907b376df8de988730c6c48ed01bfccd0
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98019938"
 ---
 # <a name="understand-time-handling-in-azure-stream-analytics"></a>Time handling in Azure Stream Analytics begrijpen
@@ -129,7 +129,7 @@ Stream Analytics taken hebben verschillende opties voor het **ordenen van gebeur
 
 U kunt een aantal de tijds tolerantie-effecten van de gebeurtenis volgorde bekijken via de [metrische gegevens van stream Analytics-opdracht](stream-analytics-monitoring.md). De volgende metrische gegevens zijn relevant:
 
-|Gegevens  | Beschrijving  |
+|Metrisch  | Beschrijving  |
 |---------|---------|
 | **Out-of-order gebeurtenissen** | Hiermee wordt het aantal gebeurtenissen aangegeven dat niet in de juiste volg orde is ontvangen, die zijn verwijderd of een aangepast tijds tempel hebben gekregen. Deze metrische gegevens worden rechtstreeks beïnvloed door de configuratie van de instelling voor **niet-bestel gebeurtenissen** op de pagina **gebeurtenis volgorde** van de taak in de Azure Portal. |
 | **Late invoer gebeurtenissen** | Hiermee wordt het aantal gebeurtenissen aangegeven dat te laat arriveren vanaf de bron. Deze metriek bevat gebeurtenissen die zijn verwijderd of waarvoor de tijds tempel ervan is aangepast. Deze metrische gegevens worden rechtstreeks beïnvloed door de configuratie van de **gebeurtenissen die een te late instelling aankomen** op de pagina **gebeurtenis volgorde** van de taak in de Azure Portal. |
@@ -170,7 +170,7 @@ De volgende afbeeldingen laten zien hoe water merken in verschillende omstandigh
 
 In deze tabel worden de voorbeeld gegevens weer gegeven die hieronder zijn gediagrameerd. U ziet dat de tijd van de gebeurtenis en de aankomst tijd variëren, soms overeenkomend en soms niet.
 
-| Tijd van gebeurtenis | Aankomst tijd | DeviceId |
+| Tijdstip van gebeurtenis | Aankomst tijd | DeviceId |
 | --- | --- | --- |
 | 12:07 | 12:07 | device1
 | 12:08 | 12:08 | device2

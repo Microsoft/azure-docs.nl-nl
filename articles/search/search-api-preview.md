@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/02/2021
 ms.openlocfilehash: 596113f9fcb7326010090e67b3a52ca03faa25d0
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102041974"
 ---
 # <a name="preview-features-in-azure-cognitive-search"></a>Preview-functies in azure Cognitive Search
@@ -24,7 +24,7 @@ Preview-functies die worden overgezet naar algemene Beschik baarheid, worden ver
 |Functie&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Categorie | Beschrijving | Beschikbaarheid  |
 |---------|------------------|-------------|---------------|
 | [**Semantische zoekopdrachten**](semantic-search-overview.md) | Relevantie (Score) | Een algoritme voor semantische classificatie, query type en query-antwoord. | [Search REST API 2020-06-30-preview](/rest/api/searchservice/) |
-| [**speller**](cognitive-search-aml-skill.md) | Query’s uitvoeren | Optionele spelling correctie voor invoer van de query term voor eenvoudige, volledige en semantische query's. | [Search REST API 2020-06-30-preview](/rest/api/searchservice/) |
+| [**speller**](cognitive-search-aml-skill.md) | Query | Optionele spelling correctie voor invoer van de query term voor eenvoudige, volledige en semantische query's. | [Search REST API 2020-06-30-preview](/rest/api/searchservice/) |
 | [**Indexer van share point online**](search-howto-index-sharepoint-online.md) | Gegevens bron van Indexeer functie | Nieuwe gegevens bron voor indexering op basis van Indexeer functie van share point-inhoud. | [Search REST API 2020-06-30-preview](/rest/api/searchservice/) |
 | [**Vaardigheid van Azure Machine Learning (AML)**](cognitive-search-aml-skill.md) | AI-verrijking| Een nieuw vaardigheids type voor het integreren van een Afleidings eindpunt van Azure Machine Learning. Ga aan de slag met [deze zelfstudie](cognitive-search-tutorial-aml-custom-skill.md). | [Zoek REST API 2020-06-30-preview](/rest/api/searchservice/) of 2019-05-06-preview gebruiken. Ook beschikbaar in de portal, in het ontwerp van vaardig heden, aangenomen dat Cognitive Search en Azure ML-Services in hetzelfde abonnement zijn geïmplementeerd. |
 | [**featuresMode-para meter**](/rest/api/searchservice/preview-api/search-documents#query-parameters) | Relevantie (Score) | Uitbrei ding van relevantie score voor het toevoegen van Details: per veld vergelijk bare Score, per veld term frequentie en per veld aantal unieke tokens die overeenkomen. U kunt deze gegevens punten gebruiken in [aangepaste Score oplossingen](https://github.com/Azure-Samples/search-ranking-tutorial). | Voeg deze query parameter toe met behulp van [Zoek documenten (rest)](/rest/api/searchservice/preview-api/search-documents) met API-Version = 2020-06 -30-preview of 2019-05-06-preview. |
@@ -35,7 +35,7 @@ Preview-functies die worden overgezet naar algemene Beschik baarheid, worden ver
 | [**Incrementele verrijking**](cognitive-search-incremental-indexing-conceptual.md) | Configuratie van de Indexeer functie| Voegt caching toe aan een verrijkings pijplijn, zodat u de bestaande uitvoer opnieuw kunt gebruiken als een gerichte wijziging, zoals een update van een vakkennisset of een ander object, de inhoud niet wijzigt. Caching is alleen van toepassing op verrijkte documenten die worden geproduceerd door een vaardig heden.| Voeg deze configuratie-instelling toe met [Create Indexeer functie (rest)](/rest/api/searchservice/create-indexer) met API-Version = 2020-06 -30-preview of API-Version = 2019-05 -06-preview. |
 | [**Cosmos DB Indexer: MongoDB-API, Gremlin-API, Cassandra-API**](search-howto-index-cosmosdb.md) | Gegevens bron van Indexeer functie | Voor Cosmos DB is SQL API algemeen beschikbaar, maar MongoDB-, Gremlin-en Cassandra-Api's zijn in preview. | [Meld u eerst](https://aka.ms/azure-cognitive-search/indexer-preview) alleen voor Gremlin en Cassandra aan zodat ondersteuning voor uw abonnement op de back-end kan worden ingeschakeld. MongoDB gegevens bronnen kunnen worden geconfigureerd in de portal. Anders wordt de configuratie van de gegevens bron voor alle drie de Api's ondersteund met behulp van [Create Data Source (rest)](/rest/api/searchservice/create-data-source) met API-Version = 2020-06 -30-preview of API-Version = 2019-05 -06-preview. |
 |  [**Indexeer functie Azure Data Lake Storage Gen2**](search-howto-index-azure-data-lake-storage.md) | Gegevens bron van Indexeer functie | Inhoud en meta gegevens indexeren van Data Lake Storage Gen2.| [Registreren](https://aka.ms/azure-cognitive-search/indexer-preview) is vereist zodat ondersteuning kan worden ingeschakeld voor uw abonnement op de back-end. Toegang tot deze gegevens bron met behulp van [Create Data Source (rest)](/rest/api/searchservice/create-data-source) met API-Version = 2020-06 -30-preview of API-Version = 2019-05 -06-preview. |
-| [**moreLikeThis**](search-more-like-this.md) | Query’s uitvoeren | Zoekt documenten die relevant zijn voor een specifiek document. Deze functie heeft eerdere voor beelden. | Voeg deze query parameter toe aan [Zoek documenten (rest)](/rest/api/searchservice/search-documents) -aanroepen met API-Version = 2020-06 -30-preview, 2019-05-06-preview, 2016-09-01-preview of 2017-11-11-preview. |
+| [**moreLikeThis**](search-more-like-this.md) | Query | Zoekt documenten die relevant zijn voor een specifiek document. Deze functie heeft eerdere voor beelden. | Voeg deze query parameter toe aan [Zoek documenten (rest)](/rest/api/searchservice/search-documents) -aanroepen met API-Version = 2020-06 -30-preview, 2019-05-06-preview, 2016-09-01-preview of 2017-11-11-preview. |
 
 ## <a name="how-to-call-a-preview-rest-api"></a>Een preview-REST API aanroepen
 

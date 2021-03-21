@@ -7,10 +7,10 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 04/29/2020
 ms.openlocfilehash: 3d67ac9474704fac39dbe7eb91aead5c4babc4ce
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100383939"
 ---
 # <a name="migrate-normalized-database-schema-from-azure-sql-database-to-azure-cosmosdb-denormalized-container"></a>Genormaliseerd database schema migreren van Azure SQL Database naar een gedenormaliseerde Azure CosmosDB-container
@@ -68,7 +68,7 @@ In de resulterende CosmosDB-container wordt de interne query in één document I
 
 10. Klik op het tabblad voor het voor beeld van de gegevens in de nieuwe koppeling die u hebt toegevoegd, zodat u de resultaten tot nu toe kunt zien. U ziet dat alle koptekst rijen worden samengevoegd met de detail rijen. Dit is het resultaat van de koppeling die wordt gevormd door de ```SalesOrderID``` . Vervolgens combi neren we de gegevens uit de gemeen schappelijke rijen in de structuur Details en voegen we de algemene rijen samen.
 
-![Koppelen](media/data-flow/cosmosb4.png)
+![Deelnemen](media/data-flow/cosmosb4.png)
 
 11. Voordat we de matrices kunnen maken om deze rijen te denormaliseren, moeten we eerst ongewenste kolommen verwijderen en ervoor zorgen dat de gegevens waarden overeenkomen met CosmosDB-gegevens typen.
 

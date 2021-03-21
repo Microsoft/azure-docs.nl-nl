@@ -9,10 +9,10 @@ ms.workload: infrastructure-services
 ms.date: 02/18/2021
 ms.author: qixwang
 ms.openlocfilehash: c916be9a54d62e16f488c94f4fa88a2207fb8788
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "101099221"
 ---
 # <a name="what-is-azure-front-door-standardpremium-preview-endpoint-manager"></a>Wat is Azure front deur Standard/Premium (preview) Endpoint Manager?

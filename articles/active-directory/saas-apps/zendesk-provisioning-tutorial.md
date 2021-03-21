@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 08/06/2019
 ms.author: jeedes
 ms.openlocfilehash: 620dd8fd586352ebeaf097a8f870a606f8e06c01
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94359711"
 ---
 # <a name="tutorial-configure-zendesk-for-automatic-user-provisioning"></a>Zelfstudie: Zendesk configureren voor automatische gebruikersinrichting
@@ -23,11 +23,11 @@ ms.locfileid: "94359711"
 In deze zelfstudie worden de stappen getoond die moeten worden uitgevoerd in Zendesk en Azure AD (Azure Active Directory) om Azure AD te configureren om gebruikers en groepen automatisch in te richten in Zendesk, of de inrichting van gebruikers en groepen ongedaan te maken.
 
 > [!NOTE]
-> In deze zelfstudie wordt een connector beschreven die is gebouwd op de Azure AD-service voor de inrichting van gebruikers. Raadpleeg [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen (software-as-a-service) met Azure Active Directory](../app-provisioning/user-provisioning.md) voor informatie over wat deze service doet, hoe het werkt en veelgestelde vragen.
+> In deze zelfstudie wordt een connector beschreven die is gebouwd op de Azure AD-service voor de inrichting van gebruikers. Zie voor informatie over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar software-as-a-service (SaaS)-toepassingen met Azure Active Directory](../app-provisioning/user-provisioning.md).
 
 ## <a name="prerequisites"></a>Vereisten
 
-In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan dat u het volgende hebt:
+In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan dat u het volgende heeft:
 
 * Een Azure AD-tenant.
 * Een Zendesk-tenant met het Professional-abonnement of is beter ingeschakeld.

@@ -4,10 +4,10 @@ description: Beheer de toewijzing van het blauwdrukvoorbeeld SWIFT CSP-CSCF v202
 ms.date: 01/08/2021
 ms.topic: sample
 ms.openlocfilehash: 466b37b287d79a891fba39b133ab5fa79dbd147e
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98048790"
 ---
 # <a name="control-mapping-of-the-swift-csp-cscf-v2020-blueprint-sample"></a>Beheer de toewijzing van het blauwdrukvoorbeeld SWIFT CSP-CSCF v2020

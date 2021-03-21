@@ -9,10 +9,10 @@ ms.custom: references_regions
 ms.date: 10/30/2020
 ms.author: normesta
 ms.openlocfilehash: be440407fb6f4d9715ba80c584af023a5f662394
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93324226"
 ---
 # <a name="premium-tier-for-azure-data-lake-storage"></a>Premium-laag voor Azure Data Lake Storage
@@ -35,7 +35,7 @@ In een IoT-scenario kunnen veel kleinere schrijf bewerkingen elke seconde worden
 
 AI/ML behandelt het gebruik en de verwerking van verschillende gegevens typen, zoals visuele elementen, spraak en tekst. Dit type werk belasting met hoge prestaties wordt behandeld met grote hoeveel heden gegevens waarvoor snelle reacties en efficiënte opname tijden voor gegevens analyse zijn vereist. 
 
-## <a name="cost-effectiveness"></a>Kosteneffectiviteit
+## <a name="cost-effectiveness"></a>Voordelig
 
 De laag Premium-prestaties heeft een hogere opslag kosten, maar een lagere transactie kosten in vergelijking met de laag standaard prestatie. Als uw toepassingen en werk belastingen een groot aantal trans acties uitvoeren, kan de Premium-prestatie laag rendabel zijn.
 
@@ -78,10 +78,10 @@ De Premium-laag voor Azure Data Lake Storage is beschikbaar in de volgende regio
 |Region|Redundantie|
 |--|--|
 |VS - oost|LRS, ZRS|
-|US - oost 2|LRS, ZRS|
+|VS - oost 2|LRS, ZRS|
 |VS - centraal|LRS|
 |VS - west|LRS|
-|West US 2|LRS, ZRS|
+|VS - west 2|LRS, ZRS|
 |VS - west-centraal|LRS|
 |VS - zuid-centraal|LRS|
 |Canada - midden|LRS|

@@ -6,10 +6,10 @@ ms.subservice: process-automation
 ms.date: 11/03/2020
 ms.topic: conceptual
 ms.openlocfilehash: beed3ec50d0c7990168ee75976c732796cdbe246
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93324429"
 ---
 # <a name="configure-runbook-output-and-message-streams"></a>Runbook-uitvoer en-berichten stromen configureren
@@ -18,7 +18,7 @@ De meeste Azure Automation runbooks hebben een vorm van uitvoer. Deze uitvoer ka
 
 De volgende tabel geeft een korte beschrijving van elke stroom met het gedrag ervan in de Azure Portal voor gepubliceerde runbooks en tijdens [het testen van een runbook](./manage-runbooks.md). De uitvoer stroom is de hoofd stroom die wordt gebruikt voor de communicatie tussen runbooks. De andere stromen worden geclassificeerd als berichten stromen, bedoeld om informatie naar de gebruiker te communiceren.
 
-| Streamen | Beschrijving | Gepubliceerd | Testen |
+| Stream | Beschrijving | Gepubliceerd | Testen |
 |:--- |:--- |:--- |:--- |
 | Fout |Foutbericht bedoeld voor de gebruiker. In tegens telling tot een uitzonde ring, wordt het runbook na een fout bericht standaard voortgezet. |Naar taak geschiedenis geschreven |Weer gegeven in het deel venster test uitvoer |
 | Fouten opsporen |Berichten die zijn bedoeld voor een interactieve gebruiker. Mag niet worden gebruikt in runbooks. |Niet naar taak geschiedenis geschreven |Niet weer gegeven in het deel venster test uitvoer |
@@ -117,9 +117,9 @@ Het runbook bevat het uitvoer type `Microsoft.Azure.Commands.Profile.Models.PSAz
 
 Hoewel dit runbook eenvoudig is, is er één configuratie-item om hier aan te roepen. Met de laatste activiteit wordt de `Write-Output` cmdlet uitgevoerd om profiel gegevens naar een variabele te schrijven met behulp van een Power shell-expressie voor de `Inputobject` para meter. Deze para meter is vereist voor `Write-Output` .
 
-Het tweede runbook in dit voor beeld, met de naam **test-ChildOutputType** , definieert twee activiteiten.<br> ![Voor beeld van een onderliggende uitvoer van het type Runbook](media/automation-runbook-output-and-messages/runbook-display-authentication-results-example.png)
+Het tweede runbook in dit voor beeld, met de naam **test-ChildOutputType**, definieert twee activiteiten.<br> ![Voor beeld van een onderliggende uitvoer van het type Runbook](media/automation-runbook-output-and-messages/runbook-display-authentication-results-example.png)
 
-Met de eerste activiteit wordt het **AuthenticateTo-Azure-** runbook aangeroepen. Met de tweede activiteit wordt de `Write-Verbose` cmdlet uitgevoerd met de **gegevens bron** ingesteld op **uitvoer van activiteit**. Ook is het **veld pad** ingesteld op **context. Subscription. subscriptionname** , de context uitvoer van het **AuthenticateTo-Azure-** runbook.<br> ![Gegevens bron voor cmdlet write-verbose](media/automation-runbook-output-and-messages/runbook-write-verbose-parameters-config.png)
+Met de eerste activiteit wordt het **AuthenticateTo-Azure-** runbook aangeroepen. Met de tweede activiteit wordt de `Write-Verbose` cmdlet uitgevoerd met de **gegevens bron** ingesteld op **uitvoer van activiteit**. Ook is het **veld pad** ingesteld op **context. Subscription. subscriptionname**, de context uitvoer van het **AuthenticateTo-Azure-** runbook.<br> ![Gegevens bron voor cmdlet write-verbose](media/automation-runbook-output-and-messages/runbook-write-verbose-parameters-config.png)
 
 De resulterende uitvoer is de naam van het abonnement.<br> ![Test-ChildOutputType Runbook-resultaten](media/automation-runbook-output-and-messages/runbook-test-childoutputtype-results.png)
 
@@ -279,7 +279,7 @@ Tenzij u deze informatie nodig hebt voor het volgen van de voortgang van een run
 3. Selecteer op de pagina Runbooks een grafisch runbook in de lijst met Runbooks.
 4. Klik onder **instellingen** op **logboek registratie en tracering**.
 5. Klik op de pagina logboek registratie en tracering onder **uitgebreide records vastleggen** op **ingeschakeld** om uitgebreide logboek registratie in te scha kelen.
-6. Wijzig onder **tracering op activiteit niveau** het tracerings niveau in **Basic** of **gedetailleerd** , op basis van het tracerings niveau dat u nodig hebt.<br>
+6. Wijzig onder **tracering op activiteit niveau** het tracerings niveau in **Basic** of **gedetailleerd**, op basis van het tracerings niveau dat u nodig hebt.<br>
 
    ![De pagina logboek registratie en tracering voor grafisch ontwerpen](media/automation-runbook-output-and-messages/logging-and-tracing-settings-blade.png)
 

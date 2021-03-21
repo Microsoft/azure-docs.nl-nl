@@ -10,10 +10,10 @@ ms.date: 08/08/2018
 ms.reviewer: jushiman
 ms.custom: mimckitt, devx-track-azurecli
 ms.openlocfilehash: c5ddd5846be91e9fc99a251d6ad45ade8bde2937
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96016655"
 ---
 # <a name="create-a-virtual-machine-scale-set-that-uses-availability-zones"></a>Een schaalset voor virtuele machines maken die gebruikmaakt van Beschikbaarheidszones
@@ -62,12 +62,12 @@ Wanneer u een schaalset in één zone maakt, bepaalt u in welke zone alle VM-exe
 
 Als u Beschikbaarheidszones wilt gebruiken, moet uw schaalset worden gemaakt in een [ondersteunde Azure-regio](../availability-zones/az-region.md). U kunt een schaalset maken die gebruikmaakt van Beschikbaarheidszones met een van de volgende methoden:
 
-- [Azure Portal](#use-the-azure-portal)
+- [Azure-portal](#use-the-azure-portal)
 - Azure CLI
 - [Azure PowerShell](#use-azure-powershell)
 - [Azure Resource Manager-sjablonen](#use-azure-resource-manager-templates)
 
-## <a name="use-the-azure-portal"></a>Azure Portal gebruiken
+## <a name="use-the-azure-portal"></a>De Azure-portal gebruiken
 
 Het proces voor het maken van een schaalset die gebruikmaakt van een beschikbaarheids zone, is hetzelfde als de informatie in het [artikel aan](quick-create-portal.md)de slag. Wanneer u een ondersteunde Azure-regio selecteert, kunt u een schaalset maken in een of meer beschik bare zones, zoals wordt weer gegeven in het volgende voor beeld:
 

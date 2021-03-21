@@ -4,10 +4,10 @@ description: Gebruik Azure Resource Manager en Azure Cloud Shell om resources te
 ms.topic: conceptual
 ms.date: 10/22/2020
 ms.openlocfilehash: c67251a33b6197603be27086bcc6cd047e0c414b
-ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98028604"
 ---
 # <a name="deploy-arm-templates-from-azure-cloud-shell"></a>ARM-sjablonen implementeren vanuit Azure Cloud Shell
@@ -26,7 +26,7 @@ Als u een externe sjabloon wilt implementeren, geeft u de URI van de sjabloon op
 
 1. Gebruik de volgende opdrachten om de sjabloon te implementeren:
 
-   # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+   # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
    ```azurecli-interactive
    az group create --name ExampleGroup --location "Central US"
@@ -92,7 +92,7 @@ Als u een lokale sjabloon wilt implementeren, moet u eerst uw sjabloon uploaden 
 
 1. Gebruik de volgende opdrachten om de sjabloon te implementeren:
 
-   # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+   # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
    ```azurecli-interactive
    az group create --name ExampleGroup --location "South Central US"

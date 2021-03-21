@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 02/11/2021
 tags: connectors
 ms.openlocfilehash: bec3416195358121b85eb61679ab39647e664a9e
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100382345"
 ---
 # <a name="create-and-manage-records-in-common-data-service-microsoft-dataverse-by-using-azure-logic-apps"></a>Records maken en beheren in Common Data Service (micro soft Dataverse) met behulp van Azure Logic Apps
@@ -54,9 +54,9 @@ Voor dit voor beeld voegt u de trigger Common Data Service toe die wordt geactiv
 
    | Eigenschap | Vereist | Beschrijving |
    |----------|----------|-------------|
-   | **Omgeving** | Yes | De omgeving waarin u bijvoorbeeld ' fabrikam Sales production ' wilt bewaken. Zie [overzicht van Power platform-omgevingen](/power-platform/admin/environments-overview)voor meer informatie. |
-   | **Naam van entiteit** | Yes | De entiteit die u wilt bewaken, bijvoorbeeld ' leads ' |
-   | **Scope** | Yes | De bron die de nieuwe record heeft gemaakt, bijvoorbeeld een gebruiker in uw bedrijfs eenheid of een gebruiker in uw organisatie. In dit voor beeld wordt ' Business Unit ' gebruikt. |
+   | **Omgeving** | Ja | De omgeving waarin u bijvoorbeeld ' fabrikam Sales production ' wilt bewaken. Zie [overzicht van Power platform-omgevingen](/power-platform/admin/environments-overview)voor meer informatie. |
+   | **Naam van entiteit** | Ja | De entiteit die u wilt bewaken, bijvoorbeeld ' leads ' |
+   | **Scope** | Ja | De bron die de nieuwe record heeft gemaakt, bijvoorbeeld een gebruiker in uw bedrijfs eenheid of een gebruiker in uw organisatie. In dit voor beeld wordt ' Business Unit ' gebruikt. |
    ||||
 
 ## <a name="add-common-data-service-action"></a>Common Data Service actie toevoegen
@@ -75,8 +75,8 @@ Voeg nu een Common Data Service actie toe waarmee een taak record voor een nieuw
 
    | Eigenschap | Vereist | Beschrijving |
    |----------|----------|-------------|
-   | **Naam van organisatie** | Yes | De omgeving waarin u de record wilt maken, die niet dezelfde omgeving in uw trigger moet zijn, maar ' fabrikam Sales production ' in dit voor beeld is |
-   | **Naam van entiteit** | Yes | De entiteit waar u de record wilt maken, bijvoorbeeld ' taken ' |
+   | **Naam van organisatie** | Ja | De omgeving waarin u de record wilt maken, die niet dezelfde omgeving in uw trigger moet zijn, maar ' fabrikam Sales production ' in dit voor beeld is |
+   | **Naam van entiteit** | Ja | De entiteit waar u de record wilt maken, bijvoorbeeld ' taken ' |
    | **Onderwerp** | Ja, op basis van de entiteit die in dit voor beeld is geselecteerd | Een korte beschrijving van de doel stelling voor deze taak |
    ||||
 
@@ -90,7 +90,7 @@ Voeg nu een Common Data Service actie toe waarmee een taak record voor een nieuw
 
       ![Trigger uitvoer selecteren voor gebruik in taak record](./media/connect-common-data-service/create-new-record-action-select-trigger-outputs.png)
 
-      | Uitvoer activeren | Description |
+      | Uitvoer activeren | Beschrijving |
       |----------------|-------------|
       | **Voor naam** | De voor naam van de lead record die moet worden gebruikt als de primaire contact persoon in de taak record |
       | **Achternaam** | De achternaam van de lead record die moet worden gebruikt als de primaire contact persoon in de taak record |

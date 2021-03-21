@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 09/21/2020
 ms.reviewer: ''
 ms.openlocfilehash: 1217d3af855e96b6d6a0f403c2ff351a6b957d9a
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96459663"
 ---
 # <a name="playbook-for-addressing-common-security-requirements-with-azure-sql-database-and-azure-sql-managed-instance"></a>Playbook voor het adresseren van algemene beveiligings vereisten met Azure SQL Database en Azure SQL Managed instance
@@ -175,7 +175,7 @@ Verificatie methoden op basis van wacht woorden zijn een zwakkere vorm van verif
 
 - [Beheerde identiteiten gebruiken voor Azure-resources](../../active-directory/managed-identities-azure-resources/overview.md).
   - [Door het systeem toegewezen beheerde identiteit](../../active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-sql.md)
-  - [Door een gebruiker toegewezen beheerde identiteit](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md)
+  - [Door de gebruiker toegewezen beheerde identiteit](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md)
   - [Azure SQL Database gebruiken van Azure App Service met een beheerde identiteit (zonder code wijzigingen)](https://github.com/Azure-Samples/app-service-msi-entityframework-dotnet)
 
 - Authenticatie op basis van certificaten voor een toepassing gebruiken.
@@ -338,7 +338,7 @@ Voor de lezers die dieper willen zijn in SoD, raden we de volgende bronnen aan:
 - Voor Azure SQL Database en SQL Managed instance:  
   - [Toegang tot databases beheren en verlenen](logins-create-manage.md)
   - [Schei ding van functies voor de toepassings ontwikkelaar](/previous-versions/sql/sql-server-2008/cc974525(v=sql.100))
-  - [Schei ding van taken](https://www.microsoft.com/download/details.aspx?id=39269)
+  - [Scheiding van taken](https://www.microsoft.com/download/details.aspx?id=39269)
   - [Opgeslagen procedures ondertekenen](/dotnet/framework/data/adonet/sql/signing-stored-procedures-in-sql-server)
 
 - Voor Azure resource management:

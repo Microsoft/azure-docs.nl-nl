@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 09/29/2020
 ms.custom: seodec18
 ms.openlocfilehash: 639f2ef12d190a56e04a9b48d96ea0a6537d243c
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95020109"
 ---
 # <a name="azure-time-series-insights-gen1-explorer"></a>Azure Time Series Insights gen1 Explorer
@@ -111,7 +111,7 @@ Binnen enkele minuten nadat u uw gebeurtenis bron hebt verbonden met uw Azure Ti
 
 1. Gebruik de **heatmap** om snel unieke of afwijkende gegevens reeksen in een bepaalde query op te sporen. Er kan slechts één zoek term worden gevisualiseerd als een heatmap.
 
-    [Time Series Insights Explorer heatmap grafieken](media/time-series-insights-explorer/tsi-ga-example-heatmap-charting.png)] (media/Time-Series-Insights-Explorer/tsi-ga-example-heatmap-charting.png # Lightbox)
+    [Time Series Insights Explorer heatmap grafieken](media/time-series-insights-explorer/tsi-ga-example-heatmap-charting.png)] (media/Time-Series-Insights-Explorer/tsi-ga-example-heatmap-charting.png#lightbox)
 
 1. Wanneer u gebeurtenissen bekijkt door te selecteren of met de rechter muisknop te klikken, wordt het deel venster **gebeurtenissen** beschikbaar gesteld. Hier kunt u al uw onbewerkte gebeurtenissen controleren en uw gebeurtenissen exporteren als JSON-of CSV-bestanden. Azure Time Series Insights worden alle onbewerkte gegevens opgeslagen.
 

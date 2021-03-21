@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.custom: devx-track-dotnet, devx-track-azurepowershell
 ms.date: 04/22/2019
 ms.openlocfilehash: 61ed3ed274505101c65e251260bd759fe78f7b31
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97936784"
 ---
 # <a name="azure-functions-powershell-developer-guide"></a>Ontwikkelaarshandleiding voor Azure Functions PowerShell
@@ -386,7 +386,7 @@ Wanneer u een functie-app maakt met behulp van hulpprogram ma's, zoals Visual St
 
 In de volgende tabel ziet u de Power shell-versies die beschikbaar zijn voor elke primaire versie van de functions-runtime en de .NET-versie die is vereist:
 
-| Functie versie | Power shell-versie                               | .NET-versie  | 
+| Functie versie | PowerShell-versie                               | .NET-versie  | 
 |-------------------|--------------------------------------------------|---------------|
 | 3. x (aanbevolen) | Power shell 7 (aanbevolen)<br/>Power shell Core 6 | .NET Core 3.1<br/>.NET Core 2.1 |
 | 2.x               | Power shell Core 6                                | .NET Core 2.2 |

@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 08/24/2020
 ms.openlocfilehash: 4dafb738fd7d44893705994baa962831c101804b
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100390025"
 ---
 # <a name="datasets-in-azure-data-factory"></a>Gegevenssets in Azure Data Factory
@@ -65,10 +65,10 @@ In de volgende tabel worden de eigenschappen in de bovenstaande JSON beschreven:
 
 Eigenschap | Beschrijving | Vereist |
 -------- | ----------- | -------- |
-naam | De naam van de gegevensset. Zie [Azure Data Factory naamgevings regels](naming-rules.md). |  Yes |
-type | Het type van de gegevensset. Geef een van de typen op die worden ondersteund door Data Factory (bijvoorbeeld: DelimitedText, AzureSqlTable). <br/><br/>Zie [type gegevensset](#dataset-type)voor meer informatie. | Yes |
-schema | Het schema van de gegevensset geeft het fysieke gegevens type en de vorm aan. | No |
-typeProperties | De type-eigenschappen verschillen voor elk type. Zie [type gegevensset](#dataset-type)voor meer informatie over de ondersteunde typen en hun eigenschappen. | Yes |
+naam | De naam van de gegevensset. Zie [Azure Data Factory naamgevings regels](naming-rules.md). |  Ja |
+type | Het type van de gegevensset. Geef een van de typen op die worden ondersteund door Data Factory (bijvoorbeeld: DelimitedText, AzureSqlTable). <br/><br/>Zie [type gegevensset](#dataset-type)voor meer informatie. | Ja |
+schema | Het schema van de gegevensset geeft het fysieke gegevens type en de vorm aan. | Nee |
+typeProperties | De type-eigenschappen verschillen voor elk type. Zie [type gegevensset](#dataset-type)voor meer informatie over de ondersteunde typen en hun eigenschappen. | Ja |
 
 Wanneer u het schema van de gegevensset importeert, selecteert u de knop **schema importeren** en kiest u importeren uit de bron of van een lokaal bestand. In de meeste gevallen importeert u het schema rechtstreeks vanuit de bron. Maar als u al een lokaal schema bestand (een Parquet-bestand of CSV met headers) hebt, kunt u Data Factory door sturen om het schema op dat bestand te baseren.
 

@@ -17,10 +17,10 @@ ms.date: 11/15/2018
 ms.author: kumud
 ms.reviewer: anavin
 ms.openlocfilehash: 1ff9fcbb693f7e606c07985f9bce9acd60c5591a
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98222969"
 ---
 # <a name="create-a-virtual-network-peering---different-deployment-models-same-subscription"></a>Een peering voor een virtueel netwerk maken-verschillende implementatie modellen, hetzelfde abonnement
@@ -43,7 +43,7 @@ U kunt de Azure Portal, de Azure [-opdracht regel interface](#cli) (CLI), Azure 
 
 ## <a name="create-peering---azure-portal"></a>Peering-Azure Portal maken
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Het account waarmee u zich aanmeldt, moet de benodigde machtigingen hebben voor het maken van een virtuele netwerk peering. Zie [machtigingen voor peering voor virtuele netwerken](virtual-network-manage-peering.md#requirements-and-constraints)voor een lijst met machtigingen.
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). Het account waarmee u zich aanmeldt, moet de benodigde machtigingen hebben voor het maken van een virtuele netwerk peering. Zie [machtigingen voor peering voor virtuele netwerken](virtual-network-manage-peering.md#requirements-and-constraints)voor een lijst met machtigingen.
 2. Klik op **+ Nieuw**, klik op **netwerken** en klik vervolgens op **virtueel netwerk**.
 3. Voer op de Blade **virtueel netwerk maken** een waarde in of selecteer waarden voor de volgende instellingen en klik vervolgens op **maken**:
     - **Naam**: *myVnet1*

@@ -13,10 +13,10 @@ ms.author: sstein
 ms.reviewer: sashan, moslake
 ms.date: 12/14/2020
 ms.openlocfilehash: 95e11e98be8a58611a435de533ffcc16ec5ce357
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102048553"
 ---
 # <a name="azure-sql-database-and-azure-sql-managed-instance-service-tiers"></a>Service lagen van Azure SQL Database en Azure SQL Managed instance

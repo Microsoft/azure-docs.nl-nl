@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/18/2019
 ms.author: pafarley
 ms.openlocfilehash: 479c7c455f07d098edd327196803e85df24dfb6d
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96905127"
 ---
 # <a name="create-human-reviews-api-console"></a>Menselijke beoordelingen maken (API-console)
@@ -135,7 +135,7 @@ Selecteer **Verzenden**. Als de bewerking is geslaagd, is de **reactie status** 
 
 ### <a name="examine-the-new-review"></a>Bekijk de nieuwe beoordeling
 
-Selecteer in het [hulp programma beoordeling](https://contentmoderator.cognitive.microsoft.com)de optie **Review**  >  **afbeeldings** / **tekst** / **video** bekijken (afhankelijk van de inhoud die u hebt gebruikt). De inhoud die u hebt geüpload, moet worden weer gegeven, gereed voor menselijke beoordeling.
+Selecteer in het [hulp programma beoordeling](https://contentmoderator.cognitive.microsoft.com)de optie   >  **afbeeldings** / **tekst** / **video** bekijken (afhankelijk van de inhoud die u hebt gebruikt). De inhoud die u hebt geüpload, moet worden weer gegeven, gereed voor menselijke beoordeling.
 
 ![De afbeelding van een voetbal bekijken](images/test-drive-review-5.PNG)
 

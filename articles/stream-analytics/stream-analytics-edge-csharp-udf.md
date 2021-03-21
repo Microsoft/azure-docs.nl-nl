@@ -8,10 +8,10 @@ ms.topic: tutorial
 ms.date: 12/06/2018
 ms.custom: seodec18, devx-track-csharp
 ms.openlocfilehash: 851229e441aa2fbdf7b6eec05390c0ce2b149da2
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98020465"
 ---
 # <a name="tutorial-write-a-c-user-defined-function-for-azure-stream-analytics-job-preview"></a>Zelfstudie: Een door de gebruiker gedefinieerde C#-functie schrijven voor een Azure Stream Analytics-taak (preview)

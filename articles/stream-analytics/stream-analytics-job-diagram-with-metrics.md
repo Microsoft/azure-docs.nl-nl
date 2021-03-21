@@ -7,10 +7,10 @@ ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 05/01/2017
 ms.openlocfilehash: 6d20454515088ccca87665d9b3b27c0d82c3cdf9
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98020397"
 ---
 # <a name="data-driven-debugging-by-using-the-job-diagram"></a>Gegevensgestuurde foutopsporing met behulp van het taakdiagram
@@ -77,7 +77,7 @@ Als de voor gaande query stap een invoer processor is, gebruikt u de metrische g
 *   In de achterstand van de **invoer (totaal)** wordt uitgelegd hoe veel meer berichten moeten worden gelezen voor Event hubs en Azure IOT hub-invoer. Wanneer dit aantal groter is dan 0, betekent dit dat uw taak de gegevens niet kan verwerken wanneer deze zich in bevindt. In dat geval moet u mogelijk het aantal streaming-eenheden verhogen en/of ervoor zorgen dat uw taak kan worden geparallelleerd. Op de  [pagina query parallel Lise ring](./stream-analytics-parallelization.md)vindt u meer informatie. 
 
 
-## <a name="get-help"></a>Help opvragen
+## <a name="get-help"></a>Hulp vragen
 Voor aanvullende hulp gaat u [naar onze micro soft Q&een vraag pagina voor Azure stream Analytics](/answers/topics/azure-stream-analytics.html). 
 
 ## <a name="next-steps"></a>Volgende stappen

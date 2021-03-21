@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 12/07/2018
 ms.custom: seodec18
 ms.openlocfilehash: 09151ea0fe3d419401d576149f6655b8cdc09f8e
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98019955"
 ---
 # <a name="develop-stream-analytics-edge-jobs-using-visual-studio-tools"></a>Stream Analytics Edge-taken ontwikkelen met behulp van Visual Studio Tools
@@ -66,7 +66,7 @@ Stream Analytics taken die in de Stream Analytics IoT Edge omgevingen zijn geïm
 
 |**Categorie**  | **Opdracht**  |
 |---------|---------|
-|Andere opera tors | <ul><li>PARTITIONEREN OP</li><li>TIME STAMP MET MEER DAN</li><li>JavaScript UDF</li><li>Door de gebruiker gedefinieerde aggregaties (UDA)</li><li>GetMetadataPropertyValue</li><li>Meer dan 14 statistische functies gebruiken in één stap</li></ul>   |
+|Overige operatoren | <ul><li>PARTITIONEREN OP</li><li>TIME STAMP MET MEER DAN</li><li>JavaScript UDF</li><li>Door de gebruiker gedefinieerde aggregaties (UDA)</li><li>GetMetadataPropertyValue</li><li>Meer dan 14 statistische functies gebruiken in één stap</li></ul>   |
 
 Wanneer u een Stream Analytics Edge-taak maakt in de portal, wordt u door de compiler automatisch gewaarschuwd als u geen ondersteunde operator gebruikt.
 

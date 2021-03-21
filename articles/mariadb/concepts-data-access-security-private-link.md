@@ -3,14 +3,14 @@ title: Persoonlijke koppeling-Azure Database for MariaDB
 description: Meer informatie over de werking van een persoonlijke koppeling voor Azure Database for MariaDB.
 author: mksuni
 ms.author: sumuth
-ms.service: jroth
+ms.service: mariadb
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: 12f52cd497d606fda6bbea9b54f467522373eeb7
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: ec43fa995fc9772964db399baa0b6f8c2a7db1db
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98665137"
 ---
 # <a name="private-link-for-azure-database-for-mariadb"></a>Persoonlijke koppeling voor Azure Database for MariaDB
@@ -57,7 +57,7 @@ Met persoonlijke koppeling kunt u cross-premises toegang tot het privé-eind pun
 
 Privé-eind punten zijn vereist om een persoonlijke koppeling in te scha kelen. U kunt dit doen met behulp van de volgende hand leidingen.
 
-* [Azure Portal](howto-configure-privatelink-portal.md)
+* [Azure-portal](howto-configure-privatelink-portal.md)
 * [CLI](howto-configure-privatelink-cli.md)
 
 ### <a name="approval-process"></a>Goedkeuringsproces

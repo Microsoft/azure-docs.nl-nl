@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 4/15/2019
 ms.author: ramamill
 ms.openlocfilehash: 05d260de726c62c130a58938c2a2c9fa2440a96d
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96004718"
 ---
 # <a name="run-the-deployment-planner-for-vmware-disaster-recovery"></a>De Deployment Planner voor nood herstel van VMware uitvoeren
@@ -22,7 +22,7 @@ Dit artikel is de gebruikershandleiding voor de Azure Site Recovery-implementati
 Het opdrachtregelprogramma (ASRDeploymentPlanner.exe) kunt u uitvoeren in een van de volgende drie modi:
 
 1.  [Profile ring](#profile-vmware-vms)
-2.  [Rapporten genereren](#generate-report)
+2.  [Genereren van rapporten](#generate-report)
 3.  [Doorvoer bepalen](#get-throughput)
 
 Voer het hulpprogramma eerst uit in de profileringsmodus om gegevensverloop en IOPS te verzamelen voor de virtuele machine. Voer vervolgens het hulpprogramma uit om het rapport te genereren en de netwerkbandbreedte, opslagvereisten en DR-kosten te bepalen.

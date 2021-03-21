@@ -8,10 +8,10 @@ ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: aa364ec434db980bf226008537ca928628fcac1b
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100392082"
 ---
 # <a name="copy-data-to-and-from-azure-synapse-analytics-using-azure-data-factory"></a>Gegevens kopiëren van en naar Azure Synapse Analytics met behulp van Azure Data Factory
@@ -66,7 +66,7 @@ De volgende tabel bevat een beschrijving van de JSON-elementen die specifiek zij
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
 | type |De eigenschap type moet worden ingesteld op: **AzureSqlDW** |Ja |
-| connectionString |Geef de gegevens op die nodig zijn om verbinding te maken met het Azure Synapse Analytics-exemplaar voor de Connections Tring-eigenschap. Alleen basis verificatie wordt ondersteund. |Yes |
+| connectionString |Geef de gegevens op die nodig zijn om verbinding te maken met het Azure Synapse Analytics-exemplaar voor de Connections Tring-eigenschap. Alleen basis verificatie wordt ondersteund. |Ja |
 
 > [!IMPORTANT]
 > Configureer [Azure SQL database firewall](/previous-versions/azure/ee621782(v=azure.100)#ConnectingFromAzure) en de database server zodanig dat [Azure-Services toegang krijgen tot de server](/previous-versions/azure/ee621782(v=azure.100)#ConnectingFromAzure). Daarnaast kunt u, als u gegevens kopieert naar Azure Synapse Analytics van buiten Azure, inclusief van on-premises gegevens bronnen met data factory gateway, het juiste IP-adres bereik configureren voor de computer die gegevens naar Azure Synapse Analytics verzendt.
@@ -78,7 +78,7 @@ De sectie typeProperties verschilt voor elk type gegevensset en bevat informatie
 
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
-| tableName |De naam van de tabel of weer gave in de Azure Synapse Analytics-Data Base waarnaar de gekoppelde service verwijst. |Yes |
+| tableName |De naam van de tabel of weer gave in de Azure Synapse Analytics-Data Base waarnaar de gekoppelde service verwijst. |Ja |
 
 ## <a name="copy-activity-properties"></a>Eigenschappen van de kopieeractiviteit
 Zie het artikel [pijp lijnen maken](data-factory-create-pipelines.md) voor een volledige lijst met secties & eigenschappen die beschikbaar zijn voor het definiëren van activiteiten. Eigenschappen zoals naam, beschrijving, invoer-en uitvoer tabellen en beleid zijn beschikbaar voor alle typen activiteiten.
@@ -93,9 +93,9 @@ Wanneer bron van het type **SqlDWSource** is, zijn de volgende eigenschappen bes
 
 | Eigenschap | Beschrijving | Toegestane waarden | Vereist |
 | --- | --- | --- | --- |
-| sqlReaderQuery |Gebruik de aangepaste query om gegevens te lezen. |SQL-query teken reeks. Bijvoorbeeld: Select * from MyTable. |No |
-| sqlReaderStoredProcedureName |De naam van de opgeslagen procedure waarmee gegevens uit de bron tabel worden gelezen. |De naam van de opgeslagen procedure. De laatste SQL-instructie moet een instructie SELECT in de opgeslagen procedure zijn. |No |
-| storedProcedureParameters |Para meters voor de opgeslagen procedure. |Naam/waarde-paren. Namen en hoofdletter gebruik van para meters moeten overeenkomen met de namen en de behuizing van de opgeslagen procedure parameters. |No |
+| sqlReaderQuery |Gebruik de aangepaste query om gegevens te lezen. |SQL-query teken reeks. Bijvoorbeeld: Select * from MyTable. |Nee |
+| sqlReaderStoredProcedureName |De naam van de opgeslagen procedure waarmee gegevens uit de bron tabel worden gelezen. |De naam van de opgeslagen procedure. De laatste SQL-instructie moet een instructie SELECT in de opgeslagen procedure zijn. |Nee |
+| storedProcedureParameters |Para meters voor de opgeslagen procedure. |Naam/waarde-paren. Namen en hoofdletter gebruik van para meters moeten overeenkomen met de namen en de behuizing van de opgeslagen procedure parameters. |Nee |
 
 Als de **sqlReaderQuery** is opgegeven voor de SqlDWSource, voert de Kopieer activiteit deze query uit op basis van de Azure Synapse Analytics-bron om de gegevens op te halen.
 
@@ -139,15 +139,15 @@ GO
 
 | Eigenschap | Beschrijving | Toegestane waarden | Vereist |
 | --- | --- | --- | --- |
-| sqlWriterCleanupScript |Geef een query op voor de Kopieer activiteit die moet worden uitgevoerd, zodat de gegevens van een specifiek segment worden opgeruimd. Zie de [sectie REPEAT baarheid](#repeatability-during-copy)voor meer informatie. |Een query-instructie. |No |
-| allowPolyBase |Hiermee wordt aangegeven of poly base (indien van toepassing) moet worden gebruikt in plaats van BULKINSERT-mechanisme. <br/><br/> **Het gebruik van poly Base is de aanbevolen manier om gegevens in azure Synapse Analytics te laden.** Zie [poly Base gebruiken om gegevens te laden in de sectie Azure Synapse Analytics](#use-polybase-to-load-data-into-azure-synapse-analytics) voor beperkingen en Details. |Waar <br/>False (standaard) |No |
-| polyBaseSettings |Een groep eigenschappen die kan worden opgegeven wanneer de eigenschap **allowPolybase** is ingesteld op **True**. |&nbsp; |No |
-| rejectValue |Hiermee geeft u het aantal of percentage rijen op dat kan worden afgewezen voordat de query mislukt. <br/><br/>Meer informatie over de opties voor het afwijzen van poly bases vindt u in de sectie **argumenten** van het onderwerp [externe tabel maken (Transact-SQL)](/sql/t-sql/statements/create-external-table-transact-sql) . |0 (standaard), 1, 2,... |No |
-| rejectType |Hiermee wordt aangegeven of de optie rejectValue is opgegeven als een letterlijke waarde of een percentage. |Waarde (standaard), percentage |No |
+| sqlWriterCleanupScript |Geef een query op voor de Kopieer activiteit die moet worden uitgevoerd, zodat de gegevens van een specifiek segment worden opgeruimd. Zie de [sectie REPEAT baarheid](#repeatability-during-copy)voor meer informatie. |Een query-instructie. |Nee |
+| allowPolyBase |Hiermee wordt aangegeven of poly base (indien van toepassing) moet worden gebruikt in plaats van BULKINSERT-mechanisme. <br/><br/> **Het gebruik van poly Base is de aanbevolen manier om gegevens in azure Synapse Analytics te laden.** Zie [poly Base gebruiken om gegevens te laden in de sectie Azure Synapse Analytics](#use-polybase-to-load-data-into-azure-synapse-analytics) voor beperkingen en Details. |Waar <br/>False (standaard) |Nee |
+| polyBaseSettings |Een groep eigenschappen die kan worden opgegeven wanneer de eigenschap **allowPolybase** is ingesteld op **True**. |&nbsp; |Nee |
+| rejectValue |Hiermee geeft u het aantal of percentage rijen op dat kan worden afgewezen voordat de query mislukt. <br/><br/>Meer informatie over de opties voor het afwijzen van poly bases vindt u in de sectie **argumenten** van het onderwerp [externe tabel maken (Transact-SQL)](/sql/t-sql/statements/create-external-table-transact-sql) . |0 (standaard), 1, 2,... |Nee |
+| rejectType |Hiermee wordt aangegeven of de optie rejectValue is opgegeven als een letterlijke waarde of een percentage. |Waarde (standaard), percentage |Nee |
 | rejectSampleValue |Bepaalt het aantal rijen dat moet worden opgehaald voordat de poly base het percentage geweigerde rijen opnieuw berekent. |1, 2,... |Ja, als **rejectType** een **percentage** is |
-| useTypeDefault |Hiermee geeft u op hoe ontbrekende waarden in tekst bestanden met scheidings tekens moeten worden verwerkt wanneer poly base gegevens ophaalt uit het tekst bestand.<br/><br/>Meer informatie over deze eigenschap vindt u in de sectie argumenten in [externe BESTANDS indeling maken (Transact-SQL)](/sql/t-sql/statements/create-external-file-format-transact-sql). |True, False (standaard) |No |
+| useTypeDefault |Hiermee geeft u op hoe ontbrekende waarden in tekst bestanden met scheidings tekens moeten worden verwerkt wanneer poly base gegevens ophaalt uit het tekst bestand.<br/><br/>Meer informatie over deze eigenschap vindt u in de sectie argumenten in [externe BESTANDS indeling maken (Transact-SQL)](/sql/t-sql/statements/create-external-file-format-transact-sql). |True, False (standaard) |Nee |
 | writeBatchSize |Hiermee worden gegevens in de SQL-tabel ingevoegd wanneer de buffer grootte writeBatchSize bereikt |Geheel getal (aantal rijen) |Nee (standaard: 10000) |
-| writeBatchTimeout |Wacht tijd voordat de batch INSERT-bewerking is voltooid voordat er een time-out optreedt. |tijdsbestek<br/><br/> Voor beeld: "00:30:00" (30 minuten). |No |
+| writeBatchTimeout |Wacht tijd voordat de batch INSERT-bewerking is voltooid voordat er een time-out optreedt. |tijdsbestek<br/><br/> Voor beeld: "00:30:00" (30 minuten). |Nee |
 
 #### <a name="sqldwsink-example"></a>SqlDWSink-voor beeld
 

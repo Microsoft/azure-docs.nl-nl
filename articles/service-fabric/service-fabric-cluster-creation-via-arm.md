@@ -4,10 +4,10 @@ description: Meer informatie over het instellen van een beveiligd Service Fabric
 ms.topic: conceptual
 ms.date: 08/16/2018
 ms.openlocfilehash: d4daa75fd9383bc19da1b09104ebddff5712c5b4
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98791808"
 ---
 # <a name="create-a-service-fabric-cluster-using-azure-resource-manager"></a>Een Service Fabric-cluster maken met behulp van Azure Resource Manager 

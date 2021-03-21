@@ -10,10 +10,10 @@ ms.date: 02/09/2021
 ms.author: tamram
 ms.subservice: blobs
 ms.openlocfilehash: a370a7f04e0e43b96e4a574313c4f24c4990ab6f
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100390353"
 ---
 # <a name="soft-delete-for-blobs"></a>Blobs voorlopig verwijderen
@@ -87,7 +87,7 @@ Met zacht verwijderen worden uw gegevens niet opgeslagen in gevallen van het ver
 
 De volgende tabel bevat details over het verwachte gedrag wanneer zacht verwijderen is ingeschakeld:
 
-| REST API bewerking | Resourcetype | Description | Wijziging in gedrag |
+| REST API bewerking | Resourcetype | Beschrijving | Wijziging in gedrag |
 |--------------------|---------------|-------------|--------------------|
 | [Verwijderen](/rest/api/storagerp/StorageAccounts/Delete) | Account | Hiermee verwijdert u het opslag account, inclusief alle containers en blobs die het bevat.                           | Geen verandering. Containers en blobs in het verwijderde account kunnen niet worden hersteld. |
 | [Container verwijderen](/rest/api/storageservices/delete-container) | Container | Hiermee verwijdert u de container, inclusief alle blobs die deze bevat. | Geen verandering. Blobs in de verwijderde container kunnen niet worden hersteld. |

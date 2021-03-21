@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 08/20/2019
 ms.openlocfilehash: c38e4681c76fb0dd52d77c7dc1438b87a9571a80
-ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103562056"
 ---
 # <a name="what-is-sql-data-sync-for-azure"></a>Wat is SQL Data Sync voor Azure?

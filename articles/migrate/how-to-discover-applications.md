@@ -7,10 +7,10 @@ ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 06/10/2020
 ms.openlocfilehash: 8266b585881546b37bbb21b82780ab26d85dada7
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102048077"
 ---
 # <a name="discover-installed-applications-roles-and-features-software-inventory-and-sql-server-instances-and-databases"></a>Geïnstalleerde toepassingen, functies en onderdelen (software-inventarisatie) en SQL Server instanties en data bases detecteren
@@ -20,7 +20,7 @@ In dit artikel wordt beschreven hoe u geïnstalleerde toepassingen, functies en 
 Door software-inventarisatie uit te voeren, kunt u een pad voor de migratie naar Azure identificeren en aanpassen voor uw workloads. Software-inventarisatie gebruikt het Azure Migrate apparaat om detectie uit te voeren met behulp van Server referenties. Het is volledig zonder agent: er zijn geen agents geïnstalleerd op de servers om deze gegevens te verzamelen.
 
 > [!NOTE]
-> Software-inventarisatie is momenteel als preview beschikbaar voor servers die alleen worden uitgevoerd in de VMware-omgeving en is beperkt tot alleen detectie. Momenteel bieden we geen evaluatie op basis van toepassingen.<br/> Detectie en evaluatie van SQL Server instanties en data bases die worden uitgevoerd in uw VMware-omgeving is nu beschikbaar als preview-versie. Gebruik [**deze koppeling**](https://aka.ms/AzureMigrate/SQL) om een project te maken in **Australië-Oost** regio om deze functie uit te proberen. Als u al een project in Australië-oost hebt en u deze functie wilt uitproberen, moet u ervoor zorgen dat u deze [**vereisten**](how-to-discover-sql-existing-project.md) hebt voltooid op de portal.
+> Software-inventarisatie is momenteel als preview beschikbaar voor servers die alleen worden uitgevoerd in de VMware-omgeving en is beperkt tot alleen detectie. Momenteel bieden we geen evaluatie op basis van toepassingen.<br/> Detectie en evaluatie van SQL Server instanties en data bases die worden uitgevoerd in uw VMware-omgeving is nu beschikbaar als preview-versie. Als u deze functie wilt proberen, gebruikt u [**deze koppeling**](https://aka.ms/AzureMigrate/SQL) om een project te maken in de regio **Australië - oost**. Als u al een project in Australië-oost hebt en u deze functie wilt proberen, zorgt u ervoor dat u aan deze [**vereisten**](how-to-discover-sql-existing-project.md) voldoet in de portal.
 
 ## <a name="before-you-start"></a>Voordat u begint
 

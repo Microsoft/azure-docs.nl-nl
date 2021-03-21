@@ -13,10 +13,10 @@ ms.date: 02/27/2017
 ms.author: rohink
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: 5d902e0172a048527ce8f2fa9e22c5fc9bf22e0b
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102203620"
 ---
 # <a name="how-to-manage-dns-zones-in-azure-dns-using-the-azure-cli"></a>DNS-zones beheren in Azure DNS met behulp van de Azure CLI
@@ -31,7 +31,7 @@ In deze hand leiding wordt uitgelegd hoe u uw DNS-zones beheert met behulp van d
 
 Deze hand leiding behandelt specifiek voor open bare DNS-zones. Zie [aan de slag met Azure DNS private zones met Azure cli](private-dns-getstarted-cli.md)voor meer informatie over het gebruik van Azure CLI voor het beheren van persoonlijke Zones in azure DNS.
 
-## <a name="introduction"></a>Introductie
+## <a name="introduction"></a>Inleiding
 
 [!INCLUDE [dns-create-zone-about](../../includes/dns-create-zone-about-include.md)]
 

@@ -13,10 +13,10 @@ ms.date: 07/13/2020
 ms.author: justinha
 ms.custom: fasttrack-edit
 ms.openlocfilehash: 8b6d022b9a1f3be70f69943a53754c9dd909ca99
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96619484"
 ---
 # <a name="join-an-ubuntu-linux-virtual-machine-to-an-azure-active-directory-domain-services-managed-domain"></a>Een Ubuntu Linux virtuele machine toevoegen aan een Azure Active Directory Domain Services beheerd domein
@@ -44,7 +44,7 @@ Als u een bestaande Ubuntu Linux virtuele machine in azure hebt, kunt u er verbi
 Als u een Ubuntu Linux virtuele machine moet maken of een test-VM wilt maken voor gebruik met dit artikel, kunt u een van de volgende methoden gebruiken:
 
 * [Azure-portal](../virtual-machines/linux/quick-create-portal.md)
-* [Azure CLI](../virtual-machines/linux/quick-create-cli.md)
+* [Azure-CLI](../virtual-machines/linux/quick-create-cli.md)
 * [Azure PowerShell](../virtual-machines/linux/quick-create-powershell.md)
 
 Wanneer u de virtuele machine maakt, moet u aandacht best Eden aan de instellingen voor virtueel netwerk om ervoor te zorgen dat de virtuele machine kan communiceren met het beheerde domein:

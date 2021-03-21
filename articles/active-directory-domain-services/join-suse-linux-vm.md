@@ -11,10 +11,10 @@ ms.topic: how-to
 ms.date: 08/12/2020
 ms.author: justinha
 ms.openlocfilehash: f2f421d95dfc376aed373c718198db33a870d9dc
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96619603"
 ---
 # <a name="join-a-suse-linux-enterprise-virtual-machine-to-an-azure-active-directory-domain-services-managed-domain"></a>Een SUSE Linux Enter prise-virtuele machine toevoegen aan een Azure Active Directory Domain Services beheerd domein
@@ -42,7 +42,7 @@ Als u een bestaande virtuele machine met SLE Linux in azure hebt, kunt u er verb
 Als u een virtuele machine met SLE Linux wilt maken of een test-VM wilt maken voor gebruik met dit artikel, kunt u een van de volgende methoden gebruiken:
 
 * [Azure-portal](../virtual-machines/linux/quick-create-portal.md)
-* [Azure CLI](../virtual-machines/linux/quick-create-cli.md)
+* [Azure-CLI](../virtual-machines/linux/quick-create-cli.md)
 * [Azure PowerShell](../virtual-machines/linux/quick-create-powershell.md)
 
 Wanneer u de virtuele machine maakt, moet u aandacht best Eden aan de instellingen voor virtueel netwerk om ervoor te zorgen dat de virtuele machine kan communiceren met het beheerde domein:

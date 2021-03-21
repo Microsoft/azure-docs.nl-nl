@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 10/14/2020
 ms.author: jingwang
 ms.openlocfilehash: 90cc4e3f9915db424cec89cfc764771b5be785e9
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100389719"
 ---
 # <a name="copy-data-from-an-odata-source-by-using-azure-data-factory"></a>Gegevens kopiëren van een OData-bron met behulp van Azure Data Factory
@@ -52,21 +52,21 @@ De volgende eigenschappen worden ondersteund voor een gekoppelde OData-service:
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap **type** moet worden ingesteld op **OData**. |Yes |
-| url | De basis-URL van de OData-service. |Yes |
-| authenticationType | Het type verificatie dat wordt gebruikt om verbinding te maken met de OData-bron. Toegestane waarden zijn **anoniem**, **basis**, **Windows** en **AadServicePrincipal**. OAuth op basis van de gebruiker wordt niet ondersteund. U kunt verificatie headers ook configureren in de `authHeader` eigenschap.| Yes |
-| authHeaders | Aanvullende HTTP-aanvraag headers voor authenticatie.<br/> Als u bijvoorbeeld API-sleutel verificatie wilt gebruiken, kunt u verificatie type selecteren als ' anoniem ' en de API-sleutel in de header opgeven. | No |
-| userName | Geef een **gebruikers naam** op als u basis-of Windows-verificatie gebruikt. | No |
-| wachtwoord | Geef het **wacht woord** op voor het gebruikers account dat u hebt opgegeven voor de **gebruikers naam**. Markeer dit veld als **SecureString** -type om het veilig op te slaan in Data Factory. U kunt ook [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | No |
-| servicePrincipalId | Geef de client-ID van de Azure Active Directory toepassing op. | No |
-| aadServicePrincipalCredentialType | Geef het referentie type op dat moet worden gebruikt voor Service-Principal-verificatie. Toegestane waarden zijn: `ServicePrincipalKey` of `ServicePrincipalCert` . | No |
-| servicePrincipalKey | Geef de sleutel van de Azure Active Directory toepassing op. Markeer dit veld als **SecureString** om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | No |
-| servicePrincipalEmbeddedCert | Geef het met base64 gecodeerde certificaat op van uw toepassing die is geregistreerd in Azure Active Directory. Markeer dit veld als **SecureString** om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | No |
-| servicePrincipalEmbeddedCertPassword | Geef het wacht woord van uw certificaat op als uw certificaat is beveiligd met een wacht woord. Markeer dit veld als **SecureString** om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md).  | No|
-| tenant | Geef de Tenant gegevens op (domein naam of Tenant-ID) waaronder uw toepassing zich bevindt. U kunt deze ophalen door de muis in de rechter bovenhoek van de Azure Portal aan te wijzen. | No |
-| aadResourceId | Geef de AAD-resource op die u aanvraagt voor autorisatie.| No |
-| azureCloudType | Voor Service-Principal-verificatie geeft u het type van de Azure-cloud omgeving op waarvoor uw AAD-toepassing is geregistreerd. <br/> Toegestane waarden zijn **AzurePublic**, **AzureChina**, **AzureUsGovernment** en **AzureGermany**. De cloud omgeving van de data factory wordt standaard gebruikt. | No |
-| connectVia | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. Meer informatie vindt u in de sectie [vereisten](#prerequisites) . Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. |No |
+| type | De eigenschap **type** moet worden ingesteld op **OData**. |Ja |
+| url | De basis-URL van de OData-service. |Ja |
+| authenticationType | Het type verificatie dat wordt gebruikt om verbinding te maken met de OData-bron. Toegestane waarden zijn **anoniem**, **basis**, **Windows** en **AadServicePrincipal**. OAuth op basis van de gebruiker wordt niet ondersteund. U kunt verificatie headers ook configureren in de `authHeader` eigenschap.| Ja |
+| authHeaders | Aanvullende HTTP-aanvraag headers voor authenticatie.<br/> Als u bijvoorbeeld API-sleutel verificatie wilt gebruiken, kunt u verificatie type selecteren als ' anoniem ' en de API-sleutel in de header opgeven. | Nee |
+| userName | Geef een **gebruikers naam** op als u basis-of Windows-verificatie gebruikt. | Nee |
+| wachtwoord | Geef het **wacht woord** op voor het gebruikers account dat u hebt opgegeven voor de **gebruikers naam**. Markeer dit veld als **SecureString** -type om het veilig op te slaan in Data Factory. U kunt ook [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Nee |
+| servicePrincipalId | Geef de client-ID van de Azure Active Directory toepassing op. | Nee |
+| aadServicePrincipalCredentialType | Geef het referentie type op dat moet worden gebruikt voor Service-Principal-verificatie. Toegestane waarden zijn: `ServicePrincipalKey` of `ServicePrincipalCert` . | Nee |
+| servicePrincipalKey | Geef de sleutel van de Azure Active Directory toepassing op. Markeer dit veld als **SecureString** om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Nee |
+| servicePrincipalEmbeddedCert | Geef het met base64 gecodeerde certificaat op van uw toepassing die is geregistreerd in Azure Active Directory. Markeer dit veld als **SecureString** om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Nee |
+| servicePrincipalEmbeddedCertPassword | Geef het wacht woord van uw certificaat op als uw certificaat is beveiligd met een wacht woord. Markeer dit veld als **SecureString** om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md).  | Nee|
+| tenant | Geef de Tenant gegevens op (domein naam of Tenant-ID) waaronder uw toepassing zich bevindt. U kunt deze ophalen door de muis in de rechter bovenhoek van de Azure Portal aan te wijzen. | Nee |
+| aadResourceId | Geef de AAD-resource op die u aanvraagt voor autorisatie.| Nee |
+| azureCloudType | Voor Service-Principal-verificatie geeft u het type van de Azure-cloud omgeving op waarvoor uw AAD-toepassing is geregistreerd. <br/> Toegestane waarden zijn **AzurePublic**, **AzureChina**, **AzureUsGovernment** en **AzureGermany**. De cloud omgeving van de data factory wordt standaard gebruikt. | Nee |
+| connectVia | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. Meer informatie vindt u in de sectie [vereisten](#prerequisites) . Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. |Nee |
 
 **Voor beeld 1: anonieme verificatie gebruiken**
 
@@ -228,8 +228,8 @@ Als u gegevens wilt kopiëren uit OData, stelt u de eigenschap **type** van de g
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap **type** van de DataSet moet worden ingesteld op **ODataResource**. | Yes |
-| leertraject | Het pad naar de OData-resource. | Yes |
+| type | De eigenschap **type** van de DataSet moet worden ingesteld op **ODataResource**. | Ja |
+| leertraject | Het pad naar de OData-resource. | Ja |
 
 **Voorbeeld**
 
@@ -264,9 +264,9 @@ Als u gegevens wilt kopiëren uit OData, worden de volgende eigenschappen onders
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap **type** van de bron van de Kopieer activiteit moet zijn ingesteld op **ODataSource**. | Yes |
-| query | OData-query opties voor het filteren van gegevens. Bijvoorbeeld: `"$select=Name,Description&$top=5"`.<br/><br/>**Opmerking**: de OData-connector kopieert gegevens van de gecombineerde URL: `[URL specified in linked service]/[path specified in dataset]?[query specified in copy activity source]` . Zie [ODATA URL Components](https://www.odata.org/documentation/odata-version-3-0/url-conventions/)(Engelstalig) voor meer informatie. | No |
-| httpRequestTimeout | De time-out (de time **span** -waarde) voor de HTTP-aanvraag om een antwoord te krijgen. Deze waarde is de time-out voor het verkrijgen van een reactie, niet de time-out voor het lezen van antwoord gegevens. Als niet wordt opgegeven, is de standaard waarde **00:30:00** (30 minuten). | No |
+| type | De eigenschap **type** van de bron van de Kopieer activiteit moet zijn ingesteld op **ODataSource**. | Ja |
+| query | OData-query opties voor het filteren van gegevens. Bijvoorbeeld: `"$select=Name,Description&$top=5"`.<br/><br/>**Opmerking**: de OData-connector kopieert gegevens van de gecombineerde URL: `[URL specified in linked service]/[path specified in dataset]?[query specified in copy activity source]` . Zie [ODATA URL Components](https://www.odata.org/documentation/odata-version-3-0/url-conventions/)(Engelstalig) voor meer informatie. | Nee |
+| httpRequestTimeout | De time-out (de time **span** -waarde) voor de HTTP-aanvraag om een antwoord te krijgen. Deze waarde is de time-out voor het verkrijgen van een reactie, niet de time-out voor het lezen van antwoord gegevens. Als niet wordt opgegeven, is de standaard waarde **00:30:00** (30 minuten). | Nee |
 
 **Voorbeeld**
 

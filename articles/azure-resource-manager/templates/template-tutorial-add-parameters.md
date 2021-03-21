@@ -7,10 +7,10 @@ ms.topic: tutorial
 ms.author: jgao
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: e983f8499cbeaf400a8da6f48d7f6c8b75c4795a
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97107059"
 ---
 # <a name="tutorial-add-parameters-to-your-arm-template"></a>Zelfstudie: Parameters aan uw ARM-sjabloon toevoegen
@@ -21,7 +21,7 @@ In de [vorige zelfstudie](template-tutorial-add-resource.md) hebt u geleerd hoe 
 
 U wordt aangeraden om eerst de [zelfstudie over resources](template-tutorial-add-resource.md) te voltooien, maar dit is niet verplicht.
 
-U moet beschikken over Visual Studio Code met de extensie Resource Manager Tools (hulpprogramma's voor resourcebeheer), plus Azure PowerShell of Azure CLI. Zie de [hulpprogramma's voor sjablonen](template-tutorial-create-first-template.md#get-tools) voor meer informatie.
+U moet beschikken over Visual Studio Code met de extensie Resource Manager Tools (hulpprogramma's voor resourcebeheer), plus Azure PowerShell of Azure CLI. Zie [Hulpprogramma's voor sjablonen](template-tutorial-create-first-template.md#get-tools) voor meer informatie.
 
 ## <a name="review-template"></a>Sjabloon controleren
 

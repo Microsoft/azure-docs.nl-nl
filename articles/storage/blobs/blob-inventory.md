@@ -11,10 +11,10 @@ ms.reviewer: yzheng
 ms.subservice: blobs
 ms.custom: references_regions
 ms.openlocfilehash: a625ad780d01f3d19d26f2b9626ead3ae455b86b
-ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102631469"
 ---
 # <a name="use-azure-storage-blob-inventory-to-manage-blob-data-preview"></a>Azure Storage BLOB-inventaris gebruiken voor het beheren van BLOB-gegevens (preview)
@@ -55,7 +55,7 @@ Schakel de BLOB-inventaris rapporten in door een beleid toe te voegen aan uw ops
 1. De **BLOB-typen** voor uw inventaris rapport selecteren
 1. Een voor voegsel toevoegen die overeenkomt met het filteren van uw inventaris rapport
 1. Selecteer of u **BLOB-versies wilt toevoegen** en **moment opnamen** in uw inventaris rapport wilt toevoegen. Versies en moment opnamen moeten zijn ingeschakeld voor het account om een nieuwe regel op te slaan met de bijbehorende optie ingeschakeld.
-1. Selecteer **Opslaan**.
+1. Selecteer **Opslaan**
 
 :::image type="content" source="./media/blob-inventory/portal-blob-inventory.png" alt-text="Scherm afbeelding die laat zien hoe u een BLOB-inventaris regel toevoegt met behulp van de Azure Portal":::
 

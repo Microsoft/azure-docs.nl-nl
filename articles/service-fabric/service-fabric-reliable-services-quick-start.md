@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 07/10/2019
 ms.custom: sfrev, devx-track-csharp
 ms.openlocfilehash: 45341c98a40cbcabfa8b96f2016f02f1755fe2b3
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98791524"
 ---
 # <a name="get-started-with-reliable-services"></a>Aan de slag met Reliable Services
@@ -47,7 +47,7 @@ Uw oplossing bevat nu twee projecten:
 
 ## <a name="implement-the-service"></a>De service implementeren
 
-Open het **HelloWorldStateless.cs** -bestand in het service project. In Service Fabric kan een service elke bedrijfs logica uitvoeren. De service-API biedt twee toegangs punten voor uw code:
+Open het bestand **HelloWorldStateless. cs** in het service project. In Service Fabric kan een service elke bedrijfs logica uitvoeren. De service-API biedt twee toegangs punten voor uw code:
 
 * Een open-end-invoer punt methode met de naam *RunAsync*, waar u werk belastingen kunt uitvoeren, inclusief langlopende Compute-workloads.
 
@@ -127,7 +127,7 @@ Uw toepassing moet nu twee services hebben: de stateless service *HelloWorldStat
 
 Een stateful service heeft dezelfde toegangs punten als een stateless service. Het belangrijkste verschil is de beschik baarheid van een *State-provider* die de status betrouwbaar kan opslaan. Service Fabric wordt geleverd met de implementatie van een status provider, die [reliable verzamelingen](service-fabric-reliable-services-reliable-collections.md)wordt genoemd, waarmee u gerepliceerde gegevens structuren kunt maken met behulp van betrouw bare status Manager. Een stateful betrouw bare service maakt standaard gebruik van deze State-provider.
 
-Open **HelloWorldStateful.cs** in *HelloWorldStateful*, dat de volgende RunAsync-methode bevat:
+Open **HelloWorldStateful. cs** in *HelloWorldStateful*, dat de volgende RunAsync-methode bevat:
 
 ```csharp
 protected override async Task RunAsync(CancellationToken cancellationToken)

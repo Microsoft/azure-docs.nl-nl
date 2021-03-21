@@ -6,14 +6,16 @@ ms.author: jasonh
 ms.service: data-catalog
 ms.topic: conceptual
 ms.date: 08/01/2019
-ms.openlocfilehash: ead1a324d342f818551ac05ac385ba4fa5b8b877
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 12d68a9539420c77cc23722e1b7b7175d08459e9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89439081"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104674628"
 ---
 # <a name="supported-data-sources-in-azure-data-catalog"></a>Ondersteunde gegevens bronnen in Azure Data Catalog
+
+[!INCLUDE [Azure Purview redirect](../../includes/data-catalog-use-purview.md)]
 
 U kunt meta gegevens publiceren met behulp van een open bare API of een eenmalige registratie tool, of door rechtstreeks gegevens hand matig in te voeren op de Azure Data Catalog-webportal. De volgende tabel bevat een overzicht van alle gegevens bronnen die momenteel door de catalogus worden ondersteund en de publicatie mogelijkheden voor elk. Ook worden de hulpprogram ma's voor externe gegevens vermeld die elke gegevens bron kan starten vanuit onze ervaring voor het openen van de portal. De tweede tabel bevat een meer technische specificatie van elke eigenschap van de gegevens bron verbinding.
 

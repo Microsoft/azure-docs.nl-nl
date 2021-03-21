@@ -8,17 +8,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 01/10/2021
+ms.date: 03/17/2021
 ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ad99c8d319a22f8b5388838b9d537de2f610478a
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: f2092c3f6402d5c6e7a0bc8c93015d3a900b9e38
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101650988"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104587986"
 ---
 # <a name="monitoring-application-sign-in-health-for-resilience"></a>De status van de aanmelding van een toepassing voor tolerantie controleren
 
@@ -43,7 +43,7 @@ Tijdens een impact gebeurtenis kunnen er twee dingen gebeuren:
 
 In dit artikel wordt beschreven hoe u de werk stroom voor het aanmelden instelt om te controleren op onderbrekingen van de aanmeldingen van uw gebruikers.
 
-## <a name="prerequisites"></a>Vereisten 
+## <a name="prerequisites"></a>Vereisten
 
 * Een Azure AD-tenant.
 
@@ -56,8 +56,6 @@ In dit artikel wordt beschreven hoe u de werk stroom voor het aanmelden instelt 
 * Azure AD-logboeken geïntegreerd met Azure Monitor-logboeken
 
    * Meer informatie over het [integreren van Azure AD-aanmeldings logboeken met Azure monitor stream.](../reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
-
- 
 
 ## <a name="configure-the-app-sign-in-health-workbook"></a>De status werkmap voor aanmelden bij de app configureren 
 
@@ -78,11 +76,11 @@ De werkmap bevat standaard twee grafieken. In deze grafieken kunt u zien wat er 
 
 **De eerste grafiek is het gebruik per uur (aantal geslaagde gebruikers)**. Als u het huidige aantal gebruikers met een typische gebruiks periode vergelijkt, helpt u een gebruiks verwijdering te herkennen die mogelijk moet worden onderzocht. Een daling in geslaagd gebruiks kosten kan helpen bij het detecteren van prestatie-en gebruiks problemen die niet kunnen worden opgelost. Als gebruikers uw toepassing bijvoorbeeld niet kunnen bereiken om zich aan te melden, zijn er geen fouten, alleen een gebruiks verwijdering. Een voorbeeld query voor deze gegevens vindt u in de volgende sectie.
 
-De tweede grafiek is een fout frequentie per uur. Een piek in de fout frequentie kan duiden op een probleem met uw verificatie mechanismen. Het fout aantal kan alleen worden gemeten als gebruikers kunnen proberen te verifiëren. Als gebruikers geen toegang kunnen krijgen om de poging te doen, worden fouten niet weer gegeven.
+**De tweede grafiek is een fout frequentie per uur**. Een piek in de fout frequentie kan duiden op een probleem met uw verificatie mechanismen. Het fout aantal kan alleen worden gemeten als gebruikers kunnen proberen te verifiëren. Als gebruikers geen toegang kunnen krijgen om de poging te doen, worden fouten niet weer gegeven.
 
 U kunt een waarschuwing configureren die een specifieke groep waarschuwt wanneer het gebruik of de fout frequentie een opgegeven drempel waarde overschrijdt. Een voorbeeld query voor deze gegevens vindt u in de volgende sectie.
 
- ## <a name="configure-the-query-and-alerts"></a>De query en waarschuwingen configureren
+## <a name="configure-the-query-and-alerts"></a>De query en waarschuwingen configureren
 
 U maakt waarschuwings regels in Azure Monitor en kan opgeslagen query's of aangepaste logboeken automatisch met regel matige tussen pozen uitvoeren.
 
@@ -96,116 +94,18 @@ Gebruik de volgende instructies om e-mail waarschuwingen te maken op basis van d
 
 Zie [logboek waarschuwingen beheren](../../azure-monitor/alerts/alerts-log.md)voor meer informatie over het maken, weer geven en beheren van logboek waarschuwingen met behulp van Azure monitor.
 
- 
 1. Selecteer in de werkmap **bewerken** en selecteer vervolgens het **query pictogram** aan de rechter kant van de grafiek.   
 
    [![Scherm opname van werkmap bewerken.](./media/monitor-sign-in-health-for-resilience/edit-workbook.png)](./media/monitor-sign-in-health-for-resilience/edit-workbook.png)
 
    Het query logboek wordt geopend.
 
-  [![Scherm opname van het query logboek.](./media/monitor-sign-in-health-for-resilience/query-log.png)](/media/monitor-sign-in-health-for-resilience/query-log.png)
+   [![Scherm opname van het query logboek.](./media/monitor-sign-in-health-for-resilience/query-log.png)](/media/monitor-sign-in-health-for-resilience/query-log.png)
 ‎
 
-2. Kopieer een van de volgende voorbeeld scripts voor een nieuwe Kusto-query.
-
-**Kusto-query voor gebruiks verwijdering**
-
-```Kusto
-
-let thisWeek = SigninLogs
-
-| where TimeGenerated > ago(1h)
-
-| project TimeGenerated, AppDisplayName, UserPrincipalName
-
-//| where AppDisplayName contains "Office 365 Exchange Online"
-
-| summarize users = dcount(UserPrincipalName) by bin(TimeGenerated, 1hr)
-
-| sort by TimeGenerated desc
-
-| serialize rn = row_number();
-
-let lastWeek = SigninLogs
-
-| where TimeGenerated between((ago(1h) - totimespan(2d))..(now() - totimespan(2d)))
-
-| project TimeGenerated, AppDisplayName, UserPrincipalName
-
-//| where AppDisplayName contains "Office 365 Exchange Online"
-
-| summarize usersPriorWeek = dcount(UserPrincipalName) by bin(TimeGenerated, 1hr)
-
-| sort by TimeGenerated desc
-
-| serialize rn = row_number();
-
-thisWeek
-
-| join
-
-(
-
- lastWeek
-
-)
-
-on rn
-
-| project TimeGenerated, users, usersPriorWeek, difference = abs(users - usersPriorWeek), max = max_of(users, usersPriorWeek)
-
-| where (difference * 2.0) / max > 0.9
-
-```
-
- 
-
-**Kusto-query voor toename van fout frequentie**
-
-
-```kusto
-
-let thisWeek = SigninLogs
-
-| where TimeGenerated > ago(1 h)
-
-| project TimeGenerated, UserPrincipalName, AppDisplayName, status = case(Status.errorCode == "0", "success", "failure")
-
-| where AppDisplayName == **APP NAME**
-
-| summarize success = countif(status == "success"), failure = countif(status == "failure") by bin(TimeGenerated, 1h)
-
-| project TimeGenerated, failureRate = (failure * 1.0) / ((failure + success) * 1.0)
-
-| sort by TimeGenerated desc
-
-| serialize rn = row_number();
-
-let lastWeek = SigninLogs
-
-| where TimeGenerated between((ago(1 h) - totimespan(2d))..(ago(1h) - totimespan(2d)))
-
-| project TimeGenerated, UserPrincipalName, AppDisplayName, status = case(Status.errorCode == "0", "success", "failure")
-
-| where AppDisplayName == **APP NAME**
-
-| summarize success = countif(status == "success"), failure = countif(status == "failure") by bin(TimeGenerated, 1h)
-
-| project TimeGenerated, failureRatePriorWeek = (failure * 1.0) / ((failure + success) * 1.0)
-
-| sort by TimeGenerated desc
-
-| serialize rn = row_number();
-
-thisWeek
-
-| join (lastWeek) on rn
-
-| project TimeGenerated, failureRate, failureRatePriorWeek
-
-| where abs(failureRate – failureRatePriorWeek) > **THRESHOLD VALUE**
-
-```
+2. Kopieer een van de voorbeeld scripts voor een nieuwe Kusto-query.  
+   * [Kusto-query voor toename van fout frequentie](#kusto-query-for-increase-in-failure-rate)
+   * [Kusto-query voor gebruiks verwijdering](#kusto-query-for-drop-in-usage)
 
 3. Plak de query in het venster en selecteer **uitvoeren**. Controleer of het voltooide bericht wordt weer gegeven in de onderstaande afbeelding en Bekijk de resultaten onder dat bericht.
 
@@ -222,7 +122,7 @@ thisWeek
  
    * **Drempel waarde**: 0. Deze waarde wordt op alle resultaten gewaarschuwd.
 
-   * **Evaluatie periode (in minuten)**: 60. Deze waarde bekijkt een uur lang
+   * **Evaluatie periode (in minuten)**: 2880. Deze waarde bekijkt een uur lang
 
    * **Frequentie (in minuten)**: 60. Met deze waarde wordt de evaluatie periode ingesteld op één keer per uur voor het vorige uur.
 
@@ -254,9 +154,8 @@ thisWeek
 
    [![Scherm afbeelding met de knop Query opslaan.](./media/monitor-sign-in-health-for-resilience/save-query.png)](./media/monitor-sign-in-health-for-resilience/save-query.png)
 
-
-
 ### <a name="refine-your-queries-and-alerts"></a>Uw query's en waarschuwingen verfijnen
+
 Wijzig uw query's en waarschuwingen voor een maximale effectiviteit.
 
 * Zorg ervoor dat u uw waarschuwingen test.
@@ -267,11 +166,135 @@ Wijzig uw query's en waarschuwingen voor een maximale effectiviteit.
 
 * Waarschuwings query's in Azure Monitor kunnen alleen resultaten van afgelopen 48 uur bevatten. [Dit is een huidige beperking van het ontwerp](https://github.com/MicrosoftDocs/azure-docs/issues/22637).
 
+## <a name="sample-scripts"></a>Voorbeeldscripts
+
+### <a name="kusto-query-for-increase-in-failure-rate"></a>Kusto-query voor toename van fout frequentie
+
+   De verhouding aan de onderkant kan indien nodig worden aangepast en vertegenwoordigt het percentage wijziging in het verkeer in het afgelopen uur, vergeleken met de tijd gisteren. 0,5 betekent dat er een verschil is in het verkeer van 50%.
+
+```kusto
+
+let today = SigninLogs
+
+| where TimeGenerated > ago(1h) // Query failure rate in the last hour
+ 
+| project TimeGenerated, UserPrincipalName, AppDisplayName, status = case(Status.errorCode == "0", "success", "failure")
+
+// Optionally filter by a specific application
+
+//| where AppDisplayName == **APP NAME**
+
+| summarize success = countif(status == "success"), failure = countif(status == "failure") by bin(TimeGenerated, 1h) // hourly failure rate
+
+| project TimeGenerated, failureRate = (failure * 1.0) / ((failure + success) * 1.0)
+
+| sort by TimeGenerated desc
+
+| serialize rowNumber = row_number();
+
+let yesterday = SigninLogs
+
+| where TimeGenerated between((ago(1h) - totimespan(1d))..(now() - totimespan(1d))) // Query failure rate at the same time yesterday
+
+| project TimeGenerated, UserPrincipalName, AppDisplayName, status = case(Status.errorCode == "0", "success", "failure")
+
+// Optionally filter by a specific application
+
+//| where AppDisplayName == **APP NAME**
+
+| summarize success = countif(status == "success"), failure = countif(status == "failure") by bin(TimeGenerated, 1h) // hourly failure rate at same time yesterday
+
+| project TimeGenerated, failureRateYesterday = (failure * 1.0) / ((failure + success) * 1.0)
+
+| sort by TimeGenerated desc
+
+| serialize rowNumber = row_number();
+today
+| join (yesterday) on rowNumber // join data from same time today and yesterday
+
+| project TimeGenerated, failureRate, failureRateYesterday
+
+// Set threshold to be the percent difference in failure rate in the last hour as compared to the same time yesterday
+
+| where abs(failureRate - failureRateYesterday) > 0.5
+
+```
+
+### <a name="kusto-query-for-drop-in-usage"></a>Kusto-query voor gebruiks verwijdering
+
+In de volgende query vergelijken we het verkeer in het afgelopen uur gisteren op hetzelfde tijdstip.
+We uitsluiten zaterdag, zondag en maandag, omdat deze worden verwacht op dagen dat er op hetzelfde moment de vorige dag grote verschillen in het verkeer zijn. 
+
+De verhouding aan de onderkant kan indien nodig worden aangepast en vertegenwoordigt het percentage wijziging in het verkeer in het afgelopen uur, vergeleken met de tijd gisteren. 0,5 betekent dat er een verschil is in het verkeer van 50%.
+
+*U moet deze waarden aanpassen zodat deze overeenkomen met uw bedrijfs bewerkings model*.
+
+```Kusto
+ let today = SigninLogs // Query traffic in the last hour
+
+| where TimeGenerated > ago(1h)
+
+| project TimeGenerated, AppDisplayName, UserPrincipalName
+
+// Optionally filter by AppDisplayName to scope query to a single application
+
+//| where AppDisplayName contains "Office 365 Exchange Online"
+
+| summarize users = dcount(UserPrincipalName) by bin(TimeGenerated, 1hr) // Count distinct users in the last hour
+
+| sort by TimeGenerated desc
+
+| serialize rn = row_number();
+
+let yesterday = SigninLogs // Query traffic at the same hour yesterday
+
+| where TimeGenerated between((ago(1h) - totimespan(1d))..(now() - totimespan(1d))) // Count distinct users in the same hour yesterday
+
+| project TimeGenerated, AppDisplayName, UserPrincipalName
+
+// Optionally filter by AppDisplayName to scope query to a single application
+
+//| where AppDisplayName contains "Office 365 Exchange Online"
+
+| summarize usersYesterday = dcount(UserPrincipalName) by bin(TimeGenerated, 1hr)
+
+| sort by TimeGenerated desc
+
+| serialize rn = row_number();
+
+today
+| join // Join data from today and yesterday together
+(
+yesterday
+)
+on rn
+
+// Calculate the difference in number of users in the last hour compared to the same time yesterday
+
+| project TimeGenerated, users, usersYesterday, difference = abs(users - usersYesterday), max = max_of(users, usersYesterday)
+
+ extend ratio = (difference * 1.0) / max // Ratio is the percent difference in traffic in the last hour as compared to the same time yesterday
+
+// Day variable is the number of days since the previous Sunday. Optionally ignore results on Sat, Sun, and Mon because large variability in traffic is expected.
+
+| extend day = dayofweek(now())
+
+| where day != time(6.00:00:00) // exclude Sat
+
+| where day != time(0.00:00:00) // exclude Sun
+
+| where day != time(1.00:00:00) // exclude Mon
+
+| where ratio > 0.7 // Threshold percent difference in sign-in traffic as compared to same hour yesterday
+
+```
+
 ## <a name="create-processes-to-manage-alerts"></a>Processen maken voor het beheren van waarschuwingen
 
 Nadat u de query en waarschuwingen hebt ingesteld, maakt u bedrijfs processen om de waarschuwingen te beheren.
 
 * Wie zal de werkmap controleren en wanneer?
+
 * Wanneer een waarschuwing wordt gegenereerd, wie zal onderzoeken?
 
 * Wat zijn de communicatie behoeften? Wie gaat de communicatie maken en wie ontvangt deze?
@@ -281,8 +304,3 @@ Nadat u de query en waarschuwingen hebt ingesteld, maakt u bedrijfs processen om
 ## <a name="next-steps"></a>Volgende stappen
 
 [Meer informatie over werkmappen](../reports-monitoring/howto-use-azure-monitor-workbooks.md)
-
- 
-
- 
-

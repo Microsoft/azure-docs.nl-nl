@@ -8,12 +8,12 @@ ms.date: 02/11/2021
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: a3656d6dd81132a7fd10103fc0199d55d9288df3
-ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.openlocfilehash: f1a2b821c5fd127f8b7bcda7b3a219be34cb8abb
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103489606"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104598521"
 ---
 # <a name="azure-iot-edge-supported-systems"></a>Ondersteunde systemen Azure IoT Edge
 
@@ -136,7 +136,7 @@ IoT Edge onderdelen kunnen afzonderlijk worden geïnstalleerd of bijgewerkt, en 
 | **1.0.6** | 1.0.6.1<br>1.0.6 | 1.0.6.1<br>1.0.6 | 1.0.6.1<br>1.0.6 |  |
 | **1.0.5** | 1.0.5 | 1.0.5 | 1.0.5 | 3.0.2 |
 
-<sup>1</sup> IoT Edge 1,1 is het eerste LTS-release kanaal (lange termijn ondersteuning). Deze versie heeft geen nieuwe functies geïntroduceerd, maar ontvangt fout oplossingen en beveiligings patches. IoT Edge 1,1 LTS maakt gebruik van .NET Core 3,1 en wordt tot 3 december 2022 ondersteund om te voldoen aan de [versie levenscyclus van .net core en .net 5](https://dotnet.microsoft.com/platform/support/policy/dotnet-core).
+<sup>1</sup> IoT Edge 1,1 is het eerste LTS-release kanaal (lange termijn ondersteuning). Deze versie heeft geen nieuwe functies geïntroduceerd, maar ontvangt beveiligings updates en oplossingen voor regressies. IoT Edge 1,1 LTS maakt gebruik van .NET Core 3,1 en wordt tot 3 december 2022 ondersteund om te voldoen aan de [versie levenscyclus van .net core en .net 5](https://dotnet.microsoft.com/platform/support/policy/dotnet-core).
 
 >[!IMPORTANT]
 >Met de release van een ondersteunings kanaal voor de lange termijn raden wij aan alle huidige klanten met 1.0. x hun apparaten bij te werken naar 1.1. x om voortdurende ondersteuning te ontvangen.

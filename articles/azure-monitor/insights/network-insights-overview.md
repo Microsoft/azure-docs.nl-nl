@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: KumudD
 ms.author: kumud
 ms.date: 11/25/2020
-ms.openlocfilehash: 20f61ad92307a16515156151b816494e9aa289f7
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: db94a376112b3d715da9095acb05c0b4fd4ea02f
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101717465"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104605797"
 ---
 # <a name="azure-monitor-for-networks"></a>Azure Monitor voor netwerken
 
@@ -108,10 +108,12 @@ Diagnostische Toolkit biedt toegang tot alle diagnostische functies die beschikb
 
 ![Scherm opname van het tabblad Diagnostische werkset.](media/network-insights-overview/azure-monitor-for-networks-diagnostic-toolkit.png)
 
+## <a name="onboarded-resources"></a>Onboarde resources 
+
+Onboarded resources hebben ingebouwde werkmappen en afhankelijkheids weergaven. Momenteel zijn onboarde resources virtueel WAN, Application Gateway, Load Balancer en ExpressRoute.
+
 ## <a name="troubleshooting"></a>Problemen oplossen 
-
 Voor algemene richt lijnen voor probleem oplossing raadpleegt u het [artikel](troubleshoot-workbooks.md)exclusieve inzichten op basis van een werkmap.
-
 Deze sectie helpt u bij het vaststellen en oplossen van enkele veelvoorkomende problemen die u kunt tegen komen wanneer u Azure Monitor voor netwerken gebruikt. 
 
 ### <a name="how-do-i-resolve-performance-problems-or-failures"></a>Kunt u prestatie problemen of fouten Hoe kan ik oplossen?

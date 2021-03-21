@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 04/03/2018
 ms.author: srrengar
 ms.openlocfilehash: eaf40bafb68820b56fc9bf00dd4c11fbb337406f
-ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102613456"
 ---
 # <a name="event-aggregation-and-collection-using-windows-azure-diagnostics"></a>Gebeurtenis aggregatie en verzameling met behulp van Windows Azure Diagnostics
@@ -282,7 +282,7 @@ Als u de **basis van het operationele kanaal** wilt inschakelen voor uitgebreide
 
 Als u Diagnostische gegevens wilt bijwerken om logboeken te verzamelen van nieuwe event source-kanalen die een nieuwe toepassing vertegenwoordigen die u op het punt staat te implementeren, voert u dezelfde stappen uit als eerder beschreven voor het instellen van diagnostische gegevens voor een bestaand cluster.
 
-Werk de `EtwEventSourceProviderConfiguration` sectie in het template.jsbestand om vermeldingen toe te voegen voor de nieuwe event source-kanalen voordat u de configuratie-update toepast met behulp van de `New-AzResourceGroupDeployment` Power shell-opdracht. De naam van de gebeurtenis bron wordt gedefinieerd als onderdeel van uw code in het Visual Studio-gegenereerde ServiceEventSource.cs-bestand.
+Werk de `EtwEventSourceProviderConfiguration` sectie in het template.jsbestand om vermeldingen toe te voegen voor de nieuwe event source-kanalen voordat u de configuratie-update toepast met behulp van de `New-AzResourceGroupDeployment` Power shell-opdracht. De naam van de gebeurtenis bron wordt gedefinieerd als onderdeel van uw code in het Visual Studio-gegenereerde bestand ServiceEventSource. cs.
 
 Als uw gebeurtenis bron bijvoorbeeld de naam mijn-Event source heeft, voegt u de volgende code toe om de gebeurtenissen van My-Eventsource te plaatsen in een tabel met de naam MyDestinationTableName.
 

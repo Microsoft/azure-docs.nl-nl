@@ -8,10 +8,10 @@ ms.author: stkirk
 ms.service: azure-redhat-openshift
 keywords: Encryption, byok, Aro, CMK, open Shift, Red Hat
 ms.openlocfilehash: fa84096dcc44e668a6cf7ebd0369c6d3631c28d2
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102555615"
 ---
 # <a name="encrypt-persistent-volume-claims-with-a-customer-managed-key-cmk-on-azure-red-hat-openshift-aro-preview"></a>Permanente volume claims versleutelen met een door de klant beheerde sleutel (CMK) op Azure Red Hat open Shift (ARO) (preview)

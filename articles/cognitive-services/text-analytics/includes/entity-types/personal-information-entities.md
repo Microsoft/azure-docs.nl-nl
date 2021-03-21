@@ -7,14 +7,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: include
-ms.date: 02/17/2021
+ms.date: 03/15/2021
 ms.author: aahi
-ms.openlocfilehash: 97167485dae155670f0eb83fc3ef9cb658952251
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 19586c09cca9a0dc74ba9ee4ef9da459964f9b7e
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101750934"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104599300"
 ---
 > [!NOTE]
 > Gebruik de `domain=phi` para meter en model versie of hoger om de beschermde status informatie te detecteren (Phi) `2020-04-01` .
@@ -53,9 +53,18 @@ Deze categorie bevat de volgende entiteit:
     :::column span="2":::
         **Details**
 
-        Namen van personen. Ook geretourneerd met `domain=phi` .
+        Namen van personen. 
+
+        Als u deze entiteits categorie wilt ophalen, `Person` moet u deze toevoegen aan de `pii-categories` para meter. `Person` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
       
     :::column-end:::
+    
+    :::column span="":::
+      **Ondersteunde document talen**
+
+      `en`, `es`, `fr`, `de`, `it`, `zh-hans`, `ja`, `ko`, `pt-pt`, `pt-br`   
+      
+   :::column-end:::
 :::row-end:::
 
 ### <a name="category-persontype"></a>Categorie: PersonType
@@ -74,8 +83,17 @@ Deze categorie bevat de volgende entiteit:
         **Details**
 
         Taak typen of-rollen die door een persoon worden beheerd.
+
+        Als u deze entiteits categorie wilt ophalen, `PersonType` moet u deze toevoegen aan de `pii-categories` para meter. `PersonType` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
       
     :::column-end:::
+
+    :::column span="":::
+      **Ondersteunde document talen**
+
+      `en`, `es`, `fr`, `de`, `it`, `zh-hans`, `ja`, `ko`, `pt-pt`, `pt-br`  
+      
+   :::column-end:::
 :::row-end:::
 
 ### <a name="category-phonenumber"></a>Categorie: PhoneNumber
@@ -93,8 +111,18 @@ Deze categorie bevat de volgende entiteit:
         **Details**
 
         Telefoon nummers (alleen telefoon nummers voor VS en EU). Ook geretourneerd met `domain=phi` .
+
+        Als u deze entiteits categorie wilt ophalen, `PhoneNumber` moet u deze toevoegen aan de `pii-categories` para meter. `PhoneNumber` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
       
     :::column-end:::
+
+    :::column span="":::
+      **Ondersteunde document talen**
+
+      `en`, `es`, `fr`, `de`, `it`, `zh-hans`, `ja`, `ko`, `pt-pt` `pt-br`
+      
+   :::column-end:::
+
 :::row-end:::
 
 
@@ -113,8 +141,18 @@ Deze categorie bevat de volgende entiteit:
         **Details**
 
         Bedrijven, politieke groepen, muziek banden, sport clubs, overheids instanties en open bare organisaties. Nationale en religions zijn niet opgenomen in dit entiteits type.
+
+        Als u deze entiteits categorie wilt ophalen, `Organization` moet u deze toevoegen aan de `pii-categories` para meter. `Organization` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
       
     :::column-end:::
+
+    :::column span="":::
+      **Ondersteunde document talen**
+
+      `en`, `es`, `fr`, `de`, `it`, `zh-hans`, `ja`, `ko`, `pt-pt`, `pt-br`  
+      
+   :::column-end:::
+
 :::row-end:::
 
 #### <a name="subcategories"></a>Subcategorieën
@@ -125,15 +163,25 @@ De entiteit in deze categorie kan de volgende subcategorieën hebben.
     :::column span="":::
         **Subcategorie van entiteit**
 
-        Medisch
+        Medisch    
 
     :::column-end:::
     :::column span="2":::
         **Details**
 
         Medische bedrijven en groepen.
+
+        Als u deze entiteits categorie wilt ophalen, `OrganizationMedical` moet u deze toevoegen aan de `pii-categories` para meter. `OrganizationMedical` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
       
     :::column-end:::
+
+    :::column span="":::
+      **Ondersteunde document talen**
+
+      `en`   
+      
+   :::column-end:::
+
 :::row-end:::
 :::row:::
     :::column span="":::
@@ -144,8 +192,17 @@ De entiteit in deze categorie kan de volgende subcategorieën hebben.
     :::column span="2":::
 
         Voorraad wisselkoers groepen. 
+
+        Als u deze entiteits categorie wilt ophalen, `OrganizationStockExchange` moet u deze toevoegen aan de `pii-categories` para meter. `OrganizationStockExchange` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
       
     :::column-end:::
+
+    :::column span="":::
+
+      `en`   
+      
+   :::column-end:::
+
 :::row-end:::
 :::row:::
     :::column span="":::
@@ -156,8 +213,16 @@ De entiteit in deze categorie kan de volgende subcategorieën hebben.
     :::column span="2":::
 
         Sport organisaties.
+
+        Als u deze entiteits categorie wilt ophalen, `OrganizationSports` moet u deze toevoegen aan de `pii-categories` para meter. `OrganizationSports` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
       
     :::column-end:::
+
+    :::column span="":::
+
+      `en`   
+      
+   :::column-end:::
 
 :::row-end:::
 
@@ -177,8 +242,18 @@ Deze categorie bevat de volgende entiteit:
         **Details**
 
         Volledig post adres.
+
+        Als u deze entiteits categorie wilt ophalen, `Address` moet u deze toevoegen aan de `pii-categories` para meter. `Address` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
       
     :::column-end:::
+
+    :::column span="":::
+      **Ondersteunde document talen**
+
+      `en`, `es`, `fr`, `de`, `it`, `zh-hans`, `ja`, `ko`, `pt-pt`, `pt-br`
+      
+    :::column-end:::
+
 :::row-end:::
 
 ### <a name="category-email"></a>Categorie: E-mail
@@ -197,8 +272,17 @@ Deze categorie bevat de volgende entiteit:
 
         E-mail adressen.
       
+        Als u deze entiteits categorie wilt ophalen, `Email` moet u deze toevoegen aan de `pii-categories` para meter. `Email` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
+
+    :::column-end:::
+    :::column span="":::
+      **Ondersteunde document talen**
+
+      `en`, `es`, `fr`, `de`, `it`, `zh-hans`, `ja`, `ko`, `pt-pt`, `pt-br`
+      
     :::column-end:::
 :::row-end:::
+
 
 ### <a name="category-url"></a>Categorie: URL
 
@@ -215,8 +299,18 @@ Deze categorie bevat de volgende entiteit:
         **Details**
 
         Url's naar websites. 
+
+        Als u deze entiteits categorie wilt ophalen, `URL` moet u deze toevoegen aan de `pii-categories` para meter. `URL` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
       
     :::column-end:::
+
+    :::column span="":::
+      **Ondersteunde document talen**
+
+      `en`, `es`, `fr`, `de`, `it`, `zh-hans`, `ja`, `ko`, `pt-pt`, `pt-br`
+      
+    :::column-end:::
+
 :::row-end:::
 
 ### <a name="category-ip"></a>Categorie: IP
@@ -234,6 +328,15 @@ Deze categorie bevat de volgende entiteit:
         **Details**
 
         IP-adressen van het netwerk. 
+
+        Als u deze entiteits categorie wilt ophalen, `IP` moet u deze toevoegen aan de `pii-categories` para meter. `IP` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
+      
+    :::column-end:::
+
+    :::column span="":::
+      **Ondersteunde document talen**
+
+      `en`, `es`, `fr`, `de`, `it`, `zh-hans`, `ja`, `ko`, `pt-pt`, `pt-br`
       
     :::column-end:::
 :::row-end:::
@@ -253,8 +356,16 @@ Deze categorie bevat de volgende entiteiten:
         **Details**
 
         Datums en tijden van de dag. 
+
+        Als u deze entiteits categorie wilt ophalen, `DateTime` moet u deze toevoegen aan de `pii-categories` para meter. `DateTime` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
       
     :::column-end:::
+:::column span="":::
+      **Ondersteunde document talen**
+
+      `en`, `es`, `fr`, `de`, `it`, `zh-hans`, `ja`, `ko`, `pt-pt`, `pt-br`
+      
+   :::column-end:::
 :::row-end:::
 
 #### <a name="subcategories"></a>Subcategorieën
@@ -272,6 +383,14 @@ De entiteit in deze categorie kan de volgende subcategorieën hebben.
         **Details**
 
         Kalender datums.
+
+        Als u deze entiteits categorie wilt ophalen, `Date` moet u deze toevoegen aan de `pii-categories` para meter. `Date` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
+      
+    :::column-end:::
+    :::column span="2":::
+      **Ondersteunde document talen**
+      
+      `en`, `es`, `fr`, `de`, `it`, `zh-hans`, `ja`, `ko`, `pt-pt`, `pt-br`   
       
     :::column-end:::
 :::row-end:::
@@ -291,6 +410,14 @@ Deze categorie bevat de volgende entiteiten:
         **Details**
 
         Cijfers en numerieke aantallen.
+
+        Als u deze entiteits categorie wilt ophalen, `Quantity` moet u deze toevoegen aan de `pii-categories` para meter. `Quantity` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
+      
+    :::column-end:::
+    :::column span="2":::
+      **Ondersteunde document talen**
+
+      `en`, `es`, `fr`, `de`, `it`, `zh-hans`, `ja`, `ko`, `pt-pt`, `pt-br`
       
     :::column-end:::
 :::row-end:::
@@ -310,8 +437,16 @@ De entiteit in deze categorie kan de volgende subcategorieën hebben.
         **Details**
 
         Leeftijd.
+
+        Als u deze entiteits categorie wilt ophalen, `Age` moet u deze toevoegen aan de `pii-categories` para meter. `Age` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
       
     :::column-end:::
+    :::column span="2":::
+        **Ondersteunde document talen**
+
+      `en`, `es`, `fr`, `de`, `it`, `zh-hans`, `ja`, `ko`, `pt-pt`, `pt-br`  
+      
+   :::column-end:::
 :::row-end:::
 
 ### <a name="azure-information"></a>Azure-gegevens
@@ -329,33 +464,36 @@ Deze entiteits categorieën bevatten Identificeer bare Azure-informatie, inclusi
         **Details**
 
         Autorisatie sleutel voor een Azure Cosmos DB-server.   
+
+        Als u deze entiteits categorie wilt ophalen, `AzureDocumentDBAuthKey` moet u deze toevoegen aan de `pii-categories` para meter. `AzureDocumentDBAuthKey` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
       
+    :::column-end:::
+    :::column span="":::
+      **Ondersteunde document talen**
+
+      `en` 
+
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column span="":::
 
-        Verbindings reeks voor de Azure IAAS-data base en de Azure SQL-verbindings reeks
+        Verbindings reeks voor de Azure IAAS-data base en de Azure SQL-verbindings reeks.
+        
 
     :::column-end:::
     :::column span="2":::
 
         Verbindings reeks voor een Azure Infrastructure as a service-data base (IaaS) en SQL connection string.
+
+        Als u deze entiteits categorie wilt ophalen, `AzureIAASDatabaseConnectionAndSQLString` moet u deze toevoegen aan de `pii-categories` para meter. `AzureIAASDatabaseConnectionAndSQLString` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
       
     :::column-end:::
-:::row-end:::
-:::row:::
     :::column span="":::
 
-        Azure SQL-verbindings reeks
+      `en` 
 
     :::column-end:::
-    :::column span="2":::
-
-        Verbindings reeks voor een data base in Azure SQL Database.
-      
-    :::column-end:::
-
 :::row-end:::
 :::row:::
     :::column span="":::
@@ -367,6 +505,13 @@ Deze entiteits categorieën bevatten Identificeer bare Azure-informatie, inclusi
 
         Verbindings reeks voor Azure IoT. 
       
+        Als u deze entiteits categorie wilt ophalen, `AzureIoTConnectionString` moet u deze toevoegen aan de `pii-categories` para meter. `AzureIoTConnectionString` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
+
+    :::column-end:::
+    :::column span="":::
+
+      `en` 
+
     :::column-end:::
 :::row-end:::
 :::row:::
@@ -378,7 +523,14 @@ Deze entiteits categorieën bevatten Identificeer bare Azure-informatie, inclusi
     :::column span="2":::
 
         Wacht woord voor Azure Publish-instellingen.
+
+        Als u deze entiteits categorie wilt ophalen, `AzurePublishSettingPassword` moet u deze toevoegen aan de `pii-categories` para meter. `AzurePublishSettingPassword` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
       
+    :::column-end:::
+    :::column span="":::
+
+      `en` 
+
     :::column-end:::
 :::row-end:::
 :::row:::
@@ -390,7 +542,14 @@ Deze entiteits categorieën bevatten Identificeer bare Azure-informatie, inclusi
     :::column span="2":::
 
         Verbindings reeks voor een redis-cache.
+
+        Als u deze entiteits categorie wilt ophalen, `AzureRedisCacheString` moet u deze toevoegen aan de `pii-categories` para meter. `AzureRedisCacheString` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
       
+    :::column-end:::
+    :::column span="":::
+
+      `en` 
+
     :::column-end:::
 :::row-end:::
 :::row:::
@@ -402,7 +561,14 @@ Deze entiteits categorieën bevatten Identificeer bare Azure-informatie, inclusi
     :::column span="2":::
 
         De verbindings reeks voor de Azure-software als een service (SaaS).
+
+        Als u deze entiteits categorie wilt ophalen, `AzureSAS` moet u deze toevoegen aan de `pii-categories` para meter. `AzureSAS` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
       
+    :::column-end:::
+    :::column span="":::
+
+      `en` 
+
     :::column-end:::
 :::row-end:::
 :::row:::
@@ -414,7 +580,14 @@ Deze entiteits categorieën bevatten Identificeer bare Azure-informatie, inclusi
     :::column span="2":::
 
         Verbindings reeks voor een Azure service bus.
+
+        Als u deze entiteits categorie wilt ophalen, `AzureServiceBusString` moet u deze toevoegen aan de `pii-categories` para meter. `AzureServiceBusString` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
       
+    :::column-end:::
+    :::column span="":::
+
+      `en` 
+
     :::column-end:::
 :::row-end:::
 :::row:::
@@ -425,8 +598,15 @@ Deze entiteits categorieën bevatten Identificeer bare Azure-informatie, inclusi
     :::column-end:::
     :::column span="2":::
 
-       Account sleutel voor een Azure-opslag account. 
+        Account sleutel voor een Azure-opslag account. 
+
+        Als u deze entiteits categorie wilt ophalen, `AzureStorageAccountKey` moet u deze toevoegen aan de `pii-categories` para meter. `AzureStorageAccountKey` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
       
+    :::column-end:::
+    :::column span="":::
+
+      `en` 
+
     :::column-end:::
 :::row-end:::
 :::row:::
@@ -437,8 +617,15 @@ Deze entiteits categorieën bevatten Identificeer bare Azure-informatie, inclusi
     :::column-end:::
     :::column span="2":::
 
-       Algemene account sleutel voor een Azure-opslag account.
+        Algemene account sleutel voor een Azure-opslag account.
+
+        Als u deze entiteits categorie wilt ophalen, `AzureStorageAccountGeneric` moet u deze toevoegen aan de `pii-categories` para meter. `AzureStorageAccountGeneric` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
       
+    :::column-end:::
+    :::column span="":::
+
+      `en` 
+
     :::column-end:::
 :::row-end:::
 :::row:::
@@ -449,8 +636,15 @@ Deze entiteits categorieën bevatten Identificeer bare Azure-informatie, inclusi
     :::column-end:::
     :::column span="2":::
 
-       Verbindings reeks voor een computer met SQL Server.
+        Verbindings reeks voor een computer met SQL Server.
+
+        Als u deze entiteits categorie wilt ophalen, `SQLServerConnectionString` moet u deze toevoegen aan de `pii-categories` para meter. `SQLServerConnectionString` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
       
+    :::column-end:::
+    :::column span="":::
+
+      `en` 
+
     :::column-end:::
 :::row-end:::
 

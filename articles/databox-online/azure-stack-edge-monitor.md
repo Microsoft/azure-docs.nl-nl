@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 03/04/2021
 ms.author: alkohli
 ms.openlocfilehash: aae64cad3603725a4062d5afb42df974bbf8ac40
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102438780"
 ---
 # <a name="monitor-your-azure-stack-edge-pro"></a>Uw Azure Stack Edge Pro bewaken
@@ -58,12 +58,12 @@ In deze sectie worden de metrische gegevens over bewaking op het apparaat beschr
 
 In de volgende tabel ziet u een volledige lijst met metrische gegevens:
 
-|Metrische gegevens over capaciteit                     |Description  |
+|Metrische gegevens over capaciteit                     |Beschrijving  |
 |-------------------------------------|-------------|
 |**Beschik bare capaciteit**               | Verwijst naar de grootte van de gegevens die naar het apparaat kunnen worden geschreven. Met andere woorden, deze metriek is de capaciteit die beschikbaar kan worden gemaakt op het apparaat. <br></br>U kunt de capaciteit van het apparaat vrijmaken door de lokale kopie van bestanden te verwijderen die een kopie hebben op het apparaat en in de Cloud.        |
 |**Totale capaciteit**                   | Verwijst naar het totale aantal bytes op het apparaat waarnaar gegevens worden geschreven. dit wordt ook wel de totale grootte van de lokale cache genoemd. <br></br> U kunt nu de capaciteit van een bestaand virtueel apparaat verg Roten door een gegevens schijf toe te voegen. Voeg een gegevens schijf toe via het Hyper Visor beheer voor de virtuele machine en start vervolgens de virtuele machine opnieuw op. De lokale opslag groep van het gateway-apparaat wordt uitgebreid met de nieuwe toegevoegde gegevens schijf. <br></br>Ga voor meer informatie naar [een harde schijf toevoegen voor Hyper-V virtuele machine](https://www.youtube.com/watch?v=EWdqUw9tTe4). |
 
-|Metrische gegevens voor transacties              | Description         |
+|Metrische gegevens voor transacties              | Beschrijving         |
 |-------------------------------------|---------|
 |**Geüploade Cloud bytes (apparaat)**    | Som van alle bytes die zijn geüpload over alle shares op uw apparaat        |
 |**Geüploade Cloud bytes (delen)**     | Geüploade bytes per share. Deze waarde kan zijn: <br></br> Gem. Dit is het (de som van alle geüploade bytes per share/aantal shares),  <br></br>Max. Dit is het maximum aantal bytes dat van een share is geüpload <br></br>Min. Dit is het minimum aantal bytes dat van een share is geüpload      |
@@ -74,7 +74,7 @@ In de volgende tabel ziet u een volledige lijst met metrische gegevens:
 |**Lees doorvoer (netwerk)**           | Bevat de systeem netwerk doorvoer voor alle bytes die in de Cloud zijn gelezen. Deze weer gave kan gegevens bevatten die niet zijn beperkt tot shares. <br></br>Bij het splitsen wordt het verkeer voor alle netwerk adapters op het apparaat weer gegeven, met inbegrip van adapters die niet zijn verbonden of ingeschakeld.      |
 |**Schrijf doorvoer (netwerk)**       | Bevat de systeem netwerk doorvoer voor alle bytes die worden geschreven naar de Cloud. Deze weer gave kan gegevens bevatten die niet zijn beperkt tot shares. <br></br>Bij het splitsen wordt het verkeer voor alle netwerk adapters op het apparaat weer gegeven, met inbegrip van adapters die niet zijn verbonden of ingeschakeld.          |
 
-| Metrische reken gegevens              | Description         |
+| Metrische reken gegevens              | Beschrijving         |
 |-------------------------------------|---------|
 |**Edge Compute-geheugen gebruik**      |           |
 |**Edge Compute-percentage CPU**    |         |

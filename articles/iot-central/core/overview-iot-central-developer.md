@@ -10,12 +10,12 @@ services: iot-central
 ms.custom:
 - mvc
 - device-developer
-ms.openlocfilehash: f69bbecfc2acc24cd63b87212197342b28723a9f
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 4423eea6c35ad44d55ad17f5703a95c6273422b8
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102043096"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104585856"
 ---
 # <a name="iot-central-device-development-guide"></a>Hand leiding voor het ontwikkelen van IoT Central apparaten
 
@@ -105,7 +105,7 @@ Een DTDL-model kan een model met _geen-onderdeel_ of _multi-onderdeel_ zijn:
 - Geen-onderdeelmodel: Een eenvoudig model maakt geen gebruik van ingesloten of trapsgewijze onderdelen. Alle telemetrie, eigenschappen en opdrachten zijn gedefinieerd als één _standaard onderdeel_. Zie het [Thermostaat](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/Thermostat.json)-model voor een voorbeeld.
 - Multi-onderdeelmodel. Een complexer model met twee of meer onderdelen. Deze onderdelen bevatten één standaard onderdeel en een of meer extra geneste onderdelen. Zie het [Temperatuur-controller](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/TemperatureController.json)-model voor een voorbeeld.
 
-Zie voor meer informatie [IoT Plug and Play-componenten in modellen](../../iot-pnp/concepts-components.md)
+Zie voor meer informatie de [model gids IoT Plug en Play](../../iot-pnp/concepts-modeling-guide.md)
 
 ### <a name="conventions"></a>Conventies
 

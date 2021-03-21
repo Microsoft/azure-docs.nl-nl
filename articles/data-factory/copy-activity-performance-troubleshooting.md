@@ -7,12 +7,12 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 01/07/2021
-ms.openlocfilehash: 07be5d29ccb55fe97f38123ff4a850d28cd39ead
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: ce7c97abfb879e9298edac5f38540bbc026274da
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100387679"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104584397"
 ---
 # <a name="troubleshoot-copy-activity-performance"></a>Prestaties van de Kopieer activiteit oplossen
 
@@ -168,7 +168,7 @@ Als de Kopieer prestaties niet voldoen aan uw verwachting, kunt u bij het oploss
   - Als u de [parallelle kopieën](copy-activity-performance-features.md)geleidelijk wilt afstemmen, moet u er rekening mee houden dat te veel parallelle kopieën mogelijk zelfs de prestaties nadelig beïnvloeden.
 
 
-## <a name="connector-and-ir-performance"></a>Connector-en IR-prestaties
+## <a name="connector-and-ir-performance"></a>Connector-en IR-prestaties 
 
 In deze sectie vindt u een aantal richt lijnen voor probleem oplossing voor het oplossen van problemen met connector type of Integration runtime.
 
@@ -176,9 +176,11 @@ In deze sectie vindt u een aantal richt lijnen voor probleem oplossing voor het 
 
 De uitvoerings tijd van de activiteit varieert wanneer de gegevensset is gebaseerd op verschillende Integration Runtime.
 
-- **Symptomen**: als u de vervolg keuzelijst gekoppelde service in de gegevensset in-of uitschakelt, worden dezelfde pijplijn activiteiten uitgevoerd, maar heeft dit drastische verschillende uitvoerings tijden. Wanneer de gegevensset is gebaseerd op het Integration Runtime beheerde Virtual Network, neemt het gemiddeld meer dan twee minuten in beslag om de uitvoering te volt ooien, maar duurt het ongeveer 20 seconden om te volt ooien wanneer dit is gebaseerd op de standaard Integration Runtime.
+- **Symptomen**: als u de vervolg keuzelijst gekoppelde service in de gegevensset in-of uitschakelt, worden dezelfde pijplijn activiteiten uitgevoerd, maar heeft dit drastische verschillende uitvoerings tijden. Wanneer de gegevensset is gebaseerd op het Integration Runtime beheerde Virtual Network, neemt het gemiddelde tijd in beslag op basis van de standaard Integration Runtime.  
 
-- **Oorzaak**: als u de details van de pijplijn uitvoeringen wilt controleren, kunt u zien dat de langzame pijp lijn wordt uitgevoerd op beheerde VNet (Virtual Network) IR, terwijl het normale wordt uitgevoerd op Azure IR. Het ontwerp van beheerde VNet-IR neemt langer tijd in beslag dan Azure IR omdat er niet meer dan één reken knooppunt per data factory wordt gereserveerd, waardoor elke Kopieer activiteit een warme periode van twee minuten heeft, en deze gebeurtenis voornamelijk wordt uitgevoerd op de VNet-koppeling in plaats van Azure IR.
+- **Oorzaak**: als u de details van de pijplijn uitvoeringen wilt controleren, kunt u zien dat de langzame pijp lijn wordt uitgevoerd op beheerde VNet (Virtual Network) IR, terwijl het normale wordt uitgevoerd op Azure IR. Het ontwerp van beheerde VNet-IR neemt langer tijd in beslag dan Azure IR omdat er niet één reken knooppunt per data factory wordt gereserveerd, waardoor elke Kopieer activiteit wordt opgewarmd en in plaats van Azure IR wordt uitgevoerd. 
+
+
 
     
 ### <a name="low-performance-when-loading-data-into-azure-sql-database"></a>Lage prestaties bij het laden van gegevens in Azure SQL Database

@@ -11,12 +11,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: media
 ms.date: 1/14/2020
 ms.author: inhenkel
-ms.openlocfilehash: 327673d0765fa807f782494562c995278be4782f
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: 6a2c6495ca3685aec1bc132ec7f8a88809ad2d87
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98955289"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104598280"
 ---
 # <a name="live-streaming-scenario-based-migration-guidance"></a>Richt lijnen voor migratie op basis van live streaming
 
@@ -42,7 +42,7 @@ Test de nieuwe manier om live-gebeurtenissen te leveren met Media Services voord
 - Als u snel aan de slag wilt met Live Events, bekijkt u de nieuwe functies van de [modus stand-by](live-events-outputs-concept.md#standby-mode) .
 - Als u uw live-evenement wilt transcriberen terwijl dit gebeurt, kunt u de nieuwe functie van [Live transcriptie](live-transcription.md) verkennen.
 - Maak zakelijke (24x7x365 Live-gebeurtenissen in v3 als u een langere streaming-duur nodig hebt.
-- Gebruik [Event grid](monitor-events-portal-how-to.md) om uw Live-gebeurtenissen te bewaken.
+- Gebruik [Event grid](monitoring/monitor-events-portal-how-to.md) om uw Live-gebeurtenissen te bewaken.
 
 Zie concepten van Live Events, zelf studies en de onderstaande hand leidingen voor specifieke stappen.
 

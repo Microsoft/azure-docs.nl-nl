@@ -7,10 +7,10 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 10/14/2020
 ms.openlocfilehash: 36ecef007e10f9a090dbabc8b5a91fd473930141
-ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102633849"
 ---
 # <a name="optimize-request-cost-in-azure-cosmos-db"></a>De aanvraag kosten optimaliseren in Azure Cosmos DB

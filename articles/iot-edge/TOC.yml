@@ -131,6 +131,8 @@
           href: how-to-update-iot-edge.md
         - name: Apparaatcertificaten beheren
           href: how-to-manage-device-certificates.md
+        - name: Geneste virtualisatie configureren voor Windows-Vm's
+          href: nested-virtualization.md
     - name: Scenario's voor alternatieve apparaten
       items:
         - name: IoT Edge uitvoeren met Windows-containers

@@ -6,14 +6,17 @@ ms.author: jasonh
 ms.service: data-catalog
 ms.topic: how-to
 ms.date: 08/01/2019
-ms.openlocfilehash: 2d0baed53441893ec294784f0f8092fe89a347c9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 52a8d8fcd0b9b9ee1ff918ead250c88b83f86cb7
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86523703"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104674832"
 ---
 # <a name="save-searches-and-pin-data-assets-in-azure-data-catalog"></a>Zoek opdrachten opslaan en gegevensassets vastmaken in Azure Data Catalog
+
+[!INCLUDE [Azure Purview redirect](../../includes/data-catalog-use-purview.md)]
+
 ## <a name="introduction"></a>Inleiding
 Azure Data Catalog biedt mogelijkheden voor het detecteren van gegevens bronnen. U kunt de catalogus snel doorzoeken en filteren om gegevens bronnen te zoeken en inzicht te krijgen in de beoogde doel einden, zodat u gemakkelijker de juiste gegevens kunt vinden voor de taak bij de hand.
 
@@ -47,9 +50,9 @@ Voer een van de volgende bewerkingen uit:
 
     ![Opties voor het beheren van opgeslagen Zoek opdrachten](./media/data-catalog-how-to-save-pin/04-managing.png)
 
-* Selecteer **naam wijzigen**om een nieuwe naam voor de opgeslagen zoek opdracht op te geven. De zoek definitie is niet gewijzigd.
+* Selecteer **naam wijzigen** om een nieuwe naam voor de opgeslagen zoek opdracht op te geven. De zoek definitie is niet gewijzigd.
 
-* Als u de opgeslagen zoek opdracht wilt verwijderen uit de lijst, selecteert u **verwijderen**en bevestigt u de verwijdering.
+* Als u de opgeslagen zoek opdracht wilt verwijderen uit de lijst, selecteert u **verwijderen** en bevestigt u de verwijdering.
 
 * Als u de opgeslagen zoek opdracht als standaard zoekopdracht wilt markeren, selecteert u **Opslaan als standaard**. Als u een ' lege ' Zoek opdracht uitvoert vanaf de start pagina van Azure Data Catalog, wordt uw standaard zoekopdracht uitgevoerd. Daarnaast wordt de zoek opdracht die is gemarkeerd als standaard zoek opdracht weer gegeven boven aan de lijst **opgeslagen Zoek opdrachten** .
 

@@ -5,12 +5,12 @@ ms.topic: include
 ms.date: 02/10/2021
 ms.author: trbye
 ms.custom: devx-track-js
-ms.openlocfilehash: 3fa47935721ccfccdfe18d60a66d5cc480582e7d
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: bfaa9f649fd4d44e45b6d4a513e74e12e169c4f8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102428234"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104719930"
 ---
 In deze quickstart maakt u kennis met algemene ontwerppatronen voor het uitvoeren van een spraak-naar-tekstsynthese met behulp van de Speech-SDK. Eerst voert u een basisconfiguratie en -synthese uit en gaat u verder met geavanceerdere voorbeelden voor aangepaste toepassingsontwikkeling zoals:
 
@@ -30,7 +30,7 @@ In dit artikel wordt ervan uitgegaan dat u een Azure-account en een spraak servi
 ## <a name="install-the-speech-sdk"></a>De Speech-SDK installeren
 
 Voordat u iets kunt doen, moet u de <a href="https://www.npmjs.com/package/microsoft-cognitiveservices-speech-sdk" target="_blank">Speech-SDK installeren voor JavaScript</a>. Gebruik de volgende instructies, afhankelijk van uw platform:
-- <a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk?tabs=nodejs#get-the-speech-sdk" target="_blank">Node.js <span 
+- <a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk?tabs=nodejs#get-the-speech-sdk" target="_blank">Node.js <span
 class="docon docon-navigate-external x-hidden-focus"></span></a>
 - <a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk?tabs=browser#get-the-speech-sdk" target="_blank">Webbrowser </a>
 
@@ -162,14 +162,14 @@ Voor veel scenario's in het ontwikkelen van spraaktoepassingen hebt u waarschijn
 * Integreer het resultaat met andere API's of services.
 * Wijzig de audiogegevens, schrijf aangepaste `.wav`-headers, enzovoort.
 
-U kunt deze wijziging eenvoudig met behulp van het voorgaande voorbeeld uitvoeren. Verwijder eerst het `AudioConfig`-blok, omdat u het uitvoergedrag vanaf dit punt handmatig gaat beheren voor een betere controle. Geef vervolgens `undefined` door voor de `AudioConfig` in de `SpeechSynthesizer`-constructor. 
+U kunt deze wijziging eenvoudig met behulp van het voorgaande voorbeeld uitvoeren. Verwijder eerst het `AudioConfig`-blok, omdat u het uitvoergedrag vanaf dit punt handmatig gaat beheren voor een betere controle. Geef vervolgens `undefined` door voor de `AudioConfig` in de `SpeechSynthesizer`-constructor.
 
 > [!NOTE]
 > Als `undefined` voor de `AudioConfig` wordt doorgegeven in plaats van dat deze wordt weggelaten, zoals in het bovenstaande voorbeeld met de luidspreker, wordt de audio niet standaard afgespeeld op het huidige actieve uitvoerapparaat.
 
-Deze keer slaat u het resultaat op in een [`SpeechSynthesisResult`](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechsynthesisresult)-variabele. De `SpeechSynthesisResult.audioData` eigenschap retourneert een `ArrayBuffer` van de uitvoer gegevens, het standaard type browser stroom. Converteer voor de server code de arrayBuffer naar een buffer stroom. 
+Deze keer slaat u het resultaat op in een [`SpeechSynthesisResult`](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechsynthesisresult)-variabele. De `SpeechSynthesisResult.audioData` eigenschap retourneert een `ArrayBuffer` van de uitvoer gegevens, het standaard type browser stroom. Converteer voor de server code de arrayBuffer naar een buffer stroom.
 
-De volgende code werkt voor code aan de client zijde. 
+De volgende code werkt voor code aan de client zijde.
 
 ```javascript
 function synthesizeSpeech() {
@@ -189,9 +189,9 @@ function synthesizeSpeech() {
 }
 ```
 
-Hierna kunt u aangepast gedrag implementeren met behulp van het resulterende `ArrayBuffer`-object. De ArrayBuffer is een gemeen schappelijk type dat in een browser kan worden ontvangen en vanuit deze indeling kan worden afgespeeld. 
+Hierna kunt u aangepast gedrag implementeren met behulp van het resulterende `ArrayBuffer`-object. De ArrayBuffer is een gemeen schappelijk type dat in een browser kan worden ontvangen en vanuit deze indeling kan worden afgespeeld.
 
-Als u in plaats van een ArrayBuffer de gegevens als een stroom wilt gebruiken, moet u voor elke server code het object converteren naar een stroom. 
+Als u in plaats van een ArrayBuffer de gegevens als een stroom wilt gebruiken, moet u voor elke server code het object converteren naar een stroom.
 
 ```javascript
 function synthesizeSpeech() {
@@ -342,3 +342,11 @@ Als u wilt overschakelen naar een neurale stem, wijzigt u de `name` in een van d
   </voice>
 </speak>
 ```
+
+## <a name="get-facial-pose-events"></a>Gebeurtenissen voor gezichts pose ophalen
+
+Speech is een goede manier om de animatie van gezichts expressies te testen.
+Vaak worden [visemes](../../../how-to-speech-synthesis-viseme.md) gebruikt om de sleutel in waargenomen spraak te vertegenwoordigen, zoals de positie van de lippen, jaw en tong bij het produceren van een bepaalde foneem.
+U kunt de viseme-gebeurtenis in Speech SDK abonneren.
+Vervolgens kunt u viseme-gebeurtenissen Toep assen om het gezicht van een teken te animeren wanneer spraak geluid wordt afgespeeld.
+Meer informatie [over het ophalen van viseme-gebeurtenissen](../../../how-to-speech-synthesis-viseme.md#get-viseme-events-with-the-speech-sdk).

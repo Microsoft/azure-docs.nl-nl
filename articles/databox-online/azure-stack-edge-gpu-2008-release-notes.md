@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 03/05/2021
 ms.author: alkohli
 ms.openlocfilehash: dd72865e35318c7ff43dc17b7c92b9cc2f3e9790
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102436852"
 ---
 # <a name="azure-stack-edge-pro-with-gpu-preview-release-notes"></a>Opmerkingen bij de release van Azure Stack Edge Pro met GPU preview

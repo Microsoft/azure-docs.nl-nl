@@ -9,12 +9,12 @@ ms.date: 03/01/2020
 ms.author: midesa
 ms.reviewer: jrasnick
 ms.subservice: spark
-ms.openlocfilehash: c6d720c3feec29eb32b1cfa9c31ea45839c98ec7
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: e8ad6d072af6979eb8509068c1dcd239e7840950
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102176413"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104598011"
 ---
 # <a name="manage-libraries-for-apache-spark-in-azure-synapse-analytics"></a>Bibliotheken voor Apache Spark beheren in azure Synapse Analytics
 Bibliotheken bieden herbruikbare code die u mogelijk wilt toevoegen aan uw Program ma's of projecten. 
@@ -60,10 +60,6 @@ Raadpleeg de documentatie over [python-groeps beheer](./apache-spark-manage-pyth
 Bij het uitvoeren van interactieve gegevens analyse of machine learning, kunt u er vaak voor zorgen dat u nieuwere pakketten wilt proberen of dat u pakketten nodig hebt die nog niet beschikbaar zijn in uw Apache Spark groep. In plaats van de pool configuratie bij te werken, kunnen gebruikers nu pakketten met sessie bereik gebruiken om sessie afhankelijkheden toe te voegen, te beheren en bij te werken.
 
 Met pakketten met sessie bereik kunnen gebruikers aan het begin van hun sessie pakket afhankelijkheden definiëren. Wanneer u een pakket met sessie bereik installeert, heeft alleen de huidige sessie toegang tot de opgegeven pakketten. Als gevolg hiervan zijn deze pakketten met sessie bereik niet van invloed op andere sessies of taken die gebruikmaken van dezelfde Apache Spark pool. Daarnaast worden deze bibliotheken boven op de basis-runtime-en pool level-pakketten geïnstalleerd. 
-
-Deze pakketten worden automatisch toegevoegd aan uw python-omgeving. De pakketten mogen niet worden vermeld in uw *requirements.txt* -bestand.
-
-Houd er rekening mee dat deze methode momenteel alleen `*.whl` bestanden suports. Voeg geen bestanden toe `*.tar.gz` aan de container.
 
 Voor meer informatie over het beheren van pakketten met sessie bereik raadpleegt u de volgende hand leidingen:
 

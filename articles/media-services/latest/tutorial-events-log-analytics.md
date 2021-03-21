@@ -11,18 +11,18 @@ ms.workload: ''
 ms.topic: tutorial
 ms.date: 08/24/2020
 ms.author: inhenkel
-ms.openlocfilehash: c481daf73f916ede2e7063c75448ba4d09e553cc
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 8e3b9636dfb900fa0e22bfea8bcd2d0c7edf0241
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100571869"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104596702"
 ---
 # <a name="tutorial-store-azure-media-services-events-in-azure-log-analytics"></a>Zelfstudie: Gebeurtenissen van Azure Media Services opslaan in Azure Log Analytics
 
 ## <a name="azure-media-services-events"></a>Gebeurtenissen van Azure Media Services
 
-Azure Media Services v3 verzendt gebeurtenissen naar [Azure Event Grid](media-services-event-schemas.md). U kunt zich op verschillende manieren abonneren op gebeurtenissen en deze opslaan in gegevensarchieven. In deze zelfstudie abonneert u zich abonneren op Media Services-gebeurtenissen met behulp van een [logische app](https://azure.microsoft.com/services/logic-apps/). De logische app wordt voor elke gebeurtenis geactiveerd en slaat de hoofdtekst van de gebeurtenis op in Azure Log Analytics. Zodra de gebeurtenissen zich in Azure Log Analytics bevinden, kunt u andere Azure-services gebruiken om een dashboard te maken, en deze gebeurtenissen te controleren en er waarschuwingen voor versturen. Dit gaan we overigens niet bespreken in deze zelfstudie.
+Azure Media Services v3 verzendt gebeurtenissen naar [Azure Event Grid](monitoring/media-services-event-schemas.md). U kunt zich op verschillende manieren abonneren op gebeurtenissen en deze opslaan in gegevensarchieven. In deze zelfstudie abonneert u zich abonneren op Media Services-gebeurtenissen met behulp van een [logische app](https://azure.microsoft.com/services/logic-apps/). De logische app wordt voor elke gebeurtenis geactiveerd en slaat de hoofdtekst van de gebeurtenis op in Azure Log Analytics. Zodra de gebeurtenissen zich in Azure Log Analytics bevinden, kunt u andere Azure-services gebruiken om een dashboard te maken, en deze gebeurtenissen te controleren en er waarschuwingen voor versturen. Dit gaan we overigens niet bespreken in deze zelfstudie.
 
 > [!NOTE]
 > Het is handig als u al bekend bent met het gebruik van FFmpeg als uw on-premises coderingsprogramma.  Het is geen probleem als u dit programma niet eerder hebt gebruikt. Hieronder vindt u de opdrachtregel en instructies voor het streamen van een video.

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: bf5da120072f49421b6f2194626178048b044f6a
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.openlocfilehash: 6ebec78d5a9e82cc8a2f6ceb020a8b9552d6311e
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102564693"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104604012"
 ---
 # <a name="azure-disk-encryption-scenarios-on-linux-vms"></a>Azure Disk Encryption-scenario's voor virtuele Linux-machines
 
@@ -262,7 +262,7 @@ We raden u aan om een LVM-on-cryptografie installatie uit te voeren. Voor alle v
 
 1. Format teer, koppel en voeg deze schijven toe aan het fstab-bestand.
 
-1. Kies een partitie standaard, maak een partitie die het hele station omvat en Format teer vervolgens de partitie. We gebruiken hier symlinks die door Azure worden gegenereerd. Het gebruik van symlinks voor komt problemen met betrekking tot het wijzigen van de apparaatnaam. Zie het artikel problemen [met apparaatnamen oplossen](../troubleshooting/troubleshoot-device-names-problems.md) voor meer informatie.
+1. Kies een partitie standaard, maak een partitie die het hele station omvat en Format teer vervolgens de partitie. We gebruiken hier symlinks die door Azure worden gegenereerd. Het gebruik van symlinks voor komt problemen met betrekking tot het wijzigen van de apparaatnaam. Zie het artikel problemen [met apparaatnamen oplossen](/troubleshoot/azure/virtual-machines/troubleshoot-device-names-problems) voor meer informatie.
     
     ```bash
     parted /dev/disk/azure/scsi1/lun0 mklabel gpt

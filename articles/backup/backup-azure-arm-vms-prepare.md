@@ -3,12 +3,12 @@ title: Back-ups maken van virtuele Azure-machines in een Recovery Services kluis
 description: Hierin wordt beschreven hoe u back-ups maakt van virtuele Azure-machines in een Recovery Services kluis met behulp van de Azure Backup
 ms.topic: conceptual
 ms.date: 07/28/2020
-ms.openlocfilehash: f6fe2f629742e15e62dfc13106e92623a4b45add
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 5c3bc66c2111c347f8ed0e32c9e597a52ed404ed
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/19/2021
-ms.locfileid: "92172746"
+ms.locfileid: "104670423"
 ---
 # <a name="back-up-azure-vms-in-a-recovery-services-vault"></a>Back-ups maken van virtuele Azure-machines in een Recovery Services kluis
 
@@ -117,6 +117,8 @@ Als u hebt geselecteerd voor het maken van een nieuw back-upbeleid, vult u de be
 4. Geef in **Bewaar termijn** op hoe lang u uw dagelijkse of wekelijkse back-uppunten wilt houden.
 5. Geef bij het **bewaren van maandelijks back-uppunt** en **bewaren van jaarlijks back-uppunt** op of u maandelijks of jaarlijks een back-up wilt houden van uw dagelijkse of wekelijkse back-ups.
 6. Selecteer **OK** om het beleid op te slaan.
+    > [!NOTE]
+    > Als u de herstel punt verzameling (RPC) wilt opslaan, maakt de back-upservice een afzonderlijke resource groep (RG). Deze RG wijkt af van de virtuele machine. [Meer informatie](backup-during-vm-creation.md#azure-backup-resource-group-for-virtual-machines).
 
     ![Nieuw back-upbeleid](./media/backup-azure-arm-vms-prepare/new-policy.png)
 

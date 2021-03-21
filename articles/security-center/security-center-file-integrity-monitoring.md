@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 09/22/2020
 ms.author: memildin
 ms.openlocfilehash: b858903b87dc6c4cc1f7c40338c09bf5b8204b3d
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102176532"
 ---
 # <a name="file-integrity-monitoring-in-azure-security-center"></a>Controle van bestands integriteit in Azure Security Center
@@ -56,7 +56,7 @@ In deze zelfstudie leert u het volgende:
 
 Door de huidige status van deze items te vergelijken met de status tijdens de vorige scan, wordt u door FIM gewaarschuwd als er verdachte wijzigingen zijn aangebracht.
 
-FIM maakt gebruik van de Azure Wijzigingen bijhouden-oplossing om wijzigingen in uw omgeving bij te houden en te identificeren. Als bestands integriteits controle is ingeschakeld, hebt u een **Wijzigingen bijhouden** bron van het type **oplossing**. Zie [Wijzigingen bijhouden Details van gegevens verzameling](../automation/change-tracking/overview.md#change-tracking-and-inventory-data-collection)voor meer informatie over de frequentie van gegevens verzameling.
+FIM gebruikt de Azure-oplossing Wijzigingen bijhouden om veranderingen in uw omgeving te traceren en te identificeren. Als bestands integriteits controle is ingeschakeld, hebt u een **Wijzigingen bijhouden** bron van het type **oplossing**. Zie [Wijzigingen bijhouden Details van gegevens verzameling](../automation/change-tracking/overview.md#change-tracking-and-inventory-data-collection)voor meer informatie over de frequentie van gegevens verzameling.
 
 > [!NOTE]
 > Als u de **Wijzigingen bijhouden** resource verwijdert, schakelt u ook de functie bestands integriteit controleren uit in Security Center.
@@ -247,7 +247,7 @@ Joker tekens gebruiken om het bijhouden van meerdere mappen te vereenvoudigen. D
 -   Bij het instellen van het pad vermijdt u algemene paden zoals c: \* . *, waardoor er te veel mappen worden gepasseerd.
 
 ## <a name="disable-fim"></a>FIM uitschakelen
-U kunt FIM uitschakelen. FIM maakt gebruik van de Azure Wijzigingen bijhouden-oplossing om wijzigingen in uw omgeving bij te houden en te identificeren. Door FIM uit te scha kelen, verwijdert u de Wijzigingen bijhouden-oplossing uit de geselecteerde werk ruimte.
+U kunt FIM uitschakelen. FIM gebruikt de Azure-oplossing Wijzigingen bijhouden om veranderingen in uw omgeving te traceren en te identificeren. Door FIM uit te scha kelen, verwijdert u de Wijzigingen bijhouden-oplossing uit de geselecteerde werk ruimte.
 
 1. Als u FIM wilt uitschakelen, keert u terug naar het dash board **File Integrity Monitoring** .
 2. Selecteer een werkruimte.

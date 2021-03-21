@@ -9,12 +9,12 @@ ms.service: virtual-machines
 ms.subservice: image-builder
 ms.custom: references_regions
 ms.reviewer: cynthn
-ms.openlocfilehash: 0e72c35af1f1990527b0154d2ba47a45d3f8b8c9
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: 20bb6925f859d497046eb42bbafb5264826b77b7
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102425618"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104604063"
 ---
 # <a name="preview-azure-image-builder-overview"></a>Voor beeld: overzicht van Azure Image Builder
 
@@ -70,7 +70,7 @@ De opbouw functie voor installatie kopieën van Azure VM is een volledig beheerd
 
 Sjabloon configuraties kunnen worden door gegeven met behulp van Power shell, AZ CLI, ARM-sjablonen en met behulp van de Azure VM Image Builder DevOps-taak, wanneer u deze indient bij de service, wordt er een bron voor de afbeeldings sjabloon gemaakt. Wanneer de bron van de afbeeldings sjabloon wordt gemaakt, ziet u een faserings resource groep die is gemaakt in uw abonnement, in de indeling: IT_ \<DestinationResourceGroup> _\<TemplateName>_ \( GUID). De resource groep staging bevat bestanden en scripts waarnaar wordt verwezen in het bestand, Shell, Power shell-aanpassing in de eigenschap ScriptURI.
 
-Voor het uitvoeren van de build die u aanroept `Run` op de bron van de afbeeldings sjabloon, implementeert de service vervolgens aanvullende bronnen voor de build, zoals een VM, netwerk, schijf, netwerk adapter, enzovoort. Als u een installatie kopie bouwt zonder gebruik te maken van een bestaande VNET Image Builder, worden er ook een openbaar IP-en NSG geïmplementeerd, de service maakt verbinding met de build-VM met SSH of WinRM. Als u een bestaand VNET selecteert, wordt de service geïmplementeerd met behulp van een persoonlijke Azure-koppeling en is er geen openbaar IP-adres vereist. Raadpleeg de [Details](https://docs.microsoft.com/azure/virtual-machines/linux/image-builder-networking)voor meer informatie over het uitvoeren van een image builder-netwerk.
+Voor het uitvoeren van de build die u aanroept `Run` op de bron van de afbeeldings sjabloon, implementeert de service vervolgens aanvullende bronnen voor de build, zoals een VM, netwerk, schijf, netwerk adapter, enzovoort. Als u een installatie kopie bouwt zonder gebruik te maken van een bestaande VNET Image Builder, worden er ook een openbaar IP-en NSG geïmplementeerd, de service maakt verbinding met de build-VM met SSH of WinRM. Als u een bestaand VNET selecteert, wordt de service geïmplementeerd met behulp van een persoonlijke Azure-koppeling en is er geen openbaar IP-adres vereist. Raadpleeg de [Details](./linux/image-builder-networking.md)voor meer informatie over het uitvoeren van een image builder-netwerk.
 
 Wanneer de build alle resources heeft verwijderd, met uitzonde ring van de faserings resource groep en het opslag account, verwijdert u deze om deze te verwijderen. u kunt ook de bron van de afbeeldings sjabloon verwijderen, of deze laten staan om de build opnieuw uit te voeren.
 
@@ -84,7 +84,7 @@ Wanneer u zich registreert voor de (AIB), verleent dit de AIB-service toestemmin
 
 Als u wilt dat Azure VM Image Builder installatie kopieën naar de beheerde installatie kopieën of naar een galerie met gedeelde installatie kopieën kan distribueren, moet u een door de gebruiker toegewezen Azure-identiteit maken die machtigingen heeft voor het lezen en schrijven van installatie kopieën. Als u toegang hebt tot Azure Storage, hebt u machtigingen nodig om persoonlijke en open bare containers te lezen.
 
-Machtigingen worden uitgebreid beschreven in [Power shell](https://docs.microsoft.com/azure/virtual-machines/linux/image-builder-permissions-powershell)en [AZ cli](https://docs.microsoft.com/azure/virtual-machines/linux/image-builder-permissions-cli).
+Machtigingen worden uitgebreid beschreven in [Power shell](./linux/image-builder-permissions-powershell.md)en [AZ cli](./linux/image-builder-permissions-cli.md).
 
 ## <a name="costs"></a>Kosten
 U maakt een aantal reken-, netwerk-en opslag kosten bij het maken, maken en opslaan van installatie kopieën met Azure Image Builder. Deze kosten zijn vergelijkbaar met de kosten die zijn gemaakt bij het hand matig maken van aangepaste installatie kopieën. Voor de resources worden er kosten in rekening gebracht voor uw Azure-tarieven. 
@@ -101,4 +101,3 @@ De opbouw functie voor installatie kopieën ondersteunt momenteel alleen systeem
 ## <a name="next-steps"></a>Volgende stappen 
  
 Zie de artikelen voor het bouwen van [Linux](./linux/image-builder.md) -of [Windows](./windows/image-builder.md) -installatie kopieën om de Azure Image Builder uit te proberen.
-

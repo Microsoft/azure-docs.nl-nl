@@ -7,10 +7,10 @@ ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 06/09/2020
 ms.openlocfilehash: 6c4dfed27a105fad951ae12ca053b6d86772717a
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102032565"
 ---
 # <a name="discovery-assessment-and-dependency-analysis---common-questions"></a>Detectie, beoordeling en afhankelijkheids analyse-Veelgestelde vragen
@@ -39,7 +39,7 @@ U kunt Maxi maal 10.000 VMware-Vm's, Maxi maal 5.000 virtuele Hyper-V-machines e
 - Gebruik het beoordelings type **Azure SQL** wanneer u uw on-premises SQL Server wilt beoordelen vanuit uw VMware-omgeving voor migratie naar Azure SQL database of Azure SQL Managed instance. [Meer informatie](concepts-assessment-calculation.md)
 
     > [!Note]
-    > Detectie en evaluatie van SQL Server instanties en data bases die worden uitgevoerd in uw VMware-omgeving is nu beschikbaar als preview-versie. Gebruik [**deze koppeling**](https://aka.ms/AzureMigrate/SQL) om een project te maken in **Australië-Oost** regio om deze functie uit te proberen. Als u al een project in Australië-oost hebt en u deze functie wilt uitproberen, moet u ervoor zorgen dat u deze [**vereisten**](how-to-discover-sql-existing-project.md) hebt voltooid op de portal.
+    > Detectie en evaluatie van SQL Server instanties en data bases die worden uitgevoerd in uw VMware-omgeving is nu beschikbaar als preview-versie. Als u deze functie wilt proberen, gebruikt u [**deze koppeling**](https://aka.ms/AzureMigrate/SQL) om een project te maken in de regio **Australië - oost**. Als u al een project in Australië-oost hebt en u deze functie wilt proberen, zorgt u ervoor dat u aan deze [**vereisten**](how-to-discover-sql-existing-project.md) voldoet in de portal.
 
 - Gebruik de evaluaties van de **Azure VMware-oplossing (AVS)** als u uw on-premises [virtuele VMware-machines](how-to-set-up-appliance-vmware.md) wilt controleren op migratie naar [Azure VMware-oplossing (AVS)](../azure-vmware/introduction.md) met dit beoordelings type. [Meer informatie](concepts-azure-vmware-solution-assessment-calculation.md)
 
@@ -61,12 +61,12 @@ Voor evaluaties Op basis van prestaties staat in de export van het evaluatierapp
 
 ## <a name="why-is-performance-data-missing-for-someall-sql-instancesdatabases-in-my-azure-sql-assessment"></a>Waarom ontbreken prestatie gegevens voor sommige/alle SQL-exemplaren/data bases in mijn Azure SQL-evaluatie?
 
-Controleer het volgende om te controleren of de prestatie gegevens zijn verzameld:
+Controleer het volgende om zeker te weten dat de prestatiegegevens zijn verzameld:
 
 - Als de SQL-servers zijn ingeschakeld voor de duur waarvoor u de evaluatie maakt
 - Als de verbindings status van de SQL-Agent in Azure Migrate verbonden is en de laatste heartbeat controleren 
 - Als Azure Migrate verbindings status voor alle SQL-exemplaren ' connected ' is op de Blade gedetecteerde SQL-instantie
-- Als alle prestatie meter items ontbreken, moet u ervoor zorgen dat uitgaande verbindingen op poort 443 (HTTPS) zijn toegestaan
+- Als alle prestatiemeteritems ontbreken, moet u ervoor zorgen dat uitgaande verbindingen op poort 443 (HTTPS) zijn toegestaan
 
 Als een van de prestatie meter items ontbreekt, raadt Azure SQL assessment de kleinste Azure SQL-configuratie voor die instantie/data base aan.
 
@@ -76,45 +76,45 @@ De betrouwbaarheidsclassificatie wordt berekend voor evaluaties Op basis van pre
 
 - U hebt uw omgeving niet geprofileerd gedurende de periode waarvoor u de evaluatie maakt. Als u bijvoorbeeld een evaluatie maakt waarbij de duur van de prestaties is ingesteld op één week, moet u na het starten van de detectie minstens een week wachten voordat alle gegevenspunten zijn verzameld. Als u niet kunt wachten op de duur, wijzigt u de duur van de prestaties in een kleinere periode en berekent u de evaluatie **opnieuw** .
  
-- De evaluatie kan de prestatie gegevens voor sommige of alle servers in de evaluatie periode niet verzamelen. Voor een hoge betrouwbaarheids classificatie moet u het volgende doen: 
+- Bij de evaluatie kunnen de prestatiegegevens voor sommige of alle servers in de evaluatieperiode niet worden verzameld. Voor een hoge betrouwbaarheids classificatie moet u het volgende doen: 
     - Servers zijn ingeschakeld voor de duur van de evaluatie
     - Uitgaande verbindingen op poort 443 zijn toegestaan
     - Voor Hyper-V-servers is dynamisch geheugen ingeschakeld 
     - De verbindings status van agents in Azure Migrate is verbonden en controleer de laatste heartbeat
     - Voor Azure SQL-evaluaties is Azure Migrate verbindings status voor alle SQL-exemplaren verbonden op de Blade gedetecteerde SQL-instantie
 
-    Bereken de beoordeling **opnieuw** om de laatste wijzigingen in de vertrouwens classificatie weer te geven.
+    **Bereken de evaluatie opnieuw** om de meest recente wijzigingen in de betrouwbaarheidsclassificatie mee te nemen.
 
 - Voor Azure VM-en AVS-evaluaties zijn er weinig servers gemaakt nadat de detectie is gestart. Als u bijvoorbeeld een evaluatie maakt voor de prestatie geschiedenis van de laatste maand, maar weinig servers in de omgeving is slechts een week geleden gemaakt. In dit geval zijn de prestatie gegevens voor de nieuwe servers niet beschikbaar voor de hele duur en is de betrouwbaarheids classificatie laag. [Meer informatie](./concepts-assessment-calculation.md#confidence-ratings-performance-based)
 
-- Voor Azure SQL-evaluaties zijn er enkele SQL-instanties of-data bases gemaakt nadat de detectie is gestart. Als u bijvoorbeeld een evaluatie maakt voor de prestatie geschiedenis van de laatste maand, maar weinig SQL-exemplaren of data bases zijn in de omgeving slechts een week geleden gemaakt. In dit geval zijn de prestatie gegevens voor de nieuwe servers niet beschikbaar voor de hele duur en is de betrouwbaarheids classificatie laag. [Meer informatie](./concepts-azure-sql-assessment-calculation.md#confidence-ratings)
+- Voor Azure SQL-evaluaties zijn enkele SQL-exemplaren of -databases gemaakt nadat de detectie is gestart. Als u bijvoorbeeld een evaluatie maakt voor de prestatie geschiedenis van de laatste maand, maar weinig SQL-exemplaren of data bases zijn in de omgeving slechts een week geleden gemaakt. In dit geval zijn de prestatie gegevens voor de nieuwe servers niet beschikbaar voor de hele duur en is de betrouwbaarheids classificatie laag. [Meer informatie](./concepts-azure-sql-assessment-calculation.md#confidence-ratings)
 
-## <a name="i-want-to-try-out-the-new-azure-sql-assessment-feature-in-azure-migrate"></a>Ik wil de nieuwe Azure SQL Assessment-functie in Azure Migrate uitproberen
-Gebruik [deze koppeling](https://go.microsoft.com/fwlink/?linkid=2155668L) om een project te maken in **Australië-Oost** regio om deze functie uit te proberen.
-- Raadpleeg de zelf studies voor [detectie](https://docs.microsoft.com/azure/migrate/tutorial-discover-vmware) en [beoordelingen](https://docs.microsoft.com/azure/migrate/tutorial-assess-sql) om aan de slag te gaan.
-- Houd er rekening mee dat detectie en evaluatie van SQL Server instanties en data bases die in uw VMware-omgeving worden uitgevoerd, momenteel in Preview zijn.
+## <a name="i-want-to-try-out-the-new-azure-sql-assessment-feature-in-azure-migrate"></a>Ik wil de nieuwe functie voor Azure SQL-evaluatie in Azure Migrate proberen
+Als u deze functie wilt proberen, gebruikt u [deze koppeling](https://go.microsoft.com/fwlink/?linkid=2155668L) om een project te maken in de regio **Australië - oost**.
+- Raadpleeg de zelfstudies over [detectie](https://docs.microsoft.com/azure/migrate/tutorial-discover-vmware) en [evaluatie](https://docs.microsoft.com/azure/migrate/tutorial-assess-sql) om aan de slag te gaan.
+- Opmerking: uitvoeren van detectie en evaluatie van SQL Server-exemplaren en -databases in uw VMware-omgeving bevindt zich momenteel in de preview-fase.
 
 ## <a name="i-cant-see-some-servers-when-i-am-creating-an-azure-sql-assessment"></a>Ik zie sommige servers niet bij het maken van een Azure SQL-evaluatie
 
-- Azure SQL-evaluatie kan alleen worden uitgevoerd op servers waarop SQL-exemplaren zijn gedetecteerd. Als u de servers en SQL-exemplaren die u wilt beoordelen, niet ziet, wacht u tot de detectie is voltooid en maakt u de evaluatie. 
+- Azure SQL-evaluatie kan alleen worden uitgevoerd op servers waarop SQL-exemplaren zijn gedetecteerd. Als u de servers en SQL-exemplaren die u wilt evalueren, niet ziet, wacht u even tot de detectie is voltooid en maakt u vervolgens de evaluatie. 
 - Als u een eerder gemaakte groep niet kunt zien tijdens het maken van de evaluatie, moet u een niet-VMware-Server of een andere server zonder SQL-exemplaar uit de groep verwijderen.
-- Als u Azure SQL-evaluaties in Azure Migrate voor de eerste keer uitvoert, is het raadzaam een nieuwe groep servers te maken.
+- Als u Azure SQL-evaluaties in Azure Migrate de eerste keer uitvoert, is het raadzaam om een nieuwe groep servers te maken.
 
 ## <a name="i-want-to-understand-how-was-the-readiness-for-my-instance-computed"></a>Ik wil weten hoe de gereedheid voor mijn exemplaar is berekend?
-De gereedheid voor uw SQL-exemplaren is berekend na een compatibiliteits controle van de functie met het beoogde Azure SQL-implementatie type (Azure SQL Database of Azure SQL Managed instance). [Meer informatie](./concepts-azure-sql-assessment-calculation.md#calculate-readiness)
+De gereedheid van uw SQL-exemplaren wordt berekend na een functiecompatibiliteitscontrole, met het beoogde Azure SQL-implementatietype (Azure SQL Database of Azure SQL Managed Instance). [Meer informatie](./concepts-azure-sql-assessment-calculation.md#calculate-readiness)
 
 ## <a name="why-is-the-readiness-for-all-my-sql-instances-marked-as-unknown"></a>Waarom is de gereedheid voor alle mijn SQL-instanties gemarkeerd als onbekend?
-Als uw detectie recentelijk is gestart en nog steeds wordt uitgevoerd, ziet u mogelijk de gereedheid voor sommige of alle SQL-exemplaren als onbekend. We raden u aan te wachten op enige tijd voor het apparaat om de omgeving te profileren en vervolgens de beoordeling opnieuw te berekenen.
+Als uw detectie recentelijk is gestart en nog steeds wordt uitgevoerd, ziet u mogelijk de gereedheid voor sommige of alle SQL-exemplaren als onbekend. We raden u aan even te wachten totdat de omgeving is geprofileerd op het apparaat, en de evaluatie vervolgens opnieuw te berekenen.
 De SQL-detectie wordt elke 24 uur uitgevoerd en u moet mogelijk tot een dag wachten voordat de meest recente configuratie wijzigingen overeenkomen. 
 
 ## <a name="why-is-the-readiness-for-some-of-my-sql-instances-marked-as-unknown"></a>Waarom is de gereedheid voor sommige van mijn SQL-instanties gemarkeerd als onbekend?
 Dit kan gebeuren als: 
-- De detectie wordt nog uitgevoerd. We raden u aan te wachten op enige tijd voor het apparaat om de omgeving te profileren en vervolgens de beoordeling opnieuw te berekenen.
-- Er zijn een aantal detectie problemen die moeten worden opgelost op de Blade fouten en meldingen.
+- De detectie wordt nog uitgevoerd. We raden u aan even te wachten totdat de omgeving is geprofileerd op het apparaat, en de evaluatie vervolgens opnieuw te berekenen.
+- Er is een aantal detectieproblemen dat u moet oplossen op de blade Fouten en meldingen.
 
 De SQL-detectie wordt elke 24 uur uitgevoerd en u moet mogelijk tot een dag wachten voordat de meest recente configuratie wijzigingen overeenkomen.
 
-## <a name="my-assessment-is-in-outdated-state"></a>Mijn beoordeling verkeert in verouderde staat
+## <a name="my-assessment-is-in-outdated-state"></a>Mijn evaluatie heeft de status Verouderd
 
 ### <a name="azure-vmavs-assessment"></a>Azure VM/AVS-evaluatie
 Als er on-premises wijzigingen zijn aangebracht aan virtuele machines die zich in een groep bevinden die is geëvalueerd, wordt de evaluatie gemarkeerd als verouderd. Een evaluatie kan worden gemarkeerd als verouderd vanwege een of meer wijzigingen in de volgende eigenschappen:
@@ -130,33 +130,33 @@ Als er on-premises wijzigingen zijn aangebracht aan virtuele machines die zich i
 Voer de evaluatie **opnieuw** uit om de laatste wijzigingen in de evaluatie weer te geven.
 
 ### <a name="azure-sql-assessment"></a>Azure SQL-evaluatie
-Als er wijzigingen zijn aangebracht in on-premises SQL-exemplaren en data bases in een groep die is geëvalueerd, wordt de evaluatie als **verouderd** gemarkeerd:
-- Het SQL-exemplaar is toegevoegd aan of verwijderd van een server
+Als er wijzigingen zijn aangebracht in on-premises SQL-exemplaren en -databases in een groep die is geëvalueerd, wordt de evaluatie gemarkeerd als **Verouderd**:
+- SQL-exemplaar is toegevoegd aan of verwijderd van een server
 - SQL database is toegevoegd aan of verwijderd uit een SQL-exemplaar
-- De totale database grootte in een SQL-exemplaar is gewijzigd door meer dan 20%
+- De totale databasegrootte in een SQL-exemplaar is meer dan 20% gewijzigd
 - Wijziging in aantal processor kernen en/of toegewezen geheugen
 
 Voer de evaluatie **opnieuw** uit om de laatste wijzigingen in de evaluatie weer te geven.
 
-## <a name="why-was-i-recommended-a-particular-target-deployment-type"></a>Waarom is het aanbevolen een bepaald type doel implementatie?
-Azure Migrate raadt een specifiek Azure SQL-implementatie type aan dat compatibel is met uw SQL-exemplaar. Door te migreren naar een aanbevolen micro soft-doel vermindert u de algehele migratie. Deze Azure SQL-configuratie (SKU) wordt aanbevolen na het overwegen van de prestatie kenmerken van uw SQL-exemplaar en de data bases die deze beheert. Als er meerdere Azure SQL-configuraties in aanmerking komen, raden we u aan dit te doen. Dit is de meest rendabele versie. [Meer informatie](./concepts-azure-sql-assessment-calculation.md#calculate-sizing)
+## <a name="why-was-i-recommended-a-particular-target-deployment-type"></a>Waarom is mij een bepaald type doelimplementatie aanbevolen?
+Azure Migrate raadt een specifiek Azure SQL-implementatietype aan dat compatibel is met uw SQL-exemplaar. Door te migreren naar een door Microsoft aanbevolen doel vermindert u de algehele migratie-inspanning. Deze Azure SQL-configuratie (SKU) wordt aanbevolen na overweging van de prestatiekenmerken van uw SQL-exemplaar en de databases die hierop worden beheerd. Als meerdere Azure SQL-configuraties in aanmerking komen, raden we u aan om de configuratie te kiezen die het meest rendabel is. [Meer informatie](./concepts-azure-sql-assessment-calculation.md#calculate-sizing)
 
-## <a name="what-deployment-target-should-i-choose-if-my-sql-instance-is-ready-for-azure-sql-db-and-azure-sql-mi"></a>Welk implementatie doel moet ik kiezen als mijn SQL-exemplaar klaar is voor Azure SQL DB en Azure SQL MI? 
-Als uw exemplaar gereed is voor zowel Azure SQL DB als Azure SQL MI, wordt het type doel implementatie aangeraden waarvoor de geschatte kosten van de Azure SQL-configuratie lager zijn.
+## <a name="what-deployment-target-should-i-choose-if-my-sql-instance-is-ready-for-azure-sql-db-and-azure-sql-mi"></a>Welk implementatiedoel moet ik kiezen als mijn SQL-exemplaar gereed is voor Azure SQL DB en Azure SQL MI? 
+Als uw exemplaar gereed is voor zowel Azure SQL DB als Azure SQL MI, raden we het type doelimplementatie aan waarvoor de geschatte kosten voor de Azure SQL-configuratie het laagst zijn.
 
 ## <a name="why-is-my-instance-marked-as-potentially-ready-for-azure-vm-in-my-azure-sql-assessment"></a>Waarom is mijn instantie gemarkeerd als mogelijk klaar voor Azure VM in mijn Azure SQL-evaluatie?
-Dit kan gebeuren wanneer het doel implementatie type dat is gekozen in de eigenschappen van de beoordeling, wordt **Aanbevolen** en het SQL-exemplaar niet gereed is voor Azure SQL database en Azure SQL Managed instance. De gebruiker wordt aanbevolen een evaluatie van Azure migrate te maken met het evaluatie type als **Azure VM** om te bepalen of de server waarop het exemplaar wordt uitgevoerd, gereed is voor migratie naar een virtuele machine van Azure.
+Dit kan gebeuren wanneer het gekozen type doelimplementatie in de evaluatie-eigenschappen **Aanbevolen** is, en het SQL-exemplaar niet gereed is voor Azure SQL Database en Azure SQL Managed Instance. De gebruiker wordt aanbevolen om een evaluatie in Azure Migrate te maken met het evaluatietype **Azure VM**, om te bepalen of de server waarop het exemplaar wordt uitgevoerd, gereed is voor migratie naar een Azure VM.
 De gebruiker wordt aanbevolen een evaluatie te maken in Azure Migrate met een evaluatie type als **Azure VM** om te bepalen of de server waarop het exemplaar wordt uitgevoerd, gereed is om te migreren naar een virtuele machine van Azure:
 - Azure VM-evaluaties in Azure Migrate worden momenteel weer gegeven als een Shift-toets en beschouwt niet de specifieke prestatie gegevens voor het uitvoeren van SQL-instanties en data bases op de virtuele machine van Azure. 
-- Wanneer u een Azure VM-evaluatie uitvoert op een server, worden de aanbevolen grootte en kosten ramingen gebruikt voor alle exemplaren die op de server worden uitgevoerd en kunnen worden gemigreerd naar een Azure VM met behulp van het hulp programma voor server migratie. Voordat u migreert, [raadpleegt u de richt lijnen voor prestaties](https://docs.microsoft.com/azure/azure-sql/virtual-machines/windows/performance-guidelines-best-practices) voor SQL Server op virtuele machines van Azure.
+- Wanneer u een Azure VM-evaluatie uitvoert op een server, gelden de aanbevolen grootte en kostenramingen voor alle exemplaren die op de server worden uitgevoerd, en kunnen worden gemigreerd naar een Azure VM via het hulpprogramma voor servermigratie. Voordat u migreert, [raadpleegt u de richtlijnen voor prestaties](https://docs.microsoft.com/azure/azure-sql/virtual-machines/windows/performance-guidelines-best-practices) voor SQL Server op virtuele Azure-machines.
 
-## <a name="i-cant-see-some-databases-in-my-assessment-even-though-the-instance-is-part-of-the-assessment"></a>Ik zie sommige data bases niet in mijn beoordeling, zelfs als de instantie deel uitmaakt van de evaluatie
+## <a name="i-cant-see-some-databases-in-my-assessment-even-though-the-instance-is-part-of-the-assessment"></a>Ik zie sommige databases niet in mijn evaluatie, ongeacht het feit dat het exemplaar wel onderdeel uitmaakt van de evaluatie
 
-De Azure SQL-evaluatie bevat alleen data bases met de status online. Als de data base zich in een andere status bevindt, negeert de evaluatie de gereedheid, grootte en kosten berekening voor dergelijke data bases. Als u dergelijke data bases wilt beoordelen, wijzigt u de status van de data base en berekent u de evaluatie op een later tijdstip opnieuw.
+De Azure SQL-evaluatie bevat alleen databases die een onlinestatus hebben. Als de database zich in een andere status bevindt, worden de gereedheid, grootte en kostenberekening voor dergelijke databases genegeerd in de evaluatie. Als u dergelijke databases wilt evalueren, wijzigt u de status van de database, en berekent u de evaluatie op een later tijdstip opnieuw.
 
 ## <a name="i-want-to-compare-costs-for-running-my-sql-instances-on-azure-vm-vs-azure-sql-databaseazure-sql-managed-instance"></a>Ik wil de kosten voor het uitvoeren van mijn SQL-exemplaren op Azure VM versus Azure SQL Database/Azure SQL Managed instance vergelijken
 
-U kunt een evaluatie met het type **Azure VM** maken in dezelfde groep die is gebruikt in uw **Azure SQL** -evaluatie. U kunt vervolgens de twee rapporten naast elkaar vergelijken. Hoewel Azure VM-evaluaties in Azure Migrate momenteel worden gefocust op het hoogste niveau, worden de specifieke prestatie gegevens voor het uitvoeren van SQL-instanties en data bases op de virtuele machine van Azure niet in overweging gegeven. Wanneer u een Azure VM-evaluatie uitvoert op een server, worden de aanbevolen grootte en kosten ramingen gebruikt voor alle exemplaren die op de server worden uitgevoerd en kunnen worden gemigreerd naar een Azure VM met behulp van het hulp programma voor server migratie. Voordat u migreert, [raadpleegt u de richt lijnen voor prestaties](https://docs.microsoft.com/azure/azure-sql/virtual-machines/windows/performance-guidelines-best-practices) voor SQL Server op virtuele machines van Azure.
+U kunt een evaluatie met het type **Azure VM** maken in dezelfde groep die is gebruikt voor uw **Azure SQL**-evaluatie. Vervolgens kunt u de twee rapporten naast elkaar leggen en ze vergelijken. Let op: Azure VM-evaluaties in Azure Migrate zijn momenteel gefocust op lift-and-shift, en de specifieke metrische prestatiegegevens voor de uitvoering van SQL-exemplaren en -databases worden niet in overweging genomen op de virtuele Azure-machine. Wanneer u een Azure VM-evaluatie uitvoert op een server, gelden de aanbevolen grootte en kostenramingen voor alle exemplaren die op de server worden uitgevoerd, en kunnen worden gemigreerd naar een Azure VM via het hulpprogramma voor servermigratie. Voordat u migreert, [raadpleegt u de richtlijnen voor prestaties](https://docs.microsoft.com/azure/azure-sql/virtual-machines/windows/performance-guidelines-best-practices) voor SQL Server op virtuele Azure-machines.
 
 ## <a name="the-storage-cost-in-my-azure-sql-assessment-is-zero"></a>De opslag kosten in mijn Azure SQL-evaluatie zijn nul
 Voor Azure SQL Managed instance zijn er geen opslag kosten toegevoegd voor de eerste 32 GB/exemplaar/maand opslag en worden extra opslag kosten toegevoegd voor opslag in 32 GB. [Meer informatie](https://azure.microsoft.com/pricing/details/azure-sql/sql-managed-instance/single/)

@@ -3,14 +3,14 @@ title: Overzicht van Azure Automation Updatebeheer
 description: Dit artikel bevat een overzicht van de functie Updatebeheer die updates implementeert voor uw Windows-en Linux-computers.
 services: automation
 ms.subservice: update-management
-ms.date: 03/08/2021
+ms.date: 03/19/2021
 ms.topic: conceptual
-ms.openlocfilehash: 0a79be9d879e9ccb7ae4583d0674cf2bb23aafa4
-ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
+ms.openlocfilehash: e24a90f05ef52c5164ce966e905e9c27055d1bf4
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102485670"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104670610"
 ---
 # <a name="update-management-overview"></a>Overzicht van Updatebeheer
 
@@ -76,8 +76,8 @@ De volgende tabel geeft een lijst van de ondersteunde besturings systemen voor u
 |---------|---------|
 |Windows Server 2019 (Data Center/Standard, inclusief Server Core)<br><br>Windows Server 2016 (Data Center/Standard m.u.v. Server Core)<br><br>Windows Server 2012 R2 (Data Center/Standard)<br><br>Windows Server 2012 | |
 |Windows Server 2008 R2 (RTM en SP1 Standard)| Updatebeheer ondersteunt evaluaties en patches voor dit besturings systeem. De [Hybrid Runbook worker](../automation-windows-hrw-install.md) wordt ondersteund voor Windows Server 2008 R2. |
-|CentOS 6 en 7 (x64)      | Linux-agents moeten toegang hebben tot een update opslagplaats. Voor op classificaties gebaseerde patches moeten `yum` beveiligings gegevens worden geretourneerd die CentOS niet hebben in de RTM-releases. Zie [Update classificaties in Linux](view-update-assessments.md#linux)voor meer informatie over op CentOS gebaseerde patches op basis van classificatie.          |
-|Red Hat Enter prise 6 en 7 (x64)     | Linux-agents moeten toegang hebben tot een update opslagplaats.        |
+|CentOS 6, 7 en 8 (x64)      | Linux-agents moeten toegang hebben tot een update opslagplaats. Voor op classificaties gebaseerde patches moeten `yum` beveiligings gegevens worden geretourneerd die CentOS niet hebben in de RTM-releases. Zie [Update classificaties in Linux](view-update-assessments.md#linux)voor meer informatie over op CentOS gebaseerde patches op basis van classificatie.          |
+|Red Hat Enter prise 6, 7 en 8 (x64)     | Linux-agents moeten toegang hebben tot een update opslagplaats.        |
 |SUSE Linux Enterprise Server 12, 15 en 15,1 (x64)     | Linux-agents moeten toegang hebben tot een update opslagplaats. Voor SUSE 15. x is python 3 vereist op de computer.      |
 |Ubuntu 14,04 LTS, 16,04 LTS en 18,04 LTS (x64)      |Linux-agents moeten toegang hebben tot een update opslagplaats.         |
 

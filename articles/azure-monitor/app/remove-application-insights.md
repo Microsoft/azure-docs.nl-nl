@@ -4,10 +4,10 @@ description: Application Insights SDK voor ASP.NET en ASP.NET Core verwijderen i
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.openlocfilehash: 1d70413fa6a47e2d41693db6eb705f31b2a2b1b2
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101704307"
 ---
 # <a name="how-to-remove-application-insights-in-visual-studio"></a>Application Insights verwijderen in Visual Studio
@@ -72,7 +72,7 @@ Als u Application Insights wilt verwijderen, moet u de NuGet-pakketten en-verwij
     
     ![In de scherm afbeelding wordt een dialoog venster weer gegeven met de afhankelijkheden die moeten worden verwijderd.](./media/remove-application-insights/preview-uninstall-framework.png)
     
-1.  Nadat alles is verwijderd, ziet u mogelijk nog steeds ' ApplicationInsights.config ' en ' AiHandleErrorAttribute.cs ' in de *Solution Explorer*. U kunt de twee bestanden hand matig verwijderen.
+1.  Nadat alles is verwijderd, ziet u mogelijk nog steeds ' ApplicationInsights.config ' en ' AiHandleErrorAttribute. cs ' in de *Solution Explorer*. U kunt de twee bestanden hand matig verwijderen.
 
 # <a name="net-core"></a>[.NET Core](#tab/netcore)
 
@@ -97,7 +97,7 @@ Wanneer u Application Insights toevoegt aan uw project, worden er bestanden gema
 Wanneer u Application Insights Telemetry toevoegt aan een Visual Studio ASP.NET-project, worden de volgende bestanden toegevoegd:
 
 - ApplicationInsights.config
-- AiHandleErrorAttribute.cs
+- AiHandleErrorAttribute. cs
 
 De volgende stukjes code worden toegevoegd:
 
@@ -167,7 +167,7 @@ De volgende stukjes code worden toegevoegd:
     }
     ```
 
-- FilterConfig.cs
+- FilterConfig. cs
 
     ```csharp
             public static void RegisterGlobalFilters(GlobalFilterCollection filters)

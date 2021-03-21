@@ -5,15 +5,15 @@ author: msftradford
 manager: MehranAzimi-msft
 services: azure-spatial-anchors
 ms.author: parkerra
-ms.date: 11/20/2020
+ms.date: 03/18/2021
 ms.topic: quickstart
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: b278ac6c824b1583e90cfc9152264f61357dd228
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
-ms.translationtype: HT
+ms.openlocfilehash: 0fe193ee76c56ec57d0643f4a156739d1a51230c
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95971473"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104670086"
 ---
 # <a name="quickstart-create-a-unity-ios-app-with-azure-spatial-anchors"></a>Quickstart: Een Unity iOS-app maken met Azure Spatial Anchors
 
@@ -34,7 +34,7 @@ U leert het volgende:
 
 Zorg ervoor dat u over het volgende beschikt om deze snelstart te voltooien:
 
-- Een macOS-computer met <a href="https://unity3d.com/get-unity/download" target="_blank">Unity 2019.4 (LTS)</a>, de nieuwste versie van <a href="https://geo.itunes.apple.com/us/app/xcode/id497799835?mt=12" target="_blank">Xcode</a> geïnstalleerd.
+- Een macOS-computer waarop de meest recente versie van <a href="https://geo.itunes.apple.com/us/app/xcode/id497799835?mt=12" target="_blank">Xcode</a> en <a href="https://unity3d.com/get-unity/download" target="_blank">Unit (LTS)</a> is geïnstalleerd. Gebruik **unit 2020 LTS** met ASA SDK-versie 2,9 of hoger (die gebruikmaakt [van het unit XR-invoeg toepassings raamwerk](https://docs.unity3d.com/Manual/XRPluginArchitecture.html)) of **Unit 2019 LTS** met ASA SDK-versie 2,8 of eerder.
 - Git geïnstalleerd via HomeBrew. Voer de volgende opdracht in op één regel van de terminal: `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`. Voer vervolgens `brew install git` en `brew install git-lfs` uit.
 - Een door een ontwikkelaar geactiveerd en <a href="https://developer.apple.com/documentation/arkit/verifying_device_support_and_user_permission" target="_blank">met ARKit compatibel</a> iOS-apparaat.
 
@@ -56,7 +56,7 @@ Zorg ervoor dat u over het volgende beschikt om deze snelstart te voltooien:
 
 [!INCLUDE [Configure Xcode](../../../includes/spatial-anchors-unity-ios-xcode.md)]
 
-Selecteer in de app **BasicDemo** met behulp van de pijlen en selecteer vervolgens de knop **Go!** knop om de demo uit te voeren. Volg de instructies om een anker te plaatsen en terug te halen.
+Selecteer in de app **BasicDemo** met behulp van de pijlen en selecteer vervolgens de knop **Go!** om de demo uit te voeren. Volg de instructies om een anker te plaatsen en terug te halen.
 
 ![Schermafbeelding 1](./media/get-started-unity-ios/screenshot-1.jpg)
 ![Schermafbeelding 2](./media/get-started-unity-ios/screenshot-2.jpg)

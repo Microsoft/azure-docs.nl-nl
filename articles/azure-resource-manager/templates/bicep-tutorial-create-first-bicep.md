@@ -2,16 +2,16 @@
 title: Zelf studie-Azure Resource Manager Bicep-bestanden maken & implementeren
 description: Maak uw eerste Bicep-bestand voor de implementatie van Azure-resources. In de zelf studie vindt u informatie over de syntaxis van het Bicep-bestand en het implementeren van een opslag account.
 author: mumian
-ms.date: 03/10/2021
+ms.date: 03/17/2021
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: ''
-ms.openlocfilehash: b04dbb7f708a4019ae70c716d4faa05ca2c28720
-ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
+ms.openlocfilehash: 8979585d7ec0fa6eac1866375fe1e80214f2d2e2
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102632574"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104594271"
 ---
 # <a name="tutorial-create-and-deploy-first-azure-resource-manager-bicep-file"></a>Zelf studie: het eerste Azure Resource Manager Bicep-bestand maken en implementeren
 
@@ -31,11 +31,11 @@ Laten we beginnen door ervoor te zorgen dat u beschikt over de hulpprogram ma's 
 
 ### <a name="editor"></a>Editor
 
-Als u Bicep-bestanden wilt maken, hebt u een goede editor nodig. We raden Visual Studio code aan met de Bicep-extensie. Als u deze hulpprogram ma's wilt installeren, raadpleegt u [Quick Start: Bicep-bestanden maken met Visual Studio code](quickstart-create-bicep-use-visual-studio-code.md).
+Als u Bicep-bestanden wilt maken, hebt u een goede editor nodig. We raden Visual Studio code aan met de Bicep-extensie. Zie [Bicep-ontwikkel omgeving configureren](./bicep-install.md#development-environment)als u deze hulpprogram ma's wilt installeren.
 
 ### <a name="command-line-deployment"></a>Implementatie via opdrachtregels
 
-U hebt ook de nieuwste Azure PowerShell of de nieuwste Azure CLI nodig voor het implementeren van het Bicep-bestand. Zie voor installatie-instructies:
+U kunt Bicep-bestanden implementeren met behulp van Azure CLI of Azure PowerShell. Voor Azure CLI hebt u versie 2.20.0 of hoger nodig. voor Azure PowerShell hebt u versie 5.6.0 of hoger nodig. Zie voor installatie-instructies:
 
 - [Azure PowerShell installeren](/powershell/azure/install-az-ps)
 - [Azure CLI installeren in Windows](/cli/azure/install-azure-cli-windows)

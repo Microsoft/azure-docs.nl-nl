@@ -8,20 +8,28 @@ manager: nitinme
 ms.service: cognitive-services
 ms.topic: overview
 ms.subservice: translator-text
-ms.date: 02/15/2021
+ms.date: 03/15/2021
 ms.author: lajanuar
 ms.custom: cog-serv-seo-aug-2020
 keywords: translator, tekstvertaling, machine translation, vertaalservice
-ms.openlocfilehash: 72df700d38cad3ee31ef438d7df1c890acde9e6b
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: ec76aa7554110b7440eb825f2d5e86ae2da6baa2
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101727971"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104657719"
 ---
 # <a name="what-is-the-translator-service"></a>Wat is de Translator-service?
 
-Translator is een cloudservice voor automatische vertaling en maakt deel uit van de [Azure Cognitive Services](../../index.yml?panel=ai&pivot=products)-familie van cognitieve API's voor het bouwen van intelligente apps. Translator is eenvoudig in uw toepassingen, websites, hulpprogramma's en oplossingen te integreren. Hiermee kunt u meertalige gebruikers ervaringen toevoegen in [90 talen en dialecten](./language-support.md). En kan worden gebruikt op elk platform met elk besturings systeem voor tekst vertaling.
+Translator is een cloudservice voor automatische vertaling en maakt deel uit van de [Azure Cognitive Services](../../index.yml?panel=ai&pivot=products)-familie van cognitieve API's voor het bouwen van intelligente apps. Translator is eenvoudig in uw toepassingen, websites, hulpprogramma's en oplossingen te integreren. Hiermee kunt u meertalige gebruikers ervaringen toevoegen in [90 talen en dialecten](./language-support.md) en kunnen worden gebruikt voor tekst omzetting met elk besturings systeem.
+
+Deze documentatie bevat de volgende artikel typen:  
+
+* [**Quick**](quickstart-translator.md) starts zijn aan de slag-instructies die u helpen bij het maken van aanvragen voor de service.  
+* [**Hand leidingen**](translator-how-to-signup.md) bevatten instructies voor het gebruik van de service op meer specifieke of aangepaste manieren.  
+* [**Concepten**](character-counts.md) geven uitgebreide uitleg over de service functionaliteit en-functies.  
+* [**Zelf studies**](tutorial-wpf-translation-csharp.md) zijn meer gidsen die laten zien hoe u de service kunt gebruiken als onderdeel in bredere zakelijke oplossingen.  
+
 
 ## <a name="about-microsoft-translator"></a>Over Microsoft Translator
 
@@ -45,11 +53,9 @@ Meer informatie over [de werking van NMT](https://www.microsoft.com/en-us/transl
 
 ## <a name="improve-translations-with-custom-translator"></a>Vertalingen verbeteren met Custom Translator
 
- Aangepaste Translator, een uitbrei ding van de Translator-service, kan worden gebruikt in combi natie met Translator om het Neural-Vertaal systeem aan te passen en de vertaling te verbeteren voor uw specifieke terminologie en stijl.
+ [Aangepaste Translator](customization.md), een uitbrei ding van de Translator-service, kan worden gebruikt om het Neural-Vertaal systeem aan te passen en de vertaling te verbeteren voor uw specifieke terminologie en stijl.
 
 Met Custom Translator kunt u Vertaal systemen maken voor het verwerken van de terminologie die wordt gebruikt in uw eigen bedrijf of branche. Uw aangepaste Vertaal systeem kan eenvoudig worden geïntegreerd met uw bestaande toepassingen, werk stromen, websites en apparaten, via de reguliere vertaler, met behulp van de para meter Category.
-
-Meer informatie over [Custom Translator](customization.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -7,12 +7,12 @@ ms.author: chez
 ms.reviewer: ''
 ms.topic: conceptual
 ms.date: 03/02/2021
-ms.openlocfilehash: 57024d6cb23ab273aa69bf59f4ec436a6f873a05
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: 50a9f9cd59ebeecae89580c878442eb20788f462
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102193495"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104593642"
 ---
 # <a name="reference-trigger-metadata-in-pipeline-runs"></a>Meta gegevens van de referentie trigger in pijplijn uitvoeringen
 
@@ -22,7 +22,7 @@ In dit artikel wordt beschreven hoe meta gegevens van triggers, zoals begin tijd
 
 Het is soms nodig om in de pijp lijn meta gegevens te begrijpen en te lezen uit trigger waarmee deze wordt aangeroepen. Bijvoorbeeld: als de Tumblingvenstertriggers-venster trigger wordt uitgevoerd op basis van de begin-en eind tijd van het venster, verwerken pijp lijn verschillende gegevens segmenten of mappen. In Azure Data Factory gebruiken we de parameterisering-en [systeem variabele](control-flow-system-variables.md) om meta gegevens door te geven van triggers aan pijp lijn.
 
-Dit patroon is vooral nuttig voor de trigger van het [tumblingvenstertriggers-venster](how-to-create-tumbling-window-trigger.md), waarbij trigger de begin-en eind tijd van het venster biedt.
+Dit patroon is vooral nuttig voor de trigger van het [tumblingvenstertriggers-venster](how-to-create-tumbling-window-trigger.md), waarbij trigger de start-en eind tijd van het venster biedt en [aangepaste gebeurtenis trigger](how-to-create-custom-event-trigger.md), waarbij het parseren en verwerken van waarden in het [aangepaste gedefinieerde _gegevens_ veld](../event-grid/event-schema.md)wordt geactiveerd.
 
 > [!NOTE]
 > Een ander trigger type biedt verschillende meta gegevens informatie. Zie [systeem variabele](control-flow-system-variables.md) voor meer informatie.

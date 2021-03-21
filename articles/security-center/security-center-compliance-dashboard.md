@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 02/10/2021
 ms.author: memildin
 ms.openlocfilehash: fb8dc22c923b7b53a6263baa43046862af4d2f04
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100370258"
 ---
 # <a name="tutorial-improve-your-regulatory-compliance"></a>Zelfstudie: Uw regelnaleving verbeteren
@@ -123,7 +123,7 @@ U kunt bijvoorbeeld Security Center een e-mail bericht verzenden wanneer een nal
 
 
 
-## <a name="faq---regulatory-compliance-dashboard"></a>Veelgestelde vragen-dash board nalevings regelgeving
+## <a name="faq---regulatory-compliance-dashboard"></a>Veelgestelde vragen: dashboard voor Naleving van regelgeving
 
 - [Welke standaarden worden ondersteund in het dash board voor naleving?](#what-standards-are-supported-in-the-compliance-dashboard)
 - [Waarom worden sommige besturings elementen lichter gekleurd weer gegeven?](#why-do-some-controls-appear-grayed-out)

@@ -4,10 +4,10 @@ description: In dit artikel wordt beschreven hoe u de beperking van het gebruik 
 ms.topic: how-to
 ms.date: 02/12/2021
 ms.openlocfilehash: 4343740ea6c34c9ae282723b79007f7035785b04
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100548608"
 ---
 # <a name="deliver-events-using-private-link-service"></a>Gebeurtenissen leveren met behulp van een persoonlijke koppelings service

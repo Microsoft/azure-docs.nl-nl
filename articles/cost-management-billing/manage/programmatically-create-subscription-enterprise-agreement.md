@@ -1,20 +1,20 @@
 ---
 title: Programmatisch Azure Enterprise Agreement-abonnementen maken met de nieuwste API's
-description: Leer hoe u programmatisch Azure Enterprise Agreement-abonnementen kunt maken met behulp van de nieuwste versies van REST API, Azure CLI en Azure PowerShell.
+description: Meer informatie over het programmatisch maken van Azure Enterprise Overeenkomst-abonnementen met de nieuwste versies van REST API, Azure CLI, Azure PowerShell en Azure Resource Manager sjablonen.
 author: bandersmsft
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: how-to
-ms.date: 01/13/2021
+ms.date: 03/12/2021
 ms.reviewer: andalmia
 ms.author: banders
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: 4de89892d27bb811be6670c1a14ca85859342ecc
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: 3f07d18ccdca87f6395b24e4e3f9e6ee91cfaee3
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102218907"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104593967"
 ---
 # <a name="programmatically-create-azure-enterprise-agreement-subscriptions-with-the-latest-apis"></a>Programmatisch Azure Enterprise Agreement-abonnementen maken met de nieuwste API's
 
@@ -41,7 +41,7 @@ Wanneer u bent toegevoegd aan een inschrijvingsaccount dat is gekoppeld aan een 
 
 Als u de volgende opdrachten wilt uitvoeren, moet u zijn aangemeld bij de *basismap* van de accounteigenaar. Dit is de map waarin standaard abonnementen worden gemaakt.
 
-### <a name="rest"></a>[REST](#tab/rest-getEnrollments)
+### <a name="rest"></a>[REST](#tab/rest)
 
 Aanvraag voor een opsomming van alle inschrijvingsaccounts waartoe u toegang hebt:
 
@@ -91,17 +91,13 @@ De API-respons vermeldt alle inschrijvingsaccounts waartoe u toegang hebt:
 
 ```
 
-De waarde voor een factureringsbereik en `id` zijn hetzelfde. De `id` voor uw inschrijvingsaccount is het factureringsbereik waarbinnen de abonnementsaanvraag wordt gestart. Het is belangrijk dat u de id kent, omdat het een vereiste parameter is die u later in het artikel gaat gebruiken om een abonnement te maken.
+De waarden voor een facturerings bereik en `id` zijn hetzelfde. De `id` voor uw inschrijvingsaccount is het factureringsbereik waarbinnen de abonnementsaanvraag wordt gestart. Het is belangrijk dat u de id kent, omdat het een vereiste parameter is die u later in het artikel gaat gebruiken om een abonnement te maken.
 
-<!-- 
-### [PowerShell](#tab/azure-powershell-getEnrollments)
+### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-we're still working on enabling PowerShell SDK for billing APIs. Check back soon.
+Gebruik Azure CLI of REST API om deze waarde op te halen.
 
--->
-
-
-### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli-getEnrollments)
+### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Vraag een opsomming aan van alle inschrijvingsaccounts waartoe u toegang hebt:
 
@@ -159,7 +155,8 @@ Antwoord geeft een lijst van alle inschrijvings accounts waartoe u toegang hebt
     "type": "Microsoft.Billing/billingAccounts"
   },
 ```
-De waarde voor een factureringsbereik en `id` zijn hetzelfde. De `id` voor uw inschrijvingsaccount is het factureringsbereik waarbinnen de abonnementsaanvraag wordt gestart. Het is belangrijk dat u de id kent, omdat het een vereiste parameter is die u later in het artikel gaat gebruiken om een abonnement te maken.
+
+De waarden voor een facturerings bereik en `id` zijn hetzelfde. De `id` voor uw inschrijvingsaccount is het factureringsbereik waarbinnen de abonnementsaanvraag wordt gestart. Het is belangrijk dat u de id kent, omdat het een vereiste parameter is die u later in het artikel gaat gebruiken om een abonnement te maken.
 
 ---
 
@@ -167,7 +164,7 @@ De waarde voor een factureringsbereik en `id` zijn hetzelfde. De `id` voor uw in
 
 In het volgende voorbeeld wordt in het inschrijvingsaccount dat u in de vorige stap hebt geselecteerd, een abonnement gemaakt met de naam *Dev Team Subscription*. 
 
-### <a name="rest"></a>[REST](#tab/rest-EA)
+### <a name="rest"></a>[REST](#tab/rest)
 
 Roep de PUT API aan om een aanvraag/alias voor het maken van een abonnement te maken.
 
@@ -227,7 +224,7 @@ GET https://management.azure.com/providers/Microsoft.Subscription/aliases/sample
 
 Een 'in voortgang'-status wordt geretourneerd als een `Accepted`-status onder `provisioningState`.
 
-### <a name="powershell"></a>[PowerShell](#tab/azure-powershell-EA)
+### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 Als u de meest recente versie van de module met de cmdlet `New-AzSubscriptionAlias` wilt installeren, voert u `Install-Module Az.Subscription` uit. Zie [PowerShellGet-module ophalen](/powershell/scripting/gallery/installing-psget) om een recente versie van PowerShellGet te installeren.
 
@@ -251,7 +248,7 @@ U ontvangt de subscriptionId als onderdeel van het antwoord van de opdracht.
 }
 ```
 
-### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli-EA)
+### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Installeer eerst de extensie door `az extension add --name account` en `az extension add --name alias` uit te voeren.
 
@@ -277,6 +274,113 @@ U ontvangt de subscriptionId als onderdeel van het antwoord van de opdracht.
 
 ---
 
+## <a name="use-arm-template"></a>ARM-sjabloon gebruiken
+
+In de vorige sectie is geleerd hoe u een abonnement maakt met Power shell, CLI of REST API. Als u het maken van abonnementen wilt automatiseren, kunt u overwegen een Azure Resource Manager sjabloon (ARM-sjabloon) te gebruiken.
+
+Met de volgende sjabloon maakt u een abonnement. `billingScope`Geef voor de inschrijvings account-id op. `targetManagementGroup`Geef voor de beheer groep op waar u het abonnement wilt maken.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "subscriptionAliasName": {
+            "type": "string",
+            "metadata": {
+                "description": "Provide a name for the alias. This name will also be the display name of the subscription."
+            }
+        },
+        "billingScope": {
+            "type": "string",
+            "metadata": {
+                "description": "Provide the full resource ID of billing scope to use for subscription creation."
+            }
+        },
+        "targetManagementGroup": {
+            "type": "string",
+            "metadata": {
+                "description": "Provide the ID of the target management group to place the subscription."
+            }
+        }
+    },
+    "resources": [
+        {
+            "scope": "/", 
+            "name": "[parameters('subscriptionAliasName')]",
+            "type": "Microsoft.Subscription/aliases",
+            "apiVersion": "2020-09-01",
+            "properties": {
+                "workLoad": "Production",
+                "displayName": "[parameters('subscriptionAliasName')]",
+                "billingScope": "[parameters('billingScope')]",
+                "managementGroupId": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('targetManagementGroup'))]"
+            }
+        }
+    ],
+    "outputs": {}
+}
+```
+
+Implementeer de sjabloon op het [niveau van de beheer groep](../../azure-resource-manager/templates/deploy-to-management-group.md).
+
+### <a name="rest"></a>[REST](#tab/rest)
+
+```json
+PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/mg1/providers/Microsoft.Resources/deployments/exampledeployment?api-version=2020-06-01
+```
+
+Met een aanvraag tekst:
+
+```json
+{
+  "location": "eastus",
+  "properties": {
+    "templateLink": {
+      "uri": "http://mystorageaccount.blob.core.windows.net/templates/template.json"
+    },
+    "parameters": {
+      "subscriptionAliasName": {
+        "value": "sampleAlias"
+      },
+      "billingScope": {
+        "value": "/providers/Microsoft.Billing/BillingAccounts/1234567/enrollmentAccounts/7654321"
+      },
+      "targetManagementGroup": {
+        "value": "mg2"
+      }
+    },
+    "mode": "Incremental"
+  }
+}
+```
+
+### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
+```azurepowershell-interactive
+New-AzManagementGroupDeployment `
+  -Name exampledeployment `
+  -Location eastus `
+  -ManagementGroupId mg1 `
+  -TemplateFile azuredeploy.json `
+  -subscriptionAliasName sampleAlias `
+  -billingScope "/providers/Microsoft.Billing/BillingAccounts/1234567/enrollmentAccounts/7654321" `
+  -targetManagementGroup mg2
+```
+
+### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
+```azurecli-interactive
+az deployment mg create \
+  --name exampledeployment \
+  --location eastus \
+  --management-group-id mg1 \
+  --template-file azuredeploy.json \
+  --parameters subscriptionAliasName='sampleAlias' billingScope='/providers/Microsoft.Billing/BillingAccounts/1234567/enrollmentAccounts/7654321' targetManagementGroup=mg2
+```
+
+---
+
 ## <a name="limitations-of-azure-enterprise-subscription-creation-api"></a>Beperkingen van de API voor het maken van Azure Enter prise-abonnementen
 
 - Alleen Azure Enterprise-abonnementen worden met de API gemaakt.
@@ -289,3 +393,4 @@ U ontvangt de subscriptionId als onderdeel van het antwoord van de opdracht.
 
 * Nu u een abonnement hebt gemaakt, kunt u die mogelijkheid verlenen aan andere gebruikers en service-principals. Zie [Toegang verlenen voor het maken van Azure Enterprise-abonnementen (preview)](grant-access-to-create-subscription.md) voor meer informatie.
 * Zie [Resources organiseren met Azure-beheergroepen](../../governance/management-groups/overview.md) voor meer informatie over het beheren van grote aantallen abonnementen met behulp van beheergroepen.
+* Zie [abonnementen verplaatsen](../../governance/management-groups/manage.md#move-subscriptions)voor informatie over het wijzigen van de beheer groep voor een abonnement.

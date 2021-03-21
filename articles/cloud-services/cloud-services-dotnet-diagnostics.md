@@ -9,10 +9,10 @@ author: tanmaygore
 ms.reviewer: mimckitt
 ms.custom: ''
 ms.openlocfilehash: 97e68d338580132b6927c4cc8b206db60fe93ba2
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101703504"
 ---
 # <a name="enabling-azure-diagnostics-in-azure-cloud-services-classic"></a>Inschakelen van Azure Diagnostics in azure Cloud Services (klassiek)
@@ -37,7 +37,7 @@ In dit artikel wordt ervan uitgegaan dat u een Azure-abonnement hebt en Visual S
 6. Bouw uw oplossing om te controleren of er geen fouten zijn.
 
 ### <a name="step-2-instrument-your-code"></a>Stap 2: uw code instrumenteren
-Vervang de inhoud van WorkerRole.cs door de volgende code. De klasse SampleEventSourceWriter, overgenomen van de [klasse Event source][EventSource Class], implementeert vier logboek methoden: **SendEnums**, **MessageMethod**, **SetOther** en **HighFreq**. De eerste para meter voor de methode **etw** definieert de id voor de betreffende gebeurtenis. De methode Run implementeert een oneindige lus die elke 10 seconden een van de logboek registratie methoden aanroept die in de **SampleEventSourceWriter** -klasse zijn geïmplementeerd.
+Vervang de inhoud van WorkerRole. cs door de volgende code. De klasse SampleEventSourceWriter, overgenomen van de [klasse Event source][EventSource Class], implementeert vier logboek methoden: **SendEnums**, **MessageMethod**, **SetOther** en **HighFreq**. De eerste para meter voor de methode **etw** definieert de id voor de betreffende gebeurtenis. De methode Run implementeert een oneindige lus die elke 10 seconden een van de logboek registratie methoden aanroept die in de **SampleEventSourceWriter** -klasse zijn geïmplementeerd.
 
 ```csharp
 using Microsoft.WindowsAzure.ServiceRuntime;

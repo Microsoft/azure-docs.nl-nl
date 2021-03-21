@@ -6,10 +6,10 @@ ms.date: 05/22/2019
 ms.custom: devx-track-csharp
 ms.reviewer: olegan
 ms.openlocfilehash: c6d51210867e83c6acc74ca890ab65b195dc64fc
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102176668"
 ---
 # <a name="configuring-the-application-insights-sdk-with-applicationinsightsconfig-or-xml"></a>De Application Insights-SDK configureren met ApplicationInsights.config of ApplicationInsights.xml
@@ -173,7 +173,7 @@ Hiermee bepaalt u de Application Insights resource waarin uw gegevens worden wee
 
 Als u de sleutel dynamisch wilt instellen, bijvoorbeeld als u de resultaten van uw toepassing naar verschillende resources wilt verzenden, kunt u de sleutel uit het configuratie bestand weglaten en in plaats daarvan instellen in de code.
 
-De sleutel instellen voor alle exemplaren van TelemetryClient, met inbegrip van standaard-telemetrie-modules. Doe dit in een initialisatie methode, zoals global.aspx.cs in een ASP.NET-service:
+De sleutel instellen voor alle exemplaren van TelemetryClient, met inbegrip van standaard-telemetrie-modules. Doe dit in een initialisatie methode, zoals Global. aspx. cs in een ASP.NET-service:
 
 ```csharp
 using Microsoft.ApplicationInsights.Extensibility;

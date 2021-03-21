@@ -14,10 +14,10 @@ ms.reviewer: vanto, sstein
 ms.date: 12/01/2020
 tags: azure-synapse
 ms.openlocfilehash: 931e914cd3c184136395a9bb9a7e148a90e9fb91
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96461937"
 ---
 # <a name="advanced-threat-protection-for-azure-sql-database-sql-managed-instance-and-azure-synapse-analytics"></a>Geavanceerde bedreigings beveiliging voor Azure SQL Database, SQL Managed instance en Azure Synapse Analytics
@@ -67,7 +67,7 @@ Klik op **Geavanceerde bedreigings beveiliging waarschuwing** om de pagina Azure
 
 - Meer informatie over [geavanceerde beveiliging tegen bedreigingen vindt u in Azure SQL Database & Azure Synapse](threat-detection-configure.md).
 - Meer informatie over [geavanceerde bedreigingen beveiliging in Azure SQL Managed instance](../managed-instance/threat-detection-configure.md).
-- Meer informatie over [Azure Defender voor SQL](azure-defender-for-sql.md).
+- Lees meer informatie over [Azure Defender voor SQL](azure-defender-for-sql.md).
 - Meer informatie over het [controleren van Azure SQL database](../../azure-sql/database/auditing-overview.md)
 - Meer informatie over [Azure Security Center](../../security-center/security-center-introduction.md)
 - Zie de [pagina met prijzen voor Azure SQL database](https://azure.microsoft.com/pricing/details/sql-database/) voor meer informatie over prijzen.

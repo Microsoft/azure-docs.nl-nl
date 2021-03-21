@@ -11,10 +11,10 @@ ms.author: markjon
 ms.reviewer: mathoma
 ms.date: 03/19/2021
 ms.openlocfilehash: 0e1b44667a5ff42978b22ab9450d6a8e9870960b
-ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103563212"
 ---
 # <a name="migration-guide-sql-server-to-sql-server-on-azure-vms"></a>Migratie handleiding: SQL Server SQL Server op virtuele machines van Azure 
@@ -117,7 +117,7 @@ Nadat u de stappen voorafgaand aan de migratie hebt voltooid, bent u klaar om de
 
 Hieronder vindt u de stappen voor het uitvoeren van een migratie met behulp van back-ups maken en herstellen, of een minimale downtime-migratie met back-up en herstel samen met logboek verzending. 
 
-### <a name="backup-and-restore"></a>Back-ups en herstellen
+### <a name="backup-and-restore"></a>Back-up en herstel
 
 Voer de volgende stappen uit om een standaard migratie uit te voeren met back-up en herstel: 
 

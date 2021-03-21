@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 03/17/2017
 ms.custom: vs-azure
 ms.openlocfilehash: 2507dbf7bb8294c949f434d5fa96ccc0af9a7eb3
-ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103563535"
 ---
 # <a name="debug-your-applications-with-azure-application-insights-in-visual-studio"></a>Fouten opsporen in uw toepassingen met Azure-toepassing Insights in Visual Studio

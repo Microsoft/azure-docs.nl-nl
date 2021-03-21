@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 12/31/2019
 ms.custom: devx-track-csharp
 ms.openlocfilehash: a81f2b21545a5362168482f3f0a65fbbbf381c10
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98929154"
 ---
 # <a name="develop-c-topologies-for-apache-storm-by-using-the-data-lake-tools-for-visual-studio"></a>C#-topologieën ontwikkelen voor Apache Storm met behulp van de Data Lake-hulpprogram ma's voor Visual Studio
@@ -132,11 +132,11 @@ Een C#-topologie project maken in Visual Studio:
 
 Nadat u het project hebt gemaakt, hebt u de volgende bestanden nodig:
 
-* *Program.cs*: de topologie definitie voor uw project. Een standaard topologie die bestaat uit één Spout en één schicht, wordt standaard gemaakt.
+* *Program. cs*: de topologie definitie voor uw project. Een standaard topologie die bestaat uit één Spout en één schicht, wordt standaard gemaakt.
 
-* *Spout.cs*: een voor beeld Spout die wille keurige getallen afstraalt.
+* *Spout. cs*: een voor beeld Spout die wille keurige getallen afstraalt.
 
-* *Bolt.cs*: een voor beeld van een flits waarmee het aantal getallen wordt bijgehouden dat door de Spout wordt gegenereerd.
+* *Bout. cs*: een voor beeld van een flits waarmee het aantal getallen wordt bijgehouden dat door de Spout wordt gegenereerd.
 
 Wanneer u het project maakt, downloadt NuGet het meest recente [SCP.net-pakket](https://www.nuget.org/packages/Microsoft.SCP.Net.SDK/).
 
@@ -144,7 +144,7 @@ Wanneer u het project maakt, downloadt NuGet het meest recente [SCP.net-pakket](
 
 Voeg vervolgens de code toe voor de Spout, die wordt gebruikt om gegevens uit een externe bron te lezen in een topologie. Deze Spout verzendt een zin wille keurig in de topologie.
 
-1. Open *Spout.cs*. De belangrijkste onderdelen voor een Spout zijn:
+1. Open *Spout. cs*. De belangrijkste onderdelen voor een Spout zijn:
 
    * `NextTuple`: Wordt aangeroepen door storm wanneer de Spout nieuwe Tuples mag verzenden.
 
@@ -216,18 +216,18 @@ Voeg vervolgens de code toe voor de Spout, die wordt gebruikt om gegevens uit ee
 
 Maak nu twee Storm-schichten in dit voor beeld:
 
-1. Verwijder het bestaande *Bolt.cs* -bestand uit het project.
+1. Verwijder het bestaande bestand *bout. cs* van het project.
 
-2. Klik in **Solution Explorer** met de rechter muisknop op het project en selecteer   >  **Nieuw item** toevoegen. Selecteer in de lijst **Storm bout** en voer *splitter.cs* in als de naam. Wijzig in de code van het nieuwe bestand de naam van de naam ruimte in `WordCount` . Herhaal dit proces om een tweede Schicht te maken met de naam *Counter.cs*.
+2. Klik in **Solution Explorer** met de rechter muisknop op het project en selecteer   >  **Nieuw item** toevoegen. Selecteer in de lijst **Storm bout** en voer *Splitser. cs* in als de naam. Wijzig in de code van het nieuwe bestand de naam van de naam ruimte in `WordCount` . Herhaal dit proces om een tweede Schicht te maken met de naam *Counter. cs*.
 
-   * *Splitter.cs*: implementeert een Schicht waarmee zinnen in afzonderlijke woorden worden gesplitst en waarmee een nieuwe stroom van woorden wordt uitgesplitst.
+   * *Splitter. cs*: implementeert een Schicht waarmee zinnen worden gesplitst in afzonderlijke woorden en maakt een nieuwe stroom van woorden.
 
-   * *Counter.cs*: implementeert een Schicht die elk woord telt, en verzendt een nieuwe stroom van woorden en het aantal voor elk woord.
+   * *Counter. cs*: implementeert een Schicht waarmee elk woord wordt geteld en verzendt een nieuwe stroom van woorden en het aantal voor elk woord.
 
      > [!NOTE]  
      > Deze schichten lezen en schrijven naar stromen, maar u kunt ook een Schicht gebruiken om te communiceren met bronnen zoals een Data Base of service.
 
-3. Open *splitter.cs*. Het heeft slechts één methode standaard: `Execute` . De `Execute` methode wordt aangeroepen wanneer de schicht een tuple voor verwerking ontvangt. Hier kunt u binnenkomende Tuples lezen en verwerken en uitgaande Tuples verzenden.
+3. Open *splitter. cs*. Het heeft slechts één methode standaard: `Execute` . De `Execute` methode wordt aangeroepen wanneer de schicht een tuple voor verwerking ontvangt. Hier kunt u binnenkomende Tuples lezen en verwerken en uitgaande Tuples verzenden.
 
 4. Vervang de inhoud van de `Splitter` klasse door de volgende code:
 
@@ -275,7 +275,7 @@ Maak nu twee Storm-schichten in dit voor beeld:
     }
     ```
 
-5. Open *Counter.cs* en vervang de inhoud van de klasse door de volgende code:
+5. Open *Counter. cs* en vervang de inhoud van de klasse door de volgende code:
 
     ```csharp
     private Context ctx;
@@ -572,9 +572,9 @@ Hoewel het eenvoudig is om een topologie te implementeren in een cluster, moet u
    > [!NOTE]
    > Vergeet niet om het **uitvoer type** terug te wijzigen in **Class Library** voordat u de topologie op een cluster implementeert.
 
-1. Klik in **Solution Explorer** met de rechter muisknop op het project en selecteer vervolgens   >  **Nieuw item** toevoegen. Selecteer **klasse** en voer *LocalTest.cs* in als de naam van de klasse. Selecteer ten slotte **toevoegen**.
+1. Klik in **Solution Explorer** met de rechter muisknop op het project en selecteer vervolgens   >  **Nieuw item** toevoegen. Selecteer **klasse** en voer *LocalTest. cs* in als de naam van de klasse. Selecteer ten slotte **toevoegen**.
 
-1. Open *LocalTest.cs* en voeg de volgende `using` instructie toe aan de bovenkant:
+1. Open *LocalTest. cs* en voeg de volgende `using` instructie toe aan de bovenkant:
 
     ```csharp
     using Microsoft.SCP;
@@ -661,7 +661,7 @@ Hoewel het eenvoudig is om een topologie te implementeren in een cluster, moet u
 
     Neem even de tijd om de opmerkingen van de code te lezen. Deze code gebruikt `LocalContext` om de onderdelen in de ontwikkel omgeving uit te voeren. De gegevens stroom tussen onderdelen wordt persistent gemaakt naar tekst bestanden op het lokale station.
 
-1. Open *Program.cs* en voeg de volgende code toe aan de `Main` methode:
+1. Open *programma. cs* en voeg de volgende code toe aan de `Main` methode:
 
     ```csharp
     Console.WriteLine("Starting tests");

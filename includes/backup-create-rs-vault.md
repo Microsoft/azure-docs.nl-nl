@@ -10,10 +10,10 @@ ms.date: 10/18/2018
 ms.author: dacurwin
 ms.custom: include file
 ms.openlocfilehash: 69259023484457249acd4c7b4a65c4cbe3e660ca
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96184740"
 ---
 ## <a name="create-a-recovery-services-vault"></a>Een Recovery Services-kluis maken

@@ -9,10 +9,10 @@ ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions, devx-track-azurecli
 ms.openlocfilehash: e8bb97196fcceea0c86f58fe4a63146e681c427e
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96500730"
 ---
 # <a name="enable-shared-disk"></a>Gedeelde schijf inschakelen
@@ -42,7 +42,7 @@ Voor het implementeren van een beheerde schijf waarop de functie gedeelde schijf
 > [!IMPORTANT]
 > De waarde van `maxShares` kan alleen worden ingesteld of gewijzigd wanneer een schijf van alle virtuele machines wordt ontkoppeld. Zie de [schijf grootten](#disk-sizes) voor de toegestane waarden voor `maxShares` .
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 ```azurecli
 az disk create -g myResourceGroup -n mySharedDisk --size-gb 1024 -l westcentralus --sku Premium_LRS --max-shares 2
@@ -72,7 +72,7 @@ Als u een beheerde schijf met de functie gedeelde schijf wilt implementeren, wij
 > De waarde van `maxShares` kan alleen worden ingesteld of gewijzigd wanneer een schijf van alle virtuele machines wordt ontkoppeld. Zie de [schijf grootten](#disk-sizes) voor de toegestane waarden voor `maxShares` .
 
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 ##### <a name="regional-disk-example"></a>Voor beeld van regionale schijf
 
@@ -205,6 +205,6 @@ U moet ook een permanente reserve ring-sleutel opgeven wanneer u PR_RESERVE, PR_
 ## <a name="next-steps"></a>Volgende stappen
 
 Als u liever Azure Resource Manager sjablonen gebruikt voor het implementeren van uw schijf, zijn de volgende voorbeeld sjablonen beschikbaar:
-- [Premium - SSD](https://aka.ms/SharedPremiumDiskARMtemplate)
+- [Premium SSD](https://aka.ms/SharedPremiumDiskARMtemplate)
 - [Regionale Ultra schijven](https://aka.ms/SharedUltraDiskARMtemplateRegional)
 - [Zonegebonden Ultra schijven](https://aka.ms/SharedUltraDiskARMtemplateZonal)

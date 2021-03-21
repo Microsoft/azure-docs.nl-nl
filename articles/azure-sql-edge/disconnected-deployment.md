@@ -10,10 +10,10 @@ ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 09/22/2020
 ms.openlocfilehash: fce098767fffd36376399bbd9396699e3d9fbfd3
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93392075"
 ---
 # <a name="deploy-azure-sql-edge-with-docker"></a>Azure SQL Edge implementeren met behulp van Docker
@@ -100,7 +100,7 @@ Met de vorige opdracht worden de laatste containerinstallatiekopieën van de Azu
 
 ## <a name="change-the-sa-password"></a>Het SA-wachtwoord wijzigen
 
-Het **SA** -account is een systeembeheerder op het exemplaar van de Azure SQL Edge dat tijdens de installatie wordt gemaakt. Nadat u de Azure SQL Edge-container hebt gemaakt, kan de door u opgegeven omgevingsvariabele `MSSQL_SA_PASSWORD` worden gedetecteerd door `echo $SA_PASSWORD` in de container uit te voeren. Wijzig het SA-wachtwoord om veiligheidsredenen.
+Het **SA**-account is een systeembeheerder op het exemplaar van de Azure SQL Edge dat tijdens de installatie wordt gemaakt. Nadat u de Azure SQL Edge-container hebt gemaakt, kan de door u opgegeven omgevingsvariabele `MSSQL_SA_PASSWORD` worden gedetecteerd door `echo $SA_PASSWORD` in de container uit te voeren. Wijzig het SA-wachtwoord om veiligheidsredenen.
 
 1. Kies een sterk wachtwoord voor de SA-gebruiker.
 
@@ -114,7 +114,7 @@ Het **SA** -account is een systeembeheerder op het exemplaar van de Azure SQL Ed
 
 ## <a name="connect-to-azure-sql-edge"></a>Verbinding maken met Azure SQL Edge
 
-In de volgende stappen wordt het Azure SQL Edge-opdrachtregelprogramma, **sqlcmd** , in de container gebruikt om verbinding te maken met Azure SQL Edge.
+In de volgende stappen wordt het Azure SQL Edge-opdrachtregelprogramma, **sqlcmd**, in de container gebruikt om verbinding te maken met Azure SQL Edge.
 
 > [!NOTE]
 > Het hulpprogramma sqlcmd is niet beschikbaar in de ARM64-versie van SQL Edge-containers.
@@ -134,7 +134,7 @@ In de volgende stappen wordt het Azure SQL Edge-opdrachtregelprogramma, **sqlcmd
    > [!TIP]
    > U kunt het wachtwoord op de opdrachtregel weglaten om te worden gevraagd het in te voeren.
 
-3. Als dit is gelukt, krijgt u een opdrachtprompt voor **sqlcmd** : `1>`.
+3. Als dit is gelukt, krijgt u een opdrachtprompt voor **sqlcmd**: `1>`.
 
 ## <a name="create-and-query-data"></a>Gegevens maken en er query's op uitvoeren
 
@@ -204,7 +204,7 @@ Voer nu een query uit om gegevens op te halen uit de tabel `Inventory`.
 
 ### <a name="exit-the-sqlcmd-command-prompt"></a>De sqlcmd-opdrachtprompt afsluiten
 
-1. Als u uw **sqlcmd** -sessie wilt beëindigen, typt u `QUIT`:
+1. Als u uw **sqlcmd**-sessie wilt beëindigen, typt u `QUIT`:
 
    ```sql
    QUIT

@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 07/10/2020
 ms.author: alkohli
 ms.openlocfilehash: 3a915ac8de83a5e183660ec4a3d05044eafff4a9
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94337505"
 ---
 # <a name="tracking-and-event-logging-for-your-azure-data-box-and-azure-data-box-heavy-export-orders"></a>Tracering en logboek registratie voor uw Azure Data Box en Azure Data Box Heavy het exporteren van orders
@@ -252,7 +252,7 @@ Als u door de order geschiedenis schuift, ziet u het volgende:
 
 - Informatie over het bijhouden van vervoerders voor uw apparaat.
 - Gebeurtenissen met *SecureErase* -activiteit. Deze gebeurtenissen komen overeen met het verwijderen van de gegevens op de schijf.
-- Data Box logboek koppelingen. De paden voor de *audit logboeken* , *Kopieer logboeken* en *stuk lijst* bestanden worden weer gegeven.
+- Data Box logboek koppelingen. De paden voor de *audit logboeken*, *Kopieer logboeken* en *stuk lijst* bestanden worden weer gegeven.
 
 Hier volgt een voor beeld van het logboek voor order geschiedenis van Azure Portal:
 

@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 08/12/2020
 ms.author: sngun
 ms.openlocfilehash: c5404c026385f9ebf06c4f0289a4db0bf944d172
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93341230"
 ---
 # <a name="frequently-asked-questions-about-the-table-api-in-azure-cosmos-db"></a>Veelgestelde vragen over de Table-API in Azure Cosmos DB
@@ -197,7 +197,7 @@ Ja, Azure Cosmos DB Table-API biedt automatische indexering van alle kenmerken z
 
 Ja, u kunt het indexerings beleid wijzigen door de index definitie op te geven. U moet de instellingen op de juiste wijze coderen en escapepen.
 
-Voor de non-.NET Sdk's kan het indexerings beleid alleen worden ingesteld in de portal op **Data Explorer** , navigeer naar de specifieke tabel die u wilt wijzigen en ga vervolgens naar de **instellingen voor het schalen &** ->indexerings beleid, breng de gewenste wijziging aan en **Sla** het bestand op.
+Voor de non-.NET Sdk's kan het indexerings beleid alleen worden ingesteld in de portal op **Data Explorer**, navigeer naar de specifieke tabel die u wilt wijzigen en ga vervolgens naar de **instellingen voor het schalen &**->indexerings beleid, breng de gewenste wijziging aan en **Sla** het bestand op.
 
 De .NET-SDK kan worden verzonden in het app.config-bestand:
 

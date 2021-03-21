@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, devx-track-python, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 497b8f5598cf7aa7720f47863d465f5e29789b07
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93321947"
 ---
 # <a name="access-datasets-with-python-using-the-azure-machine-learning-python-client-library"></a>Toegang tot gegevenssets met Python met behulp van de clientbibliotheek van Azure Machine Learning Python
@@ -73,7 +73,7 @@ Uit veiligheids overwegingen is de functie code fragment alleen beschikbaar voor
 
 ![Scherm afbeelding toont de instellingen op de pagina gebruikers van Azure Machine Learning Studio.][security]
 
-Als uw rol niet is ingesteld als **eigenaar** , kunt u aanvragen om opnieuw te worden uitgenodigd als eigenaar of vraagt u de eigenaar van de werk ruimte u het code fragment te geven.
+Als uw rol niet is ingesteld als **eigenaar**, kunt u aanvragen om opnieuw te worden uitgenodigd als eigenaar of vraagt u de eigenaar van de werk ruimte u het code fragment te geven.
 
 Als u het autorisatie token wilt ophalen, kunt u een van de volgende opties kiezen:
 

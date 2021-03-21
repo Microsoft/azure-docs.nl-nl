@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 09/09/2020
 ms.author: mbaldwin
 ms.openlocfilehash: 9194f38ddea5570d94ba6c87ea6a537cb41fb98c
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102051375"
 ---
 # <a name="data-encryption-models"></a>Gegevensversleutelingmodellen
@@ -155,7 +155,7 @@ De Azure-Services die elk versleutelings model ondersteunen:
 | Taalbegrip           | Ja                | Ja                | -                  |
 | Personalizer                     | Ja                | Ja                | -                  |
 | QnA Maker                        | Ja                | Ja                | -                  |
-| Speech Services                  | Ja                | Ja                | -                  |
+| Spraakservices                  | Ja                | Ja                | -                  |
 | Translator Text                  | Ja                | Ja                | -                  |
 | Power BI                         | Ja                | Ja, RSA 4096-bits  | -                  |
 | **Analyse**                    |                    |                    |                    |
@@ -197,7 +197,7 @@ De Azure-Services die elk versleutelings model ondersteunen:
 | Table Storage                    | Ja                | Ja                | Ja                |
 | Azure Cosmos DB                  | Ja                | Ja                | -                  |
 | Azure Databricks                 | Ja                | Ja                | -                  |
-| Azure Database Migration Service | Ja                | N.v.t.\*              | -                  |
+| Azure Database Migration-service | Ja                | n.v.t.\*              | -                  |
 | **DevOps**                       |                    |                    |                    |
 | Azure DevOps Services            | Ja                | -                  | -                  |
 | Azure-opslagplaatsen                      | Ja                | -                  | -                  |
@@ -230,7 +230,7 @@ De Azure-Services die elk versleutelings model ondersteunen:
 | File Sync                        | Ja                | Ja                | -                  |
 | Queue Storage                    | Ja                | Ja                | Ja                |
 | Avere vFXT                       | Ja                | -                  | -                  |
-| Azure Cache voor Redis            | Ja                | N.v.t.\*              | -                  |
+| Azure Cache voor Redis            | Ja                | n.v.t.\*              | -                  |
 | Azure NetApp Files               | Ja                | Ja                | -                  |
 | Archive Storage                  | Ja                | Ja                | -                  |
 | StorSimple                       | Ja                | Ja                | Ja                |

@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 09/14/2020
 ms.author: mbullwin
 ms.openlocfilehash: 30d8fdf99da7a4854db0985bed6256ecd6f7a366
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93420917"
 ---
 # <a name="how-to-configure-alerts-and-get-notifications-using-a-hook"></a>Instructies: waarschuwingen configureren en meldingen ontvangen met behulp van een hook
@@ -59,7 +59,7 @@ Als u een webhook wilt maken, moet u de volgende informatie toevoegen:
 |---------|---------|
 |Eindpunt     | Het API-adres dat moet worden aangeroepen wanneer een waarschuwing wordt geactiveerd.        |
 |Gebruikersnaam en wachtwoord | Voor verificatie bij het API-adres. Houd deze zwart als verificatie niet nodig is.         |
-|Koptekst     | Aangepaste headers in de API-aanroep.        |
+|Header     | Aangepaste headers in de API-aanroep.        |
 
 :::image type="content" source="../media/alerts/create-web-hook.png" alt-text="venster voor het maken van webhooks.":::
 
@@ -86,7 +86,7 @@ Als u een Azure DevOps-Hook wilt maken, moet u de volgende gegevens toevoegen
 ## <a name="add-or-edit-alert-settings"></a>Waarschuwings instellingen toevoegen of bewerken
 
 Ga naar de detail pagina met metrische gegevens om de sectie **waarschuwings instellingen** te vinden in de linkerbenedenhoek van de detail pagina met metrische gegevens. Hiermee worden alle waarschuwings instellingen weer gegeven die van toepassing zijn op de geselecteerde detectie configuratie. Wanneer er een nieuwe detectie configuratie wordt gemaakt, wordt er geen instelling voor waarschuwingen weer gegeven en worden er geen waarschuwingen verzonden.  
-U kunt de pictogrammen **toevoegen** , **bewerken** en **verwijderen** gebruiken om de instellingen voor waarschuwingen te wijzigen.
+U kunt de pictogrammen **toevoegen**, **bewerken** en **verwijderen** gebruiken om de instellingen voor waarschuwingen te wijzigen.
 
 :::image type="content" source="../media/alerts/alert-setting.png" alt-text="Menu-item waarschuwings instellingen.":::
 
@@ -94,9 +94,9 @@ Klik op de knoppen **toevoegen** of **bewerken** om een venster te openen om de 
 
 :::image type="content" source="../media/alerts/edit-alert.png" alt-text="Waarschuwings instellingen toevoegen of bewerken":::
 
-**Naam van waarschuwings instelling** : de naam van deze waarschuwings instelling. Deze wordt weer gegeven in de titel van het e-mail bericht.
+**Naam van waarschuwings instelling**: de naam van deze waarschuwings instelling. Deze wordt weer gegeven in de titel van het e-mail bericht.
 
-**Hooks** : de lijst met hooks voor het verzenden van waarschuwingen naar.
+**Hooks**: de lijst met hooks voor het verzenden van waarschuwingen naar.
 
 De sectie die in de bovenstaande scherm afbeelding is gemarkeerd, zijn de instellingen voor een detectie configuratie. U kunt verschillende waarschuwings instellingen instellen voor verschillende detectie configuraties. Kies de doel configuratie met behulp van de derde vervolg keuzelijst in dit venster. 
 
@@ -106,16 +106,16 @@ Hieronder ziet u de filter instellingen voor één detectie configuratie.
 
 **Waarschuwing voor** heeft 4 opties voor het filteren van afwijkingen:
 
-* **Afwijkingen in alle reeksen** : alle afwijkingen worden opgenomen in de waarschuwing.         
-* **Afwijkingen in de reeks groep** : filter reeksen per dimensie waarden. Specifieke waarden voor bepaalde dimensies instellen. Afwijkingen worden alleen opgenomen in de waarschuwing wanneer de reeks overeenkomt met de opgegeven waarde.       
-* **Afwijkingen in de reeks favorieten** : alleen de reeks die als favoriet is gemarkeerd, wordt opgenomen in de waarschuwing.        |
-* **Afwijkingen in de bovenste n van alle reeksen** : dit filter is voor het geval dat u alleen de bezorgt van de serie waarvan de waarde zich in de bovenste n bevindt. Enkele tijds tempels worden teruggestuurd en er wordt gecontroleerd of de waarde van de reeks bij deze tijds tempel in de bovenste N ligt. Als het aantal in de bovenste n groter is dan het opgegeven aantal, wordt de afwijkende waarde opgenomen in een waarschuwing.        |
+* **Afwijkingen in alle reeksen**: alle afwijkingen worden opgenomen in de waarschuwing.         
+* **Afwijkingen in de reeks groep**: filter reeksen per dimensie waarden. Specifieke waarden voor bepaalde dimensies instellen. Afwijkingen worden alleen opgenomen in de waarschuwing wanneer de reeks overeenkomt met de opgegeven waarde.       
+* **Afwijkingen in de reeks favorieten**: alleen de reeks die als favoriet is gemarkeerd, wordt opgenomen in de waarschuwing.        |
+* **Afwijkingen in de bovenste n van alle reeksen**: dit filter is voor het geval dat u alleen de bezorgt van de serie waarvan de waarde zich in de bovenste n bevindt. Enkele tijds tempels worden teruggestuurd en er wordt gecontroleerd of de waarde van de reeks bij deze tijds tempel in de bovenste N ligt. Als het aantal in de bovenste n groter is dan het opgegeven aantal, wordt de afwijkende waarde opgenomen in een waarschuwing.        |
 
 **Opties voor afwijkingen filteren** is een extra filter met de volgende opties:
 
 - **Ernst** : de afwijkingen worden alleen opgenomen wanneer de ernst van de afwijkende waarde binnen het opgegeven bereik ligt.
 - **Uitstellen** : waarschuwingen tijdelijk stoppen voor afwijkingen in de volgende N punten (punt), indien geactiveerd in een waarschuwing.
-    - uitstel **type** : wanneer u deze instelt op **reeks** , wordt de reeks alleen uitgesteld met een geactiveerde afwijkings actie. Voor **metrische gegevens** wordt met één geactiveerde afwijking alle reeksen in deze metriek uitgesteld.
+    - uitstel **type** : wanneer u deze instelt op **reeks**, wordt de reeks alleen uitgesteld met een geactiveerde afwijkings actie. Voor **metrische gegevens** wordt met één geactiveerde afwijking alle reeksen in deze metriek uitgesteld.
     - uitstel **nummer** : het aantal punten (punt) dat moet worden uitgesteld.
     - **opnieuw instellen voor niet-opeenvolgende** : wanneer dit selectie vakje is ingeschakeld, worden alleen de volgende n opeenvolgende afwijkingen door gegenereerd. Als een van de volgende gegevens punten geen afwijkingen is, wordt de uitstel instelling vanaf dat punt opnieuw ingesteld. Als u dit selectie vakje uitschakelt, worden de volgende n punten (punt) uitgesteld, zelfs als opeenvolgende gegevens punten geen afwijkingen hebben.
 - **waarde** (optioneel): filteren op waarde. Alleen punt waarden die voldoen aan de voor waarde, worden afwijkend opgenomen. Als u de bijbehorende waarde van een andere metriek gebruikt, moeten de dimensie namen van de twee metrieken consistent zijn.

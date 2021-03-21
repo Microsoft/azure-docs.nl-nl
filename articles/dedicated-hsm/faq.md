@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 12/10/2020
 ms.author: keithp
 ms.openlocfilehash: 1f349931fb479be3b3ba936b3d0a665427357f29
-ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/13/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97369035"
 ---
 # <a name="frequently-asked-questions-faq"></a>Veelgestelde vragen
@@ -40,7 +40,7 @@ Micro soft heeft een partnerschap met Thales voor het leveren van de toegewezen 
 
 ### <a name="q-what-is-an-hsm-used-for"></a>V: waarvoor wordt een HSM gebruikt?
 
-Hsm's worden gebruikt voor het opslaan van cryptografische sleutels die worden gebruikt voor cryptografische functionaliteit, zoals TLS (trans port Layer Security), het versleutelen van gegevens, PKI (open bare-sleutel infrastructuur), DRM (Digital Rights Management) en het ondertekenen van documenten.
+Hsm's worden gebruikt voor het opslaan van cryptografische sleutels die worden gebruikt voor cryptografische functionaliteit, zoals TLS (trans port Layer Security), het versleutelen van gegevens, PKI (open bare-sleutel infrastructuur), DRM (digital rights management) en het ondertekenen van documenten.
 
 ### <a name="q-how-does-dedicated-hsm-work"></a>V: Hoe werkt speciale HSM?
 
@@ -76,7 +76,7 @@ Vanaf eind maart 2019 is toegewezen HSM beschikbaar in de volgende 14 regio's. V
 * VS - oost
 * VS - oost 2
 * VS - west
-* West US 2
+* VS - west 2
 * South Central US
 * Azië - zuidoost
 * Azië - oost

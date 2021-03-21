@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 9572d612e7ee8e2fd72850ba14447e8449f0f371
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93321999"
 ---
 # <a name="move-data-to-or-from-azure-blob-storage-using-ssis-connectors"></a>Gegevens verplaatsen van of naar Azure Blob Storage met SSIS-connectors
@@ -42,8 +42,8 @@ Als u de taken wilt uitvoeren die in dit artikel worden beschreven, moet u een A
 
 Als u de **SSIS-connectors** wilt gebruiken, moet u het volgende downloaden:
 
-* **SQL Server 2014 of 2016 Standard (of hoger)** : de installatie bevat SQL Server Integration Services.
-* **Microsoft SQL Server 2014 of 2016 Integration Services Feature Pack voor Azure** : deze Connectors kunnen respectievelijk worden gedownload via de pagina's [SQL Server 2014 integration services](https://www.microsoft.com/download/details.aspx?id=47366) en [SQL Server 2016 Integration Services](https://www.microsoft.com/download/details.aspx?id=49492) .
+* **SQL Server 2014 of 2016 Standard (of hoger)**: de installatie bevat SQL Server Integration Services.
+* **Microsoft SQL Server 2014 of 2016 Integration Services Feature Pack voor Azure**: deze Connectors kunnen respectievelijk worden gedownload via de pagina's [SQL Server 2014 integration services](https://www.microsoft.com/download/details.aspx?id=47366) en [SQL Server 2016 Integration Services](https://www.microsoft.com/download/details.aspx?id=49492) .
 
 > [!NOTE]
 > SSIS wordt geïnstalleerd met SQL Server, maar is niet opgenomen in de snelle versie. Zie [SQL Server-edities](https://www.microsoft.com/en-us/server-cloud/products/sql-server-editions/) voor meer informatie over welke toepassingen zijn opgenomen in de verschillende edities van SQL Server.

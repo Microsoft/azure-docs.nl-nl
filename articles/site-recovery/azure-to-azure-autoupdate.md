@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 04/02/2020
 ms.author: sideeksh
 ms.openlocfilehash: 42d3c74229ab7eeec0ac716073a9e631775fd002
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96187337"
 ---
 # <a name="automatic-update-of-the-mobility-service-in-azure-to-azure-replication"></a>Automatische update van de Mobility-service in azure-naar-Azure-replicatie
@@ -56,8 +56,8 @@ Wanneer u replicatie voor een virtuele machine inschakelt [vanuit de VM-weer gav
 
 ### <a name="toggle-the-extension-update-settings-inside-the-vault"></a>De instellingen voor het bijwerken van de extensie in de kluis in-/uitschakelen
 
-1. Ga vanuit de Recovery Services kluis naar **Manage**  >  **site Recovery-infra structuur** beheren.
-1. Onder voor de update-instellingen **van Azure virtual machines**  >  -**extensie**  >  **kunt u site Recovery beheren** selecteren. **On**
+1. Ga vanuit de Recovery Services kluis naar   >  **site Recovery-infra structuur** beheren.
+1. Onder voor de update-instellingen **van Azure virtual machines**  >  -**extensie**  >  **kunt u site Recovery beheren** selecteren. 
 
    Als u de extensie hand matig wilt beheren, selecteert u **uit**.
 

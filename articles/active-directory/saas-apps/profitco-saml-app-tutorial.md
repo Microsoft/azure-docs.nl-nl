@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 04/30/2020
 ms.author: jeedes
 ms.openlocfilehash: 027fb66538dfcead24470507b8080f2e0aacb469
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92515199"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-profitco"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met Profit.co
@@ -48,15 +48,15 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 Als u de integratie van Profit.co met Azure AD wilt configureren, voegt u Profit.co vanuit de galerie toe aan uw lijst met beheerde SaaS-apps.
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com) met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory** .
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
-1. Als u een nieuwe toepassing wilt toevoegen, selecteert u **Nieuwe toepassing** .
-1. Typ **Profit.co** in het zoekvak in de sectie **Toevoegen uit de galerie** .
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Als u een nieuwe toepassing wilt toevoegen, selecteert u **Nieuwe toepassing**.
+1. Typ **Profit.co** in het zoekvak in de sectie **Toevoegen uit de galerie**.
 1. Selecteer **Profit.co** in het venster met resultaten en voeg de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
 ## <a name="configure-and-test-azure-ad-single-sign-on-for-profitco"></a>Eenmalige aanmelding van Azure AD configureren en testen voor Profit.co
 
-Configureer en test eenmalige aanmelding van Azure AD met Profit.co met behulp van een testgebruiker met de naam **B.Simon** . Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Profit.co.
+Configureer en test eenmalige aanmelding van Azure AD met Profit.co met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Profit.co.
 
 Hier volgen de algemene stappen voor het configureren en testen van eenmalige aanmelding van Azure AD met Profit.co:
 
@@ -71,15 +71,15 @@ Hier volgen de algemene stappen voor het configureren en testen van eenmalige aa
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Zoek in de [Azure-portal](https://portal.azure.com/) op de integratiepagina van de toepassing **Profit.co** de sectie **Beheren** . Selecteer **Eenmalige aanmelding** .
-1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding** .
+1. Zoek in de [Azure-portal](https://portal.azure.com/) op de integratiepagina van de toepassing **Profit.co** de sectie **Beheren**. Selecteer **Eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Selecteer op de pagina **Eenmalige aanmelding instellen met SAML** het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Schermopname van de pagina Eenmalige aanmelding instellen met SAML, met het potloodpictogram gemarkeerd](common/edit-urls.png)
 
 1. In de sectie **SAML-basisconfiguratie** is de toepassing vooraf geconfigureerd en zijn de benodigde URL's al vooraf ingevuld in Azure. De gebruiker moet de configuratie opslaan door **Opslaan** te selecteren.
 
-1. Ga naar de pagina **Eenmalige aanmelding met SAML instellen** en selecteer in de sectie **SAML-handtekeningcertificaat** de knop **Kopiëren** . Hiermee wordt de URL van de **App-URL voor federatieve metagegevens** gekopieerd en op uw computer opgeslagen.
+1. Ga naar de pagina **Eenmalige aanmelding met SAML instellen** en selecteer in de sectie **SAML-handtekeningcertificaat** de knop **Kopiëren**. Hiermee wordt de URL van de **App-URL voor federatieve metagegevens** gekopieerd en op uw computer opgeslagen.
 
     ![Schermopname van het SAML-handtekeningcertificaat, met de kopieerknop gemarkeerd](common/copy-metadataurl.png)
 
@@ -87,31 +87,31 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in de Azure-portal.
 
-1. Selecteer in het linkerdeelvenster van de Azure-portal **Azure Active Directory** > **Gebruikers** > **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster van de Azure-portal **Azure Active Directory** > **Gebruikers** > **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
-   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde in het veld **Wachtwoord** .
-   1. Selecteer **Maken** .
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het veld **Wachtwoord**.
+   1. Selecteer **Maken**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot Profit.co.
 
-1. Selecteer in de Azure-portal **Bedrijfstoepassingen** > **Alle toepassingen** .
+1. Selecteer in de Azure-portal **Bedrijfstoepassingen** > **Alle toepassingen**.
 1. Selecteer **Profit.co** in de lijst met toepassingen.
-1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen** .
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
 
    ![Het gedeelte Beheren, met Gebruikers en groepen gemarkeerd](common/users-groups-blade.png)
 
-1. Selecteer **Gebruiker toevoegen** . Selecteer **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+1. Selecteer **Gebruiker toevoegen**. Selecteer **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Schermopname van de pagina Gebruikers en groepen, met Gebruiker toevoegen gemarkeerd](common/add-assign-user.png)
 
-1. Selecteer in het dialoogvenster **Gebruikers en groepen** in de lijst met gebruikers **B.Simon** . Kies vervolgens onderaan het scherm de knop **Selecteren** .
-1. Als u een rolwaarde verwacht in de SAML-assertie, selecteert u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst. Kies vervolgens onderaan het scherm de knop **Selecteren** .
-1. Selecteer **Toewijzen** in het dialoogvenster **Toewijzing toevoegen** .
+1. Selecteer in het dialoogvenster **Gebruikers en groepen** in de lijst met gebruikers **B.Simon**. Kies vervolgens onderaan het scherm de knop **Selecteren**.
+1. Als u een rolwaarde verwacht in de SAML-assertie, selecteert u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst. Kies vervolgens onderaan het scherm de knop **Selecteren**.
+1. Selecteer **Toewijzen** in het dialoogvenster **Toewijzing toevoegen**.
 
 ## <a name="configure-profitco-sso"></a>Eenmalige aanmelding voor Profit.co configureren
 

@@ -14,10 +14,10 @@ ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
 ms.openlocfilehash: 3c92aa3b35240831fad14919dc73609d803c610a
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97358211"
 ---
 # <a name="feature-interoperability-with-sql-server-fci--dnn"></a>Functie compatibiliteit met SQL Server FCI & DNN
@@ -106,7 +106,7 @@ Voor client toegang kan de eigenschap van de **failover-partner** de data base m
 
 ## <a name="msdtc"></a>MSDTC
 
-De FCI kan deel nemen aan gedistribueerde trans acties gecoördineerd door micro soft Distributed Transaction Coordinator (MSDTC). Hoewel zowel geclusterde MSDTC als lokale MSDTC worden ondersteund met FCI DNN in azure, is er nog steeds een load balancer nodig voor geclusterde MSDTC. De DNN die is gedefinieerd in de FCI, vervangt niet de Azure Load Balancer vereiste voor de geclusterde MSDTC in Azure. 
+De FCI kan deel nemen aan gedistribueerde trans acties gecoördineerd door micro soft gedistribueerde transactie (MSDTC). Hoewel zowel geclusterde MSDTC als lokale MSDTC worden ondersteund met FCI DNN in azure, is er nog steeds een load balancer nodig voor geclusterde MSDTC. De DNN die is gedefinieerd in de FCI, vervangt niet de Azure Load Balancer vereiste voor de geclusterde MSDTC in Azure. 
 
 ## <a name="filestream"></a>-
 

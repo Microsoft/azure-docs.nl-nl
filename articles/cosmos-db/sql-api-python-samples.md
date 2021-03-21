@@ -10,10 +10,10 @@ ms.date: 08/11/2020
 ms.author: rosouz
 ms.custom: devx-track-python
 ms.openlocfilehash: 4a1cd5b1773a58cf385fc6cc5c22be8df7b21e20
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98018952"
 ---
 # <a name="azure-cosmos-db-python-examples"></a>Python-voorbeelden voor Azure Cosmos DB

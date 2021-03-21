@@ -3,16 +3,16 @@ title: Firewall regels beheren-Azure CLI-Azure Database for MariaDB
 description: In dit artikel wordt beschreven hoe u Azure Database for MariaDB firewall regels maakt en beheert met behulp van de Azure CLI-opdracht regel.
 author: savjani
 ms.author: pariks
-ms.service: jroth
+ms.service: mariadb
 ms.devlang: azurecli
 ms.topic: how-to
 ms.date: 3/18/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: f4ae1f3b736f6d263b8d769e241d969d058a69f4
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: ef04e2b4c820c14ea7df6c35ecb0189ef31ef7dc
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98665035"
 ---
 # <a name="create-and-manage-azure-database-for-mariadb-firewall-rules-by-using-the-azure-cli"></a>Azure Database for MariaDB firewall regels maken en beheren met behulp van de Azure CLI

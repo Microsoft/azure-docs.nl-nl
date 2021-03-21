@@ -10,13 +10,13 @@ ms.author: tisande
 ms.reviewer: sngun
 ms.custom: devx-track-js
 ms.openlocfilehash: b2563a9af0e0ca6943059698e29d139143780d93
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93340971"
 ---
-# <a name="javascript-query-api-in-azure-cosmos-db"></a>Java script-query-API in Azure Cosmos DB
+# <a name="javascript-query-api-in-azure-cosmos-db"></a>JavaScript-query-API in Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 Naast het uitgeven van query's met behulp van de SQL-API in Azure Cosmos DB, biedt de [Cosmos DB SDK aan de server zijde](https://github.com/Azure/azure-cosmosdb-js-server/) een Java script-interface voor het uitvoeren van geoptimaliseerde query's in Cosmos DB opgeslagen procedures en triggers. U hoeft niet op de hoogte te zijn van de SQL-taal om deze Java script-interface te gebruiken. Met de Java script-query-API kunt u programmatisch query's maken door predikaten te gebruiken in volg orde van functie aanroepen, met een syntaxis die bekend is met de ECMAScript5's array-ingebouwde en populaire Java script-bibliotheken zoals Lodash. Query's worden door de Java Script-runtime geparseerd en efficiënt uitgevoerd met Azure Cosmos DB indices.

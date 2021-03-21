@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 02/26/2021
 ms.reviewer: cynthn
 ms.custom: template-concept; references_regions
-ms.openlocfilehash: 449eb1d65e0104e6c5c74a78901cf29c5aeb3e57
-ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
+ms.openlocfilehash: 01c5d4aaa3896e05bc743be309df050471ece5ae
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102609087"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104582048"
 ---
 # <a name="trusted-launch-for-azure-virtual-machines-preview"></a>Vertrouwde Lance ring voor virtuele machines van Azure (preview-versie)
 
@@ -73,7 +73,7 @@ Azure biedt een naadloze manier om de beveiliging van virtuele machines van de [
 
 ## <a name="secure-boot"></a>Beveiligd opstarten
 
-De basis van vertrouwde start is beveiligd opstarten voor uw VM. Deze modus, die wordt geïmplementeerd in platform firmware, beveiligt de installatie van op malware gebaseerde rootkits en opstart Kits. Beveiligd opstarten werkt om ervoor te zorgen dat alleen ondertekende besturings systemen en stuur Programma's kunnen worden opgestart. Er wordt een "basis vertrouwens relatie" voor de software stack op uw virtuele machine gemaakt. Als beveiligd opstarten is ingeschakeld, moeten alle opstart onderdelen van het besturings systeem (boot loader, kernel, kernel-Stuur Programma's) worden ondertekend door vertrouwde uitgevers. Zowel Windows als Linux-distributies ondersteunen beveiligd opstarten. Als beveiligd opstarten niet kan verifiëren dat de installatie kopie is ondertekend door een vertrouwde uitgever, mag de virtuele machine niet worden opgestart. Zie [Secure Boot](https://docs.microsoft.com/windows-hardware/design/device-experiences/oem-secure-boot) voor meer informatie.
+De basis van vertrouwde start is beveiligd opstarten voor uw VM. Deze modus, die wordt geïmplementeerd in platform firmware, beveiligt de installatie van op malware gebaseerde rootkits en opstart Kits. Beveiligd opstarten werkt om ervoor te zorgen dat alleen ondertekende besturings systemen en stuur Programma's kunnen worden opgestart. Er wordt een "basis vertrouwens relatie" voor de software stack op uw virtuele machine gemaakt. Als beveiligd opstarten is ingeschakeld, moeten alle opstart onderdelen van het besturings systeem (boot loader, kernel, kernel-Stuur Programma's) worden ondertekend door vertrouwde uitgevers. Zowel Windows als Linux-distributies ondersteunen beveiligd opstarten. Als beveiligd opstarten niet kan verifiëren dat de installatie kopie is ondertekend door een vertrouwde uitgever, mag de virtuele machine niet worden opgestart. Zie [Secure Boot](/windows-hardware/design/device-experiences/oem-secure-boot) voor meer informatie.
 
 ## <a name="vtpm"></a>vTPM
 
@@ -87,7 +87,7 @@ Op [basis van virtualisatie beveiliging](/windows-hardware/design/device-experie
 
 HVCI is een krachtige systeem beperking voor het beveiligen van de kernel-modus van Windows tegen injectie en uitvoering van schadelijke of niet-geverifieerde code. Hiermee worden Stuur Programma's en binaire bestanden voor de kernelmodus gecontroleerd voordat ze worden uitgevoerd, en wordt voor komen dat niet-ondertekende bestanden in het geheugen worden geladen. Dit zorgt ervoor dat een dergelijke uitvoer bare code niet kan worden gewijzigd nadat deze is toegestaan. Zie [beveiliging op basis van virtualisatie (VBS) en Hyper Visor afgedwongen code-integriteit (HVCI)](https://techcommunity.microsoft.com/t5/windows-insider-program/virtualization-based-security-vbs-and-hypervisor-enforced-code/m-p/240571)voor meer informatie over vbs en HVCI.
 
-Met Trusted Launch en VBS kunt u Windows Defender Credential Guard inschakelen. Met deze functie worden geheimen geïsoleerd en beschermd, zodat alleen bevoegde systeem software deze kan openen. Het helpt te voor komen dat onbevoegde toegang tot geheimen en aanvallen op referentie diefstal, zoals Pass-the-hash-aanvallen (PtH). Zie [Credential Guard](https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard)voor meer informatie.
+Met Trusted Launch en VBS kunt u Windows Defender Credential Guard inschakelen. Met deze functie worden geheimen geïsoleerd en beschermd, zodat alleen bevoegde systeem software deze kan openen. Het helpt te voor komen dat onbevoegde toegang tot geheimen en aanvallen op referentie diefstal, zoals Pass-the-hash-aanvallen (PtH). Zie [Credential Guard](/windows/security/identity-protection/credential-guard/credential-guard)voor meer informatie.
 
 
 ## <a name="security-center-integration"></a>Integratie van Security Center
@@ -134,7 +134,7 @@ Bij een beveiligde opstart keten controleert elke stap in het opstart proces een
 
 ### <a name="what-happens-when-an-integrity-fault-is-detected"></a>Wat gebeurt er als er een integriteits fout wordt gedetecteerd?
 
-Vertrouwde Lance ring voor virtuele Azure-machines wordt bewaakt voor geavanceerde bedreigingen. Als dergelijke bedreigingen worden gedetecteerd, wordt een waarschuwing geactiveerd. Waarschuwingen zijn alleen beschikbaar in de [laag standaard](/azure/security-center/security-center-pricing) van Azure Security Center.
+Vertrouwde Lance ring voor virtuele Azure-machines wordt bewaakt voor geavanceerde bedreigingen. Als dergelijke bedreigingen worden gedetecteerd, wordt een waarschuwing geactiveerd. Waarschuwingen zijn alleen beschikbaar in de [laag standaard](../security-center/security-center-pricing.md) van Azure Security Center.
 Azure Security Center voert periodiek een Attestation-bewerking uit. Als de Attestation mislukt, wordt een waarschuwing over een gemiddeld risico gegenereerd. Het vertrouwd starten van de Attestation kan om de volgende redenen mislukken: 
 - De attestende informatie, die een logboek van de betrouw bare Computing Base (TCB) bevat, wijkt af van een vertrouwde basis lijn (zoals wanneer beveiligd opstarten is ingeschakeld). Dit kan erop duiden dat niet-vertrouwde modules zijn geladen en dat het besturings systeem kan worden aangetast.
 - De Attestation-offerte kan niet worden geverifieerd om afkomstig te zijn van de vTPM van de attested VM. Dit kan erop wijzen dat er malware aanwezig is en het verkeer naar de TPM kan worden onderschept. 

@@ -11,10 +11,10 @@ ms.topic: include
 ms.custom: include file
 ms.author: mikben
 ms.openlocfilehash: 80d6c4d3f0b2eef5bc6012f2aab3fcbeab0e31b8
-ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103495390"
 ---
 ## <a name="prerequisites"></a>Vereisten
@@ -66,7 +66,7 @@ Meer informatie over [tokens voor gebruikerstoegang](../../access-tokens.md).
 
 Deze Snelstartgids heeft geen betrekking op het maken van een servicelaag voor het beheren van tokens voor uw chat toepassing, hoewel dit wordt aanbevolen. Meer informatie over de [architectuur van chatten](../../../concepts/chat/concepts.md)
 
-Kopieer de volgende code fragmenten en plak deze in het bron bestand: **Program.cs**
+Kopieer de volgende code fragmenten en plak deze in het bron bestand: **Program. cs**
 ```csharp
 using Azure;
 using Azure.Communication;

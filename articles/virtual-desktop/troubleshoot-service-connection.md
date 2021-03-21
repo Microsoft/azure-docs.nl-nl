@@ -7,10 +7,10 @@ ms.date: 10/15/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: 42502864cfed177adfe487e9c59247579628fec8
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98539072"
 ---
 # <a name="windows-virtual-desktop-service-connections"></a>Windows Virtual Desktop service-verbindingen
@@ -48,7 +48,7 @@ Om dit probleem op te lossen, moet u de gebruikers opnieuw toewijzen aan hun app
 
 Dit kan ook gebeuren als een CSP-provider het abonnement heeft gemaakt en vervolgens is overgezet naar de klant. U kunt dit probleem oplossen door de resource provider opnieuw te registreren.
 
-1. Meld u aan bij de Azure-portal.
+1. Meld u aan bij Azure Portal.
 2. Ga naar het **abonnement** en selecteer vervolgens uw abonnement.
 3. Selecteer **resource provider** in het menu aan de linkerkant van de pagina.
 4. Zoek en selecteer **micro soft. DesktopVirtualization** en selecteer **opnieuw registreren**.

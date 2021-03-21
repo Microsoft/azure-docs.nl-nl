@@ -27,11 +27,11 @@
           href: security-overview.md
 - name: Instructiegidsen
   items:
-    - name: Verbinding maken met Azure Arc
+    - name: Implementeren
       items:
         - name: Overzicht van Connected Machine-agent
           href: agent-overview.md
-        - name: Plannen voor implementatie op schaal
+        - name: Plan voor implementatie
           href: plan-at-scale-deployment.md
         - name: Machines verbinden met Azure Arc vanuit de Azure-portal
           href: onboard-portal.md

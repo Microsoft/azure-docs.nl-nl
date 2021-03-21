@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: cawams
 ms.author: cawa
 ms.date: 02/11/2021
-ms.openlocfilehash: 838a48aa11a1cb36c3a7d822ce88f58936aa976d
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 8319885de26bf79f5e402c4d06b29e9dd94894de
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101734618"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104655844"
 ---
 # <a name="visualizations-for-application-change-analysis-preview"></a>Visualisaties voor het analyseren van toepassings wijzigingen (preview-versie)
 
@@ -22,11 +22,11 @@ Zoek naar veranderingen analyse in de zoek balk op Azure Portal om de ervaring t
 
 ![Scherm opname van het zoeken van wijzigingen in Azure Portal](./media/change-analysis/search-change-analysis.png)
 
-Alle resources onder een geselecteerd abonnement worden weer gegeven met wijzigingen van de afgelopen 24 uur. Voor het optimaliseren van de prestaties van het laden van de pagina, wordt voor de service 10 resources tegelijk weer gegeven. Selecteer de volgende pagina om meer resources weer te geven. We werken aan het verwijderen van deze beperking.
+Alle resources onder een geselecteerd abonnement worden weer gegeven met wijzigingen van de afgelopen 24 uur. Alle wijzigingen worden weer gegeven met oude waarde en nieuwe waarde om inzicht te bieden in één oogopslag.
 
 ![Scherm opname van de Blade voor het wijzigen van de analyse in Azure Portal](./media/change-analysis/change-analysis-standalone-blade.png)
 
-Klik in een resource om alle wijzigingen weer te geven. Als dat nodig is, zoomt u in op een wijziging om meer informatie over de JSON-indeling weer te geven en inzichten te bekijken.
+Klik op wijzigen om het volledige Resource Manager-fragment en andere eigenschappen weer te geven.
 
 ![Scherm afbeelding van wijzigings gegevens](./media/change-analysis/change-details.png)
 
@@ -40,11 +40,6 @@ De gebruikers interface ondersteunt het selecteren van meerdere abonnementen om 
 
 ![Scherm opname van het abonnements filter dat ondersteuning biedt voor het selecteren van meerdere abonnementen](./media/change-analysis/multiple-subscriptions-support.png)
 
-### <a name="web-app-diagnose-and-solve-problems"></a>De web-app kan problemen vaststellen en oplossen
-
-In Azure Monitor is wijzigings analyse ook ingebouwd in de ervaring van de self-service om **problemen op te lossen** . Toegang tot deze ervaring via de pagina **overzicht** van uw app service-toepassing.
-
-![Scherm afbeelding van de knop overzicht en de knop problemen vaststellen en oplossen](./media/change-analysis/change-analysis.png)
 
 ## <a name="application-change-analysis-in-the-diagnose-and-solve-problems-tool"></a>Analyse van toepassings wijzigingen in het hulp programma problemen vaststellen en oplossen
 
@@ -69,6 +64,13 @@ Analyse van toepassings wijzigingen is een zelfstandige detectie in de web-app d
 5. Wijzigings gegevens zijn ook beschikbaar in de Select- **Web-app down** en de detecties van **toepassingen vastlopen** . U ziet een grafiek met een overzicht van het type wijzigingen in de loop van de tijd, samen met details over deze wijzigingen. Standaard worden wijzigingen in de afgelopen 24 uur weer gegeven om onmiddellijke problemen op te lossen.
 
      ![Scherm opname van de weer gave diff wijzigen](./media/change-analysis/change-view.png)
+
+## <a name="diagnose-and-solve-problems-tool"></a>Hulp programma problemen vaststellen en oplossen
+Wijzigings analyse is beschikbaar als een Insight-kaart in het hulp programma diagnose en probleem oplossing. Als een resource problemen ondervindt en er wijzigingen zijn gedetecteerd in de afgelopen 72 uur, wordt in de Insights-kaart het aantal wijzigingen weer gegeven. Als u op de koppeling wijzigings details weer geven klikt, wordt de gefilterde weer gave van de zelfstandige gebruikers interface van de analyse gewijzigd.
+
+![Scherm opname van het weer geven van wijzigings inzicht in het hulp programma problemen vaststellen en oplossen.](./media/change-analysis/change-insight-diagnose-and-solve.png)
+
+
 
 ## <a name="virtual-machine-diagnose-and-solve-problems"></a>Problemen met virtuele machines vaststellen en oplossen
 

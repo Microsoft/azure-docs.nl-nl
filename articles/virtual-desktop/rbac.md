@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/15/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 52f0151fd4be7505cf7beea0eeb54f8e34404997
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 1120db685c54ff062f03aca9002bf77af549bc26
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97577704"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104582116"
 ---
 # <a name="built-in-roles-for-windows-virtual-desktop"></a>Ingebouwde rollen voor Windows virtueel bureau blad
 
@@ -146,7 +146,7 @@ In de volgende lijst wordt beschreven welke machtigingen deze rol kan gebruiken:
 
 ## <a name="session-host-operator"></a>Session Host-operator
 
-Met de rol Inzender voor sessiehost kunt u sessie-hosts weer geven en verwijderen, evenals de modus voor het wijzigen van de afwatering. Ze kunnen geen sessie-hosts toevoegen met behulp van de Azure Portal omdat ze geen schrijf machtiging hebben voor objecten van een hostgroep. Als het registratie token geldig is (gegenereerd en niet verlopen), kunt u deze rol gebruiken om sessie-hosts toe te voegen aan de hostgroep buiten Azure Portal als de beheerder reken machtigingen heeft via de rol van de virtuele machine.
+Met de rol sessiehost host kunt u sessie-hosts weer geven en verwijderen, evenals de modus voor het wijzigen van de afvoer. Ze kunnen geen sessie-hosts toevoegen met behulp van de Azure Portal omdat ze geen schrijf machtiging hebben voor objecten van een hostgroep. Als het registratie token geldig is (gegenereerd en niet verlopen), kunt u deze rol gebruiken om sessie-hosts toe te voegen aan de hostgroep buiten Azure Portal als de beheerder reken machtigingen heeft via de rol van de virtuele machine.
 
 In de volgende lijst wordt beschreven welke machtigingen deze rol kan gebruiken:
 

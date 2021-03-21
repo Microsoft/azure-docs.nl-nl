@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/17/2021
 ms.author: jeedes
-ms.openlocfilehash: d4c9d2e290f6a8f07878a019b755c8add2ab69ea
-ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
+ms.openlocfilehash: 41f6db8cf2454c224addac525e9d039954a95712
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102488441"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104601496"
 ---
 # <a name="tutorial-integrate-dropbox-business-with-azure-active-directory"></a>Zelfstudie: Dropbox Business integreren met Azure Active Directory
 
@@ -186,4 +186,4 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zodra u een Dropbox-bedrijf hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+Zodra u een Dropbox-bedrijf hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

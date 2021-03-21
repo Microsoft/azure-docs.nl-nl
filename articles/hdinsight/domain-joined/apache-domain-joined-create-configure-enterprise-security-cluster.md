@@ -6,10 +6,10 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.date: 12/10/2019
 ms.openlocfilehash: 914acfab3935bc81e7d8382163ca9283c7f71a53
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98934034"
 ---
 # <a name="create-and-configure-enterprise-security-package-clusters-in-azure-hdinsight"></a>Enterprise Security Package clusters maken en configureren in azure HDInsight
@@ -115,7 +115,7 @@ De gebruikers worden gesynchroniseerd met Azure AD.
 
 ### <a name="create-an-azure-ad-directory"></a>Een Azure AD-Directory maken
 
-1. Meld u aan bij de Azure-portal.
+1. Meld u aan bij Azure Portal.
 1. Selecteer **een resource maken** en type `directory` . Selecteer **Azure Active Directory**  >  **maken**.
 1. Voer onder **organisatie naam** in `HDIFabrikam` .
 1. Voer bij **initiële domein naam** in `HDIFabrikamoutlook` .
@@ -205,14 +205,14 @@ Maak een Active Directory-Tenant beheerder.
    ![De pagina configuratie voltooid](./media/apache-domain-joined-create-configure-enterprise-security-cluster/hdinsight-image-0078.png)
 
 1. Nadat de synchronisatie is voltooid, controleert u of de gebruikers die u hebt gemaakt in de map IaaS, worden gesynchroniseerd met Azure AD.
-   1. Meld u aan bij de Azure-portal.
+   1. Meld u aan bij Azure Portal.
    1. Selecteer **Azure Active Directory**  >  **HDIFabrikam**-  >  **gebruikers**.
 
 ### <a name="create-a-user-assigned-managed-identity"></a>Een door de gebruiker toegewezen beheerde identiteit maken
 
 Maak een door de gebruiker toegewezen beheerde identiteit die u kunt gebruiken om Azure AD Domain Services (Azure AD DS) te configureren. Zie een [rol maken, weer geven, verwijderen of toewijzen aan een door de gebruiker toegewezen beheerde identiteit met behulp van de Azure Portal](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md)voor meer informatie.
 
-1. Meld u aan bij de Azure-portal.
+1. Meld u aan bij Azure Portal.
 1. Selecteer **een resource maken** en type `managed identity` . Selecteer door de **gebruiker toegewezen beheerde identiteit**  >  **maken**.
 1. Voer in voor de **resource naam** `HDIFabrikamManagedIdentity` .
 1. Selecteer uw abonnement.
@@ -244,7 +244,7 @@ Volg deze stappen om Azure AD DS in te scha kelen. Zie [Azure AD DS inschakelen 
     $virtualNetwork | Set-AzVirtualNetwork
     ```
 
-1. Meld u aan bij de Azure-portal.
+1. Meld u aan bij Azure Portal.
 1. Selecteer **resource maken**, invoeren `Domain services` en selecteer **Azure AD Domain Services**  >  **maken**.
 1. Op de pagina **basis beginselen** :
     1. Selecteer bij **mapnaam** de Azure AD-map die u hebt gemaakt: **HDIFabrikam**.
@@ -355,7 +355,7 @@ Controleer of het certificaat is geïnstalleerd in het **persoonlijke** archief 
         | Protocol | Elk |
         | Actie | Toestaan |
         | Prioriteit | \<Desired number> |
-        | Naam | Port_LDAP_636 |
+        | Name | Port_LDAP_636 |
 
     ![Het dialoog venster "binnenkomende beveiligings regel toevoegen"](./media/apache-domain-joined-create-configure-enterprise-security-cluster/add-inbound-security-rule.png)
 

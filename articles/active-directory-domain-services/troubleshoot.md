@@ -12,10 +12,10 @@ ms.topic: troubleshooting
 ms.date: 07/06/2020
 ms.author: justinha
 ms.openlocfilehash: 89b04f86d41f8e4828580f70a9aec8acea3e0053
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96618447"
 ---
 # <a name="common-errors-and-troubleshooting-steps-for-azure-active-directory-domain-services"></a>Veelvoorkomende fouten en stappen voor probleem oplossing voor Azure Active Directory Domain Services
@@ -58,7 +58,7 @@ Deze fout wordt veroorzaakt door naam conflicten voor de domein naam in het virt
 Controleer of er een toepassing met de naam *Azure AD Domain Services synchronisatie* in uw Azure AD-adres lijst is. Als deze toepassing bestaat, verwijdert u deze en probeert u Azure AD DS in te scha kelen. Voer de volgende stappen uit om een bestaande toepassing te controleren en deze indien nodig te verwijderen:
 
 1. Selecteer in de Azure Portal **Azure Active Directory** in het navigatie menu aan de linkerkant.
-1. Selecteer **bedrijfs toepassingen**. Kies *alle toepassingen* in de vervolg keuzelijst **toepassings type** en selecteer vervolgens **Toep assen**.
+1. Selecteer **Enterprise-toepassingen**. Kies *alle toepassingen* in de vervolg keuzelijst **toepassings type** en selecteer vervolgens **Toep assen**.
 1. Voer *Azure AD Domain Services Sync* in het zoekvak in. Als de toepassing bestaat, selecteert u deze en kiest u **verwijderen**.
 1. Nadat u de toepassing hebt verwijderd, probeert u Azure AD DS opnieuw in te scha kelen.
 
@@ -119,7 +119,7 @@ Controleer of u een toepassing hebt uitgeschakeld met de id *00000002-0000-0000-
 Voer de volgende stappen uit om de status van deze toepassing te controleren en zo nodig in te scha kelen:
 
 1. Selecteer in de Azure Portal **Azure Active Directory** in het navigatie menu aan de linkerkant.
-1. Selecteer **bedrijfs toepassingen**. Kies *alle toepassingen* in de vervolg keuzelijst **toepassings type** en selecteer vervolgens **Toep assen**.
+1. Selecteer **Enterprise-toepassingen**. Kies *alle toepassingen* in de vervolg keuzelijst **toepassings type** en selecteer vervolgens **Toep assen**.
 1. Voer *00000002-0000-0000-C000-00000000000* in het zoekvak in. Selecteer de toepassing en kies vervolgens **Eigenschappen**.
 1. Als u deze optie **inschakelt voor gebruikers die zich willen aanmelden** *, stelt u de* waarde in op *Ja* en selecteert u **Opslaan**.
 1. Nadat u de toepassing hebt ingeschakeld, probeert u Azure AD DS opnieuw in te scha kelen.

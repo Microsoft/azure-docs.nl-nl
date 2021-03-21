@@ -8,10 +8,10 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.openlocfilehash: d47a26b46fad1ab8238f9fa7a1183aad20530ef5
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100363930"
 ---
 # <a name="azure-data-factory---functions-and-system-variables"></a>Azure Data Factory-functies en systeem variabelen
@@ -22,7 +22,7 @@ Dit artikel bevat informatie over functies en variabelen die door Azure Data Fac
 
 ## <a name="data-factory-system-variables"></a>Data Factory systeem variabelen
 
-| Naam variabele | Description | Object bereik | JSON-bereik en use cases |
+| Naam variabele | Beschrijving | Object bereik | JSON-bereik en use cases |
 | --- | --- | --- | --- |
 | WindowStart |Begin van tijds interval voor het venster huidige activiteit uitvoeren |activiteit |<ol><li>Geef query's voor gegevens selectie op. Zie connector artikelen waarnaar wordt verwezen in het artikel [activiteiten voor gegevens verplaatsing](data-factory-data-movement-activities.md) .</li> |
 | WindowEnd |Einde van het tijds interval voor het venster huidige activiteit uitvoeren |activiteit |hetzelfde als WindowStart. |
@@ -72,7 +72,7 @@ Zie het onderwerp [aangepaste datum-en tijd notatie reeksen](/dotnet/standard/ba
 ### <a name="functions"></a>Functions
 De volgende tabellen geven een lijst van alle functies in Azure Data Factory:
 
-| Categorie | Functie | Parameters | Description |
+| Categorie | Functie | Parameters | Beschrijving |
 | --- | --- | --- | --- |
 | Tijd |AddHours (X, Y) |X: DateTime <br/><br/>Y: int |Voegt Y-uren toe aan de opgegeven tijd X. <br/><br/>Voorbeeld: `9/5/2013 12:00:00 PM + 2 hours = 9/5/2013 2:00:00 PM` |
 | Tijd |AddMinutes (X, Y) |X: DateTime <br/><br/>Y: int |Voegt Y minuten toe aan X.<br/><br/>Voorbeeld: `9/15/2013 12: 00:00 PM + 15 minutes = 9/15/2013 12: 15:00 PM` |

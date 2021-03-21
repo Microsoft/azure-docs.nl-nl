@@ -4,12 +4,12 @@ ms.service: app-service
 ms.topic: include
 ms.date: 09/18/2019
 ms.author: cephalin
-ms.openlocfilehash: 7458f6868d7fbee72b55ad002148691a113c269d
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.openlocfilehash: 922a34bd1a147d407041d2945b14df18a18d7287
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97531834"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104761162"
 ---
 Wanneer u de configuratie kloont vanuit een andere implementatie site, kan de gekloonde configuratie bewerkbaar zijn. Sommige configuratie-elementen volgen de inhoud in een wissel (niet sleuf specifiek), terwijl andere configuratie-elementen zich in dezelfde sleuf bevinden na een wissel (sleuf specifiek). In de volgende lijsten ziet u de instellingen die veranderen wanneer u sleuven verwisselt.
 
@@ -39,6 +39,7 @@ Functies die zijn gemarkeerd met een sterretje (*) zijn gepland om ongewisseld t
 * Diagnostische instellingen
 * CORS (Cross-Origin Resource Sharing, cross-origin-resource delen)
 * Integratie van virtueel netwerk
+* Paden toewijzen
 
 > [!NOTE]
 > Als u deze instellingen wilt verwisselen, voegt u de app-instelling `WEBSITE_OVERRIDE_PRESERVE_DEFAULT_STICKY_SLOT_SETTINGS` in elke sleuf van de app toe en stelt u de waarde in op `0` of `false` . Deze instellingen zijn allemaal verwisselbaar of helemaal niet. U kunt niet alleen enkele instellingen wisselen en niet de andere wijzigen.

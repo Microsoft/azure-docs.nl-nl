@@ -12,18 +12,24 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
-ms.date: 12/04/2020
+ms.date: 03/11/2021
 ms.author: b-juche
-ms.openlocfilehash: b40bbd6c470302b78b78744307805021a3649376
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 84213832e59c50c85d9731ced39bbce6264df47e
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100571036"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104590905"
 ---
 # <a name="whats-new-in-azure-netapp-files"></a>Wat is er nieuw in Azure NetApp Files
 
 Azure NetApp Files wordt regelmatig bijgewerkt. In dit artikel wordt een overzicht gegeven van de nieuwste functies en verbeteringen. 
+
+## <a name="march-2021"></a>2021 maart 
+
+* [Automatisch wijzigen van het formaat van een replicatie doel volume voor meerdere regio's](azure-netapp-files-resize-capacity-pools-or-volumes.md#resize-a-cross-region-replication-destination-volume)
+
+    In een replicatie relatie tussen regio's wordt een doel volume automatisch aangepast op basis van de grootte van het bron volume. U hoeft dus niet afzonderlijk het formaat van het doel volume te wijzigen. Dit gedrag bij het automatisch aanpassen van het formaat is van toepassing wanneer de volumes zich in een actieve replicatie relatie bevinden of wanneer replicatie peering is verbroken met de hersynchronisatie-bewerking. Deze functie werkt alleen als u voldoende ruimte hebt in de capaciteits groepen voor zowel de bron-als de doel volumes.
 
 ## <a name="december-2020"></a>December 2020
 

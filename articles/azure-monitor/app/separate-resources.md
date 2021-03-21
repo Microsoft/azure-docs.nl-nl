@@ -4,10 +4,10 @@ description: Telemetrie omleiden naar verschillende bronnen voor ontwikkelings-,
 ms.topic: conceptual
 ms.date: 05/11/2020
 ms.openlocfilehash: 9a60981e692a45dd3630073300b206289cfd2a30
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102424662"
 ---
 # <a name="how-many-application-insights-resources-should-i-deploy"></a>Hoeveel Application Insights resources moeten worden geïmplementeerd
@@ -46,7 +46,7 @@ Elke Application Insights resource wordt geleverd met metrische gegevens die bes
 
 Om het eenvoudiger te maken om de iKey te wijzigen naarmate de code tussen stadia van de productie verloopt, kunt u de sleutel dynamisch in code raadplegen in plaats van een hardcoded/static-waarde.
 
-Stel de sleutel in een initialisatie methode in, zoals global.aspx.cs in een ASP.NET-service:
+Stel de sleutel in een initialisatie methode in, zoals Global. aspx. cs in een ASP.NET-service:
 
 ```csharp
 protected void Application_Start()
@@ -123,7 +123,7 @@ Er zijn verschillende methoden voor het instellen van de eigenschap toepassings 
 
     Het build-label bevat een tijdelijke aanduiding (AutoGen_...) wanneer u met Visual Studio bouwt. Maar wanneer het is gebouwd met MSBuild, wordt het ingevuld met het juiste versie nummer.
 
-    Als u wilt toestaan dat MSBuild versie nummers genereert, stelt u de versie `1.0.*` in op AssemblyReference.cs
+    Als u wilt toestaan dat MSBuild versie nummers genereert, stelt u de versie als volgt `1.0.*` in AssemblyReference. cs in
 
 ## <a name="version-and-release-tracking"></a>Versie en release bijhouden
 Als u de toepassingsversie wilt bijhouden, zorgt u ervoor dat `buildinfo.config` wordt gegenereerd door het Microsoft Build Engine-proces. Voeg het `.csproj` volgende toe aan het bestand:  

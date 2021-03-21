@@ -3,14 +3,14 @@ title: Waarschuwingen maken voor Azure Automation Updatebeheer
 description: In dit artikel leest u hoe u Azure-waarschuwingen kunt configureren om een melding te ontvangen over de status van update-evaluaties of implementaties.
 services: automation
 ms.subservice: update-management
-ms.date: 10/19/2020
+ms.date: 03/15/2021
 ms.topic: conceptual
-ms.openlocfilehash: 74207fe088034ff8d102fb2254d8ab78a6d57671
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 224a7b5457a099fd763ac657349fc5497824ab76
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100579696"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104601410"
 ---
 # <a name="how-to-create-alerts-for-update-management"></a>Waarschuwingen voor Updatebeheer maken
 
@@ -38,51 +38,37 @@ Volg de onderstaande stappen om waarschuwingen in te stellen om u de status van 
 
 1. Selecteer in uw Automation-account **waarschuwingen** onder **bewaking** en selecteer **nieuwe waarschuwings regel**.
 
-2. Op de pagina **waarschuwings regel maken** is uw Automation-account al geselecteerd als de resource. Als u deze wilt wijzigen, selecteert u **Resource bewerken**.
+1. Op de pagina **waarschuwings regel maken** is uw Automation-account al geselecteerd als de resource. Als u deze wilt wijzigen, selecteert u **Resource bewerken**.
 
-3. Kies op de pagina een resource selecteren de optie **Automation-accounts** in de vervolg keuzelijst **filteren op resource type** .
+1. Kies op de pagina een resource selecteren de optie **Automation-accounts** in de vervolg keuzelijst **filteren op resource type** .
 
-4. Selecteer het Automation-account dat u wilt gebruiken en selecteer vervolgens **gereed**.
+1. Selecteer het Automation-account dat u wilt gebruiken en selecteer vervolgens **gereed**.
 
-5. Selecteer voor **waarde toevoegen** om het signaal te kiezen dat geschikt is voor uw vereiste.
+1. Selecteer voor **waarde toevoegen** om het signaal te kiezen dat geschikt is voor uw vereiste.
 
-6. Selecteer een geldige waarde in de lijst voor een dimensie. Als de gewenste waarde niet voor komt in de lijst, selecteert u **\+** naast de dimensie en typt u de aangepaste naam. Selecteer vervolgens de waarde waarnaar u wilt zoeken. Als u alle waarden voor een dimensie wilt selecteren, selecteert u de **knop \* selecteren** . Als u geen waarde voor een dimensie kiest, wordt die dimensie door Updatebeheer genegeerd.
+1. Selecteer een geldige waarde in de lijst voor een dimensie. Als de gewenste waarde niet voor komt in de lijst, selecteert u **\+** naast de dimensie en typt u de aangepaste naam. Selecteer vervolgens de waarde waarnaar u wilt zoeken. Als u alle waarden voor een dimensie wilt selecteren, selecteert u de **knop \* selecteren** . Als u geen waarde voor een dimensie kiest, wordt die dimensie door Updatebeheer genegeerd.
 
     ![Signaallogica configureren](./media/manage-updates-for-vm/signal-logic.png)
 
-7. Voer onder **waarschuwings logica** waarden in de velden **tijd aggregatie** en **drempel waarde** in en selecteer vervolgens **gereed**.
+1. Voer onder **waarschuwings logica** waarden in de velden **tijd aggregatie** en **drempel waarde** in en selecteer vervolgens **gereed**.
 
-8. Voer op de volgende pagina een naam en een beschrijving in voor de waarschuwing.
+1. Voer op de volgende pagina een naam en een beschrijving in voor de waarschuwing.
 
-9. Stel het veld **Ernst** in op **Informational (Ernst 2)** voor een geslaagde uitvoering of **informatie (Ernst 1)** voor een mislukte uitvoering.
+1. Stel het veld **Ernst** in op **Informational (Ernst 2)** voor een geslaagde uitvoering of **informatie (Ernst 1)** voor een mislukte uitvoering.
 
     ![Scherm afbeelding toont de sectie waarschuwings Details definiëren met de velden naam, beschrijving en ernst van de waarschuwings regel.](./media/manage-updates-for-vm/define-alert-details.png)
 
-10. Selecteer **Ja** om de waarschuwings regel in te scha kelen.
+1. Selecteer **Ja** om de waarschuwings regel in te scha kelen.
 
 ## <a name="configure-action-groups-for-your-alerts"></a>Actie groepen voor uw waarschuwingen configureren
 
 Zodra u uw waarschuwingen hebt geconfigureerd, kunt u een actie groep instellen. Dit is een groep acties die in meerdere waarschuwingen moet worden gebruikt. De acties kunnen e-mail meldingen, runbooks, webhooks en nog veel meer zijn. Raadpleeg [Actiegroepen maken en beheren](../../azure-monitor/alerts/action-groups.md) voor meer informatie over actiegroepen.
 
-1. Selecteer een waarschuwing en selecteer vervolgens **nieuwe maken** onder **actie groepen**.
+1. Selecteer een waarschuwing en selecteer vervolgens **actie groepen** onder **acties** toevoegen. Hiermee wordt het deel venster **een actie groep selecteren om aan deze waarschuwings regel te koppelen** weer gegeven.
 
-2. Voer een volledige naam en een korte naam in voor de actie groep. Updatebeheer maakt gebruik van de korte naam wanneer u meldingen verzendt met de opgegeven groep.
+   :::image type="content" source="./media/manage-updates-for-vm/select-an-action-group.png" alt-text="Gebruik en geschatte kosten.":::
 
-3. Voer onder **acties** een naam in waarmee de actie wordt opgegeven, bijvoorbeeld **e-mail melding**.
-
-4. Voor **actie type** selecteert u het juiste type, bijvoorbeeld **e-mail/SMS/push/Voice**.
-
-5. Selecteer **Details bewerken**.
-
-6. Vul het deel venster in voor uw actie type. Als u bijvoorbeeld **e-mail/SMS/push/Voice** gebruikt, voert u een actie naam in, selecteert u het selectie vakje **e-mail** , voert u een geldig e-mail adres in en selecteert u **OK**.
-
-    ![Een e-mailactiegroep configureren](./media/manage-updates-for-vm/configure-email-action-group.png)
-
-7. Selecteer OK in het deelvenster **Actiegroep toevoegen**.
-
-8. Voor een waarschuwings-e-mail kunt u het onderwerp van de e-mail aanpassen. Selecteer **acties aanpassen** onder **regel maken** en selecteer vervolgens **e-mail onderwerp**.
-
-9. Wanneer u klaar bent, selecteert u **Waarschuwingsregel maken**.
+1. Schakel het selectie vakje in voor de actie groep die u wilt koppelen en druk op selecteren.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 11/24/2020
 ms.openlocfilehash: bdf71276d59dec9a19e29ae7f49cb92a0512c05a
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100364236"
 ---
 # <a name="copy-data-to-and-from-azure-databricks-delta-lake-by-using-azure-data-factory"></a>Gegevens kopiëren van en naar Azure Databricks Delta Lake met behulp van Azure Data Factory
@@ -77,11 +77,11 @@ De volgende eigenschappen worden ondersteund voor een aan Azure Databricks Delta
 
 | Eigenschap    | Beschrijving                                                  | Vereist |
 | :---------- | :----------------------------------------------------------- | :------- |
-| type        | De eigenschap type moet worden ingesteld op **AzureDatabricksDeltaLake**. | Yes      |
+| type        | De eigenschap type moet worden ingesteld op **AzureDatabricksDeltaLake**. | Ja      |
 | domein      | Geef de URL van de Azure Databricks werk ruimte op, bijvoorbeeld `https://adb-xxxxxxxxx.xx.azuredatabricks.net` . |          |
 | clusterId   | Geef de cluster-ID op van een bestaand cluster. Dit moet een al gemaakt interactief cluster zijn. <br>U vindt de cluster-ID van een interactief cluster op Databricks werkruimte-> clusters-> interactieve cluster naam-> configuratie->-Tags. [Meer informatie](/azure/databricks/clusters/configure#cluster-tags). |          |
 | accessToken | Er is een toegangs token vereist om Data Factory te verifiëren bij Azure Databricks. Het toegangs token moet worden gegenereerd op basis van de databricks-werk ruimte. Meer gedetailleerde stappen om het toegangs token te vinden, vindt u [hier](/azure/databricks/dev-tools/api/latest/authentication#generate-token). |          |
-| connectVia  | De [Integration runtime](concepts-integration-runtime.md) die wordt gebruikt om verbinding te maken met het gegevens archief. U kunt de Azure Integration runtime of een zelf-hostende Integration runtime gebruiken (als uw gegevens archief zich in een particulier netwerk bevindt). Als u niets opgeeft, wordt de standaard Azure Integration runtime gebruikt. | No       |
+| connectVia  | De [Integration runtime](concepts-integration-runtime.md) die wordt gebruikt om verbinding te maken met het gegevens archief. U kunt de Azure Integration runtime of een zelf-hostende Integration runtime gebruiken (als uw gegevens archief zich in een particulier netwerk bevindt). Als u niets opgeeft, wordt de standaard Azure Integration runtime gebruikt. | Nee       |
 
 **Voorbeeld:**
 
@@ -110,7 +110,7 @@ De volgende eigenschappen worden ondersteund voor de Azure Databricks Delta Lake
 
 | Eigenschap  | Beschrijving                                                  | Vereist                    |
 | :-------- | :----------------------------------------------------------- | :-------------------------- |
-| type      | De eigenschap type van de DataSet moet worden ingesteld op **AzureDatabricksDeltaLakeDataset**. | Yes                         |
+| type      | De eigenschap type van de DataSet moet worden ingesteld op **AzureDatabricksDeltaLakeDataset**. | Ja                         |
 | database | De naam van de data base. |Nee voor bron, ja voor Sink  |
 | tabel | De naam van de Delta tabel. |Nee voor bron, ja voor Sink  |
 
@@ -144,13 +144,13 @@ Als u gegevens wilt kopiëren uit Azure Databricks Delta Lake, worden de volgend
 
 | Eigenschap                     | Beschrijving                                                  | Vereist |
 | :--------------------------- | :----------------------------------------------------------- | :------- |
-| type                         | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op **AzureDatabricksDeltaLakeSource**. | Yes      |
-| query          | Geef de SQL-query op om gegevens te lezen. Volg het onderstaande patroon voor het besturings element tijd reizen:<br>- `SELECT * FROM events TIMESTAMP AS OF timestamp_expression`<br>- `SELECT * FROM events VERSION AS OF version` | No       |
-| exportSettings | Geavanceerde instellingen voor het ophalen van gegevens uit de Delta tabel. | No       |
+| type                         | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op **AzureDatabricksDeltaLakeSource**. | Ja      |
+| query          | Geef de SQL-query op om gegevens te lezen. Volg het onderstaande patroon voor het besturings element tijd reizen:<br>- `SELECT * FROM events TIMESTAMP AS OF timestamp_expression`<br>- `SELECT * FROM events VERSION AS OF version` | Nee       |
+| exportSettings | Geavanceerde instellingen voor het ophalen van gegevens uit de Delta tabel. | Nee       |
 | ***Onder `exportSettings` :*** |  |  |
-| type | Het type export opdracht, ingesteld op **AzureDatabricksDeltaLakeExportCommand**. | Yes |
-| Notatie | Format teer het datum type in een teken reeks met een datum notatie. Aangepaste datum notaties volgen de notaties op [DateTime-patroon](https://spark.apache.org/docs/latest/sql-ref-datetime-pattern.html). Als u niets opgeeft, wordt de standaard waarde gebruikt `yyyy-MM-dd` . | No |
-| timestampFormat | Notatie van tijds tempel type op teken reeks met een notatie van een tijds tempel. Aangepaste datum notaties volgen de notaties op [DateTime-patroon](https://spark.apache.org/docs/latest/sql-ref-datetime-pattern.html). Als u niets opgeeft, wordt de standaard waarde gebruikt `yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]` . | No |
+| type | Het type export opdracht, ingesteld op **AzureDatabricksDeltaLakeExportCommand**. | Ja |
+| Notatie | Format teer het datum type in een teken reeks met een datum notatie. Aangepaste datum notaties volgen de notaties op [DateTime-patroon](https://spark.apache.org/docs/latest/sql-ref-datetime-pattern.html). Als u niets opgeeft, wordt de standaard waarde gebruikt `yyyy-MM-dd` . | Nee |
+| timestampFormat | Notatie van tijds tempel type op teken reeks met een notatie van een tijds tempel. Aangepaste datum notaties volgen de notaties op [DateTime-patroon](https://spark.apache.org/docs/latest/sql-ref-datetime-pattern.html). Als u niets opgeeft, wordt de standaard waarde gebruikt `yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]` . | Nee |
 
 #### <a name="direct-copy-from-delta-lake"></a>Directe kopie van Delta Lake
 
@@ -258,13 +258,13 @@ Als u gegevens wilt kopiëren naar Azure Databricks Delta Lake, worden de volgen
 
 | Eigenschap      | Beschrijving                                                  | Vereist |
 | :------------ | :----------------------------------------------------------- | :------- |
-| type          | De eigenschap type van de Sink van de Kopieer activiteit is ingesteld op **AzureDatabricksDeltaLakeSink**. | Yes      |
-| preCopyScript | Geef een SQL-query op voor het uitvoeren van de Kopieer activiteit die moet worden uitgevoerd voordat gegevens worden geschreven in de Databricks-Delta tabel in elke run. U kunt deze eigenschap gebruiken om de vooraf geladen gegevens op te schonen of een afgekapte tabel of vacuüm instructie toe te voegen. | No       |
-| importSettings | Geavanceerde instellingen voor het schrijven van gegevens in de Delta tabel. | No |
+| type          | De eigenschap type van de Sink van de Kopieer activiteit is ingesteld op **AzureDatabricksDeltaLakeSink**. | Ja      |
+| preCopyScript | Geef een SQL-query op voor het uitvoeren van de Kopieer activiteit die moet worden uitgevoerd voordat gegevens worden geschreven in de Databricks-Delta tabel in elke run. U kunt deze eigenschap gebruiken om de vooraf geladen gegevens op te schonen of een afgekapte tabel of vacuüm instructie toe te voegen. | Nee       |
+| importSettings | Geavanceerde instellingen voor het schrijven van gegevens in de Delta tabel. | Nee |
 | ***Onder `importSettings` :*** |                                                              |  |
-| type | Het type van de opdracht importeren, ingesteld op **AzureDatabricksDeltaLakeImportCommand**. | Yes |
-| Notatie | Teken reeks tot datum type opmaken met een datum notatie. Aangepaste datum notaties volgen de notaties op [DateTime-patroon](https://spark.apache.org/docs/latest/sql-ref-datetime-pattern.html). Als u niets opgeeft, wordt de standaard waarde gebruikt `yyyy-MM-dd` . | No |
-| timestampFormat | Teken reeks opmaken naar tijds tempel type met een notatie van een tijds tempel. Aangepaste datum notaties volgen de notaties op [DateTime-patroon](https://spark.apache.org/docs/latest/sql-ref-datetime-pattern.html). Als u niets opgeeft, wordt de standaard waarde gebruikt `yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]` . | No |
+| type | Het type van de opdracht importeren, ingesteld op **AzureDatabricksDeltaLakeImportCommand**. | Ja |
+| Notatie | Teken reeks tot datum type opmaken met een datum notatie. Aangepaste datum notaties volgen de notaties op [DateTime-patroon](https://spark.apache.org/docs/latest/sql-ref-datetime-pattern.html). Als u niets opgeeft, wordt de standaard waarde gebruikt `yyyy-MM-dd` . | Nee |
+| timestampFormat | Teken reeks opmaken naar tijds tempel type met een notatie van een tijds tempel. Aangepaste datum notaties volgen de notaties op [DateTime-patroon](https://spark.apache.org/docs/latest/sql-ref-datetime-pattern.html). Als u niets opgeeft, wordt de standaard waarde gebruikt `yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]` . | Nee |
 
 #### <a name="direct-copy-to-delta-lake"></a>Directe kopie naar Delta Lake
 

@@ -14,10 +14,10 @@ ms.custom: aaddev
 ms.reviewer: hirsin
 ROBOTS: NOINDEX
 ms.openlocfilehash: 803f52666fb09a836eae3294410584ebbd71a1b6
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98755883"
 ---
 # <a name="microsoft-identity-platform-authentication-protocols"></a>Verificatie protocollen voor micro soft-identiteits platform

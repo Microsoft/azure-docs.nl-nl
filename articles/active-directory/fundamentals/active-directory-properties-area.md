@@ -14,10 +14,10 @@ ms.reviewer: bpham
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f47ae9b087615a77f6bd4d3f14f1b0052037cba6
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95996748"
 ---
 # <a name="add-your-organizations-privacy-info-using-azure-active-directory"></a>De privacygegevens van uw organisatie toevoegen met behulp van Azure Active Directory
@@ -56,5 +56,5 @@ U kunt de privacygegevens van uw organisatie toevoegen in het gedeelte **Eigensc
 4. Selecteer **Opslaan**.
 
 ## <a name="next-steps"></a>Volgende stappen
-- [Inwisseling uitnodiging Azure Active Directory B2B-samen werking](../external-identities/redemption-experience.md)
+- [Uitnodigingsinwisseling voor Azure Active Directory B2B-samenwerking](../external-identities/redemption-experience.md)
 - [Profiel gegevens voor een gebruiker toevoegen of wijzigen in Azure Active Directory](active-directory-users-profile-azure-portal.md)

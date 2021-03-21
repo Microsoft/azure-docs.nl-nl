@@ -10,13 +10,13 @@ metadata:
   ms.collection: collection
   author: DCtheGeek
   ms.author: dacoulte
-  ms.date: 01/29/2021
-  ms.openlocfilehash: 9f9d2c694196b48aa4905a3783cb16609727b951
-  ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+  ms.date: 03/16/2021
+  ms.openlocfilehash: 2a4890f19eb02f4021af9a82ccbe9e385a6b320d
+  ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 02/10/2021
-  ms.locfileid: "100099129"
+  ms.lasthandoff: 03/19/2021
+  ms.locfileid: "104601003"
 highlightedContent:
   items:
   - title: Governance-overzicht
@@ -137,20 +137,8 @@ additionalContent:
         url: https://www.powershellgallery.com/packages/Az.GuestConfiguration
         note: (Gastconfiguratie)
       - text: REST
-        url: /rest/api/policy-insights/
-        note: (Policy Insights)
-      - text: REST
-        url: /rest/api/resources/policyassignments
-        note: (Toewijzingen)
-      - text: REST
-        url: /rest/api/resources/policydefinitions
-        note: (Definities)
-      - text: REST
-        url: /rest/api/resources/policyexemptions
-        note: (Uitzonderingen)
-      - text: REST
-        url: /rest/api/resources/policysetdefinitions
-        note: (Initiatieven)
+        url: /rest/api/policy/
+        note: (Beleid)
       - text: REST
         url: /rest/api/guestconfiguration/
         note: (Gastconfiguratie)

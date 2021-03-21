@@ -1,15 +1,15 @@
 ---
 title: Details van de naleving van de regelgeving voor Nieuw-Zeelandse ISM beperkt
 description: Meer informatie over het nieuwe Zeelands-Zeeland heeft het ingebouwde initiatief beperkt over de naleving van regelgeving. Elke beheeroptie wordt toegewezen aan een of meer Azure Policy-definities die helpen bij de evaluatie.
-ms.date: 03/10/2021
+ms.date: 03/17/2021
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: ca40528a6b63a27b3fe68f99d75f607f86154882
-ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
+ms.openlocfilehash: f72ca23e2c2237efcf19b629c2759a1ad5d0f879
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102635396"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104590310"
 ---
 # <a name="details-of-the-new-zealand-ism-restricted-regulatory-compliance-built-in-initiative"></a>Details van het nieuwe Zeelands-Zeeland, geïntegreerde naleving van regelgeving, ingebouwd initiatief
 
@@ -54,7 +54,7 @@ Zoek en selecteer vervolgens de ingebouwde initiatief definitie van het **nieuwe
 |[Externe accounts met eigenaarsmachtigingen moeten worden verwijderd uit uw abonnement](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ff8456c1c-aa66-4dfb-861a-25d127b775c9) |Externe accounts met eigenaarsmachtigingen moeten worden verwijderd uit uw abonnement om onbewaakte toegang te voorkomen. |AuditIfNotExists, uitgeschakeld |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_RemoveExternalAccountsWithOwnerPermissions_Audit.json) |
 |[Externe accounts met schrijfmachtigingen moeten worden verwijderd uit uw abonnement](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F5c607a2e-c700-4744-8254-d77e7c9eb5e4) |Externe accounts met schrijfmachtigingen moeten worden verwijderd uit uw abonnement om onbewaakte toegang te voorkomen. |AuditIfNotExists, uitgeschakeld |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_RemoveExternalAccountsWritePermissions_Audit.json) |
 |[Systeemupdates op virtuele-machineschaalsets moeten worden geïnstalleerd](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fc3f317a7-a95c-4547-b7e7-11017ebdf2fe) |Controleren of er systeembeveiligingsupdates of essentiële updates ontbreken die moeten worden geïnstalleerd om ervoor te zorgen dat uw virtuele-machineschaalsets voor Windows en Linux veilig zijn. |AuditIfNotExists, uitgeschakeld |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_VmssMissingSystemUpdates_Audit.json) |
-|[Systeemupdates moeten op uw computers worden geïnstalleerd](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F86b3d65f-7626-441e-b690-81a8b71cff60) |Ontbrekende beveiligingssysteemupdates op uw servers worden als aanbevelingen bewaakt door Azure Security Center |AuditIfNotExists, uitgeschakeld |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_MissingSystemUpdates_Audit.json) |
+|[Systeemupdates moeten op uw computers worden geïnstalleerd](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F86b3d65f-7626-441e-b690-81a8b71cff60) |Ontbrekende beveiligingssysteemupdates op uw servers worden als aanbevelingen bewaakt door Azure Security Center |AuditIfNotExists, uitgeschakeld |[4.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_MissingSystemUpdates_Audit.json) |
 
 ## <a name="software-security"></a>Software beveiliging
 

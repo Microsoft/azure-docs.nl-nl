@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 5/23/2018
 ms.custom: devx-track-csharp
 ms.openlocfilehash: e0c5f3ecf0334ad2190d8542e54388a2a25d30fb
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95999804"
 ---
 # <a name="containerize-your-service-fabric-reliable-services-and-reliable-actors-on-windows"></a>Uw Reliable Services en Reliable Actors van Service Fabric in Windows in een container plaatsen
@@ -24,7 +24,7 @@ In dit document vindt u informatie over het uitvoeren van uw service in een Wind
 
 1. Open uw Service Fabric-toepassing in Visual Studio.
 
-2. Voeg Class [SFBinaryLoader.cs](https://github.com/Azure/service-fabric-scripts-and-templates/blob/master/code/SFBinaryLoaderForContainers/SFBinaryLoader.cs) toe aan uw project. De code in deze klasse is een helper om de binaire bestanden van Service Fabric runtime in uw toepassing correct te laden wanneer ze binnen een container worden uitgevoerd.
+2. Voeg Class [SFBinaryLoader. cs](https://github.com/Azure/service-fabric-scripts-and-templates/blob/master/code/SFBinaryLoaderForContainers/SFBinaryLoader.cs) toe aan uw project. De code in deze klasse is een helper om de binaire bestanden van Service Fabric runtime in uw toepassing correct te laden wanneer ze binnen een container worden uitgevoerd.
 
 3. Voor elk code pakket dat u wilt container plaatsen, initialiseert u het laad programma op het toegangs punt van het programma. Voeg de statische constructor die wordt weer gegeven in het volgende code fragment toe aan het bestand van het programma-toegangs punt.
 

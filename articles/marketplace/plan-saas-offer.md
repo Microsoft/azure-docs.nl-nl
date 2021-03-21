@@ -8,16 +8,16 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 08/30/2020
-ms.openlocfilehash: 714b7bccea9b1e0c18ad78a4d98ed3526a279f5f
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: e24e1afa0116bc1f240bddef47783b06f4f800d2
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98879255"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104581300"
 ---
 # <a name="how-to-plan-a-saas-offer-for-the-commercial-marketplace"></a>Een SaaS-aanbieding plannen voor de commerciële Marketplace
 
-In dit artikel worden de verschillende opties en vereisten voor het publiceren van een SaaS-aanbieding (Software as a Service) in de micro soft Commercial Marketplace beschreven. Met SaaS-aanbiedingen kunt u software oplossingen aan uw klanten leveren en er licenties op geven via een online abonnement in plaats van lokale installatie op afzonderlijke computers. Dit artikel helpt u bij het voorbereiden van uw aanbieding voor het publiceren naar de commerciële Marketplace met het partner centrum.
+In dit artikel worden de verschillende opties en vereisten voor het publiceren van SaaS-aanbiedingen (Software as a Service) in de micro soft Commercial Marketplace beschreven. Met SaaS-aanbiedingen kunt u software oplossingen aan uw klanten leveren en er licenties op geven via online abonnementen. Als SaaS-Uitgever beheert en betaalt u voor de infra structuur die nodig is om het gebruik van uw klanten van uw aanbieding te ondersteunen. Dit artikel helpt u bij het voorbereiden van uw aanbieding voor het publiceren naar de commerciële Marketplace met het partner centrum.
 
 ## <a name="listing-options"></a>Aanbiedingsopties
 
@@ -150,7 +150,7 @@ Wanneer u [een nieuwe SaaS-aanbieding](create-new-saas-offer.md) in het partner 
 6. Privacybeleid
 7. Naam van aanbieding
 8. Samenvatting
-9. Beschrijving
+9. Description
 10. Scherm afbeeldingen/Video's
 11. Documenten
 
@@ -202,7 +202,7 @@ Om uw aanbieding gemakkelijker te maken, moet u enkele van deze items vooraf voo
   - PNG-bestand
   - Moet een bijschrift bevatten
 - **Media-Video's** (optioneel): u kunt Maxi maal vier Video's toevoegen aan de volgende vereisten, die uw aanbod demonstreren:
-  - Naam
+  - Name
   - URL: moet alleen worden gehost op YouTube of Vimeo.
   - Miniatuur: 1280 x 720. png-bestand
 

@@ -7,17 +7,17 @@ ms.date: 02/11/2020
 ms.topic: reference
 ms.custom: references_regions
 ms.openlocfilehash: 1b20f7134f1b39853a78ee5b709e732ccf35acac
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96571110"
 ---
 # <a name="regions"></a>Regio's
 
 Op deze pagina worden de momenteel beschik bare regio's weer gegeven voor gebruik met de externe rendering van Azure. Gebruik altijd de regio die het dichtst bij uw fysieke locatie ligt voor de beste resultaten.
 
-| Naam | Regio | URL |
+| Name | Region | URL |
 |-----------|:-----------|:-----------|
 | Australië - oost | australiaeast | `https://remoterendering.australiaeast.mixedreality.azure.com` |
 | VS - oost | eastus | `https://remoterendering.eastus.mixedreality.azure.com` |

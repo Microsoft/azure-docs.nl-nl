@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 04/08/2020
 ms.author: terrylan
 ms.openlocfilehash: e9eabc73c244526f0ea15b9c72b5377545f662b2
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94844860"
 ---
 # <a name="security-management-in-azure"></a>Beveiligingsbeheer in Azure
@@ -106,7 +106,7 @@ U kunt de toegang tot de infrastructuur en het beheer van platformservices in Az
 ### <a name="management-gateway"></a>Beheergateway
 Als u alle beheerderstoegang wilt centraliseren en controle en logboekregistratie wilt vereenvoudigen, kunt u in uw on-premises netwerk een speciale [Extern bureaublad-gateway](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560672(v=ws.10))-server implementeren, die is verbonden met uw Azure-omgeving.
 
-Een Extern bureaublad-gateway is een op beleid gebaseerde RDP-proxyservice die beveiligingsvereisten afdwingt. Door een Extern bureaublad-gateway samen met netwerktoegangsbeveiliging (NAP) voor Windows-servers te implementeren, zorgt u ervoor dat alleen clients die voldoen aan de specifieke criteria voor beveiligingsstatus, tot stand gebracht met groepsbeleidsobjecten (GPO's) van Active Directory Domain Services (AD DS), verbinding kunnen maken. Daarnaast doet u het volgende:
+Een Extern bureaublad-gateway is een op beleid gebaseerde RDP-proxyservice die beveiligingsvereisten afdwingt. Door een Extern bureaublad-gateway samen met netwerktoegangsbeveiliging (NAP) voor Windows-servers te implementeren, zorgt u ervoor dat alleen clients die voldoen aan de specifieke criteria voor beveiligingsstatus, tot stand gebracht met groepsbeleidsobjecten (GPO's) van Active Directory Domain Services (AD DS), verbinding kunnen maken. Daarnaast:
 
 * Richt een [Azure-beheercertificaat](/previous-versions/azure/gg551722(v=azure.100)) in op de Extern bureaublad-gateway, zodat deze de enige toegestane host is voor toegang tot Azure Portal.
 * Maak de Extern bureaublad-gateway lid van hetzelfde [beheerdomein](/previous-versions/windows/it-pro/windows-2000-server/bb727085(v=technet.10)) als de werkstations van de beheerders. Dit is nodig als u een IPsec-VPN tussen sites of een ExpressRoute gebruikt binnen een domein met een eenzijdige vertrouwensrelatie naar Azure AD, of als u referenties tussen uw on-premises exemplaar van AD DS en Azure AD federeert.

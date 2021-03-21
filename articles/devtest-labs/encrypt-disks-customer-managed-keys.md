@@ -4,10 +4,10 @@ description: Meer informatie over het versleutelen van besturings systeem schijv
 ms.topic: article
 ms.date: 09/01/2020
 ms.openlocfilehash: 26ef4ff1529483da9956c6dcc43807af0ffd6463
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96341204"
 ---
 # <a name="encrypt-operating-system-os-disks-using-customer-managed-keys-in-azure-devtest-labs"></a>Besturings systemen (OS)-schijven versleutelen met door de klant beheerde sleutels in Azure DevTest Labs
@@ -47,7 +47,7 @@ In de volgende sectie ziet u hoe een Lab-eigenaar versleuteling kan instellen me
     1. Selecteer **Opslaan** op de werkbalk. 
 
         :::image type="content" source="./media/encrypt-disks-customer-managed-keys/save-role-assignment.png" alt-text="Roltoewijzing opslaan":::
-3. Voeg de **systeemtoegewezen identiteit** van het test systeem toe aan de rol van **Inzender voor virtuele machines** met behulp van de **Subscription**  ->  **iam-pagina (Subscription Access Control)** . De stappen zijn vergelijkbaar met die in de vorige stappen. 
+3. Voeg de **systeemtoegewezen identiteit** van het test systeem toe aan de rol van **Inzender voor virtuele machines** met behulp van de   ->  **iam-pagina (Subscription Access Control)** . De stappen zijn vergelijkbaar met die in de vorige stappen. 
 
     
     1. Navigeer naar de pagina **abonnement** in het Azure Portal. 

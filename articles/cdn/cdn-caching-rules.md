@@ -14,10 +14,10 @@ ms.topic: how-to
 ms.date: 03/19/2019
 ms.author: allensu
 ms.openlocfilehash: a5f4f6a6e72b57638688069111071a6e0a035c49
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96018661"
 ---
 # <a name="control-azure-cdn-caching-behavior-with-caching-rules"></a>Cachinggedrag in Azure CDN beheren met regels voor opslaan in cache
@@ -86,7 +86,7 @@ Globale en aangepaste regels voor opslaan in cache worden in de volgende volg or
 
 - Aangepaste regels voor opslaan in cache hebben voor rang op algemene regels voor caching, waar ze van toepassing zijn. Aangepaste regels voor opslaan in cache worden van boven naar beneden verwerkt. Als een aanvraag overeenkomt met beide voor waarden, hebben regels onder aan de lijst voor rang boven de regels boven aan de lijst. Daarom moet u meer specifieke regels in de lijst plaatsen.
 
-**Voor beeld**:
+**Voorbeeld**:
 - Algemene regel voor opslaan in cache: 
    - Cache gedrag: **overschrijven**
    - Verloop tijd van cache: 1 dag

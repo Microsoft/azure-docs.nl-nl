@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: how-to
 ms.date: 3/18/2020
 ms.openlocfilehash: 032db324f9dd2f0d6a5dce5c4fd5c64342fed59f
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94540481"
 ---
 # <a name="create-and-manage-azure-database-for-mysql-firewall-rules-by-using-the-azure-portal"></a>Azure Database for MySQL firewall regels maken en beheren met behulp van de Azure Portal
@@ -50,7 +50,7 @@ Azure-verbindingen moeten zijn ingeschakeld om toepassingen van Azure toe te sta
 ## <a name="manage-existing-server-level-firewall-rules-by-using-the-azure-portal"></a>Bestaande firewall regels op server niveau beheren met behulp van de Azure Portal
 Herhaal de stappen voor het beheren van de firewall regels.
 * Als u de huidige computer wilt toevoegen, klikt u op **+ Mijn IP toevoegen**. Klik op **Opslaan** om de wijzigingen op te slaan.
-* Als u extra IP-adressen wilt toevoegen, typt u de naam van de **regel** , het **eerste IP-** adres en het **laatste IP-** adres. Klik op **Opslaan** om de wijzigingen op te slaan.
+* Als u extra IP-adressen wilt toevoegen, typt u de naam van de **regel**, het **eerste IP-** adres en het **laatste IP-** adres. Klik op **Opslaan** om de wijzigingen op te slaan.
 * Als u een bestaande regel wilt wijzigen, klikt u op een van de velden in de regel en wijzigt u vervolgens. Klik op **Opslaan** om de wijzigingen op te slaan.
 * Als u een bestaande regel wilt verwijderen, klikt u op het weglatings teken [...] en klikt u vervolgens op **verwijderen**. Klik op **Opslaan** om de wijzigingen op te slaan.
 

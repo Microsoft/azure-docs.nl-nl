@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 02/18/2021
 ms.author: yuajia
 ms.openlocfilehash: bb10fb337972db2696960b530f2d7538bd36a2fb
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101098847"
 ---
 # <a name="real-time-monitoring-in-azure-front-door-standardpremium"></a>Real-time bewaking in azure front deur Standard/Premium
@@ -35,7 +35,7 @@ U kunt waarschuwingen voor elke metriek configureren, zoals een drempel waarde v
 
 ## <a name="metrics-supported-in-azure-front-door-standardpremium"></a>Metrische gegevens die worden ondersteund in de voor deur standaard/Premium van Azure
 
-| Metrische gegevens  | Description | Dimensies |
+| Metrische gegevens  | Beschrijving | Dimensies |
 | ------------- | ------------- | ------------- |
 | Percentage treffers in cache | Het percentage van de uitvoer van de AFD-cache, berekend op basis van het totale aantal uitgangen. </br> **Verhouding van byte-treffers** = (uitgang van de rand van de oorsprong)/egress vanaf de rand. </br> **Scenario's die zijn uitgesloten voor de berekening van de verhouding treffers in bytes**:</br> 1. u kunt geen cache expliciet configureren door middel van regel Engine of cache gedrag van query reeks. </br> 2. u kunt de instructie cache-Control expliciet configureren met No-Store of private cache. </br>3. de verhouding van de byte treffer kan laag zijn als het meeste verkeer wordt doorgestuurd naar de oorsprong in plaats van dat de gegevens in de cache worden verwerkt op basis van uw configuraties of scenario's. | Eindpunt |
 | RequestCount | Het aantal client aanvragen dat door CDN wordt geleverd. | Eind punt, client land, client regio, HTTP-status, HTTP-status groep |

@@ -1,5 +1,5 @@
 ---
-title: Schaalbaarheids-en prestatie doelen voor Queue Storage
+title: Schaalbaarheids- en prestatiedoelen voor Queue Storage
 titleSuffix: Azure Storage
 description: Meer informatie over de schaalbaarheids-en prestatie doelen voor Queue Storage.
 author: tamram
@@ -10,13 +10,13 @@ ms.topic: conceptual
 ms.service: storage
 ms.subservice: queues
 ms.openlocfilehash: c8567943033647c785e633e185d4662a5a9fa847
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97588247"
 ---
-# <a name="scalability-and-performance-targets-for-queue-storage"></a>Schaalbaarheids-en prestatie doelen voor Queue Storage
+# <a name="scalability-and-performance-targets-for-queue-storage"></a>Schaalbaarheids- en prestatiedoelen voor Queue Storage
 
 [!INCLUDE [storage-scalability-intro-include](../../../includes/storage-scalability-intro-include.md)]
 
@@ -26,7 +26,7 @@ ms.locfileid: "97588247"
 
 ## <a name="see-also"></a>Zie ook
 
-- [Controle lijst voor prestaties en schaal baarheid voor Queue Storage](storage-performance-checklist.md)
+- [Controlelijst voor prestaties en schaalbaarheid van Queue Storage](storage-performance-checklist.md)
 - [Schaalbaarheids doelen voor standaard opslag accounts](../common/scalability-targets-standard-account.md)
 - [Schaalbaarheids doelen voor de resource provider van Azure Storage](../common/scalability-targets-resource-provider.md)
 - [Limieten en quota voor Azure-abonnementen](../../azure-resource-manager/management/azure-subscription-service-limits.md)

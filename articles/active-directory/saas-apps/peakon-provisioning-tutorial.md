@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 06/28/2019
 ms.author: zhchia
 ms.openlocfilehash: c04bbd5459690262b484582e807569b965a0439b
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96349885"
 ---
 # <a name="tutorial-configure-peakon-for-automatic-user-provisioning"></a>Zelfstudie: Peakon configureren voor automatische gebruikersinrichting

@@ -10,10 +10,10 @@ ms.date: 05/20/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
 ms.openlocfilehash: d24ae1f42c685589309506b2d5e0eab157b2bc42
-ms.sourcegitcommit: 5e2f5efba1957ba40bd951c3dcad42f4a00734ff
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96299612"
 ---
 # <a name="use-file-metadata-in-serverless-sql-pool-queries"></a>Meta gegevens van een bestand in serverloze SQL-pool query's gebruiken
@@ -28,7 +28,7 @@ U kunt de functie gebruiken `filepath` en `filename` bestands namen en/of het pa
 
 De eerste stap bestaat uit het **maken van een Data Base** met een gegevens bron die verwijst naar het opslag account. Initialiseer vervolgens de objecten door een [installatiescript](https://github.com/Azure-Samples/Synapse/blob/master/SQL/Samples/LdwSample/SampleDB.sql) uit te voeren op die database. Met dit installatie script worden de gegevens bronnen, referenties voor het data base-bereik en externe bestands indelingen gemaakt die in deze voor beelden worden gebruikt.
 
-## <a name="functions"></a>Functies
+## <a name="functions"></a>Functions
 
 ### <a name="filename"></a>Bestands
 

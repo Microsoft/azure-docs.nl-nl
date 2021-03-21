@@ -6,10 +6,10 @@ ms.subservice: ''
 ms.date: 04/16/2019
 ms.topic: troubleshooting
 ms.openlocfilehash: e6caf3fed708e89b55a88719ca5358f6174c2ac8
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98896525"
 ---
 # <a name="troubleshoot-azure-automation-state-configuration-issues"></a>Configuratie problemen met Azure Automation status oplossen
@@ -107,7 +107,7 @@ VM has reported a failure when processing extension 'Microsoft.Powershell.DSC / 
 
 Dit probleem wordt veroorzaakt door een onjuist of verlopen certificaat. Zie [een knoop punt opnieuw registreren](../automation-dsc-onboarding.md#re-register-a-node).
 
-Dit probleem kan ook worden veroorzaakt door een proxy configuratie waarmee geen toegang tot **_. Azure-Automation.net_* wordt toegestaan. Zie [configuratie van particuliere netwerken](../automation-dsc-overview.md#network-planning)voor meer informatie. 
+Dit probleem kan ook worden veroorzaakt door een proxy configuratie waarmee geen toegang tot ***. Azure-Automation.net** wordt toegestaan. Zie [configuratie van particuliere netwerken](../automation-dsc-overview.md#network-planning)voor meer informatie. 
 
 ### <a name="resolution"></a>Oplossing
 

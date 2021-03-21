@@ -5,10 +5,10 @@ ms.date: 06/25/2019
 ms.service: cognitive-services
 ms.topic: include
 ms.openlocfilehash: 2bfb700ac5c220b780c05c8d415a4506c7a2f871
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96001155"
 ---
 Met de instellingen wordt de `Logging` ondersteuning voor ASP.net core logboek registratie voor uw container beheerd. U kunt dezelfde configuratie-instellingen en-waarden gebruiken voor uw container die u gebruikt voor een ASP.NET Core-toepassing. 
@@ -18,7 +18,7 @@ De volgende logboek registratie providers worden ondersteund door de container:
 |Provider|Doel|
 |--|--|
 |[Console](/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#console-provider)|De provider van ASP.NET Core `Console` logboek registratie. Alle ASP.NET Core configuratie-instellingen en standaard waarden voor deze logboek registratie provider worden ondersteund.|
-|[Fout opsporing](/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#debug-provider)|De provider van ASP.NET Core `Debug` logboek registratie. Alle ASP.NET Core configuratie-instellingen en standaard waarden voor deze logboek registratie provider worden ondersteund.|
+|[Fouten opsporen](/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#debug-provider)|De provider van ASP.NET Core `Debug` logboek registratie. Alle ASP.NET Core configuratie-instellingen en standaard waarden voor deze logboek registratie provider worden ondersteund.|
 |[Schijf](#disk-logging)|De JSON-logboek registratie provider. Deze logboek registratie provider schrijft logboek gegevens naar de uitvoer koppeling.|
 
 Met deze container opdracht worden logboek gegevens in de JSON-indeling opgeslagen in de uitvoer koppeling:

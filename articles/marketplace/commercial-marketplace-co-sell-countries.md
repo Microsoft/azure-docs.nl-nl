@@ -8,10 +8,10 @@ author: palanis-MSFT
 ms.author: palanis
 ms.date: 08/27/2019
 ms.openlocfilehash: af110a66bc7ef5737f3d2d97a85ca07525b1d9e7
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96744700"
 ---
 # <a name="co-sell-country-and-region-codes"></a>Land- en regiocodes voor collectieve verkoop
@@ -67,7 +67,7 @@ Als een contact persoon meer dan één land/regio omvat, voert u elk van de twee
 | Cabo Verde                          | CV        |
 | Cambodja                            | KH        |
 | Kameroen                            | CM        |
-| Canada                              | CA        |
+| Canada                              | CA (consistentie en beschikbaarheid)        |
 | Kaaimaneilanden                      | KY        |
 | Centraal-Afrikaanse Republiek            | CF        |
 | Tsjaad                                | TD        |
@@ -123,7 +123,7 @@ Als een contact persoon meer dan één land/regio omvat, voert u elk van de twee
 | Guinee-Bissau                       | GW        |
 | Guyana                              | GY        |
 | Haïti                               | HT        |
-| Heard Island en McDonald eilanden   | HM        |
+| Heard- en McDonald-eilanden   | HM        |
 | Honduras                            | HN        |
 | Hongkong SAR                       | HK        |
 | Hongarije                             | HU        |
@@ -210,7 +210,7 @@ Als een contact persoon meer dan één land/regio omvat, voert u elk van de twee
 | Roemenië                             | RO        |
 | Rusland                              | RU        |
 | Rwanda                              | RW        |
-| Saint--Barthélemy                    | BL        |
+| Saint Barthélemy                    | BL        |
 | Saint Kitts en Nevis               | KN        |
 | Saint Lucia                         | KREDIET        |
 | Saint-Martin                        | V        |
@@ -231,14 +231,14 @@ Als een contact persoon meer dan één land/regio omvat, voert u elk van de twee
 | Salomonseilanden                     | SB        |
 | Somalië                             | SO        |
 | Zuid-Afrika                        | ZA        |
-| Zuid-Georgië en de zuidelijke Sandwich eilanden | GS    |
+| Zuid-Georgië en de Zuidelijke Sandwicheilanden | GS    |
 | Zuid-Soedan                         | SS        |
 | Spanje                               | ES        |
 | Sri Lanka                           | LK        |
 | Sint-Helena, Ascension en Tristan da Cunha | SH     |
 | Soedan                               | SD        |
 | Suriname                            | SR        |
-| Jan                            | SJ        |
+| Svalbard                            | SJ        |
 | Zweden                              | SE        |
 | Zwitserland                         | CH        |
 | Syrië                               | SY        |
@@ -249,7 +249,7 @@ Als een contact persoon meer dan één land/regio omvat, voert u elk van de twee
 | Timor-Leste                         | TL        |
 | Togo                                | TG        |
 | Tokelau                             | TK        |
-| Tonga                               | Aan        |
+| Tonga                               | TO        |
 | Trinidad en Tobago                 | TT        |
 | Tunesië                             | TN        |
 | Turkije                              | TR        |
@@ -262,7 +262,7 @@ Als een contact persoon meer dan één land/regio omvat, voert u elk van de twee
 | Verenigd Koninkrijk                      | GB        |
 | Verenigde Staten                       | VS        |
 | Uruguay                             | UY        |
-|  Kleine afgelegen eilanden van de Verenigde Staten               | UM        |
+| Amerikaanse ondergeschikte afgelegen eilanden               | UM        |
 | Amerikaanse Maagden eilanden                 | VI        |
 | Oezbekistan                          | UZ        |
 | Vanuatu                             | VU        |

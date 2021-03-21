@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 09/18/2019
 ms.author: Zhchia
 ms.openlocfilehash: c1bab9b40766fe22baa94497d71d3f8757e1c210
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96348769"
 ---
 # <a name="tutorial-configure-airstack-for-automatic-user-provisioning"></a>Zelfstudie: Airstack configureren voor automatische gebruikersinrichting
@@ -103,7 +103,7 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 3. Selecteer het tabblad **Inrichten**.
 
-    ![Schermopname van de opties onder Beheren, met de optie Inrichten gemarkeerd.](common/provisioning.png)
+    ![Schermopname van de opties onder Beheren met de optie Inrichten gemarkeerd.](common/provisioning.png)
 
 4. Stel de **Inrichtingsmodus** in op **Automatisch**.
 

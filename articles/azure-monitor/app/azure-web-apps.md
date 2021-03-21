@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 08/06/2020
 ms.custom: devx-track-js, devx-track-dotnet
 ms.openlocfilehash: 7661066bc2666070c8b3ed9263b1223c09d6c720
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101734720"
 ---
 # <a name="monitor-azure-app-service-performance"></a>Azure App Service-prestaties bewaken
@@ -395,7 +395,7 @@ De onderstaande tabel bevat een gedetailleerdere uitleg van de betekenis van dez
 |Probleem waarde|Uitleg|Herstellen
 |---- |----|---|
 | `AppAlreadyInstrumented:true` | Deze waarde geeft aan dat de uitbrei ding heeft gedetecteerd dat er al een aspect van de SDK aanwezig is in de toepassing en dat deze wordt teruggedraaid. Dit kan worden veroorzaakt door een verwijzing naar `System.Diagnostics.DiagnosticSource` ,  `Microsoft.AspNet.TelemetryCorrelation` of `Microsoft.ApplicationInsights`  | Verwijder de verwijzingen. Sommige van deze verwijzingen worden standaard toegevoegd vanuit bepaalde Visual Studio-sjablonen, en oudere versies van Visual Studio kunnen verwijzingen toevoegen aan `Microsoft.ApplicationInsights` .
-|`AppAlreadyInstrumented:true` | Als de toepassing is gericht op ASP.NET Core 2,1 of 2,2, geeft deze waarde aan dat de uitbrei ding heeft gedetecteerd dat een bepaald aspect van de SDK al aanwezig is in de toepassing en wordt er een back-up | Klanten op .NET Core 2.1 2.2 worden [Aanbevolen](https://github.com/aspnet/Announcements/issues/287) het meta-pakket micro soft. AspNetCore. app te gebruiken. Schakel daarnaast ' interop met Application Insights SDK ' in de portal in (Zie de bovenstaande instructies).|
+|`AppAlreadyInstrumented:true` | Als de toepassing is gericht op ASP.NET Core 2,1 of 2,2, geeft deze waarde aan dat de uitbrei ding heeft gedetecteerd dat een bepaald aspect van de SDK al aanwezig is in de toepassing en wordt er een back-up | Klanten op .NET Core 2.1, 2.2 worden in plaats daarvan [aanbevolen](https://github.com/aspnet/Announcements/issues/287) Microsoft.AspNetCore.app-meta pakket te gebruiken. Schakel daarnaast ' interop met Application Insights SDK ' in de portal in (Zie de bovenstaande instructies).|
 |`AppAlreadyInstrumented:true` | Deze waarde kan ook worden veroorzaakt door de aanwezigheid van de bovenstaande dll-bestanden in de app-map van een vorige implementatie. | Reinig de app-map om er zeker van te zijn dat deze DLL-bestanden worden verwijderd. Controleer de bin-map van uw lokale app en de map Wwwroot op het App Service. (Ga als volgt te werk om de map wwwroot van uw App Service web-app te controleren: Advanced tools (kudu) > debug console > CMD > home\site\wwwroot).
 |`AppContainsAspNetTelemetryCorrelationAssembly: true` | Deze waarde geeft aan dat de uitbrei ding verwijzingen naar `Microsoft.AspNet.TelemetryCorrelation` in de toepassing heeft gedetecteerd en dat deze wordt teruggedraaid. | Verwijder de verwijzing.
 |`AppContainsDiagnosticSourceAssembly**:true`|Deze waarde geeft aan dat de uitbrei ding verwijzingen naar `System.Diagnostics.DiagnosticSource` in de toepassing heeft gedetecteerd en dat deze wordt teruggedraaid.| Verwijder de verwijzing voor ASP.NET. 
@@ -428,7 +428,7 @@ Application Insights verzamelt telemetrie voor de aanvragen die aan de toepassin
 
 De duur van de `serverresponsetime` berekende Application Insights is niet noodzakelijkerwijs gelijk aan de reactie tijd van de server die wordt waargenomen door Web apps. Dit komt omdat Application Insights alleen de duur telt wanneer de aanvraag werkelijk de gebruikers toepassing bereikt. Als de aanvraag is vastgelopen in IIS, wordt de wacht tijd opgenomen in de metrische gegevens van de web-app, maar niet in Application Insights metrische gegevens.
 
-## <a name="release-notes"></a>Releaseopmerkingen
+## <a name="release-notes"></a>Opmerkingen bij de release
 
 [Raadpleeg de opmerkingen bij de release](./web-app-extension-release-notes.md)voor de nieuwste updates en oplossingen voor problemen.
 

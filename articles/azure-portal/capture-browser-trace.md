@@ -4,10 +4,10 @@ description: Leg netwerk gegevens vast van een browser tracering om problemen me
 ms.date: 05/11/2020
 ms.topic: troubleshooting
 ms.openlocfilehash: 504a32fb63022f97e8049c7c1ccc7721bbac31ab
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96745992"
 ---
 # <a name="capture-a-browser-trace-for-troubleshooting"></a>Een browsertracering vastleggen om problemen op te lossen
@@ -18,7 +18,7 @@ Als u een probleem met de Azure Portal oplost en u contact moet opnemen met micr
 
 Google Chrome en micro soft Edge (chroom) zijn beide gebaseerd op het [open-source-project](https://www.chromium.org/Home)van Chrome. De volgende stappen laten zien hoe u de hulpprogram ma's voor ontwikkel aars gebruikt, die vergelijkbaar zijn in de twee browsers. Zie [Chrome devtools](https://developers.google.com/web/tools/chrome-devtools) en [micro soft Edge (chroom) Ontwikkelhulpprogramma's](/microsoft-edge/devtools-guide-chromium)voor meer informatie.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Het is belang rijk dat u zich aanmeldt _voordat_ u de tracering start, zodat de tracering geen gevoelige informatie bevat met betrekking tot uw aanmelding. 
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). Het is belang rijk dat u zich aanmeldt _voordat_ u de tracering start, zodat de tracering geen gevoelige informatie bevat met betrekking tot uw aanmelding. 
 
 1. Begin met het vastleggen van de stappen die u in de portal uitvoert, met behulp van de [stappen beschrijving](https://support.microsoft.com/help/22878/windows-10-record-steps).
 
@@ -64,7 +64,7 @@ Google Chrome en micro soft Edge (chroom) zijn beide gebaseerd op het [open-sour
 
 De volgende stappen laten zien hoe u de hulpprogram ma's voor ontwikkel aars in micro soft Edge (EdgeHTML) gebruikt. Zie [micro soft Edge (EdgeHTML) Ontwikkelhulpprogramma's](/microsoft-edge/devtools-guide)voor meer informatie.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Het is belang rijk dat u zich aanmeldt _voordat_ u de tracering start, zodat de tracering geen gevoelige informatie bevat met betrekking tot uw aanmelding. 
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). Het is belang rijk dat u zich aanmeldt _voordat_ u de tracering start, zodat de tracering geen gevoelige informatie bevat met betrekking tot uw aanmelding. 
 
 1. Begin met het vastleggen van de stappen die u in de portal uitvoert, met behulp van de [stappen beschrijving](https://support.microsoft.com/help/22878/windows-10-record-steps).
 
@@ -120,7 +120,7 @@ De volgende stappen laten zien hoe u de hulpprogram ma's voor ontwikkel aars in 
 
         ![Scherm opname van geavanceerde voor keuren voor Safari](media/capture-browser-trace/safari-show-develop-menu.png)
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Het is belang rijk dat u zich aanmeldt _voordat_ u de tracering start, zodat de tracering geen gevoelige informatie bevat met betrekking tot uw aanmelding. 
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). Het is belang rijk dat u zich aanmeldt _voordat_ u de tracering start, zodat de tracering geen gevoelige informatie bevat met betrekking tot uw aanmelding. 
 
 1. Begin met het vastleggen van de stappen die u in de portal uitvoert. Zie [het scherm op uw Mac vastleggen](https://support.apple.com/HT208721)voor meer informatie.
 
@@ -164,7 +164,7 @@ De volgende stappen laten zien hoe u de hulpprogram ma's voor ontwikkel aars in 
 
 De volgende stappen laten zien hoe u de hulpprogram ma's voor ontwikkel aars in Firefox kunt gebruiken. Zie [Firefox Ontwikkelhulpprogramma's](https://developer.mozilla.org/docs/Tools)voor meer informatie.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Het is belang rijk dat u zich aanmeldt _voordat_ u de tracering start, zodat de tracering geen gevoelige informatie bevat met betrekking tot uw aanmelding. 
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). Het is belang rijk dat u zich aanmeldt _voordat_ u de tracering start, zodat de tracering geen gevoelige informatie bevat met betrekking tot uw aanmelding. 
 
 1. Begin met het vastleggen van de stappen die u in de portal uitvoert. Gebruik [stappen](https://support.microsoft.com/help/22878/windows-10-record-steps) opnemen in Windows of Zie [hoe u het scherm op uw Mac vastlegt](https://support.apple.com/HT208721).
 

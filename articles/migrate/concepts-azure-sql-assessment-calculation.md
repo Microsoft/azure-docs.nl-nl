@@ -6,10 +6,10 @@ ms.author: rajosh
 ms.topic: conceptual
 ms.date: 02/07/2021
 ms.openlocfilehash: d1ea328575cf07a22ce39549c34d5cd21e916427
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102054587"
 ---
 # <a name="assessment-overview-migrate-to-azure-sql"></a>Overzicht van evaluatie (migreren naar Azure SQL)
@@ -17,7 +17,7 @@ ms.locfileid: "102054587"
 In dit artikel vindt u een overzicht van de evaluaties voor het migreren van on-premises SQL Server exemplaren van een VMware-omgeving naar Azure SQL-data bases of beheerde exemplaren met behulp van het [hulp programma Azure migrate: detectie en evaluatie](https://docs.microsoft.com/azure/migrate/migrate-services-overview#azure-migrate-server-assessment-tool).
 
 > [!Note]
-> Detectie en evaluatie van SQL Server instanties en data bases die worden uitgevoerd in uw VMware-omgeving is nu beschikbaar als preview-versie. Gebruik [**deze koppeling**](https://aka.ms/AzureMigrate/SQL) om een project te maken in **Australië-Oost** regio om deze functie uit te proberen. Als u al een project in Australië-oost hebt en u deze functie wilt uitproberen, moet u ervoor zorgen dat u deze [**vereisten**](how-to-discover-sql-existing-project.md) hebt voltooid op de portal.
+> Detectie en evaluatie van SQL Server instanties en data bases die worden uitgevoerd in uw VMware-omgeving is nu beschikbaar als preview-versie. Als u deze functie wilt proberen, gebruikt u [**deze koppeling**](https://aka.ms/AzureMigrate/SQL) om een project te maken in de regio **Australië - oost**. Als u al een project in Australië-oost hebt en u deze functie wilt proberen, zorgt u ervoor dat u aan deze [**vereisten**](how-to-discover-sql-existing-project.md) voldoet in de portal.
 
 ## <a name="whats-an-assessment"></a>Wat is een evaluatie?
 Een evaluatie met het hulp programma detectie en evaluatie is een moment opname van gegevens en meet de gereedheid en schat het effect van het migreren van on-premises servers naar Azure.
@@ -93,7 +93,7 @@ Dit is what's opgenomen in de Azure SQL Assessment-eigenschappen:
 ## <a name="calculate-readiness"></a>Gereedheid berekenen
 
 > [!NOTE]
-> De evaluatie bevat alleen data bases met de status online. Als de data base zich in een andere status bevindt, negeert de evaluatie de gereedheid, grootte en kosten berekening voor dergelijke data bases. Als u dergelijke data bases wilt beoordelen, wijzigt u de status van de data base en berekent u de evaluatie op een later tijdstip opnieuw.
+> De evaluatie bevat alleen data bases met de status online. Als de database zich in een andere status bevindt, worden de gereedheid, grootte en kostenberekening voor dergelijke databases genegeerd in de evaluatie. Als u dergelijke databases wilt evalueren, wijzigt u de status van de database, en berekent u de evaluatie op een later tijdstip opnieuw.
 
 ### <a name="azure-sql-readiness"></a>Gereedheid voor Azure SQL
 
@@ -127,7 +127,7 @@ Als u het type doel implementatie selecteert zoals **Aanbevolen** in de Azure SQ
 Als het SQL-exemplaar niet gereed is voor Azure SQL Database en Azure SQL Managed instance, wordt het aanbevolen implementatie type gemarkeerd als *mogelijk gereed voor Azure VM*.
 - De gebruiker wordt aanbevolen een evaluatie te maken in Azure Migrate met het evaluatie type ' Azure VM ' om te bepalen of de server waarop het exemplaar wordt uitgevoerd, gereed is om te migreren naar een virtuele Azure-machine. Opmerking:
     - Azure VM-evaluaties in Azure Migrate zijn momenteel liften en verschuivingen en worden geen rekening gehouden met de specifieke prestatie gegevens voor het uitvoeren van SQL-exemplaren en-data bases op de virtuele machine van Azure. 
-    - Wanneer u een Azure VM-evaluatie uitvoert op een server, worden de aanbevolen grootte en kosten ramingen gebruikt voor alle exemplaren die op de server worden uitgevoerd en kunnen worden gemigreerd naar een Azure VM met behulp van het hulp programma voor server migratie. Voordat u migreert, [raadpleegt u de richt lijnen voor prestaties](https://docs.microsoft.com/azure/azure-sql/virtual-machines/windows/performance-guidelines-best-practices) voor SQL Server op virtuele machines van Azure.
+    - Wanneer u een Azure VM-evaluatie uitvoert op een server, gelden de aanbevolen grootte en kostenramingen voor alle exemplaren die op de server worden uitgevoerd, en kunnen worden gemigreerd naar een Azure VM via het hulpprogramma voor servermigratie. Voordat u migreert, [raadpleegt u de richtlijnen voor prestaties](https://docs.microsoft.com/azure/azure-sql/virtual-machines/windows/performance-guidelines-best-practices) voor SQL Server op virtuele Azure-machines.
 
 
 ## <a name="calculate-sizing"></a>Grootte berekenen
@@ -172,11 +172,11 @@ Deze tabel bevat de beoordelings betrouwbaarheids classificaties die afhankelijk
 #### <a name="low-confidence-ratings"></a>Classificaties met lage betrouw baarheid
 Hier volgen enkele redenen waarom een evaluatie een lage betrouwbaarheids classificatie kan krijgen:
 - U hebt uw omgeving niet in het profiel voor de duur waarvoor u de evaluatie maakt. Als u bijvoorbeeld de beoordeling met de prestatie duur hebt ingesteld op één dag, moet u ten minste één dag wachten nadat u de detectie hebt gestart voor alle gegevens punten die u wilt verzamelen.
-- De evaluatie kan de prestatie gegevens voor sommige of alle servers in de evaluatie periode niet verzamelen. Voor een hoge betrouwbaarheids classificatie moet u het volgende doen:
+- Bij de evaluatie kunnen de prestatiegegevens voor sommige of alle servers in de evaluatieperiode niet worden verzameld. Voor een hoge betrouwbaarheids classificatie moet u het volgende doen:
     - Servers zijn ingeschakeld voor de duur van de evaluatie
     - Uitgaande verbindingen op poort 443 zijn toegestaan
     - Als Azure Migrate verbindings status van de SQL-Agent in Azure Migrate is verbonden en de laatste heartbeat controleren 
-    - Als Azure Migrate verbindings status voor alle SQL-exemplaren ' verbonden ' is op de Blade gedetecteerde SQL-instantie
+    - Of de Azure Migrate-verbindingsstatus voor alle SQL-exemplaren op de blade voor het gedetecteerde SQL-exemplaar, is: Verbonden
 
     Bereken de evaluatie opnieuw om de meest recente wijzigingen in de betrouwbaarheidsclassificatie weer te geven.
 - Sommige data bases of exemplaren zijn gemaakt tijdens de periode waarin de evaluatie is berekend. Stel dat u een evaluatie hebt gemaakt voor de prestatie geschiedenis van de afgelopen maand, maar dat sommige data bases of exemplaren slechts een week geleden zijn gemaakt. In dit geval zijn de prestatie gegevens voor de nieuwe servers niet beschikbaar voor de hele duur en is de betrouwbaarheids classificatie laag.

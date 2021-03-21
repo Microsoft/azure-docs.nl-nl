@@ -8,10 +8,10 @@ ms.topic: troubleshooting
 ms.date: 05/01/2020
 ms.custom: seodec18
 ms.openlocfilehash: 2d7171c9ec1e60447fb3342caa72098fb2eb9337
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98019904"
 ---
 # <a name="troubleshoot-input-connections"></a>Problemen met invoerverbindingen oplossen
@@ -44,7 +44,7 @@ Resource logboeken inschakelen om de details van de fout en het bericht (Payload
 
 ![Waarschuwings melding over invoer gegevens](media/stream-analytics-malformed-events/warning-message-with-offset.png)
 
-Als de nettolading van het bericht groter is dan 32 KB of een binaire indeling heeft, voert u de CheckMalformedEvents.cs-code uit die beschikbaar is in de GitHub-voor [beelden-opslag plaats](https://github.com/Azure/azure-stream-analytics/tree/master/Samples/CheckMalformedEventsEH). Deze code leest de partitie-ID, offset en drukt de gegevens af die zich in die offset bevinden. 
+Als de nettolading van het bericht groter is dan 32 KB of een binaire indeling heeft, voert u de CheckMalformedEvents. cs-code uit die beschikbaar is in de GitHub-voor [beelden-opslag plaats](https://github.com/Azure/azure-stream-analytics/tree/master/Samples/CheckMalformedEventsEH). Deze code leest de partitie-ID, offset en drukt de gegevens af die zich in die offset bevinden. 
 
 ## <a name="job-exceeds-maximum-event-hub-receivers"></a>De taak overschrijdt de maximum aantal ontvangers van Event hub
 
@@ -164,7 +164,7 @@ SELECT foo FROM DataTwo
 
 Stream Analytics-taken gebruiken het ingebouwde [Event hub-compatibele eind punt](../iot-hub/iot-hub-devguide-messages-read-builtin.md) van IOT hub om verbinding te maken en gebeurtenissen van IOT hub te lezen. Als uw Lees bewerking per partitie de limieten van IoT Hub overschrijdt, kunt u de [oplossingen voor Event hub](#readers-per-partition-exceeds-event-hubs-limit) gebruiken om deze op te lossen. U kunt een Consumer groep maken voor het ingebouwde eind punt via IoT Hub Portal-eindpunt sessie of via de [IOT hub SDK](/rest/api/iothub/IotHubResource/CreateEventHubConsumerGroup).
 
-## <a name="get-help"></a>Help opvragen
+## <a name="get-help"></a>Hulp vragen
 
 Probeer voor meer hulp onze [micro soft Q&een vraag pagina voor Azure stream Analytics](/answers/topics/azure-stream-analytics.html).
 

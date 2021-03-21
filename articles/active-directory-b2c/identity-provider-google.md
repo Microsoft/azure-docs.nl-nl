@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/15/2021
+ms.date: 03/17/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 433e44e9998376d0bea57264f3daeaff7499a3cf
-ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.openlocfilehash: 7d5786c4188db63efc3012e565071f8fd410b92f
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103488836"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104579957"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-google-account-using-azure-active-directory-b2c"></a>Registratie instellen en aanmelden met een Google-account met behulp van Azure Active Directory B2C
 
@@ -67,6 +67,9 @@ Voer een **Naam** in voor de toepassing. Voer *b2clogin.com* in het gedeelte **g
 1. Selecteer **Opslaan**.
 
 ## <a name="add-google-identity-provider-to-a-user-flow"></a>Google ID-provider toevoegen aan een gebruikers stroom 
+
+Op dit moment is de Google ID-provider ingesteld, maar is deze nog niet beschikbaar op de aanmeldings pagina's. De Google ID-provider toevoegen aan een gebruikers stroom:
+
 
 1. Selecteer in uw Azure AD B2C-Tenant **gebruikers stromen**.
 1. Klik op de gebruikers stroom die u wilt toevoegen aan de Google ID-provider.

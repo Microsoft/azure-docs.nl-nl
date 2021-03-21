@@ -9,10 +9,10 @@ ms.author: govindk
 ms.reviewer: sngun
 ms.custom: references_regions
 ms.openlocfilehash: d1dc108ecec93dddeb768eb61af425ba67f23002
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100393136"
 ---
 # <a name="continuous-backup-with-point-in-time-restore-preview-feature-in-azure-cosmos-db"></a>Doorlopende back-up met een functie voor herstel naar een bepaald tijdstip in Azure Cosmos DB
@@ -37,21 +37,21 @@ Het beschik bare tijd venster voor herstel (ook wel de Bewaar periode genoemd) i
 
 In de open bare preview kunt u het Azure Cosmos DB-account voor de SQL-API of het MongoDB-inhouds punt in de tijd herstellen naar een ander account met behulp van [Azure Portal](continuous-backup-restore-portal.md), de [Azure-opdracht regel interface](continuous-backup-restore-command-line.md) (az CLI), [Azure PowerShell](continuous-backup-restore-powershell.md)of de [Azure Resource Manager](continuous-backup-restore-template.md).
 
-## <a name="what-is-restored"></a>Wat wordt hersteld?
+## <a name="what-is-restored"></a>Wat wordt er hersteld?
 
 Bij een constante status worden alle mutaties die zijn uitgevoerd op het bron account (inclusief data bases, containers en items) asynchroon van een back-up binnen 100 seconden gemaakt. Als de back-upmedia (die Azure Storage is) niet actief of niet beschikbaar is, worden de mutaties lokaal bewaard totdat de media weer beschikbaar zijn. vervolgens worden ze verwijderd om verlies van de betrouw baarheid van bewerkingen te voor komen dat kan worden hersteld.
 
-U kunt ervoor kiezen om een combi natie van ingerichte doorvoer containers, een gedeelde doorvoer database of het hele account te herstellen. Met de actie VorigFormaat worden alle gegevens en de index eigenschappen van een nieuw account hersteld. Het herstel proces zorgt ervoor dat alle gegevens die in een account, data base of container zijn teruggezet, gegarandeerd consistent zijn met de opgegeven herstel tijd. De duur van het terugzetten is afhankelijk van de hoeveelheid gegevens die moet worden hersteld.
+U kunt ervoor kiezen om een combinatie van ingerichte doorvoercontainers, een gedeelde doorvoer database of het hele account te herstellen. Met de herstelactie worden alle gegevens en de bijbehorende indexeigenschappen in een nieuw account hersteld. Het herstelproces zorgt ervoor dat alle gegevens die in een account, database of container zijn teruggezet, gegarandeerd consistent zijn met de opgegeven hersteltijd. De duur van het terugzetten is afhankelijk van de hoeveelheid gegevens die moet worden hersteld.
 
 > [!NOTE]
 > Met de continue back-upmodus worden de back-ups gemaakt in elke regio waar uw Azure Cosmos DB-account beschikbaar is. Back-ups die zijn gemaakt voor elk regio account zijn lokaal redundant, standaard en zone redundant als uw account de functie [beschikbaarheids zone](high-availability.md#availability-zone-support) heeft ingeschakeld voor die regio. Met de herstel actie worden gegevens altijd teruggezet naar een nieuw account.
 
-## <a name="what-is-not-restored"></a>Wat wordt niet hersteld?
+## <a name="what-is-not-restored"></a>Wat wordt er niet hersteld?
 
 De volgende configuraties worden niet hersteld na het herstel naar een bepaald tijdstip:
 
 * Instellingen voor de firewall, het VNET, het persoonlijke eind punt.
-* Consistentie-instellingen. Het account wordt standaard teruggezet met sessie consistentie.  
+* Consistentie-instellingen. Het account wordt standaard hersteld met sessieconsistentie.  
 * Secties.
 * Opgeslagen procedures, triggers, Udf's.
 
@@ -104,7 +104,7 @@ Als u bijvoorbeeld 1 TB aan gegevens in twee regio's hebt, gaat u als volgt te w
 
 De functionaliteit van het herstel punt in tijd is momenteel beschikbaar in de open bare preview en heeft de volgende beperkingen:
 
-* Alleen Azure Cosmos DB-Api's voor SQL en MongoDB worden ondersteund voor continue back-ups. Cassandra-, Table-en Gremlin-Api's worden nog niet ondersteund.
+* Alleen Azure Cosmos DB-API's voor SQL en MongoDB worden ondersteund voor continue back-up. API's voor Cassandra, Table en Gremlin worden nog niet ondersteund.
 
 * Een bestaand account met het standaard beleid voor periodieke back-ups kan niet worden geconverteerd om de continue back-upmodus te gebruiken.
 
@@ -116,15 +116,15 @@ De functionaliteit van het herstel punt in tijd is momenteel beschikbaar in de o
 
 * Accounts waarvoor Synapse-koppeling is ingeschakeld, worden niet ondersteund.
 
-* Het herstelde account wordt gemaakt in de regio waarin uw bron account zich bevindt. U kunt een account niet herstellen in een regio waar het bron account niet bestaat.
+* Het herstelde account wordt gemaakt in dezelfde regio waarin zich uw bronaccount bevindt. U kunt geen account herstellen in een regio waar het bronaccount niet aanwezig is.
 
 * Het venster herstellen is slechts 30 dagen en kan niet worden gewijzigd.
 
-* De back-ups zijn niet automatisch geografisch nood bestendig. U moet expliciet een andere regio toevoegen voor een tolerantie voor het account en de back-up.
+* De back-ups zijn niet automatisch bestand tegen geografische noodgevallen. U moet expliciet een andere regio toevoegen zodat het account en de back-up tolerant zijn.
 
 * Wanneer een herstel bewerking wordt uitgevoerd, wijzigt of verwijdert u niet de beleids regels voor identiteits-en toegangs beheer (IAM) die de machtigingen verlenen voor het account of het wijzigen van een VNET, firewall configuratie.
 
-* Azure Cosmos DB-API voor SQL-of MongoDB-accounts die een unieke index maken nadat de container is gemaakt, worden niet ondersteund voor continue back-ups. Alleen containers die een unieke index maken als onderdeel van het maken van de eerste container worden ondersteund. Voor MongoDB-accounts maakt u een unieke index met behulp van [extensie opdrachten](mongodb-custom-commands.md).
+* Azure Cosmos DB-API voor SQL- of MongoDB-accounts die een unieke index maken nadat de container is gemaakt, worden niet ondersteund voor continue back-up. Alleen containers waarmee een unieke index worden gemaakt als onderdeel van de initiële containercreatie worden ondersteund. Voor MongoDB-accounts maakt u een unieke index met behulp van [extensie opdrachten](mongodb-custom-commands.md).
 
 * De functionaliteit voor herstel naar een bepaald tijdstip wordt altijd teruggezet naar een nieuw Azure Cosmos-account. Het herstellen naar een bestaand account wordt momenteel niet ondersteund. Als u geïnteresseerd bent in het geven van feedback over in-place herstel, neemt u contact op met het Azure Cosmos DB team via uw account vertegenwoordiger of [UserVoice](https://feedback.azure.com/forums/263030-azure-cosmos-db).
 
@@ -132,7 +132,7 @@ De functionaliteit van het herstel punt in tijd is momenteel beschikbaar in de o
 
 * Na het herstellen is het mogelijk dat voor bepaalde verzamelingen de consistente index opnieuw kan worden samengesteld. U kunt de status van de bewerking voor opnieuw opbouwen controleren via de eigenschap [IndexTransformationProgress](how-to-manage-indexing-policy.md) .
 
-* Het herstel proces herstelt alle eigenschappen van een container met inbegrip van de TTL-configuratie. Als gevolg hiervan is het mogelijk dat de herstelde gegevens onmiddellijk worden verwijderd als u die manier hebt geconfigureerd. Om deze situatie te voor komen, moet het tijds tempel van de herstel bewerking zijn voordat de TTL-eigenschappen aan de container zijn toegevoegd.
+* Met het herstelproces worden alle eigenschappen van een container hersteld, inclusief de TTL-configuratie. Als gevolg hiervan is het mogelijk dat de herstelde gegevens onmiddellijk worden verwijderd als u het op die manier hebt geconfigureerd. U kunt deze situatie voorkomen als u ervoor zorgt dat het tijdstempel van de herstelbewerking eerder is dan het moment waarop de TTL-eigenschappen aan de container worden toegevoegd.
 
 ## <a name="next-steps"></a>Volgende stappen
 

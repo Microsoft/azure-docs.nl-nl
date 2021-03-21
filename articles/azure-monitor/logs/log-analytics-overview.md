@@ -6,10 +6,10 @@ author: bwren
 ms.author: bwren
 ms.date: 10/04/2020
 ms.openlocfilehash: d83cc4045f09ed0f704a0d61c6b303406835eb44
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102052293"
 ---
 # <a name="overview-of-log-analytics-in-azure-monitor"></a>Overzicht van Log Analytics in Azure Monitor
@@ -56,7 +56,7 @@ Lijsten met tabellen in de werk ruimte, voorbeeld query's en filter opties voor 
 
 | Tabblad | Beschrijving |
 |:---|:---|
-| Tabellen | Een lijst met de tabellen die deel uitmaken van de geselecteerde scope. Selecteer **groeperen op** om de groepering van de tabellen te wijzigen. Beweeg de muis aanwijzer over een tabel naam om een dialoog venster weer te geven met een beschrijving van de tabel en opties om de bijbehorende documentatie weer te geven en om een voor beeld van de gegevens te bekijken. Een tabel uitvouwen om de kolommen ervan weer te geven. Dubbel klik op de naam van een tabel of kolom om deze aan de query toe te voegen. |
+| Tables | Een lijst met de tabellen die deel uitmaken van de geselecteerde scope. Selecteer **groeperen op** om de groepering van de tabellen te wijzigen. Beweeg de muis aanwijzer over een tabel naam om een dialoog venster weer te geven met een beschrijving van de tabel en opties om de bijbehorende documentatie weer te geven en om een voor beeld van de gegevens te bekijken. Een tabel uitvouwen om de kolommen ervan weer te geven. Dubbel klik op de naam van een tabel of kolom om deze aan de query toe te voegen. |
 | Query's | Lijst met voorbeeld query's die u in het query venster kunt openen. Dit is dezelfde lijst die wordt weer gegeven wanneer u Log Analytics opent. Selecteer **groeperen op** om de groepering van de query's te wijzigen. Dubbel klik op een query om deze toe te voegen aan het query venster of Beweeg de muis aanwijzer over andere opties. |
 | Filter | Filter opties maken op basis van de resultaten van een query. Nadat u een query hebt uitgevoerd, worden de kolommen weer gegeven met verschillende waarden uit de resultaten. Selecteer een of meer waarden en klik vervolgens op **Toep assen & uitvoeren** om een **where** -opdracht toe te voegen aan de query en deze opnieuw uit te voeren. |
 

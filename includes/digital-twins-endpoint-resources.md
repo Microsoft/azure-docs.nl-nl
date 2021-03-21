@@ -6,10 +6,10 @@ ms.topic: include
 ms.date: 1/26/2021
 ms.author: baanders
 ms.openlocfilehash: 58c90bae3dea0f3a47489ea7d8de6a79f823dcab
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99054501"
 ---
 ### <a name="prerequisite-create-endpoint-resources"></a>Voor waarde: eindpunt resources maken
@@ -22,4 +22,4 @@ Gebruik de volgende tabel om te zien welke resources moeten worden ingesteld voo
 | --- | --- |
 | Event Grid-eind punt | [Event grid-onderwerp](../articles/event-grid/custom-event-quickstart-portal.md#create-a-custom-topic) |
 | Event Hubs-eind punt | [Event &nbsp; hubs- &nbsp; naam ruimte](../articles/event-hubs/event-hubs-create.md)<br/><br/>[Event Hub](../articles/event-hubs/event-hubs-create.md)<br/><br/>Beschrijving [autorisatie regel](../articles/event-hubs/authorize-access-shared-access-signature.md) voor verificatie op basis van een sleutel | 
-| Service Bus-eind punt | [Service Bus naam ruimte](../articles/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal.md)<br/><br/>[Service Bus-onderwerp](../articles/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal.md)<br/><br/> Beschrijving [autorisatie regel](../articles/service-bus-messaging/service-bus-authentication-and-authorization.md#shared-access-signature) voor verificatie op basis van een sleutel|
+| Service Bus-eind punt | [Service Bus naam ruimte](../articles/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal.md)<br/><br/>[Service Bus onderwerp](../articles/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal.md)<br/><br/> Beschrijving [autorisatie regel](../articles/service-bus-messaging/service-bus-authentication-and-authorization.md#shared-access-signature) voor verificatie op basis van een sleutel|

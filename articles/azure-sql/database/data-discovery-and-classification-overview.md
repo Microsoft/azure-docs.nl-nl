@@ -14,16 +14,16 @@ ms.reviewer: vanto
 ms.date: 02/17/2021
 tags: azure-synapse
 ms.openlocfilehash: f47303a953dbb06b4c9efdfbbae41715cad81d2a
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101690801"
 ---
 # <a name="data-discovery--classification"></a>Gegevensdetectie en -classificatie
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
 
-Gegevens detectie & classificatie is ingebouwd in Azure SQL Database, Azure SQL Managed instance en Azure Synapse Analytics. Het biedt eenvoudige mogelijkheden voor het detecteren, classificeren, labelen en rapporteren van gevoelige gegevens in uw data bases.
+Gegevensdetectie en -classificatie is ingebouwd in Azure SQL Database, Azure SQL Managed Instance en Azure Synapse Analytics. De functie biedt basismogelijkheden voor het detecteren, classificeren, labelen en rapporteren van gevoelige gegevens in uw database.
 
 Uw meest gevoelige gegevens kunnen bedrijfs-, financiële, gezondheids zorg of persoonlijke informatie bevatten. Het detecteren en classificeren van deze gegevens kan een draai functie spelen in de aanpak van de gegevens beveiliging van uw organisatie. Dit kan dienen als infrastructuur om:
 
@@ -188,7 +188,7 @@ U kunt de REST API gebruiken om classificaties en aanbevelingen programmatisch t
 ## <a name="faq---advanced-classification-capabilities"></a>Veelgestelde vragen-geavanceerde classificatie mogelijkheden
 
 **Vraag**: zal [Azure controle sfeer liggen](../../purview/overview.md) de sql-gegevens detectie & classificatie vervangen of zal de classificatie van sql-gegevens detectie & binnenkort worden ingetrokken?
-**Antwoord**: we blijven de classificatie van SQL-gegevens detectie & ondersteunen en moedigen u aan [Azure controle sfeer liggen](../../purview/overview.md) te nemen met uitgebreide mogelijkheden om geavanceerde classificatie mogelijkheden en data governance te stimuleren. Als we besluiten een service, functie, API of SKU buiten gebruik te stellen, ontvangt u een aankondiging met een migratie of een overgangs traject. Meer informatie over het micro soft Lifecycle-beleid vindt u hier.
+**Antwoord**: we blijven de classificatie van SQL-gegevens detectie & ondersteunen en moedigen u aan [Azure controle sfeer liggen](../../purview/overview.md) te nemen met uitgebreide mogelijkheden om geavanceerde classificatie mogelijkheden en data governance te stimuleren. Als we besluiten een service, functie, API of SKU buiten gebruik te stellen, ontvangt u vooraf een aankondiging met een migratie- of overgangstraject. Meer informatie over het beleid van Microsoft ten aanzien van de levenscyclus van producten vindt u hier.
 
 
 ## <a name="next-steps"></a><a id="next-steps"></a>Volgende stappen

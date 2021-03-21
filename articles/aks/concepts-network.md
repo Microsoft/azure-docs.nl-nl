@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 06/11/2020
 ms.custom: fasttrack-edit
 ms.openlocfilehash: edb195fae2e05a1f746c10482576f7e0b1bff7c9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88243901"
 ---
 # <a name="network-concepts-for-applications-in-azure-kubernetes-service-aks"></a>Netwerk concepten voor toepassingen in azure Kubernetes service (AKS)
@@ -18,7 +18,7 @@ In een op containers gebaseerde micro Services-aanpak voor toepassings ontwikkel
 In dit artikel worden de belangrijkste concepten geïntroduceerd voor het bieden van netwerken aan uw toepassingen in AKS:
 
 - [Services](#services)
-- [Virtuele netwerken van Azure.](#azure-virtual-networks)
+- [Virtuele netwerken van Azure](#azure-virtual-networks)
 - [Toegangsbeheerobjectcontrollers](#ingress-controllers)
 - [Netwerk beleid](#network-policies)
 
@@ -63,7 +63,7 @@ In AKS kunt u een cluster implementeren dat gebruikmaakt van een van de volgende
 
 ### <a name="kubenet-basic-networking"></a>Kubenet (Basic)-netwerken
 
-De *kubenet* -netwerk optie is de standaard configuratie voor het maken van AKS-clusters. Met *kubenet*krijgen knoop punten een IP-adres uit het subnet van het virtuele Azure-netwerk. Pods krijgen een IP-adres van een logisch verschillende adresruimte van het subnet van het virtuele Azure-netwerk van de knooppunten. NAT (Network Address Translation) wordt vervolgens zo geconfigureerd dat de pods resources kunnen bereiken in het virtuele Azure-netwerk. Het bron-IP-adres van het verkeer is NAT naar het primaire IP-adres van het knoop punt.
+De *kubenet* -netwerk optie is de standaard configuratie voor het maken van AKS-clusters. Met *kubenet* krijgen knoop punten een IP-adres uit het subnet van het virtuele Azure-netwerk. Pods krijgen een IP-adres van een logisch verschillende adresruimte van het subnet van het virtuele Azure-netwerk van de knooppunten. NAT (Network Address Translation) wordt vervolgens zo geconfigureerd dat de pods resources kunnen bereiken in het virtuele Azure-netwerk. Het bron-IP-adres van het verkeer is NAT naar het primaire IP-adres van het knoop punt.
 
 Knoop punten gebruiken de [kubenet][kubenet] Kubernetes-invoeg toepassing. U kunt het Azure-platform de virtuele netwerken voor u laten maken en configureren, of uw AKS-cluster implementeren in een bestaand subnet van een virtueel netwerk. Opnieuw, alleen de knoop punten ontvangen een routeerbaar IP-adres en de peulen gebruiken NAT om te communiceren met andere bronnen buiten het AKS-cluster. Met deze methode wordt het aantal IP-adressen dat u in uw netwerk ruimte moet reserveren, aanzienlijk verminderd voor gebruik.
 
@@ -135,7 +135,7 @@ Met de invoeg toepassing Application Gateway ingangs controller (AGIC) kunnen AK
 
 Een andere algemene functie van inkomend verkeer is SSL/TLS-beëindiging. Bij grote webtoepassingen die via HTTPS worden geopend, kan de TLS-beëindiging worden verwerkt door de ingangs bron in plaats van in de toepassing zelf. Als u het genereren en configureren van TLS-certificering wilt bieden, kunt u de bron van de ingang configureren voor het gebruik van providers zoals versleutelen. Zie binnenkomend [en TLS][aks-ingress-tls]voor meer informatie over het configureren van een NGINX ingress-controller met de code ring.
 
-U kunt ook uw ingangs controller configureren om het client bron-IP te behouden op aanvragen voor containers in uw AKS-cluster. Wanneer de aanvraag van een client wordt doorgestuurd naar een container in uw AKS-cluster via uw ingangs controller, is de oorspronkelijke bron-IP van die aanvraag niet beschikbaar voor de doel container. Wanneer u *IP-behoud van client bron*inschakelt, is het bron-IP-adres voor de client beschikbaar in de aanvraag header onder *X-doorgestuurd-voor*. Als u client bron-IP-behoud gebruikt op uw ingangs controller, kunt u geen TLS Pass-Through gebruiken. IP-behoud van client bron en TLS Pass-Through kunnen worden gebruikt in combi natie met andere services, zoals het type *Load Balancer* .
+U kunt ook uw ingangs controller configureren om het client bron-IP te behouden op aanvragen voor containers in uw AKS-cluster. Wanneer de aanvraag van een client wordt doorgestuurd naar een container in uw AKS-cluster via uw ingangs controller, is de oorspronkelijke bron-IP van die aanvraag niet beschikbaar voor de doel container. Wanneer u *IP-behoud van client bron* inschakelt, is het bron-IP-adres voor de client beschikbaar in de aanvraag header onder *X-doorgestuurd-voor*. Als u client bron-IP-behoud gebruikt op uw ingangs controller, kunt u geen TLS Pass-Through gebruiken. IP-behoud van client bron en TLS Pass-Through kunnen worden gebruikt in combi natie met andere services, zoals het type *Load Balancer* .
 
 ## <a name="network-security-groups"></a>Netwerkbeveiligingsgroepen
 

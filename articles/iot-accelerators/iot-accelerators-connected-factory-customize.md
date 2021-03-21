@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 12/14/2017
 ms.author: dobett
 ms.openlocfilehash: a092859517ee6ac41e62e55fe95f72b8bfdf87d5
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96011197"
 ---
 # <a name="customize-how-the-connected-factory-solution-displays-data-from-your-opc-ua-servers"></a>Aanpassen hoe de oplossing Connected Factory gegevens van uw OPC UA-servers weergeeft
@@ -83,7 +83,7 @@ De opslag plaats **Azure-IOT-Connected-Factory** bevat een **build.ps1** Power s
 Lees de volgende artikelen voor meer informatie over de Connected Factory Solution Accelerator:
 
 * [Machtigingen op de azureiotsolutions.com-site][lnk-permissions]
-* [Veelgestelde vragen over Connected Factory](iot-accelerators-faq-cf.md)
+* [Veelgestelde vragen over Verbonden Factory](iot-accelerators-faq-cf.md)
 * [Veelgestelde vragen][lnk-faq]
 
 

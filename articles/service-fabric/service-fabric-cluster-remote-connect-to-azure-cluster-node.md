@@ -4,10 +4,10 @@ description: Meer informatie over hoe u extern verbinding maakt met een exemplaa
 ms.topic: conceptual
 ms.date: 03/23/2018
 ms.openlocfilehash: 98d573af4fc2026134e75d4caf24a09e57e52c87
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96012541"
 ---
 # <a name="remote-connect-to-a-virtual-machine-scale-set-instance-or-a-cluster-node"></a>Externe verbinding maken met een virtuele-machine Scale set-exemplaar of een cluster knooppunt

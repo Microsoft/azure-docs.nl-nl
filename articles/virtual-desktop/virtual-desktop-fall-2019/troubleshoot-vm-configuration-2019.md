@@ -7,10 +7,10 @@ ms.date: 05/11/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: 90b4c574a03d8dee50beff60304fb5c1f3b52945
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88008624"
 ---
 # <a name="windows-virtual-desktop-classic-session-host-virtual-machine-configuration"></a>Virtuele-machine configuratie van Virtual Desktop (klassiek) van Windows-sessiehost
@@ -82,7 +82,7 @@ De aanbevolen manier om Vm's in te richten, is met behulp van de Azure Resource 
 
 Volg deze instructies om te bevestigen dat de onderdelen zijn geïnstalleerd en om te controleren op fout berichten.
 
-1. Controleer of de twee onderdelen zijn geïnstalleerd door Program ma's **Control Panel**  >  **Programs**  >  **en onderdelen**van het configuratie scherm te controleren. Als **Windows Virtual Desktop agent** en de **opstart lader van de Windows Virtual Desktop agent** niet zichtbaar zijn, zijn ze niet geïnstalleerd op de virtuele machine.
+1. Controleer of de twee onderdelen zijn geïnstalleerd door Program ma's   >    >  **en onderdelen** van het configuratie scherm te controleren. Als **Windows Virtual Desktop agent** en de **opstart lader van de Windows Virtual Desktop agent** niet zichtbaar zijn, zijn ze niet geïnstalleerd op de virtuele machine.
 2. Open **bestanden Verkenner** en ga naar **C:\Windows\Temp\ScriptLog.log**. Als het bestand ontbreekt, geeft dit aan dat de Power shell DSC waarmee de twee onderdelen zijn geïnstalleerd, niet kan worden uitgevoerd in de beschik bare beveiligings context.
 3. Als het bestand **C:\Windows\Temp\ScriptLog.log** aanwezig is, opent u het en controleert u op fout berichten.
 

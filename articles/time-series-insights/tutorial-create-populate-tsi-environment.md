@@ -10,10 +10,10 @@ ms.topic: tutorial
 ms.date: 10/01/2020
 ms.custom: seodec18
 ms.openlocfilehash: ea57a623546df99408d488da4522411f55ab0dd9
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "101094349"
 ---
 # <a name="tutorial-create-an-azure-time-series-insights-gen1-environment"></a>Zelfstudie: Een Azure Time Series Insights Gen1-omgeving maken

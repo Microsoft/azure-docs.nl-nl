@@ -4,10 +4,10 @@ description: Hierin wordt beschreven hoe u fouten oplost bij het opgeven van een
 ms.topic: troubleshooting
 ms.date: 11/08/2017
 ms.openlocfilehash: e76f4bf9bfee7de6e7523d69acf1388d2dd80e93
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "75477627"
 ---
 # <a name="resolve-reserved-resource-name-errors"></a>Problemen met gereserveerde resource namen oplossen
@@ -61,7 +61,7 @@ De volgende woorden zijn gereserveerd:
 
 De volgende woorden mogen niet worden gebruikt als een geheel woord of een subtekenreeks in de naam:
 
-* NAMEN
+* LOGIN
 * MICRO soft
 * WINDOWS
 * XBOX

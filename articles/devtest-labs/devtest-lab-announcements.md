@@ -4,10 +4,10 @@ description: Meer informatie over het plaatsen van een aangepaste aankondiging i
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 72c6ed7ab691ece094673ff5a158ffa769a9f7a1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88270764"
 ---
 # <a name="post-an-announcement-to-a-lab-in-azure-devtest-labs"></a>Een aankondiging in Azure DevTest Labs plaatsen in een Lab
@@ -25,17 +25,17 @@ De aankondigings functie is bedoeld om te worden gebruikt voor tijdelijke meldin
 ## <a name="steps-to-post-an-announcement-in-an-existing-lab"></a>Stappen voor het plaatsen van een aankondiging in een bestaand Lab
 
 1. Meld u aan bij [Azure Portal](https://go.microsoft.com/fwlink/p/?LinkID=525040).
-1. Selecteer indien nodig **alle services**en selecteer vervolgens **DevTest Labs** in de lijst. (Uw Lab wordt mogelijk al weer gegeven op het dash board onder **alle resources**).
+1. Selecteer indien nodig **alle services** en selecteer vervolgens **DevTest Labs** in de lijst. (Uw Lab wordt mogelijk al weer gegeven op het dash board onder **alle resources**).
 1. Selecteer in de lijst met Labs het lab waarin u een aankondiging wilt plaatsen.
 1. Selecteer in het gedeelte **overzicht** van het lab de optie **configuratie en beleid**.
 
     ![Knop configuratie en beleid](./media/devtest-lab-announcements/devtestlab-config-and-policies.png)
 
-1. Selecteer aan de linkerkant onder **instellingen**de optie **Lab-aankondiging**.
+1. Selecteer aan de linkerkant onder **instellingen** de optie **Lab-aankondiging**.
 
     ![Knop voor Lab-aankondiging](./media/devtest-lab-announcements/devtestlab-announcements.png)
 
-1. Stel **ingeschakeld** in op **Ja**als u een bericht wilt maken voor de gebruikers in dit lab.
+1. Stel **ingeschakeld** in op **Ja** als u een bericht wilt maken voor de gebruikers in dit lab.
 
 1. U kunt een **verval datum** invoeren om een datum en tijd op te geven waarna de aankondiging niet meer wordt weer gegeven voor gebruikers. Als u geen verval datum invoert, blijft de aankondiging actief totdat u deze uitschakelt.
 
@@ -44,7 +44,7 @@ De aankondigings functie is bedoeld om te worden gebruikt voor tijdelijke meldin
    >
    >
 
-1. Voer een **titel** voor de aankondiging en de tekst van de **aankondiging**in.
+1. Voer een **titel** voor de aankondiging en de tekst van de **aankondiging** in.
 
    De titel mag Maxi maal 100 tekens lang zijn en wordt weer gegeven aan de gebruiker op de overzichts pagina van het lab. Als de gebruiker de titel selecteert, wordt de tekst van de aankondiging weer gegeven.
 

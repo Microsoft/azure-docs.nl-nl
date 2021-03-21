@@ -3,14 +3,14 @@ title: Backup en Restore-Azure Portal-Azure Database for MariaDB
 description: In dit artikel wordt beschreven hoe u een server in Azure Database for MariaDB kunt herstellen met behulp van de Azure Portal.
 author: savjani
 ms.author: pariks
-ms.service: jroth
+ms.service: mariadb
 ms.topic: how-to
 ms.date: 6/30/2020
-ms.openlocfilehash: 06da58b5c82af39abbaa1cbc15a217c25d7808f9
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: 4a5f2cc4cbf73f5c13533a94f1454022d3538880
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98664814"
 ---
 # <a name="how-to-backup-and-restore-a-server-in-azure-database-for-mariadb-using-the-azure-portal"></a>Een back-up maken en herstellen van een server in Azure Database for MariaDB met behulp van de Azure Portal
@@ -37,7 +37,7 @@ Wanneer u een server maakt via de Azure Portal, selecteert u in het venster **pr
 Zie de [Snelstartgids van Azure database for MariaDB server](quickstart-create-mariadb-server-database-using-azure-portal.md)voor meer informatie over het instellen van deze waarden tijdens het maken.
 
 De Bewaar periode voor back-ups kan worden gewijzigd op een server met behulp van de volgende stappen:
-1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
+1. Meld u aan bij de [Azure Portal](https://portal.azure.com/).
 
 2. Selecteer uw Azure Database for MariaDB-server. Met deze actie wordt de pagina **overzicht** geopend.
 

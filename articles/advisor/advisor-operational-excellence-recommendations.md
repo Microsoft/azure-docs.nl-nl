@@ -4,10 +4,10 @@ description: Gebruik Azure Advisor om uw operationele uitmuntendheid voor uw Azu
 ms.topic: article
 ms.date: 10/24/2019
 ms.openlocfilehash: 0b938a0c7a42182bb8d2a50b48d65a0844d952a6
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100579953"
 ---
 # <a name="achieve-operational-excellence-by-using-azure-advisor"></a>Behaal de operationele uitmuntendheid met behulp van Azure Advisor

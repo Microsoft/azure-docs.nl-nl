@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/21/2020
 ms.author: ccompy
 ms.openlocfilehash: a4eb22320a15cc76a7543c25583003d57ea4e538
-ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102473766"
 ---
 Door gebruik te maken van regionale VNet-integratie kan uw app toegang tot:

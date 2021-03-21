@@ -7,10 +7,10 @@ ms.reviewer: jonfan, logicappspm
 ms.topic: article
 ms.date: 11/19/2020
 ms.openlocfilehash: b345168dad63b1846d46c12721587eaffb5f887e
-ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94981201"
 ---
 # <a name="call-trigger-or-nest-logic-apps-by-using-https-endpoints-in-azure-logic-apps"></a>Logische apps aanroepen, activeren of nesten met behulp van HTTPS-eind punten in Azure Logic Apps
@@ -34,7 +34,7 @@ Voor meer informatie over beveiliging, autorisatie en versleuteling voor inkomen
 
 ## <a name="create-a-callable-endpoint"></a>Een aanroepbaar eind punt maken
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Een lege logische app maken en openen in de ontwerp functie voor logische apps.
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). Een lege logische app maken en openen in de ontwerp functie voor logische apps.
 
 1. Selecteer in het zoekvak **ingebouwde**. Voer in het zoekvak `request` als uw filter in. Selecteer in de lijst triggers **Wanneer een HTTP-aanvraag wordt ontvangen**.
 

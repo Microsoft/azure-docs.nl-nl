@@ -7,10 +7,10 @@ ms.author: lajanuar
 author: laujan
 ms.date: 03/05/2021
 ms.openlocfilehash: cb6b3af8d8fb6c2d3fe63964e59f8e3e32f0f0fd
-ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102486655"
 ---
 # <a name="get-started-with-document-translation-preview"></a>Aan de slag met document vertalingen (preview-versie)
@@ -92,7 +92,7 @@ De `sourceUrl` , `targetUrl` en optioneel `glossaryUrl`  moeten een Shared Acces
 
 * Een nieuw project maken.
 * Vervang Program.cs door de hieronder weergegeven C#-code.
-* Stel uw eind punt in. abonnements sleutel en container-URL-waarden in Program.cs.
+* Stel uw eind punt in. abonnements sleutel en container-URL-waarden in Program. cs.
 * Als u JSON-gegevens wilt verwerken, voegt [ uNewtonsoft.Jstoe aan het pakket met behulp van .net cli](https://www.nuget.org/packages/Newtonsoft.Json/).
 * Voer het programma uit vanuit de projectmap.
 
@@ -1259,7 +1259,7 @@ De volgende tabel bevat de limieten voor gegevens die u naar document vertalinge
 > [!NOTE]
 > De bovenstaande inhouds limieten zijn onderhevig aan wijzigingen vóór de open bare versie.
 
-## <a name="learn-more"></a>Lees meer
+## <a name="learn-more"></a>Meer informatie
 
 * [Translator v3 API-verwijzing](../reference/v3-0-reference.md)
 * [Taalondersteuning](../language-support.md)

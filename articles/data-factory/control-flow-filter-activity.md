@@ -8,10 +8,10 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 05/04/2018
 ms.openlocfilehash: 035ee5a5f1fe193fcb4579f1d46472ad9cd0b8b5
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100385588"
 ---
 # <a name="filter-activity-in-azure-data-factory"></a>Activiteit in Azure Data Factory filteren
@@ -37,8 +37,8 @@ Eigenschap | Beschrijving | Toegestane waarden | Vereist
 -------- | ----------- | -------------- | --------
 naam | De naam van de `Filter` activiteit. | Tekenreeks | Ja
 type | Moet worden ingesteld op **filter**. | Tekenreeks | Ja
-regeling | De voor waarde die moet worden gebruikt voor het filteren van de invoer. | Expression | Yes
-vermeldingen | Invoer matrix waarop het filter moet worden toegepast. | Expression | Yes
+regeling | De voor waarde die moet worden gebruikt voor het filteren van de invoer. | Expression | Ja
+vermeldingen | Invoer matrix waarop het filter moet worden toegepast. | Expression | Ja
 
 ## <a name="example"></a>Voorbeeld
 
@@ -112,7 +112,7 @@ In dit voor beeld heeft de pijp lijn twee activiteiten: **filter** en **foreach*
 Zie andere controle stroom activiteiten die door Data Factory worden ondersteund: 
 
 - [If Condition Activity](control-flow-if-condition-activity.md)
-- [Activiteit uitvoeren van pijplijn](control-flow-execute-pipeline-activity.md)
+- [Pijplijn activiteit uitvoeren](control-flow-execute-pipeline-activity.md)
 - [Voor elke activiteit](control-flow-for-each-activity.md)
 - [Activiteit ophalen van metagegevens](control-flow-get-metadata-activity.md)
 - [Opzoekactiviteit](control-flow-lookup-activity.md)

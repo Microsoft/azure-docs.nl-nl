@@ -10,10 +10,10 @@ ms.topic: tutorial
 ms.date: 01/26/2021
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 44a05ed5b4386f2787a1c84dfeb61a5d539c7cb5
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98789800"
 ---
 # <a name="tutorial-add-faceted-navigation-using-the-net-sdk"></a>Zelfstudie: Facetnavigatie toevoegen met behulp van de .NET SDK

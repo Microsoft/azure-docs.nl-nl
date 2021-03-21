@@ -6,10 +6,10 @@ ms.author: antchu
 ms.date: 12/1/2020
 ms.topic: article
 ms.openlocfilehash: dd112c74ea9f013a0e14bddd735060ddbf73c14e
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100578520"
 ---
 # <a name="azure-functions-custom-handlers"></a>Aangepaste handlers Azure Functions

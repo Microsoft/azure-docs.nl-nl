@@ -4,10 +4,10 @@ description: Hier wordt weer gegeven welke Azure-resource typen tags ondersteune
 ms.topic: conceptual
 ms.date: 10/21/2020
 ms.openlocfilehash: b1f9e61b409c395a13cc6a18d21d17530f38ac7e
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101722888"
 ---
 # <a name="tag-support-for-azure-resources"></a>Ondersteuning voor labels voor Azure-resources
@@ -916,7 +916,7 @@ Ga naar de naam ruimte van een resource provider:
 > | BillingAccounts | Nee | Nee |
 > | Budgetten | Nee | Nee |
 > | CloudConnectors | Nee | Nee |
-> | Connectors | Ja | Ja |
+> | Connectoren | Ja | Ja |
 > | costAllocationRules | Nee | Nee |
 > | Afdelingen | Nee | Nee |
 > | Dimensies | Nee | Nee |
@@ -934,7 +934,7 @@ Ga naar de naam ruimte van een resource provider:
 > | ExternalSubscriptions/query | Nee | Nee |
 > | Prognose | Nee | Nee |
 > | Inzichten | Nee | Nee |
-> | Query’s uitvoeren | Nee | Nee |
+> | Query | Nee | Nee |
 > | registreren | Nee | Nee |
 > | Reportconfigs | Nee | Nee |
 > | Rapporten | Nee | Nee |

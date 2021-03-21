@@ -10,10 +10,10 @@ author: timsander1
 ms.author: tisande
 ms.custom: seodec18, devx-track-js
 ms.openlocfilehash: 8958699ae279d2613f8dbadca802ee2137407e75
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94442392"
 ---
 # <a name="connect-a-nodejs-mongoose-application-to-azure-cosmos-db"></a>Een Node.js Mongoose-toepassing verbinden met Azure Cosmos DB
@@ -39,11 +39,11 @@ We gaan een Cosmos-account maken. Als u al een account hebt dat u wilt gebruiken
 
 ### <a name="create-a-database"></a>Een database maken 
 In deze toepassing behandelen we twee manieren om verzamelingen te maken in Azure Cosmos DB: 
-- **Elk object model opslaan in een afzonderlijke verzameling** : we raden [u aan een Data Base met een speciale door voer te maken](set-throughput.md#set-throughput-on-a-database). Met dit capaciteits model krijgt u een betere kosten besparing.
+- **Elk object model opslaan in een afzonderlijke verzameling**: we raden [u aan een Data Base met een speciale door voer te maken](set-throughput.md#set-throughput-on-a-database). Met dit capaciteits model krijgt u een betere kosten besparing.
 
     :::image type="content" source="./media/mongodb-mongoose/db-level-throughput.png" alt-text="Node.js zelf studie: scherm afbeelding van de Azure Portal, waarin wordt getoond hoe u een Data Base maakt in de Data Explorer voor een Azure Cosmos DB account, voor gebruik met de Mongoose-knooppunt module":::
 
-- **Alle object modellen opslaan in een enkele Cosmos DB verzameling** : als u liever alle modellen in één verzameling opslaat, kunt u gewoon een nieuwe data base maken zonder de optie door Voer inrichten te selecteren. Als u dit capaciteits model gebruikt, wordt elke verzameling gemaakt met een eigen doorvoer capaciteit voor elk object model.
+- **Alle object modellen opslaan in een enkele Cosmos DB verzameling**: als u liever alle modellen in één verzameling opslaat, kunt u gewoon een nieuwe data base maken zonder de optie door Voer inrichten te selecteren. Als u dit capaciteits model gebruikt, wordt elke verzameling gemaakt met een eigen doorvoer capaciteit voor elk object model.
 
 Nadat u de Data Base hebt gemaakt, gebruikt u de naam in de `COSMOSDB_DBNAME` omgevings variabele hieronder.
 

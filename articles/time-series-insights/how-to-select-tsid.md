@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 09/30/2020
 ms.custom: seodec18
 ms.openlocfilehash: c3f6f6a5ac1068f2eabca351e85376b8e16d1058
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95016748"
 ---
 # <a name="best-practices-for-choosing-a-time-series-id"></a>Best practices voor het kiezen van een tijdreeks-id
@@ -32,11 +32,11 @@ Het selecteren van de juiste tijd reeks-ID is van cruciaal belang. Het kiezen va
 > * Een *onveranderbare* eigenschap: zodra deze is gemaakt, kan deze niet meer worden gewijzigd.
 
 > [!TIP]
-> Als uw gebeurtenis bron een IoT-hub is, is uw tijd reeks-ID waarschijnlijk ***iothub-Connection-apparaat-id** _.
+> Als uw gebeurtenis bron een IoT-hub is, is uw tijd reeks-ID waarschijnlijk ***iothub-Connection-apparaat-id***.
 
 De belangrijkste aanbevolen procedures zijn:
 
-_ Kies een partitie sleutel met veel afzonderlijke waarden (bijvoorbeeld honderden of duizenden). In veel gevallen kan dit de apparaat-ID, sensor-ID of label-ID in uw JSON zijn.
+* Kies een partitie sleutel met veel afzonderlijke waarden (bijvoorbeeld honderden of duizenden). In veel gevallen kan dit de apparaat-ID, sensor-ID of label-ID in uw JSON zijn.
 * De time series-ID moet uniek zijn op het leaf-knooppunt niveau van uw [Time Series-model](./concepts-model-overview.md).
 * De teken limiet voor de eigenschaps naam van de tijd reeks-ID is 128. De teken limiet voor de eigenschaps waarde van de tijd reeks-ID is 1.024.
 * Als een unieke eigenschaps waarde voor de time series-ID ontbreekt, wordt deze behandeld als een null-waarde en volgt dezelfde regel van de uniekheids beperking.

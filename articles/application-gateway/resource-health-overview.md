@@ -1,5 +1,5 @@
 ---
-title: Overzicht van Azure-toepassing gateway Resource Health
+title: Overzicht van Resource Health voor Azure Application Gateway
 description: Dit artikel bevat een overzicht van de resource Health-functie voor Azure-toepassing gateway
 services: application-gateway
 author: vhorne
@@ -8,13 +8,13 @@ ms.topic: article
 ms.date: 7/9/2019
 ms.author: victorh
 ms.openlocfilehash: 7e30a93f8270cfaf8910130cc1e2633bb80c2b8e
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93397169"
 ---
-# <a name="azure-application-gateway-resource-health-overview"></a>Overzicht van Azure-toepassing gateway Resource Health
+# <a name="azure-application-gateway-resource-health-overview"></a>Overzicht van Resource Health voor Azure Application Gateway
 
 [Azure Resource Health](../service-health/resource-health-overview.md) helpt u bij het stellen van diagnoses en bij het verkrijgen van ondersteuning wanneer een Azure-serviceprobleem gevolgen heeft voor uw resources. Er wordt u geïnformeerd over de huidige en eerdere status van uw resources. En biedt technische ondersteuning om u te helpen bij het oplossen van problemen.
 

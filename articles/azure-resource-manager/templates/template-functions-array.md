@@ -4,30 +4,30 @@ description: Hierin worden de functies beschreven die u kunt gebruiken in een Az
 ms.topic: conceptual
 ms.date: 11/18/2020
 ms.openlocfilehash: 40a6815bb10ce9725405d68498b9a554706f3af8
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96920547"
 ---
 # <a name="array-functions-for-arm-templates"></a>Matrix functies voor ARM-sjablonen
 
 Resource Manager biedt verschillende functies voor het werken met matrices in uw Azure Resource Manager sjabloon (ARM-sjabloon):
 
-* [array](#array)
+* [matrix](#array)
 * [concat](#concat)
 * [daarin](#contains)
 * [createArray](#createarray)
-* [gelaten](#empty)
+* [leeg](#empty)
 * [instantie](#first)
 * [Snij punt](#intersection)
 * [duren](#last)
 * [length](#length)
-* [max](#max)
+* [aantal](#max)
 * [min.](#min)
 * [bereik](#range)
 * [verdergaan](#skip)
-* [take](#take)
+* [Houd](#take)
 * [Réunion](#union)
 
 Als u een matrix van teken reeks waarden wilt ophalen die door een waarde worden gescheiden, raadpleegt u [splitsen](template-functions-string.md#split).
@@ -42,9 +42,9 @@ Zet de waarde om in een matrix.
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
-| convertToArray |Yes |int, String, array of object |De waarde die moet worden geconverteerd naar een matrix. |
+| convertToArray |Ja |int, String, array of object |De waarde die moet worden geconverteerd naar een matrix. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -129,10 +129,10 @@ Combineert meerdere matrices en retourneert de samengevoegde matrix, of combinee
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
-| Arg1 |Yes |matrix of teken reeks |De eerste matrix of teken reeks voor samen voeging. |
-| aanvullende argumenten |No |matrix of teken reeks |Extra matrices of teken reeksen in sequentiële volg orde voor samen voeging. |
+| Arg1 |Ja |matrix of teken reeks |De eerste matrix of teken reeks voor samen voeging. |
+| aanvullende argumenten |Nee |matrix of teken reeks |Extra matrices of teken reeksen in sequentiële volg orde voor samen voeging. |
 
 Deze functie kan elk wille keurig aantal argumenten hebben en kan teken reeksen of matrices voor de para meters accepteren. U kunt echter geen matrixen en teken reeksen opgeven voor para meters. Matrices worden alleen samengevoegd met andere matrices.
 
@@ -252,10 +252,10 @@ Controleert of een matrix een waarde bevat, een object bevat een sleutel of een 
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
-| container |Yes |matrix, object of teken reeks |De waarde die de te zoeken waarde bevat. |
-| itemToFind |Yes |teken reeks of int |De waarde die moet worden gevonden. |
+| container |Ja |matrix, object of teken reeks |De waarde die de te zoeken waarde bevat. |
+| itemToFind |Ja |teken reeks of int |De waarde die moet worden gevonden. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -364,9 +364,9 @@ Hiermee wordt een matrix gemaakt op basis van de para meters. De `createArray` f
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
-| argumenten |No |Teken reeks, geheel getal, matrix of object |De waarden in de matrix. |
+| argumenten |Nee |Teken reeks, geheel getal, matrix of object |De waarden in de matrix. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -448,9 +448,9 @@ Bepaalt of een matrix, een object of een teken reeks leeg is.
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
-| itemToTest |Yes |matrix, object of teken reeks |De waarde die moet worden gecontroleerd als deze leeg is. |
+| itemToTest |Ja |matrix, object of teken reeks |De waarde die moet worden gecontroleerd als deze leeg is. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -529,9 +529,9 @@ Retourneert het eerste element van de matrix, of het eerste teken van de teken r
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
-| Arg1 |Yes |matrix of teken reeks |De waarde voor het ophalen van het eerste element of teken. |
+| Arg1 |Ja |matrix of teken reeks |De waarde voor het ophalen van het eerste element of teken. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -598,11 +598,11 @@ Retourneert een enkele matrix of een object met de algemene elementen van de par
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
-| Arg1 |Yes |matrix of object |De eerste waarde die moet worden gebruikt voor het zoeken van algemene elementen. |
-| Arg2 |Yes |matrix of object |De tweede waarde die moet worden gebruikt voor het zoeken van algemene elementen. |
-| aanvullende argumenten |No |matrix of object |Aanvullende waarden die moeten worden gebruikt voor het zoeken van algemene elementen. |
+| Arg1 |Ja |matrix of object |De eerste waarde die moet worden gebruikt voor het zoeken van algemene elementen. |
+| Arg2 |Ja |matrix of object |De tweede waarde die moet worden gebruikt voor het zoeken van algemene elementen. |
+| aanvullende argumenten |Nee |matrix of object |Aanvullende waarden die moeten worden gebruikt voor het zoeken van algemene elementen. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -706,9 +706,9 @@ Retourneert het laatste element van de matrix, of het laatste teken van de teken
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
-| Arg1 |Yes |matrix of teken reeks |De waarde voor het ophalen van het laatste element of teken. |
+| Arg1 |Ja |matrix of teken reeks |De waarde voor het ophalen van het laatste element of teken. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -775,9 +775,9 @@ Retourneert het aantal elementen in een matrix, tekens in een teken reeks of hoo
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
-| Arg1 |Yes |matrix, teken reeks of object |De matrix die moet worden gebruikt voor het ophalen van het aantal elementen, de teken reeks die moet worden gebruikt voor het ophalen van het aantal tekens of het object dat moet worden gebruikt voor het ophalen van het aantal eigenschappen op hoofd niveau. |
+| Arg1 |Ja |matrix, teken reeks of object |De matrix die moet worden gebruikt voor het ophalen van het aantal elementen, de teken reeks die moet worden gebruikt voor het ophalen van het aantal tekens of het object dat moet worden gebruikt voor het ophalen van het aantal eigenschappen op hoofd niveau. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -899,9 +899,9 @@ Retourneert de maximum waarde van een matrix met gehele getallen of een door kom
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
-| Arg1 |Yes |matrix van gehele getallen of door komma's gescheiden lijst met gehele getallen |De verzameling om de maximum waarde op te halen. |
+| Arg1 |Ja |matrix van gehele getallen of door komma's gescheiden lijst met gehele getallen |De verzameling om de maximum waarde op te halen. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -969,9 +969,9 @@ Retourneert de minimum waarde van een matrix met gehele getallen of een door kom
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
-| Arg1 |Yes |matrix van gehele getallen of door komma's gescheiden lijst met gehele getallen |De verzameling om de minimum waarde op te halen. |
+| Arg1 |Ja |matrix van gehele getallen of door komma's gescheiden lijst met gehele getallen |De verzameling om de minimum waarde op te halen. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -1039,7 +1039,7 @@ Hiermee maakt u een matrix met gehele getallen van een begin-geheel getal dat ee
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
 | Start index |Ja |int |Het eerste geheel getal in de matrix. De som van start index en aantal mag niet groter zijn dan 2147483647. |
 | count |Ja |int |Het aantal gehele getallen in de matrix. Moet een niet-negatief geheel getal zijn van Maxi maal 10000. |
@@ -1103,9 +1103,9 @@ Retourneert een matrix met alle elementen na het opgegeven getal in de matrix, o
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
-| originalValue |Yes |matrix of teken reeks |De matrix of teken reeks die moet worden gebruikt voor het overs Laan. |
+| originalValue |Ja |matrix of teken reeks |De matrix of teken reeks die moet worden gebruikt voor het overs Laan. |
 | numberToSkip |Ja |int |Het aantal elementen of tekens dat moet worden overgeslagen. Als deze waarde 0 of kleiner is, worden alle elementen of tekens in de waarde geretourneerd. Als deze groter is dan de lengte van de matrix of teken reeks, wordt een lege matrix of teken reeks geretourneerd. |
 
 ### <a name="return-value"></a>Retourwaarde
@@ -1191,9 +1191,9 @@ Retourneert een matrix met het opgegeven aantal elementen vanaf het begin van de
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
-| originalValue |Yes |matrix of teken reeks |De matrix of teken reeks waaruit de elementen moeten worden afgeleid. |
+| originalValue |Ja |matrix of teken reeks |De matrix of teken reeks waaruit de elementen moeten worden afgeleid. |
 | numberToTake |Ja |int |Het aantal elementen of tekens dat moet worden uitgevoerd. Als deze waarde 0 of kleiner is, wordt een lege matrix of teken reeks geretourneerd. Als deze groter is dan de lengte van de opgegeven matrix of teken reeks, worden alle elementen in de matrix of teken reeks geretourneerd. |
 
 ### <a name="return-value"></a>Retourwaarde
@@ -1279,11 +1279,11 @@ Retourneert een enkele matrix of een object met alle elementen van de para meter
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
-| Arg1 |Yes |matrix of object |De eerste waarde die moet worden gebruikt voor het toevoegen van elementen. |
-| Arg2 |Yes |matrix of object |De tweede waarde die moet worden gebruikt voor het toevoegen van elementen. |
-| aanvullende argumenten |No |matrix of object |Aanvullende waarden die moeten worden gebruikt voor het toevoegen van elementen. |
+| Arg1 |Ja |matrix of object |De eerste waarde die moet worden gebruikt voor het toevoegen van elementen. |
+| Arg2 |Ja |matrix of object |De tweede waarde die moet worden gebruikt voor het toevoegen van elementen. |
+| aanvullende argumenten |Nee |matrix of object |Aanvullende waarden die moeten worden gebruikt voor het toevoegen van elementen. |
 
 ### <a name="return-value"></a>Retourwaarde
 

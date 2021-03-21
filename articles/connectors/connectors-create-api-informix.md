@@ -10,10 +10,10 @@ ms.topic: article
 ms.date: 01/07/2020
 tags: connectors
 ms.openlocfilehash: 4995a91783c2302f3bda5cc9409f017248ca29fa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88761641"
 ---
 # <a name="manage-ibm-informix-database-resources-by-using-azure-logic-apps"></a>IBM Informix-database bronnen beheren met behulp van Azure Logic Apps
@@ -37,7 +37,7 @@ In dit onderwerp wordt beschreven hoe u de connector in een logische app kunt ge
 
 1. Open in de [Azure Portal](https://portal.azure.com)uw logische app in de ontwerp functie voor logische apps, als deze nog niet is geopend.
 
-1. Selecteer **nieuwe stap**onder de stap waar u de Informix-actie wilt toevoegen.
+1. Selecteer **nieuwe stap** onder de stap waar u de Informix-actie wilt toevoegen.
 
    Als u een actie wilt toevoegen tussen de bestaande stappen, plaatst u de muis aanwijzer op de verbindings pijl. Selecteer het plus teken ( **+** ) dat wordt weer gegeven en selecteer vervolgens **een actie toevoegen**.
 
@@ -81,12 +81,12 @@ In dit onderwerp wordt beschreven hoe u de connector in een logische app kunt ge
    | Eigenschap | JSON-eigenschap | Vereist | Voorbeeldwaarde | Beschrijving |
    |----------|---------------|----------|---------------|-------------|
    | Verbindingsnaam | `name` | Ja | `informix-demo-connection` | De naam die moet worden gebruikt voor de verbinding met uw Informix-data base |
-   | server | `server` | Ja | Cloud `informixdemo.cloudapp.net:9089` <br>-On-premises: `informixdemo:9089` | Het TCP/IP-adres of de alias in de IPv4-of IPv6-indeling, gevolgd door een dubbele punt en een TCP/IP-poort nummer |
+   | Server | `server` | Ja | Cloud `informixdemo.cloudapp.net:9089` <br>-On-premises: `informixdemo:9089` | Het TCP/IP-adres of de alias in de IPv4-of IPv6-indeling, gevolgd door een dubbele punt en een TCP/IP-poort nummer |
    | Database | `database` | Ja | `nwind` | De DRDA relationele database naam (RDBNAM) of de naam van de Informix-data base (dbname). Informix accepteert een teken reeks van 128 bytes. |
-   | Verificatie | `authentication` | Alleen on-premises | **Basic** of **Windows** (Kerberos) | Het verificatie type dat vereist is voor uw Informix-data base. Deze eigenschap wordt alleen weer gegeven wanneer u **verbinding maken via een on-premises gegevens gateway**selecteert. |
+   | Verificatie | `authentication` | Alleen on-premises | **Basic** of **Windows** (Kerberos) | Het verificatie type dat vereist is voor uw Informix-data base. Deze eigenschap wordt alleen weer gegeven wanneer u **verbinding maken via een on-premises gegevens gateway** selecteert. |
    | Gebruikersnaam | `username` | Nee | <*data base-gebruikers naam*> | Een gebruikers naam voor de data base |
    | Wachtwoord | `password` | Nee | <*data base-wacht woord*> | Een wacht woord voor de data base |
-   | Gateway | `gateway` | Alleen on-premises | -<*Azure-abonnement*> <br>-<*Azure-on-premises-gegevens gateway-bron*> | Het Azure-abonnement en de Azure-resource naam voor de on-premises gegevens gateway die u hebt gemaakt in de Azure Portal. De eigenschap **Gateway** en subeigenschappen worden alleen weer gegeven wanneer u **verbinding maken via een on-premises gegevens gateway**selecteert. |
+   | Gateway | `gateway` | Alleen on-premises | -<*Azure-abonnement*> <br>-<*Azure-on-premises-gegevens gateway-bron*> | Het Azure-abonnement en de Azure-resource naam voor de on-premises gegevens gateway die u hebt gemaakt in de Azure Portal. De eigenschap **Gateway** en subeigenschappen worden alleen weer gegeven wanneer u **verbinding maken via een on-premises gegevens gateway** selecteert. |
    ||||||
 
    Bijvoorbeeld:
@@ -105,17 +105,17 @@ In dit onderwerp wordt beschreven hoe u de connector in een logische app kunt ge
 
 ## <a name="test-your-logic-app"></a>Uw logische app testen
 
-1. Selecteer **uitvoeren**op de werk balk van de Logic app-ontwerp functie. Wanneer de logische app wordt uitgevoerd, kunt u de uitvoer van die uitvoering bekijken.
+1. Selecteer **uitvoeren** op de werk balk van de Logic app-ontwerp functie. Wanneer de logische app wordt uitgevoerd, kunt u de uitvoer van die uitvoering bekijken.
 
-1. Selecteer **overzicht**in het menu van de logische app. Selecteer in het deel venster Overzicht onder **overzicht**van uitvoerings  >  **runs**de meest recente uitvoering.
+1. Selecteer **overzicht** in het menu van de logische app. Selecteer in het deel venster Overzicht onder **overzicht** van uitvoerings  >  **runs** de meest recente uitvoering.
 
-1. Selecteer onder **Logic app run**de optie **Details uitvoeren**.
+1. Selecteer onder **Logic app run** de optie **Details uitvoeren**.
 
 1. Selecteer in de lijst acties de actie met de uitvoer die u wilt weer geven, bijvoorbeeld **Get_tables**.
 
-   Als de actie is geslaagd, wordt de eigenschap **status** als **geslaagd**gemarkeerd.
+   Als de actie is geslaagd, wordt de eigenschap **status** als **geslaagd** gemarkeerd.
 
-1. Als u de invoer wilt weer geven, selecteert u onder **invoer koppeling**de URL-koppeling. Als u de uitvoer wilt weer geven, selecteert u onder **uitvoer** koppeling de koppeling URL. Hier volgen enkele voor beelden van uitvoer:
+1. Als u de invoer wilt weer geven, selecteert u onder **invoer koppeling** de URL-koppeling. Als u de uitvoer wilt weer geven, selecteert u onder **uitvoer** koppeling de koppeling URL. Hier volgen enkele voor beelden van uitvoer:
 
    * **Get_tables** ziet u een lijst met tabellen:
 

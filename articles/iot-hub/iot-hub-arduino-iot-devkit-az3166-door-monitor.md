@@ -9,10 +9,10 @@ ms.tgt_pltfrm: arduino
 ms.date: 03/19/2018
 ms.author: liydu
 ms.openlocfilehash: e3649ac786c07459695a1e6ca6ad52620e23d59f
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92148800"
 ---
 # <a name="door-monitor----using-azure-functions-and-sendgrid-send-email-when-a-door-is-opened"></a>Monitor voor deuren: e-mail met Azure Functions en SendGrid verzenden wanneer een deur wordt geopend           
@@ -130,11 +130,11 @@ Laad vervolgens de voorbeeld code in VS code en richt de benodigde Azure-Service
 
 ### <a name="open-arduino-examples-folder"></a>Map met voor beelden van Arduino openen
 
-Vouw de sectie **ARDUINO-voor beelden** aan de linkerkant uit, blader naar voor **beelden voor MXCHIP AZ3166 > AzureIoT**en selecteer **DoorMonitor**. Met deze actie wordt een nieuw versus code venster geopend met daarin een projectmap.
+Vouw de sectie **ARDUINO-voor beelden** aan de linkerkant uit, blader naar voor **beelden voor MXCHIP AZ3166 > AzureIoT** en selecteer **DoorMonitor**. Met deze actie wordt een nieuw versus code venster geopend met daarin een projectmap.
 
 ![Mini-Solution-voor beelden](media/iot-hub-arduino-iot-devkit-az3166-door-monitor/vscode-examples.png)
 
-U kunt ook de voor beeld-app openen vanuit het opdracht palet. Gebruik `Ctrl+Shift+P` (macOS: `Cmd+Shift+P` ) om het opdracht palet te openen, typ **Arduino**en zoek en selecteer vervolgens **Arduino: voor beelden**.
+U kunt ook de voor beeld-app openen vanuit het opdracht palet. Gebruik `Ctrl+Shift+P` (macOS: `Cmd+Shift+P` ) om het opdracht palet te openen, typ **Arduino** en zoek en selecteer vervolgens **Arduino: voor beelden**.
 
 ### <a name="provision-azure-services"></a>Azure-Services inrichten
 
@@ -157,7 +157,7 @@ Upload vervolgens de code voor het apparaat.
 
 1. Gebruiken `Ctrl+P` om uit te voeren `task device-upload` .
 
-2. De Terminal vraagt u de configuratie modus in te voeren. Als u dit wilt doen, houdt u de knop A ingedrukt en geeft u de knop opnieuw instellen op. In het scherm worden het DevKit-identificatie nummer en de woord *configuratie*weer gegeven.
+2. De Terminal vraagt u de configuratie modus in te voeren. Als u dit wilt doen, houdt u de knop A ingedrukt en geeft u de knop opnieuw instellen op. In het scherm worden het DevKit-identificatie nummer en de woord *configuratie* weer gegeven.
 
 #### <a name="macos"></a>macOS
 

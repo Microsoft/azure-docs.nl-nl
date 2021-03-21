@@ -10,10 +10,10 @@ ms.date: 02/23/2021
 ms.author: deanwe
 ms.custom: references_regions
 ms.openlocfilehash: 1d3b2174df5dd83852ce120ec6693ae187a3e795
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "101643513"
 ---
 # <a name="azure-automanage-for-virtual-machines"></a>Azure automanage voor virtuele machines

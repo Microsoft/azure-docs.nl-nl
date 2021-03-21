@@ -4,10 +4,10 @@ description: In dit artikel wordt uitgelegd hoe u met behulp van sessies gezamen
 ms.topic: article
 ms.date: 01/20/2021
 ms.openlocfilehash: 6d316571d69d2e1e73ddca4ccca53c116ee8fa5f
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98680750"
 ---
 # <a name="message-sessions"></a>Berichtsessies
@@ -34,9 +34,9 @@ Stel in de Portal de vlag in met het volgende selectie vakje:
 ![Scherm afbeelding van het dialoog venster wachtrij maken met de optie voor het inschakelen van sessies, geselecteerd en in rood beschreven.][2]
 
 > [!NOTE]
-> Wanneer sessies zijn ingeschakeld voor een wachtrij of een abonnement, kunnen de client toepassingen ***niet langer** de normale berichten verzenden/ontvangen. Alle berichten moeten worden verzonden als onderdeel van een sessie (door de sessie-id in te stellen) en ontvangen door de sessie te ontvangen.
+> Wanneer sessies zijn ingeschakeld voor een wachtrij of een abonnement, kunnen de client toepassingen ***geen*** normale berichten meer verzenden/ontvangen. Alle berichten moeten worden verzonden als onderdeel van een sessie (door de sessie-id in te stellen) en ontvangen door de sessie te ontvangen.
 
-De Api's voor sessies bestaan op de wachtrij-en abonnements-clients. Er is een essentieel model dat bepaalt wanneer er sessies en berichten worden ontvangen en een op een handler gebaseerd model, vergelijkbaar met _OnMessage *, waardoor de complexiteit van het beheer van de receive-lus wordt verborgen.
+De Api's voor sessies bestaan op de wachtrij-en abonnements-clients. Er is een essentieel model dat bepaalt wanneer er sessies en berichten worden ontvangen en een op een handler gebaseerd model, vergelijkbaar met *OnMessage*, waarmee de complexiteit van het beheer van de receive-lus wordt verborgen.
 
 ### <a name="session-features"></a>Sessie functies
 
@@ -78,8 +78,8 @@ De definitie van het aantal leveringen per bericht in de context van sessies ver
 
 | Scenario | Is het aantal leveringen van het bericht verhoogd |
 |----------|---------------------------------------------|
-| Sessie wordt geaccepteerd, maar de sessie vergrendeling verloopt (vanwege een time-out) | Yes |
-| Sessie wordt geaccepteerd, de berichten in de sessie worden niet voltooid (zelfs als ze zijn vergrendeld) en de sessie wordt gesloten | No |
+| Sessie wordt geaccepteerd, maar de sessie vergrendeling verloopt (vanwege een time-out) | Ja |
+| Sessie wordt geaccepteerd, de berichten in de sessie worden niet voltooid (zelfs als ze zijn vergrendeld) en de sessie wordt gesloten | Nee |
 | Sessie wordt geaccepteerd, berichten worden voltooid en de sessie wordt vervolgens expliciet gesloten | N.v.t. (het is de standaard stroom). Hier worden berichten uit de sessie verwijderd) |
 
 ## <a name="request-response-pattern"></a>Aanvraag-antwoord patroon

@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 68251270b6273f5a07391138e5c7210f1c46ba5a
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93420526"
 ---
 # <a name="azure-ad-connect-when-you-have-an-existing-tenant"></a>Azure AD Connect: wanneer u een bestaande Tenant hebt
@@ -34,7 +34,7 @@ U kunt on-premises en andere gebruikers in de Cloud beheren. Een veelvoorkomend 
 Als u gebruikers in azure AD wilt beheren die zich ook in on-premises AD bevinden en later verbinding willen gebruiken, zijn er enkele extra zaken die u moet overwegen.
 
 ## <a name="sync-with-existing-users-in-azure-ad"></a>Synchroniseren met bestaande gebruikers in azure AD
-Wanneer u Azure AD Connect installeert en u begint met het synchroniseren, voert de Azure AD Sync-Service (in azure AD) een controle uit op elk nieuw object en wordt geprobeerd een bestaand object te vinden dat u wilt vergelijken. Er worden drie kenmerken gebruikt voor dit proces: **userPrincipalName** , **proxyAddresses** en **Source Anchor** / **immutableID**. Een overeenkomst op **userPrincipalName** en **proxyAddresses** wordt aangeduid als een **zachte overeenkomst**. Een overeenkomst op **Source Anchor** wordt aangeduid als **hard match**. Voor het kenmerk **proxyAddresses** wordt alleen de waarde met **SMTP:** , het primaire e-mail adres, gebruikt voor de evaluatie.
+Wanneer u Azure AD Connect installeert en u begint met het synchroniseren, voert de Azure AD Sync-Service (in azure AD) een controle uit op elk nieuw object en wordt geprobeerd een bestaand object te vinden dat u wilt vergelijken. Er worden drie kenmerken gebruikt voor dit proces: **userPrincipalName**, **proxyAddresses** en **Source Anchor** / **immutableID**. Een overeenkomst op **userPrincipalName** en **proxyAddresses** wordt aangeduid als een **zachte overeenkomst**. Een overeenkomst op **Source Anchor** wordt aangeduid als **hard match**. Voor het kenmerk **proxyAddresses** wordt alleen de waarde met **SMTP:**, het primaire e-mail adres, gebruikt voor de evaluatie.
 
 De overeenkomst wordt alleen geëvalueerd voor nieuwe objecten die afkomstig zijn van verbinding maken. Als u een bestaand object wijzigt zodat dit overeenkomt met een van deze kenmerken, ziet u in plaats daarvan een fout.
 

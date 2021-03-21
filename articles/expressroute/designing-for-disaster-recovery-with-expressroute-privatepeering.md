@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 05/25/2019
 ms.author: duau
 ms.openlocfilehash: 2a5730cd75ccb76d25897e9109555113f7355c2f
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92202410"
 ---
 # <a name="designing-for-disaster-recovery-with-expressroute-private-peering"></a>Ontwerpen voor herstel na nood gevallen met persoonlijke ExpressRoute-peering
@@ -68,7 +68,7 @@ U kunt met behulp van een van de volgende technieken (Zie de volg orde van effec
 
 In het volgende diagram ziet u de selectie van het ExpressRoute met behulp van een meer specifieke route advertentie. In het Gedemonstreerde voor beeld wordt het IP-adres van Contoso op locatie/24 geadverteerd als twee/25 adresbereiken via het voorkeurs pad (ExpressRoute 1) en als/24 via het standaard traject (ExpressRoute 2).
 
-[![2]][2]
+[![twee]][2]
 
 Omdat/25 specifiekere, vergeleken met/24, verzendt Azure het verkeer dat is bestemd voor 10.1.11.0/24 via ExpressRoute 1 met de status normaal. Als beide verbindingen van ExpressRoute 1 omlaag gaan, wordt de 10.1.11.0/24 route advertisement alleen weer geven via ExpressRoute 2. en daarom wordt het standby-circuit gebruikt in deze fout status.
 
@@ -80,7 +80,7 @@ De volgende scherm afbeelding illustreert het configureren van het gewicht van e
 
 Het volgende diagram illustreert de selectie van het ExpressRoute met behulp van het verbindings gewicht. Het standaard verbindings gewicht is 0. In het onderstaande voor beeld is het gewicht van de verbinding voor ExpressRoute 1 geconfigureerd als 100. Wanneer een VNet een route voorvoegsel ontvangt dat is geadverteerd via meer dan één ExpressRoute-circuit, zal het VNet de voor keur geven aan de verbinding met het hoogste gewicht.
 
-[![4]][4]
+[![3]][4]
 
 Als beide verbindingen van ExpressRoute 1 omlaag gaan, wordt de 10.1.11.0/24 route advertisement alleen weer geven via ExpressRoute 2. en daarom wordt het standby-circuit gebruikt in deze fout status.
 

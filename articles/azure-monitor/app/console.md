@@ -6,10 +6,10 @@ ms.date: 05/21/2020
 ms.custom: devx-track-csharp
 ms.reviewer: lmolkova
 ms.openlocfilehash: aa39a1eca04621fc4db75f755402d3679403e814
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96920600"
 ---
 # <a name="application-insights-for-net-console-applications"></a>Application Insights voor .NET-console toepassingen
@@ -40,7 +40,7 @@ telemetryClient.TrackTrace("Hello World!");
 ```
 
 > [!NOTE]
-> Telemetrie wordt niet direct verzonden. Telemetriegegevens worden batches en verzonden door de ApplicationInsights-SDK. In console-apps die direct na het aanroepen van `Track()` methoden verlaten, mag telemetrie niet worden verzonden, tenzij `Flush()` en `Sleep` / `Delay` wordt uitgevoerd voordat de app wordt [full example](#full-example) afgesloten, zoals verderop in dit artikel wordt weer gegeven. `Sleep` is niet vereist als u gebruikt `InMemoryChannel` . Er is een actief probleem met betrekking tot de nood zaak `Sleep` die hier wordt bijgehouden: [ApplicationInsights-DotNet/issues/407](https://github.com/microsoft/ApplicationInsights-dotnet/issues/407)
+> Telemetrie wordt niet direct verzonden. Telemetriegegevens worden batches en verzonden door de ApplicationInsights-SDK. In console-apps die direct na het aanroepen van `Track()` methoden verlaten, mag telemetrie niet worden verzonden, tenzij `Flush()` en `Sleep` / `Delay` wordt uitgevoerd voordat de app wordt [](#full-example) afgesloten, zoals verderop in dit artikel wordt weer gegeven. `Sleep` is niet vereist als u gebruikt `InMemoryChannel` . Er is een actief probleem met betrekking tot de nood zaak `Sleep` die hier wordt bijgehouden: [ApplicationInsights-DotNet/issues/407](https://github.com/microsoft/ApplicationInsights-dotnet/issues/407)
 
 
 * Installeer de nieuwste versie van het pakket [micro soft. ApplicationInsights. DependencyCollector.](https://www.nuget.org/packages/Microsoft.ApplicationInsights.DependencyCollector) het traceert automatisch http, SQL of andere externe afhankelijkheids aanroepen.

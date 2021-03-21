@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 08/27/2019
 ms.author: jeedes
 ms.openlocfilehash: 9d4413c47e40a611fb1559b32aac1e32a71d1998
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92515981"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-skysite"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met SKYSITE
@@ -48,16 +48,16 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 Als u de integratie van SKYSITE in Azure AD wilt configureren, moet u SKYSITE vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
 1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory** .
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
-1. Typ in de sectie **Toevoegen uit de galerie** in het zoekvak: **SKYSITE** .
+1. Typ in de sectie **Toevoegen uit de galerie** in het zoekvak: **SKYSITE**.
 1. Selecteer **SKYSITE** in het resultatenvenster en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
 
 ## <a name="configure-and-test-azure-ad-single-sign-on-for-skysite"></a>Eenmalige aanmelding van Azure AD configureren en testen voor SKYSITE
 
-Configureer en test eenmalige aanmelding van Azure AD met SKYSITE met behulp van een testgebruiker met de naam **B.Simon** . Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in SKYSITE.
+Configureer en test eenmalige aanmelding van Azure AD met SKYSITE met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in SKYSITE.
 
 Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met SKYSITE te configureren en te testen:
 
@@ -76,10 +76,10 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
     ![Eigenschappen voor eenmalige aanmelding](./media/skysite-tutorial/config05.png)
 
-    * Kopieer de waarde van **URL van gebruikerstoegang** om deze verderop in de zelfstudie te plakken in de sectie **Eenmalige aanmelding SKYSITE configureren** .
+    * Kopieer de waarde van **URL van gebruikerstoegang** om deze verderop in de zelfstudie te plakken in de sectie **Eenmalige aanmelding SKYSITE configureren**.
 
-1. Ga op de pagina van de toepassingsintegratie van **SKYSITE** naar **eenmalige aanmelding** .
-1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding** .
+1. Ga op de pagina van de toepassingsintegratie van **SKYSITE** naar **eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
@@ -92,7 +92,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 1. Bovendien verwacht de SKYSITE-toepassing nog enkele kenmerken die als SAML-antwoord moeten worden doorgestuurd. Voer in het gedeelte **Gebruikerskenmerken en -claims** in het dialoogvenster **Groepsclaims (preview)** de volgende stappen uit:
 
-    a. Klik op de **pen** naast **Groepen die zijn geretourneerd in claim** .
+    a. Klik op de **pen** naast **Groepen die zijn geretourneerd in claim**.
 
     ![Schermopname die Gebruikersclaims toont met de optie om een nieuwe claim toe te voegen.](./media/skysite-tutorial/config01.png)
 
@@ -100,9 +100,9 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
     b. Selecteer **Alle groepen** in de lijst met keuzerondjes.
 
-    c. Selecteer **Bronkenmerk** bij **Groep-ID** .
+    c. Selecteer **Bronkenmerk** bij **Groep-ID**.
 
-    d. Klik op **Opslaan** .
+    d. Klik op **Opslaan**.
 
 1. Op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** gaat u naar **Certificaat (Base64)** en selecteert u **Downloaden** om het certificaat te downloaden en op te slaan op uw computer.
 
@@ -116,37 +116,37 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
-   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord** .
-   1. Klik op **Create** .
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot SKYSITE.
 
-1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
-1. Selecteer in de lijst met toepassingen de optie **SKYSITE** .
-1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen** .
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Selecteer in de lijst met toepassingen de optie **SKYSITE**.
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
 
    ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
 
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
 1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="configure-skysite-sso"></a>Eenmalige aanmelding voor SKYSITE configureren
 
 1. Open een nieuw webbrowservenster en meld u als beheerder bij uw bedrijfssite van SKYSITE aan en voer de volgende stappen uit:
 
-4. Klik in de rechter bovenhoek van de pagina op **Instellingen** en navigeer vervolgens naar **Accountinstelling** .
+4. Klik in de rechter bovenhoek van de pagina op **Instellingen** en navigeer vervolgens naar **Accountinstelling**.
 
     ![Schermopname van Accountinstelling geselecteerd in Instellingen.](./media/skysite-tutorial/config03.png)
 
@@ -154,11 +154,11 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
     ![Schermopname van het tabblad Eenmalige aanmelding, waarin u de beschreven waarden kunt invoeren.](./media/skysite-tutorial/config04.png)
 
-    a. Plak in het tekstvak **Aanmeld-URL van id-provider** de waarde van **URL voor gebruikerstoegang** , die u hebt gekopieerd uit het tabblad **Eigenschappen** in Azure Portal.
+    a. Plak in het tekstvak **Aanmeld-URL van id-provider** de waarde van **URL voor gebruikerstoegang**, die u hebt gekopieerd uit het tabblad **Eigenschappen** in Azure Portal.
 
     b. Klik op **Certificaat uploaden** om het Base64-gecodeerde certificaat te uploaden dat u hebt gedownload uit Azure Portal.
 
-    c. Klik op **Opslaan** .
+    c. Klik op **Opslaan**.
 
 ### <a name="create-skysite-test-user"></a>Een SKYSITE-testgebruiker maken
 

@@ -11,10 +11,10 @@ ms.author: genemi
 ms.reviewer: sstein
 ms.date: 07/29/2019
 ms.openlocfilehash: 4b3235f457f1c6475c18045886c49d3dd2ca2242
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92671183"
 ---
 # <a name="tutorial-design-a-relational-database-in-azure-sql-database-cx23-and-adonet"></a>Zelfstudie: Een relationele database ontwerpen in Azure SQL Database C&#x23; en ADO.NET
@@ -46,8 +46,8 @@ Een Azure SQL-database wordt gemaakt met een gedefinieerde set reken- en opslagr
 
 Volg deze stappen om een lege database te maken.
 
-1. Klik in de linkerbovenhoek van Azure Portal op **Een resource maken** .
-2. Selecteer op de pagina **Nieuw** **Databases** in de sectie Azure Marketplace en klik vervolgens op **SQL Database** in de sectie **Aanbevolen** .
+1. Klik in de linkerbovenhoek van Azure Portal op **Een resource maken**.
+2. Selecteer op de pagina **Nieuw** **Databases** in de sectie Azure Marketplace en klik vervolgens op **SQL Database** in de sectie **Aanbevolen**.
 
    ![lege database maken](./media/design-first-database-csharp-tutorial/create-empty-database.png)
 
@@ -71,14 +71,14 @@ Volg deze stappen om een lege database te maken.
 
     ![database-server maken](./media/design-first-database-csharp-tutorial/create-database-server.png)
 
-5. Klik op **Selecteren** .
+5. Klik op **Selecteren**.
 6. Klik op **Prijscategorie** om de servicelaag, het aantal DTU's of vCores en de hoeveelheid opslag op te geven. U kunt de opties bekijken voor de hoeveelheid DTU's/vCores en opslag die voor elke servicelaag beschikbaar zijn.
 
-    Als u de servicelaag, het aantal DTU's of vCores en de hoeveelheid opslagruimte hebt geselecteerd, klikt u op **Toepassen** .
+    Als u de servicelaag, het aantal DTU's of vCores en de hoeveelheid opslagruimte hebt geselecteerd, klikt u op **Toepassen**.
 
 7. Voer een **sortering** in voor de lege database (gebruik de standaardwaarde in deze zelfstudie). Zie [Collations](/sql/t-sql/statements/collations) (Sorteringen) voor meer informatie over sorteringen
 
-8. Nu u het **SQL Database** -formulier hebt ingevuld, klikt u op **Maken** om de database in te richten. Deze stap kan enkele minuten duren.
+8. Nu u het **SQL Database**-formulier hebt ingevuld, klikt u op **Maken** om de database in te richten. Deze stap kan enkele minuten duren.
 
 9. Klik op de werkbalk op **Meldingen** om het implementatieproces te bewaken.
 
@@ -91,21 +91,21 @@ SQL Database maakt een IP-firewall op serverniveau. De firewall voorkomt dat ext
 > [!IMPORTANT]
 > SQL Database communiceert via poort 1433. Als u verbinding met deze service probeert te maken vanuit een bedrijfsnetwerk, wordt uitgaand verkeer via poort 1433 mogelijk niet toegestaan door de firewall van uw netwerk. In dat geval kunt u geen verbinding maken met uw database, tenzij de beheerder poort 1433 openstelt.
 
-1. Wanneer de implementatie is voltooid, klikt u op **SQL Databases** in het menu aan de linkerkant. Klik vervolgens op de pagina **SQL Databases** op *yourDatabase* . De overzichtspagina voor de database wordt geopend, met de volledig gekwalificeerde **servernaam** (bijvoorbeeld *yourserver.database.windows.net* ) en opties voor verdere configuratie.
+1. Wanneer de implementatie is voltooid, klikt u op **SQL Databases** in het menu aan de linkerkant. Klik vervolgens op de pagina **SQL Databases** op *yourDatabase*. De overzichtspagina voor de database wordt geopend, met de volledig gekwalificeerde **servernaam** (bijvoorbeeld *yourserver.database.windows.net*) en opties voor verdere configuratie.
 
 2. Kopieer vanuit SQL Server Management Studio deze volledig gekwalificeerde servernaam om verbinding te maken met de server en de databases.
 
    ![servernaam](./media/design-first-database-csharp-tutorial/server-name.png)
 
-3. Klik op de werkbalk op **Serverfirewall instellen** . De pagina **Firewallinstellingen** voor de server wordt geopend.
+3. Klik op de werkbalk op **Serverfirewall instellen**. De pagina **Firewallinstellingen** voor de server wordt geopend.
 
    ![IP-firewallregel op serverniveau](./media/design-first-database-csharp-tutorial/server-firewall-rule.png)
 
 4. Klik op **IP van client toevoegen** op de werkbalk om uw huidige IP-adres aan een nieuwe IP-firewallregel toe te voegen. Een IP-firewallregel kan poort 1433 openen voor een afzonderlijk IP-adres of voor een aantal IP-adressen.
 
-5. Klik op **Opslaan** . Er wordt een IP-firewallregel op serverniveau gemaakt voor uw huidige IP-adres waarbij poort 1433 wordt geopend op de server.
+5. Klik op **Opslaan**. Er wordt een IP-firewallregel op serverniveau gemaakt voor uw huidige IP-adres waarbij poort 1433 wordt geopend op de server.
 
-6. Klik op **OK** en sluit de pagina **Firewallinstellingen** .
+6. Klik op **OK** en sluit de pagina **Firewallinstellingen**.
 
 Uw IP-adres wordt niet meer geblokkeerd via de IP-firewall. U kunt nu verbinding maken met uw database met SQL Server Management Studio of een ander hulpprogramma naar keuze. Gebruik het beheerdersaccount voor de server dat u eerder hebt gemaakt.
 

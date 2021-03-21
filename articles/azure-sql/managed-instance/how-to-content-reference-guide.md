@@ -13,10 +13,10 @@ ms.author: jovanpop
 ms.reviewer: sstein
 ms.date: 04/16/2019
 ms.openlocfilehash: b7f2f060f32cf3bf92660a2e8b75a45b7ec76b82
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92779761"
 ---
 # <a name="azure-sql-managed-instance-content-reference"></a>Naslag informatie voor Azure SQL Managed instance
@@ -79,9 +79,9 @@ In dit artikel vindt u een inhouds verwijzing naar verschillende hand leidingen,
 
 - [Waarschuwingen in beheerd exemplaar maken](alerts-create.md)
 
-## <a name="operations"></a>Bewerkingen
+## <a name="operations"></a>Operations
 
-- [Door de gebruiker geïnitieerde hand matige failover op een SQL-beheerd exemplaar](user-initiated-failover.md)
+- [User-initiated manual failover on SQL Managed Instance](user-initiated-failover.md) (Door gebruiker geïnitieerde handmatige failover op een SQL Managed Instance)
 
 ## <a name="develop-applications"></a>Toepassingen ontwikkelen
 

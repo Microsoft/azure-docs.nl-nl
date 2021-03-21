@@ -8,10 +8,10 @@ ms.date: 06/13/2017
 ms.author: ccompy
 ms.custom: seodec18
 ms.openlocfilehash: 15cd0979fdc2468ab50451042cd99a8442470139
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92148172"
 ---
 # <a name="create-an-ase-by-using-an-azure-resource-manager-template"></a>Een ASE maken met behulp van een Azure Resource Manager sjabloon
@@ -62,12 +62,12 @@ New-AzResourceGroupDeployment -Name "CHANGEME" -ResourceGroupName "YOUR-RG-NAME-
 Het duurt ongeveer een uur voordat de ASE is gemaakt. Vervolgens wordt de ASE weer gegeven in de portal in de lijst met as voor het abonnement dat de implementatie heeft geactiveerd.
 
 ## <a name="upload-and-configure-the-default-tlsssl-certificate"></a>Het ' standaard TLS/SSL-certificaat uploaden en configureren
-Een TLS/SSL-certificaat moet worden gekoppeld aan de ASE als het ' standaard ' TLS/SSL-certificaat dat wordt gebruikt om TLS-verbindingen met apps tot stand te brengen. Als het standaard-DNS-achtervoegsel van de ASE *Internal-contoso.com*is, is een verbinding `https://some-random-app.internal-contoso.com` vereist voor een TLS/SSL-certificaat dat geldig is voor **. Internal-contoso.com*. 
+Een TLS/SSL-certificaat moet worden gekoppeld aan de ASE als het ' standaard ' TLS/SSL-certificaat dat wordt gebruikt om TLS-verbindingen met apps tot stand te brengen. Als het standaard-DNS-achtervoegsel van de ASE *Internal-contoso.com* is, is een verbinding `https://some-random-app.internal-contoso.com` vereist voor een TLS/SSL-certificaat dat geldig is voor **. Internal-contoso.com*. 
 
 Verkrijg een geldig TLS/SSL-certificaat door interne certificerings instanties te kopen, een certificaat aan te schaffen bij een externe verlener of een zelfondertekend certificaat te gebruiken. Ongeacht de bron van het TLS/SSL-certificaat moeten de volgende certificaat kenmerken correct worden geconfigureerd:
 
 * **Onderwerp**: dit kenmerk moet worden ingesteld op **. Your-Root-Domain-here.com*.
-* **Alternatieve naam voor onderwerp**: dit kenmerk moet zowel **. Your-Root-Domain-here.com* als **. scm.Your-Root-Domain-here.com*bevatten. TLS-verbindingen met de SCM/kudu-site die is gekoppeld aan elke app, gebruiken een adres van de notatie *your-app-name.scm.Your-Root-Domain-here.com*.
+* **Alternatieve naam voor onderwerp**: dit kenmerk moet zowel **. Your-Root-Domain-here.com* als **. scm.Your-Root-Domain-here.com* bevatten. TLS-verbindingen met de SCM/kudu-site die is gekoppeld aan elke app, gebruiken een adres van de notatie *your-app-name.scm.Your-Root-Domain-here.com*.
 
 Als er een geldig TLS/SSL-certificaat beschikbaar is, zijn er twee extra voorbereidende stappen nodig. Het TLS/SSL-certificaat converteren/opslaan als een. pfx-bestand. Houd er rekening mee dat het pfx-bestand alle tussenliggende en basis certificaten moet bevatten. Beveilig het bestand met een wachtwoord.
 

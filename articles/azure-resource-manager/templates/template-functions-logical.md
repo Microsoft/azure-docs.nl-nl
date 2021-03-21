@@ -4,10 +4,10 @@ description: Hierin worden de functies beschreven die u kunt gebruiken in een Az
 ms.topic: conceptual
 ms.date: 11/18/2020
 ms.openlocfilehash: 27d94f10374daf0b9a351469579a5eb659cf5445
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96920482"
 ---
 # <a name="logical-functions-for-arm-templates"></a>Logische functies voor ARM-sjablonen
@@ -32,11 +32,11 @@ Controleert of alle parameter waarden waar zijn. De `and` functie wordt niet ond
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
 | Arg1 |Ja |booleaans |De eerste waarde om te controleren of deze waar is. |
 | Arg2 |Ja |booleaans |De tweede waarde om te controleren of waar is. |
-| aanvullende argumenten |No |booleaans |Aanvullende argumenten om te controleren of deze waar zijn. |
+| aanvullende argumenten |Nee |booleaans |Aanvullende argumenten om te controleren of deze waar zijn. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -96,9 +96,9 @@ Zet de para meter om in een Boole-waarde.
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
-| Arg1 |Yes |teken reeks of int |De waarde die moet worden geconverteerd naar een Boole. |
+| Arg1 |Ja |teken reeks of int |De waarde die moet worden geconverteerd naar een Boole. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -215,11 +215,11 @@ Retourneert een waarde op basis van het feit of een voor waarde waar of onwaar i
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
 | regeling |Ja |booleaans |De waarde om te controleren of deze True of False is. |
-| trueValue |Yes | teken reeks, int, object of matrix |De waarde die moet worden geretourneerd als de voor waarde waar is. |
-| falseValue |Yes | teken reeks, int, object of matrix |De waarde die moet worden geretourneerd als de voor waarde ONWAAR is. |
+| trueValue |Ja | teken reeks, int, object of matrix |De waarde die moet worden geretourneerd als de voor waarde waar is. |
+| falseValue |Ja | teken reeks, int, object of matrix |De waarde die moet worden geretourneerd als de voor waarde ONWAAR is. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -341,7 +341,7 @@ Zet Boole-waarde om in tegenovergestelde waarde. De `not` functie wordt niet ond
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
 | Arg1 |Ja |booleaans |De waarde die moet worden geconverteerd. |
 
@@ -436,11 +436,11 @@ Controleert of een parameter waarde waar is. De `or` functie wordt niet onderste
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
 | Arg1 |Ja |booleaans |De eerste waarde om te controleren of deze waar is. |
 | Arg2 |Ja |booleaans |De tweede waarde om te controleren of waar is. |
-| aanvullende argumenten |No |booleaans |Aanvullende argumenten om te controleren of deze waar zijn. |
+| aanvullende argumenten |Nee |booleaans |Aanvullende argumenten om te controleren of deze waar zijn. |
 
 ### <a name="return-value"></a>Retourwaarde
 

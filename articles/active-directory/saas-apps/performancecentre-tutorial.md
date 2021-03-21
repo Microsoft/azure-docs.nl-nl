@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
 ms.openlocfilehash: 79255b98312b16fa21e07abad701e08578c6ca89
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92515505"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-performancecentre"></a>Zelfstudie: Azure Active Directory-integratie met PerformanceCentre
@@ -49,11 +49,11 @@ Voor het configureren van de integratie van PerformanceCentre met Microsoft Azur
 
 **Ga als volgt te werk om PerformanceCentre vanuit de galerie toe te voegen:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -61,13 +61,13 @@ Voor het configureren van de integratie van PerformanceCentre met Microsoft Azur
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **PerformanceCentre** , selecteer **PerformanceCentre** in het resultatenvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **PerformanceCentre**, selecteer **PerformanceCentre** in het resultatenvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
      ![PerformanceCentre in de resultatenlijst](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In deze sectie gaat u eenmalige aanmelding van Azure Active Directory voor PerformanceCentre configureren en testen op basis van een testgebruiker met de naam **Britta Simon** .
+In deze sectie gaat u eenmalige aanmelding van Azure Active Directory voor PerformanceCentre configureren en testen op basis van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure Active Directory-gebruiker en de daaraan gerelateerde gebruiker in PerformanceCentre tot stand is gebracht.
 
 Om eenmalige aanmelding van Azure Active Directory voor PerformanceCentre te testen, moet u de volgende bouwstenen voltooien:
@@ -85,7 +85,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voer de volgende stappen uit als u eenmalige aanmelding van Azure Active Directory wilt configureren voor PerformanceCentre:
 
-1. Selecteer in [Azure Portal](https://portal.azure.com/) **Eenmalige aanmelding** op de integratiepagina van de toepassing **PerformanceCentre** .
+1. Selecteer in [Azure Portal](https://portal.azure.com/) **Eenmalige aanmelding** op de integratiepagina van de toepassing **PerformanceCentre**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -124,21 +124,21 @@ Voer de volgende stappen uit als u eenmalige aanmelding van Azure Active Directo
 
 ### <a name="configure-performancecentre-single-sign-on"></a>Eenmalige aanmelding voor PerformanceCentre configureren
 
-1. Meld u als beheerder aan bij uw **PerformanceCentre** -bedrijfssite.
+1. Meld u als beheerder aan bij uw **PerformanceCentre**-bedrijfssite.
 
-2. Klik op het tabblad aan de linkerkant op **Configureren** .
+2. Klik op het tabblad aan de linkerkant op **Configureren**.
    
     ![Schermopname van het menu van PerformanceCenter met Configureren geselecteerd.][10]
 
-3. Klik op het tabblad aan de linkerkant op **Diversen** en klik vervolgens op **Eenmalige aanmelding** .
+3. Klik op het tabblad aan de linkerkant op **Diversen** en klik vervolgens op **Eenmalige aanmelding**.
    
     ![Schermopname van het tabblad Configureren met Eenmalige aanmelding geselecteerd in het menu Diversen.][11]
 
-4. Selecteer **SAML-** als **protocol** .
+4. Selecteer **SAML-** als **protocol**.
    
     ![Schermopname van de sectie Eenmalige aanmelding configureren met SAML geselecteerd in het menu Protocol.][12]
 
-5. Open uw gedownloade metagegevens in Kladblok, kopieer de inhoud en plak deze vervolgens in het tekstvak **Metagegevens identiteitsprovider** en klik vervolgens op **Opslaan** .
+5. Open uw gedownloade metagegevens in Kladblok, kopieer de inhoud en plak deze vervolgens in het tekstvak **Metagegevens identiteitsprovider** en klik vervolgens op **Opslaan**.
    
     ![Schermopname van het tekstvak Metagegevens identiteitsprovider.][13]
 
@@ -150,7 +150,7 @@ Voer de volgende stappen uit als u eenmalige aanmelding van Azure Active Directo
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -169,25 +169,25 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 
-    d. Klik op **Create** .
+    d. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot PerformanceCentre.
 
-1. Selecteer **Bedrijfstoepassingen** in Azure Portal, selecteer **Alle toepassingen** en selecteer vervolgens **PerformanceCentre** .
+1. Selecteer **Bedrijfstoepassingen** in Azure Portal, selecteer **Alle toepassingen** en selecteer vervolgens **PerformanceCentre**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
-2. Selecteer in de lijst met toepassingen **PerformanceCentre** .
+2. Selecteer in de lijst met toepassingen **PerformanceCentre**.
 
     ![De PerformanceCentre-koppeling in de lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -195,7 +195,7 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
 6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="create-performancecentre-test-user"></a>Een testgebruiker voor PerformanceCentre maken
 
@@ -205,11 +205,11 @@ Het doel van deze sectie is het maken van een gebruiker met de naam Britta Simon
 
 1. Meld u als beheerder aan bij uw PerformanceCentre-bedrijfssite.
 
-2. Klik in het menu aan de linkerkant op **Verbanden leggen** en klik vervolgens op **Deelnemer maken** .
+2. Klik in het menu aan de linkerkant op **Verbanden leggen** en klik vervolgens op **Deelnemer maken**.
    
     ![Schermopname van de PerformanceCenter-bedrijfssite Verbanden leggen - Deelnemers met de knop Deelnemer maken geselecteerd.][400]
 
-3. Voer de volgende stappen uit in het dialoog venster **Verbanden leggen - Deelnemer maken** :
+3. Voer de volgende stappen uit in het dialoog venster **Verbanden leggen - Deelnemer maken**:
    
     ![Gebruiker maken][401]
     
@@ -218,9 +218,9 @@ Het doel van deze sectie is het maken van een gebruiker met de naam Britta Simon
     >[!IMPORTANT]
     >Het gebruikersnaamkenmerk van Britta in PerformanceCentre moet hetzelfde zijn als die van de gebruikersnaam in Azure AD.
     
-    b. Selecteer **Clientbeheerder** bij **Rol kiezen** .
+    b. Selecteer **Clientbeheerder** bij **Rol kiezen**.
     
-    c. Klik op **Opslaan** . 
+    c. Klik op **Opslaan**. 
 
 ### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen 
 

@@ -4,10 +4,10 @@ description: Hierin wordt beschreven hoe u back-ups maakt van virtuele Azure-mac
 ms.topic: conceptual
 ms.date: 07/28/2020
 ms.openlocfilehash: f6fe2f629742e15e62dfc13106e92623a4b45add
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92172746"
 ---
 # <a name="back-up-azure-vms-in-a-recovery-services-vault"></a>Back-ups maken van virtuele Azure-machines in een Recovery Services kluis
@@ -68,16 +68,16 @@ Configureer een back-upbeleid voor de kluis.
 
    ![Knop back-up](./media/backup-azure-arm-vms-prepare/backup-button.png)
 
-1. **Backup Goal**  >  **Waar wordt uw werk belasting uitgevoerd?** Selecteer **Azure**. In **waarvan wilt u een back-up maken?** Selecteer **virtuele machine**  >   **OK**. Hiermee wordt de VM-extensie in de kluis geregistreerd.
+1.   >  **Waar wordt uw werk belasting uitgevoerd?** Selecteer **Azure**. In **waarvan wilt u een back-up maken?** Selecteer **virtuele machine**  >   **OK**. Hiermee wordt de VM-extensie in de kluis geregistreerd.
 
    ![Deel Vensters voor back-up en back-up](./media/backup-azure-arm-vms-prepare/select-backup-goal-1.png)
 
-1. Selecteer in **back-upbeleid**het beleid dat u aan de kluis wilt koppelen.
+1. Selecteer in **back-upbeleid** het beleid dat u aan de kluis wilt koppelen.
     * Het standaard beleid maakt eenmaal per dag een back-up van de VM. De dagelijkse back-ups worden 30 dagen bewaard. Moment opnamen voor direct herstel worden twee dagen bewaard.
 
       ![Standaard back-upbeleid](./media/backup-azure-arm-vms-prepare/default-policy.png)
 
-    * Als u het standaard beleid niet wilt gebruiken, selecteert u **nieuwe maken**en maakt u een aangepast beleid zoals beschreven in de volgende procedure.
+    * Als u het standaard beleid niet wilt gebruiken, selecteert u **nieuwe maken** en maakt u een aangepast beleid zoals beschreven in de volgende procedure.
 
 1. Selecteer onder **Virtuele machines** de optie **Toevoegen**.
 
@@ -94,7 +94,7 @@ Configureer een back-upbeleid voor de kluis.
     >[!NOTE]
     > Alle virtuele machines in dezelfde regio en hetzelfde abonnement als de kluis zijn beschikbaar voor het configureren van de back-up. Bij het configureren van de back-up kunt u bladeren naar de naam van de virtuele machine en de bijbehorende resource groep, ook al hebt u niet de vereiste machtiging voor deze Vm's. Als de virtuele machine de status zacht verwijderd heeft, wordt deze niet weer gegeven in deze lijst. Als u de virtuele machine opnieuw moet beveiligen, moet u wachten totdat de tijdelijke verwijderings periode verloopt of verwijdert u de virtuele machine uit de lijst met voorlopig verwijderde items. Zie [het artikel voorlopig verwijderen voor vm's](soft-delete-virtual-machines.md#soft-delete-for-vms-using-azure-portal)voor meer informatie.
 
-1. Selecteer **back-up inschakelen**in **back-up**. Hiermee wordt het beleid geïmplementeerd voor de kluis en de virtuele machines en wordt de back-upextensie geïnstalleerd op de VM-agent die wordt uitgevoerd op de virtuele machine van Azure.
+1. Selecteer **back-up inschakelen** in **back-up**. Hiermee wordt het beleid geïmplementeerd voor de kluis en de virtuele machines en wordt de back-upextensie geïnstalleerd op de VM-agent die wordt uitgevoerd op de virtuele machine van Azure.
 
 Na het inschakelen van back-up:
 
@@ -109,13 +109,13 @@ Na het inschakelen van back-up:
 
 Als u hebt geselecteerd voor het maken van een nieuw back-upbeleid, vult u de beleids instellingen in.
 
-1. Geef in **beleids naam**een beschrijvende naam op.
-2. Geef in **back-upschema**op wanneer back-ups moeten worden gemaakt. U kunt dagelijks of wekelijks back-ups maken voor Azure-Vm's.
-3. Geef in **direct terugzetten**op hoe lang u moment opnamen lokaal wilt behouden voor direct terugzetten.
+1. Geef in **beleids naam** een beschrijvende naam op.
+2. Geef in **back-upschema** op wanneer back-ups moeten worden gemaakt. U kunt dagelijks of wekelijks back-ups maken voor Azure-Vm's.
+3. Geef in **direct terugzetten** op hoe lang u moment opnamen lokaal wilt behouden voor direct terugzetten.
     * Wanneer u een back-up van VM-schijven herstelt, worden deze vanuit het netwerk gekopieerd naar de opslag locatie voor herstel. Met direct terugzetten kunt u lokaal opgeslagen moment opnamen gebruiken die zijn gemaakt tijdens een back-uptaak, zonder te wachten tot back-upgegevens worden overgebracht naar de kluis.
     * U kunt moment opnamen voor direct terugzetten tussen een en vijf dagen bewaren. Twee dagen is de standaard instelling.
-4. Geef in **Bewaar termijn**op hoe lang u uw dagelijkse of wekelijkse back-uppunten wilt houden.
-5. Geef bij het **bewaren van maandelijks back-uppunt** en **bewaren van jaarlijks back-uppunt**op of u maandelijks of jaarlijks een back-up wilt houden van uw dagelijkse of wekelijkse back-ups.
+4. Geef in **Bewaar termijn** op hoe lang u uw dagelijkse of wekelijkse back-uppunten wilt houden.
+5. Geef bij het **bewaren van maandelijks back-uppunt** en **bewaren van jaarlijks back-uppunt** op of u maandelijks of jaarlijks een back-up wilt houden van uw dagelijkse of wekelijkse back-ups.
 6. Selecteer **OK** om het beleid op te slaan.
 
     ![Nieuw back-upbeleid](./media/backup-azure-arm-vms-prepare/new-policy.png)
@@ -127,12 +127,12 @@ Als u hebt geselecteerd voor het maken van een nieuw back-upbeleid, vult u de be
 
 De eerste back-up wordt uitgevoerd volgens de planning, maar u kunt deze als volgt direct uitvoeren:
 
-1. Selecteer **Back-upitems**in het menu kluis.
-2. Selecteer in **Back-upitems**de optie **Azure virtual machine**.
+1. Selecteer **Back-upitems** in het menu kluis.
+2. Selecteer in **Back-upitems** de optie **Azure virtual machine**.
 3. Selecteer in de lijst **Back-upitems** de weglatings tekens (...).
 4. Selecteer **Nu back-up**.
-5. In **Nu back-up**kunt u het besturings element kalender gebruiken om de laatste dag te selecteren dat het herstel punt moet worden bewaard. Selecteer vervolgens **OK**.
-6. De portal meldingen bewaken. U kunt de voortgang van de taak in het kluis dashboard controleren > **back-uptaken**worden  >  **uitgevoerd**. Afhankelijk van de grootte van de virtuele machine kan het maken van de eerste back-up even duren.
+5. In **Nu back-up** kunt u het besturings element kalender gebruiken om de laatste dag te selecteren dat het herstel punt moet worden bewaard. Selecteer vervolgens **OK**.
+6. De portal meldingen bewaken. U kunt de voortgang van de taak in het kluis dashboard controleren > **back-uptaken** worden  >  **uitgevoerd**. Afhankelijk van de grootte van de virtuele machine kan het maken van de eerste back-up even duren.
 
 ## <a name="verify-backup-job-status"></a>Status van back-uptaak controleren
 
@@ -149,7 +149,7 @@ De **overdracht van gegevens naar de kluis** fase kan meerdere dagen duren, afha
 
 De taak status kan variëren, afhankelijk van de volgende scenario's:
 
-**Momentopname** | **Gegevens overdragen aan de kluis** | **Taak status**
+**Snapshot** | **Gegevens overdragen aan de kluis** | **Taak status**
 --- | --- | ---
 Voltooid | Actief | Actief
 Voltooid | Overgeslagen | Voltooid

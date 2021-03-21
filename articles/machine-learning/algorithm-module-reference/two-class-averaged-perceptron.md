@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 04/22/2020
 ms.openlocfilehash: f1161dc99b84026bcc830c08b63b95d0bf3b0994
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93421138"
 ---
 # <a name="two-class-averaged-perceptron-module"></a>Two-Class gemiddelde Perceptron-module
@@ -22,7 +22,7 @@ In dit artikel wordt een module in Azure Machine Learning Designer beschreven.
 
 Gebruik deze module om een machine learning model te maken op basis van het gemiddelde Perceptron-algoritme.  
   
-Dit classificatie algoritme is een leer methode met toezicht en vereist een *gecodeerde gegevensset* , die een kolom Label bevat. U kunt het model trainen door het model en de gecodeerde gegevensset op te geven als invoer voor het [trainen van modellen](./train-model.md). Het getrainde model kan vervolgens worden gebruikt om waarden te voors pellen voor de nieuwe invoer voorbeelden.  
+Dit classificatie algoritme is een leer methode met toezicht en vereist een *gecodeerde gegevensset*, die een kolom Label bevat. U kunt het model trainen door het model en de gecodeerde gegevensset op te geven als invoer voor het [trainen van modellen](./train-model.md). Het getrainde model kan vervolgens worden gebruikt om waarden te voors pellen voor de nieuwe invoer voorbeelden.  
 
 ### <a name="about-averaged-perceptron-models"></a>Over gemiddelde Perceptron-modellen
 
@@ -36,9 +36,9 @@ De eenvoudiger Perceptron modellen zijn geschikt voor het leren van lineaire opv
 
 2.  Geef op hoe u wilt dat het model wordt getraind door de optie **trainer modus maken** in te stellen.  
   
-    -   **Eén para meter** : als u weet hoe u het model wilt configureren, geeft u een specifieke set waarden als argumenten op.
+    -   **Eén para meter**: als u weet hoe u het model wilt configureren, geeft u een specifieke set waarden als argumenten op.
 
-    -   **Parameter bereik** : Selecteer deze optie als u niet zeker weet wat de beste para meters zijn en u een parameter sweep wilt uitvoeren. Selecteer een bereik met waarden om over te sporen en het [model Hyper parameters](tune-model-hyperparameters.md) wordt herhaald op alle mogelijke combi Naties van de instellingen die u hebt verstrekt om de Hyper parameters te bepalen die de optimale resultaten opleveren.  
+    -   **Parameter bereik**: Selecteer deze optie als u niet zeker weet wat de beste para meters zijn en u een parameter sweep wilt uitvoeren. Selecteer een bereik met waarden om over te sporen en het [model Hyper parameters](tune-model-hyperparameters.md) wordt herhaald op alle mogelijke combi Naties van de instellingen die u hebt verstrekt om de Hyper parameters te bepalen die de optimale resultaten opleveren.  
   
 3.  Geef voor het **leer tempo** een waarde op voor het *leer tempo*. De waarden voor het leer tempo bepalen de grootte van de stap die wordt gebruikt in stochastische verloop Daal telkens wanneer het model wordt getest en gecorrigeerd.
   
@@ -52,9 +52,9 @@ De eenvoudiger Perceptron modellen zijn geschikt voor het leren van lineaire opv
   
 1.  Verbind een trainings gegevensset en Train het model:
 
-    + Als u de **modus trainer maken** instelt op **één para meter** , verbindt u een gecodeerde gegevensset en de module [Train model](train-model.md) .  
+    + Als u de **modus trainer maken** instelt op **één para meter**, verbindt u een gecodeerde gegevensset en de module [Train model](train-model.md) .  
   
-    + Als u de **modus trainer maken** instelt op het **parameter bereik** , verbindt u een gecodeerde gegevensset en traint u het model met behulp van [Hyper parameters model](tune-model-hyperparameters.md).  
+    + Als u de **modus trainer maken** instelt op het **parameter bereik**, verbindt u een gecodeerde gegevensset en traint u het model met behulp van [Hyper parameters model](tune-model-hyperparameters.md).  
   
     > [!NOTE]
     > 

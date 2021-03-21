@@ -4,10 +4,10 @@ description: Meer informatie over de nieuwe tabel structuur en het schema voor A
 ms.topic: conceptual
 ms.date: 05/09/2020
 ms.openlocfilehash: ef9d22cd2b45679928ee54778b2a521ea9ecab03
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100575603"
 ---
 # <a name="workspace-based-resource-changes"></a>Wijzigingen van resources op basis van werk ruimten
@@ -18,7 +18,7 @@ Met Application Insights resources-gegevens op basis van een werk ruimte worden 
 
 ## <a name="table-structure"></a>Tabelstructuur
 
-| Verouderde tabel naam | Nieuwe tabelnaam | Description |
+| Verouderde tabel naam | Nieuwe tabelnaam | Beschrijving |
 |:---|:---|:---|
 | availabilityResults | AppAvailabilityResults |  Samenvattings gegevens van beschikbaarheids testen.|
 | browserTimings | AppBrowserTimings | Gegevens over client prestaties, zoals de tijd die nodig is om de binnenkomende gegevens te verwerken.|

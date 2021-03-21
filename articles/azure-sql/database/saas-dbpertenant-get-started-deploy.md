@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/25/2019
 ms.openlocfilehash: 497e714289c834e026c6b9b767ed2b7af5442783
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92780832"
 ---
 # <a name="deploy-and-explore-a-multitenant-saas-app-that-uses-the-database-per-tenant-pattern-with-azure-sql-database"></a>Implementeer en verken een SaaS-app met meerdere tenants die het database-per-tenantpatroon gebruikt met Azure SQL Database
@@ -48,8 +48,8 @@ Om deze zelfstudie te voltooien, zorgt u ervoor dat Azure PowerShell geïnstalle
 
 In de stappen van deze sectie geeft u een gebruikerswaarde op die wordt gebruikt om te controleren of de resourcenamen wereldwijd uniek zijn. U geeft ook een naam op voor de resourcegroep met alle resources die zijn gemaakt door een implementatie van de app. Voor een fictieve persoon met de naam Ann Finley wordt het volgende voorgesteld:
 
-- **Gebruiker** : *af1* bestaat uit de initialen van Anne Finley plus een cijfer. Gebruik een andere waarde als u de app een tweede keer implementeert. Een voorbeeld is af2.
-- **Resourcegroep** : *wingtip-dpt-af1* geeft aan dat dit de database-per-tenant-app is. Voeg gebruikersnaam af1 toe om de naam van de resourcegroep te correleren met de namen van de resources die deze bevat.
+- **Gebruiker**: *af1* bestaat uit de initialen van Anne Finley plus een cijfer. Gebruik een andere waarde als u de app een tweede keer implementeert. Een voorbeeld is af2.
+- **Resourcegroep**: *wingtip-dpt-af1* geeft aan dat dit de database-per-tenant-app is. Voeg gebruikersnaam af1 toe om de naam van de resourcegroep te correleren met de namen van de resources die deze bevat.
 
 Kies uw namen nu en noteer ze.
 
@@ -64,9 +64,9 @@ Kies uw namen nu en noteer ze.
     > [!IMPORTANT]
     > Om het overzichtelijk te houden zijn bepaalde verificatieprocessen weggelaten. Ook zijn de firewalls op servers uitgeschakeld voor deze zelfstudie. Het wordt aangeraden om een nieuwe resourcegroep te maken. Gebruik geen bestaande resourcegroepen, -servers of -pools. Gebruik deze toepassing, scripts of enige geïmplementeerde resources niet voor productie. Verwijder deze resourcegroep wanneer u klaar bent om gerelateerde facturering te stoppen.
 
-    - **Resourcegroep** : Selecteer **Nieuwe maken** en geef de unieke naam op die u eerder hebt gekozen voor de resourcegroep.
-    - **Locatie** : Selecteer een locatie in de vervolgkeuzelijst.
-    - **Gebruiker** : Gebruik de waarde voor de gebruikersnaam die u eerder hebt gekozen.
+    - **Resourcegroep**: Selecteer **Nieuwe maken** en geef de unieke naam op die u eerder hebt gekozen voor de resourcegroep.
+    - **Locatie**: Selecteer een locatie in de vervolgkeuzelijst.
+    - **Gebruiker**: Gebruik de waarde voor de gebruikersnaam die u eerder hebt gekozen.
 
 1. De toepassing implementeren.
 
@@ -110,7 +110,7 @@ De app geeft een overzicht van de locaties waarop evenementen plaatsvinden. Voor
 
 In de app wordt intern in elke tenant een database geïmplementeerd in een elastische pool.
 
-Een centrale **Events Hub** -pagina bevat een lijst met koppelingen naar de tenants in uw implementatie.
+Een centrale **Events Hub**-pagina bevat een lijst met koppelingen naar de tenants in uw implementatie.
 
 1. Gebruik de URL om de Events Hub in uw webbrowser te openen: http://events.wingtip-dpt.&lt;user&gt;.trafficmanager.net. Vervang &lt;user&gt; door de gebruikerswaarde van uw implementatie.
 
@@ -130,7 +130,7 @@ De Wingtip-app maakt gebruik van [*Azure Traffic Manager*](../../traffic-manager
 
     | URL-onderdeel        | Beschrijving       |
     | :-------------- | :---------------- |
-    | events.wingtip-dpt | De gebeurtenisdelen van de Wingtip-app.<br /><br /> *-dpt* onderscheidt *database-per-tenant* -implementatie van Wingtip Tickets van andere implementaties. Voorbeelden zijn de implementaties met *één* app-per-tenant ( *-sa* ) of de *database met meerdere tenants* ( *-mt* ). |
+    | events.wingtip-dpt | De gebeurtenisdelen van de Wingtip-app.<br /><br /> *-dpt* onderscheidt *database-per-tenant*-implementatie van Wingtip Tickets van andere implementaties. Voorbeelden zijn de implementaties met *één* app-per-tenant ( *-sa*) of de *database met meerdere tenants* ( *-mt*). |
     | . *&lt;user&gt;* | *af1* in het voorbeeld. |
     | .trafficmanager.net/ | Traffic manager, basis-URL. |
     | fabrikamjazzclub | Identificeert de tenant met de naam Fabrikam Jazz Club. |
@@ -246,7 +246,7 @@ Ga naar de server **tenants1-dpt-&lt;user&gt;** en selecteer **Pool1** om het re
 
    ![Pool bewaken](./media/saas-dbpertenant-get-started-deploy/monitor-pool.png)
 
-- De eerste grafiek, met het label **Resourcegebruik** , toont het eDTU-gebruik van de pool.
+- De eerste grafiek, met het label **Resourcegebruik**, toont het eDTU-gebruik van de pool.
 - De tweede grafiek toont het eDTU-gebruik van de vijf meest actieve databases in de pool.
 
 Wat deze twee grafieken laten zien, is dat elastische pools en SQL Database uitermate geschikt zijn voor de workloads van onvoorspelbare SaaS-toepassingen. Op de grafieken ziet u dat vier databases elk pieken hebben tot 40 eDTU's en dat alle databases probleemloos ondersteund kunnen worden door een pool met 50-eDTU. De pool met 50-eDTU kan zelfs zwaardere workloads aan. Als de databases zijn ingericht als afzonderlijke databases, moet elke database een S2 (50 DTU) zijn om de pieken aan te kunnen. De kosten voor vier enkelvoudige S2-databases zijn bijna driemaal zo hoog als de prijs van de pool. In praktijksituaties draaien SQL Database-klanten momenteel maximaal 500 databases in pools van 200 eDTU. Zie voor meer informatie de [zelfstudie over Prestatiebewaking](saas-dbpertenant-performance-monitoring.md).

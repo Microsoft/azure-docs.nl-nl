@@ -8,17 +8,17 @@ ms.date: 11/09/2020
 author: sayantanroy83
 ms.author: sroy
 ms.openlocfilehash: c02ba12c790d745904d241f121e269aac3ed12f6
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96462983"
 ---
 # <a name="summary-dashboard-in-commercial-marketplace-analytics"></a>Dashboard Samenvatting in Commerciële marketplace-analyses
 
 Dit artikel bevat informatie over het dash board samen vatting in partner centrum. In dit dash board worden grafieken, trends en waarden van statistische gegevens weer gegeven waarin Marketplace-activiteiten voor uw aanbiedingen worden samenvatten.
 
-Voor toegang tot het dash board samen vatting in Partner Center, onder **commerciële Marketplace** , selecteert u **[Analyze](https://partner.microsoft.com/dashboard/commercial-marketplace/analytics/summary)**  >  **samen vatting** analyseren.
+Voor toegang tot het dash board samen vatting in Partner Center, onder **commerciële Marketplace** , selecteert u **[](https://partner.microsoft.com/dashboard/commercial-marketplace/analytics/summary)**  >  **samen vatting** analyseren.
 
 >[!NOTE]
 > Zie voor gedetailleerde definities van analyse terminologie [Commercial Marketplace Analytics terminologie en common questions](./analytics-faq.md)(Engelstalig).
@@ -91,7 +91,7 @@ Voor de geselecteerde berekenings periode geeft de heatmap het totale aantal kla
 
 :::image type="content" source="./media/summary-dashboard/geo-spread.png" alt-text="Illustreert de widget landen verspreiden in het dash board samen vatting.":::
 
-en let op het volgende:
+Houd rekening met het volgende:
 
 - U kunt de kaart verplaatsen om de exacte locatie weer te geven.
 - U kunt inzoomen op een specifieke locatie.

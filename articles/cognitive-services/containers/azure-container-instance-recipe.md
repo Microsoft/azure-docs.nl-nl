@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 12/18/2020
 ms.author: aahi
 ms.openlocfilehash: 003b4411ac791898f4a7467b9b03f29aadba2fc7
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97704831"
 ---
 # <a name="deploy-and-run-container-on-azure-container-instance"></a>Container implementeren en uitvoeren in Azure Container Instance
@@ -43,7 +43,7 @@ Alle variabelen tussen punt haken, `<>` moeten worden vervangen door uw eigen wa
 > 3. Navigeer in het Azure Portal naar de **overzichts** pagina van de bron van het opslag account en selecteer **Bestands shares**. 
 > 4. Selecteer de naam van de bestands share die u onlangs hebt gemaakt en selecteer vervolgens **uploaden**. Upload vervolgens uw verpakte app. 
 
-# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
 [!INCLUDE [Portal instructions for creating an ACI instance](includes/create-container-instances-resource.md)]
 
@@ -56,7 +56,7 @@ Alle variabelen tussen punt haken, `<>` moeten worden vervangen door uw eigen wa
 
 ## <a name="use-the-container-instance"></a>Het container exemplaar gebruiken
 
-# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
 1. Selecteer het **overzicht** en kopieer het IP-adres. Dit is een numeriek IP-adres, zoals `55.55.55.55` .
 1. Open een nieuw browser tabblad en gebruik het IP-adres, bijvoorbeeld `http://<IP-address>:5000 (http://55.55.55.55:5000` ). U ziet de start pagina van de container, zodat u weet dat de container wordt uitgevoerd.

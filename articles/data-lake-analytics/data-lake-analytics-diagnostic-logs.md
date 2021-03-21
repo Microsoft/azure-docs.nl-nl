@@ -5,10 +5,10 @@ ms.service: data-lake-analytics
 ms.topic: how-to
 ms.date: 02/12/2018
 ms.openlocfilehash: cd339729f2300ff7e13e7422bf73373b4ce4658e
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92221006"
 ---
 # <a name="accessing-diagnostic-logs-for-azure-data-lake-analytics"></a>Diagnostische logboeken openen voor Azure Data Lake Analytics
@@ -27,7 +27,7 @@ Met diagnostische logboek registratie kunt u gegevens toegangscontrole verzamele
 
     ![Scherm opname van de geselecteerde actie ' Diagnostische logboeken ' en ' Diagnostische gegevens inschakelen voor het verzamelen van de volgende logboeken ' gemarkeerd.](./media/data-lake-analytics-diagnostic-logs/turn-on-logging.png)
 
-3. Voer een __naam__ in voor de configuratie van de logboek registratie van __Diagnostische instellingen__en selecteer vervolgens opties voor logboek registratie.
+3. Voer een __naam__ in voor de configuratie van de logboek registratie van __Diagnostische instellingen__ en selecteer vervolgens opties voor logboek registratie.
 
     ![Diagnostische gegevens inschakelen om audit-en aanvraag logboeken te verzamelen](./media/data-lake-analytics-diagnostic-logs/enable-diagnostic-logs.png "Diagnostische logboeken inschakelen")
 
@@ -40,12 +40,12 @@ Met diagnostische logboek registratie kunt u gegevens toegangscontrole verzamele
      * Selecteer __verzenden naar log Analytics__ om de gegevens naar de Azure Monitor-service te verzenden. Gebruik deze optie als u Azure Monitor logboeken wilt gebruiken om logboeken te verzamelen en te analyseren.
    * Geef op of u audit Logboeken of aanvraag Logboeken of beide wilt ophalen.  In een aanvraag logboek wordt elke API-aanvraag vastgelegd. In een controle logboek worden alle bewerkingen vastgelegd die worden geactiveerd door die API-aanvraag.
 
-   * Geef voor __Archief naar een opslag account__het aantal dagen op dat de gegevens moeten worden bewaard.
+   * Geef voor __Archief naar een opslag account__ het aantal dagen op dat de gegevens moeten worden bewaard.
 
    * Klik op __Opslaan__.
 
         > [!NOTE]
-        > U moet __archiveren naar een opslag account__selecteren, __streamen naar een event Hub__ of __naar log Analytics verzenden__ voordat u op de knop __Opslaan__ klikt.
+        > U moet __archiveren naar een opslag account__ selecteren, __streamen naar een event Hub__ of __naar log Analytics verzenden__ voordat u op de knop __Opslaan__ klikt.
 
 ### <a name="use-the-azure-storage-account-that-contains-log-data"></a>Het Azure Storage-account gebruiken dat logboek gegevens bevat
 
@@ -187,7 +187,7 @@ Hier volgt een voor beeld van een vermelding in het audit logboek in JSON-indeli
 | properties |JSON |Zie de volgende sectie (schema van eigenschappen van audit Logboeken) voor meer informatie |
 
 > [!NOTE]
-> **resultType** en **resultSignature** bieden informatie over het resultaat van een bewerking en bevatten alleen een waarde als een bewerking is voltooid. Ze bevatten bijvoorbeeld alleen een waarde als **operationname** een waarde van **JobStarted** of **JobEnded**bevat.
+> **resultType** en **resultSignature** bieden informatie over het resultaat van een bewerking en bevatten alleen een waarde als een bewerking is voltooid. Ze bevatten bijvoorbeeld alleen een waarde als **operationname** een waarde van **JobStarted** of **JobEnded** bevat.
 >
 >
 
@@ -204,7 +204,7 @@ Hier volgt een voor beeld van een vermelding in het audit logboek in JSON-indeli
 | Parallelle uitvoering |Tekenreeks |Het aantal Data Lake Analytics eenheden dat voor deze taak is aangevraagd tijdens het verzenden |
 
 > [!NOTE]
-> **SubmitTime**, **StartTime**, **EndTime**en **parallellisme** bieden informatie over een bewerking. Deze vermeldingen bevatten alleen een waarde als die bewerking is gestart of voltooid. Zo bevat **SubmitTime** alleen een waarde als **Operationname** de waarde **JobSubmitted**heeft.
+> **SubmitTime**, **StartTime**, **EndTime** en **parallellisme** bieden informatie over een bewerking. Deze vermeldingen bevatten alleen een waarde als die bewerking is gestart of voltooid. Zo bevat **SubmitTime** alleen een waarde als **Operationname** de waarde **JobSubmitted** heeft.
 
 ## <a name="process-the-log-data"></a>De logboek gegevens verwerken
 

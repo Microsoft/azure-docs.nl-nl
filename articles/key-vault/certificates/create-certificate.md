@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: mbaldwin
 ms.openlocfilehash: a9545c040809331a5556b11f6cc7536931e2d421
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93289571"
 ---
 # <a name="certificate-creation-methods"></a>Methoden voor het maken van certificaten
@@ -80,10 +80,10 @@ De adresseer bare sleutel en het geheim ontvangen hun kenmerken van de kenmerken
 ## <a name="partnered-ca-providers"></a>Certificerings instanties van de partner
 Het maken van een certificaat kan hand matig worden voltooid of met een ' zelf-' verlener. Key Vault ook partners met bepaalde aanbieders van uitgevers om het maken van certificaten te vereenvoudigen. De volgende typen certificaten kunnen worden besteld voor sleutel kluis met deze partner Issuer-providers.  
 
-|Provider|Certificaattype|Configuratie-instellingen  
+|Provider|Certificaattype|Configuratie-installatie  
 |--------------|----------------------|------------------|  
-|DigiCert|Key Vault biedt OV-of EV SSL-certificaten met DigiCert| [Integratie handleiding](./how-to-integrate-certificate-authority.md)
-|GlobalSign|Key Vault biedt OV-of EV SSL-certificaten met GlobalSign| [Integratie handleiding](https://support.globalsign.com/digital-certificates/digital-certificate-installation/generating-and-importing-certificate-microsoft-azure-key-vault)
+|DigiCert|Key Vault biedt OV- of EV SSL-certificaten met DigiCert| [Integratiehandleiding](./how-to-integrate-certificate-authority.md)
+|GlobalSign|Key Vault biedt OV- of EV SSL-certificaten met GlobalSign| [Integratiehandleiding](https://support.globalsign.com/digital-certificates/digital-certificate-installation/generating-and-importing-certificate-microsoft-azure-key-vault)
 
  Een certificaat Uitgever is een entiteit die wordt weer gegeven in Azure Key Vault (KV) als een CertificateIssuer-resource. Het wordt gebruikt om informatie op te geven over de bron van een KV-certificaat; naam van de verlener, provider, referenties en andere administratieve gegevens.
 

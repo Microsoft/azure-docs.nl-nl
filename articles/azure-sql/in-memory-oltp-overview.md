@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/19/2019
 ms.openlocfilehash: 48b74a5507eb4a1d48b7bf70133e476a30fe8169
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92779948"
 ---
 # <a name="optimize-performance-by-using-in-memory-technologies-in-azure-sql-database-and-azure-sql-managed-instance"></a>Optimaliseer de prestaties met behulp van in-Memory technologieën in Azure SQL Database en Azure SQL Managed instance
@@ -111,7 +111,7 @@ SELECT * FROM sys.sql_modules WHERE uses_native_compilation=1
 
 ### <a name="data-size-and-storage-cap-for-in-memory-oltp"></a>Gegevens grootte en opslag limiet voor In-Memory OLTP
 
-In-Memory OLTP bevat tabellen die zijn geoptimaliseerd voor geheugen, die worden gebruikt voor het opslaan van gebruikers gegevens. Deze tabellen moeten in het geheugen passen. Omdat u het geheugen rechtstreeks beheert in SQL Database, hebben we het concept van een quotum voor gebruikers gegevens. Dit wordt aangeduid als *OLTP-opslag in het geheugen* .
+In-Memory OLTP bevat tabellen die zijn geoptimaliseerd voor geheugen, die worden gebruikt voor het opslaan van gebruikers gegevens. Deze tabellen moeten in het geheugen passen. Omdat u het geheugen rechtstreeks beheert in SQL Database, hebben we het concept van een quotum voor gebruikers gegevens. Dit wordt aangeduid als *OLTP-opslag in het geheugen*.
 
 Elke ondersteunde prijs categorie voor één data base en elke prijs categorie voor elastische Pools bevat een bepaalde hoeveelheid In-Memory OLTP-opslag.
 
@@ -149,7 +149,7 @@ Het downgradeen van de laag kan echter een negatieve invloed hebben op uw data b
 
 Voordat u de data base downgradet naar Algemeen, Standard of Basic, verwijdert u alle tabellen en tabel typen die zijn geoptimaliseerd voor geheugen en van alle systeem eigen, gecompileerde T-SQL-modules.
 
-*Resources in bedrijfskritiek laag schalen* : gegevens in tabellen die zijn geoptimaliseerd voor geheugen, moeten passen binnen de In-Memory OLTP-opslag die is gekoppeld aan de laag van de data base of het beheerde exemplaar of beschikbaar is in de elastische pool. Als u probeert de laag te schalen of de data base te verplaatsen naar een pool die niet voldoende beschik bare In-Memory OLTP-opslag heeft, mislukt de bewerking.
+*Resources in bedrijfskritiek laag schalen*: gegevens in tabellen die zijn geoptimaliseerd voor geheugen, moeten passen binnen de In-Memory OLTP-opslag die is gekoppeld aan de laag van de data base of het beheerde exemplaar of beschikbaar is in de elastische pool. Als u probeert de laag te schalen of de data base te verplaatsen naar een pool die niet voldoende beschik bare In-Memory OLTP-opslag heeft, mislukt de bewerking.
 
 ## <a name="in-memory-columnstore"></a>In-Memory column Store
 
@@ -212,6 +212,6 @@ Als u een **geclusterde** column store-index hebt, wordt de hele tabel na de dow
 
 ### <a name="tools"></a>Hulpprogramma's
 
-- [Azure Portal](https://portal.azure.com/)
+- [Azure-portal](https://portal.azure.com/)
 - [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms)
 - [SQL Server Data Tools (SSDT)](/sql/ssdt/download-sql-server-data-tools-ssdt)

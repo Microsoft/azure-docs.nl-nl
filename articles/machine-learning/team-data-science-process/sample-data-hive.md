@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 6a015da77cb7c0ba54be1dd5e729a9ee8a848c9d
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93321889"
 ---
 # <a name="sample-data-in-azure-hdinsight-hive-tables"></a>Voorbeeldgegevens in Hive-tabellen in Azure HDInsight
@@ -54,7 +54,7 @@ where samplekey<='${hiveconf:sampleRate}'
 Hier `<sample rate, 0-1>` geeft u het aandeel van records op waarmee de gebruikers willen steek proeven.
 
 ## <a name="random-sampling-by-groups"></a><a name="group"></a> Wille keurige steek proeven per groep
-Bij het bemonsteren van categorische-gegevens wilt u mogelijk alle instanties opnemen of uitsluiten voor een bepaalde waarde van de variabele categorische. Deze soort steek proef wordt ' steek proef op groep ' genoemd. Als u bijvoorbeeld een categorische-variabele ' *State* ' hebt, die waarden bevat zoals NY, ma, CA, NJ en PA, wilt u dat records uit elke staat samen komen, ongeacht of ze worden bemonsterd of niet.
+Bij het bemonsteren van categorische-gegevens wilt u mogelijk alle instanties opnemen of uitsluiten voor een bepaalde waarde van de variabele categorische. Deze soort steek proef wordt ' steek proef op groep ' genoemd. Als u bijvoorbeeld een categorische-variabele '*State*' hebt, die waarden bevat zoals NY, ma, CA, NJ en PA, wilt u dat records uit elke staat samen komen, ongeacht of ze worden bemonsterd of niet.
 
 Hier volgt een voor beeld van een query die voor beelden per groep bevat:
 

@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 12/04/2018
 ms.openlocfilehash: 88496a39b0186cefb7c64e227530b5d73e693094
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92780475"
 ---
 # <a name="restore-a-single-tenant-with-a-database-per-tenant-saas-application"></a>Eén tenant herstellen met een SaaS-app met een database per tenant
@@ -44,9 +44,9 @@ U kunt deze zelfstudie alleen voltooien als aan de volgende vereisten wordt vold
 
 Er zijn twee eenvoudige patronen voor het herstellen van de gegevens van een afzonderlijke tenant. Omdat de tenantdatabases van elkaar zijn geïsoleerd, heeft het herstellen van één tenant geen invloed op de gegevens van andere tenants. De Azure SQL Database-functie voor herstellen naar een bepaald tijdstip (Point-in-time-Restore, PITR) wordt in beide patronen gebruikt. Met PITR wordt altijd een nieuwe database gemaakt.
 
-* **Parallel herstellen** : In het eerste patroon wordt een nieuwe parallelle database gemaakt naast de huidige database van de tenant. De tenant krijgt vervolgens alleen-lezen toegang tot de herstelde database. De herstelde gegevens kunnen worden gecontroleerd en mogelijk worden gebruikt om de huidige gegevens te overschrijven. De ontwerper van de app bepaalt hoe de tenant toegang verkrijgt tot de herstelde database en welke opties voor herstel worden geboden. Het kan in sommige scenario's volstaan dat de tenant wordt toegestaan om de gegevens op een eerder tijdstip te controleren.
+* **Parallel herstellen**: In het eerste patroon wordt een nieuwe parallelle database gemaakt naast de huidige database van de tenant. De tenant krijgt vervolgens alleen-lezen toegang tot de herstelde database. De herstelde gegevens kunnen worden gecontroleerd en mogelijk worden gebruikt om de huidige gegevens te overschrijven. De ontwerper van de app bepaalt hoe de tenant toegang verkrijgt tot de herstelde database en welke opties voor herstel worden geboden. Het kan in sommige scenario's volstaan dat de tenant wordt toegestaan om de gegevens op een eerder tijdstip te controleren.
 
-* **Ter plekke herstellen** : Het tweede patroon is nuttig als gegevens verloren zijn gegaan of beschadigd zijn en men wil dat met de tenant wordt hersteld naar een eerder tijdstip. De tenant wordt offline geplaatst terwijl de database wordt hersteld. De oorspronkelijke database wordt verwijderd en de naam van de herstelde database wordt gewijzigd. De back-upketen van de oorspronkelijke database blijft toegankelijk na het verwijderen, zodat u de database zo nodig kunt herstellen naar een eerder tijdstip.
+* **Ter plekke herstellen**: Het tweede patroon is nuttig als gegevens verloren zijn gegaan of beschadigd zijn en men wil dat met de tenant wordt hersteld naar een eerder tijdstip. De tenant wordt offline geplaatst terwijl de database wordt hersteld. De oorspronkelijke database wordt verwijderd en de naam van de herstelde database wordt gewijzigd. De back-upketen van de oorspronkelijke database blijft toegankelijk na het verwijderen, zodat u de database zo nodig kunt herstellen naar een eerder tijdstip.
 
 Als de database gebruikmaakt van [actieve geo-replicatie](active-geo-replication-overview.md) en een parallel herstel, wordt aangeraden de vereiste gegevens van de herstelde database naar de oorspronkelijke database te kopiëren. Als u de oorspronkelijke database vervangt door de herstelde database, moet u geo-replicatie opnieuw configureren en opnieuw synchroniseren.
 
@@ -64,7 +64,7 @@ Als u deze herstelscenario's wilt demonstreren, moet u eerst 'per ongeluk' een g
 
 ### <a name="open-the-events-app-to-review-the-current-events"></a>De app Gebeurtenissen openen om de huidige gebeurtenissen te bekijken
 
-1. Open de Event Hub (http://events.wtp.&lt;user&gt;.trafficmanager.net) en selecteer **Contoso Concert Hall** .
+1. Open de Event Hub (http://events.wtp.&lt;user&gt;.trafficmanager.net) en selecteer **Contoso Concert Hall**.
 
    ![Event Hub](./media/saas-dbpertenant-restore-single-tenant/events-hub.png)
 
@@ -76,7 +76,7 @@ Als u deze herstelscenario's wilt demonstreren, moet u eerst 'per ongeluk' een g
 
 1. Open in PowerShell ISE ...\\Leermodules\\Bedrijfscontinuïteit en herstel na noodgevallen\\RestoreTenant\\*Demo-RestoreTenant.ps1* en stel de volgende waarde in:
 
-   * **$DemoScenario** = **1** , *De laatste gebeurtenis verwijderen (zonder ticketverkoop)* .
+   * **$DemoScenario** = **1**, *De laatste gebeurtenis verwijderen (zonder ticketverkoop)* .
 2. Druk op F5 om het script uit te voeren en de laatste gebeurtenis te verwijderen. Het volgende bevestigingsbericht wordt weergegeven:
 
    ```Console
@@ -94,11 +94,11 @@ In deze oefening wordt de Contoso Concert Hall-database hersteld naar een bepaal
  Met het script *Restore-TenantInParallel.ps1* wordt een parallelle tenantdatabase met de naam *ContosoConcertHall\_old* gemaakt, samen met een parallelle catalogusvermelding. Dit herstelpatroon is geschikt voor herstel bij beperkt gegevensverlies. U kunt dit patroon ook gebruiken als u gegevens moet controleren voor nalevings- of controledoeleinden. Het is de aanbevolen methode wanneer u gebruikmaakt van [actieve geo-replicatie](active-geo-replication-overview.md).
 
 1. Voer het gedeelte [Simuleren dat een tenant per ongeluk gegevens verwijdert](#simulate-a-tenant-accidentally-deleting-data) uit.
-2. Open in PowerShell ISE ...\\Leermodules\\Bedrijfscontinuïteit en herstel na noodgevallen\\RestoreTenant\\_Demo-RestoreTenant.ps1_ .
-3. Stel het volgende in: **$DemoScenario** = **2** , *De tenant parallel herstellen* .
+2. Open in PowerShell ISE ...\\Leermodules\\Bedrijfscontinuïteit en herstel na noodgevallen\\RestoreTenant\\_Demo-RestoreTenant.ps1_.
+3. Stel het volgende in: **$DemoScenario** = **2**, *De tenant parallel herstellen*.
 4. Druk op F5 om het script uit te voeren.
 
-Met het script wordt de tenantdatabase hersteld naar een tijdstip voordat u de gebeurtenis hebt verwijderd. De database wordt hersteld in een nieuwe database met de naam _ContosoConcertHall\_old_ . De metagegevens van de catalogus die voorkomen in deze herstelde database worden verwijderd en vervolgens wordt de database toegevoegd aan de catalogus met behulp van een sleutel die is gemaakt uit de naam *ContosoConcertHall\_old* .
+Met het script wordt de tenantdatabase hersteld naar een tijdstip voordat u de gebeurtenis hebt verwijderd. De database wordt hersteld in een nieuwe database met de naam _ContosoConcertHall\_old_. De metagegevens van de catalogus die voorkomen in deze herstelde database worden verwijderd en vervolgens wordt de database toegevoegd aan de catalogus met behulp van een sleutel die is gemaakt uit de naam *ContosoConcertHall\_old*.
 
 Met het demoscript wordt de pagina met gebeurtenissen voor deze nieuwe tenantdatabase geopend in uw browser. Uit de URL ```http://events.wingtip-dpt.&lt;user&gt;.trafficmanager.net/contosoconcerthall_old``` kunt u opmaken dat op deze pagina gegevens worden weergegeven uit de herstelde database waarvoor *_old* aan de naam is toegevoegd.
 
@@ -106,7 +106,7 @@ Schuif door de gebeurtenissen die worden vermeld in de browser om te controleren
 
 De herstelde tenant beschikbaar maken als een aanvullende tenant, met een eigen Gebeurtenissen-app, is waarschijnlijk niet de manier waarop u een tenant toegang biedt tot herstelde gegevens. Het dient om het herstelpatroon te illustreren. Normaal gesproken verleent u alleen-lezen toegang tot de oude gegevens en behoudt u de herstelde database gedurende een bepaalde periode. In het voorbeeld kunt u de vermelding voor de herstelde tenant verwijderen nadat u klaar bent door het scenario _Herstelde tenant verwijderen_ uit te voeren.
 
-1. Stel het volgende in: **$DemoScenario** = **4** , *Herstelde tenant verwijderen* .
+1. Stel het volgende in: **$DemoScenario** = **4**, *Herstelde tenant verwijderen*.
 2. Druk op F5 om het script uit te voeren.
 3. De vermelding *ContosoConcertHall\_old* wordt nu verwijderd uit de catalogus. Sluit de pagina met gebeurtenissen voor deze tenant in uw browser.
 
@@ -114,8 +114,8 @@ De herstelde tenant beschikbaar maken als een aanvullende tenant, met een eigen 
 
 In deze oefening wordt de Contoso Concert Hall-tenant hersteld naar een bepaald tijdstip voordat de gebeurtenis werd verwijderd. Met het script *Restore-TenantInPlace* wordt een tenantdatabase hersteld in een nieuwe database en wordt de oorspronkelijke database verwijderd. Dit herstelpatroon is geschikt voor herstel bij ernstige gegevensbeschadiging en de tenant moet mogelijk een aanzienlijk gegevensverlies opvangen.
 
-1. Open in PowerShell ISE het bestand **Demo-RestoreTenant.ps1** .
-2. Stel het volgende in: **$DemoScenario** = **5** , *De tenant ter plekke herstellen* .
+1. Open in PowerShell ISE het bestand **Demo-RestoreTenant.ps1**.
+2. Stel het volgende in: **$DemoScenario** = **5**, *De tenant ter plekke herstellen*.
 3. Druk op F5 om het script uit te voeren.
 
 Met het script wordt de tenantdatabase hersteld naar een tijdstip voordat de gebeurtenis werd verwijderd. Eerst wordt de Contoso Concert Hall-tenant offline gehaald om verdere updates te voorkomen. Vervolgens wordt er een parallelle database gemaakt door de database te herstellen vanaf het herstelpunt. De herstelde database krijgt een naam met een tijdstempel om ervoor te zorgen dat de databasenaam geen conflict veroorzaakt met de naam van de bestaande tenantdatabase. Vervolgens wordt de oude tenantdatabase verwijderd en wordt de naam van de herstelde database gewijzigd in de naam van de oorspronkelijke database. Ten slotte wordt Contoso Concert Hall online geplaatst zodat de app toegang kan krijgen tot de herstelde database.

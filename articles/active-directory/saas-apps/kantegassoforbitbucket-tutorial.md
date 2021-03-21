@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
 ms.openlocfilehash: 52879eb7cb7a9d90113971aa66c590b99b2d5e88
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92459277"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-kantega-sso-for-bitbucket"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met Kantega SSO voor Bitbucket
@@ -49,11 +49,11 @@ Om de integratie van Kantega SSO for Bitbucket in Azure AD te configureren, moet
 
 **Voer de volgende stappen uit om Kantega SSO for Bitbucket toe te voegen vanuit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -67,7 +67,7 @@ Om de integratie van Kantega SSO for Bitbucket in Azure AD te configureren, moet
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In deze sectie configureert en test u eenmalige aanmelding van Azure Active Directory met Kantega SSO for Bitbucket op basis van een testgebruiker met de naam **Britta Simon** .
+In deze sectie configureert en test u eenmalige aanmelding van Azure Active Directory met Kantega SSO for Bitbucket op basis van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure Active Directory-gebruiker en de daaraan gerelateerde gebruiker in Kantega SSO for Bitbucket tot stand is gebracht.
 
 Als u eenmalige aanmelding van Azure AD met Kantega SSO for Bitbucket wilt configureren en testen, moet u de volgende stappen voltooien:
@@ -85,7 +85,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Als u eenmalige aanmelding van Azure AD wilt configureren voor Kantega SSO for Bitbucket, voert u de volgende stappen uit:
 
-1. Ga in [Azure Portal](https://portal.azure.com/) naar de pagina voor integratie van de toepassing **Kantega SSO for Bitbucket** en selecteer **Eenmalige aanmelding** .
+1. Ga in [Azure Portal](https://portal.azure.com/) naar de pagina voor integratie van de toepassing **Kantega SSO for Bitbucket** en selecteer **Eenmalige aanmelding**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -132,7 +132,7 @@ Als u eenmalige aanmelding van Azure AD wilt configureren voor Kantega SSO for B
 
 1. Meld u in een ander browservenster als een beheerder aan bij de Bitbucket-beheerportal.
 
-1. Klik op het tandwiel en klik op **Find new add-ons** .
+1. Klik op het tandwiel en klik op **Find new add-ons**.
 
     ![Schermopname van BitBucket-beheer met Nieuwe invoegtoepassingen zoeken geselecteerd.](./media/kantegassoforbitbucket-tutorial/addon1.png)
 
@@ -144,11 +144,11 @@ Als u eenmalige aanmelding van Azure AD wilt configureren voor Kantega SSO for B
 
     ![Schermopname van de Voortgang van de installatie.](./media/kantegassoforbitbucket-tutorial/addon31.png)
 
-1. Nadat de installatie is voltooid. Klik op **Sluiten** .
+1. Nadat de installatie is voltooid. Klik op **Sluiten**.
 
     ![Schermopname van de knop Sluiten.](./media/kantegassoforbitbucket-tutorial/addon33.png)
 
-1. Klik op **Beheren** .
+1. Klik op **Beheren**.
 
     ![Schermopname van de knop Beheren.](./media/kantegassoforbitbucket-tutorial/addon34.png)
 
@@ -156,51 +156,51 @@ Als u eenmalige aanmelding van Azure AD wilt configureren voor Kantega SSO for B
 
     ![Schermopname van 'User-installed add-ons' (Door de gebruiker geïnstalleerde invoegtoepassingen) met 'Configure' (Configureren) geselecteerd.](./media/kantegassoforbitbucket-tutorial/addon35.png)
 
-1. In het gedeelte **SAML** . Selecteer **Azure Active Directory (Azure AD)** in de vervolgkeuzelijst **Id-provider toevoegen** .
+1. In het gedeelte **SAML**. Selecteer **Azure Active Directory (Azure AD)** in de vervolgkeuzelijst **Id-provider toevoegen**.
 
     ![Schermopname van de Eenmalige aanmelding van Kantega met Azure AD als id-provider geselecteerd.](./media/kantegassoforbitbucket-tutorial/addon4.png)
 
-1. Selecteer als abonnementsniveau de optie **Basic** .
+1. Selecteer als abonnementsniveau de optie **Basic**.
 
     ![Schermopname van 'Azure AD voorbereiden' met 'Basic' geselecteerd.](./media/kantegassoforbitbucket-tutorial/addon5.png)
 
-1. Voer de volgende stappen uit in het gedeelte **App-eigenschappen** :
+1. Voer de volgende stappen uit in het gedeelte **App-eigenschappen**:
 
     ![Schermopname van de sectie 'App properties' (App-eigenschappen) waar u de informatie voor deze stap kunt opgeven.](./media/kantegassoforbitbucket-tutorial/addon6.png)
 
     a. Kopieer de waarde voor de **app-id-URI** en gebruik deze als **id, antwoord-URL en aanmeldings-URL** in het gedeelte **Standaard SAML-configuratie** in Azure Portal.
 
-    b. Klik op **Volgende** .
+    b. Klik op **Volgende**.
 
-1. Voer de volgende stappen uit in het gedeelte **Metagegevens importeren** :
+1. Voer de volgende stappen uit in het gedeelte **Metagegevens importeren**:
 
     ![Schermopname van de sectie 'Metadata import' (Metagegevens importeren), waar u naar een metagegevensbestand kunt bladeren.](./media/kantegassoforbitbucket-tutorial/addon7.png)
 
     a. Selecteer **Metadata file on my computer** en upload het metagegevensbestand dat u vanuit Azure Portal hebt gedownload.
 
-    b. Klik op **Volgende** .
+    b. Klik op **Volgende**.
 
-1. Voer de volgende stappen uit op in het gedeelte **Name and SSO location** :
+1. Voer de volgende stappen uit op in het gedeelte **Name and SSO location**:
 
     ![Schermopname met de naam en SSO-locatie waarbij Azure AD de naam van de id-provider is.](./media/kantegassoforbitbucket-tutorial/addon8.png)
 
     a. In het tekstvak **Identity provider name** (bijvoorbeeld Azure AD) voegt u de naam van de id-provider toe.
 
-    b. Klik op **Volgende** .
+    b. Klik op **Volgende**.
 
-1. Controleer het handtekeningcertificaat en klik op **Volgende** .
+1. Controleer het handtekeningcertificaat en klik op **Volgende**.
 
     ![Schermopname van de Handtekeningverificatie.](./media/kantegassoforbitbucket-tutorial/addon9.png)
 
-1. Voer de volgende stappen uit in de sectie **Bitbucket user accounts** :
+1. Voer de volgende stappen uit in de sectie **Bitbucket user accounts**:
 
     ![Schermopname van BitBucket-gebruikersaccounts waarvoor u de mogelijkheid hebt om gebruikers te maken.](./media/kantegassoforbitbucket-tutorial/addon10.png)
 
     a. Selecteer **Create users in Bitbucket's internal Directory if needed** en voer de juiste naam van de groep voor gebruikers in (dit kunnen meerdere aantallen groepen zijn, gescheiden door komma's).
 
-    b. Klik op **Volgende** .
+    b. Klik op **Volgende**.
 
-1. Klik op **Voltooien** .
+1. Klik op **Voltooien**.
 
     ![Schermopname van de Samenvattingspagina.](./media/kantegassoforbitbucket-tutorial/addon11.png)
 
@@ -212,13 +212,13 @@ Als u eenmalige aanmelding van Azure AD wilt configureren voor Kantega SSO for B
 
     b. Voer de domeinnaam in het tekstvak **Known domains** in.
 
-    c. Klik op **Opslaan** .
+    c. Klik op **Opslaan**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -237,13 +237,13 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 
-    d. Klik op **Create** .
+    d. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie stelt u Britta Simon in staat om eenmalige aanmelding van Azure te gebruiken door haar toegang te geven tot Kantega SSO for Bitbucket.
 
-1. Selecteer in Azure Portal **Bedrijfstoepassingen** , selecteer **Alle toepassingen** en selecteer vervolgens **Kantega SSO for Bitbucket** .
+1. Selecteer in Azure Portal **Bedrijfstoepassingen**, selecteer **Alle toepassingen** en selecteer vervolgens **Kantega SSO for Bitbucket**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -251,11 +251,11 @@ In deze sectie stelt u Britta Simon in staat om eenmalige aanmelding van Azure t
 
     ![De koppeling Kantega SSO for Bitbucket in de lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -263,7 +263,7 @@ In deze sectie stelt u Britta Simon in staat om eenmalige aanmelding van Azure t
 
 6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="create-kantega-sso-for-bitbucket-test-user"></a>Testgebruiker voor Kantega SSO for Bitbucket maken
 
@@ -277,11 +277,11 @@ Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij Bitbucket, moeten z
 
     ![Schermopname van het pictogram Instellingen.](./media/kantegassoforbitbucket-tutorial/user1.png) 
 
-1. Klik in de tabbladsectie **Beheer** op **Gebruikers** .
+1. Klik in de tabbladsectie **Beheer** op **Gebruikers**.
 
     ![Schermopname van BitBucket-beheer met Gebruikers geselecteerd. ](./media/kantegassoforbitbucket-tutorial/user2.png)
 
-1. Klik op **Gebruiker maken** .
+1. Klik op **Gebruiker maken**.
 
     ![Schermopname van BitBucket-beheer met Gebruiker maken geselecteerd.](./media/kantegassoforbitbucket-tutorial/user3.png)   
 
@@ -299,7 +299,7 @@ Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij Bitbucket, moeten z
 
     e. Voer in het tekstvak **Wachtwoord bevestigen** het wachtwoord van de gebruiker opnieuw in.
 
-    f. Klik op **Gebruiker maken** .
+    f. Klik op **Gebruiker maken**.
 
 ### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen
 

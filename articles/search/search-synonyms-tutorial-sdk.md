@@ -1,5 +1,5 @@
 ---
-title: Synoniemen C#-voor beeld
+title: C#-voorbeeld van synoniemen
 titleSuffix: Azure Cognitive Search
 description: In dit C#-voor beeld leert u hoe u de synoniemen functie kunt toevoegen aan een index in azure Cognitive Search. Een synoniemenkaart is een lijst met equivalente termen. Voor velden met ondersteuning voor synoniemen worden query's uitgebreid met de door de gebruiker opgegeven term en alle gerelateerde synoniemen.
 manager: nitinme
@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 12/18/2020
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 50d5d73e71b8129f061ec49b363a0ebb13d22bdf
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97704653"
 ---
 # <a name="example-add-synonyms-for-azure-cognitive-search-in-c"></a>Voor beeld: synoniemen voor Azure-Cognitive Search in C toevoegen #

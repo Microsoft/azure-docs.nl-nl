@@ -8,10 +8,10 @@ ms.topic: tutorial
 ms.date: 09/14/2020
 ms.custom: mvc
 ms.openlocfilehash: 8fb17dc880b74da3ca4e96df10946878fde31909
-ms.sourcegitcommit: 949c0a2b832d55491e03531f4ced15405a7e92e3
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/18/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98541407"
 ---
 # <a name="tutorial-discover-aws-instances-with-server-assessment"></a>Zelfstudie: AWS-exemplaren detecteren met Serverevaluatie
@@ -40,7 +40,7 @@ Controleer of deze vereisten aanwezig zijn voordat u met deze zelfstudie begint.
 
 **Vereiste** | **Details**
 --- | ---
-**Apparaat** | U hebt een virtuele EC2-machine nodig waarop het Azure Migrate-apparaat kan worden uitgevoerd. De machine moet aan de volgende voorwaarden voldoen:<br/><br/> - Windows Server 2016 is geïnstalleerd.<br/> _Het apparaat wordt niet ondersteund op een computer met Windows Server 2019_.<br/><br/> -16 GB RAM, 8 Vcpu's, ongeveer 80 GB aan schijf opslag en een externe virtuele switch.<br/><br/> - Een statisch of dynamisch IP-adres met internettoegang, hetzij rechtstreeks of via een proxy.
+**Apparaat** | U hebt een virtuele EC2-machine nodig waarop het Azure Migrate-apparaat kan worden uitgevoerd. De machine moet aan de volgende voorwaarden voldoen:<br/><br/> -Windows Server 2016 is geïnstalleerd.<br/> _Het apparaat wordt niet ondersteund op een computer met Windows Server 2019_.<br/><br/> -16 GB RAM, 8 Vcpu's, ongeveer 80 GB aan schijf opslag en een externe virtuele switch.<br/><br/> - Een statisch of dynamisch IP-adres met internettoegang, hetzij rechtstreeks of via een proxy.
 **Windows-exemplaren** | Sta binnenkomende verbindingen op WinRM-poort 5985 (HTTP) toe, zodat het apparaat metagegevens over de configuratie en prestaties kan ophalen.
 **Linux-exemplaren** | Sta binnenkomende verbindingen op poort 22 (TCP) toe.<br/><br/> De exemplaren moeten `bash` gebruiken als de standaardshell, anders mislukt de detectie.
 

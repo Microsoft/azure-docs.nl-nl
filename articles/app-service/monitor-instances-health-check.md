@@ -6,12 +6,12 @@ author: msangapu-msft
 ms.topic: article
 ms.date: 12/03/2020
 ms.author: msangapu
-ms.openlocfilehash: 7d6f9564328f81b71c62a4243c5f4cc209a29d8f
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 0e08d016ab85587d451ad2a1e296e7f494ba283e
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101714473"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104596022"
 ---
 # <a name="monitor-app-service-instances-using-health-check"></a>App Service instanties controleren met status controle
 
@@ -48,7 +48,7 @@ In dit artikel wordt gebruikgemaakt van de status controle in de Azure Portal om
 
 Naast het configureren van de opties voor de status controle kunt u ook de volgende [app-instellingen](configure-common.md)configureren:
 
-| Naam van app-instelling | Toegestane waarden | Beschrijving |
+| Naam van app-instelling | Toegestane waarden | Description |
 |-|-|-|
 |`WEBSITE_HEALTHCHECK_MAXPINGFAILURES` | 2 - 10 | Het maximum aantal ping-fouten. Wanneer bijvoorbeeld is ingesteld op `2` , worden uw instanties verwijderd na `2` mislukte pings. Bovendien, wanneer u omhoog of omlaag schaalt, App Service pingt het Health Check-pad om ervoor te zorgen dat er nieuwe exemplaren gereed zijn. |
 |`WEBSITE_HEALTHCHECK_MAXUNHEALTYWORKERPERCENT` | 0 - 100 | Om te voor komen dat er overweldigende instanties zijn, worden niet meer dan de helft van de instanties uitgesloten. Als bijvoorbeeld een App Service plan wordt geschaald naar vier instanties en drie de status niet in orde hebben, worden er Maxi maal twee uitgesloten. De andere twee instanties (een gezonde en een slechte status) blijven aanvragen ontvangen. In het slechtste scenario waarbij alle instanties een slechte status hebben, wordt geen uitgesloten. Als u dit gedrag wilt overschrijven, stelt u de app-instelling in op een waarde tussen `0` en `100` . Een hogere waarde betekent dat er meer beschadigde instanties worden verwijderd (standaard is 50). |
@@ -62,6 +62,10 @@ Grote ontwikkel teams van ondernemingen moeten vaak voldoen aan de beveiligings 
 ## <a name="monitoring"></a>Bewaking
 
 Nadat u het Health Check-pad van uw toepassing hebt opgegeven, kunt u de status van uw site bewaken met behulp van Azure Monitor. Klik op de Blade **status controle** in de portal op de **metrische gegevens** in de bovenste werk balk. Hiermee opent u een nieuwe blade waar u de historische status van de site kunt zien en een nieuwe waarschuwings regel maakt. [Zie de gids over Azure monitor](web-sites-monitor.md)voor meer informatie over het bewaken van uw sites.
+
+## <a name="limitations"></a>Beperkingen
+
+De status controle moet niet worden ingeschakeld op de Premium-functies-sites. Als gevolg van het snel schalen van Premium-functies kunnen de aanvragen voor status controle onnodig schommelingen in HTTP-verkeer veroorzaken. Premium-functies hebben hun eigen interne status tests die worden gebruikt om beslissingen over het schalen te melden.
 
 ## <a name="next-steps"></a>Volgende stappen
 - [Een waarschuwing voor een activiteiten logboek maken om alle bewerkingen voor het automatisch schalen van de engine voor uw abonnement te bewaken](https://github.com/Azure/azure-quickstart-templates/tree/master/monitor-autoscale-alert)

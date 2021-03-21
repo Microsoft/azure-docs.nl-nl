@@ -10,10 +10,10 @@ ms.author: keli19
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 02/01/2019
 ms.openlocfilehash: db5f3cc4b9530c4aeac40786756b36cc0ac98728
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100520371"
 ---
 # <a name="import-your-training-data-into-azure-machine-learning-studio-classic-from-various-data-sources"></a>Importeer uw trainings gegevens in Azure Machine Learning Studio (klassiek) van verschillende gegevens bronnen
@@ -157,7 +157,7 @@ De online gegevens bronnen die worden ondersteund, worden in de onderstaande tab
 ### <a name="supported-online-data-sources"></a>Ondersteunde online gegevens bronnen
 De module **import data** van Azure machine learning Studio (Classic) ondersteunt de volgende gegevens bronnen:
 
-| Gegevensbron | Description | Parameters |
+| Gegevensbron | Beschrijving | Parameters |
 | --- | --- | --- |
 | Web-URL via HTTP |Hiermee worden gegevens gelezen in CSV-indeling (door komma's gescheiden waarden), door tabs gescheiden waarden (TSV), kenmerk-relation File Format (ARFF) en support vector machines (SVM-licht), van een web-URL die gebruikmaakt van HTTP |<b>URL</b>: Hiermee geeft u de volledige naam van het bestand, met inbegrip van de site-URL en de bestands naam, op met een wille keurige extensie. <br/><br/><b>Gegevens indeling</b>: Hiermee geeft u een van de ondersteunde gegevens indelingen op: CSV, tsv, ARFF of SVM-Light. Als de gegevens een veldnamenrij hebben, wordt deze gebruikt om kolom namen toe te wijzen. |
 | Hadoop/HDFS |Hiermee worden gegevens uit de gedistribueerde opslag in Hadoop gelezen. U geeft de gewenste gegevens op met behulp van HiveQL, een SQL-achtige query taal. HiveQL kan ook worden gebruikt om gegevens samen te voegen en gegevens te filteren voordat u de gegevens toevoegt aan Studio (klassiek). |<b>Hive-database query</b>: Hiermee geeft u de Hive-query op die wordt gebruikt voor het genereren van de gegevens.<br/><br/><b>URI</b> van de HCatalog-server: Geef de naam van uw cluster op met de notatie *&lt; uw cluster naam &gt; . azurehdinsight.net.*<br/><br/><b>Hadoop-gebruikers accountnaam</b>: Hiermee geeft u de naam van het Hadoop-gebruikers account op dat is gebruikt om het cluster in te richten.<br/><br/><b>Hadoop-wacht woord voor gebruikers account</b> : Hiermee geeft u de referenties op die worden gebruikt bij het inrichten van het cluster. Zie [Hadoop-clusters maken in HDInsight](../../hdinsight/hdinsight-hadoop-provision-linux-clusters.md)voor meer informatie.<br/><br/><b>Locatie van uitvoer gegevens</b>: Hiermee geeft u op of de gegevens worden opgeslagen in een Hadoop Distributed File System (HDFS) of in Azure. <br/><ul>Als u uitvoer gegevens opslaat in HDFS, geeft u de URI van de HDFS-server op. (Vergeet niet om de naam van het HDInsight-cluster te gebruiken zonder het HTTPS://-voor voegsel). <br/><br/>Als u de uitvoer gegevens in azure opslaat, moet u de naam van het Azure Storage-account, de toegangs sleutel voor de opslag en de opslag container naam opgeven.</ul> |

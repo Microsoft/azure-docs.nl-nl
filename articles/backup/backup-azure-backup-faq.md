@@ -3,12 +3,12 @@ title: Antwoorden op veelgestelde vragen
 description: 'Antwoorden op veelgestelde vragen over de functies van Azure Backup, waaronder de Recovery Services-kluis, waarvan een back-up kan worden gemaakt, hoe het werkt, versleuteling en limieten. '
 ms.topic: conceptual
 ms.date: 07/07/2019
-ms.openlocfilehash: ac58cee66aa2a89efb7194a051801b068628d3bc
-ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
+ms.openlocfilehash: 79ff404192de481965f3971f00328c49a591dd41
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "103467626"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104583374"
 ---
 # <a name="azure-backup---frequently-asked-questions"></a>Azure Backup - veelgestelde vragen
 
@@ -72,6 +72,13 @@ Ja. Als u een abonnement (dat een kluis bevat) wilt verplaatsen naar een andere 
 
 >[!IMPORTANT]
 >Zorg ervoor dat u de volgende acties uitvoert nadat u het abonnement hebt verplaatst:<ul><li>Toegangs beheer op basis van rollen en aangepaste rollen kunnen niet worden overschreven. U moet de machtigingen en rollen opnieuw maken in de nieuwe Azure AD.</li><li>U moet de (MI) beheerde identiteit van de kluis opnieuw maken door deze opnieuw in te scha kelen en opnieuw in te scha kelen. U moet ook de MI-machtigingen evalueren en opnieuw maken.</li><li>Als de kluis gebruikmaakt van functies die gebruikmaken van MI, zoals [persoonlijke eind punten](private-endpoints.md#before-you-start) en door de [klant beheerde sleutels](encryption-at-rest-with-cmk.md#before-you-start), moet u de functies opnieuw configureren.</li></ul>
+
+### <a name="can-i-move-a-subscription-that-contains-a-recovery-services-vault-to-a-different-tenant"></a>Kan ik een abonnement met een Recovery Services kluis verplaatsen naar een andere Tenant?
+
+Ja. Zorg ervoor dat u het volgende doet: 
+
+>[!IMPORTANT]
+>Zorg ervoor dat u de volgende acties uitvoert nadat u het abonnement hebt verplaatst:<ul><li>Als de kluis CMK (door de klant beheerde sleutels) gebruikt, moet u de kluis bijwerken. Hiermee kan de kluis de beheerde identiteit en CMK van de kluis opnieuw maken en configureren (deze worden opgeslagen in de nieuwe Tenant), anders mislukt de back-up/herstel bewerking.</li><li>U moet de RBAC-machtigingen in het abonnement opnieuw configureren omdat de bestaande machtigingen niet kunnen worden verplaatst.</li></ul>
 
 ## <a name="azure-backup-agent"></a>Azure Backup-agent
 

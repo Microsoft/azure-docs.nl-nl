@@ -12,10 +12,10 @@ ms.date: 03/15/2021
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 860f167913211ee7c511e515937f29ba5bf954cf
-ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103491556"
 ---
 # <a name="migrate-an-owin-based-web-api-to-b2clogincom-or-a-custom-domain"></a>Een op OWIN gebaseerde web-API migreren naar b2clogin.com of een aangepast domein
@@ -85,7 +85,7 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-dotnet-webapp-an
 In deze sectie werkt u de code bij om aan te geven dat beide eind punten van de token Uitgever geldig zijn.
 
 1. Open de oplossing **B2C-WebAPI-dotnet. SLN** in Visual Studio
-1. Open in het project **TaskService** het bestand *TaskService \\ App_Start \\ * * Startup.auth.cs** * in uw editor
+1. Open in het project **TaskService** het bestand *TaskService \\ App_Start \\ * * Startup. auth. cs** * in uw editor
 1. Voeg de volgende `using` instructie toe aan het begin van het bestand:
 
     `using System.Collections.Generic;`
@@ -105,7 +105,7 @@ In deze sectie werkt u de code bij om aan te geven dat beide eind punten van de 
     };
     ```
 
-`TokenValidationParameters` wordt verzorgd door MSAL.NET en wordt gebruikt door de OWIN-middleware in de volgende sectie van de code in *Startup.auth.cs*. Als er meerdere geldige verleners zijn opgegeven, wordt de OWIN-toepassings pijplijn op de hoogte gesteld dat beide token-eind punten geldige verleners zijn.
+`TokenValidationParameters` wordt verzorgd door MSAL.NET en wordt gebruikt door de OWIN-middleware in de volgende sectie van de code in *Startup. auth. cs*. Als er meerdere geldige verleners zijn opgegeven, wordt de OWIN-toepassings pijplijn op de hoogte gesteld dat beide token-eind punten geldige verleners zijn.
 
 ```csharp
 app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions

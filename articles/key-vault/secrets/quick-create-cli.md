@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019, devx-track-azurecli
 ms.date: 01/27/2021
 ms.author: mbaldwin
-ms.openlocfilehash: e84a9fe15f648311c22fb0f7e8f8374454f5668a
-ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
+ms.openlocfilehash: 1443ab37beb28706227159c53d336384216d8387
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99989169"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104582443"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-azure-cli"></a>Quickstart: een geheim uit Azure Key Vault instellen en ophalen met behulp van Azure CLI
 
@@ -39,7 +39,7 @@ In deze quickstart maakt u een sleutelkluis in Azure Key Vault met behulp van de
 
 Als u een geheim wilt toevoegen aan de kluis, hoeft u maar een paar extra stappen uit te voeren. Dit wachtwoord zou kunnen worden gebruikt door een toepassing. Het wachtwoord krijgt de naam **ExamplePassword** en slaat daarin de waarde van **hVFkk965BuUv** op.
 
-Typ de onderstaande opdrachten om een geheim te maken in de sleutelkluis met de naam **ExamplePassword** waarin de waarde **hVFkk965BuUv** wordt opgeslagen:
+Gebruik de Azure CLI AZ-opdracht voor [geheime instellingen](/cli/azure/keyvault/secret#az_keyvault_secret_set) hieronder om een geheim te maken in Key Vault met de naam **ExamplePassword** waarin de waarde **hVFkk965BuUv** wordt opgeslagen:
 
 ```azurecli
 az keyvault secret set --vault-name "<your-unique-keyvault-name>" --name "ExamplePassword" --value "hVFkk965BuUv"
@@ -64,5 +64,6 @@ U hebt nu een sleutelkluis gemaakt, een geheim opgeslagen en dat vervolgens opge
 In deze quickstart hebt u een sleutelkluis gemaakt en daar een geheim in opgeslagen. Voor meer informatie over Key Vault en hoe u Key Vault integreert met uw toepassingen gaat u verder naar de artikelen hieronder.
 
 - Lees een [Overzicht van Azure Key Vault](../general/overview.md)
+- Meer informatie over het [opslaan van meerregelige geheimen in Key Vault](multiline-secrets.md)
 - Raadpleeg de naslaginformatie voor de [az keyvault-opdrachten van de Azure CLI](/cli/azure/keyvault)
 - Raadpleeg het [Overzicht voor Key Vault-beveiliging](../general/security-overview.md)

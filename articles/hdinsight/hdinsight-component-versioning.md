@@ -7,10 +7,10 @@ author: deshriva
 ms.author: deshriva
 ms.date: 02/08/2021
 ms.openlocfilehash: 53ca2ac73fdec9d3b39ffc04cbb24aca707a72eb
-ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103490446"
 ---
 # <a name="azure-hdinsight-versions"></a>Azure HDInsight-versies
@@ -28,7 +28,7 @@ Deze tabel geeft een lijst van de versies van HDInsight die beschikbaar zijn in 
 
 * We verlengen de ondersteunings periode voor bepaalde cluster typen van HDInsight 3,6. Zie [versies van HDInsight 3,6-onderdelen](hdinsight-36-component-versioning.md).
 
-## <a name="release-notes"></a>Releaseopmerkingen
+## <a name="release-notes"></a>Opmerkingen bij de release
 
 Zie [release opmerkingen voor hdinsight](hdinsight-release-notes.md)voor aanvullende opmerkingen bij de release over de nieuwste versies van hdinsight.
 

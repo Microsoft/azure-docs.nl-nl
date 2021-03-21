@@ -3,14 +3,14 @@ title: Azure Automation VM's buiten bedrijfsuren starten/stoppen configureren
 description: In dit artikel leest u hoe u de VM's buiten bedrijfsuren starten/stoppen-functie kunt configureren voor het ondersteunen van verschillende use cases of scenario's.
 services: automation
 ms.subservice: process-automation
-ms.date: 06/01/2020
+ms.date: 03/12/2021
 ms.topic: conceptual
-ms.openlocfilehash: b52b51133f059f028baf470515e886d17077af6a
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: dfabb3ef521b496a073d502efd4fd672cfcf3b8c
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100593941"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104597734"
 ---
 # <a name="configure-startstop-vms-during-off-hours"></a>VM's buiten bedrijfsuren starten/stoppen configureren
 
@@ -38,21 +38,21 @@ U kunt de actie richten op een abonnement en resource groep, of een specifieke l
 
 1. Configureer de `External_Stop_ResourceGroupNames` `External_ExcludeVMNames` variabelen en om de doel-vm's op te geven.
 
-2. De **geplande-StartVM** en **geplande StopVM-** schema's inschakelen en bijwerken.
+1. De **geplande-StartVM** en **geplande StopVM-** schema's inschakelen en bijwerken.
 
-3. Voer het **ScheduledStartStop_Parent** runbook uit met het parameter veld voor de **actie** die is ingesteld op **Start** en het veld **WHATIF** para meter is ingesteld op True om een voor beeld van de wijzigingen weer te geven.
+1. Voer het **ScheduledStartStop_Parent** runbook uit met het parameter veld voor de **actie** die is ingesteld op **Start** en het veld **WHATIF** para meter is ingesteld op True om een voor beeld van de wijzigingen weer te geven.
 
 ### <a name="target-the-start-and-stop-action-by-vm-list"></a>De start-en stop actie richten op de VM-lijst
 
 1. Voer het **ScheduledStartStop_Parent** runbook uit met de **actie** ingesteld op **starten**.
 
-2. Voeg een door komma's gescheiden lijst met Vm's (zonder spaties) toe in het parameter veld **VMList** . Een voor beeld van een lijst is `vm1,vm2,vm3` .
+1. Voeg een door komma's gescheiden lijst met Vm's (zonder spaties) toe in het parameter veld **VMList** . Een voor beeld van een lijst is `vm1,vm2,vm3` .
 
-3. Stel het parameter veld **WHATIF** in op True om een voor beeld van de wijzigingen weer te geven.
+1. Stel het parameter veld **WHATIF** in op True om een voor beeld van de wijzigingen weer te geven.
 
-4. Configureer de `External_ExcludeVMNames` variabele met een door komma's gescheiden lijst met virtuele machines (VM1, VM2, VM3), zonder spaties tussen door komma's gescheiden waarden.
+1. Configureer de `External_ExcludeVMNames` variabele met een door komma's gescheiden lijst met virtuele machines (VM1, VM2, VM3), zonder spaties tussen door komma's gescheiden waarden.
 
-5. In dit scenario worden de `External_Start_ResourceGroupNames` variabelen en niet nageleefd `External_Stop_ResourceGroupnames` . Voor dit scenario moet u uw eigen Automation-schema maken. Zie [een Runbook plannen in azure Automation](shared-resources/schedules.md)voor meer informatie.
+1. In dit scenario worden de `External_Start_ResourceGroupNames` variabelen en niet nageleefd `External_Stop_ResourceGroupnames` . Voor dit scenario moet u uw eigen Automation-schema maken. Zie [een Runbook plannen in azure Automation](shared-resources/schedules.md)voor meer informatie.
 
     > [!NOTE]
     > De waarde voor **doel-ResourceGroup namen** wordt opgeslagen als de waarden voor `External_Start_ResourceGroupNames` zowel `External_Stop_ResourceGroupNames` en. Voor nadere granulariteit kunt u elk van deze variabelen wijzigen in doel verschillende resource groepen. Voor het starten van actie, gebruiken `External_Start_ResourceGroupNames` en gebruiken `External_Stop_ResourceGroupNames` voor stop actie. Vm's worden automatisch toegevoegd aan de planningen starten en stoppen.
@@ -65,27 +65,27 @@ In een omgeving met twee of meer onderdelen op meerdere Vm's die een gedistribue
 
 1. Voeg een `sequencestart` en een `sequencestop` tag met positieve gehele waarden toe aan vm's die zijn gericht op `External_Start_ResourceGroupNames` en `External_Stop_ResourceGroupNames` variabelen. De start-en stop acties worden in oplopende volg orde uitgevoerd. Zie een [virtuele Windows-machine coderen in azure](../virtual-machines/tag-portal.md) en [een virtuele Linux-machine in azure labelen](../virtual-machines/tag-cli.md)voor meer informatie over het coderen van een VM.
 
-2. Wijzig de planningen **Sequenced-StartVM** en **Sequence-StopVM** in de datum en tijd die aan uw vereisten voldoen en schakel de planning in.
+1. Wijzig de planningen **Sequenced-StartVM** en **Sequence-StopVM** in de datum en tijd die aan uw vereisten voldoen en schakel de planning in.
 
-3. Voer het **SequencedStartStop_Parent** runbook uit met de **actie** ingesteld op **Start** en **WHATIF** ingesteld op True om een voor beeld van de wijzigingen weer te geven.
+1. Voer het **SequencedStartStop_Parent** runbook uit met de **actie** ingesteld op **Start** en **WHATIF** ingesteld op True om een voor beeld van de wijzigingen weer te geven.
 
-4. Bekijk een voor beeld van de actie en breng de benodigde wijzigingen aan voordat u implementeert op productie-Vm's. Als u klaar bent, voert u het runbook hand matig uit met de para meter ingesteld op **Onwaar**, of laat u het Automation **-schema Sequenced-StartVM** en **Sequence-StopVM** automatisch uitvoeren volgens uw voorgeschreven planning.
+1. Bekijk een voor beeld van de actie en breng de benodigde wijzigingen aan voordat u implementeert op productie-Vm's. Als u klaar bent, voert u het runbook hand matig uit met de para meter ingesteld op **Onwaar**, of laat u het Automation **-schema Sequenced-StartVM** en **Sequence-StopVM** automatisch uitvoeren volgens uw voorgeschreven planning.
 
 ### <a name="target-the-start-and-stop-actions-by-vm-list"></a>De start-en stop acties op de VM-lijst richten
 
 1. Voeg een `sequencestart` en een `sequencestop` tag met positieve gehele waarden toe aan vm's die u wilt toevoegen aan de `VMList` para meter.
 
-2. Voer het **SequencedStartStop_Parent** runbook uit met de **actie** ingesteld op **starten**.
+1. Voer het **SequencedStartStop_Parent** runbook uit met de **actie** ingesteld op **starten**.
 
-3. Voeg een door komma's gescheiden lijst met Vm's (zonder spaties) toe in het parameter veld **VMList** . Een voor beeld van een lijst is `vm1,vm2,vm3` .
+1. Voeg een door komma's gescheiden lijst met Vm's (zonder spaties) toe in het parameter veld **VMList** . Een voor beeld van een lijst is `vm1,vm2,vm3` .
 
-4. Stel **WHATIF** in op True om een voor beeld van de wijzigingen weer te geven. 
+1. Stel **WHATIF** in op True om een voor beeld van de wijzigingen weer te geven. 
 
-5. Configureer de `External_ExcludeVMNames` variabele met een door komma's gescheiden lijst met vm's, zonder spaties tussen door komma's gescheiden waarden.
+1. Configureer de `External_ExcludeVMNames` variabele met een door komma's gescheiden lijst met vm's, zonder spaties tussen door komma's gescheiden waarden.
 
-6. In dit scenario worden de `External_Start_ResourceGroupNames` variabelen en niet nageleefd `External_Stop_ResourceGroupnames` . Voor dit scenario moet u uw eigen Automation-schema maken. Zie [een Runbook plannen in azure Automation](shared-resources/schedules.md)voor meer informatie.
+1. In dit scenario worden de `External_Start_ResourceGroupNames` variabelen en niet nageleefd `External_Stop_ResourceGroupnames` . Voor dit scenario moet u uw eigen Automation-schema maken. Zie [een Runbook plannen in azure Automation](shared-resources/schedules.md)voor meer informatie.
 
-7. Bekijk een voor beeld van de actie en breng de benodigde wijzigingen aan voordat u implementeert op productie-Vm's. Als u klaar bent, voert u hand matig de **bewakings-en-diagnose/bewaking-Action-groupsrunbook** uit met de para meter ingesteld op **Onwaar**. U kunt ook de automatiserings planning **Sequenced-StartVM** en **Sequence-StopVM** automatisch uitvoeren volgens uw voorgeschreven planning.
+1. Bekijk een voor beeld van de actie en breng de benodigde wijzigingen aan voordat u implementeert op productie-Vm's. Als u klaar bent, voert u hand matig de **bewakings-en-diagnose/bewaking-Action-groupsrunbook** uit met de para meter ingesteld op **Onwaar**. U kunt ook de automatiserings planning **Sequenced-StartVM** en **Sequence-StopVM** automatisch uitvoeren volgens uw voorgeschreven planning.
 
 ## <a name="scenario-3-start-or-stop-automatically-based-on-cpu-utilization"></a><a name="cpuutil"></a>Scenario 3: automatisch starten of stoppen op basis van CPU-gebruik
 
@@ -112,23 +112,23 @@ Wanneer u het **AutoStop_CreateAlert_Parent** runbook uitvoert, wordt gecontrole
 
 1. Zorg ervoor dat de `External_Stop_ResourceGroupNames` variabele leeg is of is ingesteld op * (joker tekens).
 
-2. Beschrijving Als u sommige Vm's wilt uitsluiten van de actie autostop, kunt u een door komma's gescheiden lijst met VM-namen toevoegen aan de `External_ExcludeVMNames` variabele.
+1. Beschrijving Als u sommige Vm's wilt uitsluiten van de actie autostop, kunt u een door komma's gescheiden lijst met VM-namen toevoegen aan de `External_ExcludeVMNames` variabele.
 
-3. Schakel het **Schedule_AutoStop_CreateAlert_Parent** schema uit dat moet worden uitgevoerd om de vereiste waarschuwings regels voor het stoppen van de VM-metrische gegevens te maken voor alle virtuele machines in uw abonnement. Door dit type planning uit te voeren, kunt u nieuwe metrische waarschuwings regels maken wanneer er nieuwe virtuele machines aan het abonnement worden toegevoegd.
+1. Schakel het **Schedule_AutoStop_CreateAlert_Parent** schema uit dat moet worden uitgevoerd om de vereiste waarschuwings regels voor het stoppen van de VM-metrische gegevens te maken voor alle virtuele machines in uw abonnement. Door dit type planning uit te voeren, kunt u nieuwe metrische waarschuwings regels maken wanneer er nieuwe virtuele machines aan het abonnement worden toegevoegd.
 
 ### <a name="target-the-autostop-action-against-all-vms-in-a-resource-group-or-multiple-resource-groups"></a>De actie autostop voor alle Vm's in een resource groep of meerdere resource groepen instellen
 
 1. Voeg een door komma's gescheiden lijst met namen van resource groepen toe aan de `External_Stop_ResourceGroupNames` variabele.
 
-2. Als u sommige Vm's wilt uitsluiten van de autostop, kunt u een door komma's gescheiden lijst met VM-namen toevoegen aan de `External_ExcludeVMNames` variabele.
+1. Als u sommige Vm's wilt uitsluiten van de autostop, kunt u een door komma's gescheiden lijst met VM-namen toevoegen aan de `External_ExcludeVMNames` variabele.
 
-3. Schakel het **Schedule_AutoStop_CreateAlert_Parent** schema uit dat moet worden uitgevoerd om de vereiste waarschuwings regels voor het stoppen van de VM-metrische gegevens voor alle virtuele machines in de resource groepen te maken. Als u deze bewerking uitvoert volgens een planning, kunt u nieuwe metrische waarschuwings regels maken wanneer er nieuwe virtuele machines worden toegevoegd aan de resource groep (en).
+1. Schakel het **Schedule_AutoStop_CreateAlert_Parent** schema uit dat moet worden uitgevoerd om de vereiste waarschuwings regels voor het stoppen van de VM-metrische gegevens voor alle virtuele machines in de resource groepen te maken. Als u deze bewerking uitvoert volgens een planning, kunt u nieuwe metrische waarschuwings regels maken wanneer er nieuwe virtuele machines worden toegevoegd aan de resource groep (en).
 
 ### <a name="target-the-autostop-action-to-a-list-of-vms"></a>De actie voor autostop voor een lijst met Vm's richten
 
 1. Maak een nieuwe [planning](shared-resources/schedules.md#create-a-schedule) en koppel deze aan het **AutoStop_CreateAlert_Parent** runbook en voeg een door KOMMA'S gescheiden lijst met VM-namen toe aan de `VMList` para meter.
 
-2. Als u sommige Vm's wilt uitsluiten van de actie voor autostop, kunt u een door komma's gescheiden lijst met VM-namen (zonder spaties) toevoegen aan de `External_ExcludeVMNames` variabele.
+1. Als u sommige Vm's wilt uitsluiten van de actie voor autostop, kunt u een door komma's gescheiden lijst met VM-namen (zonder spaties) toevoegen aan de `External_ExcludeVMNames` variabele.
 
 ## <a name="configure-email-notifications"></a>E-mailmeldingen configureren
 
@@ -137,19 +137,19 @@ Als u e-mail meldingen wilt wijzigen nadat VM's buiten bedrijfsuren starten/stop
 > [!NOTE]
 > Abonnementen in de Azure Government Cloud bieden geen ondersteuning voor de e-mail functionaliteit van deze functie.
 
-1. Ga in het Azure Portal naar **controle** en vervolgens op **actie groepen**. Selecteer de actie groep met de naam **StartStop_VM_Notication**.
+1. Klik in de Azure Portal op **waarschuwingen** onder **bewaking** en vervolgens op **acties beheren**. Controleer op de pagina **acties beheren** of u zich op het tabblad **actie groepen** bevindt. Selecteer de actie groep met de naam **StartStop_VM_Notification**.
 
-    :::image type="content" source="media/automation-solution-vm-management/azure-monitor.png" alt-text="Scherm afbeelding van de pagina monitor-actie groepen.":::
+    :::image type="content" source="media/automation-solution-vm-management/azure-monitor-sm.png" alt-text="Scherm afbeelding van de pagina monitor-actie groepen." lightbox="media/automation-solution-vm-management/azure-monitor-lg.png":::
 
-2. Klik op de pagina StartStop_VM_Notification op **Details bewerken** onder **Details**. Hiermee opent u de pagina E-mail/SMS/push/Voice. Werk het e-mail adres bij en klik op **OK** om uw wijzigingen op te slaan.
+1. Op de pagina **StartStop_VM_Notification** wordt de sectie **basis beginselen** voor u ingevuld en kan deze niet worden bewerkt, met uitzonde ring van het veld **weergave naam** . Bewerk de naam of accepteer de voorgestelde naam. Klik in de sectie **meldingen** op het potlood pictogram om de actie details te bewerken. Hiermee opent u het deel venster **e-mail/SMS-bericht/push/stem** . Werk het e-mail adres bij en klik op **OK** om uw wijzigingen op te slaan.
 
-    :::image type="content" source="media/automation-solution-vm-management/change-email.png" alt-text="Scherm afbeelding van de pagina E-mail/SMS/push/Voice met een voor beeld van een e-mail adres bijgewerkt.":::
+    :::image type="content" source="media/automation-solution-vm-management/change-email.png" alt-text="Scherm afbeelding van de pagina E-mail/SMS-bericht/push/Voice met een voor beeld van een e-mail adres.":::
 
-    U kunt ook aanvullende acties toevoegen aan de actie groep, Zie [actie groepen](../azure-monitor/alerts/action-groups.md) voor meer informatie over actie groepen
+    U kunt aanvullende acties toevoegen aan de actie groep. Zie [actie groepen](../azure-monitor/platform/action-groups.md) voor meer informatie over actie groepen
 
 Hier volgt een voor beeld van een e-mail bericht dat wordt verzonden wanneer virtuele machines worden afgesloten met de functie.
 
-:::image type="content" source="media/automation-solution-vm-management/email.png" alt-text="Scherm afbeelding van een voor beeld van een e-mail bericht dat wordt verzonden wanneer virtuele machines worden afgesloten met het onderdeel.":::
+:::image type="content" source="media/automation-solution-vm-management/email.png" alt-text="Scherm afbeelding van een voor beeld van een e-mail bericht dat wordt verzonden wanneer virtuele machines worden afgesloten met het onderdeel." lightbox="media/automation-solution-vm-management/email.png":::
 
 ## <a name="add-or-exclude-vms"></a><a name="add-exclude-vms"></a>Vm's toevoegen of uitsluiten
 
@@ -175,13 +175,13 @@ Het configureren van de functie om alleen Vm's op een bepaald moment te stoppen,
 
 1. Zorg ervoor dat u de resource groepen hebt toegevoegd voor de virtuele machines die u wilt afsluiten in de `External_Stop_ResourceGroupNames` variabele.
 
-2. Maak uw eigen planning voor het moment waarop u de virtuele machines wilt afsluiten.
+1. Maak uw eigen planning voor het moment waarop u de virtuele machines wilt afsluiten.
 
-3. Ga naar het **ScheduledStartStop_Parent** runbook en klik op **schema**. Hierdoor kunt u het schema selecteren dat u in de vorige stap hebt gemaakt.
+1. Ga naar het **ScheduledStartStop_Parent** runbook en klik op **schema**. Hierdoor kunt u het schema selecteren dat u in de vorige stap hebt gemaakt.
 
-4. Selecteer **para meters en voer instellingen uit** en stel het **actie** veld in op **stoppen**.
+1. Selecteer **para meters en voer instellingen uit** en stel het **actie** veld in op **stoppen**.
 
-5. Selecteer **OK** om uw wijzigingen op te slaan.
+1. Selecteer **OK** om uw wijzigingen op te slaan.
 
 ## <a name="next-steps"></a>Volgende stappen
 

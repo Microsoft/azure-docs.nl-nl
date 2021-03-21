@@ -789,7 +789,9 @@
         - name: Pijplijntriggers
           href: pipeline-trigger-troubleshoot-guide.md
         - name: Gegevensstromen
-          href: data-flow-troubleshoot-guide.md
+          items:
+            - name: Overzicht van gegevens stromen
+              href: data-flow-troubleshoot-guide.md
         - name: Continue integratie en implementatie
           href: ci-cd-github-troubleshoot-guide.md
         - name: Beveiligings- en toegangsbeheer

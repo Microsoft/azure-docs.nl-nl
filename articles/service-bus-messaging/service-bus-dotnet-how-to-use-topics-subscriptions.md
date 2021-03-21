@@ -3,42 +3,78 @@ title: Berichten verzenden naar Azure Service Bus-onderwerpen met behulp van azu
 description: In deze quickstart wordt uitgelegd hoe u berichten kunt verzenden naar Azure Service Bus-onderwerpen met behulp van het pakket azure-messaging-servicebus.
 ms.topic: quickstart
 ms.tgt_pltfrm: dotnet
-ms.date: 11/13/2020
+ms.date: 03/16/2021
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 60504bcf9e2c3f9460eee9a2e72d18767c0cfa71
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: 7b313caf6709429de9e0dcac219a4180c7391cf7
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98631671"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104607581"
 ---
 # <a name="send-messages-to-an-azure-service-bus-topic-and-receive-messages-from-subscriptions-to-the-topic-net"></a>Berichten verzenden naar een Azure Service Bus-onderwerp en berichten ontvangen van abonnementen op het onderwerp (.NET)
-In deze zelfstudie leert u hoe u een .NET Core-consoletoepassing kunt maken die berichten verzendt naar een Service Bus-onderwerp en berichten ontvangt van een abonnement op het onderwerp. 
+In deze zelf studie maakt u een C#-toepassing om de volgende taken uit te voeren:
 
-> [!Important]
-> Deze quickstart maakt gebruik van het nieuwe pakket **Azure.Messaging.ServiceBus**. Zie [Send and receive messages using the Microsoft.Azure.ServiceBus package](service-bus-dotnet-how-to-use-topics-subscriptions-legacy.md) (Berichten verzenden en ontvangen met het Microsoft.Azure.ServiceBus-pakket) voor een quickstart die gebruikmaakt van het oude Microsoft.Azure.ServiceBus-pakket.
+1. Berichten verzenden naar een Service Bus onderwerp. 
+
+    Een Service Bus onderwerp bevat een eind punt voor het verzenden van berichten aan Sender Applications. Een onderwerp kan een of meer abonnementen hebben. Elk abonnement van een onderwerp haalt een kopie op van het bericht dat naar het onderwerp wordt verzonden. Zie [Wat is Azure service bus?](service-bus-messaging-overview.md)voor meer informatie over service bus onderwerpen. 
+1. Berichten ontvangen van een abonnement op het onderwerp. 
+
+    :::image type="content" source="./media/service-bus-messaging-overview/about-service-bus-topic.png" alt-text="Service Bus-onderwerpen en -abonnementen":::
+
+    > [!Important]
+    > Deze quickstart maakt gebruik van het nieuwe pakket **Azure.Messaging.ServiceBus**. Als u het oude pakket micro soft. Azure. ServiceBus gebruikt, raadpleegt u [berichten verzenden en ontvangen met het pakket micro soft. Azure. ServiceBus](service-bus-dotnet-how-to-use-topics-subscriptions-legacy.md).
 
 ## <a name="prerequisites"></a>Vereisten
 
-- [Visual Studio 2019](https://www.visualstudio.com/vs)
 - Een Azure-abonnement. U hebt een Azure-account nodig om deze zelfstudie te voltooien. U kunt uw [voordelen als Visual Studio- of MSDN-abonnee activeren](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) of u aanmelden voor een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
-- Volg de stappen in de [Quickstart: Gebruik Azure Portal om een Service Bus-onderwerp en abonnementen voor het onderwerp te maken](service-bus-quickstart-topics-subscriptions-portal.md). Noteer de verbindingsreeks, onderwerpnaam en abonnementsnaam. U gebruikt slechts één abonnement voor deze quickstart. 
+- Volg de stappen in deze [Snelstartgids](service-bus-quickstart-topics-subscriptions-portal.md) om een service bus onderwerp en abonnementen op het onderwerp te maken. 
 
+    > [!NOTE]
+    > In deze zelf studie gebruikt u de connection string voor de naam ruimte, de onderwerpnaam en de naam van een van de abonnementen op het onderwerp.  
+- [Visual Studio 2019](https://www.visualstudio.com/vs). 
+ 
 ## <a name="send-messages-to-a-topic"></a>Berichten verzenden naar een onderwerp
-In deze sectie maakt u een .NET Core-consoletoepassing in Visual Studio en voegt u code toe om berichten te verzenden naar het onderwerp dat u hebt gemaakt. 
+In deze sectie maakt u een .NET core-console toepassing in Visual Studio, voegt u code toe om berichten te verzenden naar het Service Bus onderwerp dat u hebt gemaakt. 
 
 ### <a name="create-a-console-application"></a>Een consoletoepassing maken
-Start Visual Studio en maak een nieuwe **Consoletoepassing (.NET Core)** voor C#. 
+Maak een .NET core-console toepassing met behulp van Visual Studio. 
+
+1. Start Visual Studio.  
+1. Als u de pagina **aan de slag** ziet, selecteert u **een nieuw project maken**. 
+1. Voer op de pagina **een nieuw project maken** de volgende stappen uit: 
+    1. Voor de programmeer taal selecteert u **C#**. 
+    1. Selecteer voor het project type **console**. 
+    1. Selecteer **console-app (.net core)** in de lijst met sjablonen. 
+    1. Selecteer vervolgens **Volgende**. 
+    
+        :::image type="content" source="./media/service-bus-dotnet-how-to-use-topics-subscriptions/create-console-project.png" alt-text="Een console-app-project maken":::
+1. Voer de volgende stappen uit op de pagina **uw nieuwe project configureren** : 
+    1. Voer bij **project naam** een naam in voor het project. 
+    1. Selecteer bij **locatie** een locatie voor het project en de oplossings bestanden. 
+    1. Voer bij **oplossings naam** een naam in voor de oplossing. Een Visual Studio-oplossing kan een of meer projecten hebben. In deze Quick Start heeft de oplossing slechts één project. 
+    1. Selecteer **Maken** om het project te maken. 
+            
+        :::image type="content" source="./media/service-bus-dotnet-how-to-use-topics-subscriptions/create-console-project-2.png" alt-text="De naam en locatie van het project en de oplossing invoeren":::    
+
 
 ### <a name="add-the-service-bus-nuget-package"></a>Het Service Bus NuGet-pakket toevoegen
-
 1. Klik met de rechtermuisknop op het nieuwe project en selecteer **NuGet-pakketten beheren**.
-1. Selecteer **Bladeren**. Zoek en selecteer **[Azure.Messaging.ServiceBus](https://www.nuget.org/packages/Azure.Messaging.ServiceBus/)** .
-1. Selecteer **Installeren** om de installatie te voltooien en sluit vervolgens de NuGet Package Manager.
+
+    :::image type="content" source="./media/service-bus-dotnet-how-to-use-topics-subscriptions/manage-nuget-packages-menu.png" alt-text="Het menu NuGet-pakketten beheren":::        
+1. Ga naar het tabblad **Bladeren** .
+1. Zoek en selecteer **[Azure.Messaging.ServiceBus](https://www.nuget.org/packages/Azure.Messaging.ServiceBus/)** .
+1. Selecteer **Installeren** om de installatie uit te voeren.
+
+    :::image type="content" source="./media/service-bus-dotnet-how-to-use-topics-subscriptions/select-service-bus-package.png" alt-text="Selecteer Service Bus NuGet-pakket.":::
+5. Als het dialoog venster **voor beeld van wijzigingen** wordt weer gegeven, selecteert u **OK** om door te gaan. 
+1. Als u de pagina **licentie acceptatie** ziet, selecteert u **Ik ga akkoord** om door te gaan. 
+    
 
 ### <a name="add-code-to-send-messages-to-the-topic"></a>Code toevoegen om berichten naar het onderwerp te verzenden 
 
-1. Voeg in Program.cs de volgende `using` instructies aan het begin van de naamruimtedefinitie toe voor de klassedeclaratie:
+1. In het venster **Solution Explorer** dubbelklikt u op **Program. cs** om het bestand te openen in de editor. 
+1. Voeg de volgende `using` instructies toe boven aan de definitie van de naam ruimte, vóór de klassen declaratie:
    
     ```csharp
     using System;
@@ -46,34 +82,43 @@ Start Visual Studio en maak een nieuwe **Consoletoepassing (.NET Core)** voor C#
     using System.Threading.Tasks;
     using Azure.Messaging.ServiceBus;
     ```
-1. Declareer in de klasse `Program` de volgende variabelen:
+1. `Program`Declareer de volgende variabelen in de-klasse, boven de `Main` functie:
 
     ```csharp
         static string connectionString = "<NAMESPACE CONNECTION STRING>";
-        static string topicName = "<TOPIC NAME>";
-        static string subscriptionName = "<SUBSCRIPTION NAME>";
+        static string topicName = "<SERVICE BUS TOPIC NAME>";
+        static string subscriptionName = "<SERVICE BUS - TOPIC SUBSCRIPTION NAME>";
     ```
 
     Vervang de volgende waarden:
     - `<NAMESPACE CONNECTION STRING>` door de verbindingsreeks voor uw Service Bus-naamruimte
     - `<TOPIC NAME>` door de naam van het onderwerp
     - `<SUBSCRIPTION NAME>` door de naam van het abonnement
-2. Voeg een methode toe met de naam `SendMessageToTopicAsync` die één bericht naar het onderwerp verzendt. 
 
-    ```csharp
-        static async Task SendMessageToTopicAsync()
+### <a name="send-a-single-message-to-the-topic"></a>Eén bericht verzenden naar het onderwerp
+Voeg een methode toe `SendMessageToTopicAsync` met de naam van de `Program` klasse boven of onder de- `Main` methode. Met deze methode wordt één bericht naar het onderwerp verzonden.
+
+```csharp
+    static async Task SendMessageToTopicAsync()
+    {
+        // create a Service Bus client 
+        await using (ServiceBusClient client = new ServiceBusClient(connectionString))
         {
-            // create a Service Bus client 
-            await using (ServiceBusClient client = new ServiceBusClient(connectionString))
-            {
-                // create a sender for the topic
-                ServiceBusSender sender = client.CreateSender(topicName);
-                await sender.SendMessageAsync(new ServiceBusMessage("Hello, World!"));
-                Console.WriteLine($"Sent a single message to the topic: {topicName}");
-            }
+            // create a sender for the topic
+            ServiceBusSender sender = client.CreateSender(topicName);
+            await sender.SendMessageAsync(new ServiceBusMessage("Hello, World!"));
+            Console.WriteLine($"Sent a single message to the topic: {topicName}");
         }
-    ```
-1. Voeg een methode met de naam `CreateMessages` toe om een wachtrij (.NET-wachtrij) te maken met berichten aan de klasse `Program`. Normaal gesproken ontvangt u deze berichten van verschillende onderdelen van uw toepassing. Hier maken we een wachtrij met voorbeeldberichten.
+    }
+```
+
+Deze methode voert de volgende stappen uit: 
+1. Hiermee maakt u een [ServiceBusClient](/dotnet/api/azure.messaging.servicebus.servicebusclient) -object met behulp van de Connection String aan de naam ruimte. 
+1. Maakt gebruik `ServiceBusClient` van het-object om een [ServiceBusSender](/dotnet/api/azure.messaging.servicebus.servicebussender) -object te maken voor het opgegeven service bus onderwerp. Deze stap maakt gebruik van de methode [ServiceBusClient. CreateSender](/dotnet/api/azure.messaging.servicebus.servicebusclient.createsender) .
+1. Vervolgens verzendt de methode één test bericht naar het Service Bus onderwerp met behulp van de methode [ServiceBusSender. SendMessageAsync](/dotnet/api/azure.messaging.servicebus.servicebussender.sendmessageasync) . 
+
+### <a name="send-a-batch-of-messages-to-the-topic"></a>Een batch berichten verzenden naar het onderwerp
+1. Voeg een methode toe `CreateMessages` met de naam voor het maken van een wachtrij (.net-wachtrij, niet Service Bus wachtrij) van berichten naar de `Program` klasse. Normaal gesproken ontvangt u deze berichten van verschillende onderdelen van uw toepassing. Hier maken we een wachtrij met voorbeeldberichten. Zie [Queue. in wachtrij](/dotnet/api/system.collections.queue.enqueue)als u niet bekend bent met .net-wacht rijen.
 
     ```csharp
         static Queue<ServiceBusMessage> CreateMessages()
@@ -86,7 +131,7 @@ Start Visual Studio en maak een nieuwe **Consoletoepassing (.NET Core)** voor C#
             return messages;
         }
     ```
-1. Voeg een methode met de naam `SendMessageBatchAsync` toe aan de klasse `Program` en voeg de volgende code toe. Met deze methode worden voor een wachtrij met berichten een of meer batches voorbereid voor verzending naar het Service Bus-onderwerp. 
+1. Voeg een methode toe `SendMessageBatchAsync` met de naam van de `Program` klasse en voeg de volgende code toe. Met deze methode worden voor een wachtrij met berichten een of meer batches voorbereid voor verzending naar het Service Bus-onderwerp. 
 
     ```csharp
         static async Task SendMessageBatchToTopicAsync()
@@ -138,20 +183,32 @@ Start Visual Studio en maak een nieuwe **Consoletoepassing (.NET Core)** voor C#
                 Console.WriteLine($"Sent a batch of {messageCount} messages to the topic: {topicName}");
             }
         }
-    ```
-1. Vervang de `Main()`-methode door de volgende **async** `Main`-methode. Hiermee worden de verzendmethoden aangeroepen om één bericht én een batch berichten naar het onderwerp te verzenden.  
+    ```    
 
-    ```csharp
-        static async Task Main()
-        {
-            // send a message to the topic
-            await SendMessageToTopicAsync();
+    Dit zijn de belang rijke stappen uit de code:
+    1. Hiermee maakt u een [ServiceBusClient](/dotnet/api/azure.messaging.servicebus.servicebusclient) -object met behulp van de Connection String aan de naam ruimte. 
+    1. Roept de methode [CreateSender](/dotnet/api/azure.messaging.servicebus.servicebusclient.createsender) aan voor het `ServiceBusClient` object om een [ServiceBusSender](/dotnet/api/azure.messaging.servicebus.servicebussender) -object te maken voor het opgegeven service bus onderwerp. 
+    1. Roept de hulp methode `GetMessages` aan om een wachtrij met berichten op te halen die naar het service bus onderwerp moeten worden verzonden. 
+    1. Hiermee maakt u een [ServiceBusMessageBatch](/dotnet/api/azure.messaging.servicebus.servicebusmessagebatch) met behulp van de [ServiceBusSender. CreateMessageBatchAsync](/dotnet/api/azure.messaging.servicebus.servicebussender.createmessagebatchasync).
+    1. Voeg berichten toe aan de batch met behulp van de [ServiceBusMessageBatch. TryAddMessage](/dotnet/api/azure.messaging.servicebus.servicebusmessagebatch.tryaddmessage). Wanneer de berichten aan de batch worden toegevoegd, worden ze uit de .NET-wachtrij verwijderd. 
+    1. Hiermee verzendt u de batch berichten naar het Service Bus onderwerp met behulp van de methode [ServiceBusSender. SendMessagesAsync](/dotnet/api/azure.messaging.servicebus.servicebussender.sendmessagesasync) .
 
-            // send a batch of messages to the topic
-            await SendMessageBatchToTopicAsync();
-        }
-    ```
-5. Voer de toepassing uit. U moet de volgende uitvoer zien:
+### <a name="update-the-main-method"></a>De methode Main bijwerken
+Vervang de `Main()`-methode door de volgende **async** `Main`-methode. Hiermee worden de verzendmethoden aangeroepen om één bericht én een batch berichten naar het onderwerp te verzenden.  
+
+```csharp
+    static async Task Main()
+    {
+        // send a single message to the topic
+        await SendMessageToTopicAsync();
+
+        // send a batch of messages to the topic
+        await SendMessageBatchToTopicAsync();
+    }
+```
+
+### <a name="test-the-app-to-send-messages-to-the-topic"></a>De app testen om berichten naar het onderwerp te verzenden
+1. Voer de toepassing uit. U moet de volgende uitvoer zien:
 
     ```console
     Sent a single message to the topic: mytopic
@@ -219,6 +276,13 @@ Start Visual Studio en maak een nieuwe **Consoletoepassing (.NET Core)** voor C#
             }
         }
     ```
+
+    Dit zijn de belang rijke stappen uit de code:
+    1. Hiermee maakt u een [ServiceBusClient](/dotnet/api/azure.messaging.servicebus.servicebusclient) -object met behulp van de Connection String aan de naam ruimte. 
+    1. Roept de methode [CreateProcessor](/dotnet/api/azure.messaging.servicebus.servicebusclient.createprocessor) aan voor het `ServiceBusClient` object om een [ServiceBusProcessor](/dotnet/api/azure.messaging.servicebus.servicebusprocessor) -object te maken voor het opgegeven service bus onderwerp en de combi natie van abonnementen. 
+    1. Hiermee worden handlers opgegeven voor de [ProcessMessageAsync](/dotnet/api/azure.messaging.servicebus.servicebusprocessor.processmessageasync) -en [ProcessErrorAsync](/dotnet/api/azure.messaging.servicebus.servicebusprocessor.processerrorasync) -gebeurtenissen van het `ServiceBusProcessor` object. 
+    1. De verwerking van berichten wordt gestart door het aanroepen van de [StartProcessingAsync](/dotnet/api/azure.messaging.servicebus.servicebusprocessor.startprocessingasync) voor het `ServiceBusProcessor` object. 
+    1. Wanneer de gebruiker op een toets drukt om de verwerking te beëindigen, wordt de [StopProcessingAsync](/dotnet/api/azure.messaging.servicebus.servicebusprocessor.stopprocessingasync) voor het `ServiceBusProcessor` object aangeroepen. 
 1. Voeg een aanroep van de methode `ReceiveMessagesFromSubscriptionAsync` toe aan de methode `Main`. Maak de methode `SendMessagesToTopicAsync` onzichtbaar als u alleen het ontvangen van berichten wilt testen. Als u dit niet doet, ziet u nog vier berichten die naar het onderwerp zijn verzonden. 
 
     ```csharp
@@ -269,5 +333,5 @@ Controleer de portal opnieuw.
 Raadpleeg de volgende documentatie en voorbeelden:
 
 - [Azure Service Bus-clientbibliotheek voor .NET - Leesmij](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/servicebus/Azure.Messaging.ServiceBus)
-- [Voorbeelden op GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/servicebus/Azure.Messaging.ServiceBus/samples)
+- [.NET-voor beelden voor Azure Service Bus op GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/servicebus/Azure.Messaging.ServiceBus/samples)
 - [.NET-API-referentie](/dotnet/api/azure.messaging.servicebus?preserve-view=true)

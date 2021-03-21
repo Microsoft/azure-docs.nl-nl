@@ -7,10 +7,10 @@ ms.topic: overview
 ms.date: 3/15/2021
 ms.author: rohink
 ms.openlocfilehash: 5d81e24d344d04ea59bc6c9e6141109bf66da3c3
-ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103491092"
 ---
 # <a name="what-is-azure-dns"></a>Wat is Azure DNS?

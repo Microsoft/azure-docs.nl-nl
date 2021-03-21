@@ -16,10 +16,10 @@ ms.date: 03/10/2021
 ms.author: inhenkel
 ms.custom: devx-track-csharp
 ms.openlocfilehash: a2a9ecbcafa89b4981fe403d116ac0288e60b6b6
-ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103013887"
 ---
 # <a name="media-services-development-with-net"></a>Media Services ontwikkeling met .NET
@@ -83,7 +83,7 @@ U kunt ook de nieuwste Media Services .NET SDK-bits verkrijgen via GitHub ([gith
     ```
 
 7. Voeg de **System.Configuratie** -verwijzing toe aan uw project.
-8. Overschrijf de bestaande **using** -instructies aan het begin van het Program.CS-bestand met de volgende code:
+8. Overschrijf de bestaande **using** -instructies aan het begin van het bestand Program. cs met de volgende code:
 
     ```csharp      
     using System;

@@ -10,10 +10,10 @@ ms.date: 09/10/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to configure certificates for Azure Stack Edge Pro so I can use it to transfer data to Azure.
 ms.openlocfilehash: d8d21f9eea0258175195529c4d8b72ee9085dc77
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100546972"
 ---
 # <a name="tutorial-configure-certificates-for-your-azure-stack-edge-pro-with-gpu"></a>Zelfstudie: Certificaten voor uw Azure Stack Edge Pro met GPU configureren
@@ -31,7 +31,7 @@ In deze zelfstudie komen deze onderwerpen aan bod:
 
 ## <a name="prerequisites"></a>Vereisten
 
-Zorg dat aan deze voorwaarden is voldaan voordat u uw Azure Stack Edge Pro-apparaat met GPU configureert en instelt:
+Zorg dat aan deze voorwaarden wordt voldaan voordat u uw Azure Stack Edge Pro-apparaat met GPU configureert en instelt:
 
 * U hebt het fysieke apparaat geïnstalleerd zoals beschreven in [Azure Stack Edge Pro installeren](azure-stack-edge-gpu-deploy-install.md).
 * Als u van plan bent uw eigen certificaten te gebruiken:

@@ -5,15 +5,15 @@ author: msftradford
 manager: MehranAzimi-msft
 services: azure-spatial-anchors
 ms.author: parkerra
-ms.date: 11/20/2020
+ms.date: 03/18/2021
 ms.topic: quickstart
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 3c17eadfad71f58b4557f8115a0d1d3de392b4b9
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
-ms.translationtype: HT
+ms.openlocfilehash: e1554b1728b120145a06124e4703065a98a4e466
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "96015125"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104670090"
 ---
 # <a name="quickstart-create-a-unity-android-app-with-azure-spatial-anchors"></a>Quickstart: Een Unity Android-app maken met Azure Spatial Anchors
 
@@ -34,7 +34,7 @@ U leert het volgende:
 
 Zorg ervoor dat u over het volgende beschikt om deze snelstart te voltooien:
 
-- Een Windows- of macOS-computer met <a href="https://unity3d.com/get-unity/download" target="_blank">Unity 2019.4 (LTS)</a> met inbegrip van de **Android-buildondersteuning** en modules voor **Android SDK en NDK-hulpprogramma's** en **OpenJDK**.
+- Een Windows-of macOS-computer met <a href="https://unity3d.com/get-unity/download" target="_blank">Unity (LTS)</a>, met inbegrip van de **Android-build-ondersteuning** met **Android SDK & ndk-hulpprogram ma's** en **openjdk** -modules. Gebruik **unit 2020 LTS** met ASA SDK-versie 2,9 of hoger (die gebruikmaakt [van het unit XR-invoeg toepassings raamwerk](https://docs.unity3d.com/Manual/XRPluginArchitecture.html)) of **Unit 2019 LTS** met ASA SDK-versie 2,8 of eerder.
   - Als u werkt met Windows, hebt u ook <a href="https://git-scm.com/download/win" target="_blank">Git voor Windows</a> en <a href="https://git-lfs.github.com/">Git LFS</a> nodig.
   - Als u werkt met macOS, kunt u Git downloaden via HomeBrew. Voer de volgende opdracht in op één regel van de terminal: `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`. Voer vervolgens `brew install git` en `brew install git-lfs` uit.
 - Een <a href="https://developer.android.com/studio/debug/dev-options" target="_blank">door een ontwikkelaar geactiveerd</a> en <a href="https://developers.google.com/ar/discover/supported-devices" target="_blank">voor ARCore geschikt</a> Android-apparaat.

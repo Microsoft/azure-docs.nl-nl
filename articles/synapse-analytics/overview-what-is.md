@@ -6,32 +6,30 @@ author: saveenr
 ms.service: synapse-analytics
 ms.topic: overview
 ms.subservice: overview
-ms.date: 10/28/2020
+ms.date: 03/27/2021
 ms.author: saveenr
 ms.reviewer: jrasnick
-ms.openlocfilehash: 37768b994d4b61ee728e04352f027a6f5a478341
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 316a78f4725aa3c33a78b00c6de3b8419aea717e
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102031613"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104600204"
 ---
 # <a name="what-is-azure-synapse-analytics"></a>Wat is Azure Synapse Analytics?
 
-Zakelijke analyses moeten op grote schaal worden uitgevoerd op elk soort gegevens, ongeacht of het gaat om onbewerkte, precieze of zeer samengestelde gegevens. Hiervoor moeten ondernemingen meestal technologieën voor big data en datawarehousing samenvoegen in complexe gegevenspijplijnen, die werken met de gegevens in relationele opslag en data lakes. Dit soort oplossingen is moeilijk te compileren, te onderhouden en te beveiligen. De complexiteit ervan zorgt voor vertraging in de levering van het inzicht dat ondernemingen nodig hebben.
+**Azure Synapse** is een Enter prise Analytics-service die tijd voor inzicht in data warehouses en Big data systemen versnelt. Azure Synapse combineert het beste van de **SQL**-technologieën die in zakelijke datawarehousing worden gebruikt, **Spark**-technologieën die voor big data worden gebruikt en **Pijplijnen** voor gegevensintegratie en ETL/ELT, en diepe integratie met andere Azure-services, zoals **Power BI**, **CosmosDB** en **AzureML**.
 
-**Azure Synapse** is een geïntegreerde analyse-service die sneller inzicht biedt in alle datawarehouses en systemen voor big data. Azure Synapse combineert het beste van de **SQL**-technologieën die in zakelijke datawarehousing worden gebruikt, **Spark**-technologieën die voor big data worden gebruikt en **Pijplijnen** voor gegevensintegratie en ETL/ELT, en diepe integratie met andere Azure-services, zoals **Power BI**, **CosmosDB** en **AzureML**.
 
-## <a name="key-features--benefits"></a>Belangrijkste functies en voordelen
+## <a name="industry-leading-sql"></a>Toonaangevende SQL
 
-### <a name="industry-leading-sql"></a>Toonaangevende SQL
+**Synapse SQL** is een gedistribueerd query systeem voor T-SQL waarmee data warehouse-en data Virtualization-Scenario's en T-SQL kunnen worden geadresseerd en machine learning scenario's worden uitgebreid.
 
-* **Synapse SQL** is een gedistribueerd query systeem voor T-SQL waarmee data warehouse-en data Virtualization-Scenario's en T-SQL kunnen worden geadresseerd en machine learning scenario's worden uitgebreid.
-* Synapse SQL biedt zowel **serverloze** als **toegewezen** resourcemodellen, waarmee u de opties voor verbruik en facturering kunt aanpassen aan uw behoeften. Voor voorspelbare prestaties en kosten kunt u toegewezen SQL-pools maken om verwerkingskracht te reserveren voor gegevens die zijn opgeslagen in SQL-tabellen. Voor niet-geplande of bursty werkbelastingen gebruikt u het altijd beschikbare, serverloze SQL-eindpunt.
+* Synapse SQL biedt zowel **serverloze** als **toegewezen** resource modellen. Voor voorspelbare prestaties en kosten kunt u toegewezen SQL-pools maken om verwerkingskracht te reserveren voor gegevens die zijn opgeslagen in SQL-tabellen. Voor niet-geplande of bursty werkbelastingen gebruikt u het altijd beschikbare, serverloze SQL-eindpunt.
 * Gebruik ingebouwde **streamingmogelijkheden** om gegevens van gegevensbronnen in de cloud in SQL-tabellen te plaatsen
 * Integreer AI met SQL door **machine learning**-modellen te gebruiken om gegevens een score te geven met behulp van de [functie T-SQL PREDICT](/sql/t-sql/queries/predict-transact-sql?view=azure-sqldw-latest&preserve-view=true)
 
-### <a name="industry-standard-apache-spark"></a>Toonaangevende Apache Spark
+## <a name="industry-standard-apache-spark"></a>Toonaangevende Apache Spark
 
 **Apache Spark voor Azure Synapse** integreert diep en naadloos Apache Spark, de meest populaire open source big data-engine die wordt gebruikt voor gegevensvoorbereiding, data engineering, ETL en machine learning.
 
@@ -40,7 +38,7 @@ Zakelijke analyses moeten op grote schaal worden uitgevoerd op elk soort gegeven
 * Snel Spark opstarten en agressief automatisch schaal aanpassen.
 * Ingebouwde ondersteuning voor .NET voor Spark, waarmee u uw C#-expertise en de bestaande .NET-code in een Spark-toepassing opnieuw kunt gebruiken.
 
-### <a name="interop-of-sql-and-apache-spark-on-your-data-lake"></a>Interop van SQL en Apache Spark op uw Data Lake
+## <a name="working-with-your-data-lake"></a>Werken met uw Data Lake
 
 Azure Synapse verwijdert de traditionele technologische barrières tussen het gebruik van SQL en Spark. U kunt naadloos combineren en vergelijken op basis van uw behoeften en expertise.
 
@@ -48,15 +46,15 @@ Azure Synapse verwijdert de traditionele technologische barrières tussen het ge
 * SQL en Spark kunnen Parquet-, CSV-, TSV- en JSON-bestanden die zijn opgeslagen in de data lake rechtstreeks verkennen en analyseren.
 * Snel schaalbare belasting en verwijderen van belasting voor gegevens die worden verzonden tussen SQL-en Spark-databases
 
-### <a name="built-in-data-integration-via-pipelines"></a>Ingebouwde gegevensintegratie via pijplijnen
+## <a name="built-in-data-integration-via-pipelines"></a>Ingebouwde gegevensintegratie via pijplijnen
 
-Azure Synapse is ingebouwd met dezelfde gegevensintegratie-engine en ervaring als Azure Data Factory, zodat u uitgebreide ETL-pijplijnen op schaal kunt maken zonder Azure Synapse Analytics te verlaten.
+Azure Synapse bevat dezelfde gegevens integratie-engine en ervaringen als Azure Data Factory, zodat u uitgebreide ETL-pijp lijnen kunt maken zonder Azure Synapse Analytics te verlaten.
 
 * Gegevens opnemen uit meer dan 90 gegevensbronnen
 * Code-Free ETL met gegevensstroomactiviteiten
 * Notebooks, Spark-taken, opgeslagen procedures, SQL-scripts en meer indelen
 
-### <a name="unified-management-monitoring-and-security"></a>Uniform beheer, bewaking en beveiliging
+## <a name="unified-management-monitoring-and-security"></a>Uniform beheer, bewaking en beveiliging
 
 Azure Synapse biedt ondernemingen één manier om analyse-resources te beheren, gebruik en activiteiten te bewaken en beveiliging af te dwingen.
 
@@ -64,7 +62,7 @@ Azure Synapse biedt ondernemingen één manier om analyse-resources te beheren, 
 * Nauwkeurig toegangsbeheer voor gegevens en code
 * Eén dashboard voor het bewaken van resources, gebruik en gebruikers in SQL en Spark
 
-### <a name="unified-experience"></a>Uniforme ervaring
+## <a name="unified-experience"></a>Uniforme ervaring
 
 **Synapse Studio** is de gebruikers ervaring die alles samen met gegevens technici verbindt. Hiermee kunnen ze elke taak uitvoeren die ze nodig hebben om een volledige analyse oplossing te bouwen.
 

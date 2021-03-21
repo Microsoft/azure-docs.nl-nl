@@ -16,10 +16,10 @@ ms.topic: reference
 ms.date: 02/10/2021
 ms.author: yelevin
 ms.openlocfilehash: 17a4df3037f9922d92fca924de0d246458cfa08e
-ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102456250"
 ---
 # <a name="azure-sentinel-entity-types-reference"></a>Naslag informatie over de Azure Sentinel-entiteit
@@ -50,7 +50,7 @@ Voor de beste resultaten: voor gegarandeerde unieke identificatie moet u, indien
 | [**URL**](#url) | URL | URL | |
 | [**IoT-apparaat**](#iot-device) | IoTHub<br>DeviceId<br>DeviceName<br>IoTSecurityAgentId<br>DeviceType<br>Bron<br>SourceRef<br>Fabrikant<br>Modelleren<br>OperatingSystem<br>IPAdres<br>MacAddress<br>Protocollen<br>SerialNumber | IoTHub<br>DeviceId | IoTHub + DeviceId |
 | [**Persoonlijke**](#mailbox) | MailboxPrimaryAddress<br>DisplayName<br>UPN<br>ExternalDirectoryObjectId<br>RiskLevel | MailboxPrimaryAddress | |
-| [**E-mail cluster**](#mail-cluster) | NetworkMessageIds<br>CountByDeliveryStatus<br>CountByThreatType<br>CountByProtectionStatus<br>Bedreigingen<br>Query’s uitvoeren<br>QueryTime<br>Aantal mailitems<br>IsVolumeAnomaly<br>Bron<br>ClusterSourceIdentifier<br>ClusterSourceType<br>ClusterQueryStartTime<br>ClusterQueryEndTime<br>ClusterGroup | Query’s uitvoeren<br>Bron | Query + bron |
+| [**E-mail cluster**](#mail-cluster) | NetworkMessageIds<br>CountByDeliveryStatus<br>CountByThreatType<br>CountByProtectionStatus<br>Bedreigingen<br>Query<br>QueryTime<br>Aantal mailitems<br>IsVolumeAnomaly<br>Bron<br>ClusterSourceIdentifier<br>ClusterSourceType<br>ClusterQueryStartTime<br>ClusterQueryEndTime<br>ClusterGroup | Query<br>Bron | Query + bron |
 | [**E-mail bericht**](#mail-message) | Ontvanger<br>Adres<br>Bedreigingen<br>Afzender<br>P1Sender<br>P1SenderDisplayName<br>P1SenderDomain<br>SenderIP<br>P2Sender<br>P2SenderDisplayName<br>P2SenderDomain<br>Ontvangst<br>NetworkMessageId<br>InternetMessageId<br>Onderwerp<br>BodyFingerprintBin1<br>BodyFingerprintBin2<br>BodyFingerprintBin3<br>BodyFingerprintBin4<br>BodyFingerprintBin5<br>AntispamDirection<br>DeliveryAction<br>DeliveryLocation<br>Taal<br>ThreatDetectionMethods | NetworkMessageId<br>Ontvanger | NetworkMessageId + ontvanger |
 | [**E-mail verzenden**](#submission-mail) | SubmissionId<br>SubmissionDate<br>Indiener<br>NetworkMessageId<br>Tijdstempel<br>Ontvanger<br>Afzender<br>SenderIp<br>Onderwerp<br>Report type | SubmissionId<br>NetworkMessageId<br>Ontvanger<br>Indiener |  |
 |
@@ -393,7 +393,7 @@ Sterke id's van een postvak-entiteit:
 | CountByThreatType | IDictionary &lt; -teken reeks, int&gt; | Aantal e-mail berichten op ThreatType teken reeks representatie. |
 | CountByProtectionStatus | IDictionary &lt; -teken reeks, lang&gt; | Aantal e-mail berichten op de status van de bedreigings beveiliging. |
 | Bedreigingen | IList- &lt; teken reeks&gt; | De bedreigingen van e-mail berichten die deel uitmaken van het e-mail cluster. |
-| Query’s uitvoeren | Tekenreeks | De query die is gebruikt om de berichten van het e-mail cluster te identificeren. |
+| Query | Tekenreeks | De query die is gebruikt om de berichten van het e-mail cluster te identificeren. |
 | QueryTime | DateTime? | De query tijd. |
 | Aantal mailitems | Integer? | Het aantal e-mail berichten dat deel uitmaakt van het e-mail cluster. |
 | IsVolumeAnomaly | BOOL? | Hiermee wordt bepaald of dit een mail cluster met een afwijkings volume is. |

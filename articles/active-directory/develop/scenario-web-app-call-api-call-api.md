@@ -13,10 +13,10 @@ ms.date: 09/25/2020
 ms.author: jmprieur
 ms.custom: aaddev
 ms.openlocfilehash: b294a56a523adaa2629a5d1e72a7ccef532956e0
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98753290"
 ---
 # <a name="a-web-app-that-calls-web-apis-call-a-web-api"></a>Een web-app die web-Api's aanroept: een web-API aanroepen
@@ -37,7 +37,7 @@ Wanneer u *micro soft. Identity. Web* gebruikt, hebt u drie gebruiks opties voor
 
 #### <a name="option-1-call-microsoft-graph-with-the-sdk"></a>Optie 1: Microsoft Graph aanroepen met de SDK
 
-U wilt Microsoft Graph aanroepen. In dit scenario hebt u Startup.cs toegevoegd `AddMicrosoftGraph` zoals  opgegeven in [code configuratie](scenario-web-app-call-api-app-configuration.md#option-1-call-microsoft-graph), en kunt u het in de-controller of de pagina-constructor rechtstreeks injecteren `GraphServiceClient` voor gebruik in de acties. In het volgende voor beeld wordt een pagina weer gegeven met de foto van de aangemelde gebruiker.
+U wilt Microsoft Graph aanroepen. In dit scenario hebt u toegevoegd aan `AddMicrosoftGraph` het onderdeel *Startup. cs* zoals opgegeven in [code configuratie](scenario-web-app-call-api-app-configuration.md#option-1-call-microsoft-graph), en kunt u het in de-controller of de pagina-constructor rechtstreeks injecteren `GraphServiceClient` voor gebruik in de acties. In het volgende voor beeld wordt een pagina weer gegeven met de foto van de aangemelde gebruiker.
 
 ```CSharp
 [Authorize]
@@ -73,7 +73,7 @@ public class IndexModel : PageModel
 
 #### <a name="option-2-call-a-downstream-web-api-with-the-helper-class"></a>Optie 2: een stroomafwaartse Web-API aanroepen met de helper-klasse
 
-U wilt een andere web-API aanroepen dan Microsoft Graph. In dat geval hebt u de `AddDownstreamWebApi` *Startup.cs* toegevoegd in de [code configuratie](scenario-web-app-call-api-app-configuration.md#option-2-call-a-downstream-web-api-other-than-microsoft-graph)en kunt u rechtstreeks een `IDownstreamWebApi` service in uw controller of pagina-constructor injecteren en gebruiken in de volgende acties:
+U wilt een andere web-API aanroepen dan Microsoft Graph. In dat geval hebt u het bestand `AddDownstreamWebApi` *Startup. cs* toegevoegd zoals opgegeven in [code configuratie](scenario-web-app-call-api-app-configuration.md#option-2-call-a-downstream-web-api-other-than-microsoft-graph), en kunt u rechtstreeks een `IDownstreamWebApi` service in uw controller of pagina-constructor injecteren en gebruiken in de volgende acties:
 
 ```CSharp
 [Authorize]

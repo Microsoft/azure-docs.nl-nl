@@ -12,10 +12,10 @@ ms.date: 01/27/2021
 ms.author: kenwith
 ms.reviewer: arvinh
 ms.openlocfilehash: 4e933000c8e700d8bfd193b542e3855b2fca26f8
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101689331"
 ---
 # <a name="tutorial-develop-a-sample-scim-endpoint"></a>Zelf studie: een voor beeld van een SCIM-eind punt ontwikkelen
@@ -104,7 +104,7 @@ De standaard code voor token validatie is geconfigureerd voor het gebruik van ee
 
 Nadat u het SCIM-eind punt hebt geïmplementeerd, kunt u testen om er zeker van te zijn dat het compatibel is met SCIM RFC. Dit voor beeld bevat een reeks tests in postman waarmee ruwe (maken, lezen, bijwerken en verwijderen) bewerkingen worden gevalideerd voor gebruikers en groepen, filters, updates voor groepslid maatschap en gebruikers uitschakelen.
 
-De eind punten bevinden zich in de `{host}/scim/` map en u kunt standaard HTTP-aanvragen gebruiken om ermee te communiceren. `/scim/`Zie *ControllerConstant.cs* in **AzureADProvisioningSCIMreference**  >  **ScimReferenceApi**-  >  **controllers** om de route te wijzigen.
+De eind punten bevinden zich in de `{host}/scim/` map en u kunt standaard HTTP-aanvragen gebruiken om ermee te communiceren. `/scim/`Zie *ControllerConstant. cs* in **AzureADProvisioningSCIMreference**  >  **ScimReferenceApi**-  >  **controllers** om de route te wijzigen.
 
 > [!NOTE]
 > U kunt alleen HTTP-eind punten gebruiken voor lokale tests. De Azure AD-inrichtings service vereist dat uw endpoint HTTPS ondersteunt.

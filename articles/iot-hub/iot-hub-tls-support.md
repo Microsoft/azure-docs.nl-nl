@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 01/14/2020
 ms.author: jlian
 ms.openlocfilehash: d36a7917693aef9063ade473759f2f451d3a677f
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98234015"
 ---
 # <a name="transport-layer-security-tls-support-in-iot-hub"></a>Ondersteuning van Transport Layer Security (TLS) in IoT Hub
@@ -44,7 +44,7 @@ Configureer uw IoT-hubs voor extra beveiliging zodat *alleen* client verbindinge
 
 * VS - oost
 * VS - zuid-centraal
-* US - west 2
+* VS - west 2
 * VS (overheid) - Arizona
 * US Gov-Virginia (TLS 1.0/1.1-ondersteuning is niet beschikbaar in deze regio-TLS 1,2 Enforcement moet zijn ingeschakeld of het maken van een IoT hub mislukt)
 

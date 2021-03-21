@@ -4,10 +4,10 @@ description: Een inleiding tot het maken van back-ups van SQL Server-data bases 
 ms.topic: conceptual
 ms.date: 01/30/2019
 ms.openlocfilehash: 592a51051a0d02a6c1d491db0fe559e2e62babb2
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96327046"
 ---
 # <a name="back-up-sql-server-to-azure-as-a-dpm-workload"></a>Back-ups maken van SQL Server naar Azure als een DPM-workload
@@ -44,7 +44,7 @@ Een back-up maken van een SQL Server Data Base naar Azure en deze herstellen van
     * Alleen secundaire: back-up mag niet op de primaire replica worden uitgevoerd. Als de primaire replica de enige online replica is, mag de back-up niet plaatsvinden.
     * Primaire: back-ups moeten altijd op de primaire replica plaatsvinden.
     * Iedere replica: back-ups kunnen op alle beschikbare replica's in de beschikbaarheidsgroep plaatsvinden. Het knooppunt waarvan een back-up moet worden gemaakt, zal gebaseerd zijn op de back-upprioriteiten voor elk van de knooppunten.
-  * en let op het volgende:
+  * Houd rekening met het volgende:
     * U kunt back-ups maken van elke Lees bare replica, dat wil zeggen primair, synchroon secundair, asynchroon secundair.
     * Als een replica wordt uitgesloten van de back-up, bijvoorbeeld als **replica uitsluiten** is ingeschakeld of als niet leesbaar is gemarkeerd, wordt die replica niet geselecteerd voor back-up onder een van de opties.
     * Als er meerdere replica's beschikbaar en leesbaar zijn, wordt het knoop punt met de hoogste back-upprioriteit geselecteerd voor back-up.
@@ -133,7 +133,7 @@ Als u SQL Server-data bases in azure wilt beveiligen, moet u eerst een back-upbe
 
     ![Een Bewaar beleid kiezen](./media/backup-azure-backup-sql/pg-retentionschedule.png)
 
-    In dit voorbeeld geldt het volgende:
+    In dit voorbeeld:
 
     * Back-ups worden dagelijks uitgevoerd om 12:00 uur en 8:00 PM. Ze worden gedurende 180 dagen bewaard.
     * De back-up op zaterdag om 12:00 uur wordt gedurende 104 weken bewaard.

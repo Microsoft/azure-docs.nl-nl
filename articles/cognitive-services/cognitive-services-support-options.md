@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 10/11/2020
 ms.author: erhopf
 ms.openlocfilehash: dbfe4a44f359f8db59ae80e04aae57164d0ccaf7
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101736845"
 ---
 # <a name="azure-cognitive-services-support-and-help-options"></a>Ondersteunings-en Help-opties voor Azure Cognitive Services
@@ -46,7 +46,7 @@ Als u via zoeken geen antwoord op uw probleem kunt vinden, dient u een nieuwe vr
 * [Form Recognizer](/answers/topics/azure-form-recognizer.html)
 * [Video Indexer](/answers/topics/azure-media-services.html)
 
-**Japanse**
+**Taal**
 
 * [Immersive Reader](/answers/topics/azure-immersive-reader.html)
 * [Language Understanding (LUIS)](/answers/topics/azure-language-understanding.html)
@@ -86,7 +86,7 @@ Als u een nieuwe vraag indient bij Stack Overflow, moet u een of meer van de vol
 * [Form Recognizer](https://stackoverflow.com/search?q=azure+form+recognizer)
 * [Video Indexer](https://stackoverflow.com/search?q=azure+video+indexer)
 
-**Japanse**
+**Taal**
 
 * [Immersive Reader](https://stackoverflow.com/search?q=azure+immersive+reader)
 * [Language Understanding (LUIS)](https://stackoverflow.com/search?q=azure+luis+language+understanding)
@@ -123,7 +123,7 @@ Als u nieuwe functies wilt aanvragen, plaatst u deze op UserVoice. Deel uw idee√
 * [Form Recognizer](https://feedback.azure.com/forums/932041-azure-cognitive-services?category_id=395743)
 * [Video Indexer](https://feedback.azure.com/forums/932041-azure-cognitive-services?category_id=395743)
 
-**Japanse**
+**Taal**
 
 * [Immersive Reader](https://feedback.azure.com/forums/932041-azure-cognitive-services?category_id=395749)
 * [Language Understanding (LUIS)](https://feedback.azure.com/forums/932041-azure-cognitive-services?category_id=395749)

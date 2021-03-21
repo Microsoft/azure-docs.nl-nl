@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c2124ca9fae76d87a695a2c453f7b222e7a08794
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96742790"
 ---
 # <a name="azure-ad-multi-factor-authentication-user-data-collection"></a>Azure AD-Multi-Factor Authentication voor het verzamelen van gebruikers gegevens
@@ -30,7 +30,7 @@ MFA-server, de NPS-extensie en de Windows Server 2016 Azure AD MFA-adapter AD FS
 
 Verificatie pogingen (gebruikt voor rapportage en probleem oplossing):
 
-- Timestamp
+- Tijdstempel
 - Gebruikersnaam
 - Voornaam
 - Achternaam
@@ -71,7 +71,7 @@ Verificatie pogingen (gebruikt voor rapportage en probleem oplossing):
 Activeringen (probeert een account te activeren in de mobiele app Microsoft Authenticator):
 - Gebruikersnaam
 - Accountnaam
-- Timestamp
+- Tijdstempel
 - Resultaat van activerings code ophalen
 - Activeren geslaagd
 - Fout activeren
@@ -89,7 +89,7 @@ Blokken (gebruikt voor het bepalen van de geblokkeerde status en voor rapportage
 - Landnummer
 - Telefoonnummer
 - Telefoon nummer geformatteerd
-- Extensie
+- Toestelnummer
 - Extensie wissen
 - Geblokkeerd
 - Reden voor blok kering
@@ -109,7 +109,7 @@ Bypass (gebruikt voor rapportage):
 - Landnummer
 - Telefoonnummer
 - Telefoon nummer geformatteerd
-- Extensie
+- Toestelnummer
 - Extensie wissen
 - Reden voor bypass
 - Tijds tempel van voltooiing

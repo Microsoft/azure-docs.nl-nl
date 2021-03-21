@@ -10,10 +10,10 @@ ms.date: 06/30/2020
 ms.reviewer: jushiman
 ms.custom: mimckitt
 ms.openlocfilehash: 3bc259f9ee6cb1e6fd927af82a1740403d3ae7d8
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100587954"
 ---
 # <a name="azure-virtual-machine-scale-sets-faqs"></a>Veelgestelde vragen over schaalsets voor virtuele Azure-machines
@@ -224,9 +224,9 @@ U kunt open bare SSH-sleutels in tekst zonder opmaak opgeven wanneer u een virtu
 }
 ```
 
-linuxConfiguration element naam | Vereist | Type | Description
+linuxConfiguration element naam | Vereist | Type | Beschrijving
 --- | --- | --- | ---
-SSH | No | Verzameling | Hiermee geeft u de configuratie van de SSH-sleutel voor een Linux-besturings systeem op
+SSH | Nee | Verzameling | Hiermee geeft u de configuratie van de SSH-sleutel voor een Linux-besturings systeem op
 leertraject | Ja | Tekenreeks | Hiermee geeft u het pad naar het Linux-bestand op waar de SSH-sleutels of het certificaat zich bevinden
 Gegevens | Ja | Tekenreeks | Hiermee geeft u een open bare SSH-sleutel met base64-code ring op
 

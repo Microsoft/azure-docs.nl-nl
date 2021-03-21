@@ -8,10 +8,10 @@ ms.date: 11/9/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.openlocfilehash: c600ced8896a3847b80d854c9e230310cca4c98d
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "100588592"
 ---
 # <a name="troubleshooting-azure-digital-twins-diagnostics-logging"></a>Problemen oplossen met Azure Digital Apparaatdubbels: logboek registratie van diagnostische gegevens
@@ -63,7 +63,7 @@ Ga voor meer informatie over diagnostische instellingen en de bijbehorende insta
 
 Hier vindt u meer informatie over de logboeken die door Azure Digital Apparaatdubbels worden verzameld.
 
-| Logboekcategorie | Description |
+| Logboekcategorie | Beschrijving |
 | --- | --- |
 | ADTModelsOperation | Alle API-aanroepen voor modellen vastleggen |
 | ADTQueryOperation | Alle API-aanroepen met betrekking tot Query's vastleggen |

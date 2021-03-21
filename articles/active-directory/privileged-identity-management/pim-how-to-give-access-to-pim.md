@@ -15,10 +15,10 @@ ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: fba46ee5632f7411c433e4bba29201c59c552f21
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94835200"
 ---
 # <a name="delegate-access-to-privileged-identity-management"></a>Toegang tot Privileged Identity Management delegeren
@@ -32,7 +32,7 @@ Zorg ervoor dat er altijd ten minste twee gebruikers in een rol voor geprivilegi
 
 ## <a name="delegate-access-to-manage-pim"></a>Toegang delegeren om PIM te beheren
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 
 1. Open **privileged Identity Management** in azure AD.
 
@@ -70,7 +70,7 @@ Zorg ervoor dat er altijd ten minste twee gebruikers in een rol voor geprivilegi
 
 Zorg er altijd voor dat er nog mini maal twee gebruikers aan zijn toegewezen voordat u iemand verwijdert uit de beheerderrol.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 
 1. Open **Azure AD privileged Identity Management**.
 

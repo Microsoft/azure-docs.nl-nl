@@ -13,10 +13,10 @@ ms.author: vanto
 ms.reviewer: ''
 ms.date: 11/02/2020
 ms.openlocfilehash: 257abf03994c7006b1c3789174f550515dcd309a
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94841458"
 ---
 # <a name="configure-always-encrypted-by-using-azure-key-vault"></a>Always Encrypted configureren met behulp van Azure Key Vault 
@@ -266,7 +266,7 @@ Dit voor beeld laat zien hoe u:
 - Gegevens invoegen in de versleutelde kolommen.
 - Selecteer een record door te filteren op een specifieke waarde in een versleutelde kolom.
 
-Vervang de inhoud van *Program.cs* door de volgende code. Vervang de connection string voor de globale Connections Tring-variabele in de regel die de hoofd methode direct voorafgaat met uw geldige connection string van de Azure Portal. Dit is de enige wijziging die u moet aanbrengen in deze code.
+Vervang de inhoud van *programma. cs* door de volgende code. Vervang de connection string voor de globale Connections Tring-variabele in de regel die de hoofd methode direct voorafgaat met uw geldige connection string van de Azure Portal. Dit is de enige wijziging die u moet aanbrengen in deze code.
 
 Voer de app uit om Always Encrypted in actie te zien.
 

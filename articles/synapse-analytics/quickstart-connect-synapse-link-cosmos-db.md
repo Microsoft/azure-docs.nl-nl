@@ -10,10 +10,10 @@ ms.date: 04/21/2020
 ms.author: acomet
 ms.reviewer: jrasnick
 ms.openlocfilehash: 7462c78ecad718c30980a98ff7659a2a4d2ea020
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98222153"
 ---
 # <a name="quickstart-connect-to-azure-synapse-link-for-azure-cosmos-db"></a>Quickstart: Verbinding maken met Azure Synapse Link voor Azure Cosmos DB
@@ -41,16 +41,16 @@ Het verbinden van een Azure Cosmos DB-database wordt uitgevoerd als gekoppelde s
 
 Vanuit Data Object Explorer kunt u rechtstreeks verbinding maken met een Azure Cosmos DB-database door de volgende stappen uit te voeren:
 
-1. Selecteer het pictogram *_+_* bij de optie Gegevens
-2. Selecteer *Verbinding maken met externe gegevens**
+1. Selecteer het pictogram ***+*** bij de optie Gegevens
+2. Selecteer **Verbinding maken met externe gegevens**
 3. Selecteer de API waarmee u verbinding wilt maken: SQL of MongoDB
-4. Selecteer *_Doorgaan_*
+4. Selecteer ***Doorgaan***
 5. Geef de gekoppelde service een naam. De naam wordt weergegeven in Object Explorer en wordt tijdens Synapse-uitvoeringen gebruikt om verbinding te maken met de database en containers. We raden u aan een beschrijvende naam te gebruiken.
-6. Selecteer de *Cosmos DB-accountnaam* en **databasenaam**
+6. Selecteer de **Cosmos DB-accountnaam** en **databasenaam**
 7. Als er geen regio is opgegeven, worden Synapse-uitvoeringen gerouteerd naar de dichtstbijzijnde regio waar de analytische opslag is ingeschakeld (optioneel). U kunt echter ook handmatig instellen in welke regio u wilt dat gebruikers toegang krijgen tot de analytische opslag van Cosmos DB. Selecteer **Aanvullende verbindingseigenschappen** en vervolgens **Nieuw**. Schrijf **_PreferredRegions_*onder **Naam van eigenschap** en stel de* waarde** in op de gewenste regio (voorbeeld: WestUS2, zonder spatie tussen woorden en getal)
-8. Selecteer *_Maken_*
+8. Selecteer ***Maken***
 
-Azure Cosmos DB-databases worden weergegeven op het tabblad *Gekoppeld* in de sectie Azure Cosmos DB. U kunt een Azure Cosmos DB-container met HTAP onderscheiden van een alleen-OLTP-container, met behulp van de volgende pictogrammen:
+Azure Cosmos DB-databases worden weergegeven op het tabblad **Gekoppeld** in de sectie Azure Cosmos DB. U kunt een Azure Cosmos DB-container met HTAP onderscheiden van een alleen-OLTP-container, met behulp van de volgende pictogrammen:
 
 **Synapse-container**:
 

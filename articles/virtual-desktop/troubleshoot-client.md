@@ -7,10 +7,10 @@ ms.date: 08/11/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: 097c97d16cf62793d03ac42662267e0553383bc1
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98539616"
 ---
 # <a name="troubleshoot-the-remote-desktop-client"></a>Problemen met de Extern bureaublad-client oplossen
@@ -93,7 +93,7 @@ Volg de volgende instructies als de Windows client-feed geen Windows virtueel bu
 
 Als u de App-ID 9cdead84-a844-4324-93f2-b2e6bb768d07 niet kunt vinden in de lijst, moet u de resource provider voor het virtuele bureau blad van Windows registreren. De resource provider registreren:
 
-1. Meld u aan bij de Azure-portal.
+1. Meld u aan bij Azure Portal.
 2. Ga naar het **abonnement** en selecteer vervolgens uw abonnement.
 3. Selecteer **resource provider** in het menu aan de linkerkant van de pagina.
 4. Zoek en selecteer **micro soft. DesktopVirtualization** en selecteer **opnieuw registreren**.

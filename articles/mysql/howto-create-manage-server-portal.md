@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: how-to
 ms.date: 1/26/2021
 ms.openlocfilehash: 83876f77e0d7ffc0ae20bc5a545c1f18f53f4a8f
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98897982"
 ---
 # <a name="manage-an-azure-database-for-mysql-server-using-the-azure-portal"></a>Een Azure Database for MySQL-server beheren met behulp van de Azure Portal
@@ -90,7 +90,7 @@ U kunt het wacht woord van de beheerdersrol wijzigen met behulp van de Azure Por
  
 
 > [!IMPORTANT]
-> Als u het wacht woord voor de server beheerder opnieuw instelt, worden de beheerders bevoegdheden voor de server automatisch opnieuw ingesteld op standaard. Overweeg het opnieuw instellen van het wacht woord voor de server beheerder als u per ongeluk een of meer van de beheerders bevoegdheden voor de server hebt ingetrokken.
+> Als u het beheerderswachtwoord voor de server opnieuw instelt, worden de beheerdersbevoegdheden voor de server automatisch opnieuw ingesteld op de standaardwaarden. Overweeg het opnieuw instellen van het wacht woord voor de server beheerder als u per ongeluk een of meer van de beheerders bevoegdheden voor de server hebt ingetrokken.
    
 > [!NOTE]
 > De server beheerder gebruiker heeft standaard de volgende bevoegdheden: selecteren, invoegen, bijwerken, verwijderen, maken, verwijderen, opnieuw laden, verwerken, verwijzingen, INDEX, wijzigen, data BASEs weer geven, tijdelijke tabellen maken, tabellen vergren delen, uitvoeren, replicatie slave, replicatie CLIENT, weer gave, gebruiker weer geven, gebeurtenis, TRIGGER

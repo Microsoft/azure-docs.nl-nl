@@ -10,10 +10,10 @@ ms.reviewer: mikeray
 ms.date: 10/12/2020
 ms.topic: conceptual
 ms.openlocfilehash: 7b683029b7fd05078755d4e8cd027f55c805f991
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97107257"
 ---
 # <a name="storage-configuration"></a>Opslagconfiguratie
@@ -175,14 +175,14 @@ Wanneer u een exemplaar maakt met ofwel `azdata arc sql mi create` of `azdata ar
 
 In de volgende tabel worden de paden in de Azure SQL Managed instance-container weer gegeven die zijn toegewezen aan het permanente volume voor gegevens en Logboeken:
 
-|Parameter naam, korte naam|Pad in MSSQL-MIAA-container|Description|
+|Parameter naam, korte naam|Pad in MSSQL-MIAA-container|Beschrijving|
 |---|---|---|
 |`--storage-class-data`, `-scd`|/var/opt|Bevat mappen voor de installatie van MSSQL en andere systeem processen. De map MSSQL bevat standaard gegevens (met inbegrip van transactie Logboeken), fouten logboek & back-upmappen|
 |`--storage-class-logs`, `-scl`|/var/log|Bevat mappen waarin console-uitvoer (stderr, stdout), andere logboek registratie gegevens van processen binnen de container worden opgeslagen|
 
 De volgende tabel bevat de paden in de PostgreSQL-instantie container die is toegewezen aan het permanente volume voor gegevens en Logboeken:
 
-|Parameter naam, korte naam|Pad in post gres-container|Description|
+|Parameter naam, korte naam|Pad in post gres-container|Beschrijving|
 |---|---|---|
 |`--storage-class-data`, `-scd`|/var/opt/postgresql|Bevat gegevens en logboek mappen voor de installatie van post gres|
 |`--storage-class-logs`, `-scl`|/var/log|Bevat mappen waarin console-uitvoer (stderr, stdout), andere logboek registratie gegevens van processen binnen de container worden opgeslagen|
@@ -222,7 +222,7 @@ In de onderstaande tabel ziet u het totale aantal permanente volumes dat is vere
 |Azure SQL Managed Instance|5|5 * 2 = 10|
 |Azure Database for PostgreSQL-exemplaar|5| 5 * 2 = 10|
 |Azure PostgreSQL grootschalige|2 (aantal werk nemers = 4 per instantie)|2 * 2 * (1 + 4) = 20|
-|***Totaal aantal permanente volumes** _||8 + 10 + 10 + 20 = 48|
+|***Totaal aantal permanente volumes***||8 + 10 + 10 + 20 = 48|
 
 Deze berekening kan worden gebruikt voor het plannen van de opslag voor uw Kubernetes-cluster op basis van de opslag inrichting of-omgeving. Als lokale opslag inrichting bijvoorbeeld wordt gebruikt voor een Kubernetes-cluster met vijf (5) knoop punten, moet voor de voorbeeld implementatie hierboven elk knoop punt ten minste opslag voor 10 permanente volumes hebben. En wanneer een Azure Kubernetes service-cluster (AKS) wordt ingericht met vijf (5) knoop punten, wordt een geschikte VM-grootte gekozen voor de knooppunt groep, zodat 10 gegevens schijven kunnen worden bijgevoegd. [Hier](../../aks/operator-best-practices-storage.md#size-the-nodes-for-storage-needs)vindt u meer informatie over het aanpassen van de grootte van de knoop punten voor opslag behoeften voor AKS-knoop punten.
 
@@ -238,6 +238,6 @@ Voor de open bare Cloud beheerde Kubernetes Services kunnen we de volgende aanbe
 
 |Open bare Cloud service|Aanbeveling|
 |---|---|
-|_ *Azure Kubernetes service (AKS)**|Azure Kubernetes service (AKS) heeft twee typen opslag-Azure Files en Azure Managed Disks. Elk type opslag heeft twee prijs-en prestatie lagen: standaard (HDD) en Premium (SSD). De vier opslag klassen die in AKS zijn opgenomen `azurefile` , zijn (Azure files Standard-laag), ( `azurefile-premium` Azure files Premium-laag), (voor de laag `default` Azure-schijven) en `managed-premium` (Azure disks Premium-laag). De standaard opslag klasse is `default` (de Standard-laag van Azure disks). Er zijn aanzienlijke **[prijs verschillen](https://azure.microsoft.com/en-us/pricing/details/storage/)** tussen de typen en lagen die in uw beslissing moeten worden opgenomen. Voor werk belastingen met hoge prestaties raden we u aan `managed-premium` voor alle opslag klassen te gebruiken. Voor ontwikkel-en test werkbelastingen, het concept van concepten, enzovoort, `azurefile` is de minst dure optie. Alle vier de opties kunnen worden gebruikt voor situaties waarbij externe, gedeelde opslag is vereist, aangezien deze allemaal network-attached storage apparaten in azure zijn. Meer informatie over [AKS-opslag](../../aks/concepts-storage.md).|
+|**Azure Kubernetes Service (AKS)**|Azure Kubernetes service (AKS) heeft twee typen opslag-Azure Files en Azure Managed Disks. Elk type opslag heeft twee prijs-en prestatie lagen: standaard (HDD) en Premium (SSD). De vier opslag klassen die in AKS zijn opgenomen `azurefile` , zijn (Azure files Standard-laag), ( `azurefile-premium` Azure files Premium-laag), (voor de laag `default` Azure-schijven) en `managed-premium` (Azure disks Premium-laag). De standaard opslag klasse is `default` (de Standard-laag van Azure disks). Er zijn aanzienlijke **[prijs verschillen](https://azure.microsoft.com/en-us/pricing/details/storage/)** tussen de typen en lagen die in uw beslissing moeten worden opgenomen. Voor werk belastingen met hoge prestaties raden we u aan `managed-premium` voor alle opslag klassen te gebruiken. Voor ontwikkel-en test werkbelastingen, het concept van concepten, enzovoort, `azurefile` is de minst dure optie. Alle vier de opties kunnen worden gebruikt voor situaties waarbij externe, gedeelde opslag is vereist, aangezien deze allemaal network-attached storage apparaten in azure zijn. Meer informatie over [AKS-opslag](../../aks/concepts-storage.md).|
 |**AWS Elastic Kubernetes Service (EKS)**| De elastische Kubernetes-service van Amazon heeft één primaire opslag klasse, gebaseerd op het [EBS CSI-opslag stuur programma](https://docs.aws.amazon.com/eks/latest/userguide/ebs-csi.html). Dit wordt aanbevolen voor productie werkbelastingen. Er is een nieuw opslag stuur programma: [EFS CSI-opslag stuur programma](https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html) dat kan worden toegevoegd aan een EKS-cluster, maar het is momenteel in een bèta fase en kan worden gewijzigd. Hoewel AWS aangeeft dat dit opslag stuur programma wordt ondersteund voor productie, wordt het niet aanbevolen om het te gebruiken omdat het nog steeds in de bèta versie is en is onderhevig aan wijzigingen. De opslag klasse EBS is de standaard instelling en wordt aangeroepen `gp2` . Meer informatie over [EKS-opslag](https://docs.aws.amazon.com/eks/latest/userguide/storage-classes.html).|
 |**Google Kubernetes Engine (GKE)**|Google Kubernetes Engine (GKE) heeft slechts één opslag klasse met de naam `standard` , die wordt gebruikt voor [GCE permanente schijven](https://kubernetes.io/docs/concepts/storage/volumes/#gcepersistentdisk). Dit is de enige, het is ook de standaard instelling. Hoewel er een [lokale, statische volume toewijzings](https://cloud.google.com/kubernetes-engine/docs/how-to/persistent-volumes/local-ssd#run-local-volume-static-provisioner) functie is voor GKE die u kunt gebruiken met direct gekoppelde ssd's, is het niet raadzaam om deze te gebruiken omdat deze niet wordt onderhouden of wordt ondersteund door Google. Meer informatie over [GKE-opslag](https://cloud.google.com/kubernetes-engine/docs/concepts/persistent-volumes).

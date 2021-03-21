@@ -9,10 +9,10 @@ ms.date: 10/15/2020
 ms.author: mjbrown
 ms.custom: devx-track-js, devx-track-azurecli, devx-track-csharp
 ms.openlocfilehash: 25eaa4a66fb4a73f976edbd30e6f82015ce84f6f
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93086122"
 ---
 # <a name="provision-database-container-or-autoscale-throughput-on-azure-cosmos-db-api-for-mongodb-resources"></a>Data Base, container of automatisch schalen door Voer in te richten op Azure Cosmos DB-API voor MongoDB-resources
@@ -28,13 +28,13 @@ Als u een andere API gebruikt, raadpleegt u [SQL API](how-to-provision-container
 
 1. [Maak een nieuw Azure Cosmos-account](create-mongodb-dotnet.md#create-a-database-account)of selecteer een bestaand Azure Cosmos-account.
 
-1. Open het deel venster **Data Explorer** en selecteer **nieuwe verzameling** . Geef de volgende gegevens op:
+1. Open het deel venster **Data Explorer** en selecteer **nieuwe verzameling**. Geef de volgende gegevens op:
 
    * Geef aan of u een nieuwe database maakt of een bestaande database gebruikt. Selecteer de optie **doorvoer database inrichten** als u de door voer wilt inrichten op database niveau.
    * Voer een verzamelings-id in.
    * Voer een waarde voor de partitiesleutel in (bijvoorbeeld `/ItemID`).
    * Voer een door Voer in die u wilt inrichten (bijvoorbeeld 1000 RUs).
-   * Selecteer **OK** .
+   * Selecteer **OK**.
 
     :::image type="content" source="./media/how-to-provision-throughput-mongodb/provision-database-throughput-portal-mongodb-api.png" alt-text="Scherm opname van Data Explorer bij het maken van een nieuwe verzameling met een doorvoer capaciteit op database niveau":::
 

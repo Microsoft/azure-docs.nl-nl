@@ -4,10 +4,10 @@ description: Schaal een Service Fabric cluster in of uit om te voldoen aan de vr
 ms.topic: conceptual
 ms.date: 03/12/2019
 ms.openlocfilehash: 6ee04c73b75d6b335e450ff816c51f0a3089b918
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94409957"
 ---
 # <a name="scale-a-cluster-in-or-out"></a>Een cluster in- of uitschalen
@@ -186,7 +186,7 @@ else
 }
 ```
 
-In onderstaande **sfctl** -code wordt de volgende opdracht gebruikt om de waarde van **knooppuntnaam** op te halen van het laatst gemaakte knooppunt: `sfctl node list --query "sort_by(items[*], &name)[-1].name"`
+In onderstaande **sfctl**-code wordt de volgende opdracht gebruikt om de waarde van **knooppuntnaam** op te halen van het laatst gemaakte knooppunt: `sfctl node list --query "sort_by(items[*], &name)[-1].name"`
 
 ```shell
 # Inform the node that it is going to be removed
@@ -200,7 +200,7 @@ sfctl node remove-state --node-name _nt1vm_5
 ```
 
 > [!TIP]
-> Gebruik de volgende **sfctl** -query's om de status van elke stap te controleren
+> Gebruik de volgende **sfctl**-query's om de status van elke stap te controleren
 >
 > **Status van deactiveren controleren**
 > `sfctl node list --query "sort_by(items[*], &name)[-1].nodeDeactivationInfo"`

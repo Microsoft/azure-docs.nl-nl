@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 11/18/2020
 ms.author: alzam
 ms.openlocfilehash: 70cac6ef566ef52409cd9667708c2fc297e046f7
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97656611"
 ---
 # <a name="set-up-alerts-on-resource-log-events-from-vpn-gateway"></a>Waarschuwingen instellen voor resource logboek gebeurtenissen van VPN Gateway
@@ -20,7 +20,7 @@ Dit artikel helpt u bij het instellen van waarschuwingen op basis van bron logbo
 
 De volgende bron logboeken zijn beschikbaar in Azure:
 
-|***Naam** _ | _*_Beschrijving_*_ |
+|***Naam** _ | _ *_Beschrijving_** |
 |--- | --- |
 |GatewayDiagnosticLog | Bevat bron logboeken voor gateway configuratie gebeurtenissen, primaire wijzigingen en onderhouds gebeurtenissen |
 |TunnelDiagnosticLog | Bevat status wijzigings gebeurtenissen voor de tunnel. Tunnel Connect/Disconnect-gebeurtenissen hebben een samenvattings reden voor de status wijziging, indien van toepassing |
@@ -33,7 +33,7 @@ De volgende bron logboeken zijn beschikbaar in Azure:
 In de volgende voorbeeld stappen wordt een waarschuwing gemaakt voor een verbindings gebeurtenis waarbij een site-naar-site-VPN-tunnel is betrokken:
 
 
-1. Zoek in de Azure Portal op _ *log Analytics** onder **alle services** en selecteer **log Analytics werk ruimten**.
+1. Zoek in het Azure Portal naar **log Analytics** onder **alle services** en selecteer **log Analytics werk ruimten**.
 
    ![Selecties voor het naar Log Analytics werk ruimten gaan](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert0.png "Maken")
 

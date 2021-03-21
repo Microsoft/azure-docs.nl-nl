@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 08/15/2018
 ms.author: alkohli
 ms.openlocfilehash: 6b750659bf22e856ee8ad7368e3fea64dd7245df
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94960356"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-monitor-hardware-components-and-status"></a>De StorSimple Apparaatbeheer-service gebruiken voor het bewaken van hardware-onderdelen en-status
@@ -105,17 +105,17 @@ De volgende tabel bevat een overzicht van de fysieke en logische onderdelen in d
 | NVRAM-ruimte SSD |N.v.t. |Logisch |Gedeeld |N.v.t. |De opslag ruimte in de SSD-opslag groep die is toegewezen voor de NVRAM-logica. |
 | HDD-opslag groep |N.v.t. |Logisch |Gedeeld |N.v.t. |Hier wordt de status weer gegeven van de logische opslag groep die is gemaakt op basis van de Hdd's van het apparaat. |
 | SSD-opslag groep |N.v.t. |Logisch |Gedeeld |N.v.t. |Hier wordt de status weer gegeven van de logische opslag groep die is gemaakt op basis van de Ssd's van het apparaat. |
-| Controller [0-1] [status] |I/O |Fysiek |Regelaar |Ja |Hiermee wordt de status van de controller weer gegeven en wordt aangegeven of deze zich in de modus actief of stand-by binnen het chassis bevindt. |
-| Temperatuur sensors in controller |I/O |Fysiek |Regelaar |Nee |Voor talrijke temperatuur Sens oren, zoals I/O-module, CPU-Tempe ratuur, DIMM-en PCIe-Sens oren, wordt de status weer gegeven. Dit geeft aan of de gedetecteerde Tempe ratuur binnen de tolerantie ligt. |
-| SAS-expansie |I/O |Fysiek |Regelaar |Nee |Hiermee wordt de status van de SAS-expansie (Serial Attached SCSI) aangegeven, die wordt gebruikt om de geïntegreerde opslag te verbinden met de controller. |
-| SAS-connector [0-1] |I/O |Fysiek |Regelaar |Nee |Hiermee wordt de status van elke SAS-connector aangegeven, die wordt gebruikt voor het verbinden van geïntegreerde opslag met de SAS-uitbrei ding. |
-| SBB mid-plan Interconnect |I/O |Fysiek |Regelaar |Nee |Hiermee wordt de status van de mid-vlieg connector aangegeven, die wordt gebruikt voor het verbinden van elke controller met het middel vlak. |
-| Processor kern |I/O |Fysiek |Regelaar |Nee |Hiermee wordt de status van de processor kernen binnen elke controller aangegeven. |
-| Behuizing elektronica kracht |I/O |Fysiek |Regelaar |Nee |Hiermee wordt de status van het energie systeem aangegeven dat wordt gebruikt door de behuizing. |
-| Behuizing elektronica Diagnostics |I/O |Fysiek |Regelaar |Nee |Hiermee wordt de status van de diagnostische subsystemen aangegeven die worden verschaft door de controller. |
-| Baseboard Management Controller (BMC) |I/O |Fysiek |Regelaar |Nee |Hiermee wordt de status van de Base Board management controller (BMC) aangegeven, een gespecialiseerde service processor die het hardwareapparaat bewaakt via Sens oren en met de systeem beheerder communiceert via een onafhankelijke verbinding. |
-| Ethernet |I/O |Fysiek |Regelaar |Nee |Hiermee wordt de status van elk van de netwerk interfaces aangegeven, dat wil zeggen, de beheer-en gegevens poorten die op de controller zijn opgenomen. |
-| NVRAM |I/O |Fysiek |Regelaar |Nee |Hiermee wordt de status van het NVRAM aangegeven, een niet-vluchtige wille keurig toegangs geheugen dat wordt gebruikt door de accu waarmee toepassings kritieke informatie wordt bewaard in het geval van een stroom storing. |
+| Controller [0-1] [status] |I/O |Fysiek |Controller |Ja |Hiermee wordt de status van de controller weer gegeven en wordt aangegeven of deze zich in de modus actief of stand-by binnen het chassis bevindt. |
+| Temperatuur sensors in controller |I/O |Fysiek |Controller |Nee |Voor talrijke temperatuur Sens oren, zoals I/O-module, CPU-Tempe ratuur, DIMM-en PCIe-Sens oren, wordt de status weer gegeven. Dit geeft aan of de gedetecteerde Tempe ratuur binnen de tolerantie ligt. |
+| SAS-expansie |I/O |Fysiek |Controller |Nee |Hiermee wordt de status van de SAS-expansie (Serial Attached SCSI) aangegeven, die wordt gebruikt om de geïntegreerde opslag te verbinden met de controller. |
+| SAS-connector [0-1] |I/O |Fysiek |Controller |Nee |Hiermee wordt de status van elke SAS-connector aangegeven, die wordt gebruikt voor het verbinden van geïntegreerde opslag met de SAS-uitbrei ding. |
+| SBB mid-plan Interconnect |I/O |Fysiek |Controller |Nee |Hiermee wordt de status van de mid-vlieg connector aangegeven, die wordt gebruikt voor het verbinden van elke controller met het middel vlak. |
+| Processor kern |I/O |Fysiek |Controller |Nee |Hiermee wordt de status van de processor kernen binnen elke controller aangegeven. |
+| Behuizing elektronica kracht |I/O |Fysiek |Controller |Nee |Hiermee wordt de status van het energie systeem aangegeven dat wordt gebruikt door de behuizing. |
+| Behuizing elektronica Diagnostics |I/O |Fysiek |Controller |Nee |Hiermee wordt de status van de diagnostische subsystemen aangegeven die worden verschaft door de controller. |
+| Baseboard Management Controller (BMC) |I/O |Fysiek |Controller |Nee |Hiermee wordt de status van de Base Board management controller (BMC) aangegeven, een gespecialiseerde service processor die het hardwareapparaat bewaakt via Sens oren en met de systeem beheerder communiceert via een onafhankelijke verbinding. |
+| Ethernet |I/O |Fysiek |Controller |Nee |Hiermee wordt de status van elk van de netwerk interfaces aangegeven, dat wil zeggen, de beheer-en gegevens poorten die op de controller zijn opgenomen. |
+| NVRAM |I/O |Fysiek |Controller |Nee |Hiermee wordt de status van het NVRAM aangegeven, een niet-vluchtige wille keurig toegangs geheugen dat wordt gebruikt door de accu waarmee toepassings kritieke informatie wordt bewaard in het geval van een stroom storing. |
 
 ## <a name="component-list-for-ebod-enclosure-of-storsimple-device"></a>Lijst met onderdelen voor EBOD Enclosure van StorSimple-apparaat
 De volgende tabel bevat een overzicht van de fysieke en logische onderdelen in de EBOD Enclosure (alleen aanwezig in het 8600-model) van uw on-premises StorSimple-apparaat.
@@ -134,14 +134,14 @@ De volgende tabel bevat een overzicht van de fysieke en logische onderdelen in d
 | Voeding [0-1] |PCM |Fysiek |Gedeeld |Ja |Er wordt één regel weer gegeven voor elk van de energie-eenheden in de twee PCMs die zich op de achterkant van het apparaat bevinden. |
 | Koeling [0-1] |PCM |Fysiek |Gedeeld |Ja |Er wordt één regel weer gegeven voor elk van de vier ventilatoren in de twee PCMs. |
 | Lokale opslag [HDD] |N.v.t. |Logisch |Gedeeld |N.v.t. |Hier wordt de status weer gegeven van de logische opslag groep die is gemaakt op basis van de Hdd's van het apparaat. |
-| Controller [0-1] [status] |I/O |Fysiek |Regelaar |Ja |Hiermee wordt de status van de controllers in de EBOD-module weer gegeven. |
-| Temperatuur sensors in EBOD |I/O |Fysiek |Regelaar |Nee |De status van een groot aantal temperatuur Sens oren van elke controller wordt weer gegeven. Dit geeft aan of de Tempe ratuur binnen de tolerantie ligt. |
-| SAS-expansie |I/O |Fysiek |Regelaar |Nee |Hiermee wordt de status van de SAS-uitbreidings module aangegeven, die wordt gebruikt om de geïntegreerde opslag te verbinden met de controller. |
-| SAS-connector [0-2] |I/O |Fysiek |Regelaar |Nee |Hiermee wordt de status van elke SAS-connector aangegeven, die wordt gebruikt voor het verbinden van geïntegreerde opslag met de SAS-uitbrei ding. |
-| SBB mid-plan Interconnect |I/O |Fysiek |Regelaar |Nee |Hiermee wordt de status van de mid-vlieg connector aangegeven, die wordt gebruikt voor het verbinden van elke controller met het middel vlak. |
-| Behuizing elektronica kracht |I/O |Fysiek |Regelaar |Nee |Hiermee wordt de status van het energie systeem aangegeven dat wordt gebruikt door de behuizing. |
-| Behuizing elektronica Diagnostics |I/O |Fysiek |Regelaar |Nee |Hiermee wordt de status van de diagnostische subsystemen aangegeven die worden verschaft door de controller. |
-| Verbinding met apparaat-controller |I/O |Fysiek |Regelaar |Nee |Hiermee wordt de status van de verbinding tussen de I/O-module EBOD en de apparaat-controller aangegeven. |
+| Controller [0-1] [status] |I/O |Fysiek |Controller |Ja |Hiermee wordt de status van de controllers in de EBOD-module weer gegeven. |
+| Temperatuur sensors in EBOD |I/O |Fysiek |Controller |Nee |De status van een groot aantal temperatuur Sens oren van elke controller wordt weer gegeven. Dit geeft aan of de Tempe ratuur binnen de tolerantie ligt. |
+| SAS-expansie |I/O |Fysiek |Controller |Nee |Hiermee wordt de status van de SAS-uitbreidings module aangegeven, die wordt gebruikt om de geïntegreerde opslag te verbinden met de controller. |
+| SAS-connector [0-2] |I/O |Fysiek |Controller |Nee |Hiermee wordt de status van elke SAS-connector aangegeven, die wordt gebruikt voor het verbinden van geïntegreerde opslag met de SAS-uitbrei ding. |
+| SBB mid-plan Interconnect |I/O |Fysiek |Controller |Nee |Hiermee wordt de status van de mid-vlieg connector aangegeven, die wordt gebruikt voor het verbinden van elke controller met het middel vlak. |
+| Behuizing elektronica kracht |I/O |Fysiek |Controller |Nee |Hiermee wordt de status van het energie systeem aangegeven dat wordt gebruikt door de behuizing. |
+| Behuizing elektronica Diagnostics |I/O |Fysiek |Controller |Nee |Hiermee wordt de status van de diagnostische subsystemen aangegeven die worden verschaft door de controller. |
+| Verbinding met apparaat-controller |I/O |Fysiek |Controller |Nee |Hiermee wordt de status van de verbinding tussen de I/O-module EBOD en de apparaat-controller aangegeven. |
 
 ## <a name="next-steps"></a>Volgende stappen
 * Als u de StorSimple Apparaatbeheer-service wilt gebruiken om uw apparaat te beheren, gaat u naar [de StorSimple Apparaatbeheer-service gebruiken om uw StorSimple-apparaat te beheren](storsimple-8000-manager-service-administration.md).

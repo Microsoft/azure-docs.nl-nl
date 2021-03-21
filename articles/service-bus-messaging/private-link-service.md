@@ -6,10 +6,10 @@ ms.author: spelluru
 ms.date: 10/07/2020
 ms.topic: article
 ms.openlocfilehash: 66de9a4ff65c73264257cb6f7f215fc15820c95f
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94427144"
 ---
 # <a name="allow-access-to-azure-service-bus-namespaces-via-private-endpoints"></a>Toegang tot Azure Service Bus naam ruimten toestaan via persoonlijke eind punten
@@ -48,7 +48,7 @@ Uw privé-eindpunt en het virtueel netwerk moeten zich in dezelfde regio bevinde
 
 Als u al een bestaande naam ruimte hebt, kunt u een persoonlijk eind punt maken door de volgende stappen uit te voeren:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). 
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). 
 2. Typ **Service Bus** in de zoek balk.
 3. Selecteer de **naam ruimte** in de lijst waaraan u een persoonlijk eind punt wilt toevoegen.
 2. Selecteer in het menu links de optie **netwerk** opties onder **instellingen**. 
@@ -84,7 +84,7 @@ Als u al een bestaande naam ruimte hebt, kunt u een persoonlijk eind punt maken 
         5. Selecteer **volgende: configuratie >** knop onder aan de pagina. 
         
             ![Privé-eind punt maken-resource pagina](./media/private-link-service/create-private-endpoint-resource-page.png)
-    2. Als u **verbinding maken met een Azure-resource selecteert op resource-id of alias** , voert u de volgende stappen uit:
+    2. Als u **verbinding maken met een Azure-resource selecteert op resource-id of alias**, voert u de volgende stappen uit:
         1. Voer de **resource-id** of **alias** in. Dit kan de resource-ID of alias zijn die iemand met u heeft gedeeld. De eenvoudigste manier om de resource-ID op te halen, is door te navigeren naar de Service Bus naam ruimte in de Azure Portal en het gedeelte van de URI te kopiëren vanaf `/subscriptions/` . Zie de volgende afbeelding voor een voor beeld. 
         2. Voer een **naam ruimte** in voor de **subresource** van het doel. Het is het type van de subbron waartoe uw persoonlijke eind punt toegang heeft. 
         3. Beschrijving Voer een **aanvraag bericht** in. De resource-eigenaar ziet dit bericht tijdens het beheer van de verbinding met een privé-eind punt. 
@@ -101,7 +101,7 @@ Als u al een bestaande naam ruimte hebt, kunt u een persoonlijk eind punt maken 
 11. Controleer alle instellingen in het **overzicht en maken** en selecteer **maken** om het persoonlijke eind punt te maken.
     
     ![Privé-eind punt maken-pagina controleren en maken](./media/private-link-service/create-private-endpoint-review-create-page.png)
-12. Controleer of het persoonlijke eind punt is gemaakt. Als u de eigenaar van de resource bent en de optie **verbinding maken met een Azure-resource in mijn Directory** hebt geselecteerd voor de **verbindings methode** , moet de eindpunt verbinding **automatisch worden goedgekeurd**. Zie de sectie [privé-eind punten beheren met Azure Portal](#manage-private-endpoints-using-azure-portal) als de status in **behandeling** is.
+12. Controleer of het persoonlijke eind punt is gemaakt. Als u de eigenaar van de resource bent en de optie **verbinding maken met een Azure-resource in mijn Directory** hebt geselecteerd voor de **verbindings methode**, moet de eindpunt verbinding **automatisch worden goedgekeurd**. Zie de sectie [privé-eind punten beheren met Azure Portal](#manage-private-endpoints-using-azure-portal) als de status in **behandeling** is.
 
     ![Persoonlijk eind punt gemaakt](./media/private-link-service/private-endpoint-created.png)
 
@@ -175,7 +175,7 @@ Wanneer u een privé-eindpunt maakt, moet de verbinding worden goedgekeurd. Als 
 
 Er zijn vier inrichtingsstatussen:
 
-| Service actie | Status privé-eindpunt serviceconsument | Beschrijving |
+| Serviceactie | Status privé-eindpunt serviceconsument | Beschrijving |
 |--|--|--|
 | Geen | In behandeling | De verbinding wordt handmatig gemaakt en in afwachting van goedkeuring door de resource-eigenaar van de Private Link. |
 | Goedkeuren | Goedgekeurd | De verbinding werd automatisch of handmatig goedgekeurd en is klaar om te worden gebruikt. |
@@ -187,7 +187,7 @@ Er zijn vier inrichtingsstatussen:
 1. Meld u aan bij Azure Portal.
 1. Typ **Service Bus** in de zoek balk.
 1. Selecteer de **naam ruimte** die u wilt beheren.
-1. Selecteer het tabblad **netwerken** .
+1. Selecteer het tabblad **Netwerken**.
 5. Ga naar de toepasselijke sectie hieronder op basis van de bewerking die u wilt: goed keuren, afwijzen of verwijderen. 
 
 ### <a name="approve-a-private-endpoint-connection"></a>Een verbinding met een privé-eind punt goed keuren
@@ -257,11 +257,11 @@ Aliases:  <service-bus-namespace-name>.servicebus.windows.net
 
 ## <a name="limitations-and-design-considerations"></a>Beperkingen en overwegingen bij het ontwerp
 
-**Pricing** : Zie [Prijs van Azure Private Link](https://azure.microsoft.com/pricing/details/private-link/) voor meer informatie over prijzen.
+**Pricing**: Zie [Prijs van Azure Private Link](https://azure.microsoft.com/pricing/details/private-link/) voor meer informatie over prijzen.
 
-**Beperkingen** : deze functie is beschikbaar in alle open bare Azure-regio's.
+**Beperkingen**: deze functie is beschikbaar in alle open bare Azure-regio's.
 
-**Maximum aantal privé-eind punten per service bus naam ruimte** : 120.
+**Maximum aantal privé-eind punten per service bus naam ruimte**: 120.
 
 Zie [Azure Private Link-service: beperkingen](../private-link/private-link-service-overview.md#limitations) voor meer informatie
 

@@ -4,10 +4,10 @@ description: Hierin worden de functies beschreven die u kunt gebruiken in een Az
 ms.topic: conceptual
 ms.date: 11/18/2020
 ms.openlocfilehash: f3687581d94f80cc923614a0655da1813bd5c97b
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97359707"
 ---
 # <a name="numeric-functions-for-arm-templates"></a>Numerieke functies voor ARM-sjablonen
@@ -19,7 +19,7 @@ Resource Manager biedt de volgende functies voor het werken met gehele getallen 
 * [div](#div)
 * [float](#float)
 * [int](#int)
-* [max](#max)
+* [aantal](#max)
 * [min.](#min)
 * [mod](#mod)
 * [mul](#mul)
@@ -35,7 +35,7 @@ Retourneert de som van de twee door gegeven gehele getallen. De `add` functie wo
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
 |operand1 |Ja |int |Het eerste nummer dat moet worden toegevoegd. |
 |operand2 |Ja |int |Het tweede nummer dat moet worden toegevoegd. |
@@ -106,10 +106,10 @@ Retourneert de index van een herhalings lus.
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
-| lusinstructie | No | tekenreeks | De naam van de lus voor het ophalen van de iteratie. |
-| offset |No |int |Het getal dat moet worden toegevoegd aan de op nul gebaseerde iteratie waarde. |
+| lusinstructie | Nee | tekenreeks | De naam van de lus voor het ophalen van de iteratie. |
+| offset |Nee |int |Het getal dat moet worden toegevoegd aan de op nul gebaseerde iteratie waarde. |
 
 ### <a name="remarks"></a>Opmerkingen
 
@@ -180,7 +180,7 @@ Retourneert de deling van het gehele getal van de twee door gegeven gehele getal
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
 | operand1 |Ja |int |Het getal dat wordt verdeeld. |
 | operand2 |Ja |int |Het getal dat wordt gebruikt om te delen. Mag niet 0 zijn. |
@@ -251,9 +251,9 @@ Zet de waarde om in een getal met drijvende komma. U kunt deze functie alleen ge
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
-| Arg1 |Yes |teken reeks of int |De waarde die moet worden geconverteerd naar een getal met een drijvende komma. |
+| Arg1 |Ja |teken reeks of int |De waarde die moet worden geconverteerd naar een getal met een drijvende komma. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -294,9 +294,9 @@ Hiermee wordt de opgegeven waarde geconverteerd naar een geheel getal.
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
-| valueToConvert |Yes |teken reeks of int |De waarde die moet worden geconverteerd naar een geheel getal. |
+| valueToConvert |Ja |teken reeks of int |De waarde die moet worden geconverteerd naar een geheel getal. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -353,9 +353,9 @@ Retourneert de maximum waarde van een matrix met gehele getallen of een door kom
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
-| Arg1 |Yes |matrix van gehele getallen of door komma's gescheiden lijst met gehele getallen |De verzameling om de maximum waarde op te halen. |
+| Arg1 |Ja |matrix van gehele getallen of door komma's gescheiden lijst met gehele getallen |De verzameling om de maximum waarde op te halen. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -423,9 +423,9 @@ Retourneert de minimum waarde van een matrix met gehele getallen of een door kom
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
-| Arg1 |Yes |matrix van gehele getallen of door komma's gescheiden lijst met gehele getallen |De verzameling om de minimum waarde op te halen. |
+| Arg1 |Ja |matrix van gehele getallen of door komma's gescheiden lijst met gehele getallen |De verzameling om de minimum waarde op te halen. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -493,7 +493,7 @@ Retourneert de rest van de deling van het gehele getal met behulp van de twee do
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
 | operand1 |Ja |int |Het getal dat wordt verdeeld. |
 | operand2 |Ja |int |Het getal dat wordt gebruikt om te delen, mag niet 0 zijn. |
@@ -564,7 +564,7 @@ Retourneert de vermenigvuldiging van de twee door gegeven gehele getallen. De `m
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
 | operand1 |Ja |int |Het eerste getal dat moet worden vermenigvuldigd. |
 | operand2 |Ja |int |Het tweede getal dat moet worden vermenigvuldigd. |
@@ -635,7 +635,7 @@ Retourneert de aftrekking van de twee door gegeven gehele getallen. De `sub` fun
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
 | operand1 |Ja |int |Het getal dat wordt afgetrokken van. |
 | operand2 |Ja |int |Het getal dat wordt afgetrokken. |

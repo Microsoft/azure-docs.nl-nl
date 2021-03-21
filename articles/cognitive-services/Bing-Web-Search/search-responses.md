@@ -12,16 +12,16 @@ ms.date: 06/25/2019
 ms.author: aahi
 ms.custom: seodec2018
 ms.openlocfilehash: 3dda95312a0b9191ddc11de62959f308ee19fff4
-ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94380977"
 ---
 # <a name="bing-web-search-api-response-structure-and-answer-types"></a>Bing Webzoekopdrachten-API-antwoord structuur en-antwoord typen  
 
 > [!WARNING]
-> Bing Search-API's worden van Cognitive Services naar Bing Search Services overgezet. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](/bing/search-apis/bing-web-search/create-bing-search-service-resource) is beschreven.
+> Bing Search-API's worden van Cognitive Services naar Bing Search Services verplaatst. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](/bing/search-apis/bing-web-search/create-bing-search-service-resource) is beschreven.
 > Bing Search-API's die zijn ingericht met Cognitive Services, worden voor de komende drie jaar of tot het einde van uw Enterprise Agreement ondersteund, afhankelijk van wat het eerst afloopt.
 > Raadpleeg [Bing Search Services](/bing/search-apis/bing-web-search/create-bing-search-service-resource) voor migratie-instructies.
 
@@ -333,7 +333,7 @@ Wiskundige expressies die variabelen bevatten (bijvoorbeeld 4x + 6 = 18, waarbij
 
 ## <a name="timezone-answer"></a>Antwoord tijd zone
 
-Als de gebruiker een tijd-of datum query invoert, kan het antwoord een tijd [zone](/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#timezone) antwoord bevatten. Dit antwoord biedt ondersteuning voor impliciete of expliciete query's. Een impliciete query, zoals *Wat is de tijd?* , retourneert de lokale tijd op basis van de locatie van de gebruiker. Een expliciete query, zoals de *tijd in Seattle?* , retourneert de lokale tijd voor Seattle, WA.
+Als de gebruiker een tijd-of datum query invoert, kan het antwoord een tijd [zone](/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#timezone) antwoord bevatten. Dit antwoord biedt ondersteuning voor impliciete of expliciete query's. Een impliciete query, zoals *Wat is de tijd?*, retourneert de lokale tijd op basis van de locatie van de gebruiker. Een expliciete query, zoals de *tijd in Seattle?*, retourneert de lokale tijd voor Seattle, WA.
 
 Het `timeZone` antwoord bevat de naam van de locatie, de huidige UTC-datum en-tijd op de opgegeven locatie en de UTC-afwijking. Als de grens van de locatie zich binnen meerdere tijd zones bevindt, bevat het antwoord de huidige UTC-datum en-tijd van alle tijd zones binnen de grens. Omdat de provincie van Florida bijvoorbeeld binnen twee tijd zones valt, bevat het antwoord de lokale datum en tijd van beide tijd zones.  
 
@@ -424,7 +424,7 @@ Query: What time is it in the U.S.
 
 ## <a name="spellsuggestion-answer"></a>SpellSuggestion-antwoord
 
-Als Bing bepaalt dat de gebruiker mogelijk is bedoeld om iets anders te zoeken, bevat het antwoord een [SpellSuggestions](/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#spellsuggestions) -object. Als de gebruiker bijvoorbeeld zoekt naar de *Carlos-pen* , kan Bing bepalen of de gebruiker die is bedoeld om te zoeken naar Carlos Pena in plaats daarvan (op basis van vroegere Zoek opdrachten door andere *Carlos-pen* ). Hieronder ziet u een voor beeld van een spelling reactie.
+Als Bing bepaalt dat de gebruiker mogelijk is bedoeld om iets anders te zoeken, bevat het antwoord een [SpellSuggestions](/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#spellsuggestions) -object. Als de gebruiker bijvoorbeeld zoekt naar de *Carlos-pen*, kan Bing bepalen of de gebruiker die is bedoeld om te zoeken naar Carlos Pena in plaats daarvan (op basis van vroegere Zoek opdrachten door andere *Carlos-pen*). Hieronder ziet u een voor beeld van een spelling reactie.
 
 ```json
 "spellSuggestions": {
@@ -440,7 +440,7 @@ Als Bing bepaalt dat de gebruiker mogelijk is bedoeld om iets anders te zoeken, 
 
 Antwoorden van de Bing Webzoekopdrachten-API kunnen de volgende headers bevatten:
 
-| Koptekst | Beschrijving |
+| Header | Beschrijving |
 |-|-|
 |`X-MSEdge-ClientID`|De unieke ID die Bing aan de gebruiker heeft toegewezen|
 |`BingAPIs-Market`|De markt die is gebruikt om aan de aanvraag te voldoen|
@@ -485,6 +485,6 @@ Hieronder ziet u hoe Bing de spelling suggestie gebruikt.
 
 * Raadpleeg de documentatie over het [beperken van aanvragen](throttling-requests.md) .  
 
-## <a name="see-also"></a>Zie tevens  
+## <a name="see-also"></a>Zie ook  
 
 * [Bing Webzoekopdrachten-API referentie](/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference)

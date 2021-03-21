@@ -8,16 +8,16 @@ ms.date: 10/13/2020
 ms.author: govindk
 ms.reviewer: sngun
 ms.openlocfilehash: 2629e9c6e048620d9490a1e091a16c138fd1e615
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99525429"
 ---
-# <a name="online-backup-and-on-demand-data-restore-in-azure-cosmos-db"></a>Herstel van online back-ups en gegevens op aanvraag in Azure Cosmos DB
+# <a name="online-backup-and-on-demand-data-restore-in-azure-cosmos-db"></a>Online back-up en herstel van gegevens op aanvraag in Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
 
-Azure Cosmos DB maakt met regel matige tussen pozen automatisch back-ups van uw gegevens. De automatische back-ups worden gemaakt zonder dat dit van invloed is op de prestaties of Beschik baarheid van de database bewerkingen. Alle back-ups worden afzonderlijk in een opslag service opgeslagen. De automatische back-ups zijn handig in scenario's wanneer u per ongeluk uw Azure Cosmos-account,-data base of-container verwijdert of bijwerkt en later het gegevens herstel vereist. Er zijn twee back-upmodusn:
+Azure Cosmos DB maakt op regelmatige tijdstippen automatisch back-ups van uw gegevens. De automatische back-ups worden gemaakt zonder dat dit van invloed is op de prestaties of beschikbaarheid van de databasebewerkingen. Alle back-ups worden afzonderlijk in een opslagservice opgeslagen. De automatische back-ups zijn handig in scenario's waarbij u per ongeluk uw Azure Cosmos-account, -database of -container verwijdert of bijwerkt en waarvoor later gegevensherstel is vereist. Er zijn twee back-upmodusn:
 
 * **Periodieke back-upmodus** : deze modus is de standaard back-upmodus voor alle bestaande accounts. In deze modus wordt er regel matig een back-up gemaakt en worden de gegevens hersteld door een aanvraag met het ondersteunings team te maken. In deze modus configureert u een back-upinterval en retentie voor uw account. De maximale Bewaar periode loopt tot een maand. Het minimale back-upinterval kan één uur zijn.  Zie het artikel [periodieke back-upmodus](configure-periodic-backup-restore.md) voor meer informatie.
 

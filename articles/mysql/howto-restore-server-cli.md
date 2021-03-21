@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 3/27/2020
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: ee06eed1b8f54877d01a8b316c015938038879cf
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94535398"
 ---
 # <a name="how-to-back-up-and-restore-a-server-in-azure-database-for-mysql-using-the-azure-cli"></a>Een back-up maken en herstellen van een server in Azure Database for MySQL met behulp van de Azure CLI
@@ -27,7 +27,7 @@ Voor het volt ooien van deze hand leiding:
 
 [!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
-- Voor dit artikel is versie 2,0 of hoger van de Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
+- Voor dit artikel is versie 2.0 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
 ## <a name="set-backup-configuration"></a>Back-upconfiguratie instellen
 
@@ -103,7 +103,7 @@ Als u de server wilt herstellen, voert u bij de opdracht prompt van Azure CLI de
 ```azurecli-interactive
 az mysql server georestore --resource-group myresourcegroup --name mydemoserver-georestored --source-server mydemoserver --location eastus --sku-name GP_Gen5_8 
 ```
-Met deze opdracht maakt u een nieuwe server met de naam *mydemoserver-restored* in VS-Oost, die deel uitmaakt van *myresourcegroup*. Het is een Algemeen, Gen 5-server met 8 vCores. De server wordt gemaakt op basis van de geo-redundante back-up van *mydemoserver* , die ook in de resource groep *myresourcegroup*
+Met deze opdracht maakt u een nieuwe server met de naam *mydemoserver-restored* in VS-Oost, die deel uitmaakt van *myresourcegroup*. Het is een Algemeen, Gen 5-server met 8 vCores. De server wordt gemaakt op basis van de geo-redundante back-up van *mydemoserver*, die ook in de resource groep *myresourcegroup*
 
 Als u de nieuwe server in een andere resource groep van de bestaande server wilt maken, moet u in de `--source-server` para meter de naam van de server kwalificeren, zoals in het volgende voor beeld:
 

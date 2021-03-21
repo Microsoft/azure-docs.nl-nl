@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9536cf41add73f494bfff451c201d36e951864e3
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95997661"
 ---
 # <a name="azure-active-directory-identity-protection-notifications"></a>Azure Active Directory Identity Protection meldingen
@@ -49,7 +49,7 @@ Als beheerder kunt u het volgende instellen:
 - **De ontvangers van deze e-mail** -gebruikers in de rol globale beheerder, beveiligings beheerder of beveiligings lezer worden automatisch toegevoegd aan deze lijst. We proberen e-mail berichten te verzenden naar de eerste twintig leden van elke rol. Als een gebruiker is inge schreven bij PIM om deze op aanvraag uit te breiden naar een van deze rollen, **worden er alleen e-mail berichten ontvangen als deze zijn verhoogd op het moment dat de e-mail wordt verzonden**.
    - U kunt desgewenst **aangepaste E-mail toevoegen hier** gebruikers gedefinieerd moeten de juiste machtigingen hebben om de gekoppelde rapporten in de Azure portal weer te geven.
 
-Configureer het e-mail adres voor gebruikers met een risico op de **Azure Portal** onder **Azure Active Directory**  >  **Security**  >  gebruikers met beveiligings **identiteits beveiliging** van  >  **Risico's gedetecteerde waarschuwingen**.
+Configureer het e-mail adres voor gebruikers met een risico op de **Azure Portal** onder **Azure Active Directory**  >    >  gebruikers met beveiligings **identiteits beveiliging** van  >  **Risico's gedetecteerde waarschuwingen**.
 
 ## <a name="weekly-digest-email"></a>E-mail met wekelijkse samen vatting
 
@@ -68,7 +68,7 @@ Gebruikers in de rol globale beheerder, beveiligings beheerder of beveiligings l
 
 Als beheerder kunt u een wekelijks overzicht van e-mail verzenden naar of uit en de gebruikers selecteren die zijn toegewezen om het e-mail bericht te ontvangen.
 
-Configureer de week overzichts-e-mail in de **Azure Portal** onder **Azure Active Directory**  >  wekelijkse samen vatting van **beveiligings**  >  **identiteits beveiliging**  >  **Weekly digest**.
+Configureer de week overzichts-e-mail in de **Azure Portal** onder **Azure Active Directory**  >  wekelijkse samen vatting van **beveiligings**  >  **identiteits beveiliging**  >  .
 
 ## <a name="see-also"></a>Zie ook
 

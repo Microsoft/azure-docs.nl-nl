@@ -8,10 +8,10 @@ ms.date: 04/13/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 9acd2adb68347978bb123d2239eedbb3e5595bc3
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100387390"
 ---
 # <a name="copy-data-to-and-from-an-on-premises-file-system-by-using-azure-data-factory"></a>Gegevens kopiëren van en naar een on-premises bestands systeem met behulp van Azure Data Factory
@@ -67,12 +67,12 @@ U kunt een on-premises bestands systeem koppelen aan een Azure-data factory met 
 
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
-| type |Zorg ervoor dat de eigenschap type is ingesteld op **OnPremisesFileServer**. |Yes |
-| host |Hiermee geeft u het pad naar de hoofdmap van de map die u wilt kopiëren. Gebruik het escape teken ' \ ' voor speciale tekens in de teken reeks. Zie voor beelden van [gekoppelde service en gegevensset-definities](#sample-linked-service-and-dataset-definitions) voor voor beeld. |Yes |
+| type |Zorg ervoor dat de eigenschap type is ingesteld op **OnPremisesFileServer**. |Ja |
+| host |Hiermee geeft u het pad naar de hoofdmap van de map die u wilt kopiëren. Gebruik het escape teken ' \ ' voor speciale tekens in de teken reeks. Zie voor beelden van [gekoppelde service en gegevensset-definities](#sample-linked-service-and-dataset-definitions) voor voor beeld. |Ja |
 | userid |Geef de ID op van de gebruiker die toegang heeft tot de server. |Nee (als u kiest voor encryptedCredential) |
 | wachtwoord |Geef het wacht woord op voor de gebruiker (gebruikers-id). |Nee (als u encryptedCredential kiest |
 | encryptedCredential |Geef de versleutelde referenties op die u kunt verkrijgen door de cmdlet New-AzDataFactoryEncryptValue uit te voeren. |Nee (als u gebruikers naam en wacht woord als tekst zonder opmaak wilt opgeven) |
-| gatewayName |Hiermee geeft u de naam op van de gateway die Data Factory moet gebruiken om verbinding te maken met de on-premises Bestands server. |Yes |
+| gatewayName |Hiermee geeft u de naam op van de gateway die Data Factory moet gebruiken om verbinding te maken met de on-premises Bestands server. |Ja |
 
 
 ### <a name="sample-linked-service-and-dataset-definitions"></a>Voor beeld van gekoppelde service en gegevensset definities
@@ -124,12 +124,12 @@ De sectie typeProperties verschilt voor elk type gegevensset. Het bevat informat
 
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
-| folderPath |Hiermee geeft u het pad naar de map. Gebruik het escape teken ' \' voor speciale tekens in de teken reeks. Het Joker teken filter wordt niet ondersteund. Zie voor beelden van [gekoppelde service en gegevensset-definities](#sample-linked-service-and-dataset-definitions) voor voor beeld.<br/><br/>U kunt deze eigenschap combi neren met **partitionBy** om mappaden te laten baseren op de begin-en eind datum van het segment. |Yes |
-| fileName |Geef de naam van het bestand op in de **FolderPath** als u wilt dat de tabel verwijst naar een specifiek bestand in de map. Als u geen waarde voor deze eigenschap opgeeft, wijst de tabel naar alle bestanden in de map.<br/><br/>Als er geen **Bestands naam** is opgegeven voor een uitvoer-gegevensset en **preserveHierarchy** niet is opgegeven in de activiteit sink, heeft de naam van het gegenereerde bestand de volgende indeling: <br/><br/>`Data.<Guid>.txt` (Voor beeld: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt) |No |
-| File filter |Geef een filter op dat moet worden gebruikt om een subset van bestanden in de folderPath in plaats van alle bestanden te selecteren. <br/><br/>Toegestane waarden zijn: `*` (meerdere tekens) en `?` (één teken).<br/><br/>Voor beeld 1: "file filter": "*. log"<br/>Voor beeld 2: "file filter": 2014-1-?. txt<br/><br/>File filter is van toepassing op een invoer-file share-gegevensset. |No |
-| partitionedBy |U kunt partitionedBy gebruiken om een dynamische folderPath/fileName op te geven voor gegevens van een tijd reeks. Een voor beeld is folderPath para meters voor elk uur aan gegevens. |No |
-| indeling | De volgende indelings typen worden ondersteund: **TextFormat**, **JsonFormat**, **Avro Format**, **OrcFormat**, **ParquetFormat**. Stel de eigenschap **type** onder indeling in op een van deze waarden. Zie voor meer informatie secties [tekst indeling](data-factory-supported-file-and-compression-formats.md#text-format), [JSON-indeling](data-factory-supported-file-and-compression-formats.md#json-format), [Avro](data-factory-supported-file-and-compression-formats.md#avro-format)-indeling, [Orc-indeling](data-factory-supported-file-and-compression-formats.md#orc-format)en Parquet- [indeling](data-factory-supported-file-and-compression-formats.md#parquet-format) . <br><br> Als u bestanden wilt **kopiëren als-zich bevindt** tussen archieven op basis van bestanden (binaire kopie), slaat u de sectie indeling in de gegevensset voor invoer en uitvoer over. |No |
-| compressie | Geef het type en compressie niveau voor de gegevens op. Ondersteunde typen zijn: **gzip**, **Deflate**, **bzip2** en **ZipDeflate**. Ondersteunde niveaus zijn: **optimaal** en **snelst**. Zie [Bestands-en compressie-indelingen in azure Data Factory](data-factory-supported-file-and-compression-formats.md#compression-support). |No |
+| folderPath |Hiermee geeft u het pad naar de map. Gebruik het escape teken ' \' voor speciale tekens in de teken reeks. Het Joker teken filter wordt niet ondersteund. Zie voor beelden van [gekoppelde service en gegevensset-definities](#sample-linked-service-and-dataset-definitions) voor voor beeld.<br/><br/>U kunt deze eigenschap combi neren met **partitionBy** om mappaden te laten baseren op de begin-en eind datum van het segment. |Ja |
+| fileName |Geef de naam van het bestand op in de **FolderPath** als u wilt dat de tabel verwijst naar een specifiek bestand in de map. Als u geen waarde voor deze eigenschap opgeeft, wijst de tabel naar alle bestanden in de map.<br/><br/>Als er geen **Bestands naam** is opgegeven voor een uitvoer-gegevensset en **preserveHierarchy** niet is opgegeven in de activiteit sink, heeft de naam van het gegenereerde bestand de volgende indeling: <br/><br/>`Data.<Guid>.txt` (Voor beeld: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt) |Nee |
+| File filter |Geef een filter op dat moet worden gebruikt om een subset van bestanden in de folderPath in plaats van alle bestanden te selecteren. <br/><br/>Toegestane waarden zijn: `*` (meerdere tekens) en `?` (één teken).<br/><br/>Voor beeld 1: "file filter": "*. log"<br/>Voor beeld 2: "file filter": 2014-1-?. txt<br/><br/>File filter is van toepassing op een invoer-file share-gegevensset. |Nee |
+| partitionedBy |U kunt partitionedBy gebruiken om een dynamische folderPath/fileName op te geven voor gegevens van een tijd reeks. Een voor beeld is folderPath para meters voor elk uur aan gegevens. |Nee |
+| indeling | De volgende indelings typen worden ondersteund: **TextFormat**, **JsonFormat**, **Avro Format**, **OrcFormat**, **ParquetFormat**. Stel de eigenschap **type** onder indeling in op een van deze waarden. Zie voor meer informatie secties [tekst indeling](data-factory-supported-file-and-compression-formats.md#text-format), [JSON-indeling](data-factory-supported-file-and-compression-formats.md#json-format), [Avro](data-factory-supported-file-and-compression-formats.md#avro-format)-indeling, [Orc-indeling](data-factory-supported-file-and-compression-formats.md#orc-format)en Parquet- [indeling](data-factory-supported-file-and-compression-formats.md#parquet-format) . <br><br> Als u bestanden wilt **kopiëren als-zich bevindt** tussen archieven op basis van bestanden (binaire kopie), slaat u de sectie indeling in de gegevensset voor invoer en uitvoer over. |Nee |
+| compressie | Geef het type en compressie niveau voor de gegevens op. Ondersteunde typen zijn: **gzip**, **Deflate**, **bzip2** en **ZipDeflate**. Ondersteunde niveaus zijn: **optimaal** en **snelst**. Zie [Bestands-en compressie-indelingen in azure Data Factory](data-factory-supported-file-and-compression-formats.md#compression-support). |Nee |
 
 > [!NOTE]
 > U kunt fileName en file filter niet tegelijkertijd gebruiken.
@@ -176,13 +176,13 @@ Voor kopieer activiteiten zijn ze afhankelijk van de typen bronnen en Sinks. Als
 
 | Eigenschap | Beschrijving | Toegestane waarden | Vereist |
 | --- | --- | --- | --- |
-| recursieve |Geeft aan of de gegevens recursief worden gelezen uit de submappen of alleen vanuit de opgegeven map. |True, False (standaard) |No |
+| recursieve |Geeft aan of de gegevens recursief worden gelezen uit de submappen of alleen vanuit de opgegeven map. |True, False (standaard) |Nee |
 
 **FileSystemSink** ondersteunt de volgende eigenschappen:
 
 | Eigenschap | Beschrijving | Toegestane waarden | Vereist |
 | --- | --- | --- | --- |
-| copyBehavior |Hiermee wordt het Kopieer gedrag gedefinieerd wanneer de bron BlobSource of File System is. |**PreserveHierarchy:** Hiermee behoudt u de bestands hiërarchie in de doelmap. Dat wil zeggen, het relatieve pad van het bron bestand naar de bronmap is hetzelfde als het relatieve pad van het doel bestand naar de doelmap.<br/><br/>**FlattenHierarchy:** Alle bestanden in de bronmap worden gemaakt in het eerste niveau van de doelmap. De doel bestanden worden gemaakt met een automatisch gegenereerde naam.<br/><br/>**MergeFiles:** Alle bestanden van de bronmap worden samengevoegd met één bestand. Als de bestands naam/BLOB-naam is opgegeven, is de naam van het samengevoegde bestand de opgegeven naam. Anders is het een automatisch gegenereerde bestands naam. |No |
+| copyBehavior |Hiermee wordt het Kopieer gedrag gedefinieerd wanneer de bron BlobSource of File System is. |**PreserveHierarchy:** Hiermee behoudt u de bestands hiërarchie in de doelmap. Dat wil zeggen, het relatieve pad van het bron bestand naar de bronmap is hetzelfde als het relatieve pad van het doel bestand naar de doelmap.<br/><br/>**FlattenHierarchy:** Alle bestanden in de bronmap worden gemaakt in het eerste niveau van de doelmap. De doel bestanden worden gemaakt met een automatisch gegenereerde naam.<br/><br/>**MergeFiles:** Alle bestanden van de bronmap worden samengevoegd met één bestand. Als de bestands naam/BLOB-naam is opgegeven, is de naam van het samengevoegde bestand de opgegeven naam. Anders is het een automatisch gegenereerde bestands naam. |Nee |
 
 ### <a name="recursive-and-copybehavior-examples"></a>recursieve en copyBehavior-voor beelden
 In deze sectie wordt het resulterende gedrag van de Kopieer bewerking voor verschillende combi Naties van waarden voor de recursieve en copyBehavior eigenschappen beschreven.

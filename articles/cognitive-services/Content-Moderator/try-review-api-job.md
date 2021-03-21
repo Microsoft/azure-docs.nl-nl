@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 10/24/2019
 ms.author: pafarley
 ms.openlocfilehash: 924c21037a464770fac13c9b45ddcf261ff5a058
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96905136"
 ---
 # <a name="define-and-use-moderation-jobs-api-console"></a>Toezicht taken definiëren en gebruiken (API-console)
@@ -115,7 +115,7 @@ Voer de para meters voor REST-aanroep in, zoals in de bovenstaande sectie. Voor 
 
 ### <a name="examine-the-new-reviews"></a>Bekijk de nieuwe beoordeling (en)
 
-Als uw inhouds taak heeft geresulteerd in het maken van een beoordeling, kunt u deze weer geven in het [beoordelings programma](https://contentmoderator.cognitive.microsoft.com). Selecteer **Review**  >  **afbeeldings** / **tekst** / **video** bekijken (afhankelijk van de inhoud die u hebt gebruikt). De inhoud moet worden weer gegeven, gereed voor menselijke beoordeling. Nadat een Human toezicht houder de automatisch toegewezen tags en Voorspellings gegevens heeft beoordeeld en een beslissing van definitieve controle indient, verzendt de taak-API al deze informatie naar het opgegeven eind punt van de terugbellen.
+Als uw inhouds taak heeft geresulteerd in het maken van een beoordeling, kunt u deze weer geven in het [beoordelings programma](https://contentmoderator.cognitive.microsoft.com). Selecteer   >  **afbeeldings** / **tekst** / **video** bekijken (afhankelijk van de inhoud die u hebt gebruikt). De inhoud moet worden weer gegeven, gereed voor menselijke beoordeling. Nadat een Human toezicht houder de automatisch toegewezen tags en Voorspellings gegevens heeft beoordeeld en een beslissing van definitieve controle indient, verzendt de taak-API al deze informatie naar het opgegeven eind punt van de terugbellen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

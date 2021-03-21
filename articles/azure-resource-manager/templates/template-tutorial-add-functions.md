@@ -7,10 +7,10 @@ ms.topic: tutorial
 ms.author: jgao
 ms.custom: ''
 ms.openlocfilehash: 52b5bd0650b3a069adc3ef7f101c48a4674deaab
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97107104"
 ---
 # <a name="tutorial-add-template-functions-to-your-arm-template"></a>Zelfstudie: Sjabloonfuncties toevoegen aan uw ARM-sjabloon
@@ -21,7 +21,7 @@ In deze zelfstudie leert u hoe u [sjabloonfuncties](template-functions.md) aan u
 
 U wordt aangeraden om eerst de [zelfstudie over parameters](template-tutorial-add-parameters.md) te voltooien, maar dit is niet verplicht.
 
-U moet beschikken over Visual Studio Code met de extensie Resource Manager Tools (hulpprogramma's voor resourcebeheer), plus Azure PowerShell of Azure CLI. Zie de [hulpprogramma's voor sjablonen](template-tutorial-create-first-template.md#get-tools) voor meer informatie.
+U moet beschikken over Visual Studio Code met de extensie Resource Manager Tools (hulpprogramma's voor resourcebeheer), plus Azure PowerShell of Azure CLI. Zie [Hulpprogramma's voor sjablonen](template-tutorial-create-first-template.md#get-tools) voor meer informatie.
 
 ## <a name="review-template"></a>Sjabloon controleren
 

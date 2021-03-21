@@ -11,16 +11,16 @@ ms.topic: conceptual
 ms.date: 01/31/2019
 ms.author: aahi
 ms.openlocfilehash: 4300860039b76bd076f19acfc252f59ef10d462b
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96351841"
 ---
 # <a name="bing-search-api-use-and-display-requirements"></a>Vereisten voor gebruik en weergave van Bing Zoeken-API's
 
 > [!WARNING]
-> Bing Search-API's worden van Cognitive Services naar Bing Search Services overgezet. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](/bing/search-apis/bing-web-search/create-bing-search-service-resource) is beschreven.
+> Bing Search-API's worden van Cognitive Services naar Bing Search Services verplaatst. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](/bing/search-apis/bing-web-search/create-bing-search-service-resource) is beschreven.
 > Bing Search-API's die zijn ingericht met Cognitive Services, worden voor de komende drie jaar of tot het einde van uw Enterprise Agreement ondersteund, afhankelijk van wat het eerst afloopt.
 > Raadpleeg [Bing Search Services](/bing/search-apis/bing-web-search/create-bing-search-service-resource) voor migratie-instructies.
 
@@ -172,4 +172,4 @@ De vorige secties van de vereisten voor het gebruik en de weer gave van zoek-Api
 
 ## <a name="gdpr-compliance"></a>AVG-naleving  
 
-Met betrekking tot persoonlijke gegevens die zijn onderworpen aan de Europese Unie AVG (AVG) en die worden verwerkt in verband met het aanroepen van de zoek-Api's, Bing Spellingcontrole-API of Automatische suggestie-API voor Bing, weet u dat u en micro soft onafhankelijke gegevens controllers zijn onder de AVG. U bent onafhankelijk verantwoordelijk voor uw naleving met de AVG.
+Met betrekking tot persoonlijke gegevens die zijn onderworpen aan de Europese Unie algemene verordening gegevensbescherming (AVG) en die worden verwerkt in verband met het aanroepen van de zoek-Api's, Bing Spellingcontrole-API of Automatische suggestie-API voor Bing, weet u dat u en micro soft onafhankelijke gegevens controllers zijn onder de AVG. U bent onafhankelijk verantwoordelijk voor uw naleving met de AVG.

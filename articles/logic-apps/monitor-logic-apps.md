@@ -7,10 +7,10 @@ ms.reviewer: divswa, logicappspm
 ms.topic: article
 ms.date: 05/04/2020
 ms.openlocfilehash: 3c3d1930234c178a56227830ef0702450ddf4a8c
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "100580677"
 ---
 # <a name="monitor-run-status-review-trigger-history-and-set-up-alerts-for-azure-logic-apps"></a>Uitvoeringsstatus bewaken, triggergeschiedenis controleren, en waarschuwingen instellen voor Azure Logic Apps
@@ -49,7 +49,7 @@ Telkens wanneer de trigger wordt geactiveerd voor een item of gebeurtenis, maakt
 
    Hier volgen de mogelijke uitvoerings statussen:
 
-   | Uitvoerings status | Description |
+   | Uitvoerings status | Beschrijving |
    |------------|-------------|
    | **Aborted** | De uitvoering is gestopt of niet voltooid vanwege externe problemen, bijvoorbeeld een systeem storing of een vervallen Azure-abonnement. |
    | **Gevraagd** | De uitvoering is geactiveerd en gestart, maar er is een annulerings aanvraag ontvangen. |
@@ -121,7 +121,7 @@ De uitvoering van elke logische app begint met een trigger. De trigger geschiede
 
    Dit zijn de mogelijke statussen van trigger pogingen:
 
-   | Triggerstatus | Description |
+   | Triggerstatus | Beschrijving |
    |----------------|-------------|
    | **Mislukt** | Er is een fout opgetreden. Als u gegenereerde fout berichten voor een mislukte trigger wilt controleren, selecteert u de trigger poging en kiest u **uitvoer**. U kunt bijvoorbeeld invoer zoeken die niet geldig is. |
    | **Overgeslagen** | De trigger heeft het eind punt gecontroleerd, maar er zijn geen gegevens gevonden die voldoen aan de opgegeven criteria. |

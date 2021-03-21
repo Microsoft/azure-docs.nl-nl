@@ -9,10 +9,10 @@ ms.date: 01/07/2021
 ms.author: duau
 ms.custom: seodec18
 ms.openlocfilehash: 35e080e0fe45c18ad6a6d5392e0c78b116853c3e
-ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98027465"
 ---
 # <a name="troubleshooting-network-performance"></a>Problemen met netwerk prestaties oplossen
@@ -148,7 +148,7 @@ Voor het WAN kunt u de test resultaten met uw service provider of Internet provi
 
 Wanneer u het probleem met Azure hebt geïsoleerd, is het tijd om de documentatie van het [Azure-netwerk][Network Docs] te bekijken en vervolgens als u nog steeds [een ondersteunings ticket hebt geopend][Ticket Link].
 
-## <a name="references"></a>Naslaginformatie
+## <a name="references"></a>Referenties
 ### <a name="latencybandwidth-expectations"></a>Verwachtingen voor latentie/band breedte
 >[!TIP]
 > Een geografische latentie (mijl of kilo meter) tussen de eind punten die u wilt testen, is het grootste deel van de latentie. Hoewel er sprake is van een latentie van apparatuur (fysieke en virtuele onderdelen, het aantal hops enz.), is de geografie bewezen als het grootste onderdeel van de totale latentie bij het omgaan met WAN-verbindingen. Het is ook belang rijk om te weten dat de afstand de afstand van de fiber-uitvoering is en niet de lijn afstand van de lineaire of de weg. Deze afstand is hard moeilijk om een nauw keurigheid te bereiken. Als gevolg hiervan gebruiken we doorgaans een lokale reken machine op internet en weet u dat deze methode een nagenoeg onnauwkeurige meting is, maar voldoende is om een algemene verwachting in te stellen.
@@ -179,16 +179,16 @@ Setup testen:
 >
 >
 
-| ExpressRoute<br/>Locatie|Azure<br/>Regio | Bepaald<br/>Afstand (km) | Latentie|1 sessie<br/>Bandbreedte | Maximum<br/>Bandbreedte |
+| ExpressRoute<br/>Locatie|Azure<br/>Region | Bepaald<br/>Afstand (km) | Latentie|1 sessie<br/>Bandbreedte | Maximum<br/>Bandbreedte |
 | ------------------------------------------ | --------------------------- |  - | - | - | - |
-| Seattle | West US 2        |    191 km |   5 MS | 262,0 Mbit per seconde |  3,74 Gbits per seconde |
+| Seattle | VS - west 2        |    191 km |   5 MS | 262,0 Mbit per seconde |  3,74 Gbits per seconde |
 | Seattle | VS - west          |  1.094 km |  18 MS |  82,3 Mbit per seconde |  3,70 Gbits per seconde |
-| Seattle | Central US       |  2.357 km |  40 MS |  38,8 Mbit per seconde |  2,55 Gbits per seconde |
-| Seattle | South Central US |  2.877 km |  51 MS |  30,6 Mbit per seconde |  2,49 Gbits per seconde |
+| Seattle | VS - centraal       |  2.357 km |  40 MS |  38,8 Mbit per seconde |  2,55 Gbits per seconde |
+| Seattle | VS - zuid-centraal |  2.877 km |  51 MS |  30,6 Mbit per seconde |  2,49 Gbits per seconde |
 | Seattle | VS - noord-centraal |  2.792 km |  55 MS |  27,7 Mbit per seconde |  2,19 Gbits per seconde |
 | Seattle | VS - oost 2        |  3.769 km |  73 MS |  21,3 Mbit per seconde |  1,79 Gbits per seconde |
 | Seattle | VS - oost          |  3.699 km |  74 MS |  21,1 Mbit per seconde |  1,78 Gbits per seconde |
-| Seattle | Japan East       |  7.705 km | 106 MS |  14,6 Mbit per seconde |  1,22 Gbits per seconde |
+| Seattle | Japan - oost       |  7.705 km | 106 MS |  14,6 Mbit per seconde |  1,22 Gbits per seconde |
 | Seattle | Verenigd Koninkrijk Zuid         |  7.708 km | 146 MS |  10,6 Mbit per seconde |   896 Mbit per seconde |
 | Seattle | Europa -west      |  7.834 km | 153 MS |  10,2 Mbit per seconde |   761 Mbit per seconde |
 | Seattle | Australië - oost   | 12.484 km | 165 MS |   9,4 Mbit per seconde |   794 Mbit per seconde |

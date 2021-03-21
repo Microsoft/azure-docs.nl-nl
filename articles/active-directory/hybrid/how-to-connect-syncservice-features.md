@@ -17,17 +17,17 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 261ab5d0f039705a2566b7c28ff4c06778bb661a
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94410535"
 ---
 # <a name="azure-ad-connect-sync-service-features"></a>Functies van de Azure AD Connect-synchronisatieservice
 
 De synchronisatie functie van Azure AD Connect heeft twee onderdelen:
 
-* Het on-premises onderdeel met de naam **Azure AD Connect Sync** , ook wel **Sync Engine** genoemd.
+* Het on-premises onderdeel met de naam **Azure AD Connect Sync**, ook wel **Sync Engine** genoemd.
 * De service die zich bevindt in azure AD, ook wel bekend als **Azure AD Connect-synchronisatie service**
 
 In dit onderwerp wordt uitgelegd hoe de volgende functies van de **Azure AD Connect Sync-Service** werken en hoe u deze kunt configureren met Windows Power shell.
@@ -114,7 +114,7 @@ Set-MsolDirSyncFeature -Feature SynchronizeUpnForManagedUsers -Enable $true
 
 Nadat deze functie is ingeschakeld, blijven de bestaande userPrincipalName-waarden ongewijzigd. Bij de volgende wijziging van het kenmerk userPrincipalName on-premises wordt de UPN door de normale Delta synchronisatie op de gebruikers bijgewerkt.  
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
 * [Azure AD Connect synchronisatie](how-to-connect-sync-whatis.md)
 * [Uw on-premises identiteiten integreren met Azure Active Directory](whatis-hybrid-identity.md).

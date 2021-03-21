@@ -4,10 +4,10 @@ description: Meer informatie over de mogelijkheden voor de belangrijkste opslag 
 ms.topic: conceptual
 ms.date: 03/13/2021
 ms.openlocfilehash: 2551b11ada8b6118fb7524d9fe36f8b4b568aca1
-ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/14/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103462470"
 ---
 #  <a name="azure-vmware-solution-storage-concepts"></a>Concepten van Azure VMware-oplossingen opslag

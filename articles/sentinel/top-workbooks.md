@@ -16,10 +16,10 @@ ms.topic: reference
 ms.date: 03/07/2021
 ms.author: bagol
 ms.openlocfilehash: a37501498a9222025860702a7f29dccc9abfc8f7
-ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102450061"
 ---
 # <a name="commonly-used-azure-sentinel-workbooks"></a>Veelgebruikte Azure Sentinel-werkmappen
@@ -28,7 +28,7 @@ De volgende tabel geeft een lijst van de meest gebruikte, ingebouwde Azure Senti
 
 Open werkmappen in azure-Sentinel onder **Threat Management**  >  -**werkmappen** aan de linkerkant en zoek vervolgens de werkmap die u wilt gebruiken. Zie [zelf studie: uw gegevens visualiseren en bewaken](tutorial-monitor-your-data.md)voor meer informatie.
 
-|Werkmap naam  |Description  |
+|Werkmap naam  |Beschrijving  |
 |---------|---------|
 |**Efficiëntie van analyse**     |  Biedt inzicht in de effectiviteit van uw analyse-regels om u te helpen bij het verkrijgen van betere prestaties. <br><br>Zie [de Toolkit voor Data-Driven SOCs](https://techcommunity.microsoft.com/t5/azure-sentinel/the-toolkit-for-data-driven-socs/ba-p/2143152)voor meer informatie.|
 |**Azure-activiteit**     |     Voorziet in uitgebreid inzicht in de Azure-activiteit van uw organisatie door het analyseren en correleren van alle bewerkingen en gebeurtenissen van de gebruiker. <br><br>Zie [controle met Azure-activiteiten logboeken](audit-sentinel-data.md#auditing-with-azure-activity-logs)voor meer informatie.    |

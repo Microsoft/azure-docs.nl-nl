@@ -7,10 +7,10 @@ ms.topic: reference
 ms.date: 02/06/2021
 ms.author: robb
 ms.openlocfilehash: 2437ab80a23ffc39c180bcdf72921fdf13768541
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102033500"
 ---
 # <a name="supported-metrics-with-azure-monitor"></a>Ondersteunde metrische gegevens met Azure Monitor
@@ -2328,8 +2328,8 @@ Zie [overzicht van bewakings agenten](../agents/agents-overview.md)voor belang r
 |BytesForwardedDDoS|Ja|Doorgestuurde binnenkomende bytes DDoS|BytesPerSecond|Maximum|Doorgestuurde binnenkomende bytes DDoS|Geen dimensies|
 |BytesInDDoS|Ja|Binnenkomende bytes DDoS|BytesPerSecond|Maximum|Binnenkomende bytes DDoS|Geen dimensies|
 |DDoSTriggerSYNPackets|Ja|Inkomende SYN-pakketten om DDoS-beperking te activeren|CountPerSecond|Maximum|Inkomende SYN-pakketten om DDoS-beperking te activeren|Geen dimensies|
-|DDoSTriggerTCPPackets|Ja|Binnenkomende TCP-pakketten om DDoS-beperking te activeren|CountPerSecond|Maximum|Binnenkomende TCP-pakketten om DDoS-beperking te activeren|Geen dimensies|
-|DDoSTriggerUDPPackets|Ja|Binnenkomende UDP-pakketten om DDoS-beperking te activeren|CountPerSecond|Maximum|Binnenkomende UDP-pakketten om DDoS-beperking te activeren|Geen dimensies|
+|DDoSTriggerTCPPackets|Ja|Inkomende TCP-pakketten om DDoS-beperking te activeren|CountPerSecond|Maximum|Inkomende TCP-pakketten om DDoS-beperking te activeren|Geen dimensies|
+|DDoSTriggerUDPPackets|Ja|Inkomende UDP-pakketten om DDoS-beperking te activeren|CountPerSecond|Maximum|Inkomende UDP-pakketten om DDoS-beperking te activeren|Geen dimensies|
 |IfUnderDDoSAttack|Ja|Onder DDoS-aanval of niet|Count|Maximum|Onder DDoS-aanval of niet|Geen dimensies|
 |PacketCount|Ja|Aantal pakketten|Aantal|Totaal|Totaal aantal verzonden pakketten binnen tijds periode|Poort, richting|
 |PacketsDroppedDDoS|Ja|DDoS inkomende pakketten verwijderd|CountPerSecond|Maximum|DDoS inkomende pakketten verwijderd|Geen dimensies|

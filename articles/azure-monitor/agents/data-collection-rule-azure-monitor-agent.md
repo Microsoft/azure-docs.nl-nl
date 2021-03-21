@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/16/2021
-ms.openlocfilehash: 73f7ab83ea15d223b76b9f71fde2f8a6a37bdacf
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 2a91062a701ca1b07f47f381a04cdf06c57c5746
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104586366"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104721525"
 ---
 # <a name="configure-data-collection-for-the-azure-monitor-agent-preview"></a>Gegevens verzameling configureren voor de Azure Monitor-agent (preview)
 
@@ -73,6 +73,8 @@ Omdat er in rekening worden gebracht voor gegevens die zijn verzameld in een Log
 
 Als u aanvullende filters wilt opgeven, moet u aangepaste configuratie gebruiken en een XPath opgeven dat de gebeurtenissen die u niet wilt filteren. XPath-vermeldingen worden in het formulier geschreven `LogName!XPathQuery` . U kunt bijvoorbeeld alleen gebeurtenissen uit het toepassings gebeurtenis logboek retour neren met de gebeurtenis-ID 1035. De XPathQuery voor deze gebeurtenissen zouden zijn `*[System[EventID=1035]]` . Aangezien u de gebeurtenissen uit het toepassings gebeurtenis logboek wilt ophalen, zou het XPath worden `Application!*[System[EventID=1035]]`
 
+Zie de [beperkingen van xpath 1,0](/windows/win32/wes/consuming-events#xpath-10-limitations) voor een lijst met beperkingen in het XPath dat wordt ondersteund door het Windows-gebeurtenis logboek.
+
 > [!TIP]
 > Gebruik de Power shell-cmdlet `Get-WinEvent` met de `FilterXPath` para meter om de geldigheid van een XPathQuery te testen. Het volgende script toont een voor beeld.
 > 
@@ -87,7 +89,7 @@ Als u aanvullende filters wilt opgeven, moet u aangepaste configuratie gebruiken
 
 De volgende tabel bevat voor beelden voor het filteren van gebeurtenissen met een aangepast XPath.
 
-| Description |  XPath |
+| Beschrijving |  XPath |
 |:---|:---|
 | Alleen systeem gebeurtenissen verzamelen met gebeurtenis-ID = 4648 |  `System!*[System[EventID=4648]]`
 | Verzamel alleen systeem gebeurtenissen met gebeurtenis-ID = 4648 en een proces naam van consent.exe |  `System!*[System[(EventID=4648) and (EventData[@Name='ProcessName']='C:\Windows\System32\consent.exe')]]`

@@ -11,75 +11,100 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/27/2019
+ms.date: 03/17/2021
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8dddfb8426b769c06cb5b7494431b7eee34dbf9e
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: fb23d79caa6964c3f61fbb84c8b8f229f475b8ab
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "94410892"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104722154"
 ---
 # <a name="adsync-service-account"></a>ADSync-serviceaccount
 Azure AD Connect een on-premises service installeert waarmee de synchronisatie tussen Active Directory en Azure Active Directory wordt georchestrator.  De Microsoft Azure AD Sync Synchronization-Service (ADSync) wordt uitgevoerd op een server in uw on-premises omgeving.  De referenties voor de service worden standaard ingesteld in de snelle installaties, maar kunnen worden aangepast om te voldoen aan de beveiligings vereisten van uw organisatie.  Deze referenties worden niet gebruikt om verbinding te maken met uw on-premises forests of Azure Active Directory.
 
 Het kiezen van het ADSync-service account is een belang rijke plannings beslissing die u moet nemen voordat u Azure AD Connect installeert.  Bij een poging om de referenties na de installatie te wijzigen, wordt de service niet gestart, wordt de toegang tot de synchronisatie database verbroken en kan niet worden geverifieerd met uw verbonden directory's (Azure en AD DS).  Er vindt geen synchronisatie plaats totdat de oorspronkelijke referenties zijn hersteld.
 
-## <a name="the-default-adsync-service-account"></a>Het standaard ADSync-service account
+De synchronisatie service kan worden uitgevoerd onder verschillende accounts. Het kan worden uitgevoerd onder een virtueel service account (LEVERANCIERSPECIFIEKE naam), een beheerd service account (gMSA/sMSA) of een gewoon gebruikers account. De ondersteunde opties zijn gewijzigd met de release van 2017 april en 2021 maart van Azure AD Connect wanneer u een nieuwe installatie maakt. Als u een upgrade uitvoert van een eerdere versie van Azure AD Connect, zijn deze extra opties niet beschikbaar. 
 
-Wanneer u uitvoert op een lidserver, wordt de AdSync-service uitgevoerd in de context van een Virtual service-account (LEVERANCIERSPECIFIEKE naam).  Als gevolg van een product beperking wordt een aangepast Service account gemaakt wanneer dit wordt geïnstalleerd op een domein controller.  Als het service account voor snelle instellingen niet voldoet aan de beveiligings vereisten van uw organisatie, implementeert u Azure AD Connect door de optie aanpassen te kiezen.  Kies vervolgens de optie voor het service account die voldoet aan de vereisten van uw organisatie.
 
->[!NOTE]
->Het standaard service account wanneer dit is geïnstalleerd op een domein controller is van het formulier domein \ AAD_InstallationIdentifier.  Het wacht woord voor dit account wordt wille keurig gegenereerd en biedt aanzienlijke uitdagingen voor herstel en het roteren van wacht woorden.  Micro soft raadt aan om het service account aan te passen tijdens de eerste installatie op een domein controller voor het gebruik van een zelfstandig of groep beheerd service account (sMSA/gMSA)
+|Type account|Installatie optie|Beschrijving| 
+|-----|------|-----|
+|Virtueel service-account|Express en aangepast, 2017 april en hoger| Een virtueel service account wordt gebruikt voor alle snelle installaties, met uitzonde ring van installaties op een domein controller. Wanneer u aangepaste installatie gebruikt, is dit de standaard optie, tenzij een andere optie wordt gebruikt.| 
+|Beheerd serviceaccount|Aangepast, 2017 april en hoger|Als u een externe SQL Server gebruikt, raden we u aan een beheerd service account voor een groep te gebruiken. |
+|Beheerd serviceaccount|Express en aangepast, 2021 maart en hoger|Een zelfstandig beheerd service account dat wordt voorafgegaan door ADSyncMSA_ wordt gemaakt tijdens de installatie van snelle installaties wanneer dit wordt geïnstalleerd op een domein controller. Wanneer u aangepaste installatie gebruikt, is dit de standaard optie, tenzij een andere optie wordt gebruikt.|
+|Gebruikersaccount|Express en Custom, 2017 april tot 2021 maart|Een gebruikers account met AAD_ wordt gemaakt tijdens de installatie van snelle installaties wanneer geïnstalleerd op een domein controller. Wanneer u aangepaste installatie gebruikt, is dit de standaard optie, tenzij een andere optie wordt gebruikt.|
+|Gebruikersaccount|Express en aangepast, 2017 maart en ouder|Een gebruikers account met AAD_ wordt gemaakt tijdens de installatie van snelle installaties. Wanneer u een aangepaste installatie gebruikt, kan er een ander account worden opgegeven.| 
 
-|Azure AD Connect locatie|Het service account is gemaakt|
-|-----|-----|
-|Lidserver|NT-SERVICE\ADSync|
-|Domeincontroller|Domein \ AAD_74dc30c01e80 (zie opmerking)|
+>[!IMPORTANT]
+> Als u verbinding maken met een build van 2017 maart of eerder gebruikt, moet u het wacht woord niet opnieuw instellen voor het service account, omdat Windows de versleutelings sleutels om veiligheids redenen heeft vernietigd. U kunt het account niet wijzigen in een ander account zonder Azure AD Connect opnieuw te installeren. Als u een upgrade uitvoert naar een build van 2017 april of hoger, wordt het wacht woord voor het service account gewijzigd, maar u kunt het gebruikte account niet wijzigen. 
 
-## <a name="custom-adsync-service-accounts"></a>Aangepaste ADSync-service accounts
-Micro soft raadt aan om de ADSync-service uit te voeren in de context van een virtueel service account of een zelfstandig of een door een groep beheerd service account.  Uw domein beheerder kan er ook voor kiezen om een service account te maken dat is ingericht om te voldoen aan uw specifieke beveiligings vereisten van de organisatie.   Als u het service account wilt aanpassen dat tijdens de installatie wordt gebruikt, kiest u de optie aanpassen op de pagina snelle instellingen hieronder.   De volgende opties zijn beschikbaar:
+> [!IMPORTANT]
+> U kunt het service account alleen instellen bij de eerste installatie. Het is niet mogelijk om het service account te wijzigen nadat de installatie is voltooid. Als u het wacht woord van het service account moet wijzigen, wordt dit ondersteund en vindt u [hier](how-to-connect-sync-change-serviceacct-pass.md)instructies.
 
-- standaard account: Azure AD Connect wordt het service account ingericht zoals hierboven wordt beschreven
-- beheerd service account: een zelfstandige of groep-MSA gebruiken die door uw beheerder is ingericht
-- domein account: gebruik een domein service account dat is ingericht door uw beheerder
+Hier volgt een tabel met de standaard, aanbevolen en ondersteunde opties voor het synchronisatie service account. 
 
-![Scherm afbeelding van de pagina Azure AD Connect Express-instellingen met de optie knoppen aanpassen of snelle instellingen gebruiken.](media/concept-adsync-service-account/adsync1.png)
+Legenda: 
 
-![Scherm afbeelding van Azure AD Connect pagina vereiste onderdelen installeren met de optie voor het gebruik van een bestaand beheerd service account geselecteerd.](media/concept-adsync-service-account/adsync2.png)
+- **Vet** geeft de standaard optie aan en, in de meeste gevallen, de aanbevolen optie. 
+- *Italic* geeft de aanbevolen optie aan wanneer dit niet de standaard optie is. 
+- Optie niet-vet: ondersteund 
+- Lokaal account: lokale gebruikers account op de server 
+- Domein account-domein gebruikers account 
+- sMSA- [zelfstandig beheerd service account](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd548356(v=ws.10))
+- gMSA: door [groep beheerd service account](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831782(v=ws.11)) 
 
-## <a name="diagnosing-adsync-service-account-changes"></a>Wijzigingen in het ADSync-service account vaststellen
-Als u de referenties voor de ADSync-service na de installatie wijzigt, wordt de service niet gestart, wordt de toegang tot de synchronisatie database verbroken en kan niet worden geverifieerd met uw verbonden directory's (Azure en AD DS).  Het verlenen van toegang tot de data base aan het nieuwe ADSync-service account is ontoereikend om dit probleem te verhelpen. Er vindt geen synchronisatie plaats totdat de oorspronkelijke referenties zijn hersteld.
+ ||**LocalDB </br> Express**|**LocalDB/LocalSQL </br> aangepast**|**Aangepaste externe SQL- </br>**|
+|-----|-----|-----|-----|
+|**computer die lid is van een domein**|**KENMERK**|**KENMERK**</br> *sMSA*</br> *gMSA*</br> Lokaal account</br> Domeinaccount| *gMSA* </br>Domeinaccount|
+|Domeincontroller| **sMSA**|**sMSA** </br>*gMSA*</br> Domeinaccount|*gMSA*</br>Domeinaccount| 
 
-De ADSync-service geeft het gebeurtenis logboek een bericht fout niveau wanneer het niet kan worden gestart.  De inhoud van het bericht kan variëren, afhankelijk van het feit of de ingebouwde data base (localdb) of volledige SQL in gebruik is.  Hier volgen enkele voor beelden van de vermeldingen in het gebeurtenis logboek die mogelijk aanwezig zijn.
+## <a name="virtual-service-account"></a>Virtueel service-account 
 
-### <a name="example-1"></a>Voorbeeld 1
+Een virtueel service account is een speciaal type beheerde lokale account dat geen wacht woord heeft en automatisch wordt beheerd door Windows. 
 
-De versleutelings sleutels voor de AdSync-service zijn niet gevonden en zijn opnieuw gemaakt.  Er wordt geen synchronisatie uitgevoerd totdat dit probleem is opgelost.
+ ![Virtueel service-account](media/concept-adsync-service-account/account-1.png)
 
-Probleem oplossing voor dit probleem de versleutelings sleutels voor de Microsoft Azure AD-synchronisatie worden ontoegankelijk als de aanmeldings referenties van de AdSync-service worden gewijzigd.  Als de referenties zijn gewijzigd, gebruikt u de service toepassing om het aanmeldings account terug te zetten op de oorspronkelijk geconfigureerde waarde (bijvoorbeeld NT SERVICE\AdSync) en start de service opnieuw.  Hiermee herstelt u onmiddellijk de juiste werking van de AdSync-service.
+Het Virtual service-account is bedoeld om te worden gebruikt met scenario's waarbij de synchronisatie-engine en SQL zich op dezelfde server bevinden. Als u externe SQL gebruikt, raden we u aan om in plaats daarvan een beheerd service account voor een groep te gebruiken. 
 
-Raadpleeg het volgende [artikel](./whatis-hybrid-identity.md) voor meer informatie.
+Het virtuele-service account kan niet worden gebruikt op een domein controller vanwege [Windows Data Protection API (DPAPI)-](https://msdn.microsoft.com/library/ms995355.aspx) problemen. 
 
-### <a name="example-2"></a>Voorbeeld 2
+## <a name="managed-service-account"></a>Beheerd serviceaccount 
 
-De service kan niet worden gestart omdat er geen verbinding kan worden gemaakt met de lokale data base (localdb).
+Als u een externe SQL Server gebruikt, raden we u aan een beheerd service account voor een groep te gebruiken. Zie overzicht van door een groep [beheerde service accounts](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831782(v=ws.11))voor meer informatie over het voorbereiden van uw Active Directory voor door een groep beheerd service account. 
 
-Problemen met dit probleem oplossen de Microsoft Azure AD synchronisatie service heeft geen toegang tot de lokale database provider als de aanmeldings referenties van de AdSync-service worden gewijzigd.  Als de referenties zijn gewijzigd, gebruikt u de service toepassing om het aanmeldings account terug te zetten op de oorspronkelijk geconfigureerde waarde (bijvoorbeeld NT SERVICE\AdSync) en start de service opnieuw.  Hiermee herstelt u onmiddellijk de juiste werking van de AdSync-service.
+Als u deze optie wilt gebruiken, selecteert u op de pagina [vereiste onderdelen installeren](how-to-connect-install-custom.md#install-required-components) de optie **een bestaand service account gebruiken** en selecteert u een **beheerd service account**. 
 
-Raadpleeg het volgende [artikel](./whatis-hybrid-identity.md) voor meer informatie.
+ ![beheerd service account](media/concept-adsync-service-account/account-2.png)
 
-Aanvullende informatie de volgende fout gegevens zijn geretourneerd door de provider:
- 
+Het wordt ook ondersteund voor het gebruik van een zelfstandig beheerd service account. Deze kunnen echter alleen worden gebruikt op de lokale computer en er is geen voor deel van het gebruik van de standaard virtuele-service account. 
 
-``` 
-OriginalError=0x80004005 OLEDB Provider error(s): 
-Description  = 'Login timeout expired'
-Failure Code = 0x80004005
-Minor Number = 0 
-Description  = 'A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online.'
-```
+### <a name="auto-generated-standalone-managed-service-account"></a>Automatisch gegenereerd zelfstandig beheerd service account 
+
+Als u Azure AD Connect op een domein controller installeert, wordt een zelfstandig beheerd service account gemaakt door de installatie wizard (tenzij u het account opgeeft dat moet worden gebruikt in aangepaste instellingen). Het account wordt voorafgegaan **ADSyncMSA_** en wordt gebruikt om de huidige synchronisatie service uit te voeren als. 
+
+Dit account is een beheerd domein account dat geen wacht woord heeft en automatisch wordt beheerd door Windows. 
+
+Dit account is bedoeld om te worden gebruikt met scenario's waarbij de synchronisatie-engine en SQL zich op de domein controller bevinden. 
+
+## <a name="user-account"></a>Gebruikersaccount 
+
+Er wordt een lokaal service account gemaakt door de installatie wizard (tenzij u het account opgeeft dat moet worden gebruikt in aangepaste instellingen). Het account wordt voorafgegaan AAD_ en wordt gebruikt om de huidige synchronisatie service uit te voeren als. Als u Azure AD Connect op een domein controller installeert, wordt het account in het domein gemaakt. Het AAD_-service account moet zich in het domein bevinden als: 
+- u gebruikt een externe server met SQL Server 
+- u gebruikt een proxy waarvoor verificatie is vereist 
+
+ ![gebruikers account](media/concept-adsync-service-account/account-3.png)
+
+Het account wordt gemaakt met een lang complex wacht woord dat niet verloopt. 
+
+Dit account wordt gebruikt om wacht woorden op een veilige manier op te slaan voor de andere accounts. Deze andere account wachtwoorden worden in de-data base opgeslagen als versleuteld. De persoonlijke sleutels voor de versleutelings sleutels worden beveiligd met de geheime sleutel versleuteling van cryptografische Services met behulp van Windows Data Protection API (DPAPI). 
+
+Als u een volledige SQL Server gebruikt, is het service account de DBO van de gemaakte Data Base voor de synchronisatie-engine. De service werkt niet zoals bedoeld met een andere machtiging. Er wordt ook een SQL-aanmelding gemaakt. 
+
+Aan het account worden ook machtigingen verleend voor bestanden, register sleutels en andere objecten die betrekking hebben op de synchronisatie-engine. 
+
+
 ## <a name="next-steps"></a>Volgende stappen
 Lees meer over het [integreren van uw on-premises identiteiten met Azure Active Directory](whatis-hybrid-identity.md).

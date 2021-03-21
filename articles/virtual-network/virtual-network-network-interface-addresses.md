@@ -17,10 +17,10 @@ ms.workload: infrastructure-services
 ms.date: 01/22/2020
 ms.author: allensu
 ms.openlocfilehash: 1df132e558421d2ec6e26c3883c89457716dfc42
-ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/13/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103419011"
 ---
 # <a name="add-change-or-remove-ip-addresses-for-an-azure-network-interface"></a>IP-adressen voor Azure-netwerkinterfaces toevoegen, wijzigen en verwijderen

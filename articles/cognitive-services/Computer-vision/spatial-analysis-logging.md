@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 01/12/2021
 ms.author: aahi
-ms.openlocfilehash: dda3ece27fd2c687647e0aa289bd1596a87b274f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: a825b9e0abc4e33eb0f9033f46bb77c38559f740
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98186019"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104722698"
 ---
 # <a name="telemetry-and-troubleshooting"></a>Telemetrie en probleem oplossing
 
@@ -60,7 +60,7 @@ Nadat u Azure Monitor hebt ingesteld, moet u referenties maken waarmee de module
 
 ```bash
 # Find your Azure IoT Hub resource ID by running this command. The resource ID  should start with something like 
-# "/subscriptions/b60d6458-1234-4be4-9885-c7e73af9ced8/resourceGroups/...”
+# "/subscriptions/b60d6458-1234-4be4-9885-c7e73af9ced8/resourceGroups/..."
 az iot hub list
 
 # Create a Service Principal with `Monitoring Metrics Publisher` role in the IoTHub resource:
@@ -105,16 +105,16 @@ Zodra de telegrafie module is geïmplementeerd, zijn de gerapporteerde metrische
 
 | Gebeurtenisnaam | Beschrijving|
 |------|---------|
-|archon_exit    |Verzonden wanneer een gebruiker de status van de ruimtelijke analyse module wijzigt van *actief* in *gestopt*.  |
-|archon_error   |Wordt verzonden wanneer een van de processen in de container vastloopt. Dit is een kritieke fout.  |
-|InputRate  |De snelheid waarmee de video-invoer door de grafiek wordt verwerkt. Elke 5 minuten gerapporteerd. | 
+|archon_exit     |Verzonden wanneer een gebruiker de status van de ruimtelijke analyse module wijzigt van *actief* in *gestopt*.  |
+|archon_error     |Wordt verzonden wanneer een van de processen in de container vastloopt. Dit is een kritieke fout.  |
+|InputRate     |De snelheid waarmee de video-invoer door de grafiek wordt verwerkt. Elke 5 minuten gerapporteerd. | 
 |OutputRate     |De snelheid waarmee de grafiek AI-inzichten uitvoert. Elke 5 minuten gerapporteerd. |
 |archon_allGraphsStarted | Wordt verzonden wanneer het opstarten van alle grafieken is voltooid. |
-|archon_configchange    | Verzonden wanneer de configuratie van een grafiek is gewijzigd. |
+|archon_configchange     | Verzonden wanneer de configuratie van een grafiek is gewijzigd. |
 |archon_graphCreationFailed     |Verzonden wanneer de grafiek met de gemelde `graphId` fout niet kan worden gestart. |
-|archon_graphCreationSuccess    |Verzonden wanneer de grafiek met de gemelde `graphId` Start. |
-|archon_graphCleanup    | Verzonden wanneer de grafiek met de gerapporteerde `graphId` opschoont en afsluit. |
-|archon_graphHeartbeat  |Heartbeat elke minuut verzonden voor elke grafiek van een vaardigheid. |
+|archon_graphCreationSuccess     |Verzonden wanneer de grafiek met de gemelde `graphId` Start. |
+|archon_graphCleanup     | Verzonden wanneer de grafiek met de gerapporteerde `graphId` opschoont en afsluit. |
+|archon_graphHeartbeat     |Heartbeat elke minuut verzonden voor elke grafiek van een vaardigheid. |
 |archon_apiKeyAuthFail |Dit bericht wordt verzonden wanneer de container niet langer dan 24 uur door de Computer Vision bron sleutel kan worden geverifieerd vanwege de volgende redenen: buiten het quotum, ongeldig, offline. |
 |VideoIngesterHeartbeat     |Wordt elk uur verzonden om aan te geven dat de video wordt gestreamd vanuit de video bron, met het aantal fouten in dat uur. Gerapporteerd voor elke grafiek. |
 |VideoIngesterState | Rapporten *gestopt* of *gestart* voor video-streaming. Gerapporteerd voor elke grafiek. |
@@ -363,7 +363,7 @@ Nadat het Kubernetes-cluster is gemaakt, kunt u het `kubectl` opdracht regel pro
     New-HcsKubernetesUser -UserName
     ```
 
-3. Voeg het *configuratie* bestand toe aan de map *. uitvoeren* in uw gebruikers profiel op de lokale computer.   
+3. Voeg het *configuratie* bestand toe aan de map *. uitvoeren* in uw gebruikers profiel op de lokale computer.    
 
 4. Koppel de naam ruimte aan de gebruiker die u hebt gemaakt.
 
@@ -400,6 +400,34 @@ kubectl logs <pod-name> -n <namespace> --all-containers
 |`Get-HcsKubernetesUserConfig -AseUser`     | Hiermee wordt een Kubernetes-configuratie bestand gegenereerd. Wanneer u de opdracht gebruikt, kopieert u de gegevens naar een bestand met de naam *config*. Sla het bestand niet op met een bestands extensie.        |
 | `Get-HcsApplianceInfo` | Retourneert informatie over uw apparaat. |
 | `Enable-HcsSupportAccess` | Hiermee worden toegangs referenties gegenereerd om een ondersteunings sessie te starten. |
+
+
+## <a name="how-to-file-a-support-ticket-for-spatial-analysis"></a>Een ondersteunings ticket indienen voor ruimtelijke analyse 
+
+Als u meer ondersteuning nodig hebt bij het vinden van een oplossing voor een probleem dat u hebt met de container voor ruimtelijke analyse, voert u de volgende stappen uit om een ondersteunings ticket in te vullen en in te dienen. Ons team krijgt een extra richt lijn. 
+
+### <a name="fill-out-the-basics"></a>Vul de basis beginselen in 
+Maak een nieuw ondersteunings ticket op de pagina [nieuwe ondersteunings aanvraag](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) . Volg de aanwijzingen om de volgende para meters in te vullen:
+
+![Ondersteunings basis](./media/support-ticket-page-1-final.png)
+
+1. Stel het **probleem type** in op `Technical` .
+2. Selecteer het abonnement dat u gebruikt voor het implementeren van de container voor ruimtelijke analyse.
+3. Selecteer `My services` en selecteer `Cognitive Services` als de service.
+4. Selecteer de resource die u wilt gebruiken voor het implementeren van de container voor ruimtelijke analyse.
+5. Schrijf een korte beschrijving van het probleem dat u hebt. 
+6. Selecteer `Spatial Analysis` als het type probleem.
+7. Selecteer de gewenste subtype in de vervolg keuzelijst.
+8. Selecteer **volgende: oplossingen** om naar de volgende pagina te gaan.
+
+### <a name="recommended-solutions"></a>Aanbevolen oplossingen
+In de volgende fase worden aanbevolen oplossingen aangeboden voor het probleem type dat u hebt geselecteerd. Met deze oplossingen worden de meest voorkomende problemen opgelost, maar als het niet nuttig is voor uw oplossing, selecteert u **volgende: Details** om naar de volgende stap te gaan.
+
+### <a name="details"></a>Details
+Op deze pagina kunt u extra informatie over het probleem dat u hebt gericht toevoegen. Zorg ervoor dat u zo veel mogelijk details opneemt, omdat de technici het probleem beter kunnen verfijnen. Neem de contact wijze van uw voor keur en de ernst van het probleem op zodat we u op de juiste wijze kunnen bereiken, en selecteer **volgende: controleren + maken** om naar de volgende stap te gaan. 
+
+### <a name="review-and-create"></a>Controleren en maken 
+Bekijk de details van uw ondersteunings aanvraag om ervoor te zorgen dat alles nauw keurig is en het probleem effectief weergeeft. Zodra u klaar bent, selecteert u **maken** om het ticket naar ons team te verzenden. U ontvangt een e-mail bevestiging zodra uw ticket is ontvangen en ons team zal zo snel mogelijk aan de slag gaan. U kunt de status van uw ticket bekijken in het Azure Portal.
 
 ## <a name="next-steps"></a>Volgende stappen
 

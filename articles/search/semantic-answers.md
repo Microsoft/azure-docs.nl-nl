@@ -8,17 +8,17 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/12/2021
-ms.openlocfilehash: e467affd3ba1b839ce3323e3689d7f5134a0686f
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 9bb62544887e0bc0269b98cd98fbf97fc477352f
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104604301"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104722426"
 ---
 # <a name="return-a-semantic-answer-in-azure-cognitive-search"></a>Een semantisch antwoord op Azure Cognitive Search retour neren
 
 > [!IMPORTANT]
-> Semantische zoek functies bevinden zich in de open bare preview-versie, die alleen beschikbaar is via de preview-REST API. Preview-functies worden aangeboden als-is, onder [aanvullende gebruiks voorwaarden](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)en zijn niet gegarandeerd dezelfde implementatie bij algemene Beschik baarheid. Zie [Beschik baarheid en prijzen](semantic-search-overview.md#availability-and-pricing)voor meer informatie.
+> Semantische zoek opdracht bevindt zich in de open bare preview, die alleen beschikbaar is via de preview-REST API. Preview-functies worden aangeboden als-is, onder [aanvullende gebruiks voorwaarden](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)en zijn niet gegarandeerd dezelfde implementatie bij algemene Beschik baarheid. Deze functies zijn Factureerbaar. Zie [Beschik baarheid en prijzen](semantic-search-overview.md#availability-and-pricing)voor meer informatie.
 
 Bij het formuleren van een [semantische query](semantic-how-to-query-request.md)kunt u eventueel inhoud extra heren uit de bovenste documenten die de query rechtstreeks beantwoorden. Een of meer antwoorden kunnen worden opgenomen in het antwoord, dat u vervolgens kunt weer geven op een zoek pagina om de gebruikers ervaring van uw app te verbeteren.
 
@@ -28,27 +28,27 @@ In dit artikel leert u hoe u een semantisch antwoord kunt aanvragen, het antwoor
 
 Alle vereisten die van toepassing zijn op [semantische query's](semantic-how-to-query-request.md) , zijn ook van toepassing op antwoorden, met inbegrip van de servicelaag en de regio.
 
-+ Query's die zijn geformuleerd met behulp van de para meters voor semantische query's en de para meter ' antwoorden ' bevatten. De vereiste para meters worden in dit artikel besproken.
++ De query logica moet de semantische query parameters bevatten, plus de para meter ' Answers '. De vereiste para meters worden in dit artikel besproken.
 
-+ Query teken reeksen moeten worden geformuleerd in de taal die de kenmerken van een vraag heeft (wat, waar, wanneer, hoe).
++ Query teken reeksen die door de gebruiker worden ingevoerd, moeten worden geformuleerd in de taal die de kenmerken van een vraag heeft (wat, waar, wanneer, hoe).
 
-+ Zoeken in documenten moet tekst bevatten die de kenmerken van een antwoord bevat en die tekst moet zijn opgenomen in een van de velden in searchFields.
++ Zoeken in documenten moet tekst bevatten die de kenmerken van een antwoord bevat en die tekst moet zijn opgenomen in een van de velden in searchFields. Als er bijvoorbeeld een query ' wat is een hash-tabel ', als geen van de searchFields gangen bevat met ' een hash-tabel is... ', is het niet waarschijnlijk dat een antwoord wordt geretourneerd.
 
 ## <a name="what-is-a-semantic-answer"></a>Wat is een semantisch antwoord?
 
-Een semantisch antwoord is een artefact van een [semantische query](semantic-how-to-query-request.md). Het bestaat uit een of meer Verbatim die worden door gegeven aan een zoek document dat is geformuleerd als antwoord op een query die eruitziet als een vraag. Voor een antwoord dat moet worden geretourneerd, moeten zinsdelen of zinnen bestaan in een zoek document dat de taal kenmerken van een antwoord heeft en de query zelf moet als een vraag worden beschouwd.
+Een semantisch antwoord is een substructuur van een [semantisch query-antwoord](semantic-how-to-query-request.md). Het bestaat uit een of meer Verbatim die worden door gegeven aan een zoek document dat is geformuleerd als antwoord op een query die eruitziet als een vraag. Voor een antwoord dat moet worden geretourneerd, moeten zinsdelen of zinnen bestaan in een zoek document dat de taal kenmerken van een antwoord heeft en de query zelf moet als een vraag worden beschouwd.
 
-Cognitive Search een lees vaardigheids model voor machines gebruikt om antwoorden te formuleren. Het model produceert een aantal mogelijke antwoorden van de beschik bare documenten en wanneer het een hoog betrouwbaarheids niveau bereikt, wordt er een antwoord Voorst Ellen.
+Cognitive Search een lees vaardigheids model voor machines gebruikt om het beste antwoord te kiezen. Het model produceert een aantal potentiële antwoorden van de beschik bare inhoud en wanneer het een hoog betrouwbaarheids niveau bereikt, wordt er een antwoord Voorst Ellen.
 
-Antwoorden worden geretourneerd als een onafhankelijk object op het hoogste niveau in de nettolading van de query-reactie die u kunt weer geven op zoek pagina's, naast de resultaten van de zoek opdracht. Structureel is het een matrix element van een antwoord dat tekst, een document sleutel en een betrouwbaarheids Score bevat.
+Antwoorden worden geretourneerd als een onafhankelijk object op het hoogste niveau in de nettolading van de query-reactie die u kunt weer geven op zoek pagina's, naast de resultaten van de zoek opdracht. Structureel is het een matrix element binnen het antwoord dat bestaat uit tekst, een document sleutel en een betrouwbaarheids Score.
 
 <a name="query-params"></a>
 
 ## <a name="how-to-request-semantic-answers-in-a-query"></a>Semantische antwoorden in een query opvragen
 
-Als u een semantisch antwoord wilt retour neren, moet de query het type semantische query, taal, zoek velden en de para meter "antwoorden" hebben. Het opgeven van de para meter antwoorden garandeert niet dat u een antwoord krijgt, maar de aanvraag moet deze para meter bevatten als de antwoord verwerking helemaal moet worden aangeroepen.
+Als u een semantisch antwoord wilt retour neren, moet de query de semantisch "query type", "queryLanguage", "searchFields" en de para meter "antwoorden" hebben. Het opgeven van de para meter antwoorden garandeert niet dat u een antwoord krijgt, maar de aanvraag moet deze para meter bevatten als de antwoord verwerking helemaal moet worden aangeroepen.
 
-De para meter ' searchFields ' is essentieel voor het retour neren van een antwoord van hoge kwaliteit, zowel in termen van inhoud als bestelling. 
+De para meter ' searchFields ' is van cruciaal belang voor het retour neren van een antwoord van hoge kwaliteit, zowel wat betreft inhoud als volg orde (zie hieronder). 
 
 ```json
 {
@@ -63,9 +63,9 @@ De para meter ' searchFields ' is essentieel voor het retour neren van een antwo
 
 + Een query reeks mag niet null zijn en moet worden geformuleerd als vraag. In deze preview-versie moet het ' query type ' en ' queryLanguage ' precies worden ingesteld zoals in het voor beeld wordt weer gegeven.
 
-+ De para meter ' searchFields ' bepaalt welke velden tokens aan het extractie model bieden. Zorg ervoor dat u deze para meter instelt. U moet ten minste één teken reeks veld hebben, maar een wille keurig teken reeks veld opnemen dat nuttig is voor het bieden van een antwoord. Voor alle velden in searchFields worden alleen over 8.000-tokens per document door gegeven aan het model. De lijst met velden starten met beknopte velden en vervolgens voortgang naar velden met tekst opmaak. Zie [set searchFields](semantic-how-to-query-request.md#searchfields)voor nauw keurige richt lijnen voor het instellen van dit veld.
++ De para meter ' searchFields ' bepaalt welke teken reeks velden tokens aan het extractie model bieden. In dezelfde velden die bijschriften produceren, worden ook antwoorden gegenereerd. Zie [set searchFields](semantic-how-to-query-request.md#searchfields)voor nauw keurige richt lijnen voor het instellen van dit veld zodat het geschikt is voor bijschriften en antwoorden. 
 
-+ Voor "antwoorden" is de basis parameter constructie `"answers": "extractive"` , waarbij het standaard aantal geretourneerde antwoorden één is. U kunt het aantal antwoorden verhogen door een aantal toe te voegen tot een maximum van vijf.  Of u meer dan één antwoord nodig hebt, is afhankelijk van de gebruikers ervaring van uw app en hoe u de resultaten wilt weer geven.
++ Voor "antwoorden" is de para meter constructie `"answers": "extractive"` , waarbij het standaard aantal geretourneerde antwoorden één is. U kunt het aantal antwoorden verhogen door een aantal toe te voegen, zoals wordt weer gegeven in het bovenstaande voor beeld, tot een maximum van vijf.  Of u meer dan één antwoord nodig hebt, is afhankelijk van de gebruikers ervaring van uw app en hoe u de resultaten wilt weer geven.
 
 ## <a name="deconstruct-an-answer-from-the-response"></a>Een antwoord uit het antwoord ontbouwen
 

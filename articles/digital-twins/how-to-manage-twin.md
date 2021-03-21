@@ -8,10 +8,10 @@ ms.date: 10/21/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.openlocfilehash: 98b50673b464044af2a038fa93c3b6a022fa2899
-ms.sourcegitcommit: 6776f0a27e2000fb1acb34a8dddc67af01ac14ac
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103149700"
 ---
 # <a name="manage-digital-twins"></a>Digitale tweelingen beheren
@@ -216,7 +216,7 @@ Hier volgt een voor beeld van de code voor het verwijderen van apparaatdubbels e
 
 ### <a name="delete-all-digital-twins"></a>Alle digitale apparaatdubbels verwijderen
 
-Voor een voor beeld van het verwijderen van alle apparaatdubbels in een keer, downloadt u de voor beeld-app die wordt gebruikt in de [*zelf studie: Verken de basis principes met een voor beeld-client-app*](tutorial-command-line-app.md). Het *CommandLoop.cs* -bestand doet dit in een `CommandDeleteAllTwins()` functie.
+Voor een voor beeld van het verwijderen van alle apparaatdubbels in een keer, downloadt u de voor beeld-app die wordt gebruikt in de [*zelf studie: Verken de basis principes met een voor beeld-client-app*](tutorial-command-line-app.md). Het bestand *CommandLoop. cs* doet dit in een `CommandDeleteAllTwins()` functie.
 
 ## <a name="runnable-digital-twin-code-sample"></a>Voor beeld van uitvoer bare digitale dubbele code
 

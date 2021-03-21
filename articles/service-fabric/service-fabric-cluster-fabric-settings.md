@@ -4,10 +4,10 @@ description: In dit artikel worden de infrastructuur instellingen en het Fabric-
 ms.topic: reference
 ms.date: 08/30/2019
 ms.openlocfilehash: 78d83faea802862d3cd6d1b1a9cf9f1016245065
-ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103232049"
 ---
 # <a name="customize-service-fabric-cluster-settings"></a>Instellingen voor Service Fabric-cluster aanpassen
@@ -761,7 +761,7 @@ Hier volgt een lijst met infrastructuur instellingen die u kunt aanpassen, geord
 |PropertyWriteBatch |teken reeks, standaard instelling is "beheerder" |Dynamisch|Beveiligings configuraties voor het benoemen van schrijf bewerkingen voor eigenschappen. |
 |ProvisionApplicationType |teken reeks, standaard instelling is "beheerder" |Dynamisch| Beveiligings configuratie voor het inrichten van het toepassings type. |
 |ProvisionFabric |teken reeks, standaard instelling is "beheerder" |Dynamisch| Beveiligings configuratie voor het inrichten van MSI en/of cluster manifest. |
-|Query’s uitvoeren |teken reeks, standaard is ' \| \| gebruiker beheerder ' |Dynamisch| Beveiligings configuratie voor query's. |
+|Query |teken reeks, standaard is ' \| \| gebruiker beheerder ' |Dynamisch| Beveiligings configuratie voor query's. |
 |RecoverPartition |teken reeks, standaard instelling is "beheerder" | Dynamisch|Beveiligings configuratie voor het herstellen van een partitie. |
 |RecoverPartitions |teken reeks, standaard instelling is "beheerder" | Dynamisch|Beveiligings configuratie voor het herstellen van partities. |
 |RecoverServicePartitions |teken reeks, standaard instelling is "beheerder" |Dynamisch| Beveiligings configuratie voor het herstellen van service partities. |

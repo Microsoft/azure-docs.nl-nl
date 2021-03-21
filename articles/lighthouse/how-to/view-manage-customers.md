@@ -4,10 +4,10 @@ description: Als service provider of onderneming die Azure Lighthouse gebruikt, 
 ms.date: 03/12/2021
 ms.topic: how-to
 ms.openlocfilehash: 78344015ee027b9844b6339fa7cd95d348488a54
-ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/13/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103419326"
 ---
 # <a name="view-and-manage-customers-and-delegated-resources-in-the-azure-portal"></a>Klanten en gedelegeerde resources in het Azure Portal weer geven en beheren

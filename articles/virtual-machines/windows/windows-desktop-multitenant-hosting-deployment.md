@@ -10,10 +10,10 @@ ms.date: 2/2/2021
 ms.author: mimckitt
 ms.custom: rybaker, chmimckitt
 ms.openlocfilehash: bb86ba6867ad796ef0f5eeb1357a6df9e93e9f9e
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102555768"
 ---
 # <a name="how-to-deploy-windows-10-on-azure-with-multitenant-hosting-rights"></a>Windows 10 implementeren op Azure met multi tenant-hosting rechten 

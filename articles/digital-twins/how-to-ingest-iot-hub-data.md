@@ -8,10 +8,10 @@ ms.date: 9/15/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.openlocfilehash: 3223a1c8e20d8b0caced5d940132c32fa0aba97c
-ms.sourcegitcommit: 6776f0a27e2000fb1acb34a8dddc67af01ac14ac
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103149081"
 ---
 # <a name="ingest-iot-hub-telemetry-into-azure-digital-twins"></a>IoT Hub telemetrie opnemen in azure Digital Apparaatdubbels
@@ -109,7 +109,7 @@ Voeg de volgende pakketten toe aan uw project:
 * [Azure. Identity](https://www.nuget.org/packages/Azure.Identity/)
 * [Micro soft. Azure. webjobs. Extensions. EventGrid](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.EventGrid/)
 
-Wijzig de naam van de voorbeeld functie *Function1.cs* die Visual Studio met het nieuwe project heeft gegenereerd in *IoTHubtoTwins.cs*. Vervang de code in het bestand door de volgende code:
+Wijzig de naam van de voorbeeld functie *Function1. cs* die Visual Studio met het nieuwe project heeft gegenereerd in *IoTHubtoTwins. cs*. Vervang de code in het bestand door de volgende code:
 
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/IoTHubToTwins.cs":::
 

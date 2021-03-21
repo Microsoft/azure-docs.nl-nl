@@ -18,10 +18,10 @@ ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
 ms.openlocfilehash: fdff3f6144f7099f3f61cfe57186357e17136e9f
-ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103225486"
 ---
 # <a name="automate-management-with-the-sql-server-iaas-agent-extension"></a>Beheer automatiseren met de uitbrei ding IaaS agent van SQL Server

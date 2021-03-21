@@ -44,6 +44,16 @@
       href: search-get-started-arm.md
 - name: Zelfstudies
   items:
+    - name: Zoek opdracht toevoegen aan website
+      items:
+        - name: 1-website overzicht
+          href: tutorial-javascript-overview.md
+        - name: 2-een zoek index maken
+          href: tutorial-javascript-create-load-index.md
+        - name: 3-statische web-app implementeren
+          href: tutorial-javascript-deploy-static-web-app.md
+        - name: 4-inzicht in zoek integratie
+          href: tutorial-javascript-search-query-integration.md
     - name: Een C#-app maken
       items:
         - name: 1 - Eenvoudige zoekpagina

@@ -9,10 +9,10 @@ ms.author: terrylan
 manager: rkarlin
 ms.date: 02/19/2021
 ms.openlocfilehash: 0146e4fcaf70d37975dc587a266c47bf4b3f4601
-ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/14/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103461671"
 ---
 # <a name="customer-lockbox-for-microsoft-azure"></a>Klanten-lockbox voor Microsoft Azure

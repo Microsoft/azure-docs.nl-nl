@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 09/10/2020
 ms.author: yelevin
 ms.openlocfilehash: da7d540a4b7982c7f743a7ae968515485b45aa5a
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102035420"
 ---
 # <a name="use-logstash-to-connect-data-sources-to-azure-sentinel"></a>Logstash gebruiken om gegevens bronnen te verbinden met Azure Sentinel
@@ -65,7 +65,7 @@ De Azure Sentinel output-invoeg toepassing is beschikbaar in de Logstash-verzame
 
 Gebruik de informatie in de Logstash- [structuur van een config file](https://www.elastic.co/guide/en/logstash/current/configuration-file-structure.html) -document en voeg de invoeg toepassing Azure Sentinel output toe aan de configuratie met de volgende sleutels en waarden. (De juiste syntaxis van het configuratie bestand wordt weer gegeven na de tabel.)
 
-| Veldnaam | Gegevenstype | Beschrijving |
+| Veldnaam | Gegevenstype | Description |
 |----------------|---------------|-----------------|
 | `workspace_id` | tekenreeks | Voer uw werk ruimte-ID-GUID in. * |
 | `workspace_key` | tekenreeks | Voer de GUID van de primaire sleutel van uw werk ruimte in. * |

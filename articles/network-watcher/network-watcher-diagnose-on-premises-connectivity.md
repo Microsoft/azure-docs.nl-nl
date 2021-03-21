@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/07/2021
 ms.author: damendo
-ms.openlocfilehash: a5db1ac9c70429d4b6a0b690de1b29c3656b3cc8
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 3b8b53446799eec3473d63c89672393a35f9787a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98016708"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104670952"
 ---
 # <a name="diagnose-on-premises-connectivity-via-vpn-gateways"></a>Diagnose van on-premises connectiviteit via VPN-gateways
 
@@ -34,11 +34,11 @@ Met de functie voor het oplossen van problemen met Azure Network Watcher kunt u 
 U wilt een site-naar-site-verbinding tussen Azure en on-premises configureren met behulp van Forti Gate als de on-premises VPN Gateway. Voor dit scenario moet u de volgende instellingen instellen:
 
 1. Virtual Network gateway: de VPN Gateway op Azure
-1. Lokale netwerk gateway: de [on-premises (Forti Gate) VPN gateway](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md#LocalNetworkGateway) weer gave in de Azure-Cloud
-1. Site-naar-site-verbinding (op route gebaseerd): [de verbinding tussen de VPN gateway en de on-premises router](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md#CreateConnection)
+1. Lokale netwerk gateway: de [on-premises (Forti Gate) VPN gateway](../vpn-gateway/tutorial-site-to-site-portal.md#LocalNetworkGateway) weer gave in de Azure-Cloud
+1. Site-naar-site-verbinding (op route gebaseerd): [de verbinding tussen de VPN gateway en de on-premises router](../vpn-gateway/tutorial-site-to-site-portal.md#CreateConnection)
 1. [Forti Gate configureren](https://github.com/Azure/Azure-vpn-config-samples/blob/master/Fortinet/Current/Site-to-Site_VPN_using_FortiGate.md)
 
-Gedetailleerde stapsgewijze richt lijnen voor het configureren van een site-naar-site-configuratie vindt u op: [een VNet met een site-naar-site-verbinding maken met behulp van de Azure Portal](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md).
+Gedetailleerde stapsgewijze richt lijnen voor het configureren van een site-naar-site-configuratie vindt u op: [een VNet met een site-naar-site-verbinding maken met behulp van de Azure Portal](../vpn-gateway/tutorial-site-to-site-portal.md).
 
 Een van de kritieke configuratie stappen is het configureren van de IPsec-communicatie parameters, elke onjuiste configuratie leidt tot verlies van connectiviteit tussen het on-premises netwerk en Azure. Momenteel zijn Azure VPN-gateways geconfigureerd ter ondersteuning van de volgende IPsec-para meters voor fase 1. Zoals u kunt zien in de volgende tabel, zijn de versleutelings algoritmen die door Azure VPN Gateway worden ondersteund, AES256, AES128 en 3DES.
 

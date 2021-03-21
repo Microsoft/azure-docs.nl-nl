@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 11/08/2019
 ms.author: cawa
 ms.openlocfilehash: 3a8fe3ded6608059cc6ad50901ffe6df5dcf1b08
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102441558"
 ---
 # <a name="get-started-with-storage-explorer"></a>Aan de slag met Storage Explorer
@@ -117,13 +117,13 @@ Met Storage Explorer kunt u verbinding maken met afzonderlijke bronnen, zoals ee
 
 | Resourcetype    | Azure AD | Account naam en-sleutel | Shared Access Signature (SAS)  | Openbaar (anoniem) |
 |------------------|----------|----------------------|--------------------------------|--------------------|
-| Opslagaccounts | Ja      | Ja                  | Ja (connection string of URL) | No                 |
-| Blobcontainers  | Ja      | Nee                   | Ja (URL)                      | Yes                |
-| Gen2-containers  | Ja      | Nee                   | Ja (URL)                      | Yes                |
-| Gen2 mappen | Ja      | Nee                   | Ja (URL)                      | Yes                |
-| Bestandsshares      | Nee       | Nee                   | Ja (URL)                      | No                 |
-| Wachtrijen           | Ja      | Nee                   | Ja (URL)                      | No                 |
-| Tabellen           | Nee       | Nee                   | Ja (URL)                      | No                 |
+| Opslagaccounts | Ja      | Ja                  | Ja (connection string of URL) | Nee                 |
+| Blobcontainers  | Ja      | Nee                   | Ja (URL)                      | Ja                |
+| Gen2-containers  | Ja      | Nee                   | Ja (URL)                      | Ja                |
+| Gen2 mappen | Ja      | Nee                   | Ja (URL)                      | Ja                |
+| Bestandsshares      | Nee       | Nee                   | Ja (URL)                      | Nee                 |
+| Wachtrijen           | Ja      | Nee                   | Ja (URL)                      | Nee                 |
+| Tables           | Nee       | Nee                   | Ja (URL)                      | Nee                 |
  
 Storage Explorer kunt ook verbinding maken met een [lokale opslag emulator](#local-storage-emulator) via de geconfigureerde poorten van de emulator.
 

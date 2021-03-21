@@ -9,10 +9,10 @@ ms.date: 04/30/2020
 ms.author: allensu
 ms.custom: mvc
 ms.openlocfilehash: e8b3b5c28d00b4d7c81fa3e245113119ae3134ad
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102555700"
 ---
 # <a name="quickstart-create-an-azure-cdn-profile-and-endpoint"></a>Snelstart: Een Azure CDN-profiel en een eindpunt maken

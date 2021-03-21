@@ -4,10 +4,10 @@ description: Waarschuwings instanties in azure beheren
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.openlocfilehash: dc4b62f937e9338051c4018554ec47c94f01a743
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102033534"
 ---
 # <a name="manage-alert-instances-with-unified-alerts"></a>Waarschuwings instanties met Unified Alerts beheren

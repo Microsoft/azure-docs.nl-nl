@@ -4,10 +4,10 @@ description: Voeg implementatie-of build markeringen toe aan uw grafieken met me
 ms.topic: conceptual
 ms.date: 08/14/2020
 ms.openlocfilehash: 776efd56aaa523d1c2621c51cba0446a42bb7411
-ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/14/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103461909"
 ---
 # <a name="annotations-on-metric-charts-in-application-insights"></a>Aantekeningen op metrische grafieken in Application Insights

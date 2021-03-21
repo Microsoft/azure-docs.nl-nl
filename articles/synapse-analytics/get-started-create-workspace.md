@@ -10,12 +10,12 @@ ms.service: synapse-analytics
 ms.subservice: workspace
 ms.topic: tutorial
 ms.date: 03/17/2021
-ms.openlocfilehash: 2923dea8339df9d5e4b539d21cf83b85cda94a67
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: ee8a192bcfe20c77e47ee9c89dfc3286a979e358
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104669760"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104722290"
 ---
 # <a name="creating-a-synapse-workspace"></a>Een Synapse-werkruimte maken
 
@@ -33,13 +33,14 @@ Om alle stappen van deze zelfstudie te kunnen voltooien, moet u toegang hebben t
 1. Selecteer **Toevoegen** om een werkruimte te maken.
 
 ## <a name="basics-tab--project-details"></a>Tabblad basis beginselen > project Details
-3. Ga naar het tabblad **basis** informatie en vul onder **Project Details** de volgende velden in:
+1. Ga naar het tabblad **basis** informatie en vul onder **Project Details** de volgende velden in:
       1. **Abonnement** : Kies een abonnement.
       2. **Resource groep** : gebruik een resource groep.
       3. **Resource groep** : laat dit veld leeg.
 
+
 ## <a name="basics-tab--workspace-details"></a>Tabblad basis informatie > werkruimte Details
-4. Vul op het tabblad **basis beginselen** onder **werkruimte Details** de volgende velden in:
+1. Vul op het tabblad **basis beginselen** onder **werkruimte Details** de volgende velden in:
       1. **Werkruimte naam** : Kies een wereld wijd unieke naam. In deze zelfstudie gebruiken we **myworkspace**.
       1. **Regio** : Kies een wille keurige regio.
       1. **Data Lake Storage gen 2 selecteren**
@@ -47,6 +48,8 @@ Om alle stappen van deze zelfstudie te kunnen voltooien, moet u toegang hebben t
         1. Klik op **account naam** op **Nieuw** en geef de naam van het nieuwe opslag account **contosolake** of soortgelijk op als deze naam uniek moet zijn.
         1. Op **naam van bestands systeem**, klikt u op **nieuwe maken** en de naam **gebruikers** benoemen. Hiermee maakt u een opslag container die **gebruikers** wordt genoemd. In de werkruimte wordt dit opslagaccount gebruikt als het primaire opslagaccount voor logboeken voor Spark-tabellen en Spark-toepassingen.
         1. Schakel het selectie vakje ' de rol van de BLOB voor het koppelen van gegevens in het Data Lake Storage Gen2-account toewijzen ' in. 
+
+### <a name="completing-the-process"></a>Het proces volt ooien
 5. Selecteer **Beoordelen en maken** > **Maken**. Uw werkruimte is binnen een paar minuten klaar.
 
 > [!NOTE]

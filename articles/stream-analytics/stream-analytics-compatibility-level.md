@@ -5,29 +5,30 @@ author: enkrumah
 ms.author: ebnkruma
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 03/10/2020
-ms.openlocfilehash: 07df391e664fe04b9c7d2eda34960666c44a2e06
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.date: 03/18/2021
+ms.openlocfilehash: a040aecbdee40832bd21256e26a140a986b65e39
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99094077"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104606239"
 ---
 # <a name="compatibility-level-for-azure-stream-analytics-jobs"></a>Compatibiliteits niveau voor Azure Stream Analytics taken
 
-In dit artikel wordt de optie compatibiliteits niveau in Azure Stream Analytics beschreven. Stream Analytics is een beheerde service, met normale onderdelen updates en prestatie verbeteringen. De meeste runtime-updates van de service worden automatisch beschikbaar gesteld aan eind gebruikers. 
+In dit artikel wordt de optie compatibiliteits niveau in Azure Stream Analytics beschreven.
 
-Een aantal nieuwe functies in de service kan echter een grote wijziging veroorzaken, zoals een wijziging in het gedrag van een bestaande taak of een wijziging in de manier waarop gegevens worden gebruikt bij het uitvoeren van taken. U kunt ervoor zorgen dat uw bestaande Stream Analytics-taken worden uitgevoerd zonder grote wijzigingen door de instelling voor het compatibiliteits niveau te verlagen. Wanneer u klaar bent voor het laatste runtime-gedrag, kunt u zich aanmelden door het compatibiliteits niveau te verhogen. 
+Stream Analytics is een beheerde service, met [gewone functie-updates en constante prestatie verbeteringen](https://azure.microsoft.com/updates/?product=stream-analytics). De meeste runtime-updates van de service worden automatisch beschikbaar gemaakt voor eind gebruikers, onafhankelijk van het compatibiliteits niveau. Wanneer een nieuwe functionaliteit echter een wijziging in het gedrag van bestaande taken introduceert, of een wijziging in de manier waarop gegevens worden gebruikt bij het uitvoeren van taken, introduceren we deze wijziging onder een nieuw compatibiliteits niveau. U kunt ervoor zorgen dat uw bestaande Stream Analytics-taken worden uitgevoerd zonder grote wijzigingen door de instelling voor het compatibiliteits niveau te verlagen. Wanneer u klaar bent voor het laatste runtime-gedrag, kunt u zich aanmelden door het compatibiliteits niveau te verhogen.
+
 
 ## <a name="choose-a-compatibility-level"></a>Een compatibiliteits niveau kiezen
 
-Compatibiliteits niveau bepaalt het runtime gedrag van een stream Analytics-taak. 
+Compatibiliteits niveau bepaalt het runtime gedrag van een stream Analytics-taak.
 
 Azure Stream Analytics ondersteunt momenteel drie compatibiliteits niveaus:
 
-* 1,0-oorspronkelijk compatibiliteits niveau, geïntroduceerd tijdens de algemene Beschik baarheid van Azure Stream Analytics enkele jaren geleden.
-* 1,1-vorig gedrag
 * 1,2-nieuwste gedrag met de meest recente verbeteringen
+* 1,1-vorig gedrag
+* 1,0-oorspronkelijk compatibiliteits niveau, geïntroduceerd tijdens de algemene Beschik baarheid van Azure Stream Analytics enkele jaren geleden. 
 
 Wanneer u een nieuwe Stream Analytics taak maakt, is dit een best practice om deze te maken met behulp van het meest recente compatibiliteits niveau. Start uw taak ontwerp dat afhankelijk is van het nieuwste gedrag, zodat u later extra wijzigingen en complexiteit kunt voor komen.
 

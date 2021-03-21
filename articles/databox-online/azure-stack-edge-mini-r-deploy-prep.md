@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 01/22/2021
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to prepare the portal to deploy Azure Stack Edge Mini R device so I can use it to transfer data to Azure.
-ms.openlocfilehash: b6745ed879f02a341027417b54eb459b5bfed705
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: ed11b0bb00a571fb4cefc51a708432baef88184d
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98762948"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104613070"
 ---
 # <a name="tutorial-prepare-to-deploy-azure-stack-edge-mini-r"></a>Zelfstudie: Voorbereidingen voor de implementatie van Azure Stack Edge Mini R
 
@@ -84,6 +84,8 @@ Zorg voordat u begint voor het volgende:
 
 Als u al een Azure Stack Edge-resource hebt voor het beheer van uw fysieke apparaat, kunt u deze stap overslaan en verdergaan met [Activeringscode ophalen](#get-the-activation-key).
 
+### <a name="portal"></a>[Portal](#tab/azure-portal)
+
 Voer de volgende stappen uit in de Azure-portal om een Azure Stack Edge-resource te maken.
 
 1. Gebruik uw Microsoft Azure-referenties om u aan te melden bij de Azure-portal op de volgende URL: [https://portal.azure.com](https://portal.azure.com).
@@ -151,6 +153,51 @@ Nadat de bestelling is geplaatst, controleert Microsoft de bestelling en neemt c
 > Als u meerdere bestellingen tegelijk wilt doen of een bestaande bestelling wilt klonen, kunt u de [scripts in Azure Samples](https://github.com/Azure-Samples/azure-stack-edge-order) gebruiken. Zie het Leesmij-bestand voor meer informatie.
 
 Als u problemen ondervindt tijdens het bestelproces, raadpleegt u [Problemen met de bestelling oplossen](azure-stack-edge-troubleshoot-ordering.md).
+
+### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
+Als dat nodig is, kunt u uw omgeving voorbereiden voor Azure CLI.
+
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
+
+Als u een Azure Stack Edge-resource wilt maken, voert u de volgende opdrachten uit in azure CLI.
+
+1. Maak een resource groep met de opdracht [AZ Group Create](/cli/azure/group#az_group_create) of gebruik een bestaande resource groep:
+
+   ```azurecli
+   az group create --name myasepgpu1 --location eastus
+   ```
+
+1. Als u een apparaat wilt maken, gebruikt u de opdracht [AZ databoxedge Device Create](/cli/azure/databoxedge/device#az_databoxedge_device_create) :
+
+   ```azurecli
+   az databoxedge device create --resource-group myasepgpu1 \
+      --device-name myasegpu1 --location eastus --sku EdgeMR_Mini
+   ```
+
+   Kies een locatie die het dichtst bij de geografische regio ligt waar u uw apparaat wilt implementeren. In de regio worden alleen de metagegevens voor apparaatbeheer opgeslagen. De werkelijke gegevens kunnen worden opgeslagen in elk opslagaccount.
+
+   Zie [Azure-producten die beschikbaar zijn per regio](https://azure.microsoft.com/global-infrastructure/services/?products=databox&regions=all) voor een lijst met alle regio's waar de Azure Stack Edge-resource beschikbaar is. Als Azure Government wordt gebruikt, zijn alle overheidsregio's beschikbaar, zoals wordt weergegeven in de [Azure-regio's](https://azure.microsoft.com/global-infrastructure/regions/).
+
+1. Voer de opdracht [AZ databoxedge order Create](/cli/azure/databoxedge/order#az_databoxedge_order_create) uit om een order te maken:
+
+   ```azurecli
+   az databoxedge order create --resource-group myasepgpu1 \
+      --device-name myasegpu1 --company-name "Contoso" \
+      --address-line1 "1020 Enterprise Way" --city "Sunnyvale" \
+      --state "California" --country "United States" --postal-code 94089 \
+      --contact-person "Gus Poland" --email-list gus@contoso.com --phone 4085555555
+   ```
+
+Het maken van de resource duurt enkele minuten. Voer de opdracht [AZ databoxedge order show](/cli/azure/databoxedge/order#az_databoxedge_order_show) uit om de volg orde te bekijken:
+
+```azurecli
+az databoxedge order show --resource-group myasepgpu1 --device-name myasegpu1 
+```
+
+Nadat u een bestelling hebt geplaatst, controleert micro soft de bestelling en maakt u via e-mail contact met de verzend gegevens.
+
+---
 
 ## <a name="get-the-activation-key"></a>De activeringssleutel ophalen
 

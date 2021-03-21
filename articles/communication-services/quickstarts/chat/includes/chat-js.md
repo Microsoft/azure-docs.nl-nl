@@ -10,12 +10,12 @@ ms.date: 03/10/2021
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: 9f62f262e1baa70982e667379a9bf4357197ecb4
-ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.openlocfilehash: 0805537fe0791a622eb1814cc233c04d914dbecd
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103495395"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104612136"
 ---
 ## <a name="prerequisites"></a>Vereisten
 Voordat u aan de slag gaat, moet u het volgende doen:
@@ -66,6 +66,27 @@ In deze snelstart wordt webpack gebruikt om de toepassingsassets te bundelen. Vo
 npm install webpack webpack-cli webpack-dev-server --save-dev
 ```
 
+Maak een `webpack.config.js` bestand in de hoofdmap. Kopieer de volgende configuratie naar dit bestand:
+
+```
+module.exports = {
+  entry: "./client.js",
+  output: {
+    filename: "bundle.js"
+  },
+  devtool: "inline-source-map",
+  mode: "development"
+}
+```
+
+Een `start` script toevoegen aan uw `package.json` , we gebruiken dit voor het uitvoeren van de app. In de `scripts` sectie van `package.json` het volgende toevoegen:
+
+```
+"scripts": {
+  "start": "webpack serve --config ./webpack.config.js"
+}
+```
+
 Maak een **index. html**-bestand in de hoofdmap van uw project. We zullen dit bestand gebruiken als een sjabloon om chat-functionaliteit toe te voegen met behulp van de Azure Communication chat-clientbibliotheek voor JavaScript.
 
 ```html
@@ -111,9 +132,9 @@ console.log('Azure Communication Chat client created!');
 
 ### <a name="run-the-code"></a>De code uitvoeren
 
-Gebruik de `webpack-dev-server` om uw app te bouwen en uit te voeren. Voer de volgende opdracht uit om de toepassingshost op een lokale webserver te bundelen:
+Voer de volgende opdracht uit om de toepassingshost op een lokale webserver te bundelen:
 ```console
-npx webpack-dev-server --entry ./client.js --output bundle.js --debug --devtool inline-source-map
+npm run start
 ```
 Open uw browser en ga naar http://localhost:8080/.
 In de console voor ontwikkelaarshulpprogramma’s in uw browser zou u het volgende moeten zien:

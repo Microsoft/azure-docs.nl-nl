@@ -9,12 +9,12 @@ ms.subservice: nat
 ms.topic: tutorial
 ms.date: 03/19/2021
 ms.custom: template-tutorial
-ms.openlocfilehash: 345ccb68ebb31460f4a75b31a7d3a946160da6e6
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 8382dd10536a8c0475444d0cdff30340ad124e9c
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104657961"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104722800"
 ---
 # <a name="tutorial-integrate-a-nat-gateway-with-a-public-load-balancer-using-the-azure-portal"></a>Zelf studie: een NAT-gateway met een openbaar load balancer integreren met behulp van de Azure Portal
 
@@ -48,15 +48,18 @@ In deze sectie maakt u een standaard Azure Load Balancer.
 
     | Instelling                 | Waarde                                              |
     | ---                     | ---                                                |
+    | **Projectgegevens** |   |
     | Abonnement               | Selecteer uw abonnement.    |    
-    | Resourcegroep         | Selecteer **nieuwe maken** en voer **TutorPubLBNAT-RG** in het tekstvak in.|
+    | Resourcegroep         | Selecteer **nieuwe maken** en voer **TutorPubLBNAT-RG** in het tekstvak in. </br> Selecteer **OK**.|
+    | **Exemplaardetails** |   |
     | Naam                   | Voer **myLoadBalancer** in                                   |
     | Regio         | Selecteer **VS Oost**.                                        |
     | Type          | Selecteer **Openbaar**.                                        |
     | SKU           | De standaard **standaard** behouden. |
     | Laag          | De standaard **regio** behouden. |
-    | Openbaar IP-adres | Selecteer **Nieuw maken**. Als u een bestaand openbaar IP-adres hebt dat u wilt gebruiken, selecteert u **Bestaande gebruiken**. |
-    | Naam openbaar IP-adres | Typ **myPublicIP-lb** in het tekstvak.|
+    | **Openbaar IP-adres** |   |
+    | Openbaar IP-adres | Selecteer **Nieuw maken**. </br> Als u een bestaand openbaar IP-adres hebt dat u wilt gebruiken, selecteert u **Bestaande gebruiken**. |
+    | Naam openbaar IP-adres | Voer **myPublicIP-lb** in het tekstvak in.|
     | Beschikbaarheidszone | Selecteer **Zone-redundant** om een tolerante load balancer te maken. Als u een zonegebonden load balancer wilt maken, selecteert u een specifieke zone uit 1, 2 of 3 |
     | Een openbaar IPv6-adres toevoegen | Selecteer **Nee**. </br> Zie [Wat is IPv6 voor Azure Virtual Network?](../virtual-network/ipv6-overview.md) voor meer informatie over IPv6-adressen en load balancer.  |
     | Routeringsvoorkeur | De standaard instelling van het **micro soft-netwerk** behouden. </br> Zie [Wat is routerings voorkeur (preview)?](../virtual-network/routing-preference-overview.md)voor meer informatie over routerings voorkeur. |
@@ -135,7 +138,7 @@ In deze sectie maakt u een load balancer-regel:
     | Back-endpoort | Voer **80** in. |
     | Back-end-pool | Selecteer **myBackendPool**.|
     | Statustest | Selecteer **myHealthProbe**. |
-    | Time-out voor inactiviteit (minuten) | Verplaats de schuifregelaar naar **15** minuten. |
+    | Time-out voor inactiviteit (minuten) | Voer **15** minuten in. |
     | Opnieuw instellen van TCP | Selecteer **Ingeschakeld**. |
     | Uitgaande SNAT (Source Network Address Translation) | Selecteer **(Aanbevolen) Uitgaande regels gebruiken om leden van de back-endgroep toegang te geven tot internet.** |
 
@@ -237,7 +240,7 @@ Deze VM's worden toegevoegd aan de back-endpool van de load balancer die eerder 
     | NIC-netwerkbeveiligingsgroep | Selecteer **Geavanceerd**|
     | Netwerkbeveiligingsgroep configureren | Selecteer **Nieuw maken**. </br> Voer in **Netwerkbeveiligingsgroep maken** bij **Naam** **myNSG** in. </br> Selecteer onder **Inkomende regels** de optie **+ Een inkomende regel toevoegen**. </br> Voer bij **Poortbereiken van doel** **80** in. </br> Voer bij **Prioriteit** **100** in. </br> Voer bij **Naam** **myHTTPRule** in. </br> Selecteer **Toevoegen** </br> Selecteer **OK** |
     | **Taakverdeling**  |
-    | Deze virtuele machine achter een bestaande oplossing voor taak verdeling plaatsen? | Selecteer **Ja** |
+    | Deze virtuele machine achter een bestaande oplossing voor taak verdeling plaatsen? | Schakel het selectievakje in.|
     | **Instellingen voor taakverdeling** |
     | Opties voor taakverdeling | **Azure-Load Balancer** selecteren |
     | Een load balancer selecteren | Selecteer **myLoadBalancer**  |
@@ -302,7 +305,7 @@ In deze sectie testen we de NAT-gateway. Eerst wordt het open bare IP-adres van 
 
 2. Noteer het open bare IP-adres:
 
-    :::image type="content" source="./media/tutorial-nat-gateway-load-balancer-public-portal/find-public-ip.png" alt-text="Openbaar IP-adres van NAT-gateway detecteren" border="true":::
+    :::image type="content" source="./media/tutorial-nat-gateway-load-balancer-public-portal/find-public-ip.png" alt-text="Scherm opname ontdekken openbaar IP-adres van NAT-gateway." border="true":::
 
 3. Selecteer **alle services** in het linkermenu, selecteer **alle resources** en selecteer vervolgens in de lijst met resources **myVM1** die zich in de resource groep **TutorPubLBNAT-RG** bevindt.
 
@@ -318,7 +321,7 @@ In deze sectie testen we de NAT-gateway. Eerst wordt het open bare IP-adres van 
 
 9. Controleer of het weer gegeven IP-adres overeenkomt met het NAT-gateway adres dat u in de vorige stap hebt genoteerd:
 
-    :::image type="content" source="./media/tutorial-nat-gateway-load-balancer-public-portal/my-ip.png" alt-text="Internet Explorer met het externe uitgaande IP-adres" border="true":::
+    :::image type="content" source="./media/tutorial-nat-gateway-load-balancer-public-portal/my-ip.png" alt-text="Scherm opname van Internet Explorer met extern uitgaand IP-adres." border="true":::
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

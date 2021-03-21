@@ -11,10 +11,10 @@ ms.author: normesta
 ms.reviewer: fryu
 ms.custom: monitoring, devx-track-csharp, devx-track-azurecli
 ms.openlocfilehash: 16a899b7f0e40c2eee91d1dd445f0992572a9dda
-ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/13/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103418161"
 ---
 # <a name="monitoring-azure-files"></a>Bewakings Azure Files
@@ -71,7 +71,7 @@ Zie voor algemene instructies de [Diagnostische instelling maken voor het verzam
 
 ### <a name="azure-portal"></a>[Azure-portal](#tab/azure-portal)
 
-1. Meld u aan bij de Azure-portal.
+1. Meld u aan bij Azure Portal.
 
 2. Ga naar uw opslagaccount.
 

@@ -9,12 +9,12 @@ ms.subservice: spot
 ms.date: 02/26/2021
 ms.reviewer: cynthn
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: a176a30a1e21ec03c2da329785ab895ec67a4faf
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: ec73d1363fb18d1d6c46589fe69879a8f6df1dab
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104596413"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104722562"
 ---
 # <a name="azure-spot-virtual-machines-for-virtual-machine-scale-sets"></a>Azure Spot Virtual Machines voor schaal sets voor virtuele machines 
 
@@ -44,8 +44,8 @@ Azure spot virtuele machine kan worden geïmplementeerd in elke regio, met uitzo
 De volgende [aanbiedings typen](https://azure.microsoft.com/support/legal/offer-details/) worden momenteel ondersteund:
 
 -   Enterprise Agreement
--   Betalen per gebruik-aanbieding code 003P
--   Gesponsorde
+-   Betalen per gebruik-aanbiedings code (003P)
+-   Gesponsord (0036P en 0136P)
 - Voor Cloud serviceprovider (CSP) raadpleegt u het [partner centrum](/partner-center/azure-plan-get-started) of neemt u rechtstreeks contact op met uw partner.
 
 ## <a name="eviction-policy"></a>Verwijderingsbeleid
@@ -168,7 +168,7 @@ $vmssConfig = New-AzVmssConfig `
     -SkuName "Standard_DS2" `
     -UpgradePolicyMode Automatic `
     -Priority "Spot" `
-    --max-price -1
+    -max-price -1
 ```
 
 ## <a name="resource-manager-templates"></a>Resource Manager-sjablonen

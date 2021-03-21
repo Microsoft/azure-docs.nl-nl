@@ -6,14 +6,14 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: tutorial
-ms.date: 02/23/2021
+ms.date: 03/19/2021
 ms.author: victorh
-ms.openlocfilehash: 208bd0fe7f3869cbe15dd27e0b883c467e41c765
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: cfbd5301bc2b24c4d5614e5f88c6ae18d4affc66
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/20/2021
-ms.locfileid: "101735064"
+ms.locfileid: "104721627"
 ---
 # <a name="tutorial-create-and-configure-an-application-gateway-to-host-multiple-web-sites-using-the-azure-portal"></a>Zelfstudie: Een toepassingsgateway maken en configureren waarmee meerdere websites worden gehost via Azure PortaI
 
@@ -27,7 +27,7 @@ In deze zelfstudie leert u het volgende:
 > * Back-endpools maken met de back-endservers
 > * Back-endlisteners maken
 > * Routeringsregels maken
-> * Een CNAME-record in uw domein maken
+> * Hosts-bestand bewerken voor naam omzetting
 
 :::image type="content" source="./media/create-multiple-sites-portal/scenario.png" alt-text="Een toepassingsgateway voor meerdere sites maken":::
 
@@ -212,9 +212,9 @@ In dit voorbeeld installeert u IIS alleen op de virtuele machines om te controle
 
 Wacht tot de implementatie is voltooid voordat u doorgaat met de volgende stap.
 
-## <a name="edit-your-hosts-file"></a>Het hosts-bestand bewerken
+## <a name="edit-your-hosts-file-for-name-resolution"></a>Het hosts-bestand voor naam omzetting bewerken
 
-Nadat de toepassings gateway is gemaakt met het open bare IP-adres, kunt u het IP-adres ophalen en gebruiken om uw hosts-bestand te bewerken om het probleem op te lossen `www.contoso.com` en `www.fabrikam.com` 
+Nadat de toepassings gateway is gemaakt met het open bare IP-adres, kunt u het IP-adres ophalen en gebruiken om uw hosts-bestand te bewerken om het te verhelpen `www.contoso.com` en `www.fabrikam.com` . In een productie omgeving kunt u een `CNAME` in DNS maken voor naam omzetting.
 
 1. Klik op **Alle resources** en vervolgens op **myAGPublicIPAddress**.
 

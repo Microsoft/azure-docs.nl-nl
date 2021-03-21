@@ -2,26 +2,26 @@
 title: Versleuteling aan de server zijde van Azure Managed disks
 description: Azure Storage beveiligt uw gegevens door deze te versleutelen voordat deze in de opslag clusters worden bewaard. U kunt door de klant beheerde sleutels gebruiken om versleuteling te beheren met uw eigen sleutels, of u kunt gebruikmaken van door micro soft beheerde sleutels voor de versleuteling van uw beheerde schijven.
 author: roygara
-ms.date: 03/02/2021
+ms.date: 03/11/2021
 ms.topic: conceptual
 ms.author: rogarana
 ms.service: virtual-machines
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: ee4dd539119457086c9b109579b7e6ab195fea96
-ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
+ms.openlocfilehash: 786ecef5d62c7dd18e3992fa0b233b27a80d762b
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "103014380"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104721848"
 ---
 # <a name="server-side-encryption-of-azure-disk-storage"></a>Versleuteling aan de server zijde van Azure Disk Storage
 
-Met SSE (server side Encryption) beschermt u uw gegevens en kunt u voldoen aan de beveiligings-en nalevings verplichtingen van uw organisatie. Met SSE worden uw gegevens die zijn opgeslagen op Azure Managed disks (besturings systeem en gegevens schijven), op rest automatisch gecodeerd wanneer deze in de cloud worden bewaard. 
+De meeste Azure Managed disks zijn versleuteld met Azure Storage versleuteling, die gebruikmaakt van SSE (server side Encryption) om uw gegevens te beschermen en u te helpen bij het voldoen aan de beveiligings-en nalevings verplichtingen van uw organisatie. Met Azure Storage versleuteling worden uw gegevens die zijn opgeslagen op Azure Managed disks (besturings systeem en gegevens schijven), op rest standaard automatisch versleuteld wanneer deze in de cloud worden bewaard. Schijven waarop versleuteling op de host is ingeschakeld, worden echter niet versleuteld via Azure Storage. Voor schijven met versleuteling op de host biedt de server waarop uw virtuele machine wordt gehost de versleuteling voor uw gegevens en de versleutelde gegevens stromen naar Azure Storage.
 
 Gegevens in azure Managed disks worden transparant versleuteld met 256-bits [AES-versleuteling](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard), een van de krach tigste blok versleuteling die beschikbaar is en is compatibel met FIPS 140-2. Zie [crypto GRAFIE API: Next Generation](/windows/desktop/seccng/cng-portal) (Engelstalig) voor meer informatie over de onderliggende cryptografische modules die worden beheerd door Azure Managed disks.
 
-Versleuteling aan de server zijde heeft geen invloed op de prestaties van beheerde schijven en er zijn geen extra kosten. 
+Azure Storage versleuteling heeft geen invloed op de prestaties van beheerde schijven en er zijn geen extra kosten. Zie [Azure Storage Encryption](/azure/storage/common/storage-service-encryption)(Engelstalig) voor meer informatie over Azure Storage versleuteling.
 
 > [!NOTE]
 > Tijdelijke schijven zijn geen beheerde schijven en worden niet versleuteld door SSE, tenzij u versleuteling op de host inschakelt.

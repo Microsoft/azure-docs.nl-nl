@@ -13,10 +13,10 @@ ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin
 ms.custom: aaddev
 ms.openlocfilehash: ce4917f968ef1664a1d41f4eaff162df116bda4f
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102035081"
 ---
 # <a name="signing-key-rollover-in-the-microsoft-identity-platform"></a>Rollover van de handtekening sleutel in het micro soft Identity-platform
@@ -68,7 +68,7 @@ De functie voor verificatie/autorisatie van Azure-app Services (EasyAuth) heeft 
 ### <a name="web-applications--apis-protecting-resources-using-net-owin-openid-connect-ws-fed-or-windowsazureactivedirectorybearerauthentication-middleware"></a><a name="owin"></a>Webtoepassingen/Api's die resources beveiligen met behulp van .NET OWIN OpenID Connect Connect, WS-Fed of WindowsAzureActiveDirectoryBearerAuthentication middleware
 Als uw toepassing gebruikmaakt van de .NET OWIN OpenID Connect Connect, WS-Fed of WindowsAzureActiveDirectoryBearerAuthentication middleware, beschikt deze al over de benodigde logica om de sleutel rollover automatisch te verwerken.
 
-U kunt controleren of uw toepassing een van deze gebruikt door te zoeken naar een van de volgende fragmenten in de Startup.cs-of Startup.Auth.cs-bestanden van uw toepassing.
+U kunt controleren of de toepassing hiervan gebruikmaakt door te zoeken naar een van de volgende fragmenten in de bestanden startup. CS of Startup. auth. CS van uw toepassing.
 
 ```csharp
 app.UseOpenIdConnectAuthentication(
@@ -97,7 +97,7 @@ app.UseWindowsAzureActiveDirectoryBearerAuthentication(
 ### <a name="web-applications--apis-protecting-resources-using-net-core-openid-connect-or--jwtbearerauthentication-middleware"></a><a name="owincore"></a>Webtoepassingen/Api's die resources beveiligen met behulp van .NET core OpenID Connect Connect of JwtBearerAuthentication middleware
 Als uw toepassing gebruikmaakt van .NET core OWIN OpenID Connect Connect of JwtBearerAuthentication middleware, beschikt deze al over de benodigde logica om de sleutel rollover automatisch te verwerken.
 
-U kunt controleren of uw toepassing een van deze gebruikt door te zoeken naar een van de volgende fragmenten in de Startup.cs of Startup.Auth.cs van uw toepassing
+U kunt controleren of de toepassing hiervan gebruikmaakt door te zoeken naar een van de volgende fragmenten in het opstart proces van uw toepassing. CS of Startup. auth. cs
 
 ```
 app.UseOpenIdConnectAuthentication(
@@ -248,12 +248,12 @@ Als uw toepassing is gemaakt in Visual Studio 2012, hebt u waarschijnlijk het hu
 Als u uw toepassing hebt gemaakt met behulp van een van de code voorbeelden of de overzichts documentatie van micro soft, is de logica voor sleutel rollover al opgenomen in uw project. U ziet dat de onderstaande code al in uw project bestaat. Als uw toepassing deze logica nog niet heeft, volgt u de onderstaande stappen om deze toe te voegen en te controleren of deze correct werkt.
 
 1. In **Solution Explorer** voegt u een verwijzing naar de **System. Identity model** -assembly voor het betreffende project toe.
-2. Open het **Global.asax.cs** -bestand en voeg het volgende toe met behulp van de instructies:
+2. Open het bestand **Global. asax. cs** en voeg het volgende toe met behulp van de instructies:
    ```
    using System.Configuration;
    using System.IdentityModel.Tokens;
    ```
-3. Voeg de volgende methode toe aan het **Global.asax.cs** -bestand:
+3. Voeg de volgende methode toe aan het bestand **Global. asax. cs** :
    ```
    protected void RefreshValidationSettings()
    {
@@ -263,7 +263,7 @@ Als u uw toepassing hebt gemaakt met behulp van een van de code voorbeelden of d
     ValidatingIssuerNameRegistry.WriteToConfig(metadataAddress, configPath);
    }
    ```
-4. Roep de methode **RefreshValidationSettings ()** aan in de methode **Application_Start ()** in **Global.asax.cs** , zoals weer gegeven:
+4. Roep de methode **RefreshValidationSettings ()** aan in de methode **Application_Start ()** in **Global. asax. cs** zoals weer gegeven:
    ```
    protected void Application_Start()
    {

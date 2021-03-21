@@ -3,18 +3,21 @@ title: Scenario's voor het gebruik van een virtueel netwerk
 description: Scenario's, bronnen en beperkingen voor het implementeren van container groepen naar een virtueel Azure-netwerk.
 ms.topic: article
 ms.date: 08/11/2020
-ms.openlocfilehash: 65d7fa46ebbb9b072b50731bff68b9b88809075d
-ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
+ms.openlocfilehash: 20c2b4fe2f19402d6647f398a9696b7e16550d8e
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98033826"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104606885"
 ---
 # <a name="virtual-network-scenarios-and-resources"></a>Scenario's en resources voor het virtuele netwerk
 
 [Azure Virtual Network](../virtual-network/virtual-networks-overview.md) biedt veilige, persoonlijke netwerken voor uw Azure-en on-premises resources. Door container groepen te implementeren in een virtueel Azure-netwerk, kunnen uw containers veilig communiceren met andere resources in het virtuele netwerk. 
 
 Dit artikel bevat achtergrond informatie over scenario's, beperkingen en bronnen van het virtuele netwerk. Zie [container instanties implementeren in een virtueel Azure-netwerk](container-instances-vnet.md)voor implementatie voorbeelden met behulp van de Azure cli.
+
+> [!IMPORTANT]
+> Implementatie van container groep naar een virtueel netwerk is algemeen beschikbaar voor Linux-containers, in de meeste regio's waar Azure Container Instances beschikbaar is. Zie [regio's en resources Beschik baarheid](container-instances-region-availability.md)voor meer informatie. 
 
 ## <a name="scenarios"></a>Scenario's
 
@@ -45,12 +48,6 @@ Met container groepen die zijn geïmplementeerd in een virtueel Azure-netwerk, k
 * Als u uw container groep verbindt met een Azure Storage-account, moet u een [service-eind punt](../virtual-network/virtual-network-service-endpoints-overview.md) toevoegen aan die resource.
 
 [!INCLUDE [container-instances-restart-ip](../../includes/container-instances-restart-ip.md)]
-
-## <a name="where-to-deploy"></a>Implementatie van
-
-De volgende regio's en maximum resources zijn beschikbaar voor het implementeren van een container groep in een virtueel Azure-netwerk.
-
-[!INCLUDE [container-instances-vnet-limits](../../includes/container-instances-vnet-limits.md)]
 
 ## <a name="required-network-resources"></a>Vereiste netwerk bronnen
 

@@ -308,6 +308,8 @@
           href: whatis-aadc-admin-agent.md
         - name: Wat is de PowerShell-module ADConnectivityTools?
           href: how-to-connect-adconnectivitytools.md
+        - name: Azure AD Connect synchronisatie met één object
+          href: how-to-connect-single-object-sync.md
         - name: Connectiviteit
           href: tshoot-connect-connectivity.md
         - name: Fouten tijdens synchronisatie
@@ -336,6 +338,8 @@
           href: tshoot-connect-install-issues.md
         - name: UPN-wijzigingen
           href: howto-troubleshoot-upn-changes.md
+        - name: End-to-end-probleem oplossing van objecten en kenmerken
+          href: 'https://docs.microsoft.com/troubleshoot/azure/active-directory/troubleshoot-aad-connect-objects-attributes'
 - name: Naslaginformatie
   items:
     - name: Voor hybride identiteit benodigde poorten en protocollen

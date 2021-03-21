@@ -11,10 +11,10 @@ ms.author: tamram
 ms.subservice: common
 ms.custom: devx-track-csharp
 ms.openlocfilehash: baad1a0b173ae89fec9d160572224c6cb0aa615d
-ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103574625"
 ---
 # <a name="acquire-a-token-from-azure-ad-for-authorizing-requests-from-a-client-application"></a>Een token van Azure AD verkrijgen voor het machtigen van aanvragen van een client toepassing
@@ -151,7 +151,7 @@ Install-Package Azure.Storage.Blobs
 Install-Package Microsoft.Identity.Web -Version 0.4.0-preview
 ```
 
-Voeg vervolgens de volgende using-instructies toe aan het HomeController.cs-bestand:
+Voeg vervolgens de volgende using-instructies toe aan het bestand HomeController. CS:
 
 ```csharp
 using Microsoft.Identity.Web; //MSAL library for getting the access token
@@ -165,7 +165,7 @@ Install-Package Microsoft.Azure.Storage.Blob
 Install-Package Microsoft.Identity.Web -Version 0.4.0-preview //or a later version
 ```
 
-Voeg vervolgens de volgende using-instructies toe aan het HomeController.cs-bestand:
+Voeg vervolgens de volgende using-instructies toe aan het bestand HomeController. CS:
 
 ```csharp
 using Microsoft.Identity.Client; //MSAL library for getting the access token
@@ -284,7 +284,7 @@ Werk de *appsettings.jsvoor* bestand met uw eigen waarden als volgt bij:
 
 ### <a name="update-the-storage-account-and-container-name"></a>Het opslag account en de container naam bijwerken
 
-Werk in het *HomeController.cs* -bestand de URI bij die verwijst naar de blok-blob om de naam van uw opslag account en container te gebruiken, waarbij u de waarden tussen punt haken vervangt door uw eigen waarden:
+Werk in het bestand *HomeController. cs* de URI bij die verwijst naar de blok-blob om de naam van uw opslag account en container te gebruiken, waarbij u de waarden tussen punt haken vervangt door uw eigen waarden:
 
 ```html
 https://<storage-account>.blob.core.windows.net/<container>/Blob1.txt

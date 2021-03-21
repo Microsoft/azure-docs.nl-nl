@@ -9,12 +9,12 @@ ms.date: 03/01/2021
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 6d4840dcbe67a0bd94c74b43164c24e0c45e9daf
-ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
+ms.openlocfilehash: feb77339c9c7f36eb17b43dfe2c220dfb54efa25
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103200642"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104720522"
 ---
 # <a name="update-the-iot-edge-security-daemon-and-runtime"></a>De IoT Edge-beveiligingsdaemon en -runtime bijwerken
 
@@ -150,9 +150,9 @@ Controleer de versie van de IoT Edge agent en IoT Edge hub-modules op uw apparaa
 
 De installatie kopieën van IoT Edge agent en IoT Edge hub worden gelabeld met de IoT Edge-versie waaraan ze zijn gekoppeld. Er zijn twee verschillende manieren om labels te gebruiken met de runtime-installatie kopieën:
 
-* **Roulerende Tags** : gebruik alleen de eerste twee waarden van het versie nummer om de meest recente afbeelding op te halen die overeenkomt met die cijfers. Bijvoorbeeld: 1,0 wordt bijgewerkt wanneer er een nieuwe versie is die naar de nieuwste versie van 1.0. x wijst. Als de container-runtime op uw IoT Edge-apparaat de installatie kopie opnieuw ophaalt, worden de runtime modules bijgewerkt naar de meest recente versie. Deze aanpak wordt aanbevolen voor ontwikkelings doeleinden. Implementaties van de Azure Portal standaard naar roulerende Tags.
+* **Roulerende Tags** : gebruik alleen de eerste twee waarden van het versie nummer om de meest recente afbeelding op te halen die overeenkomt met die cijfers. Bijvoorbeeld: 1,1 wordt bijgewerkt wanneer er een nieuwe release is om naar de nieuwste versie 1.1. x te verwijzen. Als de container-runtime op uw IoT Edge-apparaat de installatie kopie opnieuw ophaalt, worden de runtime modules bijgewerkt naar de meest recente versie. Implementaties van de Azure Portal standaard naar roulerende Tags. *Deze aanpak wordt aanbevolen voor ontwikkelings doeleinden.*
 
-* **Specifieke labels** : gebruik alle drie de waarden van het versie nummer om de installatie kopie versie expliciet in te stellen. 1.0.7 wordt bijvoorbeeld niet gewijzigd na de eerste release. Wanneer u klaar bent om bij te werken, kunt u een nieuw versie nummer declareren in het implementatie manifest. Deze aanpak wordt voorgesteld voor productie doeleinden.
+* **Specifieke labels** : gebruik alle drie de waarden van het versie nummer om de installatie kopie versie expliciet in te stellen. 1.1.0 wordt bijvoorbeeld niet gewijzigd na de eerste release. Wanneer u klaar bent om bij te werken, kunt u een nieuw versie nummer declareren in het implementatie manifest. *Deze aanpak wordt voorgesteld voor productie doeleinden.*
 
 ### <a name="update-a-rolling-tag-image"></a>Een afbeelding van een roulerende tag bijwerken
 

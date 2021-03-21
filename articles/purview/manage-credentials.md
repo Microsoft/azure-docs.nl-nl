@@ -8,10 +8,10 @@ ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 02/11/2021
 ms.openlocfilehash: 3802d25ebd8f21ab5b8991a66ceb6650f2f276a9
-ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/14/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103461705"
 ---
 # <a name="credentials-for-source-authentication-in-azure-purview"></a>Referenties voor de verificatie van de bron in azure controle sfeer liggen
@@ -22,7 +22,7 @@ In dit artikel wordt beschreven hoe u referenties kunt maken in azure controle s
 
 - Een Azure-sleutelkluis. Zie [Quick Start: een sleutel kluis maken met behulp van de Azure Portal](../key-vault/general/quick-create-portal.md)voor meer informatie over het maken van deze.
 
-## <a name="introduction"></a>Introductie
+## <a name="introduction"></a>Inleiding
 
 Een referentie is verificatie-informatie die Azure controle sfeer liggen kan gebruiken voor verificatie bij uw geregistreerde gegevens bronnen. Er kan een referentie object worden gemaakt voor verschillende typen verificatie scenario's, zoals basis verificatie waarvoor gebruikers naam en wacht woord zijn vereist. Referentie Capture specifieke informatie die is vereist voor verificatie, op basis van het gekozen type verificatie methode. Referenties gebruiken uw bestaande Azure-sleutel kluizen geheimen om gevoelige verificatie gegevens op te halen tijdens het proces voor het maken van de referenties.
 

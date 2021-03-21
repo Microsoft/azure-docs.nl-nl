@@ -8,12 +8,12 @@ ms.service: api-management
 ms.topic: article
 ms.date: 03/12/2021
 ms.author: apimpm
-ms.openlocfilehash: e92d509cdbeba142ec1c740277b45aa3eb5fd21e
-ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
+ms.openlocfilehash: 3f91ca21512b8cddcac7fe71fa3eec07e1a8745a
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103564913"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104720080"
 ---
 # <a name="api-management-policies-to-validate-requests-and-responses"></a>API Management beleid voor het valideren van aanvragen en antwoorden
 
@@ -95,7 +95,7 @@ In het volgende voor beeld wordt de JSON-nettolading in aanvragen en antwoorden 
 | Naam                       | Beschrijving                                                                                                                                                            | Vereist | Standaard |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
 | niet opgegeven-type actie | [Actie](#actions) die moet worden uitgevoerd voor aanvragen of antwoorden met een inhouds type dat niet is opgegeven in het API-schema. |  Ja     | N.v.t.   |
-| Max-grootte | De maximum lengte van de hoofd tekst van de aanvraag of het antwoord, vergeleken met de `Content-Length` koptekst. Als de hoofd tekst van de aanvraag of het antwoord is gecomprimeerd, is deze waarde de gedecomprimeerde lengte. Maxi maal toegestane waarde: 102.400 bytes (100 KB).  | Ja       | N.v.t.   |
+| Max-grootte | Maximum lengte van de hoofd tekst van de aanvraag of het antwoord in bytes, vergeleken met de `Content-Length` koptekst. Als de hoofd tekst van de aanvraag of het antwoord is gecomprimeerd, is deze waarde de gedecomprimeerde lengte. Maxi maal toegestane waarde: 102.400 bytes (100 KB).  | Ja       | N.v.t.   |
 | grootte-overschreden-actie | [Actie](#actions) die moet worden uitgevoerd voor aanvragen of antwoorden waarvan de hoofd tekst de grootte overschrijdt die is opgegeven in `max-size` . |  Ja     | N.v.t.   |
 | fouten-variabele-name | De naam van de variabele in `context.Variables` om validatie fouten naar te registreren.  |   Ja    | N.v.t.   |
 | type | Inhouds type voor het uitvoeren van een validatie van de hoofd tekst voor, vergeleken met de `Content-Type` koptekst. Deze waarde is hoofdletter gevoelig. Als deze leeg is, wordt dit toegepast op elk inhouds type dat is opgegeven in het API-schema. |   Nee    |  N.v.t.  |

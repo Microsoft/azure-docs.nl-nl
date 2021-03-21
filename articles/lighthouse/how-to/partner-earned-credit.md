@@ -4,15 +4,15 @@ description: Meer informatie over hoe u uw partner-ID kunt koppelen aan de klant
 ms.date: 02/12/2021
 ms.topic: how-to
 ms.openlocfilehash: 4c18aae38570ab3fd84df7d45fb18e35404158be
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100372090"
 ---
 # <a name="link-your-partner-id-to-track-your-impact-on-delegated-resources"></a>Koppel uw partner-ID om uw impact op gedelegeerde resources bij te houden 
 
-Als u lid bent van de [Microsoft Partner Network](https://partner.microsoft.com/), kunt u uw partner-id koppelen aan de referenties die worden gebruikt voor het beheren van gedelegeerde klant resources, zodat micro soft partners kan identificeren en herkennen die een Azure-klant succes hebben. Met deze koppeling kunnen partners van de [CSP (Cloud Solution Provider)](/partner-center/csp-overview) voor klanten die [de micro soft Customer Agreement (MCA) hebben ondertekend, een door de klant overeengekomen](/partner-center/confirm-customer-agreement) [partner](/partner-center/partner-earned-credit) [ontvangen.](/partner-center/azure-plan-get-started)
+Als u lid bent van de [Microsoft Partner Network](https://partner.microsoft.com/), kunt u uw partner-id koppelen aan de referenties die worden gebruikt voor het beheren van gedelegeerde klant resources, zodat micro soft partners kan identificeren en herkennen die een Azure-klant succes hebben. Met deze koppeling kunnen partners van [CSP (Cloud Solution Provider)](/partner-center/csp-overview) [door partners verdiend tegoed ontvangen voor beheerde services (PEC)](/partner-center/partner-earned-credit) voor klanten die [zich hebben aangemeld bij de Microsoft-klantovereenkomst (MCA) ](/partner-center/confirm-customer-agreement) en die [onder het Azure-plan](/partner-center/azure-plan-get-started) vallen.
 
 Als u herkenning voor Azure Lighthouse-activiteiten wilt behalen, moet u [uw MPN-id koppelen](../../cost-management-billing/manage/link-partner-id.md) aan ten minste één gebruikers account in uw Tenant beheren en ervoor zorgen dat het gekoppelde account toegang heeft tot elk van de onboarded abonnementen.
 

@@ -1,17 +1,17 @@
 ---
 title: 'Snelstart: oproepen toevoegen aan een iOS-app met behulp van Azure Communication Services'
 description: In deze snelstart leert u hoe u de Azure Communication Services-clientbibliotheek voor iOS kunt gebruiken.
-author: matthewrobertson
-ms.author: marobert
-ms.date: 07/24/2020
+author: chpalm
+ms.author: mikben
+ms.date: 03/10/2021
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: 36ec27f3a0e69126a91b52bed26dc645ec89e46e
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 6cdd38f1e849efc416d62f22bd85ed7efb2e6349
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101656613"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104719798"
 ---
 In deze quickstart leert u hoe u een oproep start met behulp van de clientbibliotheek voor oproepen van Azure Communication Services voor iOS.
 
@@ -37,7 +37,8 @@ Maak in Xcode een nieuw iOS-project en selecteer de sjabloon **Single View-app**
 
 ### <a name="install-the-package-and-dependencies-with-cocoapods"></a>Installeer het pakket en de afhankelijkheden met CocoaPods
 
-1. Maak een Podfile voor uw toepassing, zoals:
+1. Als u een Podfile voor uw toepassing wilt maken, opent u de Terminal en navigeert u naar de projectmap en voert u ```pod init```
+3. Voeg de volgende code toe aan de Podfile en sla het op:
 
    ```
    platform :ios, '13.0'
@@ -50,7 +51,7 @@ Maak in Xcode een nieuw iOS-project en selecteer de sjabloon **Single View-app**
    end
    ```
 
-2. Voer `pod install` uit.
+3. Voer `pod install` uit.
 3. Open de `.xcworkspace` met Xcode.
 
 ### <a name="request-access-to-the-microphone"></a>Toegang tot de microfoon aanvragen

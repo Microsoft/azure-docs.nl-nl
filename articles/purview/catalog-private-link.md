@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 03/02/2021
-ms.openlocfilehash: d9088e5c6302c41c64f2a2e9034e7c3d659e37eb
-ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
+ms.openlocfilehash: 09fa10e7f7751321601c5c4871b2cf36ccf6f01f
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102615632"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104720927"
 ---
 # <a name="use-private-endpoints-for-your-purview-account"></a>Privé-eind punten gebruiken voor uw controle sfeer liggen-account
 
@@ -24,13 +24,16 @@ U kunt privé-eind punten voor uw controle sfeer liggen-accounts gebruiken om cl
 
 1. Algemene informatie vullen en connectiviteits methode instellen op privé-eind punt op het tabblad **netwerk** . Stel uw persoonlijke eind punten voor opname in door Details te verstrekken van het **abonnement, Vnet en subnet** dat u wilt koppelen aan uw persoonlijke eind punt.
 
+    > [!NOTE]
+    > Maak een inslikken persoonlijk eind punt alleen als u van plan bent om netwerk isolatie voor end-to-end-scan scenario's in te scha kelen voor uw Azure-en on-premises bronnen. We ondersteunen momenteel geen persoonlijke inslikken-eind punten die samen werken met uw AWS-bronnen.
+
     :::image type="content" source="media/catalog-private-link/create-pe-azure-portal.png" alt-text="Een persoonlijk eind punt maken in de Azure Portal":::
 
 1. U kunt desgewenst ook een **privé-DNS zone** instellen voor elk privé-eind punt voor inslikken.
 
 1. Klik op toevoegen om een persoonlijk eind punt toe te voegen voor uw controle sfeer liggen-account.
 
-1. Op de pagina persoonlijk eind punt maken stelt u controle sfeer liggen subresource in op **account**, kiest u uw virtuele netwerk en subnet en selecteert u de privé-DNS zone waarin de DNS wordt geregistreerd (u kunt ook uw binnengehaalde DNS-servers gebruiken of DNS-records maken met behulp van host-bestanden op uw virtuele machines).
+1. Op de pagina persoonlijk eind punt maken stelt u controle sfeer liggen subresource in op **account**, kiest u uw virtuele netwerk en subnet en selecteert u de privé-DNS zone waarin de DNS wordt geregistreerd (u kunt ook uw eigen DNS-servers gebruiken of DNS-records maken met behulp van host-bestanden op uw virtuele machines).
 
     :::image type="content" source="media/catalog-private-link/create-pe-account.png" alt-text="Selecties voor het maken van een persoonlijk eind punt":::
 
@@ -89,6 +92,20 @@ De onderstaande instructies zijn voor het veilig openen van controle sfeer ligge
 6. Zodra de nieuwe regel is gemaakt, gaat u terug naar de virtuele machine en probeert u zich opnieuw aan te melden met uw AAD-referenties. Als de aanmelding is geslaagd, is de controle sfeer liggen-Portal klaar voor gebruik. In sommige gevallen wordt AAD omgeleid naar andere domeinen om zich aan te melden op basis van het account type van de klant. Bijvoorbeeld: voor een live.com-account wordt AAD omgeleid naar live.com naar login, waarna deze aanvragen opnieuw worden geblokkeerd. Voor micro soft-werknemers accounts krijgt AAD toegang tot msft.sts.microsoft.com voor aanmeldings gegevens. Controleer het tabblad netwerk aanvragen in browser netwerk om te zien welke aanvragen van het domein worden geblokkeerd, voer de vorige stap opnieuw uit om het IP-adres op te halen en uitgaande poort regels toe te voegen aan de netwerk beveiligings groep om aanvragen voor dat IP-adres toe te staan. Als u de IP-adresbereiken van het precieze aanmeldings domein kent, kunt u ze ook rechtstreeks toevoegen aan netwerk regels.
 
 7. Meld u nu aan bij AAD. De controle sfeer liggen-portal wordt geladen, maar het weer geven van alle controle sfeer liggen-accounts werkt niet omdat alleen toegang kan worden gekregen tot een specifiek controle sfeer liggen-account. Voer *Web. controle sfeer liggen. Azure. com/resource/{PurviewAccountName}* in om direct het controle sfeer liggen-account te bezoeken waarvoor u een persoonlijk eind punt hebt ingesteld.
+ 
+## <a name="ingestion-private-endpoints-and-scanning-sources-in-private-networks-vnets-and-behind-private-endpoints"></a>Inslikken van persoonlijke eind punten en scan bronnen in particuliere netwerken, Vnets en achter persoonlijke eind punten
+
+Als u ervoor wilt zorgen dat netwerk isolatie voor uw meta gegevens stroomt vanuit de bron die wordt gescand naar controle sfeer liggen DataMap, moet u deze stappen volgen:
+1. Een **inslikken persoonlijk eind punt** inschakelen door de stappen in [deze](#creating-an-ingestion-private-endpoint) sectie te volgen
+1. Scan de bron met een **zelf-hostende IR**.
+ 
+    1. Alle on-premises bron typen, zoals SQL Server, Oracle, SAP en anderen, worden momenteel alleen ondersteund via zelf-hostende IR-scans. De zelf-hostende IR moet binnen uw particuliere netwerk worden uitgevoerd en moet vervolgens worden gekoppeld aan uw Vnet in Azure. Uw Azure vnet moet vervolgens worden ingeschakeld op uw inslikken persoonlijk eind punt door de [volgende stappen uit te voeren](#creating-an-ingestion-private-endpoint) 
+    1. Voor alle **Azure** -bron typen zoals Azure Blob storage, Azure SQL database en anderen, moet u expliciet de scan uitvoeren met behulp van zelf-hostende IR om te zorgen voor netwerk isolatie. Volg de [onderstaande stappen om](manage-integration-runtimes.md) een zelf-hostende IR in te stellen. Stel vervolgens uw scan in op de Azure-bron door de zelf-hostende IR te kiezen in de vervolg keuzelijst **verbinding maken via Integration runtime** om te zorgen voor netwerk isolatie. 
+    
+    :::image type="content" source="media/catalog-private-link/shir-for-azure.png" alt-text="Azure scan uitvoeren met behulp van zelf-hostende IR":::
+
+> [!NOTE]
+> We bieden momenteel geen ondersteuning voor de MSI-referentie methode wanneer u uw Azure-bronnen scant met een zelf-hostende IR. U moet een van de andere ondersteunde referentie methode voor die Azure-bron gebruiken.
 
 ## <a name="enable-private-endpoint-on-existing-purview-accounts"></a>Persoonlijk eind punt inschakelen voor bestaande controle sfeer liggen-accounts
 
@@ -101,7 +118,7 @@ Er zijn twee manieren om controle sfeer liggen persoonlijke eind punten toe te v
 
 1. Ga naar het controle sfeer liggen-account in het Azure Portal, selecteer de verbindingen voor privé-eind punten in het gedeelte **netwerken** van **instellingen**.
 
-:::image type="content" source="media/catalog-private-link/pe-portal.png" alt-text="Persoonlijk eind punt voor de portal maken":::
+    :::image type="content" source="media/catalog-private-link/pe-portal.png" alt-text="Persoonlijk eind punt voor account maken":::
 
 1. Klik op + persoonlijk eind punt om een nieuw persoonlijk eind punt te maken.
 
@@ -115,6 +132,20 @@ Er zijn twee manieren om controle sfeer liggen persoonlijke eind punten toe te v
 
 > [!NOTE]
 > U moet dezelfde stappen volgen als hierboven voor de doel subresource die als **Portal** is geselecteerd.
+
+#### <a name="creating-an-ingestion-private-endpoint"></a>Een persoonlijk eind punt voor opname maken
+
+1. Ga naar het controle sfeer liggen-account in het Azure Portal, selecteer de verbindingen voor privé-eind punten in het gedeelte **netwerken** van **instellingen**.
+1. Ga naar het tabblad **opname van persoonlijk eind punt verbindingen** en klik op **+ Nieuw** om een nieuw inslikken persoonlijk eind punt te maken.
+
+1. Vul basis gegevens en Vnet-Details in.
+ 
+    :::image type="content" source="media/catalog-private-link/ingestion-pe-fill-details.png" alt-text="Details van persoonlijk eind punt invullen":::
+
+1. Klik op **maken** om de configuratie te volt ooien.
+
+> [!NOTE]
+> Privé-eind punten voor opname kunnen alleen worden gemaakt via de controle sfeer liggen Azure Portal-ervaring die hierboven wordt beschreven. Het kan niet worden gemaakt vanuit het persoonlijke koppelings centrum.
 
 ### <a name="using-the-private-link-center"></a>Het persoonlijke koppelings centrum gebruiken
 
@@ -132,6 +163,15 @@ Er zijn twee manieren om controle sfeer liggen persoonlijke eind punten toe te v
 
 > [!NOTE]
 > U moet dezelfde stappen volgen als hierboven voor de doel subresource die als **Portal** is geselecteerd.
+
+## <a name="firewalls-to-restrict-public-access"></a>Firewalls voor het beperken van open bare toegang
+
+Volg de onderstaande stappen om de toegang tot het controle sfeer liggen-account volledig van open bare Internet af te melden. Deze instelling is van toepassing op zowel privé-eind punten als opname van privé-eind punten.
+
+1. Ga naar het controle sfeer liggen-account in het Azure Portal, selecteer de verbindingen voor privé-eind punten in het gedeelte **netwerken** van **instellingen**.
+1. Ga naar het tabblad Firewall en zorg ervoor dat de wissel knop is ingesteld op **weigeren**.
+
+    :::image type="content" source="media/catalog-private-link/private-endpoint-firewall.png" alt-text="Firewall instellingen voor privé-eind punt":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

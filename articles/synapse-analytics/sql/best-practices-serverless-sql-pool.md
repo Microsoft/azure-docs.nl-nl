@@ -10,18 +10,26 @@ ms.subservice: sql
 ms.date: 05/01/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 75e187369eccefb255ae2bbd88de79afbc4fd4dc
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: a47982012dcaa2eabda93c93508b23f30525812d
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104669471"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104720386"
 ---
 # <a name="best-practices-for-serverless-sql-pool-in-azure-synapse-analytics"></a>Aanbevolen procedures voor serverloze SQL-groepen in azure Synapse Analytics
 
 In dit artikel vindt u een verzameling aanbevolen procedures voor het gebruik van serverloze SQL-groepen. Een serverloze SQL-groep is een resource in azure Synapse Analytics.
 
 Met serverloze SQL-pool kunt u een query uitvoeren op bestanden in uw Azure-opslag accounts. Het bevat geen lokale opslag-of opname mogelijkheden. Alle bestanden waarvan de query doelen zijn, zijn dus extern naar een serverloze SQL-groep. Alles wat verband houdt met het lezen van bestanden uit de opslag kan gevolgen hebben voor de prestaties van query's.
+
+## <a name="client-applications-and-network-connections"></a>Client toepassingen en netwerk verbindingen
+
+Zorg ervoor dat uw client toepassing is verbonden met de dichtstbijzijnde mogelijke Synapse-werk ruimte met de optimale verbinding.
+- Een client toepassing zoeken met de Synapse-werk ruimte. Als u toepassingen zoals Power BI of Azure Analysis Service gebruikt, moet u ervoor zorgen dat ze zich in dezelfde regio bevinden waar u uw Synapse-werk ruimte hebt geplaatst. Maak, indien nodig, de afzonderlijke werk ruimten die zijn gekoppeld aan uw client toepassingen. Het plaatsen van een client toepassing en de Synapse-werk ruimte in een andere regio kan leiden tot grotere latentie en een langzamere streaming van resultaten.
+- Als u gegevens uit uw on-premises toepassing leest, moet u ervoor zorgen dat de Synapse-werk ruimte zich in de regio bevindt die zich dicht bij uw locatie bevindt.
+- Zorg ervoor dat er geen problemen met de netwerk bandbreedte zijn tijdens het lezen van een grote hoeveelheid gegevens.
+- Gebruik Synapse Studio niet om een grote hoeveelheid gegevens te retour neren. Synapse Studio is web hulp programma dat gebruikmaakt van het HTTPS-protocol om gegevens over te dragen. Gebruik Azure Data Studio of SQL Server Management Studio om een grote hoeveelheid gegevens te lezen.
 
 ## <a name="storage-and-content-layout"></a>Indeling van opslag en inhoud
 
@@ -55,6 +63,10 @@ Als dat mogelijk is, kunt u bestanden voorbereiden voor betere prestaties:
 - Probeer de grootte van het CSV-bestand te hand haven tussen 100 MB en 10 GB.
 - Het is beter om even grote bestanden te hebben voor één OPENROWSET-pad of een externe tabel locatie.
 - Partitioneer uw gegevens door partities op te slaan in verschillende mappen of bestands namen. Zie [functies filename en filepath gebruiken om specifieke partities te bereiken](#use-filename-and-filepath-functions-to-target-specific-partitions).
+
+### <a name="colocate-your-cosmosdb-analytical-storage-and-serverless-sql-pool"></a>Uw CosmosDB-analytische opslag en serverloze SQL-groep meevinden
+
+Zorg ervoor dat uw CosmosDB-analytische opslag zich in dezelfde regio bevindt als de Synapse-werk ruimte. Query's in meerdere regio's kunnen grote latenties veroorzaken.
 
 ## <a name="csv-optimizations"></a>CSV-optimalisaties
 

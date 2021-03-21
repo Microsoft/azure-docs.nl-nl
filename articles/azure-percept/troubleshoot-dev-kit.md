@@ -7,12 +7,12 @@ ms.service: azure-percept
 ms.topic: how-to
 ms.date: 02/18/2021
 ms.custom: template-how-to
-ms.openlocfilehash: 93812cf2b0db7fc3557e31c8d9e8053831c7b90f
-ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
+ms.openlocfilehash: 826759907bfe5ec3359bf5c9125909466372c68f
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "103010997"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104608143"
 ---
 # <a name="azure-percept-dk-dev-kit-troubleshooting"></a>Problemen oplossen met Azure percept DK (dev kit)
 
@@ -29,6 +29,12 @@ Als u de uitvoer naar een txt-bestand wilt omleiden voor verdere analyse, gebrui
 
 ```console
 sudo [command] > [file name].txt
+```
+
+Wijzig de machtigingen van het txt-bestand zodat het kan worden gekopieerd:
+
+```console
+sudo chmod 666 [file name].txt
 ```
 
 Nadat de uitvoer naar een txt-bestand is omgeleid, kopieert u het bestand naar uw host-PC via SCP:
@@ -60,9 +66,9 @@ Raadpleeg de documentatie voor het [oplossen van problemen met het Azure IOT edg
 |Azure IoT Edge          |```sudo journalctl -u iotedge -f``` |de logboeken van de Azure IoT Edge Security Manager weer geven |
 |Azure IoT Edge          |```sudo systemctl restart iotedge``` |de Azure IoT Edge-beveiligings-daemon opnieuw opstarten |
 |Azure IoT Edge          |```sudo iotedge list```           |de geïmplementeerde Azure IoT Edge modules weer geven |
-|Overige             |```df [option] [file]```          |informatie over beschik bare/totale ruimte in opgegeven bestands systeem (en) weer geven |
-|Overige             |`ip route get 1.1.1.1`        |apparaat-IP en interface-informatie weer geven |
-|Overige             |<code>ip route get 1.1.1.1 &#124; awk '{print $7}'</code> <br> `ifconfig [interface]` |alleen IP-adres van apparaat weer geven |
+|Anders             |```df [option] [file]```          |informatie over beschik bare/totale ruimte in opgegeven bestands systeem (en) weer geven |
+|Anders             |`ip route get 1.1.1.1`        |apparaat-IP en interface-informatie weer geven |
+|Anders             |<code>ip route get 1.1.1.1 &#124; awk '{print $7}'</code> <br> `ifconfig [interface]` |alleen IP-adres van apparaat weer geven |
 
 
 De ```journalctl``` Wi-Fi-opdrachten kunnen worden gecombineerd met de volgende opdracht:

@@ -6,12 +6,12 @@ services: azure-monitor
 ms.topic: conceptual
 ms.date: 06/12/2020
 ms.author: bwren
-ms.openlocfilehash: 557fc6e358f371b47c1df314508e3565d843a28c
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 7583b4037d350b9190d6eae30c28b907b1d41d86
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102049182"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104722851"
 ---
 # <a name="azure-activity-log"></a>Azure-activiteitenlogboek
 Het activiteitenlogboek is een [platformlogboek](./platform-logs-overview.md) in Azure dat inzicht biedt in gebeurtenissen op abonnementsniveau. Dit geldt ook voor gegevens zoals wanneer een resource wordt gewijzigd of wanneer een virtuele machine wordt gestart. U kunt het activiteitenlogboek weergeven in de Azure-portal, of items ophalen met PowerShell en CLI. Voor aanvullende functionaliteit moet u een diagnostische instelling maken om het activiteiten logboek naar [Azure monitor logboeken](../logs/data-platform-logs.md)te verzenden naar Azure Event hubs om buiten Azure door te sturen, of om Azure Storage te archiveren. In dit artikel vindt u informatie over het weer geven van het activiteiten logboek en het verzenden ervan naar verschillende bestemmingen.
@@ -27,6 +27,11 @@ U kunt het activiteitenlogboek openen vanuit de meeste menu's in de Azure Portal
 ![Activiteiten logboek weer geven](./media/activity-log/view-activity-log.png)
 
 Zie [Azure activiteiten logboek gebeurtenis schema](activity-log-schema.md#categories)voor een beschrijving van de categorieën activiteiten Logboeken.
+
+## <a name="download-the-activity-log"></a>Het activiteiten logboek downloaden
+Selecteer **als CSV-bestand downloaden** om de gebeurtenissen in de huidige weer gave te downloaden.
+
+![Activiteiten logboek downloaden](media/activity-log/download-activity-log.png)
 
 ### <a name="view-change-history"></a>Wijzigings overzicht weer geven
 

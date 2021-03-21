@@ -12,12 +12,12 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ''
 ms.date: 02/01/2021
-ms.openlocfilehash: 6ba1ba9d8c809a805fe8691baf96350b70ec6a51
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 3be01c304a40317e0d21baf6789ef1376cd89b80
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101691889"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104608065"
 ---
 # <a name="automate-management-tasks-using-sql-agent-jobs-in-azure-sql-managed-instance"></a>Beheer taken automatiseren met SQL-Agent taken in Azure SQL Managed instance
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -81,7 +81,7 @@ SQL Agent-taakstappen zijn reeksen met acties die door SQL Agent moeten worden u
 Met SQL-Agent kunt u verschillende typen taak stappen maken, zoals Transact-SQL-taak stappen voor het uitvoeren van één Transact-SQL-batch op basis van de data base, of de besturingssysteem opdracht/Power shell-stappen waarmee een aangepast besturings systeem script kan worden uitgevoerd, [SSIS-taak stappen](../../data-factory/how-to-invoke-ssis-package-managed-instance-agent.md) waarmee u gegevens kunt laden met SSIS runtime of [replicatie](../managed-instance/replication-transactional-overview.md) stappen die wijzigingen van uw Data Base naar andere data base
 
 > [!Note]
-> Zie voor meer informatie over het gebruik van de Azure SSIS-Integration Runtime met SSISDB die door Azure SQL Managed instance worden gehost [Azure SQL Managed instance met SQL Server Integration Services (SSIS) in azure Data Factory gebruiken](/../azure/data-factory/how-to-use-sql-managed-instance-with-ir.md).
+> Zie voor meer informatie over het gebruik van de Azure SSIS-Integration Runtime met SSISDB die door Azure SQL Managed instance worden gehost [Azure SQL Managed instance met SQL Server Integration Services (SSIS) in azure Data Factory gebruiken](../../data-factory/how-to-use-sql-managed-instance-with-ir.md).
 
 [Transactionele replicatie](../managed-instance/replication-transactional-overview.md) kan de wijzigingen van uw tabellen repliceren naar andere data bases in Azure SQL Managed Instance, Azure SQL Database of SQL Server. Zie [replicatie configureren in Azure SQL Managed instance](../../azure-sql/managed-instance/replication-between-two-instances-configure-tutorial.md)voor meer informatie. 
 
@@ -200,7 +200,7 @@ GRANT EXECUTE ON master.dbo.xp_sqlagent_is_starting TO [login_name];
 GRANT EXECUTE ON master.dbo.xp_sqlagent_notify TO [login_name];
 ```
 
-## <a name="learn-more"></a>Lees meer
+## <a name="learn-more"></a>Meer informatie
 
 - [Wat is Azure SQL Managed Instance?](../managed-instance/sql-managed-instance-paas-overview.md)
 - [Wat is er nieuw in Azure SQL Database & SQL Managed instance?](../../azure-sql/database/doc-changes-updates-release-notes.md?tabs=managed-instance)

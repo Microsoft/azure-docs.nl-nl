@@ -2,14 +2,14 @@
 author: rothja
 ms.service: app-service
 ms.topic: include
-ms.date: 03/04/2020
+ms.date: 03/17/2020
 ms.author: msangapu
-ms.openlocfilehash: bcbbd133c71b2917b73c200c4453ea57385fcaf1
-ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.openlocfilehash: 80d295d017b11d86df7a3fe4c14afc7a5665cd96
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102532515"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104612397"
 ---
 | Resource | Gratis | Gedeeld | Basic | Standard | Premium (v1-v3) | Geïsoleerd </th> |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -45,18 +45,28 @@ ms.locfileid: "102532515"
 | Kudu | X | X | X | X | X | X |
 | [Verificatie en autorisatie](../articles/app-service/overview-authentication-authorization.md) | X | X | X | X | X | X |
 | [Door App Service beheerde certificaten (openbare preview)](https://azure.microsoft.com/updates/secure-your-custom-domains-at-no-cost-with-app-service-managed-certificates-preview/)<sup>12</sup> | |  | X | X | X | X |
-| SLA | |  |99.95%|99.95%|99.95%|99.95%|  
+| SLA | |  |99.95%|99.95%|99.95%|99.95%|
 
-<sup>1</sup>Apps en opslagquota's gelden per App Service-abonnement tenzij anders vermeld.  
-<sup>2</sup>Het werkelijke aantal apps dat u kunt hosten op deze machines, is afhankelijk van de activiteit van de apps, de grootte van het machine-exemplaar en het bijbehorende resourcegebruik.  
-<sup>3</sup>Toegewezen exemplaren kunnen verschillende groottes hebben. Zie [Prijzen van App Service](https://azure.microsoft.com/pricing/details/app-service/) voor meer informatie.  
-<sup>4</sup>Meer zijn op aanvraag toegestaan.  
-<sup>5</sup>De opslaglimiet is de totale inhoudsgrootte voor alle apps in hetzelfde App Service-abonnement. De totale inhoudsgrootte van alle apps in alle App Service-abonnementen in één resourcegroep en regio mag niet meer dan 500 GB bedragen.  
-<sup>6</sup>Deze resources worden beperkt door fysieke resources op de toegewezen exemplaren (de grootte van het exemplaar en het aantal exemplaren).  
-<sup>7</sup>Als u een app in de basislaag naar twee exemplaren wilt schalen, hebt u 350 gelijktijdige verbindingen voor elk van de twee exemplaren. Voor de standaardlaag en hoger zijn er geen theoretische limieten voor het aantal websockets, maar het aantal websockets kan door andere factoren worden beperkt. Bijvoorbeeld maximaal aantal toegestane gelijktijdige aanvragen (gedefinieerd door `maxConcurrentRequestsPerCpu`): 7500 per kleine VM, 15.000 per gemiddelde VM (7500 x 2 kernen) en 75.000 per grote VM (18.750 x 4 kernen).  
-<sup>8</sup>Het maximum aantal IP-verbindingen geldt per exemplaar en is afhankelijk van de grootte van het exemplaar: 1,920 per B1/S1/P1V3 instance, 3,968 per B2/S2/P2V3 instance, 8,064 per B3/S3/P3V3 instance.  
-<sup>9</sup>De quotumlimiet per abonnement van het App Service-certificaat kan worden verhoogd via een ondersteuningsaanvraag tot een maximumlimiet van 200.  
-<sup>10</sup>App Service-geïsoleerde SKU's kunnen intern worden verdeeld (ILB) met Azure Load Balancer, dus er is geen openbare verbinding via internet. Als gevolg hiervan moeten sommige functies van een ILB-geïsoleerde App Service worden gebruikt vanaf machines met rechtstreekse toegang tot het ILB-netwerkeindpunt.  
-<sup>11</sup>Voer aangepaste uitvoerbare bestanden en/of scripts op aanvraag, op basis van een schema of continu als een achtergrondtaak binnen uw App Service-exemplaar uit. AlwaysOn is vereist voor de continue uitvoering van webjobs. Er is geen vooraf gedefinieerde limiet voor het aantal webjobs dat kan worden uitgevoerd in een App Service-exemplaar. Er zijn praktische limieten die afhankelijk zijn van wat de toepassingscode probeert te doen.
+<sup>1</sup> apps en opslag quota zijn per app service abonnement, tenzij anders vermeld.
 
-<sup>12</sup>Domeinen zonder voorvoegsel worden niet ondersteund. Alleen standaardcertificaten verlenen (jokertekencertificaten zijn niet beschikbaar). Beperkt tot slechts één gratis certificaat per aangepast domein.
+<sup>2</sup> het werkelijke aantal apps dat u op deze machines kunt hosten, is afhankelijk van de activiteit van de apps, de grootte van de computer instanties en het bijbehorende resource gebruik.
+
+<sup>3</sup> toegewezen exemplaren kunnen van verschillende grootten zijn. Zie [Prijzen van App Service](https://azure.microsoft.com/pricing/details/app-service/) voor meer informatie.
+
+nog <sup>4</sup> zijn op aanvraag toegestaan.
+
+<sup>5</sup> de opslag limiet is de totale inhouds grootte voor alle apps in hetzelfde app service-plan. De totale inhouds grootte van alle apps in alle app service-abonnementen in één resource groep en regio mag niet groter zijn dan 500 GB. Het bestandssysteem quotum voor App Service gehoste apps wordt bepaald door het samen voegen van App Service plannen die zijn gemaakt in een regio en resource groep.
+
+<sup>6</sup> deze resources zijn beperkt door fysieke resources op de toegewezen instanties (de grootte van het exemplaar en het aantal exemplaren).
+
+<sup>7</sup> als u een app in de basis-laag schaalt naar twee exemplaren, hebt u 350 gelijktijdige verbindingen voor elk van de twee exemplaren. Voor de standaardlaag en hoger zijn er geen theoretische limieten voor het aantal websockets, maar het aantal websockets kan door andere factoren worden beperkt. Bijvoorbeeld maximaal aantal toegestane gelijktijdige aanvragen (gedefinieerd door `maxConcurrentRequestsPerCpu`): 7500 per kleine VM, 15.000 per gemiddelde VM (7500 x 2 kernen) en 75.000 per grote VM (18.750 x 4 kernen).
+
+<sup>8</sup> het maximum aantal IP-verbindingen is per exemplaar en is afhankelijk van de instantie grootte: 1.920 per B1/S1/P1V3 instance, 3.968 per B2/S2/P2V3-instantie, 8.064 per B3/S3/P3V3-exemplaar.
+
+<sup>9</sup> de app service Certificate quotum limiet per abonnement kan worden verhoogd via een ondersteunings aanvraag tot een maximum limiet van 200.
+
+<sup>10</sup> app service isolated sku's kunnen intern worden verdeeld (ILB) met Azure Load Balancer, dus er is geen open bare verbinding via internet. Als gevolg hiervan moeten sommige functies van een ILB-geïsoleerde App Service worden gebruikt vanaf machines met rechtstreekse toegang tot het ILB-netwerkeindpunt.
+
+<sup>11</sup> aangepaste uitvoer bare bestanden en/of scripts op aanvraag, op basis van een schema of continu uitvoeren als een achtergrond taak binnen uw app service-exemplaar. AlwaysOn is vereist voor de continue uitvoering van webjobs. Er is geen vooraf gedefinieerde limiet voor het aantal webjobs dat kan worden uitgevoerd in een App Service-exemplaar. Er zijn praktische limieten die afhankelijk zijn van wat de toepassingscode probeert te doen.
+
+<sup>12</sup> niet-geblote domeinen worden niet ondersteund. Alleen standaard certificaten verlenen (joker tekens zijn niet beschikbaar). Beperkt tot slechts één gratis certificaat per aangepast domein.

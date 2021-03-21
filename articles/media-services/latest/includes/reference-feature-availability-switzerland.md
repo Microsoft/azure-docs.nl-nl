@@ -4,19 +4,19 @@ ms.service: media-services
 ms.topic: include
 ms.date: 10/28/2020
 ms.author: inhenkel
-ms.openlocfilehash: 0d218d0227670bbe8f4396bfcaa796649337656f
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.openlocfilehash: 5fa2d8a8ffdb154464f091c9612ea3bf0f2efbfa
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93242560"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104612040"
 ---
 <!--Feature availability in region-->
 ## <a name="switzerland"></a>Zwitserland
 
 | Functie | Zwitserland - noord | Zwitserland - west |
 | --- | :---: | :---: |
-| [Azure-EventGrid](../reacting-to-media-services-events.md) |![Algemene Beschik baarheid van Azure EventGrid Zwitserland-noord](../media/azure-clouds-regions/ga.svg)  |![Algemene Beschik baarheid van Azure EventGrid Zwitserland-west](../media/azure-clouds-regions/ga.svg) |
+| [Azure EventGrid](../monitoring/reacting-to-media-services-events.md) |![Algemene Beschik baarheid van Azure EventGrid Zwitserland-noord](../media/azure-clouds-regions/ga.svg)  |![Algemene Beschik baarheid van Azure EventGrid Zwitserland-west](../media/azure-clouds-regions/ga.svg) |
 | [VideoAnalyzerPreset](../analyzing-video-audio-files-concept.md) |![VideoAnalyzerPreset Zwitserland-noord algemene Beschik baarheid](../media/azure-clouds-regions/ga.svg)  | ![VideoAnalyzerPreset Zwitserland-west algemene Beschik baarheid](../media/azure-clouds-regions/ga.svg) |
 | [AudioAnalyzerPreset](../analyzing-video-audio-files-concept.md) |![AudioAnalyzerPreset Zwitserland-noord algemene Beschik baarheid](../media/azure-clouds-regions/ga.svg)  | ![AudioAnalyzerPreset Zwitserland-west algemene Beschik baarheid](../media/azure-clouds-regions/ga.svg) |
 | [StandardEncoderPreset](../encoding-concept.md) |![StandardEncoderPreset Zwitserland-noord algemene Beschik baarheid](../media/azure-clouds-regions/ga.svg)  | ![StandardEncoderPreset Zwitserland-west algemene Beschik baarheid](../media/azure-clouds-regions/ga.svg) |

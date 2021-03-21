@@ -10,10 +10,10 @@ ms.topic: how-to
 ms.date: 8/30/2020
 ms.author: mbaldwin
 ms.openlocfilehash: e7a8fd53e78e1aeab9db5af0432d0c3f1d786823
-ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100526949"
 ---
 # <a name="migrate-from-vault-access-policy-to-an-azure-role-based-access-control-permission-model"></a>Migreren van beleid voor kluis toegang naar een machtigings model op basis van op rollen gebaseerd toegangs beheer
@@ -118,7 +118,7 @@ Er zijn veel verschillen tussen het machtigings model voor het toegangs beleid v
 -  De roltoewijzing werkt niet na enkele minuten: er zijn situaties waarin roltoewijzingen langer kunnen duren. Het is belang rijk om de logica voor opnieuw proberen te schrijven in code om deze gevallen te behandelen.
 - Roltoewijzingen zijn verdwenen toen Key Vault werd verwijderd (zacht verwijderd) en hersteld. het is momenteel een beperking van de functie voor het voorlopig verwijderen van alle Azure-Services. Het is vereist om alle roltoewijzingen na het herstel opnieuw te maken.    
 
-## <a name="learn-more"></a>Lees meer
+## <a name="learn-more"></a>Meer informatie
 
 - [Overzicht van Azure RBAC](../../role-based-access-control/overview.md)
 - [Zelf studie voor aangepaste rollen](../../role-based-access-control/tutorial-custom-role-cli.md)

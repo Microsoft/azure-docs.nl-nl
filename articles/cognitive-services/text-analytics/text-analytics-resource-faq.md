@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 01/05/2021
 ms.author: aahi
 ms.openlocfilehash: 9a4e179767cc38169cd794f4cd629604bdcdaab0
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97955039"
 ---
 # <a name="frequently-asked-questions-faq-about-the-text-analytics-api"></a>Veelgestelde vragen over de Text Analytics-API
@@ -47,7 +47,7 @@ Normaal gesp roken bestaat de uitvoer uit zelfstandige naam woorden en objecten 
 
 Er worden verbeteringen aangebracht in modellen en algoritmen als de wijziging primair is of als de update stil is geslipstreamt in de-service als het een kleine is. Na verloop van tijd kan het voor komen dat dezelfde tekst invoer resulteert in een andere sentiment-Score of uitvoer van een sleutel woord groep. Dit is een normaal en opzettelijk gevolg van het gebruik van beheerde machine learning-resources in de Cloud.
 
-## <a name="service-availability-and-redundancy"></a>Beschik baarheid en redundantie van de service
+## <a name="service-availability-and-redundancy"></a>Servicebeschikbaarheid en redundantie
 
 ### <a name="is-text-analytics-service-zone-resilient"></a>Is Text Analytics service zone flexibel?
 
@@ -55,7 +55,7 @@ Ja. De Text Analytics-service is standaard zone-flexibel.
 
 ### <a name="how-do-i-configure-the-text-analytics-service-to-be-zone-resilient"></a>Hoe kan ik de Text Analytics-service zo configureren dat deze zone flexibel kan worden?
 
-Er is geen klant configuratie nodig om zone tolerantie in te scha kelen. Zone-tolerantie voor Text Analytics resources is standaard beschikbaar en wordt beheerd door de service zelf.
+Er is geen klantconfiguratie nodig om zonetolerantie in te schakelen. Zone-tolerantie voor Text Analytics resources is standaard beschikbaar en wordt beheerd door de service zelf.
 
 ## <a name="next-steps"></a>Volgende stappen
 

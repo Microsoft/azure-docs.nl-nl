@@ -11,10 +11,10 @@ ms.author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: ereilebr
 ms.openlocfilehash: 2eda67e377a3b61e696e732b916d788c00a18eae
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95908775"
 ---
 # <a name="query-acceleration-sql-language-reference"></a>Naslag informatie over SQL-taal voor query versnelling
@@ -29,7 +29,7 @@ De enige SQL-instructie die wordt ondersteund door de query versnelling is de SE
 SELECT * FROM table [WHERE expression] [LIMIT limit]
 ```
 
-Voor gegevens in CSV-indeling *table* moet de tabel `BlobStorage` .  Dit betekent dat de query wordt uitgevoerd op basis van welke Blob in de REST-aanroep is opgegeven.
+Voor gegevens in CSV-indeling  moet de tabel `BlobStorage` .  Dit betekent dat de query wordt uitgevoerd op basis van welke Blob in de REST-aanroep is opgegeven.
 Voor gegevens in JSON-indeling is *tabel* de tabel descriptor.   Zie de sectie [Table descriptors](#table-descriptors) van dit artikel.
 
 In het volgende voor beeld retourneert deze instructie voor elke rij waarvoor de WHERE- *expressie* waar retourneert, een nieuwe rij die wordt gemaakt van de evaluatie van elk van de projectie-expressies.
@@ -60,7 +60,7 @@ SELECT sys.split(split_size)FROM BlobStorage
 |INT      |64-bits geheel getal met teken.                     |
 |FLOAT    |64-bits (Double-Precision) drijvende komma.|
 |STRING   |Unicode-teken reeks met variabele lengte.            |
-|Neem|Een punt in de tijd.                           |
+|TIMESTAMP|Een punt in de tijd.                           |
 |BOOLEAN  |Waar of onwaar.                             |
 
 Bij het lezen van waarden uit gegevens in CSV-indeling, worden alle waarden als teken reeksen gelezen.  Teken reeks waarden kunnen worden geconverteerd naar andere typen met behulp van CAST-expressies.  Waarden kunnen impliciet worden geconverteerd naar andere typen, afhankelijk van de context. Zie [gegevens type prioriteit (Transact-SQL)](/sql/t-sql/data-types/data-type-precedence-transact-sql)voor meer informatie.
@@ -122,8 +122,8 @@ De SQL-taal voor de query versnelling ondersteunt de volgende standaard SQL-teke
 |[UPPER](/sql/t-sql/functions/upper-transact-sql)    |Retourneert een teken expressie met kleine teken gegevens die worden omgezet in hoofd letters.|
 |[SUBTEKENREEKS](/sql/t-sql/functions/substring-transact-sql)    |Retourneert een deel van een teken-, binaire-, tekst-of afbeeldings expressie in SQL Server.|
 |[TRIM](/sql/t-sql/functions/trim-transact-sql)    |Hiermee verwijdert u de spatie tekens (32) of andere opgegeven tekens vanaf het begin en het einde van een teken reeks.|
-|WITRUIMTE    |Description|
-|Volg    |Description|
+|WITRUIMTE    |Beschrijving|
+|Volg    |Beschrijving|
 
 Hier volgen enkele voor beelden:
 

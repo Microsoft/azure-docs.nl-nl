@@ -3,14 +3,14 @@ title: Melding over gepland onderhoud-Azure Database for MariaDB
 description: In dit artikel wordt de functie voor gepland onderhouds meldingen in Azure Database for MariaDB beschreven
 author: ambhatna
 ms.author: ambhatna
-ms.service: jroth
+ms.service: mariadb
 ms.topic: conceptual
 ms.date: 10/21/2020
-ms.openlocfilehash: a206d108b0935836fbc1cd5b7a1987dcf4e4725b
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: c290236dfe7e88999847f8cb0d66b2d3c868c1ab
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98664262"
 ---
 # <a name="planned-maintenance-notification-in-azure-database-for-mariadb"></a>Melding over gepland onderhoud in Azure Database for MariaDB
@@ -23,9 +23,9 @@ Azure Database for MariaDB-service voert automatische patching uit van de onderl
 
 Een gepland onderhoud is een onderhouds venster wanneer deze service-updates worden geïmplementeerd op servers in een bepaalde Azure-regio. Tijdens dit gepland onderhoud wordt een melding gecreëerd, om klanten te informeren wanneer de service-update is geïmplementeerd in de Azure-regio waarin hun servers worden gehost. De minimale duur tussen twee gepland onderhoud is 30 dagen. U ontvangt 72 uur van te voren een melding van het volgende onderhoudsvenster.
 
-## <a name="planned-maintenance---duration-and-customer-impact"></a>Gepland onderhoud-duur en klant impact
+## <a name="planned-maintenance---duration-and-customer-impact"></a>Gepland onderhoud: duur en impact voor de klant
 
-Voor een gepland onderhoud voor een bepaalde Azure-regio wordt doorgaans 15 uur verwacht. Het venster bevat ook buffer tijd voor het uitvoeren van een rollback-plan als dat nodig is. Tijdens gepland onderhoud kunnen de database server opnieuw worden opgestart of failovers, wat kan leiden tot een kortere Beschik baarheid van de database servers voor eind gebruikers. Azure Database for MariaDB-servers worden uitgevoerd in containers zodat de database server opnieuw wordt opgestart, wordt doorgaans in 60-120 seconden snel uitgevoerd. De volledige geplande onderhouds gebeurtenis, inclusief het opnieuw opstarten van de server, wordt zorgvuldig gecontroleerd door het technische team. De tijd van de failover van de server is afhankelijk van de herstel tijd van de data base, waardoor de data base langer online kan worden uitgevoerd als er sprake is van een zware trans actie op de server op het moment van de failover. Om te voor komen dat de computer opnieuw wordt opgestart, wordt aanbevolen om langlopende trans acties (bulksgewijs laden) te voor komen tijdens geplande onderhouds gebeurtenissen.
+Gepland onderhoud voor een bepaalde Azure-regio duurt naar verwachting 15 uur. Het venster bevat ook buffer tijd voor het uitvoeren van een rollback-plan als dat nodig is. Tijdens gepland onderhoud kunnen de database server opnieuw worden opgestart of failovers, wat kan leiden tot een kortere Beschik baarheid van de database servers voor eind gebruikers. Azure Database for MariaDB-servers worden uitgevoerd in containers zodat de database server opnieuw wordt opgestart, wordt doorgaans in 60-120 seconden snel uitgevoerd. De volledige geplande onderhouds gebeurtenis, inclusief het opnieuw opstarten van de server, wordt zorgvuldig gecontroleerd door het technische team. De tijd van de failover van de server is afhankelijk van de herstel tijd van de data base, waardoor de data base langer online kan worden uitgevoerd als er sprake is van een zware trans actie op de server op het moment van de failover. Om te voor komen dat de computer opnieuw wordt opgestart, wordt aanbevolen om langlopende trans acties (bulksgewijs laden) te voor komen tijdens geplande onderhouds gebeurtenissen.
 
 In samen vatting, terwijl de geplande onderhouds gebeurtenis gedurende 15 uur wordt uitgevoerd, is de impact van de afzonderlijke server 60 seconden lang, afhankelijk van de transactionele activiteit op de server. Er wordt een melding verzonden van 72 kalender uren voordat gepland onderhoud begint en een andere, terwijl er onderhoud wordt uitgevoerd voor een bepaalde regio.
 

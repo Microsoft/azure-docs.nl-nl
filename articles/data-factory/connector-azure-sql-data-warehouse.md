@@ -5,13 +5,13 @@ ms.author: jingwang
 author: linda33wj
 ms.service: data-factory
 ms.topic: conceptual
-ms.date: 02/10/2021
-ms.openlocfilehash: 38306b2fb3c0a51aeedbf1ebd9079dd787783093
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.date: 03/17/2021
+ms.openlocfilehash: 9c843ededd1fa863cc5eb4dc0db3a6da3478466d
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100364287"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104597518"
 ---
 # <a name="copy-and-transform-data-in-azure-synapse-analytics-by-using-azure-data-factory"></a>Gegevens in azure Synapse Analytics kopiëren en transformeren met behulp van Azure Data Factory
 
@@ -390,6 +390,7 @@ Als u gegevens wilt kopiëren naar Azure Synapse Analytics, stelt u het sink-typ
 | preCopyScript     | Geef een SQL-query voor de Kopieer activiteit op die moet worden uitgevoerd voordat er in elke uitvoering gegevens naar Azure Synapse Analytics worden geschreven. Gebruik deze eigenschap om de vooraf geladen gegevens op te schonen. | No                                            |
 | tableOption | Hiermee wordt aangegeven of [de Sink-tabel automatisch](copy-activity-overview.md#auto-create-sink-tables) moet worden gemaakt als deze niet bestaat op basis van het bron schema. Toegestane waarden zijn: `none` (standaard), `autoCreate` . |No |
 | disableMetricsCollection | Data Factory verzamelt metrische gegevens zoals Azure Synapse Analytics Dwu's voor het optimaliseren van de Kopieer prestaties en aanbevelingen, die extra toegang tot de hoofd database bieden. Als u zich zorgen maakt over dit gedrag, geeft u `true` op dat u deze functie wilt uitschakelen. | Nee (standaard instelling `false` ) |
+| maxConcurrentConnections |De bovengrens van gelijktijdige verbindingen die tot het gegevens archief zijn gemaakt tijdens de uitvoering van de activiteit. Geef alleen een waarde op als u gelijktijdige verbindingen wilt beperken.| No |
 
 #### <a name="azure-synapse-analytics-sink-example"></a>Voor beeld van Azure Synapse Analytics-Sink
 
@@ -520,7 +521,7 @@ Als niet aan de vereisten wordt voldaan, worden de instellingen door Azure Data 
    4. `nullValue` is standaard **ingesteld op '** "' ('"), en `treatEmptyAsNull` wordt als standaard waarde ingevuld of ingesteld op True.
    5. `encodingName` is standaard ingesteld op **UTF-8**.
    6. `quoteChar`, `escapeChar` en `skipLineCount` niet opgegeven. Poly base-ondersteuning koptekst rij overs Laan, die in ADF kan worden geconfigureerd `firstRowAsHeader` .
-   7. `compression` kan **geen compressie**, **gzip** of **Deflate** zijn.
+   7. `compression` kan **geen compressie**, **``GZip``** of **verkleinen**.
 
 3. Als uw bron een map is, `recursive` moet u de Kopieer activiteit instellen op True.
 
@@ -615,7 +616,7 @@ Als u deze functie wilt gebruiken, maakt u een [gekoppelde azure Blob Storage-se
 
 ### <a name="best-practices-for-using-polybase"></a>Aanbevolen procedures voor het gebruik van poly base
 
-De volgende secties bevatten aanbevolen procedures naast de procedures die worden genoemd in [Aanbevolen procedures voor Azure Synapse Analytics](../synapse-analytics/sql/best-practices-sql-pool.md).
+De volgende secties bevatten aanbevolen procedures naast de procedures die worden genoemd in [Aanbevolen procedures voor Azure Synapse Analytics](../synapse-analytics/sql/best-practices-dedicated-sql-pool.md).
 
 #### <a name="required-database-permission"></a>Vereiste database machtiging
 
@@ -709,7 +710,7 @@ De instructie COPY gebruiken ondersteunt de volgende configuratie:
 
 2. Indelings instellingen zijn met het volgende:
 
-   1. Voor **Parquet**: `compression` kan **geen compressie**, **Snappy** of **gzip** zijn.
+   1. Voor **Parquet**: `compression` kan **geen compressie**, **Snappy** of zijn **``GZip``** .
    2. Voor **Orc**: `compression` kan **geen compressie**, **```zlib```** of **Snappy** zijn.
    3. Voor **tekst met scheidings tekens**:
       1. `rowDelimiter` is expliciet ingesteld als **één teken** of als '**\r\n**', de standaard waarde wordt niet ondersteund.
@@ -717,7 +718,7 @@ De instructie COPY gebruiken ondersteunt de volgende configuratie:
       3. `encodingName` is standaard ingesteld op **UTF-8 of UTF-16**.
       4. `escapeChar` moet hetzelfde zijn als `quoteChar` , en is niet leeg.
       5. `skipLineCount` is standaard ingesteld op 0.
-      6. `compression` kan **geen compressie** of **gzip** zijn.
+      6. `compression` kan **geen compressie** of zijn **``GZip``** .
 
 3. Als uw bron een map is, `recursive` moet u in de Kopieer activiteit de waarde true instellen en `wildcardFilename` moet dit zijn `*` . 
 
@@ -821,7 +822,7 @@ Instellingen die specifiek zijn voor Azure Synapse Analytics, zijn beschikbaar o
 - Opnieuw maken: de tabel wordt verwijderd en opnieuw gemaakt. Vereist als er dynamisch een nieuwe tabel wordt gemaakt.
 - Afkappen: alle rijen uit de doel tabel worden verwijderd.
 
-**Fase ring inschakelen:** Hiermee wordt bepaald of [poly base](/sql/relational-databases/polybase/polybase-guide) moet worden gebruikt bij het schrijven naar Azure Synapse Analytics. De staging-opslag wordt geconfigureerd in de [activiteit gegevens stroom uitvoeren](control-flow-execute-data-flow-activity.md). 
+**Fase ring inschakelen:** Hierdoor kunnen Azure Synapse Analytics SQL-groepen worden geladen met behulp van de Kopieer opdracht en wordt aanbevolen voor de meeste Synpase-Sinks. De staging-opslag wordt geconfigureerd in de [activiteit gegevens stroom uitvoeren](control-flow-execute-data-flow-activity.md). 
 
 - Wanneer u beheerde identiteits verificatie voor uw gekoppelde opslag service gebruikt, moet u de benodigde configuraties voor [Azure-Blob](connector-azure-blob-storage.md#managed-identity) en [Azure data Lake Storage Gen2](connector-azure-data-lake-storage.md#managed-identity) .
 - Als uw Azure Storage is geconfigureerd met het VNet-service-eind punt, moet u beheerde identiteits verificatie gebruiken met ' vertrouwde micro soft-service toestaan ' die is ingeschakeld voor het opslag account, raadpleegt u de [gevolgen van het gebruik van VNet-service-eind punten met Azure Storage](../azure-sql/database/vnet-service-endpoint-rule-overview.md#impact-of-using-virtual-network-service-endpoints-with-azure-storage).

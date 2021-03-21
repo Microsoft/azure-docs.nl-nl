@@ -7,10 +7,10 @@ ms.topic: quickstart
 ms.date: 07/11/2019
 ms.custom: mvc, cli-validate, seodec18
 ms.openlocfilehash: 45c87f690c24e989a797cbd82147b9125e447e79
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97561780"
 ---
 # <a name="create-a-ruby-on-rails-app-in-app-service"></a>Een Ruby on Rails-app maken met App Service

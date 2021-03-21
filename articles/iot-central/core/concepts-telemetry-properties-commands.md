@@ -9,10 +9,10 @@ ms.service: iot-central
 services: iot-central
 ms.custom: device-developer
 ms.openlocfilehash: f027b2d41f63b5aa7ea3df87e06224abd629799b
-ms.sourcegitcommit: b513b0becf878eb9a1554c26da53aa48d580bb22
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100535311"
 ---
 # <a name="telemetry-property-and-command-payloads"></a>Payloads van telemetrie, eigenschappen en opdrachten
@@ -723,7 +723,7 @@ IoT Central verwacht een reactie van het apparaat naar updates van schrijf bare 
 
 `ac` is een numeriek veld dat gebruikmaakt van de waarden in de volgende tabel:
 
-| Waarde | Label | Description |
+| Waarde | Label | Beschrijving |
 | ----- | ----- | ----------- |
 | `'ac': 200` | Voltooid | De bewerking voor het wijzigen van de eigenschap is voltooid. |
 | `'ac': 202`  of `'ac': 201` | In behandeling | De bewerking voor het wijzigen van de eigenschap is in behandeling of wordt uitgevoerd |

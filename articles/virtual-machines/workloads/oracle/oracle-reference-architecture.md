@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 12/13/2019
 ms.author: kegorman
 ms.openlocfilehash: 6bce6f011086d9855c4da2739addbb34e661e2d6
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102507480"
 ---
 # <a name="reference-architectures-for-oracle-database-enterprise-edition-on-azure"></a>Referentie architecturen voor Oracle Database Enterprise Edition op Azure
@@ -55,7 +55,7 @@ Als uw toepassing het prestatie verlies niet toestaat bij het instellen van een 
 
 Wanneer u Oracle Standard Edition-data bases gebruikt, zijn er ISV-oplossingen, zoals DBVisit standby, waarmee u hoge Beschik baarheid en herstel na nood gevallen kunt instellen.
 
-## <a name="reference-architectures"></a>Referentiearchitecturen
+## <a name="reference-architectures"></a>Referentie-archtecturen
 
 ### <a name="oracle-data-guard"></a>Oracle Data Guard
 

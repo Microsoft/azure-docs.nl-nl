@@ -4,10 +4,10 @@ description: Dit artikel bevat een overzicht van Back-upcentrum voor Azure.
 ms.topic: conceptual
 ms.date: 09/30/2020
 ms.openlocfilehash: b42bb2719d03108212f62428dc97ed814899c63c
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102506043"
 ---
 # <a name="overview-of-backup-center"></a>Overzicht van Back-upcentrum

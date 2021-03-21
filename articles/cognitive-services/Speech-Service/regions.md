@@ -12,10 +12,10 @@ ms.date: 08/20/2020
 ms.author: panosper
 ms.custom: seodec18,references_regions
 ms.openlocfilehash: 646d29e72b91cd6afcde8e70ad8fd8715442b88e
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98786788"
 ---
 # <a name="speech-service-supported-regions"></a>Ondersteunde regio's voor spraak Services
@@ -50,7 +50,7 @@ Als u van plan bent een aangepast model met audio gegevens te trainen, gebruikt 
 
 Beschik bare regio's voor **intentie herkenning** via de Speech SDK zijn de volgende:
 
-| Wereld wijde regio | Regio           | Regio-id |
+| Wereld wijde regio | Region           | Regio-id |
 | ------------- | ---------------- | -------------------- |
 | Azië          | Azië - oost        | `eastasia`           |
 | Azië          | Azië - zuidoost   | `southeastasia`      |
@@ -71,7 +71,7 @@ Dit is een subset van de publicatie regio's die worden ondersteund door de [Lang
 
 De [spraak-SDK](speech-sdk.md) biedt ondersteuning voor **spraak assistent** -mogelijkheden via [directe line spraak](./direct-line-speech.md) in deze regio's:
 
-| Wereld wijde regio | Regio           | Regio-id    |
+| Wereld wijde regio | Region           | Regio-id    |
 | ------------- | ---------------- | -------------------- |
 | Noord-Amerika | VS - west          | `westus`             |
 | Noord-Amerika | VS - west 2        | `westus2`            |

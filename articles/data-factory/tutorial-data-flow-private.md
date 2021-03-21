@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 01/15/2021
 ms.openlocfilehash: a5c93244862d72f9c8ea2928c41e699302b1752b
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98249432"
 ---
 # <a name="transform-data-securely-by-using-mapping-data-flow"></a>Gegevens veilig transformeren met behulp van gegevens stroom toewijzen
@@ -40,7 +40,7 @@ In deze zelfstudie voert u de volgende stappen uit:
 
 Het bestand dat in deze zelf studie wordt getransformeerd, is moviesDB.csv, dat u kunt vinden op deze [github-inhouds site](https://raw.githubusercontent.com/djpmsft/adf-ready-demo/master/moviesDB.csv). Als u het bestand wilt ophalen uit GitHub, kopieert u de inhoud naar een tekst editor van uw keuze om deze lokaal op te slaan als een CSV-bestand. Als u het bestand naar uw opslag account wilt uploaden, raadpleegt u [blobs uploaden met de Azure Portal](../storage/blobs/storage-quickstart-blobs-portal.md). In de voor beelden wordt verwezen naar een container met de naam **Sample-Data**.
 
-## <a name="create-a-data-factory"></a>Een data factory maken
+## <a name="create-a-data-factory"></a>Een gegevensfactory maken
 
 In deze stap maakt u een data factory en opent u de Data Factory-gebruikers interface om een pijp lijn te maken in de data factory.
 

@@ -11,10 +11,10 @@ ms.workload: infrastructure-services
 ms.date: 10/28/2020
 ms.author: kumud
 ms.openlocfilehash: d02f85647d947c2f28527ba6f0397c2a98e73840
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98234185"
 ---
 # <a name="azure-networking-services-overview"></a>Overzicht van Azure-netwerkservices
@@ -53,7 +53,7 @@ In het volgende diagram ziet u meerdere site-naar-site-VPN-verbindingen met hetz
 
 Zie [VPN gateway](../vpn-gateway/vpn-gateway-about-vpngateways.md)voor meer informatie over verschillende typen VPN-verbindingen.
 
-### <a name="virtual-wan"></a><a name="virtualwan"></a>Virtual WAN
+### <a name="virtual-wan"></a><a name="virtualwan"></a>Virtuele WAN
 Azure Virtual WAN is een netwerk service die zorgt voor geoptimaliseerde en geautomatiseerde vertakkings connectiviteit met, en via Azure. Azure-regio's fungeren als hubs die u kunt gebruiken om uw filialen te koppelen aan. U kunt de Azure-backbone gebruiken om ook vertakkingen te verbinden en te profiteren van de connectiviteit van Branch-to-VNet. Met Azure Virtual WAN worden veel Azure Cloud Connectivity Services, zoals site-naar-site VPN, ExpressRoute, punt-naar-site-gebruikers-VPN, in één operationele interface gecombineerd. Connectiviteit met Azure VNets wordt tot stand gebracht met behulp van virtuele netwerk verbindingen. Zie [Wat is virtueel WAN van Azure?](../virtual-wan/virtual-wan-about.md)voor meer informatie.
 
 :::image type="content" source="./media/networking-overview/virtualwan1.png" alt-text="Virtual WAN-diagram":::
@@ -113,10 +113,10 @@ Klanten kunnen ervoor kiezen om [Azure WAF te implementeren met Application Gate
 
 :::image type="content" source="./media/networking-overview/waf-overview.png" alt-text="Web Application Firewall":::
 
-### <a name="network-security-groups"></a><a name="nsg"></a>Netwerkbeveiligingsgroepen
+### <a name="network-security-groups"></a><a name="nsg"></a>Netwerk beveiligings groepen
 U kunt netwerkverkeer naar en van Azure-resources in een virtueel Azure-netwerk filteren met een netwerkbeveiligingsgroep. Zie [Netwerkbeveiligingsgroepen](../virtual-network/network-security-groups-overview.md) voor meer informatie.
 
-### <a name="service-endpoints"></a><a name="serviceendpoints"></a>Service-eind punten
+### <a name="service-endpoints"></a><a name="serviceendpoints"></a>Service-eindpunten
 Met service-eindpunten van Virtual Network (VNet) kunt u de privé-adresruimte van uw virtuele netwerk en de identiteit van uw VNet uitbreiden naar Azure-services, via een directe verbinding. Met eindpunten kunt u uw kritieke Azure-serviceresources alleen beveiligen naar uw virtuele netwerken. Verkeer van uw VNet naar de Azure-service blijft altijd in het Microsoft Azure-backbonenetwerk. Zie [service-eind punten voor virtuele netwerken](../virtual-network/virtual-network-service-endpoints-overview.md)voor meer informatie.
 
 :::image type="content" source="./media/networking-overview/vnet-service-endpoints-overview.png" alt-text="Service-eindpunten voor virtueel netwerk":::
@@ -125,7 +125,7 @@ Met service-eindpunten van Virtual Network (VNet) kunt u de privé-adresruimte v
 
 In deze sectie worden de netwerk services in azure beschreven waarmee u toepassingen Content Delivery Network, Azure front-deur service, Traffic Manager, Load Balancer en Application Gateway kunt leveren.
 
-### <a name="content-delivery-network"></a><a name="cdn"></a>CDN (Content Delivery Network)
+### <a name="content-delivery-network"></a><a name="cdn"></a>Content Delivery Network
 Azure Content Delivery Network (CDN) biedt ontwikkelaars een globale oplossing voor het snel leveren van inhoud met hoge bandbreedte door de inhoud op strategische, fysieke knooppunten in de hele wereld in de cache op te slaan. Zie voor meer informatie over Azure CDN [Azure Content Delivery Network](../cdn/cdn-overview.md).
 
 :::image type="content" source="./media/networking-overview/cdn-overview.png" alt-text="Azure CDN":::

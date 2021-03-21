@@ -3,14 +3,14 @@ title: Servers-Azure Database for MariaDB
 description: In dit onderwerp vindt u overwegingen en richt lijnen voor het werken met Azure Database for MariaDB-servers.
 author: savjani
 ms.author: pariks
-ms.service: jroth
+ms.service: mariadb
 ms.topic: conceptual
 ms.date: 3/18/2020
-ms.openlocfilehash: abe17556d9ff62c44a33bfe4c4546a284785522e
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: 4d8293258083ea3e8d0172f510e5b41e91328736
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98664126"
 ---
 # <a name="server-concepts-in-azure-database-for-mariadb"></a>Server concepten in Azure Database for MariaDB

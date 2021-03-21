@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 11/04/2020
 ms.reviewer: sngun
 ms.openlocfilehash: b0d27cb2f941db374a144cbd5c026444730e24e8
-ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98247485"
 ---
 # <a name="understand-your-azure-cosmos-db-bill"></a>Meer informatie over uw Azure Cosmos DB-factuur
@@ -290,7 +290,7 @@ Uw totale factuur (zonder gereserveerde capaciteit) zou worden (waarbij 30 dagen
 |**Regio**| **Uurtarief per uur op basis van 100 RU/s**|**Eenheden (RU/s)**|**Gefactureerd bedrag (per uur)**| **Gefactureerd bedrag (maandelijks)**|
 |----|----|----|----|----|
 |VS - oost|$0,008 |50 K|$4|$2.880 |
-|Japan East|$0,009 |50 K| $4,50 |$3.240 |
+|Japan - oost|$0,009 |50 K| $4,50 |$3.240 |
 |Totaal|||$8,50|$6.120 |
 
 U kunt in plaats daarvan een gereserveerde capaciteit hebben gekocht. U kunt gereserveerde capaciteit voor 100-K RU/seconde kopen tegen de prijs van $56.064 gedurende één jaar (bij 20% korting) of $6,40 per uur. Bekijk de prijzen voor gereserveerde capaciteit op de [pagina met prijzen](https://azure.microsoft.com/pricing/details/cosmos-db/).  
@@ -304,7 +304,7 @@ Wat u effectief hebt aangeschaft, is een tegoed van $8 per uur, voor 100 K RU pe
 |**Regio**| **Uurtarief per uur op basis van 100 RU/s**|**Eenheden (RU/s)**| **Gefactureerd bedrag (per uur)**| **Gefactureerd bedrag (maandelijks)**|
 |----|----|----|----|----|
 |VS - oost|$0,008 |50 K|$4|$2.880 |
-|Japan East|$0,009 |50 K| $4,50 |$3.240 |
+|Japan - oost|$0,009 |50 K| $4,50 |$3.240 |
 |||Betalen naar gebruik|$8,50|$6120|
 |Aangeschafte gereserveerde capaciteit|$0,0064 (20% korting) |100 RU/sec of $8 capaciteit vooraf aangeschaft |-$8|-$5.760 |
 |Netfactuur|||$ 0,50 |$360 |

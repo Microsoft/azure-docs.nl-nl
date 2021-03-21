@@ -4,10 +4,10 @@ description: Dit artikel bevat opmerkingen bij de release voor servers agent voo
 ms.topic: conceptual
 ms.date: 03/15/2021
 ms.openlocfilehash: acf606ed1ad0f54c983b14a0141d0dc11e2c45d9
-ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103470503"
 ---
 # <a name="whats-new-with-azure-arc-enabled-servers-agent"></a>Wat is er nieuw in de agent voor servers met Azure Arc ingeschakeld

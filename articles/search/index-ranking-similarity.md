@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/12/2021
 ms.openlocfilehash: 52b3523d3c092f1b9375f53038cc3b20d0ddedcc
-ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103232831"
 ---
 # <a name="configure-the-similarity-ranking-algorithm-in-azure-cognitive-search"></a>Het classificatie algoritme voor overeenkomsten in azure configureren Cognitive Search

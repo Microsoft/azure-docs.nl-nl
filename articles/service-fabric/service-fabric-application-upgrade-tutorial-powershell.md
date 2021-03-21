@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 8/5/2020
 ms.custom: devx-track-azurepowershell
 ms.openlocfilehash: 4b038f4a41ee02960a02c4445b65eb2360a75761
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98792028"
 ---
 # <a name="service-fabric-application-upgrade-using-powershell"></a>Upgrade van toepassing Service Fabric met behulp van Power shell
@@ -56,7 +56,7 @@ Nu kunt u Service Fabric Explorer gebruiken [om het cluster en de toepassing wee
 ## <a name="step-2-update-the-visual-objects-sample"></a>Stap 2: het voor beeld van Visual Objects bijwerken
 U zult kunnen merken dat met de versie die is geïmplementeerd in stap 1, de visuele objecten niet draaien. We gaan deze toepassing upgraden naar een waar ook de visuele objecten draaien.
 
-Selecteer het project VisualObjects. ActorService in de VisualObjects-oplossing en open het StatefulVisualObjectActor.cs-bestand. Ga in dat bestand naar de methode `MoveObject` , commentaar uit `this.State.Move()` en verwijder de opmerking `this.State.Move(true)` . Deze wijziging roteert de objecten nadat de service is bijgewerkt.
+Selecteer het project VisualObjects. ActorService in de VisualObjects-oplossing en open het bestand StatefulVisualObjectActor. cs. Ga in dat bestand naar de methode `MoveObject` , commentaar uit `this.State.Move()` en verwijder de opmerking `this.State.Move(true)` . Deze wijziging roteert de objecten nadat de service is bijgewerkt.
 
 Daarnaast moeten we het *ServiceManifest.xml* bestand (onder PackageRoot) van het project **VisualObjects. ActorService** bijwerken. Werk de *code package* en de service versie bij naar 2,0 en de bijbehorende regels in het *ServiceManifest.xml* -bestand.
 U kunt de optie *manifest bestanden* Visual Studio bewerken gebruiken nadat u met de rechter muisknop op de oplossing hebt geklikt om het manifest bestand te wijzigen.

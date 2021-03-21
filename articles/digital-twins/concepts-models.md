@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: d33634c08b85ad633fdad3f709b2b2182571d7de
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: d3570a22fdd935237e673ea3e43ab5e463b66456
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102034758"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104590531"
 ---
 # <a name="understand-twin-models-in-azure-digital-twins"></a>Meer informatie over dubbel-modellen in Azure Digital Twins
 
@@ -24,9 +24,13 @@ Azure Digital Apparaatdubbels-modellen worden weer gegeven in de JSON-LD-based *
 
 ## <a name="digital-twin-definition-language-dtdl-for-models"></a>Digital-dubbele-definitie taal (DTDL) voor modellen
 
-Modellen voor Azure Digital Twins worden gedefinieerd met behulp van de Digital Twins Definition Language (DTDL). DTDL is gebaseerd op JSON-LD en is computertaalonafhankelijk. DTDL is niet exclusief voor Azure Digital Apparaatdubbels, maar wordt ook gebruikt voor het weer geven van apparaatgegevens in andere IoT-Services, zoals [IoT Plug en Play](../iot-pnp/overview-iot-plug-and-play.md). 
+Modellen voor Azure Digital Apparaatdubbels worden gedefinieerd met behulp van de Digital Apparaatdubbels Definition Language (DTDL). 
 
-Azure Digital Apparaatdubbels maakt gebruik van **DTDL _versie 2_**. Voor meer informatie over deze versie van DTDL raadpleegt u de documentatie van de specificatie in GitHub: [*Digital Apparaatdubbels Definition Language (DTDL)-versie 2*](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md). Het gebruik van DTDL- _versie 1_ met Azure Digital apparaatdubbels is nu afgeschaft.
+U kunt de volledige taal specificaties voor DTDL bekijken in GitHub: [**Digital Apparaatdubbels Definition Language (DTDL)-versie 2**](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md).
+
+DTDL is gebaseerd op JSON-LD en is computertaalonafhankelijk. DTDL is niet exclusief voor Azure Digital Apparaatdubbels, maar wordt ook gebruikt voor het weer geven van apparaatgegevens in andere IoT-Services, zoals [IoT Plug en Play](../iot-pnp/overview-iot-plug-and-play.md). Azure Digital Apparaatdubbels maakt gebruik van DTDL **versie 2** (gebruik van DTDL versie 1 met Azure Digital apparaatdubbels is nu afgeschaft). 
+
+De rest van dit artikel geeft een overzicht van de manier waarop de taal wordt gebruikt in azure Digital Apparaatdubbels.
 
 > [!NOTE] 
 > Niet alle services die gebruikmaken van DTDL, implementeren exact dezelfde functies van DTDL. IoT Plug en Play maakt bijvoorbeeld geen gebruik van de DTDL-functies die voor grafieken gelden, terwijl Azure Digital Apparaatdubbels momenteel geen DTDL-opdrachten implementeert.
@@ -92,7 +96,7 @@ Houd er rekening mee dat plan eten ook kunnen communiceren met **manen** die hun
 
 De velden van het model zijn:
 
-| Veld | Beschrijving |
+| Veld | Description |
 | --- | --- |
 | `@id` | Een id voor het model. Moet de indeling hebben `dtmi:<domain>:<unique model identifier>;<model version number>` . |
 | `@type` | Hiermee wordt het type informatie aangegeven dat wordt beschreven. Voor een interface is het type *Interface*. |

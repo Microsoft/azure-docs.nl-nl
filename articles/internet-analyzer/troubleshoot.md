@@ -8,10 +8,10 @@ ms.topic: troubleshooting
 ms.date: 12/04/2019
 ms.author: dibotero
 ms.openlocfilehash: fe173ec4d4f28444d43739ea2ed51e43021916b1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "84744354"
 ---
 # <a name="azure-internet-analyzer-troubleshooting"></a>Problemen met Azure Internet Analyzer oplossen
@@ -19,7 +19,7 @@ ms.locfileid: "84744354"
 Dit artikel bevat probleemoplossings stappen voor veelvoorkomende problemen met Internet Analyzer.
 
 ## <a name="things-to-keep-in-mind"></a>Zaken om rekening mee te houden
-- Het client script moet worden inge sloten in een **https** -website. Metingen worden niet verzameld als het script wordt uitgevoerd op een**http://**-of lokale (**File://**)-website.
+- Het client script moet worden inge sloten in een **https** -website. Metingen worden niet verzameld als het script wordt uitgevoerd op een **http://**-of lokale (**File://**)-website.
 - Meet gegevens worden alleen verzameld als het client script van het Internet Analyzer-profiel is inge sloten in een toepassing die werkelijk gebruikers verkeer ontvangt. Synthetische verkeer (bijvoorbeeld prestatie tests van Azure WebApp) voert doorgaans geen Inge sloten java script-code uit, dus er worden geen metingen gegenereerd door dat type verkeer.
 
 ## <a name="azure-portal"></a>Azure Portal

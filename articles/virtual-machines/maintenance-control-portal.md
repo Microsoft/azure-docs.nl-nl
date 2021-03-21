@@ -9,10 +9,10 @@ ms.workload: infrastructure-services
 ms.date: 04/22/2020
 ms.author: cynthn
 ms.openlocfilehash: 0dea30723a3ebe1598d6304ac3c98bfe1b55b466
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102563010"
 ---
 # <a name="control-updates-with-maintenance-control-and-the-azure-portal"></a>Updates beheren met onderhouds beheer en de Azure Portal
@@ -21,7 +21,7 @@ Met de onderhouds controle kunt u bepalen wanneer u updates wilt Toep assen op u
 
 ## <a name="create-a-maintenance-configuration"></a>Een onderhoudsconfiguratie maken
 
-1. Meld u aan bij de Azure-portal.
+1. Meld u aan bij Azure Portal.
 
 1. Zoeken naar **onderhouds configuraties**.
 

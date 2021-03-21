@@ -6,10 +6,10 @@ services: container-service
 ms.topic: article
 ms.date: 07/01/2020
 ms.openlocfilehash: 2ad2affee34348e8c2fc7b734c8b49d0aec8db40
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96744906"
 ---
 # <a name="dynamically-create-and-use-a-persistent-volume-with-azure-files-in-azure-kubernetes-service-aks"></a>Dynamisch een permanent volume maken en gebruiken met Azure Files in azure Kubernetes service (AKS)
@@ -87,7 +87,7 @@ spec:
 ```
 
 > [!NOTE]
-> Als u de *Premium_LRS* SKU voor uw opslag klasse gebruikt, moet de minimale *storage* waarde voor opslag *100Gi* zijn.
+> Als u de *Premium_LRS* SKU voor uw opslag klasse gebruikt, moet de minimale  waarde voor opslag *100Gi* zijn.
 
 Maak de permanente volume claim met de opdracht [kubectl apply][kubectl-apply] :
 

@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: conceptual
 ms.date: 11/16/2019
 ms.author: absha
-ms.openlocfilehash: 9166125fac28f43a93cbee2875b91bee986b1400
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: d2055bf812c3dc986a907d4358fa0e74e8af20fa
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93397464"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104599660"
 ---
 # <a name="how-an-application-gateway-works"></a>Hoe een toepassings gateway werkt
 
@@ -30,7 +30,7 @@ In dit artikel wordt uitgelegd hoe een toepassings gateway binnenkomende aanvrag
 
 4. Als een Web Application Firewall (WAF) wordt gebruikt, controleert de toepassings gateway de aanvraag headers en de hoofd tekst, indien aanwezig, tegen WAF-regels. Met deze actie wordt bepaald of de aanvraag een geldige aanvraag of een beveiligings risico is. Als de aanvraag geldig is, wordt deze doorgestuurd naar de back-end. Als de aanvraag niet geldig is en WAF zich in preventie modus bevindt, wordt deze als een beveiligings risico geblokkeerd. Als het zich in de detectie modus bevindt, wordt de aanvraag geëvalueerd en geregistreerd, maar wordt deze wel doorgestuurd naar de back-endserver.
 
-Azure-toepassing gateway kan worden gebruikt als een interne toepassings load balancer of als een load balancer voor Internet gerichte toepassingen. Een Internet gerichte toepassings gateway maakt gebruik van open bare IP-adressen. De DNS-naam van een Internet gerichte toepassings gateway kan openbaar worden omgezet naar het open bare IP-adres. Als gevolg hiervan kunnen Internet gerichte toepassings gateways client aanvragen sturen naar het internet.
+Azure-toepassing gateway kan worden gebruikt als een interne toepassings load balancer of als een load balancer voor Internet gerichte toepassingen. Een Internet gerichte toepassings gateway maakt gebruik van open bare IP-adressen. De DNS-naam van een Internet gerichte toepassings gateway kan openbaar worden omgezet naar het open bare IP-adres. Als gevolg hiervan kunnen Internet gerichte toepassings gateways client aanvragen van het Internet routeren.
 
 Interne toepassings gateways gebruiken alleen particuliere IP-adressen. Als u een aangepaste of [privé-DNS zone](../dns/private-dns-overview.md)gebruikt, moet de domein naam intern worden omgezet naar het privé-IP-adres van de Application Gateway. Daarom kunnen interne load balancers alleen aanvragen van clients met toegang tot een virtueel netwerk voor de toepassings gateway routeren.
 
@@ -52,9 +52,9 @@ Wanneer een toepassings gateway de oorspronkelijke aanvraag naar de back-endserv
 
  >[!NOTE]
 >Als de back-end-groep:
-> - **Is een openbaar eind punt** , de toepassings gateway maakt gebruik van het front-end open bare IP-adres van de server. Als er geen openbaar frontend-IP-adres is, wordt er een toegewezen voor de uitgaande externe verbinding.
+> - **Is een openbaar eind punt**, de toepassings gateway maakt gebruik van het front-end open bare IP-adres van de server. Als er geen openbaar frontend-IP-adres is, wordt er een toegewezen voor de uitgaande externe verbinding.
 > - **Bevat een intern omgezette FQDN of een privé-IP-adres**. de toepassings gateway stuurt de aanvraag naar de back-endserver door de privé-IP-adressen van het exemplaar te gebruiken.
-> - **Bevat een extern eind punt of een extern omgezette FQDN** -naam, de toepassings gateway stuurt de aanvraag naar de back-endserver via het open bare frontend-IP-adres. De DNS-omzetting is gebaseerd op een privé-DNS-zone of een aangepaste DNS-server, als deze is geconfigureerd of gebruikmaakt van de standaard-DNS van Azure. Als er geen openbaar frontend-IP-adres is, wordt er een toegewezen voor de uitgaande externe verbinding.
+> - **Bevat een extern eind punt of een extern omgezette FQDN**-naam, de toepassings gateway stuurt de aanvraag naar de back-endserver via het open bare frontend-IP-adres. De DNS-omzetting is gebaseerd op een privé-DNS-zone of een aangepaste DNS-server, als deze is geconfigureerd of gebruikmaakt van de standaard-DNS van Azure. Als er geen openbaar frontend-IP-adres is, wordt er een toegewezen voor de uitgaande externe verbinding.
 
 ### <a name="modifications-to-the-request"></a>Wijzigingen in de aanvraag
 

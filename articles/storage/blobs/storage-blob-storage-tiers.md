@@ -3,17 +3,17 @@ title: Toegangs lagen voor Azure Blob Storage-hot, cool en Archive
 description: Meer informatie over de toegangs lagen hot, cool en Archive voor Azure Blob Storage. Bekijk opslag accounts die ondersteuning bieden voor lagen.
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 01/11/2021
+ms.date: 03/18/2021
 ms.service: storage
 ms.subservice: blobs
 ms.topic: conceptual
 ms.reviewer: klaasl
-ms.openlocfilehash: 67534e70904c70f7bf9dda44502e723916bdce93
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 1a1cb8e1676405cbfbb3f4f61c86d8136b688b88
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98928802"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104656835"
 ---
 # <a name="access-tiers-for-azure-blob-storage---hot-cool-and-archive"></a>Toegangs lagen voor Azure Blob Storage-hot, cool en Archive
 
@@ -100,7 +100,9 @@ Alleen de lagen hot en cool kunnen worden ingesteld als het standaard account vo
 
 Met lagen op blobniveau kunt u gegevens uploaden naar de toegangs laag van uw keuze met behulp van de bewerkingen [put-BLOB](/rest/api/storageservices/put-blob) of [put list](/rest/api/storageservices/put-block-list) en wijzigt u de laag van uw gegevens op object niveau met behulp van de functie voor het instellen van een [BLOB-laag](/rest/api/storageservices/set-blob-tier) of [levenscyclus beheer](#blob-lifecycle-management) . U kunt gegevens uploaden naar uw vereiste Access-laag en de BLOB Access-laag eenvoudig wijzigen onder de dynamische, koude of archief lagen als gebruiks patronen veranderen, zonder dat u gegevens tussen accounts hoeft te verplaatsen. Alle laag wijzigings aanvragen gebeuren onmiddellijk en laag wijzigingen tussen warme en koelen zijn direct. Het kan enkele uren duren om een BLOB te reactiveren uit de archief laag.
 
-Het tijdstip waarop de laatste wijziging aan de blob-laag heeft plaatsgevonden, wordt weergegeven via de blob-eigenschap **Access Tier Change Time**. Bij het overschrijven van een BLOB in de warme of koude laag, neemt de zojuist gemaakte BLOB de laag over van de blob die is overschreven, tenzij de nieuwe BLOB-toegangs laag expliciet is ingesteld bij het maken. Als een BLOB zich in de laag Archive bevindt, kan deze niet worden overschreven, dus het uploaden van dezelfde blob is niet toegestaan in dit scenario.
+Het tijdstip waarop de laatste wijziging aan de blob-laag heeft plaatsgevonden, wordt weergegeven via de blob-eigenschap **Access Tier Change Time**. De tijd voor het wijzigen van de **toegangs lagen** is een eigenschap op BLOB-niveau en wordt niet bijgewerkt wanneer de standaardlaag van het account wordt gewijzigd. De eigenschappen van het account en de BLOB-eigenschappen zijn gescheiden. Het is prohibitively kostbaar om de **wijzigings tijd van de toegangs tier** bij te werken op elke Blob in een opslag account wanneer de standaard Access-laag van het account wordt gewijzigd.
+
+Bij het overschrijven van een BLOB in de warme of koude laag, neemt de zojuist gemaakte BLOB de laag over van de blob die is overschreven, tenzij de nieuwe BLOB-toegangs laag expliciet is ingesteld bij het maken. Als een BLOB zich in de laag Archive bevindt, kan deze niet worden overschreven, dus het uploaden van dezelfde blob is niet toegestaan in dit scenario.
 
 > [!NOTE]
 > Archiefopslag en laaginstelling op blobniveau ondersteunen alleen blok-blobs.

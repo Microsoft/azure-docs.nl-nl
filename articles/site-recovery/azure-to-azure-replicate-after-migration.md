@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 11/14/2019
 ms.author: raynew
 ms.openlocfilehash: a71e476a214c44514c7d57c54a09a38218ad6d2a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86135676"
 ---
 # <a name="set-up-disaster-recovery-for-azure-vms-after-migration-to-azure"></a>Herstel na noodgevallen instellen voor virtuele Azure-machines na migratie naar Azure 
@@ -46,7 +46,7 @@ Als u een versie van de Site Recovery Mobility-service hebt die ouder is dan 9.7
 Controleren of de agent is geïnstalleerd:
 
 1. Op de virtuele machine van Azure, in de map C:\WindowsAzure\Packages, wordt het WaAppAgent.exe-bestand weer geven.
-2. Klik met de rechter muisknop op het bestand en selecteer in **Eigenschappen**het tabblad **Details** .
+2. Klik met de rechter muisknop op het bestand en selecteer in **Eigenschappen** het tabblad **Details** .
 3. Controleer of in het veld **product versie** 2.6.1198.718 of hoger wordt weer gegeven.
 
 Meer [informatie](../virtual-machines/extensions/agent-windows.md) over de installatie van de agent voor Windows.
@@ -72,11 +72,11 @@ Installeer de [Azure Linux VM](../virtual-machines/extensions/agent-linux.md) -a
 ## <a name="uninstall-the-mobility-service"></a>De Mobility-service verwijderen
 
 1. Verwijder de Mobility-service hand matig van de virtuele Azure-machine met behulp van een van de volgende methoden. 
-    - Voor Windows kunt u in het configuratie scherm > **Program Ma's toevoegen/verwijderen** **Microsoft Azure site Recovery Mobility service/Master doel server**verwijderen. Voer vanaf een opdracht prompt met verhoogde bevoegdheid het volgende uit:
+    - Voor Windows kunt u in het configuratie scherm > **Program Ma's toevoegen/verwijderen** **Microsoft Azure site Recovery Mobility service/Master doel server** verwijderen. Voer vanaf een opdracht prompt met verhoogde bevoegdheid het volgende uit:
         ```
         MsiExec.exe /qn /x {275197FC-14FD-4560-A5EB-38217F80CBD1} /L+*V "C:\ProgramData\ASRSetupLogs\UnifiedAgentMSIUninstall.log"
         ```
-    - Voor Linux meldt u zich aan als hoofd gebruiker. In een Terminal gaat u naar **/user/Local/ASR**en voert u de volgende opdracht uit:
+    - Voor Linux meldt u zich aan als hoofd gebruiker. In een Terminal gaat u naar **/user/Local/ASR** en voert u de volgende opdracht uit:
         ```
         ./uninstall.sh -Y
         ```

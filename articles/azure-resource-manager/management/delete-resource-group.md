@@ -2,14 +2,14 @@
 title: Resource groep en-resources verwijderen
 description: Hierin wordt beschreven hoe u resource groepen en-resources verwijdert. Hierin wordt beschreven hoe Azure Resource Manager het verwijderen van resources ordent bij het verwijderen van een resource groep. Hierin worden de antwoord codes beschreven en hoe Resource Manager deze verwerkt om te bepalen of het verwijderen is geslaagd.
 ms.topic: conceptual
-ms.date: 09/03/2019
+ms.date: 03/18/2021
 ms.custom: seodec18
-ms.openlocfilehash: d6c38169916cc6c47d6f05c88645fa435bbdb146
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 244d59ffc096b5e219e27fd376b07baecde3670e
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91614407"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104587658"
 ---
 # <a name="azure-resource-manager-resource-group-and-resource-deletion"></a>Azure Resource Manager resource groep en verwijderen van resources
 
@@ -119,6 +119,13 @@ az resource delete \
 
 ---
 
+## <a name="required-access"></a>Vereiste toegang
+
+Als u een resource groep wilt verwijderen, moet u toegang hebben tot de actie verwijderen voor de resource **micro soft. resources/abonnementen/resourceGroups** . U moet ook verwijderen voor alle resources in de resource groep.
+
+Zie [bewerkingen voor Azure-resource providers](../../role-based-access-control/resource-provider-operations.md)voor een lijst met bewerkingen. Zie [ingebouwde rollen in azure](../../role-based-access-control/built-in-roles.md)voor een lijst met ingebouwde rollen.
+
+Als u de vereiste toegang hebt, maar de aanvraag voor het verwijderen mislukt, kan dat zijn omdat er een [vergren deling](lock-resources.md) is voor de resource groep.
 
 ## <a name="next-steps"></a>Volgende stappen
 

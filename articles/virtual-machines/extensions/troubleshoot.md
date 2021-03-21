@@ -9,10 +9,10 @@ ms.author: amjads
 ms.collection: windows
 ms.date: 03/29/2016
 ms.openlocfilehash: 8cc8a0b5ae0a83a152168b14a2c5577f8f7b48ab
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102564795"
 ---
 # <a name="troubleshooting-azure-windows-vm-extension-failures"></a>Problemen met extensie fouten van Azure Windows VM oplossen

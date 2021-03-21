@@ -7,10 +7,10 @@ ms.date: 06/05/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: 8f8086aced26fc46fb1430df074082e8c3365baa
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92746807"
 ---
 # <a name="create-a-profile-container-with-azure-files-and-ad-ds"></a>Een profiel container maken met Azure Files en AD DS
@@ -33,18 +33,18 @@ Een opslag account instellen:
 
 2. Zoek naar het **opslag account** in de zoek balk.
 
-3. Selecteer **+Toevoegen** .
+3. Selecteer **+Toevoegen**.
 
 4. Voer de volgende gegevens in op de pagina  **opslag account maken** :
 
     - Een nieuwe resourcegroep maken.
     - Voer een unieke naam in voor het opslagaccount.
     - Voor de **locatie** raden we u aan om dezelfde locatie te kiezen als de Windows-hostgroep voor virtueel bureau blad.
-    - Selecteer bij **Prestaties** de optie **Standaard** . (Afhankelijk van uw IOPS-vereisten. Zie [opslag opties voor FSLogix-profiel containers in Windows Virtual Desktop](store-fslogix-profile.md)voor meer informatie.)
+    - Selecteer bij **Prestaties** de optie **Standaard**. (Afhankelijk van uw IOPS-vereisten. Zie [opslag opties voor FSLogix-profiel containers in Windows Virtual Desktop](store-fslogix-profile.md)voor meer informatie.)
     - Voor **account type** selecteert u **StorageV2** of **FileStorage** (alleen beschikbaar als het prestatie niveau Premium is).
-    - Voor **replicatie** selecteert u **lokaal redundante opslag (LRS)** .
+    - Voor **replicatie** selecteert u **lokaal redundante opslag (LRS)**.
 
-5. Wanneer u klaar bent, selecteert u **controleren + maken** en selecteert u **maken** .
+5. Wanneer u klaar bent, selecteert u **controleren + maken** en selecteert u **maken**.
 
 Zie [regionale Beschik baarheid](../storage/files/storage-files-identity-auth-active-directory-enable.md#regional-availability)als u meer gedetailleerde configuratie-instructies nodig hebt.
 
@@ -54,13 +54,13 @@ Vervolgens moet u een Azure-bestands share maken.
 
 Een bestandsshare maken:
 
-1. Selecteer **Naar resource** .
+1. Selecteer **Ga naar resource**.
 
-2. Selecteer op de pagina Overzicht **Bestandsshares** .
+2. Selecteer op de pagina Overzicht **Bestandsshares**.
 
 3. Selecteer **+ Bestands** shares, maak een nieuwe bestands share met de naam **profielen** en voer vervolgens een geschikt quotum in of laat het veld leeg voor geen quota.
 
-4. Selecteer **Maken** .
+4. Selecteer **Maken**.
 
 ## <a name="enable-active-directory-authentication"></a>Active Directory-verificatie inschakelen
 
@@ -70,7 +70,7 @@ Vervolgens moet u Active Directory (AD)-verificatie inschakelen. Als u dit belei
 
 2. Volg de instructies in [enable AD DS Authentication voor uw Azure-bestands shares](../storage/files/storage-files-identity-ad-ds-enable.md) om de AzFilesHybrid-module te installeren en verificatie in te scha kelen.
 
-3.  Open de Azure Portal, open uw opslag account, selecteer **configuratie** en bevestig dat **Active Directory (AD)** is ingesteld op **ingeschakeld** .
+3.  Open de Azure Portal, open uw opslag account, selecteer **configuratie** en bevestig dat **Active Directory (AD)** is ingesteld op **ingeschakeld**.
 
      > [!div class="mx-imgBorder"]
      > ![Een scherm afbeelding van de configuratie pagina waarop Azure Active Directory (AD) is ingeschakeld.](media/active-directory-enabled.png)
@@ -94,15 +94,15 @@ Machtigingen voor Azure op rollen gebaseerde toegangs beheer (Azure RBAC) toewij
 
 3. Selecteer **Bestands shares** en selecteer vervolgens de naam van de bestands share die u wilt gebruiken.
 
-4. Selecteer **Access Control (IAM)** .
+4. Selecteer **Access Control (IAM)**.
 
-5. Selecteer **een roltoewijzing toevoegen** .
+5. Selecteer **een roltoewijzing toevoegen**.
 
 6. Selecteer in het tabblad roltoewijzing **toevoegen** de optie **opslag bestands gegevens SMB-share met verhoogde bevoegdheid** voor het beheerders account.
 
      Volg dezelfde instructies om gebruikersmachtigingen toe te wijzen voor hun FSLogix-profielen. Wanneer u echter naar stap 5 gaat, selecteert u in plaats daarvan **opslag bestands gegevens SMB delen** .
 
-7. Selecteer **Opslaan** .
+7. Selecteer **Opslaan**.
 
 ## <a name="assign-users-permissions-on-the-azure-file-share"></a>Gebruikers machtigingen toewijzen aan de Azure-bestands share
 
@@ -121,7 +121,7 @@ U kunt als volgt het UNC-pad ophalen:
 
 2. Open het opslag account dat u hebt gemaakt in [een opslag account instellen](#set-up-a-storage-account).
 
-3. Selecteer **instellingen** en selecteer vervolgens **Eigenschappen** .
+3. Selecteer **instellingen** en selecteer vervolgens **Eigenschappen**.
 
 4. Kopieer de URI van de **primaire bestands service-eind punt** naar de tekst editor van uw keuze.
 
@@ -141,7 +141,7 @@ De sleutel van het opslag account ophalen:
 
 2. Open het opslag account dat u hebt gemaakt in [een opslag account instellen](#set-up-a-storage-account).
 
-3. Op het tabblad **opslag account** selecteert u **toegangs sleutels** .
+3. Op het tabblad **opslag account** selecteert u **toegangs sleutels**.
 
 4. Kopieer **key1** of **Key2** naar een bestand op uw lokale computer.
 
@@ -200,13 +200,13 @@ Zo configureert u FSLogix op de VM van uw sessiehost:
 
 5. Volg de instructies in [Registerinstellingen voor profielcontainer configureren](/fslogix/configure-profile-container-tutorial#configure-profile-container-registry-settings):
 
-    - Navigeer naar **computer**  >  **HKEY_LOCAL_MACHINE**  >  **Software**  >  **FSLogix** .
+    - Navigeer naar **computer**  >  **HKEY_LOCAL_MACHINE**  >  **Software**  >  **FSLogix**.
 
     - Een sleutel voor **profielen** maken.
 
     - Maak **ingeschakeld, DWORD** met de waarde 1.
 
-    - Maak **VHDLocations, MULTI_SZ** .
+    - Maak **VHDLocations, MULTI_SZ**.
 
     - Stel de waarde van **VHDLocations** in op het UNC-pad dat u hebt gegenereerd in [het UNC-pad ophalen](#get-the-unc-path).
 

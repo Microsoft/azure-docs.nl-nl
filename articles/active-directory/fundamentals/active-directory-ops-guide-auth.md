@@ -12,10 +12,10 @@ ms.subservice: fundamentals
 ms.date: 10/31/2019
 ms.author: martinco
 ms.openlocfilehash: 90e215ea445c8c700e351149e9c7a91d9a595252
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96859518"
 ---
 # <a name="azure-active-directory-authentication-management-operations-reference-guide"></a>Naslag Gids voor verificatie beheer van Azure Active Directory
@@ -314,7 +314,7 @@ Hieronder vindt u een lijst met apps met machtigingen die u mogelijk wilt scruti
 |Resource | Machtiging |
 | :- | :- |
 | Microsoft Graph API| Map. AccessAsUser. alle |
-| Azure REST API | user_impersonation |
+| Azure REST-API | user_impersonation |
 
 Om dit scenario te voor komen, dient u te verwijzen naar [illegale toestemming subsidies in Office 365 te detecteren](/office365/securitycompliance/detect-and-remediate-illicit-consent-grants) en op te lossen om toepassingen te identificeren en te herstellen met illegale subsidies of toepassingen die meer subsidies hebben dan nodig zijn. Vervolgens [verwijdert u self-service samen](../manage-apps/configure-user-consent.md) en stelt u beheer [procedures](../manage-apps/configure-admin-consent-workflow.md)in. Ten slotte kunt u regel matig beoordelingen van app-machtigingen plannen en deze verwijderen wanneer ze niet nodig zijn.
 

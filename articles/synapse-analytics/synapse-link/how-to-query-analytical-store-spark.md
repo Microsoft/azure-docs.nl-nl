@@ -9,12 +9,12 @@ ms.subservice: synapse-link
 ms.date: 09/15/2020
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: 32e8ad5028920cefd717cdaa5429786c83367f6d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 615998de45c4a9993899065a4aef7a15332a59c8
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/20/2021
-ms.locfileid: "101671271"
+ms.locfileid: "104720403"
 ---
 # <a name="interact-with-azure-cosmos-db-using-apache-spark-in-azure-synapse-link"></a>Interactie met Azure Cosmos DB met behulp van Apache Spark in Azure Synapse Link
 
@@ -28,6 +28,10 @@ De volgende mogelijkheden worden ondersteund bij interactie met Azure Cosmos DB:
 * Synapse Apache Spark biedt ook ondersteuning voor Spark Structured Streaming met Azure Cosmos DB als een bron en een sink. 
 
 In de volgende secties wordt stapsgewijs uitgelegd hoe u de syntaxis van de bovenstaande mogelijkheden kunt volgen. Bewegingen in Azure Synapse Analytics-werkruimte zijn ontworpen om een eenvoudige out-of-the-box-ervaring te bieden om aan de slag te gaan. Gebaren worden weergegeven wanneer u met de rechtermuisknop op een Azure Cosmos DB-container klikt op het tabblad **Gegevens** van de Synapse-werkruimte. Met bewegingen kunt u snel code genereren en deze aanpassen aan uw behoeften. Bewegingen zijn ook ideaal om met één klik gegevens te ontdekken.
+
+> [!IMPORTANT]
+> U moet rekening houden met enkele beperkingen in het analytische schema die kunnen leiden tot het onverwachte gedrag bij het laden van gegevens.
+> Een voor beeld: alleen de eerste 1000 eigenschappen van het transactionele schema zijn beschikbaar in het analytische schema, eigenschappen met spaties zijn niet beschikbaar, enzovoort. Als u onverwachte resultaten ondervindt, controleert u de [beperkingen van het analytische archief-schema](../../cosmos-db/analytical-store-introduction.md#schema-constraints) voor meer informatie.
 
 ## <a name="query-azure-cosmos-db-analytical-store"></a>Analytische opslag van Azure Cosmos DB
 

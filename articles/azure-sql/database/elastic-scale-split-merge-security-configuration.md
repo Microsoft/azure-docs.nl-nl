@@ -12,10 +12,10 @@ ms.author: vanto
 ms.reviewer: sstein
 ms.date: 12/18/2018
 ms.openlocfilehash: 235efc550fd47d4244a5bf081c75d5e824a8e4b4
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92793429"
 ---
 # <a name="split-merge-security-configuration"></a>Beveiligings configuratie splitsen en samen voegen
@@ -124,7 +124,7 @@ Met de standaard configuratie wordt alle toegang tot het HTTP-eind punt geweiger
 Met de standaard configuratie is alle toegang tot het HTTPS-eind punt toegestaan. Deze instelling kan verder worden beperkt.
 
 ### <a name="changing-the-configuration"></a>De configuratie wijzigen
-De groep regels voor toegangs beheer die van toepassing zijn op en eind punt zijn geconfigureerd in de **\<EndpointAcls>** sectie in het **Service configuratie bestand** .
+De groep regels voor toegangs beheer die van toepassing zijn op en eind punt zijn geconfigureerd in de **\<EndpointAcls>** sectie in het **Service configuratie bestand**.
 
 ```xml
 <EndpointAcls>
@@ -441,31 +441,31 @@ Volg deze stappen:
 
 1. Voer mmc.exe uit.
 2. Bestand-> module toevoegen/verwijderen...
-3. Selecteer **Certificaten** .
-4. Klik op **Add** .
+3. Selecteer **Certificaten**.
+4. Klik op **Add**.
 5. Kies de locatie van het certificaat archief.
-6. Klik op **Voltooien** .
-7. Klik op **OK** .
+6. Klik op **Voltooien**.
+7. Klik op **OK**.
 8. Vouw **certificaten** uit.
 9. Vouw het knoop punt certificaat archief uit.
 10. Vouw het onderliggende knoop punt voor certificaten uit.
 11. Selecteer een certificaat in de lijst.
 
 ## <a name="export-certificate"></a>Certificaat exporteren
-In de **wizard Certificaat exporteren** :
+In de **wizard Certificaat exporteren**:
 
-1. Klik op **Volgende** .
-2. Selecteer **Ja** en vervolgens **de persoonlijke sleutel exporteren** .
-3. Klik op **Volgende** .
+1. Klik op **Volgende**.
+2. Selecteer **Ja** en vervolgens **de persoonlijke sleutel exporteren**.
+3. Klik op **Volgende**.
 4. Selecteer de gewenste indeling voor het uitvoer bestand.
 5. Controleer de gewenste opties.
-6. Controleer het **wacht woord** .
+6. Controleer het **wacht woord**.
 7. Voer een sterk wacht woord in en bevestig dit.
-8. Klik op **Volgende** .
+8. Klik op **Volgende**.
 9. Typ of blader door een bestands naam waar het certificaat moet worden opgeslagen (gebruik een. PFX-extensie).
-10. Klik op **Volgende** .
-11. Klik op **Voltooien** .
-12. Klik op **OK** .
+10. Klik op **Volgende**.
+11. Klik op **Voltooien**.
+12. Klik op **OK**.
 
 ## <a name="import-certificate"></a>Certificaat importeren
 In de wizard Certificaat importeren:
@@ -474,26 +474,26 @@ In de wizard Certificaat importeren:
    
    * **Huidige gebruiker** selecteren als alleen de processen die worden uitgevoerd onder de huidige gebruiker toegang krijgen tot de service
    * **Lokale computer** selecteren als andere processen in deze computer toegang hebben tot de service
-2. Klik op **Volgende** .
+2. Klik op **Volgende**.
 3. Als u importeert uit een bestand, bevestig het bestandspad.
 4. Bij het importeren van een. PFX-bestand:
    1. Voer het wacht woord in voor het beveiligen van de persoonlijke sleutel
    2. Import opties selecteren
 5. Selecteer certificaten in het onderstaande archief opslaan
-6. Klik op **Bladeren** .
+6. Klik op **Bladeren**.
 7. Selecteer de gewenste winkel.
-8. Klik op **Voltooien** .
+8. Klik op **Voltooien**.
    
-   * Als het archief met vertrouwde basis certificerings instanties is gekozen, klikt u op **Ja** .
+   * Als het archief met vertrouwde basis certificerings instanties is gekozen, klikt u op **Ja**.
 9. Klik op **OK** in alle dialoog vensters.
 
 ## <a name="upload-certificate"></a>Certificaat uploaden
 In de [Azure Portal](https://portal.azure.com/)
 
-1. Selecteer **Cloud Services** .
+1. Selecteer **Cloud Services**.
 2. Selecteer de Cloud service.
-3. Klik in het bovenste menu op **certificaten** .
-4. Klik in de onderste balk op **uploaden** .
+3. Klik in het bovenste menu op **certificaten**.
+4. Klik in de onderste balk op **uploaden**.
 5. Selecteer het certificaat bestand.
 6. Als dat het geval is. PFX-bestand, voert u het wacht woord voor de persoonlijke sleutel in.
 7. Als u klaar bent, kopieert u de vinger afdruk van het certificaat uit de nieuwe vermelding in de lijst.

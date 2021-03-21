@@ -14,10 +14,10 @@ ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev, devx-track-js
 ms.openlocfilehash: a6d7b760ffd1931fa5dcdb3a67dd02f2798957a9
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100365834"
 ---
 # <a name="initialize-client-applications-using-msaljs"></a>Client toepassingen initialiseren met MSAL.js

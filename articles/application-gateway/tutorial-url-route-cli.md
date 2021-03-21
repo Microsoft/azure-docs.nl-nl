@@ -9,10 +9,10 @@ ms.date: 08/01/2019
 ms.author: victorh
 ms.custom: mvc, devx-track-azurecli
 ms.openlocfilehash: 8e8fed99fe0b1de52d2e2d0018dfd8867b54b63b
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94566517"
 ---
 # <a name="route-web-traffic-based-on-the-url-using-the-azure-cli"></a>Webverkeer routeren op basis van de URL met behulp van de Azure CLI
@@ -36,7 +36,7 @@ Als u wilt, kunt u deze procedure volt ooien met behulp van [Azure PowerShell](t
 
 [!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
- - Voor deze zelf studie is versie 2.0.4 of hoger van de Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
+ - Voor deze zelfstudie is versie 2.0.4 of hoger van de Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
@@ -50,7 +50,7 @@ az group create --name myResourceGroupAG --location eastus
 
 ## <a name="create-network-resources"></a>Netwerkbronnen maken
 
-Maak het virtuele netwerk *myVNet* en het subnet *myAGSubnet* met `az network vnet create`. Vervolgens voegt u het subnet *myBackendSubnet* , dat voor de back-endservers vereist is, toe met `az network vnet subnet create`. Maak het openbare IP-adres *myAGPublicIPAddress* met `az network public-ip create`.
+Maak het virtuele netwerk *myVNet* en het subnet *myAGSubnet* met `az network vnet create`. Vervolgens voegt u het subnet *myBackendSubnet*, dat voor de back-endservers vereist is, toe met `az network vnet subnet create`. Maak het openbare IP-adres *myAGPublicIPAddress* met `az network public-ip create`.
 
 ```azurecli-interactive
 az network vnet create \
@@ -183,7 +183,7 @@ az network application-gateway rule create \
 
 ## <a name="create-virtual-machine-scale-sets"></a>Virtuele-machineschaalset maken
 
-In dit artikel maakt u drie virtuele-machine schaal sets die ondersteuning bieden voor de drie back-endservers die u hebt gemaakt. U maakt schaalsets met de namen *myvmss1* , *myvmss2* en *myvmss3*. Elke schaalset bevat twee exemplaren van virtuele machines waarop u NGINX installeert.
+In dit artikel maakt u drie virtuele-machine schaal sets die ondersteuning bieden voor de drie back-endservers die u hebt gemaakt. U maakt schaalsets met de namen *myvmss1*, *myvmss2* en *myvmss3*. Elke schaalset bevat twee exemplaren van virtuele machines waarop u NGINX installeert.
 
 ```azurecli-interactive
 for i in `seq 1 3`; do

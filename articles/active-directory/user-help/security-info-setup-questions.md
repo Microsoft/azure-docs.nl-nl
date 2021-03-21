@@ -12,10 +12,10 @@ ms.topic: end-user-help
 ms.date: 02/13/2019
 ms.author: curtand
 ms.openlocfilehash: 0c55f15d12ddc51573f59f56c742a8cac525af0b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "83744436"
 ---
 # <a name="set-up-security-questions-as-your-verification-method"></a>Beveiligings vragen instellen als verificatie methode
@@ -86,7 +86,7 @@ Als u uw beveiligings vragen niet meer wilt gebruiken als een beveiligings gegev
 
     ![Koppeling voor het verwijderen van de telefoon methode vanuit beveiligings gegevens](media/security-info/securityinfo-myprofile-questionsdelete.png)
 
-2. Selecteer **Ja** in het bevestigings venster om uw **beveiligings vragen**te verwijderen. Nadat uw beveiligings vragen zijn verwijderd, wordt de methode verwijderd uit de beveiligings gegevens en verdwijnt deze van de pagina met **beveiligings gegevens** .
+2. Selecteer **Ja** in het bevestigings venster om uw **beveiligings vragen** te verwijderen. Nadat uw beveiligings vragen zijn verwijderd, wordt de methode verwijderd uit de beveiligings gegevens en verdwijnt deze van de pagina met **beveiligings gegevens** .
 
 ## <a name="additional-security-info-methods"></a>Aanvullende beveiligings gegevens methoden
 

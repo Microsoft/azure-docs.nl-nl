@@ -4,10 +4,10 @@ description: Meer informatie over het effectief beheren van de register grootte 
 ms.topic: article
 ms.date: 07/31/2019
 ms.openlocfilehash: 449a1c09bf88e3e0e0aeca4d3b687371d2a6b91a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "78403345"
 ---
 # <a name="delete-container-images-in-azure-container-registry-using-the-azure-cli"></a>Container installatie kopieën in Azure Container Registry verwijderen met behulp van de Azure CLI
@@ -114,7 +114,7 @@ az acr repository show-manifests --name <acrName> --repository <repositoryName> 
 --orderby time_asc -o tsv --query "[?timestamp < '2019-04-05'].[digest, timestamp]"
 ```
 
-Nadat u de verouderde manifest samenvattingen hebt geïdentificeerd, kunt u het volgende bash-script uitvoeren om manifest-samen vattingen te verwijderen die ouder zijn dan een opgegeven tijds tempel. Hiervoor zijn de Azure CLI en **xargs**vereist. Standaard wordt het script niet verwijderd. Wijzig de `ENABLE_DELETE` waarde in om het verwijderen van de `true` installatie kopie in te scha kelen.
+Nadat u de verouderde manifest samenvattingen hebt geïdentificeerd, kunt u het volgende bash-script uitvoeren om manifest-samen vattingen te verwijderen die ouder zijn dan een opgegeven tijds tempel. Hiervoor zijn de Azure CLI en **xargs** vereist. Standaard wordt het script niet verwijderd. Wijzig de `ENABLE_DELETE` waarde in om het verwijderen van de `true` installatie kopie in te scha kelen.
 
 > [!WARNING]
 > Gebruik het volgende voorbeeld script met een waarschuwing: verwijderde afbeeldings gegevens zijn onherstelbaar. Als u systemen hebt die installatie kopieën pullen per manifest Digest (in plaats van de naam van de installatie kopie), moet u deze scripts niet uitvoeren. Als u de manifest-samen vattingen verwijdert, voor komt u dat deze systemen de installatie kopieën uit het REGI ster halen. In plaats van op manifest te halen, kunt u overwegen om een uniek schema voor *labels* te gebruiken, een [Aanbevolen best practice](container-registry-image-tag-version.md). 
@@ -216,7 +216,7 @@ Als u deze opdracht in een script gebruikt, kunt u alle niet-gelabelde afbeeldin
 
 **Azure CLI in bash**
 
-Met het volgende bash-script worden alle niet-gelabelde afbeeldingen uit een opslag plaats verwijderd. Hiervoor zijn de Azure CLI en **xargs**vereist. Standaard wordt het script niet verwijderd. Wijzig de `ENABLE_DELETE` waarde in om het verwijderen van de `true` installatie kopie in te scha kelen.
+Met het volgende bash-script worden alle niet-gelabelde afbeeldingen uit een opslag plaats verwijderd. Hiervoor zijn de Azure CLI en **xargs** vereist. Standaard wordt het script niet verwijderd. Wijzig de `ENABLE_DELETE` waarde in om het verwijderen van de `true` installatie kopie in te scha kelen.
 
 ```bash
 #!/bin/bash

@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/17/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: dbd4923dd2843ab2c043da69f1b72efd8e1eb701
-ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
+ms.openlocfilehash: 0bbc799f946d318c305a96d9cb8c6831d9242ff6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103573044"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104578291"
 ---
 # <a name="scenario-web-app-that-signs-in-users"></a>Scenario: Web-app waarmee gebruikers worden aangemeld
 
@@ -43,6 +43,12 @@ Als u een Java-ontwikkelaar bent, kunt u de volgende Snelstartgids proberen:
 
 [Quickstart: Aanmelden met Microsoft toevoegen aan een Java-webapp](quickstart-v2-java-webapp.md)
 
+# <a name="nodejs"></a>[Node.js](#tab/nodejs)
+
+Als u een Node.js-ontwikkelaar bent, kunt u de volgende Snelstartgids proberen:
+
+[Snelstartgids: aanmelden toevoegen met micro soft aan een Node.js web-app](quickstart-v2-nodejs-webapp-msal.md)
+
 # <a name="python"></a>[Python](#tab/python)
 
 Als u met python ontwikkelt, voert u de volgende Snelstartgids uit:
@@ -62,7 +68,7 @@ Web-apps verifiëren een gebruiker in een webbrowser. In dit scenario wordt de b
 Als tweede fase kunt u ervoor zorgen dat uw toepassing namens de aangemelde gebruiker Web-Api's aanroept. Deze volgende fase is een ander scenario dat u vindt in web- [apps die web-api's aanroepen](scenario-web-app-call-api-overview.md).
 
 > [!NOTE]
-> Het toevoegen van een aanmelding aan een web-app is het beveiligen van de web-app en het valideren van een gebruikers token. Dit zijn de  **middleware** -bibliotheken. In het geval van .NET hebt u voor dit scenario nog geen micro soft Authentication Library (MSAL) nodig. Dit is het verkrijgen van een token voor het aanroepen van beveiligde Api's. Verificatie bibliotheken worden geïntroduceerd in het vervolg scenario, wanneer de web-app Web-Api's moet aanroepen.
+> Het toevoegen van een aanmelding aan een web-app is het beveiligen van de web-app en het valideren van een gebruikers token. Dit zijn de  **middleware** -bibliotheken. In het geval van .NET hebt u voor dit scenario nog geen micro soft Authentication Library (MSAL) nodig. Dit is het verkrijgen van een token voor het aanroepen van beveiligde Api's. Verificatie bibliotheken voor .NET worden geïntroduceerd in het vervolg scenario, wanneer de web-app Web-Api's moet aanroepen.
 
 ## <a name="specifics"></a>Opsporingsgegevens
 
@@ -87,6 +93,10 @@ Ga naar het volgende artikel in dit scenario, [app-registratie](./scenario-web-a
 # <a name="java"></a>[Java](#tab/java)
 
 Ga naar het volgende artikel in dit scenario, [app-registratie](./scenario-web-app-sign-user-app-registration.md?tabs=java).
+
+# <a name="nodejs"></a>[Node.js](#tab/nodejs)
+
+Ga naar het volgende artikel in dit scenario, [app-registratie](./scenario-web-app-sign-user-app-registration.md?tabs=nodejs).
 
 # <a name="python"></a>[Python](#tab/python)
 

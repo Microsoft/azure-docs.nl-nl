@@ -1,5 +1,5 @@
 ---
-title: Include-bestand
+title: bestand opnemen
 description: Include-bestand
 services: functions
 author: ggailey777
@@ -9,10 +9,10 @@ ms.date: 06/04/2020
 ms.author: glenga
 ms.custom: include file
 ms.openlocfilehash: 164620bdcee7ac546468354f999dcb3ad96ecf4b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "84730990"
 ---
 De Azure Functions-projectsjabloon in Visual Studio maakt een project dat u kunt publiceren in een functie-app in Azure. U kunt een functie-app gebruiken om functies te groeperen in een logische eenheid, zodat u resources eenvoudiger kunt beheren, implementeren, schalen en delen.

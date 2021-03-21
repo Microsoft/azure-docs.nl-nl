@@ -10,10 +10,10 @@ ms.date: 11/01/2019
 tags: connectors
 ROBOTS: NOINDEX
 ms.openlocfilehash: 70fb956af7ff45c7b54f04d7ed441ec39f9d80a5
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92673817"
 ---
 # <a name="monitor-create-and-manage-sftp-files-in-azure-logic-apps"></a>SFTP-bestanden in Azure Logic Apps bewaken, maken en beheren
@@ -45,10 +45,10 @@ De SFTP-connector verwerkt alleen bestanden van *50 MB of kleiner* en biedt geen
   > De SFTP-connector ondersteunt de volgende indelingen van persoonlijke sleutels: OpenSSH, ssh.com en PuTTy
   >
   > Wanneer u de logische app maakt, moet u, nadat u de gewenste SFTP-trigger of actie hebt toegevoegd, de verbindings gegevens voor uw SFTP-server opgeven. 
-  > Als u een persoonlijke SSH-sleutel gebruikt, zorg er dan voor dat u * **copy** _ de sleutel van uw persoonlijke SSH-sleutel bestand en _*_plakt_*_ u die sleutel in de verbindings gegevens. _*_Voer de sleutel niet hand matig in of bewerk_*_ deze, waardoor de verbinding kan mislukken. 
+  > Als u een persoonlijke SSH-sleutel gebruikt, moet u ervoor zorgen dat u de sleutel uit uw persoonlijke SSH-sleutel bestand ***kopieert*** en die sleutel in de verbindings gegevens ***plakt*** . ***Voer de sleutel niet hand matig in of bewerk*** deze, waardoor de verbinding kan mislukken. 
   > Zie de volgende stappen in dit artikel voor meer informatie.
 
-Basis kennis over [het maken van logische apps](../logic-apps/quickstart-create-first-logic-app-workflow.md)
+* Basis kennis over [het maken van logische apps](../logic-apps/quickstart-create-first-logic-app-workflow.md)
 
 * De logische app waar u toegang wilt krijgen tot uw SFTP-account. [Maak een lege logische app](../logic-apps/quickstart-create-first-logic-app-workflow.md)om te beginnen met een SFTP-trigger. Als u een SFTP-actie wilt gebruiken, start u uw logische app met een andere trigger, bijvoorbeeld de trigger voor **terugkeer patroon** .
 
@@ -56,7 +56,7 @@ Basis kennis over [het maken van logische apps](../logic-apps/quickstart-create-
 
 SFTP-triggers werken door het SFTP-bestands systeem te pollen en te zoeken naar een bestand dat sinds de laatste poll is gewijzigd. Met sommige hulpprogram ma's kunt u de tijds tempel behouden wanneer de bestanden worden gewijzigd. In deze gevallen moet u deze functie uitschakelen zodat de trigger kan werken. Hier volgen enkele algemene instellingen:
 
-| SFTP-client | Actie |
+| SFTP-client | Bewerking |
 |-------------|--------|
 | WinSCP | Ga naar **Opties**  >  **voor keuren**  >  **overdracht**  >  **bewerken**  >  **behouden tijds tempel**  >  **uitschakelen** |
 | FileZilla | Ga naar de **overdrachts**  >  **tijds tempels van overgebrachte bestanden**  >  **uitschakelen** |
@@ -74,9 +74,9 @@ Wanneer een trigger een nieuw bestand vindt, controleert de trigger of het nieuw
 
    -of-
 
-   Voor bestaande Logic apps, onder de laatste stap waar u een actie wilt toevoegen, kiest u **nieuwe stap** . Voer in het zoekvak ' sftp ' in als uw filter. Selecteer in de lijst acties de gewenste actie.
+   Voor bestaande Logic apps, onder de laatste stap waar u een actie wilt toevoegen, kiest u **nieuwe stap**. Voer in het zoekvak ' sftp ' in als uw filter. Selecteer in de lijst acties de gewenste actie.
 
-   Als u een actie tussen stappen wilt toevoegen, plaatst u de muis aanwijzer op de pijl tussen de stappen. Kies het plus teken ( **+** ) dat wordt weer gegeven en selecteer vervolgens **een actie toevoegen** .
+   Als u een actie tussen stappen wilt toevoegen, plaatst u de muis aanwijzer op de pijl tussen de stappen. Kies het plus teken ( **+** ) dat wordt weer gegeven en selecteer vervolgens **een actie toevoegen**.
 
 1. Geef de benodigde gegevens voor de verbinding op.
 
@@ -89,13 +89,13 @@ Wanneer een trigger een nieuw bestand vindt, controleert de trigger of het nieuw
 
    1. Open uw persoonlijke SSH-sleutel bestand in een tekst editor. In deze stappen wordt Klad blok als voor beeld gebruikt.
 
-   1. Selecteer in het menu **bewerken** in Klad blok de optie **Alles selecteren** .
+   1. Selecteer in het menu **bewerken** in Klad blok de optie **Alles selecteren**.
 
-   1. Selecteer **Edit**  >  **kopie** bewerken.
+   1. Selecteer   >  **kopie** bewerken.
 
-   1. Plak de *volledige* sleutel die u hebt gekopieerd in de eigenschap van de **persoonlijke SSH-sleutel** , die ondersteuning biedt voor meerdere regels in de SFTP-trigger of-actie die u hebt toegevoegd. **_Zorg ervoor dat u_* de sleutel plakt. _*_Voer de sleutel niet hand matig in of bewerk deze_*_ .
+   1. Plak de *volledige* sleutel die u hebt gekopieerd in de eigenschap van de **persoonlijke SSH-sleutel** , die ondersteuning biedt voor meerdere regels in de SFTP-trigger of-actie die u hebt toegevoegd. **_Zorg ervoor dat u_*de sleutel plakt. _*_Voer de sleutel niet hand matig in of bewerk deze_**.
 
-1. Wanneer u klaar bent met het invoeren van de verbindings gegevens, kiest u _ * maken * *.
+1. Wanneer u klaar bent met het invoeren van de verbindings gegevens, kiest u **maken**.
 
 1. Geef de benodigde gegevens op voor de geselecteerde trigger of actie en ga door met het bouwen van de werk stroom van uw logische app.
 
@@ -107,7 +107,7 @@ Wanneer een trigger een nieuw bestand vindt, controleert de trigger of het nieuw
 
 Deze trigger start een werk stroom voor logische apps wanneer een bestand wordt toegevoegd aan of gewijzigd op een SFTP-server. U kunt bijvoorbeeld een voor waarde toevoegen waarmee de inhoud van het bestand wordt gecontroleerd en de inhoud wordt opgehaald op basis van het feit of de inhoud voldoet aan een opgegeven voor waarde. U kunt vervolgens een actie toevoegen waarmee de inhoud van het bestand wordt opgehaald en die inhoud in een map op de SFTP-server plaatsen.
 
-**Enter prise-voor beeld** : u kunt deze trigger gebruiken om een SFTP-map te bewaken voor nieuwe bestanden die klant orders vertegenwoordigen. U kunt vervolgens een SFTP-actie gebruiken, zoals het **ophalen van bestands inhoud** , zodat u de inhoud van de bestelling krijgt voor verdere verwerking en die order in een Data Base orders opslaat.
+**Enter prise-voor beeld**: u kunt deze trigger gebruiken om een SFTP-map te bewaken voor nieuwe bestanden die klant orders vertegenwoordigen. U kunt vervolgens een SFTP-actie gebruiken, zoals het **ophalen van bestands inhoud** , zodat u de inhoud van de bestelling krijgt voor verdere verwerking en die order in een Data Base orders opslaat.
 
 <a name="get-content"></a>
 

@@ -5,10 +5,10 @@ ms.topic: tutorial
 ms.date: 07/22/2019
 ms.custom: mvc, devx-track-azurecli
 ms.openlocfilehash: 31b5f870465bc1dff9d6ff7827a4efed084bcf62
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92739057"
 ---
 # <a name="tutorial-create-container-images-on-a-linux-service-fabric-cluster"></a>Zelfstudie: Containerinstallatiekopieën maken in een Service Fabric-cluster in Linux
@@ -65,7 +65,7 @@ Deze opdracht kan enige tijd in beslag nemen omdat alle noodzakelijke afhankelij
 docker images
 ```
 
-U ziet dat er twee installatiekopieën zijn gedownload of gemaakt. De installatiekopie *azure-vote-front* bevat de toepassing. Deze is afgeleid uit een *Python* -installatiekopie van Docker Hub.
+U ziet dat er twee installatiekopieën zijn gedownload of gemaakt. De installatiekopie *azure-vote-front* bevat de toepassing. Deze is afgeleid uit een *Python*-installatiekopie van Docker Hub.
 
 ```bash
 REPOSITORY                   TAG                 IMAGE ID            CREATED              SIZE
@@ -90,13 +90,13 @@ az account set --subscription <subscription_id>
 
 Wanneer u een Azure Container Registry implementeert, hebt u eerst een resourcegroep nodig. Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd.
 
-Een resourcegroep maken met de opdracht **az group create** . In dit voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt in de regio *westus* .
+Een resourcegroep maken met de opdracht **az group create**. In dit voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt in de regio *westus*.
 
 ```azurecli
 az group create --name <myResourceGroup> --location westus
 ```
 
-Maak een Azure Container Registry met de opdracht **az acr create** . Vervang \<acrName> door de naam van het containerregister dat u wilt maken in het abonnement. Deze naam moet alfanumeriek en uniek zijn.
+Maak een Azure Container Registry met de opdracht **az acr create**. Vervang \<acrName> door de naam van het containerregister dat u wilt maken in het abonnement. Deze naam moet alfanumeriek en uniek zijn.
 
 ```azurecli
 az acr create --resource-group <myResourceGroup> --name <acrName> --sku Basic --admin-enabled true

@@ -1,7 +1,7 @@
 ---
 title: Overzicht van de modus gedeelde apparaten
 titleSuffix: Microsoft identity platform | Azure
-description: Meer informatie over de modus gedeeld apparaat om het delen van apparaten in te scha kelen voor uw Firstline-werk nemers.
+description: Meer informatie over de modus gedeeld apparaat om het delen van apparaten in te scha kelen voor uw Frontline-werk nemers.
 services: active-directory
 author: brandwe
 manager: CelesteDG
@@ -13,27 +13,27 @@ ms.date: 03/31/2020
 ms.author: brandwe
 ms.reviewer: brandwe
 ms.custom: aaddev
-ms.openlocfilehash: 3cd7074467332f89d4d6c60830be34f4e2a638c1
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 9e48d8f55efa8bc4c82eaa973a6feaeb42390064
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94562080"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104578771"
 ---
 # <a name="overview-of-shared-device-mode"></a>Overzicht van de modus gedeeld apparaat
 
-De modus gedeeld apparaat is een functie van Azure Active Directory waarmee u toepassingen kunt bouwen die Firstline-werk nemers ondersteunen en de modus gedeeld apparaat inschakelen op de apparaten die hierop zijn geïmplementeerd.
+De modus gedeeld apparaat is een functie van Azure Active Directory waarmee u toepassingen kunt bouwen die Frontline-werk nemers ondersteunen en de modus gedeeld apparaat inschakelen op de apparaten die hierop zijn geïmplementeerd.
 
 >[!IMPORTANT]
-> Deze functie [!INCLUDE [PREVIEW BOILERPLATE](../../../includes/active-directory-develop-preview.md)]
+> Modus gedeeld apparaat voor iOS [!INCLUDE [PREVIEW BOILERPLATE](../../../includes/active-directory-develop-preview.md)]
 
-## <a name="what-are-firstline-workers"></a>Wat zijn Firstline-werk rollen?
+## <a name="what-are-frontline-workers"></a>Wat zijn Frontline-werk rollen?
 
-Firstline-werk nemers zijn Retail werk nemers, onderhouds-en veld agenten, medische personeel en andere gebruikers die zich niet vóór een computer bevinden of die zakelijke e-mail gebruiken voor samen werking. In de volgende secties worden de aspecten en uitdagingen van de ondersteuning van Firstline-werk rollen geïntroduceerd, gevolgd door een inleiding tot de functies van micro soft waarmee uw toepassing kan worden gebruikt door de Firstline-werk nemers van een organisatie.
+Frontline-werk nemers zijn Retail werk nemers, onderhouds-en veld agenten, medische personeel en andere gebruikers die zich niet vóór een computer bevinden of die zakelijke e-mail gebruiken voor samen werking. In de volgende secties worden de aspecten en uitdagingen van de ondersteuning van Frontline-werk rollen geïntroduceerd, gevolgd door een inleiding tot de functies van micro soft waarmee uw toepassing kan worden gebruikt door de Frontline-werk nemers van een organisatie.
 
-### <a name="challenges-of-supporting-firstline-workers"></a>Uitdagingen voor de ondersteuning van Firstline-werk nemers
+### <a name="challenges-of-supporting-frontline-workers"></a>Uitdagingen voor de ondersteuning van Frontline-werk nemers
 
-Het inschakelen van Firstline werk stromen bevat uitdagingen die doorgaans niet worden gepresenteerd door typische informatie medewerkers. Dergelijke uitdagingen kunnen een hoge omzet snelheid en minder vertrouwd zijn met de belangrijkste productiviteits tools van een organisatie. Om hun Firstline-werk nemers te stimuleren, nemen organisaties verschillende strategieën. Sommige vormen een BYOD-strategie (pres-your-own-Device) waarbij hun mede werkers zakelijke apps op hun persoonlijke telefoon gebruiken, terwijl anderen hun werk nemers voorzien van gedeelde apparaten als iPads of Android-tablets.
+Het inschakelen van Frontline werk stromen bevat uitdagingen die doorgaans niet worden gepresenteerd door typische informatie medewerkers. Dergelijke uitdagingen kunnen een hoge omzet snelheid en minder vertrouwd zijn met de belangrijkste productiviteits tools van een organisatie. Om hun Frontline-werk nemers te stimuleren, nemen organisaties verschillende strategieën. Sommige vormen een BYOD-strategie (pres-your-own-Device) waarbij hun mede werkers zakelijke apps op hun persoonlijke telefoon gebruiken, terwijl anderen hun werk nemers voorzien van gedeelde apparaten als iPads of Android-tablets.
 
 ### <a name="supporting-multiple-users-on-devices-designed-for-one-user"></a>Ondersteuning voor meerdere gebruikers op apparaten die zijn ontworpen voor één gebruiker
 
@@ -49,12 +49,12 @@ Azure Active Directory maakt deze scenario's mogelijk met een functie die de **m
 
 Zoals vermeld, is de modus gedeeld apparaat een functie van Azure Active Directory waarmee u het volgende kunt doen:
 
-* Bouw toepassingen die Firstline-werk nemers ondersteunen
-* Apparaten implementeren voor Firstline-werk rollen en de modus gedeeld apparaat inschakelen
+* Bouw toepassingen die Frontline-werk nemers ondersteunen
+* Apparaten implementeren voor Frontline-werk rollen en de modus gedeeld apparaat inschakelen
 
-### <a name="build-applications-that-support-firstline-workers"></a>Bouw toepassingen die Firstline-werk nemers ondersteunen
+### <a name="build-applications-that-support-frontline-workers"></a>Bouw toepassingen die Frontline-werk nemers ondersteunen
 
-U kunt Firstline-werk nemers in uw toepassingen ondersteunen met behulp van de micro soft Authentication Library (MSAL) en [Microsoft Authenticator app](../user-help/user-help-auth-app-overview.md) om een Apparaatstatus in te scha kelen, de *modus gedeeld apparaat*. Wanneer een apparaat in de modus gedeeld apparaat is, biedt micro soft uw toepassing informatie waarmee het gedrag kan worden gewijzigd op basis van de status van de gebruiker op het apparaat, en de gebruikers gegevens worden beveiligd.
+U kunt Frontline-werk nemers in uw toepassingen ondersteunen met behulp van de micro soft Authentication Library (MSAL) en [Microsoft Authenticator app](../user-help/user-help-auth-app-overview.md) om een Apparaatstatus in te scha kelen, de *modus gedeeld apparaat*. Wanneer een apparaat in de modus gedeeld apparaat is, biedt micro soft uw toepassing informatie waarmee het gedrag kan worden gewijzigd op basis van de status van de gebruiker op het apparaat, en de gebruikers gegevens worden beveiligd.
 
 Ondersteunde functies zijn:
 
@@ -69,15 +69,15 @@ Uw gebruikers zijn afhankelijk van u om ervoor te zorgen dat hun gegevens niet n
 
 Zie de sectie [volgende stappen](#next-steps) aan het einde van dit artikel voor meer informatie over het aanpassen van uw toepassingen ter ondersteuning van de modus voor gedeelde apparaten.
 
-### <a name="deploy-devices-to-firstline-workers-and-turn-on-shared-device-mode"></a>Apparaten implementeren voor Firstline-werk rollen en de modus gedeeld apparaat inschakelen
+### <a name="deploy-devices-to-frontline-workers-and-turn-on-shared-device-mode"></a>Apparaten implementeren voor Frontline-werk rollen en de modus gedeeld apparaat inschakelen
 
-Zodra uw toepassingen de modus gedeeld apparaat ondersteunen en de vereiste gegevens-en beveiligings wijzigingen bevatten, kunt u ze adverteren als bruikbaar voor Firstline-werk nemers.
+Zodra uw toepassingen de modus gedeeld apparaat ondersteunen en de vereiste gegevens-en beveiligings wijzigingen bevatten, kunt u ze adverteren als bruikbaar voor Frontline-werk nemers.
 
 De beheerders van een organisatie kunnen hun apparaten en uw toepassingen implementeren in hun winkels en werk plek via een oplossing voor Mobile Device Management (MDM) zoals Microsoft Intune. Onderdeel van het inrichtings proces markeert het apparaat als een *gedeeld apparaat*. Beheerders configureren de modus gedeeld apparaat door de [Microsoft Authenticator-app](../user-help/user-help-auth-app-overview.md) te implementeren en de modus gedeeld apparaat in te stellen via configuratie parameters. Nadat u deze stappen hebt uitgevoerd, zullen alle toepassingen die ondersteuning bieden voor de modus gedeeld apparaat de Microsoft Authenticator toepassing gebruiken om de gebruikers status te beheren en beveiligings functies bieden voor het apparaat en de organisatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-We ondersteunen iOS-en Android-platforms voor de modus gedeeld apparaat. Raadpleeg de onderstaande documentatie voor uw platform om te beginnen met de ondersteuning van Firstline-werk nemers in uw toepassingen.
+We ondersteunen iOS-en Android-platforms voor de modus gedeeld apparaat. Raadpleeg de onderstaande documentatie voor uw platform om te beginnen met de ondersteuning van Frontline-werk nemers in uw toepassingen.
 
 * [Ondersteuning voor de modus gedeeld apparaat voor iOS](msal-ios-shared-devices.md)
 * [Ondersteuning voor de modus gedeeld apparaat voor Android](msal-android-shared-devices.md)

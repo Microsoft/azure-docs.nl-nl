@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 06/27/2018
 ms.author: twooley
 ms.openlocfilehash: de98e25cf5703a43282e551a0eda20d7767c6ce8
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92103625"
 ---
 # <a name="get-started-with-azure-data-lake-storage-gen1-using-the-azure-cli"></a>Aan de slag met Azure Data Lake Storage Gen1 met behulp van Azure CLI
@@ -38,7 +38,7 @@ Voordat u dit artikel gaat lezen, moet u beschikken over het volgende:
 
 ## <a name="authentication"></a>Verificatie
 
-In dit artikel wordt gebruikgemaakt van een eenvoudigere verificatie methode met Data Lake Storage Gen1 waarbij u zich aanmeldt als gebruiker van een eind gebruiker. Het toegangs niveau voor het Data Lake Storage Gen1-account en het bestands systeem wordt vervolgens bepaald door het toegangs niveau van de aangemelde gebruiker. Er zijn echter ook andere benaderingen om te verifiëren bij Data Lake Storage Gen1, die verificatie door **eind gebruikers** of **service-naar-service-verificatie**zijn. Zie [Verificatie door eindgebruikers](data-lake-store-end-user-authenticate-using-active-directory.md) of [Service-to-serviceverificatie](./data-lake-store-service-to-service-authenticate-using-active-directory.md) voor instructies en meer informatie over verificatie.
+In dit artikel wordt gebruikgemaakt van een eenvoudigere verificatie methode met Data Lake Storage Gen1 waarbij u zich aanmeldt als gebruiker van een eind gebruiker. Het toegangs niveau voor het Data Lake Storage Gen1-account en het bestands systeem wordt vervolgens bepaald door het toegangs niveau van de aangemelde gebruiker. Er zijn echter ook andere benaderingen om te verifiëren bij Data Lake Storage Gen1, die verificatie door **eind gebruikers** of **service-naar-service-verificatie** zijn. Zie [Verificatie door eindgebruikers](data-lake-store-end-user-authenticate-using-active-directory.md) of [Service-to-serviceverificatie](./data-lake-store-service-to-service-authenticate-using-active-directory.md) voor instructies en meer informatie over verificatie.
 
 
 ## <a name="log-in-to-your-azure-subscription"></a>Aanmelden bij uw Azure-abonnement

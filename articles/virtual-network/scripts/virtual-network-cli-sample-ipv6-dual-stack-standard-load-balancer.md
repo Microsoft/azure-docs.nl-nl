@@ -14,10 +14,10 @@ ms.date: 07/15/2019
 ms.author: kumud
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: ffeca4919613fcfb1ece85690fcd20f5cc492336
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99539057"
 ---
 # <a name="configure-ipv6-endpoints-in-virtual-network-script-sample-using-standard-load-balancerpreview"></a>IPv6-eind punten configureren in het voorbeeld script van een virtueel netwerk met behulp van Standard Load Balancer (preview-versie)

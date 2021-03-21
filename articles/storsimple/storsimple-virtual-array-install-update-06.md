@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 05/18/2017
 ms.author: alkohli
 ms.openlocfilehash: 4b379bb76eaf7587c53ec55972ccee3f54a55f22
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94534242"
 ---
 # <a name="install-update-06-on-your-storsimple-virtual-array"></a>Update 0,6 installeren op de virtuele StorSimple-matrix
@@ -37,7 +37,7 @@ Voordat u een update toepast, raden we u aan om eerst de volumes of shares op de
 >
 > - Als u een update of hotfix installeert, wordt het apparaat opnieuw opgestart. Gezien de StorSimple virtuele matrix is een apparaat met één knoop punt, worden alle I/O-bewerkingen onderbroken en wordt de uitval tijd van uw apparaat verstoord.
 
-## <a name="use-the-azure-portal"></a>Azure Portal gebruiken
+## <a name="use-the-azure-portal"></a>De Azure-portal gebruiken
 
 Als u update 0,2 en hoger uitvoert, wordt u aangeraden updates te installeren via de Azure Portal. Voor de portal procedure moet de gebruiker de updates scannen, downloaden en installeren. Deze procedure duurt circa 7 minuten om te volt ooien. Voer de volgende stappen uit om de update of hotfix te installeren.
 
@@ -118,7 +118,7 @@ Gebruik deze methode om updates te installeren op een apparaat met GA of update 
    
     ![Scherm afbeelding toont de software-update pagina met de huidige software versie.](./media/storsimple-virtual-array-install-update-06/update6m.png)
 
-6. Sla deze stap over als u StorSimple Virtual array Update 0,5 ( **10.0.10290.0** ) uitvoert voordat u deze update hebt toegepast. U hebt een opmerking ontvangen over de software versie in stap 1 voordat u begon met het bijwerken. Als u update 0,5 hebt uitgevoerd, is de MDS-agent al up-to-date.
+6. Sla deze stap over als u StorSimple Virtual array Update 0,5 (**10.0.10290.0**) uitvoert voordat u deze update hebt toegepast. U hebt een opmerking ontvangen over de software versie in stap 1 voordat u begon met het bijwerken. Als u update 0,5 hebt uitgevoerd, is de MDS-agent al up-to-date.
 
     Als u een software versie uitvoert voordat u 0,5 bijwerkt, is de volgende stap voor u de MDS-agent bij te werken. Ga op de pagina **Software-update** naar het pad naar het **update bestand** en blader naar het `GenevaMonitoringAgentPackageInstaller.msi` bestand. Herhaal stap 2-4. Nadat de virtuele matrix opnieuw is opgestart, meldt u zich aan bij de lokale web-UI.
 

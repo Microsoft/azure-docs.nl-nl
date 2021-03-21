@@ -7,10 +7,10 @@ ms.service: fxt-edge-filer
 ms.topic: tutorial
 ms.date: 06/20/2019
 ms.openlocfilehash: 79d908077d3bd66a3ed86759e37574383358881b
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92218847"
 ---
 # <a name="tutorial-set-hardware-passwords"></a>Zelfstudie: Hardwarewachtwoorden instellen
@@ -71,13 +71,13 @@ Een BIOS-instellingenwachtwoord maken:
 
 1. Schakel het knooppunt in of start het opnieuw en druk onmiddellijk op F2 om het installatiehulpprogramma van het systeem te openen.
 
-1. Kies in het **hoofdmenu van de systeeminstellingen** **Systeem-BIOS** > **Systeembeveiliging** .
+1. Kies in het **hoofdmenu van de systeeminstellingen** **Systeem-BIOS** > **Systeembeveiliging**.
 
-1. Stel de **Wachtwoordstatus** in op **Ontgrendeld** .
+1. Stel de **Wachtwoordstatus** in op **Ontgrendeld**.
 
 1. Gebruik het veld **Instellingenwachtwoord** om het wachtwoord in te stellen. (In dit scherm kunt u ook een systeem-BIOS-wachtwoord instellen als u dat wilt gebruiken.)
 
-1. Druk op Esc om terug te gaan naar het **Systeem-BIOS** -scherm en druk nogmaals op Esc. U wordt gevraagd de wijzigingen op te slaan. Als het systeem niet automatisch opnieuw wordt opgestart, start u het opnieuw om naar het normale opstartscherm te gaan.<!-- how to exit this mode/do you need to reboot to get to the initial setup screen? -->
+1. Druk op Esc om terug te gaan naar het **Systeem-BIOS**-scherm en druk nogmaals op Esc. U wordt gevraagd de wijzigingen op te slaan. Als het systeem niet automatisch opnieuw wordt opgestart, start u het opnieuw om naar het normale opstartscherm te gaan.<!-- how to exit this mode/do you need to reboot to get to the initial setup screen? -->
 
 ## <a name="set-initial-passwords"></a>Initiële wachtwoorden instellen
 

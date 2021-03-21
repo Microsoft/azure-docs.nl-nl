@@ -9,10 +9,10 @@ ms.topic: troubleshooting
 ms.date: 09/10/2020
 ms.author: alkohli
 ms.openlocfilehash: bb70946fda4fad7a42fd885a2515cb0d82698eca
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92124671"
 ---
 # <a name="troubleshoot-issues-related-to-azure-data-box-and-azure-data-box-heavy"></a>Problemen oplossen die verband houden met Azure Data Box en Azure Data Box Heavy
@@ -104,7 +104,7 @@ Dit zijn fouten met betrekking tot container-en share namen.
 - Down load op de pagina verbinding maken en kopiëren van de lokale webinterface en controleer de fout bestanden om de mapnamen met problemen te identificeren. 
 - Wijzig de naam van de map of containers om er zeker van te zijn dat ze compatibel zijn met Azure-naamgevings conventies.
 
-Zie de Azure-naamgevings conventies voor [directory's](/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#directory-and-file-names)   en [containers](/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#container-names)voor meer informatie.
+Zie de Azure-naamgevings conventies voor [directory's](/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#directory-and-file-names) en [containers](/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#container-names)voor meer informatie.
 
 ## <a name="container-or-share-size-limit-errors"></a>Fouten in de container of share grootte beperken
 

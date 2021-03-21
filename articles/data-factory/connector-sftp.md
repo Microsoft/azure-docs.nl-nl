@@ -6,13 +6,13 @@ author: linda33wj
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 08/28/2020
-ms.openlocfilehash: 9b8402e5ae4d0358d17342d30ddf36f5e1228f65
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.date: 03/17/2021
+ms.openlocfilehash: 19b32bed15a4d292a7427d8401e777c7761e45a3
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100393459"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104592027"
 ---
 # <a name="copy-data-from-and-to-the-sftp-server-by-using-azure-data-factory"></a>Gegevens kopiëren van en naar de SFTP-server met behulp van Azure Data Factory
 
@@ -34,7 +34,7 @@ De SFTP-connector wordt ondersteund voor de volgende activiteiten:
 
 Met name de SFTP-connector ondersteunt:
 
-- Kopiëren van bestanden van en naar de SFTP-server met behulp van *basis* -of *SshPublicKey* -verificatie.
+- Kopiëren van bestanden van en naar de SFTP-server met behulp van **basis**, **open bare SSH-sleutel** of **multi-factor** Authentication.
 - Kopiëren van bestanden als of door bestanden te parseren of te genereren met de [ondersteunde bestands indelingen en compressie-codecs](supported-file-formats-and-compression-codecs.md).
 
 ## <a name="prerequisites"></a>Vereisten
@@ -58,7 +58,7 @@ De volgende eigenschappen worden ondersteund voor de gekoppelde SFTP-service:
 | poort | De poort waarop de SFTP-server luistert.<br/>De toegestane waarde is een geheel getal en de standaard waarde is *22*. |No |
 | skipHostKeyValidation | Geef op of de validatie van de host-sleutel moet worden overgeslagen.<br/>Toegestane waarden zijn *True* en *False* (standaard).  | No |
 | hostKeyFingerprint | Geef de vinger afdruk van de host-sleutel op. | Ja, als ' skipHostKeyValidation ' is ingesteld op false.  |
-| authenticationType | Geef het verificatie type op.<br/>Toegestane waarden zijn *Basic* en *SshPublicKey*. Zie de sectie [basis verificatie gebruiken](#use-basic-authentication) voor meer eigenschappen. Zie de sectie [verificatie met open bare SSH-sleutel gebruiken](#use-ssh-public-key-authentication) voor json-voor beelden. |Yes |
+| authenticationType | Geef het verificatie type op.<br/>Toegestane waarden zijn *Basic*, *SshPublicKey* en *multifactory*. Zie de sectie [basis verificatie gebruiken](#use-basic-authentication) voor meer eigenschappen. Zie de sectie [verificatie met open bare SSH-sleutel gebruiken](#use-ssh-public-key-authentication) voor json-voor beelden. |Yes |
 | connectVia | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. Zie de sectie [vereisten](#prerequisites) voor meer informatie. Als de Integration runtime niet is opgegeven, gebruikt de service de standaard Azure Integration Runtime. |No |
 
 ### <a name="use-basic-authentication"></a>Basis verificatie gebruiken
@@ -75,7 +75,6 @@ Als u basis verificatie wilt gebruiken, stelt u de eigenschap *authenticationTyp
 ```json
 {
     "name": "SftpLinkedService",
-    "type": "linkedservices",
     "properties": {
         "type": "Sftp",
         "typeProperties": {
@@ -117,7 +116,6 @@ Als u verificatie via een open bare SSH-sleutel wilt gebruiken, stelt u de eigen
 ```json
 {
     "name": "SftpLinkedService",
-    "type": "Linkedservices",
     "properties": {
         "type": "Sftp",
         "typeProperties": {
@@ -161,6 +159,43 @@ Als u verificatie via een open bare SSH-sleutel wilt gebruiken, stelt u de eigen
             "passPhrase": {
                 "type": "SecureString",
                 "value": "<pass phrase>"
+            }
+        },
+        "connectVia": {
+            "referenceName": "<name of integration runtime>",
+            "type": "IntegrationRuntimeReference"
+        }
+    }
+}
+```
+
+### <a name="use-multi-factor-authentication"></a>Multi-factor Authentication gebruiken
+
+Als u multi-factor Authentication wilt gebruiken. Dit is een combi natie van verificaties met open bare basis-en SSH-sleutels. Geef de gebruikers naam, het wacht woord en de persoonlijke sleutel gegevens op die in de bovenstaande secties worden beschreven.
+
+**Voor beeld: multi-factor Authentication**
+
+```json
+{
+    "name": "SftpLinkedService",
+    "properties": {
+        "type": "Sftp",
+        "typeProperties": {
+            "host": "<host>",
+            "port": 22,
+            "authenticationType": "MultiFactor",
+            "userName": "<username>",
+            "password": {
+                "type": "SecureString",
+                "value": "<password>"
+            },
+            "privateKeyContent": {
+                "type": "SecureString",
+                "value": "<base64 encoded private key content>"
+            },
+            "passPhrase": {
+                "type": "SecureString",
+                "value": "<passphrase for private key>"
             }
         },
         "connectVia": {
@@ -236,7 +271,7 @@ De volgende eigenschappen worden ondersteund voor SFTP onder de `storeSettings` 
 | modifiedDatetimeEnd      | Hetzelfde als hierboven.                                               | No                                            |
 | enablePartitionDiscovery | Geef voor bestanden die zijn gepartitioneerd op of de partities moeten worden geparseerd uit het bestandspad en voeg deze toe als aanvullende bron kolommen.<br/>Toegestane waarden zijn **False** (standaard) en **waar**. | No                                            |
 | partitionRootPath | Wanneer partitie detectie is ingeschakeld, geeft u het absolute hoofdpad op om gepartitioneerde mappen te lezen als gegevens kolommen.<br/><br/>Als deze niet is opgegeven, wordt standaard<br/>-Als u het bestandspad in de gegevensset of lijst met bestanden op de bron gebruikt, is het basispad het pad dat is geconfigureerd in de gegevensset.<br/>-Wanneer u filter voor de map met Joker tekens gebruikt, is het pad van de partitie hoofdmap het pad vóór het eerste Joker teken.<br/><br/>Als u bijvoorbeeld het pad in gegevensset configureert als ' hoofdmap/map/jaar = 2020/maand = 08/dag = 27 ':<br/>-Als u basispad opgeeft als ' hoofdmap/map/jaar = 2020 ', worden met de Kopieer activiteit nog twee kolommen `month` en `day` met de waarde ' 08 ' en ' 27 ' gegenereerd, naast de kolommen in de bestanden.<br/>-Als het basispad niet is opgegeven, wordt er geen extra kolom gegenereerd. | No                                            |
-| maxConcurrentConnections | Het aantal verbindingen dat gelijktijdig met het opslag archief kan worden verbonden. Geef alleen een waarde op als u de gelijktijdige verbinding met het gegevens archief wilt beperken. | No                                            |
+| maxConcurrentConnections | De bovengrens van gelijktijdige verbindingen die tot het gegevens archief zijn gemaakt tijdens de uitvoering van de activiteit. Geef alleen een waarde op als u gelijktijdige verbindingen wilt beperken.| No                                            |
 
 **Voorbeeld:**
 
@@ -289,7 +324,7 @@ De volgende eigenschappen worden ondersteund voor SFTP onder `storeSettings` ins
 | ------------------------ | ------------------------------------------------------------ | -------- |
 | type                     | De eigenschap *type* onder `storeSettings` moet worden ingesteld op *SftpWriteSettings*. | Yes      |
 | copyBehavior             | Hiermee wordt het Kopieer gedrag gedefinieerd wanneer de bron bestanden van een gegevens archief op basis van een bestand zijn.<br/><br/>Toegestane waarden zijn:<br/><b>-PreserveHierarchy (standaard instelling)</b>: behoudt de bestands hiërarchie in de doelmap. Het relatieve pad van het bron bestand naar de bronmap is identiek aan het relatieve pad van het doel bestand naar de doelmap.<br/><b>-FlattenHierarchy</b>: alle bestanden in de bronmap bevinden zich in het eerste niveau van de doelmap. De doel bestanden hebben automatisch gegenereerde namen. <br/><b>-MergeFiles</b>: alle bestanden van de bronmap worden samengevoegd met één bestand. Als de bestands naam is opgegeven, is de naam van het samengevoegde bestand de opgegeven naam. Anders is het een automatisch gegenereerde bestands naam. | No       |
-| maxConcurrentConnections | Het aantal verbindingen dat gelijktijdig met het opslag archief kan worden verbonden. Geef alleen een waarde op als u de gelijktijdige verbinding met het gegevens archief wilt beperken. | No       |
+| maxConcurrentConnections | De bovengrens van gelijktijdige verbindingen die tot het gegevens archief zijn gemaakt tijdens de uitvoering van de activiteit. Geef alleen een waarde op als u gelijktijdige verbindingen wilt beperken. | No       |
 | useTempFileRename | Geef aan of u wilt uploaden naar tijdelijke bestanden en wijzig de naam ervan, of rechtstreeks naar de doelmap of bestands locatie. Standaard worden Azure Data Factory eerst naar tijdelijke bestanden geschreven en wordt de naam ervan gewijzigd wanneer het uploaden is voltooid. Met deze reeks kunt u (1) conflicten voor komen die kunnen leiden tot een beschadigd bestand als u andere processen naar hetzelfde bestand schrijft, en (2) ervoor te zorgen dat de oorspronkelijke versie van het bestand bestaat tijdens de overdracht. Als uw SFTP-server geen bewerking voor naamswijziging ondersteunt, schakelt u deze optie uit en zorgt u ervoor dat u geen gelijktijdige schrijf bewerkingen naar het doel bestand hebt. Zie de tip voor probleem oplossing aan het einde van deze tabel voor meer informatie. | Nee. De standaardwaarde is *true*. |
 | operationTimeout | De wacht tijd voordat elke schrijf aanvraag naar een SFTP-server verkeert. De standaard waarde is 60 minuten (01:00:00).|No |
 
@@ -422,7 +457,7 @@ Zie [activiteit verwijderen in azure Data Factory](delete-activity.md)voor meer 
 |:--- |:--- |:--- |
 | type | De eigenschap *type* van de bron van de Kopieer activiteit moet zijn ingesteld op *FileSystemSource* |Yes |
 | recursieve | Geeft aan of de gegevens recursief worden gelezen uit de submappen of alleen vanuit de opgegeven map. Als recursief is ingesteld op *True* en de Sink een archief op basis van bestanden is, worden lege mappen en submappen niet gekopieerd of gemaakt bij de sink.<br/>Toegestane waarden zijn *True* (standaard) en *Onwaar* | No |
-| maxConcurrentConnections | Het aantal verbindingen dat gelijktijdig met een opslag archief kan worden verbonden. Geef alleen een getal op als u de gelijktijdige verbindingen met het gegevens archief wilt beperken. | No |
+| maxConcurrentConnections |De bovengrens van gelijktijdige verbindingen die tot het gegevens archief zijn gemaakt tijdens de uitvoering van de activiteit. Geef alleen een waarde op als u gelijktijdige verbindingen wilt beperken.| No |
 
 **Voorbeeld:**
 

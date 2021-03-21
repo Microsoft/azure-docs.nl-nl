@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/15/2021
+ms.date: 03/17/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 397fff3fafad52b3b989049096fb2d3e1fa2cba1
-ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.openlocfilehash: 3699743c5d1b3330715984d2b6116cfebafe74f1
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103488513"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104579821"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-twitter-account-using-azure-active-directory-b2c"></a>Registratie instellen en aanmelden met een Twitter-account met behulp van Azure Active Directory B2C
 
@@ -69,6 +69,8 @@ Als u aanmelden voor gebruikers met een Twitter-account in Azure AD B2C wilt ins
 1. Selecteer **Opslaan**.
 
 ## <a name="add-twitter-identity-provider-to-a-user-flow"></a>Twitter-ID-provider toevoegen aan een gebruikers stroom 
+
+Op dit moment is de Twitter-ID-provider ingesteld, maar deze is nog niet beschikbaar op de aanmeldings pagina's. De Twitter-ID-provider toevoegen aan een gebruikers stroom:
 
 1. Selecteer in uw Azure AD B2C-Tenant **gebruikers stromen**.
 1. Selecteer de gebruikers stroom waaraan u de Twitter-ID-provider wilt toevoegen.

@@ -73,7 +73,7 @@
     - name: Container plaatsen
       items:
         - name: Container plaatsen ASP.NET-Apps en Migreer naar AKS
-          href: tutorial-containerize-aspnet-kubernetes.md
+          href: tutorial-app-containerization-aspnet-kubernetes.md
         - name: Container plaatsen Java-Web-apps en Migreer naar AKS
           href: tutorial-containerize-java-kubernetes.md
 - name: Concepten

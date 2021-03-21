@@ -12,12 +12,12 @@ ms.date: 11/04/2020
 ms.author: kenwith
 ms.reviewer: arvinh
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 048adee21d5c2e49ef02f518002a1dc6025c1ecd
-ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
+ms.openlocfilehash: 19ec3ec95fbbccbaa5c646c8de16999b86349626
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99988981"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104579447"
 ---
 # <a name="how-provisioning-works"></a>Hoe inrichting werkt
 
@@ -138,7 +138,7 @@ Na de eerste cyclus zullen alle andere cycli:
 De inrichtings service blijft een incrementele cyclus van back-to-back uitvoeren, op intervallen die zijn gedefinieerd in de [zelf studie specifiek voor elke toepassing](../saas-apps/tutorial-list.md). Incrementele cycli worden voortgezet totdat een van de volgende gebeurtenissen zich voordoet:
 
 - De service wordt hand matig gestopt met de Azure Portal of met de juiste Microsoft Graph API-opdracht.
-- Er wordt een nieuwe eerste cyclus geactiveerd met de optie **wissen en opnieuw starten** in het Azure Portal, of met behulp van de juiste Microsoft Graph API-opdracht. Met deze actie wordt een opgeslagen water merk gewist en worden alle bron objecten opnieuw geëvalueerd.
+- Er wordt een nieuwe eerste cyclus geactiveerd met de optie **inrichting opnieuw opstarten** in de Azure Portal, of met behulp van de juiste Microsoft Graph API-opdracht. Met deze actie wordt een opgeslagen water merk gewist en worden alle bron objecten opnieuw geëvalueerd.
 - Er wordt een nieuwe eerste cyclus geactiveerd als gevolg van een wijziging in kenmerk toewijzingen of filter bereik. Met deze actie wordt ook een opgeslagen water merk gewist en worden alle bron objecten opnieuw geëvalueerd.
 - Het inrichtings proces gaat in quarantaine (zie hieronder) als gevolg van een hoge fout frequentie en blijft meer dan vier weken in quarantaine. In dit geval wordt de service automatisch uitgeschakeld.
 

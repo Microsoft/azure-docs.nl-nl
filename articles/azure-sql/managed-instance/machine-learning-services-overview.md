@@ -1,5 +1,5 @@
 ---
-title: Machine Learning Services in Azure SQL Managed instance (preview-versie)
+title: Machine Learning Services in Azure SQL Managed instance
 description: Dit artikel bevat een overzicht of Machine Learning Services in Azure SQL Managed instance.
 services: sql-database
 ms.service: sql-managed-instance
@@ -11,26 +11,17 @@ author: garyericson
 ms.author: garye
 ms.reviewer: sstein, davidph
 manager: cgronlun
-ms.date: 06/03/2020
-ms.openlocfilehash: c805bacbd4a2219fb79168ad6426efd8b0a390df
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.date: 03/17/2021
+ms.openlocfilehash: 94495144c64b3770995a5f67e9129b3ba86e741e
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96324513"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104599558"
 ---
-# <a name="machine-learning-services-in-azure-sql-managed-instance-preview"></a>Machine Learning Services in Azure SQL Managed instance (preview-versie)
+# <a name="machine-learning-services-in-azure-sql-managed-instance"></a>Machine Learning Services in Azure SQL Managed instance
 
-Machine Learning Services is een functie van Azure SQL Managed instance (preview) dat in-data base-machine learning biedt en zowel python-als R-scripts ondersteunt. De functie bevat micro soft python en R-pakketten voor predictive analytics met hoge prestaties en machine learning. De relationele gegevens kunnen worden gebruikt in scripts via opgeslagen procedures, een T-SQL-script met python-of R-instructies of python-of R-code met T-SQL.
-
-> [!IMPORTANT]
-> Machine Learning Services is een functie van Azure SQL Managed Instance die momenteel beschikbaar is als openbare preview.
-> Deze preview-functie is in eerste instantie beschikbaar in een beperkt aantal regio's in de VS, Azië en Australië, met extra regio's die later worden toegevoegd.
->
-> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt.
-> Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
->
-> [Meld u aan voor de preview-versie](#signup) hieronder.
+Machine Learning Services is een functie van Azure SQL Managed instance die in-data base-machine learning voorziet en zowel python-als R-scripts ondersteunt. De functie bevat micro soft python en R-pakketten voor predictive analytics met hoge prestaties en machine learning. De relationele gegevens kunnen worden gebruikt in scripts via opgeslagen procedures, een T-SQL-script met python-of R-instructies of python-of R-code met T-SQL.
 
 ## <a name="what-is-machine-learning-services"></a>Wat is Machine Learning Services?
 
@@ -44,47 +35,32 @@ Gebruik Machine Learning Services met R/python-ondersteuning in Azure SQL Manage
 
 - **Implementeer uw modellen en scripts in productie in opgeslagen procedures** : de scripts en getrainde modellen kunnen eenvoudigweg worden operationeel door ze in de opgeslagen T-SQL-procedures in te sluiten. Apps die verbinding maken met een beheerd exemplaar van Azure SQL kunnen profiteren van voor spellingen en intelligentie in deze modellen door alleen een opgeslagen procedure aan te roepen. U kunt ook de native T-SQL-functie voors PELLEn gebruiken om modellen te operationeel maken, zodat u snel kunt scoren in zeer gelijktijdige Score scenario's voor realtime.
 
-Basis distributies van python en R zijn opgenomen in Machine Learning Services. U kunt open source-pakketten en-frameworks installeren en gebruiken, zoals PyTorch, tensor flow en scikit-learn, naast de micro soft-pakketten [revoscalepy](/sql/advanced-analytics/python/ref-py-revoscalepy) en [microsoftml](/sql/advanced-analytics/python/ref-py-microsoftml) voor python, en [RevoScaleR](/sql/advanced-analytics/r/ref-r-revoscaler), [Microsoftml](/sql/advanced-analytics/r/ref-r-microsoftml), [olapr](/sql/advanced-analytics/r/ref-r-olapr)en [sqlrutils](/sql/advanced-analytics/r/ref-r-sqlrutils) voor R.
+Basis distributies van python en R zijn opgenomen in Machine Learning Services. U kunt open source-pakketten en-frameworks installeren en gebruiken, zoals PyTorch, tensor flow en scikit-learn, naast de micro soft-pakketten [revoscalepy](/sql/machine-learning/python/ref-py-revoscalepy) en [microsoftml](/sql/machine-learning/python/ref-py-microsoftml) voor python, en [RevoScaleR](/sql/machine-learning/r/ref-r-revoscaler), [Microsoftml](/sql/machine-learning/r/ref-r-microsoftml), [olapr](/sql/machine-learning/r/ref-r-olapr)en [sqlrutils](/sql/machine-learning/r/ref-r-sqlrutils) voor R.
 
-<a name="signup"></a>
+## <a name="how-to-enable-machine-learning-services"></a>Machine Learning Services inschakelen
 
-## <a name="sign-up-for-the-preview"></a>Registreren voor de preview-versie
+U kunt Machine Learning Services in Azure SQL Managed instance inschakelen door uitbreid baarheid in te scha kelen met de volgende SQL-opdrachten (SQL Managed instance wordt opnieuw gestart en gedurende een paar seconden niet beschikbaar):
 
-Deze beperkte open bare preview is onderhevig aan de voor [waarden van Azure preview](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). 
+```sql
+sp_configure 'external scripts enabled', 1;
+RECONFIGURE WITH OVERRIDE;
+```
 
-Als u geïnteresseerd bent in het toevoegen van het preview-programma en deze voor waarden accepteert, kunt u de inschrijving aanvragen door een ondersteunings ticket voor Azure te maken op [**https://azure.microsoft.com/support/create-ticket/**](https://azure.microsoft.com/support/create-ticket/) . 
+Zie [resource governance](machine-learning-services-differences.md#resource-governance)voor meer informatie over de werking van deze opdracht voor SQL Managed instance-resources.
 
-1. Klik op de pagina **een ondersteunings ticket maken** op **een incident maken**.
+### <a name="enable-machine-learning-services-in-a-failover-group"></a>Machine Learning Services in een failovergroep inschakelen
 
-1. Klik op de pagina **Help en ondersteuning** op **nieuwe ondersteunings aanvraag** om een nieuw ticket te maken.
+In een [failovergroep](failover-group-add-instance-tutorial.md)worden systeem databases niet gerepliceerd naar het secundaire exemplaar (Zie de [beperkingen van failover-groepen](../database/auto-failover-group-overview.md#limitations-of-failover-groups) voor meer informatie).
 
-1. Selecteer de volgende opties:
-   - Probleem type- **technisch**
-   - Abonnement: *Selecteer uw abonnement*
-   - Door service- **SQL beheerd exemplaar**
-   - Resource: *Selecteer uw beheerde exemplaar*
-   - Samen vatting: *Voer een korte beschrijving van uw aanvraag in*
-   - Probleem type- **Machine Learning Services voor een SQL-beheerd exemplaar (preview-versie)**
-   - Subtype van probleem: **ander probleem of ' How to '-vragen**
+Als het beheerde exemplaar dat u gebruikt deel uitmaakt van een failovergroep, gaat u als volgt te werk:
 
-1. Klik op **volgende: oplossingen**.
+- Voer de `sp_configure` opdrachten en uit `RECONFIGURE` voor elk exemplaar van de failovergroep om Machine Learning Services in te scha kelen.
 
-1. Lees de informatie over de preview en klik vervolgens op **volgende: Details**.
-
-1. Op deze pagina:
-   - Voor de vraag wilt **u zich aanmelden voor de preview-versie**. Selecteer **Ja**. 
-   - Voer bij **Beschrijving** de specifieke kenmerken van uw aanvraag in, met inbegrip van de naam van de logische server, de regio en de abonnements-id die u in de preview wilt registreren. Voer indien nodig nog meer details in.
-   - Selecteer uw voorkeurs methode voor contact. 
-
-1. Wanneer u klaar bent, klikt u op **volgende: bekijken en maken** en klikt u vervolgens op **maken**.
-
-Zodra u voor het programma staat ingeschreven, vindt onboarding plaats voor de openbare preview en wordt Machine Learning Services voor uw bestaande of nieuwe database ingeschakeld.
-
-Machine Learning Services in SQL Managed Instance wordt niet aanbevolen voor productieworkloads tijdens de openbare preview.
+- Installeer de R/python-bibliotheken op een gebruikers database in plaats van de hoofd database.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 - Bekijk de belangrijkste verschillen ten opzichte [van SQL Server machine learning Services](machine-learning-services-differences.md).
-- Zie [python-scripts uitvoeren](/sql/machine-learning/tutorials/quickstart-python-create-script?context=%2fazure%2fazure-sql%2fmanaged-instance%2fcontext%2fml-context&view=sql-server-ver15)voor meer informatie over het gebruik van python in Machine Learning Services.
-- Zie [r-scripts uitvoeren](/sql/machine-learning/tutorials/quickstart-r-create-script?context=%2fazure%2fazure-sql%2fmanaged-instance%2fcontext%2fml-context&view=sql-server-ver15)voor meer informatie over het gebruik van r in Machine Learning Services.
-- Zie de [documentatie voor sql machine learning](/sql/machine-learning/)voor meer informatie over machine learning op andere SQL-platforms.
+- Zie [python-scripts uitvoeren](/sql/machine-learning/tutorials/quickstart-python-create-script?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current&preserve-view=true)voor meer informatie over het gebruik van python in Machine Learning Services.
+- Zie [r-scripts uitvoeren](/sql/machine-learning/tutorials/quickstart-r-create-script?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current&preserve-view=true)voor meer informatie over het gebruik van r in Machine Learning Services.
+- Zie de [documentatie voor sql machine learning](/sql/machine-learning/index)voor meer informatie over machine learning op andere SQL-platforms.

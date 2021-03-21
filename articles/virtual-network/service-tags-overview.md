@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 10/30/2020
 ms.author: kumud
 ms.reviewer: kumud
-ms.openlocfilehash: 18b79b105bcc4b5b0b65fc6f7d6b602ffff55561
-ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
+ms.openlocfilehash: 472b0d2886d9177c6507c84d5a8b6da6e99e65e5
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102455819"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104597960"
 ---
 # <a name="virtual-network-service-tags"></a>Service tags van virtueel netwerk
 <a name="network-service-tags"></a>
@@ -75,7 +75,7 @@ Service Tags geven standaard de bereiken weer voor de hele Cloud. Sommige servic
 | **AzureKeyVault** | Azure Key Vault.<br/><br/>*Opmerking:* Deze tag bevat een afhankelijkheid van de **AzureActiveDirectory** -tag. | Uitgaand | Ja | Ja |
 | **AzureLoadBalancer** | De Azure-infrastructuur load balancer. De tag wordt omgezet in het [virtuele IP-adres van de host](./network-security-groups-overview.md#azure-platform-considerations) (168.63.129.16) waar de Azure Health-tests afkomstig zijn. Dit omvat alleen test verkeer, niet het werkelijke verkeer naar uw back-end-resource. Als u Azure Load Balancer niet gebruikt, kunt u deze regel onderdrukken. | Beide | Nee | Nee |
 | **AzureMachineLearning** | Azure Machine Learning. | Beide | Nee | Ja |
-| **AzureMonitor** | Log Analytics, Application Insights, AzMon en aangepaste metrische gegevens (GB-eind punten).<br/><br/>*Opmerking:* Voor Log Analytics heeft deze tag een afhankelijkheid van de **opslag** code. | Uitgaand | Nee | Ja |
+| **AzureMonitor** | Log Analytics, Application Insights, AzMon en aangepaste metrische gegevens (GB-eind punten).<br/><br/>*Opmerking:* Voor Log Analytics is de **opslag** label ook vereist. Als Linux-agents worden gebruikt, is de tag **GuestAndHybridManagement** ook vereist. | Uitgaand | Nee | Ja |
 | **AzureOpenDatasets** | Open gegevens sets van Azure.<br/><br/>*Opmerking:* Deze tag heeft een afhankelijkheid van het **AzureFrontDoor. frontend** -en **opslag** label. | Uitgaand | Nee | Nee |
 | **AzurePlatformDNS** | De basis-DNS-service (standaard).<br/><br>U kunt deze tag gebruiken om de standaard-DNS uit te scha kelen. Wees voorzichtig wanneer u deze tag gebruikt. U wordt aangeraden [Azure-platform overwegingen](./network-security-groups-overview.md#azure-platform-considerations)te lezen. We raden u ook aan eerst tests uit te voeren voordat u deze tag gebruikt. | Uitgaand | Nee | Nee |
 | **AzurePlatformIMDS** | Azure Instance Metadata Service (IMDS), een basis infrastructuur service.<br/><br/>U kunt deze tag gebruiken om de standaard IMDS uit te scha kelen. Wees voorzichtig wanneer u deze tag gebruikt. U wordt aangeraden [Azure-platform overwegingen](./network-security-groups-overview.md#azure-platform-considerations)te lezen. We raden u ook aan eerst tests uit te voeren voordat u deze tag gebruikt. | Uitgaand | Nee | Nee |

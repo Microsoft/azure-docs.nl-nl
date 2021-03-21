@@ -8,10 +8,10 @@ ms.custom:
 - seodec18
 - fasttrack-edit
 ms.openlocfilehash: e8a9fbe6072f3628d755ad3ad5aa5a623fc3ab23
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "80519949"
 ---
 # <a name="configure-your-app-service-or-azure-functions-app-to-use-google-login"></a>Uw App Service-of Azure Functions-app configureren voor het gebruik van Google-aanmelding
@@ -35,8 +35,8 @@ Als u de procedure in dit onderwerp wilt volt ooien, moet u een Google-account h
 ## <a name="add-google-information-to-your-application"></a><a name="secrets"> </a>Google-gegevens toevoegen aan uw toepassing
 
 1. Ga in het [Azure Portal]naar uw app service-app.
-1. Selecteer **instellingen**  >  **verificatie/autorisatie**en zorg ervoor dat **app service-verificatie** is **ingeschakeld**.
-1. Selecteer **Google**en plak de waarden van de App-ID en het app-geheim die u eerder hebt verkregen. Schakel de scopes in die nodig zijn voor uw toepassing.
+1. Selecteer **instellingen**  >  **verificatie/autorisatie** en zorg ervoor dat **app service-verificatie** is **ingeschakeld**.
+1. Selecteer **Google** en plak de waarden van de App-ID en het app-geheim die u eerder hebt verkregen. Schakel de scopes in die nodig zijn voor uw toepassing.
 1. Selecteer **OK**.
 
    App Service biedt verificatie, maar beperkt geen geautoriseerde toegang tot uw site-inhoud en Api's. Zie [gebruikers machtigen of weigeren](app-service-authentication-how-to.md#authorize-or-deny-users)voor meer informatie.

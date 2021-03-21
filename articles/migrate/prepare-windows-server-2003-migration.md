@@ -7,10 +7,10 @@ ms.manager: bsiva
 ms.topic: how-to
 ms.date: 05/27/2020
 ms.openlocfilehash: f8d3dea970d07d951467a44661e12000ba413f72
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96753741"
 ---
 # <a name="prepare-windows-server-2003-machines-for-migration"></a>Windows Server 2003-machines voorbereiden voor migratie
@@ -46,7 +46,7 @@ Controleer vóór de migratie of Hyper-V-integratie Services zijn geïnstalleerd
 3. Kopieer de installatiemap naar de virtuele VMware-machine.
 4. Voer uit vanaf de opdracht regel op de virtuele machine ```gpedit.msc``` .
 5. Open **computer configuratie**  >  **Windows instellingen**  >  **scripts (opstarten/afsluiten)**.
-6. Typ in **opstart**  >  **Add**  >  **script naam** toevoegen het setup.exe adres.
+6. Typ in **opstart**  >    >  **script naam** toevoegen het setup.exe adres.
 7. Na de migratie naar Azure wordt het script uitgevoerd op het moment dat de Azure VM voor het eerst wordt gestart.
 8. Start de Azure-VM hand matig opnieuw op. Er wordt een pop-up in de diagnostische gegevens over opstarten weer gegeven om aan te geven dat de computer opnieuw moet worden opgestart.
 9. Nadat het script is uitgevoerd en Hyper-V Integration Services is geïnstalleerd op de virtuele Azure-machine, kunt u het script verwijderen uit het opstarten.

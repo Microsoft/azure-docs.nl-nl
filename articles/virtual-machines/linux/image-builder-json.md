@@ -9,12 +9,12 @@ ms.service: virtual-machines
 ms.subservice: image-builder
 ms.collection: linux
 ms.reviewer: cynthn
-ms.openlocfilehash: a3138da0ecbcabaeb7ef910975afc3b7005e5b50
-ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.openlocfilehash: aaaabe758b036335062907c8e5549ae876c63997
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102519704"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104594730"
 ---
 # <a name="preview-create-an-azure-image-builder-template"></a>Voor beeld: een Azure Image Builder-sjabloon maken 
 
@@ -249,7 +249,7 @@ Bij gebruik van `customize` :
 - Als een aanpassings functie mislukt, mislukt het hele aanpassings onderdeel en wordt er een fout melding weer gegeven.
 - U wordt aangeraden het script grondig te testen voordat u het in een sjabloon kunt gebruiken. Fout opsporing van het script op uw eigen VM is eenvoudiger.
 - Plaats geen gevoelige gegevens in de scripts. 
-- De script locaties moeten openbaar toegankelijk zijn, tenzij u [MSI](https://docs.microsoft.com/azure/virtual-machines/linux/image-builder-user-assigned-identity)gebruikt.
+- De script locaties moeten openbaar toegankelijk zijn, tenzij u [MSI](./image-builder-user-assigned-identity.md)gebruikt.
 
 ```json
         "customize": [
@@ -417,7 +417,7 @@ Eigenschappen van bestands aanpassing:
 - **sourceUri** : een toegankelijk eind punt dat kan worden github of Azure Storage. U kunt slechts één bestand downloaden, niet een volledige map. Als u een map wilt downloaden, gebruikt u een gecomprimeerd bestand en comprimeert u het met de shell-of Power shell-aanpassingen. 
 
 > [!NOTE]
-> Als de sourceUri een Azure Storage-account is, ongeacht of de blob is gemarkeerd als openbaar, moet u de beheerde gebruikers identiteits machtigingen verlenen om toegang te krijgen tot de blob. Raadpleeg dit [voor beeld](https://docs.microsoft.com/azure/virtual-machines/linux/image-builder-user-assigned-identity#create-a-resource-group) om de machtigingen voor opslag in te stellen.
+> Als de sourceUri een Azure Storage-account is, ongeacht of de blob is gemarkeerd als openbaar, moet u de beheerde gebruikers identiteits machtigingen verlenen om toegang te krijgen tot de blob. Raadpleeg dit [voor beeld](./image-builder-user-assigned-identity.md#create-a-resource-group) om de machtigingen voor opslag in te stellen.
 
 - **doel** : dit is het volledige doelpad en de bestands naam. Elk pad en submappen waarnaar wordt verwezen moeten bestaan, de shell-of Power shell-aanpassingen gebruiken om deze vooraf in te stellen. U kunt de script Customizers gebruiken om het pad te maken. 
 
@@ -456,7 +456,7 @@ Eigenschappen aanpassen:
 - **updateLimit** – optioneel, definieert het aantal updates dat kan worden geïnstalleerd, standaard 1000.
  
 > [!NOTE]
-> De Windows Update-aanpassings bewerking kan mislukken als er openstaande Windows-startingen of toepassings installaties nog steeds worden uitgevoerd. deze fout kan meestal worden weer geven in de aanpassingen. log, `System.Runtime.InteropServices.COMException (0x80240016): Exception from HRESULT: 0x80240016` . Wij adviseren u ten zeerste aan het toevoegen van Windows opnieuw op te starten en/of toepassingen voldoende tijd te geven voor het volt ooien van de installatie met behulp van de [slaap](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/start-sleep) -of wait-opdrachten in de inline-opdrachten of-scripts voordat u Windows Update uitvoert.
+> De Windows Update-aanpassings bewerking kan mislukken als er openstaande Windows-startingen of toepassings installaties nog steeds worden uitgevoerd. deze fout kan meestal worden weer geven in de aanpassingen. log, `System.Runtime.InteropServices.COMException (0x80240016): Exception from HRESULT: 0x80240016` . Wij adviseren u ten zeerste aan het toevoegen van Windows opnieuw op te starten en/of toepassingen voldoende tijd te geven voor het volt ooien van de installatie met behulp van de [slaap](/powershell/module/microsoft.powershell.utility/start-sleep) -of wait-opdrachten in de inline-opdrachten of-scripts voordat u Windows Update uitvoert.
 
 ### <a name="generalize"></a>Generaliseren 
 Azure Image Builder voert standaard ook de code ' provisioning ' uit aan het einde van elke aanpassings fase van de installatie kopie tot ' generalize ' in de installatie kopie. Generalize is een proces waarbij de installatie kopie wordt ingesteld zodat deze opnieuw kan worden gebruikt om meerdere virtuele machines te maken. Voor virtuele Windows-machines maakt Azure Image Builder gebruik van Sysprep. Voor Linux voert Azure Image Builder ' waagent-deprovision ' uit. 

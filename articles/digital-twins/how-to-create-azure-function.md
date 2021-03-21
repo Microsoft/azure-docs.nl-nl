@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 8/27/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 7bb9b6d4a6ca006952d709244e6526345d44431e
-ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
+ms.openlocfilehash: f1ed4b9beda9848bba8fb12783f49dcf8016d3dd
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102630257"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104590616"
 ---
 # <a name="connect-function-apps-in-azure-for-processing-data"></a>Functie-apps in azure verbinden voor het verwerken van gegevens
 
@@ -48,7 +48,7 @@ Selecteer het type functie-app van *Event grid trigger* en selecteer _maken_.
 
 :::image type="content" source="media/how-to-create-azure-function/event-grid-trigger-function.png" alt-text="Scherm opname van Visual Studio waarin het dialoog venster wordt weer gegeven voor het maken van een nieuwe Azure Functions-toepassing. De optie Trigger Event Grid is gemarkeerd.":::
 
-Als uw functie-app is gemaakt, wordt in Visual Studio een code voorbeeld gegenereerd in een **Function1.cs** -bestand in de projectmap. Deze korte functie wordt gebruikt om gebeurtenissen te registreren.
+Als uw functie-app is gemaakt, wordt in Visual Studio een code voorbeeld gegenereerd in een **Function1. cs** -bestand in de projectmap. Deze korte functie wordt gebruikt om gebeurtenissen te registreren.
 
 :::image type="content" source="media/how-to-create-azure-function/visual-studio-sample-code.png" alt-text="Scherm opname van Visual Studio in het project venster voor het nieuwe project dat is gemaakt. Er is code voor een voorbeeld functie met de naam Function1." lightbox="media/how-to-create-azure-function/visual-studio-sample-code.png":::
 
@@ -63,13 +63,13 @@ Als u de SDK wilt gebruiken, moet u de volgende pakketten in uw project toevoege
 * [System .net. http](https://www.nuget.org/packages/System.Net.Http/)
 * [Azure. core](https://www.nuget.org/packages/Azure.Core/)
 
-Open vervolgens in uw Visual Studio-Solution Explorer het _Function1.cs_ -bestand met voorbeeld code en voeg de volgende `using` instructies voor deze pakketten toe aan uw functie.
+Open vervolgens in uw Visual Studio Solution Explorer het bestand _Function1. cs_ waarin u voorbeeld code hebt en voeg de volgende `using` instructies voor deze pakketten toe aan uw functie.
 
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/adtIngestFunctionSample.cs" id="Function_dependencies":::
 
 ## <a name="add-authentication-code-to-the-function"></a>Verificatie code toevoegen aan de functie
 
-U declareert nu variabelen op klasseniveau en voegt een verificatie code toe waarmee de functie toegang kan krijgen tot Azure Digital Apparaatdubbels. U voegt het volgende toe aan de functie in het _Function1.cs_ -bestand.
+U declareert nu variabelen op klasseniveau en voegt een verificatie code toe waarmee de functie toegang kan krijgen tot Azure Digital Apparaatdubbels. U voegt het volgende toe aan uw functie in het bestand _Function1. cs_ .
 
 * Code voor het lezen van de URL van de Azure Digital Apparaatdubbels-service als een **omgevings variabele**. Het is een goed idee om de service-URL te lezen uit een omgevings variabele in plaats van deze op te harden in de functie. [Verderop in dit artikel](#set-up-security-access-for-the-function-app)moet u de waarde van deze omgevings variabele instellen. Zie [*uw functie-app beheren*](../azure-functions/functions-how-to-use-azure-function-app-settings.md?tabs=portal)voor meer informatie over omgevings variabelen.
 
@@ -118,12 +118,14 @@ U kunt de beveiligings toegang voor de functie-app instellen met behulp van de A
 # <a name="cli"></a>[CLI](#tab/cli)
 
 U kunt deze opdrachten uitvoeren in [Azure Cloud shell](https://shell.azure.com) of een [lokale Azure cli-installatie](/cli/azure/install-azure-cli).
+U kunt de door het systeem beheerde identiteit van de functie-app gebruiken om aan te geven dat de rol _**Azure Digital Apparaatdubbels data owner**_ is voor uw Azure Digital apparaatdubbels-exemplaar. Hiermee geeft u de functie-app toestemming in het exemplaar voor het uitvoeren van activiteiten voor gegevens vlak. Vervolgens stelt u de URL van het Azure Digital Apparaatdubbels-exemplaar toegankelijk te maken voor uw functie door een omgevings variabele in te stellen.
 
 ### <a name="assign-access-role"></a>Access-rol toewijzen
 
+[!INCLUDE [digital-twins-permissions-required.md](../../includes/digital-twins-permissions-required.md)]
+
 De functie skelet van eerdere voor beelden vereist dat er een Bearer-token wordt door gegeven, zodat het kan worden geverifieerd met Azure Digital Apparaatdubbels. Om ervoor te zorgen dat dit Bearer-token wordt door gegeven, moet u [Managed Service Identity (MSI)-](../active-directory/managed-identities-azure-resources/overview.md) machtigingen instellen voor de functie-app voor toegang tot Azure Digital apparaatdubbels. U hoeft dit slechts één keer te doen voor elke functie-app.
 
-U kunt de door het systeem beheerde identiteit van de functie-app gebruiken om aan te geven dat de rol _**Azure Digital Apparaatdubbels data owner**_ is voor uw Azure Digital apparaatdubbels-exemplaar. Hiermee geeft u de functie-app toestemming in het exemplaar voor het uitvoeren van activiteiten voor gegevens vlak. Vervolgens stelt u de URL van het Azure Digital Apparaatdubbels-exemplaar toegankelijk te maken voor uw functie door een omgevings variabele in te stellen.
 
 1. Gebruik de volgende opdracht om de details van de door het systeem beheerde identiteit voor de functie weer te geven. Noteer het veld _principalId_ in de uitvoer.
 
@@ -162,6 +164,8 @@ az functionapp config appsettings set -g <your-resource-group> -n <your-App-Serv
 Voer de volgende stappen uit in de [Azure Portal](https://portal.azure.com/).
 
 ### <a name="assign-access-role"></a>Access-rol toewijzen
+
+[!INCLUDE [digital-twins-permissions-required.md](../../includes/digital-twins-permissions-required.md)]
 
 Met een door het systeem toegewezen beheerde identiteit kunnen Azure-bronnen worden geverifieerd bij Cloud Services (bijvoorbeeld Azure Key Vault) zonder dat referenties in code worden opgeslagen. Wanneer deze functie is ingeschakeld, kunnen alle benodigde machtigingen worden verleend via toegangs beheer op basis van rollen. De levens cyclus van dit type beheerde identiteit is gekoppeld aan de levens cyclus van deze resource. Daarnaast kan elke resource slechts één door het systeem toegewezen beheerde identiteit hebben.
 

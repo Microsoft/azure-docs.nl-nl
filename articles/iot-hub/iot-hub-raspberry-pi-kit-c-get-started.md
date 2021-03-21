@@ -11,10 +11,10 @@ ms.author: wesmc
 ms.custom:
 - 'Role: Cloud Development'
 ms.openlocfilehash: 52da3c28faa375f8b308e3fe78329fec4f996af9
-ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97804051"
 ---
 # <a name="connect-raspberry-pi-to-azure-iot-hub-c"></a>Raspberry Pi verbinden met Azure IoT Hub (C)
@@ -81,7 +81,7 @@ De volgende items zijn optioneel:
 > Deze items zijn optioneel omdat het code voorbeeld gesimuleerde sensor gegevens ondersteunt.
 >
 
-## <a name="create-an-iot-hub"></a>Een IoT Hub maken
+## <a name="create-an-iot-hub"></a>Een IoT-hub maken
 
 [!INCLUDE [iot-hub-include-create-hub](../../includes/iot-hub-include-create-hub.md)]
 

@@ -3,12 +3,12 @@ title: 'Fout oplossen: de Azure Functions-runtime is onbereikbaar'
 description: Meer informatie over het oplossen van problemen met een ongeldig opslag account.
 ms.topic: article
 ms.date: 09/05/2018
-ms.openlocfilehash: a62001cedd695badc72eb76c93ea9c3cb4507403
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.openlocfilehash: 392882fc2f0394e61aee973a20479d8f1fa9bc92
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102499625"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104606970"
 ---
 # <a name="troubleshoot-error-azure-functions-runtime-is-unreachable"></a>Fout oplossen: ' Azure Functions-runtime is onbereikbaar '
 
@@ -59,6 +59,7 @@ De functie-app moet toegang hebben tot het opslag account. Veelvoorkomende probl
 * De functie-app wordt geïmplementeerd op uw App Service Environment (ASE) zonder de juiste netwerk regels om verkeer toe te staan van en naar het opslag account.
 
 * De firewall voor het opslag account is ingeschakeld en is niet geconfigureerd om verkeer van en naar functies toe te staan. Raadpleeg [Firewalls en virtuele netwerken voor Azure Storage configureren](../storage/common/storage-network-security.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json) voor meer informatie.
+* Controleer of de `allowSharedKeyAccess` instelling is ingesteld op de `true` standaard waarde. Zie voor meer informatie [gedeelde-sleutel autorisatie voor een Azure Storage account voor komen](https://docs.microsoft.com/azure/storage/common/shared-key-authorization-prevent?tabs=portal#verify-that-shared-key-access-is-not-allowed). 
 
 ## <a name="daily-execution-quota-is-full"></a>Het dagelijkse uitvoerings quotum is vol
 

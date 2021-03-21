@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: virtual-machines
 ms.subservice: image-builder
 ms.collection: linux
-ms.openlocfilehash: 4b6154a18cf4e08bf59dad91350160a1f83c49ed
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: eb4fe102407bf519c9253ac7da39178ad8cacb0c
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102201478"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104607514"
 ---
 # <a name="configure-azure-image-builder-service-permissions-using-azure-cli"></a>Service machtigingen van Azure Image Builder configureren met behulp van Azure CLI
 
@@ -239,7 +239,7 @@ Vervang de volgende instellingen voor de tijdelijke aanduiding:
 | \<Storage account container\> | Containernaam voor het opslagaccount |
 | \<Subscription ID\> | Azure-abonnement |
 
-Voor meer informatie over het gebruik van een door de gebruiker toegewezen beheerde identiteit, zie de een [aangepaste installatie kopie maken die gebruikmaakt van een Azure User-Assigned beheerde identiteit voor het naadloos van toegang tot bestanden Azure Storage](https://docs.microsoft.com/azure/virtual-machines/linux/image-builder-user-assigned-identity). In de Snelstartgids wordt uitgelegd hoe u de door de gebruiker toegewezen beheerde identiteit kunt maken en configureren voor toegang tot een opslag account.
+Voor meer informatie over het gebruik van een door de gebruiker toegewezen beheerde identiteit, zie de een [aangepaste installatie kopie maken die gebruikmaakt van een Azure User-Assigned beheerde identiteit voor het naadloos van toegang tot bestanden Azure Storage](./image-builder-user-assigned-identity.md). In de Snelstartgids wordt uitgelegd hoe u de door de gebruiker toegewezen beheerde identiteit kunt maken en configureren voor toegang tot een opslag account.
 
 ## <a name="next-steps"></a>Volgende stappen
 

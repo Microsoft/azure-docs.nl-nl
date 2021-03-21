@@ -10,10 +10,10 @@ ms.date: 04/03/2020
 ms.author: menchi
 ms.custom: devx-track-python
 ms.openlocfilehash: 665281adc892e6b3655c0b1d0533cb3148e62940
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92139406"
 ---
 # <a name="get-started-with-iot-hub-module-identity-and-module-twin-python"></a>Aan de slag met IoT Hub module identiteit en module dubbele (python)
@@ -38,13 +38,13 @@ Aan het einde van deze zelf studie hebt u drie python-apps:
 
 [!INCLUDE [iot-hub-include-python-v2-installation-notes](../../includes/iot-hub-include-python-v2-installation-notes.md)]
 
-## <a name="create-an-iot-hub"></a>Een IoT Hub maken
+## <a name="create-an-iot-hub"></a>Een IoT-hub maken
 
 [!INCLUDE [iot-hub-include-create-hub](../../includes/iot-hub-include-create-hub.md)]
 
 ## <a name="get-the-iot-hub-connection-string"></a>De IoT hub-connection string ophalen
 
-In dit artikel maakt u een back-end-service die een apparaat toevoegt in het identiteits register en vervolgens een module toevoegt aan dat apparaat. Voor deze service is de schrijf machtiging voor het **REGI ster** vereist (ook wel **REGI ster lezen**heeft). U maakt ook een service waarmee gewenste eigenschappen worden toegevoegd aan de module dubbele voor de zojuist gemaakte module. Deze service heeft de machtiging voor het maken van een **service** nodig. Hoewel er standaard beleid voor gedeelde toegang is waarmee deze machtigingen afzonderlijk worden verleend, kunt u in deze sectie een aangepast beleid voor gedeelde toegang maken dat beide machtigingen bevat.
+In dit artikel maakt u een back-end-service die een apparaat toevoegt in het identiteits register en vervolgens een module toevoegt aan dat apparaat. Voor deze service is de schrijf machtiging voor het **REGI ster** vereist (ook wel **REGI ster lezen** heeft). U maakt ook een service waarmee gewenste eigenschappen worden toegevoegd aan de module dubbele voor de zojuist gemaakte module. Deze service heeft de machtiging voor het maken van een **service** nodig. Hoewel er standaard beleid voor gedeelde toegang is waarmee deze machtigingen afzonderlijk worden verleend, kunt u in deze sectie een aangepast beleid voor gedeelde toegang maken dat beide machtigingen bevat.
 
 [!INCLUDE [iot-hub-include-find-service-regrw-connection-string](../../includes/iot-hub-include-find-service-regrw-connection-string.md)]
 
@@ -187,7 +187,7 @@ In deze sectie maakt u een python-service-app die de module dubbele gewenste eig
 
 In deze sectie maakt u een python-app om de module dubbele gewenste eigenschappen op uw apparaat bij te werken.
 
-1. Haal uw module connection string op. Ga in [Azure Portal](https://portal.azure.com/)naar uw IOT hub en selecteer **IOT-apparaten** in het linkerdeel venster. Selecteer **myFirstDevice** in de lijst met apparaten en open het. Onder **module-identiteiten**selecteert u **myFirstModule**. Kopieer de moduleverbindingsreeks. U hebt deze nodig in een volgende stap.
+1. Haal uw module connection string op. Ga in [Azure Portal](https://portal.azure.com/)naar uw IOT hub en selecteer **IOT-apparaten** in het linkerdeel venster. Selecteer **myFirstDevice** in de lijst met apparaten en open het. Onder **module-identiteiten** selecteert u **myFirstModule**. Kopieer de moduleverbindingsreeks. U hebt deze nodig in een volgende stap.
 
    ![Details van de Azure Portal-module](./media/iot-hub-python-python-module-twin-getstarted/module-detail.png)
 

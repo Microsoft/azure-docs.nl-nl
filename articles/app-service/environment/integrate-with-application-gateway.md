@@ -8,10 +8,10 @@ ms.date: 03/03/2018
 ms.author: ccompy
 ms.custom: seodec18
 ms.openlocfilehash: 3b73d528802a8aa33c6122eaf5edfa9d046b6753
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88962074"
 ---
 # <a name="integrate-your-ilb-app-service-environment-with-the-azure-application-gateway"></a>Uw ILB App Service-omgeving integreren met Azure Application Gateway #
@@ -60,31 +60,31 @@ U kunt de gateway ook niet in het subnet plaatsen dat door uw ILB-App Service En
 
 2. In het gebied **basis** :
 
-   a. Voer bij **naam**de naam van de Application Gateway in.
+   a. Voer bij **naam** de naam van de Application Gateway in.
 
-   b. Selecteer bij **laag**de optie **WAF**.
+   b. Selecteer bij **laag** de optie **WAF**.
 
-   c. Selecteer voor het **abonnement**hetzelfde abonnement dat door het virtuele app service Environment-netwerk wordt gebruikt.
+   c. Selecteer voor het **abonnement** hetzelfde abonnement dat door het virtuele app service Environment-netwerk wordt gebruikt.
 
    d. Voor **resource groep**, maakt of selecteert u de resource groep.
 
-   e. Selecteer bij **locatie**de locatie van het app service environment virtuele netwerk.
+   e. Selecteer bij **locatie** de locatie van het app service environment virtuele netwerk.
 
    ![Basis beginselen van nieuwe Application Gateway maken][2]
 
 3. In het gebied **instellingen** :
 
-   a. Selecteer voor **virtueel netwerk**het app service environment virtuele netwerk.
+   a. Selecteer voor **virtueel netwerk** het app service environment virtuele netwerk.
 
-   b. Selecteer bij **subnet**het subnet waar de Application Gateway moet worden geïmplementeerd. Gebruik GatewaySubnet niet om te voor komen dat VPN-gateways worden gemaakt.
+   b. Selecteer bij **subnet** het subnet waar de Application Gateway moet worden geïmplementeerd. Gebruik GatewaySubnet niet om te voor komen dat VPN-gateways worden gemaakt.
 
-   c. Selecteer **openbaar**bij **IP-adres type**.
+   c. Selecteer **openbaar** bij **IP-adres type**.
 
    d. Selecteer een openbaar IP-adres voor **openbaar IP-adres**. Als u er nog geen hebt, maakt u er nu een.
 
    e. Selecteer voor **protocol** **http** of **https**. Als u configureert voor HTTPS, moet u een PFX-certificaat opgeven.
 
-   f. Voor **Web Application firewall**kunt u de firewall inschakelen en deze ook instellen voor **detectie** of voor **komen** .
+   f. Voor **Web Application firewall** kunt u de firewall inschakelen en deze ook instellen voor **detectie** of voor **komen** .
 
    ![Nieuwe instellingen voor het maken van Application Gateway][3]
     
@@ -98,7 +98,7 @@ U kunt de gateway ook niet in het subnet plaatsen dat door uw ILB-App Service En
 
    ![Statuscontroles configureren][5]
     
-7. Nadat het proces van het configureren van de status tests is voltooid, selecteert u **http-instellingen**. Bewerk de bestaande instellingen, selecteer **aangepaste test gebruiken**en kies de test die u hebt geconfigureerd.
+7. Nadat het proces van het configureren van de status tests is voltooid, selecteert u **http-instellingen**. Bewerk de bestaande instellingen, selecteer **aangepaste test gebruiken** en kies de test die u hebt geconfigureerd.
 
    ![HTTP-instellingen configureren][6]
     
@@ -106,7 +106,7 @@ U kunt de gateway ook niet in het subnet plaatsen dat door uw ILB-App Service En
 
    ![Application Gateway portal][7]
 
-9. Stel de aangepaste domein naam voor uw app in uw ILB-App Service Environment in. Ga naar uw app in de portal en selecteer **aangepaste domeinen**onder **instellingen**.
+9. Stel de aangepaste domein naam voor uw app in uw ILB-App Service Environment in. Ga naar uw app in de portal en selecteer **aangepaste domeinen** onder **instellingen**.
 
    ![Aangepaste domein naam voor de app instellen][8]
 

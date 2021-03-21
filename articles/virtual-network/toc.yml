@@ -4,7 +4,7 @@
   items:
     - name: Over Virtual Network
       href: virtual-networks-overview.md
-- name: Quickstarts
+- name: Snelstartgidsen
   items:
     - name: Een virtueel netwerk maken - Portal
       href: quick-create-portal.md
@@ -29,6 +29,8 @@
       href: tutorial-create-nat-gateway-portal.md
     - name: Open bare load balancer van de NAT-gateway integreren
       href: tutorial-nat-gateway-load-balancer-public-portal.md
+    - name: Interne load balancer van NAT-gateway integreren
+      href: tutorial-nat-gateway-load-balancer-internal-portal.md
 - name: Voorbeelden
   items:
     - name: Azure CLI

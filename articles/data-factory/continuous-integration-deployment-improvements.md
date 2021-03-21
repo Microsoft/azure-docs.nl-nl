@@ -8,10 +8,10 @@ ms.reviewer: maghan
 ms.topic: conceptual
 ms.date: 02/02/2021
 ms.openlocfilehash: 496d2b6b3d669013c8174e9bc961d0a2f640bed3
-ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/14/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103462079"
 ---
 # <a name="automated-publishing-for-continuous-integration-and-delivery"></a>Automatische publicatie voor continue integratie en levering

@@ -13,17 +13,17 @@ ms.custom:
 - 'Role: Technical Support'
 - devx-track-csharp
 ms.openlocfilehash: 27fca7b76ab148fc355eb7d52ee0cbcbd3540458
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92548486"
 ---
 # <a name="check-iot-hub-service-and-resource-health"></a>Controleren IoT Hub service en resource status
 
 Azure IoT Hub integreert met de [Azure service Health-Service](../service-health/overview.md) om u de mogelijkheid te bieden om de status op service niveau van de IOT hub-service en afzonderlijke IOT-hubs te bewaken. U kunt ook waarschuwingen instellen om te worden gewaarschuwd wanneer de status van de IoT Hub service of een IoT-hub wordt gewijzigd. De Azure Service Health-Service is een combi natie van drie kleinere Services: Azure Resource Health, Azure Service Health en de Azure-status pagina. In de secties in dit artikel worden de verschillende services en de bijbehorende relaties beschreven om meer details te IoT Hub.
 
-Azure Service Health-Service helpt u bij het bewaken van gebeurtenissen op service niveau zoals storingen en upgrades die van invloed kunnen zijn op de beschik baarheid van de IoT Hub-service en uw afzonderlijke IoT-hubs. IoT Hub integreert ook met Azure Monitor om IoT Hub platform metrieken en IoT Hub bron logboeken te bieden die u kunt gebruiken voor het bewaken van operationele fouten en voor waarden die optreden op een specifieke IoT-hub. Zie [IOT hub bewaken](monitor-iot-hub.md)voor meer informatie.
+Azure Service Health-Service helpt u bij het bewaken van gebeurtenissen op service niveau zoals storingen en upgrades die van invloed kunnen zijn op de beschik baarheid van de IoT Hub-service en uw afzonderlijke IoT-hubs. IoT Hub integreert ook met Azure Monitor om IoT Hub platform metrieken en IoT Hub bron logboeken te bieden die u kunt gebruiken voor het bewaken van operationele fouten en voor waarden die optreden op een specifieke IoT-hub. Zie [Azure IoT Hub controleren](monitor-iot-hub.md) voor meer informatie.
 
 ## <a name="check-health-of-an-iot-hub-with-azure-resource-health"></a>Controleer de status van een IoT-hub met Azure Resource Health
 
@@ -33,7 +33,7 @@ Ga als volgt te werk om de geschiedenis van de status en de status van uw IoT-hu
 
 1. Ga in [Azure Portal](https://portal.azure.com)naar uw IOT-hub in azure Portal.
 
-1. Selecteer **resource Health** in het linkerdeel venster onder **ondersteuning en probleem oplossing** .
+1. Selecteer **resource Health** in het linkerdeel venster onder **ondersteuning en probleem oplossing**.
 
     :::image type="content" source="./media/iot-hub-azure-service-health-integration/iot-hub-resource-health.png" alt-text="Resource status pagina voor een IoT-hub":::
 
@@ -49,7 +49,7 @@ Voer de volgende stappen uit om de status van uw IoT-hubs te controleren:
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 
-2. Navigeer naar **service Health**  >  **resource Health** .
+2. Navigeer naar **service Health**  >  **resource Health**.
 
 3. Selecteer uw abonnement in de vervolg keuzelijsten en selecteer vervolgens **IOT hub** als resource type.
 

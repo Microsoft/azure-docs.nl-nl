@@ -8,10 +8,10 @@ ms.date: 06/30/2020
 ms.service: azure-education
 ms.subservice: education-hub
 ms.openlocfilehash: d556956a4e123d65a5725b56db57b3ce6cbb7aaf
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92675343"
 ---
 # <a name="help-students-download-software-developer-tools-from-the-azure-education-hub"></a>Help studenten software-ontwikkel hulpprogramma's te downloaden van de Azure-Education Hub
@@ -26,7 +26,7 @@ Laat uw studenten deze procedure volgen om de hulpprogram ma's voor software ont
 1. Meld u aan met de referenties van uw Azure for student-abonnement.
 1. Selecteer een van de hulpprogram ma's voor software ontwikkelaar in de Education Hub om het deel venster downloaden te openen.
 1. Lees de software-informatie om er zeker van te zijn dat de software compatibel is met uw computer systeem.
-1. Nadat u hebt bevestigd dat de software compatibel is met uw systeem, selecteert u **downloaden** .
+1. Nadat u hebt bevestigd dat de software compatibel is met uw systeem, selecteert u **downloaden**.
 1. Volg de instructies op het scherm om de software te downloaden en te installeren.
 
    Met Azure for Students krijgt u $ 100 tegoed voor een periode van 12 maanden. Azure for Students biedt toegang tot meer dan 25 gratis services, waaronder berekeningen, netwerk, opslag en databases. Alle kosten die tijdens deze periode in rekening worden gebracht, worden van het tegoed afgetrokken. 

@@ -20,10 +20,10 @@ translation.priority.mt:
 - zh-cn
 - zh-tw
 ms.openlocfilehash: 4c1243d5d9122539466e94b6bbfdd5ced588e69a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88934902"
 ---
 # <a name="odata-collection-operators-in-azure-cognitive-search---any-and-all"></a>OData-verzamelings operators in azure Cognitive Search- `any` en `all`
@@ -60,7 +60,7 @@ Er zijn drie soorten expressies waarmee verzamelingen worden gefilterd.
   - Een expressie die gebruikmaakt van `any` retourneert `true` als het predicaat True is voor ten minste één element van de verzameling.
 - Het derde formulier van het verzamelings filter gebruikt `any` zonder een lambda-expressie om te testen of een veld in de verzameling leeg is. Als de verzameling elementen bevat, wordt deze geretourneerd `true` . Als de verzameling leeg is, wordt geretourneerd `false` .
 
-Een **lambda-expressie** in een verzamelings filter is net als de hoofd tekst van een lus in een programmeer taal. Hiermee wordt een variabele gedefinieerd, de **variabele Range**genoemd, die het huidige element van de verzameling tijdens iteratie bevat. Er wordt ook een andere booleaanse expressie gedefinieerd die de filter criteria is die moeten worden toegepast op de bereik variabele voor elk element van de verzameling.
+Een **lambda-expressie** in een verzamelings filter is net als de hoofd tekst van een lus in een programmeer taal. Hiermee wordt een variabele gedefinieerd, de **variabele Range** genoemd, die het huidige element van de verzameling tijdens iteratie bevat. Er wordt ook een andere booleaanse expressie gedefinieerd die de filter criteria is die moeten worden toegepast op de bereik variabele voor elk element van de verzameling.
 
 ## <a name="examples"></a>Voorbeelden
 

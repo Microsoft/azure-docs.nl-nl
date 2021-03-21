@@ -4,10 +4,10 @@ description: Dit onderwerp bevat opmerkingen bij de release van live video Analy
 ms.topic: conceptual
 ms.date: 08/19/2020
 ms.openlocfilehash: f130b93b8d799c371a640f2b29c22c0d77834cba
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98954392"
 ---
 # <a name="live-video-analytics-on-iot-edge-release-notes"></a>Opmerkingen bij de release van live video op IoT Edge

@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 049025a5d871f1dd26e5dab498756aa44d2ebfe2
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 27353e6086085aadae622e007a38f97e15cbcb7f
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101693165"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104587862"
 ---
 # <a name="introduction-to-securing-azure-service-accounts"></a>Inleiding tot het beveiligen van Azure-service accounts
 
@@ -38,13 +38,13 @@ Voor services die worden gehost in azure, kunt u het beste een beheerde identite
 
 ## <a name="managed-identities"></a>Beheerde identiteiten
 
-Beheerde identiteiten zijn beveiligde Azure Active Directory-identiteiten (Azure AD) die zijn gemaakt om identiteiten voor Azure-resources te bieden. Er zijn [twee soorten beheerde identiteiten](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview#managed-identity-types): 
+Beheerde identiteiten zijn beveiligde Azure Active Directory-identiteiten (Azure AD) die zijn gemaakt om identiteiten voor Azure-resources te bieden. Er zijn [twee soorten beheerde identiteiten](../managed-identities-azure-resources/overview.md#managed-identity-types): 
  
 * Door het systeem toegewezen beheerde identiteiten kunnen rechtstreeks worden toegewezen aan een exemplaar van een service. 
 
 * Door de gebruiker toegewezen beheerde identiteiten kunnen worden gemaakt als een zelfstandige resource. 
 
-Zie [beheerde identiteiten beveiligen](service-accounts-managed-identities.md)voor meer informatie. Zie [Wat zijn beheerde identiteiten voor Azure-resources](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) voor algemene informatie over beheerde identiteiten?
+Zie [beheerde identiteiten beveiligen](service-accounts-managed-identities.md)voor meer informatie. Zie [Wat zijn beheerde identiteiten voor Azure-resources](../managed-identities-azure-resources/overview.md) voor algemene informatie over beheerde identiteiten?
 
 ## <a name="service-principals"></a>Service-principals
 
@@ -67,6 +67,3 @@ Zie voor meer informatie over het beveiligen van Azure-service accounts:
 [Service-principals beveiligen](service-accounts-principal.md)
 
 [Azure-service accounts beheren](service-accounts-governing-azure.md)
-
-
-

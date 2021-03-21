@@ -8,10 +8,10 @@ author: keferna
 ms.author: keferna
 ms.date: 10/01/2020
 ms.openlocfilehash: 681498073a5f111e3babd50443623589ffeec02f
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92330917"
 ---
 # <a name="common-questions-and-troubleshooting-for-lead-configuration"></a>Veelgestelde vragen en probleem oplossing voor lead configuratie
@@ -52,7 +52,7 @@ Zoek naar `"MSFT_TEST"` de doel locatie van de lead. Hieronder vindt u een voor 
 
 #### <a name="i-have-a-live-offer-but-why-am-i-not-seeing-any-leads"></a>Ik heb een live aanbieding, maar waarom krijg ik geen leads te zien?
 
-Zorg ervoor dat de verbinding met de doel locatie van de lead geldig is. U ontvangt een test lead nadat u **publiceren** op uw aanbieding hebt geselecteerd in partner centrum. Als u de test leider ziet, is de verbinding geldig. U kunt ook uw lead verbinding testen door te proberen de preview-versie van de aanbieding te verkrijgen tijdens de preview-stap. Selecteer **nu downloaden**, **Neem contact met mij**op of **Maak een gratis proef versie** van de aanbieding in de commerciële Marketplace.
+Zorg ervoor dat de verbinding met de doel locatie van de lead geldig is. U ontvangt een test lead nadat u **publiceren** op uw aanbieding hebt geselecteerd in partner centrum. Als u de test leider ziet, is de verbinding geldig. U kunt ook uw lead verbinding testen door te proberen de preview-versie van de aanbieding te verkrijgen tijdens de preview-stap. Selecteer **nu downloaden**, **Neem contact met mij** op of **Maak een gratis proef versie** van de aanbieding in de commerciële Marketplace.
 
 Zorg er ook voor dat u de juiste gegevens zoekt. Zie [informatie over leads](partner-center-portal/commercial-marketplace-get-customer-leads.md) voor een uitleg van de lead gegevens die we verzenden naar uw lead bestemming.
 

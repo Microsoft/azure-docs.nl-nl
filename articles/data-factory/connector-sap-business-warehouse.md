@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/04/2019
 ms.openlocfilehash: 4a5eb7c8d729fc0c3b95a61a4b8dbc8266d1eec3
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100386659"
 ---
 # <a name="copy-data-from-sap-business-warehouse-using-azure-data-factory"></a>Gegevens van SAP Business Warehouse kopiëren met behulp van Azure Data Factory
@@ -64,12 +64,12 @@ De volgende eigenschappen worden ondersteund voor de gekoppelde service SAP Busi
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type moet worden ingesteld op: **SapBw** | Yes |
-| server | De naam van de server waarop het SAP BW-exemplaar zich bevindt. | Yes |
-| systemNumber | Systeem nummer van het SAP BW systeem.<br/>Toegestane waarde: decimaal getal van twee cijfers dat wordt weer gegeven als een teken reeks. | Yes |
-| clientId | Client-ID van de client in het SAP W-systeem.<br/>Toegestane waarde: decimaal getal met drie cijfers dat wordt weer gegeven als een teken reeks. | Yes |
-| userName | De naam van de gebruiker die toegang heeft tot de SAP-server. | Yes |
-| wachtwoord | Het wachtwoord voor de gebruiker. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Yes |
+| type | De eigenschap type moet worden ingesteld op: **SapBw** | Ja |
+| server | De naam van de server waarop het SAP BW-exemplaar zich bevindt. | Ja |
+| systemNumber | Systeem nummer van het SAP BW systeem.<br/>Toegestane waarde: decimaal getal van twee cijfers dat wordt weer gegeven als een teken reeks. | Ja |
+| clientId | Client-ID van de client in het SAP W-systeem.<br/>Toegestane waarde: decimaal getal met drie cijfers dat wordt weer gegeven als een teken reeks. | Ja |
+| userName | De naam van de gebruiker die toegang heeft tot de SAP-server. | Ja |
+| wachtwoord | Het wachtwoord voor de gebruiker. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Ja |
 | connectVia | Het [Integration runtime](concepts-integration-runtime.md) dat moet worden gebruikt om verbinding te maken met het gegevens archief. Een zelf-hostende Integration Runtime is vereist zoals vermeld in de [vereisten](#prerequisites). |Ja |
 
 **Voorbeeld:**
@@ -132,7 +132,7 @@ Als u gegevens wilt kopiëren uit SAP BW, worden de volgende eigenschappen onder
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **SapBwSource** | Yes |
+| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **SapBwSource** | Ja |
 | query | Hiermee geeft u de MDX-query op die gegevens uit het SAP BW exemplaar moet lezen. | Ja |
 
 **Voorbeeld:**

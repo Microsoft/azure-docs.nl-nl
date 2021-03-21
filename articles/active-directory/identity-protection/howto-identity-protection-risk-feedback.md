@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 939ffc9e2a8fb8ce3a25dc212e3df34dc6bb2ec1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88950354"
 ---
 # <a name="how-to-give-risk-feedback-in-azure-ad-identity-protection"></a>Procedure: risico feedback in Azure AD Identity Protection geven
@@ -34,7 +34,7 @@ Een detectie van identiteits beveiliging is een indicator van verdachte activite
 Er zijn verschillende redenen waarom u Azure AD-risico feedback moet geven:
 
 - **U hebt de gebruiker van Azure AD of de risico beoordeling voor het aanmelden onjuist aangetroffen**. Bijvoorbeeld, een aanmelding die wordt weer gegeven in het rapport Risk ante aanmeldingen is onschadelijk en alle detecties voor die aanmelding waren valse positieven.
-- **U hebt gevalideerd dat de evaluatie van de gebruiker van Azure AD of het risico voor aanmelding is**geslaagd. Een voor beeld dat wordt weer gegeven in het rapport Risk ante aanmeldingen was inderdaad schadelijk en u wilt dat Azure AD weet dat alle detecties voor die aanmelding op de echte positieven zijn.
+- **U hebt gevalideerd dat de evaluatie van de gebruiker van Azure AD of het risico voor aanmelding is** geslaagd. Een voor beeld dat wordt weer gegeven in het rapport Risk ante aanmeldingen was inderdaad schadelijk en u wilt dat Azure AD weet dat alle detecties voor die aanmelding op de echte positieven zijn.
 - **U hebt het risico op die gebruiker buiten Azure AD Identity Protection hersteld** en u wilt het risico niveau van de gebruiker bijwerken.
 
 ## <a name="how-does-azure-ad-use-my-risk-feedback"></a>Hoe maakt Azure AD gebruik van mijn risico feedback?

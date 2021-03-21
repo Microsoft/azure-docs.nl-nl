@@ -8,10 +8,10 @@ ms.date: 6/23/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.openlocfilehash: a0f2b971eae5d37e8fb0771e213075289af6c519
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98045254"
 ---
 # <a name="understand-event-data"></a>Informatie over gebeurtenis gegevens
@@ -103,7 +103,7 @@ Meldingen over de levens cyclus worden geactiveerd wanneer:
 
 Dit zijn de velden in de hoofd tekst van een melding voor levens cyclus.
 
-| Naam | Waarde |
+| Name | Waarde |
 | --- | --- |
 | `id` | Id van de melding, zoals een UUID of een item dat door de service wordt onderhouden. `source` + `id` is uniek voor elke afzonderlijke gebeurtenis. |
 | `source` | Naam van het IoT hub-of Azure Digital Apparaatdubbels-exemplaar, zoals *myhub.Azure-devices.net* of *mydigitaltwins.westus2.azuredigitaltwins.net* |
@@ -189,7 +189,7 @@ Hier volgt nog een voor beeld van een digitale dubbele. Deze is gebaseerd op een
 
 Dit zijn de velden in de hoofd tekst van een melding voor een wijziging van de rand.
 
-| Naam    | Waarde |
+| Name    | Waarde |
 | --- | --- |
 | `id` | Id van de melding, zoals een UUID of een item dat door de service wordt onderhouden. `source` + `id` is uniek voor elke afzonderlijke gebeurtenis |
 | `source` | De naam van het Azure Digital Apparaatdubbels-exemplaar, zoals *mydigitaltwins.westus2.azuredigitaltwins.net* |
@@ -245,7 +245,7 @@ Er worden **digitale dubbele wijzigings meldingen** geactiveerd wanneer er een d
 
 Dit zijn de velden in de hoofd tekst van een digitale, dubbele wijzigings melding.
 
-| Naam    | Waarde |
+| Name    | Waarde |
 | --- | --- |
 | `id` | Id van de melding, zoals een UUID of een item dat door de service wordt onderhouden. `source` + `id` is uniek voor elke afzonderlijke gebeurtenis |
 | `source` | Naam van het IoT hub-of Azure Digital Apparaatdubbels-exemplaar, zoals *myhub.Azure-devices.net* of *mydigitaltwins.westus2.azuredigitaltwins.net*

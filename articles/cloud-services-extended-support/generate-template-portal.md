@@ -8,16 +8,16 @@ ms.author: surbhijain
 ms.reviewer: gachandw
 ms.date: 03/07/2021
 ms.custom: ''
-ms.openlocfilehash: 215abb1ce8d65b5ecdd25aeb78c17c70e801a9d2
-ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.openlocfilehash: 9d40bbd7e08d8d3869166827a22f3f08536532bb
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103555396"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104590701"
 ---
 # <a name="generate-arm-template-for-cloud-services-extended-support-using-the-azure-portal"></a>ARM-sjabloon genereren voor Cloud Services (uitgebreide ondersteuning) met behulp van de Azure Portal
 
-In dit artikel wordt uitgelegd hoe u de ARM-sjabloon en het parameter bestand kunt ophalen uit de [Azure Portal](https://portal.azure.com) nadat de Cloud service is geïmplementeerd (uitgebreide ondersteuning). De ARM-sjabloon en het parameter bestand kunnen worden gebruikt in toekomstige implementaties om een Cloud service bij te werken of bij te werken (uitgebreide ondersteuning)
+In dit artikel wordt uitgelegd hoe u de ARM-sjabloon en het parameter bestand kunt downloaden van de [Azure Portal](https://portal.azure.com) nadat de Cloud service is geïmplementeerd (uitgebreide ondersteuning). De ARM-sjabloon en het parameter bestand kunnen worden gebruikt in toekomstige implementaties om een Cloud service bij te werken of bij te werken (uitgebreide ondersteuning)
 
 ## <a name="get-arm-template-via-portal"></a>ARM-sjabloon ophalen via de portal
 

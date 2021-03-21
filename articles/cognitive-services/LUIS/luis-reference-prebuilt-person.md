@@ -10,10 +10,10 @@ ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 05/07/2019
 ms.openlocfilehash: 7b0153d79aaf7b88fea958ab36183e57b41af204
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91535420"
 ---
 # <a name="personname-prebuilt-entity-for-a-luis-app"></a>De vooraf samengestelde entiteit van de persoon voor een LUIS-app
@@ -81,6 +81,6 @@ In het volgende voor beeld wordt de oplossing van de entiteit **Builtin. persoon
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over het [v3-Voorspellings eindpunt](luis-migration-api-v3.md).
+Meer informatie over het [V3-voorspellingseindpunt](luis-migration-api-v3.md).
 
 Meer informatie over de entiteiten [e-mail](luis-reference-prebuilt-email.md), [nummer](luis-reference-prebuilt-number.md)en [rang telwoord](luis-reference-prebuilt-ordinal.md) .

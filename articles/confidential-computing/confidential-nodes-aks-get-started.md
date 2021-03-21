@@ -1,17 +1,18 @@
 ---
 title: 'Quickstart: Een Azure Kubernetes Service-cluster (AKS) implementeren met behulp van Azure CLI met vertrouwelijke rekenknooppunten'
-description: Meer informatie over het maken van een AKS-cluster met vertrouwelijke knooppunten en het implementeren van een Hello World-app met behulp van de Azure CLI.
+description: In deze Quick Start leert u hoe u een AKS-cluster met vertrouwelijke knoop punten maakt en een Hello World-app implementeert met behulp van de Azure CLI.
 author: agowdamsft
 ms.service: container-service
 ms.topic: quickstart
-ms.date: 2/25/2020
+ms.date: 03/18/2020
 ms.author: amgowda
-ms.openlocfilehash: 51b0813849236d9335d1482019f740fc8b23749f
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.custom: contentperf-fy21q3
+ms.openlocfilehash: a7566cdb22d62bc46df82a3ef0aa78a748769531
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101703283"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104657702"
 ---
 # <a name="quickstart-deploy-an-azure-kubernetes-service-aks-cluster-with-confidential-computing-nodes-dcsv2-using-azure-cli"></a>Snelstartgids: een Azure Kubernetes service (AKS)-cluster implementeren met vertrouwelijke computing nodes (DCsv2) met behulp van Azure CLI
 
@@ -19,120 +20,128 @@ Deze quickstart is bedoeld voor ontwikkelaars of clusteroperators die snel een A
 
 ## <a name="overview"></a>Overzicht
 
-In deze Quick Start leert u hoe u een Azure Kubernetes service-cluster (AKS) kunt implementeren met vertrouwelijke computing knoop punten met behulp van Azure CLI en een eenvoudige Hello World-toepassing kunt uitvoeren in een enclave. Azure is een beheerde Kubernetes-service waarmee u snel clusters kunt implementeren en beheren. [Hier](../aks/intro-kubernetes.md) vindt u meer informatie over AKS.
+In deze Quick Start leert u hoe u een Azure Kubernetes service-cluster (AKS) kunt implementeren met vertrouwelijke computing knoop punten met behulp van Azure CLI en een eenvoudige Hello World-toepassing kunt uitvoeren in een enclave. Azure is een beheerde Kubernetes-service waarmee u snel clusters kunt implementeren en beheren. Lees voor meer informatie de [AKS-Inleiding](../aks/intro-kubernetes.md) en het overzicht van de [AKS-vertrouwelijke knoop punten](confidential-nodes-aks-overview.md).
 
 > [!NOTE]
 > Vertrouwelijke DCsv2-VM's maken gebruik van gespecialiseerde hardware waarvoor hogere prijzen en regionale beschikbaarheid gelden. Zie de pagina Virtuele machines over [beschikbare SKU's en ondersteunde regio's](virtual-machine-solutions.md) voor meer informatie.
 
-### <a name="confidential-computing-node-features-dcxs-v2"></a>Kenmerken van vertrouwelijke rekenknooppunten (DC<x>s-v2)
+### <a name="confidential-computing-node-features-dcsv2"></a>Functies van het DCsv2 (vertrouwelijk computing node)
 
-1. Linux-werk knooppunten die Linux-containers ondersteunen
-1. 2e generatie VM met Ubuntu 18.04 Virtual Machines-knooppunten
-1. Intel SGX-gebaseerde CPU met versleutelde paginageheugencache (EPC). [Hier](./faq.md) vindt u meer informatie
-1. Ondersteunende Kubernetes-versie 1.16+
-1. Intel SGX DCAP-stuur programma vooraf geïnstalleerd op de AKS-knoop punten. [Hier](./faq.md) vindt u meer informatie
+1. Linux-werk knooppunten die Linux-containers ondersteunen.
+1. VM van de tweede generatie met Ubuntu 18,04 Virtual Machines-knoop punten.
+1. Intel SGX-gebaseerde CPU met versleutelde paginageheugencache (EPC). Meer informatie is [hier](./faq.md) beschikbaar.
+1. Ondersteuning voor Kubernetes-versie 1.16 +.
+1. Intel SGX DCAP-stuur programma vooraf geïnstalleerd op de AKS-knoop punten. Meer informatie is [hier](./faq.md) beschikbaar.
 
-## <a name="deployment-prerequisites"></a>Vereisten voor implementatie
-Voor de implementatie-zelf studie hebt u het volgende nodig:
+## <a name="prerequisites"></a>Vereisten
 
-1. Een actief Azure-abonnement. Als u geen Azure-abonnement hebt, kunt u een [gratis account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voordat u begint
-1. Azure CLI-versie 2.0.64 of hoger geïnstalleerd en geconfigureerd op uw implementatie computer (Voer uit `az --version` om de versie te vinden. Als u Azure CLI wilt installeren of upgraden, raadpleegt u [Azure CLI installeren](../container-registry/container-registry-get-started-azure-cli.md).
-1. Mini maal zes **DC <x> s-v2** cores die beschikbaar zijn in uw abonnement voor gebruik. Standaard is het quotum van de VM-kernen voor vertrouwelijke machines 8 kernen per Azure-abonnement. Als u van plan bent een cluster in te richten waarvoor meer dan 8 kerngeheugens zijn vereist, volgt u [deze](../azure-portal/supportability/per-vm-quota-requests.md) instructies om een quotumverhogingsticket te genereren
+Voor deze snelstart zijn de volgende zaken vereist:
 
-## <a name="creating-new-aks-cluster-with-confidential-computing-nodes-and-add-on"></a>Een nieuw AKS-cluster maken met vertrouwelijke computer knooppunten en-invoeg toepassingen
+1. Een actief Azure-abonnement. Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voordat u begint.
+1. Azure CLI-versie 2.0.64 of hoger geïnstalleerd en geconfigureerd op uw implementatie computer (Voer uit `az --version` om de versie te vinden. Zie [Azure CLI installeren](../container-registry/container-registry-get-started-azure-cli.md) als u de CLI wilt installeren of een upgrade wilt uitvoeren.
+1. Ten minste zes **DCsv2** kernen beschikbaar in uw abonnement voor gebruik. Het quotum voor VM-kernen voor het vertrouwelijke computing per Azure-abonnement is standaard acht kernen. Als u van plan bent een cluster in te richten waarvoor meer dan acht kernen nodig zijn, volgt u [deze](../azure-portal/supportability/per-vm-quota-requests.md) instructies om een quota verhogings ticket te genereren.
+
+## <a name="create-a-new-aks-cluster-with-confidential-computing-nodes-and-add-on"></a>Een nieuw AKS-cluster maken met vertrouwelijke computer knooppunten en-invoeg toepassingen
+
 Volg de onderstaande instructies voor het toevoegen van voor vertrouwelijke computer geschikte knoop punten met invoeg toepassing.
 
-### <a name="step-1-creating-an-aks-cluster-with-system-node-pool"></a>Stap 1: een AKS-cluster maken met een systeem knooppunt groep
+### <a name="create-an-aks-cluster-with-a-system-node-pool"></a>Een AKS-cluster met een systeem knooppunt groep maken
 
 Als u al een AKS-cluster hebt dat voldoet aan de bovenstaande vereisten, [gaat u naar de sectie Bestaand cluster](#existing-cluster) om een nieuwe pool met vertrouwelijke knooppunten toe te voegen.
 
-Maak eerst een resourcegroep voor het cluster met de opdracht 'az group create'. In het volgende voorbeeld wordt een resourcegroep met de naam *mijnResourcegroep* gemaakt in de regio *West US 2*:
+Maak eerst een resource groep voor het cluster met behulp van de opdracht [AZ Group Create][az-group-create] . In het volgende voorbeeld wordt een resourcegroep met de naam *mijnResourcegroep* gemaakt in de regio *West US 2*:
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location westus2
 ```
 
-Gebruik nu de opdracht 'az aks create' om een AKS-cluster te maken.
+Maak nu een AKS-cluster met behulp van de opdracht [AZ AKS Create][az-aks-create] :
 
 ```azurecli-interactive
-# Create a new AKS cluster with system node pool with Confidential Computing addon enabled
 az aks create -g myResourceGroup --name myAKSCluster --generate-ssh-keys --enable-addon confcom
 ```
-In het bovenstaande maakt u een nieuw AKS-cluster met een systeem knooppunt groep waarvoor de invoeg toepassing is ingeschakeld. Ga nu verder met het toevoegen van een gebruikersknooppunt van het type pool met vertrouwelijke knooppunten op AKS (DCsv2)
 
-### <a name="step-2-adding-confidential-computing-node-pool-to-aks-cluster"></a>Stap 2: een groep voor vertrouwelijke computing toevoegen aan het AKS-cluster 
+In het bovenstaande wordt een nieuw AKS-cluster gemaakt met een systeem knooppunt groep waarvoor de invoeg toepassing is ingeschakeld. Voeg vervolgens een gebruikers knooppunt groep met vertrouwelijke computer mogelijkheden toe aan het AKS-cluster.
 
-Voer de onderstaande opdracht uit voor een gebruiker nodepool van `Standard_DC2s_v2` grootte met 3 knoop punten. U kunt [hier](../virtual-machines/dcv2-series.md) een andere ondersteunde lijst met DCsv2-SKU's en regio‘s kiezen:
+### <a name="add-a-confidential-computing-node-pool-to-the-aks-cluster"></a>Een groep met een vertrouwelijk computer knooppunt toevoegen aan het AKS-cluster 
+
+Voer de volgende opdracht uit om een gebruikers knooppunt groep `Standard_DC2s_v2` met drie knoop punten toe te voegen. U kunt een andere SKU kiezen in de lijst met ondersteunde [DCsv2 sku's en regio's](../virtual-machines/dcv2-series.md).
 
 ```azurecli-interactive
 az aks nodepool add --cluster-name myAKSCluster --name confcompool1 --resource-group myResourceGroup --node-vm-size Standard_DC2s_v2
 ```
-De bovenstaande opdracht is voltooid een nieuwe knooppunt groep met **DC <x> s-v2** moet zichtbaar zijn met de Daemonsets-invoeg toepassing voor het toevoegen van vertrouwelijke computers ([SGX-apparaat-plugin](confidential-nodes-aks-overview.md#sgx-plugin) )
- 
-### <a name="step-3-verify-the-node-pool-and-add-on"></a>Stap 3: de knooppunt groep en-invoeg toepassing controleren
-Haal de referenties voor uw AKS-cluster op met de opdracht 'az aks get-credentials':
+
+Na het uitvoeren moet een nieuwe knooppunt groep met **DCsv2** zichtbaar zijn met de vertrouwelijke computer add-on Daemonsets ([SGX-invoeg apparaat](confidential-nodes-aks-overview.md#sgx-plugin)).
+
+### <a name="verify-the-node-pool-and-add-on"></a>De knooppunt groep en-invoeg toepassing controleren
+
+Haal de referenties voor uw AKS-cluster op met de opdracht [AZ AKS Get-credentials][az-aks-get-credentials] :
 
 ```azurecli-interactive
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 ```
-Controleer of de knooppunten correct zijn gemaakt en of de SGX-gerelateerde daemonsets worden uitgevoerd op **DC<x>s-v2**-knooppuntpools met behulp van de opdracht kubectl get pods & nodes, zoals hieronder wordt weergegeven:
+
+Controleer of de knoop punten correct zijn gemaakt en of de SGX-gerelateerde daemonsets worden uitgevoerd op **DCsv2** -knooppunt Pools met behulp van de opdracht kubectl ophalen van een Peul & knoop punten, zoals hieronder wordt weer gegeven:
 
 ```console
 $ kubectl get pods --all-namespaces
 
-output
 kube-system     sgx-device-plugin-xxxx     1/1     Running
 ```
+
 Als de uitvoer overeenkomt met het bovenstaande, is uw AKS-cluster nu klaar om vertrouwelijke toepassingen uit te voeren.
 
-Ga naar de implementatiesectie [Hallo wereld van Enclave](#hello-world) om een app te testen in een enclave. U kunt ook de onderstaande instructies volgen voor het toevoegen van extra knooppunt groepen op AKS (AKS ondersteunt het mixen van SGX-knooppunt Pools en niet-SGX-knooppunt groepen)
+Ga naar het gedeelte [Hallo wereld van de implementatie van enclave](#hello-world) om een app in een enclave te testen. U kunt ook de onderstaande instructies volgen voor het toevoegen van extra knooppunt groepen op AKS (AKS ondersteunt het mixen van SGX-knooppunt Pools en niet-SGX-knooppunt groepen).
 
-## <a name="adding-confidential-computing-node-pool-to-existing-aks-cluster"></a>Het knooppunt voor vertrouwelijk knooppuntpool toevoegen aan een bestaand AKS-cluster<a id="existing-cluster"></a>
+## <a name="add-a-confidential-computing-node-pool-to-an-existing-aks-cluster"></a>Een groep met een vertrouwelijk computer knooppunt toevoegen aan een bestaand AKS-cluster<a id="existing-cluster"></a>
 
 In deze sectie wordt ervan uitgegaan dat er al een AKS-cluster wordt uitgevoerd dat voldoet aan de criteria die worden vermeld in de sectie prerequisites (van toepassing op add-on).
 
-### <a name="step-1-enabling-the-confidential-computing-aks-add-on-on-the-existing-cluster"></a>Stap 1: de AKS-invoeg toepassing voor vertrouwelijke computing inschakelen in het bestaande cluster
+### <a name="enable-the-confidential-computing-aks-add-on-on-the-existing-cluster"></a>De AKS-invoeg toepassing voor vertrouwelijke computing inschakelen op het bestaande cluster
 
-Voer de onderstaande opdracht uit om de add-on van de vertrouwelijk computing in te scha kelen
+Voer de volgende opdracht uit om de add-on van de vertrouwelijk computing in te scha kelen:
 
 ```azurecli-interactive
 az aks enable-addons --addons confcom --name MyManagedCluster --resource-group MyResourceGroup 
 ```
-### <a name="step-2-add-dcxs-v2-user-node-pool-to-the-cluster"></a>Stap 2: **DC <x> s-v2** gebruikers knooppunt groep toevoegen aan het cluster
-    
+
+### <a name="add-a-dcsv2-user-node-pool-to-the-cluster"></a>Een **DCsv2** toevoegen aan het cluster
+
 > [!NOTE]
-> Als u de vertrouwelijke rekenfunctie wilt gebruiken, moet uw bestaande AKS-cluster beschikken over ten minste één **DC<x>s-v2**  knooppuntpool op basis van een VM SKU. Meer informatie over DCsv2 VMs SKU's voor vertrouwelijk rekenen vindt u hier: [beschikbare SKU's en ondersteunde regio's](virtual-machine-solutions.md).
-    
-  ```azurecli-interactive
+> Als u de functie voor vertrouwelijke computing wilt gebruiken, moet uw bestaande AKS-cluster mini maal één op **DCsv2** VM-SKU gebaseerde knooppunt groep hebben. Zie [beschik bare sku's en ondersteunde regio's](virtual-machine-solutions.md)voor meer informatie over de voor delen van vertrouwelijke computing DCS-v2 vm's.
+
+Voer de volgende opdracht uit om een nieuwe knooppunt groep te maken:
+
+```azurecli-interactive
 az aks nodepool add --cluster-name myAKSCluster --name confcompool1 --resource-group myResourceGroup --node-count 1 --node-vm-size Standard_DC4s_v2
+```
 
-output node pool added
+Controleer of de nieuwe knooppunt groep met de naam confcompool1 is gemaakt:
 
-Verify
-
+```azurecli-interactive
 az aks nodepool list --cluster-name myAKSCluster --resource-group myResourceGroup
 ```
-de bovenstaande opdracht moet een lijst met de recente knooppunt groep zijn die u hebt toegevoegd met de naam confcompool1.
 
-### <a name="step-3-verify-that-daemonsets-are-running-on-confidential-node-pools"></a>Stap 3: controleren of daemonsets worden uitgevoerd op vertrouwelijke knooppunt groepen
+### <a name="verify-that-daemonsets-are-running-on-confidential-node-pools"></a>Controleren of daemonsets worden uitgevoerd op groepen met een vertrouwelijk knoop punt
 
-Meld u aan bij uw bestaande AKS-cluster om de onderstaande verificatie uit te voeren. 
+Meld u aan bij uw bestaande AKS-cluster om de volgende verificatie uit te voeren.
 
 ```console
 kubectl get nodes
 ```
-De uitvoer zou de zojuist toegevoegde 'confcompool1' in het AKS-cluster weer moeten geven.
+
+De uitvoer zou de zojuist toegevoegde 'confcompool1' in het AKS-cluster weer moeten geven. Mogelijk ziet u ook andere daemonsets.
 
 ```console
 $ kubectl get pods --all-namespaces
 
-output (you may also see other daemonsets along SGX daemonsets as below)
 kube-system     sgx-device-plugin-xxxx     1/1     Running
 ```
-Als de uitvoer overeenkomt met het bovenstaande, is uw AKS-cluster nu klaar om vertrouwelijke toepassingen uit te voeren. Volg de onderstaande implementatie van de toepassing testen.
+
+Als de uitvoer overeenkomt met het bovenstaande, is uw AKS-cluster nu klaar om vertrouwelijke toepassingen uit te voeren. Volg de onderstaande instructies om een test toepassing te implementeren.
 
 ## <a name="hello-world-from-isolated-enclave-application"></a>'Hallo wereld' van de geïsoleerde enclavetoepassing <a id="hello-world"></a>
-Maak een bestand met de naam *hello-world-enclave.yaml* en plak het volgende YAML-manifest. Deze op Open Enclave-gebaseerde voorbeeldtoepassingscode is te vinden in het [Open Enclave-project](https://github.com/openenclave/openenclave/tree/master/samples/helloworld). Bij de onderstaande implementatie wordt ervan uitgegaan dat u de invoegtoepassing 'confcom' hebt geïmplementeerd.
+Maak een bestand met de naam *hello-world-enclave.yaml* en plak het volgende YAML-manifest. Deze op Open Enclave-gebaseerde voorbeeldtoepassingscode is te vinden in het [Open Enclave-project](https://github.com/openenclave/openenclave/tree/master/samples/helloworld). Bij de volgende implementatie wordt ervan uitgegaan dat u de addon ' confcom ' hebt geïmplementeerd.
 
 ```yaml
 apiVersion: batch/v1
@@ -169,50 +178,48 @@ U kunt bevestigen dat de werkbelasting een Trusted Execution Environment (Enclav
 
 ```console
 $ kubectl get jobs -l app=sgx-test
-```
 
-```console
-$ kubectl get jobs -l app=sgx-test
 NAME       COMPLETIONS   DURATION   AGE
 sgx-test   1/1           1s         23s
 ```
 
 ```console
 $ kubectl get pods -l app=sgx-test
-```
 
-```console
-$ kubectl get pods -l app=sgx-test
 NAME             READY   STATUS      RESTARTS   AGE
 sgx-test-rchvg   0/1     Completed   0          25s
 ```
 
 ```console
 $ kubectl logs -l app=sgx-test
-```
 
-```console
-$ kubectl logs -l app=sgx-test
 Hello world from the enclave
 Enclave called into host to print: Hello World!
 ```
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Als u de gekoppelde knooppuntpools wilt verwijderen of het AKS-cluster wilt verwijderen, gebruikt u de onderstaande opdrachten:
+Als u de gekoppelde knooppunt groepen wilt verwijderen of het AKS-cluster wilt verwijderen, gebruikt u de volgende opdrachten:
 
-Het AKS-cluster verwijderen
-``````azurecli-interactive
+### <a name="remove-the-confidential-computing-node-pool"></a>De groep voor het vertrouwelijk computing-knoop punt verwijderen
+
+```azurecli-interactive
+az aks nodepool delete --cluster-name myAKSCluster --name myNodePoolName --resource-group myResourceGroup
+```
+
+### <a name="delete-the-aks-cluster"></a>Het AKS-cluster verwijderen
+
+```azurecli-interactive
 az aks delete --resource-group myResourceGroup --name myAKSCluster
 ```
-Removing the confidential computing node pool
-
-``````azurecli-interactive
-az aks nodepool delete --cluster-name myAKSCluster --name myNodePoolName --resource-group myResourceGroup
-``````
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Python, Node, enzovoort uitvoeren. Toepassingen gaan vertrouwelijk door vertrouwelijke containers door het bezoeken van [voorbeelden van vertrouwelijke containers](https://github.com/Azure-Samples/confidential-container-samples).
+* Voer python-, node-, enz.-toepassingen uit met behulp van vertrouwelijke containers door de voor [beelden van vertrouwelijke container](https://github.com/Azure-Samples/confidential-container-samples)te bezoeken.
 
-Voer Enclave-compatibele toepassingen uit door [Enclave Aware Azure-containervoorbeelden](https://github.com/Azure-Samples/confidential-computing/blob/main/containersamples/) te bezoeken.
+* Voer Enclave-compatibele toepassingen uit door [Enclave Aware Azure-containervoorbeelden](https://github.com/Azure-Samples/confidential-computing/blob/main/containersamples/) te bezoeken.
+
+<!-- LINKS -->
+[az-group-create]: /cli/azure/group#az_group_create
+[az-aks-create]: /cli/azure/aks#az_aks_create
+[az-aks-get-credentials]: /cli/azure/aks#az_aks_get_credentials

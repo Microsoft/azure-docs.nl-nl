@@ -2,21 +2,21 @@
 title: 'Zelf studie: gegevens laden met behulp van Azure Portal & SSMS'
 description: In de zelf studie worden Azure Portal en SQL Server Management Studio gebruikt voor het laden van het WideWorldImportersDW-Data Warehouse vanuit een globale Azure-Blob naar een Azure Synapse Analytics SQL-groep.
 services: synapse-analytics
-author: kevinvngo
+author: gaursa
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: sql-dw
 ms.date: 01/12/2021
-ms.author: kevin
+ms.author: gaursa
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, synapse-analytics
-ms.openlocfilehash: bd9d477ed20122b0706e7997ab8922dcce7a59ba
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: f41d7359b8273d685d0ab3c962697ca45ff7d18f
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98685422"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104598028"
 ---
 # <a name="tutorial-load-data-to--azure-synapse-analytics-sql-pool"></a>Zelf studie: gegevens laden naar Azure Synapse Analytics SQL-groep
 

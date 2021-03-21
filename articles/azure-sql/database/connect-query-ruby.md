@@ -13,10 +13,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 05/29/2020
 ms.openlocfilehash: 0434a99d28b4f71594e0ca9ce312087dee5b0ee2
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92672544"
 ---
 # <a name="quickstart-use-ruby-to-query-a-database-in-azure-sql-database-or-azure-sql-managed-instance"></a>Quickstart: Ruby gebruiken om een query uit te voeren op een database in Azure SQL Database of Azure SQL Managed Instance
@@ -38,7 +38,7 @@ Voor het voltooien van deze snelstart moet aan de volgende vereisten worden vold
   | Configureren | [IP-firewallregel op serverniveau](firewall-create-server-level-portal-quickstart.md)| [Connectiviteit vanaf een VM](../managed-instance/connect-vm-instance-configure.md)|
   |||[Connectiviteit vanaf on-premises](../managed-instance/point-to-site-p2s-configure.md) | [Verbinding maken met een SQL Server-exemplaar](../virtual-machines/windows/sql-vm-create-portal-quickstart.md)
   |Gegevens laden|Adventure Works geladen volgens de quickstart|[Wide World Importers herstellen](../managed-instance/restore-sample-database-quickstart.md) | [Wide World Importers herstellen](../managed-instance/restore-sample-database-quickstart.md) |
-  |||Adventure Works herstellen of importeren vanuit een [BACPAC](database-import.md)-bestand vanaf [GitHub](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/adventure-works)| Adventure Works herstellen of importeren uit een [BACPAC](database-import.md)-bestand vanuit [GitHub](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/adventure-works)|
+  |||Adventure Works herstellen of importeren uit een [BACPAC](database-import.md)-bestand vanuit [GitHub](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/adventure-works)| Adventure Works herstellen of importeren uit een [BACPAC](database-import.md)-bestand vanuit [GitHub](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/adventure-works)|
   |||
 
   > [!IMPORTANT]
@@ -46,11 +46,11 @@ Voor het voltooien van deze snelstart moet aan de volgende vereisten worden vold
   
 - Ruby en verwante software voor uw besturingssysteem:
   
-  - **macOS** : Installeer Homebrew, rbenv en ruby-build, Ruby, FreeTDS en TinyTDS. Zie stappen 1.2, 1.3, 1.4, 1.5 en 2.1 in [Ruby-apps maken met behulp van SQL Server in macOS](https://www.microsoft.com/sql-server/developer-get-started/ruby/mac/).
+  - **macOS**: Installeer Homebrew, rbenv en ruby-build, Ruby, FreeTDS en TinyTDS. Zie stappen 1.2, 1.3, 1.4, 1.5 en 2.1 in [Ruby-apps maken met behulp van SQL Server in macOS](https://www.microsoft.com/sql-server/developer-get-started/ruby/mac/).
   
-  - **Ubuntu** : Installatievoorwaarden voor Ruby, rbenv en ruby-build, Ruby, FreeTDS en TinyTDS. Zie stappen 1.2, 1.3, 1.4, 1.5 en 2.1 in [Ruby-apps maken met behulp van SQL Server in Ubuntu](https://www.microsoft.com/sql-server/developer-get-started/ruby/ubuntu/).
+  - **Ubuntu**: Installatievoorwaarden voor Ruby, rbenv en ruby-build, Ruby, FreeTDS en TinyTDS. Zie stappen 1.2, 1.3, 1.4, 1.5 en 2.1 in [Ruby-apps maken met behulp van SQL Server in Ubuntu](https://www.microsoft.com/sql-server/developer-get-started/ruby/ubuntu/).
   
-  - **Windows** : Installeer Ruby, Ruby Devkit en TinyTDS. Zie [Uw ontwikkelomgeving configureren voor ontwikkeling in Ruby](/sql/connect/ruby/step-1-configure-development-environment-for-ruby-development).
+  - **Windows**: Installeer Ruby, Ruby Devkit en TinyTDS. Zie [Uw ontwikkelomgeving configureren voor ontwikkeling in Ruby](/sql/connect/ruby/step-1-configure-development-environment-for-ruby-development).
 
 ## <a name="get-server-connection-information"></a>Server-verbindingsgegevens ophalen
 
@@ -58,16 +58,16 @@ Haal de verbindingsgegevens op die u nodig hebt om verbinding te maken met een d
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 
-2. Navigeer naar de pagina **SQL-databases** of **Met SQL beheerde exemplaren** .
+2. Navigeer naar de pagina **SQL-databases** of **Met SQL beheerde exemplaren**.
 
-3. Bekijk op de pagina **Overzicht** de volledig gekwalificeerde servernaam naast **Servernaam** voor een database in Azure SQL Database, of de volledig gekwalificeerde servernaam (of het IP-adres) naast **Host** voor een met Azure SQL beheerd exemplaar of SQL Server op virtuele Azure-machine. Als u de servernaam of hostnaam wilt kopiëren, plaatst u de muisaanwijzer erboven en selecteert u het pictogram **Kopiëren** .
+3. Bekijk op de pagina **Overzicht** de volledig gekwalificeerde servernaam naast **Servernaam** voor een database in Azure SQL Database, of de volledig gekwalificeerde servernaam (of het IP-adres) naast **Host** voor een met Azure SQL beheerd exemplaar of SQL Server op virtuele Azure-machine. Als u de servernaam of hostnaam wilt kopiëren, plaatst u de muisaanwijzer erboven en selecteert u het pictogram **Kopiëren**.
 
 > [!NOTE]
 > Zie [Verbinding met een SQL Server-exemplaar](../virtual-machines/windows/sql-vm-create-portal-quickstart.md#connect-to-sql-server) voor meer informatie over de verbinding van SQL Server op Azure VM.
 
 ## <a name="create-code-to-query-your-database-in-azure-sql-database"></a>Code maken om query's uit te voeren op uw database in Azure SQL Database
 
-1. Maak in een tekst- of code-editor een nieuw bestand met de naam *sqltest.rb* .
+1. Maak in een tekst- of code-editor een nieuw bestand met de naam *sqltest.rb*.
 
 1. Voeg de volgende code toe. Vervang de waarden van uw database in Azure SQL Database door `<server>`, `<database>`, `<username>` en `<password>`.
 

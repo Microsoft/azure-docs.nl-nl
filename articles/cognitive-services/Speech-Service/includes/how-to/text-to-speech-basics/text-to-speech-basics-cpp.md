@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/25/2020
 ms.author: trbye
-ms.openlocfilehash: 78639386c9d836055d80566f4b84565c2c3b8e80
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 41cf1646d75080bc5b5996504ce8711edfae89fa
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/19/2021
-ms.locfileid: "104612074"
+ms.locfileid: "104719815"
 ---
 In deze quickstart maakt u kennis met algemene ontwerppatronen voor het uitvoeren van een spraak-naar-tekstsynthese met behulp van de Speech-SDK. Eerst voert u een basisconfiguratie en -synthese uit en gaat u verder met geavanceerdere voorbeelden voor aangepaste toepassingsontwikkeling zoals:
 
@@ -115,7 +115,7 @@ Voer het programma uit. Er wordt een gesynthetiseerd `.wav`-bestand geschreven n
 
 ## <a name="synthesize-to-speaker-output"></a>Synthetiseren naar de uitvoer van de luidspreker
 
-In sommige gevallen kunt u gesynthetiseerde spraak rechtstreeks naar een luidspreker uitvoeren. U kunt dit doen door de parameter `AudioConfig` weg te laten bij het maken van de `SpeechSynthesizer` in bovenstaand voorbeeld. Hiermee wordt de uitvoer naar het huidige, actieve uitvoerapparaat gestuurd.
+In sommige gevallen kunt u gesynthetiseerde spraak rechtstreeks naar een luidspreker uitvoeren. Als u dit wilt doen, laat u de `AudioConfig` para meter weg bij het maken `SpeechSynthesizer` van de in het bovenstaande voor beeld. Dit is een synthese van het huidige actieve uitvoer apparaat.
 
 ```cpp
 void synthesizeSpeech()
@@ -255,10 +255,10 @@ Als u wilt overschakelen naar een neurale stem, wijzigt u de `name` in een van d
 </speak>
 ```
 
-## <a name="visemes"></a>Visemes
+## <a name="get-facial-pose-events"></a>Gebeurtenissen voor gezichts pose ophalen
 
-Spraak wordt doorgaans behandeld als een goede manier om de animatie van gezichts uitdrukkingen te vertonen.
-Vaak worden [visemes](../../../how-to-speech-synthesis-viseme.md) gebruikt om de sleutel in waargenomen spraak weer te geven (dat wil zeggen de positie van de lippen, jaw en tong bij het produceren van een bepaalde foneem).
-U kunt de Viseme-gebeurtenis in Speech SDK abonneren om gelaat animatie gegevens te genereren.
-Vervolgens kunt u dergelijke gegevens Toep assen op een teken om te zien hoe de animatie wordt Vergezicht.
-Meer informatie [over het ophalen van viseme-uitvoer](../../../how-to-speech-synthesis-viseme.md#get-viseme-outputs-with-the-speech-sdk).
+Speech is een goede manier om de animatie van gezichts expressies te testen.
+Vaak worden [visemes](../../../how-to-speech-synthesis-viseme.md) gebruikt om de sleutel in waargenomen spraak te vertegenwoordigen, zoals de positie van de lippen, jaw en tong bij het produceren van een bepaalde foneem.
+U kunt de viseme-gebeurtenis in Speech SDK abonneren.
+Vervolgens kunt u viseme-gebeurtenissen Toep assen om het gezicht van een teken te animeren wanneer spraak geluid wordt afgespeeld.
+Meer informatie [over het ophalen van viseme-gebeurtenissen](../../../how-to-speech-synthesis-viseme.md#get-viseme-events-with-the-speech-sdk).

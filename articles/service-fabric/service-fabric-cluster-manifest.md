@@ -4,10 +4,10 @@ description: Meer informatie over het configureren van uw zelfstandige of on-pre
 ms.topic: conceptual
 ms.date: 11/12/2018
 ms.openlocfilehash: fd93263b38340ce080cca1aecb98f3a599ff1861
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91843155"
 ---
 # <a name="configuration-settings-for-a-standalone-windows-cluster"></a>Configuratie-instellingen voor een zelfstandig Windows-cluster
@@ -197,7 +197,7 @@ Alle beschik bare invoeg toepassingen kunnen worden weer gegeven in de [Naslag i
 Als u container ondersteuning wilt inschakelen voor zowel Windows Server-containers als Hyper-V-containers voor zelfstandige clusters, moet u de functie voor DNS toevoegen inschakelen.
 
 ## <a name="next-steps"></a>Volgende stappen
-Nadat u een volledigClusterConfig.jshebt voor het bestand dat is geconfigureerd * op basis van* uw zelfstandige cluster installatie, kunt u uw cluster implementeren. Volg de stappen in [een zelfstandige service Fabric cluster maken](service-fabric-cluster-creation-for-windows-server.md). 
+Nadat u een volledigClusterConfig.jshebt voor het bestand dat is geconfigureerd *op basis van* uw zelfstandige cluster installatie, kunt u uw cluster implementeren. Volg de stappen in [een zelfstandige service Fabric cluster maken](service-fabric-cluster-creation-for-windows-server.md). 
 
 Als u een zelfstandig cluster hebt geïmplementeerd, kunt u ook [de configuratie van een zelfstandig cluster bijwerken](service-fabric-cluster-config-upgrade-windows-server.md). 
 

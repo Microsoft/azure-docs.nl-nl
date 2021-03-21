@@ -5,61 +5,60 @@ author: vermagit
 ms.service: virtual-machines
 ms.subservice: hpc
 ms.topic: article
-ms.date: 10/23/2020
+ms.date: 03/18/2021
 ms.author: amverma
 ms.reviewer: cynthn
-ms.openlocfilehash: 94334e54865b3a3b603cbd0b3943899a375d894e
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 0c6f5dc55f7406aba7d6e3dc1a278b57fe4ec9ba
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/20/2021
-ms.locfileid: "101675656"
+ms.locfileid: "104721272"
 ---
 # <a name="configure-and-optimize-vms"></a>VM's configureren en optimaliseren
 
-In dit artikel worden bekende technieken gedeeld voor het configureren en optimaliseren van de met InfiniBand ingeschakelde [H-Series](../../sizes-hpc.md) en [N-Series](../../sizes-gpu.md) vm's voor HPC.
+In dit artikel vindt u enkele richt lijnen voor het configureren en optimaliseren van de met InfiniBand ingeschakelde [H-Series](../../sizes-hpc.md) en [N-Series](../../sizes-gpu.md) vm's voor HPC.
 
 ## <a name="vm-images"></a>VM-installatiekopieën
-Op InfiniBand ingeschakelde Vm's zijn de juiste Stuur Programma's vereist om RDMA in te scha kelen. Op Linux worden de CentOS-HPC-VM-installatie kopieën in de Marketplace vooraf geconfigureerd met de juiste Stuur Programma's. De Ubuntu-VM-installatie kopieën kunnen worden geconfigureerd met de juiste Stuur Programma's met behulp van de [instructies hier](https://techcommunity.microsoft.com/t5/azure-compute/configuring-infiniband-for-ubuntu-hpc-and-gpu-vms/ba-p/1221351). Het is ook raadzaam om [aangepaste VM-installatie kopieën](../../linux/tutorial-custom-images.md) te maken met de juiste Stuur Programma's en configuratie en deze herhaaldelijk te hergebruiken.
+Op InfiniBand ingeschakelde Vm's zijn de juiste Stuur Programma's vereist om RDMA in te scha kelen.
+- De [CentOS-VM-installatie kopieën](#centos-hpc-vm-images) in de Marketplace worden vooraf geconfigureerd met de juiste IB-Stuur Programma's en zijn de eenvoudigste manier om aan de slag te gaan.
+- De [Ubuntu-VM-installatie kopieën](#ubuntu-vm-images) kunnen worden geconfigureerd met de juiste IB-Stuur Programma's. Het is raadzaam om [aangepaste VM-installatie kopieën](../../linux/tutorial-custom-images.md) te maken met de juiste Stuur Programma's en configuratie en deze herhaaldelijk te hergebruiken.
 
-> [!NOTE]
-> Op met GPU ingeschakelde vm's uit de [N-serie](../../sizes-gpu.md) zijn de juiste GPU-Stuur Programma's ook vereist, die kunnen worden toegevoegd via de [VM-extensies](../../extensions/hpccompute-gpu-linux.md) of [hand matig](../../linux/n-series-driver-setup.md). Sommige VM-installatie kopieën op de Marketplace worden ook vooraf geïnstalleerd met de NVIDIA GPU-Stuur Programma's.
+Op met GPU ingeschakelde vm's uit de [N-serie](../../sizes-gpu.md) zijn de juiste GPU-Stuur Programma's ook vereist, die kunnen worden toegevoegd via de [VM-extensies](../../extensions/hpccompute-gpu-linux.md) of [hand matig](../../linux/n-series-driver-setup.md). Sommige VM-installatie kopieën op de Marketplace worden ook vooraf geïnstalleerd met de NVIDIA GPU-Stuur Programma's, inclusief enkele VM-installatie kopieën van NVIDIA.
 
 ### <a name="centos-hpc-vm-images"></a>CentOS-HPC VM-installatie kopieën
 
+#### <a name="sr-iov-enabled-vms"></a>Vm's met SR-IOV ingeschakeld
+Voor met SR-IOV ingeschakelde [RDMA-compatibele vm's](../../sizes-hpc.md#rdma-capable-instances), [CENTOS-HPC VM-installatie kopieën op Marketplace-](https://azuremarketplace.microsoft.com/marketplace/apps/openlogic.centos-hpc?tab=Overview) versie 7,6 en hoger zijn geschikt. Deze VM-installatie kopieën worden geoptimaliseerd en vooraf geladen met de OFED-Stuur Programma's voor RDMA en verschillende veelgebruikte MPI-bibliotheken en weten schappelijke computing pakketten. Dit is de eenvoudigste manier om aan de slag te gaan.
+- Meer informatie over wat er is opgenomen in de CentOS-HPC-versie 7,6 en hoger zijn VM-installatie kopieën in een [TechCommunity-artikel](https://techcommunity.microsoft.com/t5/Azure-Compute/CentOS-HPC-VM-Image-for-SR-IOV-enabled-Azure-HPC-VMs/ba-p/665557).
+- Scripts die worden gebruikt bij het maken van de VM-installatie kopieën CentOS-HPC-versie 7,6 en hoger van een basis installatie kopie voor CentOS Marketplace, bevinden zich op de [azhpc-installatie kopieën opslag plaats](https://github.com/Azure/azhpc-images/tree/master/centos).
+  
+> [!NOTE] 
+> De nieuwste Azure HPC Marketplace-installatie kopieën hebben Mellanox OFED 5,1 en hoger, die geen ondersteuning bieden voor ConnectX3-Pro InfiniBand-kaarten. Met SR-IOV ingeschakelde VM-grootten van N-serie met FDR InfiniBand (bijvoorbeeld NCv3 en ouder) kunnen de volgende CentOS-HPC-installatie kopie of oudere versies van de Marketplace worden gebruikt:
+>- Open Logic: CentOS-HPC: 7,6:7.6.2020062900
+>- Open Logic: CentOS-HPC: 7_6gen2:7.6.2020062901
+>- Open Logic: CentOS-HPC: 7,7:7.7.2020062600
+>- Open Logic: CentOS-HPC: 7_7-Gen2:7.7.2020062601
+>- Open Logic: CentOS-HPC: 8_1:8.1.2020062400
+>- Open Logic: CentOS-HPC: 8_1-Gen2:8.1.2020062401
+
 #### <a name="non-sr-iov-enabled-vms"></a>Vm's waarvoor geen SR-IOV is ingeschakeld
-Voor [RDMA-compatibele](../../sizes-hpc.md#rdma-capable-instances), op SR-IOV geschikte vm's, CENTOS-HPC-versie 6,5 of hoger, is er een geschikte versie van 7,5 in Marketplace. Een voor beeld: voor [vm's uit de H16-serie](../../h-series.md)wordt versie 7,1 tot 7,5 aanbevolen. Deze VM-installatie kopieën worden vooraf geladen met de netwerk directe Stuur Programma's voor RDMA en Intel MPI versie 5,1.
+Voor [RDMA-compatibele](../../sizes-hpc.md#rdma-capable-instances), op SR-IOV geschikte vm's, CENTOS-HPC-versie 6,5 of hoger, is er een geschikte versie van 7,4 in Marketplace. Een voor beeld: voor [vm's uit de H16-serie](../../h-series.md)wordt versie 7,1 tot 7,4 aanbevolen. Deze VM-installatie kopieën worden vooraf geladen met de netwerk directe Stuur Programma's voor RDMA en Intel MPI versie 5,1.
 
 > [!NOTE]
 > Op deze CentOS-gebaseerde HPC-installatie kopieën voor virtuele machines die niet zijn beveiligd met SR-IOV, worden kernel-updates uitgeschakeld in het configuratie bestand **yum** . Dit komt doordat de Network direct Linux RDMA-Stuur Programma's worden gedistribueerd als een RPM-pakket, en updates van Stuur Programma's kunnen mogelijk niet worden uitgevoerd als de kernel wordt bijgewerkt.
 
-#### <a name="sr-iov-enabled-vms"></a>Vm's met SR-IOV ingeschakeld
-  Voor met SR-IOV ingeschakelde [RDMA-compatibele vm's](../../sizes-hpc.md#rdma-capable-instances), [CentOS-HPC-versie 7,6 of een latere](https://techcommunity.microsoft.com/t5/Azure-Compute/CentOS-HPC-VM-Image-for-SR-IOV-enabled-Azure-HPC-VMs/ba-p/665557) versie van VM-installatie kopieën in de Marketplace, zijn geschikt. Deze VM-installatie kopieën worden geoptimaliseerd en vooraf geladen met de OFED-Stuur Programma's voor RDMA en verschillende veelgebruikte MPI-bibliotheken en weten schappelijke computing pakketten. Dit is de eenvoudigste manier om aan de slag te gaan.
-
-  Voor beeld van scripts die worden gebruikt bij het maken van de VM-installatie kopieën CentOS-HPC versie 7,6 en hoger van een basis installatie kopie voor CentOS Marketplace, vindt u op de [azhpc-images opslag plaats](https://github.com/Azure/azhpc-images/tree/master/centos).
-  
-  > [!NOTE] 
-  > De nieuwste Azure HPC Marketplace-installatie kopieën hebben Mellanox OFED 5,1 en hoger, die geen ondersteuning bieden voor ConnectX3-Pro InfiniBand-kaarten. Met SR-IOV ingeschakelde VM-grootten van N-serie met FDR InfiniBand (bijvoorbeeld NCv3) kunnen de volgende CentOS van de HPC-VM-installatie kopie worden gebruikt, of ouder:
-  >- Open Logic: CentOS-HPC: 7,6:7.6.2020062900
-  >- Open Logic: CentOS-HPC: 7_6gen2:7.6.2020062901
-  >- Open Logic: CentOS-HPC: 7,7:7.7.2020062600
-  >- Open Logic: CentOS-HPC: 7_7-Gen2:7.7.2020062601
-  >- Open Logic: CentOS-HPC: 8_1:8.1.2020062400
-  >- Open Logic: CentOS-HPC: 8_1-Gen2:8.1.2020062401
-
-
 ### <a name="rhelcentos-vm-images"></a>VM-installatie kopieën van RHEL/CentOS
 Installatie kopieën op basis van niet-HPC-RHEL of CentOS op de Marketplace kunnen worden geconfigureerd voor gebruik op [virtuele machines met RDMA-functionaliteit](../../sizes-hpc.md#rdma-capable-instances)voor SR-IOV. Meer informatie over het [inschakelen van Infiniband](enable-infiniband.md) en het instellen van [mpi](setup-mpi.md) op de vm's.
-
-  Voor beeld van scripts die worden gebruikt bij het maken van de VM-installatie kopieën CentOS-HPC versie 7,6 en hoger van een basis installatie kopie voor CentOS Marketplace, vindt u op de [azhpc-images opslag plaats](https://github.com/Azure/azhpc-images/tree/master/centos).
+- Scripts die worden gebruikt bij het maken van de VM-installatie kopieën van CentOS-HPC-versie 7,6 en hoger van een basis installatie kopie voor CentOS Marketplace van de [azhpc-opslag plaats,](https://github.com/Azure/azhpc-images/tree/master/centos) kunnen ook worden gebruikt.
   
-  > [!NOTE]
-  > Mellanox OFED 5,1 en hoger bieden geen ondersteuning voor ConnectX3-Pro InfiniBand-kaarten op SR-IOV waarvoor VM-grootten van N-serie zijn ingeschakeld met FDR InfiniBand (bijvoorbeeld NCv3). Gebruik LTS Mellanox OFED versie 4.9-0.1.7.0 of ouder op de virtuele machines uit de N-serie met ConnectX3-Pro kaarten. Lees [hier](https://www.mellanox.com/products/infiniband-drivers/linux/mlnx_ofed)meer informatie.
+> [!NOTE]
+> Mellanox OFED 5,1 en hoger bieden geen ondersteuning voor ConnectX3-Pro InfiniBand-kaarten op SR-IOV waarvoor VM-grootten van N-serie zijn ingeschakeld met FDR InfiniBand (bijvoorbeeld NCv3). Gebruik LTS Mellanox OFED versie 4.9-0.1.7.0 of ouder op de virtuele machines uit de N-serie met ConnectX3-Pro kaarten. Lees [hier](https://www.mellanox.com/products/infiniband-drivers/linux/mlnx_ofed)meer informatie.
 
 ### <a name="ubuntu-vm-images"></a>Ubuntu VM-installatie kopieën
 Ubuntu Server 16,04 LTS, 18,04 LTS en 20,04 LTS VM-installatie kopieën in de Marketplace worden ondersteund voor [virtuele machines](../../sizes-hpc.md#rdma-capable-instances)met SR-IOV en niet-SR-IOV-ondersteuning. Meer informatie over het [inschakelen van Infiniband](enable-infiniband.md) en het instellen van [mpi](setup-mpi.md) op de vm's.
-
-  Voor beeld van scripts die kunnen worden gebruikt bij het maken van de Ubuntu 18,04 LTS op basis van HPC VM-installatie kopieën bevinden zich op de [azhpc-installatie kopieën opslag plaats](https://github.com/Azure/azhpc-images/tree/master/ubuntu/ubuntu-18.x/ubuntu-18.04-hpc).
+- Instructies voor het inschakelen van InfiniBand op de Ubuntu-VM-installatie kopieën bevinden zich in een [TechCommunity-artikel](https://techcommunity.microsoft.com/t5/azure-compute/configuring-infiniband-for-ubuntu-hpc-and-gpu-vms/ba-p/1221351).
+- Scripts die worden gebruikt bij het maken van de Ubuntu 18,04-en 20,04 LTS-gebaseerde HPC-VM-installatie kopieën van een basis installatie kopie van Ubuntu Marketplace, zijn op [azhpc-installatie kopieën opslag plaats](https://github.com/Azure/azhpc-images/tree/master/ubuntu).
 
 ### <a name="suse-linux-enterprise-server-vm-images"></a>VM-installatie kopieën SUSE Linux Enterprise Server
 SLES 12 SP3 voor HPC, SLES 12 SP3 voor HPC (Premium), SLES 12 SP1 voor HPC, SLES 12 SP1 voor HPC (Premium), SLES 12 SP4 en SLES 15 VM-installatie kopieën in de Marketplace worden ondersteund. Deze VM-installatie kopieën worden vooraf geladen met de netwerk directe Stuur Programma's voor RDMA en Intel MPI versie 5,1. Meer informatie over het [instellen van MPI](setup-mpi.md) op de vm's.
@@ -126,6 +125,6 @@ U kunt de WALinuxAgent eventueel uitschakelen als een voorbereidende taak en een
 
 - Meer informatie over het [inschakelen van Infiniband](enable-infiniband.md) op de vm's met de [H-Series](../../sizes-hpc.md) en [N-serie](../../sizes-gpu.md) van Infiniband.
 - Meer informatie over het installeren van verschillende [ondersteunde mpi-bibliotheken](setup-mpi.md) en hun optimale configuratie op de vm's.
-- Bekijk [Overzicht HB-serie](hb-series-overview.md) en [Overzicht HC-serie](hc-series-overview.md) voor meer informatie over het optimaal configureren van workloads ten behoeve van de prestaties en schaalbaarheid.
-- Lees over de laatste aankondigingen en enkele HPC-voorbeelden en -resultaten in de [Azure Compute Tech Community-blogs](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute).
+- Bekijk het overzicht van de [HBv3-serie](hbv3-series-overview.md) en de [HC-serie](hc-series-overview.md).
+- Meer informatie over de laatste aankondigingen, HPC-voor beelden en prestatie resultaten vindt u in de blogs van de [technische community van Azure Compute](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute).
 - Zie [High Performance Computing (HPC) op Azure](/azure/architecture/topics/high-performance-computing/) voor een gedetailleerdere architectuurweergave van HPC-workloads die worden uitgevoerd.

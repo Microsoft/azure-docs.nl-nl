@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 4/15/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: aec60218774f3f8e293a5e5ab8c03707d117c2a0
-ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
+ms.openlocfilehash: b7883d6c541558e26793f94e37014a20b14d761e
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102634971"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104577249"
 ---
 # <a name="tutorial-build-out-an-end-to-end-solution"></a>Zelfstudie: Een end-to-end-oplossing bouwen
 
@@ -121,35 +121,51 @@ Ga terug naar het venster van Visual Studio waarin het _**AdtE2ESample**_ -proje
 
 [!INCLUDE [digital-twins-publish-azure-function.md](../../includes/digital-twins-publish-azure-function.md)]
 
-Als uw functie-app toegang moet hebben tot Azure Digital Apparaatdubbels, moet er een door het systeem beheerde identiteit zijn met machtigingen voor toegang tot uw Azure Digital Apparaatdubbels-instantie. Daarna stelt u dat in.
+De functie-app kan alleen toegang krijgen tot Azure Digital Apparaatdubbels als deze over machtigingen beschikt om toegang te krijgen tot uw Azure Digital Apparaatdubbels-exemplaar en de hostnaam van het exemplaar. U configureert deze volgende.
 
-### <a name="assign-permissions-to-the-function-app"></a>Machtigingen toewijzen aan de functie-app
+### <a name="configure-permissions-for-the-function-app"></a>Machtigingen voor de functie-app configureren
 
-De volgende stap is de functie-app toegang te geven tot Azure Digital Twins door een app-instelling te configureren, de app een door het systeem beheerde Microsoft Azure AD-identiteit toe te wijzen, en deze identiteit de rol *Azure Digital Twins-gegevenseigenaar* te geven in het Azure Digital Twins-exemplaar. Deze rol is vereist voor alle gebruikers of functies die veel gegevensvlakactiviteiten op het exemplaar willen uitvoeren. Meer informatie over beveiliging en roltoewijzingen vindt u in [*Concepten: Beveiliging voor Azure Digital Twins-oplossingen*](concepts-security.md).
+Er zijn twee instellingen die moeten worden ingesteld voor de functie-app om toegang te krijgen tot uw Azure Digital Apparaatdubbels-exemplaar. Deze kunnen worden uitgevoerd via opdrachten in de [Azure Cloud shell](https://shell.azure.com). 
 
-Gebruik in Azure Cloud Shell de volgende opdracht om een toepassingsinstelling in te stellen die door uw functie-app wordt gebruikt om te verwijzen naar uw exemplaar van Azure Digital Twins. Vul de tijdelijke aanduidingen in met de details van uw resources (Houd er rekening mee dat uw URL van het Azure Digital Apparaatdubbels-exemplaar de hostnaam is voorafgegaan door *https://*).
+#### <a name="assign-access-role"></a>Access-rol toewijzen
+
+De eerste instelling geeft de functie-app de rol **Azure Digital Apparaatdubbels data owner** in het Azure Digital apparaatdubbels-exemplaar. Deze rol is vereist voor alle gebruikers of functies die veel gegevensvlakactiviteiten op het exemplaar willen uitvoeren. Meer informatie over beveiliging en roltoewijzingen vindt u in [*Concepten: Beveiliging voor Azure Digital Twins-oplossingen*](concepts-security.md). 
+
+1. Gebruik de volgende opdracht om de details van de door het systeem beheerde identiteit voor de functie weer te geven. Noteer het veld **principalId** in de uitvoer.
+
+    ```azurecli-interactive 
+    az functionapp identity show -g <your-resource-group> -n <your-App-Service-(function-app)-name> 
+    ```
+
+    >[!NOTE]
+    > Als het resultaat leeg is in plaats van de details van een identiteit weer te geven, maakt u met behulp van deze opdracht een nieuwe door het systeem beheerde identiteit voor de functie:
+    > 
+    >```azurecli-interactive    
+    >az functionapp identity assign -g <your-resource-group> -n <your-App-Service-(function-app)-name>  
+    >```
+    >
+    > In de uitvoer worden vervolgens de details van de identiteit weer gegeven, met inbegrip van de **principalId** -waarde die is vereist voor de volgende stap. 
+
+1. Gebruik de waarde **principalId** in de volgende opdracht om de identiteit van de functie-app toe te wijzen aan de rol **Gegevenseigenaar van Azure Digital Twins** voor uw Azure Digital Twins-exemplaar.
+
+    ```azurecli-interactive 
+    az dt role-assignment create --dt-name <your-Azure-Digital-Twins-instance> --assignee "<principal-ID>" --role "Azure Digital Twins Data Owner"
+    ```
+
+Het resultaat van deze opdracht is uitgevoerde informatie over de roltoewijzing die u hebt gemaakt. De functie-app heeft nu machtigingen om toegang te krijgen tot gegevens in uw Azure Digital Apparaatdubbels-exemplaar.
+
+#### <a name="configure-application-settings"></a>Toepassingsinstellingen configureren
+
+Met de tweede instelling maakt u een **omgevings variabele** voor de functie met de URL van uw Azure Digital apparaatdubbels-exemplaar. De functie code gebruikt deze om naar uw exemplaar te verwijzen. Zie [*uw functie-app beheren*](../azure-functions/functions-how-to-use-azure-function-app-settings.md?tabs=portal)voor meer informatie over omgevings variabelen. 
+
+Voer de onderstaande opdracht uit en vul de tijdelijke aanduidingen in met de details van uw resources.
 
 ```azurecli-interactive
-az functionapp config appsettings set -g <your-resource-group> -n <your-App-Service-(function-app)-name> --settings "ADT_SERVICE_URL=<your-Azure-Digital-Twins-instance-URL>"
+az functionapp config appsettings set -g <your-resource-group> -n <your-App-Service-(function-app)-name> --settings "ADT_SERVICE_URL=https://<your-Azure-Digital-Twins-instance-hostname>"
 ```
 
 De uitvoer is de lijst met instellingen voor de Azure-functie, die nu een vermelding met de naam **ADT_SERVICE_URL** moet bevatten.
 
-Gebruik de volgende opdracht om de door het systeem beheerde identiteit te maken. Zoek naar het veld **principalId** in de uitvoer.
-
-```azurecli-interactive
-az functionapp identity assign -g <your-resource-group> -n <your-App-Service-(function-app)-name>
-```
-
-Gebruik de waarde **principalId** uit de uitvoer in de volgende opdracht om de identiteit van de functie-app toe te wijzen aan de rol van *Azure Digital Apparaatdubbels-gegevens eigenaar* voor uw Azure Digital apparaatdubbels-exemplaar.
-
-[!INCLUDE [digital-twins-permissions-required.md](../../includes/digital-twins-permissions-required.md)]
-
-```azurecli-interactive
-az dt role-assignment create --dt-name <your-Azure-Digital-Twins-instance> --assignee "<principal-ID>" --role "Azure Digital Twins Data Owner"
-```
-
-Het resultaat van deze opdracht is uitgevoerde informatie over de roltoewijzing die u hebt gemaakt. De functie-app heeft nu machtigingen voor toegang tot uw Azure Digital Twins-instantie.
 
 ## <a name="process-simulated-telemetry-from-an-iot-hub-device"></a>Gesimuleerde telemetrie van een IoT Hub-apparaat verwerken
 

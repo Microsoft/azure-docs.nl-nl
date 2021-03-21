@@ -21,7 +21,7 @@
       href: tutorial-monitor-your-data.md
     - name: Incidenten onderzoeken
       href: tutorial-investigate-cases.md
-    - name: Op bedreigingen reageren
+    - name: Automatisering gebruiken om te reageren op bedreigingen
       href: tutorial-respond-threats-playbook.md
     - name: KQL-query's maken (module leren)
       href: /learn/paths/sc-200-utilize-kql-for-azure-sentinel/
@@ -37,6 +37,14 @@
           href: resource-context-rbac.md
     - name: Geavanceerde detectie van aanvallen met meerdere stappen
       href: fusion.md
+    - name: Automation (via)
+      items:
+        - name: VIA in azure-Sentinel
+          href: automation-in-azure-sentinel.md
+        - name: Automation-regels voor het verwerken van incidenten
+          href: automate-incident-handling-with-automation-rules.md
+        - name: Geavanceerde automatisering met playbooks
+          href: automate-responses-with-playbooks.md
     - name: Geavanceerde bedreigingen identificeren met UEBA
       href: identify-threats-with-entity-behavior-analytics.md
     - name: Bedreigingsinformatie importeren in Azure Sentinel
@@ -279,7 +287,7 @@
           href: livestream.md
     - name: Azure Sentinel verwijderen
       href: offboard.md
-- name: Naslaginformatie
+- name: Referentie
   items:
     - name: Belangrijkste Azure-verklikker werkmappen
       href: top-workbooks.md

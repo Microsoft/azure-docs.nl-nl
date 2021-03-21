@@ -12,12 +12,12 @@ ms.date: 2/23/2021
 ms.author: kenwith
 ms.reviewer: hpsin
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bdcdd387575faec87656430860e24fee56387775
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: fa025f7e21f76b4dde547ccabf675511e9156359
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102050899"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104589324"
 ---
 # <a name="use-tenant-restrictions-to-manage-access-to-saas-cloud-applications"></a>Tenant beperkingen gebruiken om de toegang tot SaaS-Cloud toepassingen te beheren
 
@@ -178,9 +178,9 @@ Fiddler is een gratis proxy voor webfoutopsporing die kan worden gebruikt om HTT
       }
    ```
 
-Als u meerdere tenants wilt toestaan, gebruikt u een komma om de namen van de tenants van elkaar te scheiden. Bijvoorbeeld:
+   Als u meerdere tenants wilt toestaan, gebruikt u een komma om de namen van de tenants van elkaar te scheiden. Bijvoorbeeld:
 
-      `oSession.oRequest["Restrict-Access-To-Tenants"] = "contoso.onmicrosoft.com,fabrikam.onmicrosoft.com";`
+   `oSession.oRequest["Restrict-Access-To-Tenants"] = "contoso.onmicrosoft.com,fabrikam.onmicrosoft.com";`
 
 4. Sla het CustomRules-bestand op en sluit het.
 
@@ -197,13 +197,13 @@ Raadpleeg de documentatie van uw proxy server voor specifieke informatie.
 
 ## <a name="blocking-consumer-applications-public-preview"></a>Consumenten toepassingen blok keren (open bare preview)
 
-Toepassingen van micro soft die ondersteuning bieden voor zowel consumenten accounts als organisatie accounts, zoals [OneDrive](https://onedrive.live.com/) of [Microsoft Learn](https://docs.microsoft.com/learn/), kunnen soms worden gehost op dezelfde URL.  Dit betekent dat gebruikers die toegang moeten hebben tot deze URL voor werk, ook toegang hebben tot het persoonlijk gebruik. Dit kan niet worden toegestaan volgens de richt lijnen van uw bedrijf.
+Toepassingen van micro soft die ondersteuning bieden voor zowel consumenten accounts als organisatie accounts, zoals [OneDrive](https://onedrive.live.com/) of [Microsoft Learn](/learn/), kunnen soms worden gehost op dezelfde URL.  Dit betekent dat gebruikers die toegang moeten hebben tot deze URL voor werk, ook toegang hebben tot het persoonlijk gebruik. Dit kan niet worden toegestaan volgens de richt lijnen van uw bedrijf.
 
 Sommige organisaties proberen dit op te lossen door te blok keren `login.live.com` om te voor komen dat persoonlijke accounts worden geverifieerd.  Dit heeft een aantal neerwaartse nadeel:
 
 1. Blokkerend `login.live.com` blokkeert het gebruik van persoonlijke accounts in B2B-gast scenario's, die kunnen intrude voor bezoekers en samen werking.
-1. [Voor auto pilot is het gebruik `login.live.com` van vereist](https://docs.microsoft.com/mem/autopilot/networking-requirements) om te implementeren. InTune-en auto pilot-scenario's kunnen mislukken wanneer `login.live.com` geblokkeerd.
-1. Organisatie-telemetrie en Windows-updates die afhankelijk zijn van de login.live.com-service voor apparaat-Id's [, zullen niet langer werken](https://docs.microsoft.com/windows/deployment/update/windows-update-troubleshooting#feature-updates-are-not-being-offered-while-other-updates-are).
+1. [Voor auto pilot is het gebruik `login.live.com` van vereist](/mem/autopilot/networking-requirements) om te implementeren. InTune-en auto pilot-scenario's kunnen mislukken wanneer `login.live.com` geblokkeerd.
+1. Organisatie-telemetrie en Windows-updates die afhankelijk zijn van de login.live.com-service voor apparaat-Id's [, zullen niet langer werken](/windows/deployment/update/windows-update-troubleshooting#feature-updates-are-not-being-offered-while-other-updates-are).
 
 ### <a name="configuration-for-consumer-apps"></a>Configuratie voor consumenten-apps
 
@@ -216,7 +216,7 @@ Op dit moment wordt verificatie voor consumenten toepassingen niet weer gegeven 
 Het `restrict-msa` beleid blokkeert het gebruik van consumenten toepassingen, maar maakt via verschillende andere typen verkeer en verificatie mogelijk:
 
 1. Gebruiker-minder verkeer voor apparaten.  Dit omvat het verkeer voor auto pilot, Windows Update en telemetrie van de organisatie.
-1. B2B-verificatie van consumenten accounts. Gebruikers met micro soft-accounts die worden [uitgenodigd om samen te werken met een Tenant](https://docs.microsoft.com/azure/active-directory/external-identities/redemption-experience#invitation-redemption-flow) verificatie voor login.live.com om toegang te krijgen tot een resource Tenant.
+1. B2B-verificatie van consumenten accounts. Gebruikers met micro soft-accounts die worden [uitgenodigd om samen te werken met een Tenant](../external-identities/redemption-experience.md#invitation-redemption-flow) verificatie voor login.live.com om toegang te krijgen tot een resource Tenant.
     1. Deze toegang wordt beheerd met behulp van de- `Restrict-Access-To-Tenants` header om toegang tot de bron Tenant toe te staan of te weigeren.
 1. ' Passthrough ' authenticatie, gebruikt door veel Azure-apps en Office.com, waarbij apps Azure AD gebruiken voor het aanmelden van consumenten gebruikers in een consument context.
     1. Deze toegang wordt ook beheerd met behulp van de- `Restrict-Access-To-Tenants` header om toegang tot de speciale Tenant (' passthrough ') toe te staan of te weigeren `f8cdef31-a31e-4b4a-93e4-5f571e91255a` .  Als deze Tenant niet wordt weer gegeven in de `Restrict-Access-To-Tenants` lijst met toegestane domeinen, worden consumenten accounts geblokkeerd door Azure AD, zodat ze zich niet kunnen aanmelden bij deze apps.

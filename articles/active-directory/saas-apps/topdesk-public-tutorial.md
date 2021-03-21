@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 05/02/2019
 ms.author: jeedes
 ms.openlocfilehash: 3688dc2db67c0c1343a74be4652cb52466ef762e
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92520435"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-topdesk---public"></a>Zelfstudie: Azure Active Directory-integratie met TOPdesk - Public
@@ -49,11 +49,11 @@ Om de integratie van TOPdesk - Public te configureren in Azure AD, moet u TOPdes
 
 **Voer de volgende stappen uit om TOPdesk - Public toe te voegen vanuit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -61,13 +61,13 @@ Om de integratie van TOPdesk - Public te configureren in Azure AD, moet u TOPdes
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **TOPdesk - Public** , selecteer **TOPdesk - Public** in het resultatenvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **TOPdesk - Public**, selecteer **TOPdesk - Public** in het resultatenvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
      ![TOPdesk - Public in de resultatenlijst](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In deze sectie gaat u Azure AD-eenmalige aanmelding met TOPdesk - Public configureren en testen met behulp van een testgebruiker met de naam **Britta Simon** .
+In deze sectie gaat u Azure AD-eenmalige aanmelding met TOPdesk - Public configureren en testen met behulp van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in TOPdesk - Public tot stand is gebracht.
 
 Als u Azure AD-eenmalige aanmelding met TOPdesk - Public wilt configureren en testen, moet u de volgende stappen uitvoeren:
@@ -85,7 +85,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voer de volgende stappen uit om Azure AD-eenmalige aanmelding te configureren voor TOPdesk - Public:
 
-1. Ga in [Azure Portal](https://portal.azure.com/) naar de pagina voor integratie van de toepassing **TOPdesk - Public** en selecteer **Eenmalige aanmelding** .
+1. Ga in [Azure Portal](https://portal.azure.com/) naar de pagina voor integratie van de toepassing **TOPdesk - Public** en selecteer **Eenmalige aanmelding**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -97,16 +97,16 @@ Voer de volgende stappen uit om Azure AD-eenmalige aanmelding te configureren vo
 
     ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
-4.  Voer in de sectie **Standaard SAML-configuratie** de volgende stappen uit als u beschikt over een **bestand met metagegevens van de serviceprovider** :
+4.  Voer in de sectie **Standaard SAML-configuratie** de volgende stappen uit als u beschikt over een **bestand met metagegevens van de serviceprovider**:
 
     >[!NOTE]
-    >U ontvangt het **metagegevensbestand van de serviceprovider** in de sectie **Eenmalige aanmelding voor TOPdesk - Public configureren** , die verderop in de zelfstudie wordt beschreven.
+    >U ontvangt het **metagegevensbestand van de serviceprovider** in de sectie **Eenmalige aanmelding voor TOPdesk - Public configureren**, die verderop in de zelfstudie wordt beschreven.
 
-    a. Klik op **Metagegevensbestand uploaden** .
+    a. Klik op **Metagegevensbestand uploaden**.
     
     ![Metagegevensbestand uploaden](common/upload-metadata.png)
 
-    b. Klik op het **mappictogram** om het metagegevensbestand te selecteren en klik op **Uploaden** .
+    b. Klik op het **mappictogram** om het metagegevensbestand te selecteren en klik op **Uploaden**.
 
     ![Metagegevensbestand kiezen](common/browse-upload-metadata.png)
 
@@ -121,7 +121,7 @@ Voer de volgende stappen uit om Azure AD-eenmalige aanmelding te configureren vo
     f. In het tekstvak **Antwoord-URL** typt u een URL met behulp van het volgende patroon: `https://<companyname>.topdesk.net/tas/public/login/verify`
     
     > [!NOTE] 
-    > Als de waarden voor **Identifier** (id) en **Reply URL** (antwoord-URL) niet automatisch worden ingevuld, moet u deze handmatig invoeren. Voor de id gebruikt u het patroon zoals hierboven wordt vermeld en haalt u de waarde voor de antwoord-URL op uit de sectie **Eenmalige aanmelding voor TOPdesk - Public configureren** , die verderop in de zelfstudie wordt beschreven. De waarde van de **aanmeldings-URL** is niet echt en moet door u worden gewijzigd in de werkelijke aanmeldings-URL. Neem contact op met het [ondersteuningsteam van TOPdesk - Public](https://help.topdesk.com/saas/enterprise/user/) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
+    > Als de waarden voor **Identifier** (id) en **Reply URL** (antwoord-URL) niet automatisch worden ingevuld, moet u deze handmatig invoeren. Voor de id gebruikt u het patroon zoals hierboven wordt vermeld en haalt u de waarde voor de antwoord-URL op uit de sectie **Eenmalige aanmelding voor TOPdesk - Public configureren**, die verderop in de zelfstudie wordt beschreven. De waarde van de **aanmeldings-URL** is niet echt en moet door u worden gewijzigd in de werkelijke aanmeldings-URL. Neem contact op met het [ondersteuningsteam van TOPdesk - Public](https://help.topdesk.com/saas/enterprise/user/) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
 5. Op de pagina **Eenmalige aanmelding met SAML instellen** in het gedeelte **SAML-handtekeningcertificaat** klikt u op **Downloaden** om het **XML-bestand met federatieve metagegevens**  te downloaden uit de gegeven opties overeenkomstig met wat u nodig hebt, en slaat u dit op uw computer op.
 
@@ -141,29 +141,29 @@ Voer de volgende stappen uit om Azure AD-eenmalige aanmelding te configureren vo
 
 1. Meld u aan bij de bedrijfssite van **TOPdesk - Public** als een beheerder.
 
-2. Klik in het menu van **TOPdesk** op **Settings** .
+2. Klik in het menu van **TOPdesk** op **Settings**.
    
     ![Instellingen](./media/topdesk-public-tutorial/ic790598.png "Instellingen")
 
-3. Klik op **Login Settings** .
+3. Klik op **Login Settings**.
    
-    ![Login Settings](./media/topdesk-public-tutorial/ic790599.png "Login Settings")
+    ![Aanmeldingsinstellingen](./media/topdesk-public-tutorial/ic790599.png "Aanmeldingsinstellingen")
 
-4. Vouw het menu **Login Settings** uit en klik op **General** .
+4. Vouw het menu **Login Settings** uit en klik op **General**.
    
     ![Algemeen](./media/topdesk-public-tutorial/ic790600.png "Algemeen")
 
-5. Voer de volgende stappen uit in de sectie **Public** van de configuratiesectie **SAML login** :
+5. Voer de volgende stappen uit in de sectie **Public** van de configuratiesectie **SAML login**:
    
     ![Technische instellingen](./media/topdesk-public-tutorial/ic790601.png "Technical Settings")
    
     a. Klik op **Downloaden** om het openbare metagegevensbestand te downloaden en sla het lokaal op uw computer op.
    
-    b. Open het gedownloade metagegevensbestand en zoek het knooppunt **AssertionConsumerService** .
+    b. Open het gedownloade metagegevensbestand en zoek het knooppunt **AssertionConsumerService**.
 
     ![AssertionConsumerService](./media/topdesk-public-tutorial/ic790619.png "AssertionConsumerService")
    
-    c. Kopieer de waarde van **AssertionConsumerService** , plak deze in het testvak **Antwoord-** in de sectie **Standaard SAML-configuratie** .      
+    c. Kopieer de waarde van **AssertionConsumerService**, plak deze in het testvak **Antwoord-** in de sectie **Standaard SAML-configuratie**.      
    
 6. Als u een certificaatbestand wilt maken, moet u de volgende stappen uitvoeren:
     
@@ -171,19 +171,19 @@ Voer de volgende stappen uit om Azure AD-eenmalige aanmelding te configureren vo
     
     a. Open het gedownloade metagegevensbestand vanuit de Azure-portal.
     
-    b. Vouw het knooppunt **RoleDescriptor** uit waarvan **xsi:type** is ingesteld op **fed:ApplicationServiceType** .
+    b. Vouw het knooppunt **RoleDescriptor** uit waarvan **xsi:type** is ingesteld op **fed:ApplicationServiceType**.
     
-    c. Kopieer de waarde van het knooppunt **X509Certificate** .
+    c. Kopieer de waarde van het knooppunt **X509Certificate**.
     
     d. Sla de gekopieerde waarde van **X509Certificate** lokaal op uw computer op in een bestand.
 
-7. Klik in de sectie **Public** op **Add** .
+7. Klik in de sectie **Public** op **Add**.
     
     ![SAML Login](./media/topdesk-public-tutorial/ic790625.png "SAML Login")
 
-8. Voer de volgende stappen uit in het dialoogvenster **SAML configuration assistant** :
+8. Voer de volgende stappen uit in het dialoogvenster **SAML configuration assistant**:
     
-    ![SAML Configuration Assistant](./media/topdesk-public-tutorial/ic790608.png "SAML Configuration Assistant")
+    ![SAML-configuratie-assistent](./media/topdesk-public-tutorial/ic790608.png "SAML Configuration Assistant")
     
     a. Klik onder **Federatieve metagegevens** op **Bladeren** om het gedownloade metagegevensbestand te uploaden vanuit de Azure-portal.
 
@@ -195,13 +195,13 @@ Voer de volgende stappen uit om Azure AD-eenmalige aanmelding te configureren vo
 
     e. Typ in het tekstvak **Weergavenaam** een naam voor de configuratie.
 
-    f. Klik op **Opslaan** .
+    f. Klik op **Opslaan**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -219,13 +219,13 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 
-    d. Klik op **Create** .
+    d. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie geeft u Britta Simon toestemming om eenmalige aanmelding van Azure te gebruiken door haar toegang te verlenen tot TOPdesk - Public.
 
-1. Selecteer in Azure Portal **Bedrijfstoepassingen** , selecteer **Alle toepassingen** en selecteer vervolgens **TOPdesk - Public** .
+1. Selecteer in Azure Portal **Bedrijfstoepassingen**, selecteer **Alle toepassingen** en selecteer vervolgens **TOPdesk - Public**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -233,11 +233,11 @@ In deze sectie geeft u Britta Simon toestemming om eenmalige aanmelding van Azur
 
     ![De TOPdesk - Secure-link in de lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -245,7 +245,7 @@ In deze sectie geeft u Britta Simon toestemming om eenmalige aanmelding van Azur
 
 6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="create-topdesk---public-test-user"></a>Testgebruiker voor TOPdesk - Public maken
 
@@ -253,9 +253,9 @@ Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij TOPdesk - Public, m
 
 ### <a name="to-configure-user-provisioning-perform-the-following-steps"></a>Voer de volgende stappen uit om de inrichting van gebruikers te configureren:
 
-1. Meld u als beheerder aan bij de bedrijfssite van **TOPdesk - Public** .
+1. Meld u als beheerder aan bij de bedrijfssite van **TOPdesk - Public**.
 
-2. Klik in het menu aan de bovenkant op **TOPdesk \> New \> Support Files \> Person** .
+2. Klik in het menu aan de bovenkant op **TOPdesk \> New \> Support Files \> Person**.
    
     ![Person](./media/topdesk-public-tutorial/ic790628.png "Person")
 
@@ -269,7 +269,7 @@ Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij TOPdesk - Public, m
  
     c. Selecteer een **site** voor het account.
  
-    d. Klik op **Opslaan** .
+    d. Klik op **Opslaan**.
 
 > [!NOTE]
 > U kunt ook Azure AD-gebruikersaccounts inrichten met alle andere door TOPdesk - Public geleverde hulpprogramma's of API's voor het maken van gebruikersaccounts.

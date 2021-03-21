@@ -1,35 +1,29 @@
 ---
 title: Aangepaste analyse functies toevoegen aan teken reeks velden
 titleSuffix: Azure Cognitive Search
-description: Configureer tekst-tokenizers en-teken filters die worden gebruikt in azure Cognitive Search Zoek opdrachten in volledige tekst.
+description: Configureer tekst-tokenizers en-teken filters voor het uitvoeren van tekst analyse op teken reeksen tijdens het indexeren en query's.
 author: HeidiSteen
 manager: nitinme
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 06/05/2020
-ms.openlocfilehash: fef73a9b98fef40aaceeacca43836d4b2f3c5de0
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.date: 03/17/2021
+ms.openlocfilehash: 831e57a68c79c245b96baec0fc3d062c4c9112c5
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97630204"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104604437"
 ---
 # <a name="add-custom-analyzers-to-string-fields-in-an-azure-cognitive-search-index"></a>Aangepaste analyse functies toevoegen aan teken reeks velden in een Azure Cognitive Search-index
 
-Een *aangepaste analyse functie* is een specifiek type [tekst analyse](search-analyzers.md) dat bestaat uit een door de gebruiker gedefinieerde combi natie van bestaande tokenizer en optionele filters. Door tokenizers en filters op nieuwe manieren te combi neren, kunt u tekst verwerking in de zoek machine aanpassen om specifieke resultaten te bereiken. U kunt bijvoorbeeld een aangepaste Analyzer met een *char-filter* maken om HTML-markeringen te verwijderen voordat tekst invoer wordt getokend.
+Een *aangepaste analyse functie* is een combi natie van tokenizer, een of meer token filters en een of meer teken filters die u in de zoek index definieert, en vervolgens naar veld definities waarvoor aangepaste analyse is vereist. De Tokenizer is verantwoordelijk voor het afbreken van tekst in tokens en de token filters voor het wijzigen van tokens die zijn gegenereerd door de tokenizer. Met teken filters wordt de invoer tekst voor bereid voordat deze wordt verwerkt door de tokenizer. 
 
- U kunt meerdere aangepaste analyse functies definiëren om de combi natie van filters te variëren, maar elk veld kan slechts één analyse functie gebruiken voor indexerings analyse en één voor zoek analyse. Zie voor een illustratie van wat een klant analyse lijkt, het [voor beeld van aangepaste analyse](search-analyzers.md#Custom-analyzer-example).
+Met een aangepaste analyse functie kunt u het proces voor het converteren van tekst in Indexeer bare en Doorzoek bare tokens controleren, zodat u kunt kiezen welke typen analyse of filter u wilt aanroepen en in welke volg orde deze zich voordoen. Als u een ingebouwde analyse met aangepaste opties wilt gebruiken, zoals het wijzigen van de maxTokenLength in Standard, maakt u een aangepaste analyse functie met een door de gebruiker gedefinieerde naam om deze opties in te stellen.
 
-## <a name="overview"></a>Overzicht
+In situaties waarin aangepaste analyse functies handig kunnen zijn, kunt u het volgende doen:
 
- De rol van een [Zoek machine in volledige tekst](search-lucene-query-architecture.md), in eenvoudige termen, is het verwerken en opslaan van documenten op een manier die efficiënt query's en ophalen mogelijk maakt. Op hoog niveau is het allemaal beschikbaar voor het extra heren van belang rijke woorden uit documenten, het in een index plaatsen en vervolgens de index gebruiken om documenten te vinden die overeenkomen met woorden van een bepaalde query. Het proces voor het uitpakken van woorden uit documenten en zoek query's heet *lexicale analyse*. Onderdelen die lexicale analyses uitvoeren, worden *analyse* functies genoemd.
-
- In azure Cognitive Search kunt u kiezen uit een reeks vooraf gedefinieerde neutraal-analyse functies in de tabel [analyse](#AnalyzerTable) functies of taalspecifieke analyse functies die worden vermeld in [taal analyse functies &#40;Azure Cognitive Search service rest API&#41;](index-add-language-analyzers.md). U hebt ook de mogelijkheid om uw eigen aangepaste analyse functies te definiëren.  
-
- Met een aangepaste analyse functie kunt u de controle over het proces van het converteren van tekst in Indexeer bare en Doorzoek bare tokens overnemen. Het is een door de gebruiker gedefinieerde configuratie die bestaat uit één vooraf gedefinieerde tokenizer, een of meer token filters en een of meer teken filters. De Tokenizer is verantwoordelijk voor het afbreken van tekst in tokens en de token filters voor het wijzigen van tokens die zijn gegenereerd door de tokenizer. Teken filters worden toegepast om invoer tekst voor te bereiden voordat deze wordt verwerkt door de tokenizer. Teken filter kan bijvoorbeeld bepaalde tekens of symbolen vervangen.
-
- Populaire scenario's die worden ingeschakeld door aangepaste analyse functies zijn onder andere:  
+- Teken filters gebruiken om HTML-opmaak te verwijderen voordat tekst invoer wordt getokend of door bepaalde tekens of symbolen te vervangen.
 
 - Fonetisch zoeken. Voeg een fonetisch filter toe om te zoeken op basis van de manier waarop een woord klinkt, niet hoe het wordt gespeld.  
 
@@ -41,21 +35,28 @@ Een *aangepaste analyse functie* is een specifiek type [tekst analyse](search-an
 
 - ASCII-vouwen. Voeg het standaard filter voor ASCII-vouwing toe om diakritische tekens zoals ö of ê in zoek termen te normaliseren.  
 
-  Op deze pagina vindt u een lijst met ondersteunde analyse functies, tokenizers, token filters en teken filters. U kunt ook een beschrijving van wijzigingen in de index definitie vinden met behulp van een voor beeld van het gebruik. Zie [analyse pakket Summary (lucene)](https://lucene.apache.org/core/6_0_0/core/org/apache/lucene/codecs/lucene60/package-summary.html)voor meer achtergrond informatie over de onderliggende technologie die wordt gebruikt in de implementatie van Azure Cognitive Search. Zie [analyse functies toevoegen in Azure Cognitive Search](search-analyzers.md#examples)voor voor beelden van analyse configuraties.
+Als u een aangepaste analyse functie wilt maken, geeft u deze op in de sectie ' analyse functies ' van een index tijdens de ontwerp fase en verwijst u deze naar de velden Doorzoek bare, EDM. String met behulp van de eigenschap ' Analyzer ' of het ' indexAnalyzer ' en het ' searchAnalyzer-paar.
 
-## <a name="validation-rules"></a>Validatie regels  
- Namen van analyse functies, tokenizers, token filters en teken filters moeten uniek zijn en kunnen niet hetzelfde zijn als een van de vooraf gedefinieerde analyse functies, tokenizers, token filters of teken filters. Zie de [referentie-eigenschap](#PropertyReference) voor de namen die al in gebruik zijn.
+> [!NOTE]  
+> Aangepaste analyse functies die u maakt, worden niet weer gegeven in de Azure Portal. De enige manier om een aangepaste Analyzer toe te voegen, is door middel van code die een index definieert. 
 
-## <a name="create-custom-analyzers"></a>Aangepaste analyse functies maken
- U kunt aangepaste analyse functies definiëren tijdens het maken van de index. De syntaxis voor het opgeven van een aangepaste analyse functie wordt beschreven in deze sectie. U kunt ook vertrouwd raken met de syntaxis door voorbeeld definities te bekijken in [analyse functies toevoegen in Azure Cognitive Search](search-analyzers.md#examples).  
+## <a name="create-a-custom-analyzer"></a>Een aangepaste analyse maken
 
- Een analyse definitie bevat een naam, een type, een of meer teken filters, een maximum van één tokenizer en een of meer token filters voor het verwerken van post-tokening. Char-bestanden worden toegepast vóór tokenisatie. Token filters en teken filters worden van links naar rechts toegepast.
+Een analyse definitie bevat een naam, type, een of meer teken filters, Maxi maal één tokenizer en een of meer token filters voor het verwerken van post-tokening. Teken filters worden toegepast vóór tokenisatie. Token filters en teken filters worden van links naar rechts toegepast.
 
- De `tokenizer_name` is de naam van een tokenizer, `token_filter_name_1` `token_filter_name_2` de namen van de token filters en `char_filter_name_1` `char_filter_name_2` de namen van de teken filters (Zie de tabellen [Tokenizers](#Tokenizers), [token filters](#TokenFilters) en char filters voor geldige waarden).
+- Namen in een aangepaste analyse functie moeten uniek zijn en kunnen niet hetzelfde zijn als een van de ingebouwde analyse functies, tokenizers, token filters of teken filters. Het mag alleen letters, cijfers, spaties, streepjes of onderstrepings tekens bevatten, mag alleen beginnen en eindigen met een alfanumeriek teken en mag niet langer zijn dan 128 tekens. 
 
-De analyse definitie maakt deel uit van de grotere index. Zie [Create Index-API](/rest/api/searchservice/create-index) voor informatie over de rest van de index.
+- Het type moet #Microsoft. Azure. Search. CustomAnalyzer.
 
-```
+- ' charFilters ' kan een of meer filters zijn van [teken filters](#CharFilter), verwerkt vóór tokenisatie, in de aangegeven volg orde. Sommige teken filters hebben opties, die kunnen worden ingesteld in een sectie ' charFilter '. Teken filters zijn optioneel.
+
+- ' tokenizer ' is precies één [tokenizer](#tokenizers). Een waarde is vereist. Als u meer dan één tokenizer nodig hebt, kunt u meerdere aangepaste analyse functies maken en deze toewijzen aan een veld per veld in uw index schema.
+
+- ' tokenFilters ' kan een of meer filters zijn van [token filters](#TokenFilters), verwerkt na de tokens in de aangegeven volg orde. Voor token filters met opties voegt u een sectie ' tokenFilter ' toe om de configuratie op te geven. Token filters zijn optioneel.
+
+Analyse functies mogen geen tokens produceren die langer zijn dan 300 tekens, anders mislukt de indexering. Als u een lang token wilt knippen of wilt uitsluiten, gebruikt u respectievelijk de **TruncateTokenFilter** en de **LengthTokenFilter** . Zie [**token filters**](#TokenFilters) voor verwijzing.
+
+```json
 "analyzers":(optional)[
    {
       "name":"name of analyzer",
@@ -107,12 +108,9 @@ De analyse definitie maakt deel uit van de grotere index. Zie [Create Index-API]
 ]
 ```
 
-> [!NOTE]  
->  Aangepaste analyse functies die u maakt, worden niet weer gegeven in de Azure Portal. De enige manier om een aangepaste Analyzer toe te voegen, is door middel van code waarmee de API wordt aangeroepen bij het definiëren van een index.  
+Binnen een index definitie kunt u deze sectie ergens in de hoofd tekst van een aanvraag voor het maken van een index plaatsen, maar doorgaans wordt deze aan het einde geplaatst:  
 
- Binnen een index definitie kunt u deze sectie ergens in de hoofd tekst van een aanvraag voor het maken van een index plaatsen, maar doorgaans wordt deze aan het einde geplaatst:  
-
-```
+```json
 {
   "name": "name_of_index",
   "fields": [ ],
@@ -127,18 +125,17 @@ De analyse definitie maakt deel uit van de grotere index. Zie [Create Index-API]
 }
 ```
 
-Definities voor teken filters, tokenizers en Token filters worden alleen toegevoegd aan de index als u aangepaste opties instelt. Als u een bestaand filter of tokenizer wilt gebruiken, geeft u dit op naam op in de analyse definitie.
-
-<a name="Testing custom analyzers"></a>
+De analyse definitie maakt deel uit van de grotere index. Definities voor teken filters, tokenizers en Token filters worden alleen toegevoegd aan de index als u aangepaste opties instelt. Als u een bestaand filter of tokenizer wilt gebruiken, geeft u dit op naam op in de analyse definitie. Zie [Create Index (rest) (Engelstalig)](/rest/api/searchservice/create-index)voor meer informatie. Zie voor meer voor beelden [analyse functies toevoegen in Azure Cognitive Search](search-analyzers.md#examples).
 
 ## <a name="test-custom-analyzers"></a>Aangepaste analyse functies testen
 
-U kunt de **bewerking Test Analyzer** in de [rest API](/rest/api/searchservice/test-analyzer) gebruiken om te zien hoe een analyse programma de opgegeven tekst in tokens afbreekt.
+U kunt de [Test Analyzer (rest)](/rest/api/searchservice/test-analyzer) gebruiken om te zien hoe een Analyzer de opgegeven tekst in tokens afbreekt.
 
 **Aanvraag**
-```
+
+```http
   POST https://[search service name].search.windows.net/indexes/[index name]/analyze?api-version=[api-version]
-  Content-Type: application/json
+    Content-Type: application/json
     api-key: [admin key]
 
   {
@@ -146,8 +143,10 @@ U kunt de **bewerking Test Analyzer** in de [rest API](/rest/api/searchservice/t
      "text": "Vis-à-vis means Opposite"
   }
 ```
+
 **Response**
-```
+
+```http
   {
     "tokens": [
       {
@@ -180,147 +179,77 @@ U kunt de **bewerking Test Analyzer** in de [rest API](/rest/api/searchservice/t
 
 ## <a name="update-custom-analyzers"></a>Aangepaste analyse functies bijwerken
 
-Zodra een analyse programma, een tokenizer, een token filter of een char-filter is gedefinieerd, kan het niet worden gewijzigd. Nieuwe kunnen alleen worden toegevoegd aan een bestaande index als de `allowIndexDowntime` vlag is ingesteld op True in de aanvraag voor het bijwerken van de index:
+Zodra een analyse programma, een tokenizer, een token filter of een teken filter is gedefinieerd, kan het niet worden gewijzigd. Nieuwe kunnen alleen worden toegevoegd aan een bestaande index als de `allowIndexDowntime` vlag is ingesteld op True in de aanvraag voor het bijwerken van de index:
 
-```
+```http
 PUT https://[search service name].search.windows.net/indexes/[index name]?api-version=[api-version]&allowIndexDowntime=true
 ```
 
 Met deze bewerking wordt uw index ten minste enkele seconden offline gezet, waardoor uw indexerings-en query aanvragen mislukken. De prestaties en schrijf Beschik baarheid van de index kunnen enkele minuten duren nadat de index is bijgewerkt, of langer voor zeer grote indexen, maar deze effecten zijn tijdelijk en worden op een later moment opgelost.
 
- <a name="ReferenceIndexAttributes"></a>
+<a name="built-in-analyzers"></a>
 
-## <a name="analyzer-reference"></a>Naslag informatie voor analyse
+## <a name="built-in-analyzers"></a>Ingebouwde analyse functies
 
-In de onderstaande tabellen worden de configuratie-eigenschappen weer gegeven voor de sectie analyse functies, tokenizers, token filters en teken filter van een index definitie. De structuur van een analyse-, tokenizer-of filter in uw index bestaat uit deze kenmerken. Zie de verwijzing naar de [eigenschap](#PropertyReference)voor informatie over de toewijzing van waarden.
-
-### <a name="analyzers"></a>Analyses
-
-Voor analyse functies kunnen index kenmerken variëren, afhankelijk van het feit of u vooraf gedefinieerde of aangepaste analyse functies gebruikt.
-
-#### <a name="predefined-analyzers"></a>Vooraf gedefinieerde analyse functies
-
-| Type | Beschrijving |
-| ---- | ----------- |  
-|Naam|Het mag alleen letters, cijfers, spaties, streepjes of onderstrepings tekens bevatten, mag alleen beginnen en eindigen met een alfanumeriek teken en mag niet langer zijn dan 128 tekens.|  
-|Type|Het type analyse van de lijst met ondersteunde analyse functies. Zie de kolom **analyzer_type** in de tabel [geanalyseerde](#AnalyzerTable) tabellen.|  
-|Opties|Moet geldige opties zijn van een vooraf gedefinieerde analyse die wordt weer gegeven in de tabel [geanalyseerde](#AnalyzerTable) tabellen.|  
-
-#### <a name="custom-analyzers"></a>Aangepaste analyse functies
-
-| Type | Beschrijving |
-| ---- | ----------- |  
-|Naam|Het mag alleen letters, cijfers, spaties, streepjes of onderstrepings tekens bevatten, mag alleen beginnen en eindigen met een alfanumeriek teken en mag niet langer zijn dan 128 tekens.|  
-|Type|Moet ' #Microsoft. Azure. Search. CustomAnalyzer ' zijn.|  
-|CharFilters|Ingesteld op een van de vooraf gedefinieerde teken filters die worden vermeld in de tabel [char filters](#char-filters-reference) of een aangepast teken filter dat is opgegeven in de index definitie.|  
-|Tokenizer|Vereist. Ingesteld op een vooraf gedefinieerde tokenizers die wordt weer gegeven in de tabel [tokenizers](#Tokenizers) hieronder of een aangepaste tokenizer die is opgegeven in de index definitie.|  
-|TokenFilters|Ingesteld op een van de vooraf gedefinieerde token filters die worden vermeld in de tabel [token filters](#TokenFilters) of een aangepast token filter dat is opgegeven in de index definitie.|  
-
-> [!NOTE]
-> Het is vereist dat u uw aangepaste Analyzer configureert om geen tokens te produceren die langer zijn dan 300 tekens. Het indexeren van documenten met dergelijke tokens mislukt. Als u deze wilt knippen of negeren, gebruikt u respectievelijk de **TruncateTokenFilter** en de **LengthTokenFilter** .  Controleer de [**token filters**](#TokenFilters) voor de verwijzing.
-
-<a name="CharFilter"></a>
-
-### <a name="char-filters"></a>Teken filters
-
- Een char-filter wordt gebruikt om invoer tekst voor te bereiden voordat deze wordt verwerkt door de tokenizer. Ze kunnen bijvoorbeeld bepaalde tekens of symbolen vervangen. U kunt meerdere teken filters hebben in een aangepaste analyse functie. Teken filters worden uitgevoerd in de volg orde waarin ze worden weer gegeven.  
-
-| Type | Beschrijving |
-| ---- | ----------- | 
-|Naam|Het mag alleen letters, cijfers, spaties, streepjes of onderstrepings tekens bevatten, mag alleen beginnen en eindigen met een alfanumeriek teken en mag niet langer zijn dan 128 tekens.|  
-|Type|Teken filter type uit de lijst met ondersteunde teken filters. Zie **char_filter_type** kolom in de tabel [char filters](#char-filters-reference) hieronder.|  
-|Opties|Moet geldige opties van het type [char filters](#char-filters-reference) zijn.|  
-
-### <a name="tokenizers"></a>Tokenizers
-
- Een tokenizer verdeelt doorlopende tekst in een reeks tokens, zoals het breken van een zin in woorden.  
-
- U kunt precies één tokenizer opgeven per aangepaste analyse functie. Als u meer dan één tokenizer nodig hebt, kunt u meerdere aangepaste analyse functies maken en deze toewijzen aan een veld per veld in uw index schema.  
-Een aangepaste Analyzer kan gebruikmaken van een vooraf gedefinieerde tokenizer met standaard of aangepaste opties.  
-
-| Type | Beschrijving |
-| ---- | ----------- | 
-|Naam|Het mag alleen letters, cijfers, spaties, streepjes of onderstrepings tekens bevatten, mag alleen beginnen en eindigen met een alfanumeriek teken en mag niet langer zijn dan 128 tekens.|  
-|Type|Tokenizer naam uit de lijst met ondersteunde tokenizers. Zie **tokenizer_type** kolom in de tabel [Tokenizers](#Tokenizers) hieronder.|  
-|Opties|Moet geldige opties van een opgegeven tokenizer-type zijn opgenomen in de onderstaande tabel [Tokenizers](#Tokenizers) .|  
-
-### <a name="token-filters"></a>Tokenfilters
-
- Een token filter wordt gebruikt om de tokens die door een tokenizer zijn gegenereerd, te filteren of te wijzigen. U kunt bijvoorbeeld een kleine filter opgeven waarmee alle tekens worden omgezet in kleine letters.   
-U kunt meerdere token filters hebben in een aangepaste analyse functie. Token filters worden uitgevoerd in de volg orde waarin ze worden weer gegeven.  
-
-| Type | Beschrijving |
-| ---- | ----------- |  
-|Naam|Het mag alleen letters, cijfers, spaties, streepjes of onderstrepings tekens bevatten, mag alleen beginnen en eindigen met een alfanumeriek teken en mag niet langer zijn dan 128 tekens.|  
-|Type|De naam van het token filter in de lijst met ondersteunde token filters. Zie **token_filter_type** kolom in de tabel [token filters](#TokenFilters) hieronder.|  
-|Opties|Moet [token filters](#TokenFilters) van een opgegeven token filter type zijn.|  
-
-<a name="PropertyReference"></a>  
-
-## <a name="property-reference"></a>Eigenschappen referentie
-
-Deze sectie bevat de geldige waarden voor kenmerken die zijn opgegeven in de definitie van een aangepaste Analyzer, tokenizer, char filter of Token filter in uw index. Analyse functies, tokenizers en filters die zijn geïmplementeerd met Apache Lucene, bevatten koppelingen naar de Lucene API-documentatie.
-
-<a name="AnalyzerTable"></a>
-
-###  <a name="predefined-analyzers-reference"></a>Naslag informatie voor vooraf gedefinieerde analyses
+Als u een ingebouwde Analyzer met aangepaste opties wilt gebruiken, is het maken van een aangepaste Analyzer het mechanisme waarmee u deze opties opgeeft. Als u daarentegen een ingebouwde analyse functie wilt gebruiken, hoeft u alleen maar [naar de naam te verwijzen](search-analyzers.md#how-to-specify-analyzers) in de veld definitie.
 
 |**analyzer_name**|**analyzer_type**  <sup>1</sup>|**Beschrijving en opties**|  
-|-|-|-|  
+|-----------------|-------------------------------|---------------------------|  
 |[Zoek](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/KeywordAnalyzer.html)| (type is alleen van toepassing wanneer opties beschikbaar zijn) |Behandelt de gehele inhoud van een veld als één token. Dit is handig voor gegevens zoals post codes, Id's en sommige product namen.|  
-|[pattern](https://lucene.apache.org/core/4_10_3/analyzers-common/org/apache/lucene/analysis/miscellaneous/PatternAnalyzer.html)|PatternAnalyzer|Flexibele tekst in termen worden gescheiden door middel van een reguliere-expressie patroon.<br /><br /> **Opties**<br /><br /> kleine letters (type: BOOL): bepaalt of voor waarden in kleine letters worden getypt. De standaard waarde is True.<br /><br /> [patroon](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html?is-external=true) (type: teken reeks): een reguliere-expressie patroon dat overeenkomt met token scheidings tekens. De standaard waarde is `\W+` , die overeenkomt met niet-Word-tekens.<br /><br /> [Flags](https://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html#field_summary) (type: String): reguliere expressie vlaggen. De standaard waarde is een lege teken reeks. Toegestane waarden: CANON_EQ, CASE_INSENSITIVE, COMMENTS, DOTALL, LITERAL, multiline, UNICODE_CASE, UNIX_LINES<br /><br /> stopwords (type: teken reeks matrix): een lijst met stopwords. De standaard waarde is een lege lijst.|  
+|[pattern](https://lucene.apache.org/core/4_10_3/analyzers-common/org/apache/lucene/analysis/miscellaneous/PatternAnalyzer.html)|PatternAnalyzer|Flexibele tekst in termen worden gescheiden door middel van een reguliere-expressie patroon. </br></br>**Opties** </br></br>kleine letters (type: BOOL): bepaalt of voor waarden in kleine letters worden getypt. De standaard waarde is True. </br></br>[patroon](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html?is-external=true) (type: teken reeks): een reguliere-expressie patroon dat overeenkomt met token scheidings tekens. De standaard waarde is `\W+` , die overeenkomt met niet-Word-tekens. </br></br>[Flags](https://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html#field_summary) (type: String): reguliere expressie vlaggen. De standaard waarde is een lege teken reeks. Toegestane waarden: CANON_EQ, CASE_INSENSITIVE, COMMENTS, DOTALL, LITERAL, multiline, UNICODE_CASE, UNIX_LINES </br></br>stopwords (type: teken reeks matrix): een lijst met stopwords. De standaard waarde is een lege lijst.|  
 |[Simple](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/SimpleAnalyzer.html)|(type is alleen van toepassing wanneer opties beschikbaar zijn) |Hiermee wordt tekst op niet-letters verdeeld en omgezet in kleine letters. |  
-|[standaard](https://lucene.apache.org/core/6_6_1/core/org/apache/lucene/analysis/standard/StandardAnalyzer.html) <br />(Ook wel Standard. lucene genoemd)|StandardAnalyzer|Standaard-lucene Analyzer, samengesteld uit het standaard tokenizer, het kleine filter en het filter stoppen.<br /><br /> **Opties**<br /><br /> maxTokenLength (type: int): de maximale token lengte. De standaard waarde is 255. Tokens die langer zijn dan de maximale lengte, worden gesplitst. De maximale token lengte die kan worden gebruikt, is 300 tekens.<br /><br /> stopwords (type: teken reeks matrix): een lijst met stopwords. De standaard waarde is een lege lijst.|  
+|[standaard](https://lucene.apache.org/core/6_6_1/core/org/apache/lucene/analysis/standard/StandardAnalyzer.html) </br>(Ook wel Standard. lucene genoemd)|StandardAnalyzer|Standaard-lucene Analyzer, samengesteld uit het standaard tokenizer, het kleine filter en het filter stoppen. </br></br>**Opties** </br></br>maxTokenLength (type: int): de maximale token lengte. De standaard waarde is 255. Tokens die langer zijn dan de maximale lengte, worden gesplitst. De maximale token lengte die kan worden gebruikt, is 300 tekens. </br></br>stopwords (type: teken reeks matrix): een lijst met stopwords. De standaard waarde is een lege lijst.|  
 |standardasciifolding. lucene|(type is alleen van toepassing wanneer opties beschikbaar zijn) |Standard Analyzer met ASCII-vouw filter. |  
-|[tab](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/StopAnalyzer.html)|StopAnalyzer|Hiermee wordt tekst op niet-letters verdeeld, worden de token filters voor kleine en stop woord toegepast.<br /><br /> **Opties**<br /><br /> stopwords (type: teken reeks matrix): een lijst met stopwords. De standaard waarde is een vooraf gedefinieerde lijst voor Engels. |  
+|[tab](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/StopAnalyzer.html)|StopAnalyzer|Hiermee wordt tekst op niet-letters verdeeld, worden de token filters voor kleine en stop woord toegepast. </br></br>**Opties** </br></br>stopwords (type: teken reeks matrix): een lijst met stopwords. De standaard waarde is een vooraf gedefinieerde lijst voor Engels. |  
 |[spaties](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/WhitespaceAnalyzer.html)|(type is alleen van toepassing wanneer opties beschikbaar zijn) |Een analyse die gebruikmaakt van de spatie tokenizer. Tokens die langer zijn dan 255 tekens worden gesplitst.|  
 
- <sup>1</sup> analyse typen worden altijd voorafgegaan door de code ' #Microsoft. Azure. Search ', zodat ' PatternAnalyzer ' daad werkelijk als ' #Microsoft. Azure. Search. PatternAnalyzer ' zou worden opgegeven. Het voor voegsel voor de boog is verwijderd, maar het voor voegsel is vereist in uw code. 
- 
-De analyzer_type wordt alleen gegeven voor analyse functies die kunnen worden aangepast. Als er geen opties zijn, zoals in het geval van de trefwoord analyse, zijn er geen gekoppelde #Microsoft. Azure. search-type.
+ <sup>1</sup> analyse typen worden altijd voorafgegaan door de code ' #Microsoft. Azure. Search ', zodat ' PatternAnalyzer ' daad werkelijk als ' #Microsoft. Azure. Search. PatternAnalyzer ' zou worden opgegeven. Het voor voegsel voor de boog is verwijderd, maar het voor voegsel is vereist in uw code.
 
+De analyzer_type wordt alleen gegeven voor analyse functies die kunnen worden aangepast. Als er geen opties zijn, zoals in het geval van de trefwoord analyse, zijn er geen gekoppelde #Microsoft. Azure. search-type.
 
 <a name="CharFilter"></a>
 
-###  <a name="char-filters-reference"></a>Naslag informatie over teken filters
+## <a name="character-filters"></a>Tekenfilters
 
 In de onderstaande tabel zijn de teken filters die zijn geïmplementeerd met Apache Lucene gekoppeld aan de Lucene API-documentatie.
 
 |**char_filter_name**|**char_filter_type** <sup>1</sup>|**Beschrijving en opties**|  
-|-|-|-|
+|--------------------|---------------------------------|---------------------------|
 |[html_strip](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/charfilter/HTMLStripCharFilter.html)|(type is alleen van toepassing wanneer opties beschikbaar zijn)  |Een char-filter dat een HTML-constructie probeert te verwijderen.|  
-|[toewijzing](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/charfilter/MappingCharFilter.html)|MappingCharFilter|Een char-filter waarmee toewijzingen worden toegepast die zijn gedefinieerd met de optie toewijzingen. Overeenkomende is Greedy (langste patroon dat overeenkomt met een bepaald punt in WINS). Vervanging mag de lege teken reeks zijn.<br /><br /> **Opties**<br /><br /> toewijzingen (type: teken reeks matrix)-een lijst met toewijzingen van de volgende indeling: "a =>b" (alle exemplaren van het teken "a" worden vervangen door het teken "b"). Vereist.|  
-|[pattern_replace](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/pattern/PatternReplaceCharFilter.html)|PatternReplaceCharFilter|Een char-filter waarmee tekens in de invoer teken reeks worden vervangen. Er wordt gebruikgemaakt van een reguliere expressie om te identificeren welke teken reeksen moeten worden bewaard en een vervangend patroon om te bepalen welke tekens moeten worden vervangen. Bijvoorbeeld invoer tekst = "AA BB AA", patroon = "(AA) \\ \s + (BB)" vervangen = "$ 1 # $2", resultaat = "AA # BB AA # BB".<br /><br /> **Opties**<br /><br /> patroon (type: teken reeks)-vereist.<br /><br /> vervanging (type: teken reeks)-vereist.|  
+|[toewijzing](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/charfilter/MappingCharFilter.html)|MappingCharFilter|Een char-filter waarmee toewijzingen worden toegepast die zijn gedefinieerd met de optie toewijzingen. Overeenkomende is Greedy (langste patroon dat overeenkomt met een bepaald punt in WINS). Vervanging mag de lege teken reeks zijn.  </br></br>**Opties**  </br></br> toewijzingen (type: teken reeks matrix)-een lijst met toewijzingen van de volgende indeling: "a =>b" (alle exemplaren van het teken "a" worden vervangen door het teken "b"). Vereist.|  
+|[pattern_replace](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/pattern/PatternReplaceCharFilter.html)|PatternReplaceCharFilter|Een char-filter waarmee tekens in de invoer teken reeks worden vervangen. Er wordt gebruikgemaakt van een reguliere expressie om te identificeren welke teken reeksen moeten worden bewaard en een vervangend patroon om te bepalen welke tekens moeten worden vervangen. Bijvoorbeeld invoer tekst = "AA BB AA", patroon = "(AA) \\ \s + (BB)" vervangen = "$ 1 # $2", resultaat = "AA # BB AA # BB".  </br></br>**Opties**  </br></br>patroon (type: teken reeks)-vereist.  </br></br>vervanging (type: teken reeks)-vereist.|  
 
  <sup>1</sup> char-filter typen worden altijd voorafgegaan door de code ' #Microsoft. Azure. Search ', zodat ' MappingCharFilter ' werkelijk wordt opgegeven als ' #Microsoft. Azure. Search. MappingCharFilter. We hebben het voor voegsel verwijderd om de breedte van de tabel te verminderen, maar vergeet niet om deze op te nemen in uw code. U ziet dat char_filter_type alleen wordt gegeven voor filters die kunnen worden aangepast. Als er geen opties zijn, zoals in het geval van html_strip, is er geen gekoppelde #Microsoft. Azure. search-type.
 
-<a name="Tokenizers"></a>
+<a name="tokenizers"></a>
 
-###  <a name="tokenizers-reference"></a>Tokenizers-verwijzing
+## <a name="tokenizers"></a>Tokenizers
 
-In de onderstaande tabel zijn de tokenizers die zijn geïmplementeerd met Apache Lucene gekoppeld aan de Lucene API-documentatie.
+Een tokenizer verdeelt doorlopende tekst in een reeks tokens, zoals het breken van een zin in woorden. In de onderstaande tabel zijn de tokenizers die zijn geïmplementeerd met Apache Lucene gekoppeld aan de Lucene API-documentatie.
 
 |**tokenizer_name**|**tokenizer_type** <sup>1</sup>|**Beschrijving en opties**|  
-|-|-|-|  
-|[klassiek](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/standard/ClassicTokenizer.html)|ClassicTokenizer|Tokenizer op basis van grammatica die geschikt is voor het verwerken van de meeste documenten in de Europese taal.<br /><br /> **Opties**<br /><br /> maxTokenLength (type: int): de maximale token lengte. Standaard: 255, maximum: 300. Tokens die langer zijn dan de maximale lengte, worden gesplitst.|  
-|[edgeNGram](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/ngram/EdgeNGramTokenizer.html)|EdgeNGramTokenizer|De invoer van een rand Tokenizes in n-g van gegeven grootte (s).<br /><br /> **Opties**<br /><br /> minGram (type: int)-standaard: 1, maximum: 300.<br /><br /> maxGram (type: int)-standaard: 2, maximum: 300. Moet groter zijn dan minGram.<br /><br /> tokenChars (type: teken reeks matrix): teken klassen die moeten worden bewaard in de tokens. Toegestane waarden: <br />"letter", "cijfer", "Whites", "interpunctie", "Symbol". De standaard waarde is een lege matrix. alle tekens worden bewaard. |  
-|[keyword_v2](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/KeywordTokenizer.html)|KeywordTokenizerV2|Verzendt de volledige invoer als één token.<br /><br /> **Opties**<br /><br /> maxTokenLength (type: int): de maximale token lengte. Standaard: 256, maximum: 300. Tokens die langer zijn dan de maximale lengte, worden gesplitst.|  
+|------------------|-------------------------------|---------------------------|  
+|[klassiek](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/standard/ClassicTokenizer.html)|ClassicTokenizer|Tokenizer op basis van grammatica die geschikt is voor het verwerken van de meeste documenten in de Europese taal.  </br></br>**Opties**  </br></br>maxTokenLength (type: int): de maximale token lengte. Standaard: 255, maximum: 300. Tokens die langer zijn dan de maximale lengte, worden gesplitst.|  
+|[edgeNGram](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/ngram/EdgeNGramTokenizer.html)|EdgeNGramTokenizer|De invoer van een rand Tokenizes in n-g van gegeven grootte (s).  </br></br> **Opties**  </br></br>minGram (type: int)-standaard: 1, maximum: 300.  </br></br>maxGram (type: int)-standaard: 2, maximum: 300. Moet groter zijn dan minGram.  </br></br>tokenChars (type: teken reeks matrix): teken klassen die moeten worden bewaard in de tokens. Toegestane waarden: </br>"letter", "cijfer", "Whites", "interpunctie", "Symbol". De standaard waarde is een lege matrix. alle tekens worden bewaard. |  
+|[keyword_v2](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/KeywordTokenizer.html)|KeywordTokenizerV2|Verzendt de volledige invoer als één token.  </br></br>**Opties**  </br></br>maxTokenLength (type: int): de maximale token lengte. Standaard: 256, maximum: 300. Tokens die langer zijn dan de maximale lengte, worden gesplitst.|  
 |[letters](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/LetterTokenizer.html)|(type is alleen van toepassing wanneer opties beschikbaar zijn)  |Hiermee wordt tekst op niet-letters verdeeld. Tokens die langer zijn dan 255 tekens worden gesplitst.|  
 |[kleine](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/LowerCaseTokenizer.html)|(type is alleen van toepassing wanneer opties beschikbaar zijn)  |Hiermee wordt tekst op niet-letters verdeeld en omgezet in kleine letters. Tokens die langer zijn dan 255 tekens worden gesplitst.|  
-| microsoft_language_tokenizer| MicrosoftLanguageTokenizer| Hiermee wordt tekst verdeeld aan de hand van taalspecifieke regels.<br /><br /> **Opties**<br /><br /> maxTokenLength (type: int): de maximale token lengte, standaard: 255, maximum: 300. Tokens die langer zijn dan de maximale lengte, worden gesplitst. Tokens die langer zijn dan 300 tekens worden eerst gesplitst in tokens met een lengte van 300, en elk van deze tokens wordt gesplitst op basis van de maxTokenLength-set.<br /><br />isSearchTokenizer (type: BOOL): Stel deze waarde in op True als de zoek tokenizer is ingesteld op False als de Indexing tokenizer wordt gebruikt. <br /><br /> taal (type: teken reeks): taal die moet worden gebruikt, standaard ' Engels '. Toegestane waarden zijn:<br />"Bengalees", "Bulgaars", "Catalaans ', ' chineseSimplified ', ' chineseTraditional ', ' Kroatisch ', ' Tsjechisch ', ' Deens ', ' Nederlands ', ' Nederlands ', ' Frans ', ' Duits ', ' Grieks ', ' Gujarati ', ' hindi ', ' IJslands ', ' Indonesisch ', ' Italiaans ', ' Japans ', ' Kannada ', ' Koreaans ', ' Maleis", "Malayalam", "Marathi", "norwegianBokmaal", "Pools", "Portugees", "portugueseBrazilian", "Punjabi", "Roemeens", "Russisch", "serbianCyrillic", ' serbianLatin ', ' Sloveens ', ' Spaans ', ' Zweeds ', ' Tamil ', ' Telugu ', ' Thais ', ' Oekraïens ', ' Urdu ', ' Vietnamees ' |
-| microsoft_language_stemming_tokenizer | MicrosoftLanguageStemmingTokenizer| Verdeelt tekst met taalspecifieke regels en reduceert woorden naar hun basis formulieren<br /><br /> **Opties**<br /><br />maxTokenLength (type: int): de maximale token lengte, standaard: 255, maximum: 300. Tokens die langer zijn dan de maximale lengte, worden gesplitst. Tokens die langer zijn dan 300 tekens worden eerst gesplitst in tokens met een lengte van 300, en elk van deze tokens wordt gesplitst op basis van de maxTokenLength-set.<br /><br /> isSearchTokenizer (type: BOOL): Stel deze waarde in op True als de zoek tokenizer is ingesteld op False als de Indexing tokenizer wordt gebruikt.<br /><br /> taal (type: teken reeks): taal die moet worden gebruikt, standaard ' Engels '. Toegestane waarden zijn:<br />"Arabisch", "Bengalees", "Bulgaars", "Catalaans", "Kroatisch ', ' Tsjechisch ', ' Deens ', ' Nederlands ', ' Engels ', ' Estlands ', ' Fins ', ' Frans ', ' Duits ', ' Grieks ', ' Gujarati ', ' Hebreeuws ', ' hindi ', ' Hong aars ', ' IJslands ', ' Indonesisch ', ' Italiaans ', ' Kannada ', ' Lets ', ' Litouws", "Maleis", "Malayalam", "Marathi", "norwegianBokmaal", "Pools", "Portugees", "portugueseBrazilian", "Punjabi", "Roemeens", "Russisch", "serbianCyrillic", "serbianLatin", "Slowaaks", "Sloveens", "Spaans", "Zweeds", "Tamil", "Telugu", "Turks", "Oekraïens", "Urdu" |
-|[nGram](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/ngram/NGramTokenizer.html)|NGramTokenizer|Tokenizes de invoer in n-g van de opgegeven grootte (n).<br /><br /> **Opties**<br /><br /> minGram (type: int)-standaard: 1, maximum: 300.<br /><br /> maxGram (type: int)-standaard: 2, maximum: 300. Moet groter zijn dan minGram. <br /><br /> tokenChars (type: teken reeks matrix): teken klassen die moeten worden bewaard in de tokens. Toegestane waarden: "letter", "cijfer", "Whites", "interpunctie", "Symbol". De standaard waarde is een lege matrix. alle tekens worden bewaard. |  
-|[path_hierarchy_v2](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/path/PathHierarchyTokenizer.html)|PathHierarchyTokenizerV2|Tokenizer voor op paden lijkende hiërarchieën.<br /><br /> **Opties**<br /><br /> scheidings teken (type: teken reeks)-standaard:/.<br /><br /> vervanging (type: teken reeks): als deze is ingesteld, wordt het scheidings teken vervangen. Standaard hetzelfde als de waarde van het scheidings teken.<br /><br /> maxTokenLength (type: int): de maximale token lengte. Standaard: 300, maximum: 300. Paden die langer zijn dan maxTokenLength, worden genegeerd.<br /><br /> omgekeerd (type: BOOL): als deze waarde True is, wordt token in omgekeerde volg orde gegenereerd. Standaard: onwaar.<br /><br /> overs Laan (type: BOOL)-initiële tokens die u wilt overs Laan. De standaardwaarde is 0.|  
-|[pattern](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/pattern/PatternTokenizer.html)|PatternTokenizer|Deze tokenizer maakt gebruik van regex-patroon vergelijking om afzonderlijke tokens te maken.<br /><br /> **Opties**<br /><br /> [patroon](https://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html) (type: teken reeks): regulier expressie patroon dat overeenkomt met token scheidings tekens. De standaard waarde is `\W+` , die overeenkomt met niet-Word-tekens. <br /><br /> [Flags](https://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html#field_summary) (type: String): reguliere expressie vlaggen. De standaard waarde is een lege teken reeks. Toegestane waarden: CANON_EQ, CASE_INSENSITIVE, COMMENTS, DOTALL, LITERAL, multiline, UNICODE_CASE, UNIX_LINES<br /><br /> groep (type: int): welke groep u wilt extra heren in tokens. De standaard waarde is-1 (splitsen).|
-|[standard_v2](https://lucene.apache.org/core/6_6_1/core/org/apache/lucene/analysis/standard/StandardTokenizer.html)|StandardTokenizerV2|De tekst die volgt op de regels van de [Unicode-tekst segmentatie](https://unicode.org/reports/tr29/)wordt afgebroken.<br /><br /> **Opties**<br /><br /> maxTokenLength (type: int): de maximale token lengte. Standaard: 255, maximum: 300. Tokens die langer zijn dan de maximale lengte, worden gesplitst.|  
-|[uax_url_email](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/standard/UAX29URLEmailTokenizer.html)|UaxUrlEmailTokenizer|Tokenizes url's en e-mail berichten als één token.<br /><br /> **Opties**<br /><br /> maxTokenLength (type: int): de maximale token lengte. Standaard: 255, maximum: 300. Tokens die langer zijn dan de maximale lengte, worden gesplitst.|  
+| microsoft_language_tokenizer| MicrosoftLanguageTokenizer| Hiermee wordt tekst verdeeld aan de hand van taalspecifieke regels.  </br></br>**Opties**  </br></br>maxTokenLength (type: int): de maximale token lengte, standaard: 255, maximum: 300. Tokens die langer zijn dan de maximale lengte, worden gesplitst. Tokens die langer zijn dan 300 tekens worden eerst gesplitst in tokens met een lengte van 300, en elk van deze tokens wordt gesplitst op basis van de maxTokenLength-set.  </br></br>isSearchTokenizer (type: BOOL): Stel deze waarde in op True als de zoek tokenizer is ingesteld op False als de Indexing tokenizer wordt gebruikt. </br></br>taal (type: teken reeks): taal die moet worden gebruikt, standaard ' Engels '. Toegestane waarden zijn: </br>"Bengalees", "Bulgaars", "Catalaans ', ' chineseSimplified ', ' chineseTraditional ', ' Kroatisch ', ' Tsjechisch ', ' Deens ', ' Nederlands ', ' Nederlands ', ' Frans ', ' Duits ', ' Grieks ', ' Gujarati ', ' hindi ', ' IJslands ', ' Indonesisch ', ' Italiaans ', ' Japans ', ' Kannada ', ' Koreaans ', ' Maleis", "Malayalam", "Marathi", "norwegianBokmaal", "Pools", "Portugees", "portugueseBrazilian", "Punjabi", "Roemeens", "Russisch", "serbianCyrillic", ' serbianLatin ', ' Sloveens ', ' Spaans ', ' Zweeds ', ' Tamil ', ' Telugu ', ' Thais ', ' Oekraïens ', ' Urdu ', ' Vietnamees ' |
+| microsoft_language_stemming_tokenizer | MicrosoftLanguageStemmingTokenizer| Verdeelt tekst met taalspecifieke regels en reduceert woorden naar hun basis formulieren </br></br>**Opties** </br></br>maxTokenLength (type: int): de maximale token lengte, standaard: 255, maximum: 300. Tokens die langer zijn dan de maximale lengte, worden gesplitst. Tokens die langer zijn dan 300 tekens worden eerst gesplitst in tokens met een lengte van 300, en elk van deze tokens wordt gesplitst op basis van de maxTokenLength-set. </br></br> isSearchTokenizer (type: BOOL): Stel deze waarde in op True als de zoek tokenizer is ingesteld op False als de Indexing tokenizer wordt gebruikt. </br></br>taal (type: teken reeks): taal die moet worden gebruikt, standaard ' Engels '. Toegestane waarden zijn: </br>"Arabisch", "Bengalees", "Bulgaars", "Catalaans", "Kroatisch ', ' Tsjechisch ', ' Deens ', ' Nederlands ', ' Engels ', ' Estlands ', ' Fins ', ' Frans ', ' Duits ', ' Grieks ', ' Gujarati ', ' Hebreeuws ', ' hindi ', ' Hong aars ', ' IJslands ', ' Indonesisch ', ' Italiaans ', ' Kannada ', ' Lets ', ' Litouws", "Maleis", "Malayalam", "Marathi", "norwegianBokmaal", "Pools", "Portugees", "portugueseBrazilian", "Punjabi", "Roemeens", "Russisch", "serbianCyrillic", "serbianLatin", "Slowaaks", "Sloveens", "Spaans", "Zweeds", "Tamil", "Telugu", "Turks", "Oekraïens", "Urdu" |
+|[nGram](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/ngram/NGramTokenizer.html)|NGramTokenizer|Tokenizes de invoer in n-g van de opgegeven grootte (n). </br></br>**Opties** </br></br>minGram (type: int)-standaard: 1, maximum: 300. </br></br>maxGram (type: int)-standaard: 2, maximum: 300. Moet groter zijn dan minGram. </br></br>tokenChars (type: teken reeks matrix): teken klassen die moeten worden bewaard in de tokens. Toegestane waarden: "letter", "cijfer", "Whites", "interpunctie", "Symbol". De standaard waarde is een lege matrix. alle tekens worden bewaard. |  
+|[path_hierarchy_v2](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/path/PathHierarchyTokenizer.html)|PathHierarchyTokenizerV2|Tokenizer voor op paden lijkende hiërarchieën. **Opties** </br></br>scheidings teken (type: teken reeks)-standaard:/. </br></br>vervanging (type: teken reeks): als deze is ingesteld, wordt het scheidings teken vervangen. Standaard hetzelfde als de waarde van het scheidings teken. </br></br>maxTokenLength (type: int): de maximale token lengte. Standaard: 300, maximum: 300. Paden die langer zijn dan maxTokenLength, worden genegeerd. </br></br>omgekeerd (type: BOOL): als deze waarde True is, wordt token in omgekeerde volg orde gegenereerd. Standaard: onwaar. </br></br>overs Laan (type: BOOL)-initiële tokens die u wilt overs Laan. De standaardwaarde is 0.|  
+|[pattern](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/pattern/PatternTokenizer.html)|PatternTokenizer|Deze tokenizer maakt gebruik van regex-patroon vergelijking om afzonderlijke tokens te maken. </br></br>**Opties** </br></br> [patroon](https://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html) (type: teken reeks): regulier expressie patroon dat overeenkomt met token scheidings tekens. De standaard waarde is `\W+` , die overeenkomt met niet-Word-tekens. </br></br>[Flags](https://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html#field_summary) (type: String): reguliere expressie vlaggen. De standaard waarde is een lege teken reeks. Toegestane waarden: CANON_EQ, CASE_INSENSITIVE, COMMENTS, DOTALL, LITERAL, multiline, UNICODE_CASE, UNIX_LINES </br></br>groep (type: int): welke groep u wilt extra heren in tokens. De standaard waarde is-1 (splitsen).|
+|[standard_v2](https://lucene.apache.org/core/6_6_1/core/org/apache/lucene/analysis/standard/StandardTokenizer.html)|StandardTokenizerV2|De tekst die volgt op de regels van de [Unicode-tekst segmentatie](https://unicode.org/reports/tr29/)wordt afgebroken. </br></br>**Opties** </br></br>maxTokenLength (type: int): de maximale token lengte. Standaard: 255, maximum: 300. Tokens die langer zijn dan de maximale lengte, worden gesplitst.|  
+|[uax_url_email](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/standard/UAX29URLEmailTokenizer.html)|UaxUrlEmailTokenizer|Tokenizes url's en e-mail berichten als één token. </br></br>**Opties** </br></br> maxTokenLength (type: int): de maximale token lengte. Standaard: 255, maximum: 300. Tokens die langer zijn dan de maximale lengte, worden gesplitst.|  
 |[spaties](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/WhitespaceTokenizer.html)|(type is alleen van toepassing wanneer opties beschikbaar zijn) |Hiermee wordt tekst op witruimte gesplitst. Tokens die langer zijn dan 255 tekens worden gesplitst.|  
 
  <sup>1</sup> tokenizer-typen worden altijd voorafgegaan door de code ' #Microsoft. Azure. Search ', zodat ' ClassicTokenizer ' daad werkelijk als ' #Microsoft. Azure. Search. ClassicTokenizer ' zou worden opgegeven. We hebben het voor voegsel verwijderd om de breedte van de tabel te verminderen, maar vergeet niet om deze op te nemen in uw code. U ziet dat tokenizer_type alleen wordt gegeven voor tokenizers die kunnen worden aangepast. Als er geen opties zijn, zoals in het geval van de letter tokenizer, is er geen gekoppelde #Microsoft. Azure. search-type.
 
 <a name="TokenFilters"></a>
 
-###  <a name="token-filters-reference"></a>Verwijzing naar token filters
+## <a name="token-filters"></a>Tokenfilters
+
+Een token filter wordt gebruikt om de tokens die door een tokenizer zijn gegenereerd, te filteren of te wijzigen. U kunt bijvoorbeeld een kleine filter opgeven waarmee alle tekens worden omgezet in kleine letters. U kunt meerdere token filters hebben in een aangepaste analyse functie. Token filters worden uitgevoerd in de volg orde waarin ze worden weer gegeven. 
 
 In de onderstaande tabel zijn de token filters die zijn geïmplementeerd met Apache Lucene gekoppeld aan de API-documentatie van Lucene.
 
@@ -370,8 +299,8 @@ In de onderstaande tabel zijn de token filters die zijn geïmplementeerd met Apa
 
  <sup>1</sup> token filter typen worden altijd voorafgegaan door de code ' #Microsoft. Azure. Search ', zodat ' ArabicNormalizationTokenFilter ' werkelijk wordt opgegeven als ' #Microsoft. Azure. Search. ArabicNormalizationTokenFilter '.  We hebben het voor voegsel verwijderd om de breedte van de tabel te verminderen, maar vergeet niet om deze op te nemen in uw code.  
 
+## <a name="see-also"></a>Zie ook
 
-## <a name="see-also"></a>Zie tevens  
- [REST-Api's voor Azure Cognitive Search](/rest/api/searchservice/)   
- [Voor beelden van analyse functies in azure Cognitive Search >](search-analyzers.md#examples)    
- [Index maken &#40;Azure Cognitive Search REST API&#41;](/rest/api/searchservice/create-index)
+- [REST-Api's voor Azure Cognitive Search](/rest/api/searchservice/)
+- [Analyse functies in azure Cognitive Search (voor beelden)](search-analyzers.md#examples)
+- [Index maken (REST)](/rest/api/searchservice/create-index)

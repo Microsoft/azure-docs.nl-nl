@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: krbain
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 51f1b122cb005f47e9816db3b403a35f4f502248
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: 36455b3f6395216bd1ed26c8bd193f0e3ca10b5b
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102426821"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104594594"
 ---
 # <a name="add-or-delete-users-using-azure-active-directory"></a>Gebruikers toevoegen of verwijderen met Azure Active Directory
 
@@ -75,7 +75,7 @@ Als u een omgeving met Azure Active Directory (Cloud) en Windows Server-Active D
 U kunt een bestaande gebruiker verwijderen via Azure Active Directory Portal.
 
 >[!Note]
->U moet een globale beheerder of beheerderrol hebben om gebruikers in uw organisatie te kunnen verwijderen. Globale beheerders kunnen alle gebruikers, waaronder andere beheerders, verwijderen. Gebruikers beheerders kunnen alle niet-beheerders gebruikers, helpdesk beheerders en andere gebruikers beheerders verwijderen. Zie [Administrator role permissions in azure AD](https://docs.microsoft.com/azure/active-directory/roles/permissions-reference)(Engelstalig) voor meer informatie.
+>U moet een globale beheerder of beheerderrol hebben om gebruikers in uw organisatie te kunnen verwijderen. Globale beheerders kunnen alle gebruikers, waaronder andere beheerders, verwijderen. Gebruikers beheerders kunnen alle niet-beheerders gebruikers, helpdesk beheerders en andere gebruikers beheerders verwijderen. Zie [Administrator role permissions in azure AD](../roles/permissions-reference.md)(Engelstalig) voor meer informatie.
 
 Voer de volgende stappen uit om een gebruiker te verwijderen:
 

@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/17/2020
-ms.openlocfilehash: 6bf0e8b90ca50a90f84c18981ab6accae8477b46
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: b2f91f0036a86151588c8c138dac5421ad54e18e
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102034304"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104586417"
 ---
 # <a name="install-the-azure-monitor-agent-preview"></a>De Azure Monitor-agent installeren (preview-versie)
 In dit artikel vindt u de verschillende opties die momenteel beschikbaar zijn voor het installeren van de [Azure monitor-agent](azure-monitor-agent-overview.md) op virtuele machines van Azure en Azure Arc-servers en de opties voor het maken [van koppelingen met regels voor gegevens verzameling](data-collection-rule-azure-monitor-agent.md) waarmee wordt gedefinieerd welke gegevens de agent moet verzamelen.
@@ -62,11 +62,11 @@ U kunt de Azure Monitor-agent installeren op virtuele machines van Azure en op A
 Gebruik de volgende Power shell-opdrachten om de Azure Monitor-agent te installeren op virtuele machines van Azure.
 # <a name="windows"></a>[Windows](#tab/PowerShellWindows)
 ```powershell
-Set-AzVMExtension -Name AMAWindows -ExtensionType AzureMonitorWindowsAgent -Publisher Microsoft.Azure.Monitor -ResourceGroupName <resource-group-name> -VMName <virtual-machine-name> -Location <location>
+Set-AzVMExtension -Name AMAWindows -ExtensionType AzureMonitorWindowsAgent -Publisher Microsoft.Azure.Monitor -ResourceGroupName <resource-group-name> -VMName <virtual-machine-name> -Location <location> -TypeHandlerVersion 1.0
 ```
 # <a name="linux"></a>[Linux](#tab/PowerShellLinux)
 ```powershell
-Set-AzVMExtension -Name AMALinux -ExtensionType AzureMonitorLinuxAgent -Publisher Microsoft.Azure.Monitor -ResourceGroupName <resource-group-name> -VMName <virtual-machine-name> -Location <location>
+Set-AzVMExtension -Name AMALinux -ExtensionType AzureMonitorLinuxAgent -Publisher Microsoft.Azure.Monitor -ResourceGroupName <resource-group-name> -VMName <virtual-machine-name> -Location <location> -TypeHandlerVersion 1.0
 ```
 ---
 

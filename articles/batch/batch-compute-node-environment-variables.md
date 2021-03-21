@@ -3,12 +3,12 @@ title: Omgevingsvariabelen voor de runtime van taken
 description: Richt lijnen voor de omgevings variabele van de taak runtime en naslag informatie voor Azure Batch Analytics.
 ms.topic: conceptual
 ms.date: 12/30/2020
-ms.openlocfilehash: c1d9ffb3fe6775b061863656adcb7f45f8840997
-ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
+ms.openlocfilehash: dbdc13e28a3a0c772480d2602f147e0d3354ff48
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97830884"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104669981"
 ---
 # <a name="azure-batch-runtime-environment-variables"></a>Omgevings variabelen Azure Batch-runtime
 
@@ -61,6 +61,8 @@ De opdracht regels die door taken op reken knooppunten worden uitgevoerd, worden
 | AZ_BATCH_TASK_ID                | De id van de huidige taak. | Alle taken behalve taak starten. | task001 |
 | AZ_BATCH_TASK_SHARED_DIR | Een mappad dat identiek is voor de primaire taak en elke subtaak van een [taak met meerdere exemplaren](batch-mpi.md). Het pad bestaat op elk knoop punt waarop de taak met meerdere exemplaren wordt uitgevoerd en is lezen/schrijven toegankelijk voor de taak opdrachten die worden uitgevoerd op dat knoop punt (zowel de [opdracht coördinatie](batch-mpi.md#coordination-command) als de [opdracht toepassing](batch-mpi.md#application-command). Subtaken of een primaire taak die op andere knoop punten wordt uitgevoerd, hebben geen externe toegang tot deze map (dit is geen gedeelde netwerkmap). | Primaire en subtaken voor meerdere instanties. | C:\user\tasks\workitems\multiinstancesamplejob\job-1\multiinstancesampletask |
 | AZ_BATCH_TASK_WORKING_DIR       | Het volledige pad naar de [werkmap](files-and-directories.md) van de taak op het knoop punt. De taak die momenteel wordt uitgevoerd, heeft lees-en schrijf toegang tot deze map. | Alle taken. | C:\user\tasks\workitems\batchjob001\job-1\task001\wd |
+| AZ_BATCH_TASK_WORKING_DIR       | Het volledige pad naar de [werkmap](files-and-directories.md) van de taak op het knoop punt. De taak die momenteel wordt uitgevoerd, heeft lees-en schrijf toegang tot deze map. | Alle taken. | C:\user\tasks\workitems\batchjob001\job-1\task001\wd |
+| AZ_BATCH_TASK_RESERVED_EPHEMERAL_DISK_SPACE_BYTES | De huidige drempel waarde voor de schijf ruimte waarop de VM wordt gemarkeerd `DiskFull` . | Alle taken. | 1000000 |
 | CCP_NODES                       | De lijst met knoop punten en het aantal kernen per knoop punt dat is toegewezen aan een [taak met meerdere exemplaren](batch-mpi.md). Knoop punten en kernen worden weer gegeven in de indeling `numNodes<space>node1IP<space>node1Cores<space>`<br/>`node2IP<space>node2Cores<space> ...`, waarbij het aantal knoop punten wordt gevolgd door een of meer IP-adressen van knoop punten en het aantal kern geheugens voor beide. |  Primaire en subtaken voor meerdere instanties. |`2 10.0.0.4 1 10.0.0.5 1` |
 
 ## <a name="next-steps"></a>Volgende stappen

@@ -7,16 +7,16 @@ ms.topic: article
 ms.date: 03/03/2021
 ms.author: qpetraroia
 author: qpetraroia
-ms.openlocfilehash: 307183292b60a6556df69a4e5541cbfb5e13098f
-ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
+ms.openlocfilehash: 8526d7c1c436074fbf6f838caf232e1abee06339
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103201567"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104670372"
 ---
 # <a name="use-planned-maintenance-to-schedule-maintenance-windows-for-your-azure-kubernetes-service-aks-cluster-preview"></a>Gepland onderhoud gebruiken om onderhouds Vensters te plannen voor uw Azure Kubernetes service (AKS)-cluster (preview)
 
-Er wordt een regel matig onderhoud uitgevoerd op uw AKS-cluster. Dit werk kan standaard op elk gewenst moment plaatsvinden. Met gepland onderhoud kunt u wekelijkse onderhouds Vensters plannen waarmee uw besturings vlak wordt bijgewerkt en de werk last tot een minimum wordt beperkt. Eenmaal gepland, wordt al uw onderhoud uitgevoerd tijdens het venster dat u hebt geselecteerd. U kunt een of meer wekelijkse Vensters op het cluster plannen door een dag-of tijds bereik op een specifieke dag op te geven. Onderhouds Vensters worden geconfigureerd met behulp van de Azure CLI.
+Er wordt een regel matig onderhoud uitgevoerd op uw AKS-cluster. Dit werk kan standaard op elk gewenst moment plaatsvinden. Met gepland onderhoud kunt u wekelijkse onderhouds Vensters plannen waarmee uw besturings vlak wordt bijgewerkt, evenals uw uitvoeren-systeem op een VMSS-exemplaar en de gevolgen voor de werk belasting tot een minimum worden beperkt. Eenmaal gepland, wordt al uw onderhoud uitgevoerd tijdens het venster dat u hebt geselecteerd. U kunt een of meer wekelijkse Vensters op het cluster plannen door een dag-of tijds bereik op een specifieke dag op te geven. Onderhouds Vensters worden geconfigureerd met behulp van de Azure CLI.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
@@ -107,7 +107,7 @@ U kunt ook een JSON-bestand gebruiken om een onderhouds venster te maken in plaa
         "notAllowedTime": [
           {
             "start": "2021-05-26T03:00:00Z",
-            "end": "2021-05-30T012:00:00Z"
+            "end": "2021-05-30T12:00:00Z"
           }
         ]
 }

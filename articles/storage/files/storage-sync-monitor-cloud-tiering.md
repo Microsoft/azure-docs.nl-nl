@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 1/4/2021
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 93e9d9a552ab1bff16ca15d6bb11faeb5d47a503
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: c27916afb0d199bcb32db9d43202e552a4a04f53
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102204367"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104593132"
 ---
 # <a name="monitor-cloud-tiering"></a>Cloud lagen bewaken
 Er zijn twee manieren waarop u het beleid voor Cloud lagen kunt bewaken: de Blade eigenschappen van het server eindpunt en Azure Monitor.
@@ -55,7 +55,7 @@ Als u meer wilt weten over de weer gave van uw grafieken, kunt u overwegen **fil
  
 Zie [Azure file sync bewaken](storage-sync-files-monitoring.md)voor meer informatie over de verschillende soorten metrische gegevens voor Azure file sync en hoe u deze kunt gebruiken.
 
-Zie aan de slag [met Azure Metrics Explorer](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-getting-started)voor meer informatie over het gebruik van metrische gegevens.
+Zie aan de slag [met Azure Metrics Explorer](../../azure-monitor/essentials/metrics-getting-started.md)voor meer informatie over het gebruik van metrische gegevens.
 
 Als u uw Cloud-laag beleid wilt wijzigen, raadpleegt u [beleid voor Cloud lagen kiezen](storage-sync-choose-cloud-tiering-policies.md).
 

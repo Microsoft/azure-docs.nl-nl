@@ -8,10 +8,10 @@ ms.topic: reference
 ms.date: 03/04/2021
 ms.author: memildin
 ms.openlocfilehash: 0c14b9a0c927ef9ed96853ddeed64b161df0d277
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102176702"
 ---
 # <a name="security-alerts---a-reference-guide"></a>Referentiegids met beveiligingswaarschuwingen

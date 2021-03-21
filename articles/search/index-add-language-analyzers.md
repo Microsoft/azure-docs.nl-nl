@@ -7,13 +7,13 @@ manager: nitinme
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/05/2020
-ms.openlocfilehash: 555709776c88dd3003e400bbcefe2ec1cfa0f4af
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.date: 03/17/2021
+ms.openlocfilehash: ac11b7bc7e53c214f872d400565d50009479afcb
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97934166"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104604420"
 ---
 # <a name="add-language-analyzers-to-string-fields-in-an-azure-cognitive-search-index"></a>Taal analyse functies toevoegen aan teken reeks velden in een Azure Cognitive Search-index
 
@@ -46,91 +46,114 @@ Indexeren met micro soft-analyse functies is gemiddeld twee tot drie keer langza
 
 ### <a name="english-analyzers"></a>Engelse analyse functies
 
-De standaard-Analyzer is standaard-Lucene, die goed werkt voor het Engels, maar mogelijk niet ook en de Engelse analyse functie van Lucene of het Engelse analyse beleid van micro soft. 
- 
+De standaard-Analyzer is standaard-Lucene, die goed werkt voor het Engels, maar mogelijk niet ook en de Engelse analyse functie van Lucene of het Engelse analyse beleid van micro soft.
+
 + De Engelse Analyzer van Lucene breidt de Standard Analyzer uit. Hiermee verwijdert u de possessives (van het begin) van woorden, wordt de functie voor het verbreken van de splitsing van het schema en de Engelse stop woorden verwijderd.  
 
 + De Engelse Analyzer van micro soft voert lemmatisering uit in plaats van de ontleding. Dit betekent dat het verbogen en onregelmatige woord vormen aanzienlijk beter kan worden verwerkt, wat resulteert in meer relevante zoek resultaten 
 
-## <a name="configuring-analyzers"></a>Analyse functies configureren
+## <a name="how-to-specify-a-language-analyzer"></a>Een taal analyse opgeven
 
-Taal analysen worden gebruikt als-is. Voor elk veld in de index definitie kunt u de eigenschap **Analyzer** instellen op een analyse naam die de taal en talen stack (micro soft of lucene) aangeeft. Dezelfde analyse wordt toegepast bij het indexeren en zoeken naar dat veld. U kunt bijvoorbeeld afzonderlijke velden voor Engelse, Franse en Spaanse Hotel beschrijvingen hebben die naast elkaar in dezelfde index bestaan.
+Stel een taal analyse in op velden die doorzoekbaar zijn van het type EDM. String tijdens veld definitie.
 
-> [!NOTE]
-> Het is niet mogelijk om een andere taal analyse te gebruiken tijdens de indexerings tijd dan bij het opvragen van een veld. Deze mogelijkheid is gereserveerd voor [aangepaste analyse](index-add-custom-analyzers.md)functies. Als u daarom probeert de eigenschappen **searchAnalyzer** of **indexAnalyzer** in te stellen op de naam van een taal analyse, retourneert de rest API een fout bericht. U moet in plaats daarvan de eigenschap **Analyzer** gebruiken.
+Hoewel veld definities verschillende eigenschappen die betrekking hebben op de Analyzer, kan alleen de eigenschap ' Analyzer ' worden gebruikt voor taal analysen. De waarde van ' Analyzer ' moet een van de taal analyse functies van de lijst met ondersteunings analyses zijn.
 
-Gebruik de para meter **searchFields** om op te geven in welke taal specifiek veld moet worden gezocht in uw query's. U kunt query voorbeelden bekijken die de eigenschap Analyzer in [Zoek documenten](/rest/api/searchservice/search-documents)bevatten. 
+```json
+{
+  "name": "hotels-sample-index",
+  "fields": [
+    {
+      "name": "Description",
+      "type": "Edm.String",
+      "retrievable": true,
+      "searchable": true,
+      "analyzer": "en.microsoft",
+      "indexAnalyzer": null,
+      "searchAnalyzer": null
+    },
+    {
+      "name": "Description_fr",
+      "type": "Edm.String",
+      "retrievable": true,
+      "searchable": true,
+      "analyzer": "fr.microsoft",
+      "indexAnalyzer": null,
+      "searchAnalyzer": null
+    },
+```
 
-Zie [Create index &#40;Azure Cognitive Search REST API&#41;](/rest/api/searchservice/create-index)voor meer informatie over eigenschappen van de index. Zie voor meer informatie over het analyseren van Azure Cognitive Search analyse functies [in azure Cognitive Search](./search-analyzers.md).
+Zie [Create Index (rest) (Engelstalig)](/rest/api/searchservice/create-index)voor meer informatie over het maken van een index en het instellen van veld eigenschappen. Zie voor meer informatie over tekst analyse [analyse functies in Azure Cognitive Search](search-analyzers.md).
 
 <a name="language-analyzer-list"></a>
 
-## <a name="language-analyzer-list"></a>Language Analyzer-lijst 
- Hieronder ziet u de lijst met ondersteunde talen in combi natie met de namen van Lucene en micro soft Analyzer.  
+## <a name="supported-language-analyzers"></a>Ondersteunde taal analysen
+
+ Hieronder ziet u een lijst met ondersteunde talen, met de namen van Lucene en micro soft Analyzer.  
 
 | Taal | Naam van micro soft Analyzer | Naam van Lucene Analyzer |
-|--|--|--|
-| Arabisch | AR. micro soft | AR. lucene |
-| Armeens |  | HY. lucene |  |
-| Bengaals | bn. micro soft |  |  |
-| Baskisch |  | EU. lucene |  |
-| Bulgaars | bg. micro soft | bg. lucene |  |
-| Catalaans | ca. micro soft | ca. lucene |  |
-| Chinees (vereenvoudigd) | zh-Hans. micro soft | zh-Hans. lucene |  |
-| Chinees (traditioneel) | zh-hant. micro soft | zh-hant. lucene |  |
-| Kroatisch | HR. micro soft |  |  |
-| Tsjechisch | CS. micro soft | CS. lucene |  |
-| Deens | da. micro soft | da. lucene |  |
-| Nederlands | nl. micro soft | nl. lucene |  |
-| Engels | en. micro soft | en. lucene |  |
-| Ests | et. micro soft |  |  |
-| Fins | fi. micro soft | fi. lucene |  |
-| Frans | fr. micro soft | fr. lucene |  |
-| Galicisch |  | gl. lucene |  |
-| Duits | de. micro soft | de. lucene |  |
-| Grieks | El. micro soft | El. lucene |  |
-| Gujarati | Gu. micro soft |  |  |
-| Hebreeuws | he. micro soft |  |  |
-| Hindi | Hallo. micro soft | Hallo. lucene |  |
-| Hongaars | hu. micro soft | hu. lucene |  |
-| IJslands | is. micro soft |  |  |
-| Indonesisch (Bahasa) | id. micro soft | id. lucene |  |
-| Iers |  | Ga. lucene |  |
-| Italiaans | it. micro soft | it. lucene |  |
-| Japans | Ja. micro soft | Ja. lucene |  |
-| Kannada | kn. micro soft |  |  |
-| Koreaans | ko. micro soft | ko. lucene |  |
-| Lets | LV. micro soft | LV. lucene |  |
-| Litouws | lt. micro soft |  |  |
-| Malayalam | ml. micro soft |  |  |
-| Maleis (Latijns) | MS. micro soft |  |  |
-| Mahrati | Mr. micro soft |  |  |
-| Noors | NB. micro soft | No. lucene |  |
-| Perzisch |  | FA. lucene |  |
-| Pools | pl. micro soft | pl. lucene |  |
-| Portugees (Brazilië) | pt-br. micro soft | pt-br. lucene |  |
-| Portugees (Portugal) | pt-pt. micro soft | pt-pt. lucene |  |
-| Punjabi | pa. micro soft |  |  |
-| Roemeens | ro. micro soft | ro. lucene |  |
-| Russisch | ru. micro soft | ru. lucene |  |
-| Servisch (Cyrillisch) | SR-Cyrillisch. micro soft |  |  |
-| Servisch (Latijns) | SR-Latijn. micro soft |  |  |
-| Slowaaks | SK. micro soft |  |  |
-| Sloveens | SL. micro soft |  |  |
-| Spaans | es. micro soft | es. lucene |  |
-| Zweeds | SV. micro soft | SV. lucene |  |
-| Tamil | ta. micro soft |  |  |
-| Telugu | te. micro soft |  |  |
-| Thai | th. micro soft | th. lucene |  |
-| Turks | tr. micro soft | tr. lucene |  |
-| Oekraïens | UK. micro soft |  |  |
-| Urdu | uw. micro soft |  |  |
-| Vietnamees | VI. micro soft |  |  |
+|----------|-------------------------|----------------------|
+| Arabisch   | AR. micro soft | AR. lucene |
+| Armeens |           | HY. lucene |
+| Bengaals   | bn. micro soft |  |
+| Baskisch   |  | EU. lucene |
+| Bulgaars | bg. micro soft | bg. lucene |
+| Catalaans  | ca. micro soft | ca. lucene |
+| Chinees (vereenvoudigd) | zh-Hans. micro soft | zh-Hans. lucene |
+| Chinees (traditioneel) | zh-hant. micro soft | zh-hant. lucene |
+| Kroatisch | HR. micro soft |  |
+| Tsjechisch | CS. micro soft | CS. lucene |
+| Deens | da. micro soft | da. lucene |
+| Nederlands | nl. micro soft | nl. lucene |
+| Engels | en. micro soft | en. lucene |
+| Ests | et. micro soft |  |
+| Fins | fi. micro soft | fi. lucene |
+| Frans | fr. micro soft | fr. lucene |
+| Galicisch |  | gl. lucene |
+| Duits | de. micro soft | de. lucene |
+| Grieks | El. micro soft | El. lucene |
+| Gujarati | Gu. micro soft |  |
+| Hebreeuws | he. micro soft |  |
+| Hindi | Hallo. micro soft | Hallo. lucene |
+| Hongaars | hu. micro soft | hu. lucene |
+| IJslands | is. micro soft |  |
+| Indonesisch (Bahasa) | id. micro soft | id. lucene |
+| Iers |  | Ga. lucene |
+| Italiaans | it. micro soft | it. lucene |
+| Japans | Ja. micro soft | Ja. lucene |
+| Kannada | kn. micro soft |  |
+| Koreaans | ko. micro soft | ko. lucene |
+| Lets | LV. micro soft | LV. lucene |
+| Litouws | lt. micro soft |  |
+| Malayalam | ml. micro soft |  |
+| Maleis (Latijns) | MS. micro soft |  |
+| Mahrati | Mr. micro soft |  |
+| Noors | NB. micro soft | No. lucene |
+| Perzisch |  | FA. lucene |
+| Pools | pl. micro soft | pl. lucene |
+| Portugees (Brazilië) | pt-br. micro soft | pt-br. lucene |
+| Portugees (Portugal) | pt-pt. micro soft | pt-pt. lucene |
+| Punjabi | pa. micro soft |  |
+| Roemeens | ro. micro soft | ro. lucene |
+| Russisch | ru. micro soft | ru. lucene |
+| Servisch (Cyrillisch) | SR-Cyrillisch. micro soft |  |
+| Servisch (Latijns) | SR-Latijn. micro soft |  |
+| Slowaaks | SK. micro soft |  |
+| Sloveens | SL. micro soft |  |
+| Spaans | es. micro soft | es. lucene |
+| Zweeds | SV. micro soft | SV. lucene |
+| Tamil | ta. micro soft |  |
+| Telugu | te. micro soft |  |
+| Thai | th. micro soft | th. lucene |
+| Turks | tr. micro soft | tr. lucene |
+| Oekraïens | UK. micro soft |  |
+| Urdu | uw. micro soft |  |
+| Vietnamees | VI. micro soft |  |
 
  Alle analyse functies met namen die zijn gekoppeld aan **lucene** , worden aangedreven door [de taal Analyseers van Apache Lucene](https://lucene.apache.org/core/6_6_1/core/overview-summary.html ).
 
 ## <a name="see-also"></a>Zie ook  
 
-+ [Index maken &#40;Azure Cognitive Search REST API&#41;](/rest/api/searchservice/create-index)  
-
-+ [Klasse LexicalAnalyzerName](/dotnet/api/azure.search.documents.indexes.models.lexicalanalyzername)
++ [Een index maken](search-what-is-an-index.md)
++ [Een index voor meerdere talen maken](search-language-support.md)
++ [Index maken (REST API)](/rest/api/searchservice/create-index)  
++ [LexicalAnalyzerName-klasse (Azure SDK voor .NET)](/dotnet/api/azure.search.documents.indexes.models.lexicalanalyzername)

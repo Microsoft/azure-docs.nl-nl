@@ -8,10 +8,10 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 03/04/2021
 ms.openlocfilehash: 198702f619e490e8000e4430aab23a7f6bfb6d85
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102107710"
 ---
 # <a name="create-rich-interactive-reports-of-security-center-data"></a>Uitgebreide, interactieve rapporten van Security Center gegevens maken

@@ -11,16 +11,16 @@ ms.topic: conceptual
 ms.date: 03/04/2019
 ms.author: aahi
 ms.openlocfilehash: 14dacc4351af444c75517df4d4e02ecca3bbf40a
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96350072"
 ---
 # <a name="language-and-region-support-for-the-bing-image-search-api"></a>Ondersteuning van talen en regio's voor de Bing Afbeeldingen zoeken-API
 
 > [!WARNING]
-> Bing Search-API's worden van Cognitive Services naar Bing Search Services overgezet. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](/bing/search-apis/bing-web-search/create-bing-search-service-resource) is beschreven.
+> Bing Search-API's worden van Cognitive Services naar Bing Search Services verplaatst. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](/bing/search-apis/bing-web-search/create-bing-search-service-resource) is beschreven.
 > Bing Search-API's die zijn ingericht met Cognitive Services, worden voor de komende drie jaar of tot het einde van uw Enterprise Agreement ondersteund, afhankelijk van wat het eerst afloopt.
 > Raadpleeg [Bing Search Services](/bing/search-apis/bing-web-search/create-bing-search-service-resource) voor migratie-instructies.
 
@@ -46,7 +46,7 @@ U kunt ook het land/de regio opgeven met behulp van de `cc` query-para meter. Al
 |Oostenrijk|AT|
 |België|BE|
 |Brazilië|BR|
-|Canada|CA|
+|Canada|CA (consistentie en beschikbaarheid)|
 |Chili|CL|
 |Denemarken|DK|
 |Finland|FI|
@@ -120,7 +120,7 @@ U kunt ook het land/de regio opgeven met behulp van de `cc` query-para meter. Al
 |Taiwan|Traditioneel Chinees|zh-TW|
 |Turkije|Turks|tr-TR|
 |Verenigd Koninkrijk|Engels|en-GB|
-|Verenigde Staten|Engels|nl-NL|
+|Verenigde Staten|Engels|en-US|
 |Verenigde Staten|Spaans|es-Verenigde Staten|
 
 ## <a name="next-steps"></a>Volgende stappen

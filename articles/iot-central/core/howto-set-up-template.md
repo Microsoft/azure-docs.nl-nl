@@ -11,10 +11,10 @@ ms.custom:
 - contperf-fy21q1
 - device-developer
 ms.openlocfilehash: 22e948a0100f23dbddef8fc138576bb4b9372c77
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100363199"
 ---
 # <a name="define-a-new-iot-device-type-in-your-azure-iot-central-application"></a>Een nieuw IoT-apparaattype definiëren in uw Azure IoT Central-toepassing
@@ -127,7 +127,7 @@ Telemetrie is een stroom van waarden die van het apparaat worden verzonden, mees
 
 De volgende tabel bevat de configuratie-instellingen voor een telemetrie-mogelijkheid:
 
-| Veld | Description |
+| Veld | Beschrijving |
 | ----- | ----------- |
 | Weergavenaam | De weergave naam voor de telemetrie-waarde die wordt gebruikt voor weer gaven en formulieren. |
 | Name | De naam van het veld in het telemetrie-bericht. IoT Central genereert een waarde voor dit veld van de weergave naam, maar u kunt indien nodig uw eigen waarde kiezen. Dit veld moet alfanumeriek zijn. |
@@ -139,7 +139,7 @@ De volgende tabel bevat de configuratie-instellingen voor een telemetrie-mogelij
 | Eenheid | Een eenheid voor de telemetrische waarde, zoals **mph**, **%** of **&deg; C**. |
 | Eenheid weer geven | Een weergave-eenheid die wordt gebruikt voor weer gaven en formulieren. |
 | Opmerking | Eventuele opmerkingen over de telemetrie-mogelijkheid. |
-| Description | Een beschrijving van de telemetrie-mogelijkheid. |
+| Beschrijving | Een beschrijving van de telemetrie-mogelijkheid. |
 
 ### <a name="properties"></a>Eigenschappen
 
@@ -147,7 +147,7 @@ Eigenschappen vertegenwoordigen waarden van het tijdstip. Een apparaat kan bijvo
 
 De volgende tabel bevat de configuratie-instellingen voor een eigenschaps mogelijkheid:
 
-| Veld | Description |
+| Veld | Beschrijving |
 | ----- | ----------- |
 | Weergavenaam | De weergave naam voor de waarde van de eigenschap die wordt gebruikt voor weer gaven en formulieren. |
 | Name | De naam van de eigenschap. IoT Central genereert een waarde voor dit veld van de weergave naam, maar u kunt indien nodig uw eigen waarde kiezen. Dit veld moet alfanumeriek zijn. |
@@ -160,7 +160,7 @@ De volgende tabel bevat de configuratie-instellingen voor een eigenschaps mogeli
 | Eenheid | Een eenheid voor de waarde van de eigenschap, zoals **mph**, **%** of **&deg; C**. |
 | Eenheid weer geven | Een weergave-eenheid die wordt gebruikt voor weer gaven en formulieren. |
 | Opmerking | Eventuele opmerkingen over de eigenschaps mogelijkheid. |
-| Description | Een beschrijving van de eigenschaps mogelijkheid. |
+| Beschrijving | Een beschrijving van de eigenschaps mogelijkheid. |
 
 ### <a name="commands"></a>Opdracht
 
@@ -168,13 +168,13 @@ U kunt de opdrachten van een apparaat aanroepen vanuit IoT Central. Opdrachten g
 
 De volgende tabel bevat de configuratie-instellingen voor een opdracht mogelijkheid:
 
-| Veld | Description |
+| Veld | Beschrijving |
 | ----- | ----------- |
 | Weergavenaam | De weergave naam voor de opdracht die wordt gebruikt voor weer gaven en formulieren. |
 | Name | De naam van de opdracht. IoT Central genereert een waarde voor dit veld van de weergave naam, maar u kunt indien nodig uw eigen waarde kiezen. Dit veld moet alfanumeriek zijn. |
 | Type mogelijkheid | Cmd. |
 | Opmerking | Eventuele opmerkingen over de opdracht mogelijkheid. |
-| Description | Een beschrijving van de opdracht mogelijkheid. |
+| Beschrijving | Een beschrijving van de opdracht mogelijkheid. |
 | Aanvraag | Indien ingeschakeld, een definitie van de aanvraag parameter, met inbegrip van: naam, weergave naam, schema, eenheid en weer gave-eenheid. |
 | Antwoord | Als deze optie is ingeschakeld, wordt een definitie van het opdracht antwoord gegeven, waaronder: naam, weergave naam, schema, eenheid en weer gave-eenheid. |
 
@@ -207,7 +207,7 @@ Gebruik Cloud eigenschappen om informatie over apparaten op te slaan in IoT Cent
 
 De volgende tabel bevat de configuratie-instellingen voor een Cloud eigenschap:
 
-| Veld | Description |
+| Veld | Beschrijving |
 | ----- | ----------- |
 | Weergavenaam | De weergave naam voor de waarde van de Cloud eigenschap die wordt gebruikt voor weer gaven en formulieren. |
 | Name | De naam van de Cloud eigenschap. IoT Central genereert een waarde voor dit veld van de weergave naam, maar u kunt indien nodig uw eigen waarde kiezen. |

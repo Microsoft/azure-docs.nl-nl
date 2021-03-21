@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 01/13/2020
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: 00670746c1686bca354adc989ddce6c9dd336491
-ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96519056"
 ---
 # <a name="data-encryption-for-azure-database-for-mysql-by-using-the-azure-portal"></a>Gegevens versleuteling voor Azure Database for MySQL met behulp van de Azure Portal
@@ -41,11 +41,11 @@ Meer informatie over het gebruik van de Azure Portal voor het instellen en beher
     ```
 
 * De sleutel moet de volgende kenmerken hebben om te kunnen worden gebruikt als een door de klant beheerde sleutel:
-  * Geen verval datum
+  * Geen vervaldatum
   * Niet uitgeschakeld
   * **Get**-, **wrap**-en **Unwrap** -bewerkingen uitvoeren
   * kenmerk recoverylevel is ingesteld op **hersteld** (hiervoor moet voorlopig verwijderen zijn ingeschakeld met de Bewaar periode ingesteld op 90 dagen)
-  * Beveiliging opschonen ingeschakeld
+  * Beveiliging tegen leegmaken is ingeschakeld
 
 U kunt de bovenstaande kenmerken van de sleutel controleren met behulp van de volgende opdracht:
 
@@ -95,7 +95,7 @@ Nadat Azure Database for MySQL is versleuteld met een door de klant beheerde sle
 
    :::image type="content" source="media/concepts-data-access-and-security-data-encryption/show-restore-data-encryption.png" alt-text="Scherm opname van Azure Database for MySQL, met een niet-toegankelijke status gemarkeerd":::
 
-3. Valideer de sleutel op de herstelde server om de server toegankelijk te maken. Selecteer **Data encryption**  >  **sleutel voor hervalideren** van gegevens versleuteling.
+3. Valideer de sleutel op de herstelde server om de server toegankelijk te maken. Selecteer   >  **sleutel voor hervalideren** van gegevens versleuteling.
 
    > [!NOTE]
    > De eerste poging om opnieuw te valideren, mislukt, omdat de service-principal van de nieuwe server toegang moet krijgen tot de sleutel kluis. Als u de Service-Principal wilt genereren, selecteert u **sleutel opnieuw valideren**. er wordt dan een fout weer gegeven, maar de service-principal wordt gegenereerd. Ga daarna naar [deze stappen](#set-the-right-permissions-for-key-operations) eerder in dit artikel.

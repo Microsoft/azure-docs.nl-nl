@@ -9,10 +9,10 @@ ms.date: 08/17/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: 7132eae073f3d53a104536076ae801ec9ff93e5f
-ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96518665"
 ---
 # <a name="msix-app-attach-glossary"></a>Woorden lijst voor het toevoegen van MSIX-apps
@@ -75,7 +75,7 @@ In Windows Virtual Desktop voegt een MSIX-pakket toe aan een hostgroep.
 
 In Windows Virtual Desktop moet een gepubliceerd MSIX-pakket worden toegewezen aan een gebruikers-of gebruikers groep van een Active Directory-domein-service (AD DS) of Azure Active Directory (Azure AD).
 
-## <a name="staging"></a>Staging
+## <a name="staging"></a>Faseren
 
 Fase ring omvat twee dingen:
 
@@ -112,7 +112,7 @@ Met destaging wordt het besturings systeem gewaarschuwd dat een MSIX-pakket of-t
 
 Een CIM-bestand is een bestand met een. CIM-uitbrei ding die meta gegevens en ten minste zes extra bestanden bevat die actuele gegevens bevatten. De bestanden in het CIM-bestand hebben geen extensies. De volgende tabel bevat een lijst met voorbeeld bestanden die u in een CIM zou zoeken:
 
-| Bestandsnaam | Extensie | Grootte |
+| Bestandsnaam | Toestelnummer | Grootte |
 |-----------|-----------|------|
 | VSC | VRACHT | 1 kB |
 | objectid_b5742e0b-1b98-40b3-94a6-9cb96f497e56_0 | NA | 27 KB |

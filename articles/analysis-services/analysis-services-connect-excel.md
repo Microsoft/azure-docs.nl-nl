@@ -8,10 +8,10 @@ ms.date: 12/01/2020
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: fccb919a7eac79080fefeac70326b8aa7a967622
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96499467"
 ---
 # <a name="connect-with-excel"></a>Verbinden met Excel
@@ -20,7 +20,7 @@ Wanneer u een server hebt gemaakt en er een tabellair model op hebt geïmplement
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-Het account waarmee u zich aanmeldt, moet deel uitmaken van een model database functie met ten minste lees machtigingen. Zie [Verificatie en gebruikersmachtigingen](analysis-services-manage-users.md) voor meer informatie. 
+Het account waarmee u zich aanmeldt, moet deel uitmaken van een model database functie met ten minste lees machtigingen. Raadpleeg voor meer informatie [Verificatie en gebruikersmachtigingen](analysis-services-manage-users.md). 
 
 ## <a name="connect-in-excel"></a>Verbinding maken in Excel
 

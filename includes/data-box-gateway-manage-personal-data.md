@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/15/2020
 ms.author: alkohli
 ms.openlocfilehash: ebd0e48c9f197439e838efbc936537ca5da3520f
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96582367"
 ---
 - **Details** van de order. Wanneer een order wordt gemaakt, worden het verzend adres, het e-mail adres en de contact gegevens van de gebruiker opgeslagen in de Azure Portal. De opgeslagen informatie omvat:

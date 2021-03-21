@@ -5,10 +5,10 @@ ms.topic: how-to
 ms.date: 12/03/2020
 ms.custom: references_regions
 ms.openlocfilehash: 45791cd69772be97ca6768184ed17179e04ad9dc
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96576805"
 ---
 # <a name="create-an-azure-event-hubs-schema-registry-preview"></a>Een Azure Event Hubs-schema register maken (preview)

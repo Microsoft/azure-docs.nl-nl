@@ -6,13 +6,13 @@ ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 06/30/2017
 ms.openlocfilehash: 56b104b5cc8f8923445455c71fe2418e39539b8e
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96512569"
 ---
-# <a name="use-user-defined-outputter"></a>Door de gebruiker gedefinieerde outputter gebruiken
+# <a name="use-user-defined-outputter"></a>Door de gebruiker gedefinieerde uitvoerder gebruiken
 
 ## <a name="u-sql-udo-user-defined-outputter"></a>U-SQL UDO: door de gebruiker gedefinieerde outputter
 De door de gebruiker gedefinieerde outputter is een andere U-SQL-UDO waarmee u ingebouwde U-SQL-functionaliteit kunt uitbreiden. Net als bij het Extractor zijn er verschillende ingebouwde outputten.

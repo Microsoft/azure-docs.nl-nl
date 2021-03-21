@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 11/11/2020
 ms.author: alkohli
 ms.openlocfilehash: 5119fd89d232d127d1dcb6d086f1e9d13b20c3bb
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96582209"
 ---
 # <a name="azure-stack-edge-and-azure-data-box-gateway-1911-release-notes"></a>Release opmerkingen bij Azure Stack Edge en Azure Data Box Gateway 1911
@@ -29,7 +29,7 @@ Deze release komt overeen met de software versies:
 > [!NOTE]
 > Update 1911 kan alleen worden toegepast op alle apparaten met algemene Beschik baarheid (GA)-versies van de software of hoger.
 
-## <a name="whats-new"></a>Nieuwe functies
+## <a name="whats-new"></a>Nieuw
 
 Er zijn geen nieuwe functies in de 1911-release, alleen oplossingen voor oplossingen.
 

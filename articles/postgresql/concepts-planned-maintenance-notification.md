@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 10/21/2020
 ms.openlocfilehash: 8db556709f68a1184046989a15fad147542a05a7
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98735738"
 ---
 # <a name="planned-maintenance-notification-in-azure-database-for-postgresql---single-server"></a>Melding over gepland onderhoud in Azure Database for PostgreSQL - Eén server
@@ -23,7 +23,7 @@ Azure Database for PostgreSQL-service voert automatische patching uit van de ond
 
 Een gepland onderhoud is een onderhouds venster wanneer deze service-updates worden geïmplementeerd op servers in een bepaalde Azure-regio. Tijdens dit gepland onderhoud wordt een melding gecreëerd, om klanten te informeren wanneer de service-update is geïmplementeerd in de Azure-regio waarin hun servers worden gehost. De minimale duur tussen twee gepland onderhoud is 30 dagen. U ontvangt 72 uur van te voren een melding van het volgende onderhoudsvenster.
 
-## <a name="planned-maintenance---duration-and-customer-impact"></a>Gepland onderhoud-duur en klant impact
+## <a name="planned-maintenance---duration-and-customer-impact"></a>Gepland onderhoud: duur en impact voor de klant
 
 Een gepland onderhoud voor een bepaalde Azure-regio wordt doorgaans binnen 15 uur verwacht. Dit tijd venster bevat ook buffer tijd voor het uitvoeren van een rollback-plan als dat nodig is. Azure Database for PostgreSQL-servers worden uitgevoerd in containers zodat het opnieuw opstarten van de database server 60-120 seconden duurt, maar er is geen deterministische manier om te weten wanneer binnen dit 15 uur het venster van uw server wordt beïnvloed. De volledige geplande onderhouds gebeurtenis, inclusief het opnieuw opstarten van de server, wordt zorgvuldig gecontroleerd door het technische team. De failovertijd van de server is afhankelijk van het herstel van de data base, waardoor de data base langer online kan worden uitgevoerd als er sprake is van langdurige trans actie op de server op het moment van de failover. Om te voor komen dat de computer opnieuw wordt opgestart, wordt aanbevolen om langlopende trans acties (bulksgewijs laden) te voor komen tijdens geplande onderhouds gebeurtenissen.
 

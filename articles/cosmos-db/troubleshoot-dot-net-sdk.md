@@ -10,10 +10,10 @@ ms.topic: troubleshooting
 ms.reviewer: sngun
 ms.custom: devx-track-dotnet
 ms.openlocfilehash: 1f7548b355353eb77419f4d1760b40ba02eeddda
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102442193"
 ---
 # <a name="diagnose-and-troubleshoot-issues-when-using-azure-cosmos-db-net-sdk"></a>Problemen vaststellen en oplossen bij het gebruik van Azure Cosmos DB .NET SDK
@@ -63,7 +63,7 @@ Cosmos DB SDK bij een IO-fout probeert de mislukte bewerking opnieuw uit te voer
 
 ## <a name="common-error-status-codes"></a>Algemene fout status codes <a id="error-codes"></a>
 
-| Statuscode | Description | 
+| Statuscode | Beschrijving | 
 |----------|-------------|
 | 400 | Ongeldige aanvraag (afhankelijk van het fout bericht)| 
 | 401 | [Niet geautoriseerd](troubleshoot-unauthorized.md) | 

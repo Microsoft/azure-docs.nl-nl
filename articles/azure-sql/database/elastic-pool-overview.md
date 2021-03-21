@@ -12,10 +12,10 @@ ms.author: moslake
 ms.reviewer: ninarn, sstein
 ms.date: 12/9/2020
 ms.openlocfilehash: c478edf95ae345d64da630400fbf63ac613b73a6
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100653632"
 ---
 # <a name="elastic-pools-help-you-manage-and-scale-multiple-databases-in-azure-sql-database"></a>Meerdere databases in Azure SQL Database beheren en schalen met elastische pools
@@ -114,7 +114,7 @@ Zie [Scaling out with Azure SQL Database](elastic-scale-introduction.md) (Uitbre
 
 Pooldatabases ondersteunen in het algemeen dezelfde [bedrijfscontinuïteitsfuncties](business-continuity-high-availability-disaster-recover-hadr-overview.md) die beschikbaar zijn voor individuele databases.
 
-- **Terugzetten naar eerder tijdstip**
+- **Herstel naar een bepaald tijdstip**
 
   Herstel naar een bepaald tijdstip maakt gebruik van automatische database back-ups om een data base in een groep te herstellen naar een specifiek tijdstip. Zie [Herstel naar een bepaald tijdstip](recovery-using-backups.md#point-in-time-restore)
 

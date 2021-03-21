@@ -7,14 +7,14 @@ ms.subservice: cosmosdb-sql
 ms.devlang: python
 ms.topic: reference
 ms.date: 08/12/2020
-ms.author: anfeldma
+ms.author: rosouz
 ms.custom: devx-track-python
-ms.openlocfilehash: 77cde4fb580ebea14c09856b9ad2e7f093e20db3
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.openlocfilehash: 8487743efd4f18806ae03ed7529927736314988b
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102505049"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104595678"
 ---
 # <a name="azure-cosmos-db-python-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB Python SDK voor SQL API: Opmerkingen bij de release en resources
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -38,17 +38,26 @@ ms.locfileid: "102505049"
 > * [Bulk-uitvoerder-.NET v2](sql-api-sdk-bulk-executor-dot-net.md)
 > * [Bulkuitvoerprogramma - Java](sql-api-sdk-bulk-executor-java.md)
 
-| |  |
+| Pagina| Koppeling |
 |---|---|
 |**SDK downloaden**|[PyPI](https://pypi.org/project/azure-cosmos)|
-|**API-documentatie**|[Naslag documentatie voor python API](/python/api/azure-cosmos/)|
+|**API-documentatie**|[Naslag documentatie voor python API](https://docs.microsoft.com/python/api/azure-cosmos/azure.cosmos?view=azure-python&preserve-view=true)|
 |**SDK-installatie-instructies**|[Installatie-instructies voor python SDK](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cosmos/azure-cosmos)|
 |**Aan de slag**|[Aan de slag met de python-SDK](create-sql-api-python.md)|
 |**Huidig ondersteund platform**|[Python 2,7](https://www.python.org/downloads/) en [python 3.5.3 +](https://www.python.org/downloads/)|
 
 ## <a name="release-history"></a>Release geschiedenis
 
-### <a name="410-2020-08-10"></a>4.1.0 (2020-08-10)
+## <a name="420"></a>4.2.0
+
+**Opgeloste fouten**
+- Er is een fout opgelost waarbij vervolg token niet wordt gehonoreerd wanneer query_iterable wordt gebruikt om resultaten op pagina op te halen.
+- Er is een fout opgelost waarbij niet wordt voldaan aan bron tokens voor lezen en verwijderen van documenten. 
+
+**Nieuwe functies**
+- Er is ondersteuning toegevoegd voor door geven `partitionKey` tijdens het uitvoeren van een query op Change-feed.
+
+## <a name="410"></a>4.1.0
 
 - Er is een waarschuwing voor afschaffing toegevoegd voor de indexerings modus ' Lazy '. Met de back-end kunnen geen containers meer worden gemaakt in deze modus en worden ze in plaats daarvan consistent ingesteld.
 
@@ -56,13 +65,14 @@ ms.locfileid: "102505049"
 - De mogelijkheid om de TTL voor de analytische opslag in te stellen bij het maken van een nieuwe container is toegevoegd.
 
 **Opgeloste fouten**
-- Ondersteuning voor dicteer functies als invoer voor get_client-Api's.
+- Vaste ondersteuning voor `dicts` als invoer voor get_client-api's.
 - Vaste python 2/3-compatibiliteit in query-iterators.
-- Fout in Hint voor vast type (probleem #12570).
-- Er is een fout opgelost waarbij opties niet zijn toegevoegd aan upsert_item functie. Probleem #11791: Hartelijk dank @aalapatirvbd .
-- Er treedt een fout op wanneer een niet-teken reeks-ID in een item wordt gebruikt. Het activeert nu TypeError in plaats van AttributeError (probleem #11793).
+- Fout met Hint voor vast type.
+- Er is een fout opgelost waarbij opties niet zijn toegevoegd aan upsert_item functie. 
+- Er treedt een fout op wanneer een niet-teken reeks-ID in een item wordt gebruikt. Dit leidt nu tot TypeError in plaats van AttributeError.
 
-### <a name="400"></a>4.0.0
+
+## <a name="400"></a>4.0.0
 
 * Stabiele release.
 * HttpLoggingPolicy toegevoegd aan pijp lijn om in te scha kelen in een aangepaste logger voor aanvraag-en antwoord headers.
@@ -80,8 +90,8 @@ ms.locfileid: "102505049"
 * De ondersteuning voor DISTINCT, offset en limieten voor query's is toegevoegd.
 * Standaard context voor het uitvoeren van document query's wordt nu gebruikt voor
 
-  * ChangeFeed query's
-  * query's met één partitie (partitionkey, partitionKeyRangeId is aanwezig in opties)
+  * Feed-query's wijzigen
+  * enkelvoudige partitie query's ( `partitionkey` , zijn `partitionKeyRangeId` aanwezig in opties)
   * Niet-document query's
 
 * Er zijn fouten opgetreden voor aggregaties op meerdere partities, waarbij query voor kruis partitie inschakelen is ingesteld op True, maar er is geen "waarde"-tref woord aanwezig
@@ -324,6 +334,8 @@ Micro soft biedt een kennisgeving van ten minste **twaalf maanden** voor het bui
 
 | Versie | Releasedatum | Buitengebruikstellingsdatum |
 | --- | --- | --- |
+| [4.2.0](#420) |9 oktober, 2020 |--- |
+| [4.1.0](#410) |10 augustus 2020 |--- |
 | [4.0.0](#400) |20 mei 2020 |--- |
 | [3.0.2](#302) |15 november 2018 |--- |
 | [3.0.1](#301) |Okt 04, 2018 |--- |

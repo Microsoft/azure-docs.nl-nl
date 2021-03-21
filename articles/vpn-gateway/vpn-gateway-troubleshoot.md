@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: troubleshooting
 ms.date: 01/31/2018
 ms.author: cherylmc
-ms.openlocfilehash: 0718a1b211fe6365af30a330fe6a3742cff2ff63
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: a74109594eec87dddf637542f6d85091ed49231b
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "84984424"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104720250"
 ---
 # <a name="troubleshoot-vpn-gateway"></a>Problemen met VPN Gateway oplossen
 
@@ -27,6 +27,8 @@ VPN Gateway verbindingen kunnen om verschillende redenen mislukken. Dit artikel 
 * [Punt-naar-site-verbindingen](vpn-gateway-troubleshoot-vpn-point-to-site-connection-problems.md)<br>Dit artikel bevat een lijst met veelvoorkomende punt-naar-site-verbindings problemen die u kunt voordoen. Daarnaast worden mogelijke oorzaken en oplossingen voor deze problemen besproken.
 
 * [Site-naar-site-verbindingen](vpn-gateway-troubleshoot-site-to-site-cannot-connect.md)<br>Nadat u een site-naar-site-VPN-verbinding tussen een on-premises netwerk en een virtueel Azure-netwerk hebt geconfigureerd, wordt de VPN-verbinding plotseling gestopt en kan deze niet meer worden aangesloten. Dit artikel bevat stappen voor probleem oplossing om dit probleem op te lossen.
+
+* [Problemen met Azure VPN Gateway oplossen met Diagnostische logboeken](troubleshoot-vpn-with-azure-diagnostics.md)<br>Met behulp van Diagnostische logboeken kunt u problemen met meerdere VPN-gateway gebeurtenissen oplossen, waaronder configuratie activiteiten, VPN-tunnel connectiviteit, IPsec-logboek registratie, BGP-route-uitwisseling, Point-to-site geavanceerde logboek registratie. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

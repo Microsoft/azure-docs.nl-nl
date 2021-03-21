@@ -5,12 +5,12 @@ ms.topic: include
 ms.date: 03/25/2020
 ms.author: trbye
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 278bb106789452d14001da5bd0bab6570d114666
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: b1161fdcbed7933c7a8dd0dccadd2e896966b728
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102428218"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104719967"
 ---
 In deze quickstart maakt u kennis met algemene ontwerppatronen voor het uitvoeren van een spraak-naar-tekstsynthese met behulp van de Speech-SDK. Eerst voert u een basisconfiguratie en -synthese uit en gaat u verder met geavanceerdere voorbeelden voor aangepaste toepassingsontwikkeling zoals:
 
@@ -67,14 +67,14 @@ Er zijn een paar manieren waarop u een [`SpeechConfig`](/dotnet/api/microsoft.co
 In dit voorbeeld maakt u een [`SpeechConfig`](/dotnet/api/microsoft.cognitiveservices.speech.speechconfig) met behulp van een abonnementssleutel en regio. U kunt deze referenties ophalen door de stappen te volgen in [De Speech-service gratis uitproberen](../../../overview.md#try-the-speech-service-for-free). U schrijft ook wat eenvoudige standaardcode voor gebruik in de rest van dit artikel. U gaat de code voor verschillende aanpassingen wijzigen.
 
 ```csharp
-public class Program 
+public class Program
 {
     static async Task Main()
     {
         await SynthesizeAudioAsync();
     }
 
-    static async Task SynthesizeAudioAsync() 
+    static async Task SynthesizeAudioAsync()
     {
         var config = SpeechConfig.FromSubscription("YourSubscriptionKey", "YourServiceRegion");
     }
@@ -88,7 +88,7 @@ Vervolgens maakt u een [`SpeechSynthesizer`](/dotnet/api/microsoft.cognitiveserv
 Eerst maakt u een `AudioConfig` om de uitvoer automatisch naar een `.wav` bestand te schrijven, met behulp van de functie `FromWavFileOutput()` en voert u een exemplaar uit met een `using`-instructie. Met een `using`-instructie in deze context worden niet-beheerde resources automatisch verwijderd en wordt het object na verwijdering buiten gebruik gesteld.
 
 ```csharp
-static async Task SynthesizeAudioAsync() 
+static async Task SynthesizeAudioAsync()
 {
     var config = SpeechConfig.FromSubscription("YourSubscriptionKey", "YourServiceRegion");
     using var audioConfig = AudioConfig.FromWavFileOutput("path/to/write/file.wav");
@@ -98,7 +98,7 @@ static async Task SynthesizeAudioAsync()
 Vervolgens maakt u een `SpeechSynthesizer` met een andere `using`-instructie. Geef uw `config`-object en het `audioConfig`-object als parameters door. Daarna is het uitvoeren van spraaksynthese en het schrijven naar een bestand net zo eenvoudig als het uitvoeren van `SpeakTextAsync()` met een regel tekst.
 
 ```csharp
-static async Task SynthesizeAudioAsync() 
+static async Task SynthesizeAudioAsync()
 {
     var config = SpeechConfig.FromSubscription("YourSubscriptionKey", "YourServiceRegion");
     using var audioConfig = AudioConfig.FromWavFileOutput("path/to/write/file.wav");
@@ -111,10 +111,10 @@ Voer het programma uit. Er wordt een gesynthetiseerd `.wav`-bestand geschreven n
 
 ## <a name="synthesize-to-speaker-output"></a>Synthetiseren naar de uitvoer van de luidspreker
 
-In sommige gevallen kunt u gesynthetiseerde spraak rechtstreeks naar een luidspreker uitvoeren. U kunt dit doen door de parameter `AudioConfig` weg te laten bij het maken van de `SpeechSynthesizer` in bovenstaand voorbeeld. Hiermee wordt de uitvoer naar het huidige, actieve uitvoerapparaat gestuurd.
+In sommige gevallen kunt u gesynthetiseerde spraak rechtstreeks naar een luidspreker uitvoeren. Als u dit wilt doen, laat u de `AudioConfig` para meter weg bij het maken `SpeechSynthesizer` van de in het bovenstaande voor beeld. Dit is een synthese van het huidige actieve uitvoer apparaat.
 
 ```csharp
-static async Task SynthesizeAudioAsync() 
+static async Task SynthesizeAudioAsync()
 {
     var config = SpeechConfig.FromSubscription("YourSubscriptionKey", "YourServiceRegion");
     using var synthesizer = new SpeechSynthesizer(config);
@@ -130,7 +130,7 @@ Voor veel scenario's in het ontwikkelen van spraaktoepassingen hebt u waarschijn
 * Integreer het resultaat met andere API's of services.
 * Wijzig de audiogegevens, schrijf aangepaste `.wav`-headers, enzovoort.
 
-U kunt deze wijziging eenvoudig met behulp van het voorgaande voorbeeld uitvoeren. Verwijder eerst het `AudioConfig`-blok, omdat u het uitvoergedrag vanaf dit punt handmatig gaat beheren voor een betere controle. Geef vervolgens `null` door voor de `AudioConfig` in de `SpeechSynthesizer`-constructor. 
+U kunt deze wijziging eenvoudig met behulp van het voorgaande voorbeeld uitvoeren. Verwijder eerst het `AudioConfig`-blok, omdat u het uitvoergedrag vanaf dit punt handmatig gaat beheren voor een betere controle. Geef vervolgens `null` door voor de `AudioConfig` in de `SpeechSynthesizer`-constructor.
 
 > [!NOTE]
 > Als `null` voor de `AudioConfig` wordt doorgegeven in plaats van dat deze wordt weggelaten, zoals in het bovenstaande voorbeeld met de luidspreker, wordt de audio niet standaard afgespeeld op het huidige actieve uitvoerapparaat.
@@ -138,11 +138,11 @@ U kunt deze wijziging eenvoudig met behulp van het voorgaande voorbeeld uitvoere
 Deze keer slaat u het resultaat op in een [`SpeechSynthesisResult`](/dotnet/api/microsoft.cognitiveservices.speech.speechsynthesisresult)-variabele. De eigenschap `AudioData` bevat een `byte []` van de uitvoergegevens. U kunt handmatig met deze `byte []` werken, of u kunt de [`AudioDataStream`](/dotnet/api/microsoft.cognitiveservices.speech.audiodatastream)-klasse gebruiken om de stroom in het geheugen te beheren. In dit voorbeeld gebruikt u de statische functie `AudioDataStream.FromResult()` om een stroom van het resultaat op te halen.
 
 ```csharp
-static async Task SynthesizeAudioAsync() 
+static async Task SynthesizeAudioAsync()
 {
     var config = SpeechConfig.FromSubscription("YourSubscriptionKey", "YourServiceRegion");
     using var synthesizer = new SpeechSynthesizer(config, null);
-    
+
     var result = await synthesizer.SpeakTextAsync("Getting the response as an in-memory stream.");
     using var stream = AudioDataStream.FromResult(result);
 }
@@ -168,7 +168,7 @@ Voor verschillende bestandstypen zijn er diverse opties mogelijk, afhankelijk va
 In dit voorbeeld geeft u een RIFF-indeling met hoge kwaliteit `Riff24Khz16BitMonoPcm` op door `SpeechSynthesisOutputFormat` in te stellen voor het `SpeechConfig`-object. Net als in het voorbeeld in de vorige sectie, gebruikt u [`AudioDataStream`](/dotnet/api/microsoft.cognitiveservices.speech.audiodatastream) om een stroom in het geheugen van het resultaat te verkrijgen en vervolgens naar een bestand te schrijven.
 
 ```csharp
-static async Task SynthesizeAudioAsync() 
+static async Task SynthesizeAudioAsync()
 {
     var config = SpeechConfig.FromSubscription("YourSubscriptionKey", "YourServiceRegion");
     config.SetSpeechSynthesisOutputFormat(SpeechSynthesisOutputFormat.Riff24Khz16BitMonoPcm);
@@ -204,11 +204,11 @@ Vervolgens moet u de aanvraag voor spraaksynthese wijzigen om te verwijzen naar 
 > Als u Visual Studio gebruikt, wordt uw XML-bestand waarschijnlijk niet standaard door uw build-configuratie gevonden. Als u dit wilt oplossen, klikt u met de rechter muisknop op het XML-bestand en selecteert u **eigenschappen**. Wijzig **Build-actie** naar *Inhoud* en wijzig **Kopiëren naar uitvoermap** naar *Altijd kopiëren*.
 
 ```csharp
-public static async Task SynthesizeAudioAsync() 
+public static async Task SynthesizeAudioAsync()
 {
     var config = SpeechConfig.FromSubscription("YourSubscriptionKey", "YourServiceRegion");
     using var synthesizer = new SpeechSynthesizer(config, null);
-    
+
     var ssml = File.ReadAllText("./ssml.xml");
     var result = await synthesizer.SpeakSsmlAsync(ssml);
 
@@ -247,3 +247,10 @@ Als u wilt overschakelen naar een neurale stem, wijzigt u de `name` in een van d
   </voice>
 </speak>
 ```
+## <a name="get-facial-pose-events"></a>Gebeurtenissen voor gezichts pose ophalen
+
+Speech is een goede manier om de animatie van gezichts expressies te testen.
+Vaak worden [visemes](../../../how-to-speech-synthesis-viseme.md) gebruikt om de sleutel in waargenomen spraak te vertegenwoordigen, zoals de positie van de lippen, jaw en tong bij het produceren van een bepaalde foneem.
+U kunt de viseme-gebeurtenis in Speech SDK abonneren.
+Vervolgens kunt u viseme-gebeurtenissen Toep assen om het gezicht van een teken te animeren wanneer spraak geluid wordt afgespeeld.
+Meer informatie [over het ophalen van viseme-gebeurtenissen](../../../how-to-speech-synthesis-viseme.md#get-viseme-events-with-the-speech-sdk).

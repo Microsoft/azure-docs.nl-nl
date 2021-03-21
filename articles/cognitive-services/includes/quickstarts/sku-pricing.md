@@ -7,12 +7,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 09/01/2020
 ms.author: pafarley
-ms.openlocfilehash: cb066ecc1dc11985c0ccb0fa687a15d6b038b9fa
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: 8cc4bc6907f83ce062fed82dde17815fc4debd67
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89321559"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104719936"
 ---
 Bekijk de onderstaande lijst met SKU's en prijsinformatie. 
 
@@ -32,7 +32,6 @@ Bekijk de onderstaande lijst met SKU's en prijsinformatie.
 | Custom Vision - Training   | `CustomVision.Training`   |
 | Face                       | `Face`                    |
 | Form Recognizer            | `FormRecognizer`          |
-| Ink Recognizer             | `InkRecognizer`           |
 
 #### <a name="search"></a>Search
 
@@ -41,10 +40,10 @@ Bekijk de onderstaande lijst met SKU's en prijsinformatie.
 | Bing Automatische suggesties   | `Bing.Autosuggest.v7` |
 | Bing Aangepaste zoekopdrachten | `Bing.CustomSearch`   |
 | Bing Entiteiten zoeken | `Bing.EntitySearch`   |
-| Bing Zoeken        | `Bing.Search.v7`      |
+| Bing Search        | `Bing.Search.v7`      |
 | Bing Spellingcontrole   | `Bing.SpellCheck.v7`  |
 
-#### <a name="speech"></a>Speech
+#### <a name="speech"></a>Spraak
 
 | Service            | Soort                 |
 |--------------------|----------------------|
@@ -55,7 +54,6 @@ Bekijk de onderstaande lijst met SKU's en prijsinformatie.
 
 | Service            | Soort                |
 |--------------------|---------------------|
-| Informatie over formulier | `FormUnderstanding` |
 | LUIS               | `LUIS`              |
 | QnA Maker          | `QnAMaker`          |
 | Tekstanalyse     | `TextAnalytics`     |

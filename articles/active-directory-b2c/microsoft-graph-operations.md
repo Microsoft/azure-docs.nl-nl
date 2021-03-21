@@ -13,10 +13,10 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: a8ff94acbd9ffd491bf628ae61ee87634a9c6dd6
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102033619"
 ---
 # <a name="manage-azure-ad-b2c-with-microsoft-graph"></a>Azure AD B2C beheren met Microsoft Graph
@@ -181,7 +181,7 @@ De voorbeeld code maakt gebruik van de [Microsoft Graph SDK](/graph/sdks/sdks-ov
 
 Voor elke aanvraag voor de Microsoft Graph-API is een toegangs token voor verificatie vereist. De oplossing maakt gebruik van het NuGet-pakket [micro soft. Graph. auth](https://www.nuget.org/packages/Microsoft.Graph.Auth/) dat een op een verificatie gebaseerd op een op een manier gebaseerde wrapper van de micro soft Authentication Library (MSAL) biedt voor gebruik met de SDK van Microsoft Graph.
 
-De `RunAsync` methode in het _Program.cs_ -bestand:
+De `RunAsync` methode in het bestand _Program. cs_ :
 
 1. Hiermee leest u de toepassings instellingen van de _appsettings.jsvoor_ het bestand
 1. Initialiseert de authenticatie provider met [OAuth 2,0-client referenties toekenning](../active-directory/develop/v2-oauth2-client-creds-grant-flow.md) stroom. Met de client referenties toekenning stroom kan de app een toegangs token verkrijgen om de Microsoft Graph-API aan te roepen.
@@ -203,7 +203,7 @@ De `RunAsync` methode in het _Program.cs_ -bestand:
     GraphServiceClient graphClient = new GraphServiceClient(authProvider);
     ```
 
-De geïnitialiseerde *GraphServiceClient* wordt vervolgens in _UserService.cs_ gebruikt om de gebruikers beheer bewerkingen uit te voeren. U kunt bijvoorbeeld een lijst ophalen van de gebruikers accounts in de Tenant:
+De geïnitialiseerde *GraphServiceClient* wordt vervolgens gebruikt in _UserService. cs_ om de gebruikers beheer bewerkingen uit te voeren. U kunt bijvoorbeeld een lijst ophalen van de gebruikers accounts in de Tenant:
 
 ```csharp
 public static async Task ListUsers(GraphServiceClient graphClient)

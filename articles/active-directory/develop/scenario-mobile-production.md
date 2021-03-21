@@ -13,12 +13,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.reviewer: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: d1a7407c947c1c5bae1eed00acb0f216722f3d09
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 08243fd06de289941d8e6a9197ccb349614af056
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88121031"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104675954"
 ---
 # <a name="prepare-mobile-apps-for-production"></a>Mobiele apps voorbereiden voor productie
 
@@ -34,18 +34,9 @@ Voor elk type micro soft Authentication Library (MSAL) vindt u voorbeeld code en
 - [MSAL iOS-wiki](https://github.com/AzureAD/microsoft-authentication-library-for-objc/wiki)
 - [MSAL.NET-wiki](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki)
 
-## <a name="mitigate-and-investigate-issues"></a>Problemen oplossen en onderzoeken
-
-Gegevens verzamelen voor betere diagnose van problemen in uw app. Zie [logboek registratie in MSAL-toepassingen](./msal-logging.md)voor informatie over de soorten gegevens die u kunt verzamelen.
-
-Hier volgen enkele suggesties voor het verzamelen van gegevens:
-
-- Gebruikers kunnen om hulp vragen wanneer ze problemen ondervinden. Een best practice is Logboeken vastleggen en tijdelijk opslaan. Geef een locatie op waar gebruikers de logboeken kunnen uploaden. MSAL biedt logboek registratie-extensies voor het vastleggen van gedetailleerde informatie over verificatie.
-
-- Als telemetrie beschikbaar is, kunt u dit inschakelen via MSAL om gegevens te verzamelen over de manier waarop gebruikers zich aanmelden bij uw app.
-
-## <a name="next-steps"></a>Volgende stappen
 
 [!INCLUDE [Common steps to move to production](../../../includes/active-directory-develop-scenarios-production.md)]
+
+## <a name="next-steps"></a>Volgende stappen
 
 Zie [Desktop en mobiele open bare client-apps](sample-v2-code.md#desktop-and-mobile-public-client-apps)voor meer voor beelden.

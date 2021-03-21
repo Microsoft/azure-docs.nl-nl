@@ -8,10 +8,10 @@ ms.date: 3/12/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.openlocfilehash: 86efd7781c7353b4846c77eba01ed34fb63067ff
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102433247"
 ---
 # <a name="manage-azure-digital-twins-models"></a>Azure Digital Apparaatdubbels-modellen beheren
@@ -142,7 +142,7 @@ De status van de buiten gebruik stellen van een model is opgenomen in de records
 
 U kunt alle modellen in uw exemplaar in één keer verwijderen, of u kunt dit op afzonderlijke manieren doen.
 
-Voor een voor beeld van het verwijderen van alle modellen downloadt u de voor beeld-app die wordt gebruikt in de [*zelf studie: Verken de basis principes met een voor beeld-client-app*](tutorial-command-line-app.md). Het *CommandLoop.cs* -bestand doet dit in een `CommandDeleteAllModels` functie.
+Voor een voor beeld van het verwijderen van alle modellen downloadt u de voor beeld-app die wordt gebruikt in de [*zelf studie: Verken de basis principes met een voor beeld-client-app*](tutorial-command-line-app.md). Het bestand *CommandLoop. cs* doet dit in een `CommandDeleteAllModels` functie.
 
 In de rest van deze sectie wordt de verwijdering van een model dichter bij de details weer gegeven en wordt getoond hoe u dit kunt doen voor een afzonderlijk model.
 

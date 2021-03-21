@@ -13,19 +13,22 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 05/02/2019
+ms.date: 03/17/2021
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e4dcc7ed6076c3bac723d709f50f1b3ab2ce8f58
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: e8778e50dcb881647696c6e901bf1058b9d6ac43
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "95996556"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104720335"
 ---
 # <a name="changing-the-adsync-service-account-password"></a>Het wacht woord voor het ADSync-service account wijzigen
 Als u het wacht woord voor het ADSync-service account wijzigt, kan de synchronisatie service niet goed worden gestart totdat u de versleutelings sleutel hebt verlaten en het wacht woord voor het ADSync-service account opnieuw hebt geïnitialiseerd. 
+
+>[!IMPORTANT]
+> Als u verbinding maken met een build van 2017 maart of eerder gebruikt, moet u het wacht woord niet opnieuw instellen voor het service account, omdat Windows de versleutelings sleutels om veiligheids redenen heeft vernietigd. U kunt het account niet wijzigen in een ander account zonder Azure AD Connect opnieuw te installeren. Als u een upgrade uitvoert naar een build van 2017 april of hoger, wordt het wacht woord voor het service account gewijzigd, maar u kunt het gebruikte account niet wijzigen. 
 
 Azure AD Connect, als onderdeel van de synchronisatie Services, gebruikt een versleutelings sleutel voor het opslaan van de wacht woorden van het AD DS Connector-account en het ADSync-service account.  Deze accounts worden versleuteld voordat ze worden opgeslagen in de-data base. 
 

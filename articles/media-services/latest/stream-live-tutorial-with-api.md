@@ -57,7 +57,7 @@ Het. gitignore-bestand is al geconfigureerd om te voor komen dat de inhoud van d
 
 ## <a name="examine-the-code-that-performs-live-streaming"></a>De code bestuderen die live streamen uitvoert
 
-In deze sectie worden de functies onderzocht die zijn gedefinieerd in het [Program.cs](https://github.com/Azure-Samples/media-services-v3-dotnet/blob/main/Live/LiveEventWithDVR/Program.cs) -bestand van het *LiveEventWithDVR* -project.
+In deze sectie worden de functies onderzocht die zijn gedefinieerd in het bestand [Program. cs](https://github.com/Azure-Samples/media-services-v3-dotnet/blob/main/Live/LiveEventWithDVR/Program.cs) van het *LiveEventWithDVR* -project.
 
 In het voorbeeld wordt een uniek achtervoegsel voor elke resource gemaakt, zodat er geen naamconflicten optreden als u het voorbeeld meerdere keren uitvoert zonder dat er wordt opgeschoond.
 

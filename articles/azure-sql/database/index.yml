@@ -12,12 +12,12 @@ metadata:
   ms.author: sstein
   ms.reviewer: 
   ms.date: 01/25/2021
-  ms.openlocfilehash: 849aab184c1e85e23d0d909e1e49eb10893d4731
-  ms.sourcegitcommit: 27cd3e515fee7821807c03e64ce8ac2dd2dd82d2
+  ms.openlocfilehash: bf7056f05264a8c9c2275e4b2e562c8a4761a053
+  ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 03/16/2021
-  ms.locfileid: "103601522"
+  ms.lasthandoff: 03/19/2021
+  ms.locfileid: "104607990"
 landingContent:
 - title: Azure SQL Database
   linkLists:
@@ -26,7 +26,7 @@ landingContent:
     - text: Wat is nieuw?
       url: doc-changes-updates-release-notes.md?tabs=single-database
     - text: Feedback? Doe de enquête.
-      url: https://aka.ms/AzureSQLSurvey
+      url: https://microsoft.qualtrics.com/jfe/form/SV_ePOznHhP4gDKfGu?channel=456
   - linkListType: quickstart
     links:
     - text: SQL-database maken

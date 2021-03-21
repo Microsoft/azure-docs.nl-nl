@@ -5,19 +5,25 @@ author: vermagit
 ms.service: virtual-machines
 ms.subservice: hpc
 ms.topic: article
-ms.date: 03/12/2021
+ms.date: 03/18/2021
 ms.author: amverma
 ms.reviewer: cynthn
-ms.openlocfilehash: 9185f502a7d9dd7ab00a149fb2f3365372b350cc
-ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
+ms.openlocfilehash: 65a06a60b502b0e189ebe8a5e203553494f5d128
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "103470751"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104721286"
 ---
 # <a name="scaling-hpc-applications"></a>HPC-toepassingen schalen
 
 Optimale schaal-en schaal prestaties van HPC-toepassingen op Azure vereist het afstemmen van prestaties en optimalisatie experimenten voor de specifieke werk belasting. Deze sectie en de VM-reeks-specifieke pagina's bieden algemene richt lijnen voor het schalen van uw toepassingen.
+
+## <a name="application-setup"></a>Installatie van toepassing
+De [azurehpc-opslag plaats](https://github.com/Azure/azurehpc) bevat een groot aantal voor beelden van:
+- [Toepassingen](https://github.com/Azure/azurehpc/tree/master/apps) optimaal in te stellen en uit te voeren.
+- Configuratie van [bestands systemen en clusters](https://github.com/Azure/azurehpc/tree/master/examples).
+- [Zelf studies](https://github.com/Azure/azurehpc/tree/master/tutorials) over hoe u snel aan de slag kunt met enkele algemene toepassings werk stromen.
 
 ## <a name="optimally-scaling-mpi"></a>Optimaal schalen van MPI 
 
@@ -48,6 +54,9 @@ De volgende suggesties zijn van toepassing op optimale efficiëntie, prestaties 
 - Voor grote grotere schaal runs wordt aanbevolen UD-of Hybrid RC + UD-trans porten te gebruiken. Veel MPI-bibliotheken/runtime-bibliotheken doen dit intern (zoals UCX of MVAPICH2). Controleer uw transport configuraties voor grootschalige uitvoeringen.
 
 ## <a name="compiling-applications"></a>Toepassingen compileren
+<br>
+<details>
+<summary>Klik om uit te vouwen</summary>
 
 Hoewel het niet nodig is om toepassingen met de juiste optimalisatie vlaggen te compileren, hebt u de beste prestaties op virtuele machines met HB en HC-serie.
 
@@ -96,6 +105,7 @@ Voor HPC adviseert AMD GCC compiler 7,3 of nieuwer. Oudere versies, zoals 4.8.5 
 ```bash
 gcc $(OPTIMIZATIONS) $(OMP) $(STACK) $(STREAM_PARAMETERS) stream.c -o stream.gcc
 ```
+</details>
 
 ## <a name="next-steps"></a>Volgende stappen
 

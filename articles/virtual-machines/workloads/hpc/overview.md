@@ -6,14 +6,14 @@ ms.author: amverma
 ms.service: virtual-machines
 ms.subservice: hpc
 ms.topic: overview
-ms.date: 07/29/2020
+ms.date: 03/18/2021
 ms.reviewer: cynthn
-ms.openlocfilehash: 15d05632e5ebf6e45a61adebbbbf647efca2a1a1
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 65b37a8c07e083f5e9809812e2d4446cc48717d1
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101666886"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104720590"
 ---
 # <a name="high-performance-computing-on-infiniband-enabled-h-series-and-n-series-vms"></a>High Performance Computing op VM's uit de voor InfiniBand geschikte H-serie en N-serie
 
@@ -32,19 +32,19 @@ Zie [InfiniBand inschakelen](enable-infiniband.md) voor meer informatie over het
 
 ### <a name="message-passing-interface"></a>Message Passing Interface
 
-De voor SR-IOV geschikte H-serie en N-serie bieden ondersteuning voor bijna alle MPI-bibliotheken en -versies. Enkele van de meest voorkomende ondersteunde MPI-bibliotheken zijn: Intel MPI, OpenMPI, MPICH, MVAPICH2, Platform MPI en alle RDMA-bewerkingen (RDMA: Remote Direct Memory Access).
+De voor SR-IOV geschikte H-serie en N-serie bieden ondersteuning voor bijna alle MPI-bibliotheken en -versies. Enkele van de meest gebruikte MPI-bibliotheken zijn: Intel MPI, OpenMPI, HPC-X, MVAPICH2, MPICH, platform MPI. Alle RDMA-werk woorden (Remote Direct Memory Access) worden ondersteund.
 Zie [MPI instellen](setup-mpi.md) voor meer informatie over het installeren van verschillende ondersteunde MPI-bibliotheken en hun optimale configuratie.
 
 ## <a name="get-started"></a>Aan de slag
 
 De eerste stap bestaat uit het selecteren van het VM-type uit de [H-serie](../../sizes-hpc.md) en [N-serie](../../sizes-gpu.md) dat optimaal is voor de workload op basis van de specificaties van de VM en de [RDMA-functionaliteit](../../sizes-hpc.md#rdma-capable-instances).
 Ten tweede moet u de VM configureren door InfiniBand in te schakelen. Er zijn verschillende manieren om dit te doen, waaronder het gebruik van geoptimaliseerde VM-installatiekopieën met geïntegreerde stuurprogramma's. Zie [Optimalisatie voor Linux](configure.md) en [InfiniBand inschakelen](enable-infiniband.md) voor meer informatie.
-Ten derde is het essentieel om MPI te kiezen en configureren voor de workloads op gedistribueerde knooppunten. Zie [MPI instellen](setup-mpi.md) voor meer informatie.
-Ten vierde moet u de workloads optimaal configureren ten behoeve van de prestaties en schaalbaarheid, door de richtlijnen te volgen die specifiek zijn voor de VM-familie, zoals voor [Overzicht HB-serie](hb-series-overview.md) en [Overzicht HC-serie](hc-series-overview.md).
+Ten derde, voor de werk belasting van gedistribueerde knoop punten, is het kiezen en configureren van MPI op de juiste manier essentieel. Zie [MPI instellen](setup-mpi.md) voor meer informatie.
+Ten vierde, voor prestaties en schaal baarheid, kunt u de werk belastingen optimaal configureren door de richt lijnen te volgen die specifiek zijn voor de VM-familie, zoals voor [HBv3-serie overzicht](hbv3-series-overview.md) en [HC-serie Overview](hc-series-overview.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 
 - Meer informatie over het [configureren en optimaliseren van VM's uit ](configure.md)de voor InfiniBand geschikte [H-serie](../../sizes-hpc.md) en [N-serie](../../sizes-gpu.md).
-- Bekijk [Overzicht HB-serie](hb-series-overview.md) en [Overzicht HC-serie](hc-series-overview.md) voor meer informatie over het optimaal configureren van workloads ten behoeve van de prestaties en schaalbaarheid.
-- Lees over de laatste aankondigingen en enkele HPC-voorbeelden en -resultaten in de [Azure Compute Tech Community-blogs](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute).
+- Bekijk het [overzicht van de HBv3-serie](hb-series-overview.md) en het [HC-serie-overzicht](hc-series-overview.md) voor meer informatie over het optimaal configureren van workloads voor prestaties en schaal baarheid.
+- Meer informatie over de laatste aankondigingen, HPC-voor beelden en prestatie resultaten vindt u in de blogs van de [technische community van Azure Compute](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute).
 - Zie [High Performance Computing (HPC) op Azure](/azure/architecture/topics/high-performance-computing/) voor een gedetailleerdere architectuurweergave van HPC-workloads die worden uitgevoerd.

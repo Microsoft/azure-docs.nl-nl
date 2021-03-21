@@ -3,17 +3,17 @@ title: Azure-kosten beheren met automatisering
 description: In dit artikel wordt uitgelegd hoe u Azure-kosten kunt beheren met automatisering.
 author: bandersmsft
 ms.author: banders
-ms.date: 03/08/2021
+ms.date: 03/19/2021
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: adwise
-ms.openlocfilehash: a54b8243b5a680168b2e5806dd58c0fa4109728f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 2a39f77e3e7409d23ab7506b525f65e01082e99e
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104670270"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104720114"
 ---
 # <a name="manage-costs-with-automation"></a>Kosten beheren met automatisering
 
@@ -47,7 +47,7 @@ U kunt de [API voor gedetailleerde gebruiksgegevens](/rest/api/consumption/usage
 
 Met de [API voor gedetailleerde gebruiksgegevens](/rest/api/consumption/usageDetails) kunt u eenvoudig ruwe, niet-samengevoegde kostengegevens ophalen die overeenkomen met uw Azure-factuur. De API is handig wanneer uw organisatie een programmatische oplossing voor het ophalen van gegevens nodig heeft. U kunt de API gebruiken als u kleinere gegevenssets wilt analyseren. Voor grotere gegevenssets moet u echter andere oplossingen gebruiken die eerder zijn geïdentificeerd. De gegevens in Gebruiksgegevens worden per meter per dag verstrekt. Dit wordt gebruikt bij het berekenen van uw maandelijkse factuur. De GA-versie (algemene beschikbaarheid) van de API's is `2019-10-01`. Gebruik `2019-04-01-preview` voor toegang tot de preview-versie voor reservering en Azure Marketplace-aankopen met de API's.
 
-Als u een grote hoeveelheid geëxporteerde gegevens regel matig wilt ophalen, raadpleegt u [grote kosten sets terughalen met de export](ingest-azure-usage-at-scale.md).
+Als u regel matig grote hoeveel heden geëxporteerde gegevens wilt ophalen, raadpleegt u [grote kosten sets terughalen met de export](ingest-azure-usage-at-scale.md).
 
 ### <a name="usage-details-api-suggestions"></a>Suggesties van de API voor gedetailleerde gebruiksgegevens
 
@@ -74,6 +74,10 @@ Prijswijzigingen met betrekking tot gebruiksgegevens: in de gebruiksbestanden wo
   - Inbegrepen hoeveelheid, bijvoorbeeld: de eerste honderd eenheden zijn gratis en vervolgens € 10 per eenheid.
   - Reservations
   - Afronding die tijdens de berekening plaatsvindt: bij het afronden wordt rekening gehouden met het verbruikte aantal, gestaffelde/opgenomen prijzen per hoeveelheid en de geschaalde eenheidsprijs.
+
+### <a name="a-single-resource-might-have-multiple-records-for-a-single-day"></a>Eén resource kan meerdere records voor één dag bevatten
+
+Azure-resource providers verzenden het gebruik en de kosten voor het facturerings systeem en vullen het `Additional Info` veld van de gebruiks records in. Af en toe kunnen resource providers het gebruik voor een bepaalde dag verzenden en de records met verschillende data centers stem pelen in het `Additional Info` veld van de gebruiks records. Het kan ertoe leiden dat meerdere records voor een meter/resource voor één dag in het gebruiks bestand aanwezig zijn. In dat geval wordt u niet overbelast. De meervoudige records vertegenwoordigen de volledige kosten van de meter voor de resource op die dag.
 
 ## <a name="example-usage-details-api-requests"></a>Voorbeeld van API voor gedetailleerde gebruiksgegevens
 

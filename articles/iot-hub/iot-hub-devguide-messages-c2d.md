@@ -9,12 +9,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 03/15/2018
 ms.custom: mqtt, devx-track-azurecli
-ms.openlocfilehash: 5515d1084b28091cf7d20958cfca8af3f2664563
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: 154b496a6c14d307c09ddcd1b42bf4ba568cb315
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102199489"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104607888"
 ---
 # <a name="send-cloud-to-device-messages-from-an-iot-hub"></a>Cloud-naar-apparaat-berichten verzenden vanuit een IoT-hub
 
@@ -91,6 +91,8 @@ Zoals uitgelegd in [eind punten](iot-hub-devguide-endpoints.md), levert de IOT-h
 | UserId       | `{iot hub name}` |
 | Invoer  | `application/vnd.microsoft.iothub.feedback.json` |
 
+Het systeem verzendt de feedback wanneer de batch tot 64 berichten heeft of in 15 seconden van de laatste verzen ding, afhankelijk van wat het eerste komt. 
+
 De hoofd tekst is een JSON-serialisatie matrix met records, elk met de volgende eigenschappen:
 
 | Eigenschap           | Beschrijving |
@@ -98,7 +100,7 @@ De hoofd tekst is een JSON-serialisatie matrix met records, elk met de volgende 
 | EnqueuedTimeUtc    | Een tijds tempel die aangeeft wanneer de uitkomst van het bericht is opgetreden (bijvoorbeeld omdat de hub het feedback bericht heeft ontvangen of het oorspronkelijke bericht is verlopen) |
 | OriginalMessageId  | De *MessageId* van het Cloud-naar-apparaat-bericht waarop deze feedback informatie betrekking heeft |
 | Status code         | Een vereiste teken reeks die wordt gebruikt in feedback berichten die door de IoT hub worden gegenereerd: <br/> *Geslaagd* <br/> *Verlopen* <br/> *DeliveryCountExceeded* <br/> *Afgewezen* <br/> *Opgeschoond* |
-| Beschrijving        | Teken reeks waarden voor *status* code |
+| Description        | Teken reeks waarden voor *status* code |
 | DeviceId           | De *DeviceID* van het doel apparaat van het Cloud-naar-apparaat-bericht waarop dit feedback-item betrekking heeft |
 | DeviceGenerationId | De *DeviceGenerationId* van het doel apparaat van het Cloud-naar-apparaat-bericht waarop dit feedback-item betrekking heeft |
 

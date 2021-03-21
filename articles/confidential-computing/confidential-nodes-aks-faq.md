@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 02/09/2020
 ms.author: amgowda
 ms.openlocfilehash: 550995f0be3d634e7e9f24a8bf6826916003308e
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100653394"
 ---
 # <a name="frequently-asked-questions-about-confidential-computing-nodes-on-azure-kubernetes-service-aks"></a>Veelgestelde vragen over de knoop punten van vertrouwelijke computing in azure Kubernetes service (AKS)
@@ -19,7 +19,7 @@ In dit artikel worden veelgestelde vragen behandeld over op Intel SGX gebaseerde
 
 <a name="1"></a>
 ### <a name="are-the-confidential-computing-nodes-on-aks-in-ga"></a>Bevinden zich de vertrouwelijke computing knooppunten op AKS in GA? ###
-Yes
+Ja
 
 <a name="2"></a>
 ### <a name="what-is-attestation-and-how-can-we-do-attestation-of-apps-running-in-enclaves"></a>Wat is Attestation en hoe kunnen we nagaan of apps worden uitgevoerd in enclaves? ###

@@ -5,12 +5,12 @@ author: mscurrell
 ms.author: markscu
 ms.date: 03/15/2021
 ms.topic: how-to
-ms.openlocfilehash: 4a0d3e017f36f580024b77fbd23145d7447f336d
-ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
+ms.openlocfilehash: 86ea4ce4d596875e455d7b86250882713a14337f
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103564402"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104720148"
 ---
 # <a name="check-for-pool-and-node-errors"></a>Controleren op groeps-en knooppunt fouten
 
@@ -136,14 +136,16 @@ Sommige van deze bestanden worden slechts eenmaal geschreven wanneer groeps knoo
 
 Andere bestanden worden geschreven voor elke taak die wordt uitgevoerd op een knoop punt, zoals stdout en stderr. Als een groot aantal taken wordt uitgevoerd op hetzelfde knoop punt en/of de taak bestanden te groot zijn, kunnen ze het tijdelijke station vullen.
 
-De grootte van het tijdelijke station is afhankelijk van de grootte van de virtuele machine. Een overweging bij het kiezen van een VM-grootte is om ervoor te zorgen dat de tijdelijke schijf voldoende ruimte heeft.
+Nadat het knoop punt is gestart, is bovendien een kleine hoeveelheid ruimte nodig op de besturingssysteem schijf om gebruikers te maken.
+
+De grootte van het tijdelijke station is afhankelijk van de grootte van de virtuele machine. Een overweging bij het kiezen van een VM-grootte is om ervoor te zorgen dat de tijdelijke schijf voldoende ruimte heeft voor de geplande werk belasting.
 
 - In de Azure Portal wanneer u een groep toevoegt, kan de volledige lijst met VM-grootten worden weer gegeven en de kolom ' bron schijf grootte '.
 - De artikelen waarin alle VM-grootten worden beschreven, hebben tabellen met de kolom Temp Storage. voor beeld van [geoptimaliseerde VM-grootten](../virtual-machines/sizes-compute.md)
 
 Voor bestanden die door elke taak zijn geschreven, kan een Bewaar periode worden opgegeven voor elke taak die bepaalt hoe lang de taak bestanden worden bewaard voordat ze automatisch worden opgeruimd. De retentie tijd kan worden gereduceerd om de opslag vereisten te verlagen.
 
-Als de tijdelijke schijf bijna geen ruimte meer heeft (of bijna helemaal geen ruimte meer heeft), wordt de status van het knoop punt [onbruikbaar](/rest/api/batchservice/computenode/get#computenodestate) gemaakt en wordt er een knooppunt fout gerapporteerd met de melding dat de schijf vol is.
+Als de tijdelijke of besturingssysteem schijf bijna geen ruimte meer heeft (of bijna helemaal geen ruimte meer heeft), wordt het knoop punt verplaatst naar een niet- [bruikbare](/rest/api/batchservice/computenode/get#computenodestate) status en wordt er een knooppunt fout gerapporteerd met de melding dat de schijf vol is.
 
 Als u niet zeker weet wat er ruimte is op het knoop punt, kunt u externe toegang tot het knoop punt proberen en hand matig onderzoeken waar de ruimte is verdwenen. U kunt ook de [API voor batch-lijst bestanden](/rest/api/batchservice/file/listfromcomputenode) gebruiken om bestanden in met batch beheerde mappen te onderzoeken (bijvoorbeeld taak uitvoer). Houd er rekening mee dat met deze API alleen bestanden in de door batch beheerde directory's worden weer gegeven. Als uw taken elders bestanden hebben gemaakt, worden ze niet weer geven.
 

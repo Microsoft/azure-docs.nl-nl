@@ -4,13 +4,14 @@ description: Overzicht van de Azure Monitor-agent (AMA), waarmee bewakings gegev
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 08/10/2020
-ms.openlocfilehash: 0487e5bd8109c02605e785e74d45589dd5fde5b9
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.date: 03/16/2021
+ms.custom: references_regions
+ms.openlocfilehash: f1f1ea787406d900c8035c0462ef903b848d7e81
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102039594"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104608211"
 ---
 # <a name="azure-monitor-agent-overview-preview"></a>Overzicht van Azure Monitor-agent (preview)
 De Azure Monitor-agent (AMA) verzamelt bewakings gegevens van het gast besturingssysteem van virtuele machines en levert deze aan Azure Monitor. In deze artikelen vindt u een overzicht van de Azure Monitor-agent, inclusief hoe u deze kunt installeren en hoe u gegevens verzameling kunt configureren.
@@ -60,6 +61,35 @@ De volgende beperkingen zijn van toepassing tijdens de open bare preview van de 
   - *. control.monitor.azure.com
 
 
+## <a name="supported-regions"></a>Ondersteunde regio’s
+Azure Monitor-agent ondersteunt momenteel bronnen in de volgende regio's:
+
+- Azië - oost
+- Azië - zuidoost
+- Australië - centraal
+- Australië - oost
+- Australië - zuidoost
+- Canada - midden
+- Europa - noord
+- Europa - west
+- Frankrijk - centraal
+- Duitsland - west-centraal
+- India - centraal
+- Japan - oost
+- Korea - centraal
+- Zuid-Afrika - noord
+- Zwitserland - noord
+- Verenigd Koninkrijk Zuid
+- Verenigd Koninkrijk West
+- VS - centraal
+- VS - oost
+- VS - oost 2
+- VS - noord-centraal
+- VS - zuid-centraal
+- VS - west
+- VS - west 2
+- VS - west-centraal
+
 ## <a name="coexistence-with-other-agents"></a>Samen werking met andere agents
 De Azure Monitor-agent kan naast de bestaande agents worden gebruikt, zodat u de bestaande functionaliteit ervan kunt blijven gebruiken tijdens de evaluatie of migratie. Dit is met name belang rijk vanwege de beperkingen in de open bare Preview bij de ondersteuning van bestaande oplossingen. Wees voorzichtig met het verzamelen van dubbele gegevens, omdat dit ertoe kan leiden dat query resultaten worden gescheefd en dat er extra kosten in rekening worden gebracht voor gegevens opname en-retentie.
 
@@ -75,7 +105,7 @@ De volgende tabel bevat de gegevens typen die u op dit moment kunt verzamelen me
 
 De Azure Monitor-agent verzendt gegevens naar Azure Monitor metrieken of een Log Analytics-werk ruimte die Azure Monitor logboeken ondersteunt.
 
-| Gegevensbron | Bestemmingen | Beschrijving |
+| Gegevensbron | Bestemmingen | Description |
 |:---|:---|:---|
 | Prestaties        | Metrische gegevens van Azure Monitor<br>Log Analytics-werkruimte | Numerieke waarden meten de prestaties van verschillende aspecten van het besturings systeem en de werk belastingen. |
 | Windows-gebeurtenis logboeken | Log Analytics-werkruimte | Gegevens die worden verzonden naar het Windows-systeem voor gebeurtenis registratie. |

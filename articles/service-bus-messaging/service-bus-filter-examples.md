@@ -4,10 +4,10 @@ description: In dit artikel vindt u voor beelden voor het definiëren van filter
 ms.topic: how-to
 ms.date: 02/17/2021
 ms.openlocfilehash: bcbb72901ed8e2dfe0932163ee18683e0011ce70
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100654169"
 ---
 # <a name="set-subscription-filters-azure-service-bus"></a>Abonnements filters instellen (Azure Service Bus)

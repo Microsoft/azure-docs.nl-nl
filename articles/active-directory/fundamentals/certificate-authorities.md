@@ -14,10 +14,10 @@ ms.reviewer: baselden
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: bea6f4161bcca063cd2c58d4c463473426f159ba
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96859128"
 ---
 # <a name="certificate-authorities-used-by-azure-active-directory"></a>Certificerings instanties die door Azure Active Directory worden gebruikt

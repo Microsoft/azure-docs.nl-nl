@@ -8,10 +8,10 @@ ms.subservice: purview-data-catalog
 ms.topic: conceptual
 ms.date: 11/23/2020
 ms.openlocfilehash: 48966e481f9cf8796c866b5c15a4e2a8616eade7
-ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/19/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97695862"
 ---
 # <a name="azure-purview-deployment-best-practices"></a>Aanbevolen procedures voor de implementatie van Azure controle sfeer liggen
@@ -56,7 +56,7 @@ De algemene benadering is het opsplitsen van deze overkoepelend-doel stellingen 
 |Verbruik|De zakelijke gebruikers moeten informatie kunnen vinden over elk activum voor zowel zakelijke als technische meta gegevens.|
 |Herkomst|Elk activum moet een grafische weer gave van de onderliggende gegevens sets tonen, zodat de gebruikers inzicht hebben in de oorspronkelijke bronnen en welke wijzigingen zijn aangebracht.|
 |Samenwerking|Het platform moet gebruikers in staat stellen om samen te werken door aanvullende informatie over elke gegevens Asset te verstrekken.|
-|Rapporten|De gebruikers moeten rapportages kunnen weer geven over de gegevens die ze nodig hebben, inclusief gevoelige gegevens en gegevens die extra verrijkend moeten zijn.|
+|Rapportages|De gebruikers moeten rapportages kunnen weer geven over de gegevens die ze nodig hebben, inclusief gevoelige gegevens en gegevens die extra verrijkend moeten zijn.|
 |Gegevens-governance|Het platform moet de beheerder toestaan beleid voor toegangs beheer te definiëren en de gegevens toegang automatisch af te dwingen op basis van elke gebruiker.|
 |Werkstroom|Het platform moet de mogelijkheid hebben om werk stromen te maken en te wijzigen, zodat het eenvoudig kan worden uitgeschaald en verschillende taken binnen het platform kunnen worden geautomatiseerd.|
 |Integratie|Andere technologieën van derden, zoals ticketing of indeling, moeten kunnen worden geïntegreerd in het platform via script-of REST-Api's.|
@@ -90,7 +90,7 @@ Enkele belang rijke belanghebbenden die u mogelijk wilt gebruiken:
 |**Domein/eigenaar van het bedrijf**|Een zakelijke persoon die van invloed is op het gebruik van hulpprogram ma's en budget beheer heeft|
 |**Gegevensanalist**|Kan een bedrijfs probleem melden en gegevens analyseren zodat leidinggevenden zakelijke beslissingen kunnen nemen|
 |**Data architect**|Data bases ontwerpen voor bedrijfskritische line-of-Business-Apps, samen met het ontwerpen en implementeren van gegevens beveiliging|
-|**Data engineer**|De gegevens stack actief maken en onderhouden, gegevens uit verschillende bronnen ophalen, gegevens integreren en voorbereiden, gegevens pijplijnen instellen|
+|**Data Engineer**|De gegevens stack actief maken en onderhouden, gegevens uit verschillende bronnen ophalen, gegevens integreren en voorbereiden, gegevens pijplijnen instellen|
 |**Data scientist**|Bouw analytische modellen en stel gegevens producten in die moeten worden geopend door Api's|
 |**DB-beheerder**|Aan data base gerelateerde incidenten en aanvragen binnen Service Level Agreements (Sla's) vastleggen en oplossen; Kan gegevens pijplijnen instellen|
 |**DevOps**|De ontwikkeling en implementatie van line-of-business-toepassingen; kan schrijf scripts en indelings mogelijkheden bevatten|
@@ -168,7 +168,7 @@ In deze fase moet controle sfeer liggen worden gemaakt en geconfigureerd voor ee
 |Taak|Detail|Duur|
 |---------|---------|---------|
 |Verzamelen & akkoord met vereisten|Discussie met alle belanghebbenden om een volledige set vereisten te verzamelen. Verschillende personen moeten deel nemen aan een subset van vereisten die moeten worden voltooid voor elke fase van het project.|1 week|
-|Het Start pakket instellen|Ga door naar [controle sfeer liggen Quick Start](create-catalog-portal.md) en stel de [controle sfeer liggen-Start pakket](tutorial-scan-data.md) in op demo controle sfeer liggen voor alle betrokkenen.|1 dag|
+|Het Start pakket instellen|Ga door naar [controle sfeer liggen snel starten](create-catalog-portal.md) en stel de [controle sfeer liggen-Start pakket](tutorial-scan-data.md) in op demo controle sfeer liggen voor alle betrokkenen.|1 dag|
 |Navigeren in controle sfeer liggen|Meer informatie over het gebruik van controle sfeer liggen op de start pagina.|1 dag|
 |ADF configureren voor afkomst|Bepaal de belangrijkste pijp lijnen en gegevensassets. Verzamel alle informatie die nodig is om verbinding te maken met een intern ADF-account.|1 dag|
 |Een gegevens bron scannen, zoals Azure Data Lake Storage|Voeg de gegevens bron toe en stel een scan in. Zorg ervoor dat alle assets zijn gedetecteerd met de scan.|2 dag|

@@ -16,10 +16,10 @@ ms.topic: article
 ms.date: 11/18/2020
 ms.author: Zhchia
 ms.openlocfilehash: 3c7efca5e052c2d0680aa7ca3e1b6d27bfdd7d11
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96862476"
 ---
 # <a name="tutorial-configure-playvox-for-automatic-user-provisioning"></a>Zelf studie: Playvox configureren voor automatische gebruikers inrichting
@@ -88,7 +88,7 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 Automatische gebruikers inrichting configureren voor Playvox in azure AD:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Selecteer **Bedrijfstoepassingen** en vervolgens **Alle toepassingen**.
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). Selecteer **Bedrijfstoepassingen** en vervolgens **Alle toepassingen**.
 
     ![Gedeeltelijke scherm opname van de Azure Portal, met bedrijfs toepassingen en alle toepassingen items gemarkeerd](common/enterprise-applications.png)
 
@@ -143,7 +143,7 @@ Automatische gebruikers inrichting configureren voor Playvox in azure AD:
 
     ![Gedeeltelijke scherm opname van de sectie instellingen, met daarin de vervolg keuzelijst bereik.](common/provisioning-scope.png)
 
-13. Selecteer **Opslaan** als u klaar bent voor het inrichten.
+13. Selecteer **Opslaan** als u klaar bent om in te richten.
 
     ![Gedeeltelijke scherm opname van opties voor opslaan en negeren.](common/provisioning-configuration-save.png)
 

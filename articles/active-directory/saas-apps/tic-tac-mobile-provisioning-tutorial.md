@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 10/08/2020
 ms.author: Zhchia
 ms.openlocfilehash: 91ae51b9a2785dbc40c55fa58b26763916e8d16c
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "101644575"
 ---
 # <a name="tutorial-configure-tic-tac-mobile-for-automatic-user-provisioning"></a>Zelfstudie: Tic-Tac Mobile configureren voor automatische gebruikersinrichting

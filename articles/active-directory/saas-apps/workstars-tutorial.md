@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
 ms.openlocfilehash: 9f53072b106bedb8e49ba7f3728f39137f848a58
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92895015"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-workstars"></a>Zelfstudie: Integratie van Azure Active Directory met Workstars
@@ -49,7 +49,7 @@ Om de integratie van Workstars te configureren in Azure AD, moet u Workstars uit
 
 **Voer de volgende stappen uit om Workstars toe te voegen vanuit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -61,7 +61,7 @@ Om de integratie van Workstars te configureren in Azure AD, moet u Workstars uit
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **Workstars** , selecteer **Workstars** in het resultatenvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **Workstars**, selecteer **Workstars** in het resultatenvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
      ![Workstars in de resultatenlijst](common/search-new-app.png)
 
@@ -142,13 +142,13 @@ Voer de volgende stappen uit om Azure AD-eenmalige aanmelding te configureren vo
 
     a. Typ **Office 365** in **Identity Provider Name**.
 
-    b. Plak de waarde van **Azure AD-id** , die u hebt gekopieerd vanuit Azure Portal, in het tekstvak **Identity Provider Entity ID**.
+    b. Plak de waarde van **Azure AD-id**, die u hebt gekopieerd vanuit Azure Portal, in het tekstvak **Identity Provider Entity ID**.
 
     c. Kopieer de inhoud van het gedownloade certificaatbestand in Kladblok naar het klembord en plak deze in het tekstvak **x509 Certificate**. 
 
     d. Plak in het tekstvak **SAML SSO URL** de waarde van **Aanmeldings-URL** die u hebt gekopieerd uit de Azure-portal.
     
-    e. Plak in het tekstvak **Remote Logout URL** de waarde van **Afmeldings-URL** , die u hebt gekopieerd uit Azure Portal. 
+    e. Plak in het tekstvak **Remote Logout URL** de waarde van **Afmeldings-URL**, die u hebt gekopieerd uit Azure Portal. 
 
     f. Selecteer **Name ID** in **Email (Default)** .
 
@@ -158,7 +158,7 @@ Voer de volgende stappen uit om Azure AD-eenmalige aanmelding te configureren vo
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 

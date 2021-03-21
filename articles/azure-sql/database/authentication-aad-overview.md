@@ -12,10 +12,10 @@ ms.author: mireks
 ms.reviewer: vanto, sstein
 ms.date: 04/23/2020
 ms.openlocfilehash: a636c0e2a41b636f30ada14d4f16a022f2890b71
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96454300"
 ---
 # <a name="use-azure-active-directory-authentication"></a>Azure Active Directory-verificatie gebruiken
@@ -49,7 +49,7 @@ Met Azure AD-verificatie kunt u de identiteit van databasegebruikers en andere M
 - Azure AD biedt ondersteuning voor vergelijkbare verbindingen van SQL Server Data Tools (SSDT) die gebruikmaken van Active Directory Interactive Authentication. Zie [Azure Active Directory-ondersteuning in SQL Server Data tools (SSDT)](/sql/ssdt/azure-active-directory) voor meer informatie.
 
 > [!NOTE]  
-> Het is niet mogelijk om verbinding te maken met een SQL Server-exemplaar dat wordt uitgevoerd op een virtuele machine van Azure (VM) met behulp van een Azure Active Directory-account. Gebruik in plaats hiervan een Active Directory-domeinaccount.  
+> Verbinding maken met een SQL-serverexemplaar dat wordt uitgevoerd op een Azure VM (virtual machine) wordt niet ondersteund bij gebruik van een Azure Active Directory-account. Gebruik in plaats hiervan een Active Directory-domeinaccount.  
 
 De configuratiestappen omvatten de volgende procedures voor het configureren en gebruiken van Azure Active Directory-verificatie.
 
@@ -140,7 +140,7 @@ Azure Active Directory-verificatie ondersteunt de volgende methoden om verbindin
 - Azure Active Directory universeel met Multi-Factor Authentication
 - Verificatie van toepassingstoken gebruiken
 
-De volgende verificatie methoden worden ondersteund voor Azure AD-server-principals (aanmeldingen):
+De volgende verificatiemethoden worden ondersteund voor Azure AD-server-principals (aanmeldingen):
 
 - Azure Active Directory – wachtwoord
 - Azure Active Directory – geïntegreerd

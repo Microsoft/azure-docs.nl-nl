@@ -8,10 +8,10 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
 ms.openlocfilehash: bf0e868e9ee746da1dfe1b03403d21f7edb3bd5e
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95544646"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-using-go"></a>Quickstart: blobs downloaden, uploaden en vermelden met behulp van Go
@@ -149,9 +149,9 @@ Blob-opslag ondersteunt blok-blobs, toevoeg-blobs en pagina-blobs. Omdat blok-bl
 
 Als u een bestand wilt uploaden naar een blob, opent u het bestand met **os. Open**. U kunt het bestand vervolgens naar het opgegeven pad uploaden met een van de REST API's: Upload (PutBlob), StageBlock/CommitBlockList (PutBlock/PutBlockList). 
 
-De SDK biedt [API's op hoog niveau](https://github.com/Azure/azure-storage-blob-go/blob/master/azblob/highlevel.go) die zijn gebaseerd op de REST-API's op laag niveau. De functie **_UploadFileToBlockBlob_* _ maakt bijvoorbeeld gebruik van StageBlock-bewerkingen (PutBlock) om gelijktijdig een bestand in segmenten te uploaden om de doorvoer te optimaliseren. Als het bestand minder dan 256 MB is, wordt in plaats daarvan Upload (PutBlob) gebruikt om de overdracht in één transactie te voltooien.
+De SDK biedt [API's op hoog niveau](https://github.com/Azure/azure-storage-blob-go/blob/master/azblob/highlevel.go) die zijn gebaseerd op de REST-API's op laag niveau. De functie ***UploadFileToBlockBlob*** maakt bijvoorbeeld gebruik van StageBlock-bewerkingen (PutBlock) om gelijktijdig een bestand in segmenten te uploaden om de doorvoer te optimaliseren. Als het bestand minder dan 256 MB is, wordt in plaats daarvan Upload (PutBlob) gebruikt om de overdracht in één transactie te voltooien.
 
-In het volgende voorbeeld wordt het bestand geüpload naar de container met de naam _*quickstartblobs-[randomstring]**.
+In het volgende voorbeeld wordt het bestand geüpload naar de container met de naam **quickstartblobs-[randomstring]**.
 
 ```go
 // Create a file to test the upload and download.

@@ -10,10 +10,10 @@ services: iot-dps
 ms.devlang: java
 ms.custom: mvc, devx-track-java
 ms.openlocfilehash: 7a0e15ac3c08f55e817eb6a6300d58ab4af6029c
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94966655"
 ---
 # <a name="quickstart-create-and-provision-a-simulated-tpm-device-using-java-device-sdk-for-azure-iot-hub-device-provisioning-service"></a>Quickstart: Een gesimuleerd TPM-apparaat met de Java-apparaat-SDK maken en inrichten voor Azure IoT Hub Device Provisioning Service (DPS).
@@ -24,7 +24,7 @@ In deze quickstart maakt u een gesimuleerd IoT-apparaat op uw Windows-computer. 
 
 ## <a name="prerequisites"></a>Vereisten
 
-- Vertrouwd zijn met het [inrichten](about-iot-dps.md#provisioning-process) van concepten.
+- Vertrouwd zijn met de concepten van [inrichten](about-iot-dps.md#provisioning-process).
 - U hebt [IoT Hub Device Provisioning Service instellen met Azure Portal](./quick-setup-auto-provision.md) voltooid.
 - Een Azure-account met een actief abonnement. [Maak er gratis een](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 - [Java SE Development Kit 8](/azure/developer/java/fundamentals/java-jdk-long-term-support).
@@ -98,8 +98,8 @@ In deze quickstart maakt u een gesimuleerd IoT-apparaat op uw Windows-computer. 
 
 Azure IoT Device Provisioning Service ondersteunt twee typen inschrijvingen:
 
-- [Registratiegroepen](concepts-service.md#enrollment-group): wordt gebruikt om meerdere gerelateerde apparaten in te schrijven.
-- [Afzonderlijke inschrijvingen](concepts-service.md#individual-enrollment): wordt gebruikt om een enkel apparaat in te schrijven.
+- [Inschrijvingsgroepen](concepts-service.md#enrollment-group): Wordt gebruikt om meerdere gerelateerde apparaten in te schrijven.
+- [Individuele inschrijvingen](concepts-service.md#individual-enrollment): Wordt gebruikt om één apparaat in te schrijven.
 
 In dit artikel worden individuele inschrijvingen gedemonstreerd.
 

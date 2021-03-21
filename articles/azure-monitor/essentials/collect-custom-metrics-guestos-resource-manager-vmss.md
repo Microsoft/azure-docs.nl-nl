@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 09/09/2019
 ms.author: ancav
 ms.openlocfilehash: c5f536295bce07e70606f1ff286b08f8465d59f9
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102048927"
 ---
 # <a name="send-guest-os-metrics-to-the-azure-monitor-metric-store-by-using-an-azure-resource-manager-template-for-a-windows-virtual-machine-scale-set"></a>De metrische gegevens van het gast besturingssysteem naar het Azure Monitor metrische archief verzenden met behulp van een Azure Resource Manager sjabloon voor een Windows-schaalset voor virtuele machines
@@ -270,7 +270,7 @@ Als u de Resource Manager-sjabloon wilt implementeren, gebruikt u Azure PowerShe
 
 ## <a name="chart-your-metrics"></a>Grafieken van uw metrische gegevens 
 
-1. Meld u aan bij de Azure-portal. 
+1. Meld u aan bij Azure Portal. 
 
 1. Selecteer in het menu links de optie **monitor**. 
 

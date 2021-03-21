@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 10/16/2020
 ms.author: duau
 ms.openlocfilehash: 1835377f4690097c8390957bf7d897242ba7aace
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92208053"
 ---
 # <a name="tutorial-configure-priority-traffic-routing-method-in-traffic-manager"></a>Zelfstudie: De geprioriteerde verkeersrouteringsmethode configureren in Traffic Manager
@@ -38,7 +38,7 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 ## <a name="to-configure-the-priority-traffic-routing-method"></a>Ga als volgt te werk om geprioriteerde verkeersrouteringsmethode te configureren
 1. Meld u vanuit een browser aan bij [Azure Portal](https://portal.azure.com).
 
-1. Selecteer **+ Een resource maken** aan de linkerkant. Zoek naar **Traffic Manager-profiel** en selecteer **Maken** .
+1. Selecteer **+ Een resource maken** aan de linkerkant. Zoek naar **Traffic Manager-profiel** en selecteer **Maken**.
 
     :::image type="content" source="./media/traffic-manager-priority-routing-method/create-traffic-manager-priority-profile.png" alt-text="Een prioriteitsprofiel maken in Traffic Manager":::
 
@@ -47,7 +47,7 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
     | Instelling         | Waarde                                              |
     | ---             | ---                                                |
     | Naam            | Geef een naam op voor het profiel. Deze naam moet uniek zijn binnen de trafficmanager.net-zone. Voor toegang tot uw Traffic Manager-profiel gebruikt u de DNS-naam `<profilename>.trafficmanager.net`. |    
-    | Routeringsmethode  | Selecteer **Prioriteit** . |
+    | Routeringsmethode  | Selecteer **Prioriteit**. |
     | Abonnement    | Selecteer uw abonnement. |
     | Resourcegroep   | Gebruik een bestaande resourcegroep of maak een nieuwe resourcegroep om dit profiel voor te maken. Als u ervoor kiest om een nieuwe resourcegroep te maken, gebruikt u de vervolgkeuzelijst *Locatie van resourcegroep* om de locatie van de resourcegroep op te geven. Deze instelling verwijst naar de locatie van de resourcegroep en heeft geen invloed op het Traffic Manager-profiel dat wereldwijd wordt geïmplementeerd. |
 
@@ -59,11 +59,11 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 
 1. Selecteer het Traffic Manager-profiel in de lijst.
 
-    :::image type="content" source="./media/traffic-manager-priority-routing-method/traffic-manager-profile-list.png" alt-text="Een prioriteitsprofiel maken in Traffic Manager":::
+    :::image type="content" source="./media/traffic-manager-priority-routing-method/traffic-manager-profile-list.png" alt-text="Lijst met Traffic Manager-profielen":::
 
 1. Selecteer **Eindpunten** onder *Instellingen* en selecteer **+ Toevoegen** om een nieuw eindpunt toe te voegen.
 
-    :::image type="content" source="./media/traffic-manager-priority-routing-method/traffic-manager-add-endpoints.png" alt-text="Een prioriteitsprofiel maken in Traffic Manager":::
+    :::image type="content" source="./media/traffic-manager-priority-routing-method/traffic-manager-add-endpoints.png" alt-text="Eindpunten toevoegen in Traffic Manager":::
 
 1. Typ of selecteer de volgende instellingen: 
 
@@ -78,11 +78,11 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 
 1. Selecteer **Toevoegen** om het eindpunt toe te voegen. Herhaal stap 2 en 3 om meer eindpunten toe te voegen. Vergeet niet het juiste prioriteitsnummer in te stellen.
 
-    :::image type="content" source="./media/traffic-manager-priority-routing-method/add-endpoint.png" alt-text="Een prioriteitsprofiel maken in Traffic Manager":::
+    :::image type="content" source="./media/traffic-manager-priority-routing-method/add-endpoint.png" alt-text="Eindpunt met prioriteit 1 toevoegen":::
 
 1. Controleer op de pagina **Eindpunten** de volgorde van prioriteit voor uw eindpunten. Als u **Prioriteit** als methode voor verkeersroutering hebt geselecteerd, is de volgorde van de geselecteerde eindpunten van belang. Controleer de prioriteitsvolgorde van eindpunten.  Het primaire eindpunt staat bovenaan. Controleer de volgorde waarin het wordt weergegeven. Alle aanvragen worden doorgestuurd naar het eerste eindpunt. Als Traffic Manager detecteert dat dit eindpunt een slechte status heeft, wordt automatisch een failover uitgevoerd naar het volgende eindpunt. 
 
-    :::image type="content" source="./media/traffic-manager-priority-routing-method/endpoints-list.png" alt-text="Een prioriteitsprofiel maken in Traffic Manager":::
+    :::image type="content" source="./media/traffic-manager-priority-routing-method/endpoints-list.png" alt-text="Lijst met prioriteitseindpunten":::
 
 1. Als u de prioriteitsvolgorde van de eindpunten wilt wijzigen, selecteert u een eindpunt, wijzigt de prioriteitswaarde en selecteert u **Opslaan** om de eindpuntinstellingen op te slaan.
 
@@ -90,19 +90,19 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 
 1.  Zoek in de zoekbalk van de portal de naam van het **Traffic Manager-profiel** dat u in het vorige gedeelte hebt gemaakt en selecteer het Traffic Manager-profiel in de weergegeven resultaten.
 
-    :::image type="content" source="./media/traffic-manager-priority-routing-method/search-traffic-manager-profile.png" alt-text="Een prioriteitsprofiel maken in Traffic Manager":::
+    :::image type="content" source="./media/traffic-manager-priority-routing-method/search-traffic-manager-profile.png" alt-text="Traffic Manager-profiel zoeken":::
 
 1.  De overzichtspagina **Traffic Manager-profiel** geeft de DNS-naam weer van het Traffic Manager-profiel dat u zojuist hebt gemaakt. Dit kan door clients worden gebruikt (bijvoorbeeld door ernaar te navigeren met een webbrowser) om naar het juiste eindpunt te gaan, zoals wordt bepaald door het routeringstype. In dit geval worden alle aanvragen doorgestuurd naar het eerste eindpunt. Als Traffic Manager detecteert dat dit eindpunt een slechte status heeft, wordt automatisch een failover uitgevoerd naar het volgende eindpunt.
 
-    :::image type="content" source="./media/traffic-manager-priority-routing-method/traffic-manager-profile-dns-name.png" alt-text="Een prioriteitsprofiel maken in Traffic Manager":::
+    :::image type="content" source="./media/traffic-manager-priority-routing-method/traffic-manager-profile-dns-name.png" alt-text="DNS-naam van Traffic Manager":::
 
 1. Als uw Traffic Manager-profiel werkt, kunt u de DNS-record op uw gezaghebbende DNS-server zo bewerken dat de domeinnaam van uw bedrijf verwijst naar de Traffic Manager-domeinnaam.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Als u het Traffic Manager-profiel niet meer nodig hebt, zoekt u het profiel op en selecteert u **Profiel verwijderen** .
+Als u het Traffic Manager-profiel niet meer nodig hebt, zoekt u het profiel op en selecteert u **Profiel verwijderen**.
 
-:::image type="content" source="./media/traffic-manager-priority-routing-method/traffic-manager-delete-priority-profile.png" alt-text="Een prioriteitsprofiel maken in Traffic Manager":::
+:::image type="content" source="./media/traffic-manager-priority-routing-method/traffic-manager-delete-priority-profile.png" alt-text="Prioriteitsprofiel in Traffic Manager verwijderen":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

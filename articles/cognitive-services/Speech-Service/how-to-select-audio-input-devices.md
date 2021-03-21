@@ -12,10 +12,10 @@ ms.date: 07/05/2019
 ms.author: chlandsi
 ms.custom: devx-track-js
 ms.openlocfilehash: 48316d571eac835dd5d4ec7d225048f4fdcdf237
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95026604"
 ---
 # <a name="how-to-select-an-audio-input-device-with-the-speech-sdk"></a>Procedure: een audio-invoer apparaat selecteren met de Speech SDK

@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 09/25/2020
 ms.openlocfilehash: b4f54aff78526ba52e56ed9f4cf1feddf40fa69b
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94358389"
 ---
 # <a name="how-to-index-large-data-sets-in-azure-cognitive-search"></a>Grote gegevens sets indexeren in azure Cognitive Search
@@ -45,7 +45,7 @@ Zodra u tevreden bent met de laag, kan de volgende stap het aantal partities ver
 
 ### <a name="review-index-schema"></a>Het index schema controleren
 
-Het schema van uw index speelt een belang rijke rol bij het indexeren van gegevens. Hoe meer velden u hebt, en hoe meer eigenschappen u hebt ingesteld (zoals *doorzoekbaar* , *facetel* of *filterbaar* ), alle bijdragen tot een verhoogde indexerings tijd. In het algemeen moet u alleen de velden maken en opgeven die u daad werkelijk nodig hebt in een zoek index.
+Het schema van uw index speelt een belang rijke rol bij het indexeren van gegevens. Hoe meer velden u hebt, en hoe meer eigenschappen u hebt ingesteld (zoals *doorzoekbaar*, *facetel* of *filterbaar*), alle bijdragen tot een verhoogde indexerings tijd. In het algemeen moet u alleen de velden maken en opgeven die u daad werkelijk nodig hebt in een zoek index.
 
 > [!NOTE]
 > Voorkom dat de document grootte kleiner wordt door niet-query bare gegevens toe te voegen aan een index. Afbeeldingen en andere binaire gegevens kunnen niet rechtstreeks worden doorzocht en mogen niet worden opgeslagen in de index. Als u niet-query bare gegevens wilt integreren in Zoek resultaten, moet u een niet-doorzoekbaar veld definiëren waarin een URL-verwijzing naar de resource wordt opgeslagen.
@@ -79,8 +79,8 @@ U kunt dit voorbeeld wijzigen en testen met verschillende aantallen threads om h
 
 Wanneer u de aanvragen van de zoekservice verhoogt, kunnen er [HTTP-statuscodes](/rest/api/searchservice/http-status-codes) optreden die aangeven dat de aanvraag niet volledig is voltooid. Twee veelvoorkomende HTTP-statuscodes die zich tijdens het indexeren kunnen voordoen, zijn:
 
-+ **503: service niet beschikbaar** : deze fout betekent dat het systeem zwaar belast wordt en uw aanvraag op dit moment niet kan worden verwerkt.
-+ **207: meerdere statussen** : deze fout betekent dat sommige documenten zijn geslaagd, maar dat er ten minste één is mislukt.
++ **503: service niet beschikbaar**: deze fout betekent dat het systeem zwaar belast wordt en uw aanvraag op dit moment niet kan worden verwerkt.
++ **207: meerdere statussen**: deze fout betekent dat sommige documenten zijn geslaagd, maar dat er ten minste één is mislukt.
 
 ### <a name="retry-strategy"></a>Strategie voor opnieuw proberen
 
@@ -142,7 +142,7 @@ Voor Indexeer functies is de verwerkings capaciteit soepel gebaseerd op één in
 
 1. Controleer in de [Azure Portal](https://portal.azure.com)op de pagina **overzicht** van het zoek service dashboard de **prijs categorie** om te bevestigen dat deze parallelle indexering kan bevatten. De lagen basis en standaard bieden meerdere replica's.
 
-2. U kunt zoveel Indexeer functies tegelijk uitvoeren als het aantal Zoek eenheden in uw service. **Settings**  >  [Verg root](search-capacity-planning.md) de **schaal** van replica's of partities voor parallelle verwerking in instellingen schalen: een extra replica of partitie voor elke Indexeer functie-workload. Geef een voldoende waarde voor het bestaande query volume. Het voldoet niet aan query werkbelastingen voor indexering is geen goede balans.
+2. U kunt zoveel Indexeer functies tegelijk uitvoeren als het aantal Zoek eenheden in uw service.   >  [Verg root](search-capacity-planning.md) de **schaal** van replica's of partities voor parallelle verwerking in instellingen schalen: een extra replica of partitie voor elke Indexeer functie-workload. Geef een voldoende waarde voor het bestaande query volume. Het voldoet niet aan query werkbelastingen voor indexering is geen goede balans.
 
 3. Distribueer gegevens in meerdere containers op een niveau dat door Azure Cognitive Search Indexeer functies kan worden bereikt. Dit kan meerdere tabellen zijn in Azure SQL Database, meerdere containers in Azure Blob Storage of meerdere verzamelingen. Definieer één gegevens bron object voor elke tabel of container.
 

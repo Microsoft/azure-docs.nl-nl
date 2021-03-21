@@ -9,10 +9,10 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.openlocfilehash: 6321b96cb3db570102f138dcfd949d9c32daedbc
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100384466"
 ---
 # <a name="web-sdk-supported-browsers"></a>Browsers die Web-SDK ondersteunen
@@ -29,7 +29,7 @@ if (!atlas.isSupported()) {
 }
 ```
 
-## <a name="desktop"></a>Bureaublad
+## <a name="desktop"></a>Desktop
 
 De Azure Maps Web-SDK ondersteunt de volgende desktop browsers:
 

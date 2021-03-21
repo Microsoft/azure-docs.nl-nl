@@ -4,10 +4,10 @@ description: Meer informatie over de basis concepten van DevTest Labs en hoe u A
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: b184f835ee99d47ddb843e5b02136299c26bfcdc
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92327855"
 ---
 # <a name="devtest-labs-concepts"></a>DevTest Labs-concepten
@@ -55,7 +55,7 @@ Met beleids regels kunt u de kosten in uw Lab beheren. U kunt bijvoorbeeld een b
 ## <a name="caps"></a>Petjes
 Caps is een mechanisme voor het minimaliseren van afval in uw Lab. U kunt bijvoorbeeld een cap instellen om het aantal Vm's te beperken dat per gebruiker of in een Lab kan worden gemaakt.
 
-## <a name="security-levels"></a>Beveiligings niveaus
+## <a name="security-levels"></a>Beveiligingsniveaus
 Beveiligings toegang wordt bepaald door Azure op rollen gebaseerd toegangs beheer (Azure RBAC). Om te begrijpen hoe Access werkt, is het handig om te begrijpen wat de verschillen zijn tussen een machtiging, een rol en een bereik zoals gedefinieerd door Azure RBAC.
 
 * Machtiging: een machtiging is een gedefinieerde toegang tot een specifieke actie (bijvoorbeeld lees toegang tot alle virtuele machines).

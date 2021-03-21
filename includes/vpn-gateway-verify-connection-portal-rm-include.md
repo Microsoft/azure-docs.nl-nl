@@ -9,10 +9,10 @@ ms.date: 10/19/2020
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 3c825f042bb3e7fee5c00a8b34c12ca2d05f8d2e
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92217928"
 ---
 U kunt de verbindingsstatus voor een Resource Manager VPN Gateway weergeven door in Azure Portal naar de verbinding te navigeren. De volgende stappen tonen één manier om te navigeren naar uw verbinding en deze te controleren.
@@ -22,6 +22,6 @@ U kunt de verbindingsstatus voor een Resource Manager VPN Gateway weergeven door
 
    :::image type="content" source="./media/vpn-gateway-verify-connection-portal-rm-include/connections.png" alt-text="Verbindingen weer geven" lightbox="./media/vpn-gateway-verify-connection-portal-rm-include/connections-expand.png":::
 
-1. Klik op de naam van de verbinding die u wilt controleren. In **Essentials**kunt u meer informatie over uw verbinding weer geven. De **status** waarden zijn ' geslaagd ' en ' verbonden ' wanneer u een geslaagde verbinding hebt gemaakt.
+1. Klik op de naam van de verbinding die u wilt controleren. In **Essentials** kunt u meer informatie over uw verbinding weer geven. De **status** waarden zijn ' geslaagd ' en ' verbonden ' wanneer u een geslaagde verbinding hebt gemaakt.
 
-   :::image type="content" source="./media/vpn-gateway-verify-connection-portal-rm-include/essentials.png" alt-text="Verbindingen weer geven" lightbox="./media/vpn-gateway-verify-connection-portal-rm-include/essentials-expand.png":::
+   :::image type="content" source="./media/vpn-gateway-verify-connection-portal-rm-include/essentials.png" alt-text="Verbindingen controleren" lightbox="./media/vpn-gateway-verify-connection-portal-rm-include/essentials-expand.png":::

@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 04/14/2019
 ms.author: erhopf
 ms.openlocfilehash: 69898e64934c363a18a3ce2fa5e678116624bd24
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95026366"
 ---
 # <a name="get-the-cognitive-services-speech-devices-sdk"></a>De SDK voor Cognitive Services speech-apparaten ophalen
@@ -23,7 +23,7 @@ De SDK voor spraak apparaten is een vooraf geclusterde bibliotheek die is ontwor
 
 ## <a name="choose-a-development-kit"></a>Een Development Kit kiezen
 
-|Apparaten|Specificatie|Description|Scenario's|
+|Apparaten|Specificatie|Beschrijving|Scenario's|
 |--|--|--|--|
 |[Urbetter dev kit](http://www.urbetter.com/products_56/278.html) ![ URbetter DDK](media/speech-devices-sdk/device-urbetter.jpg)|7-microfoon matrix, ARM SOC, WIFI, Ethernet, HDMI, USB-camera. <br>Linux|De SDK voor spraak apparaten op branche niveau die micro soft Mic-matrix aanpast en ondersteuning biedt voor uitgebreide I/O, zoals HDMI/Ethernet en meer USB-rand apparatuur <br> [Contact opnemen met Urbetter](http://www.urbetter.com/products_56/278.html)|Transcriptie, onderwijs, zieken huis, robots, OTT box, Voice agent, drive t/m|
 |[Roobo slimme audio dev kit](http://ddk.roobo.com)<br>[Setup](speech-devices-sdk-roobo-v1.md)  /  [Snelstartgids](./speech-devices-sdk-quickstart.md?pivots=platform-android%253fpivots%253dplatform-android) ![ Roobo slimme audio dev kit](media/speech-devices-sdk/device-roobo-v1.jpg)|7-Mic-matrix, ARM SOC, WIFI, audio out, IO. <br>[Android](./speech-devices-sdk-quickstart.md?pivots=platform-android%253fpivots%253dplatform-android)|De eerste speech-apparaten SDK voor het aanpassen van micro soft Mic-matrix en front processing SDK, voor het ontwikkelen van transcriptie-en spraak scenario's van hoge kwaliteit|Conversation transcriptie, Smart spreker, Voice agent, wearable|

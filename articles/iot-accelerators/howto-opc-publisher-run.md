@@ -12,10 +12,10 @@ ms.custom:
 - amqp
 - mqtt
 ms.openlocfilehash: f7d6581a1892ebd74a1adba5c09c0af9d3cf9d43
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92079000"
 ---
 # <a name="run-opc-publisher"></a>OPC Publisher uitvoeren
@@ -377,7 +377,7 @@ Als u OPC-uitgever als module wilt toevoegen aan uw IoT Edge-implementatie, gaat
 1. Ga naar **IOT Edge** en maak of selecteer uw IOT edge-apparaat.
 1. Selecteer **modules instellen**.
 1. Selecteer **toevoegen** onder **implementatie modules** en klik vervolgens op **IOT Edge module**.
-1. Voer in het veld **naam** **Uitgever**in.
+1. Voer in het veld **naam** **Uitgever** in.
 1. Voer in het veld **URI van installatie kopie**`mcr.microsoft.com/iotedge/opc-publisher:<tag>`
 1. U kunt de beschik bare labels vinden op [docker hub](https://hub.docker.com/_/microsoft-iotedge-opc-publisher)
 1. Plak de volgende JSON in het veld met de optie voor het maken van een **container** :
@@ -405,7 +405,7 @@ Als u OPC-uitgever als module wilt toevoegen aan uw IoT Edge-implementatie, gaat
     }
     ```
 
-1. Klik op de pagina **modules instellen** op **volgende**totdat u de laatste pagina van de configuratie hebt bereikt.
+1. Klik op de pagina **modules instellen** op **volgende** totdat u de laatste pagina van de configuratie hebt bereikt.
 1. Selecteer **verzenden** om uw configuratie naar IOT Edge te verzenden.
 1. Wanneer u IoT Edge hebt gestart op uw edge-apparaat en de docker-container **Uitgever** wordt uitgevoerd, kunt u de logboek uitvoer van de OPC-Uitgever bekijken met `docker logs -f publisher` of door het logboek bestand te controleren. In het vorige voor beeld is het logboek bestand hierboven `d:\iiotegde\publisher-publisher.log` . U kunt ook het [hulp programma IOT-Edge-OPC-Uitgever-Diagnostics](https://github.com/Azure-Samples/iot-edge-opc-publisher-diagnostics)gebruiken.
 

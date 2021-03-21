@@ -9,13 +9,13 @@ ms.topic: how-to
 ms.date: 06/17/2020
 ms.author: absha
 ms.openlocfilehash: 874e554063f64ddefce99a223678d64b2e0774c3
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93397719"
 ---
-# <a name="create-certificates-to-allow-the-backend-with-azure-application-gateway"></a>Certificaten maken om de back-end met Azure-toepassing gateway toe te staan
+# <a name="create-certificates-to-allow-the-backend-with-azure-application-gateway"></a>Certificaten maken om de back-end toe te staan voor Azure Application Gateway
 
 Als u end-to-end TLS wilt uitvoeren, moeten Application Gateway de back-end-instanties worden toegestaan door verificatie/vertrouwde basis certificaten te uploaden. Voor de V1-SKU zijn verificatie certificaten vereist, maar voor de v2 SKU vertrouwde basis certificaten zijn vereist om de certificaten toe te staan.
 
@@ -51,7 +51,7 @@ Exporteer vanuit uw TLS/SSL-certificaat het bestand met de open bare sleutel. CE
 
    ![Base-64-code ring](./media/certificates-for-backend-authentication/base64.png)
 
-5. Als u het **bestand wilt exporteren** , **bladert** u naar de locatie waarnaar u het certificaat wilt exporteren. Geef bij **Bestandsnaam** de naam van het certificaatbestand op. Klik op **Volgende**.
+5. Als u het **bestand wilt exporteren**, **bladert** u naar de locatie waarnaar u het certificaat wilt exporteren. Geef bij **Bestandsnaam** de naam van het certificaatbestand op. Klik op **Volgende**.
 
    ![Scherm afbeelding toont de wizard Certificaat exporteren waarin u een bestand opgeeft dat u wilt exporteren.](./media/certificates-for-backend-authentication/browse.png)
 

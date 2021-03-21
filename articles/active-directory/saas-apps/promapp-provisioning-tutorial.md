@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 11/11/2019
 ms.author: Zhchia
 ms.openlocfilehash: 5ba9adbc8553e92eb76a4d3327681f798db19218
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94359099"
 ---
 # <a name="tutorial-configure-promapp-for-automatic-user-provisioning"></a>Zelfstudie: Promapp configureren voor automatische gebruikersinrichting
@@ -107,7 +107,7 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 3. Selecteer het tabblad **Inrichten**.
 
-    ![Schermopname van de opties onder Beheren met de optie Inrichting gemarkeerd.](common/provisioning.png)
+    ![Schermopname van de opties onder Beheren met de optie Inrichten gemarkeerd.](common/provisioning.png)
 
 4. Stel de **Inrichtingsmodus** in op **Automatisch**.
 

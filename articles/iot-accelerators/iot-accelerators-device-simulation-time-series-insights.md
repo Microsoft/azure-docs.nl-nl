@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: iot-accelerators
 services: iot-accelerators
 ms.openlocfilehash: e1409b43f0ce1fc0d8c622dda79e857ac6abdd33
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96854560"
 ---
 # <a name="use-time-series-insights-to-visualize-telemetry-sent-from-the-device-simulation-solution-accelerator"></a>Time Series Insights gebruiken om telemetrie te visualiseren die wordt verzonden vanuit de apparaat simulatie oplossings versneller
@@ -23,7 +23,7 @@ Met de Device simulatie Solution Accelerator kunt u telemetrie genereren op basi
 
 Als u de stappen in deze hand leiding wilt volgen, hebt u een actief Azure-abonnement nodig. Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 
-In de stappen in deze hand leiding wordt ervan uitgegaan dat u de apparaat simulatie oplossings versneller hebt geïmplementeerd in uw Azure-abonnement. Zie [device simulatie Deployment](https://github.com/Azure/device-simulation-dotnet/blob/master/README.md) op github als u nog geen apparaat simulatie hebt geïmplementeerd.
+In de stappen in deze hand leiding wordt ervan uitgegaan dat u de apparaat simulatie oplossings versneller hebt geïmplementeerd in uw Azure-abonnement. Als u nog geen apparaatsimulatie hebt geïmplementeerd, raadpleegt u [Apparaatsimulatie implementeren](https://github.com/Azure/device-simulation-dotnet/blob/master/README.md) in GitHub.
 
 In dit artikel wordt ervan uitgegaan dat de naam van uw oplossings versneller is **Contoso-simulatie**. Vervang **Contoso-simulatie** door de naam van uw oplossings versneller als u de volgende stappen uitvoert.
 
@@ -55,7 +55,7 @@ In de volgende stappen wordt de Azure CLI in de Azure Cloud Shell gebruikt voor 
 
 [Azure time series Insights](../../articles/time-series-insights/time-series-insights-overview.md) is een volledig beheerde analyse-, opslag-en visualisatie service voor het beheren van gegevens in de Cloud voor de tijd reeks van IOT-schaal. Een nieuwe Time Series Insights omgeving maken:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 
 1. Selecteer **een resource maken**  >  **Internet of Things**  >  **Time Series Insights**:
 

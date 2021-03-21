@@ -7,10 +7,10 @@ ms.date: 04/22/2019
 ms.author: tyleonha
 ms.reviewer: glenga
 ms.openlocfilehash: a668024db126c82f96756555aba513b77f7d7366
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93422957"
 ---
 # <a name="debug-powershell-azure-functions-locally"></a>Power shell-Azure Functions lokaal debuggen
@@ -250,7 +250,7 @@ Als deze onderbreking plaatsvindt, voert `continue` u de `c` opdracht of uit om 
 
 Als u problemen ondervindt tijdens het opsporen van fouten, moet u het volgende controleren:
 
-| Selecteren | Actie |
+| Selecteren | Bewerking |
 |------|------|
 | Voer `func --version` uit vanaf de Terminal. Als er een fout optreedt die `func` niet kan worden gevonden, zijn de kern hulpprogramma's (func.exe) mogelijk niet aanwezig in de lokale `path` variabele.| [Installeer kern Hulpprogramma's opnieuw](functions-run-local.md#v2).|  
 | In Visual Studio code moet de standaard terminal toegang hebben tot func.exe. Zorg ervoor dat u geen standaard terminal gebruikt waarvoor geen kern Hulpprogramma's zijn geïnstalleerd, zoals Windows-subsysteem voor Linux (WSL).  | Stel de standaard shell in Visual Studio code in op Power shell 7 (aanbevolen) of Windows Power shell 5,1.|

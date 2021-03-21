@@ -4,10 +4,10 @@ description: Informatie over het configureren van een lab in Azure DevTest Labs 
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: dcf5191dea64c3d7bf28b9ce1c616d3d2defb73e
-ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/19/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97695683"
 ---
 # <a name="configure-your-lab-in-azure-devtest-labs-to-use-a-remote-desktop-gateway"></a>Uw Lab in Azure DevTest Labs configureren voor het gebruik van een extern bureau blad-gateway
@@ -65,7 +65,7 @@ az resource show --name {lab-name} --resource-type 'Microsoft.DevTestLab/labs' -
 
 Configureer het lab voor het gebruik van de token verificatie met behulp van de volgende stappen:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Selecteer **alle services** en selecteer vervolgens **DevTest Labs** in de lijst.
 1. Selecteer in de lijst met Labs uw **Lab**.
 1. Selecteer op de pagina Lab de optie **configuratie en beleid**.

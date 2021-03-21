@@ -12,10 +12,10 @@ ms.custom: aaddev
 ms.service: active-directory
 ms.reviewer: marsma, lenalepa, manrath
 ms.openlocfilehash: 91df89a69368056c1967e641562cf8515f44ade0
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99582805"
 ---
 # <a name="redirect-uri-reply-url-restrictions-and-limitations"></a>Omleidings-URI (antwoord-URL) beperkingen en beperkingen
@@ -32,7 +32,7 @@ Een omleidings-URI of antwoord-URL is de locatie waar de autorisatie server de g
 
 In deze tabel ziet u het maximum aantal omleidings-Uri's dat u kunt toevoegen aan een app-registratie in het micro soft Identity-platform.
 
-| Accounts waarbij wordt aangemeld | Maximum aantal omleidings-Uri's | Description |
+| Accounts waarbij wordt aangemeld | Maximum aantal omleidings-Uri's | Beschrijving |
 |--------------------------|---------------------------------|-------------|
 | Micro soft-werk-of school accounts in de Tenant van de Azure Active Directory van een organisatie (Azure AD) | 256 | `signInAudience` het veld in het toepassings manifest is ingesteld op *AzureADMyOrg* of *AzureADMultipleOrgs* |
 | Persoonlijke micro soft-accounts en werk-en school accounts | 100 | `signInAudience` het veld in het manifest van de toepassing is ingesteld op *AzureADandPersonalMicrosoftAccount* |

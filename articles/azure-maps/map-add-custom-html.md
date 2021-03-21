@@ -10,10 +10,10 @@ services: azure-maps
 manager: ''
 ms.custom: codepen, devx-track-js
 ms.openlocfilehash: 1c4367e2a649f4e239e2dab374afc4fb867e517b
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92891190"
 ---
 # <a name="add-html-markers-to-the-map"></a>HTML-markeringen toevoegen aan de kaart
@@ -117,7 +117,7 @@ Raadpleeg de volgende artikelen voor meer code voorbeelden om toe te voegen aan 
 > [Afbeeldingssjablonen gebruiken](how-to-use-image-templates-web-sdk.md)
 
 > [!div class="nextstepaction"]
-> [Een symbool laag toevoegen](./map-add-pin.md)
+> [Een symboollaag toevoegen](./map-add-pin.md)
 
 > [!div class="nextstepaction"]
 > [Een Bubble laag toevoegen](./map-add-bubble-layer.md)

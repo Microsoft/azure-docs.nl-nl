@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 12/13/2020
 ms.author: yelevin
 ms.openlocfilehash: 018368b6284cf39edec01f0a9a943b8ea15c85d0
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98104180"
 ---
 # <a name="connect-dynamics-365-activity-logs-to-azure-sentinel"></a>Dynamics 365-activiteiten logboeken verbinden met Azure Sentinel

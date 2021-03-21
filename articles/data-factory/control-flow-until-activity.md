@@ -8,10 +8,10 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.openlocfilehash: 6431321d788e7311e076d302173ffffb96e07876
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100385367"
 ---
 # <a name="until-activity-in-azure-data-factory"></a>Until-activiteit in Azure Data Factory
@@ -53,9 +53,9 @@ Eigenschap | Beschrijving | Toegestane waarden | Vereist
 -------- | ----------- | -------------- | --------
 naam | De naam van de `Until` activiteit. | Tekenreeks | Ja
 type | Moet worden ingesteld op **until**. | Tekenreeks | Ja
-expressie | Expressie die moet worden geëvalueerd als waar of onwaar | Expressie.  | Yes
-timeout | De lus-until loopt na de opgegeven tijd hier. | Tekenreeks. `d.hh:mm:ss` (of) `hh:mm:ss` . De standaardwaarde is 7 dagen. De maximum waarde is: 90 dagen. | No
-Activiteiten | Set activiteiten die worden uitgevoerd tot de expressie wordt geëvalueerd `true` . | Matrix van activiteiten. |  Yes
+expressie | Expressie die moet worden geëvalueerd als waar of onwaar | Expressie.  | Ja
+timeout | De lus-until loopt na de opgegeven tijd hier. | Tekenreeks. `d.hh:mm:ss` (of) `hh:mm:ss` . De standaardwaarde is 7 dagen. De maximum waarde is: 90 dagen. | Nee
+Activiteiten | Set activiteiten die worden uitgevoerd tot de expressie wordt geëvalueerd `true` . | Matrix van activiteiten. |  Ja
 
 ## <a name="example-1"></a>Voorbeeld 1
 
@@ -287,7 +287,7 @@ while ($True) {
 Zie andere controle stroom activiteiten die door Data Factory worden ondersteund: 
 
 - [If Condition Activity](control-flow-if-condition-activity.md)
-- [Activiteit uitvoeren van pijplijn](control-flow-execute-pipeline-activity.md)
+- [Pijplijn activiteit uitvoeren](control-flow-execute-pipeline-activity.md)
 - [Voor elke activiteit](control-flow-for-each-activity.md)
 - [Activiteit ophalen van metagegevens](control-flow-get-metadata-activity.md)
 - [Opzoekactiviteit](control-flow-lookup-activity.md)

@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/25/2019
 ms.openlocfilehash: 21c0a7a3fe6d5be9d99ea53dbfa74cf72e163272
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92780662"
 ---
 # <a name="monitor-and-manage-performance-of-azure-sql-database-in-a-multi-tenant-saas-app"></a>Prestaties van Azure SQL Database in een multi-tenant SaaS-app bewaken en beheren
@@ -51,9 +51,9 @@ Pools en de databases in pools moeten worden gecontroleerd om ervoor te zorgen d
 ### <a name="performance-management-strategies"></a>Strategieën voor prestatiebeheer
 
 * Als u wilt voorkomen dat u handmatig prestaties moet bewaken, is **waarschuwingen instellen die worden geactiveerd wanneer databases of pools van het normale bereik afwijken** het effectiefst.
-* Het **eDTU-niveau van een pool kan omhoog of omlaag worden geschaald** om te reageren op fluctuaties op de korte termijn in de cumulatieve rekenkracht van een pool. Als deze fluctuatie regelmatig of op voorspelbare momenten optreedt, **kan het schalen van de pool op automatisch worden ingesteld** . U kunt bijvoorbeeld omlaag schalen wanneer de workload licht is, zoals 's nachts of tijdens het weekend.
+* Het **eDTU-niveau van een pool kan omhoog of omlaag worden geschaald** om te reageren op fluctuaties op de korte termijn in de cumulatieve rekenkracht van een pool. Als deze fluctuatie regelmatig of op voorspelbare momenten optreedt, **kan het schalen van de pool op automatisch worden ingesteld**. U kunt bijvoorbeeld omlaag schalen wanneer de workload licht is, zoals 's nachts of tijdens het weekend.
 * U kunt ook **afzonderlijke databases naar andere pools verplaatsen** bij fluctuaties op de langere termijn of wijzigingen in het aantal databases.
-* *Afzonderlijke* databases kunnen uit een pool worden gehaald. Hieraan kan een **afzonderlijke rekenkracht worden toegewezen als reactie op verhogingen op de korte termijn in de load van afzonderlijke databases** . Wanneer de load is verlaagd, kan de database naar de pool worden teruggezet. Als dit vooraf bekend is, kunnen databases uit voorzorg worden verplaatst om ervoor te zorgen dat ze altijd over de benodigde resources beschikken en om gevolgen voor de andere databases in de pool te voorkomen. Als het om een voorspelbare vereiste gaat, zoals bij een locatie die met een toename in kaartverkoop te maken krijgt voor een populair evenement, kan dit beheergedrag in de toepassing worden geïntegreerd.
+* *Afzonderlijke* databases kunnen uit een pool worden gehaald. Hieraan kan een **afzonderlijke rekenkracht worden toegewezen als reactie op verhogingen op de korte termijn in de load van afzonderlijke databases**. Wanneer de load is verlaagd, kan de database naar de pool worden teruggezet. Als dit vooraf bekend is, kunnen databases uit voorzorg worden verplaatst om ervoor te zorgen dat ze altijd over de benodigde resources beschikken en om gevolgen voor de andere databases in de pool te voorkomen. Als het om een voorspelbare vereiste gaat, zoals bij een locatie die met een toename in kaartverkoop te maken krijgt voor een populair evenement, kan dit beheergedrag in de toepassing worden geïntegreerd.
 
 [Azure Portal](https://portal.azure.com) biedt ingebouwde functionaliteit voor bewaking en waarschuwingen voor de meeste resources. Bewaking en waarschuwingen zijn beschikbaar voor databases en pools. De ingebouwde functionaliteit voor bewaking en waarschuwingen is resource-gebonden. Daardoor is het handig voor een klein aantal resources, maar niet erg handig als u met veel resources werkt.
 
@@ -69,8 +69,8 @@ Hoewel pools al met twee S3-databases rendabel kunnen zijn, geldt dat hoe meer d
 
 Als u al een batch tenants hebt ingericht in een eerdere zelfstudie, slaat u het gedeelte [Gebruik simuleren op alle tenantdatabases](#simulate-usage-on-all-tenant-databases) over.
 
-1. Open in de **Power shell ISE** \\Leermodules\\Prestatiebewaking en -beheer\\*Demo-PerformanceMonitoringAndManagement.ps1* . Houd dit script open; u gaat verschillende scenario's uitvoeren tijdens deze zelfstudie.
-1. Stel het volgende in: **$DemoScenario** = **1** , **Batch met tenants inrichten**
+1. Open in de **Power shell ISE** \\Leermodules\\Prestatiebewaking en -beheer\\*Demo-PerformanceMonitoringAndManagement.ps1*. Houd dit script open; u gaat verschillende scenario's uitvoeren tijdens deze zelfstudie.
+1. Stel het volgende in: **$DemoScenario** = **1**, **Batch met tenants inrichten**
 1. Druk op **F5** om het script uit te voeren.
 
 Het script implementeert 17 tenants in minder dan vijf minuten.
@@ -91,8 +91,8 @@ Het script *Demo-PerformanceMonitoringAndManagement.ps1* is bedoeld voor het sim
 
 De load-generator past een *synthetische* load alleen voor CPU toe op elke tenantdatabase. De generator start voor elke tenantdatabase een taak, die periodiek een opgeslagen procedure aanroept die de load genereert. De load-niveaus (in eDTU's), duur en intervallen zijn verschillend voor alle databases. Dit simuleert onvoorspelbare tenantactiviteit.
 
-1. Open in de **Power shell ISE** \\Leermodules\\Prestatiebewaking en -beheer\\*Demo-PerformanceMonitoringAndManagement.ps1* . Houd dit script open; u gaat verschillende scenario's uitvoeren tijdens deze zelfstudie.
-1. Stel het volgende in: **$DemoScenario** = **2** , *Load van normale intensiteit genereren* .
+1. Open in de **Power shell ISE** \\Leermodules\\Prestatiebewaking en -beheer\\*Demo-PerformanceMonitoringAndManagement.ps1*. Houd dit script open; u gaat verschillende scenario's uitvoeren tijdens deze zelfstudie.
+1. Stel het volgende in: **$DemoScenario** = **2**, *Load van normale intensiteit genereren*.
 1. Druk op **F5** om een load toe te passen op al uw tenantdatabases.
 
 Wingtip Tickets SaaS Database Per Tenant is een SaaS-app; de werkelijke workload van een SaaS-app is meestal sporadisch en onvoorspelbaar. Om dit te simuleren, produceert de load-generator een willekeurige workload die over alle tenants wordt verdeeld. Aangezien het een paar minuten duurt voordat er een load-patroon ontstaat, moet u de load-generator 3-5 minuten uitvoeren voordat u de workload in de volgende secties gaat volgen.
@@ -105,9 +105,9 @@ Wingtip Tickets SaaS Database Per Tenant is een SaaS-app; de werkelijke workload
 Open de portal naar de pool die de tenantdatabases bevat om het resourcegebruik bij te houden dat ontstaat door het toepassen van de load:
 
 1. Open [Azure Portal](https://portal.azure.com) en blader naar de server *tenants1-dpt-&lt;USER&gt;* .
-1. Scrol naar beneden, zoek de elastische pools en klik op **Pool1** . Deze pool bevat alle tenantdatabases die tot nu toe zijn gemaakt.
+1. Scrol naar beneden, zoek de elastische pools en klik op **Pool1**. Deze pool bevat alle tenantdatabases die tot nu toe zijn gemaakt.
 
-Bekijk de grafieken van **monitor van elastische pools** en **monitor van elastische databases** .
+Bekijk de grafieken van **monitor van elastische pools** en **monitor van elastische databases**.
 
 Het resourcegebruik van de pool is het cumulatieve databasegebruik voor alle databases in de pool. In het databasediagram worden de vijf meest belaste databases weergegeven:
 
@@ -123,17 +123,17 @@ Omdat er naast de top vijf nog extra databases in de pool zitten, toont het pool
 Stel een waarschuwing in voor de pool die wordt geactiveerd bij een gebruik van \>75%:
 
 1. Open *Pool1* (op de server *tenants1-dpt-\<user\>* ) in [Azure Portal](https://portal.azure.com).
-1. Klik op **Waarschuwingsregels** en klik vervolgens op **+ Waarschuwing toevoegen** :
+1. Klik op **Waarschuwingsregels** en klik vervolgens op **+ Waarschuwing toevoegen**:
 
    ![waarschuwing toevoegen](./media/saas-dbpertenant-performance-monitoring/add-alert.png)
 
-1. Geef een naam op, bijvoorbeeld **hoog DTU** .
+1. Geef een naam op, bijvoorbeeld **hoog DTU**.
 1. Stel de volgende waarden in:
    * **Metriek = eDTU-percentage**
    * **Voorwaarde = groter dan**
    * **Drempel = 75**
    * **Periode = In de afgelopen 30 minuten**
-1. Voeg een e-mailadres toe aan het vak *Aanvullende e-mailadressen voor de administrator* en klik op **OK** .
+1. Voeg een e-mailadres toe aan het vak *Aanvullende e-mailadressen voor de administrator* en klik op **OK**.
 
    ![waarschuwing instellen](./media/saas-dbpertenant-performance-monitoring/alert-rule.png)
 
@@ -148,15 +148,15 @@ Op de **langere termijn** kunt u query's of indexgebruik optimaliseren voor bete
 
 U kunt een zwaar belaste pool simuleren door de load die de generator produceert, te verhogen. Doordat de databases vaker en langer maximaal worden gebruikt, wordt de cumulatieve load voor de pool verhoogd zonder dat de vereisten van de afzonderlijke databases worden gewijzigd. U kunt de pool eenvoudig opschalen in de portal of vanuit PowerShell. In deze oefening wordt de portal gebruikt.
 
-1. Stel *$DemoScenario* = **3** , _Load genereren met langere en frequentere bursts per database_ in om de intensiteit van de cumulatieve load voor de pool te verhogen zonder de piekbelasting die is vereist voor elke database te wijzigen.
+1. Stel *$DemoScenario* = **3**, _Load genereren met langere en frequentere bursts per database_ in om de intensiteit van de cumulatieve load voor de pool te verhogen zonder de piekbelasting die is vereist voor elke database te wijzigen.
 1. Druk op **F5** om een load toe te passen op al uw tenantdatabases.
 
-1. Ga in Azure Portal naar **Pool1** .
+1. Ga in Azure Portal naar **Pool1**.
 
 Controleer het verhoogde eDTU-verbruik voor de pool in de bovenste grafiek. Het duurt enkele minuten voordat de nieuwe, hogere load wordt geactiveerd, maar de pool moet vrij snel maximaal gebruik bereiken. Zodra de load een nieuw patroon vormt, wordt de pool snel overbelast.
 
-1. Als u de pool omhoog wilt schalen, klikt u op **Pool configureren** bovenaan de pagina **Pool1** .
-1. Stel de **Pool-eDTU** in op **100** . Als u de groeps-eDTU wijzigt, wordt de instelling per database niet gewijzigd (deze is nog steeds maximaal 50 eDTU's per database). De instellingen per database staan aan de rechterkant van de pagina **Pool configureren** .
+1. Als u de pool omhoog wilt schalen, klikt u op **Pool configureren** bovenaan de pagina **Pool1**.
+1. Stel de **Pool-eDTU** in op **100**. Als u de groeps-eDTU wijzigt, wordt de instelling per database niet gewijzigd (deze is nog steeds maximaal 50 eDTU's per database). De instellingen per database staan aan de rechterkant van de pagina **Pool configureren**.
 1. Klik op **Opslaan** om de aanvraag te verzenden om de pool te schalen.
 
 Ga terug naar **Pool1** > **Overzicht** om de bewakingsgrafieken weer te geven. Bewaak het effect van de toevoeging van meer resources aan de pool (met weinig databases en een willekeurige load is het niet altijd duidelijk te bepalen totdat u al enige tijd bezig bent met de uitvoering). Houd er rekening mee dat 100% bij de bovenste grafiek nu staat voor 100 eDTU's, terwijl voor de onderste grafiek 100% nog steeds 50 eDTU's betekent, omdat het maximum per database 50 eDTU's is.
@@ -169,18 +169,18 @@ In plaats van de pool omhoog te schalen, kunt u ook een tweede pool maken en dat
 
 1. In [Azure Portal](https://portal.azure.com) opent u de server **tenants1-dpt-&lt;USER&gt;** .
 1. Klik op **+ Nieuwe pool** om een pool op de huidige server te maken.
-1. Op de sjabloon **Elastische pool** :
+1. Op de sjabloon **Elastische pool**:
 
-   1. Stel **Naam** in als *Pool2* .
+   1. Stel **Naam** in als *Pool2*.
    1. Laat de prijscategorie op **Standaardpool** staan.
-   1. Klik op **Groep configureren** .
-   1. Stel **Pool-eDTU** in op *50 eDTU* .
-   1. Klik op **Databases toevoegen** om een lijst met databases op de server weer te geven die kunnen worden toegevoegd aan *Pool2* .
-   1. Selecteer tien databases om deze naar de nieuwe groep te verplaatsen en klik vervolgens op **Selecteren** . Als u de load-generator hebt uitgevoerd, weet de service al dat voor uw prestatieprofiel een grotere groep is vereist dan de standaardgrootte van 50 eDTU en wordt u aangeraden te beginnen met een instelling van 100 eDTU.
+   1. Klik op **Groep configureren**.
+   1. Stel **Pool-eDTU** in op *50 eDTU*.
+   1. Klik op **Databases toevoegen** om een lijst met databases op de server weer te geven die kunnen worden toegevoegd aan *Pool2*.
+   1. Selecteer tien databases om deze naar de nieuwe groep te verplaatsen en klik vervolgens op **Selecteren**. Als u de load-generator hebt uitgevoerd, weet de service al dat voor uw prestatieprofiel een grotere groep is vereist dan de standaardgrootte van 50 eDTU en wordt u aangeraden te beginnen met een instelling van 100 eDTU.
 
       ![aanbeveling](./media/saas-dbpertenant-performance-monitoring/configure-pool.png)
 
-   1. Voor deze zelfstudie houdt u de standaardwaarde op 50 eDTU en klikt u opnieuw op **Selecteren** .
+   1. Voor deze zelfstudie houdt u de standaardwaarde op 50 eDTU en klikt u opnieuw op **Selecteren**.
    1. Selecteer **OK** om de nieuwe pool te maken en de geselecteerde databases ernaar te verplaatsen.
 
 Het maken van de pool en het verplaatsen van de databases duurt enkele minuten. Databases die worden verplaatst, blijven online en volledig toegankelijk tot op het allerlaatste moment. Hierna worden alle open verbindingen gesloten. Als u Logica voor opnieuw proberen hebt, worden clients vervolgens verbonden met de database in de nieuwe pool.
@@ -195,24 +195,24 @@ Als een individuele database in een pool langere tijd een hogere load heeft, kan
 
 Deze oefening simuleert het effect van een hoge load voor Contoso Concert Hall wanneer kaartjes voor een populair concert in de verkoop gaan.
 
-1. Open het script **Demo-PerformanceMonitoringAndManagement.ps1** in \\*PowerShell ISE* .
+1. Open het script **Demo-PerformanceMonitoringAndManagement.ps1** in \\*PowerShell ISE*.
 1. Stel het volgende in: **$DemoScenario = 5, Een normale load en hoge load genereren op één tenant (ongeveer 95 DTU's).**
 1. Stel **$SingleTenantDatabaseName = contosoconcerthall** in
-1. Voer het script uit met **F5** .
+1. Voer het script uit met **F5**.
 
 
 1. Ga in [Azure Portal](https://portal.azure.com) naar de lijst met databases op de server *tenants1-dpt-\<user\>* . 
-1. Klik op de database **contosoconcerthall** .
-1. Klik op de pool waarin **contosoconcerthall** zich bevindt. Zoek de pool op in de sectie **Elastische pool** .
+1. Klik op de database **contosoconcerthall**.
+1. Klik op de pool waarin **contosoconcerthall** zich bevindt. Zoek de pool op in de sectie **Elastische pool**.
 
 1. Inspecteer de grafiek **Elastische pool-bewaking** en zoek het toegenomen eDTU-gebruik van de pool. Na een paar minuten moet de hogere load actief worden en zou de pool snel een gebruik van 100% moeten weergeven.
-2. Controleer de weergave **Elastische database-bewaking** , waarin de meest belaste databases van het afgelopen uur worden weergegeven. De database *contosoconcerthall* moet snel worden weergegeven als een van de vijf meest belaste databases.
-3. Klik op het **diagram** **Bewaking van elastische database** . De pagina **Gebruik van de databasebron** wordt geopend, waarop u de databases kunt bewaken. Hiermee kunt u de weergave voor de database *contosoconcerthall* isoleren.
-4. Klik in de lijst met databases op **contosoconcerthall** .
+2. Controleer de weergave **Elastische database-bewaking**, waarin de meest belaste databases van het afgelopen uur worden weergegeven. De database *contosoconcerthall* moet snel worden weergegeven als een van de vijf meest belaste databases.
+3. Klik op het **diagram** **Bewaking van elastische database**. De pagina **Gebruik van de databasebron** wordt geopend, waarop u de databases kunt bewaken. Hiermee kunt u de weergave voor de database *contosoconcerthall* isoleren.
+4. Klik in de lijst met databases op **contosoconcerthall**.
 5. Klik op **Prijscategorie (DTU's schalen)** om de pagina **Prestaties configureren** te openen, waar u een op zichzelf staande rekenkracht voor de database kunt instellen.
 6. Klik op het tabblad **Standard** om de schaalopties in de categorie Standard te openen.
-7. Schuif de schuifregelaar **DTU** naar rechts om **100** DTU's te selecteren. Opmerking: dit komt overeen met de servicedoelstelling **S3** .
-8. Klik op **Toepassen** om de database uit de pool te plaatsen en er een *Standard S3* -database van te maken.
+7. Schuif de schuifregelaar **DTU** naar rechts om **100** DTU's te selecteren. Opmerking: dit komt overeen met de servicedoelstelling **S3**.
+8. Klik op **Toepassen** om de database uit de pool te plaatsen en er een *Standard S3*-database van te maken.
 9. Wanneer het schalen is voltooid, controleert u het effect op de contosoconcerthall-database en Pool1 op de blades elastische pool en database.
 
 Zodra de hoge load van de database contosoconcerthall afneemt, plaatst u deze direct terug in de pool om de kosten te beperken. Als het onduidelijk is wanneer dit gaat gebeuren, kunt u een waarschuwing voor de database instellen die wordt geactiveerd wanneer het DTU-verbruik onder het maximum per database voor de pool zakt. Het verplaatsen van een database naar een pool wordt beschreven in oefening 5.

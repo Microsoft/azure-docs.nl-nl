@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 12/04/2018
 ms.openlocfilehash: 166e365a4ead8ad6d0f7e543c081161ebff5f027
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92330458"
 ---
 # <a name="elastic-database-tools-glossary"></a>Woorden lijst voor Elastic Database-hulpprogram ma's
@@ -53,11 +53,11 @@ Hier volgt een representatie van **Shard** single-en multi tenant-data bases.
 
 **Shard**: een data base in Azure SQL database die gegevens uit een Shard gegevensset opslaat. 
 
-**Shard elasticiteit**: de mogelijkheid om **horizon taal schalen** en **verticaal schalen**uit te voeren.
+**Shard elasticiteit**: de mogelijkheid om **horizon taal schalen** en **verticaal schalen** uit te voeren.
 
 **Shard-tabellen**: tabellen die Shard zijn, dat wil zeggen, waarvan de gegevens worden verdeeld over Shards op basis van hun sharding sleutel waarden. 
 
-**Sharding-sleutel**: een kolom waarde die bepaalt hoe gegevens worden gedistribueerd over Shards. Het waardetype kan een van de volgende waarden hebben: **int**, **bigint**, **varbinary**of **uniqueidentifier**. 
+**Sharding-sleutel**: een kolom waarde die bepaalt hoe gegevens worden gedistribueerd over Shards. Het waardetype kan een van de volgende waarden hebben: **int**, **bigint**, **varbinary** of **uniqueidentifier**. 
 
 **Shard ingesteld**: de verzameling van Shards die worden toegeschreven aan dezelfde Shard-toewijzing in de Shard-kaart Manager.  
 

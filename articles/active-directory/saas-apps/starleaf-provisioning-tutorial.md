@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 07/19/2019
 ms.author: zhchia
 ms.openlocfilehash: 07c476c0de644ac63c577d466f4691b5cf415334
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94357928"
 ---
 # <a name="tutorial-configure-starleaf-for-automatic-user-provisioning"></a>Zelf studie: StarLeaf configureren voor automatische gebruikers inrichting
@@ -36,7 +36,7 @@ In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan d
 * Een gebruikers account in StarLeaf met beheerders machtigingen.
 
 ## <a name="assign-users-to-starleaf"></a>Gebruikers toewijzen aan StarLeaf
-Azure Active Directory gebruikt een concept met de naam toewijzingen om te bepalen welke gebruikers toegang moeten krijgen tot geselecteerde apps. In de context van het automatisch inrichten van gebruikers worden alleen de gebruikers en/of groepen die zijn toegewezen aan een toepassing in azure AD gesynchroniseerd.
+Azure Active Directory gebruikt een concept met de naam toewijzingen om te bepalen welke gebruikers toegang moeten krijgen tot geselecteerde apps. In de context van het automatisch inrichten van gebruikers worden alleen de gebruikers en/of groepen gesynchroniseerd die zijn toegewezen aan een toepassing in Azure AD.
 
 Voordat u automatische gebruikers inrichting configureert en inschakelt, moet u bepalen welke gebruikers en groepen in azure AD toegang nodig hebben tot StarLeaf. Vervolgens kunt u de gebruikers en groepen toewijzen aan StarLeaf door [deze instructies](../manage-apps/assign-user-or-group-access-portal.md)te volgen.
 
@@ -68,7 +68,7 @@ Als u StarLeaf wilt configureren voor het automatisch inrichten van gebruikers m
 
 **Voer de volgende stappen uit om StarLeaf toe te voegen vanuit de Azure AD-toepassings galerie:**
 
-1. Selecteer in de **[Azure Portal](https://portal.azure.com)** in het navigatie venster links **Azure Active Directory**.
+1. Ga naar de **[Azure-portal](https://portal.azure.com)** en selecteer **Azure Active Directory** in het navigatievenster aan de linkerkant.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -76,7 +76,7 @@ Als u StarLeaf wilt configureren voor het automatisch inrichten van gebruikers m
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
-3. Als u een nieuwe toepassing wilt toevoegen, selecteert u de knop **nieuwe toepassing** boven aan het deel venster.
+3. Als u een nieuwe toepassing wilt toevoegen, selecteert u de knop **Nieuwe toepassing** bovenin het deelvenster.
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
@@ -97,11 +97,11 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 3. Selecteer het tabblad **Inrichten**.
 
-    ![Scherm opname van de opties voor beheer met de inrichtings optie.](common/provisioning.png)
+    ![Schermopname van de opties onder Beheren met de optie Inrichten gemarkeerd.](common/provisioning.png)
 
 4. Stel de **Inrichtingsmodus** in op **Automatisch**.
 
-    ![Scherm afbeelding van de vervolg keuzelijst voor de inrichtings modus met de automatische optie aangeroepen.](common/provisioning-automatic.png)
+    ![Schermopname van de vervolgkeuzelijst Inrichtingsmodus met de optie Automatisch gemarkeerd.](common/provisioning-automatic.png)
 
 5. In het gedeelte beheerders referenties voert u de **scim basis-URL** en **toegangs token** waarden in die respectievelijk eerder zijn opgehaald in de **Tenant-URL** en het **geheime token** . Klik op **verbinding testen** om te controleren of Azure AD verbinding kan maken met StarLeaf. Als de verbinding mislukt, zorg er dan voor dat uw StarLeaf-account beheerders machtigingen heeft en probeer het opnieuw.
 
@@ -139,7 +139,7 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 Met deze bewerking wordt de eerste synchronisatie gestart van alle gebruikers en/of groepen die zijn gedefinieerd onder **Bereik** in de sectie **Instellingen**. De initiële synchronisatie duurt langer dan volgende synchronisaties, die ongeveer om de 40 minuten plaatsvinden zolang de Azure AD-inrichtingsservice wordt uitgevoerd. U kunt de sectie **synchronisatie Details** gebruiken om de voortgang te bewaken en koppelingen naar het rapport inrichtings activiteiten te volgen, waarin alle acties worden beschreven die worden uitgevoerd door de Azure AD Provisioning-Service op StarLeaf.
 
-Voor meer informatie over het lezen van de Azure AD-inrichtings logboeken raadpleegt u [rapportage over automatische gebruikers accounts inrichten](../app-provisioning/check-status-user-account-provisioning.md)
+Zie [Rapportage over automatische inrichting van gebruikersaccounts](../app-provisioning/check-status-user-account-provisioning.md) voor informatie over het lezen van de Azure AD-inrichtingslogboeken
 
 ## <a name="connector-limitations"></a>Connectorbeperkingen
 
@@ -148,7 +148,7 @@ Voor meer informatie over het lezen van de Azure AD-inrichtings logboeken raadpl
 
 ## <a name="additional-resources"></a>Aanvullende resources
 
-* [Het inrichten van gebruikers accounts beheren voor zakelijke apps](../app-provisioning/configure-automatic-user-provisioning-portal.md)
+* [Het inrichten van gebruikersaccounts beheren voor bedrijfsapps](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
 
 ## <a name="next-steps"></a>Volgende stappen

@@ -6,10 +6,10 @@ ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 03/31/2020
 ms.openlocfilehash: 8d4663aac6af4abb8d9855d2f972965e997d9c92
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98945686"
 ---
 # <a name="install-and-use-hue-on-hdinsight-hadoop-clusters"></a>Tint op HDInsight Hadoop-clusters installeren en gebruiken
@@ -42,7 +42,7 @@ Gebruik de informatie in de onderstaande tabel voor uw script actie. Zie [HDInsi
 |Eigenschap |Waarde |
 |---|---|
 |Script type:|- Aangepast|
-|Naam|Kleur Toon installeren|
+|Name|Kleur Toon installeren|
 |Bash-script-URI|`https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv02/install-hue-uber-v02.sh`|
 |Knooppunt type (n):|Head|
 

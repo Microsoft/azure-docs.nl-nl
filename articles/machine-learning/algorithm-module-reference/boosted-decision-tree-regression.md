@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 08/24/2020
 ms.openlocfilehash: 664943fc5535883b3df77b2795383e5c0586a71c
-ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94375326"
 ---
 # <a name="boosted-decision-tree-regression-module"></a>Regressie module voor versterkte beslissings structuur
@@ -52,39 +52,39 @@ De methode voor het verhogen van de kleur overgang kan ook worden gebruikt voor 
 
 ## <a name="how-to-configure-boosted-decision-tree-regression"></a>Verbetering van de regressie beslissings structuur configureren
 
-1.  Voeg de **Uitgeboostte beslissings structuur** module toe aan uw pijp lijn. U kunt deze module vinden onder **machine learning** , **initialiseren** , onder de categorie **regressie** . 
+1.  Voeg de **Uitgeboostte beslissings structuur** module toe aan uw pijp lijn. U kunt deze module vinden onder **machine learning**, **initialiseren**, onder de categorie **regressie** . 
   
 2.  Geef op hoe u wilt dat het model wordt getraind door de optie **trainer modus maken** in te stellen.  
   
-    -   **Eén para meter** : Selecteer deze optie als u weet hoe u het model wilt configureren en geef een specifieke set waarden als argumenten op. 
+    -   **Eén para meter**: Selecteer deze optie als u weet hoe u het model wilt configureren en geef een specifieke set waarden als argumenten op. 
      
-    -   **Parameter bereik** : Selecteer deze optie als u niet zeker weet wat de beste para meters zijn en u een parameter sweep wilt uitvoeren. Selecteer een bereik met waarden om over te sporen en het [model Hyper parameters](tune-model-hyperparameters.md) wordt herhaald op alle mogelijke combi Naties van de instellingen die u hebt verstrekt om de Hyper parameters te bepalen die de optimale resultaten opleveren.    
+    -   **Parameter bereik**: Selecteer deze optie als u niet zeker weet wat de beste para meters zijn en u een parameter sweep wilt uitvoeren. Selecteer een bereik met waarden om over te sporen en het [model Hyper parameters](tune-model-hyperparameters.md) wordt herhaald op alle mogelijke combi Naties van de instellingen die u hebt verstrekt om de Hyper parameters te bepalen die de optimale resultaten opleveren.    
    
   
-3. **Maximum aantal Leaves per boom structuur** : Hiermee geeft u het maximum aantal Terminal knooppunten (bladeren) op dat in een wille keurige structuur kan worden gemaakt.  
+3. **Maximum aantal Leaves per boom structuur**: Hiermee geeft u het maximum aantal Terminal knooppunten (bladeren) op dat in een wille keurige structuur kan worden gemaakt.  
 
     Door deze waarde te verg Roten, kunt u de grootte van de structuur verg Roten, waardoor het risico op overschrijding en een langere tijd beter is.  
 
-4. **Minimum aantal steek proeven per blad knooppunt** : geeft het minimum aantal cases aan dat nodig is om een Terminal knooppunt (Leaf) in een structuur te maken.
+4. **Minimum aantal steek proeven per blad knooppunt**: geeft het minimum aantal cases aan dat nodig is om een Terminal knooppunt (Leaf) in een structuur te maken.
 
     Door deze waarde te verhogen, verhoogt u de drempel voor het maken van nieuwe regels. Met de standaard waarde 1 kan zelfs een enkele case ertoe leiden dat een nieuwe regel wordt gemaakt. Als u de waarde op 5 verhoogt, moeten de opleidings gegevens ten minste 5 gevallen bevatten die aan dezelfde voor waarden voldoen.
 
-5. **Leer tempo** : Typ een getal tussen 0 en 1 dat de stap grootte tijdens het leren definieert. Het leer tempo bepaalt hoe snel of traag de kenniser convergeert met de optimale oplossing. Als de grootte van de stap te groot is, kunt u de optimale oplossing overschrijden. Als de grootte van de stap te klein is, neemt de training meer tijd in beslag op de beste oplossing.
+5. **Leer tempo**: Typ een getal tussen 0 en 1 dat de stap grootte tijdens het leren definieert. Het leer tempo bepaalt hoe snel of traag de kenniser convergeert met de optimale oplossing. Als de grootte van de stap te groot is, kunt u de optimale oplossing overschrijden. Als de grootte van de stap te klein is, neemt de training meer tijd in beslag op de beste oplossing.
 
-6. **Aantal geconstrueerde structuren** : hier wordt het totale aantal beslissings structuren aangegeven dat in de ensemble moet worden gemaakt. Door meer beslissings structuren te maken, kunt u een betere dekking krijgen, maar de trainings tijd wordt verhoogd.
+6. **Aantal geconstrueerde structuren**: hier wordt het totale aantal beslissings structuren aangegeven dat in de ensemble moet worden gemaakt. Door meer beslissings structuren te maken, kunt u een betere dekking krijgen, maar de trainings tijd wordt verhoogd.
 
     Als u de waarde instelt op 1, Er wordt echter slechts één structuur geproduceerd (de boom structuur met de initiële set para meters) en er worden geen verdere herhalingen uitgevoerd.
 
-7. **Wille keurig getal Seed** : Typ een optioneel niet-negatief geheel getal dat moet worden gebruikt als de wille keurige Seed-waarde. Het opgeven van een Seed zorgt voor een reproduceer baarheid van alle uitvoeringen die dezelfde gegevens en para meters hebben.
+7. **Wille keurig getal Seed**: Typ een optioneel niet-negatief geheel getal dat moet worden gebruikt als de wille keurige Seed-waarde. Het opgeven van een Seed zorgt voor een reproduceer baarheid van alle uitvoeringen die dezelfde gegevens en para meters hebben.
 
     Standaard is de wille keurige Seed ingesteld op 0, wat betekent dat de aanvankelijke Seed-waarde wordt opgehaald uit de systeem klok.
   
 
 9. Het model trainen:
 
-    + Als u de **modus trainer maken** instelt op **één para meter** , verbindt u een gecodeerde gegevensset en de module [Train model](train-model.md) .  
+    + Als u de **modus trainer maken** instelt op **één para meter**, verbindt u een gecodeerde gegevensset en de module [Train model](train-model.md) .  
   
-    + Als u de **modus trainer maken** instelt op het **parameter bereik** , verbindt u een gecodeerde gegevensset en traint u het model met behulp van [Hyper parameters model](tune-model-hyperparameters.md).  
+    + Als u de **modus trainer maken** instelt op het **parameter bereik**, verbindt u een gecodeerde gegevensset en traint u het model met behulp van [Hyper parameters model](tune-model-hyperparameters.md).  
   
     > [!NOTE]
     > 

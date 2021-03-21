@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 11/19/2020
 tags: connectors
 ms.openlocfilehash: 765bb66b572f0c046222cfb617fe4caa80925256
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94967398"
 ---
 # <a name="access-and-manage-ibm-db2-resources-by-using-azure-logic-apps"></a>Toegang tot en beheer van IBM DB2-resources met behulp van Azure Logic Apps
@@ -153,7 +153,7 @@ Als u één record in een DB2-database tabel wilt ophalen, gebruikt u de actie *
 
    | Eigenschap | Vereist | Beschrijving |
    |----------|----------|-------------|
-   | **Tabelnaam** | Ja | De tabel met de gewenste record, zoals ' gebied ' in dit voor beeld |
+   | **Tabel naam** | Ja | De tabel met de gewenste record, zoals ' gebied ' in dit voor beeld |
    | **Gebieds-ID** | Ja | De ID voor de record die u wilt, zoals ' 99999 ' in dit voor beeld |
    ||||
 
@@ -233,7 +233,7 @@ Als u één record wilt toevoegen aan een tabel met een DB2-Data Base, gebruikt 
 
    | Eigenschap | Vereist | Beschrijving |
    |----------|----------|-------------|
-   | **Tabelnaam** | Ja | De tabel waar de record moet worden toegevoegd, zoals ' gebied ' |
+   | **Tabel naam** | Ja | De tabel waar de record moet worden toegevoegd, zoals ' gebied ' |
    | **Gebieds-ID** | Ja | De ID voor het gebied dat moet worden toegevoegd, zoals "99999" |
    | **Beschrijving van gebied** | Ja | De beschrijving voor het gebied dat moet worden toegevoegd, zoals ' gebied 99999 ' |
    | **Regio-ID** | Ja | De ID voor de toe te voegen regio, bijvoorbeeld "102" |
@@ -280,7 +280,7 @@ Als u één record in een DB2-database tabel wilt bijwerken, gebruikt u de actie
 
    | Eigenschap | Vereist | Beschrijving |
    |----------|----------|-------------|
-   | **Tabelnaam** | Ja | De tabel waar de record moet worden bijgewerkt, bijvoorbeeld ' gebied ' |
+   | **Tabel naam** | Ja | De tabel waar de record moet worden bijgewerkt, bijvoorbeeld ' gebied ' |
    | **Rij-ID** | Ja | De ID voor de record die moet worden bijgewerkt, bijvoorbeeld "99999" |
    | **Gebieds-ID** | Ja | De nieuwe gebieds-ID, zoals ' 99999 ' |
    | **Beschrijving van gebied** | Ja | De beschrijving van het nieuwe gebied, zoals "bijgewerkt 99999" |
@@ -328,7 +328,7 @@ Als u één record uit een DB2-database tabel wilt verwijderen, gebruikt u de ac
 
    | Eigenschap | Vereist | Beschrijving |
    |----------|----------|-------------|
-   | **Tabelnaam** | Ja | De tabel waar de record moet worden verwijderd, zoals ' gebied ' |
+   | **Tabel naam** | Ja | De tabel waar de record moet worden verwijderd, zoals ' gebied ' |
    | **Rij-ID** | Ja | De ID voor de record die moet worden verwijderd, bijvoorbeeld "99999" |
    ||||
 

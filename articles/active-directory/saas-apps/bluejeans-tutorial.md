@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 06/09/2020
 ms.author: jeedes
 ms.openlocfilehash: a920abacb0df030f7d38aed11e04a693cfa352a6
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101686570"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-bluejeans-for-azure-ad"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met BlueJeans voor Azure AD

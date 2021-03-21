@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 02/07/2019
 ms.openlocfilehash: 3bfbf56b6e5f2be33b407945490531e6e2e8ac47
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92781257"
 ---
 # <a name="create-performance-counters-to-track-performance-of-shard-map-manager"></a>Prestatie meter items maken om de prestaties van Shard-toewijzings beheer bij te houden
@@ -42,16 +42,16 @@ Als u de items wilt maken, roept u de methode CreatePerformanceCategoryAndCounte
 U kunt [Dit](https://gallery.technet.microsoft.com/scriptcenter/Elastic-DB-Tools-for-Azure-17e3d283) Power shell-script ook gebruiken om de-methode uit te voeren.
 Met de-methode worden de volgende prestatie meter items gemaakt:  
 
-* **Toewijzingen in de cache** : het aantal toewijzingen in de cache voor de Shard-kaart.
-* **DDR-bewerkingen per seconde** : frequentie van gegevens afhankelijke route ring bewerkingen voor de Shard-kaart. Dit item wordt bijgewerkt wanneer een aanroep van [OpenConnectionForKey ()](/dotnet/api/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmap.openconnectionforkey) resulteert in een geslaagde verbinding met de doel-Shard.
-* **Treffers voor het opzoeken van de opzoek cache per seconde** : frequentie van geslaagde cache opzoek bewerkingen voor toewijzingen in de Shard-toewijzing.
-* Missers in de cache voor het opzoeken van de **toewijzingen per seconde** : de frequentie van mislukte opzoek bewerkingen in de cache voor toewijzingen in de Shard-toewijzing.
-* **Toewijzingen die zijn toegevoegd of bijgewerkt in de cache per seconde** : de snelheid waarmee toewijzingen worden toegevoegd of bijgewerkt in de cache voor de Shard-toewijzing.
-* **Toewijzingen verwijderd uit cache/SEC** : snelheid waarmee toewijzingen worden verwijderd uit de cache voor de Shard-toewijzing.
+* **Toewijzingen in de cache**: het aantal toewijzingen in de cache voor de Shard-kaart.
+* **DDR-bewerkingen per seconde**: frequentie van gegevens afhankelijke route ring bewerkingen voor de Shard-kaart. Dit item wordt bijgewerkt wanneer een aanroep van [OpenConnectionForKey ()](/dotnet/api/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmap.openconnectionforkey) resulteert in een geslaagde verbinding met de doel-Shard.
+* **Treffers voor het opzoeken van de opzoek cache per seconde**: frequentie van geslaagde cache opzoek bewerkingen voor toewijzingen in de Shard-toewijzing.
+* Missers in de cache voor het opzoeken van de **toewijzingen per seconde**: de frequentie van mislukte opzoek bewerkingen in de cache voor toewijzingen in de Shard-toewijzing.
+* **Toewijzingen die zijn toegevoegd of bijgewerkt in de cache per seconde**: de snelheid waarmee toewijzingen worden toegevoegd of bijgewerkt in de cache voor de Shard-toewijzing.
+* **Toewijzingen verwijderd uit cache/SEC**: snelheid waarmee toewijzingen worden verwijderd uit de cache voor de Shard-toewijzing.
 
 Prestatie meter items worden gemaakt voor elke Shard-kaart in de cache per proces.  
 
-## <a name="notes"></a>Opmerkingen
+## <a name="notes"></a>Notities
 
 Met de volgende gebeurtenissen wordt het maken van de prestatie meter items geactiveerd:  
 

@@ -17,10 +17,10 @@ ms.reviewer: thsomasu
 ms.lastreviewed: 10/02/2019
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 3f8f9357fff4773467dd93046ece8533514eb444
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92313890"
 ---
 # <a name="send-cross-platform-notifications-with-azure-notification-hubs"></a>Cross-platform meldingen verzenden met Azure Notification Hubs
@@ -41,7 +41,7 @@ In deze sectie wordt gebruikgemaakt van de voorbeeld code die u hebt gemaakt in 
 
 Ga als volgt te werk om meldingen over meerdere platforms te verzenden met behulp van sjablonen:
 
-1. Vouw in Visual Studio in **Solution Explorer**de map **controllers** uit en open vervolgens het bestand *RegisterController.cs* .
+1. Vouw in Visual Studio in **Solution Explorer** de map **controllers** uit en open vervolgens het bestand *register controller. cs* .
 
 1. Zoek het code blok in de `Put` methode die een nieuwe registratie maakt en vervang de `switch` inhoud door de volgende code:
 
@@ -76,7 +76,7 @@ Ga als volgt te werk om meldingen over meerdere platforms te verzenden met behul
 
     Met deze code wordt de platformspecifieke methode aangeroepen voor het maken van een sjabloon registratie in plaats van een systeem eigen registratie. Omdat sjabloon registraties zijn afgeleid van systeem eigen registraties, hoeft u geen bestaande registraties te wijzigen.
 
-1. Open in **Solution Explorer**in de map **Controllers** het bestand **NotificationsController.cs** . Vervang de `Post`-methode door de volgende code:
+1. Open in **Solution Explorer** in de map **controllers** het bestand **Notifications controller. cs** . Vervang de `Post`-methode door de volgende code:
 
     ```csharp
     public async Task<HttpResponseMessage> Post()

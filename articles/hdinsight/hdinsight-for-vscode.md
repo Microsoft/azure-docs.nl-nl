@@ -6,10 +6,10 @@ ms.topic: how-to
 ms.date: 10/20/2020
 ms.custom: devx-track-python
 ms.openlocfilehash: 1209c49cbd988a02b1e3503994fdbdac3f26216a
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98946143"
 ---
 # <a name="use-spark--hive-tools-for-visual-studio-code"></a>Gebruik de Spark-& Hive-Hulpprogram Ma's voor Visual Studio code
@@ -298,13 +298,13 @@ Het hulp programma biedt ook ondersteuning voor de **Spark SQL** -query:
 
 4. [Maak verbinding](#connect-to-an-azure-account) met uw Azure-account of koppel een cluster als u dit nog niet hebt gedaan.
 
-5. Klik met de rechter muisknop op de script editor en selecteer **Spark: PySpark batch** of **Synapse: PySpark batch** _.
+5. Klik met de rechter muisknop op de script editor en selecteer **Spark: PySpark batch** of * * Synapse: PySpark batch * * *.
 
 6. Selecteer een cluster/Spark-groep om uw PySpark-taak in te dienen voor:
 
    ![Uitvoer van de Python-taakresultaten verzenden](./media/hdinsight-for-vscode/submit-pythonjob-result.png)
 
-Nadat u een python-taak hebt verzonden, worden de inzendings logboeken weer gegeven in het venster _ *uitvoer** in Visual Studio code. De url's van de Spark-gebruikers interface en de URL van de garen-interface worden ook weer gegeven. Als u de batch-taak naar een Apache Spark pool verzendt, worden ook de URL van de gebruikers interface voor Spark-geschiedenis en de URL van de Spark-taak toepassing weer gegeven. U kunt de URL openen in een webbrowser om de taakstatus bij te houden.
+Nadat u een python-taak hebt verzonden, worden de inzendings logboeken weer gegeven in het **uitvoer** venster van Visual Studio code. De url's van de Spark-gebruikers interface en de URL van de garen-interface worden ook weer gegeven. Als u de batch-taak naar een Apache Spark pool verzendt, worden ook de URL van de gebruikers interface voor Spark-geschiedenis en de URL van de Spark-taak toepassing weer gegeven. U kunt de URL openen in een webbrowser om de taakstatus bij te houden.
 
 ## <a name="integrate-with-hdinsight-identity-broker-hib"></a>Integreren met HDInsight Identity Broker (HIB)
 

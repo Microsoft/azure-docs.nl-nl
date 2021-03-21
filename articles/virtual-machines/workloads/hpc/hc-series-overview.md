@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 08/19/2020
 ms.author: amverma
 ms.reviewer: cynthn
-ms.openlocfilehash: 746c7ec91c888d9a55722c00f8765915d0043a98
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: e2f6fb167ec8b1ea15f7f08cf77720e705b2e4a3
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "101666077"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104721380"
 ---
 # <a name="hc-series-virtual-machine-overview"></a>Overzicht van de virtuele machine van de HC-serie
 
@@ -51,13 +51,13 @@ In het volgende diagram ziet u de schei ding van kernen die zijn gereserveerd vo
 |-----------------------------|-----------------------|
 | Maximale grootte van MPI-taak            | 13200 kernen (300 Vm's in één schaalset voor virtuele machines met singlePlacementGroup = True)  |
 | MPI-ondersteuning                 | HPC-X, Intel MPI, OpenMPI, MVAPICH2, MPICH, platform MPI  |
-| Aanvullende Frameworks       | Unified Communication X, libfabric, PGAS |
+| Aanvullende Frameworks       | UCX, libfabric, PGAS |
 | Ondersteuning voor Azure Storage       | Standard-en Premium-schijven (Maxi maal 4 schijven) |
-| Ondersteuning van het besturings systeem voor SRIOV RDMA   | CentOS/RHEL 7,6 +, SLES 12 SP4 +, WinServer 2016 +  |
-| Orchestrator-ondersteuning        | CycleCloud, batch  |
+| Ondersteuning van het besturings systeem voor SRIOV RDMA   | CentOS/RHEL 7,6 +, Ubuntu 16.04 +, SLES 12 SP4 +, WinServer 2016 +  |
+| Orchestrator-ondersteuning        | CycleCloud, batch, AKS; [Opties voor cluster configuratie](../../sizes-hpc.md#cluster-configuration-options)  |
 
 ## <a name="next-steps"></a>Volgende stappen
 
 - Meer informatie over [Intel Xeon SP-architectuur](https://software.intel.com/content/www/us/en/develop/articles/intel-xeon-processor-scalable-family-technical-overview.html).
-- Lees over de laatste aankondigingen en enkele HPC-voorbeelden en -resultaten in de [Azure Compute Tech Community-blogs](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute).
+- Meer informatie over de laatste aankondigingen, HPC-voor beelden en prestatie resultaten vindt u in de blogs van de [technische community van Azure Compute](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute).
 - Zie [High Performance Computing (HPC) op Azure](/azure/architecture/topics/high-performance-computing/) voor een gedetailleerdere architectuurweergave van HPC-workloads die worden uitgevoerd.

@@ -12,10 +12,10 @@ ms.date: 02/12/2020
 ms.author: kenwith
 ms.reviewer: japere
 ms.openlocfilehash: 9341646f32f6a2e05397b072d3f63186964fbd88
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99258979"
 ---
 # <a name="secure-access-to-on-premises-apis-with-azure-ad-application-proxy"></a>Veilige toegang tot on-premises Api's met Azure AD-toepassingsproxy
@@ -136,7 +136,7 @@ U hebt de AppProxyNativeAppSample-app nu geregistreerd in Azure Active Directory
 
 ## <a name="configure-the-native-app-code"></a>De systeem eigen app-code configureren
 
-De laatste stap is het configureren van de systeem eigen app. Het volgende code fragment uit het *Form1.cs* -bestand in de NativeClient-voor beeld-app veroorzaakt de MSAL-bibliotheek om het token te verkrijgen voor het aanvragen van de API-aanroep en om het te koppelen als Bearer aan de app-header.
+De laatste stap is het configureren van de systeem eigen app. Het volgende code fragment uit het bestand *Form1. cs* in de NativeClient-voor beeld-app veroorzaakt de MSAL-bibliotheek om het token te verkrijgen voor het aanvragen van de API-aanroep en koppelt dit aan de app-header.
 
    ```
    // Acquire Access Token from AAD for Proxy Application

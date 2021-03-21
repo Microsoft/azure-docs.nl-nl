@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 8910797631dd86d75619c7a4691a25e88b8a9e09
-ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.openlocfilehash: 21c247c2fb9e1532c4580eea894c97e2bff84f92
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103495824"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104657039"
 ---
 # <a name="communication-services-notifications"></a>Communication Services-meldingen
 
@@ -31,7 +31,7 @@ Azure Communication Services kan worden geïntegreerd met [Azure Event Grid](htt
 
 :::image type="content" source="./media/notifications/acs-events-int.png" alt-text="Diagram waarin wordt getoond hoe communicatie services worden geïntegreerd met Event Grid.":::
 
-Lees meer over [verwerking van gebeurtenissen in Azure Communication Services](./event-handling.md).
+Lees meer over [verwerking van gebeurtenissen in Azure Communication Services](https://docs.microsoft.com/azure/event-grid/event-schema-communication-services).
 
 ## <a name="deliver-push-notifications-via-azure-notification-hubs"></a>Pushmeldingen versturen via Azure Notification Hubs
 

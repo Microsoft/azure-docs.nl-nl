@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 02/18/2021
+ms.date: 03/12/2021
 ms.author: jeedes
-ms.openlocfilehash: e890ff1cb64961c7747b8865b68504ff0a266a3e
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 2d0b9e45dc5de0cd4550cf4b9f944fd33ebd7e7e
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104599690"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104720687"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-aws-single-sign-on"></a>Zelf studie: Azure Active Directory-integratie met eenmalige aanmelding (SSO) met eenmalige aanmelding van AWS
 
@@ -37,7 +37,7 @@ U hebt het volgende nodig om aan de slag te gaan:
 
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
-* Eenmalige aanmelding voor AWS ondersteunt door **SP en IDP** GEÏNITIEERDe SSO
+* Eenmalige aanmelding voor AWS ondersteunt door **SP en IDP** geïnitieerde SSO.
 
 * AWS eenmalige aanmelding ondersteunt [**geautomatiseerde gebruikers inrichting**](./aws-single-sign-on-provisioning-tutorial.md).
 
@@ -72,7 +72,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 1. Zoek in de Azure Portal op de pagina **AWS single sign-on** Application Integration de sectie **Manage** en selecteer **eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
-1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
@@ -80,9 +80,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
     a. Klik op **Metagegevensbestand uploaden**.
 
-    ![image1](common/upload-metadata.png)
-
-    b. Klik op het **mappictogram** om het metagegevensbestand te selecteren en klik op **Uploaden**.
+    b. Klik op het logo van de **map** om het meta gegevensbestand te selecteren dat u hebt gedownload uit de sectie **AWS single sign-on SSO configureren** (punt 8) en klik op **toevoegen**.
 
     ![image2](common/browse-upload-metadata.png)
 
@@ -148,15 +146,45 @@ In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebru
 
 ## <a name="configure-aws-single-sign-on-sso"></a>Eenmalige eenmalige aanmelding voor AWS configureren
 
-1. Open de **AWS SSO-console** . 
+1. Als u de configuratie wilt automatiseren in eenmalige aanmelding van AWS, moet u de **extensie mijn apps beveiligde aanmelding** installeren door te klikken op **de uitbrei ding installeren**.
+
+    ![Uitbreiding van Mijn apps](common/install-myappssecure-extension.png)
+
+2. Nadat u de extensie hebt toegevoegd aan de browser, klikt u op **AWS eenmalige aanmelding instellen** wordt u doorgestuurd naar de toepassing voor eenmalige aanmelding van AWS. Geef de beheerders referenties op om u aan te melden bij AWS eenmalige aanmelding. In de browserextensie wordt de toepassing automatisch voor u geconfigureerd en worden stappen 3 tot 10 geautomatiseerd.
+
+    ![Instelling configureren](common/setup-sso.png)
+
+3. Als u eenmalige aanmelding AWS hand matig wilt instellen, meldt u zich in een ander webbrowser venster aan bij uw AWS-bedrijfs site voor eenmalige aanmelding als beheerder.
+
+1. Ga naar de **Services-> beveiliging, identiteit & naleving van > AWS eenmalige aanmelding**.
 2. Kies in het navigatie deel venster links de optie **instellingen**.
-3. Zoek op de pagina **instellingen** naar **identiteits bron**, kies **wijzigen**.
-4. Kies op de pagina map wijzigen de optie **externe ID-provider**.
-5. Zoek in de sectie **meta gegevens van de service provider** naar **AWS SSO SAML-meta gegevens** en selecteer **bestand met meta gegevens downloaden** om het meta gegevensbestand te downloaden en op uw computer op te slaan.
-6. Klik in de sectie **meta gegevens van de identiteits provider** op **Bladeren** om het meta gegevensbestand te uploaden dat u hebt gedownload van de Azure Portal.
-7. Kies **volgende: controleren**.
-8. Typ in het tekstvak **bevestigen** om de wijziging van de map te bevestigen.
-9. Kies **Voltooien**.
+3. Zoek op de pagina **instellingen** naar **identiteits bron** en klik op **wijzigen**.
+
+    ![Scherm afbeelding voor service voor het wijzigen van de identiteits bron](./media/aws-single-sign-on-tutorial/settings.png)
+
+4. Kies **externe ID-provider** in de bron identiteit wijzigen.
+
+    
+    ![Scherm afbeelding voor het selecteren van de sectie externe ID-provider](./media/aws-single-sign-on-tutorial/external-identity-provider.png)
+
+
+1. Voer de onderstaande stappen uit in de sectie **externe-ID-provider configureren** :
+
+    ![Scherm afbeelding voor het downloaden en uploaden van meta gegevens sectie](./media/aws-single-sign-on-tutorial/upload-metadata.png)
+
+    a. Zoek in de sectie **meta gegevens van de service provider** naar **AWS SSO SAML-meta gegevens** en selecteer **bestand met meta gegevens downloaden** om het meta gegevensbestand te downloaden en op uw computer op te slaan en het meta gegevensbestand te gebruiken om het bestand te uploaden op Azure Portal.
+
+    b. Kopieer de **URL-waarde van AWS SSO-aanmelding** , plak deze waarde in het tekstvak **Sign on URL** in het **gedeelte basis-SAML-configuratie** in de Azure Portal.
+
+    c. Klik in de sectie **meta gegevens van de identiteits provider** op **Bladeren** om het meta gegevensbestand te uploaden dat u hebt gedownload van de Azure Portal.
+
+    d. Kies **volgende: controleren**.
+
+8. Typ in het tekstvak **accepteren** om de identiteits bron te wijzigen.
+
+    ![Scherm opname van het bevestigen van de configuratie](./media/aws-single-sign-on-tutorial/accept.png)
+
+9. Klik op **identiteits bron wijzigen**.
 
 ### <a name="create-aws-single-sign-on-test-user"></a>Test gebruiker voor eenmalige aanmelding voor AWS maken
 

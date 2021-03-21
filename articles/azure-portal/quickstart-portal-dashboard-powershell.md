@@ -4,12 +4,12 @@ description: Meer informatie over het maken van een dashboard in Azure Portal me
 ms.topic: quickstart
 ms.custom: devx-track-azurepowershell
 ms.date: 07/24/2020
-ms.openlocfilehash: 02e243a7296555d73427f8e31c4abdf9c3e56735
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
-ms.translationtype: HT
+ms.openlocfilehash: 1b001c8f1ab73d23441697c93202cf1f6ea65687
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96745737"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104613321"
 ---
 # <a name="quickstart-create-an-azure-portal-dashboard-with-powershell"></a>Quickstart: Een Azure Portal-dashboard maken met PowerShell
 
@@ -20,10 +20,10 @@ Het dashboard toont de prestaties van een virtuele machine (VM), evenals een aan
 
 Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
 
-Als u PowerShell lokaal wilt gebruiken, moet u voor dit artikel de AZ Powershell-module installeren en verbinding maken met uw Azure-account met behulp van de cmdlet [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount). Zie [Azure PowerShell installeren](/powershell/azure/install-az-ps) voor meer informatie over het installeren van de AZ PowerShell-module.
+Als u PowerShell lokaal wilt gebruiken, moet u voor dit artikel de Az-module van PowerShell installeren en verbinding maken met uw Azure-account met behulp van de cmdlet [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount). Zie [Azure PowerShell installeren](/powershell/azure/install-az-ps) voor meer informatie over het installeren van de Az-module van PowerShell.
 
 > [!IMPORTANT]
-> Zo lang de PowerShell-module **Az.Portal** in preview is, moet u deze afzonderlijk van de Az-module van PowerShell installeren met de cmdlet `Install-Module`. Zodra de PowerShell-module algemeen beschikbaar komt, wordt het onderdeel van toekomstige releases van Az PowerShell en is de module systeemeigen beschikbaar vanuit Azure Cloud Shell.
+> Hoewel de module **AZ. Portal** Power shell in preview is, moet u deze afzonderlijk van de AZ Power shell-module installeren met behulp van de- `Install-Module` cmdlet. Zodra de PowerShell-module algemeen beschikbaar komt, wordt het onderdeel van toekomstige releases van Az PowerShell en is de module systeemeigen beschikbaar vanuit Azure Cloud Shell.
 
 ```azurepowershell-interactive
 Install-Module -Name Az.Portal
@@ -146,19 +146,7 @@ Controleer of het dashboard is gemaakt.
 Get-AzPortalDashboard -Name $dashboardName -ResourceGroupName $resourceGroupName
 ```
 
-Controleer of u in Azure Portal gegevens over de VM kunt zien.
-
-1. In de Azure-portal selecteert u **Dashboard**.
-
-   ![Navigatie in de Azure-portal naar dashboard](media/quickstart-portal-dashboard-powershell/navigate-to-dashboards.png)
-
-1. Op de dashboardpagina selecteert u **Eenvoudig VM-dashboard**.
-
-   ![Navigeren naar een eenvoudig VM-dashboard](media/quickstart-portal-dashboard-powershell/select-simple-vm-dashboard.png)
-
-1. Bekijk het dashboard. U kunt zien dat een deel van de inhoud statisch is, maar er zijn ook grafieken waarin de prestaties van de virtuele machine worden weergegeven.
-
-   ![Eenvoudig VM-dashboard bekijken](media/quickstart-portal-dashboard-powershell/review-simple-vm-dashboard.png)
+[!INCLUDE [azure-portal-review-deployed-resources](../../includes/azure-portal-review-deployed-resources.md)]
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

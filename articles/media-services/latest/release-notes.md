@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: na
 ms.topic: article
-ms.date: 10/21/2020
+ms.date: 03/17/2021
 ms.author: inhenkel
-ms.openlocfilehash: d7cfb4cf9b6b061f5fb53667e968cb0403f22bfc
-ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
+ms.openlocfilehash: 9e5a6737d2e37392efd305910ff5370adc84940f
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103562549"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104596736"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Release opmerkingen bij Azure Media Services v3
 
@@ -84,7 +84,7 @@ Versie 3 biedt:
  
 - 24x7 ondersteuning voor Live-gebeurtenissen
 - ARM REST Api's, client-Sdk's voor .NET core, Node.js, Python, Java, Go en Ruby.
-- Door de klant beheerde sleutels, integratie van vertrouwde opslag, ondersteuning voor persoonlijke koppelingen en [meer](https://review.docs.microsoft.com/azure/media-services/latest/migrate-v-2-v-3-migration-benefits)
+- Door de klant beheerde sleutels, integratie van vertrouwde opslag, ondersteuning voor persoonlijke koppelingen en [meer](https://docs.microsoft.com/azure/media-services/latest/migrate-v-2-v-3-migration-benefits)
 
 #### <a name="action-required"></a>Vereiste actie
 
@@ -123,7 +123,6 @@ Werk de nieuwste client-Sdk's in uw code bases bij met behulp van uw pakket behe
 - **[Vertrouwde opslag](concept-trusted-storage.md)**: Media Services kunnen worden geconfigureerd voor toegang tot Azure Storage met behulp van een beheerde identiteit die is gekoppeld aan het Media Services-account. Wanneer opslag accounts worden geopend met behulp van een beheerde identiteit, kunnen klanten meer beperkende netwerk-Acl's configureren voor het opslag account zonder dat Media Services scenario's worden geblokkeerd.
 
 - **[Beheerde identiteiten](concept-managed-identities.md)**: klanten kunnen een door het systeem toegewezen beheerde identiteit inschakelen voor een Media Services account om toegang te bieden tot sleutel kluizen (voor door de klant beheerde sleutels) en opslag accounts (voor vertrouwde opslag).
-
 
 ### <a name="updated-typescript-nodejs-samples-using-isomorphic-sdk-for-javascript"></a>Bijgewerkte type script-Node.js-voor beelden met isomorphic SDK voor Java script
 
@@ -373,7 +372,7 @@ U kunt nu een lijst met Asset-of account filters opgeven die van toepassing zijn
 
 Media Services V3 wordt nu ondersteund in azure National Clouds. Niet alle functies zijn nog in alle Clouds beschikbaar. Zie [Clouds en regio's waarin Azure Media Services v3 bestaat](azure-clouds-regions.md)voor meer informatie.
 
-De gebeurtenis [micro soft. media. JobOutputProgress](media-services-event-schemas.md#monitoring-job-output-progress) is toegevoegd aan de Azure Event grid-schema's voor Media Services.
+De gebeurtenis [micro soft. media. JobOutputProgress](monitoring/media-services-event-schemas.md#monitoring-job-output-progress) is toegevoegd aan de Azure Event grid-schema's voor Media Services.
 
 ## <a name="january-2019"></a>Januari 2019
 

@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 03/12/2021
 ms.author: amverma
 ms.reviewer: cynthn
-ms.openlocfilehash: 94e4590c66cdee74555611302f4f9228a755c76a
-ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
+ms.openlocfilehash: b1f2800c3787cd28437afa70b78ef8388461e413
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "103472866"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104721169"
 ---
 # <a name="hbv3-series-virtual-machine-overview"></a>Overzicht van virtuele machines uit de HBv3-serie 
 
@@ -63,13 +63,16 @@ Bij een koppeling in een striped matrix biedt de NVMe SSD tot 7 GB/s Lees bewerk
 |--------------------------------|-----------------------------------------------------------|
 | Maximale grootte van MPI-taak               | 36.000 kernen (300 Vm's in één schaalset voor virtuele machines met singlePlacementGroup = True) |
 | MPI-ondersteuning                    | HPC-X, Intel MPI, OpenMPI, MVAPICH2, MPICH  |
-| Aanvullende Frameworks          | Unified Communication X, libfabric, PGAS                  |
+| Aanvullende Frameworks          | UCX, libfabric, PGAS                  |
 | Ondersteuning voor Azure Storage          | Standard-en Premium-schijven (Maxi maal 32 schijven)              |
-| Ondersteuning van het besturings systeem voor SRIOV RDMA      | CentOS/RHEL 7,6 +, SLES 12 SP4 +, WinServer 2016 +           |
+| Ondersteuning van het besturings systeem voor SRIOV RDMA      | CentOS/RHEL 7,6 +, Ubuntu 18.04 +, SLES 12 SP4 +, WinServer 2016 +           |
 | Aanbevolen besturings systeem voor prestaties | CentOS 8,1, Windows Server 2019 +
-| Orchestrator-ondersteuning           | Azure CycleCloud, Azure Batch, Azure Kubernetes service                      | 
+| Orchestrator-ondersteuning           | Azure CycleCloud, Azure Batch, AKS; [Opties voor cluster configuratie](../../sizes-hpc.md#cluster-configuration-options)                      | 
+
+> [!NOTE] 
+> Windows Server 2012 R2 wordt niet ondersteund op HBv3 en andere Vm's met meer dan 64 (virtuele of fysieke) kernen. Klik [hier](https://docs.microsoft.com/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows) voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over de meest recente aankondigingen en enkele HPC-voor beelden vindt u in de blogs over de [technische community van Azure Compute](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute).
+- Meer informatie over de laatste aankondigingen, HPC-voor beelden en prestatie resultaten vindt u in de blogs van de [technische community van Azure Compute](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute).
 - Zie [High Performance Computing (HPC) op Azure](/azure/architecture/topics/high-performance-computing/) voor een gedetailleerdere architectuurweergave van HPC-workloads die worden uitgevoerd.

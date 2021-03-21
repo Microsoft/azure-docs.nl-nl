@@ -18,10 +18,10 @@ ms.author: markvi
 ms.reviewer: besiler
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 185638d683699403c304603d968cfe84e32a55b5
-ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103574557"
 ---
 # <a name="azure-active-directory-sign-in-activity-reports---preview"></a>Rapporten over Azure Active Directory-aanmeld activiteiten-preview
@@ -341,7 +341,7 @@ Mogelijke waarden zijn:
 
 - Eenentwintig uur
 
-- Aangepast telefoonnummer
+- Aangepast
 
 ![Filter datum bereik](./media/concept-all-sign-ins/date-range-filter.png)
 

@@ -9,12 +9,12 @@ ms.subservice: workspace
 ms.date: 09/03/2020
 ms.author: saveenr
 ms.reviewer: jrasnick
-ms.openlocfilehash: d2f2ed99af288b72a4c53f07d3cd7ba8b46974c0
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: d38f1f294f60b73e8f1e69169a75333eb175c9f6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101693625"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104600153"
 ---
 # <a name="quickstart-create-a-synapse-workspace"></a>Quickstart: Een Synapse-werkruimte maken
 In deze quickstart wordt stapsgewijs beschreven hoe u een Azure Synapse-werkruimte maakt met Azure Portal.
@@ -35,7 +35,7 @@ In deze quickstart wordt stapsgewijs beschreven hoe u een Azure Synapse-werkruim
 
 > [!NOTE]
 > Nadat u de Azure Synapse-werkruimte hebt gemaakt, kunt u de werkruimte niet verplaatsen naar een andere Azure Active Directory-tenant. Als u dit doet via een migratie van abonnementen of een andere actie, verliest u mogelijk de toegang tot de artefacten in de werkruimte.
-> Daarnaast kunt u momenteel geen Synapse Analytics-werk ruimte maken in een abonnement voor [Cloud Solution Provider (CSP)](https://docs.microsoft.com/partner-center/csp-overview) .
+> Daarnaast kunt u momenteel geen Synapse Analytics-werk ruimte maken in een abonnement voor [Cloud Solution Provider (CSP)](/partner-center/csp-overview) .
 
 ## <a name="open-synapse-studio"></a>Synapse Studio openen
 

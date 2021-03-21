@@ -5,15 +5,15 @@ author: vermagit
 ms.service: virtual-machines
 ms.subservice: hpc
 ms.topic: article
-ms.date: 11/06/2020
+ms.date: 03/18/2021
 ms.author: amverma
 ms.reviewer: cynthn
-ms.openlocfilehash: cd4d928217ceba80fa5ea0252a6ed20803a812d3
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 089976f2009e006f53dd2a77f09f57d5090429b7
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "101666960"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104721235"
 ---
 # <a name="enable-infiniband"></a>InfiniBand inschakelen
 
@@ -22,9 +22,9 @@ ms.locfileid: "101666960"
 Er zijn verschillende manieren om InfiniBand in te scha kelen voor de mogelijke VM-grootten.
 
 ## <a name="vm-images-with-infiniband-drivers"></a>VM-installatie kopieën met InfiniBand-Stuur Programma's
-Zie [VM-installatie kopieën](configure.md#vm-images) voor een lijst met ondersteunde VM-installatie kopieën die vooraf zijn geladen met InfiniBand-Stuur programma's (voor SR-IOV-of niet-SR-IOV-vm's) of kan worden geconfigureerd met de juiste Stuur Programma's.
-Voor met SR-IOV ingeschakelde [RDMA-compatibele vm's](../../sizes-hpc.md#rdma-capable-instances), [CentOS-HPC-versie 7,6 of een latere](https://techcommunity.microsoft.com/t5/Azure-Compute/CentOS-HPC-VM-Image-for-SR-IOV-enabled-Azure-HPC-VMs/ba-p/665557) versie van VM-installatie kopieën in de Marketplace is de eenvoudigste manier om aan de slag te gaan.
-De Ubuntu-VM-installatie kopieën kunnen worden geconfigureerd met de juiste Stuur Programma's voor zowel SR-IOV als niet-SR-IOV ingeschakelde Vm's met behulp van de [instructies hier](https://techcommunity.microsoft.com/t5/azure-compute/configuring-infiniband-for-ubuntu-hpc-and-gpu-vms/ba-p/1221351).
+Zie [VM-installatie kopieën](configure.md#vm-images) voor een lijst met ondersteunde VM-installatie kopieën die vooraf zijn geladen met InfiniBand-Stuur programma's (voor SR-IOV-of niet-SR-IOV-vm's) of kan worden geconfigureerd met de juiste Stuur Programma's voor [virtuele machines met RDMA-functionaliteit](../../sizes-hpc.md#rdma-capable-instances).
+- De [CentOS-VM-](configure.md#centos-hpc-vm-images) installatie kopieën in de Marketplace zijn de eenvoudigste manier om aan de slag te gaan.
+- De [Ubuntu](configure.md#ubuntu-vm-images) -VM-installatie kopieën kunnen worden geconfigureerd met de juiste IB-Stuur Programma's.
 
 ## <a name="infiniband-driver-vm-extensions"></a>InfiniBand-VM-extensies voor Stuur Programma's
 In Linux kan de [InfiniBandDriverLinux-VM-extensie](../../extensions/hpc-compute-infiniband-linux.md) worden gebruikt voor het installeren van de Mellanox OFED-Stuur Programma's en het inschakelen van Infiniband op de op SR-IOV ingeschakelde H-en N-Series vm's.
@@ -68,6 +68,6 @@ sudo systemctl restart waagent
 ## <a name="next-steps"></a>Volgende stappen
 
 - Meer informatie over het installeren van verschillende [ondersteunde mpi-bibliotheken](setup-mpi.md) en hun optimale configuratie op de vm's.
-- Bekijk [Overzicht HB-serie](hb-series-overview.md) en [Overzicht HC-serie](hc-series-overview.md) voor meer informatie over het optimaal configureren van workloads ten behoeve van de prestaties en schaalbaarheid.
-- Lees over de laatste aankondigingen en enkele HPC-voorbeelden en -resultaten in de [Azure Compute Tech Community-blogs](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute).
+- Bekijk het overzicht van de [HBv3-serie](hbv3-series-overview.md) en de [HC-serie](hc-series-overview.md).
+- Meer informatie over de laatste aankondigingen, HPC-voor beelden en prestatie resultaten vindt u in de blogs van de [technische community van Azure Compute](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute).
 - Zie [High Performance Computing (HPC) op Azure](/azure/architecture/topics/high-performance-computing/) voor een gedetailleerdere architectuurweergave van HPC-workloads die worden uitgevoerd.

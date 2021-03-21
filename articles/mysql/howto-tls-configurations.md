@@ -6,12 +6,12 @@ ms.author: sumuth
 ms.service: mysql
 ms.topic: how-to
 ms.date: 06/02/2020
-ms.openlocfilehash: 290752c0e577e6c2cd58d83f77fea8a5406388e4
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.openlocfilehash: 5ecf2992fa9ea56f73748a9f1f98c75f9076c68f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93240627"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104656886"
 ---
 # <a name="configuring-tls-settings-in-azure-database-for-mysql-using-azure-portal"></a>TLS-instellingen in Azure Database for MySQL configureren met Azure Portal
 
@@ -33,15 +33,15 @@ Volg deze stappen om de minimale TLS-versie van het MySQL-server in te stellen:
 
 1. Klik op de pagina MySQL-server onder **instellingen** op **verbindings beveiliging** om de pagina verbindings beveiliging configureren te openen.
 
-1. Selecteer in **minimale TLS** -versie **1,2** om verbindingen met een TLS-versie kleiner dan TLS 1,2 voor uw MySQL-server te weigeren.
+1. Selecteer in **minimale TLS**-versie **1,2** om verbindingen met een TLS-versie kleiner dan TLS 1,2 voor uw MySQL-server te weigeren.
 
     :::image type="content" source="./media/howto-tls-configurations/setting-tls-value.png" alt-text="Azure Database for MySQL TLS-configuratie":::
 
-1. Klik op **Opslaan** om de wijzigingen op te slaan.
+1. Klik op **Opslaan** om de wijzigingen op te slaan. 
 
-1. Bij een melding wordt bevestigd dat de instelling verbindings beveiliging is ingeschakeld.
+1. Bij een melding wordt bevestigd dat de instelling verbindings beveiliging is ingeschakeld en onmiddellijk van kracht is. Het is **niet** nodig om de server opnieuw op te starten of uit te voeren. Nadat de wijzigingen zijn opgeslagen, worden alle nieuwe verbindingen met de server alleen geaccepteerd als de TLS-versie groter is dan of gelijk is aan de minimale TLS-versie die is ingesteld op de portal.
 
-    :::image type="content" source="./media/howto-tls-configurations/setting-tls-value-success.png" alt-text="Azure Database for MySQL TLS-configuratie":::
+    :::image type="content" source="./media/howto-tls-configurations/setting-tls-value-success.png" alt-text="Azure Database for MySQL TLS-configuratie geslaagd":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

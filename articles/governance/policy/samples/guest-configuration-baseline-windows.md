@@ -5,10 +5,10 @@ ms.date: 03/11/2021
 ms.topic: reference
 ms.custom: generated
 ms.openlocfilehash: 415da8f74b6133b3d9bcdc40dbb3ace8ae6b5a1f
-ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103235003"
 ---
 # <a name="azure-policy-guest-configuration-baseline-for-windows"></a>Configuratie basislijn Azure Policy voor Windows

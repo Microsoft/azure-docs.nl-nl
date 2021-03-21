@@ -6,10 +6,10 @@ author: rboucher
 ms.author: robb
 ms.date: 06/16/2020
 ms.openlocfilehash: e4f20032febe1c4afe9cb0964c1b448eaa018103
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102030848"
 ---
 # <a name="example-queries-in-azure-monitor-log-analytics"></a>Voorbeeld query's in Azure Monitor Log Analytics

@@ -12,10 +12,10 @@ ms.date: 03/08/2021
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 85574b7d33af6d9abfe25f5af4d811255f08ce4b
-ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102452234"
 ---
 # <a name="string-claims-transformations"></a>Teken reeks claim transformaties
@@ -198,7 +198,7 @@ Bepaal of een claim van een teken reeks gelijk is aan een andere. Het resultaat 
 | Parameter | ignoreCase | booleaans | Hiermee geeft u op of deze vergelijking het hoofdletter gebruik moet negeren van de teken reeksen die worden vergeleken. |
 | Output claim | Output claim | booleaans | Het claim type dat is geproduceerd nadat deze claim transformatie is aangeroepen. |
 
-Gebruik deze claim transformatie om te controleren of een claim gelijk is aan een andere claim. De volgende claim transformatie controleert bijvoorbeeld of de waarde van de **e-mail** claim gelijk is aan de **geverifieerde. e-mail** claim.
+Gebruik deze claim transformatie om te controleren of een claim gelijk is aan een andere claim. Bijvoorbeeld, met de volgende claim transformatie wordt gecontroleerd of de waarde van de **e-mail** claim gelijk is aan de **Verified.email** -claim.
 
 ```xml
 <ClaimsTransformation Id="CheckEmail" TransformationMethod="CompareClaims">

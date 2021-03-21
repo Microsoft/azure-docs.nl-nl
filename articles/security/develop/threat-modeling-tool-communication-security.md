@@ -18,10 +18,10 @@ ms.date: 02/07/2017
 ms.author: jegeib
 ms.custom: devx-track-csharp
 ms.openlocfilehash: d9a4eabf37101622ac69ae05f3bec232fb8d2fe6
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94517526"
 ---
 # <a name="security-frame-communication-security--mitigations"></a>Beveiligings frame: communicatie beveiliging | Oplossingen 
@@ -46,7 +46,7 @@ ms.locfileid: "94517526"
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Azure Event Hub | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [Overzicht van Event Hubs verificatie en beveiligings model](../../event-hubs/authenticate-shared-access-signature.md) |
@@ -57,7 +57,7 @@ ms.locfileid: "94517526"
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Dynamics CRM | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | N.v.t.  |
@@ -90,7 +90,7 @@ ms.locfileid: "94517526"
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | N.v.t.  |
@@ -101,7 +101,7 @@ ms.locfileid: "94517526"
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | EnvironmentType-Azure |
 | **Referenties**              | [HTTPS inschakelen voor een app in Azure App Service](../../app-service/configure-ssl-bindings.md) |
@@ -112,7 +112,7 @@ ms.locfileid: "94517526"
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | EnvironmentType-Azure |
 | **Referenties**              | [HTTPS afdwingen op Azure App Service](../../app-service/configure-ssl-bindings.md#enforce-https) |
@@ -145,7 +145,7 @@ Deze regel werkt door het retour neren van een HTTP-status code van 301 (permane
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [Cheat-blad OWASP HTTP strict-Trans Port beveiliging](https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html) |
@@ -156,7 +156,7 @@ Deze regel werkt door het retour neren van een HTTP-status code van 301 (permane
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Database | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | SQL Azure  |
 | **Kenmerken**              | SQL-versie-V12 |
 | **Referenties**              | [Aanbevolen procedures voor het schrijven van beveiligde verbindings reeksen voor SQL Database](https://social.technet.microsoft.com/wiki/contents/articles/2951.windows-azure-sql-database-connection-security.aspx#best) |
@@ -167,7 +167,7 @@ Deze regel werkt door het retour neren van een HTTP-status code van 301 (permane
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Database | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | OnPrem |
 | **Kenmerken**              | SQL-versie-MsSQL2016, SQL-versie-MsSQL2012, SQL-versie-MsSQL2014 |
 | **Referenties**              | [Versleutelde verbindingen met database-engine inschakelen](/sql/database-engine/configure-windows/enable-encrypted-connections-to-the-database-engine)  |
@@ -189,7 +189,7 @@ Deze regel werkt door het retour neren van een HTTP-status code van 301 (permane
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Azure Storage | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | Para-BLOB |
 | **Referenties**              | [Overzicht van Windows Azure Blob MD5](https://blogs.msdn.microsoft.com/windowsazurestorage/2011/02/17/windows-azure-blob-md5-overview/) |
@@ -200,7 +200,7 @@ Deze regel werkt door het retour neren van een HTTP-status code van 301 (permane
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Mobiele client | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | Para-bestand |
 | **Referenties**              | [Azure File Storage](https://azure.microsoft.com/blog/azure-file-storage-now-generally-available/#comment-2529238931), [Azure File Storage SMB-ondersteuning voor Windows-clients](../../storage/files/storage-dotnet-how-to-use-files.md#understanding-the-net-apis) |
@@ -211,7 +211,7 @@ Deze regel werkt door het retour neren van een HTTP-status code van 301 (permane
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Azure Storage | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen, Windows Phone |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [Certificaat en open bare sleutel vastmaken](https://owasp.org/www-community/controls/Certificate_and_Public_Key_Pinning) |
@@ -288,7 +288,7 @@ namespace CertificatePinningExample
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | WCF | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | NET Framework 3 |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [MSDN](/previous-versions/msp-n-p/ff648500(v=pandp.10)), [Fortify Konink rijk](https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.wcf_misconfiguration_transport_security_enabled) |
@@ -299,7 +299,7 @@ namespace CertificatePinningExample
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | WCF | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | .NET Framework 3 |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [MSDN](/previous-versions/msp-n-p/ff650862(v=pandp.10)) |
@@ -328,7 +328,7 @@ string GetData(int value);
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | WCF | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | .NET Framework 3 |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [MSDN](/previous-versions/msp-n-p/ff648826(v=pandp.10)) |
@@ -339,7 +339,7 @@ string GetData(int value);
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Web-API | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | MVC5, MVC6 |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [SSL afdwingen in een web-API-controller](https://www.asp.net/web-api/overview/security/working-with-ssl-in-web-api) |
@@ -380,7 +380,7 @@ public class ValuesController : ApiController
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Azure Cache voor Redis | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [Ondersteuning voor Azure redis TLS](../../azure-cache-for-redis/cache-faq.md) |
@@ -393,7 +393,7 @@ Houd er rekening mee dat redis is ontworpen voor toegang door vertrouwde clients
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | IoT-veld Gateway | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | N.v.t.  |
@@ -404,7 +404,7 @@ Houd er rekening mee dat redis is ontworpen voor toegang door vertrouwde clients
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | IoT-Cloud gateway | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [Kies uw communicatie protocol](../../iot-hub/iot-hub-devguide.md) |

@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: f2294ccb1d958b229a71e45bb502b8134d8d5c7f
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93305668"
 ---
 # <a name="customer-acceptance-stage-of-the-team-data-science-process-lifecycle"></a>Acceptatie fase van de klant van de team data Science proces levenscyclus
@@ -34,13 +34,13 @@ Hier volgt een visuele representatie van de levens cyclus van TDSP:
 
 
 ## <a name="goal"></a>Doel
-**Project doelstellingen volt ooien** : Controleer of de pijp lijn, het model en de implementatie ervan in een productie omgeving voldoen aan de doel stellingen van de klant.
+**Project doelstellingen volt ooien**: Controleer of de pijp lijn, het model en de implementatie ervan in een productie omgeving voldoen aan de doel stellingen van de klant.
 
 ## <a name="how-to-do-it"></a>Hoe u dit doet
 Er zijn twee hoofd taken die in deze fase worden behandeld:
 
-   * **Systeem validatie** : Controleer of het geïmplementeerde model en de pijp lijn voldoen aan de behoeften van de klant.
-   * **Project-afweging** : hand het project afronden naar de entiteit die het systeem in productie gaat uitvoeren.
+   * **Systeem validatie**: Controleer of het geïmplementeerde model en de pijp lijn voldoen aan de behoeften van de klant.
+   * **Project-afweging**: hand het project afronden naar de entiteit die het systeem in productie gaat uitvoeren.
 
 De klant moet valideren dat het systeem voldoet aan de behoeften van uw bedrijf en dat het beantwoordt aan de vragen met aanvaard bare nauw keurigheid om het systeem te implementeren op productie voor gebruik door de toepassing van de client. Alle documentatie wordt voltooid en gecontroleerd. Het project wordt door gegeven aan de entiteit die verantwoordelijk is voor de bewerkingen. Deze entiteit kan bijvoorbeeld een IT-of klant gegevens Science-Team of een agent van de klant zijn die verantwoordelijk is voor het uitvoeren van het systeem in de productie omgeving. 
 

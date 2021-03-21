@@ -14,10 +14,10 @@ ms.author: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a3b9f76eba9697d6ad47ecf8dc51689538923f88
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "101094481"
 ---
 # <a name="frequently-asked-questions-about-azure-active-directory"></a>Veelgestelde vragen over Azure Active Directory
@@ -60,7 +60,7 @@ Daarnaast hebben betaalde services van Azure AD, zoals Enterprise Mobility + Sec
 ---
 **V: Is er een rapport waarin staat wanneer mijn Azure AD-gebruikerslicenties verlopen?**
 
-**A:** Geen.  Dit is momenteel niet beschikbaar.
+**A:** Mama  Dit is momenteel niet beschikbaar.
 
 ---
 
@@ -212,4 +212,4 @@ Zie [Automate user provisioning and deprovisioning to SaaS applications with Azu
 ---
 **V: Kan ik een veilige LDAP-verbinding instellen met Azure AD?**
 
-**A:**  Geen. Azure AD biedt geen ondersteuning voor het LDAP-protocol (Lightweight Directory Access Protocol) of Secure LDAP rechtstreeks. Het is echter mogelijk om Azure AD Domain Services-instantie (Azure AD DS) in te scha kelen op uw Azure AD-Tenant met correct geconfigureerde netwerk beveiligings groepen via Azure-netwerken om LDAP-connectiviteit te bewerkstelligen. Zie [Configure secure LDAP for a Azure Active Directory Domain Services Managed Domain](../../active-directory-domain-services/tutorial-configure-ldaps.md) (Engelstalig) voor meer informatie.
+**A:**  Mama Azure AD biedt geen ondersteuning voor het LDAP-protocol (Lightweight Directory Access Protocol) of Secure LDAP rechtstreeks. Het is echter mogelijk om Azure AD Domain Services-instantie (Azure AD DS) in te scha kelen op uw Azure AD-Tenant met correct geconfigureerde netwerk beveiligings groepen via Azure-netwerken om LDAP-connectiviteit te bewerkstelligen. Zie [Configure secure LDAP for a Azure Active Directory Domain Services Managed Domain](../../active-directory-domain-services/tutorial-configure-ldaps.md) (Engelstalig) voor meer informatie.

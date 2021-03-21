@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 09/14/2020
 ms.author: jeedes
 ms.openlocfilehash: 3b7c8e024ac8361c08cc41195531a114bb12fcb4
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92522288"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-oracle-peoplesoft---protected-by-f5-big-ip-apm"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met Oracle PeopleSoft - Protected by F5 BIG-IP APM
@@ -57,8 +57,8 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 Als u de integratie van Oracle PeopleSoft - Protected by F5 BIG-IP APM in Azure AD wilt configureren, dient u Oracle PeopleSoft - Protected by F5 BIG-IP APM vanuit de galerie toe te voegen aan uw lijst met beheerde SaaS-apps.
 
 1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory** .
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
 1. Typ in de sectie **Toevoegen uit de galerie** **Oracle PeopleSoft - Protected by F5 BIG-IP APM** in het zoekvak.
 1. Selecteer **Oracle PeopleSoft - Protected by F5 BIG-IP APM** in het resultatenvenster en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
@@ -66,7 +66,7 @@ Als u de integratie van Oracle PeopleSoft - Protected by F5 BIG-IP APM in Azure 
 
 ## <a name="configure-and-test-azure-ad-sso-for-oracle-peoplesoft---protected-by-f5-big-ip-apm"></a>Eenmalige aanmelding van Azure AD configureren en testen voor Oracle PeopleSoft - Protected by F5 BIG-IP APM
 
-Configureer en test eenmalige aanmelding van Azure AD met Oracle PeopleSoft - Protected by F5 BIG-IP APM met behulp van een testgebruiker met de naam **B. Simon** . Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de gerelateerde gebruiker in Oracle PeopleSoft - Protected by F5 BIG-IP APM.
+Configureer en test eenmalige aanmelding van Azure AD met Oracle PeopleSoft - Protected by F5 BIG-IP APM met behulp van een testgebruiker met de naam **B. Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de gerelateerde gebruiker in Oracle PeopleSoft - Protected by F5 BIG-IP APM.
 
 Voer de volgende stappen uit als u eenmalige aanmelding van Azure AD wilt testen en configureren met Oracle PeopleSoft - Protected by F5 BIG-IP APM:
 
@@ -81,8 +81,8 @@ Voer de volgende stappen uit als u eenmalige aanmelding van Azure AD wilt testen
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Ga in Azure Portal, op de integratiepagina van de toepassing **Oracle PeopleSoft - Protected by F5 BIG-IP APM** , naar de sectie **Beheren** , en selecteer **eenmalige aanmelding** .
-1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding** .
+1. Ga in Azure Portal, op de integratiepagina van de toepassing **Oracle PeopleSoft - Protected by F5 BIG-IP APM**, naar de sectie **Beheren**, en selecteer **eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
@@ -112,7 +112,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
     | ------------------ | --------- |
     | EMPLID | user.employeeid |
 
-1. Op de pagina **Eenmalige aanmelding met SAML instellen** , in de sectie **SAML-handtekeningcertificaat** , downloadt u het **XML-bestand met federatieve metagegevens** en het **certificaat (Base64)** en slaat u deze op uw computer op.
+1. Op de pagina **Eenmalige aanmelding met SAML instellen**, in de sectie **SAML-handtekeningcertificaat**, downloadt u het **XML-bestand met federatieve metagegevens** en het **certificaat (Base64)** en slaat u deze op uw computer op.
 
     ![De link om het certificaat te downloaden](./media/oracle-peoplesoft-protected-by-f5-big-ip-apm-tutorial/both-certificate.png)
 
@@ -120,53 +120,53 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
-   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord** .
-   1. Klik op **Create** .
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie stelt u B. Simon in staat gebruik te maken van eenmalige aanmelding van Azure door toegang te verlenen tot Oracle PeopleSoft - Protected by F5 BIG-IP APM.
 
-1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
-1. Selecteer in de lijst met toepassingen de optie **Oracle PeopleSoft - Protected by F5 BIG-IP APM** .
-1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen** .
-1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Selecteer in de lijst met toepassingen de optie **Oracle PeopleSoft - Protected by F5 BIG-IP APM**.
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol** . Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
-1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-oracle-peoplesoft-protected-by-f5-big-ip-apm-sso"></a>Oracle PeopleSoft - Protected by F5 BIG-IP APM configureren
 
 ### <a name="f5-saml-sp-configuration"></a>Configuratie van F5 SAML SP
 
-Importeer het metagegevenscertificaat in de F5 die later in het installatieproces wordt gebruikt. Navigeer naar **System > Certificate Management > Traffic Certificate Management > SSL Certificate List** . Selecteer **Import** in de rechterhoek.
+Importeer het metagegevenscertificaat in de F5 die later in het installatieproces wordt gebruikt. Navigeer naar **System > Certificate Management > Traffic Certificate Management > SSL Certificate List**. Selecteer **Import** in de rechterhoek.
 
 ![Configuratie van F5 SAML SP](./media/oracle-peoplesoft-protected-by-f5-big-ip-apm-tutorial/sp-configuration.png)
 
 #### <a name="setup-the-saml-idp-connector"></a>De SAML IDP-connector instellen 
 
-1. Ga naar **Access > Federation > SAML: Service Provider > External Idp Connectors** en klik op **Create > From Metadata** .
+1. Ga naar **Access > Federation > SAML: Service Provider > External Idp Connectors** en klik op **Create > From Metadata**.
 
     ![F5 SAML IDP-connector](./media/oracle-peoplesoft-protected-by-f5-big-ip-apm-tutorial/saml-idp-connector.png)
 
 1. Klik op de volgende pagina op **Browse** om het XML-bestand te uploaden.
 
-1. Geef in het tekstvak **Identity Provider Name** een geldige naam op en klik op **OK** .
+1. Geef in het tekstvak **Identity Provider Name** een geldige naam op en klik op **OK**.
 
     ![nieuwe SAML IDP-connector](./media/oracle-peoplesoft-protected-by-f5-big-ip-apm-tutorial/new-saml-idp.png)
 
-1. Voer de vereiste stappen uit op het tabblad **Beveiligingsinstellingen** en klik op **OK** .
+1. Voer de vereiste stappen uit op het tabblad **Beveiligingsinstellingen** en klik op **OK**.
 
     ![SAML IDP-connector bewerken](./media/oracle-peoplesoft-protected-by-f5-big-ip-apm-tutorial/edit-saml-idp.png)
 
 #### <a name="setup-the-saml-sp"></a>SAML-SP instellen
 
-1. Ga naar **Access > Federation > SAML Service Provider > Local SP Services** en klik op **Create** . Voer de volgende informatie in en klik op **OK** .
+1. Ga naar **Access > Federation > SAML Service Provider > Local SP Services** en klik op **Create**. Voer de volgende informatie in en klik op **OK**.
 
     * Naam: `<Name>`
     * Entity ID: `https://<FQDN>.peoplesoft.f5.com`
@@ -177,15 +177,15 @@ Importeer het metagegevenscertificaat in de F5 die later in het installatieproce
 
     ![nieuwe SAML SP-services](./media/oracle-peoplesoft-protected-by-f5-big-ip-apm-tutorial/new-saml-sp-service.png)
 
-1. Selecteer de SP-configuratie, PeopleSoftAppSSO, en klik op **Bind/UnBind IdP Connectors** .
-Klik op **Add New Row** en selecteer de **External IdP connector** die u in de vorige stap hebt gemaakt, klik op **Update** en klik op **OK** .
+1. Selecteer de SP-configuratie, PeopleSoftAppSSO, en klik op **Bind/UnBind IdP Connectors**.
+Klik op **Add New Row** en selecteer de **External IdP connector** die u in de vorige stap hebt gemaakt, klik op **Update** en klik op **OK**.
 
     ![SAML SP-services maken](./media/oracle-peoplesoft-protected-by-f5-big-ip-apm-tutorial/edit-saml-idp-use-sp.png)
 
 ## <a name="configuring-application"></a>Toepassing configureren
 
 ### <a name="create-a-new-pool"></a>Nieuwe pool maken
-1. Ga naar **Local Traffic > Pools > Pool List** , klik op **Create** , vul de volgende gegevens in en klik op **Finished** .
+1. Ga naar **Local Traffic > Pools > Pool List**, klik op **Create**, vul de volgende gegevens in en klik op **Finished**.
 
     * Naam: `<Name>`
     * Description: `<Description>`
@@ -198,7 +198,7 @@ Klik op **Add New Row** en selecteer de **External IdP connector** die u in de v
 
 ### <a name="create-a-new-client-ssl-profile"></a>Nieuw client-SSL-profiel maken
 
-Ga naar **Local Traffic > Profiles > SSL > Client > +** , vul de volgende gegevens in en klik op **Finished** .
+Ga naar **Local Traffic > Profiles > SSL > Client > +** , vul de volgende gegevens in en klik op **Finished**.
 
 * Name: `<Name>`
 * Certificaat: `<Certificate>`
@@ -208,7 +208,7 @@ Ga naar **Local Traffic > Profiles > SSL > Client > +** , vul de volgende gegeve
 
 ### <a name="create-a-new-virtual-server"></a>Nieuwe virtuele server maken
 
-1. Ga naar **Local Traffic > Virtual Servers > Virtual Server List > +** , vul de volgende gegevens in en klik op **Finished** .
+1. Ga naar **Local Traffic > Virtual Servers > Virtual Server List > +** , vul de volgende gegevens in en klik op **Finished**.
     * Name: `<Name>`
     * Destination Address/Mask: `<Address>`
     * Service Port: Port 443 HTTPS
@@ -235,7 +235,7 @@ Ga naar **Local Traffic > Profiles > SSL > Client > +** , vul de volgende gegeve
 
     ![Manager selfservices](./media/oracle-peoplesoft-protected-by-f5-big-ip-apm-tutorial/people-soft-console.png)
 
-1. Maak in de toepassing PeopleSoft **OAMPSFT** als een nieuw gebruikersprofiel en koppel een laag beveiligingsniveau, zoals **PeopleSoft User** .
+1. Maak in de toepassing PeopleSoft **OAMPSFT** als een nieuw gebruikersprofiel en koppel een laag beveiligingsniveau, zoals **PeopleSoft User**.
 Ga naar **Peopletools > Security > User Profiles > User Profiles** om een nieuw gebruikersprofiel te maken, bijvoorbeeld: **OAMPSFT** en voeg **Peoplesoft User** toe.
 
     ![PeopleSoft-gebruiker](./media/oracle-peoplesoft-protected-by-f5-big-ip-apm-tutorial/user-profile.png)
@@ -244,12 +244,12 @@ Ga naar **Peopletools > Security > User Profiles > User Profiles** om een nieuw 
 
     ![Gebruikersprofielen](./media/oracle-peoplesoft-protected-by-f5-big-ip-apm-tutorial/web-profile-configuration.png)
 
-1. Open in **PeopleTools Application Designer** de record **FUNCLIB_LDAP** .
+1. Open in **PeopleTools Application Designer** de record **FUNCLIB_LDAP**.
 
     ![configuratie van webprofielen](./media/oracle-peoplesoft-protected-by-f5-big-ip-apm-tutorial/funclib.png)
 
-1. Werk de gebruikersheader bij met **PS_SSO_UID** voor de functie **OAMSSO_AUTHENTICATION** .
-Vervang in de functie **getWWWAuthConfig()** de waarde die aan **&defaultUserId** is toegewezen door **OAMPSFT** , wat in het webprofiel is gedefinieerd. Sla de definitie van de record op.
+1. Werk de gebruikersheader bij met **PS_SSO_UID** voor de functie **OAMSSO_AUTHENTICATION**.
+Vervang in de functie **getWWWAuthConfig()** de waarde die aan **&defaultUserId** is toegewezen door **OAMPSFT**, wat in het webprofiel is gedefinieerd. Sla de definitie van de record op.
 
     ![OAMSSO_AUTHENTICATION](./media/oracle-peoplesoft-protected-by-f5-big-ip-apm-tutorial/record.png)
 
@@ -260,7 +260,7 @@ Vervang in de functie **getWWWAuthConfig()** de waarde die aan **&defaultUserId*
 ## <a name="setting-up-f5-big-ip-apm-to-populate-ps_sso_uid-http-header-with-the-peoplesoft-user-id"></a>F5 BIG-IP APM instellen om de HTTP-header PS_SSO_UID in te vullen met de gebruikers-ID van PeopleSoft
 
 ### <a name="configuring-per-request-policy"></a>Beleid per aanvraag configureren
-1. Ga naar **Access > Profile/Policies > Per-Request Policies** , klik op **Create** , vul de volgende gegevens in en klik op **Finished** .
+1. Ga naar **Access > Profile/Policies > Per-Request Policies**, klik op **Create**, vul de volgende gegevens in en klik op **Finished**.
 
     * Name: `<Name>`
     * Profile Type: Alle
@@ -292,7 +292,7 @@ Voer de volgende stappen uit om ondersteuning voor eenmalige afmelding toe te vo
 
 1. LTM iRule maken waarmee de gebruiker wordt omgeleid naar de APM-afmeldings-URL: `/my.logout.php3`
 
-    * Ga naar **Local Traffic > iRule** , klik op **Create** , vul de volgende gegevens in en klik op **Finished** .
+    * Ga naar **Local Traffic > iRule**, klik op **Create**, vul de volgende gegevens in en klik op **Finished**.
 
         Name: `<Name>`  
         Definition:  
@@ -300,7 +300,7 @@ Voer de volgende stappen uit om ondersteuning voor eenmalige afmelding toe te vo
 
 1. De gemaakte iRule toewijzen aan de virtuele server
 
-    * Ga naar **Local Traffic > Virtual Servers > Virtual Server List > PeopleSoftApp > Resources** . Klik op de knop **Manage…** :   
+    * Ga naar **Local Traffic > Virtual Servers > Virtual Server List > PeopleSoftApp > Resources**. Klik op de knop **Manage…** :   
 
     * Geef `<Name>` op als ingeschakelde iRule en klik op **Finished**
 
@@ -321,7 +321,7 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 #### <a name="sp-initiated"></a>Met SP geïnitieerd:
 
-* Klik in Azure Portal op **Deze toepassing testen** . Hiermee wordt u omgeleid naar de aanmeldings-URL voor Oracle PeopleSoft - Protected by F5 BIG-IP APM, waar u de aanmeldingsstroom kunt initiëren.  
+* Klik in Azure Portal op **Deze toepassing testen**. Hiermee wordt u omgeleid naar de aanmeldings-URL voor Oracle PeopleSoft - Protected by F5 BIG-IP APM, waar u de aanmeldingsstroom kunt initiëren.  
 
 * Ga rechtstreeks naar aanmeldings-URL voor Oracle PeopleSoft - Protected by F5 BIG-IP APM en start de aanmeldingsstroom daar.
 

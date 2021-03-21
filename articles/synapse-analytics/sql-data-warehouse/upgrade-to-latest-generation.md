@@ -12,10 +12,10 @@ ms.author: martinle
 ms.reviewer: jrasnick
 ms.custom: seo-lt-2019
 ms.openlocfilehash: b5a9d1781bd0498ac6ad74439b1572c52e3c345a
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96459267"
 ---
 # <a name="optimize-performance-by-upgrading-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics"></a>Optimaliseer de prestaties door de exclusieve SQL-groep (voorheen SQL DW) in azure Synapse Analytics te upgraden
@@ -65,7 +65,7 @@ U kunt nu probleemloos upgraden naar de toegewezen Gen2-laag van de exclusieve S
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-- Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+- Meld u aan bij [Azure Portal](https://portal.azure.com/).
 - Zorg ervoor dat er een toegewezen SQL-groep (voorheen SQL DW) wordt uitgevoerd. deze moet worden gemigreerd naar Gen2
 
 ### <a name="powershell-upgrade-commands"></a>Power shell-upgrade opdrachten
@@ -182,7 +182,7 @@ WHERE  idx.type_desc = 'CLUSTERED COLUMNSTORE';
 
 ## <a name="create-a-user-defined-restore-point-using-the-azure-portal"></a>Een door de gebruiker gedefinieerd herstel punt maken met behulp van de Azure Portal
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 
 2. Navigeer naar de toegewezen SQL-groep (voorheen SQL DW) waarvoor u een herstel punt wilt maken.
 
@@ -196,7 +196,7 @@ WHERE  idx.type_desc = 'CLUSTERED COLUMNSTORE';
 
 ## <a name="restore-an-active-or-paused-database-using-the-azure-portal"></a>Een actieve of onderbroken data base herstellen met behulp van de Azure Portal
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 2. Navigeer naar de toegewezen SQL-groep (voorheen SQL DW) waarvan u wilt herstellen.
 3. Klik boven aan de sectie Overzicht op **herstellen**.
 

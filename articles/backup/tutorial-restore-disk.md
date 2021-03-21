@@ -5,10 +5,10 @@ ms.topic: tutorial
 ms.date: 01/31/2019
 ms.custom: mvc, devx-track-azurecli
 ms.openlocfilehash: 999682c9bf4a4d70d886f0e85cede99f215aa046
-ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/19/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97694713"
 ---
 # <a name="restore-a-vm-with-azure-cli"></a>Een VM herstellen met Azure CLI
@@ -72,7 +72,7 @@ Als de VM waarvan een back-up is gemaakt, beheerde schijven bevat, en als het de
         --sku Standard_LRS
     ```
 
-2. Herstel de schijf vanaf uw herstelpunt met [az backup restore restore-disks](/cli/azure/backup/restore#az-backup-restore-restore-disks). Vervang *mystorageaccount* door de naam van het opslagaccount dat u met de vorige opdracht hebt gemaakt. Vervang *myRecoveryPointName* door de naam van het herstelpunt dat u hebt verkregen met de uitvoer van de vorige opdracht [az backup recoverypoint list](/cli/azure/backup/recoverypoint#az-backup-recoverypoint-list). ***Geef ook de doelresourcegroep op waarin de beheerde schijven worden hersteld** _.
+2. Herstel de schijf vanaf uw herstelpunt met [az backup restore restore-disks](/cli/azure/backup/restore#az-backup-restore-restore-disks). Vervang *mystorageaccount* door de naam van het opslagaccount dat u met de vorige opdracht hebt gemaakt. Vervang *myRecoveryPointName* door de naam van het herstelpunt dat u hebt verkregen met de uitvoer van de vorige opdracht [az backup recoverypoint list](/cli/azure/backup/recoverypoint#az-backup-recoverypoint-list). ***Geef ook een doelresourcegroep op waarin de beheerde schijven worden hersteld***.
 
     ```azurecli-interactive
     az backup restore restore-disks \
@@ -86,7 +86,7 @@ Als de VM waarvan een back-up is gemaakt, beheerde schijven bevat, en als het de
     ```
 
     > [!WARNING]
-    > Als _ *target-resource-group** niet is opgegeven, worden de beheerde schijven als niet-beheerde schijven hersteld in het opgegeven opslagaccount. Dit heeft aanzienlijke gevolgen voor de hersteltijd, omdat de tijd die nodig is om de schijven te herstellen, alleen afhankelijk is van het opgegeven opslagaccount. U kunt alleen profiteren van direct herstellen wanneer de parameter target-resource-group is opgegeven. Als het de bedoeling is dat beheerde schijven worden hersteld als niet-beheerd, geeft u de parameter **target-resource-group** niet op, en geeft u in plaats hiervan de parameter **restore-as-unmanaged-disk** op, zoals hieronder wordt weergegeven. Deze parameter is beschikbaar vanaf Az-versie 3.4.0.
+    > Als **target-resource-group** niet is opgegeven, worden de beheerde schijven als niet-beheerde schijven hersteld in het opgegeven opslagaccount. Dit heeft aanzienlijke gevolgen voor de hersteltijd, omdat de tijd die nodig is om de schijven te herstellen, alleen afhankelijk is van het opgegeven opslagaccount. U kunt alleen profiteren van direct herstellen wanneer de parameter target-resource-group is opgegeven. Als het de bedoeling is dat beheerde schijven worden hersteld als niet-beheerd, geeft u de parameter **target-resource-group** niet op, en geeft u in plaats hiervan de parameter **restore-as-unmanaged-disk** op, zoals hieronder wordt weergegeven. Deze parameter is beschikbaar vanaf Az-versie 3.4.0.
 
     ```azurecli-interactive
     az backup restore restore-disks \

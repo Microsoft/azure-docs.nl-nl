@@ -15,10 +15,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0fbda588d99de44c77118586519055a8fc474104
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96861762"
 ---
 # <a name="azure-ad-connect---msexchuserholdpolicies-and-cloudmsexchuserholdpolicies"></a>Azure AD Connect-msExchUserHoldPolicies en cloudMsExchUserHoldPolicies
@@ -36,13 +36,13 @@ In de volgende tabellen wordt de stroom beschreven:
 
 Inkomend van on-premises Active Directory:
 
-|Active Directory kenmerk|Kenmerk naam|Stroom type|Omgekeerd kenmerk|Synchronisatie regel|
+|Active Directory kenmerk|Kenmerknaam|Stroom type|Omgekeerd kenmerk|Synchronisatie regel|
 |-----|-----|-----|-----|-----|
 |On-premises Active Directory|msExchUserHoldPolicies|Direct|msExchUserHoldPolicies|In van de uitwisseling van AD-gebruikers|
 
 Uitgaand naar Azure AD:
 
-|Omgekeerd kenmerk|Kenmerk naam|Stroom type|Azure AD-kenmerk|Synchronisatie regel|
+|Omgekeerd kenmerk|Kenmerknaam|Stroom type|Azure AD-kenmerk|Synchronisatie regel|
 |-----|-----|-----|-----|-----|
 |Azure Active Directory|msExchUserHoldPolicies|Direct|msExchUserHoldPolicies|Naar AAD – UserExchangeOnline|
 
@@ -53,13 +53,13 @@ In de volgende tabellen wordt de stroom beschreven:
 
 Binnenkomend vanuit Azure AD:
 
-|Active Directory kenmerk|Kenmerk naam|Stroom type|Omgekeerd kenmerk|Synchronisatie regel|
+|Active Directory kenmerk|Kenmerknaam|Stroom type|Omgekeerd kenmerk|Synchronisatie regel|
 |-----|-----|-----|-----|-----|
 |On-premises Active Directory|cloudMsExchUserHoldPolicies|Direct|cloudMsExchUserHoldPolicies|In van AAD-gebruikers uitwisseling|
 
 Uitgaand naar on-premises Active Directory:
 
-|Omgekeerd kenmerk|Kenmerk naam|Stroom type|Azure AD-kenmerk|Synchronisatie regel|
+|Omgekeerd kenmerk|Kenmerknaam|Stroom type|Azure AD-kenmerk|Synchronisatie regel|
 |-----|-----|-----|-----|-----|
 |Azure Active Directory|cloudMsExchUserHoldPolicies|IF (NOT NULL)|msExchUserHoldPolicies|Naar AD – UserExchangeOnline|
 

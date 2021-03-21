@@ -4,10 +4,10 @@ description: Gebruik Azure Portal en Azure resource Manage om uw resources te im
 ms.topic: conceptual
 ms.date: 10/22/2020
 ms.openlocfilehash: d8467bb4e51fc4e6ba89a84f1260a8d2743758d2
-ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98028672"
 ---
 # <a name="deploy-resources-with-arm-templates-and-azure-portal"></a>Resources implementeren met ARM-sjablonen en Azure Portal
@@ -129,4 +129,4 @@ Als u een implementatie wilt uitvoeren maar geen van de sjablonen in de Marketpl
 - Zie [bewerkingen controleren met Resource Manager](../management/view-activity-logs.md)voor meer informatie over het weer geven van audit Logboeken.
 - Zie [implementatie bewerkingen weer geven](deployment-history.md)om implementatie fouten op te lossen.
 - Zie [arm-sjablonen exporteren](export-template-portal.md)voor meer informatie over het exporteren van een sjabloon uit een implementatie of resource groep.
-- Zie [Azure Deployment Manager](deployment-manager-overview.md)voor een veilige implementatie van uw service in meerdere regio's.
+- Zie [Azure Configuratiebeheer](deployment-manager-overview.md)voor een veilige implementatie van uw service in meerdere regio's.

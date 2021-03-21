@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 10/26/2017
 ms.author: abhisram
 ms.openlocfilehash: ebaedb5369f3b39372262bfde526706e8d069418
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98789613"
 ---
 # <a name="diagnostics-and-performance-monitoring-for-reliable-actors"></a>Diagnose- en prestatiecontrole voor betrouwbare actoren
@@ -162,5 +162,5 @@ Wanneer een client een methode aanroept via een actor-proxy object, resulteert d
 ## <a name="next-steps"></a>Volgende stappen
 * [Hoe Reliable Actors het Service Fabric platform gebruiken?](service-fabric-reliable-actors-platform.md)
 * [Referentie documentatie voor actor-API](/previous-versions/azure/dn971626(v=azure.100))
-* [Voorbeeldcode](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
+* [Voorbeeld code](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
 * [Event source-providers in PerfView](/archive/blogs/vancem/introduction-tutorial-logging-etw-events-in-c-system-diagnostics-tracing-eventsource)

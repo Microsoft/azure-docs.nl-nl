@@ -12,10 +12,10 @@ ms.topic: troubleshooting
 ms.date: 12/16/2020
 ms.author: justinha
 ms.openlocfilehash: 5b48d326efad889adbcf25d487ee27b8200f558f
-ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/19/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97693922"
 ---
 # <a name="known-issues-network-configuration-alerts-in-azure-active-directory-domain-services"></a>Bekende problemen: waarschuwingen voor netwerk configuratie in Azure Active Directory Domain Services
@@ -38,7 +38,7 @@ De volgende standaard regels voor binnenkomend en uitgaand verkeer worden toegep
 
 ### <a name="inbound-security-rules"></a>Inkomende beveiligingsregels
 
-| Prioriteit | Naam | Poort | Protocol | Bron | Doel | Actie |
+| Prioriteit | Name | Poort | Protocol | Bron | Doel | Bewerking |
 |----------|------|------|----------|--------|-------------|--------|
 | 301      | AllowPSRemoting | 5986| TCP | AzureActiveDirectoryDomainServices | Alle | Toestaan |
 | 201      | AllowRD | 3389 | TCP | CorpNetSaw | Alle | <sup>1</sup> weigeren |
@@ -54,7 +54,7 @@ De volgende standaard regels voor binnenkomend en uitgaand verkeer worden toegep
 
 ### <a name="outbound-security-rules"></a>Uitgaande beveiligingsregels
 
-| Prioriteit | Naam | Poort | Protocol | Bron | Doel | Actie |
+| Prioriteit | Name | Poort | Protocol | Bron | Doel | Bewerking |
 |----------|------|------|----------|--------|-------------|--------|
 | 65000    | AllVnetOutBound | Alle | Alle | VirtualNetwork | VirtualNetwork | Toestaan |
 | 65001    | AllowAzureLoadBalancerOutBound | Alle | Alle |  Alle | Internet | Toestaan |

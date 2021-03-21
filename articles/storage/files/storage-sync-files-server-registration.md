@@ -8,10 +8,10 @@ ms.date: 07/19/2018
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: 194b0f2ff94197fe11c189e97dbc65c9d0367932
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96013918"
 ---
 # <a name="manage-registered-servers-with-azure-file-sync"></a>Geregistreerde servers beheren met Azure File Sync
@@ -184,6 +184,6 @@ Als Azure File Sync wordt gehost op een virtuele machine die wordt uitgevoerd op
 
 ## <a name="see-also"></a>Zie ook
 - [Planning voor een Azure Files Sync-implementatie](storage-sync-files-planning.md)
-- [Azure File Sync implementeren](storage-sync-files-deployment-guide.md)
+- [Azure Files SYNC implementeren](storage-sync-files-deployment-guide.md)
 - [Azure File Sync bewaken](storage-sync-files-monitoring.md)
 - [Problemen oplossen met Azure File Sync](storage-sync-files-troubleshoot.md)

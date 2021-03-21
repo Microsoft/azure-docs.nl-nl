@@ -12,13 +12,13 @@ manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cd91d1d2c9f5a4a413f9ea64cfdef649823d0f09
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93131017"
 ---
-# <a name="grant-b2b-users-in-azure-ad-access-to-your-on-premises-applications"></a>B2B-gebruikers in azure AD toegang verlenen tot uw on-premises toepassingen
+# <a name="grant-b2b-users-in-azure-ad-access-to-your-on-premises-applications"></a>B2B-gebruikers in Azure AD toegang verlenen tot uw on-premises toepassingen
 
 Als organisatie die gebruikmaakt van Azure Active Directory (Azure AD) B2B-samenwerkings mogelijkheden om gast gebruikers van partner organisaties te uitnodigen voor uw Azure AD, kunt u deze B2B-gebruikers nu toegang bieden tot on-premises apps. Deze on-premises apps kunnen gebruikmaken van op SAML gebaseerde verificatie of geïntegreerde Windows-verificatie (IWA) met Kerberos-beperkte delegering (KCD).
 
@@ -39,8 +39,8 @@ U moet het volgende doen:
 
 Om B2B-gebruikers toegang te bieden tot on-premises toepassingen die zijn beveiligd met geïntegreerde Windows-verificatie en beperkte Kerberos-delegering, hebt u de volgende onderdelen nodig:
 
-- **Verificatie via Azure AD-toepassingsproxy** . B2B-gebruikers moeten zich kunnen aanmelden bij de on-premises toepassing. Hiervoor moet u de on-premises app publiceren via de Azure-AD-toepassingsproxy. Zie [zelf studie: een on-premises toepassing toevoegen voor externe toegang via toepassings proxy](../manage-apps/application-proxy-add-on-premises-application.md)voor meer informatie.
-- **Autorisatie via een B2B-gebruikers object in de on-premises Directory** . De toepassing moet gebruikers toegangs controles kunnen uitvoeren en toegang verlenen tot de juiste resources. IWA en KCD vereisen een gebruikers object in het on-premises Windows Server-Active Directory om deze autorisatie te volt ooien. Zoals beschreven in de werking van [eenmalige aanmelding met KCD](../manage-apps/application-proxy-configure-single-sign-on-with-kcd.md#how-single-sign-on-with-kcd-works), moet dit gebruikers object door de toepassings proxy worden geïmiteerd en moet er een Kerberos-token bij de app worden ontvangen. 
+- **Verificatie via Azure AD-toepassingsproxy**. B2B-gebruikers moeten zich kunnen aanmelden bij de on-premises toepassing. Hiervoor moet u de on-premises app publiceren via de Azure-AD-toepassingsproxy. Zie [zelf studie: een on-premises toepassing toevoegen voor externe toegang via toepassings proxy](../manage-apps/application-proxy-add-on-premises-application.md)voor meer informatie.
+- **Autorisatie via een B2B-gebruikers object in de on-premises Directory**. De toepassing moet gebruikers toegangs controles kunnen uitvoeren en toegang verlenen tot de juiste resources. IWA en KCD vereisen een gebruikers object in het on-premises Windows Server-Active Directory om deze autorisatie te volt ooien. Zoals beschreven in de werking van [eenmalige aanmelding met KCD](../manage-apps/application-proxy-configure-single-sign-on-with-kcd.md#how-single-sign-on-with-kcd-works), moet dit gebruikers object door de toepassings proxy worden geïmiteerd en moet er een Kerberos-token bij de app worden ontvangen. 
 
    > [!NOTE]
    > Wanneer u de Azure AD-toepassingsproxy configureert, moet u ervoor zorgen dat de **gedelegeerde aanmeldings-id** is ingesteld op **User Principal name** (standaard) in de configuratie voor eenmalige aanmelding voor geïntegreerde Windows-verificatie (IWA).

@@ -7,15 +7,15 @@ ms.author: sujie
 ms.date: 11/14/2019
 ms.topic: how-to
 ms.openlocfilehash: dd4966ee75e9dc0ff401823e4291f8d299c8893c
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93122891"
 ---
 # <a name="test-stream-analytics-queries-locally-against-live-stream-input-by-using-visual-studio-code"></a>Stream Analytics query's lokaal testen op invoer van live streams met behulp van Visual Studio code
 
-U kunt Azure Stream Analytics-Hulpprogram Ma's voor Visual Studio code gebruiken om uw Stream Analytics-taken lokaal te testen op de Live stroom invoer. De invoer kan afkomstig zijn uit een bron, zoals Azure Event Hubs of Azure IoT Hub. De uitvoer resultaten worden als JSON-bestanden verzonden naar een map in uw project met de naam **LocalRunOutputs** .
+U kunt Azure Stream Analytics-Hulpprogram Ma's voor Visual Studio code gebruiken om uw Stream Analytics-taken lokaal te testen op de Live stroom invoer. De invoer kan afkomstig zijn uit een bron, zoals Azure Event Hubs of Azure IoT Hub. De uitvoer resultaten worden als JSON-bestanden verzonden naar een map in uw project met de naam **LocalRunOutputs**.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -29,7 +29,7 @@ U kunt Azure Stream Analytics-Hulpprogram Ma's voor Visual Studio code gebruiken
 
    ![Invoer toevoegen vanuit de map Invoer](./media/quick-create-visual-studio-code/add-input-from-inputs-folder.png)
 
-   U kunt ook **CTRL + SHIFT + P** selecteren om het opdracht palet te openen en **ASA: invoer toevoegen** .
+   U kunt ook **CTRL + SHIFT + P** selecteren om het opdracht palet te openen en **ASA: invoer toevoegen**.
 
    ![Stream Analytics-invoer toevoegen in Visual Studio Code](./media/quick-create-visual-studio-code/add-input.png)
 
@@ -57,7 +57,7 @@ Om ervoor te zorgen dat de invoer gegevens afkomstig zijn, selecteert u **voorbe
 
 ## <a name="run-queries-locally"></a>Query's lokaal uitvoeren
 
-Ga terug naar de query-editor en selecteer **lokaal uitvoeren** . Selecteer vervolgens **Live-invoer gebruiken** uit de vervolg keuzelijst.
+Ga terug naar de query-editor en selecteer **lokaal uitvoeren**. Selecteer vervolgens **Live-invoer gebruiken** uit de vervolg keuzelijst.
 
 ![Selecteer lokaal uitvoeren in de query-editor](./media/vscode-local-run/run-locally.png)
 
@@ -65,7 +65,7 @@ Ga terug naar de query-editor en selecteer **lokaal uitvoeren** . Selecteer verv
 
 Het resultaat wordt weer gegeven in het rechter venster en elke 3 seconden vernieuwd. U kunt **uitvoeren** selecteren om opnieuw te testen. U kunt ook **openen in map** selecteren om de resultaat bestanden in Verkenner te bekijken en te openen met Visual Studio code of een hulp programma zoals Excel. Houd er rekening mee dat de resultaten bestanden alleen beschikbaar zijn in JSON-indeling.
 
-De standaard waarde voor de taak voor het maken van de uitvoer is ingesteld op **nu** . U kunt de tijd aanpassen door de knop **Start tijd** van de uitvoer te selecteren in het resultaat venster.
+De standaard waarde voor de taak voor het maken van de uitvoer is ingesteld op **nu**. U kunt de tijd aanpassen door de knop **Start tijd** van de uitvoer te selecteren in het resultaat venster.
 
 ![Resultaat van lokale uitvoering weer geven](./media/vscode-local-run-live-input/vscode-livetesting.gif)
 

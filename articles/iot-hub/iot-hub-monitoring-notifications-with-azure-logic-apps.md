@@ -10,10 +10,10 @@ ms.tgt_pltfrm: arduino
 ms.date: 07/18/2019
 ms.author: robinsh
 ms.openlocfilehash: cd14ff0688f4230aeedac748ca4b32609bdd2938
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92490319"
 ---
 # <a name="iot-remote-monitoring-and-notifications-with-azure-logic-apps-connecting-your-iot-hub-and-mailbox"></a>IoT-externe bewaking en meldingen met Azure Logic Apps verbinding maken met uw IoT hub en Postvak
@@ -70,7 +70,7 @@ Maak een Service Bus-naamruimte en -wachtrij. Verderop in dit onderwerp maakt u 
 
 ### <a name="create-a-service-bus-namespace"></a>Een Service Bus-naamruimte maken
 
-1. Selecteer op de [Azure Portal](https://portal.azure.com/) **+ een resource**-  >  **integratie**  >  **Service Bus**maken.
+1. Selecteer op de [Azure Portal](https://portal.azure.com/) **+ een resource**-  >  **integratie**  >  **Service Bus** maken.
 
 1. Geef in het deel venster **naam ruimte maken** de volgende informatie op:
 
@@ -98,7 +98,7 @@ Maak een Service Bus-naamruimte en -wachtrij. Verderop in dit onderwerp maakt u 
 
 1. Ga terug naar het deel venster **Service Bus naam ruimte** , onder **entiteiten**, selecteer **wacht rijen**. Open de service bus wachtrij in de lijst en selecteer vervolgens **beleid voor gedeelde toegang**  >  **+ toevoegen**.
 
-1. Voer een naam in voor het beleid, Controleer **beheren**en selecteer vervolgens **maken**.
+1. Voer een naam in voor het beleid, Controleer **beheren** en selecteer vervolgens **maken**.
 
    ![Een service bus-wachtrij beleid toevoegen in de Azure Portal](media/iot-hub-monitoring-notifications-with-azure-logic-apps/2-add-service-bus-queue-azure-portal.png)
 
@@ -110,7 +110,7 @@ Voeg een aangepast eind punt voor de Service Bus wachtrij toe aan uw IoT-hub en 
 
 1. Open uw IoT-hub. De eenvoudigste manier om de IoT-hub te bereiken, is door **resource groepen** te selecteren in het deel venster Resource, de resource groep te selecteren en vervolgens uw IOT-hub te selecteren in de lijst met resources.
 
-1. Selecteer **bericht routering**onder **Messa ging**. Selecteer in het deel venster **bericht routering** het tabblad **aangepaste eind punten** en selecteer vervolgens **+ toevoegen**. Selecteer **Service Bus-wachtrij**in de vervolg keuzelijst.
+1. Selecteer **bericht routering** onder **Messa ging**. Selecteer in het deel venster **bericht routering** het tabblad **aangepaste eind punten** en selecteer vervolgens **+ toevoegen**. Selecteer **Service Bus-wachtrij** in de vervolg keuzelijst.
 
    ![Scherm afbeelding die de service bus-wachtrij optie markeert.](media/iot-hub-monitoring-notifications-with-azure-logic-apps/select-iot-hub-custom-endpoint.png)
 
@@ -150,7 +150,7 @@ In de voor gaande sectie stelt u uw IoT-hub in voor het routeren van berichten m
 
 ### <a name="create-a-logic-app"></a>Een logische app maken
 
-1. Selecteer **een**  >  **Integration**  >  **logische app**voor het integreren van resources maken.
+1. Selecteer **een**  >    >  **logische app** voor het integreren van resources maken.
 
 1. Voer de volgende informatie in:
 
@@ -176,7 +176,7 @@ In de voor gaande sectie stelt u uw IoT-hub in voor het routeren van berichten m
 
    ![Selecteer Service Bus om de logische app te gaan maken in de Azure Portal](media/iot-hub-monitoring-notifications-with-azure-logic-apps/6-select-service-bus-when-creating-blank-logic-app-azure-portal.png)
 
-1. Onder **Triggers**selecteert u **Wanneer een of meer berichten binnenkomen in een wachtrij (automatisch volt ooien)**.
+1. Onder **Triggers** selecteert u **Wanneer een of meer berichten binnenkomen in een wachtrij (automatisch volt ooien)**.
 
    ![Selecteer de trigger voor uw logische app in de Azure Portal](media/iot-hub-monitoring-notifications-with-azure-logic-apps/select-service-bus-trigger.png)
 
@@ -189,7 +189,7 @@ In de voor gaande sectie stelt u uw IoT-hub in voor het routeren van berichten m
 
       ![Een service bus-verbinding maken voor uw logische app in de Azure Portal](media/iot-hub-monitoring-notifications-with-azure-logic-apps/7-create-service-bus-connection-in-logic-app-azure-portal.png)
 
-   1. Selecteer in het laatste scherm bij **wachtrij naam**de wachtrij die u hebt gemaakt in de vervolg keuzelijst. Voer `175` in voor het **maximum aantal berichten**.
+   1. Selecteer in het laatste scherm bij **wachtrij naam** de wachtrij die u hebt gemaakt in de vervolg keuzelijst. Voer `175` in voor het **maximum aantal berichten**.
 
       ![Geef het maximum aantal berichten op voor de Service Bus-verbinding in uw logische app](media/iot-hub-monitoring-notifications-with-azure-logic-apps/8-specify-maximum-message-count-for-service-bus-connection-logic-app-azure-portal.png)
 
@@ -199,7 +199,7 @@ In de voor gaande sectie stelt u uw IoT-hub in voor het routeren van berichten m
 
 1. Een SMTP-service verbinding maken.
 
-   1. Selecteer **Nieuwe stap**. In **Kies een actie**selecteert u het tabblad **alle** .
+   1. Selecteer **Nieuwe stap**. In **Kies een actie** selecteert u het tabblad **alle** .
 
    1. Typ `smtp` in het zoekvak, selecteer de **SMTP-** service in het Zoek resultaat en selecteer vervolgens **e-mail verzenden**.
 
@@ -226,11 +226,11 @@ In de voor gaande sectie stelt u uw IoT-hub in voor het routeren van berichten m
 
 1. Beschrijving Als u TLS wilt uitschakelen om verbinding te maken met uw e-mail provider en deze opnieuw wilt inschakelen, voert u de volgende stappen uit:
 
-   1. Selecteer in het deel venster **logische app** onder **ontwikkelingsprogram Ma's**de optie **API-verbindingen**.
+   1. Selecteer in het deel venster **logische app** onder **ontwikkelingsprogram Ma's** de optie **API-verbindingen**.
 
    1. Selecteer de SMTP-verbinding in de lijst met API-verbindingen.
 
-   1. Selecteer in het deel venster **SMTP API Connection** onder **Algemeen**de optie **API-verbinding bewerken**.
+   1. Selecteer in het deel venster **SMTP API Connection** onder **Algemeen** de optie **API-verbinding bewerken**.
 
    1. In het deel venster **API-verbinding bewerken** selecteert u **SSL inschakelen?**, voert u het wacht woord voor uw e-mail account opnieuw in en selecteert u **Opslaan**.
 

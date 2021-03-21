@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 12/18/2018
 ms.openlocfilehash: 98896b5b728a729a29f989b3b9a76f29131af8d7
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93305974"
 ---
 # <a name="cross-tenant-analytics-using-extracted-data---single-tenant-app"></a>Analyses voor verschillende tenants waarbij geëxtraheerde gegevens worden gebruikt - app voor één tenant
@@ -25,7 +25,7 @@ In deze zelfstudie doorloopt u een volledig analysescenario voor een implementat
 
 1.  Gegevens **extraheren** vanuit elke tenantdatabase en **Belasting** in een analysearchief.
 2.  **De geëxtraheerde gegevens transformeren** voor analytische verwerking.
-3.  Gebruik **Business Intelligence** -hulpprogramma's om nuttige inzichten te verkrijgen, waarmee u beslissingen kunt nemen. 
+3.  Gebruik **Business Intelligence**-hulpprogramma's om nuttige inzichten te verkrijgen, waarmee u beslissingen kunt nemen. 
 
 In deze zelfstudie leert u het volgende:
 
@@ -93,7 +93,7 @@ In de volgende stappen implementeert u de analyseopslag, die **tenantanalytics**
     - Als u SQL Database wilt gebruiken met columnstore, stelt u **$DemoScenario** = **3**  
 3. Druk op **F5** om het demoscript uit te voeren (dat het script *Deploy-TenantAnalyticsDB\<XX>.ps1* aanroept) dat de tenant analytics-gegevensopslag aanmaakt. 
 
-Nu dat u de toepassing heeft geïmplementeerd en deze hebt gevuld met interessante tenantgegevens, gebruikt u [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) om de servers **tenants1-dpt-&lt;User&gt;** en **catalog-dpt-&lt;User&gt;** te verbinden met Login = *developer* , Password = *P\@ssword1*. Raadpleeg de [inleidende zelfstudie](./saas-dbpertenant-wingtip-app-overview.md) voor meer begeleiding.
+Nu dat u de toepassing heeft geïmplementeerd en deze hebt gevuld met interessante tenantgegevens, gebruikt u [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) om de servers **tenants1-dpt-&lt;User&gt;** en **catalog-dpt-&lt;User&gt;** te verbinden met Login = *developer*, Password = *P\@ssword1*. Raadpleeg de [inleidende zelfstudie](./saas-dbpertenant-wingtip-app-overview.md) voor meer begeleiding.
 
 ![Schermopname met de benodigde gegevens om verbinding te maken met SQL Server.](./media/saas-tenancy-tenant-analytics/ssmsSignIn.png)
 
@@ -107,7 +107,7 @@ Voer de volgende stappen uit in de Objectverkenner:
 Bekijk de volgende database-items in de Objectverkenner van SSMS door het knooppunt van de analyseopslag uit te vouwen:
 
 - De tabellen **TicketsRawData** en **EventsRawData** bevatten onbewerkte gegevens uit de tenantdatabases.
-- De tabellen in het stervormige schema zijn **fact_Tickets** , **dim_Customers** , **dim_Venues** , **dim_Events** en **dim_Dates**.
+- De tabellen in het stervormige schema zijn **fact_Tickets**, **dim_Customers**, **dim_Venues**, **dim_Events** en **dim_Dates**.
 - De opgeslagen procedure wordt gebruikt om stervormige tabellen te vullen vanuit de onbewerkte gegevenstabellen.
 
 ![Schermopname van de database-items die worden weergegeven in de SSMS-objectverkenner.](./media/saas-tenancy-tenant-analytics/tenantAnalytics.png)
@@ -179,7 +179,7 @@ Gebruik de volgende stappen om verbinding te maken met Power BI en om de weergav
 
     ![Schermafbeelding met het dialoogvenster SQL Server-database waar u een Gebruikersnaam en een Wachtwoord kunt invoeren.](./media/saas-tenancy-tenant-analytics/databaseSignIn.PNG)
 
-6. In het deelvenster **Navigator** , onder de analysedatabase, selecteert u de tabellen in het stervormige schema: fact_Tickets, dim_Events, dim_Venues, dim_Customers en dim_Dates. Selecteer vervolgens **Laden**. 
+6. In het deelvenster **Navigator**, onder de analysedatabase, selecteert u de tabellen in het stervormige schema: fact_Tickets, dim_Events, dim_Venues, dim_Customers en dim_Dates. Selecteer vervolgens **Laden**. 
 
 Gefeliciteerd! U hebt de gegevens geladen in Power BI. Nu kunt u interessante visualisaties verkennen om inzicht te krijgen in uw tenants. U gaat kijken hoe u met analyses gegevensgestuurde aanbevelingen kunt krijgen voor het zakelijke team van Wingtip Tickets. Aan de hand van de aanbevelingen kunt u het bedrijfsmodel en de klantervaring optimaliseren.
 
@@ -209,7 +209,7 @@ In de voorgaande grafiek voor Contoso Concert Hall ziet u dat deze stormloop nie
 
 De inzichten in de patronen van de ticketverkoop kunnen ertoe leiden dat Wingtip Tickets zijn bedrijfsmodel moet optimaliseren. In plaats van alle tenants hetzelfde te laten betalen, kan Wingtip wellicht servicelagen introduceren van verschillende rekenkracht. Grotere locaties die meer tickets per dag moeten verkopen, kan een laag van een hoger niveau met een hoger service level agreement (SLA) worden aangeboden. Voor deze locaties kunnen de databases in een pool worden geplaatst met hogere resourcelimieten per database. Aan elke servicelaag kan een verkoopcijfer per uur worden toegewezen, waarbij extra kosten in rekening worden gebracht als de toewijzing wordt overschreden. Grotere locaties met periodieke piekverkopen zouden profiteren van de hogere lagen en Wingtip Tickets kan zijn service efficiënter benutten.
 
-De klanten van Wingtip Tickets kunnen daarentegen een klacht indienen omdat ze moeite hebben genoeg tickets te verkopen die de servicekosten rechtvaardigen. Wellicht bieden deze inzichten een kans de ticketverkoop voor slecht presterende locaties te stimuleren. Een hogere verkoop kan de vermeende waarde van de service verbeteren. Klik met de rechtermuisknop op fact_Tickets en selecteer **Nieuwe meting**. Voer de volgende expressie in voor de nieuwe meting met de naam **AverageTicketsSold** :
+De klanten van Wingtip Tickets kunnen daarentegen een klacht indienen omdat ze moeite hebben genoeg tickets te verkopen die de servicekosten rechtvaardigen. Wellicht bieden deze inzichten een kans de ticketverkoop voor slecht presterende locaties te stimuleren. Een hogere verkoop kan de vermeende waarde van de service verbeteren. Klik met de rechtermuisknop op fact_Tickets en selecteer **Nieuwe meting**. Voer de volgende expressie in voor de nieuwe meting met de naam **AverageTicketsSold**:
 
 ```
 AverageTicketsSold = AVERAGEX( SUMMARIZE( TableName, TableName[Venue Name] ), CALCULATE( SUM(TableName[Tickets Sold] ) ) )

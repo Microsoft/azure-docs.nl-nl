@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 06/02/2020
 ms.author: jeedes
 ms.openlocfilehash: 0c8224bf84a2235086d941df7d02ab6f458f3f16
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92509961"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-siteintel"></a>Zelfstudie: Integratie van eenmalige aanmelding (SSO) van Azure Active Directory met SiteIntel
@@ -81,7 +81,7 @@ Ga als volgt te werk om eenmalige aanmelding van Azure AD in te schakelen in de 
 
    ![Schermopname van het deelvenster Eenmalige aanmelding instellen met SAML](common/edit-urls.png)
 
-1. Als u de toepassing in de door de IDP geïnitieerde modus wilt configureren, voert u de volgende stappen uit in de sectie **Standaard SAML-configuratie** :
+1. Als u de toepassing in de door de IDP geïnitieerde modus wilt configureren, voert u de volgende stappen uit in de sectie **Standaard SAML-configuratie**:
 
     a. In het tekstvak **Id** typt u een URL met de volgende indeling: `urn:amazon:cognito:sp:<REGION>_<USERPOOLID>`
 
@@ -106,7 +106,7 @@ In deze sectie gaat u een testgebruiker met de naam B.Simon maken in de Azure-po
 
 1. Selecteer in het linkerdeelvenster van de Azure-portal **Azure Active Directory** > **Gebruikers** > **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Ga als volgt te werk in het eigenschappenvenster van de **gebruiker** :
+1. Ga als volgt te werk in het eigenschappenvenster van de **gebruiker**:
 
    a. Voer in het vak **Naam** de naam **B.Simon** in.  
 

@@ -1,5 +1,5 @@
 ---
-title: Kosten beheer voor serverloze SQL-groep
+title: Kostenbeheer voor serverloze SQL-pool
 description: In dit document wordt beschreven hoe u de kosten van een serverloze SQL-pool beheert en hoe de verwerkte gegevens worden berekend bij het opvragen van gegevens in azure Storage.
 services: synapse analytics
 author: filippopovic
@@ -10,10 +10,10 @@ ms.date: 11/05/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
 ms.openlocfilehash: 8a26f8ced5e91810f8cadff0a27796dc817e6517
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94491566"
 ---
 # <a name="cost-management-for-serverless-sql-pool-in-azure-synapse-analytics"></a>Kosten beheer voor serverloze SQL-groepen in azure Synapse Analytics
@@ -39,7 +39,7 @@ Het lezen van bestanden uit de opslag is zeer geoptimaliseerd. Het proces maakt 
 - Vooraf ophalen, waardoor enige overhead kan worden toegevoegd aan de hoeveelheid gegevens die moet worden gelezen. Als een query een heel bestand leest, is er geen overhead. Als een bestand gedeeltelijk wordt gelezen, zoals in de eerste N query's, worden er nog meer gegevens gelezen met vooraf ophalen.
 - Een geoptimaliseerde parser met door komma's gescheiden waarden (CSV). Als u PARSER_VERSION = ' 2.0 ' gebruikt voor het lezen van CSV-bestanden, nemen de hoeveel heden gegevens die uit de opslag zijn gelezen, enigszins toe. Met een geoptimaliseerde CSV-parser worden bestanden parallel gelezen, in segmenten van gelijke grootte. Segmenten hoeven niet altijd hele rijen te bevatten. Om ervoor te zorgen dat alle rijen worden geparseerd, leest de geoptimaliseerde CSV-parser ook kleine fragmenten van aangrenzende segmenten. Dit proces voegt een kleine hoeveelheid overhead toe.
 
-## <a name="statistics"></a>statistieken
+## <a name="statistics"></a>Statistieken
 
 De query optimalisatie van de serverloze SQL-groep is afhankelijk van de statistieken voor het genereren van optimale query-uitvoerings plannen. U kunt statistieken hand matig maken. Anders worden ze door de serverloze SQL-groep automatisch gemaakt. In beide gevallen worden statistieken gemaakt door een afzonderlijke query uit te voeren die een specifieke kolom retourneert met een opgegeven sample frequentie. Aan deze query is een hoeveelheid gegevens verwerkt.
 
@@ -71,29 +71,29 @@ Stel drie tabellen voor.
 - De tabel population_parquet heeft dezelfde gegevens als de population_csv tabel. Er wordt een back-up gemaakt van 1 TB Parquet-bestanden. Deze tabel is kleiner dan het vorige bestand omdat de gegevens in de Parquet-indeling zijn gecomprimeerd.
 - De very_small_csv tabel wordt ondersteund door 100 KB aan CSV-bestanden.
 
-**Query 1** : Selecteer Sum (populatie) van population_csv
+**Query 1**: Selecteer Sum (populatie) van population_csv
 
 Met deze query worden hele bestanden gelezen en geparseerd om waarden op te halen voor de kolom populatie. Knoop punten verwerken fragmenten van deze tabel en de som van de populatie voor elk fragment wordt overgebracht tussen de knoop punten. Het eind totaal wordt overgedragen naar uw eind punt. 
 
 Met deze query worden 5 TB aan gegevens verwerkt, plus een kleine hoeveelheid overhead voor het overdragen van de som van fragmenten.
 
-**Query 2** : Selecteer Sum (populatie) van population_parquet
+**Query 2**: Selecteer Sum (populatie) van population_parquet
 
 Wanneer u gecomprimeerde en op kolommen gebaseerde notaties zoals Parquet doorzoekt, worden er minder gegevens gelezen dan in query 1. U ziet dit resultaat omdat een SQL-pool zonder server een gecomprimeerde kolom leest in plaats van het hele bestand. In dit geval wordt 0,2 TB gelezen. (Vijf kolommen met even grootte zijn elk 0,2 TB.) Knoop punten verwerken fragmenten van deze tabel en de som van de populatie voor elk fragment wordt overgebracht tussen de knoop punten. Het eind totaal wordt overgedragen naar uw eind punt. 
 
 Deze query verwerkt 0,2 TB plus een kleine hoeveelheid overhead voor het overdragen van de som van fragmenten.
 
-**Query 3** : Select * from population_parquet
+**Query 3**: Select * from population_parquet
 
 Met deze query worden alle kolommen gelezen en worden alle gegevens overgebracht naar een niet-gecomprimeerde indeling. Als de compressie-indeling 5:1 is, verwerkt de query 6 TB, omdat deze 1 TB leest en vijf TB aan ongecomprimeerde gegevens overdraagt.
 
-**Query 4** : aantal selecteren (*) van very_small_csv
+**Query 4**: aantal selecteren (*) van very_small_csv
 
 Met deze query worden hele bestanden gelezen. De totale grootte van de bestanden in de opslag voor deze tabel is 100 KB. Knoop punten verwerken fragmenten van deze tabel en de som voor elk fragment wordt tussen knoop punten overgedragen. Het eind totaal wordt overgedragen naar uw eind punt. 
 
 Met deze query worden iets meer dan 100 KB aan gegevens verwerkt. De hoeveelheid gegevens die voor deze query wordt verwerkt, wordt tot 10 MB afgerond, zoals is opgegeven in de sectie [afronding](#rounding) van dit artikel.
 
-## <a name="cost-control"></a>Kosten beheer
+## <a name="cost-control"></a>Kostenbeheer
 
 Met de functie voor kosten beheer in een serverloze SQL-pool kunt u het budget instellen voor de hoeveelheid verwerkte gegevens. U kunt het budget instellen in TB aan gegevens die worden verwerkt voor een dag, week en maand. Op hetzelfde moment kunt u een of meer budgetten instellen. Als u kosten beheer wilt configureren voor een serverloze SQL-groep, kunt u Synapse Studio of T-SQL gebruiken.
 

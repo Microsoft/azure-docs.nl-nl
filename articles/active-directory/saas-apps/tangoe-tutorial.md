@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 04/10/2019
 ms.author: jeedes
 ms.openlocfilehash: fd2923c68aa77a4d17936eaa3a738c963458e8cb
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92514658"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-tangoe-command-premium-mobile"></a>Zelfstudie: Integratie van Azure Active Directory met Tangoe Command Premium Mobile
@@ -49,7 +49,7 @@ Voor het configureren van de integratie van Tangoe Command Premium Mobile met Az
 
 **Voer de volgende stappen uit als u Tangoe Command Premium Mobile vanuit de galerie wilt toevoegen:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -124,13 +124,13 @@ Voer de volgende stappen uit als u eenmalige aanmelding van Azure AD wilt config
 
 ### <a name="configure-tangoe-command-premium-mobile-single-sign-on"></a>Eenmalige aanmelding configureren voor Tangoe Command Premium Mobile
 
-Als u eenmalige aanmelding wilt configureren in **Tangoe Command Premium Mobile** , moet u het gedownloade **XML-bestand met federatieve metagegevens** en de juiste, uit Azure Portal gekopieerde URL's naar het [ondersteuningsteam van Tangoe Command Premium Mobile](https://www.tangoe.com/contact-us/) sturen. Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding wilt configureren in **Tangoe Command Premium Mobile**, moet u het gedownloade **XML-bestand met federatieve metagegevens** en de juiste, uit Azure Portal gekopieerde URL's naar het [ondersteuningsteam van Tangoe Command Premium Mobile](https://www.tangoe.com/contact-us/) sturen. Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -154,7 +154,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot Tangoe Command Premium Mobile.
 
-1. Selecteer in Azure Portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **Tangoe Command Premium Mobile**.
+1. Selecteer in Azure Portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **Tangoe Command Premium Mobile**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 

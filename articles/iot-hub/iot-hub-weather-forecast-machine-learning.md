@@ -11,10 +11,10 @@ ms.tgt_pltfrm: arduino
 ms.date: 09/16/2020
 ms.author: robinsh
 ms.openlocfilehash: ab9e122ba0b2b50203a2d66ae14f03f3b6300f96
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96452340"
 ---
 # <a name="weather-forecast-using-the-sensor-data-from-your-iot-hub-in-azure-machine-learning-studio-classic"></a>Weers voorspelling met behulp van de sensor gegevens van uw IoT-hub in Azure Machine Learning Studio (klassiek)
@@ -231,7 +231,7 @@ In deze sectie valideert u het model, stelt u een voorspellende webservice in op
 
 ### <a name="run-the-stream-analytics-job"></a>De Stream Analytics-taak uitvoeren
 
-Selecteer in de taak Stream Analytics **overzicht** in het linkerdeel venster. **Selecteer vervolgens** start  >  **nu** starten  >  **Start**. Zodra de taak kan worden gestart, wordt de taakstatus veranderd van **Gestopt** naar **In uitvoering**.
+Selecteer in de taak Stream Analytics **overzicht** in het linkerdeel venster. **Selecteer vervolgens** start  >  **nu** starten  >  . Zodra de taak kan worden gestart, wordt de taakstatus veranderd van **Gestopt** naar **In uitvoering**.
 
 ![De Stream Analytics-taak uitvoeren](media/iot-hub-weather-forecast-machine-learning/run-stream-analytics-job.png)
 

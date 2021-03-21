@@ -18,10 +18,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d61962667953b20f4b542874e902411bb579b9c3
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93122840"
 ---
 # <a name="sign-in-activity-reports-in-the-azure-active-directory-portal"></a>Aanmeldactiviteitenrapporten in Azure Active Directory Portal
@@ -143,7 +143,7 @@ De **locatie** -de locatie van de verbinding vanaf:
 ![Client-App-filter](./media/concept-sign-ins/client-app-filter.png)
 
 
-|Naam|Moderne verificatie|Beschrijving|
+|Name|Moderne verificatie|Beschrijving|
 |---|:-:|---|
 |Geverifieerde SMTP| |Wordt gebruikt door de POP-en IMAP-client om e-mail berichten te verzenden.|
 |Autodis cover| |Wordt gebruikt door Outlook-en EAS-clients om post vakken in Exchange Online te vinden en er verbinding mee te maken.|
@@ -177,11 +177,11 @@ De **locatie** -de locatie van de verbinding vanaf:
 
 **Voorwaardelijke toegang** : de status van de toegepaste regels voor voorwaardelijke toegang
 
-- **Niet toegepast** : tijdens het aanmelden wordt er geen beleid toegepast op de gebruiker en de toepassing.
+- **Niet toegepast**: tijdens het aanmelden wordt er geen beleid toegepast op de gebruiker en de toepassing.
 
-- **Geslaagd** : een of meer beleids regels voor voorwaardelijke toegang die worden toegepast op de gebruiker en toepassing (maar niet noodzakelijkerwijs de andere voor waarden) tijdens het aanmelden. 
+- **Geslaagd**: een of meer beleids regels voor voorwaardelijke toegang die worden toegepast op de gebruiker en toepassing (maar niet noodzakelijkerwijs de andere voor waarden) tijdens het aanmelden. 
 
-- **Probleem** : bij de aanmelding is voldaan aan de gebruikers-en toepassings voorwaarde van ten minste één beleid voor voorwaardelijke toegang en granting Controls is niet voldaan of ingesteld om de toegang te blok keren.
+- **Probleem**: bij de aanmelding is voldaan aan de gebruikers-en toepassings voorwaarde van ten minste één beleid voor voorwaardelijke toegang en granting Controls is niet voldaan of ingesteld om de toegang te blok keren.
 
 
 
@@ -234,8 +234,8 @@ Door op een item te klikken, krijgt u meer informatie over de aanmelding:
 - Toepassing
 - Client
 - Locatie
-- Het IP-adres
-- Date
+- IP-adres
+- Datum
 - MFA vereist
 - Aanmeldingsstatus
 
@@ -254,7 +254,7 @@ Met een toepassingsgerichte weergave van uw aanmeldingsgegevens kunt u antwoord 
 * Wat zijn de belangrijkste drie toepassingen in uw organisatie?
 * Hoe wordt mijn nieuwste toepassing uitgevoerd?
 
-Het ingangs punt voor deze gegevens is de drie belangrijkste toepassingen in uw organisatie. De gegevens bevinden zich in het rapport van de afgelopen 30 dagen in het gedeelte **overzicht** onder **bedrijfs toepassingen** .
+Het ingangs punt voor deze gegevens is de drie belangrijkste toepassingen in uw organisatie. De gegevens bevinden zich in het rapport van de afgelopen 30 dagen in het gedeelte **overzicht** onder **bedrijfs toepassingen**.
 
 ![Scherm afbeelding laat zien waar u overzicht kunt selecteren.](./media/concept-sign-ins/10.png "Aanmeldingsactiviteit")
 
@@ -264,7 +264,7 @@ De grafieken voor het gebruik van de app en wekelijkse aggregaties van aanmeldin
 
 Als u wilt, kunt u de focus instellen op een specifieke toepassing.
 
-![Rapportage](./media/concept-sign-ins/single-app-usage-graph.png "Rapporten")
+![Rapportage](./media/concept-sign-ins/single-app-usage-graph.png "Rapportages")
 
 Als u op een dag in de appgebruikgrafiek klikt, ziet u een gedetailleerd overzicht van de aanmeldactiviteiten.
 

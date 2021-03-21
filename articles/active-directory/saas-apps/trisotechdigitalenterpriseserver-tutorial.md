@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
 ms.openlocfilehash: 05978b7300c401a0658d6c3316f37735fcb70c20
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92521931"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-trisotech-digital-enterprise-server"></a>Zelfstudie: Azure Active Directory-integratie met Trisotech Digital Enterprise Server
@@ -51,7 +51,7 @@ Om de integratie van Trisotech Digital Enterprise Server te configureren in Azur
 
 **Voer de volgende stappen uit om Trisotech Digital Enterprise Server toe te voegen vanuit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -63,7 +63,7 @@ Om de integratie van Trisotech Digital Enterprise Server te configureren in Azur
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **Trisotech Digital Enterprise Server** , selecteer **Trisotech Digital Enterprise Server** in het resultatenvenster en klik op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **Trisotech Digital Enterprise Server**, selecteer **Trisotech Digital Enterprise Server** in het resultatenvenster en klik op de knop **Toevoegen** om de toepassing toe te voegen.
 
      ![Trisotech Digital Enterprise Server in de resultatenlijst](common/search-new-app.png)
 
@@ -126,7 +126,7 @@ Voer de volgende stappen uit om Azure AD-eenmalige aanmelding te configureren vo
 
     ![Schermopname met User Provider geselecteerd in het menu.](./media/trisotechdigitalenterpriseserver-tutorial/user2.png)
 
-4. Voer de volgende stappen uit in de sectie **User Provider Configurations** :
+4. Voer de volgende stappen uit in de sectie **User Provider Configurations**:
 
     ![Schermopname met User Provider Configurations, waar u de beschreven waarden kunt invoeren.](./media/trisotechdigitalenterpriseserver-tutorial/user3.png)
 
@@ -146,7 +146,7 @@ Voer de volgende stappen uit om Azure AD-eenmalige aanmelding te configureren vo
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -170,7 +170,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In deze sectie geeft u Britta Simon toestemming om eenmalige aanmelding van Azure te gebruiken door haar toegang te verlenen Trisotech Digital Enterprise Server.
 
-1. Selecteer in Azure Portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **Trisotech Digital Enterprise Server**.
+1. Selecteer in Azure Portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **Trisotech Digital Enterprise Server**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 

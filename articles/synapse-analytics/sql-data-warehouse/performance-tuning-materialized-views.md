@@ -11,10 +11,10 @@ ms.date: 09/05/2019
 ms.author: xiaoyul
 ms.reviewer: nibruno; jrasnick; azure-synapse
 ms.openlocfilehash: e137611809e2d2beefecfeaea11b4295bf6ba141
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98678488"
 ---
 # <a name="performance-tune-with-materialized-views"></a>Prestaties afstemmen met gerealiseerde weer gaven
@@ -35,7 +35,7 @@ De meeste vereisten voor een standaard weergave zijn nog steeds van toepassing o
 |:-------------------------------|:---------------------------------------------|:--------------------------------------------------------------|
 |Definitie weergeven                 | Opgeslagen in SQL-groep.              | Opgeslagen in SQL-groep.
 |Inhoud weergeven                    | Elke keer dat de weer gave wordt gebruikt, gegenereerd.   | Vooraf verwerkt en opgeslagen in SQL-groep tijdens het maken van de weer gave. Bijgewerkt wanneer gegevens worden toegevoegd aan de onderliggende tabellen.
-|Gegevensvernieuwing                    | Altijd bijgewerkt                               | Altijd bijgewerkt
+|Gegevens vernieuwen                    | Altijd bijgewerkt                               | Altijd bijgewerkt
 |Snelheid om weergave gegevens op te halen uit complexe query's     | Langzaam                                         | Snel  
 |Extra opslag ruimte                   | Nee                                           | Ja
 |Syntax                          | CREATE VIEW                                  | GEREALISEERDE WEER GAVE MAKEN ALS SELECTEREN

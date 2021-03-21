@@ -8,10 +8,10 @@ author: keferna
 ms.author: keferna
 ms.date: 11/30/2020
 ms.openlocfilehash: 014bcd6fc519c267cdf17e9e98b850425c25ead6
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96459336"
 ---
 # <a name="prepare-your-azure-container-technical-assets"></a>De technische activa van uw Azure-container voorbereiden
@@ -43,7 +43,7 @@ Kies een of beide van de volgende script omgevingen om uw container installatie 
 
 U wordt aangeraden deze hulpprogram ma's toe te voegen aan uw ontwikkel omgeving:
 
-- [Azure Storage Explorer](../vs-azure-tools-storage-manage-with-storage-explorer.md?tabs=windows)
+- [Azure-opslagverkenner](../vs-azure-tools-storage-manage-with-storage-explorer.md?tabs=windows)
 - [Visual Studio Code](https://code.visualstudio.com/)
   - Extensie: [Azure Resource Manager-Hulpprogram ma's](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)
   - Extensie: [beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify)

@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 02/13/2020
 ms.openlocfilehash: c315e1df473f3d23bab7e2a78ce166f22272ee70
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93242242"
 ---
 # <a name="troubleshoot-data-encryption-in-azure-database-for-postgresql---single-server"></a>Problemen met gegevens versleuteling oplossen in Azure Database for PostgreSQL-één server
@@ -19,7 +19,7 @@ Dit artikel helpt u bij het identificeren en oplossen van veelvoorkomende proble
 
 ## <a name="introduction"></a>Inleiding
 
-Wanneer u gegevens versleuteling configureert voor het gebruik van een door de klant beheerde sleutel in Azure Key Vault, moet de server voortdurende toegang tot de sleutel hebben. Als de server de toegang tot de door de klant beheerde sleutel in Azure Key Vault kwijtraakt, worden alle verbindingen geweigerd, wordt het juiste fout bericht weer gegeven en wordt de status gewijzigd in * **ontoegankelijk** _ in de Azure Portal.
+Wanneer u gegevens versleuteling configureert voor het gebruik van een door de klant beheerde sleutel in Azure Key Vault, moet de server voortdurende toegang tot de sleutel hebben. Als de server de toegang tot de door de klant beheerde sleutel in Azure Key Vault kwijtraakt, worden alle verbindingen geweigerd, wordt het juiste fout bericht weer gegeven en wordt de status gewijzigd in niet ***toegankelijk*** in de Azure Portal.
 
 Als u een ontoegankelijke Azure Database for PostgreSQL server niet meer nodig hebt, kunt u deze verwijderen om kosten te besparen. Er zijn geen andere acties op de server toegestaan totdat toegang tot de sleutel kluis is hersteld en de server beschikbaar is. Het is ook niet mogelijk om de gegevens versleutelings optie van (door de `Yes` klant beheerd) te wijzigen in `No` (door service beheerd) op een niet-toegankelijke server wanneer deze is versleuteld met een door de klant beheerde sleutel. U moet de sleutel hand matig opnieuw valideren voordat de server weer toegankelijk is. Deze actie is nodig om de gegevens te beveiligen tegen onbevoegde toegang terwijl machtigingen voor de door de klant beheerde sleutel worden ingetrokken.
 
@@ -44,12 +44,12 @@ De volgende onjuiste configuraties veroorzaken de meeste problemen met gegevens 
 #### <a name="disabled-key-vault"></a>Uitgeschakelde sleutel kluis
 
 - `AzureKeyVaultKeyDisabledMessage`
-- _ * Uitleg * *: de bewerking kan niet worden voltooid op de server omdat de Azure Key Vault sleutel is uitgeschakeld.
+- **Uitleg**: de bewerking kan niet worden voltooid op de server omdat de Azure Key Vault sleutel is uitgeschakeld.
 
 #### <a name="missing-key-vault-permissions"></a>Ontbrekende sleutel kluis machtigingen
 
 - `AzureKeyVaultMissingPermissionsMessage`
-- **Uitleg** : de vereiste Get-, wrap-en Unwrap-machtigingen voor de server kunnen niet worden Azure Key Vault. Ken de ontbrekende machtigingen toe aan de service-principal met de ID.
+- **Uitleg**: de vereiste Get-, wrap-en Unwrap-machtigingen voor de server kunnen niet worden Azure Key Vault. Ken de ontbrekende machtigingen toe aan de service-principal met de ID.
 
 ### <a name="mitigation"></a>Oplossing
 

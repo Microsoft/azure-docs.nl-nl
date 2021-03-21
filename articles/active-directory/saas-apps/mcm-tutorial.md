@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 02/19/2019
 ms.author: jeedes
 ms.openlocfilehash: 22dc30db3465e2e4fbd4d0fd38d4b5a463e2bd1b
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92519521"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mcm"></a>Zelfstudie: Azure Active Directory-integratie met MCM
@@ -49,7 +49,7 @@ Voor het configureren van de integratie van MCM met Microsoft Azure Active Direc
 
 **Als u MCM vanuit de galerie wilt toevoegen, moet u de volgende stappen uitvoeren:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -61,7 +61,7 @@ Voor het configureren van de integratie van MCM met Microsoft Azure Active Direc
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **MCM** , selecteer **MCM** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **MCM**, selecteer **MCM** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
      ![MCM in de lijst met resultaten](common/search-new-app.png)
 
@@ -73,10 +73,10 @@ Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Micros
 Als u eenmalige aanmelding Microsoft Azure Active Directory met MCM wilt configureren en testen, moet u de volgende bouwstenen voltooien:
 
 1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[Eenmalige aanmelding voor MCM configureren](#configure-mcm-single-sign-on)** : als u de instellingen voor eenmalige aanmelding aan de clientzijde wilt configureren.
+2. **[Eenmalige aanmelding voor MCM configureren](#configure-mcm-single-sign-on)**: als u de instellingen voor eenmalige aanmelding aan de clientzijde wilt configureren.
 3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
 4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
-5. **[Testgebruiker voor MCM maken](#create-mcm-test-user)** : als u een tegenhanger van Britta Simon in MCM wilt hebben die is gekoppeld aan de Microsoft Azure Active Directory-weergave van de gebruiker.
+5. **[Testgebruiker voor MCM maken](#create-mcm-test-user)**: als u een tegenhanger van Britta Simon in MCM wilt hebben die is gekoppeld aan de Microsoft Azure Active Directory-weergave van de gebruiker.
 6. **[Eenmalige aanmelding testen](#test-single-sign-on)** : als u wilt controleren of de configuratie werkt.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
@@ -130,7 +130,7 @@ Als u eenmalige aanmelding aan de zijde van **MCM** wilt configureren, moet u he
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -155,7 +155,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot MCM.
 
-1. Selecteer in de Microsoft Azure-portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **MCM**.
+1. Selecteer in de Microsoft Azure-portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **MCM**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 

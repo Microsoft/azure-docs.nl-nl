@@ -8,10 +8,10 @@ author: emuench
 ms.author: mingshen
 ms.date: 10/09/2020
 ms.openlocfilehash: f4e34e850391696506beed9f6f386f85528dff24
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92284312"
 ---
 Als u een van de Vm's hebt geselecteerd die vooraf zijn geconfigureerd met een besturings systeem (en optionele extra services), hebt u al een standaard Azure VM-grootte gekozen. Het is de aanbevolen methode om uw oplossing te starten met een vooraf geconfigureerd besturings systeem. Als u echter een besturings systeem hand matig installeert, moet u de grootte van uw primaire VHD in uw VM-installatie kopie aanpassen. Zorg ervoor dat de besturingssysteem schijf groter is dan de limieten voor Linux of Windows.

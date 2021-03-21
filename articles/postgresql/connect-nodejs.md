@@ -14,10 +14,10 @@ ms.devlang: nodejs
 ms.topic: quickstart
 ms.date: 5/6/2019
 ms.openlocfilehash: 7569606429740de23b56767d490b9bb14283d468
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93331689"
 ---
 # <a name="quickstart-use-nodejs-to-connect-and-query-data-in-azure-database-for-postgresql---single-server"></a>Quickstart: Node.js gebruiken om verbinding te maken en gegevens op te vragen in Azure Database for PostgreSQL - Single Server
@@ -48,7 +48,7 @@ npm list
 ## <a name="get-connection-information"></a>Verbindingsgegevens ophalen
 Haal de verbindingsgegevens op die nodig zijn om verbinding te maken met de Azure Database voor PostgreSQL. U hebt de volledig gekwalificeerde servernaam en aanmeldingsreferenties nodig.
 
-1. Zoek en selecteer in de [Azure-portal](https://portal.azure.com/) de server die u hebt gemaakt (zoals **mydemoserver** ).
+1. Zoek en selecteer in de [Azure-portal](https://portal.azure.com/) de server die u hebt gemaakt (zoals **mydemoserver**).
 
 1. Ga naar het venster **Overzicht** van de server en noteer de **Servernaam** en de **Gebruikersnaam van beheerder**. Als u uw wachtwoord vergeet, kunt u het wachtwoord in dit venster opnieuw instellen.
 

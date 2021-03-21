@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 06/02/2020
 ms.openlocfilehash: 25be6b3c4e3172fc8ee14b97fd890b5948c284ba
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93242361"
 ---
 # <a name="configuring-tls-settings-in-azure-database-for-postgresql-single---server-using-azure-portal"></a>TLS-instellingen configureren in Azure Database for PostgreSQL één server met behulp van Azure Portal
@@ -41,7 +41,7 @@ Voer de volgende stappen uit om de PostgreSQL minimum versie van TLS in te stell
 
 1. Bij een melding wordt bevestigd dat de instelling verbindings beveiliging is ingeschakeld.
 
-    :::image type="content" source="./media/howto-tls-configurations/setting-tls-value-success.png" alt-text="Azure Database for PostgreSQL TLS-configuratie met één server":::
+    :::image type="content" source="./media/howto-tls-configurations/setting-tls-value-success.png" alt-text="Azure Database for PostgreSQL-TLS-configuratie met één server is voltooid":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

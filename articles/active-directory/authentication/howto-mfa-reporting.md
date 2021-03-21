@@ -13,10 +13,10 @@ ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.custom: devx-track-azurepowershell
 ms.openlocfilehash: 5f78b70599d6d0ae8825accf4cc55cdc1c01d9ce
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96861235"
 ---
 # <a name="use-the-sign-ins-report-to-review-azure-ad-multi-factor-authentication-events"></a>Het rapport aanmeldingen gebruiken om Azure AD-Multi-Factor Authentication gebeurtenissen te controleren
@@ -119,7 +119,7 @@ Get-MsolUser -All | Select-Object @{N='UserPrincipalName';E={$_.UserPrincipalNam
 
 De volgende tabel kan helpen bij het oplossen van gebeurtenissen die gebruikmaken van de gedownloade versie van het activiteiten rapport uit de vorige Portal-stappen of Power shell-opdrachten. Deze resultaat codes worden niet direct weer gegeven in de Azure Portal.
 
-| Aanroep resultaat | Description | Uitgebreide beschrijving |
+| Aanroep resultaat | Beschrijving | Uitgebreide beschrijving |
 | --- | --- | --- |
 | SUCCESS_WITH_PIN | PINCODE ingevoerd | De gebruiker heeft een pincode ingevoerd.  Als de verificatie is geslaagd, wordt de juiste pincode ingevoerd.  Als verificatie is geweigerd, wordt er een onjuiste pincode ingevoerd of is de gebruiker ingesteld op de standaard modus. |
 | SUCCESS_NO_PIN | Alleen # ingevoerd | Als de gebruiker is ingesteld op pincode modus en de verificatie wordt geweigerd, betekent dit dat de gebruiker de pincode niet heeft ingevoerd en alleen #.  Als de gebruiker is ingesteld op de standaard modus en de verificatie slaagt, betekent dit dat de gebruiker alleen de waarde # heeft opgegeven als in de standaard modus. |
@@ -171,7 +171,7 @@ De volgende tabel kan helpen bij het oplossen van gebeurtenissen die gebruikmake
 
 De volgende aanvullende informatie en rapporten zijn beschikbaar voor MFA-gebeurtenissen, waaronder die voor MFA server:
 
-| Rapport | Locatie | Description |
+| Rapport | Locatie | Beschrijving |
 |:--- |:--- |:--- |
 | Geschiedenis van geblokkeerde gebruikers | Azure AD > Security > MFA > blok keren/deblokkeren van gebruikers | Toont de geschiedenis van aanvragen om gebruikers te blok keren of deblokkeren. |
 | Gebruik voor on-premises onderdelen | Activiteiten rapport van Azure AD > Security > MFA > | Bevat informatie over algemeen gebruik voor MFA-server via de NPS-extensie, ADFS en MFA-server. |

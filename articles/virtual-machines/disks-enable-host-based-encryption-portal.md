@@ -8,12 +8,12 @@ ms.date: 08/24/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: ba7d6d8deb2034f8b2a853cf74635687561c41ea
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: cdb22805e2e68893d3883272b66c2cfac13c807e
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99573599"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104721865"
 ---
 # <a name="use-the-azure-portal-to-enable-end-to-end-encryption-using-encryption-at-host"></a>De Azure Portal gebruiken om end-to-end-versleuteling in te scha kelen met behulp van versleuteling op de host
 
@@ -27,9 +27,6 @@ Wanneer u versleuteling inschakelt op de host, worden gegevens die op de VM-host
 
 [!INCLUDE [virtual-machines-disks-encryption-at-host-restrictions](../../includes/virtual-machines-disks-encryption-at-host-restrictions.md)]
 
-### <a name="supported-regions"></a>Ondersteunde regio’s
-
-[!INCLUDE [virtual-machines-disks-encryption-at-host-regions](../../includes/virtual-machines-disks-encryption-at-host-regions.md)]
 
 ### <a name="supported-vm-sizes"></a>Ondersteunde VM-grootten
 
@@ -37,7 +34,24 @@ Wanneer u versleuteling inschakelt op de host, worden gegevens die op de VM-host
 
 ## <a name="prerequisites"></a>Vereisten
 
-Als u versleuteling wilt gebruiken op de host voor uw Vm's of virtuele-machine schaal sets, moet u de functie inschakelen voor uw abonnement. Stuur een e-mail naar encryptionAtHost@microsoft.com met uw abonnement-id's om de functie in te scha kelen voor uw abonnementen.
+U moet de functie voor uw abonnement inschakelen voordat u de eigenschap EncryptionAtHost voor uw virtuele machine/VMSS gebruikt. Volg de onderstaande stappen om de functie in te scha kelen voor uw abonnement:
+
+1. **Azure Portal**: selecteer het Cloud shell pictogram op de [Azure Portal](https://portal.azure.com):
+
+    ![Pictogram voor het starten van de Cloud Shell van de Azure Portal](../Cloud-Shell/media/overview/portal-launch-icon.png)
+    
+2.  Voer de volgende opdracht uit om de functie voor uw abonnement te registreren
+
+    ```powershell
+     Register-AzProviderFeature -FeatureName "EncryptionAtHost" -ProviderNamespace "Microsoft.Compute" 
+    ```
+
+3.  Controleer of de registratie status is geregistreerd (een paar minuten duurt) met behulp van de onderstaande opdracht voordat u de functie uitprobeert.
+
+    ```powershell
+     Get-AzProviderFeature -FeatureName "EncryptionAtHost" -ProviderNamespace "Microsoft.Compute"  
+    ```
+
 
 Meld u aan bij de Azure Portal met behulp [van de beschik bare koppeling](https://aka.ms/diskencryptionupdates).
 

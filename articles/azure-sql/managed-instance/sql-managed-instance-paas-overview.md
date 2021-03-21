@@ -10,13 +10,13 @@ ms.topic: overview
 author: bonova
 ms.author: bonova
 ms.reviewer: sstein, vanto
-ms.date: 08/14/2020
-ms.openlocfilehash: 81d4527817d637e7b764cc83160153d974ced5c0
-ms.sourcegitcommit: 27cd3e515fee7821807c03e64ce8ac2dd2dd82d2
+ms.date: 01/14/2021
+ms.openlocfilehash: dca4d699ac1253753c82949cb480d95a1dde26e2
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103600938"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104594101"
 ---
 # <a name="what-is-azure-sql-managed-instance"></a>Wat is Azure SQL Managed Instance?
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -36,7 +36,7 @@ In de volgende grafiek worden de belangrijkste functies van SQL Managed Instance
 Azure SQL Managed Instance is ontworpen voor klanten die een groot aantal apps willen migreren van een on-premises of IaaS, zelfgebouwde of ISV-omgeving naar een volledig beheerde PaaS-cloudomgeving, met zo weinig mogelijk migratie-inspanningen. Met behulp van de volledig geautomatiseerde [Azure Data Migration Service](../../dms/tutorial-sql-server-to-managed-instance.md#create-an-azure-database-migration-service-instance) kunnen klanten hun bestaande SQL Server-instantie naar SQL Managed Instance overzetten, wat compatibiliteit biedt met SQL Server en volledige isolatie van klantinstanties met systeemeigen VNet-ondersteuning. Voor meer informatie over opties en hulpprogramma's voor migratie, raadpleegt u [Migratieoverzicht: SQL Server naar Azure SQL Managed Instance](../migration-guides/managed-instance/sql-server-to-managed-instance-overview.md).</br> Met Software Assurance kan Contoso haar bestaande licenties inwisselen tegen kortingstarieven op SQL Managed Instance met behulp van [Azure Hybrid Benefit voor SQL Server](https://azure.microsoft.com/pricing/hybrid-benefit/). SQL Managed Instance is de beste migratiebestemming in de Cloud voor SQL Server-instanties die hoge beveiliging en een groot programmeerbaarheidsoppervlak nodig hebben.
 
 > [!TIP]
-> Hoe kunnen we Azure SQL beter maken? [Doe de enquête](https://aka.ms/AzureSQLSurvey).
+> Hoe kunnen we Azure SQL beter maken? [Doe de enquête](https://microsoft.qualtrics.com/jfe/form/SV_ePOznHhP4gDKfGu?channel=456).
 
 ## <a name="key-features-and-capabilities"></a>Belangrijkste functies en mogelijkheden
 
@@ -79,8 +79,8 @@ Het op [vCore gebaseerde aankoopmodel](../database/service-tiers-vcore.md) voor 
 
 In het vCore-model kunt u kiezen tussen generaties van hardware.
 
-- Logische **Gen4**-CPU's zijn gebaseerd op Intel® E5-2673 v3 (Haswell) 2,4 GHz-processors, gekoppelde SSD, fysieke kernen, 7 GB RAM per kern en rekengrootten tussen 8 en 24 vCores.
-- Logische **GEN5**-CPU's zijn gebaseerd op Intel® E5-2673 v4 (Broadwell) 2,3 GHz, Intel® SP-8160 (Skylake) en Intel® 8272CL (Cascade Lake) 2,5 GHz-processors, snelle NVMe SSD, hyper-threaded logische kern en rekengrootten tussen 4 en 80 kernen.
+- **Gen4** logische cpu's zijn gebaseerd op Intel &reg; E5-2673 v3 (Haswell) 2,4 GHz-processors, gekoppelde SSD, fysieke kernen, 7 GB RAM per kern en reken grootten tussen 8 en 24 vCores.
+- **GEN5** logische cpu's zijn gebaseerd op Intel &reg; E5-2673 v4 (Broadwell) 2,3 GHz, intel &reg; SP-8160 (Skylake) en Intel &reg; 8272CL (trapsgewijze Lake) 2,5 GHz processors, Fast NVMe SSD, Hyper-Threaded logische kern en reken grootten tussen 4 en 80 kernen.
 
 Meer informatie over het verschil tussen hardwaregeneraties in [SQL Managed Instance-resourcelimieten](resource-limits.md#hardware-generation-characteristics).
 

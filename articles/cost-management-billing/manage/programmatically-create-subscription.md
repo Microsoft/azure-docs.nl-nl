@@ -1,20 +1,20 @@
 ---
-title: Programmatisch Azure-abonnementen maken
+title: Azure-abonnementen maken via een programma
 description: In dit artikel worden de opties beschreven als u programmatisch Azure-abonnementen wilt maken.
 author: bandersmsft
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: how-to
-ms.date: 01/13/2021
+ms.date: 03/11/2021
 ms.reviewer: andalmia
 ms.author: banders
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: 546ed24b5f9e7892f40c9d425b668f60ad705f8f
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: 9ec0ffeb930fd9285f34ad9ba9e6aa606b15b5a2
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99493885"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104593885"
 ---
 # <a name="create-azure-subscriptions-programmatically"></a>Azure-abonnementen maken via een programma
 
@@ -26,7 +26,7 @@ Met behulp van diverse REST API's kunt u een abonnement maken voor de volgende t
 - Microsoft-klantovereenkomst (MCA)
 - Microsoft Partner-overeenkomst (MPA)
 
-Met REST API's kunt u geen extra abonnementen programmatisch maken voor andere typen overeenkomsten.
+U kunt niet programmatisch extra abonnementen maken voor andere overeenkomst typen met REST-Api's.
 
 De vereisten en details voor het maken van abonnementen verschillen per overeenkomst en API-versie. Raadpleeg de volgende artikelen die van toepassing zijn op uw situatie:
 
@@ -36,9 +36,9 @@ Meest recente API's:
 - [MCA-abonnementen maken](programmatically-create-subscription-microsoft-customer-agreement.md)
 - [MPA-abonnementen maken](programmatically-create-subscription-microsoft-partner-agreement.md)
 
-Als u nog steeds gebruikmaakt van [preview-API's](programmatically-create-subscription-preview.md), kunt u er abonnementen mee blijven maken. 
+In deze artikelen ziet u ook hoe u abonnementen kunt maken met een Azure Resource Manager sjabloon (ARM-sjabloon). Een ARM-sjabloon helpt bij het automatiseren van het proces voor het maken van het abonnement.
 
-En u kunt [abonnementen maken met een ARM-sjabloon](create-subscription-template.md). Met een ARM-sjabloon kunt u het maken van abonnementen met REST API's automatiseren. 
+Als u nog steeds [Preview-api's](programmatically-create-subscription-preview.md)gebruikt, kunt u er abonnementen mee blijven maken. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

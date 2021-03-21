@@ -11,10 +11,10 @@ ms.topic: troubleshooting
 ms.date: 04/27/2020
 ms.author: anavin
 ms.openlocfilehash: ae3899a61e942695fed1e3da5fc543b298a42e24
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94695551"
 ---
 # <a name="troubleshoot-common-azure-deployment-errors-with-azure-load-balancer"></a>Veelvoorkomende fouten bij Azure-implementatie met Azure Load Balancer oplossen
@@ -36,7 +36,7 @@ In dit artikel worden enkele veelvoorkomende Azure Load Balancer implementatie f
 |VMScaleSetCannotUseMultipleLoadBalancersOfSameType| U kunt niet meerdere load balancers van hetzelfde type (intern, openbaar) hebben. U kunt Maxi maal één intern en één open bare Load Balancer hebben. |
 |VMScaleSetCannotReferenceLoadbalancerWhenLargeScaleOrCrossAZ | Basis Load Balancer wordt niet ondersteund voor groepen virtuele-machine schaal sets of meerdere-beschikbaarheids zones voor de virtuele machine in een andere locatie. Gebruik in plaats daarvan Standard Load Balancer. |
 |MarketplacePurchaseEligibilityFailed | Schakel over naar het juiste beheerders account om aankopen in te scha kelen omdat het abonnement een EA-abonnement is. Lees [hier](../marketplace/marketplace-faq-publisher-guide.md#what-could-block-a-customer-from-completing-a-purchase) meer informatie. |
-|ResourceDeploymentFailure| Als uw load balancer een mislukte status heeft, voert u de volgende stappen uit om de status mislukt te herstellen:<ol><li>Ga naar https://resources.azure.com en meld u aan met uw Azure Portal referenties.</li><li>Selecteer **lezen/schrijven**.</li><li>Vouw aan de linkerkant **abonnementen** uit en vouw vervolgens het abonnement uit met de Load Balancer om bij te werken.</li><li>Vouw **ResourceGroups** uit en vouw vervolgens de resource groep uit met de Load Balancer om bij te werken.</li><li>Selecteer **micro soft. Network**  >  **LoadBalancers** en selecteer vervolgens het Load Balancer dat u wilt bijwerken, **LoadBalancer_1**.</li><li>Selecteer op de pagina weer geven voor **LoadBalancer_1** de optie **GET**  >  **bewerkings bewerking** ophalen.</li><li>De waarde van **ProvisioningState** bijwerken van **mislukt** naar **geslaagd**.</li><li>Selecteer **PUT**.</li></ol>|
+|ResourceDeploymentFailure| Als uw load balancer de status Mislukt heeft, voert u de volgende stappen om dit te verhelpen:<ol><li>Ga naar https://resources.azure.com en meld u aan met uw Azure Portal referenties.</li><li>Selecteer **Read/Write** (Lezen/schrijven).</li><li>Vouw aan de linkerkant **Subscriptions** (Abonnementen) uit en vouw vervolgens het abonnement uit met de load balancer die u wilt bijwerken.</li><li>Vouw **ResourceGroups** uit en vouw vervolgens de resourcegroep uit met de load balancer die u wilt bijwerken.</li><li>Selecteer **micro soft. Network**  >  **LoadBalancers** en selecteer vervolgens het Load Balancer dat u wilt bijwerken, **LoadBalancer_1**.</li><li>Selecteer op de pagina weer geven voor **LoadBalancer_1** de optie   >  **bewerkings bewerking** ophalen.</li><li>De waarde van **ProvisioningState** bijwerken van **mislukt** naar **geslaagd**.</li><li>Selecteer **PUT**.</li></ol>|
 |  |  |
 
 ## <a name="next-steps"></a>Volgende stappen

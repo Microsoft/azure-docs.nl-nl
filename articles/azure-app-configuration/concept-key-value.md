@@ -7,10 +7,10 @@ ms.service: azure-app-configuration
 ms.topic: conceptual
 ms.date: 08/04/2020
 ms.openlocfilehash: ad9e96433a7ee72476ae2251c684d17ec7a6d1ce
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96930242"
 ---
 # <a name="keys-and-values"></a>Sleutels en waarden
@@ -76,7 +76,7 @@ Elke sleutelwaarde is uniek te identificeren met de sleutel en een label, welke 
 
 U kunt ook de volgende label patronen toevoegen:
 
-| Label | Description |
+| Label | Beschrijving |
 |---|---|
 | `label` wordt weggelaten of `label=*` | Komt overeen met een label, inclusief `\0` |
 | `label=%00` | Komt overeen met `\0` label |

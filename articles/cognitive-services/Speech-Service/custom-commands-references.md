@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: sausin
 ms.openlocfilehash: 98510132b2341736664dfafa52e9567df95652be
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94561094"
 ---
 # <a name="custom-commands-concepts-and-definitions"></a>Concepten en definities voor aangepaste opdrachten
@@ -49,14 +49,14 @@ Dit selectie vakje geeft aan of het bereik van deze para meter wordt gedeeld doo
 ### <a name="required"></a>Vereist
 Dit selectie vakje geeft aan of een waarde voor deze para meter is vereist voor het uitvoeren van opdrachten of het volt ooien van de opdracht. U moet antwoorden configureren om de gebruiker te vragen om een waarde op te geven als een para meter is gemarkeerd als vereist.
 
-Houd er rekening mee dat als u een **vereiste para meter** hebt geconfigureerd voor een **standaard waarde** , het systeem nog steeds expliciet om de waarde van de para meter wordt gevraagd.
+Houd er rekening mee dat als u een **vereiste para meter** hebt geconfigureerd voor een **standaard waarde**, het systeem nog steeds expliciet om de waarde van de para meter wordt gevraagd.
 
 ### <a name="type"></a>Type
 Aangepaste opdrachten bieden ondersteuning voor de volgende parameter typen:
 
 * DateTime
 * Geografie
-* Getal
+* Aantal
 * Tekenreeks
 
 Al deze parameter typen, met uitzonde ring van geografie, ondersteunen de configuratie van de standaard waarde, die u vanuit de portal kunt configureren.
@@ -65,16 +65,16 @@ Al deze parameter typen, met uitzonde ring van geografie, ondersteunen de config
 Configuratie is een para meter-eigenschap die alleen voor de type teken reeks is gedefinieerd. De volgende waarden worden ondersteund:
 
 * **Geen**.
-* **Volledige invoer accepteren** : wanneer deze functie is ingeschakeld, accepteert een para meter alle invoer-utterance. Deze optie is handig als de gebruiker een para meter met de volledige utterance nodig heeft. Een voor beeld hiervan is post adressen.
-* **Vooraf gedefinieerde invoer waarden accepteren uit een externe catalogus** : deze waarde wordt gebruikt voor het configureren van een para meter die kan uitgaan van een groot aantal verschillende waarden. Een voor beeld is een verkoop catalogus. In dit geval wordt de catalogus gehost op een extern webeindpunt en kan deze onafhankelijk worden geconfigureerd.
-* **Vooraf gedefinieerde invoer waarden accepteren uit interne catalogus** : deze waarde wordt gebruikt voor het configureren van een para meter die een aantal waarden kan aannemen. In dit geval moeten waarden worden geconfigureerd in de speech Studio.
+* **Volledige invoer accepteren**: wanneer deze functie is ingeschakeld, accepteert een para meter alle invoer-utterance. Deze optie is handig als de gebruiker een para meter met de volledige utterance nodig heeft. Een voor beeld hiervan is post adressen.
+* **Vooraf gedefinieerde invoer waarden accepteren uit een externe catalogus**: deze waarde wordt gebruikt voor het configureren van een para meter die kan uitgaan van een groot aantal verschillende waarden. Een voor beeld is een verkoop catalogus. In dit geval wordt de catalogus gehost op een extern webeindpunt en kan deze onafhankelijk worden geconfigureerd.
+* **Vooraf gedefinieerde invoer waarden accepteren uit interne catalogus**: deze waarde wordt gebruikt voor het configureren van een para meter die een aantal waarden kan aannemen. In dit geval moeten waarden worden geconfigureerd in de speech Studio.
 
 
 ### <a name="validation"></a>Validatie
 Validaties zijn constructies die van toepassing zijn op bepaalde parameter typen waarmee u beperkingen kunt configureren voor de waarde van een para meter. Op dit moment worden door aangepaste opdrachten validaties ondersteund voor de volgende parameter typen:
 
 * DateTime
-* Getal
+* Aantal
 
 ## <a name="rules-configuration"></a>Configuratie van regels
 Een regel in aangepaste opdrachten wordt gedefinieerd door een set *voor waarden* die, wanneer wordt voldaan, een reeks *acties* uitvoeren. Met regels kunt u ook de status van de *post-uitvoering* en de *verwachtingen* configureren voor de volgende beurt.
@@ -82,42 +82,42 @@ Een regel in aangepaste opdrachten wordt gedefinieerd door een set *voor waarden
 ### <a name="types"></a>Typen
 Aangepaste opdrachten ondersteunen de volgende regel Categorieën:
 
-* **Voltooiings regels** : deze regels moeten worden uitgevoerd bij het volt ooien van de opdracht. Alle regels die in deze sectie zijn geconfigureerd waarvoor de voor waarden waar zijn, worden uitgevoerd. 
-* **Interactie regels** : deze regels kunnen worden gebruikt voor het configureren van aanvullende aangepaste validaties, bevestigingen en een correctie met één stap, of voor het uitvoeren van andere aangepaste logica voor het dialoog venster. Interactie regels worden op elke beurt geëvalueerd in de verwerking en kunnen worden gebruikt voor het activeren van de voltooiings regels.
+* **Voltooiings regels**: deze regels moeten worden uitgevoerd bij het volt ooien van de opdracht. Alle regels die in deze sectie zijn geconfigureerd waarvoor de voor waarden waar zijn, worden uitgevoerd. 
+* **Interactie regels**: deze regels kunnen worden gebruikt voor het configureren van aanvullende aangepaste validaties, bevestigingen en een correctie met één stap, of voor het uitvoeren van andere aangepaste logica voor het dialoog venster. Interactie regels worden op elke beurt geëvalueerd in de verwerking en kunnen worden gebruikt voor het activeren van de voltooiings regels.
 
 De verschillende acties die zijn geconfigureerd als onderdeel van een regel, worden uitgevoerd in de volg orde waarin ze worden weer gegeven in de portal voor ontwerpen.
 
 ### <a name="conditions"></a>Voorwaarden
 Voor waarden zijn de vereisten waaraan moet worden voldaan om een regel uit te voeren. Voor waarden voor regels kunnen van de volgende typen zijn:
 
-* **Parameter waarde is gelijk aan** : de waarde van de geconfigureerde para meter is gelijk aan een specifieke waarde.
-* **Geen parameter waarde** : de geconfigureerde para meters mogen geen waarde hebben.
-* **Vereiste para meters** : de geconfigureerde para meter heeft een waarde.
-* **Alle vereiste para meters** : alle para meters die zijn gemarkeerd als vereist, hebben een waarde.
-* **Bijgewerkte para meters** : een of meer parameter waarden zijn bijgewerkt als gevolg van het verwerken van de huidige invoer (utterance of activiteit).
-* De **bevestiging is voltooid** : de invoer-utterance of-activiteit is geslaagd voor de bevestiging (Ja).
-* **Bevestiging is geweigerd** : de invoer-utterance of-activiteit is geen geslaagde bevestiging (Nee).
-* De **vorige opdracht moet worden bijgewerkt** : dit probleem wordt gebruikt in gevallen waarin u een negatie bevestiging wilt opvangen en een update. Achter de schermen wordt deze voor waarde geconfigureerd voor wanneer de dialoog engine een negatieve bevestiging detecteert waarbij de intentie hetzelfde is als de vorige beurt en de gebruiker heeft gereageerd op een update.
+* **Parameter waarde is gelijk aan**: de waarde van de geconfigureerde para meter is gelijk aan een specifieke waarde.
+* **Geen parameter waarde**: de geconfigureerde para meters mogen geen waarde hebben.
+* **Vereiste para meters**: de geconfigureerde para meter heeft een waarde.
+* **Alle vereiste para meters**: alle para meters die zijn gemarkeerd als vereist, hebben een waarde.
+* **Bijgewerkte para meters**: een of meer parameter waarden zijn bijgewerkt als gevolg van het verwerken van de huidige invoer (utterance of activiteit).
+* De **bevestiging is voltooid**: de invoer-utterance of-activiteit is geslaagd voor de bevestiging (Ja).
+* **Bevestiging is geweigerd**: de invoer-utterance of-activiteit is geen geslaagde bevestiging (Nee).
+* De **vorige opdracht moet worden bijgewerkt**: dit probleem wordt gebruikt in gevallen waarin u een negatie bevestiging wilt opvangen en een update. Achter de schermen wordt deze voor waarde geconfigureerd voor wanneer de dialoog engine een negatieve bevestiging detecteert waarbij de intentie hetzelfde is als de vorige beurt en de gebruiker heeft gereageerd op een update.
 
 ### <a name="actions"></a>Acties
-* **Spraak antwoord verzenden** : een antwoord verzenden naar de client.
-* **Waarde van para meter bijwerken** : werk de waarde van een opdracht parameter bij naar een opgegeven waarde.
-* **Parameter waarde wissen** : wis de waarde van de opdracht parameter.
-* **Web-eind punt aanroepen** : een aanroep naar een webeindpunt maken.
-* **Activiteit verzenden naar client** : een aangepaste activiteit verzenden naar de client.
+* **Spraak antwoord verzenden**: een antwoord verzenden naar de client.
+* **Waarde van para meter bijwerken**: werk de waarde van een opdracht parameter bij naar een opgegeven waarde.
+* **Parameter waarde wissen**: wis de waarde van de opdracht parameter.
+* **Web-eind punt aanroepen**: een aanroep naar een webeindpunt maken.
+* **Activiteit verzenden naar client**: een aangepaste activiteit verzenden naar de client.
 
 ### <a name="expectations"></a>Uiteen
 Verwachtingen worden gebruikt voor het configureren van hints voor de verwerking van de volgende gebruikers invoer. De volgende typen worden ondersteund:
 
-* **Verwachte bevestiging van de gebruiker** : deze verwachting geeft aan dat de toepassing een bevestiging verwacht (Ja/Nee) voor de volgende invoer van de gebruiker.
-* De **verwachte para meter (s) van de gebruiker worden verwacht** : met deze verwachting worden een of meer opdracht parameters opgegeven die de toepassing van de gebruikers invoer verwacht.
+* **Verwachte bevestiging van de gebruiker**: deze verwachting geeft aan dat de toepassing een bevestiging verwacht (Ja/Nee) voor de volgende invoer van de gebruiker.
+* De **verwachte para meter (s) van de gebruiker worden verwacht**: met deze verwachting worden een of meer opdracht parameters opgegeven die de toepassing van de gebruikers invoer verwacht.
 
 ### <a name="post-execution-state"></a>Status na uitvoering
 De status na uitvoering is de status van het dialoog venster na het verwerken van de huidige invoer (utterance of activiteit). Het gaat om de volgende typen:
 
-* **Huidige status blijven** : alleen huidige status blijven.
-* **Voltooi de opdracht** : Voltooi de opdracht en er worden geen aanvullende regels van de opdracht verwerkt.
-* **Voltooiings regels uitvoeren** : Voer alle geldige voltooiings regels uit.
+* **Huidige status blijven**: alleen huidige status blijven.
+* **Voltooi de opdracht**: Voltooi de opdracht en er worden geen aanvullende regels van de opdracht verwerkt.
+* **Voltooiings regels uitvoeren**: Voer alle geldige voltooiings regels uit.
 * **Wachten op invoer** van de gebruiker: wacht op de volgende invoer van de gebruiker.
 
 

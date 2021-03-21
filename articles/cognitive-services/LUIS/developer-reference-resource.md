@@ -7,10 +7,10 @@ ms.topic: reference
 ms.date: 01/12/2021
 ms.custom: devx-track-js, devx-track-csharp
 ms.openlocfilehash: 08a1965aadf8f50625e54d7c5e3b3f6a44c0bbd4
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98946173"
 ---
 # <a name="sdk-rest-and-cli-developer-resources-for-language-understanding-luis"></a>SDK-, REST-en CLI-ontwikkelaars bronnen voor Language Understanding (LUIS)
@@ -86,13 +86,13 @@ Het [app-schema](app-schema-definition.md) wordt geïmporteerd en geëxporteerd 
 
 ### <a name="language-based-sdks"></a>Op taal gebaseerde Sdk's
 
-|Taal |Referentiedocumentatie|Pakket|Quickstarts|
+|Taal |Referentiedocumentatie|Pakket|Snelstartgidsen|
 |--|--|--|--|
-|C#|[Ontwerp](/dotnet/api/microsoft.azure.cognitiveservices.language.luis.authoring)</br>[Voorspelling](/dotnet/api/microsoft.azure.cognitiveservices.language.luis.runtime)|[NuGet ontwerpen](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring/)<br>[NuGet-voor spelling](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime/)|[Ontwerp](./client-libraries-rest-api.md?pivots=rest-api)<br>[Query voorspelling](./client-libraries-rest-api.md?pivots=rest-api)|
-|Aan de slag|[Ontwerpen en voors pellen](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.0/luis)|[SDK](https://github.com/Azure/azure-sdk-for-go/tree/master/services/cognitiveservices/v2.0/luis)||
+|C#|[Ontwerpen](/dotnet/api/microsoft.azure.cognitiveservices.language.luis.authoring)</br>[Voorspelling](/dotnet/api/microsoft.azure.cognitiveservices.language.luis.runtime)|[NuGet ontwerpen](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring/)<br>[NuGet-voor spelling](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime/)|[Ontwerpen](./client-libraries-rest-api.md?pivots=rest-api)<br>[Query voorspelling](./client-libraries-rest-api.md?pivots=rest-api)|
+|Go|[Ontwerpen en voors pellen](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.0/luis)|[SDK](https://github.com/Azure/azure-sdk-for-go/tree/master/services/cognitiveservices/v2.0/luis)||
 |Java|[Ontwerpen en voors pellen](/java/api/overview/azure/cognitiveservices/client/languageunderstanding)|[Maven ontwerpen](https://search.maven.org/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-luis-authoring)<br>[Maven-voor spelling](https://search.maven.org/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-luis-runtime)|
-|Javascript|[Ontwerp](/javascript/api/@azure/cognitiveservices-luis-authoring/)<br>[Voorspelling](/javascript/api/@azure/cognitiveservices-luis-runtime/)|[NPM ontwerpen](https://www.npmjs.com/package/@azure/cognitiveservices-luis-authoring)<br>[NPM-voor spelling](https://www.npmjs.com/package/@azure/cognitiveservices-luis-runtime)|[Ontwerp](./client-libraries-rest-api.md?pivots=rest-api)<br>[Voorspelling](./client-libraries-rest-api.md?pivots=rest-api)|
-|Python|[Ontwerpen en voors pellen](./client-libraries-rest-api.md?pivots=rest-api)|[Pip](https://pypi.org/project/azure-cognitiveservices-language-luis/)|[Ontwerp](./client-libraries-rest-api.md?pivots=rest-api)<br>[Voorspelling](./client-libraries-rest-api.md?pivots=rest-api)|
+|Javascript|[Ontwerpen](/javascript/api/@azure/cognitiveservices-luis-authoring/)<br>[Voorspelling](/javascript/api/@azure/cognitiveservices-luis-runtime/)|[NPM ontwerpen](https://www.npmjs.com/package/@azure/cognitiveservices-luis-authoring)<br>[NPM-voor spelling](https://www.npmjs.com/package/@azure/cognitiveservices-luis-runtime)|[Ontwerpen](./client-libraries-rest-api.md?pivots=rest-api)<br>[Voorspelling](./client-libraries-rest-api.md?pivots=rest-api)|
+|Python|[Ontwerpen en voors pellen](./client-libraries-rest-api.md?pivots=rest-api)|[Pip](https://pypi.org/project/azure-cognitiveservices-language-luis/)|[Ontwerpen](./client-libraries-rest-api.md?pivots=rest-api)<br>[Voorspelling](./client-libraries-rest-api.md?pivots=rest-api)|
 
 
 ### <a name="containers"></a>Containers

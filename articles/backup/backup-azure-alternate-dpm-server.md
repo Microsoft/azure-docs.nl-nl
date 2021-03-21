@@ -4,10 +4,10 @@ description: Herstel de gegevens die u hebt beveiligd met een Recovery Services 
 ms.topic: conceptual
 ms.date: 07/09/2019
 ms.openlocfilehash: ed8c937f97ec7a74662a8b46a354b0a6db39a2b0
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98806025"
 ---
 # <a name="recover-data-from-azure-backup-server"></a>Gegevens herstellen vanaf Azure Backup Server

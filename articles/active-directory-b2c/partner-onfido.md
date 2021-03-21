@@ -12,10 +12,10 @@ ms.date: 08/03/2020
 ms.author: gasinh
 ms.subservice: B2C
 ms.openlocfilehash: 46c6eac80ddbff73d99e05c070e66aa1700da174
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96928627"
 ---
 # <a name="tutorial-for-configuring-onfido-with-azure-active-directory-b2c"></a>Zelf studie voor het configureren van Onfido met Azure Active Directory B2C
@@ -84,7 +84,7 @@ Zie [ONFIDO API documentation](https://documentation.onfido.com) and [Onfido Dev
 
 Toepassings instellingen kunnen worden geconfigureerd in de [app service in azure](../app-service/configure-common.md#configure-app-settings). Met de app service kunnen instellingen veilig worden geconfigureerd zonder deze in een opslag plaats te controleren. De rest-API moet de volgende instellingen hebben:
 
-| Naam van toepassings instelling | Bron | Opmerkingen |
+| Naam van toepassings instelling | Bron | Notities |
 |:-------------------------|:-------|:-------|
 |OnfidoSettings: AuthToken| Onfido-account |
 
@@ -159,7 +159,7 @@ Raadpleeg dit [document](./custom-policy-get-started.md?tabs=applications#custom
 
    b. **Antwoord-URL**: de **omleidings-URL** selecteren
 
-   c. Selecteer **gebruikers stroom uitvoeren**.
+   c. Selecteer **Gebruikersstroom uitvoeren**.
 
 4. Ga door naar de registratie stroom en maak een account
 

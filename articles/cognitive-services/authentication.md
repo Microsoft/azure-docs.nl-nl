@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 11/22/2019
 ms.author: erhopf
 ms.openlocfilehash: c7aeb9e9f4de7b4de62f9b5a8da6d997e32a2399
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94363320"
 ---
 # <a name="authenticate-requests-to-azure-cognitive-services"></a>Aanvragen verifiëren bij Azure Cognitive Services
@@ -34,7 +34,7 @@ U kunt uw abonnements sleutel ophalen uit de [Azure Portal](cognitive-services-a
 
 U kunt snel de verificatie headers bekijken die beschikbaar zijn voor gebruik met Azure Cognitive Services.
 
-| Koptekst | Beschrijving |
+| Header | Beschrijving |
 |--------|-------------|
 | Ocp-Apim-Subscription-Key | Gebruik deze header om te verifiëren met een abonnements sleutel voor een specifieke service of een sleutel van een abonnement op meerdere services. |
 | OCP-APIM-abonnement-regio | Deze header is alleen vereist bij het gebruik van een sleutel voor meerdere services met de [Translator-service](./Translator/reference/v3-0-reference.md). Gebruik deze header om de regio van het abonnement op te geven. |

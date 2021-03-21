@@ -11,10 +11,10 @@ ms.date: 09/09/2020
 ms.topic: conceptual
 ms.custom: how-to, designer, devx-track-python
 ms.openlocfilehash: dcc28d98efbc82079586de8cfbecd35effc93d6e
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94556230"
 ---
 # <a name="run-python-code-in-azure-machine-learning-designer"></a>Python-code uitvoeren in Azure Machine Learning Designer
@@ -58,7 +58,7 @@ Invoer modules zijn optioneel, omdat u gegevens rechtstreeks kunt genereren of i
 
 De Designer biedt een eerste toegangs punt script waarmee u uw eigen python-code kunt bewerken en invoeren. 
 
-In dit voor beeld gebruikt u Pandas om twee kolommen te combi neren die worden gevonden in de automobiele gegevensset, de **prijs** en de **paarden kracht** , om een nieuwe kolom te maken, **dollars per paarden kracht**. Deze kolom geeft aan hoeveel u betaalt voor elk paarden kracht, wat nuttig kan zijn om te bepalen of een auto een goede deal is voor het geld. 
+In dit voor beeld gebruikt u Pandas om twee kolommen te combi neren die worden gevonden in de automobiele gegevensset, de **prijs** en de **paarden kracht**, om een nieuwe kolom te maken, **dollars per paarden kracht**. Deze kolom geeft aan hoeveel u betaalt voor elk paarden kracht, wat nuttig kan zijn om te bepalen of een auto een goede deal is voor het geld. 
 
 1. Selecteer de **script** module voor het uitvoeren van python.
 
@@ -83,7 +83,7 @@ In dit voor beeld gebruikt u Pandas om twee kolommen te combi neren die worden g
     
 1. Verzend de pijp lijn.
 
-Nu hebt u een gegevensset met de nieuwe functie **dollars/HP** , wat nuttig kan zijn bij het trainen van een auto aanbeveling. Dit is een voor beeld van het uitpakken en dalen van de functie. 
+Nu hebt u een gegevensset met de nieuwe functie **dollars/HP**, wat nuttig kan zijn bij het trainen van een auto aanbeveling. Dit is een voor beeld van het uitpakken en dalen van de functie. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

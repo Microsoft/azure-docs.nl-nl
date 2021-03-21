@@ -9,10 +9,10 @@ ms.author: owend
 ms.reviewer: minewiskan
 ms.custom: references_regions
 ms.openlocfilehash: 049ff6d14c3967481eb73037814082fa261154e3
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96497925"
 ---
 # <a name="move-analysis-services-to-a-different-region"></a>Analysis Services verplaatsen naar een andere regio
@@ -71,7 +71,7 @@ De sjabloon bevat configuratie-eigenschappen van de bron server.
 
 Een sjabloon exporteren via de Azure-portal:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 
 2. Selecteer **alle resources** en selecteer vervolgens uw Analysis Services-server.
 

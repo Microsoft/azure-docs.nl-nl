@@ -10,10 +10,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.openlocfilehash: f26ca04955dfa854a8ee17b7aa255a6ed991b8df
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94358368"
 ---
 # <a name="set-up-a-connection-to-an-azure-storage-account-using-a-managed-identity"></a>Een verbinding met een Azure Storage-account instellen met behulp van een beheerde identiteit
@@ -77,7 +77,7 @@ Bij het indexeren van een opslag account moet de gegevens bron de volgende verei
 * **aanmeldingsgegevens**
     * Wanneer u een beheerde identiteit gebruikt om te verifiëren, is de notatie van de **referenties** anders dan wanneer u geen beheerde identiteit gebruikt. Hier geeft u een ResourceId op die geen account sleutel of wacht woord heeft. De ResourceId moet de abonnements-ID van het opslag account, de resource groep van het opslag account en de naam van het opslag account bevatten.
     * Indeling beheerde identiteit: 
-        * *ResourceId =/Subscriptions/ **uw abonnement-id** /resourceGroups/ **de naam van uw resource groep** /providers/Microsoft.Storage/storageAccounts/ **uw opslag accountnaam** /;*
+        * *ResourceId =/Subscriptions/**uw abonnement-id**/resourceGroups/**de naam van uw resource groep**/providers/Microsoft.Storage/storageAccounts/**uw opslag accountnaam**/;*
 * **container** bevat een container-of tabel naam in uw opslag account. Standaard kunnen alle blobs in de container worden opgehaald. Als u alleen blobs wilt indexeren in een bepaalde virtuele map, kunt u die directory opgeven met behulp van de optionele **query** parameter.
 
 Voor beeld van het maken van een BLOB-gegevens bron object met behulp van de [rest API](/rest/api/searchservice/create-data-source):

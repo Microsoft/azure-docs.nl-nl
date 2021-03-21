@@ -10,10 +10,10 @@ ms.workload: infrastructure-services
 ms.date: 02/18/2021
 ms.author: duau
 ms.openlocfilehash: aacbf2ceab8580727b1885bf6533cd74a7c4e60a
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "101099060"
 ---
 # <a name="cache-purging-in-azure-front-door-standardpremium-preview"></a>Cache opschonen in azure front deur Standard/Premium (preview)

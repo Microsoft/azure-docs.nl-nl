@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 06/02/2020
 ms.author: allensu
 ms.openlocfilehash: 0ea4f167b992ccfbc4156ac06c8f636d2ef4a355
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96020412"
 ---
 # <a name="azure-cdn-from-verizon-premium-rules-engine-features"></a>Azure CDN van de functies van de functie van Verizon Premium-regels
@@ -113,7 +113,7 @@ Deze functies zijn ontworpen om de gegevens die zijn opgeslagen in onbewerkte lo
 
 **[Terug naar boven](#top)**
 
-### <a name="optimize"></a><a name="optimize"></a>Optimaliseren
+### <a name="optimize"></a><a name="optimize"></a>Capaciteit
 
 Deze functies bepalen of een aanvraag de optimalisaties betrekt die door Edge Optimizer worden ondersteund.
 
@@ -173,6 +173,6 @@ Voor de meest recente functies raadpleegt u de documentatie van de [Verizon-rege
 
 - [Referentie voor regels-engine](cdn-verizon-premium-rules-engine-reference.md)
 - [Voorwaardelijke expressies in de regelengine](cdn-verizon-premium-rules-engine-reference-conditional-expressions.md)
-- [Overeenkomende voor waarden voor regel engine](cdn-verizon-premium-rules-engine-reference-match-conditions.md)
+- [Criteria voor overeenkomst in de regelengine](cdn-verizon-premium-rules-engine-reference-match-conditions.md)
 - [HTTP-gedrag negeren met de regel engine](cdn-verizon-premium-rules-engine.md)
 - [Overzicht van Azure CDN](cdn-overview.md)

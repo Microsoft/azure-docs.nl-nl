@@ -11,16 +11,16 @@ ms.author: srbozovi
 ms.reviewer: ''
 ms.date: 05/25/2020
 ms.openlocfilehash: 17d430946f3cba1aa4680d1eaf8979fa4338bc22
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92788397"
 ---
-# <a name="configure-minimal-tls-version-in-azure-sql-managed-instance"></a>Minimale TLS-versie configureren in Azure SQL Managed instance
+# <a name="configure-minimal-tls-version-in-azure-sql-managed-instance"></a>Minimale versie van TLS configureren in Azure SQL Managed Instance
 Met de instelling minimale versie van [Transport Layer Security (TLS)](https://support.microsoft.com/help/3135244/tls-1-2-support-for-microsoft-sql-server) kunnen klanten de versie van TLS beheren die wordt gebruikt door hun Azure SQL Managed instance.
 
-Momenteel ondersteunen we TLS 1,0, 1,1 en 1,2. Als u een minimale TLS-versie instelt, worden nieuwe versies van TLS ondersteund. Bijvoorbeeld, bijvoorbeeld het kiezen van een TLS-versie die groter is dan 1,1. houdt in dat alleen verbindingen met TLS 1,1 en 1,2 worden geaccepteerd en dat TLS 1,0 wordt afgewezen. Nadat u hebt getest om te bevestigen dat uw toepassingen deze ondersteunen, wordt u aangeraden minimale TLS-versie in te stellen op 1,2, omdat deze oplossingen bevat voor beveiligings problemen die in vorige versies zijn gevonden en de hoogste versie van TLS wordt ondersteund in Azure SQL Managed instance.
+Momenteel worden TLS 1.0, 1.1 en 1.2 ondersteund. Door een minimale TLS-versie in te stellen, zorgt u ervoor dat nieuwere versies van TLS worden gebruikt. Bijvoorbeeld, bijvoorbeeld het kiezen van een TLS-versie die groter is dan 1,1. worden alleen verbindingen met TLS 1.1 en 1.2 toegestaan en worden verbindingen met TLS 1.0 geweigerd. Nadat u hebt gecontroleerd of uw toepassingen deze ondersteunen, wordt u aangeraden de minimale TLS-versie in te stellen op 1.2, omdat deze fixes bevat voor beveiligingsproblemen die in vorige versies zijn aangetroffen. Het is ook de hoogste versie van TLS die wordt ondersteund in Azure SQL Managed Instance.
 
 Voor klanten met toepassingen die afhankelijk zijn van oudere versies van TLS, wordt u aangeraden de minimale TLS-versie in te stellen volgens de vereisten van uw toepassingen. Voor klanten die afhankelijk zijn van toepassingen om verbinding te maken met behulp van een niet-versleutelde verbinding, wordt u aangeraden geen minimale TLS-versie in te stellen. 
 

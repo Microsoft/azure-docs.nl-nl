@@ -8,10 +8,10 @@ ms.topic: tutorial
 ms.date: 3/11/2019
 ms.author: rohink
 ms.openlocfilehash: a8f64ab3141459142def12a1758b0fe0a94ca432
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92282164"
 ---
 # <a name="tutorial-host-your-domain-in-azure-dns"></a>Zelfstudie: Uw domein hosten in Azure DNS
@@ -40,12 +40,12 @@ In dit voorbeeld verwijzen we naar het bovenliggende domein als **contoso.net**
 
 ## <a name="create-a-dns-zone"></a>Een DNS-zone maken
 
-1. Ga naar [Azure Portal](https://portal.azure.com/) om een DNS-zone te maken. Zoek naar en selecteer **DNS-zones** .
+1. Ga naar [Azure Portal](https://portal.azure.com/) om een DNS-zone te maken. Zoek naar en selecteer **DNS-zones**.
 
    ![DNS-zone](./media/dns-delegate-domain-azure-dns/openzone650.png)
 
-1. Selecteer **DNS-zone maken** .
-1. Voer op de pagina **DNS-zone maken** de volgende waarden in en selecteer vervolgens **Maken** : bijvoorbeeld **contoso.net**
+1. Selecteer **DNS-zone maken**.
+1. Voer op de pagina **DNS-zone maken** de volgende waarden in en selecteer vervolgens **Maken**: bijvoorbeeld **contoso.net**
       > [!NOTE] 
       > Raadpleeg de [zelfstudie Een nieuwe onderliggende DNS-zone maken](./tutorial-public-dns-zones-child.md) als de nieuwe zone die u maakt, een onderliggende zone is (bijvoorbeeld bovenliggende zone = contoso.net, onderliggende zone = onderliggendezone.contoso.net)
 
@@ -65,7 +65,7 @@ Voordat u uw DNS-zone naar Azure DNS kunt delegeren, moet u weten wat de naamser
 
 1. Nu de DNS-zone is gemaakt, selecteert u **Alle resources** in het deelvenster **Favorieten** in Azure Portal. Selecteer op de pagina **Alle resources** uw DNS-zone. Als het abonnement dat u hebt geselecteerd al verschillende resources bevat, kunt u uw domeinnaam invoeren in het vak **Filteren op naam** om gemakkelijk toegang te krijgen tot de toepassingsgateway. 
 
-1. U vindt de naamservers op de pagina DNS-zone. In dit voorbeeld zijn de naamservers *ns1-01.azure-dns.com* , *ns2 01.azure dns.net* , *ns3-01.azure-dns.org* en *ns4-01.azure-dns.info* aan de zone contoso.net toegewezen:
+1. U vindt de naamservers op de pagina DNS-zone. In dit voorbeeld zijn de naamservers *ns1-01.azure-dns.com*, *ns2 01.azure dns.net*, *ns3-01.azure-dns.org* en *ns4-01.azure-dns.info* aan de zone contoso.net toegewezen:
 
    ![Lijst met naamservers](./media/dns-delegate-domain-azure-dns/viewzonens500.png)
 
@@ -116,7 +116,7 @@ U hoeft de Azure DNS-naamservers niet op te geven. Als de overdracht correct is 
 
 U kunt de resourcegroep **contosoRG** behouden als u de volgende zelfstudie wilt doen. Verwijder anders de resourcegroep **contosoRG** om de resources die in deze zelfstudie zijn gemaakt te verwijderen.
 
-- Selecteer de resourcegroep **contosoRG** en selecteer vervolgens **Resourcegroep verwijderen** . 
+- Selecteer de resourcegroep **contosoRG** en selecteer vervolgens **Resourcegroep verwijderen**. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

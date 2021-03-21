@@ -12,10 +12,10 @@ ms.date: 08/20/2020
 ms.author: gasinh
 ms.subservice: B2C
 ms.openlocfilehash: 66ec0d4b09dc983eb898d63d45b3dd7cab291c4c
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96928661"
 ---
 # <a name="tutorial-for-configuring-jumio-with-azure-active-directory-b2c"></a>Zelf studie voor het configureren van Jumio met Azure Active Directory B2C
@@ -104,7 +104,7 @@ Gebruik het volgende Power shell-script om de teken reeks te maken:
 
 U kunt [Toepassings instellingen configureren in azure app service](../app-service/configure-common.md#configure-app-settings). Met deze methode kunt u instellingen veilig configureren zonder deze in een opslag plaats te controleren. U moet de volgende instellingen opgeven voor de rest-API:
 
-| Toepassingsinstellingen | Bron | Opmerkingen |
+| Toepassingsinstellingen | Bron | Notities |
 | :-------- | :------------| :-----------|
 |JumioSettings:AuthUsername | Jumio-account configuratie |     |
 |JumioSettings:AuthPassword | Jumio-account configuratie |     |
@@ -158,7 +158,7 @@ U kunt [Toepassings instellingen configureren in azure app service](../app-servi
 
    b. Selecteer de **omleidings-URL** voor de **antwoord-URL**.
 
-   c. Selecteer **gebruikers stroom uitvoeren**.
+   c. Selecteer **Gebruikersstroom uitvoeren**.
 
 4. Ga door naar de registratie stroom en maak een account.
 

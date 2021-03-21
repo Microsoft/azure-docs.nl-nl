@@ -8,10 +8,10 @@ ms.service: storage
 ms.subservice: common
 ms.topic: how-to
 ms.openlocfilehash: 6d9e0e63a3586be139620c154616acfcba2ab10f
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96498214"
 ---
 # <a name="use-the-azure-storage-emulator-for-development-and-testing"></a>De Azure Storage-emulator gebruiken voor ontwikkelen en testen
@@ -320,7 +320,7 @@ Er zijn geen verschillen die specifiek zijn voor de wachtrij opslag in de emulat
 
 * Geografisch redundante opslag met lees toegang (RA-GRS) wordt nu ondersteund in de-opslag emulator. De `Get Blob Service Stats` -, `Get Queue Service Stats` -en- `Get Table Service Stats` api's worden ondersteund voor het account secundair en retour neren altijd de waarde van het LastSyncTime-antwoord element als de huidige tijd volgens de onderliggende SQL database. Gebruik de Storage-client bibliotheek voor .NET versie 3,2 of hoger voor programmatische toegang tot de secundaire met de opslag emulator. Zie de Microsoft Azure Storage-client bibliotheek voor .NET-referentie voor meer informatie.
 
-### <a name="version-30"></a>Versie 3,0
+### <a name="version-30"></a>Versie 3.0
 
 * De Azure Storage-emulator wordt niet meer in hetzelfde pakket geleverd als de compute-emulator.
 * De Graphical User Interface van de opslag-emulator is afgeschaft. Het is vervangen door een script bare opdracht regel interface. Zie voor meer informatie over de opdracht regel interface de naslag informatie voor Storage emulator-Command-Line Hulpprogramma's. De grafische interface blijft aanwezig in versie 3,0, maar kan alleen worden geopend wanneer de compute emulator wordt geïnstalleerd door met de rechter muisknop op het pictogram van het systeemvak te klikken en de gebruikers interface van de opslag emulator weer geven te selecteren.

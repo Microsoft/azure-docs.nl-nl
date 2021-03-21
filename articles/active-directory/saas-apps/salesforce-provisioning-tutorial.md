@@ -11,10 +11,10 @@ ms.topic: tutorial
 ms.date: 08/01/2019
 ms.author: jeedes
 ms.openlocfilehash: 2a4d3f3f9465b8813cdf6ee26760d819d73a08c1
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94353101"
 ---
 # <a name="tutorial-configure-salesforce-for-automatic-user-provisioning"></a>Zelf studie: Sales Force configureren voor het automatisch inrichten van gebruikers
@@ -25,7 +25,7 @@ Het doel van deze zelf studie is het weer geven van de stappen die nodig zijn vo
 
 In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan dat u al beschikt over de volgende items:
 
-* Een Azure Active Directory-Tenant
+* Een Azure Active Directory-tenant
 * Een Salesforce.com-Tenant
 
 > [!IMPORTANT]
@@ -35,31 +35,31 @@ Als u een Sales Force-sandbox-omgeving gebruikt, raadpleegt u de zelf studie voo
 
 ## <a name="assigning-users-to-salesforce"></a>Gebruikers toewijzen aan Sales Force
 
-Azure Active Directory gebruikt een concept met de naam 'toewijzingen' om te bepalen welke gebruikers toegang moeten krijgen tot geselecteerde apps. In de context van het automatisch inrichten van gebruikers accounts worden alleen de gebruikers en groepen die zijn toegewezen aan een toepassing in azure AD gesynchroniseerd.
+Azure Active Directory gebruikt een concept met de naam 'toewijzingen' om te bepalen welke gebruikers toegang moeten krijgen tot geselecteerde apps. In de context van het automatisch inrichten van gebruikersaccounts worden alleen de gebruikers en groepen gesynchroniseerd die zijn 'toegewezen' aan een toepassing in Azure AD.
 
 Voordat u de inrichtings service configureert en inschakelt, moet u bepalen welke gebruikers of groepen in azure AD toegang nodig hebben tot uw Sales Force-app. Nadat u deze beslissing hebt genomen, kunt u deze gebruikers toewijzen aan uw Sales Force-app door de instructies in [een gebruiker of groep toewijzen aan een bedrijfs-app te](../manage-apps/assign-user-or-group-access-portal.md) volgen
 
 ### <a name="important-tips-for-assigning-users-to-salesforce"></a>Belang rijke tips voor het toewijzen van gebruikers aan Sales Force
 
-* U wordt aangeraden één Azure AD-gebruiker aan Sales Force toe te wijzen om de inrichtings configuratie te testen. Extra gebruikers en/of groepen kunnen later worden toegewezen.
+* U wordt aangeraden één Azure AD-gebruiker aan Sales Force toe te wijzen om de inrichtings configuratie te testen. Extra gebruikers en/of groepen kunnen dan later nog worden toegewezen.
 
 * Wanneer u een gebruiker aan Sales Force toewijst, moet u een geldige gebruikersrol selecteren. De rol ' standaard toegang ' werkt niet voor het inrichten
 
     > [!NOTE]
     > Met deze app worden profielen uit Sales Force geïmporteerd als onderdeel van het inrichtings proces, wat de klant mogelijk wil selecteren bij het toewijzen van gebruikers in azure AD. De profielen die worden geïmporteerd uit Sales Force, worden weer gegeven als rollen in azure AD.
 
-## <a name="enable-automated-user-provisioning"></a>Automatische gebruikers inrichting inschakelen
+## <a name="enable-automated-user-provisioning"></a>Automatische inrichting van gebruikers inschakelen
 
 In deze sectie wordt u begeleid bij het koppelen [van de API-V40 van uw Azure ad-account voor Sales Force](https://developer.salesforce.com/docs/atlas.en-us.208.0.api.meta/api/implementation_considerations.htm)en het configureren van de inrichtings service om toegewezen gebruikers accounts in Sales Force te maken, bij te werken en uit te scha kelen op basis van de gebruikers-en groeps toewijzing in azure AD.
 
 > [!Tip]
-> U kunt er ook voor kiezen om op SAML gebaseerde single Sign-On voor Sales Force in te scha kelen, gevolgd door de instructies in [Azure Portal](https://portal.azure.com). Eenmalige aanmelding kan onafhankelijk van automatische inrichting worden geconfigureerd, maar deze twee functies gelden voor elkaar.
+> U kunt er ook voor kiezen om op SAML gebaseerde single Sign-On voor Sales Force in te scha kelen, gevolgd door de instructies in [Azure Portal](https://portal.azure.com). Eenmalige aanmelding kan onafhankelijk van automatische inrichting worden geconfigureerd, maar deze twee functies vormen een aanvulling op elkaar.
 
-### <a name="configure-automatic-user-account-provisioning"></a>Automatisch inrichten van gebruikers accounts configureren
+### <a name="configure-automatic-user-account-provisioning"></a>Automatische inrichting van gebruikersaccounts configureren
 
 Het doel van deze sectie is het maken van een overzicht van het inschakelen van de gebruikers inrichting van Active Directory gebruikers accounts in Sales Force.
 
-1. Blader in het [Azure Portal](https://portal.azure.com)naar het gedeelte **Azure Active Directory > Enter prise-apps > alle toepassingen** .
+1. Blader in [Azure Portal](https://portal.azure.com) naar de sectie **Azure Active Directory > Bedrijfstoepassingen > Alle toepassingen**.
 
 2. Als u Sales Force al hebt geconfigureerd voor eenmalige aanmelding, zoekt u in het zoek veld naar uw exemplaar van Sales Force. Selecteer anders **toevoegen** en zoeken naar **Sales Force** in de toepassings galerie. Selecteer Sales Force in de zoek resultaten en voeg deze toe aan uw lijst met toepassingen.
 
@@ -69,27 +69,27 @@ Het doel van deze sectie is het maken van een overzicht van het inschakelen van 
 
     ![Scherm afbeelding toont de Sales Force-inrichtings pagina, waarbij de inrichtings modus is ingesteld op automatisch en andere waarden die u kunt instellen.](./media/salesforce-provisioning-tutorial/provisioning.png)
 
-5. Geef onder de sectie **beheerders referenties** de volgende configuratie-instellingen op:
+5. Geef de volgende configuratie-instellingen op in de sectie **Referenties voor beheerder**:
 
     a. Typ in het tekstvak **Administrator-gebruikers** naam een Sales Force-account naam waaraan het **systeem beheerders** profiel in Salesforce.com is toegewezen.
 
-    b. Typ in het tekstvak **beheerders wachtwoord** het wacht woord voor dit account.
+    b. Typ in het tekstvak **Wachtwoord voor beheerder** het wachtwoord voor dit account.
 
-6. Als u uw Sales Force-beveiligings token wilt ophalen, opent u een nieuw tabblad en meldt u zich aan bij hetzelfde Sales Force-beheerders account. Klik in de rechter bovenhoek van de pagina op uw naam en klik vervolgens op **instellingen**.
+6. Als u uw Sales Force-beveiligings token wilt ophalen, opent u een nieuw tabblad en meldt u zich aan bij hetzelfde Sales Force-beheerders account. Klik in de rechterbovenhoek van de pagina op uw naam en klik vervolgens op **Settings**.
 
-    ![Scherm afbeelding toont de geselecteerde koppeling van de instellingen.](./media/salesforce-provisioning-tutorial/sf-my-settings.png "Automatische gebruikers inrichting inschakelen")
+    ![Schermopname met de koppeling Settings geselecteerd.](./media/salesforce-provisioning-tutorial/sf-my-settings.png "Automatische inrichting van gebruikers inschakelen")
 
-7. Klik in het navigatie deel venster aan de linkerkant op **persoonlijke gegevens** om de gerelateerde sectie uit te vouwen en klik vervolgens op **mijn beveiligings token opnieuw instellen**.
+7. Klik in het linkernavigatievenster op **My Personal Information** om de gerelateerde sectie uit te vouwen en klik vervolgens op **Reset My Security Token**.
   
-    ![Scherm afbeelding toont het opnieuw instellen van mijn beveiligings token dat is geselecteerd op basis van mijn persoonlijke gegevens.](./media/salesforce-provisioning-tutorial/sf-personal-reset.png "Automatische gebruikers inrichting inschakelen")
+    ![Schermopname met Reset My Security Token geselecteerd in My Personal Information.](./media/salesforce-provisioning-tutorial/sf-personal-reset.png "Automatische inrichting van gebruikers inschakelen")
 
 8. Klik op de pagina **beveiligings token opnieuw** instellen op de knop **beveiligings token opnieuw instellen** .
 
-    ![Scherm afbeelding toont de pagina met de rest-beveiligings token, met verklarende tekst en de optie voor het opnieuw instellen van het beveiligings token](./media/salesforce-provisioning-tutorial/sf-reset-token.png "Automatische gebruikers inrichting inschakelen")
+    ![Schermopname met de pagina Rest Security Token, met verklarende tekst en de optie Reset Security Token](./media/salesforce-provisioning-tutorial/sf-reset-token.png "Automatische inrichting van gebruikers inschakelen")
 
-9. Controleer het postvak in van de e-mail die is gekoppeld aan dit beheerders account. Zoek naar een e-mail bericht van Salesforce.com dat het nieuwe beveiligings token bevat.
+9. Controleer het postvak IN van het e-mailadres dat aan dit beheerdersaccount is gekoppeld. Zoek naar een e-mail bericht van Salesforce.com dat het nieuwe beveiligings token bevat.
 
-10. Kopieer het token, ga naar uw Azure AD-venster en plak dit in het veld **geheime token** .
+10. Kopieer het token, ga naar uw Azure AD-venster en plak dit in het veld **Token voor geheim**.
 
 11. De **URL** van de Tenant moet worden ingevoerd als het exemplaar van Sales Force zich in de Sales Force Government-Cloud bevindt. Anders is het optioneel. Voer de URL van de Tenant in met de indeling ' https:// \<your-instance\> . my.salesforce.com ', waarbij wordt vervangen \<your-instance\> door de naam van uw Sales Force-exemplaar.
 
@@ -97,7 +97,7 @@ Het doel van deze sectie is het maken van een overzicht van het inschakelen van 
 
 13. Voer in het veld **e-mail melding** het e-mail adres in van een persoon of groep die inrichtings fout meldingen moet ontvangen en schakel het selectie vakje hieronder in.
 
-14. Klik op **opslaan.**  
+14. klik op **Opslaan**.  
 
 15. Selecteer in de sectie toewijzingen de optie **Azure Active Directory gebruikers synchroniseren met Sales Force.**
 
@@ -105,12 +105,12 @@ Het doel van deze sectie is het maken van een overzicht van het inschakelen van 
 
 17. Als u de Azure AD-inrichtings service voor Sales Force wilt inschakelen, wijzigt **u de** **inrichtings status** in in het gedeelte instellingen
 
-18. Klik op **opslaan.**
+18. klik op **Opslaan**.
 
 > [!NOTE]
 > Zodra de gebruikers zijn ingericht in de Sales Force-toepassing, moet de beheerder de taalspecifieke instellingen voor deze toepassingen configureren. Raadpleeg dit artikel voor meer informatie over [de](https://help.salesforce.com/articleView?id=setting_your_language.htm&type=5) taal configuratie.
 
-Hiermee start u de initiële synchronisatie van gebruikers en/of groepen die zijn toegewezen aan Sales Force in de sectie gebruikers en groepen. Houd er rekening mee dat het uitvoeren van de eerste synchronisatie langer duurt dan volgende synchronisaties, die ongeveer elke 40 minuten plaatsvinden, zolang de service wordt uitgevoerd. U kunt de sectie **synchronisatie Details** gebruiken om de voortgang te bewaken en koppelingen te volgen voor het inrichtings logboek, waarin alle acties worden beschreven die worden uitgevoerd door de inrichtings service in uw Sales Force-app.
+Hiermee start u de initiële synchronisatie van gebruikers en/of groepen die zijn toegewezen aan Sales Force in de sectie gebruikers en groepen. Opmerking: de initiële synchronisatie duurt langer dan volgende synchronisaties, die ongeveer om de 40 minuten plaatsvinden zolang de service actief is. U kunt de sectie **synchronisatie Details** gebruiken om de voortgang te bewaken en koppelingen te volgen voor het inrichtings logboek, waarin alle acties worden beschreven die worden uitgevoerd door de inrichtings service in uw Sales Force-app.
 
 Zie [Rapportage over automatische inrichting van gebruikersaccounts](../app-provisioning/check-status-user-account-provisioning.md) voor informatie over het lezen van de Azure AD-inrichtingslogboeken.
 

@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
 ms.openlocfilehash: a4f8fda2a9cc555c88b0d01d3844bee15c9431c3
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92460054"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-insight4grc"></a>Zelfstudie: Azure Active Directory-integratie met Insight4GRC
@@ -42,7 +42,7 @@ U hebt het volgende nodig om Azure AD-integratie met Insight4GRC te configureren
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
 * Insight4GRC biedt ondersteuning voor met **SP en IDP** geïnitieerde SSO
-* Insight4GRC biedt ondersteuning voor **Just-In-Time** -inrichting van gebruikers
+* Insight4GRC biedt ondersteuning voor **Just-In-Time**-inrichting van gebruikers
 
 ## <a name="adding-insight4grc-from-the-gallery"></a>Insight4GRC toevoegen vanuit de galerie
 
@@ -50,7 +50,7 @@ Als u de integratie van Insight4GRC in Azure AD wilt configureren, moet u Insigh
 
 **Voer de volgende stappen uit om Insight4GRC toe te voegen vanuit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -108,7 +108,7 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure AD te configurere
 
 5. Klik op **Extra URL's instellen** en voer de volgende stap uit als u de toepassing in de door **SP** geïnitieerde modus wilt configureren:
 
-    ![Schermopname toont 'Aanvullende URL's instellen', waar u een aanmeldings-URL kunt invoeren.](common/metadata-upload-additional-signon.png)
+    ![Schermopname die Extra URL's instellen toont, waar u een aanmeldings-URL kunt invoeren.](common/metadata-upload-additional-signon.png)
 
     In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://<subdomain>.Insight4GRC.com/Public/Login.aspx`
 
@@ -127,7 +127,7 @@ Als u eenmalige aanmelding aan de zijde van **Insight4GRC** wilt configureren, m
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -152,7 +152,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In deze sectie stelt u Britta Simon in staat gebruik te maken van eenmalige aanmelding van Azure door haar toegang te verlenen tot Insight4GRC.
 
-1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **Insight4GRC**.
+1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **Insight4GRC**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 

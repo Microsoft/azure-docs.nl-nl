@@ -9,10 +9,10 @@ ms.date: 04/15/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
 ms.openlocfilehash: 436dbac814197556385a33d956928f97fd4716bf
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93311924"
 ---
 # <a name="database-collation-support-for-synapse-sql-in-azure-synapse-analytics"></a>Ondersteuning voor database sortering voor Synapse SQL in azure Synapse Analytics 
@@ -113,9 +113,9 @@ Als Sortation is door gegeven als eigenschaps parameter, retourneert de functie 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over best practices voor exclusieve SQL-groep en serverloze SQL-groep vindt u in de volgende artikelen:
+Aanvullende informatie over best practices voor toegewezen SQL-pools en serverloze SQL-pools vindt u in de volgende artikelen:
 
-- [Aanbevolen procedures voor een toegewezen SQL-groep](best-practices-sql-pool.md)
-- [Aanbevolen procedures voor de serverloze SQL-groep](best-practices-sql-on-demand.md)
+- [Best practices voor toegewezen SQL-pools](best-practices-sql-pool.md)
+- [Best practices voor serverloze SQL-pools](best-practices-sql-on-demand.md)
 
 

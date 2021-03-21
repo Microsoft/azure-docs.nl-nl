@@ -7,10 +7,10 @@ ms.service: azure-app-configuration
 ms.topic: conceptual
 ms.date: 07/09/2020
 ms.openlocfilehash: 7910e2092259081aade799fc662052e5a1375e25
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96930480"
 ---
 # <a name="resiliency-and-disaster-recovery"></a>Tolerantie en herstel na noodgevallen
@@ -72,7 +72,7 @@ U kunt de functie **exporteren** in app-configuratie gebruiken om gegevens van h
 
 Vanuit het Azure Portal kunt u een wijziging naar een andere configuratie Store pushen door de volgende stappen uit te voeren.
 
-1. Ga naar het tabblad **importeren/exporteren** en selecteer app **Export**-  >  **configuratie**  >  **doel** exporteren  >  **een resource selecteren**.
+1. Ga naar het tabblad **importeren/exporteren** en selecteer app -  >  **configuratie**  >  **doel** exporteren  >  **een resource selecteren**.
 
 1. Op de nieuwe blade die wordt geopend, geeft u het abonnement, de resource groep en de resource naam van uw secundaire archief op. Selecteer vervolgens **Toep assen**.
 

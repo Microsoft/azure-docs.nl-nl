@@ -8,10 +8,10 @@ author: trkeya
 ms.author: trkeya
 ms.date: 11/06/2020
 ms.openlocfilehash: 88779f67a2fa9b18f0177a1459b32c672343bb57
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96462945"
 ---
 # <a name="detailed-configuration-for-hosted-test-drives"></a>Gedetailleerde configuratie voor gehoste test stations
@@ -37,7 +37,7 @@ In dit artikel wordt beschreven hoe u een gehoste test drive configureert voor D
     - **Maxi maal aantal gelijktijdige test stations** : de hoeveelheid gelijktijdige gebruikers die een actief test drive tegelijk kunnen uitvoeren. Elke gebruiker gebruikt een Dynamics-licentie terwijl hun test drive actief is. Zorg er dus voor dat u ten minste dit aantal gratis Dynamics-licenties voor test drive gebruikers hebt. 3 tot 5 wordt aanbevolen.
     - **Duur van test drive** : het aantal uur dat de test drive van de gebruiker actief is. Nadat de tijd is verstreken, wordt de toewijzing van de gebruiker ongedaan gemaakt met uw Tenant. We raden 2-24 uur aan, afhankelijk van de complexiteit van uw app. De gebruiker kan altijd een andere test drive aanvragen als deze niet langer actief zijn en de test drive opnieuw wilt openen.
     - **URL van exemplaar** : de URL waarnaar de test drive gebruiker wordt verzonden wanneer de test drive wordt gestart. Dit is doorgaans de URL van uw Dynamics 365-exemplaar waarop uw app en voorbeeld gegevens zijn geïnstalleerd. Voorbeeld waarde: `https://testdrive.crm.dynamics.com` .
-    - **URL Web API-exemplaar** : de Web-API-URL voor uw Dynamics 365-exemplaar. Als u deze waarde ophaalt, meldt u zich aan bij uw **Setting** micro soft Dynamics 365-exemplaar en navigeert u naar  >  **aanpassings**  >  **ontwikkelaars resources**  >  **exemplaar Web-API** instellen en kopieert u het adres (URL). Voorbeeld waarde:
+    - **URL Web API-exemplaar** : de Web-API-URL voor uw Dynamics 365-exemplaar. Als u deze waarde ophaalt, meldt u zich aan bij uw micro soft Dynamics 365-exemplaar en navigeert u naar  >  **aanpassings**  >  **ontwikkelaars resources**  >  **exemplaar Web-API** instellen en kopieert u het adres (URL). Voorbeeld waarde:
 
         :::image type="content" source="./media/test-drive/sample-web-api-url.png" alt-text="Een voor beeld van een web-API van een exemplaar.":::
 

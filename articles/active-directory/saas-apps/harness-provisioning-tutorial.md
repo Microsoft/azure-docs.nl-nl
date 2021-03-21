@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 10/29/2019
 ms.author: Zhchia
 ms.openlocfilehash: 13ae960f5d259314f00f8f09b2999a36c0919bc5
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94353710"
 ---
 # <a name="tutorial-configure-harness-for-automatic-user-provisioning"></a>Zelf studie: harnas configureren voor automatische gebruikers inrichting
@@ -25,19 +25,19 @@ In dit artikel vindt u informatie over het configureren van Azure Active Directo
 > [!NOTE]
 > In dit artikel wordt een connector beschreven die boven op de Azure AD User Provisioning-Service is gebouwd. Zie Gebruikers inrichten en de inrichting ongedaan maken voor [SaaS-toepassingen met Azure Active Directory](../app-provisioning/user-provisioning.md)voor belang rijke informatie over deze service en antwoorden op veelgestelde vragen.
 >
-> Deze connector is momenteel beschikbaar als preview-versie. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+> Deze connector is momenteel beschikbaar in preview. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 ## <a name="prerequisites"></a>Vereisten
 
 In het scenario dat in dit artikel wordt beschreven, wordt ervan uitgegaan dat u de volgende vereisten al hebt:
 
-* Een Azure AD-Tenant
+* Een Azure AD-tenant
 * [Een harnas Tenant](https://harness.io/pricing/)
 * Een gebruikers account in boom structuur met *beheerders* machtigingen
 
 ## <a name="assign-users-to-harness"></a>Gebruikers toewijzen aan harnas
 
-Azure Active Directory gebruikt een concept met de naam *toewijzingen* om te bepalen welke gebruikers toegang moeten krijgen tot geselecteerde apps. In de context van het automatisch inrichten van gebruikers worden alleen de gebruikers of groepen die zijn toegewezen aan een toepassing in azure AD gesynchroniseerd.
+Azure Active Directory gebruikt een concept dat *toewijzingen* wordt genoemd om te bepalen welke gebruikers toegang moeten krijgen tot geselecteerde apps. In de context van het automatisch inrichten van gebruikers worden alleen de gebruikers of groepen gesynchroniseerd die zijn toegewezen aan een toepassing in Azure AD.
 
 Voordat u automatische gebruikers inrichting configureert en inschakelt, moet u bepalen welke gebruikers of groepen in azure AD toegang nodig hebben tot harnas. U kunt deze gebruikers of groepen vervolgens toewijzen aan een harnas door de instructies in [een gebruiker of groep toewijzen aan een bedrijfs-app](../manage-apps/assign-user-or-group-access-portal.md)te volgen.
 
@@ -86,7 +86,7 @@ Voordat u een harnas configureert voor het automatisch inrichten van gebruikers 
 
     ![De koppeling alle toepassingen](common/enterprise-applications.png)
 
-1. Als u een nieuwe toepassing wilt toevoegen, selecteert u de knop **nieuwe toepassing** boven aan het deel venster.
+1. Als u een nieuwe toepassing wilt toevoegen, selecteert u de knop **Nieuwe toepassing** bovenin het deelvenster.
 
     ![De knop ' nieuwe toepassing '](common/add-new-app.png)
 
@@ -106,7 +106,7 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 Ga als volgt te werk om het automatisch inrichten van gebruikers voor harnas in azure AD te configureren:
 
-1. Selecteer in het [Azure Portal](https://portal.azure.com)alle toepassingen in **bedrijfs toepassingen**  >  **All applications**.
+1. Selecteer, in de [Azure Portal](https://portal.azure.com), **Bedrijfstoepassingen** > **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -118,11 +118,11 @@ Ga als volgt te werk om het automatisch inrichten van gebruikers voor harnas in 
 
     ![De inrichtings knop](common/provisioning.png)
 
-1. Selecteer in de vervolg keuzelijst **inrichtings modus** de optie **automatisch**.
+1. Selecteer **Automatisch** in de vervolgkeuzelijst **Inrichtingsmodus**.
 
     ![De vervolg keuzelijst ' inrichtings modus '](common/provisioning-automatic.png)
 
-1. Ga als volgt te werk onder **beheerders referenties** :
+1. Ga als volgt te werk onder **Referenties voor beheerders**:
 
     ![Tenant-URL + token](common/provisioning-testconnection-tenanturltoken.png)
  
@@ -154,7 +154,7 @@ Ga als volgt te werk om het automatisch inrichten van gebruikers voor harnas in 
 
 1. Zie op [kenmerken gebaseerde toepassing inrichten met bereik filters](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md)voor het configureren van bereik filters.
 
-1. Onder **instellingen** , om de Azure AD-inrichtings service voor harnas in te scha kelen, schakelt u de **inrichtings status** in **op aan**.
+1. Onder **instellingen**, om de Azure AD-inrichtings service voor harnas in te scha kelen, schakelt u de **inrichtings status** in **op aan**.
 
     ![De inrichtings status switch is in-of uitgeschakeld](common/provisioning-toggle-on.png)
 
@@ -162,7 +162,7 @@ Ga als volgt te werk om het automatisch inrichten van gebruikers voor harnas in 
 
     ![Inrichtingsbereik](common/provisioning-scope.png)
 
-1. Wanneer u klaar bent om in te richten, selecteert u **Opslaan**.
+1. Selecteer **Opslaan** als u klaar bent voor het inrichten.
 
     ![De knop Opslaan inrichten](common/provisioning-configuration-save.png)
 
@@ -172,7 +172,7 @@ Zie [rapport over automatische toewijzing van gebruikers accounts](../app-provis
 
 ## <a name="additional-resources"></a>Aanvullende resources
 
-* [Het inrichten van gebruikers accounts beheren voor zakelijke apps](../app-provisioning/configure-automatic-user-provisioning-portal.md)
+* [Het inrichten van gebruikersaccounts beheren voor bedrijfsapps](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
 
 ## <a name="next-steps"></a>Volgende stappen

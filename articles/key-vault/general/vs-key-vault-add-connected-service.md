@@ -10,10 +10,10 @@ ms.topic: how-to
 ms.date: 08/07/2019
 ms.author: ghogen
 ms.openlocfilehash: 9c62534acdbfbff7fd4e718bad1f07a92c641626
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92792392"
 ---
 # <a name="add-key-vault-to-your-web-application-by-using-visual-studio-connected-services"></a>Key Vault toevoegen aan uw web-app met behulp van Visual Studio Connected Services
@@ -24,7 +24,7 @@ Voor meer informatie over de wijzigingen die verbonden services in uw project ma
 
 ## <a name="prerequisites"></a>Vereisten
 
-- **Een Azure-abonnement** . Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/pricing/free-trial/).
+- **Een Azure-abonnement**. Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/pricing/free-trial/).
 - **Visual Studio 2019 versie 16,3** of hoger [nu downloaden](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs).
 
 
@@ -32,21 +32,21 @@ Voor meer informatie over de wijzigingen die verbonden services in uw project ma
 
 Voordat u begint, moet u ervoor zorgen dat u bent aangemeld bij Visual Studio. Meld u aan met hetzelfde account dat u gebruikt voor uw Azure-abonnement. Open vervolgens een ASP.NET-4.7.1 of hoger of ASP.NET Core 2,0-webproject en voer de volgende stappen uit:
 
-1. Klik in **Solution Explorer** met de rechter muisknop op het project waaraan u de Key Vault-ondersteuning **wilt toevoegen en kies toevoegen**  >  **Connected service**  >  **Add** .
+1. Klik in **Solution Explorer** met de rechter muisknop op het project waaraan u de Key Vault-ondersteuning **wilt toevoegen en kies toevoegen**  >  **Connected service**  >  .
    De Connected Service-pagina wordt weergegeven met services die u aan uw project kunt toevoegen.
-1. Kies **Azure Key Vault** in het menu met beschik bare Services en klik op **volgende** .
+1. Kies **Azure Key Vault** in het menu met beschik bare Services en klik op **volgende**.
 
    ![Kies Azure Key Vault](../media/vs-key-vault-add-connected-service/key-vault-connected-service.png)
 
-1. Selecteer het abonnement dat u wilt gebruiken, en kies vervolgens een bestaand Key Vault en klik op **volt ooien** . 
+1. Selecteer het abonnement dat u wilt gebruiken, en kies vervolgens een bestaand Key Vault en klik op **volt ooien**. 
 
-   ![Uw abonnement selecteren](../media/vs-key-vault-add-connected-service/key-vault-connected-service-select-vault.png)
+   ![Selecteer uw abonnement](../media/vs-key-vault-add-connected-service/key-vault-connected-service-select-vault.png)
 
 Verbinding met Key Vault is nu tot stand gebracht en u hebt toegang tot uw geheimen in code. De volgende stappen verschillen, afhankelijk van of u ASP.NET 4.7.1 of ASP.NET Core gebruikt.
 
 ## <a name="access-your-secrets-in-code-aspnet-core"></a>Toegang tot uw geheimen in code (ASP.NET Core)
 
-1. Open een van de pagina bestanden, zoals *index.cshtml.cs* en schrijf de volgende code:
+1. Open een van de pagina bestanden, zoals *index. cshtml. cs* , en schrijf de volgende code:
    1. Voeg een verwijzing toe naar met `Microsoft.Extensions.Configuration` behulp van de instructie:
 
        ```csharp
@@ -115,7 +115,7 @@ U kunt de configuratie zo instellen dat het web.config-bestand een dummy waarde 
          <add key="<secretNameInYourKeyVault>" value="dummy"/>
         ```
 
-1. Bewerk de `About` methode in *HomeController.cs* om de waarde voor de bevestiging weer te geven.
+1. Bewerk de `About` methode in *HomeController. cs* om de waarde voor de bevestiging weer te geven.
 
    ```csharp
    public ActionResult About()
@@ -127,16 +127,16 @@ U kunt de configuratie zo instellen dat het web.config-bestand een dummy waarde 
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 
-Als uw Key Vault wordt uitgevoerd op een ander Microsoft-account dan het account dat u hebt aangemeld bij Visual Studio (bijvoorbeeld wanneer de Key Vault wordt uitgevoerd op uw eigen account, maar Visual Studio gebruikmaakt van uw persoonlijke accounts), krijgt u een fout in uw Program.cs-bestand, dat Visual Studio geen toegang kan krijgen tot de Key Vault. Dit probleem oplossen:
+Als uw Key Vault wordt uitgevoerd op een ander Microsoft-account dan het account dat u hebt aangemeld bij Visual Studio (bijvoorbeeld wanneer de Key Vault wordt uitgevoerd op uw eigen account, maar Visual Studio gebruikmaakt van uw persoonlijke accounts), krijgt u een fout melding in het bestand Program. cs, dat Visual Studio geen toegang kan krijgen tot de Key Vault. Dit probleem oplossen:
 
 1. Ga naar de [Azure Portal](https://portal.azure.com) en open uw Key Vault.
 
-1. Kies **toegangs beleid** , vervolgens **toegangs beleid toevoegen** en kies het account waarmee u bent aangemeld als principal.
+1. Kies **toegangs beleid**, vervolgens **toegangs beleid toevoegen** en kies het account waarmee u bent aangemeld als principal.
 
-1. Kies in Visual Studio de instellingen voor het **Bestands**  >  **account** .
+1. Kies in Visual Studio de instellingen voor het **Bestands**  >  **account**.
 Selecteer **een account toevoegen** in het gedeelte **alle accounts** . Meld u aan met het account dat u hebt gekozen als principal van uw toegangs beleid.
 
-1. Kies **extra**  >  **Opties** en zoek naar **Azure-service verificatie** . Selecteer vervolgens het account dat u zojuist hebt toegevoegd aan Visual Studio.
+1. Kies **extra**  >  **Opties** en zoek naar **Azure-service verificatie**. Selecteer vervolgens het account dat u zojuist hebt toegevoegd aan Visual Studio.
 
 Wanneer u nu fouten opspoort in uw toepassing, maakt Visual Studio verbinding met het account waarop uw Key Vault zich bevindt.
 

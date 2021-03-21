@@ -12,10 +12,10 @@ ms.author: wiassaf
 ms.reviewer: sstein
 ms.date: 12/19/2018
 ms.openlocfilehash: 139673e46421aa0dc19298697872fbff5fe587af
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96501206"
 ---
 # <a name="extended-events-in-azure-sql-database"></a>Uitgebreide gebeurtenissen in Azure SQL Database 
@@ -29,7 +29,7 @@ De functieset met uitgebreide gebeurtenissen in Azure SQL Database is een robuus
 
 Meer informatie over uitgebreide gebeurtenissen vindt u op:
 
-- [Quick Start: uitgebreide gebeurtenissen in SQL Server](/sql/relational-databases/extended-events/quick-start-extended-events-in-sql-server)
+- [Snel starten: uitgebreide gebeurtenissen in SQL Server](/sql/relational-databases/extended-events/quick-start-extended-events-in-sql-server)
 - [Uitgebreide gebeurtenissen](/sql/relational-databases/extended-events/extended-events)
 
 ## <a name="prerequisites"></a>Vereisten

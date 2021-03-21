@@ -8,10 +8,10 @@ ms.topic: best-practice
 ms.date: 07/30/2020
 ms.author: cralvord
 ms.openlocfilehash: 283ec9999f9b4362035b6770383984efb0879d49
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92783756"
 ---
 # <a name="azure-storage-explorer-security-guide"></a>Azure Storage Explorer-beveiligings handleiding
@@ -81,7 +81,7 @@ Met sleutels voor het opslag account wordt onbeperkte toegang tot de services en
 
 Sommige Azure-rollen verlenen machtigingen voor het ophalen van sleutels voor het opslag account. Personen met deze rollen kunnen de machtigingen die worden verleend of geweigerd door Azure RBAC, omzeilen. We raden aan deze machtiging niet toe te kennen, tenzij dit nodig is.
 
-Storage Explorer probeert de sleutel van het opslag account, indien beschikbaar, te gebruiken om aanvragen te verifiëren. U kunt deze functie uitschakelen in instellingen ( **Services > opslag Accounts > gebruik van sleutels uitschakelen** ). Sommige functies bieden geen ondersteuning voor Azure RBAC, zoals werken met klassieke opslag accounts. Dergelijke functies vereisen nog steeds sleutels en worden niet beïnvloed door deze instelling.
+Storage Explorer probeert de sleutel van het opslag account, indien beschikbaar, te gebruiken om aanvragen te verifiëren. U kunt deze functie uitschakelen in instellingen (**Services > opslag Accounts > gebruik van sleutels uitschakelen**). Sommige functies bieden geen ondersteuning voor Azure RBAC, zoals werken met klassieke opslag accounts. Dergelijke functies vereisen nog steeds sleutels en worden niet beïnvloed door deze instelling.
 
 Als u sleutels moet gebruiken voor toegang tot uw opslag resources, raden we de volgende richt lijnen aan:
 

@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 2/28/2018
 ms.author: gwallace
 ms.openlocfilehash: 8e60ac5065c2f9543a641daf4f62299c00c61fc8
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96000654"
 ---
 # <a name="use-system-health-reports-to-troubleshoot"></a>Systeemstatusrapporten gebruiken om fouten op te lossen
@@ -139,7 +139,7 @@ System. hosting rapporteert een waarschuwing als gedefinieerde knooppunt capacit
 ## <a name="application-system-health-reports"></a>Status rapporten van het toepassings systeem
 System.CM, dat de Cluster Manager-service vertegenwoordigt, is de instantie die informatie over een toepassing beheert.
 
-### <a name="state"></a>Status
+### <a name="state"></a>Staat
 System.CM rapporten als OK wanneer de toepassing is gemaakt of bijgewerkt. Er wordt een melding van de Health Store wanneer de toepassing wordt verwijderd, zodat deze uit de Store kan worden verwijderd.
 
 * **SourceId**: System.cm
@@ -172,7 +172,7 @@ HealthEvents                    :
 ## <a name="service-system-health-reports"></a>Service systeem status rapporten
 System.FM, dat de Failover Manager-service vertegenwoordigt, is de instantie die informatie over services beheert.
 
-### <a name="state"></a>Status
+### <a name="state"></a>Staat
 System.FM rapporteert als OK wanneer de service is gemaakt. De entiteit wordt uit het Health Store verwijderd wanneer de service wordt verwijderd.
 
 * **SourceId**: System.fm
@@ -214,7 +214,7 @@ HealthEvents          :
 ## <a name="partition-system-health-reports"></a>Systeem status rapporten partitioneren
 System.FM, dat de Failover Manager-service vertegenwoordigt, is de instantie die informatie over service partities beheert.
 
-### <a name="state"></a>Status
+### <a name="state"></a>Staat
 System.FM rapporten als OK wanneer de partitie is gemaakt en in orde is. De entiteit wordt uit het Health Store verwijderd wanneer de partitie wordt verwijderd.
 
 Als de partitie minder dan het minimale aantal replica's bevat, wordt er een fout melding weer gegeven. Als de partitie niet kleiner is dan het minimum aantal replica's, maar deze lager is dan het aantal doel replica's, wordt een waarschuwing weer gegeven. Als de partitie zich in quorum verlies bevindt, wordt er een fout melding weer gegeven in System.FM.
@@ -391,7 +391,7 @@ In het geval van het voor beeld is verder onderzoek nodig. Onderzoek de status v
 ## <a name="replica-system-health-reports"></a>Status rapporten van het replica systeem
 **System. ra**, dat het onderdeel reconfiguratie agent vertegenwoordigt, is de instantie voor de replica status.
 
-### <a name="state"></a>Status
+### <a name="state"></a>Staat
 System. RA-rapporten OK wanneer de replica is gemaakt.
 
 * **SourceId**: System. ra

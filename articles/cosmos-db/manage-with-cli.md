@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 10/13/2020
 ms.author: mjbrown
 ms.openlocfilehash: b13f5bfffced9afd80663d606e30e028e52643ac
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94563832"
 ---
 # <a name="manage-azure-cosmos-core-sql-api-resources-using-azure-cli"></a>Azure Cosmos core (SQL) API-resources beheren met Azure CLI
@@ -21,7 +21,7 @@ In de volgende handleiding worden veelvoorkomende opdrachten beschreven voor het
 
 [!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-- Voor dit artikel is versie 2.12.1 of hoger van de Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
+- Voor dit artikel is versie 2.12.1 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
 Zie voor Azure CLI-voorbeelden voor andere API's [CLI-voorbeelden voor Cassandra](cli-samples-cassandra.md), [CLI-voorbeelden voor MongoDB API](cli-samples-mongodb.md), [CLI-voorbeelden voor Gremlin](cli-samples-gremlin.md), [CLI-voorbeelden voor Table](cli-samples-table.md)
 
@@ -43,7 +43,7 @@ In de volgende secties ziet u hoe u het Azure Cosmos-account kunt beheren, met i
 * [Verbindingsreeksen weergeven](#list-connection-strings)
 * [Account sleutel opnieuw genereren](#regenerate-account-key)
 
-### <a name="create-an-azure-cosmos-db-account"></a>Een Azure Cosmos DB-account maken
+### <a name="create-an-azure-cosmos-db-account"></a>Maak een Azure Cosmos DB-account
 
 Een Azure Cosmos DB-account maken met SQL API, sessie consistentie in de regio's vs-West 2 en VS-Oost 2:
 

@@ -5,10 +5,10 @@ ms.reviewer: srinathv
 ms.topic: troubleshooting
 ms.date: 08/30/2019
 ms.openlocfilehash: 2cda13ea089ac08dff7c1ba5ca93ba56ab3c23cf
-ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97831547"
 ---
 # <a name="troubleshooting-backup-failures-on-azure-virtual-machines"></a>Back-upfouten op virtuele machines van Azure oplossen
@@ -93,13 +93,13 @@ Fout code: ExtensionInstallationFailedCOM  <br/>
 Fout bericht: de installatie van de extensie of de bewerking is mislukt vanwege een COM+-fout
 
 Fout code: ExtensionInstallationFailedMDTC <br/>
-Fout bericht: de installatie van de extensie is mislukt met de fout ' COM+ kan niet communiceren met de micro soft-Distributed Transaction Coordinator <br/>
+Fout bericht: de installatie van de extensie is mislukt met de fout ' COM+ kan niet communiceren met de micro soft-gedistribueerde transactie <br/>
 
 De back-upbewerking is mislukt vanwege een probleem met de Windows service **com+-systeem** toepassing.  Volg deze stappen om dit probleem op te lossen:
 
 * Probeer de Windows service **com+-systeem toepassing** te starten/opnieuw te starten (vanaf een opdracht prompt met verhoogde bevoegdheid **-net start COMSysApp**).
-* Zorg ervoor dat **Distributed Transaction Coordinator** service wordt uitgevoerd als **netwerk service** account. Als dat niet het geval is, wijzigt u deze in uitvoeren als **netwerk service** account en start u **com+-systeem toepassing** opnieuw.
-* Als de service niet opnieuw kan worden gestart, installeert u **Distributed Transaction Coordinator** -service opnieuw door de volgende stappen uit te voeren:
+* Zorg ervoor dat **gedistribueerde transactie** service wordt uitgevoerd als **netwerk service** account. Als dat niet het geval is, wijzigt u deze in uitvoeren als **netwerk service** account en start u **com+-systeem toepassing** opnieuw.
+* Als de service niet opnieuw kan worden gestart, installeert u **gedistribueerde transactie** -service opnieuw door de volgende stappen uit te voeren:
   * Stop de MSDTC-service
   * Open een opdrachtprompt (cmd)
   * Voer de opdracht `msdtc -uninstall` uit
@@ -134,8 +134,8 @@ REG ADD "HKLM\SOFTWARE\Microsoft\BcdrAgentPersistentKeys" /v SnapshotWithoutThre
 
 Stap 3: als de stappen 1 en 2 het probleem niet hebben opgelost, wordt de fout mogelijk veroorzaakt door een time-out voor VSS-schrijvers vanwege een beperkt aantal IOPS.<br>
 
-Als u wilt controleren, gaat u naar ***systeem en logboeken toepassings logboeken** _ en controleert u of het volgende fout bericht wordt weer gegeven:<br>
-Er is een time-out opgetreden tijdens het _The van de provider voor schaduw kopieën terwijl er wordt geschreven naar het volume dat wordt gekopieerd Dit komt waarschijnlijk door buitensporige activiteiten op het volume door een toepassing of een systeem service. Probeer het later opnieuw wanneer de activiteit op het volume is verminderd. *<br>
+Als u wilt controleren, gaat u naar ***systeem-en logboeken toepassings logboeken*** en controleert u of het volgende fout bericht wordt weer gegeven:<br>
+*Er is een time-out opgetreden voor de provider van schaduw kopieën terwijl er wordt geschreven naar het volume dat wordt gekopieerd. Dit komt waarschijnlijk door buitensporige activiteiten op het volume door een toepassing of een systeem service. Probeer het later opnieuw wanneer de activiteit op het volume is verminderd.*<br>
 
 Oplossing:
 

@@ -9,10 +9,10 @@ ms.author: brendm
 ms.custom: devx-track-java, devx-track-azurecli
 zone_pivot_groups: programming-languages-spring-cloud
 ms.openlocfilehash: c2121f429b928d58a2df7b4e4663341cf600da3e
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102214470"
 ---
 # <a name="quickstart-deploy-your-first-azure-spring-cloud-application"></a>Quickstart: Uw eerste Azure Spring Cloud-toepassing implementeren

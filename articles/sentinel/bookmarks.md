@@ -11,19 +11,19 @@ ms.topic: conceptual
 ms.custom: mvc
 ms.date: 10/24/2019
 ms.openlocfilehash: 5e3b6802bab2c5fae97be8e55c8d5c11ff570f78
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94651309"
 ---
-# <a name="keep-track-of-data-during-hunting-with-azure-sentinel"></a>Gegevens bijhouden tijdens de jacht met Azure Sentinel
+# <a name="keep-track-of-data-during-hunting-with-azure-sentinel"></a>Gegevens bijhouden tijdens opsporing met Azure Sentinel
 
 Voor de dreigings-jacht moet u de bergen aan logboek gegevens controleren op het zoeken naar informatie over schadelijk gedrag. Tijdens dit proces vinden onderzoekers gebeurtenissen die ze graag willen onthouden, opnieuw bezoeken en analyseren als onderdeel van het valideren van mogelijke hypo theses en het volledige verhaal van een inbreuk.
 
-Bewaak blad wijzers in azure Sentinel Help u dit doen door de query's te behouden die u in **Azure Sentinel-logs** hebt uitgevoerd, samen met de query resultaten die u relevant acht. U kunt ook uw contextuele waarnemingen vastleggen en naar uw bevindingen verwijzen door notities en tags toe te voegen. Blade gegevens zijn zichtbaar voor u en uw team leden voor eenvoudige samen werking.
+Bewaak blad wijzers in azure Sentinel Help u dit doen door de query's te behouden die u in **Azure Sentinel-logs** hebt uitgevoerd, samen met de query resultaten die u relevant acht. U kunt ook uw contextuele waarnemingen vastleggen en naar uw bevindingen verwijzen door notities en tags toe te voegen. De van bladwijzers voorziene gegevens zijn zichtbaar voor u en uw teamleden waardoor samenwerking eenvoudig is.
 
-U kunt uw bladwijzer gegevens op elk gewenst moment opnieuw bezoeken op het tabblad **blad wijzers** in het deel venster **jacht** . U kunt filters en zoek opties gebruiken om snel specifieke gegevens te vinden voor uw huidige onderzoek. U kunt uw gebladde gegevens ook rechtstreeks in de tabel **HuntingBookmark** in uw log Analytics-werk ruimte weer geven. Bijvoorbeeld:
+U kunt uw bladwijzer gegevens op elk gewenst moment opnieuw bezoeken op het tabblad **blad wijzers** in het deel venster **jacht** . U kunt filter- en zoekopties gebruiken om snel specifieke gegevens te vinden voor uw huidige onderzoek. U kunt uw gebladde gegevens ook rechtstreeks in de tabel **HuntingBookmark** in uw log Analytics-werk ruimte weer geven. Bijvoorbeeld:
 
 > [!div class="mx-imgBorder"]
 > ![HuntingBookmark-tabel weer geven](./media/bookmarks/bookmark-table.png)
@@ -88,7 +88,7 @@ U kunt ook in de preview-versie uw bladwijzer gegevens visualiseren door te klik
 > Deze functies worden zonder service level agreement gegeven en worden niet aanbevolen voor productie werkbelastingen.
 > Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
-1. Ga in het Azure Portal naar het tabblad voor het zoeken naar **Sentinel**  >  **Threat Management**  >  **Hunting**  >  -**Blades** en selecteer de blad wijzer of blad wijzers die u wilt onderzoeken.
+1. Ga in het Azure Portal naar het tabblad voor het zoeken naar **Sentinel**  >  **Threat Management**  >    >  -**Blades** en selecteer de blad wijzer of blad wijzers die u wilt onderzoeken.
 
 2. Zorg er in de Blade Details voor dat er ten minste één entiteit is toegewezen. Voor **entiteiten** ziet u bijvoorbeeld vermeldingen voor **IP**, **machine** of **account**.
 
@@ -103,14 +103,14 @@ Voor instructies voor het gebruik van de onderzoek grafiek raadpleegt u [de onde
 > Deze functie wordt zonder service level agreement gegeven en wordt niet aanbevolen voor productie werkbelastingen.
 > Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
-1. Ga in het Azure Portal naar het tabblad voor het zoeken naar **Sentinel**  >  **Threat Management**  >  **Hunting**  >  -**Blades** en selecteer de blad wijzer of blad wijzers die u aan een incident wilt toevoegen.
+1. Ga in het Azure Portal naar het tabblad voor het zoeken naar **Sentinel**  >  **Threat Management**  >    >  -**Blades** en selecteer de blad wijzer of blad wijzers die u aan een incident wilt toevoegen.
 
 2. Selecteer **incident acties (preview)** op de opdracht balk:
     
     > [!div class="mx-imgBorder"]
     > ![Blad wijzers toevoegen aan incident](./media/bookmarks/incident-actions.png)
 
-3. Selecteer een **nieuw incident maken** of **toevoegen aan een bestaand incident**, indien nodig. Vervolgens:
+3. Selecteer een **nieuw incident maken** of **toevoegen aan een bestaand incident**, indien nodig. Daarna kunt u het volgende doen:
     
     - Voor een nieuw incident: werk eventueel de details van het incident bij en selecteer vervolgens **maken**.
     - Ga als volgt te werk om een blad wijzer toe te voegen aan een bestaand incident: Selecteer één incident en selecteer vervolgens **toevoegen**. 
@@ -140,7 +140,7 @@ In deze weer gave worden alle blad wijzers met gekoppelde meta gegevens weer geg
 
 ## <a name="delete-a-bookmark"></a>Een blad wijzer verwijderen
  
-1.  Ga in het Azure Portal naar het tabblad voor het zoeken naar **Sentinel**  >  **Threat Management**  >  **Hunting**  >  -**Blades** en selecteer de blad wijzer of blad wijzers die u wilt verwijderen. 
+1.  Ga in het Azure Portal naar het tabblad voor het zoeken naar **Sentinel**  >  **Threat Management**  >    >  -**Blades** en selecteer de blad wijzer of blad wijzers die u wilt verwijderen. 
 
 2. Klik met de rechter muisknop op uw selecties en selecteer de optie voor het verwijderen van de blad wijzer of blad wijzers. U kunt bijvoorbeeld **blad wijzer verwijderen** als u slechts één blad wijzer hebt geselecteerd en **2 blad wijzers verwijderen** als u twee blad wijzers hebt geselecteerd.
     

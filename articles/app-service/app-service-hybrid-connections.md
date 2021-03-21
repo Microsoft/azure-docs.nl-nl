@@ -8,10 +8,10 @@ ms.date: 02/05/2020
 ms.author: ccompy
 ms.custom: seodec18, fasttrack-edit
 ms.openlocfilehash: 1b3fc4a254c1157f2c2336e6360ba7621f31364d
-ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99594228"
 ---
 # <a name="azure-app-service-hybrid-connections"></a>Hybride verbindingen in Azure App Service
@@ -160,7 +160,7 @@ Als u wilt dat iemand buiten uw abonnement als host voor een HCM-exemplaar voor 
 
 ![Een hybride verbinding hand matig toevoegen][11]
 
-### <a name="upgrade"></a>Upgraden ###
+### <a name="upgrade"></a>Upgrade uitvoeren ###
 
 De Hybrid Connection Manager bevatten periodieke updates om problemen op te lossen of verbeteringen aan te brengen. Wanneer er upgrades worden uitgebracht, wordt een pop-upvenster weer gegeven in de HCM-gebruikers interface. Wanneer de upgrade wordt toegepast, worden de wijzigingen toegepast en wordt de HCM opnieuw gestart. 
 

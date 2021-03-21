@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 10/21/2019
 ms.author: Zhchia
 ms.openlocfilehash: d3dee76ada7a9ed48813928937f8f8da8be4add1
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96348038"
 ---
 # <a name="tutorial-configure-miro-for-automatic-user-provisioning"></a>Zelfstudie: Miro configureren voor automatische gebruikersinrichting
@@ -66,7 +66,7 @@ Voordat u Miro configureert voor het automatisch inrichten van gebruikers met Az
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
-3. Als u een nieuwe toepassing wilt toevoegen, selecteert u de knop **Nieuwe toepassing** boven aan het paneel.
+3. Als u een nieuwe toepassing wilt toevoegen, selecteert u de knop **Nieuwe toepassing** bovenin het deelvenster.
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
@@ -96,13 +96,13 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 3. Selecteer het tabblad **Inrichten**.
 
-    ![Schermopname van de beheeropties met de optie Inrichting gemarkeerd.](common/provisioning.png)
+    ![Schermopname van de opties onder Beheren met de optie Inrichten gemarkeerd.](common/provisioning.png)
 
 4. Stel de **Inrichtingsmodus** in op **Automatisch**.
 
     ![Schermopname van de vervolgkeuzelijst Inrichtingsmodus met de optie Automatisch gemarkeerd.](common/provisioning-automatic.png)
 
-5. Voer onder de sectie **Referenties voor beheerder** `https://miro.com/api/v1/scim` in **Tenant-URL** in. Voer de waarde van het **SCIM-verificatietoken** in die eerder in **Token voor geheim** is opgehaald. Klik op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met Miro. Als de verbinding mislukt, moet u controleren of uw Miro-account beheerdersmachtigingen heeft. Probeer het daarna opnieuw.
+5. Voer onder de sectie **Referenties voor beheerder** `https://miro.com/api/v1/scim` in bij **Tenant-URL**. Voer de waarde van het **SCIM-verificatietoken** in die eerder in **Token voor geheim** is opgehaald. Klik op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met Miro. Als de verbinding mislukt, moet u controleren of uw Miro-account beheerdersmachtigingen heeft. Probeer het daarna opnieuw.
 
     ![Tenant-URL + token](common/provisioning-testconnection-tenanturltoken.png)
 

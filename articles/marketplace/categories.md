@@ -8,10 +8,10 @@ author: trkeya
 ms.author: trkeya
 ms.date: 11/16/2020
 ms.openlocfilehash: 5042c6801678f94c749454dac28eec56fdcb7559
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94811041"
 ---
 # <a name="categories-and-subcategories-in-the-commercial-marketplace"></a>Categorieën en subcategorieën in de commerciële Marketplace
@@ -31,8 +31,8 @@ In deze tabel worden de primaire categorieën en subcategorieën weer gegeven di
 
 | Primaire categorie | Subcategorie |
 | ------------ | ------------- |
-| AI en Machine Learning | Geautomatiseerde machine learning<br>Bot-Services<br>Automatisering van zakelijke/geautomatiseerde processen<br>Cognitive Services<br>Gegevens labelen<br>Gegevensvoorbereiding<br>Kennis analyse<br>ML-bewerkingen<br>ML-service |
-| Analyse | Big Data<br>Data Analytics<br>Gegevens inzichten<br>Predictive analytics<br>Analyse in realtime/streamen |
+| AI en Machine Learning | Geautomatiseerde machine learning<br>Bot Services<br>Automatisering van zakelijke/geautomatiseerde processen<br>Cognitive Services<br>Gegevens labelen<br>Gegevensvoorbereiding<br>Kennis analyse<br>ML-bewerkingen<br>ML-service |
+| Analyse | Big data<br>Gegevensanalyse<br>Gegevens inzichten<br>Predictive analytics<br>Analyse in realtime/streamen |
 | Blockchain | App-Accelerators<br>Meerdere knoop punten in het groot boek<br>Groot boek met één knoop punt<br>Hulpprogramma's |
 | Compute | Toepassings infrastructuur<br>Cache<br>Besturingssystemen |
 | Containers | Container-apps<br>Container installatie kopieën<br>Aan de slag met containers |

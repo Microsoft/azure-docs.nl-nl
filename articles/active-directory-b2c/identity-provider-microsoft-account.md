@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/15/2021
+ms.date: 03/17/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: db6793389df0df169745ddd50551f836d06cf08c
-ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.openlocfilehash: 12e8222ad59aae31baa7a549519c97550b711703
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103488751"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104579940"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-microsoft-account-using-azure-active-directory-b2c"></a>Registratie instellen en aanmelden met een Microsoft-account met behulp van Azure Active Directory B2C
 
@@ -68,6 +68,8 @@ Als u aanmelden wilt inschakelen voor gebruikers met een Microsoft-account in Az
 1. Selecteer **Opslaan**.
 
 ## <a name="add-microsoft-identity-provider-to-a-user-flow"></a>Een micro soft-ID-provider toevoegen aan een gebruikers stroom 
+
+Op dit moment is de micro soft-ID-provider ingesteld, maar is deze nog niet beschikbaar op de aanmeldings pagina's. Als u de micro soft-ID-provider aan een gebruikers stroom wilt toevoegen:
 
 1. Selecteer in uw Azure AD B2C-Tenant **gebruikers stromen**.
 1. Klik op de gebruikers stroom die u wilt toevoegen aan de micro soft-ID-provider.

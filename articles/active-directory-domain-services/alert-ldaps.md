@@ -12,10 +12,10 @@ ms.topic: troubleshooting
 ms.date: 07/09/2020
 ms.author: justinha
 ms.openlocfilehash: 15c1f3a1731edf7b45061646d43688b4aacc6104
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96620304"
 ---
 # <a name="known-issues-secure-ldap-alerts-in-azure-active-directory-domain-services"></a>Bekende problemen: Secure LDAP waarschuwingen in Azure Active Directory Domain Services

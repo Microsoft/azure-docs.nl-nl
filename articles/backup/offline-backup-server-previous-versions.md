@@ -4,10 +4,10 @@ description: Met Azure Backup kunt u gegevens van het netwerk verzenden met behu
 ms.topic: conceptual
 ms.date: 06/08/2020
 ms.openlocfilehash: 0405ab66b7714f00349419e94bb064267ca711a6
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98702182"
 ---
 # <a name="offline-backup-workflow-for-dpm-and-azure-backup-server-previous-versions"></a>Offline back-upwerk stroom voor DPM en Azure Backup Server (vorige versies)
@@ -99,7 +99,7 @@ Zorg ervoor dat aan de volgende vereisten wordt voldaan voordat u de werk stroom
 
 Volg deze stappen om het offline back-upcertificaat hand matig te uploaden naar een eerder gemaakte Azure Active Directory toepassing die bedoeld is voor offline back-ups.
 
-1. Meld u aan bij de Azure-portal.
+1. Meld u aan bij Azure Portal.
 1. Ga naar **Azure Active Directory** > **App-registraties**.
 1. Zoek op het tabblad **toepassingen in eigendom** een toepassing met de indeling van de weergave naam `AzureOfflineBackup _<Azure User Id` .
 

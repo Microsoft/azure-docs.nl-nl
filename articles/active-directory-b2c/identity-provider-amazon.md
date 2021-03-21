@@ -9,16 +9,16 @@ ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
 ms.custom: project-no-code
-ms.date: 03/15/2021
+ms.date: 03/17/2021
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 3e1eaf4f97b9b04ed02aeb3c6de65b90bf4947e1
-ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.openlocfilehash: e152d9c242a44fe869eb7bfe7a16fbd7dfc8049d
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103489148"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104580111"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-an-amazon-account-using-azure-active-directory-b2c"></a>Registratie instellen en aanmelden met een Amazon-account met Azure Active Directory B2C
 
@@ -64,6 +64,8 @@ Als u aanmelden voor gebruikers met een Amazon-account in Azure Active Directory
 1. Selecteer **Opslaan**.
 
 ## <a name="add-amazon-identity-provider-to-a-user-flow"></a>Amazon-ID-provider toevoegen aan een gebruikers stroom 
+
+Op dit moment is de Amazon-ID-provider ingesteld, maar is deze nog niet beschikbaar op de aanmeldings pagina's. De Amazon ID-provider toevoegen aan een gebruikers stroom:
 
 1. Selecteer in uw Azure AD B2C-Tenant **gebruikers stromen**.
 1. Klik op de gebruikers stroom waaraan u de Amazon-ID-provider wilt toevoegen.

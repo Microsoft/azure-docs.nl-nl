@@ -4,14 +4,14 @@ titleSuffix: Azure Kubernetes Service
 description: Meer informatie over hoe u de Azure CLI gebruikt om een AKS-cluster (Azure Kubernetes Services) te maken dat virtuele knoop punten gebruikt voor het uitvoeren van een Peul.
 services: container-service
 ms.topic: conceptual
-ms.date: 05/06/2019
+ms.date: 03/16/2021
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: d1021352f3555f49b165eed60214e11b1a8d07d9
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.openlocfilehash: 1c673cae41fcbd3d54aa9b4062dd030ace9f0767
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102508177"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104577798"
 ---
 # <a name="create-and-configure-an-azure-kubernetes-services-aks-cluster-to-use-virtual-nodes-using-the-azure-cli"></a>Een AKS-cluster (Azure Kubernetes Services) maken en configureren voor het gebruik van virtuele knoop punten met behulp van de Azure CLI
 
@@ -246,7 +246,7 @@ Aan de Pod wordt een intern IP-adres toegewezen vanuit het subnet van het virtue
 Als u de pod die op het virtuele knoop punt wordt uitgevoerd wilt testen, bladert u naar de demo toepassing met een webclient. Als aan de pod een intern IP-adres is toegewezen, kunt u deze verbinding snel testen vanaf een andere pod op het AKS-cluster. Een test pod maken en een terminal sessie hieraan koppelen:
 
 ```console
-kubectl run -it --rm testvk --image=debian
+kubectl run -it --rm testvk --image=mcr.microsoft.com/aks/fundamental/base-ubuntu:v0.0.11
 ```
 
 Installeer `curl` in de Pod met `apt-get` :

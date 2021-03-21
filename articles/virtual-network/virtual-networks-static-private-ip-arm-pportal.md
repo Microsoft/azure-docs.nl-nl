@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 02/07/2020
 ms.author: kumud
 ms.openlocfilehash: c8fdba59a8d31c064745c7a1904204359b386a7f
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96015917"
 ---
 # <a name="configure-a-private-ip-address-for-a-vm-using-the-azure-portal"></a>Een privé-IP-adres configureren voor een virtuele machine met behulp van de Azure Portal
@@ -46,7 +46,7 @@ Voer de volgende stappen uit om een virtuele machine met de naam *DNS01* in het 
 1. Selecteer **Een resource maken** in het menu van de [Azure-portal](https://portal.azure.com).
 
     ![Een resource maken, Azure Portal](./media/virtual-networks-static-ip-arm-pportal/create-a-resource.png)
-2. Selecteer **Compute**  >  **virtuele machine** berekenen.
+2. Selecteer   >  **virtuele machine** berekenen.
 
     ![VM maken, Azure Portal](./media/virtual-networks-static-ip-arm-pportal/compute-virtual-machine.png)
 3. Geef in **basis principes** waarden op voor items zoals beschreven in de volgende tabel. Selecteer vervolgens **volgende &nbsp; : &nbsp; schijven** en vervolgens **volgende &nbsp; : &nbsp; netwerken**.

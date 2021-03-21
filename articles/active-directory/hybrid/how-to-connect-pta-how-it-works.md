@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: fe92f761ac0b16da7c3cc3c69c1fa4b00f4e7579
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95996590"
 ---
 # <a name="azure-active-directory-pass-through-authentication-technical-deep-dive"></a>Pass-Through-verificatie Azure Active Directory: technische grondige kennis
@@ -52,7 +52,7 @@ In het volgende diagram ziet u alle onderdelen en de daarbij behorende stappen:
 
 ## <a name="next-steps"></a>Volgende stappen
 - [Huidige beperkingen](how-to-connect-pta-current-limitations.md): meer informatie over welke scenario's worden ondersteund en wat niet.
-- [Quick Start](how-to-connect-pta-quick-start.md): Ga aan de slag met Azure AD Pass-Through-verificatie.
+- [Snel starten](how-to-connect-pta-quick-start.md): Ga aan de slag met Azure AD Pass-Through-verificatie.
 - [Migratie van AD FS naar Pass-](https://aka.ms/adfstoPTADP) through-verificatie: een gedetailleerde hand leiding voor het migreren van AD FS (of andere Federatie technologieën) naar Pass-Through-verificatie.
 - [Slimme vergren deling](../authentication/howto-password-smart-lockout.md): Configureer de mogelijkheden voor slim vergren delen op uw Tenant voor het beveiligen van gebruikers accounts.
 - [Veelgestelde vragen](how-to-connect-pta-faq.md): Hier vindt u antwoorden op veelgestelde vragen.

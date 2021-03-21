@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: how-to
 ms.date: 9/29/2020
 ms.openlocfilehash: ebb980aa257fc09c3d6a407febbf60f2d1a26a4e
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94536469"
 ---
 # <a name="configure-and-access-audit-logs-for-azure-database-for-mysql---flexible-server-using-the-azure-portal"></a>Controle logboeken voor Azure Database for MySQL flexibele server configureren en openen met behulp van de Azure Portal
@@ -30,7 +30,7 @@ Voor de stappen in dit artikel moet u een [flexibele server](quickstart-create-s
 
 Controle logboek registratie inschakelen en configureren.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 
 1. Selecteer uw flexibele server.
 

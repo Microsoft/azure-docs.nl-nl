@@ -4,10 +4,10 @@ description: In dit artikel wordt beschreven hoe u beheerde identiteiten gebruik
 ms.topic: article
 ms.date: 01/21/2021
 ms.openlocfilehash: bd985acd9b775d6baef0abf488952e28c17aef2a
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98954307"
 ---
 # <a name="authenticate-a-managed-identity-with-azure-active-directory-to-access-azure-service-bus-resources"></a>Een beheerde identiteit verifiëren met Azure Active Directory om toegang te krijgen tot Azure Service Bus bronnen
@@ -125,7 +125,7 @@ Als u een rol aan een Service Bus naam ruimte wilt toewijzen, gaat u naar de naa
 ### <a name="run-the-app"></a>De app uitvoeren
 Wijzig nu de standaard pagina van de ASP.NET-toepassing die u hebt gemaakt. U kunt de code van de webtoepassing van [deze github-opslag plaats](https://github.com/Azure-Samples/app-service-msi-servicebus-dotnet)gebruiken.  
 
-De pagina default. aspx is uw landings pagina. De code vindt u in het Default.aspx.cs-bestand. Het resultaat is een minimale webtoepassing met enkele invoer velden en met de knoppen **verzenden** en **ontvangen** die verbinding maken met Service Bus om berichten te verzenden of te ontvangen.
+De pagina default. aspx is uw landings pagina. De code bevindt zich in het bestand default. aspx. cs. Het resultaat is een minimale webtoepassing met enkele invoer velden en met de knoppen **verzenden** en **ontvangen** die verbinding maken met Service Bus om berichten te verzenden of te ontvangen.
 
 U ziet hoe het [MessagingFactory](/dotnet/api/microsoft.servicebus.messaging.messagingfactory) -object wordt geïnitialiseerd. In plaats van de SAS-token provider (Shared Access token) te gebruiken, maakt de code een token provider voor de beheerde identiteit met de `var msiTokenProvider = TokenProvider.CreateManagedIdentityTokenProvider();` aanroep. Er zijn dus geen geheimen om te behouden en te gebruiken. De stroom van de beheerde identiteits context naar Service Bus en de autorisatie-Handshake worden automatisch verwerkt door de token provider. Het is een eenvoudiger model dan het gebruik van SAS.
 

@@ -11,16 +11,16 @@ ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: aahi
 ms.openlocfilehash: b2d4eb75002474bbec57753bbf0255cc4c2b4a16
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96338636"
 ---
 # <a name="configure-your-bing-custom-search-experience"></a>Uw Bing Aangepaste zoekopdrachten-ervaring configureren
 
 > [!WARNING]
-> Bing Search-API's worden van Cognitive Services naar Bing Search Services overgezet. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](/bing/search-apis/bing-web-search/create-bing-search-service-resource) is beschreven.
+> Bing Search-API's worden van Cognitive Services naar Bing Search Services verplaatst. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](/bing/search-apis/bing-web-search/create-bing-search-service-resource) is beschreven.
 > Bing Search-API's die zijn ingericht met Cognitive Services, worden voor de komende drie jaar of tot het einde van uw Enterprise Agreement ondersteund, afhankelijk van wat het eerst afloopt.
 > Raadpleeg [Bing Search Services](/bing/search-apis/bing-web-search/create-bing-search-service-resource) voor migratie-instructies.
 
@@ -33,7 +33,7 @@ Gebruik het volgende bij het definiëren van uw segmenten van het web:
 | Segment naam | Beschrijving                                                                                                                                                                                                                                                                                                |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Domain     | Een domein segment bevat alle inhoud die binnen een Internet domein is gevonden. Bijvoorbeeld `www.microsoft.com`. Als u dit weglaat, `www.` zoekt Bing ook de subdomeinen van het domein. Als u bijvoorbeeld opgeeft `microsoft.com` , retourneert Bing ook resultaten van `support.microsoft.com` of `technet.microsoft.com` . |
-| Subpagina    | Een segment van een subpagina bevat alle inhoud die is gevonden op de subpagina en de onderliggende paden. U kunt Maxi maal twee subpagina's in het pad opgeven. bijvoorbeeld `www.microsoft.com/en-us/windows/`                                                                                                                       |
+| Subpagina    | Een segment van een subpagina bevat alle inhoud die is gevonden op de subpagina en de onderliggende paden. U kunt Maxi maal twee subpagina's in het pad opgeven. Bijvoorbeeld: `www.microsoft.com/en-us/windows/`                                                                                                                       |
 | Webpagina    | Een segment van een webpagina kan alleen die webpagina in een aangepaste zoek opdracht bevatten. U kunt eventueel ook opgeven of u subpagina's wilt toevoegen.                                                                                                                                                                                  |
 
 > [!IMPORTANT]

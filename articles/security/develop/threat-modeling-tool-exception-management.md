@@ -17,10 +17,10 @@ ms.date: 02/07/2017
 ms.author: jegeib
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 41532e554623c47e9728c6ccab92d99500e42021
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94517424"
 ---
 # <a name="security-frame-exception-management--mitigations"></a>Beveiligings frame: uitzonderings beheer | Oplossingen 
@@ -35,7 +35,7 @@ ms.locfileid: "94517424"
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | WCF | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen, NET Framework 3 |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [MSDN](/previous-versions/msp-n-p/ff648500(v=pandp.10)), [Fortify Konink rijk](https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.wcf_misconfiguration_debug_information) |
@@ -59,7 +59,7 @@ Fout opsporingsgegevens in de service uitschakelen. Dit kan worden bereikt door 
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | WCF | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | Algemeen, NET Framework 3 |
 | **Referenties**              | [MSDN](/previous-versions/msp-n-p/ff648500(v=pandp.10)), [Fortify Konink rijk](https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.wcf_misconfiguration_service_enumeration) |
@@ -70,7 +70,7 @@ Fout opsporingsgegevens in de service uitschakelen. Dit kan worden bereikt door 
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Web-API | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | MVC 5, MVC 6 |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [Afhandeling van uitzonde ringen in ASP.net Web-API](https://www.asp.net/web-api/overview/error-handling/exception-handling), [Model validatie in ASP.net-Web-API](https://www.asp.net/web-api/overview/formats-and-model-binding/model-validation-in-aspnet-web-api) |
@@ -188,7 +188,7 @@ Controleer de koppelingen in het gedeelte met verwijzingen voor meer informatie 
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | N.v.t.  |
@@ -199,7 +199,7 @@ Controleer de koppelingen in het gedeelte met verwijzingen voor meer informatie 
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [Het dialoogvenster Instellingen voor ASP.NET-foutpagina's bewerken](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd569096(v=ws.10)) |
@@ -221,7 +221,7 @@ Controleer de koppelingen in het gedeelte met verwijzingen voor meer informatie 
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [Veilig uitvoeren](https://owasp.org/www-community/Fail_securely) |

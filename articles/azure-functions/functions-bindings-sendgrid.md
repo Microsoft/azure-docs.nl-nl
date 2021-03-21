@@ -7,10 +7,10 @@ ms.custom: devx-track-csharp
 ms.date: 11/29/2017
 ms.author: cshoe
 ms.openlocfilehash: b3d09ec4c4ab578a87f0d983c0f243bee2a84597
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94991227"
 ---
 # <a name="azure-functions-sendgrid-bindings"></a>Azure Functions SendGrid-bindingen
@@ -357,16 +357,16 @@ Met de aantekening [SendGridOutput](https://github.com/Azure/azure-functions-jav
 
 De volgende tabel geeft een lijst van de bindings configuratie-eigenschappen die beschikbaar zijn in de  *function.jsin* het bestand en het `SendGrid` kenmerk/aantekening.
 
-| *function.jsbij* eigenschap | Kenmerk/annotatie-eigenschap | Description | Optioneel |
+| *function.jsbij* eigenschap | Kenmerk/annotatie-eigenschap | Beschrijving | Optioneel |
 |--------------------------|-------------------------------|-------------|----------|
-| type |N.v.t.| Moet worden ingesteld op `sendGrid`.| No |
-| richting |N.v.t.| Moet worden ingesteld op `out`.| No |
-| naam |n.v.t.| De naam van de variabele die wordt gebruikt in de functie code voor de aanvraag of aanvraag tekst. Deze waarde is `$return` wanneer er slechts één retour waarde is. | No |
-| apiKey | ApiKey | De naam van een app-instelling die uw API-sleutel bevat. Als deze niet is ingesteld, is de standaard naam voor de app-instelling *AzureWebJobsSendGridApiKey*.| No |
-| tot| Tot | Het e-mail adres van de ontvanger. | Yes |
-| from| Van | Het e-mail adres van de afzender. |  Yes |
+| type |N.v.t.| Moet worden ingesteld op `sendGrid`.| Nee |
+| richting |N.v.t.| Moet worden ingesteld op `out`.| Nee |
+| naam |n.v.t.| De naam van de variabele die wordt gebruikt in de functie code voor de aanvraag of aanvraag tekst. Deze waarde is `$return` wanneer er slechts één retour waarde is. | Nee |
+| apiKey | ApiKey | De naam van een app-instelling die uw API-sleutel bevat. Als deze niet is ingesteld, is de standaard naam voor de app-instelling *AzureWebJobsSendGridApiKey*.| Nee |
+| tot| Tot | Het e-mail adres van de ontvanger. | Ja |
+| from| Van | Het e-mail adres van de afzender. |  Ja |
 | Onderwerp| Onderwerp | Het onderwerp van het e-mail bericht. | Ja |
-| tekst| Tekst | De inhoud van het e-mail bericht. | Yes |
+| tekst| Tekst | De inhoud van het e-mail bericht. | Ja |
 
 Voor optionele eigenschappen zijn mogelijk standaard waarden in de binding gedefinieerd en worden ze programmatisch toegevoegd of genegeerd.
 

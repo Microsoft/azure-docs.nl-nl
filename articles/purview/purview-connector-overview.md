@@ -8,10 +8,10 @@ ms.subservice: purview-data-catalog
 ms.topic: conceptual
 ms.date: 11/13/2020
 ms.openlocfilehash: 08b22af8743082bab1d547205e51917cb9d92a11
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101695767"
 ---
 # <a name="supported-data-stores"></a>Ondersteunde gegevensarchieven

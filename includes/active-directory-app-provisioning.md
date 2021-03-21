@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: c400856546142353a7294a03fce6bbff1c258cc0
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95554184"
 ---
 In Azure Active Directory (Azure AD) verwijst de term **app-inrichting** naar het automatisch maken van gebruikersidentiteiten en -rollen in de cloud-toepassingen ([SaaS](https://azure.microsoft.com/overview/what-is-saas/)) waartoe gebruikers toegang nodig hebben. Naast het maken van gebruikersidentiteiten omvat automatische inrichting het onderhoud en de verwijdering van gebruikersidentiteiten zoals gewijzigde status of rollen. Veelvoorkomende scenario's zijn onder andere het inrichten van een Azure AD-gebruiker in toepassingen als [Dropbox](../articles/active-directory/saas-apps/dropboxforbusiness-provisioning-tutorial.md), [Sales Force](../articles/active-directory/saas-apps/salesforce-provisioning-tutorial.md), [ServiceNow](../articles/active-directory/saas-apps/servicenow-provisioning-tutorial.md) en meer.

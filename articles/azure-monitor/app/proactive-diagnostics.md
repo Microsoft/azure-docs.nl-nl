@@ -4,10 +4,10 @@ description: Application Insights voert een automatische diep gaande analyse van
 ms.topic: conceptual
 ms.date: 02/07/2019
 ms.openlocfilehash: 974795e853416ff7a4c051530b050fc663c9423d
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "100585658"
 ---
 # <a name="smart-detection-in-application-insights"></a>Slimme detectie in Application Insights

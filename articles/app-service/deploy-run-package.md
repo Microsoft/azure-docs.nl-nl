@@ -3,12 +3,12 @@ title: Uw app uitvoeren vanuit een ZIP-pakket
 description: Implementeer het ZIP-pakket van uw app met behulp van atomisch. Verbeter de voorspel baarheid en betrouw baarheid van het gedrag van uw app tijdens het ZIP-implementatie proces.
 ms.topic: article
 ms.date: 01/14/2020
-ms.openlocfilehash: 3440653455626af4e3705d89349a66d6bf2fbfc0
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: 036dd8c86251af2ed5553939e74a0d85fc303ecb
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97008126"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104577543"
 ---
 # <a name="run-your-app-in-azure-app-service-directly-from-a-zip-package"></a>Uw app rechtstreeks vanuit een ZIP-pakket uitvoeren in Azure App Service
 
@@ -67,6 +67,7 @@ Als u een bijgewerkt pakket met dezelfde naam naar de Blob-opslag publiceert, mo
 
 - Direct vanuit een pakket wordt uitgevoerd `wwwroot` , heeft het kenmerk alleen-lezen. Uw app krijgt een fout melding als wordt geprobeerd om bestanden naar deze map te schrijven.
 - TAR-en GZIP-indelingen worden niet ondersteund.
+- Het ZIP-bestand kan Maxi maal 1 GB groot zijn
 - Deze functie is niet compatibel met de [lokale cache](overview-local-cache.md).
 - Gebruik de lokale zip-optie (= 1) voor verbeterde prestaties van koud start `WEBSITE_RUN_FROM_PACKAGE` .
 

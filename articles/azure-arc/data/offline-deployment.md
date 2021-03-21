@@ -10,10 +10,10 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
 ms.openlocfilehash: 5fa0b6ca41349d20614a64006536e78d8ee71844
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97955362"
 ---
 # <a name="offline-deployment-overview"></a>Overzicht van offline-implementatie
@@ -29,7 +29,7 @@ Een [voorbeeld script](https://raw.githubusercontent.com/microsoft/azure_arc/mai
 
 Het script vraagt om de volgende informatie.  Als u het script wilt uitvoeren zonder interactieve prompts, kunt u ook de bijbehorende omgevings variabelen instellen voordat u het script uitvoert.
 
-|Vraag|Omgevings variabele|Notities|
+|Prompt|Omgevings variabele|Notities|
 |---|---|---|
 |Geef een bron container register op en druk op ENTER voor het gebruik van `mcr.microsoft.com`|SOURCE_DOCKER_REGISTRY|Normaal gesp roken haalt u de installatie kopieën op uit de micro soft-Container Registry, maar als u deelneemt aan een persoonlijke Preview met een ander REGI ster, kunt u de informatie gebruiken die u als onderdeel van het preview-programma hebt gekregen.|
 |Geef een bron container register opslagplaats op en druk op ENTER voor het gebruik van `arcdata` :|SOURCE_DOCKER_REPOSITORY|Als u de micro soft-Container Registry haalt, is de opslag plaats `arcdata` .|

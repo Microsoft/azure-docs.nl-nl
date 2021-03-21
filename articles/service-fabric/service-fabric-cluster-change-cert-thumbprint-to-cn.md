@@ -4,10 +4,10 @@ description: Meer informatie over het converteren van een Azure Service Fabric-c
 ms.topic: conceptual
 ms.date: 09/06/2019
 ms.openlocfilehash: f719b1eb39da776827c6babec61e9e6701bb4602
-ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97900787"
 ---
 # <a name="convert-cluster-certificates-from-thumbprint-based-declarations-to-common-names"></a>Cluster certificaten van declaraties op basis van vinger afdruk naar algemene namen converteren

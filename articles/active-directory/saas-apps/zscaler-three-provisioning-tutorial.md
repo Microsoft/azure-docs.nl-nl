@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
 ms.openlocfilehash: c16c02a870edb1a777b63da6fea57fc02136d643
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97936597"
 ---
 # <a name="tutorial-configure-zscaler-three-for-automatic-user-provisioning"></a>Zelfstudie: Zscaler Three configureren voor het automatisch inrichten van gebruikers
@@ -23,7 +23,7 @@ ms.locfileid: "97936597"
 In deze zelfstudie leert u hoe u Azure Active Directory (Azure AD) configureert om gebruikers en/of groepen automatisch in te richten en/of om de inrichting ongedaan te maken voor Zscaler Three.
 
 > [!NOTE]
-> In deze zelfstudie wordt een connector beschreven die is gebaseerd op de Azure AD-service voor het inrichten van gebruikers. Raadpleeg [Gebruikers inrichten en het ongedaan maken van de inrichting van toepassingen automatiseren met Azure AD](../app-provisioning/user-provisioning.md) voor belangrijke informatie over wat deze service doet en hoe deze werkt, en voor antwoorden op veelgestelde vragen.
+> In deze zelfstudie wordt een connector beschreven die is gebaseerd op de Azure AD-service voor het inrichten van gebruikers. Raadpleeg [Automate user provisioning and deprovisioning to SaaS applications with Azure Active Directory](../app-provisioning/user-provisioning.md) (Het inrichten en ongedaan maken van het inrichten van gebruikers voor SaaS-toepassingen automatiseren met Azure Active Directory) voor belangrijke informatie over wat deze service doet en hoe deze werkt, en voor antwoorden op veelgestelde vragen.
 
 ## <a name="prerequisites"></a>Vereisten
 

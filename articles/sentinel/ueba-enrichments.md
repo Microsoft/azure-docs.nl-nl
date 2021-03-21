@@ -16,10 +16,10 @@ ms.topic: reference
 ms.date: 01/04/2021
 ms.author: yelevin
 ms.openlocfilehash: daba8fc1f645b51dc8668c806be63744b6ae0842
-ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97901725"
 ---
 # <a name="azure-sentinel-ueba-enrichments-reference"></a>Naslag informatie over verrijkingen van Azure Sentinel UEBA
@@ -53,7 +53,7 @@ De eerste twee tabellen, **gebruikers inzichten** en **device Insights**, bevatt
 | --- | --- | --- | --- |
 | **Browser**<br>*Bekijkt* | De browser die wordt gebruikt in de actie. | Edge, Chrome |
 | **Apparaatfamilie**<br>*(DeviceFamily)* | Het apparaat dat wordt gebruikt in de actie. | Windows |
-| **Apparaattype**<br>*DeviceType* | Het type client apparaat dat wordt gebruikt in de actie | Bureaublad |
+| **Apparaattype**<br>*DeviceType* | Het type client apparaat dat wordt gebruikt in de actie | Desktop |
 | **OPNEMEN**<br>*OPNEMEN* | De Internet serviceprovider die wordt gebruikt in de actie. |  |
 | **Besturingssysteem**<br>*Geheugen* | Het besturings systeem dat wordt gebruikt voor de actie. | Windows 10 |
 | **Beschrijving van bedreigings-Intel-indicator**<br>*(ThreatIntelIndicatorDescription)* | Beschrijving van de waargenomen bedreigings indicator die is opgelost met het IP-adres dat wordt gebruikt in de actie. | Host is lid van botnet: azorult |

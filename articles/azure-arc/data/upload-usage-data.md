@@ -10,16 +10,16 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
 zone_pivot_groups: client-operating-system-macos-and-linux-windows-powershell
-ms.openlocfilehash: 578f0d1ca742fe4445b8aeed6876d1a73fd3f79e
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 0c72eda59f375c70274b17796ca53614ef95505b
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92376205"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104669505"
 ---
 # <a name="upload-usage-data-to-azure-monitor"></a>Gebruiks gegevens uploaden naar Azure Monitor
 
-U kunt regel matig gebruiks gegevens exporteren. De export en het uploaden van deze gegevens maken en bijwerken van de gegevens controller, SQL Managed instance en PostgreSQL grootschalige-server groeps resources in Azure.
+U kunt regel matig gebruiks gegevens exporteren. Het exporteren en uploaden van deze informatie maakt en werkt de gegevens controller, SQL Managed instance en PostgreSQL grootschalige-server groeps resources in Azure.
 
 > [!NOTE] 
 > Tijdens de preview-periode zijn er geen kosten verbonden aan het gebruik van Azure Arc enabled Data Services.
@@ -36,7 +36,7 @@ Voordat u doorgaat, moet u ervoor zorgen dat u de vereiste service-principal heb
 * [Service-Principal maken](upload-metrics-and-logs-to-azure-monitor.md#create-service-principal).
 * [Rollen toewijzen aan de Service-Principal](upload-metrics-and-logs-to-azure-monitor.md#assign-roles-to-the-service-principal)
 
-## <a name="upload-usage-data"></a>Gebruiks gegevens uploaden
+## <a name="upload-usage-data"></a>Gebruiksgegevens uploaden
 
 Informatie over het gebruik van de inventaris en het resource gebruik kan in de volgende twee stappen worden geüpload naar Azure:
 
@@ -64,7 +64,7 @@ Informatie over het gebruik van de inventaris en het resource gebruik kan in de 
 
 Als u metrische gegevens en logboeken op een geplande basis wilt uploaden, kunt u een script maken en dit elke paar minuten uitvoeren op een timer. Hieronder ziet u een voor beeld van het automatiseren van de uploads met behulp van een Linux-shell script.
 
-Voeg in uw favoriete tekst/code-editor het volgende script toe aan het bestand en sla het op als een uitvoerbaar script bestand zoals. v (Linux/Mac) of. cmd,. bat,. ps1.
+Voeg in uw favoriete tekst/code-editor het volgende script toe aan het bestand en sla het op als een uitvoerbaar script bestand zoals `.sh` (Linux/Mac) of `.cmd` , `.bat` of `.ps1` .
 
 ```console
 azdata arc dc export --type metrics --path metrics.json --force

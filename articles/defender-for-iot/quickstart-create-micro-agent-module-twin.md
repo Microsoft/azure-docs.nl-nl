@@ -9,10 +9,10 @@ ms.date: 1/20/2021
 ms.topic: quickstart
 ms.service: azure
 ms.openlocfilehash: e1c2f4e79b9f0f0ba1ec0da0c5a2a29cdc8bc6d7
-ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103489876"
 ---
 # <a name="create-a-defender-iot-micro-agent-module-twin-preview"></a>Een Defender IoT micro Agent-module maken (preview)

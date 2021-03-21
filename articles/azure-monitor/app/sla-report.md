@@ -4,10 +4,10 @@ description: SLA het voor webtests op en meld u aan met een enkel glas venster o
 ms.topic: conceptual
 ms.date: 02/8/2021
 ms.openlocfilehash: d225627a27bffd9088956e5aee37ca543e528d4a
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101714048"
 ---
 # <a name="downtime-sla-and-outages-workbook"></a>De werkmap downtime, SLA en uitval

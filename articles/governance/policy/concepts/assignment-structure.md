@@ -1,14 +1,14 @@
 ---
 title: Details van de structuur van de beleids toewijzing
 description: Beschrijft de beleids toewijzings definitie die door Azure Policy wordt gebruikt om beleids definities en-para meters te koppelen aan resources voor evaluatie.
-ms.date: 01/29/2021
+ms.date: 03/17/2021
 ms.topic: conceptual
-ms.openlocfilehash: 625314a8b83a4d0cc76eae51eae8d357e39d2a6a
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 909c1c361e092c512a73854a40e22a67efe5f2f8
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100581951"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104604862"
 ---
 # <a name="azure-policy-assignment-structure"></a>Azure Policy-toewijzingsstructuur
 
@@ -89,6 +89,9 @@ Dit veld moet de volledige padnaam zijn van ofwel een beleids definitie of een i
 ## <a name="non-compliance-messages"></a>Berichten over niet-naleving
 
 Als u een aangepast bericht wilt instellen waarin wordt beschreven waarom een resource niet compatibel is met het beleid of initiatief definitie, stelt u `nonComplianceMessages` in de toewijzings definitie in. Dit knoop punt is een matrix met `message` vermeldingen. Dit aangepaste bericht is een aanvulling op het standaard fout bericht voor niet-naleving en is optioneel.
+
+> [!IMPORTANT]
+> Aangepaste berichten voor niet-naleving worden alleen ondersteund voor definities of initiatieven met de [Resource Manager-modus](./definition-structure.md#resource-manager-modes) definities.
 
 ```json
 "nonComplianceMessages": [

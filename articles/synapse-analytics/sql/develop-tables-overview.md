@@ -10,18 +10,18 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 83c5595dc64b46e1c30f3c36866e0efbbd8d3c7f
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 27cc53c3eef1bb2a9962d2c21ae80db3c8b0383d
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101674129"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104585431"
 ---
 # <a name="design-tables-using-synapse-sql-in-azure-synapse-analytics"></a>Tabellen ontwerpen met behulp van Synapse SQL in azure Synapse Analytics
 
 Dit document bevat belang rijke concepten voor het ontwerpen van tabellen met een exclusieve SQL-groep en serverloze SQL-groep.  
 
-Een [serverloze SQL-groep](on-demand-workspace-overview.md) is een query service voor de gegevens in uw data Lake. Het bevat geen lokale opslag voor gegevens opname. Een [toegewezen SQL-groep](best-practices-sql-pool.md) vertegenwoordigt een verzameling analytische resources die worden ingericht wanneer Synapse SQL wordt gebruikt. De grootte van een toegewezen SQL-pool wordt bepaald door DWU’s (Data Warehousing Unit).
+Een [serverloze SQL-groep](on-demand-workspace-overview.md) is een query service voor de gegevens in uw data Lake. Het bevat geen lokale opslag voor gegevens opname. Een [toegewezen SQL-groep](best-practices-dedicated-sql-pool.md) vertegenwoordigt een verzameling analytische resources die worden ingericht wanneer Synapse SQL wordt gebruikt. De grootte van een toegewezen SQL-pool wordt bepaald door DWU’s (Data Warehousing Unit).
 
 De volgende tabel bevat de onderwerpen die relevant zijn voor een exclusieve SQL-groep versus serverloze SQL-groep:
 
@@ -206,7 +206,7 @@ Voor een toegewezen SQL-groep wordt de primaire sleutel alleen ondersteund wanne
 
 Voor een toegewezen SQL-groep kunt u een tabel als een nieuwe lege tabel maken. U kunt ook een tabel maken en vullen met de resultaten van een SELECT-instructie. Hieronder vindt u de T-SQL-opdrachten voor het maken van een tabel.
 
-| T-SQL-instructie | Beschrijving |
+| T-SQL-instructie | Description |
 |:----------------|:------------|
 | [CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=azure-sqldw-latest&preserve-view=true) | Hiermee maakt u een lege tabel door alle tabel kolommen en opties te definiëren. |
 | [CREATE EXTERNAL TABLE](/sql/t-sql/statements/create-external-table-transact-sql?view=azure-sqldw-latest&preserve-view=true) | Hiermee maakt u een externe tabel. De definitie van de tabel wordt opgeslagen in de toegewezen SQL-groep. De tabel gegevens worden opgeslagen in Azure Blob Storage of Azure Data Lake Storage. |

@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: overview
 ms.date: 02/22/2021
 ms.author: alkohli
-ms.openlocfilehash: 2ff07995cab2da6e53600be9bf60b30d1896cc9d
-ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
+ms.openlocfilehash: 40fa1bc776c5cd457e57cf170f629b6cf92800fe
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102664502"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104585992"
 ---
 # <a name="what-is-the-azure-stack-edge-pro-r"></a>Wat is de Azure Stack Edge Pro R?
 
@@ -78,6 +78,8 @@ Het fysieke Azure Stack Edge Pro R-apparaat, de Azure-resource en het doelopslag
 - **Beschikbaarheid van het apparaat** - Om een lijst in te zien van alle landen/regio's waar het Azure Stack Edge Pro R-apparaat beschikbaar is, gaat u naar de tab **Azure Stack Edge Pro R** voor [Azure Stack Edge Pro R prijzen](https://azure.microsoft.com/pricing/details/azure-stack/edge/#azureStackEdgeProR) en vervolgens naar de sectie **Beschikbaarheid**.
 
 - **Doelopslagaccounts**: De opslagaccounts waarin de gegevens worden opgeslagen, zijn beschikbaar in alle Azure-regio’s. De regio's waarin de opslagaccounts Azure Stack Edge Pro R -gegevens opslaan, moeten zich voor optimale prestaties dicht bij het apparaat bevinden. Een opslagaccount dat zich ver van het apparaat vandaan bevindt, resulteert in lange latenties en tragere prestaties.
+
+Azure Stack Edge-service is een niet-regionale service. Zie [regio's en Beschikbaarheidszones in azure](https://docs.microsoft.com/azure/availability-zones/az-overview)voor meer informatie. Azure Stack Edge-service heeft geen afhankelijkheid van een specifieke Azure-regio, waardoor deze robuust is voor de zone-ruime onderbrekingen en de regionale storingen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

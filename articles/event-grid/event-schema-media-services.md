@@ -3,12 +3,12 @@ title: Azure Media Services als Event Grid bron
 description: Hierin worden de eigenschappen beschreven die worden gegeven voor Media Services gebeurtenissen met Azure Event Grid
 ms.topic: conceptual
 ms.date: 07/07/2020
-ms.openlocfilehash: be56c383c8c2d755ef82d4caad5e779bef418a19
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 1f2f62f0a5ceed0e000c8bb7690fff009593bf82
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100363352"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104591925"
 ---
 # <a name="azure-media-services-as-an-event-grid-source"></a>Azure Media Services als Event Grid bron
 
@@ -1112,7 +1112,7 @@ Een gebeurtenis heeft de volgende gegevens op het hoogste niveau:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Registreren voor taak status wijzigings gebeurtenissen](../media-services/latest/job-state-events-cli-how-to.md)
+[Registreren voor taak status wijzigings gebeurtenissen](../media-services/latest/monitoring/job-state-events-cli-how-to.md)
 
 ## <a name="see-also"></a>Zie ook
 

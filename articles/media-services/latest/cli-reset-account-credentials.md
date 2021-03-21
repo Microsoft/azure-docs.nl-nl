@@ -16,10 +16,10 @@ ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: cc605a08147da1d076b302e515a4ebe8d411a782
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "101091839"
 ---
 # <a name="azure-cli-example-reset-the-account-credentials"></a>Voorbeeld van Azure CLI: De referenties voor het account opnieuw instellen

@@ -16,10 +16,10 @@ ms.date: 3/10/2021
 ms.author: anilmur
 ms.reviewer: juliako;johndeu
 ms.openlocfilehash: 8173da37792948e267aae2078fee9f864bf7bdc9
-ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103011150"
 ---
 # <a name="create-advanced-encoding-workflows-with-workflow-designer"></a>Geavanceerde encoding-werkstromen maken met Workflow Designer

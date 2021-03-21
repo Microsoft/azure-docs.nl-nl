@@ -5,14 +5,14 @@ author: enkrumah
 ms.author: ebnkruma
 ms.service: stream-analytics
 ms.topic: how-to
-ms.date: 12/07/2018
+ms.date: 03/16/2021
 ms.custom: seodec18, devx-track-csharp
-ms.openlocfilehash: 3f8f7744e07abb56d825ce44d5bb30190e7e87c4
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: f632c916c3de61b94532e96be23da511ad5863ea
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98020414"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104593030"
 ---
 # <a name="high-frequency-trading-simulation-with-stream-analytics"></a>Simulatie van high-frequency trading met Stream Analytics
 Met een combinatie van SQL-taal en UDF's (door de gebruiker gedefinieerde functies) en UDA's (door de gebruiker gedefinieerde aggregaties) van JavaScript in Azure Stream Analytics kunnen gebruikers geavanceerde analyses uitvoeren. Geavanceerde analyses omvatten mogelijk onder andere onlinetraining en -scoring voor Machine Learning, evenals simulatie van het stateful-proces. In dit artikel wordt beschreven hoe u lineaire regressie kunt uitvoeren in een Azure Stream Analytics-taak met continue training en scoring in een high-frequency trading-scenario.
@@ -349,7 +349,7 @@ De JavaScript-UDA initialiseert alle accumulators in de `init`-functie, berekent
 - Aandelen verkopen wanneer er een verkoopsignaal wordt ontvangen en er aandelen zijn vastgezet.
 - Short-gaan als er geen aandelen zijn vastgezet. 
 
-Als zich een short-positie voordoet en er wordt een koopsignaal ontvangen, kopen we met het oog op dekking. 10 aandelen in deze simulatie worden nooit vastgezet of geshort. De transactiekosten zijn $ 8.
+Als zich een short-positie voordoet en er wordt een koopsignaal ontvangen, kopen we met het oog op dekking. In deze simulatie hebben we 10 aandelen van een aandeel. De transactiekosten zijn $ 8.
 
 ```javascript
 function main() {

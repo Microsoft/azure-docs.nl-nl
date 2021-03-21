@@ -1,22 +1,22 @@
 ---
 title: Azure Kinect sensor SDK-systeem vereisten
 description: Meer informatie over de systeem vereisten voor de Azure Kinect sensor SDK op Windows en Linux.
-author: tesych
-ms.author: tesych
+author: qm13
+ms.author: quentinm
 ms.custom:
 - CI 115266
 - CSSTroubleshooting
 manager: dcscontentpm
 ms.prod: kinect-dk
-ms.date: 03/12/2020
+ms.date: 03/05/2021
 ms.topic: article
 keywords: Azure, kinect, systeem vereisten, CPU, GPU, USB, installeren, instellen, minimum, vereisten
-ms.openlocfilehash: 5cf313114b62532ee3f2b3d7a5142f79218954c9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 558c1b9ca264874fa808aeba5f1e8a809a8f722d
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85277352"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104656971"
 ---
 # <a name="azure-kinect-sensor-sdk-system-requirements"></a>Azure Kinect sensor SDK-systeem vereisten
 
@@ -52,7 +52,7 @@ De serie vereiste voor het bijhouden van de PC-host is strikter dan de algemene 
 
 - Zevende generatie Intel &reg; CoreTM i5-processor (Quad Core 2,4 GHz of sneller)
 - 4 GB geheugen
-- NVIDIA GEFORCE GTX 1070 of beter
+- NVIDIA GEFORCE GTX 1050 of gelijkwaardig
 - Toegewezen USB3-poort
 
 Bij de aanbevolen minimale configuratie wordt uitgegaan van K4A_DEPTH_MODE_NFOV_UNBINNED diepte modus bij het volgen van 30fps vijf personen. Lagere CPU-of oudere Cpu's en NVIDIA-Gpu's kunnen ook worden gebruikt, afhankelijk van uw gebruiks aanvraag.

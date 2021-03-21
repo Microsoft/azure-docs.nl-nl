@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 01/28/2021
+ms.date: 03/16/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 78ad2540029d78084485ae2004194f9f7c2d6052
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: e694a5f6144cee65be074d05ce0015d31bfdf65e
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99050540"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104675822"
 ---
 # <a name="customize-the-user-interface-with-html-templates-in-azure-active-directory-b2c"></a>De gebruikers interface aanpassen met HTML-sjablonen in Azure Active Directory B2C
 
@@ -59,7 +59,7 @@ In plaats van uw aangepaste pagina-inhoud helemaal zelf te maken, kunt u de stan
 
 De volgende tabel bevat de standaard pagina-inhoud die wordt verschaft door Azure AD B2C. Down load de bestanden en gebruik deze als uitgangs punt voor het maken van uw eigen aangepaste pagina's.
 
-| Standaard pagina | Description | ID van de inhouds definitie<br/>(alleen aangepast beleid) |
+| Standaard pagina | Beschrijving | ID van de inhouds definitie<br/>(alleen aangepast beleid) |
 |:-----------------------|:--------|-------------|
 | [exception.html](https://login.microsoftonline.com/static/tenant/default/exception.cshtml) | **Fout pagina**. Deze pagina wordt weer gegeven wanneer er een uitzonde ring of een fout wordt aangetroffen. | *API. error* |
 | [selfasserted.html](https://login.microsoftonline.com/static/tenant/default/selfAsserted.cshtml) |  **Zelfbevestigende pagina**. Gebruik dit bestand als aangepaste pagina-inhoud voor een aanmeldings pagina voor een sociaal account, een aanmeldings pagina voor een lokaal account, een aanmeldings pagina voor het lokale account, het opnieuw instellen van wacht woorden en meer. Het formulier kan verschillende invoer besturings elementen bevatten, zoals een tekstinvoervak, een vak voor het invoeren van een wacht woord, een keuze rondje, vervolg keuze vakjes en meervoudige selectie vakjes. | *API. localaccountsignin*, *API. localaccountsignup*, *API. localaccountpasswordreset*, *API. selfasserted* |
@@ -363,26 +363,31 @@ https://contoso.blob.core.windows.net/fr/myHTML/unified.html
 U kunt hier voorbeeld sjablonen voor UI-aanpassing vinden:
 
 ```bash
-git clone https://github.com/Azure-Samples/Azure-AD-B2C-page-templates
+git clone https://github.com/azure-ad-b2c/html-templates
 ```
 
 Dit project bevat de volgende sjablonen:
-- [Oceaan blauw](https://github.com/Azure-Samples/Azure-AD-B2C-page-templates/tree/master/ocean_blue)
-- [Pastel grijs](https://github.com/Azure-Samples/Azure-AD-B2C-page-templates/tree/master/slate_gray)
+- [Oceaan blauw](https://github.com/azure-ad-b2c/html-templates/tree/main/templates/AzureBlue)
+- [Pastel grijs](https://github.com/azure-ad-b2c/html-templates/tree/main/templates/MSA)
+- [Klassieke](https://github.com/azure-ad-b2c/html-templates/tree/main/templates/classic)
+- [Sjabloonresources](https://github.com/azure-ad-b2c/html-templates/tree/main/templates/src)
 
 Het voor beeld gebruiken:
 
-1. Kloon de opslag plaats op uw lokale machine. Kies een sjabloon map `/ocean_blue` of `/slate_gray` .
-1. Upload alle bestanden in de map Temp late en de `/assets` map naar Blob Storage, zoals beschreven in de vorige secties.
-1. Open vervolgens elk `\*.html` bestand in de hoofdmap van ofwel `/ocean_blue` of `/slate_gray` , vervang alle exemplaren van relatieve Url's door de url's van de CSS-, afbeeldings-en letter typen bestanden die u hebt geüpload in stap 2. Bijvoorbeeld:
+1. Kloon de opslag plaats op uw lokale machine. Kies een sjabloon map `/AzureBlue` , `/MSA` of `/classic` .
+1. Upload alle bestanden in de map Temp late en de `/src` map naar Blob Storage, zoals beschreven in de vorige secties.
+1. Open vervolgens elk `\*.html` bestand in de map Temp late. Vervang alle instanties van `https://login.microsoftonline.com` url's door de URL die u in stap 2 hebt geüpload. Bijvoorbeeld:
+    
+    Van:
     ```html
-    <link href="./css/assets.css" rel="stylesheet" type="text/css" />
+    https://login.microsoftonline.com/templates/src/fonts/segoeui.WOFF
     ```
 
-    Tot
+    Aan:
     ```html
-    <link href="https://your-storage-account.blob.core.windows.net/your-container/css/assets.css" rel="stylesheet" type="text/css" />
+    https://your-storage-account.blob.core.windows.net/your-container/templates/src/fonts/segoeui.WOFF
     ```
+    
 1. Sla de `\*.html` bestanden op en upload deze naar de Blob-opslag.
 1. Pas het beleid aan, zoals eerder is vermeld, naar uw HTML-bestand.
 1. Als u ontbrekende letter typen, afbeeldingen of CSS ziet, controleert u uw referenties in het uitbrei ding beleid en de \* . html-bestanden.

@@ -4,10 +4,10 @@ description: Hierin worden de structuur en eigenschappen van Azure Resource Mana
 ms.topic: conceptual
 ms.date: 03/03/2021
 ms.openlocfilehash: da64eb8abeaf45f58933dfbddaf954cad8e66f4a
-ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102120413"
 ---
 # <a name="understand-the-structure-and-syntax-of-arm-templates"></a>Informatie over de structuur en de syntaxis van ARM-sjablonen

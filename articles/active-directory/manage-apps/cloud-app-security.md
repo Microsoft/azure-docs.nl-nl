@@ -12,10 +12,10 @@ ms.date: 02/03/2020
 ms.author: kenwith
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 682549b5b99169060437c8c91d465121002edc6e
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99259601"
 ---
 # <a name="cloud-app-visibility-and-control"></a>Zichtbaarheid en beheer van cloud-apps
@@ -34,7 +34,7 @@ Gebruik Microsoft Cloud app-detectie (een Azure Active Directory Premium P1-func
 - Advanced Shadow IT Discovery-rapportage
 - Goedgekeurde apps beheren
  
-### <a name="learn-more"></a>Lees meer
+### <a name="learn-more"></a>Meer informatie
 
 - [Schaduw in uw netwerk detecteren en beheren ](/cloud-app-security/tutorial-shadow-it)
 - [Gedetecteerde apps met Cloud App Security ](/cloud-app-security/discovered-apps)
@@ -51,7 +51,7 @@ Met dit besturings element kunt u het volgende doen:
 - Toegang tot bestanden beheren  
 - Documenten beveiligen bij downloaden  
  
-### <a name="learn-more"></a>Lees meer
+### <a name="learn-more"></a>Meer informatie
 
 - [Apps beveiligen met sessie beheer in Cloud App Security ](/cloud-app-security/proxy-intro-aad)
  
@@ -59,7 +59,7 @@ Met dit besturings element kunt u het volgende doen:
 
 App-connectors maken gebruik van de Api's van app-providers om de zicht baarheid en controle door Microsoft Cloud App Security over de apps waarmee u verbinding maakt, beter zichtbaar te maken. Cloud App Security maakt gebruik van de Api's van de Cloud provider. Elke service heeft een eigen Framework en API-beperkingen, zoals beperking, API-limieten, dynamische time-verschuiving van API-Vensters en andere. Het Cloud App Security product team heeft deze services gebruikt om het gebruik van Api's te optimaliseren en de beste prestaties te leveren. Rekening houdend met de verschillende beperkingen van services, maken de Cloud App Security-engines gebruik van de Maxi maal toegestane capaciteit. Sommige bewerkingen, zoals het scannen van alle bestanden in de Tenant, vereisen talrijke API-aanroepen zodat ze gedurende een langere periode worden verspreid. Sommige beleids regels worden gedurende enkele uren of dagen verwacht. 
  
-### <a name="learn-more"></a>Lees meer  
+### <a name="learn-more"></a>Meer informatie  
 
 - [Apps verbinden in Cloud App Security ](/cloud-app-security/enable-instant-visibility-protection-and-governance-actions-for-your-apps)
 

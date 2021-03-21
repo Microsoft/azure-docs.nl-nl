@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.date: 09/29/2020
 ms.author: yegu
 ms.custom: devx-track-csharp, mvc
-ms.openlocfilehash: 342125da35868b2b0f71609c4114cc561821eb1a
-ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.openlocfilehash: 88cfddb12de0949d56e4b8f9c3e363e4c8f75676
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102121130"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104657757"
 ---
 # <a name="quickstart-use-azure-cache-for-redis-with-an-aspnet-web-app"></a>Quickstart: Azure Cache voor Redis met ASP.NET-web-app gebruiken 
 
@@ -29,29 +29,29 @@ Als u direct naar de code wilt gaan, raadpleegt u de [ASP.net Snelstartgids](htt
 
 ## <a name="create-the-visual-studio-project"></a>Het Visual Studio-project maken
 
-1. Open Visual Studio en selecteer vervolgens **Bestand** >**Nieuw** > **Project**.
+1. Open Visual Studio en selecteer vervolgens **bestand**  >  **Nieuw**  >  **project**.
 
-2. Voer in het dialoogvenster **Nieuw project** de volgende stappen uit:
+2. Voer in het dialoog venster **een nieuw project maken** de volgende stappen uit:
 
     ![Project maken](./media/cache-web-app-howto/cache-create-project.png)
 
-    a. Vouw in de lijst **Sjablonen** het knooppunt **Visual C#** uit.
+    a. Voer in het zoekvak _C# ASP.NET-webtoepassing_ in.
 
-    b. Selecteer **Cloud**.
+    b. Selecteer **ASP.NET-webtoepassing (.NET Framework)**.
 
-    c. Selecteer **ASP.NET-webtoepassing**.
+    c. Selecteer **Volgende**.
 
-    d. Controleer of **.NET Framework 4.5.2** of hoger is geselecteerd.
+3. Geef in het vak **project naam** het project een naam. In dit voorbeeld wordt de naam **ContosoTeamStats** gebruikt.
 
-    e. Geef in het vak **Naam** een naam op voor het project. In dit voorbeeld wordt de naam **ContosoTeamStats** gebruikt.
+4. Controleer of **.NET Framework 4.6.1** of hoger is geselecteerd.
 
-    f. Selecteer **OK**.
+5. Selecteer **Maken**.
    
-3. Selecteer **MVC** als het projecttype.
+6. Selecteer **MVC** als het projecttype.
 
-4. Zorg ervoor dat **Geen verificatie** is opgegeven voor de instellingen bij **Verificatie**. Afhankelijk van uw versie van Visual Studio wijkt de standaardinstelling voor **Verificatie** mogelijk af. Als u dit wilt wijzigen, selecteert u **Verificatie wijzigen** en vervolgens **Geen verificatie**.
+7. Zorg ervoor dat **Geen verificatie** is opgegeven voor de instellingen bij **Verificatie**. Afhankelijk van uw versie van Visual Studio wijkt de standaardinstelling voor **Verificatie** mogelijk af. Als u dit wilt wijzigen, selecteert u **Verificatie wijzigen** en vervolgens **Geen verificatie**.
 
-5. Selecteer **OK** om het project te maken.
+8. Selecteer **Maken** om het project te maken.
 
 ## <a name="create-a-cache"></a>Een cache maken
 
@@ -125,10 +125,11 @@ De ASP.NET-runtime voegt de inhoud van het externe bestand samen met de opmaak v
 
 1. Vouw in **Solution Explorer** de map **Controllers** uit en open vervolgens het bestand *HomeController.cs*.
 
-2. Voeg de volgende twee `using`-instructies boven aan het bestand toe ter ondersteuning van de cacheclient- en app-instellingen.
+2. Voeg `using` boven aan het bestand de volgende instructies toe om de cache-client, app-instellingen en opbouw functie voor teken reeksen te ondersteunen.
 
     ```csharp
     using System.Configuration;
+    using System.Text;
     using StackExchange.Redis;
     ```
 

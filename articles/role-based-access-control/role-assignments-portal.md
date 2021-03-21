@@ -11,10 +11,10 @@ ms.date: 02/15/2021
 ms.author: rolyon
 ms.custom: contperf-fy21q3-portal
 ms.openlocfilehash: e25bbe4e1a96e4efaaa13732aea571d26d4b006e
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100555293"
 ---
 # <a name="assign-azure-roles-using-the-azure-portal"></a>Azure-rollen toewijzen met behulp van de Azure Portal
@@ -82,7 +82,7 @@ Zie [beheerders rollen weer geven en toewijzen in azure Active Directory](../act
 
 1. Selecteer in de lijst **toegang toewijzen aan** het type beveiligings-principal waaraan u toegang wilt toewijzen.
 
-    | Type | Description |
+    | Type | Beschrijving |
     | --- | --- |
     | **Gebruiker, groep of Service-Principal** | Als u de rol wilt toewijzen aan een gebruiker, groep of Service-Principal (toepassing), selecteert u dit type. |
     | **Door de gebruiker toegewezen beheerde identiteit** | Als u de rol wilt toewijzen aan een door de [gebruiker toegewezen beheerde identiteit](../active-directory/managed-identities-azure-resources/overview.md), selecteert u dit type. |

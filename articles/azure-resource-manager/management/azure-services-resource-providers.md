@@ -2,17 +2,17 @@
 title: Resource providers door Azure-Services
 description: Een lijst met alle naam ruimten van de resource provider voor Azure Resource Manager en toont de Azure-service voor die naam ruimte.
 ms.topic: conceptual
-ms.date: 12/01/2020
-ms.openlocfilehash: 65fa6a690f05a61e54bae2d22f4889c3193bcb1a
-ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
+ms.date: 03/16/2021
+ms.openlocfilehash: ee8cb054f3f10c3b33d5235b2b03cdfeac266139
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "103008702"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104592158"
 ---
 # <a name="resource-providers-for-azure-services"></a>Resource providers for Azure services (Resourceproviders voor Azure-services)
 
-In dit artikel wordt uitgelegd hoe naam ruimten van de resource provider worden toegewezen aan Azure-Services.
+In dit artikel wordt uitgelegd hoe naam ruimten van de resource provider worden toegewezen aan Azure-Services. Als u de resource provider niet kent, raadpleegt u [resource provider zoeken](#find-resource-provider).
 
 ## <a name="match-resource-provider-to-service"></a>Overeenkomende resource provider voor service
 
@@ -58,7 +58,7 @@ De resource providers die zijn gemarkeerd met **-geregistreerd** , worden standa
 | Micro soft. ClassicSubscription- [geregistreerd](#registration) | Klassiek implementatiemodel |
 | Microsoft.CognitiveServices | [Cognitive Services](../../cognitive-services/index.yml) |
 | Micro soft. commerce- [geregistreerd](#registration) | baan |
-| Microsoft.Compute | [Virtual Machines](../../virtual-machines/index.yml)<br />[Virtuele-machineschaalsets](../../virtual-machine-scale-sets/index.yml) |
+| Microsoft.Compute | [Virtual Machines](../../virtual-machines/index.yml)<br />[Virtual Machine Scale Sets](../../virtual-machine-scale-sets/index.yml) |
 | Micro soft. verbruik- [geregistreerd](#registration) | [Cost Management](/azure/cost-management/) |
 | Micro soft. ContainerInstance | [Container Instances](../../container-instances/index.yml) |
 | Microsoft.ContainerRegistry | [Container Registry](../../container-registry/index.yml) |
@@ -192,6 +192,42 @@ De bovenstaande bronnen providers die zijn gemarkeerd met **-geregistreerd** , w
 
 > [!IMPORTANT]
 > Registreer alleen een resource provider wanneer u er klaar voor bent om deze te gebruiken. Met de registratie stap kunt u de minimale bevoegdheden binnen uw abonnement behouden. Een kwaadwillende gebruiker kan geen resource providers gebruiken die niet zijn geregistreerd.
+
+## <a name="find-resource-provider"></a>Resource provider zoeken
+
+Als u een bestaande infra structuur in azure hebt, maar niet zeker weet welke resource provider wordt gebruikt, kunt u Azure CLI of Power shell gebruiken om de resource provider te vinden. Geef de naam op van de resource groep die de resources bevat die u wilt zoeken.
+
+In het volgende voor beeld wordt gebruikgemaakt van Azure CLI:
+
+```azurecli-interactive
+az resource list -g examplegroup
+```
+
+De resultaten zijn onder andere het resource type. De naam ruimte van de resource provider is het eerste deel van het resource type. In het volgende voor beeld ziet u de resource provider **micro soft.-kluis** .
+
+```json
+[
+  {
+    ...
+    "type": "Microsoft.KeyVault/vaults"
+  }
+]
+```
+
+In het volgende voor beeld wordt Power shell gebruikt:
+
+```azurepowershell-interactive
+Get-AzResource -ResourceGroupName examplegroup
+```
+
+De resultaten zijn onder andere het resource type. De naam ruimte van de resource provider is het eerste deel van het resource type. In het volgende voor beeld ziet u de resource provider **micro soft.-kluis** .
+
+```azurepowershell
+Name              : examplekey
+ResourceGroupName : examplegroup
+ResourceType      : Microsoft.KeyVault/vaults
+...
+```
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -11,10 +11,10 @@ ms.date: 08/11/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
 ms.openlocfilehash: 7ed27eba66b3d18bed8017934fce85928b961392
-ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102520044"
 ---
 # <a name="collect-machine-learning-pipeline-log-files-in-application-insights-for-alerts-and-debugging"></a>machine learning pijplijn logboek bestanden verzamelen in Application Insights voor waarschuwingen en fout opsporing
@@ -155,7 +155,7 @@ In het resultaat van Application Insights worden het logboek bericht en het nive
 
 In enkele van de onderstaande query's wordt gebruikgemaakt van ' customDimensions. level '. Deze ernst niveaus komen overeen met het niveau waarmee het python-logboek oorspronkelijk is verzonden. Zie [Azure monitor-logboek query's](/azure/data-explorer/kusto/query/)voor meer informatie over query's.
 
-| Gebruiksvoorbeeld                                                               | Query’s uitvoeren                                                                                              |
+| Gebruiksvoorbeeld                                                               | Query                                                                                              |
 |------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
 | De resultaten vastleggen voor een specifieke aangepaste dimensie, bijvoorbeeld ' parent_run_id ' | <pre>traces \| <br>where customDimensions.parent_run_id == '931024c2-3720-11ea-b247-c49deda841c1</pre> |
 | De resultaten van de logboeken voor alle trainingen worden in de afgelopen 7 dagen uitgevoerd                     | <pre>traces \| <br>where timestamp > ago(7d) <br>and customDimensions.run_type == 'training'</pre>           |

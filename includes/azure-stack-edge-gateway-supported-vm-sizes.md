@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 12/09/2020
 ms.author: alkohli
 ms.openlocfilehash: ae7cb05aeda296ffb3aa9d7f6e2c88fe59364975
-ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99475034"
 ---
 De VM-grootte bepaalt de hoeveelheid reken resources (zoals CPU, GPU en geheugen) die beschikbaar worden gesteld voor de virtuele machine. U moet virtuele machines maken met behulp van een VM-grootte die geschikt is voor de werk belasting. Hoewel alle computers worden uitgevoerd op dezelfde hardware, hebben computer grootten verschillende limieten voor schijf toegang. Dit kan u helpen bij het beheren van de algemene schijf toegang op uw Vm's. Als een werk belasting toeneemt, kunt u ook de grootte van een bestaande virtuele machine wijzigen.

@@ -4,10 +4,10 @@ description: Slimme groepen zijn aggregaties van waarschuwingen waarmee u waarsc
 ms.topic: conceptual
 ms.date: 05/15/2018
 ms.openlocfilehash: 8a164fe6e5fd5be58da969d9266329755705ea82
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102037962"
 ---
 # <a name="smart-groups"></a>Slimme groepen

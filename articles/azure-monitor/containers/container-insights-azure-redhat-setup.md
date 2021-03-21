@@ -4,10 +4,10 @@ description: In dit artikel wordt beschreven hoe u de bewaking van een Kubernete
 ms.topic: conceptual
 ms.date: 06/30/2020
 ms.openlocfilehash: b46dfda0bdb0f3b582aa751786187a4d74524f75
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101708370"
 ---
 # <a name="configure-azure-red-hat-openshift-v3-with-container-insights"></a>Azure Red Hat open Shift v3 configureren met container Insights

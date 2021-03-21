@@ -1,6 +1,6 @@
 ---
-title: 'Zelfstudie: Azure Active Directory-integratie met Sequr | Microsoft Docs'
-description: Informatie over het configureren van eenmalige aanmelding tussen Azure Active Directory en Sequr.
+title: 'Zelf studie: integratie Azure Active Directory met Gena Access Control | Microsoft Docs'
+description: Meer informatie over het configureren van eenmalige aanmelding tussen Azure Active Directory en Gena Access Control.
 services: active-directory
 author: jeevansd
 manager: CelesteDG
@@ -9,103 +9,78 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 04/10/2019
+ms.date: 03/17/2021
 ms.author: jeedes
-ms.openlocfilehash: d1993f89f8b1da4789541006c15380d2145d3d81
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
-ms.translationtype: HT
+ms.openlocfilehash: 82c05f77781abdaea3b2c84aa1071656c206439a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92674501"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104669857"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-sequr"></a>Zelfstudie: Azure Active Directory-integratie met Sequr
+# <a name="tutorial-azure-active-directory-integration-with-genea-access-control"></a>Zelf studie: integratie Azure Active Directory met Gena Access Control
 
-In deze zelfstudie leert u hoe u Sequr integreert met Azure Active Directory (Azure AD).
-De integratie van Sequr met Azure AD heeft de volgende voordelen:
+In deze zelf studie leert u hoe u Gena-Access Control integreert met Azure Active Directory (Azure AD). Wanneer u Gena-Access Control integreert met Azure AD, kunt u het volgende doen:
 
-* U kunt in Azure AD beheren wie toegang heeft tot Sequr.
-* U kunt inschakelen dat gebruikers automatisch met hun Azure Active Directory-account worden aangemeld bij Sequr (eenmalige aanmelding).
-* U kunt uw accounts vanaf één centrale locatie beheren: de Azure-portal.
-
-Zie [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?) als u wilt graag meer wilt weten over de integratie van SaaS-apps met Azure AD.
-Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
+* Controle in azure AD die toegang heeft tot Gena Access Control.
+* Stel uw gebruikers in staat om automatisch te worden aangemeld bij Gena Access Control met hun Azure AD-accounts.
+* Uw accounts op een centrale locatie beheren: Azure Portal.
 
 ## <a name="prerequisites"></a>Vereisten
 
-Voor het configureren van Azure AD-integratie met Sequr hebt u de volgende items nodig:
+Als u Azure AD-integratie met Gena Access Control wilt configureren, hebt u de volgende items nodig:
 
 * Een Azure AD-abonnement Als u geen Azure AD-omgeving hebt, kunt u een [gratis account](https://azure.microsoft.com/free/) krijgen
-* Een abonnement op Sequr waarvoor eenmalige aanmelding is ingeschakeld
+* Gena Access Control abonnement voor eenmalige aanmelding
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
-* Sequr ondersteunt door **SP en IDP** geïnitieerde eenmalige aanmelding
+* Gena Access Control ondersteunt SSO die **met SP en IDP** is gestart.
+> [!NOTE]
+> De id van deze toepassing is een vaste tekenreekswaarde zodat maar één exemplaar in één tenant kan worden geconfigureerd.
 
-## <a name="adding-sequr-from-the-gallery"></a>Sequr toevoegen vanuit de galerie
 
-Om de integratie van Sequr in Azure AD te configureren, moet u Sequr vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
+## <a name="adding-genea-access-control-from-the-gallery"></a>Gena Access Control toevoegen vanuit de galerie
 
-**Voer de volgende stappen uit om Sequr toe te voegen vanuit de galerie:**
+Als u de integratie van Gena-Access Control wilt configureren in azure AD, moet u Gena Access Control toevoegen vanuit de galerie aan uw lijst met beheerde SaaS-apps.
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
+1. Typ in de sectie **toevoegen vanuit de galerie** de tekst **Gena Access Control** in het zoekvak.
+1. Selecteer **gena Access Control** uit het paneel resultaten en voeg de app vervolgens toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
-    ![De knop Azure Active Directory](common/select-azuread.png)
+## <a name="configure-and-test-azure-ad-sso-for-genea-access-control"></a>Azure AD SSO configureren en testen voor Gena-Access Control
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
+Azure AD SSO configureren en testen met Gena Access Control met behulp van een test gebruiker met de naam **B. Simon**. Voor het werken met SSO moet u een koppelings relatie tot stand brengen tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Gena Access Control.
 
-    ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
+Voer de volgende stappen uit om Azure AD SSO te configureren en te testen met Gena Access Control:
 
-3. Als u de nieuwe toepassing wilt toevoegen, klikt u op de knop **Nieuwe toepassing** boven aan het dialoogvenster.
+1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
+    1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B.Simon.
+    1. **[De Azure AD-testgebruiker toewijzen](#assign-the-azure-ad-test-user)** zodat B.Simon eenmalige aanmelding van Azure AD kan gebruiken.
+1. **[Gena Access Control-SSO configureren](#configure-genea-access-control-sso)** : voor het configureren van de instellingen voor eenmalige aanmelding aan de kant van de toepassing.
+    1. **[Maak gena Access Control test gebruiker](#create-genea-access-control-test-user)** : als u een equivalent van B. Simon wilt hebben in gena Access Control dat is gekoppeld aan de Azure AD-representatie van de gebruiker.
+1. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
 
-    ![De knop Nieuwe toepassing](common/add-new-app.png)
+## <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
 
-4. Typ in het zoekvak **Sequr** , selecteer **Sequr** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-    ![Sequr in de lijst met resultaten](common/search-new-app.png)
+1. Zoek in de Azure Portal op de pagina **gena Access Control** toepassings integratie de sectie **beheren** en selecteer **eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
-## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
-
-In deze sectie configureert en test u eenmalige aanmelding van Azure AD met Sequr op basis van een testgebruiker met de naam **Britta Simon**.
-Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in Sequr tot stand is gebracht.
-
-Als u Azure AD-eenmalige aanmelding met Sequr wilt configureren en testen, moet u de volgende bouwstenen uitvoeren:
-
-1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[Sequr voor eenmalige aanmelding configureren](#configure-sequr-single-sign-on)** : als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wilt configureren.
-3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
-4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
-5. **[Testgebruiker voor Sequr maken](#create-sequr-test-user)** : een tegenhanger voor Britta Simon maken in Sequr die wordt gekoppeld aan de Azure AD-voorstelling van de gebruiker.
-6. **[Eenmalige aanmelding testen](#test-single-sign-on)** : als u wilt controleren of de configuratie werkt.
-
-### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
-
-In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakelen.
-
-Voer de volgende stappen uit om eenmalige aanmelding van Azure AD met Sequr te configureren:
-
-1. In de [Azure-portal](https://portal.azure.com/) selecteert u **Eenmalige aanmelding** op de integratiepagina van de toepassing **Sequr**.
-
-    ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
-
-2. In het dialoogvenster **Een methode voor eenmalige aanmelding selecteren** selecteert u de modus **SAML/WS-Federation** om eenmalige aanmelding in te schakelen.
-
-    ![De modus Eenmalige aanmelding selecteren](common/select-saml-option.png)
-
-3. Op de pagina **Eenmalige aanmelding met SAML instellen** klikt u op het pictogram **Bewerken** om het dialoogvenster **Standaard SAML-configuratie** te openen.
-
-    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
+   ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
 4. In het gedeelte **Standaard SAML-configuratie** voert u de volgende stappen uit als u de toepassing in de door **IDP** geïnitieerde modus wilt configureren:
 
-    ![Domein- en URL-gegevens voor eenmalige aanmelding bij Sequr](common/idp-identifier.png)
-
-    Typ de volgende URL in het tekstvak **Id** : `https://login.sequr.io`
+    Typ de volgende URL in het tekstvak **Id**: `https://login.sequr.io`
 
 5. Klik op **Extra URL's instellen** en voer de volgende stap uit als u de toepassing in de door **SP** geïnitieerde modus wilt configureren:
-
-    ![image](common/both-advanced-urls.png)
 
     a. In het tekstvak **Aanmeldings-URL** typt u de URL: `https://login.sequr.io`
 
@@ -115,31 +90,48 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure AD met Sequr te c
 
     ![De link om het certificaat te downloaden](common/certificatebase64.png)
 
-7. Kopieer in het gedeelte **Sequr instellen** de juiste URL('s) op basis van uw behoeften.
+7. Kopieer de gewenste URL ('s) volgens uw vereiste in de sectie een **Access Control instellen** .
 
     ![Configuratie-URL's kopiëren](common/copy-configuration-urls.png)
 
-    a. Aanmeldings-URL
+### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
-    b. Azure AD-id
+In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-    c. Afmeldings-URL
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
+   1. Voer in het veld **Naam**`B.Simon` in.  
+   1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
 
-### <a name="configure-sequr-single-sign-on"></a>Eenmalige aanmelding voor Sequr configureren
+### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
-1. Meld u in een ander browservenster als beheerder aan bij uw Sequr-bedrijfssite.
+In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot Gena Access Control.
+
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Selecteer in de lijst toepassingen de optie **gena Access Control**.
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
+1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
+## <a name="configure-genea-access-control-sso"></a>Gena Access Control-SSO configureren
+
+1. Meld u in een ander webbrowser venster aan bij de bedrijfs site van uw Gena-Access Control als beheerder.
 
 1. Klik op **Integraties** in het linkernavigatievenster.
 
-    ![Schermopname van Integraties geselecteerd in het navigatiedeelvenster.](./media/sequr-tutorial/configure1.png)
+    ![Schermopname van Integraties geselecteerd in het navigatiedeelvenster.](./media/sequr-tutorial/configure-1.png)
 
 1. Schuif omlaag naar de sectie **Eenmalige aanmelding** en klik op **Beheren**.
 
-    ![Schermopname van de sectie Eenmalige aanmelding met de knop Beheren geselecteerd.](./media/sequr-tutorial/configure2.png)
+    ![Schermopname van de sectie Eenmalige aanmelding met de knop Beheren geselecteerd.](./media/sequr-tutorial/configure-2.png)
 
 1. Voer in het gedeelte **Eenmalige aanmelding beheren** de volgende stappen uit:
 
-    ![Schermopname van de sectie Eenmalige aanmelding beheren, waarin u de beschreven waarden kunt invoeren.](./media/sequr-tutorial/configure3.png)
+    ![Schermopname van de sectie Eenmalige aanmelding beheren, waarin u de beschreven waarden kunt invoeren.](./media/sequr-tutorial/configure-3.png)
 
     a. Plak in het tekstvak **URL van id-provider voor eenmalige aanmelding** de **aanmeldings-URL** die u hebt gekopieerd in de Microsoft Azure-portal.
 
@@ -149,70 +141,26 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure AD met Sequr te c
 
     d. Klik op **Opslaan**.
 
-### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
+### <a name="create-genea-access-control-test-user"></a>Gena-Access Control test gebruiker maken
 
-Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
+In deze sectie maakt u een gebruiker met de naam Julia Simon in Gena Access Control. Werk samen met [gena Access Control client ondersteunings team](mailto:support@sequr.io) om de gebruikers toe te voegen aan het product gena Access Control. Er moeten gebruikers worden gemaakt en geactiveerd voordat u eenmalige aanmelding kunt gebruiken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+## <a name="test-sso"></a>Eenmalige aanmelding testen 
 
-    ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-2. Selecteer **Nieuwe gebruiker** boven aan het scherm.
+#### <a name="sp-initiated"></a>Met SP geïnitieerd:
 
-    ![Knop Nieuwe gebruiker](common/new-user.png)
+* Klik in Azure Portal op **Deze toepassing testen**. Dit wordt omgeleid naar Gena Access Control-aanmeldings-URL, waar u de aanmeldings stroom kunt initiëren.  
 
-3. In Gebruikerseigenschappen voert u de volgende stappen uit.
+* Ga rechtstreeks naar Gena Access Control URL voor aanmelden en start de aanmeldings stroom vanaf daar.
 
-    ![Het dialoogvenster Gebruiker](common/user-properties.png)
+#### <a name="idp-initiated"></a>Met IDP geïnitieerd:
 
-    a. Voer in het veld **Naam** **Britta Simon** in.
-  
-    b. In het veld **Gebruikersnaam** typt u `brittasimon@yourcompanydomain.extension`. Bijvoorbeeld: BrittaSimon@contoso.com
+* Klik op **test deze toepassing** in azure Portal en u moet automatisch worden aangemeld bij het Access Control Gena waarvoor u de SSO hebt ingesteld. 
 
-    c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
+U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u op de tegel Gena Access Control in de mijn apps klikt, wordt u naar de aanmeldings pagina van de toepassing omgeleid voor het initiëren van de aanmeldings stroom en als deze is geconfigureerd in de modus IDP, dan moet u automatisch worden aangemeld bij de Gena-Access Control waarvoor u de SSO hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
-    d. Klik op **Create**.
+## <a name="next-steps"></a>Volgende stappen
 
-### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
-
-In dit gedeelte stelt u Britta Simon in staat om gebruik te maken van eenmalige aanmelding van Azure door haar toegang te geven tot Sequr.
-
-1. Selecteer in Azure Portal **Bedrijfstoepassingen** , **Alle toepassingen** en vervolgens **Sequr**.
-
-    ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
-
-2. Selecteer in de lijst met toepassingen de optie **Sequr**.
-
-    ![De koppeling Sequr in de lijst met toepassingen](common/all-applications.png)
-
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
-
-    ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
-
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
-
-    ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
-
-5. Selecteer in het dialoogvenster **Gebruikers en groepen** **Britta Simon** in de lijst met gebruikers en klik op de knop **Selecteren** onder aan het scherm.
-
-6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
-
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
-
-### <a name="create-sequr-test-user"></a>Sequr-testgebruiker maken
-
-In deze sectie gaat u een gebruiker maken in Sequr met de naam Britta Simon. Neem contact op met het [klantondersteuningsteam van Sequr](mailto:support@sequr.io) om de gebruikers toe te voegen in het Sequr-platform. Er moeten gebruikers worden gemaakt en geactiveerd voordat u eenmalige aanmelding kunt gebruiken.
-
-### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen 
-
-In deze sectie gaat u uw configuratie van Azure AD-eenmalige aanmelding testen via het toegangsvenster.
-
-Wanneer u in het toegangsvenster op de tegel Sequr klikt, zou u automatisch moeten worden aangemeld bij de Sequr waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
-
-## <a name="additional-resources"></a>Aanvullende resources
-
-- [Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory](./tutorial-list.md)
-
-- [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
-
-- [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
+Als u Gena Access Control configureert, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).

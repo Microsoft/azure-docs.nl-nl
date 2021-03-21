@@ -10,10 +10,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/24/2020
 ms.openlocfilehash: 814a5afbde548891a30d941365cdd71d227b4767
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101674407"
 ---
 # <a name="service-administration-for-azure-cognitive-search-in-the-azure-portal"></a>Service beheer voor Azure Cognitive Search in het Azure Portal
@@ -100,7 +100,7 @@ Klanten die [Indexeer functies](search-indexer-overview.md) gebruiken om indexen
 
 Als u geen Indexeer functies gebruikt, gebruikt u uw toepassings code om objecten en gegevens parallel naar verschillende zoek services te pushen. Zie [prestaties en optimalisatie in Azure Cognitive Search](search-performance-optimization.md)voor meer informatie.
 
-## <a name="backup-and-restore"></a>Back-ups en herstellen
+## <a name="backup-and-restore"></a>Back-up en herstel
 
 Omdat Azure Cognitive Search geen primaire oplossing voor gegevens opslag is, bieden we geen formeel mechanisme voor Self-Service back-up en herstel. U kunt echter de voorbeeld code **index-Backup-Restore** in dit [Azure Cognitive Search .net-voor beeld opslag plaats](https://github.com/Azure-Samples/azure-search-dotnet-samples) gebruiken om een back-up te maken van de index definitie en moment opname naar een reeks json-bestanden en vervolgens deze bestanden te gebruiken om de index te herstellen, indien nodig. Met dit hulp programma kunt u ook indexen verplaatsen tussen service lagen.
 

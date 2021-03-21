@@ -4,10 +4,10 @@ description: Dit artikel bevat informatie over het gebruik van Kafka MirrorMaker
 ms.topic: how-to
 ms.date: 01/04/2021
 ms.openlocfilehash: 654e9e19dfde0d0c58d00e41cf8ab0ba8e1484d7
-ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97860993"
 ---
 # <a name="use-apache-kafka-mirrormaker-with-event-hubs"></a>Apache Kafka MirrorMaker gebruiken met Event Hubs
@@ -30,7 +30,7 @@ In deze zelfstudie leert u het volgende:
 > * Kafka MirrorMaker configureren
 > * Kafka MirrorMaker uitvoeren
 
-## <a name="introduction"></a>Introductie
+## <a name="introduction"></a>Inleiding
 In deze zelf studie ziet u hoe een Event Hub-en Kafka-MirrorMaker een bestaande Kafka-pijp lijn kan integreren in azure door de Kafka-invoer stroom te spie gelen in de Event Hubs-service, waarmee Apache Kafka-streams met verschillende [Federatie patronen](event-hubs-federation-overview.md)kunnen worden geïntegreerd. 
 
 Met een Azure Event Hubs Kafka-eind punt kunt u verbinding maken met Azure Event Hubs met behulp van het Kafka-Protocol (dat wil zeggen Kafka-clients). Door minimale wijzigingen aan te brengen in een Kafka-toepassing, kunt u verbinding maken met Azure Event Hubs en profiteren van de voor delen van het Azure-ecosysteem. Event Hubs ondersteunt momenteel het Protocol van Apache Kafka versie 1,0 en hoger.

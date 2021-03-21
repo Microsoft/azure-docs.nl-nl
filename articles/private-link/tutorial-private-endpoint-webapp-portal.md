@@ -8,10 +8,10 @@ ms.service: private-link
 ms.topic: tutorial
 ms.date: 10/19/2020
 ms.openlocfilehash: 502c48a92f5b41c4434d03139335a0ce05fa451f
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92896970"
 ---
 # <a name="tutorial-connect-to-a-web-app-using-an-azure-private-endpoint"></a>Zelfstudie: Verbinding maken met een web-app met behulp van een privé-eindpunt in Azure
@@ -48,7 +48,7 @@ De Bastion-host wordt gebruikt om veilig verbinding te maken met de virtuele mac
 
 1. Selecteer in de linkerbovenhoek van het scherm **Een resource maken > Netwerken > Virtueel netwerk** of zoek naar **Virtueel netwerk** in het zoekvak.
 
-2. Typ of selecteer in **Virtueel netwerk maken** de volgende gegevens op het tabblad **Basisinstellingen** :
+2. Typ of selecteer in **Virtueel netwerk maken** de volgende gegevens op het tabblad **Basisinstellingen**:
 
     | **Instelling**          | **Waarde**                                                           |
     |------------------|-----------------------------------------------------------------|
@@ -100,7 +100,7 @@ In deze sectie maakt u een virtuele machine die wordt gebruikt om het persoonlij
 
 1. Selecteer in de linkerbovenhoek van het portaal de optie **Een resource maken** > **Compute** > **Virtuele machine** of zoek naar **Virtuele machine** via het zoekvak.
    
-2. In **Een virtuele machine maken** typt of selecteert u de waarden op het tabblad **Basisinformatie** :
+2. In **Een virtuele machine maken** typt of selecteert u de waarden op het tabblad **Basisinformatie**:
 
     | Instelling | Waarde                                          |
     |-----------------------|----------------------------------|
@@ -140,7 +140,7 @@ In deze sectie maakt u een virtuele machine die wordt gebruikt om het persoonlij
 
 In deze sectie maakt u een web-app.
 
-1. Selecteer in het menu aan de linkerkant de opties **Een resource maken** > **Opslag** > **Web-app** , of zoek naar **Web-app** in het zoekvak.
+1. Selecteer in het menu aan de linkerkant de opties **Een resource maken** > **Opslag** > **Web-app**, of zoek naar **Web-app** in het zoekvak.
 
 2. Typ of selecteer op het tabblad **Basisbeginselen** van **Web-app maken** de volgende informatie:
 
@@ -167,7 +167,7 @@ In deze sectie maakt u een web-app.
 
 ## <a name="create-private-endpoint"></a>Privé-eindpunt maken
 
-1. Selecteer in het menu aan de linkerkant de opties **Alle resources** > **mywebapp** , of de naam die u hebt gekozen tijdens het maken.
+1. Selecteer in het menu aan de linkerkant de opties **Alle resources** > **mywebapp**, of de naam die u hebt gekozen tijdens het maken.
 
 2. Selecteer in het overzicht van de web-app de opties **Instellingen** > **Netwerken**.
 
@@ -222,7 +222,7 @@ In deze sectie gebruikt u de virtuele machine die u in de vorige stap hebt gemaa
 
 9. Open een webbrowser op de lokale computer en voer de externe URL van uw web-app in, **https://\<webapp-name>.azurewebsites.net**.
 
-10. Controleer of u een **403** -pagina ontvangt. Deze pagina geeft aan dat de web-app niet extern toegankelijk is.
+10. Controleer of u een **403**-pagina ontvangt. Deze pagina geeft aan dat de web-app niet extern toegankelijk is.
 
     :::image type="content" source="./media/tutorial-private-endpoint-webapp-portal/web-app-ext-403.png" alt-text="403-pagina voor het externe adres van de web-app." border="true":::
 

@@ -15,10 +15,10 @@ ms.date: 11/17/2020
 ms.custom: devx-track-java
 ms.author: inhenkel
 ms.openlocfilehash: 769b4bc431040ee4d872fa60270196db96978ed2
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94748162"
 ---
 # <a name="connect-to-media-services-v3-api---java"></a>Verbinding maken met de Media Services v3-API - Java

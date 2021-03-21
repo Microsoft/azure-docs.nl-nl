@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 12/04/2020
 ms.author: erhopf
 ms.openlocfilehash: 4746aad2d7cd62cb309a1823f8c50487e6f7e87c
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97032963"
 ---
 # <a name="custom-subdomain-names-for-cognitive-services"></a>Aangepaste subdomein namen voor Cognitive Services
@@ -68,24 +68,24 @@ Ja. Dit is een lijst met regionale eind punten die u kunt gebruiken met Azure Co
 > [!NOTE]
 > De Translator-service en Bing Zoeken-API's globale eind punten gebruiken.
 
-| Eindpunttype | Regio | Eindpunt |
+| Eindpunttype | Region | Eindpunt |
 |---------------|--------|----------|
 | Openbaar | Global (Translator & Bing) | `https://api.cognitive.microsoft.com` |
 | | Australië - oost | `https://australiaeast.api.cognitive.microsoft.com` |
 | | Brazilië - zuid | `https://brazilsouth.api.cognitive.microsoft.com` |
 | | Canada - midden | `https://canadacentral.api.cognitive.microsoft.com` |
-| | Central US | `https://centralus.api.cognitive.microsoft.com` |
+| | VS - centraal | `https://centralus.api.cognitive.microsoft.com` |
 | | Azië - oost | `https://eastasia.api.cognitive.microsoft.com` |
 | | VS - oost | `https://eastus.api.cognitive.microsoft.com` |
 | | VS - oost 2 | `https://eastus2.api.cognitive.microsoft.com` |
 | | Frankrijk - centraal | `https://francecentral.api.cognitive.microsoft.com` |
 | | India - centraal | `https://centralindia.api.cognitive.microsoft.com` |
-| | Japan East | `https://japaneast.api.cognitive.microsoft.com` |
+| | Japan - oost | `https://japaneast.api.cognitive.microsoft.com` |
 | | Korea - centraal | `https://koreacentral.api.cognitive.microsoft.com` |
 | | VS - noord-centraal | `https://northcentralus.api.cognitive.microsoft.com` |
 | | Europa - noord | `https://northeurope.api.cognitive.microsoft.com` |
 | | Zuid-Afrika - noord | `https://southafricanorth.api.cognitive.microsoft.com` |
-| | South Central US | `https://southcentralus.api.cognitive.microsoft.com` |
+| | VS - zuid-centraal | `https://southcentralus.api.cognitive.microsoft.com` |
 | | Azië - zuidoost | `https://southeastasia.api.cognitive.microsoft.com` |
 | | Verenigd Koninkrijk Zuid | `https://uksouth.api.cognitive.microsoft.com` |
 | | VS - west-centraal | `https://westcentralus.api.cognitive.microsoft.com` |

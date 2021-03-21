@@ -8,15 +8,15 @@ ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 04/28/2020
 ms.openlocfilehash: 9656e6ab608665e325ac5f772e06df9ac296c521
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92485372"
 ---
 # <a name="backup-and-restore-in-azure-database-for-postgresql---hyperscale-citus"></a>Back-ups maken en herstellen in Azure Database for PostgreSQL-grootschalige (Citus)
 
-Azure Database for PostgreSQL – grootschalige (Citus) maakt automatisch back-ups van elk knoop punt en slaat ze op in lokaal redundante opslag. Back-ups kunnen worden gebruikt om uw grootschalige-cluster (Citus) naar een opgegeven tijd te herstellen. Backup en Restore zijn een essentieel onderdeel van een strategie voor bedrijfs continuïteit omdat ze uw gegevens beschermen tegen onbedoelde beschadiging of verwijdering.
+Azure Database for PostgreSQL – grootschalige (Citus) maakt automatisch back-ups van elk knoop punt en slaat ze op in lokaal redundante opslag. Back-ups kunnen worden gebruikt om uw grootschalige-cluster (Citus) naar een opgegeven tijd te herstellen. Back-ups maken en herstellen zijn essentiële onderdelen van een strategie voor bedrijfscontinuïteit omdat ze uw gegevens beschermen tegen onbedoelde beschadiging of verwijdering.
 
 ## <a name="backups"></a>Back-ups
 
@@ -44,7 +44,7 @@ In Azure Database for PostgreSQL maakt het herstellen van een grootschalige-clus
 ### <a name="point-in-time-restore-pitr"></a>Herstel naar een bepaald tijdstip (PITR)
 
 U kunt in de afgelopen 35 dagen een cluster herstellen naar elk gewenst moment.
-Herstel naar een bepaald tijdstip is handig in meerdere scenario's. Wanneer een gebruiker bijvoorbeeld per ongeluk gegevens verwijdert, een belang rijke tabel of data base weglaat of als een toepassing per ongeluk goede gegevens overschrijft met ongeldige gegevens.
+Herstel naar een bepaald tijdstip is handig in meerdere scenario's. Wanneer een gebruiker bijvoorbeeld per ongeluk gegevens wist, een belangrijke tabel of database verwijdert of als een toepassing per ongeluk goede gegevens overschrijft met ongeldige gegevens.
 
 Het herstel proces maakt een nieuw cluster in dezelfde Azure-regio, hetzelfde abonnement en dezelfde resource groep als het origineel. Het cluster heeft de oorspronkelijke configuratie: hetzelfde aantal knoop punten, het aantal vCores, de opslag grootte, de gebruikers rollen, de PostgreSQL-versie en de versie van de Citus-extensie.
 

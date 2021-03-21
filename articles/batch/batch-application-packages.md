@@ -8,10 +8,10 @@ ms.custom:
 - devx-track-csharp
 - contperf-fy21q1
 ms.openlocfilehash: b4c6ab99b0fa93e5fdea4256d6f232cc0fe4218e
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97033728"
 ---
 # <a name="deploy-applications-to-compute-nodes-with-batch-application-packages"></a>Toepassingen implementeren op reken knooppunten met batch-toepassings pakketten
@@ -103,7 +103,7 @@ Selecteer in uw batch-account **toepassingen** en selecteer vervolgens **toevoeg
 
 :::image type="content" source="media/batch-application-packages/app_pkg_05.png" alt-text="Scherm opname van het proces voor het maken van nieuwe toepassingen in de Azure Portal.":::
 
-Voer de volgende gegevens in:
+Voer de volgende informatie in:
 
 - **Toepassings-id**: de id van de nieuwe toepassing.
 - **Versie**: de versie van het toepassings pakket dat u uploadt.

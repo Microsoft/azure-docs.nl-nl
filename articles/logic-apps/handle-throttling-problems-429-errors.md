@@ -7,10 +7,10 @@ ms.reviewer: deli, logicappspm
 ms.topic: conceptual
 ms.date: 04/13/2020
 ms.openlocfilehash: ea153b1927a337be29c2eb69e2417cc250abf5e8
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94366047"
 ---
 # <a name="handle-throttling-problems-429---too-many-requests-errors-in-azure-logic-apps"></a>Omgaan met beperkings problemen (429-"te veel aanvragen") in Azure Logic Apps
@@ -21,7 +21,7 @@ In [Azure Logic apps](../logic-apps/logic-apps-overview.md)retourneert uw logisc
 
 Hier volgen enkele veelvoorkomende typen beperking die uw logische app kan ervaren:
 
-* [Logische apps](#logic-app-throttling)
+* [Logische app](#logic-app-throttling)
 * [Connector](#connector-throttling)
 * [Doel service of systeem](#destination-throttling)
 
@@ -55,7 +55,7 @@ U hebt de volgende opties om bandbreedte beperking op dit niveau te verwerken:
 
 * Schakel het gedrag voor het debatcheren van matrices (' splitsen op ') in triggers uit.
 
-  Als met een trigger een matrix wordt geretourneerd voor de resterende werk stroom acties die moeten worden verwerkt, splitst de trigger de instelling voor het [ **Split On** instellen](../logic-apps/logic-apps-workflow-actions-triggers.md#split-on-debatch) van de matrix items en wordt er een werk stroom exemplaar voor elk matrix item gestart, waardoor meerdere gelijktijdige uitvoeringen effectief worden geactiveerd tot de [ **splitsing van** de limiet](../logic-apps/logic-apps-limits-and-config.md#concurrency-looping-and-debatching-limits). Als u beperking wilt beheren, schakelt u de functie **splitsen bij** gedrag uit en laat u de gehele matrix met één aanroep verwerken in plaats van één item per oproep te verwerken.
+  Als met een trigger een matrix wordt geretourneerd voor de resterende werk stroom acties die moeten worden verwerkt, splitst de trigger de instelling voor het [  instellen](../logic-apps/logic-apps-workflow-actions-triggers.md#split-on-debatch) van de matrix items en wordt er een werk stroom exemplaar voor elk matrix item gestart, waardoor meerdere gelijktijdige uitvoeringen effectief worden geactiveerd tot de [ **splitsing van** de limiet](../logic-apps/logic-apps-limits-and-config.md#concurrency-looping-and-debatching-limits). Als u beperking wilt beheren, schakelt u de functie **splitsen bij** gedrag uit en laat u de gehele matrix met één aanroep verwerken in plaats van één item per oproep te verwerken.
 
 * Verdeel acties in kleinere logische apps.
 

@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 07/05/2019
 ms.author: juliako
 ms.openlocfilehash: 248799d70e0741efcaea1714c12f4d92a42cef25
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93041904"
 ---
 # <a name="scenes-shots-and-keyframes"></a>Scènes, opnamen en sleutelframes
@@ -46,7 +46,7 @@ Als u hoofd frames met hoge resolutie wilt uitpakken voor uw video, moet u eerst
 
 #### <a name="with-the-video-indexer-website"></a>Met de Video Indexer-website
 
-Als u hoofd frames wilt extra heren met behulp van de Video Indexer website, uploadt u uw video en indexeert u deze. Zodra de Indexeer taak is voltooid, klikt u op de knop **downloaden** en selecteert u **artefacten (zip)** . Hiermee wordt de map artefacten gedownload naar uw computer. 
+Als u hoofd frames wilt extra heren met behulp van de Video Indexer website, uploadt u uw video en indexeert u deze. Zodra de Indexeer taak is voltooid, klikt u op de knop **downloaden** en selecteert u **artefacten (zip)**. Hiermee wordt de map artefacten gedownload naar uw computer. 
 
 ![Scherm opname van de vervolg keuzelijst ' downloaden ' met ' artefacten ' geselecteerd.](./media/scenes-shots-keyframes/extracting-keyframes2.png)
  

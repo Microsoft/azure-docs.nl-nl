@@ -9,10 +9,10 @@ ms.date: 11/05/2020
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 57b0bb9ab8ceb34021a38db0d0abf2c9c919e808
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94356643"
 ---
 ### <a name="can-i-still-deploy-multiple-bastion-hosts-across-peered-virtual-networks"></a>Kan ik nog steeds meerdere Bastion-hosts implementeren in gekoppelde virtuele netwerken?
@@ -36,11 +36,11 @@ Zorg ervoor dat de gebruiker **Lees** toegang heeft tot zowel de virtuele machin
 
 |Machtigingen|Beschrijving|Machtigings type|
 |---|---| ---|
-|Micro soft. Network/bastionHosts/lezen |Hiermee wordt een bastion-host opgehaald|Actie|
-|Micro soft. Network/virtualNetworks/BastionHosts/Action |Hiermee worden Bastion opgehaald in een Virtual Network.|Actie|
-|Micro soft. Network/virtualNetworks/bastionHosts/default/action|Hiermee worden Bastion opgehaald in een Virtual Network.|Actie|
-|Micro soft. Network/networkInterfaces/lezen|Hiermee haalt u een definitie van een netwerk interface.|Actie|
-|Micro soft. Network/networkInterfaces/ipconfigurations/lezen|Hiermee wordt een IP-configuratie definitie van de netwerk interface opgehaald.|Actie|
-|Micro soft. Network/virtualNetworks/lezen|De virtuele-netwerk definitie ophalen|Actie|
-|Micro soft. Network/virtualNetworks/subnetten/informatie/lezen|Hiermee worden verwijzingen naar alle virtuele machines in een subnet van een virtueel netwerk opgehaald|Actie|
+|Micro soft. Network/bastionHosts/lezen |Hiermee wordt een bastion-host opgehaald|Bewerking|
+|Micro soft. Network/virtualNetworks/BastionHosts/Action |Hiermee worden Bastion opgehaald in een Virtual Network.|Bewerking|
+|Micro soft. Network/virtualNetworks/bastionHosts/default/action|Hiermee worden Bastion opgehaald in een Virtual Network.|Bewerking|
+|Micro soft. Network/networkInterfaces/lezen|Hiermee haalt u een definitie van een netwerk interface.|Bewerking|
+|Micro soft. Network/networkInterfaces/ipconfigurations/lezen|Hiermee wordt een IP-configuratie definitie van de netwerk interface opgehaald.|Bewerking|
+|Micro soft. Network/virtualNetworks/lezen|De virtuele-netwerk definitie ophalen|Bewerking|
+|Micro soft. Network/virtualNetworks/subnetten/informatie/lezen|Hiermee worden verwijzingen naar alle virtuele machines in een subnet van een virtueel netwerk opgehaald|Bewerking|
 |Micro soft. Network/virtualNetworks/informatie/lezen|Hiermee worden verwijzingen naar alle virtuele machines in een virtueel netwerk opgehaald|Bewerking|

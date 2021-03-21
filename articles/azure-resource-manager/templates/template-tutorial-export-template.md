@@ -7,10 +7,10 @@ ms.topic: tutorial
 ms.author: jgao
 ms.custom: ''
 ms.openlocfilehash: ba1797da5a78eeebd25f5df1b6e37eb92470f584
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97106917"
 ---
 # <a name="tutorial-use-exported-template-from-the-azure-portal"></a>Zelfstudie: Uit de Azure-portal geëxporteerde sjabloon gebruiken
@@ -21,7 +21,7 @@ In deze serie zelfstudies hebt u een sjabloon gemaakt voor het implementeren van
 
 U wordt aangeraden om eerst de [zelfstudie over uitvoer](template-tutorial-add-outputs.md) te voltooien, maar dit is niet verplicht.
 
-U moet beschikken over Visual Studio Code met de extensie Resource Manager Tools (hulpprogramma's voor resourcebeheer), plus Azure PowerShell of Azure CLI. Zie de [hulpprogramma's voor sjablonen](template-tutorial-create-first-template.md#get-tools) voor meer informatie.
+U moet beschikken over Visual Studio Code met de extensie Resource Manager Tools (hulpprogramma's voor resourcebeheer), plus Azure PowerShell of Azure CLI. Zie [Hulpprogramma's voor sjablonen](template-tutorial-create-first-template.md#get-tools) voor meer informatie.
 
 ## <a name="review-template"></a>Sjabloon controleren
 
@@ -62,12 +62,12 @@ Deze sjabloon werkt goed voor het implementeren van opslagaccounts, maar mogelij
 
    Met de functie voor het exporteren van sjablonen wordt de huidige status van een resource opgehaald en een sjabloon gegenereerd om deze te implementeren. Het exporteren van een sjabloon kan een handige manier zijn om snel de JSON te verkrijgen die u nodig hebt om een resource te implementeren.
 
-1. Bekijk de definitie van `Microsoft.Web/serverfarms` en de parameterdefinitie in de geëxporteerde sjabloon. U hoeft deze secties niet te kopiëren. U kunt gewoon deze geëxporteerde sjabloon gebruiken als voorbeeld van de manier waarop u deze resource aan uw sjabloon wilt toevoegen.
+1. Bekijk de `Microsoft.Web/serverfarms` definitie en de parameter definitie in de geëxporteerde sjabloon. U hoeft deze secties niet te kopiëren. U kunt gewoon deze geëxporteerde sjabloon gebruiken als voorbeeld van de manier waarop u deze resource aan uw sjabloon wilt toevoegen.
 
     ![Geëxporteerde Resource Manager-sjabloon](./media/template-tutorial-export-template/resource-manager-template-exported-template.png)
 
 > [!IMPORTANT]
-> De geëxporteerde sjabloon is doorgaans uitgebreider dan u wellicht wilt bij het maken van een sjabloon. Het SKU-object in de geëxporteerde sjabloon heeft bijvoorbeeld vijf eigenschappen. Deze sjabloon werkt, maar u kunt ook gewoon de eigenschap `name` (naam) gebruiken. U kunt beginnen met de geëxporteerde sjabloon en deze vervolgens aanpassen aan uw vereisten.
+> De geëxporteerde sjabloon is doorgaans uitgebreider dan u wellicht wilt bij het maken van een sjabloon. Het SKU-object in de geëxporteerde sjabloon heeft bijvoorbeeld vijf eigenschappen. Deze sjabloon werkt, maar u kunt gewoon de `name` eigenschap gebruiken. U kunt beginnen met de geëxporteerde sjabloon en deze vervolgens aanpassen aan uw vereisten.
 
 ## <a name="revise-existing-template"></a>Bestaande sjabloon herzien
 

@@ -15,10 +15,10 @@ ms.topic: how-to
 ms.date: 01/23/2017
 ms.author: mazha
 ms.openlocfilehash: e2ef1367cbbb1fb71159c4520c3d1481904c1769
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92779319"
 ---
 # <a name="analyze-usage-statistics-with-azure-cdn-advanced-http-reports"></a>Gebruiksstatistieken analyseren met geavanceerde HTTP-rapporten in Azure CDN
@@ -33,7 +33,7 @@ In dit document wordt uitgebreide HTTP-rapportage in Microsoft Azure CDN uitgele
     ![De knop Blade van het CDN-profiel beheren](./media/cdn-advanced-http-reports/cdn-manage-btn.png)
    
     De CDN-beheer portal wordt geopend.
-2. Beweeg de muis aanwijzer over het tabblad **Analytics** en Beweeg vervolgens de muis aanwijzer over de **Geavanceerde http-rapporten** flyout.  Klik op een **groot http-platform** .
+2. Beweeg de muis aanwijzer over het tabblad **Analytics** en Beweeg vervolgens de muis aanwijzer over de **Geavanceerde http-rapporten** flyout.  Klik op een **groot http-platform**.
    
     ![CDN-beheer Portal-menu Geavanceerde rapporten](./media/cdn-advanced-http-reports/cdn-advanced-reports.png)
    

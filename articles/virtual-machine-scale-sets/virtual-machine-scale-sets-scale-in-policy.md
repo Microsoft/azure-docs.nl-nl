@@ -11,10 +11,10 @@ ms.date: 02/26/2020
 ms.reviewer: avverma
 ms.custom: avverma, devx-track-azurecli
 ms.openlocfilehash: 9ca6310705d54d563aae746ab2dbfe6cb412e6a9
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92747803"
 ---
 # <a name="use-custom-scale-in-policies-with-azure-virtual-machine-scale-sets"></a>Aangepaste beleids regels voor schalen gebruiken met virtuele-machine schaal sets van Azure
@@ -57,7 +57,7 @@ U kunt op de volgende manieren een scale-in-beleid definiëren in het model voor
  
 In de volgende stappen wordt het beleid voor de schaal baarheid gedefinieerd bij het maken van een nieuwe schaalset. 
  
-1. Ga naar **schaal sets voor virtuele machines** .
+1. Ga naar **schaal sets voor virtuele machines**.
 1. Selecteer **+ toevoegen** om een nieuwe schaalset te maken.
 1. Ga naar het tabblad **schalen** . 
 1. Zoek de sectie **Scale-in Policy** .
@@ -83,7 +83,7 @@ https://management.azure.com/subscriptions/<sub-id>/resourceGroups/<myRG>/provid
 ```
 ### <a name="azure-powershell"></a>Azure PowerShell
 
-Maak een resource groep en maak vervolgens een nieuwe schaalset met het beleid voor de schaalset die is ingesteld als *OldestVM* .
+Maak een resource groep en maak vervolgens een nieuwe schaalset met het beleid voor de schaalset die is ingesteld als *OldestVM*.
 
 ```azurepowershell-interactive
 New-AzResourceGroup -ResourceGroupName "myResourceGroup" -Location "<VMSS location>"
@@ -96,7 +96,7 @@ New-AzVmss `
 
 ### <a name="azure-cli-20"></a>Azure CLI 2.0
 
-In het volgende voor beeld wordt een beleid voor schaal in toegevoegd tijdens het maken van een nieuwe schaalset. Maak eerst een resource groep en maak vervolgens een nieuwe schaalset met het beleid voor schaal-in als *OldestVM* . 
+In het volgende voor beeld wordt een beleid voor schaal in toegevoegd tijdens het maken van een nieuwe schaalset. Maak eerst een resource groep en maak vervolgens een nieuwe schaalset met het beleid voor schaal-in als *OldestVM*. 
 
 ```azurecli-interactive
 az group create --name <myResourceGroup> --location <VMSSLocation>
@@ -211,12 +211,12 @@ In de onderstaande voor beelden ziet u hoe u met een schaalset voor virtuele mac
 | Gebeurtenis                 | Exemplaar-Id's in zone 1  | Exemplaar-Id's in Zone2  | Exemplaar-Id's in Zone3  | Selectie inschalen                                                                                                               |
 |-----------------------|------------------------|------------------------|------------------------|----------------------------------------------------------------------------------------------------------------------------------|
 | Eerste               | 3, 4, 5, 10            | 2, 6, 9, 11            | 1, 7, 8                |                                                                                                                                  |
-| Inschalen              | 3, 4, 5, 10            | **_2_* _, 6, 9, 11      | 1, 7, 8                | Kies tussen Zone 1 en 2, zelfs als Zone 3 de oudste virtuele machine heeft. Verwijder VM2 uit Zone 2, omdat dit de oudste virtuele machine in die zone is.   |
-| Inschalen              | _*_3_*_ , 4, 5, 10      | 6, 9, 11               | 1, 7, 8                | Kies Zone 1 zelfs als Zone 3 de oudste virtuele machine heeft. Verwijder VM3 uit Zone 1, omdat dit de oudste virtuele machine in die zone is.                  |
-| Inschalen              | 4, 5, 10               | 6, 9, 11               | _*_1_*_ , 7, 8          | Zones zijn evenwichtig. Verwijder VM1 in Zone 3, omdat dit de oudste VM in de schaalset is.                                               |
-| Inschalen              | _*_4_*_ , 5, 10         | 6, 9, 11               | 7, 8                   | Kies tussen Zone 1 en Zone 2. Verwijder VM4 in Zone 1, omdat dit de oudste VM in de twee zones is.                              |
-| Inschalen              | 5, 10                  | _*_6_*_ , 9, 11         | 7, 8                   | Kies Zone 2 zelfs als Zone 1 de oudste virtuele machine heeft. Verwijder VM6 in Zone 1, omdat dit de oudste virtuele machine in die zone is.                    |
-| Inschalen              | _*_5_*_ , 10            | 9, 11                  | 7, 8                   | Zones zijn evenwichtig. Verwijder VM5 in Zone 1, omdat dit de oudste VM in de schaalset is.                                                |
+| Inschalen              | 3, 4, 5, 10            | ***2***, 6, 9, 11      | 1, 7, 8                | Kies tussen Zone 1 en 2, zelfs als Zone 3 de oudste virtuele machine heeft. Verwijder VM2 uit Zone 2, omdat dit de oudste virtuele machine in die zone is.   |
+| Inschalen              | ***3***, 4, 5, 10      | 6, 9, 11               | 1, 7, 8                | Kies Zone 1 zelfs als Zone 3 de oudste virtuele machine heeft. Verwijder VM3 uit Zone 1, omdat dit de oudste virtuele machine in die zone is.                  |
+| Inschalen              | 4, 5, 10               | 6, 9, 11               | ***1***, 7, 8          | Zones zijn evenwichtig. Verwijder VM1 in Zone 3, omdat dit de oudste VM in de schaalset is.                                               |
+| Inschalen              | ***4***, 5, 10         | 6, 9, 11               | 7, 8                   | Kies tussen Zone 1 en Zone 2. Verwijder VM4 in Zone 1, omdat dit de oudste VM in de twee zones is.                              |
+| Inschalen              | 5, 10                  | ***6***, 9, 11         | 7, 8                   | Kies Zone 2 zelfs als Zone 1 de oudste virtuele machine heeft. Verwijder VM6 in Zone 1, omdat dit de oudste virtuele machine in die zone is.                    |
+| Inschalen              | ***5***, 10            | 9, 11                  | 7, 8                   | Zones zijn evenwichtig. Verwijder VM5 in Zone 1, omdat dit de oudste VM in de schaalset is.                                                |
 
 Voor niet-zonegebonden virtuele-machine schaal sets selecteert het beleid de oudste VM in de schaalset voor verwijdering. Een ' beveiligde ' VM wordt overgeslagen voor verwijdering.
 
@@ -225,12 +225,12 @@ Voor niet-zonegebonden virtuele-machine schaal sets selecteert het beleid de oud
 | Gebeurtenis                 | Exemplaar-Id's in zone 1  | Exemplaar-Id's in Zone2  | Exemplaar-Id's in Zone3  | Selectie inschalen                                                                                                               |
 |-----------------------|------------------------|------------------------|------------------------|----------------------------------------------------------------------------------------------------------------------------------|
 | Eerste               | 3, 4, 5, 10            | 2, 6, 9, 11            | 1, 7, 8                |                                                                                                                                  |
-| Inschalen              | 3, 4, 5, 10            | 2, 6, 9, _*_11_*_      | 1, 7, 8                | Kies tussen Zone 1 en 2. Verwijder VM11 uit Zone 2, omdat het de nieuwste VM in de twee zones is.                                |
-| Inschalen              | 3, 4, 5, _*_10_*_      | 2, 6, 9                | 1, 7, 8                | Kies Zone 1 omdat het meer Vm's heeft dan de andere twee zones. Verwijder VM10 uit Zone 1, omdat dit de nieuwste virtuele machine in die zone is.          |
-| Inschalen              | 3, 4, 5                | 2, 6, _*_9_*_          | 1, 7, 8                | Zones zijn evenwichtig. Verwijder VM9 in Zone 2, omdat dit de nieuwste VM in de schaalset is.                                                |
-| Inschalen              | 3, 4, 5                | 2, 6                   | 1, 7, _*_8_*_          | Kies tussen Zone 1 en Zone 3. Verwijder VM8 in Zone 3, omdat dit de nieuwste virtuele machine in die zone is.                                      |
-| Inschalen              | 3, 4, _*_5_*_          | 2, 6                   | 1, 7                   | Kies Zone 1 zelfs als Zone 3 de nieuwste virtuele machine heeft. Verwijder VM5 in Zone 1, omdat dit de nieuwste virtuele machine in die zone is.                    |
-| Inschalen              | 3, 4                   | 2, 6                   | 1, _ *_7_**             | Zones zijn evenwichtig. Verwijder VM7 in Zone 3, omdat dit de nieuwste VM in de schaalset is.                                                |
+| Inschalen              | 3, 4, 5, 10            | 2, 6, 9, ***11***      | 1, 7, 8                | Kies tussen Zone 1 en 2. Verwijder VM11 uit Zone 2, omdat het de nieuwste VM in de twee zones is.                                |
+| Inschalen              | 3, 4, 5, ***10***      | 2, 6, 9                | 1, 7, 8                | Kies Zone 1 omdat het meer Vm's heeft dan de andere twee zones. Verwijder VM10 uit Zone 1, omdat dit de nieuwste virtuele machine in die zone is.          |
+| Inschalen              | 3, 4, 5                | 2, 6, ***9***          | 1, 7, 8                | Zones zijn evenwichtig. Verwijder VM9 in Zone 2, omdat dit de nieuwste VM in de schaalset is.                                                |
+| Inschalen              | 3, 4, 5                | 2, 6                   | 1, 7, ***8***          | Kies tussen Zone 1 en Zone 3. Verwijder VM8 in Zone 3, omdat dit de nieuwste virtuele machine in die zone is.                                      |
+| Inschalen              | 3, 4, ***5***          | 2, 6                   | 1, 7                   | Kies Zone 1 zelfs als Zone 3 de nieuwste virtuele machine heeft. Verwijder VM5 in Zone 1, omdat dit de nieuwste virtuele machine in die zone is.                    |
+| Inschalen              | 3, 4                   | 2, 6                   | 1, ***7***             | Zones zijn evenwichtig. Verwijder VM7 in Zone 3, omdat dit de nieuwste VM in de schaalset is.                                                |
 
 Voor niet-zonegebonden virtuele-machine schaal sets selecteert het beleid de nieuwste VM in de schaalset voor verwijdering. Een ' beveiligde ' VM wordt overgeslagen voor verwijdering. 
 

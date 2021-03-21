@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 11/02/2019
 ms.author: azfuncdf
 ms.openlocfilehash: 63db8375379144b2ede78d9e7010a350b3f69b12
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101726407"
 ---
 # <a name="orchestrator-function-code-constraints"></a>Functie code beperkingen van Orchestrator
@@ -65,7 +65,7 @@ De taken worden synchroon uitgevoerd met één thread totdat alle geschiedenis i
 
 In deze sectie vindt u een beschrijving van het runtime gedrag dat u kunt begrijpen waarom een Orchestrator-functie niet kan worden gebruikt `await` of `yield` in een niet-duurzame taak. Er zijn twee redenen: de dispatcher-thread kan niet wachten tot de taak is voltooid en eventuele retour aanroepen door deze taak kunnen de tracerings status van de Orchestrator-functie mogelijk beschadigen. Sommige runtime controles zijn aanwezig om deze schendingen te detecteren.
 
-Raadpleeg de [bron code van de duurzame taak op github](https://github.com/Azure/durabletask)voor meer informatie over hoe het duurzame taak raamwerk Orchestrator-functies uitvoert. Zie [TaskOrchestrationExecutor.cs](https://github.com/Azure/durabletask/blob/master/src/DurableTask.Core/TaskOrchestrationExecutor.cs) en [TaskOrchestrationContext.cs](https://github.com/Azure/durabletask/blob/master/src/DurableTask.Core/TaskOrchestrationContext.cs)voor meer informatie.
+Raadpleeg de [bron code van de duurzame taak op github](https://github.com/Azure/durabletask)voor meer informatie over hoe het duurzame taak raamwerk Orchestrator-functies uitvoert. Zie met name [TaskOrchestrationExecutor. cs](https://github.com/Azure/durabletask/blob/master/src/DurableTask.Core/TaskOrchestrationExecutor.cs) en [TaskOrchestrationContext. cs](https://github.com/Azure/durabletask/blob/master/src/DurableTask.Core/TaskOrchestrationContext.cs).
 
 ## <a name="next-steps"></a>Volgende stappen
 

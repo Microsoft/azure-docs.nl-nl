@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 09/15/2020
 ms.author: mayg
 ms.openlocfilehash: 9e1008f7acbfe0685b7a171176c7dc54592d1491
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96019239"
 ---
 # <a name="install-a-linux-master-target-server-for-failback"></a>Een Linux-hoofddoelserver voor failback installeren
@@ -154,7 +154,7 @@ Als u de ID voor elke SCSI harde schijf in een virtuele Linux-machine wilt ophal
 
 3. Selecteer het tabblad **Opties** .
 
-4. Selecteer **Geavanceerd** algemeen in het linkerdeel venster  >  **General** en selecteer vervolgens de knop **configuratie parameters** in het rechter gedeelte van het scherm.
+4. Selecteer **Geavanceerd** algemeen in het linkerdeel venster  >  en selecteer vervolgens de knop **configuratie parameters** in het rechter gedeelte van het scherm.
 
     ![Configuratie parameter openen](./media/vmware-azure-install-linux-master-target/image24-ubuntu.png) 
 

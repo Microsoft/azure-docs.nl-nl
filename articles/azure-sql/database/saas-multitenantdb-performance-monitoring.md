@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/25/2019
 ms.openlocfilehash: d37bf2c84b74dba76e5d1921ed67072af7f6c328
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92790896"
 ---
 # <a name="monitor-and-manage-performance-of-sharded-multi-tenant-azure-sql-database-in-a-multi-tenant-saas-app"></a>Prestaties van sharded Azure SQL Database met meerdere tenant in een SaaS-app met meerdere tenants bewaken en beheren
@@ -46,9 +46,9 @@ Het beheren van de databaseprestaties bestaat uit het verzamelen en analyseren v
 ### <a name="performance-management-strategies"></a>Strategieën voor prestatiebeheer
 
 * Als u wilt voorkomen dat u handmatig prestaties moet bewaken, is **waarschuwingen instellen die worden geactiveerd wanneer databases van het normale bereik afwijken** het effectiefst.
-* Het **eDTU-niveau kan omhoog of omlaag worden geschaald** om te reageren op fluctuaties op de korte termijn in de rekenkracht van een database. Als deze fluctuatie regelmatig of op voorspelbare momenten optreedt, **kan het schalen van de database op automatisch worden ingesteld** . U kunt bijvoorbeeld omlaag schalen wanneer de workload licht is, zoals 's nachts of tijdens het weekend.
+* Het **eDTU-niveau kan omhoog of omlaag worden geschaald** om te reageren op fluctuaties op de korte termijn in de rekenkracht van een database. Als deze fluctuatie regelmatig of op voorspelbare momenten optreedt, **kan het schalen van de database op automatisch worden ingesteld**. U kunt bijvoorbeeld omlaag schalen wanneer de workload licht is, zoals 's nachts of tijdens het weekend.
 * U kunt ook **afzonderlijke tenants naar andere databases verplaatsen** bij fluctuaties op de langere termijn of wijzigingen in de tenants.
-* *Afzonderlijke* tenants kunnen uit een database worden gehaald. Hieraan kan een **afzonderlijke rekenkracht worden toegewezen als reactie op verhogingen op de korte termijn in de load van afzonderlijke tenants** . Wanneer de load is verlaagd, kan de tenant naar de database met meerdere tenants worden teruggezet. Als dit vooraf bekend is, kunnen tenants uit voorzorg worden verplaatst om ervoor te zorgen dat ze altijd over de benodigde resources beschikken en om gevolgen voor de andere tenants in de database met meerdere tenants te voorkomen. Als het om een voorspelbare vereiste gaat, zoals bij een locatie die met een toename in kaartverkoop te maken krijgt voor een populair evenement, kan dit beheergedrag in de toepassing worden geïntegreerd.
+* *Afzonderlijke* tenants kunnen uit een database worden gehaald. Hieraan kan een **afzonderlijke rekenkracht worden toegewezen als reactie op verhogingen op de korte termijn in de load van afzonderlijke tenants**. Wanneer de load is verlaagd, kan de tenant naar de database met meerdere tenants worden teruggezet. Als dit vooraf bekend is, kunnen tenants uit voorzorg worden verplaatst om ervoor te zorgen dat ze altijd over de benodigde resources beschikken en om gevolgen voor de andere tenants in de database met meerdere tenants te voorkomen. Als het om een voorspelbare vereiste gaat, zoals bij een locatie die met een toename in kaartverkoop te maken krijgt voor een populair evenement, kan dit beheergedrag in de toepassing worden geïntegreerd.
 
 [Azure Portal](https://portal.azure.com) biedt ingebouwde functionaliteit voor bewaking en waarschuwingen voor de meeste resources. Voor SQL Database zijn bewaking en waarschuwingen beschikbaar voor databases. De ingebouwde functionaliteit voor bewaking en waarschuwingen is resource-gebonden. Daardoor is het handig voor een klein aantal resources, maar niet handig als u met veel resources werkt.
 
@@ -56,7 +56,7 @@ Voor scenario's met grote volumes, waar u met veel resources werkt, kunnen [Azur
 
 ## <a name="get-the-wingtip-tickets-saas-multi-tenant-database-application-source-code-and-scripts"></a>De broncode en scripts van de Wingtip Tickets SaaS-databasetoepassing downloaden
 
-De Wingtip Tickets SaaS-multitenantdatabasescripts en broncode van de toepassing zijn beschikbaar in de GitHub-opslagplaats [WingtipTicketsSaaS-MultitenantDB](https://github.com/microsoft/WingtipTicketsSaaS-MultiTenantDB). Bekijk de [algemene richtlijnen](saas-tenancy-wingtip-app-guidance-tips.md) voor stappen voor het downloaden en het deblokkeren van de Wingtip Tickets SaaS-scripts.
+De Wingtip Tickets SaaS-multitenantdatabasescripts en broncode van de toepassing zijn beschikbaar in de GitHub-opslagplaats [WingtipTicketsSaaS-MultitenantDB](https://github.com/microsoft/WingtipTicketsSaaS-MultiTenantDB). Bekijk de [algemene richtlijnen](saas-tenancy-wingtip-app-guidance-tips.md) voor stappen voor het downloaden en het deblokkeren van de Wingtip Tickets-SaaS-scripts.
 
 ## <a name="provision-additional-tenants"></a>Extra tenants inrichten
 
@@ -64,8 +64,8 @@ U hebt voor deze zelfstudie meerdere tenants in een sharded database met meerder
 
 Als u al een batch tenants hebt ingericht in een eerdere zelfstudie, slaat u het gedeelte [Gebruik simuleren op alle tenantdatabases](#simulate-usage-on-all-tenant-databases) over.
 
-1. Open in de **Power shell ISE** \\Leermodules\\Prestatiebewaking en -beheer\\*Demo-PerformanceMonitoringAndManagement.ps1* . Houd dit script open; u gaat verschillende scenario's uitvoeren tijdens deze zelfstudie.
-1. Stel het volgende in: **$DemoScenario** = **1** , _Batch met tenants inrichten_
+1. Open in de **Power shell ISE** \\Leermodules\\Prestatiebewaking en -beheer\\*Demo-PerformanceMonitoringAndManagement.ps1*. Houd dit script open; u gaat verschillende scenario's uitvoeren tijdens deze zelfstudie.
+1. Stel het volgende in: **$DemoScenario** = **1**, _Batch met tenants inrichten_
 1. Druk op **F5** om het script uit te voeren.
 
 Het script implementeert 17 tenants in een paar minuten in de databases met meerdere tenants. 
@@ -85,8 +85,8 @@ Het script *Demo-PerformanceMonitoringAndManagement.ps1* is bedoeld voor het sim
 
 De load-generator past een *synthetische* load alleen voor CPU toe op elke tenantdatabase. De generator start voor elke tenantdatabase een taak, die periodiek een opgeslagen procedure aanroept die de load genereert. De load-niveaus (in DTU's), duur en intervallen zijn verschillend voor alle databases. Dit simuleert onvoorspelbare tenantactiviteit.
 
-1. Open in de **Power shell ISE** \\Leermodules\\Prestatiebewaking en -beheer\\*Demo-PerformanceMonitoringAndManagement.ps1* . Houd dit script open; u gaat verschillende scenario's uitvoeren tijdens deze zelfstudie.
-1. Stel het volgende in: **$DemoScenario** = **2** , _Load van normale intensiteit genereren_
+1. Open in de **Power shell ISE** \\Leermodules\\Prestatiebewaking en -beheer\\*Demo-PerformanceMonitoringAndManagement.ps1*. Houd dit script open; u gaat verschillende scenario's uitvoeren tijdens deze zelfstudie.
+1. Stel het volgende in: **$DemoScenario** = **2**, _Load van normale intensiteit genereren_
 1. Druk op **F5** om een load toe te passen op al uw tenants.
 
 Wingtip Tickets SaaS-database met meerdere tenants is een SaaS-app; de werkelijke workload van een SaaS-app is meestal sporadisch en onvoorspelbaar. Om dit te simuleren, produceert de load-generator een willekeurige workload die over alle tenants wordt verdeeld. Aangezien het een paar minuten duurt voordat er een load-patroon ontstaat, moet u de load-generator 3-5 minuten uitvoeren voordat u de workload in de volgende secties gaat volgen.
@@ -96,31 +96,31 @@ Wingtip Tickets SaaS-database met meerdere tenants is een SaaS-app; de werkelijk
 
 ## <a name="monitor-resource-usage-using-the-azure-portal"></a>Gebruik van resources bewaken met Azure Portal
 
-Open het portaal naar de database met meerdere tenants, **tenants1** , die de tenants bevat om het resourcegebruik bij te houden dat ontstaat door het toepassen van de load:
+Open het portaal naar de database met meerdere tenants, **tenants1**, die de tenants bevat om het resourcegebruik bij te houden dat ontstaat door het toepassen van de load:
 
 1. Open [Azure Portal](https://portal.azure.com) en blader naar de server *tenants1-mt-&lt;USER&gt;* .
-1. Schuif omlaag, zoek naar databases en klik op **tenants1** . Deze sharded database met meerdere tenants bevat alle tenants die tot nu toe zijn gemaakt.
+1. Schuif omlaag, zoek naar databases en klik op **tenants1**. Deze sharded database met meerdere tenants bevat alle tenants die tot nu toe zijn gemaakt.
 
 ![databasediagram](./media/saas-multitenantdb-performance-monitoring/multitenantdb.png)
 
-Bekijk de **DTU** -grafiek.
+Bekijk de **DTU**-grafiek.
 
 ## <a name="set-performance-alerts-on-the-database"></a>Prestatiewaarschuwingen voor de database instellen
 
 Stel een waarschuwing in voor de database die wordt geactiveerd bij een gebruik van \>75%:
 
 1. Open de database *tenants1* (op de server *tenants1-mt-&lt;USER&gt;* ) in het [Azure-portaal](https://portal.azure.com).
-1. Klik op **Waarschuwingsregels** en klik vervolgens op **+ Waarschuwing toevoegen** :
+1. Klik op **Waarschuwingsregels** en klik vervolgens op **+ Waarschuwing toevoegen**:
 
    ![waarschuwing toevoegen](./media/saas-multitenantdb-performance-monitoring/add-alert.png)
 
-1. Geef een naam op, bijvoorbeeld **hoog DTU** .
+1. Geef een naam op, bijvoorbeeld **hoog DTU**.
 1. Stel de volgende waarden in:
    * **Meetwaarde = DTU-percentage**
    * **Voorwaarde = groter dan**
-   * **Drempel = 75** .
+   * **Drempel = 75**.
    * **Periode = In de afgelopen 30 minuten**
-1. Voeg een e-mailadres toe aan het vak *Aanvullende e-mailadressen voor de administrator* en klik op **OK** .
+1. Voeg een e-mailadres toe aan het vak *Aanvullende e-mailadressen voor de administrator* en klik op **OK**.
 
    ![waarschuwing instellen](./media/saas-multitenantdb-performance-monitoring/set-alert.png)
 
@@ -134,14 +134,14 @@ Op de **langere termijn** kunt u query's of indexgebruik optimaliseren voor bete
 
 U kunt een zwaar belaste database simuleren door de load die de generator produceert, te verhogen. Doordat de tenants vaker en langer maximaal worden gebruikt, wordt de load voor de database met meerdere tenants verhoogd zonder dat de vereisten van de afzonderlijke tenants worden gewijzigd. U kunt de database eenvoudig opschalen in de portal of vanuit PowerShell. In deze oefening wordt de portal gebruikt.
 
-1. Stel *$DemoScenario* = **3** , _Load genereren met langere en frequentere bursts per database_ in om de intensiteit van de cumulatieve load voor de database te verhogen zonder de piekbelasting die is vereist voor elke tenant te wijzigen.
+1. Stel *$DemoScenario* = **3**, _Load genereren met langere en frequentere bursts per database_ in om de intensiteit van de cumulatieve load voor de database te verhogen zonder de piekbelasting die is vereist voor elke tenant te wijzigen.
 1. Druk op **F5** om een load toe te passen op al uw tenantdatabases.
 1. Ga naar de database **tenants1** in het Azure-portaal.
 
 Controleer het verhoogde DTU-verbruik voor de database in de bovenste grafiek. Het duurt enkele minuten voordat de nieuwe, hogere load wordt geactiveerd, maar de database moet vrij snel maximaal gebruik bereiken. Zodra de load een nieuw patroon vormt, wordt de database snel overbelast.
 
 1. Als u de database wilt opschalen, klikt u op **Prijscategorie (DTU's omhoog schalen)** op de blade Instellingen.
-1. Stel de **DTU** in op **100** . 
+1. Stel de **DTU** in op **100**. 
 1. Klik op **Toepassen** om de aanvraag te verzenden om de database te schalen.
 
 Ga terug naar het **tenants1** > **Overzicht** om de bewakingsgrafieken weer te geven. Bewaak het effect van de toevoeging van meer resources aan de database (met weinig tenants en een willekeurige load is het niet altijd duidelijk te bepalen totdat u al enige tijd bezig bent met de uitvoering). Houd er rekening mee dat 100% bij de bovenste grafiek nu staat voor 100 DTU's, terwijl voor de onderste grafiek 100% nog steeds 50 DTU's is.
@@ -154,9 +154,9 @@ Met het sharded model voor meerdere tenants kunt u kiezen of u een nieuwe tenant
 
 Als u al een nieuwe tenant in een eigen database hebt ingericht, kunt u de volgende stappen overslaan.
 
-1. Open in **PowerShell ISE** ...\\Learning Modules\\ProvisionTenants\\*Demo-ProvisionTenants.ps1* . 
+1. Open in **PowerShell ISE** ...\\Learning Modules\\ProvisionTenants\\*Demo-ProvisionTenants.ps1*. 
 1. Wijzig **$TenantName = "Salix Salsa"** en **$VenueType  = "dance"**
-1. Stel **$Scenario** = **2** , _Richt een tenant in met een nieuwe database voor één tenant_
+1. Stel **$Scenario** = **2**, _Richt een tenant in met een nieuwe database voor één tenant_
 1. Druk op **F5** om het script uit te voeren.
 
 Het script richt deze tenant in met een afzonderlijke database, registreert de database en de tenant met de catalogus en opent vervolgens de Gebeurtenispagina van de tenant in de browser. Vernieuw de pagina Event Hub en u ziet dat  "Salix Salsa" is toegevoegd als locatie.
@@ -167,10 +167,10 @@ Als één tenant in een database met meerdere tenants voortdurend zwaar belast w
 
 Deze oefening simuleert het effect van een hoge load voor Salix Salsa wanneer kaartjes voor een populair evenement in de verkoop gaan.
 
-1. Open het script …\\*Demo-PerformanceMonitoringAndManagement.ps1* .
-1. Stel het volgende in: **$DemoScenario = 5** , _Een normale load en hoge load genereren op één tenant (ongeveer 90 DTU's)._
+1. Open het script …\\*Demo-PerformanceMonitoringAndManagement.ps1*.
+1. Stel het volgende in: **$DemoScenario = 5**, _Een normale load en hoge load genereren op één tenant (ongeveer 90 DTU's)._
 1. Stel **$SingleTenantName = Salix Salsa**
-1. Voer het script uit met **F5** .
+1. Voer het script uit met **F5**.
 
 Ga naar het portaal en navigeer naar **salixsalsa** > **Overzicht** om de controlegrafieken weer te geven. 
 

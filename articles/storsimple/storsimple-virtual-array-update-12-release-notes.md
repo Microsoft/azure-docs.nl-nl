@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 05/29/2019
 ms.author: alkohli
 ms.openlocfilehash: 1118dfcec67a49365f1f6e5e522e98b97694d052
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94960186"
 ---
 # <a name="storsimple-virtual-array-update-12-release-notes"></a>Release opmerkingen bij Update 1,2 StorSimple Virtual array
@@ -59,7 +59,7 @@ Er zijn geen nieuwe problemen vermeld in update 1,2. Alle problemen die in de re
 
 Down load KB4502035 en [Pas de update toe via de lokale web-UI](storsimple-virtual-array-install-update-11.md#use-the-local-web-ui).
 
-## <a name="references"></a>Verwijzingen
+## <a name="references"></a>Referenties
 
 Zoekt u een oudere release-Opmerking? Ga naar:
 * [Release opmerkingen bij Update 1,1 StorSimple Virtual array](storsimple-virtual-array-update-11-release-notes.md)

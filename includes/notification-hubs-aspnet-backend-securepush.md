@@ -5,16 +5,16 @@ ms.topic: include
 ms.date: 09/14/2020
 ms.author: sethm
 ms.openlocfilehash: fb3c95b74128f1da7b29a290e17fefe21987dd76
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96019413"
 ---
 ## <a name="webapi-project"></a>WebAPI-project
 
 1. Open in Visual Studio het **project appbackend** -project dat u hebt gemaakt in de zelf studie **gebruikers melden** .
-2. Vervang in Notifications.cs de volledige **meldingen** klasse door de volgende code. Zorg ervoor dat u de tijdelijke aanduidingen vervangt door de connection string (met volledige toegang) voor uw notification hub en de naam van de hub. U kunt deze waarden verkrijgen via de [Azure Portal](https://portal.azure.com). Deze module bevat nu de verschillende beveiligde meldingen die worden verzonden. In een volledige implementatie worden de meldingen opgeslagen in een Data Base. ter vereenvoudiging: in dit geval slaan we ze op in het geheugen.
+2. Vervang in Notifications. cs de volledige **meldingen** klasse door de volgende code. Zorg ervoor dat u de tijdelijke aanduidingen vervangt door de connection string (met volledige toegang) voor uw notification hub en de naam van de hub. U kunt deze waarden verkrijgen via de [Azure Portal](https://portal.azure.com). Deze module bevat nu de verschillende beveiligde meldingen die worden verzonden. In een volledige implementatie worden de meldingen opgeslagen in een Data Base. ter vereenvoudiging: in dit geval slaan we ze op in het geheugen.
 
    ```csharp
     public class Notification
@@ -56,7 +56,7 @@ ms.locfileid: "96019413"
     }
     ```
 
-3. Vervang in NotificationsController.cs de code in de **Notifications controller** -klassedefinitie door de volgende code. Dit onderdeel implementeert een manier waarop het apparaat de melding veilig kan ophalen en biedt ook een manier (in het kader van deze zelf studie) om een beveiligde push naar uw apparaten te activeren. Houd er rekening mee dat bij het verzenden van de melding naar de notification hub alleen een onbewerkte melding met de ID van de melding (en geen echt bericht) wordt verzonden:
+3. Vervang in Notifications controller. cs de code in de klassen definitie **Notifications controller** met de volgende code. Dit onderdeel implementeert een manier waarop het apparaat de melding veilig kan ophalen en biedt ook een manier (in het kader van deze zelf studie) om een beveiligde push naar uw apparaten te activeren. Houd er rekening mee dat bij het verzenden van de melding naar de notification hub alleen een onbewerkte melding met de ID van de melding (en geen echt bericht) wordt verzonden:
 
    ```csharp
     public NotificationsController()

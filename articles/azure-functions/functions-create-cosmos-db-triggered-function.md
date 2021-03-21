@@ -6,10 +6,10 @@ ms.topic: how-to
 ms.date: 04/28/2020
 ms.custom: cc996988-fb4f-47
 ms.openlocfilehash: 621773a84db99dbacfaa163f77189974ba102163
-ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98034812"
 ---
 # <a name="create-a-function-triggered-by-azure-cosmos-db"></a>Een door Azure Cosmos DB geactiveerde functie maken
@@ -31,7 +31,7 @@ Vereisten voor het voltooien van deze zelfstudie:
 
 Meld u met uw Azure-account aan bij [Azure Portal](https://portal.azure.com/).
 
-## <a name="create-an-azure-cosmos-db-account"></a>Een Azure Cosmos DB-account maken
+## <a name="create-an-azure-cosmos-db-account"></a>Maak een Azure Cosmos DB-account
 
 U moet een Azure Cosmos DB-account hebben dat gebruikmaakt van de SQL-API voordat u de trigger maakt.
 

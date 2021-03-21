@@ -7,10 +7,10 @@ author: kanshiG
 ms.author: govindk
 ms.date: 01/07/2021
 ms.openlocfilehash: ec82532b54e7834b62fcc03d3ee7de1345a0f546
-ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98027771"
 ---
 # <a name="how-to-monitor-normalized-rus-for-an-azure-cosmos-container-or-an-account"></a>Genormaliseerde RU/s voor een Azure Cosmos-container of-account bewaken
@@ -22,7 +22,7 @@ De **genormaliseerde** metrische gegevens over het gebruik van ru worden gebruik
 
 ## <a name="what-to-expect-and-do-when-normalized-rus-is-higher"></a>Wat u kunt verwachten en wanneer genormaliseerde RU/s hoger is
 
-Wanneer het genormaliseerde RU/s-verbruik 100% voor het opgegeven partitie sleutel bereik bereikt en als een client nog steeds aanvragen in dat tijd venster van 1 seconde in het desbetreffende partitie sleutel bereik ontvangt, wordt er een beperkte fout weer gegeven. De client moet de voorgestelde wacht tijd respecteren en de aanvraag opnieuw proberen. Met de SDK kunt u deze situatie eenvoudig afhandelen door vooraf geconfigureerde tijden opnieuw te proberen door op de juiste manier te wachten.  Het is niet nodig dat u de fout waarde voor het beperken van de RU-frequentie alleen ziet omdat de genormaliseerde RU 100% heeft bereikt. Dat komt doordat de genormaliseerde RU een enkele waarde is die het maximale gebruik voor alle partitie sleutel reeksen vertegenwoordigt, een partitie sleutel bereik mogelijk kan worden gebruikt, maar de andere partitie sleutel bereiken kunnen de aanvragen zonder problemen verwerken. Eén bewerking zoals een opgeslagen procedure die alle RU/s op een partitie sleutel bereik gebruikt, zal bijvoorbeeld leiden tot een korte piek in het genormaliseerde RU/s-verbruik. In dergelijke gevallen zijn er geen problemen met de onmiddellijke frequentie beperking als de aanvraag frequentie laag is of aanvragen worden gedaan voor andere partities op verschillende partitie sleutel bereiken. 
+Wanneer het genormaliseerde RU/s-verbruik 100% voor het opgegeven partitie sleutel bereik bereikt en als een client nog steeds aanvragen in dat tijd venster van 1 seconde in het desbetreffende partitie sleutel bereik ontvangt, wordt er een beperkte fout weer gegeven. De client moet de voorgestelde wacht tijd respecteren en de aanvraag opnieuw proberen. Met de SDK kunt u deze situatie eenvoudig afhandelen door vooraf geconfigureerde tijden opnieuw te proberen door op de juiste manier te wachten.  Het is niet nodig dat u de fout waarde voor het beperken van de RU-frequentie alleen ziet omdat de genormaliseerde RU 100% heeft bereikt. Dat komt doordat de genormaliseerde RU een enkele waarde is die het maximale gebruik voor alle partitie sleutel reeksen vertegenwoordigt, een partitie sleutel bereik mogelijk kan worden gebruikt, maar de andere partitie sleutel bereiken kunnen de aanvragen zonder problemen verwerken. Eén bewerking zoals een opgeslagen procedure die alle RU/s op een partitie sleutel bereik gebruikt, zal bijvoorbeeld leiden tot een korte piek in het genormaliseerde RU/s-verbruik. In dergelijke gevallen treden er geen onmiddellijke fouten met de frequentiebeperking op als de aanvraagfrequentie laag is of als aanvragen worden gedaan voor andere partities op verschillende partitiesleutelbereiken. 
 
 Met de Azure Monitor metrische gegevens kunt u de bewerkingen per status code voor SQL API vinden met behulp van het **totale aantal aanvragen** . Later kunt u filteren op deze aanvragen met de status code 429 en deze vervolgens splitsen op **bewerkings type**.  
 

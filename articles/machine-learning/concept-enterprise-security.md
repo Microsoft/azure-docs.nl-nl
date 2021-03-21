@@ -11,10 +11,10 @@ author: aashishb
 ms.reviewer: larryfr
 ms.date: 11/20/2020
 ms.openlocfilehash: a079504872eaf3840416a99e784c4d33a6828b0c
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94992026"
 ---
 # <a name="enterprise-security-and-governance-for-azure-machine-learning"></a>Enter prise Security en governance voor Azure Machine Learning
@@ -97,7 +97,7 @@ Wanneer u modellen als webservices implementeert, kunt u TLS (trans port Layer S
 
 ## <a name="vulnerability-scanning"></a>Scannen op beveiligingsproblemen
 
-[Azure Security Center](../security-center/security-center-introduction.md) biedt uniforme beveiligings beheer en geavanceerde bedreigings beveiliging in hybride Cloud werkbelastingen. Voor Azure machine learning moet u het scannen van uw [Azure container Registry](../container-registry/container-registry-intro.md) resource en Azure Kubernetes-service resources inschakelen. Zie [Azure container Registry Image scanning by Security Center](../security-center/defender-for-container-registries-introduction.md) en [Azure Kubernetes Services Integration with Security Center](../security-center/defender-for-kubernetes-introduction.md)(Engelstalig) voor meer informatie.
+[Azure Security Center](../security-center/security-center-introduction.md) biedt geïntegreerd beveiligingsbeheer en geavanceerde bedreigingsbeveiliging voor verschillende hybride cloudworkloads. Voor Azure machine learning moet u het scannen van uw [Azure container Registry](../container-registry/container-registry-intro.md) resource en Azure Kubernetes-service resources inschakelen. Zie [Azure container Registry Image scanning by Security Center](../security-center/defender-for-container-registries-introduction.md) en [Azure Kubernetes Services Integration with Security Center](../security-center/defender-for-kubernetes-introduction.md)(Engelstalig) voor meer informatie.
 
 ## <a name="audit-and-manage-compliance"></a>Naleving controleren en beheren
 

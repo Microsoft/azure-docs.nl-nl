@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8aa45294de4ef644c20ef66b7163706dca9759d3
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95996522"
 ---
 # <a name="azure-ad-connect-upgrade-from-dirsync"></a>Azure AD Connect: upgraden van DirSync
@@ -162,7 +162,7 @@ Wanneer u Azure AD Connect installeert op een nieuwe server, gaat deze ervan uit
      ![Scherm afbeelding met de voorschot configuratie opties voor het upgraden van DirSync.](./media/how-to-dirsync-upgrade-get-started/advancedsettings.png)
 7. Klik op **Volgende**.
 8. Laat op de pagina **Gereed voor configuratie** het vakje **Start het synchronisatieproces zodra de configuratie is voltooid** aangevinkt. De server is nu in de [faseringsmodus](how-to-connect-sync-staging-server.md) dus wijzigingen worden niet geëxporteerd naar Azure AD.
-9. Klik op **Install**.
+9. Klik op **Installeren**.
 10. Nadat de installatie is voltooid, dient u zich af te melden en weer aan te melden bij Windows vóór u Synchronization Service Manager of Synchronization Rule Editor gaat gebruiken of andere configuratiewijzigingen gaat maken.
 
 > [!NOTE]

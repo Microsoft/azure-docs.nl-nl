@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: mathoma
 ms.date: 04/28/2020
 ms.openlocfilehash: 6ff1d485ab4c0662ae8a9d754ce67b1446b76fcc
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92780951"
 ---
 # <a name="replication-to-azure-sql-database"></a>Replicatie naar Azure SQL Database
@@ -55,7 +55,7 @@ Er zijn verschillende [typen replicatie](/sql/relational-databases/replication/t
 | Replicatie | Azure SQL Database | Azure SQL Managed Instance |
 | :----| :------------- | :--------------- |
 | [**Standaard transactionele**](/sql/relational-databases/replication/transactional/transactional-replication) | Ja (alleen als abonnee) | Ja | 
-| [**Momentopname**](/sql/relational-databases/replication/snapshot-replication) | Ja (alleen als abonnee) | Ja|
+| [**Snapshot**](/sql/relational-databases/replication/snapshot-replication) | Ja (alleen als abonnee) | Ja|
 | [**Samenvoeg replicatie**](/sql/relational-databases/replication/merge/merge-replication) | Nee | Nee|
 | [**Peer-to-peer**](/sql/relational-databases/replication/transactional/peer-to-peer-transactional-replication) | Nee | Nee|
 | [**Bidirectioneel**](/sql/relational-databases/replication/transactional/bidirectional-transactional-replication) | Nee | Ja|
@@ -127,7 +127,7 @@ De volgende opties worden niet ondersteund voor Azure SQL Database-abonnementen:
 Maak een publicatie en een push-abonnement. Zie voor meer informatie:
   
 - [Een publicatie maken](/sql/relational-databases/replication/publish/create-a-publication)
-- [Maak een push-abonnement](/sql/relational-databases/replication/create-a-push-subscription/) met behulp van de server naam als de abonnee (bijvoorbeeld **N'azuresqldbdns. data base. Windows. net** ) en de naam van de Azure SQL database als doel database (bijvoorbeeld **AdventureWorks** ).  
+- [Maak een push-abonnement](/sql/relational-databases/replication/create-a-push-subscription/) met behulp van de server naam als de abonnee (bijvoorbeeld **N'azuresqldbdns. data base. Windows. net**) en de naam van de Azure SQL database als doel database (bijvoorbeeld **AdventureWorks**).  
 
 ## <a name="see-also"></a>Zie ook  
 

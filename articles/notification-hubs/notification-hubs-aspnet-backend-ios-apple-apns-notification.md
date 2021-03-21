@@ -15,10 +15,10 @@ ms.author: sethm
 ms.reviewer: thsomasu
 ms.lastreviewed: 01/04/2019
 ms.openlocfilehash: 167c666c536ee33531fd069dbd1edb530331a9f3
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96016936"
 ---
 # <a name="tutorial-send-push-notifications-to-specific-users-using-azure-notification-hubs"></a>Zelf studie: Push meldingen verzenden naar specifieke gebruikers met behulp van Azure Notification Hubs
@@ -66,7 +66,7 @@ Als u Mobile Apps wilt gebruiken als uw back-end-service, raadpleegt u de [Mobil
 
      Sommige onderdelen zijn toegevoegd aan de zelf studie [Push meldingen verzenden naar IOS-apps met behulp van Azure notification hubs](ios-sdk-get-started.md) .
 
-3. **Ctrl** Sleep de elementen in de weer gave naar `ViewController.h` en voeg deze nieuwe mogelijkheden toe met CTRL:
+3.  Sleep de elementen in de weer gave naar `ViewController.h` en voeg deze nieuwe mogelijkheden toe met CTRL:
 
     ```objc
     @property (weak, nonatomic) IBOutlet UITextField *UsernameField;

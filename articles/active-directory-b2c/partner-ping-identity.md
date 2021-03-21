@@ -12,10 +12,10 @@ ms.date: 01/20/2021
 ms.author: gasinh
 ms.subservice: B2C
 ms.openlocfilehash: 94e7ae93d05ae8ee35028882e14d8da74814d833
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "101650223"
 ---
 # <a name="tutorial-configure-ping-identity-with-azure-active-directory-b2c-for-secure-hybrid-access"></a>Zelf studie: ping-identiteit configureren met Azure Active Directory B2C voor beveiligde hybride toegang
@@ -140,7 +140,7 @@ Volg deze stappen om een virtuele host te maken:
 
 4. Voer **443** in het veld poort in
 
-5. Selecteer **Opslaan**.
+5. Selecteer **Opslaan**
 
 #### <a name="step-2--create-a-web-session"></a>Stap 2: een websessie maken
 
@@ -162,7 +162,7 @@ Volg deze stappen om een websessie te maken:
 
 8. Optioneel: u kunt aangepaste claims maken en gebruiken met de Microsoft Graph-API. Als u ervoor kiest om dit te doen, selecteert u **Geavanceerd** en schakelt u de opties **profiel aanvragen** en **gebruikers kenmerken vernieuwen** . Zie [een aangepaste claim gebruiken](../active-directory/manage-apps/application-proxy-configure-single-sign-on-with-headers.md)voor meer informatie over het gebruik van aangepaste claims.
 
-9. Selecteer **Opslaan**.
+9. Selecteer **Opslaan**
 
 #### <a name="step-3--create-identity-mapping"></a>Stap 3: identiteits toewijzing maken
 
@@ -189,7 +189,7 @@ Volg deze stappen om identiteits toewijzing te maken:
    |verbindings   |     x-Scope |
    |AMR    |    x-AMR    |
 
-6. Selecteer **Opslaan**.
+6. Selecteer **Opslaan**
 
 #### <a name="step-4--create-a-site"></a>Stap 4: een site maken
 
@@ -210,7 +210,7 @@ Volg deze stappen om een site te maken:
 
 6. Als voor het doel beveiligde verbindingen worden verwacht, stelt u de vertrouwde certificaat groep in op **elk vertrouwen**.
 
-7. Selecteer **Opslaan**.
+7. Selecteer **Opslaan**
 
 #### <a name="step-5--create-an-application"></a>Stap 5: een toepassing maken
 
@@ -239,7 +239,7 @@ Volg deze stappen voor het maken van een toepassing in PingAccess voor elke toep
 
 10. Selecteer **ingeschakeld** om de site in te scha kelen wanneer u opslaat
 
-11. Selecteer **Opslaan**.
+11. Selecteer **Opslaan**
 
 ### <a name="configure-the-pingfederate-authentication-policy"></a>Het PingFederate-verificatie beleid configureren
 

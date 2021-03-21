@@ -11,10 +11,10 @@ author: nibaccam
 ms.author: nibaccam
 ms.date: 04/09/2020
 ms.openlocfilehash: ba85bda1e322d3efd467527b48bd4cd90eb7ce8c
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96922622"
 ---
 # <a name="prevent-overfitting-and-imbalanced-data-with-automated-machine-learning"></a>Voor komen dat gegevens met automatische machine learning worden verdeeld en gebalanceerd.
@@ -27,7 +27,7 @@ Over het machine learning vindt plaats wanneer een model te groot is voor de opl
 
 Bekijk de volgende getrainde modellen en de bijbehorende trein-en test keurigheden.
 
-| Modelleren | Nauw keurigheid trainen | Nauw keurigheid testen |
+| Model | Nauw keurigheid trainen | Nauw keurigheid testen |
 |-------|----------------|---------------|
 | A | 99,9% | 95% |
 | B | 87% | 87% |
@@ -81,7 +81,7 @@ Gegevens die in het algemeen worden gebalanceerd, worden doorgaans gevonden in g
 
 Daarnaast worden automatisch de volgende grafieken gegenereerd, die u kunnen helpen inzicht te krijgen in de juistheid van de classificaties van uw model en modellen te identificeren die mogelijk van invloed zijn op gegevens die niet in evenwicht zijn.
 
-Grafiek| Description
+Grafiek| Beschrijving
 ---|---
 [Verwar ring matrix](how-to-understand-automated-ml.md#confusion-matrix)| Hiermee worden de juist geclassificeerde labels geëvalueerd op basis van de daad werkelijke labels van de gegevens. 
 [Precisie-intrekken](how-to-understand-automated-ml.md#precision-recall-curve)| Evalueert de verhouding van de juiste labels op basis van de verhouding van gevonden label exemplaren van de gegevens 

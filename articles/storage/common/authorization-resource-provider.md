@@ -10,10 +10,10 @@ ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
 ms.openlocfilehash: fcf3e9228c8e651efb8f97067f7ba9eead5959db
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92789672"
 ---
 # <a name="use-the-azure-storage-resource-provider-to-access-management-resources"></a>De resource provider van Azure Storage gebruiken om toegang te krijgen tot beheer resources
@@ -53,7 +53,7 @@ Ingebouwde rollen die machtigingen verlenen voor het aanroepen van opslag beheer
 | **Beheerder van gebruikerstoegang** | Kan de toegang tot het opslag account beheren.   | Ja, geeft een beveiligingsprincipal toestemming om machtigingen toe te wijzen aan zichzelf en anderen. |
 | **Inzender voor virtuele machines** | Kan virtuele machines beheren, maar niet het opslag account waarmee ze zijn verbonden.   | Ja, biedt machtigingen voor het weer geven en opnieuw genereren van de sleutel van het opslag account. |
 
-De derde kolom in de tabel geeft aan of de ingebouwde rol ondersteuning biedt voor **micro soft. Storage/Storage accounts/listkeys ophalen/Action** . Met deze actie worden machtigingen verleend om de sleutels voor het opslag account te lezen en opnieuw te genereren. Machtigingen voor toegang tot Azure Storage beheer resources bevatten niet ook machtigingen voor toegang tot gegevens. Als een gebruiker echter toegang heeft tot de account sleutels, kunnen ze de account sleutels gebruiken om toegang te krijgen tot Azure Storage gegevens via een gedeelde sleutel autorisatie.
+De derde kolom in de tabel geeft aan of de ingebouwde rol ondersteuning biedt voor **micro soft. Storage/Storage accounts/listkeys ophalen/Action**. Met deze actie worden machtigingen verleend om de sleutels voor het opslag account te lezen en opnieuw te genereren. Machtigingen voor toegang tot Azure Storage beheer resources bevatten niet ook machtigingen voor toegang tot gegevens. Als een gebruiker echter toegang heeft tot de account sleutels, kunnen ze de account sleutels gebruiken om toegang te krijgen tot Azure Storage gegevens via een gedeelde sleutel autorisatie.
 
 ### <a name="custom-roles-for-management-operations"></a>Aangepaste rollen voor beheer bewerkingen
 

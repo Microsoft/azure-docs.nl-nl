@@ -4,10 +4,10 @@ description: In dit artikel leest u hoe de Azure Backup-service een back-up maak
 ms.topic: conceptual
 ms.date: 09/13/2019
 ms.openlocfilehash: 691fe991ad141696c0c68e915d7225001a1befd0
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98733567"
 ---
 # <a name="an-overview-of-azure-vm-backup"></a>Een overzicht van Azure VM backup
@@ -121,7 +121,7 @@ Wanneer u back-ups van VM's configureert, wordt u aangeraden deze procedures te 
 - Als u virtuele machines herstelt vanuit één kluis, raden we u ten zeerste aan om andere [v2-opslag accounts voor algemeen](../storage/common/storage-account-upgrade.md) gebruik te gebruiken om ervoor te zorgen dat het doel-opslag account niet wordt beperkt. Elke virtuele machine moet bijvoorbeeld een ander opslag account hebben. Als er bijvoorbeeld tien Vm's zijn teruggezet, gebruikt u 10 verschillende opslag accounts.
 - Voor het maken van back-ups van virtuele machines die gebruikmaken van Premium Storage met direct terugzetten, raden we aan om *50%* beschik bare ruimte toe te wijzen aan de totale toegewezen opslag ruimte. Dit is **alleen** vereist voor de eerste back-up. De 50% beschik bare ruimte is geen vereiste voor back-ups nadat de eerste back-up is voltooid.
 - De limiet voor het aantal schijven per opslagaccount is relatief ten opzichte van de mate van toegang tot de schijven door toepassingen die worden uitgevoerd op een IaaS-VM (infrastructure as a service). Als er op één opslagaccount vijf tot tien schijven of meer aanwezig zijn, geldt als vuistregel dat de belasting kan worden verdeeld door sommige schijven naar afzonderlijke opslagaccounts te verplaatsen.
-- Als u virtuele machines met beheerde schijven wilt herstellen met behulp van Power shell, geeft u de extra para meter **_TargetResourceGroupName_* _ op om de resource groep op te geven waarvoor beheerde schijven zullen worden hersteld. hier vindt u [meer informatie](./backup-azure-vms-automation.md#restore-managed-disks).
+- Als u virtuele machines met beheerde schijven wilt herstellen met behulp van Power shell, geeft u de extra para meter ***TargetResourceGroupName*** op om de resource groep op te geven waarvoor beheerde schijven zullen worden hersteld. hier vindt u [meer informatie](./backup-azure-vms-automation.md#restore-managed-disks).
 
 ## <a name="backup-costs"></a>Back-upkosten
 
@@ -131,7 +131,7 @@ De facturering begint pas nadat de eerste geslaagde back-up is voltooid. Op dit 
 
 Facturering voor een opgegeven virtuele machine stopt alleen als de beveiliging is gestopt en alle back-upgegevens worden verwijderd. Wanneer de beveiliging wordt gestopt en er geen actieve back-uptaken zijn, wordt de grootte van de laatste geslaagde back-up van de virtuele machine de beveiligde instantie grootte die wordt gebruikt voor de maandelijkse factuur.
 
-De berekening van de grootte van beveiligde instanties is gebaseerd op de _actual * grootte van de virtuele machine. De grootte van de virtuele machine is de som van alle gegevens in de virtuele machine, met uitzonde ring van de tijdelijke opslag. Prijzen zijn gebaseerd op de werkelijke gegevens die op de gegevens schijven zijn opgeslagen, niet op de Maxi maal ondersteunde grootte voor elke gegevens schijf die is gekoppeld aan de virtuele machine.
+De berekening van de grootte van beveiligde instanties is gebaseerd op de *werkelijke* grootte van de virtuele machine. De grootte van de virtuele machine is de som van alle gegevens in de virtuele machine, met uitzonde ring van de tijdelijke opslag. Prijzen zijn gebaseerd op de werkelijke gegevens die op de gegevens schijven zijn opgeslagen, niet op de Maxi maal ondersteunde grootte voor elke gegevens schijf die is gekoppeld aan de virtuele machine.
 
 Op dezelfde manier is de factuur voor back-upopslag gebaseerd op de hoeveelheid gegevens die is opgeslagen in Azure Backup, wat de som is van de werkelijke gegevens in elk herstel punt.
 

@@ -12,10 +12,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d67460c654c854c5a855560dde1d67732fa818c7
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98681952"
 ---
 # <a name="import-and-export-azure-ad-connect-configuration-settings"></a>Azure AD Connect configuratie-instellingen importeren en exporteren 
@@ -77,10 +77,10 @@ De instellingen migreren:
 
    ![Scherm opname van Azure AD Connect directory's.](media/how-to-connect-import-export-config/migrate1.png)
 
-1. Voer het script uit zoals hier wordt weer gegeven en sla de volledige server configuratie directory op. Kopieer deze map naar de nieuwe staging-server. U moet de volledige **geëxporteerde-ServerConfiguration-_-** map naar de nieuwe server kopiëren.
+1. Voer het script uit zoals hier wordt weer gegeven en sla de volledige server configuratie directory op. Kopieer deze map naar de nieuwe staging-server. U moet de volledige **geëxporteerde-ServerConfiguration-*-** map naar de nieuwe server kopiëren.
 
    ![Scherm opname van het script in Windows Power shell. ](media/how-to-connect-import-export-config/migrate2.png)
-    ![ Scherm opname van het kopiëren van de map geëxporteerd-ServerConfiguration-_.](media/how-to-connect-import-export-config/migrate3.png)
+    ![ Scherm opname van het kopiëren van de geëxporteerde-ServerConfiguration-*-map.](media/how-to-connect-import-export-config/migrate3.png)
 
 1. Start **Azure AD Connect** door te dubbel klikken op het pictogram op het bureau blad. Ga akkoord met de licentie voorwaarden voor micro soft-software en selecteer op de volgende pagina **aanpassen**.
 1. Schakel het selectie vakje **synchronisatie-instellingen importeren** in. Selecteer **Bladeren** om door de gekopieerde-over geëxporteerde-ServerConfiguration-*-map te bladeren. Selecteer de MigratedPolicy.jsin om de gemigreerde instellingen te importeren.

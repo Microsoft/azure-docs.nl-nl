@@ -11,15 +11,15 @@ ms.date: 12/14/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: cb33e11af26d5f5a2676f5b236ac142179bdb550
-ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99592837"
 ---
 # <a name="azure-ad-b2c-custom-policy-overview"></a>Overzicht van Azure AD B2C aangepaste beleids regels
 
-Aangepaste beleids regels zijn configuratie bestanden waarmee het gedrag van uw Azure Active Directory B2C (Azure AD B2C)-Tenant wordt gedefinieerd. Terwijl [gebruikers stromen](user-flow-overview.md) vooraf zijn gedefinieerd in de Azure AD B2C portal voor de meest voorkomende identiteits taken, kunnen aangepaste beleids regels volledig worden bewerkt door een identiteits ontwikkelaar om veel verschillende taken uit te voeren.
+Aangepaste beleidsregels zijn configuratiebestanden die het gedrag van uw Azure AD B2C-tenant (Azure Active Directory B2C) definiëren. Terwijl [gebruikers stromen](user-flow-overview.md) vooraf zijn gedefinieerd in de Azure AD B2C portal voor de meest voorkomende identiteits taken, kunnen aangepaste beleids regels volledig worden bewerkt door een identiteits ontwikkelaar om veel verschillende taken uit te voeren.
 
 Een aangepast beleid is volledig configureerbaar en op basis van beleid. Een aangepast beleid is een vertrouwens relatie tussen entiteiten in standaard-protocol indelingen, zoals OpenID Connect Connect, OAuth, SAML en een aantal niet-standaard-, bijvoorbeeld REST API-systeem claim uitwisselingen. Het Framework maakt gebruikers vriendelijke, met wit gelabeld ervaring.
 

@@ -4,10 +4,10 @@ description: Beheerde identiteiten gebruiken in azure Service Fabric toepassings
 ms.topic: article
 ms.date: 10/09/2019
 ms.openlocfilehash: e26a29020f26583f7e4aa16434c7e8647ba9a5a3
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98871058"
 ---
 # <a name="how-to-leverage-a-service-fabric-applications-managed-identity-to-access-azure-services"></a>De beheerde identiteit van een Service Fabric-toepassing gebruiken voor toegang tot Azure-Services

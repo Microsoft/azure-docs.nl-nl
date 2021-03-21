@@ -12,10 +12,10 @@ ms.author: danil
 ms.reviewer: wiassaf, sstein
 ms.date: 12/19/2018
 ms.openlocfilehash: 748ac448ad8bf5c06e5be8b7a4a8b00a9b7af84b
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96500883"
 ---
 # <a name="find-and-apply-performance-recommendations"></a>Aanbevelingen voor prestaties zoeken en Toep assen
@@ -25,11 +25,11 @@ U kunt de Azure Portal gebruiken om prestatie aanbevelingen te vinden die de pre
 
 ## <a name="viewing-recommendations"></a>Aanbevelingen weer geven
 
-Als u aanbevelingen voor prestaties wilt weer geven en Toep assen, hebt u de juiste machtigingen voor Azure [op rollen gebaseerde toegangs beheer (Azure RBAC)](../../role-based-access-control/overview.md) nodig in Azure. **Reader** Voor het weer geven van de aanbevelingen en de **eigenaar** van de **SQL DB-Inzender** **zijn machtigingen vereist** voor het uitvoeren van acties. indexen maken of verwijderen en het maken van de index annuleren.
+Als u aanbevelingen voor prestaties wilt weer geven en Toep assen, hebt u de juiste machtigingen voor Azure [op rollen gebaseerde toegangs beheer (Azure RBAC)](../../role-based-access-control/overview.md) nodig in Azure. Voor het weer geven van de aanbevelingen en de **eigenaar** van de **SQL DB-Inzender** **zijn machtigingen vereist** voor het uitvoeren van acties. indexen maken of verwijderen en het maken van de index annuleren.
 
 Gebruik de volgende stappen om aanbevelingen voor prestaties te vinden op het Azure Portal:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 2. Ga naar **alle services**  >  **SQL-data bases** en selecteer uw data base.
 3. Navigeer naar **Aanbevolen prestaties** om de beschik bare aanbevelingen voor de geselecteerde Data Base weer te geven.
 
@@ -132,7 +132,7 @@ Het Toep assen van een aanbeveling wordt mogelijk niet onmiddellijk uitgevoerd. 
 | In behandeling |De opdracht aanbeveling Toep assen is ontvangen en is gepland voor uitvoering. |
 | Uitvoeren |De aanbeveling wordt toegepast. |
 | Valideren |Aanbeveling is toegepast en de service meet de voor delen. |
-| Success |De aanbeveling is toegepast en de voor delen zijn gemeten. |
+| Geslaagd |De aanbeveling is toegepast en de voor delen zijn gemeten. |
 | Fout |Er is een fout opgetreden tijdens het Toep assen van de aanbeveling. Dit kan een tijdelijk probleem zijn, of mogelijk een schema wijziging aan de tabel en het script is niet meer geldig. |
 | Herstellen |De aanbeveling is toegepast, maar is niet-uitgevoerd en wordt automatisch teruggezet. |
 | Hersteld |De aanbeveling is hersteld. |
@@ -168,7 +168,7 @@ Controleer uw aanbevelingen en pas deze toe om de prestaties te verfijnen. Data 
 * Bekijk de [aanbevelingen voor prestaties](database-advisor-implement-performance-recommendations.md) voor een overzicht van Azure SQL database prestatie aanbevelingen.
 * Zie [query performance Insights](query-performance-insight-use.md) voor meer informatie over het weer geven van de prestatie-impact van uw meest voorkomende query's.
 
-## <a name="additional-resources"></a>Aanvullende resources
+## <a name="additional-resources"></a>Aanvullende bronnen
 
 * [Query Store](/sql/relational-databases/performance/monitoring-performance-by-using-the-query-store)
 * [CREATE INDEX](/sql/t-sql/statements/create-index-transact-sql)

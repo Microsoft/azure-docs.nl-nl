@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 11/08/2017
 ms.author: alkohli
 ms.openlocfilehash: d78051c1a5af82a986152c8244d25b68dd65d552
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94968839"
 ---
 # <a name="deploy-and-manage-a-storsimple-cloud-appliance-in-azure-update-3-and-later"></a>Een StorSimple-cloudapparaat implementeren en beheren in Azure (Update 3 en hoger)
@@ -47,7 +47,7 @@ Het StorSimple-cloudapparaat is beschikbaar in twee modellen: de Standard 8010 (
 | **Maximale capaciteit** |30 TB |64 TB |
 | **Azure VM** |Standard_A3 (4 kerngeheugens, 7 GB geheugen)| Standard_DS3 (4 kerngeheugens, 14 GB geheugen)|
 | **Beschikbaarheid in regio’s** |Alle Azure-regio's |Azure-regio's waar ondersteuning wordt geboden voor Premium Storage en Azure-VM’s met DS3<br></br>Gebruik [deze lijst](https://azure.microsoft.com/regions/services/) om te kijken of zowel **Virtuele Machines > DS-serie** als **Opslag > Schijfruimte** beschikbaar is in uw regio. |
-| **Opslag type** |Maakt gebruik van Azure Standard-opslag voor lokale schijven<br></br> Ontdek hoe u [een Standard-opslagaccount maakt](../storage/common/storage-account-create.md) |Maakt gebruik van Azure Premium Storage voor lokale schijven<sup>2</sup> <br></br> |
+| **Opslagtype** |Maakt gebruik van Azure Standard-opslag voor lokale schijven<br></br> Ontdek hoe u [een Standard-opslagaccount maakt](../storage/common/storage-account-create.md) |Maakt gebruik van Azure Premium Storage voor lokale schijven<sup>2</sup> <br></br> |
 | **Richtlijnen voor de workload** |Bestanden ophalen uit back-ups op itemniveau |Ontwikkelings- en testscenario’s voor cloudapparaten <br></br>Lage latentie en workloads met hogere prestaties<br></br>Secundair apparaat voor herstel na noodgevallen |
 
 <sup>1</sup> *Voorheen bekend als de 1100*.

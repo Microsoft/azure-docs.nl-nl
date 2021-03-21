@@ -11,10 +11,10 @@ ms.author: tamram
 ms.subservice: common
 ms.custom: devx-track-azurepowershell
 ms.openlocfilehash: e924a5f6c765b5b964fe3b1492393b063d9d23b4
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92783569"
 ---
 # <a name="managing-storage-in-the-azure-independent-clouds-using-powershell"></a>Opslag beheren in de onafhankelijke Azure-Clouds met behulp van Power shell
@@ -69,7 +69,7 @@ De volgende tabel bevat de locaties die voor de Duitse Cloud zijn geretourneerd.
 
 ## <a name="endpoint-suffix"></a>Eind punt achtervoegsel
 
-Het achtervoegsel van het eind punt voor elk van deze omgevingen wijkt af van het open bare Azure-eind punt. Het achtervoegsel van het BLOB-eind punt voor Azure Public is bijvoorbeeld **blob.core.Windows.net** . Voor de overheids-Cloud is het achtervoegsel van het BLOB-eind punt **blob.core.usgovcloudapi.net** .
+Het achtervoegsel van het eind punt voor elk van deze omgevingen wijkt af van het open bare Azure-eind punt. Het achtervoegsel van het BLOB-eind punt voor Azure Public is bijvoorbeeld **blob.core.Windows.net**. Voor de overheids-Cloud is het achtervoegsel van het BLOB-eind punt **blob.core.usgovcloudapi.net**.
 
 ### <a name="get-endpoint-using-get-azenvironment"></a>Eind punt ophalen met Get-AzEnvironment
 
@@ -85,7 +85,7 @@ Get-AzEnvironment | select Name, StorageEndpointSuffix
 
 Met deze opdracht worden de volgende resultaten geretourneerd.
 
-| Naam| StorageEndpointSuffix|
+| Name| StorageEndpointSuffix|
 |----|----|
 | AzureChinaCloud | core.chinacloudapi.cn|
 | AzureCloud | core.windows.net |
@@ -100,7 +100,7 @@ Get-AzEnvironment -Name AzureGermanCloud
 
 De resultaten zijn vergelijkbaar met de volgende waarden:
 
-|Naam van eigenschap|Waarde|
+|Eigenschapsnaam|Waarde|
 |----|----|
 | Naam | `AzureGermanCloud` |
 | EnableAdfsAuthentication | `False` |

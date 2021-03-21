@@ -12,15 +12,15 @@ ms.workload: infrastructure-services
 ms.date: 09/28/2020
 ms.author: duau
 ms.openlocfilehash: 50e047325ad17710794b1640715ab1938373fe85
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96019460"
 ---
 # <a name="load-balancing-with-azures-application-delivery-suite"></a>Taakverdeling realiseren met de Azure-suite voor toepassingslevering
 
-## <a name="introduction"></a>Introductie
+## <a name="introduction"></a>Inleiding
 Microsoft Azure biedt diverse wereld wijde en regionale Services voor het beheren van de manier waarop uw netwerk verkeer wordt gedistribueerd en taak verdeling: 
 
 * Application Gateway

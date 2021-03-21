@@ -9,10 +9,10 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 ms.date: 11/06/2020
 ms.openlocfilehash: 3cc5e5114b435965eee4aa096e5898538b0a56e7
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94370075"
 ---
 # <a name="how-to-create-an-azure-application-offer-in-the-commercial-marketplace"></a>Een Azure-toepassings aanbieding maken in de commerciële Marketplace
@@ -25,7 +25,7 @@ Als u dit nog niet hebt gedaan, kunt u [een Azure-toepassings aanbieding plannen
 
 1. Meld u aan bij [Partner Center](https://partner.microsoft.com/dashboard/home).
 
-1. Selecteer in het navigatie menu de optie **commerciële Marketplace** -  >  **overzicht**.
+1. Selecteer in het navigatie menu de optie **commerciële Marketplace**-  >  **overzicht**.
 
 1. Selecteer op de pagina overzicht **+ nieuwe aanbieding**  >  **Azure-toepassing**.
 
@@ -46,7 +46,7 @@ Als u dit nog niet hebt gedaan, kunt u [een Azure-toepassings aanbieding plannen
 
 ## <a name="configure-your-azure-application-offer-setup-details"></a>Details van de installatie van uw Azure-toepassings aanbieding configureren
 
-Op het tabblad installatie van de **aanbieding** , onder **installatie Details** , kiest u of u een test drive wilt configureren. U maakt ook verbinding met uw CRM-systeem (Customer Relationship Management) met uw commerciële Marketplace-aanbieding.
+Op het tabblad installatie van de **aanbieding** , onder **installatie Details**, kiest u of u een test drive wilt configureren. U maakt ook verbinding met uw CRM-systeem (Customer Relationship Management) met uw commerciële Marketplace-aanbieding.
 
 ### <a name="enable-a-test-drive-optional"></a>Een test drive inschakelen (optioneel)
 

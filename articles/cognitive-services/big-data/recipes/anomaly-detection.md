@@ -12,10 +12,10 @@ ms.date: 07/06/2020
 ms.author: marhamil
 ms.custom: devx-track-python
 ms.openlocfilehash: d2995f39bc61ae5bb87abafd674f411271e57ca2
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94366278"
 ---
 # <a name="recipe-predictive-maintenance-with-the-cognitive-services-for-big-data"></a>Recept: voor speld onderhoud met de Cognitive Services voor Big Data
@@ -35,7 +35,7 @@ De gegevens kunnen in wille keurige frequentie uitbijten. In dat geval worden de
 
 ## <a name="setup"></a>Instellen
 
-### <a name="create-an-anomaly-detector-resource"></a>Een afwijkende detector-resource maken
+### <a name="create-an-anomaly-detector-resource"></a>Een Anomaly Detector-resource maken
 
 Azure Cognitive Services worden vertegenwoordigd door Azure-resources waarop u zich abonneert. Een resource voor Translator maken met behulp van de [Azure Portal](../../cognitive-services-apis-create-account.md) of [Azure cli](../../cognitive-services-apis-create-account-cli.md). U kunt ook het volgende doen:
 

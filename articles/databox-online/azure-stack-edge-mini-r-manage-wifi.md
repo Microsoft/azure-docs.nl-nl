@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 10/28/2020
 ms.author: alkohli
 ms.openlocfilehash: f00be43d023d912d4b0b6e825dfe9d3e0ca2d250
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96466862"
 ---
 # <a name="use-the-local-web-ui-to-manage-wireless-connectivity-on-your-azure-stack-edge-mini-r"></a>De lokale web-UI gebruiken voor het beheren van draadloze connectiviteit op uw Azure Stack Edge mini maal R
@@ -25,7 +25,7 @@ Uw Azure Stack Edge mini-R-apparaat kan worden gebruikt wanneer het netwerk is b
 
 Uw apparaat heeft vijf poorten, poort 1 t/m poort 4 en een vijfde Wi-Fi poort. Hier volgt een diagram van het back-upvlak van een mini-R-apparaat wanneer er verbinding is met een draadloos netwerk.
 
-![Bekabeling voor Wi-Fi](./media/azure-stack-edge-mini-r-deploy-install/wireless-cabled.png)
+![Bekabeling voor wifi](./media/azure-stack-edge-mini-r-deploy-install/wireless-cabled.png)
 
 
 ## <a name="add-connect-to-wi-fi-profile"></a>Toevoegen, verbinding maken met Wi-Fi profiel
@@ -34,48 +34,48 @@ Voer de volgende stappen uit in de lokale gebruikers interface van uw apparaat o
 
 1. Ga in de lokale webinterface van uw apparaat naar de pagina **Aan de slag**. Selecteer op de tegel **Netwerk** de optie **Configureren**.  
     
-    Er zijn vijf netwerk interfaces op het fysieke apparaat. Poort 1 en poort 2 zijn 1-Gbps-netwerkinterfaces. POORT 3 en poort 4 zijn alle netwerk interfaces van 10 Gbps. De vijfde poort is de Wi-Fi poort. 
+    Er zijn vijf netwerkinterfaces op het fysieke apparaat. Poort 1 en poort 2 zijn 1-Gbps-netwerkinterfaces. Poort 3 en poort 4 zijn beide 10-Gbps-netwerkinterfaces. De vijfde poort is de Wi-Fi-poort. 
 
-    [![Lokale web-interface netwerk instellingen pagina 1](./media/azure-stack-edge-mini-r-deploy-configure-network-compute-web-proxy/configure-wifi-1.png)](./media/azure-stack-edge-mini-r-deploy-configure-network-compute-web-proxy/configure-wifi-1.png#lightbox)  
+    [![Pagina 1, 'Netwerkinstellingen' van lokale webgebruikersinterface](./media/azure-stack-edge-mini-r-deploy-configure-network-compute-web-proxy/configure-wifi-1.png)](./media/azure-stack-edge-mini-r-deploy-configure-network-compute-web-proxy/configure-wifi-1.png#lightbox)  
     
-    Selecteer de Wi-Fi poort en configureer de poort instellingen. 
+    Selecteer de Wi-Fi-poort en configureer de poortinstellingen. 
     
     > [!IMPORTANT]
-    > We raden u ten zeerste aan een statisch IP-adres voor de Wi-Fi poort te configureren.  
+    > We raden u sterk aan een vast IP-adres voor de Wi-Fi-poort te configureren.  
 
     ![Pagina 2, 'Netwerkinstellingen' van lokale webgebruikersinterface](./media/azure-stack-edge-mini-r-deploy-configure-network-compute-web-proxy/configure-wifi-2.png)
 
-    De **netwerk** pagina wordt bijgewerkt nadat u de Wi-Fi poort instellingen hebt toegepast.
+    De pagina **Netwerk** wordt bijgewerkt nadat u de instellingen voor de Wi-Fi-poort hebt toegepast.
 
-    ![Lokale web-interface netwerk instellingen pagina 3](./media/azure-stack-edge-mini-r-deploy-configure-network-compute-web-proxy/configure-wifi-4.png)
+    ![Pagina 3, 'Netwerkinstellingen' van lokale webgebruikersinterface](./media/azure-stack-edge-mini-r-deploy-configure-network-compute-web-proxy/configure-wifi-4.png)
 
    
-2. Selecteer **Wi-Fi profiel toevoegen** en upload uw Wi-Fi-profiel. 
+2. Selecteer **Wi-Fi-profiel toevoegen** en upload uw Wi-Fi-profiel. 
 
-    ![Lokale webgebruikersinterface "poort WiFi-netwerk instellingen" 1](./media/azure-stack-edge-mini-r-deploy-configure-network-compute-web-proxy/add-wifi-profile-1.png)
+    ![Netwerkinstellingen van Wi-Fi-poort van lokale webinterface](./media/azure-stack-edge-mini-r-deploy-configure-network-compute-web-proxy/add-wifi-profile-1.png)
     
-    Een draadloos-netwerk profiel bevat de SSID (netwerk naam), wachtwoord sleutel en beveiligings gegevens waarmee verbinding kan worden gemaakt met een draadloos netwerk. U kunt het Wi-Fi profiel voor uw omgeving verkrijgen bij de netwerk beheerder.
+    Het profiel van een draadloos netwerk bevat de SSID (netwerknaam), wachtwoordsleutel en beveiligingsgegevens waarmee verbinding kan worden gemaakt met een draadloos netwerk. U kunt het Wi-Fi-profiel voor uw omgeving van uw netwerkbeheerder krijgen.
 
-    ![Lokale webgebruikersinterface "poort WiFi-netwerk instellingen" 2](./media/azure-stack-edge-mini-r-deploy-configure-network-compute-web-proxy/add-wifi-profile-2.png)
+    ![Netwerkinstellingen van poort 2 van lokale webinterface](./media/azure-stack-edge-mini-r-deploy-configure-network-compute-web-proxy/add-wifi-profile-2.png)
 
-    Nadat het profiel is toegevoegd, wordt de lijst met Wi-Fi profielen bijgewerkt om het nieuwe profiel weer te geven. In het profiel moet de **verbindings status** worden weer gegeven als niet- **verbonden**. 
+    Nadat het profiel is toegevoegd, wordt de lijst met Wi-Fi-profielen bijgewerkt om het nieuwe profiel weer te geven. In het profiel moet de **Verbindingsstatus** worden weergegeven als **Niet-verbonden**. 
 
-    ![Lokale webgebruikersinterface "poort WiFi-netwerk instellingen" 3](./media/azure-stack-edge-mini-r-deploy-configure-network-compute-web-proxy/add-wifi-profile-3.png)
+    ![Netwerkinstellingen van poort 3 van lokale webinterface](./media/azure-stack-edge-mini-r-deploy-configure-network-compute-web-proxy/add-wifi-profile-3.png)
     
-3. Nadat het draadloze-netwerk profiel is geladen, maakt u verbinding met dit profiel. Selecteer **verbinding maken met Wi-Fi profiel**. 
+3. Nadat het profiel van het draadloos netwerk is geladen, maakt u verbinding met dit profiel. Selecteer **Verbinding maken met Wi-Fi-profiel**. 
 
-    ![Lokale webgebruikersinterface "poort Wi-Fi netwerk instellingen" 4](./media/azure-stack-edge-mini-r-deploy-configure-network-compute-web-proxy/add-wifi-profile-4.png)
+    ![Netwerkinstellingen van poort 4 van lokale webinterface](./media/azure-stack-edge-mini-r-deploy-configure-network-compute-web-proxy/add-wifi-profile-4.png)
 
-4. Selecteer het Wi-Fi profiel dat u in de vorige stap hebt toegevoegd en selecteer **Toep assen**. 
+4. Selecteer het Wi-Fi-profiel dat u in de vorige stap hebt toegevoegd en selecteer **Toepassen**. 
 
-    ![Lokale webgebruikersinterface "poort Wi-Fi netwerk instellingen" 5](./media/azure-stack-edge-mini-r-deploy-configure-network-compute-web-proxy/add-wifi-profile-5.png)
+    ![Netwerkinstellingen van poort 5 van lokale webinterface](./media/azure-stack-edge-mini-r-deploy-configure-network-compute-web-proxy/add-wifi-profile-5.png)
 
-    De **verbindings status** moet worden bijgewerkt naar **verbonden**. De signaal sterkte wordt bijgewerkt om de kwaliteit van het signaal aan te geven. 
+    De **Verbindingsstatus** moet worden bijgewerkt naar **Verbonden**. De signaalsterkte wordt bijgewerkt om de kwaliteit van het signaal aan te geven. 
 
-    ![Lokale webgebruikersinterface "poort Wi-Fi netwerk instellingen" 6](./media/azure-stack-edge-mini-r-deploy-configure-network-compute-web-proxy/add-wifi-profile-6.png)
+    ![Netwerkinstellingen van poort 6 van lokale webinterface](./media/azure-stack-edge-mini-r-deploy-configure-network-compute-web-proxy/add-wifi-profile-6.png)
 
     > [!NOTE]
-    > Als u grote hoeveel heden gegevens wilt overdragen, wordt u aangeraden een bekabelde verbinding te gebruiken in plaats van het draadloze netwerk. 
+    > Als u grote hoeveelheden gegevens wilt overdragen, wordt u aangeraden een bekabelde verbinding te gebruiken in plaats van het draadloze netwerk. 
 
 
 ## <a name="download-wi-fi-profile"></a>Wi-Fi profiel downloaden

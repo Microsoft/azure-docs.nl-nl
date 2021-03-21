@@ -11,10 +11,10 @@ author: justinha
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 89abdcf4c76c92c2ed967594527d323b2cd8be32
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96741181"
 ---
 # <a name="tutorial-configure-custom-banned-passwords-for-azure-active-directory-password-protection"></a>Zelfstudie: Aangepaste verboden wachtwoorden configureren voor Azure Active Directory-wachtwoordbeveiliging
@@ -25,7 +25,7 @@ In deze zelfstudie leert u het volgende:
 
 > [!div class="checklist"]
 > * Een aangepaste lijst met verboden wachtwoorden inschakelen
-> * Vermeldingen toevoegen aan de aangepaste lijst met verboden wachtwoorden
+> * Vermeldingen toevoegt aan de aangepaste lijst met verboden wachtwoorden
 > * Wachtwoordwijzigingen testen met een verboden wachtwoord
 
 ## <a name="prerequisites"></a>Vereisten

@@ -12,27 +12,23 @@ ms.workload: identity
 ms.date: 07/14/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: 54caea62feed6ae7c082a979901999a5dcb3bd71
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: f315f473c3ba9efd4e01f9424f01884a46011dbb
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99582244"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104578364"
 ---
 # <a name="web-app-that-signs-in-users-code-configuration"></a>Web-app die gebruikers aanmeldt: code configuratie
 
 Meer informatie over het configureren van de code voor uw web-app die wordt aangemeld bij gebruikers.
 
-## <a name="libraries-for-protecting-web-apps"></a>Bibliotheken voor het beveiligen van web-apps
+## <a name="microsoft-libraries-supporting-web-apps"></a>Micro soft-bibliotheken die web-apps ondersteunen
 
 <!-- This section can be in an include for web app and web APIs -->
-De bibliotheken die worden gebruikt voor het beveiligen van een web-app (en een web-API) zijn:
+De volgende micro soft-bibliotheken worden gebruikt voor het beveiligen van een web-app (en een web-API):
 
-| Platform | Bibliotheek | Beschrijving |
-|----------|---------|-------------|
-| ![.NET](media/sample-v2-code/logo_NET.png) | [Identiteits model-uitbrei dingen voor .NET](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/wiki) | Micro soft Identity model-extensies voor .NET, die rechtstreeks worden gebruikt door ASP.NET en ASP.NET Core, stelt een reeks dll-bestanden voor die worden uitgevoerd op zowel .NET Framework als .NET core. Vanuit een ASP.NET-of ASP.NET Core-Web-App kunt u de token validatie controleren met behulp van de **TokenValidationParameters** -klasse (met name in sommige partner scenario's). In de praktijk wordt de complexiteit ingekapseld in de [micro soft. Identity. Web](https://aka.ms/ms-identity-web) -bibliotheek |
-| ![Java](media/sample-v2-code/small_logo_java.png) | [MSAL Java](https://github.com/AzureAD/microsoft-authentication-library-for-java/wiki) | Ondersteuning voor Java-webtoepassingen |
-| ![Python](media/sample-v2-code/small_logo_python.png) | [MSAL Python](https://github.com/AzureAD/microsoft-authentication-library-for-python/wiki) | Ondersteuning voor python-webtoepassingen |
+[!INCLUDE [active-directory-develop-libraries-webapp](../../../includes/active-directory-develop-libraries-webapp.md)]
 
 Selecteer het tabblad dat overeenkomt met het platform waarin u bent geïnteresseerd:
 
@@ -51,6 +47,12 @@ U kunt voor meer informatie over de volledige implementatie verwijzen naar dit v
 # <a name="java"></a>[Java](#tab/java)
 
 Code fragmenten in dit artikel en het volgende worden geëxtraheerd uit de Java- [Webtoepassing die micro soft Graph](https://github.com/Azure-Samples/ms-identity-java-webapp) -voor beeld aanroept in MSAL java.
+
+U kunt voor meer informatie over de volledige implementatie verwijzen naar dit voor beeld.
+
+# <a name="nodejs"></a>[Node.js](#tab/nodejs)
+
+Code fragmenten in dit artikel en het volgende worden geëxtraheerd uit de [Node.js webtoepassing handtekening gebruikers in voor](https://github.com/Azure-Samples/ms-identity-node) beeld in het knoop punt MSAL.
 
 U kunt voor meer informatie over de volledige implementatie verwijzen naar dit voor beeld.
 
@@ -177,6 +179,37 @@ aad.redirectUriGraph=http://localhost:8080/msal4jsample/graph/me
 
 In de Azure Portal moeten de antwoord-Uri's die u registreert op de **verificatie** pagina voor uw toepassing, overeenkomen met de `redirectUri` instanties die de toepassing definieert. Dat wil zeggen dat ze moeten zijn `http://localhost:8080/msal4jsample/secure/aad` en `http://localhost:8080/msal4jsample/graph/me` .
 
+# <a name="nodejs"></a>[Node.js](#tab/nodejs)
+
+Hier bevinden de configuratie parameters zich in `index.js`
+
+```javascript
+
+const REDIRECT_URI = "http://localhost:3000/redirect";
+
+const config = {
+    auth: {
+        clientId: "Enter_the_Application_Id_Here",
+        authority: "https://login.microsoftonline.com/Enter_the_Tenant_Info_Here/",
+        clientSecret: "Enter_the_Client_Secret_Here"
+    },
+    system: {
+        loggerOptions: {
+            loggerCallback(loglevel, message, containsPii) {
+                console.log(message);
+            },
+            piiLoggingEnabled: false,
+            logLevel: msal.LogLevel.Verbose,
+        }
+    }
+};
+```
+
+In de Azure Portal moeten de antwoord-Uri's die u registreert op de verificatie pagina voor uw toepassing, overeenkomen met de redirectUri instanties die de toepassing definieert ( `http://localhost:3000/redirect` ).
+
+> [!NOTE]
+> In deze Quick Start wordt voorgesteld het client geheim op te slaan in het configuratie bestand voor eenvoud. In uw productie-app wilt u andere manieren gebruiken om uw geheim op te slaan, zoals een sleutel kluis of een omgevings variabele.
+
 # <a name="python"></a>[Python](#tab/python)
 
 Hier is het python-configuratie bestand in [app_config. py](https://github.com/Azure-Samples/ms-identity-python-webapp/blob/0.1.0/app_config.py):
@@ -207,7 +240,7 @@ De initialisatie code verschilt, afhankelijk van het platform. Voor ASP.NET Core
 
 # <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
-In ASP.NET Core web-apps (en Web-Api's) is de toepassing beveiligd omdat u een `[Authorize]` kenmerk op de controllers of de controller acties hebt. Met dit kenmerk wordt gecontroleerd of de gebruiker is geverifieerd. De code die de toepassing initialiseert, bevindt zich in het *Startup.cs* -bestand.
+In ASP.NET Core web-apps (en Web-Api's) is de toepassing beveiligd omdat u een `[Authorize]` kenmerk op de controllers of de controller acties hebt. Met dit kenmerk wordt gecontroleerd of de gebruiker is geverifieerd. De code die de toepassing initialiseert, bevindt zich in het bestand *Startup. cs* .
 
 Als u verificatie wilt toevoegen met het micro soft-identiteits platform (voorheen Azure AD v 2.0), moet u de volgende code toevoegen. De opmerkingen in de code moeten zichzelf verklaren.
 
@@ -246,7 +279,7 @@ Als u verificatie wilt toevoegen met het micro soft-identiteits platform (voorhe
      }).AddMicrosoftIdentityUI();
     ```
 
-3. Schakel in de `Configure` methode in *Startup.cs* verificatie in met een aanroep naar `app.UseAuthentication();`
+3. Schakel in de `Configure` methode in *opstarten. cs* verificatie in met een aanroep naar `app.UseAuthentication();`
 
    ```c#
    // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -319,6 +352,15 @@ Zie de `doFilter()` methode in [AuthFilter. java](https://github.com/Azure-Sampl
 
 Zie de [micro soft Identity platform and OAuth 2,0 Authorization code flow](v2-oauth2-auth-code-flow.md)(Engelstalig) voor meer informatie over de autorisatie code stroom die door deze methode wordt geactiveerd.
 
+# <a name="nodejs"></a>[Node.js](#tab/nodejs)
+
+```javascript
+const msal = require('@azure/msal-node');
+
+// Create msal application object
+const cca = new msal.ConfidentialClientApplication(config);
+```
+
 # <a name="python"></a>[Python](#tab/python)
 
 Het python-voor beeld maakt gebruik van een fles. De initialisatie van de kolf en MSAL python wordt uitgevoerd in [app. py # L1-L28](https://github.com/Azure-Samples/ms-identity-python-webapp/blob/e03be352914bfbd58be0d4170eba1fb7a4951d84/app.py#L1-L28).
@@ -354,6 +396,10 @@ Ga naar het volgende artikel in dit scenario, Meld u aan [en](./scenario-web-app
 # <a name="java"></a>[Java](#tab/java)
 
 Ga naar het volgende artikel in dit scenario, Meld u aan [en](./scenario-web-app-sign-user-sign-in.md?tabs=java)af.
+
+# <a name="nodejs"></a>[Node.js](#tab/nodejs)
+
+Ga naar het volgende artikel in dit scenario en [Meld](./scenario-web-app-sign-user-sign-in.md?tabs=nodejs)u aan.
 
 # <a name="python"></a>[Python](#tab/python)
 

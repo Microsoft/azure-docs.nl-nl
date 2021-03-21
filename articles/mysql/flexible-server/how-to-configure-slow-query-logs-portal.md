@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: how-to
 ms.date: 9/21/2020
 ms.openlocfilehash: a61c8e3451d661dae2e5ad56a0d4a947252ec873
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94540060"
 ---
 # <a name="configure-and-access-slow-query-logs-for-azure-database-for-mysql---flexible-server-using-the-azure-portal"></a>Langzame query logboeken voor Azure Database for MySQL-flexibele server configureren en openen met behulp van de Azure Portal
@@ -26,14 +26,14 @@ Voor de stappen in dit artikel moet u een [flexibele server](quickstart-create-s
 ## <a name="configure-logging"></a>Logboek registratie configureren
 Configureer de toegang tot het MySQL-logboek voor langzame query's. 
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 
 1. Selecteer uw flexibele server.
 
 1. Selecteer in de sectie **instellingen** van de zijbalk **server parameters**.
    :::image type="content" source="./media/how-to-configure-slow-query-logs-portal/server-parameters.png" alt-text="Pagina Server parameters.":::
 
-1. Werk de **slow_query_log** para meter slow_query_log **bij naar aan**.
+1. Werk de  para meter slow_query_log **bij naar aan**.
    :::image type="content" source="./media/how-to-configure-slow-query-logs-portal/slow-query-log-enable.png" alt-text="Schakel logboeken voor langzame query's in.":::
 
 1. Andere benodigde para meters wijzigen (bijvoorbeeld `long_query_time`, `log_slow_admin_statements`). Raadpleeg de [langzame query logs](./concepts-slow-query-logs.md#configure-slow-query-logging) documenten voor meer para meters.  

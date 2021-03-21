@@ -7,10 +7,10 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/12/2018
 ms.openlocfilehash: 9271723e68e5edd6805f0197bca9cdefc3c5e921
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100388325"
 ---
 # <a name="execute-wait-activity-in-azure-data-factory"></a>Wacht activiteit uitvoeren in Azure Data Factory
@@ -38,7 +38,7 @@ Eigenschap | Beschrijving | Toegestane waarden | Vereist
 -------- | ----------- | -------------- | --------
 naam | De naam van de `Wait` activiteit. | Tekenreeks | Ja
 type | Moet worden ingesteld op **wait**. | Tekenreeks | Ja
-waitTimeInSeconds | Het aantal seconden dat de pijp lijn wacht voordat de verwerking doorgaat. | Geheel getal | Yes
+waitTimeInSeconds | Het aantal seconden dat de pijp lijn wacht voordat de verwerking doorgaat. | Geheel getal | Ja
 
 ## <a name="example"></a>Voorbeeld
 
@@ -100,7 +100,7 @@ In dit voor beeld heeft de pijp lijn twee activiteiten: **tot** en met een **oge
 Zie andere controle stroom activiteiten die door Data Factory worden ondersteund: 
 
 - [If Condition Activity](control-flow-if-condition-activity.md)
-- [Activiteit uitvoeren van pijplijn](control-flow-execute-pipeline-activity.md)
+- [Pijplijn activiteit uitvoeren](control-flow-execute-pipeline-activity.md)
 - [Voor elke activiteit](control-flow-for-each-activity.md)
 - [Activiteit ophalen van metagegevens](control-flow-get-metadata-activity.md)
 - [Opzoekactiviteit](control-flow-lookup-activity.md)

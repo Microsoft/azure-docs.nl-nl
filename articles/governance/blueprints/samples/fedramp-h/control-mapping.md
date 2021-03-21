@@ -4,10 +4,10 @@ description: Beheeropties toewijzen aan het blauwdrukvoorbeeld FedRAMP High. Elk
 ms.date: 01/08/2021
 ms.topic: sample
 ms.openlocfilehash: ee2988e94422c96be52d0bc4fc7266ccab38780e
-ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98034880"
 ---
 # <a name="control-mapping-of-the-fedramp-high-blueprint-sample"></a>Beheeropties toewijzen aan het blauwdrukvoorbeeld FedRAMP High

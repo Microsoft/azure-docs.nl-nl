@@ -4,10 +4,10 @@ description: Meer informatie over het toevoegen van uw Azure Arc-servers aan Azu
 ms.date: 11/16/2020
 ms.topic: conceptual
 ms.openlocfilehash: 2364ba72ac5b10ec4e1f433cc6d591c3ca389ecd
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100584732"
 ---
 # <a name="onboard-azure-arc-enabled-servers-to-azure-sentinel"></a>Onboarding van Azure Arc ingeschakelde servers naar Azure-Sentinel

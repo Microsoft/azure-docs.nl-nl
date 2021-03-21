@@ -11,10 +11,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: df7d2278487c1b098615a14562c498b9187c56eb
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96000025"
 ---
 # <a name="tasks-for-the-team-lead-on-a-team-data-science-process-team"></a>Taken voor de team leider van een team data Science process team
@@ -226,7 +226,7 @@ git push
 ```
 
 > [!NOTE]
-> Als dit de eerste keer is dat u een Git-opslag plaats doorvoert, moet u mogelijk de algemene para meters *User.name* en *User. email* configureren voordat u de `git commit` opdracht uitvoert. Voer de volgende twee opdrachten uit:
+> Als dit de eerste keer is dat u een Git-opslag plaats doorvoert, moet u mogelijk de algemene para meters *User.name* en *User.email* configureren voordat u de `git commit` opdracht uitvoert. Voer de volgende twee opdrachten uit:
 > 
 > `git config --global user.name <your name>`
 > 

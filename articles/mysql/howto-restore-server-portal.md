@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: how-to
 ms.date: 6/30/2020
 ms.openlocfilehash: 9bc31cf8fee2669634ff366caac77cb090baf075
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96000297"
 ---
 # <a name="how-to-backup-and-restore-a-server-in-azure-database-for-mysql-using-the-azure-portal"></a>Een back-up maken en herstellen van een server in Azure Database for MySQL met behulp van de Azure Portal
@@ -37,7 +37,7 @@ Wanneer u een server maakt via de Azure Portal, selecteert u in het venster **pr
 Zie de [Snelstartgids van Azure database for mysql server](quickstart-create-mysql-server-database-using-azure-portal.md)voor meer informatie over het instellen van deze waarden tijdens het maken.
 
 De Bewaar periode voor back-ups kan worden gewijzigd op een server met behulp van de volgende stappen:
-1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
+1. Meld u aan bij de [Azure Portal](https://portal.azure.com/).
 2. Selecteer uw Azure Database for MySQL-server. Met deze actie wordt de pagina **overzicht** geopend.
 3. Selecteer **prijs categorie** in het menu onder **instellingen**. Met de schuif regelaar kunt u de **Bewaar periode voor back-ups** wijzigen van 7 tot 35 dagen.
 In de onderstaande scherm afbeelding is meer dan 34 dagen verg root.
@@ -92,7 +92,7 @@ Als u uw server voor geografisch redundante back-ups hebt geconfigureerd, kan ee
 
 3. Selecteer **back-up** als **gegevens bron**. Met deze actie wordt een vervolg keuzelijst geladen die een lijst met servers bevat waarvoor geo redundante back-ups zijn ingeschakeld.
    
-   :::image type="content" source="./media/howto-restore-server-portal/3-geo-restore.png" alt-text="Gegevensbron selecteren.":::
+   :::image type="content" source="./media/howto-restore-server-portal/3-geo-restore.png" alt-text="Selecteer de gegevensbron.":::
     
    > [!NOTE]
    > Wanneer een server voor het eerst wordt gemaakt, is deze mogelijk niet onmiddellijk beschikbaar voor geo Restore. Het kan enkele uren duren voordat de benodigde meta gegevens zijn gevuld.

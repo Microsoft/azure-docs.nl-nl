@@ -8,10 +8,10 @@ ms.topic: reference
 ms.date: 11/23/2020
 ms.author: mbaldwin
 ms.openlocfilehash: 1fa4a458a4e3e1df1d84c343a32e3a41a4a25e75
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95758995"
 ---
 # <a name="audit-logs-for-azure-attestation"></a>Audit logboeken voor Azure Attestation
@@ -29,7 +29,7 @@ Azure Attestation gebruikt code voor het produceren van audit logboeken voor geb
 ### <a name="auditable-events"></a>Controleer bare gebeurtenissen
 Hier volgen enkele van de audit logboeken die worden verzameld:
 
-|     Gebeurtenis/API                              |     Gebeurtenisbeschrijving                                                                         |
+|     Gebeurtenis/API                              |     Beschrijving van de gebeurtenis                                                                         |
 |--------------------------------------------|-----------------------------------------------------------------------------------------------|
 |     Exemplaar maken                        |     Hiermee maakt u een nieuw exemplaar van een Attestation-service. |
 |     Exemplaar vernietigen                       |     Vernietigt een exemplaar van een Attestation-service. |

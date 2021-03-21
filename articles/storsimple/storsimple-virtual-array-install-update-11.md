@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 07/18/2018
 ms.author: alkohli
 ms.openlocfilehash: 709794dcccf9b100cbb11381ac34cfb86238b22b
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94533988"
 ---
 # <a name="install-update-11-on-your-storsimple-virtual-array"></a>Update 1,1 installeren op de virtuele StorSimple-matrix
@@ -36,7 +36,7 @@ U past de software-updates of hotfixes toe om uw virtuele StorSimple-matrix up-t
 >
 > - Update 1,1 is alleen beschikbaar in de Azure Portal als update 1 wordt uitgevoerd op de virtuele matrix. Voor virtuele matrices waarop update 0,6-versies worden uitgevoerd, moet u eerst Update 1,0 installeren en vervolgens Update 1,1 Toep assen.
 
-## <a name="use-the-azure-portal"></a>Azure Portal gebruiken
+## <a name="use-the-azure-portal"></a>De Azure-portal gebruiken
 
 Als u update 0,2 en hoger uitvoert, wordt u aangeraden updates te installeren via de Azure Portal. Voor de portal procedure moet de gebruiker de updates scannen, downloaden en installeren. Afhankelijk van de software versie waarop uw virtuele array wordt uitgevoerd, wordt het Toep assen van een update via de Azure Portal anders.
 

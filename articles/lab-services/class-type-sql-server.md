@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 06/26/2020
 ms.author: enewman
 ms.openlocfilehash: 50f71ee1ce59f5809fe8905c58f0399cf484f11a
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94659706"
 ---
 # <a name="set-up-a-lab-to-manage-and-develop-with-sql-server"></a>Een Lab instellen om te beheren en te ontwikkelen met SQL Server
@@ -109,7 +109,7 @@ Nu u Azure Data Studio hebt geïnstalleerd, kunt u de verbinding met Azure SQL D
     - Stel het **wacht woord** in voor het wacht woord dat wordt gebruikt om de data base te maken.
     - Controleer **wacht woord onthouden**.
     - Selecteer voor de **Data Base** *classlabdb*.
-3. Klik op **Verbinding maken**.
+3. Klik op **Verbinden**.
 
 ## <a name="install-sql-server-management-studio"></a>Installeer SQL Server Management Studio
 

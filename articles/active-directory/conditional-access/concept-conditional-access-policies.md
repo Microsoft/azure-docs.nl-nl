@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 10/16/2020
+ms.date: 03/17/2021
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 28d58c476a805b672a6ec8b4d8ec465eba17e559
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 35d2bf33b4a22c14abfb61a87a3697b05188ed31
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96169678"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104579090"
 ---
 # <a name="building-a-conditional-access-policy"></a>Beleid voor voorwaardelijke toegang bouwen
 
@@ -37,7 +37,7 @@ Alle beleids regels worden in twee fasen afgedwongen:
    - Gebruik de sessie details die in fase 1 zijn verzameld om te bepalen of er niet is voldaan aan de vereisten. 
    - Als er een beleid is geconfigureerd voor het blok keren van de toegang, wordt afdwinging door de blok kering van het besturings element geblokkeerd en wordt de gebruiker geblokkeerd. 
    - De gebruiker wordt gevraagd aanvullende vereisten voor de toekennings controle uit te voeren die tijdens fase 1 in de volgende volg orde niet aan het beleid zijn voldaan:  
-      - Multi-Factor Authentication 
+      - Meervoudige verificatie 
       - Goedgekeurde client-app/beveiligings beleid voor apps 
       - Beheerd apparaat (compatibel of hybride Azure AD-deelname) 
       - Gebruiksvoorwaarden 
@@ -106,6 +106,8 @@ De granting Control kan de afdwinging van een of meer besturings elementen activ
 - Hybride Azure AD-gekoppeld apparaat is vereist
 - Goedgekeurde client-apps vereisen
 - Beleid voor app-beveiliging vereisen
+- Wachtwoord wijziging vereisen
+- Gebruiksvoorwaarden vereisen
 
 Beheerders kunnen ervoor kiezen om een van de vorige besturings elementen of alle geselecteerde besturings elementen te vereisen met behulp van de volgende opties. De standaard instelling voor meerdere besturings elementen is alle nood zakelijk.
 
@@ -150,7 +152,7 @@ Het artikel [common Conditional Access policies](concept-conditional-access-poli
 
 [Aanmeld gedrag simuleren met het What If hulp programma voor voorwaardelijke toegang](troubleshoot-conditional-access-what-if.md)
 
-[Een implementatie van Azure AD Multi-Factor Authentication in de Cloud plannen](../authentication/howto-mfa-getstarted.md)
+[Planning van een cloudimplementatie van Azure AD Multi-Factor Authentication](../authentication/howto-mfa-getstarted.md)
 
 [Apparaatcompatibiliteit beheren met intune](/intune/device-compliance-get-started)
 

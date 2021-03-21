@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 11/22/2020
 ms.openlocfilehash: 9ca5ea5cdebe297af5081ae6e219935c56ba942e
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96004862"
 ---
 # <a name="monitor-data-flows"></a>Gegevens stromen bewaken
@@ -58,7 +58,7 @@ Wanneer uw gegevens stroom in Spark wordt uitgevoerd, bepaalt Azure Data Factory
   
 ![Scherm afbeelding toont de optie vernieuwen.](media/data-flow/monitornew.png "Gegevens stroom bewaking nieuw")
 
-## <a name="total-sink-processing-time-vs-transformation-processing-time"></a>Totale verwerkings tijd van Sink versus verwerkings tijd van trans formatie
+## <a name="total-sink-processing-time-vs-transformation-processing-time"></a>Totale verwerkingstijd voor sinks versus de verwerkingstijd voor transformaties
 
 Elke transformatie fase bevat een totale tijd voor het volt ooien van de voltooiing van elke partitie voor de uitvoerings tijd. Wanneer u op de Sink klikt, ziet u ' sink verwerkings tijd '. Deze tijd omvat het totaal van de transformatie tijd *plus* de I/O-tijd die nodig was om uw gegevens naar uw doel archief te schrijven. Het verschil tussen de verwerkings tijd van de Sink en het totaal van de trans formatie is de I/O-tijd voor het schrijven van de gegevens.
 

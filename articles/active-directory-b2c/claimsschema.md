@@ -11,17 +11,17 @@ ms.date: 03/05/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 2ff43408cfa6d95dbd5a235a950269c47d57a416
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97654027"
 ---
 # <a name="claimsschema"></a>ClaimsSchema
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Het **ClaimsSchema** -element definieert de claim typen waarnaar kan worden verwezen als onderdeel van het beleid. Claim schema is de plaats waar u uw claims declareert. Een claim kan de voor naam, achternaam, weergave naam, het telefoon nummer en meer zijn. Het element ClaimsSchema bevat een lijst met **claim** type-elementen. Het element **claim** type bevat het kenmerk **id** , dat de claim naam is.
+Het element **ClaimsSchema** definieert de claimtypen waarnaar kan worden verwezen als onderdeel van het beleid. Het claimsschema is de plaats waar u uw claims declareert. Een claim kan de voor naam, achternaam, weergave naam, het telefoon nummer en meer zijn. Het element ClaimsSchema bevat een lijst met **claim** type-elementen. Het element **claim** type bevat het kenmerk **id** , dat de claim naam is.
 
 ```xml
 <BuildingBlocks>
@@ -92,7 +92,7 @@ Het **protocol** element bevat de volgende kenmerken:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Naam | Ja | De naam van een geldig protocol dat door Azure AD B2C wordt ondersteund. Mogelijke waarden zijn: OAuth1, OAuth2, SAML2, OpenIdConnect. |
+| Name | Ja | De naam van een geldig protocol dat door Azure AD B2C wordt ondersteund. Mogelijke waarden zijn: OAuth1, OAuth2, SAML2, OpenIdConnect. |
 | PartnerClaimType | Ja | De claim type naam die moet worden gebruikt. |
 
 In het volgende voor beeld, wanneer het Framework voor identiteits ervaring communiceert met een SAML2-ID-provider of Relying Party toepassing, wordt de claim **Achternaam** toegewezen aan `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname` , met OpenIdConnect en OAuth2, de claim wordt toegewezen aan `family_name` .

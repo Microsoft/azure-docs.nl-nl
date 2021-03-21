@@ -9,10 +9,10 @@ ms.date: 12/26/2019
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: 8d26b6c92462abc13c42257d2c6e571156eacc0f
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96011753"
 ---
 Azure-bestandsshares worden geïmplementeerd in *opslagaccounts*. Dat zijn objecten op het hoogste niveau die een gedeelde opslagpool vertegenwoordigen. Deze opslagpool kan worden gebruikt om meerdere bestandsshares en andere opslagresources, zoals blobcontainers, wachtrijen of tabellen, te implementeren. Alle opslagresources die in een opslagaccount worden geïmplementeerd, delen de limieten die van toepassing zijn op dat opslagaccount. Raadpleeg [Azure Files scalability and performance targets](../articles/storage/files/storage-files-scale-targets.md) (Schaalbaarheids- en prestatiedoelen in Azure Files) om de huidige limieten voor een opslagaccount te bekijken.

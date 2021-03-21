@@ -4,10 +4,10 @@ description: Meer informatie over het configureren van uw Service Fabric Managed
 ms.topic: how-to
 ms.date: 02/15/2021
 ms.openlocfilehash: 44b1b949fe314231cb44f190c31b53903e47a904
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101732629"
 ---
 # <a name="service-fabric-managed-cluster-preview-configuration-options"></a>Configuratie opties voor Service Fabric Managed cluster (preview)

@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 02/18/2021
 ms.author: yuajia
 ms.openlocfilehash: c9995df0f292c5e528156a3280df5484db017fca
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "101099195"
 ---
 # <a name="azure-front-door-standardpremium-rule-set-actions"></a>Acties voor de Standard/Premium-regelset van Azure front deur
@@ -56,7 +56,7 @@ Gebruik deze actie om de cache sleutel te wijzigen op basis van query teken reek
 
 De volgende beschrijving is van toepassing wanneer u dit gedrag selecteert en de regel overeenkomt met:
 
-Gedrag | Description
+Gedrag | Beschrijving
 ---------|------------
 Opnemen | Query reeksen die zijn opgegeven in de para meters, worden opgenomen als de cache sleutel wordt gegenereerd. 
 Elke unieke URL in de cache opslaan | Elke unieke URL heeft een eigen cache sleutel. 
@@ -112,7 +112,7 @@ Gebruik deze actie om het pad van een aanvraag die naar uw oorsprong wordt doorg
 
 ### <a name="required-fields"></a>Vereiste velden
 
-Veld | Description 
+Veld | Beschrijving 
 ------|------------
 Bron patroon | Definieer het bron patroon in het URL-pad dat moet worden vervangen. Op dit moment gebruikt het bron patroon een overeenkomst op basis van voor voegsels. Als u wilt dat alle URL-paden overeenkomen, gebruikt u een slash ( **/** ) als bron patroon waarde.
 Doel | Definieer het doelpad dat moet worden gebruikt in de herschrijf bewerking. Het doelpad overschrijft het bron patroon.

@@ -14,10 +14,10 @@ ms.date: 11/08/2019
 ms.author: sumi
 ms.custom: ''
 ms.openlocfilehash: 8926e99db926fc8182e98509c3deff0ccc3d1612
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99576664"
 ---
 # <a name="virtual-network-service-endpoints"></a>Service-eindpunten voor virtueel netwerk
@@ -42,7 +42,7 @@ Deze functie is beschikbaar voor de volgende Azure-Services en-regio's. *Micro s
 - **[Azure app service](../app-service/app-service-ip-restrictions.md)** (*micro soft. Web*): algemeen beschikbaar in alle Azure-regio's waar app service beschikbaar is.
 - **[Azure Cognitive Services](../cognitive-services/cognitive-services-virtual-networks.md?tabs=portal)** (*micro soft. CognitiveServices*): algemeen beschikbaar in alle Azure-regio's waar cognitieve services beschikbaar zijn.
 
-**Open bare preview**
+**Openbare preview**
 
 - **[Azure container Registry](../container-registry/container-registry-vnet.md)** (*micro soft. ContainerRegistry*): de preview-versie die beschikbaar is in de beperkte Azure-regio's waar Azure container Registry beschikbaar is.
 

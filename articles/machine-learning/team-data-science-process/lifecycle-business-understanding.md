@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: a7aaed519f8f97a9be77a263568aeed5257c16d6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "76710330"
 ---
 # <a name="the-business-understanding-stage-of-the-team-data-science-process-lifecycle"></a>De fase van de zakelijke activiteiten van de team data Science process Lifecycle
@@ -44,7 +44,7 @@ Er zijn twee hoofd taken die in deze fase worden behandeld:
    * **Gegevens bronnen identificeren**: Zoek de relevante gegevens die u helpen bij het beantwoorden van de vragen die de doel stellingen van het project bepalen.
 
 ### <a name="define-objectives"></a>Doel stellingen definiëren
-1. Een centraal doel van deze stap is het identificeren van de belangrijkste bedrijfs variabelen die de analyse moet voors pellen. We verwijzen naar deze variabelen als *model doelen*en we gebruiken de metrische gegevens die eraan zijn gekoppeld om het succes van het project te bepalen. Twee voor beelden van dergelijke doelen zijn verkoop prognoses of de kans dat een bestelling frauduleus is.
+1. Een centraal doel van deze stap is het identificeren van de belangrijkste bedrijfs variabelen die de analyse moet voors pellen. We verwijzen naar deze variabelen als *model doelen* en we gebruiken de metrische gegevens die eraan zijn gekoppeld om het succes van het project te bepalen. Twee voor beelden van dergelijke doelen zijn verkoop prognoses of de kans dat een bestelling frauduleus is.
 
 2. Definieer de doel stellingen van het project door ' scherpe ' vragen te stellen en te verfijnen die relevant, specifiek en ondubbelzinnig zijn. Data Science is een proces waarbij namen en getallen worden gebruikt om deze vragen te beantwoorden. Normaal gesp roken gebruikt u data Science of machine learning om vijf soorten vragen te beantwoorden:
  
@@ -58,13 +58,13 @@ Er zijn twee hoofd taken die in deze fase worden behandeld:
 
 3. Definieer het project team door de rollen en verantwoordelijkheden van de leden op te geven. Ontwikkel een mijlpaal plan op hoog niveau dat u herhaalt wanneer u meer informatie ontdekt. 
 
-4. Definieer de metrische gegevens voor het slagen. Het is bijvoorbeeld mogelijk dat u een klant verloop wilt belichten. U hebt een nauw keurigheid van ' x ' procent aan het einde van dit project van drie maanden nodig. Met deze gegevens kunt u klant aanbiedingen aanbieden om het verloop te verminderen. De metrische gegevens moeten **Slim**zijn: 
+4. Definieer de metrische gegevens voor het slagen. Het is bijvoorbeeld mogelijk dat u een klant verloop wilt belichten. U hebt een nauw keurigheid van ' x ' procent aan het einde van dit project van drie maanden nodig. Met deze gegevens kunt u klant aanbiedingen aanbieden om het verloop te verminderen. De metrische gegevens moeten **Slim** zijn: 
 
-   * **S**pecifieke 
-   * **M**easurable
-   * **Een**chievable 
-   * **R**elevant 
-   * **T**IME-gebonden 
+   * **S** pecifieke 
+   * **M** easurable
+   * **Een** chievable 
+   * **R** elevant 
+   * **T** IME-gebonden 
 
 ### <a name="identify-data-sources"></a>Gegevensbronnen identificeren
 Identificeer gegevens bronnen die bekende voor beelden van antwoorden op uw scherpe vragen bevatten. Zoek naar de volgende gegevens:

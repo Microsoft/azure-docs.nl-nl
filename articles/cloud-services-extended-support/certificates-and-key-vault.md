@@ -8,12 +8,12 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: d9ff86eeb0e64e7edbad0eeca51b04cabbd191e9
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 7357703af41afc913ef63dff6ecae3d230c9eca0
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101722650"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104583289"
 ---
 # <a name="use-certificates-with-azure-cloud-services-extended-support"></a>Certificaten gebruiken met Azure Cloud Services (uitgebreide ondersteuning)
 
@@ -41,7 +41,7 @@ Key Vault wordt gebruikt om certificaten op te slaan die zijn gekoppeld aan Clou
 
     :::image type="content" source="media/certs-and-key-vault-4.png" alt-text="Afbeelding toont het selecteren van de optie genereren/importeren":::
 
-4.  Vul de vereiste gegevens in om het uploaden van het certificaat te volt ooien. 
+4.  Vul de vereiste gegevens in om het uploaden van het certificaat te volt ooien. Het certificaat moet zich in bestaan **. PFX** -indeling.
 
     :::image type="content" source="media/certs-and-key-vault-5.png" alt-text="Afbeelding toont het import venster in het Azure Portal.":::
 

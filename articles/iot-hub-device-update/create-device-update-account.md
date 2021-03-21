@@ -7,13 +7,13 @@ ms.date: 2/11/2021
 ms.topic: how-to
 ms.service: iot-hub-device-update
 ms.openlocfilehash: a0201882b74d2acf57c246d2dc63530ca8b1f010
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101692607"
 ---
-# <a name="device-update-for-iot-hub-resource-management"></a>Update van het apparaat voor IoT Hub resource beheer
+# <a name="device-update-for-iot-hub-resource-management"></a>Resourcebeheer van Device Update for IoT Hub
 
 Om aan de slag te gaan met de update van het apparaat, moet u een update account voor het apparaat, instance en toegangs beheer rollen maken. 
 

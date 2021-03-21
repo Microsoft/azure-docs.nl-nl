@@ -8,10 +8,10 @@ ms.topic: tutorial
 ms.date: 09/16/2020
 ms.author: victorh
 ms.openlocfilehash: b9733eeb0d9941f6e23dcc9c0fa4dba60f4e4d30
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94561026"
 ---
 # <a name="tutorial-create-an-application-gateway-with-a-web-application-firewall-using-the-azure-portal"></a>Zelfstudie: Een toepassingsgateway met een Web Application Firewall maken met behulp van de Azure-portal

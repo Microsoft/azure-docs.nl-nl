@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/05/2021
 ms.author: mjbrown
 ms.reviewer: sngun
-ms.openlocfilehash: f22d97f8a4ab5e5b6e275c405cce523e8a7b8e72
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: fd704d45aa7dc10835a205f12ce26fc01a7ea44f
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101656547"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104584496"
 ---
 # <a name="how-does-azure-cosmos-db-provide-high-availability"></a>Hoe biedt Azure Cosmos DB hoge Beschik baarheid?
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -69,12 +69,14 @@ Voor zeldzame gevallen van regionale uitval zorgt Azure Cosmos DB ervoor dat uw 
 
 * Tijdens een onderbreking van de schrijf regio wordt een secundaire regio in het Azure Cosmos-account automatisch bevorderd als de nieuwe primaire schrijf regio als **automatische failover inschakelen** is geconfigureerd op het Azure Cosmos-account. Wanneer deze functie is ingeschakeld, wordt de failover uitgevoerd naar een andere regio in de volg orde van de regio prioriteit die u hebt opgegeven.
 
+* Houd er rekening mee dat hand matige failover niet moet worden geactiveerd en dat de aanwezigheid van de bron-of doel regio niet kan worden uitgevoerd. Dit komt doordat een consistentie controle vereist is voor de failover-procedure die de verbinding tussen de regio's vereist.
+
 * Wanneer de eerder beïnvloede regio weer online is, worden alle Schrijf gegevens die niet zijn gerepliceerd toen de regio is mislukt, beschikbaar gesteld via de [feed conflicten](how-to-manage-conflicts.md#read-from-conflict-feed). Toepassingen kunnen de feed voor conflicten lezen, de conflicten oplossen op basis van de toepassingsspecifieke logica en de bijgewerkte gegevens naar de Azure Cosmos-container schrijven, indien van toepassing.
 
 * Zodra de eerder beïnvloede schrijf regio herstelt, wordt deze automatisch beschikbaar als een lees regio. U kunt teruggaan naar de herstelde regio als de schrijf regio. U kunt de regio's wijzigen met behulp van [Power shell, Azure CLI of Azure Portal](how-to-manage-database-account.md#manual-failover). Er zijn **geen gegevens of beschik baarheids verlies** vóór, tijdens of nadat u de schrijf regio hebt overgeschakeld en uw toepassing Maxi maal beschikbaar is.
 
 > [!IMPORTANT]
-> Het wordt ten zeerste aangeraden om de Azure Cosmos-accounts te configureren die worden gebruikt voor productie werkbelastingen om **automatische failover mogelijk te maken**. Voor een hand matige failover is een verbinding tussen de secundaire en primaire schrijf regio vereist om een consistentie controle te volt ooien om ervoor te zorgen dat er geen gegevens verloren gaan tijdens de failover. Als de primaire regio niet beschikbaar is, kan deze consistentie controle niet worden voltooid en zal de hand matige failover mislukken, wat leidt tot verlies van schrijf Beschik baarheid voor de duur van de regionale storing.
+> Het wordt ten zeerste aangeraden om de Azure Cosmos-accounts te configureren die worden gebruikt voor productie werkbelastingen om **automatische failover mogelijk te maken**. Hierdoor kunnen Cosmos DB automatisch een failover van de account databases naar beschikbaar regio's. Als deze configuratie niet is geconfigureerd, wordt de schrijf Beschik baarheid voor de duur van de onderbreking van de schrijf regio niet meer in rekening gebracht, omdat de hand matige failover niet kan worden uitgevoerd als gevolg van een gebrek aan regionale connectiviteit.
 
 ### <a name="multi-region-accounts-with-a-single-write-region-read-region-outage"></a>Accounts met meerdere regio's met een regio voor één schrijf bewerking (Lees regio lezen)
 
@@ -138,7 +140,22 @@ Beschikbaarheidszones kan worden ingeschakeld via:
 
 * Zelfs als uw Azure Cosmos-account Maxi maal beschikbaar is, is uw toepassing mogelijk niet juist ontworpen om Maxi maal beschikbaar te blijven. Als u de end-to-end hoge Beschik baarheid van uw toepassing wilt testen, kunt u als onderdeel van uw toepassing tests of herstel na nood gevallen, de automatische failover voor het account tijdelijk uitschakelen, de [hand matige failover aanroepen met behulp van Power shell, Azure CLI of Azure Portal](how-to-manage-database-account.md#manual-failover)en vervolgens de failover van uw toepassing controleren. Zodra het proces is voltooid, kunt u een failover uitvoeren naar de primaire regio en de automatische failover voor het account herstellen.
 
+> [!IMPORTANT]
+> Roep geen hand matige failover aan tijdens een Cosmos DB-onderbreking op de bron-of doel regio's, omdat er regio's moeten worden verbonden om de consistentie van de gegevens te waarborgen.
+
 * Binnen een wereld wijd gedistribueerde database omgeving is er een rechtstreekse relatie tussen het consistentie niveau en de duurzaamheid van de gegevens in de aanwezigheid van een regionale storing. Wanneer u uw bedrijfs continuïteits plan ontwikkelt, moet u weten wat de Maxi maal toegestane tijd is voordat de toepassing volledig wordt hersteld na een storende gebeurtenis. De tijd die nodig is om een toepassing volledig te herstellen, wordt de beoogde herstel tijd (RTO) genoemd. U moet ook inzicht krijgen in de maximale periode van recente gegevens updates die de toepassing kan afnemen bij het herstellen na een storende gebeurtenis. Deze periode wordt het beoogde herstelpunt (RPO) genoemd. Zie [consistentie niveaus en gegevens duurzaamheid](./consistency-levels.md#rto) voor een overzicht van de RPO en RTO voor Azure Cosmos db.
+
+## <a name="what-to-expect-during-a-region-outage"></a>Wat u kunt verwachten tijdens de onderbreking van een regio
+
+Voor accounts met één regio kunnen clients de lees-en schrijf Beschik baarheid verliezen.
+
+Accounts met meerdere regio's zijn afhankelijk van de volgende tabel.
+
+| Regio's schrijven | Automatische failover | Wat u kunt verwachten | Wat u moet doen |
+| -- | -- | -- | -- |
+| Enkele schrijf regio | Niet ingeschakeld | In het geval van een storing in een lees regio worden alle clients omgeleid naar andere regio's. Geen lees-of schrijf Beschik baarheid. Geen gegevens verlies. <p/> In het geval van een storing in de schrijf regio, kunnen clients schrijf Beschik baarheid verliezen. Gegevens verlies is afhankelijk van het geselecteerde constistency-niveau. <p/> Cosmos DB wordt de schrijf beschikbaarheid automatisch hersteld wanneer de storing wordt beëindigd. | Zorg er tijdens de onderbreking voor dat er voldoende capaciteit is ingericht in de overige regio's ter ondersteuning van het Lees verkeer. <p/> Activeer geen hand matige failover tijdens de onderbreking, omdat *deze niet kan* worden uitgevoerd. <p/> Als de storing is overschreden, past u de ingerichte capaciteit zo nodig aan. |
+| Enkele schrijf regio | Ingeschakeld | In het geval van een storing in een lees regio worden alle clients omgeleid naar andere regio's. Geen lees-of schrijf Beschik baarheid. Geen gegevens verlies. <p/> In het geval van een storing in de schrijf regio, ondervindt clients het verlies van Beschik baarheid voordat Cosmos DB automatisch een nieuwe regio kiest als de nieuwe schrijf regio volgens uw voor keuren. Gegevens verlies is afhankelijk van het geselecteerde constistency-niveau. | Zorg er tijdens de onderbreking voor dat er voldoende capaciteit is ingericht in de overige regio's ter ondersteuning van het Lees verkeer. <p/> Activeer geen hand matige failover tijdens de onderbreking, omdat *deze niet kan* worden uitgevoerd. <p/> Wanneer de storing is opgetreden, kunt u de niet-gerepliceerde gegevens in de mislukte regio herstellen vanuit de [feed met conflicten](how-to-manage-conflicts.md#read-from-conflict-feed), de schrijf regio opnieuw naar de oorspronkelijke regio verplaatsen en de ingerichte capaciteit aanpassen naar wens. |
+| Meerdere schrijf regio's | Niet van toepassing | Geen lees-of schrijf Beschik baarheid. <p/> Gegevens verlies per consistentie niveau geselecteerd. | Zorg er tijdens de onderbreking voor dat er voldoende capaciteit is ingericht in de overige regio's ter ondersteuning van extra verkeer. <p/> Wanneer de storing is opgetreden, kunt u de niet-gerepliceerde gegevens in de regio mislukt herstellen vanuit de [feed voor conflicten](how-to-manage-conflicts.md#read-from-conflict-feed) en de ingerichte capaciteit indien nodig opnieuw aanpassen. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

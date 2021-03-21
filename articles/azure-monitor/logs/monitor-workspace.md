@@ -6,10 +6,10 @@ author: bwren
 ms.author: bwren
 ms.date: 10/20/2020
 ms.openlocfilehash: 9eda0acc15badfe7bb2e754d887786aa990d6e24
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102034962"
 ---
 # <a name="monitor-health-of-log-analytics-workspace-in-azure-monitor"></a>De status van de Log Analytics werk ruimte in Azure Monitor bewaken
@@ -81,7 +81,7 @@ Een aanbevolen strategie is om te beginnen met twee waarschuwings regels op basi
 Gebruik het proces in [logboek waarschuwingen maken, weer geven en beheren met Azure monitor](../alerts/alerts-log.md) om de waarschuwings regels voor het logboek te maken. De volgende secties beschrijven de details van elke regel.
 
 
-| Query’s uitvoeren | Drempelwaarde | Periode | Frequentie |
+| Query | Drempelwaarde | Periode | Frequentie |
 |:---|:---|:---|:---|
 | `_LogOperation | where Level == "Error"`   | 0 | 5 | 5 |
 | `_LogOperation | where Level == "Warning"` | 0 | 1440 | 1440 |

@@ -15,10 +15,10 @@ ms.reviewer: hirsin, nacanuma
 ms.custom: aaddev
 ROBOTS: NOINDEX
 ms.openlocfilehash: f746cc654934464d907c6ad669eb7470e4dcaeeb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88117733"
 ---
 # <a name="service-to-service-calls-that-use-delegated-user-identity-in-the-on-behalf-of-flow"></a>Service-naar-service-aanroepen die een overgedragen gebruikers-id gebruiken in namens-of-flow
@@ -89,7 +89,7 @@ Volg de onderstaande stappen om de registratie van de client-app in azure AD exp
 
 1. Ga naar de service registratie voor de middelste laag en selecteer **manifest** om de manifest editor te openen.
 1. Zoek de `knownClientApplications` eigenschap matrix en voeg de client-id van de client toepassing toe als een-element.
-1. Sla het manifest op door **Opslaan**te selecteren.
+1. Sla het manifest op door **Opslaan** te selecteren.
 
 ## <a name="service-to-service-access-token-request"></a>Aanvraag voor service-naar-service-toegangs token
 
@@ -111,8 +111,8 @@ Bij gebruik van een gedeeld geheim bevat een aanvraag voor service-naar-service-
 | Assertion |vereist | De waarde van het toegangs token dat in de aanvraag wordt gebruikt. |
 | client_id |vereist | De App-ID die is toegewezen aan de aanroepende service tijdens de registratie bij Azure AD. Als u de App-ID in de Azure Portal wilt zoeken, selecteert u **Active Directory**, kiest u de map en selecteert u vervolgens de naam van de toepassing. |
 | client_secret |vereist | De sleutel die is geregistreerd voor de aanroepende service in azure AD. Deze waarde moet worden vermeld op het moment van registratie. |
-| resource |vereist | De App-ID-URI van de ontvangende service (beveiligde resource). Als u de URI van de App-ID wilt vinden in de Azure Portal, selecteert u **Active Directory** en kiest u de map. Selecteer de naam van de toepassing, kies **alle instellingen**en selecteer vervolgens **Eigenschappen**. |
-| requested_token_use |vereist | Hiermee geeft u op hoe de aanvraag moet worden verwerkt. In namens-of uitstroom moet de waarde **on_behalf_of**zijn. |
+| resource |vereist | De App-ID-URI van de ontvangende service (beveiligde resource). Als u de URI van de App-ID wilt vinden in de Azure Portal, selecteert u **Active Directory** en kiest u de map. Selecteer de naam van de toepassing, kies **alle instellingen** en selecteer vervolgens **Eigenschappen**. |
+| requested_token_use |vereist | Hiermee geeft u op hoe de aanvraag moet worden verwerkt. In namens-of uitstroom moet de waarde **on_behalf_of** zijn. |
 | scope |vereist | Een lijst met door spaties gescheiden bereiken voor de token aanvraag. Voor OpenID Connect Connect moet de scope **OpenID Connect** worden opgegeven.|
 
 #### <a name="example"></a>Voorbeeld
@@ -146,8 +146,8 @@ Een aanvraag voor service-naar-service-toegangs token met een certificaat bevat 
 | client_id |vereist | De App-ID die is toegewezen aan de aanroepende service tijdens de registratie bij Azure AD. Als u de App-ID in de Azure Portal wilt zoeken, selecteert u **Active Directory**, kiest u de map en selecteert u vervolgens de naam van de toepassing. |
 | client_assertion_type |vereist |De waarde moet `urn:ietf:params:oauth:client-assertion-type:jwt-bearer` |
 | client_assertion |vereist | Een JSON Web Token die u maakt en ondertekent met het certificaat dat u hebt geregistreerd als referenties voor uw toepassing. Zie  [certificaat referenties](../develop/active-directory-certificate-credentials.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json) voor meer informatie over de bevestigings indeling en over het registreren van uw certificaat.|
-| resource |vereist | De App-ID-URI van de ontvangende service (beveiligde resource). Als u de URI van de App-ID wilt vinden in de Azure Portal, selecteert u **Active Directory** en kiest u de map. Selecteer de naam van de toepassing, kies **alle instellingen**en selecteer vervolgens **Eigenschappen**. |
-| requested_token_use |vereist | Hiermee geeft u op hoe de aanvraag moet worden verwerkt. In namens-of uitstroom moet de waarde **on_behalf_of**zijn. |
+| resource |vereist | De App-ID-URI van de ontvangende service (beveiligde resource). Als u de URI van de App-ID wilt vinden in de Azure Portal, selecteert u **Active Directory** en kiest u de map. Selecteer de naam van de toepassing, kies **alle instellingen** en selecteer vervolgens **Eigenschappen**. |
+| requested_token_use |vereist | Hiermee geeft u op hoe de aanvraag moet worden verwerkt. In namens-of uitstroom moet de waarde **on_behalf_of** zijn. |
 | scope |vereist | Een lijst met door spaties gescheiden bereiken voor de token aanvraag. Voor OpenID Connect Connect moet de scope **OpenID Connect** worden opgegeven.|
 
 Deze para meters zijn bijna hetzelfde als met de aanvraag van het gedeelde geheim, behalve dat de `client_secret parameter` is vervangen door twee para meters: `client_assertion_type` en `client_assertion` .
@@ -255,8 +255,8 @@ Een service-naar-service-aanvraag voor een SAML-verklaring bevat de volgende par
 | Assertion |vereist | De waarde van het toegangs token dat in de aanvraag wordt gebruikt.|
 | client_id |vereist | De App-ID die is toegewezen aan de aanroepende service tijdens de registratie bij Azure AD. Als u de App-ID in de Azure Portal wilt zoeken, selecteert u **Active Directory**, kiest u de map en selecteert u vervolgens de naam van de toepassing. |
 | client_secret |vereist | De sleutel die is geregistreerd voor de aanroepende service in azure AD. Deze waarde moet worden vermeld op het moment van registratie. |
-| resource |vereist | De App-ID-URI van de ontvangende service (beveiligde resource). Dit is de resource die de doel groep is van het SAML-token. Als u de URI van de App-ID wilt vinden in de Azure Portal, selecteert u **Active Directory** en kiest u de map. Selecteer de naam van de toepassing, kies **alle instellingen**en selecteer vervolgens **Eigenschappen**. |
-| requested_token_use |vereist | Hiermee geeft u op hoe de aanvraag moet worden verwerkt. In namens-of uitstroom moet de waarde **on_behalf_of**zijn. |
+| resource |vereist | De App-ID-URI van de ontvangende service (beveiligde resource). Dit is de resource die de doel groep is van het SAML-token. Als u de URI van de App-ID wilt vinden in de Azure Portal, selecteert u **Active Directory** en kiest u de map. Selecteer de naam van de toepassing, kies **alle instellingen** en selecteer vervolgens **Eigenschappen**. |
+| requested_token_use |vereist | Hiermee geeft u op hoe de aanvraag moet worden verwerkt. In namens-of uitstroom moet de waarde **on_behalf_of** zijn. |
 | requested_token_type | vereist | Hiermee geeft u het aangevraagde type token op. De waarde kan **urn zijn: IETF: params: OAuth: token-type: saml2** of **urn: IETF: params: OAuth: token-type: saml1** , afhankelijk van de vereisten van de toegang tot de resource. |
 
 Het antwoord bevat een SAML-token dat is gecodeerd in UTF8 en Base64url.

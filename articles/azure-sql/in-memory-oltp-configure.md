@@ -11,10 +11,10 @@ ms.author: sstein
 ms.reviewer: MightyPen
 ms.date: 11/07/2018
 ms.openlocfilehash: e17e98e784b7453c87814c5cce5c03568f66b1cb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91619743"
 ---
 # <a name="use-in-memory-oltp-to-improve-your-application-performance-in-azure-sql-database-and-azure-sql-managed-instance"></a>In-Memory OLTP gebruiken om de prestaties van uw toepassing in Azure SQL Database en Azure SQL Managed instance te verbeteren
@@ -43,7 +43,7 @@ SSMS bevat een **overzichts rapport voor analyse van transactie prestaties** dat
 
 In SSMS, om het rapport te genereren:
 
-* Klik in de **objectverkenner**met de rechter muisknop op uw database knooppunt.
+* Klik in de **objectverkenner** met de rechter muisknop op uw database knooppunt.
 * Klik op **rapporten**  >  **standaard rapporten**  >  **transactie prestatie analyse overzicht**.
 
 Zie [bepalen of een tabel of opgeslagen procedure moet worden getransporteerd naar In-Memory OLTP](/sql/relational-databases/in-memory-oltp/determining-if-a-table-or-stored-procedure-should-be-ported-to-in-memory-oltp)voor meer informatie.
@@ -77,7 +77,7 @@ U moet een door het geheugen geoptimaliseerde kopie maken en vullen van de tabel
 Deze migratie optie gebruiken:
 
 1. Maak verbinding met de test database met SSMS.
-2. Klik in de **objectverkenner**met de rechter muisknop op de tabel en klik vervolgens op **geheugen optimalisatie Advisor**.
+2. Klik in de **objectverkenner** met de rechter muisknop op de tabel en klik vervolgens op **geheugen optimalisatie Advisor**.
 
    De wizard **tabel geheugen optimalisatie Advisor** wordt weer gegeven.
 3. Klik in de wizard op **migratie validatie** (of op de knop **volgende** ) om te zien of de tabel niet-ondersteunde functies bevat die niet worden ondersteund in tabellen die zijn geoptimaliseerd voor geheugen. Zie voor meer informatie:
@@ -177,6 +177,6 @@ Overweeg de prestatie-effecten van uw In-Memory implementaties in productie te c
 
 ## <a name="related-links"></a>Verwante koppelingen
 
-* [OLTP in het geheugen (in-Memory optimalisatie)](/sql/relational-databases/in-memory-oltp/in-memory-oltp-in-memory-optimization)
+* [In-Memory OLTP (In-Memory-optimalisatie)](/sql/relational-databases/in-memory-oltp/in-memory-oltp-in-memory-optimization)
 * [Inleiding tot systeem eigen, gecompileerde, opgeslagen procedures](/sql/relational-databases/in-memory-oltp/a-guide-to-query-processing-for-memory-optimized-tables)
 * [Geheugen optimalisatie Advisor](/sql/relational-databases/in-memory-oltp/memory-optimization-advisor)

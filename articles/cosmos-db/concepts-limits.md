@@ -7,10 +7,10 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 01/19/2021
 ms.openlocfilehash: 007bf845bab6f493fae91debefde27a4929d9f95
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98611029"
 ---
 # <a name="azure-cosmos-db-service-quotas"></a>Service quota's Azure Cosmos DB
@@ -62,15 +62,15 @@ Voor beeld: Stel dat u een container hebt ingericht met 400 RU/s en 0 GB-opslag.
 
 **Opmerking:** de minimale door Voer van 10 ru/s per GB aan opslag kan worden verkleind als uw account in aanmerking komt voor ons [' hoge door Voer '](set-throughput.md#high-storage-low-throughput-program)van het programma.
 
-#### <a name="minimum-throughput-on-shared-throughput-database"></a>Minimale door Voer voor de gedeelde doorvoer database 
-Als u een schatting wilt maken van de minimale door Voer die vereist is voor een gedeelde doorvoer database met hand matige door Voer, zoekt u het maximum van:
+#### <a name="minimum-throughput-on-shared-throughput-database"></a>Minimale doorvoer voor gedeelde doorvoerdatabase 
+Als u een schatting wilt maken van de minimale doorvoer die vereist is voor een gedeelde doorvoerdatabase met handmatige doorvoer, zoekt u de maximumwaarde van:
 
 * 400 RU/s 
 * Huidige opslag in GB * 10 RU/s
 * De hoogste RU/s die zijn ingericht voor de data base/100
 * 400 + MAX (aantal containers-25, 0) * 100 RU/s
 
-Voor beeld: Stel dat u een Data Base hebt ingericht met 400 RU/s, 15 GB aan opslag ruimte en 10 containers. De minimale RU/s is `MAX(400, 15 * 10 RU/s per GB, 400 / 100, 400 + 0 )` = 400 ru/s. Als er 30 containers in de data base staan, zouden de mini maal RU/s `400 + MAX(30 - 25, 0) * 100 RU/s` = 900 ru/s zijn. 
+Voorbeeld: Stel dat u een database hebt ingericht met 400 RU/s, 15 GB aan opslagruimte en 10 containers. De minimale RU/s is `MAX(400, 15 * 10 RU/s per GB, 400 / 100, 400 + 0 )` = 400 ru/s. Als er 30 containers in de data base staan, zouden de mini maal RU/s `400 + MAX(30 - 25, 0) * 100 RU/s` = 900 ru/s zijn. 
 
 **Opmerking:** de minimale door Voer van 10 ru/s per GB aan opslag kan worden verkleind als uw account in aanmerking komt voor ons [' hoge door Voer '](set-throughput.md#high-storage-low-throughput-program)van het programma.
 

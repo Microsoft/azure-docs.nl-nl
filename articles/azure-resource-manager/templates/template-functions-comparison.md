@@ -4,10 +4,10 @@ description: Hierin worden de functies beschreven die u kunt gebruiken in een Az
 ms.topic: conceptual
 ms.date: 11/18/2020
 ms.openlocfilehash: 95655a4c92a1de9bb7a7faebcdaa83fb0fa75696
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99833997"
 ---
 # <a name="comparison-functions-for-arm-templates"></a>Vergelijkingsfuncties voor ARM-sjablonen
@@ -31,7 +31,7 @@ Retourneert de eerste waarde die niet null is van de para meters. Lege teken ree
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
 | Arg1 |Ja |int, String, array of object |De eerste waarde die moet worden getest op null. |
 | aanvullende argumenten |Nee |int, String, array of object |Aanvullende waarden om te testen op null. |
@@ -133,7 +133,7 @@ Hiermee wordt gecontroleerd of twee waarden gelijk zijn aan elkaar. De `equals` 
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
 | Arg1 |Ja |int, String, array of object |De eerste waarde die moet worden gecontroleerd op gelijkheid. |
 | Arg2 |Ja |int, String, array of object |De tweede waarde om te controleren op gelijkheid. |
@@ -317,7 +317,7 @@ Controleert of de eerste waarde groter is dan de tweede waarde. De `greater` fun
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
 | Arg1 |Ja |int of String |De eerste waarde voor de grotere vergelijking. |
 | Arg2 |Ja |int of String |De tweede waarde voor de grotere vergelijking. |
@@ -398,7 +398,7 @@ Hiermee wordt gecontroleerd of de eerste waarde groter is dan of gelijk is aan d
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
 | Arg1 |Ja |int of String |De eerste waarde voor de grotere of gelijk zijnde vergelijking. |
 | Arg2 |Ja |int of String |De tweede waarde voor de groter of gelijke vergelijking. |
@@ -479,7 +479,7 @@ Controleert of de eerste waarde lager is dan de tweede waarde. De `less` functie
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
 | Arg1 |Ja |int of String |De eerste waarde voor de minder vergelijkingen. |
 | Arg2 |Ja |int of String |De tweede waarde voor de minder vergelijkingen. |
@@ -560,7 +560,7 @@ Hiermee wordt gecontroleerd of de eerste waarde kleiner is dan of gelijk is aan 
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
 | Arg1 |Ja |int of String |De eerste waarde voor de vergelijking met minder of gelijk aan. |
 | Arg2 |Ja |int of String |De tweede waarde voor de vergelijking met minder of gelijk aan. |

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
 zone_pivot_groups: programming-languages-set-twenty-six
-ms.openlocfilehash: 339ae9a0a799a0a03f1fcf37dadf2e1ffa724243
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 0cca47269e632e1fcba1f8f9eb1c835f27e63059
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97028679"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104582800"
 ---
 # <a name="iot-plug-and-play-device-developer-guide"></a>Ontwikkelaars handleiding voor IoT Plug en Play-apparaten
 
@@ -26,7 +26,7 @@ In deze hand leiding worden de basis stappen beschreven die nodig zijn om een ap
 Voer de volgende stappen uit om een IoT-Plug en Play apparaat, module of IoT Edge module te bouwen:
 
 1. Zorg ervoor dat het apparaat gebruikmaakt van het MQTT-of MQTT over websockets-protocol om verbinding te maken met Azure IoT Hub.
-1. Maak een [DTDL-model (Digital Apparaatdubbels Definition Language)](https://github.com/Azure/opendigitaltwins-dtdl) om uw apparaat te beschrijven. Zie [onderdelen begrijpen in IoT Plug en Play-modellen](concepts-components.md)voor meer informatie.
+1. Maak een [DTDL-model (Digital Apparaatdubbels Definition Language)](https://github.com/Azure/opendigitaltwins-dtdl) om uw apparaat te beschrijven. Zie [onderdelen begrijpen in IoT Plug en Play-modellen](concepts-modeling-guide.md)voor meer informatie.
 1. Werk uw apparaat of module bij om de `model-id` verbinding met het apparaat te maken.
 1. Telemetrie, eigenschappen en opdrachten implementeren met behulp van de [IoT Plug en Play-conventies](concepts-convention.md)
 
@@ -69,6 +69,6 @@ Nu u hebt geleerd over IoT Plug en Play Device Development, zijn hier enkele aan
 - [DTDL (Digital Twins Definition Language)](https://github.com/Azure/opendigitaltwins-dtdl)
 - [Apparaat-SDK voor C](/azure/iot-hub/iot-c-sdk-ref/)
 - [IoT-REST API](/rest/api/iothub/device)
-- [Model onderdelen](concepts-components.md)
+- [Informatie over onderdelen in IoT Plug en Play-modellen](concepts-modeling-guide.md)
 - [De DTDL-hulpprogram ma's voor ontwerpen installeren en gebruiken](howto-use-dtdl-authoring-tools.md)
 - [Ontwikkelaars handleiding voor IoT Plug en Play-service](concepts-developer-guide-service.md)

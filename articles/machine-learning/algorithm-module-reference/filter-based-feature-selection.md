@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 10/10/2020
 ms.openlocfilehash: f4a7f5581703ae6932f3b40e62085fed76f5e6f2
-ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91945699"
 ---
 # <a name="filter-based-feature-selection"></a>Functieselectie op basis van filters
@@ -65,8 +65,8 @@ U kiest een standaard statistische metrische waarde. De module berekent de corre
     > [!IMPORTANT]
     > Zorg ervoor dat de kolommen die u opgeeft als invoer, mogelijke functies zijn. Een kolom met één waarde bevat bijvoorbeeld geen informatie waarde.
     >
-    > Als u weet dat sommige kolommen slechte functies zouden kunnen hebben, kunt u ze uit de kolom selectie verwijderen. U kunt ook de module [meta gegevens bewerken](edit-metadata.md) gebruiken om ze als **categorische**te markeren. 
-3.  Voor de **functie Score methode**kiest u een van de volgende statistische methoden die u kunt gebruiken bij het berekenen van scores.  
+    > Als u weet dat sommige kolommen slechte functies zouden kunnen hebben, kunt u ze uit de kolom selectie verwijderen. U kunt ook de module [meta gegevens bewerken](edit-metadata.md) gebruiken om ze als **categorische** te markeren. 
+3.  Voor de **functie Score methode** kiest u een van de volgende statistische methoden die u kunt gebruiken bij het berekenen van scores.  
 
     | Methode              | Vereisten                             |
     | ------------------- | ---------------------------------------- |
@@ -79,10 +79,10 @@ U kiest een standaard statistische metrische waarde. De module berekent de corre
 
     Als u deze optie uitschakelt, wordt door de module een score gemaakt voor elke kolom die anders aan de criteria voldoet, tot het aantal kolommen dat is opgegeven in het **aantal gewenste functies**.  
 
-5.  Selecteer bij **doel kolom**de optie voor het starten van een **kolom selecteren** om de kolom label te kiezen op naam of op index. (Indexen zijn op één gebaseerd.)  
+5.  Selecteer bij **doel kolom** de optie voor het starten van een **kolom selecteren** om de kolom label te kiezen op naam of op index. (Indexen zijn op één gebaseerd.)  
     Een label kolom is vereist voor alle methoden waarbij statistische correlatie is betrokken. De module retourneert een fout in de ontwerp fase als u geen label kolom of meerdere label kolommen selecteert. 
 
-6.  Voor het **aantal gewenste functies**voert u het aantal functie kolommen in dat u als resultaat wilt retour neren:  
+6.  Voor het **aantal gewenste functies** voert u het aantal functie kolommen in dat u als resultaat wilt retour neren:  
 
     - Het minimum aantal functies dat u kunt opgeven, is één, maar we raden u aan deze waarde te verhogen.  
 
@@ -103,7 +103,7 @@ U kiest een standaard statistische metrische waarde. De module berekent de corre
 
 Nadat de verwerking is voltooid:
 
-+ Klik met de rechter muisknop op de module en selecteer **visualiseren**om een volledige lijst met de geanalyseerde functie kolommen en de bijbehorende scores weer te geven.  
++ Klik met de rechter muisknop op de module en selecteer **visualiseren** om een volledige lijst met de geanalyseerde functie kolommen en de bijbehorende scores weer te geven.  
 
 + Als u de gegevensset wilt weer geven op basis van de criteria voor de selectie van functies, klikt u met de rechter muisknop op de module en selecteert u **visualiseren**. 
 
@@ -112,7 +112,7 @@ Als de gegevensset minder kolommen bevat dan u verwacht, controleert u de instel
 
 ##  <a name="technical-notes"></a>Technische opmerkingen  
 
-### <a name="implementation-details"></a>Implementatie Details
+### <a name="implementation-details"></a>Implementatiegegevens
 
 Als u Pearson-correlatie gebruikt voor een numerieke functie en een categorische-label, wordt de functie score als volgt berekend:  
 

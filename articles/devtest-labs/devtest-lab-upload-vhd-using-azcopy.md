@@ -4,10 +4,10 @@ description: In dit artikel vindt u een overzicht van het gebruik van het AzCopy
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 1d8ede0f78726b04ac862a00b559b8d42c3ed1cd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88650771"
 ---
 # <a name="upload-vhd-file-to-labs-storage-account-using-azcopy"></a>VHD-bestand uploaden naar het opslag account van de Lab met behulp van AzCopy
@@ -28,19 +28,19 @@ De volgende stappen begeleiden u bij het uploaden van een VHD-bestand naar Azure
 
 1. Meld u aan bij [Azure Portal](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 
-1. Selecteer **alle services**en selecteer vervolgens **DevTest Labs** in de lijst.
+1. Selecteer **alle services** en selecteer vervolgens **DevTest Labs** in de lijst.
 
 1. Selecteer in de lijst met Labs het gewenste Lab.  
 
-1. Selecteer **configuratie**op de Blade van het lab. 
+1. Selecteer **configuratie** op de Blade van het lab. 
 
 1. Selecteer **aangepaste installatie kopieën (vhd's)** op de Blade Lab- **configuratie** .
 
 1. Selecteer op de Blade **aangepaste installatie kopieën** **+ toevoegen**. 
 
-1. Selecteer **VHD**op de Blade **aangepaste installatie kopie** .
+1. Selecteer **VHD** op de Blade **aangepaste installatie kopie** .
 
-1. Selecteer op **VHD** de Blade VHD **een VHD uploaden met behulp van Power shell**.
+1. Selecteer op  de Blade VHD **een VHD uploaden met behulp van Power shell**.
 
     ![VHD uploaden met Power shell](./media/devtest-lab-upload-vhd-using-azcopy/upload-image-using-psh.png)
 

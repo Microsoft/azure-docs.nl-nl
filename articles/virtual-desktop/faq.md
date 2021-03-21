@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 03/09/2021
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 8592b679fcfbb860962bf75b882dc1a0543412c0
-ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
+ms.openlocfilehash: ffea2d84f1a5149670976beef3b9af847ae31a35
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102613966"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104582133"
 ---
 # <a name="windows-virtual-desktop-faq"></a>Veelgestelde vragen over Windows Virtual Desktop
 
@@ -110,7 +110,7 @@ Wanneer u een hostgroep hebt gemaakt, kunt u het type niet meer wijzigen. U kunt
 
 Beperkingen of quota's in FSLogix zijn afhankelijk van de opslag-Fabric die wordt gebruikt voor het opslaan van VHD (X)-bestanden van het gebruikers profiel.
 
-De volgende tabel bevat een voor beeld van hoe resources een FSLogix-profiel nodig heeft om elke gebruiker te ondersteunen. De vereisten kunnen sterk variëren, afhankelijk van de gebruiker, de toepassingen en de activiteit voor elk profiel.
+De volgende tabel geeft een voor beeld van het aantal IOPS dat een FSLogix-profiel nodig heeft voor de ondersteuning van elke gebruiker. De vereisten kunnen sterk variëren, afhankelijk van de gebruiker, de toepassingen en de activiteit voor elk profiel.
 
 | Resource | Vereiste |
 |---|---|

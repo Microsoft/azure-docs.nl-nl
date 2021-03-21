@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 01/04/2019
 ms.author: junhan
 ms.openlocfilehash: 668087ae596688e86b7b84a16bc5c0fd0f9fcef6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "75912253"
 ---
 # <a name="create-an-iot-hub-using-the-azure-iot-tools-for-visual-studio-code"></a>Een IoT-hub maken met de Azure IoT-Hulpprogram Ma's voor Visual Studio code
@@ -30,7 +30,7 @@ U hebt het volgende nodig om dit artikel te volt ooien:
 
 - [Azure IOT-Hulpprogram ma's](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools) voor Visual Studio code.
 
-## <a name="create-an-iot-hub"></a>Een IoT Hub maken
+## <a name="create-an-iot-hub"></a>Een IoT-hub maken
 
 1. Open in Visual Studio code de weer gave **Explorer** .
 

@@ -4,10 +4,10 @@ description: Met Azure Service Fabric kunt u resource aanvragen en limieten opge
 ms.topic: conceptual
 ms.date: 8/9/2017
 ms.openlocfilehash: d760766870c8c2be0a2d2384f6d012b75bc92fbd
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101735655"
 ---
 # <a name="resource-governance"></a>Resourcebeheer

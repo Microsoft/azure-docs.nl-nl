@@ -9,10 +9,10 @@ ms.custom: contperf-fy21q1
 ms.date: 10/13/2020
 ms.author: allensu
 ms.openlocfilehash: d1632c66791dd5e697b95a2c5aaaddea81629abf
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99052819"
 ---
 # <a name="using-snat-for-outbound-connections"></a>SNAT gebruiken voor uitgaande verbindingen
@@ -66,7 +66,7 @@ Wanneer [scenario 2](#scenario2) hieronder is geconfigureerd, wordt door de host
  | Openbaar load balancer of zelfstandig | [SNAT (bron netwerk adres omzetting)](#snat) </br> niet gebruikt. | TCP (Transmission Control Protocol) </br> UDP (User Data gram Protocol) </br> ICMP (Internet Control Message Protocol) </br> ESP (Encapsulating Security Payload) |
 
 
- #### <a name="description"></a>Description
+ #### <a name="description"></a>Beschrijving
 
 
  Azure gebruikt het open bare IP-adres dat is toegewezen aan de IP-configuratie van de NIC van het exemplaar voor alle uitgaande stromen. Alle tijdelijke poorten zijn beschikbaar voor het exemplaar. Het maakt niet uit of de virtuele machine gelijkmatig is verdeeld of niet. Dit scenario heeft voor rang op de andere. 
@@ -83,7 +83,7 @@ Wanneer [scenario 2](#scenario2) hieronder is geconfigureerd, wordt door de host
  | Standaard open bare load balancer | Het gebruik van load balancer frontend-IP-adressen voor [SNAT](#snat).| TCP </br> UDP |
 
 
- #### <a name="description"></a>Description
+ #### <a name="description"></a>Beschrijving
 
 
  De load balancer resource is geconfigureerd met een regel voor uitgaande verbindingen of een taakverdelings regel die standaard SNAT mogelijk maakt. Deze regel wordt gebruikt om een koppeling tussen de open bare IP-frontend te maken met de back-end-pool. 
@@ -110,7 +110,7 @@ Wanneer [scenario 2](#scenario2) hieronder is geconfigureerd, wordt door de host
  | ------------ | ------ | ------------ |
  | Standaard interne load balancer | Geen Internet verbinding.| Geen |
 
- #### <a name="description"></a>Description
+ #### <a name="description"></a>Beschrijving
  
 Wanneer u een interne standaard load balancer gebruikt, is er geen gebruik van tijdelijke IP-adressen voor SNAT. Dit is om de beveiliging standaard te ondersteunen en ervoor te zorgen dat alle IP-adressen die worden gebruikt door de resource, kunnen worden geconfigureerd en kan worden gereserveerd. Als u een uitgaande verbinding met internet wilt maken wanneer u een standaard interne load balancer gebruikt, configureert u een openbaar IP-adres op exemplaar niveau om het gedrag in (scenario 1) te volgen [#scenario1] of voegt u de back-end-instanties toe aan een open bare standaard load balancer met een uitgaande regel die in additon is geconfigureerd voor de interne load balancer, om het gedrag te volgen (scenario 2 #scenario2) 
 
@@ -121,7 +121,7 @@ Wanneer u een interne standaard load balancer gebruikt, is er geen gebruik van t
  | ------------ | ------ | ------------ |
  |Geen </br> Basis load balancer | [SNAT](#snat) met dynamisch IP-adres op exemplaar niveau| TCP </br> UDP | 
 
- #### <a name="description"></a>Description
+ #### <a name="description"></a>Beschrijving
 
 
  Wanneer de virtuele machine een uitgaande stroom maakt, vertaalt Azure het bron-IP-adres naar een dynamisch toegewezen IP-adres voor de open bare bron. Dit open bare IP-adres kan **niet worden geconfigureerd** en kan niet worden gereserveerd. Dit adres telt niet op basis van de open bare IP-resource limiet van het abonnement. 

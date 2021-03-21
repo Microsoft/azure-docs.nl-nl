@@ -11,10 +11,10 @@ ms.author: avneets
 author: avneet723
 ms.date: 11/27/2019
 ms.openlocfilehash: 7cf0d31895eaeaa41c23f9f07664b27bed1d3126
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96006384"
 ---
 # <a name="connect-a-ruuvitag-sensor-to-your-azure-iot-central-application"></a>Een RuuviTag-sensor verbinden met uw Azure IoT Central-toepassing
@@ -45,10 +45,10 @@ Als u een RuuviTag-sensor wilt toevoegen aan uw Azure IoT Central-toepassings ex
 
 Een sjabloon voor een RuuviTag-apparaat toevoegen:
 
-1. Ga naar het tabblad ***Apparaatbeheer** _ in het linkerdeel venster, selecteer _* + Nieuw * *: ![ nieuwe sjabloon maken ](./media/howto-connect-ruuvi/devicetemplate-new.png) de pagina bevat een optie voor het maken van *_een aangepaste sjabloon_* of het_ gebruiken van _*_een vooraf geconfigureerde apparaatprofiel_*_
+1. Ga naar het tabblad ***Apparaatbeheer** _ in het linkerdeel venster, selecteer _* + Nieuw * *: ![ nieuwe sjabloon maken ](./media/howto-connect-ruuvi/devicetemplate-new.png) de pagina biedt een optie voor het maken van **een aangepaste sjabloon**_ of _ *_een vooraf geconfigureerde apparaatprofiel gebruiken_**
 1. Selecteer de sjabloon RuuviTag in de lijst met vooraf geconfigureerde Apparaatinstellingen, zoals hieronder wordt weer gegeven:  ![ Selecteer RuuviTag Device Temp late](./media/howto-connect-ruuvi/devicetemplate-preconfigured.png)
-1. Selecteer _*_volgende: aanpassen_*_ om door te gaan naar de volgende stap.
-1. Selecteer in het volgende scherm de optie _*_maken_*_ om de C500-apparaatprofiel voor te bereiden in uw IOT Central-toepassing.
+1. Selecteer ***volgende: aanpassen*** om door te gaan naar de volgende stap.
+1. Selecteer in het volgende scherm de optie ***maken*** om de C500-apparaatprofiel voor te bereiden in uw IOT Central-toepassing.
 
 ## <a name="connect-a-ruuvitag-sensor"></a>Een RuuviTag-sensor verbinden
 
@@ -68,7 +68,7 @@ Als u geen fysiek RuuviTag-apparaat hebt, kunt u een gesimuleerde RuuviTag-senso
 
 Een gesimuleerde RuuviTag maken:
 
-1. Selecteer _ * apparaten > RuuviTag * *.
+1. Selecteer **apparaten > RuuviTag**.
 1. Selecteer **+ Nieuw**.
 1. Geef een unieke **apparaat-id** en een beschrijvende **apparaatnaam** op.  
 1. Schakel de **gesimuleerde** instelling in.

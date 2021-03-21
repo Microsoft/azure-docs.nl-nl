@@ -4,10 +4,10 @@ description: Informatie over het inschakelen van Azure Backup om het versleuteli
 ms.topic: conceptual
 ms.date: 11/01/2020
 ms.openlocfilehash: ba9c9d91f562f54695a0739908c8a409d14d5852
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96327114"
 ---
 # <a name="transport-layer-security-in-azure-backup"></a>Transport Layer Security in Azure Backup
@@ -75,7 +75,7 @@ Voor een betere beveiliging van protocol downgrade-aanvallen wordt Azure Backup 
 - Back-uponderdelen verbindings fouten met fout 10054 (een bestaande verbinding is geforceerd gesloten door de externe host).
 - Services die betrekking hebben op Azure Backup, worden niet op de gebruikelijke manier gestopt of gestart.
 
-## <a name="additional-resources"></a>Aanvullende resources
+## <a name="additional-resources"></a>Aanvullende bronnen
 
 - [TLS-protocol (Transport Layer Security)](/windows/win32/secauthn/transport-layer-security-protocol)
 - [Ondersteuning voor TLS 1,2 voor geïmplementeerde besturings systemen](/security/engineering/solving-tls1-problem#ensuring-support-for-tls-12-across-deployed-operating-systems)

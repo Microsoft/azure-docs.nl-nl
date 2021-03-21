@@ -16,10 +16,10 @@ ms.topic: article
 ms.date: 11/02/2020
 ms.author: Zhchia
 ms.openlocfilehash: 6b00067e7f13e609c2999d6949429038e9a7dfd8
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96181744"
 ---
 # <a name="tutorial-configure-printerlogic-saas-for-automatic-user-provisioning"></a>Zelf studie: PrinterLogic SaaS configureren voor het automatisch inrichten van gebruikers
@@ -81,7 +81,7 @@ Met de Azure AD-inrichtingsservice kunt u bepalen wie worden ingericht op basis 
 
 ## <a name="step-5-configure-automatic-user-provisioning-to-printerlogic-saas"></a>Stap 5. Automatische gebruikers inrichting configureren voor PrinterLogic SaaS 
 
-In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtingsservice om gebruikers en/of groepen in BlogIn te maken, bij te werken en uit te schakelen op basis van gebruikers- en/of groepstoewijzingen in Azure AD.
+In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtingsservice om gebruikers en/of groepen in TestApp te maken, bij te werken en uit te schakelen op basis van gebruikers- en/of groepstoewijzingen in Azure AD.
 
 ### <a name="to-configure-automatic-user-provisioning-for-printerlogic-saas-in-azure-ad"></a>Automatische gebruikers inrichting configureren voor PrinterLogic SaaS in azure AD:
 

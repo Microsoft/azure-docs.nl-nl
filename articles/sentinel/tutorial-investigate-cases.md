@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 01/25/2021
 ms.author: yelevin
 ms.openlocfilehash: 8853f3774bb35361746c8b706f38bc54079d74f7
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98790983"
 ---
 # <a name="tutorial-investigate-incidents-with-azure-sentinel"></a>Zelf studie: incidenten onderzoeken met Azure Sentinel
@@ -37,7 +37,7 @@ In dit artikel komen de volgende onderwerpen aan bod:
 Een incident kan meerdere waarschuwingen bevatten. Het is een aggregatie van alle relevante bewijzen voor een specifiek onderzoek. Er wordt een incident gemaakt op basis van de analyse regels die u hebt gemaakt op de **Analytics** -pagina. De eigenschappen die betrekking hebben op de waarschuwingen, zoals ernst en status, worden ingesteld op incident niveau. Nadat u Azure-Sentinel weet wat voor soort bedreigingen u zoekt en hoe u deze kunt vinden, kun u gedetecteerde bedreigingen bewaken door incidenten te onderzoeken.
 
 ## <a name="prerequisites"></a>Vereisten
-- U kunt het incident alleen onderzoeken als u de velden voor entiteits toewijzing hebt gebruikt bij het instellen van de analyse regel. Het onderzoek diagram vereist dat uw oorspronkelijke incident entiteiten bevat.
+- U kunt het incident alleen onderzoeken als u de velden voor entiteits toewijzing hebt gebruikt bij het instellen van de analyse regel. Voor de onderzoeksgrafiek is vereist dat uw oorspronkelijke incident entiteiten omvat.
 
 - Als u een gast gebruiker hebt die incidenten moet toewijzen, moet aan de gebruiker de rol van [Directory Reader](../active-directory/roles/permissions-reference.md#directory-readers) worden toegewezen in uw Azure AD-Tenant. Normale gebruikers (niet-gast) hebben deze rol standaard toegewezen.
 
@@ -80,7 +80,7 @@ De onderzoek grafiek gebruiken:
 1. Selecteer een incident en selecteer vervolgens **onderzoeken**. Hiermee gaat u naar het onderzoek diagram. De grafiek bevat een illustrerende kaart van de entiteiten die rechtstreeks zijn verbonden met de waarschuwing en elke resource die u hebt verbonden.
 
    > [!IMPORTANT] 
-   > - U kunt het incident alleen onderzoeken als u de velden voor entiteits toewijzing hebt gebruikt bij het instellen van de analyse regel. Het onderzoek diagram vereist dat uw oorspronkelijke incident entiteiten bevat.
+   > - U kunt het incident alleen onderzoeken als u de velden voor entiteits toewijzing hebt gebruikt bij het instellen van de analyse regel. Voor de onderzoeksgrafiek is vereist dat uw oorspronkelijke incident entiteiten omvat.
    >
    > - Azure Sentinel ondersteunt momenteel het onderzoeken van **incidenten tot 30 dagen oud**.
 

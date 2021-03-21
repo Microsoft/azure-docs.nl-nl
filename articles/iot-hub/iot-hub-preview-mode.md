@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 11/24/2020
 ms.author: jlian
 ms.openlocfilehash: 864870c4392b12477c321c86afd9da848120490c
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96621702"
 ---
 # <a name="turn-on-preview-mode-for-iot-hub-to-try-select-new-features"></a>Schakel de preview-modus voor IoT Hub om nieuwe functies te selecteren
@@ -46,7 +46,7 @@ Deze functies zijn verbeterd op het IoT Hub protocol en verificatie lagen, zodat
 
 1. Op het tabblad **basis beginselen** vult u de velden [zoals gebruikelijk](iot-hub-create-through-portal.md) in, met uitzonde ring van de **regio**. Selecteer een van deze regio's:
     
-    - Central US
+    - VS - centraal
     - Europa -west
     - Azië - zuidoost
 

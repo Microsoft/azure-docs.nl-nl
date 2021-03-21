@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.service: azure-remote-rendering
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 69bcc521b4cd00320a5fbecc5244e913ac16c68b
-ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99593905"
 ---
 # <a name="graphics-binding"></a>Afbeeldings binding
@@ -275,7 +275,7 @@ public struct SimulationUpdateResult
 
 De structuur leden hebben de volgende betekenis:
 
-| Lid | Description |
+| Lid | Beschrijving |
 |--------|-------------|
 | FrameId | Doorlopende frame-id. Nodig voor SimulationUpdateParameters-invoer en moet voortdurend worden verhoogd voor elk nieuw frame. Is 0 in SimulationUpdateResult als er nog geen frame gegevens beschikbaar zijn. |
 | ViewTransform | Links/rechts/stereo-paar van de camera weergave transformatie matrices. Voor monoscopic-rendering is alleen het `Left` lid geldig. |

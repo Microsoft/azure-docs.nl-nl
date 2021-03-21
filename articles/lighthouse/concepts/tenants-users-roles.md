@@ -4,10 +4,10 @@ description: Inzicht in de concepten van Azure Active Directory-tenants, gebruik
 ms.date: 01/14/2021
 ms.topic: conceptual
 ms.openlocfilehash: d78828cc739030f8e456c64885d77ddf59dd13fb
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98233913"
 ---
 # <a name="tenants-users-and-roles-in-azure-lighthouse-scenarios"></a>Tenants, gebruikers en rollen in azure Lighthouse-scenario's

@@ -17,10 +17,10 @@ ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8f08c25749bbd21e3624dee898d9a8c97fd74164
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98059378"
 ---
 # <a name="add-a-connected-organization-in-azure-ad-entitlement-management"></a>Een verbonden organisatie toevoegen in het beheer van rechten van Azure AD
@@ -49,7 +49,7 @@ In dit geval kunt u twee verbonden organisaties configureren. U maakt één verb
 Hoe gebruikers van de Azure AD-Directory of het domein verifiëren, is afhankelijk van het verificatie type. De verificatie typen voor verbonden organisaties zijn:
 
 - Azure AD
-- [Directe federatie](../external-identities/direct-federation.md)
+- [Directe Federatie](../external-identities/direct-federation.md)
 - [Eenmalige wachtwoord code](../external-identities/one-time-passcode.md) (domein)
 
 Bekijk de volgende video voor een demonstratie van het toevoegen van een verbonden organisatie:

@@ -5,10 +5,10 @@ ms.topic: tutorial
 ms.custom: devx-track-dotnet
 ms.date: 06/23/2020
 ms.openlocfilehash: 7669bc07ad91933cd31bd2ccd10eaf830d98de7c
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101710784"
 ---
 # <a name="tutorial-expose-an-on-premises-wcf-rest-service-to-external-client-by-using-azure-wcf-relay"></a>Zelfstudie: Een on-premises WCF REST-service zichtbaar maken voor een externe client met behulp van Azure WCF Relay

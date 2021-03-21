@@ -4,10 +4,10 @@ description: In deze zelfstudie leert u hoe u Azure Media Service-API's gebruikt
 ms.topic: tutorial
 ms.date: 05/27/2020
 ms.openlocfilehash: 81a778b40649c1318b3738a289f0db37fd35376a
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99492786"
 ---
 # <a name="tutorial-playback-of-multi-day-recordings"></a>Zelfstudie: Opnamen van meerdere dagen afspelen  

@@ -6,13 +6,13 @@ author: kromerm
 ms.reviewer: daperlov
 ms.service: data-factory
 ms.topic: troubleshooting
-ms.date: 03/15/2021
-ms.openlocfilehash: fe65a9528e35416d537f3aecd3a44f8b4e568afe
-ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
+ms.date: 03/18/2021
+ms.openlocfilehash: 8617c32eac86d8e47678c06e3b028a475b4a5efb
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "103467728"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104593846"
 ---
 # <a name="troubleshoot-mapping-data-flows-in-azure-data-factory"></a>Problemen met toewijzing van gegevens stromen in Azure Data Factory oplossen
 
@@ -26,12 +26,6 @@ In dit artikel worden algemene probleemoplossings methoden besproken voor het to
 - **Bericht**: uitvoering van voor beeld, fout opsporing en pipeline-gegevens stroom is mislukt omdat de container niet bestaat
 - **Oorzaak**: een gegevensset bevat een container die niet voor komt in de opslag.
 - **Aanbeveling**: Controleer of de container waarnaar wordt verwezen in uw gegevensset bestaat en of deze toegankelijk is.
-
-### <a name="error-code-df-executor-systemimplicitcartesian"></a>Fout code: DF-uitvoerder-SystemImplicitCartesian
-
-- **Bericht**: impliciet Cartesisch product voor Inner join wordt niet ondersteund. gebruik in plaats daarvan cross join. Kolommen die in de samen voeging worden gebruikt, moeten een unieke sleutel voor rijen maken.
-- **Oorzaak**: impliciet Cartesisch product voor Inner joins tussen logische plannen worden niet ondersteund. Als u kolommen gebruikt in de samen voeging, maakt u een unieke sleutel met ten minste één kolom aan beide zijden van de relatie.
-- **Aanbeveling**: gebruik voor niet-gelijkheid gebaseerde samen VOEGINGEN aangepaste cross-koppeling.
 
 ### <a name="error-code-df-executor-systeminvalidjson"></a>Fout code: DF-uitvoerder-SystemInvalidJson
 
@@ -82,11 +76,6 @@ In dit artikel worden algemene probleemoplossings methoden besproken voor het to
 - **Oorzaak**: het gegevens type voor het gedeclareerde type is niet compatibel met de werkelijke parameter waarde.
 - **Aanbeveling**: Controleer of de parameter waarden die zijn door gegeven aan de gegevens stroom overeenkomen met het gedeclareerde type.
 
-### <a name="error-code-df-executor-columnunavailable"></a>Fout code: DF-uitvoerder-ColumnUnavailable
-- **Bericht**: de kolom naam die in de expressie wordt gebruikt, is niet beschikbaar of is ongeldig
-- **Oorzaak**: een ongeldige of niet-beschik bare kolom naam die wordt gebruikt in een expressie.
-- **Aanbeveling**: kolom namen in expressies controleren.
-
 ### <a name="error-code-df-executor-parseerror"></a>Fout code: DF-uitvoerder-ParseError
 - **Bericht**: expressie kan niet worden geparseerd
 - **Oorzaak**: er is een expressie gegenereerd met het parseren van fouten vanwege een onjuiste opmaak.
@@ -96,29 +85,6 @@ In dit artikel worden algemene probleemoplossings methoden besproken voor het to
 - **Bericht**: impliciet Cartesisch product voor Inner join wordt niet ondersteund. gebruik in plaats daarvan cross join. Kolommen die in de samen voeging worden gebruikt, moeten een unieke sleutel voor rijen maken.
 - **Oorzaak**: impliciet Cartesisch product voor Inner joins tussen logische plannen worden niet ondersteund. Als u kolommen in de samen voeging gebruikt, maakt u een unieke sleutel.
 - **Aanbeveling**: voor niet-gelijkheid gebaseerde samen voegingen gebruikt u cross-koppeling.
-
-### <a name="error-code-df-executor-systeminvalidjson"></a>Fout code: DF-uitvoerder-SystemInvalidJson
-- **Bericht**: JSON-Parseerfout, niet-ondersteunde code ring of meerdere regels
-- **Oorzaak**: mogelijke problemen met het JSON-bestand: niet-ondersteunde code ring, beschadigde bytes of het gebruik van JSON-bron als één document op veel geneste regels.
-- **Aanbeveling**: Controleer of de code ring van het JSON-bestand wordt ondersteund. Vouw op de bron transformatie die gebruikmaakt van een JSON-gegevensset **JSON-instellingen** uit en schakel vervolgens **één document** in.
-
-
-
-### <a name="error-code-df-executor-conversion"></a>Fout code: DF-uitvoeringen-conversie
-- **Bericht**: converteren naar een datum of tijd is mislukt vanwege een ongeldig teken
-- **Oorzaak**: de gegevens hebben niet de verwachte indeling.
-- **Aanbeveling**: gebruik het juiste gegevens type.
-
-
-### <a name="error-code-df-executor-blockcountexceedslimiterror"></a>Fout code: DF-uitvoerder-BlockCountExceedsLimitError
-- **Bericht**: het niet-toegewezen blok aantal mag de maximum limiet van 100.000 blokken niet overschrijden. Controleer de BLOB-configuratie.
-- **Oorzaak**: het maximum aantal niet-toegewezen blokken in een blob is 100.000.
-- **Aanbeveling**: Neem contact op met het product team van micro soft voor meer informatie over dit probleem.
-
-### <a name="error-code-df-executor-partitiondirectoryerror"></a>Fout code: DF-uitvoerder-PartitionDirectoryError
-- **Bericht**: het opgegeven bronpad heeft meerdere gepartitioneerde directory's (bijvoorbeeld *<Source Path> /<partitie root directory 1>/a = 10/b = 20, <Source Path> /<Partition root directory 2>/c = 10/d = 30*) of gepartitioneerde directory met een ander bestand of een niet-gepartitioneerde directory (bijvoorbeeld *<Source Path> /<partitie root directory 1>/A = 10/b = 20, <Source Path> /Directory 2/bestand1*), verwijdert u de partitie basis directory van het bronpad en leest u deze via een afzonderlijke bron transformatie.
-- **Oorzaak**: het bronpad heeft meerdere gepartitioneerde directory's of een gepartitioneerde map met een ander bestand of een niet-gepartitioneerde directory. 
-- **Aanbeveling**: Verwijder de gepartitioneerde hoofdmap van het bronpad en lees deze via een afzonderlijke bron transformatie.
 
 ### <a name="error-code-getcommand-outputasync-failed"></a>Fout code: GetCommand OutputAsync is mislukt
 - **Bericht**: tijdens fout opsporing en voor beeld van gegevens stroom: GetCommand OutputAsync is mislukt met...
@@ -137,22 +103,10 @@ In dit artikel worden algemene probleemoplossings methoden besproken voor het to
 - **Oorzaak**: de account naam of de toegangs sleutel is onjuist.
 - **Aanbeveling**: Controleer of de account naam of de toegangs sleutel die is opgegeven in de gekoppelde service juist is. 
 
-### <a name="error-code-df-executor-invalidtype"></a>Fout code: DF-uitvoerder-InvalidType
-- **Bericht**: Controleer of het type para meter overeenkomt met het type van de waarde die is door gegeven. Het door geven van float-para meters van pijp lijnen wordt momenteel niet ondersteund.
-- **Oorzaak**: het gegevens type voor het gedeclareerde type is niet compatibel met de werkelijke parameter waarde. 
-- **Aanbeveling**: Geef de juiste gegevens typen op.
-
 ### <a name="error-code-df-executor-columnunavailable"></a>Fout code: DF-uitvoerder-ColumnUnavailable
 - **Bericht**: de kolom naam die in de expressie wordt gebruikt, is niet beschikbaar of is ongeldig.
 - **Oorzaak**: er wordt een ongeldige of niet-beschik bare kolom naam gebruikt in een expressie.
 - **Aanbeveling**: Controleer de kolom namen die worden gebruikt in expressies.
-
-
-### <a name="error-code-df-executor-parseerror"></a>Fout code: DF-uitvoerder-ParseError
-- **Bericht**: expressie kan niet worden geparseerd.
-- **Oorzaak**: er is een expressie gegenereerd met het parseren van fouten vanwege een onjuiste opmaak. 
-- **Aanbeveling**: Controleer de opmaak in de expressie.
-
 
  ### <a name="error-code-df-executor-outofdiskspaceerror"></a>Fout code: DF-uitvoerder-OutOfDiskSpaceError
 - **Bericht**: interne server fout

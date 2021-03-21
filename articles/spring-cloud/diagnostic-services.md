@@ -8,10 +8,10 @@ ms.date: 01/06/2020
 ms.author: brendm
 ms.custom: devx-track-java
 ms.openlocfilehash: c354435f689f5182dd368fd53fdab28f1ab63d48
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102218788"
 ---
 # <a name="analyze-logs-and-metrics-with-diagnostics-settings"></a>Logboeken en metrische gegevens analyseren met Diagnostische instellingen
@@ -31,7 +31,7 @@ Kies de categorie van het logboek en de metrische gegevens die u wilt bewaken.
 
 ## <a name="logs"></a>Logboeken
 
-|Logboek | Description |
+|Logboek | Beschrijving |
 |----|----|
 | **ApplicationConsole** | Console logboek van alle toepassingen van klanten. |
 | **SystemLogs** | Op dit moment worden alleen logboeken met [lente-Cloud configuratie servers](https://cloud.spring.io/spring-cloud-config/reference/html/#_spring_cloud_config_server) in deze categorie vastgelegd. |

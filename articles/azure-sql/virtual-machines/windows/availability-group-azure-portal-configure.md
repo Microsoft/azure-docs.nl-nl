@@ -15,10 +15,10 @@ ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019, devx-track-azurecli
 ms.openlocfilehash: 14760b4244d42e57aaed7f7d96f487a66147a554
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97359503"
 ---
 # <a name="use-azure-portal-to-configure-an-availability-group-preview-for-sql-server-on-azure-vm"></a>Azure Portal gebruiken om een beschikbaarheids groep te configureren voor SQL Server op een Azure VM 
@@ -60,7 +60,7 @@ Als u al een cluster hebt, kunt u deze sectie overs Laan en het bestaande cluste
 
 Als u nog geen bestaand cluster hebt, maakt u dit met behulp van de Azure Portal door de volgende stappen uit te voeren:
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com). 
+1. Meld u aan bij de [Azure Portal](https://portal.azure.com). 
 1. Navigeer naar de resource van de [virtuele SQL-machines](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.SqlVirtualMachine%2FSqlVirtualMachines) . 
 1. Selecteer **hoge Beschik baarheid** onder **instellingen**. 
 1. Selecteer **+ nieuw Windows Server-failovercluster** om de pagina **Windows-failovercluster configureren** te openen.  
@@ -91,7 +91,7 @@ Als u al een cluster hebt geconfigureerd in uw SQL Server VM-omgeving, kunt u he
 
 Voer hiervoor de volgende stappen uit:
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com). 
+1. Meld u aan bij de [Azure Portal](https://portal.azure.com). 
 1. Navigeer naar de resource van de [virtuele SQL-machines](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.SqlVirtualMachine%2FSqlVirtualMachines) . 
 1. Selecteer **hoge Beschik baarheid** onder **instellingen**. 
 1. Selecteer een **bestaand Windows Server-failovercluster onboarding** om de pagina **onboarding Windows Server failover cluster** te openen. 
@@ -105,7 +105,7 @@ Voer hiervoor de volgende stappen uit:
 
 Nadat het cluster is gemaakt of onboarded, maakt u de beschikbaarheids groep met behulp van de Azure Portal. Voer hiervoor de volgende stappen uit:
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com). 
+1. Meld u aan bij de [Azure Portal](https://portal.azure.com). 
 1. Navigeer naar de resource van de [virtuele SQL-machines](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.SqlVirtualMachine%2FSqlVirtualMachines) . 
 1. Selecteer **hoge Beschik baarheid** onder **instellingen**. 
 1. Selecteer **+ nieuwe always on-beschikbaarheids groep** om de pagina **beschikbaarheids groep maken** te openen.
@@ -160,7 +160,7 @@ Nadat de data bases zijn toegevoegd, kunt u de status van uw beschikbaarheids gr
 
 Voer de volgende stappen uit om meer SQL Server Vm's toe te voegen aan het cluster: 
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com). 
+1. Meld u aan bij de [Azure Portal](https://portal.azure.com). 
 1. Navigeer naar de resource van de [virtuele SQL-machines](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.SqlVirtualMachine%2FSqlVirtualMachines) . 
 1. Selecteer **hoge Beschik baarheid** onder **instellingen**. 
 1. Selecteer **Windows Server-failovercluster configureren** om de pagina **Windows Server-failovercluster configureren** te openen. 
@@ -185,7 +185,7 @@ U kunt **meer Replica's toevoegen** aan de beschikbaarheids groep, **de listener
 
 Verwijder alle SQL Server-Vm's uit het cluster om deze te vernietigen en verwijder vervolgens de meta gegevens van het cluster uit de SQL IaaS agent-extensie. U kunt dit doen met behulp van de nieuwste versie van de [Azure cli](/cli/azure/install-azure-cli) of Power shell. 
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Verwijder eerst alle SQL Server-Vm's uit het cluster. Hiermee verwijdert u de knoop punten van het cluster fysiek en vernietigt u het cluster:  
 
@@ -248,7 +248,7 @@ Wijzigingen in de cluster-en beschikbaarheids groep via de portal worden uitgevo
 
 Voer de volgende stappen uit om de logboeken voor de implementatie weer te geven en de implementatie geschiedenis te controleren:
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure Portal](https://portal.azure.com).
 1. Navigeer naar uw resource groep.
 1. Selecteer **implementaties** onder **instellingen**.
 1. Selecteer de implementatie van belang voor meer informatie over de implementatie. 

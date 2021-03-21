@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 02/08/2021
 ms.openlocfilehash: 0a9a58e91202d42640264aba00e1a583be1cde70
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101705650"
 ---
 # <a name="archived-release-notes"></a>Gearchiveerde releaseopmerkingen
@@ -1764,7 +1764,7 @@ Met opgeloste problemen worden geselecteerde problemen weer gegeven die eerder z
 | BUG-97864              | [HIVE-18833](https://issues.apache.org/jira/browse/HIVE-18833)   | Automatisch samen voegen mislukt wanneer ' in map invoegen als orcfile '                                      |
 | BUG-98814              | [HDFS-13314](https://issues.apache.org/jira/browse/HDFS-13314)   | NameNode moet eventueel worden afgesloten als FsImage beschadigd wordt gedetecteerd                              |
 
-**Upgraden**
+**Upgrade uitvoeren**
 
 | **Hortonworks-fout-ID** | **Apache JIRA**                                                                                                                | **Samenvatting**                                                                 |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|

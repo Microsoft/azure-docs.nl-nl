@@ -6,10 +6,10 @@ ms.date: 09/24/2020
 ms.author: glenga
 ms.custom: fasttrack-edit
 ms.openlocfilehash: 1ff9606d10ac62e0bab15f970a964bfd0b08bee8
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97506328"
 ---
 # <a name="c"></a>[C#](#tab/csharp)

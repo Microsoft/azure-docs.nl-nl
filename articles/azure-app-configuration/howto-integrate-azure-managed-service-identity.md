@@ -9,10 +9,10 @@ ms.custom: devx-track-csharp, fasttrack-edit
 ms.topic: conceptual
 ms.date: 2/25/2020
 ms.openlocfilehash: 2f446df95c795eaac378340ed0d5de7b31dfcfee
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102219031"
 ---
 # <a name="use-managed-identities-to-access-app-configuration"></a>Beheerde identiteiten gebruiken om App Configuration te openen
@@ -96,7 +96,7 @@ Als u een beheerde identiteit in de portal wilt instellen, maakt u eerst een toe
     }
     ```
 
-1. Open *Program.cs* en voeg een verwijzing naar de `Azure.Identity` `Microsoft.Azure.Services.AppAuthentication` naam ruimten en toe:
+1. Open *programma. cs* en voeg een verwijzing naar de `Azure.Identity` `Microsoft.Azure.Services.AppAuthentication` naam ruimten en toe:
 
     ```csharp-interactive
     using Azure.Identity;
@@ -148,7 +148,7 @@ Als u een beheerde identiteit in de portal wilt instellen, maakt u eerst een toe
     >Zoals uitgelegd in de [Veelgestelde vragen over beheerde identiteiten voor Azure-resources](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/known-issues#what-identity-will-imds-default-to-if-dont-specify-the-identity-in-the-request), is er een standaard manier om de beheerde identiteit op te lossen. In dit geval wordt u afgedwongen om de gewenste identiteit op te geven om aantal-runtime problemen in de toekomst te voor komen (bijvoorbeeld als een nieuwe door de gebruiker toegewezen beheerde identiteit wordt toegevoegd of als de door het systeem toegewezen beheerde identiteit is ingeschakeld). Daarom moet u de clientId opgeven, zelfs als er slechts één door de gebruiker toegewezen beheerde identiteit is gedefinieerd, en er geen door het systeem toegewezen beheerde identiteit is.
 
 
-1. Als u zowel app-configuratie waarden als Key Vault referenties wilt gebruiken, moet u *Program.cs* bijwerken zoals hieronder wordt weer gegeven. Deze code roept `SetCredential` als onderdeel van `ConfigureKeyVault` de configuratie provider aan welke referentie moet worden gebruikt bij het verifiëren van Key Vault.
+1. Als u zowel app-configuratie waarden als Key Vault referenties wilt gebruiken, moet u *programma. cs* bijwerken zoals hieronder wordt weer gegeven. Deze code roept `SetCredential` als onderdeel van `ConfigureKeyVault` de configuratie provider aan welke referentie moet worden gebruikt bij het verifiëren van Key Vault.
 
     ### <a name="net-core-2x"></a>[.NET Core 2.x](#tab/core2x)
 

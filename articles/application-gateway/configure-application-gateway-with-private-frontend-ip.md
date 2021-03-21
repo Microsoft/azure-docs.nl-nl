@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 02/23/2021
 ms.author: victorh
 ms.openlocfilehash: 224cbe1e34e5915a7fa5fc1cf415c35f86c3abe4
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101711651"
 ---
 # <a name="configure-an-application-gateway-with-an-internal-load-balancer-ilb-endpoint"></a>Een toepassings gateway met een ILB-eind punt (interne load balancer) configureren

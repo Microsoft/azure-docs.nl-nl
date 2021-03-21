@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: reference
 author: likebupt
 ms.author: keli19
-ms.date: 07/28/2020
-ms.openlocfilehash: c6e3d56958168cd279c98a4ba4c021c2362c2694
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.date: 03/19/2021
+ms.openlocfilehash: 90755aef66fa51084d83d036722187b61449a6fc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93421308"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104656903"
 ---
 # <a name="export-data-module"></a>Gegevens module exporteren
 
@@ -45,13 +45,16 @@ Voordat u uw gegevens exporteert, moet u eerst een gegevens opslag registreren i
     > [!NOTE]
     > Het exporteren van gegevens van een bepaald gegevens type naar een SQL database-kolom die is opgegeven als een ander gegevens type, wordt niet ondersteund. De doel tabel hoeft niet eerst te bestaan.
 
-1. Het selectie vakje, **uitvoer opnieuw genereren** , bepaalt of de module moet worden uitgevoerd om de uitvoer tijdens de uitvoering opnieuw te genereren. 
+1. Het selectie vakje, **uitvoer opnieuw genereren**, bepaalt of de module moet worden uitgevoerd om de uitvoer tijdens de uitvoering opnieuw te genereren. 
 
     Deze optie is standaard niet geselecteerd, wat betekent dat als de module met dezelfde para meters eerder is uitgevoerd, de uitvoer van de laatste uitvoering opnieuw wordt gebruikt om de uitvoerings tijd te verminderen. 
 
     Als deze is geselecteerd, voert het systeem de module opnieuw uit om de uitvoer opnieuw te genereren.
 
-1. Definieer het pad in het gegevens archief waarin de gegevens zich bevinden. Het pad is een relatief pad. De lege paden of URL-paden zijn niet toegestaan.
+1. Definieer het pad in het gegevens archief waarin de gegevens zich bevinden. Het pad is een relatief pad. Neem `data/testoutput` als voor beeld, wat betekent dat de invoer gegevens van de **export gegevens** worden geëxporteerd naar `data/testoutput` in de gegevens opslag die u hebt ingesteld in de **uitvoer instellingen** van de module.
+
+    > [!NOTE]
+    > De lege paden of **URL-paden** zijn niet toegestaan.
 
 
 1. Selecteer bij **bestands indeling** de indeling waarin de gegevens moeten worden opgeslagen.

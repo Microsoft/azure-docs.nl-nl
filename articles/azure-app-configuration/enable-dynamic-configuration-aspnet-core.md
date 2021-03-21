@@ -15,10 +15,10 @@ ms.date: 09/1/2020
 ms.author: alkemper
 ms.custom: devx-track-csharp, mvc
 ms.openlocfilehash: 083bd56b2b211d11206a277bf31eea797b37cdb9
-ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99979926"
 ---
 # <a name="tutorial-use-dynamic-configuration-in-an-aspnet-core-app"></a>Zelfstudie: Dynamische configuratie in een ASP.NET Core-app gebruiken
@@ -142,7 +142,7 @@ Een *Sentinel-sleutel* is een speciale sleutel die wordt gebruikt om te signaler
 
     Als u een vernieuwingsbewerking daadwerkelijk wilt activeren, moet u middleware voor het vernieuwen van de toepassing configureren om de configuratiegegevens te vernieuwen wanneer er wijzigingen optreden. In een latere stap ziet u hoe u dit doet.
 
-2. Voeg een *Settings.cs* -bestand toe aan de map controllers die een nieuwe klasse definieert en implementeert `Settings` . Vervang de naam ruimte door de naam van uw project. 
+2. Voeg in de map controllers een bestand *Settings. cs* toe dat een nieuwe klasse definieert en implementeert `Settings` . Vervang de naam ruimte door de naam van uw project. 
 
     ```csharp
     namespace TestAppConfig

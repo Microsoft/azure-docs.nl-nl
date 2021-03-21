@@ -4,10 +4,10 @@ description: In dit artikel worden de eigenschappen beschreven voor het abonnere
 ms.topic: reference
 ms.date: 07/07/2020
 ms.openlocfilehash: f6e33171cbba65cfeaca49ab6a8954be8bb89acb
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102199948"
 ---
 # <a name="event-grid-subscription-schema"></a>Schema voor Event Grid abonnement

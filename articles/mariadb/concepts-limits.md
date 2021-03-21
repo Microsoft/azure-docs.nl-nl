@@ -3,14 +3,14 @@ title: Beperkingen-Azure Database for MariaDB
 description: In dit artikel worden beperkingen beschreven in Azure Database for MariaDB, zoals het aantal opties voor de verbinding en de opslag engine.
 author: savjani
 ms.author: pariks
-ms.service: jroth
+ms.service: mariadb
 ms.topic: conceptual
 ms.date: 10/2/2020
-ms.openlocfilehash: de561f0fdea7ea7085a4a1d3ec6f95071c36f57e
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: d4546732f067988c9d7dd2d11c718a15fbe32d23
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98664296"
 ---
 # <a name="limitations-in-azure-database-for-mariadb"></a>Beperkingen in Azure Database for MariaDB

@@ -6,10 +6,10 @@ author: bwren
 ms.author: bwren
 ms.date: 04/10/2019
 ms.openlocfilehash: 79bcca688146b2c2382876b6a61bc0eee34382a1
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102040954"
 ---
 # <a name="manage-access-to-log-data-and-workspaces-in-azure-monitor"></a>Toegang tot logboekgegevens en werkruimten beheren in Azure Monitor

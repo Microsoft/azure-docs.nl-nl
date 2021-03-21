@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/17/2021
 ms.author: jeedes
-ms.openlocfilehash: 23c2b55fd56677a15f444e1b568517bdf1c32c99
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: ad6d5308638b112afe2b51c4e149f876651e429d
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102200798"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104592520"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-cisco-webex"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met Cisco Webex
 
@@ -38,7 +38,7 @@ U hebt het volgende nodig om aan de slag te gaan:
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
 * Cisco Webex biedt ondersteuning voor met **SP** geïnitieerde SSO.
-* Cisco WebEx ondersteunt [**geautomatiseerde gebruikers inrichting**](https://docs.microsoft.com/azure/active-directory/saas-apps/cisco-webex-provisioning-tutorial).
+* Cisco WebEx ondersteunt [**geautomatiseerde gebruikers inrichting**](./cisco-webex-provisioning-tutorial.md).
 
 ## <a name="adding-cisco-webex-from-the-gallery"></a>Cisco Webex toevoegen vanuit de galerie
 
@@ -159,7 +159,7 @@ In deze sectie stelt u B.Simon in staat gebruik te maken van eenmalige aanmeldin
 
 ### <a name="create-cisco-webex-test-user"></a>Testgebruiker voor Cisco Webex maken
 
-In deze sectie wordt een gebruiker met de naam B. Simon gemaakt in Cisco WebEx. deze toepassing biedt ondersteuning voor automatische gebruikers inrichting, waarmee automatische inrichting en het ongedaan maken van de inrichting wordt ingeschakeld op basis van uw bedrijfs regels.  Micro soft raadt u aan om waar mogelijk automatische inrichting te gebruiken. Zie automatische inrichting inschakelen voor [Cisco WebEx](https://docs.microsoft.com/azure/active-directory/saas-apps/cisco-webex-provisioning-tutorial).
+In deze sectie wordt een gebruiker met de naam B. Simon gemaakt in Cisco WebEx. deze toepassing biedt ondersteuning voor automatische gebruikers inrichting, waarmee automatische inrichting en het ongedaan maken van de inrichting wordt ingeschakeld op basis van uw bedrijfs regels.  Micro soft raadt u aan om waar mogelijk automatische inrichting te gebruiken. Zie automatische inrichting inschakelen voor [Cisco WebEx](./cisco-webex-provisioning-tutorial.md).
 
 Als u hand matig een gebruiker moet maken, voert u de volgende stappen uit:
 
@@ -195,7 +195,7 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 * Ga rechtstreeks naar de aanmeldings-URL van Cisco WebEx en start de aanmeldings stroom.
 
-* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de Cisco WebEx-tegel in de mijn apps klikt, wordt dit omgeleid naar de aanmeldings-URL van Cisco WebEx. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de Cisco WebEx-tegel in de mijn apps klikt, wordt dit omgeleid naar de aanmeldings-URL van Cisco WebEx. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 
 ## <a name="next-steps"></a>Volgende stappen

@@ -7,10 +7,10 @@ ms.author: newylie
 ms.date: 06/05/2020
 ms.custom: devx-track-js
 ms.openlocfilehash: 6295a56abbf3466c68b968c935936dbc10e22fb5
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101711413"
 ---
 # <a name="troubleshooting-sdk-load-failure-for-javascript-web-apps"></a>Problemen met SDK-laad fouten voor Java script-web-apps oplossen

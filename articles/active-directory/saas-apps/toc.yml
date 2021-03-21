@@ -711,8 +711,6 @@
           href: fuse-tutorial.md
         - name: Fuze
           href: fuze-tutorial.md
-        - name: Grammarly
-          href: grammarly-provisioning-tutorial.md
         - name: G Suite
           href: google-apps-tutorial.md
         - name: GaggleAMP
@@ -1633,7 +1631,7 @@
           href: sendsafely-tutorial.md
         - name: 'SensoScientific, draadloos temperatuurbewakingssysteem'
           href: sensoscientific-tutorial.md
-        - name: Sequr
+        - name: Gena Access Control
           href: sequr-tutorial.md
         - name: Serraview Space Utilization Software Solutions
           href: serraview-space-utilization-software-solutions-tutorial.md
@@ -2206,6 +2204,8 @@
           href: github-enterprise-managed-user-provisioning-tutorial.md
         - name: GoToMeeting
           href: citrixgotomeeting-provisioning-tutorial.md
+        - name: Grammarly
+          href: grammarly-provisioning-tutorial.md
         - name: GroupTalk
           href: grouptalk-provisioning-tutorial.md
         - name: Gtmhub

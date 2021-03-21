@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 10/05/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
-ms.openlocfilehash: 0e8565615cdbac63b0526b5cd87dd9d92d5aa4f1
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: 7d802aa83e2d48e7b66980b5c06aece10a93f37f
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102216680"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104658523"
 ---
 # <a name="quickstart-call-an-aspnet-web-api-thats-protected-by-microsoft-identity-platform"></a>Quickstart: Een ASP.NET-web-API aanroepen die wordt beveiligd door Microsoft-identiteitsplatform
 
@@ -39,6 +39,8 @@ U kunt het voorbeeld op twee manieren ophalen:
    git clone https://github.com/AzureADQuickStarts/AppModelv2-NativeClient-DotNet.git
    ```
 * [Download het als een ZIP-bestand](https://github.com/AzureADQuickStarts/AppModelv2-NativeClient-DotNet/archive/complete.zip).
+
+[!INCLUDE [active-directory-develop-path-length-tip](../../../includes/active-directory-develop-path-length-tip.md)]
 
 ## <a name="register-your-web-api"></a>Uw web-API registreren
 

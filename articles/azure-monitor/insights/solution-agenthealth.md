@@ -6,10 +6,10 @@ author: bwren
 ms.author: bwren
 ms.date: 02/06/2020
 ms.openlocfilehash: 171230dc2ce6189e36c601c6c7d3b3612fce160c
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101711056"
 ---
 #  <a name="agent-health-solution-in-azure-monitor"></a>Status van agent oplossing in Azure Monitor
@@ -89,7 +89,7 @@ Elke agent die aan een Operations Manager-beheer Server rapporteert, verzendt tw
 ## <a name="sample-log-searches"></a>Voorbeeldzoekopdrachten in logboeken
 De volgende tabel bevat voorbeelden van zoekopdrachten in logboeken voor records die zijn verzameld met deze oplossing.
 
-| Query’s uitvoeren | Beschrijving |
+| Query | Beschrijving |
 |:---|:---|
 | Heartbeat &#124; distinct Computer |Het totale aantal agents |
 | Heartbeat &#124; summarize LastCall = max(TimeGenerated) by Computer &#124; where LastCall < ago(24h) |Het aantal agents dat de afgelopen 24 uur niet heeft gereageerd |

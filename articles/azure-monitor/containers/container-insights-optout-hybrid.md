@@ -4,10 +4,10 @@ description: In dit artikel wordt beschreven hoe u de bewaking van uw hybride Ku
 ms.topic: conceptual
 ms.date: 06/16/2020
 ms.openlocfilehash: e8708d6b860683cc96a806160ccc7c8e33949ab2
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101713691"
 ---
 # <a name="how-to-stop-monitoring-your-hybrid-cluster"></a>Het bewaken van uw hybride cluster stoppen

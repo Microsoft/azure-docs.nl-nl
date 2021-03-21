@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 03/04/2021
 ms.author: tyao
 ms.openlocfilehash: 885b4d132208ab6f8b470d147438e26a5fd4bab7
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102201665"
 ---
 # <a name="connect-azure-front-door-premium-to-a-storage-account-origin-with-private-link"></a>Azure front-deur Premium verbinden met een opslag account oorsprong met een persoonlijke koppeling

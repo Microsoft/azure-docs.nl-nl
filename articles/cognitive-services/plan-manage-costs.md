@@ -8,10 +8,10 @@ ms.service: cognitive-services
 ms.topic: how-to
 ms.date: 12/15/2020
 ms.openlocfilehash: db99fa5caff27a24aa04e4780b25ade3f7c25496
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101699926"
 ---
 # <a name="plan-and-manage-costs-for-azure-cognitive-services"></a>Kosten plannen en beheren voor Azure Cognitive Services
@@ -74,7 +74,7 @@ Wanneer u kosten analyse gebruikt, bekijkt u Cognitive Services kosten in grafie
 
 Cognitive Services kosten voor de kosten analyse weer geven:
 
-1. Meld u aan bij de Azure-portal.
+1. Meld u aan bij Azure Portal.
 2. Open het bereik in de Azure Portal en selecteer **kosten analyse** in het menu. Ga bijvoorbeeld naar **abonnementen**, selecteer een abonnement in de lijst en selecteer vervolgens  **kosten analyse** in het menu. Selecteer **bereik** om over te scha kelen naar een ander bereik in cost analysis.
 3. Kosten voor services worden standaard weer gegeven in de eerste cirkel diagram. Selecteer het gebied in de grafiek met het label Cognitive Services.
 

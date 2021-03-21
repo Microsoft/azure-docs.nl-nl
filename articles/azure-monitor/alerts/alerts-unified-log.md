@@ -6,10 +6,10 @@ ms.author: yalavi
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.openlocfilehash: 786e9b472d1f900e94e5d0cfa6a00e0f85547704
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102037690"
 ---
 # <a name="log-alerts-in-azure-monitor"></a>Waarschuwingen registreren in Azure Monitor
@@ -82,7 +82,7 @@ Voor werk ruimten en Application Insights wordt deze aangeroepen **op basis van*
 
 U wilt weten wanneer uw toepassing reageert met fout code 500 (interne server fout). U maakt een waarschuwings regel met de volgende details:
 
-- **Ophalen** 
+- **Query:** 
 
 ```Kusto
 requests
@@ -128,7 +128,7 @@ In werk ruimten en Application Insights wordt het alleen ondersteund in meet typ
 
 U wilt bijvoorbeeld fouten bewaken voor meerdere virtuele machines waarop uw website/app wordt uitgevoerd in een specifieke resource groep. U kunt dit als volgt doen met behulp van een waarschuwings regel voor logboek:
 
-- **Ophalen** 
+- **Query:** 
 
     ```Kusto
     // Reported errors

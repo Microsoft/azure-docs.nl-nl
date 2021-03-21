@@ -6,10 +6,10 @@ author: bwren
 ms.author: bwren
 ms.date: 01/17/2018
 ms.openlocfilehash: d1d0da70dc1e47d0a1ddb90abbed2eaea83919cd
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102040172"
 ---
 # <a name="reference-guide-to-view-designer-tiles-in-azure-monitor"></a>Naslag Gids voor het weer geven van ontwerp tegels in Azure Monitor
@@ -48,10 +48,10 @@ Op de tegel **getal** wordt zowel het aantal records uit een logboek query als e
 | Beschrijving |De tekst die wordt weer gegeven onder de naam van de tegel. |
 | **Tegel** | |
 | Legenda |De tekst die wordt weer gegeven onder de waarde. |
-| Query’s uitvoeren |De query die wordt uitgevoerd. Het aantal records dat door de query wordt geretourneerd, wordt weer gegeven. |
+| Query |De query die wordt uitgevoerd. Het aantal records dat door de query wordt geretourneerd, wordt weer gegeven. |
 | **Geavanceerd** |**Verificatie van de gegevens stroom>** |
 | Ingeschakeld |Selecteer deze koppeling als verificatie van de gegevens stroom moet worden ingeschakeld voor de tegel. Deze methode biedt een alternatief bericht als er geen gegevens beschikbaar zijn. Normaal gesp roken gebruikt u de methode om een bericht op te geven tijdens de tijdelijke periode wanneer de weer gave is geïnstalleerd en de gegevens beschikbaar worden. |
-| Query’s uitvoeren |De query die wordt uitgevoerd om te bepalen of er gegevens beschikbaar zijn voor de weer gave. Als de query geen resultaten retourneert, wordt een bericht weer gegeven in plaats van de waarde van de hoofd query. |
+| Query |De query die wordt uitgevoerd om te bepalen of er gegevens beschikbaar zijn voor de weer gave. Als de query geen resultaten retourneert, wordt een bericht weer gegeven in plaats van de waarde van de hoofd query. |
 | Bericht |Het bericht dat wordt weer gegeven als de query voor verificatie van de gegevens stroom geen gegevens retourneert. Als u geen bericht ontvangt, wordt een status bericht over de *beoordeling* weer gegeven. |
 
 
@@ -66,13 +66,13 @@ Deze tegel toont het aantal records uit twee verschillende logboek query's en ee
 | Beschrijving |De tekst die wordt weer gegeven onder de naam van de tegel. |
 | **Eerste tegel** | |
 | Legenda |De tekst die wordt weer gegeven onder de waarde. |
-| Query’s uitvoeren |De query die wordt uitgevoerd. Het aantal records dat door de query wordt geretourneerd, wordt weer gegeven. |
+| Query |De query die wordt uitgevoerd. Het aantal records dat door de query wordt geretourneerd, wordt weer gegeven. |
 | **Tweede tegel** | |
 | Legenda |De tekst die wordt weer gegeven onder de waarde. |
-| Query’s uitvoeren |De query die wordt uitgevoerd. Het aantal records dat door de query wordt geretourneerd, wordt weer gegeven. |
+| Query |De query die wordt uitgevoerd. Het aantal records dat door de query wordt geretourneerd, wordt weer gegeven. |
 | **Geavanceerd** |**Verificatie van de gegevens stroom>** |
 | Ingeschakeld |Selecteer deze koppeling als verificatie van de gegevens stroom moet worden ingeschakeld voor de tegel. Deze methode biedt een alternatief bericht als er geen gegevens beschikbaar zijn. Normaal gesp roken gebruikt u de methode om een bericht op te geven tijdens de tijdelijke periode wanneer de weer gave is geïnstalleerd en de gegevens beschikbaar worden. |
-| Query’s uitvoeren |De query die wordt uitgevoerd om te bepalen of er gegevens beschikbaar zijn voor de weer gave. Als de query geen resultaten retourneert, wordt een bericht weer gegeven in plaats van de waarde van de hoofd query. |
+| Query |De query die wordt uitgevoerd om te bepalen of er gegevens beschikbaar zijn voor de weer gave. Als de query geen resultaten retourneert, wordt een bericht weer gegeven in plaats van de waarde van de hoofd query. |
 | Bericht |Het bericht dat wordt weer gegeven als de query voor verificatie van de gegevens stroom geen gegevens retourneert. Als u geen bericht ontvangt, wordt een status bericht over de *beoordeling* weer gegeven. |
 
 
@@ -86,7 +86,7 @@ De **ring** tegel geeft één getal weer dat een kolom waarde in een logboek que
 | Name |De tekst die boven aan de tegel wordt weer gegeven. |
 | Beschrijving |De tekst die wordt weer gegeven onder de naam van de tegel. |
 | **Ringdiagram** | |
-| Query’s uitvoeren |De query die wordt uitgevoerd voor de ring. De eerste eigenschap is een tekst waarde en de tweede eigenschap is een numerieke waarde. Deze query gebruikt normaal gesp roken het sleutel woord *Measure* om de resultaten samen te vatten. |
+| Query |De query die wordt uitgevoerd voor de ring. De eerste eigenschap is een tekst waarde en de tweede eigenschap is een numerieke waarde. Deze query gebruikt normaal gesp roken het sleutel woord *Measure* om de resultaten samen te vatten. |
 | **Ringdiagram** |**> Center** |
 | Tekst |De tekst die wordt weer gegeven onder de waarde in de ring. |
 | Bewerking |De bewerking die wordt uitgevoerd voor de eigenschap Value om deze als één waarde samen te vatten.<ul><li>Sum: Voeg de waarden van alle records toe met de waarde van de eigenschap.</li><li>Percentage: percentage van de opgetelde waarden van records met de eigenschaps waarde vergeleken met de opgetelde waarden van alle records.</li></ul> |
@@ -96,7 +96,7 @@ De **ring** tegel geeft één getal weer dat een kolom waarde in een logboek que
 | Geavanceerde kleur toewijzing |Hiermee wordt een kleur weer gegeven die specifieke eigenschaps waarden vertegenwoordigt. Als de waarde die u opgeeft in de bovenste drie is, wordt de alternatieve kleur weer gegeven in plaats van de standaard kleur. Als de eigenschap zich niet in de bovenste drie bevindt, wordt de kleur niet weer gegeven. |
 | **Geavanceerd** |**Verificatie van de gegevens stroom>** |
 | Ingeschakeld |Selecteer deze koppeling als verificatie van de gegevens stroom moet worden ingeschakeld voor de tegel. Deze methode biedt een alternatief bericht als er geen gegevens beschikbaar zijn. Normaal gesp roken gebruikt u de methode om een bericht op te geven tijdens de tijdelijke periode wanneer de weer gave is geïnstalleerd en de gegevens beschikbaar worden. |
-| Query’s uitvoeren |De query die wordt uitgevoerd om te bepalen of er gegevens beschikbaar zijn voor de weer gave. Als de query geen resultaten retourneert, wordt een bericht weer gegeven in plaats van de waarde van de hoofd query. |
+| Query |De query die wordt uitgevoerd om te bepalen of er gegevens beschikbaar zijn voor de weer gave. Als de query geen resultaten retourneert, wordt een bericht weer gegeven in plaats van de waarde van de hoofd query. |
 | Bericht |Het bericht dat wordt weer gegeven als de query voor verificatie van de gegevens stroom geen gegevens retourneert. Als u geen bericht ontvangt, wordt een status bericht over de *beoordeling* weer gegeven. |
 
 
@@ -110,14 +110,14 @@ Deze tegel is een lijn diagram dat gedurende een bepaalde periode meerdere reeks
 | Name |De tekst die boven aan de tegel wordt weer gegeven. |
 | Beschrijving |De tekst die wordt weer gegeven onder de naam van de tegel. |
 | **Lijn diagram** | |
-| Query’s uitvoeren |De query die wordt uitgevoerd voor het lijn diagram. De eerste eigenschap is een tekst waarde en de tweede eigenschap is een numerieke waarde. Deze query gebruikt normaal gesp roken het sleutel woord *Measure* om de resultaten samen te vatten. Als de query het gereserveerde woord *interval* gebruikt, gebruikt de x-as dit tijds interval. Als de query geen gebruik maakt van het *interval* sleutelwoord, gebruikt de x-as uur intervallen. |
+| Query |De query die wordt uitgevoerd voor het lijn diagram. De eerste eigenschap is een tekst waarde en de tweede eigenschap is een numerieke waarde. Deze query gebruikt normaal gesp roken het sleutel woord *Measure* om de resultaten samen te vatten. Als de query het gereserveerde woord *interval* gebruikt, gebruikt de x-as dit tijds interval. Als de query geen gebruik maakt van het *interval* sleutelwoord, gebruikt de x-as uur intervallen. |
 | **Lijn diagram** |**> Y-as** |
 | Logaritmische schaal gebruiken |Selecteer deze koppeling om een logaritmische schaal voor de y-as te gebruiken. |
 | Eenheden |Geef de eenheden op voor de waarden die door de query worden geretourneerd. Deze informatie wordt gebruikt om labels in de grafiek weer te geven die de waardetypen en optioneel voor het converteren van de waarden aangeven. Het **eenheids type** specificeert de categorie van de eenheid en definieert de huidige waarden van het **type eenheid** die beschikbaar zijn. Als u een waarde selecteert in **converteren naar** , worden de numerieke waarden geconverteerd van het **huidige eenheids** type naar het type **converteren naar** . |
 | Aangepast label |De tekst die wordt weer gegeven voor de y-as naast het label voor het *eenheids* type. Als er geen label is opgegeven, wordt alleen het *eenheids* type weer gegeven. |
 | **Geavanceerd** |**Verificatie van de gegevens stroom>** |
 | Ingeschakeld |Selecteer deze koppeling als verificatie van de gegevens stroom moet worden ingeschakeld voor de tegel. Deze methode biedt een alternatief bericht als er geen gegevens beschikbaar zijn. Normaal gesp roken gebruikt u de methode om een bericht op te geven tijdens de tijdelijke periode wanneer de weer gave is geïnstalleerd en de gegevens beschikbaar worden. |
-| Query’s uitvoeren |De query die wordt uitgevoerd om te bepalen of er gegevens beschikbaar zijn voor de weer gave. Als de query geen resultaten retourneert, wordt een bericht weer gegeven in plaats van de waarde van de hoofd query. |
+| Query |De query die wordt uitgevoerd om te bepalen of er gegevens beschikbaar zijn voor de weer gave. Als de query geen resultaten retourneert, wordt een bericht weer gegeven in plaats van de waarde van de hoofd query. |
 | Bericht |Het bericht dat wordt weer gegeven als de query voor verificatie van de gegevens stroom geen gegevens retourneert. Als u geen bericht ontvangt, wordt een status bericht over de *beoordeling* weer gegeven. |
 
 
@@ -131,7 +131,7 @@ Deze tegel heeft een lijn diagram dat meerdere reeksen uit een logboek query in 
 | Name |De tekst die boven aan de tegel wordt weer gegeven. |
 | Beschrijving |De tekst die wordt weer gegeven onder de naam van de tegel. |
 | **Lijn diagram** | |
-| Query’s uitvoeren |De query die wordt uitgevoerd voor het lijn diagram. De eerste eigenschap is een tekst waarde en de tweede eigenschap is een numerieke waarde. Deze query gebruikt normaal gesp roken het sleutel woord *Measure* om de resultaten samen te vatten. Als de query het gereserveerde woord *interval* gebruikt, gebruikt de x-as dit tijds interval. Als de query geen gebruik maakt van het *interval* sleutelwoord, gebruikt de x-as uur intervallen. |
+| Query |De query die wordt uitgevoerd voor het lijn diagram. De eerste eigenschap is een tekst waarde en de tweede eigenschap is een numerieke waarde. Deze query gebruikt normaal gesp roken het sleutel woord *Measure* om de resultaten samen te vatten. Als de query het gereserveerde woord *interval* gebruikt, gebruikt de x-as dit tijds interval. Als de query geen gebruik maakt van het *interval* sleutelwoord, gebruikt de x-as uur intervallen. |
 | **Lijn diagram** |**> bijschrift** |
 | Titel van bijschrift | De tekst die boven de waarde van de toelichting wordt weer gegeven. |
 | Reeks naam |De waarde van de reeks eigenschap die moet worden gebruikt als de waarde van de toelichting. Als er geen reeks wordt gegeven, worden alle records uit de query gebruikt. |
@@ -142,7 +142,7 @@ Deze tegel heeft een lijn diagram dat meerdere reeksen uit een logboek query in 
 | Aangepast label |De tekst die wordt weer gegeven voor de y-as naast het label voor het *eenheids* type. Als er geen label is opgegeven, wordt alleen het *eenheids* type weer gegeven. |
 | **Geavanceerd** |**Verificatie van de gegevens stroom>** |
 | Ingeschakeld |Selecteer deze koppeling als verificatie van de gegevens stroom moet worden ingeschakeld voor de tegel. Deze methode biedt een alternatief bericht als er geen gegevens beschikbaar zijn. Normaal gesp roken gebruikt u de methode om een bericht op te geven tijdens de tijdelijke periode wanneer de weer gave is geïnstalleerd en de gegevens beschikbaar worden. |
-| Query’s uitvoeren |De query die wordt uitgevoerd om te bepalen of er gegevens beschikbaar zijn voor de weer gave. Als de query geen resultaten retourneert, wordt een bericht weer gegeven in plaats van de waarde van de hoofd query. |
+| Query |De query die wordt uitgevoerd om te bepalen of er gegevens beschikbaar zijn voor de weer gave. Als de query geen resultaten retourneert, wordt een bericht weer gegeven in plaats van de waarde van de hoofd query. |
 | Bericht |Het bericht dat wordt weer gegeven als de query voor verificatie van de gegevens stroom geen gegevens retourneert. Als u geen bericht ontvangt, wordt een status bericht over de *beoordeling* weer gegeven. |
 
 
@@ -167,7 +167,7 @@ In de tegel **twee tijd lijnen** worden de resultaten van twee logboek query's i
 | Bewerking |De bewerking die wordt uitgevoerd voor de eigenschap Value om deze samen te vatten als één waarde voor de toelichting.<ul><li>Gemiddelde: het gemiddelde van de waarden van alle records.</li><li>Aantal: het aantal records dat door de query wordt geretourneerd.</li><li>Laatste voor beeld: de waarde van het laatste interval dat is opgenomen in de grafiek.</li><li>Max: de maximum waarde van de intervallen die in de grafiek zijn opgenomen. |
 | **Geavanceerd** |**Verificatie van de gegevens stroom>** |
 | Ingeschakeld |Selecteer deze koppeling als verificatie van de gegevens stroom moet worden ingeschakeld voor de tegel. Deze methode biedt een alternatief bericht als er geen gegevens beschikbaar zijn. Normaal gesp roken gebruikt u de methode om een bericht op te geven tijdens de tijdelijke periode wanneer de weer gave is geïnstalleerd en de gegevens beschikbaar worden. |
-| Query’s uitvoeren |De query die wordt uitgevoerd om te bepalen of er gegevens beschikbaar zijn voor de weer gave. Als de query geen resultaten retourneert, wordt een bericht weer gegeven in plaats van de waarde van de hoofd query. |
+| Query |De query die wordt uitgevoerd om te bepalen of er gegevens beschikbaar zijn voor de weer gave. Als de query geen resultaten retourneert, wordt een bericht weer gegeven in plaats van de waarde van de hoofd query. |
 | Bericht |Het bericht dat wordt weer gegeven als de query voor verificatie van de gegevens stroom geen gegevens retourneert. Als u geen bericht ontvangt, wordt een status bericht over de *beoordeling* weer gegeven. |
 
 

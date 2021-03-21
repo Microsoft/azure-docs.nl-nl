@@ -17,10 +17,10 @@ ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0686a4dafae17bafc65a03c985a65aecba70e60c
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98017014"
 ---
 # <a name="using-azure-ad-connect-health-with-ad-ds"></a>Azure AD Connect Health gebruiken met AD DS
@@ -49,10 +49,10 @@ Dit dashboard geeft een overzicht van de replicatiestatus en -topologie van uw b
 
 ![Replicatiestatus](./media/how-to-connect-health-adds/aadconnect-health-adds-replication.png)
 
-## <a name="monitoring"></a>Controleren
+## <a name="monitoring"></a>Bewaking
 Deze functie biedt grafische trends van verschillende prestatiemeters, die voortdurend worden verzameld van elke bewaakte domeincontroller. Prestaties van een domeincontroller kunnen eenvoudig worden vergeleken met andere bewaakte domeincontrollers in uw forest. Bovendien ziet u verschillende prestatiemeters naast elkaar, dit is nuttig bij probleemoplossing in uw omgeving.
 
-![Controleren](./media/how-to-connect-health-adds/aadconnect-health-adds-monitoring.png)
+![Bewaking](./media/how-to-connect-health-adds/aadconnect-health-adds-monitoring.png)
 
 Standaard hebben we vier prestatiemeters vooraf geselecteerd; u kunt echter andere meters opnemen door op de filteropdracht te klikken en de gewenste meters te (de)selecteren. Als u klikt op de grafiek van een prestatiemeter, wordt een nieuwe blade geopend. Deze bevat de gegevenspunten voor elke bewaakte domeincontroller.
 

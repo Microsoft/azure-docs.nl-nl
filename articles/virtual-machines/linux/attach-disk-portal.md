@@ -8,12 +8,12 @@ ms.date: 08/28/2020
 ms.author: cynthn
 ms.subservice: disks
 ms.collection: linux
-ms.openlocfilehash: a6ef2cd62fc14958e8505a03e69e4b20cf6ce49f
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.openlocfilehash: 0fe584ea8559c285ee7e25caca958ff56aa9454d
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102556822"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104601824"
 ---
 # <a name="use-the-portal-to-attach-a-data-disk-to-a-linux-vm"></a>Een gegevens schijf koppelen aan een virtuele Linux-machine met behulp van de portal 
 Dit artikel laat u zien hoe u met de Azure Portal zowel nieuwe als bestaande schijven kunt koppelen aan een virtuele Linux-machine. U kunt ook [een gegevens schijf koppelen aan een virtuele Windows-machine in de Azure Portal](../windows/attach-managed-disk-portal.md). 
@@ -81,7 +81,7 @@ In dit voor beeld is de schijf die u hebt toegevoegd `sdc` . Het is een LUN 0 en
 
 Voor een complexere voor beeld ziet u hier hoe meerdere gegevens schijven er in de portal uitzien:
 
-:::image type="content" source="./media/attach-disk-portal/create-new-md.png" alt-text="Controleer de schijf instellingen.":::
+:::image type="content" source="./media/attach-disk-portal/find-disk.png" alt-text="Scherm opname van meerdere schijven die in de portal worden weer gegeven.":::
 
 In de afbeelding ziet u dat er 3 gegevens schijven zijn: 4 GB op LUN 0, 16 MB bij LUN 1 en 32G bij LUN 2.
 
@@ -227,6 +227,6 @@ Er zijn twee manieren om ondersteuning voor het verkleinen van de virtuele Linux
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [problemen met de apparaatnaam van Linux VM oplossen](../troubleshooting/troubleshoot-device-names-problems.md)voor meer informatie en om schijf problemen op te lossen.
+Zie [problemen met de apparaatnaam van Linux VM oplossen](/troubleshoot/azure/virtual-machines/troubleshoot-device-names-problems)voor meer informatie en om schijf problemen op te lossen.
 
 U kunt ook [een gegevens schijf koppelen](add-disk.md) met behulp van de Azure cli.

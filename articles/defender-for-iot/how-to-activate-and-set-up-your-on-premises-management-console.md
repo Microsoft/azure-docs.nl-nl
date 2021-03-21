@@ -1,18 +1,18 @@
 ---
 title: Uw on-premises beheerconsole activeren en instellen
-description: Activering en installatie van de beheer console zorgen ervoor dat Sens oren zijn geregistreerd bij Azure en informatie verzenden naar de on-premises beheer console, en dat de on-premises beheer console Beheer taken uitvoert op verbonden Sens oren.
+description: Als u de beheer console activeert, zorgt u ervoor dat Sens oren zijn geregistreerd bij Azure en informatie verzenden naar de on-premises beheer console, en dat de on-premises beheer console Beheer taken uitvoert op verbonden Sens oren.
 author: shhazam-ms
 manager: rkarlin
 ms.author: shhazam
-ms.date: 1/12/2021
+ms.date: 3/18/2021
 ms.topic: how-to
-ms.service: azure
-ms.openlocfilehash: d326a90ffb957604dba74982d8983acedc6ab85d
-ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
+ms.service: defender-for-iot
+ms.openlocfilehash: f659b25abbbad5f2150ed44766d30dc1f64dd3bb
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100522577"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104602730"
 ---
 # <a name="activate-and-set-up-your-on-premises-management-console"></a>Uw on-premises beheerconsole activeren en instellen 
 
@@ -30,24 +30,32 @@ Activering en installatie van de on-premises beheer console zorgt ervoor dat:
 
 Aanmelden bij de beheer console:
 
-- Open een webbrowser en voer het IP-adres en het wacht woord in dat u hebt ontvangen voor de on-premises beheer console tijdens de installatie van het systeem. Als u uw wacht woord bent verg eten, selecteert u **wacht woord herstellen** en raadpleegt u [wachtwoord herstel](how-to-manage-the-on-premises-management-console.md#password-recovery).
+1. Ga naar het IP-adres dat u hebt ontvangen voor de on-premises beheer console tijdens de installatie van het systeem.
+ 
+1. Voer de gebruikers naam en het wacht woord in die u hebt ontvangen voor de on-premises beheer console tijdens de installatie van het systeem. 
 
-## <a name="upload-an-activation-file"></a>Een activerings bestand uploaden
 
-Na de eerste keer aanmelden, activeert u de on-premises beheer console door een activerings bestand te downloaden van de pagina met **prijzen** van de Azure Defender voor IOT-Portal. Dit bestand bevat de geaggregeerde toegewezen apparaten die tijdens het voorbereidings proces zijn gedefinieerd. **Doorgevoerde apparaten** geeft het aantal apparaten aan dat Defender voor IOT bewaakt per abonnement.
+Als u uw wacht woord bent verg eten, selecteert u de optie **wacht woord herstellen**  en raadpleegt u [wachtwoord herstel](how-to-manage-the-on-premises-management-console.md#password-recovery) voor instructies over het herstellen van uw wacht woord.
 
-Een activerings bestand uploaden:
+## <a name="get-and-upload-an-activation-file"></a>Een activerings bestand ophalen en uploaden
 
-1. Ga naar de pagina met **prijzen** voor Defender voor IOT.
+Nadat u zich voor de eerste keer aanmeldt, moet u de on-premises beheer console activeren door een activerings bestand op te halen en te uploaden. 
+
+Een activerings bestand ophalen:
+
+1. Navigeer naar de pagina met **prijzen** van de Azure Defender voor IOT-Portal. 
+1. Selecteer het abonnement waaraan u de on-premises beheer console wilt koppelen.
 1. Selecteer de **down load het activerings bestand voor het tabblad beheer console** . Het activerings bestand wordt gedownload.
 
    :::image type="content" source="media/how-to-manage-sensors-from-the-on-premises-management-console/cloud_download_opm_activation_file.png" alt-text="Down load het activerings bestand.":::
 
-1. Selecteer **systeem instellingen** in de beheer console.
-1. Selecteer **Activering**.
-1. Selecteer **een bestand kiezen** en selecteer het bestand dat u hebt opgeslagen.
+Een activerings bestand uploaden:
 
-Na de eerste activering overschrijdt het aantal bewaakte apparaten het aantal toegewezen apparaten dat tijdens de onboarding is gedefinieerd. Dit kan bijvoorbeeld gebeuren als u meer Sens oren verbindt met de beheer console. Als er een verschil is tussen het aantal bewaakte apparaten en het aantal toegewezen apparaten, wordt er een waarschuwing weer gegeven in de beheer console. Als dit het geval is, moet u een nieuw activerings bestand uploaden.
+1. Ga naar de pagina **systeem instellingen** op de on-premises beheer console.
+1. Selecteer het **activerings** pictogram :::image type="icon" source="media/how-to-manage-sensors-from-the-on-premises-management-console/activation-icon.png" border="false"::: .
+1. Selecteer **een bestand kiezen** en selecteer het bestand dat u hebt gedownload.
+
+Na de eerste activering kan het aantal bewaakte apparaten groter zijn dan het aantal toegewezen apparaten dat tijdens de onboarding is gedefinieerd. Dit gebeurt als u meer Sens oren verbindt met de beheer console. Als er een verschil is tussen het aantal bewaakte apparaten en het aantal toegewezen apparaten, wordt er een waarschuwing weer gegeven in de beheer console. Als dit het geval is, uploadt u een nieuw activerings bestand.
 
 ## <a name="set-up-a-certificate"></a>Een certificaat instellen
 
@@ -316,6 +324,6 @@ De toewijzing van een sensor opheffen en verwijderen:
 
 3. Als u de niet-toegewezen sensor van de site wilt verwijderen, selecteert u de sensor in de lijst met niet-toegewezen Sens oren en selecteert u :::image type="icon" source="media/how-to-activate-and-set-up-your-on-premises-management-console/delete-icon.png" border="false"::: .
 
-## <a name="next-steps"></a>Volgende stappen
+## <a name="see-also"></a>Zie ook
 
 [Problemen met de sensor en on-premises beheerconsole oplossen](how-to-troubleshoot-the-sensor-and-on-premises-management-console.md)

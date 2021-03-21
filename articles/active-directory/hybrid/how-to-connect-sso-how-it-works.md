@@ -16,11 +16,11 @@ ms.date: 04/16/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: addb90ed3929847612fd423e3af01c1b3982c2d6
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: bde937adba8d2469390a6cf404f6cce8c5008e87
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100369642"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-technical-deep-dive"></a>Azure Active Directory naadloze eenmalige aanmelding: technische grondige kennis
@@ -67,10 +67,6 @@ De aanmeldings stroom van een webbrowser is als volgt:
 6. Active Directory het computer account zoekt en een Kerberos-ticket retourneert naar de browser die is versleuteld met het geheim van het computer account.
 7. De browser stuurt het Kerberos-ticket dat is verkregen van Active Directory naar Azure AD.
 8. Azure AD ontsleutelt het Kerberos-ticket, dat de identiteit bevat van de gebruiker die is aangemeld bij het bedrijfs apparaat, met behulp van de eerder gedeelde sleutel.
-
-   >[!NOTE]
-   >Azure AD probeert de UPN van de gebruiker te koppelen van het Kerberos-ticket naar een Azure AD-gebruikers object dat een overeenkomende waarde heeft in het kenmerk userPrincipalName. Als dit niet lukt, zal Azure AD terugvallen om de samAccountName te vergelijken van het Kerberos-ticket naar een Azure AD-gebruikers object dat een overeenkomende waarde heeft in het kenmerk onPremisesSamAccountName.
-   
 9. Na de evaluatie retourneert Azure AD een token terug naar de toepassing of vraagt de gebruiker om extra proeven uit te voeren, zoals Multi-Factor Authentication.
 10. Als de gebruiker zich aanmeldt, kan de gebruiker toegang krijgen tot de toepassing.
 

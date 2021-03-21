@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 08/03/2020
 ms.author: jingwang
 ms.openlocfilehash: e42638d484d2a71052c3a9410f73cbca9e038682
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100366888"
 ---
 # <a name="copy-data-from-zoho-using-azure-data-factory-preview"></a>Gegevens kopiëren van Zoho met behulp van Azure Data Factory (preview-versie)
@@ -47,18 +47,18 @@ De volgende eigenschappen worden ondersteund voor Zoho gekoppelde service:
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type moet worden ingesteld op: **Zoho** | Yes |
-| connectionProperties | Een groep eigenschappen die definieert hoe verbinding moet worden gemaakt met Zoho. | Yes |
+| type | De eigenschap type moet worden ingesteld op: **Zoho** | Ja |
+| connectionProperties | Een groep eigenschappen die definieert hoe verbinding moet worden gemaakt met Zoho. | Ja |
 | ***Onder `connectionProperties` :*** | | |
-| endpoint | Het eind punt van de Zoho-server ( `crm.zoho.com/crm/private` ). | Yes |
-| authenticationType | Toegestane waarden zijn `OAuth_2.0` en `Access Token` . | Yes |
+| endpoint | Het eind punt van de Zoho-server ( `crm.zoho.com/crm/private` ). | Ja |
+| authenticationType | Toegestane waarden zijn `OAuth_2.0` en `Access Token` . | Ja |
 | clientId | De client-ID die is gekoppeld aan uw Zoho-toepassing. | Ja voor OAuth 2,0-verificatie | 
 | clientSecrect | De clientsecret die is gekoppeld aan uw Zoho-toepassing. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Ja voor OAuth 2,0-verificatie | 
 | refreshToken | Het OAuth 2,0-vernieuwings token dat is gekoppeld aan uw Zoho-toepassing, waarmee het toegangs token wordt vernieuwd wanneer het verloopt. Het vernieuwings token verloopt nooit. Als u een vernieuwings token wilt ophalen, moet u de `offline` access_type aanvragen, maar in [dit artikel](https://www.zoho.com/crm/developer/docs/api/auth-request.html)vindt u meer informatie. <br>Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md).| Ja voor OAuth 2,0-verificatie |
-| accessToken | Het toegangs token voor Zoho-verificatie. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Yes |
-| useEncryptedEndpoints | Hiermee geeft u op of de eind punten van de gegevens bron moeten worden versleuteld met HTTPS. De standaardwaarde is waar.  | No |
-| useHostVerification | Hiermee geeft u op of de hostnaam in het certificaat van de server moet overeenkomen met de hostnaam van de server bij het maken van verbinding via TLS. De standaardwaarde is waar.  | No |
-| usePeerVerification | Hiermee wordt aangegeven of de identiteit van de server moet worden gecontroleerd wanneer er verbinding wordt gemaakt via TLS. De standaardwaarde is waar.  | No |
+| accessToken | Het toegangs token voor Zoho-verificatie. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Ja |
+| useEncryptedEndpoints | Hiermee geeft u op of de eind punten van de gegevens bron moeten worden versleuteld met HTTPS. De standaardwaarde is waar.  | Nee |
+| useHostVerification | Hiermee geeft u op of de hostnaam in het certificaat van de server moet overeenkomen met de hostnaam van de server bij het maken van verbinding via TLS. De standaardwaarde is waar.  | Nee |
+| usePeerVerification | Hiermee wordt aangegeven of de identiteit van de server moet worden gecontroleerd wanneer er verbinding wordt gemaakt via TLS. De standaardwaarde is waar.  | Nee |
 
 **Voor beeld: OAuth 2,0-verificatie**
 
@@ -125,7 +125,7 @@ Als u gegevens van Zoho wilt kopiëren, stelt u de eigenschap type van de gegeve
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de gegevensset moet worden ingesteld op: **ZohoObject** | Yes |
+| type | De eigenschap type van de gegevensset moet worden ingesteld op: **ZohoObject** | Ja |
 | tableName | De naam van de tabel. | Nee (als "query" in activiteit bron is opgegeven) |
 
 **Voorbeeld**
@@ -155,7 +155,7 @@ Als u gegevens wilt kopiëren uit Zoho, stelt u het bron type in de Kopieer acti
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **ZohoSource** | Yes |
+| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **ZohoSource** | Ja |
 | query | Gebruik de aangepaste SQL-query om gegevens te lezen. Bijvoorbeeld: `"SELECT * FROM Accounts"`. | Nee (als ' Tablename ' in gegevensset is opgegeven) |
 
 **Voorbeeld:**

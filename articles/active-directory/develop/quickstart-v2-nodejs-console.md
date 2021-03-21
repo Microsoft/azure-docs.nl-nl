@@ -11,10 +11,10 @@ ms.topic: quickstart
 ms.date: 02/17/2021
 ms.author: v-doeris
 ms.openlocfilehash: 4360810d460c5fc8598ce302ad8b82f65d2d819e
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "101653742"
 ---
 # <a name="quickstart-acquire-a-token-and-call-microsoft-graph-api-from-a-nodejs-console-app-using-apps-identity"></a>Quick Start: een token verkrijgen en Microsoft Graph-API aanroepen vanuit een Node.js console-app met behulp van de identiteit van de app

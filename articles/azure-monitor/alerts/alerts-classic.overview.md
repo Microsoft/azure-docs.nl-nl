@@ -4,10 +4,10 @@ description: Klassieke waarschuwingen worden afgeschaft. Met waarschuwingen kunt
 ms.topic: conceptual
 ms.date: 02/14/2021
 ms.openlocfilehash: bce29c94c3cbacd5b7e38cf30b699ab5ca57f904
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102045425"
 ---
 # <a name="what-are-classic-alerts-in-microsoft-azure"></a>Wat zijn klassieke waarschuwingen in Microsoft Azure?

@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 11/07/2020
 ms.author: allensu
 ms.openlocfilehash: 8ab4f698c7149d8d57f790e221ccbe35ec090fe6
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94370129"
 ---
 # <a name="onboard-a-root-or-apex-domain-to-an-existing-azure-cdn-endpoint"></a>Een root-of Apex-domein onboarden naar een bestaand Azure CDN-eind punt
@@ -64,16 +64,16 @@ Nadat u uw aangepaste domein hebt geregistreerd, kunt u dit toevoegen aan uw CDN
     
 2. Op de **CDN-profiel** pagina, selecteert u het CDN-eindpunt dat u wilt koppelen aan het aangepaste domein.
 
-    :::image type="content" source="media/onboard-apex-domain/cdn-endpoint-selection.png" alt-text="CDN-eind punt selecteren" border="true":::
+    :::image type="content" source="media/onboard-apex-domain/cdn-endpoint-selection.png" alt-text="CDN-eindpunt selecteren" border="true":::
     
-3. Selecteer **+ aangepast domein**. 
+3. Selecteer **+ Aangepast domein**. 
 
-   :::image type="content" source="media/onboard-apex-domain/cdn-custom-domain-button.png" alt-text="Knop aangepast domein toevoegen" border="true":::
+   :::image type="content" source="media/onboard-apex-domain/cdn-custom-domain-button.png" alt-text="Knop Aangepast domein toevoegen" border="true":::
 
-4. In **een aangepast domein toevoegen** , wordt de hostnaam van het **eind punt** vooraf ingevuld en afgeleid van uw CDN-eind punt-URL: **\<endpoint-hostname>** . azureedge.net. De naam kan niet worden gewijzigd.
+4. In **Een aangepast domein toevoegen** is **Hostnaam van het eindpunt** vooraf ingevuld en afgeleid van de URL van uw CDN-eindpunt: **\<endpoint-hostname>** .azureedge.net. De naam kan niet worden gewijzigd.
 
 5. Voer voor **aangepaste hostnaam** het aangepaste basis-of Apex-domein in dat moet worden gebruikt als het bron domein van uw CNAME-record. 
-    1. Bijvoorbeeld **contoso.com**. **Gebruik niet de cdnverify-subdomeinnaam**.
+    1. Bijvoorbeeld **contoso.com**. **Gebruik niet de naam van het cdnverify-subdomein**.
 
     :::image type="content" source="media/onboard-apex-domain/cdn-add-custom-domain.png" alt-text="Aangepast domein toevoegen" border="true":::
 

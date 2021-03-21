@@ -4,10 +4,10 @@ description: Meer informatie over het implementeren van een bestaande sjabloon s
 ms.topic: conceptual
 ms.date: 11/17/2020
 ms.openlocfilehash: b30a99a469ec010dcc2e128bbeb446b493631608
-ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96518869"
 ---
 # <a name="tutorial-deploy-a-template-spec-as-a-linked-template-preview"></a>Zelf studie: een sjabloon specificatie implementeren als gekoppelde sjabloon (preview)
@@ -19,7 +19,7 @@ Meer informatie over het implementeren van een bestaande [sjabloon specificatie]
 Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
 
 > [!NOTE]
-> Sjabloonspecificaties is momenteel beschikbaar als preview-versie. Als u deze wilt gebruiken met Azure PowerShell, moet u [versie 5.0.0 of hoger](/powershell/azure/install-az-ps)installeren. Als u deze wilt gebruiken met Azure CLI, gebruikt u [versie 2.14.2 of hoger](/cli/azure/install-azure-cli).
+> Sjabloonspecificaties is momenteel beschikbaar als preview-versie. Voor gebruik met Azure PowerShell moet u [versie 5.0.0 of hoger](/powershell/azure/install-az-ps) installeren. Voor gebruik met Azure CLI hebt u [versie 2.14.2 of hoger](/cli/azure/install-azure-cli) nodig.
 
 ## <a name="create-a-template-spec"></a>Een sjabloon specificatie maken
 

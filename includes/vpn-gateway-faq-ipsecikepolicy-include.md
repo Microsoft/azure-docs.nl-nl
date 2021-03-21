@@ -9,17 +9,17 @@ ms.date: 12/05/2019
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 6684c4269f14b91ded651dadff3f0a2e0878a4f2
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96026333"
 ---
 ### <a name="is-custom-ipsecike-policy-supported-on-all-azure-vpn-gateway-skus"></a>Wordt het aangepaste beleid voor IPsec/IKE op alle Azure VPN Gateway-SKU's ondersteund?
 Aangepast IPsec-/IKE-beleid wordt ondersteund in alle Azure-SKU's, behalve Basic.
 
 ### <a name="how-many-policies-can-i-specify-on-a-connection"></a>Hoeveel beleidsregels kan ik opgeven voor een verbinding?
-U kunt maar **één** beleidscombinatie opgeven voor een bepaalde verbinding.
+U kunt maar ***één*** beleidscombinatie opgeven voor een bepaalde verbinding.
 
 ### <a name="can-i-specify-a-partial-policy-on-a-connection-for-example-only-ike-algorithms-but-not-ipsec"></a>Kan ik een gedeeltelijk beleid opgeven voor een verbinding? (Bijvoorbeeld alleen IKE-algoritmen, maar geen IPsec-algoritmen)
 Nee, u moet alle algoritmen en parameters opgeven voor zowel IKE (Main Mode) en IPsec (Quick Mode). Gedeeltelijke beleidsspecificatie is niet toegestaan.
@@ -27,7 +27,7 @@ Nee, u moet alle algoritmen en parameters opgeven voor zowel IKE (Main Mode) en 
 ### <a name="what-are-the-algorithms-and-key-strengths-supported-in-the-custom-policy"></a>Wat zijn de algoritmen en belangrijkste sterke punten die in het aangepaste beleid worden ondersteund?
 De volgende tabel bevat de ondersteunde cryptografische algoritmen en sleutelsterkten die door klanten kunnen worden geconfigureerd. U moet voor elk veld een optie selecteren.
 
-| _ *IPsec/IKEv2**  | **Opties**                                                                   |
+| **IPsec/IKEv2**  | **Opties**                                                                   |
 | ---              | ---                                                                           |
 | IKEv2-versleuteling | AES256, AES192, AES128, DES3, DES                                             |
 | IKEv2-integriteit  | SHA384, SHA256, SHA1, MD5                                                     |

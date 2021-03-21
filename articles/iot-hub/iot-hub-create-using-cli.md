@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 08/23/2018
 ms.author: robinsh
 ms.openlocfilehash: e9757b94330f889869080a0e961ab2728cee86f6
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94659910"
 ---
 # <a name="create-an-iot-hub-using-the-azure-cli"></a>Een IoT-hub maken met behulp van de Azure CLI
@@ -26,7 +26,7 @@ In dit artikel wordt beschreven hoe u een IoT-hub maakt met behulp van Azure CLI
 
 ## <a name="create-an-iot-hub"></a>Een IoT Hub maken
 
-Gebruik de Azure CLI om een resource groep te maken en vervolgens een IoT-hub toe te voegen.
+Gebruik de Azure CLI om een resourcegroep te maken en vervolgens een IoT-hub toe te voegen.
 
 1. Wanneer u een IoT-hub maakt, moet u deze maken in een resource groep. Gebruik een bestaande resourcegroep of voer de volgende [opdracht voor het maken van een resourcegroep](/cli/azure/resource) uit:
     
@@ -42,7 +42,7 @@ Gebruik de Azure CLI om een resource groep te maken en vervolgens een IoT-hub to
    > ```
    >
 
-2. Voer de volgende [opdracht uit om een IOT-hub](/cli/azure/iot/hub#az-iot-hub-create) in uw resource groep te maken met behulp van een wereld wijd unieke naam voor uw IOT-hub:
+2. Voer de volgende [opdracht uit om een IoT-hub te maken](/cli/azure/iot/hub#az-iot-hub-create) in uw resourcegroep met behulp van een wereldwijd unieke naam voor uw IoT-hub:
     
    ```azurecli-interactive
    az iot hub create --name {your iot hub name} \

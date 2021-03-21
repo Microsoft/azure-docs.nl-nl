@@ -4,10 +4,10 @@ description: Meer informatie over het bijwerken van het bestaande VM-back-upbele
 ms.topic: conceptual
 ms.date: 12/31/2020
 ms.openlocfilehash: 33083d6585d2b9296cd184ba258b8d2143d685b4
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98728575"
 ---
 # <a name="update-the-existing-vm-backup-policy-using-cli"></a>Het bestaande VM-back-upbeleid bijwerken met CLI

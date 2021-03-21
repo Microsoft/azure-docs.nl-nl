@@ -9,10 +9,10 @@ ms.topic: quickstart
 ms.date: 9/22/2020
 ms.custom: mvc, devx-track-azurecli
 ms.openlocfilehash: d43fab43b05ccfd88308390f58ba48ff9111b295
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94842818"
 ---
 # <a name="quickstart-create-an-azure-database-for-postgresql-flexible-server-using-azure-cli"></a>Quickstart: Een Azure Database for PostgreSQL Flexible Server maken met behulp van Azure CLI
@@ -64,7 +64,7 @@ De gemaakte server heeft de volgende kenmerken:
 - De standaard verbindingsmethode is privétoegang (VNet-integratie) met een automatisch gegenereerd virtueel netwerk en subnet
 
 > [!NOTE] 
-> De verbindingsmethode kan niet worden gewijzigd na het maken van de server. Als u bijvoorbeeld *Privétoegang (VNet-integratie)* hebt geselecteerd tijdens het maken, kunt u na het maken niet wijzigen naar *Openbare toegang (toegestane IP-adressen)* . U kunt het beste een server met privétoegang maken om veilig toegang te krijgen tot uw server met behulp van VNet-integratie. Meer informatie over privétoegang vindt u in het [artikel over concepten](./concepts-networking.md).
+> De verbindingsmethode kan niet worden gewijzigd na het maken van de server. Als u bijvoorbeeld *Privétoegang (VNet-integratie)* hebt geselecteerd tijdens het maken, kunt u na het maken niet wijzigen naar *Openbare toegang (toegestane IP-adressen)* . U kunt het beste een server met persoonlijke toegang maken om veilig toegang te krijgen tot uw server met behulp van VNet-integratie. Meer informatie over persoonlijke toegang vindt u in het [artikel over concepten](./concepts-networking.md).
 
 Als u de standaardinstellingen wilt wijzigen, raadpleegt u de Azure CLI-referentiedocumentatie <!--FIXME --> voor de volledige lijst met configureerbare CLI-parameters. 
 

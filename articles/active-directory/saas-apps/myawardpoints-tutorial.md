@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/01/2019
 ms.author: jeedes
 ms.openlocfilehash: f2328bd51712089f706c8491007f9f51eba52337
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92508074"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-my-award-points-top-subtop-team"></a>Zelfstudie: Azure Active Directory-integratie met My Award Points Top Sub/Top Team
@@ -49,7 +49,7 @@ Als u de integratie van My Award Points Top Sub/Top Team met Azure AD wilt confi
 
 **Voer de volgende stappen uit om My Award Points Top Sub/Top Team toe te voegen vanuit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -73,10 +73,10 @@ Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt t
 Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met My Award Points Top Sub/Top Team te configureren en te testen:
 
 1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **Eenmalige aanmelding bij My Award Points Top Sub/Top Team configureren** : als u de instellingen voor eenmalige aanmelding voor de toepassing wilt configureren.
+2. **Eenmalige aanmelding bij My Award Points Top Sub/Top Team configureren**: als u de instellingen voor eenmalige aanmelding voor de toepassing wilt configureren.
 3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
 4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
-5. **My Award Points Top Sub/Top Team-testgebruiker maken** : als u een tegenhanger van Britta Simon wilt maken in My Award Points Top Sub/Top Team die is gekoppeld aan de Azure AD-weergave van de gebruiker.
+5. **My Award Points Top Sub/Top Team-testgebruiker maken**: als u een tegenhanger van Britta Simon wilt maken in My Award Points Top Sub/Top Team die is gekoppeld aan de Azure AD-weergave van de gebruiker.
 6. **[Eenmalige aanmelding testen](#test-single-sign-on)** : als u wilt controleren of de configuratie werkt.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
@@ -125,13 +125,13 @@ Voer de volgende stappen uit om eenmalige aanmelding met Azure AD bij My Award P
 
 ### <a name="configure-my-award-points-top-subtop-team-single-sign-on"></a>Eenmalige aanmelding bij My Award Points Top Sub/Top Team configureren
 
-Als u eenmalige aanmelding wilt configureren in **My Award Points Top Sub/Top Team** , moet u het gedownloade **XML-bestand met federatieve metagegevens** en de juiste gekopieerde URL's vanuit de Azure-portal verzenden naar [het ondersteuningsteam van My Award Points Top Sub/Top Team](mailto:myawardpoints@biworldwide.com). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding wilt configureren in **My Award Points Top Sub/Top Team**, moet u het gedownloade **XML-bestand met federatieve metagegevens** en de juiste gekopieerde URL's vanuit de Azure-portal verzenden naar [het ondersteuningsteam van My Award Points Top Sub/Top Team](mailto:myawardpoints@biworldwide.com). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -156,7 +156,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In deze sectie stelt u in dat Britta Simon eenmalige aanmelding van Azure kan gebruiken door haar toegang te geven tot My Award Points Top Sub/Top Team.
 
-1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **My Award Points Top Sub/Top Team**.
+1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **My Award Points Top Sub/Top Team**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 

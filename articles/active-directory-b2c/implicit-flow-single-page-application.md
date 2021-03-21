@@ -12,10 +12,10 @@ ms.date: 07/19/2019
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: fe31e1bf095d15cfdd7945288486cb866ace8246
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94840607"
 ---
 # <a name="single-page-sign-in-using-the-oauth-20-implicit-flow-in-azure-active-directory-b2c"></a>Aanmelden met één pagina met de impliciete OAuth 2,0-stroom in Azure Active Directory B2C
@@ -55,15 +55,15 @@ client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6
 
 | Parameter | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-|bouw| Yes | De naam van uw Azure AD B2C-Tenant|
-|verslaggev| Yes| De gebruikers stroom die moet worden uitgevoerd. Geef de naam op van een gebruikers stroom die u hebt gemaakt in uw Azure AD B2C-Tenant. Bijvoorbeeld: `b2c_1_sign_in` , `b2c_1_sign_up` of `b2c_1_edit_profile` . |
-| client_id | Yes | De toepassings-ID die de [Azure Portal](https://portal.azure.com/) toegewezen aan uw toepassing. |
-| response_type | Yes | Moet zijn inbegrepen `id_token` voor OpenID Connect Connect-aanmelding. Het kan ook het antwoord type bevatten `token` . Als u gebruikt `token` , kan uw app direct een toegangs token ontvangen van het toestemming-eind punt, zonder dat er een tweede aanvraag wordt gedaan voor het autoriseren van het eind punt.  Als u het `token` antwoord type gebruikt, `scope` moet de para meter een bereik bevatten dat aangeeft voor welke resource het token moet worden uitgegeven. |
+|bouw| Ja | De naam van uw Azure AD B2C-Tenant|
+|verslaggev| Ja| De gebruikers stroom die moet worden uitgevoerd. Geef de naam op van een gebruikers stroom die u hebt gemaakt in uw Azure AD B2C-Tenant. Bijvoorbeeld: `b2c_1_sign_in` , `b2c_1_sign_up` of `b2c_1_edit_profile` . |
+| client_id | Ja | De toepassings-ID die de [Azure Portal](https://portal.azure.com/) toegewezen aan uw toepassing. |
+| response_type | Ja | Moet zijn inbegrepen `id_token` voor OpenID Connect Connect-aanmelding. Het kan ook het antwoord type bevatten `token` . Als u gebruikt `token` , kan uw app direct een toegangs token ontvangen van het toestemming-eind punt, zonder dat er een tweede aanvraag wordt gedaan voor het autoriseren van het eind punt.  Als u het `token` antwoord type gebruikt, `scope` moet de para meter een bereik bevatten dat aangeeft voor welke resource het token moet worden uitgegeven. |
 | redirect_uri | Nee | De omleidings-URI van uw app, waar verificatie reacties kunnen worden verzonden en ontvangen door uw app. De waarde moet exact overeenkomen met een van de omleidings-Uri's die u in de portal hebt geregistreerd, behalve dat de URL moet worden gecodeerd. |
 | response_mode | Nee | Hiermee geeft u de methode op die moet worden gebruikt om het resulterende token terug naar uw app te verzenden.  Gebruik voor impliciete stromen `fragment` . |
-| scope | Yes | Een lijst met door spaties gescheiden bereiken. Een enkele Scope waarde geeft aan dat er voor Azure AD beide machtigingen worden aangevraagd. Het `openid` bereik geeft een machtiging aan voor het aanmelden van de gebruiker en het ophalen van gegevens over de gebruiker in de vorm van ID-tokens. Het `offline_access` bereik is optioneel voor web-apps. Dit geeft aan dat uw app een vernieuwings token nodig heeft voor lange levens toegang tot bronnen. |
+| scope | Ja | Een lijst met door spaties gescheiden bereiken. Een enkele Scope waarde geeft aan dat er voor Azure AD beide machtigingen worden aangevraagd. Het `openid` bereik geeft een machtiging aan voor het aanmelden van de gebruiker en het ophalen van gegevens over de gebruiker in de vorm van ID-tokens. Het `offline_access` bereik is optioneel voor web-apps. Dit geeft aan dat uw app een vernieuwings token nodig heeft voor lange levens toegang tot bronnen. |
 | staat | Nee | Een waarde die in de aanvraag is opgenomen en die ook wordt geretourneerd in het token antwoord. Dit kan een teken reeks zijn van alle inhoud die u wilt gebruiken. Normaal gesp roken wordt een wille keurig gegenereerde, unieke waarde gebruikt om vervalsing van aanvragen op meerdere sites te voor komen. De status wordt ook gebruikt voor het coderen van informatie over de status van de gebruiker in de app voordat de verificatie aanvraag is uitgevoerd, zoals op de pagina waarop deze zich bevonden. |
-| nonce | Yes | Een waarde die is opgenomen in de aanvraag (gegenereerd door de app) die is opgenomen in de resulterende ID-token als claim. De app kan vervolgens deze waarde verifiëren om token replay-aanvallen te verhelpen. Normaal gesp roken is de waarde een wille keurige, unieke teken reeks die kan worden gebruikt om de oorsprong van de aanvraag te identificeren. |
+| nonce | Ja | Een waarde die is opgenomen in de aanvraag (gegenereerd door de app) die is opgenomen in de resulterende ID-token als claim. De app kan vervolgens deze waarde verifiëren om token replay-aanvallen te verhelpen. Normaal gesp roken is de waarde een wille keurige, unieke teken reeks die kan worden gebruikt om de oorsprong van de aanvraag te identificeren. |
 | verschijnt | Nee | Het type gebruikers interactie dat is vereist. Op dit moment is de enige geldige waarde `login` . Met deze para meter wordt de gebruiker gedwongen om hun referenties in te voeren voor deze aanvraag. Eenmalige aanmelding treedt niet in werking. |
 
 Op dit moment wordt de gebruiker gevraagd om de werk stroom van het beleid te volt ooien. De gebruiker moet mogelijk hun gebruikers naam en wacht woord invoeren, zich aanmelden met een sociale identiteit, zich aanmelden voor de Directory of een ander aantal stappen. Gebruikers acties zijn afhankelijk van de manier waarop de gebruikers stroom is gedefinieerd.
@@ -233,8 +233,8 @@ GET https://{tenant}.b2clogin.com/{tenant}.onmicrosoft.com/{policy}/oauth2/v2.0/
 
 | Parameter | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| bouw | Yes | De naam van uw Azure AD B2C-Tenant |
-| verslaggev | Yes | De gebruikers stroom die u wilt gebruiken voor het ondertekenen van de gebruiker uit uw toepassing. |
+| bouw | Ja | De naam van uw Azure AD B2C-Tenant |
+| verslaggev | Ja | De gebruikers stroom die u wilt gebruiken voor het ondertekenen van de gebruiker uit uw toepassing. |
 | post_logout_redirect_uri | Nee | De URL waarnaar de gebruiker wordt omgeleid na een geslaagde afmelding. Als deze niet is opgenomen, wordt in Azure AD B2C de gebruiker een Gene riek bericht weer gegeven. |
 | staat | Nee | Als een `state` para meter in de aanvraag is opgenomen, moet dezelfde waarde in het antwoord worden weer gegeven. De toepassing moet controleren of de `state` waarden in de aanvraag en het antwoord identiek zijn. |
 

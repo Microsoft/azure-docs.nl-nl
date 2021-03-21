@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 12/05/2016
 ms.author: matd
 ms.openlocfilehash: 66a1e22282864d0425173504735d6beb42b76ad7
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94967258"
 ---
 # <a name="storsimple-as-a-backup-target-with-backup-exec"></a>StorSimple als back-updoel met Backup Exec
@@ -233,7 +233,7 @@ Stel uw oplossing in aan de hand van de richt lijnen in de volgende secties.
 -   StorSimple biedt ondersteuning voor de volledige en incrementele back-ups van Backup Exec. U wordt aangeraden geen synthetische en differentiële back-ups te gebruiken.
 -   Back-upgegevens bestanden moeten alleen gegevens voor een specifieke taak bevatten. U kunt bijvoorbeeld geen media toevoegen tussen verschillende taken.
 -   Taak verificatie uitschakelen. Indien nodig moet de verificatie worden gepland na de meest recente back-uptaak. Het is belang rijk om te begrijpen dat deze taak van invloed is op uw back-upvenster.
--   Selecteer **opslag**  >  Details van **de schijf**  >  **Details**  >  **Eigenschappen**. Schakel **het vooraf toewijzen van schijf ruimte** uit.
+-   Selecteer **opslag**  >  Details van **de schijf**  >    >  **Eigenschappen**. Schakel **het vooraf toewijzen van schijf ruimte** uit.
 
 Zie [de website van Veritas](https://www.veritas.com)voor de meest recente instellingen voor Backup Exec en aanbevolen procedures voor het implementeren van deze vereisten.
 
@@ -267,7 +267,7 @@ Maak op basis van de voor gaande hypo theses een gelaagd volume van 26 TiB StorS
 
 ### <a name="to-set-up-backup-exec-storage"></a>Opslag voor Backup Exec instellen
 
-1.  Selecteer in de beheer console backup **exec opslag**  >  **Configure Storage**  >  **op opslag schijven gebaseerde opslag** configureren  >  **Next**.
+1.  Selecteer in de beheer console backup **exec opslag**  >    >  **op opslag schijven gebaseerde opslag** configureren  >  .
 
     ![Backup Exec-beheer console, opslag pagina configureren](./media/storsimple-configure-backup-target-using-backup-exec/image4.png)
 
@@ -323,7 +323,7 @@ In de volgende procedure wordt ervan uitgegaan dat Backup Exec en de doelhost zi
 
 #### <a name="to-assign-storsimple-volumes-to-a-backup-exec-backup-job"></a>StorSimple-volumes toewijzen aan een Backup Exec-back-uptaak
 
-1.  Selecteer back-up van back **-up**  >  **Backup**  >  **naar schijf** in de beheer console van Backup Exec.
+1.  Selecteer back-up van back **-up**  >    >  **naar schijf** in de beheer console van Backup Exec.
 
     ![Backup Exec-beheer console, host, back-up en back-up naar schijf selecteren](./media/storsimple-configure-backup-target-using-backup-exec/image14.png)
 
@@ -472,13 +472,13 @@ Herstellen vanaf een StorSimple-apparaat werkt zoals herstellen vanuit elk appar
 
 Een nood geval kan worden veroorzaakt door diverse factoren. De volgende tabel geeft een lijst van veelvoorkomende scenario's voor herstel na nood gevallen.
 
-| Scenario | Impact | Herstellen | Opmerkingen |
+| Scenario | Impact | Herstellen | Notities |
 |---|---|---|---|
 | StorSimple-apparaat is mislukt | Back-up-en herstel bewerkingen worden onderbroken. | Vervang het apparaat dat is mislukt en voer een [StorSimple-failover en nood herstel](./storsimple-8000-device-failover-disaster-recovery.md)uit. | Als u na het herstel van het apparaat een herstel bewerking moet uitvoeren, worden volledige gegevens verzamelingen opgehaald uit de Cloud naar het nieuwe apparaat. Alle bewerkingen bevinden zich in de Cloud snelheid. Het proces voor het opnieuw scannen van indexeren en catalogiseren kan ertoe leiden dat alle back-upsets worden gescand en worden opgehaald uit de Cloud laag naar de laag van het lokale apparaat. Dit kan een tijdrovend proces zijn. |
 | Backup Exec-server fout | Back-up-en herstel bewerkingen worden onderbroken. | Bouw de back-upserver opnieuw op en voer data base terugzetten uit, zoals beschreven in [een hand matige back-up en herstel van de data base Backup Exec (BEDB)](http://www.veritas.com/docs/000041083). | U moet de Backup Exec-server opnieuw samen stellen of herstellen op de site voor nood herstel. Zet de data base terug naar het meest recente punt. Als de herstelde data base van Backup Exec niet synchroon is met uw meest recente back-uptaken, is indexeren en catalogiseren vereist. Dit proces voor het opnieuw scannen van index en catalogus kan ertoe leiden dat alle back-upsets worden gescand en van de Cloud laag worden opgehaald naar de laag van het lokale apparaat. Hierdoor is het veel tijdrovender. |
 | Site fout die leidt tot verlies van zowel de back-upserver als de StorSimple | Back-up-en herstel bewerkingen worden onderbroken. | Herstel eerst StorSimple en herstel vervolgens de functie voor het maken van back-ups. | Herstel eerst StorSimple en herstel vervolgens de functie voor het maken van back-ups. Als u na het herstel van het apparaat een herstel bewerking moet uitvoeren, worden de volledige gegevens sets van de Cloud naar het nieuwe apparaat opgehaald. Alle bewerkingen bevinden zich in de Cloud snelheid. |
 
-## <a name="references"></a>Verwijzingen
+## <a name="references"></a>Referenties
 
 In dit artikel wordt verwezen naar de volgende documenten:
 

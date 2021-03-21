@@ -4,10 +4,10 @@ description: In dit artikel leert u hoe u Azure Backup Server kunt gebruiken om 
 ms.topic: conceptual
 ms.date: 05/24/2020
 ms.openlocfilehash: db5e5c4bdac64e2faf5babb107ecec61a02d6468
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96002950"
 ---
 # <a name="back-up-vmware-vms-with-azure-backup-server"></a>Back-ups maken van VMware-Vm's met Azure Backup Server
@@ -147,7 +147,7 @@ De Azure Backup Server moet een gebruikers account met machtigingen hebben voor 
 
     ![Rol toevoegen](./media/backup-azure-backup-server-vmware/vmware-define-new-role.png)
 
-4. Voer BackupAdminRole in bij naam van **Rolnaam van rol maken**  >  **Role name**. *BackupAdminRole* De rolnaam kan wille keurig zijn, maar deze moet herkenbaar zijn voor het doel van de functie.
+4. Voer BackupAdminRole in bij naam van **Rolnaam van rol maken**  >  .  De rolnaam kan wille keurig zijn, maar deze moet herkenbaar zijn voor het doel van de functie.
 
 5. Selecteer in de onderstaande tabel de bevoegdheden die u wilt samenvatten en selecteer vervolgens **OK**.  De nieuwe rol wordt weer gegeven in de lijst in het deel venster **rollen** .
    - Selecteer het pictogram naast het bovenliggende label om het bovenliggende item uit te vouwen en de onderliggende bevoegdheden weer te geven.
@@ -517,7 +517,7 @@ Ga naar de MABS-server waarop de virtuele VMware-machine is geconfigureerd voor 
       ./ExcludeDisk.ps1 -Datasource $vmDsInfo[0] [-Add|Remove] "[Datastore] vmdk/vmdk.vmdk"
       ```
 
-     **Voor beeld**:
+     **Voorbeeld**:
 
      Voer de volgende opdracht uit om de schijf uitsluiting voor TestVM4 toe te voegen:
 

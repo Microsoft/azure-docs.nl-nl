@@ -9,17 +9,17 @@ ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.date: 05/30/2017
 ms.openlocfilehash: 6c07ab4b18c017bd29723d2640129b8e67374e3c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96023649"
 ---
 # <a name="migrate-your-apps-and-solutions-from-biztalk-services-to-azure-logic-apps"></a>Migreer uw apps en oplossingen van BizTalk Services naar Azure Logic Apps
 
 Microsoft Azure BizTalk Services (MABS) wordt buiten gebruik gesteld. Volg de richt lijnen in dit artikel om uw integratie oplossingen voor MABS naar [Azure Logic apps](../logic-apps/logic-apps-overview.md)te verplaatsen. 
 
-## <a name="introduction"></a>Introductie
+## <a name="introduction"></a>Inleiding
 
 BizTalk Services bestaat uit twee subservices:
 
@@ -49,7 +49,7 @@ Deze tabel wijst BizTalk Services mogelijkheden toe aan Logic Apps.
 
 BizTalk Services heeft verschillende soorten artefacten. 
 
-## <a name="connectors"></a>Connectors
+## <a name="connectors"></a>Connectoren
 
 Met BizTalk Services Connectors kunnen gegevens worden verzonden en ontvangen, waaronder twee richtings bruggen die op HTTP gebaseerde aanvraag/antwoord interacties mogelijk maken. Logic Apps gebruikt dezelfde terminologie en heeft honderden connectors die hetzelfde doel hebben door verbinding te maken met een breed scala aan technologieën en services. Connectors zijn bijvoorbeeld beschikbaar voor Cloud SaaS-en PaaS-Services, zoals OneDrive, Office365, Dynamics CRM en meer, plus on-premises systemen via de on-premises gegevens gateway, waarmee de BizTalk adapter service voor BizTalk Services wordt vervangen. Bronnen in BizTalk Services zijn beperkt tot de FTP-, SFTP-en Service Bus-wachtrij of het onderwerp-abonnement.
 

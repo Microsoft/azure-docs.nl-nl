@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 05/05/2020
 ms.openlocfilehash: 2c93471436030f9260f4fa0d95d656c27d382346
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102047040"
 ---
 # <a name="monitoring-azure-virtual-machines-with-azure-monitor"></a>Virtuele Azure-machines bewaken met Azure Monitor
@@ -160,7 +160,7 @@ Met virtuele machines van Azure worden de volgende gegevens verzameld voor Azure
 
 Met VM Insights kunt u een vooraf vastgestelde set prestatie meter items verzamelen die naar de tabel *InsightsMetrics* zijn geschreven. Dit is dezelfde tabel die wordt gebruikt door [container Insights](../containers/container-insights-overview.md). 
 
-| Gegevensbron | Vereisten | Tabellen |
+| Gegevensbron | Vereisten | Tables |
 |:---|:---|:---|
 | VM Insights | Schakel deze optie in op elke virtuele machine. | InsightsMetrics<br>VMBoundPort<br>VMComputer<br>VMConnection<br>VMProcess<br>Zie [Logboeken zoeken vanuit VM Insights](../vm/vminsights-log-search.md) voor meer informatie. |
 | Activiteitenlogboek | Diagnostische instelling voor het abonnement. | AzureActivity |

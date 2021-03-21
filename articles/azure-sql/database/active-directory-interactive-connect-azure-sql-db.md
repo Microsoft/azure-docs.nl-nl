@@ -12,10 +12,10 @@ ms.author: MirekS
 ms.reviewer: vanto
 ms.date: 04/23/2020
 ms.openlocfilehash: 93831ec4c1dc3e34c2ea144e71b67dae711ee870
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94841645"
 ---
 # <a name="connect-to-azure-sql-database-with-azure-ad-multi-factor-authentication"></a>Verbinding maken met Azure SQL Database met Azure AD Multi-Factor Authentication
@@ -84,7 +84,7 @@ De benodigde machtigingen voor uw toepassing registreren en instellen:
 
 Als u het C#-programma wilt uitvoeren, moet een [logische SQL Server](logical-servers.md) -beheerder een Azure AD-beheerder voor uw server toewijzen.
 
-Selecteer op de pagina **SQL Server** de optie beheerders beheerder **Active Directory admin**  >  **instellen** Active Directory beheerder.
+Selecteer op de pagina **SQL Server** de optie beheerders beheerder   >  **instellen** Active Directory beheerder.
 
 Voor meer informatie over Azure AD-beheerders en-gebruikers voor Azure SQL Database raadpleegt u de scherm opnamen in [Azure Active Directory authenticatie configureren en beheren met SQL database](authentication-aad-configure.md#provision-azure-ad-admin-sql-database).
 

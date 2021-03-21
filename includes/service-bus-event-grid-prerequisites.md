@@ -9,10 +9,10 @@ ms.date: 10/15/2020
 ms.author: spelluru
 ms.custom: include file
 ms.openlocfilehash: d12df7197945a514ed8d3d0dca77271fb4bd0903
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96509213"
 ---
 ## <a name="prerequisites"></a>Vereisten

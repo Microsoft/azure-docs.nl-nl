@@ -12,10 +12,10 @@ ms.author: jovanpop
 ms.reviewer: wiassaf, sstein
 ms.date: 06/25/2019
 ms.openlocfilehash: 453d7e118b946d60eb3d84c6a66abdbea7db2410
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96499217"
 ---
 # <a name="dynamically-scale-database-resources-with-minimal-downtime"></a>Database resources dynamisch schalen met minimale downtime

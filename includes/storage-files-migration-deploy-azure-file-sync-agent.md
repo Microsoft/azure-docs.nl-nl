@@ -8,10 +8,10 @@ ms.date: 2/20/2020
 ms.author: fauhse
 ms.subservice: files
 ms.openlocfilehash: f038392f03b94aa2c2450531c9da4a11d9900295
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93043128"
 ---
 In deze sectie installeert u de Azure File Sync-agent op uw Windows Server-exemplaar.
@@ -37,4 +37,4 @@ Deze stappen worden uitgebreid beschreven in de implementatie handleiding, met i
 
 Gebruik de nieuwste agent. U kunt deze downloaden van het micro soft Download centrum: [Azure file sync-agent](https://aka.ms/AFS/agent "Downloaden van Azure File Sync-agent").
 
-Na een geslaagde installatie en Server registratie kunt u controleren of u deze stap hebt voltooid. Ga naar de bron van de opslag synchronisatie service in de Azure Portal. Ga in het menu links naar **geregistreerde servers** . U ziet dat uw server daar wordt vermeld.
+Na een geslaagde installatie en Server registratie kunt u controleren of u deze stap hebt voltooid. Ga naar de bron van de opslag synchronisatie service in de Azure Portal. Ga in het menu links naar **geregistreerde servers**. U ziet dat uw server daar wordt vermeld.

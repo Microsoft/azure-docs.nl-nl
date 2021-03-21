@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 04/22/2020
 ms.openlocfilehash: 1be66bdd8a1cf25a32ad3102d770078c904c4b6c
-ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94376822"
 ---
 # <a name="multiclass-decision-forest-module"></a>Module voor de beslissings forest voor multi klassen
@@ -39,33 +39,33 @@ De classificatie van het beslissings forest in Azure Machine Learning bestaat ui
 
 ## <a name="how-to-configure-multiclass-decision-forest"></a>Het configureren van een forest met een klassen beslissing
 
-1. Voeg de module voor het **beslissings forest** met een klassemodule toe aan uw pijp lijn in de ontwerp functie. U kunt deze module vinden onder **machine learning** , **model initialiseren** en **classificatie**.
+1. Voeg de module voor het **beslissings forest** met een klassemodule toe aan uw pijp lijn in de ontwerp functie. U kunt deze module vinden onder **machine learning**, **model initialiseren** en **classificatie**.
 
 2. Dubbel klik op de module om het deel venster **Eigenschappen** te openen.
 
 3. Kies voor **resampling methode** de methode die is gebruikt voor het maken van de afzonderlijke structuren.  U kunt kiezen uit overbagging of replicatie.
 
-    + **Overbaggen** : de functie voor het *verzamelen van de Boots trap* In deze methode wordt elke structuur op een nieuw voor beeld gekweekt, gemaakt door de oorspronkelijke gegevensset wille keurig te bemonsteren, totdat u een gegevensset hebt die de oorspronkelijke grootte heeft. De uitvoer van de modellen worden gecombineerd door middel van *stemmen*. Dit is een vorm van aggregatie. Zie de Wikipedia-vermelding voor Boots trap aggregatie voor meer informatie.
+    + **Overbaggen**: de functie voor het *verzamelen van de Boots trap* In deze methode wordt elke structuur op een nieuw voor beeld gekweekt, gemaakt door de oorspronkelijke gegevensset wille keurig te bemonsteren, totdat u een gegevensset hebt die de oorspronkelijke grootte heeft. De uitvoer van de modellen worden gecombineerd door middel van *stemmen*. Dit is een vorm van aggregatie. Zie de Wikipedia-vermelding voor Boots trap aggregatie voor meer informatie.
 
-    + **Repliceren** : in replicatie wordt elke structuur getraind op exact dezelfde invoer gegevens. De bepaling van welk gesplitst predicaat voor elk structuur knooppunt wordt gebruikt, blijft wille keurig en maakt diverse structuren.
+    + **Repliceren**: in replicatie wordt elke structuur getraind op exact dezelfde invoer gegevens. De bepaling van welk gesplitst predicaat voor elk structuur knooppunt wordt gebruikt, blijft wille keurig en maakt diverse structuren.
 
    
 
 4. Geef op hoe u wilt dat het model wordt getraind door de optie **trainer modus maken** in te stellen.
 
-    + **Eén para meter** : Selecteer deze optie als u weet hoe u het model wilt configureren en geef een set waarden als argumenten op.
+    + **Eén para meter**: Selecteer deze optie als u weet hoe u het model wilt configureren en geef een set waarden als argumenten op.
 
-    + **Parameter bereik** : Selecteer deze optie als u niet zeker weet wat de beste para meters zijn en u een parameter sweep wilt uitvoeren. Selecteer een bereik met waarden om over te sporen en het [model Hyper parameters](tune-model-hyperparameters.md) wordt herhaald op alle mogelijke combi Naties van de instellingen die u hebt verstrekt om de Hyper parameters te bepalen die de optimale resultaten opleveren.   
+    + **Parameter bereik**: Selecteer deze optie als u niet zeker weet wat de beste para meters zijn en u een parameter sweep wilt uitvoeren. Selecteer een bereik met waarden om over te sporen en het [model Hyper parameters](tune-model-hyperparameters.md) wordt herhaald op alle mogelijke combi Naties van de instellingen die u hebt verstrekt om de Hyper parameters te bepalen die de optimale resultaten opleveren.   
 
-5. **Aantal beslissings structuren** : Typ het maximum aantal beslissings structuren dat in de ensemble kan worden gemaakt. Door meer beslissings structuren te maken, kunt u een betere dekking krijgen, maar kan de tijd van de training toenemen.
+5. **Aantal beslissings structuren**: Typ het maximum aantal beslissings structuren dat in de ensemble kan worden gemaakt. Door meer beslissings structuren te maken, kunt u een betere dekking krijgen, maar kan de tijd van de training toenemen.
 
     Als u de waarde instelt op 1, Dit betekent echter wel dat er slechts één structuur kan worden geproduceerd (de boom structuur met de initiële set para meters), en er geen verdere herhalingen worden uitgevoerd.
 
-6. **Maximale diepte van de beslissings structuren** : Typ een getal om de maximale diepte van een beslissings structuur te beperken. Het verg Roten van de diepte van de structuur kan nauw keuriger zijn, met het risico van een aantal verdeelde en verhoogde opleidings tijd.
+6. **Maximale diepte van de beslissings structuren**: Typ een getal om de maximale diepte van een beslissings structuur te beperken. Het verg Roten van de diepte van de structuur kan nauw keuriger zijn, met het risico van een aantal verdeelde en verhoogde opleidings tijd.
 
-7. **Aantal wille keurige splitsingen per knoop punt** : Typ het aantal splitpen dat moet worden gebruikt bij het maken van elk knoop punt van de structuur. Een *splitsing* houdt in dat onderdelen in elk niveau van de structuur (knoop punt) wille keurig worden gedeeld.
+7. **Aantal wille keurige splitsingen per knoop punt**: Typ het aantal splitpen dat moet worden gebruikt bij het maken van elk knoop punt van de structuur. Een *splitsing* houdt in dat onderdelen in elk niveau van de structuur (knoop punt) wille keurig worden gedeeld.
 
-8. **Minimum aantal steek proeven per blad knooppunt** : geeft het minimum aantal cases aan dat nodig is voor het maken van een Terminal knooppunt (Leaf) in een boom structuur. Door deze waarde te verhogen, verhoogt u de drempel voor het maken van nieuwe regels.
+8. **Minimum aantal steek proeven per blad knooppunt**: geeft het minimum aantal cases aan dat nodig is voor het maken van een Terminal knooppunt (Leaf) in een boom structuur. Door deze waarde te verhogen, verhoogt u de drempel voor het maken van nieuwe regels.
 
     Met de standaard waarde 1 kan zelfs een enkele case ertoe leiden dat een nieuwe regel wordt gemaakt. Als u de waarde op 5 verhoogt, moeten de trainings gegevens ten minste vijf gevallen bevatten die voldoen aan dezelfde voor waarden.
 
@@ -73,9 +73,9 @@ De classificatie van het beslissings forest in Azure Machine Learning bestaat ui
 
 10. Verbind een gegevensset met een label en Train het model:
 
-    + Als u de **modus trainer maken** instelt op **één para meter** , verbindt u een gecodeerde gegevensset en de module [Train model](train-model.md) .  
+    + Als u de **modus trainer maken** instelt op **één para meter**, verbindt u een gecodeerde gegevensset en de module [Train model](train-model.md) .  
   
-    + Als u de **modus trainer maken** instelt op het **parameter bereik** , verbindt u een gecodeerde gegevensset en traint u het model met behulp van [Hyper parameters model](tune-model-hyperparameters.md).  
+    + Als u de **modus trainer maken** instelt op het **parameter bereik**, verbindt u een gecodeerde gegevensset en traint u het model met behulp van [Hyper parameters model](tune-model-hyperparameters.md).  
   
     > [!NOTE]
     > 

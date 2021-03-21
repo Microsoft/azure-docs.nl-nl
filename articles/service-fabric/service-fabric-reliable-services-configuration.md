@@ -7,10 +7,10 @@ ms.date: 10/02/2017
 ms.author: sumukhs
 ms.custom: devx-track-csharp
 ms.openlocfilehash: cda0a9f988afae58a60bff051885a5eec8afe434
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96023581"
 ---
 # <a name="configure-stateful-reliable-services"></a>Stateful reliable Services configureren
@@ -119,7 +119,7 @@ ReplicatorConfig
 | SharedLogPath |Fully Qualified Path name |"" |Hiermee geeft u het volledige pad op waar het gedeelde logboek bestand voor deze replica wordt gemaakt. Normaal gesp roken moeten services deze instelling niet gebruiken. Als SharedLogPath echter is opgegeven, moet SharedLogId ook worden opgegeven. |
 | SlowApiMonitoringDuration |Seconden |300 |Hiermee stelt u het bewakings interval voor beheerde API-aanroepen. Voor beeld: door de gebruiker geleverde Terugbel functie voor back-up. Nadat het interval is verstreken, wordt een waarschuwings status rapport verzonden naar de Health Manager. |
 | LogTruncationIntervalSeconds |Seconden |0 |Configureerbaar interval waarmee de afkap ping van het logboek op elke replica wordt gestart. Het wordt gebruikt om ervoor te zorgen dat Logboeken ook worden afgekapt op basis van tijd in plaats van alleen logboek grootte. Deze instelling dwingt ook het leegmaken van verwijderde vermeldingen in een betrouw bare woorden lijst af. Dit kan daarom worden gebruikt om ervoor te zorgen dat verwijderde items tijdig worden opgeschoond. |
-| EnableStableReads |Booleaans |False |Het inschakelen van stabiele Lees bewerkingen beperkt secundaire replica's voor het retour neren van waarden die zijn bevestigd. |
+| EnableStableReads |Booleaans |Niet waar |Het inschakelen van stabiele Lees bewerkingen beperkt secundaire replica's voor het retour neren van waarden die zijn bevestigd. |
 
 ### <a name="sample-configuration-via-code"></a>Voorbeeld configuratie via code
 ```csharp

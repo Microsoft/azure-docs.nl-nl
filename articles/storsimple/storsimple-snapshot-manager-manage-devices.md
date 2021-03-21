@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 06/05/2017
 ms.author: alkohli
 ms.openlocfilehash: dbb7e835d110bcb6cb81fd5425a2aafbb578e692
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96022969"
 ---
 # <a name="use-storsimple-snapshot-manager-to-connect-and-manage-storsimple-devices"></a>StorSimple Snapshot Manager gebruiken om verbinding te maken en StorSimple-apparaten te beheren
@@ -34,7 +34,7 @@ Afhankelijk van de selecties van uw **weer gave** ziet u in het deel venster met
 | Kolom met resultaten | Beschrijving |
 |:--- |:--- |
 | Name |De naam van het apparaat zoals geconfigureerd in de klassieke Azure-Portal |
-| Modelleren |Het model nummer van het apparaat |
+| Model |Het model nummer van het apparaat |
 | Versie |De versie van de software die op het apparaat is geïnstalleerd |
 | Status |Of het apparaat beschikbaar is |
 | Laatst gesynchroniseerd op |De datum en tijd waarop het apparaat voor het laatst is gesynchroniseerd |

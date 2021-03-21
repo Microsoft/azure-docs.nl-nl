@@ -14,10 +14,10 @@ ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
 ms.openlocfilehash: 23ba50a6eca1e398b9d459153b84719909f2ecac
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99583736"
 ---
 # <a name="using-web-browsers-msalnet"></a>Webbrowsers (MSAL.NET) gebruiken
@@ -47,9 +47,9 @@ Over het algemeen is het raadzaam om de standaard waarde van het platform te geb
 
 | Framework        | Ingesloten | Systeem | Standaard |
 | ------------- |-------------| -----| ----- |
-| .NET-klassiek     | Yes | Ja ^ | Ingesloten |
-| .NET Core     | No | Ja ^ | Systeem |
-| .NET Standard | No | Ja ^ | Systeem |
+| .NET-klassiek     | Ja | Ja ^ | Ingesloten |
+| .NET Core     | Nee | Ja ^ | Systeem |
+| .NET Standard | Nee | Ja ^ | Systeem |
 | UWP | Ja | Nee | Ingesloten |
 | Xamarin.Android | Ja | Ja  | Systeem |
 | Xamarin.iOS | Ja | Ja  | Systeem |

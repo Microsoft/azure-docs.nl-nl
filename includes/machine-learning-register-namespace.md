@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 12/01/2020
 ms.author: larryfr
 ms.openlocfilehash: e92d3ac9ed4330cc1680428a426e881538cb0e78
-ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102623313"
 ---
 * Wanneer u een nieuwe werk ruimte maakt, kunt u automatisch Services maken die nodig zijn voor de werk ruimte of bestaande Services gebruiken. Als u __bestaande services van een ander Azure-abonnement__ wilt gebruiken dan de werk ruimte, moet u de Azure machine learning naam ruimte registreren in het abonnement dat deze services bevat. Als u bijvoorbeeld een werk ruimte maakt in abonnement A die gebruikmaakt van een opslag account uit abonnement B, moet u de Azure Machine Learning naam ruimte registreren in abonnement B voordat u het opslag account met de werk ruimte kunt gebruiken.

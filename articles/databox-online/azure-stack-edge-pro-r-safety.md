@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 02/12/2021
 ms.author: alkohli
 ms.openlocfilehash: dacc9ecc28ffa482b60d1e48735fe3620b5b7558
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100363063"
 ---
 # <a name="azure-stack-edge-pro-r-safety-instructions"></a>Beveiligings instructies voor de Azure Stack Edge Pro R
@@ -27,14 +27,14 @@ Lees alle veiligheids informatie in dit artikel voordat u uw Azure Stack Edge Pr
 
 De volgende signaal woorden voor waarschuwings signalen voor waarschuwingen zijn:
 
-| Pictogram | Description |
+| Pictogram | Beschrijving |
 |:--- |:--- |
 | ![Waarschuwings symbool](./media/azure-stack-edge-pro-r-safety/icon-safety-warning.png)| **Gevaar:** Duidt op een gevaarlijke situatie die, indien dat niet wordt vermeden, leidt tot dood of ernstige schade. <br> **Waarschuwing:** Duidt op een gevaarlijke situatie die, indien dat niet wordt vermeden, kan leiden tot overlijden of ernstige schade. <br> **Let op:** Duidt op een gevaarlijke situatie die, indien dat niet wordt vermeden, kan leiden tot kleine of gemiddelde schade.|
 |
 
 De volgende gevaren pictogrammen moeten worden waargenomen bij het instellen en uitvoeren van uw Azure Stack Edge Pro R edge-apparaat:
 
-| Pictogram | Description |
+| Pictogram | Beschrijving |
 |:--- |:--- |
 | ![Lees eerst alle instructies](./media/azure-stack-edge-pro-r-safety/icon-safety-read-all-instructions.png) | Lees eerst alle instructies |
 | ![Meldings pictogram ](./media/azure-stack-edge-mini-r-safety/icon-safety-notice.png) **:** | Geeft aan dat de informatie die belang rijk is, maar niet met een risico is betrokken. || ![Waarschuwings symbool](./media/azure-stack-edge-pro-r-safety/icon-safety-warning.png) | Waarschuwings symbool |

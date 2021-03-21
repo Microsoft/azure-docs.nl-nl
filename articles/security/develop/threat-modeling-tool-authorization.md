@@ -17,10 +17,10 @@ ms.date: 02/07/2017
 ms.author: jegeib
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 38b147a85a26fd1e0be4f5dc6b63ae4c1331d348
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "101093996"
 ---
 # <a name="security-frame-authorization--mitigations"></a>Beveiligings frame: autorisatie | Oplossingen 
@@ -81,7 +81,7 @@ ms.locfileid: "101093996"
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | N.v.t.  |
@@ -92,7 +92,7 @@ ms.locfileid: "101093996"
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | N.v.t.  |
@@ -103,7 +103,7 @@ ms.locfileid: "101093996"
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | N.v.t.  |
@@ -114,7 +114,7 @@ ms.locfileid: "101093996"
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | N.v.t.  |
@@ -133,7 +133,7 @@ Een mogelijke aanvaller kan nu niet knoeien en de bewerking van de toepassing wi
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | N.v.t.  |
@@ -144,7 +144,7 @@ Een mogelijke aanvaller kan nu niet knoeien en de bewerking van de toepassing wi
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Database | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [Hiërarchie van SQL-machtigingen](/sql/relational-databases/security/permissions-hierarchy-database-engine), [SQL-Beveilig bare items](/sql/relational-databases/security/securables) |
@@ -155,7 +155,7 @@ Een mogelijke aanvaller kan nu niet knoeien en de bewerking van de toepassing wi
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Database | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | SQL Azure, premises |
 | **Kenmerken**              | SQL-versie-V12, SQL-versie-MsSQL2016 |
 | **Referenties**              | [SQL Server Row-Level Security (beveiliging op RIJNIVEAU)](/sql/relational-databases/security/row-level-security) |
@@ -168,7 +168,7 @@ Houd er rekening mee dat beveiliging op rijniveau als een out-of-the-box-databas
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Database | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [Hiërarchie van SQL-machtigingen](/sql/relational-databases/security/permissions-hierarchy-database-engine), [SQL-Beveilig bare items](/sql/relational-databases/security/securables) |
@@ -190,7 +190,7 @@ Houd er rekening mee dat beveiliging op rijniveau als een out-of-the-box-databas
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Azure Event Hub | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [Overzicht van Event Hubs verificatie en beveiligings model](../../event-hubs/authenticate-shared-access-signature.md) |
@@ -201,7 +201,7 @@ Houd er rekening mee dat beveiliging op rijniveau als een out-of-the-box-databas
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Azure Event Hub | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [Overzicht van Event Hubs verificatie en beveiligings model](../../event-hubs/authenticate-shared-access-signature.md) |
@@ -212,7 +212,7 @@ Houd er rekening mee dat beveiliging op rijniveau als een out-of-the-box-databas
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Azure Event Hub | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [Overzicht van Event Hubs verificatie en beveiligings model](../../event-hubs/authenticate-shared-access-signature.md) |
@@ -223,7 +223,7 @@ Houd er rekening mee dat beveiliging op rijniveau als een out-of-the-box-databas
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Azure document DB | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | N.v.t.  |
@@ -234,7 +234,7 @@ Houd er rekening mee dat beveiliging op rijniveau als een out-of-the-box-databas
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Azure-vertrouwens grens | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [Azure-rollen toewijzen voor het beheren van de toegang tot uw Azure-abonnements resources](../../role-based-access-control/role-assignments-portal.md)  |
@@ -256,7 +256,7 @@ Houd er rekening mee dat beveiliging op rijniveau als een out-of-the-box-databas
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Dynamics CRM | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | N.v.t.  |
@@ -267,7 +267,7 @@ Houd er rekening mee dat beveiliging op rijniveau als een out-of-the-box-databas
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Dynamics CRM-Portal | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | N.v.t.  |
@@ -278,7 +278,7 @@ Houd er rekening mee dat beveiliging op rijniveau als een out-of-the-box-databas
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Azure Storage | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | Para-tabel |
 | **Referenties**              | [Toegang tot objecten in uw Azure Storage-account delegeren met SAS](../../storage/blobs/security-recommendations.md#identity-and-access-management) |
@@ -289,7 +289,7 @@ Houd er rekening mee dat beveiliging op rijniveau als een out-of-the-box-databas
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Azure Storage | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [Uw opslag account beveiligen met Azure op rollen gebaseerd toegangs beheer (Azure RBAC)](../../storage/blobs/security-recommendations.md) |
@@ -300,7 +300,7 @@ Houd er rekening mee dat beveiliging op rijniveau als een out-of-the-box-databas
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Mobiele client | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | N.v.t.  |
@@ -311,7 +311,7 @@ Houd er rekening mee dat beveiliging op rijniveau als een out-of-the-box-databas
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | WCF | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen, NET Framework 3 |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [MSDN](/previous-versions/msp-n-p/ff648500(v=pandp.10)), [Fortify Konink rijk](https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.wcf_misconfiguration_weak_class_reference) |
@@ -348,7 +348,7 @@ Het `<behaviorExtensions/>` element van het WCF-configuratie bestand hieronder g
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | WCF | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen, NET Framework 3 |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [MSDN](/previous-versions/msp-n-p/ff648500(v=pandp.10)), [Fortify Konink rijk](https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.wcf_misconfiguration_weak_class_reference) |
@@ -396,7 +396,7 @@ return result;
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Web-API | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen, MVC5 |
 | **Kenmerken**              | N.v.t., ID-provider-ADFS, ID-provider-Azure AD |
 | **Referenties**              | [Verificatie en autorisatie in ASP.NET Web-API](https://www.asp.net/web-api/overview/security/authentication-and-authorization-in-aspnet-web-api) |
@@ -447,7 +447,7 @@ public class CustomController : ApiController
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | IoT-apparaat | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | N.v.t.  |
@@ -458,7 +458,7 @@ public class CustomController : ApiController
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | IoT-veld Gateway | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | N.v.t.  |

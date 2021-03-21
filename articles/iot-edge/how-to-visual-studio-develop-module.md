@@ -9,10 +9,10 @@ ms.date: 3/27/2020
 ms.topic: conceptual
 ms.service: iot-edge
 ms.openlocfilehash: 6e5b5c021eb6a83de9ecfb31757855065b70c290
-ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103196945"
 ---
 # <a name="use-visual-studio-2019-to-develop-and-debug-modules-for-azure-iot-edge"></a>Visual Studio 2019 gebruiken voor het ontwikkelen en opsporen van fouten in modules voor Azure IoT Edge
@@ -114,7 +114,7 @@ Het **IotEdgeModule1** -project is een .net Core 2,1-console toepassing als dit 
 
 ## <a name="develop-your-module"></a>Uw module ontwikkelen
 
-De standaard module code die wordt geleverd bij de oplossing bevindt zich op **IotEdgeModule1**  >  **Program.cs** (voor C#) of **Main. c** (c). De module en het `deployment.template.json` bestand zijn zo ingesteld dat u de oplossing kunt bouwen, deze naar het container register pusht en deze implementeert op een apparaat om te testen zonder dat u code hoeft te gebruiken. De module is gebouwd om invoer van een bron (in dit geval de **SimulatedTemperatureSensor** -module die gegevens simuleert) te maken en deze naar Azure IOT hub te door sluizen.
+De standaard module code die wordt geleverd bij de oplossing bevindt zich in **IotEdgeModule1**  >  **Program. cs** (voor C#) of **Main. c** (c). De module en het `deployment.template.json` bestand zijn zo ingesteld dat u de oplossing kunt bouwen, deze naar het container register pusht en deze implementeert op een apparaat om te testen zonder dat u code hoeft te gebruiken. De module is gebouwd om invoer van een bron (in dit geval de **SimulatedTemperatureSensor** -module die gegevens simuleert) te maken en deze naar Azure IOT hub te door sluizen.
 
 Wanneer u klaar bent om de module sjabloon aan te passen met uw eigen code, gebruikt u de [Azure IOT hub sdk's](../iot-hub/iot-hub-devguide-sdks.md) om modules te bouwen die voldoen aan de belangrijkste behoeften van IOT-oplossingen, zoals beveiliging, Apparaatbeheer en betrouw baarheid.
 
@@ -149,7 +149,7 @@ Normaal gesp roken wilt u elke module testen en fouten opsporen voordat u deze u
 
    ![Module wordt uitgevoerd](./media/how-to-visual-studio-develop-csharp-module/single-module-run.png)
 
-1. Stel bij het ontwikkelen in C# een onderbrekings punt in voor de `PipeMessage()` functie in **Program.cs**; als u C gebruikt, stelt u een onderbrekings punt in voor de `InputQueue1Callback()` functie in **Main. C**. U kunt dit testen door een bericht te verzenden door de volgende opdracht uit te voeren in een **Git-Bash** of **WSL bash** -shell. (U kunt de opdracht niet uitvoeren `curl` vanuit een Power shell of opdracht prompt.)
+1. Als u in C# ontwikkelt, stelt u een onderbrekings punt in de `PipeMessage()` functie in **programma. cs**; in als u C gebruikt, stelt u een onderbrekings punt in voor de `InputQueue1Callback()` functie in **Main. C**. U kunt dit testen door een bericht te verzenden door de volgende opdracht uit te voeren in een **Git-Bash** of **WSL bash** -shell. (U kunt de opdracht niet uitvoeren `curl` vanuit een Power shell of opdracht prompt.)
 
     ```bash
     curl --header "Content-Type: application/json" --request POST --data '{"inputName": "input1","data":"hello world"}' http://localhost:53000/api/v1/messages

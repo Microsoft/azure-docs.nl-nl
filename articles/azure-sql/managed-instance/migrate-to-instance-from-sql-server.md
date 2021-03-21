@@ -12,10 +12,10 @@ ms.author: bonova
 ms.reviewer: ''
 ms.date: 07/11/2019
 ms.openlocfilehash: 49d37a5537ada260eae453bbb5f81716d42657a5
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102565816"
 ---
 # <a name="sql-server-instance-migration-to-azure-sql-managed-instance"></a>Migratie van SQL Server-exemplaren naar Azure SQL Managed instance
@@ -132,7 +132,7 @@ SQL Managed instance ondersteunt de volgende opties voor database migratie (mome
 - Azure Database Migration Service-migratie met bijna nul uitval tijd.
 - Systeem eigen `RESTORE DATABASE FROM URL` -maakt gebruik van systeem eigen back-ups van SQL Server en vergt enige downtime.
 
-### <a name="azure-database-migration-service"></a>Azure Database Migration Service
+### <a name="azure-database-migration-service"></a>Azure Database Migration-service
 
 [Azure database Migration service](../../dms/dms-overview.md) is een volledig beheerde service die is ontworpen om naadloze migratie van meerdere database bronnen naar Azure-gegevens platforms mogelijk te maken met minimale downtime. Deze service stroomlijnt de taken die nodig zijn om bestaande data bases van derden en SQL Server naar Azure te verplaatsen. Implementatie-opties in open bare preview omvatten data bases in Azure SQL Database en SQL Server data bases in een virtuele machine van Azure. Database Migration Service is de aanbevolen migratie methode voor uw bedrijfs werkbelastingen.
 

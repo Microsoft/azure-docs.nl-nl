@@ -3,12 +3,12 @@ title: Beveiliging en verificatie Azure Event Grid
 description: Beschrijving van Azure Event Grid en de concepten ervan.
 ms.topic: conceptual
 ms.date: 02/12/2021
-ms.openlocfilehash: 326fa00645302eb4b9c9bc59f17c1ca153bdb0b7
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: e9bcf00e832e4deaaf9c5f81ba5af51609a1c412
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100371717"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104601037"
 ---
 # <a name="authorizing-access-to-event-grid-resources"></a>Toegang tot Event Grid-resources autoriseren
 Met Azure Event Grid kunt u het toegangs niveau dat aan verschillende gebruikers wordt gegeven, beheren om verschillende **beheer bewerkingen** uit te voeren, zoals abonnementen op lijst gebeurtenissen, nieuwe maken en sleutels genereren. Event Grid maakt gebruik van Azure op rollen gebaseerd toegangs beheer (Azure RBAC).
@@ -31,80 +31,23 @@ Met de volgende bewerkingen wordt mogelijk geheime informatie geretourneerd, waa
 
 
 ## <a name="built-in-roles"></a>Ingebouwde rollen
+Event Grid biedt de volgende drie ingebouwde rollen. 
 
-Event Grid biedt twee ingebouwde rollen voor het beheren van gebeurtenis abonnementen. Ze zijn belang rijk bij het implementeren van [gebeurtenis domeinen](event-domains.md) omdat ze gebruikers de machtigingen geven die ze nodig hebben om zich te abonneren op onderwerpen in uw gebeurtenis domein. Deze rollen zijn gericht op gebeurtenis abonnementen en verlenen geen toegang voor acties zoals het maken van onderwerpen.
+De Inzender rollen Event Grid-abonnement en Event Grid-abonnement zijn bedoeld voor het beheren van gebeurtenis abonnementen. Ze zijn belang rijk bij het implementeren van [gebeurtenis domeinen](event-domains.md) omdat ze gebruikers de machtigingen geven die ze nodig hebben om zich te abonneren op onderwerpen in uw gebeurtenis domein. Deze rollen zijn gericht op gebeurtenis abonnementen en verlenen geen toegang voor acties zoals het maken van onderwerpen.
 
-U kunt [deze rollen toewijzen aan een gebruiker of groep](../role-based-access-control/quickstart-assign-role-user-portal.md).
+Met de rol Event Grid Inzender kunt u Event Grid resources maken en beheren. 
 
-**EventGrid EventSubscription Inzender**: Event grid-abonnements bewerkingen beheren
 
-```json
-[
-  {
-    "Description": "Lets you manage EventGrid event subscription operations.",
-    "IsBuiltIn": true,
-    "Id": "428e0ff05e574d9ca2212c70d0e0a443",
-    "Name": "EventGrid EventSubscription Contributor",
-    "IsServiceRole": false,
-    "Permissions": [
-      {
-        "Actions": [
-          "Microsoft.Authorization/*/read",
-          "Microsoft.EventGrid/eventSubscriptions/*",
-          "Microsoft.EventGrid/systemtopics/eventsubscriptions/*",
-          "Microsoft.EventGrid/partnertopics/eventsubscriptions/*",
-          "Microsoft.EventGrid/topicTypes/eventSubscriptions/read",
-          "Microsoft.EventGrid/locations/eventSubscriptions/read",
-          "Microsoft.EventGrid/locations/topicTypes/eventSubscriptions/read",
-          "Microsoft.Insights/alertRules/*",
-          "Microsoft.Resources/deployments/*",
-          "Microsoft.Resources/subscriptions/resourceGroups/read",
-          "Microsoft.Support/*"
-        ],
-        "NotActions": [],
-        "DataActions": [],
-        "NotDataActions": [],
-        "Condition": null
-      }
-    ],
-    "Scopes": [
-      "/"
-    ]
-  }
-]
-```
+| Rol | Beschrijving |
+| ---- | ----------- | 
+| [Event Grid-abonnements lezer](../role-based-access-control/built-in-roles.md#eventgrid-eventsubscription-reader) | Hiermee beheert u Event Grid bewerkingen voor gebeurtenis abonnementen. |
+| [Inzender van Event Grid-abonnement](../role-based-access-control/built-in-roles.md#eventgrid-eventsubscription-contributor) | Hiermee kunt u Event Grid gebeurtenis abonnementen lezen. |
+| [Inzender Event Grid](../role-based-access-control/built-in-roles.md#eventgrid-contributor) | Hiermee kunt u Event Grid-resources maken en beheren. |
 
-**EventGrid EventSubscription-lezer**: Event grid-abonnementen lezen
 
-```json
-[
-  {
-    "Description": "Lets you read EventGrid event subscriptions.",
-    "IsBuiltIn": true,
-    "Id": "2414bbcf64974faf8c65045460748405",
-    "Name": "EventGrid EventSubscription Reader",
-    "IsServiceRole": false,
-    "Permissions": [
-      {
-        "Actions": [
-          "Microsoft.Authorization/*/read",
-          "Microsoft.EventGrid/eventSubscriptions/read",
-          "Microsoft.EventGrid/topicTypes/eventSubscriptions/read",
-          "Microsoft.EventGrid/locations/eventSubscriptions/read",
-          "Microsoft.EventGrid/locations/topicTypes/eventSubscriptions/read",
-          "Microsoft.Resources/subscriptions/resourceGroups/read"
-        ],
-        "NotActions": [],
-        "DataActions": [],
-        "NotDataActions": []
-       }
-    ],
-    "Scopes": [
-      "/"
-    ]
-  }
-]
-```
+> [!NOTE]
+> Selecteer links in de eerste kolom om naar een artikel te navigeren met meer informatie over de rol. Zie [dit artikel](../role-based-access-control/quickstart-assign-role-user-portal.md)voor instructies over het toewijzen van gebruikers of groepen aan RBAC-rollen.
+
 
 ## <a name="custom-roles"></a>Aangepaste rollen
 

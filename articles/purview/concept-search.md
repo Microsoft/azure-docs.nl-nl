@@ -8,10 +8,10 @@ ms.subservice: purview-data-catalog
 ms.topic: conceptual
 ms.date: 11/06/2020
 ms.openlocfilehash: af8ec9e0aac38240c7da92edd614892ff65712e2
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96552697"
 ---
 # <a name="understand-search-features-in-azure-purview"></a>Zoek functies in azure controle sfeer liggen begrijpen
@@ -58,6 +58,6 @@ Relevantie is de standaard sorteer volgorde in de zoek resultaten pagina. De rel
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Snelstartgids: een Azure controle sfeer liggen-account maken in de Azure Portal](create-catalog-portal.md)
-* [Snelstartgids: een Azure controle sfeer liggen-account maken met behulp van Azure PowerShell/Azure CLI](create-catalog-powershell.md)
+* [Quickstart: Een Azure Purview-account maken in Azure Portal](create-catalog-portal.md)
+* [Quickstart: Een Azure Purview-account maken met behulp van Azure PowerShell/Azure CLI](create-catalog-powershell.md)
 * [Snelstartgids: controle sfeer liggen Studio gebruiken](use-purview-studio.md)

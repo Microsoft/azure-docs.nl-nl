@@ -4,10 +4,10 @@ description: Meer informatie over hoe u een klant kunt opsturen naar Azure Light
 ms.date: 02/16/2021
 ms.topic: how-to
 ms.openlocfilehash: 4487dd82b30e14f9db2001dc10f7437a53e745f3
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100556106"
 ---
 # <a name="onboard-a-customer-to-azure-lighthouse"></a>Een klant onboarden in Azure Lighthouse
@@ -117,7 +117,7 @@ az role definition list --name "<roleName>" | grep name
 
 ## <a name="create-an-azure-resource-manager-template"></a>Een Azure Resource Manager sjabloon maken
 
-Voor het onboarden van uw klant moet u een [Azure Resource Manager](../../azure-resource-manager/index.yml) -sjabloon maken voor uw aanbieding met de volgende gegevens. De waarden **mspOfferName** en **mspOfferDescription** zijn zichtbaar voor de klant op de [pagina service providers](view-manage-service-providers.md) van de Azure Portal.
+Voor het onboarden van uw klant moet u een [Azure Resource Manager](../../azure-resource-manager/index.yml)-sjabloon maken voor uw aanbieding, met de volgende gegevens. De waarden **mspOfferName** en **mspOfferDescription** zijn zichtbaar voor de klant op de [pagina service providers](view-manage-service-providers.md) van de Azure Portal.
 
 |Veld  |Definitie  |
 |---------|---------|

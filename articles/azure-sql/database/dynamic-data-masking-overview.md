@@ -13,10 +13,10 @@ ms.reviewer: vanto
 ms.date: 01/25/2021
 tags: azure-synpase
 ms.openlocfilehash: b10b00e724324779eb753bfefccce77a5eb2a39d
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98918074"
 ---
 # <a name="dynamic-data-masking"></a>Dynamische gegevensmaskering 
@@ -86,4 +86,4 @@ Dynamische gegevens maskering kan worden geconfigureerd door de rol van de [SQL 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Dynamische gegevens maskering](/sql/relational-databases/security/dynamic-data-masking)
+[Dynamische gegevensmaskering](/sql/relational-databases/security/dynamic-data-masking)

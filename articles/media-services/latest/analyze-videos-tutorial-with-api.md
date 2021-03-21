@@ -2,31 +2,24 @@
 title: Video's analyseren met Media Services v3
 description: Leer hoe u met behulp van Azure Media Services video's kunt analyseren.
 services: media-services
-documentationcenter: ''
 author: IngridAtMicrosoft
 manager: femila
-editor: ''
 ms.service: media-services
-ms.workload: ''
 ms.topic: tutorial
-ms.date: 08/31/2020
+ms.date: 03/17/2021
 ms.author: inhenkel
-ms.custom: seodec18
-ms.openlocfilehash: 4a050d838bae9b394f5f292698781a9a824af0bf
-ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
+ms.openlocfilehash: a083fbbf54d6f03316a2e647d47e76cdb5db7c2c
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102454121"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104581225"
 ---
 # <a name="tutorial-analyze-videos-with-media-services-v3"></a>Zelfstudie: Video's analyseren met Media Services v3
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
-> [!NOTE]
-> Hoewel in deze zelfstudie de [.NET SDK](/dotnet/api/microsoft.azure.management.media.models.liveevent)-voorbeelden worden gebruikt, zijn de algemene stappen hetzelfde voor de [REST API](/rest/api/media/liveevents), de [CLI-](/cli/azure/ams/live-event) of andere ondersteunde [SDK's](media-services-apis-overview.md#sdks).
-
-In deze zelfstudie ziet u hoe u video's kunt analyseren met Azure Media Services. Er zijn veel scenario's waarin u misschien inzicht wilt krijgen in opgenomen video's of audio-inhoud. Voor het bereiken van een hogere klanttevredenheid kunnen organisaties bijvoorbeeld spraak-naar-tekstverwerking uitvoeren om opnamen van de klantenondersteuning om te zetten in een catalogus van zoekmachines, met indexen en dashboards. Vervolgens kunnen ze op grond daarvan inzicht krijgen in hun bedrijf. Deze inzichten omvatten onder andere een lijst met veelvoorkomende klachten, bronnen van dergelijke klachten en andere nuttige informatie.
+In deze zelfstudie ziet u hoe u video's kunt analyseren met Azure Media Services. Er zijn veel scenario's waarin u misschien inzicht wilt krijgen in opgenomen video's of audio-inhoud. Voor het bereiken van een hogere klanttevredenheid kunnen organisaties bijvoorbeeld spraak-naar-tekstverwerking uitvoeren om opnamen van de klantenondersteuning om te zetten in een catalogus van zoekmachines, met indexen en dashboards.
 
 In deze zelfstudie ontdekt u hoe u:
 
@@ -39,9 +32,9 @@ In deze zelfstudie ontdekt u hoe u:
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="compliance-privacy-and-security"></a>Compliance, privacy en beveiliging
+## <a name="compliance-privacy-and-security"></a>Naleving, privacy en beveiliging
  
-Het is heel belangrijk dat u zich realiseert dat u zich bij het gebruik van Video Indexer moet houden aan alle toepasselijke wetgeving en dat het niet is toegestaan Video Indexer of een andere Azure-service te gebruiken op een manier die de rechten van anderen schendt of anderen schade berokkent. Voordat u video's, met inbegrip van eventuele biometrische gegevens, uploadt naar de Video Indexer-service om daar te worden verwerkt of opgeslagen, moet u over alle daarvoor benodigde rechten beschikken, waaronder alle toepasselijke toestemmingen van de persoon of personen in de video. Meer informatie over compliance, privacy en beveiliging in Video Indexer vindt u in de [voorwaarden van Microsoft Cognitive Services](https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/). Als u meer wilt weten over de privacyverplichtingen die Microsoft hanteert ten aanzien van uw gegevens, kunt u de [Privacyverklaring](https://privacy.microsoft.com/PrivacyStatement) van Microsoft, de [Voorwaarden voor Online Diensten](https://www.microsoft.com/licensing/product-licensing/products) ('OST') en het [Addendum met betrekking tot gegevensverwerking](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=67) ('DPA') raadplegen. Aanvullende informatie over privacy, waaronder informatie over de bewaarplicht voor gegevens en over de verwijdering/vernietiging ervan, is beschikbaar in de Voorwaarden voor Online Diensten (OST) en [hier](../video-indexer/faq.md). Door Video Indexer te gebruiken, gaat u akkoord met de voorwaarden van Cognitive Services, de OST, DPA en de Privacyverklaring.
+Als belang rijke herinnering moet u zich houden aan alle toepasselijke wetten in uw gebruik van Video Indexer. U moet Video Indexer of een andere Azure-service niet gebruiken op een manier die de rechten van anderen schendt. Voordat u Video's, met inbegrip van biometrische gegevens, naar de Video Indexer-service voor verwerking en opslag uploadt, moet u alle juiste rechten hebben, inclusief alle toepasselijke mede werkers, van de personen in de video. Voor meer informatie over naleving, privacy en beveiliging in Video Indexer, de Azure [Cognitive Services-voor waarden](https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/). Raadpleeg de [privacyverklaring](https://privacy.microsoft.com/PrivacyStatement)van micro soft, het OST-bericht ( [Online Services-voor waarden](https://www.microsoft.com/licensing/product-licensing/products) ) en de [addendum op gegevens verwerking](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=67) ("DPA") voor meer informatie over de privacy van micro soft en het afhandelen van uw gegevens. Meer informatie over privacy, waaronder het bewaren van gegevens, verwijderen/vernietigen, is beschikbaar in de OST en [hier](../video-indexer/faq.md). Door Video Indexer te gebruiken, gaat u akkoord met de Cognitive Services voor waarden, de OST, DPA en de privacyverklaring.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -131,7 +124,7 @@ Het duurt even voordat de taak is voltooid. Wanneer dit is gebeurd, wilt u daaro
 
 Navragen is geen aanbevolen best practice voor productie-apps vanwege mogelijke latentie. Polling kan worden beperkt bij een te intensief gebruik op een account. Ontwikkelaars moeten in plaats daarvan Event Grid gebruiken.
 
-Event Grid is ontworpen voor hoge beschikbaarheid, consistente prestaties en dynamisch schalen. Met Event Grid kunnen uw apps luisteren naar en reageren op gebeurtenissen uit vrijwel alle Azure-services, evenals aangepaste bronnen. Eenvoudige, op HTTP gebaseerde reactieve gebeurtenisafhandeling maakt het mogelijk om efficiënte oplossingen te bouwen met intelligente filtering en routering van gebeurtenissen. Zie [Gebeurtenissen routeren naar een aangepast webeindpunt](job-state-events-cli-how-to.md) voor meer informatie.
+Event Grid is ontworpen voor hoge beschikbaarheid, consistente prestaties en dynamisch schalen. Met Event Grid kunnen uw apps luisteren naar en reageren op gebeurtenissen uit vrijwel alle Azure-services, evenals aangepaste bronnen. Eenvoudige, op HTTP gebaseerde reactieve gebeurtenisafhandeling maakt het mogelijk om efficiënte oplossingen te bouwen met intelligente filtering en routering van gebeurtenissen. Zie [Gebeurtenissen routeren naar een aangepast webeindpunt](monitoring/job-state-events-cli-how-to.md) voor meer informatie.
 
 De **taak** doorloopt meestal de volgende statussen: **Gepland**, **In de wachtrij geplaatst**, **Verwerken**, **Voltooid** (de eindstatus). Als bij de taak een fout is opgetreden, krijgt u de status **Fout**. Als de taak wordt geannuleerd, krijgt u de melding **Wordt geannuleerd** en vervolgens **Geannuleerd** wanneer het annuleren is voltooid.
 
@@ -147,11 +140,19 @@ Met de volgende functie worden de resultaten van de [uitvoerasset](/rest/api/med
 
 [!code-csharp[Main](../../../media-services-v3-dotnet-tutorials/AMSV3Tutorials/AnalyzeVideos/Program.cs#DownloadResults)]
 
-### <a name="clean-up-resource-in-your-media-services-account"></a>Opschonen van resources in uw Media Services-account
+### <a name="clean-up-resources-in-your-media-services-account"></a>Resources in uw Media Services-account opschonen
+
+[!INCLUDE [clean-up-warning](includes/clean-up-warning.md)]
 
 Over het algemeen moet u alles opschonen, behalve objecten die u van plan bent opnieuw te gebruiken (meestal gebruikt u transformaties opnieuw en behoudt u StreamingLocators). Als u wilt dat uw account na het experiment is opgeschoond, moet u de resources verwijderen die u niet van plan bent opnieuw te gebruiken. Met de volgende code wordt bijvoorbeeld de uitvoerasset verwijderd:
 
+### <a name="delete-resources-with-code"></a>Resources met code verwijderen
+
 [!code-csharp[Main](../../../media-services-v3-dotnet-tutorials/AMSV3Tutorials/AnalyzeVideos/Program.cs#CleanUp)]
+
+U kunt ook de CLI gebruiken.
+
+[!INCLUDE [clean-up-resources-cli](includes/clean-up-resources-cli.md)]
 
 ## <a name="run-the-sample-app"></a>De voorbeeld-app uitvoeren
 
@@ -163,23 +164,10 @@ Wanneer we het programma uitvoeren, produceert de taak miniaturen voor elk gezic
 
 Het uitvoerbestand van het analyseren van video's heet insights.json. Dit bestand bevat informatie over uw video. U vindt de beschrijving van elementen die in het json-bestand zijn gevonden in het artikel [Media intelligence](./analyzing-video-audio-files-concept.md).
 
-## <a name="clean-up-resources"></a>Resources opschonen
-
-Als u de resources van de resourcegroep niet meer nodig hebt, met inbegrip van de Media Services en opslagaccounts die u hebt gemaakt voor deze zelfstudie, verwijdert u de resourcegroep die u eerder hebt gemaakt.
-
-Voer de volgende CLI-opdracht uit:
-
-```azurecli
-az group delete --name amsResourceGroup
-```
-
 ## <a name="multithreading"></a>Multithreading
 
-De SDK's van Azure Media Services v3 zijn niet thread-safe. Als u werkt met een app met meerdere threads, moet u per thread een nieuw AzureMediaServicesClient-object genereren.
-
-## <a name="ask-questions-give-feedback-get-updates"></a>Vragen stellen, feedback geven, updates ophalen
-
-Ga naar het artikel van de [Azure Media Services-community](media-services-community.md) voor verschillende manieren om vragen te stellen, feedback te geven en updates voor Media Services op te halen.
+> [!WARNING]
+> De SDK's van Azure Media Services v3 zijn niet thread-safe. Als u werkt met een app met meerdere threads, moet u per thread een nieuw AzureMediaServicesClient-object genereren.
 
 ## <a name="next-steps"></a>Volgende stappen
 

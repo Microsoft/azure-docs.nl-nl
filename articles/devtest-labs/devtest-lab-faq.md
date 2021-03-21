@@ -4,10 +4,10 @@ description: In dit artikel vindt u antwoorden op enkele veelgestelde vragen ove
 ms.topic: article
 ms.date: 07/17/2020
 ms.openlocfilehash: 9fcdc160754822d5c6f22b7349d0e72f0cf22633
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97590270"
 ---
 # <a name="azure-devtest-labs-faq"></a>Veelgestelde vragen over Azure DevTest Labs
@@ -206,7 +206,7 @@ Ja. De DevTest Labs-service ondersteunt [gen 2-installatie kopieën](../virtual-
 Voer een van de volgende stappen uit om Windows-client installatie kopieën (Windows 7 of een hogere versie) te gebruiken voor het ontwikkelen of testen in Azure:
 
 - [Koop een MSDN-abonnement](https://www.visualstudio.com/products/how-to-buy-vs).
-- Als u een Enterprise Agreement hebt, maakt u een Azure-abonnement met de [Enterprise dev/test aanbieding](https://azure.microsoft.com/offers/ms-azr-0148p).
+- Als u een Enterprise Overeenkomst hebt, maakt u een Azure-abonnement met de [Enterprise dev/test aanbieding](https://azure.microsoft.com/offers/ms-azr-0148p).
 
 Voor meer informatie over de Azure-tegoeden voor elke MSDN-aanbieding raadpleegt u het [maandelijkse Azure-tegoed voor Visual Studio-abonnees](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
 
@@ -277,7 +277,7 @@ Als u het uploaden van VHD-bestanden voor het maken van aangepaste installatie k
 
 Zoeken naar het doel-opslag account dat is gekoppeld aan uw Lab:
 
-1.  Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1.  Meld u aan bij [Azure Portal](https://portal.azure.com).
 2.  Selecteer **resource groepen** in het menu links.
 3.  Zoek en selecteer de resource groep die is gekoppeld aan uw Lab.
 4.  Selecteer een van de opslag accounts onder **overzicht**.

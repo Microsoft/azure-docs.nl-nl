@@ -13,12 +13,12 @@ metadata:
   ms.date: 03/03/2021
   featureFlags:
   - clicktale
-  ms.openlocfilehash: 323172092a6530e97de36c1cf50fea855f38da28
-  ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
+  ms.openlocfilehash: b7dceb243f0a85166cd1d7180198c6aac95fab7d
+  ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 03/11/2021
-  ms.locfileid: "103011167"
+  ms.lasthandoff: 03/19/2021
+  ms.locfileid: "104601054"
 highlightedContent:
   items:
   - title: Introductiehandleiding voor Azure-ontwikkelaars
@@ -1384,3 +1384,11 @@ additionalContent:
     - title: Azure China 21Vianet
       summary: Een toegewezen cloud die zich in China bevindt en die wordt beheerd door 21Vianet.
       url: /azure/china/
+  - title: Partneroplossingen
+    items:
+    - title: Azure-partner oplossingen
+      summary: Geïntegreerde partner oplossingen die u in azure kunt gebruiken om uw Cloud infrastructuur te verbeteren.
+      url: ./partner-solutions/overview.md
+    - title: Commerciële marketplace
+      summary: Een online Marketplace van toepassingen en services van ISV-partners (Independent Software Vendor).
+      url: ./marketplace/index.yml

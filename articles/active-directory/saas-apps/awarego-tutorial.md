@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 12/07/2020
 ms.author: jeedes
 ms.openlocfilehash: 4682396f68d6ff1af0b2fb6a5b1a8419d6963529
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98735331"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-integration-with-awarego"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met AwareGo

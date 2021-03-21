@@ -4,10 +4,10 @@ description: Beschrijft de eigenschappen die worden gegeven voor de gebeurteniss
 ms.topic: conceptual
 ms.date: 02/12/2021
 ms.openlocfilehash: 4c1990909dc555e9e2a6d09538b807ba7e07ce83
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100363216"
 ---
 # <a name="azure-resource-group-as-an-event-grid-source"></a>Azure-resource groep als een Event Grid bron
@@ -446,7 +446,7 @@ Een gebeurtenis heeft de volgende gegevens op het hoogste niveau:
 
 Het gegevens object heeft de volgende eigenschappen:
 
-| Eigenschap | Type | Description |
+| Eigenschap | Type | Beschrijving |
 | -------- | ---- | ----------- |
 | `authorization` | object | De aangevraagde autorisatie voor de bewerking. |
 | `claims` | object | De eigenschappen van de claims. Zie [JWT-specificatie](https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html)voor meer informatie. |

@@ -15,17 +15,17 @@ ms.topic: how-to
 ms.date: 12/14/2020
 ms.author: phjensen
 ms.openlocfilehash: 00aaa5bdc0d48adb735679fc4a71b3431970ef09
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98737164"
 ---
 # <a name="install-azure-application-consistent-snapshot-tool-preview"></a>Azure-toepassing consistent snap shot tool installeren (preview-versie)
 
 Dit artikel bevat een hand leiding voor het installeren van het Azure-toepassing consistente momentopname hulpmiddel dat u kunt gebruiken met Azure NetApp Files.
 
-## <a name="introduction"></a>Introductie
+## <a name="introduction"></a>Inleiding
 
 Het Download bare zelf-installatie programma is ontworpen om de snap shot-hulpprogram ma's eenvoudig in te stellen en uit te voeren met niet-hoofd gebruikers bevoegdheden (bijvoorbeeld azacsnap). Het installatie programma stelt de gebruiker in en plaatst de momentopname hulpprogramma's in de `$HOME/bin` submap gebruikers (standaard = `/home/azacsnap/bin` ).
 Het zelf-installatie programma probeert de juiste instellingen en paden te bepalen voor alle bestanden op basis van de configuratie van de gebruiker die de installatie uitvoert (bijvoorbeeld root). Als de vereiste stappen (communicatie met opslag en SAP HANA inschakelen) zijn uitgevoerd als root, worden de persoonlijke sleutel en de `hdbuserstore` locatie van de back-upgebruiker gekopieerd met de installatie. Het is echter wel mogelijk om de stappen uit te voeren die communicatie mogelijk maken met de back-end van de opslag en SAP HANA hand matig moet worden uitgevoerd door een beschik bare beheerder na de installatie.

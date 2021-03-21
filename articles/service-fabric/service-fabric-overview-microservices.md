@@ -4,10 +4,10 @@ description: Een overzicht van het bouwen van Cloud toepassingen met een micro S
 ms.topic: conceptual
 ms.date: 01/07/2020
 ms.openlocfilehash: d20e04820c87a7390d9c20e511259ee9860c27f5
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96575649"
 ---
 # <a name="why-use-a-microservices-approach-to-building-applications"></a>Waarom een micro Services-benadering gebruiken voor het ontwikkelen van toepassingen
@@ -42,7 +42,7 @@ Het nadeel van micro Services is dat u meer afzonderlijke entiteiten moet behere
 
 Standaarden zorgen ervoor dat de micro Services aanpakt door op te geven hoe alleen de dingen die u nodig hebt van een service te communiceren en te verdragen, in plaats van in stijve contracten. Het is belang rijk dat u deze contracten vooraf in het ontwerp definieert omdat de services onafhankelijk van elkaar worden bijgewerkt. Een andere beschrijving die is gemunt voor het ontwerpen van een micro Services-benadering is ' verfijnde ' service-georiënteerde architectuur (SOA) '.
 
-***De methode voor het ontwerpen van het micro Services-ontwerp is in het eenvoudigst gebaseerd op een losgekoppelde Federatie van services, met onafhankelijke wijzigingen aan elke en overeengekomen standaarden voor communicatie.** _
+***De methode voor het ontwerpen van het micro Services-ontwerp is in het eenvoudigst gebaseerd op een losgekoppelde Federatie van services, met onafhankelijke wijzigingen aan elke en overeengekomen standaarden voor communicatie.***
 
 Naarmate er meer Cloud toepassingen worden geproduceerd, hebben mensen ontdekt dat deze ontleding van de algehele toepassing in onafhankelijke, op scenario's gerichte Services, een betere lange termijn benadering is.
 
@@ -66,7 +66,7 @@ Wanneer u gebruikmaakt van een micro Services-benadering, stelt u uw toepassing 
 
 Er zijn verschillende definities van micro Services. Maar de meeste van deze kenmerken van micro Services zijn algemeen geaccepteerd:
 
-_ Een klant of zakelijk scenario inkapselen. Welk probleem verhelpt u?
+* Een klant-of bedrijfs scenario inkapselen. Welk probleem verhelpt u?
 * Ontwikkeld door een klein technisch team.
 * Geschreven in elke programmeer taal, met behulp van een Framework.
 * Bestaan uit code en optioneel, waarbij beide afzonderlijk zijn versie, geïmplementeerd en geschaald.
@@ -76,7 +76,7 @@ _ Een klant of zakelijk scenario inkapselen. Welk probleem verhelpt u?
 
 U kunt als volgt een som berekenen:
 
-*Micro **service-toepassingen bestaan uit kleine, onafhankelijke versie gerichte en schaal bare Services op basis van klanten die met elkaar communiceren via standaard protocollen met goed gedefinieerde interfaces.** _
+***Micro service-toepassingen bestaan uit kleine, onafhankelijke versie gerichte en schaal bare Services op basis van klanten die met elkaar communiceren via standaard protocollen met goed gedefinieerde interfaces.***
 
 ### <a name="written-in-any-programming-language-using-any-framework"></a>Geschreven in elke programmeer taal, met behulp van een Framework
 
@@ -94,9 +94,9 @@ We gaan terug naar onze vergelijking van de monolithische-en micro Services-bena
 
 ![Status opslag van Service Fabric platform][Image2]
 
-_*_De monolithische-benadering, aan de linkerkant, heeft één data base en lagen van specifieke technologieën._*_
+***De monolithische-benadering, aan de linkerkant, heeft één data base en lagen van specifieke technologieën.***
 
-_*_De micro Services-aanpak aan de rechter kant heeft een grafiek van onderling verbonden micro services waarbij de status doorgaans van toepassing is op de micro service en verschillende technologieën worden gebruikt._*_
+***De micro Services-aanpak aan de rechter kant heeft een grafiek van onderling verbonden micro services waarbij de status doorgaans van toepassing is op de micro service en verschillende technologieën worden gebruikt.***
 
 In een monolithische-benadering gebruikt de toepassing meestal een enkele data base. Het voor deel van het gebruik van één data base is dat deze zich op één locatie bevindt. Dit maakt het eenvoudig om te implementeren. Elk onderdeel kan één tabel hebben om de status op te slaan. Teams moeten de status strikt onderscheiden, wat een uitdaging is. Het onvermijdelijk is dat iemand een kolom aan een bestaande klanten tabel toevoegt, een koppeling tussen tabellen doet en afhankelijkheden maakt op de opslaglaag. Als dit gebeurt, kunt u de afzonderlijke onderdelen niet schalen.
 
@@ -136,18 +136,18 @@ Ga naar het Azure Architecture Center voor meer informatie over het [ontwerpen e
 
 Azure Service Fabric opgetreden toen micro soft overstapt van het leveren van producten in de periode, meestal monolithische, om services te leveren. De ervaring van het bouwen en gebruiken van grote Services, zoals Azure SQL Database en Azure Cosmos DB, Shaped Service Fabric. Het platform is na verloop van tijd ontwikkeld naarmate er meer services zijn aangenomen. Service Fabric moest niet alleen worden uitgevoerd in azure, maar ook in zelfstandige implementaties van Windows Server.
 
-_*_Het doel van Service Fabric is het oplossen van de vaste problemen bij het bouwen en uitvoeren van een service en het efficiënt gebruiken van infrastructuur resources, zodat teams bedrijfs problemen kunnen oplossen met behulp van een micro Services-benadering._*_
+***Het doel van Service Fabric is het oplossen van de vaste problemen bij het bouwen en uitvoeren van een service en het efficiënt gebruiken van infrastructuur resources, zodat teams bedrijfs problemen kunnen oplossen met behulp van een micro Services-benadering.***
 
 In deze korte video worden Service Fabric en microservices geïntroduceerd:
 > [!VIDEO https://channel9.msdn.com/Blogs/Azure/Azure-Service-Fabric/player]
 
 Service Fabric helpt u bij het bouwen van toepassingen die gebruikmaken van een micro Services-benadering door het volgende te bieden:
 
-_ Een platform dat systeem services biedt voor het implementeren, upgraden, detecteren en opnieuw starten van mislukte services, het detecteren van services, het beheren van de status en de controle status.
+* Een platform dat systeem services biedt voor het implementeren, upgraden, detecteren en opnieuw starten van mislukte services, het detecteren van services, het beheren van de status en de controle status.
 * De mogelijkheid om toepassingen te implementeren die worden uitgevoerd in containers of als processen. Service Fabric is een container en proces-Orchestrator.
 * Productief programmeer-Api's om u te helpen bij het bouwen van toepassingen als micro Services: [ASP.net core, reliable actors en reliable Services](service-fabric-choose-framework.md). U kunt bijvoorbeeld status-en diagnostische gegevens ophalen, maar u kunt ook profiteren van de ingebouwde hoge Beschik baarheid.
 
-***Service Fabric is neutraal over hoe u uw service bouwt en u kunt elke technologie gebruiken. Dit biedt echter ingebouwde programmeer-Api's waarmee u eenvoudig micro Services kunt bouwen.** _
+***Service Fabric is neutraal over hoe u uw service bouwt en u kunt elke technologie gebruiken. Dit biedt echter ingebouwde programmeer-Api's waarmee u eenvoudig micro Services kunt bouwen.***
 
 ### <a name="migrating-existing-applications-to-service-fabric"></a>Bestaande toepassingen migreren naar Service Fabric
 
@@ -161,7 +161,7 @@ Met Service Fabric kunt u bestaande code hergebruiken en moderniseren met nieuwe
 
 ![Migratie naar micro Services][Image3]
 
-Denk eraan dat u in elk van deze fasen kunt _start en stoppen *. U hoeft niet naar de volgende fase te gaan. 
+Denk eraan dat u *in elk van deze fasen kunt starten en stoppen*. U hoeft niet naar de volgende fase te gaan. 
 
 Laten we eens kijken naar voor beelden voor elk van deze fasen.
 
@@ -194,7 +194,7 @@ De doel stelling van Service Fabric is het verminderen van de complexiteit van h
 
 * [Micro Services: een toepassings revolutie die wordt aangedreven door de Cloud](https://azure.microsoft.com/blog/microservices-an-application-revolution-powered-by-the-cloud/)
 * [Azure Architecture Center: Micro Services op Azure bouwen](/azure/architecture/microservices/)
-* [Aanbevolen procedures voor Azure Service Fabric-toepassing en-cluster](service-fabric-best-practices-overview.md)
+* [Aanbevolen procedures voor Azure Service Fabric-toepassingen en clusters](service-fabric-best-practices-overview.md)
 * [Overzicht van Service Fabric terminologie](service-fabric-technical-overview.md)
 
 [Image1]: media/service-fabric-overview-microservices/monolithic-vs-micro.png

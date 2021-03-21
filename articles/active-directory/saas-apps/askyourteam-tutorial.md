@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 12/18/2020
 ms.author: jeedes
 ms.openlocfilehash: b239811e9fe49f420b5e9d15afafdcf26832dbf8
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98735397"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-askyourteam"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met AskYourTeam
@@ -195,15 +195,15 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 #### <a name="sp-initiated"></a>Met SP geïnitieerd:
 
-* Klik in Azure Portal op **Deze toepassing testen**. U wordt omgeleid naar de aanmeldings-URL van AskYourTeam, waar u de aanmeldingsstroom kunt starten.
+* Klik in Azure Portal op **Deze toepassing testen**. U wordt omgeleid naar de aanmeldings-URL van AskYourTeam, waar u de aanmeldingsstroom kunt initiëren.
 
-* Ga rechtstreeks naar de aanmeldings-URL van AskYourTeam en start de aanmeldingsstroom daar.
+* Ga rechtstreeks naar de aanmeldings-URL van AskYourTeam en initieer hier de aanmeldingsstroom.
 
 #### <a name="idp-initiated"></a>Met IDP geïnitieerd:
 
-* Klik op **Deze toepassing testen** in Azure Portal. U wordt automatisch aangemeld bij de instantie van AskYourTeam waarvoor u eenmalige aanmelding hebt ingesteld
+* Klik in Azure Portal op **Deze toepassing testen**. U wordt automatisch aangemeld bij de instantie van AskYourTeam waarvoor u eenmalige aanmelding hebt ingesteld
 
-U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u in Mijn apps op de tegel AskYourTeam klikt, en deze is geconfigureerd in de SP-modus, wordt u omgeleid naar de aanmeldingspagina van de toepassing voor het initiëren van de aanmeldingsstroom. Als deze is geconfigureerd in de IDP-modus, wordt u automatisch aangemeld bij de instantie van AskYourTeam waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u in 'Mijn apps' op de tegel 'AskYourTeam' klikt, en deze is geconfigureerd in de SP-modus, wordt u omgeleid naar de aanmeldingspagina van de toepassing voor het initiëren van de aanmeldingsstroom. Als deze is geconfigureerd in de IDP-modus, wordt u automatisch aangemeld bij het AskYourTeam-exemplaar waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -16,10 +16,10 @@ ms.date: 03/19/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.openlocfilehash: ab64765fc4e329c8edbf7a4db813113d20d476b3
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100557513"
 ---
 # <a name="create-or-update-azure-custom-roles-using-the-rest-api"></a>Aangepaste Azure-rollen maken of bijwerken met behulp van de REST API
@@ -44,7 +44,7 @@ Als u alle aangepaste rollen in een directory wilt weer geven, gebruikt u de [ro
 1. Vervang *{filter}* door het type rol.
 
     > [!div class="mx-tableFixed"]
-    > | Filter | Description |
+    > | Filter | Beschrijving |
     > | --- | --- |
     > | `$filter=type+eq+'CustomRole'` | Filteren op basis van het type CustomRole |
 
@@ -71,7 +71,7 @@ Als u aangepaste rollen in een bereik wilt weer geven, gebruikt u de [roldefinit
 1. Vervang *{filter}* door het type rol.
 
     > [!div class="mx-tableFixed"]
-    > | Filter | Description |
+    > | Filter | Beschrijving |
     > | --- | --- |
     > | `$filter=type+eq+'CustomRole'` | Filteren op basis van het type CustomRole |
 
@@ -98,7 +98,7 @@ Als u informatie wilt weer geven over een aangepaste rol met behulp van de weerg
 1. Vervang *{filter}* door de weergave naam voor de rol.
 
     > [!div class="mx-tableFixed"]
-    > | Filter | Description |
+    > | Filter | Beschrijving |
     > | --- | --- |
     > | `$filter=roleName+eq+'{roleDisplayName}'` | Gebruik het formulier URL-code ring van de exacte weergave naam van de rol. Bijvoorbeeld, `$filter=roleName+eq+'Virtual%20Machine%20Contributor'` |
 

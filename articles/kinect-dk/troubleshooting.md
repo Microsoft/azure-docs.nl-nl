@@ -1,18 +1,18 @@
 ---
 title: Bekende problemen met Azure Kinect en probleem oplossing
 description: Meer informatie over een aantal bekende problemen en tips voor het oplossen van problemen bij het gebruik van de sensor SDK met Azure Kinect DK.
-author: tesych
-ms.author: tesych
+author: qm13
+ms.author: quentinm
 ms.prod: kinect-dk
-ms.date: 06/26/2019
+ms.date: 03/05/2021
 ms.topic: conceptual
 keywords: problemen oplossen, bijwerken, bug, kinect, feedback, herstel, logboek registratie, tips
-ms.openlocfilehash: 5f13815b8f8b26f6a08da28181a4a6164b7b89a3
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 32a86deb0b6ab70e42ae3d659504256baae76202
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102038817"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104654761"
 ---
 # <a name="azure-kinect-known-issues-and-troubleshooting"></a>Bekende problemen met Azure Kinect en probleem oplossing
 
@@ -172,18 +172,54 @@ De Azure Kinect depth-engine op Linux maakt gebruik van OpenGL. Voor OpenGL is e
 
 1. Schakel automatische aanmelding in voor het gebruikers account dat u wilt gebruiken. Raadpleeg dit artikel voor instructies over [het](https://vitux.com/how-to-enable-disable-automatic-login-in-ubuntu-18-04-lts/) inschakelen van automatische aanmelding.
 2. Schakel het systeem uit, koppel de monitor los en schakel het systeem uit. Met automatische aanmelding wordt het maken van een x-Server sessie afgedwongen.
-2. Verbinding maken via SSH en de variabele weergave env instellen `export DISPLAY=:0`
-3. Start uw Azure Kinect-toepassing.
+3. Verbinding maken via SSH en de variabele weergave env instellen `export DISPLAY=:0`
+4. Start uw Azure Kinect-toepassing.
 
 Het hulp programma [xtrlock](http://manpages.ubuntu.com/manpages/xenial/man1/xtrlock.1x.html) kan worden gebruikt om het scherm direct na automatische aanmelding te vergren delen. Voeg de volgende opdracht toe aan de opstart toepassing of de systeemwerkte service:
 
-`bash -c “xtrlock -b”` 
+`bash -c “xtrlock -b”`
 
 ## <a name="missing-c-documentation"></a>Ontbrekende C#-documentatie
 
 De documentatie van de sensor SDK C# vindt u [hier](https://microsoft.github.io/Azure-Kinect-Sensor-SDK/master/namespace_microsoft_1_1_azure_1_1_kinect_1_1_sensor.html).
 
 De documentatie voor het bijhouden van de hoofd tekst van SDK bevindt zich [hier](https://microsoft.github.io/Azure-Kinect-Body-Tracking/release/1.x.x/namespace_microsoft_1_1_azure_1_1_kinect_1_1_body_tracking.html).
+
+## <a name="specifying-onnx-runtime-execution-environment"></a>Uitvoerings omgeving van ONNX-runtime opgeven
+
+De Body tracking SDK ondersteunt CPU, CUDA, DirectML (alleen Windows) en TensorRT Execution Environment om het model voor de geraamde schatting te decoderen. De `K4ABT_TRACKER_PROCESSING_MODE_GPU` standaard instellingen voor het uitvoeren van CUDA op Linux en DirectML worden uitgevoerd in Windows. Er zijn drie extra modi toegevoegd voor het selecteren van specifieke uitvoerings omgevingen: `K4ABT_TRACKER_PROCESSING_MODE_GPU_CUDA` , `K4ABT_TRACKER_PROCESSING_MODE_GPU_DIRECTML` en `K4ABT_TRACKER_PROCESSING_MODE_GPU_TENSORRT` .
+
+ONNX runtime bevat omgevings variabelen voor het beheren van TensorRT-model cache. De aanbevolen waarden zijn:
+- ORT_TENSORRT_ENGINE_CACHE_ENABLE = 1 
+- ORT_TENSORRT_ENGINE_CACHE_PATH = "padnaam"
+
+De map moet worden gemaakt voordat het bijhouden van de hoofd tekst wordt gestart.
+
+De TensorRT-uitvoerings omgeving ondersteunt zowel FP32 (standaard) als FP16. FP16 Trades ~ 2x prestatie verhoging voor minimale nauw keurigheid. FP16 opgeven:
+- ORT_TENSORRT_FP16_ENABLE = 1
+
+## <a name="required-dlls-for-onnx-runtime-execution-environments"></a>Vereiste Dll's voor ONNX runtime execution environments
+
+|Modus      | CUDA 11,1            | CUDNN 8.0.5          | TensorRT 7.2.1       |
+|----------|----------------------|----------------------|----------------------|
+| CPU      | cudart64_110         | cudnn64_8            | -                    |
+|          | cufft64_10           |                      |                      |
+|          | cublas64_11          |                      |                      |
+|          | cublasLt64_11        |                      |                      |
+| CUDA     | cudart64_110         | cudnn64_8            | -                    |
+|          | cufft64_10           | cudnn_ops_infer64_8  |                      |
+|          | cublas64_11          | cudnn_cnn_infer64_8  |                      |
+|          | cublasLt64_11        |                      |                      |
+| DirectML | cudart64_110         | cudnn64_8            | -                    |
+|          | cufft64_10           |                      |                      |
+|          | cublas64_11          |                      |                      |
+|          | cublasLt64_11        |                      |                      |
+| TensorRT | cudart64_110         | cudnn64_8            | nvinfer              |
+|          | cufft64_10           | cudnn_ops_infer64_8  | nvinfer_plugin       |
+|          | cublas64_11          | cudnn_cnn_infer64_8  | myelin64_1           |
+|          | cublasLt64_11        |                      |                      |
+|          | nvrtc64_111_0        |                      |                      |
+|          | nvrtc-builtins64_111 |                      |                      |
 
 ## <a name="next-steps"></a>Volgende stappen
 

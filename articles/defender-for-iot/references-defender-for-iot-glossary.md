@@ -8,10 +8,10 @@ ms.date: 12/09/2020
 ms.topic: article
 ms.service: azure
 ms.openlocfilehash: f26cea9442aa3fbbe7f475cc5d16bea792b83fb3
-ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103493982"
 ---
 # <a name="defender-for-iot-glossary"></a>Defender for IoT-woordenlijst
@@ -25,7 +25,7 @@ Deze verklarende woorden lijst bevat een korte beschrijving van belang rijke ter
 
 ## <a name="a"></a>A
 
-| Termijn | Beschrijving | Lees meer |
+| Termijn | Beschrijving | Meer informatie |
 |--|--|--|
 | **Toegangs groep** | Ondersteuning voor gebruikers toegangs vereisten voor grote organisaties door regels voor toegangs groepen te maken.<br /><br />Met regels kunt u de weer gave-en configuratie toegang tot de Defender voor IoT on-premises beheer console voor specifieke gebruikers rollen in relevante bedrijfs eenheden, regio's, sites en zones beheren.<br /><br />U kunt bijvoorbeeld beveiligings analisten van een Active Directory groep toestaan om toegang te krijgen tot de gegevens van de West-Europese auto, maar geen toegang tot gegevens in Afrika te voor komen. | **[On-premises beheer console](#o)** <br /><br />**[Bedrijfseenheid](#b)** |
 | **Toegangstokens** | Genereer toegangs tokens om toegang te krijgen tot de Defender voor IoT-REST API. | **[API](#glossary-a)** |
@@ -38,21 +38,21 @@ Deze verklarende woorden lijst bevat een korte beschrijving van belang rijke ter
 
 ## <a name="b"></a>B
 
-| Termijn | Beschrijving | Lees meer |
+| Termijn | Beschrijving | Meer informatie |
 |--|--|--|
 | **Bedrijfseenheid** | Een logische organisatie van uw bedrijf volgens specifieke branches.<br /><br />Zo kan een wereld wijd bedrijf dat glazen fabrieken en plastic fabrieken bevat, worden beheerd als twee verschillende bedrijfs eenheden. U kunt de toegang van Defender voor IoT-gebruikers beheren voor bepaalde bedrijfs eenheden. | **[On-premises beheer console](#o) <br /> <br /> [Toegangs groep](#glossary-a) <br /> <br /> [](#s) <br /> Site <br /> [Zone](#z)** |
 | **Basislijn** | Goedgekeurd netwerk verkeer, protocollen, opdrachten en apparaten. Defender voor IoT identificeert afwijkingen van de netwerk basislijn. Goedgekeurd basislijn verkeer weer geven door analyse rapporten van gegevens te genereren. | **[Gegevens analyse](#d) <br /> <br /> [Leer modus](#l)** |
 
 ## <a name="c"></a>C
 
-| Termijn | Beschrijving | Lees meer |
+| Termijn | Beschrijving | Meer informatie |
 |--|--|--|
 | **CLI-opdrachten** | Opties voor de opdracht regel interface (CLI) voor Defender voor IoT-beheerders gebruikers. CLI-opdrachten zijn beschikbaar voor functies die niet toegankelijk zijn vanuit de Defender voor IoT-consoles. | - |
 
 
 ## <a name="d"></a>D
 
-| Termijn | Beschrijving | Lees meer |
+| Termijn | Beschrijving | Meer informatie |
 |--|--|--|
 | **Gegevens analyse** | Uitgebreide en gedetailleerde rapporten over uw netwerk apparaten genereren:<br /><br />- **Soc-incident respons**: rapporten in realtime om te helpen bij het direct reageren op incidenten. Een rapport kan bijvoorbeeld apparaten weer geven die mogelijk patches nodig hebben.<br /><br />- **Forensische**: rapporten op basis van historische gegevens voor onderzoek rapporten.<br /><br />- **IT-netwerk integriteit**: rapporten die helpen de algehele beveiliging van het netwerk te verbeteren. Een rapport kan bijvoorbeeld apparaten met zwakke verificatie referenties weer geven.<br /><br />- **zicht baarheid**: rapporten die alle query-items dekken om alle basislijn parameters van uw netwerk weer te geven.<br /><br />Sla rapporten voor gegevens analyse op voor weer gave met alleen-lezen-gebruikers. | **[Basis lijn](#b) <br /> <br /> [Rapporten](#r)** |
 | **Defender voor IoT-engines** | Met de zelf studie analyse-engines in Defender voor IoT hoeft u geen hand tekeningen te hoeven bijwerken of regels te definiëren. De engines gebruiken ICS-specifieke gedrags analyse en data wetenschappen om voortdurend het netwerk verkeer te analyseren voor afwijkingen, malware, operationele problemen, schendingen van het protocol en afwijkingen van de activiteit van het basislijn netwerk.<br /><br />Wanneer een engine een afwijking detecteert, wordt er een waarschuwing geactiveerd. Waarschuwingen kunnen worden weer gegeven en beheerd vanuit het scherm **waarschuwingen** of vanuit een Siem. | **[Waarschuwing](#glossary-a)** |
@@ -65,7 +65,7 @@ Deze verklarende woorden lijst bevat een korte beschrijving van belang rijke ter
 
 ## <a name="e"></a>E
 
-| Termijn | Beschrijving | Lees meer |
+| Termijn | Beschrijving | Meer informatie |
 |--|--|--|
 | **Bedrijfs weergave** | Een wereld wijde kaart die business units, sites en zones presenteert waarbij verdedigings nemers voor IoT Sens oren zijn geïnstalleerd. Bekijk geografische locaties van schadelijke waarschuwingen, operationele waarschuwingen en meer. | **[Bedrijfs eenheid](#b) <br /> <br /> [](#s) <br /> Site <br /> [Zone](#z)** |
 | **Tijd lijn van gebeurtenis** | Er is een tijd lijn van de activiteit gedetecteerd in uw netwerk, met inbegrip van:<br /><br />-Waarschuwingen geactiveerd.<br /><br />-Netwerk gebeurtenissen (informatief).<br /><br />-Gebruikers bewerkingen, zoals aanmelden, verwijderen van gebruikers en het maken van gebruikers, en waarschuwingen voor waarschuwings beheer zoals dempen, leren en bevestigen. Beschikbaar in de sensor consoles. | - |
@@ -73,26 +73,26 @@ Deze verklarende woorden lijst bevat een korte beschrijving van belang rijke ter
 
 ## <a name="f"></a>F
 
-| Termijn | Beschrijving | Lees meer |
+| Termijn | Beschrijving | Meer informatie |
 |--|--|--|
 | **Doorstuur regel** | Regels voor door sturen geven Defender voor IoT informatie over het verzenden van waarschuwings gegevens naar leveranciers of systemen van partners.<br /><br />U kunt bijvoorbeeld waarschuwings gegevens verzenden naar een Splunk-server of een syslog-server. | **[Waarschuwing](#glossary-a)** |
 
 ## <a name="g"></a>G
 
-| Termijn | Beschrijving | Lees meer |
+| Termijn | Beschrijving | Meer informatie |
 |--|--|--|
 | **Groep** | Vooraf gedefinieerde of aangepaste groepen apparaten met specifieke kenmerken, zoals apparaten die programmeer activiteiten of apparaten die zich op een specifiek subnet bevinden, bevatten. Gebruik groepen om apparaten te bekijken en apparaten te analyseren in Defender voor IoT.<br /><br />Groepen kunnen worden weer gegeven in en gemaakt op basis van de apparaattoewijzing en de inventaris van apparaten. | **[](#d) <br /> Apparaattoewijzing <br /> [Inventaris van apparaten](#d)** |
 
 ## <a name="h"></a>H
 
-| Termijn | Beschrijving | Lees meer |
+| Termijn | Beschrijving | Meer informatie |
 |--|--|--|
 | **Ontwikkelings omgeving horizon geopend** | Beveilig IoT-en ICS-apparaten met eigen en aangepaste protocollen of protocollen die afwijken van de standaard. Gebruik de node-SDK (Open Development Environment) voor het ontwikkelen van invoeg toepassingen die netwerk verkeer decoderen op basis van gedefinieerde protocollen. Verdedigings functies voor IoT-Services analyseren verkeer om te zorgen voor volledige bewaking, waarschuwingen en rapportage.<br /><br />Gebruik de Horizony tot:<br /><br />- **Breid** zicht baarheid en beheer uit zonder de nood zaak om Defender voor IOT-platform versies te upgraden.<br /><br />- **Beveilig** eigendoms gegevens door on-site te ontwikkelen als een externe invoeg toepassing.<br /><br />- **Lokalisatie** van tekst voor waarschuwingen, gebeurtenissen en protocol parameters.<br /><br />Neem contact op met het succes van de klant voor meer informatie. | **[Protocol ondersteuning](#p) <br /> <br /> [Lokalisatie](#l)** |
 | **Aangepaste waarschuwing van Horizon** | Verbeter het beheer van waarschuwingen in uw onderneming door aangepaste waarschuwingen te activeren voor elk protocol (op basis van het niveau van Horizon-Framework-verkeer).<br /><br />Deze waarschuwingen kunnen worden gebruikt om informatie te communiceren:<br /><br />-Over verkeers detecties op basis van protocollen en onderliggende protocollen in een eigen sluit-invoeg toepassing.<br /><br />-Over een combi natie van protocol velden van alle protocol lagen. | **[Protocol ondersteuning](#p)** |
 
 ## <a name="i"></a>I
 
-| Termijn | Beschrijving | Lees meer |
+| Termijn | Beschrijving | Meer informatie |
 |--|--|--|
 | **IoT Hub** `(DB)` | Beheerde service, gehost in de Cloud, die fungeert als een centrale Message hub voor bidirectionele communicatie tussen uw IoT-toepassing en de apparaten die worden beheerd.  |   |
 | **Integraties** | Vouw Defender voor IoT-mogelijkheden uit door de apparaatgegevens te delen met partner systemen. Organisaties kunnen voorheen gesilote beveiliging, NAC, incident beheer en oplossingen voor Apparaatbeheer voor komen om de systeem brede reacties te versnellen en zo snel mogelijk Risico's te verminderen. | **[Doorstuur regel](#f)** |
@@ -100,7 +100,7 @@ Deze verklarende woorden lijst bevat een korte beschrijving van belang rijke ter
 
 ## <a name="l"></a>L
 
-| Termijn | Beschrijving | Lees meer |
+| Termijn | Beschrijving | Meer informatie |
 |--|--|--|
 | **Waarschuwings gebeurtenis leren** | Geef Defender voor IoT opdracht om het verkeer dat in een waarschuwings gebeurtenis wordt gedetecteerd, te autoriseren. | **[](#glossary-a) <br /> Waarschuwing <br /> [Waarschuwings gebeurtenis bevestigen](#glossary-a) <br /> <br /> [Waarschuwings gebeurtenis dempen](#m)** |
 | **Leer modus** | De modus die wordt gebruikt wanneer Defender voor IoT uw netwerk activiteit leert. Deze activiteit wordt uw netwerk basislijn. Defender voor IoT blijft in de modus voor een vooraf gedefinieerde periode na de installatie. Activiteit die van de geleerde activiteit na deze periode verschilt, wordt Defender geactiveerd voor IoT-waarschuwingen. | **[Slim it-Learning](#s) <br /> <br /> [Basis lijn](#b)** |
@@ -109,7 +109,7 @@ Deze verklarende woorden lijst bevat een korte beschrijving van belang rijke ter
 ## <a name="m"></a>M
 
 
-| Termijn | Beschrijving | Lees meer |
+| Termijn | Beschrijving | Meer informatie |
 |--|--|--|
 | **Micro agent**`(DB)` | Biedt uitgebreide beveiligings mogelijkheden voor IoT-apparaten, waaronder beveiligings-postuur en detectie van bedreigingen. | |
 | **Module dubbele**`(DB)` | Moduledubbels zijn JSON-documenten waarin statusinformatie van een module wordt opgeslagen, zoals metagegevens, configuraties en voorwaarden. | [Dubbel apparaat](#d) <br /> <br />[Defender-IoT-micro agent dubbele](#s) |
@@ -117,27 +117,27 @@ Deze verklarende woorden lijst bevat een korte beschrijving van belang rijke ter
 
 ## <a name="n"></a>N
 
-| Termijn | Beschrijving | Lees meer |
+| Termijn | Beschrijving | Meer informatie |
 |--|--|--|
 | **Meldingen** | Informatie over netwerk wijzigingen of onopgeloste Apparaateigenschappen. Er zijn opties beschikbaar voor het bijwerken van apparaat-en netwerk gegevens met nieuwe gegevens gedetecteerd. Reageren op meldingen verrijkt de inventarisatie van het apparaat, de kaart en verschillende rapporten. Beschikbaar op sensor consoles. | **[](#glossary-a) <br /> Waarschuwing <br /> [Systeem meldingen](#s)** |
 
 ## <a name="o"></a>O
 
-| Termijn | Beschrijving | Lees meer |
+| Termijn | Beschrijving | Meer informatie |
 |--|--|--|
 | **On-premises beheer console** | De on-premises beheer console biedt een gecentraliseerde weer gave en beheer van apparaten en bedreigingen die voor de implementatie van een IoT-sensor worden gedetecteerd in uw organisatie. | **[Defender voor IOT-platform](#d) <br /> <br /> [Sensor](#s)** |
 | **Operationele waarschuwing** | Waarschuwingen met betrekking tot operationele netwerk problemen, zoals een apparaat waarvan wordt vermoed dat ze van het netwerk worden losgekoppeld. | **[](#glossary-a) <br /> Waarschuwing <br /> [Beveiligings waarschuwing](#s)** |
 
 ## <a name="p"></a>P
 
-| Termijn | Beschrijving | Lees meer |
+| Termijn | Beschrijving | Meer informatie |
 |--|--|--|
 | **Purdue-laag** | Toont de onderlinge verbindingen en onderlinge afhankelijkheden van de belangrijkste onderdelen van een standaard ICS op de kaart. |  |
 | **Protocol ondersteuning** | Naast ondersteuning voor Inge sloten protocol kunt u IoT-en ICS-apparaten beveiligen die gebruikmaken van eigen en aangepaste protocollen, of protocollen die afwijken van een van de standaarden, met behulp van de Horizony Open Development Environment SDK. | **[Ontwikkelings omgeving horizon geopend](#h)** |
 
 ## <a name="r"></a>R
 
-| Termijn | Beschrijving | Lees meer |
+| Termijn | Beschrijving | Meer informatie |
 |--|--|--|
 | **Regio** | Een logische divisie van een wereld wijde organisatie in geografische regio's. Voor beelden zijn Noord-Amerika, West-Europa en Oost-Europa.<br /><br />Noord-Amerika kunnen fabrieken van verschillende bedrijfs eenheden bevatten. | **[Toegangs groep](#glossary-a) <br /> <br /> [Bedrijfs eenheid](#b) <br /> <br /> [On-premises beheer console](#o) <br /> <br /> [](#s) <br /> Site <br /> [Zone](#z)** |
 | **Rapporten** | Rapporten geven informatie weer die is gegenereerd door query resultaten van de gegevens analyse. Dit omvat standaard resultaten voor gegevens analyse, die beschikbaar zijn in de weer gave **rapporten** . Beheerders en beveiligings analisten kunnen ook aangepaste query's voor gegevens analyse genereren en deze opslaan als rapporten. Deze rapporten zijn ook beschikbaar voor gebruikers met het kenmerk alleen-lezen. | **[Gegevens analyse](#d)** |
@@ -145,7 +145,7 @@ Deze verklarende woorden lijst bevat een korte beschrijving van belang rijke ter
 
 ## <a name="s"></a>S
 
-| Termijn | Beschrijving | Lees meer |
+| Termijn | Beschrijving | Meer informatie |
 |--|--|--|
 | **Beveiligings waarschuwing** | Waarschuwingen die betrekking hebben op beveiligings problemen, zoals buitensporige SMB-aanmeldingen in pogingen of detecties van malware. | **[](#glossary-a) <br /> Waarschuwing <br /> [Operationele waarschuwing](#o)** |
 | **Defender-IOT-micro agent dubbele**`(DB)` | De Defender-IoT-micro agent is van toepassing op alle informatie die relevant is voor de beveiliging van apparaten, voor elk specifiek apparaat in uw oplossing. | [Dubbel apparaat](#d) <br /> <br />[Module dubbele](#m)  |
@@ -159,6 +159,6 @@ Deze verklarende woorden lijst bevat een korte beschrijving van belang rijke ter
 
 ## <a name="z"></a>Z
 
-| Termijn | Beschrijving | Lees meer |
+| Termijn | Beschrijving | Meer informatie |
 |--|--|--|
 | **Zone** | Een gebied binnen een site waarin een sensor of Sens oren zijn geïnstalleerd. | **[](#s) <br /> Site <br /> [Bedrijfs eenheid](#b) <br /> <br /> [Regio](#r)** |

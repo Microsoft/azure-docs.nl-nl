@@ -265,22 +265,8 @@
           href: /python/api/azure-mgmt-policyinsights/azure.mgmt.policyinsights
     - name: REST
       items:
-        - name: Gebeurtenissen
-          href: /rest/api/policy-insights/policyevents
-        - name: Staten
-          href: /rest/api/policy-insights/policystates
-        - name: Toewijzingen
-          href: /rest/api/resources/policyassignments
-        - name: Definities voor beleid
-          href: /rest/api/resources/policydefinitions
-        - name: Beleidsuitzonderingen
-          href: /rest/api/resources/policyexemptions
-        - name: Definities voor initiatieven
-          href: /rest/api/resources/policysetdefinitions
-        - name: Volgens beleid bijgehouden resources
-          href: /rest/api/policy-insights/policytrackedresources
-        - name: Herstelbewerkingen
-          href: /rest/api/policy-insights/remediations
+        - name: Beleid
+          href: /rest/api/policy/
         - name: Gastconfiguratie
           href: /rest/api/guestconfiguration/
     - name: Resource Manager-sjablonen

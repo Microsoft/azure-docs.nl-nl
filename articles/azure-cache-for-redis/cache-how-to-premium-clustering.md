@@ -7,10 +7,10 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 02/08/2021
 ms.openlocfilehash: f1e84c838d310721cba604274388ae2767eb1502
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100389668"
 ---
 # <a name="configure-redis-clustering-for-a-premium-azure-cache-for-redis-instance"></a>Redis-clustering configureren voor een Premium Azure-cache voor het redis-exemplaar
@@ -82,7 +82,7 @@ Het duurt even voor de cache is gemaakt. U kunt de voortgang bekijken op de **ov
 > 
 > 
 
-Zie het gedeelte [clustering.cs](https://github.com/rustd/RedisSamples/blob/master/HelloWorld/Clustering.cs) van het [Hallo wereld](https://github.com/rustd/RedisSamples/tree/master/HelloWorld) -voor beeld voor voorbeeld code over het werken met clustering met de client stack Exchange. redis.
+Zie het gedeelte [clustering. cs](https://github.com/rustd/RedisSamples/blob/master/HelloWorld/Clustering.cs) van het [Hallo wereld](https://github.com/rustd/RedisSamples/tree/master/HelloWorld) -voor beeld voor voorbeeld code over het werken met clustering met de client stack Exchange. redis.
 
 <a name="cluster-size"></a>
 
@@ -135,7 +135,7 @@ Voor de beste prestaties en door Voer wordt u aangeraden de sleutels gelijkmatig
 
 Zie voor meer informatie [sleutels Distribution model](https://redis.io/topics/cluster-spec#keys-distribution-model), [redis cluster data sharding](https://redis.io/topics/cluster-tutorial#redis-cluster-data-sharding)en [Keys hash tags](https://redis.io/topics/cluster-spec#keys-hash-tags).
 
-Zie het gedeelte [clustering.cs](https://github.com/rustd/RedisSamples/blob/master/HelloWorld/Clustering.cs) van het [Hallo wereld](https://github.com/rustd/RedisSamples/tree/master/HelloWorld) voor beeld van code over het werken met clustering en het vinden van sleutels in dezelfde Shard met de client stack Exchange. redis.
+Zie het gedeelte [clustering. cs](https://github.com/rustd/RedisSamples/blob/master/HelloWorld/Clustering.cs) van het [Hallo wereld](https://github.com/rustd/RedisSamples/tree/master/HelloWorld) voor beeld van code voor het werken met clustering en het vinden van sleutels in dezelfde Shard met de client stack Exchange. redis.
 
 ### <a name="what-is-the-largest-cache-size-i-can-create"></a>Wat is de grootste cache grootte die ik kan maken?
 De grootste Premium-cache grootte is 120 GB. U kunt Maxi maal 10 Shards maken met een maximale grootte van 1,2 TB GB. Als u een grotere grootte nodig hebt, kunt u [meer aanvragen](mailto:wapteams@microsoft.com?subject=Redis%20Cache%20quota%20increase). Zie [Prijzen van Azure Cache voor Redis](https://azure.microsoft.com/pricing/details/cache/) voor meer informatie.

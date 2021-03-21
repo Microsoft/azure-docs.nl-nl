@@ -12,10 +12,10 @@ ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
 ms.custom: contperf-fy20q4
 ms.openlocfilehash: 444ca19732921b336cae32a9b1eb5755a08e4bd3
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97028050"
 ---
 # <a name="tutorial-enable-azure-active-directory-self-service-password-reset-writeback-to-an-on-premises-environment"></a>Zelfstudie: Terugschrijven van self-service voor wachtwoordherstel in Azure Active Directory inschakelen voor on-premises omgeving
@@ -38,7 +38,7 @@ In deze zelfstudie leert u het volgende:
 
 ## <a name="prerequisites"></a>Vereisten
 
-Om deze zelfstudie te voltooien, hebt u de volgende resources en machtigingen nodig:
+Voor het voltooien van deze zelfstudie hebt u de volgende resources en machtigingen nodig:
 
 * Een werkende Azure AD-tenant waarop minimaal een Azure AD Premium P1- of -proeflicentie is ingeschakeld.
     * [Maak er gratis een](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) indien nodig.

@@ -6,10 +6,10 @@ author: rboucher
 ms.author: robb
 ms.date: 08/15/2020
 ms.openlocfilehash: 4bf792dd02e7cddcc40ef868e4a602fdb03ab3c6
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102052276"
 ---
 # <a name="what-is-monitored-by-azure-monitor"></a>Wat wordt er bewaakt door Azure Monitor?:
@@ -129,7 +129,7 @@ De volgende tabel geeft een lijst van Azure-Services en de gegevens die ze in Az
 |Microsoft PowerApps | Nee | Nee | Nee |  |
 |Microsoft Social Engagement | Nee | Nee | Nee |  |
 |Microsoft Stream | Ja | Ja | Nee |  |
-|Stap over | Nee | Nee | Nee |  |
+|Migrate | Nee | Nee | Nee |  |
 |Multi-Factor Authentication | Nee | Ja | Nee |  |
 |Network Watcher | Ja | Ja | Nee |  |
 |Notification Hubs | Ja | Nee | Nee |  |
@@ -144,7 +144,7 @@ De volgende tabel geeft een lijst van Azure-Services en de gegevens die ze in Az
 |Resource Graph | Nee | Nee | Nee |  |
 |Resource Manager | Nee | Nee | Nee |  |
 |Retail-zoek opdracht: door Bing | Nee | Nee | Nee |  |
-|Search | Ja | Ja | Nee |  |
+|Zoeken | Ja | Ja | Nee |  |
 |Service Bus | Ja | Ja | Nee |  |
 |Service Fabric | Nee | Ja | Nee | De agent die is vereist om het gast besturingssysteem en de werk stromen te bewaken.  |
 |Aanmeldings Portal | Nee | Nee | Nee |  |

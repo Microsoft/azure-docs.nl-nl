@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 09/30/2020
 ms.custom: seodec18
 ms.openlocfilehash: d80d97a609aa3a464b9b114439fe7f4058e287c3
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96001827"
 ---
 # <a name="create-a-reference-data-set-for-your-azure-time-series-insights-gen1-environment-using-the-azure-portal"></a>Maak een set referentie gegevens voor uw Azure Time Series Insights gen1-omgeving met behulp van de Azure Portal
@@ -37,7 +37,7 @@ Referentie gegevens worden niet met terugwerkende kracht samengevoegd. Daarom wo
 
 ## <a name="add-a-reference-data-set"></a>Een set met referentie gegevens toevoegen
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 
 1. Zoek uw bestaande Azure Time Series Insights-omgeving. Selecteer **alle resources** in het menu aan de linkerkant van het Azure Portal. Selecteer uw Azure Time Series Insights omgeving.
 

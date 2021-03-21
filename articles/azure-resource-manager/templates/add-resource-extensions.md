@@ -6,17 +6,17 @@ ms.topic: conceptual
 ms.date: 12/14/2018
 ms.author: jgao
 ms.openlocfilehash: 23d5a9aaa546542218a6f839ab415184ff309928
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97934319"
 ---
 # <a name="provide-post-deployment-configurations-by-using-extensions"></a>Configuraties na de implementatie opgeven met behulp van extensies
 
 Azure Resource Manager sjabloon (ARM-sjabloon) uitbrei dingen zijn kleine toepassingen die configuratie van na de implementatie en automatiserings taken op Azure-resources bieden. De populairste versie is de extensie van de virtuele machine. Zie [extensies en functies van virtuele machines voor Windows](../../virtual-machines/extensions/features-windows.md)en [virtuele-machine uitbreidingen en-functies voor Linux](../../virtual-machines/extensions/features-linux.md).
 
-## <a name="extensions"></a>Extensies
+## <a name="extensions"></a>Uitbreidingen
 
 De bestaande uitbrei dingen zijn:
 

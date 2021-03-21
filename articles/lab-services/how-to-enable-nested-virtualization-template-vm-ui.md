@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 06/26/2020
 ms.author: enewman
 ms.openlocfilehash: f8135e11fb7b7ddb588ab3a8ed01227712072fd2
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94647916"
 ---
 # <a name="enable-nested-virtualization-on-a-template-virtual-machine-in-azure-lab-services-manually"></a>Geneste virtualisatie op een sjabloon virtuele machine in Azure Lab Services hand matig inschakelen
@@ -39,7 +39,7 @@ In de volgende stappen worden de acties beschreven die nodig zijn om Hyper-V op 
 12. Accepteer de standaard instellingen op de pagina **standaard archieven** en klik op **volgende**.
 13. Selecteer op de pagina **installatie selecties bevestigen** **de optie de doel server automatisch opnieuw opstarten als dat nodig** is.
 14. Wanneer de **wizard functies en onderdelen toevoegen** pop-up wordt weer gegeven, klikt u op **Ja**.
-15. Klik op **Install**.
+15. Klik op **Installeren**.
 16. Wacht totdat de pagina voortgang van de **installatie** is voltooid.  De computer wordt in het midden van de installatie opnieuw opgestart.
 17. Klik op **Sluiten**.
 

@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 3/10/2021
 ms.author: inhenkel
 ms.openlocfilehash: feda0ccfa1dc6d02153b98ad084bd775a055e9e3
-ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103012901"
 ---
 # <a name="retry-logic-in-the-media-services-sdk-for-net"></a>Logica voor opnieuw proberen in de Media Services SDK voor .NET
@@ -39,7 +39,7 @@ Wanneer u werkt met Microsoft Azure Services, kunnen er tijdelijke fouten optred
 ## <a name="exception-types"></a>Uitzonderings typen
 In de volgende tabel worden de uitzonde ringen beschreven die worden verwerkt door de Media Services SDK voor .NET of worden niet verwerkt voor bewerkingen die kunnen leiden tot tijdelijke fouten.  
 
-| Uitzondering | Webaanvraag | Storage | Query’s uitvoeren | Change |
+| Uitzondering | Webaanvraag | Storage | Query | Change |
 | --- | --- | --- | --- | --- |
 | WebException<br/>Zie de sectie [webexcept-status codes](media-services-retry-logic-in-dotnet-sdk.md#WebExceptionStatus) voor meer informatie. |Ja |Ja |Ja |Ja |
 | DataServiceClientException<br/> Zie [HTTP-fout status codes](media-services-retry-logic-in-dotnet-sdk.md#HTTPStatusCode)voor meer informatie. |Nee |Ja |Ja |Ja |
@@ -54,7 +54,7 @@ In de volgende tabel worden de uitzonde ringen beschreven die worden verwerkt do
 ### <a name="webexception-status-codes"></a><a name="WebExceptionStatus"></a> Webexcept-status codes
 In de volgende tabel wordt weer gegeven voor welke uitzonderings fout codes de logica voor opnieuw proberen wordt geïmplementeerd. De [WebExceptionStatus](/dotnet/api/system.net.webexceptionstatus?view=netcore-3.1) -opsomming definieert de status codes.  
 
-| Status | Webaanvraag | Storage | Query’s uitvoeren | Change |
+| Status | Webaanvraag | Storage | Query | Change |
 | --- | --- | --- | --- | --- |
 | ConnectFailure |Ja |Ja |Ja |Ja |
 | NameResolutionFailure |Ja |Ja |Ja |Ja |
@@ -72,7 +72,7 @@ In de volgende tabel wordt weer gegeven voor welke uitzonderings fout codes de l
 ### <a name="http-error-status-codes"></a><a name="HTTPStatusCode"></a> Status codes voor HTTP-fouten
 Wanneer de bewerkingen query en Save Changes DataServiceClientException, DataServiceQueryException of DataServiceQueryException genereren, wordt de status code van de HTTP-fout geretourneerd in de eigenschap Property status.  In de volgende tabel ziet u voor welke fout codes de logica voor opnieuw proberen wordt geïmplementeerd.  
 
-| Status | Webaanvraag | Storage | Query’s uitvoeren | Change |
+| Status | Webaanvraag | Storage | Query | Change |
 | --- | --- | --- | --- | --- |
 | 401 |Nee |Ja |Nee |Nee |
 | 403 |Nee |Ja<br/>Verwerken van nieuwe pogingen met langere wacht tijden. |Nee |Nee |

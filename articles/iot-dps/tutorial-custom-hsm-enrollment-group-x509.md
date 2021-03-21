@@ -9,10 +9,10 @@ ms.service: iot-dps
 services: iot-dps
 ms.custom: mvc
 ms.openlocfilehash: b178aa4a524cb7fcc85c7fc68ac5f772747787a3
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99052360"
 ---
 # <a name="tutorial-provision-multiple-x509-devices-using-enrollment-groups"></a>Zelfstudie: X.509-apparaten inrichten met behulp van inschrijvingsgroepen
@@ -235,7 +235,7 @@ De apparaat certificaten maken die zijn ondertekend door het tussenliggende cert
 
 4. Herhaal stap 1-3 voor een tweede apparaat met apparaat-ID `custom-hsm-device-02` . Gebruik de volgende waarden voor dat apparaat:
 
-    |   Description                 |  Waarde  |
+    |   Beschrijving                 |  Waarde  |
     | :---------------------------- | :--------- |
     | Onderwerpnaam                  | `custom-hsm-device-02` |
     | Volledig certificaat keten bestand   | *./certs/new-device-02-full-chain.cert.pem* |
@@ -477,7 +477,7 @@ Voer de volgende stappen uit om de aangepaste HSM-stub-code bij te werken om de 
 
 8. Herhaal stap 1-7 voor een tweede apparaat met apparaat-ID `custom-hsm-device-02` . Gebruik de volgende waarden voor dat apparaat:
 
-    |   Description                 |  Waarde  |
+    |   Beschrijving                 |  Waarde  |
     | :---------------------------- | :--------- |
     | `COMMON_NAME`                 | `"custom-hsm-device-02"` |
     | Volledige certificaat keten        | De tekst genereren met `input="./certs/new-device-02-full-chain.cert.pem"` |

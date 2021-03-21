@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 1/29/2019
 ms.author: terrylan
 ms.openlocfilehash: 27443eb9c04c69567b3a1374f11e8b53837040f2
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100585417"
 ---
 # <a name="security-services-and-technologies-available-on-azure"></a>Beveiligings Services en-technologieën die beschikbaar zijn op Azure
@@ -92,4 +92,4 @@ In de loop van de tijd wordt deze lijst gewijzigd en groeit, net zoals in Azure.
 | [Azure-toepassing proxy](../../active-directory/manage-apps/application-proxy.md)| Een verificatie-front-end die wordt gebruikt voor het beveiligen van externe toegang voor webtoepassingen die on-premises worden gehost. |
 |[Azure Firewall](../../firewall/overview.md)|Een beheerde, Cloud service voor netwerk beveiliging die uw Azure Virtual Network-Resources beveiligt.|
 |[Azure DDoS-beveiliging](../../ddos-protection/ddos-protection-overview.md)|Gecombineerd met aanbevolen procedures voor het ontwerpen van toepassingen, biedt beveiliging tegen DDoS-aanvallen.|
-|[Service-eind punten Virtual Network](../../virtual-network/virtual-network-service-endpoints-overview.md)|Breidt de privé-adres ruimte van uw virtuele netwerk en de identiteit van uw VNet uit met de Azure-Services, via een directe verbinding.|
+|[Service-eindpunten voor virtueel netwerk](../../virtual-network/virtual-network-service-endpoints-overview.md)|Breidt de privé-adres ruimte van uw virtuele netwerk en de identiteit van uw VNet uit met de Azure-Services, via een directe verbinding.|

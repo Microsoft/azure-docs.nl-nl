@@ -7,10 +7,10 @@ ms.author: daviste
 ms.date: 04/10/2018
 ms.reviewer: mbullwin
 ms.openlocfilehash: 2c35356951560b11a605334aba4c26dbc38086de
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100583555"
 ---
 # <a name="application-insights-cohorts"></a>Application Insights cohortes
@@ -129,7 +129,7 @@ Cohort en filters verschillen. Stel dat u een cohort hebt van gebruikers uit het
 * De cohort-versie toont alle gebeurtenissen van gebruikers die een of meer gebeurtenissen van het Verenigd Konink rijk in het huidige tijds bereik hebben verzonden. Als u op land of regio splitst, ziet u waarschijnlijk veel landen en regio's.
 * De filters-versie toont alleen gebeurtenissen uit het Verenigd Konink rijk. Maar als u op land of regio splitst, ziet u alleen het Verenigd Konink rijk.
 
-## <a name="learn-more"></a>Lees meer
+## <a name="learn-more"></a>Meer informatie
 
 * [Querytaal voor analytische gegevens](../logs/log-analytics-tutorial.md?toc=%2fazure%2fazure-monitor%2ftoc.json)
 * [Gebruikers, sessies, gebeurtenissen](usage-segmentation.md)

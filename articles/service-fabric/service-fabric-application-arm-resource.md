@@ -4,10 +4,10 @@ description: Meer informatie over het implementeren van toepassingen en services
 ms.topic: conceptual
 ms.date: 12/06/2017
 ms.openlocfilehash: ed6bc7d96cb3ea0934929e6543c5e637a9f42c1f
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97930834"
 ---
 # <a name="manage-applications-and-services-as-azure-resource-manager-resources"></a>Toepassingen en services beheren als Azure Resource Manager resources

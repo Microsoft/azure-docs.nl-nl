@@ -8,10 +8,10 @@ ms.date: 06/26/2019
 ms.topic: article
 keywords: Azure, kinect, RGB, IR, opname, sensor, SDK, toegang, diepte, video, camera, IMU, beweging, sensor, audio, microfoon, Matroska, sensor SDK, down load, hoofd tekst, tracering, ondersteuning
 ms.openlocfilehash: 9bb6e0ad8ebbb763389f13e317036eacc5c7d074
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97587091"
 ---
 # <a name="azure-kinect-support-options-and-resources"></a>Ondersteunings opties en-bronnen voor Azure Kinect

@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 08/01/2019
 ms.author: jingwang
 ms.openlocfilehash: 6753159acbc4a2da20695d61c6e7c31f4ac0a7c3
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100381287"
 ---
 # <a name="copy-data-from-paypal-using-azure-data-factory-preview"></a>Gegevens kopiëren van PayPal met behulp van Azure Data Factory (preview-versie)
@@ -44,13 +44,13 @@ De volgende eigenschappen worden ondersteund voor aan PayPal gekoppelde service:
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type moet worden ingesteld op: **PayPal** | Yes |
-| host | De URL van het PayPal-exemplaar. (dat wil zeggen, api.sandbox.paypal.com)  | Yes |
-| clientId | De client-ID die is gekoppeld aan uw PayPal-toepassing.  | Yes |
-| clientSecret | Het client geheim dat is gekoppeld aan uw PayPal-toepassing. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Yes |
-| useEncryptedEndpoints | Hiermee geeft u op of de eind punten van de gegevens bron moeten worden versleuteld met HTTPS. De standaardwaarde is waar.  | No |
-| useHostVerification | Hiermee geeft u op of de hostnaam in het certificaat van de server moet overeenkomen met de hostnaam van de server bij het maken van verbinding via TLS. De standaardwaarde is waar.  | No |
-| usePeerVerification | Hiermee wordt aangegeven of de identiteit van de server moet worden gecontroleerd wanneer er verbinding wordt gemaakt via TLS. De standaardwaarde is waar.  | No |
+| type | De eigenschap type moet worden ingesteld op: **PayPal** | Ja |
+| host | De URL van het PayPal-exemplaar. (dat wil zeggen, api.sandbox.paypal.com)  | Ja |
+| clientId | De client-ID die is gekoppeld aan uw PayPal-toepassing.  | Ja |
+| clientSecret | Het client geheim dat is gekoppeld aan uw PayPal-toepassing. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Ja |
+| useEncryptedEndpoints | Hiermee geeft u op of de eind punten van de gegevens bron moeten worden versleuteld met HTTPS. De standaardwaarde is waar.  | Nee |
+| useHostVerification | Hiermee geeft u op of de hostnaam in het certificaat van de server moet overeenkomen met de hostnaam van de server bij het maken van verbinding via TLS. De standaardwaarde is waar.  | Nee |
+| usePeerVerification | Hiermee wordt aangegeven of de identiteit van de server moet worden gecontroleerd wanneer er verbinding wordt gemaakt via TLS. De standaardwaarde is waar.  | Nee |
 
 **Voorbeeld:**
 
@@ -79,7 +79,7 @@ Als u gegevens wilt kopiëren vanuit PayPal, stelt u de eigenschap type van de g
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de gegevensset moet worden ingesteld op: **PayPalObject** | Yes |
+| type | De eigenschap type van de gegevensset moet worden ingesteld op: **PayPalObject** | Ja |
 | tableName | De naam van de tabel. | Nee (als "query" in activiteit bron is opgegeven) |
 
 **Voorbeeld**
@@ -109,7 +109,7 @@ Als u gegevens wilt kopiëren vanuit PayPal, stelt u het bron type in de Kopieer
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **PayPalSource** | Yes |
+| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **PayPalSource** | Ja |
 | query | Gebruik de aangepaste SQL-query om gegevens te lezen. Bijvoorbeeld: `"SELECT * FROM Payment_Experience"`. | Nee (als ' Tablename ' in gegevensset is opgegeven) |
 
 **Voorbeeld:**

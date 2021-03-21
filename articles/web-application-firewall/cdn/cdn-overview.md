@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: victorh
 ms.openlocfilehash: cd1f21f150094094a6bf856b04a64a02963f35a8
-ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102521710"
 ---
 # <a name="azure-web-application-firewall-on-azure-content-delivery-network-from-microsoft"></a>Azure Web Application firewall op Azure Content Delivery Network van micro soft

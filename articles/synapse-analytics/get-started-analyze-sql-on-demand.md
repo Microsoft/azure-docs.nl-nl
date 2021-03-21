@@ -1,5 +1,5 @@
 ---
-title: 'Zelfstudie: Ga aan de slag met het analyseren van gegevens met een serverloze SQL-pool'
+title: 'Zelf studie: aan de slag met het analyseren van gegevens met een serverloze SQL-groep'
 description: In deze zelfstudie leert u hoe u gegevens kunt analyseren met serverloze SQL-pool, met behulp van gegevens die zich in Spark-databases bevinden.
 services: synapse-analytics
 author: saveenr
@@ -10,24 +10,32 @@ ms.service: synapse-analytics
 ms.subservice: sql
 ms.topic: tutorial
 ms.date: 12/31/2020
-ms.openlocfilehash: c9f8760bd1a7b5d3700f3fdf03331fe7013e116f
-ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.openlocfilehash: 5f0a7477df2e281748c053ea8c7e7d3e79626296
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98209403"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104588015"
 ---
-# <a name="analyze-data-with-serverless-sql-pool-in-azure-synapse-analytics"></a>Gegevens analyseren met een serverloze SQL-pool in Azure Synapse Analytics
+# <a name="analyze-data-with-a-serverless-sql-pool"></a>Gegevens analyseren met een serverloze SQL-groep
 
 In deze zelfstudie leert u hoe u gegevens kunt analyseren met serverloze SQL-pool, met behulp van gegevens die zich in Spark-databases bevinden. 
 
+## <a name="the-built-in-serverless-sql-pool"></a>De ingebouwde serverloze SQL-pool
+
+Met serverloze SQL-groepen kunt u SQL gebruiken zonder dat hiervoor capaciteit hoeft te worden gereserveerd. Facturering voor een serverloze SQL-groep is gebaseerd op de hoeveelheid gegevens die wordt verwerkt om de query uit te voeren en niet het aantal knoop punten dat wordt gebruikt om de query uit te voeren.
+
+Elke werk ruimte wordt geleverd met een vooraf geconfigureerde, serverloze SQL-pool met de naam **ingebouwde**. 
+
 ## <a name="analyze-nyc-taxi-data-in-blob-storage-using-serverless-sql-pool"></a>NYC Taxi-gegevens analyseren in blob-opslag met een serverloze SQL-pool
 
-1. Klik in de **Data** hub onder **gekoppeld** met de rechter muisknop op **Azure Blob Storage > voorbeeld gegevens sets > Nyc_tlc_yellow**, **nieuw SQL-script** en selecteer **Top 100-rijen selecteren**
-1. Hiermee maakt u een nieuw SQL-script met de volgende code:
+In deze sectie gebruikt u een serverloze SQL-groep voor het analyseren van NYC taxi-gegevens in een Azure Blob Storage-account.
+
+1. Ga in Synapse Studio naar de **ontwikkelende** hub
+1. Maak een nieuw SQL-script.
+1. Plak de volgende code in het script.
 
     ```
-    -- This is auto-generated code
     SELECT
         TOP 100 *
     FROM
@@ -38,25 +46,7 @@ In deze zelfstudie leert u hoe u gegevens kunt analyseren met serverloze SQL-poo
     ```
 1. Klik op **Uitvoeren**
 
-## <a name="analyze-nyc-taxi-data-in-spark-databases-using-serverless-sql-pool"></a>NYC-taxigegevens analyseren in Spark-databases met behulp van een serverloze SQL-pool
-
-Tabellen in Apache Spark-databases zijn automatisch zichtbaar en er kunnen query's op worden uitgevoerd door een serverloze SQL-pool.
-
-1. Ga in Synapse Studio naar de hub **Ontwikkelen** en maak een nieuw SQL-script.
-1. Stel **verbinding in** met de **ingebouwde** serverloze SQL-groep.
-1. Plak de volgende tekst in het script en voer het script uit.
-
-    ```sql
-    SELECT *
-    FROM nyctaxi.dbo.passengercountstats
-    ```
-
-    > [!NOTE]
-    > De eerste keer dat u een query uitvoert die een serverloze SQL-pool gebruikt, duurt het ongeveer tien seconden tot een serverloze SQL-pool de SQL-resources heeft verzameld die nodig zijn om uw query's uit te voeren. Daaropvolgende query's worden veel sneller uitgevoerd.
-  
-
-
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Gegevens analyseren in Storage](get-started-analyze-storage.md)
+> [Gegevens analyseren met een serverloze Spark-pool](get-started-analyze-spark.md)

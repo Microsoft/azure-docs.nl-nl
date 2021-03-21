@@ -8,10 +8,10 @@ ms.service: data-lake-analytics
 ms.topic: how-to
 ms.date: 08/30/2019
 ms.openlocfilehash: 7310c67ef20a4134d4f613ea969c96802958bf62
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96015227"
 ---
 # <a name="test-your-azure-data-lake-analytics-code"></a>Uw Azure Data Lake Analytics-code testen
@@ -52,7 +52,7 @@ De `Run()` interface retourneert een resultaat van de taak uitvoering. *0* betek
 
 ### <a name="run-test-cases-in-visual-studio"></a>Test cases uitvoeren in Visual Studio
 
-Een U-SQL-script test project is gebouwd op basis van een C#-eenheids test-framework. Nadat u het project hebt gemaakt, **Test** selecteert u test Verkenner van  >  **Windows** testen  >  **Test Explorer**. U kunt test cases uitvoeren vanuit **test Explorer**. U kunt ook met de rechter muisknop op het. CS-bestand in de eenheids test klikken en **tests uitvoeren** selecteren.
+Een U-SQL-script test project is gebouwd op basis van een C#-eenheids test-framework. Nadat u het project hebt gemaakt, selecteert u test Verkenner van  >  **Windows** testen  >  . U kunt test cases uitvoeren vanuit **test Explorer**. U kunt ook met de rechter muisknop op het. CS-bestand in de eenheids test klikken en **tests uitvoeren** selecteren.
 
 ## <a name="test-c-udos"></a>C# Udo's testen
 
@@ -105,7 +105,7 @@ Nadat u de UDO-functies hebt aangeroepen, kunt u de resultaten controleren via d
 
 ### <a name="run-test-cases-in-visual-studio"></a>Test cases uitvoeren in Visual Studio
 
-Nadat u het project hebt gemaakt, **Test** selecteert u test Verkenner van  >  **Windows** testen  >  **Test Explorer**. U kunt test cases uitvoeren vanuit **test Explorer**. U kunt ook met de rechter muisknop op het. CS-bestand in de eenheids test klikken en **tests uitvoeren** selecteren.
+Nadat u het project hebt gemaakt, selecteert u test Verkenner van  >  **Windows** testen  >  . U kunt test cases uitvoeren vanuit **test Explorer**. U kunt ook met de rechter muisknop op het. CS-bestand in de eenheids test klikken en **tests uitvoeren** selecteren.
 
 ## <a name="run-test-cases-in-azure-pipelines"></a>Test cases uitvoeren in azure-pijp lijnen<a name="run-test-cases-in-azure-devops"></a>
 

@@ -4,12 +4,12 @@ ms.service: iot-edge
 ms.topic: include
 ms.date: 08/26/2020
 ms.author: v-tcassi
-ms.openlocfilehash: 706b2306fbe9f2a744d2874a8b55f78fa2fc8e4d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9572f4c663c820c76a57cdbdcecff082b150b577
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89302065"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104761117"
 ---
 ## <a name="create-a-release-pipeline-for-continuous-deployment"></a>Een release pijplijn maken voor continue implementatie
 
@@ -17,7 +17,7 @@ In deze sectie maakt u een release pijplijn die is geconfigureerd om automatisch
 
 Maak een nieuwe pijp lijn en voeg een nieuwe fase toe:
 
-1. Kies op het tabblad **releases** onder **pijp lijnen**de optie **+ nieuwe pijp lijn**. Als u al release pijplijnen hebt, kiest u de knop **+ Nieuw** en selecteert u **+ nieuwe release pijplijn**.  
+1. Kies op het tabblad **releases** onder **pijp lijnen** de optie **+ nieuwe pijp lijn**. Als u al release pijplijnen hebt, kiest u de knop **+ Nieuw** en selecteert u **+ nieuwe release pijplijn**.  
 
     ![Een release pijplijn toevoegen met behulp van de knop + nieuwe pijp lijn](./media/iot-edge-create-release-pipeline-for-continuous-deployment/add-release-pipeline.png)
 
@@ -25,7 +25,7 @@ Maak een nieuwe pijp lijn en voeg een nieuwe fase toe:
 
     ![Beginnen met een lege taak voor uw release pijplijn](./media/iot-edge-create-release-pipeline-for-continuous-deployment/start-with-empty-release-job.png)
 
-3. Uw nieuwe release pijplijn wordt geïnitialiseerd met één fase, de naam **fase 1**. Wijzig de naam fase 1 in **dev** en behandel dit als een continue implementatie pijplijn voor uw ontwikkel omgeving. Doorgaans hebben doorlopende implementatie pijplijnen meerdere fasen, waaronder **ontwikkeling**, **fase ring**en **productie**. U kunt verschillende namen gebruiken en meer maken op basis van uw DevOps-prak tijken. Sluit het venster met fase details zodra de naam ervan is gewijzigd.
+3. Uw nieuwe release pijplijn wordt geïnitialiseerd met één fase, de naam **fase 1**. Wijzig de naam fase 1 in **dev** en behandel dit als een continue implementatie pijplijn voor uw ontwikkel omgeving. Doorgaans hebben doorlopende implementatie pijplijnen meerdere fasen, waaronder **ontwikkeling**, **fase ring** en **productie**. U kunt verschillende namen gebruiken en meer maken op basis van uw DevOps-prak tijken. Sluit het venster met fase details zodra de naam ervan is gewijzigd.
 
    U kunt ook de naam van de release pijplijn wijzigen door de tekst ' nieuwe release pijplijn ' bovenaan te selecteren.
 
@@ -33,7 +33,7 @@ Maak een nieuwe pijp lijn en voeg een nieuwe fase toe:
 
    ![Klik op toevoegen in het gebied artefacten van de interface](./media/iot-edge-create-release-pipeline-for-continuous-deployment/add-artifacts.png)
 
-5. Selecteer op de **pagina een artefact toevoegen**de optie **Build** als **bron type**. Kies het project en de build-pijp lijn die u hebt gemaakt. Als u wilt, kunt u de **bron alias** wijzigen in een duidelijkere beschrijving. Selecteer vervolgens **toevoegen**.
+5. Selecteer op de **pagina een artefact toevoegen** de optie **Build** als **bron type**. Kies het project en de build-pijp lijn die u hebt gemaakt. Als u wilt, kunt u de **bron alias** wijzigen in een duidelijkere beschrijving. Selecteer vervolgens **toevoegen**.
 
    ![Selecteer op de pagina een artefact toevoegen de optie toevoegen om het artefact te maken](./media/iot-edge-create-release-pipeline-for-continuous-deployment/add-artifact.png)
 
@@ -41,7 +41,7 @@ Maak een nieuwe pijp lijn en voeg een nieuwe fase toe:
 
    ![De artefact Triggers openen en scha kelen om de continue implementatie trigger in te scha kelen](./media/iot-edge-create-release-pipeline-for-continuous-deployment/add-trigger.png)
 
-7. De **ontwikkelings** fase is vooraf geconfigureerd met één taak en nul taken. Selecteer in het menu pijp lijn **taken** en kies vervolgens de **ontwikkelings** fase. Selecteer de **Agent taak** en wijzig de **weergave naam** in **QA**. U kunt details over de agent taak configureren, maar de implementatie taak is ingevoelig voor een platform, zodat u elke **agent specificatie** in de gekozen **agent groep**kunt gebruiken.
+7. De **ontwikkelings** fase is vooraf geconfigureerd met één taak en nul taken. Selecteer in het menu pijp lijn **taken** en kies vervolgens de **ontwikkelings** fase. Selecteer de **Agent taak** en wijzig de **weergave naam** in **QA**. U kunt details over de agent taak configureren, maar de implementatie taak is ingevoelig voor een platform, zodat u elke **agent specificatie** in de gekozen **agent groep** kunt gebruiken.
 
    ![De taken voor uw ontwikkelings fase weer geven op het tabblad taken](./media/iot-edge-create-release-pipeline-for-continuous-deployment/view-stage-tasks.png)
 
@@ -63,8 +63,18 @@ Maak een nieuwe pijp lijn en voeg een nieuwe fase toe:
     * **ACR_PASSWORD**: uw Azure container Registry wacht woord.
     * **ACR_USER**: de gebruikers naam van uw Azure container Registry.
 
-    Als u andere variabelen in uw project hebt, kunt u de naam en waarde op dit tabblad opgeven. Het **manifest voor het genereren van implementaties** kan alleen de variabelen herkennen `${VARIABLE}` . Zorg ervoor dat u deze versie in uw `*.template.json` bestanden gebruikt.
-
+    Als u andere variabelen in uw project hebt, kunt u de naam en waarde op dit tabblad opgeven. Het **manifest voor het genereren van implementaties** kan alleen de variabelen herkennen die in de `${VARIABLE}` smaak zijn. Zorg ervoor dat u deze versie in uw `*.template.json` bestanden gebruikt.
+    
+    ```json-interactive
+    "registryCredentials": {
+      "<ACR name>": { // Your Azure Container Registry **Registry name** value
+        "username": "${ACR_USER}",
+        "password": "${ACR_PASSWORD}",
+        "address": "${ACR_ADDRESS}"
+      }
+    }
+    ```
+    
     ![Configureer de variabelen voor uw release pijplijn op het tabblad variabelen](./media/iot-edge-create-release-pipeline-for-continuous-deployment/configure-variables.png)
 
 10. Selecteer de tweede **Azure IOT Edge** taak en configureer deze met de volgende waarden:
@@ -76,7 +86,7 @@ Maak een nieuwe pijp lijn en voeg een nieuwe fase toe:
     | Implementatie bestand | Plaats het pad `$(System.DefaultWorkingDirectory)/Drop/drop/configs/deployment.json` . Dit pad is het bestand IoT Edge implementatie manifest bestand. |
     | Azure-abonnement | Selecteer het abonnement dat uw IoT Hub bevat.|
     | IoT Hub naam | Selecteer uw IoT-hub.|
-    | Kies één of meerdere apparaten | Kies of u de release pijplijn wilt implementeren op een of meer apparaten. Als u op één apparaat implementeert, voert u de **IOT edge apparaat-id**in. Als u implementeert op meerdere apparaten, geeft u de **voor waarde voor**het apparaat doel op. De doel voorwaarde is een filter dat overeenkomt met een set IoT Edge apparaten in IoT Hub. Als u Device Tags als voor waarde wilt gebruiken, moet u de labels van de bijbehorende apparaten bijwerken met IoT Hub apparaat twee. Werk de **IOT Edge implementatie-id** en **IOT Edge implementatie prioriteit** bij in de geavanceerde instellingen. Zie [inzicht IOT Edge automatische implementaties](../articles/iot-edge/module-deployment-monitoring.md)voor meer informatie over het maken van een implementatie voor meerdere apparaten. |
+    | Kies één of meerdere apparaten | Kies of u de release pijplijn wilt implementeren op een of meer apparaten. Als u op één apparaat implementeert, voert u de **IOT edge apparaat-id** in. Als u implementeert op meerdere apparaten, geeft u de **voor waarde voor** het apparaat doel op. De doel voorwaarde is een filter dat overeenkomt met een set IoT Edge apparaten in IoT Hub. Als u Device Tags als voor waarde wilt gebruiken, moet u de labels van de bijbehorende apparaten bijwerken met IoT Hub apparaat twee. Werk de **IOT Edge implementatie-id** en **IOT Edge implementatie prioriteit** bij in de geavanceerde instellingen. Zie [inzicht IOT Edge automatische implementaties](../articles/iot-edge/module-deployment-monitoring.md)voor meer informatie over het maken van een implementatie voor meerdere apparaten. |
     | Apparaat-ID of doel voorwaarde | Geef, afhankelijk van de vorige selectie, een apparaat-ID of [doel voorwaarde](../articles/iot-edge/module-deployment-monitoring.md#target-condition) op om op meerdere apparaten te implementeren. |
     | Geavanceerd | Geef voor de IoT Edge implementatie-ID op `$(System.TeamProject)-$(Release.EnvironmentName)` . Met deze variabele wordt de naam van het project en de release toegewezen aan uw IoT Edge-implementatie-ID. |
 

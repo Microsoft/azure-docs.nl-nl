@@ -4,10 +4,10 @@ description: Gebruik kopieer bewerkingen en matrices in een Azure Resource Manag
 ms.topic: conceptual
 ms.date: 12/21/2020
 ms.openlocfilehash: c9bcb22ec53129520fd9574d0eb58b1e5777531e
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97724490"
 ---
 # <a name="resource-iteration-in-arm-templates"></a>Resource iteratie in ARM-sjablonen
@@ -97,7 +97,7 @@ Hiermee maakt u deze namen:
 * storage1
 * storage2.
 
-Als u de index waarde wilt verschuiven, kunt u een waarde in de functie door geven `copyIndex()` . Het aantal iteraties is nog steeds opgegeven in het exemplaar element, maar de waarde van `copyIndex` wordt verrekend met de opgegeven waarde. Het volgende voor beeld:
+Als u de indexwaarde wilt verschuiven, kunt u een waarde doorgeven in de functie `copyIndex()`. Het aantal iteraties is nog steeds opgegeven in het exemplaar element, maar de waarde van `copyIndex` wordt verrekend met de opgegeven waarde. Het volgende voor beeld:
 
 ```json
 "name": "[concat('storage', copyIndex(1))]",
@@ -254,7 +254,7 @@ In de volgende voor beelden ziet u algemene scenario's voor het maken van meer d
 
 * Zie [de volg orde voor het implementeren van resources in arm-sjablonen definiëren voor het](define-resource-dependency.md)instellen van afhankelijkheden voor resources die zijn gemaakt in een copy-lus.
 * Zie [zelf studie: meerdere resource-instanties maken met arm-sjablonen](template-tutorial-create-multiple-instances.md)om een zelf studie te door lopen.
-* Zie [complexe Cloud implementaties beheren met behulp van geavanceerde arm-sjabloon functies](/learn/modules/manage-deployments-advanced-arm-template-features/)voor een Microsoft Learn module die betrekking heeft op het kopiëren van de resource.
+* Raadpleeg [Complexe cloudimplementaties beheren met behulp van geavanceerde functies voor ARM-sjablonen](/learn/modules/manage-deployments-advanced-arm-template-features/) voor een Microsoft Learn-module over het kopiëren van resources.
 * Zie voor andere toepassingen van het element copy:
   * [Eigenschaps herhaling in ARM-sjablonen](copy-properties.md)
   * [Variabele herhaling in ARM-sjablonen](copy-variables.md)

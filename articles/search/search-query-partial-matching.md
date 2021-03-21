@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 12/03/2020
-ms.openlocfilehash: 79ba186351cc145e012658abc30572e99b123dbb
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 2e2625fff802e71f797bf6970e763f2bf11c393e
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96573983"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104584173"
 ---
 # <a name="partial-term-search-and-patterns-with-special-characters-hyphens-wildcard-regex-patterns"></a>Zoeken op gedeeltelijke termen en patronen met speciale tekens (afbreek streepjes, joker tekens, regex, patronen)
 
@@ -85,7 +85,7 @@ Bij het kiezen van een analyse functie die volledige-termijn tokens produceert, 
 | [taal analyse](index-add-language-analyzers.md) | Hiermee behoudt u afbreek streepjes in samengestelde woorden of teken reeksen, klinker mutaties en verbale vormen. Als de query patronen streepjes bevatten, kan het gebruik van een taal analyse voldoende zijn. |
 | [Zoek](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/KeywordAnalyzer.html) | De inhoud van het hele veld wordt als één periode getokend. |
 | [spaties](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/WhitespaceAnalyzer.html) | Scheidt alleen op spaties. Voor waarden die streepjes of andere tekens bevatten, worden beschouwd als één token. |
-| [aangepaste analyse functie](index-add-custom-analyzers.md) | aanbevelingen Als u een aangepaste analyse functie maakt, kunt u zowel het tokenizer als het token filter opgeven. De vorige analyse functies moeten worden gebruikt als-is. Met een aangepaste analyse kunt u kiezen welke tokenizers-en Token filters u wilt gebruiken. <br><br>Een aanbevolen combi natie is het [tref woord tokenizer](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/KeywordTokenizer.html) met een [token filter met een lagere Case](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/LowerCaseFilter.html). De vooraf gedefinieerde [trefwoord analyse](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/KeywordAnalyzer.html) biedt geen kleine letters in hoofd letters, wat kan leiden tot het mislukken van query's. Een aangepaste analyse functie biedt u een mechanisme voor het toevoegen van het filter voor het laagste Case-token. |
+| [aangepaste analyse functie](index-add-custom-analyzers.md) | aanbevelingen Als u een aangepaste analyse functie maakt, kunt u zowel het tokenizer als het token filter opgeven. De vorige analyse functies moeten worden gebruikt als-is. Met een aangepaste analyse kunt u kiezen welke tokenizers-en Token filters u wilt gebruiken. <br><br>Een aanbevolen combi natie is het [tref woord tokenizer](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/KeywordTokenizer.html) met een [token filter met een lagere Case](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/LowerCaseFilter.html). De ingebouwde [trefwoord analyse](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/KeywordAnalyzer.html) biedt geen kleine letters in hoofd letters, wat kan leiden tot het mislukken van query's. Een aangepaste analyse functie biedt u een mechanisme voor het toevoegen van het filter voor het laagste Case-token. |
 
 Als u een web-API-test programma zoals postman gebruikt, kunt u de [rest-aanroep van Test Analyzer](/rest/api/searchservice/test-analyzer) toevoegen om de getokende uitvoer te controleren.
 
@@ -160,9 +160,9 @@ Of u analyse functies wilt evalueren of vooruit wilt gaan met een specifieke con
 
 ### <a name="use-built-in-analyzers"></a>Ingebouwde analyse functies gebruiken
 
-Ingebouwde of vooraf gedefinieerde analyse functies kunnen worden opgegeven met de naam van een `analyzer` eigenschap van een veld definitie, zonder dat er aanvullende configuratie is vereist in de index. In het volgende voor beeld ziet u hoe u het `whitespace` analyseprogramma op een veld kunt instellen. 
+Ingebouwde analyse functies kunnen worden opgegeven met de naam van een `analyzer` eigenschap van een veld definitie, zonder dat er aanvullende configuratie is vereist in de index. In het volgende voor beeld ziet u hoe u het `whitespace` analyseprogramma op een veld kunt instellen. 
 
-Zie [vooraf gedefinieerde analyse lijsten](./index-add-custom-analyzers.md#predefined-analyzers-reference)voor andere scenario's en meer informatie over andere ingebouwde analyse functies. 
+Zie voor andere scenario's [ingebouwde analyse](./index-add-custom-analyzers.md#built-in-analyzers)functies voor meer informatie over andere ingebouwde analyse functies. 
 
 ```json
     {

@@ -9,10 +9,10 @@ ms.service: iot-central
 services: iot-central
 manager: abjork
 ms.openlocfilehash: 476a0c2d75dcbee5c1ed4d758e0cbc9d4726ff95
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97587193"
 ---
 # <a name="tutorial-create-a-water-consumption-monitoring-application-with-azure-iot-central"></a>Zelfstudie: Een app voor bewaking van waterverbruik maken met Azure IoT Central
@@ -214,7 +214,7 @@ Een actie toevoegen aan de regel:
 1. Voer **Waarschuwing bij hoge pH-waarde** in als beschrijvende **Weergavenaam** voor de actie.
 1. Voer het e-mailadres in dat is gekoppeld aan uw IoT Central-account bij **Naar**.
 1. Voer eventueel een opmerking in die u wilt toevoegen in de tekst van het e-mailbericht.
-1. Klik op **Gereed** om de actie te voltooien.
+1. Selecteer **Gereed** om de actie te voltooien.
 1. Selecteer **Opslaan** om de nieuwe regel op te slaan en te activeren.
 
 Binnen een paar minuten ontvangt u een e-mailbericht nadat aan de geconfigureerde voorwaarde is voldaan.

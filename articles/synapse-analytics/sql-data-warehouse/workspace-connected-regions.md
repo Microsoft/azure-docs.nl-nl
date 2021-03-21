@@ -12,10 +12,10 @@ ms.author: anvang
 ms.reviewer: jrasnick
 ms.custom: references_regions
 ms.openlocfilehash: 4ecf8a578343a10e7c1ddb0ac5e9345a652bc9af
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97511702"
 ---
 # <a name="enabling-synapse-workspace-features-on-a-dedicated-sql-pool-formerly-sql-dw-in-your-region"></a>De functies van de Synapse-werk ruimte inschakelen op een toegewezen SQL-groep (voorheen SQL DW) in uw regio.
@@ -25,7 +25,7 @@ De volgende tabel bevat een overzicht van de mogelijkheid om de functies van de 
 
 \* Hiermee wordt aangegeven dat een specifieke planning voor de regio momenteel niet beschikbaar is.
 
-| Regio | Beschik baarheid van Synapse-werk ruimte |
+| Region | Beschik baarheid van Synapse-werk ruimte |
 |:--- |:--- |:--- |
 | Australië-centraal 1 |\* |
 | Australië - centraal 2 |\* |

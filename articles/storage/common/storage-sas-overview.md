@@ -10,12 +10,12 @@ ms.date: 12/28/2020
 ms.author: tamram
 ms.reviewer: dineshm
 ms.subservice: common
-ms.openlocfilehash: 8812ab091037bcb3144a7fed53a449c3f5de353a
-ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
+ms.openlocfilehash: 51e73222233602491b0c8ed3835d032610c68e0d
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97802504"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104722783"
 ---
 # <a name="grant-limited-access-to-azure-storage-resources-using-shared-access-signatures-sas"></a>Beperkte toegang verlenen tot Azure Storage-resources met behulp van Shared Access signatures (SAS)
 
@@ -181,6 +181,9 @@ De volgende aanbevelingen voor het gebruik van hand tekeningen voor gedeelde toe
 - **Weet wanneer u geen SAS wilt gebruiken.** Soms is het gebruik van een SAS niet alleen voor de Risico's die zijn gekoppeld aan een bepaalde bewerking ten opzichte van uw opslag account. Voor dergelijke bewerkingen maakt u een middelste laag service die naar uw opslag account schrijft na het uitvoeren van de validatie, verificatie en controle van bedrijfs regels. Soms is het eenvoudiger om de toegang op andere manieren te beheren. Als u bijvoorbeeld alle blobs in een container openbaar leesbaar wilt maken, kunt u de container openbaar maken, in plaats van een SAS aan elke client voor toegang te bieden.
 
 - **Gebruik Azure Monitor en Azure Storage Logboeken om uw toepassing te bewaken.** Autorisatie fouten kunnen optreden vanwege een storing in uw SAS-Provider service. Ze kunnen ook optreden wanneer een opgeslagen toegangs beleid per ongeluk wordt verwijderd. U kunt de logboek registratie van Azure Monitor en opslag analyse gebruiken om elke Prikker in deze typen autorisatie fouten te observeren. Zie [Azure Storage metrische gegevens in azure monitor](../blobs/monitor-blob-storage.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json) en [Azure Opslaganalyse logboek registratie](storage-analytics-logging.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)voor meer informatie.
+
+> [!NOTE]
+> Opslag houdt geen rekening met het aantal Shared Access-hand tekeningen dat is gegenereerd voor een opslag account en er kan geen API worden verstrekt. Als u het aantal gedeelde toegangs handtekeningen wilt weten dat voor een opslag account is gegenereerd, moet u het nummer hand matig bijhouden.
 
 ## <a name="get-started-with-sas"></a>Aan de slag met SAS
 

@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.custom: how-to
 ms.date: 11/16/2020
 ms.openlocfilehash: f8eb18b190b72381f1a93575eb39b3d19d8d431b
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96010670"
 ---
 # <a name="manage-azure-machine-learning-resources-with-the-vs-code-extension-preview"></a>Azure Machine Learning resources beheren met de extensie VS (preview)
@@ -32,7 +32,7 @@ Meer informatie over het beheren van Azure Machine Learning resources met de VS 
 
 In alle onderstaande processen wordt ervan uitgegaan dat u zich in de weer gave Azure Machine Learning in Visual Studio code bevindt. Als u de uitbrei ding wilt starten, selecteert u het pictogram van **Azure** in de activiteit balk VS code.
 
-## <a name="workspaces"></a>Werkruimten
+## <a name="workspaces"></a>Workspaces
 
 Zie [werk ruimten](concept-workspace.md)voor meer informatie.
 

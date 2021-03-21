@@ -12,10 +12,10 @@ ms.date: 03/04/2021
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: c5c8e21f2ce3f6907547bf1b2fe4681eb937864b
-ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102119872"
 ---
 # <a name="json-claims-transformations"></a>JSON-claim transformaties
@@ -58,11 +58,11 @@ In het volgende voor beeld wordt een JSON-teken reeks gegenereerd op basis van d
 De volgende claim transformatie voert een JSON-teken reeks claim uit die de hoofd tekst van de aanvraag is die wordt verzonden naar SendGrid (een e-mail provider van derden). De structuur van het JSON-object wordt gedefinieerd door de Id's in punt notatie van de invoer parameters en de TransformationClaimTypes van de InputClaims. Getallen in de punt notatie impliceren matrices. De waarden zijn afkomstig van de waarden van de InputClaims en de waarde van de eigenschap input parameters.
 
 - Invoer claims:
-  - **e-mail**, persoonlijke instellingen van het transformatie claim type **. 0. tot. 0. e-mail adres**: someone@example.com
+  - **e-mail adres**, transformatie claim type  **Personalizations.0.to.0.email**: " someone@example.com "
   - **otp**, transformatie claim type **Personalizations.0.dynamic_template_data. otp** "346349"
 - Invoer parameter:
   - **template_id**: "d-4c56ffb40fa648b1aa6822283df94f60"
-  - **van. e-mail adres**: service@contoso.com
+  - **from.email**: " service@contoso.com "
   - **persoonlijke instellingen. 0. onderwerp** "e-mail verificatie code contoso-account"
 - Uitvoer claim:
   - **requestBody**: JSON-waarde
@@ -115,7 +115,7 @@ In het volgende voor beeld wordt een JSON-teken reeks gegenereerd op basis van d
 De volgende claim transformatie voert een JSON-teken reeks claim uit die de hoofd tekst van de aanvraag is die naar een REST API wordt verzonden. De structuur van het JSON-object wordt gedefinieerd door de Id's in punt notatie van de invoer parameters en de TransformationClaimTypes van de InputClaims. De waarden zijn afkomstig van de waarden van de InputClaims en de waarde van de eigenschap input parameters.
 
 - Invoer claims:
-  - **e-mail**, transformatie claim type **customerEntity. email**: john.s@contoso.com
+  - **e-mail adres**, transformatie claim type  **customerEntity.email**: " john.s@contoso.com "
   - **objectId**, transformatie claim type **customerEntity. userObjectId** "01234567-89ab-cdef-0123-456789abcdef"
   - **opgegeven** naam, transformatie claim type **customerEntity. FirstName** "John"
   - **Achternaam**, transformatie claim type **customerEntity. lastName** "Smith"

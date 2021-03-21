@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 06/20/2019
 ms.author: rohogue
 ms.openlocfilehash: 86e1d74d5e4ab9f6e799c73bcf0d807d0d874f21
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92219714"
 ---
 # <a name="monitor-azure-fxt-edge-filer-hardware-status"></a>Hardware-status van Azure FXT Edge-bestanden bewaken
@@ -74,7 +74,7 @@ Met de grote lit-knop aan de rechter kant van het besturings paneel links geeft 
 
 Druk op de knop systeem status en-ID om te scha kelen tussen de modus systeem-ID en de modus systeem status.
 
-|Status van de systeem status | Conditie |
+|Status van de systeem status | Voorwaarde |
 |-------------------------------------------|-----------------------------------------------|
 | Effen blauw | Normale werking: het systeem is ingeschakeld, werkt normaal en de modus systeem-ID is niet actief. <br/>Druk op de knop systeem status en-ID als u wilt overschakelen naar de modus systeem-ID. |
 | Blauwe Knipper | De modus systeem-ID is actief. Druk op de knop systeem status en systeem-ID als u wilt overschakelen naar de modus systeem status. |

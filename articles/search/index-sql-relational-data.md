@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: 6c70b42e7d0f647a3b2b60d29b5098a791e4975f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88924517"
 ---
 # <a name="how-to-model-relational-sql-data-for-import-and-indexing-in-azure-cognitive-search"></a>Relationele SQL-gegevens model leren voor importeren en indexeren in azure Cognitive Search
@@ -113,7 +113,7 @@ Deze rijenset kan nu worden geïmporteerd in azure Cognitive Search.
 
 Maak op de Azure Cognitive Search-zijde een index schema waarmee de een-op-veel-relatie wordt gemodelleerd met geneste JSON. De resultatenset die u in de vorige sectie hebt gemaakt, komt doorgaans overeen met het hieronder opgegeven index schema (we knippen enkele velden voor de boog).
 
-Het volgende voor beeld is vergelijkbaar met het voor beeld in het model leren van [complexe gegevens typen](search-howto-complex-data-types.md#creating-complex-fields). De structuur van de *lokalen* , die de focus heeft van dit artikel, bevindt zich in de verzameling velden van een index met de naam *Hotels*. In dit voor beeld wordt ook een complex type voor het *adres*weer gegeven. Dit verschilt van *kamers* in dat het bestaat uit een vaste set items, in tegens telling tot het veelvoud, een wille keurig aantal items dat is toegestaan in een verzameling.
+Het volgende voor beeld is vergelijkbaar met het voor beeld in het model leren van [complexe gegevens typen](search-howto-complex-data-types.md#creating-complex-fields). De structuur van de *lokalen* , die de focus heeft van dit artikel, bevindt zich in de verzameling velden van een index met de naam *Hotels*. In dit voor beeld wordt ook een complex type voor het *adres* weer gegeven. Dit verschilt van *kamers* in dat het bestaat uit een vaste set items, in tegens telling tot het veelvoud, een wille keurig aantal items dat is toegestaan in een verzameling.
 
 ```json
 {
@@ -152,7 +152,7 @@ Gezien de vorige resultatenset en het bovenstaande index schema, hebt u alle ver
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Met uw eigen gegevensset kunt u de [wizard gegevens importeren](search-import-data-portal.md) gebruiken om de index te maken en te laden. De wizard detecteert de Inge sloten JSON-verzameling, zoals de groep die is opgenomen in de *ruimten*en leidt tot een index schema dat een verzameling complexe typen bevat. 
+Met uw eigen gegevensset kunt u de [wizard gegevens importeren](search-import-data-portal.md) gebruiken om de index te maken en te laden. De wizard detecteert de Inge sloten JSON-verzameling, zoals de groep die is opgenomen in de *ruimten* en leidt tot een index schema dat een verzameling complexe typen bevat. 
 
   ![Index afgeleid door wizard gegevens importeren](media/index-sql-relational-data/search-index-rooms-complex-collection.png "Index afgeleid door wizard gegevens importeren")
 

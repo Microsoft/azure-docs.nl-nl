@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: e7e63edb1e91f07504154cacfcf3d43d3bb310a2
-ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
+ms.openlocfilehash: c54ec2cc6e17d9693e25f1471922da8c7c023e36
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103564917"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104602861"
 ---
 # <a name="migration-guide-oracle-to-azure-sql-managed-instance"></a>Migratie handleiding: Oracle naar Azure SQL Managed instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../../includes/appliesto-sqlmi.md)]
@@ -50,11 +50,26 @@ Voer de volgende stappen uit om een evaluatie te maken:
 1. Open [SQL Server Migration Assistant voor Oracle](https://www.microsoft.com/en-us/download/details.aspx?id=54258). 
 1. Selecteer **bestand** en kies vervolgens **Nieuw project**. 
 1. Geef een project naam, een locatie op voor het opslaan van uw project en selecteer vervolgens Azure SQL Managed instance als migratie doel uit de vervolg keuzelijst. Selecteer **OK**.
-1. Voer waarden in voor de details van de Oracle-verbinding in het dialoog venster verbinding maken met **Oracle** .
+
+   ![Nieuw project](./media/oracle-to-managed-instance-guide/new-project.png)
+
+1. Selecteer **verbinding maken met Oracle**. Voer in het dialoog venster **verbinding maken met Oracle** de waarden in voor de details van de Oracle-verbinding.
+
+   ![Verbinding maken met Oracle](./media/oracle-to-managed-instance-guide/connect-to-oracle.png)
+
+   Selecteer de Oracle-schema (s) die u wilt migreren: 
+
+   ![Oracle-schema kiezen](./media/oracle-to-managed-instance-guide/select-schema.png)
+
 1. Klik met de rechter muisknop op het Oracle-schema dat u wilt migreren in de **Oracle-meta gegevens Verkenner**, en kies vervolgens **rapport maken**. Hiermee wordt een HTML-rapport gegenereerd. U kunt ook **rapport maken** kiezen op de navigatie balk nadat u de Data Base hebt geselecteerd.
+
+   ![Rapport maken](./media/oracle-to-managed-instance-guide/create-report.png)
+
 1. Bekijk het HTML-rapport om de conversie statistieken en eventuele fouten of waarschuwingen te begrijpen. U kunt het rapport ook openen in Excel om een overzicht te krijgen van Oracle-objecten en de inspanningen die nodig zijn voor het uitvoeren van schema-conversies. De standaard locatie voor het rapport bevindt zich in de rapportmap in SSMAProjects.
 
    Bijvoorbeeld: `drive:\<username>\Documents\SSMAProjects\MyOracleMigration\report\report_2020_11_12T02_47_55\`
+
+   ![Beoordelings rapport](./media/oracle-to-managed-instance-guide/assessment-report.png)
 
 
 ### <a name="validate-data-types"></a>Gegevens typen valideren
@@ -64,6 +79,9 @@ Valideer de standaard gegevens type toewijzingen en wijzig deze indien nodig op 
 1. Selecteer **extra** in het menu. 
 1. Selecteer de **project instellingen**. 
 1. Selecteer het tabblad **type toewijzingen** . 
+
+   ![Type toewijzingen](./media/oracle-to-managed-instance-guide/type-mappings.png)
+
 1. U kunt de type toewijzing voor elke tabel wijzigen door de tabel te selecteren in de **Oracle-meta gegevens Verkenner**.
 
 ### <a name="convert-schema"></a>Schema converteren
@@ -75,8 +93,21 @@ Voer de volgende stappen uit om het schema te converteren:
     1. Voer de verbindings gegevens in om uw data base te verbinden in Azure SQL Managed instance.
     1. Kies uw doel database in de vervolg keuzelijst.
     1. Selecteer **Verbinding maken**.
-1. Klik met de rechter muisknop op het schema en kies vervolgens **schema converteren**. U kunt ook **schema converteren** selecteren in de bovenste navigatie balk nadat u het schema hebt geselecteerd.
+
+    ![Verbinding maken met beheerd SQL-exemplaar](./media/oracle-to-managed-instance-guide/connect-to-sql-managed-instance.png)
+
+1. Klik met de rechter muisknop op het Oracle-schema in de **Oracle-meta gegevens Verkenner** en kies vervolgens **schema converteren**. U kunt ook **schema converteren** selecteren in de bovenste navigatie balk nadat u het schema hebt geselecteerd.
+
+   ![Schema converteren](./media/oracle-to-managed-instance-guide/convert-schema.png)
+
 1. Nadat de conversie is voltooid, vergelijkt u de geconverteerde objecten met de oorspronkelijke objecten om potentiële problemen te identificeren en te verhelpen op basis van de aanbevelingen.
+
+   ![Tabel aanbevelingen vergelijken](./media/oracle-to-managed-instance-guide/table-comparison.png)
+
+   Vergelijk de geconverteerde Transact-SQL-tekst met de originele opgeslagen procedures en Bekijk de aanbevelingen: 
+
+   ![Aanbevelingen voor de procedure vergelijken](./media/oracle-to-managed-instance-guide/procedure-comparison.png)
+
 1. Sla het project lokaal op voor een herbemiddeling van het offline schema. Selecteer **project opslaan** in het menu **bestand** .
 
 ## <a name="migrate"></a>Migrate
@@ -86,10 +117,26 @@ Nadat u klaar bent met het beoordelen van uw data bases en eventuele verschillen
 Als u uw schema wilt publiceren en uw gegevens wilt migreren, voert u de volgende stappen uit:
 
 1. Het schema publiceren: Klik met de rechter muisknop op de data base in het knoop punt **data bases** in de **meta gegevens Verkenner van het Azure SQL Managed instance** en kies **synchroniseren met data base**.
+
+   ![Synchroniseren met data base](./media/oracle-to-managed-instance-guide/synchronize-with-database.png)
+
+   Controleer de toewijzing tussen uw bron project en uw doel:
+
+   ![Synchroniseren met database revisie](./media/oracle-to-managed-instance-guide/synchronize-with-database-review.png)
+
 1. De gegevens migreren: Klik met de rechter muisknop op het schema in de **Oracle-meta gegevens Verkenner** en kies **gegevens migreren**. 
+
+   ![Gegevens migreren](./media/oracle-to-managed-instance-guide/migrate-data.png)
+
 1. Geef verbindings Details op voor zowel Oracle als Azure SQL Managed instance.
 1. Het **gegevens migratie rapport** weer geven.
+
+   ![Gegevens migratie rapport](./media/oracle-to-managed-instance-guide/data-migration-report.png)
+
 1. Maak verbinding met uw Azure SQL Managed instance met behulp van [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) en valideer de migratie door de gegevens en het schema te controleren.
+
+   ![Valideren in SSMA](./media/oracle-to-managed-instance-guide/validate-data.png)
+
 
 U kunt ook SQL Server Integration Services (SSIS) gebruiken om de migratie uit te voeren. Raadpleeg voor meer informatie: 
 

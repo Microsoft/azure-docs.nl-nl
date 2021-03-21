@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
 ms.openlocfilehash: dd39b7ecd51902f5035b4cd17d59dea964d0c962
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91708829"
 ---
 # <a name="best-practices-for-query-store"></a>Aanbevolen procedures voor query Store
@@ -31,7 +31,7 @@ Laat query Store de gegevens vastleggen die voor u belang rijk zijn.
 Query Store bevat ook een Store voor wacht statistieken. Er is een aanvullende query voor de opname modus die wacht statistieken regelt: **pgms_wait_sampling. query_capture_mode** kan worden ingesteld op _none_ of _all_. 
 
 > [!NOTE] 
-> **pg_qs. query_capture_mode** vervangt **pgms_wait_sampling. query_capture_mode**. Als pg_qs. query_capture_mode _geen_is, heeft de instelling pgms_wait_sampling. query_capture_mode geen effect. 
+> **pg_qs. query_capture_mode** vervangt **pgms_wait_sampling. query_capture_mode**. Als pg_qs. query_capture_mode _geen_ is, heeft de instelling pgms_wait_sampling. query_capture_mode geen effect. 
 
 
 ## <a name="keep-the-data-you-need"></a>Behoud de gegevens die u nodig hebt

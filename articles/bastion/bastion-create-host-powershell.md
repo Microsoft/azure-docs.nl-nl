@@ -8,13 +8,13 @@ ms.topic: how-to
 ms.date: 10/14/2020
 ms.author: cherylmc
 ms.openlocfilehash: ba2716613a0e950cbae5c65add410ac8a8b38955
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92077722"
 ---
-# <a name="create-an-azure-bastion-host-using-azure-powershell"></a>Een Azure bastion-host maken met behulp van Azure PowerShell
+# <a name="create-an-azure-bastion-host-using-azure-powershell"></a>Een Azure Bastion-host maken met behulp van Azure PowerShell
 
 In dit artikel wordt beschreven hoe u een Azure bastion-host maakt met behulp van Power shell. Zodra u de Azure Bastion-service in uw virtuele netwerk hebt ingericht, is de naadloze RDP/SSH-ervaring beschikbaar voor alle virtuele machines in hetzelfde virtuele netwerk. De Azure Bastion-implementatie vindt plaats per virtueel netwerk, niet per abonnement/account of virtuele machine.
 
@@ -30,7 +30,7 @@ Controleer of u een Azure-abonnement hebt. Als u nog geen Azure-abonnement hebt,
 
 Deze sectie helpt u bij het maken van een nieuwe Azure Bastion-resource met behulp van Azure PowerShell.
 
-1. Maak een virtueel netwerk en een Azure Bastion-subnet. U moet het Azure Bastion-subnet maken met de naam waarde **AzureBastionSubnet**. Deze waarde geeft Azure aan op welk subnet de Bastion-resources moeten worden geïmplementeerd. Dit wijkt af van een gatewaysubnet. U moet een subnet van Mini maal/27 of groter subnet (/27,/26, enzovoort) gebruiken. Maak de **AzureBastionSubnet** zonder route tabellen of delegaties. Als u netwerk beveiligings groepen op de **AzureBastionSubnet**gebruikt, raadpleegt u het artikel [over het werken met nsg's](bastion-nsg.md) .
+1. Maak een virtueel netwerk en een Azure Bastion-subnet. U moet het Azure Bastion-subnet maken met de naam waarde **AzureBastionSubnet**. Deze waarde geeft Azure aan op welk subnet de Bastion-resources moeten worden geïmplementeerd. Dit wijkt af van een gatewaysubnet. U moet een subnet van Mini maal/27 of groter subnet (/27,/26, enzovoort) gebruiken. Maak de **AzureBastionSubnet** zonder route tabellen of delegaties. Als u netwerk beveiligings groepen op de **AzureBastionSubnet** gebruikt, raadpleegt u het artikel [over het werken met nsg's](bastion-nsg.md) .
 
    ```azurepowershell-interactive
    $subnetName = "AzureBastionSubnet"

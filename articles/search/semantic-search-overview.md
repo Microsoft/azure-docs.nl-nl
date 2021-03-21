@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/18/2021
 ms.custom: references_regions
-ms.openlocfilehash: 443d6349aab68fd05edfe4c4007fd043c932f4f0
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: d4b0a4107b3894d65dd8e168cd58566d4a4b5090
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104604267"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104720488"
 ---
 # <a name="semantic-search-in-azure-cognitive-search"></a>Semantisch zoeken in azure Cognitive Search
 
@@ -50,7 +50,9 @@ Onderdelen van semantische zoek actie breiden de bestaande pijp lijn voor query 
 
 Query's worden uitgevoerd zoals gebruikelijk, met het parseren van termen, analyses en scans over de omgedraaide indexen. De engine haalt documenten op met behulp van token matching en vergelijkt de resultaten met behulp van het [standaard scoreer algoritme](index-similarity-and-scoring.md#similarity-ranking-algorithms)voor het vergelijken van de Scores worden berekend op basis van de mate van taal kundige gelijkenis tussen query termen en overeenkomende termen in de index. Als u deze hebt gedefinieerd, worden Score profielen ook in deze fase toegepast. De resultaten worden vervolgens door gegeven aan het semantische Zoek subsysteem.
 
-In de voorbereidings stap wordt de document verzameling geretourneerd door de eerste resultatenset op de zin en alinea niveau geanalyseerd om door gangen te zoeken die elk document samenvatten. In tegens telling tot zoeken met tref woorden, wordt met deze stap machine lezen en lees bewerkingen gebruikt om de inhoud te evalueren. Als onderdeel van het samen stellen van de resultaten retourneert een semantische query bijschriften en antwoorden. Om ze te formuleren, wordt door semantische zoek opdracht gebruik gemaakt van de taal weergave om de sleutel door gang te extra heren en te markeren die het beste een resultaat oplevert. Als de zoek query een vraag-en-antwoord is aangevraagd, bevat de reactie ook een tekst die het beste beantwoordt aan de vraag, zoals wordt aangegeven door de zoek opdracht. Voor bijschriften en antwoorden wordt bestaande tekst in de formulering gebruikt. De semantische modellen vormen geen nieuwe zinnen of zinnen van de beschik bare inhoud en passen geen logica toe om nieuwe conclusies te ontvangen. Kortom, het systeem zal nooit inhoud retour neren die nog niet bestaat.
+In de voorbereidings stap wordt de document verzameling geretourneerd door de eerste resultatenset op de zin en alinea niveau geanalyseerd om door gangen te zoeken die elk document samenvatten. In tegens telling tot zoeken met tref woorden, wordt met deze stap machine lezen en lees bewerkingen gebruikt om de inhoud te evalueren. Via deze fase van inhouds verwerking retourneert een semantische query [bijschriften](semantic-how-to-query-request.md) en [antwoorden](semantic-answers.md). Om ze te formuleren, wordt door semantische zoek opdracht gebruik gemaakt van de taal weergave om de sleutel door gang te extra heren en te markeren die het beste een resultaat oplevert. Als de zoek query een vraag-en-antwoord is aangevraagd, bevat de reactie ook een tekst die het beste beantwoordt aan de vraag, zoals wordt aangegeven door de zoek opdracht. 
+
+Voor bijschriften en antwoorden wordt bestaande tekst in de formulering gebruikt. De semantische modellen vormen geen nieuwe zinnen of zinnen van de beschik bare inhoud en passen geen logica toe om nieuwe conclusies te ontvangen. Kortom, het systeem zal nooit inhoud retour neren die nog niet bestaat.
 
 De resultaten worden vervolgens opnieuw beoordeeld op basis van de [conceptuele gelijkenis](semantic-ranking.md) van de query termen.
 

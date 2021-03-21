@@ -10,12 +10,12 @@ ms.date: 02/17/2021
 ms.author: normesta
 ms.reviewer: prishet
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: b606e69baec8d159a6a3fa7373500176260ef0d7
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: dd522355d30564d84fec15bdc57c7397c1e6cfe4
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100654145"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104702538"
 ---
 # <a name="use-powershell-to-manage-acls-in-azure-data-lake-storage-gen2"></a>Power shell gebruiken voor het beheren van Acl's in Azure Data Lake Storage Gen2
 
@@ -172,7 +172,7 @@ $dir.ACL
 ```
 
 > [!NOTE]
-> Als u een **standaard** -ACL-vermelding wilt instellen, gebruikt u de para meter **-DefaultScope** wanneer u de opdracht **set-AzDataLakeGen2ItemAclObject** uitvoert. Bijvoorbeeld: `$acl = set-AzDataLakeGen2ItemAclObject -AccessControlType user -Permission rwx -DefaultScope`.
+> Als u een **standaard** -ACL-vermelding wilt instellen, gebruikt u de para meter **-DefaultScope** wanneer u de opdracht **set-AzDataLakeGen2ItemAclObject** uitvoert. Bijvoorbeeld: `$acl = set-AzDataLakeGen2ItemAclObject -AccessControlType user -Permission rwx -DefaultScope`. 
 
 In dit voor beeld wordt de toegangs beheer lijst voor een **bestand** ingesteld op de gebruiker die eigenaar is van de groep of van andere gebruikers, en wordt de ACL vervolgens naar de console afgedrukt.
 
@@ -188,7 +188,7 @@ $file.ACL
 ```
 
 > [!NOTE]
-> Als u een **standaard** -ACL-vermelding wilt instellen, gebruikt u de para meter **-DefaultScope** wanneer u de opdracht **set-AzDataLakeGen2ItemAclObject** uitvoert. Bijvoorbeeld: `$acl = set-AzDataLakeGen2ItemAclObject -AccessControlType user -Permission rwx -DefaultScope`.
+> Als u de toegangs beheer lijst van een specifieke groep of gebruiker wilt instellen, gebruikt u de bijbehorende object-Id's. Bijvoorbeeld `group:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` of `user:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`.
 
 In de volgende afbeelding ziet u de uitvoer na het instellen van de ACL van een bestand.
 
@@ -267,7 +267,7 @@ Update-AzDataLakeGen2AclRecursive -Context $ctx -FileSystem $filesystemName -Pat
 ```
 
 > [!NOTE]
-> Als u een **standaard** -ACL-vermelding wilt bijwerken, gebruikt u de para meter **-DefaultScope** wanneer u de opdracht **set-AzDataLakeGen2ItemAclObject** uitvoert. Bijvoorbeeld: `$acl = set-AzDataLakeGen2ItemAclObject -AccessControlType user -EntityId $userID -Permission rwx -DefaultScope`.
+> Als u de toegangs beheer lijst van een specifieke groep of gebruiker wilt instellen, gebruikt u de bijbehorende object-Id's. Bijvoorbeeld `group:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` of `user:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`.
 
 Zie het artikel Naslag informatie over [Update AzDataLakeGen2AclRecursive](/powershell/module/az.storage/update-azdatalakegen2aclrecursive) voor een voor beeld van het recursief bijwerken van acl's in batches door een batch grootte op te geven.
 

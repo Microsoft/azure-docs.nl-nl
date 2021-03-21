@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 04/14/2020
 ms.author: jeedes
 ms.openlocfilehash: aa4bab2f7ecb90c61e22de46b01a5ed81342a408
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92319187"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-123formbuilder-sso"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met 123FormBuilder SSO

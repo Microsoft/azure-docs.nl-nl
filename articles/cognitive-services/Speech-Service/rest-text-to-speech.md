@@ -12,10 +12,10 @@ ms.date: 01/08/2021
 ms.author: trbye
 ms.custom: references_regions
 ms.openlocfilehash: 9a5f50588c357b56865bc2a8500dcc250e89d930
-ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103470629"
 ---
 # <a name="text-to-speech-rest-api"></a>REST API voor tekst-naar-spraak

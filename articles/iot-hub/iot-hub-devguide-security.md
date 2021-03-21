@@ -17,10 +17,10 @@ ms.custom:
 - devx-track-js
 - devx-track-csharp
 ms.openlocfilehash: 3ddc8c78bac47ed85266037341328585e3c7cb1c
-ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97825124"
 ---
 # <a name="control-access-to-iot-hub"></a>Toegang tot IoT Hub regelen
@@ -472,7 +472,7 @@ In de volgende onderwerpen vindt u meer informatie over het beheren van de toega
 
 De volgende tabel bevat de machtigingen die u kunt gebruiken om de toegang tot uw IoT-hub te beheren.
 
-| Machtiging | Opmerkingen |
+| Machtiging | Notities |
 | --- | --- |
 | **RegistryRead** |Hiermee wordt lees toegang verleend aan het identiteits register. Zie [identiteits register](iot-hub-devguide-identity-registry.md)voor meer informatie. <br/>Deze machtiging wordt gebruikt door de Cloud Services van de back-end. |
 | **RegistryReadWrite** |Hiermee wordt lees-en schrijf toegang verleend aan het identiteits register. Zie [identiteits register](iot-hub-devguide-identity-registry.md)voor meer informatie. <br/>Deze machtiging wordt gebruikt door de Cloud Services van de back-end. |

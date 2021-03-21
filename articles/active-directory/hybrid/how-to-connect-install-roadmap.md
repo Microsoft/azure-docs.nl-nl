@@ -14,10 +14,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ae575aa6544a174a70eb8ea4749566e8660280e2
-ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94873264"
 ---
 # <a name="azure-ad-connect-and-azure-ad-connect-health-installation-roadmap"></a>Installatieprocedure voor Azure AD Connect en Azure AD Connect Health
@@ -78,7 +78,7 @@ De functie [Onopzettelijk verwijderen voorkomen](how-to-connect-sync-feature-pre
 |Onderwerp |Koppeling|  
 | --- | --- |
 |Filtering configureren | [Azure AD Connect-synchronisatie: filtering configureren](how-to-connect-sync-configure-filtering.md)|
-|Wachtwoord-hashsynchronisatie | [Synchronisatie van wachtwoord-hashes](how-to-connect-password-hash-synchronization.md)|
+|Synchronisatie van wachtwoord-hashes | [Synchronisatie van wachtwoord-hashes](how-to-connect-password-hash-synchronization.md)|
 |Pass-through-verificatie | [Pass-through-verificatie](how-to-connect-pta.md)
 |Wachtwoord terugschrijven | [Aan de slag met wachtwoord beheer](../authentication/tutorial-enable-sspr.md)|
 |Apparaat terugschrijven | [Apparaat terugschrijven inschakelen in Azure AD Connect.](how-to-connect-device-writeback.md)|
@@ -152,7 +152,7 @@ Volg de volgende stappen om aan de slag te gaan met Azure AD Connect Health:
 
 
 ## <a name="azure-ad-connect-health-portal"></a>Portal voor Azure AD Connect Health
-In de portal voor Azure AD Connect Health kunt u waarschuwingen weergeven, de prestaties controleren en het gebruik analyseren. Via de URL https://aka.ms/aadconnecthealth gaat u naar de hoofdblade van Azure AD Connect Health. Een blade kunt u zien als een venster. Op de hoofd Blade ziet u **Quick Start**, services in azure AD Connect Health en aanvullende configuratie opties. Zie de volgende schermafbeelding en de korte uitleg die daarna wordt gegeven. Nadat u de agents hebt geïmplementeerd, identificeert de Health-service automatisch de services die met Azure AD Connect Health worden bewaakt.
+In de portal voor Azure AD Connect Health kunt u waarschuwingen weergeven, de prestaties controleren en het gebruik analyseren. Via de URL https://aka.ms/aadconnecthealth gaat u naar de hoofdblade van Azure AD Connect Health. Een blade kunt u zien als een venster. Op de hoofd Blade ziet u **snel starten**, services in azure AD Connect Health en aanvullende configuratie opties. Zie de volgende schermafbeelding en de korte uitleg die daarna wordt gegeven. Nadat u de agents hebt geïmplementeerd, identificeert de Health-service automatisch de services die met Azure AD Connect Health worden bewaakt.
 
 > [!NOTE]
 > Raadpleeg de [veelgestelde vragen over Azure AD Connect Health](reference-connect-health-faq.md) of de [Azure AD-pagina met prijzen](https://aka.ms/aadpricing) voor licentie-informatie.

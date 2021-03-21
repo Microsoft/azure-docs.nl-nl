@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 02/11/2021
 ms.author: azfuncdf
 ms.openlocfilehash: ea4aaa1cdbe10e2db9cf619452558d104a2293ab
-ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102449370"
 ---
 # <a name="data-persistence-and-serialization-in-durable-functions-azure-functions"></a>Gegevens persistentie en-serialisatie in Durable Functions (Azure Functions)
@@ -26,7 +26,7 @@ Durable Functions gebruikt Azure Storage wacht rijen voor het betrouwbaar planne
 
 In één [Task hub](durable-functions-task-hubs.md)worden met Durable functions berichten gemaakt en toegevoegd aan een *werk* wachtrij met de naam `<taskhub>-workitem` voor het plannen van activiteit functies en een of meer *controle wachtrijen* met de naam `<taskhub>-control-##` om Orchestrator en entiteits functies te plannen of hervatten. Het aantal controle wachtrijen is gelijk aan het aantal partities dat voor uw toepassing is geconfigureerd. Zie de [documentatie over prestaties en schaal baarheid](durable-functions-perf-and-scale.md)voor meer informatie over wacht rijen en partities.
 
-### <a name="tables"></a>Tabellen
+### <a name="tables"></a>Tables
 
 Zodra de gegevens zijn verwerkt, worden de resulterende acties bewaard in de *geschiedenis* tabel met de naam `<taskhub>History` . Orchestration-invoer, uitvoer en aangepaste status gegevens worden ook opgeslagen in de tabel *instances* met de naam `<taskhub>Instances` .
 

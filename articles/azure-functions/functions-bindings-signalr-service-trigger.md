@@ -7,10 +7,10 @@ ms.custom: devx-track-csharp
 ms.date: 05/11/2020
 ms.author: chenyl
 ms.openlocfilehash: 2482a26987ec142880acc51bf470d844655b6e3f
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97763507"
 ---
 # <a name="signalr-service-trigger-binding-for-azure-functions"></a>Binding van de signaal service-trigger voor Azure Functions
@@ -200,7 +200,7 @@ InvocationContext bevat alle inhoud in het bericht verzenden van de signalerings
 |ConnectionId| De verbindings-ID van de client die het bericht verzendt.|
 |UserId| De gebruikers-id van de client die het bericht verzendt.|
 |Kopteksten| De headers van de aanvraag.|
-|Query’s uitvoeren| De query van de aanvraag wanneer clients verbinding maken met de service.|
+|Query| De query van de aanvraag wanneer clients verbinding maken met de service.|
 |Claims| De claims van de client.|
 
 ## <a name="using-parameternames"></a>`ParameterNames` gebruiken

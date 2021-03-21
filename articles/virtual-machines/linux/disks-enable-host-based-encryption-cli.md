@@ -8,12 +8,12 @@ ms.date: 08/24/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 94a691badf056c8e93f47ae8d052fc1388b34e4c
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 3eecb584f468bc170f0325da8d734a1890691483
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98737469"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104601768"
 ---
 # <a name="use-the-azure-cli-to-enable-end-to-end-encryption-using-encryption-at-host"></a>De Azure CLI gebruiken om end-to-end versleuteling in te scha kelen met behulp van versleuteling op de host
 
@@ -23,10 +23,6 @@ Wanneer u versleuteling inschakelt op de host, worden gegevens die op de VM-host
 
 [!INCLUDE [virtual-machines-disks-encryption-at-host-restrictions](../../../includes/virtual-machines-disks-encryption-at-host-restrictions.md)]
 
-### <a name="supported-regions"></a>Ondersteunde regio’s
-
-[!INCLUDE [virtual-machines-disks-encryption-at-host-regions](../../../includes/virtual-machines-disks-encryption-at-host-regions.md)]
-
 ### <a name="supported-vm-sizes"></a>Ondersteunde VM-grootten
 
 [!INCLUDE [virtual-machines-disks-encryption-at-host-suported-sizes](../../../includes/virtual-machines-disks-encryption-at-host-suported-sizes.md)]
@@ -35,7 +31,20 @@ Mogelijk vindt u ook de VM-grootten via een programma. Zie de sectie [ondersteun
 
 ## <a name="prerequisites"></a>Vereisten
 
-Als u versleuteling wilt gebruiken op de host voor uw Vm's of virtuele-machine schaal sets, moet u de functie inschakelen voor uw abonnement. Stuur een e-mail naar encryptionAtHost@microsoft.com met uw abonnement-id's om de functie in te scha kelen voor uw abonnementen.
+U moet de functie voor uw abonnement inschakelen voordat u de eigenschap EncryptionAtHost voor uw virtuele machine/VMSS gebruikt. Volg de onderstaande stappen om de functie in te scha kelen voor uw abonnement:
+
+1.  Voer de volgende opdracht uit om de functie voor uw abonnement te registreren
+
+    ```azurecli
+    az feature register --namespace Microsoft.Compute --name EncryptionAtHost
+    ```
+ 
+2.  Controleer of de registratie status is geregistreerd (een paar minuten duurt) met behulp van de onderstaande opdracht voordat u de functie uitprobeert.
+
+    ```azurecli
+    az feature show --namespace Microsoft.Compute --name EncryptionAtHost
+    ```
+
 
 ### <a name="create-an-azure-key-vault-and-diskencryptionset"></a>Een Azure Key Vault en DiskEncryptionSet maken
 

@@ -6,15 +6,15 @@ metadata:
   description: Azure Kinect DK is een ontwikkelaarskit met geavanceerde AI-sensoren die geavanceerde computer vision- en spraakmodellen bieden. Kinect bevat een dieptesensor, een ruimtelijke microfoonmatrix met videocamera en een oriëntatiesensor als een klein alles-in-een-apparaat met meerdere modi, opties en SDK's.
   ms.prod: kinect-dk
   ms.topic: landing-page
-  author: tesych
-  ms.author: tesych
-  ms.date: 03/11/2020
-  ms.openlocfilehash: f1691507d75d6de630f3c5a48cd59c8cc22b5999
-  ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-  ms.translationtype: HT
+  author: qm13
+  ms.author: quentinm
+  ms.date: 03/18/2021
+  ms.openlocfilehash: bf23c59fb200135f6ac962fbb463295823225641
+  ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+  ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 10/09/2020
-  ms.locfileid: "85277879"
+  ms.lasthandoff: 03/19/2021
+  ms.locfileid: "104654744"
 landingContent:
 - title: Over Azure Kinect DK
   linkLists:
@@ -75,7 +75,7 @@ landingContent:
     - text: Sensor-SDK en - API
       url: https://microsoft.github.io/Azure-Kinect-Sensor-SDK/master/index.html
     - text: Body Tracking-SDK en -API
-      url: https://microsoft.github.io/Azure-Kinect-Body-Tracking/release/1.x.x/index.html
+      url: https://microsoft.github.io/Azure-Kinect-Body-Tracking/release/1.1.0/index.html
     - text: Vision-services
       url: https://azure.microsoft.com/services/cognitive-services/directory/vision/
     - text: Spraakservices

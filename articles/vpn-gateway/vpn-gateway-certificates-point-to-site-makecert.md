@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 09/02/2020
 ms.author: cherylmc
 ms.openlocfilehash: 55e22ebec5853d6b4f10b53be8e24f4dbebe4e1f
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94659774"
 ---
 # <a name="generate-and-export-certificates-for-point-to-site-connections-using-makecert"></a>Certificaten voor punt-naar-site-verbindingen genereren en exporteren met MakeCert

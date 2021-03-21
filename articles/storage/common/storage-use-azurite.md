@@ -9,10 +9,10 @@ ms.subservice: common
 ms.topic: how-to
 ms.custom: devx-track-csharp
 ms.openlocfilehash: b5051a5e29f9e34c43963a9a264ee47e2ad7b04a
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92490778"
 ---
 # <a name="use-the-azurite-emulator-for-local-azure-storage-development"></a>De Azurite-emulator gebruiken voor het ontwikkelen van lokale Azure Storage
@@ -136,7 +136,7 @@ Ga na het installeren en maken van Azurite naar [Azurite uitvoeren vanaf een opd
 > [!NOTE]
 > Azurite kan niet worden uitgevoerd vanaf de opdracht regel als u de Visual Studio code extension alleen hebt geïnstalleerd. Gebruik in plaats daarvan het Visual Studio code-opdracht palet. Zie [Install and run the Azurite Visual Studio code extension](#install-and-run-the-azurite-visual-studio-code-extension)(Engelstalig) voor meer informatie.
 
-Als u direct aan de slag wilt gaan met de opdracht regel, maakt u een map met de naam *c:\azurite*en start u Azurite door de volgende opdracht te geven:
+Als u direct aan de slag wilt gaan met de opdracht regel, maakt u een map met de naam *c:\azurite* en start u Azurite door de volgende opdracht te geven:
 
 ```console
 azurite --silent --location c:\azurite --debug c:\azurite\debug.log
@@ -480,7 +480,7 @@ Maak in Storage Explorer verbinding met Azurite door de volgende stappen uit te 
 
 #### <a name="connect-to-azurite-using-https"></a>Verbinding maken met Azurite met behulp van HTTPS
 
-Standaard Storage Explorer geen HTTPS-eind punt openen dat gebruikmaakt van een zelfondertekend certificaat. Als u Azurite met HTTPS uitvoert, gebruikt u waarschijnlijk een zelfondertekend certificaat. In Storage Explorer kunt u SSL-certificaten importeren **Edit**via het  ->  dialoog venster**SSL-certificaten**bewerken  ->  **certificaten importeren** .
+Standaard Storage Explorer geen HTTPS-eind punt openen dat gebruikmaakt van een zelfondertekend certificaat. Als u Azurite met HTTPS uitvoert, gebruikt u waarschijnlijk een zelfondertekend certificaat. In Storage Explorer kunt u SSL-certificaten importeren via het  ->  dialoog venster **SSL-certificaten** bewerken  ->  **certificaten importeren** .
 
 ##### <a name="import-certificate-to-storage-explorer"></a>Certificaat importeren in Storage Explorer
 

@@ -14,10 +14,10 @@ ms.custom:
 - 'Role: IoT Device'
 - 'Role: Cloud Development'
 ms.openlocfilehash: ae8b01522a248b8b1dbdd255a9fcd55f16cf2369
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96461707"
 ---
 # <a name="develop-without-using-an-azure-iot-hub-sdk"></a>Ontwikkelen zonder gebruik te maken van een Azure IoT Hub SDK

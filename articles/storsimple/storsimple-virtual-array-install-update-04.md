@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 02/07/2017
 ms.author: alkohli
 ms.openlocfilehash: cc458f91a9b67ddd54e706575d29b8fc8618a2f7
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94534293"
 ---
 # <a name="install-update-04-on-your-storsimple-virtual-array"></a>Update 0,4 installeren op de virtuele StorSimple-matrix
@@ -97,7 +97,7 @@ Gebruik deze methode om updates te installeren op een apparaat met GA of update 
    
     ![Scherm afbeelding toont de software-update pagina met de huidige software versie.](./media/storsimple-virtual-array-install-update/update6m.png)
 
-## <a name="use-the-azure-portal"></a>Azure Portal gebruiken
+## <a name="use-the-azure-portal"></a>De Azure-portal gebruiken
 
 Als u update 0,2 en hoger uitvoert, wordt u aangeraden updates te installeren via de Azure Portal. Voor de portal procedure moet de gebruiker de updates scannen, downloaden en installeren. Deze procedure duurt circa 7 minuten om te volt ooien. Voer de volgende stappen uit om de update of hotfix te installeren.
 

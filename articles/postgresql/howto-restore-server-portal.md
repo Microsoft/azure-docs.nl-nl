@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 6/30/2020
 ms.openlocfilehash: 82cec4cc448f0ec30aecf6f8a69f399e0abbdde0
-ms.sourcegitcommit: 0830e02635d2f240aae2667b947487db01f5fdef
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97706946"
 ---
 # <a name="how-to-backup-and-restore-a-server-in-azure-database-for-postgresql---single-server-using-the-azure-portal"></a>Een back-up maken en herstellen van een server in Azure Database for PostgreSQL-één server met behulp van de Azure Portal
@@ -33,7 +33,7 @@ Wanneer u een server maakt via de Azure Portal, selecteert u in het venster **pr
 Zie de [Snelstartgids van Azure database for postgresql server](quickstart-create-server-database-portal.md)voor meer informatie over het instellen van deze waarden tijdens het maken.
 
 De Bewaar periode van een back-up van een server kan worden gewijzigd door de volgende stappen uit te voeren:
-1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
+1. Meld u aan bij de [Azure Portal](https://portal.azure.com/).
 2. Selecteer uw Azure Database for PostgreSQL-server. Met deze actie wordt de pagina **overzicht** geopend.
 3. Selecteer **prijs categorie** in het menu onder **instellingen**. Met de schuif regelaar kunt u de **Bewaar periode voor back-ups** wijzigen van 7 tot 35 dagen.
 In de onderstaande scherm afbeelding is meer dan 34 dagen verg root.

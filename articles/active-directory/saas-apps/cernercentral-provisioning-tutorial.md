@@ -11,10 +11,10 @@ ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: arvinh
 ms.openlocfilehash: 1f82cab1172e7293e2a5910d35280eefb30ed49e
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94357450"
 ---
 # <a name="tutorial-configure-cerner-central-for-automatic-user-provisioning"></a>Zelf studie: configureren van CERN-centraal voor het automatisch inrichten van gebruikers
@@ -33,7 +33,7 @@ In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan d
 
 ## <a name="assigning-users-to-cerner-central"></a>Gebruikers toewijzen aan CERN-centraal
 
-Azure Active Directory gebruikt een concept met de naam 'toewijzingen' om te bepalen welke gebruikers toegang moeten krijgen tot geselecteerde apps. In de context van het automatisch inrichten van gebruikers accounts, worden alleen de gebruikers en groepen die zijn toegewezen aan een toepassing in azure AD gesynchroniseerd. 
+Azure Active Directory gebruikt een concept met de naam 'toewijzingen' om te bepalen welke gebruikers toegang moeten krijgen tot geselecteerde apps. In de context van automatische inrichting van gebruikersaccounts worden alleen de gebruikers en groepen gesynchroniseerd die zijn toegewezen aan een toepassing in Azure AD. 
 
 Voordat u de inrichtings service configureert en inschakelt, moet u bepalen welke gebruikers en/of groepen in azure AD de gebruikers vertegenwoordigen die toegang nodig hebben tot de CERN-centrale. Eenmaal besloten, kunt u deze gebruikers toewijzen aan CERN-centraal door de volgende instructies te volgen:
 
@@ -41,7 +41,7 @@ Voordat u de inrichtings service configureert en inschakelt, moet u bepalen welk
 
 ### <a name="important-tips-for-assigning-users-to-cerner-central"></a>Belang rijke tips voor het toewijzen van gebruikers aan CERN-centraal
 
-* Het is raadzaam dat één Azure AD-gebruiker wordt toegewezen aan CERN-centraal om de inrichtings configuratie te testen. Extra gebruikers en/of groepen kunnen later worden toegewezen.
+* Het is raadzaam dat één Azure AD-gebruiker wordt toegewezen aan CERN-centraal om de inrichtings configuratie te testen. Extra gebruikers en/of groepen kunnen dan later nog worden toegewezen.
 
 * Als de eerste test voor één gebruiker is voltooid, wordt door CERN-centraal aangeraden de volledige lijst met gebruikers toe te wijzen die zijn bedoeld voor toegang tot een CERN-oplossing (niet alleen voor CERN-centraal), zodat deze kan worden ingericht aan het gebruikers schema van de CERN.  Andere CERN-oplossingen maken gebruik van deze lijst met gebruikers in het rooster van de gebruiker.
 
@@ -52,7 +52,7 @@ Voordat u de inrichtings service configureert en inschakelt, moet u bepalen welk
 In deze sectie wordt u begeleid bij het verbinden van uw Azure AD-gebruikers schema voor de configuratie van de SCIM-gebruikers account van de CERN-gebruiker en de inrichtings service te configureren voor het maken, bijwerken en uitschakelen van toegewezen gebruikers accounts in CERN-centraal op basis van de gebruikers-en groeps toewijzing in azure AD.
 
 > [!TIP]
-> U kunt er ook voor kiezen om op SAML gebaseerde single Sign-On te scha kelen voor CERN-centraal, volgens de instructies in [Azure Portal](https://portal.azure.com). Eenmalige aanmelding kan onafhankelijk van automatische inrichting worden geconfigureerd, hoewel deze twee functies elkaar aanvullen. Zie voor meer informatie de [zelf studie voor de eenmalige aanmelding in de CERN-centraal](cernercentral-tutorial.md).
+> U kunt er ook voor kiezen om op SAML gebaseerde single Sign-On te scha kelen voor CERN-centraal, volgens de instructies in [Azure Portal](https://portal.azure.com). Eenmalige aanmelding kan onafhankelijk van automatische inrichting worden geconfigureerd, maar deze twee functies vormen een aanvulling op elkaar. Zie voor meer informatie de [zelf studie voor de eenmalige aanmelding in de CERN-centraal](cernercentral-tutorial.md).
 
 ### <a name="to-configure-automatic-user-account-provisioning-to-cerner-central-in-azure-ad"></a>Automatische toewijzing van gebruikers accounts configureren voor CERN-centraal in azure AD:
 
@@ -92,7 +92,7 @@ Als u gebruikers accounts wilt inrichten voor CERN-centraal, moet u een CERN-cen
 
    ![Multivisioning van CERN-centraal](./media/cernercentral-provisioning-tutorial/Cerner.PNG)
 
-9. Vul de volgende velden in onder **beheerders referenties** :
+9. Vul de volgende velden in onder **beheerders referenties**:
 
    * Voer in het veld **Tenant-URL** een URL in de onderstaande notatie in, waarbij ' User-rooster-id ' wordt vervangen door de realm-id die u hebt verkregen in stap #4.
 
@@ -102,9 +102,9 @@ Als u gebruikers accounts wilt inrichten voor CERN-centraal, moet u een CERN-cen
 
    * Voer in het veld **geheim token** het OAuth Bearer-token in dat u in stap #3 hebt gegenereerd en klik op **verbinding testen**.
 
-   * U ziet een geslaagde melding aan de upperright-zijde van uw portal.
+   * U ziet een melding van slagen aan de rechterbovenzijde van uw portal.
 
-1. Voer het e-mail adres in van een persoon of groep die inrichtings fout meldingen moet ontvangen in het veld **e-mail melding** en schakel het selectie vakje hieronder in.
+1. Voer het e-mailadres in van een persoon of groep die meldingen van inrichtingsfouten moet ontvangen in het veld **E-mailadres voor meldingen** en schakel het selectievakje hieronder in.
 
 1. Klik op **Opslaan**.
 
@@ -127,4 +127,4 @@ Zie [Rapportage over automatische inrichting van gebruikersaccounts](../app-prov
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Meer informatie over het controleren van Logboeken en het ophalen van rapporten over inrichtings activiteiten](../app-provisioning/check-status-user-account-provisioning.md).
+* [Meer informatie over het controleren van logboeken en het ophalen van rapporten over de inrichtingsactiviteit](../app-provisioning/check-status-user-account-provisioning.md).

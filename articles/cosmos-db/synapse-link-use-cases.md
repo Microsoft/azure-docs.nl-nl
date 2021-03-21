@@ -7,13 +7,13 @@ ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: ramkris
 ms.openlocfilehash: 9855a53ebdf7501907b3e1e63d59823d3a0b0209
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96463119"
 ---
-# <a name="azure-synapse-link-for-azure-cosmos-db-near-real-time-analytics-use-cases"></a>Azure Synapse Link voor Azure Cosmos DB: Use cases voor bijna realtime analyses
+# <a name="azure-synapse-link-for-azure-cosmos-db-near-real-time-analytics-use-cases"></a>Azure Synapse Link voor Azure Cosmos DB: Toepassingsscenario’s voor bijna realtime-analyse
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
 
 De [Azure Synapse-koppeling](synapse-link.md) voor Azure Cosmos DB is een native HTAP-functie (hybride transactionele) van de Cloud waarmee u bijna realtime analyses kunt uitvoeren via operationele gegevens. Synapse-koppeling maakt een strakkere integratie tussen Azure Cosmos DB en Azure Synapse Analytics.
@@ -133,7 +133,7 @@ Laat ons het voor beeld van een e-commerce-bedrijf CompanyXYZ met wereld wijde b
 
 Raadpleeg de volgende documenten voor meer informatie:
 
-* [Azure Synapse-koppeling voor Azure Cosmos DB](synapse-link.md) 
+* [Azure Synapse Link voor Azure Cosmos DB](synapse-link.md) 
 
 * [Analytische opslag van Azure Cosmos DB](analytical-store-introduction.md)
 

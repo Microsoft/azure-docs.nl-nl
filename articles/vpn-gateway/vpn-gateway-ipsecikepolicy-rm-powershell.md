@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 09/02/2020
 ms.author: yushwang
 ms.openlocfilehash: 96931d2dd94a8a31021ebe62caaefc54f643b007
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94649259"
 ---
 # <a name="configure-ipsecike-policy-for-s2s-vpn-or-vnet-to-vnet-connections"></a>IPsec/IKE-beleid configureren voor S2S VPN-verbindingen of VNet-naar-VNet-verbindingen
@@ -34,8 +34,9 @@ Dit artikel bevat instructies voor het maken en configureren van een IPsec/IKE-b
 
 > [!IMPORTANT]
 > 1. Houd er rekening mee dat IPsec/IKE-beleid alleen werkt op de volgende gateway-Sku's:
->    * ***VpnGw1, VpnGw2, VpnGw3** _ (op route gebaseerd) _ ***standaard** _ en _*_High Performance_*_ (op route gebaseerd)
-> 2. U kunt slechts _*_één_*_ beleids combinatie voor een bepaalde verbinding opgeven.
+>    * ***VpnGw1, VpnGw2, VpnGw3*** (op route gebaseerd)
+>    * ***Standard** _ en _ *_High Performance_** (op route gebaseerd)
+> 2. U kunt maar ***één*** beleidscombinatie opgeven voor een bepaalde verbinding.
 > 3. U moet alle algoritmen en para meters opgeven voor zowel IKE (hoofd modus) als IPsec (snelle modus). Gedeeltelijke beleidsspecificatie is niet toegestaan.
 > 4. Neem contact op met de specificaties van de leverancier van uw VPN-apparaat om ervoor te zorgen dat het beleid wordt ondersteund op uw on-premises VPN-apparaten. S2S-of VNet-naar-VNet-verbindingen kunnen niet bepalen of het beleid niet compatibel is.
 
@@ -55,7 +56,7 @@ De instructies in dit artikel helpen u bij het instellen en configureren van IPs
 
 De volgende tabel bevat de ondersteunde cryptografische algoritmen en sleutel sterktes die door de klanten kunnen worden geconfigureerd:
 
-| _ *IPSec/IKEv2**  | **Opties**    |
+| **IPsec/IKEv2**  | **Opties**    |
 | ---  | --- 
 | IKEv2-versleuteling | AES256, AES192, AES128, DES3, DES  
 | IKEv2-integriteit  | SHA384, SHA256, SHA1, MD5  |

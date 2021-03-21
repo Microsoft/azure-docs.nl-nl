@@ -4,10 +4,10 @@ description: Meer informatie over het maken van een logische app die gebruikmaak
 ms.topic: conceptual
 ms.date: 05/27/2019
 ms.openlocfilehash: 459ac43a6260e046befbe58d3531bac494903d51
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102038336"
 ---
 # <a name="how-to-integrate-the-common-alert-schema-with-logic-apps"></a>Het algemene waarschuwings schema integreren met Logic Apps

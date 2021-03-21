@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 10/01/2019
 ms.author: mbullwin
 ms.openlocfilehash: 74f891ba7f5b400b5782565e670539167f4e2464
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97703429"
 ---
 # <a name="how-to-use-the-anomaly-detector-api-on-your-time-series-data"></a>Procedure: afwijkende detector API gebruiken op uw tijdreeks gegevens  
@@ -71,4 +71,4 @@ In de volgende voor beelden ziet u een anomalie detectie-API-resultaat op versch
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Wat is de Anomaly Detector-API?](../overview.md)
-* [Snelstartgids: afwijkingen in uw time series-gegevens detecteren met behulp van de anomalie detectie](../quickstarts/client-libraries.md)
+* [Snelstart: Anomalieën detecteren in uw tijdreeksgegevens met behulp van de Anomaly Detector](../quickstarts/client-libraries.md)

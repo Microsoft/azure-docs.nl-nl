@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/27/2020
 ms.author: alkohli
 ms.openlocfilehash: fa65a7354112a2b220686372459b348d45832dd9
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96466637"
 ---
 Voer de volgende stappen uit in de lokale webgebruikersinterface van uw apparaat. Deze stap duurt ongeveer 15 minuten, met inbegrip van het uploaden van het VPN-configuratie bestand (of het servicetag bestand). 
@@ -17,40 +17,40 @@ Voer de volgende stappen uit in de lokale webgebruikersinterface van uw apparaat
 
     ![Lokale gebruikers interface 1 configureren](../articles/databox-online/media/azure-stack-edge-pro-r-configure-vpn-powershell/configure-vpn-local-ui-1.png)
 
-2. Op de Blade **VPN configureren** :
+2. Doe het volgende op de blade **VPN configureren**:
 
-    - **VPN-instellingen** inschakelen.
+    - Schakel **VPN-instellingen** in.
     - Geef het **gedeelde VPN-geheim** op. Dit is de gedeelde sleutel die u hebt ingevoerd tijdens het maken van de Azure VPN-verbindings resource.
-    - Geef het **IP-adres van de VPN-gateway** op. Dit is het IP-adres van de lokale netwerk gateway van Azure.
-    - Selecteer voor **PFS-groep** de optie **geen**. 
-    - Selecteer voor **DH**-groep **group2**.
-    - Selecteer voor **IPSec-integriteits methode** **sha256**.
+    - Geef het **IP-adres van de VPN-gateway** op. Dit is het IP-adres van de lokale netwerkgateway van Azure.
+    - Selecteer **Geen** bij **PFS-groep**. 
+    - Selecteer **Groep2** bij **DH-groep**.
+    - Selecteer **IPsec-integriteitsmethode** bij **SHA256**.
     - Voor **IPSec cipher-transformatie constanten** selecteert u **GCMAES256**.
-    - Selecteer **GCMAES256** voor **IPSec-verificatie transformatie constanten**.
-    - Selecteer voor **IKE-versleutelings methode** **AES256**.
+    - Selecteer **Transformatieconstanten voor IPseccipher-verificatie** bij **GCMAES256**.
+    - Selecteer **IKE-versleutelingsmethode** bij **AES256**.
     - Selecteer **Toepassen**.
 
-        ![Lokale gebruikers interface 2 configureren](../articles/databox-online/media/azure-stack-edge-pro-r-configure-vpn-powershell/configure-vpn-local-ui-2.png)
+        ![Lokale gebruikersinterface 2 configureren](../articles/databox-online/media/azure-stack-edge-pro-r-configure-vpn-powershell/configure-vpn-local-ui-2.png)
 
     Ga naar [over cryptografische vereisten en Azure VPN-gateways](../articles/vpn-gateway/vpn-gateway-about-compliance-crypto.md#ipsecike-policy-faq)voor meer informatie over de ondersteunde cryptografische algoritmen. 
 
-3. Selecteer **uploaden** als u het configuratie bestand voor de VPN-route wilt uploaden. 
+3. Als u het configuratiebestand voor de VPN-route wilt uploaden, selecteert u **Uploaden**. 
 
-    ![Lokale gebruikers interface 3 configureren](../articles/databox-online/media/azure-stack-edge-pro-r-configure-vpn-powershell/configure-vpn-local-ui-3.png)
+    ![Lokale gebruikersinterface 3 configureren](../articles/databox-online/media/azure-stack-edge-pro-r-configure-vpn-powershell/configure-vpn-local-ui-3.png)
 
     - Blader naar het *JSON* -bestand met Service Tags dat u in de vorige stap hebt gedownload op uw lokale systeem.
-    - Selecteer de regio als de Azure-regio die is gekoppeld aan het apparaat, het virtuele netwerk en de gateways.
+    - Selecteer de regio als de Azure-regio die gekoppeld is aan het apparaat, het virtuele netwerk en de gateways.
     - Selecteer **Toepassen**.
 
-        ![Lokale gebruikers interface 4 configureren](../articles/databox-online/media/azure-stack-edge-pro-r-configure-vpn-powershell/configure-vpn-local-ui-4.png)
+        ![Lokale gebruikersinterface 4 configureren](../articles/databox-online/media/azure-stack-edge-pro-r-configure-vpn-powershell/configure-vpn-local-ui-4.png)
     
     De upload duurt ongeveer 7-8 minuten op het apparaat.
 
-4. Als u client-specifieke routes wilt toevoegen, moet u IP-adresbereiken zodanig configureren dat ze alleen toegankelijk zijn via VPN. 
+4. U voegt client-specifieke routes toe door IP-adresbereiken te configureren die alleen met VPN mogen worden geopend. 
 
-    - Selecteer **configureren** onder **IP-adresbereiken voor toegang via alleen VPN**.
-    - Geef een geldig IPv4-bereik op en selecteer **toevoegen**. Herhaal de stappen om andere bereiken toe te voegen.
+    - Selecteer onder **IP-adresbereiken die alleen met VPN mogen worden geopend** de optie **Configureren**.
+    - Geef een geldig IPv4-bereik op en selecteer **Toevoegen**. Herhaal de stappen om andere bereiken toe te voegen.
     - Selecteer **Toepassen**.
 
-        ![Lokale gebruikers interface 5 configureren](../articles/databox-online/media/azure-stack-edge-pro-r-configure-vpn-powershell/configure-vpn-local-ui-5.png)
+        ![Lokale gebruikersinterface 5 configureren](../articles/databox-online/media/azure-stack-edge-pro-r-configure-vpn-powershell/configure-vpn-local-ui-5.png)
 

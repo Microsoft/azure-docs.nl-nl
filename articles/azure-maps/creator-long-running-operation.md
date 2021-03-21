@@ -10,16 +10,16 @@ services: azure-maps
 manager: philmea
 ms.custom: mvc
 ms.openlocfilehash: f5fb7c8059c8b98e8ec514a4159e96f48db7b1ad
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96906196"
 ---
 # <a name="creator-preview-long-running-operation-api"></a>Creator (preview) Long-Running bewerkings-API
 
 > [!IMPORTANT]
-> Azure Maps Creator-Services zijn momenteel beschikbaar als open bare preview.
+> Azure Maps Creator-services zijn momenteel beschikbaar als openbare preview.
 > Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 Sommige Api's in Azure Maps gebruiken een [asynchroon Request-Reply patroon](/azure/architecture/patterns/async-request-reply). Met dit patroon kan Azure Maps Maxi maal beschik bare en responsieve services bieden. In dit artikel wordt uitgelegd hoe u de specifieke implementatie van langlopende asynchrone achtergrond verwerking van Azure-kaarten uitvoert.

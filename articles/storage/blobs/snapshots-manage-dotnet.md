@@ -11,10 +11,10 @@ ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-csharp
 ms.openlocfilehash: ae1d72c30fb7c45c92f24ec5132859a45c6ae953
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95543371"
 ---
 # <a name="create-and-manage-a-blob-snapshot-in-net"></a>Een BLOB-moment opname maken en beheren in .NET
@@ -25,7 +25,7 @@ Zie [BLOB-moment opnamen](snapshots-overview.md)voor meer informatie over blob-m
 
 ## <a name="create-a-snapshot"></a>Een momentopname maken
 
-# <a name="net-v12"></a>[.NET-V12](#tab/dotnet)
+# <a name="net-v12"></a>[.NET v12](#tab/dotnet)
 
 Gebruik een van de volgende methoden om een moment opname van een blok-BLOB te maken met versie 12. x van de Azure Storage-client bibliotheek voor .NET.
 
@@ -78,7 +78,7 @@ private static async Task CreateBlockBlobSnapshot(string accountName, string con
 }
 ```
 
-# <a name="net-v11"></a>[.NET-V11](#tab/dotnet11)
+# <a name="net-v11"></a>[.NET v11](#tab/dotnet11)
 
 Gebruik een van de volgende methoden om een moment opname van een blok-BLOB te maken met versie 11. x van de Azure Storage-client bibliotheek voor .NET.
 
@@ -127,7 +127,7 @@ private static async Task CreateBlockBlobSnapshot(CloudBlobContainer container)
 
 Als u een BLOB wilt verwijderen, moet u eerst alle moment opnamen van die BLOB verwijderen. U kunt een moment opname afzonderlijk verwijderen of opgeven dat alle moment opnamen moeten worden verwijderd wanneer de bron-BLOB wordt verwijderd. Als u probeert een BLOB te verwijderen die nog moment opnamen bevat, treedt er een fout op.
 
-# <a name="net-v12"></a>[.NET-V12](#tab/dotnet)
+# <a name="net-v12"></a>[.NET v12](#tab/dotnet)
 
 Als u een BLOB en de bijbehorende moment opnamen wilt verwijderen met versie 12. x van de Azure Storage-client bibliotheek voor .NET, gebruikt u een van de volgende methoden en voegt u de [DeleteSnapshotsOption](/dotnet/api/azure.storage.blobs.models.deletesnapshotsoption) -Enum toe:
 
@@ -142,7 +142,7 @@ In het volgende code voorbeeld ziet u hoe u een BLOB en de bijbehorende moment o
 await blobClient.DeleteIfExistsAsync(DeleteSnapshotsOption.IncludeSnapshots, null, default);
 ```
 
-# <a name="net-v11"></a>[.NET-V11](#tab/dotnet11)
+# <a name="net-v11"></a>[.NET v11](#tab/dotnet11)
 
 Als u een BLOB en de bijbehorende moment opnamen wilt verwijderen met versie 11. x van de Azure Storage-client bibliotheek voor .NET, gebruikt u een van de volgende methoden voor het verwijderen van blobs en voegt u de [DeleteSnapshotsOption](/dotnet/api/microsoft.azure.storage.blob.deletesnapshotsoption) -Enum toe:
 

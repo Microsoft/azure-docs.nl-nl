@@ -4,10 +4,10 @@ description: In dit artikel wordt uitgelegd hoe u Azure Service Bus bericht enti
 ms.topic: article
 ms.date: 09/29/2020
 ms.openlocfilehash: ea1acab3d0a86b0064f8b3eef7bfd1496bd17041
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94543048"
 ---
 # <a name="suspend-and-reactivate-messaging-entities-disable"></a>Messa ging-entiteiten onderbreken en opnieuw activeren (uitschakelen)
@@ -21,15 +21,15 @@ Een opschorting of heractivering kan worden uitgevoerd door de gebruiker of door
 ## <a name="queue-status"></a>Wachtrij status 
 De statussen die kunnen worden ingesteld voor een **wachtrij** zijn:
 
--   **Actief** : de wachtrij is actief. U kunt berichten verzenden naar en berichten ontvangen van de wachtrij. 
--   **Uitgeschakeld** : de wachtrij is onderbroken. Het is gelijk aan het instellen van zowel **SendDisabled** als **ReceiveDisabled**. 
--   **SendDisabled** : u kunt geen berichten verzenden naar de wachtrij, maar u ontvangt wel berichten. U krijgt een uitzonde ring als u probeert berichten te verzenden naar de wachtrij. 
--   **ReceiveDisabled** : u kunt berichten verzenden naar de wachtrij, maar kunt u er geen berichten van ontvangen. U ontvangt een uitzonde ring als u berichten in de wachtrij probeert te ontvangen.
+-   **Actief**: de wachtrij is actief. U kunt berichten verzenden naar en berichten ontvangen van de wachtrij. 
+-   **Uitgeschakeld**: de wachtrij is onderbroken. Het is gelijk aan het instellen van zowel **SendDisabled** als **ReceiveDisabled**. 
+-   **SendDisabled**: u kunt geen berichten verzenden naar de wachtrij, maar u ontvangt wel berichten. U krijgt een uitzonde ring als u probeert berichten te verzenden naar de wachtrij. 
+-   **ReceiveDisabled**: u kunt berichten verzenden naar de wachtrij, maar kunt u er geen berichten van ontvangen. U ontvangt een uitzonde ring als u berichten in de wachtrij probeert te ontvangen.
 
 
 ### <a name="change-the-queue-status-in-the-azure-portal"></a>Wijzig de status van de wachtrij in de Azure Portal: 
 
-1. Navigeer in het Azure Portal naar uw Service Bus naam ruimte. 
+1. Ga in Azure Portal naar uw Service Bus-naamruimte. 
 1. Selecteer de wachtrij waarvan u de status wilt wijzigen. U ziet wacht rijen in het onderste deel venster in het midden. 
 1. Op de pagina **Service Bus wachtrij** ziet u de huidige status van de wachtrij als een Hyper link. Als het **overzicht** niet is geselecteerd in het linkermenu, selecteert u dit om de status van de wachtrij weer te geven. Selecteer de huidige status van de wachtrij om deze te wijzigen. 
 
@@ -57,9 +57,9 @@ U kunt de status van het onderwerp in de Azure Portal wijzigen. Selecteer de hui
 :::image type="content" source="./media/entity-suspend/topic-state-change.png" alt-text="Onderwerps status wijzigen":::
 
 De statussen die kunnen worden ingesteld voor een **onderwerp** zijn:
-- **Actief** : het onderwerp is actief. U kunt berichten verzenden naar het onderwerp. 
-- **Uitgeschakeld** : het onderwerp is onderbroken. U kunt geen berichten verzenden naar het onderwerp. 
-- **SendDisabled** : hetzelfde effect als **uitgeschakeld**. U kunt geen berichten verzenden naar het onderwerp. U krijgt een uitzonde ring als u probeert berichten te verzenden naar het onderwerp. 
+- **Actief**: het onderwerp is actief. U kunt berichten verzenden naar het onderwerp. 
+- **Uitgeschakeld**: het onderwerp is onderbroken. U kunt geen berichten verzenden naar het onderwerp. 
+- **SendDisabled**: hetzelfde effect als **uitgeschakeld**. U kunt geen berichten verzenden naar het onderwerp. U krijgt een uitzonde ring als u probeert berichten te verzenden naar het onderwerp. 
 
 ## <a name="subscription-status"></a>Abonnements status
 U kunt de abonnements status wijzigen in de Azure Portal. Selecteer de huidige status van het abonnement om de volgende pagina weer te geven, waarmee u de status kunt wijzigen. 
@@ -67,9 +67,9 @@ U kunt de abonnements status wijzigen in de Azure Portal. Selecteer de huidige s
 :::image type="content" source="./media/entity-suspend/subscription-state-change.png" alt-text="Abonnements status wijzigen":::
 
 De statussen die kunnen worden ingesteld voor een **abonnement** zijn:
-- **Actief** : het abonnement is actief. U kunt berichten ontvangen frm het abonnement.
-- **Uitgeschakeld** : het abonnement is onderbroken. U kunt geen berichten van het abonnement ontvangen. 
-- **ReceiveDisabled** : hetzelfde effect als **uitgeschakeld**. U kunt geen berichten van het abonnement ontvangen. U krijgt een uitzonde ring als u berichten probeert te ontvangen voor het abonnement.
+- **Actief**: het abonnement is actief. U kunt berichten ontvangen frm het abonnement.
+- **Uitgeschakeld**: het abonnement is onderbroken. U kunt geen berichten van het abonnement ontvangen. 
+- **ReceiveDisabled**: hetzelfde effect als **uitgeschakeld**. U kunt geen berichten van het abonnement ontvangen. U krijgt een uitzonde ring als u berichten probeert te ontvangen voor het abonnement.
 
 | Onderwerps status | Abonnements status | Gedrag | 
 | ------------ | ------------------- | -------- | 

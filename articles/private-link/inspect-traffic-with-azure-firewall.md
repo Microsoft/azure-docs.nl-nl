@@ -1,5 +1,5 @@
 ---
-title: Azure Firewall gebruiken om verkeer te controleren dat is bestemd voor een persoonlijk eind punt
+title: Azure Firewall gebruiken om verkeer te controleren dat is bestemd voor een privé-eindpunt
 titleSuffix: Azure Private Link
 description: Meer informatie over hoe u verkeer kunt controleren dat is bestemd voor een persoonlijk eind punt met behulp van Azure Firewall.
 services: private-link
@@ -9,13 +9,13 @@ ms.topic: how-to
 ms.date: 09/02/2020
 ms.author: allensu
 ms.openlocfilehash: 3ed349616ae6456913c19bb073f6e9ea28e7d549
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100575123"
 ---
-# <a name="use-azure-firewall-to-inspect-traffic-destined-to-a-private-endpoint"></a>Azure Firewall gebruiken om verkeer te controleren dat is bestemd voor een persoonlijk eind punt
+# <a name="use-azure-firewall-to-inspect-traffic-destined-to-a-private-endpoint"></a>Azure Firewall gebruiken om verkeer te controleren dat is bestemd voor een privé-eindpunt
 
 Persoonlijk Azure-eind punt is de fundamentele bouw steen voor persoonlijke Azure-koppelingen. Met persoonlijke eind punten kunnen Azure-resources worden geïmplementeerd in een virtueel netwerk om privé te communiceren met persoonlijke koppelings bronnen.
 

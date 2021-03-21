@@ -17,10 +17,10 @@ ms.date: 02/07/2017
 ms.author: jegeib
 ms.custom: devx-track-js, devx-track-csharp
 ms.openlocfilehash: 0bcbe35fc6d9f104325bec8a3404ad57a6376cf2
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94518121"
 ---
 # <a name="security-frame-sensitive-data--mitigations"></a>Beveiligings frame: gevoelige gegevens | Oplossingen 
@@ -54,7 +54,7 @@ ms.locfileid: "94518121"
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Grens van computer vertrouwen | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | N.v.t.  |
@@ -76,7 +76,7 @@ ms.locfileid: "94518121"
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Generic, webformulieren, MVC5, MVC6 |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | N.v.t.  |
@@ -129,7 +129,7 @@ public override void OnActionExecuting(ActionExecutingContext filterContext)
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [Procedure: Configuratie secties versleutelen in ASP.NET 2,0 met behulp van DPAPI](/previous-versions/msp-n-p/ff647398(v=pandp.10)), [een beveiligde configuratie provider opgeven](/previous-versions/68ze1hb2(v=vs.140)) [met behulp van Azure Key Vault om toepassings geheimen te beveiligen](/azure/architecture/multitenant-identity/web-api) |
@@ -140,7 +140,7 @@ public override void OnActionExecuting(ActionExecutingContext filterContext)
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [MSDN: kenmerk automatisch aanvullen](https://msdn.microsoft.com/library/ms533486(VS.85).aspx), [met behulp van automatisch aanvullen in HTML](/previous-versions/windows/internet-explorer/ie-developer/), [probleem met HTML-](/security-updates/SecurityBulletins/2010/ms10-071)opschoning, [automatisch aanvullen.](https://blog.mindedsecurity.com/2011/10/autocompleteagain.html) |
@@ -159,7 +159,7 @@ public override void OnActionExecuting(ActionExecutingContext filterContext)
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | N.v.t.  |
@@ -170,10 +170,10 @@ public override void OnActionExecuting(ActionExecutingContext filterContext)
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Database | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | SQL Azure, premises |
 | **Kenmerken**              | SQL-versie-V12, SQL-versie-MsSQL2016 |
-| **Referenties**              | [Dynamische gegevens maskering](/sql/relational-databases/security/dynamic-data-masking) |
+| **Referenties**              | [Dynamische gegevensmaskering](/sql/relational-databases/security/dynamic-data-masking) |
 | **Stappen** | Het doel van dynamische gegevens maskering is om de bloot stelling van gevoelige gegevens te beperken, zodat gebruikers die geen toegang tot de gegevens mogen hebben, deze kunnen bekijken. Dynamische gegevens maskering is niet bedoeld om te voor komen dat database gebruikers rechtstreeks verbinding kunnen maken met de data base en uitvoeren van uitgebreide query's waarmee delen van de gevoelige gegevens worden blootgesteld. Dynamische gegevens maskering is complementair met andere SQL Server beveiligings functies (controle, versleuteling, beveiliging op rijniveau...) en het wordt ten zeerste aangeraden om deze functie te gebruiken in combi natie met ze, zodat u de gevoelige gegevens in de data base beter kunt beveiligen. Houd er rekening mee dat deze functie alleen wordt ondersteund door SQL Server vanaf 2016 en Azure SQL Database. |
 
 ## <a name="ensure-that-passwords-are-stored-in-salted-hash-format"></a><a id="salted-hash"></a>Zorg ervoor dat wacht woorden worden opgeslagen in de gezouten hash-indeling
@@ -181,7 +181,7 @@ public override void OnActionExecuting(ActionExecutingContext filterContext)
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Database | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [Wacht woord-hashing met behulp van .NET crypto-Api's](https://docs.asp.net/en/latest/security/data-protection/consumer-apis/password-hashing.html) |
@@ -192,7 +192,7 @@ public override void OnActionExecuting(ActionExecutingContext filterContext)
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Database | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | SQL-versie-alle |
 | **Referenties**              | [Versleutelen van gevoelige gegevens in SQL Server](/previous-versions/sql/sql-server-2008-r2/ff848751(v=sql.105)), [How to: een kolom met gegevens in SQL Server](/sql/relational-databases/security/encryption/encrypt-a-column-of-data)versleutelen, [versleutelen per certificaat](/sql/t-sql/functions/encryptbycert-transact-sql) |
@@ -203,7 +203,7 @@ public override void OnActionExecuting(ActionExecutingContext filterContext)
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Database | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [Informatie over SQL Server Transparent Data Encryption (TDE)](/previous-versions/sql/sql-server-2008-r2/bb934049(v=sql.105)) |
@@ -214,7 +214,7 @@ public override void OnActionExecuting(ActionExecutingContext filterContext)
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Database | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | SQL Azure, premises |
 | **Kenmerken**              | SQL-versie-V12, SQL-versie-MsSQL2014 |
 | **Referenties**              | [Back-upversleuteling SQL database](/sql/relational-databases/backup-restore/backup-encryption) |
@@ -225,7 +225,7 @@ public override void OnActionExecuting(ActionExecutingContext filterContext)
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Web-API | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | MVC 5, MVC 6 |
 | **Kenmerken**              | ID-provider-ADFS, ID-provider-Azure AD |
 | **Referenties**              | N.v.t.  |
@@ -249,7 +249,7 @@ cacheLocation: 'localStorage', // enable this for IE, as sessionStorage does not
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Azure document DB | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | N.v.t.  |
@@ -271,7 +271,7 @@ cacheLocation: 'localStorage', // enable this for IE, as sessionStorage does not
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Grens van Service Fabric vertrouwen | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | Omgeving-Azure |
 | **Referenties**              | [Geheimen beheren in Service Fabric toepassingen](../../service-fabric/service-fabric-application-secret-management.md) |
@@ -282,7 +282,7 @@ cacheLocation: 'localStorage', // enable this for IE, as sessionStorage does not
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Dynamics CRM | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | N.v.t.  |
@@ -326,7 +326,7 @@ cacheLocation: 'localStorage', // enable this for IE, as sessionStorage does not
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Azure Storage | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | Para-BLOB |
 | **Referenties**              | [Azure Storage-service versleuteling voor Data-at-rest (preview-versie)](../../storage/common/storage-service-encryption.md) |
@@ -337,7 +337,7 @@ cacheLocation: 'localStorage', // enable this for IE, as sessionStorage does not
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Azure Storage | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [Versleuteling aan client zijde en Azure Key Vault voor Microsoft Azure Storage](../../storage/common/storage-client-side-encryption.md), [zelf studie: blobs versleutelen en ontsleutelen in Microsoft Azure Storage met behulp van Azure Key Vault](../../storage/blobs/storage-encrypt-decrypt-blobs-key-vault.md), [gegevens veilig opslaan in Azure Blob Storage met Azure-versleutelings uitbreidingen](/archive/blogs/partnercatalystteam/storing-data-securely-in-azure-blob-storage-with-azure-encryption-extensions) |
@@ -348,7 +348,7 @@ cacheLocation: 'localStorage', // enable this for IE, as sessionStorage does not
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Mobiele client | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen, Xamarin  |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [Instellingen en functies op uw apparaten beheren met Microsoft intune beleid](/mem/intune/configuration/), [sleutel hanger valetsleutel](https://components.xamarin.com/view/square.valet) |
@@ -398,7 +398,7 @@ Als de toepassing geen bedrijfs toepassing is, gebruikt u de door het platform v
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Mobiele client | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [Versleuteling van crypto grafie voor .net](https://www.ssware.com/cryptoobfuscator/obfuscator-net.htm) |
@@ -409,7 +409,7 @@ Als de toepassing geen bedrijfs toepassing is, gebruikt u de door het platform v
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | WCF | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | .NET Framework 3 |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [Fortify](https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.wcf_misconfiguration_weak_token) |
@@ -428,7 +428,7 @@ Stel clientCredentialType in op Certificate of Windows.
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | WCF | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen, .NET Framework 3 |
 | **Kenmerken**              | Beveiligings modus-Trans Port, beveiligings modus-bericht |
 | **Referenties**              | [MSDN](/previous-versions/msp-n-p/ff648500(v=pandp.10)), [Fortify Konink rijk](https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.wcf_misconfiguration_weak_class_reference), [basis principes van het magazine voor de WCF-beveiligings CoDe](https://www.codemag.com/article/0611051) |

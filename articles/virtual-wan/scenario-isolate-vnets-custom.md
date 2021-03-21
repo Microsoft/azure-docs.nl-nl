@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: cherylmc
 ms.openlocfilehash: ca1ee8418bc08d70a031d81a15dc1b4ace2f1a3a
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92461818"
 ---
 # <a name="scenario-custom-isolation-for-vnets"></a>Scenario: aangepaste isolatie voor VNets
@@ -55,7 +55,7 @@ Zie [about Virtual hub Routing](about-virtual-hub-routing.md)(Engelstalig) voor 
 
 ## <a name="workflow"></a><a name="architecture"></a>Werkstroom
 
-In **afbeelding 1**zijn er blauwe en rode VNet-verbindingen.
+In **afbeelding 1** zijn er blauwe en rode VNet-verbindingen.
 
 * Blue-verbonden VNets kunnen elkaar bereiken en alle vertakkingen (VPN/er/P2S) bereiken.
 * Rode VNets kan elkaar bereiken en alle filialen (VPN/er/P2S)-verbindingen bereiken.
@@ -63,7 +63,7 @@ In **afbeelding 1**zijn er blauwe en rode VNet-verbindingen.
 Houd rekening met de volgende stappen bij het instellen van route ring.
 
 1. Maak twee aangepaste route tabellen in de Azure Portal, **RT_BLUE** en **RT_RED**.
-2. Voor route tabel **RT_BLUE**voor de volgende instellingen:
+2. Voor route tabel **RT_BLUE** voor de volgende instellingen:
    * **Koppeling**: Selecteer alle Blue VNets.
    * **Doorgifte**: voor vertakkingen selecteert u de optie voor branches, die vertakkingen (VPN/er/P2S)-verbindingen geven, worden routes door gegeven aan deze route tabel.
 3. Herhaal dezelfde stappen voor **RT_RED** route tabel voor rode VNets en vertakkingen (VPN/er/P2S).

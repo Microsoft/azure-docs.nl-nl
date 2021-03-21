@@ -4,10 +4,10 @@ description: In dit artikel worden de stappen beschreven die u helpen bij het im
 ms.topic: how-to
 ms.date: 09/09/2020
 ms.openlocfilehash: 01b98c7a1f4073adcd8dea7cbfbfc57abc3787c1
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101718927"
 ---
 # <a name="deploy-live-video-analytics-on-an-iot-edge-device"></a>Live video Analytics implementeren op een IoT Edge apparaat
@@ -24,7 +24,7 @@ In dit artikel worden de stappen beschreven die u helpen bij het implementeren v
 * Azure-abonnement waarvoor u [eigenaars bevoegdheden](../../role-based-access-control/built-in-roles.md#owner) hebt
 * [IoT Hub maken en instellen](../../iot-hub/iot-hub-create-through-portal.md)
 * [IoT Edge-apparaat registreren](../../iot-edge/how-to-register-device.md)
-* [Installeer de Azure IoT Edge runtime op op Debian gebaseerde Linux-systemen](../../iot-edge/how-to-install-iot-edge.md)
+* [De Azure IoT Edge-runtime op op Debian gebaseerde Linux-systemen installeren](../../iot-edge/how-to-install-iot-edge.md)
 * [Een Azure Media Services-account maken](../latest/create-account-howto.md)
 
     * Gebruik een van deze regio's: VS-Oost 2, VS-West, VS-midden, VS-West, Japan-Oost, VS-West, VS-West 2, westelijk-Centraal VS, Canada-oost, UK-zuid, Frankrijk-centraal, Frankrijk-zuid, Zwitserland-noord, Zwitserland-west en Japan-West.

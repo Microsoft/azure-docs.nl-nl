@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 05/15/2019
 ms.author: jeedes
 ms.openlocfilehash: dbc1c68f666fed280ef5eea0b74836d0cb9f305d
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92505800"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-quantum-workplace"></a>Zelfstudie: Integratie van Azure Active Directory met Quantum Workplace
@@ -49,7 +49,7 @@ Als u de integratie van Quantum Workplace in Azure AD wilt configureren, moet u 
 
 **Ga als volgt te werk om Quantum Workplace vanuit de galerie toe te voegen:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -113,13 +113,13 @@ Als u eenmalige aanmelding van Azure met Quantum Workplace wilt configureren, vo
 
 ### <a name="configure-quantum-workplace-single-sign-on"></a>Eenmalige aanmelding voor Quantum Workplace configureren
 
-Als u eenmalige aanmelding wilt configureren voor **Quantum Workplace** , moet u de **App-URL voor federatieve metagegevens** naar het [ondersteuningsteam van Quantum Workplace](mailto:support@quantumworkplace.com) verzenden. Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding wilt configureren voor **Quantum Workplace**, moet u de **App-URL voor federatieve metagegevens** naar het [ondersteuningsteam van Quantum Workplace](mailto:support@quantumworkplace.com) verzenden. Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -143,7 +143,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot Quantum Workplace.
 
-1. Selecteer in Azure Portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **Quantum Workplace**.
+1. Selecteer in Azure Portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **Quantum Workplace**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 

@@ -8,13 +8,13 @@ ms.topic: how-to
 ms.date: 05/06/2020
 ms.author: victorh
 ms.openlocfilehash: ad4f42d0e33f6d70c75abfcd1daab4f5aa9a515f
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94654980"
 ---
-# <a name="use-azure-firewall-to-protect-window-virtual-desktop-deployments"></a>Windows Virtual Desktop-implementaties beveiligen met Azure Firewall deployments
+# <a name="use-azure-firewall-to-protect-window-virtual-desktop-deployments"></a>Azure Firewall gebruiken om Windows Virtual Desktop-implementaties te beveiligen
 
 Virtueel bureau blad van Windows is een desktop-en app Virtualization-service die wordt uitgevoerd op Azure. Wanneer een eind gebruiker verbinding maakt met een virtueel-bureaublad omgeving van Windows, wordt de sessie uitgevoerd door een hostgroep. Een hostgroep is een verzameling virtuele machines van Azure die zich registreren bij Windows Virtual Desktop als hosts voor sessies. Deze virtuele machines worden uitgevoerd in uw virtuele netwerk en zijn onderhevig aan de beveiligings controles van het virtuele netwerk. Ze hebben uitgaande internet toegang tot de virtueel bureau blad-service van Windows nodig om goed te kunnen werken en hebben mogelijk ook uitgaande internet toegang nodig voor eind gebruikers. Azure Firewall kunt u helpen uw omgeving te vergren delen en uitgaand verkeer te filteren.
 

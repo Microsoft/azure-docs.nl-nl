@@ -4,10 +4,10 @@ description: In dit artikel leest u hoe u een Azure Event Hubs-naam ruimte van d
 ms.topic: how-to
 ms.date: 09/01/2020
 ms.openlocfilehash: b177c3916919e3d97325f9d8c6b6027c00cb476f
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96019919"
 ---
 # <a name="move-an-azure-event-hubs-namespace-to-another-region"></a>Een Azure Event Hubs-naam ruimte verplaatsen naar een andere regio
@@ -24,7 +24,7 @@ Als u andere resources hebt in de Azure-resource groep met de naam ruimte Event 
 ## <a name="prepare"></a>Voorbereiden
 Exporteer een resource manager-sjabloon om aan de slag te gaan. Deze sjabloon bevat instellingen die uw Event Hubs naam ruimte beschrijven.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Selecteer **alle resources** en selecteer vervolgens uw event hubs naam ruimte.
 3. Selecteer > **instellingen**  >  **sjabloon exporteren**.
 4. Kies **downloaden** op de pagina **sjabloon exporteren** .
@@ -47,7 +47,7 @@ Implementeer de sjabloon om een Event Hubs naam ruimte te maken in de doel regio
 1. Werk de waarde van de `location` eigenschap bij zodat deze naar de nieuwe regio verwijst. Zie [Azure-locaties](https://azure.microsoft.com/global-infrastructure/locations/)voor het verkrijgen van locatie codes. De code voor een regio is de naam van de regio zonder spaties, bijvoorbeeld `West US` is gelijk aan `westus` .
 1. Selecteer **Opslaan** om de sjabloon op te slaan. 
 1. Voer op de pagina **aangepaste implementatie** de volgende stappen uit: 
-    1. Selecteer een Azure- **abonnement**. 
+    1. Selecteer een Azure-**abonnement**. 
     2. Selecteer een bestaande **resource groep** of maak een. Als de bron naam ruimte zich in een Event Hubs cluster bevindt, selecteert u de resource groep die het cluster in de doel regio bevat. 
     3. Selecteer de doel **locatie** of-regio. Als u een bestaande resource groep hebt geselecteerd, is deze instelling alleen-lezen. 
     4. Voer de volgende stappen uit in de sectie **instellingen** :    

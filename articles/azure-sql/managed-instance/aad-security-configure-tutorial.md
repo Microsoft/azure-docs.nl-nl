@@ -11,10 +11,10 @@ ms.author: mireks
 ms.reviewer: vanto
 ms.date: 11/06/2019
 ms.openlocfilehash: 9161bf4f99ddfed479451d2091458ab309aa2c17
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92788618"
 ---
 # <a name="tutorial-security-in-azure-sql-managed-instance-using-azure-ad-server-principals-logins"></a>Zelfstudie: Beveiliging van Azure SQL Managed Instance met behulp van Azure AD-serverprincipals (aanmeldingen)
@@ -74,7 +74,7 @@ Zie de volgende artikelen voor voorbeelden van het maken van een verbinding met 
 
 1. Meld u aan bij uw beheerde exemplaar met behulp van een standaard SQL-aanmeldingsaccount (niet-Azure AD) dat een `sysadmin` is of een Azure AD-beheerder voor SQL Managed Instance, met behulp van [SQL Server Management Studio](point-to-site-p2s-configure.md#connect-with-ssms).
 
-2. Klik in **Objectverkenner** met de rechtermuisknop op de server en kies **Nieuwe query** .
+2. Klik in **Objectverkenner** met de rechtermuisknop op de server en kies **Nieuwe query**.
 
 3. Gebruik in het queryvenster de volgende syntaxis om een aanmelding te maken voor een lokaal Azure AD-account:
 
@@ -120,14 +120,14 @@ Voor het maken van andere Azure AD-server-principals (aanmeldingen), moeten SQL 
 
 - Om ervoor te zorgen dat de zojuist gemaakte Azure AD-server-principal (aanmelding) andere aanmeldingen voor andere Azure AD-gebruikers, -groepen of -toepassingen kan maken, verleent u de aanmelding de `sysadmin`- of `securityadmin`-serverrol.
 - Minimaal moet de machtiging **ALTER ANY LOGIN** worden toegewezen aan de Azure AD-server-principal (aanmelding) om andere Azure AD-server-principals (aanmeldingen) te kunnen maken.
-- De machtiging die aan de zojuist gemaakte Azure AD-server-principals (aanmeldingen) in de master wordt verleend, is standaard: **CONNECT SQL** en **VIEW ANY DATABASE** .
+- De machtiging die aan de zojuist gemaakte Azure AD-server-principals (aanmeldingen) in de master wordt verleend, is standaard: **CONNECT SQL** en **VIEW ANY DATABASE**.
 - De `sysadmin`-serverrol kan worden verleend aan veel Azure AD-server-principals (aanmeldingen) in een beheerd exemplaar.
 
 Ga als volgt te werk om de aanmelding toe te voegen aan de `sysadmin`-serverrol:
 
 1. Meld u opnieuw aan bij het beheerde exemplaar of gebruik de bestaande verbinding met de Azure AD-beheerder of SQL-principal die een `sysadmin` is.
 
-1. Klik in **Objectverkenner** met de rechtermuisknop op de server en kies **Nieuwe query** .
+1. Klik in **Objectverkenner** met de rechtermuisknop op de server en kies **Nieuwe query**.
 
 1. Verleen de Azure AD-server-principal (aanmelding) de `sysadmin`-serverrol met behulp van de volgende T-SQL-syntaxis:
 
@@ -145,7 +145,7 @@ Ga als volgt te werk om de aanmelding toe te voegen aan de `sysadmin`-serverrol:
 
 ## <a name="create-additional-azure-ad-server-principals-logins-using-ssms"></a>Extra Azure AD-server-principals (aanmeldingen) maken met behulp van SSMS
 
-Nadat de Azure AD-server-principal (aanmelding) is gemaakt en is voorzien van `sysadmin`-bevoegdheden, kan die aanmelding extra aanmeldingen maken met behulp van de component **FROM EXTERNAL PROVIDER** met **CREATE LOGIN** .
+Nadat de Azure AD-server-principal (aanmelding) is gemaakt en is voorzien van `sysadmin`-bevoegdheden, kan die aanmelding extra aanmeldingen maken met behulp van de component **FROM EXTERNAL PROVIDER** met **CREATE LOGIN**.
 
 1. Maak verbinding met het beheerde exemplaar met de Azure AD-server-principal (aanmelding), met behulp van SQL Server Management Studio. Voer de hostnaam van uw SQL Managed Instance in. Voor verificatie in SSMS zijn er drie opties waaruit u kunt kiezen wanneer u zich aanmeldt bij een Azure AD-account:
 
@@ -157,11 +157,11 @@ Nadat de Azure AD-server-principal (aanmelding) is gemaakt en is voorzien van `s
 
      Zie [Universele verificatie (SSMS-ondersteuning voor Multi-Factor Authentication)](../database/authentication-mfa-ssms-overview.md) voor meer informatie.
 
-1. Selecteer **Active Directory - Universal met ondersteuning voor MFA** . Hiermee wordt een MFA-aanmeldingsvenster geopend. Meld u aan met uw Azure AD-wachtwoord.
+1. Selecteer **Active Directory - Universal met ondersteuning voor MFA**. Hiermee wordt een MFA-aanmeldingsvenster geopend. Meld u aan met uw Azure AD-wachtwoord.
 
     ![Schermopname van het Multi-Factor Authentication-aanmeldingsvenster met de cursor in het veld Wachtwoord invoeren.](./media/aad-security-configure-tutorial/mfa-login-prompt.png)
 
-1. Klik in SSMS **Objectverkenner** met de rechtermuisknop op de server en kies **Nieuwe query** .
+1. Klik in SSMS **Objectverkenner** met de rechtermuisknop op de server en kies **Nieuwe query**.
 1. Gebruik in het queryvenster de volgende syntaxis om een aanmelding te maken voor een ander Azure AD-account:
 
     ```sql
@@ -183,8 +183,8 @@ Nadat de Azure AD-server-principal (aanmelding) is gemaakt en is voorzien van `s
     ```
 
 1. Maak een database in het beheerd exemplaar met behulp van de [CREATE DATABASE](/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-mi-current)-syntaxis. Deze database wordt gebruikt voor het testen van aanmeldingen in de volgende sectie.
-    1. Klik in **Objectverkenner** met de rechtermuisknop op de server en kies **Nieuwe query** .
-    1. Gebruik in het queryvenster de volgende syntaxis om een database te maken met de naam **MyMITestDB** .
+    1. Klik in **Objectverkenner** met de rechtermuisknop op de server en kies **Nieuwe query**.
+    1. Gebruik in het queryvenster de volgende syntaxis om een database te maken met de naam **MyMITestDB**.
 
         ```sql
         CREATE DATABASE MyMITestDB;
@@ -195,7 +195,7 @@ Nadat de Azure AD-server-principal (aanmelding) is gemaakt en is voorzien van `s
 
 1. Open een nieuw queryvenster in SQL Server Management Studio.
 
-    In dit voorbeeld wordt ervan uitgegaan dat er in Azure AD een groep bestaat met de naam _mygroup_ . Voer de volgende opdracht uit:
+    In dit voorbeeld wordt ervan uitgegaan dat er in Azure AD een groep bestaat met de naam _mygroup_. Voer de volgende opdracht uit:
 
     ```sql
     USE master
@@ -214,7 +214,7 @@ Nadat de Azure AD-server-principal (aanmelding) is gemaakt en is voorzien van `s
       ```
 
 > [!NOTE]
-> Ook gastgebruikers van Azure AD worden ondersteund voor aanmeldingen bij SQL Managed Instance, maar alleen wanneer ze zijn toegevoegd als onderdeel van een Azure AD-groep. Een Azure AD-gastgebruiker is een account dat vanuit een andere Azure AD-instantie wordt uitgenodigd voor de Azure AD-instantie waarvan het beheerde exemplaar deel uitmaakt. joe@contoso.com (Azure AD-account) of steve@outlook.com (Microsoft-account) kunnen bijvoorbeeld worden toegevoegd aan een groep in de Azure AD-instantie aadsqlmi. Zodra de gebruikers aan een groep zijn toegevoegd, kan er een aanmelding worden gemaakt in de **hoofd** -database van de SQL Managed Instance voor de groep met de syntaxis **CREATE LOGIN** . Gastgebruikers die lid zijn van deze groep, kunnen verbinding maken met het beheerde exemplaar met behulp van hun huidige aanmeldingsgegevens (bijvoorbeeld joe@contoso.com of steve@outlook.com).
+> Ook gastgebruikers van Azure AD worden ondersteund voor aanmeldingen bij SQL Managed Instance, maar alleen wanneer ze zijn toegevoegd als onderdeel van een Azure AD-groep. Een Azure AD-gastgebruiker is een account dat vanuit een andere Azure AD-instantie wordt uitgenodigd voor de Azure AD-instantie waarvan het beheerde exemplaar deel uitmaakt. joe@contoso.com (Azure AD-account) of steve@outlook.com (Microsoft-account) kunnen bijvoorbeeld worden toegevoegd aan een groep in de Azure AD-instantie aadsqlmi. Zodra de gebruikers aan een groep zijn toegevoegd, kan er een aanmelding worden gemaakt in de **hoofd**-database van de SQL Managed Instance voor de groep met de syntaxis **CREATE LOGIN**. Gastgebruikers die lid zijn van deze groep, kunnen verbinding maken met het beheerde exemplaar met behulp van hun huidige aanmeldingsgegevens (bijvoorbeeld joe@contoso.com of steve@outlook.com).
 
 ## <a name="create-an-azure-ad-user-from-the-azure-ad-server-principal-login"></a>Een Azure AD-gebruiker maken op basis van de Azure AD-serverprincipal (aanmelding)
 
@@ -229,7 +229,7 @@ Zie [Aan de slag met machtigingen voor database-engines](/sql/relational-databas
 ### <a name="create-an-azure-ad-user-and-create-a-sample-table"></a>Een Azure AD-gebruiker en een voorbeeldtabel maken
 
 1. Meld u aan bij uw beheerde exemplaar met behulp van een `sysadmin`-account via SQL Server Management Studio.
-1. Klik in **Objectverkenner** met de rechtermuisknop op de server en kies **Nieuwe query** .
+1. Klik in **Objectverkenner** met de rechtermuisknop op de server en kies **Nieuwe query**.
 1. Gebruik in het queryvenster de volgende syntaxis om een Azure AD-gebruiker te maken op basis van een Azure AD-server-principal (aanmelding):
 
     ```sql
@@ -259,10 +259,10 @@ Zie [Aan de slag met machtigingen voor database-engines](/sql/relational-databas
     GO
     ```
 
-    Alle gebruikers die deel uitmaken van *mygroup* , hebben toegang tot de **MyMITestDB** -database.
+    Alle gebruikers die deel uitmaken van *mygroup*, hebben toegang tot de **MyMITestDB**-database.
 
     > [!IMPORTANT]
-    > Bij het maken van een **USER** op basis van een Azure AD-server-principal (aanmelding) is de user_name hetzelfde als de login_name van **LOGIN** .
+    > Bij het maken van een **USER** op basis van een Azure AD-server-principal (aanmelding) is de user_name hetzelfde als de login_name van **LOGIN**.
 
     Zie [CREATE USER](/sql/t-sql/statements/create-user-transact-sql?view=azuresqldb-mi-current) voor meer informatie.
 
@@ -295,7 +295,7 @@ Om ervoor te zorgen dat de gebruiker de gegevens in de database kan zien, geven 
 
 1. Meld u aan bij uw beheerde exemplaar met behulp van een `sysadmin`-account via SQL Server Management Studio.
 
-1. Klik in **Objectverkenner** met de rechtermuisknop op de server en kies **Nieuwe query** .
+1. Klik in **Objectverkenner** met de rechtermuisknop op de server en kies **Nieuwe query**.
 
 1. Geef de Azure AD-gebruiker de databaserol `db_datareader` met behulp van de volgende T-SQL-syntaxis:
 
@@ -305,7 +305,7 @@ Om ervoor te zorgen dat de gebruiker de gegevens in de database kan zien, geven 
     GO
     ```
 
-    In het volgende voorbeeld krijgen de gebruiker bob@aadsqlmi.net en de groep _mygroup_`db_datareader` machtigingen voor de **MyMITestDB** -database:
+    In het volgende voorbeeld krijgen de gebruiker bob@aadsqlmi.net en de groep _mygroup_`db_datareader` machtigingen voor de **MyMITestDB**-database:
 
     ```sql
     USE MyMITestDB
@@ -347,7 +347,7 @@ SQL Managed Instance biedt ondersteuning voor het imiteren van principals op Azu
 
 1. Meld u aan bij uw beheerde exemplaar met behulp van een `sysadmin`-account via SQL Server Management Studio.
 
-1. Klik in **Objectverkenner** met de rechtermuisknop op de server en kies **Nieuwe query** .
+1. Klik in **Objectverkenner** met de rechtermuisknop op de server en kies **Nieuwe query**.
 
 1. Voer in het queryvenster de volgende opdracht uit om een opgeslagen procedure te maken:
 
@@ -388,8 +388,8 @@ SQL Managed Instance biedt ondersteuning voor het imiteren van principals op Azu
 Query's tussen meerdere databases worden ondersteund voor Azure AD-accounts met Azure AD-server-principals (aanmeldingen). Als u een query tussen meerdere databases met een Azure AD-groep wilt testen, moeten we een andere database en tabel maken. U kunt het maken van een andere database en tabel overslaan als die al bestaan.
 
 1. Meld u aan bij uw beheerde exemplaar met behulp van een `sysadmin`-account via SQL Server Management Studio.
-1. Klik in **Objectverkenner** met de rechtermuisknop op de server en kies **Nieuwe query** .
-1. Gebruik in het queryvenster de volgende opdracht om een database te maken met de naam **MyMITestDB2** en een tabel met de naam **TestTable2** :
+1. Klik in **Objectverkenner** met de rechtermuisknop op de server en kies **Nieuwe query**.
+1. Gebruik in het queryvenster de volgende opdracht om een database te maken met de naam **MyMITestDB2** en een tabel met de naam **TestTable2**:
 
     ```sql
     CREATE DATABASE MyMITestDB2;
@@ -405,7 +405,7 @@ Query's tussen meerdere databases worden ondersteund voor Azure AD-accounts met 
     );
     ```
 
-1. Voer in een nieuw queryvenster de volgende opdracht uit om de gebruiker _mygroup_ te maken in de nieuwe database **MyMITestDB2** en SELECT-machtigingen voor die database te verlenen aan _mygroup_ :
+1. Voer in een nieuw queryvenster de volgende opdracht uit om de gebruiker _mygroup_ te maken in de nieuwe database **MyMITestDB2** en SELECT-machtigingen voor die database te verlenen aan _mygroup_:
 
     ```sql
     USE MyMITestDB2
@@ -416,7 +416,7 @@ Query's tussen meerdere databases worden ondersteund voor Azure AD-accounts met 
     GO
     ```
 
-1. Meld u aan bij het beheerde exemplaar via SQL Server Management Studio als een lid van de Azure AD-groep _mygroup_ . Open een nieuw queryvenster en voer de volgende SELECT-instructie tussen meerdere databases uit:
+1. Meld u aan bij het beheerde exemplaar via SQL Server Management Studio als een lid van de Azure AD-groep _mygroup_. Open een nieuw queryvenster en voer de volgende SELECT-instructie tussen meerdere databases uit:
 
     ```sql
     USE MyMITestDB

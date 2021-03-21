@@ -8,10 +8,10 @@ author: bmitchell287
 ms.date: 10/18/2019
 ms.custom: devx-track-java
 ms.openlocfilehash: 3033be3a793c318135f8150b86114b6fee55fac7
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94655195"
 ---
 # <a name="set-up-a-spring-cloud-config-server-instance-for-your-service"></a>Een instantie van een Spring Cloud Config Server instellen voor uw service
@@ -141,15 +141,15 @@ Nu dat uw configuratiebestanden zijn opgeslagen in een opslagplaats, moet u Azur
 
 5. Klik op **Valideren**.
 
-    ![Navigeren naar configuratie server](media/spring-cloud-quickstart-launch-app-portal/portal-config.png)
+    ![Ga naar de configuratieserver](media/spring-cloud-quickstart-launch-app-portal/portal-config.png)
 
-6. Wanneer de validatie is voltooid, klikt u op **Toep assen** om uw wijzigingen op te slaan.
+6. Wanneer de validatie is voltooid, klikt u op **Toepassen** om de wijzigingen op te slaan.
 
-    ![De configuratie server wordt gevalideerd](media/spring-cloud-quickstart-launch-app-portal/validate-complete.png)
+    ![Configuratieserver valideren](media/spring-cloud-quickstart-launch-app-portal/validate-complete.png)
 
 7. Het bijwerken van de configuratie kan enkele minuten duren.
  
-    ![De configuratie server wordt bijgewerkt](media/spring-cloud-quickstart-launch-app-portal/updating-config.png) 
+    ![Configuratieserver bijwerken](media/spring-cloud-quickstart-launch-app-portal/updating-config.png) 
 
 8. U ontvangt een melding wanneer de configuratie is voltooid.
 
@@ -201,7 +201,7 @@ De informatie uit uw YAML-bestand zou moeten worden weergegeven in het Azure-por
 
 ## <a name="using-azure-repos-for-azure-spring-cloud-configuration"></a>Azure opslag plaatsen gebruiken voor Azure lente-Cloud configuratie
 
-Azure lente Cloud kan toegang krijgen tot Git-opslag plaatsen die openbaar zijn, worden beveiligd door SSH of worden beveiligd met behulp van HTTP-basis verificatie. We zullen deze laatste optie gebruiken, omdat het eenvoudiger is om te maken en te beheren met Azure opslag plaatsen.
+Azure Spring Cloud heeft toegang tot Git-opslagplaatsen die openbaar zijn, worden beveiligd door SSH of worden beveiligd met behulp van HTTP-basisverificatie. We zullen deze laatste optie gebruiken, omdat het eenvoudiger is om te maken en te beheren met Azure opslag plaatsen.
 
 ### <a name="get-repo-url-and-credentials"></a>Opslag plaats-URL en referenties ophalen
 1. Klik in de Azure opslag plaatsen-portal voor uw project op de knop klonen:

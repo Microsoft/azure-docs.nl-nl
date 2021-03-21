@@ -7,10 +7,10 @@ ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 03/23/2020
 ms.openlocfilehash: 3a7486ce94b335f835a88b7f357c9c719f86d667
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97704755"
 ---
 # <a name="set-up-an-appliance-for-hyper-v-vms"></a>Een apparaat instellen voor virtuele Hyper-V-machines
@@ -116,16 +116,16 @@ Het apparaat voor de eerste keer instellen.
 ### <a name="register-the-appliance-with-azure-migrate"></a>Het apparaat registreren bij Azure Migrate
 
 1. Plak de **Azure Migrate-projectsleutel** die u in de portal hebt gekopieerd. Als u de sleutel niet hebt, gaat u naar **Serverevaluatie > Detecteren > Bestaande apparaten beheren**, selecteert u de naam van het apparaat die u hebt ingevoerd op het moment dat de sleutel werd gegenereerd en kopieert u de bijbehorende sleutel.
-1. U hebt een apparaatcode nodig om te verifiëren bij Azure. Als u op **Aanmelden** klikt, wordt er een modale met de apparaatcode geopend, zoals hieronder wordt weer gegeven.
+1. U hebt een apparaatcode nodig om te verifiëren bij Azure. Als u klikt op **Aanmelden**, wordt er een modaal met de apparaatcode geopend, zoals hieronder weergegeven.
 
-    ![Modale weer gave van de apparaatcode](./media/tutorial-discover-vmware/device-code.png)
+    ![Modaal waarin de apparaatcode wordt weergegeven](./media/tutorial-discover-vmware/device-code.png)
 
-1. Klik op **code kopiëren & aanmelding** om de apparaatcode te kopiëren en open een Azure-aanmeldings prompt in een nieuw browser tabblad. Als deze niet wordt weer gegeven, controleert u of de pop-upblokkering in de browser is uitgeschakeld.
-1. Plak op het tabblad Nieuw de code van het apparaat en meld u aan met uw Azure-gebruikers naam en-wacht woord.
+1. Klik op **Code kopiëren en aanmelden** om de apparaatcode te kopiëren en een Azure-aanmeldingsprompt te openen op een nieuw browsertabblad. Als dit niet wordt weergegeven, controleert u of de pop-upblokkering in de browser is uitgeschakeld.
+1. Plak de apparaatcode in het nieuwe tabblad en meld u aan met de gebruikersnaam en het wachtwoord van Azure.
    
    Aanmelden met een pincode wordt niet ondersteund.
-3. Als u het tabblad aanmelding per ongeluk sluit zonder u aan te melden, moet u het tabblad browser van het configuratie beheer van het apparaat vernieuwen om de knop aanmelden opnieuw in te scha kelen.
-1. Nadat u zich hebt aangemeld, gaat u terug naar het vorige tabblad met het configuratie beheer van het apparaat.
+3. Als u het aanmeldingstabblad per ongeluk sluit zonder u aan te melden, vernieuwt u het browsertabblad van Apparaatconfiguratiebeheer om de knop Aanmelden opnieuw in te schakelen.
+1. Als u bent aangemeld, gaat u terug naar het vorige tabblad in Apparaatconfiguratiebeheer.
 4. Als het Azure-gebruikersaccount dat wordt gebruikt voor logboekregistratie de juiste [machtigingen ](./tutorial-discover-hyper-v.md#prepare-an-azure-user-account) heeft voor de Azure-resources die tijdens het genereren van de sleutel zijn gemaakt, wordt de registratie van het apparaat gestart.
 1. Nadat het apparaat is geregistreerd, kunt u de registratiedetails zien door op **Details weergeven** te klikken.
 

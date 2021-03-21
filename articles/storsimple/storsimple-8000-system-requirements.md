@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 02/11/2021
 ms.author: alkohli
 ms.openlocfilehash: fa7616a740e8246fa08e950494428095f41ee404
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100382851"
 ---
 # <a name="storsimple-8000-series-software-high-availability-and-networking-requirements"></a>StorSimple 8000-serie software, hoge Beschik baarheid en netwerk vereisten
@@ -65,14 +65,14 @@ Uw StorSimple-apparaat is een vergrendeld apparaat. Poorten moeten echter worden
 
 | Poort nummer<sup>1, 2</sup> | In of uit | Poort bereik | Vereist | Notities |
 | --- | --- | --- | --- | --- |
-| TCP 80 (HTTP)<sup>3</sup> |Uit |WAN |No |<ul><li>De uitgaande poort wordt gebruikt voor toegang tot internet om updates op te halen.</li><li>De uitgaande webproxy kan door de gebruiker worden geconfigureerd.</li><li>Voor het toestaan van systeem updates moet deze poort ook open zijn voor de vaste IP-adressen van de controller.</li></ul> |
-| TCP 443 (HTTPS)<sup>3</sup> |Uit |WAN |Yes |<ul><li>De uitgaande poort wordt gebruikt voor toegang tot gegevens in de Cloud.</li><li>De uitgaande webproxy kan door de gebruiker worden geconfigureerd.</li><li>Voor het toestaan van systeem updates moet deze poort ook open zijn voor de vaste IP-adressen van de controller.</li><li>Deze poort wordt ook gebruikt op beide controllers voor garbage collection.</li></ul> |
+| TCP 80 (HTTP)<sup>3</sup> |Uit |WAN |Nee |<ul><li>De uitgaande poort wordt gebruikt voor toegang tot internet om updates op te halen.</li><li>De uitgaande webproxy kan door de gebruiker worden geconfigureerd.</li><li>Voor het toestaan van systeem updates moet deze poort ook open zijn voor de vaste IP-adressen van de controller.</li></ul> |
+| TCP 443 (HTTPS)<sup>3</sup> |Uit |WAN |Ja |<ul><li>De uitgaande poort wordt gebruikt voor toegang tot gegevens in de Cloud.</li><li>De uitgaande webproxy kan door de gebruiker worden geconfigureerd.</li><li>Voor het toestaan van systeem updates moet deze poort ook open zijn voor de vaste IP-adressen van de controller.</li><li>Deze poort wordt ook gebruikt op beide controllers voor garbage collection.</li></ul> |
 | UDP 53 (DNS) |Uit |WAN |In sommige gevallen; Zie opmerkingen. |Deze poort is alleen vereist als u een DNS-server op Internet gebruikt. |
 | UDP 123 (NTP) |Uit |WAN |In sommige gevallen; Zie opmerkingen. |Deze poort is alleen vereist als u een NTP-server op Internet gebruikt. |
-| TCP 9354 |Uit |WAN |Yes |De uitgaande poort wordt door het StorSimple-apparaat gebruikt om te communiceren met de StorSimple-Apparaatbeheer service. |
-| 3260 (iSCSI) |In |LAN |No |Deze poort wordt gebruikt om toegang te krijgen tot gegevens via iSCSI. |
-| 5985 |In |LAN |No |De binnenkomende poort wordt gebruikt door StorSimple Snapshot Manager om te communiceren met het StorSimple-apparaat.<br>Deze poort wordt ook gebruikt wanneer u extern verbinding maakt met Windows PowerShell voor StorSimple via HTTP. |
-| 5986 |In |LAN |No |Deze poort wordt gebruikt wanneer u extern verbinding maakt met Windows PowerShell voor StorSimple via HTTPS. |
+| TCP 9354 |Uit |WAN |Ja |De uitgaande poort wordt door het StorSimple-apparaat gebruikt om te communiceren met de StorSimple-Apparaatbeheer service. |
+| 3260 (iSCSI) |In |LAN |Nee |Deze poort wordt gebruikt om toegang te krijgen tot gegevens via iSCSI. |
+| 5985 |In |LAN |Nee |De binnenkomende poort wordt gebruikt door StorSimple Snapshot Manager om te communiceren met het StorSimple-apparaat.<br>Deze poort wordt ook gebruikt wanneer u extern verbinding maakt met Windows PowerShell voor StorSimple via HTTP. |
+| 5986 |In |LAN |Nee |Deze poort wordt gebruikt wanneer u extern verbinding maakt met Windows PowerShell voor StorSimple via HTTPS. |
 
 <sup>1</sup> er moeten geen binnenkomende poorten worden geopend op het open bare Internet.
 

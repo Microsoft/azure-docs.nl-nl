@@ -4,10 +4,10 @@ description: Meer informatie over het maken en configureren van een leslokaal La
 ms.topic: how-to
 ms.date: 06/26/2020
 ms.openlocfilehash: db7a2f58f99252a7e5076dd86c37b65bbe8ea37a
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96434206"
 ---
 # <a name="manage-labs-in-azure-lab-services"></a>Labs in Azure Lab Services beheren 
@@ -89,7 +89,7 @@ Als u een leslokaallab in een labaccount instelt, moet u lid zijn van de rol **L
 
 ### <a name="vm-sizes"></a>Formaten van virtuele machines  
 
-| Grootte | Kernen | RAM | Description | 
+| Grootte | Kernen | RAM | Beschrijving | 
 | ---- | ----- | --- | ----------- | 
 | Klein | 2 | 3,5 GB | Deze grootte is het meest geschikt voor de opdracht regel, de webbrowser openen, webservers met weinig verkeer, kleine tot middel grote data bases. |
 | Normaal | 4 | 7 GB | Deze grootte is het meest geschikt voor relationele data bases, caching in het geheugen en analyse | 

@@ -11,16 +11,16 @@ ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: aahi
 ms.openlocfilehash: 07b0dd68e39f555171e5606b71cd1eec92a4035c
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96353337"
 ---
 # <a name="call-your-bing-custom-search-instance-from-the-portal"></a>Uw Bing Aangepaste zoekopdrachten-exemplaar aanroepen vanuit de portal
 
 > [!WARNING]
-> Bing Search-API's worden van Cognitive Services naar Bing Search Services overgezet. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](/bing/search-apis/bing-web-search/create-bing-search-service-resource) is beschreven.
+> Bing Search-API's worden van Cognitive Services naar Bing Search Services verplaatst. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](/bing/search-apis/bing-web-search/create-bing-search-service-resource) is beschreven.
 > Bing Search-API's die zijn ingericht met Cognitive Services, worden voor de komende drie jaar of tot het einde van uw Enterprise Agreement ondersteund, afhankelijk van wat het eerst afloopt.
 > Raadpleeg [Bing Search Services](/bing/search-apis/bing-web-search/create-bing-search-service-resource) voor migratie-instructies.
 
@@ -38,7 +38,7 @@ Hieronder vindt u enkele belang rijke para meters:
 
 |Parameter  |Beschrijving  |
 |---------|---------|
-|Query’s uitvoeren     | De zoek term waarnaar moet worden gezocht. Alleen beschikbaar voor eind punten voor web-, afbeeldings-, video-en automatische suggesties |
+|Query     | De zoek term waarnaar moet worden gezocht. Alleen beschikbaar voor eind punten voor web-, afbeeldings-, video-en automatische suggesties |
 |Aangepaste configuratie-ID | De configuratie-ID van het geselecteerde exemplaar van de aangepaste zoek actie. Dit veld is alleen-lezen. |
 |Markt     | De markt waarvan de resultaten afkomstig zijn. Alleen beschikbaar voor web-, afbeeldings-, video-en gehoste UI-eind punten.        |
 |Abonnementssleutel | De abonnements sleutel die moet worden getest. U kunt een sleutel selecteren in de vervolg keuzelijst of hand matig invoeren.          |
@@ -49,7 +49,7 @@ Als u op **extra para meters** klikt, worden de volgende para meters zichtbaar
 |---------|---------|
 |Veilig zoeken     | Een filter dat wordt gebruikt om webpagina's te filteren op inhoud voor volwassenen. Alleen beschikbaar voor web-, afbeeldings-, video-en gehoste UI-eind punten. Bing Custom Video's zoeken ondersteunt alleen twee waarden: `moderate` en `strict` .        |
 |Taal in de gebruikersinterface    | De taal die wordt gebruikt voor teken reeksen van de gebruikers interface. Als u bijvoorbeeld installatie kopieën en Video's in de gehoste gebruikers interface inschakelt, wordt in de **afbeeldings** -en **video** tabbladen de opgegeven taal gebruikt.        |
-|Aantal     | Het aantal Zoek resultaten dat in het antwoord moet worden geretourneerd. Alleen beschikbaar voor web-, afbeeldings-en video-eind punten.         |
+|Count     | Het aantal Zoek resultaten dat in het antwoord moet worden geretourneerd. Alleen beschikbaar voor web-, afbeeldings-en video-eind punten.         |
 |Offset    | Het aantal Zoek resultaten dat moet worden overgeslagen voordat resultaten worden geretourneerd. Alleen beschikbaar voor web-, afbeeldings-en video-eind punten.        |
     
 Nadat u alle vereiste opties hebt opgegeven, klikt u op **aanroep** om het JSON-antwoord in het rechterdeel venster weer te geven. Als u het gehoste gebruikers interface-eind punt selecteert, kunt u de zoek ervaring testen in het onderste deel venster.

@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 6/15/2020
 ms.openlocfilehash: aa9f38b2cefa60a0c3341c1317cf45fbcb735301
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92485440"
 ---
 # <a name="high-availability-in-azure-database-for-postgresql--single-server"></a>Hoge Beschik baarheid in Azure Database for PostgreSQL-één server
@@ -36,7 +36,7 @@ Azure Database for PostgreSQL is ontworpen om hoge Beschik baarheid te bieden ti
 3. Het schalen van opslag ruimte kan zonder uitval tijd worden uitgevoerd. Met externe opslag kunt u na de failover snel loskoppelen/opnieuw koppelen.
 Hier volgen enkele geplande onderhouds scenario's:
 
-| **Scenario** | **Deschription** (Beschrijving)|
+| **Scenario** | **Beschrijving**|
 | ------------ | ----------- |
 | <b>Berekenings schaal omhoog/omlaag | Wanneer de gebruiker de bewerking omhoog/omlaag Compute Scale uitvoert, wordt een nieuwe database server ingericht met behulp van de geschaalde Compute-configuratie. In de oude database server mogen actieve controle punten worden voltooid, worden de client verbindingen geleegd, worden niet-doorgevoerde trans acties geannuleerd en vervolgens afgesloten. De opslag wordt vervolgens losgekoppeld van de oude database server en gekoppeld aan de nieuwe database server. Wanneer de client toepassing de verbinding probeert te maken of probeert een nieuwe verbinding tot stand te brengen, stuurt de gateway de verbindings aanvraag door naar de nieuwe database server.|
 | <b>Opslag ruimte omhoog schalen | Het omhoog schalen van de opslag is een online bewerking en de database server wordt niet onderbroken.|
@@ -49,7 +49,7 @@ Hier volgen enkele geplande onderhouds scenario's:
 Ongeplande uitval tijd kan optreden als gevolg van onvoorziene storingen, waaronder onderliggende hardwarestoringen, netwerk problemen en software fouten. Als de database server onverwacht uitvalt, wordt er in een paar seconden automatisch een nieuwe database server ingericht. De externe opslag wordt automatisch gekoppeld aan de nieuwe database server. De PostgreSQL-engine voert de herstel bewerking uit met WAL en database bestanden, en opent de database server om clients toe te staan verbinding te maken. Niet-doorgevoerde trans acties gaan verloren en moeten opnieuw worden geprobeerd door de toepassing. Hoewel een ongeplande uitval tijd niet kan worden vermeden, Azure Database for PostgreSQL de uitval tijd verminderen door automatisch herstel bewerkingen uit te voeren op de database server en opslag lagen zonder menselijke tussen komst. 
 
 
-:::image type="content" source="./media/concepts-high-availability/azure-postgresql-built-in-high-availability.png" alt-text="weer gave van elastisch schalen in azure PostgreSQL":::
+:::image type="content" source="./media/concepts-high-availability/azure-postgresql-built-in-high-availability.png" alt-text="weer gave van hoge Beschik baarheid in azure PostgreSQL":::
 
 1. Azure PostgreSQL-servers met snelle schaal mogelijkheden.
 2. Gateway die fungeert als een proxy voor het routeren van client verbindingen met de juiste database server

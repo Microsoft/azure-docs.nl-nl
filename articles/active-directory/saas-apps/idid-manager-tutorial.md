@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 1/25/2019
 ms.author: jeedes
 ms.openlocfilehash: 9562c81fcd159d61e36aa77f01fa5d5f09f71b8c
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92460424"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-idid-manager"></a>Zelfstudie: Azure Active Directory-integratie met iDiD Manager
@@ -49,7 +49,7 @@ Voor het configureren van de integratie van iDiD Manager in Azure AD, moet u iDi
 
 **Ga als volgt te werk om iDiD Manager vanuit de galerie toe te voegen:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -73,10 +73,10 @@ Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure 
 Om eenmalige aanmelding met Azure AD met iDiD Manager te configureren en testen, moet u de volgende bouwstenen voltooien:
 
 1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[Eenmalige aanmelding met iDiD Manager configureren](#configure-idid-manager-single-sign-on)** : als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wilt configureren.
+2. **[Eenmalige aanmelding met iDiD Manager configureren](#configure-idid-manager-single-sign-on)**: als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wilt configureren.
 3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
 4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
-5. **[iDiD Manager-testgebruiker maken](#create-idid-manager-test-user)** : als u een tegenhanger van Britta Simon in iDiD Manager wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
+5. **[iDiD Manager-testgebruiker maken](#create-idid-manager-test-user)**: als u een tegenhanger van Britta Simon in iDiD Manager wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
 6. **[Eenmalige aanmelding testen](#test-single-sign-on)** : als u wilt controleren of de configuratie werkt.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
@@ -85,7 +85,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voer de volgende stappen uit om eenmalige aanmelding met Azure AD met iDiD Manager te configureren:
 
-1. Selecteer in de [Azure-portal](https://portal.azure.com/), op de pagina voor de integratie van de toepassing **iDiD Manager** , de optie **Eenmalige aanmelding**.
+1. Selecteer in de [Azure-portal](https://portal.azure.com/), op de pagina voor de integratie van de toepassing **iDiD Manager**, de optie **Eenmalige aanmelding**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -103,7 +103,7 @@ Voer de volgende stappen uit om eenmalige aanmelding met Azure AD met iDiD Manag
 
 5. Klik op **Extra URL's instellen** en voer de volgende stap uit als u de toepassing in de door **SP** geïnitieerde modus wilt configureren:
 
-    ![Schermopname toont 'Aanvullende URL's instellen', waar u een aanmeldings-URL kunt invoeren.](common/metadata-upload-additional-signon.png)
+    ![Schermopname die Extra URL's instellen toont, waar u een aanmeldings-URL kunt invoeren.](common/metadata-upload-additional-signon.png)
 
     In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://idid2.fi/saml/login/<domain>`
 
@@ -116,13 +116,13 @@ Voer de volgende stappen uit om eenmalige aanmelding met Azure AD met iDiD Manag
 
 ### <a name="configure-idid-manager-single-sign-on"></a>Eenmalige aanmelding met iDiD Manager configureren
 
-Als u eenmalige aanmelding aan de **iDiD Manager** -zijde wilt configureren, dient u de **URL voor federatieve metagegevens van de app** naar het [iDiD Manager-ondersteuningsteam](mailto:support@idid.fi) te verzenden. Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding aan de **iDiD Manager**-zijde wilt configureren, dient u de **URL voor federatieve metagegevens van de app** naar het [iDiD Manager-ondersteuningsteam](mailto:support@idid.fi) te verzenden. Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 

@@ -11,10 +11,10 @@ services: azure-maps
 manager: timlt
 ms.custom: devx-track-js
 ms.openlocfilehash: 60d8dc45fb26ea210b1827a6938716474faa0304
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92895610"
 ---
 # <a name="secure-a-single-page-application-with-user-sign-in"></a>Een toepassing met één pagina beveiligen met aanmelding door gebruikers
@@ -27,19 +27,19 @@ De volgende hand leiding heeft betrekking op een toepassing die wordt gehost op 
 
 Maak de webtoepassing in azure AD voor gebruikers om zich aan te melden. De webtoepassing delegeert gebruikers toegang tot Azure Maps REST-Api's.
 
-1. Selecteer in het Azure Portal in de lijst met Azure-Services **Azure Active Directory**  >  **app-registraties**  >  **nieuwe registratie** .  
+1. Selecteer in het Azure Portal in de lijst met Azure-Services **Azure Active Directory**  >  **app-registraties**  >  **nieuwe registratie**.  
 
     > [!div class="mx-imgBorder"]
     > ![Appregistratie](./media/how-to-manage-authentication/app-registration.png)
 
-2. Voer een **naam** in, kies een **type ondersteunings account** en geef een OMleidings-URI op die de URL vertegenwoordigt die door Azure AD wordt uitgegeven en de URL waar het kaart besturings element wordt gehost. Zie [Azure Maps Azure AD](https://github.com/Azure-Samples/Azure-Maps-AzureAD-Samples/tree/master/src/ImplicitGrant)-voor beelden voor een gedetailleerd voor beeld. Selecteer vervolgens **Registreren** .  
+2. Voer een **naam** in, kies een **type ondersteunings account** en geef een OMleidings-URI op die de URL vertegenwoordigt die door Azure AD wordt uitgegeven en de URL waar het kaart besturings element wordt gehost. Zie [Azure Maps Azure AD](https://github.com/Azure-Samples/Azure-Maps-AzureAD-Samples/tree/master/src/ImplicitGrant)-voor beelden voor een gedetailleerd voor beeld. Selecteer vervolgens **Registreren**.  
 
-3. Als u gedelegeerde API-machtigingen aan Azure Maps wilt toewijzen, gaat u naar de toepassing. Selecteer vervolgens onder **app-registraties** de optie **API-machtigingen**  >  **een machtiging toevoegen** . Onder **api's die mijn organisatie gebruikt** , zoekt en selecteert u **Azure Maps** .
+3. Als u gedelegeerde API-machtigingen aan Azure Maps wilt toewijzen, gaat u naar de toepassing. Selecteer vervolgens onder **app-registraties** de optie **API-machtigingen**  >  **een machtiging toevoegen**. Onder **api's die mijn organisatie gebruikt**, zoekt en selecteert u **Azure Maps**.
 
     > [!div class="mx-imgBorder"]
     > ![API-machtigingen voor apps toevoegen](./media/how-to-manage-authentication/app-permissions.png)
 
-4. Schakel het selectie vakje in naast **toegang Azure Maps** en selecteer vervolgens **machtigingen toevoegen** .
+4. Schakel het selectie vakje in naast **toegang Azure Maps** en selecteer vervolgens **machtigingen toevoegen**.
 
     > [!div class="mx-imgBorder"]
     > ![App API-machtigingen selecteren](./media/how-to-manage-authentication/select-app-permissions.png)

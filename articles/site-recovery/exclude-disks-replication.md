@@ -4,10 +4,10 @@ description: Schijven uitsluiten van replicatie naar Azure met Azure Site Recove
 ms.topic: conceptual
 ms.date: 12/17/2019
 ms.openlocfilehash: 15989fbfd65f758eb777c5170c217aba8707e0be
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96008256"
 ---
 # <a name="exclude-disks-from-disaster-recovery"></a>Schijven uitsluiten van herstel na nood gevallen
@@ -56,13 +56,13 @@ Voor beelden van gegevens verloop die fantastische kandidaten zijn voor uitsluit
 
 ## <a name="example-1-exclude-the-sql-server-tempdb-disk"></a>Voorbeeld 1: de tempdb-schijf in SQL Server uitsluiten
 
-Laten we eens kijken hoe u schijf uitsluiting, failover en failover kunt afhandelen voor een bron SQL Server Windows VM- **SalesDB** _, waarvoor we TempDB willen uitsluiten. 
+Laten we eens kijken hoe u schijf uitsluiting, failover en failover kunt afhandelen voor een bron SQL Server Windows VM-* * * SalesDB * * *, waarvoor we TempDB willen uitsluiten. 
 
 ### <a name="exclude-disks-from-replication"></a>Schijven uitsluiten van replicatie
 
 We hebben deze schijven op de bron-SalesDB van de Windows-VM.
 
-_ *Schijf naam** | **Gast besturingssysteem schijf** | **Stationsletter** | **Gegevens type schijf**
+**Schijf naam** | **Gast besturingssysteem schijf** | **Stationsletter** | **Gegevens type schijf**
 --- | --- | --- | ---
 DB-Disk0-OS | Disk0 | C:\ | Besturingssysteem schijf.
 DB-Disk1| Disk1 | D:\ | SQL-systeem database en gebruiker Database1.

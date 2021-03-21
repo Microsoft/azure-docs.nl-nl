@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 07/09/2020
 ms.author: victorh
 ms.openlocfilehash: 63f4b28915a932398e5417f8ea9be3fe4d68e705
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93397838"
 ---
 # <a name="create-a-custom-probe-for-azure-application-gateway-by-using-powershell-for-azure-resource-manager"></a>Een aangepaste test voor Azure-toepassing gateway maken met behulp van Power shell voor Azure Resource Manager
@@ -50,7 +50,7 @@ In dit artikel voegt u een aangepaste test toe aan een bestaande toepassings gat
    Select-AzSubscription -Subscriptionid '{subscriptionGuid}'
    ```
 
-1. Maak een resourcegroep. U kunt deze stap overs Laan als u een bestaande resource groep hebt.
+1. Een resourcegroep maken. U kunt deze stap overs Laan als u een bestaande resource groep hebt.
 
    ```powershell
    New-AzResourceGroup -Name appgw-rg -Location 'West US'

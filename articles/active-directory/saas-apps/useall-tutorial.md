@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 04/03/2019
 ms.author: jeedes
 ms.openlocfilehash: 54433a8887e460bfdbdd86391ec826196f940294
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92509375"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-useall"></a>Zelfstudie: Azure Active Directory-integratie met Useall
@@ -49,7 +49,7 @@ Als u de integratie van Useall met Azure AD wilt configureren, voegt u Useall va
 
 **Voer de volgende stappen uit om Useall toe te voegen vanuit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -114,13 +114,13 @@ Voer de volgende stappen uit om eenmalige aanmelding met Azure AD bij Useall te 
 
 ### <a name="configure-useall-single-sign-on"></a>Eenmalige aanmelding bij Useall configureren
 
-Als u eenmalige aanmelding wilt configureren voor **Useall** , moet u de **App-URL voor federatieve metagegevens** verzenden naar het [ondersteuningsteam van Useall](mailto:luizotavio@useall.com.br). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding wilt configureren voor **Useall**, moet u de **App-URL voor federatieve metagegevens** verzenden naar het [ondersteuningsteam van Useall](mailto:luizotavio@useall.com.br). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -144,7 +144,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In deze sectie stelt u in dat Britta Simon eenmalige aanmelding van Azure kan gebruiken door haar toegang te geven tot Useall.
 
-1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **Useall**.
+1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **Useall**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 

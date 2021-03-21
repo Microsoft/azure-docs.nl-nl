@@ -8,12 +8,12 @@ ms.service: virtual-machine-scale-sets
 ms.subservice: availability
 ms.date: 02/26/2020
 ms.reviewer: jushiman
-ms.custom: avverma, devx-track-azurecli
-ms.openlocfilehash: 59720a3e89db29ba3eb0829084dd5252e27e9cc9
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.custom: avverma
+ms.openlocfilehash: 8c4944da8ffcaa75e6448483918a29809c32830b
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92746801"
 ---
 # <a name="instance-protection-for-azure-virtual-machine-scale-set-instances"></a>Instantie beveiliging voor instanties van de schaalset voor virtuele machines van Azure
@@ -50,11 +50,11 @@ Er zijn meerdere manieren voor het Toep assen van schaal beveiliging op de insta
 U kunt beveiliging tegen schalen Toep assen via de Azure Portal naar een exemplaar in de schaalset. U kunt niet meer dan één exemplaar tegelijk aanpassen. Herhaal de stappen voor elk exemplaar dat u wilt beveiligen.
  
 1. Ga naar een bestaande schaalset voor virtuele machines.
-1. Selecteer **instanties** in het menu aan de linkerkant onder **instellingen** .
+1. Selecteer **instanties** in het menu aan de linkerkant onder **instellingen**.
 1. Selecteer de naam van het exemplaar dat u wilt beveiligen.
 1. Selecteer het tabblad **beveiligings beleid** .
 1. Selecteer in de Blade **beveiligings beleid** de optie **beveiligen tegen schalen** .
-1. Selecteer **Opslaan** . 
+1. Selecteer **Opslaan**. 
 
 ### <a name="rest-api"></a>REST-API
 
@@ -118,11 +118,11 @@ Er zijn meerdere manieren voor het Toep assen van acties voor het instellen van 
 U kunt de beveiliging van schaal sets via de Azure Portal Toep assen op een exemplaar in de schaalset. U kunt niet meer dan één exemplaar tegelijk aanpassen. Herhaal de stappen voor elk exemplaar dat u wilt beveiligen.
  
 1. Ga naar een bestaande schaalset voor virtuele machines.
-1. Selecteer **instanties** in het menu aan de linkerkant onder **instellingen** .
+1. Selecteer **instanties** in het menu aan de linkerkant onder **instellingen**.
 1. Selecteer de naam van het exemplaar dat u wilt beveiligen.
 1. Selecteer het tabblad **beveiligings beleid** .
 1. Selecteer in de Blade **beveiligings beleid** de optie **beveiligen voor schaalset** .
-1. Selecteer **Opslaan** . 
+1. Selecteer **Opslaan**. 
 
 ### <a name="rest-api"></a>REST-API
 

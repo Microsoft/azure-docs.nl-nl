@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/03/2019
 ms.openlocfilehash: 5b91986d4f94861b87e413c9ff781107c3ed04a3
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92786595"
 ---
 # <a name="credentials-used-to-access-the-elastic-database-client-library"></a>Referenties die worden gebruikt voor toegang tot de Elastic Database-client bibliotheek
@@ -23,15 +23,15 @@ ms.locfileid: "92786595"
 
 In de [Elastic database-client bibliotheek](elastic-database-client-library.md) worden drie verschillende soorten referenties gebruikt om toegang te krijgen tot de [Shard-kaart Manager](elastic-scale-shard-map-management.md). Gebruik, afhankelijk van de behoefte, de referentie met het laagste toegangs niveau dat mogelijk is.
 
-* **Beheer referenties** : voor het maken of bewerken van een Shard-toewijzings beheer. (Zie de [woorden lijst](elastic-scale-glossary.md).)
-* **Toegangs referenties** : voor toegang tot een bestaand Shard-toewijzings beheer voor het verkrijgen van informatie over Shards.
-* **Verbindings referenties** : om verbinding te maken met Shards.
+* **Beheer referenties**: voor het maken of bewerken van een Shard-toewijzings beheer. (Zie de [woorden lijst](elastic-scale-glossary.md).)
+* **Toegangs referenties**: voor toegang tot een bestaand Shard-toewijzings beheer voor het verkrijgen van informatie over Shards.
+* **Verbindings referenties**: om verbinding te maken met Shards.
 
 Zie ook [data bases en aanmeldingen beheren in Azure SQL database](logins-create-manage.md).
 
 ## <a name="about-management-credentials"></a>Over beheer referenties
 
-Beheer referenties worden gebruikt voor het maken van een **ShardMapManager** -object ( [Java](/java/api/com.microsoft.azure.elasticdb.shard.mapmanager.shardmapmanager), [.net](/dotnet/api/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanager)) voor toepassingen die Shard-kaarten bewerken. (Zie bijvoorbeeld [een Shard toevoegen met Elastic database-hulpprogram ma's](elastic-scale-add-a-shard.md) en [gegevens afhankelijke route ring](elastic-scale-data-dependent-routing.md)). De gebruiker van de elastische Scale-client bibliotheek maakt de SQL-gebruikers en SQL-aanmeldingen en zorgt ervoor dat alle machtigingen voor lezen/schrijven worden verleend aan de globale Shard-toewijzings database en alle Shard-data bases. Deze referenties worden gebruikt om de globale Shard-toewijzing bij te houden en de lokale Shard wijst toe wanneer er wijzigingen in de Shard-toewijzing worden uitgevoerd. Gebruik bijvoorbeeld de beheer referenties om het Shard map Manager-object te maken (met behulp van **GetSqlShardMapManager** ( [Java](/java/api/com.microsoft.azure.elasticdb.shard.mapmanager.shardmapmanagerfactory.getsqlshardmapmanager), [.net](/dotnet/api/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanagerfactory.getsqlshardmapmanager)):
+Beheer referenties worden gebruikt voor het maken van een **ShardMapManager** -object ([Java](/java/api/com.microsoft.azure.elasticdb.shard.mapmanager.shardmapmanager), [.net](/dotnet/api/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanager)) voor toepassingen die Shard-kaarten bewerken. (Zie bijvoorbeeld [een Shard toevoegen met Elastic database-hulpprogram ma's](elastic-scale-add-a-shard.md) en [gegevens afhankelijke route ring](elastic-scale-data-dependent-routing.md)). De gebruiker van de elastische Scale-client bibliotheek maakt de SQL-gebruikers en SQL-aanmeldingen en zorgt ervoor dat alle machtigingen voor lezen/schrijven worden verleend aan de globale Shard-toewijzings database en alle Shard-data bases. Deze referenties worden gebruikt om de globale Shard-toewijzing bij te houden en de lokale Shard wijst toe wanneer er wijzigingen in de Shard-toewijzing worden uitgevoerd. Gebruik bijvoorbeeld de beheer referenties om het Shard map Manager-object te maken (met behulp van **GetSqlShardMapManager** ([Java](/java/api/com.microsoft.azure.elasticdb.shard.mapmanager.shardmapmanagerfactory.getsqlshardmapmanager), [.net](/dotnet/api/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanagerfactory.getsqlshardmapmanager)):
 
 ```java
 // Obtain a shard map manager.
@@ -48,7 +48,7 @@ Gebruik in plaats daarvan geen waarden in de vorm ' username@server ', maar gebr
 
 ## <a name="access-credentials"></a>Toegangs referenties
 
-Bij het maken van een Shard-toewijzings beheer in een toepassing die geen Shard-kaarten beheert, gebruikt u referenties met alleen-lezen machtigingen voor de globale Shard-toewijzing. De gegevens die zijn opgehaald uit de globale Shard-toewijzing onder deze referenties, worden gebruikt voor [gegevens afhankelijke route ring](elastic-scale-data-dependent-routing.md) en om de Shard-toewijzings cache op de client in te vullen. De referenties worden verzorgd via hetzelfde aanroep patroon voor **GetSqlShardMapManager** :
+Bij het maken van een Shard-toewijzings beheer in een toepassing die geen Shard-kaarten beheert, gebruikt u referenties met alleen-lezen machtigingen voor de globale Shard-toewijzing. De gegevens die zijn opgehaald uit de globale Shard-toewijzing onder deze referenties, worden gebruikt voor [gegevens afhankelijke route ring](elastic-scale-data-dependent-routing.md) en om de Shard-toewijzings cache op de client in te vullen. De referenties worden verzorgd via hetzelfde aanroep patroon voor **GetSqlShardMapManager**:
 
 ```java
 // Obtain shard map manager.
@@ -59,7 +59,7 @@ Let op het gebruik van de **smmReadOnlyConnectionString** voor het gebruik van v
 
 ## <a name="connection-credentials"></a>Verbindingsreferenties
 
-Er zijn aanvullende referenties nodig bij het gebruik van de methode **OpenConnectionForKey**  ( [Java](/java/api/com.microsoft.azure.elasticdb.shard.mapper.listshardmapper.openconnectionforkey), [.net](/dotnet/api/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmap.openconnectionforkey)) om toegang te krijgen tot een Shard die is gekoppeld aan een sharding-sleutel. Deze referenties moeten machtigingen geven voor alleen-lezen toegang tot de lokale Shard-toewijzings tabellen die zich op de Shard bevinden. Dit is nodig om verbindings validatie uit te voeren voor gegevens afhankelijke route ring op het Shard. Met dit code fragment kunt u gegevens toegang krijgen in de context van gegevens afhankelijke route ring:
+Er zijn aanvullende referenties nodig bij het gebruik van de methode **OpenConnectionForKey**  ([Java](/java/api/com.microsoft.azure.elasticdb.shard.mapper.listshardmapper.openconnectionforkey), [.net](/dotnet/api/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmap.openconnectionforkey)) om toegang te krijgen tot een Shard die is gekoppeld aan een sharding-sleutel. Deze referenties moeten machtigingen geven voor alleen-lezen toegang tot de lokale Shard-toewijzings tabellen die zich op de Shard bevinden. Dit is nodig om verbindings validatie uit te voeren voor gegevens afhankelijke route ring op het Shard. Met dit code fragment kunt u gegevens toegang krijgen in de context van gegevens afhankelijke route ring:
 
 ```csharp
 using (SqlConnection conn = rangeMap.OpenConnectionForKey<int>(targetWarehouse, smmUserConnectionString, ConnectionOptions.Validate))

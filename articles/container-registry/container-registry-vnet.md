@@ -4,10 +4,10 @@ description: Beperk de toegang tot een Azure container Registry met behulp van e
 ms.topic: article
 ms.date: 05/04/2020
 ms.openlocfilehash: 5f9bc7c9a6c8f2061765510a6396611502fd4a2a
-ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93026221"
 ---
 # <a name="restrict-access-to-a-container-registry-using-a-service-endpoint-in-an-azure-virtual-network"></a>Toegang tot een container register beperken met behulp van een service-eind punt in een virtueel Azure-netwerk
@@ -53,7 +53,7 @@ In deze sectie configureert u het container register zodanig dat toegang is toeg
 
 ### <a name="add-a-service-endpoint-to-a-subnet"></a>Een service-eind punt toevoegen aan een subnet
 
-Wanneer u een virtuele machine maakt, maakt Azure standaard een virtueel netwerk in dezelfde resource groep. De naam van het virtuele netwerk is gebaseerd op de naam van de virtuele machine. Als u bijvoorbeeld een *myDockerVM* naam voor de virtuele machine hebt, is de standaard naam van het virtuele netwerk *myDockerVMVNET* , met een subnet met de naam *myDockerVMSubnet* . Controleer dit met behulp van de opdracht [AZ Network vnet List][az-network-vnet-list] :
+Wanneer u een virtuele machine maakt, maakt Azure standaard een virtueel netwerk in dezelfde resource groep. De naam van het virtuele netwerk is gebaseerd op de naam van de virtuele machine. Als u bijvoorbeeld een *myDockerVM* naam voor de virtuele machine hebt, is de standaard naam van het virtuele netwerk *myDockerVMVNET*, met een subnet met de naam *myDockerVMSubnet*. Controleer dit met behulp van de opdracht [AZ Network vnet List][az-network-vnet-list] :
 
 ```azurecli
 az network vnet list \

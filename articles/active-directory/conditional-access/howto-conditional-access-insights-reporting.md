@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: dawoo
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ae802038626a1fbf8d533800a0b8eb43c4565e8c
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100574176"
 ---
 # <a name="conditional-access-insights-and-reporting"></a>Inzichten en rapportage voor voorwaardelijke toegang
@@ -91,7 +91,7 @@ Zodra de para meters zijn ingesteld, wordt de impact samenvatting geladen. In de
 
 Bekijk de uitsplitsing van gebruikers of aanmeldingen voor elk van de voor waarden. U kunt de aanmeldingen van een bepaald resultaat filteren (bijvoorbeeld geslaagd of mislukt) door op de overzichts tegels boven aan de werkmap te selecteren. U kunt de uitsplitsing van aanmeldingen zien voor elk van de voor waarden voor voorwaardelijke toegang: Apparaatstatus, platform, client-app, locatie, toepassing en aanmeldings risico.  
 
-## <a name="sign-in-details"></a>Details voor aanmelden 
+## <a name="sign-in-details"></a>Aanmeldingsgegevens 
 
 ![Details van werkmap aanmelding](./media/howto-conditional-access-insights-reporting/workbook-sign-in-details.png)
 
@@ -108,7 +108,7 @@ Een beleid voor voorwaardelijke toegang configureren in de modus alleen rapport:
 1. Blader naar **Azure Active Directory**  >  **beveiligings**  >  **voorwaardelijke toegang**.
 1. Selecteer een bestaand beleid of maak een nieuw beleid.
 1. Stel onder **beleid inschakelen** de modus voor **alleen rapport** in.
-1. Selecteer **Opslaan**.
+1. Selecteer **Opslaan**
 
 > [!TIP]
 > Als u de **beleids status inschakelen** van een bestaand beleid **van aan aan** **rapporteert,** wordt bestaande beleids afdwinging uitgeschakeld. 

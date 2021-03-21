@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 08/14/2020
 ms.author: apimpm
 ms.openlocfilehash: fae4e349d46425c0c2b2b923d6a61e2e588708c1
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93077248"
 ---
 # <a name="how-to-authorize-developer-accounts-using-oauth-20-in-azure-api-management"></a>Ontwikkelaars accounts met OAuth 2,0 in azure API Management autoriseren
@@ -38,7 +38,7 @@ In deze hand leiding wordt beschreven hoe u uw API Management service-exemplaar 
 > [!NOTE]
 > Als u nog geen API Management service-exemplaar hebt gemaakt, raadpleegt u [een API Management service-exemplaar maken][Create an API Management service instance].
 
-1. Klik op het tabblad OAuth 2,0 in het menu aan de linkerkant en klik op **+ toevoegen** .
+1. Klik op het tabblad OAuth 2,0 in het menu aan de linkerkant en klik op **+ toevoegen**.
 
     ![OAuth 2,0-menu](./media/api-management-howto-oauth2/oauth-01.png)
 
@@ -51,7 +51,7 @@ In deze hand leiding wordt beschreven hoe u uw API Management service-exemplaar 
 
     ![OAuth 2,0-nieuwe server](./media/api-management-howto-oauth2/oauth-02.png)
 
-4. De volgende sectie van het formulier bevat de **autorisatie subsidie typen** , de **autorisatie-eind punt-URL** en de instellingen voor de **Autorisatie aanvraag** .
+4. De volgende sectie van het formulier bevat de **autorisatie subsidie typen**, de **autorisatie-eind punt-URL** en de instellingen voor de **Autorisatie aanvraag** .
 
     Geef de **typen autorisatie subsidie** op door de gewenste typen te controleren. **Autorisatie code** is standaard opgegeven.
 
@@ -61,7 +61,7 @@ In deze hand leiding wordt beschreven hoe u uw API Management service-exemplaar 
 
     De **methode autorisatie aanvraag** geeft aan hoe de autorisatie aanvraag wordt verzonden naar de OAuth 2,0-server. **Get** is standaard geselecteerd.
 
-5. Vervolgens moet u de URL van het **token-eind punt** , de **client verificatie methoden** , de **Verzend methode voor het toegangs token** en het **standaard bereik** opgeven.
+5. Vervolgens moet u de URL van het **token-eind punt**, de **client verificatie methoden**, de **Verzend methode voor het toegangs token** en het **standaard bereik** opgeven.
 
     ![Scherm opname van het venster OAuth2-service toevoegen.](./media/api-management-howto-oauth2/oauth-03.png)
 
@@ -69,7 +69,7 @@ In deze hand leiding wordt beschreven hoe u uw API Management service-exemplaar 
 
     `https://login.microsoftonline.com/<TenantID>/oauth2/token`
 
-    De standaard instelling voor **client verificatie methoden** is **Basic** en de  **methode voor het verzenden van toegangs tokens** is **autorisatie-header** . Deze waarden worden geconfigureerd in deze sectie van het formulier, samen met het **standaard bereik** .
+    De standaard instelling voor **client verificatie methoden** is **Basic** en de  **methode voor het verzenden van toegangs tokens** is **autorisatie-header**. Deze waarden worden geconfigureerd in deze sectie van het formulier, samen met het **standaard bereik**.
 
 6. De sectie **client referenties** bevat de **client-id** en het **client geheim** die tijdens het maken en configureren van uw OAuth 2,0-server worden verkregen. Zodra de **client-id** en het **client geheim** zijn opgegeven, wordt de **redirect_uri** voor de **autorisatie code** gegenereerd. Deze URI wordt gebruikt voor het configureren van de antwoord-URL in uw OAuth 2,0-server configuratie.
 
@@ -90,11 +90,11 @@ In deze hand leiding wordt beschreven hoe u uw API Management service-exemplaar 
 
     ![OAuth 2,0-Api's](./media/api-management-howto-oauth2/oauth-05.png)
 
-2. Klik op de naam van de gewenste API en klik op **instellingen** . Ga naar de sectie **beveiliging** en schakel het selectie vakje **OAuth 2,0** in.
+2. Klik op de naam van de gewenste API en klik op **instellingen**. Ga naar de sectie **beveiliging** en schakel het selectie vakje **OAuth 2,0** in.
 
     ![OAuth 2,0-instellingen](./media/api-management-howto-oauth2/oauth-06.png)
 
-3. Selecteer de gewenste **autorisatie server** in de vervolg keuzelijst en klik op **Opslaan** .
+3. Selecteer de gewenste **autorisatie server** in de vervolg keuzelijst en klik op **Opslaan**.
 
     ![Scherm opname van de geselecteerde autorisatie server en de knop Opslaan.](./media/api-management-howto-oauth2/oauth-07.png)
 
@@ -104,7 +104,7 @@ In deze hand leiding wordt beschreven hoe u uw API Management service-exemplaar 
 
 Nadat u uw OAuth 2,0-autorisatie server hebt geconfigureerd en uw API hebt geconfigureerd voor het gebruik van die server, kunt u deze testen door naar de ontwikkelaars portal te gaan en een API aan te roepen. Klik op **ontwikkelaars Portal (verouderd)** in het bovenste menu van de pagina **overzicht** van Azure API Management-instantie.
 
-Klik op **api's** in het bovenste menu en selecteer **echo-API** .
+Klik op **api's** in het bovenste menu en selecteer **echo-API**.
 
 ![Echo-API][api-management-apis-echo-api]
 

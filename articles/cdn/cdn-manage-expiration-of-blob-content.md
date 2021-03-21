@@ -16,10 +16,10 @@ ms.topic: how-to
 ms.date: 02/1/2018
 ms.author: mazha
 ms.openlocfilehash: 206ff6f888229356743bebb816cf03e4f7a7504b
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92778713"
 ---
 # <a name="manage-expiration-of-azure-blob-storage-in-azure-cdn"></a>De verval datum van Azure Blob-opslag in Azure CDN beheren
@@ -45,13 +45,13 @@ U kunt ook de cache-instellingen van de Azure Portal beheren door de regels voor
 De voorkeurs methode voor het instellen van de koptekst van een BLOB `Cache-Control` is het gebruik van cache regels in de Azure Portal. Zie [beheer van Azure CDN caching met cache regels](cdn-caching-rules.md)voor meer informatie over de regels voor CDN-caching.
 
 > [!NOTE] 
-> Regels voorcaching zijn alleen beschikbaar voor de profielen **Azure CDN Standard van Verizon** en **Azure CDN Standard van Akamai** . Voor **Azure CDN Premium van Verizon** -profielen moet u de [engine Azure CDN Rules](./cdn-verizon-premium-rules-engine.md) in de portal **beheren** gebruiken voor vergelijk bare functionaliteit.
+> Regels voorcaching zijn alleen beschikbaar voor de profielen **Azure CDN Standard van Verizon** en **Azure CDN Standard van Akamai**. Voor **Azure CDN Premium van Verizon** -profielen moet u de [engine Azure CDN Rules](./cdn-verizon-premium-rules-engine.md) in de portal **beheren** gebruiken voor vergelijk bare functionaliteit.
 
-**Ga naar de pagina regels voor CDN-caching** :
+**Ga naar de pagina regels voor CDN-caching**:
 
 1. Selecteer in de Azure Portal een CDN-profiel en selecteer vervolgens het eind punt voor de blob.
 
-2. Selecteer in het linkerdeelvenster onder Instellingen de optie **Regels voor opslaan in cache** .
+2. Selecteer in het linkerdeelvenster onder Instellingen de optie **Regels voor opslaan in cache**.
 
    ![Knop regels voor CDN-caching](./media/cdn-manage-expiration-of-blob-content/cdn-caching-rules-btn.png)
 
@@ -62,7 +62,7 @@ De voorkeurs methode voor het instellen van de koptekst van een BLOB `Cache-Cont
 
 **De Cache-Control headers van een Blob Storage-service instellen met behulp van algemene regels voor opslaan in cache:**
 
-1. Stel onder **algemene regels voor caching** het **in cache geheugen opslaan van de query reeks** in op het negeren van **query reeksen** en instellen dat **cache gedrag** wordt **overschreven** .
+1. Stel onder **algemene regels voor caching** het **in cache geheugen opslaan van de query reeks** in op het negeren van **query reeksen** en instellen dat **cache gedrag** wordt **overschreven**.
       
 2. Voer 3600 in het vak **seconden** of 1 in het vak **uren** in voor de **verloop tijd** van de cache. 
 
@@ -70,21 +70,21 @@ De voorkeurs methode voor het instellen van de koptekst van een BLOB `Cache-Cont
 
    Met deze algemene regel voor opslaan in cache wordt een cache duur van één uur ingesteld en is dit van invloed op alle aanvragen voor het eind punt. Het onderdrukt de `Cache-Control` of `Expires` http-headers die worden verzonden door de oorspronkelijke server die door het eind punt is opgegeven.   
 
-3. Selecteer **Opslaan** .
+3. Selecteer **Opslaan**.
  
 **De Cache-Control headers van een blob-bestand instellen met behulp van aangepaste regels voor opslaan in cache:**
 
 1. Maak onder **regels voor aangepaste caching** twee match-voor waarden:
 
-     A. Voor de eerste match-voor waarde stelt u de voor **waarde match** in op **Path** en voert u in `/blobcontainer1/*` voor de **waarde match** . Stel **caching-gedrag** in op **overschrijven** en voer 4 in het vak **uren** in.
+     A. Voor de eerste match-voor waarde stelt u de voor **waarde match** in op **Path** en voert u in `/blobcontainer1/*` voor de **waarde match**. Stel **caching-gedrag** in op **overschrijven** en voer 4 in het vak **uren** in.
 
-    B. Voor de tweede voor waarde match stelt u de voor waarde **match** in op **Path** en voert u in `/blobcontainer1/blob1.txt` voor de **waarde match** . Stel **caching-gedrag** in op **overschrijven** en voer 2 in het vak **uren** in.
+    B. Voor de tweede voor waarde match stelt u de voor waarde **match** in op **Path** en voert u in `/blobcontainer1/blob1.txt` voor de **waarde match**. Stel **caching-gedrag** in op **overschrijven** en voer 2 in het vak **uren** in.
 
     ![Voor beeld van regels voor aangepaste CDN-caching](./media/cdn-manage-expiration-of-blob-content/cdn-custom-caching-rules-example.png)
 
     Met de eerste aangepaste regel voor opslaan in cache wordt een cache duur van vier uur ingesteld voor BLOB-bestanden in de `/blobcontainer1` map op de oorspronkelijke server die door het eind punt is opgegeven. Met de tweede regel wordt alleen de eerste regel voor het `blob1.txt` blobbestand overschreven en wordt er een cache duur van twee uur voor ingesteld.
 
-2. Selecteer **Opslaan** .
+2. Selecteer **Opslaan**.
 
 
 ## <a name="setting-cache-control-headers-by-using-azure-powershell"></a>Cache-Control headers instellen met behulp van Azure PowerShell
@@ -158,7 +158,7 @@ Met [Azure Storage Explorer](https://azure.microsoft.com/features/storage-explor
 De eigenschap *CacheControl* van een BLOB bijwerken met Azure Storage Explorer:
    1. Selecteer een BLOB en selecteer **Eigenschappen** in het context menu. 
    2. Schuif omlaag naar de eigenschap *CacheControl* .
-   3. Voer een waarde in en selecteer vervolgens **Opslaan** .
+   3. Voer een waarde in en selecteer vervolgens **Opslaan**.
 
 
 ![Azure Storage Explorer eigenschappen](./media/cdn-manage-expiration-of-blob-content/cdn-storage-explorer-properties.png)
@@ -173,7 +173,7 @@ azure storage blob upload -c <connectionstring> -p cacheControl="max-age=3600" .
 ### <a name="azure-storage-services-rest-api"></a>Azure Storage-services REST API
 U kunt de [Azure Storage-services rest API](/rest/api/storageservices/) om de eigenschap *x-MS-BLOB-cache-Control* expliciet in te stellen met behulp van de volgende bewerkingen op aanvraag:
   
-   - [BLOB plaatsen](/rest/api/storageservices/Put-Blob)
+   - [Blob plaatsen](/rest/api/storageservices/Put-Blob)
    - [Blokkerings lijst plaatsen](/rest/api/storageservices/Put-Block-List)
    - [BLOB-eigenschappen instellen](/rest/api/storageservices/Set-Blob-Properties)
 

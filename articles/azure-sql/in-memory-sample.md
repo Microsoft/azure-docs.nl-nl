@@ -12,10 +12,10 @@ ms.author: jovanpop
 ms.reviewer: ''
 ms.date: 12/18/2018
 ms.openlocfilehash: b5a1035f8a213a6ce02dd3252ff7d3ddea46faf7
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92786578"
 ---
 # <a name="in-memory-sample"></a>Voorbeeld van In-Memory
@@ -74,7 +74,7 @@ Het resultaat **0** betekent dat In-Memory niet wordt ondersteund en **1** betek
 
 ### <a name="about-the-created-memory-optimized-items"></a>Over de aangemaakte items die zijn geoptimaliseerd voor geheugen
 
-**Tabellen** : Het voorbeeld bevat de volgende tabellen die zijn geoptimaliseerd voor geheugen:
+**Tabellen**: Het voorbeeld bevat de volgende tabellen die zijn geoptimaliseerd voor geheugen:
 
 - SalesLT.Product_inmem
 - SalesLT.SalesOrderHeader_inmem
@@ -82,7 +82,7 @@ Het resultaat **0** betekent dat In-Memory niet wordt ondersteund en **1** betek
 - Demo.DemoSalesOrderHeaderSeed
 - Demo.DemoSalesOrderDetailSeed
 
-U kunt tabellen die zijn geoptimaliseerd voor geheugen inspecteren met de **Objectverkenner** in SSMS. Klik met de rechtermuisknop op **Tabellen** > **Filter** > **Filterinstellingen** > **Is geoptimaliseerd voor geheugen** . De waarde is gelijk aan 1.
+U kunt tabellen die zijn geoptimaliseerd voor geheugen inspecteren met de **Objectverkenner** in SSMS. Klik met de rechtermuisknop op **Tabellen** > **Filter** > **Filterinstellingen** > **Is geoptimaliseerd voor geheugen**. De waarde is gelijk aan 1.
 
 U kunt ook een query uitvoeren op de catalogusweergaven, zoals:
 
@@ -92,7 +92,7 @@ SELECT is_memory_optimized, name, type_desc, durability_desc
     WHERE is_memory_optimized = 1;
 ```
 
-**In eigen systeem gecompileerde opgeslagen procedure** : U kunt SalesLT.usp_InsertSalesOrder_inmem inspecteren via een query in de catalogusweergave:
+**In eigen systeem gecompileerde opgeslagen procedure**: U kunt SalesLT.usp_InsertSalesOrder_inmem inspecteren via een query in de catalogusweergave:
 
 ```sql
 SELECT uses_native_compilation, OBJECT_NAME(object_id), definition
@@ -150,7 +150,7 @@ begin;
 end
 ```
 
-Als u de versie *_ondisk* van het vorige T-SQL-script voor ostress.exe wilt maken, vervangt u beide exemplaren van de subtekenreeks *_inmem* door *_ondisk* . Deze vervangingen zijn van invloed op de namen van tabellen en opgeslagen procedures.
+Als u de versie *_ondisk* van het vorige T-SQL-script voor ostress.exe wilt maken, vervangt u beide exemplaren van de subtekenreeks *_inmem* door *_ondisk*. Deze vervangingen zijn van invloed op de namen van tabellen en opgeslagen procedures.
 
 #### <a name="install-rml-utilities-and-ostress"></a>Installeer RML-hulpprogramma's en `ostress`
 
@@ -207,7 +207,7 @@ Als `ostress.exe` voltooid is, wordt de uitvoeringsduur als laatste regel van de
 
 #### <a name="reset-edit-for-_ondisk-then-rerun"></a>Stel het opnieuw in, bewerk het voor *_ondisk* en voer dan opnieuw uit
 
-Nadat u het resultaat van de *_inmem* -uitvoering hebt verkregen, voert u de volgende stappen uit voor de *_ondisk* -uitvoering:
+Nadat u het resultaat van de *_inmem*-uitvoering hebt verkregen, voert u de volgende stappen uit voor de *_ondisk*-uitvoering:
 
 1. Stel de database opnieuw in door de volgende opdracht uit te voeren in SSMS om alle gegevens te verwijderen die zijn ingevoegd bij de eerdere uitvoering:
 

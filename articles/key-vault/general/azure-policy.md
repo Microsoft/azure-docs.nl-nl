@@ -8,10 +8,10 @@ ms.service: key-vault
 ms.subservice: general
 ms.topic: how-to
 ms.openlocfilehash: 6ac4d0e0744bfc82a686671234e013b2dd717146
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92927750"
 ---
 # <a name="integrate-azure-key-vault-with-azure-policy"></a>Azure Key Vault integreren met Azure Policy
@@ -29,9 +29,9 @@ Enkele voorbeeldscenario's:
 
 ## <a name="types-of-policy-effects-and-guidance"></a>Soorten beleidseffecten en -richtlijnen
 
-**Audit** : Wanneer het effect van een beleid is ingesteld op 'audit', resulteert het beleid niet in wijzigingen die fouten veroorzaken. Er wordt dan alleen een waarschuwing gegeven voor onderdelen zoals certificaten die niet voldoen aan de beleidsdefinities binnen een opgegeven bereik. Deze onderdelen worden dan als 'Niet compatibel' gemarkeerd in het dashboard voor beleidsnaleving. 'Audit' is de standaardinstelling als er geen beleidseffect is geselecteerd.
+**Audit**: Wanneer het effect van een beleid is ingesteld op 'audit', resulteert het beleid niet in wijzigingen die fouten veroorzaken. Er wordt dan alleen een waarschuwing gegeven voor onderdelen zoals certificaten die niet voldoen aan de beleidsdefinities binnen een opgegeven bereik. Deze onderdelen worden dan als 'Niet compatibel' gemarkeerd in het dashboard voor beleidsnaleving. 'Audit' is de standaardinstelling als er geen beleidseffect is geselecteerd.
 
-**Deny** : Wanneer het effect van een beleid is ingesteld op 'deny', blokkeert het beleid het maken van nieuwe onderdelen zoals certificaten, evenals het maken van nieuwe versies van bestaande onderdelen die niet voldoen aan de beleidsdefinitie. Dit effect heeft geen invloed op bestaande niet-compatibele resources in een sleutelkluis. De 'audit'-mogelijkheden blijven van kracht.
+**Deny**: Wanneer het effect van een beleid is ingesteld op 'deny', blokkeert het beleid het maken van nieuwe onderdelen zoals certificaten, evenals het maken van nieuwe versies van bestaande onderdelen die niet voldoen aan de beleidsdefinitie. Dit effect heeft geen invloed op bestaande niet-compatibele resources in een sleutelkluis. De 'audit'-mogelijkheden blijven van kracht.
 
 ## <a name="available-built-in-policy-definitions"></a>Beschikbare 'ingebouwde' beleidsdefinities
 
@@ -91,9 +91,9 @@ Uw service kan worden onderbroken als een certificaat dat niet op de juiste mani
 
 Als u er zeker van wilt zijn dat uw sleutels niet langer actief zijn dan een opgegeven aantal dagen, kunt u dit beleid gebruiken om te controleren hoe lang uw sleutel actief is geweest.
 
-**Als voor uw sleutel een activeringsdatum is ingesteld** , wordt met dit beleid het aantal dagen berekend dat is verstreken van de **activeringsdatum** van de sleutel tot de huidige datum. Als het aantal dagen de drempelwaarde overschrijdt die u hebt ingesteld, wordt de sleutel gemarkeerd als niet-compatibel met het beleid.
+**Als voor uw sleutel een activeringsdatum is ingesteld**, wordt met dit beleid het aantal dagen berekend dat is verstreken van de **activeringsdatum** van de sleutel tot de huidige datum. Als het aantal dagen de drempelwaarde overschrijdt die u hebt ingesteld, wordt de sleutel gemarkeerd als niet-compatibel met het beleid.
 
-**Als voor uw sleutel geen activeringsdatum is ingesteld** , wordt met dit beleid het aantal dagen berekend dat is verstreken van de **productiedatum** van de sleutel tot de huidige datum. Als het aantal dagen de drempelwaarde overschrijdt die u hebt ingesteld, wordt de sleutel gemarkeerd als niet-compatibel met het beleid.
+**Als voor uw sleutel geen activeringsdatum is ingesteld**, wordt met dit beleid het aantal dagen berekend dat is verstreken van de **productiedatum** van de sleutel tot de huidige datum. Als het aantal dagen de drempelwaarde overschrijdt die u hebt ingesteld, wordt de sleutel gemarkeerd als niet-compatibel met het beleid.
 
 ### <a name="keys-should-be-the-specified-cryptographic-type-rsa-or-ec-preview"></a>Sleutels moeten het opgegeven cryptografische type RSA of EC hebben (preview)
 
@@ -139,9 +139,9 @@ Beheer de nalevingsvereisten van uw organisatie door de maximale tijdsduur (in d
 
 Als u er zeker van wilt zijn dat uw geheimen niet langer actief zijn dan een opgegeven aantal dagen, kunt u dit beleid gebruiken om te controleren hoe lang uw geheim actief is geweest.
 
-**Als voor uw geheim een activeringsdatum is ingesteld** , wordt met dit beleid het aantal dagen berekend dat is verstreken van de **activeringsdatum** van het geheim tot de huidige datum. Als het aantal dagen de drempelwaarde overschrijdt die u hebt ingesteld, wordt het geheim gemarkeerd als niet-compatibel met het beleid.
+**Als voor uw geheim een activeringsdatum is ingesteld**, wordt met dit beleid het aantal dagen berekend dat is verstreken van de **activeringsdatum** van het geheim tot de huidige datum. Als het aantal dagen de drempelwaarde overschrijdt die u hebt ingesteld, wordt het geheim gemarkeerd als niet-compatibel met het beleid.
 
-**Als voor uw geheim geen activeringsdatum is ingesteld** , wordt met dit beleid het aantal dagen berekend dat is verstreken van de **productiedatum** van het geheim tot de huidige datum. Als het aantal dagen de drempelwaarde overschrijdt die u hebt ingesteld, wordt het geheim gemarkeerd als niet-compatibel met het beleid.
+**Als voor uw geheim geen activeringsdatum is ingesteld**, wordt met dit beleid het aantal dagen berekend dat is verstreken van de **productiedatum** van het geheim tot de huidige datum. Als het aantal dagen de drempelwaarde overschrijdt die u hebt ingesteld, wordt het geheim gemarkeerd als niet-compatibel met het beleid.
 
 ### <a name="secrets-should-have-content-type-set-preview"></a>Voor geheimen moet het inhoudstype zijn ingesteld (preview)
 

@@ -11,10 +11,10 @@ ms.topic: tutorial
 ms.date: 09/25/2020
 ms.custom: devx-track-python
 ms.openlocfilehash: ea1cc022cbea7dbf3d1fa12cb83cfe3084b28560
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92788078"
 ---
 # <a name="tutorial-use-python-and-ai-to-generate-searchable-content-from-azure-blobs"></a>Zelfstudie: Python en AI gebruiken voor het genereren van doorzoekbare inhoud van Azure-blobs
@@ -45,7 +45,7 @@ Als u geen abonnement op Azure hebt, opent u een [gratis account](https://azure.
 
 1. Open deze [OneDrive-map](https://1drv.ms/f/s!As7Oy81M_gVPa-LCb5lC_3hbS-4) en klik in de linkerbovenhoek op **Downloaden** om de bestanden naar uw computer te kopiëren. 
 
-1. Klik met de rechtermuisknop op het zip-bestand en selecteer **Alles extraheren** . Er zijn 14 bestanden van verschillende typen. U gebruikt 7 voor deze oefening.
+1. Klik met de rechtermuisknop op het zip-bestand en selecteer **Alles extraheren**. Er zijn 14 bestanden van verschillende typen. U gebruikt 7 voor deze oefening.
 
 ## <a name="1---create-services"></a>1- Services maken
 
@@ -55,7 +55,7 @@ Maak, indien mogelijk, beide in dezelfde regio en resourcegroep voor nabijheid e
 
 ### <a name="start-with-azure-storage"></a>Aan de slag met Azure Storage
 
-1. [Meld u aan bij de Azure-portal](https://portal.azure.com/) en klik op **En resourcegroepen maken** .
+1. [Meld u aan bij de Azure-portal](https://portal.azure.com/) en klik op **En resourcegroepen maken**.
 
 1. Zoek naar *Opslagaccount* en selecteer de aanbieding van het Microsoft-opslagaccount.
 
@@ -63,25 +63,25 @@ Maak, indien mogelijk, beide in dezelfde regio en resourcegroep voor nabijheid e
 
 1. Op het tabblad Basisinstellingen zijn de volgende items vereist. Accepteer de standaardwaarden voor alle andere.
 
-   + **Resourcegroep** . Selecteer een bestaande naam of maak een nieuwe, maar gebruik dezelfde groep voor alle services, zodat u ze gezamenlijk kunt beheren.
+   + **Resourcegroep**. Selecteer een bestaande naam of maak een nieuwe, maar gebruik dezelfde groep voor alle services, zodat u ze gezamenlijk kunt beheren.
 
-   + **Naam van opslagaccount** . Als u denkt dat u mogelijk meerdere resources van hetzelfde type hebt, gebruikt u de naam om op type en regio te onderscheiden, bijvoorbeeld *blobstoragewestus* . 
+   + **Naam van opslagaccount**. Als u denkt dat u mogelijk meerdere resources van hetzelfde type hebt, gebruikt u de naam om op type en regio te onderscheiden, bijvoorbeeld *blobstoragewestus*. 
 
-   + **Locatie** . Kies indien mogelijk dezelfde locatie die wordt gebruikt voor Azure Cognitive Search en Cognitive Services. Een enkele locatie vermindert bandbreedtekosten aanzienlijk.
+   + **Locatie**. Kies indien mogelijk dezelfde locatie die wordt gebruikt voor Azure Cognitive Search en Cognitive Services. Een enkele locatie vermindert bandbreedtekosten aanzienlijk.
 
-   + **Soort account** . Kies de standaardinstelling *StorageV2 (algemeen gebruik v2)* .
+   + **Soort account**. Kies de standaardinstelling *StorageV2 (algemeen gebruik v2)* .
 
 1. Klik vervolgens op **Beoordelen en maken** om de service te maken.
 
 1. Zodra de app is gemaakt, klikt u op **Ga naar de resource** om de pagina Overzicht te openen.
 
-1. Klik op **Blobs** -service.
+1. Klik op **Blobs**-service.
 
-1. Klik op **En container** om een container te maken en geef deze de naam *cog-search-demo* .
+1. Klik op **En container** om een container te maken en geef deze de naam *cog-search-demo*.
 
 1. Selecteer *cog-search-demo* en klik vervolgens op **Uploaden** om de map te openen waar u de downloadbestanden hebt opgeslagen. Selecteer alle niet-afbeeldingsbestanden. U moet 7 bestanden hebben. Klik op **OK** om deze te uploaden.
 
-   :::image type="content" source="media/cognitive-search-tutorial-blob/sample-files.png" alt-text="Een opslagaccount maken" border="false":::
+   :::image type="content" source="media/cognitive-search-tutorial-blob/sample-files.png" alt-text="Voorbeeldbestanden uploaden" border="false":::
 
 1. Voordat u Azure Storage verlaat, moet u een verbindingsreeks ophalen zodat u een verbinding in Azure Cognitive Search kunt formuleren. 
 
@@ -117,7 +117,7 @@ Net als bij Azure Blob-opslag duurt het even om de toegangssleutel te verzamelen
 
    Haal ook de querysleutel op. Het is een aanbevolen procedure voor het uitgeven van queryaanvragen met alleen-lezen-toegang.
 
-   :::image type="content" source="media/search-get-started-javascript/service-name-and-keys.png" alt-text="Een opslagaccount maken" border="false":::
+   :::image type="content" source="media/search-get-started-javascript/service-name-and-keys.png" alt-text="De naam van de service en de querysleutels voor beheer ophalen" border="false":::
 
 Voor alle aanvragen is een API-sleutel vereist in de header die naar uw service wordt verzonden. Me een geldige sleutel stelt u per aanvraag een vertrouwensrelatie in tussen de toepassing die de aanvraag verzendt en de service die de aanvraag afhandelt.
 
@@ -188,13 +188,13 @@ print(r.status_code)
 
 De aanvraag zou een 201-statuscode moeten retourneren om de succesvolle uitvoering te bevestigen.
 
-Controleer in de Azure-portal op de pagina dashboard van zoekservice of de cogsrch-py-datasource wordt weergegeven in de lijst **Gegevensbronnen** . Klik op **Vernieuwen** om de pagina bij te werken.
+Controleer in de Azure-portal op de pagina dashboard van zoekservice of de cogsrch-py-datasource wordt weergegeven in de lijst **Gegevensbronnen**. Klik op **Vernieuwen** om de pagina bij te werken.
 
-:::image type="content" source="media/cognitive-search-tutorial-blob-python/py-data-source-tile.png" alt-text="Een opslagaccount maken" border="false":::
+:::image type="content" source="media/cognitive-search-tutorial-blob-python/py-data-source-tile.png" alt-text="De tegel gegevensbronnen in de portal" border="false":::
 
 ### <a name="step-2-create-a-skillset"></a>Stap 2: Een set vaardigheden maken
 
-In deze stap definieert u een reeks verrijkingsstappen om uw gegevens toe te passen. We noemen elke verrijkingsstap een *vaardigheid* en de reeks verrijkingsstappen een *set vaardigheden* . In deze zelfstudie wordt gebruikgemaakt van [ingebouwde cognitieve tekstvaardigheden](cognitive-search-predefined-skills.md) voor de set vaardigheden:
+In deze stap definieert u een reeks verrijkingsstappen om uw gegevens toe te passen. We noemen elke verrijkingsstap een *vaardigheid* en de reeks verrijkingsstappen een *set vaardigheden*. In deze zelfstudie wordt gebruikgemaakt van [ingebouwde cognitieve tekstvaardigheden](cognitive-search-predefined-skills.md) voor de set vaardigheden:
 
 + [Herkenning van entiteiten](cognitive-search-skill-entity-recognition.md) voor het extraheren van de namen van organisaties uit inhoud van de blobcontainer.
 
@@ -303,7 +303,7 @@ Elke vaardigheid wordt uitgevoerd voor de inhoud van het document. Tijdens het v
 
 Een grafische weergave van de set vaardigheden wordt hieronder weergegeven.
 
-:::image type="content" source="media/cognitive-search-tutorial-blob/skillset.png" alt-text="Een opslagaccount maken" border="false":::
+:::image type="content" source="media/cognitive-search-tutorial-blob/skillset.png" alt-text="Een vaardighedenset begrijpen" border="false":::
 
 Uitvoeren kunnen aan een index worden toegewezen, als invoer worden gebruikt voor een downstream-vaardigheid, of beide zoals bij taalcode. Een taalcode is in de index handig om te filteren. Taalcode wordt als invoer door vaardigheden voor tekstanalyse gebruikt om de taalregels voor woordafbreking in te stellen.
 
@@ -472,11 +472,11 @@ pprint(json.dumps(r.json(), indent=1))
 
 Controleer in het antwoord de `"lastResult"` op de waarden `"status"` en `"endTime"`. Voer periodiek het script uit om de status te controleren. Als de indexeerfunctie is voltooid, wordt de status ingesteld op "geslaagd", wordt "endTime" opgegeven en bevat het antwoord eventuele fouten en waarschuwingen die zijn opgetreden tijdens het verrijken.
 
-:::image type="content" source="media/cognitive-search-tutorial-blob-python/py-indexer-is-created.png" alt-text="Een opslagaccount maken" border="false":::
+:::image type="content" source="media/cognitive-search-tutorial-blob-python/py-indexer-is-created.png" alt-text="Indexeerfunctie is gemaakt" border="false":::
 
 Waarschuwingen komen veel voor bij sommige combinaties van bronbestand en vaardigheid en wijzen niet altijd op een probleem. Veel waarschuwingen zijn onschadelijk. Als u bijvoorbeeld een JPEG-bestand indexeert dat geen tekst bevat, ziet u de waarschuwing in deze schermopname.
 
-:::image type="content" source="media/cognitive-search-tutorial-blob-python/py-indexer-warning-example.png" alt-text="Een opslagaccount maken" border="false":::
+:::image type="content" source="media/cognitive-search-tutorial-blob-python/py-indexer-warning-example.png" alt-text="Voorbeeld van indexeerfunctiewaarschuwing" border="false":::
 
 ## <a name="5---search"></a>5 - Zoeken
 
@@ -493,7 +493,7 @@ pprint(json.dumps(r.json(), indent=1))
 
 De resultaten moeten er ongeveer uitzien als in het volgende voorbeeld. In de schermopname wordt alleen een deel van het antwoord weergegeven.
 
-:::image type="content" source="media/cognitive-search-tutorial-blob-python/py-query-index-for-fields.png" alt-text="Een opslagaccount maken" border="false":::
+:::image type="content" source="media/cognitive-search-tutorial-blob-python/py-query-index-for-fields.png" alt-text="Query-index voor alle velden" border="false":::
 
 De uitvoer is het schema van de index met de naam, het type en de kenmerken van elk veld.
 
@@ -508,7 +508,7 @@ pprint(json.dumps(r.json(), indent=1))
 
 De resultaten moeten er ongeveer uitzien als in het volgende voorbeeld. In de schermopname wordt alleen een deel van het antwoord weergegeven.
 
-:::image type="content" source="media/cognitive-search-tutorial-blob-python/py-query-index-for-organizations.png" alt-text="Een opslagaccount maken" border="false":::
+:::image type="content" source="media/cognitive-search-tutorial-blob-python/py-query-index-for-organizations.png" alt-text="Query-index voor de inhoud van organisaties" border="false":::
 
 Herhaal dit voor aanvullende velden: `content`, `languageCode`, `keyPhrases` en `organizations` in deze oefening. U kunt meerdere velden retourneren via `$select` met behulp van een door komma's gescheiden lijst.
 
@@ -522,7 +522,7 @@ In de eerste experimentele fasen van ontwikkeling, is de meest praktische aanpak
 
 U kunt de portal gebruiken om indexen, indexeerfuncties, gegevensbronnen en vaardighedensets te verwijderen. Wanneer u de indexeerfunctie verwijdert, kunt u eventueel de index, de vaardighedenset en de gegevensbron selectief en tegelijkertijd verwijderen.
 
-:::image type="content" source="media/cognitive-search-tutorial-blob-python/py-delete-indexer-delete-all.png" alt-text="Een opslagaccount maken" border="false":::
+:::image type="content" source="media/cognitive-search-tutorial-blob-python/py-delete-indexer-delete-all.png" alt-text="Zoekobjecten verwijderen in de portal" border="false":::
 
 U kunt ze ook verwijderen met een script. Het volgende script toont hoe u een vaardighedenset verwijdert. 
 

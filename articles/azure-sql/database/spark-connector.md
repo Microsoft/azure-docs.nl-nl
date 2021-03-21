@@ -12,10 +12,10 @@ ms.author: denzilr
 ms.reviewer: sstein
 ms.date: 09/02/2020
 ms.openlocfilehash: 2e01e74f5086f7f1eb7e85661fbd35f452d8dae8
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92790199"
 ---
 # <a name="accelerate-real-time-big-data-analytics-using-the-spark-connector"></a>Big data analyse in realtime versnellen met behulp van de Spark-connector
@@ -36,7 +36,7 @@ De GitHub-opslag plaats voor de oude connector die eerder aan deze pagina is gek
 | :-----------------------------------  | :----------------------- |
 | Apache Spark                          | 2.0.2 of hoger           |
 | Scala                                 | 2,10 of hoger            |
-| Micro soft JDBC-stuur programma voor SQL Server  | 6,2 of hoger             |
+| Microsoft JDBC-stuurprogramma voor SQL Server  | 6,2 of hoger             |
 | Microsoft SQL Server                  | SQL Server 2008 of hoger |
 | Azure SQL Database                    | Ondersteund                |
 | Azure SQL Managed Instance            | Ondersteund                |

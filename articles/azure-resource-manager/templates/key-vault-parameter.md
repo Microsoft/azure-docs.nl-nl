@@ -4,13 +4,13 @@ description: Laat zien hoe u tijdens de implementatie een geheim kunt door geven
 ms.topic: conceptual
 ms.date: 12/17/2020
 ms.openlocfilehash: 8983d51d90e07e21ac4c9489c7ed553530278d3c
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97672702"
 ---
-# <a name="use-azure-key-vault-to-pass-secure-parameter-value-during-deployment"></a>Azure Key Vault gebruiken om een beveiligde parameter waarde door te geven tijdens de implementatie
+# <a name="use-azure-key-vault-to-pass-secure-parameter-value-during-deployment"></a>Azure Key Vault gebruiken om tijdens de implementatie een veilige parameterwaarde door te geven
 
 In plaats van een beveiligde waarde (zoals een wacht woord) rechtstreeks in uw sjabloon of parameter bestand te plaatsen, kunt u tijdens een implementatie de waarde van een [Azure Key Vault](../../key-vault/general/overview.md) ophalen. U haalt de waarde op door te verwijzen naar de sleutel kluis en het geheim in het parameter bestand. De waarde zelf wordt nooit getoond, omdat u alleen verwijst naar de sleutelkluis-id. De sleutel kluis kan zich in een ander abonnement bevinden dan de resource groep die u implementeert.
 

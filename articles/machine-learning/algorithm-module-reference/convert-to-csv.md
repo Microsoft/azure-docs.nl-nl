@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 10/22/2019
 ms.openlocfilehash: cc58689e30e9b03e490c0871f3decd50372371fa
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93421920"
 ---
 # <a name="convert-to-csv-module"></a>Converteren naar CSV-module
@@ -48,9 +48,9 @@ Wanneer u een gegevensset converteert naar CSV, wordt het CSV-bestand opgeslagen
 
 Selecteer het tabblad **uitvoer** in het rechterdeel venster van **converteren naar CSV** en selecteer een van deze pictogrammen onder de **poort uitvoer**.  
 
-+ **Gegevensset registreren** : Selecteer het pictogram en sla het CSV-bestand weer op in de Azure ml-werk ruimte als afzonderlijke gegevensset. U kunt de gegevensset vinden als een module in de module structuur onder de sectie **mijn gegevens sets** .
++ **Gegevensset registreren**: Selecteer het pictogram en sla het CSV-bestand weer op in de Azure ml-werk ruimte als afzonderlijke gegevensset. U kunt de gegevensset vinden als een module in de module structuur onder de sectie **mijn gegevens sets** .
 
- + **Uitvoer weer geven** : Selecteer het oogpictogram en volg de instructies om door de **Results_dataset** map te bladeren en het data.csv bestand te downloaden.
+ + **Uitvoer weer geven**: Selecteer het oogpictogram en volg de instructies om door de **Results_dataset** map te bladeren en het data.csv bestand te downloaden.
 
 ## <a name="next-steps"></a>Volgende stappen
 

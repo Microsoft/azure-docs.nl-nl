@@ -10,17 +10,17 @@ author: likebupt
 ms.author: keli19
 ms.date: 02/11/2020
 ms.openlocfilehash: d4099ecf6e6bcc6654391e54292878393fb22914
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93421342"
 ---
 # <a name="cross-validate-model"></a>Kruisvalidatie van model valideren
 
 In dit artikel wordt beschreven hoe u de module voor kruis validatie kunt gebruiken in Azure Machine Learning Designer. *Kruis validatie* is een techniek die vaak wordt gebruikt in machine learning om zowel de variabiliteit van een gegevensset als de betrouw baarheid te beoordelen van een model dat via deze gegevens is getraind.  
 
-De module voor kruis validatie maakt als invoer een gegevensset met een label, samen met een niet-uitgetrainde classificatie of regressie model. De gegevensset wordt onderverdeeld in een aantal subsets ( *vouwen* ), bouwt een model op elke vouw en retourneert vervolgens een set nauw keurige statistieken voor elke vouw. Door de nauw keurige statistieken voor alle vouwen te vergelijken, kunt u de kwaliteit van de gegevensset interpreteren. U kunt vervolgens begrijpen of het model gevoelig is voor variaties in de gegevens.  
+De module voor kruis validatie maakt als invoer een gegevensset met een label, samen met een niet-uitgetrainde classificatie of regressie model. De gegevensset wordt onderverdeeld in een aantal subsets (*vouwen*), bouwt een model op elke vouw en retourneert vervolgens een set nauw keurige statistieken voor elke vouw. Door de nauw keurige statistieken voor alle vouwen te vergelijken, kunt u de kwaliteit van de gegevensset interpreteren. U kunt vervolgens begrijpen of het model gevoelig is voor variaties in de gegevens.  
 
 Kruis valideren model retourneert ook voorspelde resultaten en waarschijnlijkheid voor de gegevensset, zodat u de betrouw baarheid van de voor spellingen kunt beoordelen.  
 
@@ -109,9 +109,9 @@ Als u de resultaten wilt weer geven, klikt u in de pijp lijn met de rechter muis
 
 De module bevat ook de volgende metrische gegevens voor elke vouw, afhankelijk van het type model dat u wilt evalueren: 
 
-+ **Classificatie modellen** : precisie, intrekken, F-Score, AUC, nauw keurigheid  
++ **Classificatie modellen**: precisie, intrekken, F-Score, AUC, nauw keurigheid  
 
-+ **Regressie modellen** : absolute fout, wortel gemiddelde fout, relatieve absolute fout, relatieve kwadraat fout en coëfficiënt van bepaling
++ **Regressie modellen**: absolute fout, wortel gemiddelde fout, relatieve absolute fout, relatieve kwadraat fout en coëfficiënt van bepaling
 
 
 ## <a name="technical-notes"></a>Technische opmerkingen  

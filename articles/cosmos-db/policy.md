@@ -7,10 +7,10 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/23/2020
 ms.openlocfilehash: 1390f5db6e0f0370788bef60d5a2cafee1e8a96d
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93080648"
 ---
 # <a name="use-azure-policy-to-implement-governance-and-controls-for-azure-cosmos-db-resources"></a>Azure Policy gebruiken voor het implementeren van governance en controles voor Azure Cosmos DB resources
@@ -25,7 +25,7 @@ Azure Policy biedt ingebouwde beleids definities. U kunt aangepaste beleids defi
 
 ## <a name="assign-a-built-in-policy-definition"></a>Een ingebouwde beleidsdefinitie toewijzen
 
-Beleids definities beschrijven de nalevings voorwaarden voor bronnen en het effect dat moet worden genomen als aan een voor waarde wordt voldaan. Beleids _toewijzingen_ worden gemaakt op basis van beleids _definities_ . U kunt ingebouwde of aangepaste beleids definities gebruiken voor uw Azure Cosmos DB-resources. Beleids toewijzingen bevinden zich in een bereik van een Azure-beheer groep, een Azure-abonnement of een resource groep en ze worden toegepast op de resources binnen de geselecteerde scope. U kunt eventueel specifieke resources uitsluiten van het bereik.
+Beleids definities beschrijven de nalevings voorwaarden voor bronnen en het effect dat moet worden genomen als aan een voor waarde wordt voldaan. Beleids _toewijzingen_ worden gemaakt op basis van beleids _definities_. U kunt ingebouwde of aangepaste beleids definities gebruiken voor uw Azure Cosmos DB-resources. Beleids toewijzingen bevinden zich in een bereik van een Azure-beheer groep, een Azure-abonnement of een resource groep en ze worden toegepast op de resources binnen de geselecteerde scope. U kunt eventueel specifieke resources uitsluiten van het bereik.
 
 U kunt beleids toewijzingen maken met de sjabloon [Azure Portal](../governance/policy/assign-policy-portal.md), [Azure POWERSHELL](../governance/policy/assign-policy-powershell.md), [Azure cli](../governance/policy/assign-policy-azurecli.md)of [arm](../governance/policy/assign-policy-template.md).
 
@@ -40,7 +40,7 @@ Bij de stap om een beleids definitie te selecteren, voert u `Cosmos DB` in het z
 
 ## <a name="create-a-custom-policy-definition"></a>Een aangepaste beleidsdefinitie maken
 
-Voor specifieke scenario's die niet worden behandeld door ingebouwde beleids regels, kunt u [een aangepaste beleids definitie](../governance/policy/tutorials/create-custom-policy-definition.md)maken. Later maakt u een beleids _toewijzing_ van uw aangepaste beleids _definitie_ .
+Voor specifieke scenario's die niet worden behandeld door ingebouwde beleids regels, kunt u [een aangepaste beleids definitie](../governance/policy/tutorials/create-custom-policy-definition.md)maken. Later maakt u een beleids _toewijzing_ van uw aangepaste beleids _definitie_.
 
 ### <a name="property-types-and-property-aliases-in-policy-rules"></a>Eigenschaps typen en aliassen van eigenschappen in beleids regels
 
@@ -127,7 +127,7 @@ De scherm afbeelding toont de volgende resultaten van de compliantie-evaluatie v
 - Nul van twee accounts voldoet aan een beleid waarvoor het account moet worden geconfigureerd voor meerdere schrijf locaties
 - Nul van twee accounts voldoet aan een beleid dat is geïmplementeerd op de toegestane Azure-regio's.
 
-:::image type="content" source="./media/policy/compliance.png" alt-text="Zoeken naar Azure Cosmos DB ingebouwde beleids definities":::
+:::image type="content" source="./media/policy/compliance.png" alt-text="Nalevings resultaten voor Azure Policy toewijzingen in de lijst":::
 
 Zie [resources herstellen met Azure Policy](../governance/policy/how-to/remediate-resources.md)om de niet-compatibele resources te herstellen.
 

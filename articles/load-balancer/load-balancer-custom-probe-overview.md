@@ -1,5 +1,5 @@
 ---
-title: Status tests voor het schalen en leveren van HA voor uw service
+title: Statustests voor het schalen en leveren van hoge beschikbaarheid voor uw service
 titleSuffix: Azure Load Balancer
 description: In dit artikel leest u hoe u status tests kunt gebruiken om exemplaren achter Azure Load Balancer te controleren
 services: load-balancer
@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 09/17/2019
 ms.author: allensu
 ms.openlocfilehash: a008d7b26738b9552a7a43ab026391bd9afe0aa8
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96780940"
 ---
 # <a name="load-balancer-health-probes"></a>Status van Load Balancer testen

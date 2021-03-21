@@ -10,10 +10,10 @@ services: azure-maps
 manager: ''
 ms.custom: codepen, devx-track-js
 ms.openlocfilehash: 903574a8c8696f10d9903a685bab8d12b3e6395f
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92891033"
 ---
 # <a name="add-a-popup-to-the-map"></a>Een pop-upvenster toevoegen aan de kaart
@@ -89,7 +89,7 @@ Er zijn gevallen waarin de beste aanpak is om één pop-up te maken en deze opni
 
 <br/>
 
-<iframe height='500' scrolling='no' title='Pop-up opnieuw gebruiken met verschillende punaises' src='//codepen.io/azuremaps/embed/rQbjvK/?height=500&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' loading="lazy" allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Bekijk de pen met behulp van Azure Maps () op CodePen <a href='https://codepen.io/azuremaps/pen/rQbjvK/'>met meerdere pincodes</a> <a href='https://codepen.io/azuremaps'>@azuremaps</a> . <a href='https://codepen.io'>CodePen</a>
+<iframe height='500' scrolling='no' title='Pop-up opnieuw gebruiken met verschillende punaises' src='//codepen.io/azuremaps/embed/rQbjvK/?height=500&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' loading="lazy" allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Bekijk de pen met behulp van Azure Maps () op CodePen <a href='https://codepen.io/azuremaps/pen/rQbjvK/'>met meerdere pincodes</a> <a href='https://codepen.io/azuremaps'>@azuremaps</a> . <a href='https://codepen.io'></a>
 </iframe>
 
 ## <a name="customizing-a-popup"></a>Een pop-upvenster aanpassen
@@ -279,7 +279,7 @@ Zie de <a href='https://codepen.io/azuremaps/pen/BXrpvB/'>pop-up gebeurtenissen<
 Meer informatie over de klassen en methoden die in dit artikel worden gebruikt:
 
 > [!div class="nextstepaction"]
-> [Popup](/javascript/api/azure-maps-control/atlas.popup)
+> [Achtergrond](/javascript/api/azure-maps-control/atlas.popup)
 
 > [!div class="nextstepaction"]
 > [PopupOptions](/javascript/api/azure-maps-control/atlas.popupoptions)
@@ -290,7 +290,7 @@ Meer informatie over de klassen en methoden die in dit artikel worden gebruikt:
 Raadpleeg de volgende fantastische artikelen voor voor beelden van volledige code:
 
 > [!div class="nextstepaction"]
-> [Een symbool laag toevoegen](./map-add-pin.md)
+> [Een symboollaag toevoegen](./map-add-pin.md)
 
 > [!div class="nextstepaction"]
 > [Een HTML-markering toevoegen](./map-add-custom-html.md)

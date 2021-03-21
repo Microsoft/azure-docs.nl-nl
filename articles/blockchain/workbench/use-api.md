@@ -5,10 +5,10 @@ ms.date: 03/05/2020
 ms.topic: how-to
 ms.reviewer: brendal
 ms.openlocfilehash: 696f1f2f96034f7a044f6a39182774c02804518f
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96004837"
 ---
 # <a name="using-the-azure-blockchain-workbench-preview-rest-api"></a>De preview-versie van Azure Block Chain Workbench gebruiken REST API
@@ -19,7 +19,7 @@ De preview-versie van Azure Block Chain Workbench REST API biedt ontwikkel aars 
 
 Block Chain Workbench-Api's worden geopend via een eind punt voor uw implementatie. De URL van het API-eind punt ophalen voor uw implementatie:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Selecteer **resource groepen** in het navigatie deel venster aan de linkerkant.
 1. Kies de resource groep met de naam van uw geïmplementeerde Block Chain Workbench.
 1. Selecteer de kolomkop **type** om de lijst alfabetisch te sorteren op type.
@@ -134,8 +134,8 @@ HTTP/1.1 200
 
 Gebruik de [apps Get API](/rest/api/azure-blockchain-workbench/applications/applicationsget) om alle Block Chain Workbench-toepassingen voor de gebruiker op te halen. In dit voor beeld heeft de aangemelde gebruiker toegang tot twee toepassingen:
 
-- [Asset overboeking](https://github.com/Azure-Samples/blockchain/blob/master/blockchain-workbench/application-and-smart-contract-samples/asset-transfer/readme.md)
-- [Koel transport](https://github.com/Azure-Samples/blockchain/blob/master/blockchain-workbench/application-and-smart-contract-samples/refrigerated-transportation/readme.md)
+- [Asset Transfer](https://github.com/Azure-Samples/blockchain/blob/master/blockchain-workbench/application-and-smart-contract-samples/asset-transfer/readme.md)
+- [Refrigerated Transportation](https://github.com/Azure-Samples/blockchain/blob/master/blockchain-workbench/application-and-smart-contract-samples/refrigerated-transportation/readme.md)
 
 ### <a name="applications-get-request"></a>Aanvraag ophalen aanvragen
 

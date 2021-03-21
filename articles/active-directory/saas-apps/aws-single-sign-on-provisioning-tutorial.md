@@ -15,16 +15,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/23/2021
 ms.author: Zhchia
-ms.openlocfilehash: 6a2a3cd2886050a7d1a97e206800d392c4af649d
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 25a2a370e4a88348c2acac931e5f3e1a6f247d1d
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101662223"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104599677"
 ---
 # <a name="tutorial-configure-aws-single-sign-on-for-automatic-user-provisioning"></a>Zelf studie: AWS single Sign-On configureren voor automatische gebruikers inrichting
 
-In deze zelf studie worden de stappen beschreven die u moet uitvoeren in zowel AWS single Sign-On als Azure Active Directory (Azure AD) voor het configureren van automatische gebruikers inrichting. Wanneer de configuratie is geconfigureerd, worden gebruikers en groepen door Azure AD automatisch ingericht en ongedaan gemaakt om [eenmalige aanmelding te AWS](https://console.aws.amazon.com/singlesignon) met behulp van de Azure AD-inrichtings service. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../manage-apps/user-provisioning.md). 
+In deze zelf studie worden de stappen beschreven die u moet uitvoeren in zowel AWS single Sign-On als Azure Active Directory (Azure AD) voor het configureren van automatische gebruikers inrichting. Wanneer de configuratie is geconfigureerd, worden gebruikers en groepen door Azure AD automatisch ingericht en ongedaan gemaakt om [eenmalige aanmelding te AWS](https://console.aws.amazon.com/singlesignon) met behulp van de Azure AD-inrichtings service. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../app-provisioning/user-provisioning.md). 
 
 
 ## <a name="capabilities-supported"></a>Ondersteunde mogelijkheden
@@ -33,20 +33,20 @@ In deze zelf studie worden de stappen beschreven die u moet uitvoeren in zowel A
 > * Gebruikers in AWS single Sign-On verwijderen wanneer ze geen toegang meer nodig hebben
 > * Gebruikers kenmerken gesynchroniseerd laten tussen Azure AD en AWS single Sign-On
 > * Inrichtings groepen en groepslid maatschappen in AWS single Sign-On
-> * Eenmalige [aanmelding](https://docs.microsoft.com/azure/active-directory/saas-apps/aws-single-sign-on-provisioning-tutorial) voor AWS single Sign-On
+> * Eenmalige [aanmelding]() voor AWS single Sign-On
 
 ## <a name="prerequisites"></a>Vereisten
 
 In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan dat u al beschikt over de volgende vereisten:
 
-* [Een Azure AD-tenant](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) 
-* Een gebruikersaccount in Azure AD met [machtigingen](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) voor het configureren van inrichting (bijvoorbeeld Toepassingsbeheerder, Cloudtoepassingsbeheerder, Toepassingseigenaar of Globale beheerder). 
+* [Een Azure AD-tenant](../develop/quickstart-create-new-tenant.md) 
+* Een gebruikersaccount in Azure AD met [machtigingen](../roles/permissions-reference.md) voor het configureren van inrichting (bijvoorbeeld Toepassingsbeheerder, Cloudtoepassingsbeheerder, Toepassingseigenaar of Globale beheerder). 
 * Een SAML-verbinding van uw Azure AD-account naar AWS SSO, zoals beschreven in zelf studie
 
 ## <a name="step-1-plan-your-provisioning-deployment"></a>Stap 1. Implementatie van de inrichting plannen
-1. Lees [hoe de inrichtingsservice werkt](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning).
-2. Bepaal wie u wilt opnemen in het [bereik voor inrichting](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts).
-3. Bepaal welke gegevens moeten worden [toegewezen tussen Azure AD en AWS eenmalige aanmelding](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes). 
+1. Lees [hoe de inrichtingsservice werkt](../app-provisioning/user-provisioning.md).
+2. Bepaal wie u wilt opnemen in het [bereik voor inrichting](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+3. Bepaal welke gegevens moeten worden [toegewezen tussen Azure AD en AWS eenmalige aanmelding](../app-provisioning/customize-application-attributes.md). 
 
 ## <a name="step-2-configure-aws-single-sign-on-to-support-provisioning-with-azure-ad"></a>Stap 2. AWS single Sign-On configureren ter ondersteuning van het inrichten met Azure AD
 
@@ -61,15 +61,15 @@ In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan d
 
 ## <a name="step-3-add-aws-single-sign-on-from-the-azure-ad-application-gallery"></a>Stap 3. AWS single Sign-On toevoegen vanuit de Azure AD-toepassings galerie
 
-Voeg AWS single Sign-On toe vanuit de Azure AD-toepassings galerie om het beheer van de inrichting voor AWS eenmalige aanmelding te starten. Als u voor het eerst AWS single Sign-On voor SSO hebt ingesteld, kunt u dezelfde toepassing gebruiken. Klik [hier](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app) voor meer informatie over het toevoegen van een toepassing uit de galerie. 
+Voeg AWS single Sign-On toe vanuit de Azure AD-toepassings galerie om het beheer van de inrichting voor AWS eenmalige aanmelding te starten. Als u voor het eerst AWS single Sign-On voor SSO hebt ingesteld, kunt u dezelfde toepassing gebruiken. Klik [hier](../manage-apps/add-application-portal.md) voor meer informatie over het toevoegen van een toepassing uit de galerie. 
 
 ## <a name="step-4-define-who-will-be-in-scope-for-provisioning"></a>Stap 4. Definiëren wie u wilt opnemen in het bereik voor inrichting 
 
-Met de Azure AD-inrichtingsservice kunt u bepalen wie worden ingericht op basis van toewijzing aan de toepassing en/of op basis van kenmerken van de gebruiker/groep. Als u ervoor kiest om te bepalen wie wordt ingericht voor uw app op basis van toewijzing, kunt u de volgende [stappen](../manage-apps/assign-user-or-group-access-portal.md) gebruiken om gebruikers en groepen aan de toepassing toe te wijzen. Als u ervoor kiest om uitsluitend te bepalen wie wordt ingericht op basis van kenmerken van de gebruiker of groep, kunt u een bereikfilter gebruiken zoals [hier](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts) wordt beschreven. 
+Met de Azure AD-inrichtingsservice kunt u bepalen wie worden ingericht op basis van toewijzing aan de toepassing en/of op basis van kenmerken van de gebruiker/groep. Als u ervoor kiest om te bepalen wie wordt ingericht voor uw app op basis van toewijzing, kunt u de volgende [stappen](../manage-apps/assign-user-or-group-access-portal.md) gebruiken om gebruikers en groepen aan de toepassing toe te wijzen. Als u ervoor kiest om uitsluitend te bepalen wie wordt ingericht op basis van kenmerken van de gebruiker of groep, kunt u een bereikfilter gebruiken zoals [hier](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) wordt beschreven. 
 
-* Wanneer u gebruikers en groepen toewijst aan AWS eenmalige aanmelding, moet u een andere rol dan **standaard toegang** selecteren. Gebruikers met de rol Standaardtoegang worden uitgesloten van inrichting en worden gemarkeerd als niet-effectief gerechtigd in de inrichtingslogboeken. Als Standaardtoegang de enige beschikbare rol voor de toepassing is, kunt u [het manifest van de toepassing bijwerken](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps) om extra rollen toe te voegen. 
+* Wanneer u gebruikers en groepen toewijst aan AWS eenmalige aanmelding, moet u een andere rol dan **standaard toegang** selecteren. Gebruikers met de rol Standaardtoegang worden uitgesloten van inrichting en worden gemarkeerd als niet-effectief gerechtigd in de inrichtingslogboeken. Als Standaardtoegang de enige beschikbare rol voor de toepassing is, kunt u [het manifest van de toepassing bijwerken](../develop/howto-add-app-roles-in-azure-ad-apps.md) om extra rollen toe te voegen. 
 
-* Begin klein. Test de toepassing met een kleine set gebruikers en groepen voordat u de toepassing naar iedereen uitrolt. Wanneer het bereik voor inrichting is ingesteld op toegewezen gebruikers en groepen, kunt u dit beheren door een of twee gebruikers of groepen aan de app toe te wijzen. Wanneer het bereik is ingesteld op alle gebruikers en groepen, kunt u een [bereikfilter op basis van kenmerken](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts) opgeven. 
+* Begin klein. Test de toepassing met een kleine set gebruikers en groepen voordat u de toepassing naar iedereen uitrolt. Wanneer het bereik voor inrichting is ingesteld op toegewezen gebruikers en groepen, kunt u dit beheren door een of twee gebruikers of groepen aan de app toe te wijzen. Wanneer het bereik is ingesteld op alle gebruikers en groepen, kunt u een [bereikfilter op basis van kenmerken](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) opgeven. 
 
 
 ## <a name="step-5-configure-automatic-user-provisioning-to-aws-single-sign-on"></a>Stap 5. Automatische gebruikers inrichting configureren voor AWS enkele Sign-On 
@@ -106,7 +106,7 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 8. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory gebruikers synchroniseren met AWS eenmalige aanmelding**.
 
-9. Controleer de gebruikers kenmerken die zijn gesynchroniseerd vanuit Azure AD naar AWS single Sign-On in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen worden gebruikt om de gebruikers accounts in AWS single Sign-On op te zoeken voor bijwerk bewerkingen. Als u ervoor kiest om het [overeenkomende doel kenmerk](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes)te wijzigen, moet u ervoor zorgen dat de AWS single Sign-On-API filtering van gebruikers op basis van dat kenmerk ondersteunt. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+9. Controleer de gebruikers kenmerken die zijn gesynchroniseerd vanuit Azure AD naar AWS single Sign-On in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen worden gebruikt om de gebruikers accounts in AWS single Sign-On op te zoeken voor bijwerk bewerkingen. Als u ervoor kiest om het [overeenkomende doel kenmerk](../app-provisioning/customize-application-attributes.md)te wijzigen, moet u ervoor zorgen dat de AWS single Sign-On-API filtering van gebruikers op basis van dat kenmerk ondersteunt. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
    |Kenmerk|Type|Ondersteund voor filteren|
    |---|---|---|
@@ -146,7 +146,7 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
       |externalId|Tekenreeks|
       |leden|Naslaginformatie|
 
-12. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
+12. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 13. Als u de Azure AD-inrichtings service voor eenmalige aanmelding voor **AWS wilt inschakelen, wijzigt u de** **inrichtings status** in in het gedeelte **instellingen** .
 
@@ -165,18 +165,18 @@ Met deze bewerking wordt de eerste synchronisatiecyclus gestart van alle gebruik
 ## <a name="step-6-monitor-your-deployment"></a>Stap 6. Uw implementatie bewaken
 Nadat u het inrichten hebt geconfigureerd, gebruikt u de volgende resources om uw implementatie te bewaken:
 
-1. Gebruik de [inrichtingslogboeken](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs) om te bepalen welke gebruikers al dan niet met succes zijn ingericht
-2. Controleer de [voortgangsbalk](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user) om de status van de inrichtingscyclus weer te geven en te zien of deze al bijna is voltooid
-3. Als het configureren van de inrichting een foutieve status lijkt te hebben, wordt de toepassing in quarantaine geplaatst. [Klik hier](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-quarantine-status) voor meer informatie over quarantainestatussen.
+1. Gebruik de [inrichtingslogboeken](../reports-monitoring/concept-provisioning-logs.md) om te bepalen welke gebruikers al dan niet met succes zijn ingericht
+2. Controleer de [voortgangsbalk](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) om de status van de inrichtingscyclus weer te geven en te zien of deze al bijna is voltooid
+3. Als het configureren van de inrichting een foutieve status lijkt te hebben, wordt de toepassing in quarantaine geplaatst. [Klik hier](../app-provisioning/application-provisioning-quarantine-status.md) voor meer informatie over quarantainestatussen.
 
 ## <a name="troubleshooting-tips"></a>Tips voor probleemoplossing
 Controleer [hier](https://docs.aws.amazon.com/singlesignon/latest/userguide/azure-ad-idp.html#azure-ad-troubleshooting)de tips voor probleem oplossing voor AWS SSO.
 
 ## <a name="additional-resources"></a>Aanvullende resources
 
-* [Gebruikersaccountinrichting voor zakelijke apps beheren](../manage-apps/configure-automatic-user-provisioning-portal.md)
+* [Gebruikersaccountinrichting voor zakelijke apps beheren](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [Wat is toegang tot toepassingen en enkele Sign-On met Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Meer informatie over het controleren van logboeken en het ophalen van rapporten over de inrichtingsactiviteit](../manage-apps/check-status-user-account-provisioning.md)
+* [Meer informatie over het controleren van logboeken en het ophalen van rapporten over de inrichtingsactiviteit](../app-provisioning/check-status-user-account-provisioning.md)

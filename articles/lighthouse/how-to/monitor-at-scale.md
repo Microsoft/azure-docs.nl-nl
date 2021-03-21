@@ -4,10 +4,10 @@ description: Meer informatie over het effectief gebruiken van Azure Monitor-logb
 ms.date: 02/11/2021
 ms.topic: how-to
 ms.openlocfilehash: 98fd984492276dbdfbc2f8001bca19560764a2a7
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101742582"
 ---
 # <a name="monitor-delegated-resources-at-scale"></a>Gedelegeerde resources op schaal controleren

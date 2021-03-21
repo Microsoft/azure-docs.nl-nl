@@ -7,10 +7,10 @@ ms.topic: tutorial
 ms.author: jgao
 ms.custom: devx-track-azurepowershell
 ms.openlocfilehash: 9e04006a0908832c623230d89caa62b0985f32e4
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97587941"
 ---
 # <a name="tutorial-deploy-virtual-machine-extensions-with-arm-templates"></a>Zelfstudie: Extensies voor virtuele machines implementeren met ARM-sjablonen
@@ -52,7 +52,7 @@ Als u ervoor kiest het bestand naar uw eigen locatie te publiceren, moet u het e
 
 ## <a name="open-a-quickstart-template"></a>Een snelstartsjabloon openen
 
-Azure-quickstart-sjablonen is een opslagplaats voor ARM-sjablonen. In plaats van een sjabloon helemaal vanaf de basis te maken, kunt u een voorbeeldsjabloon zoeken en aanpassen. De sjabloon die in deze zelfstudie wordt gebruikt, heet [Deploy a simple Windows VM](https://azure.microsoft.com/resources/templates/101-vm-simple-windows/) (Een eenvoudige Windows-VM implementeren).
+Snelstartsjablonen voor Azure is een opslagplaats voor ARM-sjablonen. In plaats van een sjabloon helemaal vanaf de basis te maken, kunt u een voorbeeldsjabloon zoeken en aanpassen. De sjabloon die in deze zelfstudie wordt gebruikt, heet [Deploy a simple Windows VM](https://azure.microsoft.com/resources/templates/101-vm-simple-windows/) (Een eenvoudige Windows-VM implementeren).
 
 1. Selecteer in Visual Studio Code **File** > **Open File**.
 1. Plak de volgende URL in het vak **File name**:

@@ -7,10 +7,10 @@ ms.topic: tutorial
 ms.author: jgao
 ms.custom: ''
 ms.openlocfilehash: e669e27547633639a88674ffee499fb1d84facdf
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97673950"
 ---
 # <a name="tutorial-create-multiple-resource-instances-with-arm-templates"></a>Zelfstudie: Meerdere resource-instanties maken met ARM-sjablonen

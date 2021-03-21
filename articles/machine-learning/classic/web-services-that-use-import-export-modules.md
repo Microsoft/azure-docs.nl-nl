@@ -11,10 +11,10 @@ ms.topic: how-to
 ms.date: 03/28/2017
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 4824b7a4233bc65d521e1c6ded7d1ea276b2a929
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100520558"
 ---
 # <a name="deploy-azure-machine-learning-studio-classic-web-services-that-use-data-import-and-data-export-modules"></a>Azure Machine Learning Studio (klassieke) webservices implementeren die gebruikmaken van modules voor het importeren en exporteren van gegevens
@@ -104,7 +104,7 @@ Als u de service als een klassieke webservice wilt implementeren en een toepassi
 4. Klik in de tabel **standaard eindpunt** op de koppeling voor **batch uitvoering** om de API Help-pagina te openen.
 5. Maak in Visual Studio een C#-console toepassing: **Nieuw**  >  **project**  >  **Visual C#**  >  **Windows klassieke bureau blad**  >  **console-app (.NET Framework)**.
 6. Op de API Help-pagina, onder aan de pagina, gaat u naar de sectie **voorbeeld code** .
-7. Kopieer de C#-voorbeeld code en plak deze in uw Program.cs-bestand en verwijder alle verwijzingen naar de Blob-opslag.
+7. Kopieer de C#-voorbeeld code en plak deze in het bestand Program. cs en verwijder alle verwijzingen naar de Blob-opslag.
 8. Werk de waarde van de variabele *apiKey* bij met de API-sleutel die u eerder hebt opgeslagen.
 9. Zoek de aanvraag declaratie en werk de waarden bij van de para meters van de webservice die worden door gegeven aan de modules *gegevens importeren* en *exporteren* . In dit geval gebruikt u de oorspronkelijke query, maar definieert u een nieuwe tabel naam.
 
@@ -134,7 +134,7 @@ Als u een nieuwe webservice wilt implementeren en een toepassing wilt maken om d
 4. Klik op de pagina **Quick** start op **verbruikt**.
 5. Klik in de sectie **voorbeeld code** op **batch**.
 6. Maak in Visual Studio een C#-console toepassing: **Nieuw**  >  **project**  >  **Visual C#**  >  **Windows klassieke bureau blad**  >  **console-app (.NET Framework)**.
-7. Kopieer de C#-voorbeeld code en plak deze in uw Program.cs-bestand.
+7. Kopieer de C#-voorbeeld code en plak deze in het bestand Program. cs.
 8. Werk de waarde van de variabele *apiKey* bij met de **primaire sleutel** in de sectie **basis informatie over verbruik** .
 9. Zoek de *scoreRequest* -declaratie en werk de waarden bij van de webservice-para meters die worden door gegeven aan de modules *gegevens importeren* en *exporteren* . In dit geval gebruikt u de oorspronkelijke query, maar definieert u een nieuwe tabel naam.
 

@@ -9,10 +9,10 @@ ms.topic: tutorial
 ms.date: 06/08/2020
 ms.custom: mvc, devx-track-azurepowershell
 ms.openlocfilehash: cf84a8abcc0f1c890a51bf07056ac31d37107e53
-ms.sourcegitcommit: 003ac3b45abcdb05dc4406661aca067ece84389f
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96749110"
 ---
 # <a name="tutorial-design-an-azure-database-for-postgresql---single-server-using-powershell"></a>Zelfstudie: Een Azure Database for PostgreSQL-single server ontwerpen met behulp van PowerShell

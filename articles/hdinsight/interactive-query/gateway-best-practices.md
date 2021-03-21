@@ -5,10 +5,10 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/01/2020
 ms.openlocfilehash: 63484d882d8ccd387257c6f246c2048a09c77bc8
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98933109"
 ---
 # <a name="gateway-deep-dive-and-best-practices-for-apache-hive-in-azure-hdinsight"></a>Uitgebreide en aanbevolen procedures voor het Apache Hive in azure HDInsight
@@ -53,9 +53,9 @@ Er zijn meerdere locaties voor het beperken en het vaststellen van prestatie pro
 
 * Gebruik de component **Limit** wanneer u grote **selectie** query's uitvoert. De component **Limit** vermindert het totaal aantal rijen dat is gerapporteerd aan de client-host. De component **Limit** heeft alleen gevolgen voor het genereren van resultaten en wijzigt het query plan niet. Gebruik de configuratie om de component **Limit** toe te passen op het query plan `hive.limit.optimize.enable` . De **limiet** kan worden gecombineerd met een offset met behulp van het argument formulier **maximum x, y**.
 
-* Noem uw interessante kolommen bij het uitvoeren van **selectie** query's in plaats van ** \* Select* _. Als u minder kolommen selecteert, wordt de hoeveelheid gegevens die wordt gelezen verlaagd.
+* Geef uw interessante kolommen een naam wanneer u **Select** -query's uitvoert in plaats van **selecteren \***. Als u minder kolommen selecteert, wordt de hoeveelheid gegevens die wordt gelezen verlaagd.
 
-_ Probeer de query van interest uit te voeren via Apache Beeline. Als het ophalen van resultaten via Apache Beeline een lange periode duurt, worden er vertragingen verwacht bij het ophalen van dezelfde resultaten via externe hulpprogram ma's.
+* Probeer de query van interest uit te voeren via Apache Beeline. Als het ophalen van resultaten via Apache Beeline een lange periode duurt, worden er vertragingen verwacht bij het ophalen van dezelfde resultaten via externe hulpprogram ma's.
 
 * Een eenvoudige Hive-query testen om ervoor te zorgen dat er een verbinding met de HDInsight-gateway tot stand kan worden gebracht. Voer een basis query uit twee of meer externe hulpprogram ma's uit om er zeker van te zijn dat er geen afzonderlijk hulp programma wordt uitgevoerd.
 

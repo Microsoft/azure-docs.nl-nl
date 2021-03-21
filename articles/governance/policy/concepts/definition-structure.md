@@ -4,10 +4,10 @@ description: Hierin wordt beschreven hoe beleids definities worden gebruikt om c
 ms.date: 02/17/2021
 ms.topic: conceptual
 ms.openlocfilehash: cebba214671cfab75a3f44720578b51febacdfcd
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102215065"
 ---
 # <a name="azure-policy-definition-structure"></a>Structuur van Azure-beleidsdefinities

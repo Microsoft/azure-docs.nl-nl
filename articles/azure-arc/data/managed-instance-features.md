@@ -10,10 +10,10 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
 ms.openlocfilehash: 9c42acb69e13cc1eb0fbba3fcafaec1451bc4d77
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97589216"
 ---
 # <a name="features-and-capabilities-of-azure-arc-enabled-sql-managed-instance"></a>Functies en mogelijkheden van Azure Arc enabled SQL Managed instance
@@ -84,7 +84,7 @@ Azure Arc enabled SQL Managed instance deelt een algemene code basis met de nieu
 | Functie | SQL Managed Instance met Azure Arc |
 |--|--|
 | Beveiliging op rijniveau | Ja |
-| Always Encrypted | Ja |
+| Altijd versleuteld | Ja |
 | Always Encrypted met beveiligde enclaves | Nee |
 | Dynamische gegevensmaskering | Ja |
 | Basis controle | Ja |

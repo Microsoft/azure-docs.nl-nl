@@ -3,15 +3,15 @@ title: 'Snelstart: VOIP-oproepen toevoegen aan een web-app met behulp van Azure 
 description: In deze zelfstudie leert u meer over het gebruik van de clientbibliotheek voor oproepen van Azure Communication Services voor JavaScript
 author: ddematheu
 ms.author: nimag
-ms.date: 08/11/2020
+ms.date: 03/10/2021
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: 702efa3431ff3c9cf91aae38ac76219d900f7e85
-ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
+ms.openlocfilehash: 8dc59250e3c00d161446e7361db0c085e12ab4cf
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/13/2021
-ms.locfileid: "103439123"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104598814"
 ---
 In deze snelstart leert u hoe u de clientbibliotheek voor oproepen van Azure Communication Services voor JavaScript.
 
@@ -106,7 +106,7 @@ callButton.addEventListener("click", () => {
     // start a call
     const userToCall = calleeInput.value;
     call = callAgent.startCall(
-        [{ communicationUserId: userToCall }],
+        [{ id: userToCall }],
         {}
     );
     // toggle button states

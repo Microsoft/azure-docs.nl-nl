@@ -4,10 +4,10 @@ description: In dit artikel vindt u informatie over het oplossen van problemen m
 ms.topic: troubleshooting
 ms.date: 07/15/2019
 ms.openlocfilehash: 3203d5604f1bd5db9cf579af01b2ae6f34032d89
-ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103467609"
 ---
 # <a name="troubleshoot-the-microsoft-azure-recovery-services-mars-agent"></a>Problemen met de Microsoft Azure Recovery Services-agent (MARS) oplossen

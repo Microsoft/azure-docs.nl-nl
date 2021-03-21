@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 07/26/2019
 ms.author: zhchia
 ms.openlocfilehash: ff859e7d77fd19cd006cf45a6faa737297fdb9a1
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96349636"
 ---
 # <a name="tutorial-configure-rfpio-for-automatic-user-provisioning"></a>Zelfstudie: RFPIO configureren voor automatische inrichting van gebruikers
@@ -86,7 +86,7 @@ Als u RFPIO wilt configureren voor automatische inrichting van gebruikers met Az
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
-3. Als u een nieuwe toepassing wilt toevoegen, selecteert u de knop **Nieuwe toepassing** boven in het deelvenster.
+3. Als u een nieuwe toepassing wilt toevoegen, selecteert u de knop **Nieuwe toepassing** bovenin het deelvenster.
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 

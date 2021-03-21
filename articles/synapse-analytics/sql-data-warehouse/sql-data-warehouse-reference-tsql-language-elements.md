@@ -12,10 +12,10 @@ ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
 ms.openlocfilehash: 3793da7fc9bbb0f8253f60d2324b48917f1aece1
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98737503"
 ---
 # <a name="t-sql-language-elements-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>T-SQL-taal elementen voor exclusieve SQL-groep in azure Synapse Analytics 
@@ -36,7 +36,7 @@ Koppelingen naar de documentatie voor T-SQL-taal elementen die worden ondersteun
 * [VERWIJDEREN](/sql/t-sql/language-elements/kill-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
 * [Tijdelijke oplossing voor IDENTITEITs eigenschap](/sql/t-sql/statements/create-table-transact-sql-identity-property?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
 * [Afdruk](/sql/t-sql/language-elements/print-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
-* [USE](/sql/t-sql/language-elements/use-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
+* [GEBRUIKEN](/sql/t-sql/language-elements/use-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
 
 ## <a name="batches-control-of-flow-and-variables"></a>Batches, besturings element van stroom en variabelen
 

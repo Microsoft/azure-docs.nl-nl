@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 02/03/2021
 ms.author: jencook
 ms.openlocfilehash: 757ce9b7502316bbc8a5b8f27ba672048b7bbace
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102563418"
 ---
 # <a name="fortanix-confidential-computing-manager-in-an-azure-managed-application"></a>Fortanix vertrouwelijk computing manager in een door Azure beheerde toepassing

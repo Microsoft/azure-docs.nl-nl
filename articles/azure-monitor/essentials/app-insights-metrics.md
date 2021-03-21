@@ -6,12 +6,12 @@ services: azure-monitor
 ms.topic: reference
 ms.date: 07/03/2019
 ms.author: vitalyg
-ms.openlocfilehash: bd28fa9f20775be659de6cef99f9ceda29fe52cc
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: bae7980137c1da5e1755450863af4f9029d6ed62
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102049131"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104583459"
 ---
 # <a name="application-insights-log-based-metrics"></a>Metrische gegevens op basis van het logboek Application Insights
 
@@ -95,6 +95,8 @@ De metrische gegevens van de browser worden verzameld door de Application Insigh
 
 ### <a name="browser-page-load-time-browsertimingstotalduration"></a>Laad tijd van browser pagina (browserTimings/totalDuration)
 
+Tijd van de gebruikers aanvraag totdat DOM, opmaak modellen, scripts en installatie kopieën worden geladen.
+
 |Meeteenheid|Ondersteunde aggregaties|Vooraf samengestelde dimensies|
 |---|---|---|
 |Milliseconden|Gemiddeld, min, Max|Geen|
@@ -110,6 +112,8 @@ browserTimings
 ```
 
 ### <a name="client-processing-time-browsertimingprocessingduration"></a>Verwerkings tijd van client (browserTiming/processingDuration)
+
+Tijd tussen het ontvangen van de laatste byte van een document totdat de DOM is geladen. Asynchrone aanvragen kunnen nog steeds worden verwerkt.
 
 |Meeteenheid|Ondersteunde aggregaties|Vooraf samengestelde dimensies|
 |---|---|---|
@@ -127,6 +131,8 @@ browserTimings
 
 ### <a name="page-load-network-connect-time-browsertimingsnetworkduration"></a>Netwerk verbindings tijd voor laden van pagina (browserTimings/networkDuration)
 
+Tijd tussen de gebruikers aanvraag en de netwerk verbinding. Inclusief DNS-Zoek-en transport verbinding.
+
 |Meeteenheid|Ondersteunde aggregaties|Vooraf samengestelde dimensies|
 |---|---|---|
 |Milliseconden|Gemiddeld, min, Max|Geen|
@@ -143,6 +149,8 @@ browserTimings
 
 ### <a name="receiving-response-time-browsertimingsreceiveduration"></a>Reactie tijd van ontvangen (browserTimings/receiveDuration)
 
+Tijd tussen de eerste en laatste bytes, of tot de verbinding wordt verbroken.
+
 |Meeteenheid|Ondersteunde aggregaties|Vooraf samengestelde dimensies|
 |---|---|---|
 |Milliseconden|Gemiddeld, min, Max|Geen|
@@ -158,6 +166,8 @@ browserTimings
 ```
 
 ### <a name="send-request-time-browsertimingssendduration"></a>Verzend aanvraag tijd (browserTimings/sendDuration)
+
+Tijd tussen netwerk verbinding en ontvangst van de eerste byte.
 
 |Meeteenheid|Ondersteunde aggregaties|Vooraf samengestelde dimensies|
 |---|---|---|

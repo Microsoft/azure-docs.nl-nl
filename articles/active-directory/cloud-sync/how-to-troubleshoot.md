@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 174ec8c42ea17ccae04769d7c0baaa91b8e7025b
-ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102517868"
 ---
 # <a name="cloud-sync-troubleshooting"></a>Problemen met Cloud synchronisatie oplossen
@@ -43,7 +43,7 @@ Deze items kunnen worden geverifieerd in de Azure Portal en op de lokale server 
 
 Voer de volgende stappen uit om te controleren of de agent door Azure wordt gezien en in orde is.
 
-1. Meld u aan bij de Azure-portal.
+1. Meld u aan bij Azure Portal.
 1. Selecteer aan de linkerkant **Azure Active Directory**  >  **Azure AD CONNECT**. In het midden selecteert u **synchronisatie beheren**.
 1. Selecteer **Alle agents controleren** op het **Azure AD Connect scherm Cloud synchronisatie** .
 

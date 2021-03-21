@@ -1,5 +1,5 @@
 ---
-title: Wacht woorden en telefoon nummers beheren met mijn personeel (preview)-Azure AD | Microsoft Docs
+title: Wacht woorden en telefoon nummers beheren met mijn personeel-Azure AD | Microsoft Docs
 description: Wacht woorden en telefoon nummers voor uw gebruikers beheren met mijn personeel
 services: active-directory
 documentationcenter: ''
@@ -9,18 +9,18 @@ ms.topic: end-user-help
 ms.service: active-directory
 ms.subservice: user-help
 ms.workload: identity
-ms.date: 04/14/2020
+ms.date: 03/17/2021
 ms.author: curtand
 ms.reviewer: sahenry
 ms.custom: oldportal;it-pro;
-ms.openlocfilehash: 56ee7df52abf97c920dfe2fa4ba5d1d858975f7d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7b435c56f53001275fbdb1a3b3cfae25536a9a63
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91537087"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104583595"
 ---
-# <a name="delegate-user-management-with-my-staff-preview"></a>Gebruikers beheer met mijn personeel delegeren (preview-versie)
+# <a name="delegate-user-management-with-my-staff"></a>Gebruikers beheer delegeren met mijn personeel
 
 Uw organisatie kan **mijn personeel** gebruiken om taken voor gebruikers beheer over te dragen aan instanties van de instantie, zoals een winkel manager of team leider, om hen te helpen hun mede werkers toegang te geven tot de toepassingen die ze nodig hebben. Als uw teamlid geen toegang kan krijgen tot een toepassing omdat ze een wacht woord verg eten, gaat de productiviteit verloren. Dit biedt ook ondersteuning voor ondersteunings kosten en veroorzaakt een knel punt in uw beheer processen.  Met mijn mede werkers kan een teamlid dat geen toegang heeft tot hun account, toegang krijgen tot slechts een paar klikken, zonder dat de beheerder om hulp hoeft te vragen.
 

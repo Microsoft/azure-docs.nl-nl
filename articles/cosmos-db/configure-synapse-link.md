@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 11/30/2020
 ms.author: rosouz
 ms.custom: references_regions
-ms.openlocfilehash: dde6af75b751037c10d7786fa5b0b03ae31d969e
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 64b9b6690eafe8f28fdf9711cd0534f4d7d96908
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222612"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104584581"
 ---
 # <a name="configure-and-use-azure-synapse-link-for-azure-cosmos-db"></a>Azure Synapse Link voor Azure Cosmos DB configureren en gebruiken
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
@@ -23,6 +23,7 @@ De koppeling Azure Synapse is beschikbaar voor Azure Cosmos DB SQL API-container
 
 * [Synapse-koppeling voor uw Azure Cosmos DB-accounts inschakelen](#enable-synapse-link)
 * [Een analytische archief maken Azure Cosmos DB container is ingeschakeld](#create-analytical-ttl)
+* [Optioneel-de TTL van de analytische opslag voor een Azure Cosmos DB-container bijwerken](#update-analytical-ttl)
 * [Uw Azure Cosmos DB-Data Base koppelen aan een Synapse-werk ruimte](#connect-to-cosmos-database)
 * [Een query uitvoeren op de analytische opslag met behulp van Synapse Spark](#query-analytical-store-spark)
 * [Query's uitvoeren op de analytische opslag met serverloze SQL-groep](#query-analytical-store-sql-on-demand)
@@ -32,7 +33,7 @@ De koppeling Azure Synapse is beschikbaar voor Azure Cosmos DB SQL API-container
 
 ### <a name="azure-portal"></a>Azure Portal
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
+1. Meld u aan bij de [Azure Portal](https://portal.azure.com/).
 
 1. [Maak een nieuw Azure-account](create-sql-api-dotnet.md#create-account)of selecteer een bestaand Azure Cosmos DB-account.
 
@@ -50,6 +51,21 @@ De koppeling Azure Synapse is beschikbaar voor Azure Cosmos DB SQL API-container
 
 > [!NOTE]
 > Als u de Synapse-koppeling inschakelt, wordt de analytische opslag niet automatisch ingeschakeld. Wanneer u Synapse-koppeling op het Cosmos DB-account hebt ingeschakeld, moet u analytische opslag op containers inschakelen wanneer u deze maakt, om uw bewerkings gegevens te repliceren naar de analytische opslag. 
+
+### <a name="azure-cli"></a>Azure CLI
+
+De volgende koppelingen tonen hoe u de Synapse-koppeling kunt inschakelen met behulp van Azure CLI:
+
+* [Een nieuw Azure Cosmos DB-account maken met de Synapse-koppeling ingeschakeld](https://docs.microsoft.com/cli/azure/cosmosdb?view=azure-cli-latest#az_cosmosdb_create-optional-parameters&preserve-view=true)
+* [Een bestaand Azure Cosmos DB account bijwerken om de Synapse-koppeling in te scha kelen](https://docs.microsoft.com/cli/azure/cosmosdb?view=azure-cli-latest#az_cosmosdb_update-optional-parameters&preserve-view=true)
+
+### <a name="powershell"></a>PowerShell
+
+* [Een nieuw Azure Cosmos DB-account maken met de Synapse-koppeling ingeschakeld](https://docs.microsoft.com/powershell/module/az.cosmosdb/new-azcosmosdbaccount?view=azps-5.5.0#description&preserve-view=true)
+* [Een bestaand Azure Cosmos DB account bijwerken om de Synapse-koppeling in te scha kelen](https://docs.microsoft.com/powershell/module/az.cosmosdb/update-azcosmosdbaccount?view=azps-5.5.0&preserve-view=true)
+
+
+De volgende koppelingen tonen hoe u de Synapse-koppeling kunt inschakelen met behulp van Power shell:
 
 ## <a name="create-an-azure-cosmos-container-with-analytical-store"></a><a id="create-analytical-ttl"></a> Een Azure Cosmos-container maken met een analytische opslag
 
@@ -159,11 +175,27 @@ except exceptions.CosmosResourceExistsError:
     print('A container with already exists')
 ```
 
-### <a name="update-the-analytical-store-time-to-live"></a><a id="update-analytical-ttl"></a> De time-outwaarde voor het analytische archief bijwerken
+### <a name="azure-cli"></a>Azure CLI
 
-Nadat de analytische opslag met een bepaalde TTL-waarde is ingeschakeld, kunt u deze later bijwerken naar een andere geldige waarde. U kunt de waarde bijwerken met behulp van de Azure-portal of SDK's. Zie voor meer informatie over de verschillende configuratie opties voor de analyse-TTL het artikel [analytische TTL-waarden](analytical-store-introduction.md#analytical-ttl) .
+De volgende koppelingen laten zien hoe u een containers met een analytische opslag maakt met behulp van Azure CLI:
 
-#### <a name="azure-portal"></a>Azure Portal
+* [Azure Cosmos DB-API voor Mongo DB](https://docs.microsoft.com/cli/azure/cosmosdb/mongodb/collection?view=azure-cli-latest#az_cosmosdb_mongodb_collection_create-examples&preserve-view=true)
+* [SQL-API voor Azure Cosmos DB](https://docs.microsoft.com/cli/azure/cosmosdb/sql/container?view=azure-cli-latest#az_cosmosdb_sql_container_create&preserve-view=true)
+
+### <a name="powershell"></a>PowerShell
+
+De volgende koppelingen laten zien hoe u een containers met een analytische opslag maakt met behulp van Power shell:
+
+* [Azure Cosmos DB-API voor Mongo DB](https://docs.microsoft.com/powershell/module/az.cosmosdb/new-azcosmosdbmongodbcollection?view=azps-5.5.0#description&preserve-view=true)
+* [SQL-API voor Azure Cosmos DB](https://docs.microsoft.com/cli/azure/cosmosdb/sql/container?view=azure-cli-latest#az_cosmosdb_sql_container_create&preserve-view=true)
+
+
+## <a name="optional---update-the-analytical-store-time-to-live"></a><a id="update-analytical-ttl"></a> Optioneel: de time-outwaarde voor het analytische archief bijwerken naar Live
+
+Nadat de analytische opslag met een bepaalde TTL-waarde is ingeschakeld, wilt u deze mogelijk later bijwerken naar een andere geldige waarde. U kunt de waarde bijwerken met behulp van de Azure Portal, Azure CLI, Power shell of Cosmos DB Sdk's. Zie voor meer informatie over de verschillende configuratie opties voor de analyse-TTL het artikel [analytische TTL-waarden](analytical-store-introduction.md#analytical-ttl) .
+
+
+### <a name="azure-portal"></a>Azure Portal
 
 Als u een container voor een analytische opslag hebt gemaakt via de Azure Portal, bevat deze een standaard analyse-TTL van-1. Gebruik de volgende stappen om deze waarde bij te werken:
 
@@ -178,7 +210,7 @@ Als u een container voor een analytische opslag hebt gemaakt via de Azure Portal
   * Selecteer **On (no default)** of **Aan** en stel een TTL-waarde in
   * Klik op **Opslaan** om de wijzigingen op te slaan.
 
-#### <a name="net-sdk"></a>.NET SDK
+### <a name="net-sdk"></a>.NET SDK
 
 De volgende code laat zien hoe u de TTL voor de analyse opslag bijwerkt met behulp van de .NET SDK:
 
@@ -190,7 +222,7 @@ containerResponse.Resource. AnalyticalStorageTimeToLiveInSeconds = 60 * 60 * 24 
 await client.GetContainer("database", "container").ReplaceContainerAsync(containerResponse.Resource);
 ```
 
-#### <a name="java-v4-sdk"></a>Java V4 SDK
+### <a name="java-v4-sdk"></a>Java V4 SDK
 
 De volgende code laat zien hoe u de TTL voor de analytische opslag bijwerkt met behulp van de Java v4 SDK:
 
@@ -203,6 +235,26 @@ containerProperties.setAnalyticalStoreTimeToLiveInSeconds (60 * 60 * 24 * 180 );
 // Update container settings
 container.replace(containerProperties).block();
 ```
+
+### <a name="python-v4-sdk"></a>Python v4-SDK
+
+Momenteel niet ondersteund.
+
+
+### <a name="azure-cli"></a>Azure CLI
+
+De volgende koppelingen tonen hoe u de analyse-TTL van containers kunt bijwerken met behulp van Azure CLI:
+
+* [Azure Cosmos DB-API voor Mongo DB](https://docs.microsoft.com/cli/azure/cosmosdb/mongodb/collection?view=azure-cli-latest#az_cosmosdb_mongodb_collection_update&preserve-view=true)
+* [SQL-API voor Azure Cosmos DB](https://docs.microsoft.com/cli/azure/cosmosdb/sql/container?view=azure-cli-latest#az_cosmosdb_sql_container_update&preserve-view=true)
+
+### <a name="powershell"></a>PowerShell
+
+De volgende koppelingen laten zien hoe u de levens duur van containers kunt bijwerken met behulp van Power shell:
+
+* [Azure Cosmos DB-API voor Mongo DB](https://docs.microsoft.com/powershell/module/az.cosmosdb/update-azcosmosdbmongodbcollection?view=azps-5.5.0&preserve-view=true)
+* [SQL-API voor Azure Cosmos DB](https://docs.microsoft.com/powershell/module/az.cosmosdb/update-azcosmosdbsqlcontainer?view=azps-5.5.0&preserve-view=true)
+
 
 ## <a name="connect-to-a-synapse-workspace"></a><a id="connect-to-cosmos-database"></a> Verbinding maken met een Synapse-werk ruimte
 
@@ -234,7 +286,7 @@ Raadpleeg de volgende documenten voor meer informatie:
 
 * [Azure Synapse-koppeling voor Azure Cosmos DB.](synapse-link.md)
 
-* [Overzicht van Azure Cosmos DB Analytical Store.](analytical-store-introduction.md)
+* [Overzicht van analytische opslag van Azure Cosmos DB.](analytical-store-introduction.md)
 
 * [Veelgestelde vragen over de Synapse-koppeling voor Azure Cosmos DB.](synapse-link-frequently-asked-questions.md)
 

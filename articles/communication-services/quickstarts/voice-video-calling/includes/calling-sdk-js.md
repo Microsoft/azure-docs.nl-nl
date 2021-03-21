@@ -4,28 +4,27 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 03/10/2021
 ms.author: mikben
-ms.openlocfilehash: 41a5f05f016a876894949c35a6610b2b49f9eb9d
-ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.openlocfilehash: dee692dc6c82ae91272b39093398eba6ad908c1c
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103488091"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104612428"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
 - Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
 - Een geïmplementeerde Communication Services-resource. [Een Communication Services-resource maken](../../create-communication-resource.md).
-- Een `User Access Token` om de aanroepende client in te schakelen. Voor meer informatie over het [verkrijgen van een `User Access Token`](../../access-tokens.md)
-- Optioneel: Voltooi de Snelstartgids om aan de [slag te gaan met het toevoegen van een oproep aan uw toepassing](../getting-started-with-calling.md)
+- Een token voor gebruikers toegang om de aanroepende client in te scha kelen. Zie [toegangs tokens maken en beheren](../../access-tokens.md)voor meer informatie.
+- Optioneel: Voltooi de Snelstartgids om [gesp roken oproep toe te voegen aan uw toepassing](../getting-started-with-calling.md).
 
-## <a name="setting-up"></a>Instellen
-
-### <a name="install-the-client-library"></a>De clientbibliotheek installeren
+## <a name="install-the-client-library"></a>De clientbibliotheek installeren
 
 > [!NOTE]
 > Dit document maakt gebruik van versie 1.0.0-Beta. 6 van de aanroepende client bibliotheek.
 
 Gebruik de `npm install` opdracht om de Azure Communication Services-aanroep-en algemene client bibliotheken voor Java script te installeren.
+In dit document wordt verwezen naar typen in versie 1.0.0-Beta. 5 van de aanroepende bibliotheek.
 
 ```console
 npm install @azure/communication-common --save
@@ -35,22 +34,24 @@ npm install @azure/communication-calling --save
 
 ## <a name="object-model"></a>Objectmodel
 
-De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Azure Communication Services-clientbibliotheek voor aanroepen:
+De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Azure Communication Services-client bibliotheek die aanroept:
 
 | Naam                             | Beschrijving                                                                                                                                 |
 | ---------------------------------| ------------------------------------------------------------------------------------------------------------------------------------------- |
-| CallClient                       | De CallClient is het belangrijkste ingangspunt voor de clientbibliotheek voor oproepen.                                                                       |
-| CallAgent                        | De CallAgent wordt gebruikt om oproepen te starten en te beheren.                                                                                            |
-| DeviceManager                    | De DeviceManager wordt gebruikt voor het beheren van media apparaten                                                                                           |
-| AzureCommunicationTokenCredential | De klasse AzureCommunicationTokenCredential implementeert de CommunicationTokenCredential-interface die wordt gebruikt om de CallAgent te instantiëren. |
+| `CallClient`                      | Het belangrijkste toegangs punt voor de aanroepende client bibliotheek.                                                                       |
+| `CallAgent`                        | Wordt gebruikt om aanroepen te starten en te beheren.                                                                                            |
+| `DeviceManager`                    | Gebruikt voor het beheren van media apparaten.                                                                                           |
+| `AzureCommunicationTokenCredential` | Implementeert de `CommunicationTokenCredential` Interface, die wordt gebruikt om een instantie te maken `callAgent` . |
 
+## <a name="initialize-a-callclient-instance-create-a-callagent-instance-and-access-devicemanager"></a>Initialiseer een CallClient-exemplaar, maak een CallAgent-exemplaar en toegang tot deviceManager
 
-## <a name="initialize-the-callclient-create-callagent-and-access-devicemanager"></a>Initialiseer de CallClient, maak CallAgent en open DeviceManager
+Maak een nieuw `CallClient` exemplaar. U kunt deze configureren met aangepaste opties, zoals een exemplaar van een logboek.
 
-Exemplaar een nieuw `CallClient` exemplaar. U kunt deze configureren met aangepaste opties, zoals een exemplaar van een logboek.
-Zodra een `CallClient` is geïnstantieerd, kunt u een instantie maken `CallAgent` door de `createCallAgent` methode aan te roepen voor het `CallClient` exemplaar. Hiermee wordt een `CallAgent` object Instance asynchroon geretourneerd.
-De `createCallAgent` methode heeft een `CommunicationTokenCredential` als argument, waarmee een token voor [gebruikers toegang](../../access-tokens.md)wordt geaccepteerd.
-Om toegang te krijgen tot het `DeviceManager` callAgent-exemplaar moet eerst worden gemaakt. U kunt de-methode vervolgens gebruiken voor het `getDeviceManager` `CallClient` exemplaar om de DeviceManager op te halen.
+Wanneer u een `CallClient` exemplaar hebt, kunt u een `CallAgent` instantie maken door de `createCallAgent` methode aan te roepen voor het `CallClient` exemplaar. Hiermee wordt een `CallAgent` object Instance asynchroon geretourneerd.
+
+De `createCallAgent` methode gebruikt `CommunicationTokenCredential` als een argument. Er wordt een [token voor gebruikers toegang](../../access-tokens.md)geaccepteerd.
+
+Nadat u een instantie hebt gemaakt `callAgent` , kunt u de- `getDeviceManager` methode gebruiken `CallClient` om toegang te krijgen tot het exemplaar `deviceManager` .
 
 ```js
 const userToken = '<user token>';
@@ -60,35 +61,38 @@ const callAgent = await callClient.createCallAgent(tokenCredential, {displayName
 const deviceManager = await callClient.getDeviceManager()
 ```
 
-## <a name="place-an-outgoing-call"></a>Een uitgaande oproep plaatsen
-
-Als u een gesprek wilt maken en starten, moet u een van de Api's op CallAgent gebruiken en een gebruiker bieden die u hebt gemaakt via de client bibliotheek van de communicatie Services-identiteit.
-
-Aanroepen maken en starten is synchroon. Met het gesprek exemplaar kunt u zich abonneren op het aanroepen van gebeurtenissen.
-
 ## <a name="place-a-call"></a>Een oproep doen
 
-### <a name="place-a-11-call-to-a-user-or-pstn"></a>Een 1:1-aanroep naar een gebruiker of PSTN plaatsen
-Als u een aanroep naar een andere communicatie Services-gebruiker wilt plaatsen, roept u de- `startCall` methode aan `callAgent` en geeft u de CommunicationUserIdentifier van de oproep door die u hebt [gemaakt met de communicatie Services-identiteits bibliotheek](https://docs.microsoft.com/azure/communication-services/quickstarts/access-tokens).
+Als u een oproep wilt maken en starten, gebruikt u een van de Api's in `callAgent` en geeft u een gebruiker op die u hebt gemaakt via de client bibliotheek van de communicatie Services-identiteit.
+
+Het maken van aanroepen en starten synchroon zijn. Met het gesprek exemplaar kunt u zich abonneren op het aanroepen van gebeurtenissen.
+
+### <a name="place-a-1n-call-to-a-user-or-pstn"></a>Een aanroep van 1: n naar een gebruiker of PSTN plaatsen
+
+Als u een andere communicatie Services-gebruiker wilt aanroepen, gebruikt u de- `startCall` methode op `callAgent` en geeft u de geadresseerde door `CommunicationUserIdentifier` die u hebt [gemaakt met de beheer bibliotheek voor communicatie Services](https://docs.microsoft.com/azure/communication-services/quickstarts/access-tokens).
 
 ```js
 const userCallee = { communicationUserId: '<ACS_USER_ID>' }
 const oneToOneCall = callAgent.startCall([userCallee]);
 ```
 
-Als u een aanroepen naar een PSTN wilt plaatsen, roept u de- `startCall` methode aan `callAgent` en geeft u de PhoneNumberIdentifier van de oproep door.
-Uw communicatie service-resource moet worden geconfigureerd om PSTN-aanroepen mogelijk te maken.
-Wanneer u een PSTN-nummer aanroept, moet u uw alternatieve beller-ID opgeven. Een alternatieve beller-ID verwijst naar een telefoon nummer (op basis van de standaard E. 164) waarmee de beller in een PSTN-aanroep wordt geïdentificeerd. Wanneer u bijvoorbeeld een alternatieve beller-ID voor de PSTN-aanroep opgeeft, wordt het telefoon nummer dat wordt weer gegeven aan de aanroepee wanneer de oproep binnenkomend is.
+Als u een oproep wilt plaatsen naar een openbaar geschakeld telefoonnet werk (PSTN), gebruikt u de- `startCall` methode `callAgent` en geeft u de ontvanger door `PhoneNumberIdentifier` . Uw communicatie service-resource moet worden geconfigureerd om PSTN-aanroepen mogelijk te maken.
 
-> [!WARNING]
-> PSTN-aanroep bevindt zich momenteel in een persoonlijke preview. Voor toegang, van [toepassing op early adopter programma](https://aka.ms/ACS-EarlyAdopter).
+Wanneer u een PSTN-nummer aanroept, geeft u uw alternatieve beller-ID op. Een alternatieve beller-ID is een telefoon nummer (op basis van de E. 164-standaard) waarmee de beller in een PSTN-aanroep wordt geïdentificeerd. Het is het telefoon nummer dat de ontvanger van het gesprek ziet voor een inkomende oproep.
+
+> [!NOTE]
+> PSTN-aanroep bevindt zich momenteel in een persoonlijke preview. Voor toegang, van [toepassing op het early adopter programma](https://aka.ms/ACS-EarlyAdopter).
+
+Voor een 1:1-aanroep gebruikt u de volgende code:
+
 ```js
 const pstnCalee = { phoneNumber: '<ACS_USER_ID>' }
 const alternateCallerId = {alternateCallerId: '<Alternate caller Id>'};
 const oneToOneCall = callAgent.startCall([pstnCallee], {alternateCallerId});
 ```
 
-### <a name="place-a-1n-call-with-users-and-pstn"></a>Een aanroep van 1: n met gebruikers en PSTN plaatsen
+Voor een aanroep van 1: n gebruikt u de volgende code:
+
 ```js
 const userCallee = { communicationUserId: <ACS_USER_ID> }
 const pstnCallee = { phoneNumber: <PHONE_NUMBER>};
@@ -98,11 +102,14 @@ const groupCall = callAgent.startCall([userCallee, pstnCallee], {alternateCaller
 ```
 
 ### <a name="place-a-11-call-with-video-camera"></a>Een 1:1-oproep met video camera plaatsen
-> [!WARNING]
+
+> [!IMPORTANT]
 > Er kan momenteel niet meer dan één uitgaande lokale video stroom zijn.
-U moet lokale camera's opsommen met behulp van de deviceManager-API als u een video gesprek wilt plaatsen `getCameras()` .
-Wanneer u de gewenste camera hebt geselecteerd, gebruikt u deze om een exemplaar te maken `LocalVideoStream` en dit door te geven aan de hand van `videoOptions` een item in de `localVideoStream` matrix `startCall` .
-Zodra uw gesprek verbinding maakt, begint automatisch met het verzenden van een video stroom van de geselecteerde camera naar de andere deel nemer (s). Dit geldt ook voor de video opties call. accept () en CallAgent. Add ().
+
+Als u een video gesprek wilt plaatsen, moet u uw camera's opgeven met behulp `getCameras()` van de-methode in `deviceManager` .
+
+Nadat u een camera hebt geselecteerd, gebruikt u deze om een instantie te maken `LocalVideoStream` . Geef deze door `videoOptions` als een item in de `localVideoStream` matrix met de `startCall` methode.
+
 ```js
 const deviceManager = await callClient.getDeviceManager();
 const cameras = await deviceManager.getCameras();
@@ -113,22 +120,33 @@ const call = callAgent.startCall(['acsUserId'], placeCallOptions);
 
 ```
 
+Wanneer uw gesprek verbinding maakt, begint het automatisch met het verzenden van een video stroom van de geselecteerde camera naar de andere deel nemer. Dit geldt ook voor de opties voor `Call.Accept()` video en `CallAgent.join()` video.
+
 ### <a name="join-a-group-call"></a>Deelnemen aan een groepsgesprek
-Als u een nieuwe groeps oproep wilt starten of lid wilt worden van een doorlopende groep, gebruikt u de methode ' samen voegen ' en geeft u een object door met een `groupId` eigenschap. De waarde moet een GUID zijn.
+
+Als u een nieuwe groeps oproep wilt starten of lid wilt worden van een doorlopende groep, gebruikt u de- `join` methode en geeft u een object door met een `groupId` eigenschap. De `groupId` waarde moet een GUID zijn.
+
 ```js
 
 const context = { groupId: <GUID>}
 const call = callAgent.join(context);
 
 ```
+
 ### <a name="join-a-teams-meeting"></a>Deel nemen aan een team vergadering
-Als u lid wilt worden van een vergadering, gebruikt u de methode ' samen voegen ' en geeft u een koppeling naar de vergadering of de coördinaten van een vergadering door
+
+Als u wilt deel nemen aan een team vergadering, gebruikt u de- `join` methode en geeft u een koppeling of coördinaten voor de vergadering door.
+
+Koppelen met behulp van een koppeling naar een vergadering:
+
 ```js
-// Join using meeting link
 const locator = { meetingLink: <meeting link>}
 const call = callAgent.join(locator);
+```
 
-// Join using meeting coordinates
+Koppelen met behulp van Vergader coördinaten:
+
+```js
 const locator = {
     threadId: <thread id>,
     organizerId: <organizer id>,
@@ -138,106 +156,107 @@ const locator = {
 const call = callAgent.join(locator);
 ```
 
-## <a name="receiving-an-incoming-call"></a>Een binnenkomend gesprek ontvangen
+## <a name="receive-an-incoming-call"></a>Een binnenkomend gesprek ontvangen
 
-Het `CallAgent` exemplaar verzendt een `incomingCall` gebeurtenis wanneer de geregistreerde identiteit een inkomende oproep ontvangt. Als u wilt Luis teren naar deze gebeurtenis, abonneert u zich op de volgende manier:
+Het `callAgent` exemplaar verzendt een `incomingCall` gebeurtenis wanneer de aangemelde identiteit een inkomende oproep ontvangt. Als u wilt Luis teren naar deze gebeurtenis, kunt u zich aanmelden met een van de volgende opties:
 
 ```js
 const incomingCallHander = async (args: { incomingCall: IncomingCall }) => {
     //Get information about caller
     var callerInfo = incomingCall.callerInfo
-    
-    //accept the call
+
+    //Accept the call
     var call = await incomingCall.accept();
 
-    //reject the call
+    //Reject the call
     incomingCall.reject();
 };
 callAgentInstance.on('incomingCall', incomingCallHander);
 ```
 
-De `incomingCall` gebeurtenis wordt geleverd met een exemplaar van `IncomingCall` waarop u een aanroep kunt accepteren of afwijzen.
+De `incomingCall` gebeurtenis bevat een `incomingCall` exemplaar dat u kunt accepteren of afwijzen.
 
+## <a name="manage-calls"></a>Oproepen beheren
 
-## <a name="call-management"></a>Oproep beheer
+Tijdens een oproep kunt u toegang krijgen tot de oproep eigenschappen en video-en audio-instellingen beheren.
 
-U hebt toegang tot de oproep eigenschappen en kunt verschillende bewerkingen uitvoeren tijdens een aanroep om instellingen te beheren die betrekking hebben op video en audio.
+### <a name="check-call-properties"></a>Gespreks eigenschappen controleren
 
-### <a name="call-properties"></a>Eigenschappen van oproep
-* Haal de unieke ID (teken reeks) op voor deze aanroep.
-```js
+De unieke ID (teken reeks) voor een aanroep ophalen:
 
-const callId: string = call.id;
+   ```js
+    const callId: string = call.id;
+   ```
 
-```
+Meer informatie over andere deel nemers aan de oproep door de verzameling te controleren `remoteParticipant` :
 
-* Inspecteer de `remoteParticipant` verzameling op het exemplaar voor meer informatie over andere deel nemers aan de aanroep `call` . Matrix bevat lijst `RemoteParticipant` objecten
-```js
-const remoteParticipants = call.remoteParticipants;
-```
+   ```js
+   const remoteParticipants = call.remoteParticipants;
+   ```
 
-* De id van de oproepende functie als de aanroep inkomend is. Id is een van de `CommunicationIdentifier` typen
-```js
+De aanroeper van een binnenkomende oproep identificeren:
 
-const callerIdentity = call.callerInfo.identifier;
+   ```js
+   const callerIdentity = call.callerInfo.identifier;
+   ```
 
-* Get the state of the Call.
-```js
+   `identifier` is een van de `CommunicationIdentifier` typen.
 
-const callState = call.state;
+De status van een aanroep ophalen:
 
-```
-Hiermee wordt een teken reeks geretourneerd die de huidige status van een aanroep vertegenwoordigt:
-* Geen '-initiële gespreks status
-* ' Binnenkomend ': geeft aan dat een aanroep inkomend moet worden geaccepteerd of geweigerd
-* ' Verbinding maken '-initiële overgangs status zodra de aanroep is geplaatst of geaccepteerd
-* ' Rinkelend ': voor een uitgaande oproep wordt aangegeven dat de aanroep wordt opgeroepen voor externe deel nemers, het is ' binnenkomend ' aan hun zijde
-* ' EarlyMedia ': geeft een status aan waarin een aankondiging wordt afgespeeld voordat de aanroep is verbonden
-* Verbonden: de oproep is verbonden
-* ' LocalHold ': de aanroep wordt door de lokale deel nemer in de wacht geplaatst, geen medium loopt tussen het lokale eind punt en de externe deel nemer (s)
-* ' RemoteHold ': de oproep wordt door een externe deel nemer in de wacht geplaatst, geen medium loopt tussen het lokale eind punt en de externe deel nemer (s)
-* ' Verbinding verbreken '-de status van de overdracht van de aanroep is verbroken
-* ' Verbinding verbroken '-laatste gespreks status
-  * Als de netwerk verbinding is verbroken, wordt de status na ongeveer 2 minuten verbroken.
+   ```js
+   const callState = call.state;
+   ```
 
-* Inspecteer de eigenschap om te zien waarom een bepaalde aanroep is beëindigd `callEndReason` .
-```js
+   Hiermee wordt een teken reeks geretourneerd die de huidige status van een aanroep vertegenwoordigt:
 
-const callEndReason = call.callEndReason;
-// callEndReason.code (number) code associated with the reason
-// callEndReason.subCode (number) subCode associated with the reason
-```
+  - `None`: Aanvankelijke oproep status.
+  - `Incoming`: Hiermee wordt aangegeven dat een aanroep inkomend is. Deze moet ofwel geaccepteerd of afgekeurd zijn.
+  - `Connecting`: Initiële overgangs status wanneer een aanroep wordt geplaatst of geaccepteerd.
+  - `Ringing`: Voor een uitgaande oproep geeft aan dat een aanroep wordt opgeroepen voor externe deel nemers. `Incoming`Aan de zijkant.
+  - `EarlyMedia`: Hiermee wordt een status aangegeven waarin een aankondiging wordt afgespeeld voordat de aanroep is verbonden.
+  - `Connected`: Geeft aan dat de aanroep is verbonden.
+  - `LocalHold`: Hiermee geeft u aan dat de oproep wordt geblokkeerd door een lokale deel nemer. Geen enkel medium loopt tussen het lokale eind punt en de externe deel nemers.
+  - `RemoteHold`: Geeft aan dat de aanroep door een externe deel nemer is geblokkeerd. Geen enkel medium loopt tussen het lokale eind punt en de externe deel nemers.
+  - `Disconnecting`: Transitie status voordat de aanroep naar een status wordt verplaatst `Disconnected` .
+  - `Disconnected`: Laatste oproep status. Als de netwerk verbinding is verbroken, wordt de status gewijzigd in `Disconnected` na twee minuten.
 
-* Als u wilt weten of de huidige aanroep een binnenkomende of uitgaande oproep is, inspecteert u de `direction` eigenschap, wordt deze geretourneerd `CallDirection` .
-```js
-const isIncoming = call.direction == 'Incoming';
-const isOutgoing = call.direction == 'Outgoing';
-```
+Ontdek waarom een gesprek is beëindigd door de eigenschap te controleren `callEndReason` :
 
-*  Als u wilt controleren of de huidige microfoon is gedempt, inspecteert u de `muted` eigenschap `Boolean` .
-```js
+   ```js
+   const callEndReason = call.callEndReason;
+   // callEndReason.code (number) code associated with the reason
+   // callEndReason.subCode (number) subCode associated with the reason
+   ```
 
-const muted = call.isMicrophoneMuted;
+Meer informatie over de huidige oproep inkomend of uitgaand door de eigenschap te controleren `direction` . Wordt geretourneerd `CallDirection` .
 
-```
+  ```js
+   const isIncoming = call.direction == 'Incoming';
+   const isOutgoing = call.direction == 'Outgoing';
+   ```
 
-* Als u wilt zien of de stroom voor het delen van het scherm wordt verzonden vanuit een bepaald eind punt, controleert `isScreenSharingOn` u de eigenschap `Boolean` .
-```js
+Controleer of de huidige microfoon is gedempt. Wordt geretourneerd `Boolean` .
 
-const isScreenSharingOn = call.isScreenSharingOn;
+   ```js
+   const muted = call.isMicrophoneMuted;
+   ```
 
-```
+Nagaan of de stroom voor het delen van het scherm wordt verzonden vanuit een bepaald eind punt door de eigenschap te controleren `isScreenSharingOn` . Wordt geretourneerd `Boolean` .
 
-* Als u actieve videostreams wilt controleren, controleert `localVideoStreams` u de verzameling. Deze bevat `LocalVideoStream` objecten
-```js
+   ```js
+   const isScreenSharingOn = call.isScreenSharingOn;
+   ```
 
-const localVideoStreams = call.localVideoStreams;
+Inspecteer actieve video stromen door de `localVideoStreams` verzameling te controleren. Er worden `LocalVideoStream` objecten geretourneerd.
 
-```
+   ```js
+   const localVideoStreams = call.localVideoStreams;
+   ```
 
-### <a name="call-ended-event"></a>Gebeurtenis oproep beëindigd
+### <a name="check-a-callended-event"></a>Een callEnded-gebeurtenis controleren
 
-Het `Call` exemplaar verzendt een `callEnded` gebeurtenis wanneer de aanroep eindigt. U kunt op de volgende manier abonneren op deze gebeurtenis:
+Het `call` exemplaar verzendt een `callEnded` gebeurtenis wanneer de aanroep eindigt. Als u wilt Luis teren naar deze gebeurtenis, kunt u zich abonneren met de volgende code:
 
 ```js
 const callEndHander = async (args: { callEndReason: CallEndReason }) => {
@@ -263,114 +282,105 @@ await call.unmute();
 
 ### <a name="start-and-stop-sending-local-video"></a>Verzenden van lokale video starten en stoppen
 
-
-Als u een video wilt starten, moet u camera's opsommen met behulp `getCameras` van de methode voor het `deviceManager` object. Maak vervolgens een nieuw exemplaar van `LocalVideoStream` het door geven van de gewenste camera in de `startVideo` methode als een argument:
-
+Als u een video wilt starten, moet u camera's opgeven met behulp van de `getCameras` methode voor het `deviceManager` object. Maak vervolgens een nieuw exemplaar van `LocalVideoStream` door de gewenste camera door te geven aan de `startVideo` methode als een argument:
 
 ```js
 const localVideoStream = new LocalVideoStream(videoDeviceInfo);
 await call.startVideo(localVideoStream);
-
 ```
 
-Zodra u de video hebt verzonden, `LocalVideoStream` wordt een exemplaar toegevoegd aan de `localVideoStreams` verzameling in een aanroep exemplaar.
+Nadat u hebt begonnen `LocalVideoStream` met het verzenden van de video, wordt een exemplaar toegevoegd aan de `localVideoStreams` verzameling in een aanroep exemplaar.
 
 ```js
-
 call.localVideoStreams[0] === localVideoStream;
-
 ```
 
-Als u lokale video wilt stoppen, geeft u de instantie door die `localVideoStream` beschikbaar is in de `localVideoStreams` verzameling:
+Als u lokale video wilt stoppen, geeft u de `localVideoStream` instantie door die beschikbaar is in de `localVideoStreams` verzameling:
 
 ```js
-
 await call.stopVideo(localVideoStream);
-
 ```
 
-U kunt overschakelen naar een ander camera apparaat terwijl de video wordt verzonden door aan te roepen `switchSource` op een `localVideoStream` exemplaar:
+U kunt overschakelen naar een ander camera apparaat terwijl een video wordt verzonden door aan te roepen `switchSource` op een `localVideoStream` exemplaar:
 
 ```js
 const cameras = await callClient.getDeviceManager().getCameras();
 localVideoStream.switchSource(cameras[1]);
-
 ```
 
-## <a name="remote-participants-management"></a>Beheer van externe deel nemers
+## <a name="manage-remote-participants"></a>Externe deel nemers beheren
 
-Alle externe deel nemers worden weer gegeven op `RemoteParticipant` type en beschikbaar via `remoteParticipants` verzameling op een aanroep exemplaar.
+Alle externe deel nemers worden vertegenwoordigd door `remoteParticipant` en zijn beschikbaar via de `remoteParticipants` verzameling op een aanroep exemplaar.
 
-### <a name="list-participants-in-a-call"></a>Deel nemers in een gesprek weer geven
-De `remoteParticipants` verzameling retourneert een lijst met externe deel nemers in de gegeven aanroep:
+### <a name="list-the-participants-in-a-call"></a>De deel nemers in een gesprek weer geven
+
+De `remoteParticipants` verzameling retourneert een lijst met externe deel nemers in een gesprek:
 
 ```js
-
 call.remoteParticipants; // [remoteParticipant, remoteParticipant....]
-
 ```
 
-### <a name="remote-participant-properties"></a>Eigenschappen van externe deel nemer
-Aan de externe deel nemer is een set eigenschappen en verzamelingen gekoppeld
-#### <a name="communicationidentifier"></a>CommunicationIdentifier
-De id voor deze externe deel nemer ophalen.
-De identiteit is een van de CommunicationIdentifier-typen:
-```js
-const identifier = remoteParticipant.identifier;
-```
-Dit kan een van de CommunicationIdentifier-typen zijn:
-  * {communicationUserId: ' <ACS_USER_ID >}-object dat een ACS-gebruiker vertegenwoordigt
-  * {phoneNumber: ' <E. 164> '}-object dat het telefoon nummer vertegenwoordigt in de indeling E. 164
-  * {microsoftTeamsUserId: ' <TEAMS_USER_ID> ', isAnonymous?: Boolean; Cloud?: ' openbaar ' | "DoD" | "gcch"}-object dat teams gebruiker vertegenwoordigt
+### <a name="access-remote-participant-properties"></a>Eigenschappen van toegang tot externe deel nemer
 
-#### <a name="state"></a>Staat
-De status van deze externe deel nemer ophalen.
-```js
+Externe deel nemers hebben een set gekoppelde eigenschappen en verzamelingen:
 
-const state = remoteParticipant.state;
-```
-Status kan een van
-* ' Inactief '-initiële status
-* ' Verbinding maken '-transitie status terwijl deel nemer verbinding maakt met de aanroep
-* ' Belsignaal ': de deel nemer wordt opgeroepen
-* Verbonden: de deel nemer is verbonden met de oproep
-* Hold-deel nemer is in de wacht stand
-* ' EarlyMedia ': de aankondiging wordt afgespeeld voordat de deel nemer is verbonden met de oproep
-* ' Verbinding verbroken ': eind status-de deel nemer is losgekoppeld van de aanroep
-  * Als de externe deel nemer hun netwerk verbinding verliest, wordt de status van de externe deel nemer na ongeveer twee minuten niet meer verbonden.
+- `CommunicationIdentifier`: De id voor een externe deel nemer ophalen. De identiteit is een van de `CommunicationIdentifier` volgende typen:
 
-#### <a name="call-end-reason"></a>Eind reden van aanroep
-Als u wilt weten waarom de deel nemer de oproep heeft verlaten, inspecteert u de `callEndReason` eigenschap:
-```js
-const callEndReason = remoteParticipant.callEndReason;
-// callEndReason.code (number) code associated with the reason
-// callEndReason.subCode (number) subCode associated with the reason
-```
-#### <a name="is-muted"></a>Is gedempt
-Als u wilt controleren of deze externe deel nemer is gedempt of niet, controleert `isMuted` u de eigenschap. `Boolean`
-```js
-const isMuted = remoteParticipant.isMuted;
-```
-#### <a name="is-speaking"></a>Spreekt
-Als u wilt controleren of deze externe deel nemer spreekt of niet, controleert `isSpeaking` u de eigenschap die wordt geretourneerd `Boolean`
-```js
-const isSpeaking = remoteParticipant.isSpeaking;
-```
+  ```js
+  const identifier = remoteParticipant.identifier;
+  ```
 
-#### <a name="video-streams"></a>Video stromen
-Als u alle video stromen wilt controleren die een bepaalde deel nemer in deze aanroep verzendt, controleert u of `videoStreams` deze `RemoteVideoStream` objecten bevat
-```js
+  Dit kan een van de volgende `CommunicationIdentifier` typen zijn:
 
-const videoStreams = remoteParticipant.videoStreams; // [RemoteVideoStream, ...]
+  - `{ communicationUserId: '<ACS_USER_ID'> }`: Object dat de ACS-gebruiker vertegenwoordigt.
+  - `{ phoneNumber: '<E.164>' }`: Object dat het telefoon nummer in de indeling E. 164 vertegenwoordigt.
+  - `{ microsoftTeamsUserId: '<TEAMS_USER_ID>', isAnonymous?: boolean; cloud?: "public" | "dod" | "gcch" }`: Object dat de gebruiker teams vertegenwoordigt.
 
-```
+- `state`: De status van een externe deel nemer ophalen.
 
+  ```js
+  const state = remoteParticipant.state;
+  ```
+
+  De status kan zijn:
+
+  - `Idle`: Begin status.
+  - `Connecting`: Transitie status terwijl een deel nemer verbinding maakt met de aanroep.
+  - `Ringing`: Deel nemer wordt gebeld.
+  - `Connected`: Deel nemer is verbonden met de aanroep.
+  - `Hold`: Deel nemer is in de wacht stand.
+  - `EarlyMedia`: Aankondiging die wordt afgespeeld voordat een deel nemer verbinding maakt met de aanroep.
+  - `Disconnected`: Eind status. De deel nemer is losgekoppeld van de aanroep. Als de externe deel nemer de netwerk verbinding verliest, verandert de status in `Disconnected` na twee minuten.
+
+- `callEndReason`: Als u wilt weten waarom een deel nemer de oproep heeft verlaten, controleert u de `callEndReason` eigenschap:
+
+  ```js
+  const callEndReason = remoteParticipant.callEndReason;
+  // callEndReason.code (number) code associated with the reason
+  // callEndReason.subCode (number) subCode associated with the reason
+  ```
+
+- `isMuted` status: als u wilt weten of een externe deel nemer is gedempt, controleert u de `isMuted` eigenschap. Wordt geretourneerd `Boolean` .
+
+  ```js
+  const isMuted = remoteParticipant.isMuted;
+  ```
+
+- `isSpeaking` status: als u wilt weten of een externe deel nemer spreekt, controleert u de `isSpeaking` eigenschap. Wordt geretourneerd `Boolean` .
+
+  ```js
+  const isSpeaking = remoteParticipant.isSpeaking;
+  ```
+
+- `videoStreams`: Als u alle video stromen wilt controleren die een bepaalde deel nemer in deze aanroep verzendt, controleert u de `videoStreams` verzameling. Het bevat `RemoteVideoStream` objecten.
+
+  ```js
+  const videoStreams = remoteParticipant.videoStreams; // [RemoteVideoStream, ...]
+  ```
 
 ### <a name="add-a-participant-to-a-call"></a>Een deel nemer aan een gesprek toevoegen
 
-Als u een deel nemer wilt toevoegen aan een aanroep (een gebruiker of een telefoon nummer), kunt u deze aanroepen `addParticipant` .
-Geef een van de typen ' identifier ' op.
-Hiermee wordt het exemplaar van de externe deel nemer synchroon geretourneerd.
+Als u een deel nemer (een gebruiker of een telefoon nummer) aan een gesprek wilt toevoegen, kunt u gebruiken `addParticipant` . Geef een van de `Identifier` typen op. Hiermee wordt het `remoteParticipant` exemplaar geretourneerd.
 
 ```js
 const userIdentifier = { communicationUserId: <ACS_USER_ID> };
@@ -379,11 +389,9 @@ const remoteParticipant = call.addParticipant(userIdentifier);
 const remoteParticipant = call.addParticipant(pstnIdentifier, {alternateCallerId: '<Alternate Caller ID>'});
 ```
 
-### <a name="remove-participant-from-a-call"></a>Deel nemer uit een gesprek verwijderen
+### <a name="remove-a-participant-from-a-call"></a>Een deel nemer uit een gesprek verwijderen
 
-Als u een deel nemer wilt verwijderen uit een aanroep (een gebruiker of een telefoon nummer), kunt u deze aanroepen `removeParticipant` .
-U moet een van de typen ' identifier ' door geven deze wordt asynchroon opgelost zodra de deel nemer uit de aanroep is verwijderd.
-De deel nemer wordt ook verwijderd uit de `remoteParticipants` verzameling.
+Als u een deel nemer (een gebruiker of een telefoon nummer) van een gesprek wilt verwijderen, kunt u aanroepen `removeParticipant` . U moet een van de typen door geven `Identifier` . Dit wordt asynchroon opgelost nadat de deel nemer is verwijderd uit de aanroep. De deel nemer wordt ook verwijderd uit de `remoteParticipants` verzameling.
 
 ```js
 const userIdentifier = { communicationUserId: <ACS_USER_ID> };
@@ -401,10 +409,9 @@ const remoteVideoStream: RemoteVideoStream = call.remoteParticipants[0].videoStr
 const streamType: MediaStreamType = remoteVideoStream.mediaStreamType;
 ```
 
-Als u een wilt weer geven `RemoteVideoStream` , moet u zich abonneren op een `isAvailableChanged` gebeurtenis.
-Als de `isAvailable` eigenschap wordt gewijzigd in `true` , wordt een stroom door een externe deel nemer verzonden.
-Als dat gebeurt, maakt u een nieuw exemplaar van `Renderer` en maakt u vervolgens een nieuw `RendererView` exemplaar met behulp van de asynchrone `createView` methode.  U kunt vervolgens `view.target` aan elk UI-element worden gekoppeld.
-Wanneer de beschik baarheid van een externe stroom verandert, kunt u ervoor kiezen om de volledige renderer te vernietigen, een specifieke `RendererView` of te blijven gebruiken, maar dit resulteert in het weer geven van een leeg video frame.
+Als u wilt weer geven `RemoteVideoStream` , moet u zich abonneren op een `isAvailableChanged` gebeurtenis. Als de `isAvailable` eigenschap wordt gewijzigd in `true` , wordt een stroom door een externe deel nemer verzonden. Daarna maakt u een nieuw exemplaar van `Renderer` en maakt u een nieuw `RendererView` exemplaar met behulp van de asynchrone `createView` methode.  U kunt vervolgens koppelen `view.target` aan elk UI-element.
+
+Wanneer de beschik baarheid van een externe stroom wordt gewijzigd, kunt u `Renderer` een specifiek exemplaar vernietigen, vernietigen `RendererView` of het allemaal blijven gebruiken. Renderers die zijn gekoppeld aan een niet-beschik bare stroom, resulteren in een leeg video frame.
 
 ```js
 function subscribeToRemoteVideoStream(remoteVideoStream: RemoteVideoStream) {
@@ -427,77 +434,85 @@ function subscribeToRemoteVideoStream(remoteVideoStream: RemoteVideoStream) {
 ```
 
 ### <a name="remote-video-stream-properties"></a>Eigenschappen van externe video-stream
+
 Externe video stromen hebben de volgende eigenschappen:
 
-* `Id` -ID van een externe video stroom
-```js
-const id: number = remoteVideoStream.id;
-```
+- `id`: De ID van een externe video stroom.
 
-* `StreamSize` -grootte (breedte/hoogte) van een externe video stroom
-```js
-const size: {width: number; height: number} = remoteVideoStream.size;
-```
+  ```js
+  const id: number = remoteVideoStream.id;
+  ```
 
-* `MediaStreamType` -kan ' video ' of ' ScreenSharing ' zijn
-```js
-const type: MediaStreamType = remoteVideoStream.mediaStreamType;
-```
-* `isAvailable` -Geeft aan of het eind punt van de externe deel nemer actief stroom verzendt
-```js
-const type: boolean = remoteVideoStream.isAvailable;
-```
+- `Stream.size`: De hoogte en breedte van een externe video stroom.
+
+  ```js
+  const size: {width: number; height: number} = remoteVideoStream.size;
+  ```
+
+- `mediaStreamType`: Kan `Video` of `ScreenSharing` .
+
+  ```js
+  const type: MediaStreamType = remoteVideoStream.mediaStreamType;
+  ```
+
+- `isAvailable`: Of een stroom van een extern deel nemer-eind punt actief is.
+
+  ```js
+  const type: boolean = remoteVideoStream.isAvailable;
+  ```
 
 ### <a name="renderer-methods-and-properties"></a>Methoden en eigenschappen van renderer
 
-* Maak een `RendererView` exemplaar dat later kan worden gekoppeld in de gebruikers interface van de toepassing om de externe video stroom weer te geven.
-```js
-renderer.createView()
-```
+Maak een `rendererView` exemplaar dat kan worden gekoppeld in de gebruikers interface van de toepassing om de externe video stroom te renderen:
 
-* De renderer en alle bijbehorende instanties verwijderen `RendererView` .
-```js
-renderer.dispose()
-```
+  ```js
+  renderer.createView()
+  ```
 
+Verwijdering van `renderer` en alle gekoppelde `rendererView` instanties:
+
+  ```js
+  renderer.dispose()
+  ```
 
 ### <a name="rendererview-methods-and-properties"></a>RendererView methoden en eigenschappen
-Bij het maken van een `RendererView` kunt `scalingMode` u `isMirrored` Eigenschappen en opgeven.
-De schaal modus kan ' Stretch ', ' gewas ' of ' fit ' zijn als `isMirrored` deze is opgegeven, de gerenderde stroom wordt verticaal gespiegeld.
+
+Wanneer u maakt `rendererView` , kunt u de `scalingMode` Eigenschappen en opgeven `isMirrored` . `scalingMode` kan `Stretch` , `Crop` of `Fit` . Als `isMirrored` is opgegeven, wordt de gerenderde stroom verticaal gespiegeld.
 
 ```js
 const rendererView: RendererView = renderer.createView({ scalingMode, isMirrored });
 ```
-Elk gegeven `RendererView` exemplaar heeft een `target` eigenschap die het weergave oppervlak vertegenwoordigt. Dit moet worden gekoppeld aan de gebruikers interface van de toepassing:
+
+Elk `RendererView` exemplaar heeft een `target` eigenschap die het weergave oppervlak vertegenwoordigt. Voeg deze eigenschap toe aan de gebruikers interface van de toepassing:
+
 ```js
 document.body.appendChild(rendererView.target);
 ```
 
-U kunt de schaal modus later bijwerken door de methode aan te roepen `updateScalingMode` .
+U kunt bijwerken `scalingMode` door de methode aan te roepen `updateScalingMode` :
+
 ```js
 view.updateScalingMode('Crop')
 ```
 
 ## <a name="device-management"></a>Apparaatbeheer
 
-`DeviceManager` Hiermee kunt u lokale apparaten opsommen die kunnen worden gebruikt in een aanroep om uw audio/video-streams te verzenden. U kunt hiermee ook machtigingen aanvragen van een gebruiker om toegang te krijgen tot hun microfoon en camera met behulp van de systeem eigen browser-API.
+In `deviceManager` kunt u lokale apparaten opgeven die uw audio-en video stromen in een gesprek kunnen verzenden. Het helpt u ook bij het aanvragen van machtigingen voor toegang tot de microfoon en camera van een andere gebruiker met behulp van de systeem eigen browser-API.
 
-U kunt de `deviceManager` methode by aanroepen gebruiken `callClient.getDeviceManager()` .
-> [!WARNING]
-> Momenteel `callAgent` moet een object eerst worden geïnstantieerd om toegang te krijgen tot DeviceManager
+U kunt toegang krijgen `deviceManager` door de methode aan te roepen `callClient.getDeviceManager()` :
+
+> [!IMPORTANT]
+> U moet een `callAgent` object hebben voordat u toegang kunt krijgen `deviceManager` .
 
 ```js
-
 const deviceManager = await callClient.getDeviceManager();
-
 ```
 
-### <a name="enumerate-local-devices"></a>Lokale apparaten opsommen
+### <a name="get-local-devices"></a>Lokale apparaten ophalen
 
-Voor toegang tot lokale apparaten kunt u inventarisatie methoden gebruiken op de Apparaatbeheer. Opsomming is een asynchrone actie.
+Voor toegang tot lokale apparaten kunt u inventarisatie methoden gebruiken `deviceManager` .
 
 ```js
-
 //  Get a list of available video devices for use.
 const localCameras = await deviceManager.getCameras(); // [VideoDeviceInfo, VideoDeviceInfo...]
 
@@ -506,16 +521,13 @@ const localMicrophones = await deviceManager.getMicrophones(); // [AudioDeviceIn
 
 // Get a list of available speaker devices for use.
 const localSpeakers = await deviceManager.getSpeakers(); // [AudioDeviceInfo, AudioDeviceInfo...]
-
 ```
 
-### <a name="set-default-microphonespeaker"></a>Standaard microfoon/-spreker instellen
+### <a name="set-the-default-microphone-and-speaker"></a>De standaard microfoon en-spreker instellen
 
-Met Apparaatbeheer kunt u een standaard apparaat instellen dat wordt gebruikt bij het starten van een aanroep.
-Als de standaard waarden van de client niet zijn ingesteld, worden de standaard instellingen van het besturings systeem hersteld door communicatie Services.
+In `deviceManager` kunt u een standaard apparaat instellen dat u gebruikt om een gesprek te starten. Als de standaard waarden van de client niet zijn ingesteld, gebruikt communicatie Services de standaard instellingen van het besturings systeem.
 
 ```js
-
 // Get the microphone device that is being used.
 const defaultMicrophone = deviceManager.selectedMicrophone;
 
@@ -527,12 +539,11 @@ const defaultSpeaker = deviceManager.selectedSpeaker;
 
 // Set the speaker device to use.
 await deviceManager.selectSpeaker(AudioDeviceInfo);
-
 ```
 
 ### <a name="local-camera-preview"></a>Voor beeld van lokale camera
 
-U kunt `DeviceManager` en gebruiken `Renderer` om streams van uw lokale camera te renderen. Deze stroom wordt niet naar andere deel nemers verzonden. het is een lokale preview-feed. Dit is een asynchrone actie.
+U kunt `deviceManager` en gebruiken `Renderer` om streams van uw lokale camera te renderen. Deze stroom wordt niet naar andere deel nemers verzonden. het is een lokale preview-feed.
 
 ```js
 const cameras = await deviceManager.getCameras();
@@ -544,21 +555,22 @@ document.body.appendChild(view.target);
 
 ```
 
-### <a name="request-permission-to-cameramicrophone"></a>Machtiging aanvragen voor camera/microfoon
+### <a name="request-permission-to-camera-and-microphone"></a>Toestemming voor camera en microfoon aanvragen
 
-Vraag een gebruiker om camera/microfoon machtigingen te verlenen met het volgende:
+Een gebruiker vragen om camera-en microfoon machtigingen te verlenen:
 
 ```js
 const result = await deviceManager.askDevicePermission({audio: true, video: true});
 ```
-Dit wordt asynchroon opgelost met een object dat aangeeft of `audio` en `video` machtigingen zijn verleend:
+
+Dit leidt tot een object dat aangeeft of `audio` en `video` machtigingen zijn verleend:
+
 ```js
 console.log(result.audio);
 console.log(result.video);
 ```
 
-
-## <a name="call-recording-management"></a>Beheer van oproep opname
+## <a name="record-calls"></a>Record aanroepen
 
 [!INCLUDE [Private Preview Notice](../../../includes/private-preview-include-section.md)]
 
@@ -568,7 +580,7 @@ Het opnemen van aanroepen is een uitgebreide functie van de core- `Call` API. U 
 const callRecordingApi = call.api(Features.Recording);
 ```
 
-Als u vervolgens wilt controleren of de oproep wordt vastgelegd, inspecteert u de `isRecordingActive` eigenschap van, wordt deze `callRecordingApi` geretourneerd `Boolean` .
+Controleer vervolgens de eigenschap van om te controleren of de oproep wordt vastgelegd `isRecordingActive` `callRecordingApi` . Wordt geretourneerd `Boolean` .
 
 ```js
 const isResordingActive = callRecordingApi.isRecordingActive;
@@ -585,35 +597,34 @@ callRecordingApi.on('isRecordingActiveChanged', isRecordingActiveChangedHandler)
 
 ```
 
-## <a name="call-transfer-management"></a>Beheer van oproep overdracht
+## <a name="transfer-calls"></a>Overdrachts aanroepen
 
-De aanroep overdracht is een uitgebreide functie van de core- `Call` API. U moet eerst het object voor de overdrachts functie-API verkrijgen:
+De aanroep overdracht is een uitgebreide functie van de core- `Call` API. U moet eerst het object voor de overdrachts functie-API ophalen:
 
 ```js
 const callTransferApi = call.api(Features.Transfer);
 ```
 
-Bij het overdragen van de oproep zijn drie betrokkenen *van derden,* *cessionaris* en *overdrachts doel* betrokken. Overdrachts stroom werkt als volgt:
+Bij gespreks overdrachten zijn drie partijen betrokken:
 
-1. Er is al een verbonden oproep tussen de *cedent* en de *overnemer*
-2. *cedent* besluit de *oproep over te dragen (overdrachts*  ->  *doel*)
-3. aanroep-API van de *cedent* `transfer`
-4. *cessionaris* beslist of `accept` `reject` de overdrachts aanvraag moet worden *overgedragen* via een `transferRequested` gebeurtenis.
-5. het *overdrachts doel* ontvangt alleen een binnenkomende aanroep *als de overdrachts* aanvraag is gelukt `accept`
+- *Cedent*: de persoon die de overdrachts aanvraag initieert.
+- *Cessionaris*: de persoon die wordt overgedragen.
+- *Doel* van de overdracht: de persoon naar wie wordt overgezet.
 
-### <a name="transfer-terminology"></a>Terminologie voor overdracht
+Transfers volgen de volgende stappen:
 
-- Cedent: degene die de overdrachts aanvraag initieert
-- Cessionaris-het account dat wordt overgedragen door de cedent naar het doel van de overdracht
-- Doel voor overdracht: het doel dat wordt overgedragen aan
+1. Er is al een verbonden oproep tussen de *cedent* en de *cessionaris*. De *cedent* besluit de oproep van de *cessionaris* over te dragen naar het doel van de *overdracht*.
+1. De *cedent* roept de `transfer` API aan.
+1. De *cessionaris* beslist of `accept` de overdrachts `reject` aanvraag moet worden verzonden naar het *doel* van de overdracht met behulp van een `transferRequested` gebeurtenis.
+1. Het *overdrachts doel* ontvangt alleen een binnenkomende oproep als de *cessionaris* de overdrachts aanvraag accepteert.
 
-U kunt synchrone API gebruiken om de huidige oproep over te dragen `transfer` . `transfer` accepteert optioneel, zodat `TransferCallOptions` u een vlag kunt instellen `disableForwardingAndUnanswered` :
+U kunt de API gebruiken om een huidige oproep over te dragen `transfer` . `transfer``transferCallOptions`Hiermee wordt de optioneel, waarmee u een markering kunt instellen `disableForwardingAndUnanswered` :
 
-- `disableForwardingAndUnanswered` = False: als het *overdrachts doel* de overdrachts oproep niet beantwoordt, wordt het door sturen van de *overdrachts doelen* en de niet-geantwoorde instellingen gevolgd
-- `disableForwardingAndUnanswered` = True-als het *overdrachts doel* de overdrachts oproep niet beantwoordt, wordt de overdrachts poging beëindigd
+- `disableForwardingAndUnanswered = false`: Als het *overdrachts doel* de overdrachts oproep niet beantwoordt, volgt de overdracht het door sturen van *overdrachts doelen* en de niet-geantwoorde instellingen.
+- `disableForwardingAndUnanswered = true`: Als het *overdrachts doel* de overdrachts oproep niet beantwoordt, wordt de overdrachts poging beëindigd.
 
 ```js
-// transfer target can be ACS user
+// transfer target can be an ACS user
 const id = { communicationUserId: <ACS_USER_ID> };
 ```
 
@@ -622,17 +633,17 @@ const id = { communicationUserId: <ACS_USER_ID> };
 const transfer = callTransferApi.transfer({targetParticipant: id});
 ```
 
-Met overdracht kunt u zich abonneren op `transferStateChanged` en `transferRequested` gebeurtenissen. `transferRequsted` de gebeurtenis is afkomstig van `call` instance, `transferStateChanged` Event en overdracht `state` en `error` is van `transfer` instantie
+`transfer`Met de API kunt u zich abonneren op `transferStateChanged` en `transferRequested` gebeurtenissen. Een `transferRequested` gebeurtenis is afkomstig van een `call` exemplaar; een `transferStateChanged` gebeurtenis en overdracht `state` en `error` afkomstig van een `transfer` exemplaar.
 
 ```js
 // transfer state
 const transferState = transfer.state; // None | Transferring | Transferred | Failed
 
 // to check the transfer failure reason
-const transferError = transfer.error; // transfer error code that describes the failure if transfer request failed
+const transferError = transfer.error; // transfer error code that describes the failure if a transfer request failed
 ```
 
-De overnemer kan de overdrachts aanvraag die wordt geïnitieerd door de cedent `transferRequested` via `accept()` of in accepteren of afwijzen `reject()` `transferRequestedEventArgs` . U kunt toegang krijgen tot `targetParticipant` informatie, `accept` , `reject` methoden in `transferRequestedEventArgs` .
+De *cessionaris* kan de overdrachts aanvraag die wordt geïnitieerd door de *cedent* in het geval accepteren of afwijzen met `transferRequested` behulp van `accept()` of `reject()` in `transferRequestedEventArgs` . U kunt toegang krijgen tot `targetParticipant` informatie en `accept` of `reject` methoden in `transferRequestedEventArgs` .
 
 ```js
 // Transferee to accept the transfer request
@@ -646,13 +657,14 @@ callTransferApi.on('transferRequested', args => {
 });
 ```
 
-## <a name="eventing-model"></a>Gebeurtenis model
-U moet de huidige waarden controleren en u abonneren op het bijwerken van gebeurtenissen voor toekomstige waarden.
+## <a name="learn-about-eventing-models"></a>Meer informatie over gebeurtenis modellen
+
+Inspecteer de huidige waarden en Abonneer u op het bijwerken van gebeurtenissen voor toekomstige waarden.
 
 ### <a name="properties"></a>Eigenschappen
 
 ```js
-// Inspect current value
+// Inspect the current value
 console.log(object.property);
 
 // Subscribe to value updates
@@ -666,7 +678,7 @@ object.off('propertyChanged', () => {});
 
 
 
-// Example for inspecting call state
+// Example for inspecting a call state
 console.log(call.state);
 call.on('stateChanged', () => {
     console.log(call.state);
@@ -675,8 +687,9 @@ call.off('stateChanged', () => {});
 ```
 
 ### <a name="collections"></a>Verzamelingen
+
 ```js
-// Inspect current collection
+// Inspect the current collection
 object.collection.forEach(v => {
     console.log(v);
 });
@@ -695,8 +708,6 @@ object.on('collectionUpdated', e => {
 
 // Unsubscribe from updates:
 object.off('collectionUpdated', () => {});
-
-
 
 // Example for subscribing to remote participants and their video streams
 call.remoteParticipants.forEach(p => {

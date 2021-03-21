@@ -14,10 +14,10 @@ ms.author: kenwith
 ms.reviewer: luleon, paulgarn, jeedes
 ms.custom: aaddev
 ms.openlocfilehash: 0cccf45037320b476b1a44cafa8074bacadacbc8
-ms.sourcegitcommit: 27cd3e515fee7821807c03e64ce8ac2dd2dd82d2
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103600946"
 ---
 # <a name="how-to-customize-claims-issued-in-the-saml-token-for-enterprise-applications"></a>Procedure: claims aanpassen die zijn uitgegeven in het SAML-token voor zakelijke toepassingen
@@ -54,7 +54,7 @@ Als de SAML-aanvraag geen element bevat voor NameIDPolicy, wordt het NameID door
 
 U kunt een van de volgende opties selecteren in de vervolg keuzelijst **Kies naam-id-indeling** .
 
-| NameID-indeling | Description |
+| NameID-indeling | Beschrijving |
 |---------------|-------------|
 | **Prijs** | Micro soft Identity platform gebruikt de standaard indeling voor de bron. |
 | **Permanent** | Micro soft Identity platform gebruikt persistent als de NameID-indeling. |
@@ -128,7 +128,7 @@ U kunt de volgende functies gebruiken om claims te transformeren.
 | **Samen voegen ()** | Hiermee maakt u een nieuwe waarde door twee kenmerken samen te voegen. U kunt desgewenst een scheidings teken tussen de twee kenmerken gebruiken. Voor NameID-claim transformatie is de koppeling beperkt tot een geverifieerd domein. Als de geselecteerde gebruikers-id een domein heeft, wordt de gebruikers naam geëxtraheerd om het geselecteerde geverifieerde domein toe te voegen. Als u bijvoorbeeld het e-mail adres ( joe_smith@contoso.com ) als de waarde van de gebruikers-ID selecteert en contoso.onmicrosoft.com selecteert als het geverifieerde domein, resulteert dit in joe_smith@contoso.onmicrosoft.com . |
 | **ToLowercase()** | Hiermee worden de tekens van het geselecteerde kenmerk geconverteerd naar kleine letters. |
 | **ToUppercase()** | Hiermee worden de tekens van het geselecteerde kenmerk geconverteerd naar hoofd letters. |
-| **Contains ()** | Voert een kenmerk of constante uit als de invoer overeenkomt met de opgegeven waarde. Als dat niet het geval is, kunt u een andere uitvoer opgeven.<br/>Als u bijvoorbeeld een claim wilt verzenden waarbij de waarde het e-mail adres van de gebruiker is als deze het domein bevat @contoso.com , moet u anders de User Principal name uitvoeren. Hiervoor moet u de volgende waarden configureren:<br/>*Para meter 1 (invoer)*: gebruiker. e-mail adres<br/>*Waarde*: " @contoso.com "<br/>Para meter 2 (uitvoer): gebruiker. e-mail adres<br/>Para meter 3 (uitvoer als er geen overeenkomst is): User. userPrincipalName |
+| **Contains ()** | Voert een kenmerk of constante uit als de invoer overeenkomt met de opgegeven waarde. Als dat niet het geval is, kunt u een andere uitvoer opgeven.<br/>Als u bijvoorbeeld een claim wilt verzenden waarbij de waarde het e-mail adres van de gebruiker is als deze het domein bevat @contoso.com , moet u anders de User Principal name uitvoeren. Hiervoor moet u de volgende waarden configureren:<br/>*Para meter 1 (invoer)*: User.email<br/>*Waarde*: " @contoso.com "<br/>Para meter 2 (uitvoer): user.email<br/>Para meter 3 (uitvoer als er geen overeenkomst is): User. userPrincipalName |
 | **EndWith()** | Voert een kenmerk of constante uit als de invoer eindigt met de opgegeven waarde. Als dat niet het geval is, kunt u een andere uitvoer opgeven.<br/>Als u bijvoorbeeld een claim wilt verzenden waarvan de waarde de werk nemer-ID van de gebruiker is als de werk nemer-ID eindigt op ' 000 ', moet u anders een extensie kenmerk uitvoeren. Hiervoor moet u de volgende waarden configureren:<br/>*Para meter 1 (invoer)*: User. EmployeeID<br/>*Waarde*: 000<br/>Para meter 2 (uitvoer): User. EmployeeID<br/>Para meter 3 (uitvoer als er geen overeenkomst is): User. extensionAttribute1 |
 | **StartWith()** | Voert een kenmerk of constante uit als de invoer begint met de opgegeven waarde. Als dat niet het geval is, kunt u een andere uitvoer opgeven.<br/>Als u bijvoorbeeld een claim wilt verzenden waarvan de waarde de werk nemers-ID van de gebruiker is als het land/de regio begint met ' VS ', moet u anders een extensie kenmerk uitvoeren. Hiervoor moet u de volgende waarden configureren:<br/>*Para meter 1 (invoer)*: gebruiker. land<br/>*Waarde*: "US"<br/>Para meter 2 (uitvoer): User. EmployeeID<br/>Para meter 3 (uitvoer als er geen overeenkomst is): User. extensionAttribute1 |
 | **Extra heren ()-na overeenkomende** | Retourneert de subtekenreeks nadat deze overeenkomt met de opgegeven waarde.<br/>Als de waarde van de invoer bijvoorbeeld ' Finance_BSimon ' is, is de overeenkomende waarde ' Finance_ ', en de uitvoer van de claim is ' BSimon '. |
@@ -155,7 +155,7 @@ Het gebruikers type kan zijn:
 - **Externe gasten**: gast gebruikers behoren tot een externe organisatie die geen Azure AD heeft.
 
 
-Een scenario waarbij dit nuttig is wanneer de bron van een claim afwijkt van een gast en een werk nemer die toegang heeft tot een toepassing. U kunt opgeven dat als de gebruiker een werk nemer is, het NameID-bericht afkomstig is van de gebruiker. e-mail, maar als de gebruiker een gast is, wordt het NameID gebrond vanuit User. extensionAttribute1.
+Een scenario waarbij dit nuttig is wanneer de bron van een claim afwijkt van een gast en een werk nemer die toegang heeft tot een toepassing. U kunt opgeven dat als de gebruiker een werk nemer is, het NameID-bestand afkomstig is van user.email, maar als de gebruiker een gast is, wordt het NameID bron van User. extensionAttribute1.
 
 Een claim voorwaarde toevoegen:
 

@@ -2,14 +2,14 @@
 title: Functies in Azure Functions uitschakelen
 description: Meer informatie over het uitschakelen en inschakelen van functies in Azure Functions.
 ms.topic: conceptual
-ms.date: 02/03/2021
+ms.date: 03/15/2021
 ms.custom: devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: cbb84308507ea15f1c44c00122a9a59472f12a88
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: 1ad484804f66a2e2d4d0f1da4a37cf0d6c485f38
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99551040"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104584734"
 ---
 # <a name="how-to-disable-functions-in-azure-functions"></a>Functies in Azure Functions uitschakelen
 
@@ -20,13 +20,26 @@ De aanbevolen manier om een functie uit te scha kelen is een app-instelling in d
 > [!NOTE]  
 > Wanneer u een door HTTP geactiveerde functie uitschakelt met behulp van de methoden die in dit artikel worden beschreven, kan het eind punt nog steeds toegankelijk zijn wanneer het wordt uitgevoerd op de lokale computer.  
 
-## <a name="use-the-azure-cli"></a>Azure CLI gebruiken
+## <a name="disable-a-function"></a>Een functie uitschakelen
 
-In azure CLI gebruikt u de [`az functionapp config appsettings set`](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set) opdracht om de app-instelling te maken en te wijzigen. Met de volgende opdracht wordt een functie uitgeschakeld die `QueueTrigger` wordt genoemd door het maken van een app-instelling met de naam `AzureWebJobs.QueueTrigger.Disabled` ingesteld op `true` . 
+# <a name="portal"></a>[Portal](#tab/portal)
+
+Gebruik de knoppen **inschakelen** en **uitschakelen** op de **overzichts** pagina van de functie. Deze knoppen werken door de waarde van de app-instelling te wijzigen `AzureWebJobs.<FUNCTION_NAME>.Disabled` . Deze functie-specifieke instelling wordt gemaakt wanneer deze voor de eerste keer wordt uitgeschakeld. 
+
+![Functie status schakelaar](media/disable-function/function-state-switch.png)
+
+Zelfs wanneer u vanuit een lokaal project naar uw functie-app publiceert, kunt u de portal nog steeds gebruiken om functies in de functie-app uit te scha kelen. 
+
+> [!NOTE]  
+> De door de portal geïntegreerde test functionaliteit negeert de `Disabled` instelling. Dit betekent dat een uitgeschakelde functie nog steeds wordt uitgevoerd wanneer deze wordt gestart vanuit het **test** venster in de portal. 
+
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azurecli)
+
+In azure CLI gebruikt u de [`az functionapp config appsettings set`](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set) opdracht om de app-instelling te maken en te wijzigen. Met de volgende opdracht wordt een functie uitgeschakeld `QueueTrigger` die wordt genoemd door een app-instelling te maken met de naam `AzureWebJobs.QueueTrigger.Disabled` en in te stellen op `true` . 
 
 ```azurecli-interactive
-az functionapp config appsettings set --name <myFunctionApp> \
---resource-group <myResourceGroup> \
+az functionapp config appsettings set --name <FUNCTION_APP_NAME> \
+--resource-group <RESOURCE_GROUP_NAME> \
 --settings AzureWebJobs.QueueTrigger.Disabled=true
 ```
 
@@ -38,16 +51,55 @@ az functionapp config appsettings set --name <myFunctionApp> \
 --settings AzureWebJobs.QueueTrigger.Disabled=false
 ```
 
-## <a name="use-the-portal"></a>De portal gebruiken
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/powershell)
 
-U kunt ook de knoppen **inschakelen** en **uitschakelen** op de **overzichts** pagina van de functie gebruiken. Deze knoppen werken door de waarde van de app-instelling te wijzigen `AzureWebJobs.<FUNCTION_NAME>.Disabled` . Deze functie-specifieke instelling wordt gemaakt wanneer deze voor de eerste keer wordt uitgeschakeld. 
+Met de [`Update-AzFunctionAppSetting`](/powershell/module/az.functions/update-azfunctionappsetting) opdracht wordt een toepassings instelling toegevoegd of bijgewerkt. Met de volgende opdracht wordt een functie uitgeschakeld `QueueTrigger` die wordt genoemd door een app-instelling te maken met de naam `AzureWebJobs.QueueTrigger.Disabled` en in te stellen op `true` . 
 
-![Functie status schakelaar](media/disable-function/function-state-switch.png)
+```azurepowershell-interactive
+Update-AzFunctionAppSetting -Name <FUNCTION_APP_NAME> -ResourceGroupName <RESOURCE_GROUP_NAME> -AppSetting @{"AzureWebJobs.QueueTrigger.Disabled" = "true"}
+```
 
-Zelfs wanneer u vanuit een lokaal project naar uw functie-app publiceert, kunt u de portal nog steeds gebruiken om functies in de functie-app uit te scha kelen. 
+Als u de functie opnieuw wilt inschakelen, voert u dezelfde opdracht opnieuw uit met de waarde `false` .
 
-> [!NOTE]  
-> De door de portal geïntegreerde test functionaliteit negeert de `Disabled` instelling. Dit betekent dat een uitgeschakelde functie nog steeds wordt uitgevoerd wanneer deze wordt gestart vanuit het **test** venster in de portal. 
+```azurepowershell-interactive
+Update-AzFunctionAppSetting -Name <FUNCTION_APP_NAME> -ResourceGroupName <RESOURCE_GROUP_NAME> -AppSetting @{"AzureWebJobs.QueueTrigger.Disabled" = "false"}
+```
+---
+
+## <a name="functions-in-a-slot"></a>Functies in een sleuf
+
+App-instellingen zijn standaard ook van toepassing op apps die worden uitgevoerd in implementatie sites. U kunt de app-instelling die wordt gebruikt door de sleuf echter overschrijven door een specifieke app-instelling in te stellen. U wilt bijvoorbeeld dat een functie actief is in de productie omgeving, maar niet tijdens implementatie tests, zoals een door een timer geactiveerde functie. 
+
+Als u een functie alleen wilt uitschakelen in de faserings sleuf:
+
+# <a name="portal"></a>[Portal](#tab/portal)
+
+Navigeer naar het sleuf exemplaar van uw functie-app door **implementatie sleuven** te selecteren onder **implementatie**, uw sleuf te kiezen en **functies** te selecteren in de sleuf-instantie.  Kies uw functie en gebruik vervolgens de knoppen **inschakelen** en **uitschakelen** op de **overzichts** pagina van de functie. Deze knoppen werken door de waarde van de app-instelling te wijzigen `AzureWebJobs.<FUNCTION_NAME>.Disabled` . Deze functie-specifieke instelling wordt gemaakt wanneer deze voor de eerste keer wordt uitgeschakeld. 
+
+U kunt ook de app-instelling met de naam `AzureWebJobs.<FUNCTION_NAME>.Disabled` met de waarde `true` in de **configuratie** voor het sleuf exemplaar direct toevoegen. Wanneer u een sleuf-specifieke app-instelling toevoegt, schakelt u het selectie vakje **implementatie sleuf** in. Hiermee wordt de instellings waarde met de sleuf tijdens swaps bewaard.
+
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azurecli)
+
+```azurecli-interactive
+az functionapp config appsettings set --name <FUNCTION_APP_NAME> \
+--resource-group <RESOURCE_GROUP_NAME> --slot <SLOT_NAME> \
+--slot-settings AzureWebJobs.QueueTrigger.Disabled=true
+```
+Als u de functie opnieuw wilt inschakelen, voert u dezelfde opdracht opnieuw uit met de waarde `false` .
+
+```azurecli-interactive
+az functionapp config appsettings set --name <myFunctionApp> \
+--resource-group <myResourceGroup> --slot <SLOT_NAME> \
+--slot-settings AzureWebJobs.QueueTrigger.Disabled=false
+```
+
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/powershell)
+
+Azure PowerShell biedt momenteel geen ondersteuning voor deze functionaliteit.
+
+---
+
+Zie [Azure functions implementatie sleuven](functions-deployment-slots.md)voor meer informatie.
 
 ## <a name="localsettingsjson"></a>local.settings.json
 

@@ -4,15 +4,15 @@ description: Er zijn algemene vragen aangetroffen bij het maken van een virtuele
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: guide
-author: iqshahmicrosoft
-ms.author: iqshah
+author: kriti-ms
+ms.author: krsh
 ms.date: 03/10/2021
-ms.openlocfilehash: a74170af61c05d07a189b5ceb61dc0c9b7e14298
-ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
+ms.openlocfilehash: 2975d1f1558bc7f9e4a12c18882e43a163b97982
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103200427"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104593421"
 ---
 # <a name="common-questions-about-vm-in-azure-marketplace"></a>Veelgestelde vragen over VM in azure Marketplace
 
@@ -56,7 +56,7 @@ Dit probleem wordt doorgaans weer gegeven als u een virtuele machine hebt gemaak
 
 In deze sectie wordt beschreven hoe u een installatie kopie van een door de gebruiker gedefinieerde virtuele machine (VM) maakt en implementeert. U kunt dit doen door VHD-installatie kopieën van besturings systeem en gegevens schijven te voorzien van een door Azure geïmplementeerde virtuele harde schijf. Met deze stappen implementeert u de virtuele machine met gegeneraliseerde VHD.
 
-1. Meld u aan bij de Azure-portal.
+1. Meld u aan bij Azure Portal.
 2. Upload uw gegeneraliseerde virtuele harde schijf van het besturings systeem en de Vhd's met gegevens schijven naar uw Azure Storage-account.
 3. Op de start pagina selecteert u een resource maken, zoekt u naar "sjabloon implementatie" en selecteert u maken.
 4. Kies uw eigen sjabloon bouwen in de editor.
@@ -470,6 +470,17 @@ $objAzureKeyVaultSecret.Id -vhdUrl "$vhdUrl" -vmSize "Standard\_A2" -publicIPAdd
 # deploying VM with existing VHD
 New-AzResourceGroupDeployment -Name "dplisvvm$postfix" -ResourceGroupName "$rgName"
 ```
+
+## <a name="how-do-i-test-a-hidden-preview-image"></a>Hoe kan ik een verborgen voorbeeld afbeelding testen?
+
+U kunt verborgen preview-installatie kopieën implementeren met Quick Start-sjablonen.
+Als u een voorbeeld installatie kopie wilt implementeren, 
+1. Ga naar de bijbehorende Quick Start-sjabloon voor [Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-simple-linux) of [Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-simple-windows)en selecteer implementeren naar Azure. U moet Azure Portal.
+2. Selecteer in Azure Portal de optie sjabloon bewerken.
+3. In de JSON-sjabloon zoekt u naar imageReference en werkt u de publisherid, offerid, skuId en versie van de installatie kopie bij. Als u de voorbeeld afbeelding wilt testen, voegt u '-PREVIEW ' toe aan de offerid.
+ ![afbeelding](https://user-images.githubusercontent.com/79274470/110191995-71c7d500-7de0-11eb-9f3c-6a42f55d8f03.png)
+4. Klik op Opslaan
+5. Vul de rest van de details in. Controleren en maken
 
 
 ## <a name="next-steps"></a>Volgende stappen

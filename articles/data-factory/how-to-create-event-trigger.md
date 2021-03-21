@@ -7,12 +7,12 @@ ms.author: chez
 ms.reviewer: maghan
 ms.topic: conceptual
 ms.date: 03/11/2021
-ms.openlocfilehash: 6474cb10cdb516bae0386b92e40ecd6f17250691
-ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
+ms.openlocfilehash: b559ce31aff7040a61f6a2f788652ffd192420c4
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103225444"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104593795"
 ---
 # <a name="create-a-trigger-that-runs-a-pipeline-in-response-to-a-storage-event"></a>Een trigger maken waarmee een pijp lijn wordt uitgevoerd als reactie op een opslag gebeurtenis
 
@@ -49,7 +49,7 @@ In deze sectie wordt beschreven hoe u een opslag gebeurtenis trigger maakt in de
    > De opslag gebeurtenis trigger ondersteunt momenteel alleen Azure Data Lake Storage Gen2 en algemene opslag accounts voor versie 2. Vanwege een Azure Event Grid beperking ondersteunt Azure Data Factory slechts een maximum van 500 opslag gebeurtenis triggers per opslag account.
 
    > [!NOTE]
-   > Als u een nieuwe opslag gebeurtenis trigger wilt maken en wijzigen, moet het Azure-account dat wordt gebruikt om u aan te melden bij Data Factory en de opslag gebeurtenis trigger te publiceren, beschikken over de juiste op rollen gebaseerde toegangs beheer machtiging (Azure RBAC) voor het opslag account. Er is geen aanvullende machtiging vereist: de service-principal voor de Azure Data Factory heeft _geen_ speciale machtigingen nodig voor het opslag account of event grid. Zie voor meer informatie over toegangs beheer [op rollen gebaseerd toegangs beheer](#role-based-access-control) sectie.
+   > Als u een nieuwe opslag gebeurtenis trigger wilt maken of wijzigen, moet het Azure-account dat wordt gebruikt om u aan te melden bij Data Factory en de opslag gebeurtenis trigger te publiceren, beschikken over de juiste op rollen gebaseerde toegangs beheer machtiging (Azure RBAC) voor het opslag account. Er is geen aanvullende machtiging vereist: de service-principal voor de Azure Data Factory heeft _geen_ speciale machtigingen nodig voor het opslag account of event grid. Zie voor meer informatie over toegangs beheer [op rollen gebaseerd toegangs beheer](#role-based-access-control) sectie.
 
 1. Het **BLOB-pad begint met** en het **BLOB-pad eindigt** op Eigenschappen, zodat u de containers, mappen en BLOB-namen kunt opgeven waarvoor u gebeurtenissen wilt ontvangen. Voor de opslag gebeurtenis trigger moet ten minste één van deze eigenschappen worden gedefinieerd. U kunt verschillende patronen gebruiken voor beide **BLOB-paden begint met** en het **BLOB-pad eindigt met** eigenschappen, zoals wordt weer gegeven in de voor beelden verderop in dit artikel.
 
@@ -67,12 +67,12 @@ In deze sectie wordt beschreven hoe u een opslag gebeurtenis trigger maakt in de
 
     :::image type="content" source="media/how-to-create-event-trigger/event-based-trigger-image3.png" alt-text="Scherm afbeelding van de voorbeeld pagina opslag gebeurtenis trigger.":::
 
-1. Als u een pijp lijn aan deze trigger wilt koppelen, gaat u naar het pijp lijn-canvas en klikt u op **trigger toevoegen** en selecteert u **Nieuw/bewerken**. Wanneer de side-Navigator wordt weer gegeven, klikt u op de vervolg keuzelijst **Trigger selecteren...** en selecteert u de trigger die u hebt gemaakt. Klik op **volgende: voor beeld van gegevens** om te bevestigen dat de configuratie juist is en controleer vervolgens of de voorbeeld gegevens correct zijn. 
+1. Als u een pijp lijn aan deze trigger wilt koppelen, gaat u naar het pijp lijn-canvas en klikt u op **activeren** en selecteert u **Nieuw/bewerken**. Wanneer de side-Navigator wordt weer gegeven, klikt u op de vervolg keuzelijst **Trigger selecteren...** en selecteert u de trigger die u hebt gemaakt. Klik op **volgende: voor beeld van gegevens** om te bevestigen dat de configuratie juist is en controleer vervolgens of de voorbeeld gegevens correct zijn. 
 
 1. Als uw pijp lijn para meters heeft, kunt u deze opgeven op de activerings parameter zijde navigatie. De opslag gebeurtenis trigger legt het mappad en de bestands naam van de BLOB vast in de eigenschappen `@triggerBody().folderPath` en `@triggerBody().fileName` . Als u de waarden van deze eigenschappen in een pijp lijn wilt gebruiken, moet u de eigenschappen toewijzen aan pijplijn parameters. Nadat u de eigenschappen hebt toegewezen aan para meters, kunt u toegang krijgen tot de waarden die zijn vastgelegd door de trigger via de `@pipeline().parameters.parameterName` expressie in de pijp lijn. Zie [Naslag informatie over het activeren van meta gegevens in pijp lijnen](how-to-use-trigger-parameterization.md) voor gedetailleerde uitleg
 
     :::image type="content" source="media/how-to-create-event-trigger/event-based-trigger-image4.png" alt-text="Scherm afbeelding van de toewijzing van eigenschappen van opslag gebeurtenis trigger voor pijplijn parameters.":::
-    
+
     In het vorige voor beeld wordt de trigger zo geconfigureerd dat deze wordt geactiveerd wanneer een BLOB-pad dat eindigt op. csv wordt gemaakt in de map _Event-test_ in de _voorbeeld gegevens_ van de container. Met de eigenschappen **FolderPath** en **filename** wordt de locatie van de nieuwe BLOB vastgelegd. Als MoviesDB.csv bijvoorbeeld wordt toegevoegd aan het pad voor beeld/gebeurtenis-testen, `@triggerBody().folderPath` heeft de waarde `sample-data/event-testing` en `@triggerBody().fileName` een waarde van `moviesDB.csv` . Deze waarden worden in het voor beeld toegewezen aan de pijplijn parameters `sourceFolder` en `sourceFile` , die in de pijp lijn kunnen worden gebruikt als `@pipeline().parameters.sourceFolder` `@pipeline().parameters.sourceFile` respectievelijk.
 
 1. Klik op **volt ooien** wanneer u klaar bent.
@@ -83,11 +83,11 @@ De volgende tabel bevat een overzicht van de schema-elementen die betrekking heb
 
 | **JSON-element** | **Beschrijving** | **Type** | **Toegestane waarden** | **Vereist** |
 | ---------------- | --------------- | -------- | ------------------ | ------------ |
-| **ligt** | De Azure Resource Manager Resource-ID van het opslag account. | Tekenreeks | Azure Resource Manager-ID | Ja |
+| **ligt** | De Azure Resource Manager Resource-ID van het opslag account. | Tekenreeks | Azure Resource Manager-ID | Yes |
 | **evenementen** | Het type gebeurtenissen dat ervoor zorgt dat deze trigger wordt gestart. | Matrix    | Micro soft. storage. BlobCreated, micro soft. storage. BlobDeleted | Ja, een wille keurige combi natie van deze waarden. |
 | **blobPathBeginsWith** | Het BLOB-pad moet beginnen met het patroon dat is ingesteld voor de trigger om te starten. `/records/blobs/december/`De trigger wordt bijvoorbeeld alleen geactiveerd voor blobs in de `december` map onder de `records` container. | Tekenreeks   | | Geef een waarde op voor ten minste één van deze eigenschappen: `blobPathBeginsWith` of `blobPathEndsWith` . |
 | **blobPathEndsWith** | Het BLOB-pad moet eindigen met het patroon dat is ingesteld voor de trigger om te starten. `december/boxes.csv`De trigger wordt bijvoorbeeld alleen geactiveerd voor blobs `boxes` met de naam in een `december` map. | Tekenreeks   | | U moet een waarde opgeven voor ten minste een van deze eigenschappen: `blobPathBeginsWith` of `blobPathEndsWith` . |
-| **ignoreEmptyBlobs** | Hiermee wordt aangegeven of nul-byte-Blobs een pijplijn uitvoering activeren. Deze instelling is standaard ingesteld op waar. | Booleaans | waar of onwaar | Nee |
+| **ignoreEmptyBlobs** | Hiermee wordt aangegeven of nul-byte-Blobs een pijplijn uitvoering activeren. Deze instelling is standaard ingesteld op waar. | Booleaans | waar of onwaar | No |
 
 ## <a name="examples-of-storage-event-triggers"></a>Voor beelden van opslag gebeurtenis triggers
 

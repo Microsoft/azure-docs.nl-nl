@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 12/06/2018
 ms.custom: seodec18
 ms.openlocfilehash: ddec53b18cd6f374a5665298b43b46122bcfa143
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98016147"
 ---
 # <a name="build-an-iot-solution-by-using-stream-analytics"></a>Een IoT-oplossing bouwen met behulp van Stream Analytics
@@ -42,7 +42,7 @@ Deze oplossing werkt met twee gegevens stromen. Sens oren die zijn geïnstalleer
 ### <a name="entry-data-stream"></a>Gegevens stroom van vermelding
 De gegevens stroom van de vermelding bevat informatie over auto's wanneer deze niet-gratis stations binnenkomt. De gebeurtenissen voor het afsluiten van gegevens worden live gestreamd naar een event hub-wachtrij vanuit een web-app die is opgenomen in de voor beeld-app.
 
-| TollID | EntryTime | LicensePlate | Staat | Merk | Model | VehicleType | VehicleWeight | Gratis | Label |
+| TollID | EntryTime | LicensePlate | Staat | Merk | Model | VehicleType | VehicleWeight | Gratis | Tag |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 |2014-09-10 12:01:00.000 |JNB 7001 |NY |Honda |CRV |1 |0 |7 | |
 | 1 |2014-09-10 12:02:00.000 |YXZ 1001 |NY |Toyota |Camry |1 |0 |4 |123456789 |
@@ -64,7 +64,7 @@ Hier volgt een korte beschrijving van de kolommen:
 | VehicleType |1 voor passagiers voertuigen of 2 voor commerciële Voer tuigen |
 | WeightType |Gewicht van het Voer tuig in tonnen; 0 voor reizigers voertuigen |
 | Gratis |De niet-gratis waarde in USD |
-| Label |De e-code op de auto die de betaling automatiseert; leeg waar de betaling hand matig is gedaan |
+| Tag |De e-code op de auto die de betaling automatiseert; leeg waar de betaling hand matig is gedaan |
 
 ### <a name="exit-data-stream"></a>Gegevens stroom afsluiten
 De gegevens stroom voor afsluiten bevat informatie over auto's die het bewerkings station verlaten. De gebeurtenissen voor het afsluiten van gegevens worden live gestreamd naar een event hub-wachtrij vanuit een web-app die is opgenomen in de voor beeld-app.

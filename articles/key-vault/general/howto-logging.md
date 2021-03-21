@@ -9,16 +9,26 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 10/01/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 7b71fc2f3afb67d766bfe267888674b55af6a3a5
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.openlocfilehash: 62035b2fe6c3db71e392a05946ea3f230dfa030e
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102503910"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104604623"
 ---
 # <a name="how-to-enable-key-vault-logging"></a>Key Vault-logboekregistratie inschakelen
 
 Nadat u een of meer sleutelkluizen hebt gemaakt, wilt u wellicht controleren hoe en wanneer uw sleutelkluizen toegankelijk zijn en voor wie. Zie [Key Vault logboek registratie](logging.md)voor volledige informatie over de functie.
+
+Wat wordt er vastgelegd:
+
+* Alle geverifieerde REST-API-aanvragen, ook mislukte aanvragen als gevolg van toegangsmachtigingen, systeemfouten of ongeldige aanvragen.
+* Bewerkingen voor de sleutelkluis zelf, zoals het maken, verwijderen en instellen van het toegangsbeleid voor sleutelkluizen, en het bijwerken van de kenmerken van sleutelkluizen, zoals tags.
+* Bewerkingen van sleutels en geheimen in de sleutelkluis, waaronder:
+  * Het maken, wijzigen of verwijderen van die sleutels of geheimen.
+  * Het ondertekenen, verifiëren, versleutelen, ontsleutelen, verpakken en uitpakken van sleutels, het ophalen van geheimen en het vermelden van sleutels en geheimen (en hun versies).
+* Niet-geverifieerde aanvragen die in een 401-respons resulteren. Voorbeelden daarvan zijn aanvragen die geen Bearer-token hebben, die ongeldig of verlopen zijn, of die een ongeldig token hebben.  
+* Meldingsgebeurtenissen van Event Grid voor bijna verlopen, verlopen en toegangsbeleid van kluis gewijzigd (gebeurtenis voor nieuwe versie wordt niet vastgelegd). Gebeurtenissen worden vastgelegd ongeacht of er een gebeurtenisabonnement is gemaakt voor de sleutelkluis. Zie [Azure Event Grid-gebeurtenisschema voor Key Vault](../../event-grid/event-schema-key-vault.md) voor meer informatie.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -58,7 +68,7 @@ En om het ons nog gemakkelijker te maken, gebruiken we de resourcegroep die de s
 
 U moet ook een naam voor het opslag account opgeven. Namen van opslag accounts moeten uniek zijn, tussen 3 en 24 tekens lang zijn en mogen alleen cijfers en kleine letters bevatten.  Tot slot wordt er een opslag account van de SKU ' Standard_LRS ' gemaakt.
 
-Met de Azure CLI, gebruikt u de opdracht [AZ Storage account create](/cli/azure/storage/account#az_storage_account_create) .
+Met de Azure CLI, gebruikt u de opdracht [AZ Storage account create](/cli/azure/storage/account#az_storage_account_create) . 
 
 ```azurecli-interactive
 az storage account create --name "<your-unique-storage-account-name>" -g "myResourceGroup" --sku "Standard_LRS"
@@ -100,44 +110,67 @@ Get-AzKeyVault -VaultName "<your-unique-keyvault-name>"
 
 De resource-ID voor uw sleutel kluis heeft de indeling '/Subscriptions/<your-abonnement-ID>/resourceGroups/myResourceGroup/providers/Microsoft.KeyVault/vaults/<your-unique-sleutel kluis-name>). Noteer het voor de volgende stap.
 
-## <a name="enable-logging-using-azure-powershell"></a>Logboekregistratie inschakelen met Azure PowerShell
+## <a name="enable-logging"></a>Logboek registratie inschakelen
 
-Als u logboek registratie voor Key Vault wilt inschakelen, gebruiken we de opdracht diagnostische gegevens van de Azure CLI [AZ monitor Diagnostic-Settings](/cli/azure/monitor/diagnostic-settings) of de cmdlet [set-AzDiagnosticSetting](/powershell/module/az.monitor/set-azdiagnosticsetting) , samen met de id van het opslag account en de resource-id van de sleutel kluis.
+U kunt logboek registratie inschakelen voor Key Vault met behulp van de Azure CLI, Azure PowerShell of de Azure Portal.
+
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
+### <a name="azure-cli"></a>Azure CLI
+
+Gebruik de Azure CLI [AZ monitor Diagnostic-Settings](/cli/azure/monitor/diagnostic-settings) opdracht samen met de opslag account-id en de sleutel kluis resource-id.
 
 ```azurecli-interactive
 az monitor diagnostic-settings create --storage-account "<storage-account-id>" --resource "<key-vault-resource-id>" --name "Key vault logs" --logs '[{"category": "AuditEvent","enabled": true}]' --metrics '[{"category": "AllMetrics","enabled": true}]'
 ```
 
-Met Azure PowerShell gebruiken we de cmdlet [set-AzDiagnosticSetting](/powershell/module/az.monitor/set-azdiagnosticsetting) , waarbij de vlag **-enabled** is ingesteld op **$True** en de categorie ingesteld op `AuditEvent` (de enige categorie voor Key Vault logboek registratie):
+U kunt desgewenst een Bewaar beleid instellen voor uw logboeken, zodat oudere logboeken automatisch worden verwijderd na een bepaalde tijd. U kunt bijvoorbeeld een Bewaar beleid instellen waarmee logboeken die ouder zijn dan 90 dagen automatisch worden verwijderd.
+
+Met de Azure CLI, gebruikt u de opdracht [AZ monitor Diagnostic-Settings Update](/cli/azure/monitor/diagnostic-settings#az_monitor_diagnostic_settings_update) . 
+
+```azurecli-interactive
+az monitor diagnostic-settings update --name "Key vault retention policy" --resource "<key-vault-resource-id>" --set retentionPolicy.days=90
+```
+
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
+
+Gebruik de cmdlet [set-AzDiagnosticSetting](/powershell/module/az.monitor/set-azdiagnosticsetting) , waarbij de vlag **-enabled** is ingesteld op **$True** en de categorie ingesteld op `AuditEvent` (de enige categorie voor Key Vault logboek registratie):
 
 ```powershell-interactive
 Set-AzDiagnosticSetting -ResourceId "<key-vault-resource-id>" -StorageAccountId $sa.id -Enabled $true -Category "AuditEvent"
 ```
 
-U kunt desgewenst een Bewaar beleid instellen voor uw logboeken, zodat oudere logboeken automatisch worden verwijderd na een bepaalde tijd. U kunt bijvoorbeeld ingesteld Bewaar beleid instellen waarmee logboeken die ouder zijn dan 90 dagen automatisch worden verwijderd.
+U kunt desgewenst een Bewaar beleid instellen voor uw logboeken, zodat oudere logboeken automatisch worden verwijderd na een bepaalde tijd. U kunt bijvoorbeeld een Bewaar beleid instellen waarmee logboeken die ouder zijn dan 90 dagen automatisch worden verwijderd.
 
-<!-- With the Azure CLI, use the [az monitor diagnostic-settings update](/cli/azure/monitor/diagnostic-settings#az_monitor_diagnostic_settings_update) command. 
-
-```azurecli-interactive
-az monitor diagnostic-settings update 
-```
--->
-
-Gebruik met Azure PowerShell de cmdlet [set-AzDiagnosticSetting](/powershell/module/az.monitor/set-azdiagnosticsetting) . 
+Gebruik met Azure PowerShell de cmdlet [set-AzDiagnosticSetting](/powershell/module/az.monitor/set-azdiagnosticsetting) .
 
 ```powershell-interactive
 Set-AzDiagnosticSetting "<key-vault-resource-id>" -StorageAccountId $sa.id -Enabled $true -Category AuditEvent -RetentionEnabled $true -RetentionInDays 90
 ```
 
-Wat wordt er vastgelegd:
+# <a name="azure-portal"></a>[Azure-portal](#tab/azure-portal)
 
-* Alle geverifieerde REST-API-aanvragen, ook mislukte aanvragen als gevolg van toegangsmachtigingen, systeemfouten of ongeldige aanvragen.
-* Bewerkingen voor de sleutelkluis zelf, zoals het maken, verwijderen en instellen van het toegangsbeleid voor sleutelkluizen, en het bijwerken van de kenmerken van sleutelkluizen, zoals tags.
-* Bewerkingen van sleutels en geheimen in de sleutelkluis, waaronder:
-  * Het maken, wijzigen of verwijderen van die sleutels of geheimen.
-  * Het ondertekenen, verifiëren, versleutelen, ontsleutelen, verpakken en uitpakken van sleutels, het ophalen van geheimen en het vermelden van sleutels en geheimen (en hun versies).
-* Niet-geverifieerde aanvragen die in een 401-respons resulteren. Voorbeelden daarvan zijn aanvragen die geen Bearer-token hebben, die ongeldig of verlopen zijn, of die een ongeldig token hebben.  
-* Meldingsgebeurtenissen van Event Grid voor bijna verlopen, verlopen en toegangsbeleid van kluis gewijzigd (gebeurtenis voor nieuwe versie wordt niet vastgelegd). Gebeurtenissen worden vastgelegd ongeacht of er een gebeurtenisabonnement is gemaakt voor de sleutelkluis. Zie [Azure Event Grid-gebeurtenisschema voor Key Vault](../../event-grid/event-schema-key-vault.md) voor meer informatie.
+Voer de volgende stappen uit om de diagnostische instellingen in de portal te configureren.
+
+1. Selecteer de diagnostische instellingen in het menu van de resource Blade.
+
+    :::image type="content" source="../media/diagnostics-portal-1.png" alt-text="Diagnostische Portal 1":::
+
+1. Klik op de instelling "+ diagnostische gegevens toevoegen"
+
+    :::image type="content" source="../media/diagnostics-portal-2.png" alt-text="Diagnostische Portal 2":::
+ 
+1. Selecteer een naam om uw diagnostische instelling aan te roepen. Als u logboek registratie voor Azure Monitor voor Key Vault wilt configureren, selecteert u de optie ' audit event ' en ' verzenden naar Log Analytics werk ruimte '. Kies vervolgens het abonnement en de Log Analytics werk ruimte waarvoor u de logboeken wilt verzenden.
+
+    :::image type="content" source="../media/diagnostics-portal-3.png" alt-text="Diagnostische Portal 3":::
+
+    Selecteer anders de opties die betrekking hebben op de logboeken die u wilt selecteren
+
+1. Wanneer u de gewenste opties hebt geselecteerd, selecteert u opslaan.
+
+    :::image type="content" source="../media/diagnostics-portal-4.png" alt-text="Diagnostische Portal 4":::
+
+---
 
 ## <a name="access-your-logs"></a>Toegang tot uw logboeken
 

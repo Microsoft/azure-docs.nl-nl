@@ -7,12 +7,12 @@ ms.service: web-application-firewall
 ms.topic: article
 ms.date: 05/05/2020
 ms.author: victorh
-ms.openlocfilehash: 1fbe930780ff026be748bc42104f821ee9e5c443
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 890688dba70a7fa654e97652b3e474b919f9a077
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92785099"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104585380"
 ---
 # <a name="frequently-asked-questions-for-azure-web-application-firewall-on-application-gateway"></a>Veelgestelde vragen over de firewall van Azure Web Application op Application Gateway
 
@@ -53,6 +53,20 @@ WAF biedt momenteel ondersteuning voor CRS [2.2.9](application-gateway-crs-ruleg
 * Detectie van veelvoorkomende onjuiste configuraties van toepassingen (dat wil zeggen Apache, IIS, enzovoort)
 
 Zie [OWASP Top-10-beveiligings problemen](https://owasp.org/www-project-top-ten/)voor meer informatie.
+
+## <a name="what-content-types-does-waf-support"></a>Welke inhouds typen biedt ondersteuning voor WAF?
+
+Application Gateway WAF ondersteunen de volgende inhouds typen voor beheerde regels:
+
+* application/json
+* toepassing/XML
+* Application/x-www-form-urlencoded
+* meerdelige/formulier-data
+
+En voor aangepaste regels:
+
+* Application/x-www-form-urlencoded
+* meerdelige/formulier-data
 
 ## <a name="does-waf-support-ddos-protection"></a>Biedt WAF ondersteuning voor DDoS-beveiliging?
 

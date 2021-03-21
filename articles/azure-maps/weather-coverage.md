@@ -10,16 +10,16 @@ services: azure-maps
 ms.custom: references_regions
 manager: philmea
 ms.openlocfilehash: 6c4e9eb765a72b7a0b495f81a954b484ef6aa2b7
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96905482"
 ---
 # <a name="azure-maps-weather-services-preview-coverage"></a>Dekking van Azure Maps weer Services (preview)
 
 > [!IMPORTANT]
-> Azure Maps weer Services zijn momenteel beschikbaar als open bare preview.
+> Azure Maps Weather-services zijn momenteel beschikbaar in de openbare preview.
 > Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 
@@ -80,19 +80,19 @@ De volgende tabel bevat informatie over wat voor soort informatie u kunt aanvrag
 | Paraguay                                 | ✓ |   | |✓| 
 | Peru                                     | ✓ |   | |✓| 
 | Puerto Rico                              | ✓ |   | ✓ |✓| 
-| Saint--Barthélemy                         | ✓ |   | |✓| 
+| Saint Barthélemy                         | ✓ |   | |✓| 
 | Saint Kitts en Nevis                    | ✓ |   | |✓| 
 | Saint Lucia                              | ✓ |   | |✓| 
 | Saint-Martin                             | ✓ |   | |✓| 
 | Saint-Pierre en Miquelon                | ✓ |   | |✓| 
 | Saint Vincent en de Grenadines         | ✓ |   | |✓| 
-| Sint-Eustatius                           | ✓ |   | |✓|  
+| Sint Eustatius                           | ✓ |   | |✓|  
 | Sint Maarten                             | ✓ |   | |✓| 
-| Zuid-Georgië en de zuidelijke Sandwich eilanden | ✓ |   | |✓| 
+| Zuid-Georgië en de Zuidelijke Sandwicheilanden | ✓ |   | |✓| 
 | Suriname                                 | ✓ |   | |✓| 
 | Trinidad en Tobago                      | ✓ |   | |✓| 
 | Turks- en Caicos-eilanden                 | ✓ |   | |✓| 
-|  Kleine afgelegen eilanden van de Verenigde Staten                    | ✓ |   | |✓| 
+| Amerikaanse ondergeschikte afgelegen eilanden                    | ✓ |   | |✓| 
 | Amerikaanse Maagden eilanden                      | ✓ |   | ✓|✓| 
 | Verenigde Staten                            | ✓ | ✓ | ✓| ✓| 
 | Uruguay                                  | ✓ |   | |✓| 
@@ -196,7 +196,7 @@ De volgende tabel bevat informatie over wat voor soort informatie u kunt aanvrag
 | Fiji                              | ✓ |   | | ✓| 
 | Frans-Polynesië                  | ✓ |   | | ✓| 
 | Guam                              | ✓ |   |  ✓| ✓| 
-| Heard Island en McDonald eilanden | ✓ |   | | ✓| 
+| Heard- en McDonald-eilanden | ✓ |   | | ✓| 
 | Hongkong SAR                     | ✓ |   | | ✓| 
 | India                             | ✓ |   | | ✓| 
 | Indonesië                         | ✓ |   | | ✓| 
@@ -298,7 +298,7 @@ De volgende tabel bevat informatie over wat voor soort informatie u kunt aanvrag
 | Slowakije               | ✓ | ✓ |  ✓| ✓| 
 | Slovenië               | ✓ | ✓ |  ✓| ✓| 
 | Spanje                  | ✓ | ✓ |  ✓| ✓| 
-| Jan               | ✓ |   | | ✓|
+| Svalbard               | ✓ |   | | ✓|
 | Zweden                 | ✓ | ✓ |  ✓| ✓| 
 | Zwitserland            | ✓ | ✓ | ✓| ✓| 
 | Turkije                 | ✓ |   | | ✓| 

@@ -1,5 +1,5 @@
 - name: Azure Storage gevalideerde partner oplossingen
-  href: /azure/storage/solution-integration
+  href: ./index.yml
 - name: Analytics-en big data-partners
   items:
     - name: Overzicht van gevalideerde partners

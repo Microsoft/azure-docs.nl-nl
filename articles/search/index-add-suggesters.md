@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/24/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 4390291eb96c11b8fb7fdb48eb92abaf802b80c0
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: 748ad9fdab781ba03135f026ab846099fe50c51f
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96030778"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104604403"
 ---
 # <a name="create-a-suggester-to-enable-autocomplete-and-suggested-results-in-a-query"></a>Een suggestie maken om automatisch aanvullen en voorgestelde resultaten in een query in te scha kelen
 
@@ -66,7 +66,7 @@ De keuze van een analyse functie bepaalt hoe velden worden getokend en vervolgen
 
 Bij het evalueren van analyse functies kunt u de [tekst-API analyseren](/rest/api/searchservice/test-analyzer) gebruiken om inzicht te krijgen in de manier waarop de voor waarden worden verwerkt. Wanneer u een index hebt gemaakt, kunt u verschillende analyse functies op een teken reeks uitproberen om de uitvoer van het token weer te geven.
 
-Velden die gebruikmaken van [aangepaste analyse](index-add-custom-analyzers.md) functies of [vooraf gedefinieerde analyse](index-add-custom-analyzers.md#predefined-analyzers-reference) functies (met uitzonde ring van standaard-lucene), zijn expliciet niet toegestaan om slechte resultaten te voor komen.
+Velden die gebruikmaken van [aangepaste analyse](index-add-custom-analyzers.md) functies of [ingebouwde analyse](index-add-custom-analyzers.md#built-in-analyzers) functies (met uitzonde ring van standaard-lucene), zijn expliciet niet toegestaan om slechte resultaten te voor komen.
 
 > [!NOTE]
 > Als u de restrictie beperking wilt omzeilen, bijvoorbeeld als u een tref woord of ngram Analyzer voor bepaalde query scenario's nodig hebt, moet u twee afzonderlijke velden voor dezelfde inhoud gebruiken. Hiermee kan een van de velden een suggestie bieden, terwijl de andere kan worden ingesteld met een aangepaste analyse configuratie.

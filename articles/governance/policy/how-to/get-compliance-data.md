@@ -1,14 +1,14 @@
 ---
 title: Nalevings gegevens voor beleid ophalen
 description: Azure Policy evaluaties en effecten bepalen de naleving. Meer informatie over hoe u de compatibiliteits Details van uw Azure-resources kunt ophalen.
-ms.date: 10/05/2020
+ms.date: 03/16/2021
 ms.topic: how-to
-ms.openlocfilehash: 3c1c128b414444c6004f32f3f3173548f81a82e1
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: cdd23d685750fb8a5d3803f4b6030e7e67bbddce
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100577108"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104598538"
 ---
 # <a name="get-compliance-data-of-azure-resources"></a>Compatibiliteits gegevens van Azure-resources ophalen
 
@@ -26,7 +26,7 @@ Voordat u de methoden voor het rapporteren van naleving bekijkt, kijken we naar 
 
 ## <a name="evaluation-triggers"></a>Evaluatie triggers
 
-De resultaten van een voltooide evaluatie cyclus zijn beschikbaar in de `Microsoft.PolicyInsights` resource provider via `PolicyStates` en- `PolicyEvents` bewerkingen. Zie [Azure Policy Insights](/rest/api/policy-insights/)voor meer informatie over de bewerkingen van de Azure Policy Insights-rest API.
+De resultaten van een voltooide evaluatie cyclus zijn beschikbaar in de `Microsoft.PolicyInsights` resource provider via `PolicyStates` en- `PolicyEvents` bewerkingen. Zie [Azure Policy Insights](/rest/api/policy/)voor meer informatie over de bewerkingen van de Azure Policy Insights-rest API.
 
 De evaluaties van toegewezen beleid en initiatieven worden uitgevoerd als gevolg van verschillende gebeurtenissen:
 
@@ -237,13 +237,13 @@ Wanneer een resource als **niet-compatibel** wordt beschouwd, zijn er veel mogel
 
 ## <a name="command-line"></a>Opdrachtregel
 
-Dezelfde informatie die beschikbaar is in de portal kan worden opgehaald met de REST API (inclusief [ARMClient](https://github.com/projectkudu/ARMClient)), Azure PowerShell en Azure cli. Zie de naslag informatie voor [Azure Policy Insights](/rest/api/policy-insights/) voor volledige details over de rest API. De REST API-referentie pagina's hebben een groene ' Try-' knop voor elke bewerking waarmee u deze in de browser kunt uitproberen.
+Dezelfde informatie die beschikbaar is in de portal kan worden opgehaald met de REST API (inclusief [ARMClient](https://github.com/projectkudu/ARMClient)), Azure PowerShell en Azure cli. Zie de [Azure Policy](/rest/api/policy/) -Naslag informatie voor volledige details over de rest API. De REST API-referentie pagina's hebben een groene ' Try-' knop voor elke bewerking waarmee u deze in de browser kunt uitproberen.
 
 Gebruik ARMClient of een soortgelijk hulp programma voor het afhandelen van verificatie voor Azure voor de REST API-voor beelden.
 
 ### <a name="summarize-results"></a>Resultaten samenvatten
 
-Met de REST API kan samen vatting worden uitgevoerd door container, definitie of toewijzing. Hier volgt een voor beeld van een samen vatting op het abonnements niveau met behulp van Azure Policy Insight- [samen vatting voor het abonnement](/rest/api/policy-insights/policystates/summarizeforsubscription):
+Met de REST API kan samen vatting worden uitgevoerd door container, definitie of toewijzing. Hier volgt een voor beeld van een samen vatting op het abonnements niveau met behulp van Azure Policy Insight- [samen vatting voor het abonnement](/rest/api/policy/policystates/summarizeforsubscription):
 
 ```http
 POST https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.PolicyInsights/policyStates/latest/summarize?api-version=2019-10-01
@@ -353,7 +353,7 @@ De resultaten zien er ongeveer als volgt uit:
 }
 ```
 
-Zie voor meer informatie over het uitvoeren van query's op beleids gebeurtenissen het artikel over [Azure Policy Events](/rest/api/policy-insights/policyevents) .
+Zie voor meer informatie over het uitvoeren van query's op beleids gebeurtenissen het artikel over [Azure Policy Events](/rest/api/policy/policyevents) .
 
 ### <a name="azure-cli"></a>Azure CLI
 
@@ -648,7 +648,7 @@ $policyEvents = Get-AzPolicyEvent -Filter "ResourceType eq '/Microsoft.Network/v
 $policyEvents | ConvertTo-Csv | Out-File 'C:\temp\policyEvents.csv'
 ```
 
-De uitvoer van het `$policyEvents` object ziet er als volgt uit:
+De uitvoer van het `$policyEvents` object ziet eruit als in de volgende uitvoer:
 
 ```output
 Timestamp                  : 9/19/2020 5:18:53 AM

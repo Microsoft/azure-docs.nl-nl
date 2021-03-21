@@ -1,18 +1,18 @@
 ---
-title: Een schaal bare implementatie van Azure Arc-servers plannen
+title: Azure Arc-servers plannen en implementeren
 description: Meer informatie over het inschakelen van een groot aantal machines aan Azure Arc-servers om de configuratie van essentiële beveiligings-, beheer-en bewakings mogelijkheden in azure te vereenvoudigen.
-ms.date: 03/12/2021
+ms.date: 03/18/2021
 ms.topic: conceptual
-ms.openlocfilehash: 63e224180cff8cab6e700bc72b8a5c39a7f26857
-ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
+ms.openlocfilehash: 401725dcfed85a6675c95434270dd7dbff482b6e
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/14/2021
-ms.locfileid: "103461297"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104591177"
 ---
-# <a name="plan-and-deploy-arc-enabled-servers-at-scale"></a>Op schaal niveau ingeschakelde Arc-servers plannen en implementeren
+# <a name="plan-and-deploy-arc-enabled-servers"></a>Arc-servers plannen en implementeren
 
-De implementatie van een IT-infrastructuur service of bedrijfs toepassing is een uitdaging voor elk bedrijf. Om het goed te kunnen uitvoeren en onwelkomloze en ongeplande kosten te voor komen, moet u deze zorgvuldig plannen om ervoor te zorgen dat u zo klaar mogelijk bent. Voor het plannen van de implementatie van Azure Arc enabled servers op schaal, moet dit betrekking hebben op de ontwerp-en implementatie criteria waaraan moet worden voldaan om de taken uit te voeren om een implementatie op schaal te ondersteunen.
+De implementatie van een IT-infrastructuur service of bedrijfs toepassing is een uitdaging voor elk bedrijf. Om het goed te kunnen uitvoeren en onwelkomloze en ongeplande kosten te voor komen, moet u deze zorgvuldig plannen om ervoor te zorgen dat u zo klaar mogelijk bent. Voor het plannen van de implementatie van Azure Arc enabled-servers op elke schaal moet het voldoen aan de ontwerp-en implementatie criteria waaraan moet worden voldaan om de taken te kunnen volt ooien.
 
 Als u de implementatie soepel wilt uitvoeren, moet uw plan een duidelijk inzicht hebben in:
 
@@ -71,7 +71,7 @@ We voegen vervolgens toe aan de basis die in fase 1 is vastgelegd door het voorb
 
 |Taak |Detail |Duur |
 |-----|-------|---------|
-| Het vooraf gedefinieerde installatie script downloaden | Bekijk en pas het vooraf gedefinieerde installatie script voor de implementatie van de verbonden machine-agent voor de geautomatiseerde implementatie vereisten aan.<br><br> Voor beeld van op schaal onboarding-resources:<br><br> <ul><li> [Script voor eenvoudige implementatie op basis van grootte](onboard-service-principal.md)</ul></li> <ul><li>[Schaal bare onboarding VMware vSphere Windows Server-Vm's](https://github.com/microsoft/azure_arc/blob/master/azure_arc_servers_jumpstart/docs/vmware_scaled_powercli_win.md)</ul></li> <ul><li>[Voor bereiding voor onboarding VMware vSphere Linux-Vm's](https://github.com/microsoft/azure_arc/blob/master/azure_arc_servers_jumpstart/docs/vmware_scaled_powercli_linux.md)</ul></li> <ul><li>[AWS EC2-instanties op schaal met Ansible](https://github.com/microsoft/azure_arc/blob/master/azure_arc_servers_jumpstart/docs/aws_scale_ansible.md)</ul></li> <ul><li>[Implementatie op schaal met behulp van externe communicatie met Power shell](https://docs.microsoft.com/azure/azure-arc/servers/onboard-powershell) (alleen Windows)</ul></li>| Een of meer dagen, afhankelijk van de vereisten, bedrijfs processen (bijvoorbeeld wijzigings-en release beheer) en de gebruikte automatiserings methode. |
+| Het vooraf gedefinieerde installatie script downloaden | Bekijk en pas het vooraf gedefinieerde installatie script voor de implementatie van de verbonden machine-agent voor de geautomatiseerde implementatie vereisten aan.<br><br> Voor beeld van onboarding van resources op schaal:<br><br> <ul><li> [Script voor eenvoudige implementatie van grootte](onboard-service-principal.md)</ul></li> <ul><li>[Op schaal voor onboarding VMware vSphere Windows Server-Vm's](https://github.com/microsoft/azure_arc/blob/master/azure_arc_servers_jumpstart/docs/vmware_scaled_powercli_win.md)</ul></li> <ul><li>[Op schaal voor onboarding VMware vSphere Linux-Vm's](https://github.com/microsoft/azure_arc/blob/master/azure_arc_servers_jumpstart/docs/vmware_scaled_powercli_linux.md)</ul></li> <ul><li>[Onboarding van AWS EC2-instanties op schaal met Ansible](https://github.com/microsoft/azure_arc/blob/master/azure_arc_servers_jumpstart/docs/aws_scale_ansible.md)</ul></li> <ul><li>[Implementatie op schaal met behulp van externe communicatie met Power shell](https://docs.microsoft.com/azure/azure-arc/servers/onboard-powershell) (alleen Windows)</ul></li>| Een of meer dagen, afhankelijk van de vereisten, bedrijfs processen (bijvoorbeeld wijzigings-en release beheer) en de gebruikte automatiserings methode. |
 | [Een service-principal maken](onboard-service-principal.md#create-a-service-principal-for-onboarding-at-scale) |Maak een Service-Principal om machines niet-interactief te verbinden met Azure PowerShell of vanuit de portal.| Een uur |
 | De verbonden machine agent implementeren op uw doel servers en-computers |Gebruik uw automatiserings programma om de scripts te implementeren op uw servers en deze te verbinden met Azure.| Een of meer dagen, afhankelijk van uw release plan en na een gefaseerde implementatie. |
 

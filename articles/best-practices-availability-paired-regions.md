@@ -9,10 +9,10 @@ ms.date: 03/03/2020
 ms.author: martinek
 ms.custom: references_regions
 ms.openlocfilehash: 3310d4a7d86db9dee7d5f71fc9410545817886f3
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97511226"
 ---
 # <a name="business-continuity-and-disaster-recovery-bcdr-azure-paired-regions"></a>Bedrijfscontinuïteit en herstel na noodgeval (BCDR): gekoppelde Azure-regio's
@@ -52,7 +52,7 @@ Nee. Klanten kunnen Azure-Services gebruiken voor het ontwikkelen van een flexib
 | Asia-Pacific |Azië-oost (Hongkong) | Zuidoost-Azië (Singapore) |
 | Australië |Australië - oost |Australië - zuidoost |
 | Australië |Australië - centraal |Australië - centraal 2 |
-| Brazilië |Brazil South |VS - zuid-centraal |
+| Brazilië |Brazilië - zuid |VS - zuid-centraal |
 | Canada |Canada - midden |Canada - oost |
 | China |China - noord |China East|
 | China |China - noord 2 |China - oost 2|

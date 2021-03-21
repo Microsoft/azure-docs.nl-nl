@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 12/15/2020
 ms.author: trbye
 ms.openlocfilehash: 1a002b6efbe2603ae254c19f9e3cc7377198cea2
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97935815"
 ---
 # <a name="develop-custom-commands-applications"></a>Toepassingen voor aangepaste opdrachten ontwikkelen
@@ -175,7 +175,7 @@ Begin met het bewerken van de bestaande `TurnOn` opdracht om meerdere apparaten 
    1. Selecteer aan de bovenkant van het middelste deel venster  **toevoegen**. Selecteer in de vervolg keuzelijst de optie **para meter**.
    1. In het deel venster aan de rechter kant in het gedeelte **para meters** , in het vak **naam** , toevoegen `OnOff` .
    1. Selecteer **vereist**. Selecteer in het venster **reactie voor een vereiste para meter toevoegen** de optie **eenvoudige editor**. In het **eerste variatie** veld voegt u in *of uit?*.
-   1. Selecteer **Bijwerken**.
+   1. Selecteer **Update**.
 
        > [!div class="mx-imgBorder"]
        > ![Scherm opname van de sectie ' reactie toevoegen voor een vereiste para meter ' op het tabblad eenvoudige editor geselecteerd.](media/custom-commands/add-required-on-off-parameter-response.png)
@@ -365,7 +365,7 @@ Als u de inhoud wilt verplaatsen, moet u eerst een nieuw webeind punt toevoegen.
 |----|----|
 | **Naam** | `getDevices` |
 | **URL** | `https://aka.ms/speech/cc-sampledevices` |
-| **Methode** | **GET** |
+| **Methode** | **Toevoegen** |
 
 
 Als de voorgestelde waarde voor de URL niet werkt voor u, configureert en host u een webeindpunt dat een JSON-bestand retourneert dat bestaat uit de lijst met apparaten die kunnen worden beheerd. Het eind punt van het web moet een JSON-bestand retour neren dat als volgt is opgemaakt:
@@ -396,7 +396,7 @@ Ga vervolgens naar de pagina **SubjectDevice** para meter Settings. Stel de volg
 | ----| ---- |
 | **Configuratie** | **Vooraf gedefinieerde invoer accepteren van externe catalogus** |                               
 | **Eind punt van catalogus** | `getDevices` |
-| **Methode** | **GET** |
+| **Methode** | **Toevoegen** |
 
 Selecteer vervolgens **Opslaan**.
 

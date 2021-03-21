@@ -1,24 +1,18 @@
 ---
 title: Validatie van waarschuwingen in Azure Security Center | Microsoft Docs
 description: Meer informatie over hoe u kunt controleren of uw beveiligings waarschuwingen correct zijn geconfigureerd in Azure Security Center
-services: security-center
-documentationcenter: na
 author: memildin
 manager: rkarlin
-ms.assetid: f8f17a55-e672-4d86-8ba9-6c3ce2e71a57
 ms.service: security-center
-ms.devlang: na
 ms.topic: how-to
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 02/17/2021
+ms.date: 03/17/2021
 ms.author: memildin
-ms.openlocfilehash: 74323c63ab8985dee2391a546d82258dcb8d0114
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.openlocfilehash: b90ca39d7bf01b84400464240bb581a5e7bc922a
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102099519"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104602380"
 ---
 # <a name="alert-validation-in-azure-security-center"></a>Validatie van waarschuwingen in Azure Security Center
 In dit document leest u hoe u kunt controleren of uw systeem op de juiste manier is geconfigureerd voor waarschuwingen van Azure Security Center.
@@ -39,7 +33,7 @@ Gebruik voorbeeld waarschuwingen voor het volgende:
 
 Voorbeeld waarschuwingen maken:
 
-1. Selecteer in de werk balk op de pagina waarschuwingen de optie **voorbeeld waarschuwingen maken**. 
+1. Als gebruiker met de rol **beveiligings beheerder** of **mede werker** van het abonnement, selecteert u in de werk balk op de pagina waarschuwingen de optie **voorbeeld waarschuwingen maken**.
 1. Selecteer het abonnement.
 1. Selecteer de relevante Azure Defender-plannen/s waarvoor u waarschuwingen wilt weer geven. 
 1. Selecteer **voorbeeld waarschuwingen maken**.

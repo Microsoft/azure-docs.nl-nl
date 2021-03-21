@@ -7,10 +7,10 @@ ms.topic: include
 ms.date: 02/10/2021
 ms.author: tamram
 ms.openlocfilehash: 483f5853c321eee4ac6d10543f0e360a0a5e54b9
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100373744"
 ---
 Voordat u een Azure RBAC-rol toewijst aan een beveiligingsprincipal, bepaalt u het bereik van toegang dat de beveiligingsprincipal moet hebben. Uit best practices blijkt dat het het beste is om het nauwst mogelijke bereik toe te wijzen. De Azure RBAC-rollen die zijn gedefinieerd voor een groter bereik, worden overgenomen door de onderliggende resources.

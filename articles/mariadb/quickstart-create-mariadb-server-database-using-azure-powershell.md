@@ -3,16 +3,16 @@ title: 'Quickstart: Een server maken – Azure PowerShell – Azure Database for
 description: In deze quickstart wordt beschreven hoe u met PowerShell een Azure Database for MariaDB-server maakt in een Azure-resourcegroep.
 author: savjani
 ms.author: pariks
-ms.service: jroth
+ms.service: mariadb
 ms.devlang: azurepowershell
 ms.topic: quickstart
 ms.date: 05/26/2020
 ms.custom: mvc, devx-track-azurepowershell
-ms.openlocfilehash: 91472d3f3cb39d34f560715f511f666079b1d1c0
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: 05082ffa891b72b472ed5433282198c61080f073
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98664661"
 ---
 # <a name="quickstart-create-an-azure-database-for-mariadb-server-using-powershell"></a>Quickstart: Een Azure Database for MariaDB-server maken met behulp van PowerShell
@@ -100,7 +100,7 @@ Overweeg het gebruik van de prijscategorie Basic als lichte reken- en I/O-capaci
 
 Maak een firewallregel op Azure Database for MariaDB-serverniveau voor Azure Database met de `New-AzMariaDbFirewallRule` cmdlet. Een firewallregel op serverniveau stelt een externe toepassing, zoals het `mysql` opdrachtregelprogramma of MariaDB Workbench, in staat om via de Azure Database for MariaDB-servicefirewall verbinding te maken met uw server.
 
-In het volgende voorbeeld wordt een firewallregel met de naam **AllowMyIP** gemaakt, die verbindingen van een specifiek IP-adres, 192.168.0.1, toestaat. Vervang dit door een IP-adres of een bereik van IP-adressen dat overeenkomt met de locatie van waaruit u verbinding maakt.
+In het volgende voorbeeld wordt een firewallregel met de naam **AllowMyIP** gemaakt waarmee verbindingen van een specifiek IP-adres, 192.168.0.1, worden toegestaan. Vervang dit door een IP-adres of een bereik van IP-adressen dat overeenkomt met de locatie van waaruit u verbinding maakt.
 
 ```azurepowershell-interactive
 New-AzMariaDbFirewallRule -Name AllowMyIP -ResourceGroupName myresourcegroup -ServerName mydemoserver -StartIPAddress 192.168.0.1 -EndIPAddress 192.168.0.1
@@ -230,7 +230,7 @@ Als u deze resources uit deze quickstart niet voor een andere quickstart of zelf
 Remove-AzResourceGroup -Name myresourcegroup
 ```
 
-Als u alleen de server wilt verwijderen die u in deze quickstart hebt gemaakt zonder de resourcegroep te verwijderen, gebruikt u de `Remove-AzMariaDbServer` cmdlet.
+Als u alleen de server wilt verwijderen die u in deze quickstart hebt gemaakt zonder de resourcegroep te verwijderen, gebruikt u de cmdlet `Remove-AzMariaDbServer`.
 
 ```azurepowershell-interactive
 Remove-AzMariaDbServer -Name mydemoserver -ResourceGroupName myresourcegroup

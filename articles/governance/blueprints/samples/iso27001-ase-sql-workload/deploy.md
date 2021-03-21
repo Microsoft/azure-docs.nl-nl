@@ -3,12 +3,12 @@ title: Ontwerp van het blauwdrukvoorbeeld voor ISO 27001 conforme ASE-/SQL-workl
 description: Het blauwdrukvoorbeeld voor ISO 27001 conforme App Service Environment-/SQL Database-workloads implementeren waaronder parameterdetails van blauwdrukartefact.
 ms.date: 02/05/2021
 ms.topic: sample
-ms.openlocfilehash: 60867c117c9f1fda6f8ba33333c19a7bd764d219
-ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.openlocfilehash: 5c329a9d7175772e80ea6d9d8da3baf85ce0d170
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "99627480"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104669641"
 ---
 # <a name="deploy-the-iso-27001-app-service-environmentsql-database-workload-blueprint-sample"></a>Het blauwdrukvoorbeeld voor ISO 27001 conforme App Service Environment-/SQL Database-workloads implementeren
 
@@ -133,7 +133,7 @@ In de volgende tabel ziet u een lijst met de blauwdrukartefactparameters:
 |Azure SQL Database-resourcegroep|Resourcegroep|Naam|**Vergrendeld**: voegt de **organisatienaam** samen met `-workload-azsql-rg` om de resourcegroep uniek te maken.|
 |Azure SQL Database-resourcegroep|Resourcegroep|Locatie|**Vergrendeld**: maakt gebruik van de blauwdrukparameter.|
 |Azure SQL Database-sjabloon|Resource Manager-sjabloon|Gebruikersnaam van Azure SQL Server-beheerder|Gebruikersnaam voor de Azure SQL Server. Moet overeenkomen met de eigenschapswaarde in de **Key Vault-sjabloon**. De standaardwaarde is _sql-admin-user_.|
-|Azure SQL Database-sjabloon|Resource Manager-sjabloon|Wachtwoord van Azure SQL Server-beheerder (resource-ID van Key Vault)|De resource-ID van de Key Vault. Gebruik "/subscriptions/{subscriptionId}/resourceGroups/{orgName}-workload-kv/providers/Microsoft.KeyVault/vaults/{orgName}-workload-kv" en vervang `{subscriptionId}` door uw abonnements-ID en `{orgName}` door de blauwdrukparameter van de **organisatienaam**.|
+|Azure SQL Database-sjabloon|Resource Manager-sjabloon|Wachtwoord van Azure SQL Server-beheerder (resource-ID van Key Vault)|De resource-ID van de Key Vault. Gebruik '/subscriptions/{subscriptionId}/resourceGroups/{orgName}-workload-kv-rg/providers/Microsoft.KeyVault/vaults/{orgName}-workload-kv ' en vervang door `{subscriptionId}` uw abonnements-id en `{orgName}` met de para meter voor de naam van de **organisatie** .|
 |Azure SQL Database-sjabloon|Resource Manager-sjabloon|Wachtwoord van Azure SQL Server-beheerder (naam van Key Vault-geheim)|Gebruikersnaam van SQL Server-beheerder. Moet overeenkomen met de eigenschapswaarde van de **Gebruikersnaam van Azure SQL Server-beheerder** in de **Key Vault-sjabloon**.|
 |Azure SQL Database-sjabloon|Resource Manager-sjabloon|Behoud van logboeken in dagen|Gegevensretentie in dagen. De standaardwaarde is _365_.|
 |Azure SQL Database-sjabloon|Resource Manager-sjabloon|Object-id van AAD-beheerder|AAD-object-id van de gebruiker die wordt toegewezen als een Active Directory-beheerder. Geen standaardwaarde en mag niet leeg zijn. Als u deze waarde wilt vinden in de Azure-portal, zoekt en selecteert u Gebruikers onder _Services_. Gebruik het vak _Naam_ om de accountnaam te filteren en selecteer dat account. Selecteer op de pagina _Gebruikersprofiel_ het pictogram Klik om te kopiëren naast de _object-ID_.|

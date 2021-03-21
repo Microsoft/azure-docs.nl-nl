@@ -6,10 +6,10 @@ author: bwren
 ms.author: bwren
 ms.date: 07/13/2017
 ms.openlocfilehash: aa08b9f5db5e6371bcd20b473a0c755db3199e7c
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101704290"
 ---
 # <a name="plan-hyper-v-virtual-machine-capacity-with-the-capacity-and-performance-solution-deprecated"></a>Virtuele Hyper-V-machine capaciteit plannen met de Capaciteit en prestaties oplossing (afgeschaft)
@@ -116,7 +116,7 @@ Als samen vatting van de oplossing worden gegevens over capaciteit en prestaties
 De volgende tabel bevat voor beelden van zoek opdrachten in het logboek voor de capaciteits-en prestatie gegevens die door deze oplossing worden verzameld en berekend.
 
 
-| Query’s uitvoeren | Beschrijving |
+| Query | Beschrijving |
 |:--- |:--- |
 | Alle geheugen configuraties van host | Perf &#124; waarbij ObjectName = = "Capaciteit en prestaties" en CounterName = = "host assigned Memory MB" &#124; vat MB = AVG (CounterValue) door INSTANCENAME |
 | Alle VM-geheugen configuraties | Perf &#124; waarbij ObjectName = = "Capaciteit en prestaties" en CounterName = = "aan VM toegewezen geheugen MB" &#124; een samen vatting van MB = Gem (CounterValue) door INSTANCENAME |

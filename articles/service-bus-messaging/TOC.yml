@@ -154,14 +154,10 @@
           href: service-bus-to-event-grid-integration-concept.md
 - name: Instructiegidsen
   items:
-    - name: Verplaatsen tussen regio's
-      href: move-across-regions.md
-    - name: Migreren van Azure Service Manager-API's (klassiek) naar Resource Manager-API's
-      href: deprecate-service-bus-management.md
-    - name: Een naamruimte maken
-      href: service-bus-create-namespace-portal.md
     - name: Ontwikkelen
       items:
+        - name: Een naamruimte maken
+          href: service-bus-create-namespace-portal.md
         - name: Abonnements filters en-acties instellen
           href: service-bus-filter-examples.md
         - name: Afhandeling van berichten
@@ -224,6 +220,8 @@
       items:
         - name: Migreren van ActiveMQ naar Azure Service Bus
           href: migrate-jms-activemq-to-servicebus.md
+        - name: Migreren van Azure Service Manager-API's (klassiek) naar Resource Manager-API's
+          href: deprecate-service-bus-management.md
     - name: Monitor
       items:
         - name: End-to-end tracering en diagnostische gegevens
@@ -238,6 +236,8 @@
           href: service-bus-integrate-with-rabbitmq.md
     - name: Beheren
       items:
+        - name: Verplaatsen tussen regio's
+          href: move-across-regions.md
         - name: Messaging-eenheden automatisch bijwerken
           href: automate-update-messaging-units.md
         - name: Azure PowerShell gebruiken om entiteiten in te richten

@@ -3,14 +3,14 @@ title: Aanbevelingen voor prestaties-Azure Database for MariaDB
 description: In dit artikel wordt de functie aanbevolen prestatie aanbeveling in Azure Database for MariaDB
 author: savjani
 ms.author: pariks
-ms.service: jroth
+ms.service: mariadb
 ms.topic: conceptual
 ms.date: 6/3/2020
-ms.openlocfilehash: 5949c6ba1ed176a609d3ceed4150ac06855440e9
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: a20b8a43c8955e1afea7a7157e3e73425fb0d806
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98664313"
 ---
 # <a name="performance-recommendations-in-azure-database-for-mariadb"></a>Prestatieaanbevelingen in Azure Database for MariaDB

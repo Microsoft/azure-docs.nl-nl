@@ -4,10 +4,10 @@ description: Meer informatie over het inschakelen van schijf versleuteling voor 
 ms.topic: how-to
 ms.date: 02/15/2021
 ms.openlocfilehash: b7e56ff8db9f94b8c6681a1a7d69a4751b3f43a5
-ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100642405"
 ---
 # <a name="enable-disk-encryption-for-service-fabric-managed-cluster-preview-nodes"></a>Schijf versleuteling inschakelen voor knoop punten van Service Fabric Managed cluster (preview)

@@ -3,14 +3,14 @@ title: Problemen met de query prestaties oplossen-Azure Database for MariaDB
 description: Meer informatie over het gebruik van uitleg om de prestaties van query's in Azure Database for MariaDB op te lossen.
 author: savjani
 ms.author: pariks
-ms.service: jroth
+ms.service: mariadb
 ms.topic: troubleshooting
 ms.date: 3/18/2020
-ms.openlocfilehash: 8c996520a77a107017aecad30c221da9ec69137c
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: 2b7491723ffcff73e4b243fe54ef18608167d636
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98664712"
 ---
 # <a name="how-to-use-explain-to-profile-query-performance-in-azure-database-for-mariadb"></a>UITLEGGEN hoe u de prestaties van query's in Azure Database for MariaDB kunt bepalen

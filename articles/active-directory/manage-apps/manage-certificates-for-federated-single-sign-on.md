@@ -15,12 +15,12 @@ ms.date: 04/04/2019
 ms.author: kenwith
 ms.reviewer: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d9b6e81fd090a625ec7ac86963cc9d5e66f5010e
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: 63054b18589cdcc2d950d70452b4f982c324a6c3
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99259216"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104603995"
 ---
 # <a name="manage-certificates-for-federated-single-sign-on-in-azure-active-directory"></a>Certificaten beheren voor federatieve eenmalige aanmelding in Azure Active Directory
 
@@ -89,6 +89,8 @@ Azure AD verzendt een e-mail melding 60, 30 en 7 dagen voordat het SAML-certific
 1. Herhaal de vorige stap voor elk e-mail adres dat u wilt toevoegen.
 1. Voor elk e-mail adres dat u wilt verwijderen, selecteert u het **Verwijder** pictogram (een schoner) naast het e-mail adres.
 1. Selecteer **Opslaan**.
+
+U kunt Maxi maal 5 e-mail adressen toevoegen aan de lijst met meldingen (met inbegrip van het e-mail adres van de beheerder die de toepassing heeft toegevoegd). Als u meer mensen wilt laten weten dat ze een melding moeten ontvangen, gebruikt u de e-mail berichten distributie lijst.
 
 U ontvangt de e-mail melding van aadnotification@microsoft.com . Als u wilt voor komen dat het e-mail bericht naar uw spam locatie gaat, voegt u deze e-mail toe aan uw contact personen.
 

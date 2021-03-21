@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 09/9/2020
 ms.author: yitoh
 ms.openlocfilehash: 2b0f8a73a6852883f87ba9fc4333cb6fa8101a39
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101703113"
 ---
 # <a name="azure-ddos-protection-standard-overview"></a>Azure DDoS Protection standaard overzicht
@@ -52,7 +52,7 @@ Onder een Tenant kan één DDoS-beveiligings plan worden gebruikt voor meerdere 
 
 Zie [Azure DDoS Protection Standard-prijzen](https://azure.microsoft.com/pricing/details/ddos-protection/)voor meer informatie over Azure DDoS Protection standaard prijzen.
 
-## <a name="reference-architectures"></a>Referentiearchitecturen
+## <a name="reference-architectures"></a>Referentie-archtecturen
 
 DDoS Protection Standard is ontworpen voor [Services die zijn geïmplementeerd in een virtueel netwerk](../virtual-network/virtual-network-for-azure-services.md). Voor andere services is de standaard DDoS Protection Basic-service van toepassing. Zie [DDoS Protection referentie architecturen](./ddos-protection-reference-architectures.md)voor meer informatie over ondersteunde architecturen. 
 

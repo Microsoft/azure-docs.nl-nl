@@ -17,10 +17,10 @@ ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6185c5408f74b914ce5ad47634999786ba1d7ab6
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100367993"
 ---
 # <a name="azure-ad-connect-health-frequently-asked-questions"></a>Veelgestelde vragen over Azure AD Connect Health
@@ -70,10 +70,10 @@ Azure AD Connect Health wordt niet ondersteund in de Duitse Cloud, met uitzonde 
 
 | Rollen | Functies | Ondersteund in de Duitse Cloud |
 | ------ | --------------- | --- |
-| Connect Health voor synchronisatie | Bewaking/inzichten/waarschuwingen/analyse | No |
-|  | Synchronisatie fout rapport | Yes |
-| Connect Health voor ADFS | Bewaking/inzichten/waarschuwingen/analyse | No |
-| Status van verbinding maken voor toevoegen | Bewaking/inzichten/waarschuwingen/analyse | No |
+| Connect Health voor synchronisatie | Bewaking/inzichten/waarschuwingen/analyse | Nee |
+|  | Synchronisatie fout rapport | Ja |
+| Connect Health voor ADFS | Bewaking/inzichten/waarschuwingen/analyse | Nee |
+| Status van verbinding maken voor toevoegen | Bewaking/inzichten/waarschuwingen/analyse | Nee |
 
 Om ervoor te zorgen dat de verbindings status van de agent wordt gesynchroniseerd, moet u de vereisten voor de [installatie](how-to-connect-health-agent-install.md#outbound-connectivity-to-the-azure-service-endpoints) dienovereenkomstig configureren.
 

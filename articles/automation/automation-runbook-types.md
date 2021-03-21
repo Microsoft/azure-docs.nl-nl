@@ -6,17 +6,17 @@ ms.subservice: process-automation
 ms.date: 02/17/2021
 ms.topic: conceptual
 ms.openlocfilehash: 067096943cd95913077ada817c94640ff5264520
-ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100634886"
 ---
 # <a name="azure-automation-runbook-types"></a>Azure Automation-runbooktypen
 
 De functie Azure Automation proces automatisering ondersteunt diverse typen runbooks, zoals gedefinieerd in de volgende tabel. Zie [Runbook-uitvoering in azure Automation](automation-runbook-execution.md)voor meer informatie over de proces automatiserings omgeving.
 
-| Type | Description |
+| Type | Beschrijving |
 |:--- |:--- |
 | [Grafisch](#graphical-runbooks)|Grafisch runbook dat is gebaseerd op Windows Power shell en is volledig gemaakt en bewerkt in de grafische editor in Azure Portal. |
 | [Grafische power shell-werk stroom](#graphical-runbooks)|Grafisch runbook op basis van een Windows Power shell-werk stroom en is volledig gemaakt en bewerkt in de grafische editor in Azure Portal. |

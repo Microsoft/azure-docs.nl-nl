@@ -4,10 +4,10 @@ description: Hierin wordt beschreven hoe u resources declareert om te implemente
 ms.topic: conceptual
 ms.date: 03/02/2021
 ms.openlocfilehash: 13f4a08162c40cbb36173627d88a4a8202a4ed26
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101745650"
 ---
 # <a name="resource-declaration-in-arm-templates"></a>Resource declaratie in ARM-sjablonen

@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 05/21/2020
 keywords: pull-geheim, Aro, open Shift, Red Hat
 ms.openlocfilehash: 58c0eb2be3423783a69d005277ffe75aaf59415f
-ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100633730"
 ---
 # <a name="add-or-update-your-red-hat-pull-secret-on-an-azure-red-hat-openshift-4-cluster"></a>Uw Red Hat pull-geheim toevoegen of bijwerken op een Azure Red Hat open Shift 4-cluster

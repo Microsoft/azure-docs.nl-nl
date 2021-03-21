@@ -6,16 +6,16 @@ author: kromerm
 ms.author: makromer
 ms.service: data-factory
 ms.date: 02/05/2021
-ms.openlocfilehash: c4d6ebc8d57857deeb2a5cc71867484bd3519ea6
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 26a4692603d8e8a80a52ea77bdd56617131cea5d
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101699671"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104593880"
 ---
 # <a name="save-costs-for-resources-with-reserved-capacity---azure-data-factory-data-flows"></a>Bespaar kosten voor resources met gereserveerde capaciteit-Azure Data Factory gegevens stromen
 
-[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 Bespaar geld met Azure Data Factory kosten voor de gegevens stroom door het door voeren van een reserve ring voor reken resources vergeleken met de prijzen voor betalen per gebruik. Met gereserveerde capaciteit maakt u een toezeg ging voor het gebruik van ADF-gegevens gedurende een periode van één of drie jaar om een aanzienlijke korting op de reken kosten te krijgen. Als u gereserveerde capaciteit wilt kopen, moet u de Azure-regio, het reken type, het aantal kernen en de periode opgeven.
 

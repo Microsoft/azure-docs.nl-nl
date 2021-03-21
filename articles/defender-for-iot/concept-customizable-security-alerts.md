@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 2/16/2021
 ms.author: shhazam
 ms.openlocfilehash: 04198432f2b600a3c703d5e4f253656f116000db
-ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100636523"
 ---
 # <a name="defender-for-iot-hub-custom-security-alerts"></a>Defender voor aangepaste beveiligings waarschuwingen voor IoT Hub
@@ -30,7 +30,7 @@ De volgende lijsten van de Defender voor IoT-waarschuwingen kunt u bepalen op ba
 
 ## <a name="built-in-custom-alerts-in-the-iot-hub"></a>Ingebouwde aangepaste waarschuwingen in de IoT Hub
 
-| Severity | Naam waarschuwing | Gegevensbron | Description | Voorgestelde herstel |
+| Severity | Naam waarschuwing | Gegevensbron | Beschrijving | Voorgestelde herstel |
 |--|--|--|--|--|
 | Beperkt | Aangepaste waarschuwing: het aantal Cloud-naar-apparaat-berichten in het AMQP-protocol valt buiten het toegestane bereik | IoT Hub | Het aantal Cloud-naar-apparaat-berichten (AMQP-Protocol) binnen een bepaald tijd venster ligt buiten het huidige geconfigureerde en toegestane bereik. |  |
 | Beperkt | Aangepaste waarschuwing: het aantal geweigerde Cloud-naar-apparaat-berichten in het AMQP-protocol valt buiten het toegestane bereik | IoT Hub | Het aantal Cloud-naar-apparaat-berichten (AMQP-Protocol) dat door het apparaat is afgewezen, binnen een bepaald tijd venster zich buiten het huidige geconfigureerde en toegestane bereik bevinden. |  |

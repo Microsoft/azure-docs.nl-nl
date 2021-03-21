@@ -6,10 +6,10 @@ author: bwren
 ms.author: bwren
 ms.date: 02/26/2021
 ms.openlocfilehash: f4bddc1666d1165d6a1e4c749fdbc96ede37747a
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102036764"
 ---
 # <a name="collect-windows-and-linux-performance-data-sources-with-log-analytics-agent"></a>Windows-en Linux-prestatie gegevens bronnen met Log Analytics-agent verzamelen
@@ -204,7 +204,7 @@ Prestatie records hebben het type **perf** en hebben de eigenschappen in de volg
 ## <a name="log-queries-with-performance-records"></a>Query's vastleggen met prestatie records
 De volgende tabel bevat verschillende voor beelden van logboek query's waarmee prestatie records worden opgehaald.
 
-| Query’s uitvoeren | Beschrijving |
+| Query | Beschrijving |
 |:--- |:--- |
 | Prestaties |Alle prestatie gegevens |
 | Perf &#124; waarbij computer = "mijn systeem" |Alle prestatie gegevens van een bepaalde computer |

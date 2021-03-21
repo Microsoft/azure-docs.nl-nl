@@ -3,12 +3,12 @@ title: Problemen met Event Grid oplossen
 description: In dit artikel worden verschillende manieren beschreven om Azure Event Grid problemen op te lossen
 ms.topic: conceptual
 ms.date: 02/11/2021
-ms.openlocfilehash: 9c52ba8561c10dd94ec6ef51c78b8534c6c58e96
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: d30b8464de90474ad74853cc423de700b41226a4
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100417237"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104720556"
 ---
 # <a name="troubleshoot-azure-event-grid-issues"></a>Problemen met Azure Event Grid oplossen
 Dit artikel bevat informatie die u helpt bij het oplossen van problemen met Azure Event Grid. 
@@ -32,7 +32,7 @@ Er zijn verschillende redenen waarom client toepassingen geen verbinding kunnen 
 Als u fout berichten ontvangt met fout codes zoals 400, 409 en 403, raadpleegt u [Event grid-fouten oplossen](troubleshoot-errors.md). 
 
 ## <a name="distributed-tracing-net"></a>Gedistribueerde tracering (.NET)
-De Event Grid .NET-bibliotheek ondersteunt het distribueren van tracering. Om te voldoen aan de [richt lijnen](https://github.com/cloudevents/spec/blob/master/extensions/distributed-tracing.md) van de CloudEvents-specificatie voor het distribueren van tracering, stelt de tape wisselaar de `traceparent` en `tracestate` op de [ExtensionAttributes](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventgrid/Azure.Messaging.EventGrid/src/Customization/CloudEvent.cs#L126) van een `CloudEvent` Wanneer gedistribueerde tracering is ingeschakeld. Voor meer informatie over het inschakelen van gedistribueerde tracering in uw toepassing raadpleegt u de documentatie van Azure SDK [Distributed tracing](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/core/Azure.Core/samples/Diagnostics.md#Distributed-tracing).
+De Event Grid .NET-bibliotheek ondersteunt het distribueren van tracering. Om te voldoen aan de [richt lijnen](https://github.com/cloudevents/spec/blob/master/extensions/distributed-tracing.md) van de CloudEvents-specificatie voor het distribueren van tracering, stelt de tape wisselaar de `traceparent` en `tracestate` op de [ExtensionAttributes](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventgrid/Azure.Messaging.EventGrid/src/Customization#L126) van een `CloudEvent` Wanneer gedistribueerde tracering is ingeschakeld. Voor meer informatie over het inschakelen van gedistribueerde tracering in uw toepassing raadpleegt u de documentatie van Azure SDK [Distributed tracing](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/core/Azure.Core/samples/Diagnostics.md#Distributed-tracing).
 
 ### <a name="sample"></a>Voorbeeld
 Zie het voor [beeld van regel tellers](/samples/azure/azure-sdk-for-net/line-counter/). Deze voor beeld-app illustreert het gebruik van opslag-, Event Hubs-en Event Grid-clients samen met ASP.NET Core integratie, gedistribueerde tracering en gehoste services. Hiermee kunnen gebruikers een bestand uploaden naar een blob, waarmee een Event Hubs gebeurtenis met de bestands naam wordt geactiveerd. De Event Hubs processor ontvangt de gebeurtenis, waarna de app de BLOB downloadt en het aantal regels in het bestand telt. In de app wordt een koppeling naar een pagina met het aantal regels weer gegeven. Als er op de koppeling wordt geklikt, wordt er een CloudEvent met de naam van het bestand gepubliceerd met behulp van Event Grid.

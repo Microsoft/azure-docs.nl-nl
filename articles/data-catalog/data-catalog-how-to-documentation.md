@@ -6,16 +6,18 @@ ms.author: jasonh
 ms.service: data-catalog
 ms.topic: how-to
 ms.date: 08/01/2019
-ms.openlocfilehash: 3674c316e34b1e54ed8282ac7d2c228a2b774c06
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 21168e403ffa8fb1472a5bfcac1fcd2079a52e2d
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96019018"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104674917"
 ---
 # <a name="how-to-document-data-sources-in-azure-data-catalog"></a>Gegevens bronnen documenteren in Azure Data Catalog
 
-## <a name="introduction"></a>Introductie
+[!INCLUDE [Azure Purview redirect](../../includes/data-catalog-use-purview.md)]
+
+## <a name="introduction"></a>Inleiding
 **Microsoft Azure Data Catalog** is een volledig beheerde Cloud service die fungeert als registratie systeem en detectie systeem voor zakelijke gegevens bronnen. Met andere woorden, het **Azure Data Catalog** is alles wat helpt mensen bij het detecteren, *begrijpen* en gebruiken van gegevens bronnen, en helpt organisaties bij het verkrijgen van meer waarde dan hun bestaande gegevens.
 
 Wanneer een gegevens bron wordt geregistreerd bij **Azure Data Catalog**, worden de meta gegevens gekopieerd en geïndexeerd door de service, maar het artikel eindigt daar niet. **Azure Data Catalog** kunnen gebruikers ook hun eigen volledige documentatie geven waarmee het gebruik en de algemene scenario's voor de gegevens bron kunnen worden beschreven.

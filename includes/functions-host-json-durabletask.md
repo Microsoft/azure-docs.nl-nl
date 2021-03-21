@@ -7,12 +7,12 @@ ms.topic: include
 ms.date: 03/14/2019
 ms.author: glenga
 ms.custom: include file
-ms.openlocfilehash: 6a862a051d0040ac99746d81f10ae63d5af7545f
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.openlocfilehash: 54ce9438f768e347e306432a1874ab1816a1ae95
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96013718"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104719740"
 ---
 Configuratie-instellingen voor [Durable Functions](../articles/azure-functions/durable/durable-functions-overview.md).
 
@@ -100,15 +100,15 @@ Configuratie-instellingen voor [Durable Functions](../articles/azure-functions/d
 Namen van taakhubs moeten beginnen met een letter en mogen alleen letters en cijfers bevatten. Als u dit niet opgeeft, wordt de standaard naam van de taakhub voor een functie-app **DurableFunctionsHub**. Zie voor meer informatie [Taakhubs](../articles/azure-functions/durable/durable-functions-task-hubs.md).
 
 |Eigenschap  |Standaard | Beschrijving |
-|---------|---------|---------|
+|---------|---------|----------|
 |hubName|DurableFunctionsHub|Er kunnen alternatieve namen voor [taakhubs](../articles/azure-functions/durable/durable-functions-task-hubs.md) worden gebruikt om meerdere Durable Functions-toepassingen van elkaar te isoleren, zelfs als ze dezelfde back-end voor opslag gebruiken.|
 |controlQueueBatchSize|32|Het aantal berichten dat tegelijkertijd moet worden opgehaald uit de controlewachtrij.|
-|controlQueueBufferThreshold|256|Het aantal controlewachtrijberichten dat in het geheugen tegelijk kan worden gebufferd, waarna de dispatcher wacht totdat extra berichten uit de wachtrij worden verwijderd.|
+|controlQueueBufferThreshold| **Verbruiks abonnement**: 32 <br> **Speciaal/Premium-abonnement**: 256 |Het aantal controlewachtrijberichten dat in het geheugen tegelijk kan worden gebufferd, waarna de dispatcher wacht totdat extra berichten uit de wachtrij worden verwijderd.|
 |partitionCount |4|Het aantal partities voor de controlewachtrij. Kan een positief geheel getal tussen 1 en 16 zijn.|
 |controlQueueVisibilityTimeout |5 minuten|De time-out voor zichtbaarheid van berichten in de controlewachtrij die uit de wachtrij zijn verwijderd.|
 |workItemQueueVisibilityTimeout |5 minuten|De time-out voor zichtbaarheid van berichten in de werkitemwachtrij die uit de wachtrij zijn verwijderd.|
-|maxConcurrentActivityFunctions |10X het aantal processors op de huidige computer|Het maximum aantal activiteitenfuncties dat gelijktijdig kan worden verwerkt op één exemplaar van een host.|
-|maxConcurrentOrchestratorFunctions |10X het aantal processors op de huidige computer|Het maximum aantal orchestratorfuncties dat gelijktijdig kan worden verwerkt op één exemplaar van een host.|
+|maxConcurrentActivityFunctions | **Verbruiks abonnement**: 10 <br> **Speciaal/Premium-abonnement**: 10x het aantal processors op de huidige computer|Het maximum aantal activiteitenfuncties dat gelijktijdig kan worden verwerkt op één exemplaar van een host.|
+|maxConcurrentOrchestratorFunctions | **Verbruiks abonnement**: 5 <br> **Speciaal/Premium-abonnement**: 10x het aantal processors op de huidige computer |Het maximum aantal orchestratorfuncties dat gelijktijdig kan worden verwerkt op één exemplaar van een host.|
 |maxQueuePollingInterval|30 seconden|Het polling-interval van de maximale controle- en werkitemwachtrij in de indeling *uu:mm:ss*. Hogere waarden kunnen resulteren in hogere berichtverwerkingslatenties. Lagere waarden kunnen resulteren in hogere opslagkosten omdat er een toename is in opslagtransacties.|
 |azureStorageConnectionStringName |AzureWebJobsStorage|De naam van de app-instelling met de Azure Storage-verbindingstekenreeks die wordt gebruikt voor het beheren van de onderliggende Azure Storage-resources.|
 |trackingStoreConnectionStringName||De naam van een verbindingstekenreeks die moet worden gebruikt voor de tabellen Geschiedenis en Exemplaren. Als u dit niet opgeeft, wordt de `connectionStringName` (Durable 2.x) of `azureStorageConnectionStringName` (Durable 1.x)-verbinding gebruikt.|

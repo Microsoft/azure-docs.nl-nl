@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 03/06/2021
 ms.author: jafreebe
 ms.openlocfilehash: 404fac634a628da49dee72b10b52785820fe1bf6
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102443774"
 ---
 # <a name="azure-app-service-as-an-event-grid-source"></a>Azure App Service als Event Grid bron
@@ -20,7 +20,7 @@ In dit artikel vindt u de eigenschappen en het schema voor Azure App Service geb
 
 Azure App Service worden de volgende gebeurtenis typen verzonden
 
-|    Gebeurtenistype                                             |    Description                                                     |
+|    Gebeurtenistype                                             |    Beschrijving                                                     |
 |-----------------------------------------------------------|--------------------------------------------------------------------|
 |    Micro soft. web/sites. BackupOperationStarted             |    Geactiveerd wanneer een back-up is gestart                             |
 |    Micro soft. web/sites. BackupOperationCompleted           |    Geactiveerd wanneer een back-up is voltooid                           |
@@ -128,7 +128,7 @@ Deze sectie bevat een voorbeeld van hoe de gegevens voor elke gebeurtenis eruitz
 
 Het gegevens object bevat de volgende eigenschappen:
 
-|    Eigenschap                |    Type      |    Description                                                                                                       |
+|    Eigenschap                |    Type      |    Beschrijving                                                                                                       |
 |----------------------------|--------------|----------------------------------------------------------------------------------------------------------------------|
 |    `appEventTypeDetail`      |    object    |    Details van actie op de app                                                                                       |
 |    `action`                  |    tekenreeks    |    Type actie van de bewerking                                                                                   |
@@ -194,7 +194,7 @@ Het gegevens object bevat de volgende eigenschappen:
 
 Het gegevens object bevat de volgende eigenschappen:
 
-|    Eigenschap                |    Type      |    Description                                                                                                       |
+|    Eigenschap                |    Type      |    Beschrijving                                                                                                       |
 |----------------------------|--------------|----------------------------------------------------------------------------------------------------------------------|
 |    `appEventTypeDetail`      |    object    |    Details van actie op de app                                                                                       |
 |    `action`                  |    tekenreeks    |    Type actie van de bewerking                                                                                   |
@@ -260,7 +260,7 @@ Het gegevens object bevat de volgende eigenschappen:
 
 Het gegevens object bevat de volgende eigenschappen:
 
-|    Eigenschap                |    Type      |    Description                                                                                                       |
+|    Eigenschap                |    Type      |    Beschrijving                                                                                                       |
 |----------------------------|--------------|----------------------------------------------------------------------------------------------------------------------|
 |    `appEventTypeDetail`      |    object    |    Details van actie op de app                                                                                       |
 |    `action`                 |    tekenreeks    |    Type actie van de bewerking                                                                                   |
@@ -327,7 +327,7 @@ Het gegevens object bevat de volgende eigenschappen:
 
 Het gegevens object bevat de volgende eigenschappen:
 
-|    Eigenschap                |    Type      |    Description                                                                                                       |
+|    Eigenschap                |    Type      |    Beschrijving                                                                                                       |
 |----------------------------|--------------|----------------------------------------------------------------------------------------------------------------------|
 |    `appEventTypeDetail`      |    object    |    Details van actie op de app                                                                                       |
 |    `action`                 |    tekenreeks    |    Type actie van de bewerking                                                                                   |
@@ -393,7 +393,7 @@ Het gegevens object bevat de volgende eigenschappen:
 
 Het gegevens object heeft de volgende eigenschappen:
 
-|    Eigenschap                |    Type      |    Description                                                                                                       |
+|    Eigenschap                |    Type      |    Beschrijving                                                                                                       |
 |----------------------------|--------------|----------------------------------------------------------------------------------------------------------------------|
 |    `appEventTypeDetail`      |    object    |    Details van actie op de app                                                                                       |
 |    `action`                  |    tekenreeks    |    Type actie van de bewerking                                                                                   |
@@ -477,7 +477,7 @@ Het gegevens object heeft de volgende eigenschappen:
 
 Het gegevens object heeft de volgende eigenschappen:
 
-|    Eigenschap                         |    Type      |    Description                                                                                                       |
+|    Eigenschap                         |    Type      |    Beschrijving                                                                                                       |
 |-------------------------------------|--------------|----------------------------------------------------------------------------------------------------------------------|
 |    `appServicePlanEventTypeDetail`    |    object    |    Details van actie op het app service-plan                                                                          |
 |    `stampKind`                        |    tekenreeks    |    Type omgeving waarin het app service-plan wordt                                                                     |

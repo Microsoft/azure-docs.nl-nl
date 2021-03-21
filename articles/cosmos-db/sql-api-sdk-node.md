@@ -10,10 +10,10 @@ ms.date: 08/12/2020
 ms.author: anfeldma
 ms.custom: devx-track-js
 ms.openlocfilehash: 8408cdada40bd3595f9bf7cf2c6a2de90040ec0b
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102217258"
 ---
 # <a name="azure-cosmos-db-nodejs-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB Node.js SDK voor SQL API: release opmerkingen en bronnen
@@ -48,7 +48,7 @@ ms.locfileid: "102217258"
 | Zelf studie voor web-apps | [Een Node.js-webtoepassing bouwen met behulp van Azure Cosmos DB](sql-api-nodejs-application.md)
 | Huidig ondersteund platform | [Node.js V12. x](https://nodejs.org/en/blog/release/v12.7.0/) -SDK-versie 3. x. x<br/>[Node.js V10 toevoegen. x](https://nodejs.org/en/blog/release/v10.6.0/) -SDK-versie 3. x. x<br/>[Node.js V8. x](https://nodejs.org/en/blog/release/v8.16.0/) -SDK-versie 3. x. x<br/>[Node.js V6. x](https://nodejs.org/en/blog/release/v6.10.3/) -SDK-versie 2. x. x<br/>[Node.js v 4.2.0](https://nodejs.org/en/blog/release/v4.2.0/)-SDK-versie 1. x. x<br/> [Node.js v 0.12](https://nodejs.org/en/blog/release/v0.12.0/)-SDK-versie 1. x. x<br/> [Node.js v 0,10](https://nodejs.org/en/blog/release/v0.10.0/)-SDK-versie 1. x. x
 
-## <a name="release-notes"></a>Releaseopmerkingen
+## <a name="release-notes"></a>Opmerkingen bij de release
 
 ### <a name="310"></a><a name="3.1.0"></a>3.1.0
 * Stel de standaard ResponseContinuationTokenLimitInKB in op 1 KB. Standaard wordt dit in 1 KB om te voor komen dat lange kopteksten (Node.js een limiet voor de grootte van de globale header heeft). Een gebruiker kan dit veld zo instellen dat er langere kopteksten worden toegestaan. Dit kan helpen bij het optimaliseren van query's.

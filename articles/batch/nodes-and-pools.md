@@ -4,10 +4,10 @@ description: Meer informatie over reken knooppunten en Pools en hoe deze worden 
 ms.topic: conceptual
 ms.date: 03/11/2021
 ms.openlocfilehash: 7d4c2d45849deb011498efe4c8a1ae91724b9acd
-ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103563892"
 ---
 # <a name="nodes-and-pools-in-azure-batch"></a>Knoop punten en Pools in Azure Batch

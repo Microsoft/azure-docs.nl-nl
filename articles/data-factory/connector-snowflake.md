@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 03/16/2021
 ms.openlocfilehash: c18a48f8e72c28fd39f839566b18528806e7245d
-ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103561580"
 ---
 # <a name="copy-and-transform-data-in-snowflake-by-using-azure-data-factory"></a>Gegevens kopiëren en transformeren in sneeuw met behulp van Azure Data Factory
@@ -403,7 +403,7 @@ De onderstaande tabel geeft een lijst van de eigenschappen die worden ondersteun
 | Naam | Beschrijving | Vereist | Toegestane waarden | Eigenschap gegevens stroom script |
 | ---- | ----------- | -------- | -------------- | ---------------- |
 | Tabel | Als u tabel als invoer selecteert, haalt de gegevens stroom alle gegevens op uit de tabel die is opgegeven in de data-gegevensset met sneeuw vlokken of in de bron opties bij gebruik van inline DataSet. | Nee | Tekenreeks | *(alleen voor inline-gegevensset)*<br>tableName<br>schemaName |
-| Query’s uitvoeren | Als u query als invoer selecteert, voert u een query in om gegevens op te halen uit sneeuw vlokken. Deze instelling heeft voor rang op elke tabel die u in dataset hebt gekozen.<br>Als de namen van het schema, de tabel en de kolommen een kleine letter bevatten, wordt de object-id in query als aanhalings teken genoteerd, bijvoorbeeld `select * from "schema"."myTable"` . | Nee | Tekenreeks | query |
+| Query | Als u query als invoer selecteert, voert u een query in om gegevens op te halen uit sneeuw vlokken. Deze instelling heeft voor rang op elke tabel die u in dataset hebt gekozen.<br>Als de namen van het schema, de tabel en de kolommen een kleine letter bevatten, wordt de object-id in query als aanhalings teken genoteerd, bijvoorbeeld `select * from "schema"."myTable"` . | Nee | Tekenreeks | query |
 
 #### <a name="snowflake-source-script-examples"></a>Voor beelden van het bron script sneeuw vlokken
 

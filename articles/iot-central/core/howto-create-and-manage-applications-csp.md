@@ -5,19 +5,21 @@ services: iot-central
 ms.service: iot-central
 author: dominicbetts
 ms.author: dobett
-ms.date: 08/23/2019
+ms.date: 12/11/2020
 ms.topic: how-to
 manager: philmea
-ms.openlocfilehash: 43c201150ab0b2d5d350aa228a4ade5e2faf3461
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: f3293ada549351cc7273847cde48c0531f06f028
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92123110"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104675804"
 ---
 # <a name="create-and-manage-an-azure-iot-central-application-from-the-csp-portal"></a>Een Azure IoT Central-toepassing maken en beheren vanuit de CSP-Portal
 
 Het programma voor de Microsoft Cloud Solution Provider (CSP) is een micro soft-programma voor wederverkopers. Het is de bedoeling om onze kanaal partners te voorzien van een programma met één stop om alle micro soft-commerciële online services door te verkopen. Meer informatie over het [programma Cloud Solution Provider](https://partner.microsoft.com/cloud-solution-provider).
+
+[!INCLUDE [Warning About Access Required](../../../includes/iot-central-warning-contribitorrequireaccess.md)]
 
 Als CSP kunt u Microsoft Azure IoT Central-toepassingen maken en beheren namens uw klanten via het [micro soft partner centrum](https://partnercenter.microsoft.com/partner/home). Wanneer Azure IoT Central-toepassingen worden gemaakt namens klanten door Csp's, net als bij andere door de CSP beheerde Azure-Services, beheren Csp's facturering voor klanten. Kosten voor Azure IoT Central worden weer gegeven in uw factuur totaal in het micro soft partner centrum.
 
@@ -33,7 +35,7 @@ U bent op de pagina Azure IoT Central Application Manager. Azure IoT Central hou
 
 ![Manager voor Csp's maken](media/howto-create-and-manage-applications-csp/image3.png)
 
-Als u een Azure IoT Central-toepassing wilt maken, selecteert u **samen stellen** in het menu links. Kies een van de branche sjablonen of kies **aangepaste app** om een volledig nieuwe toepassing te maken. Hiermee wordt de pagina voor het maken van de toepassing geladen. U moet alle velden op deze pagina volt ooien en vervolgens **maken**kiezen. U vindt meer informatie over elk van de onderstaande velden.
+Als u een Azure IoT Central-toepassing wilt maken, selecteert u **samen stellen** in het menu links. Kies een van de branche sjablonen of kies **aangepaste app** om een volledig nieuwe toepassing te maken. Hiermee wordt de pagina voor het maken van de toepassing geladen. U moet alle velden op deze pagina volt ooien en vervolgens **maken** kiezen. U vindt meer informatie over elk van de onderstaande velden.
 
 ![Scherm opname van de pagina ' uw IoT-toepassing bouwen ' met de knop opbouwen geselecteerd.](media/howto-create-and-manage-applications-csp/image4.png)
 
@@ -75,7 +77,7 @@ Zie [Azure-abonnementen](../../guides/developer/azure-developer-guide.md#underst
 
 ## <a name="location"></a>Locatie
 
-De **locatie** is de [geografie](https://azure.microsoft.com/global-infrastructure/geographies/) waar u de toepassing wilt maken. Gewoonlijk kiest u de locatie die zich het dichtst in de buurt van uw apparaten bevindt om de beste prestaties te verkrijgen. Op dit moment kunt u een IoT Central-toepassing maken in de geografs **Australia**, **Azië en Stille Oceaan**, **Europa**, **Verenigde Staten**, het **Verenigd Konink rijk**en **Japan** . Als u eenmaal een locatie hebt gekozen, kunt u de toepassing later niet meer naar een andere locatie verplaatsen.
+De **locatie** is de [geografie](https://azure.microsoft.com/global-infrastructure/geographies/) waar u de toepassing wilt maken. Gewoonlijk kiest u de locatie die zich het dichtst in de buurt van uw apparaten bevindt om de beste prestaties te verkrijgen. Op dit moment kunt u een IoT Central-toepassing maken in de geografs **Australia**, **Azië en Stille Oceaan**, **Europa**, **Verenigde Staten**, het **Verenigd Konink rijk** en **Japan** . Als u eenmaal een locatie hebt gekozen, kunt u de toepassing later niet meer naar een andere locatie verplaatsen.
 
 ## <a name="application-template"></a>Toepassingsjabloon
 

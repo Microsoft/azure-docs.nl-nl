@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 01/14/2021
 ms.author: lagayhar
 ms.openlocfilehash: e48d669321ad8c58681e8a92e68f2089962bdc17
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102429847"
 ---
 # <a name="click-analytics-auto-collection-plugin-for-application-insights-javascript-sdk"></a>Klik op Analytics-invoeg toepassing voor automatische verzamelingen voor Application Insights java script SDK
@@ -101,7 +101,7 @@ appInsights.loadAppInsights();
 
 ### <a name="icustomdatatags"></a>ICustomDataTags
 
-| Naam                      | Type    | Standaard   | Standaard label voor gebruik in HTML |   Description                                                                                |
+| Naam                      | Type    | Standaard   | Standaard label voor gebruik in HTML |   Beschrijving                                                                                |
 |---------------------------|---------|-----------|-------------|----------------------------------------------------------------------------------------------|
 | useDefaultContentNameOrId | booleaans | onjuist     | N.v.t.         |Hiermee wordt het standaard-HTML-kenmerk voor de inhoudsnaam verzameld wanneer een bepaald element niet is gelabeld met de standaard customDataPrefix of wanneer customDataPrefix niet is opgegeven door de gebruiker. |
 | customDataPrefix          | tekenreeks  | `data-`   | `data-*`| Automatische vastleg-inhouds naam en-waarde van elementen die zijn gelabeld met het voor voegsel. `data-*-id` `data-<yourcustomattribute>` Kan bijvoorbeeld worden gebruikt in de HTML-tags.   |

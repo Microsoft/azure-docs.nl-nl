@@ -6,12 +6,12 @@ ms.author: rosouz
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/30/2020
-ms.openlocfilehash: 9fb6e94062639d32707f52f66e0b99531884a636
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 120bec65c92e2a13022682265b83bfe0f69d8ed0
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101692263"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104592078"
 ---
 # <a name="frequently-asked-questions-about-azure-synapse-link-for-azure-cosmos-db"></a>Veelgestelde vragen over Azure Synapse Link voor Azure Cosmos DB
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
@@ -33,6 +33,10 @@ Wanneer u een multi-regio Azure Cosmos DB-account met ondersteuning voor analyti
 ### <a name="can-i-choose-to-enable-azure-synapse-link-for-only-certain-region-and-not-all-regions-in-a-multi-region-account-set-up"></a>Kan ik ervoor kiezen om de Azure Synapse-koppeling in te scha kelen voor slechts een bepaalde regio en niet voor alle regio's in een account met meerdere regio's?
 
 Wanneer de koppeling van Azure Synapse is ingeschakeld voor een account met meerdere regio's, wordt de analytische opslag in alle regio's gemaakt. De onderliggende gegevens worden geoptimaliseerd voor de door Voer en transactionele consistentie in het transactionele archief.
+
+### <a name="is-analytical-store-supported-in-all-azure-cosmos-db-regions"></a>Wordt het analytische archief ondersteund in alle Azure Cosmos DB regio's?
+
+Ja.
 
 ### <a name="is-backup-and-restore-supported-for-azure-synapse-link-enabled-accounts"></a>Wordt back-up en herstel ondersteund voor accounts die zijn gekoppeld aan Azure Synapse?
 
@@ -165,6 +169,10 @@ Deze functie is momenteel niet beschikbaar.
 ### <a name="can-i-do-spark-structured-streaming-from-analytical-store"></a>Kan ik Structured streaming streamen vanuit de analytische opslag?
 
 Momenteel wordt de ondersteuning Azure Cosmos DB voor het gebruik van gewijzigde feeds van het transactionele Archief door Spark Structured streaming ondersteund en wordt het nog niet ondersteund vanuit de analytische opslag.
+
+### <a name="is-streaming-supported"></a>Wordt streaming ondersteund?
+
+Het streamen van gegevens uit de analytische opslag wordt niet ondersteund.
 
 ## <a name="azure-synapse-studio"></a>Azure Synapse Studio
 

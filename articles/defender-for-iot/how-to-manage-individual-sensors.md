@@ -8,10 +8,10 @@ ms.date: 02/02/2021
 ms.topic: how-to
 ms.service: azure
 ms.openlocfilehash: c8bb44d323574f6815aa570b271ed4c0df1fc6be
-ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100526915"
 ---
 # <a name="manage-individual-sensors"></a>Afzonderlijke sensoren beheren

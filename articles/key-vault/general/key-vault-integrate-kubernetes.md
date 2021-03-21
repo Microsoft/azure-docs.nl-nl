@@ -7,19 +7,19 @@ ms.service: key-vault
 ms.subservice: general
 ms.topic: tutorial
 ms.date: 09/25/2020
-ms.openlocfilehash: b130fd3f85b676f0a394ad95730181ff499dac96
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: 907f95bb150e0e5127c129595739a15ea712771b
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102216493"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104604709"
 ---
 # <a name="tutorial-configure-and-run-the-azure-key-vault-provider-for-the-secrets-store-csi-driver-on-kubernetes"></a>Zelfstudie: De Azure Key Vault-provider voor het stuurprogramma voor het Secrets Store CSI-stuurprogramma configureren en uitvoeren op Kubernetes
 
 > [!IMPORTANT]
 > Het stuur programma voor geheimen Store CSI is een open-source project dat niet wordt ondersteund door de technische ondersteuning van Azure. Meld alle feedback en problemen met betrekking tot Key Vault-integratie met het CSI-stuurprogramma via de GitHub-koppeling onderaan de pagina. Dit hulpprogramma is bedoeld voor gebruikers om zelf te installeren in clusters en om feedback te verzamelen van onze community.
 
-In deze zelfstudie gaat u geheimen openen en ophalen uit Azure Key Vault met behulp van het stuurprogramma Secrets Store CSI, en deze vervolgens koppelen aan Kubernetes-pods.
+In deze zelf studie opent en haalt u geheimen op uit uw Azure-sleutel kluis met behulp van het stuur programma geheimen opslag container (CSI) om de geheimen als een volume te koppelen aan Kubernetes.
 
 In deze zelfstudie leert u het volgende:
 

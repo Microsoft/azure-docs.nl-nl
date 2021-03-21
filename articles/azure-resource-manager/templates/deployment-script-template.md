@@ -5,14 +5,14 @@ services: azure-resource-manager
 author: mumian
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 12/28/2020
+ms.date: 03/18/2021
 ms.author: jgao
-ms.openlocfilehash: 9d045fb75838ac016f3e9b04cd2519d8a8530a4b
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: 130deea4e5998d696065df4854a47bf7ffd1183c
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102175648"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104594239"
 ---
 # <a name="use-deployment-scripts-in-arm-templates"></a>Implementatie scripts gebruiken in ARM-sjablonen
 
@@ -162,11 +162,11 @@ Details van eigenschaps waarde:
   > [!NOTE]
   > Met de Azure Portal kan een implementatie script met meerdere regels niet worden geparseerd. Als u een sjabloon wilt implementeren met een implementatie script van de Azure Portal, kunt u de Power shell-opdrachten koppelen met behulp van punt komma's in één regel of de `primaryScriptUri` eigenschap gebruiken met een extern script bestand.
 
-- `primaryScriptUri`: Geef een openbaar toegankelijke URL op voor het primaire implementatie script met ondersteunde bestands extensies.
-- `supportingScriptUris`: Geef een matrix met openbaar toegankelijke Url's op voor de ondersteunende bestanden die worden genoemd in `scriptContent` of `primaryScriptUri` .
+- `primaryScriptUri`: Geef een openbaar toegankelijke URL op voor het primaire implementatie script met ondersteunde bestands extensies. Zie [externe scripts gebruiken](#use-external-scripts)voor meer informatie.
+- `supportingScriptUris`: Geef een matrix met openbaar toegankelijke Url's op voor de ondersteunende bestanden die worden genoemd in `scriptContent` of `primaryScriptUri` . Zie [externe scripts gebruiken](#use-external-scripts)voor meer informatie.
 - `timeout`: Geef de maximale toegestane uitvoeringstijd voor het script op, opgegeven in de [ISO 8601-indeling](https://en.wikipedia.org/wiki/ISO_8601). Standaardwaarde is **P1D**.
 - `cleanupPreference`. Geef de voor keur op voor het opschonen van implementatie resources wanneer de uitvoering van het script wordt uitgevoerd in een Terminal status. De standaard instelling is **altijd**, wat betekent dat de resources worden verwijderd ondanks de status van de Terminal (geslaagd, mislukt, geannuleerd). Zie [Resources van implementatiescripts opschonen](#clean-up-deployment-script-resources) voor meer informatie.
-- `retentionInterval`: Geef het interval op waarvoor de service de implementatie script bronnen behoudt nadat de uitvoering van het implementatie script een Terminal status heeft bereikt. De resources van het implementatie script worden verwijderd wanneer deze duur verloopt. De duur is gebaseerd op het [ISO 8601-patroon](https://en.wikipedia.org/wiki/ISO_8601). Het retentie-interval ligt tussen 1 en 26 uur (PT26H). Deze eigenschap wordt gebruikt wanneer `cleanupPreference` is ingesteld op **OnExpiration**. De eigenschap **OnExpiration** is momenteel niet ingeschakeld. Zie [Resources van implementatiescripts opschonen](#clean-up-deployment-script-resources) voor meer informatie.
+- `retentionInterval`: Geef het interval op waarvoor de service de implementatie script bronnen behoudt nadat de uitvoering van het implementatie script een Terminal status heeft bereikt. De resources van het implementatie script worden verwijderd wanneer deze duur verloopt. De duur is gebaseerd op het [ISO 8601-patroon](https://en.wikipedia.org/wiki/ISO_8601). Het retentie-interval ligt tussen 1 en 26 uur (PT26H). Deze eigenschap wordt gebruikt wanneer `cleanupPreference` is ingesteld op **OnExpiration**. Zie [Resources van implementatiescripts opschonen](#clean-up-deployment-script-resources) voor meer informatie.
 
 ### <a name="additional-samples"></a>Aanvullende voor beelden
 
@@ -212,7 +212,7 @@ Naast inline-scripts kunt u ook externe script bestanden gebruiken. Alleen prima
 
 Zie de [voorbeeld sjabloon](https://github.com/Azure/azure-docs-json-samples/blob/master/deployment-script/deploymentscript-helloworld-primaryscripturi.json)voor meer informatie.
 
-De externe script bestanden moeten toegankelijk zijn. Zie [Private arm-sjabloon implementeren met SAS-token](./secure-template-with-sas-token.md)voor het beveiligen van uw script bestanden die zijn opgeslagen in azure Storage-accounts.
+De externe script bestanden moeten toegankelijk zijn. Als u uw script bestanden wilt beveiligen die zijn opgeslagen in azure Storage-accounts, genereert u een SAS-token en neemt u dit op in de URI voor de sjabloon. Stel de vervaltijd zo in, dat er genoeg tijd is om de implementatie te voltooien. Zie voor meer informatie [implementeren van persoonlijke arm-sjabloon met SAS-token](./secure-template-with-sas-token.md).
 
 U bent verantwoordelijk voor het garanderen van de integriteit van de scripts waarnaar wordt verwezen door het implementatie script, hetzij `primaryScriptUri` of `supportingScriptUris` . Alleen verwijzen naar scripts die u vertrouwt.
 
@@ -313,7 +313,7 @@ De script service stelt de inrichtings status van de resource in op **mislukt** 
 
 ### <a name="pass-secured-strings-to-deployment-script"></a>Beveiligde teken reeksen door geven aan implementatie script
 
-Als omgevings variabelen (EnvironmentVariable) in uw container instanties worden ingesteld, kunt u een dynamische configuratie opgeven van de toepassing of het script dat door de container wordt uitgevoerd. Met het implementatie script worden niet-beveiligde en beveiligde omgevings variabelen op dezelfde manier verwerkt als Azure container instance. Zie [omgevings variabelen instellen in container instanties](../../container-instances/container-instances-environment-variables.md#secure-values)voor meer informatie.
+Als omgevings variabelen (EnvironmentVariable) in uw container instanties worden ingesteld, kunt u een dynamische configuratie opgeven van de toepassing of het script dat door de container wordt uitgevoerd. Met het implementatie script worden niet-beveiligde en beveiligde omgevings variabelen op dezelfde manier verwerkt als Azure container instance. Zie [omgevings variabelen instellen in container instanties](../../container-instances/container-instances-environment-variables.md#secure-values)voor meer informatie. Zie [voorbeeld sjablonen](#sample-templates)voor een voor beeld.
 
 De Maxi maal toegestane grootte voor omgevings variabelen is 64 KB.
 

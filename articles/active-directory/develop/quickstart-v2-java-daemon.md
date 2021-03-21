@@ -13,10 +13,10 @@ ms.date: 01/22/2021
 ms.author: nacanuma
 ms.custom: aaddev, scenarios:getting-started, languages:Java, devx-track-java
 ms.openlocfilehash: 196b80a704b8a270a4cbb7d3505d5f9be1e23479
-ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99820314"
 ---
 # <a name="quickstart-acquire-a-token-and-call-microsoft-graph-api-from-a-java-console-app-using-apps-identity"></a>Quick Start: een token verkrijgen en Microsoft Graph-API aanroepen vanuit een Java-Console-app met behulp van de identiteit van de app

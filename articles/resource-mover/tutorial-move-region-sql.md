@@ -9,10 +9,10 @@ ms.date: 02/04/2021
 ms.author: raynew
 ms.custom: mvc
 ms.openlocfilehash: 4678a6128be13ac61dc4ac67bbd1a17e99c6d24d
-ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99820226"
 ---
 # <a name="tutorial-move-azure-sql-database-resources-to-another-region"></a>Zelfstudie: Azure SQL Database-resources naar een andere regio verplaatsen
@@ -26,7 +26,7 @@ In deze zelfstudie leert u het volgende:
 
 > [!div class="checklist"]
 > * De vereisten controleren.
-> * De resources selecteren die u wilt exporteren.
+> * De resources selecteren die u wilt verplaatsen.
 > * Resourceafhankelijkheden oplossen.
 > * De SQL Server voorbereiden en verplaatsen naar de doelregio.
 > * Databases en elastische pools voorbereiden en verplaatsen.
@@ -42,7 +42,7 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 
 -  Controleer of u *Eigenaar*-toegang hebt voor het abonnement dat de resources bevat die u wilt verplaatsen.
     - De eerste keer dat u een resource toevoegt voor een specifiek bron- en doelpaar in een Azure-abonnement maakt Resource Mover een [door het systeem toegewezen beheerde identiteit](../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types) (vroeger MSI genoemd (Managed Service Identity)) die door het abonnement wordt vertrouwd.
-    - Om de identiteit te maken en deze de juiste rol toe te wijzen (Inzender of Administrator voor gebruikerstoegang in het bronabonnement), moet het account dat u gebruikt om resources toe te voegen *Eigenaar* smachtigingen hebben voor het abonnement. [Meer informatie](../role-based-access-control/rbac-and-directory-admin-roles.md#azure-roles) over rollen in Azure.
+    - Om de identiteit te maken en deze de juiste rol toe te wijzen (Inzender of Administrator voor gebruikerstoegang in het bronabonnement), moet het account dat u gebruikt om resources toe te voegen *Eigenaars* machtigingen hebben voor het abonnement. [Meer informatie](../role-based-access-control/rbac-and-directory-admin-roles.md#azure-roles) over rollen in Azure.
 - Het abonnement moet voldoende quota hebben om de resources die u verplaatst in de doelregio te maken. Als de quota onvoldoende zijn, moet u [hogere limieten aanvragen](../azure-resource-manager/management/azure-subscription-service-limits.md).
 - Verifieer prijzen en kosten voor de doelregio waarnaar u resources verplaatst. Gebruik de [prijscalculator](https://azure.microsoft.com/pricing/calculator/) om u daarbij te helpen.
     

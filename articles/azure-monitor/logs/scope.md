@@ -6,10 +6,10 @@ author: bwren
 ms.author: bwren
 ms.date: 09/09/2020
 ms.openlocfilehash: 43e4e861905352c2818dfb08b8cb442bd70481c1
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102047176"
 ---
 # <a name="log-query-scope-and-time-range-in-azure-monitor-log-analytics"></a>Query bereik en tijds bereik in Azure Monitor vastleggen Log Analytics
@@ -47,7 +47,7 @@ Wanneer het query bereik een Log Analytics werk ruimte of een Application Insigh
 U kunt de volgende opdrachten niet gebruiken in een query wanneer het bereik is ingesteld op een resource, omdat het query bereik al werk ruimten bevat met gegevens voor die resource of set resources:
 
 - [app](../logs/app-expression.md)
-- [werkruimte](../logs/workspace-expression.md)
+- [werk ruimte](../logs/workspace-expression.md)
  
 
 ## <a name="query-scope-limits"></a>Limieten voor query bereik

@@ -8,12 +8,12 @@ ms.date: 01/29/2021
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions
-ms.openlocfilehash: 51814ba36eec7b1f7d8b95ce80210d93b4cbec3f
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.openlocfilehash: 85d5d5b484163c4c65e7ec14c5d5ce5aea339669
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102564217"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104593200"
 ---
 # <a name="planning-for-an-azure-file-sync-deployment"></a>Planning voor de implementatie van Azure Files Sync
 
@@ -247,7 +247,7 @@ Er mogen geen andere HSM-oplossingen worden gebruikt met Azure File Sync.
 
 Omdat de Azure File Sync-agent wordt uitgevoerd op een Windows Server-computer die verbinding maakt met de Azure-bestands shares, is de daad werkelijke synchronisatie prestaties afhankelijk van een aantal factoren in uw infra structuur: Windows Server en de onderliggende schijf configuratie, netwerk bandbreedte tussen de server en de Azure-opslag, de bestands grootte, de totale gegevensset en de activiteit op de gegevensset. Omdat Azure File Sync op bestands niveau werkt, worden de prestatie kenmerken van een oplossing op basis van een Azure File Sync beter gemeten in het aantal objecten (bestanden en mappen) dat per seconde wordt verwerkt.
 
-Wijzigingen die zijn aangebracht in de Azure-bestands share met behulp van de Azure Portal of SMB worden niet onmiddellijk gedetecteerd en gerepliceerd zoals wijzigingen in het server eindpunt. Azure Files hebt nog geen wijzigings meldingen of Logboeken, dus is er geen manier om automatisch een synchronisatie sessie te initiëren wanneer bestanden worden gewijzigd. Op Windows Server maakt Azure File Sync gebruik van [Windows USN-logboeken](https://docs.microsoft.com/windows/win32/fileio/change-journals) om automatisch een synchronisatie sessie te initiëren wanneer bestanden worden gewijzigd
+Wijzigingen die zijn aangebracht in de Azure-bestands share met behulp van de Azure Portal of SMB worden niet onmiddellijk gedetecteerd en gerepliceerd zoals wijzigingen in het server eindpunt. Azure Files hebt nog geen wijzigings meldingen of Logboeken, dus is er geen manier om automatisch een synchronisatie sessie te initiëren wanneer bestanden worden gewijzigd. Op Windows Server maakt Azure File Sync gebruik van [Windows USN-logboeken](/windows/win32/fileio/change-journals) om automatisch een synchronisatie sessie te initiëren wanneer bestanden worden gewijzigd
 
 Om wijzigingen in de Azure-bestands share te detecteren, heeft Azure File Sync een geplande taak die een wijzigings detectie taak wordt genoemd. Een wijzigings detectie taak inventariseert elk bestand in de bestands share en vergelijkt deze met de synchronisatie versie voor dat bestand. Wanneer de wijzigings detectie taak bepaalt dat bestanden zijn gewijzigd, Azure File Sync initieert een synchronisatie sessie. De wijzigings detectie taak wordt elke 24 uur geïnitieerd. Omdat de wijzigings detectie taak werkt door elk bestand in de Azure-bestands share te inventariseren, neemt de detectie van wijzigingen langer deel uit van grotere naam ruimten dan in kleinere naam ruimten. Voor grote naam ruimten kan het langer dan eenmaal per 24 uur duren om te bepalen welke bestanden zijn gewijzigd.
 

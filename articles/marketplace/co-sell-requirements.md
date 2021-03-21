@@ -6,17 +6,18 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 author: vamahtan
 ms.author: vamahtan
-ms.date: 3/12/2021
-ms.openlocfilehash: fa8f2b5e952ddd188f99d130c2154d4602191c2b
-ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
+ms.reviewer: stmummer
+ms.date: 3/17/2021
+ms.openlocfilehash: e67219e0b029ce401ffc05c009a5cc4a96680a9f
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103225061"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104593387"
 ---
 # <a name="co-sell-requirements"></a>Vereisten voor co-sell
 
-In dit artikel vindt u de vereisten voor de verschillende niveaus van de co-sell-status. Zie voor de meest recente lijst met aanbiedings typen die ondersteuning bieden voor co-sell  [configureren voor een commerciële Marketplace-aanbieding](commercial-marketplace-co-sell.md). Zie voor een overzicht van co-sell [samen met micro soft verkoop teams en partners Overview](marketplace-co-sell.md)(Engelstalig).
+In dit artikel vindt u de vereisten voor de verschillende niveaus van de co-sell-status. Zie voor de meest recente lijst met aanbiedings typen die ondersteuning bieden voor co-sell  [configureren voor een commerciële Marketplace-aanbieding](co-sell-configure.md). Zie voor een overzicht van co-sell [samen met micro soft verkoop teams en partners Overview](co-sell-overview.md)(Engelstalig).
 
 In deze tabel worden alle mogelijke co-sell-statussen weer gegeven:
 
@@ -25,7 +26,7 @@ In deze tabel worden alle mogelijke co-sell-statussen weer gegeven:
 | Klaar voor samen verkopen | Er is niet voldaan aan de minimum [vereisten voor de status gereed voor samen verkoop](#requirements-for-co-sell-ready-status) . |
 | Klaar voor samen verkopen | Er is voldaan aan alle [vereisten voor de status van de co-sell-gereedheid](#requirements-for-co-sell-ready-status) . |
 | Azure IP-gemotiveerd verkopen | In aanvulling op [deze aanvullende vereisten](#requirements-for-azure-ip-co-sell-incentivized-status)is voldaan aan de vereisten voor samen verkoop. |
-| Stimulans voor het stimuleren van de ISV Connect-apps  | Deze status is van toepassing op Dynamics 365 en Power Apps biedt en geeft aan dat aan alle [vereisten voor deze status](#requirements-for-biz-apps-isv-connect-premium-incentive-status) is voldaan. |
+| Business Applications gemotiveerd | Deze status is van toepassing op Dynamics 365-en Power apps-aanbiedingen in het [micro soft Business Applications ISV Connect-programma](business-applications-isv-program.md) en geeft aan dat aan alle [vereisten voor deze status](#requirements-for-business-applications-co-sell-incentivized-status) is voldaan. |
 |||
 
 ## <a name="requirements-for-co-sell-ready-status"></a>Vereisten voor de status van de samen verkoop gereed
@@ -37,15 +38,15 @@ U moet voldoen aan de volgende vereisten voor een aanbieding om de status gereed
 - Een MPN-ID en een actief [Commercial Marketplace-account hebben in het partner centrum](./partner-center-portal/create-account.md).
 - Zorg ervoor dat u beschikt over een volledig [zakelijk profiel](/partner-center/create-a-marketing-profile) in Partner Center. Als gekwalificeerde micro soft-partner helpt uw bedrijfs profiel uw bedrijf te presen teren aan klanten die op zoek zijn naar uw unieke oplossingen en expertise om hun bedrijfs behoeften op te lossen, wat resulteert in [referrals](/partner-center/referrals).
 - Vul het tabblad **samen met micro soft** in en publiceer de aanbieding naar de commerciële Marketplace.
-- Geef een verkoop contactpersoon op voor elke in aanmerking komende Geografie en vereiste stuk lijst)
+- Geef een verkoop contactpersoon op voor elke in aanmerking komende Geografie en vereiste stuk lijst.
 
 **Services-partners**:
 
 - Voor aanbiedingen van het type _service oplossing_ moet u in een competentie gebied een actieve Gold-competentie hebben.
- 
+
 **Business Applications isv's**:
 
-- Dynamics 365 Customer engagement & PowerApps en Dynamics 365 Finance & Ops (met uitzonde ring van Dynamics 365 Business Central) en PowerApps-oplossingen vereisen de registratie van de ISV-verbinding.
+- Dynamics 365 & PowerApps (met uitzonde ring van Dynamics 365 Business Central)-oplossingen vereisen de registratie van de ISV-verbinding.
 
 ### <a name="complete-the-co-sell-with-microsoft-tab"></a>Vul het tabblad samen met micro soft in
 
@@ -82,13 +83,9 @@ Vereiste 2: door sturen van de technische validatie van micro soft voor een op A
 Vereiste 3: Geef een referentie architectuur diagram op:
 - Upload een referentie architectuur diagram met uw documenten voor samen werken in het partner centrum voor beoordeling. Zie voor hulp bij het maken van dit diagram [referentie architectuur diagram](reference-architecture-diagram.md). Zie voor meer informatie over het uploaden van het diagram [co-sell configureren voor een commerciële Marketplace-aanbieding](commercial-marketplace-co-sell.md).
 
-## <a name="requirements-for-biz-apps-isv-connect-premium-incentive-status"></a>Vereisten voor de prestatie status van het Premium-apps ISV Connect
+## <a name="requirements-for-business-applications-co-sell-incentivized-status"></a>Vereisten voor de Business Applications gemotiveerd-status van co-sell
 
-Deze status is van toepassing op op IP gebaseerde oplossingen, apps en services die zijn gebouwd op Dynamics 365 of Power apps.
-
-U hoeft niet te voldoen aan de status van de voor bereidingen op de verkoop (zie hierboven) om de ISV Connect-standaard mogelijkheden voor de apps te verzorgen. Maar nadat een app de status gereed voor co-sell heeft bereikt, kan deze worden overwogen voor activiteiten van de ISV Connect van de klant met de status van het betrouw bare product op basis van de afgelopen 12 maanden aan inkomsten en mede-verkoop resultaten/drempel waarden.
-
-Vereiste: u moet een actieve inschrijving hebben in de [ISV Connect](business-applications-isv-program.md) Premium-laag.
+Deze status is van toepassing op op IP gebaseerde oplossingen die zijn gebaseerd op Dynamics 365 of Power apps (met uitzonde ring van Dynamics 365 Business Central) die zijn Inge schreven in het ISV Connect-programma. De aanbiedingen moeten echter ook voldoen aan de vereisten voor de status van coselling Ready (hierboven beschreven), zodat micro soft-verkopers de aanbieding met u kunnen verkopen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

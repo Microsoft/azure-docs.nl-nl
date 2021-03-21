@@ -6,14 +6,14 @@ ms.reviewer: yashar
 ms.service: cost-management-billing
 ms.subservice: reservations
 ms.topic: how-to
-ms.date: 02/24/2021
+ms.date: 03/17/2021
 ms.author: banders
-ms.openlocfilehash: 477dff9db28672f8231710af34786ac387f43b71
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 1c666602f764e8274cb2a30df204e97479c85ba3
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102050338"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104583051"
 ---
 # <a name="view-azure-reservations"></a>Azure-reserveringen weergeven
 
@@ -39,7 +39,7 @@ U hebt twee opties om toe te staan dat andere personen reserveringen beheren:
     1. Selecteer de gebruiker en selecteer vervolgens **Opslaan**.
 
 - Een gebruiker als factureringsbeheerder toevoegen aan een Enterprise Agreement of Microsoft-klantovereenkomst:
-    - Voor een Enterprise Agreement voegt u gebruikers toe met de rol _Ondernemingsbeheerder_ om alle reserveringsorders weer te geven en te beheren die van toepassing zijn op de Enterprise Agreement. Gebruikers met de rol _Ondernemingsbeheerder (alleen lezen)_ kunnen de reservering alleen weergeven. Afdelingsbeheerders en accounteigenaars kunnen reserveringen niet weergeven, _tenzij_ ze expliciet worden toegevoegd met behulp van IAM (Toegangsbeheer). Zie [Azure Enterprise-rollen beheren](../manage/understand-ea-roles.md) voor meer informatie.
+    - Voor een Enterprise Agreement voegt u gebruikers toe met de rol _Ondernemingsbeheerder_ om alle reserveringsorders weer te geven en te beheren die van toepassing zijn op de Enterprise Agreement. Ondernemings Administrators bekijken en beheren reserve ringen in **Cost Management en facturering**, niet op **reserve ringen**. Gebruikers met de rol _Ondernemingsbeheerder (alleen lezen)_ kunnen de reservering alleen weergeven. Afdelingsbeheerders en accounteigenaars kunnen reserveringen niet weergeven, _tenzij_ ze expliciet worden toegevoegd met behulp van IAM (Toegangsbeheer). Zie [Azure Enterprise-rollen beheren](../manage/understand-ea-roles.md) voor meer informatie.
 
         _Ondernemingsbeheerders kunnen eigendom van een reserveringsorder overnemen, en ze kunnen andere gebruikers toevoegen aan een reservering met behulp van IAM (Toegangsbeheer)._
     - Voor een Microsoft-klantovereenkomst kunnen gebruikers met de rol Eigenaar van factureringsprofiel of de rol Inzender van factureringsprofiel alle reserveringsaankopen beheren die zijn gedaan via het factureringsprofiel. Factureringsprofiellezers en factuurbeheerders kunnen alle reserveringen weergeven waarvoor is betaald met het factureringsprofiel. Ze kunnen echter geen wijzigingen aanbrengen in reserveringen.

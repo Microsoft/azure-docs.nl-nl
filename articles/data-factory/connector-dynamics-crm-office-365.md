@@ -6,13 +6,13 @@ ms.topic: conceptual
 ms.author: jingwang
 author: linda33wj
 ms.custom: seo-lt-2019
-ms.date: 03/08/2021
-ms.openlocfilehash: b1e7511f7666455592b6d5f463a316c3354ec76b
-ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
+ms.date: 03/17/2021
+ms.openlocfilehash: ec24fa1bde21c70aa95fc33c92048aebc9f6659c
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102447432"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104597382"
 ---
 # <a name="copy-data-from-and-to-dynamics-365-common-data-servicemicrosoft-dataverse-or-dynamics-crm-by-using-azure-data-factory"></a>Gegevens kopiëren van en naar Dynamics 365 (Common Data Service/micro soft Dataverse) of Dynamics CRM door gebruik te maken van Azure Data Factory
 
@@ -323,6 +323,7 @@ Als u gegevens wilt kopiëren naar Dynamics, ondersteunt het gedeelte **sink** v
 | alternateKeyName | De alternatieve sleutel naam die op uw entiteit is gedefinieerd om een upsert uit te voeren. | Nee. |
 | writeBatchSize | Het aantal rijen van gegevens dat in elke batch naar Dynamics is geschreven. | Nee. De standaardwaarde is 10. |
 | ignoreNullValues | Hiermee wordt aangegeven of Null-waarden moeten worden genegeerd voor andere invoer gegevens dan de sleutel velden tijdens een schrijf bewerking.<br/><br/>Geldige waarden zijn **True** en **False**:<ul><li>**Waar**: laat de gegevens in het doel object ongewijzigd wanneer u een upsert of update-bewerking doet. Voeg een gedefinieerde standaard waarde in wanneer u een INSERT-bewerking wilt uitvoeren.</li><li>**Onwaar**: werk de gegevens in het doel object bij naar een null-waarde wanneer u een upsert of update-bewerking uitgevoerd. Voeg een null-waarde toe wanneer u een INSERT-bewerking uitgevoerd.</li></ul> | Nee. De standaard waarde is **False**. |
+| maxConcurrentConnections |De bovengrens van gelijktijdige verbindingen die tot het gegevens archief zijn gemaakt tijdens de uitvoering van de activiteit. Geef alleen een waarde op als u gelijktijdige verbindingen wilt beperken.| No |
 
 >[!NOTE]
 >De standaard waarde voor de Sink- **writeBatchSize** en de **[parallelCopies](copy-activity-performance-features.md#parallel-copy)** voor de Kopieer activiteit voor de Dynamics-sink is 10. Daarom worden records van 100 standaard gelijktijdig verzonden naar Dynamics.

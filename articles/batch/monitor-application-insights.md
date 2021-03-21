@@ -4,12 +4,12 @@ description: Meer informatie over het instrumenteren van een Azure Batch .NET-to
 ms.topic: how-to
 ms.custom: devx-track-csharp
 ms.date: 04/05/2018
-ms.openlocfilehash: d06e2b61725f05d025acd8a2995ea041f138ae4f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9decb99c3de798df43dedc2441208066d18e3a13
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88933559"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104605780"
 ---
 # <a name="monitor-and-debug-an-azure-batch-net-application-with-application-insights"></a>Een Azure Batch .NET-toepassing bewaken en fouten opsporen met Application Insights
 
@@ -30,9 +30,9 @@ In [github](https://github.com/Azure/azure-batch-samples/tree/master/CSharp/Arti
 
 * [Application Insights-resource](../azure-monitor/app/create-new-resource.md )
   
-   * Gebruik de Azure Portal om een Application Insights *resource*te maken. Selecteer het type *algemene* **toepassing**.
+   * Gebruik de Azure Portal om een Application Insights *resource* te maken. Selecteer het type *algemene* **toepassing**.
 
-   * Kopieer de [instrumentatie sleutel](../azure-monitor/app/create-new-resource.md #copy-the-instrumentation-key) vanuit de portal. Verderop in dit artikel is dit vereist.
+   * Kopieer de [instrumentatie sleutel](../azure-monitor/app/create-new-resource.md#copy-the-instrumentation-key) vanuit de portal. Verderop in dit artikel is dit vereist.
   
   > [!NOTE]
   > Mogelijk worden er [kosten in rekening gebracht](https://azure.microsoft.com/pricing/details/application-insights/) voor de gegevens die zijn opgeslagen in Application Insights. Dit omvat de diagnostische en bewakings gegevens die in dit artikel worden besproken.
@@ -54,9 +54,9 @@ Uw oplossing moet een Application Insights [TelemetryClient](/dotnet/api/microso
 ```xml
 <InstrumentationKey>YOUR-IKEY-GOES-HERE</InstrumentationKey>
 ```
-Voeg ook de instrumentatie sleutel toe in het bestand TopNWords.cs.
+Voeg ook de instrumentatie sleutel toe in het bestand TopNWords. cs.
 
-In het voor beeld in TopNWords.cs worden de volgende [instrumentatie aanroepen](../azure-monitor/app/api-custom-events-metrics.md) van de Application INSIGHTS-API gebruikt:
+In het voor beeld in TopNWords. cs worden de volgende [instrumentatie aanroepen](../azure-monitor/app/api-custom-events-metrics.md) van de Application INSIGHTS-API gebruikt:
 * `TrackMetric()` -Houdt in hoe lang, het gemiddelde van een reken knooppunt het vereiste tekst bestand downloadt.
 * `TrackTrace()` -Voegt fout opsporingsgegevens toe aan uw code.
 * `TrackEvent()` -Hiermee worden interessante gebeurtenissen bijgehouden die moeten worden vastgelegd.
@@ -177,7 +177,7 @@ Het ApplicationInsights.config-bestand in het TopNWordsSample-project bevat de v
 
 ## <a name="update-the-job-and-tasks-to-include-application-insights-binaries"></a>De taak en taken voor het toevoegen van Application Insights binaire bestanden bijwerken
 
-Controleer of de binaire bestanden correct zijn geplaatst om Application Insights correct op uw reken knooppunten uit te voeren. Voeg de vereiste binaire bestanden toe aan de verzameling resource bestanden van uw taak, zodat ze worden gedownload op het moment dat de taak wordt uitgevoerd. De volgende fragmenten zijn vergelijkbaar met de code in Job.cs.
+Controleer of de binaire bestanden correct zijn geplaatst om Application Insights correct op uw reken knooppunten uit te voeren. Voeg de vereiste binaire bestanden toe aan de verzameling resource bestanden van uw taak, zodat ze worden gedownload op het moment dat de taak wordt uitgevoerd. De volgende fragmenten zijn vergelijkbaar met de code in job. cs.
 
 Maak eerst een statische lijst met Application Insights bestanden die u wilt uploaden.
 
@@ -287,7 +287,7 @@ Een voorbeeld grafiek maken:
    * Stel het **grafiek type** in op **raster**.
    * Stel **aggregatie** in op **gemiddelde**.
    * Stel **Group by** in op **NodeId**.
-   * Selecteer in **metrische gegevens**de optie **aangepaste**  >  **BLOB-down load in seconden**.
+   * Selecteer in **metrische gegevens** de optie **aangepaste**  >  **BLOB-down load in seconden**.
    * Pas de weer gave **kleuren palet** aan uw keuze aan. 
 
 ![Download tijd voor BLOB per knoop punt](./media/monitor-application-insights/blobdownloadtime.png)

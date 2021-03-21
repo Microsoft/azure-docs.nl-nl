@@ -4,10 +4,10 @@ description: U kunt live video Analytics op IoT Edge gebruiken voor continue vid
 ms.topic: how-to
 ms.date: 04/27/2020
 ms.openlocfilehash: 0351f10d9fac3ad7e3b4fdd5fd549eb7c0023694
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99490891"
 ---
 # <a name="playback-of-recordings"></a>Opnamen afspelen 
@@ -50,7 +50,7 @@ Waarbij de precisie waarde een van de volgende waarden kan zijn: jaar, maand, da
 
 |Precisie|jaar|maand|day|waard|
 |---|---|---|---|---|
-|Query’s uitvoeren|`/availableMedia?precision=year&startTime=2018&endTime=2019`|`/availableMedia?precision=month& startTime=2018-01& endTime=2019-02`|`/availableMedia?precision=day& startTime=2018-01-15& endTime=2019-02-02`|`/availableMedia?precision=full& startTime=2018-01-15T10:08:11.123& endTime=2019-01-015T12:00:01.123`|
+|Query|`/availableMedia?precision=year&startTime=2018&endTime=2019`|`/availableMedia?precision=month& startTime=2018-01& endTime=2019-02`|`/availableMedia?precision=day& startTime=2018-01-15& endTime=2019-02-02`|`/availableMedia?precision=full& startTime=2018-01-15T10:08:11.123& endTime=2019-01-015T12:00:01.123`|
 |Antwoord|`{  "timeRanges":[{ "start":"2018", "end":"2019" }]}`|`{  "timeRanges":[{ "start":"2018-03", "end":"2019-01" }]}`|`{  "timeRanges":[    { "start":"2018-03-01", "end":"2018-03-07" },    { "start":"2018-03-09", "end":"2018-03-31" }  ]}`|Antwoord van de volledige precisie. Als er helemaal geen hiaten zijn, is de start tijd startTime en eindigt de eind datum.|
 |Beperkingen|&#x2022;startTime <= endTime<br/>&#x2022;moet beide de notatie JJJJ hebben. anders wordt er een fout geretourneerd.<br/>&#x2022;waarden kunnen elk wille keurig aantal jaren van elkaar zijn.<br/>&#x2022;waarden zijn inclusief.|&#x2022;startTime <= endTime<br/>&#x2022;beide moeten de notatie JJJJ-MM hebben, anders retourneert fout.<br/>&#x2022;waarden kunnen Maxi maal 12 maanden uit elkaar liggen.<br/>&#x2022;waarden zijn inclusief.|&#x2022;startTime <= endTime<br/>&#x2022;beide moeten zijn in de indeling JJJJ-MM-DD, anders wordt er een fout geretourneerd.<br/>&#x2022;waarden kunnen Maxi maal 31 dagen uit elkaar liggen.<br/>Waarden zijn inclusief.|&#x2022;startTime < endTime<br/>&#x2022;waarden kunnen Maxi maal 25 uur uit elkaar liggen.<br/>&#x2022;waarden zijn inclusief.|
 

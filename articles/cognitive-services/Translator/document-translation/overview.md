@@ -6,16 +6,21 @@ manager: nitinme
 ms.author: lajanuar
 author: laujan
 ms.date: 02/11/2021
-ms.openlocfilehash: fc75bfc3b79cd6aed51a44fc47787532a9d61e8b
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 692033e323880db1699d7265a991775d41b05f7f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101713011"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104656002"
 ---
 # <a name="what-is-document-translation-preview"></a>Wat is document vertalingen (preview)?
 
 Document vertalingen is een Cloud functie van de [Azure Translator](../translator-info-overview.md) -service en maakt deel uit van de Azure cognitieve service-familie van rest-api's. Met de API voor document vertalingen worden documenten geconverteerd naar en van 90 talen en dialecten, terwijl de document structuur en de gegevens indeling behouden blijven.
+
+Deze documentatie bevat de volgende artikel typen:  
+
+* [**Quick**](get-started-with-document-translation.md) starts zijn aan de slag-instructies die u helpen bij het maken van aanvragen voor de service.
+* [**Hand leidingen**](create-sas-tokens.md) bevatten instructies voor het gebruik van de functie op meer specifieke of aangepaste manieren.  
 
 ## <a name="document-translation-key-features"></a>Sleutel functies voor document vertalingen
 
@@ -64,5 +69,3 @@ De volgende woordenlijst bestands typen worden ondersteund door document vertali
 
 > [!div class="nextstepaction"]
 > [Aan de slag met document vertalingen](get-started-with-document-translation.md)
->
->

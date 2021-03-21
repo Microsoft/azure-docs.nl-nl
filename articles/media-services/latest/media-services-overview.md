@@ -78,7 +78,7 @@ Instructiegidsen bevatten codevoorbeelden die laten zien hoe u taken moet uitvoe
 * [Een account maken - CLI](./create-account-howto.md)
 * [Toegang tot API's - CLI](./access-api-howto.md)
 * [Coderen met HTTPS als taakinvoer - .NET](job-input-from-http-how-to.md)  
-* [Gebeurtenissen bewaken - Portal](monitor-events-portal-how-to.md)
+* [Gebeurtenissen bewaken - Portal](monitoring/monitor-events-portal-how-to.md)
 * [Dynamisch versleutelen met multi-DRM - .NET](protect-with-drm.md) 
 * [Coderen met een aangepaste transformatie - CLI](custom-preset-cli-howto.md)
 

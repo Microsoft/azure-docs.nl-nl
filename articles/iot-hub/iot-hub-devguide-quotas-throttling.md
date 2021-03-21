@@ -11,12 +11,12 @@ ms.custom:
 - 'Role: Cloud Development'
 - 'Role: Operations'
 - 'Role: Technical Support'
-ms.openlocfilehash: 3de9eccd001e421ef3255f83630716df12b7a2ee
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 4b65d42522f40eb7d0e65356223313a924de3039
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/19/2021
-ms.locfileid: "104595257"
+ms.locfileid: "104656988"
 ---
 # <a name="reference---iot-hub-quotas-and-throttling"></a>Referentie-IoT Hub quota's en beperking
 
@@ -87,7 +87,7 @@ U gebruikt bijvoorbeeld een gesimuleerd apparaat voor het verzenden van 200 appa
 
 Register bewerkingen voor de apparaat-id zijn bedoeld voor gebruik in runtime in scenario's voor het beheren en inrichten van apparaten. Het lezen of bijwerken van een groot aantal apparaat-id's wordt ondersteund via [import-en export taken](iot-hub-devguide-identity-registry.md#import-and-export-device-identities).
 
-Bij het initiëren van identiteits bewerkingen via [bulk bewerkingen](iot-hub-bulk-identity-mgmt.md), gelden dezelfde beperkings limieten. Als u bijvoorbeeld een bulk bewerking wilt indienen om 50-apparaten te maken en u een S1-IoT Hub hebt met 1 eenheid, worden slechts twee van deze bulk aanvragen per minuut geaccepteerd. Dit omdat de identiteits bewerking voor een S1-IoT Hub met 1 eenheid 100/min per eenheid is. In dit geval zou een derde aanvraag (en later) in dezelfde minuut worden afgewezen, omdat de limiet al was bereikt. 
+Bij het initiëren van identiteits bewerkingen via [bulk bewerkingen voor het REGI ster](https://docs.microsoft.com/rest/api/iothub/service/bulkregistry/updateregistry) (*geen* Bulk Import en export taken), gelden dezelfde beperkings limieten. Als u bijvoorbeeld een bulk bewerking wilt indienen om 50-apparaten te maken en u een S1-IoT Hub hebt met 1 eenheid, worden slechts twee van deze bulk aanvragen per minuut geaccepteerd. Dit omdat de identiteits bewerking voor een S1-IoT Hub met 1 eenheid 100/min per eenheid is. In dit geval zou een derde aanvraag (en later) in dezelfde minuut worden afgewezen, omdat de limiet al was bereikt. 
 
 ### <a name="device-connections-throttle"></a>Beperking van Apparaatinstellingen
 

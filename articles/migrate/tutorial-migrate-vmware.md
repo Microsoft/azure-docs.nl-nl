@@ -7,12 +7,12 @@ ms.manager: bsiva
 ms.topic: tutorial
 ms.date: 06/09/2020
 ms.custom: mvc
-ms.openlocfilehash: bebc2e629193944c840948c9c573462a43e3032e
-ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
+ms.openlocfilehash: 0dcb750871eeae504ddb3d4e3851c834bcad125c
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103201708"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104604539"
 ---
 # <a name="migrate-vmware-vms-to-azure-agentless"></a>VMware-VM's migreren naar Azure (zonder agent)
 
@@ -202,6 +202,8 @@ Nadat u hebt geverifieerd dat de testmigratie naar verwachting werkt, kunt u de 
 - Voor grotere flexibiliteit:
     - Houd uw gegevens veilig door back-ups van virtuele Azure VM‘s te maken met behulp van de Azure Backup-service. [Meer informatie](../backup/quick-backup-vm-portal.md).
     - Houd workloads continu beschikbaar door Azure VM‘s naar een secundaire regio te repliceren met Site Recovery. [Meer informatie](../site-recovery/azure-to-azure-tutorial-enable-replication.md).
+- Voor betere prestaties:
+    - Standaard worden gegevens schijven gemaakt met de host-caching ingesteld op ' geen '. Controleer en pas de cache van de gegevens schijf aan aan uw behoeften voor de werk belasting. [Meer informatie](../virtual-machines/premium-storage-performance.md#disk-caching).  
 - Voor betere beveiliging:
     - Vergrendel en beperk de toegang van binnenkomend verkeer met [Just-in-time-beheer van Azure Security Center](../security-center/security-center-just-in-time.md).
     - Beperk het netwerkverkeer naar beheereindpunten met [Netwerkbeveiligingsgroepen](../virtual-network/network-security-groups-overview.md).

@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 02/10/2021
 ms.author: yelevin
 ms.openlocfilehash: 45f0ef5366d97c275c40d4d436020dbaf3501d42
-ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102456224"
 ---
 # <a name="surface-custom-event-details-in-alerts-in-azure-sentinel"></a>Details van aangepaste gebeurtenis voor het Opper vlak in waarschuwingen in azure Sentinel 
@@ -27,7 +27,7 @@ ms.locfileid: "102456224"
 >
 > - De functie voor aangepaste Details is beschikbaar als **Preview-versie**. Zie de [aanvullende gebruiks voorwaarden voor Microsoft Azure previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor aanvullende juridische voor waarden die van toepassing zijn op Azure-functies die in bèta, preview of op andere wijze nog niet beschikbaar zijn in algemene Beschik baarheid.
 
-## <a name="introduction"></a>Introductie
+## <a name="introduction"></a>Inleiding
 
 [Geplande query Analytics-regels](tutorial-detect-threats-custom.md) analyseren **gebeurtenissen** van gegevens bronnen die zijn verbonden met Azure Sentinel, en genereren **waarschuwingen** wanneer de inhoud van deze gebeurtenissen significant is vanuit een beveiligings perspectief. Deze waarschuwingen worden verder geanalyseerd, gegroepeerd en gefilterd door de verschillende motoren van Azure Sentinel en gedestilleerd in **incidenten** die de aandacht van de SOC-analist rechtvaardigen. Wanneer de analist echter het incident bekijkt, zijn alleen de eigenschappen van de onderdeel waarschuwingen zelf zichtbaar. Ophalen van de daad werkelijke inhoud: de informatie die in de gebeurtenissen is opgenomen-vereist een aantal Blijf spitten.
 

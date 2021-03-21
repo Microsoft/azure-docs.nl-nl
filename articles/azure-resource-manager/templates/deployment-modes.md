@@ -4,10 +4,10 @@ description: Hierin wordt beschreven hoe u kunt opgeven of u een volledige of in
 ms.topic: conceptual
 ms.date: 07/22/2020
 ms.openlocfilehash: 45eee255cec06925095ed0696c669b5c205f8b56
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97724405"
 ---
 # <a name="azure-resource-manager-deployment-modes"></a>Azure Resource Manager deployment modes (Implementatiemodi voor Azure Resource Manager)

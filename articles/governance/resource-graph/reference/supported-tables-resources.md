@@ -5,10 +5,10 @@ ms.date: 03/10/2021
 ms.topic: reference
 ms.custom: generated
 ms.openlocfilehash: d7b4be0b35fdfebd2f680a299bc7b90375e36afc
-ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102633764"
 ---
 # <a name="azure-resource-graph-table-and-resource-type-reference"></a>Naslag informatie over de tabel en het resource type van Azure resource Graph
@@ -91,7 +91,7 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 - Hive. streaming/services (Hive-streaming)
 - incapsula. WAF/accounts
 - LiveArena. broadcast/Services (LiveArena-broadcast)
-- Mailjet. email/services (Mailjet-e-mail service)
+- Mailjet.Email/services (Mailjet-e-mail service)
 - Micro soft. AAD/domainServices (Azure AD Domain Services)
 - micro soft. aadiam/azureadmetrics
 - micro soft. aadiam/privateLinkForAzureAD (privé-koppeling voor Azure AD)
@@ -639,7 +639,7 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 - providers. test-statelessresources
 - RavenHq. db/data bases (RavenHQ)
 - , Geeft Raygun. CrashReporting/apps (, geeft Raygun)
-- Sendgrid. E-mail/accounts (SendGrid-accounts)
+- Sendgrid.Email/accounts (SendGrid-accounts)
 - Sparkpost. Basic/Services (SparkPost)
 - stackify. retrace/Services (Stackify)
 - test. Shoebox/testresources

@@ -8,10 +8,10 @@ ms.date: 10/23/2020
 ms.author: dech
 ms.custom: seodec18, has-adal-ref
 ms.openlocfilehash: 5b09ce48226b3c31efce4966ec776c10931cc391
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96348650"
 ---
 # <a name="manage-azure-cosmos-db-resources-by-using-azure-storage-explorer"></a>Azure Cosmos DB-resources beheren met Azure Storage Explorer
@@ -278,7 +278,7 @@ Wanneer Storage Explorer een zelfondertekend certificaat vindt, weet het niet of
 1. Uitvoeren `s_client -showcerts -connect microsoft.com:443` .
 1. Zoek naar zelfondertekende certificaten. Als u niet zeker weet wat er zelf is ondertekend, zoekt u naar een wille keurige locatie waar het onderwerp (' s: ') en de certificaat verlener (' i: ') hetzelfde zijn.
 1. Als u zelfondertekende certificaten vindt, kopieert en plakt u alles uit en voegt u **-----begin certificaat-----** in **-----eind certificaat-----** aan een nieuwe. CER-bestand voor elke versie.
-1. Open Storage Explorer en ga vervolgens naar certificaten **Edit** voor het importeren van  >  **SSL-certificaten** bewerken  >  **Import Certificates**. Gebruik de bestands kiezer om de te zoeken, te selecteren en te openen. CER-bestanden die u hebt gemaakt.
+1. Open Storage Explorer en ga vervolgens naar certificaten voor het importeren van  >  **SSL-certificaten** bewerken  >  . Gebruik de bestands kiezer om de te zoeken, te selecteren en te openen. CER-bestanden die u hebt gemaakt.
 
 Als u geen zelfondertekende certificaten vindt, kunt u feedback verzenden voor meer hulp.
 

@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 10/16/2020
 ms.author: jlian
 ms.openlocfilehash: 6f326bafb311acedc48c5a349c78f1cd6bcebc87
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "101661151"
 ---
 # <a name="iot-hub-classic-ip-filter-and-how-to-upgrade"></a>IoT Hub klassiek IP-filter en hoe een upgrade 
@@ -20,7 +20,7 @@ Het bijgewerkte IP-filter voor IoT Hub beveiligt het ingebouwde eind punt en is 
 
 Om te voor komen dat de service wordt onderbroken, moet u de begeleide upgrade uitvoeren vóór de deadline voor de migratie, op dat moment dat de upgrade automatisch wordt uitgevoerd. Zie [Azure update](https://aka.ms/ipfilterv2azupdate)voor meer informatie over de migratie tijdlijn.
 
-## <a name="how-to-upgrade"></a>Een upgrade uitvoeren
+## <a name="how-to-upgrade"></a>Upgrade uitvoeren
 
 1.  Ga naar Azure Portal
 2.  Ga naar uw IoT-hub.
@@ -69,7 +69,7 @@ Als u wilt proberen de wijziging in met het klassieke IP-filter:
 1. Noteer de bestaande IP-filter configuratie (klassiek), voor het geval u wilt terugdraaien
 1. Selecteer het prullenbak pictogram naast regels with **Block** om ze te verwijderen
 1. Voeg onderaan een andere regel toe `0.0.0.0/0` en kies **blok keren**
-1. Selecteer **Opslaan**.
+1. Selecteer **Opslaan**
 
 Deze configuratie simuleert hoe het nieuwe IP-filter zich gedraagt nadat de upgrade van klassiek is uitgevoerd. Een uitzonde ring is de ingebouwde Endpoint Protection. Dit is niet mogelijk om het klassieke IP-filter te gebruiken. Deze functie is echter optioneel, dus u hoeft deze niet te gebruiken als u denkt dat deze iets kan verstoren.
 

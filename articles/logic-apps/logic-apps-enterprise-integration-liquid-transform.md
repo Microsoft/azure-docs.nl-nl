@@ -9,10 +9,10 @@ ms.reviewer: estfan, daviburg, logicappspm
 ms.topic: article
 ms.date: 07/31/2020
 ms.openlocfilehash: 0362c9ed4f736474dbd49e1bfaf1373e0f48acd6
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94992706"
 ---
 # <a name="transform-json-and-xml-using-liquid-templates-as-maps-in-azure-logic-apps"></a>JSON en XML transformeren met behulp van liquide sjablonen als Maps in Azure Logic Apps
@@ -90,7 +90,7 @@ In dit artikel wordt beschreven hoe u deze taken uitvoert:
    |----------|-------|-------------|
    | **Naam** | `JsonToJsonTemplate` | De naam voor uw kaart, in dit voor beeld ' JsonToJsonTemplate ' |
    | **Toewijzings type** | **Liquid** | Het type voor uw kaart. Voor JSON naar JSON-trans formatie moet u **liquide middelen** selecteren. |
-   | **Diagram** | `SimpleJsonToJsonTemplate.liquid` | In dit voor beeld wordt een bestaande vloeistof sjabloon of kaart bestand gebruikt voor trans formatie, dat "SimpleJsonToJsonTemplate. liquide" is. U kunt dit bestand vinden met behulp van de bestands kiezer. Zie [limieten en configuratie](../logic-apps/logic-apps-limits-and-config.md#artifact-capacity-limits)voor limieten voor kaart grootte. |
+   | **Kaart** | `SimpleJsonToJsonTemplate.liquid` | In dit voor beeld wordt een bestaande vloeistof sjabloon of kaart bestand gebruikt voor trans formatie, dat "SimpleJsonToJsonTemplate. liquide" is. U kunt dit bestand vinden met behulp van de bestands kiezer. Zie [limieten en configuratie](../logic-apps/logic-apps-limits-and-config.md#artifact-capacity-limits)voor limieten voor kaart grootte. |
    |||
 
    ![Vloeistof sjabloon toevoegen](./media/logic-apps-enterprise-integration-liquid-transform/add-liquid-template.png)
@@ -134,7 +134,7 @@ In dit artikel wordt beschreven hoe u deze taken uitvoert:
 
 U kunt met behulp van [postman](https://www.getpostman.com/postman) of een soortgelijk hulp programma JSON-invoer plaatsen op de logische app. De getransformeerde JSON-uitvoer van uw logische app ziet eruit als in dit voor beeld:
 
-![Voorbeeld uitvoer](./media/logic-apps-enterprise-integration-liquid-transform/example-output-jsontojson.png)
+![Voorbeelduitvoer](./media/logic-apps-enterprise-integration-liquid-transform/example-output-jsontojson.png)
 
 <a name="template-considerations"></a>
 

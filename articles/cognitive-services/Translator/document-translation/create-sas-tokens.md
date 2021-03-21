@@ -7,10 +7,10 @@ ms.author: lajanuar
 author: laujan
 ms.date: 03/05/2021
 ms.openlocfilehash: e40fc569ad1c8ec5894f06915422bea37cfc40ee
-ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102489630"
 ---
 # <a name="create-sas-tokens-for-document-translation-processing"></a>SAS-tokens maken voor het verwerken van document vertalingen
@@ -102,7 +102,7 @@ Ga naar het [Azure Portal](https://ms.portal.azure.com/#home) en navigeert u als
 
 1. Als u een SAS-URL wilt maken, voegt u de SAS-token (URI) toe aan de URL voor een opslag service.
 
-## <a name="learn-more"></a>Lees meer
+## <a name="learn-more"></a>Meer informatie
 
 * [SAS-tokens maken voor blobs of containers via een programma](../../../storage/blobs/sas-service-create.md)
 * [Machtigingen voor een map, container of BLOB](/rest/api/storageservices/create-service-sas#permissions-for-a-directory-container-or-blob)

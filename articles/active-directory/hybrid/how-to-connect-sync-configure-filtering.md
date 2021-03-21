@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 595cf2c1dbc105634d33b426c67e5123b9751e6e
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95996539"
 ---
 # <a name="azure-ad-connect-sync-configure-filtering"></a>Azure AD Connect-synchronisatie: filtering configureren
@@ -232,7 +232,7 @@ In het volgende voor beeld filtert u (niet synchroniseren) alle gebruikers waarb
 3. Zorg ervoor dat **Inkomend** is geselecteerd en klik op **nieuwe regel toevoegen**.
 4. Geef een beschrijvende naam op voor de regel, zoals '*in AD-User DoNotSyncFilter*'. Selecteer het juiste forest, selecteer **gebruiker** als het **object type CS** en selecteer **persoon** als het **object type MV**. Selecteer in **type koppeling** de optie **samen voegen**. Typ in het veld voor **rang** een waarde die momenteel niet wordt gebruikt door een andere synchronisatie regel (bijvoorbeeld 50) en klik vervolgens op **volgende**.  
    ![Beschrijving inkomende 1](./media/how-to-connect-sync-configure-filtering/inbound1.png)  
-5. Klik in het **filter bereik** op **groep toevoegen** en klik op **component toevoegen**. Selecteer **Attribute** in het kenmerk **ExtensionAttribute15**. Zorg ervoor dat de **operator** is ingesteld op **gelijk** en typ de waarde **NoSync** in het vak **waarde** . Klik op **Volgende**.  
+5. Klik in het **filter bereik** op **groep toevoegen** en klik op **component toevoegen**. Selecteer in het kenmerk **ExtensionAttribute15**. Zorg ervoor dat de **operator** is ingesteld op **gelijk** en typ de waarde **NoSync** in het vak **waarde** . Klik op **Volgende**.  
    ![Inkomend 2 bereik](./media/how-to-connect-sync-configure-filtering/inbound2.png)  
 6. Laat de regels voor **samen voegen** leeg en klik op **volgende**.
 7. Klik op **trans formatie toevoegen**, selecteer de **FlowType** als **constante** en selecteer **cloudFiltered** als **doel kenmerk**. Typ in het tekstvak **bron** de **waarde waar**. Klik op **toevoegen** om de regel op te slaan.  
@@ -278,7 +278,7 @@ In dit voor beeld wijzigt u de filtering zodat alleen gebruikers met hun e-mail 
 4. Afhankelijk van de versie van de verbinding die u gebruikt, vindt u de regel met de naam **naar Azure AD: de gebruiker wordt toegevoegd** aan of verwijderd **uit Azure AD-gebruiker toevoegen SOAInAD** en klikt u op **bewerken**.
 5. Beantwoord in het pop-upvenster **Ja** om een kopie van de regel te maken.
 6. Op de pagina **Beschrijving** wijzigt u de **prioriteit** in een ongebruikte waarde, zoals 50.
-7. Klik op het **filter bereik** op de navigatie balk aan de linkerkant en klik vervolgens op **component toevoegen**. Selecteer **Attribute** in het kenmerk **mail**. Selecteer in **operator** **ENDSWITH**. Typ **\@ contoso.com** in het **veld waarde** en klik vervolgens op **component toevoegen**. Selecteer **Attribute** in het kenmerk **userPrincipalName**. Selecteer in **operator** **ENDSWITH**. Typ **\@ contoso.com** in het **veld waarde**.
+7. Klik op het **filter bereik** op de navigatie balk aan de linkerkant en klik vervolgens op **component toevoegen**. Selecteer in het kenmerk **mail**. Selecteer in **operator** **ENDSWITH**. Typ **\@ contoso.com** in het **veld waarde** en klik vervolgens op **component toevoegen**. Selecteer in het kenmerk **userPrincipalName**. Selecteer in **operator** **ENDSWITH**. Typ **\@ contoso.com** in het **veld waarde**.
 8. Klik op **Opslaan**.
 9. Als u de configuratie wilt volt ooien, moet u een **volledige synchronisatie** uitvoeren. Ga verder met het lezen van de sectie [Apply en controleer de wijzigingen](#apply-and-verify-changes).
 

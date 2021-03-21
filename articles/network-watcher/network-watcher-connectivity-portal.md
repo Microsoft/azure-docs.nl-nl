@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 01/04/2021
 ms.author: damendo
 ms.openlocfilehash: f33c5f0fdf69737df0d8bd83499ded1e0e0f4f88
-ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97898110"
 ---
 # <a name="troubleshoot-connections-with-azure-network-watcher-using-the-azure-portal"></a>Verbindingen met Azure Network Watcher met de Azure Portal oplossen
@@ -25,7 +25,7 @@ ms.locfileid: "97898110"
 > - [Portal](network-watcher-connectivity-portal.md)
 > - [PowerShell](network-watcher-connectivity-powershell.md)
 > - [Azure-CLI](network-watcher-connectivity-cli.md)
-> - [Azure REST API](network-watcher-connectivity-rest.md)
+> - [Azure REST-API](network-watcher-connectivity-rest.md)
 
 Meer informatie over het gebruik van verbindings problemen oplossen om te controleren of een directe TCP-verbinding van een virtuele machine naar een bepaald eind punt tot stand kan worden gebracht.
 
@@ -49,7 +49,7 @@ Wanneer u op **controleren** hebt geklikt, wordt de verbinding tussen de virtuel
 
 ![De connectiviteits resultaten voor een virtuele machine controleren][1]
 
-## <a name="check-remote-endpoint-connectivity"></a>Connectiviteit van extern eind punt controleren
+## <a name="check-remote-endpoint-connectivity"></a>Externe eindpuntconnectiviteit controleren
 
 Als u de connectiviteit en latentie voor een extern eind punt wilt controleren, kiest u de keuze rondje **hand matig opgeven** in de sectie **doel** , voert u de URL en de poort in en klikt u op **controleren**.  Dit wordt gebruikt voor externe eind punten, zoals websites en opslag eindpunten.
 

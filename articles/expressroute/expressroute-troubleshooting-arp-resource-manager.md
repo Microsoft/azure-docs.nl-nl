@@ -9,10 +9,10 @@ ms.date: 12/15/2020
 ms.author: duau
 ms.custom: seodec18
 ms.openlocfilehash: 7d8ae2c58979c66ebbbab366d172179bdeee4253
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97561576"
 ---
 # <a name="getting-arp-tables-in-the-resource-manager-deployment-model"></a>ARP-tabellen ophalen in het Resource Manager-implementatie model
@@ -163,7 +163,7 @@ Age InterfaceProperty IpAddress  MacAddress
   0 Microsoft         65.0.0.2   aaaa.bbbb.cccc
 ```
 
-### <a name="arp-table-when-on-premises--connectivity-provider-side-has-problems"></a>ARP-tabel wanneer de on-premises/connectiviteits provider problemen ondervindt
+### <a name="arp-table-when-on-premises--connectivity-provider-side-has-problems"></a>ARP-tabel bij problemen on-premises/bij connectiviteitsprovider
 Als er een probleem met de on-premises of connectiviteits provider optreedt, wordt in de ARP-tabel een van de twee dingen weer gegeven. U ziet dat het on-premises MAC-adres onvolledig is of alleen de micro soft-vermelding in de ARP-tabel wordt weer gegeven.
   
 ```output

@@ -12,10 +12,10 @@ ms.date: 01/25/2021
 ms.author: juliako
 ms.custom: devx-track-js
 ms.openlocfilehash: b13086e11e1181bba91a3255e68e9f8a32e78450
-ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98797777"
 ---
 # <a name="embed-video-indexer-widgets-in-your-apps"></a>Video Indexer widgets insluiten in uw apps
@@ -30,7 +30,7 @@ Vanaf versie 2 bevat de basis-URL van de widget de regio van het opgegeven accou
 
 De widget Inzichten bevat alle visuele inzichten die tijdens het indexeringsproces zijn opgehaald uit uw video. De cognitieve Insights-widget ondersteunt de volgende optionele URL-para meters:
 
-|Naam|Definitie|Beschrijving|
+|Name|Definitie|Beschrijving|
 |---|---|---|
 |`widgets` | Tekenreeksen gescheiden door komma's | Hiermee kunt u de inzichten bepalen die u wilt weer geven.<br/>Voor beeld: `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?widgets=people,keywords` alleen personen en tref woorden weer geven UI Insights.<br/>Beschik bare opties: personen, animatedCharacters, tref woorden, labels, gevoel, emoties, onderwerpen, keyframes, transcripten, OCR, sprekers, scènes en namedEntities.|
 |`controls`|Tekenreeksen gescheiden door komma's|Hiermee kunt u de besturings elementen beheren die u wilt weer geven.<br/>Voor beeld: Hiermee wordt `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?controls=search,download` alleen de zoek optie en de download knop weer gegeven.<br/>Beschik bare opties: zoeken, downloaden, voor instellingen en taal.|
@@ -43,7 +43,7 @@ De widget Inzichten bevat alle visuele inzichten die tijdens het indexeringsproc
 
 U kunt de Player-widget gebruiken om video te streamen met behulp van adaptieve bitsnelheid. De Player-widget ondersteunt de volgende optionele URL-para meters.
 
-|Naam|Definitie|Beschrijving|
+|Name|Definitie|Beschrijving|
 |---|---|---|
 |`t` | Seconden vanaf het begin | Hiermee wordt het afspelen van de speler vanaf het opgegeven tijd punt gestart.<br/> Bijvoorbeeld: `t=60`. |
 |`captions` | Een taal code | Haalt het bijschrift in de opgegeven taal op tijdens het laden van de widget zodat deze beschikbaar is in het menu **bijschriften** .<br/> Bijvoorbeeld: `captions=en-US`. |
@@ -57,7 +57,7 @@ U kunt de Player-widget gebruiken om video te streamen met behulp van adaptieve 
 
 U kunt de editor-widget gebruiken om nieuwe projecten te maken en de inzichten van een video te beheren. De editor-widget ondersteunt de volgende optionele URL-para meters.
 
-|Naam|Definitie|Beschrijving|
+|Name|Definitie|Beschrijving|
 |---|---|---|
 |`accessToken`<sup>*</sup> | Tekenreeks | Biedt toegang tot Video's die alleen voor komen in het account dat wordt gebruikt om de widget in te sluiten.<br> De editor-widget vereist de `accessToken` para meter. |
 |`language` | Een taal code | Hiermee bepaalt u de taal van de speler. De standaardwaarde is `en-US`.<br/>Bijvoorbeeld: `language=de-DE`. |

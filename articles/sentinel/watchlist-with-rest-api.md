@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 01/11/2021
 ms.author: yelevin
 ms.openlocfilehash: ea571f9b033ba82709a13c6d32649f3228ee04b1
-ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98798405"
 ---
 # <a name="manage-watchlists-in-azure-sentinel-using-rest-api"></a>Watchlists in azure-Sentinel beheren met REST API
@@ -33,7 +33,7 @@ Met Azure Sentinel, die deel uitmaakt van Azure Monitor Log Analytics, kunt u Lo
 
 Hieronder vindt u de algemene URI-para meters voor alle watch list-API-opdrachten:
 
-| Naam | In | Vereist | Type | Beschrijving |
+| Name | In | Vereist | Type | Beschrijving |
 |-|-|-|-|-|
 | **Abonnements** | leertraject | ja | GUID | de ID van het Azure-abonnement |
 | **ResourceGroupName** | leertraject | ja | tekenreeks | de naam van de resource groep binnen het abonnement |

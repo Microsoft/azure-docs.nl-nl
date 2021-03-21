@@ -7,10 +7,10 @@ ms.subservice: shared-capabilities
 ms.date: 07/21/2020
 ms.topic: conceptual
 ms.openlocfilehash: 320668f9596376cf7aa12ed97872671404a07658
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98895914"
 ---
 # <a name="manage-role-permissions-and-security"></a>Rolmachtigingen en beveiliging beheren
@@ -176,7 +176,7 @@ Een mede werker van de bewaking kan alle bewakings gegevens lezen en bewakings i
 |Micro soft. AlertsManagement/alertsSummary/*|Het waarschuwings Dashboard beheren.|
 |Micro soft. Insights/AlertRules/*|Waarschuwings regels beheren.|
 |Micro soft. Insights/onderdelen/*|Application Insights onderdelen beheren.|
-|Micro soft. Insights/DiagnosticSettings/*|Diagnostische instellingen beheren.|
+|Microsoft.Insights/DiagnosticSettings/*|Diagnostische instellingen beheren.|
 |Micro soft. Insights/eventtypes/*|Lijst activiteiten logboek gebeurtenissen (beheer gebeurtenissen) in een abonnement. Deze machtiging is van toepassing op zowel toegang via het programma als de portal tot het activiteiten logboek.|
 |Micro soft. Insights/LogDefinitions/*|Deze machtiging is nodig voor gebruikers die toegang moeten hebben tot activiteiten logboeken via de portal. Lijst met logboek categorieën in het activiteiten logboek.|
 |Micro soft. Insights/MetricDefinitions/*|Metrische definities lezen (lijst met beschik bare meet typen voor een resource).|

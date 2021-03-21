@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 10/12/2020
 ms.author: mbullwin
 ms.openlocfilehash: c4d1d23da5fd9678cc5b9477ddeed0daf4f5ac36
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96348616"
 ---
 # <a name="add-data-feeds-from-different-data-sources-to-metrics-advisor"></a>Gegevensfeeds van verschillende gegevens bronnen toevoegen aan Metrics Advisor
@@ -37,13 +37,13 @@ In dit artikel vindt u informatie over de instellingen en vereisten voor het ver
 
 | Gegevensbronnen | Verificatie typen |
 |-------------| ---------------------|
-|[**Azure Application Insights**](#appinsights)|  Basic |
+|[**Inzichten Azure-toepassing**](#appinsights)|  Basic |
 |[**Azure Blob Storage (JSON)**](#blob) | Basic<br>ManagedIdentity|
 |[**Azure Cosmos DB (SQL)**](#cosmosdb) | Basic |
 |[**Azure Data Explorer (Kusto)**](#kusto) | Basic<br>ManagedIdentity|
 |[**Azure Data Lake Storage Gen2**](#adl) | Basic<br>DataLakeGen2SharedKey<br>Service-principal<br>Service-Principal van sleutel kluis<br> |
 |[**Azure SQL Database/SQL Server**](#sql) | Basic<br>ManagedIdentity<br>Service-principal<br>Service-Principal van sleutel kluis<br>AzureSQLConnectionString
-|[**Azure-tabelopslag**](#table) | Basic | 
+|[**Azure Table Storage**](#table) | Basic | 
 |[**ElasticSearch**](#es) | Basic |
 |[**HTTP-aanvraag**](#http) | Basic | 
 |[**InfluxDB (InfluxQL)**](#influxdb) | Basic |
@@ -210,7 +210,7 @@ The timestamp field must match one of these two formats:
     select StartDate, JobStatusId, COUNT(*) AS JobNumber from IngestionJobs WHERE and StartDate = '2019-12-12 00:00:00'
     ```
 
-## <a name="span-idtableazure-table-storagespan"></a><span id="table">Azure-tabelopslag</span>
+## <a name="span-idtableazure-table-storagespan"></a><span id="table">Azure Table Storage</span>
 
 * **Verbindings reeks**: raadpleeg [een Connection String weer geven en kopiëren](../../storage/common/storage-account-keys-manage.md?tabs=azure-portal&toc=%2fazure%2fstorage%2ftables%2ftoc.json#view-account-access-keys) voor informatie over het ophalen van de Connection String van Azure Table Storage.
 

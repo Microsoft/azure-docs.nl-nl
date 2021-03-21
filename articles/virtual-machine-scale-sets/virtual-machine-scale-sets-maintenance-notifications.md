@@ -10,10 +10,10 @@ ms.date: 11/12/2020
 ms.reviewer: jushiman
 ms.custom: mimckitt, devx-track-azurecli
 ms.openlocfilehash: b4c705e65b5b8c4f9e34dc5ff1474e87da5bee02
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102209781"
 ---
 # <a name="planned-maintenance-notifications-for-virtual-machine-scale-sets"></a>Meldingen voor gepland onderhoud voor virtuele-machineschaalsets
@@ -84,7 +84,7 @@ De kolom **self-service onderhoud** wordt nu weer gegeven in de lijst met virtue
 | Waarde | Beschrijving |
 |-------|-------------|
 | Ja | Ten minste één VM in de schaalset voor virtuele machines bevindt zich in een self-service venster. U kunt onderhoud starten op elk gewenst moment tijdens dit selfservice venster. | 
-| No | Er bevinden zich geen Vm's in een self-service venster in de desbetreffende schaalset voor virtuele machines. | 
+| Nee | Er bevinden zich geen Vm's in een self-service venster in de desbetreffende schaalset voor virtuele machines. | 
 | - | Uw schaal sets voor virtuele machines maken geen deel uit van een geplande onderhouds Golf.| 
 
 ## <a name="notification-and-alerts-in-the-portal"></a>Meldingen en waarschuwingen in de portal

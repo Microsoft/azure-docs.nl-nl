@@ -9,16 +9,16 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.openlocfilehash: 657cb6a86122d267b86e82b6f02eb58e968cddd3
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96904734"
 ---
 # <a name="weather-services-preview-in-azure-maps"></a>Weer Services (preview) in Azure Maps
 
 > [!IMPORTANT]
-> Azure Maps weer Services zijn momenteel beschikbaar als open bare preview.
+> Azure Maps Weather-services zijn momenteel beschikbaar in de openbare preview.
 > Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 In dit artikel worden concepten geïntroduceerd die van toepassing zijn op Azure Maps [weers Services](/rest/api/maps/weather). We raden u aan dit artikel uit te voeren voordat u begint met de weers-Api's.

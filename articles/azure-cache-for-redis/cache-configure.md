@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 08/22/2017
 ms.author: yegu
 ms.openlocfilehash: ba021d280f71504ad5c1e1aea0dc1c8c6b507b1e
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100581072"
 ---
 # <a name="how-to-configure-azure-cache-for-redis"></a>Azure-cache configureren voor redis
@@ -162,7 +162,7 @@ Redis moeten worden geconfigureerd op de Blade **Geavanceerde instellingen** . M
 >
 >
 
-Zie [redis-meldingen](https://redis.io/topics/notifications)voor meer informatie. Zie het [KeySpaceNotifications.cs](https://github.com/rustd/RedisSamples/blob/master/HelloWorld/KeySpaceNotifications.cs) -bestand in het [Hello World](https://github.com/rustd/RedisSamples/tree/master/HelloWorld) -voor beeld voor een voorbeeld code.
+Zie [redis-meldingen](https://redis.io/topics/notifications)voor meer informatie. Zie het bestand [KeySpaceNotifications. cs](https://github.com/rustd/RedisSamples/blob/master/HelloWorld/KeySpaceNotifications.cs) in het [Hello World](https://github.com/rustd/RedisSamples/tree/master/HelloWorld) -voor beeld voor een voorbeeld code.
 
 
 <a name="recommendations"></a>

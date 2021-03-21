@@ -11,10 +11,10 @@ ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
 ms.openlocfilehash: fcc5c02c4a37e205622470260d3c620ad76d07d8
-ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/19/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97694709"
 ---
 # <a name="provide-an-encryption-key-on-a-request-to-blob-storage"></a>Geef een versleutelings sleutel op voor een aanvraag voor Blob-opslag
@@ -53,7 +53,7 @@ Het opgeven van de versleutelings sleutels voor de aanvraag is optioneel. Als u 
 
 De volgende bewerkingen voor Blob Storage ondersteunen het verzenden van door de klant verschafte versleutelings sleutels voor een aanvraag:
 
-- [BLOB plaatsen](/rest/api/storageservices/put-blob)
+- [Blob plaatsen](/rest/api/storageservices/put-blob)
 - [Blokkerings lijst plaatsen](/rest/api/storageservices/put-block-list)
 - [Blok keren](/rest/api/storageservices/put-block)
 - [Blok van URL plaatsen](/rest/api/storageservices/put-block-from-url)
@@ -65,7 +65,7 @@ De volgende bewerkingen voor Blob Storage ondersteunen het verzenden van door de
 - [BLOB ophalen](/rest/api/storageservices/get-blob)
 - [Get Blob Properties](/rest/api/storageservices/get-blob-properties) (Blob-eigenschappen ophalen)
 - [BLOB-meta gegevens ophalen](/rest/api/storageservices/get-blob-metadata)
-- [Moment opname-BLOB](/rest/api/storageservices/snapshot-blob)
+- [Momentopname maken van blob](/rest/api/storageservices/snapshot-blob)
 
 ## <a name="rotate-customer-provided-keys"></a>Door de klant verschafte sleutels draaien
 

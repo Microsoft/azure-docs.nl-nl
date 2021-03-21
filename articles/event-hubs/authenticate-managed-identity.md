@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 01/25/2021
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 2070cfd94b39a08afb86ffd3579f1116faac72d5
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98805311"
 ---
 # <a name="authenticate-a-managed-identity-with-azure-active-directory-to-access-event-hubs-resources"></a>Een beheerde identiteit verifiëren met Azure Active Directory om toegang te krijgen tot Event Hubs bronnen
@@ -57,8 +57,8 @@ Als u een rol wilt toewijzen aan Event Hubs resources, gaat u naar die resource 
 1. Ga in het Azure Portal naar uw Event Hubs naam ruimte en geef het **overzicht** voor de naam ruimte weer. 
 1. Selecteer **Access Control (IAM)** in het menu links om de instellingen voor toegangs beheer voor de Event hub weer te geven.
 1.  Selectter het tabblad **Roltoewijzingen** om de lijst met roltoewijzingen te zien.
-3.  Selecteer **toevoegen** en selecteer vervolgens **roltoewijzing toevoegen** _.
-4.  Voer de volgende stappen uit op de pagina _ *roltoewijzing toevoegen**:
+3.  Selecteer **toevoegen** en selecteer vervolgens * * roltoewijzing toevoegen * * *.
+4.  Voer op de pagina **roltoewijzing toevoegen** de volgende stappen uit:
     1. Selecteer bij **rol** de Event hubs rol die u wilt toewijzen. In dit voor beeld is de **gegevens eigenaar van Azure Event hubs**.
     1. Selecteer **app service** onder door het **systeem toegewezen beheerde identiteit** voor het veld **toegang toewijzen aan** . 
     1. Selecteer het **abonnement** waarin de beheerde identiteit voor de web-app is gemaakt.

@@ -9,10 +9,10 @@ ms.date: 11/04/2019
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: a3ae2a876d6a3772d941fec0b8a1ea3f537e60c3
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96010805"
 ---
 U kunt de `Resize-AzVirtualNetworkGateway`PowerShell-cmdlet gebruiken om een Generation1- of Generation2-SKU te upgraden of te downgraden (alle VpnGw-SKU's kunnen worden gewijzigd, behalve de Basic-SKU's). Als u de basis-gateway-SKU gebruikt, [kunt u deze instructies gebruiken in plaats](../articles/vpn-gateway/vpn-gateway-about-skus-legacy.md#resize) het formaat van uw gateway te wijzigen.

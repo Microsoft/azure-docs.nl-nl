@@ -10,15 +10,15 @@ services: azure-maps
 manager: cpendle
 ms.custom: ''
 ms.openlocfilehash: a563a7776e84289e38743057778e8fe10fd17503
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96904700"
 ---
 # <a name="getting-started-with-the-azure-maps-power-bi-visual"></a>Aan de slag met de Azure Maps Power BI Visual
 
-<Token>**van toepassing op:** ![ Groen vinkje. ](media/power-bi-visual/yes.png) Power BI-service voor **_gebruikers_* met een ![ groen vinkje. ](media/power-bi-visual/yes.png) Power BI-service voor ontwerpers &-ontwikkel aars ![ groen vinkje. ](media/power-bi-visual/yes.png) Power BI Desktop ![ X geeft Nee aan. ](media/power-bi-visual/no.png) Er is een Pro-of Premium-licentie vereist</Token>
+<Token>**van toepassing op:** ![ Groen vinkje. ](media/power-bi-visual/yes.png) Power BI-service voor **_klanten_** ![ groen vinkje. ](media/power-bi-visual/yes.png) Power BI-service voor ontwerpers &-ontwikkel aars ![ groen vinkje. ](media/power-bi-visual/yes.png) Power BI Desktop ![ X geeft Nee aan. ](media/power-bi-visual/no.png) Er is een Pro-of Premium-licentie vereist</Token>
 
 In dit artikel wordt beschreven hoe u de Microsoft Azure kaarten Visual voor Power BI kunt gebruiken.
 
@@ -47,9 +47,9 @@ Zie [Microsoft Azure juridische informatie](https://azure.microsoft.com/support/
 
 ## <a name="azure-maps-visual-preview-behavior-and-requirements"></a>Gedrag en vereisten voor het visualiseren van Azure Maps (preview)
 
-Er zijn enkele overwegingen en vereisten voor _ *Azure Maps** Visual. :
+Er zijn enkele overwegingen en vereisten voor het **Azure Maps** visuele element. :
 
--   De **Azure Maps** Visual (preview) moet zijn ingeschakeld in Power bi Desktop. Als u **Azure Maps** Visual wilt inschakelen **File** , selecteert u &gt; Opties voor bestands **Opties en instellingen** &gt; **Options** &gt; **Preview-functies** en selecteert u vervolgens het selectie vakje **Azure Maps** . Als de Azure Maps Visual niet beschikbaar is nadat u dit hebt gedaan, moet u waarschijnlijk de schakel optie Tenant beheerder in de beheer Portal inschakelen.
+-   De **Azure Maps** Visual (preview) moet zijn ingeschakeld in Power bi Desktop. Als u **Azure Maps** Visual wilt inschakelen  , selecteert u &gt; Opties voor bestands **Opties en instellingen** &gt;  &gt; **Preview-functies** en selecteert u vervolgens het selectie vakje **Azure Maps** . Als de Azure Maps Visual niet beschikbaar is nadat u dit hebt gedaan, moet u waarschijnlijk de schakel optie Tenant beheerder in de beheer Portal inschakelen.
 -   De gegevensset moet velden bevatten met informatie over **breedte graad** en **lengte graad** . Geocodering van locatie velden wordt toegevoegd in een toekomstige update.
 -   Het ingebouwde besturings element legenda voor Power BI wordt momenteel niet weer gegeven in deze preview. Deze wordt toegevoegd in een toekomstige update.
 
@@ -92,7 +92,7 @@ Voer de volgende stappen uit om de Azure Maps Visual te laden:
 
 De volgende gegevens verzamelingen zijn beschikbaar in het deel venster **velden** van de Azure Maps Visual.
 
-| Veld     | Description  |
+| Veld     | Beschrijving  |
 |-----------|--------------|
 | Breedtegraad  | Het veld dat wordt gebruikt om de waarde voor de breedte van de gegevens punten op te geven. De Latitude-waarden moeten tussen-90 en 90 in de decimale-graden notatie zijn.  |
 | Lengtegraad | Het veld dat wordt gebruikt om de lengte graad van de gegevens punten op te geven. Lengte waarden moeten tussen-180 en 180 in decimale-graden notatie zijn.  |
@@ -135,7 +135,7 @@ De Azure Maps Visual is beschikbaar in de volgende services en toepassingen:
 | Mobiele Power BI-toepassingen             | Ja          |
 | Power BI publiceren op internet                  | Nee           |
 | Power BI Embedded                        | Nee           |
-| Power BI-service insluiten (PowerBI.com) | Yes          |
+| Power BI-service insluiten (PowerBI.com) | Ja          |
 
 Ondersteuning voor extra Power BI Services/apps wordt toegevoegd aan toekomstige updates.
 

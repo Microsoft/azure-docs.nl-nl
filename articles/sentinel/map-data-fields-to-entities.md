@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 02/10/2021
 ms.author: yelevin
 ms.openlocfilehash: cb91d269f6b166510db54637d17d776e71137408
-ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102456243"
 ---
 # <a name="map-data-fields-to-entities-in-azure-sentinel"></a>Gegevens velden toewijzen aan entiteiten in azure Sentinel 
@@ -31,7 +31,7 @@ ms.locfileid: "102456243"
 >
 > - Zie [opmerkingen over de nieuwe versie](#notes-on-the-new-version) aan het einde van dit document voor belang rijke informatie over achterwaartse compatibiliteit en verschillen tussen de nieuwe en oude versies van entiteits toewijzing.
 
-## <a name="introduction"></a>Introductie
+## <a name="introduction"></a>Inleiding
 
 Entiteits toewijzing is een integraal onderdeel van de configuratie van [geplande query Analytics-regels](tutorial-detect-threats-custom.md). De regel uitvoer (waarschuwingen en incidenten) wordt verrijkt met essentiële informatie die fungeert als de bouw stenen van eventuele onderzoeken processen en herstel bewerkingen die volgen.
 

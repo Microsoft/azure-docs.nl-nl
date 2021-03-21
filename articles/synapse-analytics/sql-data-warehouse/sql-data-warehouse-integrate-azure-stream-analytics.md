@@ -2,21 +2,21 @@
 title: Azure Stream Analytics gebruiken in een toegewezen SQL-groep
 description: Tips voor het gebruik van Azure Stream Analytics met een toegewezen SQL-groep in azure Synapse voor het ontwikkelen van realtime-oplossingen.
 services: synapse-analytics
-author: kevinvngo
+author: gaursa
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: sql-dw
 ms.date: 9/25/2020
-ms.author: kevin
+ms.author: gaursa
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 8fbe546beb1004214e544f8eb160884c0f64ef9e
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: 023cf55a01f34277dd5c5707d0d123f54c1674df
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "96458220"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104600085"
 ---
 # <a name="use-azure-stream-analytics-with-dedicated-sql-pool-in-azure-synapse-analytics"></a>Azure Stream Analytics gebruiken met een toegewezen SQL-groep in azure Synapse Analytics
 
@@ -52,8 +52,8 @@ Voer de volgende waarden in:
 
 * *Uitvoer alias*: Voer een beschrijvende naam in voor deze taak uitvoer.
 * *Abonnement*:
-  * Als uw toegewezen SQL-groep zich in hetzelfde abonnement bevindt als de Stream Analytics taak, klikt u op ***Select Azure Synapse Analytics van uw abonnementen** _.
-  _ Als uw toegewezen SQL-groep zich in een ander abonnement bevindt, klikt u op on Azure Synapse Analytics-instellingen hand matig opgeven.
+  * Als uw toegewezen SQL-groep zich in hetzelfde abonnement bevindt als de Stream Analytics taak, klikt u op ***Azure Synapse Analytics selecteren in uw abonnementen***.
+  * Als uw toegewezen SQL-groep zich in een ander abonnement bevindt, klikt u op on hand matig Azure Synapse Analytics-instellingen opgeven.
 * *Data Base*: Selecteer de doel database in de vervolg keuzelijst.
 * *Gebruikers naam*: Geef de gebruikers naam op van een account met schrijf machtigingen voor de data base.
 * *Wacht woord*: Geef het wacht woord op voor het opgegeven gebruikers account.
@@ -100,23 +100,23 @@ WITH (DISTRIBUTION = ROUND_ROBIN)
 
 ### <a name="step-5"></a>Stap 5
 
-Klik in de Azure Portal voor Stream Analytics taak op de naam van uw taak.  Klik op de knop **_toets_* _ in het deel venster _*_uitvoer Details_*_ .
+Klik in de Azure Portal voor Stream Analytics taak op de naam van uw taak.  Klik op de knop ***toets** _ in het deel venster _ *_uitvoer Details_**.
 
 ![De knop testen op Details van Outpout ](./media/sql-data-warehouse-integrate-azure-stream-analytics/sqlpool-asatest.png) als de verbinding met de data base slaagt, wordt er een melding weer geven in de portal.
 
 ### <a name="step-6"></a>Stap 6
 
-Klik op het _*_query_*_ menu onder _*_taak topologie_*_ en wijzig de query om gegevens in te voegen in de stream-uitvoer die u hebt gemaakt.  Klik op de knop _*_geselecteerde query testen_*_ om uw query te testen.  Klik op de knop _*_query opslaan_*_ wanneer de query test is voltooid.
+Klik op het menu ***query** _ onder _*_taak topologie_*_ en wijzig de query om gegevens in te voegen in de stream-uitvoer die u hebt gemaakt.  Klik op de knop _*_geselecteerde query testen_*_ om uw query te testen.  Klik op de knop *_query opslaan_** als de query test is voltooid.
 
 ![Query opslaan](./media/sql-data-warehouse-integrate-azure-stream-analytics/sqlpool-asaquery.png)
 
 ### <a name="step-7"></a>Stap 7
 
-Start de Azure Stream Analytics taak.  Klik op de knop _*_Start_*_ in het menu _*_overzicht_*_ .
+Start de Azure Stream Analytics taak.  Klik op de knop ***Start** _ in het menu _ *_overzicht_**.
 
 ![Stream Analytics-taak starten](./media/sql-data-warehouse-integrate-azure-stream-analytics/sqlpool-asastart.png)
 
-Klik op de knop _ *_Start_** in het deel venster taak starten.
+Klik op de knop ***Start*** in het deel venster taak starten.
 
 ![Klik op Start](./media/sql-data-warehouse-integrate-azure-stream-analytics/sqlpool-asastartconfirm.png)
 

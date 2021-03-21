@@ -4,16 +4,18 @@ description: 'Quickstart: Meer informatie over het maken van een dashboard in Az
 ms.topic: quickstart
 ms.custom: devx-track-azurepowershell
 ms.date: 12/4/2020
-ms.openlocfilehash: ede915df5cd2967c3b6b700bcb9174c89af8f233
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
-ms.translationtype: HT
+ms.openlocfilehash: ddfee1932c6887c6ca7593ca7a28c03e68e09899
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96745652"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104613208"
 ---
 # <a name="quickstart-create-an-azure-portal-dashboard-with-azure-cli"></a>Quickstart: Een Azure Portal-dashboard maken met Azure CLI
 
-Een dashboard in de Azure-portal is een gerichte en georganiseerde weergave van uw cloudresources.
+Een dashboard in de Azure-portal is een gerichte en georganiseerde weergave van uw cloudresources. Dit artikel gaat over het proces van het gebruik van Azure CLI om een dash board te maken.
+Het dashboard toont de prestaties van een virtuele machine (VM), evenals een aantal statische gegevens en links.
+
 
 [!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
@@ -103,19 +105,7 @@ az portal dashboard update --resource-group myResourceGroup --name 'Simple VM Da
    --input-path portal-dashboard-template-testvm.json --location centralus
 ```
 
-Controleer of u in Azure Portal gegevens over de virtuele machine kunt zien.
-
-1. In de Azure-portal selecteert u **Dashboard**.
-
-   ![Navigatie in de Azure-portal naar dashboard](media/quickstart-portal-dashboard-powershell/navigate-to-dashboards.png)
-
-1. Op de dashboardpagina selecteert u **Eenvoudig VM-dashboard**.
-
-   ![Navigeren naar een eenvoudig VM-dashboard](media/quickstart-portal-dashboard-powershell/select-simple-vm-dashboard.png)
-
-1. Bekijk het dashboard. U kunt zien dat een deel van de inhoud statisch is, maar er zijn ook grafieken waarin de prestaties van de virtuele machine worden weergegeven.
-
-   ![Eenvoudig VM-dashboard bekijken](media/quickstart-portal-dashboard-powershell/review-simple-vm-dashboard.png)
+[!INCLUDE [azure-portal-review-deployed-resources](../../includes/azure-portal-review-deployed-resources.md)]
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

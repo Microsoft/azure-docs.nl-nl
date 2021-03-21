@@ -4,10 +4,10 @@ description: Beschrijft de voor delen van het gebruik van Azure Resource Manager
 ms.topic: conceptual
 ms.date: 03/12/2021
 ms.openlocfilehash: 14bcbbd7a7ae7315dbb8e9d3e7e44ce0ffe0a4b4
-ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/13/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103419980"
 ---
 # <a name="what-are-arm-templates"></a>Wat zijn ARM-sjablonen?

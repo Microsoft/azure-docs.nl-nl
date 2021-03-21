@@ -6,16 +6,16 @@ services: storage
 author: normesta
 ms.service: storage
 ms.topic: conceptual
-ms.date: 03/12/2020
+ms.date: 03/16/2021
 ms.author: normesta
 ms.reviewer: santoshc
 ms.subservice: common
-ms.openlocfilehash: 13e274a0d43ba4399e039d1280aa5ada3c94afe5
-ms.sourcegitcommit: 27cd3e515fee7821807c03e64ce8ac2dd2dd82d2
+ms.openlocfilehash: 3fcc58f626622bcc728265e782906226859e1bf9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103601471"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104600459"
 ---
 # <a name="use-private-endpoints-for-azure-storage"></a>Privé-eind punten voor Azure Storage gebruiken
 
@@ -53,6 +53,16 @@ U kunt uw opslag account beveiligen, zodat alleen verbindingen van uw VNet worde
 
 ## <a name="creating-a-private-endpoint"></a>Een persoonlijk eind punt maken
 
+Zie voor het maken van een persoonlijk eind punt met behulp [van Azure Portal persoonlijke verbinding maken met een opslag account vanuit de ervaring voor het opslag account in de Azure Portal](../../private-link/tutorial-private-endpoint-storage-portal.md).
+
+Zie een van deze artikelen voor het maken van een persoonlijk eind punt met behulp van Power shell of de Azure CLI. Beide bieden een Azure-web-app als de doel service, maar de stappen voor het maken van een persoonlijke koppeling zijn hetzelfde voor een Azure Storage-account.
+
+- [Een persoonlijk eind punt maken met behulp van Azure CLI](../../private-link/create-private-endpoint-cli.md)
+
+- [Een privé=eindpunt maken met Azure PowerShell](../../private-link/create-private-endpoint-powershell.md)
+
+
+
 Wanneer u een persoonlijk eind punt maakt, moet u het opslag account en de opslag service opgeven waarmee de verbinding tot stand wordt gebracht. 
 
 U hebt een apart persoonlijk eind punt nodig voor elke opslag Resource waartoe u toegang wilt hebben, namelijk [blobs](../blobs/storage-blobs-overview.md), [Data Lake Storage Gen2](../blobs/data-lake-storage-introduction.md), [bestanden](../files/storage-files-introduction.md), [wacht rijen](../queues/storage-queues-introduction.md), [tabellen](../tables/table-storage-overview.md)of [statische websites](../blobs/storage-blob-static-website.md). In het persoonlijke eind punt worden deze opslag services gedefinieerd als de **doel-subbron** van het gekoppelde opslag account. 
@@ -64,13 +74,6 @@ Als u een persoonlijk eind punt voor de opslag resource van Data Lake Storage Ge
 > Zorg ervoor dat u een opslag account voor algemeen gebruik v2 (Standard of Premium) maakt.
 
 Voor lees toegang tot de secundaire regio met een opslag account dat is geconfigureerd voor geo-redundante opslag, hebt u afzonderlijke privé-eind punten nodig voor de primaire en secundaire instanties van de service. U hoeft geen persoonlijk eind punt te maken voor het secundaire exemplaar voor **failover**. Het persoonlijke eind punt maakt na een failover automatisch verbinding met het nieuwe primaire exemplaar. Zie [Azure Storage redundantie](storage-redundancy.md)voor meer informatie over opties voor opslag redundantie.
-
-Raadpleeg de volgende artikelen voor meer gedetailleerde informatie over het maken van een persoonlijk eind punt voor uw opslag account:
-
-- [Een persoonlijke verbinding maken met een opslag account vanuit de ervaring voor het opslag account in de Azure Portal](../../private-link/tutorial-private-endpoint-storage-portal.md)
-- [Maak een persoonlijk eind punt met behulp van het privé koppelings centrum in de Azure Portal](../../private-link/create-private-endpoint-portal.md)
-- [Een persoonlijk eind punt maken met behulp van Azure CLI](../../private-link/create-private-endpoint-cli.md)
-- [Een privé=eindpunt maken met Azure PowerShell](../../private-link/create-private-endpoint-powershell.md)
 
 <a id="connecting-to-private-endpoints"></a>
 

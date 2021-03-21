@@ -15,10 +15,10 @@ ms.author: kenwith
 ms.reviewer: baselden
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: db695b55fbef16cb67dce6dc2d3c81ad177c9db6
-ms.sourcegitcommit: 27cd3e515fee7821807c03e64ce8ac2dd2dd82d2
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103601794"
 ---
 # <a name="migrate-application-authentication-to-azure-active-directory"></a>Toepassings verificatie migreren naar Azure Active Directory
@@ -29,7 +29,7 @@ In dit Witboek vindt u informatie over de planning voor en de voor delen van het
 
 Het proces in vier fasen opsplitsen, elk met gedetailleerde plannings-en afsluit criteria, is ontworpen om u te helpen uw migratie strategie te plannen en inzicht te krijgen in de manier waarop Azure AD-verificatie de doel stellingen van uw organisatie ondersteunt.
 
-## <a name="introduction"></a>Introductie
+## <a name="introduction"></a>Inleiding
 
 Uw organisatie vereist vandaag nog een Slew toepassingen (apps) zodat gebruikers hun werk kunnen doen. U kunt apps elke dag waarschijnlijk nog steeds toevoegen, ontwikkelen of buiten gebruik stellen. Gebruikers hebben toegang tot deze toepassingen vanuit een enorme verscheidenheid aan bedrijfs-en persoonlijke apparaten en locaties. Ze openen apps op verschillende manieren, waaronder:
 

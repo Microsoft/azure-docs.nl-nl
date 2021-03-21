@@ -5,14 +5,14 @@ author: alkohli
 ms.assetid: 169c639b-1124-46a5-ae69-ba9695525b77
 ms.service: storsimple
 ms.topic: conceptual
-ms.date: 02/02/2021
+ms.date: 03/08/2021
 ms.author: alkohli
-ms.openlocfilehash: af48e1f415e0ca0b1027d277f70c3f0f1a11e687
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: 6d7d8c37d0e7ffacb3221a4f30a96ef6cccda819
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99526762"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104674441"
 ---
 # <a name="introduction-to-the-storsimple-virtual-array"></a>Inleiding tot de virtuele StorSimple-matrix
 
@@ -73,8 +73,8 @@ Hieronder vindt u een overzicht van de ondersteunde StorSimple-werk belastingen.
 
 |Scenario     |Workload     |Ondersteund      |Beperkingen               | Versies van toepassing|
 |-------------|-------------|---------------|---------------------------|--------------------|
-|Extern kantoor/filiaal (ROBO)  |Bestanden delen     |Yes      |Zie [maximum aantal limieten voor bestands server](storsimple-ova-limits.md).<br></br>Zie [systeem vereisten voor ondersteunde SMB-versies](storsimple-ova-system-requirements.md).| Alle versies     |
-|Cloud archivering  |Archiveren van bestands deling     |Yes      |Zie [maximum aantal limieten voor bestands server](storsimple-ova-limits.md).<br></br>Zie [systeem vereisten voor ondersteunde SMB-versies](storsimple-ova-system-requirements.md).| Alle versies     |
+|Extern kantoor/filiaal (ROBO)  |Bestanden delen     |Ja      |Zie [maximum aantal limieten voor bestands server](storsimple-ova-limits.md).<br></br>Zie [systeem vereisten voor ondersteunde SMB-versies](storsimple-ova-system-requirements.md).| Alle versies     |
+|Cloud archivering  |Archiveren van bestands deling     |Ja      |Zie [maximum aantal limieten voor bestands server](storsimple-ova-limits.md).<br></br>Zie [systeem vereisten voor ondersteunde SMB-versies](storsimple-ova-system-requirements.md).| Alle versies     |
 
 De virtuele StorSimple-matrix is het meest geschikt voor zelden gebruikte gegevens. Hoewel de virtuele matrix een lokale cache heeft om prestaties te verbeteren, moeten gebruikers aannemen dat de services van het apparaat op de laagste laag van opslag (de Cloud). Elke virtuele array kan op ongeveer 100 Mbps schrijven en lezen naar Azure Storage. Deze koppeling wordt gedeeld met alle aanvragen die binnenkomen op het apparaat en kan een knel punt worden, zoals wordt weer gegeven in het onderstaande diagram.
 

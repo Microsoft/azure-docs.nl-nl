@@ -4,14 +4,14 @@ description: Beschrijft essentiële open problemen en oplossingen voor de virtue
 ms.service: storsimple
 author: v-dalc
 ms.topic: article
-ms.date: 01/22/2021
+ms.date: 03/17/2021
 ms.author: alkohli
-ms.openlocfilehash: 4e50f866c0bd44ca54c2f4df78b9507aa7077169
-ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
+ms.openlocfilehash: b2c2af4267140370c2aa9421a67cb3a6f413165f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102452557"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104657549"
 ---
 # <a name="storsimple-virtual-array-update-13-release-notes"></a>Release opmerkingen bij Update 1,3 StorSimple Virtual array
 
@@ -31,6 +31,11 @@ Update 1,3 komt overeen met de software versie 10.0.10319.0.
 Deze update bevat de volgende verbeteringen: KB4540725
 
 - Transport Layer Security (TLS) 1,2 is een verplichte update en moet worden geïnstalleerd. Vanaf deze release wordt TLS 1,2 het standaard protocol voor alle Azure Portal communicatie.
+  
+   Als de volgende waarschuwing wordt weer gegeven, moet u de software op het apparaat bijwerken voordat u doorgaat:
+
+   Op een of meer StorSimple-apparaten wordt een oudere software versie uitgevoerd. De meest recente update voor TLS 1,2 is een verplichte update die direct op deze apparaten moet worden geïnstalleerd. TLS 1,2 wordt gebruikt voor alle Azure Portal communicatie en zonder deze update, kan het apparaat niet communiceren met de StorSimple-service.
+
 - Problemen met garbagecollection-fouten verbeteren de prestaties van de garbagecollection-cyclus wanneer het apparaat en het opslag account zich in twee externe regio's bevinden.
 - Oplossing voor back-upfouten vanwege BLOB-time-outs.
 - Bijgewerkte beveiligings patches voor OS/. NET Framework:
@@ -65,4 +70,4 @@ Zoekt u een oudere release-Opmerking? Ga naar:
 - [Release opmerkingen bij Update 0,4 StorSimple Virtual array](./storsimple-virtual-array-update-04-release-notes.md)
 - [Release opmerkingen bij Update 0,3 StorSimple Virtual array](./storsimple-ova-update-03-release-notes.md)
 - [Release opmerkingen bij Update 0,1 en 0,2 voor StorSimple Virtual array](./storsimple-ova-update-01-release-notes.md)
-- [Release opmerkingen bij de algemene Beschik baarheid van StorSimple Virtual array](/azure/storsimple/storsimple-ova-pp-release-notes)
+- [Release opmerkingen bij de algemene Beschik baarheid van StorSimple Virtual array](./storsimple-virtual-array-update-06-release-notes.md)

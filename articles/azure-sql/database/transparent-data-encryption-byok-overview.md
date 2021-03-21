@@ -13,10 +13,10 @@ ms.author: jaszymas
 ms.reviewer: vanto
 ms.date: 02/01/2021
 ms.openlocfilehash: e096e21e7d20c992e18634d684f663f149cc3c55
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101691243"
 ---
 # <a name="azure-sql-transparent-data-encryption-with-customer-managed-key"></a>Azure SQL Transparent Data Encryption met door de klant beheerde sleutels
@@ -170,7 +170,7 @@ Als u de status van de Data Base wilt bewaken en waarschuwingen wilt inschakelen
 
 Wanneer een Data Base is versleuteld met TDE met behulp van een sleutel uit Key Vault, worden alle nieuw gegenereerde back-ups ook versleuteld met dezelfde TDE-Protector. Wanneer de TDE-beveiliging wordt gewijzigd, worden oude back-ups van de Data Base **niet bijgewerkt** voor gebruik van de meest recente TDe-Protector.
 
-Als u een back-up wilt herstellen die is versleuteld met een TDE-Protector van Key Vault, moet u ervoor zorgen dat het sleutel materiaal beschikbaar is voor de doel server. Daarom is het raadzaam dat u alle oude versies van de TDE-Protector in de sleutel kluis bewaart, zodat database back-ups kunnen worden hersteld.
+Als u een back-up wilt herstellen die is versleuteld met een TDE-Protector van Key Vault, moet u ervoor zorgen dat het sleutel materiaal beschikbaar is voor de doel server. Daarom wordt u aangeraden alle oude versies van de TDE-protector in de sleutelkluis te bewaren, zodat back-ups van de database kunnen worden hersteld.
 
 > [!IMPORTANT]
 > Er kan op elk moment niet meer dan één TDE-protector worden ingesteld voor een server. De sleutel is gemarkeerd met de sleutel de standaard TDE-Protector maken op de Blade Azure Portal. Meerdere extra sleutels kunnen echter aan een server worden gekoppeld zonder dat ze als een TDE-protector worden gemarkeerd. Deze sleutels worden niet gebruikt voor het beveiligen van DEK, maar kunnen worden gebruikt tijdens het terugzetten vanuit een back-up, als het back-upbestand is versleuteld met de sleutel met de bijbehorende vinger afdruk.

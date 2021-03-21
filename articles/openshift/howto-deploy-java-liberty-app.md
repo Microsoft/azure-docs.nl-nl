@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 10/30/2020
 keywords: Java, jakartaee, javaee, microprofile, open-vrijheid, WebSphere-vrijheid, Aro, openshift, Red Hat
 ms.openlocfilehash: 08fd3ab112498a983b438d5ba1f1f100816cbf5d
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102212991"
 ---
 # <a name="deploy-a-java-application-with-open-libertywebsphere-liberty-on-an-azure-red-hat-openshift-4-cluster"></a>Een Java-toepassing met open vrijheid/WebSphere vrijheid implementeren op een Azure Red Hat openshift 4-cluster

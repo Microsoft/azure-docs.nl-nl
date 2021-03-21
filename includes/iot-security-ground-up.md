@@ -9,10 +9,10 @@ ms.date: 04/24/2018
 ms.author: robinsh
 ms.custom: include file
 ms.openlocfilehash: 234407e6973657ba3ad0d78189e7cb1d363c15e2
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95561675"
 ---
 De Internet of Things (IoT) vormt unieke beveiligings-, privacy-en nalevings uitdagingen voor bedrijven wereld wijd. In tegens telling tot traditionele Cyber technologie waarbij deze problemen rond software en hoe deze worden geïmplementeerd, is IoT wat er gebeurt wanneer de Cyber en de fysieke werelden convergeren. Het beveiligen van IoT-oplossingen vereist dat beveiligde inrichting van apparaten, beveiligde connectiviteit tussen deze apparaten en de Cloud, en de beveiliging van gegevens in de Cloud wordt gewaarborgd tijdens de verwerking en opslag. Voor het werken met deze functionaliteit zijn echter apparaten die zijn beperkt tot resources, geografische distributie van implementaties en een groot aantal apparaten binnen een oplossing.

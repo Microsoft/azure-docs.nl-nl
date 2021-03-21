@@ -12,12 +12,12 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: c19f6f8c59ac38bf46999372497205e0c33ebac4
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: 3a3cdb93ee4cbf4a2e15540b9daf78b6c231d393
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102175104"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104579736"
 ---
 # <a name="configure-session-behavior-in-azure-active-directory-b2c"></a>Sessiegedrag in Azure Active Directory B2C configureren
 
@@ -81,7 +81,7 @@ U kunt het gedrag van de Azure AD B2C-sessie configureren, met inbegrip van:
   - **Tenant** : dit is de standaard instelling. Met deze instelling kunnen meerdere toepassingen en gebruikers stromen in uw B2C-Tenant dezelfde gebruikers sessie delen. Wanneer een gebruiker zich bijvoorbeeld bij een toepassing aanmeldt, kan de gebruiker zich bij het openen van de app ook probleemloos aanmelden.
   - **Toepassing** : met deze instelling kunt u een gebruikers sessie alleen voor een toepassing, onafhankelijk van andere toepassingen, onderhouden. U kunt deze instelling bijvoorbeeld gebruiken als u wilt dat de gebruiker zich aanmeldt bij Contoso apotheek, ongeacht of de gebruiker al is aangemeld bij Contoso-boodschappen.
   - **Beleid** : met deze instelling kunt u een gebruikers sessie alleen voor een gebruikers stroom onderhouden, onafhankelijk van de toepassingen die er gebruik van maken. Als de gebruiker zich al heeft aangemeld en een MFA-stap (multi-factor Authentication) heeft voltooid, kan de gebruiker toegang krijgen tot hogere beveiligings onderdelen van meerdere toepassingen, zolang de sessie die aan de gebruikers stroom is gekoppeld, niet verloopt.
-  - **Uitgeschakeld** : deze instelling zorgt ervoor dat de gebruiker tijdens elke uitvoering van het beleid de hele gebruikers stroom uitvoert.
+  - **Onderdrukt** : deze instelling zorgt ervoor dat de gebruiker tijdens elke uitvoering van het beleid de hele gebruikers stroom uitvoert.
 - **Aangemeld blijven (KMSI)** : Hiermee breidt u de levens duur van de sessie uit door het gebruik van een permanente cookie. Als deze functie is ingeschakeld en de gebruiker deze selecteert, blijft de sessie actief, zelfs nadat de gebruiker de browser heeft gesloten en opnieuw opent. De sessie wordt alleen ingetrokken wanneer de gebruiker zich afmeldt. De functie KMSI is alleen van toepassing op aanmelden met lokale accounts. De functie KMSI heeft voor rang op de levens duur van de sessie.
 
 ::: zone pivot="b2c-user-flow"
@@ -249,7 +249,7 @@ Bij een afmeldings aanvraag Azure AD B2C:
 ::: zone-end
 ::: zone pivot="b2c-custom-policy"
 3. Pogingen om u af te melden bij federatieve id-providers:
-   - OpenID Connect Connect-als het-eind punt van de ID-provider met de bekende configuratie een `end_session_endpoint` locatie aangeeft.
+   - OpenID Connect Connect-als het-eind punt van de ID-provider met de bekende configuratie een `end_session_endpoint` locatie aangeeft. De afmeldings aanvraag geeft niet de `id_token_hint` para meter door. Als deze para meter is vereist voor de federatieve id-provider, mislukt de afmeldings aanvraag.
    - OAuth2: als de [meta gegevens van de identiteits provider](oauth2-technical-profile.md#metadata) de `end_session_endpoint` locatie bevatten.
    - SAML: als de [meta gegevens van de identiteits provider](identity-provider-generic-saml.md) de `SingleLogoutService` locatie bevatten.
 4. U kunt zich optioneel afmelden bij andere toepassingen. Zie de sectie voor [eenmalige afmelding](#single-sign-out) voor meer informatie.

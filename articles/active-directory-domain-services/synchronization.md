@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 07/06/2020
 ms.author: justinha
 ms.openlocfilehash: 41ba337765b4a0a93be52f08ae6656707cf7aa73
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96618804"
 ---
 # <a name="how-objects-and-credentials-are-synchronized-in-an-azure-active-directory-domain-services-managed-domain"></a>Hoe objecten en referenties worden gesynchroniseerd in een Azure Active Directory Domain Services beheerd domein
@@ -24,7 +24,7 @@ Objecten en referenties in een door Azure Active Directory Domain Services (Azur
 
 In een hybride omgeving kunnen objecten en referenties van een on-premises AD DS domein worden gesynchroniseerd met Azure AD met behulp van Azure AD Connect. Zodra deze objecten zijn gesynchroniseerd met Azure AD, maakt de automatische achtergrond synchronisatie deze objecten en referenties beschikbaar voor toepassingen die gebruikmaken van het beheerde domein.
 
-Als on-premises AD DS en Azure AD zijn geconfigureerd voor Federated Authentication met ADFS, is er geen (huidige/geldige) wacht woord-hash beschikbaar in azure DS. Azure AD-gebruikers accounts die zijn gemaakt voordat een verificatie werd uitgevoerd, hebben mogelijk een oude wacht woord-hash, maar dit komt waarschijnlijk niet overeen met een hash van het on-premises wacht woord. Daarom kunnen Azure AD DS de gebruikers referenties niet valideren.
+Als on-premises AD DS en Azure AD zijn geconfigureerd voor federatieve verificatie met ADFS, is er geen (huidige/geldige) wachtwoord-hash beschikbaar in Azure DS. Azure AD-gebruikersaccounts die zijn gemaakt voordat federatieve verificatie werd uitgevoerd, hebben mogelijk een oude wachtwoord-hash, die waarschijnlijk niet overeenkomt met een hash van het on-premises wachtwoord. Daarom kunnen Azure AD DS de gebruikers referenties niet valideren.
 
 In het volgende diagram ziet u hoe synchronisatie werkt tussen Azure AD DS, Azure AD en een optionele on-premises AD DS omgeving:
 

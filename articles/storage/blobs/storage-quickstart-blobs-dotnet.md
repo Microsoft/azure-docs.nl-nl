@@ -9,10 +9,10 @@ ms.subservice: blobs
 ms.topic: quickstart
 ms.custom: devx-track-csharp
 ms.openlocfilehash: bb26a865ab8b8beba99fcba51e2d05e166b1e84b
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102095354"
 ---
 # <a name="quickstart-azure-blob-storage-client-library-v12-for-net"></a>Snelstartgids: Azure Blob Storage-client bibliotheek V12 voor .NET
@@ -80,7 +80,7 @@ dotnet add package Azure.Storage.Blobs
 
 Ga als volgt te werk vanuit de projectmap:
 
-1. Open het *Program.cs* -bestand in de editor.
+1. Open het bestand *Program. cs* in de editor.
 1. Verwijder de- `Console.WriteLine("Hello World!");` instructie.
 1. `using`Instructies toevoegen.
 1. Werk de `Main` methode declaratie bij om async te ondersteunen.

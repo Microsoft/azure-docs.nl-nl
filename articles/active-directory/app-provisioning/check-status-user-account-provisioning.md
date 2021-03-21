@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 09/09/2018
 ms.author: kenwith
 ms.reviewer: arvinh
-ms.openlocfilehash: e6839026c83a10a4acebd7b7a6ab55b210e7ef14
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: 5d93cec201feeb43700fe849f2fddc8eaf22488a
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99256674"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104579481"
 ---
 # <a name="tutorial-reporting-on-automatic-user-account-provisioning"></a>Zelf studie: rapportage over automatische toewijzing van gebruikers accounts
 
@@ -48,7 +48,7 @@ Hier kunt u toegang krijgen tot de voortgangs balk voor het inrichten en de inri
 
 ## <a name="provisioning-progress-bar"></a>Voortgangsbalk van het inrichten
 
-De [voortgangs balk](application-provisioning-when-will-provisioning-finish-specific-user.md#view-the-provisioning-progress-bar) voor het inrichten wordt weer gegeven op het tabblad **inrichten** voor de opgegeven toepassing. Deze bevindt zich in de **huidige status** sectie onder **instellingen** en toont de status van de huidige initiële of incrementele cyclus. In deze sectie ziet u ook:
+De [voortgangs balk](application-provisioning-when-will-provisioning-finish-specific-user.md#view-the-provisioning-progress-bar) voor het inrichten wordt weer gegeven op het tabblad **inrichten** voor een bepaalde toepassing. Deze bevindt zich in de **huidige status** sectie en toont de status van de huidige initiële of incrementele cyclus. In deze sectie ziet u ook:
 
 * Het totale aantal gebruikers en/of groepen dat is gesynchroniseerd en zich momenteel in het bereik bevindt voor de inrichting van het bron systeem en het doel systeem.
 * De laatste keer dat de synchronisatie is uitgevoerd. Synchronisaties worden meestal om de 20-40 minuten uitgevoerd nadat een [eerste cyclus](../app-provisioning/how-provisioning-works.md#provisioning-cycles-initial-and-incremental) is voltooid.

@@ -9,10 +9,10 @@ ms.author: asabbour
 keywords: Aro, open Shift, AZ Aro, Red Hat, cli
 ms.custom: mvc, devx-track-azurecli
 ms.openlocfilehash: eda45b1a1a011a646915cf45e45218ae168a2af6
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102213076"
 ---
 # <a name="configure-azure-active-directory-authentication-for-an-azure-red-hat-openshift-4-cluster-portal"></a>Azure Active Directory authenticatie configureren voor een Azure Red Hat open Shift 4-cluster (Portal)

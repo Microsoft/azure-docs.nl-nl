@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 02/03/2021
 ms.author: tisande
 ms.custom: query-reference
-ms.openlocfilehash: b48237b5a7eb836c495612758eeb9eaa45029b26
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: 12ce8beab082674cd7672713325d4b3f4322aeae
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99526582"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104587301"
 ---
 # <a name="getcurrentdatetime-azure-cosmos-db"></a>GetCurrentDateTime (Azure Cosmos DB)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -28,19 +28,19 @@ GetCurrentDateTime ()
 
 ## <a name="return-types"></a>Retour typen
   
-  Retourneert de huidige UTC-datum en-8601 tijd in de notatie `YYYY-MM-DDThh:mm:ss.fffffffZ` waar:
+Retourneert de huidige UTC-datum en-8601 tijd in de notatie `YYYY-MM-DDThh:mm:ss.fffffffZ` waar:
   
-  |Indeling|Beschrijving|
-  |-|-|
-  |DD|jaar met vier cijfers|
-  |MM|maand van twee cijfers (01 = januari, etc.)|
-  |AFSCHRIJVING|2-cijferige dag van de maand (01 tot en met 31)|
-  |T|de aanzienlijke voor het begin van de tijd elementen|
-  |hh|twee cijfers per uur (00 tot en met 23)|
-  |mm|twee cijfers minuten (00 tot en met 59)|
-  |ss|seconden van twee cijfers (00 tot en met 59)|
-  |.fffffff|aantal seconden van zeven cijfers|
-  |Z|UTC (Coordinated Universal Time)||
+|Indeling|Beschrijving|
+|-|-|
+|DD|jaar met vier cijfers|
+|MM|maand van twee cijfers (01 = januari, etc.)|
+|AFSCHRIJVING|2-cijferige dag van de maand (01 tot en met 31)|
+|T|de aanzienlijke voor het begin van de tijd elementen|
+|hh|twee cijfers per uur (00 tot en met 23)|
+|mm|twee cijfers minuten (00 tot en met 59)|
+|ss|seconden van twee cijfers (00 tot en met 59)|
+|.fffffff|aantal seconden van zeven cijfers|
+|Z|UTC (Coordinated Universal Time)|
   
   Zie [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) voor meer informatie over de ISO 8601-indeling.
 

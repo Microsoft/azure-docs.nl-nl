@@ -4,10 +4,10 @@ description: Lees hier meer over het verzamelen en analyseren van gegevens voor 
 ms.topic: tutorial
 ms.date: 09/23/2020
 ms.openlocfilehash: 409ad0976e02e42e385e22a103cfc06af5a4f3f4
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100587694"
 ---
 # <a name="tutorial-monitor-a-hybrid-machine-with-azure-monitor-for-vms"></a>Zelfstudie: Een hybride machine bewaken met Azure Monitor voor VM's

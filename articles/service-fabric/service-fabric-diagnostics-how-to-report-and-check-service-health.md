@@ -7,10 +7,10 @@ ms.date: 02/25/2019
 ms.author: srrengar
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 59c8202b03bf1be2be5a68b75a1d7c7404b2213d
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95998240"
 ---
 # <a name="report-and-check-service-health"></a>Servicestatus rapporteren en controleren
@@ -57,10 +57,10 @@ U moet het volgende hebben geïnstalleerd:
 De Service Fabric project sjablonen in Visual Studio bevatten voorbeeld code. De volgende stappen laten zien hoe u aangepaste status gebeurtenissen vanuit uw service code kunt rapporteren. Dergelijke rapporten worden automatisch weer gegeven in de standaard hulpprogramma's voor status controle die Service Fabric biedt, zoals Service Fabric Explorer, Azure Portal status weergave en Power shell.
 
 1. Open de toepassing die u eerder hebt gemaakt in Visual Studio of maak een nieuwe toepassing met behulp van de **stateful service** Visual Studio-sjabloon.
-1. Open het Stateful1.cs-bestand en zoek de `myDictionary.TryGetValueAsync` aanroep in de- `RunAsync` methode. U kunt zien dat deze methode retourneert `result` dat de huidige waarde van de teller bevat, omdat de sleutel logica in deze toepassing een telling moet blijven uitvoeren. Als deze toepassing een echte toepassing is, en als het ontbreken van het resultaat een fout veroorzaakt, wilt u die gebeurtenis markeren.
+1. Open het bestand Stateful1. cs en zoek de `myDictionary.TryGetValueAsync` aanroep in de- `RunAsync` methode. U kunt zien dat deze methode retourneert `result` dat de huidige waarde van de teller bevat, omdat de sleutel logica in deze toepassing een telling moet blijven uitvoeren. Als deze toepassing een echte toepassing is, en als het ontbreken van het resultaat een fout veroorzaakt, wilt u die gebeurtenis markeren.
 1. Als u een status gebeurtenis wilt rapporteren wanneer het ontbrekende resultaat een fout vertegenwoordigt, voegt u de volgende stappen toe.
    
-    a. Voeg de `System.Fabric.Health` naam ruimte toe aan het Stateful1.CS-bestand.
+    a. Voeg de `System.Fabric.Health` naam ruimte toe aan het bestand Stateful1. cs.
    
     ```csharp
     using System.Fabric.Health;

@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 03/12/2021
 ms.author: duau
-ms.openlocfilehash: 417a6a55f0114ec35554e598b456f4fb67eb1c1b
-ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
+ms.openlocfilehash: da293f15ba070fc9a00ad37defd6a76175ded2f2
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103574455"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104587276"
 ---
 # <a name="expressroute-faq"></a>Veelgestelde vragen ExpressRoute
 
@@ -204,7 +204,7 @@ Als uw service provider ExpressRoute op beide sites biedt, kunt u samen werken m
 
 Ja. U kunt meerdere ExpressRoute-circuits met dezelfde of verschillende service providers hebben. Als de metro meerdere ExpressRoute-peering locaties heeft en de circuits op verschillende peering-locaties worden gemaakt, kunt u deze koppelen aan hetzelfde virtuele netwerk. Als de circuits op dezelfde peering-locatie worden gemaakt, kunt u Maxi maal vier circuits koppelen aan hetzelfde virtuele netwerk.
 
-### <a name="how-do-i-connect-my-virtual-networks-to-an-expressroute-circuit"></a>Hoe kan ik mijn virtuele netwerken met een ExpressRoute-circuit verbinden
+### <a name="how-do-i-connect-my-virtual-networks-to-an-expressroute-circuit"></a>Hoe kan ik mijn virtuele netwerken met een ExpressRoute-circuit verbinden?
 
 De basis stappen zijn:
 
@@ -298,6 +298,15 @@ U moet ook uw connectiviteits provider opvolgen om ervoor te zorgen dat ze de ve
 ### <a name="how-do-i-change-the-bandwidth-of-an-expressroute-circuit"></a>Hoe kan ik de band breedte van een ExpressRoute-circuit wijzigen?
 
 U kunt de band breedte van het ExpressRoute-circuit bijwerken met behulp van de REST API-of Power shell-cmdlet.
+
+### <a name="i-received-a-notification-about-maintenance-on-my-expressroute-circuit-what-is-the-technical-impact-of-this-maintenance"></a>Ik heb een melding ontvangen over onderhoud op mijn ExpressRoute-circuit. Wat is de technische impact van dit onderhoud?
+
+Als u uw circuit in de [modus actief-actief gebruikt,](https://docs.microsoft.com/azure/expressroute/designing-for-high-availability-with-expressroute#active-active-connections)moet u Mini maal profiteren van het gemak. We voeren onderhoud uit op de primaire en secundaire verbindingen van uw circuit afzonderlijk. Gepland onderhoud wordt doorgaans buiten kantoor uren uitgevoerd in de tijd zone van de locatie van de peering en u kunt geen onderhouds tijd selecteren.
+
+### <a name="i-received-a-notification-about-a-software-upgrade-or-maintenance-on-my-expressroute-gateway-what-is-the-technical-impact-of-this-maintenance"></a>Ik heb een melding ontvangen over een software-upgrade of onderhoud op mijn ExpressRoute-gateway. Wat is de technische impact van dit onderhoud?
+
+U moet mini maal profiteren van een software-upgrade of het onderhoud van uw gateway. De ExpressRoute-gateway bestaat uit meerdere instanties en tijdens upgrades worden instanties een voor een tegelijk offline genomen. Dit kan ertoe leiden dat uw gateway de onderlaagde netwerk doorvoer tijdelijk ondersteunt naar het virtuele netwerk. de gateway zelf heeft geen uitval tijd.
+
 
 ## <a name="expressroute-premium"></a>ExpressRoute Premium
 

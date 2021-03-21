@@ -13,10 +13,10 @@ ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
 ms.openlocfilehash: 226e94510709b37a7e6b1aae90a7e0ec5b4222b9
-ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103199582"
 ---
 # <a name="use-microsoft-authenticator-or-intune-company-portal-on-xamarin-applications"></a>Microsoft Authenticator of Intune-bedrijfsportal gebruiken in Xamarin-toepassingen
@@ -65,7 +65,7 @@ Zie [toegang tot sleutel hanger inschakelen](msal-net-xamarin-ios-considerations
 
 ### <a name="step-3-update-appdelegate-to-handle-the-callback"></a>Stap 3: AppDelegate bijwerken voor het afhandelen van de call back
 
-Wanneer MSAL.NET de Broker aanroept, wordt de Broker teruggebeld naar uw toepassing via de `OpenUrl` methode van de- `AppDelegate` klasse. Omdat MSAL wacht op het antwoord van de Broker, moet uw toepassing samen werken om MSAL.NET terug aan te roepen. Als u deze samen werking wilt inschakelen, werkt u het *AppDelegate.cs* -bestand bij om de volgende methode te overschrijven.
+Wanneer MSAL.NET de Broker aanroept, wordt de Broker teruggebeld naar uw toepassing via de `OpenUrl` methode van de- `AppDelegate` klasse. Omdat MSAL wacht op het antwoord van de Broker, moet uw toepassing samen werken om MSAL.NET terug aan te roepen. Als u deze samen werking wilt inschakelen, werkt u het bestand *AppDelegate. cs* bij om de volgende methode te overschrijven.
 
 ```csharp
 public override bool OpenUrl(UIApplication app, NSUrl url,
@@ -91,23 +91,23 @@ Deze methode wordt aangeroepen telkens wanneer de toepassing wordt gestart. Het 
 
 ### <a name="step-4-set-uiviewcontroller"></a>Stap 4: set UIViewController ()
 
-Stel in het *AppDelegate.cs* -bestand nog steeds een object venster in. Normaal gesp roken hoeft u het object venster niet in te stellen voor Xamarin iOS, maar u hebt wel een object venster nodig voor het verzenden en ontvangen van antwoorden van de Broker.
+Stel nog steeds in het bestand *AppDelegate. cs* een object venster in. Normaal gesp roken hoeft u het object venster niet in te stellen voor Xamarin iOS, maar u hebt wel een object venster nodig voor het verzenden en ontvangen van antwoorden van de Broker.
 
 Het object venster instellen:
 
-1. Stel in het bestand *AppDelegate.cs* in `App.RootViewController` op een nieuw `UIViewController()` . Deze toewijzing zorgt ervoor dat de aanroep naar de Broker bevat `UIViewController` . Als deze instelling onjuist is toegewezen, kan deze fout optreden:
+1. Stel in het bestand *AppDelegate. cs* in `App.RootViewController` op een nieuw `UIViewController()` . Deze toewijzing zorgt ervoor dat de aanroep naar de Broker bevat `UIViewController` . Als deze instelling onjuist is toegewezen, kan deze fout optreden:
 
       `"uiviewcontroller_required_for_ios_broker":"UIViewController is null, so MSAL.NET cannot invoke the iOS broker. See https://aka.ms/msal-net-ios-broker"`
 
 1. `AcquireTokenInteractive`Gebruik `.WithParentActivityOrWindow(App.RootViewController)` en klik vervolgens in de verwijzing naar het object venster dat u wilt gebruiken.
 
-    In *app.cs*:
+    In *app. cs*:
 
     ```csharp
        public static object RootViewController { get; set; }
     ```
 
-    In *AppDelegate.cs*:
+    In *AppDelegate. cs*:
 
     ```csharp
        LoadApplication(new App());

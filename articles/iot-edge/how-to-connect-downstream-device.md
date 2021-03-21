@@ -13,10 +13,10 @@ ms.custom:
 - mqtt
 - devx-track-js
 ms.openlocfilehash: dc2d2d3e92435c7a028b43a095f456c2c383ecb4
-ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103199621"
 ---
 # <a name="connect-a-downstream-device-to-an-azure-iot-edge-gateway"></a>Een downstreamapparaat verbinden met een Azure IoT Edge-gateway
@@ -171,7 +171,7 @@ In deze sectie wordt een voorbeeld toepassing geïntroduceerd om een Azure IoT .
 3. Werk de **DEVICE_CONNECTION_STRING** en de **CA_CERTIFICATE_PATH** variabelen bij in de **Eigenschappen/launchSettings.jsin** het bestand. Als u het certificaat wilt gebruiken dat is geïnstalleerd in het vertrouwde certificaat archief op het hostsysteem, laat u deze variabele leeg.
 4. Raadpleeg de SDK-documentatie voor instructies over het uitvoeren van het voor beeld op het apparaat.
 
-Raadpleeg de functie **InstallCACert ()** in het **EdgeDownstreamDevice/Program.cs-** bestand om programmatisch een vertrouwd certificaat in het certificaat archief te installeren via een .NET-toepassing. Deze bewerking is idempotent. kan daarom meerdere keren worden uitgevoerd met dezelfde waarden zonder extra effect.
+Als u via een .NET-toepassing een vertrouwd certificaat in het certificaat archief wilt installeren, raadpleegt u de functie **InstallCACert ()** in het bestand **EdgeDownstreamDevice/Program. cs** . Deze bewerking is idempotent. kan daarom meerdere keren worden uitgevoerd met dezelfde waarden zonder extra effect.
 
 ### <a name="c"></a>C
 

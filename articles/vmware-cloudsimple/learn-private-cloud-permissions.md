@@ -9,10 +9,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 1c8cfeda008955006f2fbad1df58c8047bd36541
-ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97898042"
 ---
 # <a name="cloudsimple-private-cloud-permission-model-of-vmware-vcenter"></a>CloudSimple Private Cloud permission model van VMware vCenter
@@ -54,7 +54,7 @@ Als u afzonderlijke gebruikers machtigingen wilt verlenen voor het beheren van d
 | **Waarschuwingen** | Waarschuwing bevestigen <br> Alarm maken <br> Waarschuwings actie uitschakelen <br> Waarschuwing wijzigen <br> Waarschuwing verwijderen <br> Waarschuwings status instellen |
 | **Machtigingen** | Machtiging wijzigen |
 | **Inhoudsbibliotheek** | Bibliotheek item toevoegen <br> Lokale bibliotheek maken <br> Geabonneerde bibliotheek maken <br> Bibliotheek item verwijderen <br> Lokale bibliotheek verwijderen <br> Geabonneerde bibliotheek verwijderen <br> Bestanden downloaden <br> Bibliotheek item verwijderen <br> Geabonneerde bibliotheek verwijderen <br> Opslag importeren <br> Abonnements gegevens testen <br> Opslag lezen <br> Bibliotheek item synchroniseren <br> Geabonneerde bibliotheek synchroniseren <br> Type introspectie <br> Configuratie-instellingen bijwerken <br> Update bestanden <br> Bibliotheek bijwerken <br> Bibliotheek item bijwerken <br> Lokale bibliotheek bijwerken <br> Geabonneerde bibliotheek bijwerken <br> Configuratie-instellingen weer geven |
-| **Cryptografische bewerkingen** | Schijf toevoegen <br> Klonen <br> Ontsleutelen <br> Directe toegang <br> Versleutelen <br> Nieuwe versleutelen <br> KMS beheren <br> Versleutelings beleid beheren <br> Sleutels beheren <br> Migreren <br> Hercryptografie <br> VM registreren <br> Host registreren |
+| **Cryptografische bewerkingen** | Schijf toevoegen <br> Klonen <br> Ontsleutelen <br> Directe toegang <br> Versleutelen <br> Nieuwe versleutelen <br> KMS beheren <br> Versleutelings beleid beheren <br> Sleutels beheren <br> Migrate <br> Hercryptografie <br> VM registreren <br> Host registreren |
 | **dvPort-groep** | Maken <br> Verwijderen <br> Wijzigen <br> Beleids bewerking <br> Bereik bewerking |
 | **Gegevensarchief** | Ruimte toewijzen <br> Door gegevensarchief bladeren <br> Gegevens opslag configureren <br> Bestands bewerkingen op laag niveau <br> Gegevens opslag verplaatsen <br> Gegevens opslag verwijderen <br> Bestand verwijderen <br> Naam gegevens opslag wijzigen <br> Bestanden van de virtuele machine bijwerken <br> Meta gegevens van de virtuele machine bijwerken |
 | **ESX-agent beheer** | Configureren <br> Wijzigen <br> Weergave |
@@ -76,7 +76,7 @@ Als u afzonderlijke gebruikers machtigingen wilt verlenen voor het beheren van d
 | **Op profielen gebaseerde opslag** | Update voor profiel gerichte opslag <br> Beschik bare opslag weergave voor profielen |
 | **Opslag weergaven** | Service configureren <br> Weergave |
 | **Taken** | Taak maken <br> Taak bijwerken |
-| **Service overdragen**| Beheren <br> Controleren |
+| **Service overdragen**| Beheren <br> Monitor |
 | **vApp** | Virtuele machine toevoegen <br> Resource groep toewijzen <br> VApp toewijzen <br> Klonen <br> Maken <br> Verwijderen <br> Exporteren <br> Importeren <br> Verplaatsen <br> Uitschakelen <br> Inschakelen <br> Naam wijzigen <br> Onderbreken <br> Registratie ongedaan maken <br> OVF-omgeving weer geven <br> configuratie van vApp-toepassing <br> configuratie van vApp-exemplaar <br> configuratie van vApp managedBy <br> vApp-resource configuratie |
 | **VRMPolicy** | Query VRMPolicy <br> VRMPolicy bijwerken |
 | **Configuratie van virtuele-machine >** | Bestaande schijf toevoegen <br> Nieuwe schijf toevoegen <br> Apparaat toevoegen of verwijderen <br> Geavanceerd <br> CPU-aantal wijzigen <br> Resource wijzigen <br> ManagedBy configureren <br> Bijhouden van schijf wijzigingen <br> Lease van schijf <br> Verbindings instellingen weer geven <br> Virtuele schijf uitbreiden <br> Host-USB-apparaat <br> Geheugen <br> Apparaatinstellingen wijzigen <br> Compatibiliteit van query fout tolerantie <br> Niet-eigendoms bestanden opvragen <br> Onbewerkt apparaat <br> Opnieuw laden vanaf pad <br> Schijf verwijderen <br> Naam wijzigen <br> Gast gegevens opnieuw instellen <br> Aantekening instellen <br> Instellingen <br> Swapfile-plaatsing <br> Bovenliggende Fork in-/uitschakelen <br> Virtuele machine ontgrendelen <br> Compatibiliteit van virtuele machines bijwerken |

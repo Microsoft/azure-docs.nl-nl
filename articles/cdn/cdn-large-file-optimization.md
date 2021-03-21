@@ -15,10 +15,10 @@ ms.topic: how-to
 ms.date: 05/01/2018
 ms.author: allensu
 ms.openlocfilehash: ed5768e89482d32bb140e9ba7064de2d20809892
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96020718"
 ---
 # <a name="large-file-download-optimization-with-azure-cdn"></a>Optimalisatie van grote bestanden downloaden met Azure CDN
@@ -122,7 +122,7 @@ Wanneer er een time-out optreedt voor een verbinding, probeert het CDN een aanta
 
 De volgende tabel geeft een lijst van criteria waaraan moet worden voldaan voor grote bestands optimalisatie:
 
-Conditie | Waarden 
+Voorwaarde | Waarden 
 --- | --- 
 Ondersteunde bestands typen | 3g2, 3GP, ASF, AVI, bz2, dmg, exe, F4V, FLV, <br> gz, HDP, ISO, jxr, M4V, MKV, MOV, MP4, <br> MPEG, MPG, MTS, pak, Qt, RM, SWF, tar, <br> tgz, WDP, WEBM, webp, WMA, WMV, zip  
 Minimale bestands grootte | 10 MB 

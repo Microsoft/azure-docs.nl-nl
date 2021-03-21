@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3766db0d5070f15216ac612353e2c25737ad092a
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96741623"
 ---
 # <a name="customize-the-user-experience-for-azure-active-directory-self-service-password-reset"></a>De gebruikers ervaring voor Azure Active Directory self-service voor wachtwoord herstel aanpassen
@@ -57,7 +57,7 @@ Zie [beheerders rollen toewijzen in azure Active Directory](../roles/permissions
 Als uw organisatie geen beheerders wil waarschuwen over aanvragen voor het opnieuw instellen van wacht woorden, kunnen de volgende configuratie opties worden gebruikt:
 
 * De Help Desk aanpassen om een web-URL of mailto:-adres op te geven dat gebruikers kunnen gebruiken om hulp te krijgen. Deze optie wordt onder **wacht woord opnieuw instellen**  >  **aanpassen**  >  **aangepaste Help Desk e-mail of URL**.
-* Schakel selfservice voor wacht woord opnieuw instellen voor alle gebruikers in. Deze optie bevindt zich onder instellingen voor **wacht woord opnieuw instellen**  >  **Properties**. Als u niet wilt dat gebruikers hun eigen wacht woord opnieuw instellen, kunt u de toegang tot een lege groep bereiken. *Deze optie wordt niet aanbevolen.*
+* Schakel selfservice voor wacht woord opnieuw instellen voor alle gebruikers in. Deze optie bevindt zich onder instellingen voor **wacht woord opnieuw instellen**  >  . Als u niet wilt dat gebruikers hun eigen wacht woord opnieuw instellen, kunt u de toegang tot een lege groep bereiken. *Deze optie wordt niet aanbevolen.*
 
 ## <a name="customize-the-sign-in-page-and-access-panel"></a>De aanmeldings pagina en het toegangs venster aanpassen
 

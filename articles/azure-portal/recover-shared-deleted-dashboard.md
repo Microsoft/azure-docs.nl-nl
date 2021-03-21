@@ -4,10 +4,10 @@ description: Als u een gepubliceerd dash board in de Azure Portal verwijdert, ku
 ms.date: 01/21/2020
 ms.topic: troubleshooting
 ms.openlocfilehash: 095964691a3cb22f8a805af2e8fe37af4c47cb28
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96745618"
 ---
 # <a name="recover-a-deleted-dashboard-in-the-azure-portal"></a>Een verwijderd dashboard in de Azure-portal herstellen

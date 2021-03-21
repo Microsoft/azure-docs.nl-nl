@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 10/18/2018
 ms.author: terrylan
 ms.openlocfilehash: e298cb0d1a2c510a096f8ead03f8af7e39c206a8
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96498928"
 ---
 # <a name="azure-ddos-protection---designing-resilient-solutions"></a>Azure DDoS Protection-flexibele oplossingen ontwerpen
@@ -97,7 +97,7 @@ DDoS Protection Standard maakt voor de duur van een DDoS-aanval uitgebreide tele
 
 ##### <a name="ddos-mitigation-policies"></a>DDoS-beperkings beleid
 
-Selecteer in de Azure Portal **Monitor**  >  **metrische gegevens** controleren. Selecteer de resource groep in het deel venster **metrische gegevens** , selecteer een resource type voor het **open bare IP-adres** en selecteer uw open bare Azure IP-adres. DDoS-metrische gegevens worden weer gegeven in het deel venster **beschik bare metrische gegevens** .
+Selecteer in de Azure Portal   >  **metrische gegevens** controleren. Selecteer de resource groep in het deel venster **metrische gegevens** , selecteer een resource type voor het **open bare IP-adres** en selecteer uw open bare Azure IP-adres. DDoS-metrische gegevens worden weer gegeven in het deel venster **beschik bare metrische gegevens** .
 
 DDoS Protection Standard geldt voor elk openbaar IP-adres van de beveiligde bron, in het virtuele netwerk waarop DDoS is ingeschakeld, drie opties voor het beperken van de oplossing (TCP SYN, TCP en UDP). U kunt de drempel waarden voor het beleid weer geven door de metrische **inkomende pakketten te selecteren om de DDoS-beperking te activeren**.
 
@@ -135,13 +135,13 @@ Het is een goed idee om uw hypo Thesen te testen op de manier waarop uw services
 
 We hebben een partnerschap gemaakt met [BreakingPoint Cloud](https://www.ixiacom.com/products/breakingpoint-cloud) voor het bouwen van een interface waar Azure-klanten verkeer kunnen genereren voor open bare eind punten met DDoS Protection voor simulaties. U kunt de [BreakingPoint-Cloud](https://www.ixiacom.com/products/breakingpoint-cloud) simulatie gebruiken voor het volgende:
 
-- Valideer hoe Azure DDoS Protection uw Azure-resources helpt beschermen tegen DDoS-aanvallen.
+- Valideren hoe Azure DDoS Protection uw Azure-resources kan beschermen tegen DDoS-aanvallen.
 
-- Optimaliseer uw incidenten respons proces tijdens DDoS-aanval.
+- Uw proces van incidentreacties optimaliseren tijdens een DDoS-aanval.
 
-- Conformiteit van document DDoS.
+- Naleving van DDoS documenteren.
 
-- Train uw netwerk beveiligings teams.
+- Uw netwerkbeveiligingsteams trainen.
 
 Cyber beveiliging vereist een constante innovatie in verdediging. De Azure DDoS Standard-beveiliging is een geavanceerde oplossing met een doel toepassing om steeds complexe DDoS-aanvallen te beperken.
 
@@ -189,7 +189,7 @@ Azure DDoS Protection Standard identificeert en vermindert DDoS-aanvallen zonder
 
   De DDoS Protection-service start alleen de oplossing als het metrische waarde- **beleid om DDoS-beperking te activeren (TCP/TCP SYN/UDP)** lager is dan het verkeer dat is ontvangen op de beveiligde open bare IP-resource.
 
-- U bent bezig met het plannen van een evenement waardoor uw netwerk verkeer aanzienlijk wordt verbeterd.
+- U bent bezig met het plannen van een viraal evenement waardoor uw netwerkverkeer aanzienlijk wordt verhoogd.
 
 - Een actor heeft zich dreigen een DDoS-aanval voor uw resources te starten.
 

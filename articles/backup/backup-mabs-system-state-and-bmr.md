@@ -4,10 +4,10 @@ description: Gebruik Azure Backup Server om een back-up te maken van uw systeem 
 ms.topic: conceptual
 ms.date: 05/15/2017
 ms.openlocfilehash: c5096158ca0e76ca03577347d8dd3e1419a33ca0
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96021619"
 ---
 # <a name="back-up-system-state-and-restore-to-bare-metal-by-using-azure-backup-server"></a>Maak een back-up van de systeem status en herstel op bare-metal computers met behulp van Azure Backup Server
@@ -233,7 +233,7 @@ Herstel uitvoeren op de back-upserver:
 
 Windows Server Back-up uitvoeren:
 
-1. Selecteer **acties**  >  **Recover**  >  **deze server** herstellen  >  **volgende**.
+1. Selecteer **acties**  >    >  **deze server** herstellen  >  **volgende**.
 
 1. Selecteer **een andere server**, selecteer de pagina **type locatie opgeven** en selecteer vervolgens **externe gedeelde map**. Geef het pad op naar de map die het herstel punt bevat.
 

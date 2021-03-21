@@ -8,14 +8,14 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 02/08/2021
+ms.date: 03/17/2021
 ms.author: kenwith
-ms.openlocfilehash: 100f66d6217533ff6eba7881f938e877b98c735e
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: 738b89ee9347a25e2d24369a48e966f0bec6daf0
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100091105"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104579464"
 ---
 # <a name="tutorial---customize-user-provisioning-attribute-mappings-for-saas-applications-in-azure-active-directory"></a>Zelfstudie - Kenmerktoewijzingen voor het inrichten van gebruikers aanpassen voor SaaS-toepassingen in Azure Active Directory
 
@@ -113,13 +113,13 @@ Enkele voorbeelden van toepassingen en systemen die ondersteuning bieden voor aa
 - ServiceNow
 - Workday naar Active Directory / Workday naar Azure Active Directory
 - SuccessFactors naar Active Directory / SuccessFactors naar Azure Active Directory
-- Azure Active Directory ([standaardkenmerken van Azure AD Graph API](/previous-versions/azure/ad/graph/api/entity-and-complex-type-reference#user-entity) en aangepaste directory-extensies worden ondersteund)
+- Azure Active Directory ([standaard kenmerken van Azure AD Graph API](/previous-versions/azure/ad/graph/api/entity-and-complex-type-reference#user-entity) en aangepaste Directory-extensies worden ondersteund). Meer informatie over [het maken van extensies](https://docs.microsoft.com/azure/active-directory/app-provisioning/user-provisioning-sync-attributes-for-mapping#create-an-extension-attribute-on-a-cloud-only-user) en [bekende beperkingen](https://docs.microsoft.com/azure/active-directory/app-provisioning/known-issues). 
 - Apps die ondersteuning bieden voor [SCIM 2.0](https://tools.ietf.org/html/rfc7643)
 - Voor write-back van Azure Active Directory naar Workday of SuccessFactors wordt dit ondersteund om relevante metagegevens bij te werken voor ondersteunde kenmerken (XPATH en JSONPath). Aanpassing van de lijst met kenmerken wordt echter niet ondersteund voor het toevoegen van nieuwe kenmerken van Workday of SuccessFactors, afgezien van de kenmerken die zijn opgenomen in het standaardschema
 
 
 > [!NOTE]
-> Het bewerken van de lijst met ondersteunde kenmerken wordt alleen aanbevolen voor beheerders die het schema van hun toepassingen en systemen hebben aangepast, en die weten hoe hun aangepaste kenmerken zijn gedefinieerd. Hiervoor kan het nodig zijn om ervaring te hebben met de API's en ontwikkeltools van een toepassing of systeem. De mogelijkheid om de lijst met ondersteunde kenmerken te bewerken is standaard vergrendeld, maar klanten kunnen deze mogelijkheid inschakelen door naar de volgende URL te gaan: https://portal.azure.com/?Microsoft_AAD_IAM_forceSchemaEditorEnabled=true. U kunt vervolgens naar uw toepassing navigeren om de kenmerkenlijst weer te geven, zoals [hierboven](#editing-the-list-of-supported-attributes) wordt beschreven. 
+> Het bewerken van de lijst met ondersteunde kenmerken wordt alleen aanbevolen voor beheerders die het schema van hun toepassingen en systemen hebben aangepast, en die over de eerste kennis beschikken over de manier waarop hun aangepaste kenmerken zijn gedefinieerd, of als een bron kenmerk niet automatisch wordt weer gegeven in de gebruikers interface van Azure Portal. Hiervoor kan het nodig zijn om ervaring te hebben met de API's en ontwikkeltools van een toepassing of systeem. De mogelijkheid om de lijst met ondersteunde kenmerken te bewerken is standaard vergrendeld, maar klanten kunnen deze mogelijkheid inschakelen door naar de volgende URL te gaan: https://portal.azure.com/?Microsoft_AAD_IAM_forceSchemaEditorEnabled=true. U kunt vervolgens naar uw toepassing navigeren om de kenmerkenlijst weer te geven, zoals [hierboven](#editing-the-list-of-supported-attributes) wordt beschreven. 
 
 Bij het bewerken van de lijst met ondersteunde kenmerken zijn de volgende eigenschappen beschikbaar:
 

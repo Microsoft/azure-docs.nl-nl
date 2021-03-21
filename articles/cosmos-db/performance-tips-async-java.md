@@ -10,10 +10,10 @@ ms.date: 05/11/2020
 ms.author: anfeldma
 ms.custom: devx-track-java, contperf-fy21q2
 ms.openlocfilehash: bd009ae4909c8cb016a31323294df3a359eb7c51
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97033660"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-async-java-sdk-v2"></a>Tips voor betere prestaties voor Azure Cosmos DB async Java SDK v2
@@ -64,7 +64,7 @@ Als u daarom vraagt hoe u de prestaties van mijn Data Base kunt verbeteren? Houd
     DocumentClient client = new DocumentClient(HOST, MASTER_KEY, connectionPolicy, null);
 ```
 
-* **Termijnen-clients in dezelfde Azure-regio voor prestaties**
+* **Plaats clients in dezelfde Azure-regio voor betere prestaties**
 
   Als dat mogelijk is, plaatst u toepassingen die Azure Cosmos DB aanroepen, in dezelfde regio als de Azure Cosmos-data base. Voor een benadering van een vergelijking worden de aanroepen naar Azure Cosmos DB binnen dezelfde regio binnen 1-2 MS uitgevoerd, maar de latentie tussen de West-en Oost kust van de Verenigde Staten is >50 MS. Deze latentie kan waarschijnlijk variëren van aanvraag om aan te vragen, afhankelijk van de route die door de aanvraag wordt door gegeven aan de limiet van de client naar de grens van het Azure-Data Center. De laagst mogelijke latentie wordt bereikt door ervoor te zorgen dat de aanroepende toepassing zich in dezelfde Azure-regio bevindt als het ingerichte Azure Cosmos DB-eind punt. Zie [Azure-regio's](https://azure.microsoft.com/regions/#services)voor een lijst met beschik bare regio's.
 
@@ -86,17 +86,17 @@ Als u daarom vraagt hoe u de prestaties van mijn Data Base kunt verbeteren? Houd
 
   In de Azure Cosmos DB async-SDK v2 is de optie directe modus de beste keuze om de database prestaties te verbeteren met de meeste werk belastingen. 
 
-  * ***Overzicht van de directe modus** _
+  * ***Overzicht van directe modus***
 
   :::image type="content" source="./media/performance-tips-async-java/rntbdtransportclient.png" alt-text="Afbeelding van de architectuur van de directe modus" border="false":::
   
-  De architectuur aan de client zijde die in directe modus wordt gebruikt, maakt voorspel bare netwerk gebruik en multiplex toegang tot Azure Cosmos DB replica's mogelijk. In het bovenstaande diagram ziet u hoe directe modus client aanvragen naar replica's in de Cosmos DB back-end stuurt. De architectuur van de directe modus wijst Maxi maal 10 _ *kanalen** toe aan de client zijde per database replica. Een kanaal is een TCP-verbinding voorafgegaan door een aanvraag buffer, die 30 aanvragen diep is. De kanalen die deel uitmaken van een replica, worden dynamisch toegewezen naar behoefte aan het **service-eind punt** van de replica. Wanneer de gebruiker een aanvraag uitgeeft in de directe modus, stuurt de **TransportClient** de aanvraag naar het juiste service-eind punt op basis van de partitie sleutel. De **aanvraag wachtrij** buffers aanvragen vóór het service-eind punt.
+  De architectuur aan de client zijde die in directe modus wordt gebruikt, maakt voorspel bare netwerk gebruik en multiplex toegang tot Azure Cosmos DB replica's mogelijk. In het bovenstaande diagram ziet u hoe directe modus client aanvragen naar replica's in de Cosmos DB back-end stuurt. De architectuur van de directe modus wijst Maxi maal 10 **kanalen** aan de client zijde per database replica toe. Een kanaal is een TCP-verbinding voorafgegaan door een aanvraag buffer, die 30 aanvragen diep is. De kanalen die deel uitmaken van een replica, worden dynamisch toegewezen naar behoefte aan het **service-eind punt** van de replica. Wanneer de gebruiker een aanvraag uitgeeft in de directe modus, stuurt de **TransportClient** de aanvraag naar het juiste service-eind punt op basis van de partitie sleutel. De **aanvraag wachtrij** buffers aanvragen vóór het service-eind punt.
 
-  * ***Connection Policy-configuratie opties voor directe modus** _
+  * ***Configuratie opties voor Connection Policy voor directe modus***
 
     Als eerste stap gebruikt u de volgende aanbevolen configuratie-instellingen hieronder. Neem contact op met het [Azure Cosmos DB team](mailto:CosmosDBPerformanceSupport@service.microsoft.com) als u problemen ondervindt in dit onderwerp.
 
-    Als u Azure Cosmos DB gebruikt als referentie database (dat wil zeggen, de data base wordt gebruikt voor veel lees bewerkingen op punten en weinig schrijf bewerkingen), kan het acceptabel zijn om _idleEndpointTimeout * in te stellen op 0 (dat wil zeggen, geen time-out).
+    Als u Azure Cosmos DB gebruikt als referentie database (dat wil zeggen, de data base wordt gebruikt voor veel lees bewerkingen op punten en weinig schrijf bewerkingen), kan het acceptabel zijn om *idleEndpointTimeout* in te stellen op 0 (dat wil zeggen, geen time-out).
 
 
     | Configuratie optie       | Standaard    |
@@ -115,13 +115,13 @@ Als u daarom vraagt hoe u de prestaties van mijn Data Base kunt verbeteren? Houd
     | sendHangDetectionTime      | "PT10S"    |
     | shutdownTimeout            | "PT15S"    |
 
-* ***Tips voor Program meren voor directe modus** _
+* ***Programmeer tips voor directe modus***
 
   Raadpleeg het artikel over het oplossen van [problemen met](troubleshoot-java-async-sdk.md) de Azure Cosmos DB ASYNC Java SDK v2 als basis lijn voor het oplossen van problemen met de SDK.
   
   Enkele belang rijke tips voor het Program meren van de directe modus:
   
-  _ **Multi threading in uw toepassing gebruiken voor efficiënte TCP-gegevens overdracht** : nadat u een aanvraag hebt gedaan, moet uw toepassing worden geabonneerd om gegevens te ontvangen in een andere thread. Als u dit niet doet, wordt een onbedoelde ' halve duplex ' bewerking geforceerd en worden de volgende aanvragen geblokkeerd voor het antwoord op de vorige aanvraag.
+  * **Multi-threading in uw toepassing gebruiken voor efficiënte TCP-gegevens overdracht** : nadat u een aanvraag hebt gedaan, moet uw toepassing worden geabonneerd om gegevens te ontvangen in een andere thread. Als u dit niet doet, wordt een onbedoelde ' halve duplex ' bewerking geforceerd en worden de volgende aanvragen geblokkeerd voor het antwoord op de vorige aanvraag.
   
   * **Reken intensief werk belastingen uit te voeren op een speciale thread** : om Vergelijk bare redenen voor de vorige tip, worden bewerkingen, zoals complexe gegevens verwerking, het beste in een afzonderlijke thread geplaatst. Een aanvraag die gegevens ophaalt uit een ander gegevens archief (bijvoorbeeld als de thread gelijktijdig gebruikmaakt van Azure Cosmos DB-en Spark-gegevens opslag), kan de latentie verg root en wordt aanbevolen een extra thread te maken die op een reactie van het andere gegevens archief wacht.
   
@@ -133,19 +133,19 @@ Als u daarom vraagt hoe u de prestaties van mijn Data Base kunt verbeteren? Houd
 
   Azure Cosmos DB asynchrone Java SDK v2 ondersteunt parallelle query's, waarmee u parallel een gepartitioneerde verzameling kunt uitvoeren. Zie [code voorbeelden](https://github.com/Azure/azure-cosmosdb-java/tree/master/examples/src/test/java/com/microsoft/azure/cosmosdb/rx/examples) met betrekking tot het werken met de sdk's voor meer informatie. Parallelle query's zijn ontworpen om de latentie en door Voer van query's te verbeteren ten opzichte van hun serieel equivalent.
 
-  * ***SetMaxDegreeOfParallelism \: afstemmen** _
+  * ***SetMaxDegreeOfParallelism afstemmen\:***
     
     Parallelle query's werken door meerdere partities parallel te doorzoeken. Gegevens uit een afzonderlijke gepartitioneerde verzameling worden echter serieel opgehaald ten opzichte van de query. Gebruik setMaxDegreeOfParallelism daarom om het aantal partities in te stellen dat de maximale kans heeft om de meest uitvoering van de query te bereiken, mits alle andere systeem omstandigheden hetzelfde blijven. Als u het aantal partities niet weet, kunt u setMaxDegreeOfParallelism gebruiken om een hoog nummer in te stellen en het systeem kiest het minimum (aantal partities, door de gebruiker opgegeven invoer) als de maximale mate van parallelle uitvoering.
 
     Het is belang rijk te weten dat parallelle query's de beste voor delen opleveren als de gegevens gelijkmatig worden verdeeld over alle partities met betrekking tot de query. Als de gepartitioneerde verzameling zodanig is gepartitioneerd dat alle of een meerderheid van de gegevens die door een query zijn geretourneerd, in een paar partities is geconcentreerd (één partitie in het ergste geval), wordt de prestaties van de query door deze partities beïnvloed.
 
-  _ ***Afstemmen \: setMaxBufferedItemCount** _
+  * ***SetMaxBufferedItemCount afstemmen\:***
     
     Parallelle query is ontworpen om de resultaten vooraf op te halen terwijl de huidige batch met resultaten door de client wordt verwerkt. Het vooraf ophalen helpt bij de algehele latentie verbetering van een query. setMaxBufferedItemCount beperkt het aantal vooraf opgehaalde resultaten. Als u setMaxBufferedItemCount instelt op het verwachte aantal geretourneerde resultaten (of een hoger getal), kan de query het maximale voor deel van het vooraf ophalen van het bericht ontvangen.
 
     Het vooraf ophalen van werkt op dezelfde manier, onafhankelijk van de MaxDegreeOfParallelism en er is één buffer voor de gegevens van alle partities.
 
-_ **Implementeer uitstel met getRetryAfterInMilliseconds-intervallen**
+* **Uitstel implementeren met getRetryAfterInMilliseconds-intervallen**
 
   Tijdens prestatie tests moet u de belasting verg Roten tot een klein aantal aanvragen wordt beperkt. Als deze beperking is ingesteld, moet de client toepassing uitstel voor het interval voor nieuwe pogingen van de server. Door de uitstel te respecteren, zorgt u ervoor dat u de minimale hoeveelheid tijd die wacht tussen nieuwe pogingen.
 
@@ -300,7 +300,7 @@ _ **Implementeer uitstel met getRetryAfterInMilliseconds-intervallen**
 
     Hoewel het gedrag voor automatische pogingen helpt om de flexibiliteit en bruikbaarheid voor de meeste toepassingen te verbeteren, is het mogelijk om conflicteert bij het uitvoeren van benchmarks voor prestaties, met name bij het meten van latentie. De door de client waargenomen latentie krijgt een waarschuwing als het experiment de server beperking bereikt en zorgt ervoor dat de client-SDK op de achtergrond opnieuw probeert. Om latentie pieken te voor komen tijdens prestatie experimenten, meet u de kosten die worden geretourneerd door elke bewerking en zorgt u ervoor dat aanvragen onder het gereserveerde aanvraag tarief vallen. Zie [aanvraag eenheden](request-units.md)voor meer informatie.
 
-* **Ontwerpen voor kleinere documenten voor een hogere door Voer**
+* **Maak een ontwerp voor kleinere documenten voor een hogere doorvoer**
 
     De aanvraag kosten (de verwerkings kosten van aanvragen) van een bepaalde bewerking worden rechtstreeks gecorreleerd aan de grootte van het document. Bewerkingen voor grote documenten kosten meer dan bewerkingen voor kleine documenten.
 

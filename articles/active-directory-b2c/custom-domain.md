@@ -8,20 +8,22 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/15/2021
+ms.date: 03/17/2021
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 869bd7b02186873f490d324cec863c7f26ee8469
-ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.openlocfilehash: 2de419885938b27ebce4a934db5ef966965b3dbd
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103555315"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104580161"
 ---
 # <a name="enable-custom-domains-for-azure-active-directory-b2c"></a>Aangepaste domeinen inschakelen voor Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-choose-user-flow-or-custom-policy](../../includes/active-directory-b2c-choose-user-flow-or-custom-policy.md)]
+
+[!INCLUDE [b2c-public-preview-feature](../../includes/active-directory-b2c-public-preview.md)]
 
 In dit artikel wordt beschreven hoe u aangepaste domeinen in de omleidings-Url's voor Azure Active Directory B2C (Azure AD B2C) inschakelt. Het gebruik van een aangepast domein met uw toepassing biedt een meer naadloze gebruikers ervaring. Vanuit het oogpunt van de gebruiker blijven ze in uw domein tijdens het aanmeldings proces in plaats van omleiden naar het Azure AD B2C standaard domein *<Tenant naam>. b2clogin.com*.
 
@@ -48,7 +50,7 @@ Bij het gebruik van aangepaste domeinen moet u rekening houden met het volgende:
 
 - U kunt meerdere aangepaste domeinen instellen. Zie [Azure AD-service limieten en-beperkingen](../active-directory/enterprise-users/directory-service-limits-restrictions.md) voor Azure AD B2C en [Azure-abonnement en service limieten, quota's en beperkingen](../azure-resource-manager/management/azure-subscription-service-limits.md#azure-front-door-service-limits) voor Azure front-deur voor het maximum aantal ondersteunde aangepaste domeinen.
 - Azure front deur is een afzonderlijke Azure-service, waardoor er extra kosten in rekening worden gebracht. Zie voor meer informatie [prijzen voor deur vooraan](https://azure.microsoft.com/pricing/details/frontdoor).
-- Op dit moment wordt de functie [Firewall voor webtoepassingen](../web-application-firewall/afds/afds-overview.md) van Azure front deur niet ondersteund.
+- Als u de [Web Application firewall](../web-application-firewall/afds/afds-overview.md)van Azure front-deur wilt gebruiken, moet u bevestigen dat uw firewall configuratie en-regels goed werken met uw Azure AD B2C gebruikers stromen.
 - Nadat u aangepaste domeinen hebt geconfigureerd, kunnen gebruikers nog steeds toegang krijgen tot de Azure AD B2C standaard domein naam *<Tenant naam>. b2clogin.com* (tenzij u een aangepast beleid gebruikt en u [toegang blokkeert](#block-access-to-the-default-domain-name)).
 - Als u meerdere toepassingen hebt, migreert u deze allemaal naar het aangepaste domein, omdat de browser de Azure AD B2C-sessie opslaat onder de domein naam die momenteel wordt gebruikt.
 
@@ -193,7 +195,7 @@ Vervang:
 - **beleids naam** met de naam van uw beleid. Meer [informatie over Azure AD B2C-beleid](technical-overview.md#identity-experiences-user-flows-or-custom-policies). 
 
 
-De meta gegevens van de [SAML-service provider](connect-with-saml-service-providers.md) kunnen er als volgt uitzien: 
+De meta gegevens van de [SAML-service provider](./saml-service-provider.md) kunnen er als volgt uitzien: 
 
 ```html
 https://custom-domain-name/tenant-name/policy-name/Samlp/metadata
@@ -258,12 +260,10 @@ Kopieer de URL, wijzig de domein naam hand matig en plak deze opnieuw in uw brow
 
 Het oorspronkelijke IP-adres van de gebruiker wordt door Azure front deur door gegeven. Dit is het IP-adres dat u ziet in de audit Reporting of het aangepaste beleid.
 
-### <a name="can-i-use-a-third-party-wab-application-firewall-waf-with-b2c"></a>Kan ik een wab Application firewall (WAF) van derden gebruiken met B2C?
+### <a name="can-i-use-a-third-party-web-application-firewall-waf-with-b2c"></a>Kan ik een Web Application Firewall van derden (WAF) gebruiken met B2C?
 
-Azure AD B2C ondersteunt momenteel een aangepast domein door alleen Azure front-deur te gebruiken. Voeg nog geen WAF toe vóór de Azure front-deur.
-
+Als u uw eigen Web Application Firewall wilt gebruiken voor de voor deur van Azure, moet u configureren en controleren of alles goed werkt met uw Azure AD B2C gebruikers stromen.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 Meer informatie over [OAuth-autorisatie aanvragen](protocols-overview.md).
-

@@ -6,10 +6,10 @@ author: pharring
 ms.author: pharring
 ms.date: 11/10/2020
 ms.openlocfilehash: 4a787c6e2a9b59874f965a2bbcebea9ce02d8082
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97093257"
 ---
 # <a name="release-notes-for-microsoftapplicationinsightssnapshotcollector"></a>Opmerkingen bij de release voor micro soft. ApplicationInsights. SnapshotCollector
@@ -20,7 +20,7 @@ Meer [informatie](./snapshot-debugger.md) over de Application Insights snapshot 
 
 Voor fout rapporten en feedback opent u een probleem op GitHub op https://github.com/microsoft/ApplicationInsights-SnapshotCollector
 
-## <a name="release-notes"></a>Releaseopmerkingen
+## <a name="release-notes"></a>Opmerkingen bij de release
 
 ## <a name="1375"></a>[1.3.7.5](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector/1.3.7.5)
 Een release van een punt om een oplossing te backport van 1.4.0-pre.
@@ -70,7 +70,7 @@ Een punt versie voor het oplossen van een aantal problemen met hoge impact.
 - Het toevoegen van een momentopname verzamelaar is eenvoudiger met behulp van AddSnapshotCollector (). Meer informatie vindt u [hier](./snapshot-debugger-appservice.md).
 - Gebruik de FISMA MD5-instelling voor het controleren van BLOB-blokken. Dit voor komt het standaard algoritme voor .NET MD5 crypto grafie dat niet beschikbaar is wanneer het besturings systeem is ingesteld op de FIPS-compatibele modus.
 - .NET Framework frames negeren bij het deoptimalisatieen van functie aanroepen. Dit gedrag kan worden bepaald door de configuratie-instelling DeoptimizeIgnoredModules.
-- Voeg `DeoptimizeMethodCount` een configuratie-instelling toe waarmee deoptimalisatie van meer dan één functie aanroep is toegestaan. Meer informatie vindt u hier
+- Voeg `DeoptimizeMethodCount` een configuratie-instelling toe waarmee deoptimalisatie van meer dan één functie aanroep is toegestaan. Meer informatie
 
 ## <a name="134"></a>[1.3.4](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector/1.3.4)
 - Gestructureerd instrumentatie sleutels toestaan.

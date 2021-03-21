@@ -13,10 +13,10 @@ ms.author: srbozovi
 ms.reviewer: sstein, bonova
 ms.date: 07/17/2019
 ms.openlocfilehash: a54907dd3f7b3fbc06033624f14b12de14d9afb9
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99831498"
 ---
 # <a name="configure-a-custom-dns-for-azure-sql-managed-instance"></a>Een aangepaste DNS configureren voor Azure SQL Managed Instance
@@ -30,7 +30,7 @@ Omdat SQL Managed instance dezelfde DNS gebruikt voor de interne werking, config
 > Gebruik altijd een Fully Qualified Domain Name (FQDN) voor de e-mail server, voor het SQL Server exemplaar en voor andere services, zelfs als ze zich in uw privé-DNS-zone bevinden. Gebruik bijvoorbeeld `smtp.contoso.com` voor uw e-mail server omdat deze `smtp` niet correct kan worden omgezet. Als u een gekoppelde server of replicatie wilt maken die verwijst naar SQL Server Vm's binnen hetzelfde virtuele netwerk, hebt u ook een FQDN en een standaard-DNS-achtervoegsel nodig. Bijvoorbeeld `SQLVM.internal.cloudapp.net`. Zie [naam omzetting die gebruikmaakt van uw eigen DNS-server](../../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md#name-resolution-that-uses-your-own-dns-server)voor meer informatie.
 
 > [!IMPORTANT]
-> Het bijwerken van de DNS-servers van het virtuele netwerk heeft geen invloed op het SQL Managed instance. Zie de [instelling DNS-servers voor het virtuele netwerk synchroniseren op het virtuele cluster voor SQL-beheerde exemplaren](synchronize-vnet-dns-servers-setting-on-virtual-cluster.md) voor meer informatie.
+> Het bijwerken van de DNS-servers van het virtuele netwerk heeft geen invloed op het SQL Managed instance. Raadpleeg [De instelling voor DNS-servers voor het virtuele netwerk synchroniseren met het virtuele cluster van SQL Managed Instance](synchronize-vnet-dns-servers-setting-on-virtual-cluster.md) voor meer details.
 
 ## <a name="next-steps"></a>Volgende stappen
 

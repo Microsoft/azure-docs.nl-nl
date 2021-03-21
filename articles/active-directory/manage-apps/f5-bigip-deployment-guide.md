@@ -12,10 +12,10 @@ ms.date: 10/12/2020
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f962bf131b87f17712186145b8c8b8e6090f7002
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98730653"
 ---
 # <a name="tutorial-to-deploy-f5-big-ip-virtual-edition-vm-in-azure-iaas-for-secure-hybrid-access"></a>Zelf studie voor het implementeren van een VM met een virtuele editie van F5 in azure IaaS voor beveiligde hybride toegang
@@ -83,7 +83,7 @@ Voer de volgende taken uit om BIG-IP VE te implementeren vanuit [Azure Marketpla
  |Resourcegroep | Bestaande Azure-resource groep de grootschalige IP-VM wordt geïmplementeerd in of maakt er een. Moet dezelfde resource groep zijn als uw DC-en IIS-Vm's|
  | **Exemplaardetails**|  |
  |VM-naam| Voor beeld BIG-IP-VM |
- |Regio | Doel-Azure geo voor BIG-IP-VM |
+ |Region | Doel-Azure geo voor BIG-IP-VM |
  |Beschikbaarheidsopties| Alleen inschakelen als VM in productie wordt gebruikt|
  |Installatiekopie| F5 BIG-IP VE-ALL (BYOL, 2 opstart locaties)|
  |Azure Spot-exemplaar| Nee, maar u kunt indien nodig |

@@ -4,10 +4,10 @@ description: Symptomen, oorzaken en oplossingen voor veelvoorkomende problemen b
 ms.topic: article
 ms.date: 08/11/2020
 ms.openlocfilehash: 5deb1717cf3886d8ea9c021d92afa358946b16dc
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99052075"
 ---
 # <a name="troubleshoot-registry-login"></a>Problemen met register aanmelding oplossen

@@ -86,7 +86,7 @@
           href: stream-files-nodejs-quickstart.md
     - name: Python
       items:
-        - name: Python Basic Encoding Quick Start
+        - name: Python Basic Encoding
           href: quickstart-basic-encoding-python.md
     - name: Azure Portal
       items:
@@ -223,9 +223,9 @@
         - name: Bewaken met Event Grid
           items:
             - name: Gebeurtenissen met Event Grid
-              href: reacting-to-media-services-events.md
+              href: monitoring/reacting-to-media-services-events.md
             - name: Event Grid-schema's
-              href: media-services-event-schemas.md
+              href: monitoring/media-services-event-schemas.md
     - name: Compatibele spelers
       items:
         - name: Media spelers voor Media Services
@@ -394,15 +394,15 @@
     - name: Event Grid gebruiken
       items:
         - name: Gebeurtenissen bewaken - Portal
-          href: monitor-events-portal-how-to.md
+          href: monitoring/monitor-events-portal-how-to.md
         - name: Gebeurtenissen bewaken - CLI
-          href: job-state-events-cli-how-to.md
+          href: monitoring/job-state-events-cli-how-to.md
     - name: Azure Monitor gebruiken
       items:
         - name: Metrische gegevens bewaken
-          href: media-services-metrics-howto.md
+          href: monitoring/media-services-metrics-howto.md
         - name: Diagnostische logboeken bewaken
-          href: media-services-diagnostic-logs-howto.md
+          href: monitoring/media-services-diagnostic-logs-howto.md
     - name: Inhoud beveiligen
       items:
         - name: Beleid voor inhoudssleutels ophalen

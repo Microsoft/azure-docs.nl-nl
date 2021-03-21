@@ -15,10 +15,10 @@ ms.date: 05/03/2018
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: f41614d54dc4320f683f406b2882a7b388bb4c3d
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97358415"
 ---
 # <a name="automated-backup-v2-for-azure-virtual-machines-resource-manager"></a>Automatische back-up versie 2 voor virtuele machines van Azure (Resource Manager)
@@ -57,7 +57,7 @@ In de volgende tabel worden de opties beschreven die kunnen worden geconfigureer
 
 ### <a name="basic-settings"></a>Basisinstellingen
 
-| Instelling | Bereik (standaard) | Description |
+| Instelling | Bereik (standaard) | Beschrijving |
 | --- | --- | --- |
 | **Automatische back-up** | Inschakelen/uitschakelen (uitgeschakeld) | Hiermee wordt automatische back-ups voor een Azure-VM met SQL Server 2016/2017 Developer, Standard of ENTER prise in-of uitgeschakeld. |
 | **Bewaar periode** | 1-30 dagen (30 dagen) | Het aantal dagen dat back-ups moeten worden bewaard. |
@@ -67,7 +67,7 @@ In de volgende tabel worden de opties beschreven die kunnen worden geconfigureer
 
 ### <a name="advanced-settings"></a>Geavanceerde instellingen
 
-| Instelling | Bereik (standaard) | Description |
+| Instelling | Bereik (standaard) | Beschrijving |
 | --- | --- | --- |
 | **Back-ups van de systeem database** | Inschakelen/uitschakelen (uitgeschakeld) | Als deze functie is ingeschakeld, wordt ook een back-up gemaakt van de systeem databases: Master, MSDB en model. Controleer voor de MSDB-en model databases of ze zich in de modus voor volledig herstel bevinden als u wilt dat logboek back-ups worden gemaakt. Logboek back-ups worden nooit uitgevoerd voor de hoofd database. Er worden geen back-ups gemaakt voor TempDB. |
 | **Back-upschema** | Hand matig/automatisch (automatisch) | Het back-upschema wordt standaard automatisch bepaald op basis van de logboek groei. Met hand matig back-upschema kan de gebruiker het tijd venster voor back-ups opgeven. In dit geval worden back-ups alleen uitgevoerd met de opgegeven frequentie en tijdens het opgegeven tijd venster van een bepaalde dag. |

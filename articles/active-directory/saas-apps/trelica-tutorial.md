@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 05/06/2020
 ms.author: jeedes
 ms.openlocfilehash: a674f5f653ad420ab8f28ff73c6b86f9c18b154e
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92517749"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-trelica"></a>Zelfstudie: Integratie van eenmalige aanmelding (SSO) bij Azure Active Directory met Trelica
@@ -50,15 +50,15 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 Voor het configureren van de integratie van Trelica in Azure AD moet u Trelica uit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com) met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Selecteer in het linkernavigatievenster de service **Azure Active Directory** .
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
-1. Als u een nieuwe toepassing wilt toevoegen, selecteert u **Nieuwe toepassing** .
+1. Selecteer in het linkernavigatievenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Als u een nieuwe toepassing wilt toevoegen, selecteert u **Nieuwe toepassing**.
 1. Ga in het gedeelte **Toevoegen uit de galerie** naar het zoekvak en voer **Trelica** in.
 1. Selecteer **Trelica** in de zoekresultaten en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
 ## <a name="configure-and-test-azure-ad-single-sign-on-for-trelica"></a>Eenmalige aanmelding van Azure AD configureren en testen voor Trelica
 
-Configureer en test eenmalige aanmelding van Azure AD met Trelica met behulp van een testgebruiker met de naam **B.Simon** . Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Trelica.
+Configureer en test eenmalige aanmelding van Azure AD met Trelica met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Trelica.
 
 Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met Trelica te configureren en te testen:
 
@@ -73,8 +73,8 @@ Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met Trelica te 
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in de Azure-portal:
 
-1. Ga in de [Azure-portal](https://portal.azure.com/) naar de pagina met de integratie van de toepassing **Trelica** en zoek het gedeelte **Beheren** . Selecteer **Eenmalige aanmelding** .
-1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding** .
+1. Ga in de [Azure-portal](https://portal.azure.com/) naar de pagina met de integratie van de toepassing **Trelica** en zoek het gedeelte **Beheren**. Selecteer **Eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![De pagina Eenmalige aanmelding instellen met SAML, met het potloodpictogram voor Standaard-SAML-configuratie gemarkeerd](common/edit-urls.png)
@@ -98,35 +98,35 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in de Azu
 
 In dit gedeelte gaat u een testgebruiker met de naam B.Simon maken in de Azure-portal.
 
-1. Selecteer in het linker deelvenster van de Azure-portal **Azure Active Directory** > **Gebruikers** > **Alle gebruikers** .
-1. Selecteer bovenaan het scherm **Nieuwe gebruiker** .
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
-   1. Typ **B.Simon** in het veld **Naam** .
+1. Selecteer in het linker deelvenster van de Azure-portal **Azure Active Directory** > **Gebruikers** > **Alle gebruikers**.
+1. Selecteer bovenaan het scherm **Nieuwe gebruiker**.
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
+   1. Typ **B.Simon** in het veld **Naam**.
    1. Voer in het veld **Gebruikersnaam** **B.Simon@** _bedrijfsdomein_ **.** _extensie_ in. Bijvoorbeeld B.Simon@contoso.com.
-   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord** .
-   1. Selecteer **Maken** .
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Selecteer **Maken**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot Trelica.
 
-1. Selecteer in de Azure-portal **Bedrijfstoepassingen** > **Alle toepassingen** .
+1. Selecteer in de Azure-portal **Bedrijfstoepassingen** > **Alle toepassingen**.
 1. Selecteer **Trelica** in de lijst met toepassingen.
-1. Ga op de overzichtspagina van de app naar het gedeelte **Beheren** en selecteer **Gebruikers en groepen** .
+1. Ga op de overzichtspagina van de app naar het gedeelte **Beheren** en selecteer **Gebruikers en groepen**.
 
    ![Het gedeelte Beheren, met Gebruikers en groepen gemarkeerd](common/users-groups-blade.png)
 
-1. Selecteer **Gebruiker toevoegen** . Selecteer **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+1. Selecteer **Gebruiker toevoegen**. Selecteer **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
    ![Het venster Gebruikers en groepen, met Gebruiker toevoegen gemarkeerd](common/add-assign-user.png)
 
-1. Selecteer in het dialoogvenster **Gebruikers en groepen** in de lijst met gebruikers **B.Simon** . Kies vervolgens onderaan het scherm de knop **Selecteren** .
-1. Als u een rolwaarde verwacht in de SAML-assertie, selecteert u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst. Kies vervolgens onderaan het scherm de knop **Selecteren** .
-1. Selecteer **Toewijzen** in het dialoogvenster **Toewijzing toevoegen** .
+1. Selecteer in het dialoogvenster **Gebruikers en groepen** in de lijst met gebruikers **B.Simon**. Kies vervolgens onderaan het scherm de knop **Selecteren**.
+1. Als u een rolwaarde verwacht in de SAML-assertie, selecteert u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst. Kies vervolgens onderaan het scherm de knop **Selecteren**.
+1. Selecteer **Toewijzen** in het dialoogvenster **Toewijzing toevoegen**.
 
 ## <a name="configure-trelica-sso"></a>Eenmalige aanmelding configureren voor Trelica
 
-Als u eenmalige aanmelding wilt configureren aan de **Trelica** -zijde, gaat u naar de [configuratiepagina met SAML-id-providers](https://app.trelica.com/Admin/Profile/SAML) (Beheerder > Account >SAML). Klik op de knop **Nieuw** . Voer **Azure AD** in bij Naam, en kies **Metagegevens van URL** voor Type metagegevens. Plak de **App-URL voor federatieve metagegevens** die u hebt opgehaald uit Azure AD, in het veld **URL voor metagegevens** in Trelica.
+Als u eenmalige aanmelding wilt configureren aan de **Trelica**-zijde, gaat u naar de [configuratiepagina met SAML-id-providers](https://app.trelica.com/Admin/Profile/SAML) (Beheerder > Account >SAML). Klik op de knop **Nieuw**. Voer **Azure AD** in bij Naam, en kies **Metagegevens van URL** voor Type metagegevens. Plak de **App-URL voor federatieve metagegevens** die u hebt opgehaald uit Azure AD, in het veld **URL voor metagegevens** in Trelica.
 
 Lees de [Help-documentatie voor Trelica](https://docs.trelica.com/admin/saml/azure-ad) of neem contact op met het [ondersteuningsteam voor de Trelica-client](mailto:support@trelica.com) als u vragen hebt.
 

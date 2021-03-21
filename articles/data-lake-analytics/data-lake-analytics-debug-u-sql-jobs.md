@@ -6,10 +6,10 @@ ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 11/30/2017
 ms.openlocfilehash: db1d57e3904087bc5cb3711b23cfe6bcf18c3455
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92218014"
 ---
 # <a name="debug-user-defined-c-code-for-failed-u-sql-jobs"></a>Fout opsporing voor door de gebruiker gedefinieerde C#-code voor mislukte U-SQL-taken
@@ -103,7 +103,7 @@ De mislukte taak opnieuw verzenden:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Programmeer handleiding voor U-SQL](data-lake-analytics-u-sql-programmability-guide.md)
+- [Handleiding voor programmeren met U-SQL](data-lake-analytics-u-sql-programmability-guide.md)
 - [Door de gebruiker gedefinieerde U-SQL-Opera tors ontwikkelen voor Azure Data Lake Analytics-taken](data-lake-analytics-u-sql-develop-user-defined-operators.md)
 - [U-SQL-taken testen en controleren op fouten met behulp van lokale uitvoering en de Azure Data Lake U-SQL-SDK](data-lake-analytics-data-lake-tools-local-run.md)
 - [Problemen oplossen met een abnormale terugkerende taak](data-lake-analytics-data-lake-tools-debug-recurring-job.md)

@@ -12,10 +12,10 @@ ms.topic: how-to
 ms.date: 07/06/2020
 ms.author: justinha
 ms.openlocfilehash: caf46850b3d8d6946225575b8a9a732a90847482
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100574137"
 ---
 # <a name="enable-security-audits-for-azure-active-directory-domain-services"></a>Beveiligings controles inschakelen voor Azure Active Directory Domain Services
@@ -217,7 +217,7 @@ Azure AD DS-beveiligings controles worden uitgelijnd met traditionele controle v
 
 De volgende controle gebeurtenis categorieën zijn beschikbaar:
 
-| Naam van audit categorie | Description |
+| Naam van audit categorie | Beschrijving |
 |:---|:---|
 | Account aanmelding|Controles proberen account gegevens te verifiëren op een domein controller of op een lokale SAM (Security Accounts Manager).</p>Aanmeldings-en afmeldings beleids instellingen en gebeurtenissen volgen pogingen om toegang te krijgen tot een bepaalde computer. De instellingen en gebeurtenissen in deze categorie zijn gericht op de account database die wordt gebruikt. Deze categorie bevat de volgende subcategorieën:<ul><li>[Validatie van referenties controleren](/windows/security/threat-protection/auditing/audit-credential-validation)</li><li>[De Kerberos-authenticatieservice controleren](/windows/security/threat-protection/auditing/audit-kerberos-authentication-service)</li><li>[Kerberos-serviceticketbewerkingen controleren](/windows/security/threat-protection/auditing/audit-kerberos-service-ticket-operations)</li><li>[Andere gebeurtenissen voor aanmelden/afmelden controleren](/windows/security/threat-protection/auditing/audit-other-logonlogoff-events)</li></ul>|
 | Accountbeheer|Hiermee worden wijzigingen in gebruikers-en computer accounts en-groepen gecontroleerd. Deze categorie bevat de volgende subcategorieën:<ul><li>[Beheer van toepassingsgroepen controleren](/windows/security/threat-protection/auditing/audit-application-group-management)</li><li>[Beheer van computeraccounts controleren](/windows/security/threat-protection/auditing/audit-computer-account-management)</li><li>[Beheer van distributiegroepen controleren](/windows/security/threat-protection/auditing/audit-distribution-group-management)</li><li>[Ander account beheer controleren](/windows/security/threat-protection/auditing/audit-other-account-management-events)</li><li>[Beheer van beveiligingsgroepen controleren](/windows/security/threat-protection/auditing/audit-security-group-management)</li><li>[Gebruikersaccountbeheer controleren](/windows/security/threat-protection/auditing/audit-user-account-management)</li></ul>|

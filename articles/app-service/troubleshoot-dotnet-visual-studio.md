@@ -7,10 +7,10 @@ ms.topic: article
 ms.date: 08/29/2016
 ms.custom: devx-track-csharp, seodec18
 ms.openlocfilehash: 65eb4e8fefb74219c927fe507baceca7c55462be
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101095714"
 ---
 # <a name="troubleshoot-an-app-in-azure-app-service-using-visual-studio"></a>Problemen met een app in Azure App Service oplossen met Visual Studio
@@ -174,7 +174,7 @@ Externe fout opsporing werkt alleen met doorlopende webjobs. Geplande en on-dema
 
 1. Open het webproject dat u hebt gemaakt in aan [de slag met de Azure WEBJOBS SDK][GetStartedWJ].
 
-2. Open *functions.cs* in het project ContosoAdsWebJob.
+2. Open in het project ContosoAdsWebJob *functions. cs*.
 
 3. [Stel een onderbrekings punt](/visualstudio/debugger/) in op de eerste instructie in de `GnerateThumbnail` methode.
 

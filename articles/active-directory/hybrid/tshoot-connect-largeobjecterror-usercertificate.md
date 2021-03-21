@@ -18,10 +18,10 @@ ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d33b419e0f24201d661ad0f5f1373022ea6e9e9f
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96861745"
 ---
 # <a name="azure-ad-connect-sync-handling-largeobject-errors-caused-by-usercertificate-attribute"></a>Azure AD Connect Sync: afhandelings LargeObject-fouten veroorzaakt door userCertificate-kenmerk
@@ -108,7 +108,7 @@ Er moet een bestaande synchronisatie regel zijn ingeschakeld en geconfigureerd v
     | Kenmerk | Operator | Waarde |
     | --- | --- | --- |
     | sourceObjectType | WAARD | Gebruiker |
-    | cloudMastered | NOTEQUAL | True |
+    | cloudMastered | NOTEQUAL | Waar |
 
 ### <a name="step-3-create-the-outbound-sync-rule-required"></a>Stap 3. De uitgaande synchronisatie regel vereist maken
 De nieuwe synchronisatie regel moet hetzelfde **bereik filter** hebben en een **hogere prioriteit** hebben dan de bestaande synchronisatie regel. Dit zorgt ervoor dat de nieuwe synchronisatie regel van toepassing is op dezelfde set objecten als de bestaande synchronisatie regel en overschrijft de bestaande synchronisatie regel voor het kenmerk userCertificate. De synchronisatie regel maken:
@@ -118,7 +118,7 @@ De nieuwe synchronisatie regel moet hetzelfde **bereik filter** hebben en een **
     | Kenmerk | Waarde | Details |
     | --- | --- | --- |
     | Name | *Geef een naam op* | Bijvoorbeeld *' uit tot Aad – Custom override voor userCertificate '* |
-    | Description | *Geef een beschrijving op* | Bijvoorbeeld, *als het kenmerk userCertificate meer dan 15 waarden heeft, wordt Null geëxporteerd. "* |
+    | Beschrijving | *Geef een beschrijving op* | Bijvoorbeeld, *als het kenmerk userCertificate meer dan 15 waarden heeft, wordt Null geëxporteerd. "* |
     | Verbonden systeem | *De Azure AD-connector selecteren* |
     | Type verbonden systeem object | **gebruiker** | |
     | Omgekeerd object type | **gelaedeerde** | |

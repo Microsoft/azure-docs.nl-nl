@@ -8,10 +8,10 @@ ms.date: 10/28/2019
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: 91ffcac98b2b919a8fc131d235e699aad4fa215d
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93078897"
 ---
 # <a name="manage-analysis-services"></a>Analysis Services beheren
@@ -36,13 +36,13 @@ Zorg ervoor dat u de nieuwste versie van SSMS gebruikt om alle nieuwste functies
 ### <a name="to-connect-with-ssms"></a>Verbinding maken met SSMS
  Wanneer u SSMS gebruikt voordat u de eerste keer verbinding maakt met uw server, moet u ervoor zorgen dat uw gebruikers naam is opgenomen in de Analysis Services beheerders groep. Zie [Server beheerders en database gebruikers](#server-administrators-and-database-users) verderop in dit artikel voor meer informatie.
 
-1. Voordat u verbinding maakt, moet u de server naam ophalen. In **Azure Portal** > server > **Overview** > **Servernaam** ,kopieer de servernaam.
+1. Voordat u verbinding maakt, moet u de server naam ophalen. In **Azure Portal** > server > **Overview** > **Servernaam**,kopieer de servernaam.
    
     ![Servernaam bepalen in Azure](./media/analysis-services-deploy/aas-deploy-get-server-name.png)
-2. Klik in SSMS > **Objectverkenner** op **Verbinding maken** > **Analysis Services** .
+2. Klik in SSMS > **Objectverkenner** op **Verbinding maken** > **Analysis Services**.
 3. Plak in het dialoog venster **verbinding maken met server** de naam van de server en kies vervolgens bij **verificatie** een van de volgende verificatie typen:   
     > [!NOTE]
-    > Verificatie type, **Active Directory-Universal met MFA-ondersteuning** , wordt aanbevolen.
+    > Verificatie type, **Active Directory-Universal met MFA-ondersteuning**, wordt aanbevolen.
 
     > [!NOTE]
     > Als u zich aanmeldt met een micro soft-account, Live ID, Yahoo, Gmail, enzovoort, laat u het veld wacht woord leeg. U wordt gevraagd om een wacht woord nadat u op verbinding maken hebt geklikt.

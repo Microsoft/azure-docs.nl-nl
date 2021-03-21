@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8ab484e8caaffaf57f19f1fcd1e65f4b8e723f86
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93077894"
 ---
 # <a name="quickstart-require-terms-of-use-to-be-accepted-before-accessing-cloud-apps"></a>Quickstart: Vereisen dat gebruiksvoorwaarden worden geaccepteerd voor toegang tot cloud-apps
@@ -35,8 +35,8 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 
 Voor het voltooien van het scenario in deze quickstart hebt u het volgende nodig:
 
-- **Toegang tot een Azure AD Premium-versie** : voorwaardelijke toegang van Azure AD is een Azure AD Premium-functie.
-- **Een testaccount onder de naam Isabella Simonsen** : als u niet weet hoe u een testaccount moet maken, raadpleegt u [Cloudgebruikers toevoegen](../fundamentals/add-users-azure-active-directory.md#add-a-new-user).
+- **Toegang tot een Azure AD Premium-versie**: voorwaardelijke toegang van Azure AD is een Azure AD Premium-functie.
+- **Een testaccount onder de naam Isabella Simonsen**: als u niet weet hoe u een testaccount moet maken, raadpleegt u [Cloudgebruikers toevoegen](../fundamentals/add-users-azure-active-directory.md#add-a-new-user).
 
 ## <a name="test-your-sign-in"></a>Uw aanmelding testen
 
@@ -72,7 +72,7 @@ In deze sectie vindt u de stappen om een voorbeeld van uw gebruiksvoorwaarden te
 
    :::image type="content" source="./media/require-tou/05.png" alt-text="Schermopname van een menu op de Azure Active Directory-pagina. Het item 'Nieuwe voorwaarden' is gemarkeerd." border="false":::
 
-1. Op de pagina **Nieuwe gebruiksvoorwaarden** :
+1. Op de pagina **Nieuwe gebruiksvoorwaarden**:
 
    :::image type="content" source="./media/require-tou/112.png" alt-text="Schermnaam van de pagina 'Nieuwe gebruiksvoorwaarden', met de naam, de weergavenaam, het document, de taal, de voorwaardelijke toegang en de wisselknop voor uitgebreidere voorwaarden gemarkeerd." border="false":::
 
@@ -111,7 +111,7 @@ Stel in uw beleid het volgende in:
 
    :::image type="content" source="./media/require-tou/06.png" alt-text="Schermopname van het gedeelte 'Toewijzingen' in een deelvenster in de Azure Portal dat een beleid definieert. Het item 'Gebruikers en groepen' is zichtbaar, maar er is niets geselecteerd." border="false":::
 
-1. Op de pagina **Gebruikers en groepen** :
+1. Op de pagina **Gebruikers en groepen**:
 
    :::image type="content" source="./media/require-tou/24.png" alt-text="Schermopname van het tabblad 'Opnemen' op de pagina 'Gebruikers en groepen'. 'Gebruikers en groepen selecteren' en 'Gebruikers en groepen' zijn geselecteerd. 'Selecteren' is gemarkeerd." border="false":::
 
@@ -123,7 +123,7 @@ Stel in uw beleid het volgende in:
 
    :::image type="content" source="./media/require-tou/08.png" alt-text="Schermopname van het gedeelte 'Toewijzingen' in een deelvenster in de Azure Portal dat een beleid definieert. Het item 'Cloud-apps' is zichtbaar, maar er is niets geselecteerd." border="false":::
 
-1. Op de pagina **Cloud-apps** :
+1. Op de pagina **Cloud-apps**:
 
    ![Cloud-apps selecteren](./media/require-tou/26.png)
 
@@ -135,7 +135,7 @@ Stel in uw beleid het volgende in:
 
    ![Besturingselementen voor toegang](./media/require-tou/10.png)
 
-1. Op de pagina **Toekennen** :
+1. Op de pagina **Toekennen**:
 
    ![Verlenen](./media/require-tou/111.png)
 
@@ -152,7 +152,7 @@ Stel in uw beleid het volgende in:
 
 Nu u uw beleid voor voorwaardelijke toegang hebt geconfigureerd, wilt u vast weten of het werkt zoals u wilt. Als eerste stap kunt u het What If-beleidshulpmiddel voor voorwaardelijke toegang gebruiken om een aanmelding van uw testgebruiker te simuleren. De simulatie schat de impact van deze aanmelding op uw beleid in en genereert een simulatierapport.  
 
-Als u het **What If** -hulpprogramma voor het evalueren van beleid wilt initialiseren, stelt u het volgende in:
+Als u het **What If**-hulpprogramma voor het evalueren van beleid wilt initialiseren, stelt u het volgende in:
 
 - **Isabella Simonsen** als gebruiker
 - **Microsoft Azure Management** als cloud-app
@@ -170,7 +170,7 @@ Klik op **What If** om een simulatierapport te maken waarin het volgende wordt w
 
    ![What If](./media/require-tou/14.png)
 
-1. Klik op **Gebruikers** , selecteer **Isabella Simonsen** en klik vervolgens op **Selecteren**.
+1. Klik op **Gebruikers**, selecteer **Isabella Simonsen** en klik vervolgens op **Selecteren**.
 
    ![Gebruiker](./media/require-tou/15.png)
 
@@ -189,7 +189,7 @@ Klik op **What If** om een simulatierapport te maken waarin het volgende wordt w
 
 In de vorige sectie hebt u geleerd hoe u een gesimuleerde aanmelding kunt evalueren. Naast deze simulatie kunt u het beste ook het beleid voor voorwaardelijke toegang testen om er zeker van te zijn dat het werkt zoals verwacht.
 
-Als u uw beleid wilt testen, meldt u zich aan bij de [Azure-portal](https://portal.azure.com) met uw **Isabella Simonsen** -testaccount. Er zou een dialoogvenster moeten worden weergegeven waarin u wordt gevraagd de gebruiksvoorwaarden te accepteren.
+Als u uw beleid wilt testen, meldt u zich aan bij de [Azure-portal](https://portal.azure.com) met uw **Isabella Simonsen**-testaccount. Er zou een dialoogvenster moeten worden weergegeven waarin u wordt gevraagd de gebruiksvoorwaarden te accepteren.
 
 :::image type="content" source="./media/require-tou/57.png" alt-text="Schermopname van een dialoogvenster met de titel 'Gebruiksvoorwaarden voor Identity Security Protection' met de knoppen 'Weigeren' en 'Accepteren' en een knop met de naam 'Mijn voorwaarden'." border="false":::
 

@@ -11,10 +11,10 @@ ms.author: jopapa
 ms.custom: seodec18, devx-track-js
 ms.reviewer: sngun
 ms.openlocfilehash: a3097fa539f460ef5e8ffe73598fa5d55516717e
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93097801"
 ---
 # <a name="create-an-angular-app-with-azure-cosmos-dbs-api-for-mongodb---use-mongoose-to-connect-to-cosmos-db"></a>Een Angular-app maken met de API voor MongoDB van Azure Cosmos DB - Mongoose gebruiken om verbinding te maken met Cosmos DB
@@ -85,9 +85,9 @@ Mongoose is een ODM-bibliotheek (Object Data Modeling) voor MongoDB en Node.js. 
      };
      ```
     
-1. Maak in het deelvenster Explorer, onder **server** , een map met de naam **environment**. Maak in de map **environment** een bestand met de naam **environment.js**.
+1. Maak in het deelvenster Explorer, onder **server**, een map met de naam **environment**. Maak in de map **environment** een bestand met de naam **environment.js**.
 
-1. Uit het bestand mongo.js moeten we waarden overnemen voor de parameters `dbName`, `key` en `cosmosPort`. Kopieer de volgende code naar het bestand **environment.js** :
+1. Uit het bestand mongo.js moeten we waarden overnemen voor de parameters `dbName`, `key` en `cosmosPort`. Kopieer de volgende code naar het bestand **environment.js**:
 
     ```javascript
     // TODO: replace if yours are different
@@ -137,7 +137,7 @@ Vervolgens moet u het schema definiëren van de gegevens die moeten worden opges
    * Maakt een nieuw schema met een id, een naam en een uitspraak.
    * Maakt een model aan de hand van het schema.
    * Exporteert het model. 
-   * Geeft de verzameling de naam **Heroes** (in plaats van **Heros** , wat de standaardnaam van de verzameling is op basis van de regels voor namen in meervoud in Mongoose).
+   * Geeft de verzameling de naam **Heroes** (in plaats van **Heros**, wat de standaardnaam van de verzameling is op basis van de regels voor namen in meervoud in Mongoose).
 
    ```javascript
    const mongoose = require('mongoose');
@@ -213,7 +213,7 @@ Vervolgens moet u routes instellen voor het afhandelen van de URL's voor get-, c
     });
     ```
 
-1. `require` de hero-service in het bestand **routes.js** :
+1. `require` de hero-service in het bestand **routes.js**:
 
     ```javascript
     const heroService = require('./hero.service'); 
@@ -225,7 +225,7 @@ Vervolgens moet u routes instellen voor het afhandelen van de URL's voor get-, c
     function getHeroes(req, res) {
     ```
 
-Laten we de bovenstaande code nog eens even bekijken. We hebben eerst het bestand index.js, waarmee de node-server wordt ingesteld. In het bestand worden uw routes ingesteld en gedefinieerd. Vervolgens communiceert het bestand routes.js met de hero-service. De service krijgt de opdracht functies op te halen, zoals **getHeroes** , en de aanvraag en respons door te geven. Het bestand hero.service.js haalt het model op en maakt verbinding met Mongo. Vervolgens wordt **getHeroes** uitgevoerd wanneer we deze functie aanroepen en wordt de respons 200 geretourneerd. 
+Laten we de bovenstaande code nog eens even bekijken. We hebben eerst het bestand index.js, waarmee de node-server wordt ingesteld. In het bestand worden uw routes ingesteld en gedefinieerd. Vervolgens communiceert het bestand routes.js met de hero-service. De service krijgt de opdracht functies op te halen, zoals **getHeroes**, en de aanvraag en respons door te geven. Het bestand hero.service.js haalt het model op en maakt verbinding met Mongo. Vervolgens wordt **getHeroes** uitgevoerd wanneer we deze functie aanroepen en wordt de respons 200 geretourneerd. 
 
 ## <a name="run-the-app"></a>De app uitvoeren
 

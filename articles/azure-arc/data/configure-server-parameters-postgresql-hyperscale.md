@@ -11,10 +11,10 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
 ms.openlocfilehash: cdbddfc84b3f71576cfd0299f2babec859b4ef1f
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92311052"
 ---
 # <a name="set-the-database-engine-settings-for-azure-arc-enabled-postgresql-hyperscale"></a>De database-engine-instellingen voor PostgreSQL Hyperscale met Azure Arc instellen
@@ -37,7 +37,7 @@ In dit document worden de stappen beschreven voor het instellen van de instellin
 > - `ssl`
 > - `wal_level`
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 De algemene indeling van de opdracht voor het configureren van de instellingen van de data base-engine is:
 

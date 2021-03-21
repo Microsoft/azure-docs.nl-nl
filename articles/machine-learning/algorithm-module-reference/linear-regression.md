@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 04/22/2020
 ms.openlocfilehash: 809b1be4f9f12e1963ff5caeaacd109c84db154f
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93323660"
 ---
 # <a name="linear-regression-module"></a>Lineaire regressie module
@@ -102,16 +102,16 @@ Nadat de training is voltooid:
 
 3. Voor de **modus trainer maken** geeft u aan of u het model wilt trainen met een vooraf gedefinieerde set para meters of als u het model wilt optimaliseren met behulp van een parameter sweep.
 
-    + **Eén para meter** : als u weet hoe u het lineaire regressie netwerk wilt configureren, kunt u een specifieke set waarden als argumenten opgeven.
+    + **Eén para meter**: als u weet hoe u het lineaire regressie netwerk wilt configureren, kunt u een specifieke set waarden als argumenten opgeven.
     
-    + **Parameter bereik** : Selecteer deze optie als u niet zeker weet wat de beste para meters zijn en u een parameter sweep wilt uitvoeren. Selecteer een bereik met waarden om over te sporen en het [model Hyper parameters](tune-model-hyperparameters.md) wordt herhaald op alle mogelijke combi Naties van de instellingen die u hebt verstrekt om de Hyper parameters te bepalen die de optimale resultaten opleveren.  
+    + **Parameter bereik**: Selecteer deze optie als u niet zeker weet wat de beste para meters zijn en u een parameter sweep wilt uitvoeren. Selecteer een bereik met waarden om over te sporen en het [model Hyper parameters](tune-model-hyperparameters.md) wordt herhaald op alle mogelijke combi Naties van de instellingen die u hebt verstrekt om de Hyper parameters te bepalen die de optimale resultaten opleveren.  
 
    
 4. Voor het **leer tempo** geeft u het eerste leer tempo op voor de stochastische Daal Optimizer van een kleur overgang.
 
 5. Voor het **aantal trainings-epochen** typt u een waarde die aangeeft hoe vaak de algoritme voor beelden moet herhalen. Voor gegevens sets met een klein aantal voor beelden moet dit aantal groot zijn om convergentie te bereiken.
 
-6. **Functies normaliseren** : als u de numerieke gegevens die worden gebruikt voor het trainen van het model al hebt genormaliseerd, kunt u deze optie deselecteren. Standaard normaleert de module alle numerieke invoer naar een bereik tussen 0 en 1.
+6. **Functies normaliseren**: als u de numerieke gegevens die worden gebruikt voor het trainen van het model al hebt genormaliseerd, kunt u deze optie deselecteren. Standaard normaleert de module alle numerieke invoer naar een bereik tussen 0 en 1.
 
     > [!NOTE]
     > 
@@ -129,9 +129,9 @@ Nadat de training is voltooid:
 
 12. Het model trainen:
 
-    + Als u de **modus trainer maken** instelt op **één para meter** , verbindt u een gecodeerde gegevensset en de module [Train model](train-model.md) .  
+    + Als u de **modus trainer maken** instelt op **één para meter**, verbindt u een gecodeerde gegevensset en de module [Train model](train-model.md) .  
   
-    + Als u de **modus trainer maken** instelt op het **parameter bereik** , verbindt u een gecodeerde gegevensset en traint u het model met behulp van [Hyper parameters model](tune-model-hyperparameters.md).  
+    + Als u de **modus trainer maken** instelt op het **parameter bereik**, verbindt u een gecodeerde gegevensset en traint u het model met behulp van [Hyper parameters model](tune-model-hyperparameters.md).  
   
     > [!NOTE]
     > 

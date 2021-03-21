@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: c3bf8e5f81ae7bf35ff34039fa1e81c9fd4a406b
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93324544"
 ---
 # <a name="deployment-stage-of-the-team-data-science-process-lifecycle"></a>Implementatie fase van de team data Science proces levenscyclus
@@ -39,7 +39,7 @@ Implementeer modellen met een gegevens pijplijn naar een productie-of productie 
 ## <a name="how-to-do-it"></a>Hoe u dit doet
 De belangrijkste taak die in deze fase wordt behandeld:
 
-**Operationeel maken het model** : Implementeer het model en de pijp lijn op een productie-of productie omgeving voor het verbruik van toepassingen.
+**Operationeel maken het model**: Implementeer het model en de pijp lijn op een productie-of productie omgeving voor het verbruik van toepassingen.
 
 ### <a name="operationalize-a-model"></a>Een model operationeel maken
 Nadat u een set modellen hebt die goed pres teren, kunt u deze operationeel maken voor andere toepassingen die u wilt gebruiken. Afhankelijk van de bedrijfs vereisten worden de voor spellingen in realtime of op basis van een batch gemaakt. Als u modellen wilt implementeren, kunt u ze beschikbaar maken met een open API-interface. Met de-interface kan het model eenvoudig worden gebruikt vanuit verschillende toepassingen, zoals:

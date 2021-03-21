@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 04/26/2019
 ms.author: jeedes
 ms.openlocfilehash: 800ce9d6603f60f7328525a964565bb233c04a5e
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92516115"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-real-links"></a>Zelfstudie: Azure Active Directory-integratie met Real Links
@@ -49,7 +49,7 @@ Om de integratie van Real Links in Azure AD te configureren, moet u Real Links v
 
 **Als u Real Links wilt toevoegen vanuit de galerie, moet u de volgende stappen uitvoeren:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -114,13 +114,13 @@ Voer de volgende stappen uit als u Azure AD-eenmalige aanmelding wilt configurer
 
 ### <a name="configure-real-links-single-sign-on"></a>Eenmalige aanmelding met Real Links configureren
 
-Als u eenmalige aanmelding wilt configureren in **Real Links** , moet u de **App-URL voor federatieve metagegevens** verzenden naar het [ondersteuningsteam van Real Links](mailto:support@reallinks.io). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding wilt configureren in **Real Links**, moet u de **App-URL voor federatieve metagegevens** verzenden naar het [ondersteuningsteam van Real Links](mailto:support@reallinks.io). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 

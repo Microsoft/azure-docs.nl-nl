@@ -8,10 +8,10 @@ author: parthpandyaMSFT
 ms.author: parthp
 ms.date: 05/30/2019
 ms.openlocfilehash: 5b4aadc506b2f4a251ccef5e9488066b609ba5a5
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93130524"
 ---
 # <a name="company-work-accounts-and-partner-center"></a>Werk accounts van het bedrijf en het partner centrum
@@ -24,7 +24,7 @@ Als uw bedrijf zich heeft geabonneerd op een micro soft-Cloud service, zoals Azu
 
 Voer de volgende stappen uit om te controleren:
 1. Meld u aan bij de Azure-beheer Portal op https://portal.azure.com .
-2. Selecteer **Azure Active Directory** in het navigatie menu aan de linkerkant en selecteer vervolgens **aangepaste domein namen** .
+2. Selecteer **Azure Active Directory** in het navigatie menu aan de linkerkant en selecteer vervolgens **aangepaste domein namen**.
 3. Als u al een werk account hebt, wordt uw domein naam weer gegeven.
 
 Als uw bedrijf nog geen werk account heeft, wordt er een voor u gemaakt tijdens het inschrijvings proces van het partner centrum.
@@ -38,7 +38,7 @@ Voordat u besluit om een bestaand werk account te gebruiken, moet u rekening hou
 Volg de onderstaande stappen om een nieuw werk account voor uw bedrijf te maken. Mogelijk moet u hulp vragen aan iemand die beheerders rechten heeft voor het Microsoft Azure account van uw bedrijf.
 
 1. Meld u aan bij de [Microsoft Azure-portal](https://portal.azure.com).
-2. Selecteer de **Azure Active Directory** gebruikers in het navigatie menu aan de linkerkant  ->  **Users** .
+2. Selecteer de **Azure Active Directory** gebruikers in het navigatie menu aan de linkerkant  ->  .
 3. Selecteer **nieuwe gebruiker** en maak een nieuw Azure-werk account door een naam en e-mail adres op te geven. Zorg ervoor dat de **Directory-rol** is ingesteld op **gebruiker** en schakel het selectie vakje **wacht woord weer geven** onderaan in om het automatisch gegenereerde wacht woord te bekijken en te noteren.
 4. Selecteer **maken** om de nieuwe gebruiker op te slaan.
 

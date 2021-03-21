@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: nigu
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a3ac799203cade3a907acbe28dee3a8023891db2
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93077639"
 ---
 # <a name="troubleshoot-using-the-what-if-tool-in-conditional-access"></a>Problemen met het hulpprogramma What If in Voorwaardelijke toegang oplossen
@@ -32,7 +32,7 @@ Het hulp programma **What if** biedt een manier om snel te bepalen welke beleids
 
 ## <a name="how-it-works"></a>Uitleg
 
-In het **What if hulp programma voor voorwaardelijke toegang** moet u eerst de instellingen configureren van het aanmeldings scenario dat u wilt simuleren. Deze instellingen omvatten:
+In het **What if hulp programma voor voorwaardelijke toegang** moet u eerst de instellingen configureren van het aanmeldings scenario dat u wilt simuleren. Deze instellingen zijn onder meer:
 
 - De gebruiker die u wilt testen 
 - De Cloud-apps waartoe de gebruiker toegang probeert te krijgen
@@ -46,7 +46,7 @@ Wanneer de evaluatie is voltooid, genereert het hulp programma een rapport van h
 
 U kunt het hulp programma **What if** vinden op de pagina **[voorwaardelijke toegang-beleids regels](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ConditionalAccessBlade/Policies)** in de Azure Portal.
 
-Als u het hulp programma wilt starten, klikt u in de werk balk boven aan de lijst met beleids regels op **What if** .
+Als u het hulp programma wilt starten, klikt u in de werk balk boven aan de lijst met beleids regels op **What if**.
 
 :::image type="content" source="./media/what-if-tool/01.png" alt-text="Scherm afbeelding van de pagina met beleids regels voor voorwaardelijke toegang in de Azure Portal. Op de werk balk ziet u wat als item is gemarkeerd." border="false":::
 
@@ -56,7 +56,7 @@ Voordat u een evaluatie kunt uitvoeren, moet u de instellingen configureren.
 
 In deze sectie vindt u informatie over de instellingen van simulatie uitvoering.
 
-:::image type="content" source="./media/what-if-tool/02.png" alt-text="Scherm afbeelding van de pagina met beleids regels voor voorwaardelijke toegang in de Azure Portal. Op de werk balk ziet u wat als item is gemarkeerd." border="false":::
+:::image type="content" source="./media/what-if-tool/02.png" alt-text="Scherm afbeelding van de pagina Azure Portal What If, met velden voor een gebruiker, Cloud-apps, een I P-adres, een platform, een client-app en een aanmeldings risico." border="false":::
 
 ### <a name="user"></a>Gebruiker
 
@@ -64,15 +64,15 @@ U kunt slechts één gebruiker selecteren. Dit is het enige vereiste veld.
 
 ### <a name="cloud-apps"></a>Cloud-apps
 
-De standaard waarde voor deze instelling is **alle Cloud-apps** . De standaard instelling voert een evaluatie uit van alle beschik bare beleids regels in uw omgeving. U kunt het bereik beperken tot beleids regels die van invloed zijn op specifieke Cloud-apps.
+De standaard waarde voor deze instelling is **alle Cloud-apps**. De standaard instelling voert een evaluatie uit van alle beschik bare beleids regels in uw omgeving. U kunt het bereik beperken tot beleids regels die van invloed zijn op specifieke Cloud-apps.
 
-### <a name="ip-address"></a>Het IP-adres
+### <a name="ip-address"></a>IP-adres
 
 Het IP-adres is een enkel IPv4-adres voor het nabootsen van de [locatie voorwaarde](location-condition.md). Het adres vertegenwoordigt het Internet adres van het apparaat dat door uw gebruiker wordt gebruikt om u aan te melden. U kunt het IP-adres van een apparaat controleren door bijvoorbeeld te navigeren naar [Wat is mijn IP-adres](https://whatismyipaddress.com).    
 
 ### <a name="device-platforms"></a>Apparaatplatformen
 
-Deze instelling imiteert de [voor waarde apparaat platforms](concept-conditional-access-conditions.md#device-platforms) en vertegenwoordigt het equivalent van **alle platformen (met inbegrip van niet-ondersteunde)** . 
+Deze instelling imiteert de [voor waarde apparaat platforms](concept-conditional-access-conditions.md#device-platforms) en vertegenwoordigt het equivalent van **alle platformen (met inbegrip van niet-ondersteunde)**. 
 
 ### <a name="client-apps"></a>Client-apps
 
@@ -88,9 +88,9 @@ Deze instelling imiteert de [aanmeldings risico voorwaarde](concept-conditional-
 
 ## <a name="evaluation"></a>Evaluatie 
 
-U start een evaluatie door te klikken op **What if** . Het evaluatie resultaat geeft u een rapport dat bestaat uit: 
+U start een evaluatie door te klikken op **What if**. Het evaluatie resultaat geeft u een rapport dat bestaat uit: 
 
-:::image type="content" source="./media/what-if-tool/03.png" alt-text="Scherm afbeelding van de pagina met beleids regels voor voorwaardelijke toegang in de Azure Portal. Op de werk balk ziet u wat als item is gemarkeerd." border="false":::
+:::image type="content" source="./media/what-if-tool/03.png" alt-text="Scherm opname van een evaluatie rapport. Tekst geeft aan dat er ten minste één klassiek beleid is geconfigureerd. Er zijn tabbladen beschikbaar voor het weer geven van beleid." border="false":::
 
 - Een indicator die in uw omgeving een klassiek beleid bevat
 - Beleids regels die van toepassing zijn op uw gebruiker

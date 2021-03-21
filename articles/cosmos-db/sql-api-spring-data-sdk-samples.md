@@ -9,10 +9,10 @@ ms.date: 09/23/2020
 ms.custom: devx-track-java
 ms.author: anfeldma
 ms.openlocfilehash: 378bb891c8539a6cf3d61f6511a0f58377d2bfd2
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93091137"
 ---
 # <a name="azure-cosmos-db-sql-api-spring-data-azure-cosmos-db-v3-examples"></a>Azure Cosmos DB SQL API: Spring Data Azure Cosmos DB v3-voorbeelden
@@ -60,7 +60,7 @@ U hebt het volgende nodig om deze voorbeeldtoepassing uit te voeren:
 * Java Development Kit 8
 * Spring Data Azure Cosmos DB v3
 
-U kunt eventueel Maven gebruiken om de recentste binaire Spring Data Azure Cosmos DB v3-bestanden op te halen voor gebruik in uw project. Maven voegt automatisch eventuele vereiste afhankelijkheden toe. Anders kunt u de afhankelijkheden die worden vermeld in het bestand **pom.xml** , rechtstreeks downloaden en toevoegen aan uw build-pad.
+U kunt eventueel Maven gebruiken om de recentste binaire Spring Data Azure Cosmos DB v3-bestanden op te halen voor gebruik in uw project. Maven voegt automatisch eventuele vereiste afhankelijkheden toe. Anders kunt u de afhankelijkheden die worden vermeld in het bestand **pom.xml**, rechtstreeks downloaden en toevoegen aan uw build-pad.
 
 ```bash
 <dependency>

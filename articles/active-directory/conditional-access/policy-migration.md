@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d1811d5b9ae4d3e34b48e1cdc156438f2bad98d1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90601651"
 ---
 # <a name="conditional-access-classic-policy-migration"></a>Migratie van klassiek beleid voor voorwaardelijke toegang
@@ -33,7 +33,7 @@ In dit artikel wordt uitgelegd wat u moet weten om uw bestaande beleids regels v
 
 ## <a name="classic-policies"></a>Klassiek beleid
 
-In de [Azure Portal](https://portal.azure.com)kunt u beleid voor voorwaardelijke toegang vinden onder **Azure Active Directory**  >  **Security**  >  **voorwaardelijke toegang**voor beveiliging. Uw organisatie heeft mogelijk ook oudere beleids regels voor voorwaardelijke toegang die niet op deze pagina zijn gemaakt. Deze beleids regels worden *klassieke beleids regels*genoemd. Klassieke beleids regels zijn beleids regels voor voorwaardelijke toegang, die u hebt gemaakt in:
+In de [Azure Portal](https://portal.azure.com)kunt u beleid voor voorwaardelijke toegang vinden onder **Azure Active Directory**  >    >  **voorwaardelijke toegang** voor beveiliging. Uw organisatie heeft mogelijk ook oudere beleids regels voor voorwaardelijke toegang die niet op deze pagina zijn gemaakt. Deze beleids regels worden *klassieke beleids regels* genoemd. Klassieke beleids regels zijn beleids regels voor voorwaardelijke toegang, die u hebt gemaakt in:
 
 - De klassieke Azure-Portal
 - De klassieke intune-Portal
@@ -62,7 +62,7 @@ Door de geselecteerde groepen te wijzigen of door specifieke groepen uit te slui
  
 ## <a name="migration-considerations"></a>Overwegingen bij migratie
 
-In dit artikel wordt het beleid voor voorwaardelijke toegang van Azure AD ook wel *nieuwe beleids regels*genoemd.
+In dit artikel wordt het beleid voor voorwaardelijke toegang van Azure AD ook wel *nieuwe beleids regels* genoemd.
 Uw klassieke beleids regels blijven naast uw nieuwe beleids regels werken, totdat u ze uitschakelt of verwijdert. 
 
 De volgende aspecten zijn belang rijk in de context van een beleids consolidatie:

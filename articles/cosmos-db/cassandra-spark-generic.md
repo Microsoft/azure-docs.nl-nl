@@ -9,10 +9,10 @@ ms.subservice: cosmosdb-cassandra
 ms.topic: how-to
 ms.date: 09/01/2019
 ms.openlocfilehash: d25e168e342e22af9dc41d31dd7e18530aaa22b8
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93090508"
 ---
 # <a name="connect-to-azure-cosmos-db-cassandra-api-from-spark"></a>Verbinding maken met de Azure Cosmos DB Cassandra-API vanuit Spark
@@ -41,7 +41,7 @@ Dit artikel is een reeks artikelen over Azure Cosmos DB Cassandra-API integratie
 
 De volgende tabel geeft een lijst van Azure Cosmos DB Cassandra-API specifieke doorvoer configuratie parameters die door de connector worden opgegeven. Zie voor een gedetailleerde lijst met alle configuratie parameters de pagina [configuratie verwijzing](https://github.com/datastax/spark-cassandra-connector/blob/master/doc/reference.md) van de GitHub-opslag plaats in de Spark Cassandra-connector.
 
-| **Eigenschaps naam** | **Standaardwaarde** | **Beschrijving** |
+| **Eigenschapsnaam** | **Standaardwaarde** | **Beschrijving** |
 |---------|---------|---------|
 | spark.cassandra.output.bat. grootte. Rows |  1 |Aantal rijen per batch. Stel deze para meter in op 1. Deze para meter wordt gebruikt voor een hogere door Voer voor zware werk belastingen. |
 | spark.cassandra.connection.connections_per_executor_max  | Geen | Maximum aantal verbindingen per knoop punt per uitvoerder. 10 * n is gelijk aan 10 verbindingen per knoop punt in een n-node Cassandra-cluster. Als u dus vijf verbindingen per knoop punt per uitvoerder nodig hebt voor een Cassandra-cluster van 5 knoop punten, moet u deze configuratie instellen op 25. Wijzig deze waarde op basis van de mate van parallellisme of het aantal uitvoerender waarvoor uw Spark-taken zijn geconfigureerd.   |

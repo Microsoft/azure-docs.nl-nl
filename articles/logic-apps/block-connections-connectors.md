@@ -7,10 +7,10 @@ ms.reviewer: deli, logicappspm
 ms.topic: conceptual
 ms.date: 07/23/2020
 ms.openlocfilehash: 02d9852f6615c3926a02294e0e7eca50f2fbe9a5
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92310039"
 ---
 # <a name="block-connections-created-by-connectors-in-azure-logic-apps"></a>Verbindingen die zijn gemaakt door connectors in Azure Logic Apps blok keren
@@ -111,15 +111,15 @@ Als u al een logische app hebt met de verbinding die u wilt blok keren, volgt u 
 
 Voer de volgende stappen uit om het maken van een verbinding in een logische app te blok keren:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Voer in het zoekvak van de portal in `policy` en selecteer **beleid**.
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). Voer in het zoekvak van de portal in `policy` en selecteer **beleid**.
 
    ![Zoek en selecteer ' beleid ' in Azure Portal](./media/block-connections-connectors/find-select-azure-policy.png)
 
-1. Selecteer in het menu **beleid** onder **ontwerpen**de optie **definities**  >  **+ beleids definitie**.
+1. Selecteer in het menu **beleid** onder **ontwerpen** de optie **definities**  >  **+ beleids definitie**.
 
    ![Selecteer definities > + beleids definitie](./media/block-connections-connectors/add-new-policy-definition.png)
 
-1. Onder **beleids definitie**geeft u de informatie voor de beleids definitie op, op basis van de eigenschappen die in het voor beeld worden beschreven:
+1. Onder **beleids definitie** geeft u de informatie voor de beleids definitie op, op basis van de eigenschappen die in het voor beeld worden beschreven:
 
    ![Scherm opname waarin de eigenschappen van de beleids definitie worden weer gegeven.](./media/block-connections-connectors/policy-definition-create-connections-1.png)
 
@@ -132,7 +132,7 @@ Voer de volgende stappen uit om het maken van een verbinding in een logische app
    | **Beleidsafdwinging** | Ja | **Ingeschakeld** | Met deze instelling bepaalt u of de beleids definitie moet worden in-of uitgeschakeld wanneer u uw werk opslaat. |
    ||||
 
-1. Onder **BELEIDS regel**is het JSON-invoervak vooraf ingevuld met een beleids definitie sjabloon. Vervang deze sjabloon door de [beleids definitie](../governance/policy/concepts/definition-structure.md) op basis van de eigenschappen die worden beschreven in de onderstaande tabel en met de volgende syntaxis:
+1. Onder **BELEIDS regel** is het JSON-invoervak vooraf ingevuld met een beleids definitie sjabloon. Vervang deze sjabloon door de [beleids definitie](../governance/policy/concepts/definition-structure.md) op basis van de eigenschappen die worden beschreven in de onderstaande tabel en met de volgende syntaxis:
 
    ```json
    {
@@ -232,15 +232,15 @@ Zie de volgende onderwerpen voor meer informatie over Azure-beleids definities:
 
 Wanneer u een verbinding maakt in een logische app, bestaat die verbinding als afzonderlijke Azure-resource. Als u alleen de logische app verwijdert, wordt de verbinding niet automatisch verwijderd en blijft deze bestaan tot deze wordt verwijderd. Mogelijk hebt u een scenario waarin de verbinding al bestaat of waar u de verbinding moet maken voor gebruik buiten een logische app. U kunt nog steeds de mogelijkheid voor het gebruik van een bestaande verbinding in een logische app blok keren door een beleid te maken waarmee wordt voor komen dat logische apps met de beperkte of niet-goedgekeurde verbinding worden opgeslagen.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Voer in het zoekvak van de portal in `policy` en selecteer **beleid**.
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). Voer in het zoekvak van de portal in `policy` en selecteer **beleid**.
 
    ![Zoek en selecteer ' beleid ' in Azure Portal](./media/block-connections-connectors/find-select-azure-policy.png)
 
-1. Selecteer in het menu **beleid** onder **ontwerpen**de optie **definities**  >  **+ beleids definitie**.
+1. Selecteer in het menu **beleid** onder **ontwerpen** de optie **definities**  >  **+ beleids definitie**.
 
    ![Selecteer definities > + beleids definitie](./media/block-connections-connectors/add-new-policy-definition.png)
 
-1. Onder **beleids definitie**geeft u de informatie voor de beleids definitie op, op basis van de eigenschappen die in het voor beeld worden beschreven en gaat u door met behulp van Insta gram als voor beeld:
+1. Onder **beleids definitie** geeft u de informatie voor de beleids definitie op, op basis van de eigenschappen die in het voor beeld worden beschreven en gaat u door met behulp van Insta gram als voor beeld:
 
    ![Eigenschappen van beleids definitie](./media/block-connections-connectors/policy-definition-using-connections-1.png)
 
@@ -253,7 +253,7 @@ Wanneer u een verbinding maakt in een logische app, bestaat die verbinding als a
    | **Beleidsafdwinging** | Ja | **Ingeschakeld** | Met deze instelling bepaalt u of de beleids definitie moet worden in-of uitgeschakeld wanneer u uw werk opslaat. |
    ||||
 
-1. Onder **BELEIDS regel**is het JSON-invoervak vooraf ingevuld met een beleids definitie sjabloon. Vervang deze sjabloon door de [beleids definitie](../governance/policy/concepts/definition-structure.md) op basis van de eigenschappen die worden beschreven in de onderstaande tabel en met de volgende syntaxis:
+1. Onder **BELEIDS regel** is het JSON-invoervak vooraf ingevuld met een beleids definitie sjabloon. Vervang deze sjabloon door de [beleids definitie](../governance/policy/concepts/definition-structure.md) op basis van de eigenschappen die worden beschreven in de onderstaande tabel en met de volgende syntaxis:
 
    ```json
    {
@@ -323,11 +323,11 @@ Vervolgens moet u de beleids definitie toewijzen waarvoor u het beleid wilt afdw
 
    ![Zoek en selecteer ' beleid ' in Azure Portal](./media/block-connections-connectors/find-select-azure-policy.png)
 
-1. Selecteer in het menu **beleid** onder **ontwerpen**de optie **toewijzingen**  >  **beleid toewijzen**.
+1. Selecteer in het menu **beleid** onder **ontwerpen** de optie **toewijzingen**  >  **beleid toewijzen**.
 
    ![Selecteer toewijzingen > toewijzen](./media/block-connections-connectors/add-new-policy-assignment.png)
 
-1. Geef onder **basis beginselen**deze informatie voor de beleids toewijzing op:
+1. Geef onder **basis beginselen** deze informatie voor de beleids toewijzing op:
 
    | Eigenschap | Vereist | Beschrijving |
    |----------|----------|-------------|
@@ -363,10 +363,10 @@ U kunt het beleid proberen door een verbinding te maken met behulp van de nu bep
 
 Het bericht bevat de volgende informatie:
 
-| Beschrijving | Inhoud |
+| Beschrijving | Content |
 |-------------|---------|
 | Reden voor de fout | `"Resource 'instagram' was disallowed by policy."` |
-| Toewijzings naam | `"Block Instagram connections"` |
+| Naam van toewijzing | `"Block Instagram connections"` |
 | Toewijzings-ID | `"/subscriptions/xxxxxXXXXXxxxxxXXXXXxxxxxXXXXX/resourceGroups/MyLogicApp-RG/providers/Microsoft.Authorization/policyAssignments/4231890fc3bd4352acb0b673"` |
 | Beleids definitie-ID | `"/subscriptions/xxxxxXXXXXxxxxxXXXXXxxxxxXXXXX/providers/Microsoft.Authorization/policyDefinitions/b5ddcfec-1b24-4cac-a353-360846a59f24"` |
 |||

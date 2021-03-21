@@ -4,10 +4,10 @@ description: Gebeurtenissen verzenden vanuit Auth0 naar Azure-Services met Azure
 ms.topic: conceptual
 ms.date: 07/07/2020
 ms.openlocfilehash: 340403111c094540ba7e66faf71ebf3cfe24fe7d
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93101286"
 ---
 # <a name="auth0-partner-topics"></a>Auth0-partner onderwerpen
@@ -36,7 +36,7 @@ Begrijpen wanneer gebruikers toegang krijgen tot uw product, waar ze zijn aangem
 - Wanneer uw piek verkeer is. 
 
 ### <a name="manage-user-data"></a>Gebruikersgegevens beheren
-Het bijhouden en controleren van uw gebruikers acties is van cruciaal belang voor het onderhouden van de beveiliging en de volgende industriële voor Schriften. De mogelijkheid om gebruikers gegevens te bewerken, te verwijderen of te exporteren is steeds belang rijker voor de volgende privacy-wetten, zoals de AVG van de Europese Unie (AVG).
+Het bijhouden en controleren van uw gebruikers acties is van cruciaal belang voor het onderhouden van de beveiliging en de volgende industriële voor Schriften. De mogelijkheid om gebruikers gegevens te bewerken, te verwijderen of te exporteren is steeds belang rijker voor de volgende privacy-wetten, zoals de algemene verordening gegevensbescherming van de Europese Unie (AVG).
 
 ### <a name="secure-your-application"></a>Uw toepassing beveiligen
 Het combi neren van beveiligings bewaking en antwoord procedures voor incidenten is belang rijk wanneer u een gedistribueerd systeem beveiligt. Daarom is het belang rijk om alle gegevens op één plek te houden en de hele stack te bewaken. 

@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 04/30/2020
 ms.author: apimpm
 ms.openlocfilehash: c420c62e6f8f09a2b29398590cdb4ad410e5d296
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100574061"
 ---
 # <a name="configure-cloud-metrics-and-logs-for-azure-api-management-self-hosted-gateway"></a>Metrische gegevens en logboeken voor de Cloud configureren voor Azure API Management zelf-hostende gateway
@@ -32,7 +32,7 @@ De functie kan worden ingeschakeld of uitgeschakeld met behulp `telemetry.metric
 
 | Veld  | Standaard | Beschrijving |
 | ------------- | ------------- | ------------- |
-| telemetrie. Metrics. Cloud  | `true` | Hiermee schakelt u logboek registratie via Azure Monitor in. Waarde kan zijn `true` , `false` . |
+| telemetry.metrics.cloud  | `true` | Hiermee schakelt u logboek registratie via Azure Monitor in. Waarde kan zijn `true` , `false` . |
 
 
 Hier volgt een voor beeld van een configuratie:

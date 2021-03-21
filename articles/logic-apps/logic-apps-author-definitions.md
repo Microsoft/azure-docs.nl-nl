@@ -7,10 +7,10 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 01/01/2018
 ms.openlocfilehash: 9163071237041d7c8510a644c573e3763434bb0c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96014394"
 ---
 # <a name="create-edit-or-extend-json-for-logic-app-workflow-definitions-in-azure-logic-apps"></a>JSON maken, bewerken of uitbreiden voor werkstroomdefinities voor logische apps in Azure Logic Apps
@@ -28,7 +28,7 @@ Als u geen ervaring hebt met Logic apps, lees dan [hoe u uw eerste logische app 
 
 ## <a name="edit-json---azure-portal"></a>JSON-Azure Portal bewerken
 
-1. Meld u aan bij de <a href="https://portal.azure.com" target="_blank">Azure-portal</a>.
+1. Meld u aan bij <a href="https://portal.azure.com" target="_blank">Azure Portal</a>.
 
 2. Kies in het menu links **alle services**.
 Zoek in het zoekvak ' Logic apps ' en selecteer vervolgens de logische app in de resultaten.

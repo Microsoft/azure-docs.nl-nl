@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 10/27/2020
 ms.author: tomfitz
 ms.openlocfilehash: 1ac6fd5a3f1e581fc9a676fe7f8f27b9742e1581
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93101218"
 ---
 # <a name="microsoftkeyvaultkeyvaultcertificateselector-ui-element"></a>Micro soft. KeyVaultCertificateSelector UI-element
@@ -22,13 +22,13 @@ De gebruiker krijgt de mogelijkheid om een beschikbaar certificaat te selecteren
 
 :::image type="content" source="./media/managed-application-elements/microsoft-keyvault-keyvaultcertificateselector-select.png" alt-text="Micro soft. KeyVaultCertificateSelector":::
 
-Nadat u **een certificaat selecteren selecteert** , kan de gebruiker een sleutel kluis en een certificaat van de sleutel kluis opgeven.
+Nadat u **een certificaat selecteren selecteert**, kan de gebruiker een sleutel kluis en een certificaat van de sleutel kluis opgeven.
 
-:::image type="content" source="./media/managed-application-elements/microsoft-keyvault-keyvaultcertificateselector-certificate.png" alt-text="Micro soft. KeyVaultCertificateSelector":::
+:::image type="content" source="./media/managed-application-elements/microsoft-keyvault-keyvaultcertificateselector-certificate.png" alt-text="Micro soft. KeyVaultCertificateSelector certificaat selecteren":::
 
 Het besturings element wordt bijgewerkt om de geselecteerde sleutel kluis en certificaat naam weer te geven.
 
-:::image type="content" source="./media/managed-application-elements/microsoft-keyvault-keyvaultcertificateselector-result.png" alt-text="Micro soft. KeyVaultCertificateSelector":::
+:::image type="content" source="./media/managed-application-elements/microsoft-keyvault-keyvaultcertificateselector-result.png" alt-text="Micro soft. KeyVaultCertificateSelector-kluis. het geselecteerde certificaat weer geven":::
 
 ## <a name="schema"></a>Schema
 

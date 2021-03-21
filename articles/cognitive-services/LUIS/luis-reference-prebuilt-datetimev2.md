@@ -10,10 +10,10 @@ ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 04/13/2020
 ms.openlocfilehash: 83522de9c00056a3808b002b3103f45c72553399
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96013068"
 ---
 # <a name="datetimev2-prebuilt-entity-for-a-luis-app"></a>DatetimeV2 prebuiled-entiteit voor een LUIS-app
@@ -146,7 +146,7 @@ Elk element van de `values` matrix kan de volgende velden bevatten:
 |Timex|tijd, datum of datum bereik in de TIMEX-indeling die volgt op de [ISO 8601-standaard](https://en.wikipedia.org/wiki/ISO_8601) en de TIMEX3-kenmerken voor aantekening met behulp van de TimeML-taal.|
 |mod|de term die wordt gebruikt om te beschrijven hoe de waarde `before` kan worden gebruikt, zoals, `after` .|
 |type|Het subtype, dat een van de volgende items kan zijn: `datetime` , `date` , `time` , `daterange` , `timerange` , `datetimerange` , `duration` , `set` .|
-|waarde|**Beschrijving.** Een datetime-object in de notatie JJJJ-MM-DD (datum), uu: mm: SS (tijd) JJJJ-MM-DD uu: mm: SS (datetime). Als `type` dat `duration` het geval is, is de waarde het aantal seconden (duur) <br/> Wordt alleen gebruikt als `type` is `datetime` or `date` , `time` , of ' duration '.|
+|waarde|**Optioneel.** Een datetime-object in de notatie JJJJ-MM-DD (datum), uu: mm: SS (tijd) JJJJ-MM-DD uu: mm: SS (datetime). Als `type` dat `duration` het geval is, is de waarde het aantal seconden (duur) <br/> Wordt alleen gebruikt als `type` is `datetime` or `date` , `time` , of ' duration '.|
 
 ## <a name="valid-date-values"></a>Geldige datum waarden
 

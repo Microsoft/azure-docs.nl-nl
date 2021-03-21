@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
 ms.openlocfilehash: c3eeb1577e628965e3e5a35fa20c072224383149
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92514619"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-thoughtworks-mingle"></a>Zelfstudie: Integratie van Azure Active Directory met Thoughtworks Mingle
@@ -49,11 +49,11 @@ Voor het configureren van de integratie van Thoughtworks Mingle in Azure AD moet
 
 **Voer de volgende stappen uit als u Thoughtworks Mingle vanuit de galerie wilt toevoegen:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -67,7 +67,7 @@ Voor het configureren van de integratie van Thoughtworks Mingle in Azure AD moet
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In dit gedeelte configureert en test u eenmalige aanmelding van Azure AD met Thoughtworks Mingle op basis van een testgebruiker met de naam **Britta Simon** .
+In dit gedeelte configureert en test u eenmalige aanmelding van Azure AD met Thoughtworks Mingle op basis van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in Thoughtworks Mingle tot stand is gebracht.
 
 Om Azure AD-eenmalige aanmelding met Thoughtworks Mingle te configureren en te testen, moet u de volgende bouwstenen voltooien:
@@ -85,7 +85,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voer de volgende stappen uit als u eenmalige aanmelding van Microsoft Azure Active Directory met Thoughtworks Mingle wilt configureren:
 
-1. Ga in [Azure Portal](https://portal.azure.com/) naar de pagina met de integratie van de toepassing **Thoughtworks Mingle** en selecteer **Eenmalige aanmelding** .
+1. Ga in [Azure Portal](https://portal.azure.com/) naar de pagina met de integratie van de toepassing **Thoughtworks Mingle** en selecteer **Eenmalige aanmelding**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -122,9 +122,9 @@ Voer de volgende stappen uit als u eenmalige aanmelding van Microsoft Azure Acti
 
 ### <a name="configure-thoughtworks-mingle-single-sign-on"></a>Eenmalige aanmelding voor Thoughtworks Mingle configureren
 
-1. Meld u als een beheerder aan bij de bedrijfssite van **Thoughtworks Mingle** .
+1. Meld u als een beheerder aan bij de bedrijfssite van **Thoughtworks Mingle**.
 
-2. Klik op het tabblad **Admin** en klik vervolgens op **SSO Config** .
+2. Klik op het tabblad **Admin** en klik vervolgens op **SSO Config**.
    
     ![Het tabblad Admin](./media/thoughtworks-mingle-tutorial/ic785157.png "SSO Config")
 
@@ -134,13 +134,13 @@ Voer de volgende stappen uit als u eenmalige aanmelding van Microsoft Azure Acti
     
     a. Klik op **Choose file** om het metagegevensbestand te uploaden. 
 
-    b. Klik op **Wijzigingen opslaan** .
+    b. Klik op **Wijzigingen opslaan**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -158,13 +158,13 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 
-    d. Klik op **Create** .
+    d. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding bij Azure door haar toegang te geven tot Thoughtworks Mingle.
 
-1. Selecteer in Azure Portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **Thoughtworks Mingle** .
+1. Selecteer in Azure Portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **Thoughtworks Mingle**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -172,11 +172,11 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
     ![De koppeling Thoughtworks Mingle in de lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -184,7 +184,7 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
 6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="create-thoughtworks-mingle-test-user"></a>Testgebruiker voor Thoughtworks Mingle maken
 
@@ -194,27 +194,27 @@ Azure AD-gebruikers moeten worden ingericht voor de Thoughtworks Mingle-toepassi
 
 1. Meld u als een beheerder aan bij de bedrijfssite van Thoughtworks Mingle.
 
-2. Klik op **profiel** .
+2. Klik op **profiel**.
    
     ![Your First Project](./media/thoughtworks-mingle-tutorial/ic785160.png "Your First Project")
 
-3. Klik op het tabblad **Admin** en klik vervolgens op **Users** .
+3. Klik op het tabblad **Admin** en klik vervolgens op **Users**.
    
     ![Gebruikers](./media/thoughtworks-mingle-tutorial/ic785161.png "Gebruikers")
 
-4. Klik op **New User** .
+4. Klik op **New User**.
    
     ![Nieuwe gebruiker](./media/thoughtworks-mingle-tutorial/ic785162.png "Nieuwe gebruiker")
 
-5. Voer de volgende stappen uit in het dialoogvenster **New User** :
+5. Voer de volgende stappen uit in het dialoogvenster **New User**:
    
     ![Het dialoogvenster New User](./media/thoughtworks-mingle-tutorial/ic785163.png "Nieuwe gebruiker")  
  
-    a. Vul in de vakken **Sign-in name** , **Display name** , **Choose password** , **Confirm password** gegevens in van een geldig Azure Active Directory-account dat u wilt inrichten. 
+    a. Vul in de vakken **Sign-in name**, **Display name**, **Choose password**, **Confirm password** gegevens in van een geldig Azure Active Directory-account dat u wilt inrichten. 
 
-    b. Selecteer bij **User type** de optie **Full user** .
+    b. Selecteer bij **User type** de optie **Full user**.
 
-    c. Klik op **Create This Profile** .
+    c. Klik op **Create This Profile**.
 
 >[!NOTE]
 >U kunt ook alle andere hulpprogramma's voor het maken van gebruikersaccounts of API's van Thoughtworks Mingle gebruiken om Microsoft Azure Active Directory-gebruikersaccounts in te richten.

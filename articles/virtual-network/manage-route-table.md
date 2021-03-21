@@ -13,13 +13,13 @@ ms.workload: infrastructure-services
 ms.date: 03/19/2020
 ms.author: kumud
 ms.openlocfilehash: 642a9a9f798492d85ee2a9784a1fe5ad4f854d58
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100574117"
 ---
-# <a name="create-change-or-delete-a-route-table"></a>Een route tabel maken, wijzigen of verwijderen
+# <a name="create-change-or-delete-a-route-table"></a>Een routeringstabel maken, wijzigen of verwijderen
 
 Azure routeert automatisch verkeer tussen Azure-subnetten, virtuele netwerken en on-premises netwerken. Als u de standaard routering van Azure wilt wijzigen, doet u dat door een route tabel te maken. Als u niet bekend bent met route ring in virtuele netwerken, kunt u meer informatie hierover vinden in [virtueel netwerk verkeer routeren](virtual-networks-udr-overview.md) of door een [zelf studie](tutorial-create-route-table-portal.md)te volt ooien.
 

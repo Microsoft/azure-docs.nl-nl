@@ -12,10 +12,10 @@ ms.author: lazzeri
 ms.reviewer: cgronlun
 ms.date: 05/07/2020
 ms.openlocfilehash: 27b18fdc2dda40f8361483e6ecce28d0ccbd0310
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93308237"
 ---
 # <a name="how-to-select-algorithms-for-azure-machine-learning"></a>Algoritmen voor Azure Machine Learning selecteren
@@ -30,7 +30,7 @@ Een veelvoorkomende vraag is ' welk machine learning-algoritme moet ik gebruiken
 
 ## <a name="business-scenarios-and-the-machine-learning-algorithm-cheat-sheet"></a>Bedrijfs scenario's en het Cheat-werk blad van Machine Learning algoritme
 
-Het [Cheat-venster van Azure machine learning Algorithm](./algorithm-cheat-sheet.md?WT.mc_id=docs-article-lazzeri) helpt u bij de eerste overweging: **wat u met uw gegevens wilt doen** ? Zoek op het blad Machine Learning Algorithm Cheat naar een taak die u wilt uitvoeren en zoek vervolgens een [Azure machine learning design](./concept-designer.md?WT.mc_id=docs-article-lazzeri) -algoritme voor de Predictive Analytics oplossing. 
+Het [Cheat-venster van Azure machine learning Algorithm](./algorithm-cheat-sheet.md?WT.mc_id=docs-article-lazzeri) helpt u bij de eerste overweging: **wat u met uw gegevens wilt doen**? Zoek op het blad Machine Learning Algorithm Cheat naar een taak die u wilt uitvoeren en zoek vervolgens een [Azure machine learning design](./concept-designer.md?WT.mc_id=docs-article-lazzeri) -algoritme voor de Predictive Analytics oplossing. 
 
 Machine Learning Designer voorziet in een uitgebreide Port Folio met algoritmen, zoals het forest voor het [nemen](./algorithm-module-reference/multiclass-decision-forest.md?WT.mc_id=docs-article-lazzeri)van een omgeving, [aanbevelings systemen](./algorithm-module-reference/evaluate-recommender.md?WT.mc_id=docs-article-lazzeri), [Neural netwerk regressie](./algorithm-module-reference/neural-network-regression.md?WT.mc_id=docs-article-lazzeri), [Multiklasse Neural netwerk](./algorithm-module-reference/multiclass-neural-network.md?WT.mc_id=docs-article-lazzeri)en [K-betekent clustering](./algorithm-module-reference/k-means-clustering.md?WT.mc_id=docs-article-lazzeri). Elk algoritme is ontworpen om een ander type machine learning probleem op te lossen. Zie de [Naslag informatie over machine learning Designer-algoritme en de module](./algorithm-module-reference/module-reference.md?WT.mc_id=docs-article-lazzeri) voor een volledige lijst samen met documentatie over de werking van elk algoritme en het afstemmen van de para meters om de algoritme te optimaliseren.
 
@@ -123,7 +123,7 @@ Bij lineaire regressie algoritmen wordt ervan uitgegaan dat gegevens trends een 
 
 ![Grens van niet-lineaire klasse](./media/how-to-select-algorithms/nonlinear-class-boundary.png)
 
-*Niet- *_lineaire grens van klasse_* _: _Relying op een lineaire classificatie-algoritme zou leiden tot een geringe nauw keurigheid. *
+*Niet- **lineaire grens van klasse** _: _Relying op een lineaire classificatie-algoritme zou leiden tot een geringe nauw keurigheid. *
 
 ![Gegevens met een niet-lineaire trend](./media/how-to-select-algorithms/nonlinear-trend.png)
 

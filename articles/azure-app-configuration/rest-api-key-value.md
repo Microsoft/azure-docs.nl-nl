@@ -7,10 +7,10 @@ ms.service: azure-app-configuration
 ms.topic: reference
 ms.date: 08/17/2020
 ms.openlocfilehash: 95081d6f8c2770d01f7836e08b6851860bf47ba8
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96932554"
 ---
 # <a name="key-values"></a>Sleutelwaarden
@@ -178,13 +178,13 @@ GET /kv?key={key}&label={label}&api-version={api-version}
 |`label=prod*`|Komt overeen met labels die beginnen met een **Prod**|
 |`label=prod,test`|Komt overeen met de labels **Prod** of **test** (beperkt tot 5 CSV)|
 
-**_Gereserveerde tekens_* _
+***Gereserveerde tekens***
 
-`_`, `\`, `,`
+`*`, `\`, `,`
 
 Als een gereserveerd teken deel uitmaakt van de waarde, moet het worden voorafgegaan door `\{Reserved Character}` . Niet-gereserveerde tekens kunnen ook worden opgenomen in een escape-teken.
 
-***Filter validatie** _
+***Filter validatie***
 
 In het geval van een filter validatie fout is het antwoord HTTP `400` met fout Details:
 
@@ -203,7 +203,7 @@ Content-Type: application/problem+json; charset=utf-8
 }
 ```
 
-_ *Voor beelden**
+**Voorbeelden**
 
 - Alles
 

@@ -7,10 +7,10 @@ ms.date: 05/27/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: 37990cc4322717f090c7a35c62512ba0e1a04293
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100576146"
 ---
 # <a name="use-log-analytics-for-the-diagnostics-feature"></a>Log Analytics gebruiken voor de functie voor diagnostische gegevens
@@ -29,7 +29,7 @@ Het virtuele bureau blad van Windows maakt gebruik van [Azure monitor](../azure-
     - Wanneer gebruikers verbindingen met de service initiëren en volt ooien.
 - Registratie van de host:
     - Is de sessiehost geregistreerd bij de service bij het verbinden?
-- Bufferoverschrijdingsfouten
+- Fouten:
     - Ondervinden gebruikers problemen met specifieke activiteiten? Met deze functie kan een tabel worden gegenereerd die de activiteit gegevens voor u registreert, zolang de gegevens worden gekoppeld aan de activiteiten.
 - Controle punten
     - Specifieke stappen in de levens duur van een activiteit die is bereikt. Tijdens een sessie is een gebruiker bijvoorbeeld gelijkmatig verdeeld over een bepaalde host. vervolgens is de gebruiker aangemeld tijdens een verbinding, enzovoort.
@@ -91,7 +91,7 @@ U hebt toegang tot Log Analytics-werk ruimten op het Azure Portal of Azure Monit
 
 ### <a name="access-log-analytics-on-a-log-analytics-workspace"></a>Toegang tot Log Analytics op een Log Analytics werk ruimte
 
-1. Meld u aan bij de Azure-portal.
+1. Meld u aan bij Azure Portal.
 
 2. Zoeken naar **log Analytics-werk ruimte**.
 

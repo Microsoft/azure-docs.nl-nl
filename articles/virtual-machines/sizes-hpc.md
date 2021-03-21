@@ -10,10 +10,10 @@ ms.date: 12/09/2020
 ms.author: amverma
 ms.reviewer: jushiman
 ms.openlocfilehash: bfc49cf7c9f5489248aeba7465a88e97ad16abd8
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102554393"
 ---
 # <a name="high-performance-computing-vm-sizes"></a>High Performance Computing VM-grootten

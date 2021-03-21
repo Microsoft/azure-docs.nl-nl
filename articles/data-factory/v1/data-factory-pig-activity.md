@@ -8,10 +8,10 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.openlocfilehash: 2f59734b5452b5a06b49583954f8851e84e8f84d
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100387169"
 ---
 # <a name="transform-data-using-pig-activity-in-azure-data-factory"></a>Gegevens transformeren met behulp van Pig-activiteit in Azure Data Factory
@@ -79,15 +79,15 @@ Met de HDInsight Pig-activiteit in een Data Factory [pijp lijn](data-factory-cre
 
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
-| naam |Naam van de activiteit |Yes |
-| beschrijving |Tekst waarin wordt beschreven waarvoor de activiteit wordt gebruikt |No |
-| type |HDinsightPig |Yes |
-| invoer |Een of meer invoer waarden die worden gebruikt door de Pig-activiteit |No |
-| uitvoer |Een of meer uitvoer die wordt geproduceerd door de Pig-activiteit |Yes |
-| linkedServiceName |Verwijzing naar het HDInsight-cluster dat is geregistreerd als een gekoppelde service in Data Factory |Yes |
-| script |Inline van het Pig-script opgeven |No |
-| scriptPath |Sla het Pig-script op in een Azure Blob-opslag en geef het pad naar het bestand op. Gebruik de eigenschap script of scriptPath. Beide kunnen niet tegelijk worden gebruikt. De bestands naam is hoofdletter gevoelig. |No |
-| compliant |Para meters opgeven als sleutel/waarde-paren voor het verwijzen binnen het Pig-script |No |
+| naam |Naam van de activiteit |Ja |
+| beschrijving |Tekst waarin wordt beschreven waarvoor de activiteit wordt gebruikt |Nee |
+| type |HDinsightPig |Ja |
+| invoer |Een of meer invoer waarden die worden gebruikt door de Pig-activiteit |Nee |
+| uitvoer |Een of meer uitvoer die wordt geproduceerd door de Pig-activiteit |Ja |
+| linkedServiceName |Verwijzing naar het HDInsight-cluster dat is geregistreerd als een gekoppelde service in Data Factory |Ja |
+| script |Inline van het Pig-script opgeven |Nee |
+| scriptPath |Sla het Pig-script op in een Azure Blob-opslag en geef het pad naar het bestand op. Gebruik de eigenschap script of scriptPath. Beide kunnen niet tegelijk worden gebruikt. De bestands naam is hoofdletter gevoelig. |Nee |
+| compliant |Para meters opgeven als sleutel/waarde-paren voor het verwijzen binnen het Pig-script |Nee |
 
 ## <a name="example"></a>Voorbeeld
 Laten we eens kijken naar een voor beeld van een spel logboek analyse waarin u de tijd wilt identificeren die wordt besteed aan spelers die games spelen die door uw bedrijf worden gestart.

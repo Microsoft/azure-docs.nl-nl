@@ -9,10 +9,10 @@ ms.subservice: develop
 ms.topic: tutorial
 ms.date: 10/16/2020
 ms.openlocfilehash: 47b4f36aec9a906317a9704a7d73bf66385d9e88
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102552113"
 ---
 # <a name="tutorial-sign-in-users-and-call-a-protected-api-from-a-blazor-webassembly-app"></a>Zelfstudie: Gebruikers aanmelden en een beveiligde API aanroepen vanuit een Blazor WebAssembly-app
@@ -102,7 +102,7 @@ Voeg vervolgens het volgende toe aan het *.csproj*-bestand van uw project in de 
 
 Wijzig vervolgens de code zoals opgegeven in de volgende stappen. Met deze wijzigingen worden [toegangstokens](access-tokens.md) toegevoegd aan de uitgaande aanvragen die zijn verzonden naar de Microsoft Graph API. Dit patroon wordt gedetailleerder besproken in [Extra beveiligingsscenario’s voor ASP.NET Core Blazor WebAssembly](/aspnet/core/blazor/security/webassembly/additional-scenarios).
 
-Maak eerst een nieuw bestand met de naam *GraphAPIAuthorizationMessageHandler.cs* met de volgende code. Deze handler wordt gebruikt om een toegangstoken toe te voegen voor de bereiken `User.Read` en `Mail.Read` voor uitgaande aanvragen naar de Microsoft Graph API.
+Maak eerst een nieuw bestand met de naam *GraphAPIAuthorizationMessageHandler. cs* met de volgende code. Deze handler wordt gebruikt om een toegangstoken toe te voegen voor de bereiken `User.Read` en `Mail.Read` voor uitgaande aanvragen naar de Microsoft Graph API.
 
 ```csharp
 using Microsoft.AspNetCore.Components;

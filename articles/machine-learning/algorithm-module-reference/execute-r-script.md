@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 12/17/2020
 ms.openlocfilehash: bdd7fd8e19bf2de6d0b3c6b2edd4515771fae237
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98119004"
 ---
 # <a name="execute-r-script-module"></a>R-script module uitvoeren

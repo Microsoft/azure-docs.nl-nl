@@ -8,10 +8,10 @@ ms.topic: troubleshooting
 ms.date: 06/18/2020
 ms.author: caya
 ms.openlocfilehash: f2b9f79f0914e645c736f8a577c46baa42587332
-ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94874607"
 ---
 # <a name="troubleshoot-common-questions-or-issues-with-ingress-controller"></a>Veelvoorkomende vragen of problemen met de ingangs controller oplossen
@@ -128,7 +128,7 @@ Als gevolg hiervan wordt `HTTP/1.1 200 OK` aangegeven dat Application Gateway he
 ## <a name="inspect-kubernetes-installation"></a>Kubernetes-installatie controleren
 
 ### <a name="pods-services-ingress"></a>Peul, services, inkomend
-Application Gateway ingangs controller (AGIC) bewaakt voortdurend de volgende Kubernetes bronnen: [implementatie](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment) of [pod](https://kubernetes.io/docs/concepts/workloads/pods/pod/#what-is-a-pod), [service](https://kubernetes.io/docs/concepts/services-networking/service/), [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) inkomend verkeer
+Application Gateway ingangs controller (AGIC) bewaakt voortdurend de volgende Kubernetes bronnen: [implementatie](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment) of [pod](https://kubernetes.io/docs/concepts/workloads/pods/pod/#what-is-a-pod), [service](https://kubernetes.io/docs/concepts/services-networking/service/), [](https://kubernetes.io/docs/concepts/services-networking/ingress/) inkomend verkeer
 
 
 Het volgende moet worden uitgevoerd om AGIC te laten werken zoals verwacht:
@@ -215,7 +215,7 @@ Het volgende moet worden uitgevoerd om AGIC te laten werken zoals verwacht:
     ```
 
 
-* Maakt uw [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) inkomen aantekeningen met: `kubernetes.io/ingress.class: azure/application-gateway` ? AGIC controleert alleen op Kubernetes ingangs resources die deze aantekening hebben.
+* Maakt uw [](https://kubernetes.io/docs/concepts/services-networking/ingress/) inkomen aantekeningen met: `kubernetes.io/ingress.class: azure/application-gateway` ? AGIC controleert alleen op Kubernetes ingangs resources die deze aantekening hebben.
     
     ```bash
     # Get the YAML definition of a particular ingress resource

@@ -9,10 +9,10 @@ ms.date: 11/24/2020
 ms.author: clemensv
 ms.custom: include file
 ms.openlocfilehash: ef9b8bd80d581d6598362f56af24c3ac62824250
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96022167"
 ---
 | Taal | Bibliotheek |

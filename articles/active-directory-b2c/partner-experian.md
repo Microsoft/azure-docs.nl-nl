@@ -12,10 +12,10 @@ ms.date: 07/22/2020
 ms.author: gasinh
 ms.subservice: B2C
 ms.openlocfilehash: 2058e5362a65b6cd5f3e5b7cb9c20ce32d020d30
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96928695"
 ---
 # <a name="tutorial-for-configuring-experian-with-azure-active-directory-b2c"></a>Zelf studie voor het configureren van Experian met Azure Active Directory B2C
@@ -94,7 +94,7 @@ De aanroep van de Experian-API wordt beveiligd door een client certificaat. Dit 
 
 Toepassings instellingen kunnen worden [geconfigureerd in de app service in azure](../app-service/configure-common.md#configure-app-settings). Met deze methode kunnen instellingen veilig worden geconfigureerd zonder deze in een opslag plaats te controleren. U moet de volgende instellingen opgeven voor de rest-API:
 
-| Toepassingsinstellingen | Bron | Opmerkingen |
+| Toepassingsinstellingen | Bron | Notities |
 | :-------- | :------------| :-----------|
 |CrossCoreConfig: TenantId | Experian-account configuratie |     |
 |CrossCoreConfig:OrgCode | Experian-account configuratie |     |
@@ -153,7 +153,7 @@ Raadpleeg dit [document](./custom-policy-get-started.md?tabs=applications#custom
 
    b. **Antwoord-URL**: de **omleidings-URL** selecteren
 
-   c. Selecteer **gebruikers stroom uitvoeren**.
+   c. Selecteer **Gebruikersstroom uitvoeren**.
 
 4. Ga door naar de registratie stroom en maak een account
 

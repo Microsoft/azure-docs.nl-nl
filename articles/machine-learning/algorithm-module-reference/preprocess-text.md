@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 11/16/2020
 ms.openlocfilehash: 366b30df677a5b74bc7d70e1aea60e05b4df0152
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94659280"
 ---
 # <a name="preprocess-text"></a>Tekst voorverwerken
@@ -75,7 +75,7 @@ De **tekst module preprocess** ondersteunt momenteel alleen Engels.
     
 1. **Uitbestedingen van woorden uitvouwen**: deze optie is alleen van toepassing op talen die verb-contract ANTEN gebruiken; Dit is momenteel alleen beschikbaar in het Engels. 
 
-    Als u deze optie selecteert, kunt u bijvoorbeeld de zin *' zou niet blijven behouden '* vervangen. *"would not stay there"*
+    Als u deze optie selecteert, kunt u bijvoorbeeld de zin *' zou niet blijven behouden '* vervangen. 
 
 1. **Backslashes normaliseren naar slashes**: Selecteer deze optie om alle exemplaren van `\\` aan toe te wijzen `/` .
 
@@ -93,8 +93,8 @@ Hier volgen enkele voor beelden:
 
 | Configuratie | Resultaat van uitvoer |
 | --- | --- |
-|Met alle geselecteerde opties </br> Korte </br> Voor de cases als ' 3test ' in de 4test ' WC-3 3test ', verwijdert de ontwerper het hele woord ' 3test ', omdat in deze context het onderdeel-van-speech Tagger het token ' 3test ' opgeeft als cijfer en volgens het deel van de spraak, wordt dit door de module verwijderd.| :::image type="content" source="./media/module/preprocess-text-all-options-selected.png" alt-text="Met alle geselecteerde opties" border="True"::: |
-|Met alleen `Removing number` geselecteerde </br> Korte </br> In het geval van de cases als ' 3test ', ' 4-EC ', is de Tokenizer-dosis van de Designer niet gesplitst in deze gevallen en worden ze behandeld als de hele tokens. Daarom worden de getallen in deze woorden niet verwijderd.| :::image type="content" source="./media/module/preprocess-text-removing-numbers-selected.png" alt-text="Alleen als het selectie nummer verwijderen is geselecteerd" border="True"::: |
+|Met alle geselecteerde opties </br> Uitleg: </br> Voor de cases als ' 3test ' in de 4test ' WC-3 3test ', verwijdert de ontwerper het hele woord ' 3test ', omdat in deze context het onderdeel-van-speech Tagger het token ' 3test ' opgeeft als cijfer en volgens het deel van de spraak, wordt dit door de module verwijderd.| :::image type="content" source="./media/module/preprocess-text-all-options-selected.png" alt-text="Met alle geselecteerde opties" border="True"::: |
+|Met alleen `Removing number` geselecteerde </br> Uitleg: </br> In het geval van de cases als ' 3test ', ' 4-EC ', is de Tokenizer-dosis van de Designer niet gesplitst in deze gevallen en worden ze behandeld als de hele tokens. Daarom worden de getallen in deze woorden niet verwijderd.| :::image type="content" source="./media/module/preprocess-text-removing-numbers-selected.png" alt-text="Alleen als het selectie nummer verwijderen is geselecteerd" border="True"::: |
 
 U kunt ook een reguliere expressie gebruiken om aangepaste resultaten uit te voeren:
 

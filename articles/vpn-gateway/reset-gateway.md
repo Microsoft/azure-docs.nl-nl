@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 02/22/2021
 ms.author: cherylmc
 ms.openlocfilehash: adc2ffd63d73baaddce00324787df61061ea69dc
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101726633"
 ---
 # <a name="reset-a-vpn-gateway-or-a-connection"></a>Een VPN-gateway of een verbinding opnieuw instellen
@@ -60,7 +60,7 @@ U kunt een resource manager VPN-gateway opnieuw instellen met behulp van de Azur
 
 [!INCLUDE [portal steps](../../includes/vpn-gateway-reset-gw-portal-include.md)]
 
-### <a name="powershell"></a><a name="ps"></a>Zo
+### <a name="powershell"></a><a name="ps"></a>PowerShell
 
 #### <a name="resource-manager-deployment-model"></a>Resource Manager-implementatiemodel
 

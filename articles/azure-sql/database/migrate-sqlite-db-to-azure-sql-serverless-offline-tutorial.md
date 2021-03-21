@@ -10,10 +10,10 @@ ms.topic: tutorial
 ms.date: 01/08/2020
 ms.custom: sqldbrb=1
 ms.openlocfilehash: e2f240247cbba0f80254d504792df45be55c6a1b
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92790403"
 ---
 # <a name="how-to-migrate-your-sqlite-database-to-azure-sql-database-serverless"></a>Een SQLite-database migreren naar een serverloze Azure SQL-database
@@ -53,13 +53,13 @@ Als u de onderstaande stappen volgt, wordt uw database naar een serverloze Azure
     - Start ADF (Ontwerpen en bewaken vanuit de service in de Azure-portal)
     - Klik aan de linkerkant op het tabblad 'Ontwerpen' (blauw potlood)
     - Klik op 'Verbindingen' (linksonder) en vervolgens op Integratieruntime
-    - Voeg een nieuwe zelf-hostende integratieruntime toe, geef deze een naam en selecteer *optie 2* .
+    - Voeg een nieuwe zelf-hostende integratieruntime toe, geef deze een naam en selecteer *optie 2*.
 
 5. Maak een nieuwe gekoppelde service voor de SQLite-brondatabase in uw Data Factory.
 
     ![Schermopname van een lege blade voor gekoppelde services in Azure Data Factory](./media/migrate-sqlite-db-to-azure-sql-serverless-offline-tutorial/linked-services-create.png)
 
-6. Klik bij **Verbindingen** , onder **Gekoppelde service** , op **Nieuw** .
+6. Klik bij **Verbindingen**, onder **Gekoppelde service**, op **Nieuw**.
 
 7. Zoek en selecteer de connector 'ODBC'
 

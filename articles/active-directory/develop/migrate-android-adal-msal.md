@@ -15,10 +15,10 @@ ms.author: marsma
 ms.reviewer: shoatman
 ms.custom: aaddev
 ms.openlocfilehash: ba639bc023affc7c2e6b2b675cdedc1229636893
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99581037"
 ---
 # <a name="adal-to-msal-migration-guide-for-android"></a>Migratie handleiding voor ADAL naar MSAL voor Android
@@ -237,7 +237,7 @@ public interface SilentAuthenticationCallback {
 In ADAL is er één uitzonderings type, `AuthenticationException` met een methode voor het ophalen van de `ADALError` Enum-waarde.
 In MSAL is er een hiërarchie met uitzonde ringen en elke groep heeft een eigen set gerelateerde specifieke fout codes.
 
-| Uitzondering                                        | Description                                                         |
+| Uitzondering                                        | Beschrijving                                                         |
 |--------------------------------------------------|---------------------------------------------------------------------|
 | `MsalArgumentException`                          | Deze wordt gegenereerd als een of meer invoer argumenten ongeldig zijn.                 |
 | `MsalClientException`                            | Wordt gegenereerd als de fout aan de kant van de client is.                                 |

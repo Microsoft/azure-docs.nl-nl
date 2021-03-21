@@ -12,10 +12,10 @@ ms.date: 09/10/2018
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 7a2cbca8c02dcbfc0e59d31040d1fca7a790cd35
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96936655"
 ---
 # <a name="define-an-oauth1-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Een OAuth1 technisch profiel definiëren in een Azure Active Directory B2C aangepast beleid
@@ -70,13 +70,13 @@ Het technische profiel retourneert ook claims die niet worden geretourneerd door
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| client_id | Yes | De toepassings-id van de ID-provider. |
-| ProviderName | No | De naam van de ID-provider. |
-| request_token_endpoint | Yes | De URL van het eind punt van het aanvraag token conform RFC 5849. |
-| authorization_endpoint | Yes | De URL van het autorisatie-eind punt conform RFC 5849. |
-| access_token_endpoint | Yes | De URL van het eind punt van het token conform RFC 5849. |
-| ClaimsEndpoint | No | De URL van het eind punt voor gebruikers informatie. |
-| ClaimsResponseFormat | No | De claim antwoord indeling.|
+| client_id | Ja | De toepassings-id van de ID-provider. |
+| ProviderName | Nee | De naam van de ID-provider. |
+| request_token_endpoint | Ja | De URL van het eind punt van het aanvraag token conform RFC 5849. |
+| authorization_endpoint | Ja | De URL van het autorisatie-eind punt conform RFC 5849. |
+| access_token_endpoint | Ja | De URL van het eind punt van het token conform RFC 5849. |
+| ClaimsEndpoint | Nee | De URL van het eind punt voor gebruikers informatie. |
+| ClaimsResponseFormat | Nee | De claim antwoord indeling.|
 
 ## <a name="cryptographic-keys"></a>Cryptografische sleutels
 
@@ -84,7 +84,7 @@ Het element **CryptographicKeys** bevat het volgende kenmerk:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| client_secret | Yes | Het client geheim van de identiteits provider toepassing.   |
+| client_secret | Ja | Het client geheim van de identiteits provider toepassing.   |
 
 ## <a name="redirect-uri"></a>Omleidings-URI
 

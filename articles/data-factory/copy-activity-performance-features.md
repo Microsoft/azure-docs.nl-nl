@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/24/2020
 ms.openlocfilehash: ecb4550b218b069273cba2e3d70a9510c1cc74ca
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100387798"
 ---
 # <a name="copy-activity-performance-optimization-features"></a>Functies voor het optimaliseren van de activiteit prestaties
@@ -145,10 +145,10 @@ Configureer de instelling **enableStaging** in de Kopieer activiteit om op te ge
 
 | Eigenschap | Beschrijving | Standaardwaarde | Vereist |
 | --- | --- | --- | --- |
-| enableStaging |Geef op of u gegevens wilt kopiëren via een tijdelijke faserings opslag. |Niet waar |No |
+| enableStaging |Geef op of u gegevens wilt kopiëren via een tijdelijke faserings opslag. |Niet waar |Nee |
 | linkedServiceName |Geef de naam op van een [Azure Blob-opslag](connector-azure-blob-storage.md#linked-service-properties) of [Azure data Lake Storage Gen2](connector-azure-data-lake-storage.md#linked-service-properties) gekoppelde service, die verwijst naar het exemplaar van de opslag die u gebruikt als een tijdelijke faserings opslag. |N.v.t. |Ja, wanneer **enableStaging** is ingesteld op True |
-| leertraject |Geef het pad op dat u wilt dat de gefaseerde gegevens bevat. Als u geen pad opgeeft, maakt de service een container om tijdelijke gegevens op te slaan. |N.v.t. |No |
-| enableCompression |Hiermee geeft u op of gegevens moeten worden gecomprimeerd voordat ze naar het doel worden gekopieerd. Deze instelling vermindert het volume van de gegevens die worden overgedragen. |Niet waar |No |
+| leertraject |Geef het pad op dat u wilt dat de gefaseerde gegevens bevat. Als u geen pad opgeeft, maakt de service een container om tijdelijke gegevens op te slaan. |N.v.t. |Nee |
+| enableCompression |Hiermee geeft u op of gegevens moeten worden gecomprimeerd voordat ze naar het doel worden gekopieerd. Deze instelling vermindert het volume van de gegevens die worden overgedragen. |Niet waar |Nee |
 
 >[!NOTE]
 > Als u een gefaseerde kopie gebruikt terwijl compressie is ingeschakeld, wordt de service-principal of MSI-verificatie voor de gekoppelde BLOB-hostservice niet ondersteund.

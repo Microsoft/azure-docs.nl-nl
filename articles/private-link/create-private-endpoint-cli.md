@@ -8,10 +8,10 @@ ms.topic: quickstart
 ms.date: 11/07/2020
 ms.author: allensu
 ms.openlocfilehash: bba912930a9dff0a79e0b0d81025b7524c238db0
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94368675"
 ---
 # <a name="quickstart-create-a-private-endpoint-using-azure-cli"></a>Quickstart: Een privé-eindpunt maken met behulp van Azure CLI

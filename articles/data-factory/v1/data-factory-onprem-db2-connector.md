@@ -8,10 +8,10 @@ ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: bcd1e6f9f9be1765e76399707ae36776a9f1987d
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100387356"
 ---
 # <a name="move-data-from-db2-by-using-azure-data-factory-copy-activity"></a>Gegevens van DB2 verplaatsen met behulp van Azure Data Factory Kopieer activiteit
@@ -75,14 +75,14 @@ De volgende tabel geeft een lijst van de JSON-eigenschappen die specifiek zijn v
 
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
-| **type** |Deze eigenschap moet worden ingesteld op **OnPremisesDb2**. |Yes |
-| **naam** |De naam van de DB2-Server. |Yes |
-| **enddatabase** |De naam van de DB2-Data Base. |Yes |
-| **schema** |De naam van het schema in de DB2-Data Base. Deze eigenschap is hoofdletter gevoelig. |No |
-| **authenticationType** |Het type verificatie dat wordt gebruikt om verbinding te maken met de DB2-Data Base. De mogelijke waarden zijn: anoniem, basis en Windows. |Yes |
-| **gebruikers** |De naam voor het gebruikers account als u basis-of Windows-verificatie gebruikt. |No |
-| **password** |Het wacht woord voor het gebruikers account. |No |
-| **gatewayName** |De naam van de gateway die de Data Factory-service moet gebruiken om verbinding te maken met de on-premises DB2-Data Base. |Yes |
+| **type** |Deze eigenschap moet worden ingesteld op **OnPremisesDb2**. |Ja |
+| **naam** |De naam van de DB2-Server. |Ja |
+| **enddatabase** |De naam van de DB2-Data Base. |Ja |
+| **schema** |De naam van het schema in de DB2-Data Base. Deze eigenschap is hoofdletter gevoelig. |Nee |
+| **authenticationType** |Het type verificatie dat wordt gebruikt om verbinding te maken met de DB2-Data Base. De mogelijke waarden zijn: anoniem, basis en Windows. |Ja |
+| **gebruikers** |De naam voor het gebruikers account als u basis-of Windows-verificatie gebruikt. |Nee |
+| **password** |Het wacht woord voor het gebruikers account. |Nee |
+| **gatewayName** |De naam van de gateway die de Data Factory-service moet gebruiken om verbinding te maken met de on-premises DB2-Data Base. |Ja |
 
 ## <a name="dataset-properties"></a>Eigenschappen van gegevensset
 Zie het artikel [gegevens sets maken](data-factory-create-datasets.md) voor een lijst met de secties en eigenschappen die beschikbaar zijn voor het definiëren van gegevens sets. Secties, zoals **structuur**, **Beschik baarheid** en het **beleid** voor een gegevensset-JSON, zijn vergelijkbaar voor alle typen gegevens sets (Azure SQL, Azure Blob Storage, Azure-tabel opslag, enzovoort).

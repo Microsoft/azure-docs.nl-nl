@@ -8,10 +8,10 @@ ms.date: 06/06/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 83c39435d2249981a45798ffe0717054fa7b0717
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100387322"
 ---
 # <a name="move-data-from-mysql-using-azure-data-factory"></a>Gegevens verplaatsen vanuit MySQL met Azure Data Factory
@@ -62,14 +62,14 @@ De volgende tabel bevat een beschrijving van de JSON-elementen die specifiek zij
 
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
-| type |De eigenschap type moet worden ingesteld op: **OnPremisesMySql** |Yes |
-| server |De naam van de MySQL-server. |Yes |
-| database |De naam van de MySQL-data base. |Yes |
-| schema |De naam van het schema in de data base. |No |
-| authenticationType |Type verificatie dat wordt gebruikt om verbinding te maken met de MySQL-data base. Mogelijke waarden zijn: `Basic` . |Yes |
-| userName |Geef de gebruikers naam op om verbinding te maken met de MySQL-data base. |Yes |
-| wachtwoord |Geef het wacht woord op voor het gebruikers account dat u hebt opgegeven. |Yes |
-| gatewayName |De naam van de gateway die de Data Factory-service moet gebruiken om verbinding te maken met de on-premises MySQL-data base. |Yes |
+| type |De eigenschap type moet worden ingesteld op: **OnPremisesMySql** |Ja |
+| server |De naam van de MySQL-server. |Ja |
+| database |De naam van de MySQL-data base. |Ja |
+| schema |De naam van het schema in de data base. |Nee |
+| authenticationType |Type verificatie dat wordt gebruikt om verbinding te maken met de MySQL-data base. Mogelijke waarden zijn: `Basic` . |Ja |
+| userName |Geef de gebruikers naam op om verbinding te maken met de MySQL-data base. |Ja |
+| wachtwoord |Geef het wacht woord op voor het gebruikers account dat u hebt opgegeven. |Ja |
+| gatewayName |De naam van de gateway die de Data Factory-service moet gebruiken om verbinding te maken met de on-premises MySQL-data base. |Ja |
 
 ## <a name="dataset-properties"></a>Eigenschappen van gegevensset
 Zie het artikel [gegevens sets maken](data-factory-create-datasets.md) voor een volledige lijst met secties & eigenschappen die beschikbaar zijn voor het definiëren van gegevens sets. Secties zoals structuur, Beschik baarheid en beleid van een gegevensset-JSON zijn vergelijkbaar voor alle typen gegevens sets (Azure SQL, Azure Blob, Azure Table, enzovoort).

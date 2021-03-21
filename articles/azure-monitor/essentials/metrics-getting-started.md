@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 02/25/2019
 ms.author: vitalyg
 ms.openlocfilehash: fee71f9ebfc69c19adc026fce5cd78b6a8b5240b
-ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103490284"
 ---
 # <a name="getting-started-with-azure-metrics-explorer"></a>Aan de slag met Azure Metrics Explorer

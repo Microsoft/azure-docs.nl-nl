@@ -1,6 +1,6 @@
 ---
-title: Waarschuwingen onderzoeken met Azure Sentinel | Microsoft Docs
-description: Meer informatie over het gebruik van out-of-the-box, ingebouwde sjablonen voor detectie van Azure Threats die u op de hoogte stelt wanneer er iets verdacht is.
+title: Bedreigingen detecteren met ingebouwde analyse regels in azure Sentinel | Microsoft Docs
+description: Meer informatie over het gebruik van out-of-Box-Threat-detectie regels, gebaseerd op ingebouwde sjablonen, waarmee u wordt gewaarschuwd wanneer er iets verdacht is.
 services: sentinel
 documentationcenter: na
 author: yelevin
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/06/2020
 ms.author: yelevin
-ms.openlocfilehash: f1cfd941d8205a9bdc100ab69b115618af9f736d
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: b8a304d523052f1fe839f94608806df51d35fdf9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101726968"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104589919"
 ---
 # <a name="tutorial-detect-threats-out-of-the-box"></a>Zelfstudie: Bedreigingen standaard detecteren
 
@@ -78,4 +78,3 @@ De volgende sjabloon typen zijn beschikbaar:
 In deze zelf studie hebt u geleerd hoe u aan de slag gaat met het detecteren van bedreigingen met behulp van Azure Sentinel. 
 
 Als u wilt weten hoe u uw reacties op bedreigingen kunt automatiseren, [stelt u automatische reacties op dreigingen in azure Sentinel in](tutorial-respond-threats-playbook.md).
-

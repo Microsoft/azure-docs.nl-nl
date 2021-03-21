@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 02/26/2021
 ms.openlocfilehash: 7691c285bcc1c490878f5055468b0a57b6248679
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101719379"
 ---
 # <a name="source-control-in-azure-data-factory"></a>Broncode beheer in Azure Data Factory
@@ -23,7 +23,7 @@ Standaard Azure Data Factory gebruikers interface-schrijvers (UX) direct voor de
 - De Data Factory-service is niet geoptimaliseerd voor samen werking en versie beheer.
 - De Azure Resource Manager sjabloon die is vereist voor de implementatie van Data Factory zelf, is niet opgenomen.
 
-Azure Data Factory kunt u een Git-opslag plaats met behulp van Azure opslag plaatsen of GitHub configureren om een betere ontwerp ervaring te bieden. Git is een versie beheersysteem waarmee u eenvoudiger wijzigingen kunt bijhouden en samen werken. In dit artikel wordt beschreven hoe u in een Git-opslag plaats kunt configureren en gebruiken, samen met het markeren van aanbevolen procedures en een probleemoplossings handleiding.
+Azure Data Factory kunt u een Git-opslag plaats met behulp van Azure opslag plaatsen of GitHub configureren om een betere ontwerp ervaring te bieden. Git is een versiebeheersysteem waarmee u eenvoudiger wijzigingen kunt bijhouden en kunt samenwerken. In dit artikel wordt beschreven hoe u in een Git-opslag plaats kunt configureren en gebruiken, samen met het markeren van aanbevolen procedures en een probleemoplossings handleiding.
 
 > [!NOTE]
 > Voor Azure Government Cloud is alleen GitHub Enter prise beschikbaar.

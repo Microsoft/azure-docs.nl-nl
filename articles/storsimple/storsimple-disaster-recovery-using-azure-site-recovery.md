@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 10/13/2017
 ms.author: alkohli
-ms.openlocfilehash: e2d89718d953f05b3e5500db412ac8ac03bfa00b
-ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
+ms.openlocfilehash: c6152d4b9ee28554efcb5b08b7a2d161a0723852
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96301951"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104670901"
 ---
 # <a name="automated-disaster-recovery-solution-using-azure-site-recovery-for-file-shares-hosted-on-storsimple"></a>Geautomatiseerde oplossing voor herstel na nood gevallen met Azure Site Recovery voor bestands shares die worden gehost op StorSimple
 
@@ -44,7 +44,7 @@ Het implementeren van een oplossing voor nood herstel met één klik die gebruik
    - StorSimple-opslag apparaat is on-premises geregistreerd bij Azure StorSimple Manager
    - StorSimple Cloud Appliance gemaakt in azure StorSimple Manager. Het apparaat kan worden bewaard in een afsluit status.
    - Bestands shares die worden gehost op de volumes die zijn geconfigureerd op het StorSimple-opslag apparaat
-   - [Azure site Recovery Services-kluis](/azure/site-recovery/hyper-v-vmm-azure-tutorial) die is gemaakt in een Microsoft Azure-abonnement
+   - [Azure site Recovery Services-kluis](../site-recovery/hyper-v-vmm-azure-tutorial.md) die is gemaakt in een Microsoft Azure-abonnement
 
 Als Azure uw herstel site is, voert u het [hulp programma Azure virtual machine Readiness Assessment](https://azure.microsoft.com/downloads/vm-readiness-assessment/) uit op virtuele machines om ervoor te zorgen dat ze compatibel zijn met Azure-vm's en Azure site Recovery Services.
 
@@ -112,7 +112,7 @@ Voor deze stap is het vereist dat u de on-premises Bestands server omgeving voor
    1. Gebruik de functie bestands-en opslag Services om bestands shares op deze volumes te maken.
 
 #### <a name="to-create-and-prepare-an-azure-site-recovery-vault"></a>Een Azure Site Recovery kluis maken en voorbereiden
-Raadpleeg de [documentatie van Azure site Recovery](/azure/site-recovery/) om aan de slag te gaan met Azure site Recovery voordat u de bestands Server-VM beveiligt.
+Raadpleeg de [documentatie van Azure site Recovery](../site-recovery/index.yml) om aan de slag te gaan met Azure site Recovery voordat u de bestands Server-VM beveiligt.
 
 #### <a name="to-enable-protection"></a>Beveiliging inschakelen
 1. Ontkoppel de iSCSI-doel (en) van de on-premises Vm's die u wilt beveiligen via Azure Site Recovery:
@@ -124,7 +124,7 @@ Raadpleeg de [documentatie van Azure site Recovery](/azure/site-recovery/) om aa
    > [!NOTE]
    > Dit zorgt ervoor dat de bestands shares tijdelijk niet beschikbaar zijn.
    
-1. [Schakel de beveiliging van de virtuele machine](/azure/site-recovery/hyper-v-azure-tutorial) van de bestands Server-VM in via de Azure site Recovery Portal.
+1. [Schakel de beveiliging van de virtuele machine](../site-recovery/hyper-v-azure-tutorial.md) van de bestands Server-VM in via de Azure site Recovery Portal.
 1. Wanneer de initiële synchronisatie begint, kunt u het doel opnieuw verbinding maken. Ga naar de iSCSI-initiator, selecteer het StorSimple-apparaat en klik op **verbinden**.
 1. Wanneer de synchronisatie is voltooid en de status van de virtuele machine is **beveiligd**, selecteert u de virtuele machine, selecteert u het tabblad **configureren** en werkt u het netwerk van de virtuele machine dienovereenkomstig bij (dit is het netwerk waarvan de failover-VM (s) een deel van heeft). Als het netwerk niet wordt weer gegeven, betekent dit dat de synchronisatie nog steeds gaat plaatsvinden.
 
@@ -174,13 +174,13 @@ U kunt een herstel plan maken in ASR om het proces voor het uitvoeren van de fai
    - _RecoveryPlanName_**-ResourceGroupName**: de Resource Manager-groep die de StorSimple-resource heeft.
    - _RecoveryPlanName_**-managernaam**: de StorSimple-resource met het StorSimple-apparaat.
    - _RecoveryPlanName_**-DeviceName**: het StorSimple-apparaat waarvoor een failover moet worden uitgevoerd.
-   - _RecoveryPlanName_**-DeviceIpAddress**: het IP-adres van het apparaat (dit kunt u vinden op het tabblad **apparaten** onder StorSimple Apparaatbeheer sectie &gt; **Settings** &gt; -instellingen groep **netwerk** &gt; **-DNS-instellingen** ).
+   - _RecoveryPlanName_**-DeviceIpAddress**: het IP-adres van het apparaat (dit kunt u vinden op het tabblad **apparaten** onder StorSimple Apparaatbeheer sectie &gt;  &gt; -instellingen groep **netwerk** &gt; **-DNS-instellingen** ).
    - _RecoveryPlanName_**-VolumeContainers**: een door komma's gescheiden teken reeks van volume containers die aanwezig moeten zijn op het apparaat waarvoor een failover moet worden uitgevoerd; bijvoorbeeld: volcon1, volcon2, volcon3.
    - _RecoveryPlanName_**-TargetDeviceName**: de StorSimple Cloud Appliance waarop de containers moeten worden gefailovert.
-   - _RecoveryPlanName_**-TargetDeviceIpAddress**: het IP-adres van het doel apparaat (dit is te vinden op het tabblad instellingen van de **virtuele machine** in de &gt; **Settings** groep &gt; **netwerk** ).
+   - _RecoveryPlanName_**-TargetDeviceIpAddress**: het IP-adres van het doel apparaat (dit is te vinden op het tabblad instellingen van de **virtuele machine** in de &gt;  groep &gt; **netwerk** ).
    - _RecoveryPlanName_**-StorageAccountName**: de naam van het opslag account waarin het script (dat moet worden uitgevoerd op de virtuele machine die is mislukt) wordt opgeslagen. Dit kan elk opslag account zijn met ruimte om het script tijdelijk op te slaan.
    - _RecoveryPlanName_**-StorageAccountKey**: de toegangs sleutel voor het bovenstaande opslag account.
-   - _RecoveryPlanName_**-VMGUIDS**: bij het beveiligen van een virtuele machine wijst Azure site Recovery elke virtuele machine een unieke id toe die de details van de virtuele machine waarvoor een failover is uitgevoerd. Als u de VMGUID wilt ophalen, selecteert u het tabblad **Recovery Services** en klikt u op Eigenschappen van **beveiligde item** &gt; **beveiligings groepen** &gt; **machines** &gt; **Properties**. Als u meerdere Vm's hebt, voegt u de GUID'S toe als een door komma's gescheiden teken reeks.
+   - _RecoveryPlanName_**-VMGUIDS**: bij het beveiligen van een virtuele machine wijst Azure site Recovery elke virtuele machine een unieke id toe die de details van de virtuele machine waarvoor een failover is uitgevoerd. Als u de VMGUID wilt ophalen, selecteert u het tabblad **Recovery Services** en klikt u op Eigenschappen van **beveiligde item** &gt; **beveiligings groepen** &gt; **machines** &gt; . Als u meerdere Vm's hebt, voegt u de GUID'S toe als een door komma's gescheiden teken reeks.
 
      Als de naam van het herstel plan bijvoorbeeld fileServerpredayRP is, moeten uw **variabelen**, het tabblad **verbindingen** en **certificaten** als volgt worden weer gegeven nadat u alle assets hebt toegevoegd.
 

@@ -15,12 +15,12 @@ ms.date: 02/12/2021
 ms.author: kenwith
 ms.custom: seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8a21b6f5e7d2976bda0efd37577b7cca90469aea
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 6ed101282a69120162d6e3b526693c0a83df45b6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101686441"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104607106"
 ---
 # <a name="configure-azure-active-directory-sign-in-behavior-for-an-application-by-using-a-home-realm-discovery-policy"></a>Azure Active Directory aanmeldings gedrag configureren voor een toepassing met behulp van een beleid voor het detecteren van een thuis domein
 
@@ -91,7 +91,7 @@ Sommige toepassingen bieden geen manier om de verificatie aanvraag te configurer
 
 ### <a name="home-realm-discovery-policy-to-prevent-auto-acceleration"></a>Beleid voor de start van realm-detectie om automatische versnelling te voor komen
 
-Sommige micro soft-en SaaS-toepassingen bevatten domain_hints (bijvoorbeeld `https://outlook.com/contoso.com` resultaten in een aanmeldings aanvraag met `&domain_hint=contoso.com` toegevoegde), die de implementatie van beheerde referenties, zoals Fido, kan verstoren.  U kunt beleid voor het [detecteren van basis van realms](https://docs.microsoft.com/graph/api/resources/homeRealmDiscoveryPolicy) gebruiken voor het negeren van domein hints uit bepaalde apps of voor bepaalde domeinen tijdens de implementatie van beheerde referenties.  
+Sommige micro soft-en SaaS-toepassingen bevatten domain_hints (bijvoorbeeld `https://outlook.com/contoso.com` resultaten in een aanmeldings aanvraag met `&domain_hint=contoso.com` toegevoegde), die de implementatie van beheerde referenties, zoals Fido, kan verstoren.  U kunt beleid voor het [detecteren van basis van realms](/graph/api/resources/homeRealmDiscoveryPolicy) gebruiken voor het negeren van domein hints uit bepaalde apps of voor bepaalde domeinen tijdens de implementatie van beheerde referenties.  
 
 ## <a name="enable-direct-ropc-authentication-of-federated-users-for-legacy-applications"></a>Directe ROPC-verificatie van federatieve gebruikers inschakelen voor oudere toepassingen
 
@@ -129,7 +129,7 @@ Hier volgt een voor beeld van een HRD-beleids definitie:
    }
 ```
 
-Het beleids type is '[HomeRealmDiscoveryPolicy](https://docs.microsoft.com/graph/api/resources/homeRealmDiscoveryPolicy)'.
+Het beleids type is '[HomeRealmDiscoveryPolicy](/graph/api/resources/homeRealmDiscoveryPolicy)'.
 
 **AccelerateToFederatedDomain** is optioneel. Als **AccelerateToFederatedDomain** False is, heeft het beleid geen effect op automatische versnelling. Als **AccelerateToFederatedDomain** is ingesteld op True en er slechts één geverifieerd en federatief domein is in de Tenant, worden gebruikers direct naar de federatieve IDP geleid om zich aan te melden. Als dit het geval is en er meer dan één geverifieerd domein in de Tenant is, moet **PreferredDomain** worden opgegeven.
 

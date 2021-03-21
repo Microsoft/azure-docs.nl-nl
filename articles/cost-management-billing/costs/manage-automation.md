@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: adwise
-ms.openlocfilehash: f5cebffeaba1ce198be347758004068e8c03133b
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.openlocfilehash: a54b8243b5a680168b2e5806dd58c0fa4109728f
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102499676"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104670270"
 ---
 # <a name="manage-costs-with-automation"></a>Kosten beheren met automatisering
 
@@ -182,9 +182,9 @@ Talen die worden ondersteund door een cultuurcode:
 | pl-pl | Pools (Polen) |
 | tr-tr | Turks (Turkije) |
 | da-dk | Deens (Denemarken) |
-| dn-gb | Engels (Verenigd Koninkrijk) |
+| en-GB | Engels (Verenigd Koninkrijk) |
 | hu-hu | Hongaars (Hongarije) |
-| nb-bo | Noors (Bokmål) (Noorwegen) |
+| nb-no | Noors (Bokmål) (Noorwegen) |
 | nl-nl | Nederlands (Nederland) |
 | pt-pt | Portugees (Portugal) |
 | sv-se | Zweeds (Zweden) |

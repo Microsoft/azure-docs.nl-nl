@@ -7,12 +7,12 @@ ms.service: data-factory
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 02/18/2021
-ms.openlocfilehash: 3b97887e7bbd31fc1bb6ec0a074267aa081184c8
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 1fad6274b1dbbc4bf255caabd79352b3c836e352
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101724894"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104606686"
 ---
 # <a name="incrementally-load-data-from-multiple-tables-in-sql-server-to-a-database-in-azure-sql-database-using-the-azure-portal"></a>Incrementeel gegevens uit meerdere tabellen in SQL Server naar een database in Azure SQL Database kopiëren met behulp van de Azure-portal
 
@@ -253,7 +253,7 @@ END
 8. Klik op **Create**.      
 9. Na het aanmaken ziet u de pagina **Data Factory** zoals weergegeven in de afbeelding.
    
-   ![Startpagina van de gegevensfactory](./media/doc-common-process/data-factory-home-page.png)
+    :::image type="content" source="./media/doc-common-process/data-factory-home-page.png" alt-text="Start pagina voor de Azure Data Factory, met de tegel Author & monitor.":::
 10. Klik op de tegel **Author & Monitor** om de gebruikersinterface (UI) van Azure Data Factory te openen in een afzonderlijk tabblad.
 
 ## <a name="create-self-hosted-integration-runtime"></a>Een zelf-hostende integratieruntime maken
@@ -291,7 +291,7 @@ In deze stap koppelt u uw SQL Server-database aan de data factory.
 
 1. Schakel in het venster **Verbindingen** over van het tabblad **Integratieruntimes** tab naar het tabblad **Gekoppelde Services** en klik op **+ Nieuw**.
 
-   ![Nieuwe gekoppelde service](./media/doc-common-process/new-linked-service.png)
+    :::image type="content" source="./media/doc-common-process/new-linked-service.png" alt-text="Nieuwe gekoppelde service.":::
 1. In het venster **Nieuwe gekoppelde service** selecteert u **Microsoft SQL Server** en klikt u op **Doorgaan**. 
 
 1. Voer in het venster **Nieuwe gekoppelde service** de volgende stappen uit:

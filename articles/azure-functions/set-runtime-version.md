@@ -4,10 +4,10 @@ description: Azure Functions ondersteunt meerdere versies van de runtime. Meer i
 ms.topic: conceptual
 ms.date: 07/22/2020
 ms.openlocfilehash: e9aa5546b5f07b724fe22bc1e20a2e97feb2aec2
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102435559"
 ---
 # <a name="how-to-target-azure-functions-runtime-versions"></a>Azure Functions runtime-versies instellen

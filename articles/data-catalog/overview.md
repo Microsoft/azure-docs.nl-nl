@@ -6,14 +6,15 @@ ms.author: jasonh
 ms.service: data-catalog
 ms.topic: overview
 ms.date: 08/01/2019
-ms.openlocfilehash: 9b7a5d5ca6cbad897839c8e28c9e3efd1eeabaf0
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: e128e9f7515e572fc0be4b92ef03d8d98529ac66
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "68736981"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104674900"
 ---
 # <a name="what-is-azure-data-catalog"></a>Wat is Azure Data Catalog?
+[!INCLUDE [Azure Purview redirect](../../includes/data-catalog-use-purview.md)]
 
 Azure Data Catalog is een volledig beheerde cloudservice. Hiermee kunnen gebruikers de gegevensbronnen ontdekken die ze nodig hebben en inzicht krijgen in de gegevensbronnen die ze hebben gevonden. Tegelijkertijd helpt Data Catalog organisaties meer waarde te halen uit hun bestaande investeringen.
 

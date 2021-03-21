@@ -5,12 +5,12 @@ author: cachai2
 ms.topic: conceptual
 ms.date: 1/21/2021
 ms.author: cachai
-ms.openlocfilehash: 0267184a921c92c3dc092908a09467ef3a090175
-ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
+ms.openlocfilehash: c35780ae2c4741454685d7d9740a660e965df19e
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/14/2021
-ms.locfileid: "103463031"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104606987"
 ---
 # <a name="azure-functions-networking-options"></a>Netwerkopties van Azure Functions
 
@@ -81,34 +81,15 @@ Zie [een functie-app integreren met een virtueel Azure-netwerk](functions-create
 
 ## <a name="connect-to-service-endpoint-secured-resources"></a>Verbinding maken met de beveiligde resources van het service-eind punt
 
-Als u een hoger beveiligings niveau wilt bieden, kunt u een aantal Azure-Services beperken tot een virtueel netwerk met behulp van service-eind punten. Vervolgens moet u uw functie-app met dat virtuele netwerk integreren om toegang te krijgen tot de resource. Deze configuratie wordt ondersteund op alle abonnementen die ondersteuning bieden voor de integratie van virtuele netwerken.
+Als u een hoger beveiligings niveau wilt bieden, kunt u een aantal Azure-Services beperken tot een virtueel netwerk met behulp van service-eind punten. Vervolgens moet u uw functie-app met dat virtuele netwerk integreren om toegang te krijgen tot de resource. Deze configuratie wordt ondersteund op alle [abonnementen](functions-scale.md#networking-features) die ondersteuning bieden voor de integratie van virtuele netwerken.
 
 Zie [service-eind punten voor virtueel netwerk](../virtual-network/virtual-network-service-endpoints-overview.md)voor meer informatie.
 
 ## <a name="restrict-your-storage-account-to-a-virtual-network"></a>Uw opslag account beperken tot een virtueel netwerk 
 
-Wanneer u een functie-app maakt, moet u een Azure Storage-account voor algemeen gebruik maken of koppelen dat ondersteuning biedt voor blob-, wachtrij-en tabel opslag. U kunt dit opslag account vervangen door een abonnement dat is beveiligd met Service-eind punten of een persoonlijk eind punt. Deze functie werkt momenteel voor alle ondersteunde sku's van het Windows-netwerk, met inbegrip van Standard en Premium, met uitzonde ring van het gebruik van Flex-tempels waarbij virtuele netwerken alleen beschikbaar zijn voor Premium SKU. Een functie instellen met een opslag account die is beperkt tot een particulier netwerk:
+Wanneer u een functie-app maakt, moet u een Azure Storage-account voor algemeen gebruik maken of koppelen dat ondersteuning biedt voor blob-, wachtrij-en tabel opslag. U kunt dit opslag account vervangen door een abonnement dat is beveiligd met Service-eind punten of een persoonlijk eind punt. 
 
-1. Maak een functie met een opslag account waarvoor geen service-eind punten zijn ingeschakeld.
-1. Configureer de functie om verbinding te maken met uw virtuele netwerk.
-1. Een ander opslag account maken of configureren.  Dit is het opslag account dat wordt beveiligd met Service-eind punten en om onze functie te verbinden.
-1. [Maak een bestands share](../storage/files/storage-how-to-create-file-share.md#create-file-share) in het account voor beveiligde opslag.
-1. Schakel de service-eind punten of het persoonlijke eind punt in voor het opslag account.  
-    * Als u verbindingen met een privé-eind punt gebruikt, heeft het opslag account een persoonlijk eind punt voor de `file` `blob` subresources nodig.  Als u bepaalde functies als Durable Functions gebruikt, hebt u ook `queue` `table` toegang nodig via een verbinding met een privé-eind punt.
-    * Als u service-eind punten gebruikt, schakelt u het subnet in dat is toegewezen aan uw functie-apps voor opslag accounts.
-1. Kopieer het bestand en de blob-inhoud van het functie-app-opslag account naar het beveiligde opslag account en de bestands share.
-1. Kopieer de connection string voor dit opslag account.
-1. Werk de **Toepassings instellingen** onder **configuratie** voor de functie-app als volgt bij:
-    - `AzureWebJobsStorage` de connection string voor het account voor beveiligde opslag.
-    - `WEBSITE_CONTENTAZUREFILECONNECTIONSTRING` de connection string voor het account voor beveiligde opslag.
-    - `WEBSITE_CONTENTSHARE` de naam van de bestands share die is gemaakt in het account voor beveiligde opslag.
-    - Maak een nieuwe instelling met de naam `WEBSITE_CONTENTOVERVNET` en waarde van `1` .
-    - Als het opslag account gebruikmaakt van verbindingen met een privé-eind punt, controleert of voegt u de volgende instellingen toe
-        - `WEBSITE_VNET_ROUTE_ALL` met een waarde van `1` .
-        - `WEBSITE_DNS_SERVER` met een waarde van `168.63.129.16` 
-1. Sla de toepassings instellingen op.  
-
-De functie-app wordt opnieuw gestart en wordt nu verbonden met een beveiligd opslag account.
+Deze functie werkt momenteel voor alle virtuele Windows-Sku's die worden ondersteund in het speciale (App Service)-abonnement en voor het Premium-abonnement. Het verbruiks abonnement wordt niet ondersteund. Zie [uw opslag account beperken tot een virtueel netwerk](configure-networking-how-to.md#restrict-your-storage-account-to-a-virtual-network)voor meer informatie over het instellen van een functie met een opslag account dat is beperkt tot een particulier netwerk.
 
 ## <a name="use-key-vault-references"></a>Key Vault-referenties gebruiken
 
@@ -173,6 +154,8 @@ Zie de [app service-documentatie voor hybride verbindingen voor](../app-service/
 Uitgaande IP-beperkingen zijn beschikbaar in een Premium-abonnement, App Service plan of App Service Environment. U kunt uitgaande beperkingen configureren voor het virtuele netwerk waar uw App Service Environment wordt geïmplementeerd.
 
 Wanneer u een functie-app integreert in een Premium-abonnement of een App Service plan met een virtueel netwerk, kan de app standaard nog steeds uitgaande oproepen naar Internet maken. Door de toepassings instelling toe `WEBSITE_VNET_ROUTE_ALL=1` te voegen, dwingt u af dat alle uitgaand verkeer naar uw virtuele netwerk moet worden verzonden, waarbij regels voor netwerk beveiligings groepen kunnen worden gebruikt om verkeer te beperken.
+
+Voor meer informatie over het beheren van het uitgaande IP-adres met behulp van een virtueel netwerk, raadpleegt u [zelf studie: controleren Azure functions uitgaande IP-adres met een NAT-gateway van Azure](functions-how-to-use-nat-gateway.md). 
 
 ## <a name="automation"></a>Automation
 Met de volgende Api's kunt u via programma code regionale virtuele netwerk integraties beheren:

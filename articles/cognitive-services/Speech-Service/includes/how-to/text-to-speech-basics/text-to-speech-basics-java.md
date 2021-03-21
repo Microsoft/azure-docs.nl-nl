@@ -5,12 +5,12 @@ ms.topic: include
 ms.date: 03/25/2020
 ms.custom: devx-track-java
 ms.author: trbye
-ms.openlocfilehash: 80384662789e9dad979566715672c15a8648ea9a
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 7dd84b8f2f0834a03b41179531245ebdff35b7ff
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/19/2021
-ms.locfileid: "104611892"
+ms.locfileid: "104719674"
 ---
 In deze quickstart maakt u kennis met algemene ontwerppatronen voor het uitvoeren van een spraak-naar-tekstsynthese met behulp van de Speech-SDK. Eerst voert u een basisconfiguratie en -synthese uit en gaat u verder met geavanceerdere voorbeelden voor aangepaste toepassingsontwikkeling zoals:
 
@@ -255,9 +255,9 @@ Als u wilt overschakelen naar een neurale stem, wijzigt u de `name` in een van d
 </speak>
 ```
 
-## <a name="visemes"></a>Visemes
+## <a name="get-facial-pose-events"></a>Gebeurtenissen voor gezichts pose ophalen
 
-Spraak wordt doorgaans behandeld als een goede manier om de animatie van gezichts uitdrukkingen te vertonen.
-Vaak worden [visemes](../../../how-to-speech-synthesis-viseme.md) gebruikt om de sleutel in waargenomen spraak weer te geven (dat wil zeggen de positie van de lippen, jaw en tong bij het produceren van een bepaalde foneem).
-U kunt de Viseme-gebeurtenis in Speech SDK abonneren om gelaat animatie gegevens te genereren. Vervolgens kunt u dergelijke gegevens Toep assen op een teken om te zien hoe de animatie wordt Vergezicht.
-Meer informatie [over het ophalen van viseme-uitvoer](../../../how-to-speech-synthesis-viseme.md#get-viseme-outputs-with-the-speech-sdk).
+Speech is een goede manier om de animatie van gezichts expressies te testen.
+Vaak worden [visemes](../../../how-to-speech-synthesis-viseme.md) gebruikt om de sleutel in waargenomen spraak te vertegenwoordigen, zoals de positie van de lippen, jaw en tong bij het produceren van een bepaalde foneem.
+U kunt zich abonneren op viseme-gebeurtenissen in Speech SDK om gelaat animatie gegevens op te halen en vervolgens de gegevens Toep assen op een teken tijdens de animatie van het gezicht.
+Meer informatie [over het ophalen van viseme-gebeurtenissen](../../../how-to-speech-synthesis-viseme.md#get-viseme-events-with-the-speech-sdk).

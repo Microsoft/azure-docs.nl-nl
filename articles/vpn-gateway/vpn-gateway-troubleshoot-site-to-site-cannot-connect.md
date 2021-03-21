@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: troubleshooting
 ms.date: 09/16/2019
 ms.author: genli
-ms.openlocfilehash: 674b8ab8266921a4eef8bbf212f3c556b1e587d7
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 4454afbe543f374ebd745af7cd59be1ab745036f
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94658346"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104670884"
 ---
 # <a name="troubleshooting-an-azure-site-to-site-vpn-connection-cannot-connect-and-stops-working"></a>Problemen oplossen: een Azure site-naar-site-VPN-verbinding kan geen verbinding maken en werkt niet meer
 
@@ -46,7 +46,7 @@ Vergelijk de gedeelde sleutel voor het on-premises VPN-apparaat met de Azure Vir
 
 Gebruik een van de volgende methoden om de gedeelde sleutel voor de Azure VPN-verbinding weer te geven:
 
-**Azure Portal**
+**Azure-portal**
 
 1. Ga naar de site-naar-site-verbinding van de VPN-gateway die u hebt gemaakt.
 
@@ -110,5 +110,5 @@ De perfecte functie Forward Secrecy kan problemen met de verbinding veroorzaken.
 
 ## <a name="next-steps"></a>Volgende stappen
 
--   [Een site-naar-site-verbinding met een virtueel netwerk configureren](vpn-gateway-howto-site-to-site-resource-manager-portal.md)
+-   [Een site-naar-site-verbinding met een virtueel netwerk configureren](./tutorial-site-to-site-portal.md)
 -   [Een IPsec/IKE-beleid configureren voor site-naar-site-VPN-verbindingen](vpn-gateway-ipsecikepolicy-rm-powershell.md)

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/08/2020
-ms.openlocfilehash: 5b9b0c6a0fe08ccff9da59539b926270cd0e1d44
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 29cc0a3201b7c4ce1c685029de2a40f115b23e82
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102032851"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104606953"
 ---
 # <a name="azure-monitor-frequently-asked-questions"></a>Veelgestelde vragen over Azure Monitor
 
@@ -705,6 +705,10 @@ De logboek verzameling van containers in de uitvoeren-naam ruimte is standaard u
 
 Zie [agent beheer](containers/container-insights-manage-agent.md)voor meer informatie over het bijwerken van de agent.
 
+### <a name="why-are-log-lines-larger-than-16kb-split-into-multiple-records-in-log-analytics"></a>Waarom worden logboek regels groter dan 16 KB gesplitst in meerdere records in Log Analytics?
+
+De agent gebruikt het [stuur programma voor logboek registratie van json-bestanden van docker](https://docs.docker.com/config/containers/logging/json-file/) om de stdout en stderr van containers vast te leggen. Dit stuur programma voor logboek registratie splitst logboek regels die [groter zijn dan 16 KB](https://github.com/moby/moby/pull/22982) in meerdere regels wanneer ze van stdout of stderr naar een bestand worden gekopieerd.
+
 ### <a name="how-do-i-enable-multi-line-logging"></a>Hoe kan ik logboek registratie met meerdere regels inschakelen?
 
 Momenteel biedt container Insights geen ondersteuning voor logboek registratie in meerdere regels, maar er zijn tijdelijke oplossingen beschikbaar. U kunt alle services zo configureren dat ze worden geschreven in JSON-indeling en vervolgens docker/Moby als één regel schrijft.
@@ -821,6 +825,29 @@ Als u Azure Monitor hebt geconfigureerd met een Log Analytics-werk ruimte met be
 
 Onder dit voor waarde wordt u gevraagd de optie **nu proberen** te kiezen wanneer u de virtuele machine opent en **inzichten** selecteert in het linkerdeel venster, zelfs nadat het al op de virtuele machine is geïnstalleerd.  U wordt echter niet gevraagd naar opties die normaal gesp roken optreden als deze virtuele machine niet is onboarding voor VM Insights. 
 
+## <a name="sql-insights-preview"></a>SQL Insights (preview-versie)
+
+### <a name="what-versions-of-sql-server-are-supported"></a>Welke versies van SQL Server worden ondersteund?
+Zie [ondersteunde versies](insights/sql-insights-overview.md#supported-versions) voor ondersteunde versies van SQL.
+
+### <a name="what-sql-resource-types-are-supported"></a>Welke SQL-resource typen worden ondersteund?
+
+- Azure SQL Database. Alleen één data base, geen data bases in een Elastische pool.
+- Azure SQL Managed Instance 
+- Virtuele Azure SQL-machines ([Windows](../azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md#get-started-with-sql-server-vms), [Linux](../azure-sql/virtual-machines/linux/sql-server-on-linux-vm-what-is-iaas-overview.md#create)) en virtuele azure-machines waarop SQL Server is geïnstalleerd.
+
+### <a name="what-operating-systems-for-the-machine-running-sql-server-are-supported"></a>Welke besturings systemen voor de computer met SQL Server worden ondersteund?
+Elk besturings systeem dat ondersteunde versies van SQL ondersteunt.
+
+### <a name="what-operating-system-for-the-remote-monitoring-server-are-supported"></a>Welk besturings systeem voor de server voor externe bewaking wordt ondersteund?
+
+Ubuntu 18,04 is momenteel het enige besturings systeem dat wordt ondersteund.
+
+### <a name="where-will-the-monitoring-data-be-stored-in-log-analytics"></a>Waar worden de bewakings gegevens opgeslagen in Log Analytics 
+Alle bewakings gegevens worden opgeslagen in de tabel **InsightsMetrics** . De kolom **Origin** heeft de waarde *Solutions.AZM.MS/Telegraf/SqlInsights*. De kolom **naam ruimte** heeft waarden die beginnen met *sqlserver_*.
+
+### <a name="how-often-is-data-collected"></a>Hoe vaak worden gegevens verzameld? 
+Bekijk [gegevens die worden verzameld door SQL Insights](../insights/../azure-monitor/insights/sql-insights-overview.md#data-collected-by-sql-insights) voor meer informatie over de frequentie waarmee verschillende gegevens worden verzameld.
 
 ## <a name="next-steps"></a>Volgende stappen
 Als uw vraag hier niet wordt beantwoord, kunt u de volgende forums raadplegen voor aanvullende vragen en antwoorden.

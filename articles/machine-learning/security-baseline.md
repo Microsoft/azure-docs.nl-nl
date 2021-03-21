@@ -3,25 +3,28 @@ title: Azure-beveiligings basislijn voor Azure Machine Learning
 description: De Azure Machine Learning Security Baseline voorziet in procedure richtlijnen en resources voor het implementeren van de beveiligings aanbevelingen die zijn opgegeven in de Azure Security-Bench Mark.
 author: msmbaldwin
 ms.service: machine-learning
-ms.subservice: core
 ms.topic: conceptual
-ms.date: 08/19/2020
+ms.date: 03/16/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 08aa69db90901447297e06cd111b6b0174e6637a
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: f8bde45cfdf9cf1c9d50faee76161461d8b0aa0a
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100575091"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104607825"
 ---
 # <a name="azure-security-baseline-for-azure-machine-learning"></a>Azure-beveiligings basislijn voor Azure Machine Learning
 
-De Azure-beveiligings basislijn voor Microsoft Azure Machine Learning bevat aanbevelingen waarmee u de beveiligings postuur van uw implementatie kunt verbeteren. De basis lijn voor deze service wordt opgehaald uit de [Azure Security Bench Mark-versie 1,0](../security/benchmarks/overview.md), die aanbevelingen biedt over hoe u uw cloud oplossingen kunt beveiligen in azure met onze richt lijnen voor best practices. Zie [overzicht van Azure Security-basis lijnen](../security/benchmarks/security-baselines-overview.md)voor meer informatie.
+In deze beveiligings basislijn worden richt lijnen van de [Azure Security Bench Mark-versie 1,0](../security/benchmarks/overview-v1.md) ingesteld op Microsoft Azure machine learning. De Azure Security-benchmark biedt aanbevelingen voor hoe u uw cloudoplossingen in Azure kunt beveiligen.
+De inhoud wordt gegroepeerd op de **beveiligings controles** die zijn gedefinieerd door de Azure Security-benchmark en de bijbehorende richt lijnen die van toepassing zijn op Azure machine learning. **Besturings elementen** die niet van toepassing zijn op Azure machine learning, zijn uitgesloten.
+
+ 
+Als u wilt zien hoe Azure Machine Learning volledig is toegewezen aan de beveiligings benchmark van Azure, raadpleegt u het [volledige Azure machine learning beveiligings basislijn toewijzings bestand](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines).
 
 ## <a name="network-security"></a>Netwerkbeveiliging
 
-*Zie [Azure Security Bench Mark: Network Security](../security/benchmarks/security-control-network-security.md)(Engelstalig) voor meer informatie.*
+*Zie [Azure Security Benchmark: netwerkbeveiliging](../security/benchmarks/security-control-network-security.md) voor meer informatie.*
 
 ### <a name="11-protect-azure-resources-within-virtual-networks"></a>1,1: Azure-resources in virtuele netwerken beveiligen
 
@@ -33,9 +36,9 @@ Azure Firewall kan worden gebruikt om de toegang tot uw Azure Machine Learning-w
 
 - [Werk ruimte achter Azure Firewall gebruiken voor Azure Machine Learning](how-to-access-azureml-behind-firewall.md)
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="12-monitor-and-log-the-configuration-and-traffic-of-virtual-networks-subnets-and-nics"></a>1,2: de configuratie en het verkeer van virtuele netwerken, subnetten en Nic's bewaken en vastleggen
 
@@ -49,9 +52,9 @@ Schakel logboeken stroom van de netwerk beveiligings groep in en verzend de logb
 
 - [Informatie over de netwerk beveiliging die wordt verschaft door Azure Security Center](../security-center/security-center-network-recommendations.md)
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="13-protect-critical-web-applications"></a>1,3: essentiële webtoepassingen beveiligen
 
@@ -61,9 +64,9 @@ Schakel logboeken stroom van de netwerk beveiligings groep in en verzend de logb
 
 - [Overzicht van virtuele netwerk isolatie en privacy](how-to-network-security-overview.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="14-deny-communications-with-known-malicious-ip-addresses"></a>1,4: communicatie met bekende schadelijke IP-adressen weigeren
 
@@ -77,9 +80,9 @@ Implementeer Azure Firewall op alle netwerk grenzen van de organisatie met op be
 
 - [Voor meer informatie over de Azure Security Center-detectie van bedreigingen](../security-center/azure-defender.md)
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="15-record-network-packets"></a>1,5: netwerk pakketten opnemen
 
@@ -87,9 +90,9 @@ Implementeer Azure Firewall op alle netwerk grenzen van de organisatie met op be
 
 - [Een Network Watcher-exemplaar maken](../network-watcher/network-watcher-create.md)
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="16-deploy-network-based-intrusion-detectionintrusion-prevention-systems-idsips"></a>1,6: op netwerk gebaseerde inbreuk detectie/indringings systemen (ID'S/IP-adressen) implementeren
 
@@ -103,17 +106,17 @@ Selecteer een aanbieding van Azure Marketplace die ondersteuning biedt voor ID'S
 
 - [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/?term=Firewall)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="17-manage-traffic-to-web-applications"></a>1,7: verkeer naar webtoepassingen beheren
 
 **Richt lijnen**: niet van toepassing; deze aanbeveling is bedoeld voor webtoepassingen die worden uitgevoerd op Azure App Service of reken bronnen.
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: niet van toepassing
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="18-minimize-complexity-and-administrative-overhead-of-network-security-rules"></a>1,8: de complexiteit en administratieve overhead van netwerk beveiligings regels minimaliseren
 
@@ -125,9 +128,9 @@ Azure Machine Learning-service documenteert een lijst met Service Tags voor de r
 
 - [Overzicht van virtuele netwerk isolatie en privacy](how-to-network-security-overview.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="19-maintain-standard-security-configurations-for-network-devices"></a>1,9: standaard beveiligings configuraties voor netwerk apparaten onderhouden
 
@@ -135,9 +138,9 @@ Azure Machine Learning-service documenteert een lijst met Service Tags voor de r
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="110-document-traffic-configuration-rules"></a>1,10: configuratie regels voor het document verkeer
 
@@ -147,45 +150,37 @@ Voor een resource in uw Azure Machine Learning virtuele netwerk dat het beschrij
 
 - [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="111-use-automated-tools-to-monitor-network-resource-configurations-and-detect-changes"></a>1,11: gebruik automatische hulpprogram ma's om netwerk bron configuraties te bewaken en wijzigingen te detecteren
 
 **Hulp**: Azure-activiteiten logboek gebruiken om netwerk resource configuraties te bewaken en wijzigingen te detecteren voor netwerk bronnen die betrekking hebben op Azure machine learning. Maak waarschuwingen in Azure Monitor die worden geactiveerd wanneer er wijzigingen in kritieke netwerk bronnen plaatsvinden.
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](/azure/azure-monitor/platform/activity-log#view-the-activity-log)
 
-- [Waarschuwingen maken in Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
-
-**Azure Security Center bewaking**: niet van toepassing
+- [Waarschuwingen maken in Azure Monitor](/azure/azure-monitor/platform/alerts-activity-log)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ## <a name="logging-and-monitoring"></a>Logboekregistratie en bewaking
 
 *Zie [Azure Security Bench Mark: Logging and monitoring](../security/benchmarks/security-control-logging-monitoring.md)(Engelstalig) voor meer informatie.*
 
-### <a name="21-use-approved-time-synchronization-sources"></a>2,1: goedgekeurde tijd synchronisatie bronnen gebruiken
-
-**Richt lijnen**: micro soft onderhoudt de tijd bron die wordt gebruikt voor Azure-resources, zoals Azure machine learning voor tijds tempels in de logboeken.
-
-**Azure Security Center bewaking**: niet van toepassing
-
-**Verantwoordelijkheid**: micro soft
-
 ### <a name="22-configure-central-security-log-management"></a>2,2: Centraal beveiligings logboek beheer configureren
 
 **Hulp**: opname logboeken via Azure monitor voor het verzamelen van beveiligings gegevens die zijn gegenereerd door Azure machine learning. Gebruik in Azure Monitor Log Analytics-werk ruimten om analyses uit te voeren en te uitvoeren en gebruik Azure Storage accounts voor lange termijn-en archiverings opslag. U kunt ook gegevens naar Azure Sentinel of een beveiligings incident en gebeurtenis beheer van derden (SIEM) inschakelen en op de trein zetten.
 
-- [Diagnostische logboeken voor Azure Machine Learning configureren](monitor-azure-machine-learning.md#configuration)
+- [Diagnostische logboeken voor Azure Machine Learning configureren](https://docs.microsoft.com/azure/machine-learning/monitor-azure-machine-learning#configuration)
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="23-enable-audit-logging-for-azure-resources"></a>2,3: controle logboek registratie inschakelen voor Azure-resources
 
@@ -193,17 +188,17 @@ Voor een resource in uw Azure Machine Learning virtuele netwerk dat het beschrij
 
 U kunt ook Machine Learning service bewerkings logboeken voor beveiligings-en nalevings doeleinden correleren.
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md)
+- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](/azure/azure-monitor/platform/diagnostic-settings)
 
-- [Logboek registratie en verschillende logboek typen in azure](../azure-monitor/essentials/platform-logs-overview.md)
+- [Logboek registratie en verschillende logboek typen in azure](/azure/azure-monitor/platform/platform-logs-overview)
 
-- [Logboek registratie inschakelen in Azure Machine Learning](./how-to-track-experiments.md)
+- [Logboek registratie inschakelen in Azure Machine Learning](how-to-track-experiments.md)
 
 - [Bewakings Azure Machine Learning](monitor-azure-machine-learning.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="24-collect-security-logs-from-operating-systems"></a>2,4: beveiligings logboeken verzamelen van besturings systemen
 
@@ -211,23 +206,23 @@ U kunt ook Machine Learning service bewerkings logboeken voor beveiligings-en na
 
 Azure Machine Learning heeft verschillende ondersteuning voor verschillende reken bronnen en zelfs uw eigen reken bronnen. Gebruik Azure Security Center om het besturings systeem te bewaken voor alle reken resources die eigendom zijn van uw organisatie. 
 
-- [Interne host-logboeken van de virtuele machine van Azure verzamelen met Azure Monitor](../azure-monitor/vm/quick-collect-azurevm.md)
+- [Interne host-logboeken van de virtuele machine van Azure verzamelen met Azure Monitor](/azure/azure-monitor/learn/quick-collect-azurevm)
 
 - [Meer informatie over het verzamelen van Azure Security Center gegevens](../security-center/security-center-enable-data-collection.md)
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Gedeeld
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="25-configure-security-log-storage-retention"></a>2,5: Bewaar beveiliging van het beveiligings logboek configureren
 
 **Richt lijnen**: stel in azure monitor de Bewaar periode voor het logboek In voor log Analytics werk ruimten die zijn gekoppeld aan uw Azure machine learning-instanties volgens de nalevings voorschriften van uw organisatie.
 
-- [Para meters voor het bewaren van Logboeken instellen](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
-
-**Azure Security Center bewaking**: niet van toepassing
+- [Para meters voor het bewaren van Logboeken instellen](/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="26-monitor-and-review-logs"></a>2,6: Logboeken bewaken en controleren
 
@@ -235,19 +230,19 @@ Azure Machine Learning heeft verschillende ondersteuning voor verschillende reke
 
 U kunt ook gegevens in-en inschakelen voor Azure Sentinel of een SIEM van derden. 
 
-- [Query's uitvoeren voor Azure Machine Learning in Log Analytics-werk ruimten](monitor-azure-machine-learning.md#analyzing-log-data)
+- [Query's uitvoeren voor Azure Machine Learning in Log Analytics-werk ruimten](https://docs.microsoft.com/azure/machine-learning/monitor-azure-machine-learning#analyzing-log-data)
 
-- [Logboek registratie inschakelen in Azure Machine Learning](./how-to-track-experiments.md)
+- [Logboek registratie inschakelen in Azure Machine Learning](how-to-track-experiments.md)
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
 - [Aan de slag met Log Analytics query's](../azure-monitor/logs/log-analytics-tutorial.md)
 
-- [Aangepaste query's uitvoeren in Azure Monitor](../azure-monitor/logs/get-started-queries.md)
-
-**Azure Security Center bewaking**: niet van toepassing
+- [Aangepaste query's uitvoeren in Azure Monitor](/azure/azure-monitor/log-query/get-started-queries)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="27-enable-alerts-for-anomalous-activities"></a>2,7: waarschuwingen inschakelen voor afwijkende activiteiten
 
@@ -255,51 +250,51 @@ U kunt ook gegevens in-en inschakelen voor Azure Sentinel of een SIEM van derden
 
 U kunt ook gegevens naar Azure-Sentinel inschakelen en op het bord zetten.
 
-- [Voor meer informatie over Azure Machine Learning-waarschuwingen](monitor-azure-machine-learning.md#alerts)
+- [Voor meer informatie over Azure Machine Learning-waarschuwingen](https://docs.microsoft.com/azure/machine-learning/monitor-azure-machine-learning#alerts)
 
-- [Waarschuwingen voor Log Analytics werkruimte logboek gegevens](../azure-monitor/alerts/tutorial-response.md)
+- [Waarschuwingen voor Log Analytics werkruimte logboek gegevens](/azure/azure-monitor/learn/tutorial-response)
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="28-centralize-anti-malware-logging"></a>2,8: registratie van anti-malware centraliseren
 
-**Richt lijnen**: als de reken resource eigendom is van micro soft, is micro soft verantwoordelijk voor de implementatie van de antimalware van Azure machine learning service. 
+**Richt lijnen**: als de reken resource eigendom is van micro soft, is micro soft verantwoordelijk voor de implementatie van de antimalware van Azure machine learning service.
 
 Azure Machine Learning heeft verschillende ondersteuning voor verschillende reken bronnen en zelfs uw eigen reken bronnen. Voor reken resources die eigendom zijn van uw organisatie, schakelt u de verzameling van antimalware-gebeurtenissen in voor micro soft antimalware voor Azure Cloud Services en Virtual Machines.
 
-- [Micro soft antimalware configureren voor een virtuele machine](/powershell/module/servicemanagement/azure.service/set-azurevmmicrosoftantimalwareextension)
-
-- [Micro soft antimalware-extensie voor Cloud Services configureren](/powershell/module/servicemanagement/azure.service/set-azureserviceantimalwareextension?view=azuresmps-4.0.0)
+- [Micro soft antimalware-extensie voor Cloud Services configureren](/powershell/module/servicemanagement/azure.service/set-azurevmmicrosoftantimalwareextension)
 
 - [Micro soft antimalware begrijpen](../security/fundamentals/antimalware.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Gedeeld
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="29-enable-dns-query-logging"></a>2,9: DNS-query logboek registratie inschakelen
 
 **Richt lijnen**: niet van toepassing; Azure Machine Learning worden geen DNS-gerelateerde logboeken verwerkt of geproduceerd.
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: niet van toepassing
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="210-enable-command-line-audit-logging"></a>2,10: controle logboek registratie op opdracht regel inschakelen
 
 **Hulp**: Azure machine learning heeft verschillende ondersteuning voor verschillende reken bronnen en zelfs uw eigen reken bronnen. Voor reken bronnen die eigendom zijn van uw organisatie, gebruikt u Azure Security Center om bewaking van beveiligings logboeken voor virtuele Azure-machines in te scha kelen. Azure Security Center voorziet de Log Analytics agent op alle ondersteunde virtuele machines van Azure en nieuwe die worden gemaakt als automatisch inrichten is ingeschakeld. U kunt de agent ook hand matig installeren. De agent maakt de gebeurtenis 4688 voor het maken van processen en het veld commandline in gebeurtenis 4688 mogelijk. Nieuwe processen die op de virtuele machine worden gemaakt, worden vastgelegd door het gebeurtenis logboek en worden bewaakt door de detectie services van Security Center.
 
-**Monitoring door Azure Security Center**: Ja
+- [Gegevensverzameling in Azure Security Center](https://docs.microsoft.com/azure/security-center/security-center-enable-data-collection#data-collection-tier)
 
 **Verantwoordelijkheid**: Klant
 
+**Azure Security Center bewaking**: geen
+
 ## <a name="identity-and-access-control"></a>Identiteits- en toegangsbeheer
 
-*Zie [Azure Security Bench Mark: identiteits-en toegangs beheer](../security/benchmarks/security-control-identity-access-control.md)voor meer informatie.*
+*Zie [Azure Security Bench Mark: Identity and Access Control](../security/benchmarks/security-control-identity-access-control.md)voor meer informatie.*
 
 ### <a name="31-maintain-an-inventory-of-administrative-accounts"></a>3,1: een inventaris van beheerders accounts onderhouden
 
@@ -311,55 +306,55 @@ U kunt ook de Azure AD Power shell-module gebruiken om ad hoc query's uit te voe
 
 - [Meer informatie over toegangs beheer op basis van rollen in Azure in Azure Machine Learning](how-to-assign-roles.md)
 
-- [Een directory-rol verkrijgen in Azure Active Directory met Power shell](/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0)
-
-**Monitoring door Azure Security Center**: Ja
+- [Een directory-rol verkrijgen in azure AD met Power shell](/powershell/module/azuread/get-azureaddirectoryrole)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="32-change-default-passwords-where-applicable"></a>3,2: standaard wachtwoorden wijzigen indien van toepassing
 
 **Hulp**: toegangs beheer voor machine learning bronnen wordt beheerd via Azure Active Directory (Azure AD). Azure AD heeft niet het concept van standaard wachtwoorden.
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="33-use-dedicated-administrative-accounts"></a>3,3: speciale beheerders accounts gebruiken
 
 **Hulp**: Azure machine learning wordt geleverd met drie standaard rollen wanneer er een nieuwe werk ruimte wordt gemaakt, waardoor er standaard procedures worden gemaakt rondom het gebruik van eigenaars accounts.
 
-U kunt ook een just-in-time-toegang tot beheerders accounts inschakelen met behulp van Azure AD Privileged Identity Management en Azure Resource Manager. 
+U kunt ook Just-in-time toegang tot beheerders accounts inschakelen met behulp van Azure Active Directory (Azure AD) Privileged Identity Management en Azure Resource Manager.
 
-- [Meer informatie Machine Learning standaard rollen](how-to-assign-roles.md#default-roles)
+- [Meer informatie Machine Learning standaard rollen](https://docs.microsoft.com/azure/machine-learning/how-to-assign-roles#default-roles)
 
-- [Meer informatie over Privileged Identity Management](../active-directory/privileged-identity-management/index.yml)
-
-**Monitoring door Azure Security Center**: Ja
+- [Meer informatie over Privileged Identity Management](/azure/active-directory/privileged-identity-management/index)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="34-use-single-sign-on-sso-with-azure-active-directory"></a>3,4: eenmalige aanmelding (SSO) met Azure Active Directory gebruiken
 
-**Hulp**: machine learning is geïntegreerd met Azure Active Directory, Azure Active Directory SSO gebruiken in plaats van afzonderlijke zelfstandige referenties per service te configureren. Gebruik Azure Security Center-aanbevelingen voor identiteit en toegang.  
+**Richt lijnen**: machine learning is geïntegreerd met Azure Active Directory (Azure AD), gebruik Azure AD SSO in plaats van afzonderlijke zelfstandige referenties per service te configureren. Gebruik Azure Security Center-aanbevelingen voor identiteit en toegang.
 
 - [Informatie over eenmalige aanmelding met Azure AD](../active-directory/manage-apps/what-is-single-sign-on.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="35-use-multi-factor-authentication-for-all-azure-active-directory-based-access"></a>3,5: multi-factor Authentication gebruiken voor alle op Azure Active Directory gebaseerde toegang
 
-**Hulp**: schakel Azure Active Directory multi-factor Authentication in en volg de aanbevelingen voor Azure Security Center identiteit en toegang.
+**Hulp** bij het inschakelen van Azure Active Directory (Azure AD) multi-factor Authentication en het volgen van Azure Security Center identiteits-en toegangs aanbevelingen.
 
-- [MFA inschakelen in Azure](../active-directory/authentication/howto-mfa-getstarted.md)
+- [Multi-factor Authentication inschakelen in azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
 - [Identiteit en toegang bewaken in Azure Security Center](../security-center/security-center-identity-access.md)
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="36-use-dedicated-machines-privileged-access-workstations-for-all-administrative-tasks"></a>3,6: gebruik speciale machines (privileged Access workstations) voor alle beheer taken
 
@@ -367,35 +362,33 @@ U kunt ook een just-in-time-toegang tot beheerders accounts inschakelen met behu
 
 - [Meer informatie over veilige, door Azure beheerde werk stations](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
 
-- [Azure AD MFA inschakelen](../active-directory/authentication/howto-mfa-getstarted.md)
-
-**Azure Security Center bewaking**: niet van toepassing
+- [Azure Active Directory (Azure AD) multi-factor Authentication inschakelen](../active-directory/authentication/howto-mfa-getstarted.md)
 
 **Verantwoordelijkheid**: Klant
 
+**Azure Security Center bewaking**: geen
+
 ### <a name="37-log-and-alert-on-suspicious-activities-from-administrative-accounts"></a>3,7: Logboeken en waarschuwingen voor verdachte activiteiten van beheerders accounts
 
-**Hulp**: gebruik Azure Active Directory beveiligings rapporten en-bewaking om te detecteren wanneer verdachte of onveilige activiteiten in de omgeving worden uitgevoerd. Gebruik Azure Security Center om identiteits-en toegangs activiteiten te bewaken.
+**Hulp**: gebruik Azure Active Directory (Azure AD) beveiligings rapporten en-bewaking om te detecteren wanneer verdachte of onveilige activiteiten in de omgeving worden uitgevoerd. Gebruik Azure Security Center om identiteits-en toegangs activiteiten te bewaken.
 
 - [Azure AD-gebruikers identificeren die zijn gemarkeerd voor riskante activiteiten](../active-directory/identity-protection/overview-identity-protection.md)
 
 - [Identiteits- en toegangsactiviteiten van gebruikers controleren in Azure Security Center](../security-center/security-center-identity-access.md)
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="38-manage-azure-resources-only-from-approved-locations"></a>3,8: beheer Azure-resources alleen op goedgekeurde locaties
 
-**Richt lijnen**: gebruik Azure AD benoemde locaties om alleen toegang toe te staan vanuit specifieke logische groepen met IP-adresbereiken of landen/regio's.
- 
- 
- 
+**Hulp**: gebruik Azure Active Directory (Azure AD) met de naam locaties om alleen toegang toe te staan vanuit specifieke logische groepen met IP-adresbereiken of landen/regio's.
+
 - [De benoemde locaties van Azure AD configureren](../active-directory/reports-monitoring/quickstart-configure-named-locations.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="39-use-azure-active-directory"></a>3,9: Azure Active Directory gebruiken
 
@@ -407,64 +400,63 @@ De toegang tot rollen kan worden beperkt tot meerdere niveaus in Azure. Voor Mac
  
 - [Een Azure AD-instantie maken en configureren](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="310-regularly-review-and-reconcile-user-access"></a>3,10: regel matig gebruikers toegang controleren en afstemmen
 
-**Richt lijnen**: Azure AD biedt logboeken waarmee u verlopen accounts kunt detecteren. Daarnaast kunt u Azure AD Identity and Access revisies gebruiken om groepslid maatschappen, toegang tot bedrijfs toepassingen en roltoewijzingen op efficiënte wijze te beheren. Gebruikers toegang kan regel matig worden gecontroleerd om ervoor te zorgen dat alleen de juiste gebruikers toegang hebben. 
- 
-Gebruik Azure Active Directory (Azure AD) Privileged Identity Management (PIM) voor het genereren van Logboeken en waarschuwingen wanneer verdachte of onveilige activiteiten in de omgeving worden uitgevoerd.
+**Hulp**: Azure Active Directory (Azure AD) biedt logboeken waarmee u verlopen accounts kunt detecteren. Daarnaast kunt u Azure AD Identity and Access revisies gebruiken om groepslid maatschappen, toegang tot bedrijfs toepassingen en roltoewijzingen op efficiënte wijze te beheren. Gebruikers toegang kan regel matig worden gecontroleerd om ervoor te zorgen dat alleen de juiste gebruikers toegang hebben.
 
-- [Meer informatie over Azure AD-rapportage](../active-directory/reports-monitoring/index.yml)
+Gebruik Azure AD Privileged Identity Management (PIM) voor het genereren van Logboeken en waarschuwingen wanneer verdachte of onveilige activiteiten in de omgeving worden uitgevoerd.
+
+- [Meer informatie over Azure AD-rapportage](/azure/active-directory/reports-monitoring)
 
 - [Identiteits- en toegangsbeoordelingen van Azure AD](../active-directory/governance/access-reviews-overview.md)
 
 - [Azure AD Privileged Identity Management implementeren (PIM)](../active-directory/privileged-identity-management/pim-deployment-plan.md)
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="311-monitor-attempts-to-access-deactivated-credentials"></a>3,11: controle pogingen om toegang te krijgen tot gedeactiveerde referenties
 
-**Richt lijnen**: u hebt toegang tot de Azure AD-aanmeldings activiteit, audit en risico gebeurtenis logboek bronnen, waarmee u kunt integreren met elk Siem/bewakings programma.
+**Richt lijnen**: u hebt toegang tot Azure Active Directory (Azure AD) aanmeldings activiteiten, controle en risico logboek bronnen, waarmee u kunt integreren met elk Siem/bewakings programma.
 
 U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-gebruikers accounts te maken en de audit logboeken en aanmeldings logboeken te verzenden naar een Log Analytics-werk ruimte. U kunt de gewenste waarschuwingen configureren in Log Analytics werk ruimte.
- 
- 
-- [Azure-activiteiten logboeken integreren met Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+- [Azure-activiteiten logboeken integreren met Azure Monitor](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="312-alert-on-account-login-behavior-deviation"></a>3,12: waarschuwing voor de afwijking van het aanmeldings gedrag van accounts
 
-**Hulp**: gebruik Azure AD Identity Protection functies om automatische antwoorden te configureren op gedetecteerde verdachte acties met betrekking tot gebruikers identiteiten. U kunt ook gegevens opnemen in azure Sentinel voor verder onderzoek.
- 
+**Hulp**: gebruik Azure Active Directory-functies (Azure AD) voor identiteits beveiliging om automatische antwoorden te configureren op gedetecteerde verdachte acties die betrekking hebben op gebruikers identiteiten. U kunt ook gegevens opnemen in azure Sentinel voor verder onderzoek.
+
 - [Riskante Azure AD-aanmeldingen weergeven](../active-directory/identity-protection/overview-identity-protection.md)
- 
+
 - [Risico beleid voor identiteits beveiliging configureren en inschakelen](../active-directory/identity-protection/howto-identity-protection-configure-risk-policies.md)
- 
+
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="313-provide-microsoft-with-access-to-relevant-customer-data-during-support-scenarios"></a>3,13: micro soft biedt toegang tot relevante klant gegevens tijdens ondersteunings scenario's
 
 **Richt lijnen**: niet van toepassing; Azure Machine Learning-service biedt geen ondersteuning voor klant-lockbox.
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: niet van toepassing
+
+**Azure Security Center bewaking**: geen
 
 ## <a name="data-protection"></a>Gegevensbeveiliging
 
-*Zie [Azure Security Bench Mark: Data Protection](../security/benchmarks/security-control-data-protection.md)voor meer informatie.*
+*Zie [Azure Security Benchmark: gegevensbescherming](../security/benchmarks/security-control-data-protection.md) voor meer informatie.*
 
 ### <a name="41-maintain-an-inventory-of-sensitive-information"></a>4,1: een inventaris van gevoelige informatie onderhouden
 
@@ -472,9 +464,9 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
  
 - [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4,2: systemen isoleren die gevoelige informatie opslaan of verwerken
 
@@ -483,12 +475,13 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 - [Aanvullende Azure-abonnementen maken](../cost-management-billing/manage/create-subscription.md)
 
 - [Beheer groepen maken](../governance/management-groups/create-management-group-portal.md)
+
  
 - [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="43-monitor-and-block-unauthorized-transfer-of-sensitive-information"></a>4,3: niet-geautoriseerde overdracht van gevoelige gegevens controleren en blok keren
 
@@ -498,9 +491,9 @@ Voor het onderliggende platform, dat wordt beheerd door Microsoft, geldt dat all
 
 - [Informatie over beveiliging van klantgegevens in Azure](../security/fundamentals/protection-customer-data.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="44-encrypt-all-sensitive-information-in-transit"></a>4,4: alle gevoelige gegevens in de overdracht versleutelen
 
@@ -508,9 +501,9 @@ Voor het onderliggende platform, dat wordt beheerd door Microsoft, geldt dat all
 
 - [TLS gebruiken om een webservice te beveiligen via Azure Machine Learning](how-to-secure-web-service.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="45-use-an-active-discovery-tool-to-identify-sensitive-data"></a>4,5: een actief detectie hulpprogramma gebruiken om gevoelige gegevens te identificeren
 
@@ -520,56 +513,45 @@ Voor het onderliggende platform, dat wordt beheerd door micro soft, behandelt mi
 
 - [Informatie over beveiliging van klantgegevens in Azure](../security/fundamentals/protection-customer-data.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="46-use-azure-rbac-to-manage-access-to-resources"></a>4,6: Azure RBAC gebruiken om de toegang tot resources te beheren
 
 **Hulp**: Azure machine learning ondersteunt het gebruik van Azure Active Directory (Azure AD) om aanvragen voor machine learning bronnen goed te keuren. Met Azure AD kunt u Azure RBAC (op rollen gebaseerd toegangs beheer) gebruiken om machtigingen te verlenen aan een beveiligingsprincipal, die een gebruiker of een service-principal van de toepassing is.
 
 - [De toegang tot een Azure Machine Learning-werkruimte beheren](how-to-assign-roles.md)
-- [Azure RBAC gebruiken voor Kubernetes-autorisatie](../aks/manage-azure-rbac.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+- [Azure RBAC gebruiken voor Kubernetes-autorisatie](../aks/manage-azure-rbac.md)
 
 **Verantwoordelijkheid**: Klant
 
-### <a name="47-use-host-based-data-loss-prevention-to-enforce-access-control"></a>4,7: voor komen dat gegevens verlies op basis van host wordt gebruikt voor het afdwingen van toegangs beheer
-
-**Richt lijnen**: niet van toepassing; deze richt lijn is bedoeld voor reken resources.
-
-Micro soft beheert de onderliggende infra structuur voor Machine Learning en heeft strikte controles geïmplementeerd om verlies of bloot stelling van klant gegevens te voor komen.
-
-- [Informatie over beveiliging van klantgegevens in Azure](../security/fundamentals/protection-customer-data.md)
-
-**Azure Security Center bewaking**: niet van toepassing
-
-**Verantwoordelijkheid**: micro soft
+**Azure Security Center bewaking**: geen
 
 ### <a name="48-encrypt-sensitive-information-at-rest"></a>4,8: gevoelige informatie op rest versleutelen
 
 **Hulp**: Azure machine learning slaan moment opnamen, uitvoer en logboeken op in het Azure Blob Storage-account dat is gekoppeld aan de Azure machine learning-werk ruimte en uw abonnement. Alle gegevens die zijn opgeslagen in Azure Blob Storage, worden op rest versleuteld met door micro soft beheerde sleutels. U kunt gegevens die zijn opgeslagen in Azure Blob Storage, ook versleutelen met uw eigen sleutels in Machine Learning service. 
 
-- [Azure Machine Learning gegevens versleuteling in rust](concept-enterprise-security.md#encryption-at-rest)
+- [Azure Machine Learning gegevens versleuteling in rust](https://docs.microsoft.com/azure/machine-learning/concept-enterprise-security#encryption-at-rest)
 
 - [Meer informatie over versleuteling van data-at-rest in Azure](../security/fundamentals/encryption-atrest.md)
 
 - [Door de klant beheerde versleutelings sleutels configureren](../storage/common/customer-managed-keys-configure-key-vault.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="49-log-and-alert-on-changes-to-critical-azure-resources"></a>4,9: wijzigingen in essentiële Azure-resources vastleggen en waarschuwen
 
 **Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken wanneer wijzigingen worden aangebracht in productie-exemplaren van Azure machine learning en andere essentiële of gerelateerde resources.
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
-
-**Azure Security Center bewaking**: niet van toepassing
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](/azure/azure-monitor/platform/alerts-activity-log)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ## <a name="vulnerability-management"></a>Beheer van beveiligingsproblemen
 
@@ -583,9 +565,9 @@ Azure Machine Learning heeft verschillende ondersteuning voor verschillende reke
 
 - [Aanbevelingen voor de evaluatie van Azure Security Center-beveiligings problemen implementeren](../security-center/deploy-vulnerability-assessment-vm.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Gedeeld
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="52-deploy-automated-operating-system-patch-management-solution"></a>5,2: geautomatiseerde oplossing voor patch beheer voor besturings systemen implementeren
 
@@ -597,17 +579,17 @@ Azure Machine Learning heeft verschillende ondersteuning voor verschillende reke
 
 - [Meer informatie over Azure-beveiligings beleid bewaakt door Security Center](../security-center/policy-reference.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Gedeeld
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="53-deploy-an-automated-patch-management-solution-for-third-party-software-titles"></a>5,3: een geautomatiseerde oplossing voor patch beheer implementeren voor titels van software van derden
 
 **Hulp**: Azure machine learning heeft verschillende ondersteuning voor verschillende reken bronnen en zelfs uw eigen reken bronnen. Voor reken bronnen die eigendom zijn van uw organisatie, gebruikt u een oplossing voor patch beheer van derden. Klanten die al gebruikmaken van Configuration Manager in hun omgeving kunnen System Center Updates Publisher ook gebruiken om aangepaste updates te publiceren in Windows Server Update service. Op deze manier kunnen Updatebeheer patches voor machines die gebruikmaken van Configuration Manager als update opslagplaats met software van derden.
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="54-compare-back-to-back-vulnerability-scans"></a>5,4: vergelijken van back-to-back-problemen
 
@@ -615,37 +597,37 @@ Azure Machine Learning heeft verschillende ondersteuning voor verschillende reke
 
 - [Aanbevelingen voor de evaluatie van Azure Security Center-beveiligings problemen implementeren](../security-center/deploy-vulnerability-assessment-vm.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="55-use-a-risk-rating-process-to-prioritize-the-remediation-of-discovered-vulnerabilities"></a>5,5: een risico classificatie proces gebruiken om prioriteit te geven aan het herstel van ontdekte beveiligings problemen
 
 **Richt lijnen**: niet van toepassing; deze richt lijn is bedoeld voor reken resources.
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: niet van toepassing
 
-## <a name="inventory-and-asset-management"></a>Inventarisatie en asset-management
+**Azure Security Center bewaking**: geen
+
+## <a name="inventory-and-asset-management"></a>Inventarisatie en Asset Management
 
 *Zie [Azure Security Bench Mark: Inventory and Asset Management](../security/benchmarks/security-control-inventory-asset-management.md)voor meer informatie.*
 
 ### <a name="61-use-automated-asset-discovery-solution"></a>6,1: automatische Asset-detectie oplossing gebruiken
 
-**Hulp**: Azure resource Graph gebruiken om resources te zoeken en te detecteren (zoals compute, opslag, netwerk, poorten en protocollen enz.) in uw abonnementen.  Zorg ervoor dat de juiste (Lees-) machtigingen voor uw Tenant zijn en alle Azure-abonnementen en de resources in uw abonnementen inventariseren.
+**Hulp**: Azure resource Graph gebruiken om resources te zoeken en te detecteren (zoals compute, opslag, netwerk, poorten en protocollen enz.) in uw abonnementen. Zorg ervoor dat de juiste (Lees-) machtigingen voor uw Tenant zijn en alle Azure-abonnementen en de resources in uw abonnementen inventariseren.
 
 Hoewel klassieke Azure-resources kunnen worden gedetecteerd via Azure resource Graph Explorer, is het raadzaam om Azure Resource Manager resources te maken en te gebruiken.
 
 - [Query's maken met Azure Resource Graph Explorer](../governance/resource-graph/first-query-portal.md)
 
-- [Uw Azure-abonnementen weer geven](/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
+- [Uw Azure-abonnementen weer geven](/powershell/module/az.accounts/get-azsubscription)
 
 - [Meer informatie over Azure RBAC](../role-based-access-control/overview.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="62-maintain-asset-metadata"></a>6,2: meta gegevens van activa onderhouden
 
@@ -653,37 +635,31 @@ Hoewel klassieke Azure-resources kunnen worden gedetecteerd via Azure resource G
 
 - [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="63-delete-unauthorized-azure-resources"></a>6,3: niet-geautoriseerde Azure-resources verwijderen
 
 **Richt lijnen**: Gebruik labels, beheer groepen en afzonderlijke abonnementen, indien van toepassing, om assets te organiseren en bij te houden. Sluit de inventaris regel matig af en zorg ervoor dat niet-geautoriseerde resources tijdig worden verwijderd uit het abonnement.
- 
- 
- 
+
 - [ Aanvullende Azure-abonnementen maken](../cost-management-billing/manage/create-subscription.md)
- 
- 
- 
+
 - [ Beheer groepen maken](../governance/management-groups/create-management-group-portal.md)
- 
- 
  
 - [ Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="64-define-and-maintain-an-inventory-of-approved-azure-resources"></a>6,4: een inventaris van goedgekeurde Azure-resources definiëren en onderhouden
 
 **Richt lijnen**: Maak een inventaris van goedgekeurde Azure-resources en goedgekeurde software voor reken resources conform uw organisatie behoeften.
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="65-monitor-for-unapproved-azure-resources"></a>6,5: monitor voor niet-goedgekeurde Azure-resources
 
@@ -698,9 +674,9 @@ Daarnaast kunt u met de Azure-resource grafiek bronnen in de abonnementen opvrag
 
 - [Query's maken met Azure Graph](../governance/resource-graph/first-query-portal.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="66-monitor-for-unapproved-software-applications-within-compute-resources"></a>6,6: monitor voor niet-goedgekeurde software toepassingen binnen reken resources
 
@@ -708,9 +684,9 @@ Daarnaast kunt u met de Azure-resource grafiek bronnen in de abonnementen opvrag
 
 - [Azure Automation voorraad verzameling inschakelen voor een virtuele machine](../automation/automation-tutorial-installed-software.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Gedeeld
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="67-remove-unapproved-azure-resources-and-software-applications"></a>6,7: niet-goedgekeurde Azure-resources en software toepassingen verwijderen
 
@@ -728,9 +704,9 @@ Verwijder Azure-resources wanneer deze ze niet meer nodig zijn.
 
 - [Azure-resource groep en-resource verwijderen](../azure-resource-manager/management/delete-resource-group.md)
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Gedeeld
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="68-use-only-approved-applications"></a>6,8: alleen goedgekeurde toepassingen gebruiken
 
@@ -738,9 +714,9 @@ Verwijder Azure-resources wanneer deze ze niet meer nodig zijn.
 
 - [Azure Security Center adaptieve toepassings besturings elementen gebruiken](../security-center/security-center-adaptive-application.md)
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Gedeeld
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="69-use-only-approved-azure-services"></a>6,9: alleen goedgekeurde Azure-Services gebruiken
 
@@ -755,9 +731,9 @@ Daarnaast gebruikt u de resource grafiek van Azure om resources in de abonnement
 
 - [Query's maken met Azure resource Graph](../governance/resource-graph/first-query-portal.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="610-maintain-an-inventory-of-approved-software-titles"></a>6,10: een inventaris van goedgekeurde software titels onderhouden
 
@@ -767,39 +743,39 @@ Implementeer een oplossing van derden als adaptieve toepassings besturings eleme
 
 - [Azure Security Center adaptieve toepassings besturings elementen gebruiken](../security-center/security-center-adaptive-application.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: niet van toepassing
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="611-limit-users-ability-to-interact-with-azure-resource-manager"></a>6,11: de mogelijkheid van gebruikers om te communiceren met Azure Resource Manager beperken
 
-**Richt lijnen**: gebruik de voorwaardelijke toegang van Azure AD om de interactie van gebruikers met Azure Resources Manager te beperken door ' toegang blok keren ' te configureren voor de app Microsoft Azure management.
- 
-- [Voorwaardelijke toegang configureren om de toegang tot Azure-bronnen beheer te blok keren](../role-based-access-control/conditional-access-azure-management.md)
+**Hulp**: gebruik Azure Active Directory (Azure AD) voorwaardelijke toegang om de mogelijkheid van gebruikers om te communiceren met Azure Resource Manager te beperken door ' blok toegang ' te configureren voor de app Microsoft Azure management.
 
-**Azure Security Center bewaking**: niet van toepassing
+- [Voorwaardelijke toegang configureren om de toegang tot Azure-bronnen beheer te blok keren](../role-based-access-control/conditional-access-azure-management.md)
 
 **Verantwoordelijkheid**: Klant
 
+**Azure Security Center bewaking**: geen
+
 ### <a name="612-limit-users-ability-to-execute-scripts-in-compute-resources"></a>6,12: de mogelijkheid van gebruikers om scripts in reken bronnen uit te voeren, beperken
 
-**Hulp**: Azure machine learning heeft verschillende ondersteuning voor verschillende reken bronnen en zelfs uw eigen reken bronnen. Voor reken resources die eigendom zijn van uw organisatie, afhankelijk van het type scripts, kunt u specifieke configuraties van het besturings systeem of bronnen van derden gebruiken om de mogelijkheid van gebruikers om scripts uit te voeren in azure Compute-resources te beperken.  U kunt ook Azure Security Center adaptieve toepassings besturings elementen gebruiken om ervoor te zorgen dat alleen geautoriseerde software wordt uitgevoerd en alle niet-geautoriseerde software wordt geblokkeerd voor uitvoering op Azure Virtual Machines.
+**Hulp**: Azure machine learning heeft verschillende ondersteuning voor verschillende reken bronnen en zelfs uw eigen reken bronnen. Voor reken resources die eigendom zijn van uw organisatie, afhankelijk van het type scripts, kunt u specifieke configuraties van het besturings systeem of bronnen van derden gebruiken om de mogelijkheid van gebruikers om scripts uit te voeren in azure Compute-resources te beperken. U kunt ook Azure Security Center adaptieve toepassings besturings elementen gebruiken om ervoor te zorgen dat alleen geautoriseerde software wordt uitgevoerd en alle niet-geautoriseerde software wordt geblokkeerd voor uitvoering op Azure Virtual Machines.
 
-- [De uitvoering van Power shell-scripts beheren in Windows-omgevingen](/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6)
+- [De uitvoering van Power shell-scripts beheren in Windows-omgevingen](/powershell/module/microsoft.powershell.security/set-executionpolicy)
 
 - [Azure Security Center adaptieve toepassings besturings elementen gebruiken](../security-center/security-center-adaptive-application.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: niet van toepassing
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="613-physically-or-logically-segregate-high-risk-applications"></a>6,13: toepassingen met een hoog risico fysiek of logisch scheiden
 
 **Richt lijnen**: niet van toepassing; deze aanbeveling is bedoeld voor webtoepassingen die worden uitgevoerd op Azure App Service of reken bronnen.
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: niet van toepassing
+
+**Azure Security Center bewaking**: geen
 
 ## <a name="secure-configuration"></a>Veilige configuratie
 
@@ -815,7 +791,7 @@ U kunt ook de aanbevelingen van Azure Security Center gebruiken als een veilige 
 
 Azure Machine Learning biedt volledige ondersteuning voor git-opslag plaatsen voor het bijhouden van werk. u kunt opslag plaatsen rechtstreeks op het bestands systeem van de gedeelde werk ruimte klonen, Git op uw lokale werk station gebruiken en ervoor zorgen dat veilige configuraties van toepassing zijn op code bronnen als onderdeel van uw Machine Learning omgeving.
 
-- [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
+- [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias)
 
 - [Zelfstudie: Beleidsregels voor het afdwingen van naleving maken en beheren](../governance/policy/tutorials/create-and-manage.md)
 
@@ -823,9 +799,9 @@ Azure Machine Learning biedt volledige ondersteuning voor git-opslag plaatsen vo
 
 - [Aanbevelingen voor beveiliging: een naslaggids](../security-center/recommendations-reference.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="72-establish-secure-operating-system-configurations"></a>7,2: veilige configuraties van besturings systemen instellen
 
@@ -843,15 +819,13 @@ Azure Machine Learning heeft verschillende ondersteuning voor verschillende reke
 
 - [Een virtuele Linux-machine maken op basis van een aangepaste schijf met de Azure CLI](../virtual-machines/linux/upload-vhd.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Gedeeld
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="73-maintain-secure-azure-resource-configurations"></a>7,3: Beveilig Azure-resource configuraties onderhouden
 
 **Hulp**: gebruik Azure Policy [deny] en [implementeren indien niet aanwezig] voor het afdwingen van beveiligde instellingen voor uw Azure-resources. Daarnaast kunt u Azure Resource Manager sjablonen gebruiken om de beveiligings configuratie van uw Azure-resources te onderhouden die uw organisatie nodig heeft. 
- 
- 
  
 - [Azure Policy effecten begrijpen](../governance/policy/concepts/effects.md)
  
@@ -859,9 +833,9 @@ Azure Machine Learning heeft verschillende ondersteuning voor verschillende reke
  
 - [ Overzicht van Azure Resource Manager sjablonen](../azure-resource-manager/templates/overview.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="74-maintain-secure-operating-system-configurations"></a>7,4: veilige configuraties van besturings systemen onderhouden
 
@@ -877,15 +851,15 @@ Houd er rekening mee dat installatie kopieën van virtuele machines van Azure Ma
 
 - [Overzicht van Azure Automation status configuratie](../automation/automation-dsc-overview.md)
 
-- [Een virtuele Windows-machine maken in de Azure Portal ](../virtual-machines/windows/quick-create-portal.md)
+- [Een virtuele Windows-machine maken in de Azure Portal](../virtual-machines/windows/quick-create-portal.md)
 
 - [Informatie over het downloaden van de VM-sjabloon](/previous-versions/azure/virtual-machines/windows/download-template)
 
 - [Voorbeeld van een script voor het uploaden van een VHD naar Azure om een nieuwe VM te maken](/previous-versions/azure/virtual-machines/scripts/virtual-machines-windows-powershell-upload-generalized-script)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Gedeeld
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="75-securely-store-configuration-of-azure-resources"></a>7,5: de configuratie van Azure-resources veilig opslaan
 
@@ -893,17 +867,17 @@ Houd er rekening mee dat installatie kopieën van virtuele machines van Azure Ma
 
 Azure Machine Learning biedt volledige ondersteuning voor git-opslag plaatsen voor het bijhouden van werk. u kunt opslag plaatsen rechtstreeks op het bestands systeem van de gedeelde werk ruimte klonen, Git op uw lokale werk station gebruiken en ervoor zorgen dat veilige configuraties van toepassing zijn op code bronnen als onderdeel van uw Machine Learning omgeving.
 
-- [Code opslaan in azure DevOps](/azure/devops/repos/git/gitworkflow?view=azure-devops)
+- [Code opslaan in azure DevOps](/azure/devops/repos/git/gitworkflow)
 
-- [Documentatie voor Azure opslag plaatsen](/azure/devops/repos/index?view=azure-devops)
-
-**Azure Security Center bewaking**: niet van toepassing
+- [Documentatie voor Azure opslag plaatsen](/azure/devops/repos/)
 
 **Verantwoordelijkheid**: Klant
 
+**Azure Security Center bewaking**: geen
+
 ### <a name="76-securely-store-custom-operating-system-images"></a>7,6: aangepaste installatie kopieën van een besturings systeem veilig opslaan
 
-**Hulp**: Azure machine learning heeft verschillende ondersteuning voor verschillende reken bronnen en zelfs uw eigen reken bronnen. Voor reken resources die eigendom zijn van uw organisatie, kunt u gebruikmaken van Azure RBAC (op rollen gebaseerd toegangs beheer) om ervoor te zorgen dat alleen geautoriseerde gebruikers toegang hebben tot uw aangepaste installatie kopieën. Een galerie met gedeelde Azure-afbeeldingen gebruiken u kunt uw installatie kopieën delen met verschillende gebruikers, service-principals of Azure AD-groepen in uw organisatie. Container installatie kopieën opslaan in Azure Container Registry en Azure RBAC gebruiken om ervoor te zorgen dat alleen gemachtigde gebruikers toegang hebben.
+**Hulp**: Azure machine learning heeft verschillende ondersteuning voor verschillende reken bronnen en zelfs uw eigen reken bronnen. Voor reken resources die eigendom zijn van uw organisatie, kunt u gebruikmaken van Azure RBAC (op rollen gebaseerd toegangs beheer) om ervoor te zorgen dat alleen geautoriseerde gebruikers toegang hebben tot uw aangepaste installatie kopieën. Een galerie met gedeelde Azure-afbeeldingen gebruiken u kunt uw installatie kopieën delen met verschillende gebruikers, service-principals of Azure Active Directory Azure AD-groepen in uw organisatie. Container installatie kopieën opslaan in Azure Container Registry en Azure RBAC gebruiken om ervoor te zorgen dat alleen gemachtigde gebruikers toegang hebben.
 
 - [Meer informatie over Azure RBAC](../role-based-access-control/rbac-and-directory-admin-roles.md)
 
@@ -915,9 +889,9 @@ Azure Machine Learning biedt volledige ondersteuning voor git-opslag plaatsen vo
 
 - [Azure RBAC gebruiken voor Kubernetes-autorisatie](../aks/manage-azure-rbac.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: niet van toepassing
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="77-deploy-configuration-management-tools-for-azure-resources"></a>7,7: hulpprogram ma's voor configuratie beheer voor Azure-resources implementeren
 
@@ -925,11 +899,11 @@ Azure Machine Learning biedt volledige ondersteuning voor git-opslag plaatsen vo
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Aliassen gebruiken](../governance/policy/concepts/definition-structure.md#aliases)
-
-**Azure Security Center bewaking**: niet van toepassing
+- [Aliassen gebruiken](https://docs.microsoft.com/azure/governance/policy/concepts/definition-structure#aliases)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="78-deploy-configuration-management-tools-for-operating-systems"></a>7,8: hulpprogram ma's voor configuratie beheer voor besturings systemen implementeren
 
@@ -939,9 +913,9 @@ Azure Machine Learning heeft verschillende ondersteuning voor verschillende reke
 
 - [De configuratie van Azure Automation-status inschakelen](../automation/automation-dsc-onboarding.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Gedeeld
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="79-implement-automated-configuration-monitoring-for-azure-resources"></a>7,9: geautomatiseerde configuratie bewaking voor Azure-resources implementeren
 
@@ -951,9 +925,9 @@ Azure Machine Learning heeft verschillende ondersteuning voor verschillende reke
  
 - [ Aanbevelingen herstellen in Azure Security Center](../security-center/security-center-remediate-recommendations.md)
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="710-implement-automated-configuration-monitoring-for-operating-systems"></a>7,10: geautomatiseerde configuratie bewaking voor besturings systemen implementeren
 
@@ -963,9 +937,9 @@ Azure Machine Learning heeft verschillende ondersteuning voor verschillende reke
 
 - [Aanbevelingen van Azure Security Center voor containers](../security-center/container-security.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Gedeeld
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="711-manage-azure-secrets-securely"></a>7,11: Azure-geheimen veilig beheren
 
@@ -975,7 +949,7 @@ Azure Machine Learning ondersteunt versleuteling van gegevens opslag met door de
 
 Gebruik Azure Key Vault om geheimen door te geven aan externe uitvoeringen veilig uit te voeren in plaats van een lees bewerking in uw trainings scripts.
 
-- [Azure Machine Learning door de klant beheerde sleutels](concept-enterprise-security.md#azure-blob-storage)
+- [Azure Machine Learning door de klant beheerde sleutels](https://docs.microsoft.com/azure/machine-learning/concept-enterprise-security#azure-blob-storage)
 
 - [Verificatie referentie geheimen gebruiken in Azure Machine Learning training-uitvoeringen](how-to-use-secrets-in-runs.md)
 
@@ -987,22 +961,21 @@ Gebruik Azure Key Vault om geheimen door te geven aan externe uitvoeringen veili
 
 - [Toegangs beleid voor Key Vault toewijzen](../key-vault/general/assign-access-policy-portal.md)
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="712-manage-identities-securely-and-automatically"></a>7,12: identiteiten veilig en automatisch beheren
 
-**Hulp**: Azure machine learning ondersteunt zowel ingebouwde rollen als de mogelijkheid om aangepaste rollen te maken. Gebruik beheerde identiteiten om Azure-Services te voorzien van een automatisch beheerde identiteit in azure AD. Met beheerde identiteiten kunt u zich verifiëren bij elke service die ondersteuning biedt voor Azure AD-verificatie, met inbegrip van Key Vault, zonder dat u referenties in uw code hoeft op te geven.
+**Hulp**: Azure machine learning ondersteunt zowel ingebouwde rollen als de mogelijkheid om aangepaste rollen te maken. Gebruik beheerde identiteiten om Azure-Services te voorzien van een automatisch beheerde identiteit in Azure Active Directory (Azure AD). Met beheerde identiteiten kunt u zich verifiëren bij elke service die ondersteuning biedt voor Azure AD-verificatie, met inbegrip van Key Vault, zonder dat u referenties in uw code hoeft op te geven.
 
- 
 - [De toegang tot een Azure Machine Learning-werkruimte beheren](how-to-assign-roles.md)
 
 - [Beheerde identiteiten voor Azure-resources configureren](../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="713-eliminate-unintended-credential-exposure"></a>7,13: onbedoelde referentie blootstelling elimineren
 
@@ -1010,9 +983,9 @@ Gebruik Azure Key Vault om geheimen door te geven aan externe uitvoeringen veili
 
 - [Referentie scanner instellen](https://secdevtools.azurewebsites.net/helpcredscan.html)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ## <a name="malware-defense"></a>Beveiliging tegen malware
 
@@ -1028,9 +1001,9 @@ Azure Machine Learning heeft verschillende ondersteuning voor verschillende reke
 
 - [Bescherming tegen bedreiging in Azure Security Center](../security-center/azure-defender.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Gedeeld
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="82-pre-scan-files-to-be-uploaded-to-non-compute-azure-resources"></a>8,2: scan bestanden die moeten worden geüpload naar niet-reken resources van Azure
 
@@ -1038,9 +1011,9 @@ Azure Machine Learning heeft verschillende ondersteuning voor verschillende reke
 
 Het is uw verantwoordelijkheid om vooraf te scannen op inhoud die wordt geüpload naar niet-reken resources van Azure. Micro soft heeft geen toegang tot klant gegevens en kan daarom geen anti-malware scans uitvoeren van klant inhoud namens u.
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="83-ensure-antimalware-software-and-signatures-are-updated"></a>8,3: controleren of antimalware-software en hand tekeningen zijn bijgewerkt
 
@@ -1050,9 +1023,9 @@ Azure Machine Learning heeft verschillende ondersteuning voor verschillende reke
 
 - [Micro soft antimalware voor Azure implementeren](../security/fundamentals/antimalware.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Gedeeld
+
+**Azure Security Center bewaking**: geen
 
 ## <a name="data-recovery"></a>Gegevensherstel
 
@@ -1064,20 +1037,21 @@ Azure Machine Learning heeft verschillende ondersteuning voor verschillende reke
 
 - [Bestanden herstellen vanuit back-up van Azure virtual machine](../backup/backup-azure-restore-files-from-vm.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="92-perform-complete-system-backups-and-backup-any-customer-managed-keys"></a>9,2: volledige back-ups van het systeem uitvoeren en een back-up maken van door de klant beheerde sleutels
 
 **Richt lijnen**: gegevens back-up in machine learning-service is via gegevens beheer in verbonden gegevens archieven. Schakel Azure Backup voor Vm's in en configureer de gewenste frequentie en bewaar perioden. Maak een back-up van door de klant beheerde sleutels in Azure Key Vault.
 
 - [Bestanden herstellen vanuit back-up van Azure virtual machine](../backup/backup-azure-restore-files-from-vm.md)
-- [Key Vault sleutels herstellen in azure](/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
 
-**Azure Security Center bewaking**: niet van toepassing
+- [Key Vault sleutels herstellen in azure](/powershell/module/az.keyvault/restore-azkeyvaultkey)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="93-validate-all-backups-including-customer-managed-keys"></a>9,3: alle back-ups valideren, inclusief door de klant beheerde sleutels
 
@@ -1085,30 +1059,29 @@ Azure Machine Learning heeft verschillende ondersteuning voor verschillende reke
 
 - [Bestanden herstellen vanuit een back-up van een virtuele Azure-machine](../backup/backup-azure-restore-files-from-vm.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="94-ensure-protection-of-backups-and-customer-managed-keys"></a>9,4: zorg voor de bescherming van back-ups en door de klant beheerde sleutels
 
-**Richt lijnen**: voor on-premises back-ups wordt versleuteling in rust gegeven met behulp van de wachtwoordzin die u opgeeft bij het maken van een back-up naar Azure. Gebruik Azure op rollen gebaseerd toegangs beheer voor het beveiligen van back-ups en door de klant beheerde sleutels. 
+**Richt lijnen**: voor on-premises back-ups wordt versleuteling in rust gegeven met behulp van de wachtwoordzin die u opgeeft bij het maken van een back-up naar Azure. Gebruik Azure RBAC (op rollen gebaseerd toegangs beheer) voor het beveiligen van back-ups en door de klant beheerde sleutels. 
 
 Schakel de beveiliging van zacht verwijderen en opschonen in Key Vault in om sleutels te beschermen tegen onbedoelde of schadelijke verwijdering. Als Azure Storage wordt gebruikt voor het opslaan van back-ups, schakelt u de optie voor het tijdelijk verwijderen in om uw gegevens op te slaan en te herstellen wanneer blobs of BLOB-moment opnamen worden verwijderd.
- 
- 
+
 - [Meer informatie over Azure RBAC](../role-based-access-control/overview.md)
 
-- [Voorlopig verwijderen en bescherming tegen opschonen in Azure Key Vault inschakelen](../storage/blobs/soft-delete-blob-overview.md?tabs=azure-portal)
+- [Voorlopig verwijderen en bescherming tegen opschonen in Azure Key Vault inschakelen](../storage/blobs/soft-delete-blob-overview.md)
 
-- [Zacht verwijderen voor Azure Blob Storage](../storage/blobs/soft-delete-blob-overview.md?tabs=azure-portal)
-
-**Azure Security Center bewaking**: niet van toepassing
+- [Zacht verwijderen voor Azure Blob Storage](../storage/blobs/soft-delete-blob-overview.md)
 
 **Verantwoordelijkheid**: Klant
 
+**Azure Security Center bewaking**: geen
+
 ## <a name="incident-response"></a>Reageren op incidenten
 
-*Zie [Azure Security Bench Mark: Incident Response](../security/benchmarks/security-control-incident-response.md)(Engelstalig) voor meer informatie.*
+*Zie [Azure Security Benchmark: respons op incidenten](../security/benchmarks/security-control-incident-response.md) voor meer informatie.*
 
 ### <a name="101-create-an-incident-response-guide"></a>10,1: een hand leiding voor reactie op incidenten maken
 
@@ -1120,9 +1093,9 @@ Schakel de beveiliging van zacht verwijderen en opschonen in Key Vault in om sle
 
 - [De verwerkings gids voor het computer beveiligings incident van het NIST gebruiken om u te helpen bij het maken van uw eigen reactie plan voor incidenten](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="102-create-an-incident-scoring-and-prioritization-procedure"></a>10,2: een beoordelings procedure voor incidenten en prioriteits procedures maken
 
@@ -1134,9 +1107,9 @@ Markeer bovendien abonnementen met tags en maak een naamgevings systeem voor het
 
 - [Tags gebruiken om Azure-resources te organiseren](../azure-resource-manager/management/tag-resources.md)
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="103-test-security-response-procedures"></a>10,3: procedures voor beveiligings antwoorden testen
 
@@ -1144,9 +1117,9 @@ Markeer bovendien abonnementen met tags en maak een naamgevings systeem voor het
 
 - [Publicatie van het NIST-hand leiding voor het testen, trainen en uitoefenen van Program Ma's voor IT-plannen en-mogelijkheden](https://csrc.nist.gov/publications/detail/sp/800-84/final)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="104-provide-security-incident-contact-details-and-configure-alert-notifications-for-security-incidents"></a>10,4: contact gegevens van het beveiligings incident opgeven en waarschuwings meldingen configureren voor beveiligings incidenten
 
@@ -1154,9 +1127,9 @@ Markeer bovendien abonnementen met tags en maak een naamgevings systeem voor het
 
 - [De Azure Security Center Security-contactpersoon instellen](../security-center/security-center-provide-security-contact-details.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="105-incorporate-security-alerts-into-your-incident-response-system"></a>10,5: beveiligings waarschuwingen opnemen in uw reactie systeem van uw incident
 
@@ -1166,9 +1139,9 @@ Markeer bovendien abonnementen met tags en maak een naamgevings systeem voor het
 
 - [Waarschuwingen streamen naar Azure Sentinel](../sentinel/connect-azure-security-center.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="106-automate-the-response-to-security-alerts"></a>10,6: de reactie op beveiligings waarschuwingen automatiseren
 
@@ -1176,9 +1149,9 @@ Markeer bovendien abonnementen met tags en maak een naamgevings systeem voor het
 
 - [Werk stroom automatisering configureren in Security Center](../security-center/workflow-automation.md)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ## <a name="penetration-tests-and-red-team-exercises"></a>Penetratietests en Red Team-oefeningen
 
@@ -1192,11 +1165,11 @@ Markeer bovendien abonnementen met tags en maak een naamgevings systeem voor het
 
 - [Microsoft Cloud Red Teaming](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
 
-**Azure Security Center bewaking**: niet van toepassing
-
 **Verantwoordelijkheid**: Gedeeld
+
+**Azure Security Center bewaking**: geen
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie de [Azure Security-Bench Mark](../security/benchmarks/overview.md)
-- Meer informatie over [Azure-beveiligingsbasislijnen](../security/benchmarks/security-baselines-overview.md)
+- Zie [Overzicht Azure Security Benchmark V2](/azure/security/benchmarks/overview)
+- Meer informatie over [Azure-beveiligingsbasislijnen](/azure/security/benchmarks/security-baselines-overview)

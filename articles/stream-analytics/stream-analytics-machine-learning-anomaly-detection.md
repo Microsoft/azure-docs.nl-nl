@@ -7,10 +7,10 @@ ms.author: jeanb
 ms.topic: how-to
 ms.date: 06/21/2019
 ms.openlocfilehash: ec37ea6cbb1c1c6693aab1f6855948d32b85e95b
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102441190"
 ---
 # <a name="anomaly-detection-in-azure-stream-analytics"></a>Anomalie detectie in Azure Stream Analytics

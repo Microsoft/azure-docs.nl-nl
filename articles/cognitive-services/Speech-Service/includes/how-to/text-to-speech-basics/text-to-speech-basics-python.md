@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/25/2020
 ms.author: trbye
-ms.openlocfilehash: d990deca3f435f0b1e3fbdd3388371a11813662a
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 98f13df2c4da993147ba3ef4157340910fcbc5d0
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98947296"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104719642"
 ---
 In deze quickstart maakt u kennis met algemene ontwerppatronen voor het uitvoeren van een spraak-naar-tekstsynthese met behulp van de Speech-SDK. Eerst voert u een basisconfiguratie en -synthese uit en gaat u verder met geavanceerdere voorbeelden voor aangepaste toepassingsontwikkeling zoals:
 
@@ -102,7 +102,7 @@ Voor veel scenario's in het ontwikkelen van spraaktoepassingen hebt u waarschijn
 * Integreer het resultaat met andere API's of services.
 * Wijzig de audiogegevens, schrijf aangepaste `.wav`-headers, enzovoort.
 
-U kunt deze wijziging eenvoudig met behulp van het voorgaande voorbeeld uitvoeren. Verwijder eerst de `AudioConfig`, omdat u het uitvoergedrag vanaf dit punt handmatig gaat beheren voor een betere controle. Geef vervolgens `None` door voor de `AudioConfig` in de `SpeechSynthesizer`-constructor. 
+U kunt deze wijziging eenvoudig met behulp van het voorgaande voorbeeld uitvoeren. Verwijder eerst de `AudioConfig`, omdat u het uitvoergedrag vanaf dit punt handmatig gaat beheren voor een betere controle. Geef vervolgens `None` door voor de `AudioConfig` in de `SpeechSynthesizer`-constructor.
 
 > [!NOTE]
 > Als `None` voor de `AudioConfig` wordt doorgegeven in plaats van dat deze wordt weggelaten, zoals in het bovenstaande voorbeeld met de luidspreker, wordt de audio niet standaard afgespeeld op het huidige actieve uitvoerapparaat.
@@ -206,3 +206,11 @@ Als u wilt overschakelen naar een neurale stem, wijzigt u de `name` in een van d
   </voice>
 </speak>
 ```
+
+## <a name="get-facial-pose-events"></a>Gebeurtenissen voor gezichts pose ophalen
+
+Speech is een goede manier om de animatie van gezichts expressies te testen.
+Vaak worden [visemes](../../../how-to-speech-synthesis-viseme.md) gebruikt om de sleutel in waargenomen spraak te vertegenwoordigen, zoals de positie van de lippen, jaw en tong bij het produceren van een bepaalde foneem.
+U kunt de viseme-gebeurtenis in Speech SDK abonneren.
+Vervolgens kunt u viseme-gebeurtenissen Toep assen om het gezicht van een teken te animeren wanneer spraak geluid wordt afgespeeld.
+Meer informatie [over het ophalen van viseme-gebeurtenissen](../../../how-to-speech-synthesis-viseme.md#get-viseme-events-with-the-speech-sdk).

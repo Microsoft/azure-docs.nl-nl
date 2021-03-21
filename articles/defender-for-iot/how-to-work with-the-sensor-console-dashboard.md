@@ -7,11 +7,11 @@ ms.author: shhazam
 ms.date: 11/03/2020
 ms.topic: article
 ms.service: azure
-ms.openlocfilehash: eb37434213dd756ba5d7137b93a1cd37da5bb9ae
-ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
+ms.openlocfilehash: c9afc22cd123a782c9ee0247952c78c72ee916c0
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100523631"
 ---
 # <a name="the-dashboard"></a>Het dash board
@@ -46,7 +46,7 @@ De UA-meter (niet-bevestigde waarschuwingen) in het midden van de pagina geeft h
 
 In deze sectie wordt elk status venster beschreven.
 
-| Status en meters | Description |
+| Status en meters | Beschrijving |
 | -------------- | -------------- |
 | :::image type="content" source="media/how-to-work with-the-sensor-console-dashboard/critical-alert-status-box-v2.png" alt-text="Kritieke waarschuwingen"::: | **Kritieke waarschuwingen** : in het vak aan de bovenkant van de pagina wordt het aantal kritieke waarschuwingen aangegeven. Schakel dit selectie vakje in om beschrijvingen van de waarschuwingen weer te geven op de tijd lijn en op de lijst onder de meters, indien van toepassing.                              |
 | :::image type="content" source="media/how-to-work with-the-sensor-console-dashboard/major-alert-status-box-v2.png" alt-text="Grote waarschuwingen"::: | **Grote waarschuwingen** : het vak in de rechter bovenhoek van de pagina geeft het aantal grote waarschuwingen aan. Schakel dit selectie vakje in om beschrijvingen van de waarschuwingen weer te geven op de tijd lijn en op de lijst onder de meters, indien van toepassing.                                     |
@@ -100,6 +100,6 @@ Selecteer **de pijl-omlaag onder aan** een waarschuwings venster om de waarschuw
 
 :::image type="content" source="media/how-to-work with-the-sensor-console-dashboard/unauthorized-internet-connectivity-detection-v3.png" alt-text="Niet-geautoriseerde Internet connectiviteit gedetecteerd":::
 
-## <a name="next-steps"></a>Volgende stappen
+## <a name="see-also"></a>Zie ook
 
 [Werken met waarschuwingen op uw sensor](how-to-work-with-alerts-on-your-sensor.md)

@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7454733233f1fd487d774d52a6f46187354ae05c
-ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98246703"
 ---
 # <a name="azure-ad-connect-sync-functions-reference"></a>Azure AD Connect Sync: Naslag informatie over functies
@@ -124,7 +124,7 @@ De functies met de typen **mvbin**, **mvstr** en **mvref** kunnen alleen worden 
   * [Fout](#error)
   * [IIF](#iif)
   * [Selecteren](#select)
-  * [Switch](#switch)
+  * [/Tijdnotatie](#switch)
   * [Positie](#where)
   * [Met](#with)
 * **Tekst**
@@ -904,7 +904,7 @@ De functie ItemOrNull is nuttig in combi natie met de functie contains, omdat de
 Als de index buiten het bereik valt, wordt een null-waarde geretourneerd.
 
 ---
-### <a name="join"></a>Koppelen
+### <a name="join"></a>Deelnemen
 **Beschrijving:**  
 De functie samen voegen gebruikt een teken reeks met meerdere waarden en retourneert een teken reeks met één waarde met een opgegeven scheidings teken tussen elk item.
 

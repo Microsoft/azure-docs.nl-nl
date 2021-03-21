@@ -13,10 +13,10 @@ ms.date: 02/27/2019
 ms.author: billmath
 author: billmath
 ms.openlocfilehash: bef5942707c1ded22ba82bdb0d945b9fdb23fffa
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96349347"
 ---
 # <a name="configure-group-claims-for-applications-with-azure-active-directory"></a>Groeps claims configureren voor toepassingen met Azure Active Directory
@@ -64,7 +64,7 @@ Als een bestaande toepassing echter groeps gegevens per claim verwacht te verbru
 
 ## <a name="prerequisites-for-using-group-attributes-synchronized-from-active-directory"></a>Vereisten voor het gebruik van groeps kenmerken gesynchroniseerd vanuit Active Directory
 
-Claims voor groepslid maatschappen kunnen worden verzonden in tokens voor elke groep als u de ObjectId-indeling gebruikt. Als u groepclaims wilt gebruiken in andere indelingen dan de groeps-ObjectId, moeten de groepen worden gesynchroniseerd vanuit Active Directory met behulp van Azure AD Connect.
+Claims voor groepslidmaatschappen kunnen voor elke groep in tokens worden verzonden als u de ObjectId-indeling gebruikt. Als u groepclaims wilt gebruiken in andere indelingen dan de groeps-ObjectId, moeten de groepen worden gesynchroniseerd vanuit Active Directory met behulp van Azure AD Connect.
 
 Er zijn twee stappen voor het configureren van Azure Active Directory voor het verzenden van groeps namen voor Active Directory groepen.
 

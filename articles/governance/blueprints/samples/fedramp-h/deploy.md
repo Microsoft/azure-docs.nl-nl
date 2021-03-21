@@ -4,10 +4,10 @@ description: Implementeer stappen voor het blauwdrukvoorbeeld FedRAMP High, waar
 ms.date: 01/08/2021
 ms.topic: sample
 ms.openlocfilehash: 53d48eff79f7227373c1e7dfb0c34ef17a00e125
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "100594761"
 ---
 # <a name="deploy-the-fedramp-high-blueprint-sample"></a>Het blauwdrukvoorbeeld FedRAMP High implementeren

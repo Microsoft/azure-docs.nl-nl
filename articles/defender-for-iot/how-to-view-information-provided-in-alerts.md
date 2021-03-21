@@ -7,11 +7,11 @@ ms.author: shhazam
 ms.date: 12/03/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 5877db6b3bc7366f28e679882a2c784e6828b1c1
-ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
+ms.openlocfilehash: 804cdbd6266f2e77b5562d914bac089fce80f645
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100523580"
 ---
 # <a name="view-information-in-alerts"></a>Informatie in waarschuwingen weer geven
@@ -90,7 +90,7 @@ Als u een PCAP-bestand wilt downloaden, selecteert u :::image type="content" sou
 
 In het gebied **aanbeveling** van een waarschuwing wordt informatie weer gegeven die u kan helpen bij het beter begrijpen van een gebeurtenis. Lees deze informatie voordat u de waarschuwings gebeurtenis beheert of een actie onderneemt op het apparaat of het netwerk.
 
-## <a name="next-steps"></a>Volgende stappen
+## <a name="see-also"></a>Zie ook
 
 [Waarschuwings werk stromen versnellen](how-to-accelerate-alert-incident-response.md)
 

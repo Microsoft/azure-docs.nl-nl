@@ -8,10 +8,10 @@ ms.service: mysql
 ms.topic: troubleshooting
 ms.date: 01/13/2021
 ms.openlocfilehash: 92513a8c24b5106e3a59c8cfa4d743e900b957bf
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98249768"
 ---
 # <a name="troubleshoot-replication-latency-in-azure-database-for-mysql"></a>Troubleshoot replication latency in Azure Database for MySQL (Problemen vanwege replicavertraging oplossen in Azure Database for MySQL)
@@ -95,7 +95,7 @@ Hier volgt een typische uitvoer:
 
 De uitvoer bevat veel informatie. Normaal gesp roken moet u zich richten op de rijen die in de volgende tabel worden beschreven.
 
-|Gegevens|Beschrijving|
+|Metrisch|Beschrijving|
 |---|---|
 |Slave_IO_State| Hiermee wordt de huidige status van de IO-thread aangeduid. Normaal gesp roken is de status ' wachten op het verzenden van de hoofd gebeurtenis ' als de bron server (Master) synchroniseert. Een status zoals ' verbinding maken met Master ' geeft aan dat de replica de verbinding met de bron server heeft verloren. Zorg ervoor dat de bron server wordt uitgevoerd of Controleer of de verbinding door een firewall wordt geblokkeerd.|
 |Master_Log_File| Vertegenwoordigt het binaire logboek bestand waarnaar de bron server wordt geschreven.|
@@ -177,7 +177,7 @@ In de volgende secties worden veelvoorkomende oorzaken van dit type latentie bes
 
 #### <a name="no-primary-key-or-unique-key-on-a-table"></a>Geen primaire sleutel of unieke sleutel voor een tabel
 
-Azure Database for MySQL maakt gebruik van op rijen gebaseerde replicatie. De bron server schrijft gebeurtenissen naar het binaire logboek, waarbij wijzigingen in afzonderlijke tabel rijen worden vastgelegd. De SQL-thread repliceert die wijzigingen vervolgens naar de corresponderende tabel rijen op de replica-server. Wanneer een tabel geen primaire sleutel of unieke sleutel heeft, scant de SQL-thread alle rijen in de doel tabel om de wijzigingen toe te passen. Deze scan kan leiden tot replicatie latentie.
+Azure Database for MySQL maakt gebruik van op rijen gebaseerde replicatie. De bron server schrijft gebeurtenissen naar het binaire logboek, waarbij wijzigingen in afzonderlijke tabel rijen worden vastgelegd. De SQL-thread repliceert die wijzigingen vervolgens naar de corresponderende tabel rijen op de replica-server. Wanneer een tabel geen primaire sleutel of unieke sleutel heeft, scant de SQL-thread alle rijen in de doel tabel om de wijzigingen toe te passen. Deze scan kan replicatievertraging veroorzaken.
 
 In MySQL is de primaire sleutel een gekoppelde index die snelle query prestaties garandeert, omdat deze geen NULL-waarden kan bevatten. Als u de InnoDB-opslag engine gebruikt, zijn de tabel gegevens fysiek ingedeeld zodat ze zeer snel kunnen worden gevonden en gesorteerd op basis van de primaire sleutel.
 

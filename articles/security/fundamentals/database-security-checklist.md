@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 11/21/2017
 ms.author: tomsh
 ms.openlocfilehash: 80455b442bbfb9c8a7d40799b2ddd5fc25460578
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100595575"
 ---
 # <a name="azure-database-security-checklist"></a>Controle lijst voor Azure data base-beveiliging
@@ -37,14 +37,14 @@ Deze omvatten:
 -    SQL Database Auditing
 -    Detectie van SQL Database-dreigingen
 
-## <a name="introduction"></a>Introductie
+## <a name="introduction"></a>Inleiding
 Cloud Computing vereist nieuwe beveiligings modellen die niet bekend zijn bij veel toepassings gebruikers, database beheerders en programmeurs. Als gevolg hiervan zijn sommige organisaties cloudhoster voor het implementeren van een Cloud infrastructuur voor gegevens beheer vanwege waargenomen beveiligings Risico's. Veel van deze bezorgdheid kan echter worden verkleind door een beter inzicht te krijgen in de beveiligings functies die zijn ingebouwd in Microsoft Azure en Microsoft Azure SQL Database.
 
 ## <a name="checklist"></a>Controlelijst
 We raden u aan het artikel over de [Best practices van Azure data base Security](../../azure-sql/database/security-best-practice.md)  te lezen voordat u deze controle lijst controleert. U kunt deze controle lijst optimaal benutten wanneer u de aanbevolen procedures begrijpt. U kunt deze controle lijst vervolgens gebruiken om ervoor te zorgen dat u de belang rijke problemen in azure data base Security hebt opgelost.
 
 
-|Controlelijst categorie| Description|
+|Controlelijst categorie| Beschrijving|
 | ------------ | -------- |
 |**Gegevens beveiligen**||
 | <br> Versleuteling in Motion/Transit| <ul><li>[Transport Layer Security](/windows-server/security/tls/transport-layer-security-protocol), voor gegevens versleuteling wanneer gegevens worden verplaatst naar de netwerken.</li><li>Data base vereist beveiligde communicatie van clients op basis van het [TDS-protocol (Tabular Data stream)](/openspecs/windows_protocols/ms-tds/893fcc7e-8a39-4b3c-815a-773b7b982c50) via TLS (Transport Layer Security).</li></ul> |

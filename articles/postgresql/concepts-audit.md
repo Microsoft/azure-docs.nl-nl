@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 01/28/2020
 ms.openlocfilehash: 33fa6420f52cae9c869cc75a04ea82de0ec48262
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100596298"
 ---
 # <a name="audit-logging-in-azure-database-for-postgresql---single-server"></a>Controle logboek registratie in Azure Database for PostgreSQL-één server
@@ -66,7 +66,7 @@ Nadat u [pgAudit hebt geïnstalleerd](#installing-pgaudit), kunt u de para meter
 
 > [!NOTE]
 > Als `pgaudit.log_client` wordt ingesteld op aan, worden logboeken omgeleid naar een client proces (zoals psql) in plaats van naar het bestand te schrijven. Deze instelling moet over het algemeen uitgeschakeld blijven. <br> <br>
-> `pgaudit.log_level` is alleen ingeschakeld wanneer `pgaudit.log_client` zich op bevindt.
+> `pgaudit.log_level` wordt alleen ingeschakeld als `pgaudit.log_client` aan is.
 
 > [!NOTE]
 > In Azure Database for PostgreSQL `pgaudit.log` kan niet worden ingesteld met behulp van een `-` (minteken) snelkoppeling-teken zoals beschreven in de pgAudit-documentatie. Alle vereiste instructieklassen (lezen, schrijven, enzovoort) moeten afzonderlijk worden opgegeven.

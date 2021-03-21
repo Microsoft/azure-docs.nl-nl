@@ -17,10 +17,10 @@ ms.date: 9/25/2018
 ms.author: aanandr
 ms.custom: ''
 ms.openlocfilehash: a68e1a3f60930e290e97084ff2ec9350b18e2873
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100594970"
 ---
 # <a name="azure-kubernetes-network-policies-overview"></a>Overzicht van Azure Kubernetes-netwerk beleid
@@ -112,7 +112,7 @@ Gebruikers hadden eerder alleen meer informatie over hun netwerk configuratie me
 ### <a name="supported-metrics"></a>Ondersteunde metrische gegevens
 Hier volgt een lijst met ondersteunde metrische gegevens:
 
-|Naam meetwaarde |Description  |Type metrische waarde voor Prometheus  |Labels  |
+|Naam meetwaarde |Beschrijving  |Type metrische waarde voor Prometheus  |Labels  |
 |---------|---------|---------|---------|
 |`npm_num_policies`     |aantal netwerk beleidsregels          |Meter         |-         |
 |`npm_num_iptables_rules`     | aantal IPTables-regels     | Meter        |-         |         

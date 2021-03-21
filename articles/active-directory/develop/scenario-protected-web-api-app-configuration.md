@@ -13,10 +13,10 @@ ms.date: 07/15/2020
 ms.author: jmprieur
 ms.custom: aaddev
 ms.openlocfilehash: 5206c2295ee7c01b4a2908e59da1cfdd8782bccd
-ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102517715"
 ---
 # <a name="protected-web-api-code-configuration"></a>Beveiligde web-API: code configuratie
@@ -123,7 +123,7 @@ U kunt een volledig nieuwe web-API maken met behulp van micro soft. Identity. we
 
 #### <a name="starting-from-an-existing-aspnet-core-31-application"></a>Beginnen met een bestaande ASP.NET Core 3,1-toepassing
 
-Momenteel gebruikt ASP.NET Core 3,1 de bibliotheek micro soft. AspNetCore. AzureAD. UI. De middleware wordt geïnitialiseerd in het Startup.cs-bestand.
+Momenteel gebruikt ASP.NET Core 3,1 de bibliotheek micro soft. AspNetCore. AzureAD. UI. De middleware wordt geïnitialiseerd in het bestand startup. cs.
 
 ```csharp
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -140,7 +140,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
- Op dit moment maken de ASP.NET Core sjablonen Azure Active Directory (Azure AD) Web-Api's waarmee gebruikers zich kunnen aanmelden binnen uw organisatie of een organisatie. Gebruikers kunnen zich niet aanmelden met persoonlijke accounts. U kunt de sjablonen echter wijzigen om het micro soft-identiteits platform te gebruiken met behulp van [micro soft. Identity. Web](https://www.nuget.org/packages/Microsoft.Identity.Web) vervangen van de code in *Startup.cs*:
+ Op dit moment maken de ASP.NET Core sjablonen Azure Active Directory (Azure AD) Web-Api's waarmee gebruikers zich kunnen aanmelden binnen uw organisatie of een organisatie. Gebruikers kunnen zich niet aanmelden met persoonlijke accounts. U kunt de sjablonen echter wijzigen om het micro soft-identiteits platform te gebruiken met behulp van [micro soft. Identity. Web](https://www.nuget.org/packages/Microsoft.Identity.Web) Vervang de code in *Startup. cs*:
 
 ```csharp
 using Microsoft.Identity.Web;
@@ -210,7 +210,7 @@ De validators zijn gekoppeld aan eigenschappen van de klasse **TokenValidationPa
 
 In de meeste gevallen hoeft u de para meters niet te wijzigen. Apps die geen enkele Tenant zijn, zijn uitzonde ringen. Deze web-apps accepteren gebruikers van elke organisatie of van persoonlijke micro soft-accounts. Uitgevers in dit geval moeten worden gevalideerd. Micro soft. Identity. Web zorgt voor een goede validatie van de verlener. Zie micro soft. Identity. web [AadIssuerValidator](https://github.com/AzureAD/microsoft-identity-web/blob/master/src/Microsoft.Identity.Web/Resource/AadIssuerValidator.cs)voor meer informatie.
 
-Als u in ASP.NET Core de para meters voor token validatie wilt aanpassen, gebruikt u het volgende code fragment in uw *Startup.cs*:
+Als u in ASP.NET Core de para meters voor token validatie wilt aanpassen, gebruikt u het volgende code fragment in het *opstart proces. cs*:
 
 ```c#
 services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

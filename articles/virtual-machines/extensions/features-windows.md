@@ -8,12 +8,12 @@ author: amjads1
 ms.author: amjads
 ms.collection: windows
 ms.date: 03/30/2018
-ms.openlocfilehash: eb1b05afbaa57fb86033c568142da32443adc1f9
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.openlocfilehash: b9b10e2ed58a41cee99e7e6ef1c3994035460407
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102559775"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104601857"
 ---
 # <a name="virtual-machine-extensions-and-features-for-windows"></a>Extensies en functies van virtuele machines voor Windows
 
@@ -120,7 +120,7 @@ Set-AzVMCustomScriptExtension -ResourceGroupName "myResourceGroup" `
     -Run "Create-File.ps1" -Location "West US"
 ```
 
-In het volgende voor beeld wordt de extensie VM-toegang gebruikt om het beheerders wachtwoord van een Windows-virtuele machine opnieuw in te stellen op een tijdelijk wacht woord. Zie [extern bureaublad-service opnieuw instellen in een Windows-VM](../troubleshooting/reset-rdp.md)voor meer informatie over de extensie voor VM-toegang. Wanneer u dit hebt gedaan, moet u het wacht woord bij de eerste aanmelding opnieuw instellen:
+In het volgende voor beeld wordt de extensie VM-toegang gebruikt om het beheerders wachtwoord van een Windows-virtuele machine opnieuw in te stellen op een tijdelijk wacht woord. Zie [extern bureaublad-service opnieuw instellen in een Windows-VM](/troubleshoot/azure/virtual-machines/reset-rdp)voor meer informatie over de extensie voor VM-toegang. Wanneer u dit hebt gedaan, moet u het wacht woord bij de eerste aanmelding opnieuw instellen:
 
 ```powershell
 $cred=Get-Credential
@@ -414,7 +414,7 @@ U kunt een uitbrei ding ook als volgt verwijderen in de Azure Portal:
 4. Kies **verwijderen**.
 
 ## <a name="common-vm-extensions-reference"></a>Naslag informatie over algemene VM-extensies
-| Extensie naam | Beschrijving | Meer informatie |
+| Extensie naam | Description | Meer informatie |
 | --- | --- | --- |
 | Aangepaste scriptextensie voor Windows |Scripts uitvoeren op een virtuele Azure-machine |[Aangepaste scriptextensie voor Windows](custom-script-windows.md) |
 | DSC-extensie voor Windows |Uitbrei ding Power shell DSC (desired state Configuration) |[DSC-extensie voor Windows](dsc-overview.md) |

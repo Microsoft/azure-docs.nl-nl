@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 11/17/2020
 ms.author: jingwang
 ms.openlocfilehash: 8f6e85d82c01663e404f7046f84706feb209ba5a
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100367024"
 ---
 # <a name="copy-and-transform-data-from-hive-using-azure-data-factory"></a>Gegevens uit een Hive kopiëren en transformeren met behulp van Azure Data Factory 
@@ -45,25 +45,25 @@ De volgende eigenschappen worden ondersteund voor de gekoppelde service van het 
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type moet zijn ingesteld op: **Hive** | Yes |
-| host | Het IP-adres of de hostnaam van de Hive-server, gescheiden door '; ' voor meerdere hosts (alleen wanneer serviceDiscoveryMode is ingeschakeld).  | Yes |
-| poort | De TCP-poort die de Hive-server gebruikt om te Luis teren naar client verbindingen. Als u verbinding maakt met Azure HDInsights, geeft u poort op als 443. | Yes |
-| Server type | Het type van de Hive-server. <br/>Toegestane waarden zijn: **HiveServer1**, **HiveServer2**, **HiveThriftServer** | No |
-| thriftTransportProtocol | Het transport protocol dat in de Thrift-laag moet worden gebruikt. <br/>Toegestane waarden zijn: **binary**, **sasl**, **http** | No |
-| authenticationType | De verificatie methode die wordt gebruikt voor toegang tot de Hive-server. <br/>Toegestane waarden zijn: **Anonymous**, **username**, **UsernameAndPassword**, **WindowsAzureHDInsightService**. Kerberos-verificatie wordt nu niet ondersteund. | Yes |
-| serviceDiscoveryMode | True om aan te geven dat de ZooKeeper-service wordt gebruikt, False not.  | No |
-| zooKeeperNameSpace | De naam ruimte op ZooKeeper waarmee de knoop punten van de Hive-Server 2 worden toegevoegd.  | No |
-| useNativeQuery | Hiermee geeft u op of het stuur programma systeem eigen HiveQL-query's gebruikt of converteert u deze naar een gelijkwaardig formulier in HiveQL.  | No |
-| gebruikersnaam | De gebruikers naam die u gebruikt voor toegang tot de Hive-server.  | No |
-| wachtwoord | Het wacht woord dat bij de gebruiker hoort. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | No |
-| httpPath | De gedeeltelijke URL die overeenkomt met de Hive-server.  | No |
-| enableSsl | Hiermee geeft u op of de verbindingen met de server met behulp van TLS worden versleuteld. De standaardwaarde is false.  | No |
-| trustedCertPath | Het volledige pad van het. pem-bestand met vertrouwde CA-certificaten voor het verifiëren van de server bij het maken van verbinding via TLS. Deze eigenschap kan alleen worden ingesteld wanneer TLS op zelf-hostende IR wordt gebruikt. De standaard waarde is het cacerts. pem-bestand dat met de IR is geïnstalleerd.  | No |
-| useSystemTrustStore | Hiermee geeft u op of u een CA-certificaat wilt gebruiken uit de systeem vertrouwens archief of vanuit een opgegeven PEM-bestand. De standaardwaarde is false.  | No |
-| allowHostNameCNMismatch | Hiermee geeft u op of een door de certificerings instantie uitgegeven TLS/SSL-certificaat naam moet overeenkomen met de hostnaam van de server bij het maken van verbinding via TLS. De standaardwaarde is false.  | No |
-| allowSelfSignedServerCert | Hiermee geeft u op of zelfondertekende certificaten van de server mogen worden toegestaan. De standaardwaarde is false.  | No |
-| connectVia | Het [Integration runtime](concepts-integration-runtime.md) dat moet worden gebruikt om verbinding te maken met het gegevens archief. Meer informatie vindt u in de sectie [vereisten](#prerequisites) . Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. |No |
-| storageReference | Een verwijzing naar de gekoppelde service van het opslag account dat wordt gebruikt voor faserings gegevens in de toewijzing van gegevens stroom. Dit is alleen vereist wanneer u de Hive-gekoppelde service gebruikt in gegevens stroom toewijzen | No |
+| type | De eigenschap type moet zijn ingesteld op: **Hive** | Ja |
+| host | Het IP-adres of de hostnaam van de Hive-server, gescheiden door '; ' voor meerdere hosts (alleen wanneer serviceDiscoveryMode is ingeschakeld).  | Ja |
+| poort | De TCP-poort die de Hive-server gebruikt om te Luis teren naar client verbindingen. Als u verbinding maakt met Azure HDInsights, geeft u poort op als 443. | Ja |
+| Server type | Het type van de Hive-server. <br/>Toegestane waarden zijn: **HiveServer1**, **HiveServer2**, **HiveThriftServer** | Nee |
+| thriftTransportProtocol | Het transport protocol dat in de Thrift-laag moet worden gebruikt. <br/>Toegestane waarden zijn: **binary**, **sasl**, **http** | Nee |
+| authenticationType | De verificatie methode die wordt gebruikt voor toegang tot de Hive-server. <br/>Toegestane waarden zijn: **Anonymous**, **username**, **UsernameAndPassword**, **WindowsAzureHDInsightService**. Kerberos-verificatie wordt nu niet ondersteund. | Ja |
+| serviceDiscoveryMode | True om aan te geven dat de ZooKeeper-service wordt gebruikt, False not.  | Nee |
+| zooKeeperNameSpace | De naam ruimte op ZooKeeper waarmee de knoop punten van de Hive-Server 2 worden toegevoegd.  | Nee |
+| useNativeQuery | Hiermee geeft u op of het stuur programma systeem eigen HiveQL-query's gebruikt of converteert u deze naar een gelijkwaardig formulier in HiveQL.  | Nee |
+| gebruikersnaam | De gebruikers naam die u gebruikt voor toegang tot de Hive-server.  | Nee |
+| wachtwoord | Het wacht woord dat bij de gebruiker hoort. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Nee |
+| httpPath | De gedeeltelijke URL die overeenkomt met de Hive-server.  | Nee |
+| enableSsl | Hiermee geeft u op of de verbindingen met de server met behulp van TLS worden versleuteld. De standaardwaarde is false.  | Nee |
+| trustedCertPath | Het volledige pad van het. pem-bestand met vertrouwde CA-certificaten voor het verifiëren van de server bij het maken van verbinding via TLS. Deze eigenschap kan alleen worden ingesteld wanneer TLS op zelf-hostende IR wordt gebruikt. De standaard waarde is het cacerts. pem-bestand dat met de IR is geïnstalleerd.  | Nee |
+| useSystemTrustStore | Hiermee geeft u op of u een CA-certificaat wilt gebruiken uit de systeem vertrouwens archief of vanuit een opgegeven PEM-bestand. De standaardwaarde is false.  | Nee |
+| allowHostNameCNMismatch | Hiermee geeft u op of een door de certificerings instantie uitgegeven TLS/SSL-certificaat naam moet overeenkomen met de hostnaam van de server bij het maken van verbinding via TLS. De standaardwaarde is false.  | Nee |
+| allowSelfSignedServerCert | Hiermee geeft u op of zelfondertekende certificaten van de server mogen worden toegestaan. De standaardwaarde is false.  | Nee |
+| connectVia | Het [Integration runtime](concepts-integration-runtime.md) dat moet worden gebruikt om verbinding te maken met het gegevens archief. Meer informatie vindt u in de sectie [vereisten](#prerequisites) . Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. |Nee |
+| storageReference | Een verwijzing naar de gekoppelde service van het opslag account dat wordt gebruikt voor faserings gegevens in de toewijzing van gegevens stroom. Dit is alleen vereist wanneer u de Hive-gekoppelde service gebruikt in gegevens stroom toewijzen | Nee |
 
 **Voorbeeld:**
 
@@ -94,7 +94,7 @@ Als u gegevens wilt kopiëren uit Hive, stelt u de eigenschap type van de gegeve
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de gegevensset moet worden ingesteld op: **HiveObject** | Yes |
+| type | De eigenschap type van de gegevensset moet worden ingesteld op: **HiveObject** | Ja |
 | schema | De naam van het schema. |Nee (als "query" in activiteit bron is opgegeven)  |
 | tabel | De naam van de tabel. |Nee (als "query" in activiteit bron is opgegeven)  |
 | tableName | De naam van de tabel met inbegrip van het schema gedeelte. Deze eigenschap wordt ondersteund voor achterwaartse compatibiliteit. Gebruik en voor nieuwe werk `schema` belasting `table` . | Nee (als "query" in activiteit bron is opgegeven) |
@@ -126,7 +126,7 @@ Als u gegevens wilt kopiëren uit Hive, stelt u het bron type in de Kopieer acti
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **HiveSource** | Yes |
+| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **HiveSource** | Ja |
 | query | Gebruik de aangepaste SQL-query om gegevens te lezen. Bijvoorbeeld: `"SELECT * FROM MyTable"`. | Nee (als ' Tablename ' in gegevensset is opgegeven) |
 
 **Voorbeeld:**
@@ -175,7 +175,7 @@ De onderstaande tabel geeft een lijst van de eigenschappen die worden ondersteun
 | Indeling | Hiermee wordt aangegeven of u leest uit een tabel of query | ja | `table` of `query` | indeling |
 | Schemanaam | Als er wordt gelezen vanuit een tabel, wordt het schema van de bron tabel |  Ja, als de notatie is `table` | Tekenreeks | schemaName |
 | Tabelnaam | Als er wordt gelezen vanuit een tabel, de naam van de tabel |   Ja, als de notatie is `table` | Tekenreeks | tableName |
-| Query’s uitvoeren | Als indeling is `query` , de bron query op de gekoppelde component service | Ja, als de notatie is `query` | Tekenreeks | query |
+| Query | Als indeling is `query` , de bron query op de gekoppelde component service | Ja, als de notatie is `query` | Tekenreeks | query |
 | Gefaseerd | De Hive-tabel wordt altijd klaargezet. | ja | `true` | gefaseerd |
 | Opslagcontainer | Opslag container die wordt gebruikt om gegevens te stage vóór het lezen van Hive of schrijven naar Hive. Het Hive-cluster moet toegang hebben tot deze container. | ja | Tekenreeks | storageContainer |
 | Faserings database | Het schema/de data base waar het gebruikers account dat is opgegeven in de gekoppelde service toegang heeft. Het wordt gebruikt om externe tabellen te maken tijdens de fase ring en later te worden verwijderd | nee | `true` of `false` | stagingDatabaseName |

@@ -4,10 +4,10 @@ description: In dit artikel vindt u antwoorden op veelgestelde vragen over live 
 ms.topic: conceptual
 ms.date: 12/01/2020
 ms.openlocfilehash: 72a07a1a509aebcd7ba4048d0c84e913481c978e
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101702246"
 ---
 # <a name="live-video-analytics-on-iot-edge-faq"></a>Veelgestelde vragen over live video Analytics op IoT Edge

@@ -7,18 +7,21 @@ ms.reviewer: maghan
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 03/25/2019
-ms.openlocfilehash: 435cad4d1ef002261b194431dbdb787e072808f5
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 59aa395db27c26a7c94eebdc0e3b34d7776ee75f
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100361482"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104591993"
 ---
 # <a name="webhook-activity-in-azure-data-factory"></a>Webhook-activiteit in Azure Data Factory
 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 Met een webhook-activiteit kan de uitvoering van pijp lijnen via uw aangepaste code worden beheerd. Met de webhook-activiteit kan de code van klanten een eind punt aanroepen en een URL voor terugbellen door geven. De pijplijn uitvoering wacht op het aanroepen van de retour aanroep voordat de volgende activiteit wordt uitgevoerd.
+
+> [!IMPORTANT]
+> Met de webhook-activiteit kunt u nu de status van de fout en aangepaste berichten terugbrengen naar de activiteit en de pijp lijn. Stel _reportStatusOnCallBack_ in op True en neem  de status _code en fout_ op in de nettolading van de retour aanroep. Zie de sectie [aanvullende notities](#additional-notes) voor meer informatie.
 
 ## <a name="syntax"></a>Syntax
 
@@ -37,6 +40,7 @@ Met een webhook-activiteit kan de uitvoering van pijp lijnen via uw aangepaste c
             "key": "value"
         },
         "timeout": "00:03:00",
+        "reportStatusOnCallBack": false,
         "authentication": {
             "type": "ClientCertificate",
             "pfx": "****",
@@ -141,7 +145,7 @@ Wanneer u de eigenschap **rapport status bij terugbellen** gebruikt, moet u de v
 Zie de volgende controle stroom activiteiten die worden ondersteund door Data Factory:
 
 - [If Condition Activity](control-flow-if-condition-activity.md)
-- [Activiteit uitvoeren van pijplijn](control-flow-execute-pipeline-activity.md)
+- [Pijplijn activiteit uitvoeren](control-flow-execute-pipeline-activity.md)
 - [Voor elke activiteit](control-flow-for-each-activity.md)
 - [Activiteit ophalen van metagegevens](control-flow-get-metadata-activity.md)
 - [Opzoekactiviteit](control-flow-lookup-activity.md)

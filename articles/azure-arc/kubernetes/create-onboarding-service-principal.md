@@ -9,10 +9,10 @@ ms.author: mlearned
 description: 'Een service-principal maken die geschikt is voor Azure-Arc '
 keywords: Kubernetes, Arc, Azure, containers
 ms.openlocfilehash: 610b355073473f0e492350753a523b7943666f13
-ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102121742"
 ---
 # <a name="create-an-onboarding-service-principal-for-azure-arc-enabled-kubernetes"></a>Een onboarding-service-principal maken voor Azure Arc enabled Kubernetes

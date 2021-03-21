@@ -4,10 +4,10 @@ description: Meer informatie over Azure monitoring services, metrische gegevens,
 ms.topic: how-to
 ms.date: 04/05/2018
 ms.openlocfilehash: b926f9c6d173cd0b8d886047eae490e4a151988f
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "100595429"
 ---
 # <a name="monitor-batch-solutions"></a>Batch-oplossingen controleren

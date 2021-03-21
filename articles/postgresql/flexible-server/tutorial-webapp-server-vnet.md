@@ -6,14 +6,14 @@ ms.author: sumuth
 ms.service: postgresql
 ms.devlang: azurecli
 ms.topic: tutorial
-ms.date: 09/22/2020
+ms.date: 03/18/2021
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: ab606e357bd911f4d7f266977bd14871f92744a0
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
-ms.translationtype: HT
+ms.openlocfilehash: ff9af90ca0b6b80ffece5ccd7d919c1d93e210c4
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92546565"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104657583"
 ---
 # <a name="tutorial-create-an-azure-database-for-postgresql---flexible-server-with-app-services-web-app-in-virtual-network"></a>Zelfstudie: Azure Database for PostgreSQL - Flexible Server met App Services-web-app in een virtueel netwerk maken
 
@@ -22,9 +22,10 @@ ms.locfileid: "92546565"
 
 In deze zelfstudie leert u hoe u een Azure App Service-web-app met Azure Database for PostgreSQL - Flexible Server (Preview) in een [virtueel netwerk](../../virtual-network/virtual-networks-overview.md) maakt.
 
-In deze zelfstudie gaat u
+In deze zelfstudie leert u het volgende:
 >[!div class="checklist"]
 > * Een flexibele PostgreSQL-server maken in een virtueel netwerk
+> * Een subnet maken om te delegeren aan App Service
 > * Een webtoepassing maken
 > * De web-app toevoegen aan het virtuele netwerk
 > * Verbinding maken met Postgres vanuit de web-app 
@@ -35,16 +36,16 @@ Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure
 
 In dit artikel moet u Azure CLI-versie 2.0 of later lokaal uitvoeren. Voer de opdracht `az --version` uit om de geïnstalleerde versie te zien. Zie [Azure CLI installeren](/cli/azure/install-azure-cli) als u de CLI wilt installeren of een upgrade wilt uitvoeren.
 
-U moet zich aanmelden bij uw account met behulp van de opdracht [az login](/cli/azure/authenticate-azure-cli). Let op de **id** -eigenschap van de opdrachtuitvoer voor de naam van het desbetreffende abonnement.
+U moet zich aanmelden bij uw account met behulp van de opdracht [az login](/cli/azure/authenticate-azure-cli). Let op de **id**-eigenschap van de opdrachtuitvoer voor de naam van het desbetreffende abonnement.
 
 ```azurecli
 az login
 ```
 
-Als u meerdere abonnementen hebt, kiest u het juiste abonnement waarin de resource moet worden gefactureerd. Selecteer de specifieke abonnements-id in uw account met de opdracht [az account set](/cli/azure/account). Gebruik de eigenschap **abonnement-id** uit de **az login** -uitvoer voor uw abonnement in de tijdelijke aanduiding voor de abonnement-id.
+Als u meerdere abonnementen hebt, kiest u het juiste abonnement waarin de resource moet worden gefactureerd. Selecteer de specifieke abonnements-id in uw account met de opdracht [az account set](/cli/azure/account). Gebruik de eigenschap **abonnement-id** uit de **az login**-uitvoer voor uw abonnement in de tijdelijke aanduiding voor de abonnement-id.
 
 ```azurecli
-az account set --subscription <subscription id>
+az account set --subscription <subscription ID>
 ```
 
 ## <a name="create-a-postgresql-flexible-server-in-a-new-virtual-network"></a>Een flexibele PostgreSQL-server maken in een virtueel netwerk
@@ -68,14 +69,21 @@ Deze opdracht voert de volgende acties uit, dit kan enkele minuten duren:
 >  az postgres flexible-server firewall-rule list --resource-group myresourcegroup --server-name mydemoserver --start-ip-address 0.0.0.0 --end-ip-address 0.0.0.0
 >  ```
 
+## <a name="create-subnet-for-app-service-endpoint"></a>Subnet maken voor App Service-eind punt
+We moeten nu een subnet hebben dat is overgedragen aan App Service web-app-eind punt. Voer de volgende opdracht uit om een nieuw subnet te maken in hetzelfde virtuele netwerk als de database server die is gemaakt. 
+
+```azurecli
+az network vnet subnet create -g myresourcegroup --vnet-name VNETName --name webappsubnetName  --address-prefixes 10.0.1.0/24  --delegations Microsoft.Web/serverFarms --service-endpoints Microsoft.Web
+```
+Noteer de naam van het virtuele netwerk en het subnet nadat deze opdracht is vereist om de VNET-integratie regel voor de web-app toe te voegen nadat deze is gemaakt. 
 
 ## <a name="create-a-web-app"></a>Een web-app maken
-In deze sectie maakt u een app-host in de App Service-app, koppelt u deze app aan de Postgres-database en implementeert u vervolgens uw code naar die host. Controleer in de terminal of u zich in de hoofdmap bevindt van de opslagplaats met de code van de app.
+In deze sectie maakt u een app-host in de App Service-app, koppelt u deze app aan de Postgres-database en implementeert u vervolgens uw code naar die host. Controleer in de terminal of u zich in de hoofdmap bevindt van de opslagplaats met de code van de app. Opmerking Basic-abonnement biedt geen ondersteuning voor VNET-integratie. Gebruik Standard of Premium. 
 
 Een App Service-app maken (het hostproces) met de opdracht az webapp up
 
 ```azurecli
-az webapp up --resource-group myresourcegroup --location westus2 --plan testappserviceplan --sku B1 --name mywebapp
+az webapp up --resource-group myresourcegroup --location westus2 --plan testappserviceplan --sku P2V2 --name mywebapp
 ```
 
 > [!NOTE]
@@ -85,7 +93,6 @@ az webapp up --resource-group myresourcegroup --location westus2 --plan testapps
 Deze opdracht voert de volgende acties uit, dit kan enkele minuten duren:
 
 - Maak de resourcegroep als deze nog niet bestaat. (In deze opdracht gebruikt u dezelfde resourcegroep waarin u de database eerder hebt gemaakt.)
-- Maak het App Service-plan ```testappserviceplan``` in de prijscategorie Basic (B1), als het nog niet bestaat. --plan en --sku zijn optioneel.
 - Maak de App Service-app als deze nog niet bestaat.
 - Schakel standaardlogboeken voor de app in, als die nog niet zijn ingeschakeld.
 - Upload de opslagplaats met behulp van ZIP-implementatie, met ingeschakelde bouwautomatisering.
@@ -94,7 +101,7 @@ Deze opdracht voert de volgende acties uit, dit kan enkele minuten duren:
 Gebruik de opdracht **az webapp vnet-integration** om een regionale virtuele netwerkintegratie toe te voegen aan een webapp. Vervang <vnet-name> en <subnet-name> door de namen van het virtuele netwerk en subnet die de flexibele server gebruikt.
 
 ```azurecli
-az webapp vnet-integration add -g myresourcegroup -n  mywebapp --vnet <vnet-name> --subnet <subnet-name>
+az webapp vnet-integration add -g myresourcegroup -n  mywebapp --vnet VNETName --subnet webappsubnetName
 ```
 
 ## <a name="configure-environment-variables-to-connect-the-database"></a>De omgevingsvariabelen configureren om de database te verbinden

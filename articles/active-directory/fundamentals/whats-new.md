@@ -16,12 +16,12 @@ ms.author: ajburnle
 ms.reviewer: dhanyahk
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: df90857bf30b6fff3c18faf126efabe8c959c0c6
-ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
+ms.openlocfilehash: 0d9769a2cfdbd5f552e97a6cd665263cbd488325
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102633424"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104592961"
 ---
 # <a name="whats-new-in-azure-active-directory"></a>Wat is er nieuw in Azure Active Directory?
 
@@ -79,7 +79,7 @@ De tijdelijke toegangs fase is een tijdgebonden wachtwoord code die als sterke r
 **Service categorie:** B2C-Consumer Identity Management  
 **Product mogelijkheden:** B2B/B2C
 
-De volgende generatie van B2C-gebruikers stromen ondersteunt nu de [KMSI-functionaliteit (keep me aangemeld)](https://docs.microsoft.com/azure/active-directory-b2c/session-behavior?pivots=b2c-custom-policy#enable-keep-me-signed-in-kmsi) waarmee klanten de duur van de sessie kunnen uitbreiden voor de gebruikers van hun web-en systeem eigen toepassingen met behulp van een permanente cookie.  functie houdt de sessie actief, zelfs wanneer de gebruiker de browser sluit en opnieuw opent, en wordt ingetrokken wanneer de gebruiker zich afmeldt.
+De volgende generatie van B2C-gebruikers stromen ondersteunt nu de [KMSI-functionaliteit (keep me aangemeld)](../../active-directory-b2c/session-behavior.md?pivots=b2c-custom-policy#enable-keep-me-signed-in-kmsi) waarmee klanten de duur van de sessie kunnen uitbreiden voor de gebruikers van hun web-en systeem eigen toepassingen met behulp van een permanente cookie.  functie houdt de sessie actief, zelfs wanneer de gebruiker de browser sluit en opnieuw opent, en wordt ingetrokken wanneer de gebruiker zich afmeldt.
 
 ---
 
@@ -109,7 +109,7 @@ Klanten kunnen nu bestaande externe gast gebruikers uitnodigen om hun aflossings
 **Service categorie:** App-inrichting  
 **Product mogelijkheden:** Beheer van identiteits levenscyclus
  
-Klanten kunnen nu Application. readwrite. ownedby als een toepassings machtiging gebruiken om de synchronisatie-Api's aan te roepen. Houd er rekening mee dat dit alleen wordt ondersteund voor het inrichten van Azure AD in toepassingen van derden (bijvoorbeeld AWS, gegevens Bricks, enzovoort). Het wordt momenteel niet ondersteund voor HR-inrichting (workday/Successfactors) of Cloud synchronisatie (AD naar Azure AD). [Meer informatie](https://docs.microsoft.com/graph/api/resources/provisioningobjectsummary?view=graph-rest-beta).
+Klanten kunnen nu Application. readwrite. ownedby als een toepassings machtiging gebruiken om de synchronisatie-Api's aan te roepen. Houd er rekening mee dat dit alleen wordt ondersteund voor het inrichten van Azure AD in toepassingen van derden (bijvoorbeeld AWS, gegevens Bricks, enzovoort). Het wordt momenteel niet ondersteund voor HR-inrichting (workday/Successfactors) of Cloud synchronisatie (AD naar Azure AD). [Meer informatie](/graph/api/resources/provisioningobjectsummary?view=graph-rest-beta).
  
 ---
 
@@ -199,7 +199,7 @@ U kunt nu het maken, bijwerken en verwijderen van gebruikers accounts automatise
 - [Iris Intranet](../saas-apps/iris-intranet-provisioning-tutorial.md)
 - [Preciate](../saas-apps/preciate-provisioning-tutorial.md)
 
-Lees voor meer informatie [Gebruikers inrichten automatiseren voor SaaS-toepassingen met Azure AD](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning).
+Lees voor meer informatie [Gebruikers inrichten automatiseren voor SaaS-toepassingen met Azure AD](../app-provisioning/user-provisioning.md).
 
 ---
 
@@ -209,7 +209,7 @@ Lees voor meer informatie [Gebruikers inrichten automatiseren voor SaaS-toepassi
 **Service categorie:** RBAC  
 **Product mogelijkheden:** Access Control
  
-10 ingebouwde rollen van Azure AD zijn hernoemd zodat ze zijn afgestemd op de [Microsoft 365 beheer centrum](https://docs.microsoft.com/microsoft-365/admin/microsoft-365-admin-center-preview), de [Azure AD-portal](https://portal.azure.com/)en de [Microsoft Graph](https://developer.microsoft.com/graph/). Raadpleeg [beheerders rollen machtigingen in azure Active Directory](../roles/permissions-reference.md#all-roles)voor meer informatie over de nieuwe rollen.
+10 ingebouwde rollen van Azure AD zijn hernoemd zodat ze zijn afgestemd op de [Microsoft 365 beheer centrum](/microsoft-365/admin/microsoft-365-admin-center-preview), de [Azure AD-portal](https://portal.azure.com/)en de [Microsoft Graph](https://developer.microsoft.com/graph/). Raadpleeg [beheerders rollen machtigingen in azure Active Directory](../roles/permissions-reference.md#all-roles)voor meer informatie over de nieuwe rollen.
 
 ![Tabel met de rolnaam in MS Graph API en de Azure Portal en de voorgestelde uiteindelijke naam in de API, Azure Portal en Mac.](media/whats-new/roles-table-rbac.png)
 
@@ -270,20 +270,20 @@ Klanten kunnen deze vereiste omzeilen voor test doeleinden door een functie vlag
  
 ---
 
-### <a name="public-preview---customize-and-configure-android-shared-devices-for-firstline-workers-at-scale"></a>Open bare Preview: gedeelde Android-apparaten aanpassen en configureren voor Firstline-werk rollen op schaal
+### <a name="public-preview---customize-and-configure-android-shared-devices-for-frontline-workers-at-scale"></a>Open bare Preview: gedeelde Android-apparaten aanpassen en configureren voor Frontline-werk rollen op schaal
 
 **Type:** Nieuwe functie  
 **Service categorie:** Apparaatregistratie en-beheer  
 **Product mogelijkheden:** Beveiliging van identiteits beveiliging &
  
-Azure AD en micro soft Endpoint Manager-teams hebben gecombineerd om de mogelijkheid te bieden om uw Firstline-werk apparaten aan te passen, te schalen en te beveiligen.
+Azure AD en micro soft Endpoint Manager-teams hebben gecombineerd om de mogelijkheid te bieden om uw Frontline-werk apparaten aan te passen, te schalen en te beveiligen.
 
 Met de volgende preview-functies kunt u:
 - Gedeelde Android-apparaten op schaal inrichten met micro soft Endpoint Manager
 - Uw toegang voor Shift-werk nemers beveiligen met voorwaardelijke toegang op basis van een apparaat
 - Aanmeld ervaringen aanpassen voor de ploegen werk rollen met het beheerde Start scherm
 
-Zie voor meer informatie over het [aanpassen en configureren van gedeelde apparaten voor Firstline-werk rollen op schaal](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/customize-and-configure-shared-devices-for-firstline-workers-at/ba-p/1751708).
+Zie voor meer informatie over het [aanpassen en configureren van gedeelde apparaten voor Frontline-werk rollen op schaal](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/customize-and-configure-shared-devices-for-firstline-workers-at/ba-p/1751708).
 
 ---
 

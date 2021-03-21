@@ -15,10 +15,10 @@ ms.reviewer: krbain
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 00291907ddea75ba4507779d1226502dc8343aea
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100365698"
 ---
 # <a name="enforce-a-naming-policy-on-microsoft-365-groups-in-azure-active-directory"></a>Een naamgevings beleid afdwingen voor Microsoft 365 groepen in Azure Active Directory
@@ -254,7 +254,7 @@ StaffHub  | StaffHub teams volgen het naamgevings beleid niet, maar de onderligg
 Exchange Power shell | Exchange Power shell-cmdlets zijn compatibel met het naamgevings beleid. Gebruikers ontvangen de juiste fout berichten met suggesties voor voegsels en achtervoegsels en voor aangepaste geblokkeerde woorden als ze het naamgevings beleid niet volgen in de groeps naam en groeps alias (mailnickname).
 Azure Active Directory Power shell-cmdlets | Azure Active Directory Power shell-cmdlets zijn compatibel met het naamgevings beleid. Gebruikers ontvangen de juiste fout berichten met suggesties voor voegsels en achtervoegsels en voor aangepaste geblokkeerde woorden als ze niet voldoen aan de naamgevings conventies in groeps namen en groeps aliassen.
 Exchange-beheer centrum | Exchange-beheer centrum is compatibel met het naamgevings beleid. Gebruikers ontvangen de juiste fout berichten met suggesties voor voegsels en achtervoegsels en voor aangepaste geblokkeerde woorden als ze niet voldoen aan de naamgevings conventies in de groeps naam en groeps alias.
-Microsoft 365-beheercentrum | Microsoft 365-beheer centrum is compatibel met het naamgevings beleid. Wanneer een gebruiker groeps namen maakt of bewerkt, wordt het naamgevings beleid automatisch toegepast en ontvangen gebruikers de juiste fouten wanneer ze aangepaste geblokkeerde woorden invoeren. Het Microsoft 365-beheer centrum toont nog geen voor beeld van het naamgevings beleid en retourneert geen aangepaste geblokkeerde Word-fouten wanneer de gebruiker de groeps naam invoert.
+Het Microsoft 365-beheercentrum | Microsoft 365-beheer centrum is compatibel met het naamgevings beleid. Wanneer een gebruiker groeps namen maakt of bewerkt, wordt het naamgevings beleid automatisch toegepast en ontvangen gebruikers de juiste fouten wanneer ze aangepaste geblokkeerde woorden invoeren. Het Microsoft 365-beheer centrum toont nog geen voor beeld van het naamgevings beleid en retourneert geen aangepaste geblokkeerde Word-fouten wanneer de gebruiker de groeps naam invoert.
 
 ## <a name="next-steps"></a>Volgende stappen
 

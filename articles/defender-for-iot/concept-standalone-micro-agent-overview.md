@@ -1,5 +1,5 @@
 ---
-title: Overzicht van zelfstandige micro agent
+title: Overzicht van zelfstandige micro agent (preview-versie)
 titleSuffix: Azure Defender for IoT
 description: Met de Azure Defender voor IoT-beveiligings agenten kunt u rechtstreeks beveiliging maken in uw nieuwe IoT-apparaten en Azure IoT-projecten.
 author: shhazam-ms
@@ -8,14 +8,14 @@ ms.author: shhazam
 ms.date: 1/19/2021
 ms.topic: article
 ms.service: azure
-ms.openlocfilehash: a3f71860801c7f611a10acd4ec4e8f8ed03ab20a
-ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.openlocfilehash: 84afa4205b57481efc3ed9df805cfa7a3657a6c8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102120076"
 ---
-# <a name="standalone-micro-agent-overview"></a>Overzicht van zelfstandige micro agent 
+# <a name="standalone-micro-agent-overview-preview"></a>Overzicht van zelfstandige micro agent (preview-versie)
 
 Beveiliging is een bijna universele bezorgdheid voor IoT-implementaties. IoT-apparaten hebben unieke behoeften voor controle van eind punten, beveiliging postuur beheer en detectie van bedreigingen, allemaal met zeer specifieke prestatie vereisten. 
 
@@ -47,4 +47,4 @@ De Azure Defender voor IoT micro-agent is eenvoudig te implementeren en heeft ee
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Controleer de [verificatie methoden van uw micro agent ](concept-security-agent-authentication.md).
+Controleer de [verificatie methoden van micro agent (preview)](concept-security-agent-authentication.md).

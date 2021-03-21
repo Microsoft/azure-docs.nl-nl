@@ -8,12 +8,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 07/02/2020
-ms.openlocfilehash: 9894da7486ec3c0dfb92c94c7c7f4db2247ebeb7
-ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.openlocfilehash: 70d0fc456b3697e3c74a5ec45cc936a02b77e591
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98210202"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104657651"
 ---
 # <a name="train-vowpal-wabbit-model"></a>Vowpal Wabbit-model trainen
 In dit artikel wordt beschreven hoe u de **Wabbit-model module Train Vowpal** in azure machine learning Designer kunt gebruiken om een machine learning model te maken met behulp van Vowpal Wabbit.  
@@ -91,6 +91,13 @@ Vowpal Wabbit ondersteunt incrementele training door nieuwe gegevens toe te voeg
 
 6. Verzend de pijp lijn.  
 7. Selecteer de module en selecteer **gegevensset registreren** onder **uitvoer, tabblad logboeken** in het rechterdeel venster, om het bijgewerkte model in uw Azure machine learning-werk ruimte te bewaren.  Als u geen nieuwe naam opgeeft, wordt het bestaande opgeslagen model overschreven door het bijgewerkte model.
+
+## <a name="results"></a>Resultaten
+
++ Als u scores van het model wilt genereren, gebruikt u [Score Vowpal Wabbit model](score-vowpal-wabbit-model.md).
+
+> [!NOTE]
+> Als u het getrainde model in de ontwerp functie moet implementeren, moet u ervoor zorgen dat de [Score Vowpal Wabbit model](score-vowpal-wabbit-model.md) in plaats van het **score model** is verbonden met de invoer van de module voor het maken van webservice-uitvoer in de pipeline voor het afnemen van [webservices](web-service-input-output.md) .
 
 ## <a name="technical-notes"></a>Technische opmerkingen
 

@@ -17,10 +17,10 @@ ms.reviewer: asteen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 783de636d4520f48f624f3380f811f1f18366330
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99259233"
 ---
 # <a name="disable-user-sign-ins-for-an-enterprise-app-in-azure-active-directory"></a>Aanmeldingen van gebruikers voor een bedrijfs-app in Azure Active Directory uitschakelen
@@ -33,8 +33,8 @@ Het is eenvoudig om een bedrijfs toepassing uit te scha kelen zodat gebruikers z
 1. Selecteer **alle services**, Voer **Azure Active Directory** in het tekstvak in en selecteer vervolgens **Enter**.
 1. Selecteer in het  -   **deel venster Azure Active Directory _Directory_*_ (dat wil zeggen het deel venster van Azure AD voor de directory die u beheert) de optie _* bedrijfs toepassingen**.
 1. In het deel venster **bedrijfs toepassingen-alle toepassingen** ziet u een lijst met de apps die u kunt beheren. Selecteer een app.
-1. **Selecteer _ eigenschappen in het *deel venster appName _ (dat wil zeggen, het deel venster met de naam van de geselecteerde app in de titel)***.
-1. Selecteer in het deel venster **_AppName_*_-_* eigenschappen** de optie **Nee** voor **ingeschakeld voor gebruikers om zich aan te melden**.
+1. Selecteer in het deel venster ***AppName** _ (dat wil zeggen het deel venster met de naam van de geselecteerde app in de titel) de waarde _ * eigenschappen * *.
+1. Selecteer op het deel venster ***AppName** _-_ *Eigenschappen** **Nee** voor **ingeschakeld voor gebruikers om zich aan te melden**.
 1. Selecteer de opdracht **Opslaan** .
 
 ## <a name="use-azure-ad-powershell-to-disable-an-unlisted-app"></a>Azure AD Power shell gebruiken om een niet-gevermelde app uit te scha kelen

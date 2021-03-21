@@ -3,14 +3,14 @@ title: Prijscategorieën - Azure Database for MariaDB
 description: Meer informatie over de verschillende prijs categorieën voor Azure Database for MariaDB, waaronder reken generaties, opslag typen, opslag grootte, vCores, geheugen en bewaar perioden voor back-ups.
 author: savjani
 ms.author: pariks
-ms.service: jroth
+ms.service: mariadb
 ms.topic: conceptual
 ms.date: 10/14/2020
-ms.openlocfilehash: 6c786ea80ecbe2f174d8c3b701316791e1b6104f
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: b5b5a506b2f932d20a617634ace7ebf02093fbfa
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98664245"
 ---
 # <a name="azure-database-for-mariadb-pricing-tiers"></a>Azure Database for MariaDB prijs Categorieën
@@ -76,9 +76,9 @@ We verg Roten de opslag limieten in onze lagen van Algemeen en geoptimaliseerd v
 > Alle andere regio's ondersteunen Maxi maal 4 TB opslag ruimte en Maxi maal 6000 IOPS.
 >
 
-### <a name="reaching-the-storage-limit"></a>De opslag limiet wordt bereikt
+### <a name="reaching-the-storage-limit"></a>De opslaglimiet wordt bereikt
 
-Servers met minder dan 100 GB ingerichte opslag zijn gemarkeerd als alleen-lezen als de vrije opslag minder is dan 5% van de ingerichte opslag grootte. Servers met meer dan 100 GB ingerichte opslag worden als alleen-lezen gemarkeerd als de vrije opslag minder is dan 5 GB.
+Servers met precies 100 GB ingerichte opslag, of minder, worden gemarkeerd als alleen-lezen, wanneer de vrije opslag minder dan 5% van de ingerichte opslaggrootte beslaat. Servers met meer dan 100 GB ingerichte opslag worden als alleen-lezen gemarkeerd als de vrije opslag minder is dan 5 GB.
 
 Als u bijvoorbeeld 110 GB aan opslag hebt ingericht en het werkelijke gebruik meer dan 105 GB overschrijdt, is de server gemarkeerd als alleen-lezen. Als u 5 GB aan opslag hebt ingericht, is de server gemarkeerd als alleen-lezen wanneer de vrije opslag minder dan 256 MB bedraagt.
 

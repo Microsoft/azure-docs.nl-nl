@@ -1,6 +1,6 @@
 ---
-title: 'Zelfstudie: Integratie van Azure Active Directory met Cisco Umbrella | Microsoft Docs'
-description: Informatie over jet configureren van eenmalige aanmelding tussen Azure Active Directory en Cisco Umbrella.
+title: 'Zelf studie: integratie Azure Active Directory met Cisco paraplu admin SSO | Microsoft Docs'
+description: Meer informatie over het configureren van eenmalige aanmelding tussen Azure Active Directory en Cisco paraplu admin SSO.
 services: active-directory
 author: jeevansd
 manager: CelesteDG
@@ -9,21 +9,21 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 02/09/2021
+ms.date: 03/16/2021
 ms.author: jeedes
-ms.openlocfilehash: cfb8ee9972d19ce07e2d681533d30c4794ddca28
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 6073142b21a28f1242e0e6ec65ee2945a354b60b
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101649010"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104592503"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-cisco-umbrella"></a>Zelfstudie: Integratie van Azure Active Directory met Cisco Umbrella
+# <a name="tutorial-azure-active-directory-integration-with-cisco-umbrella-admin-sso"></a>Zelf studie: integratie Azure Active Directory met Cisco paraplu admin SSO
 
-In deze zelf studie leert u hoe u Cisco paraplu integreert met Azure Active Directory (Azure AD). Wanneer u Cisco paraplu integreert met Azure AD, kunt u het volgende doen:
+In deze zelf studie leert u hoe u de Cisco paraplu admin SSO integreert met Azure Active Directory (Azure AD). Wanneer u Cisco paraplu admin SSO integreert met Azure AD, kunt u het volgende doen:
 
-* Controle in azure AD die toegang heeft tot de Cisco-paraplu.
-* Zorg ervoor dat uw gebruikers automatisch worden aangemeld bij Cisco paraplu met hun Azure AD-accounts.
+* Controle in azure AD die toegang heeft tot de beheer-SSO van Cisco paraplu.
+* Zorg ervoor dat uw gebruikers automatisch worden aangemeld bij Cisco paraplu admin SSO met hun Azure AD-accounts.
 * Uw accounts op een centrale locatie beheren: Azure Portal.
 
 ## <a name="prerequisites"></a>Vereisten
@@ -31,43 +31,43 @@ In deze zelf studie leert u hoe u Cisco paraplu integreert met Azure Active Dire
 U hebt het volgende nodig om aan de slag te gaan:
 
 * Een Azure AD-abonnement Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
-* Cisco paraplu-abonnement met eenmalige aanmelding (SSO) ingeschakeld.
+* Cisco paraplu admin SSO-abonnement met eenmalige aanmelding (SSO) ingeschakeld.
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
-* Cisco paraplu ondersteunt door **SP en IDP** geïnitieerde SSO.
+* Cisco paraplu admin SSO ondersteunt door **SP en IDP** geïnitieerde SSO.
 
-## <a name="add-cisco-umbrella-from-the-gallery"></a>Cisco-paraplu toevoegen vanuit de galerie
+## <a name="add-cisco-umbrella-admin-sso-from-the-gallery"></a>Cisco paraplu admin SSO toevoegen vanuit de galerie
 
-Voor het configureren van de integratie van Cisco Umbrella in Azure AD, moet u Cisco Umbrella vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
+Als u de integratie van Cisco paraplu admin SSO wilt configureren in azure AD, moet u de Cisco paraplu admin SSO vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
 1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
 1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
 1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
-1. Typ in de sectie **toevoegen vanuit de galerie** **Cisco paraplu** in het zoekvak.
-1. Selecteer **Cisco paraplu** uit het paneel resultaten en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
+1. Typ in de sectie **toevoegen vanuit de galerie** **Cisco paraplu admin SSO** in het zoekvak.
+1. Selecteer **Cisco paraplu admin SSO** van het paneel resultaten en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
-## <a name="configure-and-test-azure-ad-sso-for-cisco-umbrella"></a>Azure AD SSO voor Cisco paraplu configureren en testen
+## <a name="configure-and-test-azure-ad-sso-for-cisco-umbrella-admin-sso"></a>Azure AD SSO configureren en testen voor Cisco paraplu admin SSO
 
-Azure AD SSO met Cisco paraplu configureren en testen met behulp van een test gebruiker met de naam **B. Simon**. Voor het werken met SSO moet u een koppelings relatie tot stand brengen tussen een Azure AD-gebruiker en de bijbehorende gebruiker in de Cisco-paraplu.
+Azure AD SSO configureren en testen met Cisco paraplu admin SSO met behulp van een test gebruiker met de naam **B. Simon**. Voor het werken met SSO moet u een koppelings relatie tot stand brengen tussen een Azure AD-gebruiker en de bijbehorende gebruiker in de SSO van de beheerder van Cisco paraplu.
 
-Voer de volgende stappen uit om Azure AD SSO te configureren en te testen met Cisco paraplu:
+Voer de volgende stappen uit om Azure AD SSO te configureren en te testen met Cisco paraplu admin SSO:
 
 1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
     1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B.Simon.
     1. **[De Azure AD-testgebruiker toewijzen](#assign-the-azure-ad-test-user)** zodat B.Simon eenmalige aanmelding van Azure AD kan gebruiken.
-1. **[Cisco paraplu SSO configureren](#configure-cisco-umbrella-sso)** : voor het configureren van de instellingen voor eenmalige aanmelding aan de kant van de toepassing.
-    1. **[Maak een soort Cisco paraplu test gebruiker](#create-cisco-umbrella-test-user)** -om een equivalent van B. Simon te hebben in de Cisco-paraplu die is gekoppeld aan de Azure AD-representatie van de gebruiker.
+1. **[Cisco paraplu admin SSO SSO configureren](#configure-cisco-umbrella-admin-sso-sso)** : Hiermee configureert u de instellingen voor eenmalige aanmelding aan de kant van de toepassing.
+    1. **[Maak een ' User SSO test '-gebruiker van Cisco paraplu](#create-cisco-umbrella-admin-sso-test-user)** -voor een soort equivalent van B. Simon in Cisco paraplu admin SSO die is gekoppeld aan de Azure AD-representatie van de gebruiker.
 1. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
 
 ## <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Zoek in de Azure Portal op de pagina **Cisco paraplu** Application Integration de sectie **beheren** en selecteer **eenmalige aanmelding**.
+1. Ga in het Azure Portal naar de integratie pagina van de **Cisco paraplu-beheer** toepassing, zoek de sectie **beheren** en selecteer **eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
@@ -85,7 +85,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
     ![De link om het certificaat te downloaden](common/metadataxml.png)
 
-6. In de sectie **Cisco Umbrella instellen** kopieert u de juiste URL('s) overeenkomstig wat u nodig hebt.
+6. Kopieer de gewenste URL ('s) volgens uw vereiste in de sectie **Cisco paraplu admin SSO instellen** .
 
     ![Configuratie-URL's kopiëren](common/copy-configuration-urls.png)
 
@@ -103,19 +103,19 @@ In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Porta
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
-In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen aan de Cisco-paraplu.
+In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen aan de beheer-SSO van Cisco paraplu.
 
 1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
-1. Selecteer in de lijst toepassingen de optie **Cisco paraplu**.
+1. Selecteer in de lijst toepassingen de optie **Cisco paraplu admin SSO**.
 1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
 1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
 1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
-## <a name="configure-cisco-umbrella-sso"></a>Cisco paraplu SSO configureren
+## <a name="configure-cisco-umbrella-admin-sso-sso"></a>Cisco paraplu admin SSO SSO configureren
 
-1. Meld u in een andere browser als beheerder aan bij de bedrijfssite van Cisco Umbrella.
+1. Meld u in een ander browser venster aan bij uw SSO-bedrijfs site van Cisco paraplu als beheerder.
 
 2. Klik in het linkermenu op **Beheerder** en ga naar **Verificatie**. Klik vervolgens op **SAML**.
 
@@ -125,7 +125,7 @@ In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebru
 
     ![De Andere](./media/cisco-umbrella-tutorial/other.png)
 
-4. Klik op de pagina **Metagegevens van Cisco Umbrella** op **VOLGENDE**.
+4. Klik op de pagina **Cisco paraplu admin SSO meta data**, op **volgende**.
 
     ![De Metagegevens](./media/cisco-umbrella-tutorial/metadata.png)
 
@@ -143,14 +143,14 @@ In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebru
 
 8. Klik op **OPSLAAN**.
 
-### <a name="create-cisco-umbrella-test-user"></a>Testgebruiker voor Cisco Umbrella maken
+### <a name="create-cisco-umbrella-admin-sso-test-user"></a>Een gebruiker voor de SSO-test van Cisco paraplu maken
 
-Als u wilt dat gebruikers van Azure AD zich kunnen aanmelden bij Cisco Umbrella, dienen ze te worden ingericht in Cisco Umbrella.  
-In het geval van Cisco Umbrella moet het inrichten handmatig te worden uitgevoerd.
+Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij Cisco paraplu admin SSO, moeten ze worden ingericht in de beheer-SSO van Cisco paraplu.  
+In het geval van Cisco paraplu admin SSO is inrichting een hand matige taak.
 
 **Als u een gebruikersaccount wilt inrichten, voert u de volgende stappen uit:**
 
-1. Meld u in een andere browser als beheerder aan bij de bedrijfssite van Cisco Umbrella.
+1. Meld u in een ander browser venster aan bij uw SSO-bedrijfs site van Cisco paraplu als beheerder.
 
 2. Klik aan de linkerkant van het menu op **Beheerder** en ga naar **Accounts**.
 
@@ -180,16 +180,16 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 #### <a name="sp-initiated"></a>Met SP geïnitieerd:
 
-* Klik in Azure Portal op **Deze toepassing testen**. Dit wordt omgeleid naar de aanmeldings-URL van Cisco paraplu, waar u de aanmeldings stroom kunt initiëren.  
+* Klik in Azure Portal op **Deze toepassing testen**. Dit wordt omgeleid naar de URL voor aanmelding voor de beheerder van Cisco paraplu, waar u de aanmeldings stroom kunt initiëren.  
 
-* Ga rechtstreeks naar de aanmeldings-URL van Cisco paraplu en start de aanmeldings stroom.
+* Ga naar de URL voor aanmelding voor de beheerder van Cisco paraplu direct en start de aanmeldings stroom vanaf daar.
 
 #### <a name="idp-initiated"></a>Met IDP geïnitieerd:
 
-* Klik op **test deze toepassing** in azure Portal en meld u automatisch aan bij de Cisco-paraplu waarvoor u de SSO hebt ingesteld. 
+* Klik op **test deze toepassing** in azure Portal en meld u automatisch aan bij de Cisco paraplu admin SSO waarvoor u de SSO hebt ingesteld. 
 
-U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u op de tegel Cisco paraplu klikt in de modus mijn apps, wordt u omgeleid naar de aanmeldings pagina van de toepassing om de aanmeldings stroom te initiëren en als deze is geconfigureerd in de IDP-modus, moet u automatisch worden aangemeld bij de Cisco-paraplu waarvoor u de SSO hebt ingesteld. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u in de modus mijn apps op de tegel Cisco paraplu beheer-SSO klikt, wordt u omgeleid naar de aanmeldings pagina van de toepassing om de aanmeldings stroom te initiëren. Als u dit hebt geconfigureerd in de IDP-modus, moet u automatisch worden aangemeld bij de Cisco paraplu admin SSO waarvoor u de SSO hebt ingesteld. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zodra u Cisco paraplu hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).
+Zodra u de Cisco paraplu admin SSO hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

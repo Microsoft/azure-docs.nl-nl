@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 03/07/2021
 ms.custom: references_regions
 ms.openlocfilehash: ddd5c5de85da5ae8cec9d24d33dfd2bf035b5b34
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102438725"
 ---
 # <a name="azure-purview-connector-for-amazon-s3"></a>Azure controle sfeer liggen-connector voor Amazon S3
@@ -120,7 +120,7 @@ Zie de [documentatie van Azure controle sfeer liggen Public Preview](manage-cred
 
 1. Selecteer **een ander AWS-account** en voer de volgende waarden in:
 
-    |Veld  |Description  |
+    |Veld  |Beschrijving  |
     |---------|---------|
     |**Account-id**     |    Voer uw micro soft-account-ID in. Bijvoorbeeld: `615019938638`     |
     |**Externe ID**     |   Onder Opties selecteert u **externe ID vereisen...** en voert u vervolgens uw externe ID in het desbetreffende veld in. <br>Bijvoorbeeld: `e7e2b8a3-0a9f-414f-a065-afaf4ac6d994`    <br><br>U kunt deze externe ID vinden als u.  |
@@ -187,7 +187,7 @@ AWS buckets ondersteunen meerdere versleutelings typen. Voor buckets die gebruik
 
 1. Definieer uw beleid op het tabblad **beleid maken** van de  >  **Visual Editor** met de volgende waarden:
 
-    |Veld  |Description  |
+    |Veld  |Beschrijving  |
     |---------|---------|
     |**Service**     |  Voer **KMS** in en selecteer deze.       |
     |**Acties**     | Onder **toegangs niveau**, selecteer **schrijven** om de sectie **schrijven** uit te vouwen.<br>Als u hebt uitgebreid, selecteert u alleen de optie **ontsleutelen** .        |
@@ -351,7 +351,7 @@ Wanneer u uw buckets hebt toegevoegd als controle sfeer liggen-gegevens bronnen,
 
     Als u een nieuwe set met aangepaste scan regels wilt maken, gebruikt u de wizard om de volgende instellingen te definiëren:
 
-    |Deelvenster  |Description  |
+    |Deelvenster  |Beschrijving  |
     |---------|---------|
     |**Nieuwe regelset voor scan** /<br>**Beschrijving van de scan regel**    |   Voer een duidelijke naam en een optionele beschrijving in voor de regelset      |
     |**Bestands typen selecteren**     | Selecteer alle bestands typen die u in de scan wilt gebruiken en selecteer vervolgens **door gaan**.<br><br>Als u een nieuw bestands type wilt toevoegen, selecteert u **Nieuw bestands type** en definieert u het volgende: <br>-De bestands extensie die u wilt toevoegen <br>-Een optionele beschrijving  <br>-Of de bestands inhoud een aangepast scheidings teken of een systeem bestands type is. Voer vervolgens uw aangepaste scheidings teken in of selecteer het type van het systeem bestand. <br><br>Selecteer **maken** om uw aangepaste bestands type te maken.     |

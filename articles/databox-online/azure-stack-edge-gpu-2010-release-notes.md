@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 03/05/2021
 ms.author: alkohli
 ms.openlocfilehash: 20340a07160a0b4501069e0f4d45599c5bff33f2
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102444037"
 ---
 # <a name="azure-stack-edge-pro-with-gpu-general-availability-ga-release-notes"></a>Release opmerkingen voor Azure Stack Edge Pro met GPU-algemene Beschik baarheid (GA)

@@ -16,10 +16,10 @@ ms.date: 03/10/2021
 ms.author: inhenkel
 ms.reviewer: willzhan
 ms.openlocfilehash: 576ac636f166e2daebbb9919d6666fea913a17be
-ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "103017049"
 ---
 # <a name="using-castlabs-to-deliver-widevine-licenses-to-azure-media-services"></a>castLabs gebruiken om Widevine-licenties te leveren aan Azure Media Services
@@ -89,10 +89,10 @@ De console toepassing gebruiken:
 
 1. Wijzig de app.config voor het instellen van AMS-referenties, cast Labs-referenties, STS-configuratie en gedeelde sleutel.
 2. Upload een asset in AMS.
-3. Haal de UUID op uit de geüploade Asset en wijzig regel 32 in het Program.cs-bestand:
+3. Haal de UUID op uit de geüploade Asset en wijzig regel 32 in het bestand Program. CS:
    
       var objIAsset = _context. Assets. where (x => x.Id = = "NB: Cid: UUID: dac53a5d-1500-80bd-b864-f1e4b62594cf"). FirstOrDefault ();
-4. Gebruik een AssetId voor het benoemen van de asset in het cast Labs-systeem (regel 44 in het Program.cs-bestand).
+4. Gebruik een AssetId voor het benoemen van de asset in het cast Labs-systeem (regel 44 in het bestand Program. cs).
    
    U moet AssetId instellen voor **cast Labs**; Dit moet een unieke alfanumerieke teken reeks zijn.
 5. Voer het programma uit.

@@ -3,13 +3,13 @@ title: Een Azure-portal-dashboard maken met behulp van een Azure Resource Manage
 description: Ontdek hoe u een Azure-portal-dashboard maakt met behulp van een Azure Resource Manager-sjabloon.
 ms.topic: quickstart
 ms.custom: subject-armqs
-ms.date: 06/15/2020
-ms.openlocfilehash: 55ac24e48c1c976eca1e6e8e51cf6e88361ec630
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
-ms.translationtype: HT
+ms.date: 03/15/2021
+ms.openlocfilehash: a3ab8767e09256ed8235dbd980ea3336a6f0fb1d
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96745720"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104658319"
 ---
 # <a name="quickstart-create-a-dashboard-in-the-azure-portal-by-using-an-arm-template"></a>Quickstart: Een dashboard maken in de Azure-portal met behulp van een ARM-sjabloon
 
@@ -30,9 +30,13 @@ Als uw omgeving voldoet aan de vereisten en u benkend bent met het gebruik van A
 
 Het dashboard dat u in het volgende deel van deze quickstart maakt, vereist een bestaande VM. Volg deze stappen om een virtuele machine te maken.
 
-1. Selecteer Cloud Shell in de Azure-portal.
+1. Selecteer **Cloud Shell** in Azure Portal.
 
     ![Selecteer Cloud Shell in het Azure-portal-lint](media/quick-create-template/cloud-shell.png)
+
+1. Selecteer **Power shell** in het venster **Cloud shell** .
+
+    ![Selecteer Power shell in het Terminal venster](media/quick-create-template/powershell.png)
 
 1. Kopieer de volgende opdracht en voer deze in bij de opdrachtprompt om een resourcegroep te maken.
 
@@ -85,19 +89,7 @@ Voor het implementeren van de sjabloon wordt de Azure-portal gebruikt. Naast de 
 
 ## <a name="review-deployed-resources"></a>Geïmplementeerde resources bekijken
 
-Controleer of het dashboard is gemaakt en of u de gegevens van de virtuele machine kunt zien.
-
-1. In de Azure-portal selecteert u **Dashboard**.
-
-    ![Navigatie in de Azure-portal naar dashboard](media/quick-create-template/navigate-to-dashboards.png)
-
-1. Op de dashboardpagina selecteert u **Eenvoudig VM-dashboard**.
-
-    ![Navigeren naar een eenvoudig VM-dashboard](media/quick-create-template/select-simple-vm-dashboard.png)
-
-1. Bekijk het dashboard dat door de ARM-sjabloon is gemaakt. U kunt zien dat een deel van de inhoud statisch is, maar er zijn ook grafieken waarin de prestaties van de virtuele machine worden weergegeven die u aan het begin hebt gemaakt.
-
-    ![Eenvoudig VM-dashboard bekijken](media/quick-create-template/review-simple-vm-dashboard.png)
+[!INCLUDE [azure-portal-review-deployed-resources](../../includes/azure-portal-review-deployed-resources.md)]
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

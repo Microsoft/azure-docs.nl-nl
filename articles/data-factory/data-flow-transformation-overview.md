@@ -6,12 +6,12 @@ ms.author: weetok
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 10/27/2020
-ms.openlocfilehash: ba2ff2b5f108d7910958b374cc4b602a84a3f53d
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: f595766d49d6c00c313990717d8fd241ddfc8f81
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100367908"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104593857"
 ---
 # <a name="mapping-data-flow-transformation-overview"></a>Overzicht van gegevens stroom transformatie toewijzen
 
@@ -21,7 +21,7 @@ Hieronder ziet u een lijst van de trans formaties die momenteel worden ondersteu
 
 | Name | Categorie | Beschrijving |
 | ---- | -------- | ----------- |
-| [Vatting](data-flow-aggregate.md) | Schema wijziging | Definieer verschillende typen aggregaties, zoals som, MIN, maximum en aantal, gegroepeerd op bestaande of berekende kolommen. | 
+| [Samenvoegen](data-flow-aggregate.md) | Schema wijziging | Definieer verschillende typen aggregaties, zoals som, MIN, maximum en aantal, gegroepeerd op bestaande of berekende kolommen. | 
 | [Rij wijzigen](data-flow-alter-row.md) | Rij-aanpassing | Stel insert-, Delete-, update-en upsert-beleid in op rijen. |
 | [Voorwaardelijk splitsen](data-flow-conditional-split.md) | Meerdere invoer/uitvoer | Route rijen met gegevens naar verschillende stromen op basis van overeenkomende voor waarden. |
 | [Afgeleide kolom](data-flow-derived-column.md) | Schema wijziging | nieuwe kolommen genereren of bestaande velden wijzigen met behulp van de data flow-expressie taal. | 
@@ -31,6 +31,7 @@ Hieronder ziet u een lijst van de trans formaties die momenteel worden ondersteu
 | [Join](data-flow-join.md) | Meerdere invoer/uitvoer |  Gegevens uit twee bronnen of streams combi neren. |
 | [Unmp](data-flow-lookup.md) | Meerdere invoer/uitvoer | Referentie gegevens uit een andere bron. |
 | [Nieuwe vertakking](data-flow-new-branch.md) | Meerdere invoer/uitvoer | Meerdere sets bewerkingen en trans formaties Toep assen op dezelfde gegevens stroom. |
+| [Parse](data-flow-new-branch.md) | Formatter | Tekst kolommen in uw gegevens stroom parseren die teken reeksen zijn van JSON, tekst met scheidings tekens of tekst met XML-opmaak. |
 | [Draaitabel](data-flow-pivot.md) | Schema wijziging | Een aggregatie waarbij een of meer groeperings kolommen de afzonderlijke rijwaarden in afzonderlijke kolommen hebben getransformeerd. |
 | [Positie](data-flow-rank.md) | Schema wijziging | Een geordende classificatie genereren op basis van de sorteer voorwaarden |
 | [Selecteren](data-flow-select.md) | Schema wijziging | Alias kolommen en stroom namen en kolommen verwijderen of opnieuw rangschikken |

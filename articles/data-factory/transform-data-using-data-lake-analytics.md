@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 08/01/2018
 ms.openlocfilehash: 94b584f0bea01754a4e955d1418a7a9a2e9aeace
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100373909"
 ---
 # <a name="process-data-by-running-u-sql-scripts-on-azure-data-lake-analytics"></a>Gegevens verwerken door U-SQL-scripts uit te voeren op Azure Data Lake Analytics 
@@ -33,11 +33,11 @@ De volgende tabel bevat beschrijvingen van de algemene eigenschappen die in de J
 
 | Eigenschap                 | Beschrijving                              | Vereist                                 |
 | ------------------------ | ---------------------------------------- | ---------------------------------------- |
-| **type**                 | De eigenschap type moet worden ingesteld op: **AzureDataLakeAnalytics**. | Yes                                      |
-| **accountName**          | Azure Data Lake Analytics account naam.  | Yes                                      |
-| **dataLakeAnalyticsUri** | Azure Data Lake Analytics-URI.           | No                                       |
-| **Abonnements**       | Azure-abonnements-ID                    | No                                       |
-| **resourceGroupName**    | Naam van Azure-resourcegroep                | No                                       |
+| **type**                 | De eigenschap type moet worden ingesteld op: **AzureDataLakeAnalytics**. | Ja                                      |
+| **accountName**          | Azure Data Lake Analytics account naam.  | Ja                                      |
+| **dataLakeAnalyticsUri** | Azure Data Lake Analytics-URI.           | Nee                                       |
+| **Abonnements**       | Azure-abonnements-ID                    | Nee                                       |
+| **resourceGroupName**    | Naam van Azure-resourcegroep                | Nee                                       |
 
 ### <a name="service-principal-authentication"></a>Verificatie van service-principal
 Voor de Azure Data Lake Analytics gekoppelde service is een Service-Principal-verificatie vereist om verbinding te maken met de Azure Data Lake Analytics-service. Als u Service-Principal-verificatie wilt gebruiken, registreert u een toepassings entiteit in Azure Active Directory (Azure AD) en verleent u deze toegang tot zowel de Data Lake Analytics als de Data Lake Store die wordt gebruikt. Zie [service-to-service-verificatie](../data-lake-store/data-lake-store-service-to-service-authenticate-using-active-directory.md)voor gedetailleerde stappen. Noteer de volgende waarden, die u gebruikt om de gekoppelde service te definiëren:
@@ -52,9 +52,9 @@ Gebruik Service-Principal-verificatie door de volgende eigenschappen op te geven
 
 | Eigenschap                | Beschrijving                              | Vereist |
 | :---------------------- | :--------------------------------------- | :------- |
-| **servicePrincipalId**  | Geef de client-ID van de toepassing op.     | Yes      |
-| **servicePrincipalKey** | Geef de sleutel van de toepassing op.           | Yes      |
-| **tenant**              | Geef de Tenant gegevens op (domein naam of Tenant-ID) waaronder uw toepassing zich bevindt. U kunt deze ophalen door de muis in de rechter bovenhoek van de Azure Portal aan te wijzen. | Yes      |
+| **servicePrincipalId**  | Geef de client-ID van de toepassing op.     | Ja      |
+| **servicePrincipalKey** | Geef de sleutel van de toepassing op.           | Ja      |
+| **tenant**              | Geef de Tenant gegevens op (domein naam of Tenant-ID) waaronder uw toepassing zich bevindt. U kunt deze ophalen door de muis in de rechter bovenhoek van de Azure Portal aan te wijzen. | Ja      |
 
 **Voor beeld: Service-Principal-verificatie**
 ```json
@@ -116,17 +116,17 @@ In de volgende tabel worden namen en beschrijvingen van eigenschappen beschreven
 
 | Eigenschap            | Beschrijving                              | Vereist |
 | :------------------ | :--------------------------------------- | :------- |
-| naam                | Naam van de activiteit in de pijp lijn     | Yes      |
-| beschrijving         | Tekst die beschrijft wat de activiteit doet.  | No       |
-| type                | Voor Data Lake Analytics U-SQL-activiteit is het type activiteit  **DataLakeAnalyticsU-SQL**. | Yes      |
-| linkedServiceName   | Gekoppelde service aan Azure Data Lake Analytics. Zie het artikel [Compute linked Services](compute-linked-services.md) (Engelstalig) voor meer informatie over deze gekoppelde service.  |Yes       |
-| scriptPath          | Pad naar de map die het U-SQL-script bevat. De naam van het bestand is hoofdletter gevoelig. | Yes      |
-| scriptLinkedService | Gekoppelde service waarmee de **Azure data Lake Store** of **Azure Storage** die het script bevat, wordt gekoppeld aan de Data Factory | Yes      |
-| degreeOfParallelism | Het maximum aantal knoop punten dat tegelijkertijd wordt gebruikt om de taak uit te voeren. | No       |
-| priority            | Hiermee wordt bepaald welke taken uit de wachtrij moeten worden geselecteerd om eerst te worden uitgevoerd. Hoe lager het getal, des te hoger de prioriteit. | No       |
-| parameters          | Para meters die moeten worden door gegeven aan het U-SQL-script.    | No       |
-| runtimeVersion      | Runtime versie van de U-SQL-engine die moet worden gebruikt. | No       |
-| compilationMode     | <p>De compilatie modus van U-SQL. Moet een van de volgende waarden zijn: **semantisch:** alleen semantische controles en nood zakelijke Sanity controles uitvoeren, **volledig:** de volledige compilatie uitvoeren, met inbegrip van de syntaxis controle, optimalisatie, het genereren van code, enzovoort, **SingleBox:** Voer de volledige compilatie uit met de instelling target type in op SingleBox. Als u geen waarde opgeeft voor deze eigenschap, bepaalt de server de optimale compilatie modus. | No |
+| naam                | Naam van de activiteit in de pijp lijn     | Ja      |
+| beschrijving         | Tekst die beschrijft wat de activiteit doet.  | Nee       |
+| type                | Voor Data Lake Analytics U-SQL-activiteit is het type activiteit  **DataLakeAnalyticsU-SQL**. | Ja      |
+| linkedServiceName   | Gekoppelde service aan Azure Data Lake Analytics. Zie het artikel [Compute linked Services](compute-linked-services.md) (Engelstalig) voor meer informatie over deze gekoppelde service.  |Ja       |
+| scriptPath          | Pad naar de map die het U-SQL-script bevat. De naam van het bestand is hoofdletter gevoelig. | Ja      |
+| scriptLinkedService | Gekoppelde service waarmee de **Azure data Lake Store** of **Azure Storage** die het script bevat, wordt gekoppeld aan de Data Factory | Ja      |
+| degreeOfParallelism | Het maximum aantal knoop punten dat tegelijkertijd wordt gebruikt om de taak uit te voeren. | Nee       |
+| priority            | Hiermee wordt bepaald welke taken uit de wachtrij moeten worden geselecteerd om eerst te worden uitgevoerd. Hoe lager het getal, des te hoger de prioriteit. | Nee       |
+| parameters          | Para meters die moeten worden door gegeven aan het U-SQL-script.    | Nee       |
+| runtimeVersion      | Runtime versie van de U-SQL-engine die moet worden gebruikt. | Nee       |
+| compilationMode     | <p>De compilatie modus van U-SQL. Moet een van de volgende waarden zijn: **semantisch:** alleen semantische controles en nood zakelijke Sanity controles uitvoeren, **volledig:** de volledige compilatie uitvoeren, met inbegrip van de syntaxis controle, optimalisatie, het genereren van code, enzovoort, **SingleBox:** Voer de volledige compilatie uit met de instelling target type in op SingleBox. Als u geen waarde opgeeft voor deze eigenschap, bepaalt de server de optimale compilatie modus. | Nee |
 
 Zie [SearchLogProcessing.txt](#sample-u-sql-script) voor de script definitie. 
 

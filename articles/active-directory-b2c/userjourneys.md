@@ -11,17 +11,17 @@ ms.date: 03/04/2021
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 05307fe2ad9e0a59fa11c30f2dc7154ba5076603
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102174662"
 ---
 # <a name="userjourneys"></a>UserJourneys
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Gebruikers ritten geven expliciete paden op waarmee een Relying Party toepassing de gewenste claims voor een gebruiker kan verkrijgen. De gebruiker wordt door deze paden geleid om de claims op te halen die moeten worden weer gegeven aan de Relying Party. Met andere woorden, de gebruikers trajecten definiëren de bedrijfs logica van wat een eind gebruiker doorloopt als het Azure AD B2C identiteits ervarings raamwerk de aanvraag verwerkt.
+Met gebruikersbelevingen worden expliciete paden opgegeven waarmee een op claims gebaseerde toepassing de gewenste claims voor een gebruiker kan verkrijgen. De gebruiker wordt door deze paden geleid om de claims op te halen die aan de Relying Party moeten worden gepresenteerd. Met andere woorden, de gebruikers trajecten definiëren de bedrijfs logica van wat een eind gebruiker doorloopt als het Azure AD B2C identiteits ervarings raamwerk de aanvraag verwerkt.
 
 Deze gebruikers ritten kunnen worden beschouwd als beschik bare sjablonen om te voldoen aan de kern behoeften van de verschillende relying party's van de community. Gebruikers ritten vergemakkelijken de definitie van het Relying Party onderdeel van een beleid. Een beleid kan meerdere gebruikers trajecten definiëren. Elke gebruikers traject is een reeks Orchestration-stappen.
 

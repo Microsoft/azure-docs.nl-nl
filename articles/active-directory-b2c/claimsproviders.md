@@ -11,17 +11,17 @@ ms.date: 03/08/2021
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 846394266b981c14788148be465912b14bc1fb3e
-ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102447908"
 ---
 # <a name="claimsproviders"></a>ClaimsProviders
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Een claim biedt een interface voor communicatie met verschillende soorten partijen via de [technische profielen](technicalprofiles.md). Elke claim provider moet een of meer technische profielen hebben die de eind punten bepalen en de protocollen die nodig zijn om te communiceren met de claim provider. Een claim provider kan meerdere technische profielen hebben. Er kunnen bijvoorbeeld meerdere technische profielen worden gedefinieerd, omdat de claim provider meerdere protocollen, verschillende eind punten met verschillende mogelijkheden ondersteunt of verschillende claims op verschillende verzekerings niveaus uitgeeft. Het kan acceptabel zijn om gevoelige claims te vrijgeven in één gebruikers traject, maar niet in een andere.
+Een claim biedt een interface voor communicatie met verschillende soorten partijen via de [technische profielen](technicalprofiles.md). Elke claimprovider moet een of meer technische profielen hebben die de eindpunten en de protocollen vaststellen die nodig zijn om te communiceren met de claimprovider. Een claim provider kan meerdere technische profielen hebben. Er kunnen bijvoorbeeld meerdere technische profielen worden gedefinieerd, omdat de claim provider meerdere protocollen, verschillende eind punten met verschillende mogelijkheden ondersteunt of verschillende claims op verschillende verzekerings niveaus uitgeeft. Het kan acceptabel zijn om gevoelige claims te vrijgeven in één gebruikers traject, maar niet in een andere.
 
 Een gebruikers traject combineert technische profielen aan de hand van Orchestration-stappen om uw bedrijfs logica te definiëren. 
 
@@ -43,7 +43,7 @@ Een gebruikers traject combineert technische profielen aan de hand van Orchestra
 
 Het element **ClaimsProviders** bevat het volgende element:
 
-| Element | Instanties | Description |
+| Element | Instanties | Beschrijving |
 | ------- | ----------- | ----------- |
 | ClaimsProvider | 1: n | Een erkende claim provider die kan worden gebruikt in verschillende trajecten van de gebruiker. |
 
@@ -51,7 +51,7 @@ Het element **ClaimsProviders** bevat het volgende element:
 
 Het **ClaimsProvider** -element bevat de volgende onderliggende elementen:
 
-| Element | Instanties | Description |
+| Element | Instanties | Beschrijving |
 | ------- | ---------- | ----------- |
 | Domain | 0:1 | Een teken reeks die de domein naam voor de claim provider bevat. Als uw claim provider bijvoorbeeld het technische profiel voor Facebook bevat, is de domein naam Facebook.com. Deze domein naam wordt gebruikt voor alle technische profielen die zijn gedefinieerd in de claim provider, tenzij deze wordt overschreven door het technische profiel. Er kan ook worden verwezen naar de domein naam in een **domain_hint**. Zie voor meer informatie de sectie **Aanmelden omleiden naar een sociale provider** van het [rechtstreeks aanmelden instellen met behulp van Azure Active Directory B2C](direct-signin.md). |
 | DisplayName | 1:1 | Een teken reeks die de naam van de claim provider bevat. |

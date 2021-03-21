@@ -2,21 +2,21 @@
 title: Problemen met exclusieve SQL-pool oplossen (voorheen SQL DW)
 description: Problemen met een toegewezen SQL-groep (voorheen SQL DW) in azure Synapse Analytics oplossen.
 services: synapse-analytics
-author: kevinvngo
+author: gaursa
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: sql-dw
 ms.date: 11/13/2020
-ms.author: kevin
+ms.author: gaursa
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: de6c7e47af3019d034d457f43334aad1aeafabdc
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: 949a89dd4e84bdb44ad15eaff9ca160fdd21b395
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99254271"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104602125"
 ---
 # <a name="troubleshooting-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics"></a>Problemen met een toegewezen SQL-groep (voorheen SQL DW) in azure Synapse Analytics oplossen
 

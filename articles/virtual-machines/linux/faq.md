@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 05/08/2019
 ms.author: cynthn
-ms.openlocfilehash: 22be45403a7863328c5f6f2c883886296b734914
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.openlocfilehash: d510fa35163a4c4a79352f5f35af9c384bf85304
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102549087"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104596311"
 ---
 # <a name="frequently-asked-question-about-linux-virtual-machines"></a>Veelgestelde vragen over Linux Virtual Machines
 In dit artikel worden enkele veelgestelde vragen over virtuele Linux-machines die zijn gemaakt in azure, behandeld met het Resource Manager-implementatie model. Voor de Windows-versie van dit onderwerp raadpleegt u [Veelgestelde vragen over Windows virtual machines](../windows/faq.md)
@@ -31,7 +31,7 @@ Azure Storage-accounts kunnen ook opslag bieden voor de schijf met het besturing
 ## <a name="how-can-i-access-my-virtual-machine"></a>Hoe kan ik toegang krijgen tot mijn virtuele machine?
 Stel een externe verbinding in om u aan te melden bij de virtuele machine met behulp van Secure Shell (SSH). Zie de instructies voor het maken van verbinding met [Windows](ssh-from-windows.md) of [van Linux en Mac](mac-create-ssh-keys.md). SSH biedt standaard ondersteuning voor maximaal tien gelijktijdige verbindingen. U kunt dit aantal verhogen door het configuratiebestand te bewerken.
 
-Als u problemen ondervindt, raadpleegt u het [oplossen van problemen met ssh-verbindingen (Secure Shell)](../troubleshooting/troubleshoot-ssh-connection.md?toc=/azure/virtual-machines/linux/toc.json).
+Als u problemen ondervindt, raadpleegt u het [oplossen van problemen met ssh-verbindingen (Secure Shell)](/troubleshoot/azure/virtual-machines/troubleshoot-ssh-connection?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 ## <a name="can-i-use-the-temporary-disk-devsdb1-to-store-data"></a>Kan ik de tijdelijke schijf (/dev/sdb1) gebruiken om gegevens op te slaan?
 Gebruik niet de tijdelijke schijf (/dev/sdb1) om gegevens op te slaan. Het is alleen voor tijdelijke opslag. Het risico bestaat dat er gegevens verloren gaan die niet kunnen worden hersteld.

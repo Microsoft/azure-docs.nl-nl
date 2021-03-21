@@ -131,10 +131,10 @@
       href: core/concepts-architecture.md
     - name: Handleiding van apparaatontiwkkelaar
       href: core/overview-iot-central-developer.md
-    - name: Operator handleiding
-      href: core/overview-iot-central-operator.md
     - name: Solution Builder-hand leiding
       href: core/overview-iot-central-solution-builder.md
+    - name: Operator handleiding
+      href: core/overview-iot-central-operator.md
     - name: Wat zijn toepassingssjablonen?
       href: core/concepts-app-templates.md
     - name: Branchespecifieke toepassings sjablonen

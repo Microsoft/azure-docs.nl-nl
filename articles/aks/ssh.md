@@ -4,12 +4,12 @@ description: Meer informatie over het maken van een SSH-verbinding met Azure Kub
 services: container-service
 ms.topic: article
 ms.date: 07/31/2019
-ms.openlocfilehash: 7455b98348f2b8c40f2ffc125abe1297af88fbd8
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 4c068dc1521d19793d42b6788d0439dd11499a91
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102034452"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104605899"
 ---
 # <a name="connect-with-ssh-to-azure-kubernetes-service-aks-cluster-nodes-for-maintenance-or-troubleshooting"></a>Via SSH verbinding maken met AKS-clusterknooppunten (Azure Kubernetes Service) voor onderhoud of probleemoplossing
 
@@ -141,14 +141,14 @@ Als u een SSH-verbinding met een AKS-knoop punt wilt maken, voert u een helper-p
 1. Voer een `debian` container installatie kopie uit en koppel hieraan een terminal sessie. Deze container kan worden gebruikt om een SSH-sessie te maken met een wille keurig knoop punt in het AKS-cluster:
 
     ```console
-    kubectl run -it --rm aks-ssh --image=debian
+    kubectl run -it --rm aks-ssh --image=mcr.microsoft.com/aks/fundamental/base-ubuntu:v0.0.11
     ```
 
     > [!TIP]
     > Als u Windows Server-knoop punten gebruikt, voegt u een knooppunt kiezer toe aan de opdracht om de Debian-container op een Linux-knoop punt te plannen:
     >
     > ```console
-    > kubectl run -it --rm aks-ssh --image=debian --overrides='{"apiVersion":"v1","spec":{"nodeSelector":{"beta.kubernetes.io/os":"linux"}}}'
+    > kubectl run -it --rm aks-ssh --image=mcr.microsoft.com/aks/fundamental/base-ubuntu:v0.0.11 --overrides='{"apiVersion":"v1","spec":{"nodeSelector":{"beta.kubernetes.io/os":"linux"}}}'
     > ```
 
 1. Zodra de terminal sessie is verbonden met de container, installeert u een SSH-client met behulp van `apt-get` :

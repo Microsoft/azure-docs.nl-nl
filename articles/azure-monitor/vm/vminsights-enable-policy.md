@@ -6,10 +6,10 @@ author: bwren
 ms.author: bwren
 ms.date: 07/27/2020
 ms.openlocfilehash: 51baf009543208fbbfe091238d0215a24761641d
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102031953"
 ---
 # <a name="enable-vm-insights-by-using-azure-policy"></a>VM Insights inschakelen met behulp van Azure Policy
@@ -47,7 +47,7 @@ Selecteer op de pagina **para meters** een **log Analytics werkruimte** die door
    > [!NOTE]
    > Als de werk ruimte zich buiten het bereik van de toewijzing bevindt, moet u *log Analytics Inzender* machtigingen verlenen aan de principal-id van de beleids toewijzing. Als u dit niet doet, ziet u mogelijk een implementatie fout zoals `The client '343de0fe-e724-46b8-b1fb-97090f7054ed' with object id '343de0fe-e724-46b8-b1fb-97090f7054ed' does not have authorization to perform action 'microsoft.operationalinsights/workspaces/read' over scope ...`
 
-[![Werk ruimte](media/vminsights-enable-policy/assignment-workspace.png)](media/vminsights-enable-policy/assignment-workspace.png#lightbox)
+[![Werkruimte](media/vminsights-enable-policy/assignment-workspace.png)](media/vminsights-enable-policy/assignment-workspace.png#lightbox)
 
 Klik op **controleren + maken** om de details van de toewijzing te controleren voordat u op **maken** klikt om deze te maken. Maak op dit moment geen herstel taak, omdat u waarschijnlijk meerdere herstel taken nodig hebt om bestaande virtuele machines in te scha kelen. Zie [nalevings resultaten herstellen](#remediate-compliance-results) hieronder.
 

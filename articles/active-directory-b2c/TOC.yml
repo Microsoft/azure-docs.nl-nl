@@ -496,6 +496,7 @@
       href: custom-policy-developer-notes.md
     - name: Versie van pagina-indeling
       href: page-layout.md
+      displayName: Page version
     - name: Regionale beschikbaarheid en opslaglocaties
       href: data-residency.md
     - name: Bouwen voor tolerantie

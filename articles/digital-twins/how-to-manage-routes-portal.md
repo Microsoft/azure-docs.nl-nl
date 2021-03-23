@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/22/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: e61d2ff3807b65022d72414615af9fa729359358
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: df826a682eec15d09b60857e63c363b0f9941c01
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101715714"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104779933"
 ---
 # <a name="manage-endpoints-and-routes-in-azure-digital-twins-portal"></a>Eind punten en routes beheren in azure Digital Apparaatdubbels (Portal)
 
@@ -151,6 +151,9 @@ U kunt de typen gebeurtenissen die worden verzonden beperken door een specifiek 
 Als u een gebeurtenis filter wilt toevoegen tijdens het maken van een gebeurtenis route, gebruikt u de sectie _een filter voor gebeurtenis routes toevoegen_ van de pagina *een gebeurtenis route maken* . 
 
 U kunt een of meer algemene filter opties selecteren of de geavanceerde filter opties gebruiken om uw eigen aangepaste filters te schrijven.
+
+>[!NOTE]
+> Filters zijn **hoofdletter gevoelig** en moeten overeenkomen met de payload-aanvraag (die mogelijk niet noodzakelijkerwijs overeenkomt met het model geval).
 
 #### <a name="use-the-basic-filters"></a>De basis filters gebruiken
 

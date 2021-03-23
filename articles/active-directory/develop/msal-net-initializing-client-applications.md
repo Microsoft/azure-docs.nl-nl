@@ -13,17 +13,19 @@ ms.date: 09/18/2019
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: 6616b0573019703f287d3be521569f5953aeb032
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 7ff61811e8b736f8f6d104a253cfe5dc5e76c428
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98600280"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104771359"
 ---
 # <a name="initialize-client-applications-using-msalnet"></a>Client toepassingen initialiseren met MSAL.NET
-In dit artikel wordt beschreven hoe u open bare client-en vertrouwelijke client toepassingen initialiseert met behulp van de micro soft Authentication Library voor .NET (MSAL.NET).  Lees het [overzicht](msal-client-applications.md)voor meer informatie over de client toepassings typen en configuratie opties voor toepassingen.
+In dit artikel wordt beschreven hoe u open bare client-en vertrouwelijke client toepassingen initialiseert met behulp van de micro soft Authentication Library voor .NET (MSAL.NET).  Zie [open bare client-en vertrouwelijke client toepassingen](msal-client-applications.md)voor meer informatie over de typen client toepassingen.
 
 Met MSAL.NET 3. x is de aanbevolen manier om een toepassing te instantiëren met behulp van de toepassings bouwers: `PublicClientApplicationBuilder` en `ConfidentialClientApplicationBuilder` . Ze bieden een krachtig mechanisme om de toepassing te configureren, hetzij vanuit de code, hetzij vanuit een configuratie bestand, of zelfs door beide benaderingen te combi neren.
+
+[API-referentie documentatie](/dotnet/api/microsoft.identity.client)  |  [Pakket op NuGet](https://www.nuget.org/packages/Microsoft.Identity.Client/)  |  [Bron code](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet)  |  van bibliotheek [Code voorbeelden](sample-v2-code.md)
 
 ## <a name="prerequisites"></a>Vereisten
 Voordat u een toepassing initialiseert, moet u [deze eerst registreren](quickstart-register-app.md) , zodat uw app kan worden geïntegreerd met het micro soft Identity-platform.  Na de registratie hebt u mogelijk de volgende informatie nodig (die kan worden gevonden in de Azure Portal):

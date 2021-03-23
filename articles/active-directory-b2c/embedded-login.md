@@ -8,18 +8,29 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/16/2021
+ms.date: 03/21/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 1255c4962de1fce19efa9c0b0e1d28fc348463ef
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+zone_pivot_groups: b2c-policy-type
+ms.openlocfilehash: 4fbb09a2687673ef96252d8bdb0523d0c5f235ae
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104580144"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104772022"
 ---
 # <a name="embedded-sign-in-experience"></a>Inge sloten aanmeldings ervaring
+
+[!INCLUDE [active-directory-b2c-choose-user-flow-or-custom-policy](../../includes/active-directory-b2c-choose-user-flow-or-custom-policy.md)]
+
+::: zone pivot="b2c-user-flow"
+
+[!INCLUDE [active-directory-b2c-limited-to-custom-policy](../../includes/active-directory-b2c-limited-to-custom-policy.md)]
+
+::: zone-end
+
+::: zone pivot="b2c-custom-policy"
 
 Voor een eenvoudigere aanmeld ervaring kunt u voor komen dat gebruikers worden omgeleid naar een afzonderlijke aanmeldings pagina of een pop-upvenster genereren. Met behulp van het inline frame `<iframe>` -element kunt u de Azure AD B2C aanmeldings gebruikers interface rechtstreeks insluiten in uw webtoepassing.
 
@@ -158,3 +169,5 @@ Raadpleeg de volgende verwante artikelen:
 - Verwijzing naar [RelyingParty](relyingparty.md) -element
 - [Uw beleid voor Java script inschakelen](./javascript-and-page-layout.md)
 - [Codevoorbeelden](code-samples.md)
+
+::: zone-end

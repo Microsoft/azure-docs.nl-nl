@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 12/09/2020
 ms.topic: conceptual
 ms.custom: how-to, contperf-fy21q2, automl
-ms.openlocfilehash: 6d8c56bc306a7ab0bf118d04f64d6523fc385cdd
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: b60e5f656b675a1382b8b4776975723a437183bc
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102520775"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104773110"
 ---
 # <a name="evaluate-automated-machine-learning-experiment-results"></a>Resultaten van automatische machine learning experimenten evalueren
 
@@ -91,6 +91,8 @@ weighted_accuracy|Gewogen nauw keurigheid is nauw keurig wanneer elk voor beeld 
 Automatische ML maakt geen onderscheid tussen binaire en multimetrische metrische gegevens. Dezelfde validatie gegevens worden gerapporteerd, of een gegevensset twee klassen of meer dan twee klassen heeft. Sommige metrische gegevens zijn echter bedoeld voor de classificatie van verschillende klassen. Wanneer dit wordt toegepast op een binaire gegevensset, worden deze metrische gegevens niet als `true` klasse beschouwd, zoals u mogelijk verwacht. Metrische gegevens die duidelijk bedoeld zijn voor multi class, worden met `micro` ,, of geachtervoegseld `macro` `weighted` . Voor beelden zijn `average_precision_score` , `f1_score` ,, en `precision_score` `recall_score` `AUC` .
 
 In plaats van intrekken te berekenen als `tp / (tp + fn)` , wordt het gemiddelde van de multiklasse-inhaal ( `micro` , `macro` of `weighted` ) gemiddeld boven beide klassen van een gegevensset voor binaire classificatie. Dit komt overeen met het berekenen van het terughalen voor de `true` klasse en de `false` klasse afzonderlijk, en vervolgens het gemiddelde van de twee.
+
+Automatische ML berekent geen binaire metrische gegevens, dat wil zeggen metrische gegevens voor binaire classificatie sets. Deze metrische gegevens kunnen echter hand matig worden berekend met behulp van de [Verwar ring matrix](#confusion-matrix) die geautomatiseerd ml voor die specifieke uitvoering heeft gegenereerd. U kunt bijvoorbeeld nauw keurigheid berekenen, `tp / (tp + fp)` , met de werkelijke positieve en onjuiste positieve waarden die worden weer gegeven in een 2x2 Verwar ring matrix diagram.
 
 ## <a name="confusion-matrix"></a>Verwarringsmatrix
 

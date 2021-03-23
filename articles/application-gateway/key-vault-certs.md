@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: conceptual
 ms.date: 11/16/2020
 ms.author: victorh
-ms.openlocfilehash: 694868f2a75cc66bf9e3ede9d12e30a2cc3d7af9
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 8a64956deb7849568e70e94c9b58170df60db1e3
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98185934"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104775732"
 ---
 # <a name="tls-termination-with-key-vault-certificates"></a>TLS-beëindiging met Key Vault-certificaten
 
@@ -47,10 +47,19 @@ Voor de integratie van Application Gateway met Key Vault is een configuratie pro
 
 1. **Uw sleutel kluis configureren**
 
-   Vervolgens importeert u een bestaand certificaat of maakt u een nieuwe in uw sleutel kluis. Het certificaat wordt gebruikt door toepassingen die via de toepassings gateway worden uitgevoerd. In deze stap kunt u ook een sleutel kluis geheim gebruiken dat is opgeslagen als een met een wacht woord kleiner, met base 64 gecodeerd PFX-bestand. We raden u aan om een certificaat type te gebruiken vanwege de mogelijkheid tot het vernieuwen van de sleutel die beschikbaar is voor de objecten van het type certificaat. Nadat u een certificaat of een geheim hebt gemaakt, definieert u het toegangs beleid in de sleutel kluis zodat de identiteit kan worden toegekend toegang tot het geheim *te krijgen.*
+   Vervolgens importeert u een bestaand certificaat of maakt u een nieuwe in uw sleutel kluis. Het certificaat wordt gebruikt door toepassingen die via de toepassings gateway worden uitgevoerd. In deze stap kunt u ook een Key Vault geheim gebruiken waarmee u ook een PFX-bestand 64 met een wacht woord zonder wachtwoord codering kunt opslaan. U kunt het beste een ' certificaat '-type gebruiken vanwege de mogelijkheid om de functie voor het vernieuwen van de objecten in de Key Vault. Nadat u een certificaat of een geheim hebt gemaakt, moet u toegangs beleid definiëren in de Key Vault zodat de identiteit kan worden verleend toegang tot het geheim te krijgen.
    
    > [!IMPORTANT]
-   > Voor Application Gateway is momenteel Key Vault toegang tot alle netwerken toegestaan om de integratie te benutten. Key Vault-integratie wordt niet ondersteund wanneer Key Vault is ingesteld op alleen persoonlijke eind punten toestaan en netwerk toegang selecteren. Ondersteuning voor privé-en Select-netwerken vindt u in de Works-functie voor volledige integratie van Key Vault met Application Gateway. 
+   > Vanaf 15 maart 2021 herkent Key Vault Azure-toepassing gateway als een van de vertrouwde services, zodat u een beveiligde netwerk grens in azure kunt bouwen. Dit biedt u de mogelijkheid om de toegang tot het verkeer van alle netwerken (met inbegrip van Internet verkeer) te weigeren aan Key Vault, maar het beschikbaar te maken voor Application Gateway resource onder uw abonnement. 
+
+   > U kunt de Application Gateway op de volgende manier configureren in een beperkt netwerk van Key Vault. <br />
+   > a) onder de Blade met de Key Vault-netwerken <br />
+   > b) Kies particulier eind punt en geselecteerde netwerken op het tabblad Firewall en virtuele netwerken <br/>
+   > c) vervolgens virtuele netwerken gebruikt, voegt u het virtuele netwerk en het subnet van uw Application Gateway toe. Tijdens het proces wordt ook het service-eind punt micro soft. de sleutel kluis geconfigureerd door het selectie vakje in te scha kelen. <br/>
+   > d) tot slot selecteert u Ja om ervoor te zorgen dat vertrouwde services de firewall van Key Vault overs Laan. <br/>
+   > 
+   > ![Key Vault firewall](media/key-vault-certs/key-vault-firewall.png)
+
 
    > [!NOTE]
    > Als u de toepassings gateway via een ARM-sjabloon implementeert door gebruik te maken van de Azure CLI of Power shell of via een Azure-toepassing die is geïmplementeerd vanuit het Azure Portal, wordt het SSL-certificaat opgeslagen in de sleutel kluis als een base64-gecodeerd PFX-bestand. U moet de stappen in [Use Azure Key Vault volt ooien om de waarde van Secure para meter door te geven tijdens de implementatie](../azure-resource-manager/templates/key-vault-parameter.md). 

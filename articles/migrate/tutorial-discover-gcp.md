@@ -1,31 +1,31 @@
 ---
-title: GCP VM-exemplaren detecteren met Azure Migrate-serverevaluatie
-description: Informatie over het detecteren van GCP VM-exemplaren met Azure Migrate-serverevaluatie.
+title: Servers op GCP-instanties detecteren met Azure Migrate detectie en evaluatie
+description: Meer informatie over het detecteren van servers op GCP met Azure Migrate detectie en evaluatie.
 author: vineetvikram
 ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: tutorial
-ms.date: 09/14/2020
+ms.date: 03/13/2021
 ms.custom: mvc
-ms.openlocfilehash: 079f176a741fa3423081cb96503691f0f2e2e7b2
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: c5d57705ca0d49db1fb1d67e20beb609f21b1d5b
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98541424"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104771427"
 ---
-# <a name="tutorial-discover-google-cloud-platform-gcp-instances-with-server-assessment"></a>Zelfstudie: Google Cloud Platform-exemplaren (GCP) detecteren met serverevaluatie
+# <a name="tutorial-discover-google-cloud-platform-gcp-instances-with-azure-migrate-discovery-and-assessment"></a>Zelf studie: gedetecteerde Google Cloud Platform-exemplaren (GCP) met Azure Migrate: detectie en evaluatie
 
 Als onderdeel van uw migratietraject naar Azure, detecteert u uw servers voor evaluatie en migratie.
 
-Deze zelfstudie laat zien hoe u Google Cloud Platform-exemplaren (GCP) kunt detecteren met Azure Migrate: Serverevaluatie en een licht Azure Migrate-apparaat. U implementeert het apparaat op een GCP-VM-exemplaar, zodat de metagegevens van de computer en de prestaties continu worden gedetecteerd.
+In deze zelf studie ziet u hoe u Google Cloud Platform-exemplaren (GCP) detecteert met Azure Migrate het hulp programma voor detectie en evaluatie met behulp van een licht gewicht Azure Migrate apparaat. U implementeert het apparaat op een server op GCP, zodat de meta gegevens van de computer en de prestaties continu worden gedetecteerd.
 
 In deze zelfstudie leert u het volgende:
 
 > [!div class="checklist"]
 > * Een Azure-account instellen.
-> * GCP-VM-exemplaren voorbereiden voor detectie.
-> * Maak een Azure Migrate-project.
+> * Server voorbereiden op GCP voor detectie.
+> * Een project maken.
 > * Het Azure Migrate-apparaat instellen.
 > * Continue detectie starten.
 
@@ -40,15 +40,16 @@ Controleer of deze vereisten aanwezig zijn voordat u met deze zelfstudie begint.
 
 **Vereiste** | **Details**
 --- | ---
-**Apparaat** | U hebt een GCP-VM-exemplaar nodig waarop het Azure Migrate-apparaat kan worden uitgevoerd. De machine moet aan de volgende voorwaarden voldoen:<br/><br/> -Windows Server 2016 is geïnstalleerd.<br/> _Het apparaat wordt niet ondersteund op een computer met Windows Server 2019_.<br/><br/> -16 GB RAM, 8 Vcpu's, ongeveer 80 GB aan schijf opslag en een externe virtuele switch.<br/><br/> - Een statisch of dynamisch IP-adres met internettoegang, hetzij rechtstreeks of via een proxy.
-**Windows VM-exemplaren** | Sta binnenkomende verbindingen op WinRM-poort 5985 (HTTP) toe, zodat het apparaat metagegevens over de configuratie en prestaties kan ophalen.
-**Linux VM-exemplaren** | Sta binnenkomende verbindingen op poort 22 (TCP) toe.
+**Apparaat** | U hebt een server op GCP nodig waarop het Azure Migrate apparaat kan worden uitgevoerd. De machine moet aan de volgende voorwaarden voldoen:<br/><br/> -Windows Server 2016 is geïnstalleerd.<br/> _Het apparaat wordt niet ondersteund op een computer met Windows Server 2019_.<br/><br/> - 16 GB RAM, 8 vCPU's, ongeveer 80 GB opslagruimte en een externe virtuele switch.<br/><br/> -Een statisch of dynamisch IP-adres met internettoegang, hetzij rechtstreeks of via een proxy.
+**Windows Server-exemplaren** | Sta binnenkomende verbindingen op WinRM-poort 5985 (HTTP) toe, zodat het apparaat metagegevens over de configuratie en prestaties kan ophalen.
+**Linux-server instanties** | Sta binnenkomende verbindingen op poort 22 (TCP) toe.
 
 ## <a name="prepare-an-azure-user-account"></a>Een Azure-gebruikersaccount voorbereiden
 
-Om een Azure Migrate-project te maken en het Azure Migrate-apparaat te registreren, hebt u een account nodig met:
-- Machtigingen op inzender- of eigenaarniveau voor een Azure-abonnement.
-- Machtigingen voor het registreren van Azure Active Directory-apps (AAD).
+Als u een project wilt maken en het Azure Migrate apparaat wilt registreren, hebt u een account nodig met:
+
+* Machtigingen op inzender- of eigenaarniveau voor een Azure-abonnement.
+* Machtigingen voor het registreren van Azure Active Directory-apps (AAD).
 
 Als u net pas een gratis Azure-account hebt gemaakt, bent u de eigenaar van uw abonnement. Als u niet de eigenaar van het abonnement bent, kunt u met de eigenaar samenwerken om de volgende machtigingen toe te wijzen:
 
@@ -56,7 +57,7 @@ Als u net pas een gratis Azure-account hebt gemaakt, bent u de eigenaar van uw a
 
     ![Zoekvak om te zoeken naar het Azure-abonnement](./media/tutorial-discover-gcp/search-subscription.png)
 
-2. Selecteer op de pagina **Abonnementen** het abonnement waarin u een Azure Migrate-project wilt maken. 
+2. Selecteer op de pagina **abonnementen** het abonnement waarin u een project wilt maken.
 3. Selecteer onder het abonnement de optie **Toegangsbeheer (IAM)**  > **Toegang controleren**.
 4. Zoek onder **Toegang controleren** naar het relevante gebruikersaccount.
 5. Klik onder **Een roltoewijzing toevoegen** op **Toevoegen**.
@@ -77,21 +78,21 @@ Als u net pas een gratis Azure-account hebt gemaakt, bent u de eigenaar van uw a
 
 ## <a name="prepare-gcp-instances"></a>GCP-exemplaren voorbereiden
 
-Stel een account in dat het apparaat kan gebruiken om toegang te krijgen tot GCP-VM-exemplaren.
+Stel een account in dat het apparaat kan gebruiken om toegang te krijgen tot servers op GCP.
 
-- Voor **Windows-servers**:
-    - Stel een lokaal gebruikersaccount in op computers die geen lid zijn van het domein en een domeinaccount op computers die geen lid zijn van het domein die u wilt toevoegen in de detectie. Voeg het gebruikersaccount toe aan de volgende groepen: 
-        - Gebruikers van extern beheer
-        - Prestatiemetergebruikers
-        - Gebruikers prestatielogboek.
-- Voor **Linux-servers**:
-    - U hebt een hoofdaccount nodig op de Linux-servers die u wilt detecteren. Als u geen hoofdaccount kunt opgeven, raadpleegt u de instructies in de [ondersteuningsmatrix](migrate-support-matrix-physical.md#physical-server-requirements) voor een alternatief.
-    - Azure Migrate gebruikt wachtwoordverificatie wanneer u AWS-instanties detecteert. AWS-instanties ondersteunen niet standaard wachtwoordverificatie. Voordat u een instantie kunt detecteren, moet u wachtwoordverificatie inschakelen.
+* Voor **Windows-servers**:
+    * Stel een lokaal gebruikers account in op servers die niet lid zijn van het domein en een domein account op servers die zijn toegevoegd aan het domein die u wilt toevoegen in de detectie. Voeg het gebruikersaccount toe aan de volgende groepen: 
+        * Gebruikers van extern beheer
+        * Prestatiemetergebruikers
+        * Gebruikers prestatielogboek.
+* Voor **Linux-servers**:
+    * U hebt een hoofdaccount nodig op de Linux-servers die u wilt detecteren. Als u geen hoofdaccount kunt opgeven, raadpleegt u de instructies in de [ondersteuningsmatrix](migrate-support-matrix-physical.md#physical-server-requirements) voor een alternatief.
+    * Azure Migrate gebruikt wachtwoordverificatie wanneer u AWS-instanties detecteert. AWS-instanties ondersteunen niet standaard wachtwoordverificatie. Voordat u een instantie kunt detecteren, moet u wachtwoordverificatie inschakelen.
         1. Aanmelden bij elke Linux-machine.
         2. Open het bestand sshd_config: vi /etc/ssh/sshd_config
         3. Ga in het bestand naar de regel **PasswordAuthentication** en wijzig de waarde in **yes**.
         4. Sla het bestand op en sluit het. Start de ssh-service opnieuw.
-    - Als u een rootgebruiker gebruikt voor het detecteren van uw Linux-VM's, moet u ervoor zorgen dat rootaanmelding is toegestaan op de VM's.
+    * Als u een hoofd gebruiker gebruikt voor het detecteren van uw Linux-servers, moet u ervoor zorgen dat basis aanmelding is toegestaan op de-servers.
         1. Aanmelden bij elke Linux-machine
         2. Open het bestand sshd_config: vi /etc/ssh/sshd_config
         3. Ga in het bestand naar de regel **PermitRootLogin** en wijzig de waarde in **yes**.
@@ -99,18 +100,18 @@ Stel een account in dat het apparaat kan gebruiken om toegang te krijgen tot GCP
 
 ## <a name="set-up-a-project"></a>Een project instellen
 
-Stel als volgt een nieuw Azure Migrate-project in.
+Stel een nieuw project in.
 
 1. Zoek in de Azure-portal in **Alle services** naar **Azure Migrate**.
 2. Onder **Services** selecteert u **Azure Migrate**.
 3. Selecteer onder **Overzicht** de optie **Project maken**.
-5. Selecteer onder **Project maken** uw Azure-abonnement en resourcegroep. Maak een resourcegroep als u er nog geen hebt.
-6. Geef in **Projectdetails** de projectnaam en het geografische gebied op waarin u het project wilt maken. Bekijk ondersteunde geografische regio's voor [openbare](migrate-support-matrix.md#supported-geographies-public-cloud) clouds en [overheidsclouds](migrate-support-matrix.md#supported-geographies-azure-government).
+4. Selecteer onder **Project maken** uw Azure-abonnement en resourcegroep. Maak een resourcegroep als u er nog geen hebt.
+5. Geef in **Projectdetails** de projectnaam en het geografische gebied op waarin u het project wilt maken. Bekijk ondersteunde geografische regio's voor [openbare](migrate-support-matrix.md#supported-geographies-public-cloud) clouds en [overheidsclouds](migrate-support-matrix.md#supported-geographies-azure-government).
 
    ![Vakken voor projectnaam en regio](./media/tutorial-discover-gcp/new-project.png)
 
-7. Selecteer **Maken**.
-8. Wacht enkele minuten totdat het Azure Migrate project is geïmplementeerd. De **Azure migrate:** het hulp programma voor Server evaluatie wordt standaard toegevoegd aan het nieuwe project.
+6. Selecteer **Maken**.
+7. Wacht een paar minuten totdat het project is geïmplementeerd. Het **Azure migrate: hulp programma voor detectie en evaluatie** wordt standaard toegevoegd aan het nieuwe project.
 
 ![Pagina waarop wordt weergegeven dat het hulpprogramma Serverevaluatie standaard wordt toegevoegd](./media/tutorial-discover-gcp/added-tool.png)
 
@@ -119,27 +120,28 @@ Stel als volgt een nieuw Azure Migrate-project in.
 
 ## <a name="set-up-the-appliance"></a>Het apparaat instellen
 
-Het Azure Migrate-apparaat is een licht apparaat dat door de Azure Migrate-serverevaluatie wordt gebruikt om het volgende te doen:
+Het Azure Migrate apparaat is een licht gewicht apparaat, dat wordt gebruikt door Azure Migrate: detectie en evaluatie om het volgende te doen:
 
-- On-premises servers detecteren.
-- Metagegevens en prestatiegegevens voor gedetecteerde servers verzenden naar Azure Migrate-serverevaluatie.
+* On-premises servers detecteren.
+* Meta gegevens en prestatie gegevens voor gedetecteerde servers verzenden naar Azure Migrate: detectie en evaluatie.
 
 [Meer informatie](migrate-appliance.md) over het Azure Migrate-apparaat.
 
 Om het apparaat in te stellen, moet u het volgende doen:
-1. Geef een naam op voor het apparaat en genereer een Azure Migrate-projectsleutel in de portal.
+
+1. Geef een naam op voor het apparaat en Genereer een project sleutel in de portal.
 1. Download een zip-bestand met Azure Migrate-installatiescript uit de Azure-portal.
 1. Pak de inhoud uit het zip-bestand uit. Start PowerShell-console met beheerdersbevoegdheden.
 1. Voer het PowerShell-script uit om de webtoepassing voor het apparaat te starten.
-1. Configureer het apparaat voor het eerst en registreer het bij het Azure Migrate-project met behulp van de Azure Migrate-projectsleutel.
+1. Configureer het apparaat voor de eerste keer en registreer het met het project met behulp van de project sleutel.
 
-### <a name="1-generate-the-azure-migrate-project-key"></a>1. de Azure Migrate project sleutel genereren
+### <a name="1-generate-the-project-key"></a>1. de project sleutel genereren
 
-1. In **Migratiedoelen** > **Servers** > **Azure Migrate: Serverevaluatie** selecteert u **Detecteren**.
-2. In **Computers detecteren** > **Zijn de computers gevirtualiseerd?** selecteert u **Fysiek of anders (AWS, GCP, Xen enzovoorts)** .
-3. In **1: Azure Migrate-projectsleutel genereren** geeft u een naam op voor het Azure Migrate-apparaat dat u voor de detectie van uw GCP virtuele servers gaat instellen. De naam moet alfanumeriek zijn met 14 tekens of minder.
-4. Klik op **Sleutel genereren** om de vereiste Azure-resources te gaan maken. Sluit de pagina Computers detecteren niet tijdens het maken van resources.
-5. Nadat de Azure-resources zijn gemaakt, wordt er een **Azure Migrate-projectsleutel** gegenereerd.
+1. In **migratie doelen**  >  **Windows, Linux-en SQL-servers**  >  **Azure migrate: detectie en evaluatie**, selecteer **detecteren**.
+2. In **Discover-servers**  >  **zijn uw servers gevirtualiseerd?** selecteert u **fysiek of ander (AWS, GCP, xen, enzovoort)**.
+3. Geef in **1: project sleutel genereren** een naam op voor het Azure migrate apparaat dat u wilt instellen voor de detectie van uw virtuele GCP-servers. De naam moet alfanumeriek zijn met 14 tekens of minder.
+4. Klik op **Sleutel genereren** om de vereiste Azure-resources te gaan maken. Sluit de pagina servers detecteren niet af tijdens het maken van resources.
+5. Nadat het maken van de Azure-resources is voltooid, wordt er een **project sleutel** gegenereerd.
 6. Kopieer de sleutel, omdat u deze nodig hebt om de registratie van het apparaat tijdens de configuratie te voltooien.
 
 ### <a name="2-download-the-installer-script"></a>2. het installatie script downloaden
@@ -200,7 +202,7 @@ Als u problemen ondervindt, kunt u het script Logboeken openen op C:\ProgramData
 
 ### <a name="verify-appliance-access-to-azure"></a>Apparaattoegang tot Azure controleren
 
-Zorg ervoor dat de apparaat-VM verbinding kan maken met Azure-URL's voor [openbare](migrate-appliance.md#public-cloud-urls) en [overheids](migrate-appliance.md#government-cloud-urls)clouds.
+Zorg ervoor dat het apparaat verbinding kan maken met Azure-URL's voor [openbare](migrate-appliance.md#public-cloud-urls) en [overheids](migrate-appliance.md#government-cloud-urls)clouds.
 
 ### <a name="4-configure-the-appliance"></a>4. het apparaat configureren
 
@@ -212,22 +214,22 @@ Het apparaat voor de eerste keer instellen.
 2. Accepteer de **licentievoorwaarden** en lees de informatie van derden.
 1. Ga als volgt te werk in de web-app > **Vereisten instellen**:
     - **Connectiviteit**: De app controleert of de server toegang heeft tot internet. Als de server gebruikmaakt van een proxy:
-        - Klik op **Proxy instellen** en geef het proxyadres (in het formulier http://ProxyIPAddress of http://ProxyFQDN) ) en de controlepoort op.
+        - Klik op **proxy voor installatie** en geef het proxy adres op (in de vorm http://ProxyIPAddress of http://ProxyFQDN) en luister poort.
         - Geef referenties op als de proxy verificatie nodig heeft.
         - Alleen HTTP-proxy wordt ondersteund.
         - Als u proxydetails hebt toegevoegd of de proxy en/of de verificatie hebt uitgeschakeld, klikt u op **Opslaan** om de connectiviteitscontrole opnieuw te activeren.
     - **Tijdsynchronisatie**: Tijd is geverifieerd. De tijd op het apparaat moet zijn gesynchroniseerd met internettijd zodat serverdetectie goed werkt.
-    - **Updates installeren**: Azure Migrate-serverevaluatie controleert of de meest recente updates op het apparaat zijn geïnstalleerd. Na de controle kunt u op **Apparaatservices weergeven** om de status en versies te bekijken van de onderdelen die op het apparaat worden uitgevoerd.
+    - **Updates installeren**: Azure migrate: detectie en evaluatie controleert of de meest recente updates zijn geïnstalleerd op het apparaat. Als de controle is voltooid, kunt u op **Apparaatservices weergeven** klikken om de status en versies te zien van de onderdelen die op het apparaat worden uitgevoerd.
 
 ### <a name="register-the-appliance-with-azure-migrate"></a>Het apparaat registreren bij Azure Migrate
 
-1. Plak de **Azure Migrate-projectsleutel** die u in de portal hebt gekopieerd. Als u de sleutel niet hebt, gaat u naar **Serverevaluatie > Detecteren > Bestaande apparaten beheren**, selecteert u de naam van het apparaat die u hebt ingevoerd op het moment dat de sleutel werd gegenereerd en kopieert u de bijbehorende sleutel.
+1. Plak de **project sleutel** die u hebt gekopieerd uit de portal. Als u de sleutel niet hebt, gaat u naar **Azure migrate: detectie en evaluatie> detecteren> bestaande apparaten te beheren**, selecteert u de naam van het apparaat dat u hebt ingevoerd op het moment van sleutel genereren en kopieert u de bijbehorende sleutel.
 1. U hebt een apparaatcode nodig om te verifiëren bij Azure. Als u klikt op **Aanmelden**, wordt er een modaal met de apparaatcode geopend, zoals hieronder weergegeven.
 
     ![Modaal waarin de apparaatcode wordt weergegeven](./media/tutorial-discover-vmware/device-code.png)
 
 1. Klik op **Code kopiëren en aanmelden** om de apparaatcode te kopiëren en een Azure-aanmeldingsprompt te openen op een nieuw browsertabblad. Als dit niet wordt weergegeven, controleert u of de pop-upblokkering in de browser is uitgeschakeld.
-1. Plak de apparaatcode in het nieuwe tabblad en meld u aan met de gebruikersnaam en het wachtwoord van Azure.
+1. Plak op het tabblad Nieuw de code van het apparaat en meld u aan met behulp van uw Azure-gebruikers naam en-wacht woord.
    
    Aanmelden met een pincode wordt niet ondersteund.
 3. Als u het aanmeldingstabblad per ongeluk sluit zonder u aan te melden, vernieuwt u het browsertabblad van Apparaatconfiguratiebeheer om de knop Aanmelden opnieuw in te schakelen.
@@ -240,12 +242,12 @@ Het apparaat voor de eerste keer instellen.
 Maak nu verbinding vanaf het apparaat met de GCP-servers die moeten worden gedetecteerd en start de detectie.
 
 1. In **Stap 1: Geef referenties op voor de detectie van fysieke of virtuele Windows- en Linux-servers**, en klik op **Referenties toevoegen**.
-1. Selecteer voor een Windows-server de optie **Windows-server** als brontype. Geef een beschrijvende naam op voor de referenties, en voeg de gebruikersnaam en het wachtwoord toe. Klik op **Opslaan**.
-1. Als u verificatie op basis van een wachtwoord gebruikt voor een Linux-server, selecteert u **Linux-server (op basis van wachtwoord)** als brontype. Geef een beschrijvende naam op voor de referenties, en voeg de gebruikersnaam en het wachtwoord toe. Klik op **Opslaan**.
+1. Voor Windows Server selecteert u het bron type als **Windows-Server**, geeft u een beschrijvende naam op voor referenties, voegt u de gebruikers naam en het wacht woord toe. Klik op **Opslaan**.
+1. Als u verificatie op basis van wacht woorden voor Linux-server gebruikt, selecteert u het bron type als **Linux-server (op wacht woord gebaseerd)**, geeft u een beschrijvende naam op voor referenties, voegt u de gebruikers naam en het wacht woord toe. Klik op **Opslaan**.
 1. Als u gebruikmaakt van verificatie op basis van een SSH-sleutel voor een Linux-server, kunt u **Linux-server (op basis van SSH-sleutel)** selecteren. Geef een beschrijvende naam op voor de referenties, voeg de gebruikersnaam toe, ga naar de persoonlijke SSH-sleutel en selecteer deze. Klik op **Opslaan**.
 
-    - Azure Migrate biedt ondersteuning voor de persoonlijke SSH-sleutel die wordt gegenereerd met de opdracht ssh-keygen, met behulp van de algoritmen RSA, DSA, ECDSA en ed25519.
-    - Azure Migrate biedt momenteel geen ondersteuning voor SSH-sleutels op basis van een wachtwoordzin. Gebruik een SSH-sleutel zonder een wachtwoordzin.
+    - Azure Migrate ondersteunt de persoonlijke SSH-sleutel die wordt gegenereerd door de opdracht ssh-keygen met behulp van RSA-, DSA-, ECDSA-en ed25519-algoritmen.
+    - Momenteel wordt Azure Migrate geen SSH-sleutel op basis van een wachtwoordzin ondersteund. Gebruik een SSH-sleutel zonder wachtwoordzin.
     - Azure Migrate biedt momenteel geen ondersteuning voor persoonlijke SSH-sleutelbestanden gegenereerd met PuTTY.
     - Azure Migrate biedt ondersteuning voor de OpenSSH-indeling van het persoonlijke SSH-sleutelbestand, zoals hieronder weergegeven:
     
@@ -257,13 +259,13 @@ Maak nu verbinding vanaf het apparaat met de GCP-servers die moeten worden gedet
 4. U kunt **één item per keer toevoegen** of **meerdere items in één keer toevoegen**. Er is ook een optie om de gegevens van een server op te geven via **CSV importeren**.
 
     - Als u kiest voor **Eén item toevoegen**, kunt u het type besturingssysteem kiezen, een beschrijvende naam opgeven voor referenties en het **IP-adres of de FQDN** van de server toevoegen. Klik vervolgens op **Opslaan**.
-    - Als u kiest voor **Meerdere items toevoegen**, kunt u meerdere records tegelijk toevoegen door het **IP-adres of de FQDN** van de server met de beschrijvende naam voor referenties in het tekstvak op te geven. **Controleer** de toegevoegde records en klik op **Opslaan**.
+    - Als u **meerdere items toevoegen** hebt gekozen, kunt u meerdere records tegelijk toevoegen door het **IP-adres/de FQDN** van de server op te geven met de beschrijvende naam voor de referenties in het tekstvak. Verifieer * * de toegevoegde records en klik op **Opslaan**.
     - Als u **CSV importeren** _(standaard geselecteerd)_ kiest, kunt u een CSV-sjabloonbestand downloaden, het bestand vullen met het **IP-adres of de FQDN** van de server en een beschrijvende naam voor referenties. Vervolgens importeert u het bestand in het apparaat, **controleert u** de records in het bestand en klikt u op **Opslaan**.
 
 5. Wanneer u op Opslaan klikt, wordt de verbinding met de toegevoegde servers gevalideerd en wordt de **validatiestatus** in de tabel voor elke server weergegeven.
     - Als de validatie voor een server mislukt, bekijkt u de fout door in de kolom Status van de tabel op **Validatie mislukt** te klikken. Los het probleem op en valideer opnieuw.
     - Als u een server wilt verwijderen, klikt u op **Verwijderen**.
-6. Voordat u de detectie start, kunt u de connectiviteit van servers altijd **opnieuw valideren**.
+6. U kunt de connectiviteit met servers op elk gewenst moment opnieuw **valideren** voordat u de detectie start.
 7. Klik op **Detectie starten** om met detectie van de gevalideerde servers te beginnen. Nadat de detectie is gestart, kunt u de detectiestatus controleren voor elke server in de tabel.
 
 
@@ -274,9 +276,9 @@ De detectie wordt gestart. Het duurt ongeveer 2 minuten per server voordat de me
 Nadat de detectie is voltooid, kunt u controleren of de servers worden weergegeven in de portal.
 
 1. Open het Azure Migrate-dashboard.
-2. Klik op de pagina **Azure Migrate - Servers** > **Azure Migrate: Serverevaluatie** op het pictogram dat het aantal voor **Gedetecteerde servers** weergeeft.
+2. Klik in **Azure migrate-Windows-, Linux-en SQL-servers**  >  **Azure migrate: de pagina detectie en evaluatie** op het pictogram dat het aantal voor **gedetecteerde servers** weergeeft.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [GCP-servers beoordelen](tutorial-assess-gcp.md) voor migratie naar virtuele Azure-machines.
-- [De gegevens controleren ](migrate-appliance.md#collected-data---physical) die door het apparaat worden verzameld tijdens de detectie.
+* [GCP-servers beoordelen](tutorial-assess-gcp.md) voor migratie naar virtuele Azure-machines.
+* [De gegevens controleren ](migrate-appliance.md#collected-data---physical) die door het apparaat worden verzameld tijdens de detectie.

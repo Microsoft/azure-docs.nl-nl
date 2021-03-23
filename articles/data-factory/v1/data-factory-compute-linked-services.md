@@ -3,16 +3,16 @@ title: Reken omgevingen die worden ondersteund door Azure Data Factory versie 1
 description: Meer informatie over reken omgevingen die u in Azure Data Factory-pijp lijnen (zoals Azure HDInsight) kunt gebruiken om gegevens te transformeren of te verwerken.
 author: dcstwh
 ms.author: weetok
-ms.reviewer: maghan
+ms.reviewer: jburchel
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 07e13036a427ff7ff4f0cbbd2dfd6fbe272bf915
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 5f6fbcb73b4139c0a80ea8352071d8683c401d6e
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100377190"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104782942"
 ---
 # <a name="compute-environments-supported-by-azure-data-factory-version-1"></a>Reken omgevingen die worden ondersteund door Azure Data Factory versie 1
 > [!NOTE]

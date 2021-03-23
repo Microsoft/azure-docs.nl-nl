@@ -9,12 +9,12 @@ ms.subservice: monitoring
 ms.date: 04/15/2020
 ms.author: mahi
 ms.reviewer: mahi
-ms.openlocfilehash: 00407b4a55b3c074fa77d4c3664f6e218c23fe21
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: ea08c82ed5772be7e3a6094f5477c4450975c1fa
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "99584508"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104775850"
 ---
 # <a name="use-synapse-studio-to-monitor-your-apache-spark-applications"></a>Synapse Studio gebruiken om uw Apache Spark-toepassingen te bewaken
 
@@ -157,9 +157,16 @@ Open **monitor** en selecteer vervolgens **Apache Spark toepassingen**. Als u de
    ![mislukte taak gegevens](./media/how-to-monitor-spark-applications/failed-job-info.png)
 
 ## <a name="compare-apache-spark-applications"></a>Apache Spark toepassingen vergelijken
-Klik op de knop **toepassingen vergelijken** en kies een toepassing om de prestaties te vergelijken. gebruikers kunnen het verschil tussen de twee toepassingen intuïtief zien.
+
+Er zijn twee manieren om toepassingen te vergelijken. U kunt vergelijken door een **toepassing vergelijken** te kiezen of door op de knop **vergelijken in notitie blok** te klikken om deze in het notitie blok weer te geven.
+
+### <a name="compare-by-choose-an-application"></a>Vergelijken door een toepassing kiezen
+
+Klik op de knop **toepassingen vergelijken** en kies een toepassing om de prestaties te vergelijken. u kunt het verschil tussen de twee toepassingen intuïtief bekijken.
 
 ![toepassingen vergelijken](./media/how-to-monitor-spark-applications/compare-applications.png)
+
+![Details toepassingen vergelijken](./media/how-to-monitor-spark-applications/details-compare-applications.png)
 
 1. Gebruik de muis om op een toepassing aan te wijzen en vervolgens het pictogram **toepassingen vergelijken** wordt weer gegeven.
 
@@ -167,7 +174,7 @@ Klik op de knop **toepassingen vergelijken** en kies een toepassing om de presta
 
 3. Klik op de knop **toepassing kiezen** om de pagina **vergelijkings toepassing kiezen** te openen.
 
-4. Bij het kiezen van de vergelijkings toepassing moeten gebruikers de URL van de toepassing invoeren of een keuze uit de terugkerende lijst kiezen. Klik vervolgens op de knop **OK** . 
+4. Wanneer u de vergelijkings toepassing kiest, moet u de URL van de toepassing invoeren of een keuze uit de terugkerende lijst kiezen. Klik vervolgens op de knop **OK** . 
 
    ![een vergelijkings toepassing kiezen](./media/how-to-monitor-spark-applications/choose-comparison-application.png)
 
@@ -175,6 +182,15 @@ Klik op de knop **toepassingen vergelijken** en kies een toepassing om de presta
 
    ![resultaat van vergelijking](./media/how-to-monitor-spark-applications/comparison-result.png)
 
+### <a name="compare-by-compare-in-notebook"></a>Vergelijken door vergelijken in notebook
+
+Klik op de knop **vergelijken in notebook** op de pagina **toepassingen vergelijken** om het notitie blok te openen. De standaard naam van het. ipynb-bestand is de **huidige analyse** van de toepassing.
+
+![vergelijken in notebook](./media/how-to-monitor-spark-applications/compare-in-notebook.png)
+
+In het notitie blok: opnieuw actueel toepassings analyse bestand kunt u het rechtstreeks uitvoeren nadat u de Spark-groep en taal hebt ingesteld.
+
+![recurrent Application Analytics](./media/how-to-monitor-spark-applications/recurrent-application-analytics.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 

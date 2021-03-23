@@ -1,18 +1,14 @@
 ---
 title: Vereiste apparaten identificeren
 description: Meer informatie over hardware en virtuele apparaten voor Certified Defender voor IoT Sens oren en de on-premises beheer console.
-author: shhazam-ms
-manager: rkarlin
-ms.author: shhazam
 ms.date: 01/13/2021
 ms.topic: how-to
-ms.service: azure
-ms.openlocfilehash: 2ad5bf08542cd98f7acae36827b1a7b284a893b0
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 242e88e92d6197fd018c56fa55a4dd8166f5d027
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103149292"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104782755"
 ---
 # <a name="identify-required-appliances"></a>Vereiste apparaten identificeren
 
@@ -272,27 +268,6 @@ In deze sectie vindt u meer informatie over de apparaten die door micro soft zij
 Nadat u het apparaat hebt aangeschaft, gaat u naar de ISO-installatie **van Defender voor IOT**-  >  **netwerk Sens oren**  >   om de software te downloaden.
 
 :::image type="content" source="media/how-to-prepare-your-network/azure-defender-for-iot-sensor-download-software-screen.png" alt-text="Netwerk sensors ISO.":::
-
-## <a name="enterprise-deployment-dell-poweredge-r340-xl"></a>Enter prise-implementatie: Dell PowerEdge R340 XL
-
-| Onderdeel | Technische specificaties |
-|--|--|
-| Chassis | 1U-rack server
-| Dimensies | 42,8 x 434,0 x 596 (mm)/1,67 "x 17,09" x 23,5 "(in) |
-| Gewicht | Maxi maal 29,98 lb/13,6 kg |
-| Processor | Intel Xeon E-2144G 3,6 GHz, 8 min. cache, 4C/8T, Turbo (71 W) |
-| Chipset | Intel C246 |
-| Geheugen | 32 GB = 2 x 16 GB 2666MT/s DDR4 ECC UDIMM |
-| Storage | 3 x 2 TB 7,2 K RPM SATA 6-Gbps 512n 3,5-in Hot-Plug harde schijf-RAID 5 |
-| Netwerk controller | On-Board: 2 x 1 GB Broadcom BCM5720<br>On-board LOM: iDRAC-poort kaart 1-GB Broadcom BCM5720 <br><br>Extern: 1 x Intel Ethernet I350 QP 1-GB server adapter, laag profiel |
-| Beheer | iDRAC negen onderneming |
-| Apparaattoegang | Twee achteraan USB 3,0 <br> Eén front USB-3,0 |
-| Stroom | Dubbele hot-pluggable voedings eenheden 350 W |
-| Rack ondersteuning | ReadyRails II-schuif rails voor een gereedschap-less-aansluiting in 4 post-racks met vier Kante of niet-gethreadde ronde gaten of een koppeling naar een koppeling in 4 post-verwerkings rekken, met ondersteuning voor optionele arm met een beperkt beheer van de kabel. |
-
-## <a name="dell-r340-bom"></a>Dell R340-stuk lijst
-
-:::image type="content" source="media/how-to-prepare-your-network/enterprise-deployment-for-azure-defender-for-iot-dell-r340-bom.png" alt-text="Dell R340-stuk lijst.":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

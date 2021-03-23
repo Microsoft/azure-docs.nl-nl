@@ -4,14 +4,14 @@ description: In dit artikel wordt uitgelegd hoe u aanvullende instellingen voor 
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: how-to
-ms.date: 03/15/2021
+ms.date: 03/17/2021
 ms.author: v-erkel
-ms.openlocfilehash: 06feefe3a934d1ee02793fab442852e5ef40899a
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 6e1e1283cb82dcb900da6473de65ef087a5cea82
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103563373"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104773229"
 ---
 # <a name="configure-additional-azure-hpc-cache-settings"></a>Aanvullende instellingen voor de Azure HPC-cache configureren
 
@@ -75,6 +75,8 @@ Als u een aangepaste DNS-server voor uw cache wilt instellen, gebruikt u de opge
   > [!NOTE]
   > The cache will use only the first DNS server it successfully finds. -->
 
+Overweeg het gebruik van een test cache om uw DNS-installatie te controleren en te verfijnen voordat u deze in een productie omgeving gebruikt.
+
 ### <a name="refresh-storage-target-dns"></a>DNS voor opslag doel vernieuwen
 
 Als de DNS-server IP-adressen bijwerkt, worden de gekoppelde NFS-opslag doelen tijdelijk niet beschikbaar. Lees hoe u de IP-adressen van uw aangepaste DNS-systeem bijwerkt in [opslag doelen bewerken](hpc-cache-edit-storage.md#update-ip-address-custom-dns-configurations-only).
@@ -94,10 +96,10 @@ Deze functie is alleen beschikbaar voor Azure Blob-opslag doelen en de configura
 
 Moment opnamen worden elke acht uur genomen, op UTC 0:00, 08:00 en 16:00.
 
-Met de Azure HPC-cache worden dagelijkse, wekelijkse en maandelijkse moment opnamen opgeslagen, totdat deze worden vervangen door nieuwe sjablonen. De limieten zijn:
+Met de Azure HPC-cache worden dagelijkse, wekelijkse en maandelijkse moment opnamen opgeslagen, totdat deze worden vervangen door nieuwe sjablonen. De limieten voor het bewaren van de moment opname zijn:
 
 * Maxi maal 20 dagelijkse moment opnamen
 * Maxi maal 8 wekelijkse moment opnamen
 * Maxi maal 3 maandelijkse moment opnamen
 
-Open de moment opnamen van de `.snapshot` map in uw Blob Storage-doel naam ruimte.
+Open de moment opnamen van de `.snapshot` map in de hoofdmap van het gekoppelde Blob Storage-doel.

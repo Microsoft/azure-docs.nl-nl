@@ -1,18 +1,14 @@
 ---
 title: Werken met apparaatmeldingen
 description: Meldingen bevatten informatie over netwerk activiteit die mogelijk uw aandacht vereist, samen met aanbevelingen voor het afhandelen van deze activiteit.
-author: shhazam-ms
-manager: rkarlin
-ms.author: shhazam
 ms.date: 12/12/2020
 ms.topic: how-to
-ms.service: azure
-ms.openlocfilehash: cac8d609272be1d9f34b7e0d6404e0a0ea524df7
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: c0c2fc5a4c01a8a31512cd43c340bf3fadc259b1
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100523563"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104781327"
 ---
 # <a name="work-with-device-notifications"></a>Werken met apparaatmeldingen
 
@@ -24,11 +20,7 @@ Meldingen bevatten informatie over netwerk activiteit die mogelijk uw aandacht v
 
 Als u op meldingen reageert, wordt de informatie in de apparaattoewijzing, de inventarisatie van de apparaten en de query's en rapporten van gegevens analyse verbeterd. Het biedt ook inzicht in legitieme netwerk wijzigingen en mogelijke netwerk configuraties.
 
-Om toegang te krijgen tot meldingen:
-
-- Selecteer **systeem instellingen** en selecteer vervolgens **gegevens uitbreiding**.
-
-## <a name="notifications-vs-alerts"></a>Meldingen versus waarschuwingen
+**Meldingen versus waarschuwingen**
 
 Naast het ontvangen van meldingen over netwerk activiteit, kunt u *waarschuwingen* ontvangen. Meldingen bevatten informatie over netwerk wijzigingen of niet-omgezette eigenschappen van apparaten die geen bedreiging vormen. Waarschuwingen bieden informatie over netwerk afwijkingen en wijzigingen die een bedreiging kunnen vormen voor het netwerk.
 
@@ -85,18 +77,6 @@ Meldingen weer geven en meldingen verwerken:
 2. Geef de sensor de opdracht om nieuwe gedetecteerde informatie toe te passen op geselecteerde apparaten **door te selecteren.** Of laat de sensor nieuwe gedetecteerde informatie negeren door **negeren** te selecteren. Het aantal meldingen dat u gelijktijdig kunt leren en negeren, samen met het aantal meldingen dat u afzonderlijk moet afhandelen, wordt weer gegeven.
 
 **Nieuwe ip's** en geconfigureerde **subnetten** -gebeurtenissen kunnen niet tegelijkertijd worden verwerkt. Ze vereisen hand matige bevestiging.
-
-## <a name="improve-device-os-classification-data-enhancement"></a>De classificatie van het besturings systeem van het apparaat verbeteren: gegevens uitbreiding 
-
-De sensor detecteert voortdurend nieuwe apparaten. Daarnaast detecteert het automatisch wijzigingen aan eerder ontdekte apparaten, waaronder typen besturings systemen.
-
-Onder bepaalde omstandigheden kunnen conflicten worden gedetecteerd in gedetecteerde besturings systemen. Dit kan gebeuren omdat u een versie van het besturings systeem hebt die verwijst naar een bureau blad of server systeem. Als dit het geval is, ontvangt u een melding met optionele besturingssysteem classificaties.
-
-:::image type="content" source="media/how-to-enrich-asset-information/enhance-data-screen.png" alt-text="Gegevens verbeteren.":::
-
-Onderzoek de aanbevelingen om de besturingssysteem classificatie te verrijken. Deze informatie wordt weer gegeven in de inventarisatie van apparaten, rapporten voor gegevens analyse en andere weer gaven. Het kan ook de nauw keurigheid van waarschuwingen, bedreigingen en risico analyse verbeteren.
-
-Wanneer u een aanbeveling accepteert, wordt de informatie over het type besturings systeem in de sensor bijgewerkt.
 
 ## <a name="see-also"></a>Zie ook
 

@@ -7,15 +7,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 12/16/2020
+ms.date: 03/22/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 6b0bdc5a5b58c205d888c8892a4333225a9b316f
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: c42c6465af8e895d833332be847c134b97ee8ddc
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100557139"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104781293"
 ---
 # <a name="tutorial-create-user-flows-in-azure-active-directory-b2c"></a>Zelfstudie: Gebruikersstromen maken in Azure Active Directory B2C
 
@@ -25,8 +25,9 @@ In dit artikel leert u het volgende:
 
 > [!div class="checklist"]
 > * Een gebruikersstroom voor registratie en aanmelding maken
+> * Selfservice voor wachtwoordherstel inschakelen
 > * Een gebruikersstroom voor profielbewerking maken
-> * Een gebruikersstroom voor het opnieuw instellen van het wachtwoord maken
+
 
 In deze zelfstudie ziet u hoe u enkele aanbevolen gebruikersstromen kunt maken met behulp van de Azure-portal. Zie [De stroom voor referenties voor wachtwoord van resource-eigenaar configureren in Azure AD B2C](add-ropc-policy.md) voor informatie over het instellen van een stroom voor referenties voor het wachtwoord van resource-eigenaar (ROPC) in uw toepassing.
 
@@ -85,6 +86,24 @@ Met de gebruikersstroom voor registratie en aanmelding worden zowel registratie 
 > [!NOTE]
 > De 'Gebruikersstroom uitvoeren'-ervaring is momenteel niet compatibel met de SPA-antwoord-URL met autorisatiecodestroom. Als u de 'Gebruikersstroom uitvoeren'-ervaring wilt gebruiken met deze typen apps, moet u een antwoord-URL van het type 'Web' registreren en de impliciete stroom inschakelen zoals [hier](tutorial-register-spa.md) beschreven.
 
+## <a name="enable-self-service-password-reset"></a>Selfservice voor wachtwoordherstel inschakelen
+
+Selfservice voor het [opnieuw instellen van wacht woorden](add-password-reset-policy.md) inschakelen voor de stroom voor registreren of aanmelden van de gebruiker:
+
+1. Selecteer de stroom voor registratie of aanmeldings gebruikers die u hebt gemaakt.
+1. Onder **instellingen** in het menu links selecteert u **Eigenschappen**.
+1. Selecteer bij **wachtwoord complexiteit** de optie **self-service voor wacht woord opnieuw instellen**.
+1. Selecteer **Opslaan**.
+
+### <a name="test-the-user-flow"></a>De gebruikersstroom testen
+
+1. Selecteer de gebruikersstroom die u hebt gemaakt om de overzichtspagina te openen en selecteer **Gebruikersstroom uitvoeren**.
+1. Selecteer voor **Toepassing** de webtoepassing met de naam *webapp1* die u eerder hebt geregistreerd. De **antwoord-URL** moet `https://jwt.ms` weergeven.
+1. Selecteer **Gebruikersstroom uitvoeren**.
+1. Selecteer **uw wacht woord verg eten** op de pagina aanmelden of aanmelden.
+1. Controleer het e-mail adres van het account dat u eerder hebt gemaakt en selecteer vervolgens **door gaan**.
+1. U hebt nu de mogelijkheid om het wachtwoord voor de gebruiker te wijzigen. Wijzig het wachtwoord en selecteer **Doorgaan**. Het token wordt geretourneerd aan `https://jwt.ms` en moet worden weergegeven.
+
 ## <a name="create-a-profile-editing-user-flow"></a>Een gebruikersstroom voor profielbewerking maken
 
 Als u gebruikers in staat wilt stellen hun profiel te bewerken in uw toepassing, gebruikt u een gebruikersstroom voor het bewerken van profielen.
@@ -103,26 +122,6 @@ Als u gebruikers in staat wilt stellen hun profiel te bewerken in uw toepassing,
 1. Selecteer voor **Toepassing** de webtoepassing met de naam *webapp1* die u eerder hebt geregistreerd. De **antwoord-URL** moet `https://jwt.ms` weergeven.
 1. Klik op **Gebruikersstroom uitvoeren** en meld u vervolgens aan met het account dat u eerder hebt gemaakt.
 1. U hebt nu de mogelijkheid om de weergavenaam en de functie voor de gebruiker te wijzigen. Klik op **Doorgaan**. Het token wordt geretourneerd aan `https://jwt.ms` en moet worden weergegeven.
-
-## <a name="create-a-password-reset-user-flow"></a>Een gebruikersstroom voor het opnieuw instellen van het wachtwoord maken
-
-Als u gebruikers van uw toepassing de mogelijkheid wilt bieden hun wachtwoord opnieuw in te stellen, gebruikt u een gebruikersstroom voor het opnieuw instellen van wachtwoorden.
-
-1. Selecteer in het overzichtsmenu van de Azure AD B2C-tenant de optie **Gebruikersstromen** en selecteer vervolgens **Nieuwe gebruikersstroom**.
-1. Selecteer op de pagina **Een gebruikersstroom maken** de gebruikersstroom **Wachtwoord opnieuw instellen**. 
-1. Onder **Selecteer een versie** selecteert u **Aanbevolen** en vervolgens **Maken**.
-1. Voer een **Naam** in voor de gebruikersstroom. Bijvoorbeeld *passwordreset1*.
-1. Schakel voor de optie **Id-providers** de optie **Het wachtwoord opnieuw instellen met e-mailadres** in.
-2. Klik onder Toepassingsclaims op **Meer weergeven** en kies de claims die u wilt retourneren in de autorisatietokens die worden teruggestuurd naar uw toepassing. Selecteer bijvoorbeeld **Object-ID van gebruiker**.
-3. Klik op **OK**.
-4. Klik op **Maken** om de gebruikersstroom toe te voegen. Het voorvoegsel *B2C_1* wordt automatisch aan de naam toegevoegd.
-
-### <a name="test-the-user-flow"></a>De gebruikersstroom testen
-
-1. Selecteer de gebruikersstroom die u hebt gemaakt om de overzichtspagina te openen en selecteer **Gebruikersstroom uitvoeren**.
-1. Selecteer voor **Toepassing** de webtoepassing met de naam *webapp1* die u eerder hebt geregistreerd. De **antwoord-URL** moet `https://jwt.ms` weergeven.
-1. Klik op **Gebruikersstroom uitvoeren**, controleer het e-mailadres van het account dat u eerder hebt gemaakt en selecteer **Doorgaan**.
-1. U hebt nu de mogelijkheid om het wachtwoord voor de gebruiker te wijzigen. Wijzig het wachtwoord en selecteer **Doorgaan**. Het token wordt geretourneerd aan `https://jwt.ms` en moet worden weergegeven.
 
 ## <a name="next-steps"></a>Volgende stappen
 

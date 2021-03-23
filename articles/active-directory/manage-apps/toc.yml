@@ -59,8 +59,6 @@
       items:
         - name: Aan de slag met app-integratie
           href: plan-an-application-integration.md
-        - name: Plannen maken voor apps die niet in de galerie staan
-          href: non-gallery-apps.md
         - name: Een My Apps-implementatie plannen
           href: my-apps-deployment-plan.md
     - name: Eenmalige aanmelding

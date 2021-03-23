@@ -5,12 +5,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 03/01/2021
 ms.custom: template-concept
-ms.openlocfilehash: b4cf3699243e990b5e7b7478ba643067ac456020
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: be11c32cf06b9873e10247d7ccc4a84133a6c688
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104584700"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104774929"
 ---
 # <a name="guide-for-running-functions-on-net-50-in-azure"></a>Hand leiding voor het uitvoeren van functies op .NET 5,0 in azure
 
@@ -68,37 +68,36 @@ U vindt deze extensie pakketten onder [micro soft. Azure. functions. Worker. Ext
 
 ## <a name="start-up-and-configuration"></a>Opstarten en configureren 
 
-Wanneer u met behulp van .NET geïsoleerde functies hebt, hebt u toegang tot het starten van uw functie-app, meestal in Program. cs. U bent zelf verantwoordelijk voor het maken en starten van uw eigen exemplaar van de host. Als zodanig hebt u ook directe toegang tot de configuratie pijplijn voor uw app. U kunt veel gemakkelijker afhankelijkheden injecteren en middleware uitvoeren wanneer u out-of-process uitvoert. 
+Wanneer u met behulp van .NET geïsoleerde functies hebt, hebt u toegang tot het starten van uw functie-app, meestal in Program. cs. U bent zelf verantwoordelijk voor het maken en starten van uw eigen exemplaar van de host. Als zodanig hebt u ook directe toegang tot de configuratie pijplijn voor uw app. Wanneer u out-of-process uitvoert, kunt u veel eenvoudiger configuraties toevoegen, afhankelijkheden invoeren en uw eigen middleware uitvoeren. 
 
-De volgende code toont een voor beeld van een `HostBuilder` pijp lijn:
+De volgende code toont een voor beeld van een [HostBuilder] -pijp lijn:
 
 :::code language="csharp" source="~/azure-functions-dotnet-worker/samples/FunctionApp/Program.cs" id="docsnippet_startup":::
 
-A `HostBuilder` wordt gebruikt voor het bouwen en retour neren van een volledig geïnitialiseerd `IHost` exemplaar dat u asynchroon uitvoert om uw functie-app te starten. 
+Een [HostBuilder] wordt gebruikt voor het bouwen en retour neren van een volledig geïnitialiseerd [IHost] -exemplaar dat u asynchroon uitvoert om uw functie-app te starten. 
 
 :::code language="csharp" source="~/azure-functions-dotnet-worker/samples/FunctionApp/Program.cs" id="docsnippet_host_run":::
 
 ### <a name="configuration"></a>Configuratie
 
-Als u toegang hebt tot de pijp lijn van de host Builder, kunt u tijdens de initialisatie alle app-specifieke configuraties instellen. Deze configuraties zijn van toepassing op de functie-app die wordt uitgevoerd in een afzonderlijk proces. Als u wijzigingen wilt aanbrengen in de functies host of trigger-en bindings configuratie, moet u de [host.jsin het bestand](functions-host-json.md)gebruiken.      
+De methode [ConfigureFunctionsWorkerDefaults] wordt gebruikt om de vereiste instellingen voor de functie-app toe te voegen die out-of-process worden uitgevoerd. Dit omvat de volgende functionaliteit:
 
-<!--The following example shows how to add configuration `args`, which are read as command-line arguments: 
- 
-:::code language="csharp" 
-                .ConfigureAppConfiguration(c =>
-                {
-                    c.AddCommandLine(args);
-                })
-                :::
++ Standaardset converters.
++ Stel de standaard [JsonSerializerOptions] in op het negeren van de behuizing op eigenschapnamen.
++ Integreren met Azure Functions logboek registratie.
++ Middleware en functies voor het binden van uitvoer.
++ Middleware voor functie-uitvoering.
++ Standaard gRPC-ondersteuning. 
 
-The `ConfigureAppConfiguration` method is used to configure the rest of the build process and application. This example also uses an [IConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.iconfigurationbuilder?view=dotnet-plat-ext-5.0&preserve-view=true), which makes it easier to add multiple configuration items. Because `ConfigureAppConfiguration` returns the same instance of [`IConfiguration`](/dotnet/api/microsoft.extensions.configuration.iconfiguration?view=dotnet-plat-ext-5.0&preserve-view=true), you can also just call it multiple times to add multiple configuration items.-->  
-U kunt toegang krijgen tot de volledige set configuraties van zowel [`HostBuilderContext.Configuration`](/dotnet/api/microsoft.extensions.hosting.hostbuildercontext.configuration?view=dotnet-plat-ext-5.0&preserve-view=true) en [`IHost.Services`](/dotnet/api/microsoft.extensions.hosting.ihost.services?view=dotnet-plat-ext-5.0&preserve-view=true) .
+:::code language="csharp" source="~/azure-functions-dotnet-worker/samples/FunctionApp/Program.cs" id="docsnippet_configure_defaults" :::   
 
-Zie [configuratie in ASP.net core](/aspnet/core/fundamentals/configuration/?view=aspnetcore-5.0&preserve-view=true)voor meer informatie over configuratie. 
+Als u toegang hebt tot de pijp lijn van de host Builder, kunt u tijdens de initialisatie ook specifieke app-configuraties instellen. U kunt de [ConfigureAppConfiguration] -methode op [HostBuilder] een of meer keren aanroepen om de configuraties toe te voegen die vereist zijn voor uw functie-app. Zie [configuratie in ASP.net core](/aspnet/core/fundamentals/configuration/?view=aspnetcore-5.0&preserve-view=true)voor meer informatie over app-configuratie. 
+
+Deze configuraties zijn van toepassing op de functie-app die wordt uitgevoerd in een afzonderlijk proces. Als u wijzigingen wilt aanbrengen in de functies host of trigger-en bindings configuratie, moet u de [host.jsin het bestand](functions-host-json.md)gebruiken.   
 
 ### <a name="dependency-injection"></a>Afhankelijkheidsinjectie
 
-Het invoegen van afhankelijkheden is vereenvoudigd, vergeleken met .NET-klassen bibliotheken. In plaats van een opstart klasse te maken voor het registreren van services, hoeft u alleen `ConfigureServices` op de host Builder aan te roepen en de uitbreidings methoden te gebruiken voor het [`IServiceCollection`](/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection?view=dotnet-plat-ext-5.0&preserve-view=true) injecteren van specifieke services. 
+Het invoegen van afhankelijkheden is vereenvoudigd, vergeleken met .NET-klassen bibliotheken. In plaats van een opstart klasse te maken om services te registreren, moet u [ConfigureServices] op de host Builder aanroepen en de uitbreidings methoden op [IServiceCollection] gebruiken voor het injecteren van specifieke services. 
 
 In het volgende voor beeld wordt een singleton-service afhankelijkheid geïnjecteerd:  
  
@@ -106,21 +105,23 @@ In het volgende voor beeld wordt een singleton-service afhankelijkheid geïnject
 
 Zie [afhankelijkheids injectie in ASP.net core](/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-5.0&preserve-view=true)voor meer informatie.
 
-<!--### Middleware
+### <a name="middleware"></a>Middleware
 
-.NET isolated also supports middleware registration, again by using a model similar to what exists in ASP.NET. This model gives you the ability to inject logic into the invocation pipeline, and before and after functions execute.
+.NET geïsoleerd ondersteunt ook middleware-registratie, met behulp van een model dat lijkt op wat er in ASP.NET is. Dit model biedt u de mogelijkheid om logica in te voeren in de aanroep pijplijn en vóór en na de uitvoering van de functies.
 
-While the full middleware registration set of APIs is not yet exposed, we do support middleware registration and have added an example to the sample application under the Middleware folder.
+De extensie methode [ConfigureFunctionsWorkerDefaults] heeft een overbelasting waarmee u uw eigen middleware kunt registreren, zoals u in het volgende voor beeld ziet.  
 
-:::code language="csharp" source="~/azure-functions-dotnet-worker/samples/FunctionApp/Program.cs" id="docsnippet_middleware" :::-->
+:::code language="csharp" source="~/azure-functions-dotnet-worker/samples/CustomMiddleware/Program.cs" id="docsnippet_middleware_register" :::
+
+Voor een vollediger voor beeld van het gebruik van aangepaste middleware in uw functie-app raadpleegt u het voor beeld van een [aangepaste middleware-referentie](https://github.com/Azure/azure-functions-dotnet-worker/blob/main/samples/CustomMiddleware).
 
 ## <a name="execution-context"></a>Context voor uitvoering
 
-Met .NET geïsoleerd wordt een object door gegeven `FunctionContext` aan uw functie methoden. Met dit object kunt u een [`ILogger`](/dotnet/api/microsoft.extensions.logging.ilogger?view=dotnet-plat-ext-5.0&preserve-view=true) instantie ophalen voor het schrijven naar de logboeken door de methode aan te roepen `GetLogger` en een teken reeks op te geven `categoryName` . Zie [logboek registratie](#logging)voor meer informatie. 
+Met .NET geïsoleerd wordt een [FunctionContext] -object door gegeven aan uw functie methoden. Met dit object kunt u een [ILogger] -exemplaar ophalen om naar de logboeken te schrijven door de [GetLogger] -methode aan te roepen en een teken reeks op te geven `categoryName` . Zie [logboek registratie](#logging)voor meer informatie. 
 
 ## <a name="bindings"></a>Bindingen 
 
-Bindingen worden gedefinieerd door gebruik te maken van kenmerken voor methoden, para meters en retour typen. Een functie methode is een methode met `Function` en een trigger kenmerk dat wordt toegepast op een invoer parameter, zoals wordt weer gegeven in het volgende voor beeld:
+Bindingen worden gedefinieerd door gebruik te maken van kenmerken voor methoden, para meters en retour typen. Een functie methode is een methode met een `Function` kenmerk en een trigger kenmerk dat wordt toegepast op een invoer parameter, zoals wordt weer gegeven in het volgende voor beeld:
 
 :::code language="csharp" source="~/azure-functions-dotnet-worker/samples/Extensions/Queue/QueueFunction.cs" id="docsnippet_queue_trigger" :::
 
@@ -128,9 +129,11 @@ Het trigger kenmerk geeft het trigger type aan en bindt invoer gegevens aan een 
 
 Het `Function` kenmerk markeert de methode als een functie-ingangs punt. De naam moet uniek zijn binnen een project, beginnen met een letter en mag alleen letters, cijfers, `_` en `-` tot 127 tekens lang zijn. Project sjablonen maken vaak een methode met `Run` de naam, maar de naam van de methode kan elke geldige naam van een C#-methode zijn.
 
-Omdat .NET geïsoleerde projecten worden uitgevoerd in een afzonderlijk werk proces, kunnen bindingen geen gebruik maken van geavanceerde binding klassen, zoals `ICollector<T>` , `IAsyncCollector<T>` en `CloudBlockBlob` . Er is ook geen rechtstreekse ondersteuning voor typen die zijn overgenomen van onderliggende service-Sdk's, zoals [DocumentClient](/dotnet/api/microsoft.azure.documents.client.documentclient) en [BrokeredMessage](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage). In plaats daarvan zijn bindingen afhankelijk van teken reeksen, matrices en serialiseerbare typen, zoals gewone oude klassen objecten (POCOs). 
+Omdat .NET geïsoleerde projecten worden uitgevoerd in een afzonderlijk werk proces, kunnen bindingen geen gebruik maken van geavanceerde binding klassen, zoals `ICollector<T>` , `IAsyncCollector<T>` en `CloudBlockBlob` . Er is ook geen rechtstreekse ondersteuning voor typen die zijn overgenomen van onderliggende service-Sdk's, zoals [DocumentClient] en [BrokeredMessage]. In plaats daarvan zijn bindingen afhankelijk van teken reeksen, matrices en serialiseerbare typen, zoals gewone oude klassen objecten (POCOs). 
 
-Voor HTTP-triggers moet u gebruiken `HttpRequestData` `HttpResponseData` om toegang te krijgen tot de aanvraag-en antwoord gegevens. Dit is omdat u geen toegang hebt tot de oorspronkelijke HTTP-aanvraag-en antwoord objecten wanneer u out-of-process uitvoert. 
+Voor HTTP-triggers moet u [HttpRequestData] en [HttpResponseData] gebruiken om toegang te krijgen tot de aanvraag-en antwoord gegevens. Dit is omdat u geen toegang hebt tot de oorspronkelijke HTTP-aanvraag-en antwoord objecten wanneer u out-of-process uitvoert.
+
+Zie voor een volledige set met referentie voorbeelden voor het gebruik van triggers en bindingen wanneer u out-of-process uitvoert het [referentie voorbeeld voor bindings extensies](https://github.com/Azure/azure-functions-dotnet-worker/blob/main/samples/Extensions). 
 
 ### <a name="input-bindings"></a>Invoerbindingen
 
@@ -146,13 +149,13 @@ Als u naar een uitvoer binding wilt schrijven, moet u een uitvoer binding kenmer
 
 De gegevens die naar een uitvoer binding worden geschreven, zijn altijd de retour waarde van de functie. Als u naar meer dan één uitvoer binding wilt schrijven, moet u een aangepast retour type maken. Voor dit retour type moet het bindings kenmerk output worden toegepast op een of meer eigenschappen van de klasse. In het volgende voor beeld wordt naar zowel een HTTP-antwoord als een wachtrij-uitvoer binding geschreven:
 
-:::code language="csharp" source="~/azure-functions-dotnet-worker/samples/FunctionApp/Function1/Function1.cs" id="docsnippet_multiple_outputs":::
+:::code language="csharp" source="~/azure-functions-dotnet-worker/samples/Extensions/MultiOutput/MultiOutput.cs" id="docsnippet_multiple_outputs":::
 
 ### <a name="http-trigger"></a>HTTP-trigger
 
-HTTP-triggers vertaalt het binnenkomende HTTP-aanvraag bericht naar een `HttpRequestData` object dat wordt door gegeven aan de functie. Dit object bevat gegevens uit de aanvraag, inclusief `Headers` , `Cookies` , `Identities` , `URL` en optioneel een bericht `Body` . Dit object is een representatie van het HTTP-aanvraag object en niet de aanvraag zelf. 
+Met HTTP-triggers wordt het binnenkomende HTTP-aanvraag bericht omgezet in een [HttpRequestData] -object dat wordt door gegeven aan de functie. Dit object bevat gegevens uit de aanvraag, inclusief `Headers` , `Cookies` , `Identities` , `URL` en optioneel een bericht `Body` . Dit object is een representatie van het HTTP-aanvraag object en niet de aanvraag zelf. 
 
-Op dezelfde manier retourneert de functie een `HttpReponseData` object, dat gegevens bevat die worden gebruikt om het HTTP-antwoord te maken, inclusief bericht `StatusCode` , `Headers` en optioneel een bericht `Body` .  
+Op dezelfde manier retourneert de functie een object [HttpReponseData], dat gegevens bevat die worden gebruikt voor het maken van het HTTP-antwoord, inclusief bericht `StatusCode` , `Headers` en optioneel een bericht `Body` .  
 
 De volgende code is een HTTP-trigger 
 
@@ -160,15 +163,15 @@ De volgende code is een HTTP-trigger
 
 ## <a name="logging"></a>Logboekregistratie
 
-In .NET geïsoleerd kunt u naar Logboeken schrijven met behulp [`ILogger`](/dotnet/api/microsoft.extensions.logging.ilogger?view=dotnet-plat-ext-5.0&preserve-view=true) van een exemplaar dat is verkregen van een `FunctionContext` object dat aan uw functie is door gegeven. Roep de `GetLogger` methode aan, waarbij een teken reeks waarde wordt door gegeven die de naam is van de categorie waarin de logboeken worden geschreven. De categorie is doorgaans de naam van de specifieke functie van waaruit de logboeken worden geschreven. Zie het [artikel bewaking](functions-monitoring.md#log-levels-and-categories)voor meer informatie over categorieën. 
+In .NET geïsoleerd kunt u naar Logboeken schrijven met behulp van een [ILogger] -exemplaar dat is verkregen van een [FunctionContext] -object dat is door gegeven aan de functie. Roep de methode [GetLogger] aan, waarbij een teken reeks waarde wordt door gegeven die de naam is van de categorie waarin de logboeken worden geschreven. De categorie is doorgaans de naam van de specifieke functie van waaruit de logboeken worden geschreven. Zie het [artikel bewaking](functions-monitoring.md#log-levels-and-categories)voor meer informatie over categorieën. 
 
-In het volgende voor beeld ziet u hoe u `ILogger` in een-functie Logboeken kunt ophalen en opslaan:
+In het volgende voor beeld ziet u hoe u een [ILogger] -en schrijf Logboeken in een functie kunt ophalen:
 
 :::code language="csharp" source="~/azure-functions-dotnet-worker/samples/Extensions/Http/HttpFunction.cs" id="docsnippet_logging" ::: 
 
-Gebruik verschillende methoden `ILogger` om verschillende logboek niveaus te schrijven, zoals `LogWarning` of `LogError` . Zie het [artikel bewaking](functions-monitoring.md#log-levels-and-categories)voor meer informatie over logboek niveaus.
+Gebruik verschillende methoden van [ILogger] om verschillende logboek niveaus te schrijven, zoals `LogWarning` of `LogError` . Zie het [artikel bewaking](functions-monitoring.md#log-levels-and-categories)voor meer informatie over logboek niveaus.
 
-Er [`ILogger`](/dotnet/api/microsoft.extensions.logging.ilogger?view=dotnet-plat-ext-5.0&preserve-view=true) wordt ook een gegeven bij het gebruik van [afhankelijkheids injectie](#dependency-injection).
+Er wordt ook een [ILogger] gegeven bij het gebruik van [afhankelijkheids injectie](#dependency-injection).
 
 ## <a name="differences-with-net-class-library-functions"></a>Verschillen met de functies van de .NET-klassen bibliotheek
 
@@ -178,13 +181,13 @@ In deze sectie worden de huidige status van de functionele en gedrags verschille
 | ---- | ---- | ---- |
 | .NET-versies | LTS (.NET Core 3,1) | Huidige (.NET 5,0) |
 | Kern pakketten | [Micro soft. NET. SDK. functions](https://www.nuget.org/packages/Microsoft.NET.Sdk.Functions/) | [Micro soft. Azure. functions. worker](https://www.nuget.org/packages/Microsoft.Azure.Functions.Worker/)<br/>[Micro soft. Azure. functions. Worker. SDK](https://www.nuget.org/packages/Microsoft.Azure.Functions.Worker.Sdk) | 
-| Bindings extensie pakketten | [`Microsoft.Azure.WebJobs.Extensions.*`](https://www.nuget.org/packages?q=Microsoft.Azure.WebJobs.Extensions)  | Onder [`Microsoft.Azure.Functions.Worker.Extensions.*`](https://www.nuget.org/packages?q=Microsoft.Azure.Functions.Worker.Extensions) | 
-| Logboekregistratie | [`ILogger`](/dotnet/api/microsoft.extensions.logging.ilogger?view=dotnet-plat-ext-5.0&preserve-view=true) door gegeven aan de functie | [`ILogger`](/dotnet/api/microsoft.extensions.logging.ilogger?view=dotnet-plat-ext-5.0&preserve-view=true) verkregen van `FunctionContext` |
+| Bindings extensie pakketten | [Micro soft. Azure. webjobs. Extensions. *](https://www.nuget.org/packages?q=Microsoft.Azure.WebJobs.Extensions)  | Onder [micro soft. Azure. functions. Worker. Extensions. *](https://www.nuget.org/packages?q=Microsoft.Azure.Functions.Worker.Extensions) | 
+| Logboekregistratie | [ILogger] door gegeven aan de functie | [ILogger] verkregen van [FunctionContext] |
 | Annulerings tokens | [Ondersteund](functions-dotnet-class-library.md#cancellation-tokens) | Niet ondersteund |
 | Uitvoerbindingen | Out-para meters | Retourwaarden |
-| Typen uitvoerbindingen |  `IAsyncCollector`, [DocumentClient](/dotnet/api/microsoft.azure.documents.client.documentclient?view=azure-dotnet&preserve-view=true), [BrokeredMessage](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage?view=azure-dotnet&preserve-view=true)en andere client-specifieke typen | Eenvoudige typen, JSON Serializable-typen en arrays. |
+| Typen uitvoerbindingen |  `IAsyncCollector`, [DocumentClient], [BrokeredMessage]en andere client-specifieke typen | Eenvoudige typen, JSON Serializable-typen en arrays. |
 | Meerdere uitvoer bindingen | Ondersteund | [Ondersteund](#multiple-output-bindings) |
-| HTTP-trigger | [`HttpRequest`](/dotnet/api/microsoft.aspnetcore.http.httprequest?view=aspnetcore-5.0&preserve-view=true)/[`ObjectResult`](/dotnet/api/microsoft.aspnetcore.mvc.objectresult?view=aspnetcore-5.0&preserve-view=true) | `HttpRequestData`/`HttpResponseData` |
+| HTTP-trigger | [HttpRequest] / [ObjectResult] | [HttpRequestData] / [HttpResponseData] |
 | Durable Functions | [Ondersteund](durable/durable-functions-overview.md) | Niet ondersteund | 
 | Verplichte bindingen | [Ondersteund](functions-dotnet-class-library.md#binding-at-runtime) | Niet ondersteund |
 | function.jsop artefact | Gegenereerd | Niet gegenereerd |
@@ -202,3 +205,21 @@ Zie [Deze pagina met bekende problemen](https://aka.ms/AAbh18e)voor meer informa
 
 + [Meer informatie over triggers en bindingen](functions-triggers-bindings.md)
 + [Meer informatie over Best Practices for Azure Functions](functions-best-practices.md)
+
+
+[HostBuilder]: /dotnet/api/microsoft.extensions.hosting.hostbuilder?view=dotnet-plat-ext-5.0&preserve-view=true
+[IHost]: /dotnet/api/microsoft.extensions.hosting.ihost?view=dotnet-plat-ext-5.0&preserve-view=true
+[ConfigureFunctionsWorkerDefaults]: /dotnet/api/microsoft.extensions.hosting.workerhostbuilderextensions.configurefunctionsworkerdefaults?view=azure-dotnet&preserve-view=true#Microsoft_Extensions_Hosting_WorkerHostBuilderExtensions_ConfigureFunctionsWorkerDefaults_Microsoft_Extensions_Hosting_IHostBuilder_
+[ConfigureAppConfiguration]: /dotnet/api/microsoft.extensions.hosting.hostbuilder.configureappconfiguration?view=dotnet-plat-ext-5.0&preserve-view=true
+[IServiceCollection]: /dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection?view=dotnet-plat-ext-5.0&preserve-view=true
+[ConfigureServices]: /dotnet/api/microsoft.extensions.hosting.hostbuilder.configureservices?view=dotnet-plat-ext-5.0&preserve-view=true
+[FunctionContext]: /dotnet/api/microsoft.azure.functions.worker.functioncontext?view=azure-dotnet&preserve-view=true
+[ILogger]: /dotnet/api/microsoft.extensions.logging.ilogger?view=dotnet-plat-ext-5.0&preserve-view=true
+[GetLogger]: /dotnet/api/microsoft.azure.functions.worker.functioncontextloggerextensions.getlogger?view=azure-dotnet&preserve-view=true
+[DocumentClient]: /dotnet/api/microsoft.azure.documents.client.documentclient
+[BrokeredMessage]: /dotnet/api/microsoft.servicebus.messaging.brokeredmessage
+[HttpRequestData]: /dotnet/api/microsoft.azure.functions.worker.http.httprequestdata?view=azure-dotnet&preserve-view=true
+[HttpResponseData]: /dotnet/api/microsoft.azure.functions.worker.http.httpresponsedata?view=azure-dotnet&preserve-view=true
+[HttpRequest]: /dotnet/api/microsoft.aspnetcore.http.httprequest?view=aspnetcore-5.0&preserve-view=true
+[ObjectResult]: /dotnet/api/microsoft.aspnetcore.mvc.objectresult?view=aspnetcore-5.0&preserve-view=true
+[JsonSerializerOptions]: /api/system.text.json.jsonserializeroptions?view=net-5.0&preserve-view=true

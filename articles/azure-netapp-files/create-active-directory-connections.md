@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 02/16/2021
+ms.date: 03/01/2021
 ms.author: b-juche
-ms.openlocfilehash: 44959b2f60f9aafd7d9430c9c19baea72344293f
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: ccc88cabfa81e2d911546fae776f581885ed8fa6
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102183876"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104801248"
 ---
 # <a name="create-and-manage-active-directory-connections-for-azure-netapp-files"></a>Active Directory verbindingen voor Azure NetApp Files maken en beheren
 
@@ -206,6 +206,18 @@ Deze instelling wordt geconfigureerd in de **Active Directory verbindingen** ond
         ```
         
         U kunt ook [Azure cli-opdrachten](/cli/azure/feature) gebruiken `az feature register` `az feature show` om de functie te registreren en de registratie status weer te geven. 
+
+     * **Gebruikers van beveiligings bevoegdheden**   <!-- SMB CA share feature -->   
+        U kunt beveiligings bevoegdheden ( `SeSecurityPrivilege` ) verlenen aan gebruikers die verhoogde bevoegdheden nodig hebben voor toegang tot de Azure NetApp files volumes. Met de opgegeven gebruikers accounts kunnen bepaalde acties worden uitgevoerd op Azure NetApp Files SMB-shares waarvoor een beveiligings bevoegdheid is vereist die niet standaard aan domein gebruikers is toegewezen.   
+
+        Gebruikers accounts die worden gebruikt voor het installeren van SQL Server in bepaalde scenario's, moeten bijvoorbeeld verhoogde beveiligings bevoegdheden krijgen. Als u een niet-beheerders account (domein) gebruikt om SQL Server te installeren en aan het account geen beveiligings bevoegdheid is toegewezen, moet u beveiligings bevoegdheid toevoegen aan het account.  
+
+        > [!IMPORTANT]
+        > Het domein account dat wordt gebruikt voor het installeren van SQL Server moet al bestaan voordat u het toevoegt aan het veld **gebruikers met beveiligings bevoegdheden** . Wanneer u het account van de SQL Server Installer toevoegt aan gebruikers van de **beveiligings bevoegdheid**, kan de Azure NetApp files-service het account valideren door contact op te nemen met de domein controller. De opdracht kan mislukken als er geen verbinding kan worden gemaakt met de domein controller.  
+
+        `SeSecurityPrivilege`Zie [SQL Server-installatie mislukt als het installatie account geen bepaalde gebruikers rechten heeft](/troubleshoot/sql/install/installation-fails-if-remove-user-right), voor meer informatie over en SQL Server.
+
+        ![Scherm opname van het vak gebruikers van beveiligings bevoegdheden van Active Directory venster verbindingen.](../media/azure-netapp-files/security-privilege-users.png) 
 
      * **Back-upbeleid gebruikers**  
         U kunt aanvullende accounts toevoegen waarvoor verhoogde bevoegdheden zijn vereist voor het computer account dat is gemaakt voor gebruik met Azure NetApp Files. Met de opgegeven accounts kunnen de NTFS-machtigingen op bestands- of mapniveau worden gewijzigd. U kunt bijvoorbeeld een niet-gemachtigd serviceaccount opgeven dat wordt gebruikt voor het migreren van gegevens naar een SMB-bestandsshare in Azure NetApp Files.  

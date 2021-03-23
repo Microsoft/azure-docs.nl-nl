@@ -8,12 +8,12 @@ ms.topic: reference
 ms.date: 11/20/2018
 author: sakash279
 ms.author: akshanka
-ms.openlocfilehash: f9487ac1b5d550380d7cff6196d3f5b99e6b61d4
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 1b33892c0d37cc173fb88fc7e304ef6e48c0af57
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104595563"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104802944"
 ---
 # <a name="azure-cosmos-db-table-api-sdk-for-python-release-notes-and-resources"></a>Azure Cosmos DB Table-API SDK voor python: release opmerkingen en bronnen
 [!INCLUDE[appliesto-table-api](includes/appliesto-table-api.md)]
@@ -32,13 +32,13 @@ ms.locfileid: "104595563"
 |**API-documentatie**|[Naslag documentatie voor python API](/python/api/overview/azure/cosmosdb)|
 |**SDK-installatie-instructies**|[Installatie-instructies voor python SDK](https://github.com/Azure/azure-cosmosdb-python/tree/master/azure-cosmosdb-table)|
 |**Bijdragen aan SDK**|[GitHub](https://github.com/Azure/azure-cosmosdb-python/tree/master/azure-cosmosdb-table)|
-|**Huidig ondersteund platform**|[Python 2,7](https://www.python.org/downloads/) of [python 3,3, 3,4, 3,5 of 3,6](https://www.python.org/downloads/)|
+|**Huidig ondersteund platform**|[Python 2,7](https://www.python.org/downloads/) of [python 3.6 +](https://www.python.org/downloads/)|
 
 > [!IMPORTANT]
 > Als u tijdens de preview een tabel-API-account hebt gemaakt, moet u een [nieuw tabel-API-account](create-table-dotnet.md#create-a-database-account) maken om te kunnen werken met de algemeen beschikbare SDK’s voor tabel-API's.
 >
 
-## <a name="release-notes"></a>Releaseopmerkingen
+## <a name="release-notes"></a>Opmerkingen bij de release
 
 ### <a name="100"></a><a name="1.0.0"></a>1.0.0
 * Release van algemene Beschik baarheid

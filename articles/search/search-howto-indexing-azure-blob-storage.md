@@ -7,18 +7,20 @@ author: MarkHeff
 ms.author: maheff
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 02/03/2021
+ms.date: 03/22/2021
 ms.custom: contperf-fy21q3
-ms.openlocfilehash: 74813fabec4d5fe43cd158bb4aa359c2a3b0188a
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 6f70ae726cf41395e46760dc5cf7da5b4d61478a
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "99988720"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104802893"
 ---
 # <a name="how-to-configure-blob-indexing-in-cognitive-search"></a>BLOB-indexering configureren in Cognitive Search
 
-Dit artikel laat u zien hoe u een BLOB-Indexeer functie kunt configureren voor het indexeren van tekst documenten (zoals Pdf's, Microsoft Office documenten en andere) in azure Cognitive Search. Als u niet bekend bent met indexerings concepten, start u met [Indexeer functies in Azure Cognitive Search](search-indexer-overview.md) en [maakt u een zoek Indexeer functie](search-howto-create-indexers.md) voordat u de BLOB-indexeert.
+Een BLOB-Indexeer functie wordt gebruikt voor het opnemen van inhoud van Azure Blob-opslag in een Cognitive Search-index. BLOB-Indexeer functies worden vaak gebruikt in [AI-verrijking](cognitive-search-concept-intro.md), waarbij een bijgevoegde [vaardig heden](cognitive-search-working-with-skillsets.md) installatie kopie en natuurlijke taal verwerking toevoegt om Doorzoek bare inhoud te maken. U kunt ook BLOB-Indexeer functies zonder AI-verrijking gebruiken om inhoud op te nemen van documenten op basis van tekst, zoals Pdf's, Microsoft Office documenten en bestands indelingen.
+
+Dit artikel laat u zien hoe u een BLOB-Indexeer functie kunt configureren voor beide scenario's. Als u niet bekend bent met indexerings concepten, start u met [Indexeer functies in Azure Cognitive Search](search-indexer-overview.md) en [maakt u een zoek Indexeer functie](search-howto-create-indexers.md) voordat u de BLOB-indexeert.
 
 <a name="SupportedFormats"></a>
 
@@ -30,7 +32,7 @@ De Azure Cognitive Search BLOB-Indexeer functie kan tekst uit de volgende docume
 
 ## <a name="data-source-definitions"></a>Definities van gegevens bronnen
 
-Het verschil tussen een BLOB-indexer en een andere Indexeer functie is de definitie van de gegevens bron die is toegewezen aan de Indexeer functie. De gegevens bron heeft alle eigenschappen ingekapseld waarmee het type, de verbinding en de locatie van de inhoud die moet worden geïndexeerd, worden opgegeven.
+Het belangrijkste verschil tussen een BLOB-indexer en een andere Indexeer functie is de definitie van de gegevens bron die is toegewezen aan de Indexeer functie. In de definitie van de gegevens bron geeft u het type gegevens bron op (' type ': ' azureblob '), evenals andere eigenschappen voor verificatie en verbinding met de inhoud die moet worden geïndexeerd.
 
 De definitie van een BLOB-gegevens bron ziet er ongeveer uit zoals in het voor beeld hieronder:
 
@@ -72,7 +74,7 @@ De SA'S moeten de lijst en lees machtigingen voor de container hebben. Zie [usin
 
 ## <a name="index-definitions"></a>Index definities
 
-De index specificeert de velden in een document, kenmerken en andere constructies die de zoek ervaring vormen. In het volgende voor beeld wordt een eenvoudige index gemaakt met behulp van de [Create Index (rest API)](/rest/api/searchservice/create-index). 
+De index specificeert de velden in een document, kenmerken en andere constructies die de zoek ervaring vormen. Voor alle Indexeer functies moet u een zoek index definitie opgeven als doel. In het volgende voor beeld wordt een eenvoudige index gemaakt met behulp van de [Create Index (rest API)](/rest/api/searchservice/create-index). 
 
 ```http
 POST https://[service name].search.windows.net/indexes?api-version=2020-06-30
@@ -90,7 +92,7 @@ api-key: [admin key]
 
 Voor index definities moet één veld in de `"fields"` verzameling worden toegepast als de document sleutel. Index definities moeten ook velden bevatten voor inhoud en meta gegevens.
 
-Er **`content`** wordt een veld gebruikt om de tekst op te slaan die is geëxtraheerd uit blobs. De definitie van dit veld kan er ongeveer uitzien als hierboven. U hoeft deze naam niet te gebruiken, maar u kunt wel gebruikmaken van impliciete veld toewijzingen. De BLOB-indexer kan blob-inhoud naar een veld EDM. String in de index verzenden, maar geen veld Toewijzingen vereist.
+Een **`content`** veld is gebruikelijk voor blob-inhoud. Het bevat de tekst die is geëxtraheerd uit blobs. De definitie van dit veld kan er ongeveer uitzien als hierboven. U hoeft deze naam niet te gebruiken, maar u kunt wel gebruikmaken van impliciete veld toewijzingen. De BLOB-indexer kan blob-inhoud naar een veld EDM. String in de index verzenden, zonder dat er veld Toewijzingen vereist zijn.
 
 U kunt ook velden toevoegen voor de BLOB-meta gegevens die u wilt in de index. De Indexeer functie kan aangepaste meta gegevens eigenschappen, [Standaard eigenschappen voor meta gegevens](#indexing-blob-metadata) en eigenschappen van [meta gegevens van inhoud](search-blob-metadata-properties.md) lezen. Zie [Create a index](search-what-is-an-index.md)(Engelstalig) voor meer informatie over indexen.
 

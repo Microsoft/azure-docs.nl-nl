@@ -39,30 +39,30 @@
           href: migrate-v2-to-v3.md
         - name: Uitspraak evalueren
           href: how-to-pronunciation-assessment.md
+        - name: Aanpassing
+          items:
+            - name: Wat is Custom Speech?
+              href: custom-speech-overview.md
+            - name: Een model testen met audiobestanden in Speech Studio
+              href: quickstarts/speech-studio-test-model.md
+            - name: Gegevens voorbereiden voor Custom Speech
+              href: how-to-custom-speech-test-and-train.md
+            - name: Custom Speech-gegevens controleren
+              href: how-to-custom-speech-inspect-data.md
+            - name: Nauwkeurigheid van Custom Speech beoordelen en verbeteren
+              href: how-to-custom-speech-evaluate-data.md
+            - name: Een Custom Speech-model trainen en implementeren
+              href: how-to-custom-speech-train-model.md
+            - name: CI/CD voor Custom Speech
+              href: how-to-custom-speech-continuous-integration-continuous-deployment.md
+            - name: door mensen gelabelde transcripties maken
+              href: how-to-custom-speech-human-labeled-transcriptions.md
+            - name: Levens cyclus van modellen en eind punten
+              href: how-to-custom-speech-model-and-endpoint-lifecycle.md
     - name: Zelfstudies
       items:
         - name: Nauwkeurigheid verbeteren met tenantmodellen
           href: tutorial-tenant-model.md
-    - name: Aanpassing
-      items:
-        - name: Wat is Custom Speech?
-          href: custom-speech-overview.md
-        - name: Een model testen met audiobestanden in Speech Studio
-          href: quickstarts/speech-studio-test-model.md
-        - name: Gegevens voorbereiden voor Custom Speech
-          href: how-to-custom-speech-test-and-train.md
-        - name: Custom Speech-gegevens controleren
-          href: how-to-custom-speech-inspect-data.md
-        - name: Nauwkeurigheid van Custom Speech beoordelen en verbeteren
-          href: how-to-custom-speech-evaluate-data.md
-        - name: Een Custom Speech-model trainen en implementeren
-          href: how-to-custom-speech-train-model.md
-        - name: CI/CD voor Custom Speech
-          href: how-to-custom-speech-continuous-integration-continuous-deployment.md
-        - name: door mensen gelabelde transcripties maken
-          href: how-to-custom-speech-human-labeled-transcriptions.md
-        - name: Levens cyclus van modellen en eind punten
-          href: how-to-custom-speech-model-and-endpoint-lifecycle.md
     - name: Naslaginformatie
       items:
         - name: C++
@@ -116,25 +116,25 @@
           href: long-audio-api.md
         - name: Gebeurtenissen voor gezichts pose ophalen voor lip-sync
           href: how-to-speech-synthesis-viseme.md
-    - name: Aanpassing
-      items:
-        - name: Custom Voice-portal
+        - name: Aanpassing
           items:
-            - name: Wat is aangepaste neurale Voice?
-              href: custom-neural-voice.md
-            - name: Aan de slag met Custom Voice
-              displayName: 'custom voice, neural voice'
-              href: how-to-custom-voice.md
-            - name: Gegevens voorbereiden
-              href: how-to-custom-voice-prepare-data.md
-            - name: Custom Voice-modellen maken en gebruiken
-              href: how-to-custom-voice-create-voice.md
-            - name: Spraakvoorbeelden opnemen
-              href: record-custom-voice-samples.md
-        - name: Audio-inhoud maken
-          items:
+            - name: Custom Voice-portal
+              items:
+                - name: Wat is aangepaste neurale Voice?
+                  href: custom-neural-voice.md
+                - name: Aan de slag met Custom Voice
+                  displayName: 'custom voice, neural voice'
+                  href: how-to-custom-voice.md
+                - name: Gegevens voorbereiden
+                  href: how-to-custom-voice-prepare-data.md
+                - name: Custom Voice-modellen maken en gebruiken
+                  href: how-to-custom-voice-create-voice.md
+                - name: Spraakvoorbeelden opnemen
+                  href: record-custom-voice-samples.md
             - name: Audio-inhoud maken
-              href: how-to-audio-content-creation.md
+              items:
+                - name: Audio-inhoud maken
+                  href: how-to-audio-content-creation.md
     - name: Verantwoordelijk gebruik van AI
       items:
         - name: Aangepaste Neural-stem

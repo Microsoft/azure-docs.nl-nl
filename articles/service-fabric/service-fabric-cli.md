@@ -5,12 +5,12 @@ author: jeffj6123
 ms.topic: conceptual
 ms.date: 5/19/2020
 ms.author: jejarry
-ms.openlocfilehash: b3714f8401def9bed68e4b0845d025734a480cb3
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: a1b0598f34fe894e078dc647149cff4ac74e1fea
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "83681795"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104802145"
 ---
 # <a name="azure-service-fabric-cli"></a>Azure Service Fabric-CLI
 
@@ -22,7 +22,7 @@ De opdrachtregelinterface (CLI) van Azure Service Fabric is een opdrachtregelpro
 
 Voorafgaand aan de installatie controleert u of zowel Python als pip is geïnstalleerd in uw omgeving. Zie de [Quick Start-documentatie voor pip](https://pip.pypa.io/en/latest/quickstart/) en de officiële [installatiedocumentatie voor python](https://wiki.python.org/moin/BeginnersGuide/Download) voor meer informatie.
 
-De CLI ondersteunt python-versies 2,7, 3,5, 3,6 en 3,7. Python 3. x is de aanbevolen versie, omdat python 2,7 binnenkort aan het einde van de ondersteuning wordt bereikt.
+De CLI ondersteunt python-versies 2,7 en 3.6 +, met python 3. x aanbevolen.
 
 ### <a name="service-fabric-target-runtime"></a>Service Fabric-doelruntime
 

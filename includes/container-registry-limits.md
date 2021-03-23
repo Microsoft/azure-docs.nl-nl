@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 06/18/2020
 ms.author: danlep
 ms.custom: include file
-ms.openlocfilehash: 089b1b6f1af2f19c16866858324bde2e151e8bdb
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: b4701260a7d8da030f9f3019060aaa83e7a3a483
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98052885"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104803382"
 ---
 | Resource | Basic | Standard | Premium |
 |---|---|---|---|
@@ -30,6 +30,7 @@ ms.locfileid: "98052885"
 | Inhoud vertrouwen | N.v.t. | N.v.t. | [Ondersteund][content-trust] |
 | Privékoppeling met privé-eindpunten | N.v.t. | N.v.t. | [Ondersteund][plink] |
 | &bull; Privé-eindpunten | N.v.t. | N.v.t. | 10 |
+| Open bare IP-netwerk regels | N.v.t. | N.v.t. | 100 |
 | VNet-toegang voor service-eindpunt | N.v.t. | N.v.t. | [Preview][vnet] |
 | Door klant beheerde sleutels | N.v.t. | N.v.t. | [Ondersteund][cmk] |
 | Machtigingen voor opslagplaatsen | N.v.t. | N.v.t. | [Preview][token]|

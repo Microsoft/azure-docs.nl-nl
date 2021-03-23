@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/05/2021
 ms.author: jeedes
-ms.openlocfilehash: e390eb62f64c9ec55605525828790f15633e5f14
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 842ab27fe02501efbbc6c06c3d36d2218c3c17b9
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104589511"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104799238"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-aws-single-account-access"></a>Zelf studie: Azure Active Directory-integratie met eenmalige aanmelding (SSO) met AWS Single-Account toegang
 
@@ -73,6 +73,9 @@ U hebt het volgende nodig om aan de slag te gaan:
 
 * Een Azure AD-abonnement Als u geen abonnement hebt, kunt u een [gratis account](https://azure.microsoft.com/free/) krijgen.
 * Een AWS-abonnement dat geschikt is voor eenmalige aanmelding.
+
+> [!Note]
+> Rollen mogen niet hand matig worden bewerkt in azure AD bij het importeren van rollen.
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 

@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: how-to
 ms.date: 03/11/2021
 ms.author: v-erkel
-ms.openlocfilehash: f45d5710f6feb8af2347ca298e07e8a4870d3d4f
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 5427389f007b7598274d35425a9b3e8e10a63e49
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103470456"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104798524"
 ---
 # <a name="set-up-the-aggregated-namespace"></a>De geaggregeerde naam ruimte instellen
 
@@ -30,6 +30,8 @@ U kunt de tabel kolommen sorteren om beter inzicht te krijgen in de geaggregeerd
 ## <a name="add-or-edit-namespace-paths"></a>Naam ruimte paden toevoegen of bewerken
 
 U moet ten minste één pad naar de naam ruimte maken voordat clients toegang hebben tot het opslag doel. (Lees [de Azure HPC-cache koppelen](hpc-cache-mount.md) voor meer informatie over client toegang.)
+
+Als u onlangs een opslag doel hebt toegevoegd of een toegangs beleid hebt aangepast, kan het een paar minuten duren voordat u een pad naar een naam ruimte kunt maken.
 
 ### <a name="blob-namespace-paths"></a>Paden voor BLOB-naam ruimten
 

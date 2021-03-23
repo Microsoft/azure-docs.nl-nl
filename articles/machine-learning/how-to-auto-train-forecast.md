@@ -10,12 +10,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to, contperf-fy21q1, automl
 ms.date: 08/20/2020
-ms.openlocfilehash: 66fa56b45e8d3cff7a8ace300a450b9c41df9bc0
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 161d565aa1d2dd08434ebd8ea155ac5a92e09ac0
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104588712"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104802910"
 ---
 # <a name="auto-train-a-time-series-forecast-model"></a>Automatisch een time-series-prognose model trainen
 
@@ -128,11 +128,11 @@ Automatische machine learning probeert automatisch verschillende modellen en alg
 >[!Tip]
 > Traditionele regressie modellen worden ook getest als onderdeel van het aanbevelings systeem voor het voors pellen van experimenten. Zie de [tabel ondersteunde](how-to-configure-auto-train.md#supported-models) modellen voor de volledige lijst met modellen. 
 
-Modellen| Description | Voordelen
+Modellen| Beschrijving | Voordelen
 ----|----|---
 Prophet (preview-versie)|Prophet werkt het beste met een tijd reeks met krachtige seizoensgebonden effecten en verschillende seizoenen historische gegevens. Als u gebruik wilt maken van dit model, installeert u het lokaal met `pip install fbprophet` . | Nauw keurige & snelle, robuuste uitbijters, ontbrekende gegevens en dramatische wijzigingen in uw tijd reeks.
 Automatische ARIMA (preview-versie)|Automatisch herlopend, geïntegreerd zwevend gemiddelde (ARIMA) wordt het beste uitgevoerd wanneer de gegevens stationair zijn. Dit betekent dat de statistische eigenschappen, zoals het gemiddelde en de variantie, constant zijn in de hele set. Als u bijvoorbeeld een munten spiegelt, is de kans dat u koppen krijgt, 50%, ongeacht of u vandaag, morgen of volgend jaar spiegelt.| Ideaal voor univariate-Series, aangezien de vorige waarden worden gebruikt om de toekomstige waarden te voors pellen.
-ForecastTCN (preview-versie)| ForecastTCN is een Neural-netwerk model dat is ontworpen om de meest veeleisende prognose taken uit te voeren, waarbij niet-lineaire lokale en wereld wijde trends in uw gegevens worden vastgelegd, evenals relaties tussen tijd reeksen.|Kan gebruikmaken van complexe trends in uw gegevens en kan eenvoudig worden geschaald naar het grootste aantal gegevens sets.
+ForecastTCN (preview-versie)| ForecastTCN is een Neural-netwerk model dat is ontworpen om de meest veeleisende prognose taken uit te voeren. Er worden niet-lineaire lokale en mondiale trends in uw gegevens en relaties tussen tijd reeksen vastgelegd.|Kan gebruikmaken van complexe trends in uw gegevens en kan eenvoudig worden geschaald naar het grootste aantal gegevens sets.
 
 ### <a name="configuration-settings"></a>Configuratie-instellingen
 
@@ -146,11 +146,12 @@ De volgende tabel bevat een overzicht van deze aanvullende para meters. Zie de [
 |`forecast_horizon`|Hiermee definieert u hoeveel Peri Oden voorwaarts u wilt ramen. De horizon ligt in eenheden van de tijd reeks frequentie. Eenheden zijn gebaseerd op het tijds interval van uw trainings gegevens, bijvoorbeeld maandelijks, wekelijks dat de Forecaster moet voors pellen.|✓|
 |`enable_dnn`|[DNNs voor het maken van prognoses]().||
 |`time_series_id_column_names`|De kolom namen die worden gebruikt voor het uniek identificeren van de tijd reeks in gegevens die meerdere rijen met dezelfde tijds tempel hebben. Als er geen tijd reeks-id's zijn gedefinieerd, wordt ervan uitgegaan dat de gegevensset één keer wordt gebruikt. Zie de [energy_demand_notebook](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning/forecasting-energy-demand)voor meer informatie over één time-serie.||
-|`freq`| De frequentie van de time series-gegevensset. Deze para meter vertegenwoordigt de periode waarmee gebeurtenissen worden verwacht, zoals dagelijks, wekelijks, jaarlijks, enzovoort. De frequentie moet een alias met een [Panda-offset](https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#dateoffset-objects)zijn.||
+|`freq`| De frequentie van de time series-gegevensset. Deze para meter vertegenwoordigt de periode waarmee gebeurtenissen worden verwacht, zoals dagelijks, wekelijks, jaarlijks, enzovoort. De frequentie moet een alias met een [Panda-offset](https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#dateoffset-objects)zijn. Meer informatie over [Frequency]. (#frequency-doel-aggregatie van gegevens)||
 |`target_lags`|Het aantal rijen dat de doel waarden moeten worden vertraagd op basis van de frequentie van de gegevens. De vertraging wordt weer gegeven als een lijst of één geheel getal. Er moet een vertraging worden gebruikt wanneer de relatie tussen de onafhankelijke variabelen en de afhankelijke variabele standaard niet overeenkomt met of correleert. ||
 |`feature_lags`| De functies voor vertraging worden automatisch bepaald door automatische MILLILITERs wanneer `target_lags` ze zijn ingesteld en `feature_lags` ingesteld op `auto` . Het inschakelen van functie lags kan helpen de nauw keurigheid te verbeteren. Functie lags zijn standaard uitgeschakeld. ||
 |`target_rolling_window_size`|*n* historische Peri Oden die moeten worden gebruikt voor het genereren van prognose waarden, <= grootte van de Trainingsset. Als u dit weglaat, is *n* de volledige grootte van de Trainingsset. Geef deze para meter op als u alleen een bepaalde hoeveelheid geschiedenis wilt beschouwen bij het trainen van het model. Meer informatie over het [samen voegen van target-rollen](#target-rolling-window-aggregation).||
-|`short_series_handling_config`| Hiermee wordt het verwerken van korte tijd reeksen voor komen dat fouten tijdens de training mislukken vanwege onvoldoende gegevens. De verwerking van de korte serie is standaard ingesteld op `auto` . Meer informatie over [verwerking van de korte serie](#short-series-handling).|
+|`short_series_handling_config`| Hiermee wordt het verwerken van korte tijd reeksen voor komen dat fouten tijdens de training mislukken vanwege onvoldoende gegevens. De verwerking van de korte serie is standaard ingesteld op `auto` . Meer informatie over [verwerking van de korte serie](#short-series-handling).||
+|`target_aggregation_function`| De functie die moet worden gebruikt om de doel kolom van de tijd reeks samen te voegen, zodat deze voldoet aan de frequentie die is opgegeven via de `freq` para meter. De `freq` para meter moet worden ingesteld om de te kunnen gebruiken `target_aggregation_function` . De standaard instelling `None` is. voor de meeste scenario's `sum` is voldoende.<br> Meer informatie over de [aggregatie van doel kolommen](#frequency--target-data-aggregation). 
 
 
 De volgende code, 
@@ -174,7 +175,7 @@ forecasting_parameters = ForecastingParameters(time_column_name='day_datetime',
                                               
 ```
 
-Deze `forecasting_parameters` worden vervolgens door gegeven aan uw standaard `AutoMLConfig` object, samen met het `forecasting` taak type, de primaire metrische gegevens, afsluit criteria en trainings gegevens. 
+Deze `forecasting_parameters` worden vervolgens door gegeven aan uw standaard `AutoMLConfig` object, samen met het `forecasting` taak type, de primaire meet waarde, afsluit criteria en trainings gegevens. 
 
 ```python
 from azureml.core.workspace import Workspace
@@ -258,12 +259,36 @@ Zie [How to Customize parametrisatie in the Studio](how-to-use-automated-ml-for-
 
 Er zijn aanvullende optionele configuraties beschikbaar voor prognoses van taken, zoals het inschakelen van diep gaande lessen en het opgeven van een doel aggregatie voor een rolling venster. 
 
+### <a name="frequency--target-data-aggregation"></a>Frequentie & doel gegevens aggregatie
+
+Maakt gebruik van de frequentie, een `freq` para meter om storingen te voor komen die worden veroorzaakt door onregelmatige gegevens. Dit zijn gegevens die niet volgen op een set uitgebracht, zoals uur of dagelijks gegevens. 
+
+Voor zeer onregelmatige gegevens of voor verschillende bedrijfs behoeften kunnen gebruikers desgewenst de gewenste prognose frequentie instellen, `freq` en de `target_aggregation_function` doel kolom van de tijd reeks samen voegen. Met deze twee instellingen in uw `AutoMLConfig` object kunt u tijd besparen bij het voorbereiden van gegevens. 
+
+Wanneer de `target_aggregation_function` para meter wordt gebruikt,
+* De doel kolom waarden worden geaggregeerd op basis van de opgegeven bewerking. Normaal gesp roken `sum` is geschikt voor de meeste scenario's.
+
+* Numerieke Voorspellings kolommen in uw gegevens worden geaggregeerd met de som, gemiddelde, minimum waarde en de maximum waarde. Als gevolg hiervan genereren automatische ML nieuwe kolommen met een achtervoegsel voor de aggregatie functie naam en past de geselecteerde statistische bewerking toe. 
+
+* Voor Voorspellings kolommen van categorische worden de gegevens geaggregeerd met de modus, de meest prominente categorie in het venster.
+
+* Date-Voorspellings kolommen worden geaggregeerd met de minimum waarde, de maximum waarde en de modus. 
+
+Ondersteunde aggregatie bewerkingen voor doel kolom waarden zijn onder andere:
+
+|Functie | beschrijving
+|---|---
+|`sum`| Som van doel waarden
+|`mean`| Gemiddelde of gemiddelde van doel waarden
+|`min`| Minimum waarde van een doel  
+|`max`| Maximum waarde van een doel  
+
 ### <a name="enable-deep-learning"></a>Grondige training inschakelen
 
 > [!NOTE]
 > DNN-ondersteuning voor prognoses in geautomatiseerde Machine Learning is **een preview-versie** en wordt niet ondersteund voor lokale uitvoeringen.
 
-U kunt ook gebruikmaken van diep gaande lessen met diepe Neural netwerken, DNNs, om de scores van uw model te verbeteren. Met de grondige training van automatische ML kunt u Univariate-en multidimensionale tijdreeks gegevens voors pellen.
+U kunt ook diepere lessen Toep assen met diepe Neural netwerken, DNNs, om de scores van uw model te verbeteren. Met de grondige training van automatische ML kunt u Univariate-en multidimensionale tijdreeks gegevens voors pellen.
 
 Uitgebreide leer modellen hebben drie ingebouwde mogelijkheden:
 1. Ze kunnen leren van wille keurige toewijzingen van invoer naar uitvoer
@@ -283,10 +308,10 @@ automl_config = AutoMLConfig(task='forecasting',
 
 Als u DNN wilt inschakelen voor een AutoML-experiment dat is gemaakt in de Azure Machine Learning Studio, raadpleegt u de instellingen voor het [taak type in de Studio How-to](how-to-use-automated-ml-for-ml-models.md#create-and-run-experiment).
 
-Bekijk het voor beeld van de [drank productie prognose](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-beer-remote/auto-ml-forecasting-beer-remote.ipynb) voor een gedetailleerd code voorbeeld met DNNs.
+Bekijk het voor beeld van de [drank productie prognose](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-beer-remote/auto-ml-forecasting-beer-remote.ipynb) voor een gedetailleerd code voorbeeld met behulp van DNNs.
 
 ### <a name="target-rolling-window-aggregation"></a>Aggregatie van het doel venster
-De beste informatie die een Forecaster kan hebben, is vaak de recente waarde van het doel.  Met aggregaties voor het doel venster kunt u een roulerende aggregatie van gegevens waarden toevoegen als onderdelen. Het genereren en gebruiken van deze aanvullende functies als extra contextuele gegevens helpt de nauw keurigheid van het trein model.
+De beste informatie die een Forecaster kan hebben, is vaak de recente waarde van het doel.  Met aggregaties voor het doel venster kunt u een roulerende aggregatie van gegevens waarden toevoegen als onderdelen. Het genereren en gebruiken van deze functies als extra contextuele gegevens helpt de nauw keurigheid van het Train model.
 
 Stel bijvoorbeeld dat u energie vraag wilt voors pellen. Mogelijk wilt u een functie van een rolling venster van drie dagen toevoegen om rekening te laten gaan met thermische wijzigingen van verwarmde ruimten. In dit voor beeld maakt u dit venster op basis van `target_rolling_window_size= 3` de instelling in de `AutoMLConfig` constructor. 
 
@@ -294,11 +319,11 @@ In de tabel ziet u de resulterende functie techniek die zich voordoet wanneer de
 
 ![doorlopend venster voor doel](./media/how-to-auto-train-forecast/target-roll.svg)
 
-Bekijk een voor beeld van een python-code met behulp van de [samenvoeg functie van het doel venster](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-energy-demand/auto-ml-forecasting-energy-demand.ipynb).
+Bekijk een voor beeld van een python-code voor het Toep assen van de [samenvoeg functie van het doel venster](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-energy-demand/auto-ml-forecasting-energy-demand.ipynb).
 
 ### <a name="short-series-handling"></a>Verwerking van de korte serie
 
-Voor automatische ML wordt een tijd reeks in rekening gehouden met een **korte serie** als er onvoldoende gegevens punten zijn voor het uitvoeren van de trein-en validerings fasen van model ontwikkeling. Het aantal gegevens punten varieert voor elk experiment en is afhankelijk van de max_horizon, het aantal Kruistabel validaties en de lengte van het model lookback. Dit is het maximale aantal geschiedenis dat nodig is voor het bouwen van de functies van de tijd reeks. Raadpleeg de [documentatie over short_series_handling_configuration](/python/api/azureml-automl-core/azureml.automl.core.forecasting_parameters.forecastingparameters#short-series-handling-configuration)voor de exacte berekening.
+Voor automatische ML wordt een tijd reeks in rekening gehouden met een **korte serie** als er onvoldoende gegevens punten zijn voor het uitvoeren van de trein-en validerings fasen van model ontwikkeling. Het aantal gegevens punten varieert voor elk experiment en is afhankelijk van de max_horizon, het aantal Kruistabel validaties en de lengte van het model lookback. Dit is het maximale aantal geschiedenis dat nodig is voor het bouwen van de functies van de tijd reeks. Zie de [documentatie van short_series_handling_configuration-referentie](/python/api/azureml-automl-core/azureml.automl.core.forecasting_parameters.forecastingparameters#short-series-handling-configuration)voor de exacte berekening.
 
 Automatische ML biedt de verwerking van korte reeksen standaard met de `short_series_handling_configuration` para meter in het `ForecastingParameters` object. 
 

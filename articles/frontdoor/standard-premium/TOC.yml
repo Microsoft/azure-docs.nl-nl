@@ -6,7 +6,7 @@
       href: overview.md
     - name: Vergelijking van laag
       href: tier-comparison.md
-- name: Quickstarts
+- name: Snelstartgidsen
   expanded: true
   items:
     - name: Een voor deur standaard/Premium maken-Portal
@@ -63,6 +63,8 @@
       href: how-to-compression.md
     - name: Persoonlijke koppeling inschakelen
       items:
+        - name: Verbinding maken met een interne load balancer
+          href: how-to-enable-private-link-internal-load-balancer.md
         - name: Verbinding maken met een opslagaccount
           href: how-to-enable-private-link-storage-account.md
         - name: Verbinding maken met een web-app

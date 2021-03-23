@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 05/05/2020
+ms.date: 03/22/2021
 ms.author: tamram
 ms.reviewer: artek
 ms.subservice: common
-ms.openlocfilehash: f556c7acd903c108193f9c12a2849500645b119b
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 11d9b38d71d428a3c6c829b508318389338f5a15
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102506698"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104800343"
 ---
 # <a name="disaster-recovery-and-storage-account-failover"></a>Herstel na noodgeval en failover van opslagaccount
 
@@ -23,7 +23,7 @@ Micro soft streeft ernaar om ervoor te zorgen dat Azure-Services altijd beschikb
 
 Azure Storage ondersteunt de failover van accounts voor geo-redundante opslag accounts. Met account-failover kunt u het failover-proces voor uw opslag account initiëren als het primaire eind punt niet beschikbaar is. De failover werkt het secundaire eind punt bij om het primaire eind punt voor uw opslag account te worden. Zodra de failover is voltooid, kunnen clients naar het nieuwe primaire eind punt gaan schrijven.
 
-Accountfailover is beschikbaar voor de typen algemeen v1, algemeen v2, en Blob-opslagaccount met Azure Resource Manager-implementaties. Account-failover wordt ondersteund voor alle open bare regio's, maar is op dit moment niet beschikbaar in soevereine of nationale Clouds.
+Accountfailover is beschikbaar voor de typen algemeen v1, algemeen v2, en Blob-opslagaccount met Azure Resource Manager-implementaties. Account-failover wordt ondersteund voor alle open bare regio's, maar is op dit moment niet beschikbaar in soevereine of nationale Clouds. Failover van accounts wordt niet ondersteund voor opslag accounts waarvoor een hiërarchische naam ruimte is ingeschakeld.
 
 In dit artikel worden de concepten en het proces van een failover van een account beschreven en wordt uitgelegd hoe u uw opslag account voorbereidt voor herstel met de minste gevolgen voor de klant. Zie [een account-failover initiëren](storage-initiate-account-failover.md)voor meer informatie over het initiëren van een account-failover in de Azure portal of Power shell.
 
@@ -67,6 +67,8 @@ Micro soft raadt u ook aan uw toepassing te ontwerpen om de mogelijkheid van sch
 ## <a name="understand-the-account-failover-process"></a>Meer informatie over het proces van failover van accounts
 
 Door de klant beheerde account-failover stelt u in staat om uw hele opslag account te laten overgaan naar de secundaire regio als de primaire om een of andere reden niet beschikbaar is. Wanneer u een failover naar de secundaire regio afdwingt, kunnen clients beginnen met het schrijven van gegevens naar het secundaire eind punt nadat de failover is voltooid. De failover duurt doorgaans ongeveer een uur.
+
+[!INCLUDE [storage-data-lake-gen2-support](../../../includes/storage-data-lake-gen2-support.md)]
 
 ### <a name="how-an-account-failover-works"></a>Hoe een accountfailover werkt
 

@@ -10,12 +10,12 @@ ms.date: 03/05/2021
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: references_regions
-ms.openlocfilehash: f157b44e92289d0e9c5b88108550c144344c5206
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 54e703b096ea4e3572a6fc00aa6b7b2b99c4bcad
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102211138"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104800741"
 ---
 # <a name="soft-delete-for-containers-preview"></a>Voorlopig verwijderen voor containers (preview-versie)
 
@@ -35,6 +35,9 @@ Micro soft raadt u aan de volgende functies voor gegevens beveiliging in te scha
 Wanneer u de optie voor het voorlopig verwijderen van een container inschakelt, kunt u een Bewaar periode voor verwijderde containers opgeven tussen 1 en 365 dagen. De standaard Bewaar periode is 7 dagen. Tijdens de retentie periode kunt u een verwijderde container herstellen door de **herstel container** bewerking aan te roepen.
 
 Wanneer u een container herstelt, worden de blobs en BLOB-versies van de container ook hersteld. U kunt de container soft delete echter alleen gebruiken om blobs te herstellen als de container zelf is verwijderd. Als u een verwijderde BLOB wilt herstellen wanneer de bovenliggende container niet is verwijderd, moet u de eigenschap zacht verwijderen of BLOB-versie beheer gebruiken.
+
+> [!WARNING]
+> Met de tijdelijke verwijdering van de container kunt u alleen hele containers en de blobs herstellen die zijn opgenomen op het moment van verwijdering. U kunt een verwijderde BLOB niet herstellen binnen een container met behulp van de tijdelijke verwijdering van de container.
 
 In het volgende diagram ziet u hoe een verwijderde container kan worden hersteld wanneer de container zacht verwijderen is ingeschakeld:
 

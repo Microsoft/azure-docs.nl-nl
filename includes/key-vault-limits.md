@@ -4,12 +4,12 @@ ms.service: key-vault
 ms.topic: include
 ms.date: 03/09/2021
 ms.author: ambapat
-ms.openlocfilehash: d934d40cad5f4eec929cfd273b6e30ea291e48d5
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: c2548b1669366564809ed2fde725cb3399922a29
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103010950"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104803338"
 ---
 Azure Key Vault-service ondersteunt twee resource typen: kluizen en beheerde Hsm's. In de volgende twee secties worden de service limieten voor elk van beide beschreven.
 
@@ -50,6 +50,17 @@ In deze sectie worden de service limieten voor het resource type beschreven `vau
 Zie de [Azure Key Vault-beperkingsrichtlijnen](../articles/key-vault/general/overview-throttling.md) voor informatie over het verwerken van beperkingen wanneer deze limieten worden overschreden.
 
 <sup>1</sup> Een limiet voor het hele abonnement voor alle transactietypen is vijf keer per sleutelkluislimiet. Andere HSM-transacties per abonnement zijn bijvoorbeeld beperkt tot 5000 transacties binnen tien seconden per abonnement.
+
+#### <a name="backup-keys-secrets-certificates"></a>Back-upsleutels, geheimen, certificaten
+
+Wanneer u een back-up maakt van een object dat is opgeslagen in een sleutelkluis (zoals een geheim, sleutel of certificaat), wordt het object door de back-upbewerking gedownload als een versleutelde blob. Deze blob kan niet buiten Azure worden ontsleuteld. Als u bruikbare gegevens wilt ophalen uit deze blob, moet u de BLOB herstellen in een sleutel kluis binnen hetzelfde Azure-abonnement en Azure-Geografie
+
+| Transactietype | Maxi maal toegestane sleutel kluis object versies |
+| --- | --- |
+| Back-up maken van afzonderlijke sleutel, geheim, certfiicate |500 |
+
+> [!NOTE]
+> Poging tot het maken van een back-up van een sleutel, geheim of certificaat object met meer versies dan de limiet, resulteert in een fout. Het is niet mogelijk om eerdere versies van een sleutel, geheim of certificaat te verwijderen. 
 
 #### <a name="azure-private-link-integration"></a>Azure Private Link- integratie
 

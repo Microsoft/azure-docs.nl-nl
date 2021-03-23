@@ -3,12 +3,12 @@ title: VRealize-bewerkingen voor Azure VMware-oplossing instellen
 description: Meer informatie over het instellen van vRealize-bewerkingen voor uw persoonlijke cloud van Azure VMware-oplossingen.
 ms.topic: how-to
 ms.date: 01/26/2021
-ms.openlocfilehash: 3d2617f893c34fde6a154f9f93b5bda520c5a91a
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 8015bb61a7401b4c97807e0256e06d4967c39026
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101738426"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104802485"
 ---
 # <a name="set-up-vrealize-operations-for-azure-vmware-solution"></a>VRealize-bewerkingen voor Azure VMware-oplossing instellen
 
@@ -61,7 +61,7 @@ Zodra het exemplaar is geïmplementeerd, kunt u vRealize-bewerkingen configurere
 
 ## <a name="known-limitations"></a>Bekende beperkingen
 
-- De **cloudadmin \@ vSphere. local** user in azure VMware-oplossing heeft [beperkte bevoegdheden](concepts-role-based-access-control.md).  Virtuele machines (Vm's) in azure VMware-oplossing bieden geen ondersteuning voor het verzamelen van gast geheugen met behulp van VMware-hulpprogram ma's.  Actief en verbruikt geheugen gebruik blijft in dit geval werken.
+- De **cloudadmin \@ vSphere. local** user in azure VMware-oplossing heeft [beperkte bevoegdheden](concepts-identity.md).  Virtuele machines (Vm's) in azure VMware-oplossing bieden geen ondersteuning voor het verzamelen van gast geheugen met behulp van VMware-hulpprogram ma's.  Actief en verbruikt geheugen gebruik blijft in dit geval werken.
 - De optimalisatie van de werk belasting voor zakelijke doel stellingen op basis van een host werkt niet, omdat Azure VMware-oplossingen cluster configuraties beheren, met inbegrip van DRS-instellingen.
 - Optimalisatie van de werk belasting voor de cross-cluster plaatsing binnen de SDDC met behulp van de op het cluster gebaseerde bedrijfs intentie wordt volledig ondersteund met vRealize Operations Manager 8,0 en hoger. De optimalisatie van werk belastingen is echter niet op de hoogte van resource groepen en plaatst de Vm's op het cluster niveau. Een gebruiker kan deze hand matig corrigeren in de Azure VMware-oplossing vCenter Server-interface.
 - U kunt zich niet aanmelden bij vRealize Operations Manager met uw Azure VMware-oplossing vCenter Server referenties. 

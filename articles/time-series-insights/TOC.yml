@@ -180,7 +180,7 @@
     - name: Gegevens bewaken - referentie
       href: how-to-monitor-tsi-reference.md
     - name: Azure CLI
-      href: /cli/azure/ext/timeseriesinsights/timeseriesinsights
+      href: 'https://docs.microsoft.com/cli/azure/ext/timeseriesinsights/'
 - name: Resources
   items:
     - name: Opties voor ondersteuning en hulp

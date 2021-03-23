@@ -147,7 +147,7 @@
     - name: Referentie
       items:
         - name: REST API van document vertalingen
-          href: /rest/api/cognitiveservices/translator/translation
+          href: /rest/api/cognitiveservices/translator/documenttranslation
 - name: Vertaal bronnen
   items:
     - name: Opties voor ondersteuning en hulp

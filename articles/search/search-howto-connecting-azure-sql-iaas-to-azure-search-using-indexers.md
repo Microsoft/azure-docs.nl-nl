@@ -7,12 +7,12 @@ ms.author: maheff
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/19/2021
-ms.openlocfilehash: 1f9169d4f3f6361e557c41a4d612cf6c439257fb
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 23c5d138463a52f4ff4c52b4a919b71a87b7fd6d
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104722511"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104802876"
 ---
 # <a name="configure-a-connection-from-an-azure-cognitive-search-indexer-to-sql-server-on-an-azure-vm"></a>Een verbinding van een Azure Cognitive Search Indexeer functie configureren om te SQL Server op een Azure VM
 
@@ -87,9 +87,12 @@ U kunt het IP-adres bereik van de `AzureCognitiveSearch` [servicetag](../virtual
 
 ### <a name="include-the-azure-cognitive-search-portal-ip-addresses"></a>De IP-adressen van de Azure Cognitive Search-Portal toevoegen
 
-Als u de Azure Portal gebruikt om een Indexeer functie te maken, moet Azure Cognitive Search-Portal-logica ook toegang hebben tot uw SQL Azure VM tijdens de aanmaak tijd. De IP-adressen van de Azure Cognitive Search-Portal zijn te vinden door pingen `stamp2.search.ext.azure.com` , het domein van de Traffic Manager.
+Als u de Azure Portal gebruikt om een Indexeer functie te maken, moet u de portal toegang verlenen tot de virtuele machine van SQL Azure. Een regel voor binnenkomende verbindingen in de firewall vereist dat u het IP-adres van de portal opgeeft.
 
-Clusters in verschillende regio's maken verbinding met deze Traffic Manager. De ping kan het IP-adres en domein van retour neren `stamp2.search.ext.azure.com` , maar als uw service zich in een andere regio bevindt, worden de IP-en domein naam verschillend. Het IP-adres dat door de ping wordt geretourneerd, is de juiste voor Azure Portal in uw regio.
+Om het IP-adres van de portal op te halen, ping `stamp2.ext.search.windows.net` , het domein van Traffic Manager. Er wordt een time-out voor de aanvraag uitgevoerd, maar het IP-adres is zichtbaar in het status bericht. Voor beeld: in het bericht ' Pinging azsyrie.northcentralus.cloudapp.azure.com [52.252.175.48] ' is het IP-adres ' 52.252.175.48 '.
+
+> [!NOTE]
+> Clusters in verschillende regio's maken verbinding met verschillende Traffic managers. Ongeacht de domein naam is het IP-adres dat is geretourneerd door de ping, het juiste dat moet worden gebruikt bij het definiëren van een binnenkomende firewall regel voor de Azure Portal in uw regio.
 
 ## <a name="next-steps"></a>Volgende stappen
 

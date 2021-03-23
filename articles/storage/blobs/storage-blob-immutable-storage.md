@@ -5,16 +5,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 02/01/2021
+ms.date: 03/16/2021
 ms.author: tamram
 ms.reviewer: hux
 ms.subservice: blobs
-ms.openlocfilehash: 8d04d1bd758480ec33a7480e4045d28ed750f22e
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: d1d77e508e627520878dcc27b5a643473d11dd1d
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102430935"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104800717"
 ---
 # <a name="store-business-critical-blob-data-with-immutable-storage"></a>Bedrijfskritieke blobgegevens opslaan met onveranderlijke opslag
 
@@ -63,13 +63,15 @@ Zie [Onveranderbaarheid-beleid instellen en beheren voor Blob Storage](storage-b
 ## <a name="time-based-retention-policies"></a>Bewaar beleid op basis van tijd
 
 > [!IMPORTANT]
-> Een Bewaar beleid op basis van tijd moet worden *vergrendeld* om de BLOB een compatibele onveranderlijke status (schrijven en verwijderen beveiligd) te hebben voor SEC 17a-4 (f) en andere naleving van regelgeving. We raden u aan het beleid binnen een redelijke hoeveelheid tijd te vergren delen, meestal minder dan 24 uur. De initiële status van een toegepast Bewaar beleid op basis van tijd is *ontgrendeld*, zodat u de functie kunt testen en wijzigingen kunt aanbrengen in het beleid voordat u het vergrendelt. Hoewel de status *ontgrendeld* Onveranderbaarheid beveiliging biedt, is het niet raadzaam om de *Ontgrendelde* status te gebruiken voor andere doel einden dan kortings functies. 
+> Een Bewaar beleid op basis van tijd moet worden *vergrendeld* om de BLOB een compatibele onveranderlijke status (schrijven en verwijderen beveiligd) te hebben voor SEC 17a-4 (f) en andere naleving van regelgeving. Micro soft raadt u aan het beleid binnen een redelijke hoeveelheid tijd te vergren delen, meestal minder dan 24 uur. De initiële status van een toegepast Bewaar beleid op basis van tijd is *ontgrendeld*, zodat u de functie kunt testen en wijzigingen kunt aanbrengen in het beleid voordat u het vergrendelt. Hoewel de status *unlockd* Onveranderbaarheid Protection biedt, wordt het gebruik van de *Ontgrendelde* status voor andere doel einden dan kortings functies niet aanbevolen.
+>
+> Wanneer een Bewaar beleid op basis van tijd is vergrendeld, kan het beleid niet worden verwijderd en zijn Maxi maal vijf verhogingen van de ingangs periode toegestaan. De Bewaar periode kan niet worden verminderd.
 
 Wanneer een Bewaar beleid op basis van tijd op een container wordt toegepast, blijven alle blobs in de container onveranderbaar voor de duur van de *daad werkelijke* Bewaar periode. De daad werkelijke Bewaar periode voor blobs is gelijk aan het verschil tussen de **aanmaak tijd** van de BLOB en de door de gebruiker opgegeven Bewaar periode. Omdat gebruikers het retentie-interval kunnen verlengen, gebruikt onveranderlijke opslag de meest recente waarde van het opgegeven retentie-interval om de effectieve retentieperiode te berekenen.
 
 Stel bijvoorbeeld dat een gebruiker een Bewaar beleid op basis van tijd maakt met een Bewaar interval van vijf jaar. Een bestaande Blob in die container, _testblob1_, is één jaar geleden gemaakt. Daarom is de daad werkelijke Bewaar periode voor _testblob1_ vier jaar. Wanneer een nieuwe blob, _testblob2_, wordt geüpload naar de container, is de daad werkelijke Bewaar periode voor de _testblob2_ vijf jaar vanaf het moment dat deze wordt gemaakt.
 
-Een niet-vergrendeld op tijd gebaseerd Bewaar beleid wordt alleen aanbevolen voor het testen van functies en een beleid moet worden vergrendeld om compatibel te zijn met SEC 17a-4 (f) en andere naleving van regelgeving. Wanneer een Bewaar beleid op basis van tijd is vergrendeld, kan het beleid niet worden verwijderd en zijn Maxi maal vijf verhogingen van de ingangs periode toegestaan.
+Een niet-vergrendeld op tijd gebaseerd Bewaar beleid wordt alleen aanbevolen voor het testen van functies en een beleid moet worden vergrendeld om compatibel te zijn met SEC 17a-4 (f) en andere naleving van regelgeving.
 
 De volgende limieten gelden voor het Bewaar beleid:
 

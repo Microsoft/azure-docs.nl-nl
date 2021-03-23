@@ -7,16 +7,16 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 05/19/2020
+ms.date: 03/22/2021
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3395afbe95b2a7f35893a0ce7f60c3871597acd0
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 50eac71203a94ffb5c7dddc8995b56980c3f8815
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98612005"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104798711"
 ---
 # <a name="pilot-cloud-sync-for-an-existing-synced-ad-forest"></a>Pilot Cloud Sync voor een bestaand gesynchroniseerd AD-forest 
 
@@ -208,20 +208,7 @@ Als de pilot niet werkt zoals verwacht, kunt u teruggaan naar de Azure AD Connec
 1.  De inrichtingsconfiguratie in de Azure Portal uitschakelen. 
 2.  Schakel alle aangepaste synchronisatieregels die voor cloudinrichting zijn gemaakt, uit met het hulpprogramma voor de synchronisatieregeleditor. Door de regels uit te schakelen, worden alle connectors volledig gesynchroniseerd.
 
-## <a name="configure-azure-ad-connect-sync-to-exclude-the-pilot-ou"></a>Azure AD Connect Sync zo configureren dat de pilot-OE wordt uitgesloten
-Nadat u hebt gecontroleerd of gebruikers van de test-OE met succes worden beheerd door de Cloud synchronisatie, kunt u Azure AD Connect opnieuw configureren om de bovenliggende organisatie-eenheid uit te sluiten die hierboven is gemaakt.  Vanaf nu verwerkt de cloudinrichtingsagent de synchronisatie voor deze gebruikers.  Voer de volgende stappen uit om een bereik in te stellen voor Azure AD Connect.
 
- 1. Dubbelklik op de server met Azure AD Connect op het pictogram Azure AD Connect.
- 2. Klik op **Configureren**
- 3. Selecteer **Synchronisatieopties aanpassen** en klik op Volgende.
- 4. Meld u aan bij Azure AD en klik op **Volgende**.
- 5. Klik in het scherm **Verbinding maken met uw adreslijsten** op **Volgende**.
- 6. Selecteer in het scherm **Domein- en OE-filters** de optie **Geselecteerde domeinen en OE's synchroniseren**.
- 7. Breid uw domein uit en **hef de selectie** van de OE van **CPUsers** op.  Klik op **Volgende**.
-![bereik](media/tutorial-existing-forest/scope-1.png)</br>
- 9. Klik in het scherm **Optionele functies** op **Volgende**.
- 10. Klik in het scherm **Gereed om te configureren** op **Configureren**.
- 11. Klik na voltooiing op **Afsluiten**. 
 
 ## <a name="next-steps"></a>Volgende stappen 
 

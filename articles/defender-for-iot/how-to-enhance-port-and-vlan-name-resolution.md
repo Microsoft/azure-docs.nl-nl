@@ -1,20 +1,16 @@
 ---
 title: Poort- en VLAN-naamomzetting verbeteren
 description: U kunt de naam van de poort en het VLAN op uw Sens oren aanpassen aan de resolutie van een apparaat.
-author: shhazam-ms
-manager: rkarlin
-ms.author: shhazam
 ms.date: 12/13/2020
 ms.topic: how-to
-ms.service: azure
-ms.openlocfilehash: 9c976671bccb420ae24d8def7a6574098d86ce6d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: de6fbe70d5a5359ad4e4c276642b9b9ed0cef00f
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98803579"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104784166"
 ---
-# <a name="enhance-port-and-vlan-name-resolution"></a>Poort- en VLAN-naamomzetting verbeteren
+# <a name="enhance-port-vlan-and-os-resolution"></a>De oplossing voor poort, VLAN en OS verbeteren
 
 U kunt de namen van de poort en VLAN op uw Sens oren aanpassen tot een verrijkende oplossing voor het apparaat.
 
@@ -72,7 +68,7 @@ VLAN-namen kunnen Maxi maal 50 ASCII-tekens bevatten.
 > VLAN-namen worden niet gesynchroniseerd tussen de sensor en de beheer console. U moet ook de naam opgeven in de beheer console.  
 Voor Cisco-switches voegt u de volgende regel toe aan de configuratie van het bereik: `monitor session 1 destination interface XX/XX encapsulation dot1q` . In die opdracht *xx/xx* de naam en het nummer van de poort.
 
-VLAN'S configureren:
+VLAN-namen configureren:
 
 1. Selecteer **systeem instellingen** in het menu aan de zijkant.
 
@@ -81,6 +77,21 @@ VLAN'S configureren:
     :::image type="content" source="media/how-to-enrich-asset-information/edit-vlan.png" alt-text="Gebruik de systeem instellingen om uw VLAN'S te bewerken.":::
 
 3. Voeg een unieke naam toe naast elke VLAN-ID.
+
+## <a name="improve-device-operating-system-classification-data-enhancement"></a>De classificatie van het besturings systeem van het apparaat verbeteren: gegevens verbetering
+
+Sens oren detecteren voortdurend automatisch nieuwe apparaten en wijzigingen aan eerder gedetecteerde apparaten, waaronder typen besturings systemen.
+
+Onder bepaalde omstandigheden kunnen conflicten worden gedetecteerd in gedetecteerde besturings systemen. Dit kan bijvoorbeeld gebeuren als u een versie van het besturings systeem hebt die verwijst naar een bureau blad of server systeem. Als dit het geval is, ontvangt u een melding met optionele classificaties van besturings systemen.
+
+:::image type="content" source="media/how-to-enrich-asset-information/enhance-data-screen.png" alt-text="Gegevens verbeteren.":::
+
+Onderzoek de aanbevelingen om de classificatie van het besturings systeem te verrijken. Deze classificatie wordt weer gegeven in de inventarisatie van apparaten, rapporten voor gegevens analyse en andere weer gaven. U kunt de nauw keurigheid van waarschuwingen, bedreigingen en rapporten over risico analyses verbeteren door ervoor te zorgen dat deze informatie up-to-date is.
+
+Voor toegang tot aanbevelingen van het besturings systeem:
+
+1. Selecteer **systeem instellingen**.
+1. Selecteer **gegevens uitbreiding**.
 
 ## <a name="next-steps"></a>Volgende stappen
 

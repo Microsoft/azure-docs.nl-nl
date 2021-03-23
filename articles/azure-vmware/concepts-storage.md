@@ -3,12 +3,12 @@ title: Concepten-opslag
 description: Meer informatie over de mogelijkheden voor de belangrijkste opslag in azure VMware-oplossingen voor persoonlijke Clouds.
 ms.topic: conceptual
 ms.date: 03/13/2021
-ms.openlocfilehash: 2551b11ada8b6118fb7524d9fe36f8b4b568aca1
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 83a4a52f8414e656b5bc688796db6e93a53d4d76
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103462470"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104801618"
 ---
 #  <a name="azure-vmware-solution-storage-concepts"></a>Concepten van Azure VMware-oplossingen opslag
 
@@ -44,7 +44,7 @@ U kunt Azure Storage-services gebruiken in workloads die worden uitgevoerd in uw
 Nu u de concepten van Azure VMware-oplossings opslag hebt behandeld, wilt u mogelijk meer informatie over:
 
 - [Concepten van identiteit van privécloud](concepts-identity.md).
-- [vSphere op rollen gebaseerd toegangs beheer voor de Azure VMware-oplossing](concepts-role-based-access-control.md).
+- [vSphere op rollen gebaseerd toegangs beheer voor de Azure VMware-oplossing](concepts-identity.md).
 - [Informatie over het inschakelen van de Azure VMware Solution-resource](enable-azure-vmware-solution.md).
 - [Azure NetApp Files met Azure VMware-oplossing](netapp-files-with-azure-vmware-solution.md)
 

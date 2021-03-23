@@ -1,5 +1,5 @@
 ---
-title: Problemen met CI-CD-, Azure DevOps-en GitHub oplossen in ADF
+title: Problemen met CI-CD, Azure DevOps en GitHub oplossen in ADF
 description: Gebruik verschillende methoden om problemen met CI-CD in ADF op te lossen.
 author: ssabat
 ms.author: susabat
@@ -7,14 +7,14 @@ ms.reviewer: susabat
 ms.service: data-factory
 ms.topic: troubleshooting
 ms.date: 03/12/2021
-ms.openlocfilehash: 4be015b1a8ba4b6fc6ea3acc74318f9a8b298e8e
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 2b6f97f0966cb2c92dbd88c4a70188282ed3ed27
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103418093"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104802030"
 ---
-# <a name="troubleshoot-ci-cd-azure-devops-and-github-issues-in-adf"></a>Problemen met CI-CD-, Azure DevOps-en GitHub oplossen in ADF 
+# <a name="troubleshoot-ci-cd-azure-devops-and-github-issues-in-adf"></a>Problemen met CI-CD, Azure DevOps en GitHub oplossen in ADF 
 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
@@ -101,8 +101,7 @@ Bij het publiceren van wijzigingen in een Data Factory wordt het volgende fout b
         "details": null
     }
 `
-
-#### <a name="symptom"></a>Symptoom
+### <a name="cause"></a>Oorzaak
 
 U hebt de Git-configuratie losgekoppeld en opnieuw ingesteld met de vlag ' resources importeren ' geselecteerd, waarmee de Data Factory als synchroon wordt ingesteld. Dit betekent dat er geen wijzigingen worden gepubliceerd.
 
@@ -150,11 +149,7 @@ U hebt een klantrol als gebruiker gemaakt en deze heeft niet de benodigde machti
 
 Om het probleem op te lossen, moet u de volgende machtiging toevoegen aan uw rol: *micro soft. DataFactory/factories/queryFeaturesValue/Action*. Deze machtiging moet standaard worden opgenomen in de rol ' Data Factory Inzender '.
 
-###  <a name="automatic-publishing-for-cicd-without-clicking-publish-button"></a>Automatische publicatie voor CI/CD zonder te klikken op de knop publiceren  
-
-#### <a name="issue"></a>Probleem
-
-Als u hand matig publiceert met de knop Klik in de ADF-Portal, wordt er geen automatische CI/CD-bewerking ingeschakeld.
+###  <a name="cannot-automate-publishing-for-cicd"></a>Kan publiceren voor CI/CD niet automatiseren 
 
 #### <a name="cause"></a>Oorzaak
 
@@ -178,15 +173,14 @@ Azure Resource Manager beperkt de sjabloon grootte tot 4 MB. Beperk de grootte v
 
 Voor kleine tot middelgrote oplossingen is één sjabloon eenvoudiger te begrijpen en te onderhouden. U kunt alle resources en waarden in één bestand bekijken. Voor geavanceerde scenario's kunt u met gekoppelde sjablonen de oplossing opsplitsen in de beoogde onderdelen. Voer de best practice uit [met behulp van gekoppelde en geneste sjablonen](../azure-resource-manager/templates/linked-templates.md?tabs=azure-powershell).
 
-### <a name="cannot-connect-to-git-enterprise-cloud"></a>Kan geen verbinding maken met een GIT Enter prise-Cloud 
+### <a name="cannot-connect-to-git-enterprise"></a>Kan geen verbinding maken met GIT Enter prise  
 
 ##### <a name="issue"></a>Probleem
 
-U kunt geen verbinding maken met een GIT-bedrijfs Cloud vanwege machtigings problemen. U ziet fout als **422-entiteit** die niet kan worden verwerkt.
+U kunt geen verbinding maken met een GIT-onderneming vanwege machtigings problemen. U ziet fout als **422-entiteit** die niet kan worden verwerkt.
 
 #### <a name="cause"></a>Oorzaak
 
-* U gebruikt Git Enter prise on-premises server. 
 * U hebt OAuth voor ADF niet geconfigureerd. 
 * De URL is onjuist geconfigureerd.
 
@@ -194,7 +188,7 @@ U kunt geen verbinding maken met een GIT-bedrijfs Cloud vanwege machtigings prob
 
 U verleent eerst OAuth-toegang tot ADF. Vervolgens moet u de juiste URL gebruiken om verbinding te maken met een GIT-onderneming. De configuratie moet worden ingesteld op de organisatie (s) van de klant. Voor beeld: ADF probeert eerst *https://hostname/api/v3/search/repositories?q=user%3 <customer credential> .* ... op het eerste en mislukt. Vervolgens wordt het geprobeerd *https://hostname/api/v3/orgs/ <org> / <repo> ...* en slaagt. 
  
-### <a name="recover-from-a-deleted-data-factory"></a>Herstellen van een verwijderde data factory
+### <a name="cannot-recover-from-a-deleted-data-factory"></a>Kan niet herstellen van een verwijderde data factory
 
 #### <a name="issue"></a>Probleem
 Klant heeft Data Factory verwijderd of de resource groep met de Data Factory. Hij wil graag weten hoe u een verwijderde data factory kunt herstellen.

@@ -6,14 +6,14 @@ titleSuffix: Azure VPN Gateway
 author: chadmath
 ms.service: vpn-gateway
 ms.topic: troubleshooting
-ms.date: 02/10/2021
+ms.date: 03/22/2021
 ms.author: genli
-ms.openlocfilehash: 582077c46f5fc7176b457cf0d392af48fbe7d40b
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 38846bbe717912092ccfe2b236b717770b79302f
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100369336"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104867250"
 ---
 # <a name="troubleshooting-azure-site-to-site-vpn-disconnects-intermittently"></a>Probleemoplossing: Azure site-naar-site-VPN wordt herhaaldelijk verbroken
 
@@ -56,9 +56,7 @@ De op beleid gebaseerde virtuele netwerk gateway heeft limiet van 200 subnet-bev
 
 ### <a name="step-6-check-on-premises-vpn-device-external-interface-address"></a>Stap 6 het externe interface adres van on-premises VPN-apparaat controleren
 
-- Als het Internet gericht IP-adres van het VPN-apparaat is opgenomen in de definitie van de **lokale netwerk gateway** in azure, kunnen er soms problemen optreden met de verbinding.
-- De externe interface van het apparaat moet rechtstreeks op internet zijn. Er mag geen NAT (Network Address Translation) of firewall tussen internet en het apparaat zijn.
--  Als u Firewall clusters wilt configureren voor een virtueel IP-adres, moet u het cluster verbreekt en het VPN-apparaat rechtstreeks beschikbaar maken op een open bare interface waarmee de gateway een interface kan maken.
+Als het Internet gericht IP-adres van het VPN-apparaat is opgenomen in de definitie van de **lokale netwerk gateway** in azure, kunnen er soms problemen optreden met de verbinding.
 
 ### <a name="step-7-check-whether-the-on-premises-vpn-device-has-perfect-forward-secrecy-enabled"></a>Stap 7 Controleer of het on-premises VPN-apparaat Perfect Forward Secrecy is ingeschakeld
 

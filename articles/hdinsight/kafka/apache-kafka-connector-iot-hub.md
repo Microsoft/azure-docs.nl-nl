@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 11/26/2019
-ms.openlocfilehash: 7980003dd63e5e51d87f85542029a1f25e7223df
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: feada70c7a461bb4a9cd621c76b5606a7f0e19d5
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98932872"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104865278"
 ---
 # <a name="use-apache-kafka-on-hdinsight-with-azure-iot-hub"></a>Apache Kafka op HDInsight gebruiken met Azure IoT Hub
 
@@ -22,7 +22,7 @@ Wanneer u van de IoT Hub haalt, gebruikt u een __bron__ connector. Wanneer u naa
 
 In het volgende diagram ziet u de gegevens stroom tussen Azure IoT Hub en Kafka op HDInsight wanneer u de-connector gebruikt.
 
-![Afbeelding van gegevens stromen van IoT Hub naar Kafka via de connector](./media/apache-kafka-connector-iot-hub/iot-hub-kafka-connector-hdinsight.png)
+:::image type="content" source="./media/apache-kafka-connector-iot-hub/iot-hub-kafka-connector-hdinsight.png" alt-text="Afbeelding van gegevens stromen van IoT Hub naar Kafka via de connector" border="false":::
 
 Zie voor meer informatie over de Connect-API [https://kafka.apache.org/documentation/#connect](https://kafka.apache.org/documentation/#connect) .
 

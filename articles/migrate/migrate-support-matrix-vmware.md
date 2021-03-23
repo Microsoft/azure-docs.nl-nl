@@ -6,16 +6,16 @@ ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 03/17/2021
-ms.openlocfilehash: 943223ee99838b2b6d6de7eecb3c3b8c06d3562c
-ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
+ms.openlocfilehash: 520aedd9dbb618788107bc83c5d72ad237acea22
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104773586"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104870735"
 ---
 # <a name="support-matrix-for-vmware-assessment"></a>Ondersteunings matrix voor VMware-evaluatie 
 
-In dit artikel vindt u een overzicht van de vereisten voor en ondersteuning bij het detecteren en beoordelen van servers die in VMware-omgeving worden uitgevoerd voor migratie naar Azure, met behulp van de Azure Migrate: hulp programma voor [detectie en evaluatie](migrate-services-overview.md#azure-migrate-server-assessment-tool) . Als u servers wilt beoordelen, maakt u een project, waarmee u het hulp programma voor de Azure Migrate: detectie en evaluatie toevoegt aan het project. Wanneer het hulp programma is toegevoegd, implementeert u het Azure Migrate apparaat. Het apparaat detecteert voortdurend on-premises servers en verzendt meta gegevens over de configuratie en prestaties naar Azure. Nadat de detectie is voltooid, verzamelt u gedetecteerde servers in groepen en voert u een evaluatie uit voor een groep.
+In dit artikel vindt u een overzicht van de vereisten voor en ondersteuning bij het detecteren en beoordelen van servers die in VMware-omgeving worden uitgevoerd voor migratie naar Azure, met behulp van de Azure Migrate: hulp programma voor [detectie en evaluatie](migrate-services-overview.md#azure-migrate-discovery-and-assessment-tool) . Als u servers wilt beoordelen, maakt u een project, waarmee u het hulp programma voor de Azure Migrate: detectie en evaluatie toevoegt aan het project. Wanneer het hulp programma is toegevoegd, implementeert u het Azure Migrate apparaat. Het apparaat detecteert voortdurend on-premises servers en verzendt meta gegevens over de configuratie en prestaties naar Azure. Nadat de detectie is voltooid, verzamelt u gedetecteerde servers in groepen en voert u een evaluatie uit voor een groep.
 
 Als u VMware-servers naar Azure wilt migreren, raadpleegt u de [ondersteunings matrix voor migratie](migrate-support-matrix-vmware-migration.md).
 
@@ -25,7 +25,7 @@ Als u VMware-servers naar Azure wilt migreren, raadpleegt u de [ondersteunings m
 
 **Vereiste** | **Details**
 --- | ---
-**Project limieten** | U kunt meerdere projecten maken in een Azure-abonnement.<br/><br/> U kunt in één [project](migrate-support-matrix.md#azure-migrate-projects)maxi maal 50.000 servers in de VMware-omgeving detecteren en beoordelen. Een project kan ook fysieke servers en servers uit een Hyper-V-omgeving omvatten, tot aan de evaluatie limieten.
+**Project limieten** | U kunt meerdere projecten maken in een Azure-abonnement.<br/><br/> U kunt in één [project](migrate-support-matrix.md#project)maxi maal 50.000 servers in de VMware-omgeving detecteren en beoordelen. Een project kan ook fysieke servers en servers uit een Hyper-V-omgeving omvatten, tot aan de evaluatie limieten.
 **Discovery** (Detectie) | Het Azure Migrate-apparaat kan Maxi maal 10.000 servers op een vCenter Server detecteren.
 **Evaluatie** | U kunt Maxi maal 35.000 servers in één groep toevoegen.<br/><br/> U kunt Maxi maal 35.000 servers in één evaluatie evalueren.
 
@@ -78,9 +78,6 @@ Naast het detecteren van servers, Azure Migrate: detectie en evaluatie kan de so
 **Poort toegang** | Het Azure Migrate apparaat moet verbinding kunnen maken met TCP-poort 443 op ESXi-hosts waarop servers worden uitgevoerd waarop u toepassings detectie wilt uitvoeren. De vCenter Server retourneert een ESXi om het bestand te downloaden met de details van de software-inventarisatie.
 
 ## <a name="requirements-for-discovery-of-sql-server-instances-and-databases"></a>Vereisten voor de detectie van SQL Server instanties en data bases
-
-> [!Note]
-> Detectie en evaluatie van SQL Server instanties en data bases die worden uitgevoerd in uw VMware-omgeving is nu beschikbaar als preview-versie. Als u deze functie wilt proberen, gebruikt u [**deze koppeling**](https://aka.ms/AzureMigrate/SQL) om een project te maken in de regio **Australië - oost**. Als u al een project in Australië-oost hebt en u deze functie wilt proberen, zorgt u ervoor dat u aan deze [**vereisten**](how-to-discover-sql-existing-project.md) voldoet in de portal.
 
 [Toepassings detectie](how-to-discover-applications.md) identificeert de SQL Server exemplaren. Met deze informatie wordt het apparaat via de Windows-verificatie of SQL Server verificatie referenties die op het apparaat zijn verstrekt, verbonden met de betreffende SQL Server exemplaren. Zodra het apparaat is verbonden, worden configuratie-en prestatie gegevens van SQL Server instanties en data bases verzameld. De SQL Server configuratie gegevens worden elke 24 uur bijgewerkt en de prestatie gegevens worden elke 30 seconden vastgelegd.
 

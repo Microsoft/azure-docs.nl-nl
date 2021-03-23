@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: tutorial
 ms.custom: hdinsightactive,mvc
 ms.date: 02/12/2020
-ms.openlocfilehash: d3c8a08a14b23492c4bf032dd2b722c59bdf80ff
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: de17bf02392f0bb05820fabba3f9057e067391cf
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98930082"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104865907"
 ---
 # <a name="tutorial-load-data-and-run-queries-on-an-apache-spark-cluster-in-azure-hdinsight"></a>Zelfstudie: Gegevens laden en query's uitvoeren in een Apache Spark-cluster in Azure HDInsight
 
@@ -33,7 +33,7 @@ Jupyter Notebook is een interactieve notitieblokomgeving die ondersteuning biedt
 
 2. Selecteer op de webpagina van Jupyter **Nieuw** > **PySpark** om een notebook te maken.
 
-   ![Een Jupyter Notebook maken om de interactieve Spark SQL-query uit te voeren](./media/apache-spark-load-data-run-query/hdinsight-spark-create-jupyter-interactive-spark-sql-query.png "Een Jupyter Notebook maken om de interactieve Spark SQL-query uit te voeren")
+   :::image type="content" source="./media/apache-spark-load-data-run-query/hdinsight-spark-create-jupyter-interactive-spark-sql-query.png " alt-text="Een Jupyter Notebook maken om de interactieve Spark SQL-query uit te voeren" border="true":::
 
    Er wordt een nieuwe notebook gemaakt met de naam Untitled(`Untitled.ipynb`) en vervolgens geopend.
 
@@ -44,7 +44,7 @@ Jupyter Notebook is een interactieve notitieblokomgeving die ondersteuning biedt
 
 Toepassingen kunnen dataframes rechtstreeks maken vanuit bestanden of mappen op de externe opslag, zoals Azure Storage of Azure Data Lake Storage, vanuit een Hive-tabel, of vanuit andere gegevensbronnen die worden ondersteund door Apache Spark, zoals Cosmos DB, Azure SQL DB, DW enzovoort. In de volgende schermafbeelding ziet u een momentopname van het bestand HVAC.csv dat wordt gebruikt in deze zelfstudie. Het CSV-bestand wordt geleverd met alle HDInsight Spark-clusters. De gegevens hebben betrekking op de schommelingen in temperatuur van sommige gebouwen.
 
-![Momentopname van gegevens voor de interactieve Spark SQL-query](./media/apache-spark-load-data-run-query/hdinsight-spark-sample-data-interactive-spark-sql-query.png "Momentopname van gegevens voor de interactieve Spark SQL-query")
+:::image type="content" source="./media/apache-spark-load-data-run-query/hdinsight-spark-sample-data-interactive-spark-sql-query.png " alt-text="Momentopname van gegevens voor de interactieve Spark SQL-query" border="true":::
 
 1. Plak de volgende code in een lege cel van het Jupyter-notebook en druk op **Shift + Enter** om de code uit te voeren. Met de code importeert u de typen die voor dit scenario zijn vereist:
 
@@ -55,7 +55,7 @@ Toepassingen kunnen dataframes rechtstreeks maken vanuit bestanden of mappen op 
 
     Wanneer u een interactieve query uitvoert in Jupyter, ziet u in het venster van de webbrowser of de titelbalk van het tabblad de status **(Busy)**, samen met de titel van het notebook. Ook ziet u een gevulde cirkel naast de **PySpark**-tekst in de rechterbovenhoek. Wanneer de taak is voltooid, verandert deze in een lege cirkel.
 
-    ![Status van interactieve Spark SQL-query](./media/apache-spark-load-data-run-query/hdinsight-spark-interactive-spark-query-status.png "Status van interactieve Spark SQL-query")
+    :::image type="content" source="./media/apache-spark-load-data-run-query/hdinsight-spark-interactive-spark-query-status.png " alt-text="Status van interactieve Spark SQL-query" border="true":::
 
 1. Noteer de sessie-id die wordt geretourneerd. In de bovenstaande afbeelding is de sessie-id 0. Desgewenst kunt u de details van de sessie ophalen door naar `https://CLUSTERNAME.azurehdinsight.net/livy/sessions/ID/statements` te gaan, waarbij CLUSTERNAME de naam van uw Spark-cluster is en id uw sessie-id-nummer.
 
@@ -80,11 +80,11 @@ Zodra de tabel is gemaakt, kunt u een interactieve query uitvoeren op de gegeven
 
    De uitvoer wordt weergegeven in een tabel.
 
-     ![Tabeluitvoer van het resultaat van de interactieve Spark-query](./media/apache-spark-load-data-run-query/hdinsight-interactive-spark-query-result.png "Tabeluitvoer van het resultaat van de interactieve Spark-query")
+     :::image type="content" source="./media/apache-spark-load-data-run-query/hdinsight-interactive-spark-query-result.png " alt-text="Tabeluitvoer van het resultaat van de interactieve Spark-query" border="true":::
 
 2. U kunt de resultaten ook in andere visualisaties bekijken. Als u een vlakdiagram wilt zien voor dezelfde uitvoer, selecteert u **Area** en stelt u de andere waarden in zoals deze worden weergegeven.
 
-    ![Grafiekoppervlak van het resultaat van de interactieve Spark-query](./media/apache-spark-load-data-run-query/hdinsight-interactive-spark-query-result-area-chart.png "Grafiekoppervlak van het resultaat van de interactieve Spark-query")
+    :::image type="content" source="./media/apache-spark-load-data-run-query/hdinsight-interactive-spark-query-result-area-chart.png " alt-text="Grafiekoppervlak van het resultaat van de interactieve Spark-query" border="true":::
 
 3. Ga vanaf de menubalk van de notebook naar **File** > **Save and Checkpoint**.
 
@@ -96,7 +96,7 @@ Met HDInsight worden uw gegevens en Jupyter-notebooks opgeslagen in Azure Storag
 
 Open het cluster in Azure Portal en selecteer **Verwijderen**.
 
-![HDInsight-cluster verwijderen](./media/apache-spark-load-data-run-query/hdinsight-azure-portal-delete-cluster.png "HDInsight-cluster verwijderen")
+:::image type="content" source="./media/apache-spark-load-data-run-query/hdinsight-azure-portal-delete-cluster.png " alt-text="HDInsight-cluster verwijderen" border="true":::
 
 U kunt ook de naam van de resourcegroep selecteren om de pagina van de resourcegroep te openen en vervolgens **Resourcegroep verwijderen** selecteren. Als u de resourcegroep verwijdert, verwijdert u zowel het HDInsight Spark-cluster als het standaardopslagaccount.
 

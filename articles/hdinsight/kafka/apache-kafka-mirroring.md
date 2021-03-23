@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 11/29/2019
-ms.openlocfilehash: c2fce6d4ee95a56cc087d50184fcd69ac113620f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 633f01d813fe4e6c56d88052cbc7440c43f350dc
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98940842"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104870497"
 ---
 # <a name="use-mirrormaker-to-replicate-apache-kafka-topics-with-kafka-on-hdinsight"></a>MirrorMaker gebruiken om Apache Kafka-onderwerpen te repliceren met Kafka in HDInsight
 
@@ -34,7 +34,7 @@ De meest nuttige instelling voor het spie gelen van de spiegeling voor herstel n
 
 Het volgende diagram illustreert het spiegel proces en hoe de communicatie stromen tussen clusters:
 
-![Diagram van het spiegel proces](./media/apache-kafka-mirroring/kafka-mirroring-vnets2.png)
+:::image type="content" source="./media/apache-kafka-mirroring/kafka-mirroring-vnets2.png" alt-text="Diagram van het spiegel proces" border="false":::
 
 De primaire en secundaire clusters kunnen verschillen in het aantal knoop punten en partities, en verschuivingen in de onderwerpen zijn ook verschillend. Spiegeling houdt de sleutel waarde bij die wordt gebruikt voor partitioneren, zodat de volg orde van de records per sleutel wordt bewaard.
 
@@ -84,14 +84,14 @@ Deze architectuur bevat twee clusters in verschillende resource groepen en virtu
     1. Selecteer **Toevoegen**.
     1. Geef in het scherm **peering toevoegen** de details op, zoals wordt weer gegeven in de onderstaande scherm afbeelding.
 
-        ![HDInsight Kafka vnet-peering toevoegen](./media/apache-kafka-mirroring/hdi-add-vnet-peering.png)
+        :::image type="content" source="./media/apache-kafka-mirroring/hdi-add-vnet-peering.png" alt-text="HDInsight Kafka vnet-peering toevoegen" border="true":::
 
 ### <a name="configure-ip-advertising"></a>IP-reclame configureren
 
 Configureer IP-reclame om een client in staat te stellen verbinding te maken met behulp van IP-adressen van Broker in plaats van domein namen.
 
 1. Ga naar het Ambari-dash board voor het primaire cluster: `https://PRIMARYCLUSTERNAME.azurehdinsight.net` .
-1. Selecteer **Services**  >  **Kafka**. CliSelectck het tabblad **configuraties** .
+1. Selecteer **Services**  >  **Kafka**. Selecteer het tabblad **configuratie** .
 1. Voeg de volgende configuratie regels toe aan de onderste **sjabloon sectie Kafka-env** . Selecteer **Opslaan**.
 
     ```
@@ -107,7 +107,7 @@ Configureer IP-reclame om een client in staat te stellen verbinding te maken met
 1. Selecteer **OK** op de **wijzigingen in de configuratie opslaan**.
 1. Selecteer **opnieuw opstarten opnieuw** starten  >  **alle beïnvloed** in de melding **opnieuw opstarten vereist** . Selecteer **Bevestig opnieuw opstarten**.
 
-    ![Apache Ambari alle betrokken software opnieuw opstarten](./media/apache-kafka-mirroring/ambari-restart-notification.png)
+    :::image type="content" source="./media/apache-kafka-mirroring/ambari-restart-notification.png" alt-text="Apache Ambari alle betrokken software opnieuw opstarten" border="true":::
 
 ### <a name="configure-kafka-to-listen-on-all-network-interfaces"></a>Configureer Kafka om te Luis teren op alle netwerk interfaces.
     
@@ -120,7 +120,7 @@ Configureer IP-reclame om een client in staat te stellen verbinding te maken met
 1. Selecteer **hosts** op het Ambari-dash board.
 1. Noteer de IP-adressen voor de brokers en Zookeepers. De Broker knooppunten hebben **wn** als de eerste twee letters van de hostnaam en de Zookeeper-knoop punten hebben **ZK** als de eerste twee letters van de hostnaam.
 
-    ![IP-adressen van Apache Ambari-weergave knooppunt](./media/apache-kafka-mirroring/view-node-ip-addresses2.png)
+    :::image type="content" source="./media/apache-kafka-mirroring/view-node-ip-addresses2.png" alt-text="IP-adressen van Apache Ambari-weergave knooppunt" border="true":::
 
 1. Herhaal de vorige drie stappen voor het tweede cluster **Kafka-secundair-cluster**: IP-reclame configureren, listeners instellen en noteer de Broker-en Zookeeper-IP-adressen.
 
@@ -256,7 +256,7 @@ Configureer IP-reclame om een client in staat te stellen verbinding te maken met
         1. Wijzig de waarde van `auto.create.topics.enable` in waar en selecteer vervolgens __Opslaan__. Voeg een notitie toe en selecteer vervolgens __Opslaan__ opnieuw.
         1. Selecteer de __Kafka__ -service, selecteer __opnieuw opstarten__ en selecteer vervolgens __alle betrokkenen opnieuw opstarten__. Selecteer __Bevestig opnieuw opstarten__ als dit wordt gevraagd.
 
-        ![Kafka inschakelen voor automatisch maken](./media/apache-kafka-mirroring/kafka-enable-auto-create-topics.png)
+        :::image type="content" source="./media/apache-kafka-mirroring/kafka-enable-auto-create-topics.png" alt-text="Kafka inschakelen voor automatisch maken" border="true":::
 
 ## <a name="start-mirrormaker"></a>MirrorMaker starten
 

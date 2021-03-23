@@ -4,12 +4,12 @@ description: Overzicht van de verschillende onderdelen voor hoge Beschik baarhei
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 10/07/2020
-ms.openlocfilehash: 336fe91174a8fc6d73d6e45c5fd1e2bf244eda52
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 93d2317c85f93ce8a22f2d434fbc081a88265a74
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98945309"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104863714"
 ---
 # <a name="high-availability-services-supported-by-azure-hdinsight"></a>Services met hoge Beschik baarheid die worden ondersteund door Azure HDInsight
 
@@ -34,7 +34,7 @@ Deze infra structuur bestaat uit een aantal services en software onderdelen, waa
 - Service voor hoge Beschik baarheid slave
 - Hoofd service voor hoge Beschik baarheid
 
-![infra structuur met hoge Beschik baarheid](./media/hdinsight-high-availability-components/high-availability-architecture.png)
+:::image type="content" source="./media/hdinsight-high-availability-components/high-availability-architecture.png" alt-text="infra structuur met hoge Beschik baarheid" border="false":::
 
 Er zijn ook andere services met hoge Beschik baarheid, die worden ondersteund door open-source Apache-betrouw bare onderdelen. Deze onderdelen zijn ook aanwezig in HDInsight-clusters:
 
@@ -91,7 +91,7 @@ De Master-ha-service wordt alleen uitgevoerd op de actieve hoofd knooppunt, de H
 
 ### <a name="the-failover-process"></a>Het failover-proces
 
-![failoverproces](./media/hdinsight-high-availability-components/failover-steps.png)
+:::image type="content" source="./media/hdinsight-high-availability-components/failover-steps.png" alt-text="failoverproces" border="false":::
 
 Er wordt een health monitor uitgevoerd op elke hoofd knooppunt samen met de Master-failover-controller om heartbeat-meldingen te verzenden naar het Zookeeper-quorum. De hoofd knooppunt wordt in dit scenario beschouwd als HA-service. De health monitor controleert of elke service voor hoge Beschik baarheid in orde is en of deze klaar is om aan de leiderschaps verkiezing toe te voegen. Zo ja, dan zal deze hoofd knooppunt concurreren met de verkiezing. Als dat niet het geval is, wordt de verkiezing afgesloten totdat deze weer gereed wordt.
 

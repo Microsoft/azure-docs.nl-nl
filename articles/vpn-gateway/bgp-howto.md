@@ -6,14 +6,14 @@ services: vpn-gateway
 author: yushwang
 ms.service: vpn-gateway
 ms.topic: how-to
-ms.date: 09/18/2020
+ms.date: 03/22/2021
 ms.author: yushwang
-ms.openlocfilehash: db19b1ae017fa7981747b0e7b4c82e97efc61ed3
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 479a8fac111be6e5b1ae2c6ea21fff801ba26f83
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98878881"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104863578"
 ---
 # <a name="how-to-configure-bgp-on-azure-vpn-gateways"></a>BGP op Azure VPN-gateways configureren
 
@@ -79,13 +79,15 @@ In deze stap maakt u een VPN-gateway met de bijbehorende BGP-para meters.
 
    * Het veld **Azure APIPA BGP IP Address** is optioneel. Als uw on-premises VPN-apparaten APIPA-adres voor BGP gebruiken, moet u een adres selecteren in het door Azure gereserveerde APIPA-adres bereik voor VPN, dat van **169.254.21.0** tot **169.254.22.255**. In dit voor beeld wordt 169.254.21.11 gebruikt.
 
-   * Als u een actieve VPN-gateway maakt, wordt in de BGP-sectie een extra **tweede aangepast BGP-IP-adres voor Azure** weer gegeven. Geef een ander adres op dan het toegestane APIPA-bereik (**169.254.21.0** naar **169.254.22.255**).
+   * Als u een actieve VPN-gateway maakt, wordt in de BGP-sectie een extra **tweede aangepast BGP-IP-adres voor Azure** weer gegeven. Selecteer een ander IP-adres in het toegestane APIPA-bereik (**169.254.21.0** naar **169.254.22.255**). Het tweede IP-adres moet anders zijn dan het eerste adres.
 
    > [!IMPORTANT]
    >
    > * Standaard wijst Azure automatisch een persoonlijk IP-adres uit het GatewaySubnet-voorvoegsel bereik toe als het Azure BGP IP-adres op de Azure VPN-gateway. Het aangepaste BGP-adres van Azure APIPA is nodig als uw on-premises VPN-apparaten een APIPA-adres (169.254.0.1 tot en met 169.254.255.254) als BGP-IP gebruiken. In azure VPN Gateway wordt het aangepaste APIPA-adres gekozen als de bijbehorende lokale netwerk gateway resource (on-premises netwerk) een APIPA-adres heeft als BGP-peer-IP. Als de lokale netwerk gateway een normaal IP-adres (geen APIPA) gebruikt, wordt Azure VPN Gateway teruggezet naar het privé-IP-adres uit het GatewaySubnet-bereik.
    >
    > * De APIPA BGP-adressen mogen niet overlappen tussen de on-premises VPN-apparaten en alle verbonden Azure VPN-gateways.
+   >
+   > * Wanneer APIPA-adressen worden gebruikt op Azure VPN-gateways, initiëren de gateways geen BGP-peering sessies met IP-adressen van de APIPA-bron. Het on-premises VPN-apparaat moet BGP-peering verbindingen initiëren.
    >
 
 1. Selecteer **Beoordelen en maken** om de validatie uit te voeren. Wanneer de validatie is geslaagd, selecteert u **Maken** om de VPN-gateway te implementeren. Het kan tot 45 minuten duren voordat een gateway volledig is gemaakt en geïmplementeerd. U kunt de implementatiestatus bekijken op de overzichtspagina van uw gateway.

@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020
 ms.date: 04/20/2020
-ms.openlocfilehash: 5bc9acea219e5d111700840149a26c127b47514d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: d3c5077450dd4ec59f5ea7bc8f37879f9aa775bf
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98943063"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104868933"
 ---
 # <a name="process-and-analyze-json-documents-by-using-apache-hive-in-azure-hdinsight"></a>JSON-documenten verwerken en analyseren met behulp van Apache Hive in azure HDInsight
 
@@ -93,7 +93,7 @@ De instructie **Select** retourneert alleen één rij.
 
 Dit is de uitvoer van de **Select** -instructie:
 
-![HDInsight-afvlakking van het JSON-document](./media/using-json-in-hive/hdinsight-flatten-json.png)
+:::image type="content" source="./media/using-json-in-hive/hdinsight-flatten-json.png" alt-text="HDInsight-afvlakking van het JSON-document" border="true":::
 
 ## <a name="analyze-json-documents-in-hive"></a>JSON-documenten in Hive analyseren
 
@@ -119,7 +119,7 @@ FROM StudentsOneLine;
 
 Dit is de uitvoer wanneer u deze query uitvoert in het console venster:
 
-![Apache Hive Hiermee wordt JSON-object opgehaald](./media/using-json-in-hive/hdinsight-get-json-object.png)
+:::image type="content" source="./media/using-json-in-hive/hdinsight-get-json-object.png" alt-text="Apache Hive Hiermee wordt JSON-object opgehaald" border="true":::
 
 Er gelden beperkingen voor de get_json_object UDF:
 
@@ -141,7 +141,7 @@ LATERAL VIEW JSON_TUPLE(jt.json_body, 'StudentId', 'Grade') q1
 
 De uitvoer van dit script in de Hive-console:
 
-![Apache Hive JSON-query resultaten](./media/using-json-in-hive/hdinsight-json-tuple.png)
+:::image type="content" source="./media/using-json-in-hive/hdinsight-json-tuple.png" alt-text="Apache Hive JSON-query resultaten" border="true":::
 
 De `json_tuple` UDF maakt gebruik van de syntaxis voor de [zijdelingse weer gave](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+LateralView) in Hive, waarmee JSON \_ tuple een virtuele tabel kan maken door de UDT-functie toe te passen op elke rij van de oorspronkelijke tabel. Complexe JSONs zijn te moeilijk geworden vanwege het herhaalde gebruik van een **laterere weer gave**. Bovendien kunnen geneste JSONs niet worden verwerkt met **JSON_TUPLE** .
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 12/14/2020
 ms.author: phjensen
-ms.openlocfilehash: 903cb3323b9441ec8bb382054f065760875e3e89
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 7ba5a05515284612e17d5aba4cc673c7e78f7ba1
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "97632686"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104869919"
 ---
 # <a name="troubleshoot-azure-application-consistent-snapshot-tool-preview"></a>Problemen met het hulp programma Azure-toepassing consistente moment opname oplossen (preview)
 
@@ -54,6 +54,13 @@ Voorbeeld uitvoer van een `/var/log/messages` bestand.
 ```output
 Dec 17 09:01:13 azacsnap-rhel azacsnap: Database # 1 (PR1) : completed ok
 ```
+
+## <a name="failed-communication-with-azure-netapp-files"></a>Communicatie met Azure NetApp Files is mislukt
+
+Bij het valideren van de communicatie met Azure NetApp Files kan de communicatie mislukken of time-out.  Controleer of de firewall regels uitgaand verkeer van het systeem waarop AzAcSnap wordt uitgevoerd, niet worden geblokkeerd voor de volgende adressen en TCP/IP-poorten:
+
+- (https://) management. Azure. com: 443
+- (https://) login. microsoftonline. com: 443 
 
 ## <a name="failed-communication-with-sap-hana"></a>Communicatie met SAP HANA is mislukt
 

@@ -4,12 +4,12 @@ description: Meer informatie over de Azure HDInsight i/o-cache en hoe u deze kun
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 12/23/2019
-ms.openlocfilehash: 32f0756e59f81ad2c5d155581feed8c4fef09808
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 9df585c102e2c7307e949e38b6b69147372c38dd
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98940135"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104866298"
 ---
 # <a name="improve-performance-of-apache-spark-workloads-using-azure-hdinsight-io-cache"></a>Verbeter de prestaties van Apache Spark werk belastingen met behulp van de Azure HDInsight IO-cache
 
@@ -37,7 +37,7 @@ De Azure HDInsight IO-cache is standaard uitgeschakeld in de preview-versie. I/o
 
 1. Selecteer **acties** (**service acties** in HDI 3,6) en **Activeer**.
 
-    ![De i/o-cache service inschakelen in Ambari](./media/apache-spark-improve-performance-iocache/ambariui-enable-iocache.png "De i/o-cache service inschakelen in Ambari")
+    :::image type="content" source="./media/apache-spark-improve-performance-iocache/ambariui-enable-iocache.png " alt-text="De i/o-cache service inschakelen in Ambari" border="true":::
 
 1. Opnieuw opstarten bevestigen van alle betrokken services op het cluster.
 
@@ -52,7 +52,7 @@ Er kunnen schijf ruimte fouten optreden bij het uitvoeren van Spark-taken na het
 
 1. Selecteer de tabbladen **configuratie** en **Geavanceerd** .
 
-    ![Geavanceerde HDFS-configuratie bewerken](./media/apache-spark-improve-performance-iocache/ambariui-hdfs-service-configs-advanced.png "Geavanceerde HDFS-configuratie bewerken")
+    :::image type="content" source="./media/apache-spark-improve-performance-iocache/ambariui-hdfs-service-configs-advanced.png " alt-text="Geavanceerde HDFS-configuratie bewerken" border="true":::
 
 1. Schuif omlaag en vouw het gebied **aangepaste kern site** uit.
 
@@ -60,13 +60,13 @@ Er kunnen schijf ruimte fouten optreden bij het uitvoeren van Spark-taken na het
 
 1. Wijzig de waarde in het vak.
 
-    ![Percentage van de volledige i/o-cache bewerken](./media/apache-spark-improve-performance-iocache/ambariui-cache-data-fullness-percentage-property.png "Percentage van de volledige i/o-cache bewerken")
+    :::image type="content" source="./media/apache-spark-improve-performance-iocache/ambariui-cache-data-fullness-percentage-property.png " alt-text="Percentage van de volledige i/o-cache bewerken" border="true":::
 
 1. Selecteer **Opslaan** in de rechter bovenhoek.
 
 1. Selecteer **opnieuw opstarten**  >  **alle beïnvloed**.
 
-    ![Apache Ambari start alle betrokken](./media/apache-spark-improve-performance-iocache/ambariui-restart-all-affected.png "Alle betrokken software opnieuw opstarten")
+    :::image type="content" source="./media/apache-spark-improve-performance-iocache/ambariui-restart-all-affected.png " alt-text="Apache Ambari start alle betrokken" border="true":::
 
 1. Selecteer **Bevestig opnieuw opstarten**.
 

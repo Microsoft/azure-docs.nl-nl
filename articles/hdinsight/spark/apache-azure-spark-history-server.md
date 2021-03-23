@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 11/25/2019
-ms.openlocfilehash: 1d53d9e9ee2a7fa6588ea0993b3bebdb2a287351
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: c6645bc605dbd60d331ac0de002c36384b2bbbc4
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98941051"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104864751"
 ---
 # <a name="use-the-extended-features-of-the-apache-spark-history-server-to-debug-and-diagnose-spark-applications"></a>De uitgebreide functies van de Apache Spark History-server gebruiken om fouten op te sporen en op te sporen in Spark-toepassingen
 
@@ -25,7 +25,7 @@ De Spark-geschiedenis server is de Web-UI voor voltooide en actieve Spark-toepas
 1. Open in het [Azure Portal](https://portal.azure.com/)het Spark-cluster. Zie voor meer informatie het [overzicht en weer geven van clusters](../hdinsight-administer-use-portal-linux.md#showClusters).
 2. Selecteer in **cluster dashboards** de optie  **Spark-geschiedenis server**. Wanneer u hierom wordt gevraagd, voert u de beheerders referenties in voor het Spark-cluster.
 
-    ![Start de Spark-geschiedenis server vanuit het Azure Portal.](./media/apache-azure-spark-history-server/azure-portal-dashboard-spark-history.png "Spark-geschiedenis server")
+    :::image type="content" source="./media/apache-azure-spark-history-server/azure-portal-dashboard-spark-history.png " alt-text="Start de Spark-geschiedenis server vanuit het Azure Portal." border="true"::: het Azure Portal. Border = "True":::
 
 ### <a name="open-the-spark-history-server-web-ui-by-url"></a>De Web-UI van de Spark-geschiedenis server op URL openen
 
@@ -33,7 +33,7 @@ Open de Spark-geschiedenis server door te bladeren naar `https://CLUSTERNAME.azu
 
 De Web-UI van de Spark-geschiedenis server kan er ongeveer als volgt uitzien:
 
-![De Spark-geschiedenis Server pagina.](./media/apache-azure-spark-history-server/hdinsight-spark-history-server.png)
+:::image type="content" source="./media/apache-azure-spark-history-server/hdinsight-spark-history-server.png" alt-text="De Spark-geschiedenis Server pagina." border="true":::
 
 ## <a name="use-the-data-tab-in-the-spark-history-server"></a>Het tabblad gegevens in de Spark-geschiedenis server gebruiken
 
@@ -41,57 +41,57 @@ Selecteer de taak-ID en selecteer vervolgens **gegevens** in het menu van het hu
 
 + Controleer **invoer**, **uitvoer** en **tabel bewerkingen** door de afzonderlijke tabbladen te selecteren.
 
-    ![Gegevens tabbladen op de pagina gegevens voor Spark-toepassing.](./media/apache-azure-spark-history-server/apache-spark-data-tabs.png)
+    :::image type="content" source="./media/apache-azure-spark-history-server/apache-spark-data-tabs.png" alt-text="Gegevens tabbladen op de pagina gegevens voor Spark-toepassing." border="true":::
 
 + Kopieer alle rijen door de knop **kopiëren** te selecteren.
 
-    ![Gegevens kopiëren op de pagina van de Spark-toepassing.](./media/apache-azure-spark-history-server/apache-spark-data-copy.png)
+    :::image type="content" source="./media/apache-azure-spark-history-server/apache-spark-data-copy.png" alt-text="Gegevens kopiëren op de pagina van de Spark-toepassing." border="true":::
 
 + Sla alle gegevens op als een. CSV-bestand door de knop **CSV** te selecteren.
 
-    ![Gegevens opslaan als een. CSV-bestand van de pagina gegevens voor Spark-toepassing.](./media/apache-azure-spark-history-server/apache-spark-data-save.png)
+    :::image type="content" source="./media/apache-azure-spark-history-server/apache-spark-data-save.png" alt-text="Gegevens opslaan als een. CSV-bestand van de pagina gegevens voor Spark-toepassing." border="true":::
 
 + Zoek de gegevens door tref woorden in het **Zoek** veld in te voeren. De zoek resultaten worden onmiddellijk weer gegeven.
 
-    ![Zoek gegevens op de pagina gegevens voor Spark-toepassing.](./media/apache-azure-spark-history-server/apache-spark-data-search.png)
+    :::image type="content" source="./media/apache-azure-spark-history-server/apache-spark-data-search.png" alt-text="Zoek gegevens op de pagina gegevens voor Spark-toepassing." border="true":::
 
 + Selecteer de kolomkop om de tabel te sorteren. Selecteer het plus teken om een rij uit te breiden om meer details weer te geven. Selecteer het minteken om een rij samen te vouwen.
 
-    ![De gegevens tabel op de pagina gegevens voor Spark-toepassing.](./media/apache-azure-spark-history-server/apache-spark-data-table.png)
+    :::image type="content" source="./media/apache-azure-spark-history-server/apache-spark-data-table.png" alt-text="De gegevens tabel op de pagina gegevens voor Spark-toepassing." border="true":::
 
 + Down load één bestand door de knop **gedeeltelijk downloaden** aan de rechter kant te selecteren. Het geselecteerde bestand wordt lokaal gedownload. Als het bestand niet meer bestaat, wordt er een nieuw tabblad geopend om de fout berichten weer te geven.
 
-    ![De rij voor het downloaden van gegevens op de pagina gegevens voor Spark-toepassing.](./media/apache-azure-spark-history-server/sparkui-data-download-row.png)
+    :::image type="content" source="./media/apache-azure-spark-history-server/sparkui-data-download-row.png" alt-text="De rij voor het downloaden van gegevens op de pagina gegevens voor Spark-toepassing." border="true":::
 
 + Kopieer een volledig pad of een relatief pad door de optie **volledig pad kopiëren** of **relatief pad kopiëren** te selecteren, die uit het menu downloaden moet worden uitgebreid. Voor Azure Data Lake Storage-bestanden selecteert u **openen in azure Storage Explorer** om Azure Storage Explorer te starten en gaat u naar de map na het aanmelden.
 
-    ![Het volledige pad kopiëren en de opties voor het relatieve pad kopiëren op de pagina gegevens voor Spark-toepassing.](./media/apache-azure-spark-history-server/sparkui-data-copy-path.png)
+    :::image type="content" source="./media/apache-azure-spark-history-server/sparkui-data-copy-path.png" alt-text="Het volledige pad kopiëren en de opties voor het relatieve pad kopiëren op de pagina gegevens voor Spark-toepassing." border="true":::
 
 + Als er te veel rijen worden weer gegeven op één pagina, selecteert u de pagina nummers onder aan de tabel om te navigeren.
 
-    ![Pagina nummers op de pagina gegevens voor Spark-toepassing.](./media/apache-azure-spark-history-server/apache-spark-data-page.png)
+    :::image type="content" source="./media/apache-azure-spark-history-server/apache-spark-data-page.png" alt-text="Pagina nummers op de pagina gegevens voor Spark-toepassing." border="true":::
 
 + Beweeg de muis aanwijzer over of selecteer het vraag teken naast **gegevens voor Spark-toepassing** om de knop Info weer te geven voor meer informatie.
 
-    ![Meer informatie over de pagina gegevens voor Spark-toepassing.](./media/apache-azure-spark-history-server/sparkui-data-more-info.png)
+    :::image type="content" source="./media/apache-azure-spark-history-server/sparkui-data-more-info.png" alt-text="Meer informatie over de pagina gegevens voor Spark-toepassing." border="true":::
 
 +  Als u feedback over problemen wilt verzenden, selecteert u **feedback geven**.
 
-    ![Feedback geven op de pagina gegevens voor Spark-toepassing.](./media/apache-azure-spark-history-server/sparkui-graph-feedback.png)
+    :::image type="content" source="./media/apache-azure-spark-history-server/sparkui-graph-feedback.png" alt-text="Feedback geven op de pagina gegevens voor Spark-toepassing." border="true":::
 
 ## <a name="use-the-graph-tab-in-the-spark-history-server"></a>Het tabblad grafiek in de Spark-geschiedenis server gebruiken
 
 + Selecteer de taak-ID en selecteer vervolgens **grafiek** in het menu van het hulp programma om de taak grafiek weer te geven. Standaard worden alle taken weer gegeven in de grafiek. Filter de resultaten met behulp van de vervolg keuzelijst **taak-id** .
 
-    ![De vervolg keuzelijst taak-ID op de pagina & taak grafiek van Spark-toepassing.](./media/apache-azure-spark-history-server/apache-spark-graph-jobid.png)
+    :::image type="content" source="./media/apache-azure-spark-history-server/apache-spark-graph-jobid.png" alt-text="De vervolg keuzelijst taak-ID op de pagina & taak grafiek van Spark-toepassing." border="true":::
 
 + De **voortgang** wordt standaard geselecteerd. Controleer de gegevens stroom door **lezen** of **geschreven** te selecteren in de vervolg keuzelijst **weer geven** .
 
-    ![Controleer de gegevens stroom op de pagina & taak grafiek van Spark-toepassing.](./media/apache-azure-spark-history-server/sparkui-graph-display.png)
+    :::image type="content" source="./media/apache-azure-spark-history-server/sparkui-graph-display.png" alt-text="Controleer de gegevens stroom op de pagina & taak grafiek van Spark-toepassing." border="true":::
 
 + De achtergrond kleur van elke taak komt overeen met een heatmap.
 
-   ![De heatmap op de pagina & taak grafiek van Spark-toepassing.](./media/apache-azure-spark-history-server/sparkui-graph-heatmap.png)
+   :::image type="content" source="./media/apache-azure-spark-history-server/sparkui-graph-heatmap.png" alt-text="De heatmap op de pagina & taak grafiek van Spark-toepassing." border="true":::
 
 
     |Kleur |Beschrijving |
@@ -102,29 +102,29 @@ Selecteer de taak-ID en selecteer vervolgens **gegevens** in het menu van het hu
     |Wit|De taak wacht op uitvoering of het stadium is overgeslagen.|
     |Red|De taak is mislukt.|
 
-     ![Er wordt een taak uitgevoerd op de pagina met de taak grafiek van Spark-toepassing &.](./media/apache-azure-spark-history-server/sparkui-graph-color-running.png)
+     :::image type="content" source="./media/apache-azure-spark-history-server/sparkui-graph-color-running.png" alt-text="Er wordt een taak uitgevoerd op de pagina met de taak grafiek van Spark-toepassing &." border="true":::
 
      De overgeslagen fasen worden in wit weer gegeven.
-    ![Een overgeslagen taak op de pagina met & taak grafiek van Spark-toepassing.](./media/apache-azure-spark-history-server/sparkui-graph-color-skip.png)
+    :::image type="content" source="./media/apache-azure-spark-history-server/sparkui-graph-color-skip.png" alt-text="Een overgeslagen taak op de pagina met & taak grafiek van Spark-toepassing." border="true":::
 
-    ![Een mislukte taak op de pagina met & taak grafiek van Spark-toepassing.](./media/apache-azure-spark-history-server/sparkui-graph-color-failed.png)
+    :::image type="content" source="./media/apache-azure-spark-history-server/sparkui-graph-color-failed.png" alt-text="Een mislukte taak op de pagina met & taak grafiek van Spark-toepassing." border="true":::
 
      > [!NOTE]  
      > Afspelen is beschikbaar voor voltooide taken. Selecteer de knop **afspelen** om de taak terug te spelen. Stop de taak op elk gewenst moment door de knop stoppen te selecteren. Wanneer een taak wordt afgespeeld, wordt de status van elke taak weer gegeven op kleur. Afspelen wordt niet ondersteund voor onvolledige taken.
 
 + Schuif omlaag om in of uit te zoomen op de taak grafiek, of selecteer **Inzoomen passend** maken om deze op het scherm aan te passen.
 
-    ![Selecteer in-en uitzoomen op de pagina Spark-toepassing & taak grafiek.](./media/apache-azure-spark-history-server/sparkui-graph-zoom2fit.png)
+    :::image type="content" source="./media/apache-azure-spark-history-server/sparkui-graph-zoom2fit.png" alt-text="Selecteer in-en uitzoomen op de pagina Spark-toepassing & taak grafiek." border="true":::
 
 + Wanneer taken mislukken, houdt u de muis aanwijzer over het grafiek knooppunt om de knop Info weer te geven en selecteert u vervolgens de fase om deze te openen op een nieuwe pagina.
 
-    ![Bekijk de knop info op de pagina & taak grafiek van Spark-toepassing.](./media/apache-azure-spark-history-server/sparkui-graph-tooltip.png)
+    :::image type="content" source="./media/apache-azure-spark-history-server/sparkui-graph-tooltip.png" alt-text="Bekijk de knop info op de pagina & taak grafiek van Spark-toepassing." border="true":::
 
 + Op de pagina Spark-toepassing & taak grafiek worden knop Info en kleine pictogrammen weer gegeven als de taken aan de volgende voor waarden voldoen:
   + Gegevens scheefheid: gegevens lezen grootte > gemiddelde Lees grootte van gegevens van alle taken in deze fase * 2 *en* grootte van gelezen gegevens > 10 MB.
   + Tijd scheefheid: uitvoerings tijd > gemiddelde uitvoerings tijd van alle taken in deze fase * 2 *en* uitvoerings tijd > 2 minuten.
 
-    ![Het gescheefe taak pictogram op de pagina Spark-toepassing & taak grafiek.](./media/apache-azure-spark-history-server/sparkui-graph-skew-icon.png)
+    :::image type="content" source="./media/apache-azure-spark-history-server/sparkui-graph-skew-icon.png" alt-text="Het gescheefe taak pictogram op de pagina Spark-toepassing & taak grafiek." border="true":::
 
 + In het knoop punt taak grafiek wordt de volgende informatie over elke fase weer gegeven:
   + Id
@@ -144,7 +144,7 @@ Selecteer de taak-ID en selecteer vervolgens **gegevens** in het menu van het hu
 
 + Feedback over problemen verzenden door **feedback voor ons** te selecteren.
 
-    ![De optie feedback op de pagina taak grafiek van Spark-toepassing &.](./media/apache-azure-spark-history-server/sparkui-graph-feedback.png)
+    :::image type="content" source="./media/apache-azure-spark-history-server/sparkui-graph-feedback.png" alt-text="De optie feedback op de pagina taak grafiek van Spark-toepassing &." border="true":::
 
 ## <a name="use-the-diagnosis-tab-in-the-spark-history-server"></a>Het tabblad diagnose in de Spark-geschiedenis server gebruiken
 
@@ -152,7 +152,7 @@ Selecteer de taak-ID en selecteer vervolgens **diagnose** in het menu van het hu
 
 + Bekijk de **gebruiks analyse** van **gegevens scheefheid**, **tijds scheefheid** en voer uit door de tabbladen respectievelijk te selecteren.
 
-    ![Het tabblad gegevens scheefheid op het tabblad diagnose.](./media/apache-azure-spark-history-server/sparkui-diagnosis-tabs.png)
+    :::image type="content" source="./media/apache-azure-spark-history-server/sparkui-diagnosis-tabs.png" alt-text="Het tabblad gegevens scheefheid op het tabblad diagnose." border="true":::
 
 ### <a name="data-skew"></a>Gegevens scheef trekken
 
@@ -166,13 +166,13 @@ In het gedeelte **para meters opgeven** worden de para meters weer gegeven die w
 
 In het gedeelte **Gescheefe fase** worden fasen weer gegeven die gescheefe taken hebben die voldoen aan de opgegeven criteria. Als er meer dan één scheefe taak in een fase is, wordt in de sectie **scheefe fase** alleen de meest verlaagde taak weer gegeven (dat wil zeggen, de grootste gegevens voor het scheef trekken van gegevens).
 
-![Grotere weer gave van het tabblad gegevens scheefheid op het tabblad diagnose.](./media/apache-azure-spark-history-server/sparkui-diagnosis-dataskew-section2.png)
+:::image type="content" source="./media/apache-azure-spark-history-server/sparkui-diagnosis-dataskew-section2.png" alt-text="Grotere weer gave van het tabblad gegevens scheefheid op het tabblad diagnose." border="true":::
 
 ##### <a name="skew-chart"></a>Grafiek scheef trekken
 
 Wanneer u een rij in de tabel **scheefe fase** selecteert, worden in het **schuine diagram** meer details over taak distributie weer gegeven op basis van de lees-en uitvoerings tijd van de gegevens. De gescheefe taken worden rood gemarkeerd en de normale taken worden blauw gemarkeerd. Voor de prestaties van de grafiek worden de voorbeeld taken van Maxi maal 100 weer gegeven. De taak Details worden weer gegeven in het deel venster onder in de rechter benedenhoek.
 
-![Het Scheefe diagram voor fase 10 in de Spark-gebruikers interface.](./media/apache-azure-spark-history-server/sparkui-diagnosis-dataskew-section3.png)
+:::image type="content" source="./media/apache-azure-spark-history-server/sparkui-diagnosis-dataskew-section3.png" alt-text="Het Scheefe diagram voor fase 10 in de Spark-gebruikers interface." border="true":::
 
 ### <a name="time-skew"></a>Tijd verschil
 
@@ -184,7 +184,7 @@ In het gedeelte **para meters opgeven** worden de para meters weer gegeven, die 
 
 Wanneer u **tijds scheefheid** selecteert, wordt het gefilterde resultaat weer gegeven in de sectie **scheefe fase** , op basis van de para meters die zijn ingesteld in de sectie **para meters opgeven** . Wanneer u één item in de sectie **scheefe fase** selecteert, wordt de bijbehorende grafiek geschetst in de derde sectie en worden de taak details weer gegeven in het deel venster onder in de rechter benedenhoek.
 
-![Het tabblad tijd verschil binnen het tabblad diagnose.](./media/apache-azure-spark-history-server/sparkui-diagnosis-timeskew-section2.png)
+:::image type="content" source="./media/apache-azure-spark-history-server/sparkui-diagnosis-timeskew-section2.png" alt-text="Het tabblad tijd verschil binnen het tabblad diagnose." border="true":::
 
 ### <a name="executor-usage-analysis-graphs"></a>Grafieken voor gebruiks analyse van gebruik
 
@@ -192,11 +192,11 @@ In de **gebruiks grafiek** van de uitvoerder worden de werkelijke uitvoerings to
 
 Wanneer u **gebruiks analyse** uitvoeren selecteert, worden vier verschillende bochten over het gebruik van de **uitvoerder** geschetst: **toegewezen uitvoerende** machines, uitvoeringen van uitvoerende machines, **niet-actieve uitvoerende** machines en **Maxi maal** bewerkings instanties. Bij elke uitvoerder die is **toegevoegd** of de uitvoerder is **verwijderd** , worden de toegewezen uitbreiden verhoogd of verlaagd. U kunt de **gebeurtenis tijdlijn** controleren op het tabblad **taken** voor meer vergelijkingen.
 
-![Het tabblad gebruiks analyse voor voeringen op het tabblad diagnose.](./media/apache-azure-spark-history-server/sparkui-diagnosis-executors.png)
+:::image type="content" source="./media/apache-azure-spark-history-server/sparkui-diagnosis-executors.png" alt-text="Het tabblad gebruiks analyse voor voeringen op het tabblad diagnose." border="true":::
 
 Selecteer het kleur pictogram om de bijbehorende inhoud in alle concepten te selecteren of de selectie ervan op te heffen.
 
- ![Selecteer de grafiek op het tabblad gebruiks analyse van de uitvoerder.](./media/apache-azure-spark-history-server/sparkui-diagnosis-select-chart.png)
+ :::image type="content" source="./media/apache-azure-spark-history-server/sparkui-diagnosis-select-chart.png" alt-text="Selecteer de grafiek op het tabblad gebruiks analyse van de uitvoerder." border="true":::
 
 ## <a name="faq"></a>Veelgestelde vragen
 
@@ -212,15 +212,15 @@ Voer de volgende stappen uit om terug te keren naar de Community-versie.
 1. De eigenschap wordt nu ingesteld op **Onwaar** .
 1. Selecteer **Opslaan** om de configuratie op te slaan.
 
-    ![Schakel een functie uit in Apache Ambari.](./media/apache-azure-spark-history-server/apache-spark-turn-off.png)
+    :::image type="content" source="./media/apache-azure-spark-history-server/apache-spark-turn-off.png" alt-text="Schakel een functie uit in Apache Ambari." border="true":::
 
 1. Selecteer **Spark2** in het linkerdeel venster. Selecteer vervolgens op het tabblad **samen vatting** **Spark2 geschiedenis server**.
 
-    ![De weer gave samen vatting in Apache Ambari.](./media/apache-azure-spark-history-server/apache-spark-restart1.png)
+    :::image type="content" source="./media/apache-azure-spark-history-server/apache-spark-restart1.png" alt-text="De weer gave samen vatting in Apache Ambari." border="true":::
 
 1. Als u de Spark-geschiedenis server opnieuw wilt opstarten, selecteert u de knop **gestart** rechts van de **Spark2-geschiedenis server** en selecteert u **opnieuw opstarten** in de vervolg keuzelijst.
 
-    ![Start de Spark-geschiedenis server opnieuw in Apache Ambari.](./media/apache-azure-spark-history-server/apache-spark-restart2.png)  
+    :::image type="content" source="./media/apache-azure-spark-history-server/apache-spark-restart2.png" alt-text="Start de Spark-geschiedenis server opnieuw in Apache Ambari." border="true":::  
 
 1. Vernieuw de Web-UI van de Spark-geschiedenis server. Er wordt teruggekeerd naar de Community-versie.
 
@@ -230,15 +230,15 @@ Als er een fout optreedt in de Spark-geschiedenis server, moet u de volgende sta
 
 1. Down load de gebeurtenis door **downloaden** te selecteren in de Web-UI van de Spark-geschiedenis server.
 
-    ![Down load de gebeurtenis in de gebruikers interface van de Spark-geschiedenis server.](./media/apache-azure-spark-history-server/sparkui-download-event.png)
+    :::image type="content" source="./media/apache-azure-spark-history-server/sparkui-download-event.png" alt-text="Down load de gebeurtenis in de gebruikers interface van de Spark-geschiedenis server." border="true":::
 
 2. Selecteer **feedback geven** op de pagina met de **taak grafiek van Spark-toepassing &** .
 
-    ![Feedback geven op de pagina met & taak grafiek van Spark-toepassing](./media/apache-azure-spark-history-server/sparkui-graph-feedback.png)
+    :::image type="content" source="./media/apache-azure-spark-history-server/sparkui-graph-feedback.png" alt-text="Feedback geven op de pagina met & taak grafiek van Spark-toepassing" border="true":::
 
 3. Geef de titel en een beschrijving van de fout op. Sleep vervolgens het zip-bestand naar het veld bewerken en selecteer **nieuw probleem verzenden**.
 
-    ![Upload een nieuw probleem en verzend het.](./media/apache-azure-spark-history-server/apache-spark-file-issue.png)
+    :::image type="content" source="./media/apache-azure-spark-history-server/apache-spark-file-issue.png" alt-text="Upload een nieuw probleem en verzend het." border="true":::
 
 ### <a name="how-do-i-upgrade-a-jar-file-in-a-hotfix-scenario"></a>Hoe kan ik u een jar-bestand in een hotfix-scenario bijwerken?
 
@@ -312,7 +312,7 @@ Als u een upgrade wilt uitvoeren met een hotfix, gebruikt u het volgende script 
     |Knooppunttype(n)|Hoofd, werk nemer|
     |Parameters|`https://${account_name}.blob.core.windows.net/packages/jars/spark-enhancement-${version}.jar`|
 
-     ![Azure Portal script actie verzenden](./media/apache-azure-spark-history-server/apache-spark-upload1.png)
+     :::image type="content" source="./media/apache-azure-spark-history-server/apache-spark-upload1.png" alt-text="Azure Portal script actie verzenden" border="true":::
 
 ## <a name="known-issues"></a>Bekende problemen
 

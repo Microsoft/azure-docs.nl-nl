@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,seoapr2020
 ms.topic: conceptual
 ms.date: 11/20/2019
-ms.openlocfilehash: 84124f33f6aa02f63c0c47a24bd7d2a71ced2d11
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 47f0ea34fa650371d39252ce6b0ee6a15f3124d6
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101699297"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104871177"
 ---
 # <a name="azure-hdinsight-frequently-asked-questions"></a>Azure HDInsight: veelgestelde vragen
 
@@ -78,11 +78,11 @@ Nee, het is niet mogelijk om Apache Kafka en Apache Spark uit te voeren op hetze
 1. Open de Ambari-webgebruikersinterface op `https://CLUSTERNAME.azurehdinsight.net` , waarbij clustername de naam van uw cluster is.
 2. Selecteer in de rechter bovenhoek de optie beheer | Instellingen. 
 
-   ![Ambari-instellingen](media/hdinsight-faq/ambari-settings.png)
+   :::image type="content" source="media/hdinsight-faq/ambari-settings.png" alt-text="Ambari-instellingen":::
 
 3. Selecteer in het venster gebruikers instellingen de nieuwe tijd zone in de vervolg keuzelijst tijd zone en klik vervolgens op opslaan.
 
-   ![Gebruikers instellingen Ambari](media/hdinsight-faq/ambari-user-settings.png)
+   :::image type="content" source="media/hdinsight-faq/ambari-user-settings.png" alt-text="Gebruikers instellingen Ambari":::
 
 ## <a name="metastore"></a>Metastore
 

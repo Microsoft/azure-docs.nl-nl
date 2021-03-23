@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 01/12/2021
-ms.openlocfilehash: ff7cfe8ad09201df20db89e14f8c175e678e5107
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 7027e4af9c11db628990d42430c6877340de3534
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98929797"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104868440"
 ---
 # <a name="manage-resources-for-apache-spark-cluster-on-azure-hdinsight"></a>Resources voor Apache Spark cluster beheren in azure HDInsight
 
@@ -28,7 +28,7 @@ U kunt de garen-interface gebruiken om toepassingen te bewaken die momenteel wor
 
 2. Selecteer in **cluster dashboards** de optie **garens**. Wanneer u hierom wordt gevraagd, voert u de beheerders referenties in voor het Spark-cluster.
 
-    ![Gebruikers interface van garen starten](./media/apache-spark-resource-manager/azure-portal-dashboard-yarn.png)
+    :::image type="content" source="./media/apache-spark-resource-manager/azure-portal-dashboard-yarn.png" alt-text="Gebruikers interface van garen starten" border="true":::
 
    > [!TIP]  
    > U kunt ook de gebruikers interface van garen starten vanuit de Ambari-gebruikers interface. Ga in de Ambari-gebruikers interface **naar de**  >  **snelle koppelingen** van een  >  **actieve**  >  **Resource Manager-gebruikers interface**.
@@ -43,15 +43,15 @@ De drie configuratie parameters kunnen worden geconfigureerd op cluster niveau (
 
 1. Ga in de Ambari-gebruikers interface naar **Spark2**  >  **configs**  >  **aangepaste Spark2-defaults**.
 
-    ![Para meters instellen met Ambari Custom](./media/apache-spark-resource-manager/ambari-ui-spark2-configs.png "Para meters instellen met Ambari Custom")
+    :::image type="content" source="./media/apache-spark-resource-manager/ambari-ui-spark2-configs.png " alt-text="Para meters instellen met Ambari Custom" border="true":::
 
 1. De standaard waarden zijn handig om vier Spark-toepassingen gelijktijdig op het cluster uit te voeren. U kunt deze waarden wijzigen in de gebruikers interface, zoals wordt weer gegeven in de volgende scherm afbeelding:
 
-    ![Para meters instellen met behulp van Ambari](./media/apache-spark-resource-manager/ambari-ui-spark2-defaults.png "Para meters instellen met behulp van Ambari")
+    :::image type="content" source="./media/apache-spark-resource-manager/ambari-ui-spark2-defaults.png " alt-text="Para meters instellen met behulp van Ambari" border="true":::
 
 1. Selecteer **Opslaan** om de configuratie wijzigingen op te slaan. Boven aan de pagina wordt u gevraagd om alle betrokken services opnieuw op te starten. Selecteer **opnieuw opstarten**.
 
-    ![Services opnieuw starten](./media/apache-spark-resource-manager/apache-ambari-restart-services.png)
+    :::image type="content" source="./media/apache-spark-resource-manager/apache-ambari-restart-services.png" alt-text="Services opnieuw starten" border="true":::
 
 ### <a name="change-the-parameters-for-an-application-running-in-jupyter-notebook"></a>De para meters wijzigen voor een toepassing die wordt uitgevoerd in Jupyter Notebook
 
@@ -93,11 +93,11 @@ Spark Thrift server maakt gebruik van de toewijzing van de dynamische uitvoerder
 
 * Vouw de categorie **Geavanceerd spark2-Thrift-sparkconf** uit om de para meters bij te werken `spark.dynamicAllocation.maxExecutors` en `spark.dynamicAllocation.minExecutors` .
 
-    ![Spark Thrift-server configureren](./media/apache-spark-resource-manager/ambari-ui-advanced-thrift-sparkconf.png "Spark Thrift-server configureren")
+    :::image type="content" source="./media/apache-spark-resource-manager/ambari-ui-advanced-thrift-sparkconf.png " alt-text="Spark Thrift-server configureren" border="true":::
 
 * Vouw de categorie **Custom spark2-Thrift-sparkconf** uit om de para meters bij te werken `spark.executor.cores` en `spark.executor.memory` .
 
-    ![Spark Thrift-server parameter configureren](./media/apache-spark-resource-manager/ambari-ui-custom-thrift-sparkconf.png "Spark Thrift-server parameter configureren")
+    :::image type="content" source="./media/apache-spark-resource-manager/ambari-ui-custom-thrift-sparkconf.png " alt-text="Spark Thrift-server parameter configureren" border="true":::
 
 ### <a name="change-the-driver-memory-of-the-spark-thrift-server"></a>Het stuur programma-geheugen van de Spark Thrift-server wijzigen
 
@@ -113,38 +113,38 @@ Vanwege de dynamische toewijzing van Spark zijn de resources die worden gebruikt
 
 2. Selecteer op de volgende pagina **Spark2 Thrift-servers**.
 
-    ![Thrift server1 opnieuw starten](./media/apache-spark-resource-manager/ambari-ui-spark2-thrift-servers.png "Thrift server1 opnieuw starten")
+    :::image type="content" source="./media/apache-spark-resource-manager/ambari-ui-spark2-thrift-servers.png " alt-text="Thrift server1 opnieuw starten" border="true":::
 
 3. Als het goed is, ziet u de twee hoofd knooppunten waarop de Spark2 Thrift-server wordt uitgevoerd. Selecteer een van de hoofd knooppunten.
 
-    ![Thrift server2 opnieuw starten](./media/apache-spark-resource-manager/restart-thrift-server-2.png "Thrift server2 opnieuw starten")
+    :::image type="content" source="./media/apache-spark-resource-manager/restart-thrift-server-2.png " alt-text="Thrift server2 opnieuw starten" border="true":::
 
 4. Op de volgende pagina wordt een lijst weer gegeven met alle services die op die hoofd knooppunt worden uitgevoerd. Selecteer in de lijst de vervolg keuze knop naast Spark2 Thrift-server en selecteer vervolgens **stoppen**.
 
-    ![Thrift Server3 opnieuw starten](./media/apache-spark-resource-manager/ambari-ui-spark2-thriftserver-restart.png "Thrift Server3 opnieuw starten")
+    :::image type="content" source="./media/apache-spark-resource-manager/ambari-ui-spark2-thriftserver-restart.png " alt-text="Thrift Server3 opnieuw starten" border="true":::
 5. Herhaal deze stappen ook voor de andere hoofd knooppunt.
 
 ## <a name="restart-the-jupyter-service"></a>De Jupyter-service opnieuw starten
 
 Start de Ambari-webgebruikersinterface zoals wordt weer gegeven in het begin van het artikel. Selecteer **Jupyter** in het navigatie deel venster links, selecteer **service acties** en selecteer vervolgens **opnieuw starten**. Hiermee start u de Jupyter-service op alle hoofd knooppunten.
 
-![Jupyter opnieuw starten](./media/apache-spark-resource-manager/apache-ambari-restart-jupyter.png "Jupyter opnieuw starten")
+:::image type="content" source="./media/apache-spark-resource-manager/apache-ambari-restart-jupyter.png " alt-text="Jupyter opnieuw starten" border="true":::
 
 ## <a name="monitor-resources"></a>Resources controleren
 
 Start de gebruikers interface van het garen zoals in het begin van het artikel wordt weer gegeven. Controleer in de tabel cluster metrische gegevens boven op het scherm de waarden voor het **gebruikte geheugen** en het **totale geheugen** in kolommen. Als de twee waarden sluiten, zijn er mogelijk onvoldoende bronnen om de volgende toepassing te starten. Hetzelfde geldt voor de kolommen **VCores used** en **VCores totaal** . Als er in de hoofd weergave een toepassing in de **geaccepteerde** status bevindt en niet wordt overgeschakeld naar een **actieve** of **mislukte** status, kan dit ook duiden op een indicatie dat er niet voldoende bronnen worden opgehaald om te starten.
 
-![Resource limiet](./media/apache-spark-resource-manager/apache-ambari-resource-limit.png "Resource limiet")
+:::image type="content" source="./media/apache-spark-resource-manager/apache-ambari-resource-limit.png " alt-text="Resource limiet" border="true":::
 
 ## <a name="kill-running-applications"></a>Actieve toepassingen beëindigen
 
 1. Selecteer in de gebruikers interface van garen vanuit het linkerdeel venster **uitvoeren**. Bepaal in de lijst met actieve toepassingen welke toepassing moet worden gedood en selecteer de **id**.
 
-    ![App1 afsluiten](./media/apache-spark-resource-manager/apache-ambari-kill-app1.png "App1 afsluiten")
+    :::image type="content" source="./media/apache-spark-resource-manager/apache-ambari-kill-app1.png " alt-text="App1 afsluiten" border="true":::
 
 2. Selecteer **Kill-toepassing** in de rechter bovenhoek en selecteer vervolgens **OK**.
 
-    ![App2 afsluiten](./media/apache-spark-resource-manager/apache-ambari-kill-app2.png "App2 afsluiten")
+    :::image type="content" source="./media/apache-spark-resource-manager/apache-ambari-kill-app2.png " alt-text="App2 afsluiten" border="true":::
 
 ## <a name="see-also"></a>Zie ook
 

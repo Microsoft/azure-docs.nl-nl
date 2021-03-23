@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 04/24/2020
-ms.openlocfilehash: e21361b6d491f53f41754831d2bdf896ef2719db
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 33171527f03b0cc386f683f55f6cf9a70913abdb
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101091438"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104871211"
 ---
 # <a name="manage-apache-hadoop-clusters-in-hdinsight-by-using-the-azure-portal"></a>Apache Hadoop clusters in HDInsight beheren door gebruik te maken van de Azure Portal
 
@@ -36,7 +36,7 @@ Op de pagina **HDInsight-clusters** worden uw bestaande clusters weer geven.  Va
 
 Selecteer de naam van uw cluster op de pagina [**HDInsight-clusters**](#showClusters) .  Hiermee opent u de **overzichts** weergave, die er ongeveer als volgt uitziet:
 
-![Basis principes van Azure Portal HDInsight-cluster](./media/hdinsight-administer-use-portal-linux/hdinsight-essentials2.png)
+:::image type="content" source="./media/hdinsight-administer-use-portal-linux/hdinsight-essentials2.png" alt-text="Basis principes van Azure Portal HDInsight-cluster":::
 
 **Bovenste menu:**  
 
@@ -173,7 +173,7 @@ Op de [Start pagina](#homePage)van het cluster:
 
 1. Selecteer **cluster dashboards**.
 
-    ![Menu van HDInsight Apache Hadoop-cluster](./media/hdinsight-administer-use-portal-linux/hdinsight-azure-portal-cluster-menu2.png)
+    :::image type="content" source="./media/hdinsight-administer-use-portal-linux/hdinsight-azure-portal-cluster-menu2.png" alt-text="Menu van HDInsight Apache Hadoop-cluster":::
 
 1. Selecteer **Ambari Home** op de nieuwe pagina.
 1. Voer de gebruikers naam en het wacht woord van het cluster in.  De standaard naam van het cluster is _admin_.

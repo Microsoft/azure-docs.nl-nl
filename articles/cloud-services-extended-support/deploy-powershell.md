@@ -8,12 +8,12 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: 08a8dde815a6dea5d69e5e2a385cbaa03fba681a
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 0c1b67e42e7988a836ec58ac022b11d736210bca
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "99832691"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104865618"
 ---
 # <a name="deploy-a-cloud-service-extended-support-using-azure-powershell"></a>Een Cloud service (uitgebreide ondersteuning) implementeren met behulp van Azure PowerShell
 
@@ -88,7 +88,7 @@ Controleer de [vereisten voor implementatie](deploy-prerequisite.md) voor Cloud 
     $networkProfile = @{loadBalancerConfiguration = $loadBalancerConfig} 
     ```
  
-9. Een sleutelkluis maken. Deze Key Vault wordt gebruikt om certificaten op te slaan die zijn gekoppeld aan de rollen van de Cloud service (uitgebreide ondersteuning). Zorg ervoor dat u ' toegangs beleid ' hebt ingeschakeld (in portal) voor toegang tot Azure Virtual Machines voor implementatie en Azure Resource Manager voor sjabloon implementatie. De Key Vault moet zich in dezelfde regio en hetzelfde abonnement bevinden als de Cloud service en een unieke naam hebben. Zie [certificaten met Azure Cloud Services gebruiken (uitgebreide ondersteuning)](certificates-and-key-vault.md)voor meer informatie.
+9. Een sleutelkluis maken. Deze Key Vault wordt gebruikt om certificaten op te slaan die zijn gekoppeld aan de rollen van de Cloud service (uitgebreide ondersteuning). De Key Vault moet zich in dezelfde regio en hetzelfde abonnement bevinden als de Cloud service en een unieke naam hebben. Zie [certificaten met Azure Cloud Services gebruiken (uitgebreide ondersteuning)](certificates-and-key-vault.md)voor meer informatie.
 
     ```powershell
     New-AzKeyVault -Name "ContosKeyVault” -ResourceGroupName “ContosOrg” -Location “East US” 
@@ -97,6 +97,7 @@ Controleer de [vereisten voor implementatie](deploy-prerequisite.md) voor Cloud 
 10. Het Key Vault toegangs beleid bijwerken en certificaat machtigingen verlenen aan uw gebruikers account. 
 
     ```powershell
+    Set-AzKeyVaultAccessPolicy -VaultName 'ContosKeyVault' -ResourceGroupName 'ContosOrg' -EnabledForDeployment
     Set-AzKeyVaultAccessPolicy -VaultName 'ContosKeyVault' -ResourceGroupName 'ContosOrg' -UserPrincipalName 'user@domain.com' -PermissionsToCertificates create,get,list,delete 
     ```
 

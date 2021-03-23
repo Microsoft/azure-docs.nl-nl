@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/19/2019
-ms.openlocfilehash: c5a0b2d21f7d42b8ce96f72d58e5d0a8ab0c572c
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: ee984de22052076618728fbacfc31b73c18c073a
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98943947"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104864683"
 ---
 # <a name="submit-jobs-from-r-tools-for-visual-studio"></a>Taken verzenden vanuit R-hulpprogramma's voor Visual Studio
 
@@ -22,7 +22,7 @@ RTVS breidt uw R-werk stroom uit door hulpprogram ma's te bieden zoals het [R In
 
 1. Installeer [R-Hulpprogram ma's voor Visual Studio](/visualstudio/rtvs/installing-r-tools-for-visual-studio).
 
-    ![RTVS installeren in Visual Studio 2017](./media/r-server-submit-jobs-r-tools-vs/install-r-tools-for-vs.png)
+    :::image type="content" source="./media/r-server-submit-jobs-r-tools-vs/install-r-tools-for-vs.png" alt-text="RTVS installeren in Visual Studio 2017" border="true":::
 
 2. Selecteer de werk belasting *Data Science en analytische toepassingen* en selecteer vervolgens de **ondersteuning voor r-taal**, runtime- **ondersteuning voor r-ontwikkeling** en **micro soft R-client** opties.
 
@@ -38,7 +38,7 @@ RTVS breidt uw R-werk stroom uit door hulpprogram ma's te bieden zoals het [R In
 
    2. Ga naar het menu-item **R tools** en selecteer **Data Science Settings...**.
 
-       ![Instellingen voor Visual Studio data Science](./media/r-server-submit-jobs-r-tools-vs/data-science-settings.png)
+       :::image type="content" source="./media/r-server-submit-jobs-r-tools-vs/data-science-settings.png" alt-text="Instellingen voor Visual Studio data Science" border="true":::
 
       > [!NOTE]  
       > Met de aanpak in stap 1 kunt u ook uw persoonlijke gegevens wetenschapper-indeling opslaan en herstellen, in plaats van de opdracht **Data Science Settings** te herhalen.
@@ -53,11 +53,11 @@ RTVS breidt uw R-werk stroom uit door hulpprogram ma's te bieden zoals het [R In
 6. Vanaf de bovenkant van het bestand, drukt u op CTRL + ENTER om elke regel, één per keer, naar het venster R Interactive te verzenden. Sommige regels kunnen even duren als ze pakketten installeren.
     * U kunt ook alle regels in het R-bestand selecteren (CTRL + A) en vervolgens alle uitvoeren (CTRL + ENTER) of het pictogram voor het uitvoeren van een interactieve taak op de werk balk selecteren.
 
-        ![Interactieve uitvoering van Visual Studio](./media/r-server-submit-jobs-r-tools-vs/execute-interactive1.png)
+        :::image type="content" source="./media/r-server-submit-jobs-r-tools-vs/execute-interactive1.png" alt-text="Interactieve uitvoering van Visual Studio" border="true":::
 
 7. Nadat u alle regels in het script hebt uitgevoerd, ziet u een uitvoer die er ongeveer als volgt uitzien:
 
-    ![Hulpprogram ma's voor Visual Studio-werk ruimte R](./media/r-server-submit-jobs-r-tools-vs/visual-studio-workspace.png)
+    :::image type="content" source="./media/r-server-submit-jobs-r-tools-vs/visual-studio-workspace.png" alt-text="Hulpprogram ma's voor Visual Studio-werk ruimte R" border="true":::
 
 ## <a name="submit-jobs-to-an-hdinsight-ml-services-cluster"></a>Taken verzenden naar een HDInsight ML Services-cluster
 
@@ -93,7 +93,7 @@ Als u een micro soft ML Server/micro soft R-client gebruikt vanaf een Windows-co
     rxSetComputeContext(mySparkCluster)
     ```
 
-   ![Apache Spark-context instellen](./media/r-server-submit-jobs-r-tools-vs/apache-spark-context.png)
+   :::image type="content" source="./media/r-server-submit-jobs-r-tools-vs/apache-spark-context.png" alt-text="Apache Spark-context instellen" border="true":::
 
 1. Voer de volgende opdrachten uit in het venster R Interactive:
 
@@ -105,22 +105,23 @@ Als u een micro soft ML Server/micro soft R-client gebruikt vanaf een Windows-co
 
     Als het goed is, wordt ongeveer de volgende uitvoer weergegeven:
 
-    ![Geslaagde RX-opdracht voor het uitvoeren van ](./media/r-server-submit-jobs-r-tools-vs/successful-rx-commands.png) een
+    :::image type="content" source="./media/r-server-submit-jobs-r-tools-vs/successful-rx-commands.png" alt-text="Geslaagde RX-opdracht uitvoering" border="true":::
+een
 1. Controleer of het `rxHadoopCopy` bestand is gekopieerd `people.json` van de map voorbeeld gegevens naar de zojuist gemaakte `/user/RevoShare/newUser` map:
 
     1. Selecteer in het deel venster cluster van HDInsight ML-Services in azure **opslag accounts** in het menu links.
 
-        ![Azure HDInsight Storage-accounts](./media/r-server-submit-jobs-r-tools-vs/hdinsight-storage-accounts.png)
+        :::image type="content" source="./media/r-server-submit-jobs-r-tools-vs/hdinsight-storage-accounts.png" alt-text="Azure HDInsight Storage-accounts" border="true":::
 
     2. Selecteer het standaard opslag account voor uw cluster en noteer de naam van de container/map.
 
     3. Selecteer **containers** in het menu links in het deel venster opslag account.
 
-        ![Azure HDInsight Storage-containers](./media/r-server-submit-jobs-r-tools-vs/hdi-storage-containers.png)
+        :::image type="content" source="./media/r-server-submit-jobs-r-tools-vs/hdi-storage-containers.png" alt-text="Azure HDInsight Storage-containers" border="true":::
 
     4. Selecteer de container naam van uw cluster, blader naar de map **gebruiker** (mogelijk moet u op *extra laden* onder aan de lijst) en selecteer vervolgens *RevoShare* en **newuser**. Het `people.json` bestand moet in de map worden weer gegeven `newUser` .
 
-        ![Locatie van gekopieerde bestandsmap van HDInsight](./media/r-server-submit-jobs-r-tools-vs/hdinsight-copied-file.png)
+        :::image type="content" source="./media/r-server-submit-jobs-r-tools-vs/hdinsight-copied-file.png" alt-text="Locatie van gekopieerde bestandsmap van HDInsight" border="true":::
 
 1. Wanneer u klaar bent met het gebruik van de huidige Apache Spark context, moet u deze stoppen. U kunt niet meerdere contexten tegelijk uitvoeren.
 

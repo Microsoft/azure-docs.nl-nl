@@ -14,18 +14,18 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 12/14/2020
 ms.author: phjensen
-ms.openlocfilehash: 00aaa5bdc0d48adb735679fc4a71b3431970ef09
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 458f4d3f29cb08a94095167ed45133f5cd70f5f4
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98737164"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104869188"
 ---
 # <a name="install-azure-application-consistent-snapshot-tool-preview"></a>Azure-toepassing consistent snap shot tool installeren (preview-versie)
 
 Dit artikel bevat een hand leiding voor het installeren van het Azure-toepassing consistente momentopname hulpmiddel dat u kunt gebruiken met Azure NetApp Files.
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 Het Download bare zelf-installatie programma is ontworpen om de snap shot-hulpprogram ma's eenvoudig in te stellen en uit te voeren met niet-hoofd gebruikers bevoegdheden (bijvoorbeeld azacsnap). Het installatie programma stelt de gebruiker in en plaatst de momentopname hulpprogramma's in de `$HOME/bin` submap gebruikers (standaard = `/home/azacsnap/bin` ).
 Het zelf-installatie programma probeert de juiste instellingen en paden te bepalen voor alle bestanden op basis van de configuratie van de gebruiker die de installatie uitvoert (bijvoorbeeld root). Als de vereiste stappen (communicatie met opslag en SAP HANA inschakelen) zijn uitgevoerd als root, worden de persoonlijke sleutel en de `hdbuserstore` locatie van de back-upgebruiker gekopieerd met de installatie. Het is echter wel mogelijk om de stappen uit te voeren die communicatie mogelijk maken met de back-end van de opslag en SAP HANA hand matig moet worden uitgevoerd door een beschik bare beheerder na de installatie.
@@ -239,71 +239,6 @@ Wijzig het IP-adres, de gebruikers naam en het wacht woord, indien van toepassin
     ENV : <IP_address_of_host>:
     USER: AZACSNAP
     ```
-
-### <a name="additional-instructions-for-using-the-log-trimmer-sap-hana-20-and-later"></a>Aanvullende instructies voor het gebruik van de logboek trimmer (SAP HANA 2,0 en hoger)
-
-Als u de logboek trimmer gebruikt, worden in de volgende voorbeeld opdrachten een gebruiker (AZACSNAP) in de TENANT-data base (s) in een SAP HANA 2,0-database systeem ingesteld. Vergeet niet om het IP-adres, de gebruikers naam en het wacht woord naar wens te wijzigen:
-
-1. Maak verbinding met de TENANT database om de gebruiker te maken, TENANT-specifieke details zijn `<IP_address_of_host>` en `<SYSTEM_USER_PASSWORD>` .  Noteer ook de poort ( `30015` ) die vereist is voor de communicatie met de TENANT database.
-
-    ```bash
-    hdbsql -n <IP_address_of_host>:30015 - i 00 -u SYSTEM -p <SYSTEM_USER_PASSWORD>
-    ```
-
-    ```output  
-    Welcome to the SAP HANA Database interactive terminal.
-
-    Type: \h for help with commands
-    \q to quit
-
-    hdbsql TENANTDB=>
-    ```
-
-1. De gebruiker maken
-
-    In dit voor beeld wordt de AZACSNAP-gebruiker gemaakt in de SYSTEMDB.
-
-    ```sql
-    hdbsql TENANTDB=> CREATE USER AZACSNAP PASSWORD <AZACSNAP_PASSWORD_CHANGE_ME> NO FORCE_FIRST_PASSWORD_CHANGE;
-    ```
-
-1. De gebruikers machtigingen verlenen
-
-    In dit voor beeld wordt de machtiging voor de AZACSNAP-gebruiker ingesteld op het uitvoeren van een database consistente opslag momentopname.
-
-    ```sql
-    hdbsql TENANTDB=> GRANT BACKUP ADMIN, CATALOG READ, MONITORING TO AZACSNAP;
-    ```
-
-1. *Optioneel* : voor komen dat het wacht woord van de gebruiker verloopt
-
-    > [!NOTE]
-    > Neem contact op met het bedrijfs beleid voordat u deze wijziging aanbrengt.
-
-   In dit voor beeld wordt het verlopen van het wacht woord voor de AZACSNAP-gebruiker uitgeschakeld, zonder dat het wacht woord van de gebruiker wordt gewijzigd, waardoor moment opnamen niet correct kunnen worden uitgevoerd.  
-
-   ```sql
-   hdbsql TENANTDB=> ALTER USER AZACSNAP DISABLE PASSWORD LIFETIME;
-   ```
-
-> [!NOTE]  
-> Herhaal deze stappen voor alle Tenant databases. Het is mogelijk om de verbindings gegevens voor alle tenants op te halen met behulp van de volgende SQL-query voor de SYSTEMDB.
-
-```sql
-SELECT HOST, SQL_PORT, DATABASE_NAME FROM SYS_DATABASES.M_SERVICES WHERE SQL_PORT LIKE '3%'
-```
-
-Raadpleeg de volgende voorbeeld query en-uitvoer.
-
-```bash
-hdbsql -jaxC -n 10.90.0.31:30013 -i 00 -u SYSTEM -p <SYSTEM_USER_PASSWORD> " SELECT HOST,SQL_PORT, DATABASE_NAME FROM SYS_DATABASES.M_SERVICES WHERE SQL_PORT LIKE '3%' "
-```
-
-```output
-sapprdhdb80,30013,SYSTEMDB
-sapprdhdb80,30015,H81
-sapprdhdb80,30041,H82
-```
 
 ### <a name="using-ssl-for-communication-with-sap-hana"></a>SSL gebruiken voor communicatie met SAP HANA
 

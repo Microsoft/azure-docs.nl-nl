@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 05/01/2020
-ms.openlocfilehash: 34f752d4c3d50d5f680e317b2724b1e631537f32
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: dcbe44defeb89ad2f67833b263e5f4983070a46c
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98933197"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104863527"
 ---
 # <a name="how-to-monitor-cluster-availability-with-apache-ambari-in-azure-hdinsight"></a>De beschik baarheid van clusters bewaken met Apache Ambari in azure HDInsight
 
@@ -22,33 +22,33 @@ In dit artikel wordt beschreven hoe u Ambari kunt gebruiken om uw cluster te bew
 
 U kunt het Ambari-dash board openen door de koppeling **Ambari Home** te selecteren in het gedeelte **cluster dashboards** van het overzicht van HDInsight in azure Portal, zoals hieronder wordt weer gegeven. U kunt deze ook openen door te navigeren naar `https://CLUSTERNAME.azurehdinsight.net` in een browser waarbij clustername de naam van uw cluster is.
 
-![Weer gave HDInsight-resource Portal](media/hdinsight-cluster-availability/azure-portal-dashboard-ambari.png)
+:::image type="content" source="media/hdinsight-cluster-availability/azure-portal-dashboard-ambari.png" alt-text="Weer gave HDInsight-resource Portal":::
 
 Vervolgens wordt u gevraagd om een gebruikers naam en wacht woord voor het aanmelden bij een cluster. Voer de referenties in die u hebt gekozen tijdens het maken van het cluster.
 
 Vervolgens gaat u naar het Ambari-dash board, dat widgets bevat die een aantal metrische gegevens bevatten om u een kort overzicht te geven van de status van uw HDInsight-cluster. In deze widgets worden metrische gegevens weer gegeven, zoals het aantal live DataNodes (werk knooppunten) en het beschik journalnodes (Zookeeper-knoop punt), NameNodes (hoofd knooppunten), evenals de metrische gegevens die specifiek zijn voor bepaalde cluster typen, zoals de uptime van de Resource Manager voor Spark-en Hadoop-clusters.
 
-![Apache Ambari-weer gave dash board gebruiken](media/hdinsight-cluster-availability/apache-ambari-dashboard.png)
+:::image type="content" source="media/hdinsight-cluster-availability/apache-ambari-dashboard.png" alt-text="Apache Ambari-weer gave dash board gebruiken":::
 
 ## <a name="hosts--view-individual-node-status"></a>Hosts: de status van afzonderlijke knoop punten weer geven
 
 U kunt ook status informatie voor afzonderlijke knoop punten weer geven. Selecteer het tabblad **hosts** om een lijst met alle knoop punten in uw cluster weer te geven en Bekijk basis informatie over elk knoop punt. De groene controle links van elke knooppunt naam geeft aan dat alle onderdelen op het knoop punt zijn ingesteld. Als een onderdeel op een knoop punt niet beschikbaar is, ziet u een rode waarschuwings driehoek in plaats van de groene controle.
 
-![Weer gave HDInsight Apache Ambari-hosts](media/hdinsight-cluster-availability/apache-ambari-hosts1.png)
+:::image type="content" source="media/hdinsight-cluster-availability/apache-ambari-hosts1.png" alt-text="Weer gave HDInsight Apache Ambari-hosts":::
 
 U kunt vervolgens de **naam** van een knoop punt selecteren om meer gedetailleerde metrische gegevens van de host voor dat specifieke knoop punt weer te geven. In deze weer gave wordt de status/Beschik baarheid van elk afzonderlijk onderdeel weer gegeven.
 
-![Apache Ambari host weer gave met één knoop punt](media/hdinsight-cluster-availability/apache-ambari-hosts-node.png)
+:::image type="content" source="media/hdinsight-cluster-availability/apache-ambari-hosts-node.png" alt-text="Apache Ambari host weer gave met één knoop punt":::
 
 ## <a name="ambari-alerts"></a>Ambari-waarschuwingen
 
 Ambari biedt ook verschillende Configureer bare waarschuwingen waarmee u bepaalde gebeurtenissen kunt melden. Wanneer waarschuwingen worden geactiveerd, worden ze weer gegeven in de linkerbovenhoek van Ambari in een rode badge met het aantal waarschuwingen. Als u deze badge selecteert, wordt er een lijst met huidige waarschuwingen weer gegeven.
 
-![Aantal huidige waarschuwingen Apache Ambari](media/hdinsight-cluster-availability/apache-ambari-alerts.png)
+:::image type="content" source="media/hdinsight-cluster-availability/apache-ambari-alerts.png" alt-text="Aantal huidige waarschuwingen Apache Ambari":::
 
 Als u een lijst met waarschuwings definities en hun statussen wilt weer geven, selecteert u het tabblad **waarschuwingen** , zoals hieronder wordt weer gegeven.
 
-![Weer gave Ambari-waarschuwings definities](media/hdinsight-cluster-availability/ambari-alerts-definitions.png)
+:::image type="content" source="media/hdinsight-cluster-availability/ambari-alerts-definitions.png" alt-text="Weer gave Ambari-waarschuwings definities":::
 
 Ambari biedt veel vooraf gedefinieerde waarschuwingen met betrekking tot Beschik baarheid, waaronder:
 
@@ -62,11 +62,11 @@ Ambari biedt veel vooraf gedefinieerde waarschuwingen met betrekking tot Beschik
 
 Als u Details voor een waarschuwing wilt weer geven of criteria wilt wijzigen, selecteert u de **naam** van de waarschuwing. Maak een voor beeld van **DataNode-status samenvatting** . U ziet een beschrijving van de waarschuwing en de specifieke criteria die een waarschuwing of kritieke waarschuwing activeren en het controle-interval voor de criteria. Als u de configuratie wilt bewerken, selecteert u de knop **bewerken** in de rechter bovenhoek van het configuratie venster.
 
-![Configuratie van Apache Ambari-waarschuwingen](media/hdinsight-cluster-availability/ambari-alert-configuration.png)
+:::image type="content" source="media/hdinsight-cluster-availability/ambari-alert-configuration.png" alt-text="Configuratie van Apache Ambari-waarschuwingen":::
 
 Hier kunt u de beschrijving bewerken en, belang rijker, het controle-interval en de drempel waarden voor waarschuwing of kritieke waarschuwingen.
 
-![Ambari waarschuwings configuraties weer gave bewerken](media/hdinsight-cluster-availability/ambari-alert-configuration-edit.png)
+:::image type="content" source="media/hdinsight-cluster-availability/ambari-alert-configuration-edit.png" alt-text="Ambari waarschuwings configuraties weer gave bewerken":::
 
 In dit voor beeld zou u 2 een slechte DataNodes activeren en een kritieke waarschuwing geven en 1 slecht DataNode alleen een waarschuwing activeren. Selecteer **Opslaan** wanneer u klaar bent met het bewerken van.
 
@@ -74,7 +74,7 @@ In dit voor beeld zou u 2 een slechte DataNodes activeren en een kritieke waarsc
 
 U kunt desgewenst ook e-mail meldingen configureren voor Ambari-waarschuwingen. Als u dit wilt doen, klikt u op het tabblad **waarschuwingen** op de knop **acties** in de linkerbovenhoek en vervolgens op **meldingen beheren.**
 
-![Actie Ambari beheren](media/hdinsight-cluster-availability/ambari-manage-notifications.png)
+:::image type="content" source="media/hdinsight-cluster-availability/ambari-manage-notifications.png" alt-text="Actie Ambari beheren":::
 
 Er wordt een dialoog venster geopend voor het beheren van waarschuwings meldingen. Selecteer de aan **+** de onderkant van het dialoog venster en vul de vereiste velden in om Ambari te bieden met de details van de e-mail server waaruit e-mails kunnen worden verzonden.
 

@@ -6,12 +6,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: how-to
 ms.date: 05/29/2019
-ms.openlocfilehash: eb286adfd7267a78fcf80bcf5ad34f8f1cc9f493
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 60f4e4998e1077ca373f47a0cdf35c9d7a064605
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98946615"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104866672"
 ---
 # <a name="get-started-with-an-apache-hadoop-sandbox-an-emulator-on-a-virtual-machine"></a>Aan de slag met een Apache Hadoop sandbox, een emulator op een virtuele machine
 
@@ -39,7 +39,7 @@ Als u een oudere sandbox van de HDP-versie wilt downloaden, raadpleegt u de kopp
 1. Klik in het menu **bestand** op **apparaat importeren** en geef vervolgens de Hortonworks sandbox-installatie kopie op.
 1. Selecteer de sandbox Hortonworks, klik op **Start** en vervolgens op **normaal starten**. Zodra de virtuele machine het opstart proces heeft voltooid, worden aanmeldings instructies weer gegeven.
 
-    ![normale start van VirtualBox Manager](./media/apache-hadoop-emulator-get-started/virtualbox-normal-start.png)
+    :::image type="content" source="./media/apache-hadoop-emulator-get-started/virtualbox-normal-start.png" alt-text="normale start van VirtualBox Manager" border="true":::
 
 1. Open een webbrowser en navigeer naar de weer gegeven URL (meestal `http://127.0.0.1:8888` ).
 

@@ -4,12 +4,12 @@ description: Verschillende OutOfMemoryError-uitzonde ringen voor Apache Spark cl
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 08/15/2019
-ms.openlocfilehash: a15d79f2ae9c3d20a73ec557c57a5c189b18111b
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: dd33972810ab3b0d51bbd82282d0e6cf6cd9d96c
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98946337"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104868661"
 ---
 # <a name="outofmemoryerror-exceptions-for-apache-spark-in-azure-hdinsight"></a>OutOfMemoryError-uitzonde ringen voor Apache Spark in azure HDInsight
 
@@ -59,7 +59,7 @@ De meest waarschijnlijke oorzaak van deze uitzonde ring is dat er niet voldoende
 
 1. Zorg ervoor dat het HDInsight-cluster dat u wilt gebruiken, over voldoende resources (geheugen en kernen) beschikt voor uitvoering van de Spark-toepassing. Dit kan worden bepaald door de sectie cluster metrieken van de garen-gebruikers interface van het cluster te bekijken voor de waarden van **geheugen die worden gebruikt** versus **Totaal geheugen** en **VCores dat is gebruikt** voor het **totaal van VCores**.
 
-    ![kern geheugen weergave van garen](./media/apache-spark-ts-outofmemory/yarn-core-memory-view.png)
+    :::image type="content" source="./media/apache-spark-ts-outofmemory/yarn-core-memory-view.png" alt-text="kern geheugen weergave van garen" border="true":::
 
 1. Stel de volgende Spark-configuraties in op de juiste waarden. De toepassings vereisten te verdelen over de beschik bare resources in het cluster. Deze waarden mogen niet groter zijn dan 90% van het beschik bare geheugen en de kernen die door GARENs worden weer gegeven en moet ook voldoen aan de minimale geheugen vereisten van de Spark-toepassing:
 
@@ -117,11 +117,11 @@ U kunt het Spark-geschiedenis server geheugen verhogen door de `SPARK_DAEMON_MEM
 
 U kunt dit doen vanuit de gebruikers interface van de Ambari-browser door de sectie Spark2/config/Advanced Spark2-env te selecteren.
 
-![Sectie Geavanceerde spark2-env](./media/apache-spark-ts-outofmemory-heap-space/apache-spark-image01.png)
+:::image type="content" source="./media/apache-spark-ts-outofmemory-heap-space/apache-spark-image01.png" alt-text="Sectie Geavanceerde spark2-env" border="true":::
 
 Voeg de volgende eigenschap toe om het Spark-geschiedenis server geheugen van 1g te wijzigen in 4G: `SPARK_DAEMON_MEMORY=4g` .
 
-![Spark-eigenschap](./media/apache-spark-ts-outofmemory-heap-space/apache-spark-image02.png)
+:::image type="content" source="./media/apache-spark-ts-outofmemory-heap-space/apache-spark-image02.png" alt-text="Spark-eigenschap" border="true":::
 
 Zorg ervoor dat u alle betrokken services opnieuw opstart vanuit Ambari.
 

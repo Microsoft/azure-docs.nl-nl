@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 11/28/2017
-ms.openlocfilehash: 1daf59c47bf71ad019011036bf42bf6727754345
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: e6ed52f89c38a9c4c5476bd1db0f5a67326954e4
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98940348"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104866264"
 ---
 # <a name="use-azure-toolkit-for-intellij-to-debug-apache-spark-applications-remotely-in-hdinsight-through-vpn"></a>Azure-toolkit voor IntelliJ gebruiken om fout opsporing uit te Apache Spark toepassingen op afstand in HDInsight via VPN
 
@@ -50,19 +50,19 @@ Het is raadzaam om ook een Apache Spark cluster in azure HDInsight te maken dat 
 
 1. Haal het IP-adres van het hoofd knooppunt op. Open de Ambari-gebruikers interface voor het cluster. Selecteer op de Blade cluster de optie **dash board**.
 
-    ![Dash board selecteren in Apache Ambari](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/launch-apache-ambari.png)
+    :::image type="content" source="./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/launch-apache-ambari.png" alt-text="Dash board selecteren in Apache Ambari" border="true":::
 
 1. Selecteer **hosts** in de Ambari-gebruikers interface.
 
-    ![Hosts in Apache Ambari selecteren](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/apache-ambari-hosts1.png)
+    :::image type="content" source="./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/apache-ambari-hosts1.png" alt-text="Hosts in Apache Ambari selecteren" border="true":::
 
 1. U ziet een lijst met hoofd knooppunten, Worker-knoop punten en Zookeeper-knoop punten. De hoofd knooppunten hebben een voor voegsel van **HN***. Selecteer het eerste hoofd knooppunt.
 
-    ![Het hoofd knooppunt zoeken in Apache Ambari](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/ambari-cluster-headnodes.png)
+    :::image type="content" source="./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/ambari-cluster-headnodes.png" alt-text="Het hoofd knooppunt zoeken in Apache Ambari" border="true":::
 
 1. In het deel venster **samen vatting** onder aan de pagina die wordt geopend, kopieert u het **IP-adres** van het hoofd knooppunt en de **hostnaam**.
 
-    ![Het IP-adres zoeken in Apache Ambari](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/headnode-ip-address1.png)
+    :::image type="content" source="./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/headnode-ip-address1.png" alt-text="Het IP-adres zoeken in Apache Ambari" border="true":::
 
 1. Voeg het IP-adres en de hostnaam van het hoofd knooppunt toe aan het **hosts** -bestand op de computer waarop u wilt uitvoeren en op afstand fouten opsporen in de Spark-taak. Hierdoor kunt u met het hoofd knooppunt communiceren met behulp van het IP-adres en de hostnaam.
 
@@ -93,7 +93,7 @@ Het is raadzaam om ook een Apache Spark cluster in azure HDInsight te maken dat 
 
 1. Open IntelliJ-idee en maak een nieuw project. Voer in het dialoogvenster **Nieuw project** de volgende handelingen uit:
 
-    ![Selecteer de nieuwe project sjabloon in IntelliJ-idee](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/create-hdi-scala-app.png)
+    :::image type="content" source="./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/create-hdi-scala-app.png" alt-text="Selecteer de nieuwe project sjabloon in IntelliJ-idee" border="true":::
 
     a. Selecteer **hdinsight**  >  **Spark in hdinsight (scala)**.
 
@@ -106,7 +106,7 @@ Het is raadzaam om ook een Apache Spark cluster in azure HDInsight te maken dat 
 
     - In de vervolg keuzelijst **Spark-versie** integreert de wizard scala project maken de juiste versie voor de Spark SDK en de scala SDK. Selecteer **Spark 1.x** als de Spark-clusterversie ouder is dan 2.0. Selecteer anders **Spark 2.x**. In dit voorbeeld wordt **Spark 2.0.2 (Scala 2.11.8)** gebruikt.
   
-   ![Selecteer de Project-SDK en Spark-versie](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/hdi-scala-project-details.png)
+   :::image type="content" source="./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/hdi-scala-project-details.png" alt-text="Selecteer de Project-SDK en Spark-versie" border="true":::
   
 1. Het Spark-project maakt automatisch een artefact voor u. Ga als volgt te werk om het artefact weer te geven:
 
@@ -114,7 +114,7 @@ Het is raadzaam om ook een Apache Spark cluster in azure HDInsight te maken dat 
 
     b. Selecteer **artefacten** in het dialoog venster **project structuur** om het standaard artefact te bekijken dat wordt gemaakt. U kunt ook uw eigen artefact maken door het plus teken () te selecteren **+** .
 
-   ![IntelliJ-ideeën artefacten maken jar](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/create-default-artifact.png)
+   :::image type="content" source="./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/create-default-artifact.png" alt-text="IntelliJ-ideeën artefacten maken jar" border="true":::
 
 1. Bibliotheken toevoegen aan uw project. Ga als volgt te werk om een bibliotheek toe te voegen:
 
@@ -122,7 +122,7 @@ Het is raadzaam om ook een Apache Spark cluster in azure HDInsight te maken dat 
 
     b. In het dialoog venster **project structuur** selecteert u **bibliotheken**, selecteert u het ( **+** )-symbool en selecteert u vervolgens **van Maven**.
 
-    ![Bibliotheek met IntelliJ-ideeën downloaden](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/intellij-add-library.png)
+    :::image type="content" source="./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/intellij-add-library.png" alt-text="Bibliotheek met IntelliJ-ideeën downloaden" border="true":::
 
     c. Zoek in het dialoog venster **bibliotheek downloaden van Maven-opslag plaats** naar de volgende bibliotheken en voeg deze toe:
 
@@ -178,11 +178,11 @@ Het is raadzaam om ook een Apache Spark cluster in azure HDInsight te maken dat 
 
 1. Voeg de hoofd klasse voor uw toepassing toe. Klik in de **project Verkenner** met de rechter muisknop op **src**, wijs **Nieuw** aan en selecteer **scala klasse**.
 
-    ![IntelliJ-idee de hoofd klasse selecteren](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/hdi-spark-scala-code.png)
+    :::image type="content" source="./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/hdi-spark-scala-code.png" alt-text="IntelliJ-idee de hoofd klasse selecteren" border="true":::
 
 1. Geef in het dialoog venster **nieuwe scala-klasse maken** een naam op, selecteer **object** in het vak **kind** en selecteer vervolgens **OK**.
 
-    ![IntelliJ-idee nieuwe scala-klasse maken](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/hdi-spark-scala-code-object.png)
+    :::image type="content" source="./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/hdi-spark-scala-code-object.png" alt-text="IntelliJ-idee nieuwe scala-klasse maken" border="true":::
 
 1. `MyClusterAppMain.scala`Plak de volgende code in het bestand. Met deze code wordt de Spark-context gemaakt en wordt een `executeJob` methode vanuit het `SparkSample` object geopend.
 
@@ -254,47 +254,47 @@ Het is raadzaam om ook een Apache Spark cluster in azure HDInsight te maken dat 
 
 1. Klik in de `*RemoteClusterDebugging` klasse met de rechter muisknop op het `test` tref woord en selecteer vervolgens **RemoteClusterDebugging-configuratie maken**.
 
-    ![IntelliJ-idee een externe configuratie maken](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/create-remote-config.png)
+    :::image type="content" source="./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/create-remote-config.png" alt-text="IntelliJ-idee een externe configuratie maken" border="true":::
 
 1. Geef in het dialoog venster **RemoteClusterDebugging-configuratie maken** een naam op voor de configuratie en selecteer vervolgens **test soort** als **test naam**. Alle andere waarden behouden als de standaard instellingen. Selecteer **Apply** en vervolgens **OK**.
 
-    ![RemoteClusterDebugging-configuratie maken](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/provide-config-value.png)
+    :::image type="content" source="./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/provide-config-value.png" alt-text="RemoteClusterDebugging-configuratie maken" border="true":::
 
 1. Nu ziet u een vervolg keuzelijst configuratie van **extern uitvoeren** in de menu balk.
 
-    ![De vervolg keuzelijst externe uitvoering IntelliJ](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/intellij-config-remote-run.png)
+    :::image type="content" source="./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/intellij-config-remote-run.png" alt-text="De vervolg keuzelijst externe uitvoering IntelliJ" border="true":::
 
 ## <a name="step-5-run-the-application-in-debug-mode"></a>Stap 5: de toepassing uitvoeren in de foutopsporingsmodus
 
 1. Open in uw IntelliJ-idee project `SparkSample.scala` een onderbrekings punt naast `val rdd1` . Selecteer in het pop-upmenu **onderbrekings punt maken voor** **regel in functie executeJob**.
 
-    ![IntelliJ-idee een onderbrekings punt toevoegen](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/intellij-create-breakpoint.png)
+    :::image type="content" source="./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/intellij-create-breakpoint.png" alt-text="IntelliJ-idee een onderbrekings punt toevoegen" border="true":::
 
 1. Als u de toepassing wilt uitvoeren, selecteert u de knop **debug run** naast de vervolg keuzelijst configuratie van **externe uitvoering** .
 
-    ![IntelliJ-idee de knop voor het uitvoeren van fout opsporing selecteren](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/debug-run-mode-button.png)
+    :::image type="content" source="./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/debug-run-mode-button.png" alt-text="IntelliJ-idee de knop voor het uitvoeren van fout opsporing selecteren" border="true":::
 
 1. Wanneer de uitvoering van het programma het onderbrekings punt bereikt, ziet u een tabblad **fout opsporing** in het onderste deel venster.
 
-    ![IntelliJ-idee het tabblad fout opsporing weer geven](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/intellij-debugger-tab.png)
+    :::image type="content" source="./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/intellij-debugger-tab.png" alt-text="IntelliJ-idee het tabblad fout opsporing weer geven" border="true":::
 
 1. Als u een horloge wilt toevoegen, selecteert u het **+** pictogram ().
 
-    ![IntelliJ debug-add-Watch-variabele](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/debug-add-watch-variable.png)
+    :::image type="content" source="./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/debug-add-watch-variable.png" alt-text="IntelliJ debug-add-Watch-variabele" border="true":::
 
     In dit voor beeld wordt de toepassing gerepareerd voordat de variabele `rdd1` is gemaakt. Met deze controle kunnen we de eerste vijf rijen in de variabele zien `rdd` . Druk op **Enter**.
 
-    ![IntelliJ het programma uitvoeren in de foutopsporingsmodus](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/debug-add-watch-variable-value.png)
+    :::image type="content" source="./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/debug-add-watch-variable-value.png" alt-text="IntelliJ het programma uitvoeren in de foutopsporingsmodus" border="true":::
 
     Wat u in de vorige afbeelding ziet, is dat tijdens runtime u kunt een query uitvoeren op terabytes aan gegevens en fouten opsporen in de voortgang van de uitvoering van uw toepassing. In de uitvoer die wordt weer gegeven in de vorige afbeelding ziet u bijvoorbeeld dat de eerste rij van de uitvoer een koptekst is. Op basis van deze uitvoer kunt u de toepassings code zo wijzigen dat de koprij, indien nodig, wordt overgeslagen.
 
 1. U kunt nu het pictogram **programma hervatten** selecteren om verder te gaan met het uitvoeren van de toepassing.
 
-    ![IntelliJ-idee programma hervatten selecteren](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/debug-continue-remote-run.png)
+    :::image type="content" source="./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/debug-continue-remote-run.png" alt-text="IntelliJ-idee programma hervatten selecteren" border="true":::
 
 1. Als de toepassing is voltooid, ziet u uitvoer als de volgende:
 
-    ![Uitvoer van IntelliJ-ideeën debugger console](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/debug-complete-window.png)
+    :::image type="content" source="./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/debug-complete-window.png" alt-text="Uitvoer van IntelliJ-ideeën debugger console" border="true":::
 
 ## <a name="next-steps"></a><a name="seealso"></a>Volgende stappen
 

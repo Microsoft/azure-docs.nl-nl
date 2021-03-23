@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: a9394a5e117a577c903eccdf91cf22d0c359df2b
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: d1c2fd2ac7f809b4a70a0edffbddfb6e733fed57
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104581113"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104871398"
 ---
 # <a name="media-services-v3-frequently-asked-questions"></a>Veelgestelde vragen over Media Services v3
 
@@ -47,12 +47,6 @@ Zie [op rollen gebaseerd toegangs beheer voor Azure (Azure RBAC) voor Media Serv
 ### <a name="how-do-i-stream-to-apple-ios-devices"></a>Hoe kan ik streamen naar Apple iOS-apparaten?
 
 Zorg ervoor dat u **(Format = M3U8-AAPL)** aan het einde van uw pad (na het gedeelte **/manifest** van de URL) hebt om de streaming-bron server te laten weten http live streaming (HLS)-inhoud te retour neren voor het gebruik van Apple IOS systeem eigen apparaten. Zie [inhoud leveren](dynamic-packaging-overview.md)voor meer informatie.
-
-### <a name="how-do-i-configure-media-reserved-units"></a>Hoe kan ik gereserveerde media-eenheden configureren?
-
-Voor de taken voor audio analyse en video analyse die worden geactiveerd door Media Services v3 of Video Indexer, raden we u aan om uw account in te richten met 10 S3-media gereserveerde eenheden (MRUs). Als u meer dan 10 S3 MRUs nodig hebt, kunt u een ondersteunings ticket openen met behulp van de [Azure Portal](https://portal.azure.com/).
-
-Zie [Media verwerking schalen](media-reserved-units-cli-how-to.md)voor meer informatie.
 
 ### <a name="what-is-the-recommended-method-to-process-videos"></a>Wat is de aanbevolen methode om Video's te verwerken?
 

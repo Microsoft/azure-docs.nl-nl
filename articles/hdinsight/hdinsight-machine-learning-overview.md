@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 12/06/2019
-ms.openlocfilehash: 18be3fa8851c2dbaab622c770d02f4db252a231c
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 492663ca35ed04da09e7f0d198444a4d40178e2b
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98945261"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104867522"
 ---
 # <a name="machine-learning-on-hdinsight"></a>Machine learning op HDInsight
 
@@ -26,7 +26,7 @@ De micro Soft Machine Learning-bibliotheek voor Apache Spark is [MMLSpark](https
 
 [R](https://www.r-project.org/) is momenteel de meest populaire statistische programmeer taal in de wereld. Het is een open-source hulp programma voor gegevens visualisatie met een community van meer dan 2.500.000 gebruikers en groei. Met zijn bloeiende gebruikers basis en meer dan 8.000 bijgedragen pakketten, is R een waarschijnlijke keuze voor veel bedrijven die machine learning nodig hebben. U kunt een HDInsight-cluster maken met ML services die klaar zijn voor gebruik met enorme gegevens sets en modellen. Deze mogelijkheid biedt gegevens wetenschappers en statistici met een vertrouwde R-interface die op aanvraag kan worden geschaald via HDInsight, zonder de overhead van het instellen en onderhouden van het cluster.
 
-![Training voor voor spellingen met R server](./media/hdinsight-machine-learning-overview/training-for-prediction.png)
+:::image type="content" source="./media/hdinsight-machine-learning-overview/training-for-prediction.png" alt-text="Training voor voor spellingen met R server" border="false":::
 
 Het edge-knooppunt van een cluster biedt een handige plaats om verbinding te maken met het cluster en om uw R-scripts uit te voeren.  U kunt ook R-scripts uitvoeren op de knoop punten van het cluster met behulp van de Hadoop-toewijzing van de Scale-map of door middel van Spark Compute-contexten.
 
@@ -36,7 +36,7 @@ Met ML Services op HDInsight met Spark kunt u training over de knoop punten van 
 
 Azure Machine Learning voorziet in hulpprogram ma's om predictive analytics te model leren en een volledig beheerde service die u kunt gebruiken om uw voorspellende modellen te implementeren als kant-en-klare webservices. Azure Machine Learning is een volledige predictive analytics-oplossing in de cloud die u kunt gebruiken voor het maken, testen, operationeel maken en beheren van voorspellende modellen. Maak een keuze uit een grote algoritme bibliotheek, gebruik een webgebaseerde Studio voor het ontwikkelen van modellen en implementeer uw model eenvoudig als een webservice.
 
-![Overzicht van Microsoft Azure machine learning](./media/hdinsight-machine-learning-overview/azure-machine-learning.png)
+:::image type="content" source="./media/hdinsight-machine-learning-overview/azure-machine-learning.png" alt-text="Overzicht van Microsoft Azure machine learning" border="false":::
 
 Maak functies voor gegevens in een HDInsight Hadoop-cluster met behulp van [Hive-query's](../machine-learning/team-data-science-process/create-features-hive.md). *Feature engineering* probeert de voorspellende kracht van leer algoritmen te verhogen door functies te maken op basis van onbewerkte gegevens die het leer proces vergemakkelijken. U kunt HiveQL-query's uitvoeren vanuit Azure Machine Learning Studio (klassiek) en toegang krijgen tot gegevens die in Hive zijn verwerkt en worden opgeslagen in Blob Storage met behulp van de [module gegevens importeren](../machine-learning/classic/import-data.md).
 

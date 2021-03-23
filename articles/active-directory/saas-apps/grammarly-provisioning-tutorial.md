@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/16/2021
 ms.author: Zhchia
-ms.openlocfilehash: acfe74577f58cbdc0b1fe235e7fc1f661543fd90
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: ca01289ce66afe642081e5be17373e640dd1e46d
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104609215"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104864802"
 ---
 # <a name="tutorial-configure-grammarly-for-automatic-user-provisioning"></a>Zelf studie: de grammatica voor automatische gebruikers inrichting configureren
 
@@ -85,7 +85,7 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
     ![Schermopname met Inrichtingsmodus ingesteld op Automatisch.](common/provisioning-automatic.png)
 
-1. Voer in de sectie **beheerders referenties** uw grammaticaal- **URL** en **geheime token** gegevens in. Selecteer **verbinding testen** om ervoor te zorgen dat Azure AD verbinding kan maken met de grammatica. Als de verbinding mislukt, zorg er dan voor dat uw grammaticale account beheerders machtigingen heeft en probeer het opnieuw.
+1. Ga naar de sectie **beheerders referenties** en voer in het veld **Tenant-URL** invoeren in `https://sso.grammarly.com/scim/v2` en voer in het veld **geheim token** het token in dat door de grammatica is opgegeven (zie stap 2 hierboven). Klik op **verbinding testen** om te controleren of Azure AD verbinding kan maken met de grammatica. Als de verbinding mislukt, zorg er dan voor dat uw grammaticale account beheerders machtigingen heeft en probeer het opnieuw.
 
     ![Scherm opname van de vakken Tenant-URL en geheim token.](common/provisioning-testconnection-tenanturltoken.png)
 

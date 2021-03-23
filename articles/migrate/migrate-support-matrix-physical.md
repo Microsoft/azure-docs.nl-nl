@@ -1,21 +1,21 @@
 ---
-title: Ondersteuning voor de beoordeling van fysieke servers in Azure Migrate
-description: Meer informatie over ondersteuning voor fysieke server beoordeling met Azure Migrate detectie en evaluatie
+title: Ondersteuning voor fysieke detectie en evaluatie in Azure Migrate
+description: Meer informatie over ondersteuning voor fysieke detectie en evaluatie met Azure Migrate detectie en evaluatie
 author: vineetvikram
 ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 03/18/2021
-ms.openlocfilehash: 18176c5a79eda080c72b387781e6c7c9b0c66673
-ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
+ms.openlocfilehash: b62160861f686c6ea5a8ebfd03d904da2ad5d80a
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104773195"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104869443"
 ---
 # <a name="support-matrix-for-physical-server-discovery-and-assessment"></a>Ondersteunings matrix voor detectie en evaluatie van fysieke servers 
 
-In dit artikel vindt u een overzicht van de vereisten voor en ondersteuning bij het beoordelen van fysieke servers voor migratie naar Azure, met behulp van de Azure Migrate: hulp programma voor [detectie en evaluatie](migrate-services-overview.md#azure-migrate-server-assessment-tool) . Als u fysieke servers naar Azure wilt migreren, raadpleegt u de [ondersteunings matrix voor migratie](migrate-support-matrix-physical-migration.md).
+In dit artikel vindt u een overzicht van de vereisten voor en ondersteuning bij het beoordelen van fysieke servers voor migratie naar Azure, met behulp van de Azure Migrate: hulp programma voor [detectie en evaluatie](migrate-services-overview.md#azure-migrate-discovery-and-assessment-tool) . Als u fysieke servers naar Azure wilt migreren, raadpleegt u de [ondersteunings matrix voor migratie](migrate-support-matrix-physical-migration.md).
 
 Als u fysieke servers wilt beoordelen, maakt u een project en voegt u het hulp programma Azure Migrate: detectie en evaluatie toe aan het project. Wanneer het hulp programma is toegevoegd, implementeert u het [Azure migrate apparaat](migrate-appliance.md). Het apparaat detecteert voortdurend on-premises servers en verzendt de meta gegevens en prestatie gegevens van de server naar Azure. Nadat de detectie is voltooid, verzamelt u gedetecteerde servers in groepen en voert u een evaluatie uit voor een groep.
 
@@ -23,7 +23,7 @@ Als u fysieke servers wilt beoordelen, maakt u een project en voegt u het hulp p
 
 **Ondersteuning** | **Details**
 --- | ---
-**Beoordelings limieten** | U kunt Maxi maal 35.000 fysieke servers in één [project](migrate-support-matrix.md#azure-migrate-projects)detecteren en beoordelen.
+**Beoordelings limieten** | U kunt Maxi maal 35.000 fysieke servers in één [project](migrate-support-matrix.md#project)detecteren en beoordelen.
 **Project limieten** | U kunt meerdere projecten maken in een Azure-abonnement. Naast fysieke servers kan een project servers op VMware en Hyper-V bevatten, tot aan de evaluatie limieten voor elke.
 **Discovery** (Detectie) | Het Azure Migrate-apparaat kan Maxi maal 1000 fysieke servers detecteren.
 **Evaluatie** | U kunt Maxi maal 35.000 servers in één groep toevoegen.<br/><br/> U kunt Maxi maal 35.000 servers in één evaluatie evalueren.
@@ -84,4 +84,4 @@ De volgende tabel bevat een overzicht van de poort vereisten voor evaluatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-De [evaluatie van de fysieke server wordt voor bereid](./tutorial-discover-physical.md).
+[Bereid u voor op fysieke detectie en evaluatie](./tutorial-discover-physical.md).

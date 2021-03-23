@@ -4,12 +4,12 @@ description: Gebruik de Apache Ambari Web-UI om Apache HBase te configureren en 
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 02/01/2021
-ms.openlocfilehash: 60c9916bc7d7b3b380a332f41924ee744002fd66
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 7e54b1347e4c67b99ba87b15c2c15d9d28244ce7
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "99428197"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104864768"
 ---
 # <a name="optimize-apache-hbase-with-apache-ambari-in-azure-hdinsight"></a>Apache HBase optimaliseren met Apache Ambari in azure HDInsight
 
@@ -28,7 +28,7 @@ De HBase-Heap-grootte geeft de maximale hoeveelheid heap op die in mega bytes pe
 
 1. Wijzig de standaard waarde in 5.000 MB.
 
-    ![' Apache Ambari HBase Memory heapsize '](./media/optimize-hbase-ambari/ambari-hbase-heapsize.png)
+    :::image type="content" source="./media/optimize-hbase-ambari/ambari-hbase-heapsize.png" alt-text="' Apache Ambari HBase Memory heapsize '" border="true":::
 
 ## <a name="optimize-read-heavy-workloads"></a>Lees zware workloads optimaliseren
 
@@ -40,7 +40,7 @@ De blok cache is de Lees cache. De grootte wordt bepaald door de `hfile.block.ca
 
 1. Als u deze para meter wilt wijzigen, gaat u naar het tabblad **instellingen** op het tabblad HBase- **configuratie** en zoekt u vervolgens **% van RegionServer die zijn toegewezen aan lees buffers**.
 
-    ![HBase geheugen blok cache grootte Apache](./media/optimize-hbase-ambari/hbase-block-cache-size.png)
+    :::image type="content" source="./media/optimize-hbase-ambari/hbase-block-cache-size.png" alt-text="HBase geheugen blok cache grootte Apache" border="true":::
 
 1. Als u de waarde wilt wijzigen, selecteert u het **bewerkings** pictogram.
 
@@ -58,7 +58,7 @@ Als u wilt optimaliseren voor wille keurige Lees bewerkingen, kunt u de geheugen
 
 De `hbase.client.scanner.caching` instelling bepaalt het aantal rijen dat van de schijf wordt gelezen wanneer de `next` methode wordt aangeroepen op een scanner.  De standaardwaarde is 100. Hoe hoger het aantal, hoe minder de externe aanroepen van de client naar de regio server, wat resulteert in snellere scans. Met deze instelling wordt echter ook de geheugen belasting van de client verg root.
 
-![Apache HBase aantal rijen opgehaald](./media/optimize-hbase-ambari/hbase-num-rows-fetched.png)
+:::image type="content" source="./media/optimize-hbase-ambari/hbase-num-rows-fetched.png" alt-text="Apache HBase aantal rijen opgehaald" border="true":::
 
 > [!IMPORTANT]  
 > Stel de waarde zo in dat de tijd tussen het aanroepen van de volgende methode op een scanner groter is dan de time-out van de scanner. De duur van de time-out voor de scanner wordt gedefinieerd door de `hbase.regionserver.lease.period` eigenschap.
@@ -71,7 +71,7 @@ De volgende configuraties zijn belang rijk voor het verbeteren van de prestaties
 
 HBase slaat gegevens op in een interne bestands indeling met de naam *HFile*. De eigenschap `hbase.hregion.max.filesize` definieert de grootte van één HFile voor een regio.  Een regio wordt in twee regio's gesplitst als de som van alle HFiles in een regio groter is dan deze instelling.
 
-![Apache HBase HRegion Max bestands grootte](./media/optimize-hbase-ambari/hbase-hregion-max-filesize.png)
+:::image type="content" source="./media/optimize-hbase-ambari/hbase-hregion-max-filesize.png" alt-text="Apache HBase HRegion Max bestands grootte" border="true":::
 
 Hoe groter de grootte van het regio bestand, hoe kleiner het aantal splitsingen is. U kunt de bestands grootte verg Roten om een waarde te bepalen die resulteert in de maximale schrijf prestaties.
 
@@ -85,7 +85,7 @@ Hoe groter de grootte van het regio bestand, hoe kleiner het aantal splitsingen 
 
     Met de standaard waarden voor flush grootte en blok-multiplier worden updates geblokkeerd wanneer de geheugen opslag 128 * 4 = 512 MB groot is. Als u het aantal blokkerende updates wilt verminderen, verhoogt u de waarde van `hbase.hregion.memstore.block.multiplier` .
 
-![Apache HBase regio Block multiplier](./media/optimize-hbase-ambari/hbase-hregion-memstore-block-multiplier.png)
+:::image type="content" source="./media/optimize-hbase-ambari/hbase-hregion-memstore-block-multiplier.png" alt-text="Apache HBase regio Block multiplier" border="true":::
 
 ## <a name="define-memstore-size"></a>Grootte van geheugen opslag definiëren
 
@@ -95,7 +95,7 @@ De grootte van de geheugen opslag wordt gedefinieerd door de `hbase.regionserver
 
 Het gebruik van de lokale toewijzings buffer voor geheugen opslag wordt bepaald door de eigenschap `hbase.hregion.memstore.mslab.enabled` . Als deze instelling is ingeschakeld (true), wordt heap-fragmentatie voor komen tijdens een zware schrijf bewerking. De standaardwaarde is waar.
 
-![hbase. hregion. geheugen opslag. mslab. enabled](./media/optimize-hbase-ambari/hbase-hregion-memstore-mslab-enabled.png)
+:::image type="content" source="./media/optimize-hbase-ambari/hbase-hregion-memstore-mslab-enabled.png" alt-text="hbase. hregion. geheugen opslag. mslab. enabled" border="true":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

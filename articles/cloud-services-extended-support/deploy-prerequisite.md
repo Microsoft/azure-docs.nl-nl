@@ -8,12 +8,12 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: d85aad16049dee6496cb1eaf9def5451625ab876
-ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
+ms.openlocfilehash: 21433e1a0441ef458dd5f8ea4b968211ef82cd46
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104773467"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104865601"
 ---
 # <a name="prerequisites-for-deploying-azure-cloud-services-extended-support"></a>Vereisten voor het implementeren van Azure Cloud Services (uitgebreide ondersteuning)
 
@@ -133,7 +133,7 @@ Implementaties die de oude invoeg toepassingen voor diagnostische gegevens hebbe
 
 ## <a name="key-vault-creation"></a>Key Vault maken 
 
-Key Vault wordt gebruikt om certificaten op te slaan die zijn gekoppeld aan Cloud Services (uitgebreide ondersteuning). Voeg de certificaten toe aan Key Vault en verwijs vervolgens naar de certificaat vingerafdrukken in het service configuratie bestand. U moet ook Key Vault ' toegangs beleid ' (in portal) inschakelen voor toegang tot ' Azure Virtual Machines voor implementatie ' en ' Azure Resource Manager voor sjabloon implementatie ' zodat Cloud Services (uitgebreide ondersteunings resource) een certificaat kan ophalen dat is opgeslagen als geheimen van Key Vault. U kunt een sleutel kluis maken in de [Azure Portal](../key-vault/general/quick-create-portal.md) of met behulp van [Power shell](../key-vault/general/quick-create-powershell.md). De sleutel kluis moet worden gemaakt in dezelfde regio en hetzelfde abonnement als de Cloud service. Zie [certificaten met Azure Cloud Services gebruiken (uitgebreide ondersteuning)](certificates-and-key-vault.md)voor meer informatie.
+Key Vault wordt gebruikt om certificaten op te slaan die zijn gekoppeld aan Cloud Services (uitgebreide ondersteuning). Voeg de certificaten toe aan Key Vault en verwijs vervolgens naar de certificaat vingerafdrukken in het service configuratie bestand. U moet ook Key Vault ' toegangs beleid ' (in portal) inschakelen voor ' Azure Virtual Machines voor implementatie ' zodat Cloud Services (uitgebreide ondersteunings resource) een certificaat kan ophalen dat is opgeslagen als geheimen van Key Vault. U kunt een sleutel kluis maken in de [Azure Portal](../key-vault/general/quick-create-portal.md) of met behulp van [Power shell](../key-vault/general/quick-create-powershell.md). De sleutel kluis moet worden gemaakt in dezelfde regio en hetzelfde abonnement als de Cloud service. Zie [certificaten met Azure Cloud Services gebruiken (uitgebreide ondersteuning)](certificates-and-key-vault.md)voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen 
 - Controleer de [vereisten voor implementatie](deploy-prerequisite.md) voor Cloud Services (uitgebreide ondersteuning).

@@ -10,12 +10,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 03/15/2021
 ms.author: aahi
-ms.openlocfilehash: 115457180efab719b406c4e1e021234fa99736ab
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: af957758918b99dcb44732eb536c0ca031231a7a
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104670499"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104868219"
 ---
 # <a name="quickstart-create-a-cognitive-services-resource-using-the-azure-portal"></a>Snelstartgids: een Cognitive Services resource maken met behulp van de Azure Portal
 
@@ -117,8 +117,8 @@ Als u een Cognitive Services-abonnement wilt opschonen en verwijderen, kunt u de
 
 ## <a name="see-also"></a>Zie ook
 
-* [Aanvragen verifiëren bij Azure Cognitive Services](authentication.md)
-* [Wat is Azure Cognitive Services?](./what-are-cognitive-services.md)
-* [Een nieuwe resource maken met behulp van de Azure Management-client bibliotheek](.\cognitive-services-apis-create-account-client-library.md)
-* [Ondersteuning voor natuurlijke taal](language-support.md)
-* [Ondersteuning voor Docker-container](cognitive-services-container-support.md)
+* Zie **[aanvragen verifiëren voor Azure Cognitive Services](authentication.md)** over het veilig werken met Cognitive Services.
+* Zie **[Wat is Azure Cognitive Services?](./what-are-cognitive-services.md)** voor een lijst met verschillende categorieën in cognitive Services.
+* Zie **[ondersteuning voor natuurlijke](language-support.md)** talen voor een overzicht van de natuurlijke talen die Cognitive Services ondersteunt.
+* Zie **[Cognitive Services als containers gebruiken](cognitive-services-container-support.md)** voor meer informatie over het gebruik van Cognitive Services on-premises.
+* Zie **[kosten plannen en beheren voor Cognitive Services](plan-manage-costs.md)** voor het schatten van de kosten van het gebruik van Cognitive Services.

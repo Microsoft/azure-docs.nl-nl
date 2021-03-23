@@ -3,12 +3,12 @@ title: 'Zelfstudie: VMware HCX implementeren en configureren'
 description: Meer informatie over het implementeren en configureren van een VMware HCX-oplossing voor de privécloud van uw Azure VMware Solution.
 ms.topic: tutorial
 ms.date: 03/13/2021
-ms.openlocfilehash: d4607483e64e6b7daa45f576f70ce3f5eeef65ca
-ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
+ms.openlocfilehash: ab59b4a29f8ba372c1892613d5e0461bf3fdc512
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/23/2021
-ms.locfileid: "104801108"
+ms.locfileid: "104869086"
 ---
 # <a name="deploy-and-configure-vmware-hcx"></a>VMware HCX implementeren en configureren
 
@@ -265,7 +265,7 @@ Bekijk voor een volledig overzicht van deze procedure de video [Azure VMware Sol
 1. Selecteer bij **Select Distributed Switches for Network Extensions** de switches die de virtuele machines bevatten die moeten worden gemigreerd naar Azure VMware Solution op een uitgebreid netwerk in laag 2. Selecteer vervolgens **Doorgaan**.
 
    > [!NOTE]
-   > Als u geen virtuele machines migreert op uitgebreide netwerken in laag 2, kunt u deze stap overslaan.
+   > Als u geen virtuele machines op laag 2 (L2) uitgebreide netwerken migreert, kunt u deze stap overs Laan.
    
    :::image type=" content" source="media/tutorial-vmware-hcx/select-layer-2-distributed-virtual-switch.png" alt-text="Schermopname van de selectie van gedistribueerde virtuele switches en de knop Continue." lightbox="media/tutorial-vmware-hcx/select-layer-2-distributed-virtual-switch.png":::
 
@@ -376,4 +376,4 @@ Ga naar de technische documentatie voor VMware voor meer informatie over het geb
 * [Documentatie voor VMware HCX](https://docs.vmware.com/en/VMware-HCX/index.html)
 * [Virtuele machines migreren met VMware HCX](https://docs.vmware.com/en/VMware-HCX/services/user-guide/GUID-D0CD0CC6-3802-42C9-9718-6DA5FEC246C6.html?hWord=N4IghgNiBcIBIGEAaACAtgSwOYCcwBcMB7AOxAF8g)
 * [Vereiste poorten voor HCX](https://ports.vmware.com/home/VMware-HCX)
-* [Een HCX-proxy-server instellen voordat u de licentie code goedkeurt](https://docs.vmware.com/en/VMware-HCX/services/user-guide/GUID-920242B3-71A3-4B24-9ACF-B20345244AB2.html?hWord=N4IghgNiBcIA4CcD2APAngAgBIGEAaIAvkA)
+* [Stel een HCX-proxy server in voordat u de licentie sleutel goedkeurt](https://docs.vmware.com/en/VMware-HCX/services/user-guide/GUID-920242B3-71A3-4B24-9ACF-B20345244AB2.html?hWord=N4IghgNiBcIA4CcD2APAngAgBIGEAaIAvkA)

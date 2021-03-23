@@ -14,18 +14,18 @@ ms.devlang: na
 ms.topic: reference
 ms.date: 12/14/2020
 ms.author: phjensen
-ms.openlocfilehash: 0e2e4beebedb93524da43c5a3fad750b0295f5cd
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 1f2c767d45bb08e25a057c7db1f380ceb250f607
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "97632725"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104864904"
 ---
 # <a name="delete-using-azure-application-consistent-snapshot-tool-preview"></a>Verwijderen met Azure-toepassing consistent snap shot tool (preview)
 
 Dit artikel bevat een hand leiding voor het uitvoeren van de Verwijder opdracht van het hulp programma Azure-toepassing consistente moment opname dat u kunt gebruiken met Azure NetApp Files.
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 Het is mogelijk om volume momentopnamen en database catalogus vermeldingen te verwijderen met de `azacsnap -c delete` opdracht.
 
@@ -36,11 +36,11 @@ Het is mogelijk om volume momentopnamen en database catalogus vermeldingen te ve
 
 De `-c delete` opdracht heeft de volgende opties:
 
-- `--delete hana` bij gebruik met de opties `--hanasid <SID>` en `--hanabackupid <HANA backup id>` worden vermeldingen uit de SAP Hana back-upcatalogus verwijderd die voldoen aan de criteria.
+- `--delete hana` bij gebruik met de opties `--dbsid <SID>` en `--hanabackupid <HANA backup id>` worden vermeldingen uit de SAP Hana back-upcatalogus verwijderd die voldoen aan de criteria.
 
 - `--delete storage` Wanneer u met de optie gebruikt `--snapshot <snapshot name>` , wordt de moment opname uit het back-end-opslag systeem verwijderd.
 
-- `--delete sync` bij gebruik met opties `--hanasid <SID>` en `--hanabackupid <HANA backup id>` wordt de naam van de opslag momentopname opgehaald uit de back-upcatalogus voor de `<HANA backup id>` , en wordt de vermelding vervolgens verwijderd uit de back-upcatalogus _en_ de moment opname van de volumes met de benoemde moment opname.
+- `--delete sync` bij gebruik met opties `--dbsid <SID>` en `--hanabackupid <HANA backup id>` wordt de naam van de opslag momentopname opgehaald uit de back-upcatalogus voor de `<HANA backup id>` , en wordt de vermelding vervolgens verwijderd uit de back-upcatalogus _en_ de moment opname van de volumes met de benoemde moment opname.
 
 - `--delete sync` Wanneer wordt gebruikt met `--snapshot <snapshot name>` om te controleren of er vermeldingen in de back-upcatalogus voor de worden weer `<snapshot name>` gegeven, haalt de SAP Hana back-up-id op en verwijdert beide de vermelding in de back-upcatalogus _en_ de moment opname van de volumes met de benoemde moment opname.
 
@@ -51,7 +51,7 @@ De `-c delete` opdracht heeft de volgende opties:
 ### <a name="delete-a-snapshot-using-sync-option"></a>Een moment opname verwijderen met de `sync` optie
 
 ```bash
-azacsnap -c delete --delete sync --hanasid H80 --hanabackupid 157979797979
+azacsnap -c delete --delete sync --dbsid H80 --hanabackupid 157979797979
 ```
 
 > [!NOTE]
@@ -67,7 +67,7 @@ azacsnap -c delete --delete sync --snapshot hana_hourly.2020-01-22_2358
 ### <a name="delete-a-snapshot-using-hana-option"></a>Een moment opname verwijderen met de `hana` optie
 
 ```bash
-azacsnap -c delete --delete hana --hanasid H80 --hanabackupid 157979797979
+azacsnap -c delete --delete hana --dbsid H80 --hanabackupid 157979797979
 ```
 
 > [!NOTE]

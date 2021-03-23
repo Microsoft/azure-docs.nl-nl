@@ -1,18 +1,14 @@
 ---
 title: Azure Defender voor IoT-oplossing op basis van een agent configureren
 description: Meer informatie over het configureren van gegevens verzameling in azure Defender voor een IoT-oplossing op basis van een agent
-author: shhazam-ms
-manager: rkarlin
-ms.author: shhazam
 ms.date: 1/21/2021
 ms.topic: how-to
-ms.service: azure
-ms.openlocfilehash: e32b9c690db70baeda7dec2f9f1270f82c6881bd
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 9a21b336299438b89fae8d5a837130762a7f36e8
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101733292"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104784387"
 ---
 # <a name="configure-azure-defender-for-iot-agent-based-solution"></a>Azure Defender voor IoT-oplossing op basis van een agent configureren  
 

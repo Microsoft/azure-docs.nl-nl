@@ -1,31 +1,31 @@
 ---
-title: 'Servers die worden uitgevoerd in de VMware-omgeving detecteren met Azure Migrate: Server evaluatie'
-description: Meer informatie over het detecteren van on-premises virtuele VMware-machines met het Azure Migrate-hulpprogramma voor serverevaluatie
-author: vikram1988
-ms.author: vibansa
+title: Servers die worden uitgevoerd in de VMware-omgeving detecteren met Azure Migrate detectie en evaluatie
+description: Meer informatie over het detecteren van on-premises servers in VMware-omgevingen met het hulp programma voor detectie en evaluatie van Azure Migrate
+author: vineetvikram
+ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: tutorial
-ms.date: 9/14/2020
+ms.date: 03/17/2021
 ms.custom: mvc
-ms.openlocfilehash: 4d2b0fbb377beacdb75a1a5552855936bee2b205
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: d0acf83ddfb0d2a3aff0db0f3d151869bce1c710
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102041308"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104771733"
 ---
-# <a name="tutorial-discover-servers-running-in-vmware-environment-with-azure-migrate-server-assessment"></a>Zelf studie: servers die worden uitgevoerd in de VMware-omgeving detecteren met Azure Migrate: Server evaluatie
+# <a name="tutorial-discover-servers-running-in-vmware-environment-with-azure-migrate-discovery-and-assessment"></a>Zelf studie: servers die worden uitgevoerd in de VMware-omgeving detecteren met Azure Migrate: detectie en evaluatie
 
 Als onderdeel van de migratie naar Azure, detecteert u uw on-premises inventaris en werkbelastingen.
 
-In deze zelf studie leert u hoe u servers detecteert die worden uitgevoerd in de VMware-omgeving met Azure Migrate: Server Assessment Tool, met behulp van een licht gewicht Azure Migrate apparaat. U implementeert het apparaat als een server die wordt uitgevoerd in uw vCenter Server, om voortdurend servers en hun prestatie-meta gegevens te detecteren, toepassingen die worden uitgevoerd op servers, Server afhankelijkheden en SQL Server instanties en data bases.
+In deze zelf studie leert u hoe u servers detecteert die worden uitgevoerd in de VMware-omgeving met Azure Migrate: hulp programma voor detectie en evaluatie, met behulp van een licht gewicht Azure Migrate apparaat. U implementeert het apparaat als een server die wordt uitgevoerd in uw vCenter Server, om voortdurend servers en hun prestatie-meta gegevens te detecteren, toepassingen die worden uitgevoerd op servers, Server afhankelijkheden en SQL Server instanties en data bases.
 
 In deze zelfstudie leert u het volgende:
 
 > [!div class="checklist"]
 > * Een Azure-account instellen.
 > * De VMware-omgeving voorbereiden voor detectie.
-> * Maak een Azure Migrate-project.
+> * Een project maken.
 > * Het Azure Migrate-apparaat instellen.
 > * Continue detectie starten.
 
@@ -51,7 +51,7 @@ Controleer of deze vereisten aanwezig zijn voordat u met deze zelfstudie begint.
 
 ## <a name="prepare-an-azure-user-account"></a>Een Azure-gebruikersaccount voorbereiden
 
-Om een Azure Migrate-project te maken en het Azure Migrate-apparaat te registreren, hebt u een account nodig met:
+Als u een project wilt maken en het Azure Migrate apparaat wilt registreren, hebt u een account nodig met:
 - Inzender of eigenaars machtigingen voor het Azure-abonnement
 - Machtigingen voor het registreren van Azure Active Directory-apps (AAD)
 - Eigenaar of Inzender plus beheerders machtigingen voor gebruikers toegang voor het Azure-abonnement om een Key Vault te maken, die wordt gebruikt tijdens server migratie zonder agents
@@ -63,7 +63,7 @@ Als u net pas een gratis Azure-account hebt gemaakt, bent u de eigenaar van uw a
     :::image type="content" source="./media/tutorial-discover-vmware/search-subscription.png" alt-text="Zoekvak om te zoeken naar het Azure-abonnement":::
 
 
-2. Selecteer op de pagina **Abonnementen** het abonnement waarin u een Azure Migrate-project wilt maken.
+2. Selecteer op de pagina **abonnementen** het abonnement waarin u een project wilt maken.
 3. Selecteer onder het abonnement de optie **Toegangsbeheer (IAM)**  > **Toegang controleren**.
 4. Zoek onder **Toegang controleren** naar het relevante gebruikersaccount.
 5. Klik onder **Een roltoewijzing toevoegen** op **Toevoegen**.
@@ -117,7 +117,7 @@ U hebt een gebruikers account met de vereiste bevoegdheden op de servers nodig o
 
 ## <a name="set-up-a-project"></a>Een project instellen
 
-Stel als volgt een nieuw Azure Migrate-project in.
+Stel een nieuw project in.
 
 1. Zoek in de Azure-portal in **Alle services** naar **Azure Migrate**.
 2. Onder **Services** selecteert u **Azure Migrate**.
@@ -128,14 +128,14 @@ Stel als volgt een nieuw Azure Migrate-project in.
     :::image type="content" source="./media/tutorial-discover-vmware/new-project.png" alt-text="Vakken voor projectnaam en regio":::
 
 7. Selecteer **Maken**.
-8. Wacht enkele minuten totdat het Azure Migrate project is geïmplementeerd. De **Azure migrate:** het hulp programma voor Server evaluatie wordt standaard toegevoegd aan het nieuwe project.
+8. Wacht een paar minuten totdat het project is geïmplementeerd. Het **Azure migrate: hulp programma voor detectie en evaluatie** wordt standaard toegevoegd aan het nieuwe project.
 
 > [!NOTE]
 > Als u al een project hebt gemaakt, kunt u hetzelfde project gebruiken om extra apparaten te registreren om meer nee te ontdekken en te evalueren. van servers. [ **Meer informatie**](create-manage-projects.md#find-a-project)
 
 ## <a name="set-up-the-appliance"></a>Het apparaat instellen
 
-Azure Migrate: Server evaluatie maakt gebruik van een licht gewicht Azure Migrate apparaat. Het apparaat voert server detectie uit en verzendt meta gegevens van de server configuratie en prestaties naar Azure Migrate. Het apparaat kan worden ingesteld door een eicellen-sjabloon te implementeren die vanuit het project kan worden gedownload.
+Azure Migrate: detectie en evaluatie gebruiken een licht gewicht Azure Migrate apparaat. Het apparaat voert server detectie uit en verzendt meta gegevens van de server configuratie en prestaties naar Azure Migrate. Het apparaat kan worden ingesteld door een eicellen-sjabloon te implementeren die vanuit het project kan worden gedownload.
 
 > [!NOTE]
 > Als u het apparaat om de een of andere reden niet kunt instellen met behulp van de sjabloon, stelt u dit in met behulp van een Power shell-script op een bestaande Windows Server 2016-server. [**Meer informatie**](deploy-appliance-script.md#set-up-the-appliance-for-vmware).
@@ -143,18 +143,19 @@ Azure Migrate: Server evaluatie maakt gebruik van een licht gewicht Azure Migrat
 ### <a name="deploy-with-ova"></a>Implementeren met OVA
 
 Als u het apparaat wilt instellen met behulp van een OVA-sjabloon, doet u het volgende:
-1. Geef een naam op voor het apparaat en genereer een Azure Migrate-projectsleutel in de portal.
+
+1. Geef een naam op voor het apparaat en Genereer een project sleutel in de portal.
 1. Download een OVA-sjabloonbestand en importeer het naar vCenter Server. Controleer of de eicellen veilig zijn.
-1. Maak de toestel-VM op basis van het bestand van de eicellen en controleer of het verbinding kan maken met Azure Migrate.
-1. Configureer het apparaat voor de eerste keer en registreer het met het project met behulp van de Azure Migrate project sleutel.
+1. Maak het apparaat vanuit het bestand van de eicellen en controleer of het verbinding kan maken met Azure Migrate.
+1. Configureer het apparaat voor de eerste keer en registreer het met het project met behulp van de project sleutel.
 
-### <a name="1-generate-the-azure-migrate-project-key"></a>1. de Azure Migrate project sleutel genereren
+### <a name="1-generate-the-project-key"></a>1. de project sleutel genereren
 
-1. In **Migratiedoelen** > **Servers** > **Azure Migrate: Serverevaluatie** selecteert u **Detecteren**.
-2. In **Machines ontdekken** > **Zijn de machines gevirtualiseerd?** selecteert u **Ja, met VMware vSphere-hypervisor**.
-3. Geef in **1: Azure migrate project sleutel genereren** een naam op voor het Azure migrate apparaat dat u wilt instellen voor de detectie van servers in uw VMware-omgeving. De naam moet alfanumeriek zijn met 14 tekens of minder.
+1. In **migratie doelen**  >  **Windows, Linux-en SQL-servers**  >  **Azure migrate: detectie en evaluatie**, selecteer **detecteren**.
+2. In **Discover-servers**  >  **zijn uw servers gevirtualiseerd?**, selecteert u **Ja, met VMware vSphere Hyper Visor**.
+3. Geef in **1: project sleutel genereren** een naam op voor het Azure migrate apparaat dat u wilt instellen voor de detectie van servers in uw VMware-omgeving. De naam moet alfanumeriek zijn met 14 tekens of minder.
 1. Klik op **Sleutel genereren** om de vereiste Azure-resources te gaan maken. Sluit de detectie pagina niet tijdens het maken van resources.
-1. Nadat de Azure-resources zijn gemaakt, wordt er een **Azure Migrate-projectsleutel** gegenereerd.
+1. Nadat het maken van de Azure-resources is voltooid, wordt er een **project sleutel** gegenereerd.
 1. Kopieer de sleutel, omdat u deze nodig hebt om de registratie van het apparaat tijdens de configuratie te voltooien.
 
 ### <a name="2-download-the-ova-template"></a>2. de sjabloon van de eicellen downloaden
@@ -214,13 +215,13 @@ Het apparaat voor de eerste keer instellen.
 
 1. Klik in de vSphere-client console met de rechter muisknop op de server en selecteer vervolgens **console openen**.
 2. Geef de taal, de tijdzone en een wachtwoord op voor het apparaat.
-3. Open een browser op een computer die verbinding kan maken met de toestel server en open de URL van het configuratie beheer van het apparaat: `https://appliance name or IP address: 44368` .
+3. Open een browser op een computer die verbinding kan maken met het apparaat en open de URL van het configuratie beheer van het apparaat: `https://appliance name or IP address: 44368` .
 
    U kunt de Configuration Manager ook openen via het bureau blad van de toestel server door de snelkoppeling voor Configuration Manager te selecteren.
 1. Accepteer de **licentievoorwaarden** en lees de informatie van derden.
 1. Ga als volgt te werk in de Configuration Manager-> vereisten in te **stellen**:
    - **Connectiviteit**: het apparaat controleert of de server toegang heeft tot internet. Als de server gebruikmaakt van een proxy:
-     - Klik op **proxy instellen** om het proxy adres `http://ProxyIPAddress` of `http://ProxyFQDN` en luister poort op te geven.
+     - Klik op **proxy voor installatie** om het proxy adres `http://ProxyIPAddress` of `http://ProxyFQDN` en luister poort op te geven.
      - Geef referenties op als de proxy verificatie nodig heeft.
      - Alleen HTTP-proxy wordt ondersteund.
      - Als u proxydetails hebt toegevoegd of de proxy en/of de verificatie hebt uitgeschakeld, klikt u op **Opslaan** om de connectiviteitscontrole opnieuw te activeren.
@@ -236,13 +237,13 @@ Het apparaat voor de eerste keer instellen.
 
 ### <a name="register-the-appliance-with-azure-migrate"></a>Het apparaat registreren bij Azure Migrate
 
-1. Plak de **Azure Migrate-projectsleutel** die u in de portal hebt gekopieerd. Als u de sleutel niet hebt, gaat u naar **Serverevaluatie > Detecteren > Bestaande apparaten beheren**, selecteert u de naam van het apparaat die u hebt ingevoerd op het moment dat de sleutel werd gegenereerd en kopieert u de bijbehorende sleutel.
+1. Plak de **project sleutel** die u hebt gekopieerd uit de portal. Als u de sleutel niet hebt, gaat u naar **Azure migrate: detectie en evaluatie> detecteren> bestaande apparaten te beheren**, selecteert u de naam van het apparaat dat u hebt ingevoerd op het moment van sleutel genereren en kopieert u de bijbehorende sleutel.
 1. U hebt een apparaatcode nodig om te verifiëren bij Azure. Als u klikt op **Aanmelden**, wordt er een modaal met de apparaatcode geopend, zoals hieronder weergegeven.
 
     :::image type="content" source="./media/tutorial-discover-vmware/device-code.png" alt-text="Modaal waarin de apparaatcode wordt weergegeven":::
 
 1. Klik op **Code kopiëren en aanmelden** om de apparaatcode te kopiëren en een Azure-aanmeldingsprompt te openen op een nieuw browsertabblad. Als dit niet wordt weergegeven, controleert u of de pop-upblokkering in de browser is uitgeschakeld.
-1. Plak de apparaatcode in het nieuwe tabblad en meld u aan met de gebruikersnaam en het wachtwoord van Azure.
+1. Plak op het tabblad Nieuw de code van het apparaat en meld u aan met behulp van uw Azure-gebruikers naam en-wacht woord.
    
    Aanmelden met een pincode wordt niet ondersteund.
 3. Als u het aanmeldingstabblad per ongeluk sluit zonder u aan te melden, vernieuwt u het browsertabblad van Apparaatconfiguratiebeheer om de knop Aanmelden opnieuw in te schakelen.
@@ -260,23 +261,23 @@ Het apparaat moet verbinding maken met vCenter Server om de configuratie-en pres
 
 1. In **stap 1: geef vCenter Server referenties** op en klik op **referenties toevoegen** om een beschrijvende naam voor de referenties op te geven, Voeg **gebruikers naam** en **wacht woord** toe voor het vCenter Server account dat het apparaat gebruikt om servers te detecteren die worden uitgevoerd op de vCenter Server.
     - U moet een account met de vereiste machtigingen hebben ingesteld, zoals in dit artikel wordt besproken.
-    - Als u het detectiebereik wilt beperken tot specifieke VMware-objecten (vCenter Server-datacenters, clusters, een map met clusters, hosts, een map met hosts of afzonderlijke VM's), raadpleegt u de instructies in [dit artikel](set-discovery-scope.md) om het account dat wordt gebruikt door Azure Migrate te begrenzen.
+    - Als u de detectie van de scope wilt beperken tot specifieke VMware-objecten (vCenter Server Data Centers, clusters, een map met clusters, hosts, een map van hosts of afzonderlijke servers.), raadpleegt u de instructies in [dit artikel](set-discovery-scope.md) om het account dat wordt gebruikt door Azure migrate te begrenzen.
 1. In **stap 2: geef vCenter Server Details** op, klik op **detectie bron toevoegen** om de beschrijvende naam voor referenties in de vervolg keuzelijst te selecteren, geeft u het **IP-adres/de FQDN** van de vCenter Server op. U kunt **Poort** op 443 laten staan (de standaardinstelling) of een aangepaste poort opgeven waarop vCenter Server luistert en op **Opslaan** klikken.
 1. Wanneer u op **Opslaan** klikt, probeert het apparaat de verbinding met de vCenter Server te valideren met de referenties die zijn gegeven en wordt de **validatie status** in de tabel vergeleken met het vCenter Server IP-adres/de FQDN-naam.
-1. Voordat u de detectie start, kunt u de connectiviteit met vCenter Server altijd **opnieuw valideren**.
+1. U kunt de connectiviteit opnieuw **valideren** om op elk gewenst moment te vCenter Server voordat de detectie wordt gestart.
 
     :::image type="content" source="./media/tutorial-discover-vmware/appliance-manage-sources.png" alt-text="Panel 3 op het apparaat Configuration Manager voor vCenter Server Details":::
 
 ### <a name="provide-server-credentials"></a>Server referenties opgeven
 
-In **stap 3: Server referenties opgeven voor het uitvoeren van software-inventaris, afhankelijkheids analyse zonder agent en detectie van SQL Server instanties en data bases**. u kunt ervoor kiezen om meerdere Server referenties op te geven of als u deze functies niet wilt gebruiken, kunt u de stap overs Laan en door gaan met vCenter Server detectie. U kunt uw intentie op elk gewenst moment wijzigen.
+In **stap 3: Server referenties opgeven voor het uitvoeren van software-inventaris, afhankelijkheids analyse zonder agent en detectie van SQL Server instanties en data bases**. u kunt ervoor kiezen om meerdere Server referenties op te geven of als u deze functies niet wilt gebruiken, kunt u de stap overs Laan en door gaan met vCenter Server detectie. U kunt uw intentie op elk later tijdstip wijzigen.
 
 :::image type="content" source="./media/tutorial-discover-vmware/appliance-server-credentials-mapping.png" alt-text="Panel 3 op het apparaat Configuration Manager voor Server Details":::
 
 > [!Note]
 > Detectie en evaluatie van SQL Server instanties en data bases die worden uitgevoerd in uw VMware-omgeving is nu beschikbaar als preview-versie. Als u deze functie wilt proberen, gebruikt u [**deze koppeling**](https://aka.ms/AzureMigrate/SQL) om een project te maken in de regio **Australië - oost**. Als u al een project in Australië-oost hebt en u deze functie wilt proberen, zorgt u ervoor dat u aan deze [**vereisten**](how-to-discover-sql-existing-project.md) voldoet in de portal.
 
-Als u gebruik wilt maken van deze functies, kunt u de referenties van de server opgeven door de volgende stappen uit te voeren. Het apparaat zal proberen de referenties automatisch toe te wijzen aan de servers om de detectie functies uit te voeren.
+Als u deze functies wilt gebruiken, kunt u de referenties van de server opgeven door de volgende stappen uit te voeren. Het apparaat zal proberen de referenties automatisch toe te wijzen aan de servers om de detectie functies uit te voeren.
 
 - U kunt Server referenties toevoegen door te klikken op de knop **referenties toevoegen** . Hiermee opent u een modaal, waar u het **type referenties** kunt kiezen in de vervolg keuzelijst.
 - U kunt referenties voor domein/Windows (niet-domein)/Linux (niet-domein)/SQL Server verificatie opgeven. Meer [informatie](add-server-credentials.md) over hoe u referenties kunt opgeven en hoe u deze kunt afhandelen.
@@ -301,6 +302,7 @@ Als u gebruik wilt maken van deze functies, kunt u de referenties van de server 
 Als er geen certificaat is ingericht op de server wanneer het wordt gestart, SQL Server genereert een zelfondertekend certificaat dat wordt gebruikt om aanmeldings pakketten te versleutelen. [**Meer informatie**](https://docs.microsoft.com/sql/database-engine/configure-windows/enable-encrypted-connections-to-the-database-engine).
 
 Detectie werkt als volgt:
+
 - Het duurt ongeveer 15 minuten voordat de gedetecteerde servers inventarisatie wordt weer gegeven in de portal.
 - De detectie van geïnstalleerde toepassingen kan enige tijd duren. De duur is afhankelijk van het aantal gedetecteerde servers. Voor 500-servers duurt het ongeveer een uur voordat de gedetecteerde inventaris wordt weer gegeven in de Azure Migrate Portal.
 - Nadat de detectie van servers is voltooid, kunt u een afhankelijkheids analyse zonder agent inschakelen op de servers van de portal.

@@ -5,14 +5,14 @@ author: christopheranderson
 ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
 ms.topic: how-to
-ms.date: 03/02/2021
+ms.date: 03/19/2021
 ms.author: chrande
-ms.openlocfilehash: 1818838a68c2712336a3515b2a82b5fdd518d237
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 8865a16c2840b65f432de679c6dd63b285b1f760
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "101661168"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104771797"
 ---
 # <a name="upgrade-the-api-version-of-your-azure-cosmos-db-api-for-mongodb-account"></a>Upgrade de API-versie van uw Azure Cosmos DB-API voor het MongoDB-account
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
@@ -67,42 +67,35 @@ Als u een upgrade uitvoert van versie 3,2, moet u het bestaande eind punt vervan
 
 ## <a name="how-to-upgrade"></a>Upgrade uitvoeren
 
-1. Ga naar de Azure Portal en ga naar de Azure Cosmos DB-API voor de Blade overzicht van MongoDB-account. Controleer of uw huidige server versie u verwacht.
+1. Meld u aan bij de [Azure Portal.](https://portal.azure.com/)
 
-    :::image type="content" source="./media/mongodb-version-upgrade/1.png" alt-text="Overzicht van Azure Portal met MongoDB-account" border="false":::
+1. Navigeer naar uw Azure Cosmos DB-API voor MongoDB-account. Open het deel venster **overzicht** en controleer of de huidige **Server versie** 3,2 of 3,6 is.
 
-2. Selecteer de Blade in de opties aan de linkerkant `Features` . Hiermee worden de functies op accountniveau voor uw databaseaccount zichtbaar.
+    :::image type="content" source="./media/mongodb-version-upgrade/check-current-version.png" alt-text="Controleer de huidige versie van uw MongoDB-account uit het Azure Portal." border="true":::
 
-    :::image type="content" source="./media/mongodb-version-upgrade/2.png" alt-text="Azure Portal met MongoDB-account overzicht met de Blade functies gemarkeerd" border="false":::
+1. Open het deel venster vanuit het menu links `Features` . Dit deel venster toont de functies voor het account niveau die beschikbaar zijn voor uw database account.
 
-3. Klik op de `Upgrade Mongo server version` rij. Als u deze optie niet ziet, komt uw account mogelijk niet in aanmerking voor deze upgrade. Als dit het geval is, moet u [een ondersteunings ticket](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) indienen.
+1. Selecteer rij `Upgrade MongoDB server version`. Als u deze optie niet ziet, komt uw account mogelijk niet in aanmerking voor deze upgrade. Als dit het geval is, moet u [een ondersteunings ticket](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) indienen.
 
-    :::image type="content" source="./media/mongodb-version-upgrade/3.png" alt-text="De Blade functies met opties." border="false":::
+    :::image type="content" source="./media/mongodb-version-upgrade/upgrade-server-version.png" alt-text="Open de Blade functies en voer een upgrade uit voor uw account." border="true":::
 
-4. Bekijk de informatie die over de upgrade wordt weergegeven. Klik op aan zodra `Enable` u klaar bent om het proces te starten.
+1. Bekijk de informatie die over de upgrade wordt weergegeven. Selecteer `Set server version to 4.0` (of 3,6 afhankelijk van uw huidige versie).
 
-    :::image type="content" source="./media/mongodb-version-upgrade/4.png" alt-text="Uitgebreide upgrade richtlijnen." border="false":::
+    :::image type="content" source="./media/mongodb-version-upgrade/select-upgrade.png" alt-text="Bekijk de richt lijnen voor de upgrade en selecteer upgrade." border="true":::
 
-5. Nadat het proces is gestart, `Features` wordt in het menu de status van de upgrade weer gegeven. De status gaat van `Pending` naar `In Progress` naar `Upgraded`. Dit proces is niet van invloed op de bestaande functionaliteit of bewerkingen van het databaseaccount.
+1. Nadat u de upgrade hebt gestart, wordt het menu **functie** grijs weer gegeven en wordt de status ingesteld op *in behandeling*. Het duurt ongeveer 15 minuten om de upgrade te volt ooien. Dit proces heeft geen invloed op de bestaande functionaliteit of bewerkingen van uw database account. Nadat de update is voltooid, wordt in de status van de **MongoDb-Server versie** de bijgewerkte versie weer gegeven. [Neem contact op met de ondersteuning](https://azure.microsoft.com/en-us/support/create-ticket/) als er een probleem is opgetreden bij het verwerken van uw aanvraag.
 
-    :::image type="content" source="./media/mongodb-version-upgrade/5.png" alt-text="Upgrade status na het initiëren." border="false":::
+1. Hier volgen enkele aandachtspunten na de upgrade van uw account:
 
-6. Zodra de upgrade is voltooid, wordt de status weer gegeven als `Upgraded` . Klik hierop om meer te weten te komen over de volgende stappen en acties die u moet uitvoeren om het proces te volt ooien. [Neem contact op met de ondersteuning](https://azure.microsoft.com/en-us/support/create-ticket/) als er een probleem is opgetreden bij het verwerken van uw aanvraag.
+    1. Als u een upgrade hebt uitgevoerd vanaf 3,2, gaat u terug naar het deel venster **overzicht** en kopieert u de nieuwe connection string om in uw toepassing te gebruiken. De oude verbindingsreeks waarop versie 3.2 wordt uitgevoerd, wordt niet onderbroken. Voor een consistente ervaring moeten al uw toepassingen gebruikmaken van het nieuwe eindpunt.
 
-    :::image type="content" source="./media/mongodb-version-upgrade/6.png" alt-text="Bijgewerkte account status." border="false":::
-
-7. 
-    1. Als u een upgrade hebt uitgevoerd vanaf 3,2, gaat u terug naar de `Overview` Blade en kopieert u de nieuwe connection string om in uw toepassing te gebruiken. De oude verbindingsreeks waarop versie 3.2 wordt uitgevoerd, wordt niet onderbroken. Voor een consistente ervaring moeten al uw toepassingen gebruikmaken van het nieuwe eindpunt.
-    2. Als u een upgrade hebt uitgevoerd van versie 3.6, wordt uw bestaande verbindingsreeks bijgewerkt naar de opgegeven versie en moet deze nog steeds worden gebruikt.
-
-    :::image type="content" source="./media/mongodb-version-upgrade/7.png" alt-text="Nieuwe blade overzicht." border="false":::
-
+    1. Als u een upgrade hebt uitgevoerd van versie 3.6, wordt uw bestaande verbindingsreeks bijgewerkt naar de opgegeven versie en moet deze nog steeds worden gebruikt.
 
 ## <a name="how-to-downgrade"></a>Downgrade uitvoeren
-U kunt uw account ook downgradeen van 4,0 naar 3,6 via dezelfde stappen in de sectie How to upgrade. 
+
+U kunt uw account ook downgradeen van 4,0 naar 3,6 via dezelfde stappen in de sectie How to upgrade.
 
 Als u een upgrade hebt uitgevoerd van 3,2 naar (4,0 of 3,6) en u wilt terugvallen op 3,2, kunt u gewoon terugschakelen naar het gebruik van uw vorige (3,2) connection string met de host `accountname.documents.azure.com` die actief is op versie 3,2 van het na de upgrade uitvoeren.
-
 
 ## <a name="next-steps"></a>Volgende stappen
 

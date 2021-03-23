@@ -6,12 +6,12 @@ manager: nitinme
 ms.author: lajanuar
 author: laujan
 ms.date: 03/05/2021
-ms.openlocfilehash: cb6b3af8d8fb6c2d3fe63964e59f8e3e32f0f0fd
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 21df853d9b1c7250e9a6eea37a68835a180f610d
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102486655"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104773042"
 ---
 # <a name="get-started-with-document-translation-preview"></a>Aan de slag met document vertalingen (preview-versie)
 
@@ -20,7 +20,10 @@ ms.locfileid: "102486655"
 ## <a name="prerequisites"></a>Vereisten
 
 > [!NOTE]
-> Wanneer u in de Azure Portal een cognitieve service bron maakt, hebt u de mogelijkheid om een sleutel voor meerdere service abonnementen of een abonnements sleutel met één service te maken. Document vertalingen worden momenteel echter alleen ondersteund in de Translator-resource (single-service) en is **niet** opgenomen in de resource van de Cognitive Services (meerdere services).
+>
+> 1. Wanneer u in de Azure Portal een cognitieve service bron maakt, hebt u de mogelijkheid om een sleutel voor meerdere service abonnementen of een abonnements sleutel met één service te maken. Document vertalingen worden momenteel echter alleen ondersteund in de Translator-resource (single-service) en is **niet** opgenomen in de resource van de Cognitive Services (meerdere services).
+> 2. Document vertalingen is momenteel beschikbaar in het **standaard service abonnement S1**. _Zie_ [Cognitive Services prijzen: Translator](https://azure.microsoft.com/pricing/details/cognitive-services/translator/).
+>
 
 Om aan de slag te gaan, hebt u het volgende nodig:
 
@@ -29,8 +32,6 @@ Om aan de slag te gaan, hebt u het volgende nodig:
 * Een [**Translator**](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextTranslation) -service resource (**niet** een Cognitive Services resource).
 
 * Een [**Azure Blob-opslag account**](https://ms.portal.azure.com/#create/Microsoft.StorageAccount-ARM). U maakt containers om uw BLOB-gegevens binnen uw opslag account op te slaan en te organiseren.
-
-* Een volledig [**formulier voor het vertalen van documenten (preview)**](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR-riVR3Xj0tOnIRdZOALbM9UOEE4UVdFQVBRQVBWWDBRQUM3WjYxUEpUTC4u) om uw Azure-abonnement in te scha kelen voor gebruik van de nieuwe functie voor document vertalingen.
 
 ## <a name="get-your-custom-domain-name-and-subscription-key"></a>Uw aangepaste domein naam en abonnements sleutel ophalen
 
@@ -1259,7 +1260,7 @@ De volgende tabel bevat de limieten voor gegevens die u naar document vertalinge
 > [!NOTE]
 > De bovenstaande inhouds limieten zijn onderhevig aan wijzigingen vóór de open bare versie.
 
-## <a name="learn-more"></a>Meer informatie
+## <a name="learn-more"></a>Lees meer
 
 * [Translator v3 API-verwijzing](../reference/v3-0-reference.md)
 * [Taalondersteuning](../language-support.md)

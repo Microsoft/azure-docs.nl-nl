@@ -2,13 +2,13 @@
 title: Azure-resourcegegevens bekijken en filteren
 description: Filter gegevens en gebruik verschillende weergaven om uw Azure-resources beter te begrijpen.
 ms.topic: how-to
-ms.date: 09/11/2020
-ms.openlocfilehash: d3ad0c225a260fd0ae6b131b951b53c28042f4d9
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.date: 03/16/2021
+ms.openlocfilehash: bb48d0b0a7bf6017fbf407a95c33ef17729e34e3
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101738630"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104771631"
 ---
 # <a name="view-and-filter-azure-resource-information"></a>Azure-resourcegegevens bekijken en filteren
 
@@ -48,7 +48,7 @@ Een weergave verwijderen:
 
 1. Selecteer **Weergave beheren** en vervolgens **In alle weergaven bladeren**.
 
-1. Selecteer de weergave in het deelvenster **Opgeslagen weergaven voor Alle resources**, en selecteer vervolgens het pictogram **Verwijderen** ![pictogram Weergave verwijderen](media/manage-filter-resource-views/icon-delete.png).
+1. Selecteer in het deel venster **opgeslagen weer gaven** de weer gave en selecteer vervolgens het pictogram pictogram **verwijderen** ![ verwijderen weer gave ](media/manage-filter-resource-views/icon-delete.png) .
 
 ## <a name="export-information-from-a-view"></a>Informatie exporteren uit een weer gave
 
@@ -64,7 +64,7 @@ Wanneer u door de portal gaat, ziet u andere gebieden waar u gegevens kunt expor
 
 ## <a name="summarize-resources-with-visuals"></a>Resources samenvatten met visuals
 
-De weergaven die we tot nu toe hebben bekeken, zijn _lijstweergaven_, maar er zijn ook _samenvattingsweergaven_ die visuals bevatten. U kunt deze weergaven opslaan en gebruiken, net zoals bij lijstweergaven. Filters blijven behouden tussen de twee typen weergaven. Er zijn standaardweergaven, zoals de weergave **Locatie**, die hieronder wordt weergegeven, maar ook weergaven die relevant zijn voor specifieke services, zoals de weergave **Status** voor Azure Storage.
+De weergaven die we tot nu toe hebben bekeken, zijn _lijstweergaven_, maar er zijn ook _samenvattingsweergaven_ die visuals bevatten. U kunt deze weer gaven opslaan en gebruiken, net als bij lijst weergaven. Filters blijven behouden tussen de twee typen weergaven. Er zijn standaardweergaven, zoals de weergave **Locatie**, die hieronder wordt weergegeven, maar ook weergaven die relevant zijn voor specifieke services, zoals de weergave **Status** voor Azure Storage.
 
 :::image type="content" source="media/manage-filter-resource-views/summary-map.png" alt-text="Overzicht van resources in een kaartweergave":::
 

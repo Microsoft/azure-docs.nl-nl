@@ -27,7 +27,7 @@
           href: security-center-permissions.md
         - name: Security Center gratis VS Azure Defender ingeschakeld
           href: security-center-pricing.md
-- name: Quickstarts
+- name: Snelstartgidsen
   items:
     - name: 1. Security Center op uw abonnementen inschakelen
       href: security-center-get-started.md
@@ -144,7 +144,7 @@
               displayName: 'jit, management, ports'
               href: security-center-just-in-time.md
         - name: Geïntegreerde Microsoft Defender voor eindpuntlicentie gebruiken
-          displayName: 'ATP, mdatp, wdatp'
+          displayName: 'ATP, mdatp, wdatp, mde, mdfe'
           href: security-center-wdatp.md
         - name: Lijsten met veilige toepassingen voor machines definiëren
           displayName: 'aac, whitelist, allowlist, reviewgroup, adaptive application controls'
@@ -282,7 +282,7 @@
         - name: Reacties op waarschuwingen automatiseren
           displayName: workflow
           href: workflow-automation.md
-- name: Naslaginformatie
+- name: Referentie
   items:
     - name: Gearchiveerde releaseopmerkingen (ouder dan zes maanden)
       displayName: 'changelog, news'

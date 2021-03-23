@@ -3,17 +3,17 @@ title: Grootschalige gegevens sets verwerken met behulp van Data Factory en batc
 description: Hierin wordt beschreven hoe u enorme hoeveel heden gegevens in een Azure Data Factory pijp lijn verwerkt met behulp van de parallelle verwerkings capaciteit van Azure Batch.
 author: dcstwh
 ms.author: weetok
-ms.reviewer: maghan
+ms.reviewer: jburchel
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.custom: devx-track-csharp
-ms.openlocfilehash: ec04000e678cd3fc55f4681781f91b6d98ea41f5
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 2568fc2ea133a0cdd49e0a2577ce1e580056a74c
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101730861"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104783129"
 ---
 # <a name="process-large-scale-datasets-by-using-data-factory-and-batch"></a>Grootschalige gegevens sets verwerken met behulp van Data Factory en batch
 > [!NOTE]

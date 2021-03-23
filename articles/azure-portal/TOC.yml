@@ -35,11 +35,11 @@
           href: azure-portal-dashboards.md
         - name: Een Azure-dash board delen
           href: azure-portal-dashboard-share-access.md
+        - name: Een aangepaste markdown-tegel gebruiken
+          href: azure-portal-markdown-tile.md
         - name: Programmatisch een Azure-dash board maken
           href: azure-portal-dashboards-create-programmatically.md
           displayName: 'Azure CLI, az portal dashboard, az portal'
-        - name: Een aangepaste markdown-tegel gebruiken
-          href: azure-portal-markdown-tile.md
     - name: Videoserie met instructies voor de Azure-portal
       href: azure-portal-video-series.md
     - name: Ondersteuningsaanvragen maken en beheren

@@ -3,12 +3,12 @@ title: Zelfstudie - On-premises omgevingen peeren met een privécloud
 description: Meer informatie over hoe u ExpressRoute Global Reach-peering maakt met een privécloud in een Azure VMware Solution.
 ms.topic: tutorial
 ms.date: 03/17/2021
-ms.openlocfilehash: ae92bf89a08c5fade8757e3ee596c4ed4a5e6389
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 08a461ab7d441eb813d435086dfcea121ef4a7f1
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103494149"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104786903"
 ---
 # <a name="tutorial-peer-on-premises-environments-to-a-private-cloud"></a>Zelfstudie: On-premises omgevingen peeren met een privécloud
 
@@ -37,7 +37,7 @@ Raadpleeg de documentatie over het [inschakelen van connectiviteit in verschille
 >[!IMPORTANT]
 >In de context van deze vereisten is uw on-premises ExpressRoute-circuit _circuit 1_ en het ExpressRoute-circuit van de privécloud in een ander abonnement _circuit 2_.
 
-## <a name="create-an-expressroute-authorization-key-in-the-on-premises-circuit"></a>Een ExpressRoute-autorisatie sleutel maken in het on-premises circuit
+## <a name="create-an-expressroute-authorization-key-in-the-private-cloud-expressroute-circuit"></a>Een ExpressRoute-autorisatie sleutel maken in het ExpressRoute-circuit van de privécloud
 
 [!INCLUDE [request-authorization-key](includes/request-authorization-key.md)]
  

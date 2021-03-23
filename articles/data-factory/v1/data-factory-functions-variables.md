@@ -3,16 +3,16 @@ title: Data Factory functies en systeem variabelen
 description: Geeft een lijst van Azure Data Factory functies en systeem variabelen
 author: dcstwh
 ms.author: weetok
-ms.reviewer: maghan
+ms.reviewer: jburchel
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: d47a26b46fad1ab8238f9fa7a1183aad20530ef5
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 498f40a1783903b5dca0a2fe3204cc6aa25a2fec
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100363930"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104786427"
 ---
 # <a name="azure-data-factory---functions-and-system-variables"></a>Azure Data Factory-functies en systeem variabelen
 > [!NOTE]

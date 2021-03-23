@@ -12,12 +12,12 @@ ms.date: 01/28/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: a8ff94acbd9ffd491bf628ae61ee87634a9c6dd6
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 41336d59d51685d5daf78a1809ce6c0df2cd6124
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102033619"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104781310"
 ---
 # <a name="manage-azure-ad-b2c-with-microsoft-graph"></a>Azure AD B2C beheren met Microsoft Graph
 
@@ -140,7 +140,7 @@ Zie [toegang tot Azure AD B2C audit logboeken](view-audit-logs.md)voor meer info
 
 ## <a name="conditional-access"></a>Voorwaardelijke toegang
 
-- [Alle beleids regels voor voorwaardelijke toegang weer geven](/graph/api/resources/conditionalaccessroot-list-policies)
+- [Alle beleids regels voor voorwaardelijke toegang weer geven](/graph/api/conditionalaccessroot-list-policies?view=graph-rest-beta&tabs=http)
 - [Eigenschappen en relaties van beleid voor voorwaardelijke toegang lezen](/graph/api/conditionalaccesspolicy-get)
 - [Nieuw beleid voor voorwaardelijke toegang maken](/graph/api/resources/application)
 - [Beleid voor voorwaardelijke toegang bijwerken](/graph/api/conditionalaccesspolicy-update)

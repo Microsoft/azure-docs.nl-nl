@@ -5,7 +5,7 @@
   items:
     - name: Wat is Azure Files?
       href: storage-files-introduction.md
-- name: Quickstarts
+- name: Snelstartgidsen
   items:
     - name: Bestandsshares maken/gebruiken - Windows
       href: storage-files-quick-create-use-windows.md
@@ -336,6 +336,8 @@
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Video's
       href: 'https://azure.microsoft.com/documentation/videos/index/?services=storage'
+    - name: Vergelijking van Azure Files en Azure NetApp Files
+      href: storage-files-netapp-comparison.md
     - name: NuGet-pakketten (.NET)
       items:
         - name: Microsoft.Azure.Storage.Common (versie 11.x)

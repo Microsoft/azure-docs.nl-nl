@@ -1,19 +1,14 @@
 ---
 title: Horizon SDK
-titleSuffix: Azure Defender for IoT
 description: Met de horizon-SDK kunnen met Azure Defender voor IoT-ontwikkel aars de modules voor het netwerk verkeer worden gedecodeerd, zodat deze kunnen worden verwerkt door automatische Defender voor IoT-netwerk analyse Programma's.
-author: shhazam-ms
-manager: rkarlin
-ms.author: shhazam
 ms.date: 1/13/2021
 ms.topic: article
-ms.service: azure
-ms.openlocfilehash: 53aafc4146680c89dd01174ec5fde765f1cc0c01
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 500f1d78a6a2ab91284c993a5c56ef8e679db83f
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100523359"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104782483"
 ---
 # <a name="horizon-proprietary-protocol-dissector"></a>Horizon-eigendom protocol Dissector
 

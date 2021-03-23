@@ -2,22 +2,22 @@
 title: Een Azure Migrate apparaat instellen met een script
 description: Meer informatie over het instellen van een Azure Migrate apparaat met een script
 ms.topic: how-to
-author: vikram1988
-ms.author: vibansa
+author: vineetvikram
+ms.author: vivikram
 ms.manager: abhemraj
-ms.date: 04/16/2020
-ms.openlocfilehash: abf34a5ea83e74b0bd2a074108c5ef1014941093
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.date: 03/18/2021
+ms.openlocfilehash: c78778f9152fd4c07fb9e550e562cfef858333c8
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102041328"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104786733"
 ---
 # <a name="set-up-an-appliance-with-a-script"></a>Een apparaat met een script instellen
 
-Volg dit artikel om een [Azure migrate apparaat](./migrate-appliance-architecture.md) te maken voor de evaluatie/migratie van virtuele VMware-machines en virtuele Hyper-V-machines. U voert een script uit om een apparaat te maken en controleert of het verbinding kan maken met Azure. 
+Volg dit artikel om een [Azure migrate apparaat](./migrate-appliance-architecture.md) te maken voor de evaluatie/migratie van servers op VMware en op Hyper-V. U voert een script uit om een apparaat te maken en controleert of het verbinding kan maken met Azure. 
 
-U kunt het apparaat voor VMware-en Hyper-V-machines implementeren met behulp van een script of een sjabloon gebruiken die u van de Azure Portal downloadt. Het gebruik van een script is handig als u geen virtuele machine kunt maken met behulp van de gedownloade sjabloon.
+U kunt het apparaat voor servers in VMware en op Hyper-V implementeren met behulp van een script of door een sjabloon te gebruiken die u van de Azure Portal downloadt. Het gebruik van een script is handig als u geen apparaat kunt maken met behulp van de gedownloade sjabloon.
 
 - Als u een sjabloon wilt gebruiken, volgt u de zelf studies voor [VMware](./tutorial-discover-vmware.md) of [Hyper-V](./tutorial-discover-hyper-v.md).
 - Als u een apparaat wilt instellen voor fysieke servers, kunt u alleen een script gebruiken. Volg [dit artikel](how-to-set-up-appliance-physical.md).
@@ -25,28 +25,28 @@ U kunt het apparaat voor VMware-en Hyper-V-machines implementeren met behulp van
 
 ## <a name="prerequisites"></a>Vereisten
 
-Het script stelt het Azure Migrate apparaat in op een bestaande fysieke machine of VM.
+Het script stelt het Azure Migrate apparaat in op een bestaande server.
 
-- De computer die zal fungeren als het apparaat, moet voldoen aan de volgende hardware-en besturingssysteem vereisten:
+- De server die zal fungeren als het apparaat, moet voldoen aan de volgende hardware-en besturingssysteem vereisten:
 
 Scenario | Vereisten
 --- | ---
 VMware | Windows Server 2016, met 32 GB geheugen, acht Vcpu's, ongeveer 80 GB aan schijf opslag
 Hyper-V | Windows Server 2016, met 16 GB geheugen, acht Vcpu's, ongeveer 80 GB aan schijf opslag
-- De computer moet ook een externe virtuele switch hebben. Het vereist een statisch of dynamisch IP-adres en toegang tot internet.
-- Voordat u het apparaat implementeert, raadpleegt u gedetailleerde vereisten voor apparaten voor [VMware-vm's](migrate-appliance.md#appliance---vmware), [virtuele Hyper-V-machines](migrate-appliance.md#appliance---hyper-v).
+
+- De server heeft ook een externe virtuele switch nodig. Het vereist een statisch of dynamisch IP-adres en toegang tot internet.
+- Voordat u het apparaat implementeert, raadpleegt u gedetailleerde vereisten voor apparaten voor [servers op VMware](migrate-appliance.md#appliance---vmware), [op Hyper-V](migrate-appliance.md#appliance---hyper-v).
 - Voer het script niet uit op een bestaand Azure Migrate apparaat.
 
 ## <a name="set-up-the-appliance-for-vmware"></a>Het apparaat voor VMware instellen
 
-Als u het apparaat voor VMware wilt instellen, downloadt u het zip-bestand met de naam AzureMigrateInstaller-Server-Public.zip van de portal of van [hier](https://go.microsoft.com/fwlink/?linkid=2140334)en extraheert u de inhoud. U voert het Power shell-script uit om de web-app voor het toestel te starten. U stelt het apparaat in en configureert het voor de eerste keer. Vervolgens registreert u het apparaat met het Azure Migrate-project.
-
+Als u het apparaat voor VMware wilt instellen, downloadt u het zip-bestand met de naam AzureMigrateInstaller-Server-Public.zip van de portal of van [hier](https://go.microsoft.com/fwlink/?linkid=2140334)en extraheert u de inhoud. U voert het Power shell-script uit om de web-app voor het toestel te starten. U stelt het apparaat in en configureert het voor de eerste keer. Vervolgens registreert u het apparaat met het project.
 
 ### <a name="verify-file-security"></a>Bestands beveiliging controleren
 
 Controleer of het zip-bestand veilig is voordat u het implementeert.
 
-1. Open op de machine waarop u het bestand hebt gedownload een opdrachtvenster voor beheerders.
+1. Open een Administrator-opdracht venster op de server waarnaar u het bestand hebt gedownload.
 2. Voer de volgende opdracht uit om de hash voor het zip-bestand te genereren
     - ```C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]```
     - Voorbeeld: ```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller-VMware-Public.zip SHA256```
@@ -55,8 +55,6 @@ Controleer of het zip-bestand veilig is voordat u het implementeert.
     **Algoritme** | **Downloaden** | **SHA256**
     --- | --- | ---
     VMware (85,8 MB) | [Nieuwste versie](https://go.microsoft.com/fwlink/?linkid=2116601) | 85b74d93dfcee43412386141808d82147916330e6669df94c7969fe1b3d0fe72
-
-
 
 ### <a name="run-the-script"></a>Het script uitvoeren
 
@@ -72,13 +70,13 @@ Wat gebeurt er met het script:
 
 Het script uitvoeren:
 
-1. Pak het zip-bestand uit naar een map op de computer die als host moet fungeren voor het apparaat. Zorg ervoor dat u het script niet uitvoert op een machine op een bestaand Azure Migrate-apparaat.
-2. Start Power shell op de computer met Administrator bevoegdheden (met verhoogde bevoegdheden).
+1. Pak het zip-bestand uit naar een map op de server die als host moet fungeren voor het apparaat. Zorg ervoor dat u het script niet uitvoert op een bestaand Azure Migrate apparaat.
+2. Start Power shell op de server, met bevoegdheden voor beheerders (verhoogde bevoegdheid).
 3. Wijzig de Power shell-map in de map met de inhoud die is geëxtraheerd uit het gedownloade zip-bestand.
 4. Voer het script **AzureMigrateInstaller.ps1** als volgt uit:
 
     ``` PS C:\Users\administrator\Desktop\AzureMigrateInstaller-Server-Public> .\AzureMigrateInstaller.ps1 -scenario VMware ```
-   
+  
 5. Nadat het script is uitgevoerd, wordt de web-app voor het toestel gestart, zodat u het apparaat kunt instellen. Als u problemen ondervindt, controleert u de script logboeken op C:\ProgramData\Microsoft Azure\Logs\ AzureMigrateScenarioInstaller_<em>Time Stamp</em>. log.
 
 ### <a name="verify-access"></a>Toegang verifiëren
@@ -87,14 +85,14 @@ Zorg ervoor dat het apparaat verbinding kan maken met Azure-Url's voor de [open 
 
 ## <a name="set-up-the-appliance-for-hyper-v"></a>Het apparaat instellen voor Hyper-V
 
-Als u het apparaat voor Hyper-V wilt instellen, downloadt u het zip-bestand met de naam AzureMigrateInstaller-Server-Public.zip van de portal of van [hier](https://go.microsoft.com/fwlink/?linkid=2105112)en extraheert u de inhoud. U voert het Power shell-script uit om de web-app voor het toestel te starten. U stelt het apparaat in en configureert het voor de eerste keer. Vervolgens registreert u het apparaat met het Azure Migrate-project.
+Als u het apparaat voor Hyper-V wilt instellen, downloadt u het zip-bestand met de naam AzureMigrateInstaller-Server-Public.zip van de portal of van [hier](https://go.microsoft.com/fwlink/?linkid=2105112)en extraheert u de inhoud. U voert het Power shell-script uit om de web-app voor het toestel te starten. U stelt het apparaat in en configureert het voor de eerste keer. Vervolgens registreert u het apparaat met het project.
 
 
 ### <a name="verify-file-security"></a>Bestands beveiliging controleren
 
 Controleer of het zip-bestand veilig is voordat u het implementeert.
 
-1. Open op de machine waarop u het bestand hebt gedownload een opdrachtvenster voor beheerders.
+1. Open een Administrator-opdracht venster op de server waarnaar u het bestand hebt gedownload.
 2. Voer de volgende opdracht uit om de hash voor het zip-bestand te genereren
     - ```C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]```
     - Voorbeeld: ```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller-Server-HyperV.zip SHA256```
@@ -119,10 +117,10 @@ Wat gebeurt er met het script:
 
 Het script uitvoeren:
 
-1. Pak het zip-bestand uit naar een map op de computer die als host moet fungeren voor het apparaat. Zorg ervoor dat u het script niet uitvoert op een machine op een bestaand Azure Migrate-apparaat.
-2. Start Power shell op de computer met Administrator bevoegdheden (met verhoogde bevoegdheden).
+1. Pak het zip-bestand uit naar een map op de server die als host moet fungeren voor het apparaat. Zorg ervoor dat u het script niet uitvoert op een bestaand Azure Migrate apparaat.
+2. Start Power shell op de server, met bevoegdheden voor beheerders (verhoogde bevoegdheid).
 3. Wijzig de Power shell-map in de map met de inhoud die is geëxtraheerd uit het gedownloade zip-bestand.
-4. Voer het script **AzureMigrateInstaller.ps1** als volgt uit: 
+4. Voer het script **AzureMigrateInstaller.ps1** als volgt uit:
 
     ``` PS C:\Users\administrator\Desktop\AzureMigrateInstaller-Server-Public> .\AzureMigrateInstaller.ps1 -scenario Hyperv ```
    
@@ -134,7 +132,7 @@ Zorg ervoor dat het apparaat verbinding kan maken met Azure-Url's voor de [open 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nadat u het apparaat hebt geïmplementeerd, moet u het voor de eerste keer configureren en het registreren bij het Azure Migrate-project.
+Nadat u het apparaat hebt geïmplementeerd, moet u het voor de eerste keer configureren en het registreren bij project.
 
 - Stel het apparaat voor [VMware](how-to-set-up-appliance-vmware.md#4-configure-the-appliance)in.
 - Stel het apparaat voor [Hyper-V](how-to-set-up-appliance-hyper-v.md#configure-the-appliance)in.

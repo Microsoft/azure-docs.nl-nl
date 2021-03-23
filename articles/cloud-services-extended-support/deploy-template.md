@@ -8,12 +8,12 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: b3fd8dcd5f2e73b798f6e9529b5811b9935bc393
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 1e2a0859227ad790763dc9ae07cb408a72538f90
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104605763"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104773365"
 ---
 # <a name="deploy-a-cloud-service-extended-support-using-arm-templates"></a>Een Cloud service (uitgebreide ondersteuning) implementeren met ARM-sjablonen
 
@@ -45,7 +45,7 @@ In deze zelf studie wordt uitgelegd hoe u een implementatie van een Cloud servic
 ## <a name="deploy-a-cloud-service-extended-support"></a>Een Cloud service implementeren (uitgebreide ondersteuning)
 
 > [!NOTE]
-> Een andere manier om uw Cloud service (uitgebreide ondersteuning) te implementeren, is via [Azure Portal](https://portal.azure.com). U kunt [de gegenereerde arm-sjabloon](generate-template-portal.md) via de portal downloaden voor uw toekomstige implementaties
+> Een eenvoudiger en sneller manier om uw ARM-sjabloon en het parameter bestand te genereren via de [Azure Portal](https://portal.azure.com). U kunt [de gegenereerde arm-sjabloon](generate-template-portal.md) via de portal downloaden om uw Cloud service via Power shell te maken
  
 1. Virtueel netwerk maken. De naam van het virtuele netwerk moet overeenkomen met de verwijzingen in het service configuratie bestand (. cscfg). Als u een bestaand virtueel netwerk gebruikt, laat u deze sectie uit de ARM-sjabloon weg.
 
@@ -191,7 +191,9 @@ In deze zelf studie wordt uitgelegd hoe u een implementatie van een Cloud servic
     ```
 
 6. Beschrijving Maak een extensie profiel om uitbrei dingen toe te voegen aan uw Cloud service. In dit voor beeld voegen we de extern bureau blad-en Windows Azure Diagnostics-extensie toe.
-    
+   > [!Note] 
+   > Het wacht woord voor extern bureau blad moet tussen de 8-123 tekens lang zijn en moet voldoen aan ten minste drie vereisten voor wachtwoord complexiteit van de volgende: 1) bevat een hoofd letter 2) bevat een kleine letter 3) bevat een numeriek cijfer 4) bevat een speciaal teken 5) besturings tekens zijn niet toegestaan
+
     ```json
         "extensionProfile": {
           "extensions": [

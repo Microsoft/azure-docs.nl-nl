@@ -6,18 +6,18 @@ ms.author: rajosh
 ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 06/25/2020
-ms.openlocfilehash: b3975d30fca1f7f542f27742ef8408b1feecc146
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 1d9918786b22faddaeb07a12f0840b36a11ffe4d
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101727189"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104778378"
 ---
 # <a name="assessment-overview-migrate-to-azure-vmware-solution"></a>Overzicht van evaluatie (migreren naar Azure VMware-oplossing)
 
 [Azure migrate](migrate-services-overview.md) biedt een centrale hub voor het bijhouden van de detectie, beoordeling en migratie van uw on-premises apps en workloads. Ook worden uw persoonlijke en open bare Cloud exemplaren in azure bijgehouden. De hub biedt Azure Migrate-hulpprogram ma's voor evaluatie en migratie, evenals onafhankelijke ISV-aanbiedingen (Independent Software Vendor) van derden.
 
-Server evaluatie is een hulp programma in Azure Migrate dat on-premises servers evalueert voor migratie naar Azure IaaS virtuele machines en de Azure VMware-oplossing (AVS). Dit artikel bevat informatie over hoe de evaluaties van de Azure VMware-oplossing (AVS) worden berekend.
+Het hulp programma detectie en evaluatie in Azure Migrate evalueert on-premises servers voor migratie naar Azure virtual machines en de Azure VMware-oplossing (AVS). Dit artikel bevat informatie over hoe de evaluaties van de Azure VMware-oplossing (AVS) worden berekend.
 
 > [!NOTE]
 > De evaluatie van de Azure VMware-oplossing (AVS) kan alleen worden gemaakt voor virtuele VMware-machines.
@@ -26,10 +26,11 @@ Server evaluatie is een hulp programma in Azure Migrate dat on-premises servers 
 
 Evaluaties die u met Azure Migrate maakt, zijn een tijdgebonden moment opname van gegevens. Er zijn twee soorten evaluaties die u kunt maken met behulp van Azure Migrate:
 
-| **Evaluatietype** | **Details** |
-| - | - |
-| **Azure VM** | Evaluaties om uw on-premises servers te migreren naar virtuele Azure-machine. U kunt on-premises servers die worden uitgevoerd in uw[VMware](how-to-set-up-appliance-vmware.md) [-of Hyper-V-](how-to-set-up-appliance-hyper-v.md) omgeving, en [fysieke servers](how-to-set-up-appliance-physical.md) voor migratie naar Azure beoordelen met dit evaluatie type. [Meer informatie](concepts-assessment-calculation.md) |
-| **Azure VMware Solution (AVS)** | Evaluaties om uw on-premises virtuele VMware-machines of-servers naar de[ Azure VMware-oplossing (AVS)](../azure-vmware/introduction.md)te migreren.  U kunt uw on-premises servers die in uw [VMware](how-to-set-up-appliance-vmware.md) -omgeving worden uitgevoerd, evalueren voor migratie naar Azure VMware-oplossing (AVS) met dit beoordelings type. [Meer informatie](concepts-azure-vmware-solution-assessment-calculation.md) |
+**Evaluatietype** | **Details**
+--- | --- 
+**Azure VM** | Evaluaties om uw on-premises servers te migreren naar virtuele Azure-machine. U kunt uw on-premises servers in [VMware](how-to-set-up-appliance-vmware.md) en [Hyper-V-](how-to-set-up-appliance-hyper-v.md) omgeving, en [fysieke servers](how-to-set-up-appliance-physical.md) voor migratie naar virtuele Azure-machines evalueren met dit beoordelings type.
+**Azure SQL** | Beoordelingen voor het migreren van uw on-premises SQL-servers vanuit uw VMware-omgeving naar Azure SQL Database of Azure SQL Managed instance.
+**Azure VMware Solution (AVS)** | Evaluaties om uw on-premises servers te migreren naar [Azure VMware Solution (AVS)](../azure-vmware/introduction.md). U kunt uw on-premises [VMware-VM’s](how-to-set-up-appliance-vmware.md) evalueren voor migratie naar Azure VMware Solution (AVS) met dit evaluatietype. [Meer informatie](concepts-azure-vmware-solution-assessment-calculation.md)
 
 De evaluatie van de Azure VMware-oplossing (AVS) biedt twee opties voor het aanpassen van de grootte:
 
@@ -42,18 +43,18 @@ De evaluatie van de Azure VMware-oplossing (AVS) biedt twee opties voor het aanp
 
 Er zijn een aantal manieren om een evaluatie uit te voeren.
 
-- Computers beoordelen door gebruik te maken van meta gegevens van de server die zijn verzameld door een licht gewicht Azure Migrate apparaat. Het apparaat detecteert on-premises machines. Vervolgens worden de meta gegevens van de computer en de prestatie gegevens naar Azure Migrate verzonden. Dit maakt nauw keuriger.
-- Computers beoordelen door gebruik te maken van meta gegevens van de server die worden geïmporteerd in een CSV-indeling (door komma's gescheiden waarden).
+- Evalueer servers met behulp van server meta gegevens die zijn verzameld door een licht gewicht Azure Migrate apparaat. Het apparaat detecteert on-premises servers. Vervolgens worden de meta gegevens en prestatie gegevens van de server naar Azure Migrate verzonden. Dit maakt nauw keuriger.
+- Evalueer servers met behulp van server meta gegevens die worden geïmporteerd in een CSV-indeling (door lijst scheidings tekens gescheiden waarden).
 
 ## <a name="how-do-i-assess-with-the-appliance"></a>Hoe kan ik evalueren met het apparaat?
 
 Als u een Azure Migrate apparaat implementeert om on-premises servers te detecteren, voert u de volgende stappen uit:
 
 1. Stel Azure en uw on-premises omgeving in om met Azure Migrate te werken.
-2. Voor uw eerste evaluatie maakt u een Azure-project en voegt u het hulp programma voor Server evaluatie toe.
-3. Een licht gewicht Azure Migrate implementeren. Het apparaat detecteert voortdurend on-premises machines en verzendt meta gegevens en prestatie gegevens van de machine naar Azure Migrate. Implementeer het apparaat als een virtuele machine. U hoeft niets te installeren op computers die u wilt beoordelen.
+2. Voor uw eerste evaluatie maakt u een Azure-project en voegt u het hulp programma voor detectie en evaluatie toe.
+3. Een licht gewicht Azure Migrate implementeren. Het apparaat detecteert voortdurend on-premises servers en verzendt meta gegevens en prestatie gegevens van de server naar Azure Migrate. Implementeer het apparaat als een virtuele machine. U hoeft niets te installeren op servers die u wilt beoordelen.
 
-Nadat het apparaat machine Discovery heeft gestart, kunt u computers die u wilt beoordelen in een groep verzamelen en een evaluatie van de groep uitvoeren met de evaluatie type **Azure VMware-oplossing (AVS)**.
+Nadat het apparaat de detectie van de server heeft gestart, kunt u de servers die u wilt beoordelen in een groep verzamelen en een evaluatie van de groep met de evaluatie typen **Azure VMware-oplossing (AVS)** uitvoeren.
 
 Maak uw eerste evaluatie van de Azure VMware-oplossing (AVS) door de [volgende stappen te volgen.](how-to-create-azure-vmware-solution-assessment.md)
 
@@ -62,7 +63,7 @@ Maak uw eerste evaluatie van de Azure VMware-oplossing (AVS) door de [volgende s
 Als u servers met behulp van een CSV-bestand wilt beoordelen, hebt u geen apparaat nodig. Voer in plaats daarvan de volgende stappen uit:
 
 1. Stel Azure in om te werken met Azure Migrate.
-2. Voor uw eerste evaluatie maakt u een Azure-project en voegt u het hulp programma voor Server evaluatie toe.
+2. Voor uw eerste evaluatie maakt u een Azure-project en voegt u het hulp programma voor detectie en evaluatie toe.
 3. Een CSV-sjabloon downloaden en er Server gegevens aan toevoegen.
 4. Importeer de sjabloon in Azure Migrate.
 5. Ontdek servers die zijn toegevoegd met de import, verzamel ze in een groep en voer een evaluatie uit voor de groep met een evaluatie type van **Azure VMware-oplossing (AVS)**.
@@ -97,7 +98,7 @@ De volgende prestatie gegevens worden verzameld, maar niet gebruikt in aanbeveli
 
 ## <a name="how-are-avs-assessments-calculated"></a>Hoe worden AVS-evaluaties berekend?
 
-AVS-evaluatie maakt gebruik van de meta gegevens en prestaties van on-premises machines om evaluaties te berekenen. Als u het Azure Migrate apparaat implementeert, gebruikt de evaluatie de gegevens die door het apparaat worden verzameld. Maar als u een evaluatie uitvoert die is geïmporteerd met behulp van een CSV-bestand, geeft u de meta gegevens voor de berekening op.
+AVS-evaluatie maakt gebruik van de meta gegevens en prestaties van de on-premises servers om evaluaties te berekenen. Als u het Azure Migrate apparaat implementeert, gebruikt de evaluatie de gegevens die door het apparaat worden verzameld. Maar als u een evaluatie uitvoert die is geïmporteerd met behulp van een CSV-bestand, geeft u de meta gegevens voor de berekening op.
 
 In deze drie fasen worden berekeningen uitgevoerd:
 
@@ -105,7 +106,7 @@ In deze drie fasen worden berekeningen uitgevoerd:
 2. Het **aantal AVS-knoop punten en het gebruik tussen knoop punten berekenen**: het geschatte aantal AVS-knoop punten dat is vereist voor het uitvoeren van de virtuele VMware-machines en geprojecteerde CPU, geheugen en opslag gebruik op alle knoop punten.
 3. **Schatting van maandelijkse kosten**: de geschatte maandelijkse kosten voor alle knoop punten van de Azure VMware-oplossing (AVS) die de on-premises vm's uitvoeren.
 
-Berekeningen worden in de voor gaande volg orde beschreven. Een machine server wordt alleen naar een latere fase verplaatst als deze de voor gaande wordt door gegeven. Als een server bijvoorbeeld uitvalt op de AVS-gereedheids fase, wordt deze gemarkeerd als niet geschikt voor Azure. De berekening van het formaat en de kosten voor die server wordt niet uitgevoerd
+Berekeningen worden in de voor gaande volg orde beschreven. Een server wordt alleen naar een latere fase verplaatst als deze de voor gaande wordt door gegeven. Als een server bijvoorbeeld uitvalt op de AVS-gereedheids fase, wordt deze gemarkeerd als niet geschikt voor Azure. De berekening van het formaat en de kosten voor die server wordt niet uitgevoerd
 
 ## <a name="whats-in-an-azure-vmware-solution-avs-assessment"></a>Wat is een Azure VMware-oplossing (AVS)-evaluatie?
 
@@ -119,9 +120,9 @@ Dit is what's opgenomen in een AVS-evaluatie:
 | **Knooppunt type** | Hiermee geeft u het [AVS-knooppunt type](../azure-vmware/concepts-private-clouds-clusters.md) op dat wordt gebruikt in Azure. Het standaard knooppunttype is AV36. Meer knooppunt typen zijn mogelijk in de toekomst beschikbaar.  Azure Migrate wordt een vereist aantal knoop punten aanbevolen voor de virtuele machines die moeten worden gemigreerd naar AVS. |
 | **FTT-instelling, RAID-niveau** | Geeft de geldige combi natie van fouten aan om te verdragen en RAID-combi Naties. De geselecteerde FTT-optie in combi natie met RAID-niveau en de on-premises VM-schijf vereiste bepalen de totale vSAN-opslag die is vereist in AVS. De totale hoeveelheid beschik bare opslag na berekeningen omvat ook een) ruimte die is gereserveerd voor beheer objecten, zoals vCenter en b), 25% toegestane vertraging van de opslag voor vSAN-bewerkingen. |
 | **Criterium voor het aanpassen van de grootte** | Hiermee stelt u de criteria in die moeten worden gebruikt om geheugen-, CPU-en opslag vereisten voor AVS-knoop punten te bepalen. U kunt kiezen voor een hoge grootte op *basis van prestaties* of *als on-premises,* zonder rekening te houden met de prestatie geschiedenis. Als u de optie alleen on-premises wilt selecteren en SHIFT ingedrukt wilt houden. Kies prestaties gebaseerd om de grootte van op gebruik gebaseerd formaat te verkrijgen. |
-| **Prestatiegeschiedenis** | Hiermee stelt u de duur in waarmee rekening moet worden gehouden bij het evalueren van de prestatie gegevens van machines. Deze eigenschap is alleen van toepassing wanneer de grootte criteria *op basis van prestaties* zijn. |
+| **Prestatiegeschiedenis** | Hiermee stelt u de duur in waarmee rekening moet worden gehouden bij het evalueren van de prestatie gegevens van servers. Deze eigenschap is alleen van toepassing wanneer de grootte criteria *op basis van prestaties* zijn. |
 | **Percentiel gebruik** | Hiermee geeft u de percentiel waarde van de voorbereidings Voorbeeldset op die in aanmerking komt voor de juiste grootte. Deze eigenschap is alleen van toepassing wanneer de grootte van het formaat op basis van prestaties is gebaseerd. |
-| **Comfortfactor** | Tijdens de evaluatie houdt Azure Migrate rekening met een buffer (comfortfactor). Deze buffer wordt toegepast boven op de machine gebruiks gegevens voor Vm's (CPU, geheugen en schijf). De comfortfactor houdt rekening met factoren zoals seizoensgebonden gebruik, een korte prestatiegeschiedenis en een mogelijke gebruikstoename in de toekomst. Een VM met 10 kernen en een gebruik van 20% komt bijvoorbeeld gewoonlijk overeen met een VM met 2 kernen. Met een comfortfactor van 2,0x is het resultaat echter een VM met 4 kernen. |
+| **Comfortfactor** | Tijdens de evaluatie houdt Azure Migrate rekening met een buffer (comfortfactor). Deze buffer wordt toegepast boven op server gebruiks gegevens voor Vm's (CPU, geheugen en schijf). De comfortfactor houdt rekening met factoren zoals seizoensgebonden gebruik, een korte prestatiegeschiedenis en een mogelijke gebruikstoename in de toekomst. Een VM met 10 kernen en een gebruik van 20% komt bijvoorbeeld gewoonlijk overeen met een VM met 2 kernen. Met een comfortfactor van 2,0x is het resultaat echter een VM met 4 kernen. |
 | **Aanbieding** | Hier wordt de [Azure-aanbieding](https://azure.microsoft.com/support/legal/offer-details/) weer gegeven die u hebt Inge schreven. Azure Migrate maakt dienovereenkomstig een schatting van de kosten. |
 | **Valuta** | Hier wordt de facturerings valuta voor uw account weer gegeven. |
 | **Korting (%)** | Een lijst met alle abonnements kortingen die boven op de Azure-aanbieding worden weer gegeven. De standaardinstelling is 0%. |
@@ -132,39 +133,39 @@ Dit is what's opgenomen in een AVS-evaluatie:
 
 ## <a name="azure-vmware-solution-avs-suitability-analysis"></a>Analyse van Azure VMware-oplossing (AVS)
 
-AVS-evaluaties evalueren elke on-premises Vm's voor de geschiktheid voor AVS door de computer eigenschappen te controleren. Er wordt ook elke geraamde machine toegewezen aan een van de volgende geschiktheids Categorieën:
+AVS-evaluaties evalueren elke on-premises Vm's voor de geschiktheid van de AVS door de server eigenschappen te controleren. Ook wordt elke geraamde server toegewezen aan een van de volgende geschiktheids Categorieën:
 
-- **Gereed voor AVS**: de machine kan worden gemigreerd naar Azure (AVS) zonder wijzigingen. Deze wordt gestart in AVS met volledige AVS-ondersteuning.
+- **Gereed voor AVS**: de server kan zonder wijzigingen worden gemigreerd naar Azure (AVS). Deze wordt gestart in AVS met volledige AVS-ondersteuning.
 - **Klaar met voor waarden**: de virtuele machine heeft mogelijk compatibiliteits problemen met de huidige vSphere-versie en vereist mogelijk VMware-hulpprogram ma's en of andere instellingen voordat de volledige functionaliteit van de virtuele machine kan worden bereikt in AVS.
 - **Niet gereed voor AVS**: de VM wordt niet gestart in AVS. Als de on-premises VMware VM bijvoorbeeld een extern apparaat heeft dat is aangesloten zoals een cd-rom, mislukt de VMware VMotion bewerking (als u VMware VMotion gebruikt).
-- **Gereedheid onbekend**: Azure migrate kan de gereedheid van de machine niet bepalen vanwege onvoldoende meta gegevens die zijn verzameld uit de on-premises omgeving.
+- **Gereedheid onbekend**: Azure migrate kan de gereedheid van de server niet bepalen vanwege onvoldoende meta gegevens die zijn verzameld uit de on-premises omgeving.
 
-De evaluatie controleert de computer eigenschappen om de Azure-gereedheid van de on-premises machine te bepalen.
+De evaluatie controleert de eigenschappen van de server om de Azure-gereedheid van de on-premises server vast te stellen.
 
-### <a name="machine-properties"></a>Computer eigenschappen
+### <a name="server-properties"></a>Servereigenschappen
 
 De evaluatie controleert de volgende eigenschap van de on-premises VM om te bepalen of deze kan worden uitgevoerd op de Azure VMware-oplossing (AVS).
 
 | **Eigenschap** | **Details** | **Status van AVS-gereedheid** |
 | - | - | - |
-| **Internetprotocol** | Azure biedt momenteel geen ondersteuning voor end-to-end IPv6-Internet adressen. Neem contact op met het lokale MSFT AVS GBB-team voor hulp bij herstelrichtlijnen als op uw machine IPv6 wordt gedetecteerd. | Voorwaardelijk gereed Internet Protocol |
+| **Internetprotocol** | Azure biedt momenteel geen ondersteuning voor end-to-end IPv6-Internet adressen. Neem contact op met uw lokale MSFT AVS GBB-team voor hulp bij herstel richtlijnen als uw server wordt gedetecteerd met IPv6. | Voorwaardelijk gereed Internet Protocol |
 
 ### <a name="guest-operating-system"></a>Gastbesturingssysteem
 
 Op dit moment wordt het besturings systeem niet door AVS-evaluaties gecontroleerd als onderdeel van de geschiktheids analyse. Alle besturings systemen die worden uitgevoerd op on-premises Vm's, kunnen waarschijnlijk worden uitgevoerd op de Azure VMware-oplossing (AVS).
 
-Naast de VM-eigenschappen controleert de evaluatie het gast besturingssysteem van de computers om te bepalen of het op Azure kan worden uitgevoerd.
+Naast de VM-eigenschappen controleert de evaluatie het gast besturingssysteem van de servers om te bepalen of het op Azure kan worden uitgevoerd.
 
 ## <a name="sizing"></a>Grootte aanpassen
 
-Nadat een computer is gemarkeerd als gereed voor AVS, maakt AVS-evaluatie aanbevelingen voor het aanpassen van knoop punten, waarbij de juiste vereisten voor on-premises virtuele machines moeten worden geïdentificeerd en het totale aantal genummerde AVS-knoop punten moet worden gevonden. Deze aanbevelingen variëren, afhankelijk van de opgegeven evaluatie-eigenschappen.
+Nadat een server is gemarkeerd als gereed voor AVS, maakt AVS-evaluatie aanbevelingen voor het aanpassen van knoop punten, waarbij de juiste vereisten voor on-premises virtuele machines moeten worden geïdentificeerd en het totale aantal genummerde AVS-knoop punten moet worden gevonden. Deze aanbevelingen variëren, afhankelijk van de opgegeven evaluatie-eigenschappen.
 
-- Als de evaluatie gebruikmaakt van *grootte op basis van prestaties*, wordt de prestatie geschiedenis van de machine door Azure migrate beschouwd als de juiste grootte aanbeveling voor AVS. Deze methode is vooral nuttig als u de on-premises VM hebt toegewezen, maar het gebruik is laag en u de grootte van de virtuele machine in AVS wilt besparen. Deze methode helpt u bij het optimaliseren van de grootten tijdens de migratie.
-- Als u de prestatie gegevens voor de VM-grootte niet wilt overwegen en de on-premises machines wilt laten vervolgen, kunt u de grootte criteria instellen op * als on-premises *. Vervolgens wordt de omvang van de virtuele machines gebaseerd op de on-premises configuratie zonder rekening te houden met de gebruiks gegevens.
+- Als de evaluatie gebruikmaakt van *grootte op basis van prestaties*, neemt Azure migrate de prestatie geschiedenis van de server af om de juiste grootte aanbeveling voor AVS te maken. Deze methode is vooral nuttig als u de on-premises VM hebt toegewezen, maar het gebruik is laag en u de grootte van de virtuele machine in AVS wilt besparen. Deze methode helpt u bij het optimaliseren van de grootten tijdens de migratie.
+- Als u de prestatie gegevens voor de VM-grootte niet wilt overwegen en de on-premises servers wilt laten door lopen, kunt u de grootte criteria instellen op * als on-premises *. Vervolgens wordt de omvang van de virtuele machines gebaseerd op de on-premises configuratie zonder rekening te houden met de gebruiks gegevens.
 
 ### <a name="ftt-sizing-parameters"></a>FTT-formaat parameters
 
-De opslag-engine die in AVS wordt gebruikt, is vSAN. vSAN opslag beleid definieert opslag vereisten voor uw virtuele machines. Deze beleidsregels garanderen het vereiste serviceniveau voor VM’s, omdat ze bepalen hoe opslag wordt toegewezen aan de VM. De beschik bare FTT-Raid combinaties zijn:
+De opslag-engine die in AVS wordt gebruikt, is vSAN. vSAN opslag beleid definieert opslag vereisten voor uw servers. Deze beleidsregels garanderen het vereiste serviceniveau voor VM’s, omdat ze bepalen hoe opslag wordt toegewezen aan de VM. De beschik bare FTT-Raid combinaties zijn:
 
 | **FTT (te tolereren fouten)** | **RAID-configuratie** | **Minimumaantal vereiste hosts** | **Overwegingen voor de grootte** |
 | - | - | - | - |
@@ -254,7 +255,7 @@ Afhankelijk van het percentage beschik bare gegevens punten, gaat de betrouwbaar
 
 Hier volgen enkele redenen waarom een evaluatie een lage betrouwbaarheids classificatie kan krijgen:
 
-- U hebt uw omgeving niet in het profiel voor de duur waarvoor u de evaluatie maakt. Als u bijvoorbeeld de beoordeling met de prestatie duur hebt ingesteld op één dag, moet u ten minste één dag wachten nadat u de detectie hebt gestart voor alle gegevens punten die u wilt verzamelen.
+- U hebt uw omgeving niet geprofileerd gedurende de periode waarvoor u de evaluatie maakt. Als u bijvoorbeeld de beoordeling met de prestatie duur hebt ingesteld op één dag, moet u ten minste één dag wachten nadat u de detectie hebt gestart voor alle gegevens punten die u wilt verzamelen.
 - De evaluatie kan de prestatie gegevens voor sommige of alle virtuele machines in de evaluatie periode niet verzamelen. Voor een hoge betrouwbaarheids classificatie moet u het volgende doen:
 
   - Vm's worden ingeschakeld voor de duur van de evaluatie
@@ -281,8 +282,8 @@ Naarmate de prijzen voor de Azure VMware-oplossing (AVS) per knoop punt zijn, he
 
 In het Azure-gereedheidsrapport voor AVS-evaluatie (Azure VMware Solution) ziet u de volgende voorgestelde hulpprogramma’s:
 
-- **VMware HCX of ENTER prise**: voor VMware-machines is de VMware Hybrid Cloud extension (HCX)-oplossing het aanbevolen migratie programma voor het migreren van uw on-premises werk belasting naar uw Azure VMware-oplossing (AVS) Private Cloud. [Meer informatie](../azure-vmware/tutorial-deploy-vmware-hcx.md).
-- **Onbekend**: Voor machines die zijn geïmporteerd via een CSV-bestand, is het standaardhulpprogramma voor migratie onbekend. Hoewel voor VMware-machines, wordt aanbevolen de VMware Hybrid Cloud extension (HCX)-oplossing te gebruiken.
+- **VMware HCX of ENTER prise**: voor VMware-servers is de VMware Hybrid Cloud extension (HCX)-oplossing het aanbevolen migratie programma voor het migreren van uw on-premises werk belasting naar uw Azure VMware-oplossing (AVS) Private Cloud. [Meer informatie](../azure-vmware/tutorial-deploy-vmware-hcx.md).
+- **Onbekend**: voor servers die worden geïmporteerd via een CSV-bestand, is het standaard hulp programma voor migratie onbekend. Voor VMware-servers is het echter raadzaam de VMware Hybrid Cloud extension (HCX)-oplossing te gebruiken.
 
 ## <a name="next-steps"></a>Volgende stappen
 

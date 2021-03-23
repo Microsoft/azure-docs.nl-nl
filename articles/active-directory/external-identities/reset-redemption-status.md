@@ -10,12 +10,12 @@ ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dea13444a6bd18bd67f05d93a38af70b3b7a2368
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 2998c3ea0d65bd3c96bd1ac5bdfa8ff148c6c4cc
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102556312"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104780426"
 ---
 # <a name="reset-redemption-status-for-a-guest-user"></a>De status van de terugbetaling voor een gast gebruiker opnieuw instellen
 
@@ -28,9 +28,20 @@ Nadat een gast gebruiker de uitnodiging voor B2B-samen werking heeft ingewisseld
 
 Als u deze scenario's eerder wilt beheren, moet u het gebruikers account van de gast hand matig verwijderen uit de map en de gebruiker opnieuw uitnodigen. U kunt nu Power shell of de API van Microsoft Graph-uitnodiging gebruiken om de uitstel status van de gebruiker opnieuw in te stellen en de gebruiker opnieuw aan te vragen met behoud van de object-ID, groepslid maatschappen en app-toewijzingen van de gebruiker. Wanneer de gebruiker de nieuwe uitnodiging inwisselt, wordt de UPN van de gebruiker niet gewijzigd, maar wordt de aanmeldings naam van de gebruiker gewijzigd in de nieuwe e-mail. De gebruiker kan zich vervolgens aanmelden met de nieuwe e-mail of een e-mail bericht dat u hebt toegevoegd aan de `otherMails` eigenschap van het gebruikers object.
 
+## <a name="reset-the-email-address-used-for-sign-in"></a>Het e-mail adres dat wordt gebruikt voor aanmelding opnieuw instellen
+
+Als een gebruiker zich wil aanmelden met een ander e-mail adres:
+
+1. Zorg ervoor dat het nieuwe e-mail adres wordt toegevoegd aan de `mail` `otherMails` eigenschap of van het gebruikers object. 
+2.  Vervang het e-mail adres in de `InvitedUserEmailAddress` eigenschap door het nieuwe e-mail adres.
+3. Gebruik een van de onderstaande methoden om de status van de gebruikers wisseling opnieuw in te stellen.
+
+> [!NOTE]
+>Wanneer u tijdens de open bare Preview het e-mail adres van de gebruiker opnieuw instelt, wordt aangeraden de `mail` eigenschap in te stellen op het nieuwe e-mail adres. Op deze manier kan de gebruiker de uitnodiging inwisselen door zich aan te melden bij uw adres lijst naast het gebruik van de opname koppeling in de uitnodiging.
+>
 ## <a name="use-powershell-to-reset-redemption-status"></a>Power shell gebruiken om de status van de terugbetaling opnieuw in te stellen
 
-Installeer de meest recente AzureADPreview Power shell-module en maak een nieuwe uitnodiging met `InvitedUserEMailAddress` ingesteld op het nieuwe e-mail adres en `ResetRedemption` Stel in op `true` .
+Installeer de meest recente AzureADPreview Power shell-module en maak een nieuwe uitnodiging met `InvitedUserEmailAddress` ingesteld op het nieuwe e-mail adres en `ResetRedemption` Stel in op `true` .
 
 ```powershell  
 Uninstall-Module AzureADPreview 
@@ -43,7 +54,7 @@ New-AzureADMSInvitation -InvitedUserEmailAddress <<external email>> -SendInvitat
 
 ## <a name="use-microsoft-graph-api-to-reset-redemption-status"></a>Microsoft Graph-API gebruiken om de status van de terugbetaling opnieuw in te stellen
 
-Stel met behulp van de [API voor Microsoft Graph-uitnodiging](/graph/api/resources/invitation)de eigenschap in `resetRedemption` op `true` en geef het nieuwe e-mail adres op in de `invitedUserEmailAddress` eigenschap.
+Stel met behulp van de [API voor Microsoft Graph-uitnodiging](/graph/api/resources/invitation?view=graph-rest-1.0)de eigenschap in `resetRedemption` op `true` en geef het nieuwe e-mail adres op in de `invitedUserEmailAddress` eigenschap.
 
 ```json
 POST https://graph.microsoft.com/beta/invitations  

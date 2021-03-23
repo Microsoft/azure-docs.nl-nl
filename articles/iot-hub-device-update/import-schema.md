@@ -6,12 +6,12 @@ ms.author: andbrown
 ms.date: 2/25/2021
 ms.topic: conceptual
 ms.service: iot-hub-device-update
-ms.openlocfilehash: 13044b8f087b403f83516a32a490d2dee8db700f
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 989535d0bd6f514e63c7cea9e5fd71912f8fb08b
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102054604"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104780154"
 ---
 # <a name="importing-updates-into-device-update-for-iot-hub---schema-and-other-information"></a>Updates voor IoT Hub-schema en andere informatie importeren in de update van het apparaat
 Als u een update wilt importeren in update voor het apparaat voor IoT Hub, moet u ervoor zorgen dat u de [concepten](import-concepts.md) en [hand leiding](import-update.md) eerst hebt gecontroleerd. Als u geïnteresseerd bent in de details van het schema dat wordt gebruikt bij het maken van een import manifest en informatie over verwante objecten, zie hieronder.
@@ -22,8 +22,8 @@ Als u een update wilt importeren in update voor het apparaat voor IoT Hub, moet 
 | --------- | --------- | --------- | --------- |
 | UpdateId | `UpdateId` object | Identiteit bijwerken. |
 | UpdateType | tekenreeks | Type update: <br/><br/> * Geef `microsoft/apt:1` op wanneer u een update op basis van een pakket uitvoert met behulp van referentie agent.<br/> * Geef `microsoft/swupdate:1` op wanneer u een op een installatie kopie gebaseerde update uitvoert met behulp van referentie agent.<br/> * Geef op `microsoft/simulator:1` Wanneer u voorbeeld agent Simulator gebruikt.<br/> * Geef een aangepast type op bij het ontwikkelen van een aangepaste agent. | Indeling: <br/> `{provider}/{type}:{typeVersion}`<br/><br/> Maxi maal 32 tekens in totaal |
-| InstalledCriteria | tekenreeks | De teken reeks die door de agent wordt geïnterpreteerd om te bepalen of de update is toegepast:  <br/> * Geef de **waarde** van SWVersion voor het update type op `microsoft/swupdate:1` .<br/> * Geef `{name}-{version}` op voor het update type `microsoft/apt:1` , waarvan de naam en versie worden opgehaald uit het apt-bestand.<br/> * Geef de hash van het update bestand voor het update type op `microsoft/simulator:1` .<br/> * Geef een aangepaste teken reeks op als u een aangepaste Agent ontwikkelt.<br/> | Maxi maal 64 tekens |
-| Compatibiliteit | Matrix van `CompatibilityInfo` objecten | Compatibiliteits informatie van een apparaat dat compatibel is met deze update. | Maxi maal 10 items |
+| InstalledCriteria | tekenreeks | De teken reeks die door de agent wordt geïnterpreteerd om te bepalen of de update is toegepast:  <br/> * Geef de **waarde** van SWVersion voor het update type op `microsoft/swupdate:1` .<br/> * Geef `{name}-{version}` op voor het update type `microsoft/apt:1` , waarvan de naam en versie worden opgehaald uit het apt-bestand.<br/> * Geef een aangepaste teken reeks op als u een aangepaste Agent ontwikkelt.<br/> | Maxi maal 64 tekens |
+| Compatibiliteit | Matrix van `CompatibilityInfo` [objecten](#compatibilityinfo-object) | Compatibiliteits informatie van een apparaat dat compatibel is met deze update. | Maxi maal 10 items |
 | CreatedDateTime | datum en tijd | De datum en tijd waarop de update is gemaakt. | Gescheiden ISO 8601-datum-en tijd notatie, in UTC |
 | ManifestVersion | tekenreeks | Versie van manifest schema importeren. Geef `2.0` op dat compatibel is met `urn:azureiot:AzureDeviceUpdateCore:1` interface en `urn:azureiot:AzureDeviceUpdateCore:4` interface. | Moet `2.0` |
 | Bestanden | Matrix van `File` objecten | Payload-bestanden bijwerken | Maxi maal 5 bestanden |

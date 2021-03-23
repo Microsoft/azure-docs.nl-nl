@@ -7,19 +7,21 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: quickstart
-ms.date: 01/12/2021
-ms.openlocfilehash: d07b52d8abeab34d565ebde4bac58eec66780dce
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.date: 03/21/2021
+ms.openlocfilehash: d3e1b73789d6bd4df3dfe9a0e05048f9bbbb25bb
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98179262"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104770968"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-cognitive-skillset-in-the-azure-portal"></a>Quickstart: Een cognitieve vaardighedenset van Azure Cognitive Search maken in de Azure-portal
 
-Een vaardighedenset is een AI-functie waarmee met behulp van Deep Learning-modellen informatie en structuur wordt geëxtraheerd uit grote, niet-gedifferentieerde tekst- en afbeeldingsbestanden. De inhoud kan vervolgens worden geïndexeerd en doorzocht in Azure Cognitive Search. 
+In deze Quick Start wordt gedemonstreerd hoe u ondersteuning voor het gebruik van optische teken herkenning (OCR) en entiteits herkenning kunt gebruiken om Doorzoek bare tekst inhoud van afbeeldingen en toepassings bestanden te maken.
 
-In deze quickstart combineert u services en gegevens in de Azure-cloud om de vaardighedenset te maken. Zodra alles gereed is, voert u de wizard **Gegevens importeren** uit in de Azure-portal om alles samen op te halen. Het eindresultaat is een doorzoekbare index gevuld met gegevens die zijn gemaakt met AI-verwerking, en die u in de portal kunt doorzoeken ([Search Explorer](search-explorer.md)).
+Om voor te bereiden, maakt u een paar resources en uploadt u voorbeeld afbeeldingen en bestanden met toepassings inhoud. Zodra alles gereed is, voert u de wizard **Gegevens importeren** uit in de Azure-portal om alles samen op te halen. Het eindresultaat is een doorzoekbare index gevuld met gegevens die zijn gemaakt met AI-verwerking, en die u in de portal kunt doorzoeken ([Search Explorer](search-explorer.md)).
+
+Kunt u het beste beginnen met code? Zie [zelf studie: rest en AI gebruiken om Doorzoek bare inhoud te genereren op basis van Azure blobs](cognitive-search-tutorial-blob.md) of een [zelf studie: gebruik .net en AI om in plaats daarvan Doorzoek bare inhoud te genereren vanuit Azure-blobs](cognitive-search-tutorial-blob-dotnet.md) .
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -44,11 +46,11 @@ Volg deze stappen om een blobcontainer in te stellen in Azure Storage om heterog
 
    + Kies dezelfde regio als Azure Cognitive Search om bandbreedtekosten te voorkomen. 
 
-   + Kies het accounttype StorageV2 (algemeen gebruikVv2) als u de functie voor het kennisarchief later wilt uitproberen, in andere stapsgewijze instructies. Kies anders een willekeurig ander type.
+   + Kies de StorageV2 (algemeen gebruik v2).
 
 1. Open de Blob-servicepagina's en maak een container. U kunt het standaardniveau voor openbare toegang gebruiken. 
 
-1. Klik in de container op **Uploaden** om de voorbeeldbestanden te uploaden die u in de eerste stap hebt gedownload. Zoals u ziet, hebt u een breed scala aan inhoudstypen, waaronder afbeeldingen en toepassingsbestanden waarvoor zoeken in volledige tekst niet mogelijk is in de oorspronkelijke indeling.
+1. Klik in container op **uploaden** om de voorbeeld bestanden te uploaden die u in de eerste stap hebt gedownload. Zoals u ziet, hebt u een breed scala aan inhoudstypen, waaronder afbeeldingen en toepassingsbestanden waarvoor zoeken in volledige tekst niet mogelijk is in de oorspronkelijke indeling.
 
    :::image type="content" source="media/cognitive-search-quickstart-blob/sample-data.png" alt-text="Bronbestanden in Azure-blobopslag" border="false":::
 

@@ -3,12 +3,12 @@ title: Concepten-persoonlijke Clouds en clusters
 description: Meer informatie over de belangrijkste mogelijkheden van de Azure VMware-oplossing software-gedefinieerde data centers en vSphere-clusters.
 ms.topic: conceptual
 ms.date: 03/13/2021
-ms.openlocfilehash: d1837ae7cf01fcb9642e0cafe4e0430e403b9899
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: aff66e01ae4b056eb082d2000611718b1a5cf66a
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103462509"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104773914"
 ---
 #  <a name="azure-vmware-solution-private-cloud-and-cluster-concepts"></a>Azure VMware-oplossing persoonlijke Cloud-en cluster concepten
 
@@ -48,6 +48,9 @@ Hosts die worden gebruikt voor het bouwen of schalen van clusters, zijn afkomsti
 
 [!INCLUDE [vmware-software-versions](includes/vmware-software-versions.md)]
 
+## <a name="update-frequency"></a>Update frequentie
+
+[!INCLUDE [vmware-software-update-frequency](includes/vmware-software-update-frequency.md)]
 
 ## <a name="host-maintenance-and-lifecycle-management"></a>Host onderhoud en levenscyclus beheer
 

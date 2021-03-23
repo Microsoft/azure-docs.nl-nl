@@ -4,12 +4,12 @@ description: Retentie en privacybeleid
 ms.topic: conceptual
 ms.date: 06/30/2020
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 54d3e53b71b5f63da84e41a752bbbb6fce65c045
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 6a7545d4d927418e6153ce3bf439fc8c3e2dc702
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100579586"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104774912"
 ---
 # <a name="data-collection-retention-and-storage-in-application-insights"></a>Verzameling, retentie en opslag van gegevens in Application Insights
 
@@ -294,6 +294,10 @@ U kunt [een aantal gegevens uitschakelen door ApplicationInsights.configte bewer
 
 > [!NOTE]
 > Client-IP wordt gebruikt om geografische locatie af te leiden, maar standaard worden IP-gegevens niet meer opgeslagen en worden alle nullen naar het gekoppelde veld geschreven. Voor meer informatie over het afhandelen van persoonlijke gegevens kunt u dit [artikel](../logs/personal-data-mgmt.md#application-data)aanbevelen. Als u IP-adres gegevens moet opslaan in het artikel over de [IP-adres verzameling](./ip-collection.md) , wordt u door de opties geleid.
+
+## <a name="can-i-modify-or-update-data-after-it-has-been-collected"></a>Kan ik gegevens wijzigen of bijwerken nadat deze zijn verzameld?
+
+Nee, de gegevens zijn alleen-lezen en kunnen alleen worden verwijderd via de functionaliteit voor opschonen. Ga voor meer informatie naar de [richt lijnen voor persoons gegevens die zijn opgeslagen in log Analytics en Application Insights](../logs/personal-data-mgmt.md#delete).
 
 ## <a name="credits"></a>Tegoeden
 Dit product bevat GeoLite2-gegevens die zijn gemaakt door MaxMind, die beschikbaar zijn via [https://www.maxmind.com](https://www.maxmind.com) .

@@ -1,19 +1,14 @@
 ---
 title: Functie ondersteuning en buiten gebruik stellen
-titleSuffix: Azure Defender for IoT
 description: Defender voor IoT blijft C, C# en Edge ondersteunen tot 1 maart 2022.
-author: shhazam-ms
-manager: rkarlin
-ms.author: shhazam
 ms.date: 1/21/2021
-ms.service: azure
 ms.topic: how-to
-ms.openlocfilehash: a33e7ff230292d4ceb14610e3cf00935dc1a67a0
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 782e2e8ab0c54e21da643ca73f647a7ea21e4223
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103493166"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104784523"
 ---
 # <a name="feature-support-and-retirement"></a>Functie ondersteuning en buiten gebruik stellen
 

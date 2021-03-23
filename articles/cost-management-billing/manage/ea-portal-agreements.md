@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: cost-management-billing
 ms.subservice: enterprise
 ms.reviewer: boalcsva
-ms.openlocfilehash: c2c3636e98d67616826b03cca9657b806c5bd653
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: d03ae5062cc81b3e042ed3b714838e14929dbba2
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98598008"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104778216"
 ---
 # <a name="azure-ea-agreements-and-amendments"></a>Azure EA-overeenkomsten en -aanpassingen
 
@@ -145,7 +145,7 @@ De hierboven beschreven quota zijn geen servicevooruitbetalingen. Om het aantal 
 
 ## <a name="requesting-a-quota-increase"></a>Een verhoging van het quotum aanvragen
 
-U kunt op elk gewenst moment een verhoging van het quotum aanvragen door een [online aanvraag](https://g.microsoftonline.com/0WAEP00en/6) in te dienen. Geef de volgende gegevens op om uw aanvraag te verwerken:
+U kunt op elk gewenst moment een verhoging van het quotum aanvragen door een [online aanvraag](https://ms.portal.azure.com/) in te dienen. Geef de volgende gegevens op om uw aanvraag te verwerken:
 
 - Het Microsoft-account of het werk- of schoolaccount dat aan de accounteigenaar van uw abonnement is gekoppeld. Dit is het e-mailadres waarmee u zich aanmeldt bij Azure Portal om uw abonnement(en) te beheren. Geef ook aan dat dit account is gekoppeld aan een EA-inschrijving.
 - De resource(s) en het bedrag waarvoor u een quotum wilt verhogen.

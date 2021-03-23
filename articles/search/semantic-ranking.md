@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/18/2021
-ms.openlocfilehash: bb65a53f1ba6e97a39bd0c0170c5c41da38aee8b
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 1406f865d60e6715b5f6a974225dc48958e8da6d
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104720505"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104775167"
 ---
 # <a name="semantic-ranking-in-azure-cognitive-search"></a>Semantische classificatie in azure Cognitive Search
 
@@ -51,7 +51,7 @@ Invoer voor samen vatting is de lange teken reeks van de voorbereidings fase. Va
 
 Output is een [semantisch bijschrift](semantic-how-to-query-request.md), in tekst zonder opmaak en met hooglichten. Het bijschrift is kleiner dan de lange teken reeks, meestal minder dan 200 woorden per document, en wordt beschouwd als de meeste vertegenwoordiger van het document. 
 
-Er wordt ook een [semantisch antwoord](semantic-answers.md) gegeven als u de para meter ' antwoorden ' hebt opgegeven, als de query is opgenomen als een vraag, en als er een door tocht kan worden gevonden in de lange teken reeks die eruitziet als een plausible-antwoord op de vraag.
+Er wordt ook een [semantisch antwoord](semantic-answers.md) gegeven als u de para meter ' antwoorden ' hebt opgegeven, als de query is opgenomen als een vraag en als er een passeren kan worden gevonden in de lange teken reeks die waarschijnlijk een antwoord op de vraag vormt.
 
 ## <a name="scoring-and-ranking"></a>Score en rang schikking
 

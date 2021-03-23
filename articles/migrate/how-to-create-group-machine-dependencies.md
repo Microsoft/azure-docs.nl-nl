@@ -1,54 +1,54 @@
 ---
-title: Afhankelijkheids analyse op basis van een agent instellen in de evaluatie van Azure Migrate server
-description: In dit artikel wordt beschreven hoe u een afhankelijkheids analyse op basis van een agent instelt in Azure Migrate server-evaluatie.
+title: Afhankelijkheids analyse op basis van een agent instellen in Azure Migrate
+description: In dit artikel wordt beschreven hoe u een afhankelijkheids analyse op basis van een agent instelt in Azure Migrate.
 author: rashi-ms
 ms.author: rajosh
 ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 11/25/2020
-ms.openlocfilehash: 772602a11878276da3b81b84e7f4016997375077
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 84a672f76de4b11558f2b39bf417a3eda2e31a36
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102183060"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104786529"
 ---
 # <a name="set-up-dependency-visualization"></a>Visualisatie van afhankelijkheid instellen
 
-In dit artikel wordt beschreven hoe u een afhankelijkheids analyse op basis van een agent instelt in Azure Migrate: Server Assessment. [Afhankelijkheids analyse](concepts-dependency-visualization.md) helpt u bij het identificeren en begrijpen van afhankelijkheden tussen computers die u wilt beoordelen en die u wilt migreren naar Azure.
+In dit artikel wordt beschreven hoe u een afhankelijkheids analyse op basis van een agent instelt in Azure Migrate: detectie en evaluatie. [Afhankelijkheids analyse](concepts-dependency-visualization.md) helpt u bij het identificeren en begrijpen van afhankelijkheden tussen servers die u wilt beoordelen en migreren naar Azure.
 
 ## <a name="before-you-start"></a>Voordat u begint
 
 - Bekijk de ondersteunings-en implementatie vereisten voor analyse van afhankelijkheden op basis van een agent voor:
-    - [VMware-VM's](migrate-support-matrix-vmware.md#dependency-analysis-requirements-agent-based)
+    - [Servers in VMware-omgeving](migrate-support-matrix-vmware.md#dependency-analysis-requirements-agent-based)
     - [Fysieke servers](migrate-support-matrix-physical.md#agent-based-dependency-analysis-requirements)
-    - [Virtuele Hyper-V-machines](migrate-support-matrix-hyper-v.md#agent-based-dependency-analysis-requirements)
+    - [Servers in de Hyper-V-omgeving](migrate-support-matrix-hyper-v.md#agent-based-dependency-analysis-requirements)
 - Zorg ervoor dat:
     - Een Azure Migrate project hebben. Als u dit niet doet, [maakt](./create-manage-projects.md) u er nu een.
-    - Controleer of u het Azure Migrate: Server Assessment Tool hebt [toegevoegd](how-to-assess.md) aan het project.
-    - Stel een [Azure migrate apparaat](migrate-appliance.md) in om on-premises machines te detecteren. Het apparaat detecteert on-premises machines en verstuurt meta gegevens en prestatie gegevens naar Azure Migrate: Server evaluatie. Stel een apparaat in voor:
-        - [VMware](how-to-set-up-appliance-vmware.md) Virtuele
-        - [Hyper-V](how-to-set-up-appliance-hyper-v.md) Virtuele
+    - Controleer of u de Azure Migrate: hulp programma voor detectie en evaluatie hebt [toegevoegd](how-to-assess.md) aan het project.
+    - Stel een [Azure migrate apparaat](migrate-appliance.md) in om on-premises servers te detecteren. Het apparaat detecteert on-premises servers en stuurt meta gegevens en prestatie gegevens naar Azure Migrate: detectie en evaluatie. Stel een apparaat in voor:
+        - [Servers in VMware-omgeving](how-to-set-up-appliance-vmware.md)
+        - [Servers in de Hyper-V-omgeving](how-to-set-up-appliance-hyper-v.md)
         - [Fysieke servers](how-to-set-up-appliance-physical.md)
 - Als u afhankelijkheids visualisatie wilt gebruiken, koppelt u een [log Analytics-werk ruimte](../azure-monitor/logs/manage-access.md) aan een Azure migrate project:
-    - U kunt een werk ruimte pas toevoegen nadat u het Azure Migrate apparaat hebt ingesteld en de computers in het Azure Migrate-project detecteert.
+    - U kunt een werk ruimte pas toevoegen nadat u het Azure Migrate apparaat hebt ingesteld en de servers in het Azure Migrate-project detecteert.
     - Zorg ervoor dat u een werk ruimte hebt in het abonnement met het Azure Migrate-project.
     - De werk ruimte moet zich bevinden in de regio's VS-Oost, Zuidoost-Azië of Europa-west. Werk ruimten in andere regio's kunnen niet worden gekoppeld aan een project.
     - De werk ruimte moet zich in een regio bevinden waarin [servicetoewijzing wordt ondersteund](../azure-monitor/vm/vminsights-configure-workspace.md#supported-regions).
     - U kunt een nieuwe of bestaande Log Analytics-werk ruimte koppelen aan een Azure Migrate-project.
-    - U koppelt de werk ruimte de eerste keer dat u een afhankelijkheids visualisatie instelt voor een machine. De werk ruimte voor een Azure Migrate project kan niet worden gewijzigd nadat deze is toegevoegd.
+    - U koppelt de werk ruimte de eerste keer dat u een afhankelijkheids visualisatie voor een server instelt. De werk ruimte voor een Azure Migrate project kan niet worden gewijzigd nadat deze is toegevoegd.
     - In Log Analytics wordt de werk ruimte die is gekoppeld aan Azure Migrate gelabeld met de sleutel van het migratie project en de project naam.
 
 ## <a name="associate-a-workspace"></a>Een werk ruimte koppelen
 
-1. Nadat u computers voor beoordeling hebt gedetecteerd, klikt u in **servers**  >  **Azure migrate: Server evaluatie** op **overzicht**.  
-2. Klik in **Azure migrate: Server evaluatie** op **essentiële** elementen.
+1. Nadat u servers voor beoordeling hebt gedetecteerd, klikt u in **servers**  >  **Azure migrate: detectie en evaluatie** op **overzicht**.  
+2. Klik in **Azure migrate: detectie en evaluatie** op **essentiële** elementen.
 3. Klik in de **OMS-werk ruimte** op **configuratie vereist**.
 
      ![Log Analytics-werkruimte configureren](./media/how-to-create-group-machine-dependencies/oms-workspace-select.png)   
 
 4. In de **werk ruimte OMS configureren** geeft u op of u een nieuwe werk ruimte wilt maken of een bestaande wilt gebruiken.
-    - U kunt een bestaande werk ruimte selecteren uit alle werk ruimten in het project abonnement migreren.
+    - U kunt een bestaande werk ruimte selecteren uit alle werk ruimten in het project abonnement.
     - U hebt toegang tot de lezer nodig om de werk ruimte te koppelen.
 5. Als u een nieuwe werk ruimte maakt, selecteert u een locatie.
 
@@ -57,13 +57,13 @@ In dit artikel wordt beschreven hoe u een afhankelijkheids analyse op basis van 
 
 ## <a name="download-and-install-the-vm-agents"></a>De VM-agents downloaden en installeren
 
-Installeer de agents op elke computer die u wilt analyseren.
+Installeer de agents op elke server die u wilt analyseren.
 
 > [!NOTE]
-> Voor computers die worden bewaakt door System Center Operations Manager 2012 R2 of hoger, hoeft u de MMA-agent niet te installeren. Servicetoewijzing integreert met Operations Manager. [Volg](../azure-monitor/vm/service-map-scom.md#prerequisites) de richt lijnen voor integratie.
+> Voor servers die worden bewaakt door System Center Operations Manager 2012 R2 of hoger, hoeft u de MMA-agent niet te installeren. Servicetoewijzing integreert met Operations Manager. [Volg](../azure-monitor/vm/service-map-scom.md#prerequisites) de richt lijnen voor integratie.
 
-1. Klik in **Azure migrate: Server evaluatie** op **gedetecteerde servers**.
-2. Voor elke computer die u wilt analyseren met afhankelijkheids visualisatie, klikt u in de kolom **afhankelijkheden** op **Agent installatie vereist**.
+1. Klik in **Azure migrate: detectie en evaluatie** op **gedetecteerde servers**.
+2. Voor elke server die u wilt analyseren met afhankelijkheids visualisatie, klikt u in de kolom **afhankelijkheden** op **Agent installatie vereist**.
 3. Down load de MMA-en Dependency-agent voor Windows of Linux op de pagina **afhankelijkheden** .
 4. Onder **MMA-agent configureren kopieert u** de werk ruimte-ID en-sleutel. U hebt deze nodig wanneer u de MMA-Agent installeert.
 
@@ -72,11 +72,11 @@ Installeer de agents op elke computer die u wilt analyseren.
 
 ## <a name="install-the-mma"></a>De MMA installeren
 
-Installeer de MMA op elke Windows-of Linux-computer die u wilt analyseren.
+Installeer de MMA op elke Windows-of Linux-server die u wilt analyseren.
 
-### <a name="install-mma-on-a-windows-machine"></a>MMA installeren op een Windows-computer
+### <a name="install-mma-on-a-windows-server"></a>MMA installeren op een Windows-Server
 
-Installeer de agent als volgt op een Windows-computer:
+De agent installeren op een Windows-Server:
 
 1. Dubbelklik op de gedownloade agent.
 2. Klik op de pagina **Welkom** op **Volgende**. Klik op de pagina **Licentievoorwaarden** op **Akkoord** om de licentie te accepteren.
@@ -89,9 +89,9 @@ U kunt de agent installeren vanaf de opdracht regel of met behulp van een geauto
 - De MMA-agent kan ook worden geïnstalleerd met behulp van dit [script](https://github.com/brianbar-MSFT/Install-MMA).
 - Meer [informatie](../azure-monitor/agents/agents-overview.md#supported-operating-systems) over de Windows-besturings systemen die worden ondersteund door MMA.
 
-### <a name="install-mma-on-a-linux-machine"></a>MMA installeren op een Linux-computer
+### <a name="install-mma-on-a-linux-server"></a>MMA installeren op een Linux-server
 
-De MMA op een Linux-computer installeren:
+De MMA op een Linux-server installeren:
 
 1. Breng de juiste bundel (x86 of x64) met behulp van scp/ftp over naar uw Linux-computer.
 2. Installeer de bundel met behulp van het argument --install.
@@ -102,8 +102,8 @@ De MMA op een Linux-computer installeren:
 
 ## <a name="install-the-dependency-agent"></a>De afhankelijkheidsagent installeren
 
-1. Als u de afhankelijkheidsagent op een Windows-computer wilt installeren, dubbelklikt u op het installatiebestand en volgt u de wizard.
-2. Als u de afhankelijkheidsagent op een Linux-computer wilt installeren, installeert u als root met de volgende opdracht:
+1. Als u de afhankelijkheids agent op een Windows-Server wilt installeren, dubbelklikt u op het installatie bestand en volgt u de wizard.
+2. Als u de afhankelijkheids agent op een Linux-server wilt installeren, installeert u als root met de volgende opdracht:
 
     ```sh InstallDependencyAgent-Linux64.bin```
 
@@ -117,33 +117,33 @@ Maak nu een groep voor evaluatie.
 
 
 > [!NOTE]
-> Groepen waarvoor u afhankelijkheden wilt visualiseren, mogen niet meer dan 10 machines bevatten. Als u meer dan 10 computers hebt, splitst u deze in kleinere groepen.
+> Groepen waarvoor u afhankelijkheden wilt visualiseren, mogen niet meer dan 10 servers bevatten. Als u meer dan 10 servers hebt, splitst u deze in kleinere groepen.
 
-1. Klik in **Azure migrate: Server evaluatie** op **gedetecteerde servers**.
-2. Klik in de kolom **afhankelijkheden** op **afhankelijkheden weer geven** voor elke computer die u wilt controleren.
+1. Klik in **Azure migrate: detectie en evaluatie** op **gedetecteerde servers**.
+2. Klik in de kolom **afhankelijkheden** op **afhankelijkheden weer geven** voor elke server die u wilt controleren.
 3. Op de afhankelijkheids kaart ziet u het volgende:
-    - Inkomende (clients) en uitgaande (servers) TCP-verbindingen van en naar de computer.
-    - Afhankelijke computers waarop geen afhankelijkheids agenten zijn geïnstalleerd, worden gegroepeerd op poort nummers.
-    - Afhankelijke computers waarop afhankelijkheids agenten zijn geïnstalleerd, worden weer gegeven als afzonderlijke vakken.
-    - Processen die worden uitgevoerd op de computer. Vouw elke machine uit om de processen weer te geven.
-    - Computer eigenschappen (inclusief FQDN, besturings systeem, MAC-adres). Klik op elke computer vak om de details weer te geven.
+    - Inkomende (clients) en uitgaande (servers) TCP-verbindingen van en naar de-server.
+    - Afhankelijke servers waarop geen afhankelijkheids agenten zijn geïnstalleerd, worden gegroepeerd op poort nummers.
+    - Afhankelijke servers waarop dependency agents zijn geïnstalleerd, worden weer gegeven als afzonderlijke vakken.
+    - Processen die worden uitgevoerd in de server. Vouw elk vak van de server uit om de processen weer te geven.
+    - Server eigenschappen (inclusief FQDN, besturings systeem, MAC-adres). Klik op elke server vak om de details weer te geven.
 
 4. U kunt afhankelijkheden voor verschillende tijds duren bekijken door te klikken op de tijds duur in het label tijds bereik.
     - Het bereik is standaard een uur. 
     - U kunt het tijdsbereik wijzigen of begin- en einddatums en duur opgeven.
     - Het tijds bereik kan Maxi maal een uur duren. Als u een langere periode nodig hebt, gebruikt u Azure Monitor voor het opvragen van afhankelijke gegevens gedurende langere tijd.
 
-5. Nadat u de afhankelijke computers die u wilt groeperen, hebt geïdentificeerd, gebruikt u CTRL + klikken om meerdere computers op de kaart te selecteren en klikt u op **machines groeperen**.
+5. Nadat u de afhankelijke servers die u wilt groeperen, hebt geïdentificeerd, gebruikt u CTRL + klikken om meerdere servers op de kaart te selecteren en klikt u op **machines groeperen**.
 6. Geef een groepsnaam op.
-7. Controleer of de afhankelijke machines worden gedetecteerd door Azure Migrate.
+7. Controleer of de afhankelijke servers worden gedetecteerd door Azure Migrate.
 
-    - Als een afhankelijke machine niet wordt gedetecteerd door Azure Migrate: Server evaluatie, kunt u deze niet toevoegen aan de groep.
-    - Als u een machine wilt toevoegen, voert u de detectie opnieuw uit en controleert u of de computer is gedetecteerd.
+    - Als een afhankelijke server niet wordt gedetecteerd door Azure Migrate: detectie en evaluatie, kunt u deze niet toevoegen aan de groep.
+    - Als u een server wilt toevoegen, voert u de detectie opnieuw uit en controleert u of de server is gedetecteerd.
 
 8. Als u een evaluatie voor deze groep wilt maken, schakelt u het selectievakje in om een nieuwe evaluatie voor de groep te maken.
 8. Klik op **OK** om de groep op te slaan.
 
-Nadat u de groep hebt gemaakt, wordt u aangeraden agents op alle computers in de groep te installeren en vervolgens afhankelijkheden voor de hele groep te visualiseren.
+Nadat u de groep hebt gemaakt, wordt u aangeraden agents op alle servers in de groep te installeren en vervolgens afhankelijkheden voor de hele groep te visualiseren.
 
 ## <a name="query-dependency-data-in-azure-monitor"></a>Query's uitvoeren op afhankelijkheids gegevens in Azure Monitor
 
@@ -155,7 +155,7 @@ U kunt een query uitvoeren op afhankelijkheids gegevens die zijn vastgelegd door
 Voer een query uit voor afhankelijkheids gegevens als volgt:
 
 1. Nadat u de agents hebt geïnstalleerd, gaat u naar de portal en klikt u op **Overzicht**.
-2. Klik in **Azure migrate: Server evaluatie** op **overzicht**. Klik op de pijl-omlaag om de **kernen** uit te vouwen.
+2. Klik in **Azure migrate: detectie en evaluatie** op **overzicht**. Klik op de pijl-omlaag om de **kernen** uit te vouwen.
 3. Klik in de **OMS-werk ruimte** op de naam van de werk ruimte.
 3. Klik op de pagina Log Analytics werk ruimte > **Algemeen** op **Logboeken**.
 4. Schrijf uw query en klik op **uitvoeren**.
@@ -170,14 +170,14 @@ Hier volgen enkele voor beelden van query's die u kunt gebruiken om afhankelijkh
 
 #### <a name="sample-review-inbound-connections"></a>Voor beeld: binnenkomende verbindingen controleren
 
-Controleer binnenkomende verbindingen voor een set Vm's.
+Binnenkomende verbindingen voor een set met servers controleren.
 
 - De records in de tabel voor de metrische gegevens van de verbinding (VMConnection) vertegenwoordigen geen afzonderlijke fysieke netwerk verbindingen.
 - Er worden meerdere fysieke netwerkverbindingen gegroepeerd in een logische verbinding.
 - Meer [informatie](../azure-monitor/vm/service-map.md#connections) over hoe fysieke netwerk verbindings gegevens worden geaggregeerd in VMConnection.
 
 ```
-// the machines of interest
+// the servers of interest
 let ips=materialize(ServiceMapComputer_CL
 | summarize ips=makeset(todynamic(Ipv4Addresses_s)) by MonitoredMachine=ResourceName_s
 | mvexpand ips to typeof(string));
@@ -192,10 +192,10 @@ VMConnection
 
 #### <a name="sample-summarize-sent-and-received-data"></a>Voor beeld: verzonden en ontvangen gegevens samenvatten
 
-In dit voor beeld wordt een overzicht gegeven van het volume van de gegevens die worden verzonden en ontvangen op binnenkomende verbindingen tussen een set machines.
+In dit voor beeld wordt een overzicht gegeven van het volume van de gegevens die worden verzonden en ontvangen op binnenkomende verbindingen tussen een set met servers.
 
 ```
-// the machines of interest
+// the servers of interest
 let ips=materialize(ServiceMapComputer_CL
 | summarize ips=makeset(todynamic(Ipv4Addresses_s)) by MonitoredMachine=ResourceName_s
 | mvexpand ips to typeof(string));

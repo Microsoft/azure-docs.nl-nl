@@ -1,19 +1,14 @@
 ---
 title: Over de Fortinet-integratie
-titleSuffix: Azure Defender for IoT
 description: Defender voor IoT en Fortinet heeft een technologie partnerschap opgezet om aanvallen op IoT-en ICS-netwerken te detecteren en te stoppen.
-author: shhazam-ms
-manager: rkarlin
-ms.author: shhazam
 ms.date: 1/17/2021
 ms.topic: article
-ms.service: azure
-ms.openlocfilehash: 313db90d4c9be30ef588b00caf1d6e4ce32b113b
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: e2119a9e01a4e58cd9d2ca1b9b3384ec9629784c
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98557969"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104784013"
 ---
 # <a name="defender-for-iot-and-fortinet-iiot-and-ics-threat-detection--prevention"></a>Defender voor IoT-en Fortinet IIoT-en ICS-bedreigingen detectie & preventie
 

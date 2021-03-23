@@ -9,12 +9,12 @@ ms.workload: identity
 ms.author: kenwith
 author: kenwith
 manager: daveba
-ms.openlocfilehash: cd46bb1c6905747ffb98c7e950f66e648c541534
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 5b645efe2bbaadeca31b4a0a3b957ff53f5ed3aa
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103601760"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104775507"
 ---
 # <a name="azure-active-directory-application-management-whats-new"></a>Azure Active Directory toepassings beheer: wat is er nieuw
 
@@ -141,7 +141,6 @@ Welkom bij wat er nieuw is in Azure Active Directory documentatie voor toepassin
 
 ### <a name="new-articles"></a>Nieuwe artikelen
 - [Eenmalige aanmelding op basis van SAML configureren](configure-saml-single-sign-on.md)
-- [Azure AD gebruiken voor toepassingen die niet worden vermeld in de app-galerie](non-gallery-apps.md)
 - [Nu downloaden: een app toevoegen vanuit Azure Marketplace](get-it-now-azure-marketplace.md)
 - [Quickstart: Eigenschappen configureren voor een toepassing in uw Azure Active Directory-tenant (Azure AD)](add-application-portal-configure.md)
 - [Quickstart: Eenmalige aanmelding (SSO) instellen voor een toepassing in uw Azure Active Directory-tenant (Azure AD)](add-application-portal-setup-sso.md)

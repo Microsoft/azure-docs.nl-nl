@@ -1,18 +1,14 @@
 ---
 title: Algemeen gebruikerstoegangsbeheer definiëren
 description: In grote organisaties kunnen gebruikers machtigingen complex zijn en kunnen worden bepaald door een algemene organisatie structuur, naast de standaard site-en zone structuur.
-author: shhazam-ms
-manager: rkarlin
-ms.author: shhazam
 ms.date: 12/08/2020
 ms.topic: article
-ms.service: azure
-ms.openlocfilehash: 399eee06d472204eaf6dbc333f15cee7c4373739
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 8f5f8df56a5dcb4152fc0ae9fcae3d504d6cf3e2
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100522271"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104784285"
 ---
 # <a name="define-global-access-control"></a>Algemeen toegangs beheer definiëren
 

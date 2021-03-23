@@ -8,18 +8,18 @@ ms.topic: conceptual
 ms.date: 03/12/2021
 ms.author: amverma
 ms.reviewer: cynthn
-ms.openlocfilehash: 21576b6714c05e5a0ed703c7a1452103c2c4b355
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: b435547d7cd3b0fab781cc6cf3b617b13ac1120a
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103472824"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104774691"
 ---
 # <a name="hbv3-series"></a>HBv3-serie
 
 Vm's uit de HBv3-serie zijn geoptimaliseerd voor HPC-toepassingen, zoals vloei bare dynamiek, expliciete en impliciete, beperkte element analyse, weer modellen, seismische verwerking, reservoir simulatie en V.R.N.L.-simulatie. HBv3 Vm's beschikken over Maxi maal 120 AMD EPYC™ 7003-Series (Milaan) CPU-kernen, 448 GB RAM en geen hyperthreading. Vm's uit de HBv3-serie bieden ook 350 GB/sec. geheugen bandbreedte, Maxi maal 32 MB L3-cache per kern, Maxi maal 7 GB/s van de snelheid van de SSD-prestaties van het apparaat en klok frequenties tot 3,675 gigahertz. 
 
-Alle virtuele machines uit de HBv3-serie van 200 GB/sec-HDR InfiniBand van NVIDIA-netwerken voor het inschakelen van MPI-workloads op supercomputer schaal. Deze Vm's zijn verbonden met een niet-blokkerende Fat-structuur voor geoptimaliseerde en consistente RDMA-prestaties. De HDR InfiniBand-Fabric biedt ook ondersteuning voor adaptieve route ring en het dynamisch verbonden Trans Port (DCT, in aanvulling op de standaard-RC-en UD-transport gegevens). Deze functies verbeteren de prestaties, schaal baarheid en consistentie van toepassingen en het gebruik ervan wordt ten zeerste aanbevolen.
+Alle virtuele machines uit de HBv3-serie van 200 GB/sec-HDR InfiniBand van NVIDIA-netwerken voor het inschakelen van MPI-workloads op supercomputer schaal. Deze Vm's zijn verbonden met een niet-blokkerende Fat-structuur voor geoptimaliseerde en consistente RDMA-prestaties. De HDR InfiniBand-Fabric biedt ook ondersteuning voor adaptieve route ring en het dynamisch verbonden Trans Port (DCT, in aanvulling op de standaard-RC-en UD-transport gegevens). Deze functies verbeteren de prestaties, schaal baarheid en consistentie van toepassingen, en het gebruik ervan wordt ten zeerste aanbevolen.
 
 [Premium Storage](premium-storage-performance.md): ondersteund<br>
 [Premium Storage caching](premium-storage-performance.md): ondersteund<br>
@@ -28,7 +28,7 @@ Alle virtuele machines uit de HBv3-serie van 200 GB/sec-HDR InfiniBand van NVIDI
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1 en 2<br>
 [Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): binnenkort beschikbaar<br>
 [Tijdelijke besturingssysteem schijven](ephemeral-os-disks.md): niet ondersteund <br>
-
+<br>
 
 |Grootte |vCPU |Processor |Geheugen (GiB) |Geheugen bandbreedte GB/s |Basis-CPU-frequentie (GHz) |Frequentie van alle kernen (GHz, piek) |Frequentie met één kern geheugen (GHz, piek) |RDMA-prestaties (GB/s) |MPI-ondersteuning |Tijdelijke opslag (GiB) |Max. aantal gegevensschijven |Maximum aantal Ethernet-Vnic's |
 |----|----|----|----|----|----|----|----|----|----|----|----|----|
@@ -38,11 +38,10 @@ Alle virtuele machines uit de HBv3-serie van 200 GB/sec-HDR InfiniBand van NVIDI
 |Standard_HB120-32rs_v3 |32  |AMD EPYC 7V13 |448 |350 |2.45 |3.1 |3,675 |200 |Alles |2 * 960 |32 |8 |
 |Standard_HB120-16rs_v3 |16  |AMD EPYC 7V13 |448 |350 |2.45 |3.1 |3,675 |200 |Alles |2 * 960 |32 |8 |
 
-
 Meer informatie over:
-- Onderliggende [architectuur en VM-topologie](./workloads/hpc/hbv3-series-overview.md)
-- [Ondersteunde software stack](./workloads/hpc/hbv3-series-overview.md#software-specifications) inclusief ondersteund besturings systeem
-- Verwachte [prestaties](./workloads/hpc/hbv3-performance.md) van de virtuele machine uit de HBv3-serie.
+- [architectuur-en VM-topologie](./workloads/hpc/hbv3-series-overview.md),
+- ondersteunde [software stack](./workloads/hpc/hbv3-series-overview.md#software-specifications) , inclusief ondersteund besturings systeem, en
+- verwachte [prestaties](./workloads/hpc/hbv3-performance.md) van de virtuele machine uit de HBv3-serie.
 
 [!INCLUDE [hpc-include](./workloads/hpc/includes/hpc-include.md)]
 

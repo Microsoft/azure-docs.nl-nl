@@ -9,21 +9,21 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/18/2021
 ms.custom: references_regions
-ms.openlocfilehash: d4b0a4107b3894d65dd8e168cd58566d4a4b5090
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: e0656c06f446ed6241b64040f063ed7ba419a942
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104720488"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104771308"
 ---
 # <a name="semantic-search-in-azure-cognitive-search"></a>Semantisch zoeken in azure Cognitive Search
 
 > [!IMPORTANT]
 > Semantische zoek opdracht bevindt zich in de open bare preview, die alleen beschikbaar is via de preview-REST API. Preview-functies worden aangeboden als-is, onder [aanvullende gebruiks voorwaarden](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)en zijn niet gegarandeerd dezelfde implementatie bij algemene Beschik baarheid. Deze functies zijn Factureerbaar. Zie [Beschik baarheid en prijzen](semantic-search-overview.md#availability-and-pricing)voor meer informatie.
 
-Semantisch zoeken is een verzameling query-gerelateerde functies die een hogere, meer natuurlijke query-ervaring ondersteunen. 
+Semantisch zoeken is een verzameling query-gerelateerde mogelijkheden die semantische relevantie en taal memorandum toevoegen aan Zoek resultaten. Met *semantische classificatie* zoekt u naar de context en de onderlinge afhankelijkheid van de query. Met language Standing vindt u *ondertiteling* en *antwoorden* binnen uw inhoud die het overeenkomende document samenvatten of een vraag beantwoorden, die vervolgens kan worden weer gegeven op een pagina met zoek resultaten voor een productievere Zoek ervaring.
 
-Tot deze mogelijkheden behoren een semantische aanpassing van de zoek resultaten, evenals ondertiteling en antwoord extractie, met semantische markering van relevante termen en zinsdelen. Geavanceerde, vooraf getrainde modellen worden gebruikt voor het uitpakken en de rang schikking. Om de snelle prestaties te behouden die gebruikers van de zoek opdracht verwachten, worden semantische samen vatting en rang schikking alleen toegepast op de belangrijkste 50 resultaten, zoals wordt gescoord door het [standaard Score algoritme](index-similarity-and-scoring.md#similarity-ranking-algorithms)voor het vergelijken van de overeenkomst. Door deze resultaten te gebruiken als document verzameling, worden deze resultaten opnieuw gescoord op basis van de semantische sterkte van de overeenkomst.
+Geavanceerde vooraf getrainde modellen worden gebruikt voor samen vattingen en classificatie. Om de snelle prestaties te behouden die gebruikers van de zoek opdracht verwachten, worden semantische samen vatting en rang schikking alleen toegepast op de belangrijkste 50 resultaten, zoals wordt gescoord door het [standaard Score algoritme](index-similarity-and-scoring.md#similarity-ranking-algorithms)voor het vergelijken van de overeenkomst. Door deze resultaten te gebruiken als document verzameling, worden deze resultaten opnieuw gescoord op basis van de semantische sterkte van de overeenkomst.
 
 De onderliggende technologie is van Bing en micro soft Research, en is geïntegreerd in de Cognitive Search-infra structuur als een invoeg toepassing. Zie How of the [Powering Azure Cognitive Search (micro soft Research Blog)](https://www.microsoft.com/research/blog/the-science-behind-semantic-search-how-ai-from-bing-is-powering-azure-cognitive-search/)voor meer informatie over de onderzoek-en AI-investeringen die een back-up van semantische zoek acties maken.
 

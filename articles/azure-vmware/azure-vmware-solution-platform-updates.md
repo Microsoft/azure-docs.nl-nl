@@ -3,12 +3,12 @@ title: Platform updates voor de Azure VMware-oplossing
 description: Meer informatie over de platform updates voor de Azure VMware-oplossing.
 ms.topic: reference
 ms.date: 03/16/2021
-ms.openlocfilehash: 73bd1d088f9055ebd80a28c6247ea9dfa6229093
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: ce25df2cb221c032f6dd430f292522fe86e69ceb
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104586230"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104771767"
 ---
 # <a name="platform-updates-for-azure-vmware-solution"></a>Platform updates voor de Azure VMware-oplossing
 
@@ -16,7 +16,7 @@ Belang rijke updates voor de Azure VMware-oplossing worden vanaf maart 2021 van 
 
 ## <a name="march-15-2021"></a>15 maart 2021 
 
-- Met de Azure VMware-oplossings service wordt het onderhouds werk tot en met 19 maart 20201 uitgevoerd om de vCenter-Server in uw privécloud bij te werken naar de 3l-versie van vCenter Server 6,7-update.
+- Met de Azure VMware-oplossings service wordt het onderhouds werk tot en met 19 maart 2021 uitgevoerd om de vCenter-Server in uw privécloud bij te werken naar de 3l-versie van vCenter Server 6,7-update.
 
 - Gedurende deze tijd is VMware vCenter niet beschikbaar en kunt u geen Vm's beheren (stoppen, starten, maken, verwijderen). Het schalen van de privécloud (het toevoegen of verwijderen van servers en clusters) is ook niet beschikbaar. VMware hoge Beschik baarheid (HA) blijft actief voor het bieden van beveiliging voor bestaande Vm's. 
  

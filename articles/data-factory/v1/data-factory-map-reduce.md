@@ -3,16 +3,16 @@ title: MapReduce-programma aanroepen vanuit Azure Data Factory
 description: Meer informatie over hoe u gegevens kunt verwerken door MapReduce-Program ma's uit te voeren op een Azure HDInsight-cluster vanuit een Azure-data factory.
 author: dcstwh
 ms.author: weetok
-ms.reviewer: maghan
+ms.reviewer: jburchel
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: f5ad917609d6f9ea401abc898f80631474a44475
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: f1f54e972d59d3de3b0f93b3150ee1150eb6f612
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100371070"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104786393"
 ---
 # <a name="invoke-mapreduce-programs-from-data-factory"></a>MapReduce-Program Ma's aanroepen vanuit Data Factory
 > [!div class="op_single_selector" title1="Transformatie activiteiten"]
@@ -36,7 +36,7 @@ Met de HDInsight MapReduce-activiteit in een Data Factory [pijp lijn](data-facto
 > [!NOTE] 
 > Als u geen ervaring hebt met Azure Data Factory, lees dan [Inleiding tot Azure Data Factory](data-factory-introduction.md) en voer de zelf studie uit: [bouw uw eerste gegevens pijplijn](data-factory-build-your-first-pipeline.md) voordat u dit artikel leest.  
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 Met een pijp lijn in een Azure-data factory worden gegevens verwerkt in gekoppelde opslag Services met behulp van gekoppelde Compute-Services. Het bevat een reeks activiteiten waarbij elke activiteit een specifieke verwerkings bewerking uitvoert. In dit artikel wordt beschreven hoe u de HDInsight MapReduce-activiteit gebruikt.
 
 Zie [Pig](data-factory-pig-activity.md) en [Hive](data-factory-hive-activity.md) voor meer informatie over het uitvoeren van Pig/Hive-scripts op een op Windows/Linux gebaseerd HDInsight-cluster via een pijp lijn met behulp van hdinsight varken en Hive-activiteiten. 

@@ -3,16 +3,16 @@ title: Plannen en uitvoeren met Data Factory
 description: Meer informatie over plannings-en uitvoerings aspecten van Azure Data Factory toepassings model.
 author: dcstwh
 ms.author: weetok
-ms.reviewer: maghan
+ms.reviewer: jburchel
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: bfdae688f7736149fe7ddf04cd3833d9adf30818
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: f613a14f84999fced888ae72de11328bc7c90811
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100382715"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104780001"
 ---
 # <a name="data-factory-scheduling-and-execution"></a>Planning en uitvoering Data Factory
 > [!NOTE]

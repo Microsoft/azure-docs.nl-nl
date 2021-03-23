@@ -1,24 +1,14 @@
 ---
 title: Problemen met het starten van de beveiligings agent (Linux) oplossen
 description: Problemen met het werken met Azure Defender voor IoT-beveiligings agenten voor Linux oplossen.
-services: defender-for-iot
-ms.service: defender-for-iot
-documentationcenter: na
-author: mlottner
-manager: rkarlin
-editor: ''
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 09/09/2020
-ms.author: mlottner
-ms.openlocfilehash: 7be6cf1df15d7afd7cb9447be68ff70ff7b14d03
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 9c9c36b822ab6acb9f9a48d4ba809ad32f6f4695
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102449217"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104782585"
 ---
 # <a name="security-agent-troubleshoot-guide-linux"></a>Handleiding voor probleemoplossing voor beveiligingsagenten (Linux)
 
@@ -91,19 +81,18 @@ Defender for IoT agent encountered an error! Error in: {Error Code}, reason: {Er
 ```
 
 | Foutcode | Fout subcode | Foutdetails | Herstellen C | Herstellen C # |
-|:-----------|:---------------|:--------|:------------|:------------|
-| Lokale configuratie | Ontbrekende configuratie | Er ontbreekt een configuratie in het lokale configuratie bestand. In het fout bericht moet worden vermeld welke sleutel ontbreekt. | Voeg de ontbrekende sleutel toe aan de/var/-LocalConfiguration.jsin het bestand, Raadpleeg de [CS-localconfig-Reference](azure-iot-security-local-configuration-c.md) voor meer informatie.| Voeg de ontbrekende sleutel toe aan het General.config-bestand, Raadpleeg de [c#-localconfig-Reference](azure-iot-security-local-configuration-csharp.md) voor meer informatie. |
-| Lokale configuratie | Configuratie kan niet worden geparseerd | Een configuratie waarde kan niet worden geparseerd. In het fout bericht moet worden vermeld welke sleutel niet kan worden geparseerd. Een configuratie waarde kan niet worden geparseerd omdat de waarde zich niet in het verwachte type bevindt of omdat de waarde buiten het bereik valt. | Corrigeer de waarde van de sleutel in/var/LocalConfiguration.jsin het bestand, zodat deze overeenkomt met het LocalConfiguration-schema, Raadpleeg de [c#-localconfig-Reference](azure-iot-security-local-configuration-csharp.md) voor meer informatie. |  Herstel de waarde van de sleutel in General.config bestand zodat deze overeenkomt met het schema, zie de [CS-localconfig-Reference](azure-iot-security-local-configuration-c.md) voor meer informatie.|
-| Lokale configuratie | Bestandsindeling | Het parseren van het configuratie bestand is mislukt. | Het configuratie bestand is beschadigd, down load de agent en installeer deze opnieuw. | |
-| Externe configuratie | Time-out | De agent kan de azureiotsecurity-module niet ophalen, dubbele binnen de time-outperiode. | Controleer of de verificatie configuratie juist is en probeer het opnieuw. | De agent kan de azureiotsecurity-module niet ophalen tijdens een time-outperiode. | Controleer of de verificatie configuratie juist is en probeer het opnieuw. |
-| Verificatie | Het bestand bestaat niet | Het bestand in het opgegeven pad bestaat niet. | Controleer of het bestand bestaat in het opgegeven pad of ga naar de **LocalConfiguration.jsin** het bestand en wijzig de **filepath** -configuratie. | Controleer of het bestand bestaat in het opgegeven pad of ga naar het **Authentication.config** -bestand en wijzig de **filepath** -configuratie.|
+|--|--|--|--|--|
+| Lokale configuratie | Ontbrekende configuratie | Er ontbreekt een configuratie in het lokale configuratie bestand. In het fout bericht moet worden vermeld welke sleutel ontbreekt. | Voeg de ontbrekende sleutel toe aan de/var/-LocalConfiguration.jsin het bestand, Raadpleeg de [CS-localconfig-Reference](azure-iot-security-local-configuration-c.md) voor meer informatie. | Voeg de ontbrekende sleutel toe aan het General.config-bestand, Raadpleeg de [c#-localconfig-Reference](azure-iot-security-local-configuration-csharp.md) voor meer informatie. |
+| Lokale configuratie | Configuratie kan niet worden geparseerd | Een configuratie waarde kan niet worden geparseerd. In het fout bericht moet worden vermeld welke sleutel niet kan worden geparseerd. Een configuratie waarde kan niet worden geparseerd omdat de waarde zich niet in het verwachte type bevindt of omdat de waarde buiten het bereik valt. | Corrigeer de waarde van de sleutel in/var/LocalConfiguration.jsin het bestand, zodat deze overeenkomt met het LocalConfiguration-schema, Raadpleeg de [c#-localconfig-Reference](azure-iot-security-local-configuration-csharp.md) voor meer informatie. | Herstel de waarde van de sleutel in General.config bestand zodat deze overeenkomt met het schema, zie de [CS-localconfig-Reference](azure-iot-security-local-configuration-c.md) voor meer informatie. |
+| Lokale configuratie | Bestandsindeling | Het parseren van het configuratie bestand is mislukt. | Het configuratie bestand is beschadigd, down load de agent en installeer deze opnieuw. | - |
+| Externe configuratie | Time-out | De agent kan de azureiotsecurity-module niet ophalen, dubbele binnen de time-outperiode. | Controleer of de verificatie configuratie juist is en probeer het opnieuw. | De agent kan de azureiotsecurity-module niet ophalen tijdens een time-outperiode. Controleer of de verificatie configuratie juist is en probeer het opnieuw. |
+| Verificatie | Het bestand bestaat niet | Het bestand in het opgegeven pad bestaat niet. | Controleer of het bestand bestaat in het opgegeven pad of ga naar de **LocalConfiguration.jsin** het bestand en wijzig de **filepath** -configuratie. | Controleer of het bestand bestaat in het opgegeven pad of ga naar het **Authentication.config** -bestand en wijzig de **filepath** -configuratie. |
 | Verificatie | Bestands machtiging | De agent heeft onvoldoende machtigingen om het bestand te openen. | Geef de **asciotagent** -gebruiker lees machtigingen voor het bestand in het opgegeven pad. | Controleer of het bestand toegankelijk is. |
 | Verificatie | Bestandsindeling | Het opgegeven bestand heeft niet de juiste indeling. | Controleer of het bestand de juiste indeling heeft. De ondersteunde bestands typen zijn. pfx en. pem. | Controleer of het bestand een geldig certificaat bestand is. |
-| Verificatie | Niet geautoriseerd | De agent kan niet worden geverifieerd tegen IoT Hub met de opgegeven referenties. | Valideer de verificatie configuratie in het LocalConfiguration-bestand, ga door de verificatie configuratie en zorg ervoor dat alle details juist zijn. Controleer of het geheim in het bestand overeenkomt met de geverifieerde identiteit. | Valideer verificatie configuratie in Authentication.config, door loop de verificatie configuratie en zorg ervoor dat alle details juist zijn en controleer vervolgens of het geheim in het bestand overeenkomt met de geverifieerde identiteit.
-| Verificatie | Niet gevonden | Het apparaat/de module is gevonden. | Verificatie configuratie valideren: Controleer of de hostnaam juist is en of het apparaat bestaat in IoT Hub en een azureiotsecurity-dubbele module heeft. |  Verificatie configuratie valideren: Controleer of de hostnaam juist is en of het apparaat bestaat in IoT Hub en een azureiotsecurity-dubbele module heeft. |
-| Verificatie | Ontbrekende configuratie | Er ontbreekt een configuratie in het *Authentication.config* bestand. In het fout bericht moet worden vermeld welke sleutel ontbreekt. | Voeg de ontbrekende sleutel toe aan de *LocalConfiguration.jsvoor* het bestand.| Voeg de ontbrekende sleutel toe aan het *Authentication.config* -bestand, Raadpleeg de [c#-localconfig-Reference](azure-iot-security-local-configuration-csharp.md) voor meer informatie. |
-| Verificatie | Configuratie kan niet worden geparseerd | Een configuratie waarde kan niet worden geparseerd. In het fout bericht moet worden vermeld welke sleutel niet kan worden geparseerd. Een configuratie waarde kan niet worden geparseerd omdat de waarde niet van het verwachte type is of omdat de waarde buiten het bereik valt. |Corrigeer de waarde van de sleutel in de **LocalConfiguration.jsvoor** het bestand. |Corrigeer de waarde van de sleutel in **Authentication.config** bestand zodat deze overeenkomt met het schema, zie de [CS-localconfig-Reference](azure-iot-security-local-configuration-c.md) voor meer informatie.|
-|
+| Verificatie | Niet geautoriseerd | De agent kan niet worden geverifieerd tegen IoT Hub met de opgegeven referenties. | Valideer de verificatie configuratie in het LocalConfiguration-bestand, ga door de verificatie configuratie en zorg ervoor dat alle details juist zijn. Controleer of het geheim in het bestand overeenkomt met de geverifieerde identiteit. | Valideer verificatie configuratie in Authentication.config, door loop de verificatie configuratie en zorg ervoor dat alle details juist zijn en controleer vervolgens of het geheim in het bestand overeenkomt met de geverifieerde identiteit. |
+| Verificatie | Niet gevonden | Het apparaat/de module is gevonden. | Verificatie configuratie valideren: Controleer of de hostnaam juist is en of het apparaat bestaat in IoT Hub en een azureiotsecurity-dubbele module heeft. | Verificatie configuratie valideren: Controleer of de hostnaam juist is en of het apparaat bestaat in IoT Hub en een azureiotsecurity-dubbele module heeft. |
+| Verificatie | Ontbrekende configuratie | Er ontbreekt een configuratie in het *Authentication.config* bestand. In het fout bericht moet worden vermeld welke sleutel ontbreekt. | Voeg de ontbrekende sleutel toe aan de *LocalConfiguration.jsvoor* het bestand. | Voeg de ontbrekende sleutel toe aan het *Authentication.config* -bestand, Raadpleeg de [c#-localconfig-Reference](azure-iot-security-local-configuration-csharp.md) voor meer informatie. |
+| Verificatie | Configuratie kan niet worden geparseerd | Een configuratie waarde kan niet worden geparseerd. In het fout bericht moet worden vermeld welke sleutel niet kan worden geparseerd. Een configuratie waarde kan niet worden geparseerd omdat de waarde niet van het verwachte type is of omdat de waarde buiten het bereik valt. | Corrigeer de waarde van de sleutel in de **LocalConfiguration.jsvoor** het bestand. | Corrigeer de waarde van de sleutel in **Authentication.config** bestand zodat deze overeenkomt met het schema, zie de [CS-localconfig-Reference](azure-iot-security-local-configuration-c.md) voor meer informatie.|
 
 ## <a name="next-steps"></a>Volgende stappen
 

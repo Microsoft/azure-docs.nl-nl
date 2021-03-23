@@ -7,12 +7,12 @@ ms.author: anvar
 ms.manager: bsiva
 ms.date: 04/19/2020
 ms.custom: mvc
-ms.openlocfilehash: 41476c5f8165729caa6780f8e74eb6c3ae30a59c
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: cca4612d3b22296209b4adfc6be97cbe95477aa3
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102614629"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104786665"
 ---
 # <a name="whats-new-in-azure-migrate"></a>Nieuwe functies in Azure Migrate
 
@@ -20,7 +20,7 @@ ms.locfileid: "102614629"
 
 ## <a name="update-march-2021"></a>Update (maart 2021)
 - Ondersteuning voor het bieden van meerdere Server referenties op Azure Migrate apparaat om geïnstalleerde toepassingen (software-inventarisatie), afhankelijkheids analyse zonder agent en detectie van SQL Server instanties en data bases in uw VMware-omgeving te detecteren. [Meer informatie](tutorial-discover-vmware.md#provide-server-credentials)
-- Detectie en evaluatie van SQL Server instanties en data bases die worden uitgevoerd in uw VMware-omgeving is nu beschikbaar als preview-versie. [Meer informatie](concepts-azure-sql-assessment-calculation.md)<br/>Als u deze functie wilt proberen, gebruikt u [deze koppeling](https://aka.ms/AzureMigrate/SQL) om een project te maken in de regio **Australië - oost**. Raadpleeg de zelfstudies over [detectie](tutorial-discover-vmware.md) en [evaluatie](tutorial-assess-sql.md) om aan de slag te gaan.
+- Detectie en evaluatie van SQL Server instanties en data bases die worden uitgevoerd in uw VMware-omgeving is nu beschikbaar als preview-versie. [Meer informatie](concepts-azure-sql-assessment-calculation.md) Raadpleeg de zelf studies voor [detectie](tutorial-discover-vmware.md) en [beoordelingen](tutorial-assess-sql.md) om aan de slag te gaan.
 - VMware-migratie zonder agent ondersteunt nu gelijktijdige replicatie van 500 Vm's per vCenter.
 - In Azure Migrate wordt nu automatisch de Azure VM-agent op de VMware-VM's geïnstalleerd tijdens de migratie naar Azure, met behulp van de methode voor VMware-migratie zonder agent.
 

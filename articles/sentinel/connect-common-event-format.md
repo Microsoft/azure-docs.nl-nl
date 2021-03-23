@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/01/2020
 ms.author: yelevin
-ms.openlocfilehash: 6010242e7fbd14aa117c481dee0d05e92928ef1b
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 54fd6c0c085c0055f3114fde606f8f7d2f2e055e
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98747488"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104772056"
 ---
 # <a name="connect-your-external-solution-using-common-event-format"></a>Verbind uw externe oplossing met de algemene gebeurtenis indeling
 
@@ -99,5 +99,7 @@ In dit document hebt u geleerd hoe Azure Sentinel CEF-logboeken verzamelt van be
 - STAP 3: de [connectiviteit controleren](connect-cef-verify.md)
 
 Raadpleeg de volgende artikelen voor meer informatie over wat u moet doen met de gegevens die u hebt verzameld in azure Sentinel:
+
+- Meer informatie over de [veld toewijzing CEF en CommonSecurityLog](cef-name-mapping.md).
 - Meer informatie over het [verkrijgen van inzicht in uw gegevens en mogelijke bedreigingen](quickstart-get-visibility.md).
 - Ga aan de slag met [het detecteren van bedreigingen met Azure Sentinel](./tutorial-detect-threats-built-in.md).

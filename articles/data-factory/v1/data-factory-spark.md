@@ -3,16 +3,16 @@ title: Spark-Program ma's aanroepen vanuit Azure Data Factory
 description: Meer informatie over het aanroepen van Spark-Program ma's vanuit een Azure-data factory met behulp van de MapReduce-activiteit.
 author: dcstwh
 ms.author: weetok
-ms.reviewer: maghan
+ms.reviewer: jburchel
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: a7fcccad039ff6d737e10cfc57ba97f914645a9d
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 644a0d645abb186731ddb1f408cd36e5b9ba3c3f
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100382664"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104780018"
 ---
 # <a name="invoke-spark-programs-from-azure-data-factory-pipelines"></a>Spark-Program ma's aanroepen vanuit Azure Data Factory pijp lijnen
 
@@ -31,7 +31,7 @@ ms.locfileid: "100382664"
 > [!NOTE]
 > Dit artikel is van toepassing op versie 1 van Azure Data Factory, die algemeen beschikbaar is. Als u de huidige versie van de Data Factory-service gebruikt, raadpleegt u [gegevens transformeren met behulp van de Apache Spark-activiteit in Data Factory](../transform-data-using-spark.md).
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 De Spark-activiteit is een van de [activiteiten voor gegevens transformatie](data-factory-data-transformation-activities.md) die door Data Factory worden ondersteund. Met deze activiteit wordt het opgegeven Spark-programma uitgevoerd op uw Spark-cluster in azure HDInsight.
 
 > [!IMPORTANT]

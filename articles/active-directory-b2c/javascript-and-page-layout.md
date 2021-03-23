@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/10/2020
+ms.date: 03/22/2021
 ms.custom: project-no-code, devx-track-js
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 6bb478038d398226db38dc20e49ed7a14e5d5d0a
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: d234e57f7c11b0d9f2cd212bde93a8b8e478ef41
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "99592803"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104781361"
 ---
 # <a name="javascript-and-page-layout-versions-in-azure-active-directory-b2c"></a>Java script-en pagina-indelings versies in Azure Active Directory B2C
 
@@ -155,7 +155,7 @@ Volg deze richt lijnen bij het aanpassen van de interface van uw toepassing met 
     - Gebruik Java script niet rechtstreeks om Azure AD B2C-eind punten aan te roepen.
 - U kunt uw Java script insluiten of u kunt een koppeling maken naar externe java script-bestanden. Wanneer u een extern java script-bestand gebruikt, moet u ervoor zorgen dat u de absolute URL gebruikt en geen relatieve URL.
 - Java script-frameworks:
-    - Azure AD B2C maakt gebruik van een specifieke versie van jQuery. Neem geen andere versie van jQuery op. Als u meer dan één versie op dezelfde pagina gebruikt, worden er problemen veroorzaakt.
+    - Azure AD B2C maakt gebruik [van een specifieke versie van jQuery](page-layout.md#jquery-version). Neem geen andere versie van jQuery op. Als u meer dan één versie op dezelfde pagina gebruikt, worden er problemen veroorzaakt.
     - Het gebruik van RequireJS wordt niet ondersteund.
     - De meeste Java script-frameworks worden niet ondersteund door Azure AD B2C.
 - Azure AD B2C-instellingen kunnen worden gelezen door `window.SETTINGS` - `window.CONTENT` objecten, zoals de huidige taal van de gebruikers interface, aan te roepen. Wijzig de waarde van deze objecten niet.

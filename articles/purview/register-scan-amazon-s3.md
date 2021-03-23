@@ -6,14 +6,14 @@ ms.author: bagol
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
-ms.date: 03/07/2021
+ms.date: 03/21/2021
 ms.custom: references_regions
-ms.openlocfilehash: ddd5c5de85da5ae8cec9d24d33dfd2bf035b5b34
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: f77bd69f8266d9461481cd0a12a7b70107622de5
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102438725"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104773450"
 ---
 # <a name="azure-purview-connector-for-amazon-s3"></a>Azure controle sfeer liggen-connector voor Amazon S3
 
@@ -49,29 +49,30 @@ De volgende tabel bevat de regio's waar u gegevens opslaat in de regio waar deze
 | Opslag regio | Scan regio |
 | ------------------------------- | ------------------------------------- |
 | VS Oost (Ohio)                  | VS Oost (Ohio)                        |
-| VS Oost (N. Virginia           | VS Oost (Ohio)                        |
+| VS Oost (N. Virginia           | VS Oost (Ohio) of VS Oost (N. Virginia                       |
 | VS West (N. Californië         | VS Oost (Ohio)                        |
 | US - west (Oregon)                | VS Oost (Ohio)                        |
 | Afrika (Kaap stad)              | Europa (Frankfurt)                    |
-| Azië en Stille Oceaan (Hongkong)        | Europa (Frankfurt)                    |
-| Azië en Stille Oceaan (Mumbai)           | Europa (Frankfurt)                    |
-| Azië en Stille Oceaan (Osaka-lokaal)      | Europa (Frankfurt)                    |
-| Azië en Stille Oceaan (Seoul)            | Europa (Frankfurt)                    |
-| Azië en Stille Oceaan (Singapore)        | Europa (Frankfurt)                    |
-| Azië en Stille Oceaan (Sydney)           | Europa (Frankfurt)                    |
-| Azië en Stille Oceaan (Tokio)            | Europa (Frankfurt)                    |
+| Azië en Stille Oceaan (Hongkong)        | Europa (Frankfurt) of Azië en Stille Oceaan (Sydney)                   |
+| Azië en Stille Oceaan (Mumbai)           | Europa (Frankfurt) of Azië en Stille Oceaan (Sydney)                   |
+| Azië en Stille Oceaan (Osaka-lokaal)      | Europa (Frankfurt) of Azië en Stille Oceaan (Sydney)                   |
+| Azië en Stille Oceaan (Seoul)            | Europa (Frankfurt) of Azië en Stille Oceaan (Sydney)                   |
+| Azië en Stille Oceaan (Singapore)        | Europa (Frankfurt) of Azië en Stille Oceaan (Sydney)                   |
+| Azië en Stille Oceaan (Sydney)           | Europa (Frankfurt) of Azië en Stille Oceaan (Sydney)                  |
+| Azië en Stille Oceaan (Tokio)            | Europa (Frankfurt) of Azië en Stille Oceaan (Sydney)                 |
 | Canada (centraal)                | VS Oost (Ohio)                        |
 | China (Peking)                 | Niet ondersteund                    |
 | China (Ningxia)                 | Niet ondersteund                   |
 | Europa (Frankfurt)              | Europa (Frankfurt)                    |
-| Europa (Ierland)                | Europa (Frankfurt)                    |
-| Europa (Londen)                 | Europa (Frankfurt)                    |
+| Europa (Ierland)                | Europa (Frankfurt) of Europa (Ierland)                   |
+| Europa (Londen)                 | Europa (Frankfurt) of Europa (Ierland)                   |
 | Europa (Milaan)                  | Europa (Frankfurt)                    |
 | Europa (Parijs)                  | Europa (Frankfurt)                    |
 | Europa (Stockholm)              | Europa (Frankfurt)                    |
 | Midden-Oosten (Bahrein)           | Europa (Frankfurt)                    |
 | Zuid-Amerika (Sao Paulo)       | VS Oost (Ohio)                        |
 | | |
+
 ## <a name="prerequisites"></a>Vereisten
 
 Zorg ervoor dat u de volgende vereisten hebt uitgevoerd voordat u uw Amazon S3-buckets als controle sfeer liggen-gegevens bronnen toevoegt en uw S3-gegevens scant.

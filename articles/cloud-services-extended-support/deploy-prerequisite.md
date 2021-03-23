@@ -8,12 +8,12 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: 79d6fecddf060909a74664ff29e08301f45d7042
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: d85aad16049dee6496cb1eaf9def5451625ab876
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103472306"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104773467"
 ---
 # <a name="prerequisites-for-deploying-azure-cloud-services-extended-support"></a>Vereisten voor het implementeren van Azure Cloud Services (uitgebreide ondersteuning)
 
@@ -86,6 +86,9 @@ Verwijder oude Diagnostische instellingen voor elke rol in het service configura
 
 ## <a name="required-service-definition-file-csdef-updates"></a>Vereiste updates voor het service definitie bestand (. csdef)
 
+> [!NOTE]
+> Wijzigingen in het service definitie bestand (. csdef) vereist dat het pakket bestand (. cspkg) opnieuw wordt gegenereerd. Maak uw. cspkg-bericht en verpakt het opnieuw met de volgende wijzigingen in het. csdef-bestand om de meest recente instellingen voor uw Cloud service op te halen
+
 ### <a name="1-virtual-machine-sizes"></a>1) grootte van virtuele machines
 De volgende grootten zijn afgeschaft in Azure Resource Manager. Als u ze echter wilt blijven gebruiken, moet u de `vmsize` naam bijwerken met de bijbehorende Azure Resource Manager naam Conventie.  
 
@@ -130,7 +133,7 @@ Implementaties die de oude invoeg toepassingen voor diagnostische gegevens hebbe
 
 ## <a name="key-vault-creation"></a>Key Vault maken 
 
-Key Vault wordt gebruikt om certificaten op te slaan die zijn gekoppeld aan Cloud Services (uitgebreide ondersteuning). Voeg de certificaten toe aan Key Vault en verwijs vervolgens naar de certificaat vingerafdrukken in het service configuratie bestand. U moet ook Key Vault inschakelen voor de juiste machtigingen, zodat Cloud Services (uitgebreide ondersteunings resource) het certificaat kan ophalen dat is opgeslagen als geheimen van Key Vault. U kunt een sleutel kluis maken in de [Azure Portal](../key-vault/general/quick-create-portal.md) of met behulp van [Power shell](../key-vault/general/quick-create-powershell.md). De sleutel kluis moet worden gemaakt in dezelfde regio en hetzelfde abonnement als de Cloud service. Zie [certificaten met Azure Cloud Services gebruiken (uitgebreide ondersteuning)](certificates-and-key-vault.md)voor meer informatie.
+Key Vault wordt gebruikt om certificaten op te slaan die zijn gekoppeld aan Cloud Services (uitgebreide ondersteuning). Voeg de certificaten toe aan Key Vault en verwijs vervolgens naar de certificaat vingerafdrukken in het service configuratie bestand. U moet ook Key Vault ' toegangs beleid ' (in portal) inschakelen voor toegang tot ' Azure Virtual Machines voor implementatie ' en ' Azure Resource Manager voor sjabloon implementatie ' zodat Cloud Services (uitgebreide ondersteunings resource) een certificaat kan ophalen dat is opgeslagen als geheimen van Key Vault. U kunt een sleutel kluis maken in de [Azure Portal](../key-vault/general/quick-create-portal.md) of met behulp van [Power shell](../key-vault/general/quick-create-powershell.md). De sleutel kluis moet worden gemaakt in dezelfde regio en hetzelfde abonnement als de Cloud service. Zie [certificaten met Azure Cloud Services gebruiken (uitgebreide ondersteuning)](certificates-and-key-vault.md)voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen 
 - Controleer de [vereisten voor implementatie](deploy-prerequisite.md) voor Cloud Services (uitgebreide ondersteuning).

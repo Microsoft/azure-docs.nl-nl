@@ -11,12 +11,12 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sstein
 ms.date: 02/22/2021
-ms.openlocfilehash: 2aba44f6c2f10ead1827e1b1411f3824a0ec2d6c
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: ce8d4bf36524e3e7e7b3b8c974aa189fa000d845
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "101658551"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104773246"
 ---
 # <a name="scale-single-database-resources-in-azure-sql-database"></a>Resources van een individuele database schalen in Azure SQL Database
 
@@ -112,7 +112,7 @@ else {
 - Bij het downgradeen van een Data Base met [geo-replicatie](active-geo-replication-configure-portal.md) is ingeschakeld, downgradet u de primaire data bases naar de gewenste servicelaag en reken grootte voordat u de secundaire data base downgradet (algemene richt lijnen voor de beste prestaties). Bij downgrade naar een andere editie is het een vereiste dat de primaire data base het eerst downgradet.
 - De mogelijkheden om de service te herstellen verschillen voor de verschillende servicelagen. Als u downgradet naar de **basis** -laag, hebt u een lagere Bewaar periode voor back-ups. Zie [Azure SQL database back-ups](automated-backups-overview.md).
 - De nieuwe eigenschappen voor de Data Base worden pas toegepast als de wijzigingen zijn voltooid.
-- Wanneer het kopiëren van gegevens vereist is voor het schalen van een Data Base (Zie [latentie](#latency)) bij het wijzigen van de servicelaag, kan het hoge bron gebruik voor de schaal bewerking langer duren. Met [versneld database herstel (ADR)](/sql/relational-databases/accelerated-database-recovery-concepts.md)is het terugdraaien van langlopende trans acties geen aanzienlijke vertragings bron, maar met het hoge gelijktijdige gebruik van bronnen kunnen minder compute-, opslag-en netwerk bandbreedte bronnen worden gebruikt voor schalen, met name voor kleinere reken grootten.
+- Wanneer het kopiëren van gegevens vereist is voor het schalen van een Data Base (Zie [latentie](#latency)) bij het wijzigen van de servicelaag, kan het hoge bron gebruik voor de schaal bewerking langer duren. Met [versneld database herstel (ADR)](/sql/relational-databases/accelerated-database-recovery-concepts)is het terugdraaien van langlopende trans acties geen aanzienlijke vertragings bron, maar met het hoge gelijktijdige gebruik van bronnen kunnen minder compute-, opslag-en netwerk bandbreedte bronnen worden gebruikt voor schalen, met name voor kleinere reken grootten.
 
 ## <a name="billing"></a>Billing
 

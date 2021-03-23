@@ -4,7 +4,7 @@ description: In dit artikel worden aanbevolen procedures besproken die u moet ov
 author: TerryLanfear
 manager: barbkess
 ms.author: terrylan
-ms.date: 06/12/2019
+ms.date: 03/21/2021
 ms.topic: article
 ms.service: security
 ms.subservice: security-develop
@@ -13,15 +13,16 @@ ms.assetid: 521180dc-2cc9-43f1-ae87-2701de7ca6b8
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.openlocfilehash: 52c93bef4529f27ad38677f17209e7b48e997368
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 8edceb31a0cdde36c987076e91350116a4f81255
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102548441"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104782398"
 ---
 # <a name="develop-secure-applications-on-azure"></a>Beveiligde toepassingen ontwikkelen in Azure
-In dit artikel bieden we beveiligings activiteiten en-controles waarmee u rekening moet houden bij het ontwikkelen van toepassingen voor de Cloud. Beveiligings vragen en-concepten waarmee u rekening moet houden tijdens de implementatie-en verificatie fasen van micro soft [Security Development Lifecycle (SDL)](/previous-versions/windows/desktop/cc307891(v=msdn.10)) vallen onder de dekking. Het doel is om u te helpen bij het definiëren van activiteiten en Azure-Services die u kunt gebruiken om een veiligere toepassing te ontwikkelen.
+
+In dit artikel bieden we beveiligings activiteiten en-besturings elementen waarmee u rekening moet houden bij het ontwikkelen van toepassingen voor de Cloud. Beveiligings vragen en-concepten waarmee u rekening moet houden tijdens de implementatie-en verificatie fasen van micro soft [Security Development Lifecycle (SDL)](/previous-versions/windows/desktop/cc307891(v=msdn.10)) vallen onder de dekking. Het doel is om u te helpen bij het definiëren van activiteiten en Azure-Services die u kunt gebruiken om een veiligere toepassing te ontwikkelen.
 
 In dit artikel komen de volgende SDL-fasen aan bod:
 
@@ -29,6 +30,7 @@ In dit artikel komen de volgende SDL-fasen aan bod:
 - Verificatie
 
 ## <a name="implementation"></a>Implementatie
+
 De focus van de implementatie fase is het instellen van aanbevolen procedures voor vroegtijdige preventie en voor het detecteren en verwijderen van beveiligings problemen van de code.
 Stel dat uw toepassing wordt gebruikt op een manier die u niet wilt gebruiken. Zo kunt u zich beschermen tegen onbedoelde of opzettelijke misbruik van uw toepassing.
 
@@ -89,7 +91,7 @@ Dit betekent dat minder mensen toegang hebben tot uw echte gegevens, waardoor uw
 
 U moet een sterk wachtwoord beleid implementeren om ervoor te zorgen dat gebruikers een complex wacht woord maken (bijvoorbeeld: 12 tekens minimum lengte en alfanumerieke en speciale tekens vereisen) om te voor komen dat de computer wordt geraden.
 
-U kunt een identiteits raamwerk gebruiken om wachtwoord beleid te maken en af te dwingen. Azure AD B2C helpt u bij het beheer van wacht woorden door [ingebouwde beleids regels](../../active-directory-b2c/tutorial-create-user-flows.md#create-a-password-reset-user-flow), [selfservice voor wachtwoord herstel](../../active-directory-b2c/user-flow-self-service-password-reset.md)en meer te bieden.
+Azure Active Directory B2C helpt u bij het beheer van wacht woorden door [selfservice voor wachtwoord herstel](../../active-directory-b2c/add-password-reset-policy.md)in te stellen, het [opnieuw instellen van wacht woorden](../../active-directory-b2c/force-password-reset.md)af te dwingen en nog veel meer.
 
 Om te beschermen tegen aanvallen op standaard accounts, moet u controleren of alle sleutels en wacht woorden worden vervangen en dat ze worden gegenereerd of vervangen nadat u resources hebt geïnstalleerd.
 
@@ -108,6 +110,7 @@ Met antimalware Protection kunt u virussen, spyware en andere schadelijke softwa
 Sla gevoelige inhoud niet op in de cache van de browser. Browsers kunnen gegevens opslaan voor caching en geschiedenis. Bestanden in de cache worden opgeslagen in een map, zoals de map Tijdelijke Internet bestanden, in het geval van Internet Explorer. Wanneer deze pagina's weer worden genoemd, worden de pagina's uit de cache van de browser weer gegeven. Als gevoelige informatie (adres, creditcard gegevens, sofi-nummer, gebruikers naam) wordt weer gegeven aan de gebruiker, kan de informatie worden opgeslagen in de cache van de browser en kan worden opgehaald door de cache van de browser te controleren of door simpelweg op de knop **terug** van de browser te drukken.
 
 ## <a name="verification"></a>Verificatie
+
 De verificatie fase omvat een uitgebreide inspanning om ervoor te zorgen dat de code voldoet aan de beveiligings-en privacyfuncties die in de voor gaande fasen zijn vastgelegd.
 
 ### <a name="find-and-fix-vulnerabilities-in-your-application-dependencies"></a>Problemen in uw toepassings afhankelijkheden detecteren en oplossen
@@ -151,6 +154,7 @@ Om ervoor te zorgen dat uw toepassing veilig is, is het belang rijk dat u een an
 [Secure DevOps Kit voor Azure](https://azsk.azurewebsites.net/index.html) (AzSK) bevat SVTs voor meerdere services van het Azure-platform. U voert deze SVTs regel matig uit om ervoor te zorgen dat uw Azure-abonnement en de verschillende resources waaruit uw toepassing bestaat een veilige status hebben. U kunt deze tests ook automatiseren door gebruik te maken van de functie continue integratie/doorlopende implementatie (CI/CD) Extensions van AzSK, die SVTs beschikbaar maakt als een Visual Studio-uitbrei ding.
 
 ## <a name="next-steps"></a>Volgende stappen
+
 In de volgende artikelen raden wij aan beveiligings maatregelen en activiteiten te gebruiken die u kunnen helpen bij het ontwerpen en implementeren van veilige toepassingen.
 
 - [Veilige toepassingen ontwerpen](secure-design.md)

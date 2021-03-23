@@ -5,14 +5,14 @@ author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.topic: reference
-ms.date: 03/11/2021
+ms.date: 03/22/2021
 ms.author: memildin
-ms.openlocfilehash: 4f2b31a4760a07779eebdd9492731ffe7e324d37
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: f6ec14c577d1203b92085b791f89e4873a97c41a
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103149631"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104786080"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Wat is er nieuw in Azure Security Center?
 
@@ -26,7 +26,6 @@ Zie [Belangrijke aanstaande wijzigingen aan Azure Security Center](upcoming-chan
 > Als u op zoek bent naar items die ouder zijn dan zes maanden, vindt u deze in het [Archief voor nieuwe functies in Azure AD in Azure Security Center](release-notes-archive.md).
 
 
-
 ## <a name="march-2021"></a>2021 maart
 
 De updates in maart zijn onder andere:
@@ -38,6 +37,7 @@ De updates in maart zijn onder andere:
 - [Aanbevelings gegevens kunnen worden weer gegeven in azure resource Graph met ' verkennen in ARG '](#recommendation-data-can-be-viewed-in-azure-resource-graph-with-explore-in-arg)
 - [Updates voor het beleid voor het implementeren van werk stroom automatisering](#updates-to-the-policies-for-deploying-workflow-automation)
 - [Twee oudere aanbevelingen schrijven gegevens niet meer rechtstreeks naar Azure-activiteiten logboek](#two-legacy-recommendations-no-longer-write-data-directly-to-azure-activity-log)
+- [Pagina verbeteringen voor aanbevelingen](#recommendations-page-enhancements)
 
 
 ### <a name="azure-firewall-management-integrated-into-security-center"></a>Azure Firewall-beheer geïntegreerd in Security Center
@@ -140,6 +140,22 @@ De twee oudere aanbevelingen zijn:
 
 Als u toegang hebt tot informatie over deze twee aanbevelingen in het activiteiten logboek ' aanbeveling van het type TaskDiscovery ', is dit niet meer beschikbaar.
 
+
+### <a name="recommendations-page-enhancements"></a>Pagina verbeteringen voor aanbevelingen 
+
+We hebben een verbeterde versie van de lijst met aanbevelingen uitgebracht om in één oogopslag meer informatie te presen teren.
+
+Nu ziet u de volgende pagina:
+
+1. De maximale score en huidige score voor elk beveiligings beheer.
+1. Pictogrammen vervangen Tags zoals **snelle oplossing** en **Preview**.
+1. Een nieuwe kolom met het [beleids initiatief](security-policy-concept.md) dat is gerelateerd aan elke aanbeveling-zichtbaar als ' groeperen op besturings elementen ' is uitgeschakeld.
+
+:::image type="content" source="media/release-notes/recommendations-grid-enhancements.png" alt-text="Uitbrei dingen van de pagina aanbevelingen van Azure Security Center-maart 2021" lightbox="media/release-notes/recommendations-grid-enhancements.png":::
+
+:::image type="content" source="media/release-notes/recommendations-grid-enhancements-initiatives.png" alt-text="Verbeteringen van de aanbevelingen van de Azure Security Center-lijst-maart 2021" lightbox="media/release-notes/recommendations-grid-enhancements-initiatives.png":::
+
+Meer informatie in [Beveiligingsaanbevelingen in Azure Security Center](security-center-recommendations.md).
 
 
 ## <a name="february-2021"></a>Februari 2021

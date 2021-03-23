@@ -1,21 +1,21 @@
 ---
-title: Apps op on-premises servers detecteren met Azure Migrate
-description: Meer informatie over het detecteren van apps, functies en onderdelen op on-premises servers met Azure Migrate server-evaluatie.
-author: vikram1988
-ms.author: vibansa
+title: Software-inventaris op on-premises servers met Azure Migrate detecteren
+description: Meer informatie over het detecteren van software-inventaris op on-premises servers met Azure Migrate detectie en evaluatie.
+author: vineetvikram
+ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: how-to
-ms.date: 06/10/2020
-ms.openlocfilehash: 8266b585881546b37bbb21b82780ab26d85dada7
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.date: 03/18/2021
+ms.openlocfilehash: 47ea06fa2143f9a5dc5808ccb98fc80c87fefd93
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102048077"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104786699"
 ---
-# <a name="discover-installed-applications-roles-and-features-software-inventory-and-sql-server-instances-and-databases"></a>Geïnstalleerde toepassingen, functies en onderdelen (software-inventarisatie) en SQL Server instanties en data bases detecteren
+# <a name="discover-installed-software-inventory-and-sql-server-instances-and-databases"></a>Geïnstalleerde software-inventaris en SQL Server instanties en data bases detecteren
 
-In dit artikel wordt beschreven hoe u geïnstalleerde toepassingen, functies en onderdelen (software-inventarisatie) en SQL Server instanties en data bases op servers met in uw VMware-omgeving detecteert met behulp van Azure Migrate: Server Assessment.
+In dit artikel wordt beschreven hoe u geïnstalleerde software-inventarisatie en SQL Server instanties en data bases detecteert op servers die in uw VMware-omgeving worden uitgevoerd, met behulp van Azure Migrate: hulp programma voor detectie en evaluatie.
 
 Door software-inventarisatie uit te voeren, kunt u een pad voor de migratie naar Azure identificeren en aanpassen voor uw workloads. Software-inventarisatie gebruikt het Azure Migrate apparaat om detectie uit te voeren met behulp van Server referenties. Het is volledig zonder agent: er zijn geen agents geïnstalleerd op de servers om deze gegevens te verzamelen.
 
@@ -24,7 +24,7 @@ Door software-inventarisatie uit te voeren, kunt u een pad voor de migratie naar
 
 ## <a name="before-you-start"></a>Voordat u begint
 
-- Zorg ervoor dat u [een Azure migrate-project hebt gemaakt](./create-manage-projects.md) met het Azure migrate: Server assessment tool is toegevoegd.
+- Zorg ervoor dat u [een project hebt gemaakt](./create-manage-projects.md) met de Azure migrate: hulp programma voor detectie en evaluatie hieraan is toegevoegd.
 - Raadpleeg de [VMware-vereisten](migrate-support-matrix-vmware.md#vmware-requirements) om software-inventarisatie uit te voeren.
 - Controleer de [vereisten voor apparaten](migrate-support-matrix-vmware.md#azure-migrate-appliance-requirements) voordat u het apparaat instelt.
 - Bekijk [vereisten voor toepassings detectie](migrate-support-matrix-vmware.md#application-discovery-requirements) voordat de software-inventaris op servers wordt gestart.
@@ -35,11 +35,11 @@ Door software-inventarisatie uit te voeren, kunt u een pad voor de migratie naar
 2. Bekijk de Azure-Url's die het apparaat nodig heeft voor toegang tot de [open bare](migrate-appliance.md#public-cloud-urls) en [overheids Clouds](migrate-appliance.md#government-cloud-urls).
 3. [Bekijk gegevens](migrate-appliance.md#collected-data---vmware) die door het apparaat worden verzameld tijdens de detectie en evaluatie.
 4. [Noteer](migrate-support-matrix-vmware.md#port-access-requirements) de toegangs vereisten voor poorten voor het apparaat.
-5. [Implementeer het Azure migrate apparaat om de](how-to-set-up-appliance-vmware.md) detectie te starten. Als u het apparaat wilt implementeren, downloadt en importeert u een eicellen-sjabloon in VMware om een server te maken die wordt uitgevoerd in uw vCenter Server. Nadat u het apparaat hebt geïmplementeerd, moet u dit registreren bij het Azure Migrate-project en het configureren om de detectie te initiëren.
+5. [Implementeer het Azure migrate apparaat om de](how-to-set-up-appliance-vmware.md) detectie te starten. Als u het apparaat wilt implementeren, downloadt en importeert u een eicellen-sjabloon in VMware om een server te maken die wordt uitgevoerd in uw vCenter Server. Nadat u het apparaat hebt geïmplementeerd, moet u het registreren bij het project en het configureren om de detectie te initiëren.
 6. Wanneer u het apparaat configureert, moet u het volgende opgeven in de configuratie beheer van het apparaat:
     - De details van de vCenter Server waarmee u verbinding wilt maken.
     - vCenter Server het bereik van referenties voor het detecteren van de servers in uw VMware-omgeving.
-    - Server referenties die domein-/Windows-(niet-domein)/Linux-referenties (niet-domein) kunnen zijn. Meer [informatie](add-server-credentials.md) over hoe u referenties kunt opgeven en hoe u deze kunt afhandelen.
+    - Server referenties, die domein-of Windows-referenties (niet-domein)/Linux (niet-domein) kunnen zijn. Meer [informatie](add-server-credentials.md) over hoe u referenties kunt opgeven en hoe u deze kunt afhandelen.
 
 ## <a name="verify-permissions"></a>Machtigingen controleren
 
@@ -61,19 +61,19 @@ Door software-inventarisatie uit te voeren, kunt u een pad voor de migratie naar
 
 Nadat de software-inventarisatie is voltooid, kunt u de inventaris bekijken en exporteren in de Azure Portal.
 
-1. Klik in **Azure migrate servers**  >  **Azure migrate: Server evaluatie** op de weer gegeven aantal om de pagina **gedetecteerde servers** te openen.
+1. Klik in **Azure migrate-Windows-, Linux-en SQL-servers**  >  **Azure migrate: detectie en evaluatie** op de weer gegeven aantallen om de pagina **gedetecteerde servers** te openen.
 
     > [!NOTE]
     > In deze fase kunt u eventueel ook afhankelijkheids analyse inschakelen voor de gedetecteerde servers, zodat u afhankelijkheden kunt visualiseren tussen servers die u wilt beoordelen. Meer [informatie](concepts-dependency-visualization.md) over afhankelijkheids analyse.
 
-2. Klik in de kolom **gedetecteerde toepassingen** op het aantal weer gegeven items om de gedetecteerde toepassingen, functies en onderdelen te bekijken.
+2. Klik in de kolom **software-inventarisatie** op het weer gegeven aantal om de gedetecteerde toepassingen, functies en onderdelen te bekijken.
 4. Als u de inventaris wilt exporteren, klikt u op **app-inventaris exporteren** in **gedetecteerde servers**.
 
-De inventarisatie van toepassingen wordt geëxporteerd en gedownload in Excel-indeling. Op de **inventarisatie** pagina van de toepassing worden alle gedetecteerde apps op alle servers weer gegeven.
+De software-inventarisatie wordt geëxporteerd en gedownload in Excel-indeling. In het overzicht van de **software-inventarisatie** worden alle gedetecteerde apps op alle servers weer gegeven.
 
 ## <a name="discover-sql-server-instances-and-databases"></a>SQL Server instanties en data bases detecteren
 
-- Toepassings detectie identificeert ook de SQL Server exemplaren die worden uitgevoerd in uw VMware-omgeving.
+- Met software-inventarisatie worden ook de SQL Server exemplaren geïdentificeerd die in uw VMware-omgeving worden uitgevoerd.
 - Als u geen Windows-verificatie-of SQL Server authenticatie referenties hebt ingevoerd op de configuratie beheer van het apparaat, voegt u de referenties toe zodat het apparaat deze kan gebruiken om verbinding te maken met de respectieve SQL Server instanties.
 
 Zodra het apparaat is verbonden, worden configuratie-en prestatie gegevens van SQL Server instanties en data bases verzameld. De SQL Server configuratie gegevens worden elke 24 uur bijgewerkt en de prestatie gegevens worden elke 30 seconden vastgelegd. Elke wijziging in de eigenschappen van de SQL Server-instantie en data bases, zoals de database status, het compatibiliteits niveau, enzovoort, kan tot wel 24 uur duren om bij te werken op de portal.

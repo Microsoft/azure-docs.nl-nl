@@ -1,32 +1,32 @@
 ---
 title: Azure Migrate-apparaatarchitectuur
-description: Biedt een overzicht van het Azure Migrate apparaat dat in Server evaluatie en-migratie wordt gebruikt.
-author: vikram1988
-ms.author: vibansa
+description: Biedt een overzicht van het Azure Migrate apparaat dat wordt gebruikt in Server detectie, evaluatie en migratie.
+author: vineetvikram
+ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: conceptual
-ms.date: 06/09/2020
-ms.openlocfilehash: d695758849fd4f7e6f595820221f6b8606fe7cf1
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.date: 03/18/2021
+ms.openlocfilehash: f3a94576ef58eabf9d747c6e6c3a6372569d4cf1
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102096187"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104785237"
 ---
 # <a name="azure-migrate-appliance-architecture"></a>Azure Migrate-apparaatarchitectuur
 
-In dit artikel worden de architectuur en processen van de Azure Migrate-apparaten beschreven. Het Azure Migrate apparaat is een licht gewicht apparaat dat on-premises wordt geïmplementeerd om Vm's en fysieke servers te detecteren voor migratie naar Azure.
+In dit artikel worden de architectuur en processen van de Azure Migrate-apparaten beschreven. Het Azure Migrate apparaat is een licht gewicht apparaat dat on-premises is geïmplementeerd, om servers te detecteren voor migratie naar Azure.
 
 ## <a name="deployment-scenarios"></a>Implementatiescenario's
 
 Het Azure Migrate apparaat wordt gebruikt in de volgende scenario's.
 
-**Scenario** | **Hulpprogramma** | **Gebruikt om** 
+**Scenario** | **Hulpprogramma** | **Gebruikt om**
 --- | --- | ---
-**Detectie en evaluatie van servers die worden uitgevoerd in de VMware-omgeving** | Azure Migrate: Server evaluatie | Servers detecteren die in uw VMware-omgeving worden uitgevoerd<br/><br/> Voer de detectie van geïnstalleerde toepassingen, afhankelijkheids analyse zonder agent en detectie van SQL Server instanties en data bases.<br/><br/> Verzamelen van meta gegevens voor de server configuratie en prestaties voor evaluaties.
+**Detectie en evaluatie van servers die worden uitgevoerd in de VMware-omgeving** | Azure Migrate: detectie en evaluatie | Servers detecteren die in uw VMware-omgeving worden uitgevoerd<br/><br/> Voer de detectie van de geïnstalleerde software-inventarisatie, afhankelijkheids analyse zonder agent en detectie van SQL Server instanties en data bases.<br/><br/> Verzamelen van meta gegevens voor de server configuratie en prestaties voor evaluaties.
 **Migratie van servers die in VMware-omgeving worden uitgevoerd zonder agent** | Azure Migrate: Server migratie | Ontdek servers die worden uitgevoerd in uw VMware-omgeving.<br/><br/> Servers repliceren zonder agents te installeren.
-**Detectie en evaluatie van servers die worden uitgevoerd in de Hyper-V-omgeving** | Azure Migrate: Server evaluatie | Detecteer servers die worden uitgevoerd in uw Hyper-V-omgeving.<br/><br/> Verzamelen van meta gegevens voor de server configuratie en prestaties voor evaluaties.
-**Detectie en evaluatie van fysieke of gevirtualiseerde on-premises servers** |  Azure Migrate: Server evaluatie |  Fysieke of gevirtualiseerde on-premises servers detecteren.<br/><br/> Verzamelen van meta gegevens voor de server configuratie en prestaties voor evaluaties.
+**Detectie en evaluatie van servers die worden uitgevoerd in de Hyper-V-omgeving** | Azure Migrate: detectie en evaluatie | Detecteer servers die worden uitgevoerd in uw Hyper-V-omgeving.<br/><br/> Verzamelen van meta gegevens voor de server configuratie en prestaties voor evaluaties.
+**Detectie en evaluatie van fysieke of gevirtualiseerde on-premises servers** |  Azure Migrate: detectie en evaluatie |  Fysieke of gevirtualiseerde on-premises servers detecteren.<br/><br/> Verzamelen van meta gegevens voor de server configuratie en prestaties voor evaluaties.
 
 ## <a name="deployment-methods"></a>Implementatie methoden
 
@@ -53,7 +53,6 @@ Het apparaat heeft de volgende services:
 > [!Note]
 > De laatste drie services zijn alleen beschikbaar in het apparaat dat wordt gebruikt voor detectie en evaluatie van servers die in uw VMware-omgeving worden uitgevoerd.<br/> Detectie en evaluatie van SQL Server instanties en data bases die worden uitgevoerd in uw VMware-omgeving is nu beschikbaar als preview-versie. Als u deze functie wilt proberen, gebruikt u [**deze koppeling**](https://aka.ms/AzureMigrate/SQL) om een project te maken in de regio **Australië - oost**. Als u al een project in Australië-oost hebt en u deze functie wilt proberen, zorgt u ervoor dat u aan deze [**vereisten**](how-to-discover-sql-existing-project.md) voldoet in de portal.
 
-
 ## <a name="discovery-and-collection-process"></a>Detectie-en verzamelings proces
 
 :::image type="content" source="./media/migrate-appliance-architecture/architecture1.png" alt-text="Architectuur van apparaat":::
@@ -64,9 +63,9 @@ Het apparaat communiceert met de detectie bronnen met behulp van het volgende pr
 ---|---|---|---
 **Detectie starten** | Het apparaat communiceert standaard met de vCenter-Server op TCP-poort 443. Als de vCenter-Server op een andere poort luistert, kunt u deze configureren in het configuratie beheer van het apparaat. | Het apparaat communiceert met de Hyper-V-hosts op WinRM-poort 5985 (HTTP). | Het apparaat communiceert met Windows-servers via WinRM-poort 5985 (HTTP) met Linux-servers via poort 22 (TCP).
 **Meta gegevens voor configuratie en prestaties verzamelen** | Het apparaat verzamelt de meta gegevens van servers die worden uitgevoerd op vCenter Server met behulp van vSphere-Api's door verbinding te maken met poort 443 (standaard poort) of een andere poort vCenter Server luistert aan. | Het apparaat verzamelt de meta gegevens van servers die worden uitgevoerd op Hyper-V-hosts met behulp van een Common Information Model (CIM)-sessie met hosts op poort 5985.| Het apparaat verzamelt meta gegevens van Windows-servers met behulp van Common Information Model (CIM)-sessie met servers op poort 5985 en vanaf Linux-servers met behulp van SSH-connectiviteit op poort 22.
-**Detectie gegevens verzenden** | Het apparaat verzendt de verzamelde gegevens naar Azure Migrate: Server evaluatie en Azure Migrate: Server migratie via SSL-poort 443.<br/><br/> Het apparaat kan verbinding maken met Azure via internet of via ExpressRoute (micro soft-peering is vereist). | Het apparaat verzendt de verzamelde gegevens naar Azure Migrate: Server evaluatie via SSL-poort 443.<br/><br/> Het apparaat kan verbinding maken met Azure via internet of via ExpressRoute (micro soft-peering is vereist).| Het apparaat verzendt de verzamelde gegevens naar Azure Migrate: Server evaluatie via SSL-poort 443.<br/><br/> Het apparaat kan verbinding maken met Azure via internet of via ExpressRoute (micro soft-peering is vereist).
+**Detectie gegevens verzenden** | Het apparaat verzendt de verzamelde gegevens naar Azure Migrate: detectie en evaluatie en Azure Migrate: Server migratie via SSL-poort 443.<br/><br/> Het apparaat kan verbinding maken met Azure via internet of via ExpressRoute (micro soft-peering is vereist). | Het apparaat verzendt de verzamelde gegevens naar Azure Migrate: detectie en evaluatie via SSL-poort 443.<br/><br/> Het apparaat kan verbinding maken met Azure via internet of via ExpressRoute (micro soft-peering is vereist).| Het apparaat verzendt de verzamelde gegevens naar Azure Migrate: detectie en evaluatie via SSL-poort 443.<br/><br/> Het apparaat kan verbinding maken met Azure via internet of via ExpressRoute (micro soft-peering is vereist).
 **Frequentie van gegevens verzameling** | Meta gegevens van de configuratie worden verzameld en verzonden om de 30 minuten. <br/><br/> Meta gegevens voor prestaties worden elke 20 seconden verzameld en worden geaggregeerd om elke 10 minuten een gegevens punt naar Azure te verzenden. <br/><br/> Software-inventarisatie gegevens worden één keer per 12 uur verzonden naar Azure. <br/><br/> Afhankelijkheids gegevens zonder agent worden elke vijf minuten verzameld, geaggregeerd op het apparaat en elke 6 uur naar Azure verzonden. <br/><br/> De SQL Server configuratie gegevens worden elke 24 uur bijgewerkt en de prestatie gegevens worden elke 30 seconden vastgelegd.| Meta gegevens van de configuratie worden verzameld en verzonden om de 30 minuten. <br/><br/> Meta gegevens voor prestaties worden elke 30 seconden verzameld en worden geaggregeerd om om de 10 minuten een gegevens punt naar Azure te verzenden.|  Meta gegevens van de configuratie worden verzameld en verzonden om de 30 minuten. <br/><br/> Meta gegevens voor prestaties worden elke vijf minuten verzameld en worden geaggregeerd om elke 10 minuten een gegevens punt naar Azure te verzenden.
-**Evalueren en migreren** | U kunt evaluaties maken op basis van de meta gegevens die door het apparaat worden verzameld met behulp van Azure Migrate: Server assessment tool.<br/><br/>Daarnaast kunt u ook beginnen met het migreren van servers die worden uitgevoerd in uw VMware-omgeving met behulp van Azure Migrate: hulp programma voor server migratie om Server replicatie zonder agent te organiseren.| U kunt evaluaties maken op basis van de meta gegevens die door het apparaat worden verzameld met behulp van Azure Migrate: Server assessment tool. | U kunt evaluaties maken op basis van de meta gegevens die door het apparaat worden verzameld met behulp van Azure Migrate: Server assessment tool.
+**Evalueren en migreren** | U kunt evaluaties maken op basis van de meta gegevens die door het apparaat worden verzameld met behulp van Azure Migrate: hulp programma voor detectie en evaluatie.<br/><br/>Daarnaast kunt u ook beginnen met het migreren van servers die worden uitgevoerd in uw VMware-omgeving met behulp van Azure Migrate: hulp programma voor server migratie om Server replicatie zonder agent te organiseren.| U kunt evaluaties maken op basis van de meta gegevens die door het apparaat worden verzameld met behulp van Azure Migrate: hulp programma voor detectie en evaluatie. | U kunt evaluaties maken op basis van de meta gegevens die door het apparaat worden verzameld met behulp van Azure Migrate: hulp programma voor detectie en evaluatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

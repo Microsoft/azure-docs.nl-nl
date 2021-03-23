@@ -1,24 +1,14 @@
 ---
 title: Defender-IoT-micro agent voor Azure RTO'S configureren en aanpassen
 description: Meer informatie over het configureren en aanpassen van uw Defender-IoT-micro agent voor Azure RTO'S.
-services: defender-for-iot
-ms.service: defender-for-iot
-documentationcenter: na
-author: shhazam-ms
-manager: rkarlin
-editor: ''
-ms.devlang: na
 ms.topic: how-to
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 03/07/2021
-ms.author: shhazam
-ms.openlocfilehash: 874a783763882a28f2fe7078e3a264d09107808a
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: afab823b6bb187c9a7b7529f52efc37b20e8c66f
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103495093"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104778981"
 ---
 # <a name="configure-and-customize-defender-iot-micro-agent-for-azure-rtos-preview"></a>Defender-IoT-micro agent voor Azure RTO'S (preview) configureren en aanpassen
 

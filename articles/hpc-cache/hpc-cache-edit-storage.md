@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: how-to
 ms.date: 03/10/2021
 ms.author: v-erkel
-ms.openlocfilehash: 78010ef2d93b23a12fc7f3e988a536b4993b4dd4
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 0c505937d4adbe2596e91ed7269676e60ada8253
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103471858"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104772574"
 ---
 # <a name="edit-storage-targets"></a>Opslagdoelen bewerken
 
@@ -76,7 +76,7 @@ Gebruik de **naam ruimte** pagina voor uw Azure HPC-cache. De naam ruimte pagina
 
 Klik op de naam van het pad dat u wilt wijzigen en maak het nieuwe pad in het bewerkings venster dat wordt weer gegeven.
 
-![Scherm afbeelding van de pagina met de naam ruimte na klikken op een pad naar een BLOB-naam ruimte: de velden bewerken worden in een deel venster aan de rechter kant weer gegeven](media/edit-namespace-blob.png)
+![Scherm afbeelding van de pagina met de naam ruimte na klikken op een pad naar een BLOB-naam ruimte: de velden bewerken worden in een deel venster aan de rechter kant weer gegeven](media/update-namespace-blob.png)
 
 Nadat u wijzigingen hebt aangebracht, klikt u op **OK** om het opslag doel bij te werken of klikt u op **Annuleren** om de wijzigingen te negeren.
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/28/2020
 ms.author: yelevin
-ms.openlocfilehash: 5a3b7d4f60877d1301f03aa4f015695a6a4639be
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 77a8e208e463b8ab20d563421d447813b1ce84ee
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104580705"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104772549"
 ---
 # <a name="permissions-in-azure-sentinel"></a>Machtigingen in Azure Sentinel
 
@@ -56,7 +56,7 @@ Gebruikers met bepaalde taak vereisten moeten mogelijk aanvullende rollen of spe
 
 - Werken met playbooks om reacties op bedreigingen te automatiseren
 
-    Azure Sentinel maakt gebruik van **playbooks** voor automatische reactie op bedreigingen. Playbooks zijn gebaseerd op **Azure Logic apps** en zijn een afzonderlijke Azure-resource. U kunt het beste aan specifieke leden van uw beveiligings team toewijzen om Logic Apps te gebruiken voor via-bewerkingen (Security Orchestration, Automation en Response). U kunt de rol [Inzender voor logische apps](../role-based-access-control/built-in-roles.md#logic-app-contributor) of de rol van [operator voor logische apps](../role-based-access-control/built-in-roles.md#logic-app-operator) gebruiken om expliciete machtigingen toe te wijzen voor het gebruik van playbooks.
+    Azure Sentinel maakt gebruik van **playbooks** voor automatische reactie op bedreigingen. Playbooks zijn gebaseerd op **Azure Logic apps** en zijn een afzonderlijke Azure-resource. U kunt het beste aan specifieke leden van uw beveiligings team toewijzen om Logic Apps te gebruiken voor via-bewerkingen (Security Orchestration, Automation en Response). U kunt de rol [Inzender voor logische apps](../role-based-access-control/built-in-roles.md#logic-app-contributor) gebruiken om expliciete machtigingen toe te wijzen voor het gebruik van playbooks.
 
 - Gegevens bronnen verbinden met Azure Sentinel
 

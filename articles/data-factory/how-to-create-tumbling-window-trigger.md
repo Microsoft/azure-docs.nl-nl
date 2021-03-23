@@ -3,16 +3,16 @@ title: Tumblingvenstertriggers-venster triggers maken in Azure Data Factory
 description: Meer informatie over het maken van een trigger in Azure Data Factory die een pijp lijn uitvoert in een tumblingvenstertriggers-venster.
 author: chez-charlie
 ms.author: chez
-ms.reviewer: maghan
+ms.reviewer: jburchel
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 10/25/2020
-ms.openlocfilehash: b961939516ac4848da00a3cd01c754c90da805cb
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: ad397b62adcbcf6a0e117950c0dc3be33e6522db
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102177722"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104779814"
 ---
 # <a name="create-a-trigger-that-runs-a-pipeline-on-a-tumbling-window"></a>Een trigger maken die een pijplijn uitvoert op een tumblingvenster
 

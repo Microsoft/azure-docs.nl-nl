@@ -1,24 +1,24 @@
 ---
-title: Afhankelijkheids analyse zonder agent instellen in de evaluatie van Azure Migrate server
-description: Een afhankelijkheids analyse zonder agent instellen in de evaluatie van Azure Migrate server.
+title: Afhankelijkheids analyse zonder agent instellen in Azure Migrate
+description: Een afhankelijkheids analyse zonder agent instellen in Azure Migrate.
 author: vikram1988
 ms.author: vibansa
 ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 6/08/2020
-ms.openlocfilehash: c3aa2aea764af8469152b007e60427724fea398a
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 7966750d7c3e0f12bb9404a4d78bbc27e4075c52
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102045850"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104786580"
 ---
 # <a name="analyze-server-dependencies-agentless"></a>Server afhankelijkheden analyseren (zonder agent)
 
-In dit artikel wordt beschreven hoe u een afhankelijkheids analyse zonder agent instelt met behulp van Azure Migrate: Server Assessment. [Afhankelijkheids analyse](concepts-dependency-visualization.md) helpt u bij het identificeren en begrijpen van afhankelijkheden tussen servers voor evaluatie en migratie naar Azure.
+In dit artikel wordt beschreven hoe u analyse zonder agent instelt met behulp van Azure Migrate: hulp programma voor detectie en evaluatie. [Afhankelijkheids analyse](concepts-dependency-visualization.md) helpt u bij het identificeren en begrijpen van afhankelijkheden tussen servers voor evaluatie en migratie naar Azure.
 
 > [!IMPORTANT]
-> Er is momenteel een preview-versie van de afhankelijkheids analyse van agents beschikbaar voor servers die worden uitgevoerd in uw VMware-omgeving, gedetecteerd met het Azure Migrate: Server assessment tool.
+> Er is momenteel een preview-versie van de afhankelijkheids analyse van agents beschikbaar voor servers die worden uitgevoerd in uw VMware-omgeving, gedetecteerd met de Azure Migrate: hulp programma voor detectie en evaluatie.
 > Deze preview wordt gedekt door de klant ondersteuning en kan worden gebruikt voor werk belastingen voor de productie.
 > Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
@@ -30,7 +30,7 @@ In dit artikel wordt beschreven hoe u een afhankelijkheids analyse zonder agent 
 
 ## <a name="before-you-start"></a>Voordat u begint
 
-- Zorg ervoor dat u [een Azure migrate-project hebt gemaakt](./create-manage-projects.md) met het Azure migrate: Server assessment tool is toegevoegd.
+- Zorg ervoor dat u [een project hebt gemaakt](./create-manage-projects.md) met de Azure migrate: hulp programma voor detectie en evaluatie hieraan is toegevoegd.
 - Raadpleeg de [VMware-vereisten](migrate-support-matrix-vmware.md#vmware-requirements) voor het uitvoeren van afhankelijkheids analyse.
 - Controleer de [vereisten voor apparaten](migrate-support-matrix-vmware.md#azure-migrate-appliance-requirements) voordat u het apparaat instelt.
 - [Bekijk vereisten voor afhankelijkheids analyse](migrate-support-matrix-vmware.md#dependency-analysis-requirements-agentless) voordat u afhankelijkheids analyses op servers inschakelt.
@@ -41,7 +41,7 @@ In dit artikel wordt beschreven hoe u een afhankelijkheids analyse zonder agent 
 2. Bekijk de Azure-Url's die het apparaat nodig heeft voor toegang tot de [open bare](migrate-appliance.md#public-cloud-urls) en [overheids Clouds](migrate-appliance.md#government-cloud-urls).
 3. [Bekijk gegevens](migrate-appliance.md#collected-data---vmware) die door het apparaat worden verzameld tijdens de detectie en evaluatie.
 4. [Noteer](migrate-support-matrix-vmware.md#port-access-requirements) de toegangs vereisten voor poorten voor het apparaat.
-5. [Implementeer het Azure migrate apparaat om de](how-to-set-up-appliance-vmware.md) detectie te starten. Als u het apparaat wilt implementeren, downloadt en importeert u een eicellen-sjabloon in VMware om een server te maken die wordt uitgevoerd in uw vCenter Server. Nadat u het apparaat hebt geïmplementeerd, moet u dit registreren bij het Azure Migrate-project en het configureren om de detectie te initiëren.
+5. [Implementeer het Azure migrate apparaat om de](how-to-set-up-appliance-vmware.md) detectie te starten. Als u het apparaat wilt implementeren, downloadt en importeert u een eicellen-sjabloon in VMware om een server te maken die wordt uitgevoerd in uw vCenter Server. Nadat u het apparaat hebt geïmplementeerd, moet u het registreren bij het project en het configureren om de detectie te initiëren.
 6. Wanneer u het apparaat configureert, moet u het volgende opgeven in de configuratie beheer van het apparaat:
     - De details van de vCenter Server waarmee u verbinding wilt maken.
     - vCenter Server het bereik van referenties voor het detecteren van de servers in uw VMware-omgeving.
@@ -50,7 +50,7 @@ In dit artikel wordt beschreven hoe u een afhankelijkheids analyse zonder agent 
 ## <a name="verify-permissions"></a>Machtigingen controleren
 
 - U moet [een vCenter Server alleen-lezen-account maken](./tutorial-discover-vmware.md#prepare-vmware) voor detectie en evaluatie. Voor de alleen-lezen-account zijn bevoegdheden nodig die zijn ingeschakeld voor **virtual machines**  >  -**gast bewerkingen**, om te kunnen communiceren met de servers om afhankelijkheids gegevens te verzamelen.
-- U hebt een gebruikers account nodig zodat de server evaluatie toegang kan krijgen tot de server om afhankelijkheids gegevens te verzamelen. [Meer informatie](migrate-support-matrix-vmware.md#dependency-analysis-requirements-agentless) over de account vereisten voor Windows-en Linux-servers.
+- U hebt een gebruikers account nodig zodat Azure Migrate toegang krijgt tot de server om afhankelijkheids gegevens te verzamelen. [Meer informatie](migrate-support-matrix-vmware.md#dependency-analysis-requirements-agentless) over de account vereisten voor Windows-en Linux-servers.
 
 ### <a name="add-credentials-and-initiate-discovery"></a>Referenties toevoegen en detectie starten
 
@@ -67,7 +67,7 @@ In dit artikel wordt beschreven hoe u een afhankelijkheids analyse zonder agent 
 
 Selecteer de servers waarop u detectie van afhankelijkheden wilt inschakelen.
 
-1. Klik in **Azure migrate: Server evaluatie** op **gedetecteerde servers**.
+1. Klik in **Azure migrate: detectie en evaluatie** op **gedetecteerde servers**.
 2. Kies de **naam** van het apparaat waarvan u de detectie wilt controleren.
 1. U kunt de validatie status van de servers bekijken onder **afhankelijkheden (zonder agent)** kolom.
 1. Klik op de vervolg keuzelijst **afhankelijkheids analyse** .
@@ -81,7 +81,7 @@ U kunt afhankelijkheden ongeveer zes uur na het inschakelen van afhankelijkheids
 
 ## <a name="visualize-dependencies"></a>Afhankelijkheden visualiseren
 
-1. Klik in **Azure migrate: Server evaluatie** op **gedetecteerde servers**.
+1. Klik in **Azure migrate: detectie en evaluatie** op **gedetecteerde servers**.
 1. Kies de **naam** van het apparaat waarvan u de detectie wilt controleren.
 1. Zoek de server waarvan u de afhankelijkheden wilt controleren.
 1. Klik onder de kolom **afhankelijkheden (zonder agent)** op **afhankelijkheden weer geven**
@@ -100,7 +100,7 @@ U kunt afhankelijkheden ongeveer zes uur na het inschakelen van afhankelijkheids
 
 ## <a name="export-dependency-data"></a>Afhankelijkheids gegevens exporteren
 
-1. Klik in **Azure migrate: Server evaluatie** op **gedetecteerde servers**.
+1. Klik in **Azure migrate: detectie en evaluatie** op **gedetecteerde servers**.
 2. Klik op de vervolg keuzelijst **afhankelijkheids analyse** .
 3. Klik op **toepassings afhankelijkheden exporteren**.
 4. Kies op de pagina **toepassings afhankelijkheden exporteren** de naam van het apparaat dat de gewenste servers detecteert.
@@ -132,7 +132,7 @@ Doelpoort | Poort nummer op de doel server
 
 Selecteer de servers waarop u de detectie van afhankelijkheden wilt stoppen.
 
-1. Klik in **Azure migrate: Server evaluatie** op **gedetecteerde servers**.
+1. Klik in **Azure migrate: detectie en evaluatie** op **gedetecteerde servers**.
 1. Kies de **naam** van het apparaat waarvan u de detectie wilt controleren.
 1. Klik op de vervolg keuzelijst **afhankelijkheids analyse** .
 1. Klik op **servers verwijderen**.
@@ -157,7 +157,7 @@ Down load de Power shell-module van [Azure PowerShell samples](https://github.co
     Connect-AzAccount -EnvironmentName AzureUSGovernment
     ```
 
-2. Selecteer het abonnement waarin u het Azure Migrate project hebt gemaakt 
+2. Selecteer het abonnement waarin u het project hebt gemaakt 
 
     ```PowerShell
     select-azsubscription -subscription "Fabrikam Demo Subscription"
@@ -171,7 +171,7 @@ Down load de Power shell-module van [Azure PowerShell samples](https://github.co
 
 ### <a name="enable-or-disable-dependency-data-collection"></a>Verzamelen van afhankelijkheids gegevens in-of uitschakelen
 
-1. Bekijk de lijst met gedetecteerde servers in uw Azure Migrate-project met behulp van de volgende opdrachten. In het onderstaande voor beeld is de project naam FabrikamDemoProject en de resource groep waartoe deze behoort, is FabrikamDemoRG. De lijst met servers wordt opgeslagen in FabrikamDemo_VMs.csv
+1. Bekijk de lijst met gedetecteerde servers in uw project met behulp van de volgende opdrachten. In het onderstaande voor beeld is de project naam FabrikamDemoProject en de resource groep waartoe deze behoort, is FabrikamDemoRG. De lijst met servers wordt opgeslagen in FabrikamDemo_VMs.csv
 
     ```PowerShell
     Get-AzMigDiscoveredVMwareVMs -ResourceGroupName "FabrikamDemoRG" -ProjectName "FabrikamDemoProject" -OutputCsvFile "FabrikamDemo_VMs.csv"
@@ -212,7 +212,7 @@ Azure Migrate biedt een Power BI sjabloon die u kunt gebruiken om netwerk verbin
         Connect-AzAccount -EnvironmentName AzureUSGovernment
         ```
 
-    - Selecteer het abonnement waarin u het Azure Migrate project hebt gemaakt
+    - Selecteer het abonnement waarin u het project hebt gemaakt
 
         ```PowerShell
         select-azsubscription -subscription "Fabrikam Demo Subscription"

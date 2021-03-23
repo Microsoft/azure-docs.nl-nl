@@ -1,25 +1,14 @@
 ---
 title: Aanbevelingen op basis van een agent
-titleSuffix: Azure Defender for IoT
 description: Meer informatie over het concept van beveiligings aanbevelingen en hoe ze worden gebruikt voor Defender voor IoT-apparaten.
-services: defender-for-iot
-ms.service: defender-for-iot
-documentationcenter: na
-author: shhazam-ms
-manager: rkarlin
-editor: ''
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 02/16/2021
-ms.author: shhazam
-ms.openlocfilehash: e746f37fdf3b67467c1844ebea9191679d52d6d1
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: a29957f459edad8b768daea7bc4567d77c80b165
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103491262"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104784982"
 ---
 # <a name="security-recommendations-for-iot-devices"></a>Beveiligings aanbevelingen voor IoT-apparaten
 
@@ -46,9 +35,9 @@ Operationele aanbevelingen bieden inzichten en suggesties voor het verbeteren va
 
 | Severity | Name | Gegevensbron | Beschrijving |
 |--|--|--|--|
-| Beperkt | Agent verzendt ongebruikte berichten | Klassieke Defender-IoT-micro-agent| 10% of meer beveiligings berichten zijn in de afgelopen 24 uur kleiner dan 4 KB. |
-| Beperkt | Dubbele configuratie voor beveiliging niet optimaal | Klassieke Defender-IoT-micro-agent| De dubbele configuratie van beveiliging is niet optimaal. |
-| Beperkt | Conflict tussen beveiligings configuratie | Klassieke Defender-IoT-micro-agent| Er zijn conflicten gevonden in de beveiligings-dubbele configuratie. |  |
+| Beperkt | Agent verzendt ongebruikte berichten | Klassieke Defender-IoT-micro-agent | 10% of meer beveiligings berichten zijn in de afgelopen 24 uur kleiner dan 4 KB. |
+| Beperkt | Dubbele configuratie voor beveiliging niet optimaal | Klassieke Defender-IoT-micro-agent | De dubbele configuratie van beveiliging is niet optimaal. |
+| Beperkt | Conflict tussen beveiligings configuratie | Klassieke Defender-IoT-micro-agent | Er zijn conflicten gevonden in de beveiligings-dubbele configuratie. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

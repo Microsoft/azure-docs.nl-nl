@@ -1,18 +1,14 @@
 ---
 title: Horizon API
 description: In deze hand leiding worden veelgebruikte horizon-methoden beschreven.
-author: shhazam-ms
-manager: rkarlin
-ms.author: shhazam
 ms.date: 1/5/2021
 ms.topic: article
-ms.service: azure
-ms.openlocfilehash: 39770fe7aa7b11cae03304fda8901e81e0f1877a
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: b65f7663df29e2c82faa5d1aeec3b820d5fbaf70
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98208405"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104786784"
 ---
 # <a name="horizon-api"></a>Horizon API 
 

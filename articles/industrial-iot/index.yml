@@ -1,0 +1,23 @@
+### YamlMime:Landing
+title: Documentatie voor Azure Industrial IoT-platform
+summary: Het Azure Industrial IoT-platform is een micro soft-Suite met modules en services die zijn geïmplementeerd in Azure.
+metadata:
+  description: Meer informatie over de
+  ms.service: industrial-iot
+  ms.topic: landing-page
+  author: philmea
+  ms.author: philmea
+  ms.date: 12/7/2020
+  ms.openlocfilehash: 236cbb059919646910b2cacd53da3f9311225d69
+  ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+  ms.translationtype: MT
+  ms.contentlocale: nl-NL
+  ms.lasthandoff: 03/22/2021
+  ms.locfileid: "104787044"
+landingContent:
+- title: Over een Azure Industrial IoT-platform
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Wat is het industrieel IoT-platform (IIoT)?
+      url: overview-what-is-industrial-iot-platform.md

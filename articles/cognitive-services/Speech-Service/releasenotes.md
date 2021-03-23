@@ -11,18 +11,22 @@ ms.topic: conceptual
 ms.date: 03/18/2021
 ms.author: oliversc
 ms.custom: seodec18
-ms.openlocfilehash: 8f3e8d72db6679a766991160c303948557719bb9
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 1bd91ca63034f77553abb00f4fbf05431a45bd55
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104657736"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104773382"
 ---
 # <a name="speech-service-release-notes"></a>Release opmerkingen bij de spraak service
 
 ## <a name="speech-sdk-1160-2021-march-release"></a>Speech SDK 1.16.0:2021-maart release
 
 **Opmerking**: de spraak-SDK in Windows is afhankelijk van de gedeelde micro soft Visual C++ Redistributable voor visual studio 2015, 2017 en 2019. Down load deze [hier](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads).
+
+**Bekende problemen**
+
+**C++/c #/Java**: `DialogServiceConnector` kan geen gebruiken `CustomCommandsConfig` om toegang te krijgen tot een toepassing voor aangepaste opdrachten en er wordt in plaats daarvan een verbindings fout aangetroffen. Dit kan worden omzeild door uw toepassings-ID hand matig toe te voegen aan de aanvraag met `config.SetServiceProperty("X-CommandsAppId", "your-application-id", ServicePropertyChannel.UriQueryParameter)` . Het verwachte gedrag van `CustomCommandsConfig` wordt hersteld in de volgende release.
 
 **Overzicht van hooglichten**
 - Kleiner geheugen en schijf ruimte maken de SDK efficiënter. Dit is de focus op Android.

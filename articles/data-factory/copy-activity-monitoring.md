@@ -4,14 +4,14 @@ description: Meer informatie over het controleren van de uitvoering van de Kopie
 author: linda33wj
 ms.service: data-factory
 ms.topic: conceptual
-ms.date: 08/06/2020
+ms.date: 03/22/2021
 ms.author: jingwang
-ms.openlocfilehash: 58860e404dff3030e51ff2977eaee081a15247f7
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 4aefeea33e61b6ee2541e929dbeb3fc36343cac5
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100388291"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104771376"
 ---
 # <a name="monitor-copy-activity"></a>Kopieeractiviteit bewaken
 
@@ -59,7 +59,7 @@ De details van de gegevens van de Kopieer activiteit en prestatie kenmerken word
 | rowsCopied | Het aantal rijen dat naar de sink is gekopieerd. Deze metrische waarde is niet van toepassing wanneer u bestanden kopieert zonder deze te parseren, bijvoorbeeld wanneer de bron-en Sink-gegevens sets het type binaire indeling hebben, of een ander indelings type met identieke instellingen.  | Int64-waarde (geen eenheid) |
 | rowsSkipped | Aantal niet-compatibele rijen dat is overgeslagen. U kunt incompatibele rijen inschakelen door in te stellen op `enableSkipIncompatibleRow` waar. | Int64-waarde (geen eenheid) |
 | copyDuration | De duur van de Kopieer uitvoering. | Int32-waarde, in seconden |
-| doorvoer | Frequentie van gegevens overdracht. | Drijvende-komma getal, in KBps |
+| doorvoer | De frequentie van gegevens overdracht, berekend door `dataRead` gedeeld door `copyDuration` . | Drijvende-komma getal, in KBps |
 | sourcePeakConnections | Het maximum aantal gelijktijdige verbindingen dat tot het bron gegevens archief is gemaakt tijdens het uitvoeren van de Kopieer activiteit. | Int32-waarde (geen eenheid) |
 | sinkPeakConnections| Het maximum aantal gelijktijdige verbindingen dat tot stand is gebracht met het sink-gegevens archief tijdens het uitvoeren van de Kopieer activiteit.| Int32-waarde (geen eenheid) |
 | sqlDwPolyBase | Hiermee wordt aangegeven of poly Base wordt gebruikt wanneer gegevens naar Azure Synapse Analytics worden gekopieerd. | Booleaans |

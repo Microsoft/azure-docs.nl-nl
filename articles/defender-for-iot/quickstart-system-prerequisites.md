@@ -1,18 +1,14 @@
 ---
 title: Systeemvereisten
 description: Verkrijg de systeemvereisten die nodig zijn om Azure Defender voor IoT uit te voeren.
-author: shhazam-ms
-manager: rkarlin
-ms.author: shhazam
 ms.date: 11/30/2020
 ms.topic: quickstart
-ms.service: azure
-ms.openlocfilehash: 4b5db049e6d1cfe76bdd0d5cd6d7360e0b98bad0
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 78d5948554ae531c4b2f77d67bb916d5290db943
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103489808"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104780936"
 ---
 # <a name="system-prerequisites"></a>Systeemvereisten
 In dit artikel worden de systeemvereisten vermeld voor het uitvoeren van Azure Defender voor IoT.

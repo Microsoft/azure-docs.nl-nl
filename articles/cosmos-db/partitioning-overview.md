@@ -5,13 +5,13 @@ author: deborahc
 ms.author: dech
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 10/12/2020
-ms.openlocfilehash: b91c846b5a79125c1cee9c36ce81b5c3d3229ba9
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.date: 03/19/2021
+ms.openlocfilehash: ab1b7028ce5f1afef861e696c98f25b56e78ef36
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "99627764"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104772464"
 ---
 # <a name="partitioning-and-horizontal-scaling-in-azure-cosmos-db"></a>Partitionering en horizontaal schalen in Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -63,8 +63,6 @@ Azure Cosmos DB transparant en beheert automatisch de plaatsing van logische par
 Azure Cosmos DB gebruikt op hash gebaseerde partitionering om logische partities over fysieke partities te verdelen. Azure Cosmos DB hashes de waarde van de partitie sleutel van een item. Het gehashte resultaat bepaalt de fysieke partitie. Azure Cosmos DB wijst vervolgens de sleutel ruimte van partitie sleutel-hashes gelijkmatig over de fysieke partities toe.
 
 Trans acties (in opgeslagen procedures of triggers) zijn alleen toegestaan voor items in één logische partitie.
-
-Meer informatie over [het beheren van partities](partitioning-overview.md)vindt u in azure Cosmos db. (Het is niet nodig om de interne gegevens te begrijpen om uw toepassingen te bouwen of uit te voeren, maar hier toe te voegen voor een nieuws lezer.)
 
 ## <a name="replica-sets"></a>Replicasets
 

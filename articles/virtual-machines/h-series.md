@@ -1,19 +1,19 @@
 ---
 title: H-serie-Azure Virtual Machines
 description: Specificaties voor de virtuele machines uit de H-serie.
-author: ju-shim
+author: vermagit
 ms.service: virtual-machines
 ms.subservice: vm-sizes-hpc
 ms.topic: conceptual
 ms.date: 10/09/2020
 ms.author: amverma
 ms.reviewer: jushiman
-ms.openlocfilehash: 7a5ff47bb5de6d54564a86c0700ad69aa450887d
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: b3e3beb51256bbf22d29d74b51c52ca3a6bee0c4
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102566138"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104774776"
 ---
 # <a name="h-series"></a>H-serie
 
@@ -40,10 +40,21 @@ Virtuele machines uit de H-serie zijn geoptimaliseerd voor toepassingen die word
 
 <sup>1</sup> voor mpi-toepassingen is het gereserveerde RDMA-back-end-netwerk ingeschakeld door het FDR InfiniBand-netwerk.
 
-[!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]
-
 > [!NOTE]
-> De H-serie van de [RDMA-compatibele vm's](sizes-hpc.md#rdma-capable-instances)zijn niet-SR-IOV ingeschakeld. Daarom zijn de ondersteunde [VM-installatie kopieën](./workloads/hpc/configure.md#vm-images), [InfiniBand-stuur programma](./workloads/hpc/enable-infiniband.md) vereisten en ondersteunde [mpi-bibliotheken](./workloads/hpc/setup-mpi.md) verschillend van de op SR-IOV ingeschakelde vm's.
+> Op de [RDMA-compatibele vm's](sizes-hpc.md#rdma-capable-instances)is de H-serie niet SR-IOV ingeschakeld. Daarom zijn de ondersteunde [VM-installatie kopieën](./workloads/hpc/configure.md#vm-images), [InfiniBand-stuur programma](./workloads/hpc/enable-infiniband.md) vereisten en ondersteunde [mpi-bibliotheken](./workloads/hpc/setup-mpi.md) verschillend van de op SR-IOV ingeschakelde vm's.
+
+## <a name="software-specifications"></a>Software specificaties
+
+| Software specificaties     |VM van HC-serie           |
+|-----------------------------|-----------------------|
+| Maximale grootte van MPI-taak            | 4800 kernen (300 Vm's in één schaalset voor virtuele machines met singlePlacementGroup = True)  |
+| MPI-ondersteuning                 | Intel MPI 5. x, MS-MPI  |
+| Ondersteuning voor het besturings systeem voor niet-SRIOV RDMA   | CentOS/RHEL 6,5-7,4, SLES 12 SP4 +, WinServer 2012-2016  |
+| Orchestrator-ondersteuning        | CycleCloud, batch, AKS  |
+
+[!INCLUDE [hpc-include](./workloads/hpc/includes/hpc-include.md)]
+
+[!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]
 
 ## <a name="other-sizes"></a>Andere grootten
 
@@ -56,7 +67,6 @@ Virtuele machines uit de H-serie zijn geoptimaliseerd voor toepassingen die word
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over [het configureren van uw vm's, het](./workloads/hpc/configure.md) [inschakelen van Infiniband](./workloads/hpc/enable-infiniband.md), het [instellen van MPI](./workloads/hpc/setup-mpi.md) en het optimaliseren van HPC-toepassingen voor Azure bij [HPC-workloads](./workloads/hpc/overview.md).
-- Lees over de laatste aankondigingen en enkele HPC-voorbeelden en -resultaten in de [Azure Compute Tech Community-blogs](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute).
+- Meer informatie over de laatste aankondigingen, HPC-voor beelden en prestatie resultaten vindt u in de blogs van de [technische community van Azure Compute](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute).
 - Zie [High Performance Computing (HPC) op Azure](/azure/architecture/topics/high-performance-computing/) voor een gedetailleerdere architectuurweergave van HPC-workloads die worden uitgevoerd.
 - Meer informatie over hoe [Azure Compute units (ACU)](acu.md) u kan helpen bij het vergelijken van de reken prestaties in azure-sku's.

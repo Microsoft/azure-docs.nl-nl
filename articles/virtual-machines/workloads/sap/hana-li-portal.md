@@ -15,17 +15,17 @@ ms.workload: infrastructure
 ms.date: 12/31/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d32adab35852cd19933fe3877c2742a21ddc5f1e
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 07094e399f153f56746a931a4a100b3c0d38f92f
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101676985"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104772073"
 ---
 # <a name="azure-hana-large-instances-control-through-azure-portal"></a>Beheer van grote Azure HANA-exemplaren via de Azure-portal
 
 >[!NOTE]
->Volg de instructies in de [BareMetal-instanties beheren via het onderwerp Azure Portal](../../../baremetal-infrastructure/workloads/sap/baremetal-infrastructure-portal.md) voor Rev 4,2.
+>Volg de instructies in de [BareMetal-instanties beheren via het onderwerp Azure Portal](../../../baremetal-infrastructure/connect-baremetal-infrastructure.md) voor Rev 4,2.
 
 In dit document wordt beschreven hoe [Hana grote instanties](./hana-overview-architecture.md) worden weer gegeven in [Azure Portal](https://portal.azure.com) en welke activiteiten kunnen worden uitgevoerd via Azure Portal met Hana grote instantie-eenheden die voor u zijn geïmplementeerd. Zicht baarheid van HANA grote instanties in Azure Portal wordt gegeven via een Azure-resource provider voor HANA grote instanties, die momenteel beschikbaar zijn in de open bare preview
 

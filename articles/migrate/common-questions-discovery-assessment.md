@@ -1,17 +1,17 @@
 ---
 title: Vragen over detectie, evaluatie en afhankelijkheids analyse in Azure Migrate
 description: Krijg antwoorden op veelgestelde vragen over detectie, evaluatie en afhankelijkheids analyse in Azure Migrate.
-author: vineetvikram
-ms.author: vivikram
+author: rashijoshi
+ms.author: rajosh
 ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 06/09/2020
-ms.openlocfilehash: 6c4dfed27a105fad951ae12ca053b6d86772717a
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: f9fe4109d2b21f7c44ba340db53dc24311652441
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102032565"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104782347"
 ---
 # <a name="discovery-assessment-and-dependency-analysis---common-questions"></a>Detectie, beoordeling en afhankelijkheids analyse-Veelgestelde vragen
 
@@ -28,18 +28,15 @@ In dit artikel vindt u antwoorden op veelgestelde vragen over detectie, evaluati
 Bekijk de ondersteunde geografische regio's voor [openbare](migrate-support-matrix.md#supported-geographies-public-cloud) clouds en [overheidsclouds](migrate-support-matrix.md#supported-geographies-azure-government).
 
 
-## <a name="how-many-vms-can-i-discover-with-an-appliance"></a>Hoeveel Vm's kan ik vinden met een apparaat?
+## <a name="how-many-servers-can-i-discover-with-an-appliance"></a>Hoeveel servers kan ik vinden met een apparaat?
 
-U kunt Maxi maal 10.000 VMware-Vm's, Maxi maal 5.000 virtuele Hyper-V-machines en Maxi maal 1000 fysieke servers, detecteren door één apparaat te gebruiken. Als u meer computers hebt, leest u over [het schalen van een Hyper-V-beoordeling](scale-hyper-v-assessment.md), [het schalen van een VMware-evaluatie](scale-vmware-assessment.md)of [het schalen van een fysieke server beoordeling](scale-physical-assessment.md).
+U kunt tot 10.000 servers in de VMware-omgeving, tot 5.000 servers van de Hyper-V-omgeving en Maxi maal 1000 fysieke servers detecteren door één apparaat te gebruiken. Als u meer servers hebt, leest u over [het schalen van een Hyper-V-evaluatie](scale-hyper-v-assessment.md), [het schalen van een VMware-evaluatie](scale-vmware-assessment.md)of [het schalen van een fysieke server beoordeling](scale-physical-assessment.md).
 
 ## <a name="how-do-i-choose-the-assessment-type"></a>Hoe kies ik het evaluatietype?
 
-- Gebruik **Azure VM-evaluaties** als u uw on-premises virtuele [VMware-machines](how-to-set-up-appliance-vmware.md), [virtuele Hyper-V-](how-to-set-up-appliance-hyper-v.md)machines en [fysieke servers](how-to-set-up-appliance-physical.md) wilt controleren op migratie naar Azure-vm's. [Meer informatie](concepts-assessment-calculation.md)
+- Gebruik **Azure VM-evaluaties** als u servers wilt beoordelen van uw on-premises [VMware](how-to-set-up-appliance-vmware.md) -en [Hyper-V-](how-to-set-up-appliance-hyper-v.md) omgeving en [fysieke servers](how-to-set-up-appliance-physical.md) voor migratie naar virtuele Azure-machines. [Meer informatie](concepts-assessment-calculation.md)
 
 - Gebruik het beoordelings type **Azure SQL** wanneer u uw on-premises SQL Server wilt beoordelen vanuit uw VMware-omgeving voor migratie naar Azure SQL database of Azure SQL Managed instance. [Meer informatie](concepts-assessment-calculation.md)
-
-    > [!Note]
-    > Detectie en evaluatie van SQL Server instanties en data bases die worden uitgevoerd in uw VMware-omgeving is nu beschikbaar als preview-versie. Als u deze functie wilt proberen, gebruikt u [**deze koppeling**](https://aka.ms/AzureMigrate/SQL) om een project te maken in de regio **Australië - oost**. Als u al een project in Australië-oost hebt en u deze functie wilt proberen, zorgt u ervoor dat u aan deze [**vereisten**](how-to-discover-sql-existing-project.md) voldoet in de portal.
 
 - Gebruik de evaluaties van de **Azure VMware-oplossing (AVS)** als u uw on-premises [virtuele VMware-machines](how-to-set-up-appliance-vmware.md) wilt controleren op migratie naar [Azure VMware-oplossing (AVS)](../azure-vmware/introduction.md) met dit beoordelings type. [Meer informatie](concepts-azure-vmware-solution-assessment-calculation.md)
 
@@ -48,10 +45,10 @@ U kunt Maxi maal 10.000 VMware-Vm's, Maxi maal 5.000 virtuele Hyper-V-machines e
 
 ## <a name="why-is-performance-data-missing-for-someall-servers-in-my-azure-vm-andor-avs-assessment-report"></a>Waarom ontbreken prestatie gegevens voor sommige/alle servers in mijn Azure VM-en/of AVS-evaluatie rapport?
 
-Voor evaluaties Op basis van prestaties staat in de export van het evaluatierapport PercentageOfCoresUtilizedMissing of PercentageOfMemoryUtilizedMissing, wanneer er geen prestatiegegevens voor de on-premises VM's kunnen worden verzameld op het Azure Migrate-apparaat. Controleer het volgende:
+Voor de evaluatie op basis van prestaties geeft de export rapport uitvoer ' PercentageOfCoresUtilizedMissing ' of ' PercentageOfMemoryUtilizedMissing ' als het Azure Migrate apparaat geen prestatie gegevens kan verzamelen voor de on-premises servers. Controleer het volgende:
 
-- Of de VM's zijn ingeschakeld gedurende de periode waarvoor u de evaluatie maakt
-- Als er alleen geheugen items ontbreken en u probeert virtuele Hyper-V-machines te evalueren. In dit scenario schakelt u dynamisch geheugen op de virtuele machines in en berekent u de evaluatie opnieuw om de meest recente wijzigingen weer te geven. Het apparaat kan alleen geheugen gebruiks waarden voor virtuele Hyper-V-machines verzamelen wanneer het dynamische geheugen van de virtuele machine is ingeschakeld.
+- Als de servers zijn ingeschakeld voor de duur waarvoor u de evaluatie maakt
+- Als er alleen geheugen items ontbreken en u probeert servers in de Hyper-V-omgeving te beoordelen. In dit scenario schakelt u dynamisch geheugen op de servers in en herberekenen de evaluatie om de meest recente wijzigingen weer te geven. Het apparaat kan alleen geheugen gebruiks waarden voor servers in de Hyper-V-omgeving verzamelen wanneer dynamisch geheugen is ingeschakeld op de server.
 
 - Als alle prestatie meter items ontbreken, moet u ervoor zorgen dat uitgaande verbindingen op poort 443 (HTTPS) zijn toegestaan.
 
@@ -89,11 +86,6 @@ De betrouwbaarheidsclassificatie wordt berekend voor evaluaties Op basis van pre
 
 - Voor Azure SQL-evaluaties zijn enkele SQL-exemplaren of -databases gemaakt nadat de detectie is gestart. Als u bijvoorbeeld een evaluatie maakt voor de prestatie geschiedenis van de laatste maand, maar weinig SQL-exemplaren of data bases zijn in de omgeving slechts een week geleden gemaakt. In dit geval zijn de prestatie gegevens voor de nieuwe servers niet beschikbaar voor de hele duur en is de betrouwbaarheids classificatie laag. [Meer informatie](./concepts-azure-sql-assessment-calculation.md#confidence-ratings)
 
-## <a name="i-want-to-try-out-the-new-azure-sql-assessment-feature-in-azure-migrate"></a>Ik wil de nieuwe functie voor Azure SQL-evaluatie in Azure Migrate proberen
-Als u deze functie wilt proberen, gebruikt u [deze koppeling](https://go.microsoft.com/fwlink/?linkid=2155668L) om een project te maken in de regio **Australië - oost**.
-- Raadpleeg de zelfstudies over [detectie](https://docs.microsoft.com/azure/migrate/tutorial-discover-vmware) en [evaluatie](https://docs.microsoft.com/azure/migrate/tutorial-assess-sql) om aan de slag te gaan.
-- Opmerking: uitvoeren van detectie en evaluatie van SQL Server-exemplaren en -databases in uw VMware-omgeving bevindt zich momenteel in de preview-fase.
-
 ## <a name="i-cant-see-some-servers-when-i-am-creating-an-azure-sql-assessment"></a>Ik zie sommige servers niet bij het maken van een Azure SQL-evaluatie
 
 - Azure SQL-evaluatie kan alleen worden uitgevoerd op servers waarop SQL-exemplaren zijn gedetecteerd. Als u de servers en SQL-exemplaren die u wilt evalueren, niet ziet, wacht u even tot de detectie is voltooid en maakt u vervolgens de evaluatie. 
@@ -117,7 +109,7 @@ De SQL-detectie wordt elke 24 uur uitgevoerd en u moet mogelijk tot een dag wach
 ## <a name="my-assessment-is-in-outdated-state"></a>Mijn evaluatie heeft de status Verouderd
 
 ### <a name="azure-vmavs-assessment"></a>Azure VM/AVS-evaluatie
-Als er on-premises wijzigingen zijn aangebracht aan virtuele machines die zich in een groep bevinden die is geëvalueerd, wordt de evaluatie gemarkeerd als verouderd. Een evaluatie kan worden gemarkeerd als verouderd vanwege een of meer wijzigingen in de volgende eigenschappen:
+Als er on-premises wijzigingen zijn aangebracht aan servers die zich in een groep bevinden die is beoordeeld, wordt de evaluatie gemarkeerd als verouderd. Een evaluatie kan worden gemarkeerd als verouderd vanwege een of meer wijzigingen in de volgende eigenschappen:
 - Aantal processor kernen
 - Toegewezen geheugen
 - Opstart type of-firmware
@@ -166,18 +158,18 @@ Voor Azure SQL Managed instance zijn er geen opslag kosten toegevoegd voor de ee
 - Een AVS-evaluatie kan worden uitgevoerd voor groepen die alleen VMware-machines hebben. Verwijder alle niet-VMware-machines uit de groep als u van plan bent om een AVS-evaluatie uit te voeren.
 - Als u AVS-evaluaties in Azure Migrate de eerste keer uitvoert, is het raadzaam om een nieuwe groep VMware-machines te maken.
 
-## <a name="i-cant-see-some-vm-types-in-azure-government"></a>Ik zie geen enkele VM-typen in Azure Government
+## <a name="i-cant-see-some-vm-types-and-sizes-in-azure-government"></a>Ik zie enkele VM-typen en-grootten niet in Azure Government
 
-VM-typen die voor evaluatie en migratie worden ondersteund, zijn afhankelijk van de beschik baarheid op Azure Government locatie. U kunt VM-typen [controleren en vergelijken](https://azure.microsoft.com/global-infrastructure/services/?regions=usgov-non-regional,us-dod-central,us-dod-east,usgov-arizona,usgov-iowa,usgov-texas,usgov-virginia&products=virtual-machines) in azure Government.
+VM-typen en-grootten die worden ondersteund voor evaluatie en migratie, zijn afhankelijk van de beschik baarheid op Azure Government locatie. U kunt VM-typen [controleren en vergelijken](https://azure.microsoft.com/global-infrastructure/services/?regions=usgov-non-regional,us-dod-central,us-dod-east,usgov-arizona,usgov-iowa,usgov-texas,usgov-virginia&products=virtual-machines) in azure Government.
 
-## <a name="the-size-of-my-vm-changed-can-i-run-an-assessment-again"></a>De grootte van mijn VM is gewijzigd. Kan ik een evaluatie opnieuw uitvoeren?
+## <a name="the-size-of-my-server-changed-can-i-run-an-assessment-again"></a>De grootte van mijn server is gewijzigd. Kan ik een evaluatie opnieuw uitvoeren?
 
-Het Azure Migrate apparaat verzamelt voortdurend informatie over de on-premises omgeving.  Een evaluatie is een tijdgebonden moment opname van on-premises Vm's. Als u de instellingen van een virtuele machine die u wilt beoordelen, wijzigt, gebruikt u de optie opnieuw berekenen om de evaluatie bij te werken met de meest recente wijzigingen.
+Het Azure Migrate apparaat verzamelt voortdurend informatie over de on-premises omgeving.  Een evaluatie is een tijdgebonden moment opname van on-premises servers. Als u de instellingen wijzigt op een server die u wilt beoordelen, gebruikt u de optie opnieuw berekenen om de evaluatie bij te werken met de meest recente wijzigingen.
 
-## <a name="how-do-i-discover-vms-in-a-multitenant-environment"></a>Hoe kan ik virtuele machines detecteren in een multi tenant-omgeving?
+## <a name="how-do-i-discover-servers-in-a-multitenant-environment"></a>Hoe kan ik Detecteer servers in een multi tenant-omgeving?
 
-- **VMware**: als een omgeving wordt gedeeld door tenants en u niet wilt dat de vm's van een Tenant in een ander abonnement van een Tenant worden gedetecteerd, moet u VMware vCenter Server referenties maken die alleen toegang hebben tot de virtuele machines die u wilt detecteren. Gebruik vervolgens deze referenties wanneer u de detectie start in het Azure Migrate apparaat.
-- **Hyper-v**: detectie maakt gebruik van referenties voor hyper-v-hosts. Als Vm's dezelfde Hyper-V-host delen, is er momenteel geen enkele manier om de detectie te scheiden.  
+- **VMware**: als een omgeving wordt gedeeld tussen tenants en u niet wilt dat de servers van een Tenant in een abonnement op een andere Tenant worden gedetecteerd, moet u VMware vCenter Server referenties maken die alleen toegang hebben tot de servers die u wilt detecteren. Gebruik vervolgens deze referenties wanneer u de detectie start in het Azure Migrate apparaat.
+- **Hyper-v**: detectie maakt gebruik van referenties voor hyper-v-hosts. Als servers dezelfde Hyper-V-host delen, is er momenteel geen enkele manier om de detectie te scheiden.  
 
 ## <a name="do-i-need-vcenter-server"></a>Heb ik vCenter Server nodig?
 
@@ -185,9 +177,9 @@ Ja, Azure Migrate vereist vCenter Server in een VMware-omgeving om detectie uit 
 
 ## <a name="what-are-the-sizing-options-in-an-azure-vm-assessment"></a>Wat zijn de opties voor het aanpassen van de grootte van een Azure VM-evaluatie?
 
-Bij een on-premises grootte wordt Azure Migrate geen rekening gehouden met de prestatie gegevens van de virtuele machine voor evaluatie. Azure Migrate evalueert VM-grootten op basis van de on-premises configuratie. De grootte van de prestaties is gebaseerd op de gebruiks gegevens.
+Bij een on-premises grootte wordt Azure Migrate geen rekening gehouden met de prestatie gegevens van de server voor evaluatie. Azure Migrate evalueert VM-grootten op basis van de on-premises configuratie. De grootte van de prestaties is gebaseerd op de gebruiks gegevens.
 
-Bijvoorbeeld, als een on-premises VM vier kernen en 8 GB geheugen heeft met een CPU-gebruik van 50% en 50% geheugen gebruik:
+Bijvoorbeeld, als een on-premises server vier kernen en 8 GB geheugen heeft met een CPU-gebruik van 50% en 50% geheugen gebruik:
 - Bij een on-premises grootte wordt een Azure VM-SKU aanbevolen met vier kernen en 8 GB aan geheugen.
 - Op basis van de prestaties wordt een VM-SKU aanbevolen met twee kernen en 4 GB geheugen, omdat het gebruiks percentage wordt overwogen.
 
@@ -230,7 +222,7 @@ Voor machines die worden geïmporteerd via een CSV-bestand, is het standaard hul
 
 ## <a name="what-is-dependency-visualization"></a>Wat is de visualisatie van afhankelijkheden?
 
-Met behulp van afhankelijkheids visualisatie kunt u groepen Vm's bepalen die met een grotere betrouw baarheid moeten worden gemigreerd. Afhankelijkheids visualisatie: meerdere computer afhankelijkheden controleren voordat u een evaluatie uitvoert. Zo kunt u er zeker van zijn dat er niets achter komt, waardoor onverwachte storingen worden voor komen wanneer u naar Azure migreert. Azure Migrate maakt gebruik van de Servicetoewijzing-oplossing in Azure Monitor om afhankelijkheidsvisualisatie mogelijk te maken. [Meer informatie](concepts-dependency-visualization.md).
+Met behulp van afhankelijkheids visualisatie kunt u groepen servers zo bepalen dat deze met een grotere betrouw baarheid worden gemigreerd. Afhankelijkheids visualisatie: meerdere computer afhankelijkheden controleren voordat u een evaluatie uitvoert. Zo kunt u er zeker van zijn dat er niets achter komt, waardoor onverwachte storingen worden voor komen wanneer u naar Azure migreert. Azure Migrate maakt gebruik van de Servicetoewijzing-oplossing in Azure Monitor om afhankelijkheidsvisualisatie mogelijk te maken. [Meer informatie](concepts-dependency-visualization.md).
 
 > [!NOTE]
 > Afhankelijkheids analyse op basis van een agent is niet beschikbaar in Azure Government. U kunt afhankelijkheids analyse zonder agent gebruiken
@@ -241,7 +233,7 @@ De verschillen tussen visualisatie zonder agents en visualisaties op basis van a
 
 **Vereiste** | **Zonder agent** | **Op basis van een agent**
 --- | --- | ---
-Ondersteuning | Deze optie is momenteel in Preview en is alleen beschikbaar voor virtuele VMware-machines. [Bekijk](migrate-support-matrix-vmware.md#dependency-analysis-requirements-agentless) ondersteunde besturings systemen. | In algemene Beschik baarheid (GA).
+Ondersteuning | Deze optie is momenteel in Preview en is alleen beschikbaar voor servers in de VMware-omgeving. [Bekijk](migrate-support-matrix-vmware.md#dependency-analysis-requirements-agentless) ondersteunde besturings systemen. | In algemene Beschik baarheid (GA).
 Agent | U hoeft geen agents te installeren op computers die u wilt cross-checken. | Agents die moeten worden geïnstalleerd op elke on-premises computer die u wilt analyseren: [micro soft Monitoring Agent (MMA)](../azure-monitor/agents/agent-windows.md)en de [dependency agent](../azure-monitor/agents/agents-overview.md#dependency-agent). 
 Vereisten | [Bekijk](concepts-dependency-visualization.md#agentless-analysis) de vereisten en implementatie behoeften. | [Bekijk](concepts-dependency-visualization.md#agent-based-analysis) de vereisten en implementatie behoeften.
 Log Analytics | Niet vereist. | Azure Migrate gebruikt de [servicetoewijzing](../azure-monitor/vm/service-map.md) oplossing in [Azure monitor logboeken](../azure-monitor/logs/log-query-overview.md) voor de visualisatie van afhankelijkheden. [Meer informatie](concepts-dependency-visualization.md#agent-based-analysis).
@@ -296,9 +288,9 @@ Voor visualisaties op basis van een agent kunt u afhankelijkheden tot een uur vi
 
 Voor visualisatie zonder agent kunt u de afhankelijkheids toewijzing van één server weer geven vanaf een duur van slechts één uur tot 30 dagen.
 
-## <a name="can-i-visualize-dependencies-for-groups-of-more-than-10-vms"></a>Kan ik afhankelijkheden voor groepen van meer dan tien Vm's visualiseren?
+## <a name="can-i-visualize-dependencies-for-groups-of-more-than-10-servers"></a>Kan ik afhankelijkheden voor groepen van meer dan 10 servers visualiseren?
 
-U kunt [afhankelijkheden](./how-to-create-a-group.md#refine-a-group-with-dependency-mapping) voor groepen met Maxi maal tien vm's visualiseren. Als u een groep hebt met meer dan tien Vm's, raden we u aan de groep te splitsen in kleinere groepen en vervolgens de afhankelijkheden te visualiseren.
+U kunt [afhankelijkheden](./how-to-create-a-group.md#refine-a-group-with-dependency-mapping) voor groepen met Maxi maal 10 servers visualiseren. Als u een groep hebt met meer dan 10 servers, raden we u aan de groep te splitsen in kleinere groepen en vervolgens de afhankelijkheden te visualiseren.
 
 ## <a name="next-steps"></a>Volgende stappen
 

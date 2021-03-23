@@ -4,12 +4,12 @@ description: Meer informatie over het beveiligen van uw cluster met behulp van e
 services: container-service
 ms.topic: article
 ms.date: 09/21/2020
-ms.openlocfilehash: ca6e1c06b3ad90ef12c9bf375bae50d46c5f7c37
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 20c3d46e9a19c66c727e5a21bccd6caa0dc5f0ba
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98890630"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104771920"
 ---
 # <a name="secure-access-to-the-api-server-using-authorized-ip-address-ranges-in-azure-kubernetes-service-aks"></a>Veilige toegang tot de API-server met behulp van geautoriseerde IP-adresbereiken in azure Kubernetes service (AKS)
 
@@ -27,7 +27,7 @@ U moet de Azure CLI-versie 2.0.76 of hoger hebben geïnstalleerd en geconfiguree
 
 De functie voor door de API-server geautoriseerde IP-bereiken heeft de volgende beperkingen:
 - Op clusters die zijn gemaakt na de door de API server geautoriseerde IP-adresbereiken in oktober 2019, worden door API-server geautoriseerde IP-adresbereiken alleen ondersteund voor de *standaard* SKU Load Balancer. Bestaande clusters met de *basis* -SKU Load Balancer en de door de API server geautoriseerde IP-adresbereiken blijven werken, maar kunnen niet worden gemigreerd naar een *standaard* -SKU Load Balancer. Deze bestaande clusters blijven werken als hun Kubernetes-versie of besturings vlak wordt geüpgraded. Geautoriseerde IP-adresbereiken van de API-server worden niet ondersteund voor persoonlijke clusters.
-- Deze functie is niet compatibel met clusters die gebruikmaken van de [Preview-functie voor het gebruik van open bare IP per knooppunt groep](use-multiple-node-pools.md#assign-a-public-ip-per-node-for-your-node-pools-preview)knoop punten.
+- Deze functie is niet compatibel met clusters die gebruikmaken van een [openbaar IP-adres per knoop punt](use-multiple-node-pools.md#assign-a-public-ip-per-node-for-your-node-pools).
 
 ## <a name="overview-of-api-server-authorized-ip-ranges"></a>Overzicht van door de API server geautoriseerde IP-adresbereiken
 

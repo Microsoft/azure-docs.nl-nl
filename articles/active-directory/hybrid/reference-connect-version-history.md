@@ -12,12 +12,12 @@ ms.date: 03/16/2021
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a19babffa63667b0d2deb954d432421a2b7868b8
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 71eaccd615f5c3460e7b48b2e92d5f874c8de12e
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104722137"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104772107"
 ---
 # <a name="azure-ad-connect-version-release-history"></a>Azure AD Connect: release geschiedenis van versie
 Het Azure Active Directory (Azure AD)-team werkt Azure AD Connect regel matig bij met nieuwe functies en functionaliteit. Niet alle toevoegingen zijn van toepassing op alle doel groepen.
@@ -58,7 +58,7 @@ Volg deze link voor meer informatie over [automatische upgrade](how-to-connect-i
 >Zie [Azure AD Connect versie geschiedenis archief](reference-connect-version-history-archive.md) voor informatie over de versie geschiedenis van de buiten gebruik gestelde versies
 
 
-## <a name="1623"></a>1.6.2.3
+## <a name="1624"></a>1.6.2.4
 
 >[!NOTE]
 > - Deze versie wordt alleen beschikbaar gesteld voor downloaden.
@@ -66,7 +66,7 @@ Volg deze link voor meer informatie over [automatische upgrade](how-to-connect-i
 > - Deze versie wordt standaard ingesteld op de AADConnect-server voor het nieuwe v2-eind punt. Houd er rekening mee dat dit eind punt niet wordt ondersteund in de Duitse nationale Cloud, de Chinese nationale Cloud en de Amerikaanse overheids Cloud. Als u deze versie in deze Clouds moet implementeren, moet u [deze instructies](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sync-endpoint-api-v2#rollback) volgen om terug te gaan naar het v1-eind punt. Als u dit niet doet, zijn er fouten opgetreden in de synchronisatie.
 
 ### <a name="release-status"></a>Status van de release
-3/17/2021: uitgebracht voor downloaden
+3/19/2021: uitgebracht voor downloaden
 
 ### <a name="functional-changes"></a>Functionele wijzigingen
 

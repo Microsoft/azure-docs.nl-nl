@@ -1,17 +1,17 @@
 ---
 title: Infra structuur dubbele versleuteling-Azure Portal-Azure Database for PostgreSQL
 description: Meer informatie over het instellen en beheren van een infra structuur met dubbele versleuteling voor uw Azure Database for PostgreSQL.
-author: mksuni
-ms.author: sumuth
+author: sunilagarwal
+ms.author: sunila
 ms.service: postgresql
 ms.topic: how-to
-ms.date: 06/30/2020
-ms.openlocfilehash: ea486b534ac3e703849ddb3922d7c3a428dd076b
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.date: 03/14/2021
+ms.openlocfilehash: 0b1079a084072556ae79a18a12f6b35f74c92775
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "93242225"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104771648"
 ---
 # <a name="infrastructure-double-encryption-for-azure-database-for-postgresql"></a>Infra structuur dubbele versleuteling voor Azure Database for PostgreSQL
 
@@ -23,7 +23,7 @@ Meer informatie over het gebruik van de manier waarop u een infra structuur met 
 
 ## <a name="create-an-azure-database-for-postgresql-server-with-infrastructure-double-encryption---portal"></a>Een Azure Database for PostgreSQL-server met dubbele versleuteling met infra structuur maken-Portal
 
-Volg deze stappen voor het maken van een Azure Database for MySQL server met dubbele infra structuur versleuteling van Azure Portal:
+Volg deze stappen voor het maken van een Azure Database for PostgreSQL server met dubbele infra structuur versleuteling van Azure Portal:
 
 1. Selecteer in de linkerbovenhoek van de portal **Een resource maken** (+).
 
@@ -45,7 +45,7 @@ Volg deze stappen voor het maken van een Azure Database for MySQL server met dub
 
 ## <a name="create-an-azure-database-for-postgresql-server-with-infrastructure-double-encryption---cli"></a>Een Azure Database for PostgreSQL-server met dubbele versleuteling van de infra structuur maken-CLI
 
-Volg deze stappen voor het maken van een Azure Database for MySQL-server met dubbele infra structuur versleuteling van CLI:
+Volg deze stappen voor het maken van een Azure Database for PostgreSQL-server met dubbele infra structuur versleuteling van CLI:
 
 In dit voor beeld wordt een resource groep `myresourcegroup` met de naam op de `westus` locatie gemaakt.
 

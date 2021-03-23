@@ -7,12 +7,12 @@ manager: bsiva
 ms.topic: tutorial
 ms.date: 3/2/2021
 ms.author: rahugup
-ms.openlocfilehash: 7c9b4032346e61eb3bfd21c0c4067e2364bc28af
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: ffc97984a335b72a3aa8c8d8cca65a3fddf7af38
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104670833"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104780732"
 ---
 # <a name="containerize-aspnet-applications-and-migrate-to-azure-kubernetes-service"></a>Container plaatsen ASP.NET-toepassingen en migreren naar Azure Kubernetes service
 
@@ -59,7 +59,7 @@ Voordat u aan deze zelfstudie begint, dient u eerst:
 
 **Vereiste** | **Details**
 --- | ---
-**Een computer identificeren om het hulp programma te installeren** | Een Windows-computer voor het installeren en uitvoeren van de Azure Migrate: app container opslag-hulp programma. De Windows-computer kan een server (Windows Server 2016 of hoger) of client (Windows 10) besturings systeem zijn, wat betekent dat het hulp programma ook op uw bureau blad kan worden uitgevoerd. <br/><br/> De Windows-computer waarop het hulp programma wordt uitgevoerd, moet een netwerk verbinding hebben met de servers/virtuele machines waarop de ASP.NET-toepassingen worden gehost die moeten worden container.<br/><br/> Zorg ervoor dat er 6 GB ruimte beschikbaar is op de Windows-computer waarop het Azure Migrate: app container opslag-hulp programma voor het opslaan van toepassings artefacten. <br/><br/> De Windows-computer moet toegang hebben tot internet, rechtstreeks of via een proxy. <br/> <br/>Installeer het hulp programma micro soft Web Deploy op de computer waarop het hulp programma voor de app container opslag helper en de toepassings server worden uitgevoerd als dat nog niet is gebeurd. U kunt het hulp programma [hier](https://aka.ms/webdeploy3.6) downloaden
+**Een computer identificeren om het hulp programma te installeren** | Een Windows-computer voor het installeren en uitvoeren van de Azure Migrate: app container opslag-hulp programma. De Windows-computer kan een server (Windows Server 2016 of hoger) of client (Windows 10) besturings systeem zijn, wat betekent dat het hulp programma ook op uw bureau blad kan worden uitgevoerd. <br/><br/> De Windows-computer waarop het hulpprogramma wordt uitgevoerd, moet een netwerkverbinding hebben met de servers/virtuele machines waarop de ASP.NET-toepassingen worden gehost die in containers moeten worden opgeslagen.<br/><br/> Zorg ervoor dat er 6 GB ruimte beschikbaar is op de Windows-computer waarop het Azure Migrate: app container opslag-hulp programma voor het opslaan van toepassings artefacten. <br/><br/> De Windows-computer moet toegang hebben tot internet, rechtstreeks of via een proxy. <br/> <br/>Installeer het hulp programma micro soft Web Deploy op de computer waarop het hulp programma voor de app container opslag helper en de toepassings server worden uitgevoerd als dat nog niet is gebeurd. U kunt het hulp programma [hier](https://aka.ms/webdeploy3.6) downloaden
 **Toepassingsservers** | Externe communicatie van Power shell inschakelen op de toepassings servers: Meld u aan bij de toepassings server en volg [deze](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting) instructies om externe communicatie van Power shell in te scha kelen. <br/><br/> Als op de toepassings server Windows Server 2008 R2 wordt uitgevoerd, moet u ervoor zorgen dat Power shell 5,1 op de toepassings server is geïnstalleerd. Volg de [onderstaande](https://docs.microsoft.com/powershell/scripting/windows-powershell/wmf/setup/install-configure) instructie om power shell 5,1 te downloaden en te installeren op de toepassings server. <br/><br/> Installeer het hulp programma micro soft Web Deploy op de computer waarop het hulp programma voor de app container opslag helper en de toepassings server worden uitgevoerd als dat nog niet is gebeurd. U kunt het hulp programma [hier](https://aka.ms/webdeploy3.6) downloaden
 **ASP.NET-toepassing** | Het hulp programma ondersteunt momenteel <br/><br/> -ASP.NET-toepassingen die gebruikmaken van Microsoft .NET Framework 3,5 of hoger.<br/> -Toepassings servers met Windows Server 2008 R2 of hoger (op toepassings servers moet Power shell versie 5,1 worden uitgevoerd). <br/> -Toepassingen die worden uitgevoerd op Internet Information Services (IIS) 7,5 of hoger. <br/><br/> Het hulp programma biedt momenteel geen ondersteuning voor <br/><br/> -Toepassingen die Windows-verificatie vereisen (AKS ondersteunt momenteel geen gMSA). <br/> -Toepassingen die afhankelijk zijn van andere Windows-services die buiten IIS worden gehost.
 
@@ -105,7 +105,7 @@ Als u net pas een gratis Azure-account hebt gemaakt, bent u de eigenaar van uw a
 3. Voer het installatie script uit met behulp van de opdracht
 
    ```powershell
-   .\App ContainerizationInstaller.ps1
+   .\AppContainerizationInstaller.ps1
    ```
 
 ## <a name="launch-the-app-containerization-tool"></a>Het app container opslag-hulp programma starten
@@ -152,7 +152,7 @@ Klik op **Aanmelden** om u aan te melden bij uw Azure-account.
 Het hulp programma app container opslag helper maakt op afstand verbinding met de toepassings servers met behulp van de referenties en probeert ASP.NET-toepassingen te detecteren die op de toepassings servers worden gehost.
 
 1. Geef het **IP-adres/de FQDN en de referenties** op van de server waarop de ASP.NET-toepassing wordt uitgevoerd die moet worden gebruikt om extern verbinding te maken met de server voor toepassings detectie.
-    - De gegeven referenties moeten voor een lokale beheerder (Windows) op de toepassings server zijn.
+    - De gegeven referenties moeten voor een lokale beheerder (Windows) op de toepassingsserver zijn.
     - Voor domein accounts (de gebruiker moet een beheerder zijn op de toepassings server), voor voegsel van de gebruikers naam met de domein naam in de notatie *<domein\gebruikersnaam>*.
     - U kunt toepassings detectie uitvoeren voor Maxi maal vijf servers tegelijk.
 

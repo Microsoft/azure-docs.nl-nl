@@ -4,12 +4,12 @@ description: Verzamelingen van installatie kopieën of andere artefacten overdra
 ms.topic: article
 ms.date: 10/07/2020
 ms.custom: ''
-ms.openlocfilehash: 30e6c0fa7a33c7a83543fee297c582b15bce4c8b
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 4fe36366011fb790d25419ac46a54c4bf5ad94bf
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104606766"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104785815"
 ---
 # <a name="transfer-artifacts-to-another-registry"></a>Artefacten overdragen naar een ander REGI ster
 
@@ -368,8 +368,9 @@ IMPORT_RUN_RES_ID=$(az deployment group show \
   --name importPipelineRun \
   --query 'properties.outputResources[0].id' \
   --output tsv)
+```
 
-When deployment completes successfully, verify artifact import by listing the repositories in the target container registry. For example, run [az acr repository list][az-acr-repository-list]:
+Wanneer de implementatie is voltooid, controleert u het importeren van artefacten door de opslag plaatsen in het doel container register weer te geven. Voer bijvoorbeeld [AZ ACR Repository List][az-acr-repository-list]uit:
 
 ```azurecli
 az acr repository list --name <target-registry-name>

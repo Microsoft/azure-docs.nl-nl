@@ -6,16 +6,16 @@ ms.author: rajosh
 ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 01/19/2020
-ms.openlocfilehash: 45954a42613fb1716e3b66305c0485a3966b8e37
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 232475c50ab56fe6fb7a39a3497a8de3947fe851
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96753685"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104780307"
 ---
 # <a name="assess-large-numbers-of-physical-servers-for-migration-to-azure"></a>Een groot aantal fysieke servers beoordelen voor migratie naar Azure
 
-In dit artikel wordt beschreven hoe u een groot aantal on-premises fysieke servers kunt beoordelen voor migratie naar Azure, met behulp van het hulp programma voor het evalueren van Azure Migrate-servers.
+In dit artikel wordt beschreven hoe u een groot aantal on-premises fysieke servers kunt beoordelen voor migratie naar Azure, met behulp van het hulp programma voor detectie en evaluatie van Azure Migrate.
 
 [Azure Migrate](migrate-services-overview.md) biedt een hub aan hulpprogramma's waarmee u apps, infrastructuur en workloads op Microsoft Azure kunt detecteren, evalueren en migreren. De hub bevat Azure Migrate-hulpprogramma's en externe aanbiedingen van onafhankelijke softwareleveranciers (ISV’s). 
 
@@ -36,7 +36,7 @@ In dit artikel leert u het volgende:
 Bij het plannen van de beoordeling van een groot aantal fysieke servers, zijn er een aantal dingen die u moet nadenken:
 
 - **Azure migrate projecten plannen**: Ontdek hoe u Azure migrate projecten implementeert. Als uw data centers zich bijvoorbeeld in verschillende geografische grafieken bevinden, of als u de meta gegevens voor detectie, analyses of migratie wilt opslaan in een andere geografie, hebt u mogelijk meerdere projecten nodig.
-- **Toestellen plannen**: Azure migrate gebruikt een on-premises Azure migrate apparaat, geïmplementeerd op een Windows-computer, om voortdurend servers te detecteren voor evaluatie en migratie. Het apparaat bewaakt omgevings wijzigingen, zoals het toevoegen van Vm's, schijven of netwerk adapters. Ook worden er meta gegevens en prestatie gegevens naar Azure verzonden. U moet bepalen hoeveel apparaten er moeten worden geïmplementeerd.
+- **Toestellen plannen**: Azure migrate gebruikt een on-premises Azure migrate apparaat, geïmplementeerd op een Windows-Server, om voortdurend servers te detecteren voor evaluatie en migratie. Het apparaat bewaakt omgevings wijzigingen, zoals het toevoegen van servers, schijven of netwerk adapters. Ook worden er meta gegevens en prestatie gegevens naar Azure verzonden. U moet bepalen hoeveel apparaten er moeten worden geïmplementeerd.
 
 
 ## <a name="planning-limits"></a>Plannings limieten
@@ -57,7 +57,7 @@ Gebruik de limieten in deze tabel voor de planning.
 
 ## <a name="prepare-for-assessment"></a>Evaluatie voorbereiden
 
-Azure en fysieke servers voorbereiden voor Server evaluatie. 
+Azure en fysieke servers voorbereiden voor het hulp programma voor detectie en evaluatie:  
 
 1. Controleer de [vereisten en beperkingen van de fysieke server ondersteuning](migrate-support-matrix-physical.md).
 2. Stel machtigingen in voor uw Azure-account om te communiceren met Azure Migrate.
@@ -70,7 +70,7 @@ Volg de instructies in [deze zelf studie](./tutorial-discover-physical.md) om de
 In overeenstemming met uw plannings vereisten gaat u als volgt te werk:
 
 1. Maak een Azure Migrate-project.
-2. Voeg het hulp programma voor het evalueren van Azure Migrate-servers toe aan de projecten.
+2. Voeg het hulp programma voor Azure Migrate detectie en evaluatie toe aan de projecten.
 
 [Meer informatie](./create-manage-projects.md)
 

@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.subservice: certificates
 ms.topic: quickstart
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 6ae20c55a16b12f7543af3f08d96400a8e5f20c9
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 2026b1721dbe05af1ecc52324d1dd0ebf2ec3d08
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "97934914"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104802655"
 ---
 # <a name="quickstart-azure-key-vault-certificate-client-library-for-python"></a>Quickstart: Azure Key Vault-clientbibliotheek met certificaten voor Python
 
@@ -24,14 +24,14 @@ Ga aan de slag met de Azure Key Vault-clientbibliotheek met certificaten voor Py
 ## <a name="prerequisites"></a>Vereisten
 
 - Een Azure-abonnement (u kunt [een gratis abonnement maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)).
-- [Python 2.7+ of 3.5.3+](/azure/developer/python/configure-local-development-environment)
+- [Python 2.7 + of 3.6 +](/azure/developer/python/configure-local-development-environment)
 - [Azure-CLI](/cli/azure/install-azure-cli)
 
 In deze quickstart wordt ervan uitgegaan dat u [Azure CLI](/cli/azure/install-azure-cli) uitvoert in een Linux-terminalvenster.
 
 ## <a name="set-up-your-local-environment"></a>Uw lokale omgeving instellen
 
-Deze quickstart maakt gebruik van de Azure Identity-bibliotheek met Azure CLI om de gebruiker te verifiëren bij Azure-services. Ontwikkelaars kunnen ook Visual Studio of Visual Studio Code gebruiken om hun oproepen te verifiëren: zie [De client verifiëren met de Azure Identity-clientbibliotheek](/java/api/overview/azure/identity-readme) (Engelstalig) voor meer informatie
+Deze quickstart maakt gebruik van de Azure Identity-bibliotheek met Azure CLI om de gebruiker te verifiëren bij Azure-services. Ontwikkelaars kunnen ook Visual Studio of Visual Studio Code gebruiken om hun oproepen te verifiëren: zie [De client verifiëren met de Azure Identity-clientbibliotheek](/python/api/overview/azure/identity-readme) (Engelstalig) voor meer informatie
 
 ### <a name="sign-in-to-azure"></a>Aanmelden bij Azure
 

@@ -3,13 +3,13 @@ title: Een ondersteuningsaanvraag maken voor Azure
 description: Klanten die hulp nodig hebben, kunnen de Azure Portal gebruiken om self-service oplossingen te vinden en ondersteunings aanvragen te maken en te beheren.
 ms.assetid: fd6841ea-c1d5-4bb7-86bd-0c708d193b89
 ms.topic: how-to
-ms.date: 06/25/2020
-ms.openlocfilehash: 71aba8f2769a75805f47d90b71a8db4eeb26a97a
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.date: 03/16/2021
+ms.openlocfilehash: 395fc0d5905389ffb8f68d8bbc4c6f8b3a871d36
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100652391"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104774865"
 ---
 # <a name="create-an-azure-support-request"></a>Een Azure-ondersteuningsaanvraag maken
 
@@ -42,7 +42,7 @@ Als u een ondersteunings aanvraag wilt maken, moet u [eigenaar](../../role-based
 
 Als u een ondersteunings aanvraag wilt starten vanaf elke locatie in de Azure Portal:
 
-1. Selecteer de **?** in de globale header. Selecteer vervolgens **Help + ondersteuning**.
+1. Selecteer de **?** Selecteer in de globale header Help en **ondersteuning**.
 
    ![Help en ondersteuning](./media/how-to-create-azure-support-request/helpandsupportnewlower.png)
 
@@ -52,7 +52,7 @@ Als u een ondersteunings aanvraag wilt starten vanaf elke locatie in de Azure Po
 
 ### <a name="go-to-help--support-from-a-resource-menu"></a>Ga naar Help en ondersteuning vanuit een resource menu
 
-Als u een ondersteunings aanvraag in de context van de resource wilt starten, bent u momenteel bezig met het volgende:
+Ga als volgt te werk om een ondersteunings aanvraag te starten in de context van de resource waarmee u momenteel werkt:
 
 1. Klik in het menu resource, in de sectie **ondersteuning en probleem oplossing** , op **nieuwe ondersteunings aanvraag**.
 

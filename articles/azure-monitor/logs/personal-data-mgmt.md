@@ -5,21 +5,22 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/18/2018
-ms.openlocfilehash: ff6d532d3c391ffecfbfb54a761c73ff24c823d9
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 03c4babc8fa70c951d80b720c4d4693968011532
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102040257"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104772260"
 ---
 # <a name="guidance-for-personal-data-stored-in-log-analytics-and-application-insights"></a>Richtlijnen voor persoonsgegevens die zijn opgeslagen in Logboekanalyse en Application Insights
 
 Log Analytics is een gegevens archief waar persoons gegevens waarschijnlijk worden gevonden. Application Insights worden de gegevens opgeslagen in een Log Analytics partitie. In dit artikel wordt beschreven waar in Log Analytics en Application Insights dergelijke gegevens doorgaans worden gevonden, evenals de mogelijkheden die beschikbaar zijn voor het afhandelen van dergelijke gegevens.
 
 > [!NOTE]
-> Voor de doel einden van dit artikel verwijzen _gegevens_ naar gegevens die naar een log Analytics werkruimte worden verzonden, terwijl _toepassings gegevens_ verwijzen naar gegevens die worden verzameld door Application Insights.
+> Voor de doel einden van dit artikel verwijzen _gegevens_ naar gegevens die naar een log Analytics werkruimte worden verzonden, terwijl _toepassings gegevens_ verwijzen naar gegevens die worden verzameld door Application Insights. Als u een Application Insights resource op basis van een werk ruimte gebruikt, wordt de informatie over de logboek gegevens toegepast, maar als u de klassieke Application Insights resource gebruikt, zijn de toepassings gegevens van toepassing.
 
 [!INCLUDE [gdpr-dsr-and-stp-note](../../../includes/gdpr-dsr-and-stp-note.md)]
+
 
 ## <a name="strategy-for-personal-data-handling"></a>Strategie voor het afhandelen van persoonlijke gegevens
 
@@ -27,7 +28,7 @@ Hoewel het aan u is en uw bedrijf uiteindelijk de strategie wil bepalen waarmee 
 
 * Indien mogelijk, stopt u het verzamelen van, het afschermen, anoniem maken of anderszins aanpassen van de gegevens die worden verzameld om deze uit te sluiten van als ' privé '. Dit is de aanbevolen benadering en bespaart _u de nood_ zaak om een zeer kost bare strategie voor gegevens verwerking te maken.
 * Als dat niet mogelijk is, probeert u de gegevens te normaliseren om de impact op het gegevens platform en de prestaties te verminderen. In plaats van een expliciete gebruikers-ID te registreren, maakt u bijvoorbeeld een opzoek gegevens waarmee de gebruikers naam en de details ervan worden gecorreleerd aan een interne ID die vervolgens ergens anders kan worden geregistreerd. Op die manier is het mogelijk dat als een van uw gebruikers u vraagt om zijn of haar persoonlijke gegevens te verwijderen, de rij in de opzoek tabel die overeenkomt met de gebruiker, voldoende wordt verwijderd. 
-* Ten slotte, als er persoonlijke gegevens moeten worden verzameld, moet u een proces maken rond het pad van de API voor opschonen en het bestaande query-API-pad om te voldoen aan eventuele verplichtingen die u mogelijk hebt voor het exporteren en verwijderen van persoonlijke gegevens die aan een gebruiker zijn gekoppeld. 
+* Ten slotte, als er persoonlijke gegevens moeten worden verzameld, moet u een proces maken rond het pad van de API voor opschonen en het bestaande query-API-pad om te voldoen aan eventuele verplichtingen die u mogelijk hebt voor het exporteren en verwijderen van persoonlijke gegevens die aan een gebruiker zijn gekoppeld.
 
 ## <a name="where-to-look-for-private-data-in-log-analytics"></a>Waar moet u zoeken naar privé gegevens in Log Analytics?
 

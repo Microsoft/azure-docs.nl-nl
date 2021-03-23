@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 02/19/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: aafac1133b2bee54624d5f0b00061c5332fcd90b
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 5c03d3f9769aec0736d23f18372701e08ad93dac
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102631877"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104802791"
 ---
 # <a name="windows-10-enterprise-multi-session-faq"></a>Veelgestelde vragen over meervoudige Windows 10 Enterprise-sessies
 
@@ -33,9 +33,13 @@ Windows 10 Enter prise multi-session is een virtuele editie van Windows 10 Enter
 
 Windows 10 Enter prise multi-session kan niet worden uitgevoerd in een on-premises productie omgeving omdat het is geoptimaliseerd voor de virtueel-bureaublad service van Windows voor Azure. U kunt de gebruiksrecht overeenkomst gebruiken om een multi-sessie van Windows 10 Enter prise uit te voeren buiten Azure voor productie doeleinden. Windows 10 Enter prise multi-session kan niet worden geactiveerd op basis van on-premises Key Management Services (KMS).
 
+## <a name="can-i-upgrade-a-windows-10-vm-to-windows-10-enterprise-multi-session"></a>Kan ik een upgrade uitvoeren van een Windows 10 VM naar Windows 10 Enter prise multi-session?
+
+Nee. Het is momenteel niet mogelijk een upgrade uit te voeren van een bestaande virtuele machine (VM) met Windows 10 Professional of ENTER prise naar Windows 10 Enter prise multi-session. Als u een virtuele machine met Windows 10 Enter prise met meerdere sessies implementeert en de product code vervolgens bijwerkt naar een andere versie, kunt u de VM niet weer overschakelen naar Windows 10 Enter prise Multi-Session en moet u de virtuele machine opnieuw implementeren.
+
 ## <a name="how-do-i-customize-the-windows-10-enterprise-multi-session-image-for-my-organization"></a>Hoe kan ik de Windows 10 Enter prise-installatie kopie voor meerdere sessies aanpassen voor mijn organisatie?
 
-U kunt een virtuele machine (VM) in azure starten met Windows 10 Windows 10 Enter prise Multi-Session en deze aanpassen door LOB-toepassingen, sysprep/generalize te installeren en vervolgens een installatie kopie te maken met behulp van de Azure Portal.
+U kunt een virtuele machine in azure starten met Windows 10 Enter prise Multi-Session en deze aanpassen door LOB-toepassingen, sysprep/generalize te installeren en vervolgens een installatie kopie te maken met behulp van de Azure Portal.
 
 Om aan de slag te gaan, maakt u een virtuele machine in azure met Windows 10 Enter prise multi-session. In plaats van de virtuele machine in azure te starten, kunt u de VHD rechtstreeks downloaden. Daarna kunt u de VHD die u hebt gedownload gebruiken om een nieuwe generatie 1 VM te maken op een Windows 10-computer waarop Hyper-V is ingeschakeld.
 

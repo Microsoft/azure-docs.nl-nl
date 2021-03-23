@@ -10,16 +10,16 @@ ms.service: active-directory
 ms.topic: how-to
 ms.workload: identity
 ms.subservice: pim
-ms.date: 11/18/2020
+ms.date: 03/22/2021
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 079dcdc9d1667809779489c5d1126bc85cafb881
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: fa9861dd1ffbdd33f59abe76c7ebbd1befe3e7a6
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96511309"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104799425"
 ---
 # <a name="activate-my-azure-ad-roles-in-pim"></a>Mijn Microsoft Azure AD-rollen activeren in PIM
 
@@ -110,11 +110,7 @@ Als u geen activering van een rol vereist waarvoor goed keuring is vereist, kunt
 
 ### <a name="permissions-are-not-granted-after-activating-a-role"></a>Machtigingen worden niet toegekend na het activeren van een rol
 
-Wanneer u een rol in Privileged Identity Management activeert, wordt de activering mogelijk niet onmiddellijk door gegeven aan alle portals waarvoor de rol met privileges is vereist. Zelfs als de wijziging is doorgevoerd, kan het soms gebeuren dat webcaching in een portal tot gevolg heeft dat de wijziging niet onmiddellijk van kracht gaat. Als de activering is vertraagd, is dit wat u moet doen.
-
-1. Meld u af bij de Azure-portal en meld u weer aan.
-
-1. Controleer in Privileged Identity Management of u wordt vermeld als lid van de rol.
+Wanneer u een rol in Privileged Identity Management activeert, wordt de activering mogelijk niet onmiddellijk door gegeven aan alle portals waarvoor de rol met privileges is vereist. Zelfs als de wijziging is doorgevoerd, kan het soms gebeuren dat webcaching in een portal tot gevolg heeft dat de wijziging niet onmiddellijk van kracht gaat. Als de activering is vertraagd, meldt u zich af bij de portal die u probeert uit te voeren en meldt u zich vervolgens opnieuw aan. In de Azure Portal, wordt u in PIM automatisch afgemeld en weer gegeven.
 
 # <a name="previous-version"></a>[Vorige versie](#tab/previous)
 
@@ -216,13 +212,7 @@ Als u geen activering van een rol vereist waarvoor goed keuring is vereist, kunt
 
 ### <a name="permissions-are-not-granted-after-activating-a-role"></a>Machtigingen worden niet toegekend na het activeren van een rol
 
-Wanneer u een rol in Privileged Identity Management activeert, wordt de activering mogelijk niet onmiddellijk door gegeven aan alle portals waarvoor de rol met privileges is vereist. Zelfs als de wijziging is doorgevoerd, kan het soms gebeuren dat webcaching in een portal tot gevolg heeft dat de wijziging niet onmiddellijk van kracht gaat. Als de activering is vertraagd, is dit wat u moet doen.
-
-1. Meld u af bij de Azure-portal en meld u weer aan.
-
-    Wanneer u een Azure AD-rol activeert, ziet u de fasen van uw activering. Wanneer alle fasen zijn voltooid, ziet u de koppeling **Afmelden**. U kunt deze koppeling gebruiken om u af te melden. Hiermee worden de meeste gevallen voor de activerings vertraging opgelost.
-
-1. Controleer in Privileged Identity Management of u wordt vermeld als lid van de rol.
+Wanneer u een functie activeert in Privileged Identity Management, kan de activering worden vertraagd in beheer portals, met uitzonde ring van de Azure Portal, zoals de Office 365-Portal. Als de activering is vertraagd, meldt u zich af bij de portal die u gebruikt en meldt u zich vervolgens opnieuw aan. Gebruik vervolgens Privileged Identity Management om te controleren of u als lid van de rol wordt weer gegeven.
 
  ---
 

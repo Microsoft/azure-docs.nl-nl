@@ -10,17 +10,17 @@ ms.date: 03/10/2021
 ms.topic: include
 ms.custom: include file
 ms.author: tchladek
-ms.openlocfilehash: e8efa094ef6bd888c21f71e44f1810614bc87e75
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 913f2bc5569dc9bdd058c38902ad0c99acee5d48
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104719881"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104803425"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
 - Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
-- [Python](https://www.python.org/downloads/) 2.7, 3.5 of hoger.
+- [Python](https://www.python.org/downloads/) 2,7 of 3.6 +.
 - Een actieve Communication Services-resource en verbindingsreeks. [Een Communication Services-resource maken](../create-communication-resource.md).
 
 ## <a name="setting-up"></a>Instellen

@@ -93,7 +93,7 @@
               displayName: 'custom, setting, properties'
               href: concept-baseline.md
             - name: Azure-beveiligings basislijn voor Azure Defender voor IoT
-              displayName: 'identity management, active directory, privileged access, data protection, asset management, incident response, posture, vulnerability, governance'
+              displayName: 'identity management, active directory, privileged access, data protection, incident response, posture, vulnerability, governance'
               href: security-baseline.md
             - name: Defender-IoT-micro-agent klassieke gebeurtenis aggregatie
               displayName: 'twin, default, configuration, alerts'
@@ -114,10 +114,10 @@
               href: how-to-identify-required-appliances.md
               displayName: 'virtual, Dell, HPE, SMB, certified, hardware, deployment, DL20, EL300, R340, enterprise, SMB, corporate'
             - name: Uw netwerk instellen
-              displayName: 'passive, browsers, network access, TAP, switch, mirroring, firewall, SPAN, monitoring, tuning'
+              displayName: 'passive, browsers, setup, deployment, network access, TAP, switch, mirroring, firewall, SPAN, monitoring, tuning'
               href: how-to-set-up-your-network.md
             - name: Software installeren
-              displayName: 'virtual, Dell, HPE, SMB, certified, hardware, port mirroring, ESXi, DL20, EL300, R340,enterprise, SMB, corporate'
+              displayName: 'setup, deployment, virtual, Dell, HPE, SMB, certified, hardware, port mirroring, ESXi, DL20, EL300, R340,enterprise, SMB, corporate'
               href: how-to-install-software.md
         - name: Uw sensoren voorbereiden
           items:
@@ -125,12 +125,12 @@
               displayName: 'onboard, cloud, register, activate, offboard, subscription, subscriptions'
               href: how-to-manage-sensors-on-the-cloud.md
             - name: Uw sensor activeren en instellen
-              displayName: 'onboard, register, activation, SSL, TLS, certificate, cloud connected, sign in, login, setup, learning mode, initial'
+              displayName: 'deployment, onboard, register, activation, SSL, TLS, certificate, cloud connected, sign in, login, setup, learning mode, initial'
               href: how-to-activate-and-set-up-your-sensor.md
         - name: Uw on-premises beheerconsole voorbereiden
           items:
             - name: Uw on-premises beheerconsole activeren en instellen
-              displayName: 'activate, certificate, sign in, SSL, TLS, login, setup, initial, committed activation file'
+              displayName: 'deployment, activate, certificate, sign in, SSL, TLS, login, setup, initial, committed activation file'
               href: how-to-activate-and-set-up-your-on-premises-management-console.md
             - name: Hoge beschikbaarheid instellen
               displayName: 'primary, secondary, failover, failback fail, recovery'
@@ -166,19 +166,22 @@
               displayName: classification
             - name: Alle sensordetecties in een apparaatinventaris onderzoeken
               href: how-to-investigate-sensor-detections-in-a-device-inventory.md
-              displayName: 'classification, Windows registry, asset, device, firmware, import'
+              displayName: 'classification, Windows registry, device, firmware, import'
         - name: Werken met een sensorapparaatkaart
           href: how-to-work-with-the-sensor-device-map.md
           displayName: 'connections, Purdue, zoom, delete device'
         - name: Werken met waarschuwingen die worden gedetecteerd door een sensor
           items:
-            - name: Werken met een waarschuwing in uw sensor
+            - name: Over sensor waarschuwingen
               href: how-to-work-with-alerts-on-your-sensor.md
-            - name: Waarschuwingen weergeven
+            - name: Waarschuwingen filteren en beheren via de pagina waarschuwingen
               href: how-to-view-alerts.md
-            - name: De informatie in waarschuwingen weergeven
+            - name: Over waarschuwings berichten
               href: how-to-view-information-provided-in-alerts.md
-              displayName: PCAP
+              displayName: 'PCAP, metadata, alerts, link, device map,'
+            - name: Waarschuwings typen en-beschrijvingen
+              href: alert-engine-messages.md
+              displayName: 'alert, alerts, description, engine, anomaly, protocol, policy, malware, violation, operational'
             - name: De waarschuwingsgebeurtenis beheren
               href: how-to-manage-the-alert-event.md
               displayName: 'PCAP, acknowledge, learn, mute, policy'
@@ -191,6 +194,9 @@
         - name: 'Inzicht krijgen in globale, regionale en lokale bedreigingen'
           href: how-to-gain-insight-into-global-regional-and-local-threats.md
           displayName: 'site, business unit, region, map'
+        - name: 'Weinig informatie apparaten, waarschuwingen en Sens oren per zone'
+          href: how-to-view-information-per-zone.md
+          displayName: zones
         - name: Werken met waarschuwingen in de on-premises beheerconsole
           href: how-to-work-with-alerts-on-premises-management-console.md
         - name: Rapporten maken
@@ -300,7 +306,7 @@
         - name: Oplossen van problemen met micro agent voor Defender IoT (preview-versie)
           displayName: 'service status, review logs'
           href: troubleshoot-defender-micro-agent.md
-- name: Naslaginformatie
+- name: Referentie
   items:
     - name: Oplossing zonder agent voor organisaties
       items:

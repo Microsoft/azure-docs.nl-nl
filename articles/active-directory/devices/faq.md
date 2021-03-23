@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: ravenn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 509d267dcdaef58a9792609a60c8a9401e90e867
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: eb468dba1156087bdeb6086f5bc24b214e576e18
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103199717"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104773297"
 ---
 # <a name="azure-active-directory-device-management-faq"></a>Veelgestelde vragen over het beheer van apparaten Azure Active Directory
 
@@ -267,7 +267,7 @@ Dit gedrag:
 
 **A:** Wanneer uw gebruikers hun accounts toevoegen aan apps op een apparaat dat lid is van een domein, kan het worden gevraagd **om een account toe te voegen aan Windows?** Als ze **Ja** op de prompt invoeren, wordt het apparaat geregistreerd bij Azure AD. Het vertrouwens type is gemarkeerd als Azure AD geregistreerd. Nadat u hybride Azure AD join hebt ingeschakeld in uw organisatie, wordt het apparaat ook toegevoegd aan hybride Azure AD. Vervolgens worden twee Apparaatstatus weer gegeven voor hetzelfde apparaat. 
 
-Hybride Azure AD-deelname heeft voor rang op de geregistreerde status van Azure AD. Uw apparaat wordt dus beschouwd als hybride Azure AD die is gekoppeld aan een evaluatie van de verificatie en voorwaardelijke toegang. U kunt de registratie van Azure AD-apparaten veilig verwijderen uit de Azure AD-Portal. Meer informatie over [het voor komen of opschonen van deze dubbele status op de Windows 10-computer](hybrid-azuread-join-plan.md#review-things-you-should-know). 
+In de meeste gevallen heeft hybride Azure AD join prioriteit boven de geregistreerde Azure AD-status, wat betekent dat uw apparaat wordt beschouwd als hybride Azure AD die is gekoppeld aan een evaluatie van de verificatie en voorwaardelijke toegang. Soms kan deze dubbele status echter leiden tot een niet-deterministische evaluatie van het apparaat en toegangs problemen veroorzaken. U wordt ten zeerste geadviseerd om een upgrade uit te voeren naar Windows 10 versie 1803 en hoger, waarbij de geregistreerde Azure AD-status automatisch wordt opgeschoond. Informatie over het voor [komen of opschonen van deze dubbele status op de Windows 10-computer](hybrid-azuread-join-plan.md#review-things-you-should-know). 
 
 ---
 

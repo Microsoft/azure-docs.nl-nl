@@ -4,12 +4,12 @@ description: Gebruik uw Azure container Registry om multi-Architecture (multi-Ar
 ms.topic: article
 ms.date: 02/07/2021
 ms.custom: ''
-ms.openlocfilehash: f8467cd3108ae4faea9ecb4c9d9ae339f476c311
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 520518a275e0a9d191ae770e560a0e6e8278eae2
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100012312"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104802451"
 ---
 # <a name="multi-architecture-images-in-your-azure-container-registry"></a>Afbeeldingen met meerdere architecturen in uw Azure container Registry
 
@@ -165,7 +165,7 @@ steps:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Gebruik [Azure-pijp lijnen](/azure/devops/pipelines/get-started/what-is-azure-pipelines.md) om container installatie kopieën voor verschillende architecturen te maken.
+* Gebruik [Azure-pijp lijnen](/azure/devops/pipelines/get-started/what-is-azure-pipelines) om container installatie kopieën voor verschillende architecturen te maken.
 * Meer informatie over het bouwen van installatie kopieën met meerdere platforms met behulp van de experimentele docker [buildx](https://docs.docker.com/buildx/working-with-buildx/) -invoeg toepassing.
 
 <!-- LINKS - external -->

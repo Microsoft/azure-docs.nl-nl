@@ -2,18 +2,18 @@
 author: memildin
 ms.service: security-center
 ms.topic: include
-ms.date: 03/14/2021
+ms.date: 03/21/2021
 ms.author: memildin
 ms.custom: generated
-ms.openlocfilehash: c142f6a00275b4b21b6bbc64e51a5c4d7d957258
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 5fc36e327a9530105182f0a23b3ef22ab324e01c
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103468000"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104803484"
 ---
-- Toegang tot opslag accounts met firewall-en virtuele-netwerk configuraties moet beperkte opslag accounts zijn toegang tot het netwerk beperken
-- Automation-account variabelen moeten versleutelde Automation-account variabelen moeten worden versleuteld
+- Toegang tot opslagaccounts met configuraties voor firewalls en virtuele netwerken moet worden beperkt
+- Automation-accountvariabelen moeten worden versleuteld
 - Azure Cache voor Redis moet zich in een virtueel netwerk bevinden
 - Voor Azure Cosmos DB-accounts moeten door de klant beheerde sleutels worden gebruikt voor het versleutelen van data-at-rest
 - Azure Machine Learning-werkruimten moeten worden versleuteld met een door de klant beheerde sleutel (CMK)
@@ -31,21 +31,21 @@ ms.locfileid: "103468000"
 - Beveiliging tegen leegmaken moet zijn ingeschakeld voor sleutelkluizen
 - Voorlopig verwijderen moet zijn ingeschakeld voor sleutelkluizen
 - Minimaal bevoegde Linux-functies moeten worden afgedwongen voor containers
-- Alleen beveiligde verbindingen met uw Redis Cache moeten worden ingeschakeld. alleen beveiligde verbindingen met uw Azure-cache voor redis moeten worden ingeschakeld
+- Alleen beveiligde verbindingen met uw Redis Cache moeten zijn ingeschakeld
 - Het overschrijven of uitschakelen van het AppArmor-profiel voor containers moet worden beperkt
 - Bevoegde containers moeten worden vermeden
 - Het uitvoeren van containers als hoofdgebruiker moet worden vermeden
-- Beveiligde overdracht naar opslag accounts moet zijn ingeschakeld beveiligde overdracht naar opslag accounts moet worden ingeschakeld
-- Voor Service Fabric clusters moet de eigenschap ClusterProtectionLevel zijn ingesteld op EncryptAndSign Service Fabric clusters de eigenschap ClusterProtectionLevel moeten hebben ingesteld op EncryptAndSign
-- Service Fabric-clusters mogen alleen gebruikmaken van Azure Active Directory voor client verificatie Service Fabric clusters alleen Azure Active Directory gebruiken voor client verificatie
+- Beveiligde overdracht naar opslagaccounts moet zijn ingeschakeld
+- Voor Service Fabric-clusters moet de eigenschap ClusterProtectionLevel zijn ingesteld op EncryptAndSign
+- Service Fabric-clusters mogen alleen gebruikmaken van Azure Active Directory voor clientverificatie
 - Services mogen alleen op toegestane poorten luisteren
 - Openbare toegang tot een opslagaccount moet niet worden toegestaan
-- Opslag accounts moeten worden gemigreerd naar nieuwe Azure Resource Manager-opslag accounts moeten worden gemigreerd naar nieuwe Azure Resource Manager resources
+- Opslagaccounts moeten worden gemigreerd naar nieuwe Azure Resource Manager-resources
 - Opslagaccounts moeten netwerktoegang beperken met behulp van regels voor virtuele netwerken
 - Het gebruik van hostnetwerken en -poorten moet worden beperkt
 - Het gebruik van HostPath-volumekoppelingen voor pods moet worden beperkt tot een bekende lijst om de toegang tot knooppunten te beperken voor de containers die zijn gecompromitteerd
 - De geldigheidsperiode van certificaten die in Azure Key Vault zijn opgeslagen, mag niet langer zijn dan twaalf maanden
-- Virtuele machines moeten worden gemigreerd naar nieuwe Azure Resource Manager resources virtuele machines moeten worden gemigreerd naar nieuwe Azure Resource Manager resources
+- Virtuele machines moeten worden gemigreerd naar nieuwe Azure Resource Manager-resources
 - Web Application Firewall (WAF) moet zijn ingeschakeld voor Application Gateway
 - Web Application firewall (WAF) moet zijn ingeschakeld voor de service service van Azure voor de voor deur
 

@@ -1,15 +1,15 @@
 ---
 title: Een aangepaste prijs opstaande tegel in azure-Dash boards gebruiken
 description: Meer informatie over het toevoegen van een tegel met korting op een Azure-dash board voor het weer geven van statische inhoud
-ms.date: 01/08/2020
+ms.date: 03/19/2021
 ms.topic: how-to
 ms.custom: devx-track-js
-ms.openlocfilehash: 5121142ecf568aa1ac9a7ec19f7211c6f9a6253f
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 8324b736565cfa353e48cf49b76e2784866f47f7
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96745754"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104774453"
 ---
 # <a name="use-a-markdown-tile-on-azure-dashboards-to-show-custom-content"></a>Een tegel met korting op Azure-Dash boards gebruiken om aangepaste inhoud weer te geven
 
@@ -21,7 +21,7 @@ U kunt een tegel met korting toevoegen aan uw Azure-Dash boards om aangepaste st
 
    ![Scherm opname van portal zijbalk](./media/azure-portal-markdown-tile/azure-portal-nav.png)
 
-1. Als u aangepaste Dash boards hebt gemaakt, gebruikt u in de dashboard weergave de vervolg keuzelijst om het dash board te selecteren waar de tegel aangepaste prijs opgave moet worden weer gegeven. Selecteer het bewerkings pictogram om de **tegel galerie** te openen.
+1. Selecteer in de dashboard weergave het dash board waar de tegel aangepaste prijs verlaging moet worden weer gegeven en selecteer vervolgens **bewerken**.
 
    ![Scherm opname van weer gave dash board bewerken](./media/azure-portal-markdown-tile/azure-portal-dashboard-edit.png)
 
@@ -53,7 +53,7 @@ U kunt een tegel met korting toevoegen aan uw Azure-Dash boards om aangepaste st
 U kunt elke combi natie van de syntaxis voor tekst zonder opmaak en de inhoud van een HTML-bestand gebruiken op de tegel prijs verlaging. De Azure Portal gebruikt een open-source bibliotheek met de naam _gemarkeerd_ om uw inhoud te TRANSFORMEREN in HTML die wordt weer gegeven op de tegel. De HTML-code die wordt geproduceerd door _gemarkeerd_ , wordt vooraf verwerkt door de portal voordat deze wordt weer gegeven. Met deze stap zorgt u ervoor dat uw aanpassing geen invloed heeft op de beveiliging of indeling van de portal. Tijdens deze vooraf-verwerking wordt elk deel van de HTML dat een mogelijke bedreiging vormt, verwijderd. De volgende typen inhoud zijn niet toegestaan door de portal:
 
 * Java script: `<script>` Tags en inline java script-evaluaties worden verwijderd.
-* iframes: `<iframe>` Tags worden verwijderd.
+* iframes- `<iframe>` Tags worden verwijderd.
 * Style- `<style>` Tags worden verwijderd. Inline stijl kenmerken voor HTML-elementen worden niet officieel ondersteund. Het kan voor komen dat sommige inline-stijl elementen werken voor u, maar als deze de indeling van de portal beïnvloeden, kunnen ze op elk gewenst moment niet meer werken. De tegel prijs verlaging is bedoeld voor basis statische inhoud die gebruikmaakt van de standaard stijlen van de portal.
 
 ## <a name="next-steps"></a>Volgende stappen

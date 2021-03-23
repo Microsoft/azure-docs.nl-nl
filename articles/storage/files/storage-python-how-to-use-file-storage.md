@@ -8,12 +8,12 @@ ms.date: 10/08/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: devx-track-python
-ms.openlocfilehash: 8bef69037fad8bf8ee9537e90f26ca967560b9d2
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: d45ce3a782d7ee145f769283b82e34647c78f26e
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "91876094"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104799867"
 ---
 # <a name="develop-for-azure-files-with-python"></a>Ontwikkelen voor Azure Files met Python
 
@@ -37,11 +37,11 @@ Leer de basis beginselen van het gebruik van python voor het ontwikkelen van app
 
 # <a name="python-v12"></a>[Python-V12](#tab/python)
 
-De [Azure File Storage-client bibliotheek V12. x voor python](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-file-share) vereist python 2,7 of 3,5.
+De [Azure File Storage-client bibliotheek V12. x voor python](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-file-share) vereist python 2,7 of 3.6 +.
 
 # <a name="python-v2"></a>[Python v2](#tab/python2)
 
-De [Azure Storage SDK voor python](https://github.com/azure/azure-storage-python) vereist python 2,7, 3,3, 3,4, 3,5 of 3,6.
+De [Azure Storage SDK voor python](https://github.com/azure/azure-storage-python) vereist python 2,7 of 3.6 +.
 
 ---
 

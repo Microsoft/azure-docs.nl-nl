@@ -5,13 +5,13 @@ author: abhijitpai
 ms.author: abpai
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 01/19/2021
-ms.openlocfilehash: 007bf845bab6f493fae91debefde27a4929d9f95
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.date: 03/22/2021
+ms.openlocfilehash: f33490e273104105502ecc8f4f255c354a2d2f3b
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98611029"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104800020"
 ---
 # <a name="azure-cosmos-db-service-quotas"></a>Service quota's Azure Cosmos DB
 
@@ -137,7 +137,7 @@ Afhankelijk van de API die u gebruikt, kan een Azure Cosmos-container een verzam
 | --- | --- |
 | Maximale lengte van de data base of container naam | 255 |
 | Maximum aantal opgeslagen procedures per container | 100 <sup>*</sup>|
-| Maximum aantal Udf's per container | 1,25 <sup>*</sup>|
+| Maximum aantal Udf's per container | 50 <sup>*</sup>|
 | Maximum aantal paden in het indexerings beleid| 100 <sup>*</sup>|
 | Maximum aantal unieke sleutels per container|6 <sup>*</sup>|
 | Maximum aantal paden per beperking van de unieke sleutel|18 <sup>*</sup>|

@@ -1,19 +1,14 @@
 ---
 title: Over de Splunk-integratie
-titleSuffix: Azure Defender for IoT
 description: Om een gebrek aan zicht baarheid van de beveiliging en tolerantie van de netwerken te verhelpen, hebben Defender voor IoT de Defender voor IoT-, IIoT-en ICS-toepassing voor risico bewaking ontwikkeld voor Splunk, een systeem eigen integratie tussen Defender voor IoT en Splunk waarmee een uniforme benadering van de IT-mede werkers kan worden beveiligd.
-author: shhazam-ms
-manager: rkarlin
-ms.author: shhazam
 ms.date: 1/4/2021
 ms.topic: article
-ms.service: azure
-ms.openlocfilehash: 91d877d644b4b5ca7231f5f81f9163a0fd3cbe25
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 28bdc6deaac09d795c45460bb211126a105b80c8
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98557985"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104785917"
 ---
 # <a name="defender-for-iot-and-ics-threat-monitoring-application-for-splunk"></a>Defender voor IoT-en ICS-toepassing voor risico bewaking voor Splunk
 
@@ -158,7 +153,7 @@ Een doorstuur regel maken:
     | **Ernst selecteren** | Het minimale beveiligings niveau incident dat moet worden doorgestuurd. Als bijvoorbeeld secundair is geselecteerd, worden kleine waarschuwingen en waarschuwingen boven dit niveau van de ernst doorgestuurd. |
     | **Protocollen** | Standaard zijn alle protocollen geselecteerd. Als u een specifiek protocol wilt selecteren, selecteert u **specifiek** en selecteert u het protocol waarvoor deze regel wordt toegepast. |
     | **Zoekprogramma's** | Standaard zijn alle beveiligings engines betrokken. Als u een specifieke beveiligings Engine wilt selecteren waarvoor deze regel wordt toegepast, selecteert u **specifiek** en selecteert u de engine. |
-    | **Systeem meldingen** | Online/offline-status van sensor door sturen. Deze optie is alleen beschikbaar als u bent aangemeld bij de centrale Manager. |                                            |
+    | **Systeem meldingen** | Online/offline-status van sensor door sturen. Deze optie is alleen beschikbaar als u bent aangemeld bij de centrale Manager. |
 
 1. Om ervoor te zorgen dat Defender voor IoT informatie over de activa naar Splunk verzendt, selecteert u **actie** en selecteert **u vervolgens verzenden naar Splunk server**.
 

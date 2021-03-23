@@ -8,12 +8,12 @@ ms.service: api-management
 ms.topic: article
 ms.date: 03/12/2021
 ms.author: apimpm
-ms.openlocfilehash: 3f91ca21512b8cddcac7fe71fa3eec07e1a8745a
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 1a835d26b4c41c92b9849856a2f31b3550947bd8
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104720080"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104801890"
 ---
 # <a name="api-management-policies-to-validate-requests-and-responses"></a>API Management beleid voor het valideren van aanvragen en antwoorden
 
@@ -115,7 +115,7 @@ Dit beleid kan worden gebruikt in de volgende beleids [secties](./api-management
 Het `validate-parameters` beleid valideert de para meters header, query of Path in aanvragen voor het API-schema.
 
 > [!IMPORTANT]
-> Als u eerder een API hebt geïmporteerd met behulp van een API-versie van beheer vóór `2021-01-01-preview` , `validate-parameters` werkt het beleid mogelijk niet. Mogelijk moet u de API opnieuw importeren met behulp van de beheer-API-versie `2021-01-01-preview` of hoger.
+> Als u eerder een API hebt geïmporteerd met behulp van een API-versie van beheer vóór `2021-01-01-preview` , `validate-parameters` werkt het beleid mogelijk niet. Mogelijk moet u [de API opnieuw importeren](/rest/api/apimanagement/2021-01-01-preview/apis/createorupdate) met behulp van de beheer-API-versie `2021-01-01-preview` of hoger.
 
 
 ### <a name="policy-statement"></a>Beleids verklaring
@@ -145,6 +145,7 @@ In dit voor beeld worden alle para meters voor query's en paden gevalideerd in d
         <parameter name="User-Agent" action="ignore" />
         <parameter name="Host" action="ignore" />
         <parameter name="Referrer" action="ignore" />
+    </headers>   
 </validate-parameters>
 ```
 

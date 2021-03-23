@@ -5,12 +5,12 @@ ms.topic: tutorial
 author: bwren
 ms.author: bwren
 ms.date: 10/07/2020
-ms.openlocfilehash: 06a73b495cefc361db88d80413f4f4be50e105d1
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: a5788e5ac64c1c74a06c94c5634a05315ee098b8
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102041141"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104799289"
 ---
 # <a name="log-analytics-tutorial"></a>Log Analytics-zelfstudie
 Log Analytics is een hulpprogramma in Azure Portal om logboekquery's te bewerken en uit te voeren op basis van gegevens die zijn verzameld door Azure Monitor-logboeken en om de resultaten interactief te analyseren. U kunt Log Analytics-query's gebruiken om records op te halen die overeenkomen met bepaalde criteria, trends te identificeren, patronen te analyseren en een verscheidenheid aan inzichten in uw gegevens te bieden. 
@@ -72,7 +72,7 @@ Een **waar**-instructie wordt toegevoegd aan de zoekopdracht met de waarde die u
 ## <a name="time-range"></a>Tijdsbereik
 Alle tabellen in een Log Analytics-werkruimte hebben een kolom met de naam **TimeGenerated**, het tijdstip waarop de record is gemaakt. Alle query's hebben een tijdsbereik dat de resultaten beperkt tot records met een **TimeGenerated**-waarde binnen dat bereik. Het tijdsbereik kan worden ingesteld in de query of met de selector bovenaan het scherm.
 
-Standaard worden records in de afgelopen 24 uur door de query geretourneerd. Selecteer de vervolgkeuzelijst **Tijdsbereik** en wijzig deze in **7 dagen**. Klik nogmaals op **Uitvoeren** om de resultaten te retourneren. U ziet dat de resultaten worden geretourneerd, maar we hebben hier een bericht dat we niet alle resultaten zien. Dit komt omdat Log Analytics maximaal 10.000 records kan retourneren en onze query heeft meer records geretourneerd dan dat. 
+Standaard worden records in de afgelopen 24 uur door de query geretourneerd. Selecteer de vervolgkeuzelijst **Tijdsbereik** en wijzig deze in **7 dagen**. Klik nogmaals op **Uitvoeren** om de resultaten te retourneren. U ziet dat de resultaten worden geretourneerd, maar we hebben hier een bericht dat we niet alle resultaten zien. Dit komt omdat Log Analytics Maxi maal 30.000 records kan retour neren, waarna de query meer records heeft geretourneerd dan dat. 
 
 [![Tijdsbereik](media/log-analytics-tutorial/query-results-max.png)](media/log-analytics-tutorial/query-results-max.png#lightbox)
 

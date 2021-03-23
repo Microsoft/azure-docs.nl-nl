@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 09/19/2019
 ms.author: duau
-ms.openlocfilehash: 0dc2b48d02eb8a69afc947891c263ef1510257a7
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: c65825a6d8d2d7f9059e91a1f248367fa1788e1a
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101721834"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104799493"
 ---
 # <a name="expressroute-routing-requirements"></a>Routeringsvereisten voor ExpressRoute
 Als u ExpressRoute wilt gebruiken om verbinding te maken met Microsoft Cloud-services, moet u routering instellen en beheren. Sommige connecitiviteitsproviders bieden het instellen en beheren van routering aan als een beheerde service. Neem contact op met uw connectiviteitsprovider om na te gaan of ze deze service leveren. Als dat niet het geval is, moet u voldoen aan de volgende vereisten:
@@ -106,7 +106,7 @@ Controleer of uw IP-adres en AS-nummer in een van de volgende registers op uw na
 
 Als uw voorvoegsel en AS-nummer in voorgaande registers niet aan u zijn toegewezen, moet u een ondersteuningsaanvraag openen voor handmatige validatie van uw voorvoegsels en het ASN. De ondersteuning vraagt naar de vereiste documentatie, zoals een autorisatiebrief waaruit blijkt dat u de resources mag gebruiken.
 
-Een persoonlijk AS-nummer is toegestaan met Microsoft-peering, maar moet ook handmatig worden gevalideerd. Bovendien verwijderen we persoonlijke AS-nummers in het AS-pad voor de ontvangen voorvoegsels. Hierdoor is het niet mogelijk om persoonlijke AS-nummers aan het AS-pad toe te voegen om [routering voor Microsoft-peering te beïnvloeden](expressroute-optimize-routing.md). 
+Een persoonlijk AS-nummer is toegestaan met Microsoft-peering, maar moet ook handmatig worden gevalideerd. Bovendien verwijderen we persoonlijke AS-nummers in het AS-pad voor de ontvangen voorvoegsels. Hierdoor is het niet mogelijk om persoonlijke AS-nummers aan het AS-pad toe te voegen om [routering voor Microsoft-peering te beïnvloeden](expressroute-optimize-routing.md). Daarnaast zijn de getallen 64496-64511 die door de IANA zijn gereserveerd voor documentatie doeleinden niet toegestaan in het pad.
 
 > [!IMPORTANT]
 > Adverteer niet dezelfde open bare IP-route naar het open bare Internet en over ExpressRoute. Om het risico te verminderen dat een onjuiste configuratie wordt veroorzaakt door asymmetrische route ring, raden wij u ten zeerste aan dat de [NAT IP-adressen](expressroute-nat.md) die naar micro soft worden geadverteerd via ExpressRoute, afkomstig zijn uit een bereik dat helemaal niet is geadverteerd naar Internet. Als dit niet mogelijk is, is het van essentieel belang om ervoor te zorgen dat u een meer specifiek bereik aankondigt boven ExpressRoute dan het account dat op de Internet verbinding is. Naast de open bare route voor NAT kunt u ook adverteren via ExpressRoute de open bare IP-adressen die worden gebruikt door de servers in uw on-premises netwerk die communiceren met Microsoft 365-eind punten in micro soft. 

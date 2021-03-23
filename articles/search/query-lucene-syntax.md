@@ -8,22 +8,22 @@ ms.author: brjohnst
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 12/14/2020
-ms.openlocfilehash: 0dbf418d0a673dd0799f0f638e454c484f837fd7
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: fc3662d8198e6ab6ab215ac1e9e8eac585f4250b
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "97516599"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104801584"
 ---
 # <a name="lucene-query-syntax-in-azure-cognitive-search"></a>De Lucene-query syntaxis in azure Cognitive Search
 
 Bij het maken van query's kunt u kiezen voor de syntaxis van de [lucene-query-parser](https://lucene.apache.org/core/6_6_1/queryparser/org/apache/lucene/queryparser/classic/package-summary.html) voor gespecialiseerde query formulieren: Joker teken, fuzzy zoeken, proximity Search, reguliere expressies. Een deel van de syntaxis van de Lucene-query-parser is [in Azure Cognitive Search geïmplementeerd](search-lucene-query-architecture.md), met uitzonde ring van *Zoek opdrachten* in het bereik die zijn gemaakt via **`$filter`** expressies. 
 
-De syntaxis Full lucene wordt gebruikt voor query-expressies die zijn door gegeven in de **`search`** para meter van een aanvraag van een [Zoek document (rest API)](/rest/api/searchservice/search-documents) , niet voor Verwar ring met de [OData-syntaxis](query-odata-filter-orderby-syntax.md) die wordt gebruikt voor de [**`$filter`**](search-filters.md) and- [**`$orderby`**](search-query-odata-orderby.md) expressies in dezelfde aanvraag. OData-para meters hebben een andere syntaxis en regels voor het maken van query's, teken reeksen, enzovoort.
+Als u de syntaxis Full lucene wilt gebruiken, stelt u het query type in op ' Full ' en geeft u een query-expressie op die is gebruikt voor joker tekens, fuzzy zoeken of een van de andere query formulieren die worden ondersteund door de volledige syntaxis. In REST worden query-expressies gegeven in de **`search`** para meter van een aanvraag voor [Zoek documenten (rest API)](/rest/api/searchservice/search-documents) .
 
 ## <a name="example-full-syntax"></a>Voor beeld (volledige syntaxis)
 
-Stel de **`queryType`** para meter in op volledige lucene opgeven. In het volgende voor beeld wordt zoeken in veld en term versterking geactiveerd. Deze query zoekt naar hotels waar het veld categorie de term ' budget ' bevat. Documenten met de zin ' recent renovated ' worden hoger geclassificeerd als resultaat van de term Boost waarde (3).  
+Het volgende voor beeld is een zoek opdracht die is samengesteld op basis van de volledige syntaxis. In dit voor beeld ziet u in-Field Search en term Boosting. Er wordt gezocht naar hotels waar het veld categorie de term ' budget ' bevat. Documenten met de zin ' recent renovated ' worden hoger geclassificeerd als resultaat van de term Boost waarde (3).  
 
 ```http
 POST /indexes/hotels-sample-index/docs/search?api-version=2020-06-30
@@ -34,9 +34,9 @@ POST /indexes/hotels-sample-index/docs/search?api-version=2020-06-30
 }
 ```
 
-De **`searchMode`** para meter is relevant in dit voor beeld. Wanneer Opera tors zich op de query bevinden, moet u in het algemeen instellen `searchMode=all` dat *alle* criteria overeenkomen.  
+Hoewel het niet specifiek is voor een query type, **`searchMode`** is de para meter relevant in dit voor beeld. Wanneer Opera tors zich op de query bevinden, moet u in het algemeen instellen `searchMode=all` dat *alle* criteria overeenkomen.  
 
-Zie voor meer voor beelden de voor [beelden van Lucene-query syntaxis](search-query-lucene-examples.md). Zie [documenten zoeken (rest API)](/rest/api/searchservice/Search-Documents)voor meer informatie over de query aanvraag en-para meters.
+Zie voor meer voor beelden de voor [beelden van Lucene-query syntaxis](search-query-lucene-examples.md). Zie [documenten zoeken (rest API)](/rest/api/searchservice/Search-Documents)voor meer informatie over de query aanvraag en-para meters, waaronder Search mode.
 
 ## <a name="syntax-fundamentals"></a><a name="bkmk_syntax"></a> Syntaxis basis  
 

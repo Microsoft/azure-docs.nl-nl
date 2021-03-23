@@ -5,15 +5,15 @@ author: ThomasWeiss
 ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
 ms.topic: how-to
-ms.date: 10/14/2020
+ms.date: 03/19/2021
 ms.author: thweiss
 ms.custom: devx-track-js
-ms.openlocfilehash: e488d1acfe116409caf571e7878e454628a9dea9
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 6b2944c1d29849ea44b5afd878d5b0e030358cc5
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103201336"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104801822"
 ---
 # <a name="find-the-request-unit-charge-for-operations-executed-in-azure-cosmos-db-api-for-mongodb"></a>De kosten voor de aanvraag eenheid zoeken voor bewerkingen die zijn uitgevoerd in Azure Cosmos DB-API voor MongoDB
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
@@ -34,13 +34,17 @@ De RU-kosten worden weer gegeven met een aangepaste [database opdracht](https://
 
 1. Ga naar het deel venster **Data Explorer** en selecteer vervolgens de container waaraan u wilt werken.
 
-1. Selecteer **New Query** (Nieuwe query).
+1. Selecteer de **..** . naast de naam van de container en selecteer **nieuwe query**.
 
 1. Voer een geldige query in en selecteer **query uitvoeren**.
 
-1. Selecteer **query statistieken** om de werkelijke aanvraag kosten weer te geven voor de aanvraag die u hebt uitgevoerd.
+1. Selecteer **query statistieken** om de werkelijke aanvraag kosten weer te geven voor de aanvraag die u hebt uitgevoerd. Met deze query-editor kunt u kosten voor aanvraag eenheden voor alleen query predikaten uitvoeren en weer geven. U kunt deze editor niet gebruiken voor het bewerken van gegevens, zoals INSERT-instructies.
 
-:::image type="content" source="./media/find-request-unit-charge/portal-mongodb-query.png" alt-text="Scherm opname van een aanvraag voor een MongoDB-query in de Azure Portal":::
+   :::image type="content" source="./media/find-request-unit-charge/portal-mongodb-query.png" alt-text="Scherm opname van een aanvraag voor een MongoDB-query in de Azure Portal":::
+
+1. Als u de aanvraag kosten voor het uitvoeren van gegevens wilt ophalen, voert u de `getLastRequestStatistics` opdracht uit vanaf een shell-gebaseerde gebruikers interface, zoals Mongo shell, [Robo 3T gebruiken](mongodb-robomongo.md), [MONGODB kompas](mongodb-compass.md)of een VS code-extensie met shell scripting.
+
+   `db.runCommand({getLastRequestStatistics: 1})`
 
 ## <a name="use-the-mongodb-net-driver"></a>Het MongoDB .NET-stuur programma gebruiken
 

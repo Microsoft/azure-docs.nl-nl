@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 03/02/2021
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 955d3330d3f08d7e7f024ec2c36941d02244d9ba
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 7ecf3d23f745d9281008433eee471c14c7afe337
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101726833"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104802196"
 ---
 # <a name="azure-storage-redundancy"></a>Azure Storage-redundantie
 
@@ -32,6 +32,9 @@ Gegevens in een Azure Storage-account worden altijd drie keer gerepliceerd in de
 
 - **Lokaal redundante opslag (LRS)** kopieert uw gegevens synchroon drie keer binnen één fysieke locatie in de primaire regio. LRS is de minst dure replicatie optie, maar wordt niet aanbevolen voor toepassingen die hoge Beschik baarheid vereisen.
 - **Zone-redundante opslag (ZRS)** kopieert uw gegevens synchroon over drie Azure-beschikbaarheids zones in de primaire regio. Voor toepassingen die hoge Beschik baarheid vereisen, raadt micro soft aan ZRS te gebruiken in de primaire regio en ook te repliceren naar een secundaire regio.
+
+> [!NOTE]
+> Micro soft raadt aan om ZRS te gebruiken in de primaire regio voor Azure Data Lake Storage Gen2 workloads.
 
 ### <a name="locally-redundant-storage"></a>Lokaal redundante opslag
 

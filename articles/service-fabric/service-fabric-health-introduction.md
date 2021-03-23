@@ -5,12 +5,12 @@ author: georgewallace
 ms.topic: conceptual
 ms.date: 2/28/2018
 ms.author: gwallace
-ms.openlocfilehash: f691eb6433907ed10737329de3edd78547f130f1
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 6c96651fa48acc2f88658148c7e60be2f3fa09da
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96008273"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104800156"
 ---
 # <a name="introduction-to-service-fabric-health-monitoring"></a>Inleiding tot de statuscontrole Service Fabric
 Azure Service Fabric introduceert een status model dat voorziet in uitgebreide, flexibele en uitbreid bare status-en rapportage doeleinden. Het model staat bijna realtime bewaking toe van de status van het cluster en de services die hierop worden uitgevoerd. U kunt eenvoudig status informatie verkrijgen en mogelijke problemen corrigeren voordat ze trapsgewijs worden gecascaded en aanzienlijke storingen veroorzaken. In het typische model verzenden Services rapporten op basis van hun lokale weer gaven en wordt deze informatie geaggregeerd om een algemene weer gave op cluster niveau te bieden.
@@ -79,6 +79,7 @@ Service Fabric worden standaard strikte regels toegepast (alles moet in orde zij
 
 ### <a name="cluster-health-policy"></a>Cluster status beleid
 Het [cluster status beleid](/dotnet/api/system.fabric.health.clusterhealthpolicy) wordt gebruikt om de status van de cluster status en de status van het knoop punt te evalueren. Het beleid kan worden gedefinieerd in het cluster manifest. Als deze niet aanwezig is, wordt het standaard beleid (nul niet-toegestaan) gebruikt.
+
 Het cluster status beleid bevat:
 
 * [ConsiderWarningAsError](/dotnet/api/system.fabric.health.clusterhealthpolicy.considerwarningaserror). Hiermee geeft u op of waarschuwing status rapporten moeten worden behandeld als fouten tijdens de status evaluatie. Standaard: onwaar.
@@ -87,18 +88,33 @@ Het cluster status beleid bevat:
 * [ApplicationTypeHealthPolicyMap](/dotnet/api/system.fabric.health.clusterhealthpolicy.applicationtypehealthpolicymap). De toewijzing van het status beleid van het toepassings type kan worden gebruikt tijdens de cluster status evaluatie om speciale toepassings typen te beschrijven. Standaard worden alle toepassingen in een groep geplaatst en geëvalueerd met MaxPercentUnhealthyApplications. Als sommige toepassings typen anders moeten worden behandeld, kunnen ze uit de globale groep worden gehaald. In plaats daarvan worden ze geëvalueerd op basis van de percentages die zijn gekoppeld aan hun toepassings type naam in de kaart. In een cluster zijn bijvoorbeeld duizenden toepassingen van verschillende typen en enkele exemplaren van de controle toepassingen van een speciaal toepassings type. De besturings toepassingen moeten nooit een fout hebben. U kunt globale MaxPercentUnhealthyApplications opgeven tot 20% om bepaalde fouten te verdragen, maar voor het toepassings type ' ControlApplicationType ' is de MaxPercentUnhealthyApplications ingesteld op 0. Op deze manier, als sommige toepassingen niet in orde zijn, maar onder het globale percentage van de status, wordt het cluster geëvalueerd op waarschuwing. Een waarschuwings status heeft geen invloed op de cluster upgrade of andere bewaking die wordt geactiveerd door de status van de fout. Maar zelfs als er een fout optreedt in een besturings toepassing, wordt het cluster beschadigd, waardoor de cluster upgrade wordt teruggedraaid of onderbroken, afhankelijk van de upgrade configuratie.
   Voor de toepassings typen die in de kaart zijn gedefinieerd, worden alle exemplaren van de toepassing uit de algemene groep toepassingen gehaald. Ze worden geëvalueerd op basis van het totale aantal toepassingen van het toepassings type, met behulp van de specifieke MaxPercentUnhealthyApplications van de kaart. Alle overige toepassingen blijven aanwezig in de globale groep en worden geëvalueerd met MaxPercentUnhealthyApplications.
 
-Het volgende voor beeld is een fragment uit een cluster manifest. Als u vermeldingen wilt definiëren in de toewijzing van het toepassings type, typt u de parameter naam met ' ApplicationTypeMaxPercentUnhealthyApplications-', gevolgd door de naam van het toepassings type.
+  Het volgende voor beeld is een fragment uit een cluster manifest. Als u vermeldingen wilt definiëren in de toewijzing van het toepassings type, typt u de parameter naam met ' ApplicationTypeMaxPercentUnhealthyApplications-', gevolgd door de naam van het toepassings type.
 
-```xml
-<FabricSettings>
-  <Section Name="HealthManager/ClusterHealthPolicy">
-    <Parameter Name="ConsiderWarningAsError" Value="False" />
-    <Parameter Name="MaxPercentUnhealthyApplications" Value="20" />
-    <Parameter Name="MaxPercentUnhealthyNodes" Value="20" />
-    <Parameter Name="ApplicationTypeMaxPercentUnhealthyApplications-ControlApplicationType" Value="0" />
-  </Section>
-</FabricSettings>
-```
+  ```xml
+  <FabricSettings>
+    <Section Name="HealthManager/ClusterHealthPolicy">
+      <Parameter Name="ConsiderWarningAsError" Value="False" />
+      <Parameter Name="MaxPercentUnhealthyApplications" Value="20" />
+      <Parameter Name="MaxPercentUnhealthyNodes" Value="20" />
+      <Parameter Name="ApplicationTypeMaxPercentUnhealthyApplications-ControlApplicationType" Value="0" />
+    </Section>
+  </FabricSettings>
+  ```
+
+* [NodeTypeHealthPolicyMap](/dotnet/api/system.fabric.health.clusterhealthpolicy.nodetypehealthpolicymap). Het knooppunt type status beleids toewijzing kan worden gebruikt tijdens de cluster status evaluatie om speciale knooppunt typen te beschrijven. De knooppunt typen worden geëvalueerd op basis van de percentages die zijn gekoppeld aan de knooppunt type naam in de kaart. Het instellen van deze waarde heeft geen invloed op de globale groep knoop punten die worden gebruikt voor `MaxPercentUnhealthyNodes` . Zo beschikt een cluster over honderden knoop punten van verschillende typen en enkele typen knoop punten die belang rijk zijn voor de hand. Er moeten geen knoop punten in dat type actief zijn. U kunt globaal `MaxPercentUnhealthyNodes` tot 20% opgeven om sommige storingen voor alle knoop punten te verdragen, maar voor het knooppunt type `SpecialNodeType` stelt `MaxPercentUnhealthyNodes` u de waarde in op 0. Op deze manier, als sommige van de verschillende knoop punten niet in orde zijn, maar onder het globale percentage van de status, wordt het cluster geëvalueerd als in de status van de waarschuwing. Een waarschuwings status van de waarschuwing heeft geen invloed op de cluster upgrade of andere bewaking die wordt geactiveerd door een fout status. Maar zelfs als één knoop punt van `SpecialNodeType` het type een fout status heeft, zou het cluster niet meer in orde zijn en de cluster upgrade terugdraaien of pauzeren, afhankelijk van de upgrade configuratie. Als u het algemene `MaxPercentUnhealthyNodes` percentage instelt op 0 en het `SpecialNodeType` maximum aantal knoop punten met een slechte status instelt op 100 met één knoop punt van `SpecialNodeType` het type in een fout status, zou het cluster nog steeds een fout status hebben omdat de globale beperking in dit geval strikter is. 
+
+  Het volgende voor beeld is een fragment uit een cluster manifest. Als u vermeldingen wilt definiëren in de toewijzing van het knooppunt type, typt u de parameter naam met ' NodeTypeMaxPercentUnhealthyNodes-', gevolgd door de naam van het knooppunt type.
+
+  ```xml
+  <FabricSettings>
+    <Section Name="HealthManager/ClusterHealthPolicy">
+      <Parameter Name="ConsiderWarningAsError" Value="False" />
+      <Parameter Name="MaxPercentUnhealthyApplications" Value="20" />
+      <Parameter Name="MaxPercentUnhealthyNodes" Value="20" />
+      <Parameter Name="NodeTypeMaxPercentUnhealthyNodes-SpecialNodeType" Value="0" />
+    </Section>
+  </FabricSettings>
+  ```
 
 ### <a name="application-health-policy"></a>Beleid voor toepassings status
 Het [beleid voor toepassings status](/dotnet/api/system.fabric.health.applicationhealthpolicy) beschrijft hoe de evaluatie van gebeurtenissen en aggregatie van de onderliggende status wordt uitgevoerd voor toepassingen en hun kinderen. Het kan worden gedefinieerd in het toepassings manifest **ApplicationManifest.xml**, in het toepassings pakket. Als er geen beleid is opgegeven, wordt door Service Fabric aangenomen dat de entiteit een slechte status heeft als deze een status rapport of een onderliggend item met de waarschuwings-of fout status bevat.

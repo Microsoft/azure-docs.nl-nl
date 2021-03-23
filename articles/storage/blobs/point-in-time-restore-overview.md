@@ -10,12 +10,12 @@ ms.date: 03/03/2021
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: da869091fb1f7bf31a29ba1bc6db8c1c42254dc4
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: b959038753dd15282de357da746ef9b0e0cf2be5
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102618080"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104802264"
 ---
 # <a name="point-in-time-restore-for-block-blobs"></a>Herstel naar een bepaald tijdstip voor blok-blobs
 
@@ -53,9 +53,11 @@ De bewerking **BLOB-bereiken herstellen** retourneert een Restore-id waarmee de 
 
 Herstel naar een bepaald tijdstip vereist dat de volgende Azure Storage-functies worden ingeschakeld voordat u herstel naar een bepaald tijdstip kunt inschakelen:
 
-- [Voorlopig verwijderen](./soft-delete-blob-overview.md)
+- [Voorlopig verwijderen](soft-delete-blob-overview.md)
 - [Feed wijzigen](storage-blob-change-feed.md)
 - [BLOB-versie beheer](versioning-overview.md)
+
+Het inschakelen van deze functies kan leiden tot extra kosten. Zorg ervoor dat u bekend bent met de facturerings implicaties voordat u herstel naar een bepaald tijdstip en de vereiste functies inschakelt.
 
 ### <a name="retention-period-for-point-in-time-restore"></a>Bewaar periode voor herstel naar een bepaald tijdstip
 
@@ -88,6 +90,8 @@ Herstel naar een bepaald tijdstip voor blok-blobs heeft de volgende beperkingen 
 > Als u blok-blobs herstelt naar een punt dat ouder is dan 22 september 2020, zijn de preview-beperkingen voor herstel naar een bepaald tijdstip van kracht. Micro soft raadt u aan om een herstel punt te kiezen dat gelijk is aan of hoger dan 22 september 2020 om te profiteren van de algemeen beschik bare functie voor het terugzetten van een bepaald tijdstip.
 
 ## <a name="pricing-and-billing"></a>Prijzen en facturering
+
+Er zijn geen kosten verbonden aan het inschakelen van herstel naar een bepaald tijdstip. Het inschakelen van herstel naar een bepaald tijdstip maakt ook het mogelijk maken van BLOB-versie beheer, het voorlopig verwijderen en de wijzigings feed, waarbij elk kan leiden tot extra kosten.
 
 Facturering voor tijdstippen herstel is afhankelijk van de hoeveelheid gegevens die wordt verwerkt om de herstel bewerking uit te voeren. De hoeveelheid verwerkte gegevens is gebaseerd op het aantal wijzigingen dat is opgetreden tussen het herstel punt en het huidige moment. Als er bijvoorbeeld een relatief constant tempo van wijziging is voor het blok keren van BLOB-gegevens in een opslag account, zou een herstel bewerking die terugkeert in de tijd 1 dag kosten 1/tiende van een herstel datum van 10 dagen in beslag nemen.
 

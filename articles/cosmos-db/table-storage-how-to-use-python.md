@@ -10,12 +10,12 @@ author: sakash279
 ms.author: akshanka
 ms.reviewer: sngun
 ms.custom: devx-track-python
-ms.openlocfilehash: 12ee827f297729682b0a5e1b1808afe312c657a4
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 847e100dfaa922c359b321f17d77d2d0c67afc9b
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102499064"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104802859"
 ---
 # <a name="get-started-with-azure-table-storage-and-the-azure-cosmos-db-table-api-using-python"></a>Aan de slag met Azure Table Storage en de Azure Cosmos DB Table-API met behulp van Python
 [!INCLUDE[appliesto-table-api](includes/appliesto-table-api.md)]
@@ -41,9 +41,9 @@ Tijdens het werken met de scenario's in dit voorbeeld kunt u het [referentiemate
 
 U hebt het volgende nodig voor dit voorbeeld:
 
-* [Python](https://www.python.org/downloads/) 2.7, 3.3, 3.4, 3.5 of 3.6
+* [Python](https://www.python.org/downloads/) 2,7 of 3.6 +.
 * [Azure Cosmos DB Table SDK voor Python](https://pypi.python.org/pypi/azure-cosmosdb-table/). Deze SDK is verbonden met zowel Azure Table Storage als de Azure Cosmos DB Table-API.
-* Een [Azure Storage-account](../storage/common/storage-account-create.md) of [Azure Cosmos DB-account](https://azure.microsoft.com/try/cosmosdb/)
+* [Azure Storage account](../storage/common/storage-account-create.md) of [Azure Cosmos DB account](https://azure.microsoft.com/try/cosmosdb/).
 
 ## <a name="create-an-azure-service-account"></a>Een Azure-serviceaccount maken
 

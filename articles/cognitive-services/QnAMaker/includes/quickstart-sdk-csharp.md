@@ -3,12 +3,12 @@ title: 'Quickstart: QnA Maker-clientbibliotheek voor .NET'
 description: In deze quickstart ziet u hoe u aan de slag gaat met de QnA Maker-clientbibliotheek voor .NET. Volg deze stappen om het pakket te installeren en de voorbeeldcode voor basistaken uit te proberen.  Met QnA Maker kunt u een vraag- en antwoordservice maken op basis van uw semi-gestructureerde inhoud zoals FAQ-documenten, URL's en producthandleidingen.
 ms.topic: quickstart
 ms.date: 06/18/2020
-ms.openlocfilehash: 3b2bbf30fcd93bdd8e3d8bdefcbf863df30d9017
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 0f1e779fea0fe4f3f3a88b91091d11442e2f958b
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104583191"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104803275"
 ---
 # <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/version-1)
 
@@ -143,10 +143,11 @@ Voeg in de methode `Main` van de toepassing variabelen en code toe, zoals wordt 
 
 We gebruiken de abonnements sleutel en de ontwerp sleutel zijn interlate. Volg de stappen [in QnA Maker](../concepts/azure-resources.md?tabs=v1#keys-in-qna-maker)voor meer informatie over het ontwerpen van sleutels.
 
-- De waarde van QNA_MAKER_ENDPOINT heeft de indeling `https://YOUR-RESOURCE-NAME.cognitiveservices.azure.com`. 
-- De waarde van QNA_MAKER_RUNTIME_ENDPOINT heeft de indeling `https://YOUR-RESOURCE-NAME.azurewebsites.net`. Nadat u de Knowledge Base in de QnA Maker Portal hebt gepubliceerd, kunt u het runtime-eind punt vinden zoals hieronder wordt weer gegeven.
-  
-  ![QnA Maker runtime-eind punt](../media/endpoint.png)
+- De waarde van QNA_MAKER_ENDPOINT heeft de indeling `https://YOUR-RESOURCE-NAME.cognitiveservices.azure.com`. Ga naar de QnA Maker-resource in de Azure Portal en klik op **sleutels en eind punt** om de ontwerp-en QnA Maker-eind punt te zoeken.
+
+ ![QnA Maker runtime-eind punt](../media/keys-endpoint.png)
+
+- De waarde van QNA_MAKER_RUNTIME_ENDPOINT heeft de indeling `https://YOUR-RESOURCE-NAME.azurewebsites.net`.  
       
 - Overweeg om voor productie een veilige manier te gebruiken voor het opslaan en openen van uw referenties. [Azure Key Vault](../../../key-vault/general/overview.md) biedt bijvoorbeeld beveiligde sleutelopslag.
 
@@ -159,7 +160,10 @@ We gebruiken de abonnements sleutel en de ontwerp sleutel zijn interlate. Volg d
 
 We gebruiken de abonnements sleutel en de ontwerp sleutel zijn interlate. Volg de stappen [in QnA Maker](../concepts/azure-resources.md?tabs=v2#keys-in-qna-maker)voor meer informatie over het ontwerpen van sleutels.
 
-- De waarde van QNA_MAKER_ENDPOINT heeft de indeling `https://YOUR-RESOURCE-NAME.cognitiveservices.azure.com`. 
+- De waarde van QNA_MAKER_ENDPOINT heeft de indeling `https://YOUR-RESOURCE-NAME.cognitiveservices.azure.com`. Ga naar de QnA Maker-resource in de Azure Portal en klik op **sleutels en eind punt** om de ontwerp-en QnA Maker-eind punt te zoeken.
+
+ ![QnA Maker runtime-eind punt](../media/keys-endpoint.png)
+
 - Overweeg om voor productie een veilige manier te gebruiken voor het opslaan en openen van uw referenties. [Azure Key Vault](../../../key-vault/general/overview.md) biedt bijvoorbeeld beveiligde sleutelopslag.
 
 [!code-csharp[Set the resource key and resource name](~/cognitive-services-quickstart-code/dotnet/QnAMaker/Preview-sdk-based-quickstart/Program.cs?name=Resourcevariables)]

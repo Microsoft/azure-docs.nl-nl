@@ -4,15 +4,15 @@ description: Dit artikel laat u zien hoe u problemen met wijzigingen in een virt
 services: automation
 ms.subservice: change-inventory-management
 keywords: wijziging, bijhouden, bijhouden van wijzigingen, inventaris, automatisering
-ms.date: 12/05/2018
+ms.date: 03/21/2021
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: a223ac4296dd160bbdd904e1d3443552d4f49a23
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 980740d387f9e953d1ea764327c8aa13f8650948
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "100587926"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104775800"
 ---
 # <a name="troubleshoot-changes-on-an-azure-vm"></a>Problemen met wijzigingen aan een virtuele machine van Azure oplossen
 
@@ -208,15 +208,15 @@ Het kan handig zijn om wijzigingen te bekijken in Azure Portal, maar het is nóg
 
 14. Voer een naam in voor de actie, zoals **Beheerders een e-mail verzenden** voor **Acties**. 
 
-15. Selecteer onder **ACTIETYPE** de optie **E-mail/sms/push/spraak**. 
+15. Selecteer voor **actie type** **e-mail/SMS-bericht/push/Voice**. 
 
 16. Selecteer onder **DETAILS** de optie **Details bewerken**.
 
-    ![Actiegroep toevoegen](./media/automation-tutorial-troubleshoot-changes/add-action-group.png)
+    :::image type="content" source="./media/automation-tutorial-troubleshoot-changes/add-action-group.png" alt-text="Gebruik en geschatte kosten." lightbox="./media/automation-tutorial-troubleshoot-changes/add-action-group.png":::
 
-17. Voer een naam in, selecteer het vakje **E-mail** en geef een geldig e-mailadres op in het deelvenster E-mail/sms/push/spraak. Klik wanneer u klaar bent op **OK** op het deelvenster en vervolgens op **OK** op de pagina Actiegroep toevoegen.
+17. Voer in het deel venster **e-mail/SMS-bericht/push/Voice** een naam in, selecteer het selectie vakje **e-mail** en voer vervolgens een geldig e-mail adres in. Wanneer u klaar bent, klikt u op **OK** in het deel venster en vervolgens op **OK** op de pagina **actie groep toevoegen** .
 
-18. Selecteer **Acties aanpassen** om het onderwerp van de waarschuwingsmail aan te passen. 
+18. Selecteer **Acties aanpassen** om het onderwerp van de waarschuwingsmail aan te passen.
 
 19. Voor **Regel maken** selecteert u **E-mailonderwerp** en vervolgens **Waarschuwingsregel maken**. De waarschuwing laat u weten wanneer een update-implementatie is voltooid en op welke machines deze update-implementatie is uitgevoerd. In de volgende afbeelding ziet u een e-mail die u zou kunnen ontvangen wanneer de W3SVC-service stopt.
 

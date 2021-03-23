@@ -10,12 +10,12 @@ ms.subservice: management
 ms.date: 06/25/2020
 ms.reviewer: jushiman
 ms.custom: mimckitt
-ms.openlocfilehash: 99dc7a2350631f662e1c993908f7ef56e4f9a194
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 04446243ed827cca4972a4b606c4930e74a2c704
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "88648561"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104774963"
 ---
 # <a name="design-considerations-for-scale-sets"></a>Ontwerp overwegingen voor schaal sets
 In dit artikel worden ontwerp overwegingen voor Virtual Machine Scale Sets beschreven. Raadpleeg [Virtual Machine Scale sets Overview](./overview.md)voor meer informatie over wat virtual machine Scale sets zijn.
@@ -67,4 +67,4 @@ Een schaalset die is geconfigureerd met door de gebruiker beheerde opslag accoun
 
 Een schaalset die is gebouwd op een aangepaste installatie kopie (één door u gebouwd), kan een capaciteit hebben van Maxi maal 600 Vm's wanneer deze is geconfigureerd met Azure Managed disks. Als de schaalset is geconfigureerd met door de gebruiker beheerde opslag accounts, moet de virtuele harde schijf van het besturings systeem in één opslag account worden gemaakt. Als gevolg hiervan is het Maxi maal aanbevolen aantal Vm's in een schaalset die is gebouwd op een aangepaste installatie kopie en door de gebruiker beheerde opslag, 20. Als u het overinrichten uitschakelt, kunt u Maxi maal 40 gaan.
 
-Voor meer Vm's dan deze limieten toestaan, moet u meerdere schaal sets implementeren, zoals in [deze sjabloon](https://github.com/Azure/azure-quickstart-templates/tree/master/301-custom-images-at-scale)wordt weer gegeven.
+Voor meer Vm's dan deze limieten toestaan, moet u meerdere schaal sets implementeren, zoals in [deze sjabloon](https://azure.microsoft.com/resources/templates/301-custom-images-at-scale/)wordt weer gegeven.

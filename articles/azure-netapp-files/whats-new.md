@@ -14,18 +14,22 @@ ms.devlang: na
 ms.topic: overview
 ms.date: 03/11/2021
 ms.author: b-juche
-ms.openlocfilehash: 84213832e59c50c85d9731ced39bbce6264df47e
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: f4019a28e98e06ad4a115e57b2cc9d3fb6f0a807
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104590905"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104802927"
 ---
 # <a name="whats-new-in-azure-netapp-files"></a>Wat is er nieuw in Azure NetApp Files
 
-Azure NetApp Files wordt regelmatig bijgewerkt. In dit artikel wordt een overzicht gegeven van de nieuwste functies en verbeteringen. 
+Azure NetApp Files wordt regel matig bijgewerkt. In dit artikel wordt een overzicht gegeven van de nieuwste functies en verbeteringen. 
 
-## <a name="march-2021"></a>2021 maart 
+## <a name="march-2021"></a>2021 maart
+
+* Shares voor SMB continue Beschik baarheid (CA) (preview-versie)  
+
+    Met SMB transparent failover kunt u onderhouds bewerkingen op de Azure NetApp Files-service uitvoeren zonder de verbinding te onderbreken met server toepassingen die gegevens op SMB-volumes opslaan en gebruiken. Azure NetApp Files ondersteunt nu de optie voor het gebruik van SMB Continuous-Beschik baarheid om te gebruiken met SQL Server toepassingen via SMB op virtuele machines van Azure. Deze functie wordt momenteel ondersteund op Windows SQL Server. Linux-SQL Server wordt momenteel niet ondersteund. Het inschakelen van deze functie biedt aanzienlijk SQL Server prestatie verbeteringen en schaal-en kosten voordelen voor [één exemplaar, Always-On het failover-cluster exemplaar en de implementatie van Always-On-beschikbaarheids groepen](azure-netapp-files-solution-architectures.md#sql-server). Bekijk de [voor delen van het gebruik van Azure NetApp files voor SQL Server-implementatie](solutions-benefits-azure-netapp-files-sql-server.md).
 
 * [Automatisch wijzigen van het formaat van een replicatie doel volume voor meerdere regio's](azure-netapp-files-resize-capacity-pools-or-volumes.md#resize-a-cross-region-replication-destination-volume)
 
@@ -33,7 +37,7 @@ Azure NetApp Files wordt regelmatig bijgewerkt. In dit artikel wordt een overzic
 
 ## <a name="december-2020"></a>December 2020
 
-* [Het hulpprogramma Azure Application Consistent Snapshot](azacsnap-introduction.md) (openbare preview)    
+* [Azure-toepassing consistent momentopname programma](azacsnap-introduction.md) (preview-versie)    
 
     Het hulpprogramma Azure Application Consistent Snapshot Tool (AzAcSnap) is een opdrachtregelprogramma waarmee u gegevensbescherming voor databases van derden (SAP HANA) in Linux-omgevingen (bijvoorbeeld SUSE en RHEL) kunt vereenvoudigen.   
 
@@ -53,7 +57,7 @@ Azure NetApp Files wordt regelmatig bijgewerkt. In dit artikel wordt een overzic
 
 ## <a name="september-2020"></a>September 2020
 
-* [Replicatie tussen regio's van Azure NetApp Files](cross-region-replication-introduction.md) (openbare preview)
+* [Replicatie van meerdere regio's Azure NetApp files](cross-region-replication-introduction.md) (preview-versie)
 
   Azure NetApp Files ondersteunt nu replicatie tussen regio's. Met deze nieuwe mogelijkheid voor herstel na noodgevallen kunt u Azure NetApp Files-volumes op een snelle en rendabele manier van de ene Azure-regio naar een andere repliceren. Zo worden uw gegevens beschermd tegen onvoorziene regionale storingen. Azure NetApp Files replicatie tussen regio's maakt gebruik van NetApp SnapMirror®-technologie; alleen gewijzigde blokken worden in een gecomprimeerde, efficiënte indeling via het netwerk verzonden. Deze bedrijfseigen technologie minimaliseert de hoeveelheid gegevens die nodig zijn replicatie tussen regio's uit te voeren, waardoor kosten voor gegevensoverdracht worden bespaard. Ook wordt de replicatietijd verkort, zodat u een kleinere RPO (Recovery Point Objective) kunt verwezenlijken.
 

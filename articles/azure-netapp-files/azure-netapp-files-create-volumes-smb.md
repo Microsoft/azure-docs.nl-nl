@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 02/16/2021
+ms.date: 03/01/2021
 ms.author: b-juche
-ms.openlocfilehash: 91f4f90658281282cdcb01b091bd9c9647d8d702
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 6a8de9b373a14eab45df28b28bb3f94314c1d89a
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100635483"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104801078"
 ---
 # <a name="create-an-smb-volume-for-azure-netapp-files"></a>Een SMB-volume maken voor Azure NetApp Files
 
@@ -89,8 +89,32 @@ Voordat u een SMB-volume maakt, moet u een Active Directory verbinding maken. Al
     * Selecteer **SMB** als het protocol type voor het volume. 
     * Selecteer uw **Active Directory** verbinding in de vervolg keuzelijst.
     * Geef de naam op van het gedeelde volume in  **share naam**.
+    * Als u continue Beschik baarheid voor het SMB-volume wilt inschakelen, selecteert u **voortdurende Beschik baarheid inschakelen**.    
 
-    ![SMB-protocol opgeven](../media/azure-netapp-files/azure-netapp-files-protocol-smb.png)
+        > [!IMPORTANT]   
+        > De functie voor het door lopen van SMB-Beschik baarheid is momenteel beschikbaar als open bare preview. U moet een Waitlist-aanvraag indienen om toegang te krijgen tot de functie via de **[Waitlist-inzendings pagina Azure NETAPP files SMB Continuous Availability shares Public Preview](https://aka.ms/anfsmbcasharespreviewsignup)**. Wacht op een officiële bevestigings-e-mail van het Azure NetApp Files team voordat u de functie voortdurende Beschik baarheid gebruikt.   
+        > 
+        > U moet continue Beschik baarheid alleen inschakelen voor SQL-workloads. Het gebruik van SMB continue beschikbaarheids shares voor andere werk belastingen dan SQL Server wordt *niet* ondersteund. Deze functie wordt momenteel ondersteund op Windows SQL Server. Linux-SQL Server wordt momenteel niet ondersteund. Als u een niet-beheerders account (domein) gebruikt om SQL Server te installeren, moet u ervoor zorgen dat aan het account de vereiste beveiligings bevoegdheid is toegewezen. Als het domein account niet de vereiste beveiligings bevoegdheid () heeft `SeSecurityPrivilege` en de bevoegdheid niet kan worden ingesteld op domein niveau, kunt u de bevoegdheid verlenen aan het account met behulp van het veld **gebruikers met beveiligings bevoegdheden** van Active Directory verbindingen. Zie [een Active Directory verbinding maken](create-active-directory-connections.md#create-an-active-directory-connection).
+
+    <!-- [1/13/21] Commenting out command-based steps below, because the plan is to use form-based (URL) registration, similar to CRR feature registration -->
+    <!-- 
+        ```azurepowershell-interactive
+        Register-AzProviderFeature -ProviderNamespace Microsoft.NetApp -FeatureName ANFSMBCAShare
+        ```
+
+        Check the status of the feature registration: 
+
+        > [!NOTE]
+        > The **RegistrationState** may be in the `Registering` state for up to 60 minutes before changing to`Registered`. Wait until the status is `Registered` before continuing.
+
+        ```azurepowershell-interactive
+        Get-AzProviderFeature -ProviderNamespace Microsoft.NetApp -FeatureName ANFSMBCAShare
+        ```
+        
+        You can also use [Azure CLI commands](/cli/azure/feature?preserve-view=true&view=azure-cli-latest) `az feature register` and `az feature show` to register the feature and display the registration status. 
+    --> 
+
+    ![Scherm afbeelding van het tabblad Protocol van het maken van een SMB-volume.](../media/azure-netapp-files/azure-netapp-files-protocol-smb.png)
 
 5. Klik op **beoordeling + maken** om de details van het volume te controleren.  Klik vervolgens op **maken** om het SMB-volume te maken.
 

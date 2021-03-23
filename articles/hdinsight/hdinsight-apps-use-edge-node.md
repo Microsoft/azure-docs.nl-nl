@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 04/16/2020
-ms.openlocfilehash: 4061df2dfcfb4cf993e2312fb3438de66863a476
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 717c3c8052c89825b161f77614d7411c5912d1cd
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98942682"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104799901"
 ---
 # <a name="use-empty-edge-nodes-on-apache-hadoop-clusters-in-hdinsight"></a>Lege Edge-knoop punten op Apache Hadoop clusters in HDInsight gebruiken
 
@@ -58,7 +58,7 @@ Nadat u een Edge-knoop punt hebt gemaakt, kunt u via SSH verbinding maken met he
 > [!WARNING]
 > Aangepaste onderdelen die zijn geïnstalleerd op het Edge-knoop punt ontvangen commercieel redelijke ondersteuning van micro soft. Dit kan leiden tot problemen oplossen die u tegen komt. Het is ook mogelijk dat u resources van de community voor verdere ondersteuning moet worden genoemd. Hier volgen enkele van de meest actieve sites om hulp van de community te verkrijgen:
 >
-> * [Micro soft Q&een vraag pagina voor HDInsight] (/Answers/topics/azure-hdinsight.html
+> * [Micro soft Q&een vraag pagina voor HDInsight](/answers/topics/azure-hdinsight.html)
 > * [https://stackoverflow.com](https://stackoverflow.com).
 >
 > Als u een Apache-technologie gebruikt, kunt u mogelijk ondersteuning vinden via de Apache-project sites op [https://apache.org](https://apache.org) , zoals de [Apache Hadoop](https://hadoop.apache.org/) -site.

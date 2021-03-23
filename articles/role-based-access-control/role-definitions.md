@@ -5,22 +5,18 @@ services: active-directory
 documentationcenter: ''
 author: rolyon
 manager: mtillman
-ms.assetid: ''
 ms.service: role-based-access-control
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 01/18/2021
+ms.date: 03/22/2021
 ms.author: rolyon
-ms.reviewer: bagovind
 ms.custom: ''
-ms.openlocfilehash: f6ae9ff27e773c36626812387b1284d660cbf39d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 5b2ec3289d187997763ee0d9280a777d4fa1f396
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98602456"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104801754"
 ---
 # <a name="understand-azure-role-definitions"></a>Informatie over Azure Role-definities
 
@@ -63,7 +59,7 @@ In de volgende tabel wordt beschreven wat de functie-eigenschappen betekenen.
 | Eigenschap | Beschrijving |
 | --- | --- |
 | `Name`</br>`roleName` | De weergave naam van de rol. |
-| `Id`</br>`name` | De unieke ID van de rol. |
+| `Id`</br>`name` | De unieke ID van de rol. Ingebouwde rollen hebben dezelfde rol-ID in verschillende Clouds. |
 | `IsCustom`</br>`roleType` | Hiermee wordt aangegeven of dit een aangepaste rol is. Ingesteld op `true` of `CustomRole` voor aangepaste rollen. Ingesteld op `false` of `BuiltInRole` voor ingebouwde rollen. |
 | `Description`</br>`description` | De beschrijving van de rol. |
 | `Actions`</br>`actions` | Een matrix met teken reeksen die de beheer bewerkingen specificeert die de rol kan uitvoeren. |

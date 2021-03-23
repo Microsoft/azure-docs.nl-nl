@@ -3,12 +3,12 @@ title: Gebeurtenissen verzenden naar of ontvangen van Azure Event Hubs met behul
 description: Dit artikel bevat een overzicht van het maken van een Python-toepassing waarmee gebeurtenissen worden verzonden naar/ontvangen van Azure Event Hubs met behulp van het nieuwste pakket azure-eventhub.
 ms.topic: quickstart
 ms.date: 02/11/2020
-ms.openlocfilehash: f05f546f19a7944c049b97ba18065159db6fab67
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: ea2270888830327506df5f43c18f8e798f61cc00
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "97605561"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104802774"
 ---
 # <a name="send-events-to-or-receive-events-from-event-hubs-by-using-python-azure-eventhub"></a>Gebeurtenissen verzenden naar of gebeurtenissen ontvangen van Event Hubs met behulp van Python (azure-eventhub)
 In deze quickstart ziet u hoe u gebeurtenissen kunt verzenden naar en ontvangen van een Event Hub met behulp van het Python-pakket **azure-eventhub**.
@@ -19,7 +19,7 @@ Als u nog geen ervaring hebt met Azure Event Hubs, raadpleegt u het [Event Hubs-
 Voor het voltooien van deze snelstart moet aan de volgende vereisten worden voldaan:
 
 - **Microsoft Azure-abonnement**. Als u Azure-services wilt gebruiken, met inbegrip van Azure Event Hubs, hebt u een abonnement nodig.  Als u nog geen Azure-account hebt, kunt u zich aanmelden voor een [gratis proefversie](https://azure.microsoft.com/free/) of uw voordelen als MSDN-abonnee gebruiken wanneer u [een account maakt](https://azure.microsoft.com).
-- Python 2.7 of 3.5 of hoger, waarbij PIP is geïnstalleerd en bijgewerkt.
+- Python 2,7 of 3,6 of hoger, waarbij PIP is geïnstalleerd en bijgewerkt.
 - Het Python-pakket voor Event Hubs. 
 
     Als u het pakket wilt installeren, voert u deze opdracht uit bij een opdrachtprompt met Python in het pad:

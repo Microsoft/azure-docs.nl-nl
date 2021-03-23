@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 03/12/2021
 ms.author: amverma
 ms.reviewer: cynthn
-ms.openlocfilehash: b1f2800c3787cd28437afa70b78ef8388461e413
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: d1abd03f517f9e0b13a2994418cbae5cfbe22454
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104721169"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104801860"
 ---
 # <a name="hbv3-series-virtual-machine-overview"></a>Overzicht van virtuele machines uit de HBv3-serie 
 
@@ -32,6 +32,9 @@ Als gevolg hiervan wordt de server opgestart met 4 NUMA-domeinen (2 per socket) 
 Om ruimte te bieden voor de werking van de Azure-Hyper Visor zonder dat de virtuele machine wordt verstoord, worden er 8 fysieke kernen per server gereserveerd. 
 
 Houd er rekening mee dat de VM-grootten beperkte kernen alleen het aantal fysieke kernen beperken dat aan de virtuele machine wordt blootgesteld. Alle globale gedeelde assets (RAM, geheugen bandbreedte, L3-cache, GMI-en xGMI-connectiviteit, InfiniBand, Azure Ethernet-netwerk, lokale SSD) blijven constant. Hiermee kan een klant een VM-grootte kiezen die het beste kan worden afgestemd op een bepaalde reeks werk belasting-of software licentie vereisten.
+
+In het volgende diagram ziet u de schei ding van kern geheugens die zijn gereserveerd voor Azure-Hyper Visor (geel) en de HBv3-serie (groen).
+![Schei ding van kern geheugens gereserveerd voor Azure Hyper Visor en HBv3-serie VM](./media/architecture/hbv3-segregation-cores.png)
 
 ## <a name="infiniband-networking"></a>InfiniBand-netwerken
 HBv3 Vm's maken ook gebruik van NVIDIA Mellanox HDR InfiniBand-netwerk adapters (Connectx-6) die met Maxi maal 200 gigabits per seconde werken. De NIC wordt door gegeven aan de virtuele machine via SRIOV, waardoor netwerk verkeer wordt ingeschakeld om de Hyper Visor over te slaan. Als gevolg hiervan laden klanten standaard Mellanox OFED-Stuur Programma's op HBv3 Vm's als een bare-metal omgeving.

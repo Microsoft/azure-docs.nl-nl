@@ -6,14 +6,14 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
 author: cpercy737
 ms.author: camper
-ms.date: 03/19/2021
+ms.date: 03/22/2021
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 79f3276347aa64655f0c9086db5f152c4ff5fbcf
-ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
+ms.openlocfilehash: ed7f27b0b8fde902f4ae9b65b9f6b4ada78f79c6
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104771087"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104799187"
 ---
 # <a name="azure-customer-usage-attribution"></a>Toewijzing van Azure-klant gebruik
 
@@ -39,7 +39,9 @@ Het bijhouden van Azure-gebruik van Azure-apps die worden gepubliceerd naar de c
 Als u Azure Resource Manager Api's gebruikt, moet u uw tracking-ID toevoegen aan de hand van de [onderstaande instructies](#use-resource-manager-apis) om deze door te geven aan Azure Resource Manager als uw code resources implementeert. Deze ID is zichtbaar in het partner centrum op de pagina met technische configuratie van uw abonnement. 
 
 > [!NOTE]
-> Voor bestaande Azure-apps werd een eenmalige migratie uitgevoerd in maart 2021 om de tracerings-Id's in de technische configuratie van elk abonnement bij te werken. Het gebruik van eerdere implementaties van deze aanbiedingen blijft bijgehouden in micro soft-systemen.
+> Voor bestaande Azure-apps begon een eenmalige migratie in maart 2021 om de tracerings-Id's in de technische configuratie van elk abonnement bij te werken. Het gebruik van eerdere implementaties van deze aanbiedingen blijft bijgehouden in micro soft-systemen.
+>
+>Wanneer u uw aanbiedingen bijwerkt, hoeft u het resource type **micro soft. resources/implementaties** niet meer toe te voegen aan het hoofd sjabloon bestand.
 
 ## <a name="other-use-cases"></a>Andere gebruiksvoorbeelden 
 

@@ -8,19 +8,29 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 03/09/2021
+ms.date: 03/22/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: b15c63545c71d4513abe9102b4de165e2ab5857a
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: dc52414fa0d2eeffe0381a68bd66eadafe4862ea
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102499846"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104781276"
 ---
 # <a name="page-layout-versions"></a>Versie van pagina-indeling
 
 Pagina-indelings pakketten worden regel matig bijgewerkt met oplossingen en verbeteringen in hun pagina-elementen. In het volgende wijzigingslog bestand worden de wijzigingen aangegeven die in elke versie zijn geïntroduceerd.
+
+## <a name="jquery-version"></a>jQuery-versie
+
+Azure AD B2C pagina-indeling maakt gebruik van de volgende versie van de [jQuery-bibliotheek](https://jquery.com/):
+
+|Van versie van pagina-indeling  |jQuery-versie  |
+|---------|---------|
+|2.1.4 | 3.5.1 |
+|1.2.0 | 3.4.1 |
+|1.1.0 | 1.10.2 |
 
 ## <a name="self-asserted-page-selfasserted"></a>Zelfbevestigende pagina (selfasserted)
 

@@ -6,13 +6,13 @@ ms.author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.topic: overview
-ms.date: 03/08/2021
-ms.openlocfilehash: d45dae8b0b3725555bd83a05032339671a9595be
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.date: 03/22/2021
+ms.openlocfilehash: ede812dc2ce063ec38423db73f4b269a7618e00c
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102454361"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104799612"
 ---
 # <a name="azure-security-center-free-vs-azure-defender-enabled"></a>Azure Security Center gratis VS Azure Defender ingeschakeld
 Azure Defender is gratis gedurende de eerste 30 dagen. Als u aan het einde van 30 dagen wilt door gaan met het gebruik van de service, worden er automatisch kosten voor gebruik in rekening gebracht.
@@ -48,6 +48,7 @@ Security Center wordt op twee manieren aangeboden:
 - [Als een Log Analytics-agent aan meerdere werkruimten rapporteert, worden er dan tweemaal kosten in rekening gebracht?](#if-a-log-analytics-agent-reports-to-multiple-workspaces-will-i-be-charged-twice)
 - [Als een Log Analytics-agent aan meerdere werkruimten rapporteert, is er dan voor elke werkruimte gratis gegevensopname van 500 MB beschikbaar?](#if-a-log-analytics-agent-reports-to-multiple-workspaces-is-the-500-mb-free-data-ingestion-available-on-all-of-them)
 - [Wordt de gratis gegevensopname van 500 MB berekend voor een gehele werkruimte of uitsluitend per machine?](#is-the-500-mb-free-data-ingestion-calculated-for-an-entire-workspace-or-strictly-per-machine)
+- [Welke gegevens typen zijn opgenomen in de limiet van 500 MB voor vrije gegevens?](#what-data-types-are-included-in-the-500-mb-free-data-limit)
 
 ### <a name="how-can-i-track-who-in-my-organization-enabled-azure-defender-changes-in-security-center"></a>Hoe kan ik bijhouden wie in mijn organisatie Azure Defender-wijzigingen in Security Center heeft ingeschakeld?
 Azure-abonnementen kunnen meerdere beheerders met machtigingen voor het wijzigen van prijsinstellingen hebben. Als u wilt weten welke gebruiker een wijziging heeft aangebracht, gebruikt u het Azure-activiteitenlogboek.
@@ -114,6 +115,24 @@ Ja. Als u de Log Analytics-agent hebt geconfigureerd voor het verzenden van gege
 U krijgt 500 MB gratis gegevensopname per dag, voor elke machine die is verbonden met de werkruimte. Dit geldt met name voor beveiligingsgegevenstypen die rechtstreeks door Azure Security Center worden verzameld.
 
 Deze hoeveelheid gegevens is een dagelijks gemiddelde voor alle knooppunten. Er worden dus geen extra kosten in rekening gebracht als sommige machines 100 MB en andere 800 MB verzenden, mits het totaal de gratis limiet van **[aantal machines] x 500 MB** niet overschrijdt.
+
+### <a name="what-data-types-are-included-in-the-500-mb-free-data-limit"></a>Welke gegevens typen zijn opgenomen in de limiet van 500 MB voor vrije gegevens?
+
+De facturering van Security Center is nauw verbonden met de facturering voor Log Analytics. Security Center biedt een toewijzing van 500 MB/knoop punt/dag voor de volgende subset van [beveiligings gegevens typen](/azure/azure-monitor/reference/tables/tables-category.md#security):
+- WindowsEvent
+- SecurityAlert
+- Security Baseline Baseline
+- Summary
+- SecurityDetection
+- SecurityEvent
+- WindowsFirewall
+- MaliciousIPCommunication
+- LinuxAuditLog
+- SysmonEvent
+- ProtectionStatus
+- Gegevens typen bijwerken en update Summary wanneer de Updatebeheer-oplossing niet wordt uitgevoerd op de werk ruimte of de doel groep van de oplossing is ingeschakeld
+
+Als de werk ruimte in de prijs categorie verouderd per knoop punt staat, worden de Security Center-en Log Analytics toewijzingen gecombineerd en gezamenlijk toegepast op alle factureer bare opgenomen gegevens.
 
 ## <a name="next-steps"></a>Volgende stappen
 In dit artikel worden de prijsopties voor Security Center beschreven. Zie voor gerelateerd materiaal:

@@ -366,8 +366,6 @@
           href: search-query-troubleshoot-collection-filters.md
         - name: Begrip van verzamelingsfilters
           href: search-query-understand-collection-filters.md
-        - name: Filteren op taal
-          href: search-filters-language.md
         - name: Tekst normaliseren
           href: search-normalizers.md
     - name: Relevantie

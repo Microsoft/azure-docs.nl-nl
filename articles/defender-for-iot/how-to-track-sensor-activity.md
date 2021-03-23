@@ -1,18 +1,14 @@
 ---
 title: Sensoractiviteit volgen
 description: In de tijd lijn van de gebeurtenis ziet u een tijd lijn voor activiteiten die zijn gedetecteerd op uw netwerk, waaronder waarschuwingen en waarschuwings beheer acties, netwerk gebeurtenissen en gebruikers bewerkingen, zoals het aanmelden van gebruikers en het verwijderen van gebruikers.
-author: shhazam-ms
-manager: rkarlin
-ms.author: shhazam
 ms.date: 12/10/2020
 ms.topic: article
-ms.service: azure
-ms.openlocfilehash: 6dbe15da85a85303742ef28c7ca609755193f25e
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 195908001fbd247ed2e0fa007bc8dcd5ebf28e60
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100523597"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104781616"
 ---
 # <a name="track-sensor-activity"></a>Sensoractiviteit volgen
 

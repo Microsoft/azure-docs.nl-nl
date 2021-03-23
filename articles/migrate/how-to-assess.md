@@ -6,12 +6,12 @@ ms.author: rajosh
 ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 11/23/2020
-ms.openlocfilehash: 9a4ed5542945b8d281ec750d9bbd3a8f444e44d2
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 37f3748b4f0f3db47bbd6fbe9bc06a307781c2f8
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96752257"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104786801"
 ---
 # <a name="add-assessment-tools"></a>Evaluatiehulpprogramma's toevoegen
 
@@ -25,23 +25,23 @@ In dit artikel wordt beschreven hoe u beoordelings hulpprogramma's toevoegt in [
 1. Klik in het Azure Migrate-project op **Overzicht**.
 2. Selecteer het beoordelings scenario:
 
-    - Als u machines en werk belastingen wilt detecteren en beoordelen voor migratie naar Azure, selecteert u **servers beoordelen en migreren**.
+    - Als u servers (fysiek of virtueel) van uw Data Center of andere Clouds naar Azure wilt detecteren, evalueren en migreren, selecteert u **detecteren, evalueren en migreren**. U kunt nu ook SQL Server van uw VMware-omgeving detecteren en beoordelen met behulp van dit migratie doel.
     - Als u on-premises SQL Server data bases wilt beoordelen, selecteert u **data bases evalueren en migreren**.
     - Als u on-premises Web-Apps wilt beoordelen of migreren, selecteert u **meer**  >  **Web apps** verkennen.
     - Als u de infra structuur van uw virtuele bureau blad wilt beoordelen, selecteert u **meer**  >  **virtuele desktop infrastructuur** verkennen.
 
     ![Opties voor het selecteren van een evaluatie scenario](./media/how-to-assess/assess-scenario.png)
 
-## <a name="select-a-server-assessment-tool"></a>Selecteer een hulp programma voor Server evaluatie 
+## <a name="select-a-discovery-and-assessment-tool"></a>Een hulp programma voor detectie en evaluatie selecteren 
 
 
 1. Een hulp programma toevoegen:
 
-    - Als u een Azure Migrate project hebt gemaakt met behulp van de optie **servers evalueren en migreren** in de portal, wordt het hulp programma voor het evalueren van Azure migrate server automatisch toegevoegd aan het project. Als u extra beoordelings hulpprogramma's wilt toevoegen, klikt u in **servers**, naast **beoordelings hulpprogramma's**, op **meer hulp middelen toevoegen**.
-    
+    - Als u een Azure Migrate project hebt gemaakt met behulp van de optie **servers beoordelen en migreren** in de portal, wordt het hulp programma voor Azure migrate detectie en evaluatie automatisch toegevoegd aan het project. Als u extra beoordelings hulpprogramma's wilt toevoegen, klikt u in **Windows, Linux en SQL Server**, naast **beoordelings hulpprogramma's**, op **meer hulp middelen toevoegen**.
+
          ![Knop om extra evaluatie hulpprogramma's toe te voegen](./media/how-to-assess/add-assessment-tool.png)
 
-    - Als u een project hebt gemaakt met behulp van een andere optie en nog geen evaluatie hulpprogramma's hebt, selecteert u in **servers**  >  **assessment tools** **hier**.
+    - Als u een project hebt gemaakt met behulp van een andere optie en nog geen evaluatie hulpprogramma's hebt, klikt u in **Windows, Linux en SQL Server**  >  **assessment tools** **op hier**.
 
         ![Knop voor het toevoegen van het eerste evaluatie programma](./media/how-to-assess/no-assessment-tool.png)
 
@@ -83,4 +83,4 @@ Als u een Azure migrate project hebt gemaakt met behulp van de optie **meer**  >
 
 ## <a name="next-steps"></a>Volgende stappen
 
-On-premises machines detecteren voor evaluatie met behulp van Azure Migrate server-evaluatie programma voor [VMware](./tutorial-discover-vmware.md) -Vm's, [Hyper-V](./tutorial-discover-hyper-v.md)of [fysieke servers](./tutorial-discover-physical.md)
+On-premises servers detecteren voor evaluatie met behulp van Azure Migrate detectie-en evaluatie hulpprogramma voor [VMware](./tutorial-discover-vmware.md)-, [Hyper-V](./tutorial-discover-hyper-v.md)-of [fysieke servers](./tutorial-discover-physical.md)

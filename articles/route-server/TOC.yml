@@ -4,7 +4,7 @@
   items:
     - name: Wat is Azure route server (preview)?
       href: overview.md
-- name: Quickstarts
+- name: Snelstartgidsen
   items:
     - name: Een route server configureren-Portal
       href: quickstart-configure-route-server-portal.md
@@ -38,7 +38,7 @@
     - name: Netwerkblog
       href: 'https://azure.microsoft.com/blog/topics/networking/'
     - name: Prijzen
-      href: 'https://azure.microsoft.com/pricing/details/routeserver/'
+      href: 'https://azure.microsoft.com/pricing/'
     - name: Prijscalculator
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Service-updates

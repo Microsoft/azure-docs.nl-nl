@@ -1,24 +1,24 @@
 ---
-title: Virtuele Hyper-V-machines beoordelen voor migratie naar virtuele Azure-machines met Serverevaluatie in Azure Migrate
-description: Leer hoe u virtuele Hyper-V-machines beoordeelt voor migratie naar virtuele Azure-machines met Serverevaluatie.
+title: Virtuele Hyper-V-machines evalueren voor migratie naar virtuele Azure-machines met Azure Migrate
+description: Meer informatie over hoe u virtuele Hyper-V-machines kunt beoordelen voor migratie naar virtuele Azure-machines met Azure Migrate.
 author: rashi-ms
 ms.author: rajosh
 ms.manager: abhemraj
 ms.topic: tutorial
 ms.date: 09/14/2020
 ms.custom: MVC
-ms.openlocfilehash: 0a3975578f3424276e3655e0ca8fba903194a2dc
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 9f30d271dbc769f4261fcaa357811146e5b99bd3
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98567064"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104782296"
 ---
 # <a name="tutorial-assess-hyper-v-vms-for-migration-to-azure"></a>Zelfstudie: Hyper-V-VM's evalueren voor migratie naar Azure
 
 Als onderdeel van uw migratietraject naar Azure, beoordeelt u uw on-premises werkbelastingen om de gereedheid voor de cloud te meten, risico's in kaart te brengen en de kosten en complexiteit te ramen.
 
-In dit artikel wordt beschreven hoe u gedetecteerde virtuele Hyper-V-machines (VM's) kunt evalueren voor migratie naar Azure met behulp van Azure Migrate: Serverevaluatieprogramma.
+In dit artikel wordt beschreven hoe u gedetecteerde servers van uw Hyper-V-omgeving kunt beoordelen voor migratie naar Azure, met behulp van het hulp programma Azure Migrate: detectie en evaluatie.
 
 
 In deze zelfstudie leert u het volgende:
@@ -34,20 +34,20 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 
 ## <a name="prerequisites"></a>Vereisten
 
-- Voordat u deze zelfstudie volgt om uw computers te evalueren voor migratie naar virtuele Azure-machines, moet u controleren of u de machines hebt gedetecteerd die u wilt beoordelen:
-    - Volg [deze zelfstudie](tutorial-discover-hyper-v.md) om machines te detecteren met behulp van het Azure Migrate-apparaat. 
-    - Volg [deze zelfstudie](tutorial-discover-import.md) om machines te detecteren met behulp van een geïmporteerd CSV-bestand.
+- Voordat u deze zelf studie volgt om uw servers te evalueren voor migratie naar virtuele Azure-machines, moet u ervoor zorgen dat u de servers hebt gedetecteerd die u wilt beoordelen:
+    - [Volg deze zelf studie](tutorial-discover-hyper-v.md)om servers te detecteren met behulp van het Azure migrate apparaat. 
+    - [Volg deze zelf studie](tutorial-discover-import.md)om servers te detecteren met een geïmporteerd CSV-bestand.
 
 
 
 ## <a name="decide-which-assessment-to-run"></a>Bepalen welke evaluatie moet worden uitgevoerd
 
 
-Beslis of u een evaluatie wilt uitvoeren met behulp van de groottecriteria op basis van de configuratiegegevens/metagegevens van de machine die zonder aanpassingen on-premises worden verzameld of aan de hand van dynamische prestatiegegevens.
+Beslis of u een evaluatie wilt uitvoeren met behulp van formaat criteria op basis van de server configuratie gegevens/meta gegevens die worden verzameld als-is on-premises of op dynamische prestatie gegevens.
 
 **Evaluatie** | **Details** | **Aanbeveling**
 --- | --- | ---
-**As-is on-premises** | Beoordeling op basis van configuratiegegevens/metagegevens van de machine.  | De aanbevolen grootte van virtuele machines is gebaseerd op de grootte van on-premises virtuele machines.<br/><br> Het aanbevolen Azure-schijftype is gebaseerd op de instelling die u selecteert bij het opslagtype voor de evaluatie.
+**As-is on-premises** | Beoordeling op basis van server configuratie gegevens/meta gegevens.  | De aanbevolen grootte van virtuele machines is gebaseerd op de grootte van on-premises virtuele machines.<br/><br> Het aanbevolen Azure-schijftype is gebaseerd op de instelling die u selecteert bij het opslagtype voor de evaluatie.
 **Op basis van prestaties** | Evaluaties op basis van verzamelde dynamische prestatiegegevens. | De aanbevolen grootte van de virtuele machine is gebaseerd op verbruiksgegevens voor de processor en het geheugen.<br/><br/> Het aanbevolen schijftype is gebaseerd op de IOPS en doorvoer van de on-premises schijven.
 
 
@@ -55,19 +55,19 @@ Beslis of u een evaluatie wilt uitvoeren met behulp van de groottecriteria op ba
 
 Voer als volgt een evaluatie uit:
 
-1. Klik op de pagina **Servers** > **Windows- en Linux-servers** op **Servers evalueren en migreren**.
+1. Klik op de pagina **overzicht** > **Windows, Linux en SQL Server** op **servers evalueren en migreren**.
 
    ![Locatie van de knop om servers te evalueren en migreren](./media/tutorial-assess-vmware-azure-vm/assess.png)
 
-2. In **Azure Migrate: Serverevaluatie** klikt u op **Evalueren**.
+2. Klik in **Azure migrate: detectie en evaluatie** op **evalueren**.
 
     ![Locatie van de knop Evalueren](./media/tutorial-assess-vmware-azure-vm/assess-servers.png)
 
 3. Selecteer onder **Servers evalueren** > **Type evaluatie**, **Virtuele Azure-machine**.
 4. In **Detectiebron**:
 
-    - Als u machines hebt gedetecteerd met behulp van het apparaat, selecteert u **Machines die zijn gedetecteerd via een Azure Migrate-apparaat**.
-    - Selecteer **Geïmporteerde machines** als u machines hebt gedetecteerd met behulp van een geïmporteerd CSV-bestand. 
+    - Als u servers hebt gedetecteerd met behulp van het apparaat, selecteert u servers die zijn **gedetecteerd vanaf Azure migrate apparaat**.
+    - Als u servers met een geïmporteerd CSV-bestand hebt gedetecteerd, selecteert u **geïmporteerde servers**. 
     
 1. Klik op **bewerken** om de eigenschappen van de evaluatie te bekijken.
 
@@ -84,7 +84,7 @@ Voer als volgt een evaluatie uit:
         - Als u voor het gebruik van een gereserveerde instantie kiest, kunt u niets opgeven voor **Korting (%)** of **VM-uptime**. 
         - [Meer informatie](https://aka.ms/azurereservedinstances).
  1. In **VM-grootte**:
-     - Selecteer onder **Criterium voor het aanpassen van de grootte** of u de evaluatie wilt baseren op configuratiegegevens/metagegevens van de machine of op gegevens op basis van de prestaties. Als u prestatiegegevens gebruikt:
+     - Onder **grootte criterium** selecteert u of u de evaluatie wilt baseren op server configuratie gegevens/meta gegevens of op prestatie gegevens. Als u prestatiegegevens gebruikt:
         - Geef onder **Prestatiegeschiedenis** de gegevensduur aan waarop u de evaluatie wilt baseren
         - Geef onder **Percentielgebruik** de percentielwaarde op die u wilt gebruiken voor de prestatiesteekproef. 
     - Geef onder **VM-reeks** de reeks virtuele Azure-machines op waarop u zich wilt baseren.
@@ -97,7 +97,7 @@ Voer als volgt een evaluatie uit:
         Geheugen | 8 GB | 16 GB
    
 1. Onder **Prijzen**:
-    - Geef onder **Aanbieding** de [Azure-aanbieding](https://azure.microsoft.com/support/legal/offer-details/) op als u bent ingeschreven. Serverevaluatie schat de kosten voor die aanbieding.
+    - Geef onder **Aanbieding** de [Azure-aanbieding](https://azure.microsoft.com/support/legal/offer-details/) op als u bent ingeschreven. De evaluatie maakt een schatting van de kosten voor die aanbieding.
     - Selecteer bij **Valuta** de factureringsvaluta voor uw account.
     - Voeg onder **Korting (%)** een abonnementspecifieke korting toe die u bovenop de Azure-aanbieding ontvangt. De standaardinstelling is 0%.
     - Geef onder **Actieve tijdsduur van de VM** het aantal dagen per maand/uren per dag op dat virtuele machines worden uitgevoerd.
@@ -113,18 +113,16 @@ Voer als volgt een evaluatie uit:
 
 1. In **servers beoordelen** > klikt u op **volgende**.
 
-1. In **machines selecteren om**  >  de **beoordelings naam** te beoordelen > een naam opgeven voor de evaluatie. 
+1. In **servers selecteren om**  >  de **beoordelings naam** te beoordelen > een naam opgeven voor de evaluatie. 
 
 1. In **selecteren of een groep maken** > selecteert u **nieuwe maken** en geeft u een groeps naam op. 
    
-    :::image type="content" source="./media/tutorial-assess-hyper-v/assess-machines.png" alt-text="Nieuwe groep maken en machines toevoegen":::
-
 1. Selecteer het apparaat en selecteer de virtuele machines die u wilt toevoegen aan de groep. Klik op **Volgende**.
 
 
 1. Controleer de details van de evaluatie onder **Controleren + evaluatie maken** en klik op **Evaluatie maken** om de groep te maken en de evaluatie uit te voeren.
 
-1. Nadat de evaluatie is gemaakt, kunt u deze bekijken in **Servers** > **Azure Migrate: Serverevaluatie** > **Evaluaties**.
+1. Nadat de evaluatie is gemaakt, bekijkt u deze in **servers**  >  **Azure migrate: detectie-en evaluatie**-  >  **evaluaties**.
 
 1. Klik op **Evaluatie exporteren** om deze te downloaden als een Excel-bestand.
     > [!NOTE]
@@ -140,7 +138,7 @@ Een evaluatie beschrijft het volgende:
 
 U geeft een evaluatie als volgt weer:
 
-1. In **Servers** > **Azure Migrate: Serverevaluatie** klikt u op het nummer naast **Evaluaties**.
+1. In **Windows, Linux en SQL Server**  >  **Azure migrate: detectie en evaluatie** klikt u op het nummer naast **evaluaties**.
 2. Selecteer in **Evaluaties** een evaluatie om deze te openen. Ter voorbeeld (schattingen en kosten alleen ter illustratie): 
 
     ![Evaluatie-overzicht](./media/tutorial-assess-vmware-azure-vm/assessment-summary.png)
@@ -174,7 +172,7 @@ Het evaluatieoverzicht toont de geschatte reken- en opslagkosten om virtuele mac
 
 ### <a name="review-confidence-rating"></a>Betrouwbaarheidsclassificatie controleren
 
-Serverevaluatie wijst een betrouwbaarheidsclassificatie toe aan evaluaties op basis van prestaties. De classificatie is van één ster (laagste) tot vijf sterren (hoogste).
+Azure Migrate wijst een betrouwbaarheids classificatie toe aan evaluaties op basis van prestaties. De classificatie is van één ster (laagste) tot vijf sterren (hoogste).
 
 ![Betrouwbaarheidsclassificatie](./media/tutorial-assess-vmware-azure-vm/confidence-rating.png)
 
@@ -197,5 +195,5 @@ Betrouwbaarheidsclassificaties zijn als volgt.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Vind machineafhankelijkheden met behulp van [Toewijzing van afhankelijkheid](concepts-dependency-visualization.md).
+- Server afhankelijkheden zoeken met [afhankelijkheids toewijzing](concepts-dependency-visualization.md).
 - Stel [op agent gebaseerde](how-to-create-group-machine-dependencies.md) afhankelijkheidstoewijzing in.

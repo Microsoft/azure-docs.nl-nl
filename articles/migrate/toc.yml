@@ -236,6 +236,9 @@
   items:
     - name: Azure PowerShell
       href: /powershell/module/az.migrate/
+    - name: Ingebouwde modules voor Azure Policy
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: Resources
   items:
     - name: Migratie in het Cloud Adoption Framework

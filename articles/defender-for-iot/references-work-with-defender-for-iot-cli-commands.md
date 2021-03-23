@@ -1,18 +1,14 @@
 ---
 title: Werken met CLI-opdrachten voor Defender for IoT
 description: In dit artikel wordt Defender beschreven voor IoT CLI-opdrachten voor Sens oren en on-premises beheer consoles.
-author: shhazam-ms
-manager: rkarlin
-ms.author: shhazam
 ms.date: 12/12/2020
 ms.topic: article
-ms.service: azure
-ms.openlocfilehash: 93efc89722d3152d92b6f8c8038deaa566741f7c
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 9cd3f4325db2bc45ddcd6cc011dd4993e385a43c
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100636557"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104778675"
 ---
 # <a name="work-with-defender-for-iot-cli-commands"></a>Werken met CLI-opdrachten voor Defender for IoT
 
@@ -287,7 +283,7 @@ De opdracht ondersteunt de volgende invoer vlaggen:
 | --sleutel | Het \* . key-bestand. De sleutel lengte moet mini maal 2.048 bits zijn. |
 | --keten | Het pad naar het certificaat keten bestand (optioneel). |
 | --Pass | Wachtwoordzin die wordt gebruikt voor het versleutelen van het certificaat (optioneel). |
-| --set met wachtwoordzin | De standaard waarde is **False**, **ongebruikt**. <br />Stel deze **waarde** in op True als u de vorige wachtwoordzin wilt gebruiken die is opgegeven met het vorige certificaat (optioneel). |  |
+| --set met wachtwoordzin | De standaard waarde is **False**, **ongebruikt**. <br />Stel deze **waarde** in op True als u de vorige wachtwoordzin wilt gebruiken die is opgegeven met het vorige certificaat (optioneel). | 
 
 Wanneer u het hulp programma gebruikt:
 

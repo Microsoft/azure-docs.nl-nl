@@ -8,12 +8,12 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: 53f873013a6f16ce5a28ee5d915afa556057f643
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 94827916f28c9028d46bf7b5461a4fbd941b2a96
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98744280"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104773399"
 ---
 # <a name="apply-the-remote-desktop-extension-to-azure-cloud-services-extended-support"></a>De uitbrei ding Extern bureaublad Toep assen op Azure Cloud Services (uitgebreide ondersteuning)
 
@@ -27,8 +27,9 @@ De Azure Portal maakt gebruik van de extensie extern bureau blad om extern burea
 2. Selecteer **Toevoegen**.
 3. Kies de rollen om extern bureau blad voor in te scha kelen.
 4. Vul de vereiste velden in voor de gebruikers naam, het wacht woord, de verval datum en het certificaat (niet vereist).
+> Eraan Het wacht woord voor extern bureau blad moet tussen de 8-123 tekens lang zijn en moet voldoen aan ten minste drie vereisten voor wachtwoord complexiteit van de volgende: 1) bevat een hoofd letter 2) bevat een kleine letter 3) bevat een numeriek cijfer 4) bevat een speciaal teken 5) besturings tekens zijn niet toegestaan
 
-    :::image type="content" source="media/remote-desktop-2.png" alt-text="Afbeelding toont de gegevens die nodig zijn om verbinding te maken met extern bureau blad.":::
+   :::image type="content" source="media/remote-desktop-2.png" alt-text="Afbeelding toont de gegevens die nodig zijn om verbinding te maken met extern bureau blad.":::
 
 5. Wanneer u klaar bent, selecteert u **Opslaan**. Het duurt enkele ogen blikken voordat de rolinstanties gereed zijn voor het ontvangen van verbindingen.
 

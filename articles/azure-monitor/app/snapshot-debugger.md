@@ -7,12 +7,12 @@ ms.date: 10/23/2019
 author: cweining
 ms.author: cweining
 ms.reviewer: cweining
-ms.openlocfilehash: bd196e60fed8a18064bfa59e343e51a878a11237
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: b0c26aa95d8c3aba5df164fb0707b4833accd052
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102217394"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104786478"
 ---
 # <a name="debug-snapshots-on-exceptions-in-net-apps"></a>Momentopnamen voor foutopsporing over uitzonderingen in .NET-apps
 Wanneer er een uitzonde ring optreedt, kunt u automatisch een moment opname van de fout opsporing verzamelen vanuit uw Live Web-app. De moment opname toont de status van de bron code en variabelen op het moment dat de uitzonde ring werd gegenereerd. Met de Snapshot Debugger in [Azure-toepassing Insights](./app-insights-overview.md) wordt de telemetrie van de uitzonde ring van uw web-app gecontroleerd. Er worden moment opnamen van uw belangrijkste uitzonde ringen verzameld, zodat u over de benodigde informatie beschikt voor het vaststellen van problemen in de productie. Neem het [snap shot Collector NuGet-pakket](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) in uw toepassing op en Configureer eventueel verzamelings parameters in [ApplicationInsights.config](./configuration-with-applicationinsights-config.md). Moment opnamen worden weer gegeven op [uitzonde ringen](./asp-net-exceptions.md) in de Application Insights Portal.
@@ -24,7 +24,10 @@ Debug-moment opnamen worden 15 dagen bewaard. Dit Bewaar beleid is ingesteld op 
 ## <a name="enable-application-insights-snapshot-debugger-for-your-application"></a>Application Insights Snapshot Debugger inschakelen voor uw toepassing
 Momentopname verzameling is beschikbaar voor:
 * .NET Framework-en ASP.NET-toepassingen met .NET Framework 4,5 of hoger.
-* .NET Core 2,0 en ASP.NET Core 2,0-toepassingen die worden uitgevoerd op Windows.
+* .NET core-en ASP.NET Core-toepassingen met .NET Core 2,1 (LTS) of 3,1 (LTS) in Windows.
+* .NET 5,0-toepassingen in Windows.
+
+Het is niet raadzaam om .NET Core 2,0, 2,2 of 3,0 te gebruiken omdat deze niet meer worden ondersteund.
 
 De volgende omgevingen worden ondersteund:
 

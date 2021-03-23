@@ -9,12 +9,12 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 10/21/2020
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: 4c552e6ac195555990cdbbab44f16be32b7930c8
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: f25c8e2ca7abeae0a918825654c55256182189ae
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102425308"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104785356"
 ---
 # <a name="quickstart-build-a-net-console-app-to-manage-azure-cosmos-db-sql-api-resources"></a>Quickstart: Een .NET console-app bouwen om Azure Cosmos DB SQL-API-resources te beheren
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -486,7 +486,7 @@ az group delete -g "myResourceGroup"
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze quickstart hebt u geleerd hoe u een Azure Cosmos-account, een database en een container maakt met behulp van een .NET Core-app. U kunt nu aanvullende gegevens importeren in uw Azure Cosmos-account met de instructies in het volgende artikel. 
+In deze quickstart hebt u geleerd hoe u een Azure Cosmos-account, een database en een container maakt met behulp van een .NET Core-app. U kunt nu aanvullende gegevens importeren in uw Azure Cosmos-account met behulp van de instructies in het volgende artikel. 
 
 > [!div class="nextstepaction"]
 > [Gegevens importeren in Azure Cosmos DB](import-data.md)

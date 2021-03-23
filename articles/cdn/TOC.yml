@@ -177,6 +177,8 @@
           href: cdn-http-debug-headers.md
     - name: Microsoft-specifieke HTTP-headers
       href: cdn-msft-http-debug-headers.md
+    - name: Azure CLI
+      href: /cli/azure/cdn
     - name: Azure PowerShell
       href: /powershell/module/az.cdn
     - name: .NET

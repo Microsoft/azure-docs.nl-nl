@@ -1,18 +1,14 @@
 ---
 title: Meer informatie over apparaten die door alle Enter prise Sens oren zijn gedetecteerd
 description: Gebruik de apparaat-inventarisatie in de on-premises beheer console om een uitgebreid overzicht te krijgen van de apparaatgegevens van verbonden Sens oren. Gebruik de hulpprogram ma's voor importeren, exporteren en filteren om deze gegevens te beheren.
-author: shhazam-ms
-manager: rkarlin
-ms.author: shhazam
 ms.date: 12/02/2020
 ms.topic: how-to
-ms.service: azure
-ms.openlocfilehash: 9da5c8c89ee124e527584164b21b096ac815e5ca
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 0ae59123b59cfb54cba2a2ee9bdeefb411c8793b
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100524022"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104782177"
 ---
 # <a name="investigate-all-enterprise-sensor-detections-in-the-device-inventory"></a>Onderzoek alle Enter prise sensor-detecties in de inventaris van de apparaten
 
@@ -155,76 +151,6 @@ De inventarisatie van apparaten filteren:
 
 5. Als u de filter definities wilt wijzigen, wijzigt u de definities en selecteert u **wijzigingen opslaan**.
 
-## <a name="view-device-information-per-zone"></a>Apparaatgegevens per zone weer geven
-
-U vindt de volgende informatie over apparaten in een zone.
-
-### <a name="view-a-device-map"></a>Een apparaattoewijzing weer geven
-
-Een kaart voor sensor apparaten weer geven voor een geselecteerde zone:
-
-- Selecteer in het venster **site beheer** de optie **zone toewijzing weer geven** op de balk met de zone naam.
-
-  :::image type="content" source="media/how-to-work-with-asset-inventory-information/default-region-to-default-business-unit-v2.png" alt-text="Standaard regio voor de standaard bedrijfs eenheid.":::
-
-Het venster **apparaattoewijzing** wordt weer gegeven. Hierin worden alle netwerk elementen weer gegeven die betrekking hebben op de geselecteerde zone, inclusief de Sens oren, de apparaten die zijn verbonden met de zones en andere informatie.
-
-:::image type="content" source="media/how-to-work-with-asset-inventory-information/zone-map-screenshot.png" alt-text="Scherm opname van de zone kaart.":::
-
-De volgende hulpprogram ma's zijn beschikbaar voor het weer geven van apparaten en apparaatgegevens van de kaart. Zie de *Gebruikers handleiding voor Defender voor IOT-platform* voor meer informatie over elk van deze functies.
-
-- **Zoom weergaven voor kaarten**: vereenvoudigde weer gave, weer gave van verbindingen en gedetailleerde weer gave. De weer gegeven kaart weergave varieert afhankelijk van het zoom niveau van de kaart. U schakelt tussen kaart weergaven door de zoom niveaus aan te passen.
-
-  :::image type="icon" source="media/how-to-work-with-asset-inventory-information/zoom-icon.png" border="false":::
-
-- **Hulp middelen voor kaarten zoeken en lay-out**: hulpprogram ma's die worden gebruikt om verschillende netwerk segmenten, apparaten, apparaatgroepen of lagen weer te geven.
-
-  :::image type="content" source="media/how-to-work-with-asset-inventory-information/search-and-layout-tools.png" alt-text="Scherm opname van de weer gave Zoek-en indelings Hulpprogramma's.":::
-
-- **Labels en indica toren op apparaten:** Bijvoorbeeld het aantal apparaten dat is gegroepeerd in een subnet in een IT-netwerk. In dit voor beeld is dat 8.
-
-  :::image type="content" source="media/how-to-work-with-asset-inventory-information/labels-and-indicators.png" alt-text="Scherm opname van labels en indica toren.":::
-
-- **Apparaateigenschappen weer geven**: bijvoorbeeld de sensor die het apparaat bewaken en de basis eigenschappen van het apparaat. Klik met de rechter muisknop op het apparaat om de eigenschappen van het apparaat weer te geven.
-
-  :::image type="content" source="media/how-to-work-with-asset-inventory-information/asset-properties-v2.png" alt-text="Scherm opname van de weer gave Apparaateigenschappen.":::
-
-- **Waarschuwing die is gekoppeld aan een apparaat:** Klik met de rechter muisknop op het apparaat om gerelateerde waarschuwingen weer te geven.
-
-  :::image type="content" source="media/how-to-work-with-asset-inventory-information/show-alerts.png" alt-text="Scherm opname van de weer gave waarschuwingen weer geven.":::
-
-### <a name="view-alerts-associated-with-a-zone"></a>Waarschuwingen weer geven die zijn gekoppeld aan een zone
-
-Waarschuwingen weer geven die zijn gekoppeld aan een specifieke zone:
-
-- Selecteer het waarschuwings pictogram in het venster van de **zone** . 
-
-  :::image type="content" source="media/how-to-work-with-asset-inventory-information/business-unit-view-v2.png" alt-text="De standaard weergave voor bedrijfs eenheden met voor beelden.":::
-
-Zie [overzicht: werken met waarschuwingen](how-to-work-with-alerts-on-premises-management-console.md)voor meer informatie.
-
-### <a name="view-the-device-inventory-of-a-zone"></a>De apparaat-inventaris van een zone weer geven
-
-De inventaris van apparaten weer geven die zijn gekoppeld aan een specifieke zone:
-
-- Selecteer **apparaat-inventaris weer geven** in het venster van de **zone** .
-
-  :::image type="content" source="media/how-to-work-with-asset-inventory-information/default-business-unit.png" alt-text="Het scherm inventarisatie van apparaten wordt weer gegeven.":::
-
-Zie voor meer informatie [onderzoeken van alle Enter prise sensor detecties in een inventaris van apparaten](how-to-investigate-all-enterprise-sensor-detections-in-a-device-inventory.md).
-
-### <a name="view-additional-zone-information"></a>Aanvullende zone gegevens weer geven
-
-De volgende aanvullende zone gegevens zijn beschikbaar:
-
-- **Zone Details**: hier ziet u het aantal apparaten, waarschuwingen en Sens oren dat is gekoppeld aan de zone.
-
-- **Sensor Details**: de naam, het IP-adres en de versie weer geven van elke sensor die aan de zone is toegewezen.
-
-- **Verbindings status**: als de verbinding met een sensor is verbroken, kunt u verbinding maken vanaf de sensor. Zie [Sens oren verbinden met de on-premises beheer console](how-to-activate-and-set-up-your-on-premises-management-console.md#connect-sensors-to-the-on-premises-management-console). 
-
-- **Voortgang** van de update: als de verbonden sensor wordt bijgewerkt, worden de upgrade statussen weer gegeven. Tijdens de upgrade ontvangt de on-premises beheer console geen apparaatgegevens van de sensor.
-
-## <a name="see-also"></a>Zie ook
+## <a name="next-steps"></a>Volgende stappen
 
 [Alle sensordetecties in een apparaatinventaris onderzoeken](how-to-investigate-sensor-detections-in-a-device-inventory.md)

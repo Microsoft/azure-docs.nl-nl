@@ -3,17 +3,17 @@ title: Gegevens transformeren in de Cloud met behulp van Power shell
 description: Met dit Power shell-script worden gegevens in de Cloud getransformeerd door een Spark-programma uit te voeren op een Azure HDInsight Spark cluster.
 author: dcstwh
 ms.author: weetok
-ms.reviewer: maghan
+ms.reviewer: jburchel
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/12/2017
-ms.openlocfilehash: 2e1178f91344038fc86f1411fca1beafbe901d05
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 9bdb6521cd9361e5588233ebbb50a59788df88b4
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100389821"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104783248"
 ---
 # <a name="powershell-script---transform-data-in-cloud-using-azure-data-factory"></a>Power shell-script: gegevens transformeren in de Cloud met behulp van Azure Data Factory
 

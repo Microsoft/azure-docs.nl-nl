@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: how-to
 ms.date: 03/15/2021
 ms.author: v-erkel
-ms.openlocfilehash: 5ac0f0677be6b641d496a941c5a8e1343fd017bc
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 7d40dcf80d9ec566146bbe46bc2cb3c558584fcd
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103562555"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104775762"
 ---
 # <a name="prerequisites-for-azure-hpc-cache"></a>Vereisten voor de Azure HPC-cache
 
@@ -156,13 +156,6 @@ Meer informatie vindt u in het oplossen van problemen [met NAS-configuratie en N
     Sommige systemen gebruiken verschillende poort nummers voor deze services. Raadpleeg de documentatie van uw opslag systeem voor meer informatie.
 
   * Controleer de firewall instellingen om er zeker van te zijn dat verkeer op al deze vereiste poorten is toegestaan. Controleer of de firewalls in Azure en on-premises firewalls in uw Data Center worden gebruikt.
-
-* **Directory toegang:** Schakel de `showmount` opdracht in het opslag systeem in. De Azure HPC-cache maakt gebruik van deze opdracht om te controleren of de configuratie van de opslag doel naar een geldige export wijst en om ervoor te zorgen dat meerdere koppels geen toegang hebben tot dezelfde submappen (een risico voor conflicterende bestanden).
-
-  > [!NOTE]
-  > Als uw NFS-opslag systeem gebruikmaakt van het ONTAP 9,2-besturings systeem van NetApp, **moet u niet inschakelen `showmount`**. [Neem contact op met micro soft-service en ondersteuning](hpc-cache-support-ticket.md) voor hulp.
-
-  Meer informatie over toegang tot mapweergave vindt u in het artikel NFS-opslag doel [probleem oplossing](troubleshoot-nas.md#enable-export-listing).
 
 * **Hoofd toegang** (lezen/schrijven): de cache maakt verbinding met het back-end-systeem als gebruiker-id 0. Controleer deze instellingen op uw opslag systeem:
   

@@ -1,24 +1,14 @@
 ---
 title: Defender-IoT-micro agent voor Azure RTO'S Overview (Engelstalig)
 description: Meer informatie over de Defender-IoT-micro agent voor Azure RTO'S-ondersteuning en-implementatie als onderdeel van Azure Defender voor IoT.
-services: defender-for-iot
-ms.service: defender-for-iot
-documentationcenter: na
-author: shhazam-ms
-manager: rkarlin
-editor: ''
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 01/14/2021
-ms.author: shhazam
-ms.openlocfilehash: ae1ae941dcb1af73286a4865089b1be227c484fc
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 8f162cc7e284abc9f1fdc08a10e62369855017c4
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103496045"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104785900"
 ---
 # <a name="overview-defender-for-iot-defender-iot-micro-agent-for-azure-rtos-preview"></a>Overzicht: Defender voor IoT Defender-IoT-micro-agent voor Azure RTO'S (preview)
 

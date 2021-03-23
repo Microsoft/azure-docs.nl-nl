@@ -1,18 +1,14 @@
 ---
 title: Afzonderlijke sensoren beheren
 description: Meer informatie over het beheren van afzonderlijke Sens oren, waaronder het beheren van activerings bestanden, het uitvoeren van back-ups en het bijwerken van een zelfstandige sensor.
-author: shhazam-ms
-manager: rkarlin
-ms.author: shhazam
 ms.date: 02/02/2021
 ms.topic: how-to
-ms.service: azure
-ms.openlocfilehash: c8bb44d323574f6815aa570b271ed4c0df1fc6be
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: df1d1dd6ca2085fb3ab12c104723c63e32249403
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100526915"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104781956"
 ---
 # <a name="manage-individual-sensors"></a>Afzonderlijke sensoren beheren
 

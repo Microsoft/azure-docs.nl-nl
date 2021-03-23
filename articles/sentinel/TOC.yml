@@ -323,6 +323,8 @@
           href: /azure/azure-monitor/logs/query-optimization
     - name: UEBA-verrijkingen
       href: ueba-enrichments.md
+    - name: Toewijzing van CEF-logboek veld
+      href: cef-name-mapping.md
 - name: Resources
   items:
     - name: Nuttige informatie

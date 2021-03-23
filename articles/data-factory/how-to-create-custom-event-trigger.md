@@ -4,15 +4,15 @@ description: Meer informatie over het maken van een aangepaste trigger in Azure 
 ms.service: data-factory
 author: chez-charlie
 ms.author: chez
-ms.reviewer: maghan
+ms.reviewer: jburchel
 ms.topic: conceptual
 ms.date: 03/11/2021
-ms.openlocfilehash: e372808250b1d5b21cd5f6c5226922d5d6ad0f77
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 2d2f26b24e7fa10d9244de8f99d78c64a44b3d61
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104609295"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104785645"
 ---
 # <a name="create-a-trigger-that-runs-a-pipeline-in-response-to-a-custom-event-preview"></a>Een trigger maken waarmee een pijp lijn wordt uitgevoerd als reactie op een aangepaste gebeurtenis (preview-versie)
 
@@ -92,10 +92,10 @@ De volgende tabel bevat een overzicht van de schema-elementen die betrekking heb
 
 | **JSON-element** | **Beschrijving** | **Type** | **Toegestane waarden** | **Vereist** |
 | ---------------- | --------------- | -------- | ------------------ | ------------ |
-| **ligt** | De Azure Resource Manager Resource-ID van het onderwerp Event grid. | Tekenreeks | Azure Resource Manager-ID | Yes |
+| **ligt** | De Azure Resource Manager Resource-ID van het onderwerp Event grid. | Tekenreeks | Azure Resource Manager-ID | Ja |
 | **evenementen** | Het type gebeurtenissen dat ervoor zorgt dat deze trigger wordt gestart. | Matrix van tekenreeksen    |  | Ja, er wordt ten minste één waarde verwacht |
-| **subjectBeginsWith** | Het onderwerpveld moet beginnen met het patroon dat is ingevoerd voor de trigger om te starten. Bijvoorbeeld, wordt `factories` alleen de trigger voor gebeurtenis onderwerp gestart, te beginnen met `factories` . | Tekenreeks   | | No |
-| **subjectEndsWith** | Het onderwerpveld moet eindigen met het patroon dat is ingevoerd voor de trigger om te starten. | Tekenreeks   | | No |
+| **subjectBeginsWith** | Het onderwerpveld moet beginnen met het patroon dat is ingevoerd voor de trigger om te starten. Bijvoorbeeld, wordt `factories` alleen de trigger voor gebeurtenis onderwerp gestart, te beginnen met `factories` . | Tekenreeks   | | Nee |
+| **subjectEndsWith** | Het onderwerpveld moet eindigen met het patroon dat is ingevoerd voor de trigger om te starten. | Tekenreeks   | | Nee |
 
 ## <a name="role-based-access-control"></a>Op rollen gebaseerd toegangsbeheer
 

@@ -1,18 +1,14 @@
 ---
 title: Uw sensor activeren en instellen
 description: In dit artikel wordt beschreven hoe u zich aanmeldt en een sensor console activeert.
-author: shhazam-ms
-manager: rkarlin
-ms.author: shhazam
 ms.date: 1/12/2021
 ms.topic: how-to
-ms.service: azure
-ms.openlocfilehash: 98d59ec4b37238005e89051064a60fa6a4407394
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 2fdfa0dd7048bf39ae5b53a729aef578054b30ac
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102449829"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104779185"
 ---
 # <a name="activate-and-set-up-your-sensor"></a>Uw sensor activeren en instellen
 

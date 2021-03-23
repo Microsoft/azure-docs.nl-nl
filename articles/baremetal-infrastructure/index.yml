@@ -4,34 +4,100 @@ summary: Meer informatie over hoe u BareMetal Infrastructure gebruikt om virtuel
 metadata:
   title: Documentatie voor BareMetal Infrastructure
   description: Meer informatie over hoe u BareMetal Infrastructure gebruikt om virtuele machines te maken, implementeren en beheren in Microsoft Azure.
-  services: virtual-machines
+  services: baremetal-infrastructure
   ms.service: baremetal-infrastructure
   ms.topic: landing-page
   author: shortpatti
   ms.author: v-patsho
-  ms.date: 12/31/2020
-  ms.openlocfilehash: 285421d12b656290ef5ddbe21136345b718e0ca1
-  ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+  ms.date: 03/19/2021
+  ms.openlocfilehash: 9380cd3d0d3184716d980f57e8cc88ab27201b20
+  ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 01/23/2021
-  ms.locfileid: "98730269"
+  ms.lasthandoff: 03/22/2021
+  ms.locfileid: "104770900"
 landingContent:
 - title: Over BareMetal Infrastructure
   linkLists:
   - linkListType: overview
     links:
     - text: Wat is BareMetal Infrastructure in Azure?
-      url: workloads/sap/baremetal-overview-architecture.md
+      url: concepts-baremetal-infrastructure-overview.md
     - text: Inzicht in de voorwaarden
       url: know-baremetal-terms.md
+    - text: BareMetal-workloadtypen
+      url: /azure/virtual-machines/workloads/sap/get-started?context=/azure/baremetal-infrastructure/workloads/sap/context/context
+    - text: BareMetal instantie-eenheden verbinden in azure
+      url: connect-baremetal-infrastructure.md
+- title: SAP HANA op Azure (grote exemplaren)
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Certificering
+      url: /azure/virtual-machines/workloads/sap/hana-certification?context=/azure/baremetal-infrastructure/workloads/sap/context/context
+    - text: Beschikbare SKU's voor HLI
+      url: /azure/virtual-machines/workloads/sap/hana-available-skus?context=/azure/baremetal-infrastructure/workloads/sap/context/context
+    - text: Grootte aanpassen
+      url: /azure/virtual-machines/workloads/sap/hana-sizing?context=/azure/baremetal-infrastructure/workloads/sap/context/context
+    - text: Voorbereidingsvereisten
+      url: /azure/virtual-machines/workloads/sap/hana-onboarding-requirements?context=/azure/baremetal-infrastructure/workloads/sap/context/context
+    - text: SAP HANA-gegevenslagen en extensieknooppunten
+      url: /azure/virtual-machines/workloads/sap/hana-data-tiering-extension-nodes?context=/azure/baremetal-infrastructure/workloads/sap/context/context
+    - text: Bewerkingsmodel en verantwoordelijkheden
+      url: /azure/virtual-machines/workloads/sap/hana-operations-model?context=/azure/baremetal-infrastructure/workloads/sap/context/context
+    - text: Compatibele besturingssystemen
+      url: /azure/virtual-machines/workloads/sap/os-compatibility-matrix-hana-large-instance?context=/azure/baremetal-infrastructure/workloads/sap/context/context
+    - text: Scenario's met HLI-ondersteuning
+      url: /azure/virtual-machines/workloads/sap/hana-supported-scenario?context=/azure/baremetal-infrastructure/workloads/sap/context/context
+  - linkListType: architecture
+    links:
+    - text: Algemene architectuur
+      url: /azure/virtual-machines/workloads/sap/hana-architecture?context=/azure/baremetal-infrastructure/workloads/sap/context/context
+    - text: Netwerkarchitectuur
+      url: /azure/virtual-machines/workloads/sap/hana-network-architecture?context=/azure/baremetal-infrastructure/workloads/sap/context/context
+    - text: Opslagarchitectuur
+      url: /azure/virtual-machines/workloads/sap/hana-storage-architecture?context=/azure/baremetal-infrastructure/workloads/sap/context/context
+  - linkListType: get-started
+    links:
+    - text: HLI-implementatie
+      url: /azure/virtual-machines/workloads/sap/hana-overview-infrastructure-connectivity?context=/azure/baremetal-infrastructure/workloads/sap/context/context
+    - text: Azure-VM's verbinden met grote HANA-instanties
+      url: /azure/virtual-machines/workloads/sap/hana-connect-azure-vm-large-instances?context=/azure/baremetal-infrastructure/workloads/sap/context/context
+    - text: Een VNet verbinden met grote HANA-instanties via ExpressRoute
+      url: /azure/virtual-machines/workloads/sap/hana-connect-vnet-express-route?context=/azure/baremetal-infrastructure/workloads/sap/context/context
+    - text: Aanvullende netwerkvereisten
+      url: /azure/virtual-machines/workloads/sap/hana-additional-network-requirements?context=/azure/baremetal-infrastructure/workloads/sap/context/context
+    - text: De configuratie valideren
+      url: /azure/virtual-machines/workloads/sap/hana-installation?context=/azure/baremetal-infrastructure/workloads/sap/context/context
+    - text: Voorbeeld van HANA-installatie
+      url: /azure/virtual-machines/workloads/sap/hana-example-installation?context=/azure/baremetal-infrastructure/workloads/sap/context/context
   - linkListType: reference
     links:
-    - text: BareMetal-workloadtypen
-      url: ../virtual-machines/workloads/sap/get-started.md?context=%2fazure%2fbaremetal-infrastructure%2fworkloads%2fsap%2fcontext%2fcontext
-- title: BareMetal-exemplaareenheden
-  linkLists:
+    - text: Opties en overwegingen
+      url: /azure/virtual-machines/workloads/sap/hana-overview-high-availability-disaster-recovery?context=/azure/baremetal-infrastructure/workloads/sap/context/context
+    - text: Back-ups en herstellen
+      url: /azure/virtual-machines/workloads/sap/hana-backup-restore?context=/azure/baremetal-infrastructure/workloads/sap/context/context
+    - text: Principes en voorbereiding
+      url: /azure/virtual-machines/workloads/sap/hana-concept-preparation?context=/azure/baremetal-infrastructure/workloads/sap/context/context
+    - text: Procedure bij failover van het noodherstel
+      url: /azure/virtual-machines/workloads/sap/hana-failover-procedure?context=/azure/baremetal-infrastructure/workloads/sap/context/context
+    - text: Bewaking van HLI
+      url: /azure/virtual-machines/workloads/sap/troubleshooting-monitoring?context=/azure/baremetal-infrastructure/workloads/sap/context/context
+    - text: Bewaken en problemen oplossen vanaf de HANA-zijde
+      url: /azure/virtual-machines/workloads/sap/hana-monitor-troubleshoot?context=/azure/baremetal-infrastructure/workloads/sap/context/context
   - linkListType: how-to-guide
     links:
-    - text: BareMetal-exemplaareenheden beheren in Azure
-      url: workloads/sap/baremetal-infrastructure-portal.md
+    - text: Hoge beschikbaarheid met STONITH instellen
+      url: /azure/virtual-machines/workloads/sap/ha-setup-with-stonith?context=/azure/baremetal-infrastructure/workloads/sap/context/context
+    - text: Back-up van het besturingssysteem voor SKU's type II
+      url: /azure/virtual-machines/workloads/sap/os-backup-type-ii-skus?context=/azure/baremetal-infrastructure/workloads/sap/context/context
+    - text: Kdump inschakelen voor grote HANA-exemplaren
+      url: /azure/virtual-machines/workloads/sap/hana-large-instance-enable-kdump?context=/azure/baremetal-infrastructure/workloads/sap/context/context
+    - text: Bijwerken van het besturingssysteem voor grote HANA-exemplaren
+      url: /azure/virtual-machines/workloads/sap/os-upgrade-hana-large-instance?context=/azure/baremetal-infrastructure/workloads/sap/context/context
+    - text: SMT-server instellen voor SUSE Linux
+      url: /azure/virtual-machines/workloads/sap/hana-setup-smt?context=/azure/baremetal-infrastructure/workloads/sap/context/context
+    - text: Migratie van HLI naar Azure-VM
+      url: /azure/virtual-machines/workloads/sap/hana-large-instance-virtual-machine-migration?context=/azure/baremetal-infrastructure/workloads/sap/context/context
+    - text: Een reservering voor SAP HANA Large Instances kopen
+      url: /azure/cost-management-billing/reservations/prepay-hana-large-instances-reserved-capacity

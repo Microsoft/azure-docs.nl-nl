@@ -1,30 +1,30 @@
 ---
 title: Een Azure Migrate apparaat instellen voor VMware
-description: Meer informatie over het instellen van een Azure Migrate apparaat om VMware-Vm's te beoordelen en te migreren.
+description: Meer informatie over het instellen van een Azure Migrate apparaat om servers in VMware-omgeving te beoordelen en te migreren.
 author: vikram1988
 ms.author: vibansa
 ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 04/16/2020
-ms.openlocfilehash: bac82b2939e5b6a674c75be2cd330dd0fa4b8487
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 1217b51ea91758d25b76394b27d3b21b2e9808b3
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102035758"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104780868"
 ---
-# <a name="set-up-an-appliance-for-vmware-vms"></a>Een apparaat instellen voor VMware-Vm's
+# <a name="set-up-an-appliance-for-servers-in-vmware-environment"></a>Een apparaat instellen voor servers in VMware-omgeving
 
-Volg dit artikel om het Azure Migrate-apparaat in te stellen voor evaluatie met het [Azure migrate: Server Assessment](migrate-services-overview.md#azure-migrate-server-assessment-tool) tool en voor migratie zonder agent met behulp van het Azure migrate: hulp programma voor [server migratie](migrate-services-overview.md#azure-migrate-server-migration-tool) .
+Volg dit artikel om het Azure Migrate-apparaat in te stellen voor evaluatie met de Azure Migrate: hulp programma voor [detectie en evaluatie](migrate-services-overview.md#azure-migrate-server-assessment-tool) en voor migratie zonder agent met behulp van het Azure migrate: hulp programma voor [server migratie](migrate-services-overview.md#azure-migrate-server-migration-tool) .
 
-Het [Azure migrate apparaat](migrate-appliance.md) is een licht gewicht dat door Azure migrate wordt gebruikt: Server evaluatie en server migratie om servers te detecteren die in vCenter Server worden uitgevoerd, Server configuratie-en prestatie-meta gegevens te verzenden naar Azure, en voor replicatie van servers die gebruikmaken van agentloze migratie.
+Het [Azure migrate apparaat](migrate-appliance.md) is een licht gewicht dat door Azure migrate wordt gebruikt: detectie en evaluatie en server migratie om servers te detecteren die in vCenter Server worden uitgevoerd, Server configuratie-en prestatie-meta gegevens te verzenden naar Azure, en voor replicatie van servers die gebruikmaken van agentloze migratie.
 
 U kunt het apparaat implementeren met een aantal methoden:
 
 - Maak een server op vCenter Server met behulp van een gedownloade eicellen-sjabloon. Dit is de methode die in dit artikel wordt beschreven.
 - Stel het apparaat in op een bestaande server met behulp van een Power shell-installatie script. [Deze methode](deploy-appliance-script.md) moet worden gebruikt als u geen eicellen-sjabloon kunt gebruiken of als u zich in azure Government bevindt.
 
-Nadat u het apparaat hebt gemaakt, controleert u of er verbinding kan worden gemaakt met Azure Migrate: Server evaluatie, registreert u bij het Azure Migrate project en configureert u het apparaat om detectie te initiëren.
+Nadat u het apparaat hebt gemaakt, controleert u of het een verbinding kan maken met Azure Migrate: detectie en evaluatie, registreert u het met het Azure Migrate project en configureert u het apparaat om de detectie te initiëren.
 
 ## <a name="deploy-with-ova"></a>Implementeren met OVA
 
@@ -36,8 +36,8 @@ Als u het apparaat wilt instellen met behulp van een OVA-sjabloon, doet u het vo
 
 ### <a name="1-generate-the-azure-migrate-project-key"></a>1. de Azure Migrate project sleutel genereren
 
-1. In **Migratiedoelen** > **Servers** > **Azure Migrate: Serverevaluatie** selecteert u **Detecteren**.
-2. In **Machines ontdekken** > **Zijn de machines gevirtualiseerd?** selecteert u **Ja, met VMware vSphere-hypervisor**.
+1. In **migratie doelen**  >  **servers**  >  **Azure migrate: detectie en evaluatie** selecteert u **detecteren**.
+2. In **Discover-servers**  >  **zijn uw servers gevirtualiseerd?**, selecteert u **Ja, met VMware vSphere Hyper Visor**.
 3. Geef in **1: Azure migrate project sleutel genereren** een naam op voor het Azure migrate apparaat dat u wilt instellen voor de detectie van servers in uw VMware-omgeving. De naam moet alfanumeriek zijn met 14 tekens of minder.
 1. Klik op **Sleutel genereren** om de vereiste Azure-resources te gaan maken. Sluit de detectie pagina niet tijdens het maken van resources.
 1. Nadat de Azure-resources zijn gemaakt, wordt er een **Azure Migrate-projectsleutel** gegenereerd.
@@ -95,7 +95,7 @@ Het apparaat voor de eerste keer instellen.
 
 1. Klik in de vSphere-client console met de rechter muisknop op de server en selecteer vervolgens **console openen**.
 2. Geef de taal, de tijdzone en een wachtwoord op voor het apparaat.
-3. Open een browser op een computer die verbinding kan maken met de toestel server en open de URL van het configuratie beheer van het apparaat: `https://appliance name or IP address: 44368` .
+3. Open een browser op een wille keurige server die verbinding kan maken met de toestel server en open de URL van het configuratie beheer van het apparaat: `https://appliance name or IP address: 44368` .
 
    U kunt de Configuration Manager ook openen via het bureau blad van de toestel server door de snelkoppeling voor Configuration Manager te selecteren.
 1. Accepteer de **licentievoorwaarden** en lees de informatie van derden.
@@ -117,7 +117,7 @@ Het apparaat voor de eerste keer instellen.
 
 ## <a name="register-the-appliance-with-azure-migrate"></a>Het apparaat registreren bij Azure Migrate
 
-1. Plak de **Azure Migrate-projectsleutel** die u in de portal hebt gekopieerd. Als u de sleutel niet hebt, gaat u naar **Serverevaluatie > Detecteren > Bestaande apparaten beheren**, selecteert u de naam van het apparaat die u hebt ingevoerd op het moment dat de sleutel werd gegenereerd en kopieert u de bijbehorende sleutel.
+1. Plak de **Azure Migrate-projectsleutel** die u in de portal hebt gekopieerd. Als u de sleutel niet hebt, gaat u naar **detectie en evaluatie> detecteert> bestaande apparaten te beheren**, selecteert u de naam van het apparaat dat u hebt ingevoerd op het moment van sleutel genereren en kopieert u de bijbehorende sleutel.
 1. U hebt een apparaatcode nodig om te verifiëren bij Azure. Als u klikt op **Aanmelden**, wordt er een modaal met de apparaatcode geopend, zoals hieronder weergegeven.
 
     :::image type="content" source="./media/tutorial-discover-vmware/device-code.png" alt-text="Modaal waarin de apparaatcode wordt weergegeven":::
@@ -141,7 +141,7 @@ Het apparaat moet verbinding maken met vCenter Server om de configuratie-en pres
 
 1. In **stap 1: geef vCenter Server referenties** op en klik op **referenties toevoegen** om een beschrijvende naam voor de referenties op te geven, Voeg **gebruikers naam** en **wacht woord** toe voor het vCenter Server account dat het apparaat gebruikt om servers te detecteren die worden uitgevoerd op de vCenter Server.
     - U moet een account met de vereiste machtigingen hebben ingesteld, zoals in dit artikel wordt besproken.
-    - Als u het detectiebereik wilt beperken tot specifieke VMware-objecten (vCenter Server-datacenters, clusters, een map met clusters, hosts, een map met hosts of afzonderlijke VM's), raadpleegt u de instructies in [dit artikel](set-discovery-scope.md) om het account dat wordt gebruikt door Azure Migrate te begrenzen.
+    - Als u de detectie van de scope wilt beperken tot specifieke VMware-objecten (vCenter Server Data Centers, clusters, een map met clusters, hosts, een map van hosts of afzonderlijke servers.), raadpleegt u de instructies in [dit artikel](set-discovery-scope.md) om het account dat wordt gebruikt door Azure migrate te begrenzen.
 1. In **stap 2: geef vCenter Server Details** op, klik op **detectie bron toevoegen** om de beschrijvende naam voor referenties in de vervolg keuzelijst te selecteren, geeft u het **IP-adres/de FQDN** van de vCenter Server op. U kunt **Poort** op 443 laten staan (de standaardinstelling) of een aangepaste poort opgeven waarop vCenter Server luistert en op **Opslaan** klikken.
 1. Wanneer u op **Opslaan** klikt, probeert het apparaat de verbinding met de vCenter Server te valideren met de referenties die zijn gegeven en wordt de **validatie status** in de tabel vergeleken met het vCenter Server IP-adres/de FQDN-naam.
 1. Voordat u de detectie start, kunt u de connectiviteit met vCenter Server altijd **opnieuw valideren**.

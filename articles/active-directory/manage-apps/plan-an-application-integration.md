@@ -1,22 +1,22 @@
 ---
-title: Aan de slag met het integreren van Azure AD met apps
+title: Aan de slag met het integreren van Azure Active Directory met apps
 description: Dit artikel is een aan de slag-hand leiding voor het integreren van Azure Active Directory (AD) met on-premises toepassingen en Cloud toepassingen.
 services: active-directory
 author: kenwith
 manager: daveba
 ms.service: active-directory
+ms.subservice: app-mgmt
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 07/16/2018
+ms.date: 03/19/2021
 ms.author: kenwith
 ms.reviewer: asteen
-ms.openlocfilehash: 8b321acb00e6e9b4b6cca117afba8bf0c9432719
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: de06bb4f97568eaa40b0b09e9bc2b50608424aa8
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "99258463"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104775592"
 ---
 # <a name="integrating-azure-active-directory-with-applications-getting-started-guide"></a>Hand leiding voor het integreren van Azure Active Directory met toepassingen
 
@@ -66,8 +66,19 @@ In de volgende artikelen vindt u informatie over de verschillende manieren waaro
 * [Toepassingen gebruiken in de Azure-toepassings galerie](what-is-single-sign-on.md)
 * [Lijst met zelf studies voor SaaS-toepassingen integreren](../saas-apps/tutorial-list.md)
 
+## <a name="capabilities-for-apps-not-listed-in-the-azure-ad-gallery"></a>Mogelijkheden voor apps die niet worden vermeld in de Azure AD-galerie
+
+U kunt elke toepassing toevoegen die al bestaat in uw organisatie of een toepassing van derden van een leverancier die nog geen deel uitmaakt van de Azure AD-galerie. Afhankelijk van uw [gebruiksrecht overeenkomst](https://azure.microsoft.com/pricing/details/active-directory/)zijn de volgende mogelijkheden beschikbaar:
+
+- Selfservice-integratie van elke toepassing die ondersteuning biedt voor services van [Security Assertion Markup Language (SAML) 2,0](https://wikipedia.org/wiki/SAML_2.0) (door SP geïnitieerd of IDP)
+- Self-Service-integratie van elke webtoepassing met een op een HTML gebaseerde aanmeldings pagina met [SSO op basis van wacht woorden](sso-options.md#password-based-sso)
+- Selfservice verbinding van toepassingen die gebruikmaken van het [systeem voor het scim-Protocol (Cross-Domain Identity Management) voor het inrichten van gebruikers](../app-provisioning/use-scim-to-provision-users-and-groups.md)
+- Mogelijkheid om koppelingen toe te voegen aan een toepassing in het [Start programma voor Office 365-apps](https://www.microsoft.com/microsoft-365/blog/2014/10/16/organize-office-365-new-app-launcher-2/) of [mijn apps](sso-options.md#linked-sign-on)
+
+Zie [verificatie scenario's voor Azure AD](../develop/authentication-vs-authorization.md)als u hulp nodig hebt bij het integreren van aangepaste apps met Azure AD. Wanneer u een App ontwikkelt die gebruikmaakt van een modern protocol zoals [OpenID Connect Connect/OAuth](../develop/active-directory-v2-protocols.md) om gebruikers te verifiëren, kunt u dit registreren bij het micro soft Identity-platform met behulp van de [app-registraties](../develop/quickstart-register-app.md) -ervaring in de Azure Portal.
+
 ### <a name="authentication-types"></a>Verificatie typen
-Elk van uw toepassingen heeft mogelijk andere verificatie vereisten. Met Azure AD kunnen handtekening certificaten worden gebruikt met toepassingen die gebruikmaken van SAML 2,0-, WS-Federation-of OpenID Connect Connect-protocollen en een eenmalige aanmelding met een wacht woord. Zie [certificaten voor federatieve enkele Sign-On beheren in azure Active Directory](manage-certificates-for-federated-single-sign-on.md) en [op wacht woord gebaseerde eenmalige aanmelding](what-is-single-sign-on.md)voor meer informatie over toepassings verificatie typen voor gebruik met Azure AD.
+Elk van uw toepassingen heeft mogelijk andere verificatie vereisten. Met Azure AD kunnen handtekening certificaten worden gebruikt met toepassingen die gebruikmaken van SAML 2,0-, WS-Federation-of OpenID Connect Connect-protocollen en wacht woord eenmalige aanmelding. Zie voor meer informatie over toepassings verificatie typen [certificaten beheren voor federatieve enkelvoudige Sign-On in azure Active Directory](manage-certificates-for-federated-single-sign-on.md) en [op wacht woord gebaseerde eenmalige aanmelding](what-is-single-sign-on.md).
 
 ### <a name="enabling-sso-with-azure-ad-app-proxy"></a>Eenmalige aanmelding met Azure AD-app proxy inschakelen
 Met Microsoft Azure AD toepassings proxy kunt u vanaf elke locatie en op elk apparaat toegang bieden tot toepassingen die zich in uw particuliere netwerk bevinden. Nadat u een toepassings proxy connector hebt geïnstalleerd in uw omgeving, kunt u deze eenvoudig configureren met Azure AD.
@@ -85,11 +96,9 @@ In de volgende artikelen worden de manieren beschreven waarop u de toegang tot t
 * [Accounts delen](../enterprise-users/users-sharing-accounts.md)
 
 ## <a name="next-steps"></a>Volgende stappen
-Voor gedetailleerde informatie kunt u Azure Active Directory implementatie plannen downloaden van [github](../fundamentals/active-directory-deployment-plans.md). Voor galerie toepassingen kunt u implementatie plannen voor eenmalige aanmelding, voorwaardelijke toegang en gebruikers inrichten via de [Azure Portal](https://portal.azure.com)downloaden. 
+Voor gedetailleerde informatie kunt u Azure Active Directory implementatie plannen downloaden van [github](../fundamentals/active-directory-deployment-plans.md). Voor galerie toepassingen kunt u implementatie plannen voor eenmalige aanmelding, voorwaardelijke toegang en gebruikers inrichten via de [Azure Portal](https://portal.azure.com)downloaden.
 
 Een implementatie plan downloaden van de Azure Portal:
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Selecteer   |  **een app**-  |  **implementatie plan** voor bedrijfs toepassingen.
-
-Geef feedback over implementatie plannen door gebruik te maken van de enquête van het [implementatie plan](https://aka.ms/DeploymentPlanFeedback).

@@ -3,13 +3,13 @@ title: Meerdere knooppunt groepen gebruiken in azure Kubernetes service (AKS)
 description: Meer informatie over het maken en beheren van meerdere knooppunt groepen voor een cluster in azure Kubernetes service (AKS)
 services: container-service
 ms.topic: article
-ms.date: 04/08/2020
-ms.openlocfilehash: 3e029695e9dce79473ada0bae3e7f0bbfd30db89
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.date: 02/11/2021
+ms.openlocfilehash: 8f18e19eca8895549f17c9f0f6822ecb4da2914b
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102218482"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104773501"
 ---
 # <a name="create-and-manage-multiple-node-pools-for-a-cluster-in-azure-kubernetes-service-aks"></a>Meerdere knooppuntgroepen maken en beheren voor een cluster in Azure Kubernetes Service (AKS)
 
@@ -134,7 +134,7 @@ Een werk belasting vereist mogelijk het splitsen van de knoop punten van een clu
 * Als u uw VNET hebt uitgebreid nadat u het cluster hebt gemaakt, moet u uw cluster bijwerken (een beheerde clster-bewerking uitvoeren, maar de knooppunt groeps bewerkingen worden niet geteld) voordat u een subnet toevoegt buiten de oorspronkelijke cidr. AKS is een fout opgetreden bij het toevoegen van de agent pool, hoewel we deze oorspronkelijk hebben toegestaan. Als u niet weet hoe u uw cluster bestand moet afstemmen op een ondersteunings ticket. 
 * Calico-netwerk beleid wordt niet ondersteund. 
 * Het Azure-netwerk beleid wordt niet ondersteund.
-* Uitvoeren-proxy verwacht een enkele aaneengesloten CIDR en gebruikt deze voor drie optmizations. Deze [K.E.P.](https://github.com/kubernetes/enhancements/blob/master/keps/sig-network/20191104-iptables-no-cluster-cidr.md ) weer geven en--cluster-CIDR [hier](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-proxy/) voor meer informatie. In azure cni wordt het subnet van uw eerste groep knoop punten gegeven aan uitvoeren-proxy. 
+* Uitvoeren-proxy verwacht een enkele aaneengesloten CIDR en gebruikt deze voor drie optmizations. Deze [K.E.P.](https://github.com/kubernetes/enhancements/tree/master/keps/sig-network/2450-Remove-knowledge-of-pod-cluster-CIDR-from-iptables-rules) weer geven en--cluster-CIDR [hier](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-proxy/) voor meer informatie. In azure cni wordt het subnet van uw eerste groep knoop punten gegeven aan uitvoeren-proxy. 
 
 Als u een knooppunt groep met een toegewijd subnet wilt maken, geeft u de bron-ID van het subnet door als extra para meter bij het maken van een knooppunt groep.
 
@@ -716,33 +716,11 @@ az deployment group create \
 
 Het kan een paar minuten duren voordat u uw AKS-cluster bijwerkt, afhankelijk van de instellingen van de knooppunt groep en de bewerkingen die u in uw Resource Manager-sjabloon definieert.
 
-## <a name="assign-a-public-ip-per-node-for-your-node-pools-preview"></a>Wijs een openbaar IP-adres per knoop punt toe voor uw knooppunt Pools (preview-versie)
+## <a name="assign-a-public-ip-per-node-for-your-node-pools"></a>Een openbaar IP-adres per knoop punt toewijzen voor uw knooppunt groepen
 
-> [!WARNING]
-> U moet de CLI preview-extensie 0.4.43 of hoger installeren om de open bare IP per knooppunt functie te kunnen gebruiken.
+AKS-knoop punten vereisen geen eigen open bare IP-adressen voor communicatie. Scenario's kunnen echter knoop punten in een knooppunt groep vereisen om hun eigen toegewezen open bare IP-adressen te ontvangen. Een veelvoorkomend scenario is voor gaming werk belastingen, waarbij een-console een directe verbinding met een virtuele machine in de Cloud moet maken om de hops te minimaliseren. Dit scenario kan worden bereikt op AKS met behulp van het open bare IP-adres van het knoop punt.
 
-AKS-knoop punten vereisen geen eigen open bare IP-adressen voor communicatie. Scenario's kunnen echter knoop punten in een knooppunt groep vereisen om hun eigen toegewezen open bare IP-adressen te ontvangen. Een veelvoorkomend scenario is voor gaming werk belastingen, waarbij een-console een directe verbinding met een virtuele machine in de Cloud moet maken om de hops te minimaliseren. Dit scenario kan worden bereikt op AKS door zich te registreren voor een preview-functie, een open bare IP-adres van het knoop punt (preview).
-
-Gebruik de volgende Azure CLI-opdrachten om de meest recente AKS-preview-extensie te installeren en bij te werken:
-
-```azurecli
-az extension add --name aks-preview
-az extension update --name aks-preview
-az extension list
-```
-
-Registreer u voor de open bare IP-functie van het knoop punt met de volgende Azure CLI-opdracht:
-
-```azurecli-interactive
-az feature register --name NodePublicIPPreview --namespace Microsoft.ContainerService
-```
-Het kan enkele minuten duren voordat de functie is geregistreerd.  U kunt de status controleren met de volgende opdracht:
-
-```azurecli-interactive
- az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/NodePublicIPPreview')].{Name:name,State:properties.state}"
-```
-
-Maak na een geslaagde registratie een nieuwe resource groep.
+Maak eerst een nieuwe resource groep.
 
 ```azurecli-interactive
 az group create --name myResourceGroup2 --location eastus
@@ -760,12 +738,9 @@ Voor bestaande AKS-clusters kunt u ook een nieuwe knooppunt groep toevoegen en e
 az aks nodepool add -g MyResourceGroup2 --cluster-name MyManagedCluster -n nodepool2 --enable-node-public-ip
 ```
 
-> [!Important]
-> Tijdens de preview-periode biedt Azure Instance Metadata Service momenteel geen ondersteuning voor het ophalen van open bare IP-adressen voor de Standard-VM-SKU van de laag. Als gevolg van deze beperking kunt u kubectl-opdrachten niet gebruiken om de open bare Ip's weer te geven die aan de knoop punten zijn toegewezen. De Ip's worden echter toegewezen en werken zoals bedoeld. De open bare Ip's voor uw knoop punten zijn gekoppeld aan de instanties in de Schaalset van de virtuele machine.
-
 U kunt de open bare Ip's voor uw knoop punten op verschillende manieren vinden:
 
-* Gebruik de Azure CLI [-opdracht AZ vmss List-instance-open bare ip's][az-list-ips]
+* Gebruik de Azure CLI [-opdracht AZ vmss List-instance-open bare ip's][az-list-ips].
 * Gebruik [Power shell-of bash-opdrachten][vmss-commands]. 
 * U kunt ook de open bare Ip's weer geven in de Azure Portal door de instanties in de Schaalset voor virtuele machines te bekijken.
 
@@ -818,20 +793,20 @@ Gebruik [proximity-plaatsings groepen][reduce-latency-ppg] om de latentie voor u
 
 <!-- INTERNAL LINKS -->
 [aks-windows]: windows-container-cli.md
-[az-aks-get-credentials]: /cli/azure/aks#az-aks-get-credentials
-[az-aks-create]: /cli/azure/aks#az-aks-create
-[az-aks-get-upgrades]: /cli/azure/aks#az-aks-get-upgrades
-[az-aks-nodepool-add]: /cli/azure/aks/nodepool#az-aks-nodepool-add
-[az-aks-nodepool-list]: /cli/azure/aks/nodepool#az-aks-nodepool-list
-[az-aks-nodepool-update]: /cli/azure/aks/nodepool#az-aks-nodepool-update
-[az-aks-nodepool-upgrade]: /cli/azure/aks/nodepool#az-aks-nodepool-upgrade
-[az-aks-nodepool-scale]: /cli/azure/aks/nodepool#az-aks-nodepool-scale
-[az-aks-nodepool-delete]: /cli/azure/aks/nodepool#az-aks-nodepool-delete
-[az-extension-add]: /cli/azure/extension#az-extension-add
-[az-extension-update]: /cli/azure/extension#az-extension-update
-[az-group-create]: /cli/azure/group#az-group-create
-[az-group-delete]: /cli/azure/group#az-group-delete
-[az-deployment-group-create]: /cli/azure/deployment/group#az_deployment_group_create
+[az-aks-get-credentials]: /cli/azure/aks?view=azure-cli-latest&preserve-view=true#az_aks_get_credentials
+[az-aks-create]: /cli/azure/aks?view=azure-cli-latest&preserve-view=true#az_aks_create
+[az-aks-get-upgrades]: /cli/azure/aks?view=azure-cli-latest&preserve-view=true#az_aks_get_upgrades
+[az-aks-nodepool-add]: /cli/azure/aks/nodepool?view=azure-cli-latest&preserve-view=true#az_aks_nodepool_add
+[az-aks-nodepool-list]: /cli/azure/aks/nodepool?view=azure-cli-latest&preserve-view=true#az_aks_nodepool_list
+[az-aks-nodepool-update]: /cli/azure/aks/nodepool?view=azure-cli-latest&preserve-view=true#az_aks_nodepool_update
+[az-aks-nodepool-upgrade]: /cli/azure/aks/nodepool?view=azure-cli-latest&preserve-view=true#az_aks_nodepool_upgrade
+[az-aks-nodepool-scale]: /cli/azure/aks/nodepool?view=azure-cli-latest&preserve-view=true#az_aks_nodepool_scale
+[az-aks-nodepool-delete]: /cli/azure/aks/nodepool?view=azure-cli-latest&preserve-view=true#az_aks_nodepool_delete
+[az-extension-add]: /cli/azure/extension?view=azure-cli-latest&preserve-view=true#az_extension_add
+[az-extension-update]: /cli/azure/extension?view=azure-cli-latest&preserve-view=true#az_extension_update
+[az-group-create]: /cli/azure/group?view=azure-cli-latest&preserve-view=true#az_group_create
+[az-group-delete]: /cli/azure/group?view=azure-cli-latest&preserve-view=true#az_group_delete
+[az-deployment-group-create]: /cli/azure/deployment/group?view=azure-cli-latest&preserve-view=true#az_deployment_group_create
 [gpu-cluster]: gpu-cluster.md
 [install-azure-cli]: /cli/azure/install-azure-cli
 [operator-best-practices-advanced-scheduler]: operator-best-practices-advanced-scheduler.md
@@ -844,5 +819,5 @@ Gebruik [proximity-plaatsings groepen][reduce-latency-ppg] om de latentie voor u
 [ip-limitations]: ../virtual-network/virtual-network-ip-addresses-overview-arm#standard
 [node-resource-group]: faq.md#why-are-two-resource-groups-created-with-aks
 [vmss-commands]: ../virtual-machine-scale-sets/virtual-machine-scale-sets-networking.md#public-ipv4-per-virtual-machine
-[az-list-ips]: /cli/azure/vmss.md#az-vmss-list-instance-public-ips
+[az-list-ips]: /cli/azure/vmss?view=azure-cli-latest&preserve-view=true#az_vmss_list_instance_public_ips
 [reduce-latency-ppg]: reduce-latency-ppg.md

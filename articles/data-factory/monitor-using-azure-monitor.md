@@ -3,16 +3,16 @@ title: Gegevens fabrieken bewaken met behulp van Azure Monitor
 description: Meer informatie over het gebruik van Azure Monitor om/Azure Data Factory-pijp lijnen te bewaken door Diagnostische logboeken in te scha kelen met informatie van Data Factory.
 author: dcstwh
 ms.author: weetok
-ms.reviewer: maghan
+ms.reviewer: jburchel
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 07/13/2020
-ms.openlocfilehash: 09456c06f2a171ec32c1b885dc2b4e475fea5371
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 04aba71e49fedc8a4ca22aed576aaa978f733336
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102550294"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104783639"
 ---
 # <a name="monitor-and-alert-data-factory-by-using-azure-monitor"></a>Data Factory bewaken en waarschuwen door gebruik te maken van Azure Monitor
 

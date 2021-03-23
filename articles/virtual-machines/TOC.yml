@@ -6,7 +6,7 @@
       href: ./linux/overview.md
     - name: Over Windows Virtual Machines
       href: ./windows/overview.md
-- name: Quickstarts
+- name: Snelstartgidsen
   items:
     - name: Een virtuele Linux-machine maken
       items:
@@ -1258,7 +1258,7 @@
             - name: Een beheerde schijf maken op basis van een momentopname
               href: 'https://github.com/microsoft/azure-docs/blob/master/articles/virtual-machines/scripts/virtual-machines-linux-cli-sample-create-managed-disk-from-snapshot.md'
             - name: Een beheerde schijf kopiëren naar hetzelfde of een ander abonnement
-              href: 'https://github.com/microsoft/azure-docs/blob/master/articles/virtual-machines/scripts/virtual-machines-linux-cli-sample-copy-managed-disks-to-same-or-different-subscription.md'
+              href: 'https://github.com/Azure-Samples/azure-cli-samples/blob/master/virtual-machine/copy-managed-disks-to-same-or-different-subscription/copy-managed-disks-to-same-or-different-subscription.sh'
             - name: Een moment opname naar hetzelfde of een ander abonnement kopiëren
               href: 'https://github.com/microsoft/azure-docs/blob/master/articles/virtual-machines/scripts/virtual-machines-linux-cli-sample-copy-snapshot-to-same-or-different-subscription.md'
             - name: Een momentopname als VHD exporteren naar een opslagaccount

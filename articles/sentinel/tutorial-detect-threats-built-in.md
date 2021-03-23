@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/06/2020
+ms.date: 03/19/2021
 ms.author: yelevin
-ms.openlocfilehash: b8a304d523052f1fe839f94608806df51d35fdf9
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 951c616961ff68b810ca135d09a6f6253cb2b7ba
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104589919"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104773552"
 ---
 # <a name="tutorial-detect-threats-out-of-the-box"></a>Zelfstudie: Bedreigingen standaard detecteren
 
@@ -57,7 +57,9 @@ De volgende sjabloon typen zijn beschikbaar:
     Deze sjablonen zijn gebaseerd op eigen algoritmen van micro soft machine learning, zodat u niet de interne logica kunt zien van hoe ze werken en wanneer ze worden uitgevoerd. Omdat de logica verborgen is en daarom niet kan worden aangepast, kunt u slechts één regel maken met elke sjabloon van dit type.
 
     > [!IMPORTANT]
-    > De machine learning gedrags analyse regel sjablonen zijn momenteel beschikbaar als **Preview-versie**. Zie de [aanvullende gebruiks voorwaarden voor Microsoft Azure previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor aanvullende juridische voor waarden die van toepassing zijn op Azure-functies die in bèta, preview of op andere wijze nog niet beschikbaar zijn in algemene Beschik baarheid.
+    > - De machine learning gedrags analyse regel sjablonen zijn momenteel beschikbaar als **Preview-versie**. Zie de [aanvullende gebruiks voorwaarden voor Microsoft Azure previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor aanvullende juridische voor waarden die van toepassing zijn op Azure-functies die in bèta, preview of op andere wijze nog niet beschikbaar zijn in algemene Beschik baarheid.
+    >
+    > - Door regels te maken en in te scha kelen op basis van de ML gedrags Analytics-sjablonen, **geeft u micro soft toestemming om ingedeelde gegevens buiten de Geografie van uw Azure-Sentinel-werk ruimte te kopiëren** als dat nodig is voor verwerking door de machine learning motoren en modellen.
 
 - **Gepland**
 

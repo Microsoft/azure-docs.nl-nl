@@ -4,7 +4,7 @@ description: Meer informatie over de uitbrei ding voor de analyse van beveiligin
 author: sukhans
 manager: sukhans
 ms.author: terrylan
-ms.date: 07/31/2019
+ms.date: 03/22/2021
 ms.topic: article
 ms.service: security
 services: azure
@@ -12,14 +12,17 @@ ms.assetid: 521180dc-2cc9-43f1-ae87-2701de7ca6b8
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.openlocfilehash: a3af3307892e82ecd0697124954e99837ad5eb9e
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 4443bdbc134f222256c6af8bb1f52c684cdb4624
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "94515690"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104801193"
 ---
 # <a name="about-microsoft-security-code-analysis"></a>Informatie over analyse van micro soft-beveiligings code
+
+> [!Note]
+> Met ingang van 1 maart 2022 wordt de uitbrei ding voor micro soft security code Analysis (MSCA) buiten gebruik gesteld. Bestaande MSCA-klanten behouden hun toegang tot MSCA tot en met 1 maart 2022. Raadpleeg de OWASP- [Hulpprogram ma's](https://owasp.org/www-community/Source_Code_Analysis_Tools) voor het analyseren van de bron code voor alternatieve opties in azure DevOps. Om klanten te migreren naar GitHub, kunt u de [geavanceerde beveiliging van github](https://docs.github.com/github/getting-started-with-github/about-github-advanced-security)bekijken.
 
 Met de uitbrei ding voor de analyse van beveiligings code van micro soft kunnen teams beveiligings code analyses toevoegen aan hun DevOps voor continue integratie en levering (CI/CD) van Azure. Deze analyse wordt aanbevolen door de [sdl-experts (Secure Development Lifecycle)](https://www.microsoft.com/securityengineering/sdl/practices) bij micro soft.
 

@@ -4,12 +4,12 @@ ms.service: iot-edge
 ms.topic: include
 ms.date: 08/26/2020
 ms.author: v-tcassi
-ms.openlocfilehash: 9572f4c663c820c76a57cdbdcecff082b150b577
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 8009d98ddbfa778cf5f357248ecd943b810e06e3
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104761117"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104803424"
 ---
 ## <a name="create-a-release-pipeline-for-continuous-deployment"></a>Een release pijplijn maken voor continue implementatie
 
@@ -89,6 +89,9 @@ Maak een nieuwe pijp lijn en voeg een nieuwe fase toe:
     | Kies één of meerdere apparaten | Kies of u de release pijplijn wilt implementeren op een of meer apparaten. Als u op één apparaat implementeert, voert u de **IOT edge apparaat-id** in. Als u implementeert op meerdere apparaten, geeft u de **voor waarde voor** het apparaat doel op. De doel voorwaarde is een filter dat overeenkomt met een set IoT Edge apparaten in IoT Hub. Als u Device Tags als voor waarde wilt gebruiken, moet u de labels van de bijbehorende apparaten bijwerken met IoT Hub apparaat twee. Werk de **IOT Edge implementatie-id** en **IOT Edge implementatie prioriteit** bij in de geavanceerde instellingen. Zie [inzicht IOT Edge automatische implementaties](../articles/iot-edge/module-deployment-monitoring.md)voor meer informatie over het maken van een implementatie voor meerdere apparaten. |
     | Apparaat-ID of doel voorwaarde | Geef, afhankelijk van de vorige selectie, een apparaat-ID of [doel voorwaarde](../articles/iot-edge/module-deployment-monitoring.md#target-condition) op om op meerdere apparaten te implementeren. |
     | Geavanceerd | Geef voor de IoT Edge implementatie-ID op `$(System.TeamProject)-$(Release.EnvironmentName)` . Met deze variabele wordt de naam van het project en de release toegewezen aan uw IoT Edge-implementatie-ID. |
+    
+
+    Als uw taak betrekking heeft op het gebruik van een installatie kopie die zich in een privé-docker-vertrouwd REGI ster bevindt dat niet zichtbaar is voor de open bare Cloud, kunt u de omgevings variabele **SKIP_MODULE_IMAGE_VALIDATION** instellen op `true` om installatie kopieën over te slaan. 
 
     ![Azure IoT Edge-taken toevoegen voor uw ontwikkel fase](./media/iot-edge-create-release-pipeline-for-continuous-deployment/add-quality-assurance-task.png)
 

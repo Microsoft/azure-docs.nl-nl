@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/09/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 66f11b7a5124f0b9b834b79368d57443ab33e850
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 263397aa2cd09ba24fa750131b76047801869a65
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104578342"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104798932"
 ---
 # <a name="desktop-app-that-calls-web-apis-app-registration"></a>Bureau blad-app voor het aanroepen van web-Api's: app-registratie
 
@@ -50,6 +50,7 @@ Geef de omleidings-URI voor uw app op door [de platform instellingen](quickstart
   > Als beveiligings best practice wordt u aangeraden expliciet in te stellen `https://login.microsoftonline.com/common/oauth2/nativeclient` of `http://localhost` als de omleidings-URI. Sommige verificatie bibliotheken zoals MSAL.NET gebruiken een standaard waarde van `urn:ietf:wg:oauth:2.0:oob` wanneer er geen andere omleidings-URI is opgegeven. dit wordt niet aanbevolen. Deze standaard instelling wordt bijgewerkt als gevolg van een wijziging in de volgende belang rijke release.
 
 - Als u een systeem eigen doel-C of SWIFT-app voor macOS bouwt, moet u de omleidings-URI registreren op basis van de bundel-id van uw toepassing in de volgende indeling: `msauth.<your.app.bundle.id>://auth` . Vervang door `<your.app.bundle.id>` de bundel-id van uw toepassing.
+- Als u een Node.js elektron-app bouwt, gebruikt u een aangepast bestands protocol in plaats van een reguliere Web (https://) omleidings-URI om de omleidings stap van de autorisatie stroom te verwerken `msal://redirect` . De naam van het aangepaste bestands protocol is niet duidelijk te raden en moet de suggesties volgen in de [OAuth 2.0-specificatie voor systeem eigen apps](https://tools.ietf.org/html/rfc8252#section-7.1).
 - Als uw app alleen geïntegreerde Windows-verificatie of een gebruikers naam en wacht woord gebruikt, hoeft u geen omleidings-URI voor uw toepassing te registreren. Deze stromen maken een retour afronding naar het micro soft Identity platform v 2.0-eind punt. Uw toepassing wordt niet terugaangeroepen op een specifieke URI.
 - Voor het onderscheiden van de [apparaatcode stroom](scenario-desktop-acquire-token.md#device-code-flow), [geïntegreerde Windows-verificatie](scenario-desktop-acquire-token.md#integrated-windows-authentication)en een [gebruikers naam en wacht woord](scenario-desktop-acquire-token.md#username-and-password) van een vertrouwelijke client toepassing met behulp van een client referentie stroom die wordt gebruikt in [daemon-toepassingen](scenario-daemon-overview.md), waarvoor geen omleidings-URI is vereist, moet u deze configureren als een open bare client toepassing. Deze configuratie wordt gerealiseerd:
 

@@ -3,12 +3,12 @@ title: Aanbevolen procedures
 description: Leer de aanbevolen procedures en handige tips voor het ontwikkelen van uw Azure Batch oplossingen.
 ms.date: 03/11/2020
 ms.topic: conceptual
-ms.openlocfilehash: 697ac5d213bbe2e52134cad519f69c233f1cd593
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 7ef94b07a5131726c42a94088fd3ee1f413dbec7
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104583272"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104802349"
 ---
 # <a name="azure-batch-best-practices"></a>Aanbevolen procedures Azure Batch
 
@@ -31,7 +31,12 @@ In dit artikel wordt een verzameling aanbevolen procedures en handige tips besch
 
 - **Pools moeten meer dan één reken knooppunt hebben:** Afzonderlijke knoop punten zijn niet gegarandeerd altijd beschikbaar. Hoewel ongebruikelijk, hardwarestoringen, updates van het besturings systeem en een andere fout optreden, kunnen afzonderlijke knoop punten offline zijn. Als uw batch-workload deterministisch, gegarandeerde voortgang vereist, moet u Pools met meerdere knoop punten toewijzen.
 
-- **Resource namen niet opnieuw gebruiken:** Batch-resources (taken, Pools, enz.) zijn vaak beschikbaar en zijn in de loop van de tijd. U kunt bijvoorbeeld een pool maken op maandag, deze verwijderen op dinsdag en vervolgens een andere pool maken op donderdag. Elke nieuwe resource die u maakt, moet een unieke naam hebben die u nog niet eerder hebt gebruikt. Dit kan worden gedaan met behulp van een GUID (als de volledige resource naam of als onderdeel ervan) of het insluiten van de tijd waarin de resource is gemaakt in de resource naam. Batch ondersteunt [DisplayName](/dotnet/api/microsoft.azure.batch.jobspecification.displayname), die kan worden gebruikt om een resource een door de mens lees bare naam te geven, zelfs als de werkelijke resource-id iets anders is dan dat van mensen vriendelijke. Door gebruik te maken van unieke namen is het gemakkelijker om te onderscheiden welke resource iets in Logboeken en metrische gegevens heeft gedaan. Er wordt ook dubbel zinnigheid verwijderd als u ooit een ondersteunings aanvraag voor een resource moet opslaan.
+- **Gebruik geen installatie kopieën met EOL-datums (End-of-Life).**
+    Het wordt ten zeerste aanbevolen om te voor komen dat installatie kopieën met aanstaande batch ondersteuning EOL-datums. Deze datums kunnen worden gedetecteerd via de [ `ListSupportedImages` API](https://docs.microsoft.com/rest/api/batchservice/account/listsupportedimages), [Power shell](https://docs.microsoft.com/powershell/module/az.batch/get-azbatchsupportedimage)of [Azure cli](https://docs.microsoft.com/cli/azure/batch/pool/supported-images). Het is uw verantwoordelijkheid om uw weer gave van de EOL-datums die betrekking hebben op uw Pools regel matig te vernieuwen en uw workloads te migreren voordat de EOL-datum plaatsvindt. Als u een aangepaste installatie kopie met een opgegeven knooppunt agent gebruikt, moet u ervoor zorgen dat u de batch-ondersteunings einddatum voor de installatie kopie uitvoert waarvoor uw aangepaste installatie kopie is afgeleid of uitgelijnd.
+
+- **Resource namen niet opnieuw gebruiken.**
+    Batch-resources (taken, Pools, enz.) zijn vaak beschikbaar en zijn in de loop van de tijd. U kunt bijvoorbeeld een pool maken op maandag, deze verwijderen op dinsdag en vervolgens een andere pool maken op donderdag. Elke nieuwe resource die u maakt, moet een unieke naam hebben die u nog niet eerder hebt gebruikt. Dit kan worden gedaan met behulp van een GUID (als de volledige resource naam of als onderdeel ervan) of het insluiten van de tijd waarin de resource is gemaakt in de resource naam. Batch ondersteunt [DisplayName](/dotnet/api/microsoft.azure.batch.jobspecification.displayname), die kan worden gebruikt om een resource een door de mens lees bare naam te geven, zelfs als de werkelijke resource-id iets anders is dan dat van mensen vriendelijke. Door gebruik te maken van unieke namen is het gemakkelijker om te onderscheiden welke resource iets in Logboeken en metrische gegevens heeft gedaan. Er wordt ook dubbel zinnigheid verwijderd als u ooit een ondersteunings aanvraag voor een resource moet opslaan.
+
 
 - **Continuïteit tijdens groeps onderhoud en fout:** Het is raadzaam om uw taken dynamisch gebruik van Pools te laten doen. Als uw taken dezelfde pool gebruiken voor alles, is er een kans dat uw taken niet worden uitgevoerd als er iets mis gaat met de groep. Dit is vooral belang rijk voor tijd gevoelige workloads. Om dit probleem op te lossen, selecteert of maakt u een pool dynamisch wanneer u een taak plant of een manier om de naam van de groep te overschrijven zodat u een beschadigde pool kunt overs Laan.
 

@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 03/09/2021
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 9d80c0b8d4d913322c47d1ad278d6dbc033d2409
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 79b88ad58a2eb95a48a140b3b98d606af495cb94
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102620062"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104799782"
 ---
 # <a name="apply-an-azure-resource-manager-lock-to-a-storage-account"></a>Een Azure Resource Manager Lock Toep assen op een opslag account
 
@@ -25,8 +25,8 @@ Micro soft raadt u aan al uw opslag accounts te vergren delen met een Azure Reso
 
 Zie [resources vergren delen om wijzigingen te voor komen](../../azure-resource-manager/management/lock-resources.md)voor meer informatie over Azure Resource Manager sloten.
 
-> [!IMPORTANT]
-> Het vergren delen van een opslag account beveiligt niet dat de gegevens in dat account worden bijgewerkt of verwijderd.
+> [!CAUTION]
+> Het vergren delen van een opslag account beveiligt geen containers of blobs in dat account, waardoor het niet kan worden verwijderd of overschreven. Zie [overzicht van gegevens beveiliging](../blobs/data-protection-overview.md)voor meer informatie over het beveiligen van BLOB-gegevens.
 
 ## <a name="configure-an-azure-resource-manager-lock"></a>Een Azure Resource Manager vergrendeling configureren
 
@@ -83,4 +83,5 @@ Gegevens in Azure Files of de Table service kunnen ontoegankelijk worden voor cl
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Resources vergren delen om wijzigingen te voor komen](../../azure-resource-manager/management/lock-resources.md)
+- [Overzicht van gegevensbescherming](../blobs/data-protection-overview.md)
+- [Resources vergren delen om wijzigingen te voor komen](../../azure-resource-manager/management/lock-resources.md)

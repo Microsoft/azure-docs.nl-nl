@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 03/05/2021
 ms.author: amverma
 ms.reviewer: jushiman
-ms.openlocfilehash: 43f8b6efd7c4cc510dac8fcbe84ab38f59008ed9
-ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
+ms.openlocfilehash: e23a6351b26cc35679bc879e2b62dd76c74f9962
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104773522"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104798337"
 ---
 # <a name="hc-series"></a>HC-serie
 
@@ -36,9 +36,9 @@ Virtuele machines met de HC-serie 100 GB/sec Mellanox EDR InfiniBand. Deze Vm's 
 | Standard_HC44rs | 44 | Intel Xeon Platinum 8168 | 352 | 191 | 2.7 | 3.4 | 3.7 | 100 | Alles | 700 | 4 | 8 |
 
 Meer informatie over:
-- [architectuur-en VM-topologie](./workloads/hpc/hc-series-overview.md),
-- ondersteunde [software stack](./workloads/hpc/hc-series-overview.md#software-specifications) , inclusief ondersteund besturings systeem, en
-- verwachte [prestaties](./workloads/hpc/hc-series-performance.md) van de VM van de HC-serie.
+- [Architectuur en VM-topologie](./workloads/hpc/hc-series-overview.md)
+- Ondersteunde [software stack](./workloads/hpc/hc-series-overview.md#software-specifications) inclusief ondersteund besturings systeem
+- Verwachte [prestaties](./workloads/hpc/hc-series-performance.md) van de VM van de HC-serie
 
 [!INCLUDE [hpc-include](./workloads/hpc/includes/hpc-include.md)]
 

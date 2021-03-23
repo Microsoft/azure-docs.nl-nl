@@ -1,17 +1,17 @@
 ---
 title: Azure Migrate-apparaat
 description: Biedt een samen vatting van de ondersteuning voor het Azure Migrate apparaat.
-author: vikram1988
-ms.author: vibansa
+author: vineetvikram
+ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: conceptual
-ms.date: 05/04/2020
-ms.openlocfilehash: 08cd0e9d33dd88b9bdc418f3d1bbd382b2d80632
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.date: 03/18/2021
+ms.openlocfilehash: dadca1fadef9d2967f20cae13e40d01de73d39e4
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102038761"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104778335"
 ---
 # <a name="azure-migrate-appliance"></a>Azure Migrate-apparaat
 
@@ -23,10 +23,10 @@ Het Azure Migrate apparaat wordt gebruikt in de volgende scenario's.
 
 **Scenario** | **Hulpprogramma** | **Gebruikt om**
 --- | --- | ---
-**Detectie en evaluatie van servers die worden uitgevoerd in de VMware-omgeving** | Azure Migrate: Server evaluatie | Servers detecteren die in uw VMware-omgeving worden uitgevoerd<br/><br/> Voer de detectie van geïnstalleerde toepassingen, afhankelijkheids analyse zonder agent en detectie van SQL Server instanties en data bases.<br/><br/> Verzamelen van meta gegevens voor de server configuratie en prestaties voor evaluaties.
+**Detectie en evaluatie van servers die worden uitgevoerd in de VMware-omgeving** | Azure Migrate: detectie en evaluatie | Servers detecteren die in uw VMware-omgeving worden uitgevoerd<br/><br/> Voer de detectie van de geïnstalleerde software-inventarisatie, afhankelijkheids analyse zonder agent en detectie van SQL Server instanties en data bases.<br/><br/> Verzamelen van meta gegevens voor de server configuratie en prestaties voor evaluaties.
 **Migratie van servers die in VMware-omgeving worden uitgevoerd zonder agent** | Azure Migrate: Server migratie | Ontdek servers die worden uitgevoerd in uw VMware-omgeving. <br/><br/> Servers repliceren zonder agents te installeren.
-**Detectie en evaluatie van servers die worden uitgevoerd in de Hyper-V-omgeving** | Azure Migrate: Server evaluatie | Detecteer servers die worden uitgevoerd in uw Hyper-V-omgeving.<br/><br/> Verzamelen van meta gegevens voor de server configuratie en prestaties voor evaluaties.
-**Detectie en evaluatie van fysieke of gevirtualiseerde on-premises servers** |  Azure Migrate: Server evaluatie |  Fysieke of gevirtualiseerde on-premises servers detecteren.<br/><br/> Verzamelen van meta gegevens voor de server configuratie en prestaties voor evaluaties.
+**Detectie en evaluatie van servers die worden uitgevoerd in de Hyper-V-omgeving** | Azure Migrate: detectie en evaluatie | Detecteer servers die worden uitgevoerd in uw Hyper-V-omgeving.<br/><br/> Verzamelen van meta gegevens voor de server configuratie en prestaties voor evaluaties.
+**Detectie en evaluatie van fysieke of gevirtualiseerde on-premises servers** |  Azure Migrate: detectie en evaluatie |  Fysieke of gevirtualiseerde on-premises servers detecteren.<br/><br/> Verzamelen van meta gegevens voor de server configuratie en prestaties voor evaluaties.
 
 ## <a name="deployment-methods"></a>Implementatie methoden
 
@@ -38,7 +38,6 @@ Het apparaat kan worden geïmplementeerd met een aantal methoden:
 - Voor fysieke of gevirtualiseerde servers, on-premises of een andere Cloud, implementeert u het apparaat altijd met behulp van een Power shell-installatie script. Raadpleeg [hier](how-to-set-up-appliance-physical.md)de stappen voor de implementatie.
 - Download koppelingen zijn beschikbaar in de onderstaande tabellen.
 
-
 ## <a name="appliance---vmware"></a>Apparaat-VMware
 
 De volgende tabel bevat een overzicht van de Azure Migrate vereisten voor VMware.
@@ -46,7 +45,7 @@ De volgende tabel bevat een overzicht van de Azure Migrate vereisten voor VMware
 > [!Note]
 > Detectie en evaluatie van SQL Server instanties en data bases die worden uitgevoerd in uw VMware-omgeving is nu beschikbaar als preview-versie. Als u deze functie wilt proberen, gebruikt u [**deze koppeling**](https://aka.ms/AzureMigrate/SQL) om een project te maken in de regio **Australië - oost**. Als u al een project in Australië-oost hebt en u deze functie wilt proberen, zorgt u ervoor dat u aan deze [**vereisten**](how-to-discover-sql-existing-project.md) voldoet in de portal.
 
-**Vereiste** | **VMware** 
+**Vereiste** | **VMware**
 --- | ---
 **Machtigingen** | Als u lokaal of op afstand toegang wilt krijgen tot de configuratie beheer van het apparaat, moet u een lokaal of domein gebruikers account met beheerders bevoegdheden op de toestel server hebben.
 **Toestel Services** | Het apparaat heeft de volgende services:<br/><br/> - Apparaatconfiguratie voor **Apparaatbeheer**: dit is een webtoepassing die kan worden geconfigureerd met bron Details om de detectie en evaluatie van servers te starten.<br/> - **VMware-detectie agent**: de agent verzamelt meta gegevens van de server configuratie die kunnen worden gebruikt voor het maken van on-premises evaluaties.<br/>- **VMware-evaluatie agent**: de agent verzamelt meta gegevens van de server prestaties die kunnen worden gebruikt voor het maken van evaluaties op basis van prestaties.<br/>- **Service voor automatische updates**: de service houdt alle agents die op het apparaat worden uitgevoerd up-to-date. Het wordt automatisch elke 24 uur uitgevoerd.<br/>- **DRA-agent**: organiseert Server replicatie en coördineert de communicatie tussen gerepliceerde servers en Azure. Wordt alleen gebruikt wanneer servers naar Azure worden gerepliceerd met behulp van migratie zonder agent.<br/>- **Gateway**: verstuurt gerepliceerde gegevens naar Azure. Wordt alleen gebruikt wanneer servers naar Azure worden gerepliceerd met behulp van migratie zonder agent.<br/>- **SQL-detectie en-evaluatie agent**: Hiermee worden de configuratie-en prestatie gegevens van SQL Server instanties en data bases naar Azure verzonden.
@@ -62,7 +61,7 @@ De volgende tabel bevat een overzicht van de Azure Migrate vereisten voor VMware
 
 ## <a name="appliance---hyper-v"></a>Apparaat-Hyper-V
 
-**Vereiste** | **Hyper-V** 
+**Vereiste** | **Hyper-V**
 --- | ---
 **Machtigingen** | Als u lokaal of op afstand toegang wilt krijgen tot de configuratie beheer van het apparaat, moet u een lokaal of domein gebruikers account met beheerders bevoegdheden op de toestel server hebben.
 **Toestel Services** | Het apparaat heeft de volgende services:<br/><br/> - Apparaatconfiguratie voor **Apparaatbeheer**: dit is een webtoepassing die kan worden geconfigureerd met bron Details om de detectie en evaluatie van servers te starten.<br/> - **Detectie agent**: de agent verzamelt meta gegevens van de server configuratie die kunnen worden gebruikt voor het maken van on-premises evaluaties.<br/>- **Beoordelings agent**: de agent verzamelt meta gegevens van de server prestaties die kunnen worden gebruikt voor het maken van evaluaties op basis van prestaties.<br/>- **Service voor automatische updates**: de service houdt alle agents die op het apparaat worden uitgevoerd up-to-date. Het wordt automatisch elke 24 uur uitgevoerd.
@@ -77,17 +76,16 @@ De volgende tabel bevat een overzicht van de Azure Migrate vereisten voor VMware
 
 ## <a name="appliance---physical"></a>Apparaat-fysiek
 
-**Vereiste** | **Fysiek** 
+**Vereiste** | **Fysiek**
 --- | ---
 **Machtigingen** | Als u lokaal of op afstand toegang wilt krijgen tot de configuratie beheer van het apparaat, moet u een lokaal of domein gebruikers account met beheerders bevoegdheden op de toestel server hebben.
 **Toestel Services** | Het apparaat heeft de volgende services:<br/><br/> - Apparaatconfiguratie voor **Apparaatbeheer**: dit is een webtoepassing die kan worden geconfigureerd met bron Details om de detectie en evaluatie van servers te starten.<br/> - **Detectie agent**: de agent verzamelt meta gegevens van de server configuratie die kunnen worden gebruikt voor het maken van on-premises evaluaties.<br/>- **Beoordelings agent**: de agent verzamelt meta gegevens van de server prestaties die kunnen worden gebruikt voor het maken van evaluaties op basis van prestaties.<br/>- **Service voor automatische updates**: de service houdt alle agents die op het apparaat worden uitgevoerd up-to-date. Het wordt automatisch elke 24 uur uitgevoerd.
-**Project limieten** |  Een apparaat kan alleen worden geregistreerd met een enkel project.<br/> Eén project kan meerdere geregistreerde apparaten hebben.<br/> 
+**Project limieten** |  Een apparaat kan alleen worden geregistreerd met een enkel project.<br/> Eén project kan meerdere geregistreerde apparaten hebben.<br/>
 **Detectie limieten** | Een apparaat kan Maxi maal 1000 fysieke servers detecteren.
 **Ondersteunde implementatie** | Implementeren op een bestaande server met Windows Server 2016 met behulp van het Power shell-installatie script.
 **PowerShell-script** | Down load het script (AzureMigrateInstaller.ps1) in een zip-bestand uit het project of van [hier](https://go.microsoft.com/fwlink/?linkid=2140334). [Meer informatie](tutorial-discover-physical.md).<br/><br/> De download grootte is 85,8 MB.
 **Script verificatie** | [Controleer](tutorial-discover-physical.md#verify-security) het Power shell-installatie script dat is gedownload van het project door de hash-waarden te controleren.
 **Hardware-en netwerk vereisten** |  Het apparaat moet worden uitgevoerd op de server met Windows Server 2016, 16 GB RAM, 8 Vcpu's, ongeveer 80 GB aan schijf opslag.<br/> Het apparaat heeft een statisch of dynamisch IP-adres nodig en vereist Internet toegang, hetzij rechtstreeks hetzij via een proxy.<br/><br/> Als u het apparaat op een bestaande server uitvoert, moet u ervoor zorgen dat Windows Server 2016 wordt uitgevoerd en voldoet aan de hardwarevereisten.<br/>_(Momenteel wordt de implementatie van apparaten alleen ondersteund voor Windows Server 2016.)_
-
 
 ## <a name="url-access"></a>URL-toegang
 
@@ -95,7 +93,7 @@ Het Azure Migrate-apparaat heeft verbinding met internet nodig.
 
 - Wanneer u het apparaat implementeert, controleert Azure Migrate een connectiviteits controle op de vereiste Url's.
 - U moet toegang tot alle Url's in de lijst toestaan. Als u alleen analyses uitvoert, kunt u de Url's overs laan die zijn gemarkeerd als vereist voor VMware-agentloze migratie.
--  Als u een op URL gebaseerde proxy gebruikt om verbinding te maken met internet, moet u ervoor zorgen dat de proxy alle CNAME-records verhelpt die zijn ontvangen tijdens het opzoeken van de Url's.
+- Als u een op URL gebaseerde proxy gebruikt om verbinding te maken met internet, moet u ervoor zorgen dat de proxy alle CNAME-records verhelpt die zijn ontvangen tijdens het opzoeken van de Url's.
 
 ### <a name="public-cloud-urls"></a>Url's voor open bare Clouds
 
@@ -132,7 +130,6 @@ download.microsoft.com/download | Down loads van het micro soft Download centrum
 *. blob.core.usgovcloudapi.net  |  **Gebruikt voor VMware-migratie zonder agent**<br/><br/>Gegevens uploaden naar de opslag voor migratie.
 *. applicationinsights.us | Laad apparaat logboeken die worden gebruikt voor interne bewaking.
 
-
 ## <a name="collected-data---vmware"></a>Verzamelde gegevens-VMware
 
 Het apparaat verzamelt meta gegevens van de configuratie, meta gegevens over prestaties en server afhankelijkheden (als [afhankelijkheids analyse](concepts-dependency-visualization.md) zonder agent wordt gebruikt).
@@ -144,12 +141,12 @@ Met meta gegevens die door het Azure Migrate-apparaat worden gedetecteerd, kunt 
 Hier volgt de volledige lijst met meta gegevens van de server die door het apparaat worden verzameld en naar Azure worden verzonden.
 
 **GEGEVENS** | **ITEM**
---- | --- 
-**Servergegevens** | 
-Server-ID | vm.Config. InstanceUuid 
+--- | ---
+**Servergegevens** |
+Server-ID | vm.Config. InstanceUuid
 Servernaam | vm.Config. Naam
 vCenter Server-ID | VMwareClient. instance. uuid
-VM-beschrijving | vm.Summary.Config. Aantekening
+Server beschrijving | vm.Summary.Config. Aantekening
 Licentie product naam | VM. client. ServiceContent. about. LicenseProductName
 Besturingssysteemtype | VM. SummaryConfig. GuestFullName
 Opstarttype | vm.Config. Firmware
@@ -160,7 +157,7 @@ Lijst met schijf grootte | vm.Config. Hardware. device. ToList (). FindAll (x =>
 Lijst met netwerk adapters | vm.Config. Hardware. device. ToList (). FindAll (x => is VirtualEthernet). Count
 CPU-gebruik | CPU. usage. Average
 Geheugen gebruik |mem. usage. Average
-**Details per schijf** | 
+**Details per schijf** |
 Waarde van schijf sleutel | schijf. Prestatie
 Dikunit-nummer | schijf. UnitNumber
 Sleutel waarde van schijf controller | schijf. ControllerKey. waarde
@@ -170,53 +167,51 @@ Lees bewerkingen per seconde | virtualDisk. numberReadAveraged. Average
 Schrijf bewerkingen per seconde | virtualDisk. numberWriteAveraged. Average
 Lees doorvoer (MB per seconde) | virtualDisk. Read. Average
 Schrijf doorvoer (MB per seconde) | virtualDisk. write. Average
-**Details van de NIC** | 
+**Details van de NIC** |
 Naam van netwerk adapter | adapter. Prestatie
 MAC-adres | ((VirtualEthernetCard) NIC). MacAddress
 IPv4-adressen | vm.Guest.Net
 IPv6-adressen | vm.Guest.Net
 Lees doorvoer (MB per seconde) | net. received. Average
 Schrijf doorvoer (MB per seconde) | net. verzonden. gemiddeld
-**Details van configuratiepad** | 
+**Details van configuratiepad** |
 Name | verpakking. GetType (). Naam
 Type onderliggend object | verpakking. ChildType
 Referentie Details | verpakking. MoRef
 Details van bovenliggend item | Container. Parent
-Details van map per VM | ((Map) container). ChildEntity. type
-Details van Data Center per VM | (Container (Data Center)). VmFolder
+Details van map per server | ((Map) container). ChildEntity. type
+Details van Data Center per server | (Container (Data Center)). VmFolder
 Details van Data Center per host-map | (Container (Data Center)). HostFolder
 Cluster Details per host | ((ClusterComputeResource) container). Hostsite
-Details van host per VM | ((HostSystem) container). VM
+Details van host per server | ((HostSystem) container). VM
 
 ### <a name="performance-data"></a>Prestatiegegevens
 
-
-Dit zijn de prestatie gegevens van de VMware-VM die door het apparaat worden verzameld en naar Azure worden verzonden.
+Dit zijn de prestatie gegevens die een apparaat verzamelt voor een server die wordt uitgevoerd op VMware en die wordt verzonden naar Azure.
 
 **Gegevens** | **Item** | **Beoordelings impact**
 --- | --- | ---
-CPU-gebruik | CPU. usage. Average | Aanbevolen VM-grootte/kosten
-Geheugen gebruik | mem. usage. Average | Aanbevolen VM-grootte/kosten
-Lees doorvoer schijf (MB per seconde) | virtualDisk. Read. Average | Berekening voor schijf grootte, opslag kosten, VM-grootte
-Schrijf doorvoer schijf (MB per seconde) | virtualDisk. write. Average | Berekening voor schijf grootte, opslag kosten, VM-grootte
-Lees bewerkingen op de schijf per seconde | virtualDisk. numberReadAveraged. Average | Berekening voor schijf grootte, opslag kosten, VM-grootte
-Schrijf bewerkingen per seconde van schijf | virtualDisk. numberWriteAveraged. Average  | Berekening voor schijf grootte, opslag kosten, VM-grootte
-Lees doorvoer van NIC (MB per seconde) | net. received. Average | Berekening voor VM-grootte
-Doorvoer capaciteit van NIC (MB per seconde) | net. verzonden. gemiddeld  |Berekening voor VM-grootte
+CPU-gebruik | CPU. usage. Average | Aanbevolen server grootte/kosten
+Geheugen gebruik | mem. usage. Average | Aanbevolen server grootte/kosten
+Lees doorvoer schijf (MB per seconde) | virtualDisk. Read. Average | Berekening voor schijf grootte, opslag kosten, Server grootte
+Schrijf doorvoer schijf (MB per seconde) | virtualDisk. write. Average | Berekening voor schijf grootte, opslag kosten, Server grootte
+Lees bewerkingen op de schijf per seconde | virtualDisk. numberReadAveraged. Average | Berekening voor schijf grootte, opslag kosten, Server grootte
+Schrijf bewerkingen per seconde van schijf | virtualDisk. numberWriteAveraged. Average  | Berekening voor schijf grootte, opslag kosten, Server grootte
+Lees doorvoer van NIC (MB per seconde) | net. received. Average | Berekening voor Server grootte
+Doorvoer capaciteit van NIC (MB per seconde) | net. verzonden. gemiddeld  |Berekening voor Server grootte
 
+### <a name="installed-software-inventory"></a>Geïnstalleerde software-inventaris
 
-### <a name="installed-applications-data"></a>Geïnstalleerde toepassings gegevens
+Het apparaat verzamelt gegevens over geïnstalleerde software-inventaris op servers.
 
-Het apparaat verzamelt gegevens over geïnstalleerde toepassingen, functies en onderdelen op servers.
+#### <a name="windows-server-software-inventory-data"></a>Software-inventarisatie gegevens van Windows Server
 
-#### <a name="windows-server-application-data"></a>Windows Server-toepassings gegevens
-
-Hier vindt u de toepassings gegevens die het apparaat verzamelt van elke Windows-Server die in uw VMware-omgeving wordt gedetecteerd.
+Hier vindt u de software-inventarisatie gegevens die het apparaat verzamelt van elke Windows-Server die in uw VMware-omgeving wordt gedetecteerd.
 
 **Gegevens** | **Registerlocatie** | **Sleutel**
 --- | --- | ---
 Naam van de toepassing  | HKLM: \ Software\Microsoft\Windows\CurrentVersion\Uninstall\* <br/> HKLM: \ Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*  | DisplayName
-Versie  | HKLM: \ Software\Microsoft\Windows\CurrentVersion\Uninstall\*  <br/> HKLM: \ Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*  | DisplayVersion 
+Versie  | HKLM: \ Software\Microsoft\Windows\CurrentVersion\Uninstall\*  <br/> HKLM: \ Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*  | DisplayVersion
 Provider  | HKLM: \ Software\Microsoft\Windows\CurrentVersion\Uninstall\*  <br/> HKLM: \ Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*  | Publisher
 
 #### <a name="windows-server-features-data"></a>Gegevens van Windows Server-functies
@@ -236,9 +231,9 @@ Hier vindt u de SQL Server gegevens die het apparaat verzamelt van elke Windows-
 **Gegevens**  | **Registerlocatie**  | **Sleutel**
 --- | --- | ---
 Name  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server\Instance Names\SQL  | installedInstance
-Editie  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server \\ \<InstanceName> \Setup  | Editie 
+Editie  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server \\ \<InstanceName> \Setup  | Editie
 Service Pack  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server \\ \<InstanceName> \Setup  | SP
-Versie  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server \\ \<InstanceName> \Setup  | Versie 
+Versie  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server \\ \<InstanceName> \Setup  | Versie
 
 #### <a name="windows-server-operating-system-data"></a>Gegevens van het Windows Server-besturings systeem
 
@@ -250,12 +245,12 @@ Name  | Win32_operatingsystem  | Caption
 Versie  | Win32_operatingsystem  | Versie
 Architectuur  | Win32_operatingsystem  | OSArchitecture
 
-#### <a name="linux-server-application-data"></a>Gegevens van Linux-server toepassing
+#### <a name="linux-server-software-inventory-data"></a>Software-inventaris gegevens voor Linux-server
 
-Hier vindt u de toepassings gegevens die het apparaat verzamelt van elke Linux-server die in uw VMware-omgeving wordt gedetecteerd. Op basis van het besturings systeem van de server worden een of meer van de opdrachten uitgevoerd.
+Dit zijn de software-inventarisatie gegevens die het apparaat verzamelt van elke Linux-server die in uw VMware-omgeving wordt gedetecteerd. Op basis van het besturings systeem van de server worden een of meer van de opdrachten uitgevoerd.
 
 **Gegevens**  | **Opdrachten**
---- | --- 
+--- | ---
 Name | rpm, met dpkg-query, uitlijnen
 Versie | rpm, met dpkg-query, uitlijnen
 Provider | rpm, met dpkg-query, uitlijnen
@@ -265,8 +260,8 @@ Provider | rpm, met dpkg-query, uitlijnen
 Dit zijn de gegevens van het besturings systeem die het apparaat verzamelt van elke Linux-server die in uw VMware-omgeving wordt gedetecteerd.
 
 **Gegevens**  | **Opdrachten**
---- | --- 
-Name <br/> versie | Verzameld van een of meer van de volgende bestanden:<br/> <br/>/etc/os-release  <br> /usr/lib/os-release  <br> /etc/enterprise-release  <br> /etc/redhat-release  <br> /etc/oracle-release  <br> /etc/SuSE-release  <br> /etc/lsb-release  <br> /etc/debian_version 
+--- | ---
+Name <br/> versie | Verzameld van een of meer van de volgende bestanden:<br/> <br/>/etc/os-release  <br> /usr/lib/os-release  <br> /etc/enterprise-release  <br> /etc/redhat-release  <br> /etc/oracle-release  <br> /etc/SuSE-release  <br> /etc/lsb-release  <br> /etc/debian_version
 Architectuur | uname
 
 ### <a name="sql-server-instances-and-databases-data"></a>SQL Server instanties en data base-gegevens
@@ -296,13 +291,13 @@ De data base is ingeschakeld voor change data capture | sys.databases
 
 **Meta gegevens van server** | **Weer gaven/SQL Server-eigenschappen**
 --- | ---
-Servernaam |Server Property 
+Servernaam |Server Property
 FQDN | Verbindings reeks die is afgeleid van de detectie van geïnstalleerde toepassingen
 Installatie-ID | sys.dm_server_registry
 Serverversie | Server Property
 Server-editie | Server Property
 Server host platform (Windows/Linux) | Server Property
-Product niveau van de server (RTM SP CTP) | Server Property 
+Product niveau van de server (RTM SP CTP) | Server Property
 Standaardpad voor back-ups | Server Property
 Standaardpad van de gegevens bestanden | Server Property en Software\Microsoft\MSSQLServer\MSSQLServer
 Het standaardpad van de logboek bestanden | Server Property en Software\Microsoft\MSSQLServer\MSSQLServer
@@ -313,8 +308,8 @@ Unieke Server-ID | sys.dm_server_registry
 HA ingeschakeld of niet | Server Property
 De buffergroepuitbreiding is ingeschakeld of niet | sys.dm_os_buffer_pool_extension_configuration
 Het failovercluster is geconfigureerd of niet | Server Property
-Server met alleen Windows-verificatie modus | Server Property 
-Server installeert poly base | Server Property 
+Server met alleen Windows-verificatie modus | Server Property
+Server installeert poly base | Server Property
 Nee. van logische Cpu's op het systeem | sys.dm_server_registry, sys.dm_os_sys_info
 Verhouding van het aantal logische of fysieke kernen dat door één fysiek processor pakket wordt weer gegeven | sys.dm_os_schedulers, sys.dm_os_sys_info
 Aantal fysieke Cpu's op het systeem | sys.dm_os_schedulers, sys.dm_os_sys_info
@@ -351,8 +346,8 @@ Bij een afhankelijkheids analyse zonder agent worden de verbindings-en proces ge
 
 Hier vindt u de verbindings gegevens die het apparaat verzamelt van elke Windows-Server, die is ingeschakeld voor analyse van agentloze afhankelijkheden.
 
-**Gegevens** | **Opdrachten** 
---- | --- 
+**Gegevens** | **Opdrachten**
+--- | ---
 Lokale poort | netstat
 Lokaal IP-adres | netstat
 Externe poort | netstat
@@ -373,19 +368,18 @@ De naam van de toepassing | Win32_Process | De para meter VersionInfo. ProductNa
 
 Hier vindt u de verbindings gegevens die het apparaat verzamelt van elke Linux-server, die is ingeschakeld voor analyse van agentloze afhankelijkheden.
 
-**Gegevens** | **Opdrachten** 
+**Gegevens** | **Opdrachten**
 --- | ---
-Lokale poort | netstat 
-Lokaal IP-adres | netstat 
-Externe poort | netstat 
-Extern IP-adres | netstat 
-TCP-verbindings status | netstat 
+Lokale poort | netstat
+Lokaal IP-adres | netstat
+Externe poort | netstat
+Extern IP-adres | netstat
+TCP-verbindings status | netstat
 Aantal actieve verbindingen | netstat
-Proces-id  | netstat 
+Proces-id  | netstat
 Procesnaam | ps
 Proces argumenten | ps
 De naam van de toepassing | met dpkg of rpm
-
 
 ## <a name="collected-data---hyper-v"></a>Verzamelde gegevens-Hyper-V
 
@@ -400,20 +394,20 @@ Hier volgt de volledige lijst met meta gegevens van de server die door het appar
 --- | --- | ---
 **Servergegevens** | 
 Serie nummer van BIOS | Msvm_BIOSElement | BIOSSerialNumber
-VM-type (gen 1 of 2) | Msvm_VirtualSystemSettingData | VirtualSystemSubType
-Weergave naam van VM | Msvm_VirtualSystemSettingData | ElementName
-VM-versie | Msvm_ProcessorSettingData | VirtualQuantity
+Server type (gen 1 of 2) | Msvm_VirtualSystemSettingData | VirtualSystemSubType
+Weergave naam van server | Msvm_VirtualSystemSettingData | ElementName
+Serverversie | Msvm_ProcessorSettingData | VirtualQuantity
 Geheugen (bytes) | Msvm_MemorySettingData | VirtualQuantity
-Maximale hoeveelheid geheugen die kan worden gebruikt door VM | Msvm_MemorySettingData | Limiet
+Maximale hoeveelheid geheugen die kan worden gebruikt door de server | Msvm_MemorySettingData | Limiet
 Dynamisch geheugen ingeschakeld | Msvm_MemorySettingData | DynamicMemoryEnabled
 Naam/versie/FQDN van het besturings systeem | Msvm_KvpExchangeComponent | Naam gegevens GuestIntrinsicExchangeItems
-Energie status van de VM | Msvm_ComputerSystem | EnabledState
-**Details per schijf** | 
+Energie status van de server | Msvm_ComputerSystem | EnabledState
+**Details per schijf** |
 Schijf-id | Msvm_VirtualHardDiskSettingData | VirtualDiskId
 Type virtuele harde schijf | Msvm_VirtualHardDiskSettingData | Type
 Grootte van virtuele harde schijf | Msvm_VirtualHardDiskSettingData | MaxInternalSize
 Bovenliggende virtuele harde schijf | Msvm_VirtualHardDiskSettingData | ParentPath
-**Details van de NIC** | 
+**Details van de NIC** |
 IP-adressen (synthetische Nic's) | Msvm_GuestNetworkAdapterConfiguration | IPAddresses
 DHCP ingeschakeld (synthetische Nic's) | Msvm_GuestNetworkAdapterConfiguration | DHCPEnabled
 NIC-ID (synthetische Nic's) | Msvm_SyntheticEthernetPortSettingData | InstanceID
@@ -427,17 +421,16 @@ Dit zijn de prestatie gegevens van de server die door het apparaat worden verzam
 
 **Klasse prestatie meter** | **Item** | **Beoordelings impact**
 --- | --- | ---
-Virtuele processor van Hyper-V Hyper Visor | % Gast-uitvoerings tijd | Aanbevolen VM-grootte/kosten
-Hyper-V-dynamisch geheugen VM | Huidige belasting (%)<br/> Zichtbaar fysiek geheugen voor gast (MB) | Aanbevolen VM-grootte/kosten
-Virtuele Hyper-V-opslag apparaat | Gelezen bytes per seconde | Berekening voor schijf grootte, opslag kosten, VM-grootte
-Virtuele Hyper-V-opslag apparaat | Geschreven bytes per seconde | Berekening voor schijf grootte, opslag kosten, VM-grootte
-Virtual Network Adapter voor Hyper-V | Ontvangen bytes per seconde | Berekening voor VM-grootte
-Virtual Network Adapter voor Hyper-V | Verzonden bytes per seconde | Berekening voor VM-grootte
+Virtuele processor van Hyper-V Hyper Visor | % Gast-uitvoerings tijd | Aanbevolen server grootte/kosten
+Hyper-V-dynamisch geheugen server | Huidige belasting (%)<br/> Zichtbaar fysiek geheugen voor gast (MB) | Aanbevolen server grootte/kosten
+Virtuele Hyper-V-opslag apparaat | Gelezen bytes per seconde | Berekening voor schijf grootte, opslag kosten, Server grootte
+Virtuele Hyper-V-opslag apparaat | Geschreven bytes per seconde | Berekening voor schijf grootte, opslag kosten, Server grootte
+Virtual Network Adapter voor Hyper-V | Ontvangen bytes per seconde | Berekening voor Server grootte
+Virtual Network Adapter voor Hyper-V | Verzonden bytes per seconde | Berekening voor Server grootte
 
-- CPU-gebruik is de som van alle gebruik voor alle virtuele processors die zijn gekoppeld aan een virtuele machine.
+- CPU-gebruik is de som van alle gebruik voor alle virtuele processors die zijn gekoppeld aan een server.
 - Geheugen gebruik is (huidige druk * gast zichtbaar fysiek geheugen)/100.
 - De waarden voor de schijf-en netwerk gebruik worden verzameld uit de vermelde Hyper-V-prestatie meter items.
-
 
 ## <a name="collected-data---physical"></a>Verzamelde gegevens-fysiek
 
@@ -472,8 +465,8 @@ MAC-adres van NIC | Win32_NetworkAdapterConfiguration | MACAddress
 
 Hier volgt de volledige lijst met meta gegevens van de Linux-server die het apparaat verzamelt en verzendt naar Azure.
 
-**Gegevens** | **Opdrachten** 
---- | --- 
+**Gegevens** | **Opdrachten**
+--- | ---
 FQDN | kat/proc/sys/kernel/hostname, hostnaam-f
 Aantal processor kernen |  /proc/cpuinfo \| awk '/^ processor/{print $3} ' \| wc-l
 Toegewezen geheugen | kat/proc/meminfo \| grep MemTotal \| awk {printf "%. 0f", $2/1024}
@@ -507,8 +500,8 @@ Details van schijf | Win32_PerfFormattedData_PerfDisk_PhysicalDisk | DiskWritesP
 
 Dit zijn de prestatie gegevens van de Linux-server die het apparaat verzamelt en verzendt naar Azure.
 
-**Gegevens** | **Opdrachten** 
---- | --- 
+**Gegevens** | **Opdrachten**
+--- | ---
 CPU-gebruik | kat/proc/stat/| grep ' CPU '/proc/stat
 Geheugengebruik | gratis \| grep \| -mem awk ' {Print $3/$ 2 * 100,0} '
 Aantal NIC'S | lshw-class Network \| grep ETH [0-60] \| wc-l
@@ -540,7 +533,7 @@ U kunt automatisch bijwerken inschakelen met een van de volgende methoden:
 
 De register sleutel verwijderen:
 
-1. Open de REGI ster-editor op de computer waarop het apparaat wordt uitgevoerd.
+1. Open de REGI ster-editor op de server waarop het apparaat wordt uitgevoerd.
 2. Navigeer naar **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\AzureAppliance**.
 3. Verwijder de register sleutel auto **Update** die eerder is gemaakt om automatisch bijwerken uit te scha kelen.
 
@@ -556,7 +549,7 @@ Als u van apparaat Configuration Manager wilt inschakelen, nadat de detectie is 
 U kunt de versie van het toestel nummer controleren aan de hand van een van de volgende methoden:
 
 - Ga in configuratie beheer voor apparaten naar het paneel **vereisten instellen** .
-- Op de apparaatapparaat, in   >  **Program ma's en onderdelen** van het configuratie scherm.
+- Op het apparaat in de   >  **Program ma's en onderdelen** van het configuratie scherm.
 
 Controleren van de configuratie manager van het toestel:
 
@@ -577,12 +570,12 @@ Controleren in het configuratie scherm:
 Als u een oudere versie gebruikt voor een van de services, moet u de service verwijderen en hand matig bijwerken naar de nieuwste versie.
 
 1. Als u de meest recente versie van de service voor apparaten wilt controleren, moet u de LatestComponents.jsin het bestand [downloaden](https://aka.ms/latestapplianceservices) .
-2.    Nadat u hebt gedownload, opent u het LatestComponents.jsbestand in Klad blok.
+2. Nadat u hebt gedownload, opent u het LatestComponents.jsbestand in Klad blok.
 3. Zoek de nieuwste service versie in het bestand en de download koppeling hiervoor. Bijvoorbeeld:
 
     "Naam": "ASRMigrationWebApp", "DownloadLink": " https://download.microsoft.com/download/f/3/4/f34b2eb9-cc8d-4978-9ffb-17321ad9b7ed/MicrosoftAzureApplianceConfigurationManager.msi ", "versie": "6.0.211.2", "Md5Hash": "e00a742acc35e78a64a6a81e75469b84"
 
-4.    Down load de nieuwste versie van een verouderde service met behulp van de download koppeling in het bestand.
+4. Down load de nieuwste versie van een verouderde service met behulp van de download koppeling in het bestand.
 5. Nadat u hebt gedownload, voert u de volgende opdracht uit in een Administrator-opdracht venster om de integriteit van de gedownloade MSI te controleren.
 
     ``` C:\>Get-FileHash -Path <file_location> -Algorithm [Hashing Algorithm] ``` Bijvoorbeeld: C: \> certutil-HashFile C:\Users\public\downloads\MicrosoftAzureApplianceConfigurationManager.MSI MD5
@@ -591,11 +584,8 @@ Als u een oudere versie gebruikt voor een van de services, moet u de service ver
 6. Voer nu het MSI-bestand uit om de service te installeren. Het is een stille installatie en het installatie venster wordt gesloten nadat het is uitgevoerd.
 7. Nadat de installatie is voltooid, controleert u de versie van de service in de  >  **Program ma's en onderdelen** van het configuratie scherm. De service versie moet nu worden bijgewerkt naar de meest recente weer gave in het JSON-bestand.
 
-
-
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Meer informatie over](how-to-set-up-appliance-vmware.md) het instellen van het apparaat voor VMware.
 - [Meer informatie over](how-to-set-up-appliance-hyper-v.md) het instellen van het apparaat voor Hyper-V.
 - [Meer informatie over](how-to-set-up-appliance-physical.md) het instellen van het apparaat voor fysieke servers.
-

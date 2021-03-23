@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: bb38a76de41885b6f39a1c6dce7c44bcb52a4d60
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 659f61734001163ada6fd26caabe2fb007892f61
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "86027440"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104774487"
 ---
 # <a name="operationalize-spark-built-machine-learning-models"></a>Met operationeel maken Spark ontwikkelde machine learning modellen
 
@@ -266,7 +266,8 @@ Benodigde tijd voor het uitvoeren van de cel: 5,37 seconden
 ### <a name="create-rdd-objects-with-feature-arrays-for-input-into-models"></a>RDD-objecten maken met functie matrices voor invoer in modellen
 Deze sectie bevat code die laat zien hoe u categorische tekst gegevens indexeert als een RDD-object en een-hot-code ring zodat deze kan worden gebruikt voor het trainen en testen van MLlib logistiek-regressie en structuur modellen. De geïndexeerde gegevens worden opgeslagen in [rdd-objecten (robuuste gedistribueerde gegevensset)](https://spark.apache.org/docs/latest/api/java/org/apache/spark/rdd/RDD.html) . De Rdd's zijn de basis abstractie in Spark. Een RDD-object vertegenwoordigt een onveranderbare, gepartitioneerde verzameling elementen die parallel met Spark kan worden uitgevoerd.
 
-Het bevat ook code die laat zien hoe u gegevens kunt schalen met de `StandardScalar` MLlib voor gebruik in lineaire regressie met stochastische Gradient Daal (SGD), een populair algoritme voor het trainen van een breed scala aan machine learning modellen. De [StandardScaler](https://spark.apache.org/docs/latest/api/python/pyspark.mllib.html#pyspark.mllib.feature.StandardScaler) wordt gebruikt om de functies te schalen op eenheids afwijking. Het schalen van functies, ook wel bekend als gegevensnormalisatie, zorgt ervoor dat functies met weid verspreide waarden geen buitensporige weging krijgen toegewezen in de doelfunctie. 
+Het bevat ook code die laat zien hoe u gegevens kunt schalen met de `StandardScalar` MLlib voor gebruik in lineaire regressie met stochastische Gradient Daal (SGD), een populair algoritme voor het trainen van een breed scala aan machine learning modellen. De [StandardScaler](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.mllib.tree.RandomForest.html#pyspark.mllib.tree.RandomForest
+) wordt gebruikt om de functies te schalen op eenheids afwijking. Het schalen van functies, ook wel bekend als gegevensnormalisatie, zorgt ervoor dat functies met weid verspreide waarden geen buitensporige weging krijgen toegewezen in de doelfunctie. 
 
 ```python
 # CREATE RDD OBJECTS WITH FEATURE ARRAYS FOR INPUT INTO MODELS

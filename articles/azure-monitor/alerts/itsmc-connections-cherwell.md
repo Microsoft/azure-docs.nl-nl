@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 12/21/2020
-ms.openlocfilehash: d1fe5e20c06648aa6efc899fabb3ced3345ab41f
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 0f488b047cf1323619d9603204877a55b413c295
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102045408"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104802468"
 ---
 # <a name="connect-cherwell-with-it-service-management-connector"></a>Cher well verbinden met IT Service Management-connector
 
@@ -37,7 +37,7 @@ Gebruik de volgende procedure om een Cher well-verbinding te maken:
 1. Ga in Azure Portal naar **alle resources** en zoek naar **Service Desk (YourWorkspaceName)**
 
 2. Klik onder **gegevens bronnen voor werk ruimte** op **ITSM-verbindingen**.
-    ![Nieuwe verbinding](/media/itsmc-overview/add-new-itsm-connection.png)
+    ![Nieuwe verbinding](/azure/azure-monitor/alerts/media/itsmc-connections-scsm/add-new-itsm-connection.png)
 
 3. Klik boven in het rechterdeel venster op **toevoegen**.
 

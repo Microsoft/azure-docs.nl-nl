@@ -6,15 +6,15 @@ ms.service: virtual-machines
 ms.subservice: spot
 ms.workload: infrastructure-services
 ms.topic: how-to
-ms.date: 06/26/2020
+ms.date: 03/22/2021
 ms.author: cynthn
 ms.reviewer: jagaveer
-ms.openlocfilehash: 0a7be682f921efdfae486e8f6545758964a941ae
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 90ad35757834c14abdffb017ff31b3296074ca24
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102098856"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104802434"
 ---
 # <a name="deploy-azure-spot-virtual-machines-using-the-azure-cli"></a>Azure-Spot Virtual Machines implementeren met behulp van Azure CLI
 
@@ -33,7 +33,7 @@ Als u Azure Spot Virtual Machines wilt maken, moet u de Azure CLI-versie 2.0.74 
 
 Meld u aan bij Azure met [AZ login](/cli/azure/reference-index#az-login).
 
-```azurecli
+```azurecli-interactive
 az login
 ```
 
@@ -41,7 +41,7 @@ az login
 
 In dit voor beeld ziet u hoe u een virtuele Linux-locatie van Azure implementeert die niet wordt verwijderd op basis van de prijs. Het verwijderings beleid is ingesteld om de toewijzing van de virtuele machine ongedaan te maken, zodat deze op een later tijdstip opnieuw kan worden opgestart. Als u de virtuele machine en de onderliggende schijf wilt verwijderen wanneer de virtuele machine wordt verwijderd, stelt u `--eviction-policy` in op `Delete` .
 
-```azurecli
+```azurecli-interactive
 az group create -n mySpotGroup -l eastus
 az vm create \
     --resource-group mySpotGroup \
@@ -58,7 +58,7 @@ az vm create \
 
 Nadat de VM is gemaakt, kunt u een query uitvoeren om de maximale facturerings prijs voor alle virtuele machines in de resource groep weer te geven.
 
-```azurecli
+```azurecli-interactive
 az vm list \
    -g mySpotGroup \
    --query '[].{Name:name, MaxPrice:billingProfile.maxPrice}' \
@@ -67,21 +67,55 @@ az vm list \
 
 ## <a name="simulate-an-eviction"></a>Een verwijdering simuleren
 
-U kunt een virtuele machine van Azure spot [simuleren](/rest/api/compute/virtualmachines/simulateeviction) om te testen hoe goed uw toepassing terugvalt op een plotselinge verwijdering. 
+U kunt een virtuele machine van Azure spot simuleren met behulp van REST, Power shell of de CLI om te testen hoe goed uw toepassing reageert op een plotselinge verwijdering.
 
-Vervang het volgende door uw gegevens: 
+In de meeste gevallen moet u de REST API [virtual machines simuleren](/rest/api/compute/virtualmachines/simulateeviction) gebruiken om te helpen bij het automatisch testen van toepassingen. Voor REST, een `Response Code: 204` betekent dat de gesimuleerde verwijdering is geslaagd. U kunt gesimuleerde verwijderingen combi neren met de [geplande gebeurtenis service](scheduled-events.md), om te automatiseren hoe uw app reageert wanneer de virtuele machine wordt verwijderd.
 
-- `subscriptionId`
-- `resourceGroupName`
-- `vmName`
+Als u geplande gebeurtenissen in actie wilt zien, kunt u [Azure vrijdag bekijken-azure Scheduled Events gebruiken om het onderhoud van vm's voor te bereiden](https://channel9.msdn.com/Shows/Azure-Friday/Using-Azure-Scheduled-Events-to-Prepare-for-VM-Maintenance).
 
 
-```rest
-POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}/simulateEviction?api-version=2020-06-01
+### <a name="quick-test"></a>Snelle test
+
+Voor een snelle test om te laten zien hoe een gesimuleerde verwijdering werkt, gaat u verder met het uitvoeren van query's op de geplande gebeurtenis service om te zien hoe deze eruitziet wanneer u een verwijdering simuleert met behulp van de Azure CLI.
+
+De geplande gebeurtenis service is ingeschakeld voor uw service, de eerste keer dat u een aanvraag voor gebeurtenissen doet. 
+
+Extern in uw virtuele machine en open vervolgens een opdracht prompt. 
+
+Typ het volgende vanaf de opdracht prompt op uw virtuele machine:
+
 ```
-`Response Code: 204` betekent dat de gesimuleerde verwijdering is geslaagd. 
+curl -H Metadata:true http://169.254.169.254/metadata/scheduledevents?api-version=2019-08-01
+```
 
-**Volgende stappen**
+Dit eerste antwoord kan Maxi maal twee minuten duren. Vanaf nu wordt de uitvoer bijna onmiddellijk weer gegeven.
+
+Op een computer waarop de Azure CLI is geïnstalleerd (zoals uw lokale machine), simuleert u een verwijdering met [AZ VM simuleren-verwijderen](https://docs.microsoft.com/cli/azure/vm#az_vm_simulate_eviction). Vervang de naam van de resource groep en de virtuele machine door uw eigen naam. 
+
+```azurecli-interactive
+az vm simulate-eviction --resource-group mySpotRG --name mySpot
+```
+
+Als de aanvraag is uitgevoerd, is de reactie-uitvoer `Status: Succeeded` .
+
+Ga snel terug naar uw externe verbinding met de virtuele spot machine en zoek het Scheduled Events-eind punt opnieuw op. Herhaal de volgende opdracht totdat u een uitvoer krijgt die meer informatie bevat:
+
+```
+curl -H Metadata:true http://169.254.169.254/metadata/scheduledevents?api-version=2019-08-01
+```
+
+Wanneer de geplande gebeurtenis service het verwijderings bericht ontvangt, krijgt u een antwoord dat er ongeveer als volgt uitziet:
+
+```output
+{"DocumentIncarnation":1,"Events":[{"EventId":"A123BC45-1234-5678-AB90-ABCDEF123456","EventStatus":"Scheduled","EventType":"Preempt","ResourceType":"VirtualMachine","Resources":["myspotvm"],"NotBefore":"Tue, 16 Mar 2021 00:58:46 GMT","Description":"","EventSource":"Platform"}]}
+```
+
+U ziet dat `"EventType":"Preempt"` en de resource de VM-resource is `"Resources":["myspotvm"]` . 
+
+U kunt ook zien wanneer de virtuele machine wordt verwijderd door te controleren of de `"NotBefore"` virtuele machine niet vóór de opgegeven tijd wordt verwijderd, zodat het venster voor uw toepassing op een correcte manier kan worden afgesloten.
+
+
+## <a name="next-steps"></a>Volgende stappen
 
 U kunt ook een virtuele Azure-machine maken met behulp van [Azure PowerShell](../windows/spot-powershell.md), [Portal](../spot-portal.md)of een [sjabloon](spot-template.md).
 

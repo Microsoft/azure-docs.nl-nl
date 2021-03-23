@@ -3,12 +3,12 @@ title: Naslaginformatie over app-instellingen voor Azure Functions
 description: Referentie documentatie voor de Azure Functions app-instellingen of omgevings variabelen.
 ms.topic: conceptual
 ms.date: 09/22/2018
-ms.openlocfilehash: fb00f0fe16342bf603d534c34a860278dc21deac
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 327f120d387a3a08f0de9db2da718d530346e545
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104595972"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104773076"
 ---
 # <a name="app-settings-reference-for-azure-functions"></a>Naslaginformatie over app-instellingen voor Azure Functions
 
@@ -186,22 +186,24 @@ Hiermee geeft u het maximum aantal taal werk processen op, met een standaard waa
 |---|------------|
 |\_aantal functies werk \_ proces \_|2|
 
-## <a name="python_threadpool_thread_count"></a>\_aantal PYTHON thread pool- \_ threads \_
-
-Hiermee geeft u het maximum aantal threads op dat een python-taal medewerker zou gebruiken voor het uitvoeren van functie aanroepen, met een standaard waarde van `1` voor python-versie `3.8` en lager. Voor python `3.9` -versie en hoger is de waarde ingesteld op `None` . Houd er rekening mee dat deze instelling geen garantie biedt voor het aantal threads dat tijdens uitvoeringen zou worden ingesteld. Met deze instelling kan python het aantal threads uitbreiden naar de opgegeven waarde. De instelling is alleen van toepassing op de python-functies apps. Daarnaast is de instelling van toepassing op synchrone functies aanroep en niet voor-routines.
-
-|Sleutel|Voorbeeldwaarde|Maximumwaarde|
-|---|------------|---------|
-|\_aantal PYTHON thread pool- \_ threads \_|2|32|
-
-
 ## <a name="functions_worker_runtime"></a>FUNCTIONs \_ runtime van worker \_
 
-De Language worker-runtime die in de functie-app moet worden geladen.  Dit komt overeen met de taal die wordt gebruikt in uw toepassing (bijvoorbeeld ' DotNet '). Voor functies in meerdere talen moet u deze publiceren naar meerdere apps, elk met een bijbehorende runtime-waarde voor werk nemers.  Geldige waarden zijn `dotnet` (C#/f #), `node` (Java script/type script), `java` (Java), `powershell` (Power shell) en `python` (python).
+De Language worker-runtime die in de functie-app moet worden geladen.  Dit komt overeen met de taal die wordt gebruikt in uw toepassing (bijvoorbeeld `dotnet` ). Met ingang van versie 2. x van de Azure Functions runtime kan een bepaalde functie-app slechts één taal ondersteunen.   
 
 |Sleutel|Voorbeeldwaarde|
 |---|------------|
-|FUNCTIONs \_ runtime van worker \_|dotnet|
+|FUNCTIONs \_ runtime van worker \_|node|
+
+Geldige waarden:
+
+| Waarde | Taal |
+|---|---|
+| `dotnet` | [C# (klassebibliotheek)](functions-dotnet-class-library.md)<br/>[C# (script)](functions-reference-csharp.md) |
+| `dotnet-isolated` | [C# (geïsoleerd proces)](dotnet-isolated-process-guide.md) |
+| `java` | [Java](functions-reference-java.md) |
+| `node` | [JavaScript](functions-reference-node.md)<br/>[TypeScript](functions-reference-node.md#typescript) |
+| `powershell` | [PowerShell](functions-reference-powershell.md) |
+| `python` | [Python](functions-reference-python.md) |
 
 ## <a name="pip_extra_index_url"></a>PIP- \_ URL voor extra \_ index \_
 
@@ -212,6 +214,14 @@ De waarde voor deze instelling duidt op een aangepaste pakket index-URL voor pyt
 |PIP- \_ URL voor extra \_ index \_|http://my.custom.package.repo/simple |
 
 Zie [aangepaste afhankelijkheden](functions-reference-python.md#remote-build-with-extra-index-url) in de python-Naslag informatie voor ontwikkel aars voor meer informatie.
+
+## <a name="python_threadpool_thread_count"></a>\_aantal PYTHON thread pool- \_ threads \_
+
+Hiermee geeft u het maximum aantal threads op dat een python-taal medewerker zou gebruiken voor het uitvoeren van functie aanroepen, met een standaard waarde van `1` voor python-versie `3.8` en lager. Voor python `3.9` -versie en hoger is de waarde ingesteld op `None` . Houd er rekening mee dat deze instelling geen garantie biedt voor het aantal threads dat tijdens uitvoeringen zou worden ingesteld. Met deze instelling kan python het aantal threads uitbreiden naar de opgegeven waarde. De instelling is alleen van toepassing op de python-functies apps. Daarnaast is de instelling van toepassing op synchrone functies aanroep en niet voor-routines.
+
+|Sleutel|Voorbeeldwaarde|Maximumwaarde|
+|---|------------|---------|
+|\_aantal PYTHON thread pool- \_ threads \_|2|32|
 
 ## <a name="scale_controller_logging_enabled"></a>\_logboek registratie van schaal controller \_ \_ ingeschakeld
 

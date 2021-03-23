@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 07/20/2020
-ms.openlocfilehash: 7a4654b8f389ad18010bb4ad211103f2816a18ee
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: cb3c74a2176ee7fcac53afb5185e8c62e66f4dfb
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "91541999"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104798796"
 ---
 # <a name="entities-per-culture-in-your-luis-model"></a>Entiteiten per cultuur in uw LUIS-model
 
@@ -40,7 +40,7 @@ Tenzij anders vermeld, zijn vooraf gebouwde entiteiten beschikbaar in alle land 
 |Koreaans|[ko-KR](#korean-entity-support)||
 |Portugees|[pt-BR (Brazilië)](#portuguese-brazil-entity-support)||
 |Spaans|[es-es (Spanje)](#spanish-spain-entity-support), [es-MX (Mexico)](#spanish-mexico-entity-support)||
-|Turks|[Turks](#turkish-entity-support)|Geen vooraf gemaakte entiteiten die in Turks worden ondersteund|
+|Turks|[Turks](#turkish-entity-support)||
 
 ## <a name="prediction-endpoint-runtime"></a>Voorspellings eindpunt runtime
 
@@ -268,6 +268,8 @@ De volgende entiteiten worden ondersteund:
 [Tempe ratuur](luis-reference-prebuilt-temperature.md):<br>Fahrenheit<br>graden<br>rankine<br>delisle<br>Fahrenheit   |    V2, V3   |
 [URL](luis-reference-prebuilt-url.md)   |    V2, V3   |
 
+De woordgroep is niet beschikbaar in alle subcultuur van Portugees (Brazilië) ```pt-BR``` .
+
 ## <a name="spanish-spain-entity-support"></a>Ondersteuning voor Spaanse (Spanje)-entiteiten
 
 De volgende entiteiten worden ondersteund:
@@ -314,34 +316,25 @@ De volgende entiteiten worden ondersteund:
 
 Opmerkingen over [afgeschafte vooraf samengestelde entiteiten](luis-reference-prebuilt-deprecated.md) weer geven
 
-De woordgroep is niet beschikbaar in alle subcultuur van Portugees (Brazilië) ```pt-BR``` .
-
 ## <a name="turkish-entity-support"></a>Turkse entiteit ondersteuning
 
-**Er zijn geen vooraf gemaakte entiteiten die in Turks worden ondersteund.**
-
-<!--
-
-| Prebuilt entity | tr-tr |
+| Vooraf gebouwde entiteit | tr-tr |
 | --------------- | :---: |
-[Age](luis-reference-prebuilt-age.md):<br>year<br>month<br>week<br>day   |    -   |
-[Currency (money)](luis-reference-prebuilt-currency.md):<br>dollar<br>fractional unit (ex: penny)  |    -   |
-[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>date<br>daterange<br>time<br>timerange   |    -   |
-[Dimension](luis-reference-prebuilt-dimension.md):<br>volume<br>area<br>weight<br>information (ex: bit/byte)<br>length (ex: meter)<br>speed (ex: mile per hour)  |    -   |
-[Email](luis-reference-prebuilt-email.md)   |    -   |
-[GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   |
-[KeyPhrase](luis-reference-prebuilt-keyphrase.md)   |    -   |
+[Leeftijd](luis-reference-prebuilt-age.md):<br>jaar<br>maand<br>gevormd<br>day   |    -   |
+[Valuta (Money)](luis-reference-prebuilt-currency.md):<br>Gulden<br>Fractionele eenheid (ex: afronding)  |    -   |
+[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>date<br>daterange<br>tijd<br>time Range   |    -   |
+[Dimensie](luis-reference-prebuilt-dimension.md):<br>volume<br>gebied<br>gewicht<br>informatie (bijvoorbeeld: bit/byte)<br>lengte (bijvoorbeeld: meter)<br>snelheid (bijvoorbeeld: mijl per uur)  |    -   |
+[E-mail](luis-reference-prebuilt-email.md)   |    -   |
+[Woordgroep](luis-reference-prebuilt-keyphrase.md)   |    -   |
 [Number](luis-reference-prebuilt-number.md)   |    -   |
-[Ordinal](luis-reference-prebuilt-ordinal.md)   |    -   |
+[Rangtelwoord](luis-reference-prebuilt-ordinal.md)   |    -   |
 [Percentage](luis-reference-prebuilt-percentage.md)   |    -   |
-[PersonName](luis-reference-prebuilt-person.md)   |    -   |
-[Phonenumber](luis-reference-prebuilt-phonenumber.md)   |    -   |
-[Temperature](luis-reference-prebuilt-temperature.md):<br>fahrenheit<br>kelvin<br>rankine<br>delisle<br>celsius   |    -   |
+[PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    -   |
+[Tempe ratuur](luis-reference-prebuilt-temperature.md):<br>Fahrenheit<br>graden<br>rankine<br>delisle<br>Fahrenheit   |    -   |
 [URL](luis-reference-prebuilt-url.md)   |    -   |
 
+<!---
 See notes on [Deprecated prebuilt entities](luis-reference-prebuilt-deprecated.md)
-
-
 KeyPhrase is not available.
 -->
 

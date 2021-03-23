@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 05/18/2020
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: feedc0065419162237c4f4826fe275a6fd947e53
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: ea6ecf456bbcea01bf4c1eef5377d918bf0918fd
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98753734"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104798949"
 ---
 # <a name="scenario-desktop-app-that-calls-web-apis"></a>Scenario: Bureaublad-app die web-API's aanroept
 
@@ -30,6 +30,7 @@ Als u dat nog niet hebt gedaan, maakt u uw eerste toepassing door een Snelstartg
 - [Quickstart: Een token verkrijgen en Microsoft Graph API aanroepen vanuit een Windows-bureaublad-app](./quickstart-v2-windows-desktop.md)
 - [Quick Start: een token verkrijgen en Microsoft Graph-API aanroepen vanuit een UWP-app](./quickstart-v2-uwp.md)
 - [Quick Start: een token verkrijgen en Microsoft Graph-API aanroepen vanuit een macOS-systeem eigen app](./quickstart-v2-ios.md)
+- [Quick Start: een token verkrijgen en Microsoft Graph-API aanroepen vanuit een Node.js & elektron-app](./quickstart-v2-nodejs-desktop.md)
 
 ## <a name="overview"></a>Overzicht
 
@@ -39,6 +40,7 @@ U schrijft een bureaublad toepassing en u wilt gebruikers aanmelden bij uw toepa
 
   - Als uw bureaublad toepassing grafische besturings elementen ondersteunt, bijvoorbeeld als het een Windows. Form-toepassing, een WPF-toepassing of een macOS-systeem eigen toepassing is.
   - Of, als het een .NET core-toepassing is en u akkoord gaat om de verificatie-interactie met Azure Active Directory (Azure AD) te laten plaatsvinden in de systeem browser.
+  - Of, als het een Node.js Elektroon-toepassing is, die wordt uitgevoerd op een chroom-instantie.
 
 - Voor Windows-toepassingen die worden gehost, is het ook mogelijk voor toepassingen die worden uitgevoerd op computers die zijn toegevoegd aan een Windows-domein of Azure AD om een token op de achtergrond te verkrijgen met behulp van geïntegreerde Windows-verificatie.
 - Ten slotte, hoewel dit niet wordt aangeraden, kunt u een gebruikers naam en wacht woord in open bare client toepassingen gebruiken. Het is nog steeds nodig in sommige scenario's zoals DevOps. Met deze functie worden beperkingen voor uw toepassing opgelegd. Het is bijvoorbeeld niet mogelijk om een gebruiker aan te melden die [multi-factor Authentication](../authentication/concept-mfa-howitworks.md) moet uitvoeren (voorwaardelijke toegang). Uw toepassing profiteert ook niet van eenmalige aanmelding (SSO).

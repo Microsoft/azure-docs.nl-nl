@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/19/2021
 ms.author: jeedes
-ms.openlocfilehash: ac31323547ec2d0b6330b0b1c13dd9f219f224e7
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: c6db83dd46d988b5e8b4122a9e89e3c36136ad89
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104726831"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104798987"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-moqups"></a>Zelf studie: Azure Active Directory de integratie van eenmalige aanmelding (SSO) met Moqups
 
@@ -127,7 +127,15 @@ In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebru
 
 ## <a name="configure-moqups-sso"></a>Moqups SSO configureren
 
-Als u eenmalige aanmelding wilt configureren op **Moqups** , moet u de URL voor de **federatieve meta gegevens** van de app verzenden naar [Moqups ondersteunings team](mailto:support@moqups.com). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+1. Meld u als beheerder aan bij de Moqups-website.
+
+1.  Ga naar het **account** en selecteer het tabblad **integratie** .
+
+1. Plak in het gedeelte **SAML-verificatie** de waarde voor de URL van de **app Federation-meta gegevens** die u van de Azure Portal hebt gekopieerd.
+
+    ![Scherm afbeelding voor configuratie sectie.](./media/moqups-tutorial/saml-authentication.png)
+
+1. Klik op de knop **configureren** .
 
 ### <a name="create-moqups-test-user"></a>Moqups-test gebruiker maken
 

@@ -5,19 +5,16 @@ author: rashi-ms
 ms.author: rajosh
 ms.topic: conceptual
 ms.date: 02/07/2021
-ms.openlocfilehash: d1ea328575cf07a22ce39549c34d5cd21e916427
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: e4e726f742d46a4b63563f55c191cf21e49d06fc
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102054587"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104778318"
 ---
 # <a name="assessment-overview-migrate-to-azure-sql"></a>Overzicht van evaluatie (migreren naar Azure SQL)
 
 In dit artikel vindt u een overzicht van de evaluaties voor het migreren van on-premises SQL Server exemplaren van een VMware-omgeving naar Azure SQL-data bases of beheerde exemplaren met behulp van het [hulp programma Azure migrate: detectie en evaluatie](https://docs.microsoft.com/azure/migrate/migrate-services-overview#azure-migrate-server-assessment-tool).
-
-> [!Note]
-> Detectie en evaluatie van SQL Server instanties en data bases die worden uitgevoerd in uw VMware-omgeving is nu beschikbaar als preview-versie. Als u deze functie wilt proberen, gebruikt u [**deze koppeling**](https://aka.ms/AzureMigrate/SQL) om een project te maken in de regio **Australië - oost**. Als u al een project in Australië-oost hebt en u deze functie wilt proberen, zorgt u ervoor dat u aan deze [**vereisten**](how-to-discover-sql-existing-project.md) voldoet in de portal.
 
 ## <a name="whats-an-assessment"></a>Wat is een evaluatie?
 Een evaluatie met het hulp programma detectie en evaluatie is een moment opname van gegevens en meet de gereedheid en schat het effect van het migreren van on-premises servers naar Azure.
@@ -28,9 +25,9 @@ Er zijn drie soorten evaluaties die u kunt maken met behulp van de Azure Migrate
 
 **Evaluatietype** | **Details**
 --- | --- 
-**Azure VM** | Evaluaties om uw on-premises servers te migreren naar virtuele Azure-machine. U kunt uw on-premises servers in [VMware](how-to-set-up-appliance-vmware.md) en [Hyper-V-](how-to-set-up-appliance-hyper-v.md) omgeving, en [fysieke servers](how-to-set-up-appliance-physical.md) voor migratie naar virtuele Azure-machines evalueren met dit beoordelings type.
+**Azure VM** | Evaluaties om uw on-premises servers te migreren naar virtuele Azure-machine. <br/><br/> U kunt uw on-premises servers in [VMware](how-to-set-up-appliance-vmware.md) en [Hyper-V-](how-to-set-up-appliance-hyper-v.md) omgeving, en [fysieke servers](how-to-set-up-appliance-physical.md) voor migratie naar virtuele Azure-machines evalueren met dit beoordelings type.
 **Azure SQL** | Beoordelingen voor het migreren van uw on-premises SQL-servers vanuit uw VMware-omgeving naar Azure SQL Database of Azure SQL Managed instance.
-**Azure VMware Solution (AVS)** | Evaluaties om uw on-premises servers te migreren naar [Azure VMware Solution (AVS)](../azure-vmware/introduction.md). U kunt uw on-premises [VMware-VM’s](how-to-set-up-appliance-vmware.md) evalueren voor migratie naar Azure VMware Solution (AVS) met dit evaluatietype. [Meer informatie](concepts-azure-vmware-solution-assessment-calculation.md)
+**Azure VMware Solution (AVS)** | Evaluaties om uw on-premises servers te migreren naar [Azure VMware Solution (AVS)](../azure-vmware/introduction.md). <br/><br/> U kunt uw on-premises [VMware-VM’s](how-to-set-up-appliance-vmware.md) evalueren voor migratie naar Azure VMware Solution (AVS) met dit evaluatietype. [Meer informatie](concepts-azure-vmware-solution-assessment-calculation.md)
 
 Een Azure SQL-evaluatie biedt één formaat criterium:
 
@@ -76,34 +73,34 @@ Dit is what's opgenomen in de Azure SQL Assessment-eigenschappen:
 **Eigenschap** | **Details**
 --- | ---
 **Doellocatie** | De Azure-regio waarnaar u wilt migreren. Azure SQL-configuratie en aanbevelingen voor kosten zijn gebaseerd op de locatie die u opgeeft.
-**Type doel implementatie** | Het doel implementatie type waarvoor u de evaluatie wilt uitvoeren: Selecteer **Aanbevolen** als u Azure migrate wilt beoordelen van de gereedheid van uw SQL-servers voor de migratie naar Azure SQL mi en Azure SQL DB, en aanbevolen de meest geschikte optie voor de implementatie van de doel groep, de doel laag, Azure SQL-configuratie en maandelijkse schattingen te gebruiken. Selecteer **Azure SQL DB** als u wilt dat uw SQL-servers alleen worden gemigreerd naar Azure SQL-data bases en de doellaag, de Azure SQL DB-configuratie en maandelijkse schattingen bekijken. Selecteer **Azure SQL mi** als u wilt dat uw SQL-servers alleen worden gemigreerd naar Azure SQL-data bases en de doel laag, de configuratie van Azure SQL mi en maandelijkse schattingen bekijken.
-**Gereserveerde capaciteit** | Hiermee wordt de gereserveerde capaciteit opgegeven, zodat rekening wordt gehouden met kosten ramingen in de evaluatie. Als u een gereserveerde capaciteits optie selecteert, kunt u geen korting (%) opgeven.
-**Criteria voor het aanpassen van de grootte** | Deze eigenschap wordt gebruikt om de grootte van de Azure SQL-configuratie te wijzigen. De standaard instelling is **gebaseerd op prestaties** , wat betekent dat de evaluatie de SQL Server instanties en data bases prestatie gegevens verzamelt om een optimaal formaat van Azure SQL Managed instance en/of Azure SQL database laag/configuratie aanbeveling aan te bevelen.
+**Type doel implementatie** | Het doel implementatie type waarvoor u de evaluatie wilt uitvoeren: <br/><br/> Selecteer **Aanbevolen** als u Azure migrate wilt beoordelen van de gereedheid van uw SQL-servers voor de migratie naar Azure SQL mi en Azure SQL DB, en aanbevolen de meest geschikte optie voor de doel implementatie, doellaag, Azure SQL-configuratie en maandelijkse schattingen te kiezen.<br/><br/>Selecteer **Azure SQL DB** als u wilt dat uw SQL-servers alleen worden gemigreerd naar Azure SQL-data bases en de doellaag, de Azure SQL DB-configuratie en maandelijkse schattingen bekijken.<br/><br/>Selecteer **Azure SQL mi** als u wilt dat uw SQL-servers alleen worden gemigreerd naar Azure SQL-data bases en de doel laag, de configuratie van Azure SQL mi en maandelijkse schattingen bekijken.
+**Gereserveerde capaciteit** | Hiermee wordt de gereserveerde capaciteit opgegeven, zodat rekening wordt gehouden met kosten ramingen in de evaluatie.<br/><br/> Als u een gereserveerde capaciteits optie selecteert, kunt u geen korting (%) opgeven.
+**Criteria voor het aanpassen van de grootte** | Deze eigenschap wordt gebruikt om de grootte van de Azure SQL-configuratie te wijzigen. <br/><br/> De standaard instelling is **gebaseerd op prestaties** , wat betekent dat de evaluatie de SQL Server instanties en data bases prestatie gegevens verzamelt om een optimaal formaat van Azure SQL Managed instance en/of Azure SQL database laag/configuratie aanbeveling aan te bevelen.
 **Prestatiegeschiedenis** | Met de prestatie geschiedenis wordt de duur opgegeven die wordt gebruikt wanneer prestatie gegevens worden geëvalueerd.
 **Percentiel gebruik** | Percentiel gebruik geeft de percentiel waarde van het voor beeld van de prestaties die wordt gebruikt voor supportte.
-**Comfortfactor** | De buffer die wordt gebruikt tijdens de evaluatie. IT-accounts voor problemen zoals seizoen gebruik, korte prestatie geschiedenis en waarschijnlijk toename van toekomstig gebruik. Zo resulteert een 10-kern exemplaar met 20% gebruik doorgaans in een exemplaar met twee kernen. Met een comfort factor van 2,0 is het resultaat een exemplaar van vier kernen.
+**Comfortfactor** | De buffer die wordt gebruikt tijdens de evaluatie. IT-accounts voor problemen zoals seizoen gebruik, korte prestatie geschiedenis en waarschijnlijk toename van toekomstig gebruik.<br/><br/> Zo resulteert een 10-kern exemplaar met 20% gebruik doorgaans in een exemplaar met twee kernen. Met een comfort factor van 2,0 is het resultaat een exemplaar van vier kernen.
 **Aanbieding/licentie programma** | De [Azure-aanbieding](https://azure.microsoft.com/support/legal/offer-details/) waarin u bent Inge schreven. Op dit moment kunt u alleen kiezen uit betalen per gebruik en betalen naar gebruik-dev/test. Houd er rekening mee dat u extra korting kunt verkrijgen door gereserveerde capaciteit en Azure Hybrid Benefit boven op de aanbieding voor betalen naar gebruik toe te passen.
-**Servicelaag** | De meest geschikte service tier-optie voor uw bedrijfs behoeften voor migratie naar Azure SQL Database en/of Azure SQL Managed instance: Selecteer **Aanbevolen** als u wilt dat Azure migrate de beste geschikte servicelaag voor uw servers aanbeveelt. Dit kan algemeen gebruik of bedrijfs kritiek zijn. Selecteer **Algemeen** als u een Azure SQL-configuratie wilt die is ontworpen voor budget gerichte workloads. [Meer informatie](https://docs.microsoft.com/azure/azure-sql/database/service-tier-general-purpose) Selecteer **bedrijfskritiek** als u een Azure SQL-configuratie wilt die is ontworpen voor workloads met lage latentie en hoge tolerantie voor fouten en snelle failovers. [Meer informatie](https://docs.microsoft.com/azure/azure-sql/database/service-tier-business-critical)
+**Servicelaag** | De meest geschikte service tier-optie voor uw bedrijfs behoeften voor migratie naar Azure SQL Database en/of Azure SQL Managed instance:<br/><br/>**Aanbevolen** als u wilt dat Azure migrate de beste geschikte servicelaag voor uw servers aanbeveelt. Dit kan algemeen gebruik of bedrijfs kritiek zijn. <br/><br/> **Algemeen** Als u een Azure SQL-configuratie wilt die is ontworpen voor budget gerichte workloads. [Meer informatie](https://docs.microsoft.com/azure/azure-sql/database/service-tier-general-purpose) <br/><br/> **Bedrijfskritiek** Als u een Azure SQL-configuratie wilt die is ontworpen voor workloads met lage latentie met hoge tolerantie voor fouten en snelle failovers. [Meer informatie](https://docs.microsoft.com/azure/azure-sql/database/service-tier-business-critical)
 **Valuta** | De facturerings valuta voor uw account.
 **Korting (%)** | Alle abonnements kortingen die u boven op de Azure-aanbieding ontvangt. De standaardinstelling is 0%.
-**Azure Hybrid Benefit** | Hiermee geeft u op of u al een SQL Server licentie hebt. Als u dit wel doet en de actieve Software Assurance van SQL Server-abonnementen wordt gebruikt, kunt u voor de Azure Hybrid Benefit aanvragen wanneer u licenties naar Azure brengt.
+**Azure Hybrid Benefit** | Hiermee geeft u op of u al een SQL Server licentie hebt. <br/><br/> Als u dit wel doet en de actieve Software Assurance van SQL Server-abonnementen wordt gebruikt, kunt u voor de Azure Hybrid Benefit aanvragen wanneer u licenties naar Azure brengt.
 
 [Bekijk de aanbevolen procedures voor het](best-practices-assessment.md) maken van een evaluatie met Azure Migrate.
 
 ## <a name="calculate-readiness"></a>Gereedheid berekenen
 
 > [!NOTE]
-> De evaluatie bevat alleen data bases met de status online. Als de database zich in een andere status bevindt, worden de gereedheid, grootte en kostenberekening voor dergelijke databases genegeerd in de evaluatie. Als u dergelijke databases wilt evalueren, wijzigt u de status van de database, en berekent u de evaluatie op een later tijdstip opnieuw.
+De evaluatie bevat alleen data bases met de status online. Als de database zich in een andere status bevindt, worden de gereedheid, grootte en kostenberekening voor dergelijke databases genegeerd in de evaluatie. Als u dergelijke databases wilt evalueren, wijzigt u de status van de database, en berekent u de evaluatie op een later tijdstip opnieuw.
 
 ### <a name="azure-sql-readiness"></a>Gereedheid voor Azure SQL
 
 Azure SQL-gereedheid voor SQL-exemplaren en-data bases is gebaseerd op een functie compatibiliteits controle met Azure SQL Database en Azure SQL Managed instance:
-- De Azure SQL-evaluatie beschouwt de SQL Server exemplaar functies die momenteel worden gebruikt door de bron SQL Server workloads (SQL-Agent taken, gekoppelde servers enz.) en de gebruikers databases schema's (tabellen, weer gaven, triggers, opgeslagen procedures enz.) om compatibiliteits problemen te identificeren.
-- Als er geen compatibiliteits problemen worden gevonden, wordt de gereedheid gemarkeerd als **gereed** voor het type doel implementatie (Azure SQL database of Azure SQL Managed instance)
-- Als er sprake is van niet-essentiële compatibiliteits problemen, zoals gedegradeerde of niet-ondersteunde functies die de migratie naar een specifiek type doel implementatie niet blok keren, wordt de gereedheid gemarkeerd als **gereed** (pictogram Hyper link en blauw) met informatie over **waarschuwingen** en aanbevolen herstel richtlijnen.
-- Als er compatibiliteits problemen zijn die de migratie naar een specifiek type doel implementatie kunnen blok keren, wordt de gereedheid gemarkeerd als **niet gereed** met **probleem** Details en aanbevolen richt lijnen voor herstel.
+1. De Azure SQL-evaluatie beschouwt de SQL Server exemplaar functies die momenteel worden gebruikt door de bron SQL Server workloads (SQL-Agent taken, gekoppelde servers enz.) en de gebruikers databases schema's (tabellen, weer gaven, triggers, opgeslagen procedures enz.) om compatibiliteits problemen te identificeren.
+1. Als er geen compatibiliteits problemen worden gevonden, wordt de gereedheid gemarkeerd als **gereed** voor het type doel implementatie (Azure SQL database of Azure SQL Managed instance)
+1. Als er sprake is van niet-essentiële compatibiliteits problemen, zoals gedegradeerde of niet-ondersteunde functies die de migratie naar een specifiek type doel implementatie niet blok keren, wordt de gereedheid gemarkeerd als **gereed** (pictogram Hyper link en blauw) met informatie over **waarschuwingen** en aanbevolen herstel richtlijnen.
+1. Als er compatibiliteits problemen zijn die de migratie naar een specifiek type doel implementatie kunnen blok keren, wordt de gereedheid gemarkeerd als **niet gereed** met **probleem** Details en aanbevolen richt lijnen voor herstel.
     - Als er zich zelfs één data base in een SQL-exemplaar bevindt die niet gereed is voor een bepaald type doel implementatie, wordt het exemplaar gemarkeerd als **niet gereed** voor dat implementatie type.
-- Als de detectie nog wordt uitgevoerd of er problemen zijn met de detectie van een SQL-exemplaar of-Data Base, is de gereedheid gemarkeerd als **onbekend** , omdat de evaluatie de gereedheid voor dat SQL-exemplaar niet kan berekenen.
+1. Als de detectie nog wordt uitgevoerd of er problemen zijn met de detectie van een SQL-exemplaar of-Data Base, is de gereedheid gemarkeerd als **onbekend** , omdat de evaluatie de gereedheid voor dat SQL-exemplaar niet kan berekenen.
 
 ### <a name="recommended-deployment-type"></a>Aanbevolen implementatie type
 
@@ -113,11 +110,11 @@ Als u het type doel implementatie selecteert zoals **Aanbevolen** in de Azure SQ
 
  **Gereedheid voor Azure SQL DB** | **Azure SQL MI-gereedheid** | **Aanbevolen implementatie type** | **Berekende Azure SQL-configuratie en kosten ramingen?**
  --- | --- | --- | --- |
- Gereed | Gereed | Azure SQL DB of Azure SQL MI | Ja
- Gereed | Niet gereed of onbekend | Azure SQL Database | Ja
- Niet gereed of onbekend | Gereed | Azure SQL MI | Ja
+ Gereed | Gereed | Azure SQL DB of <br/>Azure SQL MI | Ja
+ Gereed | Niet gereed of<br/> Onbekend | Azure SQL Database | Ja
+ Niet gereed of<br/>Onbekend | Gereed | Azure SQL MI | Ja
  Niet gereed | Niet gereed | Mogelijk klaar voor Azure VM | Nee
- Niet gereed of onbekend | Niet gereed of onbekend | Onbekend | Nee
+ Niet gereed of<br/>Onbekend | Niet gereed of<br/>Onbekend | Onbekend | Nee
 
 > [!NOTE]
 > Als het aanbevolen implementatie type is geselecteerd als **Aanbevolen** in de evaluatie-eigenschappen en als de bron SQL server geschikt is voor zowel de Azure SQL DB-Data Base als een Azure SQL Managed instance, wordt door de evaluatie een specifieke optie aanbevolen waarmee u uw kosten optimaliseert en binnen de grenzen van de grootte en de prestaties past.
@@ -171,7 +168,7 @@ Deze tabel bevat de beoordelings betrouwbaarheids classificaties die afhankelijk
 
 #### <a name="low-confidence-ratings"></a>Classificaties met lage betrouw baarheid
 Hier volgen enkele redenen waarom een evaluatie een lage betrouwbaarheids classificatie kan krijgen:
-- U hebt uw omgeving niet in het profiel voor de duur waarvoor u de evaluatie maakt. Als u bijvoorbeeld de beoordeling met de prestatie duur hebt ingesteld op één dag, moet u ten minste één dag wachten nadat u de detectie hebt gestart voor alle gegevens punten die u wilt verzamelen.
+- U hebt uw omgeving niet geprofileerd gedurende de periode waarvoor u de evaluatie maakt. Als u bijvoorbeeld de beoordeling met de prestatie duur hebt ingesteld op één dag, moet u ten minste één dag wachten nadat u de detectie hebt gestart voor alle gegevens punten die u wilt verzamelen.
 - Bij de evaluatie kunnen de prestatiegegevens voor sommige of alle servers in de evaluatieperiode niet worden verzameld. Voor een hoge betrouwbaarheids classificatie moet u het volgende doen:
     - Servers zijn ingeschakeld voor de duur van de evaluatie
     - Uitgaande verbindingen op poort 443 zijn toegestaan

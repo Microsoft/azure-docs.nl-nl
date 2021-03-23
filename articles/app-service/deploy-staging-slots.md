@@ -5,12 +5,12 @@ ms.assetid: e224fc4f-800d-469a-8d6a-72bcde612450
 ms.topic: article
 ms.date: 04/30/2020
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 1c4cff264b63506432daf350be3557bae7234584
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: c779e95b790d91b801d5d35b4702191f5e7986d5
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "100594244"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104802961"
 ---
 # <a name="set-up-staging-environments-in-azure-app-service"></a>Faseringsomgevingen in Azure App Service instellen
 <a name="Overview"></a>
@@ -214,6 +214,7 @@ U kunt ook het opwarm gedrag aanpassen met een of beide van de volgende [app-ins
 
 - `WEBSITE_SWAP_WARMUP_PING_PATH`: Het pad naar de ping voor het opwarmen van uw site. Voeg deze app-instelling toe door een aangepast pad op te geven dat begint met een slash als waarde. Een voorbeeld is `/statuscheck`. De standaardwaarde is `/`. 
 - `WEBSITE_SWAP_WARMUP_PING_STATUSES`: Geldige HTTP-antwoord codes voor de opwarm bewerking. Voeg deze app-instelling toe met een door komma's gescheiden lijst met HTTP-codes. Een voor beeld is `200,202` . Als de geretourneerde status code zich niet in de lijst bevindt, worden de opwarm-en swap-bewerkingen gestopt. Standaard zijn alle antwoord codes geldig.
+- `WEBSITE_WARMUP_PATH`: Een relatief pad op de site dat moet worden gepingd wanneer de site opnieuw wordt opgestart (niet alleen tijdens het wisselen van de sleuf). Voor beelden van waarden zijn onder andere `/statuscheck` of het pad naar de hoofdmap `/` .
 
 > [!NOTE]
 > Het `<applicationInitialization>` configuratie-element maakt deel uit van elke app die wordt opgestart, terwijl de twee app-instellingen voor het opwarmen van gedrag alleen van toepassing zijn op sleuven swaps.

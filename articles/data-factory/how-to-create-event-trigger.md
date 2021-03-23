@@ -4,15 +4,15 @@ description: Meer informatie over het maken van een trigger in Azure Data Factor
 ms.service: data-factory
 author: chez-charlie
 ms.author: chez
-ms.reviewer: maghan
+ms.reviewer: jburchel
 ms.topic: conceptual
 ms.date: 03/11/2021
-ms.openlocfilehash: b559ce31aff7040a61f6a2f788652ffd192420c4
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: deaa414a17240e8cdbdad7f4ba9b3e596b4f191f
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104593795"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104780324"
 ---
 # <a name="create-a-trigger-that-runs-a-pipeline-in-response-to-a-storage-event"></a>Een trigger maken waarmee een pijp lijn wordt uitgevoerd als reactie op een opslag gebeurtenis
 
@@ -83,11 +83,11 @@ De volgende tabel bevat een overzicht van de schema-elementen die betrekking heb
 
 | **JSON-element** | **Beschrijving** | **Type** | **Toegestane waarden** | **Vereist** |
 | ---------------- | --------------- | -------- | ------------------ | ------------ |
-| **ligt** | De Azure Resource Manager Resource-ID van het opslag account. | Tekenreeks | Azure Resource Manager-ID | Yes |
+| **ligt** | De Azure Resource Manager Resource-ID van het opslag account. | Tekenreeks | Azure Resource Manager-ID | Ja |
 | **evenementen** | Het type gebeurtenissen dat ervoor zorgt dat deze trigger wordt gestart. | Matrix    | Micro soft. storage. BlobCreated, micro soft. storage. BlobDeleted | Ja, een wille keurige combi natie van deze waarden. |
 | **blobPathBeginsWith** | Het BLOB-pad moet beginnen met het patroon dat is ingesteld voor de trigger om te starten. `/records/blobs/december/`De trigger wordt bijvoorbeeld alleen geactiveerd voor blobs in de `december` map onder de `records` container. | Tekenreeks   | | Geef een waarde op voor ten minste één van deze eigenschappen: `blobPathBeginsWith` of `blobPathEndsWith` . |
 | **blobPathEndsWith** | Het BLOB-pad moet eindigen met het patroon dat is ingesteld voor de trigger om te starten. `december/boxes.csv`De trigger wordt bijvoorbeeld alleen geactiveerd voor blobs `boxes` met de naam in een `december` map. | Tekenreeks   | | U moet een waarde opgeven voor ten minste een van deze eigenschappen: `blobPathBeginsWith` of `blobPathEndsWith` . |
-| **ignoreEmptyBlobs** | Hiermee wordt aangegeven of nul-byte-Blobs een pijplijn uitvoering activeren. Deze instelling is standaard ingesteld op waar. | Booleaans | waar of onwaar | No |
+| **ignoreEmptyBlobs** | Hiermee wordt aangegeven of nul-byte-Blobs een pijplijn uitvoering activeren. Deze instelling is standaard ingesteld op waar. | Booleaans | waar of onwaar | Nee |
 
 ## <a name="examples-of-storage-event-triggers"></a>Voor beelden van opslag gebeurtenis triggers
 

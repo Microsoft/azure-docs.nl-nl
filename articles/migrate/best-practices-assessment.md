@@ -1,40 +1,39 @@
 ---
-title: Aanbevolen procedures evalueren in Azure Migrate server-evaluatie
-description: Tips voor het maken van evaluaties met Azure Migrate server-evaluatie.
+title: Aanbevolen procedures voor beoordeling in Azure Migrate hulp programma voor detectie en evaluatie
+description: Tips voor het maken van evaluaties met Azure Migrate hulp programma voor detectie en evaluatie.
 author: rashi-ms
 ms.author: rajosh
 ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 11/19/2019
-ms.openlocfilehash: c1fff5b5b7f6450ad8d1977e55a1f6b255f3d668
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 1bf844dafe450e90213db2e447bb5392064eb245
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96754314"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104786767"
 ---
 # <a name="best-practices-for-creating-assessments"></a>Aanbevolen procedures voor het maken van evaluaties
 
 [Azure Migrate](./migrate-services-overview.md) biedt een hub aan hulpprogramma's waarmee u apps, infrastructuur en workloads op Microsoft Azure kunt detecteren, evalueren en migreren. De hub bevat Azure Migrate-hulpprogramma's en externe aanbiedingen van onafhankelijke softwareleveranciers (ISV’s).
 
-Dit artikel bevat een overzicht van de aanbevolen procedures voor het maken van evaluaties met behulp van het hulp programma Azure Migrate server Assessment.
+Dit artikel bevat een overzicht van de aanbevolen procedures voor het maken van evaluaties met behulp van de Azure Migrate detectie en evaluatie.
 
-## <a name="about-assessments"></a>Over evaluaties
-
-Evaluaties die u maakt met Azure Migrate server-evaluatie zijn een tijdgebonden moment opname van gegevens. Er zijn twee soorten evaluaties die u kunt maken met behulp van Azure Migrate: Server evaluatie:
+Evaluaties die u maakt met Azure Migrate: het hulp programma detectie en evaluatie zijn een tijdgebonden moment opname van gegevens. Er zijn drie soorten evaluaties die u kunt maken met behulp van Azure Migrate: detectie en evaluatie:
 
 **Evaluatietype** | **Details**
 --- | --- 
-**Azure VM** | Evaluaties om uw on-premises servers te migreren naar virtuele Azure-machine. <br/><br/> U kunt uw on-premises [VMware-VM's](how-to-set-up-appliance-vmware.md), [Hyper-V-VM's](how-to-set-up-appliance-hyper-v.md) en [fysieke servers](how-to-set-up-appliance-physical.md) evalueren voor migratie naar Azure met dit evaluatietype. [Meer informatie](concepts-assessment-calculation.md)
+**Azure VM** | Evaluaties om uw on-premises servers te migreren naar virtuele Azure-machine. <br/><br/> U kunt uw on-premises servers in [VMware](how-to-set-up-appliance-vmware.md) en [Hyper-V-](how-to-set-up-appliance-hyper-v.md) omgeving en [fysieke servers](how-to-set-up-appliance-physical.md) voor migratie naar Azure evalueren met dit beoordelings type. [Meer informatie](concepts-assessment-calculation.md)
+**Azure SQL** | Beoordelingen voor het migreren van uw on-premises SQL-servers vanuit uw VMware-omgeving naar Azure SQL Database of Azure SQL Managed instance. [Meer informatie](concepts-azure-sql-assessment-calculation.md)
 **Azure VMware Solution (AVS)** | Evaluaties om uw on-premises servers te migreren naar [Azure VMware Solution (AVS)](../azure-vmware/introduction.md). <br/><br/> U kunt uw on-premises [VMware-VM’s](how-to-set-up-appliance-vmware.md) evalueren voor migratie naar Azure VMware Solution (AVS) met dit evaluatietype. [Meer informatie](concepts-azure-vmware-solution-assessment-calculation.md)
 
 
 ### <a name="sizing-criteria"></a>Criteria voor het aanpassen van de grootte
-Server Assessment biedt twee opties voor criteria voor het aanpassen van de grootte:
+Opties voor het aanpassen van de grootte in Azure Migrate-evaluaties:
 
 **Criteria voor het aanpassen van de grootte** | **Details** | **Gegevens**
 --- | --- | ---
-**Op basis van prestaties** | Evaluaties die aanbevelingen doen op basis van verzamelde prestatiegegevens | **Azure-VM-evaluatie**: Aanbeveling voor VM-grootte is gebaseerd op verbruiksgegevens voor CPU en geheugen.<br/><br/> Aanbeveling voor schijftype (standaard HDD/SSD of premium-beheerde schijven) is gebaseerd op de IOPS en doorvoer van de on-premises schijven.<br/><br/> **AVS-evaluatie (Azure VMware Solution)** : Aanbeveling voor AVS-knooppunten is gebaseerd op verbruiksgegevens voor CPU en geheugen.
+**Op basis van prestaties** | Evaluaties die aanbevelingen doen op basis van verzamelde prestatiegegevens | **Azure-VM-evaluatie**: Aanbeveling voor VM-grootte is gebaseerd op verbruiksgegevens voor CPU en geheugen.<br/><br/> Aanbeveling voor schijftype (standaard HDD/SSD of premium-beheerde schijven) is gebaseerd op de IOPS en doorvoer van de on-premises schijven.<br/><br/>**Azure SQL-evaluatie**: de Azure SQL-configuratie is gebaseerd op prestatie gegevens van SQL-instanties en data bases, waaronder: CPU-gebruik, geheugen gebruik, IOPS (gegevens en logboek bestanden), door Voer en latentie van i/o-bewerkingen<br/><br/>**AVS-evaluatie (Azure VMware Solution)** : Aanbeveling voor AVS-knooppunten is gebaseerd op verbruiksgegevens voor CPU en geheugen.
 **As-is on-premises** | Evaluaties die geen gebruik maken van prestatiegegevens voor aanbevelingen. | **Azure-VM-evaluatie**: Aanbeveling voor VM-grootte is gebaseerd op de on-premises VM-grootte<br/><br> De aanbeveling voor het schijftype is gebaseerd op de instelling die u selecteert bij het opslagtype voor de evaluatie.<br/><br/> **AVS-evaluatie (Azure VMware Solution)**: Aanbeveling voor AVS-knooppunten is gebaseerd op de on-premises VM-grootte.
 
 #### <a name="example"></a>Voorbeeld
@@ -53,7 +52,7 @@ Een voor beeld: als u een on-premises VM hebt met vier kernen van 20% gebruik en
 
 Het Azure Migrate apparaat doorlopend uw on-premises omgeving profileert en verstuurt meta gegevens en prestatie gegevens naar Azure. Volg deze aanbevolen procedures voor evaluaties van servers die zijn gedetecteerd met een apparaat:
 
-- **Evaluaties maken als-is**: u kunt de evaluatie van de as-out onmiddellijk maken zodra uw computers in de Azure migrate Portal worden weer gegeven.
+- **Evaluaties maken als-is**: u kunt de evaluatie van de as-out onmiddellijk maken zodra uw servers in de Azure migrate Portal worden weer gegeven. U kunt geen Azure SQL-evaluatie met het formaat criterium ' as on-premises ' maken.
 - Een **evaluatie op basis van prestaties maken**: na het instellen van de detectie wordt u aangeraden minstens een dag te wachten voordat u een evaluatie op basis van prestaties uitvoert:
     - Het verzamelen van prestatie gegevens kost tijd. Als u op minstens een dag wacht, zorgt u ervoor dat er voldoende prestatie gegevens punten zijn voordat u de evaluatie uitvoert.
     - Wanneer u evaluaties op basis van prestaties uitvoert, moet u ervoor zorgen dat u uw omgeving voor de evaluatie duur profileert. Als u bijvoorbeeld een beoordeling maakt waarbij de duur van de prestatie is ingesteld op één week, moet u na het starten van de detectie worden gewacht totdat alle gegevens punten zijn verzameld. Als u dit niet doet, krijgt de evaluatie van de beoordeling geen vijf sterren.
@@ -61,7 +60,7 @@ Het Azure Migrate apparaat doorlopend uw on-premises omgeving profileert en vers
 
 Volg deze aanbevolen procedures voor evaluaties van servers die in Azure Migrate worden geïmporteerd via. CSV-bestand:
 
-- **Evaluaties maken als-is**: u kunt de evaluatie van de as-out onmiddellijk maken zodra uw computers in de Azure migrate Portal worden weer gegeven.
+- **Evaluaties maken als-is**: u kunt de evaluatie van de as-out onmiddellijk maken zodra uw servers in de Azure migrate Portal worden weer gegeven.
 - Een **evaluatie op basis van prestaties maken**: Hiermee krijgt u een betere schatting van de kosten, met name als u lokale server capaciteit hebt overingericht. De nauw keurigheid van de analyse op basis van prestaties is echter afhankelijk van de prestatie gegevens die u voor de servers hebt opgegeven. 
 - **Evaluaties opnieuw berekenen**: aangezien beoordelingen moment opnamen zijn, worden ze niet automatisch bijgewerkt met de meest recente gegevens. Als u een evaluatie met de meest recente geïmporteerde gegevens wilt bijwerken, moet u deze opnieuw berekenen.
  
@@ -81,9 +80,16 @@ De opslag-engine die in AVS wordt gebruikt, is vSAN. vSAN-opslagbeleid definieer
 ## <a name="best-practices-for-confidence-ratings"></a>Aanbevolen procedures voor betrouwbaarheids classificaties
 
 Wanneer u evaluaties op basis van prestaties uitvoert, wordt een betrouwbaarheids classificatie van 1 ster (laagste) tot 5 sterren (hoogst) toegekend aan de evaluatie. Vertrouwens classificaties effectief gebruiken:
-- Voor de analyse van Azure Migrate server zijn de gebruiks gegevens voor de CPU/het geheugen van de virtuele machine nodig.
-- Voor elke schijf die aan de on-premises VM is gekoppeld, is de IOPS/doorvoer gegevens lezen/schrijven vereist.
-- Voor elke netwerk adapter die aan de VM is gekoppeld, is het netwerk in/uit-gegevens nodig.
+
+- Azure VM-en AVS-evaluaties zijn vereist:
+    - De CPU-en geheugen gebruik gegevens voor elk van de servers
+    - De IOPS/doorvoer gegevens lezen/schrijven voor elke schijf die is gekoppeld aan de on-premises server
+    - Het netwerk in/uit gegevens voor elke netwerk adapter die is gekoppeld aan de server.
+     
+- Voor Azure SQL-evaluaties zijn de prestatie gegevens vereist van de SQL-exemplaren en-data bases die worden beoordeeld, waaronder:
+    - De gegevens van het CPU-en geheugen gebruik
+    - De gegevens-en logboek bestanden voor IOPS/door Voer lezen/schrijven
+    - De latentie van i/o-bewerkingen
 
 Afhankelijk van het percentage beschik bare gegevens punten voor de geselecteerde duur, wordt de betrouwbaarheids classificatie voor een evaluatie gegeven, zoals beschreven in de volgende tabel.
 
@@ -102,12 +108,12 @@ Hier vindt u informatie over het oplossen van enkele veelvoorkomende omgevings p
 
 ###  <a name="out-of-sync-assessments"></a>Evaluaties buiten de synchronisatie
 
-Als u computers toevoegt aan of verwijdert uit een groep nadat u een evaluatie hebt gemaakt, wordt de door u gemaakte evaluatie gemarkeerd als **out-of-Sync**. Voer de evaluatie opnieuw uit (**herberekening**) om de groeps wijzigingen weer te geven.
+Als u servers aan een groep toevoegt of eruit verwijdert nadat u een evaluatie hebt gemaakt, wordt de door u gemaakte evaluatie gemarkeerd als **out-of-Sync**. Voer de evaluatie opnieuw uit (**herberekening**) om de groeps wijzigingen weer te geven.
 
 ### <a name="outdated-assessments"></a>Verouderde evaluaties
 
-Als er on-premises wijzigingen zijn aangebracht aan virtuele machines die zich in een groep bevinden die is geëvalueerd, wordt de evaluatie gemarkeerd als **verouderd**. Een evaluatie kan worden gemarkeerd als verouderd vanwege een of meer wijzigingen in de volgende eigenschappen:
-
+#### <a name="azure-vm-assessment-and-avs-assessment"></a>Evaluatie van Azure VM-evaluatie en AVS
+Als er wijzigingen zijn op de on-premises servers die zich in een groep bevinden die is geëvalueerd, wordt de evaluatie gemarkeerd als **verouderd**. Een evaluatie kan worden gemarkeerd als verouderd vanwege een of meer wijzigingen in de volgende eigenschappen:
 - Aantal processor kernen
 - Toegewezen geheugen
 - Opstart type of-firmware
@@ -116,24 +122,43 @@ Als er on-premises wijzigingen zijn aangebracht aan virtuele machines die zich i
 - Aantal netwerk adapters
 - Wijziging in de schijf grootte (GB toegewezen)
 - Update van NIC-eigenschappen. Voor beeld: Mac-adres wijzigingen, IP-adres toevoegen etc.
-
+    
 Voer de evaluatie opnieuw uit (opnieuw **berekenen**) om de wijzigingen weer te geven.
+    
+#### <a name="azure-sql-assessment"></a>Azure SQL-evaluatie
+Als er wijzigingen zijn aangebracht in on-premises SQL-exemplaren en data bases die zich in een groep bevinden die is geëvalueerd, wordt de evaluatie gemarkeerd als **verouderd**. Een evaluatie kan worden gemarkeerd als verouderd vanwege een of meer van de volgende redenen:
+- SQL-exemplaar is toegevoegd aan of verwijderd van een server
+- SQL database is toegevoegd aan of verwijderd uit een SQL-exemplaar
+- De totale databasegrootte in een SQL-exemplaar is meer dan 20% gewijzigd
+- Wijziging in aantal processor kernen
+- Wijziging in toegewezen geheugen        
+  
+    Voer de evaluatie opnieuw uit (opnieuw **berekenen**) om de wijzigingen weer te geven.
 
 ### <a name="low-confidence-rating"></a>Beoordeling met lage betrouw baarheid
 
 Een evaluatie heeft mogelijk niet alle gegevens punten om een aantal redenen:
 
-- U hebt uw omgeving niet geprofileerd gedurende de periode waarvoor u de evaluatie maakt. Als u bijvoorbeeld een *evaluatie op basis van prestaties* maakt waarbij de duur van de prestaties is ingesteld op een week, moet u een periode van minstens een week wachten nadat u de detectie hebt gestart voor alle gegevens punten die u wilt verzamelen. U kunt altijd op **herberekenen** klikken om de meest recente beoordeling van het vertrouwen te bekijken. De vertrouwens classificatie is alleen van toepassing wanneer u een evaluatie *op basis van prestaties* maakt.
+- U hebt uw omgeving niet geprofileerd gedurende de periode waarvoor u de evaluatie maakt. Als u bijvoorbeeld een evaluatie maakt waarbij de duur van de prestaties is ingesteld op één week, moet u na het starten van de detectie minstens een week wachten voordat alle gegevenspunten zijn verzameld. Als u niet kunt wachten op de duur, wijzigt u de duur van de prestaties in een kortere periode en berekent u de evaluatie opnieuw.
+ 
+- Bij de evaluatie kunnen de prestatiegegevens voor sommige of alle servers in de evaluatieperiode niet worden verzameld. Voor een hoge betrouwbaarheids classificatie moet u het volgende doen: 
+    - Servers zijn ingeschakeld voor de duur van de evaluatie
+    - Uitgaande verbindingen op poort 443 zijn toegestaan
+    - Voor Hyper-V-servers is dynamisch geheugen ingeschakeld 
+    - De verbindings status van agents in Azure Migrate is verbonden en controleer de laatste heartbeat
+    - Voor Azure SQL-evaluaties is Azure Migrate verbindings status voor alle SQL-exemplaren verbonden op de Blade gedetecteerde SQL-instantie
 
-- Er zijn enkele VM's uitgeschakeld geweest in de periode waarover de evaluatie wordt berekend. Als bepaalde VM's gedurende een tijdje uitgeschakeld zijn geweest, kunnen er voor deze periode geen prestatiegegevens worden verzameld.
+    Bereken de evaluatie opnieuw om de meest recente wijzigingen in de betrouwbaarheidsclassificatie weer te geven.
 
-- Er zijn enkele VM’s gemaakt nadat detectie in Server-evaluatie al was gestart. Als u bijvoorbeeld een evaluatie maakt voor de prestatiegeschiedenis van de laatste maand, maar er een week geleden enkele VM's in de omgeving zijn gemaakt. In dit geval zijn er voor de hele periode geen prestatiegegevens van de nieuwe VM’s beschikbaar, waardoor de betrouwbaarheidsclassificatie laag is.
+- Voor Azure VM-en AVS-evaluaties zijn er weinig servers gemaakt nadat de detectie is gestart. Als u bijvoorbeeld een evaluatie maakt voor de prestatie geschiedenis van de laatste maand, maar weinig servers in de omgeving is slechts een week geleden gemaakt. In dit geval zijn de prestatie gegevens voor de nieuwe servers niet beschikbaar voor de hele duur en is de betrouwbaarheids classificatie laag.
+
+- Voor Azure SQL-evaluaties zijn enkele SQL-exemplaren of -databases gemaakt nadat de detectie is gestart. Als u bijvoorbeeld een evaluatie maakt voor de prestatie geschiedenis van de laatste maand, maar weinig SQL-exemplaren of data bases zijn in de omgeving slechts een week geleden gemaakt. In dit geval zijn de prestatie gegevens voor de nieuwe servers niet beschikbaar voor de hele duur en is de betrouwbaarheids classificatie laag.
 
 ### <a name="migration-tool-guidance-for-avs-assessments"></a>Richt lijnen voor migratie Hulpprogramma's voor AVS-evaluaties
 
 In het Azure-gereedheidsrapport voor AVS-evaluatie (Azure VMware Solution) ziet u de volgende voorgestelde hulpprogramma’s: 
-- **VMware HCX of ENTER prise**: voor VMware-machines is de VMware Hybrid Cloud extension (HCX)-oplossing het aanbevolen migratie programma voor het migreren van uw on-premises werk belasting naar uw Azure VMware-oplossing (AVS) Private Cloud. [Meer informatie](../azure-vmware/tutorial-deploy-vmware-hcx.md).
-- **Onbekend**: Voor machines die zijn geïmporteerd via een CSV-bestand, is het standaardhulpprogramma voor migratie onbekend. Voor VMware-machines is het echter raadzaam de VMware Hybrid Cloud extension (HCX)-oplossing te gebruiken.
+- **VMware HCX of ENTER prise**: voor VMware-servers is de VMware Hybrid Cloud extension (HCX)-oplossing het aanbevolen migratie programma voor het migreren van uw on-premises werk belasting naar uw Azure VMware-oplossing (AVS) Private Cloud. [Meer informatie](../azure-vmware/tutorial-deploy-vmware-hcx.md).
+- **Onbekend**: voor servers die worden geïmporteerd via een CSV-bestand, is het standaard hulp programma voor migratie onbekend. Voor servers in VMware-omgevingen is het echter raadzaam de VMware Hybrid Cloud extension (HCX)-oplossing te gebruiken.
 
 
 ## <a name="next-steps"></a>Volgende stappen

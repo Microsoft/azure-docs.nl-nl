@@ -12,12 +12,12 @@ ms.date: 01/4/2020
 ms.author: metang
 ms.custom: cog-serv-seo-aug-2020
 keywords: lezers, personen die een taal willen leren, afbeeldingen weergeven, lezen verbeteren, inhoud lezen, vertalen
-ms.openlocfilehash: 6affc0a2b94c7ea950a8995981d63470722d981f
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 1911d3ce62434f1dc24966798e9ace259ae072bc
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104599524"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104801567"
 ---
 # <a name="what-is-immersive-reader"></a>Wat is Insluitende lezer?
 
@@ -25,8 +25,8 @@ ms.locfileid: "104599524"
 
 Deze documentatie bevat de volgende typen artikelen:  
 
-* **[Quick](quickstarts/client-libraries.md)** starts zijn stapsgewijze instructies waarmee u aanroepen naar de service kunt uitvoeren en resultaten kunt ophalen.
-* **[Hand leidingen](how-to-create-immersive-reader.md)** bevatten instructies voor het gebruik van de service op meer specifieke of aangepaste manieren.  
+* **[Quick](quickstarts/client-libraries.md)** starts zijn aan de slag-instructies die u helpen bij het maken van aanvragen voor de service.
+* **[Hand leidingen](how-to-create-immersive-reader.md)** bevatten instructies voor het gebruik van de service op meer specifieke of aangepaste manieren.
 
 ## <a name="use-immersive-reader-to-improve-reading-accessibility"></a>Insluitende lezer gebruiken om de leestoegang te verbeteren 
 

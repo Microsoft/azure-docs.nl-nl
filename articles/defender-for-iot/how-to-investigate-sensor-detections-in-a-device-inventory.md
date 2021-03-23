@@ -1,18 +1,14 @@
 ---
 title: Inzicht verkrijgen in apparaten die worden gedetecteerd door een specifieke sensor
 description: De apparaat-inventaris toont een uitgebreid scala aan kenmerken van apparaten die een sensor detecteert.
-author: shhazam-ms
-manager: rkarlin
-ms.author: shhazam
 ms.date: 12/06/2020
 ms.topic: how-to
-ms.service: azure
-ms.openlocfilehash: c15dc62cad796f5f74f2316d148e217052dc9678
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 4daec83f44a545d7837a7e73e847f56b1f5770e7
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100523988"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104782092"
 ---
 # <a name="investigate-sensor-detections-in-a-device-inventory"></a>Alle sensordetecties in een apparaatinventaris onderzoeken
 

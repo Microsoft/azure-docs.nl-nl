@@ -61,6 +61,8 @@
               href: solutions-benefits-azure-netapp-files-electronic-design-automation.md
             - name: Voordelen van het gebruik van Azure NetApp Files met Windows Virtual Desktop
               href: solutions-windows-virtual-desktop.md
+            - name: Voor delen van het gebruik van Azure NetApp Files voor SQL Server-implementatie
+              href: solutions-benefits-azure-netapp-files-sql-server.md
     - name: Veelgestelde vragen over Azure NetApp Files
       href: azure-netapp-files-faqs.md
     - name: Wat is het hulpprogramma Azure Application Consistent Snapshot
@@ -179,3 +181,5 @@
       href: 'https://azure.microsoft.com/support/legal/sla/netapp/'
     - name: Video's
       href: azure-netapp-files-videos.md
+    - name: Vergelijking van Azure Files en Azure NetApp Files
+      href: ../storage/files/storage-files-netapp-comparison.md

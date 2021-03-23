@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 11/30/2020
 ms.author: rosouz
 ms.custom: references_regions
-ms.openlocfilehash: 64b9b6690eafe8f28fdf9711cd0534f4d7d96908
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 7accf705ee64be5ba416be9df2f92693b07e8a8c
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104584581"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104799646"
 ---
 # <a name="configure-and-use-azure-synapse-link-for-azure-cosmos-db"></a>Azure Synapse Link voor Azure Cosmos DB configureren en gebruiken
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
@@ -276,7 +276,7 @@ U kunt een serverloze SQL-pool database en weer gaven maken via de Synapse-koppe
 
 Met de [Azure Resource Manager-sjabloon](./manage-with-templates.md#azure-cosmos-account-with-analytical-store) wordt een Synapse-koppeling ingeschakeld Azure Cosmos DB account voor de SQL-API. Met deze sjabloon maakt u een core-API-account (SQL) in één regio met een container die is geconfigureerd met analytische TTL ingeschakeld en een optie om de door Voer van hand matig of automatisch schalen te gebruiken. Als u deze sjabloon wilt implementeren, klikt **u op implementeren in azure** op de pagina README.
 
-## <a name="getting-started-with-azure-synpase-link---samples"></a><a id="cosmosdb-synapse-link-samples"></a> Aan de slag met Azure Synpase-koppeling-voor beelden
+## <a name="getting-started-with-azure-synapse-link---samples"></a><a id="cosmosdb-synapse-link-samples"></a> Aan de slag met Azure Synapse-koppeling-voor beelden
 
 U kunt voor beelden vinden om aan de slag te gaan met de koppeling van Azure Synapse op [github](https://aka.ms/cosmosdb-synapselink-samples). In deze etalage worden end-to-end-oplossingen gedemonstreerd met IoT-en retail-scenario's. U kunt ook de voor beelden vinden die overeenkomen met Azure Cosmos DB-API voor MongoDB in dezelfde opslag plaats in de map [MongoDb](https://github.com/Azure-Samples/Synapse/tree/main/Notebooks/PySpark/Synapse%20Link%20for%20Cosmos%20DB%20samples) . 
 

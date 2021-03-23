@@ -3,12 +3,12 @@ title: Index van blauwdrukvoorbeelden
 description: Index van compatibiliteits- en standaardvoorbeelden voor het implementeren van omgevingen, beleidsregels en grondbeginselen voor Cloud Adoptions Framework met Azure Blueprints.
 ms.date: 03/11/2021
 ms.topic: sample
-ms.openlocfilehash: 0873de5879a40b13bea03c97e0b78d146f0d6696
-ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
+ms.openlocfilehash: 06dc65ca601c938f6610df3ed22b4ea0f3826208
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103200992"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104799459"
 ---
 # <a name="azure-blueprints-samples"></a>Azure Blueprints-voorbeelden
 
@@ -34,6 +34,7 @@ De volgende tabel bevat links naar voorbeelden voor Azure Blueprints. Elk voorbe
 | [ISO 27001 conforme gedeelde services](./iso27001-shared/index.md) | Deze blauwdruk biedt een set met conforme infrastructuurpatronen en beleidsrichtlijnen die de route naar ISO 27001-attestatie vergemakkelijken. |
 | [ISO 27001 conforme App Service Environment-/SQL Database-workloads](./iso27001-ase-sql-workload/index.md) | Biedt meer infra structuur voor het voor beeld van de [ISO 27001 Shared Services](./iso27001-shared/index.md) -blauw druk. |
 | [Media](./media/index.md) | Bied een set beleidsregels om te helpen voldoen aan Media MPAA. |
+| [Nieuw-Zeeland ISM beperkt](./new-zealand-ism.md) | Hiermee wijst u beleid toe aan specifieke hand matige besturings elementen voor het Nieuw-Zeelandse informatie beveiliging. |
 | [NIST SP 800-53 R4](./nist-sp-800-53-r4.md) | Biedt Guardrails voor naleving van NIST SP 800-53 R4. |
 | [NIST SP 800-171 R2](./nist-sp-800-171-r2.md) | Biedt Guardrails voor naleving met NIST SP 800-171 R2. |
 | [PCI-DSS v3.2.1](./pci-dss-3.2.1/index.md) | Deze blauwdruk biedt een set beleidsregels ter ondersteuning van de naleving van PCI-DSS v3.2.1. |

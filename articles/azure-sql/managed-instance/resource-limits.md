@@ -12,12 +12,12 @@ author: bonova
 ms.author: bonova
 ms.reviewer: sstein, jovanpop, sachinp
 ms.date: 09/14/2020
-ms.openlocfilehash: 9a96da607ceea5a6d5cb6ef02df5a9a4db24562e
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: ee0c673027892e6d3ee55b6ec5f67a30d88be683
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "97770958"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104780341"
 ---
 # <a name="overview-of-azure-sql-managed-instance-resource-limits"></a>Overzicht van resourcelimieten voor Azure SQL Managed Instance
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -76,7 +76,7 @@ SQL Managed instance heeft twee service lagen: [Algemeen](../database/service-ti
 | Maximum aantal database bestanden per exemplaar | Maxi maal 280, tenzij de limiet voor de opslag ruimte van het exemplaar of het bereik voor de [toewijzing van Azure Premium-schijf opslag](../database/doc-changes-updates-release-notes.md#exceeding-storage-space-with-small-database-files) is bereikt. | 32.767 bestanden per data base, tenzij de maximale opslag grootte van het exemplaar is bereikt. |
 | Maximale grootte van het gegevens bestand | Beperkt tot de momenteel beschik bare opslag grootte van het exemplaar (Maxi maal 2 TB-8 TB) en de [opslag ruimte voor Azure Premium-schijven](../database/doc-changes-updates-release-notes.md#exceeding-storage-space-with-small-database-files). | Beperkt tot de momenteel beschik bare opslag grootte van het exemplaar (Maxi maal 1 TB-4 TB). |
 | Maximale grootte van logboek bestand | Beperkt tot 2 TB en momenteel beschik bare exemplaar opslag grootte. | Beperkt tot 2 TB en momenteel beschik bare exemplaar opslag grootte. |
-| Gegevens/logboek IOPS (benadering) | Maxi maal 30-40 K IOPS per exemplaar *, 500-7500 per bestand<br/>\*[Bestands grootte verg Roten om meer IOPS te verkrijgen](#file-io-characteristics-in-general-purpose-tier)| 10 k-200 K (4000 IOPS/vCore)<br/>Voeg meer vCores toe om betere IO-prestaties te krijgen. |
+| Gegevens/logboek IOPS (benadering) | Maxi maal 30-40 K IOPS per exemplaar *, 500-7500 per bestand<br/>\*[Bestands grootte verg Roten om meer IOPS te verkrijgen](#file-io-characteristics-in-general-purpose-tier)| 16 k-320 K (4000 IOPS/vCore)<br/>Voeg meer vCores toe om betere IO-prestaties te krijgen. |
 | Doorvoer limiet voor schrijf bewerkingen in logboek (per instantie) | 3 MB/s per vCore<br/>Maxi maal 120 MB/s per instantie<br/>22-65 MB/s per data base<br/>\*[De bestands grootte verg Roten om betere IO-prestaties te krijgen](#file-io-characteristics-in-general-purpose-tier) | 4 MB/s per vCore<br/>Maxi maal 96 MB/s |
 | Gegevens doorvoer (bij benadering) | 100-250 MB/s per bestand<br/>\*[De bestands grootte verg Roten om betere IO-prestaties te krijgen](#file-io-characteristics-in-general-purpose-tier) | Niet beperkt. |
 | I/o-latentie van opslag (ongeveer) | 5-10 MS | 1-2 MS |

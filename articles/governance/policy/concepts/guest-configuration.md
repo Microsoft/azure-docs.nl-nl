@@ -3,12 +3,12 @@ title: Meer informatie over het controleren van de inhoud van virtuele machines
 description: Meer informatie over hoe Azure Policy de gast configuratie-client gebruikt om instellingen in virtuele machines te controleren.
 ms.date: 01/14/2021
 ms.topic: conceptual
-ms.openlocfilehash: 33a492eb3c8c175bfcdc6a13cb467ed2f180c1e1
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: a18f230c1b7b1eb2c953542e276127f4f47cbb39
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101702875"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104802519"
 ---
 # <a name="understand-azure-policys-guest-configuration"></a>Gastconfiguratie van Azure Policy begrijpen
 
@@ -57,7 +57,7 @@ De volgende tabel bevat een lijst met de lokale hulpprogram ma's die op elk onde
 
 ### <a name="validation-frequency"></a>Validatie frequentie
 
-De gast configuratie client controleert elke vijf minuten op nieuwe inhoud. Zodra een gast toewijzing is ontvangen, worden de instellingen voor die configuratie opnieuw gecontroleerd met een interval van vijf tien minuten. Er worden resultaten verzonden naar de provider van de gast configuratie bron wanneer de controle is voltooid. Wanneer er een beleids [evaluatie](../how-to/get-compliance-data.md#evaluation-triggers) wordt uitgevoerd, wordt de status van de machine naar de provider van de gast configuratie genoteerd. Deze update zorgt ervoor Azure Policy de Azure Resource Manager eigenschappen te evalueren. Een Azure Policy evaluatie op aanvraag haalt de meest recente waarde op van de provider van de gast configuratie resource. Er wordt echter geen nieuwe controle van de configuratie op de computer geactiveerd.
+De gast configuratie client controleert elke vijf minuten of er nieuwe of gewijzigde gast toewijzingen zijn. Zodra een gast toewijzing is ontvangen, worden de instellingen voor die configuratie opnieuw gecontroleerd met een interval van vijf tien minuten. Er worden resultaten verzonden naar de provider van de gast configuratie bron wanneer de controle is voltooid. Wanneer er een beleids [evaluatie](../how-to/get-compliance-data.md#evaluation-triggers) wordt uitgevoerd, wordt de status van de machine naar de provider van de gast configuratie genoteerd. Deze update zorgt ervoor Azure Policy de Azure Resource Manager eigenschappen te evalueren. Een Azure Policy evaluatie op aanvraag haalt de meest recente waarde op van de provider van de gast configuratie resource. Er wordt echter geen nieuwe controle van de configuratie op de computer geactiveerd. De status is tegelijkertijd geschreven naar Azure resource Graph.
 
 ## <a name="supported-client-types"></a>Ondersteunde client typen
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 02/18/2021
 ms.author: tyao
 ms.custom: references_regions
-ms.openlocfilehash: 6a1ec6e0b8862c6ad2b884b019e908e7d2a59a1e
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 88c000c96e632f970db075fafb13ea5eb4bbddfc
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101715510"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104799926"
 ---
 # <a name="secure-your-origin-with-private-link-in-azure-front-door-standardpremium-preview"></a>Uw oorsprong beveiligen met een privé koppeling in azure front deur Standard/Premium (preview)
 
@@ -30,7 +30,7 @@ Met [Azure private link](../../private-link/private-link-overview.md) kunt u toe
 > Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt.
 > Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
-Azure front deur Premium SKU kan verbinding maken met uw oorsprong achter Web-app en opslag account met behulp van de persoonlijke koppelings service, waardoor uw oorsprong openbaar toegankelijk is.
+Azure front deur Premium SKU kan verbinding maken met uw oorsprong via de service voor privé koppelingen. Uw toepassingen kunnen worden gehost in uw privé-VNet of achter een PaaS-service, zoals web-app en opslag account, waardoor uw oorsprong niet openbaar toegankelijk moet zijn.
 
 :::image type="content" source="../media/concept-private-link/front-door-private-endpoint-architecture.png" alt-text="Architectuur van privé-eind punten voor de voor deur":::
 

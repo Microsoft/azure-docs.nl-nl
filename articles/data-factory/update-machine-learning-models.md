@@ -3,16 +3,16 @@ title: Azure Machine Learning Studio-modellen (klassiek) bijwerken met behulp va
 description: Hierin wordt beschreven hoe u voorspellende pijp lijnen maakt met behulp van Azure Data Factory en Azure Machine Learning Studio (klassiek)
 author: dcstwh
 ms.author: weetok
-ms.reviewer: maghan
+ms.reviewer: jburchel
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 07/16/2020
-ms.openlocfilehash: ef89ecef34a7c5afb94547181f449b0fc393e67c
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 5eac6f939ffcc39961f508a993ca17757221503f
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100377564"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104783095"
 ---
 # <a name="update-azure-machine-learning-studio-classic-models-by-using-update-resource-activity"></a>Azure Machine Learning Studio-modellen (klassiek) bijwerken met resource activiteit bijwerken
 

@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/12/2020
-ms.openlocfilehash: bebe9424df24792f7450620657c5e2da5f08196a
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 874df4301165aaf253dd0f4316adee7ab9ce7ce5
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102046513"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104798847"
 ---
 # <a name="create-interactive-reports-vm-insights-with-workbooks"></a>Interactieve rapporten maken VM Insights met werkmappen
 
@@ -27,15 +27,15 @@ De volgende tabel bevat een overzicht van de werkmappen die door VM Insights wor
 
 | Werkmap | Beschrijving | Bereik |
 |----------|-------------|-------|
-| Prestaties | Biedt een aanpas bare versie van onze weer gave top N-lijsten en-diagrammen in één werkmap die gebruikmaakt van alle Log Analytics prestatie meter items die u hebt ingeschakeld.| Op schaal |
-| Prestatiemeteritems | Een bovenste N grafiek weergave in een breed scala aan prestatie meter items. | Op schaal |
-| Verbindingen | Verbindingen bieden een gedetailleerde weer gave van de inkomende en uitgaande verbindingen van uw bewaakte Vm's. | Op schaal |
-| Actieve poorten | Geeft een lijst van de processen die zijn gekoppeld aan de poorten op de bewaakte Vm's en hun activiteiten in de gekozen periode. | Op schaal |
-| Open poorten | Geeft het aantal poorten open op uw bewaakte Vm's en de details van die open poorten. | Op schaal |
-| Mislukte verbindingen | Hier wordt het aantal mislukte verbindingen weer gegeven op uw bewaakte Vm's, de fout trend en als het percentage storingen in de loop van de tijd toeneemt. | Op schaal |
-| Beveiliging en audit | Een analyse van uw TCP/IP-verkeer dat rapporteert over algemene verbindingen, schadelijke verbindingen, waarbij de IP-eind punten zich globaal bevinden.  Als u alle functies wilt inschakelen, moet u de beveiligings detectie inschakelen. | Op schaal |
-| TCP Traffic | Een gerangschikt rapport voor uw bewaakte Vm's en hun verzonden, ontvangen en totale netwerk verkeer in een raster en wordt weer gegeven als een trend lijn. | Op schaal |
-| Vergelijking van verkeer | Met deze werkmappen kunt u trends in het netwerk verkeer vergelijken voor één computer of een groep machines. | Op schaal |
+| Prestaties | Biedt een aanpas bare versie van onze weer gave top N-lijsten en-diagrammen in één werkmap die gebruikmaakt van alle Log Analytics prestatie meter items die u hebt ingeschakeld.| Meerdere Vm's |
+| Prestatiemeteritems | Een bovenste N grafiek weergave in een breed scala aan prestatie meter items. | Meerdere Vm's |
+| Verbindingen | Verbindingen bieden een gedetailleerde weer gave van de inkomende en uitgaande verbindingen van uw bewaakte Vm's. | Meerdere Vm's |
+| Actieve poorten | Geeft een lijst van de processen die zijn gekoppeld aan de poorten op de bewaakte Vm's en hun activiteiten in de gekozen periode. | Meerdere Vm's |
+| Open poorten | Geeft het aantal poorten open op uw bewaakte Vm's en de details van die open poorten. | Meerdere Vm's |
+| Mislukte verbindingen | Hier wordt het aantal mislukte verbindingen weer gegeven op uw bewaakte Vm's, de fout trend en als het percentage storingen in de loop van de tijd toeneemt. | Meerdere Vm's |
+| Beveiliging en audit | Een analyse van uw TCP/IP-verkeer dat rapporteert over algemene verbindingen, schadelijke verbindingen, waarbij de IP-eind punten zich globaal bevinden.  Als u alle functies wilt inschakelen, moet u de beveiligings detectie inschakelen. | Meerdere Vm's |
+| TCP Traffic | Een gerangschikt rapport voor uw bewaakte Vm's en hun verzonden, ontvangen en totale netwerk verkeer in een raster en wordt weer gegeven als een trend lijn. | Meerdere Vm's |
+| Vergelijking van verkeer | Met deze werkmappen kunt u trends in het netwerk verkeer vergelijken voor één computer of een groep machines. | Meerdere Vm's |
 | Prestaties | Biedt een aanpas bare versie van onze prestatie weergave die gebruikmaakt van alle Log Analytics prestatie meter items die u hebt ingeschakeld. | Eén VM | 
 | Verbindingen | Verbindingen bieden een gedetailleerde weer gave van de binnenkomende en uitgaande verbindingen van uw VM. | Eén VM |
  

@@ -1,20 +1,19 @@
 ---
-title: Waarschuwingen weergeven
+title: Waarschuwingen filteren en beheren via de pagina waarschuwingen
 description: Waarschuwingen weer geven op basis van verschillende categorieën en zoek functies gebruiken om u te helpen bij het vinden van belang rijke meldingen.
 author: shhazam-ms
 manager: rkarlin
 ms.author: shhazam
-ms.date: 12/02/2020
+ms.date: 3/22/2021
 ms.topic: how-to
-ms.service: azure
-ms.openlocfilehash: 6dc2a9683a48f20816adc8ce0ee0c1e8dc57b287
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 391d1872124c7332bdaa6008a244490b47df4bf7
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100523665"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104781582"
 ---
-# <a name="view-alerts"></a>Waarschuwingen weergeven
+# <a name="filter-and-manage-alerts-from-the-alerts-page"></a>Waarschuwingen filteren en beheren via de pagina waarschuwingen 
 
 In dit artikel wordt beschreven hoe u waarschuwingen die door uw sensor worden geactiveerd, kunt bekijken en beheren met hulpprogram ma's voor waarschuwingen.
 

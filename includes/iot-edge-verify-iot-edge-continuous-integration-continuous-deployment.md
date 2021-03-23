@@ -4,12 +4,12 @@ ms.service: iot-edge
 ms.topic: include
 ms.date: 08/26/2020
 ms.author: v-tcassi
-ms.openlocfilehash: c7be10e14daf3ee769e86d51f648cc6b656a416a
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: b5450e4846c3c49c89830ae65c50a95ee0c8d6eb
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "89302125"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104803260"
 ---
 ## <a name="verify-iot-edge-cicd-with-the-build-and-release-pipelines"></a>IoT Edge CI/CD controleren met pijp lijnen voor Build en release
 
@@ -36,3 +36,5 @@ Als u een build-taak wilt activeren, kunt u een door voeren naar de opslag plaat
 6. Klik op **ontwikkel** fase om release logboeken te bekijken.
 
     ![Release-logboeken](./media/iot-edge-verify-iot-edge-continuous-integration-continuous-deployment/release-logs.png)
+
+7. Als uw pijp lijn mislukt, gaat u naar de logboeken. U kunt logboeken weer geven door te navigeren naar het overzicht van de pijplijn uitvoering en de taak en taak te selecteren. Als een bepaalde taak mislukt, controleert u de logboeken voor die taak. Zie [Logboeken bekijken voor het vaststellen van pijp lijn problemen](/azure/devops/pipelines/troubleshooting/review-logs)voor gedetailleerde instructies voor het configureren en gebruiken van Logboeken.

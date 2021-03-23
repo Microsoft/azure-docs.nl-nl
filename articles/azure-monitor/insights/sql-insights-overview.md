@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/15/2021
-ms.openlocfilehash: d01f80a803c5b0f9da067dd23ab8cdb4cc591a79
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: b9c5db14bec87b30e51d39b1430ecc1f3cbef855
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104609386"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104798286"
 ---
 # <a name="monitor-your-sql-deployments-with-sql-insights-preview"></a>Uw SQL-implementaties bewaken met SQL Insights (preview-versie)
 SQL Insights bewaakt de prestaties en de status van uw SQL-implementaties.  Dit kan helpen om voorspel bare prestaties en beschik baarheid te leveren van essentiële workloads die u rond een SQL-back-end hebt gemaakt door prestatie knelpunten en problemen te identificeren. De gegevens van SQL Insights worden opgeslagen in [Azure monitor-logboeken](../logs/data-platform-logs.md), zodat IT krachtige aggregatie en filteren kan leveren en gegevens trends in de loop van de tijd kan analyseren. U kunt deze gegevens weer geven van Azure Monitor in de weer gaven die worden geleverd als onderdeel van deze aanbieding. u kunt ook dieper in de logboek gegevens zoeken om query's uit te voeren en trends te analyseren.
@@ -59,7 +59,7 @@ Zie [SQL Insights inschakelen](sql-insights-enable.md) voor gedetailleerde proce
 
 
 ## <a name="data-collected-by-sql-insights"></a>Gegevens die worden verzameld door SQL Insights
-In de open bare preview ondersteunt SQL Insights alleen de externe bewakings methode. De telegrafie agent is niet geïnstalleerd op de SQL Server. Het maakt gebruik van de SQL Server invoer-invoeg toepassing voor telegrafie en gebruikt de drie groepen query's voor de verschillende soorten SQL-bewaking: Azure SQL DB, Azure SQL Managed instance, SQL Server dat wordt uitgevoerd op een virtuele machine van Azure. 
+In de open bare preview ondersteunt SQL Insights alleen de externe bewakings methode. De [telegrafie agent](https://www.influxdata.com/time-series-platform/telegraf/) is niet geïnstalleerd op de SQL Server. Het maakt gebruik [van de SQL Server invoer-invoeg toepassing voor telegrafie](https://www.influxdata.com/integration/microsoft-sql-server/) en gebruikt de drie groepen query's voor de verschillende soorten SQL-bewaking: Azure SQL DB, Azure SQL Managed instance, SQL Server dat wordt uitgevoerd op een virtuele machine van Azure. 
 
 In de volgende tabellen ziet u een overzicht van het volgende:
 
@@ -75,44 +75,44 @@ U kunt wijzigen welke query's worden uitgevoerd en hoe vaak gegevens worden verz
 
 | Query naam | DMV | Naamruimte | Standaard ingeschakeld | Standaard frequentie van verzamelingen |
 |:---|:---|:---|:---|:---|
-| AzureSQLDBWaitStats |  sys.dm_db_wait_stats | sqlserver_azuredb_waitstats | No | NA |
-| AzureSQLDBResourceStats | sys.dm_db_resource_stats | sqlserver_azure_db_resource_stats | Yes | 60 seconden |
-| AzureSQLDBResourceGovernance | sys.dm_user_db_resource_governance | sqlserver_db_resource_governance | Yes | 60 seconden |
-| AzureSQLDBDatabaseIO | sys.dm_io_virtual_file_stats<br>sys.database_files<br>tempdb.sys .database_files | sqlserver_database_io | Yes | 60 seconden |
-| AzureSQLDBServerProperties | sys.dm_os_job_object<br>sys.database_files<br>laden. vinden<br>laden. [database_service_objectives] | sqlserver_server_properties | Yes | 60 seconden |
-| AzureSQLDBOsWaitstats | sys.dm_os_wait_stats | sqlserver_waitstats | Yes | 60 seconden |
-| AzureSQLDBMemoryClerks | sys.dm_os_memory_clerks | sqlserver_memory_clerks | Yes | 60 seconden |
-| AzureSQLDBPerformanceCounters | sys.dm_os_performance_counters<br>sys.databases | sqlserver_performance | Yes | 60 seconden |
-| AzureSQLDBRequests | sys.dm_exec_sessions<br>sys.dm_exec_requests<br>sys.dm_exec_sql_text | sqlserver_requests | No | NA |
-| AzureSQLDBSchedulers | sys.dm_os_schedulers | sqlserver_schedulers | No | NA  |
+| AzureSQLDBWaitStats |  sys.dm_db_wait_stats | sqlserver_azuredb_waitstats | Nee | NA |
+| AzureSQLDBResourceStats | sys.dm_db_resource_stats | sqlserver_azure_db_resource_stats | Ja | 60 seconden |
+| AzureSQLDBResourceGovernance | sys.dm_user_db_resource_governance | sqlserver_db_resource_governance | Ja | 60 seconden |
+| AzureSQLDBDatabaseIO | sys.dm_io_virtual_file_stats<br>sys.database_files<br>tempdb.sys .database_files | sqlserver_database_io | Ja | 60 seconden |
+| AzureSQLDBServerProperties | sys.dm_os_job_object<br>sys.database_files<br>laden. vinden<br>laden. [database_service_objectives] | sqlserver_server_properties | Ja | 60 seconden |
+| AzureSQLDBOsWaitstats | sys.dm_os_wait_stats | sqlserver_waitstats | Ja | 60 seconden |
+| AzureSQLDBMemoryClerks | sys.dm_os_memory_clerks | sqlserver_memory_clerks | Ja | 60 seconden |
+| AzureSQLDBPerformanceCounters | sys.dm_os_performance_counters<br>sys.databases | sqlserver_performance | Ja | 60 seconden |
+| AzureSQLDBRequests | sys.dm_exec_sessions<br>sys.dm_exec_requests<br>sys.dm_exec_sql_text | sqlserver_requests | Nee | NA |
+| AzureSQLDBSchedulers | sys.dm_os_schedulers | sqlserver_schedulers | Nee | NA  |
 
 ### <a name="azure-sql-managed-instance-data"></a>Azure SQL Managed instance-gegevens 
 
 | Query naam | DMV | Naamruimte | Standaard ingeschakeld | Standaard frequentie van verzamelingen |
 |:---|:---|:---|:---|:---|
-| AzureSQLMIResourceStats | sys.server_resource_stats | sqlserver_azure_db_resource_stats | Yes | 60 seconden |
-| AzureSQLMIResourceGovernance | sys.dm_instance_resource_governance | sqlserver_instance_resource_governance | Yes | 60 seconden |
-| AzureSQLMIDatabaseIO | sys.dm_io_virtual_file_stats<br>sys.master_files | sqlserver_database_io | Yes | 60 seconden |
-| AzureSQLMIServerProperties | sys.server_resource_stats | sqlserver_server_properties | Yes | 60 seconden |
-| AzureSQLMIOsWaitstats | sys.dm_os_wait_stats | sqlserver_waitstats | Yes | 60 seconden |
-| AzureSQLMIMemoryClerks | sys.dm_os_memory_clerks | sqlserver_memory_clerks | Yes | 60 seconden |
-| AzureSQLMIPerformanceCounters | sys.dm_os_performance_counters<br>sys.databases | sqlserver_performance | Yes | 60 seconden |
-| AzureSQLMIRequests | sys.dm_exec_sessions<br>sys.dm_exec_requests<br>sys.dm_exec_sql_text | sqlserver_requests | No | NA |
-| AzureSQLMISchedulers | sys.dm_os_schedulers | sqlserver_schedulers | No | NA |
+| AzureSQLMIResourceStats | sys.server_resource_stats | sqlserver_azure_db_resource_stats | Ja | 60 seconden |
+| AzureSQLMIResourceGovernance | sys.dm_instance_resource_governance | sqlserver_instance_resource_governance | Ja | 60 seconden |
+| AzureSQLMIDatabaseIO | sys.dm_io_virtual_file_stats<br>sys.master_files | sqlserver_database_io | Ja | 60 seconden |
+| AzureSQLMIServerProperties | sys.server_resource_stats | sqlserver_server_properties | Ja | 60 seconden |
+| AzureSQLMIOsWaitstats | sys.dm_os_wait_stats | sqlserver_waitstats | Ja | 60 seconden |
+| AzureSQLMIMemoryClerks | sys.dm_os_memory_clerks | sqlserver_memory_clerks | Ja | 60 seconden |
+| AzureSQLMIPerformanceCounters | sys.dm_os_performance_counters<br>sys.databases | sqlserver_performance | Ja | 60 seconden |
+| AzureSQLMIRequests | sys.dm_exec_sessions<br>sys.dm_exec_requests<br>sys.dm_exec_sql_text | sqlserver_requests | Nee | NA |
+| AzureSQLMISchedulers | sys.dm_os_schedulers | sqlserver_schedulers | Nee | NA |
 
 ### <a name="sql-server-data"></a>SQL Server gegevens
 
 | Query naam | DMV | Naamruimte | Standaard ingeschakeld | Standaard frequentie van verzamelingen |
 |:---|:---|:---|:---|:---|
-| SQLServerPerformanceCounters | sys.dm_os_performance_counters | sqlserver_performance | Yes | 60 seconden |
-| SQLServerWaitStatsCategorized | sys.dm_os_wait_stats | sqlserver_waitstats | Yes | 60 seconden | 
-| SQLServerDatabaseIO | sys.dm_io_virtual_file_stats<br>sys.master_files | sqlserver_database_io | Yes | 60 seconden |
-| SQLServerProperties | sys.dm_os_sys_info | sqlserver_server_properties | Yes | 60 seconden |
-| SQLServerMemoryClerks | sys.dm_os_memory_clerks | sqlserver_memory_clerks | Yes | 60 seconden |
-| SQLServerSchedulers | sys.dm_os_schedulers | sqlserver_schedulers | No | NA |
-| SQLServerRequests | sys.dm_exec_sessions<br>sys.dm_exec_requests<br>sys.dm_exec_sql_text | sqlserver_requests | No | NA |
-| SQLServerVolumeSpace | sys.master_files | sqlserver_volume_space | Yes | 60 seconden |
-| SQLServerCpu | sys.dm_os_ring_buffers | sqlserver_cpu | Yes | 60 seconden |
+| SQLServerPerformanceCounters | sys.dm_os_performance_counters | sqlserver_performance | Ja | 60 seconden |
+| SQLServerWaitStatsCategorized | sys.dm_os_wait_stats | sqlserver_waitstats | Ja | 60 seconden | 
+| SQLServerDatabaseIO | sys.dm_io_virtual_file_stats<br>sys.master_files | sqlserver_database_io | Ja | 60 seconden |
+| SQLServerProperties | sys.dm_os_sys_info | sqlserver_server_properties | Ja | 60 seconden |
+| SQLServerMemoryClerks | sys.dm_os_memory_clerks | sqlserver_memory_clerks | Ja | 60 seconden |
+| SQLServerSchedulers | sys.dm_os_schedulers | sqlserver_schedulers | Nee | NA |
+| SQLServerRequests | sys.dm_exec_sessions<br>sys.dm_exec_requests<br>sys.dm_exec_sql_text | sqlserver_requests | Nee | NA |
+| SQLServerVolumeSpace | sys.master_files | sqlserver_volume_space | Ja | 60 seconden |
+| SQLServerCpu | sys.dm_os_ring_buffers | sqlserver_cpu | Ja | 60 seconden |
 | SQLServerAvailabilityReplicaStates | sys.dm_hadr_availability_replica_states<br>sys.availability_replicas<br>sys.availability_groups<br>sys.dm_hadr_availability_group_states | sqlserver_hadr_replica_states | | 60 seconden |
 | SQLServerDatabaseReplicaStates | sys.dm_hadr_database_replica_states<br>sys.availability_replicas | sqlserver_hadr_dbreplica_states | | 60 seconden |
 

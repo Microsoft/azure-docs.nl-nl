@@ -6,15 +6,15 @@ ms.service: virtual-machines
 ms.subservice: spot
 ms.workload: infrastructure-services
 ms.topic: how-to
-ms.date: 06/26/2020
+ms.date: 03/22/2021
 ms.author: cynthn
 ms.reviewer: jagaveer
-ms.openlocfilehash: 33172004ac4361de51b92389fbf56bd699f7124f
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 9a2ad2eb197af613919efa4414da1759cd47e2e7
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102096442"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104802740"
 ---
 # <a name="deploy-azure-spot-virtual-machines-using-azure-powershell"></a>Azure Spot Virtual Machines implementeren met behulp van Azure PowerShell
 
@@ -76,20 +76,53 @@ Get-AzVM -ResourceGroupName $resourceGroup | `
 
 ## <a name="simulate-an-eviction"></a>Een verwijdering simuleren
 
-U kunt een virtuele machine van Azure spot [simuleren](/rest/api/compute/virtualmachines/simulateeviction) om te testen hoe goed uw toepassing terugvalt op een plotselinge verwijdering. 
+U kunt een virtuele machine van Azure spot simuleren met behulp van REST, Power shell of de CLI om te testen hoe goed uw toepassing reageert op een plotselinge verwijdering.
 
-Vervang het volgende door uw gegevens: 
+In de meeste gevallen moet u de REST API [virtual machines simuleren](/rest/api/compute/virtualmachines/simulateeviction) gebruiken om te helpen bij het automatisch testen van toepassingen. Voor REST, een `Response Code: 204` betekent dat de gesimuleerde verwijdering is geslaagd. U kunt gesimuleerde verwijderingen combi neren met de [geplande gebeurtenis service](scheduled-events.md), om te automatiseren hoe uw app reageert wanneer de virtuele machine wordt verwijderd.
 
-- `subscriptionId`
-- `resourceGroupName`
-- `vmName`
+Als u geplande gebeurtenissen in actie wilt zien, kunt u [Azure vrijdag bekijken-azure Scheduled Events gebruiken om het onderhoud van vm's voor te bereiden](https://channel9.msdn.com/Shows/Azure-Friday/Using-Azure-Scheduled-Events-to-Prepare-for-VM-Maintenance).
 
 
-```rest
-POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}/simulateEviction?api-version=2020-06-01
+### <a name="quick-test"></a>Snelle test
+
+Voor een snelle test om te laten zien hoe een gesimuleerde verwijdering werkt, gaat u verder met het uitvoeren van query's op de geplande gebeurtenis service om te zien hoe deze eruitziet wanneer u een verwijdering simuleert met behulp van Power shell.
+
+De geplande gebeurtenis service is ingeschakeld voor uw service, de eerste keer dat u een aanvraag voor gebeurtenissen doet. 
+
+Extern in uw virtuele machine en open vervolgens een opdracht prompt. 
+
+Typ het volgende vanaf de opdracht prompt op uw virtuele machine:
+
+```
+curl -H Metadata:true http://169.254.169.254/metadata/scheduledevents?api-version=2019-08-01
 ```
 
-`Response Code: 204` betekent dat de gesimuleerde verwijdering is geslaagd. 
+Dit eerste antwoord kan Maxi maal twee minuten duren. Vanaf nu wordt de uitvoer bijna onmiddellijk weer gegeven.
+
+Op een computer waarop de AZ Power shell-module is geïnstalleerd (zoals uw lokale machine), simuleert u een verwijdering met [set-AzVM](https://docs.microsoft.com/powershell/module/az.compute/set-azvm). Vervang de naam van de resource groep en de virtuele machine door uw eigen naam. 
+
+```azurepowershell-interactive
+Set-AzVM -ResourceGroupName "mySpotRG" -Name "mySpotVM" -SimulateEviction
+```
+
+Als de aanvraag is uitgevoerd, is de reactie-uitvoer `Status: Succeeded` .
+
+Ga snel terug naar uw externe verbinding met de virtuele spot machine en zoek het Scheduled Events-eind punt opnieuw op. Herhaal de volgende opdracht totdat u een uitvoer krijgt die meer informatie bevat:
+
+```
+curl -H Metadata:true http://169.254.169.254/metadata/scheduledevents?api-version=2019-08-01
+```
+
+Wanneer de geplande gebeurtenis service het verwijderings bericht ontvangt, krijgt u een antwoord dat er ongeveer als volgt uitziet:
+
+```output
+{"DocumentIncarnation":1,"Events":[{"EventId":"A123BC45-1234-5678-AB90-ABCDEF123456","EventStatus":"Scheduled","EventType":"Preempt","ResourceType":"VirtualMachine","Resources":["myspotvm"],"NotBefore":"Tue, 16 Mar 2021 00:58:46 GMT","Description":"","EventSource":"Platform"}]}
+```
+
+U ziet dat `"EventType":"Preempt"` en de resource de VM-resource is `"Resources":["myspotvm"]` . 
+
+U kunt ook zien wanneer de virtuele machine wordt verwijderd door de waarde te controleren `"NotBefore"` . De virtuele machine wordt niet vóór de opgegeven tijd verwijderd `NotBefore` , zodat uw toepassing zonder problemen kan worden afgesloten.
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

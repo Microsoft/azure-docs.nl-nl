@@ -290,8 +290,10 @@
               href: application-proxy-understand-cors-issues.md
 - name: Naslaginformatie
   items:
-    - name: Veelgestelde vragen over toepassingsproxy's
+    - name: Veelgestelde vragen over app proxy
       href: application-proxy-faq.md
+    - name: Veelgestelde vragen over app-beheer certificaten
+      href: application-management-certs-faq.md
     - name: Versiegeschiedenis van toepassingsproxy
       href: application-proxy-release-version-history.md
     - name: Redenen dat apps verschijnen in ondernemingstoepassingen

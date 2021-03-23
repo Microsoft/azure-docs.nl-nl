@@ -9,12 +9,12 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 12/03/2019
 ms.custom: devx-track-csharp
-ms.openlocfilehash: c641e24a498a6263d6a7c2325eed099b75a82caa
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: f4817e53cb36bc96add19d855750a73a151b4891
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102426430"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104772294"
 ---
 # <a name="get-started-with-azure-cosmos-db-table-api-and-azure-table-storage-using-the-net-sdk"></a>Aan de slag met de Azure Cosmos DB Table-API en Azure Table Storage met behulp van de .NET-SDK
 [!INCLUDE[appliesto-table-api](includes/appliesto-table-api.md)]
@@ -179,4 +179,4 @@ U kunt zich nu aanmelden bij de Azure-portal en verifiëren dat de gegevens best
 U kunt nu verdergaan met de volgende zelfstudie om te leren hoe u gegevens migreert naar het Azure Cosmos DB Table-API-account. 
 
 > [!div class="nextstepaction"]
->[Gegevens migreren naar Azure Comsos DB Table-API](../cosmos-db/table-import.md)
+>[Gegevens migreren naar Azure Cosmos DB Table-API](../cosmos-db/table-import.md)

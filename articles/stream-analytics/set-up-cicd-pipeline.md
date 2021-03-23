@@ -7,12 +7,12 @@ ms.author: sujie
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 09/10/2020
-ms.openlocfilehash: f62b4c354ffa90bf1a03651fccf8780074344e46
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: dbd6a1a0c8643adc4918cc15e214e903dfb1ccb6
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103466397"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104775932"
 ---
 # <a name="use-azure-devops-to-create-a-cicd-pipeline-for-a-stream-analytics-job"></a>Azure DevOps gebruiken om een CI/CD-pijp lijn te maken voor een Stream Analytics-taak
 
@@ -20,13 +20,13 @@ In dit artikel leert u hoe u met Azure Stream Analytics CI/CD-hulpprogram ma's A
 
 ## <a name="commit-your-stream-analytics-project"></a>Uw Stream Analytics-project door voeren
 
-Voordat u begint, moet u uw complete Stream Analytics-projecten als bron bestanden door voeren in een [Azure DevOps](/azure/devops/user-guide/source-control) -opslag plaats. U kunt verwijzen naar deze [voorbeeld opslagplaats](https://dev.azure.com/wenyzou/azure-streamanalytics-cicd-demo) en [Stream Analytics project bron code](https://dev.azure.com/wenyzou/_git/azure-streamanalytics-cicd-demo?path=%2FmyASAProject) in azure-pijp lijnen.
+Voordat u begint, moet u uw complete Stream Analytics-projecten als bron bestanden door voeren in een [Azure DevOps](/azure/devops/user-guide/source-control) -opslag plaats. U kunt verwijzen naar deze [voorbeeld opslagplaats](https://dev.azure.com/ASA-CICD-sample/azure-streamanalytics-cicd-demo) en [Stream Analytics project bron code](https://dev.azure.com/ASA-CICD-sample/_git/azure-streamanalytics-cicd-demo) in azure-pijp lijnen.
 
 In de stappen in dit artikel wordt gebruikgemaakt van een Stream Analytics Visual Studio code-project. Als u een Visual Studio-project gebruikt, volgt u de stappen in [builds, tests en implementaties van een Azure stream Analytics-taak automatiseren met CI/cd-hulpprogram ma's](cicd-tools.md).
 
 ## <a name="create-a-build-pipeline"></a>Een build-pijplijn maken
 
-In deze sectie leert u hoe u een build-pijp lijn maakt. U kunt dit voor beeld van de [automatische build en test pijplijn](https://dev.azure.com/wenyzou/_git/azure-streamanalytics-cicd-demo?path=%2FmyASAProject) in azure DevOps.
+In deze sectie leert u hoe u een build-pijp lijn maakt. U kunt dit voor beeld van de [automatische build en test pijplijn](https://dev.azure.com/ASA-CICD-sample/azure-streamanalytics-cicd-demo/_build) in azure DevOps.
 
 1. Open een webbrowser en navigeer naar uw project in azure DevOps.  
 
@@ -155,7 +155,7 @@ Het bestand met de test samenvatting en Azure Resource Manager sjabloon bestande
 
 ## <a name="release-with-azure-pipelines"></a>Release met Azure-pijp lijnen
 
-In deze sectie leert u hoe u een release pijplijn maakt. U kunt verwijzen naar deze voorbeeld [release pijplijn](https://dev.azure.com/wenyzou/azure-streamanalytics-cicd-demo/_release?_a=releases&view=mine&definitionId=2&preserve-view=true) in azure DevOps.
+In deze sectie leert u hoe u een release pijplijn maakt. U kunt verwijzen naar deze voorbeeld [release pijplijn](https://dev.azure.com/ASA-CICD-sample/azure-streamanalytics-cicd-demo/_release?_a=releases&view=mine&definitionId=2) in azure DevOps.
 
 Open een webbrowser en navigeer naar uw Azure Stream Analytics Visual Studio code-project.
 

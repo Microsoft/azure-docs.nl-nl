@@ -1,18 +1,14 @@
 ---
 title: Werken met Defender for IoT-API's
 description: Gebruik een externe REST API om toegang te krijgen tot de gegevens die zijn gedetecteerd door Sens oren en beheer consoles en om acties uit te voeren met die gegevens.
-author: shhazam-ms
-manager: rkarlin
-ms.author: shhazam
 ms.date: 12/14/2020
 ms.topic: reference
-ms.service: azure
-ms.openlocfilehash: 73c5d1f31d9e0651ee710593aa4e1b68fe972560
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: d509f2674a61af1d0ab03892186526b1cb109eee
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100523240"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104778828"
 ---
 # <a name="defender-for-iot-sensor-and-management-console-apis"></a>Defender voor IoT-sensor-en beheer console-Api's
 
@@ -2238,7 +2234,7 @@ Matrix van JSON-objecten die apparaten vertegenwoordigen.
 
 #### <a name="possible-content-values"></a>Mogelijke inhouds waarden
 
-| Statuscode | Waarde van inhoud | Description |
+| Statuscode | Waarde van inhoud | Beschrijving |
 |--|--|--|
 | 200 | De aanvraag voor het bijwerken van de waarschuwing is voltooid. | De update aanvraag is voltooid. Geen opmerkingen. |
 | 200 | De waarschuwing is al verwerkt (**ingang**). | De waarschuwing is al afgehandeld op het moment dat er een ingangs aanvraag voor de waarschuwing is ontvangen.<br />De waarschuwing blijft **afgehandeld**. |

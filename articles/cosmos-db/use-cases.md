@@ -6,12 +6,12 @@ author: SnehaGunda
 ms.author: sngun
 ms.topic: conceptual
 ms.date: 05/21/2019
-ms.openlocfilehash: 04de6dce6cbab4dc0716ae841707b1d61d6bc375
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 4aed956fc7052f844080b830aa4cc3b2a07235a1
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "93073754"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104799391"
 ---
 # <a name="common-azure-cosmos-db-use-cases"></a>Gebruikelijke Azure Cosmos DB use cases
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -25,7 +25,7 @@ Na het lezen van dit artikel kunt u de volgende vragen beantwoorden:
 * Wat zijn de voor delen van het gebruik van Azure Cosmos DB als een gegevens Archief voor Internet of Things-systemen (IoT)?
 * Wat zijn de voor delen van het gebruik van Azure Cosmos DB voor web-en mobiele toepassingen?
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 [Azure Cosmos DB](../cosmos-db/introduction.md) is de snelle NoSQL-data base van micro soft met open-api's voor elke schaal. De service is zo ontworpen dat klanten hun door Voer en opslag voor een wille keurig aantal geografische regio's elastisch (en onafhankelijk) kunnen schalen. Azure Cosmos DB is momenteel de eerste wereld wijd gedistribueerde database service in de markt om uitgebreide [service overeenkomsten](https://azure.microsoft.com/support/legal/sla/cosmos-db/) te bieden die de door Voer, latentie, Beschik baarheid en consistentie omvatten.
 
@@ -48,7 +48,7 @@ IoT use cases delen meestal enkele patronen in de manier waarop ze gegevens opne
 
 :::image type="content" source="./media/use-cases/iot.png" alt-text="IoT-referentie architectuur Azure Cosmos DB" border="false":::
 
-De bursts van gegevens kunnen door Azure Event Hubs worden opgenomen, omdat de gegevens opname met een hoge doorvoer snelheid met lage latentie wordt verzonden. De gegevens die moeten worden verwerkt voor realtime inzicht kunnen worden afgebeeld in Azure Stream Analytics voor realtime analyses. Gegevens kunnen in Azure Cosmos DB worden geladen voor ad hoc query's. Zodra de gegevens in Azure Cosmos DB zijn geladen, kunnen de gegevens worden opgevraagd. Daarnaast kunnen nieuwe gegevens en wijzigingen aan bestaande gegevens worden gelezen voor wijzigings invoer. Wijzigings invoer is een permanent, alleen-toevoegen logboek waarmee wijzigingen in Cosmos-containers in sequentiële volg orde worden opgeslagen. De gegevens of alleen wijzigingen in gegevens in Azure Cosmos DB kunnen als referentie gegevens worden gebruikt als onderdeel van de analyse van real-time. Bovendien kunnen gegevens verder worden verfijnd en verwerkt door Azure Cosmos DB gegevens te koppelen aan HDInsight voor Pig, Hive of het toewijzen/verminderen van taken.  Verfijnde gegevens worden vervolgens teruggeladen naar Azure Cosmos DB voor rapportage.   
+De bursts van gegevens kunnen door Azure Event Hubs worden opgenomen, omdat de gegevens opname met een hoge doorvoer snelheid met lage latentie wordt verzonden. De gegevens die moeten worden verwerkt voor realtime inzicht kunnen worden afgebeeld in Azure Stream Analytics voor realtime analyses. Gegevens kunnen in Azure Cosmos DB worden geladen voor ad hoc query's. Zodra de gegevens in Azure Cosmos DB zijn geladen, kunnen de gegevens worden opgevraagd. Daarnaast kunnen nieuwe gegevens en wijzigingen aan bestaande gegevens worden gelezen voor wijzigings invoer. Wijzigings invoer is een permanent, alleen-toevoegen logboek waarmee wijzigingen in Cosmos-containers in sequentiële volg orde worden opgeslagen. Vervolgens kunnen alle gegevens of alleen wijzigingen in gegevens in Azure Cosmos DB als referentie gegevens worden gebruikt als onderdeel van de analyse van real-time. Bovendien kunnen gegevens verder worden verfijnd en verwerkt door Azure Cosmos DB gegevens te koppelen aan HDInsight voor Pig, Hive of het toewijzen/verminderen van taken.  Verfijnde gegevens worden vervolgens teruggeladen naar Azure Cosmos DB voor rapportage.   
 
 Voor een voor beeld van een IoT-oplossing met Azure Cosmos DB, Event hubs en Storm raadpleegt u de [opslag plaats hdinsight-Storm-voor beelden op github](https://github.com/hdinsight/hdinsight-storm-examples/).
 

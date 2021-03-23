@@ -2,14 +2,14 @@
 title: VM-grootten en-installatie kopieën kiezen voor Pools
 description: Kiezen uit de beschik bare VM-grootten en versies van besturings systemen voor reken knooppunten in Azure Batch Pools
 ms.topic: conceptual
-ms.date: 03/08/2021
+ms.date: 11/24/2020
 ms.custom: seodec18
-ms.openlocfilehash: 42b8743fac6a6c64e98271490f0bfc4671fa7698
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: f108e1347ef6c3c7df45c4b3d807a754f4867097
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102455192"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104800479"
 ---
 # <a name="choose-a-vm-size-and-image-for-compute-nodes-in-an-azure-batch-pool"></a>Een VM-grootte en-afbeelding kiezen voor reken knooppunten in een Azure Batch pool
 
@@ -35,11 +35,13 @@ Batch-Pools in de virtuele-machine configuratie ondersteunen bijna alle [VM-groo
 | DC | Niet ondersteund |
 | Dv2, DSv2 | Alle grootten |
 | Dv3, Dsv3 | Alle grootten |
-| Dav4, Dasv4 | Alle grootten |
+| Dav4 | Alle grootten |
+| Dasv4 | Alle grootten |
 | Ddv4, Ddsv4 |  Alle grootten |
 | Dv4, Dsv4 | Niet ondersteund |
 | Ev3, Esv3 | Alle grootten, met uitzonde ring van E64is_v3 |
-| Eav4, Easv4 | Alle grootten |
+| Eav4 | Alle grootten |
+| Easv4 | Alle grootten |
 | Edv4, Edsv4 |  Alle grootten |
 | Ev4, Esv4 | Niet ondersteund |
 | F, FS | Alle grootten |
@@ -56,7 +58,7 @@ Batch-Pools in de virtuele-machine configuratie ondersteunen bijna alle [VM-groo
 | NC | Alle grootten |
 | NCv2 | Alle grootten |
 | NCv3 | Alle grootten |
-| NCasT4_v3 | Alle grootten |
+| NCasT4_v3 | Geen-nog niet beschikbaar |
 | ND | Alle grootten |
 | NDv2 | Geen-nog niet beschikbaar |
 | NV | Alle grootten |
@@ -100,6 +102,8 @@ Gebruik een van de volgende Api's om een lijst op te halen met Windows-en Linux 
 - Batch-service REST API: [ondersteunde installatie kopieën weer geven](/rest/api/batchservice/account/listsupportedimages)
 - Power shell: [Get-AzBatchSupportedImage](/powershell/module/az.batch/get-azbatchsupportedimage)
 - Azure CLI: [AZ-batch pool ondersteund-installatie kopieën](/cli/azure/batch/pool/supported-images)
+
+Het wordt ten zeerste aanbevolen om te voor komen dat installatie kopieën met aanstaande batch ondersteuning EOL-datums. Deze datums kunnen worden gedetecteerd via de [ `ListSupportedImages` API](https://docs.microsoft.com/rest/api/batchservice/account/listsupportedimages), [Power shell](https://docs.microsoft.com/powershell/module/az.batch/get-azbatchsupportedimage)of [Azure cli](https://docs.microsoft.com/cli/azure/batch/pool/supported-images). Raadpleeg de [hand leiding voor batch best practices](best-practices.md) voor meer informatie over het selecteren van een VM-installatie kopie van een batch-pool.
 
 ## <a name="next-steps"></a>Volgende stappen
 

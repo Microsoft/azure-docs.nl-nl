@@ -153,6 +153,8 @@
               href: ../common/network-routing-preference.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Gegevensbeveiliging
           items:
+            - name: Overzicht
+              href: data-protection-overview.md
             - name: Containers voorlopig verwijderen
               href: soft-delete-container-overview.md
             - name: Versiebeheer

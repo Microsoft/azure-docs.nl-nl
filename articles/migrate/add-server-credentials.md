@@ -1,28 +1,28 @@
 ---
-title: Server referenties opgeven voor het detecteren van toepassingen, afhankelijkheden en SQL Server instanties en data bases
+title: Server referenties opgeven voor het detecteren van software-inventaris, afhankelijkheden en SQL Server instanties en data bases
 description: Meer informatie over het opgeven van Server referenties op het configuratie beheer van het apparaat
-author: vikram1988
-ms.author: vibansa
+author: vineetvikram
+ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: how-to
-ms.date: 01/26/2021
-ms.openlocfilehash: 2359855ce3949eb022a03f6e8e2dbc05f98907db
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.date: 03/18/2021
+ms.openlocfilehash: 990ca661eb6ec17c7f8aca246c15f89fcf8975a8
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102054593"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104785220"
 ---
-# <a name="provide-server-credentials-to-discover-applications-dependencies-and-sql-server-instances-and-databases"></a>Server referenties opgeven voor het detecteren van toepassingen, afhankelijkheden en SQL Server instanties en data bases
+# <a name="provide-server-credentials-to-discover-software-inventory-dependencies-and-sql-server-instances-and-databases"></a>Server referenties opgeven voor het detecteren van software-inventaris, afhankelijkheden en SQL Server instanties en data bases
 
 In dit artikel vindt u informatie over het toevoegen van meerdere Server referenties op het configuratie beheer van het apparaat om software-inventarisatie uit te voeren (geïnstalleerde toepassingen te detecteren), afhankelijkheids analyse zonder agents en detectie van SQL Server instanties en data bases.
 
 > [!Note]
 > Detectie en evaluatie van SQL Server instanties en data bases die worden uitgevoerd in uw VMware-omgeving is nu beschikbaar als preview-versie. Als u deze functie wilt proberen, gebruikt u [**deze koppeling**](https://aka.ms/AzureMigrate/SQL) om een project te maken in de regio **Australië - oost**. Als u al een project in Australië-oost hebt en u deze functie wilt proberen, zorgt u ervoor dat u aan deze [**vereisten**](how-to-discover-sql-existing-project.md) voldoet in de portal.
 
-Het [Azure migrate apparaat](migrate-appliance.md) is een licht gewicht dat door Azure migrate wordt gebruikt: Server evaluatie voor het detecteren van on-premises servers die in VMware-omgeving worden uitgevoerd en het verzenden van meta gegevens voor Server configuratie en-prestaties naar Azure. Het apparaat kan ook worden gebruikt voor het uitvoeren van software-inventarisatie, afhankelijkheids analyse zonder agent en detectie van SQL Server instanties en data bases.
+Het [Azure migrate apparaat](migrate-appliance.md) is een licht gewicht dat door Azure migrate wordt gebruikt: detectie en evaluatie om on-premises servers in VMware-omgeving te detecteren en de meta gegevens van de server configuratie en-prestaties naar Azure te verzenden. Het apparaat kan ook worden gebruikt voor het uitvoeren van software-inventarisatie, afhankelijkheids analyse zonder agent en detectie van SQL Server instanties en data bases.
 
-Als u gebruik wilt maken van deze functies, kunt u de referenties van de server opgeven door de volgende stappen uit te voeren. Het apparaat zal proberen de referenties automatisch toe te wijzen aan de servers om de detectie functies uit te voeren.
+Als u deze functies wilt gebruiken, kunt u de referenties van de server opgeven door de volgende stappen uit te voeren. Het apparaat zal proberen de referenties automatisch toe te wijzen aan de servers om de detectie functies uit te voeren.
 
 ## <a name="add-credentials-for-servers-running-in-vmware-environment"></a>Referenties toevoegen voor servers die worden uitgevoerd in de VMware-omgeving
 
@@ -34,7 +34,7 @@ De typen Server referenties die worden ondersteund, worden weer gegeven in de on
 
 Type referenties | Beschrijving
 --- | ---
-**Domein referenties** | U kunt **domein referenties** toevoegen door de optie te selecteren in de vervolg keuzelijst in het dialoog venster **referenties toevoegen** modaal. <br/><br/> Om domein referenties op te geven, moet u de **domein naam** opgeven die moet worden opgegeven in de FQDN-indeling (bijvoorbeeld Prod.Corp.contoso.com). <br/><br/> U moet ook een beschrijvende naam opgeven voor referenties, gebruikers naam en wacht woord. <br/><br/> De domein referenties die worden toegevoegd, worden automatisch gevalideerd voor authenticiteit met de Active Directory van het domein. Dit is om te voor komen dat er account vergrendelingen worden uitgevoerd wanneer het apparaat de domein referenties probeert toe te wijzen aan gedetecteerde servers. <br/><br/> Het apparaat zal niet proberen om de domein referenties te koppelen waarvoor de validatie is mislukt. U moet ten minste één domein referentie hebben gevalideerd of ten minste één niet-domein referentie hebben om door te gaan met de software-inventarisatie.<br/><br/>De domein referenties die automatisch worden toegewezen aan de Windows-servers, worden gebruikt voor het uitvoeren van software-inventarisatie en kunnen ook worden gebruikt voor het detecteren van SQL Server instanties en data bases _(als u de Windows-verificatie modus hebt geconfigureerd op uw SQL-servers)_.<br/> Meer [informatie](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/authentication-in-sql-server) over de typen verificatie modi die worden ondersteund op SQL-servers.
+**Domein referenties** | U kunt **domein referenties** toevoegen door de optie te selecteren in de vervolg keuzelijst in het dialoog venster **referenties toevoegen** modaal. <br/><br/> Om domein referenties op te geven, moet u de **domein naam** opgeven die moet worden opgegeven in de FQDN-indeling (bijvoorbeeld Prod.Corp.contoso.com). <br/><br/> U moet ook een beschrijvende naam opgeven voor de referenties, de gebruikers naam en het wacht woord. <br/><br/> De domein referenties die worden toegevoegd, worden automatisch gevalideerd voor authenticiteit met de Active Directory van het domein. Dit is om te voor komen dat er account vergrendelingen worden uitgevoerd wanneer het apparaat de domein referenties probeert toe te wijzen aan gedetecteerde servers. <br/><br/> Het apparaat zal niet proberen om de domein referenties te koppelen waarvoor de validatie is mislukt. U moet ten minste één domein referentie hebben gevalideerd of ten minste één niet-domein referentie hebben om door te gaan met de software-inventarisatie.<br/><br/>De domein referenties die automatisch worden toegewezen aan de Windows-servers, worden gebruikt voor het uitvoeren van software-inventarisatie en kunnen ook worden gebruikt voor het detecteren van SQL Server instanties en data bases _(als u de Windows-verificatie modus hebt geconfigureerd op uw SQL-servers)_.<br/> Meer [informatie](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/authentication-in-sql-server) over de typen verificatie modi die worden ondersteund op SQL-servers.
 **Niet-domein referenties (Windows/Linux)** | U kunt **Windows (niet-domein)** of **Linux (niet-domein)** toevoegen door de optie vereist te selecteren in de vervolg keuzelijst van het dialoog venster **referenties toevoegen** modaal. <br/><br/> U moet een beschrijvende naam opgeven voor de referenties, de gebruikers naam en het wacht woord.
 **Verificatie referenties SQL Server** | U kunt **SQL Server verificatie** referenties toevoegen door de optie te selecteren in de vervolg keuzelijst in het dialoog venster **referenties toevoegen** modaal. <br/><br/> U moet een beschrijvende naam opgeven voor de referenties, de gebruikers naam en het wacht woord. <br/><br/> U kunt dit type referenties toevoegen om SQL Server instanties en data bases te detecteren die in uw VMware-omgeving worden uitgevoerd, als u de SQL Server-verificatie modus hebt geconfigureerd op uw SQL-servers.<br/> Meer [informatie](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/authentication-in-sql-server) over de typen verificatie modi die worden ondersteund op SQL-servers.<br/><br/> U moet ten minste één domein referentie hebben gevalideerd of ten minste één Windows-Referentie (niet-domein), zodat het apparaat de software-inventaris kan volt ooien om SQL te detecteren die op de servers is geïnstalleerd voordat de SQL Server verificatie referenties worden gebruikt om de SQL Server instanties en data bases te detecteren.
 
@@ -55,7 +55,7 @@ Functie | Windows-referenties niet op te geven | Linux-referenties
 - Het is raadzaam om een toegewezen domein gebruikers account met de [vereiste machtigingen](add-server-credentials.md#required-permissions)te maken. Dit is de scope voor het uitvoeren van software-inventaris, afhankelijkheids analyse zonder agent en detectie van SQL Server instanties en data bases op de gewenste servers.
 - Het wordt aanbevolen om ten minste één geslaagde domein referentie of ten minste één niet-domein referentie op te geven om software-inventaris te initiëren.
 - Als u SQL Server instanties en data bases wilt detecteren, kunt u domein referenties opgeven als u de Windows-verificatie modus hebt geconfigureerd op uw SQL-servers.
--  U kunt ook SQL Server verificatie referenties opgeven als u de SQL Server-verificatie modus hebt geconfigureerd op uw SQL-servers, maar u wordt aangeraden ten minste één geldige domein referentie of ten minste één Windows-Referentie (niet-domein) op te geven, zodat het apparaat de software-inventaris kan volt ooien.
+- U kunt ook SQL Server verificatie referenties opgeven als u de SQL Server-verificatie modus hebt geconfigureerd op uw SQL-servers, maar u wordt aangeraden ten minste één geldige domein referentie of ten minste één Windows-Referentie (niet-domein) op te geven, zodat het apparaat de software-inventaris kan volt ooien.
 
 ## <a name="credentials-handling-on-appliance"></a>Afhandeling van referenties op apparaat
 

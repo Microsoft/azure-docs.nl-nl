@@ -8,20 +8,30 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/17/2020
+ms.date: 03/22/2021
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: a42cb97d123d0943dab02bf1f70fcf306d6bcd96
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 21da8f79772d9648836bedec89cb5d7014486dc6
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "97629120"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104798356"
 ---
 # <a name="configure-password-change-using-custom-policies-in-azure-active-directory-b2c"></a>Wachtwoord wijzigingen configureren met aangepast beleid in Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-choose-user-flow-or-custom-policy](../../includes/active-directory-b2c-choose-user-flow-or-custom-policy.md)]
+
+In Azure Active Directory B2C (Azure AD B2C) kunt u gebruikers die zijn aangemeld met een lokaal account, in staat stellen hun wacht woord te wijzigen zonder dat ze hun identiteit moeten bewijzen via e-mail verificatie. De stroom voor het wijzigen van het wacht woord bestaat uit de volgende stappen:
+
+1. De gebruiker meldt zich aan bij het lokale account. Als de sessie nog steeds actief is, wordt de gebruiker door Azure AD B2C geautoriseerd en wordt de volgende stap overgeslagen.
+1. De gebruiker controleert het **oude wacht woord**, waarna het **nieuwe wacht woord** wordt gemaakt en bevestigd.
+
+![Wachtwoord wijzigings stroom](./media/add-password-change-policy/password-change-flow.png)  
+
+> [!TIP]
+> Met de stroom voor wachtwoord wijziging kunnen gebruikers hun wacht woord alleen wijzigen als de gebruiker het wacht woord kent en dit wil wijzigen. U wordt aangeraden om [selfservice voor wachtwoord herstel](add-password-reset-policy.md) ook in te scha kelen om aanvragen te ondersteunen waarbij de gebruiker het wacht woord vergeet.
 
 ::: zone pivot="b2c-user-flow"
 
@@ -30,15 +40,6 @@ ms.locfileid: "97629120"
 ::: zone-end
 
 ::: zone pivot="b2c-custom-policy"
-
-[!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
-
-In Azure Active Directory B2C (Azure AD B2C) kunt u gebruikers die zijn aangemeld met een lokaal account, hun wacht woord wijzigen zonder dat ze hun authenticiteit moeten bewijzen via e-mail verificatie. De stroom voor het wijzigen van het wacht woord bestaat uit de volgende stappen:
-
-1. Meld u aan met een lokaal account. Als de sessie nog steeds actief is, wordt de gebruiker door Azure AD B2C geautoriseerd en wordt de volgende stap overs Laan.
-1. Gebruikers moeten het **oude wacht woord** controleren, maken en het **nieuwe wacht woord** bevestigen.
-
-![Wachtwoord wijzigings stroom](./media/add-password-change-policy/password-change-flow.png)
 
 ## <a name="prerequisites"></a>Vereisten
 

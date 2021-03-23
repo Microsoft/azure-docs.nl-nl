@@ -3,16 +3,16 @@ title: Inleiding tot Data Factory, een gegevensintegratieservice
 description: 'Meer informatie over Azure Data Factory: een cloudgebaseerde service voor gegevensintegratie waarmee de verplaatsing en transformatie van gegevens wordt beheerd en geautomatiseerd.'
 author: dcstwh
 ms.author: weetok
-ms.reviewer: maghan
+ms.reviewer: jburchel
 ms.service: data-factory
 ms.topic: overview
 ms.date: 01/22/2018
-ms.openlocfilehash: 1cee5f92af4e23a6bc0d195bc13bc3f11f53443d
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 220c1969055ffaa5d1bea41ab547efd4596f8a20
+ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100382970"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104786461"
 ---
 # <a name="introduction-to-azure-data-factory"></a>Inleiding tot Azure Data Factory 
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/30/2019
 ms.author: Zhchia
-ms.openlocfilehash: f57114fc4cb76c500cc422966635273c3a923046
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 1891af9acae2b976a18f68983693a7df559b6476
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96181614"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104800763"
 ---
 # <a name="tutorial-configure-ringcentral-for-automatic-user-provisioning"></a>Zelfstudie: RingCentral configureren voor automatische inrichting van gebruikers
 
@@ -46,15 +46,7 @@ In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan d
 
 ## <a name="step-2-configure-ringcentral-to-support-provisioning-with-azure-ad"></a>Stap 2. RingCentral configureren om ondersteuning te bieden voor inrichting met Azure AD
 
-1. Meld u aan bij uw [RingCentral-beheerconsole](https://login.ringcentral.com/sw.html). Navigeer naar **Hulpprogramma's > Directory-integratie**.
-
-    ![RingCentral-beheerconsole](media/ringcentral-provisioning-tutorial/admin.png)
-
-2.  Kies **SCIM** onder **Directory-provider selecteren**. (In de toekomst is er een optie met de naam Azure Active Directory). Klik op **SCIM-service inschakelen**.
-
-    ![RingCentral SCIM toevoegen](media/ringcentral-provisioning-tutorial/scim.png)
-
-3.  Neem contact op met het ondersteuningsteam van RingCentral via matthew.hunt@ringcentral.com voor een **SCIM-verificatietoken**. Deze waarde wordt ingevoerd in het veld Token voor geheim op het tabblad Inrichten van de RingCentral-toepassing in Azure Portal.
+Een [RingCentral](https://www.ringcentral.com/office/plansandpricing.html) -beheerders account is vereist om te autoriseren in het gedeelte beheerders referenties in stap 5.
 
 > [!NOTE]
 > Als u licenties aan gebruikers wilt toewijzen, raadpleegt u [hier](https://support.ringcentral.com/s/article/5-10-Adding-Extensions-via-Web?language) de videolink.
@@ -92,11 +84,15 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 4. Stel de **Inrichtingsmodus** in op **Automatisch**.
 
-    ![Schermopname van de vervolgkeuzelijst Inrichtingsmodus met de optie Automatisch gemarkeerd.](common/provisioning-automatic.png)
+    ![Schermopname van de vervolgkeuzelijst 'Inrichtingsmodus' met de optie 'Automatisch' gemarkeerd.](common/provisioning-automatic.png)
 
-5. Voer onder de sectie **Referenties voor beheerder** `https://platform.ringcentral.com/scim/v2` in bij **Tenant-URL**. Voer de waarde van het **SCIM-verificatietoken** in die eerder in **Token voor geheim** is opgehaald. Klik op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met RingCentral. Als de verbinding mislukt, moet u controleren of uw RingCentral-account beheerdersmachtigingen heeft. Probeer het daarna opnieuw.
+5. Klik onder de sectie **Referenties voor beheerder** op **Autoriseren**. U wordt omgeleid naar de aanmeldings pagina van RingCentral. Voer uw e-mail adres en telefoon nummer en wacht woord in en klik op de knop **Aanmelden** . Klik op **autoriseren** op de pagina **toegangs aanvraag** RingCentral. Klik op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met RingCentral. Als de verbinding mislukt, moet u controleren of uw RingCentral-account beheerdersmachtigingen heeft. Probeer het daarna opnieuw.
 
-    ![Schermopname van de tekstvelden Tenant-URL en Token voor geheim met de optie Verbinding testen gemarkeerd.](./media/ringcentral-provisioning-tutorial/provisioning.png)
+   ![AAD](./media/ringcentral-provisioning-tutorial/admincredentials.png)
+
+   ![Access](./media/ringcentral-provisioning-tutorial/authorize.png)
+
+   ![Autoriseren](./media/ringcentral-provisioning-tutorial/accessrequest.png)
 
 6. Voer in het veld **E-mailadres voor meldingen** het e-mailadres in van een persoon of groep die de inrichtingsfoutmeldingen zou moeten ontvangen en schakel het selectievakje **Een e-mailmelding verzenden als een fout optreedt** in.
 
@@ -151,6 +147,7 @@ Nadat u het inrichten hebt geconfigureerd, gebruikt u de volgende resources om u
 ## <a name="change-log"></a>Wijzigingenlogboek
 
 * 10-09-2020 - ondersteuning voor kenmerken displayName en manager verwijderd.
+* 03/15/2021-de autorisatie methode is bijgewerkt van het permanente Bearer-token naar de OAuth-code subsidie stroom.
 
 ## <a name="additional-resources"></a>Aanvullende resources
 

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c30ad26f079e6353dc4763b9ae968c33882d8ab6
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: cfea22c10d98adf3b8c89491c248bf7a934ba1ed
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96029344"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104798881"
 ---
 # <a name="device-identity-and-desktop-virtualization"></a>Apparaat-id en desktop-virtualisatie
 
@@ -79,6 +79,8 @@ Beheerders moeten verwijzen naar de volgende artikelen, op basis van hun identit
 - [Hybride Azure Active Directory-koppeling configureren voor federatieve omgeving](hybrid-azuread-join-federated-domains.md)
 - [Hybride Azure Active Directory-deelname configureren voor een beheerde omgeving](hybrid-azuread-join-managed-domains.md)
 
+### <a name="non-persistent-vdi"></a>Niet-permanente VDI
+
 Bij het implementeren van niet-persistente VDI raadt micro soft aan dat IT-beheerders de onderstaande instructies implementeren. Als u dit niet doet, zal uw directory veel verouderde hybride Azure AD-apparaten hebben die zijn geregistreerd op basis van uw niet-permanente VDI-platform, wat resulteert in een verhoogde druk op het quotum van uw Tenant en het risico van een onderbreking van de service vanwege het overschrijden van de Tenant quota.
 
 - Als u afhankelijk bent van het hulp programma voor systeem voorbereiding (sysprep.exe) en als u een installatie kopie van vóór Windows 10 1809 gebruikt, moet u ervoor zorgen dat de installatie kopie niet afkomstig is van een apparaat dat al is geregistreerd bij Azure AD als hybride lid van Azure AD.
@@ -92,6 +94,15 @@ Bij het implementeren van niet-persistente VDI raadt micro soft aan dat IT-behee
 - Definieer en implementeer het proces voor het [beheren van verouderde apparaten](manage-stale-devices.md).
    - Zodra u een strategie hebt voor het identificeren van uw niet-permanente hybride Azure AD-apparaten (zoals het voor voegsel computer weergave naam), moet u de opschoning van deze apparaten agressief maken om ervoor te zorgen dat uw Directory niet wordt gebruikt voor het gebruik van veel verouderde apparaten.
    - Voor niet-permanente VDI-implementaties op Windows huidige en lagere niveaus moet u apparaten met **ApproximateLastLogonTimestamp** ouder dan 15 dagen verwijderen.
+
+### <a name="persistent-vdi"></a>Permanente VDI
+
+Bij het implementeren van permanente VDI raadt micro soft aan dat IT-beheerders de onderstaande instructies implementeren. Als u dit niet doet, worden de implementatie-en verificatie problemen veroorzaakt. 
+
+- Als u afhankelijk bent van het hulp programma voor systeem voorbereiding (sysprep.exe) en als u een installatie kopie van vóór Windows 10 1809 gebruikt, moet u ervoor zorgen dat de installatie kopie niet afkomstig is van een apparaat dat al is geregistreerd bij Azure AD als hybride lid van Azure AD.
+- Als u een moment opname van een virtuele machine (VM) vertrouwt om extra Vm's te maken, moet u ervoor zorgen dat de moment opname niet afkomstig is van een VM die al is geregistreerd bij Azure AD als hybride Azure AD-deelname.
+
+Daarnaast raden wij u aan om het proces voor het [beheren van verouderde apparaten](manage-stale-devices.md)te implementeren. Dit zorgt ervoor dat uw Directory niet wordt gebruikt met veel verouderde apparaten als u uw Vm's regel matig opnieuw instelt.
  
 ## <a name="next-steps"></a>Volgende stappen
 

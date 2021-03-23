@@ -10,16 +10,16 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: pim
 ms.topic: overview
-ms.date: 09/29/2020
+ms.date: 03/19/2021
 ms.author: curtand
 ms.custom: pim ; azuread-video-2020
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c3c7003ce3e8c65f6fdb7f3d847947114aee251f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: d42611705b7756ed2fd0c7a488339f0f638fb5b4
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "92370182"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104802162"
 ---
 # <a name="what-is-azure-ad-privileged-identity-management"></a>Wat is Azure AD Privileged Identity Management?
 
@@ -92,8 +92,8 @@ Bekijk de volgende terminologie voor een beter begrip van Privileged Identity Ma
 | geactiveerd | Status | Een gebruiker die in aanmerking komt voor een roltoewijzing, de acties voor het activeren van de rol heeft uitgevoerd en nu actief is.  Wanneer de rol is geactiveerd, kan de gebruiker deze gebruiken gedurende een vooraf geconfigureerde periode voordat ze de rol opnieuw moeten activeren. |
 | permanent in aanmerking komend | Duur | Een roltoewijzing waarbij een gebruiker altijd in aanmerking komt om de rol te activeren. |
 | permanent actief | Duur | Een roltoewijzing waarbij een gebruiker de rol altijd kan gebruiken zonder acties te hoeven uitvoeren. |
-| verlopen - in aanmerking komend | Duur | Een roltoewijzing waarbij een gebruiker de rol binnen een opgegeven begin- en datum mag activeren. |
-| verlopen - actief | Duur | Een roltoewijzing waarbij een gebruiker de rol kan gebruiken zonder acties te hoeven uitvoeren binnen een opgegeven begin- en einddatum. |
+| tijdgebonden tijd in aanmerking komend | Duur | Een roltoewijzing waarbij een gebruiker in aanmerking komt voor het activeren van de rol alleen binnen de begin-en eind datum. |
+| tijd gebonden actief | Duur | Een roltoewijzing waarbij een gebruiker de rol alleen mag gebruiken binnen de begin-en eind datum. |
 | Just-in-time-toegang (JIT) |  | Een model waarbij gebruikers tijdelijke machtigingen ontvangen om bepaalde taken uit te mogen voeren, waardoor kwaadwillende of onbevoegde gebruikers geen toegang kunnen krijgen na het verlopen van deze machtigingen. Toegang wordt alleen verleend wanneer gebruikers deze nodig hebben. |
 | Principe van toegang met minimale bevoegdheden |  | Een aanbevolen beveiligingsprocedure waarbij alle gebruikers enkel de minimale bevoegdheden krijgt toegewezen die nodig zijn om de taken uit te voeren waarvoor ze bevoegd zijn. Met deze procedure wordt het aantal globale beheerders tot het minimum beperkt en worden er specifieke beheerdersrollen gebruikt voor bepaalde scenario's. |
 

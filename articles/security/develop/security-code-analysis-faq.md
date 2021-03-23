@@ -4,7 +4,7 @@ description: Meer informatie over de uitbrei ding voor de analyse van beveiligin
 author: sukhans
 manager: sukhans
 ms.author: terrylan
-ms.date: 07/31/2019
+ms.date: 03/22/2021
 ms.topic: article
 ms.service: security
 services: azure
@@ -12,14 +12,18 @@ ms.assetid: 521180dc-2cc9-43f1-ae87-2701de7ca6b8
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.openlocfilehash: b851e52141cf93aba4aab9b2768658f0aac4660f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 3bff42b9b82104909c79b75c7b1de51c9ddb6e0d
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98879912"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104801312"
 ---
 # <a name="frequently-asked-questions"></a>Veelgestelde vragen
+
+> [!Note]
+> Met ingang van 1 maart 2022 wordt de uitbrei ding voor micro soft security code Analysis (MSCA) buiten gebruik gesteld. Bestaande MSCA-klanten behouden hun toegang tot MSCA tot en met 1 maart 2022. Raadpleeg de OWASP- [Hulpprogram ma's](https://owasp.org/www-community/Source_Code_Analysis_Tools) voor het analyseren van de bron code voor alternatieve opties in azure DevOps. Om klanten te migreren naar GitHub, kunt u de [geavanceerde beveiliging van github](https://docs.github.com/github/getting-started-with-github/about-github-advanced-security)bekijken.
+
 Hebt u vragen? Bekijk de volgende veelgestelde vragen voor meer informatie.
 
 ## <a name="general-faq"></a>Veelgestelde algemene vragen

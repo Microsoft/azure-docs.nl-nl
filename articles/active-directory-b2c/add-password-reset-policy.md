@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/08/2021
+ms.date: 03/22/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 8b3224333a3915b7827242004d1dec0f4695f479
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: f451d08dfbde643d91705f54296e9757a51c9d88
+ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104581912"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104798390"
 ---
 # <a name="set-up-a-password-reset-flow-in-azure-active-directory-b2c"></a>Een wachtwoord herstel stroom instellen in Azure Active Directory B2C
 
@@ -35,6 +35,9 @@ Met de [traject registreren en aanmelden](add-sign-up-and-sign-in-policy.md) kun
 ![Wachtwoord herstel stroom](./media/add-password-reset-policy/password-reset-flow.png)
 
 De stroom voor het opnieuw instellen van wacht woorden is van toepassing op lokale accounts in Azure AD B2C die gebruikmaken van een [e-mail adres](identity-provider-local.md#email-sign-in) of [gebruikers naam](identity-provider-local.md#username-sign-in) met een wacht woord voor aanmelden.
+
+> [!TIP]
+> Met de self-service voor wachtwoord herstel kunnen gebruikers hun wacht woord wijzigen wanneer de gebruiker het wacht woord vergeet en wil het opnieuw instellen. U kunt een [wijzigings stroom voor wacht woorden](add-password-change-policy.md) configureren ter ondersteuning van gevallen waarin een gebruiker het wacht woord kent en wil wijzigen.
 
 Een veelvoorkomende procedure na de migratie van gebruikers naar Azure AD B2C met wille keurige wacht woorden is dat de gebruikers hun e-mail adressen moeten controleren en hun wacht woord opnieuw kunnen instellen tijdens de eerste aanmelding. Het is ook gebruikelijk om de gebruiker te dwingen hun wacht woord opnieuw in te stellen nadat een beheerder hun wacht woord heeft gewijzigd. Zie [geforceerd wacht woord opnieuw instellen](force-password-reset.md) om deze functie in te scha kelen.
 

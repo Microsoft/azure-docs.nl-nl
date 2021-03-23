@@ -1,26 +1,26 @@
 ---
-title: Java script gebruiken voor het beheren van gegevens in Azure Data Lake Storage Gen2
+title: Java script (Node.js) gebruiken voor het beheren van gegevens in Azure Data Lake Storage Gen2
 description: Gebruik Azure Storage Data Lake-client bibliotheek voor Java script voor het beheren van mappen en bestanden in opslag accounts waarvoor een hiërarchische naam ruimte is ingeschakeld.
 author: normesta
 ms.service: storage
-ms.date: 02/17/2021
+ms.date: 03/19/2021
 ms.author: normesta
 ms.topic: how-to
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: prishet
 ms.custom: devx-track-js
-ms.openlocfilehash: 8ce5df805ddce6cdb52e4225bb77e2d8dfa9b9b0
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 678af3e2fb4111593ece0cc2cdf3811cf0e793a8
+ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100650164"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104774759"
 ---
-# <a name="use-javascript-to-manage-directories-and-files-in-azure-data-lake-storage-gen2"></a>Java script gebruiken voor het beheren van mappen en bestanden in Azure Data Lake Storage Gen2
+# <a name="use-javascript-sdk-in-nodejs-to-manage-directories-and-files-in-azure-data-lake-storage-gen2"></a>Java script SDK in Node.js gebruiken voor het beheren van mappen en bestanden in Azure Data Lake Storage Gen2
 
-In dit artikel leest u hoe u Java script gebruikt voor het maken en beheren van mappen en bestanden in opslag accounts met een hiërarchische naam ruimte.
+In dit artikel leest u hoe u Node.js gebruikt voor het maken en beheren van mappen en bestanden in opslag accounts met een hiërarchische naam ruimte.
 
-Zie [Java script gebruiken voor het beheren van acl's in azure data Lake Storage Gen2](data-lake-storage-acl-javascript.md)voor meer informatie over het ophalen, instellen en bijwerken van de acl's (toegangs beheer lijsten) van mappen en bestanden.
+Zie [Java script SDK gebruiken in Node.js voor het beheren van acl's in azure data Lake Storage Gen2](data-lake-storage-acl-javascript.md)voor meer informatie over het ophalen, instellen en bijwerken van de acl's (toegangs beheer lijsten) van mappen en bestanden.
 
 [Pakket (node Package Manager)](https://www.npmjs.com/package/@azure/storage-file-datalake)  |  Voor [beelden](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-file-datalake/samples)  |  [Feedback geven](https://github.com/Azure/azure-sdk-for-java/issues)
 
@@ -43,7 +43,11 @@ npm install @azure/storage-file-datalake
 Importeer het `storage-file-datalake` pakket door deze instructie boven aan het code bestand te plaatsen. 
 
 ```javascript
-const AzureStorageDataLake = require("@azure/storage-file-datalake");
+const {
+AzureStorageDataLake,
+DataLakeServiceClient,
+StorageSharedKeyCredential
+} = require("@azure/storage-file-datalake");
 ```
 
 ## <a name="connect-to-the-account"></a>Verbinding maken met het account 

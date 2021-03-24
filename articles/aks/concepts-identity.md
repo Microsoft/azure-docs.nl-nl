@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 07/07/2020
 author: palma21
 ms.author: jpalma
-ms.openlocfilehash: 98044f6ff6311241717cb66a6e26a72702d749e6
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 12900a64d9e023e4bddd5b5862b6a127fcba1d36
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102181445"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104949988"
 ---
 # <a name="access-and-identity-options-for-azure-kubernetes-service-aks"></a>Toegangs- en identiteitsopties voor Azure Kubernetes Service (AKS)
 
@@ -73,6 +73,7 @@ De volgende aanvullende machtigingen zijn vereist voor de cluster-id bij het mak
 | Microsoft.Network/virtualNetworks/subnets/read <br/> Microsoft.Network/virtualNetworks/subnets/join/action | Vereist als u een subnet in een andere resource groep gebruikt, zoals een aangepast VNET. |
 | Micro soft. Network/routeTables/routes/lezen <br/> Micro soft. Network/routeTables/routes/schrijven | Vereist als u een subnet gebruikt dat is gekoppeld aan een route tabel in een andere resource groep, zoals een aangepast VNET met een aangepaste route tabel. Vereist om te controleren of er al een subnet bestaat voor het subnet in de andere resource groep. |
 | Microsoft.Network/virtualNetworks/subnets/read | Vereist als u een interne load balancer in een andere resource groep gebruikt. Vereist om te controleren of er al een subnet bestaat voor de interne load balancer in de resource groep. |
+| Micro soft. Network/privatednszones/* | Vereist als u een privé-DNS-zone gebruikt in een andere resource groep, zoals een aangepaste privateDNSZone. |
 
 ## <a name="kubernetes-role-based-access-control-kubernetes-rbac"></a>Op rollen gebaseerd toegangs beheer op basis van Kubernetes (Kubernetes RBAC)
 

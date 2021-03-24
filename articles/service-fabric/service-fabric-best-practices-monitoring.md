@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 01/23/2019
 ms.author: pepogors
-ms.openlocfilehash: a7b1c1b3fc3196557b862c488ee01af8b8e1f04f
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 0eb9ce24f9ead44b7ba5a4d28d24177e62cb7757
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "86529247"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104950515"
 ---
 # <a name="monitoring-and-diagnostic-best-practices-for-azure-service-fabric"></a>Aanbevolen procedures voor het bewaken en diagnosticeren voor Azure Service Fabric
 
@@ -34,7 +34,7 @@ Voor Linux-clusters is Azure Monitor-logboeken ook het aanbevolen hulp programma
 
 ## <a name="watchdogs"></a>Watchdog
 
-Over het algemeen is een watchdog een afzonderlijke service die de status controleert en laadt tussen services, eind punten pingt en onverwachte status gebeurtenissen in het cluster rapporteert. Dit kan helpen om fouten te voor komen die niet worden gedetecteerd op basis van de prestaties van één service. Watchdog zijn ook een goede plaats voor het hosten van code voor het uitvoeren van een herstel bewerking waarvoor geen interactie van de gebruiker is vereist, zoals het opschonen van logboek bestanden in de opslag op bepaalde tijds intervallen. Bekijk een voor beeld van een watchdog-service-implementatie in  [service Fabric Linux-cluster gebeurtenissen in syslog](https://github.com/Azure-Samples/service-fabric-watchdog-service).
+Over het algemeen is een watchdog een afzonderlijke service die de status controleert en laadt tussen services, eind punten pingt en onverwachte status gebeurtenissen in het cluster rapporteert. Dit kan helpen om fouten te voor komen die niet worden gedetecteerd op basis van de prestaties van één service. Watchdog zijn ook een goede plaats voor het hosten van code die herstel bewerkingen uitvoert waarvoor geen gebruikers interactie is vereist, zoals het opschonen van logboek bestanden in opslag op bepaalde tijds intervallen. Als u een volledig geïmplementeerde open-source SF watchdog-service wilt met een eenvoudig te gebruiken watchdog-uitbreidings model en dat wordt uitgevoerd in Windows-en Linux-clusters, raadpleegt u het [FabricObserver](https://aka.ms/sf/FabricObserver) -project. FabricObserver is software die gereed is voor productie. We raden u aan om FabricObserver te implementeren op uw test-en productie clusters en deze uit te breiden om te voldoen aan uw behoeften via het invoeg toepassings model of door deze te splitsen en uw eigen ingebouwde waarnemers te schrijven. De voormalige (invoeg toepassingen) is de aanbevolen methode.
 
 ## <a name="next-steps"></a>Volgende stappen
 

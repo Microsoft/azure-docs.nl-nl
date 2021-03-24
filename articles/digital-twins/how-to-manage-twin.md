@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 10/21/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 98b50673b464044af2a038fa93c3b6a022fa2899
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 666e77a06bd2934622400cc2f11830d6ebc34ddb
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103149700"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104954646"
 ---
 # <a name="manage-digital-twins"></a>Digitale tweelingen beheren
 
@@ -129,9 +129,7 @@ Het resultaat van het aanroepen van `object result = await client.GetDigitalTwin
 
 De gedefinieerde eigenschappen van de digitale twee worden geretourneerd als eigenschappen op het hoogste niveau van de digitale twee. Meta gegevens of systeem gegevens die geen deel uitmaken van de DTDL-definitie, worden geretourneerd met een `$` voor voegsel. Meta gegevens eigenschappen bevatten de volgende waarden:
 * `$dtId`: De ID van de digitale dubbele in dit Azure Digital Apparaatdubbels-exemplaar
-* `$etag`: Een standaard-HTTP-veld dat door de webserver wordt toegewezen. Deze wordt bijgewerkt naar een nieuwe waarde elke keer dat de twee wordt bijgewerkt, wat nuttig kan zijn om te bepalen of de gegevens van de twee zijn bijgewerkt op de server sinds een eerdere controle. Het kan ook op de volgende manieren worden gebruikt in HTTP-headers:
-  - met lees bewerkingen om te voor komen dat inhoud wordt opgehaald die niet is gewijzigd
-  - met schrijf bewerkingen ter ondersteuning van optimistische gelijktijdigheid
+* `$etag`: Een standaard-HTTP-veld dat door de webserver wordt toegewezen. Deze wordt bijgewerkt naar een nieuwe waarde elke keer dat de twee wordt bijgewerkt, wat nuttig kan zijn om te bepalen of de gegevens van de twee zijn bijgewerkt op de server sinds een eerdere controle. U kunt gebruiken `If-Match` om updates uit te voeren en te verwijderen die alleen worden voltooid als de ETAG van de entiteit overeenkomt met de geleverde ETag. Zie de documentatie voor [DigitalTwins update](/rest/api/digital-twins/dataplane/twins/digitaltwins_update) en [DigitalTwins delete](/rest/api/digital-twins/dataplane/twins/digitaltwins_delete)voor meer informatie over deze bewerkingen.
 * `$metadata`: Een set andere eigenschappen, waaronder:
   - De DTMI van het model van de digitale twee.
   - Synchronisatie status voor elke Beschrijf bare eigenschap. Dit is vooral nuttig voor apparaten, waar het mogelijk is dat de service en het apparaat afwijkende statussen hebben (bijvoorbeeld wanneer een apparaat offline is). Deze eigenschap is op dit moment alleen van toepassing op fysieke apparaten die zijn verbonden met IoT Hub. Met de gegevens in de sectie meta gegevens is het mogelijk inzicht te krijgen in de volledige status van een eigenschap, evenals de laatste gewijzigde tijds tempels. Zie voor meer informatie over de synchronisatie status [deze IOT hub zelf studie over het](../iot-hub/tutorial-device-twins.md) synchroniseren van de Apparaatstatus.

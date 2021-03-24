@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 08/25/2020
 ms.custom: mvc, seodec18
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: ca1308c969227336bfb4970f7c5c77b9f2e0cc22
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 32ad6fa122083b40a948345e360bf5b9b0f09e96
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102216527"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104954850"
 ---
 # <a name="tutorial-map-an-existing-custom-dns-name-to-azure-app-service"></a>Zelfstudie: Een bestaande aangepaste DNS-naam toewijzen aan Azure App Service
 
@@ -121,7 +121,7 @@ Als u een aangepast domein wilt toevoegen aan uw app, moet u verifiëren dat u d
 
     <details>
         <summary>Kan ik DNS van mijn domein provider beheren met Azure?</summary>
-        Als u wilt, kunt u Azure DNS gebruiken voor het beheren van DNS-records voor uw domein en het configureren van een aangepaste DNS-naam voor Azure App Service. Zie voor meer informatie <a href="https://docs.microsoft.com/azure/dns/dns-delegate-domain-azure-dns">zelf studie: host uw domein in Azure DNS></a>.
+        Als u wilt, kunt u Azure DNS gebruiken voor het beheren van DNS-records voor uw domein en het configureren van een aangepaste DNS-naam voor Azure App Service. Zie voor meer informatie <a href="/azure/dns/dns-delegate-domain-azure-dns">zelf studie: host uw domein in Azure DNS></a>.
     </details>
 
 1. Ga naar de pagina voor het beheren van DNS-records. 
@@ -146,7 +146,7 @@ Als u een aangepast domein wilt toevoegen aan uw app, moet u verifiëren dat u d
             <ul>
             <li>Als u het hoofd domein wilt toewijzen (bijvoorbeeld <code>contoso.com</code> ), gebruikt u een A-record. Gebruik niet de CNAME-record voor de hoofd record (Zie de Wikipedia- <a href="https://en.wikipedia.org/wiki/CNAME_record">vermelding</a>voor informatie).</li>
             <li>Als u een subdomein wilt toewijzen (bijvoorbeeld <code>www.contoso.com</code> ), gebruikt u een CNAME-record.</li>
-            <li>U kunt een subdomein rechtstreeks toewijzen aan het IP-adres van de app met een A-record, maar het is mogelijk dat <a href="https://docs.microsoft.com/azure/app-service/overview-inbound-outbound-ips#when-inbound-ip-changes">het IP-adres wordt gewijzigd</a>. In plaats daarvan wordt de CNAME toegewezen aan de hostnaam van de app. Dit is minder gevoelig voor wijziging.</li>
+            <li>U kunt een subdomein rechtstreeks toewijzen aan het IP-adres van de app met een A-record, maar het is mogelijk dat <a href="/azure/app-service/overview-inbound-outbound-ips#when-inbound-ip-changes">het IP-adres wordt gewijzigd</a>. In plaats daarvan wordt de CNAME toegewezen aan de hostnaam van de app. Dit is minder gevoelig voor wijziging.</li>
             <li>Als u een <a href="https://en.wikipedia.org/wiki/Wildcard_DNS_record">Joker teken domein</a> wilt toewijzen (bijvoorbeeld <code>*.contoso.com</code> ), gebruikt u een CNAME-record.</li>
             </ul>
         </div>
@@ -247,7 +247,7 @@ Voor de naam van een Joker teken zoals `*` in `*.contoso.com` , maakt u twee rec
 
     <details>
         <summary>Wat is het waarschuwings label <strong>niet veilig</strong> ?</summary>
-        Een waarschuwingslabel voor uw aangepaste domein betekent dat het nog niet is gebonden aan een TLS/SSL-certificaat. Een HTTPS-aanvraag van een browser naar uw aangepaste domein krijgt afhankelijk van de browser, een fout of waarschuwing. Zie <a href="https://docs.microsoft.com/azure/app-service/configure-ssl-bindings">Een aangepaste DNS-naam beveiligen met een TLS/SSL-binding in Azure App Service</a> om een TLS-binding toe te voegen.
+        Een waarschuwingslabel voor uw aangepaste domein betekent dat het nog niet is gebonden aan een TLS/SSL-certificaat. Een HTTPS-aanvraag van een browser naar uw aangepaste domein krijgt afhankelijk van de browser, een fout of waarschuwing. Zie <a href="/azure/app-service/configure-ssl-bindings">Een aangepaste DNS-naam beveiligen met een TLS/SSL-binding in Azure App Service</a> om een TLS-binding toe te voegen.
     </details>
 
     Als u een stap hebt gemist of eerder ergens een typefout hebt gemaakt, wordt er een verificatiefoutmelding aan de onderkant van de pagina weergegeven.
@@ -274,7 +274,7 @@ Voor de naam van een Joker teken zoals `*` in `*.contoso.com` , maakt u twee rec
 
     <details>
         <summary>Wat is het waarschuwings label <strong>niet veilig</strong> ?</summary>
-        Een waarschuwingslabel voor uw aangepaste domein betekent dat het nog niet is gebonden aan een TLS/SSL-certificaat. Een HTTPS-aanvraag van een browser naar uw aangepaste domein krijgt afhankelijk van de browser, een fout of waarschuwing. Zie <a href="https://docs.microsoft.com/azure/app-service/configure-ssl-bindings">Een aangepaste DNS-naam beveiligen met een TLS/SSL-binding in Azure App Service</a> om een TLS-binding toe te voegen.
+        Een waarschuwingslabel voor uw aangepaste domein betekent dat het nog niet is gebonden aan een TLS/SSL-certificaat. Een HTTPS-aanvraag van een browser naar uw aangepaste domein krijgt afhankelijk van de browser, een fout of waarschuwing. Zie <a href="/azure/app-service/configure-ssl-bindings">Een aangepaste DNS-naam beveiligen met een TLS/SSL-binding in Azure App Service</a> om een TLS-binding toe te voegen.
     </details>
     
     Als u een stap hebt gemist of eerder ergens een typefout hebt gemaakt, wordt er een verificatiefoutmelding aan de onderkant van de pagina weergegeven.
@@ -297,7 +297,7 @@ Voor de naam van een Joker teken zoals `*` in `*.contoso.com` , maakt u twee rec
 
     <details>
         <summary>Wat is het waarschuwings label <strong>niet veilig</strong> ?</summary>
-        Een waarschuwingslabel voor uw aangepaste domein betekent dat het nog niet is gebonden aan een TLS/SSL-certificaat. Een HTTPS-aanvraag van een browser naar uw aangepaste domein krijgt afhankelijk van de browser, een fout of waarschuwing. Zie <a href="https://docs.microsoft.com/azure/app-service/configure-ssl-bindings">Een aangepaste DNS-naam beveiligen met een TLS/SSL-binding in Azure App Service</a> om een TLS-binding toe te voegen.
+        Een waarschuwingslabel voor uw aangepaste domein betekent dat het nog niet is gebonden aan een TLS/SSL-certificaat. Een HTTPS-aanvraag van een browser naar uw aangepaste domein krijgt afhankelijk van de browser, een fout of waarschuwing. Zie <a href="/azure/app-service/configure-ssl-bindings">Een aangepaste DNS-naam beveiligen met een TLS/SSL-binding in Azure App Service</a> om een TLS-binding toe te voegen.
     </details>
 
 -----

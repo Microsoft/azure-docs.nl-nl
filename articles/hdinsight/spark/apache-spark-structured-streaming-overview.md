@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/24/2019
-ms.openlocfilehash: 9f92007c271da5b6d2cb8db6c3904a62b114e7c2
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: fd65177fb6202b0396545043c2e63a87c7f01bbb
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98929494"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104864598"
 ---
 # <a name="overview-of-apache-spark-structured-streaming"></a>Overzicht van Gestructureerde streaming van Apache Spark
 
@@ -20,7 +20,7 @@ Structured streaming-toepassingen worden uitgevoerd op HDInsight Spark-clusters 
 
 Structured streaming maakt een langlopende query waarbij u bewerkingen toepast op de invoer gegevens, zoals selectie, projectie, aggregatie, venster en het streamen van data frame met referentie DataFrames. Vervolgens voert u de resultaten uit naar bestands opslag (Azure Storage blobs of Data Lake Storage) of naar een Data Store met behulp van aangepaste code (zoals SQL Database of Power BI). Structured streaming biedt ook uitvoer naar de console voor het lokaal opsporen van fouten en naar een in-Memory tabel zodat u de gegevens kunt zien die zijn gegenereerd voor fout opsporing in HDInsight.
 
-![Stroom verwerking met HDInsight-en Spark Structured streaming](./media/apache-spark-structured-streaming-overview/hdinsight-spark-structured-streaming.png)
+:::image type="content" source="./media/apache-spark-structured-streaming-overview/hdinsight-spark-structured-streaming.png" alt-text="Stroom verwerking met HDInsight-en Spark Structured streaming" border="false":::
 
 > [!NOTE]  
 > Spark Structured streaming vervangt Spark-streaming (DStreams). Door te gaan, krijgen gestructureerde streaming meer verbeteringen en onderhoud, terwijl DStreams alleen in de onderhouds modus wordt uitgevoerd. Structured streaming is momenteel niet de functie-complete als DStreams voor de bronnen en sinks die het ondersteunt, dus Evalueer uw vereisten om de juiste optie voor de verwerking van Spark-stream te kiezen.
@@ -29,7 +29,7 @@ Structured streaming maakt een langlopende query waarbij u bewerkingen toepast o
 
 Met Spark Structured streaming wordt een gegevens stroom aangeduid als een tabel die niet is begrensd, dat wil zeggen, de tabel blijft groeien naarmate er nieuwe gegevens binnenkomen. Deze *invoer tabel* wordt continu verwerkt door een langlopende query en de resultaten die naar een *uitvoer tabel* worden verzonden:
 
-![Concept van Structured streaming](./media/apache-spark-structured-streaming-overview/hdinsight-spark-structured-streaming-concept.png)
+:::image type="content" source="./media/apache-spark-structured-streaming-overview/hdinsight-spark-structured-streaming-concept.png" alt-text="Concept van Structured streaming" border="false":::
 
 In structured streaming worden gegevens in het systeem bezorgd en onmiddellijk opgenomen in een invoer tabel. U schrijft query's (met behulp van de data frame-en DataSet-Api's) die bewerkingen uitvoeren op deze invoer tabel. De uitvoer van de query levert een andere tabel, de *resultaten tabel*. De resultaten tabel bevat de resultaten van de query waaruit u gegevens voor een extern gegevens archief, zoals een relationele data base, tekent. Het tijdstip waarop de gegevens worden verwerkt vanuit de invoer tabel, wordt bepaald door het *trigger interval*. Standaard is het trigger interval nul, zodat gestructureerde streaming probeert de gegevens te verwerken zodra deze binnenkomen. In de praktijk betekent dit dat zodra Structured streaming de uitvoering van de vorige query heeft verwerkt, een andere verwerkings uitvoering wordt gestart op basis van recent ontvangen gegevens. U kunt de trigger zo configureren dat deze wordt uitgevoerd met een interval, zodat de streaminggegevens worden verwerkt in op tijd gebaseerde batches.
 
@@ -41,7 +41,7 @@ In de toevoeg modus worden alleen de rijen die zijn toegevoegd aan de tabel met 
 
 Overweeg een scenario waarin u telemetrie van temperatuur Sens oren, zoals een thermo staat, verwerkt. Stel dat de eerste trigger één gebeurtenis op tijdstip 00:01 voor apparaat 1 met een temperatuur meting van 95 graden heeft verwerkt. In de eerste trigger van de query wordt alleen de rij met tijd 00:01 weer gegeven in de tabel met resultaten. Op tijdstip 00:02 wanneer een andere gebeurtenis arriveert, is de enige nieuwe rij de rij met tijd 00:02. de resultaten tabel zou dus slechts één rij bevatten.
 
-![Toevoeg modus voor gestructureerde streaming](./media/apache-spark-structured-streaming-overview/hdinsight-spark-structured-streaming-append-mode.png)
+:::image type="content" source="./media/apache-spark-structured-streaming-overview/hdinsight-spark-structured-streaming-append-mode.png" alt-text="Toevoeg modus voor gestructureerde streaming" border="false":::
 
 Wanneer u de toevoeg modus gebruikt, wordt er gebruikgemaakt van de gegevens (het selecteren van de kolommen waarmee de query wordt uitgevoerd), filteren (alleen rijen die aan bepaalde voor waarden voldoen) of samen voegen (waarbij de gegevens worden uitgebreid met gegevens uit een statische opzoek tabel). De toevoeg modus maakt het eenvoudig om alleen de relevante nieuwe gegevens punten naar externe opslag te pushen.
 
@@ -51,7 +51,7 @@ U kunt hetzelfde scenario gebruiken. Dit is de tijd met de volledige modus. In d
 
 Er wordt van uitgegaan dat er vijf seconden aan gegevens zijn verwerkt en dat de gegevens voor de zesde seconde moeten worden verwerkt. De invoer tabel bevat gebeurtenissen voor tijd 00:01 en tijd 00:03. Het doel van deze voorbeeld query is om de gemiddelde Tempe ratuur van het apparaat om de vijf seconden te geven. De implementatie van deze query is van toepassing op een aggregatie waarbij alle waarden die binnen elk 5-Second venster vallen, het gemiddelde van de Tempe ratuur en een rij voor de gemiddelde Tempe ratuur van dat interval. Aan het einde van het eerste venster van 5 seconden zijn er twee Tuples: (00:01, 1, 95) en (00:03, 1, 98). Voor het venster 00:00-00:05 levert de aggregatie een tuple op met de gemiddelde Tempe ratuur van 96,5 graden. In het volgende 5-tweede venster is er slechts één gegevens punt op het moment 00:06, dus de resulterende gemiddelde Tempe ratuur is 98 graden. Op tijdstip 00:10, met behulp van de volledige modus, bevat de tabel met resultaten de rijen voor zowel Windows 00:00-00:05 als 00:05-00:10, omdat de query alle geaggregeerde rijen, niet alleen de nieuwe, oplevert. Daarom blijft de resultaten tabel groeien naarmate er nieuwe vensters worden toegevoegd.
 
-![Volledige modus voor gestructureerde streaming](./media/apache-spark-structured-streaming-overview/hdinsight-spark-structured-streaming-complete-mode.png)
+:::image type="content" source="./media/apache-spark-structured-streaming-overview/hdinsight-spark-structured-streaming-complete-mode.png" alt-text="Volledige modus voor gestructureerde streaming" border="false":::
 
 Niet alle query's die gebruikmaken van de volledige modus, zorgen ervoor dat de tabel zonder grenzen groeit.  Bekijk in het vorige voor beeld dat in plaats van het gemiddelde van de Tempe ratuur per tijd venster het gemiddelde wordt berekend op basis van de apparaat-ID. De resultaat tabel bevat een vast aantal rijen (één per apparaat) met de gemiddelde Tempe ratuur voor het apparaat op alle gegevens punten die van dat apparaat zijn ontvangen. Wanneer er nieuwe temperaturen worden ontvangen, wordt de tabel met resultaten bijgewerkt zodat de gemiddelden in de tabel altijd actueel zijn.
 
@@ -141,7 +141,7 @@ Voor het leveren van tolerantie en fout tolerantie is gestructureerde streaming 
 
 Doorgaans bouwt u een Spark-streaming-toepassing lokaal in een JAR-bestand en implementeert u deze vervolgens in Spark op HDInsight door het JAR-bestand te kopiëren naar de standaard opslag die aan uw HDInsight-cluster is gekoppeld. U kunt uw toepassing starten met de [Apache livy](https://livy.incubator.apache.org/) rest api's die beschikbaar zijn via uw cluster met behulp van een post-bewerking. De hoofd tekst van het bericht bevat een JSON-document met het pad naar uw JAR, de naam van de klasse waarvan de methode main de streaming-toepassing definieert en uitvoert, en optioneel de resource vereisten van de taak (zoals het aantal uitvoerendeers, het geheugen en de kernen) en alle configuratie-instellingen die uw toepassings code vereist.
 
-![Een Spark streaming-toepassing implementeren](./media/apache-spark-streaming-overview/hdinsight-spark-streaming-livy.png)
+:::image type="content" source="./media/apache-spark-streaming-overview/hdinsight-spark-streaming-livy.png" alt-text="Een Spark streaming-toepassing implementeren" border="false":::
 
 De status van alle toepassingen kan ook worden gecontroleerd met een GET-aanvraag voor een LIVY-eind punt. Ten slotte kunt u een actieve toepassing beëindigen door een DELETE-aanvraag uit te geven voor het LIVY-eind punt. Zie [externe taken met Apache LIVY](apache-spark-livy-rest-interface.md) voor meer informatie over de LIVY-API
 

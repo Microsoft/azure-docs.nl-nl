@@ -8,12 +8,12 @@ ms.workload: infrastructure
 ms.topic: conceptual
 ms.date: 01/14/2021
 ms.author: alsin
-ms.openlocfilehash: 2bdf04143121e1286ffc7bfa86b4a9ee291ae6ef
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 18165ce5f39b32fe1c5af28bc88e8e1bd0e9cb62
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103561856"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104955547"
 ---
 # <a name="troubleshoot-common-automanage-onboarding-errors"></a>Veelvoorkomende fouten bij het onboarden van problemen oplossen
 Automatisch beheer kan een machine niet op de service voorbereiden. In dit document wordt uitgelegd hoe u implementatie fouten oplost, delen enkele veelvoorkomende oorzaken van het mislukken van implementaties en een beschrijving van mogelijke volgende stappen bij een oplossing.
@@ -38,7 +38,11 @@ Fout |  Oplossing
 :-----|:-------------|
 Fout met onvoldoende machtigingen voor het account voor automanaged | Dit kan gebeuren als u onlangs een abonnement met een nieuwe account voor automanage hebt verplaatst naar een nieuwe Tenant. Stappen om dit op te lossen, vindt u [hier](./repair-automanage-account.md).
 Werkruimte regio komt niet overeen met vereisten voor de toewijzing van regio's | Automatisch beheer kan de computer niet vrijgeven, maar de Log Analytics werk ruimte waaraan de machine momenteel is gekoppeld, is niet toegewezen aan een ondersteunde automatiserings regio. Zorg ervoor dat uw bestaande Log Analytics-werk ruimte en het Automation-account zich in een [ondersteunde regio toewijzing](../automation/how-to/region-mappings.md)bevinden.
-De toegang is geweigerd vanwege het weigeren van de toewijzing met de naam die door de beheerde toepassing is gemaakt. | Er is een [denyAssignment](https://docs.microsoft.com/azure/role-based-access-control/deny-assignments) gemaakt in uw resource waardoor automanage geen toegang heeft tot uw resource. Dit kan zijn veroorzaakt door een [blauw druk](https://docs.microsoft.com/azure/governance/blueprints/concepts/resource-locking) of een [beheerde toepassing](https://docs.microsoft.com/azure/azure-resource-manager/managed-applications/overview).
+De toegang is geweigerd vanwege het weigeren van de toewijzing met de naam die door de beheerde toepassing is gemaakt. | Er is een [denyAssignment](../role-based-access-control/deny-assignments.md) gemaakt in uw resource waardoor automanage geen toegang heeft tot uw resource. Dit kan zijn veroorzaakt door een [blauw druk](../governance/blueprints/concepts/resource-locking.md) of een [beheerde toepassing](../azure-resource-manager/managed-applications/overview.md).
+"OS Information: name = ' (null), ver = ' (null), agent status = ' niet gereed '." | Zorg ervoor dat u een [Mini maal ondersteunde agent versie](/troubleshoot/azure/virtual-machines/support-extensions-agent-version)uitvoert, de agent wordt uitgevoerd[(Linux](/troubleshoot/azure/virtual-machines/linux-azure-guest-agent) en [Windows](/troubleshoot/azure/virtual-machines/windows-azure-guest-agent)) en dat de agent up-to-date is ([Linux](../virtual-machines/extensions/update-linux-agent.md) en [Windows](../virtual-machines/extensions/agent-windows.md)).
+' Er is een fout in de VM opgetreden bij het verwerken van de extensie ' IaaSAntimalware ' ' | Zorg ervoor dat er al een andere antimalware/antivirus aanbieding op uw virtuele machine is geïnstalleerd. Als dat niet lukt, neemt u contact op met de ondersteuning.
+ASC-werk ruimte: de Log Analytics-service wordt momenteel niet ondersteund op _locatie_. | Controleer of uw virtuele machine zich in een [ondersteunde regio](./automanage-virtual-machines.md#supported-regions)bevindt.
+De sjabloon implementatie is mislukt vanwege een overtreding van het beleid. Zie de Details voor meer informatie. | Er is een beleid dat het voor komen dat automanage de virtuele machine onboardt. Controleer de beleids regels die worden toegepast op uw abonnement of resource groep met uw virtuele machine die u wilt voorbereiden op automanage.
 De toewijzing is mislukt; Er is geen aanvullende informatie beschikbaar. | Open een aanvraag met Microsoft Azure ondersteuning.
 
 ## <a name="next-steps"></a>Volgende stappen

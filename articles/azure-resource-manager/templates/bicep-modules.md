@@ -3,12 +3,12 @@ title: Bicep-modules
 description: Hierin wordt beschreven hoe u een module definieert en gebruikt, en hoe u module bereik kunt gebruiken.
 ms.topic: conceptual
 ms.date: 03/17/2021
-ms.openlocfilehash: 6abe73b51c7762b01c0bf345c68a7110c063603a
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 2edeb5c96f771867f964963b2d27768291ae2d4a
+ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104609302"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104889702"
 ---
 # <a name="use-bicep-modules"></a>Bicep-modules gebruiken
 
@@ -89,7 +89,7 @@ output storageEndpoint object = stgModule.outputs.storageEndpoint
     "resources": [
       {
         "type": "Microsoft.Resources/deployments",
-        "apiVersion": "2019-10-01",
+        "apiVersion": "2020-10-01",
         "name": "storageDeploy",
         "properties": {
           ...

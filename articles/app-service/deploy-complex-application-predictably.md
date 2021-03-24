@@ -5,12 +5,12 @@ ms.assetid: bb51e565-e462-4c60-929a-2ff90121f41d
 ms.topic: article
 ms.date: 01/06/2016
 ms.custom: seodec18
-ms.openlocfilehash: 8742b590af89954cb8480e5282827bcd5228673b
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: aec23c28e075dd38fa65f1315f9abd9e21cdc9cb
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "101095836"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104951467"
 ---
 # <a name="provision-and-deploy-microservices-predictably-in-azure"></a>Micro services zoals verwacht inrichten en implementeren in azure
 Deze zelf studie laat zien hoe u een toepassing kunt inrichten en implementeren die is samengesteld uit micro [Services](https://en.wikipedia.org/wiki/Microservices) in [Azure app service](https://azure.microsoft.com/services/app-service/) als één eenheid en op een voorspel bare manier met behulp van JSON-resource groeps sjablonen en Power shell-scripts. 
@@ -45,7 +45,7 @@ Zie [Azure PowerShell gebruiken met Azure Resource Manager](../azure-resource-ma
 Met dit [Preview-programma](https://resources.azure.com) kunt u de JSON-definities van alle resource groepen in uw abonnement en de afzonderlijke resources verkennen. In het hulp programma kunt u de JSON-definities van een resource bewerken, een volledige hiërarchie van resources verwijderen en nieuwe resources maken.  De informatie die beschikbaar is in dit hulp programma is zeer nuttig voor het ontwerpen van sjablonen, omdat u kunt zien welke eigenschappen u moet instellen voor een bepaald type resource, de juiste waarden, enzovoort. U kunt zelfs uw resource groep in [Azure Portal](https://portal.azure.com/)maken en vervolgens de bijbehorende JSON-definities in het Explorer-hulp programma inspecteren om u te helpen bij het Templatize van de resource groep.
 
 ### <a name="deploy-to-azure-button"></a>De knop Implementeren in Azure
-Als u GitHub gebruikt voor broncode beheer, kunt u een [knop voor implementeren naar Azure](https://docs.microsoft.com/azure/azure-resource-manager/templates/deploy-to-azure-button) in uw Leesmij-bestand plaatsen. MD, waarmee de gebruikers interface voor het maken van een inschakel functie kan worden geïmplementeerd in Azure. Hoewel u dit kunt doen voor elke eenvoudige app, kunt u deze uitbreiden om het implementeren van een hele resource groep mogelijk te maken door een azuredeploy.jsin te voegen in de hoofdmap van de opslag plaats. Dit JSON-bestand, dat de sjabloon resource groep bevat, wordt gebruikt door de knop implementeren naar Azure om de resource groep te maken. Zie voor een voor beeld het [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) -voor beeld, dat u in deze zelf studie gaat gebruiken.
+Als u GitHub gebruikt voor broncode beheer, kunt u een [knop voor implementeren naar Azure](../azure-resource-manager/templates/deploy-to-azure-button.md) in uw Leesmij-bestand plaatsen. MD, waarmee de gebruikers interface voor het maken van een inschakel functie kan worden geïmplementeerd in Azure. Hoewel u dit kunt doen voor elke eenvoudige app, kunt u deze uitbreiden om het implementeren van een hele resource groep mogelijk te maken door een azuredeploy.jsin te voegen in de hoofdmap van de opslag plaats. Dit JSON-bestand, dat de sjabloon resource groep bevat, wordt gebruikt door de knop implementeren naar Azure om de resource groep te maken. Zie voor een voor beeld het [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) -voor beeld, dat u in deze zelf studie gaat gebruiken.
 
 ## <a name="get-the-sample-resource-group-template"></a>De voorbeeld sjabloon voor de resource groep ophalen
 Nu gaan we hier meteen aan de slag.

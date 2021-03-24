@@ -11,12 +11,12 @@ ms.author: nigup
 author: nishankgu
 ms.date: 01/20/2020
 ms.custom: how-to, seodec18, devx-track-azurecli, contperf-fy21q2
-ms.openlocfilehash: 8420aecbc160fa6df2640d2ba0ae8a8b77702b67
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: bdd59c80408910bf8ca51bf787c8ff15dc2a4893
+ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98624537"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104889753"
 ---
 # <a name="manage-access-to-an-azure-machine-learning-workspace"></a>De toegang tot een Azure Machine Learning-werkruimte beheren
 
@@ -464,7 +464,7 @@ Hier volgen enkele dingen waarvan u op de hoogte moet zijn terwijl u Azure RBAC 
 - Wanneer er twee roltoewijzingen aan dezelfde Azure Active Directory gebruiker met conflicterende secties met acties/verhoudingen, worden uw bewerkingen die worden vermeld in de ene rol, mogelijk niet van kracht als ze ook worden weer gegeven als acties in een andere rol. Lees [hoe Azure RBAC bepaalt of een gebruiker toegang heeft tot een resource](../role-based-access-control/overview.md#how-azure-rbac-determines-if-a-user-has-access-to-a-resource) voor meer informatie over hoe Azure-roltoewijzingen parseert.
 
 - Als u uw reken resources binnen een VNet wilt implementeren, moet u expliciet machtigingen hebben voor de volgende acties:
-    - `Microsoft.Network/virtualNetworks/join/action` op de VNet-resource.
+    - `Microsoft.Network/virtualNetworks/*/read` op de VNet-resources.
     - `Microsoft.Network/virtualNetworks/subnet/join/action` op de bron van het subnet.
     
     Zie voor meer informatie over Azure RBAC met netwerken de [ingebouwde rollen voor netwerken](../role-based-access-control/built-in-roles.md#networking).

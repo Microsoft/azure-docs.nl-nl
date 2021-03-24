@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 12/27/2019
-ms.openlocfilehash: 591804a31c100e5c8211ec6d73fc483c9ac85c72
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: d99bf914d3ef746fe328d2447426565fc15e52b4
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98940301"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104866315"
 ---
 # <a name="analyze-website-logs-using-a-custom-python-library-with-apache-spark-cluster-on-hdinsight"></a>Website logboeken analyseren met behulp van een aangepaste python-bibliotheek met Apache Spark cluster op HDInsight
 
@@ -30,11 +30,11 @@ Zodra de gegevens zijn opgeslagen als een Apache Hive tabel, wordt in de volgend
 
 1. Maak een nieuwe notebook. Selecteer **Nieuw** en vervolgens **PySpark**.
 
-    ![Een nieuwe Apache-Jupyter Notebook maken](./media/apache-spark-custom-library-website-log-analysis/hdinsight-create-jupyter-notebook.png "Een nieuwe Jupyter Notebook maken")
+    :::image type="content" source="./media/apache-spark-custom-library-website-log-analysis/hdinsight-create-jupyter-notebook.png " alt-text="Een nieuwe Apache-Jupyter notebook maken" border="true"::: Notebook "Border =" True ":::
 
 1. Er wordt een nieuwe notebook gemaakt en geopend met de naam Untitled.pynb. Selecteer de naam van het notitie blok bovenaan en geef een beschrijvende naam op.
 
-    ![Een naam opgeven voor de notebook](./media/apache-spark-custom-library-website-log-analysis/hdinsight-name-jupyter-notebook.png "Een naam opgeven voor de notebook")
+    :::image type="content" source="./media/apache-spark-custom-library-website-log-analysis/hdinsight-name-jupyter-notebook.png " alt-text="Geef een naam op voor het notitie blok" border="true":::tebook "Border =" True ":::
 
 1. Omdat u een notitie blok hebt gemaakt met behulp van de PySpark-kernel, hoeft u geen contexten expliciet te maken. De Spark- en Hive-contexten worden automatisch voor u gemaakt tijdens het uitvoeren van de eerste codecel. U kunt beginnen met het importeren van de typen die vereist zijn voor dit scenario. Plak het volgende code fragment in een lege cel en druk op **SHIFT + ENTER**.
 
@@ -173,7 +173,7 @@ Zodra de gegevens zijn opgeslagen als een Apache Hive tabel, wordt in de volgend
 
    U ziet een uitvoer zoals de volgende afbeelding:
 
-   ![uitvoer van hdinsight jupyter SQL-query](./media/apache-spark-custom-library-website-log-analysis/hdinsight-jupyter-sql-qyery-output.png "SQL-query-uitvoer")
+   :::image type="content" source="./media/apache-spark-custom-library-website-log-analysis/hdinsight-jupyter-sql-qyery-output.png " alt-text="hdinsight jupyter SQL query output" border="true":::yter SQL query output "Border =" True ":::
 
    `%%sql`Zie [para meters die worden ondersteund met%% SQL Magic](apache-spark-jupyter-notebook-kernels.md#parameters-supported-with-the-sql-magic)voor meer informatie over het Magic.
 
@@ -191,7 +191,7 @@ Zodra de gegevens zijn opgeslagen als een Apache Hive tabel, wordt in de volgend
 
    U ziet een uitvoer zoals de volgende afbeelding:
 
-   ![analyse diagram voor Apache Spark-Weblogboeken](./media/apache-spark-custom-library-website-log-analysis/hdinsight-apache-spark-web-log-analysis-plot.png "Matplotlib uitvoer")
+   :::image type="content" source="./media/apache-spark-custom-library-website-log-analysis/hdinsight-apache-spark-web-log-analysis-plot.png " alt-text="analyse tekening voor Apache Spark-Weblogboeken" border="true":::EB: "Border =" True ":::
 
 1. Wanneer u klaar bent met het uitvoeren van de toepassing, moet u het notitie blok afsluiten om de resources vrij te geven. Selecteer hiervoor **Sluiten en stoppen** in het menu **Bestand** van het notebook. Deze actie wordt afgesloten en het notitie blok gesloten.
 

@@ -5,25 +5,22 @@ author: elqu20
 ms.author: v-elqu
 ms.service: azure-percept
 ms.topic: conceptual
-ms.date: 02/18/2021
+ms.date: 03/23/2021
 ms.custom: template-concept
-ms.openlocfilehash: 9ff0cb8e2417ed08ed4c2061674cc6932b511aed
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 7c80159607947dbe7ed17181beac610fa0c202c5
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104595903"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104956091"
 ---
 # <a name="introduction-to-azure-percept-audio"></a>Inleiding tot Azure percept-audio
 
-Azure percept-audio is een accessoire apparaat waarmee u spraak AI-mogelijkheden kunt toevoegen aan Azure percept DK. Het bevat een vooraf geconfigureerde geluids processor en een lineaire matrix met vier microfoons, waarmee u spraak opdrachten, trefwoord herkennen en far field speech kunt Toep assen op lokale luisterende apparaten met behulp van Azure Cognitive Services. Met Azure percept-audio kunnen apparaat-fabrikanten Azure percept DK uitbreiden tegen de visuele mogelijkheden tot nieuwe, slimme spraak geactiveerde apparaten. Het is volledig geïntegreerd met Azure percept DK, Azure percept Studio en andere Azure Edge-beheer Services. Het is beschikbaar voor aankoop in de [online winkel van micro soft](https://go.microsoft.com/fwlink/p/?LinkId=2155270).
+Azure percept-audio is een accessoire apparaat waarmee u spraak AI-mogelijkheden kunt toevoegen aan [Azure PERCEPT DK](./overview-azure-percept-dk.md). Het bevat een vooraf geconfigureerde geluids processor en een lineaire matrix met vier microfoons waarmee u spraak opdrachten, trefwoord herkennen en far field speech kunt gebruiken met behulp van Azure Cognitive Services. Het is volledig geïntegreerd met Azure percept DK, [Azure percept Studio](https://go.microsoft.com/fwlink/?linkid=2135819)en andere Azure Edge-beheer Services. Azure percept-audio is beschikbaar voor aankopen in de [online winkel van micro soft](https://go.microsoft.com/fwlink/p/?LinkId=2155270).
 
 > [!div class="nextstepaction"]
 > [Nu kopen](https://go.microsoft.com/fwlink/p/?LinkId=2155270)
 
-<!---
-:::image type="content" source="./media/overview-azure-percept-audio/percept-audio.png" alt-text="Azure Percept Audio device.":::
---->
 </br>
 
 > [!VIDEO https://www.youtube.com/embed/Qj8NGn-7s5A]
@@ -32,21 +29,21 @@ Azure percept-audio is een accessoire apparaat waarmee u spraak AI-mogelijkheden
 
 Azure percept-audio bevat de volgende belang rijke onderdelen:
 
-- Productie-klaar Azure percept-audio apparaat (SoM) met vier microfoons lineaire matrix en geluids verwerking door een XMOS-codec
-- Ontwikkel aars (tussen het deel van een ontwikkelaar) (inclusief twee knoppen, 3x Led's, micro USB en 3,5 mm audio-stekker)
+- Productie-klaar Azure percept-audio apparaat (SoM) met een lineaire matrix en geluids verwerking met vier microfoons via XMOS-codec
+- Ontwikkel aars (tussen begeleider): 2x knoppen, 3x Led's, micro USB en 3,5 mm audio-stekker
 - Vereiste kabels: FPC-kabel, USB-micro type-B naar USB-A
 - Welkomst kaart
 - Mechanische koppel plaat met geïntegreerde 80/20 1010-serie koppelen
 
 ## <a name="compute-capabilities"></a>Reken mogelijkheden 
 
-Met Azure percept audio wordt de audio-invoer door de spraak stack door gegeven die wordt uitgevoerd op de CPU van de vervoerders van Azure percept DK in een hybride Edge-Cloud-manier. Daarom vereist Azure percept-audio een draaggolf kaart met een besturings systeem dat ondersteuning biedt voor de spraak stack om uit te voeren. 
+Met Azure percept audio wordt audio-invoer door gegeven via de spraak stack die wordt uitgevoerd op de CPU van de Azure percept DK-vervoerders kaart in een hybride Edge-Cloud-manier. Daarom vereist Azure percept-audio een draaggolf kaart met een besturings systeem dat ondersteuning biedt voor de spraak stack om uit te voeren. 
 
-De verwerking wordt als volgt uitgevoerd: 
+De geluids verwerking wordt als volgt uitgevoerd: 
 
 - Azure percept-audio: Hiermee wordt de audio vastgelegd en geconverteerd en verzonden naar de DK en audio-stekker.
 
-- Azure percept DK: de spraak stack voert formulier-en Echo annulering uit en verwerkt de inkomende audio om te optimaliseren voor spraak. Vervolgens wordt het tref woord herkennen uitgevoerd.
+- Azure percept DK: de spraak stack voert formulier-en Echo annulering uit en verwerkt de inkomende audio om te optimaliseren voor spraak. Na de verwerking voert het een trefwoord herkennen uit.
 
 - Cloud: verwerkt opdrachten en zinsdelen in natuurlijke taal, trefwoord verificatie en retraining. 
 
@@ -55,8 +52,8 @@ De verwerking wordt als volgt uitgevoerd:
 ## <a name="getting-started"></a>Aan de slag
 
 - [Uw Azure percept DK samen stellen](./quickstart-percept-dk-unboxing.md)
-- [De Setup-ervaring van Azure percept DK volt ooien](./quickstart-percept-dk-set-up.md)
 - [Uw Azure percept-audio apparaat verbinden met uw Devkit](./quickstart-percept-audio-setup.md)
+- [De Setup-ervaring van Azure percept DK volt ooien](./quickstart-percept-dk-set-up.md)
 
 ## <a name="build-a-no-code-prototype"></a>Een prototype zonder code maken
 
@@ -64,8 +61,8 @@ Bouw een [oplossing zonder code voor spraak](./tutorial-no-code-speech.md) in [A
 
 ### <a name="manage-your-no-code-speech-solution"></a>Uw oplossing voor spraak op geen code beheren
 
-- [Uw Voice Assistant configureren in IOT hub](./how-to-manage-voice-assistant.md)
-- [Uw Voice Assistant configureren in azure percept Studio](./how-to-configure-voice-assistant.md)
+- [Uw Voice Assistant configureren in azure percept Studio](./how-to-manage-voice-assistant.md)
+- [Uw Voice Assistant configureren in IOT hub](./how-to-configure-voice-assistant.md)
 - [Problemen met Azure percept-audio oplossen](./troubleshoot-audio-accessory-speech-module.md)
 
 ## <a name="additional-technical-information"></a>Aanvullende technische informatie

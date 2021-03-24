@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 01/01/2020
-ms.openlocfilehash: 4b57eddafbf9a5615dc42e9a3c5a49c5f90781e2
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 0780f66c981f0cebebc1ab327d783954753db965
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98946664"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104866723"
 ---
 # <a name="deep-dive---advanced-analytics"></a>Diep gaande kennis-geavanceerde analyse
 
@@ -20,7 +20,7 @@ HDInsight biedt de mogelijkheid om waardevol inzicht te krijgen in grote hoeveel
 
 ## <a name="advanced-analytics-process"></a>Geavanceerd analyse proces
 
-![Geavanceerde analyse proces stroom](./media/apache-hadoop-deep-dive-advanced-analytics/hdinsight-analytic-process.png)
+:::image type="content" source="./media/apache-hadoop-deep-dive-advanced-analytics/hdinsight-analytic-process.png" alt-text="Geavanceerde analyse proces stroom" border="false":::
 
 Nadat u het bedrijfs probleem hebt geïdentificeerd en de gegevens hebt verzameld en verwerkt, moet u een model maken dat de vraag vertegenwoordigt die u wilt voors pellen. In uw model worden een of meer machine learning algoritmen gebruikt om het type voor spelling te maken dat het beste bij uw bedrijfs behoeften past.  Het meren deel van uw gegevens moet worden gebruikt om het model te trainen, met de rest die wordt gebruikt om het te testen of te evalueren.
 
@@ -30,7 +30,7 @@ Nadat u uw model hebt gemaakt, geladen, getest en geëvalueerd, is de volgende s
 
 Geavanceerde analyse oplossingen bieden een reeks machine learning-algoritmen. Hier volgt een samen vatting van de categorie algoritmen en de bijbehorende veelvoorkomende cases voor bedrijfs gebruik.
 
-![Samen vattingen van Machine Learning categorie](./media/apache-hadoop-deep-dive-advanced-analytics/machine-learning-use-cases.png)
+:::image type="content" source="./media/apache-hadoop-deep-dive-advanced-analytics/machine-learning-use-cases.png" alt-text="Samen vattingen van Machine Learning categorie" border="false":::
 
 Samen met het selecteren van de beste algoritme (s), moet u overwegen of u gegevens moet opgeven voor de training. Machine learning-algoritmen worden als volgt gecategoriseerd:
 
@@ -92,7 +92,7 @@ Er zijn drie belang rijke taken in dit geavanceerde analyse scenario:
 
 In dit voor beeld wordt de CIFAR-10-installatie kopieset gebruikt die is gecompileerd en gedistribueerd door Alex Krizhevsky, wijnbouw Nair en Geoffrey Hinton,. De CIFAR-10-gegevensset bevat 60.000 32 × 32 kleuren afbeeldingen die deel uitmaken van tien wederzijds exclusieve klassen:
 
-![Voorbeeld afbeeldingen Machine Learning](./media/apache-hadoop-deep-dive-advanced-analytics/machine-learning-images.png)
+:::image type="content" source="./media/apache-hadoop-deep-dive-advanced-analytics/machine-learning-images.png" alt-text="Voorbeeld afbeeldingen Machine Learning" border="false":::
 
 Voor meer informatie over de gegevensset raadpleegt u het leer proces van Alex Krizhevsky [meerdere lagen van functies van kleine afbeeldingen](https://www.cs.toronto.edu/~kriz/learning-features-2009-TR.pdf).
 
@@ -105,7 +105,7 @@ De gegevensset is gepartitioneerd in een Trainingsset van 50.000 installatie kop
 
 De volledige voor verwerking/Score van de 10.000-installatie kopieën duurt minder dan één minuut op een cluster met 4 worker-knoop punten. Het model voor spelt nauw keurig de labels van ~ 9.100 (91%) installatie kopieën. Een Verwar ring matrix illustreert de meest voorkomende classificatie fouten. De matrix laat bijvoorbeeld zien dat het labelen van honden als katten ongedaan wordt gemaakt en omgekeerd meer dan voor andere label paren plaatsvindt.
 
-![Grafiek met Machine Learning resultaten](./media/apache-hadoop-deep-dive-advanced-analytics/machine-learning-results.png)
+:::image type="content" source="./media/apache-hadoop-deep-dive-advanced-analytics/machine-learning-results.png" alt-text="Grafiek met Machine Learning resultaten" border="false":::
 
 ### <a name="try-it-out"></a>Probeer het eens!
 

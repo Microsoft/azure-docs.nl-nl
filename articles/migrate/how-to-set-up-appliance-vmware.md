@@ -6,16 +6,16 @@ ms.author: vibansa
 ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 04/16/2020
-ms.openlocfilehash: 1217b51ea91758d25b76394b27d3b21b2e9808b3
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.openlocfilehash: 64be28838abb5d5021f0a8cefc0eed2c2516498b
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104780868"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104865227"
 ---
 # <a name="set-up-an-appliance-for-servers-in-vmware-environment"></a>Een apparaat instellen voor servers in VMware-omgeving
 
-Volg dit artikel om het Azure Migrate-apparaat in te stellen voor evaluatie met de Azure Migrate: hulp programma voor [detectie en evaluatie](migrate-services-overview.md#azure-migrate-server-assessment-tool) en voor migratie zonder agent met behulp van het Azure migrate: hulp programma voor [server migratie](migrate-services-overview.md#azure-migrate-server-migration-tool) .
+Volg dit artikel om het Azure Migrate-apparaat in te stellen voor evaluatie met de Azure Migrate: hulp programma voor [detectie en evaluatie](migrate-services-overview.md#azure-migrate-discovery-and-assessment-tool) en voor migratie zonder agent met behulp van het Azure migrate: hulp programma voor [server migratie](migrate-services-overview.md#azure-migrate-server-migration-tool) .
 
 Het [Azure migrate apparaat](migrate-appliance.md) is een licht gewicht dat door Azure migrate wordt gebruikt: detectie en evaluatie en server migratie om servers te detecteren die in vCenter Server worden uitgevoerd, Server configuratie-en prestatie-meta gegevens te verzenden naar Azure, en voor replicatie van servers die gebruikmaken van agentloze migratie.
 
@@ -24,23 +24,23 @@ U kunt het apparaat implementeren met een aantal methoden:
 - Maak een server op vCenter Server met behulp van een gedownloade eicellen-sjabloon. Dit is de methode die in dit artikel wordt beschreven.
 - Stel het apparaat in op een bestaande server met behulp van een Power shell-installatie script. [Deze methode](deploy-appliance-script.md) moet worden gebruikt als u geen eicellen-sjabloon kunt gebruiken of als u zich in azure Government bevindt.
 
-Nadat u het apparaat hebt gemaakt, controleert u of het een verbinding kan maken met Azure Migrate: detectie en evaluatie, registreert u het met het Azure Migrate project en configureert u het apparaat om de detectie te initiëren.
+Nadat u het apparaat hebt gemaakt, controleert u of het een verbinding kan maken met Azure Migrate: detectie en evaluatie, registreert u het met het project en configureert u het apparaat om detectie te initiëren.
 
 ## <a name="deploy-with-ova"></a>Implementeren met OVA
 
 Als u het apparaat wilt instellen met behulp van een OVA-sjabloon, doet u het volgende:
-1. Geef een naam op voor het apparaat en genereer een Azure Migrate-projectsleutel in de portal.
+1. Geef een naam op voor het apparaat en Genereer een project sleutel in de portal.
 1. Download een OVA-sjabloonbestand en importeer het naar vCenter Server. Controleer of de eicellen veilig zijn.
 1. Maak de toestel-VM op basis van het bestand van de eicellen en controleer of het verbinding kan maken met Azure Migrate.
-1. Configureer het apparaat voor de eerste keer en registreer het met het project met behulp van de Azure Migrate project sleutel.
+1. Configureer het apparaat voor de eerste keer en registreer het met het project met behulp van de project sleutel.
 
-### <a name="1-generate-the-azure-migrate-project-key"></a>1. de Azure Migrate project sleutel genereren
+### <a name="1-generate-the-project-key"></a>1. de project sleutel genereren
 
 1. In **migratie doelen**  >  **servers**  >  **Azure migrate: detectie en evaluatie** selecteert u **detecteren**.
 2. In **Discover-servers**  >  **zijn uw servers gevirtualiseerd?**, selecteert u **Ja, met VMware vSphere Hyper Visor**.
-3. Geef in **1: Azure migrate project sleutel genereren** een naam op voor het Azure migrate apparaat dat u wilt instellen voor de detectie van servers in uw VMware-omgeving. De naam moet alfanumeriek zijn met 14 tekens of minder.
+3. Geef in **1: project sleutel genereren** een naam op voor het Azure migrate apparaat dat u wilt instellen voor de detectie van servers in uw VMware-omgeving. De naam moet alfanumeriek zijn met 14 tekens of minder.
 1. Klik op **Sleutel genereren** om de vereiste Azure-resources te gaan maken. Sluit de detectie pagina niet tijdens het maken van resources.
-1. Nadat de Azure-resources zijn gemaakt, wordt er een **Azure Migrate-projectsleutel** gegenereerd.
+1. Nadat het maken van de Azure-resources is voltooid, wordt een **project sleutel** gegenereerd.
 1. Kopieer de sleutel, omdat u deze nodig hebt om de registratie van het apparaat tijdens de configuratie te voltooien.
 
 ### <a name="2-download-the-ova-template"></a>2. de sjabloon van de eicellen downloaden
@@ -117,7 +117,7 @@ Het apparaat voor de eerste keer instellen.
 
 ## <a name="register-the-appliance-with-azure-migrate"></a>Het apparaat registreren bij Azure Migrate
 
-1. Plak de **Azure Migrate-projectsleutel** die u in de portal hebt gekopieerd. Als u de sleutel niet hebt, gaat u naar **detectie en evaluatie> detecteert> bestaande apparaten te beheren**, selecteert u de naam van het apparaat dat u hebt ingevoerd op het moment van sleutel genereren en kopieert u de bijbehorende sleutel.
+1. Plak de **project sleutel** die u hebt gekopieerd uit de portal. Als u de sleutel niet hebt, gaat u naar **detectie en evaluatie> detecteert> bestaande apparaten te beheren**, selecteert u de naam van het apparaat dat u hebt ingevoerd op het moment van sleutel genereren en kopieert u de bijbehorende sleutel.
 1. U hebt een apparaatcode nodig om te verifiëren bij Azure. Als u klikt op **Aanmelden**, wordt er een modaal met de apparaatcode geopend, zoals hieronder weergegeven.
 
     :::image type="content" source="./media/tutorial-discover-vmware/device-code.png" alt-text="Modaal waarin de apparaatcode wordt weergegeven":::
@@ -154,8 +154,6 @@ In **stap 3: Server referenties opgeven voor het uitvoeren van software-inventar
 
 :::image type="content" source="./media/tutorial-discover-vmware/appliance-server-credentials-mapping.png" alt-text="Panel 3 op het apparaat Configuration Manager voor Server Details":::
 
-> [!Note]
-> Detectie en evaluatie van SQL Server instanties en data bases die worden uitgevoerd in uw VMware-omgeving is nu beschikbaar als preview-versie. Als u deze functie wilt proberen, gebruikt u [**deze koppeling**](https://aka.ms/AzureMigrate/SQL) om een project te maken in de regio **Australië - oost**. Als u al een project in Australië-oost hebt en u deze functie wilt proberen, zorgt u ervoor dat u aan deze [**vereisten**](how-to-discover-sql-existing-project.md) voldoet in de portal.
 
 Als u gebruik wilt maken van deze functies, kunt u de referenties van de server opgeven door de volgende stappen uit te voeren. Het apparaat zal proberen de referenties automatisch toe te wijzen aan de servers om de detectie functies uit te voeren.
 

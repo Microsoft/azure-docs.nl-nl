@@ -1,5 +1,5 @@
 ---
-title: Meerdere woordenlijst termen in een lijst met geselecteerde assets markeren
+title: Activa bulksgewijs bewerken voor label classificaties, woordenlijst termen en contact personen wijzigen
 description: Meer informatie over bulksgewijs bewerken van assets in azure controle sfeer liggen.
 author: nayenama
 ms.author: nayenama
@@ -7,12 +7,12 @@ ms.service: data-catalog
 ms.subservice: data-catalog-gen2
 ms.topic: conceptual
 ms.date: 11/24/2020
-ms.openlocfilehash: 493d3ceb596bb29da0e60ab08518375412417a0e
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 149a70ea9b3fad919e771e8eb279e01d1492b3b3
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102049476"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104952453"
 ---
 # <a name="how-to-bulk-edit-assets-to-tag-glossary-terms"></a>Activa bulksgewijs bewerken voor het labelen van termen in de woorden lijst
 

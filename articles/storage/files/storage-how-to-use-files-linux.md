@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 10/19/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 5161d8e169a7eb9e757dfbfa71fa697880e1806e
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 4ace5620bf98b06956c294a12b6b08881422e718
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98673684"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104952334"
 ---
 # <a name="use-azure-files-with-linux"></a>Azure Files gebruiken met Linux
 [Azure Files ](storage-files-introduction.md) is het eenvoudig te gebruiken cloudbestandssysteem van Microsoft. Azure-bestands shares kunnen worden gekoppeld in Linux-distributies met behulp van de [SMB-kernel-client](https://wiki.samba.org/index.php/LinuxCIFS). In dit artikel ziet u twee manieren om een Azure-bestands share te koppelen: op aanvraag met de `mount` opdracht en aan-opstarten door een item in te maken `/etc/fstab` .
@@ -94,7 +94,7 @@ uname -r
     Als u poort 445 niet kunt openen in uw bedrijfs netwerk of als dit door een Internet provider wordt geblokkeerd, kunt u een VPN-verbinding of ExpressRoute gebruiken om poort 445 te omzeilen. Zie [netwerk overwegingen voor directe toegang tot Azure bestands share](storage-files-networking-overview.md)voor meer informatie.
 
 ## <a name="mounting-azure-file-share"></a>Azure-bestands share koppelen
-Als u een Azure-bestands share met uw Linux-distributie wilt gebruiken, moet u een directory maken die fungeert als het koppel punt voor de Azure-bestands share. U kunt een koppel punt maken op een wille keurige locatie in uw Linux-systeem, maar het is gebruikelijk om dit te doen onder/mnt. Na het koppel punt gebruikt u de `mount` opdracht om toegang te krijgen tot de Azure-bestands share.
+Als u een Azure-bestands share met uw Linux-distributie wilt gebruiken, moet u een directory maken die fungeert als het koppel punt voor de Azure-bestands share. U kunt een koppel punt maken op een wille keurige locatie in uw Linux-systeem, maar het is gebruikelijk om dit te doen onder/Mount. Na het koppel punt gebruikt u de `mount` opdracht om toegang te krijgen tot de Azure-bestands share.
 
 U kunt dezelfde Azure-bestands share indien gewenst koppelen aan meerdere koppel punten.
 
@@ -106,7 +106,7 @@ U kunt dezelfde Azure-bestands share indien gewenst koppelen aan meerdere koppel
     storageAccountName="<your-storage-account>"
     fileShareName="<your-file-share>"
 
-    mntPath="/mnt/$storageAccountName/$fileShareName"
+    mntPath="/mount/$storageAccountName/$fileShareName"
 
     sudo mkdir -p $mntPath
     ```
@@ -135,14 +135,14 @@ U kunt dezelfde Azure-bestands share indien gewenst koppelen aan meerdere koppel
 Wanneer u klaar bent met het gebruik van de Azure-bestands share, kunt u gebruiken `sudo umount $mntPath` om de share te ontkoppelen.
 
 ### <a name="create-a-persistent-mount-point-for-the-azure-file-share-with-etcfstab"></a>Een permanent koppel punt maken voor de Azure-bestands share met `/etc/fstab`
-1. **Maak een map voor het koppel punt**: er kan een map voor een koppel punt worden gemaakt op een wille keurige locatie in het bestands systeem, maar dit is een algemene Conventie voor het maken van deze onder/mnt. Met de volgende opdracht maakt u bijvoorbeeld een nieuwe map, vervangt `<your-resource-group>` `<your-storage-account>` u, en `<your-file-share>` met de juiste informatie voor uw omgeving:
+1. **Maak een map voor het koppel punt**: er kan een map voor een koppel punt worden gemaakt op een wille keurige locatie in het bestands systeem, maar dit is een algemene Conventie voor het maken van deze onder/Mount. Met de volgende opdracht maakt u bijvoorbeeld een nieuwe map, vervangt `<your-resource-group>` `<your-storage-account>` u, en `<your-file-share>` met de juiste informatie voor uw omgeving:
 
     ```bash
     resourceGroupName="<your-resource-group>"
     storageAccountName="<your-storage-account>"
     fileShareName="<your-file-share>"
 
-    mntPath="/mnt/$storageAccountName/$fileShareName"
+    mntPath="/mount/$storageAccountName/$fileShareName"
 
     sudo mkdir -p $mntPath
     ```

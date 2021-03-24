@@ -4,15 +4,15 @@ description: Meer informatie over de netwerk functies in Azure App Service en in
 author: ccompy
 ms.assetid: 5c61eed1-1ad1-4191-9f71-906d610ee5b7
 ms.topic: article
-ms.date: 10/18/2020
+ms.date: 03/26/2021
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 730f26039db0f5441563ac7bf5d6b0ab536cbcd2
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 9ba85ecfe2b57ceb1eed5c51929107a95f5a4669
+ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "99593126"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104889141"
 ---
 # <a name="app-service-networking-features"></a>App Service-netwerk functies
 
@@ -129,11 +129,15 @@ Enkele gebruiks voorbeelden voor deze functie:
 ![Diagram dat het gebruik van service-eind punten met Application Gateway illustreert.](media/networking-features/service-endpoints-appgw.png)
 
 Zie [Azure app service-toegangs beperkingen][serviceendpoints]voor meer informatie over het configureren van service-eind punten met uw app.
-#### <a name="access-restriction-rules-based-on-service-tags-preview"></a>Toegangs beperkings regels op basis van service tags (preview-versie)
+
+#### <a name="access-restriction-rules-based-on-service-tags"></a>Toegangs beperkings regels op basis van service Tags
+
 [Azure-service Tags][servicetags] zijn duidelijk gedefinieerde sets met IP-adressen voor Azure-Services. Service Tags groep de IP-bereiken die worden gebruikt in verschillende Azure-Services en is vaak ook gericht op specifieke regio's. Hiermee kunt u *Inkomend* verkeer filteren vanuit specifieke Azure-Services. 
 
 Voor een volledige lijst met tags en meer informatie gaat u naar de bovenstaande service label koppeling. Zie [toegangs beperkingen configureren][iprestrictions]voor meer informatie over het inschakelen van deze functie.
-#### <a name="http-header-filtering-for-access-restriction-rules-preview"></a>Filteren van http-headers voor toegangs beperkings regels (preview-versie)
+
+#### <a name="http-header-filtering-for-access-restriction-rules"></a>Filteren van http-headers voor toegangs beperkings regels
+
 U kunt voor elke toegangs beperkings regel extra http-header filters toevoegen. Zo kunt u de inkomende aanvraag en het filter verder controleren op basis van de specifieke waarden van de http-header. Elke kop kan Maxi maal 8 waarden per regel bevatten. De volgende lijst met HTTP-headers wordt momenteel ondersteund: 
 * X-doorgestuurd-voor
 * X-doorgestuurd-host
@@ -143,6 +147,7 @@ U kunt voor elke toegangs beperkings regel extra http-header filters toevoegen. 
 Enkele use cases voor http-header filters zijn:
 * De toegang tot verkeer van proxy servers die de hostnaam door sturen beperken
 * Beperk de toegang tot een specifiek exemplaar van de Azure-front-deur met een servicetag regel en X-Azure-FDID-header beperking
+
 ### <a name="private-endpoint"></a>Privé-eindpunt
 
 Privé-eind punt is een netwerk interface waarmee u privé en veilig verbinding maakt met uw web-app met behulp van een persoonlijke Azure-koppeling. Persoonlijk eind punt maakt gebruik van een privé-IP-adres van uw virtuele netwerk, waardoor de web-app effectief in uw virtuele netwerk wordt gezet. Deze functie is alleen voor *inkomende* stromen naar uw web-app.

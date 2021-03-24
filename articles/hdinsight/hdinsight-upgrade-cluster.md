@@ -7,12 +7,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 01/31/2020
-ms.openlocfilehash: 04da5d668515fe96d50d4e6a7d0f5ff1c4c48c27
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 4aa25368e156ce793e969f866490352e253559fc
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98931376"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104871721"
 ---
 # <a name="migrate-hdinsight-cluster-to-a-newer-version"></a>HDInsight-cluster migreren naar een nieuwere versie
 
@@ -24,7 +24,7 @@ Om te profiteren van de nieuwste HDInsight-functies, raden we aan dat HDInsight-
 ## <a name="migration-tasks"></a>Migratie taken
 
 De werk stroom voor het upgraden van een HDInsight-cluster is als volgt.
-![Werk stroom diagram voor HDInsight-upgrade](./media/hdinsight-upgrade-cluster/upgrade-workflow-diagram.png)
+:::image type="content" source="./media/hdinsight-upgrade-cluster/upgrade-workflow-diagram.png" alt-text="Werk stroom diagram voor HDInsight-upgrade" border="false":::
 
 1. Lees elke sectie van dit document voor meer informatie over wijzigingen die mogelijk vereist zijn bij het upgraden van uw HDInsight-cluster.
 2. Maak een cluster als test-of kwaliteits borgings omgeving. Zie [informatie over het maken van HDInsight-clusters op basis van Linux](hdinsight-hadoop-provision-linux-clusters.md) voor meer informatie over het maken van een cluster.
@@ -47,7 +47,7 @@ De volgende documenten bevatten richt lijnen voor het migreren van specifieke wo
 * [Kafka migreren](./kafka/migrate-versions.md)
 * [Hive/interactieve query migreren](./interactive-query/apache-hive-migrate-workloads.md)
 
-## <a name="backup-and-restore"></a>Back-up en herstel
+## <a name="backup-and-restore"></a>Back-ups en herstellen
 
 Zie [een Data Base herstellen in Azure SQL database met behulp van automatische database back-ups](../azure-sql/database/recovery-using-backups.md)voor meer informatie over back-up en herstel van de data base.
 

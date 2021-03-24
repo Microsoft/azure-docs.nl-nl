@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: quickstart
 ms.custom: hdinsightactive
 ms.date: 12/03/2019
-ms.openlocfilehash: 1199fee82532eacf1f0ef41b877b970d7d9f2cf5
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 75f758054f867c58dd4180fe5e728e66785e3b11
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98941064"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104869766"
 ---
 # <a name="quickstart-execute-apache-hive-queries-in-azure-hdinsight-with-apache-zeppelin"></a>Snelstart: Apache Hive-query’s uitvoeren in Azure HDInsight met Apache Zeppelin
 
@@ -28,7 +28,7 @@ Een Interactive Query-cluster in HDInsight. Raadpleeg [Cluster maken](../hadoop/
 
 2. Voer uw gebruikersnaam en wachtwoord in om u aan te melden bij het cluster. Op de Zeppelin-pagina kunt u een nieuwe notitie maken of bestaande notities openen. **HiveSample** bevat enkele voorbeelden van Hive-query's.  
 
-    ![Zeppelin in Interactive Query in HDInsight](./media/hdinsight-connect-hive-zeppelin/hdinsight-hive-zeppelin.png)
+    :::image type="content" source="./media/hdinsight-connect-hive-zeppelin/hdinsight-hive-zeppelin.png" alt-text="Zeppelin in Interactive Query in HDInsight" border="true":::
 
 3. Selecteer **Create new note** (Nieuwe notitie maken).
 
@@ -46,7 +46,7 @@ Een Interactive Query-cluster in HDInsight. Raadpleeg [Cluster maken](../hadoop/
     show tables
     ```
 
-    ![Zeppelin in Interactive Query in HDInsight voert query uit](./media/hdinsight-connect-hive-zeppelin/hdinsight-hive-zeppelin-query.png)
+    :::image type="content" source="./media/hdinsight-connect-hive-zeppelin/hdinsight-hive-zeppelin-query.png" alt-text="Zeppelin in Interactive Query in HDInsight voert query uit" border="true":::
 
     Met de instructie **%jdbc(hive)** in de eerste regel wordt aangegeven dat de notebook de JDBC-interpreter van Hive moet gebruiken.
 

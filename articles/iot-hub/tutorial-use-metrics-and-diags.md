@@ -12,12 +12,12 @@ ms.custom:
 - mqtt
 - devx-track-azurecli
 - devx-track-csharp
-ms.openlocfilehash: bf834a6dd648ffc8f4b1633dbb383f33cd99335f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 1e2983fb50ce3ad1482db85025677cba5fee0c2e
+ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98625196"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104889587"
 ---
 # <a name="tutorial-set-up-and-use-metrics-and-logs-with-an-iot-hub"></a>Zelfstudie: Metrische gegevens en logboeken instellen en gebruiken met een IoT-hub
 
@@ -219,7 +219,7 @@ U stelt als volgt waarschuwingen voor metrische gegevens in:
 
 1. Configureer eerst de voorwaarde op basis waarvan de waarschuwing wordt geactiveerd.
 
-    1. Selecteer onder **Voorwaarde** de optie **Voorwaarde selecteren**. Typ in het deelvenster **Signaallogica configureren** de tekst 'Telemetrie' in het zoekvak en selecteer **Verzonden telemetrieberichten**.
+    1. Onder **voor waarde**, selecteert u **voor waarde toevoegen**. Typ in het deelvenster **Signaallogica configureren** de tekst 'Telemetrie' in het zoekvak en selecteer **Verzonden telemetrieberichten**.
 
        :::image type="content" source="media/tutorial-use-metrics-and-diags/configure-signal-logic-telemetry-messages-sent.png" alt-text="Schermopname waarin het selecteren van het metrische gegeven wordt weergegeven.":::
 
@@ -245,7 +245,7 @@ U stelt als volgt waarschuwingen voor metrische gegevens in:
 
 1. Configureer nu de actie voor de waarschuwing.
 
-    1. Ga terug naar het deelvenster **Waarschuwingsregel maken** en selecteer onder **Acties** de optie **Actiegroep selecteren**. Selecteer in het deelvenster **Een actiegroep selecteren om aan deze waarschuwingsregel toe te voegen** de optie **Actiegroep maken**.
+    1. Ga terug naar het deel venster **waarschuwings regel maken** en selecteer **actie groepen toevoegen** onder **acties**. Selecteer in het deelvenster **Een actiegroep selecteren om aan deze waarschuwingsregel toe te voegen** de optie **Actiegroep maken**.
 
     1. Geef op het tabblad **Basisgegevens** in het deelvenster **Actiegroep maken** een naam en een weergavenaam op voor de actiegroep.
 
@@ -313,7 +313,7 @@ Met deze instellingen wordt een waarschuwing geactiveerd en ontvangt u een e-mai
 
 ## <a name="run-the-simulated-device-app"></a>De app voor een gesimuleerd apparaat uitvoeren
 
-In de sectie [Resources instellen](#set-up-resources) hebt u een apparaat-id geregistreerd voor het simuleren van een IoT-apparaat. In deze sectie downloadt u een .NET-console-app die een apparaat simuleert dat berichten van apparaat naar cloud verzendt naar een IoT-hub. Configureer de app zodat deze berichten naar uw IoT-hub verzendt en voer de app vervolgens uit. 
+In de sectie [Resources instellen](#set-up-resources) hebt u een apparaat-id geregistreerd voor het simuleren van een IoT-apparaat. In deze sectie downloadt u een .NET-console-app die een apparaat simuleert dat berichten van apparaat naar cloud verzendt naar een IoT-hub. Configureer de app zodat deze berichten naar uw IoT-hub verzendt en voer de app vervolgens uit.
 
 > [!IMPORTANT]
 >

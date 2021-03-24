@@ -4,12 +4,12 @@ description: 'Zelfstudie: leer hoe u Apache Ranger-beleidsregels voor Kafka conf
 ms.service: hdinsight
 ms.topic: tutorial
 ms.date: 05/19/2020
-ms.openlocfilehash: 552998de23bebd98f56ba28eb6ad581689e52e41
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: bab3df857dfdac3ca3b9193bda1caea0040a4cbb
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98933693"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104866978"
 ---
 # <a name="tutorial-configure-apache-kafka-policies-in-hdinsight-with-enterprise-security-package-preview"></a>Zelfstudie: Apache Kafka-beleidsregels configureren in HDInsight met Enterprise Security Package (preview)
 
@@ -33,7 +33,7 @@ Een [HDInsight Kafka-cluster met Enterprise Security Package](./apache-domain-jo
 
 2. Meld u aan met uw beheerdersreferenties voor Azure Active Directory (AD). Deze referenties zijn niet hetzelfde als de referenties voor het HDInsight-cluster of de SSH-referenties voor het Linux HDInsight knooppunt.
 
-   ![Beheerinterface voor HDInsight Apache Ranger](./media/apache-domain-joined-run-kafka/apache-ranger-admin-login.png)
+   :::image type="content" source="./media/apache-domain-joined-run-kafka/apache-ranger-admin-login.png" alt-text="Beheerinterface voor HDInsight Apache Ranger" border="true":::
 
 ## <a name="create-domain-users"></a>Domeingebruikers maken
 
@@ -61,7 +61,7 @@ Maak een Ranger-beleid voor **sales_user** en **marketing_user**.
    * Gebruik '*' om nul of meer exemplaren van tekens aan te geven.
    * Gebruik '?' om één teken aan te geven.
 
-   ![Beheerinterface van Apache Ranger: Beleid maken 1](./media/apache-domain-joined-run-kafka/apache-ranger-admin-create-policy.png)
+   :::image type="content" source="./media/apache-domain-joined-run-kafka/apache-ranger-admin-create-policy.png" alt-text="Beheerinterface van Apache Ranger: Beleid maken 1" border="true":::
 
    Als er niet automatisch een domeingebruiker wordt ingevuld bij **Select User**, wacht u even totdat Ranger is gesynchroniseerd met AAD.
 
@@ -76,7 +76,7 @@ Maak een Ranger-beleid voor **sales_user** en **marketing_user**.
    |Select User  |  marketing_user1 |
    |Machtigingen  | Publish, Consume, Create |
 
-   ![Beheerinterface van Apache Ranger: Beleid maken 2](./media/apache-domain-joined-run-kafka/apache-ranger-admin-create-policy-2.png)  
+   :::image type="content" source="./media/apache-domain-joined-run-kafka/apache-ranger-admin-create-policy-2.png" alt-text="Beheerinterface van Apache Ranger: Beleid maken 2" border="true":::  
 
 6. Selecteer **Toevoegen** om het beleid op te slaan.
 
@@ -177,7 +177,7 @@ Op basis van de geconfigureerde Ranger-beleidsregels kan **sales_user** het onde
 
 8. Bekijk de controlegebeurtenissen voor toegang vanuit de gebruikersinterface van Ranger.
 
-   ![Ranger-gebruikersinterface met controlegebeurtenissen voor toegang ](./media/apache-domain-joined-run-kafka/apache-ranger-admin-audit.png)
+   :::image type="content" source="./media/apache-domain-joined-run-kafka/apache-ranger-admin-audit.png" alt-text="Access-gebeurtenissen voor het controleren van gebruikers beleidsregels voor Zwerver " border="true":::
    
 ## <a name="produce-and-consume-topics-in-esp-kafka-by-using-the-console"></a>Onderwerpen in ESP Kafka maken en gebruiken met behulp van de console
 

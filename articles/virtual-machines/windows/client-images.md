@@ -1,19 +1,19 @@
 ---
 title: Windows-client installatie kopieën in azure gebruiken
 description: De voor delen van Visual Studio-abonnementen gebruiken om Windows 7, Windows 8 of Windows 10 in azure te implementeren voor dev/test-scenario's
-author: cynthn
+author: mimckitt
 ms.subservice: imaging
 ms.service: virtual-machines
 ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 12/15/2017
-ms.author: cynthn
-ms.openlocfilehash: 21038a8d1eabfcca21329c093b866607f0343070
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.author: mimckitt
+ms.openlocfilehash: 7879e355573d2b9952728828bd3780094a919fe3
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103200007"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104869052"
 ---
 # <a name="use-windows-client-in-azure-for-devtest-scenarios"></a>Windows-client in Azure gebruiken voor scenario's voor ontwikkelen/testen
 U kunt Windows 7, Windows 8 of Windows 10 Enter prise (x64) gebruiken in azure voor ontwikkel-en test scenario's met de juiste Visual Studio (voorheen MSDN)-abonnement. 
@@ -28,6 +28,9 @@ Bepaalde Windows-client installatie kopieën zijn beschikbaar via Azure Marketpl
 
 ## <a name="eligible-offers-and-client-images"></a>In aanmerking komende aanbiedingen en client installatie kopieën
 De volgende tabel bevat informatie over de aanbieding-Id's die in aanmerking komen voor het implementeren van Windows-client installatie kopieën via de Azure Marketplace. De Windows-client installatie kopieën zijn alleen zichtbaar voor de volgende aanbiedingen. 
+
+> [!NOTE]
+> Aanbiedingen voor installatie kopieën bevinden zich onder **Windows-client** in de Azure Marketplace. Gebruik **Windows-client** bij het zoeken naar client installatie kopieën die beschikbaar zijn voor Visual Studio-abonnees. 
 
 | Naam van aanbieding | Aanbiedings nummer | Beschik bare client installatie kopieën | 
 |:--- |:---:|:---:|

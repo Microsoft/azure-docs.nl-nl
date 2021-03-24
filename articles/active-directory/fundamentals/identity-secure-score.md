@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 02/20/2020
+ms.date: 03/23/2021
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
-ms.reviewer: tilarso
+ms.reviewer: guptashi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8c319489fe4c884cd5de48ac2d3e47e7beb3026f
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 23832d9f1205105f1f9711cdf3260b74ee4a9bb1
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "90705483"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104952254"
 ---
 # <a name="what-is-the-identity-secure-score-in-azure-active-directory"></a>Wat is de id-beveiligingsscore in Azure Active Directory?
 
@@ -24,7 +24,7 @@ Hoe veilig is uw Azure AD-tenant? Als u niet weet hoe u deze vraag beantwoordt, 
 
 ## <a name="what-is-an-identity-secure-score"></a>Wat is een id-beveiligingsscore?
 
-De beveiligde score voor identiteiten is een getal tussen 1 en 223 dat als indicator fungeert voor de mate waarin u met de best practice aanbevelingen van micro soft voor beveiliging werkt. Elke verbeterings actie in identiteits beveiligde Score is afgestemd op uw specifieke configuratie.  
+De beveiligde Score van de identiteit is een percentage dat als indicator fungeert voor de mate waarin u met de best practice aanbevelingen van micro soft voor beveiliging werkt. Elke verbeterings actie in identiteits beveiligde Score is afgestemd op uw specifieke configuratie.  
 
 ![Beveiligingsscore](./media/identity-secure-score/identity-secure-score-overview.png)
 
@@ -78,7 +78,7 @@ De id-beveiligingsscore kan worden gebruikt door de volgende rollen:
 
 ### <a name="how-are-controls-scored"></a>Hoe worden de besturings elementen gescoord?
 
-Besturings elementen kunnen op twee manieren worden gescoord. Sommige worden op een binaire manier gescoord: u krijgt 100% van de score als u de functie of instelling hebt geconfigureerd op basis van onze aanbeveling. Andere scores worden berekend als een percentage van de totale configuratie. Als de aanbeveling voor verbetering bijvoorbeeld aangeeft dat u 30 punten krijgt als u al uw gebruikers met MFA beveiligt en u slechts 5 van 100 totaal gebruikers hebt beveiligd, krijgt u een gedeeltelijke Score van ongeveer twee punten (5 beveiligde/100 totaal * 30 Maxi maal pts = 2).
+Besturings elementen kunnen op twee manieren worden gescoord. Sommige worden op een binaire manier gescoord: u krijgt 100% van de score als u de functie of instelling hebt geconfigureerd op basis van onze aanbeveling. Andere scores worden berekend als een percentage van de totale configuratie. Als de aanbeveling voor verbetering bijvoorbeeld aangeeft dat u een maximum van 10,71% krijgt als u al uw gebruikers met MFA beveiligt en u slechts 5 van 100 totaal gebruikers hebt beveiligd, krijgt u een gedeeltelijke Score van 0,53% (5 beveiligde/100 totaal * 10,71% maximum = 0,53% gedeeltelijke Score).
 
 ### <a name="what-does-not-scored-mean"></a>Wat betekent [Geen score]?
 
@@ -98,7 +98,7 @@ Nee, dat niet. De beveiligde score geeft geen absolute meting van de waarschijnl
 
 ### <a name="how-should-i-interpret-my-score"></a>Hoe moet ik mijn score interpreteren?
 
-U krijgt punten voor het configureren van aanbevolen beveiligingsfuncties of het uitvoeren van beveiligingstaken (zoals het lezen van rapporten). Sommige acties krijgen een score voor gedeeltelijke uitvoering, zoals het inschakelen van meervoudige verificatie (MFA) voor uw gebruikers. Uw beveiligde Score is rechtstreeks representatief voor de micro soft-beveiligings services die u gebruikt. Houd er rekening mee dat de beveiliging moet worden uitgebalanceerd met de bruikbaarheid. Alle beveiligingsmechanismen hebben in meer of mindere mate impact op de gebruiker. Mechanismen met een kleine impact op de gebruiker hebben geen tot nauwelijks gevolgen voor de dagelijkse taken van uw gebruikers.
+Uw score wordt verbeterd voor het configureren van aanbevolen beveiligings functies of het uitvoeren van taken met betrekking tot beveiliging (zoals het lezen van rapporten). Sommige acties krijgen een score voor gedeeltelijke uitvoering, zoals het inschakelen van meervoudige verificatie (MFA) voor uw gebruikers. Uw beveiligde Score is rechtstreeks representatief voor de micro soft-beveiligings services die u gebruikt. Houd er rekening mee dat de beveiliging moet worden uitgebalanceerd met de bruikbaarheid. Alle beveiligingsmechanismen hebben in meer of mindere mate impact op de gebruiker. Mechanismen met een kleine impact op de gebruiker hebben geen tot nauwelijks gevolgen voor de dagelijkse taken van uw gebruikers.
 
 Als u de Score geschiedenis wilt zien, gaat u naar het [Microsoft 365 Security Center](https://security.microsoft.com/) en bekijkt u uw algemene micro soft-beveiligde Score. U kunt de wijzigingen van uw algemene beveiligde Score controleren door te klikken op de weer gave geschiedenis. Kies een specifieke datum om te zien welke mechanismen waren ingeschakeld voor die dag en wat dat voor punten heeft opgeleverd.
 

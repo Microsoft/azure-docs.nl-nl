@@ -4,7 +4,7 @@
   items:
     - name: Wat is Azure Firewall?
       href: overview.md
-- name: Quickstarts
+- name: Snelstartgidsen
   expanded: true
   items:
     - name: Implementeren met IP-groepen - ARM-sjabloon

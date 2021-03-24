@@ -4,155 +4,153 @@
 - name: Overzicht
   items:
     - name: Wat is Azure Spring Cloud?
-      href: spring-cloud-overview.md
-- name: Quickstarts
+      href: overview.md
+- name: Snelstartgidsen
   expanded: true
   items:
     - name: Uw eerste app lanceren
-      href: spring-cloud-quickstart.md
+      href: quickstart.md
     - name: Micro services bouwen en uitvoeren
       expanded: true
       items:
         - name: Inleiding tot de voorbeeld-app
-          href: spring-cloud-quickstart-sample-app-introduction.md
+          href: quickstart-sample-app-introduction.md
         - name: Azure Spring Cloud-service inrichten
-          href: spring-cloud-quickstart-provision-service-instance.md
+          href: quickstart-provision-service-instance.md
         - name: Configuratieserver instellen
-          href: spring-cloud-quickstart-setup-config-server.md
+          href: quickstart-setup-config-server.md
         - name: Apps bouwen en implementeren
-          href: spring-cloud-quickstart-deploy-apps.md
+          href: quickstart-deploy-apps.md
         - name: 'Logboeken, metrische gegevens en tracering gebruiken'
-          href: spring-cloud-quickstart-logs-metrics-tracing.md
+          href: quickstart-logs-metrics-tracing.md
 - name: Zelfstudies
   items:
     - name: Waarschuwingen en actiegroepen
-      href: spring-cloud-tutorial-alerts-action-groups.md
+      href: tutorial-alerts-action-groups.md
     - name: Circuit Breaker-dashboard
-      href: spring-cloud-tutorial-circuit-breaker.md
+      href: tutorial-circuit-breaker.md
     - name: Aangepaste DNS-naam
-      href: spring-cloud-tutorial-custom-domain.md
-    - name: Beheerde identiteit gebruiken om Key Vault te koppelen met een Azure Spring Cloud-app
-      href: spring-cloud-tutorial-managed-identities-key-vault.md
-    - name: Beheerde identiteit gebruiken om Azure Functions aan te roepen vanuit een Azure Spring Cloud-app
-      href: spring-cloud-tutorial-managed-identities-functions.md
+      href: tutorial-custom-domain.md
+    - name: Beheerde identiteit om verbinding te maken Key Vault
+      href: tutorial-managed-identities-key-vault.md
+    - name: Beheerde identiteit om Azure Functions aan te roepen
+      href: tutorial-managed-identities-functions.md
 - name: Concepten
   items:
-    - name: App en implementatie begrijpen
-      href: spring-cloud-concept-understand-app-and-deployment.md
-    - name: Quota en limieten begrijpen
-      href: spring-cloud-quotas.md
-    - name: Metrische gegevens begrijpen
-      href: spring-cloud-concept-metrics.md
+    - name: App en implementatie
+      href: concept-understand-app-and-deployment.md
+    - name: Quota en limieten
+      href: quotas.md
+    - name: Metrische gegevens
+      href: concept-metrics.md
     - name: Azure Spring Boot Actuator
-      href: spring-cloud-concept-manage-monitor-app-spring-boot-actuator.md
-    - name: Beveiliging
-      items:
-        - name: Beveiligingsmaatregelen
-          href: spring-cloud-concept-security-controls.md
-        - name: Besturingselementen voor beveiliging van Azure Policy
-          href: ./security-controls-policy.md
+      href: concept-manage-monitor-app-spring-boot-actuator.md
+- name: Beveiliging
+  items:
+    - name: Beveiligingsmaatregelen
+      href: concept-security-controls.md
+    - name: Beveiligings besturings elementen Azure Policy
+      href: ./security-controls-policy.md
     - name: App-status begrijpen
-      href: spring-cloud-concept-app-status.md
+      href: concept-app-status.md
     - name: Herstel na noodgeval plannen
       href: disaster-recovery.md
 - name: Instructiegidsen
   items:
     - name: Ontwikkelen
       items:
-        - name: Een app voorbereiden op implementatie
-          href: spring-cloud-tutorial-prepare-app-deployment.md
+        - name: Een Java Spring-app voorbereiden voor implementatie
+          href: how-to-prepare-app-deployment.md
         - name: Een configuratieserver instellen
-          href: spring-cloud-tutorial-config-server.md
-        - name: Service registratie inschakelen
-          href: spring-cloud-service-registration.md
+          href: how-to-config-server.md
+        - name: Serviceregistratie inschakelen
+          href: how-to-service-registration.md
     - name: Implementeren
       items:
         - name: Een faseringsomgeving instellen
-          href: spring-cloud-howto-staging-environment.md
+          href: how-to-staging-environment.md
         - name: Java-app starten vanuit de broncode
-          href: spring-cloud-howto-launch-from-source.md
+          href: how-to-launch-from-source.md
         - name: IntelliJ gebruiken om apps te implementeren
-          href: spring-cloud-tutorial-intellij-deploy-apps.md
+          href: how-to-intellij-deploy-apps.md
         - name: VS code gebruiken om apps te implementeren
           href: 'https://code.visualstudio.com/docs/java/java-spring-cloud'
         - name: Azure Spring Cloud implementeren met Azure PowerShell
-          href: spring-cloud-howto-deploy-powershell.md
+          href: how-to-deploy-powershell.md
     - name: Configureren
       items:
         - name: 'Een app starten, stoppen en verwijderen'
-          href: spring-cloud-howto-start-stop-delete.md
+          href: how-to-start-stop-delete.md
         - name: Permanente opslag gebruiken
-          href: spring-cloud-howto-persistent-storage.md
+          href: how-to-persistent-storage.md
     - name: Schalen
       items:
         - name: Schaal van een app handmatig aanpassen
-          href: spring-cloud-tutorial-scale-manual.md
+          href: how-to-scale-manual.md
         - name: Een app automatisch schalen
-          href: spring-cloud-tutorial-setup-autoscale.md
+          href: how-to-setup-autoscale.md
         - name: Uitgaande openbare IP-adressen identificeren
-          href: spring-cloud-howto-outbound-public-ip.md
+          href: how-to-outbound-public-ip.md
     - name: Controleren
       items:
         - name: Gedistribueerde tracering en App Insights
-          href: spring-cloud-tutorial-distributed-tracing.md
+          href: how-to-distributed-tracing.md
         - name: Logboeken en metrische gegevens analyseren
           href: diagnostic-services.md
         - name: Streamt logboeken in real-time
-          href: spring-cloud-howto-log-streaming.md
+          href: how-to-log-streaming.md
         - name: Application Insights met de In-Process Agent van Java
-          href: spring-cloud-howto-application-insights.md
+          href: how-to-application-insights.md
         - name: Metrische gegevens voor Resilience4J-circuitonderbreker
-          href: spring-cloud-howto-circuit-breaker-metrics.md
+          href: how-to-circuit-breaker-metrics.md
         - name: Gestructureerd toepassings logboek
-          href: spring-cloud-structured-app-log.md
+          href: structured-app-log.md
     - name: Netwerk
       items:
         - name: Azure lente-Cloud in een virtueel netwerk implementeren
-          href: spring-cloud-tutorial-deploy-in-azure-virtual-network.md
+          href: how-to-deploy-in-azure-virtual-network.md
         - name: Toegang tot uw toepassing in een privé netwerk
-          href: spring-cloud-access-app-virtual-network.md
+          href: access-app-virtual-network.md
         - name: Toepassingen beschikbaar maken op Internet
-          href: spring-cloud-expose-apps-gateway-azure-firewall.md
+          href: expose-apps-gateway-azure-firewall.md
         - name: Verantwoordelijkheden van klanten die Azure lente Cloud in VNET uitvoeren
-          href: spring-cloud-vnet-customer-responsibilities.md
+          href: vnet-customer-responsibilities.md
         - name: Problemen met Azure lente-Cloud in virtuele netwerken oplossen
-          href: spring-cloud-troubleshooting-vnet.md
+          href: troubleshooting-vnet.md
     - name: Beveiligen
       items:
         - name: De door het systeem toegewezen beheerde identiteit inschakelen
-          href: spring-cloud-howto-enable-system-assigned-managed-identity.md
+          href: how-to-enable-system-assigned-managed-identity.md
         - name: Rollen en machtigingen maken
-          href: spring-cloud-howto-permissions.md
-        - name: Gegevens vlak benaderen met Azure AD RBAC
-          href: spring-cloud-howto-access-data-plane-azure-ad-rbac.md
+          href: how-to-permissions.md
     - name: Integreren
       items:
         - name: Een app verbinden met Azure CosmosDB
-          href: spring-cloud-tutorial-bind-cosmos.md
+          href: how-to-bind-cosmos.md
         - name: Een app verbinden met Azure Cache voor Redis
-          href: spring-cloud-tutorial-bind-redis.md
+          href: how-to-bind-redis.md
         - name: Een app verbinden met Azure MySQL
-          href: spring-cloud-tutorial-bind-mysql.md
+          href: how-to-bind-mysql.md
         - name: Met Azure Load Balance Solutions integreren
-          href: spring-cloud-howto-integrate-azure-load-balancers.md
+          href: how-to-integrate-azure-load-balancers.md
     - name: Automatiseren
       items:
         - name: CI/CD met Azure DevOps
-          href: spring-cloud-howto-cicd.md
+          href: how-to-cicd.md
         - name: CI/CD met GitHub Actions
-          href: spring-cloud-howto-github-actions.md
+          href: how-to-github-actions.md
         - name: Autorisatie met Key Vault in GitHub Actions
-          href: spring-cloud-github-actions-key-vault.md
+          href: github-actions-key-vault.md
         - name: Een Azure Spring Cloud-exemplaar inrichten met terraform
-          href: spring-cloud-tutorial-provision-azure-spring-cloud-instance-terraform.md
+          href: how-to-provision-azure-spring-cloud-instance-terraform.md
     - name: Problemen oplossen
       items:
         - name: Problemen zelf vaststellen en oplossen
-          href: spring-cloud-howto-self-diagnose-solve.md
+          href: how-to-self-diagnose-solve.md
         - name: Zelf diagnose uitvoeren in VNET
-          href: spring-cloud-howto-self-diagnose-running-in-vnet.md
+          href: how-to-self-diagnose-running-in-vnet.md
         - name: Handleiding voor het oplossen van problemen
-          href: spring-cloud-troubleshoot.md
+          href: troubleshoot.md
     - name: Migreren
       items:
         - name: Spring Cloud
@@ -164,7 +162,7 @@
 - name: Architectuur
   items:
     - name: Referentiearchitectuur
-      href: spring-cloud-reference-architecture.md
+      href: reference-architecture.md
 - name: DevOps-implementatie
   items:
     - name: CI/CD met Azure DevOps
@@ -176,7 +174,7 @@
 - name: Problemen oplossen
   items:
     - name: Handleiding voor het oplossen van problemen
-      href: spring-cloud-troubleshoot.md
+      href: troubleshoot.md
 - name: Naslaginformatie
   items:
     - name: Azure CLI-invoeg toepassing
@@ -184,9 +182,9 @@
     - name: Azure PowerShell
       href: /powershell/module/az.springcloud
     - name: Resources
-      href: spring-cloud-resources.md
+      href: resources.md
     - name: Veelgestelde vragen
-      href: spring-cloud-faq.md
+      href: faq.md
     - name: Naslaginformatie over REST-API
       href: /rest/api/azurespringcloud/
     - name: Ingebouwde modules voor Azure Policy

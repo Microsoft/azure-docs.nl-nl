@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 08/11/2020
-ms.openlocfilehash: d17d067b88add3006bc5c7fb10caa6b80a80a827
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 99a61d3e445bf6887db0c97e365e6e4489eb79e1
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98931757"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104872010"
 ---
 # <a name="nsg-service-tags-for-azure-hdinsight"></a>NSG-service tags voor Azure HDInsight
 
@@ -40,7 +40,7 @@ De eenvoudigste manier om te beginnen met het gebruik van service tags met uw HD
 
 1. Selecteer **HDInsight** in de vervolg keuzelijst **bron service label** .
 
-    ![Een servicetag van de Azure Portal toevoegen](./media/hdinsight-service-tags/azure-portal-add-service-tag.png)
+    :::image type="content" source="./media/hdinsight-service-tags/azure-portal-add-service-tag.png" alt-text="Een servicetag van de Azure Portal toevoegen":::
 
 Dit label bevat de IP-adressen van de status-en beheer Services voor alle regio's waar HDInsight beschikbaar is. Met het label zorgt u ervoor dat uw cluster kan communiceren met de benodigde status-en beheer Services, ongeacht waar deze zijn gemaakt.
 

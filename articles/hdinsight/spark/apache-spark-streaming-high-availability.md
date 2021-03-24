@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 11/29/2019
-ms.openlocfilehash: 3eb761a793c41c2e2cc2cb952e4fb9f241b41ab6
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 602fa1cab71a797dd25aca263e0c6a9f2aa616bb
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98929697"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104870225"
 ---
 # <a name="create-high-availability-apache-spark-streaming-jobs-with-yarn"></a>Apache Spark streaming-taken met hoge Beschik baarheid maken met GARENs
 
@@ -18,7 +18,7 @@ ms.locfileid: "98929697"
 
 Met Spark streaming kunt u langlopende taken maken om trans formaties toe te passen op de gegevens en vervolgens de resultaten te pushen naar bestands systemen, data bases, Dash boards en de-console. Met Spark streaming worden micro batches van gegevens verwerkt, door eerst een batch gebeurtenissen te verzamelen gedurende een opgegeven tijds interval. Vervolgens wordt deze batch verzonden op voor verwerking en uitvoer. Tijds intervallen voor batch worden doorgaans gedefinieerd in fracties van een seconde.
 
-![Spark Streaming](./media/apache-spark-streaming-high-availability/apache-spark-streaming.png)
+:::image type="content" source="./media/apache-spark-streaming-high-availability/apache-spark-streaming.png" alt-text="Spark-streaming" border="false":::
 
 ## <a name="dstreams"></a>DStreams
 
@@ -26,13 +26,13 @@ Spark streaming vertegenwoordigt een doorlopende stream van gegevens met behulp 
 
 De Spark-kern maakt gebruik van *robuuste gedistribueerde gegevens sets* (rdd's). Rdd's distribueert gegevens over meerdere knoop punten in het cluster, waarbij elk knoop punt de gegevens in het algemeen volledig in het geheugen onderhoudt voor de beste prestaties. Elke RDD vertegenwoordigt gebeurtenissen die worden verzameld over een batch-interval. Wanneer de batch-interval is verstreken, produceert Spark streaming een nieuwe RDD met alle gegevens in dat interval. Deze doorlopende set Rdd's wordt verzameld in een DStream. Een Spark-streaming-toepassing verwerkt de gegevens die zijn opgeslagen in de RDD van elke batch.
 
-![Spark-DStream](./media/apache-spark-streaming-high-availability/apache-spark-dstream.png)
+:::image type="content" source="./media/apache-spark-streaming-high-availability/apache-spark-dstream.png" alt-text="Spark-DStream" border="false":::
 
 ## <a name="spark-structured-streaming-jobs"></a>Taken in Spark Structured streamen
 
 Spark Structured streaming werd geïntroduceerd in Spark 2,0 als analyse-engine voor gebruik in gestructureerde gegevens van streaming. In Spark Structured streaming wordt gebruikgemaakt van de SparkSQL-engine-Api's. Net als bij Spark-streaming worden de berekeningen door Spark Structured streaming uitgevoerd via continu micro-batches van gegevens. Met Spark Structured streaming wordt een gegevens stroom aangeduid als een invoer tabel met onbeperkte rijen. Dat wil zeggen dat de invoer tabel blijft groeien naarmate er nieuwe gegevens binnenkomen. Deze invoer tabel wordt continu verwerkt door een langlopende query en de resultaten worden naar een uitvoer tabel geschreven.
 
-![Spark Structured streaming](./media/apache-spark-streaming-high-availability/structured-streaming.png)
+:::image type="content" source="./media/apache-spark-streaming-high-availability/structured-streaming.png" alt-text="Spark Structured streaming" border="false":::
 
 In structured streaming worden gegevens in het systeem bezorgd en onmiddellijk opgenomen in de invoer tabel. U schrijft query's waarmee bewerkingen worden uitgevoerd op basis van deze invoer tabel. De query uitvoer levert een andere tabel, de tabel met resultaten. De resultaten tabel bevat de resultaten van de query waaruit u gegevens tekent om deze te verzenden naar een externe gegevens opslag, zoals een relationele data base. Met het *trigger interval* wordt de timing ingesteld voor wanneer gegevens worden verwerkt uit de invoer tabel. Gestructureerde streaming verwerkt de gegevens standaard zodra ze binnenkomen. U kunt echter ook de trigger zo configureren dat deze wordt uitgevoerd op een langer interval, zodat de streaminggegevens worden verwerkt in op tijd gebaseerde batches. De gegevens in de tabel met resultaten kunnen worden vernieuwd telkens wanneer er nieuwe gegevens zijn, zodat deze alle uitvoer gegevens bevat, omdat de streaming-query is gestart (*volledige modus*), of alleen de gegevens bevat die nieuw zijn sinds de laatste keer dat de query is verwerkt (*toevoeg modus*).
 
@@ -54,7 +54,7 @@ Als u een toepassing wilt maken die elke gebeurtenis eenmaal verwerkt (en slecht
 
 In HDInsight wordt het cluster werk gecoördineerd door *nog een resource-onderhandelaar* (garens). Het ontwerpen van hoge Beschik baarheid voor Spark streaming omvat technieken voor Spark-streaming en voor garen onderdelen.  Hieronder ziet u een voor beeld van een configuratie met GARENs.
 
-![GAREN architectuur](./media/apache-spark-streaming-high-availability/hdi-yarn-architecture.png)
+:::image type="content" source="./media/apache-spark-streaming-high-availability/hdi-yarn-architecture.png" alt-text="GAREN architectuur" border="false":::
 
 In de volgende secties worden ontwerp overwegingen voor deze configuratie beschreven.
 

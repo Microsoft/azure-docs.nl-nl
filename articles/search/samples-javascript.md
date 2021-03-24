@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/27/2021
-ms.openlocfilehash: f83767813ea3923d85db2ca3f0164776c610525e
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 85a4d6390087100d8d9521f6ac20dbace3a711eb
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98955017"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104955938"
 ---
 # <a name="javascript-code-samples-for-azure-cognitive-search"></a>Java script-code voorbeelden voor Azure Cognitive Search
 
@@ -39,7 +39,6 @@ Code voorbeelden uit het ontwikkel team van Azure SDK illustreren het gebruik va
 | [Indexeer functies](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/search/search-documents/samples/javascript/src/indexers) |  Demonstreert hoe [Indexeer functies](search-indexer-overview.md)maken, bijwerken, ophalen, weer geven, opnieuw instellen en verwijderen.|
 | [Vaardig heden](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/search/search-documents/samples/javascript/src/skillSets) |   Demonstreert hoe u [vaardig heden](cognitive-search-working-with-skillsets.md) kunt maken, bijwerken, ophalen, weer geven en verwijderen die zijn gekoppeld aan Indexeer functies en die op AI gebaseerde verrijking uitvoeren tijdens het indexeren. |
 | [synonymMaps](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/search/search-documents/samples/javascript/src/synonymMaps) | Laat zien hoe u [synoniemen kaarten](search-synonyms.md)kunt maken, bijwerken, ophalen, weer geven en verwijderen.  |
-| [Query's](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/search/search-documents/samples/javascript/src/readonlyQuery.js) | Demonstreert de uitvoering van query's op een open bare alleen-lezen index die wordt gehost door micro soft.  |
 
 ### <a name="typescript-samples"></a>TypeScript-voorbeelden
 
@@ -50,7 +49,6 @@ Code voorbeelden uit het ontwikkel team van Azure SDK illustreren het gebruik va
 | [Indexeer functies](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/search/search-documents/samples/typescript/src/indexers) |  Demonstreert hoe [Indexeer functies](search-indexer-overview.md)maken, bijwerken, ophalen, weer geven, opnieuw instellen en verwijderen.|
 | [Vaardig heden](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/search/search-documents/samples/typescript/src/skillSets) |   Demonstreert hoe u [vaardig heden](cognitive-search-working-with-skillsets.md) kunt maken, bijwerken, ophalen, weer geven en verwijderen die zijn gekoppeld aan Indexeer functies en die op AI gebaseerde verrijking uitvoeren tijdens het indexeren. |
 | [synonymMaps](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/search/search-documents/samples/typescript/src/synonymMaps) | Laat zien hoe u [synoniemen kaarten](search-synonyms.md)kunt maken, bijwerken, ophalen, weer geven en verwijderen.  |
-| [Query's](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/search/search-documents/samples/typescript/src/readonlyQuery.ts) | Demonstreert de uitvoering van query's op een open bare alleen-lezen index die wordt gehost door micro soft.  |
 
 ## <a name="doc-samples"></a>Doc-voor beelden
 

@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
-ms.date: 07/06/2020
+ms.date: 03/08/2021
 ms.author: justinha
-ms.openlocfilehash: a89c898e150facc9860d86e18a7acc42f5e0f441
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 5fa19e23767af0e121d07872970199a2a1705ea8
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96618855"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104951930"
 ---
 # <a name="disable-weak-ciphers-and-password-hash-synchronization-to-secure-an-azure-active-directory-domain-services-managed-domain"></a>Zwakke versleuteling en wachtwoord-hash-synchronisatie uitschakelen om een Azure Active Directory Domain Services beheerd domein te beveiligen
 
@@ -34,14 +34,25 @@ U hebt de volgende resources nodig om dit artikel te voltooien:
     * [Maak zo nodig een Azure Active Directory-tenant][create-azure-ad-tenant] of [koppel een Azure-abonnement aan uw account][associate-azure-ad-tenant].
 * Een door Azure Active Directory Domain Services beheerd domein dat in uw Azure AD-tenant is ingeschakeld en geconfigureerd.
     * [Maak en configureer zo nodig een door Azure Active Directory Domain Services beheerd domein][create-azure-ad-ds-instance].
-* Installeer en configureer Azure PowerShell.
-    * Indien nodig, volgt u de instructies voor [installeren van de Azure PowerShell-module en verbinding maken met uw Azure-abonnement](/powershell/azure/install-az-ps).
-    * Zorg ervoor dat u zich bij uw Azure-abonnement aanmeldt met behulp van de [Connect-AzAccount][Connect-AzAccount]-cmdlet.
-* Installeer en configureer Azure AD PowerShell.
-    * Indien nodig, volgt u de instructies voor het [installeren van de Azure AD PowerShell-module en verbinding maken met Azure AD](/powershell/azure/active-directory/install-adv2).
-    * Zorg ervoor dat u zich bij de Azure-tenant aanmeldt met behulp van de [Connect-AzureAD][Connect-AzureAD]-cmdlet.
 
-## <a name="disable-weak-ciphers-and-ntlm-password-hash-sync"></a>Zwakke code ringen en NTLM-wachtwoord-hash-synchronisatie uitschakelen
+## <a name="use-security-settings-to-disable-weak-ciphers-and-ntlm-password-hash-sync"></a>Beveiligings instellingen gebruiken om zwakke versleuteling en NTLM-wachtwoord-hash-synchronisatie uit te scha kelen
+
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Zoek en selecteer **Azure AD Domain Services**.
+1. Kies uw beheerde domein, bijvoorbeeld *aaddscontoso.com*.
+1. Klik aan de linkerkant op **beveiligings instellingen**.
+1. Klik op **uitschakelen** voor de volgende instellingen:
+   - **Alleen TLS 1,2-modus**
+   - **NTLM-verificatie**
+   - **NTLM-wachtwoord synchronisatie van on-premises**
+
+   ![Scherm opname van beveiligings instellingen voor het uitschakelen van zwakke cijfers en NTLM-wachtwoord-hash-synchronisatie](media/secure-your-domain/security-settings.png)
+
+## <a name="use-powershell-to-disable-weak-ciphers-and-ntlm-password-hash-sync"></a>Power shell gebruiken voor het uitschakelen van zwakke cijfers en NTLM-wachtwoord-hash-synchronisatie
+
+Als dat nodig is, [installeert en configureert u Azure PowerShell](/powershell/azure/install-az-ps). Zorg ervoor dat u zich bij uw Azure-abonnement aanmeldt met behulp van de [Connect-AzAccount][Connect-AzAccount]-cmdlet. 
+
+[Installeer en configureer ook Azure AD Power shell](/powershell/azure/active-directory/install-adv2)als dat nodig is. Zorg ervoor dat u zich bij de Azure-tenant aanmeldt met behulp van de [Connect-AzureAD][Connect-AzureAD]-cmdlet.
 
 Als u zwakke coderings suites en hash-synchronisatie van NTLM-referenties wilt uitschakelen, meldt u zich aan bij uw Azure-account en haalt u de Azure AD DS-resource op met behulp van de cmdlet [Get-AzResource][Get-AzResource] :
 

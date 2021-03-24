@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/17/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 7c5fbbd8cdfd75819bffcfb93fc81900feb4a612
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: d965ec2f846f09dd61342b3961e7ea8106f6a19f
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101652365"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104954884"
 ---
 # <a name="azure-security-baseline-for-api-management"></a>Azure-beveiligings basislijn voor API Management
 
@@ -52,7 +52,7 @@ Binnenkomend en uitgaand verkeer in het subnet waarin API Management wordt geïm
 
 Let op: bij het configureren van een NSG op het subnet van API Management, moet er een set poorten zijn die open moeten zijn. Als een van deze poorten niet beschikbaar is, werkt API Management mogelijk niet goed en wordt deze mogelijk niet meer toegankelijk.
 
-- [Meer informatie over NSG-configuraties voor Azure API Management](https://docs.microsoft.com/azure/api-management/api-management-using-with-vnet#-common-network-configuration-issues)
+- [Meer informatie over NSG-configuraties voor Azure API Management](./api-management-using-with-vnet.md#-common-network-configuration-issues)
 
 - [NSG-stroom logboeken inschakelen](../network-watcher/network-watcher-nsg-flow-logging-portal.md)
 
@@ -75,7 +75,7 @@ Opmerking: deze functie is beschikbaar in de Premium-en Developer-laag van API M
 
 - [API Management integreren in een intern VNET met Application Gateway](api-management-howto-integrate-internal-vnet-appgateway.md)
 
-- [Azure-toepassing gateway begrijpen](/azure/application-gateway/)
+- [Azure-toepassing gateway begrijpen](../application-gateway/index.yml)
 
 **Verantwoordelijkheid**: Klant
 
@@ -96,7 +96,7 @@ Gebruik Azure Security Center geïntegreerde bedreigings informatie om communica
 
 - [API Management integreren in een intern VNET met Application Gateway](api-management-howto-integrate-internal-vnet-appgateway.md)
 
-- [Azure-toepassing gateway begrijpen](/azure/application-gateway/)
+- [Azure-toepassing gateway begrijpen](../application-gateway/index.yml)
 
 - [Meer informatie over Azure Security Center geïntegreerde bedreigings informatie](../security-center/azure-defender.md)
 
@@ -110,7 +110,7 @@ Gebruik Azure Security Center geïntegreerde bedreigings informatie om communica
 
 Let op: bij het configureren van een NSG op het subnet van API Management, moet er een set poorten zijn die open moeten zijn. Als een van deze poorten niet beschikbaar is, werkt API Management mogelijk niet goed en wordt deze mogelijk niet meer toegankelijk.
 
-- [Meer informatie over NSG-configuraties voor Azure API Management](https://docs.microsoft.com/azure/api-management/api-management-using-with-vnet#-common-network-configuration-issues)
+- [Meer informatie over NSG-configuraties voor Azure API Management](./api-management-using-with-vnet.md#-common-network-configuration-issues)
 
 - [NSG-stroom logboeken inschakelen](../network-watcher/network-watcher-nsg-flow-logging-portal.md)
 
@@ -160,7 +160,7 @@ Opmerking: deze functie is beschikbaar in de Premium-en Developer-laag van API M
 
 - [Azure Web Application Firewall voor Azure Application Gateway](../web-application-firewall/ag/ag-overview.md)
 
-- [Azure-toepassing gateway begrijpen](/azure/application-gateway/overview)
+- [Azure-toepassing gateway begrijpen](../application-gateway/overview.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -174,7 +174,7 @@ Let op: bij het configureren van een NSG op het subnet van API Management, moet 
 
 - [Service Tags leren en gebruiken](../virtual-network/service-tags-overview.md)
 
-- [Poorten die vereist zijn voor de API Management](https://docs.microsoft.com/azure/api-management/api-management-using-with-vnet#-common-network-configuration-issues)
+- [Poorten die vereist zijn voor de API Management](./api-management-using-with-vnet.md#-common-network-configuration-issues)
 
 **Verantwoordelijkheid**: Klant
 
@@ -198,7 +198,7 @@ U kunt ook Azure-blauw drukken gebruiken om grootschalige Azure-implementaties t
 
 **Hulp**: Labels gebruiken voor netwerk beveiligings groepen (nsg's) en andere bronnen die betrekking hebben op netwerk beveiliging en verkeers stroom. Voor afzonderlijke NSG-regels kunt u het veld Beschrijving gebruiken om de bedrijfs behoefte en/of-duur op te geven voor alle regels die verkeer van of naar een netwerk toestaan.
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 - [Een Virtual Network maken](../virtual-network/quick-create-portal.md)
 
@@ -212,9 +212,9 @@ U kunt ook Azure-blauw drukken gebruiken om grootschalige Azure-implementaties t
 
 **Hulp**: Azure-activiteiten logboek gebruiken voor het bewaken van netwerk bron configuraties en het detecteren van wijzigingen aan netwerk bronnen die zijn gekoppeld aan uw Azure API Management-implementaties. Maak waarschuwingen in Azure Monitor die worden geactiveerd wanneer er wijzigingen in kritieke netwerk bronnen plaatsvinden.
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](/azure/azure-monitor/platform/activity-log-view)
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Waarschuwingen maken in Azure Monitor](/azure/azure-monitor/platform/alerts-activity-log)
+- [Waarschuwingen maken in Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -232,7 +232,7 @@ Azure API Management kan naast Azure Monitor worden geïntegreerd met een of mee
 
 Indien gewenst, inschakelen en on-board gegevens voor Azure Sentinel of een beveiligings incident en gebeurtenis beheer van derden (SIEM).
 
-- [Diagnostische instellingen configureren](/azure/azure-monitor/platform/diagnostic-settings#create-in-azure-portal)
+- [Diagnostische instellingen configureren](../azure-monitor/essentials/diagnostic-settings.md#create-in-azure-portal)
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
@@ -252,9 +252,9 @@ Indien gewenst, inschakelen en on-board gegevens voor Azure Sentinel of een beve
 
 Voor logboek registratie van gegevens vlak controle biedt Diagnostische logboeken uitgebreide informatie over bewerkingen en fouten die belang rijk zijn voor controle en probleem oplossing. Diagnoselogboeken verschillen van activiteitenlogboeken. Activiteitenlogboeken bieden inzicht in de bewerkingen die zijn uitgevoerd op uw Azure-resources. Diagnoselogboeken bieden inzicht in bewerkingen die door de resources zelf zijn uitgevoerd.
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](/azure/azure-monitor/platform/activity-log)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
-- [Diagnostische instellingen inschakelen voor Azure API Management](/Azure/api-management/api-management-howto-use-azure-monitor#resource-logs)
+- [Diagnostische instellingen inschakelen voor Azure API Management](./api-management-howto-use-azure-monitor.md#resource-logs)
 
 **Verantwoordelijkheid**: Klant
 
@@ -264,9 +264,9 @@ Voor logboek registratie van gegevens vlak controle biedt Diagnostische logboeke
 
 **Hulp**: stel binnen Azure monitor uw Bewaar periode voor log Analytics werk ruimte in volgens de nalevings voorschriften van uw organisatie. Gebruik Azure Storage-accounts voor lange termijn/archiverings opslag.
 
-- [Para meters voor het bewaren van Logboeken instellen voor Log Analytics-werk ruimten](/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period)
+- [Para meters voor het bewaren van Logboeken instellen voor Log Analytics-werk ruimten](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
-- [Logboeken archiveren in een Azure Storage-account](/azure/azure-monitor/platform/resource-logs#send-to-azure-storage)
+- [Logboeken archiveren in een Azure Storage-account](../azure-monitor/essentials/resource-logs.md#send-to-azure-storage)
 
 **Verantwoordelijkheid**: Klant
 
@@ -278,11 +278,11 @@ Voor logboek registratie van gegevens vlak controle biedt Diagnostische logboeke
 
 U kunt API Management eventueel integreren met Azure-toepassing inzichten en deze gebruiken als primair of secundair bewakings-, tracerings-, rapportage-en waarschuwings programma.
 
-- [Logboeken voor Azure API Management controleren en bekijken](/Azure/api-management/api-management-howto-use-azure-monitor)
+- [Logboeken voor Azure API Management controleren en bekijken](./api-management-howto-use-azure-monitor.md)
 
-- [Aangepaste query's uitvoeren in Azure Monitor](/azure/azure-monitor/log-query/get-started-queries)
+- [Aangepaste query's uitvoeren in Azure Monitor](../azure-monitor/logs/get-started-queries.md)
 
-- [Log Analytics-werk ruimte begrijpen](/azure/azure-monitor/log-query/log-analytics-tutorial)
+- [Log Analytics-werk ruimte begrijpen](../azure-monitor/logs/log-analytics-tutorial.md)
 
 - [Integreren met Azure-toepassing Insights](api-management-howto-app-insights.md)
 
@@ -300,11 +300,11 @@ U kunt API Management eventueel integreren met Azure-toepassing inzichten en dez
 
 Optioneel kunt u gegevens in-en inschakelen voor Azure Sentinel of een SIEM van derden.
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](/azure/azure-monitor/platform/activity-log)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
-- [Diagnostische instellingen inschakelen voor Azure API Management](https://docs.microsoft.com/azure/api-management/api-management-howto-use-azure-monitor#resource-logs)
+- [Diagnostische instellingen inschakelen voor Azure API Management](./api-management-howto-use-azure-monitor.md#resource-logs)
 
-- [Een waarschuwings regel configureren voor Azure API Management](/Azure/api-management/api-management-howto-use-azure-monitor#set-up-an-alert-rule-for-unauthorized-request)
+- [Een waarschuwings regel configureren voor Azure API Management](./api-management-howto-use-azure-monitor.md#set-up-an-alert-rule)
 
 - [Metrische gegevens over capaciteit van een Azure API Management-exemplaar weer geven](api-management-capacity.md)
 
@@ -338,7 +338,7 @@ Volg de aanbevelingen van Azure Security Center voor het beheer en onderhoud van
 
 - [Een directory-roldefinitie ophalen in azure AD met Power shell](/powershell/module/az.resources/get-azroledefinition)
 
-- [Meer informatie over identiteits-en toegangs aanbevelingen van Azure Security Center](https://docs.microsoft.com/azure/security-center/recommendations-reference#identityandaccess-recommendations)
+- [Meer informatie over identiteits-en toegangs aanbevelingen van Azure Security Center](../security-center/recommendations-reference.md#identityandaccess-recommendations)
 
 **Verantwoordelijkheid**: Klant
 
@@ -419,7 +419,7 @@ Daarnaast kunt u met Azure AD-risico detectie waarschuwingen en rapporten bekijk
 
 - [Privileged Identity Management implementeren (PIM)](../active-directory/privileged-identity-management/pim-deployment-plan.md)
 
-- [Meer informatie over Azure AD-risico detectie](/azure/active-directory/reports-monitoring/concept-risk-events)
+- [Meer informatie over Azure AD-risico detectie](../active-directory/identity-protection/overview-identity-protection.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -505,7 +505,7 @@ Configureer geavanceerde bewaking met API Management met behulp van het `log-to-
 
 **Richt lijnen**: voor de afwijking van het aanmeldings gedrag van accounts op het besturings vlak (het Azure Portal), gebruikt u de functies van Azure Active Directory (Azure AD) identiteits beveiliging en risico detectie om automatische antwoorden te configureren op gedetecteerde verdachte acties die betrekking hebben op gebruikers identiteiten. U kunt ook gegevens opnemen in azure Sentinel voor verder onderzoek.
 
-- [Riskante Azure AD-aanmeldingen weergeven](/azure/active-directory/reports-monitoring/concept-risky-sign-ins)
+- [Riskante Azure AD-aanmeldingen weergeven](../active-directory/identity-protection/overview-identity-protection.md)
 
 - [Risico beleid voor identiteits beveiliging configureren en inschakelen](../active-directory/identity-protection/howto-identity-protection-configure-risk-policies.md)
 
@@ -519,7 +519,7 @@ Configureer geavanceerde bewaking met API Management met behulp van het `log-to-
 
 **Hulp**: momenteel niet beschikbaar; Klanten-lockbox wordt momenteel niet ondersteund voor Azure API Management.
 
-- [Lijst met door Klanten-lockbox ondersteunde services](https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview#supported-services-and-scenarios-in-general-availability)
+- [Lijst met door Klanten-lockbox ondersteunde services](../security/fundamentals/customer-lockbox-overview.md#supported-services-and-scenarios-in-general-availability)
 
 **Verantwoordelijkheid**: Klant
 
@@ -533,7 +533,7 @@ Configureer geavanceerde bewaking met API Management met behulp van het `log-to-
 
 **Hulp**: Tags gebruiken om Azure-resources te helpen bij het bijhouden of verwerken van gevoelige informatie.
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -543,11 +543,11 @@ Configureer geavanceerde bewaking met API Management met behulp van het `log-to-
 
 **Richt lijnen**: afzonderlijke abonnementen en/of beheer groepen implementeren voor ontwikkeling, testen en productie. Azure API Management-exemplaren moeten worden gescheiden door de/subnet van het virtuele netwerk (VNet) en worden gelabeld.
 
-- [Aanvullende Azure-abonnementen maken](/azure/billing/billing-create-subscription)
+- [Aanvullende Azure-abonnementen maken](../cost-management-billing/manage/create-subscription.md)
 
 - [Beheergroepen maken](../governance/management-groups/create-management-group-portal.md)
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 - [Azure API Management gebruiken met virtuele netwerken](api-management-using-with-vnet.md)
 
@@ -571,7 +571,7 @@ Micro soft beheert de onderliggende infra structuur voor Azure API Management en
 
 **Hulp**: beheer vlak aanroepen worden gedaan via Azure Resource Manager via TLS. Er is een geldig JSON-webtoken (JWT) vereist. Aanroepen voor gegevens vlak kunnen worden beveiligd met TLS en een van de ondersteunde verificatie mechanismen (bijvoorbeeld client certificaat of JWT).
 
-- [Gegevens beveiliging in azure API Management begrijpen](/azure/api-management/api-management-security-controls#data-protection)
+- [Gegevens beveiliging in azure API Management begrijpen](#data-protection)
 
 - [TLS-instellingen in azure API Management beheren](api-management-howto-manage-protocols-ciphers.md)
 
@@ -621,7 +621,7 @@ Micro soft beheert de onderliggende infra structuur voor Azure API Management en
 
 **Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken voor wanneer wijzigingen worden aangebracht in productie-Azure functions apps, evenals andere kritieke of gerelateerde resources.
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](/azure/azure-monitor/platform/alerts-activity-log)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
 - [Azure Monitor en Azure-activiteiten logboek gebruiken in azure API Management](api-management-howto-use-azure-monitor.md)
 
@@ -639,7 +639,7 @@ Micro soft beheert de onderliggende infra structuur voor Azure API Management en
 
 Onderliggend platform gescand en bijgewerkt door micro soft. Bekijk beveiligings controles die beschikbaar zijn om beveiligings problemen met betrekking tot de service configuratie te verminderen.
 
-- [Informatie over beveiligings besturings elementen die beschikbaar zijn voor Azure API Management](/azure/api-management/api-management-security-controls)
+- [Informatie over beveiligings besturings elementen die beschikbaar zijn voor Azure API Management]()
 
 **Verantwoordelijkheid**: Klant
 
@@ -675,7 +675,6 @@ Onderliggend platform gescand en bijgewerkt door micro soft. Bekijk beveiligings
 
 Onderliggend platform gescand en bijgewerkt door micro soft. Klant voor het beoordelen van de beschik bare beveiligings controles om beveiligings problemen met betrekking tot de service configuratie te verminderen.
 
-- [Informatie over beveiligings besturings elementen die beschikbaar zijn voor Azure API Management](/azure/api-management/api-management-security-controls)
 
 **Verantwoordelijkheid**: Klant
 
@@ -693,7 +692,7 @@ Hoewel klassieke Azure-resources kunnen worden gedetecteerd via resource grafiek
 
 - [Query's maken met Azure resource Graph](../governance/resource-graph/first-query-portal.md)
 
-- [Uw Azure-abonnementen weer geven](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-4.8.0&amp;preserve-view=true)
+- [Uw Azure-abonnementen weer geven](/powershell/module/az.accounts/get-azsubscription?preserve-view=true&view=azps-4.8.0)
 
 - [Meer informatie over Azure RBAC](../role-based-access-control/overview.md)
 
@@ -705,7 +704,7 @@ Hoewel klassieke Azure-resources kunnen worden gedetecteerd via resource grafiek
 
 **Richt lijnen**: Tags Toep assen op Azure-resources die meta gegevens geven om ze logisch in een taxonomie te organiseren.
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -719,11 +718,11 @@ Daarnaast kunt u met Azure Policy beperkingen opleggen aan het type resources da
 - Niet toegestane resourcetypen
 - Toegestane brontypen
 
-- [Aanvullende Azure-abonnementen maken](/azure/billing/billing-create-subscription)
+- [Aanvullende Azure-abonnementen maken](../cost-management-billing/manage/create-subscription.md)
 
 - [Beheergroepen maken](../governance/management-groups/create-management-group-portal.md)
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -785,7 +784,7 @@ Gebruik Azure resource Graph voor het opvragen/detecteren van resources binnen h
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Een specifiek resource type weigeren met Azure Policy](https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#general)
+- [Een specifiek resource type weigeren met Azure Policy](../governance/policy/samples/built-in-policies.md#general)
 
 **Verantwoordelijkheid**: Klant
 
@@ -835,7 +834,7 @@ Gebruik Azure resource Graph voor het opvragen/detecteren van resources binnen h
 
 **Hulp**: Definieer en implementeer standaard beveiligings configuraties voor uw Azure API Management-service met Azure Policy. Gebruik Azure Policy aliassen in de naam ruimte ' micro soft. ApiManagement ' om aangepaste beleids regels te maken om de configuratie van uw Azure API Management-Services te controleren of af te dwingen.
 
-- [Beschik bare Azure Policy aliassen weer geven](https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-4.8.0&amp;preserve-view=true)
+- [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias?preserve-view=true&view=azps-4.8.0)
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
@@ -939,7 +938,7 @@ Daarnaast definieert en implementeert u standaard beveiligings configuraties voo
 
 - [Een beheerde identiteit voor een API Management-exemplaar maken](api-management-howto-use-managed-service-identity.md)
 
-- [Beleid voor verificatie met beheerde identiteit](https://docs.microsoft.com/azure/api-management/api-management-authentication-policies#ManagedIdentity)
+- [Beleid voor verificatie met beheerde identiteit](./api-management-authentication-policies.md#ManagedIdentity)
 
 **Verantwoordelijkheid**: Klant
 
@@ -1001,7 +1000,7 @@ De functies voor het maken en herstellen van back-ups van API Management bieden 
 
 - [API Management data-vlak implementeren in meerdere regio's](api-management-howto-deploy-multi-region.md)
 
-- [Noodherstel implementeren met back-up en herstellen van services in Azure API Management](https://docs.microsoft.com/azure/api-management/api-management-howto-disaster-recovery-backup-restore#calling-the-backup-and-restore-operations)
+- [Noodherstel implementeren met back-up en herstellen van services in Azure API Management](./api-management-howto-disaster-recovery-backup-restore.md#calling-the-backup-and-restore-operations)
 
 - [De back-upbewerking van API Management aanroepen](/rest/api/apimanagement/2019-01-01/apimanagementservice/backup)
 
@@ -1017,9 +1016,9 @@ De functies voor het maken en herstellen van back-ups van API Management bieden 
 
 Beheerde identiteiten kunnen worden gebruikt voor het verkrijgen van certificaten van Azure Key Vault voor API Management aangepaste domein namen. Back-ups maken van certificaten die worden opgeslagen in Azure Key Vault.
 
-- [Noodherstel implementeren met back-up en herstellen van services in Azure API Management](https://docs.microsoft.com/azure/api-management/api-management-howto-disaster-recovery-backup-restore#calling-the-backup-and-restore-operations)
+- [Noodherstel implementeren met back-up en herstellen van services in Azure API Management](./api-management-howto-disaster-recovery-backup-restore.md#calling-the-backup-and-restore-operations)
 
-- [Back-up maken van Azure Key Vault certificaten](https://docs.microsoft.com/powershell/module/az.keyvault/backup-azkeyvaultcertificate?view=azps-4.8.0&amp;preserve-view=true)
+- [Back-up maken van Azure Key Vault certificaten](/powershell/module/az.keyvault/backup-azkeyvaultcertificate?preserve-view=true&view=azps-4.8.0)
 
 **Verantwoordelijkheid**: Klant
 
@@ -1041,7 +1040,7 @@ Beheerde identiteiten kunnen worden gebruikt voor het verkrijgen van certificate
 
 **Hulp**: Azure API Management schrijft back-ups naar Azure Storage accounts van de klant. Volg de aanbevelingen van Azure Storage beveiliging om uw back-up te beveiligen.
 
-- [Noodherstel implementeren met back-up en herstellen van services in Azure API Management](https://docs.microsoft.com/azure/api-management/api-management-howto-disaster-recovery-backup-restore#calling-the-backup-and-restore-operations)
+- [Noodherstel implementeren met back-up en herstellen van services in Azure API Management](./api-management-howto-disaster-recovery-backup-restore.md#calling-the-backup-and-restore-operations)
 
 - [Beveiligings aanbeveling voor Blob Storage](../storage/blobs/security-recommendations.md)
 
@@ -1079,7 +1078,7 @@ Daarnaast kunt u ook duidelijk abonnementen markeren (voor bijvoorbeeld producti
 
 - [Beveiligingswaarschuwingen in Azure Security Center](../security-center/security-center-alerts-overview.md)
 
-- [Tags gebruiken om Azure-resources te organiseren](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags gebruiken om Azure-resources te organiseren](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -1143,5 +1142,5 @@ Daarnaast kunt u ook duidelijk abonnementen markeren (voor bijvoorbeeld producti
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Overzicht Azure Security Benchmark V2](/azure/security/benchmarks/overview)
-- Meer informatie over [Azure-beveiligingsbasislijnen](/azure/security/benchmarks/security-baselines-overview)
+- Zie [Overzicht Azure Security Benchmark V2](../security/benchmarks/overview.md)
+- Meer informatie over [Azure-beveiligingsbasislijnen](../security/benchmarks/security-baselines-overview.md)

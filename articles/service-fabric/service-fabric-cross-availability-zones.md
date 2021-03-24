@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: pepogors
-ms.openlocfilehash: ef1a49301cf150f92d30c163dee262a22f1515d9
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 95ee4e5f326dd9b76645d22ff735bc36437c72fb
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101714949"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104870110"
 ---
 # <a name="deploy-an-azure-service-fabric-cluster-across-availability-zones"></a>Een Azure Service Fabric-cluster implementeren via Beschikbaarheidszones
 Beschikbaarheidszones in Azure is een aanbieding met hoge Beschik baarheid die uw toepassingen en gegevens beveiligt tegen Data Center-fouten. Een beschikbaarheids zone is een unieke fysieke locatie die is voorzien van onafhankelijke voeding, koeling en netwerken binnen een Azure-regio.
@@ -35,7 +35,19 @@ De aanbevolen topologie voor het primaire knooppunt type vereist de onderstaande
 >[!NOTE]
 > De groeps eigenschap voor de schaalset voor virtuele machines moet worden ingesteld op True, omdat Service Fabric geen ondersteuning biedt voor een schaalset voor virtuele machines die zones omspant.
 
- ![Diagram waarin de architectuur van de Azure Service Fabric-beschikbaarheids zone wordt weer gegeven.][sf-architecture]
+Diagram met het diagram voor de architectuur van Azure Service Fabric-beschikbaarheids zone ![ waarin de architectuur van de azure service Fabric-beschikbaarheids zone wordt weer gegeven.][sf-architecture]
+
+Voor beeld van een lijst met knoop punten die de indelingen FD/UD in een schaalset voor een virtuele machine instellen
+
+ ![Voor beeld van een knooppunt lijst met indelingen van FD/UD in een grootschalige zones met schaal sets voor virtuele machines.][sf-multi-az-nodes]
+
+**Distributie van service replica's in meerdere zones**: wanneer een service wordt geïmplementeerd op de nodeTypes die spanningde zones zijn, worden de replica's geplaatst om ervoor te zorgen dat ze in afzonderlijke zones terechtkomen. Dit wordt gewaarborgd omdat het fout domein van de knoop punten in elk van deze nodeTypes is geconfigureerd met de zone gegevens (dat wil zeggen FD = FD:/zone 1/1 etc...). Bijvoorbeeld: voor vijf replica's of exemplaren van een service wordt de distributie 2-2-1 en runtime probeert te zorgen voor gelijke distributie over AZs.
+
+**Configuratie van de gebruikers Service replica**: stateful-gebruikers services die zijn geïmplementeerd op de nodeTypes van de Kruis baarheid, moeten worden geconfigureerd met deze configuratie: aantal replica's met target = 9, min = 5. Deze configuratie helpt de service te laten werken, zelfs wanneer de ene zone uitvalt omdat 6 replica's nog steeds in de andere twee zones worden weer geven. Een upgrade van een toepassing in een dergelijk scenario gaat ook verder.
+
+**Cluster ReliabilityLevel**: Hiermee definieert u het aantal Seed-knoop punten in het cluster en ook de replica grootte van de systeem services. Omdat het instellen van een zone met meerdere Beschik baarheid een hoger aantal knoop punten heeft, die over zones zijn verdeeld om zone tolerantie mogelijk te maken, zorgt een hogere betrouwbaarheids waarde ervoor dat knoop punt meer Seed-knoop punten en systeem service replica's aanwezig zijn en gelijkmatig worden verdeeld over zones, zodat in het geval van een zone storing in het cluster en de systeem services niet worden beïnvloed. "ReliabilityLevel = Platinum" zorgt ervoor dat er negen Seed-knoop punten over zone in het cluster worden verdeeld met 3 zaden in elke zone, zodat dit de aanbevolen instelling is voor de installatie van de zone voor meerdere Beschik baarheid.
+
+**Scenario voor zones**: wanneer een zone uitvalt, worden alle knoop punten in die zone weer gegeven als omlaag. Service replica's op deze knoop punten worden ook niet beschikbaar. Omdat er replica's aanwezig zijn in de andere zones, blijft de service reageren met primaire replica's waarvoor een failover wordt uitgevoerd naar de zones die functioneren. De services worden weer gegeven in een waarschuwings status omdat het aantal doel replica's nog niet is bereikt en omdat het aantal virtuele machines nog steeds groter is dan de minimale grootte van de doel replica. Vervolgens worden in Service Fabric load balancer replica's in de werk zones weer geven die overeenkomen met het geconfigureerde aantal doel replica's. De services worden op dit moment in orde weer gegeven. Wanneer de zone die uitvalt, een back-up maakt van de taak verdeling, worden alle service replica's gelijkmatig verdeeld over alle zones.
 
 ## <a name="networking-requirements"></a>Netwerkvereisten
 ### <a name="public-ip-and-load-balancer-resource"></a>Openbaar IP-adres en Load Balancer bron
@@ -345,7 +357,7 @@ Als u zones op een schaalset voor virtuele machines wilt inschakelen, moet u de 
 
 * De eerste waarde is de eigenschap **zones** , waarmee de Beschikbaarheidszones aanwezig in de schaalset van de virtuele machine worden opgegeven.
 * De tweede waarde is de eigenschap ' singlePlacementGroup ', die moet worden ingesteld op True. **De schaalset voor 3 AZ kan worden geschaald tot Maxi maal 300 Vm's, zelfs met ' singlePlacementGroup = True '.**
-* De derde waarde is "zoneBalance", waarmee de strikte zone verdeling wordt gegarandeerd. Dit moet ' waar ' zijn om te voor komen dat de virtuele machines niet in evenwicht worden verdeeld over zones. Een cluster met een niet-gebalanceerde VM-distributie over zones is minder waarschijnlijk in de zone scenatio. Meer informatie over [zoneBalancing](../virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones.md#zone-balancing).
+* De derde waarde is "zoneBalance", waarmee de strikte zone verdeling wordt gegarandeerd. Dit moet ' waar ' zijn. Op deze manier zorgt u ervoor dat de VM-distributies voor verschillende zones niet worden gesaldeerd, en dat als een van de zones uitvalt, de andere twee zones voldoende Vm's hebben om ervoor te zorgen dat het cluster niet wordt onderbroken. Een cluster met een niet-gebalanceerde VM-distributie houdt mogelijk geen sprake van een zone omlaag, omdat die zone mogelijk het meren deel van de virtuele machines kan hebben. Een niet-gebalanceerde VM-distributie over zones leidt ook tot de service plaats gerelateerde problemen & infrastructuur updates blijven hangen. Meer informatie over [zoneBalancing](../virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones.md#zone-balancing).
 * De FaultDomain-en upgrade Domain-onderdrukkingen hoeven niet te worden geconfigureerd.
 
 ```json
@@ -363,7 +375,7 @@ Als u zones op een schaalset voor virtuele machines wilt inschakelen, moet u de 
 ```
 
 >[!NOTE]
-> * **SF-clusters moeten ten minste één primair nodeType hebben. DurabilityLevel van primaire nodeTypes moet zilver of hoger zijn.**
+> * **Service Fabric clusters moeten ten minste één primair nodeType bevatten. DurabilityLevel van primaire nodeTypes moet zilver of hoger zijn.**
 > * De AZ-schaalset voor virtuele machines moet worden geconfigureerd met ten minste 3 Beschikbaarheids zones, onafhankelijk van de durabilityLevel.
 > * AZ spanning van de schaalset voor virtuele machines met Silver duurzaamheid (of hoger) moet ten minste 15 Vm's hebben.
 > * AZ spanning van virtuele-machine schaal sets met Bronze duurzaamheid moet minstens 6 Vm's hebben.
@@ -373,13 +385,13 @@ Het Service Fabric nodeType moet zijn ingeschakeld voor de ondersteuning van mee
 
 * De eerste waarde is **multipleAvailabilityZones** die moet worden ingesteld op True voor het NodeType.
 * De tweede waarde is **sfZonalUpgradeMode** en is optioneel. Deze eigenschap kan niet worden gewijzigd als er al een NodeType met meerdere AZ is aanwezig in het cluster.
-      De eigenschap bepaalt de logische groepering van Vm's in upgrade domeinen.
-          Als waarde is ingesteld op ' parallel ': Vm's onder het NodeType worden gegroepeerd in de zone gegevens in 5 UDs genegeerd.
-          Als waarde wordt wegge laten of is ingesteld op hiërarchisch: Vm's worden gegroepeerd op basis van de zonegebonden-distributie in Maxi maal 15 UDs. Elk van de drie zones heeft 5 UDs.
-          Deze eigenschap definieert alleen het upgrade gedrag voor ServiceFabric toepassings-en code-upgrades. De onderliggende upgrades voor virtuele-machine schaal sets worden nog steeds parallel in alle AZ-computers.
-      Deze eigenschap heeft geen invloed op de UD-distributie voor knooppunt typen waarvoor geen meerdere zones zijn ingeschakeld.
+  De eigenschap bepaalt de logische groepering van Vm's in upgrade domeinen.
+  **Als waarde is ingesteld op parallel:** Vm's onder het NodeType worden gegroepeerd in de zone-informatie in 5 UDs negeren. Dit leidt ertoe dat alle zones tegelijk worden bijgewerkt om UD0 te krijgen. Deze implementatie modus is sneller voor upgrades, maar wordt niet aanbevolen omdat deze voldoet aan de richt lijnen voor SDP, die aangeven dat de updates slechts één zone tegelijk moeten worden toegepast.
+  **Als waarde wordt wegge laten of is ingesteld op hiërarchisch:** Vm's worden gegroepeerd op basis van de zonegebonden-distributie in Maxi maal 15 UDs. Elk van de drie zones heeft 5 UDs. Dit zorgt ervoor dat de updates zone op de volgende zone pas overstappen nadat 5 UDs in de eerste zone is voltooid, langzaam over 15 UDs (3 zones, 5 UDs). Dit is veiliger vanuit het perspectief van het cluster en de gebruikers toepassing.
+  Deze eigenschap definieert alleen het upgrade gedrag voor ServiceFabric toepassings-en code-upgrades. De onderliggende upgrades voor virtuele-machine schaal sets worden nog steeds parallel in alle AZ-computers.
+  Deze eigenschap heeft geen invloed op de UD-distributie voor knooppunt typen waarvoor geen meerdere zones zijn ingeschakeld.
 * De derde waarde is **vmssZonalUpgradeMode = parallel**. Dit is een *verplichte* eigenschap die in het cluster moet worden geconfigureerd als een NodeType met meerdere AZs wordt toegevoegd. Met deze eigenschap wordt de upgrade modus gedefinieerd voor de updates voor de schaalset van virtuele machines die parallel worden uitgevoerd in alle AZ tegelijk.
-      Deze eigenschap kan nu alleen worden ingesteld op parallel.
+  Deze eigenschap kan nu alleen worden ingesteld op parallel.
 * De Service Fabric cluster resource apiVersion moet 2020-12-01-preview of hoger zijn.
 * De versie van de cluster code moet ' 7.2.445 ' of hoger zijn.
 
@@ -408,7 +420,7 @@ Het Service Fabric nodeType moet zijn ingeschakeld voor de ondersteuning van mee
 >[!NOTE]
 > * Open bare IP-en Load Balancer-resources moeten gebruikmaken van de standaard-SKU zoals eerder in het artikel is beschreven.
 > * de eigenschap multipleAvailabilityZones van het nodeType kan alleen worden gedefinieerd op het moment dat het nodeType wordt gemaakt en kan later niet worden gewijzigd. Bestaande nodeTypes kan daarom niet worden geconfigureerd met deze eigenschap.
-> * Als "sfZonalUpgradeMode" wordt wegge laten of is ingesteld op hiërarchisch, worden de cluster-en toepassings implementaties langzamer naarmate er meer upgrade domeinen in het cluster zijn. Het is belang rijk dat u de time-outs voor upgrade beleid op de juiste wijze bijwerkt voor de upgrade tijd voor 15-upgrade domeinen.
+> * Als "sfZonalUpgradeMode" wordt wegge laten of is ingesteld op hiërarchisch, worden de cluster-en toepassings implementaties langzamer naarmate er meer upgrade domeinen in het cluster zijn. Het is belang rijk dat u de time-outs voor upgrade beleid op de juiste wijze bijwerkt voor de upgrade tijd voor 15-upgrade domeinen. Het upgrade beleid voor zowel de app als het cluster moet worden bijgewerkt om ervoor te zorgen dat de implementatie de time-outs van de implementatie van de Azure-resource Serbice van 12hours niet overschrijdt. Dit betekent dat de implementatie niet meer mag duren dan 12hours voor 15UDs, dat wil zeggen mag niet meer dan 40 min-UD duren.
 > * Stel het cluster **reliabilityLevel = Platinum** in om ervoor te zorgen dat het cluster het scenario van één zone in het vervolg houdt.
 
 >[!NOTE]
@@ -426,3 +438,4 @@ In dit artikel [vindt](./service-fabric-scale-up-primary-node-type.md) u gedetai
 
 [sf-architecture]: ./media/service-fabric-cross-availability-zones/sf-cross-az-topology.png
 [sf-multi-az-arch]: ./media/service-fabric-cross-availability-zones/sf-multi-az-topology.png
+[sf-multi-az-nodes]: ./media/service-fabric-cross-availability-zones/sf-multi-az-nodes.png

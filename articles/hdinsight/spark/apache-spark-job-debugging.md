@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/23/2020
-ms.openlocfilehash: f332416a10aa86cb7e0bc7ba560537955d9f2faa
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 0dd250f0a8f67d7e370b8ff453e9cff4d88b7896
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98930575"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104866094"
 ---
 # <a name="debug-apache-spark-jobs-running-on-azure-hdinsight"></a>Fouten opsporen in Apache Spark-taken die worden uitgevoerd in Azure HDInsight
 
@@ -28,20 +28,20 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 
 1. Start de garen-gebruikers interface. Selecteer **garens** onder **cluster dashboards**.
 
-    ![Azure Portal GARENs-UI starten](./media/apache-spark-job-debugging/launch-apache-yarn-ui.png)
+    :::image type="content" source="./media/apache-spark-job-debugging/launch-apache-yarn-ui.png" alt-text="Azure Portal GARENs-UI starten" border="true":::
 
    > [!TIP]  
    > U kunt ook de gebruikers interface van garen starten vanuit de Ambari-gebruikers interface. Als u de Ambari-gebruikers interface wilt starten, selecteert u **Ambari Home** onder **cluster dashboards**. Ga in de Ambari-gebruikers interface naar de snelle koppelingen voor **garens**  >   > de actieve Resource Manager-> **Resource Manager-gebruikers interface**.
 
 2. Omdat u de Spark-taak met Jupyter-notebooks hebt gestart, heeft de toepassing de naam **remotesparkmagics** (de naam voor alle toepassingen die vanuit de notitie blokken zijn gestart). Selecteer de toepassings-ID voor de toepassings naam om meer informatie over de taak weer te geven. Met deze actie wordt de toepassings weergave gestart.
 
-    ![Spark-geschiedenis server zoeken naar Spark-toepassings-ID](./media/apache-spark-job-debugging/find-application-id1.png)
+    :::image type="content" source="./media/apache-spark-job-debugging/find-application-id1.png" alt-text="Spark-geschiedenis server zoeken naar Spark-toepassings-ID" border="true":::
 
     Voor dergelijke toepassingen die worden gestart vanuit de Jupyter-notebooks, wordt de status altijd **uitgevoerd** totdat u het notitie blok sluit.
 
 3. Vanuit de toepassings weergave kunt u verder inzoomen op de containers die zijn gekoppeld aan de toepassing en de logboeken (stdout/stderr). U kunt ook de Spark-gebruikers interface starten door te klikken op de koppeling die overeenkomt met de **tracerings-URL**, zoals hieronder wordt weer gegeven.
 
-    ![Container logboeken van de Spark-geschiedenis server downloaden](./media/apache-spark-job-debugging/download-container-logs.png)
+    :::image type="content" source="./media/apache-spark-job-debugging/download-container-logs.png" alt-text="Container logboeken van de Spark-geschiedenis server downloaden" border="true":::
 
 ## <a name="track-an-application-in-the-spark-ui"></a>Een toepassing volgen in de Spark-gebruikers interface
 
@@ -49,29 +49,29 @@ In de Spark-gebruikers interface kunt u inzoomen op de Spark-taken die worden ui
 
 1. Als u de Spark-gebruikers interface wilt starten, selecteert u in de toepassings weergave de koppeling met de **tracerings-URL**, zoals wordt weer gegeven in de bovenstaande scherm opname. U kunt alle Spark-taken zien die worden gestart door de toepassing die wordt uitgevoerd in de Jupyter Notebook.
 
-    ![Het tabblad Server taken van Spark-geschiedenis](./media/apache-spark-job-debugging/view-apache-spark-jobs.png)
+    :::image type="content" source="./media/apache-spark-job-debugging/view-apache-spark-jobs.png" alt-text="Het tabblad Server taken van Spark-geschiedenis" border="true":::
 
 2. Selecteer het tabblad **uitvoerende uitvoeringen** om de verwerkings-en opslag informatie voor elke uitvoerder te bekijken. U kunt de aanroep stack ook ophalen door de **thread dump** koppeling te selecteren.
 
-    ![Tabblad voor het uitvoeren van de Spark-geschiedenis server](./media/apache-spark-job-debugging/view-spark-executors.png)
+    :::image type="content" source="./media/apache-spark-job-debugging/view-spark-executors.png" alt-text="Tabblad voor het uitvoeren van de Spark-geschiedenis server" border="true":::
 
 3. Selecteer het tabblad **stadia** om de fasen te zien die zijn gekoppeld aan de toepassing.
 
-    ![Het tabblad Server fasen van Spark-geschiedenis](./media/apache-spark-job-debugging/view-apache-spark-stages.png "Spark-fasen weer geven")
+    :::image type="content" source="./media/apache-spark-job-debugging/view-apache-spark-stages.png " alt-text="Het tabblad Server fasen van Spark-geschiedenis" border="true":::
 
     Elke fase kan meerdere taken bevatten waarvoor u uitvoerings statistieken kunt bekijken, zoals hieronder wordt weer gegeven.
 
-    ![Details van het tabblad Server fasen in Spark-geschiedenis](./media/apache-spark-job-debugging/view-spark-stages-details.png "Details van Spark-fasen weer geven")
+    :::image type="content" source="./media/apache-spark-job-debugging/view-spark-stages-details.png " alt-text="Details van het tabblad Server fasen in Spark-geschiedenis" border="true":::
 
 4. Op de pagina Details van fase kunt u DAG visualisatie starten. Vouw de koppeling **dag visualisatie** boven aan de pagina uit, zoals hieronder wordt weer gegeven.
 
-    ![Visualisatie van Spark-fasen DAG weer geven](./media/apache-spark-job-debugging/view-spark-stages-dag-visualization.png)
+    :::image type="content" source="./media/apache-spark-job-debugging/view-spark-stages-dag-visualization.png" alt-text="Visualisatie van Spark-fasen DAG weer geven" border="true":::
 
     DAG of direct Aclyic Graph vertegenwoordigt de verschillende fasen in de toepassing. Elk blauw vak in de grafiek vertegenwoordigt een Spark-bewerking die vanuit de toepassing is aangeroepen.
 
 5. Op de pagina Details van fase kunt u ook de weer gave toepassings tijdlijn starten. Vouw de koppeling voor de **tijdlijn gebeurtenis** toe boven aan de pagina, zoals hieronder wordt weer gegeven.
 
-    ![Gebeurtenis tijdlijn van Spark-fasen weer geven](./media/apache-spark-job-debugging/view-spark-stages-event-timeline.png)
+    :::image type="content" source="./media/apache-spark-job-debugging/view-spark-stages-event-timeline.png" alt-text="Gebeurtenis tijdlijn van Spark-fasen weer geven" border="true":::
 
     In deze afbeelding worden de Spark-gebeurtenissen in de vorm van een tijd lijn weer gegeven. De tijdlijn weergave is beschikbaar op drie niveaus, in taken, binnen een taak en binnen een fase. In de bovenstaande afbeelding wordt de tijdlijn weergave voor een bepaalde fase vastgelegd.
 
@@ -92,14 +92,14 @@ Zodra een taak is voltooid, wordt de informatie over de taak opgeslagen in de Sp
 
 1. Als u de Spark-geschiedenis server wilt starten, selecteert u op de pagina **overzicht** de optie **Spark-geschiedenis server** onder **cluster dashboards**.
 
-    ![Azure Portal Spark-geschiedenis server starten](./media/apache-spark-job-debugging/launch-spark-history-server.png "Spark geschiedenis server1 starten")
+    :::image type="content" source="./media/apache-spark-job-debugging/launch-spark-history-server.png " alt-text="Azure Portal Spark-geschiedenis server starten" border="true":::
 
    > [!TIP]  
    > U kunt ook de gebruikers interface van de Spark-geschiedenis server starten vanuit de Ambari-gebruikers interface. Als u de Ambari-gebruikers interface wilt starten, selecteert u op de Blade overzicht de optie **Ambari Home** onder **cluster dashboards**. Ga in de Ambari-gebruikers interface naar **Spark2**  >  **Quick links**  >  **Spark2 geschiedenis server UI**.
 
 2. U ziet alle voltooide toepassingen die worden weer gegeven. Selecteer een toepassings-ID om in te zoomen op een toepassing voor meer informatie.
 
-    ![Voltooide Spark-geschiedenis server toepassingen](./media/apache-spark-job-debugging/view-completed-applications.png "Spark-geschiedenis server2 starten")
+    :::image type="content" source="./media/apache-spark-job-debugging/view-completed-applications.png " alt-text="Voltooide Spark-geschiedenis server toepassingen" border="true":::
 
 ## <a name="see-also"></a>Zie ook
 

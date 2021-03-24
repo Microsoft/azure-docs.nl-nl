@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 12/14/2020
 ms.author: phjensen
-ms.openlocfilehash: 70e1823b30814d7dc29fef69215fcb53a2a2ab96
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 554fa394179e7cfc5b86a2b50eb754547d137a44
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98730867"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104870382"
 ---
 # <a name="disaster-recovery-using-azure-application-consistent-snapshot-tool-preview"></a>Herstel na nood geval met Azure-toepassing consistent momentopname programma (preview-versie)
 
@@ -28,7 +28,7 @@ In dit artikel wordt uitgelegd hoe u herstel na nood gevallen uitvoert wanneer u
 > [!IMPORTANT]
 > Deze bewerking is alleen van toepassing op een **grote Azure-instantie** .
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 Het platform voor grote exemplaren van Azure kan ook een nood herstel site hebben die is geconfigureerd voor het repliceren van moment opnamen van opslag volumes naar.  Als moment opnamen correct zijn geconfigureerd met een dergelijke installatie, is het mogelijk om op deze site een herstel na nood geval uit te voeren.  Dit document is bedoeld als richt lijn voor het uitvoeren van herstel na nood gevallen voor deze installatie.
 
@@ -146,13 +146,13 @@ HDB stop
 #### <a name="step-4-restore-the-volumes"></a>Stap 4: de volumes herstellen
 
 ```bash
-azacsnap -c restore --restore revertvolume --hanasid H80
+azacsnap -c restore --restore revertvolume --dbsid H80
 ```
 
 **_Uitvoer van de opdracht Dr-failover_**.
 
 ```bash
-azacsnap --configfile DR.json -c restore --restore revertvolume --hanasid H80
+azacsnap --configfile DR.json -c restore --restore revertvolume --dbsid H80
 ```
 
 ```output

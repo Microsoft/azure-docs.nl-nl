@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: hafowler
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 23c74a8a35255162c7c9ddee6c917d4d98d83b89
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 4269ba32a22538eeba35ba484fae0c98cd219b7c
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103561648"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104952776"
 ---
 # <a name="manage-device-identities-using-the-azure-portal"></a>Apparaat-id's beheren in Azure Portal
 
@@ -174,7 +174,7 @@ U moet een van de volgende rollen zijn toegewezen om Apparaatinstellingen weer t
 > - U kunt het beste de [gebruikers actie registreren of lid worden van apparaten](../conditional-access/concept-conditional-access-cloud-apps.md#user-actions) in voorwaardelijke toegang voor het afdwingen van multi-factor Authentication voor het samen voegen of registreren van een apparaat. 
 > - U moet deze instelling instellen op **Nee** als u beleid voor voorwaardelijke toegang gebruikt om multi-factor authencation te vereisen. 
 
-- **Maximum aantal apparaten** : met deze instelling kunt u het maximum aantal aan Azure AD gekoppelde of Azure AD geregistreerde apparaten selecteren dat een gebruiker in azure AD kan hebben. Als een gebruiker dit quotum bereikt, kunnen ze geen extra apparaten toevoegen totdat een of meer van de bestaande apparaten worden verwijderd. De standaard waarde is **50**.
+- **Maximum aantal apparaten** : met deze instelling kunt u het maximum aantal aan Azure AD gekoppelde of Azure AD geregistreerde apparaten selecteren dat een gebruiker in azure AD kan hebben. Als een gebruiker dit quotum bereikt, kunnen ze geen extra apparaten toevoegen totdat een of meer van de bestaande apparaten worden verwijderd. De standaard waarde is **50**. U kunt de waarde verhogen tot 100 en als u een waarde boven 100 opgeeft, wordt deze door Azure AD ingesteld op 100. U kunt ook onbeperkte waarde gebruiken om een andere limiet dan bestaande quotum limieten af te dwingen.
 
 > [!NOTE]
 > De instelling **maximum aantal apparaten** is van toepassing op apparaten die zijn geregistreerd bij Azure AD of Azure AD. Deze instelling is niet van toepassing op hybride apparaten die deel uitmaken van Azure AD.

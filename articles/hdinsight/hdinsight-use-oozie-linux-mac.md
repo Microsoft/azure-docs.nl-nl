@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020
 ms.date: 04/27/2020
-ms.openlocfilehash: b72d94c1cba3ea0476c6d44e68583f6668b167e2
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 00573f01aab5e9aa86befaebb6b514c76a01b67d
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101702773"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104871772"
 ---
 # <a name="use-apache-oozie-with-apache-hadoop-to-define-and-run-a-workflow-on-linux-based-azure-hdinsight"></a>Apache Oozie gebruiken met Apache Hadoop voor het definiëren en uitvoeren van een werkstroom in Azure HDInsight op basis van Linux
 
@@ -40,7 +40,7 @@ U kunt Oozie ook gebruiken om taken te plannen die specifiek zijn voor een syste
 
 De werk stroom die in dit document wordt gebruikt, bevat twee acties. Acties zijn definities voor taken, zoals het uitvoeren van Hive, Sqoop, MapReduce of andere processen:
 
-![HDInsight oozie-werk stroom diagram](./media/hdinsight-use-oozie-linux-mac/oozie-workflow-diagram.png)
+:::image type="content" source="./media/hdinsight-use-oozie-linux-mac/oozie-workflow-diagram.png" alt-text="HDInsight oozie-werk stroom diagram" border="false":::
 
 1. Een Hive-actie voert een HiveQL-script uit om records op te halen uit de `hivesampletable` die zijn opgenomen in HDInsight. In elke rij met gegevens wordt een bezoek van een specifiek mobiel apparaat beschreven. De record indeling wordt weer gegeven zoals in de volgende tekst:
 
@@ -516,29 +516,29 @@ Voer de volgende stappen uit om toegang te krijgen tot de Oozie-webgebruikersint
 
 3. Selecteer links op de pagina **Oozie**  >  **Quick links**  >  **Oozie Web UI**.
 
-    ![Ambari oozie-Web-UI-stappen](./media/hdinsight-use-oozie-linux-mac/hdi-oozie-web-ui-steps.png)
+    :::image type="content" source="./media/hdinsight-use-oozie-linux-mac/hdi-oozie-web-ui-steps.png" alt-text="Ambari oozie-Web-UI-stappen" border="true":::
 
 4. De Oozie web-gebruikers interface wordt standaard gebruikt om de actieve werk stroom taken weer te geven. Als u alle werk stroom taken wilt weer geven, selecteert u **alle taken**.
 
-    ![Werk stroom taken Oozie web console](./media/hdinsight-use-oozie-linux-mac/hdinsight-oozie-jobs.png)
+    :::image type="content" source="./media/hdinsight-use-oozie-linux-mac/hdinsight-oozie-jobs.png" alt-text="Werk stroom taken Oozie web console" border="true":::
 
 5. Selecteer de taak om meer informatie over een taak weer te geven.
 
-    ![Informatie over HDInsight Apache Oozie-taak](./media/hdinsight-use-oozie-linux-mac/hdinsight-oozie-job-info.png)
+    :::image type="content" source="./media/hdinsight-use-oozie-linux-mac/hdinsight-oozie-job-info.png" alt-text="Informatie over HDInsight Apache Oozie-taak" border="true":::
 
 6. Op het tabblad **taak gegevens** ziet u de informatie over de basis taak en de afzonderlijke acties in de taak. U kunt de tabbladen bovenaan gebruiken om de **taak definitie**, **taak configuratie**, toegang tot het **taak logboek** te bekijken of een directed acyclic Graph (dag) van de taak weer te geven onder **taak dag**.
 
    * **Taak logboek**: Selecteer de knop **Logboeken ophalen** om alle logboeken voor de taak op te halen, of gebruik het veld **Zoek filter invoeren** om de logboeken te filteren.
 
-       ![HDInsight Apache Oozie-taak logboek](./media/hdinsight-use-oozie-linux-mac/hdinsight-oozie-job-log.png)
+       :::image type="content" source="./media/hdinsight-use-oozie-linux-mac/hdinsight-oozie-job-log.png" alt-text="HDInsight Apache Oozie-taak logboek" border="true":::
 
    * **Taak dag**: de dag is een grafisch overzicht van de gegevens paden die zijn gemaakt via de werk stroom.
 
-       ![' HDInsight Apache Oozie job dag '](./media/hdinsight-use-oozie-linux-mac/hdinsight-oozie-job-dag.png)
+       :::image type="content" source="./media/hdinsight-use-oozie-linux-mac/hdinsight-oozie-job-dag.png" alt-text="' HDInsight Apache Oozie job dag '" border="true":::
 
 7. Als u een van de acties op het tabblad **taak gegevens** selecteert, wordt er informatie over de actie geopend. Selecteer bijvoorbeeld de actie **RunSqoopExport** .
 
-    ![Informatie over HDInsight oozie-taak acties](./media/hdinsight-use-oozie-linux-mac/oozie-job-action-info.png)
+    :::image type="content" source="./media/hdinsight-use-oozie-linux-mac/oozie-job-action-info.png" alt-text="Informatie over HDInsight oozie-taak acties" border="true":::
 
 8. U kunt details weer geven voor de actie, zoals een koppeling naar de **console-URL**. Gebruik deze koppeling om informatie over taak beheer voor de taak weer te geven.
 
@@ -638,18 +638,18 @@ U kunt de coördinator gebruiken om een start, een eind en de frequentie van het
 
 7. Als u naar de Oozie-webgebruikersinterface gaat en het tabblad **coördinator taken** selecteert, ziet u informatie zoals in de volgende afbeelding:
 
-    ![Tabblad Oozie web console-coördinator taken](./media/hdinsight-use-oozie-linux-mac/coordinator-jobs-tab.png)
+    :::image type="content" source="./media/hdinsight-use-oozie-linux-mac/coordinator-jobs-tab.png" alt-text="Tabblad Oozie web console-coördinator taken" border="true":::
 
     De **volgende materialisatie** -vermelding bevat de volgende keer dat de taak wordt uitgevoerd.
 
 8. Net als bij de eerdere werk stroom taak, als u de taak vermelding in de web-gebruikers interface selecteert, wordt informatie over de taak weer gegeven:
 
-    ![Taak info voor Apache Oozie Coordinator](./media/hdinsight-use-oozie-linux-mac/coordinator-job-info.png)
+    :::image type="content" source="./media/hdinsight-use-oozie-linux-mac/coordinator-job-info.png" alt-text="Taak info voor Apache Oozie Coordinator" border="true":::
 
     > [!NOTE]  
     > In deze afbeelding worden alleen geslaagde uitvoeringen van de taak weer gegeven, niet de afzonderlijke acties binnen de geplande werk stroom. Als u de afzonderlijke acties wilt zien, selecteert u een van de **actie** vermeldingen.
 
-    ![OOzie web console-taak informatie tabblad](./media/hdinsight-use-oozie-linux-mac/coordinator-action-job.png)
+    :::image type="content" source="./media/hdinsight-use-oozie-linux-mac/coordinator-action-job.png" alt-text="OOzie web console-taak informatie tabblad" border="true":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

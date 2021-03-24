@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/24/2021
 ms.author: jeedes
-ms.openlocfilehash: 5c0601e087c5059d3a4d4a73d64ee8786d02ab8f
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 633e2b6e8a7402ce94045fe290b4e08af73b124e
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102055400"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104951399"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-securitystudio"></a>Zelf studie: Azure Active Directory de integratie van eenmalige aanmelding (SSO) met SecurityStudio
 
@@ -123,8 +123,8 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 * Klik op test deze toepassing in Azure Portal en u moet automatisch worden aangemeld bij de SecurityStudio waarvoor u de SSO hebt ingesteld.
 
-* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel SecurityStudio in de mijn apps klikt, moet u automatisch worden aangemeld bij de SecurityStudio waarvoor u de SSO hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel SecurityStudio in de mijn apps klikt, moet u automatisch worden aangemeld bij de SecurityStudio waarvoor u de SSO hebt ingesteld. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nadat u SecurityStudio hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+Nadat u SecurityStudio hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

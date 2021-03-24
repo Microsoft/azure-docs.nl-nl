@@ -722,6 +722,8 @@
                       items:
                         - name: Metrische gegevens van JMX
                           href: app/java-jmx-metrics-configuration.md
+                        - name: Steek proeven van onderdrukkingen
+                          href: app/java-standalone-sampling-overrides.md
                         - name: Telemetrieverwerkers
                           items:
                             - name: Overzicht

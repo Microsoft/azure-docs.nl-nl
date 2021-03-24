@@ -8,12 +8,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 11/22/2019
 ms.author: victorh
-ms.openlocfilehash: e18267d5a810826e41e05eb3dde3cd82a8eb9197
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 32d96ce79844cd89e06035036bfa68703a738ed1
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98065317"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104950464"
 ---
 # <a name="back-end-health-and-diagnostic-logs-for-application-gateway"></a>Back-end status-en Diagnostische logboeken voor Application Gateway
 
@@ -306,7 +306,7 @@ Het firewall logboek wordt alleen gegenereerd als u het hebt ingeschakeld voor e
 |ruleSetVersion     | Gebruikte versie van regel instellingen. Beschik bare waarden zijn 2.2.9 en 3,0.     |
 |ruleId     | De regel-ID van de trigger gebeurtenis.        |
 |message     | Gebruikers vriendelijk bericht voor de activerings gebeurtenis. Meer informatie vindt u in de sectie Details.        |
-|actie     |  De actie die voor de aanvraag is uitgevoerd. Beschik bare waarden worden vergeleken en geblokkeerd.      |
+|actie     |  De actie die voor de aanvraag is uitgevoerd. Beschik bare waarden worden geblokkeerd en toegestaan (voor aangepaste regels), overeenkomend (als een regel overeenkomt met een deel van de aanvraag) en gedetecteerd en geblokkeerd (dit zijn beide voor verplichte regels, afhankelijk van of de WAF zich in de detectie-of preventie modus bevindt).      |
 |site     | De site waarvoor het logboek is gegenereerd. Momenteel wordt alleen globaal weer gegeven omdat regels globaal zijn.|
 |nadere     | Details van de trigger gebeurtenis.        |
 |Details. bericht     | Beschrijving van de regel.        |

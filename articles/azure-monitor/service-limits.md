@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/10/2019
-ms.openlocfilehash: 73598c7f5733dd65222770b80e79e2cf6ec27fbf
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: a3589aff65b24563cf21f175ccfc3a706891d699
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102032004"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104954000"
 ---
 # <a name="azure-monitor-service-limits"></a>Servicebeperkingen van Azure Monitor
 
@@ -47,5 +47,5 @@ In dit artikel vindt u een overzicht van de limieten op verschillende gebieden v
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Prijzen van Azure Monitor](https://azure.microsoft.com/pricing/details/monitor/)
-- [Gebruik en geschatte kosten in Azure Monitor bewaken](/usage-estimated-costs.md)
+- [Gebruik en geschatte kosten in Azure Monitor bewaken](/azure/azure-monitor/usage-estimated-costs)
 - [Het gebruik en de kosten voor Application Insights beheren](app/pricing.md)

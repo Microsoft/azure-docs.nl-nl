@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 02/21/2021
+ms.date: 03/23/2021
 ms.author: alkohli
-ms.openlocfilehash: 4590949f2feb86dc344dce87f3ff447e0e05e8ee
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 60c6d0b7c983aefbca3aec65a3f6562edb1d56ef
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102438111"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104956176"
 ---
 # <a name="update-your-azure-stack-edge-pro-gpu"></a>Uw Azure Stack Edge Pro GPU bijwerken 
 
@@ -24,13 +24,15 @@ In dit artikel worden de stappen beschreven die nodig zijn om updates te install
 De in dit artikel beschreven procedure is uitgevoerd met een andere versie van de software, maar het proces blijft hetzelfde voor de huidige software versie.
 
 > [!IMPORTANT]
-> - Update **2101** is de huidige update en komt overeen met:
->   - Software versie van apparaat- **2.2.1473.2521**
+> - Update **2103** is de huidige update en komt overeen met:
+>   - Software versie van apparaat- **2.2.1540.2890**
 >   - Kubernetes-Server versie- **v 1.17.3**
->   - IoT Edge-versie: **0.1.0-beta10**
+>   - IoT Edge-versie: **0.1.0-beta13**
+>   - Versie van GPU-stuur programma: **460.32.03**
+>   - CUDA-versie: **11,2**
 >    
->    Ga naar [release opmerkingen](azure-stack-edge-gpu-2101-release-notes.md)voor meer informatie over wat er nieuw is in deze update.
-> - Om 2101-update toe te passen, moet op uw apparaat 2010 worden uitgevoerd.
+>    Ga naar [release opmerkingen](azure-stack-edge-gpu-2103-release-notes.md)voor meer informatie over wat er nieuw is in deze update.
+> - Om 2103-update toe te passen, moet op uw apparaat 2010 worden uitgevoerd. Als u niet de mini maal ondersteunde versie gebruikt, ziet u deze fout: *Update pakket kan niet worden geïnstalleerd omdat niet aan de afhankelijkheden wordt voldaan*.
 > - Als u een update of hotfix installeert, wordt het apparaat opnieuw opgestart. Deze update bevat de software-updates van het apparaat en de Kubernetes-updates. Gezien de Azure Stack Edge Pro is een apparaat met één knoop punt, worden alle I/O-bewerkingen onderbroken en wordt het apparaat een downtime van Maxi maal 1,5 uur voor de update.
 
 Als u updates op uw apparaat wilt installeren, moet u eerst de locatie van de update server configureren. Nadat de update server is geconfigureerd, kunt u de updates Toep assen via de Azure Portal gebruikers interface of de lokale webgebruikersinterface.
@@ -111,10 +113,7 @@ U wordt aangeraden updates te installeren via de Azure Portal. Het apparaat scan
     
     ![Software versie na update 12](./media/azure-stack-edge-gpu-install-update/portal-update-11.png)
 
-
-7. Na het opnieuw opstarten wordt het apparaat opnieuw in de onderhouds modus geplaatst en wordt er een informatieve waarschuwing weer gegeven om aan te geven dat.
-
-    Als u het **apparaat bijwerken** selecteert vanaf de bovenste opdracht balk, kunt u de voortgang van de updates bekijken.   
+7. Als u na het opnieuw opstarten het **apparaat bijwerken** op de bovenste opdracht balk selecteert, ziet u de voortgang van de updates.   
 
 8. De status van het apparaat wordt **online** bijgewerkt nadat de updates zijn geïnstalleerd. 
 
@@ -124,23 +123,6 @@ U wordt aangeraden updates te installeren via de Azure Portal. Het apparaat scan
 
     ![Software versie na update 14](./media/azure-stack-edge-gpu-install-update/portal-update-15.png)
 
-<!--9. You will again see a notification that updates are available. These are the Kubernetes updates. Select the notification or select **Update device** from the top command bar.
-
-    ![Software version after update 15](./media/azure-stack-edge-gpu-install-update/portal-update-16.png)
-
-10. Download the Kubernetes updates. You can see that the package size is different when compared to the previous update package.
-
-    ![Software version after update 16](./media/azure-stack-edge-gpu-install-update/portal-update-17.png)
-
-    The process of installation is identical to that of device updates. First the updates are downloaded.
-
-    ![Software version after update 17](./media/azure-stack-edge-gpu-install-update/portal-update-18.png)    
-    
-11. Once the updates are downloaded, you can then install the updates. 
-
-    ![Software version after update 18](./media/azure-stack-edge-gpu-install-update/portal-update-19.png)
-
-    As the updates are installed, the device is put into maintenance mode. The device does not restart for the Kubernetes updates. -->
 
 Zodra de Kubernetes-software is geïnstalleerd, verdwijnt de banner melding. Uw apparaat heeft nu de nieuwste versie van de apparaatsoftware en Kubernetes.
 
@@ -168,11 +150,11 @@ Voer de volgende stappen uit om de update te downloaden uit de Microsoft Update 
 
 2. Voer in het zoekvak van de catalogus van Microsoft Update het Knowledge Base-nummer (KB) in van de hotfix of de voor waarden voor de update die u wilt downloaden. Voer bijvoorbeeld **Azure stack Edge Pro** in en klik vervolgens op **zoeken**.
    
-    De update vermelding wordt weer gegeven als **Azure stack Edge update 2101**.
+    De update vermelding wordt weer gegeven als **Azure stack Edge update 2103**.
    
     <!--![Search catalog 2](./media/azure-stack-edge-gpu-install-update/download-update-2-b.png)-->
 
-4. Selecteer **Downloaden**. Er zijn twee bestanden om te downloaden met *SoftwareUpdatePackage.exe* en *Kubernetes_Package.exe* achtervoegsels die overeenkomen met de software-updates voor apparaten en Kubernetes-updates. Down load de bestanden naar een map op het lokale systeem. U kunt de map ook kopiëren naar een netwerk share die bereikbaar is vanaf het apparaat.
+4. Selecteer **Downloaden**. Er zijn twee pakketten die moeten worden gedownload: KB 4613486 en KB 46134867 die overeenkomen met de software-updates van het apparaat (*SoftwareUpdatePackage.exe*) en Kubernetes (*Kubernetes_Package.exe*) respectievelijk. Down load de pakketten naar een map op het lokale systeem. U kunt de map ook kopiëren naar een netwerk share die bereikbaar is vanaf het apparaat.
 
 ### <a name="install-the-update-or-the-hotfix"></a>De update of hotfix installeren
 
@@ -203,7 +185,7 @@ Het volt ooien van deze procedure duurt ongeveer 20 minuten. Voer de volgende st
 
 5. De update wordt gestart. Nadat het apparaat is bijgewerkt, wordt het opnieuw opgestart. De lokale gebruikers interface is niet toegankelijk in deze duur.
    
-6. Wanneer het opnieuw opstarten is voltooid, wordt u naar de **aanmeldings** pagina geleid. Als u wilt controleren of de software van het apparaat is bijgewerkt, gaat u naar de **onderhouds**  >  **Software-update** in de lokale web-UI. Voor de huidige versie moet de weer gegeven software versie **Azure stack Edge 2101** zijn. 
+6. Wanneer het opnieuw opstarten is voltooid, wordt u naar de **aanmeldings** pagina geleid. Als u wilt controleren of de software van het apparaat is bijgewerkt, gaat u naar de **onderhouds**  >  **Software-update** in de lokale web-UI. Voor de huidige versie moet de weer gegeven software versie **Azure stack Edge 2103** zijn. 
 
    <!--![update device 6](./media/azure-stack-edge-gpu-install-update/local-ui-update-6.png)-->
 

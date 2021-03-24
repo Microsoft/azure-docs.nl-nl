@@ -3,12 +3,12 @@ title: Bicep-taal voor Azure Resource Manager sjablonen
 description: Beschrijft de Bicep-taal voor het implementeren van de infra structuur naar Azure via Azure Resource Manager sjablonen.
 ms.topic: conceptual
 ms.date: 03/23/2021
-ms.openlocfilehash: 0edd0063ea08978b89c3ad3067f41ae743451df7
-ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
+ms.openlocfilehash: 74028c682b48a492c2e8f13bef538d1694370cbd
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104889685"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104955904"
 ---
 # <a name="what-is-bicep-preview"></a>Wat is Bicep (preview)?
 
@@ -16,11 +16,15 @@ Bicep is een taal voor declaratieve implementatie van Azure-resources. U kunt Bi
 
 De JSON-syntaxis voor het maken van een sjabloon kan uitgebreid zijn en gecompliceerde expressies vereisen. Bicep verbetert de ervaring zonder dat de mogelijkheden van een JSON-sjabloon verloren gaan. Het is een transparante abstractie voor de JSON voor ARM-sjablonen. Elk Bicep-bestand wordt gecompileerd naar een standaard ARM-sjabloon. Resource typen, API-versies en eigenschappen die geldig zijn in een ARM-sjabloon zijn geldig in een Bicep-bestand. Er zijn enkele [bekende beperkingen](#known-limitations) in de huidige release.
 
+Bicep is momenteel beschikbaar als preview-versie. Zie de [Bicep-project opslagplaats](https://github.com/Azure/bicep)als u de status van het werk wilt bijhouden.
+
 Zie de volgende video voor meer informatie over Bicep.
+
+> [!VIDEO https://www.youtube.com/embed/sc1kJfcRQgY]
 
 ## <a name="get-started"></a>Aan de slag
 
-Als u met Bicep wilt beginnen, [installeert u de hulpprogram ma's](https://github.com/Azure/bicep/blob/main/docs/installing.md).
+Als u met Bicep wilt beginnen, [installeert u de hulpprogram ma's](bicep-install.md).
 
 Probeer de [Bicep-zelf studie](./bicep-tutorial-create-first-bicep.md)na de installatie van de hulpprogram ma's. In de zelf studie wordt u begeleid bij de structuur en mogelijkheden van Bicep. U implementeert Bicep-bestanden en zet een ARM-sjabloon om in het equivalente Bicep-bestand.
 

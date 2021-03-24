@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/02/2019
-ms.openlocfilehash: 360a9730025dc24eda93868903fcd356c37d06ef
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 3cf97039983ecec44a7c3a32e178fdcf9f9c45ff
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100576333"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104872180"
 ---
 # <a name="query-azure-monitor-logs-to-monitor-hdinsight-clusters"></a>Azure Monitor logboeken voor het controleren van HDInsight-clusters doorzoeken
 
@@ -37,13 +37,13 @@ Meer informatie over het zoeken naar specifieke metrische gegevens voor uw HDIns
     search *
     ```
 
-    ![Apache Ambari Analytics alle metrische gegevens doorzoeken](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-all-metrics.png "Alle metrische gegevens zoeken")
+    :::image type="content" source="./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-all-metrics.png" alt-text="Apache Ambari Analytics alle metrische gegevens doorzoeken":::
 
 1. Selecteer in het menu links het tabblad **filter** .
 
 1. Onder **type**, selecteer **heartbeat**. Selecteer vervolgens **Toep assen & uitvoeren**.
 
-    ![Log Analytics-specifieke metrische gegevens zoeken](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-specific-metrics.png "Specifieke metrische gegevens zoeken")
+    :::image type="content" source="./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-specific-metrics.png" alt-text="Log Analytics-specifieke metrische gegevens zoeken":::
 
 1. U ziet dat de query in het tekstvak verandert in:
 
@@ -54,13 +54,13 @@ Meer informatie over het zoeken naar specifieke metrische gegevens voor uw HDIns
 
 1. U kunt dieper met behulp van de beschik bare opties in het menu links. Bijvoorbeeld:
 
-    - Logboeken van een specifiek knoop punt weer geven:
+   - Logboeken van een specifiek knoop punt weer geven:
 
-        ![Zoeken naar specifieke fouten output1](./media/hdinsight-hadoop-oms-log-analytics-use-queries/log-analytics-specific-node.png "Zoeken naar specifieke fouten output1")
+     :::image type="content" source="./media/hdinsight-hadoop-oms-log-analytics-use-queries/log-analytics-specific-node.png" alt-text="Zoeken naar specifieke fouten output1":::
 
-    - Logboeken op bepaalde momenten bekijken:
+   - Logboeken op bepaalde momenten bekijken:
 
-        ![Zoeken naar specifieke fouten output2](./media/hdinsight-hadoop-oms-log-analytics-use-queries/log-analytics-specific-time.png "Zoeken naar specifieke fouten output2")
+     :::image type="content" source="./media/hdinsight-hadoop-oms-log-analytics-use-queries/log-analytics-specific-time.png" alt-text="Zoeken naar specifieke fouten output2":::
 
 1. Selecteer **Toep assen & uitvoeren** en Bekijk de resultaten. Houd er ook rekening mee dat de query is bijgewerkt naar:
 
@@ -102,11 +102,11 @@ De eerste stap bij het maken van een waarschuwing is het aanroepen van een query
 
 1. Selecteer **nieuwe waarschuwings regel** boven aan de pagina.
 
-    ![Voer een query in om een alert1 te maken](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-create-alert-query.png "Voer een query in om een alert1 te maken")
+    :::image type="content" source="./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-create-alert-query.png" alt-text="Nieuwe waarschuwingsregel":::
 
 1. Voer in het venster **regel maken** de query en andere details in om een waarschuwing te maken en selecteer vervolgens **waarschuwings regel maken**.
 
-    ![Voer een query in om een alert2 te maken](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-create-alert.png "Voer een query in om een alert2 te maken")
+    :::image type="content" source="./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-create-alert.png" alt-text="Waarschuwings voorwaarde definiëren.":::
 
 ### <a name="edit-or-delete-an-existing-alert"></a>Een bestaande waarschuwing bewerken of verwijderen
 
@@ -120,7 +120,7 @@ De eerste stap bij het maken van een waarschuwing is het aanroepen van een query
 
 1. U hebt de volgende opties: **Opslaan**, **verwijderen**, **uitschakelen** en **verwijderen**.
 
-    ![Waarschuwing voor verwijderen van HDInsight-Azure Monitor logboeken](media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-edit-alert.png)
+    :::image type="content" source="media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-edit-alert.png" alt-text="Waarschuwing voor verwijderen van HDInsight-Azure Monitor logboeken":::
 
 Zie [metrische waarschuwingen maken, weer geven en beheren met behulp van Azure monitor](../azure-monitor/alerts/alerts-metric.md)voor meer informatie.
 

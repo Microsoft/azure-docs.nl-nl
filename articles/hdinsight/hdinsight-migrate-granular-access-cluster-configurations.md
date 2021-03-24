@@ -6,12 +6,12 @@ ms.author: tyfox
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/20/2020
-ms.openlocfilehash: a30768f4904c9e5be2edc020f12260cf3a54c889
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 47569309f35848e82488abd549751f6f1e5a1baa
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102425886"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104954867"
 ---
 # <a name="migrate-to-granular-role-based-access-for-cluster-configurations"></a>Migreren naar gedetailleerde, op rollen gebaseerde toegang voor clusterconfiguraties
 
@@ -27,8 +27,8 @@ We introduceren ook een nieuwe rol van een [HDInsight-cluster operator](../role-
 
 | Rol                                  | Verwijderd                                                                                       | Gaat verder       |
 |---------------------------------------|--------------------------------------------------------------------------------------------------|-----------|
-| Lezer                                | -Lees toegang, inclusief geheimen.                                                                   | -Lees toegang, met **uitzonde ring van** geheimen |           |   |   |
-| HDInsight-cluster operator<br>(Nieuwe rol) | N.v.t.                                                                                              | -Lees-en schrijf toegang, inclusief geheimen         |   |   |
+| Lezer                                | -Lees toegang, inclusief geheimen.                                                                   | -Lees toegang, met **uitzonde ring van** geheimen | 
+| HDInsight-cluster operator<br>(Nieuwe rol) | N.v.t.                                                                                              | -Lees-en schrijf toegang, inclusief geheimen         | 
 | Inzender                           | -Lees-en schrijf toegang, inclusief geheimen.<br>-Alle typen Azure-resources maken en beheren.<br>-Script acties uitvoeren.     | Geen wijziging |
 | Eigenaar                                 | -Lees-en schrijf toegang, inclusief geheimen.<br>-Volledige toegang tot alle resources<br>-Toegang tot anderen delegeren.<br>-Script acties uitvoeren. | Geen wijziging |
 

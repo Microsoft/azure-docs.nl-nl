@@ -5,12 +5,12 @@ ms.assetid: c9da27b2-47d4-4c33-a3cb-1819955ee43b
 ms.topic: article
 ms.date: 09/17/2019
 ms.custom: devx-track-csharp, seodec18
-ms.openlocfilehash: 44e18be9d66131ad5f4a3ebcc039621ec9e9dbe6
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 03ef2110af2d9e642019c2b07b53fae3e32b1ea6
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102452251"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104950175"
 ---
 # <a name="enable-diagnostics-logging-for-apps-in-azure-app-service"></a>Diagnostische logboek registratie inschakelen voor apps in Azure App Service
 ## <a name="overview"></a>Overzicht
@@ -116,7 +116,7 @@ In de toepassings code gebruikt u de gebruikelijke logboek functies om logboek b
     System.Diagnostics.Trace.TraceError("If you're seeing this, something bad happened");
     ```
 
-- ASP.NET Core maakt standaard gebruik van de logboek provider [micro soft. Extensions. Logging. AzureAppServices](https://www.nuget.org/packages/Microsoft.Extensions.Logging.AzureAppServices) . Zie [ASP.net core logboek registratie in azure](/aspnet/core/fundamentals/logging/)voor meer informatie. Zie [aan de slag met de Azure WEBJOBS SDK](/azure/app-service/webjobs-sdk-get-started#enable-console-logging) voor informatie over de logboek registratie van de webjobs-SDK
+- ASP.NET Core maakt standaard gebruik van de logboek provider [micro soft. Extensions. Logging. AzureAppServices](https://www.nuget.org/packages/Microsoft.Extensions.Logging.AzureAppServices) . Zie [ASP.net core logboek registratie in azure](/aspnet/core/fundamentals/logging/)voor meer informatie. Zie [aan de slag met de Azure WEBJOBS SDK](./webjobs-sdk-get-started.md#enable-console-logging) voor informatie over de logboek registratie van de webjobs-SDK
 
 ## <a name="stream-logs"></a>Logboeken streamen
 

@@ -11,12 +11,12 @@ author: nibaccam
 ms.reviewer: nibaccam
 ms.date: 03/02/2021
 ms.custom: how-to, devx-track-python, data4ml, synapse-azureml
-ms.openlocfilehash: d7cc948d3631e69882eb252672e5a3eb5d5f9751
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.openlocfilehash: 9ced4da7f71a0499e538e499644d89240611f1ea
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104867437"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104956210"
 ---
 # <a name="attach-apache-spark-pools-powered-by-azure-synapse-analytics-for-data-wrangling-preview"></a>Apache Spark Pools koppelen (aangedreven door Azure Synapse Analytics) voor data wrangling (preview)
 
@@ -127,6 +127,21 @@ ws.compute_targets['Synapse Spark pool alias']
 
 ## <a name="launch-synapse-spark-pool-for-data-preparation-tasks"></a>Synapse Spark-pool starten voor gegevens voorbereidings taken
 
+Geef de naam van de Apache Spark groep op om te beginnen met de voor bereiding van gegevens met de Apache Spark pool:
+
+> [!IMPORTANT]
+> Als u wilt door gaan met het gebruik van de Apache Spark pool, geeft u aan welke reken resource moet worden gebruikt in uw gegevens wrangling met `%synapse` voor één regel code en `%%synapse` voor meerdere regels. 
+
+```python
+%synapse start -c SynapseSparkPoolAlias
+```
+
+Nadat de sessie is gestart, kunt u de meta gegevens van de sessie controleren.
+
+```python
+%synapse meta
+```
+
 U kunt een [Azure machine learning omgeving](concept-environments.md) opgeven die tijdens uw Apache Spark sessie moet worden gebruikt. Alleen de Conda-afhankelijkheden die in de omgeving zijn opgegeven, worden van kracht. Docker-installatie kopie wordt niet ondersteund.
 
 >[!WARNING]
@@ -146,21 +161,11 @@ env.python.conda_dependencies.add_conda_package("numpy==1.17.0")
 env.register(workspace=ws)
 ```
 
-Als u gegevens voorbereiding wilt beginnen met de Apache Spark pool, geeft u de naam van de Apache Spark groep op en geeft u uw abonnements-ID, de machine learning werkruimte resource groep, de naam van de machine learning-werk ruimte en welke omgeving u tijdens de Apache Spark sessie wilt gebruiken. 
-
-> [!IMPORTANT]
-> Als u wilt door gaan met het gebruik van de Apache Spark pool, geeft u aan welke reken resource moet worden gebruikt in uw gegevens wrangling met `%synapse` voor één regel code en `%%synapse` voor meerdere regels. 
+Geef de naam van de Apache Spark groep en de omgeving die moet worden gebruikt tijdens de Apache Spark sessie om te beginnen met het voorbereiden van gegevens met de Apache Spark pool en uw aangepaste omgeving. Daarnaast kunt u uw abonnements-ID, de resource groep machine learning werkruimte en de naam van de machine learning-werk ruimte opgeven.
 
 ```python
-%synapse start -c SynapseSparkPoolAlias -s AzureMLworkspaceSubscriptionID -r AzureMLworkspaceResourceGroupName -w AzureMLworkspaceName -e myenv
+%synapse start -c SynapseSparkPoolAlias -e myenv -s AzureMLworkspaceSubscriptionID -r AzureMLworkspaceResourceGroupName -w AzureMLworkspaceName
 ```
-
-Nadat de sessie is gestart, kunt u de meta gegevens van de sessie controleren.
-
-```python
-%synapse meta
-```
-
 ## <a name="load-data-from-storage"></a>Gegevens uit de opslag laden
 
 Als uw Apache Spark-sessie wordt gestart, leest u de gegevens die u wilt voorbereiden. Het laden van gegevens wordt ondersteund voor Azure Blob Storage en Azure Data Lake Storage generaties 1 en 2.
@@ -226,14 +231,22 @@ df = spark.read.csv("abfss://<container name>@<storage account>.dfs.core.windows
 
 ### <a name="read-in-data-from-registered-datasets"></a>Gegevens uit geregistreerde data sets lezen
 
-U kunt ook een bestaande geregistreerde gegevensset in uw werk ruimte ophalen en de gegevens voorbereiding hierop uitvoeren door deze te converteren naar een Spark-data frame.  
+U kunt ook een bestaande geregistreerde gegevensset in uw werk ruimte ophalen en de gegevens voorbereiding hierop uitvoeren door deze te converteren naar een Spark-data frame.
 
-In het volgende voor beeld wordt een geregistreerde TabularDataset, `blob_dset` , die verwijst naar bestanden in Blob Storage, opgehaald en omgezet in een Spark data frame. Wanneer u uw gegevens sets converteert naar een Spark-data frame, kunt u gebruikmaken van bibliotheken voor het `pyspark` verkennen van gegevens en voor bereiding.  
+In het volgende voor beeld wordt de werk ruimte geverifieerd, wordt een geregistreerde TabularDataset, `blob_dset` , die verwijst naar bestanden in Blob Storage, opgehaald en omgezet in een Spark data frame. Wanneer u uw gegevens sets converteert naar een Spark-data frame, kunt u gebruikmaken van bibliotheken voor het `pyspark` verkennen van gegevens en voor bereiding.  
 
 ``` python
 
 %%synapse
 from azureml.core import Workspace, Dataset
+
+subscription_id = "<enter your subscription ID>"
+resource_group = "<enter your resource group>"
+workspace_name = "<enter your workspace name>"
+
+ws = Workspace(workspace_name = workspace_name,
+               subscription_id = subscription_id,
+               resource_group = resource_group)
 
 dset = Dataset.get_by_name(ws, "blob_dset")
 spark_df = dset.to_spark_dataframe()

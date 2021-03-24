@@ -5,18 +5,18 @@ author: elqu20
 ms.author: v-elqu
 ms.service: azure-percept
 ms.topic: conceptual
-ms.date: 02/16/2021
+ms.date: 03/23/2021
 ms.custom: template-concept
-ms.openlocfilehash: e31a696dfb443c20566f13f5a228eefac7af5ecc
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: b644adb98de5ef5e3af6e1c8d45ea1a207d05cc7
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104595920"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104956125"
 ---
 # <a name="azure-percept-ai-models"></a>Azure percept AI-modellen
 
-Met Azure percept kunt u AI-modellen rechtstreeks ontwikkelen en implementeren in azure percept DK vanuit [Azure percept Studio](https://go.microsoft.com/fwlink/?linkid=2135819). Model implementatie maakt gebruik van [Azure IOT hub](https://azure.microsoft.com/services/iot-hub/) en [Azure IOT Edge](https://azure.microsoft.com/services/iot-edge/#iotedge-overview).
+Met Azure percept kunt u AI-modellen rechtstreeks ontwikkelen en implementeren in azure [PERCEPT DK](./overview-azure-percept-dk.md) vanuit [Azure percept Studio](https://go.microsoft.com/fwlink/?linkid=2135819). Model implementatie maakt gebruik van [Azure IOT hub](https://azure.microsoft.com/services/iot-hub/) en [Azure IOT Edge](https://azure.microsoft.com/services/iot-edge/#iotedge-overview).
 
 ## <a name="sample-ai-models"></a>AI-voorbeeld modellen
 
@@ -27,7 +27,7 @@ Azure percept Studio bevat voorbeeld modellen voor de volgende toepassingen:
 - algemene object detectie
 - detectie van producten op plank
 
-Met vooraf getrainde modellen is geen code ring of trainings gegevens verzameling vereist. Implementeer uw gewenste model in azure percept DK vanuit de portal en open de video stroom van de Devkit om het model dezicht in actie te zien. U kunt de telemetrie van het model niet gebruiken via het hulp programma [Azure IOT Explorer](https://github.com/Azure/azure-iot-explorer/releases) .
+Met vooraf getrainde modellen is geen code ring of trainings gegevens verzameling vereist. [Implementeer uw gewenste model](./how-to-deploy-model.md) in azure percept DK vanuit de portal en open de [video stroom](./how-to-view-video-stream.md) van de Devkit om het model dezicht in actie te zien. U kunt de [telemetrie](./how-to-view-telemetry.md) van het model niet gebruiken via het hulp programma [Azure IOT Explorer](https://github.com/Azure/azure-iot-explorer/releases) .
 
 ## <a name="reference-solutions"></a>Referentieoplossingen
 
@@ -37,9 +37,9 @@ Er is ook een [referentie oplossing](https://github.com/microsoft/Azure-Percept-
 
 ## <a name="custom-no-code-solutions"></a>Aangepaste oplossingen zonder code
 
-Met Azure percept Studio kunt u aangepaste [visie](./tutorial-nocode-vision.md) -en spraak oplossingen ontwikkelen, maar geen code ring vereist.
+Met Azure percept Studio kunt u aangepaste [visie](./tutorial-nocode-vision.md) -en [spraak](./tutorial-no-code-speech.md) oplossingen ontwikkelen, maar geen code ring vereist.
 
-Voor aangepaste Vision-oplossingen zijn zowel object detectie als classificatie AI-modellen beschikbaar. U kunt uw trainings afbeeldingen gewoon uploaden en labelen, die rechtstreeks kunnen worden gemaakt met het percept Vision-SoM van Azure percept DK, indien gewenst. Model training en evaluatie kunnen eenvoudig worden uitgevoerd in [Custom Vision](https://www.customvision.ai/), die deel uitmaakt van [Azure Cognitive Services](https://azure.microsoft.com/services/cognitive-services/#overview).
+Voor aangepaste Vision-oplossingen zijn zowel object detectie als classificatie AI-modellen beschikbaar. U hoeft alleen uw trainings afbeeldingen te uploaden en tags te maken, die rechtstreeks kunnen worden gemaakt met het percept Vision-SoM van Azure percept DK, indien gewenst. Model training en evaluatie kunnen eenvoudig worden uitgevoerd in [Custom Vision](https://www.customvision.ai/), die deel uitmaakt van [Azure Cognitive Services](https://azure.microsoft.com/services/cognitive-services/#overview).
 
 </br>
 
@@ -58,6 +58,6 @@ De vooraf gemaakte tref woorden en opdrachten voor spraak assistenten zijn recht
 
 Raadpleeg [Azure PERCEPT DK Advanced Development github](https://github.com/microsoft/azure-percept-advanced-development) voor actuele hulp, zelf studies en voor beelden voor zaken als:
 
-* Een aangepast AI-model naar het apparaat brengen
-* Een model bijwerken dat al wordt ondersteund met overboeking Learning
-* En meer
+- Een aangepast AI-model implementeren in uw Azure percept DK
+- Een ondersteund model bijwerken met overboeking Learning
+- En meer

@@ -3,12 +3,12 @@ title: Azure Service Bus-verlopen van berichten
 description: In dit artikel wordt uitgelegd over de verval tijd en de duur van Azure Service Bus berichten. Na een dergelijke deadline wordt het bericht niet meer bezorgd.
 ms.topic: conceptual
 ms.date: 02/17/2021
-ms.openlocfilehash: 74df8909633c2fa048c23c559ffdd315a8616e11
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 5d60d84bdc0d437d97c369296a414d55beda4167
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102042824"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104952317"
 ---
 # <a name="message-expiration-time-to-live"></a>Verlopen van berichten (Time to Live)
 De payload in een bericht of een opdracht of query die een bericht overbrengt naar een ontvanger, is bijna altijd onderworpen aan een bepaalde vorm van verval deadline op toepassings niveau. Na deze deadline wordt de inhoud niet meer bezorgd of wordt de aangevraagde bewerking niet meer uitgevoerd.
@@ -46,7 +46,7 @@ Service Bus-wacht rijen,-onderwerpen en-abonnementen kunnen worden gemaakt als t
  
 Automatisch opschonen is handig in de ontwikkelings-en test scenario's waarin entiteiten dynamisch worden gemaakt en niet na gebruik worden opgeschoond, vanwege een onderbreking van de test of het uitvoeren van de fout opsporing. Het is ook handig wanneer een toepassing dynamische entiteiten maakt, zoals een antwoord wachtrij, voor het ontvangen van antwoorden op een webserver proces, of in een ander relatief versteld object, waar het lastig is om die entiteiten op betrouw bare wijze op te schonen wanneer het object exemplaar verdwijnt.
 
-De functie wordt ingeschakeld met behulp van de eigenschap **automatisch verwijderen bij niet-actief** van de naam ruimte. Deze eigenschap wordt ingesteld op de duur waarvoor een entiteit inactief moet zijn voordat deze automatisch wordt verwijderd. De minimum waarde voor deze eigenschap is 5.
+De functie wordt ingeschakeld met behulp van de eigenschap **automatisch verwijderen bij niet-actief** van de naam ruimte. Deze eigenschap wordt ingesteld op de duur waarvoor een entiteit inactief moet zijn voordat deze automatisch wordt verwijderd. De minimale waarde voor deze eigenschap is 5 minuten.
  
 ## <a name="idleness"></a>Inactiviteit
 

@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020
 ms.date: 04/17/2020
-ms.openlocfilehash: 4761c1fb6d245071a02fc69677fc9cd50a972fdd
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 297c1d4afca5a1d605a046d69b086a05a9322bc7
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100574594"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104872078"
 ---
 # <a name="configure-outbound-network-traffic-for-azure-hdinsight-clusters-using-firewall"></a>Uitgaand netwerk verkeer voor Azure HDInsight-clusters configureren met behulp van Firewall
 
@@ -52,7 +52,7 @@ Maak een toepassings regel verzameling waarmee het cluster belang rijke communic
 
 1. Navigeer naar **instellingen**  >  **regels**  >  **toepassings regel verzameling**  >  **+ toepassings regel verzameling toevoegen**.
 
-    ![Titel: toepassings regel verzameling toevoegen](./media/hdinsight-restrict-outbound-traffic/hdinsight-restrict-outbound-traffic-add-app-rule-collection.png)
+    :::image type="content" source="./media/hdinsight-restrict-outbound-traffic/hdinsight-restrict-outbound-traffic-add-app-rule-collection.png" alt-text="Titel: toepassings regel verzameling toevoegen":::
 
 1. Geef op het scherm **toepassings regel toevoegen** de volgende informatie op:
 
@@ -78,7 +78,7 @@ Maak een toepassings regel verzameling waarmee het cluster belang rijke communic
     | Rule_3 | * | https:443 | login.microsoftonline.com | Windows-aanmeldings activiteit toestaan |
     | Rule_4 | * | https: 443, http: 80 | storage_account_name. blob. core. Windows. net | Vervang door `storage_account_name` de werkelijke naam van het opslag account. Als u alleen HTTPS-verbindingen wilt gebruiken, moet u ervoor zorgen dat ["beveiligde overdracht vereist"](../storage/common/storage-require-secure-transfer.md) is ingeschakeld op het opslag account. Als u een privé-eind punt gebruikt voor toegang tot opslag accounts, is deze stap niet nodig en wordt het opslag verkeer niet doorgestuurd naar de firewall.|
 
-   ![Titel: Details van toepassings regel verzameling invoeren](./media/hdinsight-restrict-outbound-traffic/hdinsight-restrict-outbound-traffic-add-app-rule-collection-details.png)
+   :::image type="content" source="./media/hdinsight-restrict-outbound-traffic/hdinsight-restrict-outbound-traffic-add-app-rule-collection-details.png" alt-text="Titel: Details van toepassings regel verzameling invoeren":::
 
 1. Selecteer **Toevoegen**.
 
@@ -105,7 +105,7 @@ Maak de netwerk regels om uw HDInsight-cluster correct te configureren.
     | Rule_5 | TCP | * | SQL | 1433 | Als u de standaard SQL-servers gebruikt die door HDInsight worden meegeleverd, configureert u een netwerk regel in het gedeelte service tags voor SQL waarmee u SQL-verkeer kunt registreren en controleren. Tenzij u service-eind punten voor SQL Server op het HDInsight-subnet hebt geconfigureerd, waardoor de firewall wordt overgeslagen. Als u een aangepaste SQL Server gebruikt voor Ambari, Oozie, zwerver en Hive-meta Stores, hoeft u alleen het verkeer naar uw eigen aangepaste SQL-servers toe te staan.|
     | Rule_6 | TCP | * | Azure Monitor | * | Beschrijving Klanten die de functie voor automatisch schalen willen gebruiken, moeten deze regel toevoegen. |
     
-   ![Titel: toepassings regel verzameling invoeren](./media/hdinsight-restrict-outbound-traffic/hdinsight-restrict-outbound-traffic-add-network-rule-collection.png)
+   :::image type="content" source="./media/hdinsight-restrict-outbound-traffic/hdinsight-restrict-outbound-traffic-add-network-rule-collection.png" alt-text="Titel: toepassings regel verzameling invoeren":::
 
 1. Selecteer **Toevoegen**.
 

@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 08/06/2020
-ms.openlocfilehash: d36c8f1f592bbe714a9e31cad8131523049f29ad
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: a3bfcfbe59ccc15278b30470c6a060a9c1dd609c
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98931359"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104871741"
 ---
 # <a name="use-external-metadata-stores-in-azure-hdinsight"></a>Externe metagegevensopslag gebruiken in Azure HDInsight
 
@@ -18,7 +18,7 @@ Met HDInsight kunt u de controle over uw gegevens en meta gegevens overnemen met
 
 De Apache Hive-meta Store in HDInsight is een essentieel onderdeel van de Apache Hadoop architectuur. Een meta Store is de centrale schema opslagplaats. De meta Store wordt gebruikt door andere big data Access-hulpprogram ma's, zoals Apache Spark, interactieve query (LLAP), Presto of Apache varken. HDInsight gebruikt een Azure SQL Database als de Hive-metastore.
 
-![Architectuur van het meta gegevens archief van HDInsight Hive](./media/hdinsight-use-external-metadata-stores/metadata-store-architecture.png)
+:::image type="content" source="./media/hdinsight-use-external-metadata-stores/metadata-store-architecture.png" alt-text="Architectuur van het meta gegevens archief van HDInsight Hive" border="false":::
 
 Er zijn twee manieren waarop u een meta Store voor uw HDInsight-clusters kunt instellen:
 
@@ -56,7 +56,7 @@ HDInsight biedt ook ondersteuning voor aangepaste meta Stores, die worden aanbev
 
 * Het cluster en de externe meta Store moeten worden gehost in dezelfde regio.
 
-![Use-case van het meta gegevens archief van HDInsight Hive](./media/hdinsight-use-external-metadata-stores/metadata-store-use-case.png)
+:::image type="content" source="./media/hdinsight-use-external-metadata-stores/metadata-store-use-case.png" alt-text="Use-case van het meta gegevens archief van HDInsight Hive" border="false":::
 
 ### <a name="create-and-config-azure-sql-database-for-the-custom-metastore"></a>Azure SQL Database maken en configureren voor de aangepaste meta Store
 
@@ -66,15 +66,15 @@ Tijdens het maken van het cluster moet de HDInsight-service verbinding maken met
 
 Privé-eind punten voor SQL-archieven worden alleen ondersteund op de clusters die zijn gemaakt met `outbound` ResourceProviderConnection. Raadpleeg deze [documentatie](./hdinsight-private-link.md)voor meer informatie.
 
-![knop Server firewall instellen](./media/hdinsight-use-external-metadata-stores/configure-azure-sql-database-firewall1.png)
+:::image type="content" source="./media/hdinsight-use-external-metadata-stores/configure-azure-sql-database-firewall1.png" alt-text="knop Server firewall instellen":::
 
-![toegang tot Azure-Services toestaan](./media/hdinsight-use-external-metadata-stores/configure-azure-sql-database-firewall2.png)
+:::image type="content" source="./media/hdinsight-use-external-metadata-stores/configure-azure-sql-database-firewall2.png" alt-text="toegang tot Azure-Services toestaan":::
 
 ### <a name="select-a-custom-metastore-during-cluster-creation"></a>Een aangepaste meta Store selecteren tijdens het maken van het cluster
 
 U kunt uw cluster op elk gewenst moment naar een eerder gemaakt Azure SQL Database verwijzen. Voor het maken van een cluster via de portal, wordt de optie opgegeven uit de **opslag > de meta Store-instellingen**.
 
-![Meta gegevens archief van HDInsight-Hive Azure Portal](./media/hdinsight-use-external-metadata-stores/azure-portal-cluster-storage-metastore.png)
+:::image type="content" source="./media/hdinsight-use-external-metadata-stores/azure-portal-cluster-storage-metastore.png" alt-text="Meta gegevens archief van HDInsight-Hive Azure Portal":::
 
 ## <a name="hive-metastore-guidelines"></a>Hive-metastore richtlijnen
 

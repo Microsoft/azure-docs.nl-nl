@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 11/03/2020
 ms.author: allensu
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 998b52a23894dcb7fa08b2c0fd42e4ef8e3678ae
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: a5562c5f40a321f5737fea73f6d7964b402953cb
+ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102554986"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104889209"
 ---
 # <a name="tutorial-connect-to-an-azure-sql-server-using-an-azure-private-endpoint---azure-cli"></a>Zelf studie: verbinding maken met een Azure SQL-Server met behulp van een Azure-privé-eind punt-Azure CLI
 
@@ -218,9 +218,9 @@ az network private-endpoint create \
 
 ## <a name="configure-the-private-dns-zone"></a>Privé-DNS-zone configureren
 
-In dit gedeelte maakt en configureert u de privé-DNS-zone met behulp van [az network private-dns zone create](/cli/azure/ext/privatedns/network/private-dns/zone#ext_privatedns_az_network_private_dns_zone_create).  
+In dit gedeelte maakt en configureert u de privé-DNS-zone met behulp van [az network private-dns zone create](/cli/azure/network/private-dns/zone#ext_privatedns_az_network_private_dns_zone_create).  
 
-U gebruikt [az network private-dns link vnet create](/cli/azure/ext/privatedns/network/private-dns/link/vnet#ext_privatedns_az_network_private_dns_link_vnet_create) om de koppeling van het virtuele netwerk met de DNS-zone te maken.
+U gebruikt [az network private-dns link vnet create](/cli/azure/network/private-dns/link/vnet#ext_privatedns_az_network_private_dns_link_vnet_create) om de koppeling van het virtuele netwerk met de DNS-zone te maken.
 
 U maakt een DNS-zonegroep met [az network private-endpoint dns-zone-group create](/cli/azure/network/private-endpoint/dns-zone-group#az_network_private_endpoint_dns_zone_group_create).
 

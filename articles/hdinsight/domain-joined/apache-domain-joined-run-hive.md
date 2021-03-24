@@ -4,12 +4,12 @@ description: Meer informatie over het configureren van Apache zwerver-beleids re
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 11/27/2019
-ms.openlocfilehash: fbe4361033321f2ba81478c41a138937f70b5498
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 15c406576b373577a2a3a50108acad7ccbf36699
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101705701"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104863255"
 ---
 # <a name="configure-apache-hive-policies-in-hdinsight-with-enterprise-security-package"></a>Apache Hive-beleidsregels configureren in HDInsight met Enterprise Security Package
 
@@ -30,7 +30,7 @@ Meer informatie over het configureren van Apache zwerver-beleids regels voor Apa
 
 2. Meld u aan met de gebruikersnaam en het wachtwoord van het clusterbeheerdomein:
 
-    ![Start pagina van HDInsight ESP zwerver](./media/apache-domain-joined-run-hive/hdinsight-domain-joined-ranger-home-page.png)
+    :::image type="content" source="./media/apache-domain-joined-run-hive/hdinsight-domain-joined-ranger-home-page.png" alt-text="Start pagina van HDInsight ESP zwerver" border="true":::
 
     Op dit moment werkt Ranger alleen met Yarn en Hive.
 
@@ -57,7 +57,7 @@ In deze sectie maakt u twee zwerver-beleids regels voor toegang tot hivesampleta
     |Select User|hiveuser1|
     |Machtigingen|Selecteer|
 
-    ![HDInsight ESP zwerver Hive-beleid configureren](./media/apache-domain-joined-run-hive/hdinsight-domain-joined-configure-ranger-policy.png).
+    :::image type="content" source="./media/apache-domain-joined-run-hive/hdinsight-domain-joined-configure-ranger-policy.png" alt-text="HDINSIGHT ESP zwerver-Hive-beleid configureren" border="true":::.
 
     > [!NOTE]  
     > Als een domeingebruiker niet is ingevuld in Gebruiker selecteren, wacht u even, zodat Ranger met AAD kan synchroniseren.
@@ -101,7 +101,7 @@ In de laatste sectie hebt u twee beleids regels geconfigureerd.  hiveuser1 heeft
 
 1. Ga op het tabblad **gegevens** naar **gegevens ophalen**  >  **uit andere bronnen**  >  **van ODBC** om het venster **van ODBC** te starten.
 
-    ![Wizard gegevens verbinding openen](./media/apache-domain-joined-run-hive/simbahiveodbc-excel-dataconnection1.png)
+    :::image type="content" source="./media/apache-domain-joined-run-hive/simbahiveodbc-excel-dataconnection1.png" alt-text="Wizard gegevens verbinding openen" border="true":::
 
 1. Selecteer in de vervolg keuzelijst de naam van de gegevens bron die u in de laatste sectie hebt gemaakt en selecteer vervolgens **OK**.
 

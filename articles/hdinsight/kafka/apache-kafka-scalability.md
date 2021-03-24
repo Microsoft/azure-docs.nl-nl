@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 12/09/2019
-ms.openlocfilehash: f22642ae94ea01a798b1eab639c93fda31f87581
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 9aa11be42aca59458fea0462a90b6aeb70df893d
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98944061"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104863136"
 ---
 # <a name="configure-storage-and-scalability-for-apache-kafka-on-hdinsight"></a>Opslag en schaalbaarheid configureren voor Apache Kafka in HDInsight
 
@@ -20,7 +20,7 @@ Kafka in HDInsight maakt gebruik van de lokale schijf van de virtuele machines i
 
 In het volgende diagram ziet u een vergelijking tussen Kafka in HDInsight voordat beheerde schijven werden gebruikt, en Kafka in HDInsight met beheerde schijven:
 
-![architectuur van Kafka met Managed disks](./media/apache-kafka-scalability/kafka-with-managed-disks-architecture.png)
+:::image type="content" source="./media/apache-kafka-scalability/kafka-with-managed-disks-architecture.png" alt-text="architectuur van Kafka met Managed disks" border="false":::
 
 ## <a name="configure-managed-disks-azure-portal"></a>Beheerde schijven configureren: Azure Portal
 
@@ -31,7 +31,7 @@ In het volgende diagram ziet u een vergelijking tussen Kafka in HDInsight voorda
     > [!NOTE]  
     > Het type beheerde schijf is __Standaard__ (HDD) of __Premium__ (SSD). Premium-schijven worden gebruikt met virtuele machines uit de DS- en GS-reeks. Alle andere VM-typen gebruiken standaardschijven.
 
-    ![sectie cluster grootte met de gemarkeerde schijven per werk knooppunt](./media/apache-kafka-scalability/azure-portal-cluster-configuration-pricing-kafka-disks.png)
+    :::image type="content" source="./media/apache-kafka-scalability/azure-portal-cluster-configuration-pricing-kafka-disks.png" alt-text="sectie cluster grootte met de gemarkeerde schijven per werk knooppunt" border="true":::
 
 ## <a name="configure-managed-disks-resource-manager-template"></a>Beheerde schijven configureren: Resource Manager-sjabloon
 

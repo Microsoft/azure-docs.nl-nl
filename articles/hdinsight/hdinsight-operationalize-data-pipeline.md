@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/25/2019
-ms.openlocfilehash: a306890560497b0c7196f1286de3f73039821ea2
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: c81eb092fa59cb890093e1e9acd0511e39b5047b
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98939530"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104864207"
 ---
 # <a name="operationalize-a-data-analytics-pipeline"></a>Een pijplijn voor gegevensanalyse operationeel maken
 
@@ -30,7 +30,7 @@ De voorbeeld pijplijn wacht totdat er een nieuwe vlucht gegevens van de periode 
 
 In het volgende diagram ziet u de voorbeeld pijplijn.
 
-![Overzicht van gegevens pijplijn voor HDI Flight](./media/hdinsight-operationalize-data-pipeline/flight-pipeline-overview.png)
+:::image type="content" source="./media/hdinsight-operationalize-data-pipeline/flight-pipeline-overview.png" alt-text="Overzicht van gegevens pijplijn voor HDI Flight" border="false":::
 
 ## <a name="apache-oozie-solution-overview"></a>Overzicht van Apache Oozie-oplossing
 
@@ -40,7 +40,7 @@ Oozie beschrijft de pijp lijnen in termen van *acties*, *werk stromen* en *coör
 
 Het volgende diagram toont het ontwerp op hoog niveau van dit voor beeld Oozie-pijp lijn.
 
-![Voorbeeld gegevens pijplijn van Oozie Flight](./media/hdinsight-operationalize-data-pipeline/pipeline-overview-oozie.png)
+:::image type="content" source="./media/hdinsight-operationalize-data-pipeline/pipeline-overview-oozie.png" alt-text="Voorbeeld gegevens pijplijn van Oozie Flight" border="false":::
 
 ## <a name="provision-azure-resources"></a>Azure-resources inrichten
 
@@ -131,11 +131,11 @@ De voorbeeld gegevens zijn nu beschikbaar. Voor de pijp lijn zijn echter twee Hi
 
 2. Selecteer **Hive** in de lijst met Services.
 
-    ![Component Apache Ambari Services-lijst selectie](./media/hdinsight-operationalize-data-pipeline/hdi-ambari-services-hive.png)
+    :::image type="content" source="./media/hdinsight-operationalize-data-pipeline/hdi-ambari-services-hive.png" alt-text="Component Apache Ambari Services-lijst selectie":::
 
 3. Selecteer **Ga naar weer gave** naast het label component weergave 2,0.
 
-    ![Overzichts lijst van Ambari-Apache Hive](./media/hdinsight-operationalize-data-pipeline/hdi-ambari-services-hive-summary.png)
+    :::image type="content" source="./media/hdinsight-operationalize-data-pipeline/hdi-ambari-services-hive-summary.png" alt-text="Overzichts lijst van Ambari-Apache Hive":::
 
 4. Plak in het tekst gebied query de volgende instructies om de tabel te maken `rawFlights` . De `rawFlights` tabel bevat een schema-bij-lezen voor de CSV-bestanden `/example/data/flights` in de map in azure Storage.
 
@@ -164,7 +164,7 @@ De voorbeeld gegevens zijn nu beschikbaar. Voor de pijp lijn zijn echter twee Hi
 
 5. Selecteer **uitvoeren** om de tabel te maken.
 
-    ![HDI ambari Services-Hive-query](./media/hdinsight-operationalize-data-pipeline/hdi-ambari-services-hive-query.png)
+    :::image type="content" source="./media/hdinsight-operationalize-data-pipeline/hdi-ambari-services-hive-query.png" alt-text="HDI ambari Services-Hive-query":::
 
 6. Als u de `flights` tabel wilt maken, vervangt u de tekst in het tekst gebied query door de volgende instructies. De `flights` tabel is een door een module beheerde tabel waarin de gegevens worden gepartitioneerd per jaar, maand en dag van de maand. Deze tabel bevat alle historische vlucht gegevens, waarbij de laagste granulatie aanwezig is in de bron gegevens van één rij per vlucht.
 
@@ -253,18 +253,18 @@ Werk vervolgens de waarden voor uw specifieke omgeving bij. De tabel onder de te
     INSERT OVERWRITE TABLE flights
     PARTITION (YEAR, MONTH, DAY_OF_MONTH)
     SELECT 
-        FL_DATE,
-        CARRIER,
-        FL_NUM,
-        ORIGIN,
-        DEST,
-        DEP_DELAY,
-        ARR_DELAY,
-        ACTUAL_ELAPSED_TIME,
-        DISTANCE,
+          FL_DATE,
+          CARRIER,
+          FL_NUM,
+          ORIGIN,
+          DEST,
+          DEP_DELAY,
+          ARR_DELAY,
+          ACTUAL_ELAPSED_TIME,
+          DISTANCE,
         YEAR,
-        MONTH,
-        DAY_OF_MONTH
+          MONTH,
+          DAY_OF_MONTH
     FROM rawflights
     WHERE year = ${year} AND month = ${month} AND day_of_month = ${day};
     ```
@@ -278,17 +278,17 @@ Werk vervolgens de waarden voor uw specifieke omgeving bij. De tabel onder de te
     CREATE EXTERNAL TABLE ${hiveTableName}
     (
         YEAR INT,
-        MONTH INT,
-        DAY_OF_MONTH INT,
-        CARRIER STRING,
-        AVG_DEP_DELAY FLOAT,
-        AVG_ARR_DELAY FLOAT,
-        TOTAL_DISTANCE FLOAT
+          MONTH INT,
+          DAY_OF_MONTH INT,
+          CARRIER STRING,
+          AVG_DEP_DELAY FLOAT,
+          AVG_ARR_DELAY FLOAT,
+          TOTAL_DISTANCE FLOAT
     )
     ROW FORMAT DELIMITED
     FIELDS TERMINATED BY '\t' STORED AS TEXTFILE LOCATION '${hiveDataFolder}';
     INSERT OVERWRITE TABLE ${hiveTableName}
-    SELECT  year, month, day_of_month, carrier, avg(dep_delay) avg_dep_delay, 
+    SELECT     year, month, day_of_month, carrier, avg(dep_delay) avg_dep_delay, 
             avg(arr_delay) avg_arr_delay, sum(distance) total_distance 
     FROM flights
     GROUP BY year, month, day_of_month, carrier 
@@ -415,7 +415,7 @@ Gebruik SCP vanuit uw bash-sessie om uw Oozie-werk stroom ( `workflow.xml` ), de
 
 1. Bekijk de status met behulp van de Oozie-webconsole. In Ambari selecteert u **Oozie**, **snelle koppelingen** en vervolgens **Oozie web-console**. Selecteer op het tabblad **werk stroom taken** de optie **alle taken**.
 
-    ![HDI oozie-webconsole-werk stromen](./media/hdinsight-operationalize-data-pipeline/hdi-oozie-web-console-workflows.png)
+    :::image type="content" source="./media/hdinsight-operationalize-data-pipeline/hdi-oozie-web-console-workflows.png" alt-text="HDI oozie-webconsole-werk stromen":::
 
 1. Als de status geslaagd is, query's uitvoeren op de tabel SQL Database om de ingevoegde rijen weer te geven. Ga met behulp van de Azure Portal naar het deel venster voor uw SQL Database, selecteer **extra** en open de **query-editor**.
 
@@ -593,11 +593,11 @@ Als u de pijp lijn met een coördinator wilt uitvoeren, gaat u op een vergelijk 
 
 5. Controleer de status met behulp van de Oozie-webconsole. deze keer dat u het tabblad **coördinator taken** selecteert en vervolgens  **alle taken**.
 
-    ![Taken voor Oozie web console-coördinator](./media/hdinsight-operationalize-data-pipeline/hdi-oozie-web-console-coordinator-jobs.png)
+    :::image type="content" source="./media/hdinsight-operationalize-data-pipeline/hdi-oozie-web-console-coordinator-jobs.png" alt-text="Taken voor Oozie web console-coördinator":::
 
 6. Selecteer een coördinator instantie om de lijst met geplande acties weer te geven. In dit geval ziet u vier acties met nominale tijden in het bereik van 1/1/2017 tot 1/4/2017.
 
-    ![Taak Oozie web console-coördinator](./media/hdinsight-operationalize-data-pipeline/hdi-oozie-web-console-coordinator-instance.png)
+    :::image type="content" source="./media/hdinsight-operationalize-data-pipeline/hdi-oozie-web-console-coordinator-instance.png" alt-text="Taak Oozie web console-coördinator":::
 
     Elke actie in deze lijst komt overeen met een exemplaar van de werk stroom die de gegevens van één dag verwerkt, waarbij het begin van die dag wordt aangegeven door de nominale tijd.
 

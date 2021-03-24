@@ -6,16 +6,16 @@ ms.author: rajosh
 ms.manager: abhemraj
 ms.topic: troubleshooting
 ms.date: 01/02/2020
-ms.openlocfilehash: 09fbc97b84365cc1d6d40b8e1147e1b8e951cc1f
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.openlocfilehash: 78e54543c94cd6e8434023b61516242c2491f353
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104780698"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104863595"
 ---
 # <a name="troubleshoot-assessmentdependency-visualization"></a>Problemen met de evaluatie/afhankelijkheid oplossen
 
-Dit artikel helpt u bij het oplossen van problemen met de visualisatie van evaluatie en afhankelijkheid met [Azure migrate: detectie en evaluatie](migrate-services-overview.md#azure-migrate-server-assessment-tool).
+Dit artikel helpt u bij het oplossen van problemen met de visualisatie van evaluatie en afhankelijkheid met [Azure migrate: detectie en evaluatie](migrate-services-overview.md#azure-migrate-discovery-and-assessment-tool).
 
 
 ## <a name="assessment-readiness-issues"></a>Problemen met de gereedheids beoordeling
@@ -222,7 +222,7 @@ Nadat u servers met afhankelijkheids visualisatie hebt gemigreerd naar Azure, ku
 In afhankelijkheids analyse zonder agent worden de proces namen op basis van de beste inspanningen vastgelegd. In bepaalde scenario's, hoewel de namen van de bron-en doel server en de doel poort worden vastgelegd, is het niet haalbaar om de proces namen aan beide uiteinden van de afhankelijkheid te bepalen. In dergelijke gevallen wordt het proces als ' onbekend proces ' gemarkeerd.
 
 ## <a name="my-log-analytics-workspace-is-not-listed-when-trying-to-configure-the-workspace-in-azure-migrate"></a>Mijn Log Analytics-werk ruimte wordt niet weer gegeven bij het configureren van de werk ruimte in Azure Migrate
-Azure Migrate biedt momenteel ondersteuning voor het maken van OMS-werkruimte in de regio's VS - oost, Azië - zuidoost en Europa - west. Als de werk ruimte wordt gemaakt buiten Azure Migrate in een andere regio, kan deze momenteel niet worden gekoppeld aan een Azure Migrate-project.
+Azure Migrate biedt momenteel ondersteuning voor het maken van OMS-werkruimte in de regio's VS - oost, Azië - zuidoost en Europa - west. Als de werk ruimte wordt gemaakt buiten Azure Migrate in een andere regio, kan deze momenteel niet worden gekoppeld aan een project.
 
 
 ## <a name="capture-network-traffic"></a>Netwerk verkeer vastleggen

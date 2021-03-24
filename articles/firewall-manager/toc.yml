@@ -4,7 +4,7 @@
   items:
     - name: Wat is Azure Firewall Manager?
       href: overview.md
-- name: Quickstarts
+- name: Snelstartgidsen
   expanded: true
   items:
     - name: Virtuele hub beveiligen - ARM-sjabloon

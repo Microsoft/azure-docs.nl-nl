@@ -236,8 +236,6 @@
               href: application-proxy-qlik.md
     - name: Problemen oplossen
       items:
-        - name: Problemen met apps toevoegen oplossen
-          href: troubleshoot-adding-apps.md
         - name: Problemen met eenmalige aanmelding op basis van wachtwoord
           href: troubleshoot-password-based-sso.md
         - name: Problemen met eenmalige aanmelding op basis van SAML oplossen

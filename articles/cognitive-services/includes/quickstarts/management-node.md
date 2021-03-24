@@ -6,14 +6,14 @@ author: PatrickFarley
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 08/05/2020
+ms.date: 3/22/2021
 ms.author: pafarley
-ms.openlocfilehash: cc1d375de9f45369f6d2902b106a1740f316ad8d
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 41f6c8e260968eacd04249b3f887d4865907df0d
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98948628"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104879643"
 ---
 [Referentiedocumentatie](/javascript/api/@azure/arm-cognitiveservices/) | [Bibliotheekbroncode](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/arm-cognitiveservices) | [Pakket (NPM)](https://www.npmjs.com/package/@azure/arm-cognitiveservices) | [Voorbeelden](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/arm-cognitiveservices#sample-code)
 
@@ -116,7 +116,9 @@ node index.js
 
 ## <a name="see-also"></a>Zie ook
 
-* [Referentiedocumentatie voor Azure Management SDK](/javascript/api/@azure/arm-cognitiveservices/)
-* [Wat zijn Azure Cognitive Services?](../../what-are-cognitive-services.md)
-* [Aanvragen verifiëren bij Azure Cognitive Services](../../authentication.md)
-* [Een nieuwe resource maken met de Azure-portal](../../cognitive-services-apis-create-account.md)
+* Zie **[aanvragen verifiëren voor Azure Cognitive Services](../../authentication.md)** over het veilig werken met Cognitive Services.
+* Zie **[Wat is Azure Cognitive Services?](../../what-are-cognitive-services.md)** voor een lijst met verschillende categorieën in cognitive Services.
+* Zie **[ondersteuning voor natuurlijke](../../language-support.md)** talen voor een overzicht van de natuurlijke talen die Cognitive Services ondersteunt.
+* Zie **[Cognitive Services als containers gebruiken](../../cognitive-services-container-support.md)** voor meer informatie over het gebruik van Cognitive Services on-premises.
+* Zie **[kosten plannen en beheren voor Cognitive Services](../../plan-manage-costs.md)** voor het schatten van de kosten van het gebruik van Cognitive Services.
+* Raadpleeg de **[naslag documentatie over Azure Management SDK](/javascript/api/@azure/arm-cognitiveservices/)** voor meer informatie over de Management SDK.

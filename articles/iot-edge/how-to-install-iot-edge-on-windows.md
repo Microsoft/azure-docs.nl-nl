@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 01/20/2021
 ms.author: v-tcassi
 monikerRange: =iotedge-2018-06
-ms.openlocfilehash: 6361a9c337f5d3897cf15d4739b0410d3e820e57
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 94c3917b0912835799818597f94f3880ea3a7639
+ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104600935"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104889532"
 ---
 # <a name="install-and-provision-azure-iot-edge-for-linux-on-a-windows-device-preview"></a>Azure IoT Edge voor Linux installeren en inrichten op een Windows-apparaat (preview)
 
@@ -52,7 +52,9 @@ In dit artikel worden de stappen beschreven voor het instellen van IoT Edge op e
 
    1. Down load het [installatie programma voor het Windows-beheer centrum](https://aka.ms/wacdownload).
 
-   1. Voer het gedownloade installatie programma uit en volg de installatie wizard prompts om Windows-beheer centrum te installeren. Zodra het is geïnstalleerd, opent u Windows-beheer centrum.
+   1. Voer het gedownloade installatie programma uit en volg de installatie wizard prompts om Windows-beheer centrum te installeren. 
+
+   1. Nadat de installatie is uitgevoerd, gebruikt u een ondersteunde browser om Windows-beheer centrum te openen. Ondersteunde browsers zijn onder andere micro soft Edge (Windows 10, versie 1709 of hoger), Google Chrome en micro soft Edge Insider.
 
    1. Bij het eerste gebruik van Windows-beheer centrum wordt u gevraagd om een certificaat te selecteren dat u wilt gebruiken. Selecteer de **Windows-beheer centrum-client** als uw certificaat.
 
@@ -61,12 +63,6 @@ In dit artikel worden de stappen beschreven voor het instellen van IoT Edge op e
       ![Selecteer het tandwiel pictogram in de rechter bovenhoek van het dash board om toegang te krijgen tot de instellingen.](./media/how-to-install-iot-edge-on-windows/select-gear-icon.png)
 
    1. Klik in het menu **instellingen** onder **Gateway** op **extensies**.
-
-   1. Selecteer het tabblad **feeds** en selecteer **toevoegen**.
-
-   1. Voer https://aka.ms/wac-insiders-feed in het tekstvak in en selecteer **toevoegen**.
-
-   1. Nadat de feed is toegevoegd, gaat u naar het tabblad **beschik bare uitbrei dingen** . Het kan even duren voordat de lijst met extensies is bijgewerkt.
 
    1. Zoek **Azure IOT Edge** in de lijst met extensies op het tabblad **beschik bare uitbrei dingen** . Kies deze optie en selecteer de **installatie** prompt boven de lijst met extensies.
 
@@ -346,6 +342,9 @@ Controleer of IoT Edge voor Linux in Windows is geïnstalleerd en geconfigureerd
    ```azurepowershell-interactive
    Ssh-EflowVm
    ```
+
+   >[!NOTE]
+   >Het enige account dat is toegestaan voor SSH naar de virtuele machine is de gebruiker die het heeft gemaakt.
 
 1. Wanneer u bent aangemeld, kunt u de lijst met actieve IoT Edge-modules controleren met behulp van de volgende Linux-opdracht:
 

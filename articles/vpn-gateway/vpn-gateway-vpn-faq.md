@@ -5,14 +5,14 @@ services: vpn-gateway
 author: yushwang
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 09/02/2020
+ms.date: 03/22/2021
 ms.author: yushwang
-ms.openlocfilehash: 467c2b9fe8758db5c1da43a65c1bfde133df0823
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 8ca50ae77d9d9e200db3318b8e087b72697c343a
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98880098"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104953449"
 ---
 # <a name="vpn-gateway-faq"></a>Veelgestelde vragen VPN-gateways
 
@@ -20,11 +20,15 @@ ms.locfileid: "98880098"
 
 ### <a name="can-i-connect-virtual-networks-in-different-azure-regions"></a>Kan ik virtuele netwerken in verschillende Azure-regio's verbinden?
 
-Ja. Er is zelfs helemaal geen regiobeperking. Een virtueel netwerk kan verbinding maken met een ander virtueel netwerk in dezelfde regio of in een andere Azure-regio. 
+Ja. Er is zelfs helemaal geen regiobeperking. Een virtueel netwerk kan verbinding maken met een ander virtueel netwerk in dezelfde regio of in een andere Azure-regio.
 
 ### <a name="can-i-connect-virtual-networks-in-different-subscriptions"></a>Kan ik virtuele netwerken uit verschillende abonnementen verbinden?
 
 Ja.
+
+### <a name="can-i-specify-private-dns-servers-in-my-vnet-when-configuring-vpn-gateway"></a>Kan ik privé-DNS-servers in mijn VNet opgeven bij het configureren van VPN Gateway?
+
+Als u een DNS-server of-servers hebt opgegeven tijdens het maken van uw VNet, worden VPN Gateway de opgegeven DNS-servers gebruikt. Als u een DNS-server opgeeft, controleert u of de DNS-server de domein namen kan omzetten die nodig zijn voor Azure.
 
 ### <a name="can-i-connect-to-multiple-sites-from-a-single-virtual-network"></a>Kan ik vanuit één virtueel netwerk verbinding maken met meerdere sites?
 
@@ -32,7 +36,7 @@ U kunt verbinding maken met meerdere sites met behulp van Windows PowerShell en 
 
 ### <a name="is-there-an-additional-cost-for-setting-up-a-vpn-gateway-as-active-active"></a>Zijn er extra kosten verbonden aan het instellen van een VPN-gateway als actief-actief?
 
-Nee. 
+Nee.
 
 ### <a name="what-are-my-cross-premises-connection-options"></a>Wat zijn de opties voor cross-premises-verbinding?
 
@@ -48,7 +52,7 @@ Zie [Informatie over VPN Gateway](vpn-gateway-about-vpngateways.md) voor meer in
 
 ### <a name="what-is-the-difference-between-a-site-to-site-connection-and-point-to-site"></a>Wat is het verschil tussen een site-naar-site-verbinding en een punt-naar-site?
 
-Er is sprake van **site-naar-site**-configuraties (IPsec-/IKE VPN-tunnel) tussen uw on-premises locatie en Azure. Dit betekent dat u vanaf elke computer op uw locatie verbinding kunt maken met elke virtuele machine of rolinstantie binnen uw virtuele netwerk, afhankelijk van hoe u routering en machtigingen wilt configureren. Het is een geweldige optie voor een cross-premises-verbinding die altijd beschikbaar is. Dit type verbinding is afhankelijk van een IPsec-VPN-apparaat (hardwareapparaat of software) dat aan de rand van uw netwerk moet worden geïmplementeerd. Als u dit type verbinding wilt maken, moet u een extern gericht IPv4-adres hebben.
+Er is sprake van **site-naar-site**-configuraties (IPsec-/IKE VPN-tunnel) tussen uw on-premises locatie en Azure. Dit betekent dat u vanaf elke computer op uw locatie verbinding kunt maken met elke virtuele machine of rolinstantie binnen uw virtuele netwerk, afhankelijk van hoe u routering en machtigingen wilt configureren. Het is een uitstekende optie voor een niet-beschik bare cross-premises verbinding en is goed geschikt voor hybride configuraties. Dit type verbinding is afhankelijk van een IPsec-VPN-apparaat (hardwareapparaat of software) dat aan de rand van uw netwerk moet worden geïmplementeerd. Als u dit type verbinding wilt maken, moet u een extern gericht IPv4-adres hebben.
 
 Met **punt-naar-site**-configuraties (VPN via SSTP) kunt u vanaf één computer waar dan ook verbinding maken met alles binnen het virtuele netwerk. Hiervoor wordt de met Windows meegeleverde VPN-client gebruikt. Als onderdeel van de punt-naar-site-configuratie installeert u een certificaat en een VPN-clientconfiguratiepakket. Dit pakket bevat de instellingen waarmee de computer verbinding kan maken met elke virtuele machine of rolinstantie in het virtuele netwerk. Het is ideaal wanneer u verbinding wilt maken met een virtueel netwerk maar u zich niet on-premises bevindt. Het is ook een goede optie wanneer u geen toegang hebt tot VPN-hardware of een extern gericht IPv4-adres, twee zaken die vereist zijn voor een site-naar-site-verbinding.
 
@@ -66,17 +70,20 @@ Op beleid gebaseerde gateways implementeren op beleid gebaseerde VPN's. Op belei
 
 ### <a name="what-is-a-route-based-dynamic-routing-gateway"></a>Wat is een op route gebaseerde gateway (dynamische routering)?
 
-Op route gebaseerde gateways implementeren op route gebaseerde VPN's. VPN-verbindingen op basis van een route gebruiken "routes" in de IP-doorstuurtabel of routeringstabel om pakketten naar de bijbehorende tunnelinterfaces te sturen. De tunnelinterfaces versleutelen of ontsleutelen de pakketten vervolgens naar en vanuit de tunnels. Het beleid of de verkeersselector voor op route gebaseerde VPN's is geconfigureerd als alles-naar-alles (of jokertekens).
+Op route gebaseerde gateways implementeren op route gebaseerde VPN's. VPN-verbindingen op basis van een route gebruiken "routes" in de IP-doorstuurtabel of routeringstabel om pakketten naar de bijbehorende tunnelinterfaces te sturen. De tunnelinterfaces versleutelen of ontsleutelen de pakketten vervolgens naar en vanuit de tunnels. De beleids-of verkeers selectie voor op route gebaseerde Vpn's worden geconfigureerd als een wille keurig (of Joker).
 
 ### <a name="can-i-update-my-policy-based-vpn-gateway-to-route-based"></a>Kan ik mijn op beleid gebaseerde VPN-gateway bijwerken naar op route gebaseerd?
 
-Nee. Een gateway van het type Azure-Vnet kan niet worden gewijzigd van op beleid gebaseerd in op route gebaseerd, of andersom. De gateway moet worden verwijderd en opnieuw worden gemaakt. Dit duurt ongeveer 60 minuten. Het IP-adres van de gateway en ook de PSK (vooraf gedeelde sleutel) blijven niet behouden.
-1. Verwijder alle verbindingen die zijn gekoppeld aan de gateway die moet worden verwijderd.
-1. Gateway verwijderen:
-   - [Azure-portal](vpn-gateway-delete-vnet-gateway-portal.md)
-   - [Azure PowerShell](vpn-gateway-delete-vnet-gateway-powershell.md)
-   - [Azure PowerShell-klassiek](vpn-gateway-delete-vnet-gateway-classic-powershell.md)
-1. [Maak een nieuwe gateway van het type dat u wilt en voltooi de VPN-installatie](./tutorial-site-to-site-portal.md#VNetGateway).
+Nee. Een gateway type kan niet worden gewijzigd van beleid op basis van route ring of van route gebaseerd op op basis van beleid. Als u een gateway type wilt wijzigen, moet de gateway worden verwijderd en opnieuw worden gemaakt. Dit proces duurt ongeveer 60 minuten. Wanneer u de nieuwe gateway maakt, kunt u het IP-adres van de oorspronkelijke gateway niet behouden.
+
+1. Verwijder alle verbindingen die zijn gekoppeld aan de gateway.
+
+1. Verwijder de gateway met behulp van een van de volgende artikelen:
+
+   * [Azure-portal](vpn-gateway-delete-vnet-gateway-portal.md)
+   * [Azure PowerShell](vpn-gateway-delete-vnet-gateway-powershell.md)
+   * [Azure PowerShell-klassiek](vpn-gateway-delete-vnet-gateway-classic-powershell.md)
+1. Maak een nieuwe gateway met behulp van het gewenste gateway type en voltooi vervolgens de VPN-installatie. Zie de [site-naar-site-zelf studie](./tutorial-site-to-site-portal.md#VNetGateway)voor instructies.
 
 ### <a name="do-i-need-a-gatewaysubnet"></a>Heb ik een gatewaysubnet nodig?
 
@@ -102,7 +109,7 @@ Voor niet-zone-redundante en niet-zonegebonden gateways (gateway-Sku's _zonder_ 
 
 ### <a name="how-does-my-vpn-tunnel-get-authenticated"></a>Hoe wordt mijn VPN-tunnel geverifieerd?
 
-Azure VPN maakt gebruik van PSK-verificatie (verificatie op basis van een vooraf gedeelde sleutel). Er wordt een PSK (vooraf gedeelde sleutel) gegenereerd wanneer de VPN-tunnel wordt gemaakt. Met de PowerShell-cmdlet of REST-API Set Pre-Shared Key kunt u de automatisch gegenereerde PSK wijzigen in een eigen sleutel.
+Azure VPN maakt gebruik van PSK-verificatie (verificatie op basis van een vooraf gedeelde sleutel). Er wordt een PSK (vooraf gedeelde sleutel) gegenereerd wanneer de VPN-tunnel wordt gemaakt. U kunt de automatisch gegenereerde PSK voor uw eigen sleutel wijzigen met de Power shell-cmdlet voor vooraf gedeelde sleutels instellen of REST API.
 
 ### <a name="can-i-use-the-set-pre-shared-key-api-to-configure-my-policy-based-static-routing-gateway-vpn"></a>Kan ik de API Set Pre-Shared Key gebruiken om een op beleid gebaseerde VPN-gateway (statische routering) te configureren?
 
@@ -121,11 +128,7 @@ U kunt alleen PSK-verificatie (vooraf gedeelde sleutels) gebruiken.
 
 #### <a name="classic-deployment-model"></a>Klassiek implementatiemodel
 
-* Azure Portal: ga naar het klassieke virtuele netwerk > VPN-verbindingen > Site-naar-site VPN-verbindingen > Naam lokale site > Lokale site > Adresruimte van client. 
-
-### <a name="can-i-configure-force-tunneling"></a>Kan ik geforceerde tunneling configureren?
-
-Ja. Zie [Configure force tunneling](vpn-gateway-about-forced-tunneling.md) (Geforceerde tunneling configureren).
+* Azure Portal: ga naar het klassieke virtuele netwerk > VPN-verbindingen > Site-naar-site VPN-verbindingen > Naam lokale site > Lokale site > Adresruimte van client.
 
 ### <a name="can-i-use-nat-t-on-my-vpn-connections"></a>Kan ik NAT-T op mijn VPN-verbindingen gebruiken?
 
@@ -225,10 +228,13 @@ Ja, dit wordt ondersteund. Voor meer informatie raadpleegt u [Expressroute en si
 
 [!INCLUDE [vpn-gateway-ipsecikepolicy-faq-include](../../includes/vpn-gateway-faq-ipsecikepolicy-include.md)]
 
-
-## <a name="bgp"></a><a name="bgp"></a>BGP
+## <a name="bgp-and-routing"></a><a name="bgp"></a>BGP en route ring
 
 [!INCLUDE [vpn-gateway-faq-bgp-include](../../includes/vpn-gateway-faq-bgp-include.md)]
+
+### <a name="can-i-configure-forced-tunneling"></a>Kan ik geforceerde tunneling configureren?
+
+Ja. Zie [Configure forced tunneling](vpn-gateway-about-forced-tunneling.md) (Geforceerde tunneling configureren).
 
 ## <a name="cross-premises-connectivity-and-vms"></a><a name="vms"></a>Cross-premises-connectiviteit en virtuele machines
 
@@ -245,7 +251,6 @@ Nee. Alleen het verkeer met een doel-IP dat zich bevindt in de door u opgegeven 
 ### <a name="how-do-i-troubleshoot-an-rdp-connection-to-a-vm"></a>Hoe los ik problemen met de RDP-verbinding met een VM op?
 
 [!INCLUDE [Troubleshoot VM connection](../../includes/vpn-gateway-connect-vm-troubleshoot-include.md)]
-
 
 ## <a name="virtual-network-faq"></a><a name="faq"></a>Veelgestelde vragen over Virtual Network
 

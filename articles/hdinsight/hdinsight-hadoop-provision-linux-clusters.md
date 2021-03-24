@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017,seodec18
 ms.date: 08/06/2020
-ms.openlocfilehash: a04d976ed3d9be253425b4c8a5a5c0effb6f80b8
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 04da79509ac40ba870014995d8318a49c98e1ce5
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101741834"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104863408"
 ---
 # <a name="set-up-clusters-in-hdinsight-with-apache-hadoop-apache-spark-apache-kafka-and-more"></a>Clusters in HDInsight instellen met Apache Hadoop, Apache Spark, Apache Kafka en meer
 
@@ -42,7 +42,7 @@ Dit artikel begeleidt u bij het instellen van de [Azure Portal](https://portal.a
 
 ## <a name="basics"></a>Basisbeginselen
 
-![opties voor hdinsight maken aangepaste snelle](./media/hdinsight-hadoop-provision-linux-clusters/azure-portal-cluster-basics-blank-fs.png)
+:::image type="content" source="./media/hdinsight-hadoop-provision-linux-clusters/azure-portal-cluster-basics-blank-fs.png" alt-text="opties voor hdinsight maken aangepaste snelle":::
 
 ### <a name="project-details"></a>Projectgegevens
 
@@ -107,7 +107,7 @@ De SSH-gebruikers naam heeft de volgende beperkingen:
 
 ## <a name="storage"></a>Storage
 
-![Instellingen voor cluster opslag: HDFS-compatibele eind punten](./media/hdinsight-hadoop-provision-linux-clusters/azure-portal-cluster-storage.png)
+:::image type="content" source="./media/hdinsight-hadoop-provision-linux-clusters/azure-portal-cluster-storage.png" alt-text="Instellingen voor cluster opslag: HDFS-compatibele eind punten":::
 
 Hoewel een on-premises installatie van Hadoop gebruikmaakt van de Hadoop Distributed File System (HDFS) voor opslag op het cluster, gebruikt u in de Cloud opslag eindpunten die zijn verbonden met het cluster. Door gebruik te maken van Cloud opslag kunt u de HDInsight-clusters die worden gebruikt voor berekeningen, veilig verwijderen terwijl uw gegevens behouden blijven.
 
@@ -165,7 +165,7 @@ Ambari wordt gebruikt om HDInsight-clusters te controleren, configuratie wijzigi
 
 ## <a name="security--networking"></a>Beveiliging en netwerken
 
-![opties voor het maken van hdinsight het ondernemings beveiligings pakket kiezen](./media/hdinsight-hadoop-provision-linux-clusters/azure-portal-cluster-security-networking.png)
+:::image type="content" source="./media/hdinsight-hadoop-provision-linux-clusters/azure-portal-cluster-security-networking.png" alt-text="opties voor het maken van hdinsight het ondernemings beveiligings pakket kiezen":::
 
 ### <a name="enterprise-security-package"></a>Enter prise-beveiligings pakket
 
@@ -201,7 +201,7 @@ Zie [beheerde identiteiten in azure HDInsight](./hdinsight-managed-identities.md
 
 ## <a name="configuration--pricing"></a>Configuratie en prijzen
 
-![HDInsight de grootte van het knoop punt kiezen](./media/hdinsight-hadoop-provision-linux-clusters/azure-portal-cluster-configuration.png)
+:::image type="content" source="./media/hdinsight-hadoop-provision-linux-clusters/azure-portal-cluster-configuration.png" alt-text="HDInsight de grootte van het knoop punt kiezen":::
 
 U wordt gefactureerd voor het gebruik van knoop punten zolang het cluster bestaat. De facturering begint wanneer een cluster wordt gemaakt en stopt wanneer het cluster wordt verwijderd. De toewijzing van clusters kan niet ongedaan worden gemaakt of in de wacht stand worden geplaatst.
 
@@ -211,10 +211,10 @@ Elk cluster type heeft een eigen aantal knoop punten, terminologie voor knoop pu
 
 | Type | Knooppunten | Diagram |
 | --- | --- | --- |
-| Hadoop |Hoofd knooppunt (2), Worker-knoop punt (1 +) |![HDInsight Hadoop-cluster knooppunten](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-hadoop-cluster-type-nodes.png) |
-| HBase |Hoofd server (2), regio server (1 +), hoofd-ZooKeeper knoop punt (3) |![Setup van HDInsight HBase-cluster type](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-hbase-cluster-type-setup.png) |
-| Storm |Nimbus-knoop punt (2), supervisor server (1 +), ZooKeeper-knoop punt (3) |![Instellingen voor het cluster type voor HDInsight Storm](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-storm-cluster-type-setup.png) |
-| Spark |Hoofd knooppunt (2), Worker-knoop punt (1 +), ZooKeeper-knoop punt (3) (gratis voor de VM-grootte van a1 ZooKeeper) |![Setup van HDInsight Spark-cluster type](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-spark-cluster-type-setup.png) |
+| Hadoop |Hoofd knooppunt (2), Worker-knoop punt (1 +) |:::image type="content" source="./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-hadoop-cluster-type-nodes.png" alt-text="HDInsight Hadoop-cluster knooppunten" border="false"::: |
+| HBase |Hoofd server (2), regio server (1 +), hoofd-ZooKeeper knoop punt (3) |:::image type="content" source="./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-hbase-cluster-type-setup.png" alt-text="Setup van HDInsight HBase-cluster type" border="false"::: |
+| Storm |Nimbus-knoop punt (2), supervisor server (1 +), ZooKeeper-knoop punt (3) |:::image type="content" source="./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-storm-cluster-type-setup.png" alt-text="Instellingen voor het cluster type voor HDInsight Storm" border="false"::: |
+| Spark |Hoofd knooppunt (2), Worker-knoop punt (1 +), ZooKeeper-knoop punt (3) (gratis voor de VM-grootte van a1 ZooKeeper) |:::image type="content" source="./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-spark-cluster-type-setup.png" alt-text="Setup van HDInsight Spark-cluster type" border="false"::: |
 
 Zie [standaard knooppunt configuratie en grootten voor virtuele machines](hdinsight-supported-node-configuration.md) in ' wat zijn de Hadoop-onderdelen en versies in HDInsight? ' voor meer informatie.
 
@@ -222,7 +222,7 @@ De kosten voor HDInsight-clusters worden bepaald door het aantal knoop punten en
 
 Verschillende cluster typen hebben verschillende knooppunt typen, aantal knoop punten en knooppunt grootten:
 * Standaard Hadoop-cluster type:
-    * Twee *hoofd knooppunten*  
+    * Twee *hoofd knooppunten*
     * Vier *worker-knoop punten*
 * Storm-cluster type standaard:
     * Twee *Nimbus-knoop punten*

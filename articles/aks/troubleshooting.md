@@ -4,12 +4,12 @@ description: Meer informatie over het oplossen van veelvoorkomende problemen bij
 services: container-service
 ms.topic: troubleshooting
 ms.date: 06/20/2020
-ms.openlocfilehash: adb6a28d8024c96d55c4e1bb8bc953d34a7c187e
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 1d3dff19bd75bfa4e7564eb4b188ffe68d605025
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104605882"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104952028"
 ---
 # <a name="aks-troubleshooting"></a>AKS-problemen oplossen
 
@@ -197,7 +197,7 @@ Wanneer een kubernetes-cluster op Azure (AKS of Nee) een regel matig omhoog/omla
 Service returned an error. Status=429 Code=\"OperationNotAllowed\" Message=\"The server rejected the request because too many requests have been received for this subscription.\" Details=[{\"code\":\"TooManyRequests\",\"message\":\"{\\\"operationGroup\\\":\\\"HighCostGetVMScaleSet30Min\\\",\\\"startTime\\\":\\\"2020-09-20T07:13:55.2177346+00:00\\\",\\\"endTime\\\":\\\"2020-09-20T07:28:55.2177346+00:00\\\",\\\"allowedRequestCount\\\":1800,\\\"measuredRequestCount\\\":2208}\",\"target\":\"HighCostGetVMScaleSet30Min\"}] InnerError={\"internalErrorCode\":\"TooManyRequestsReceived\"}"}
 ```
 
-Deze beperkings fouten worden [hier](../azure-resource-manager/management/request-limits-and-throttling.md) gedetailleerd beschreven [](../virtual-machines/troubleshooting/troubleshooting-throttling-errors.md)
+Deze beperkings fouten worden [hier](../azure-resource-manager/management/request-limits-and-throttling.md) gedetailleerd beschreven [](/troubleshoot/azure/virtual-machines/troubleshooting-throttling-errors)
 
 De aanbeveling van het technische team van AKS is om ervoor te zorgen dat u versie ten minste 1.18. x gebruikt, die veel verbeteringen bevat. Meer informatie vindt u [hier](https://github.com/Azure/AKS/issues/1413) in deze [verbeteringen.](https://github.com/kubernetes-sigs/cloud-provider-azure/issues/247)
 

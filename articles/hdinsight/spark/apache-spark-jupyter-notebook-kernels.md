@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017,seoapr2020
 ms.date: 04/24/2020
-ms.openlocfilehash: a16ec623d7475a80e546df43495db1a357a5fa66
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: ef2bc5e00779200e5447c8829a437824657a2227
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98930388"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104865975"
 ---
 # <a name="kernels-for-jupyter-notebook-on-apache-spark-clusters-in-azure-hdinsight"></a>Kernels voor het Jupyter Notebook op Apache Spark clusters in azure HDInsight
 
@@ -32,7 +32,7 @@ Een Apache Spark cluster in HDInsight. Zie [Apache Spark-clusters maken in Azure
 
 2. Selecteer in de weer gave **overzicht** in het vak **cluster dashboards** de optie **Jupyter notebook**. Voer de beheerdersreferenties voor het cluster in als u daarom wordt gevraagd.
 
-    ![Jupyter Notebook op Apache Spark](./media/apache-spark-jupyter-notebook-kernels/hdinsight-spark-open-jupyter-interactive-spark-sql-query.png "Jupyter Notebook op Spark")
+    :::image type="content" source="./media/apache-spark-jupyter-notebook-kernels/hdinsight-spark-open-jupyter-interactive-spark-sql-query.png " alt-text="Jupyter Notebook op Apache Spark" border="true":::
   
    > [!NOTE]  
    > U kunt ook de Jupyter Notebook in Spark-cluster bereiken door de volgende URL in uw browser te openen. Vervang **CLUSTERNAME** door de naam van uw cluster.
@@ -41,7 +41,7 @@ Een Apache Spark cluster in HDInsight. Zie [Apache Spark-clusters maken in Azure
 
 3. Selecteer **Nieuw** en selecteer vervolgens **Pyspark**, **PySpark3** of **Spark** om een notitie blok te maken. Gebruik de Spark-kernel voor scala-toepassingen, PySpark-kernel voor Python2-toepassingen en PySpark3 kernel voor Python3-toepassingen.
 
-    ![Kernels voor Jupyter Notebook op Spark](./media/apache-spark-jupyter-notebook-kernels/kernel-jupyter-notebook-on-spark.png "Kernels voor Jupyter Notebook op Spark")
+    :::image type="content" source="./media/apache-spark-jupyter-notebook-kernels/kernel-jupyter-notebook-on-spark.png " alt-text="Kernels voor Jupyter Notebook op Spark" border="true":::
 
 4. Er wordt een notitie blok geopend met de kernel die u hebt geselecteerd.
 

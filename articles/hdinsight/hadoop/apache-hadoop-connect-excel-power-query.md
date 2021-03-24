@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/17/2019
-ms.openlocfilehash: bcca511bcb61ceab8395ee56b377efa99f095586
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 13862e642c6a91fe6f3c635df2efde91672ecbad
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98946705"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104866808"
 ---
 # <a name="connect-excel-to-apache-hadoop-by-using-power-query"></a>Excel verbinden met Apache Hadoop met behulp van Power Query
 
@@ -42,13 +42,13 @@ Met de invoeg toepassing Power Query voor Excel kunt u eenvoudig gegevens uit uw
 
      * Selecteer > **gegevens**  >  **gegevens ophalen**  >  **uit Azure**  >  **van Azure HDInsight (HDFS)**.
 
-       ![HDI. PowerQuery. SelectHdiSource. 2016](./media/apache-hadoop-connect-excel-power-query/powerquery-selecthdisource-excel2016.png)
+       :::image type="content" source="./media/apache-hadoop-connect-excel-power-query/powerquery-selecthdisource-excel2016.png" alt-text="HDI. PowerQuery. SelectHdiSource. 2016" border="true":::
 
    * Excel 2013/2010
 
      * Selecteer **Power query** van  >  **Azure**  >  **vanuit Microsoft Azure HDInsight**.
 
-       ![HDI. PowerQuery.SelectHdiSource](./media/apache-hadoop-connect-excel-power-query/powerquery-selecthdisource.png)
+       :::image type="content" source="./media/apache-hadoop-connect-excel-power-query/powerquery-selecthdisource.png" alt-text="HDI. PowerQuery.SelectHdiSource" border="true":::
 
        **Opmerking:** Als u het menu **Power query** niet ziet, gaat u naar **Bestands**  >  **Opties**  >  **invoeg toepassingen** en selecteert u **com** -invoeg toepassingen in de vervolg keuzelijst **beheren** onder aan de pagina. Selecteer de knop **go...** en controleer of het selectie vakje voor de Power query voor Excel-invoeg toepassing is ingeschakeld.
 
@@ -62,11 +62,11 @@ Met de invoeg toepassing Power Query voor Excel kunt u eenvoudig gegevens uit uw
 
 1. Zoek **HiveSampleData.txt** in de kolom **naam** (het mappad is **. /Hive/Warehouse/hivesampletable/**) en selecteer vervolgens **binary** aan de linkerkant van HiveSampleData.txt. HiveSampleData.txt wordt geleverd met alle cluster. U kunt desgewenst uw eigen bestand gebruiken.
 
-    ![HDI Excel Power query-gegevens importeren](./media/apache-hadoop-connect-excel-power-query/powerquery-importdata.png)
+    :::image type="content" source="./media/apache-hadoop-connect-excel-power-query/powerquery-importdata.png" alt-text="HDI Excel Power query-gegevens importeren" border="true":::
 
 1. Als u wilt, kunt u de naam van de kolom namen wijzigen. Wanneer u klaar bent, selecteert u **sluiten & laden**.  De gegevens zijn geladen in uw werkmap:
 
-    ![Geïmporteerde tabel HDI Excel Power query](./media/apache-hadoop-connect-excel-power-query/powerquery-importedtable.png)
+    :::image type="content" source="./media/apache-hadoop-connect-excel-power-query/powerquery-importedtable.png" alt-text="Geïmporteerde tabel HDI Excel Power query" border="true":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

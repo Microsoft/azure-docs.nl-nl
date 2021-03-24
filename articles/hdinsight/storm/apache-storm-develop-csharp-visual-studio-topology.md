@@ -6,12 +6,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.date: 12/31/2019
 ms.custom: devx-track-csharp
-ms.openlocfilehash: a81f2b21545a5362168482f3f0a65fbbbf381c10
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 5360057ec2dfbd2b40c6f086f5e910103c544b62
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98929154"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104865448"
 ---
 # <a name="develop-c-topologies-for-apache-storm-by-using-the-data-lake-tools-for-visual-studio"></a>C#-topologieën ontwikkelen voor Apache Storm met behulp van de Data Lake-hulpprogram ma's voor Visual Studio
 
@@ -128,7 +128,7 @@ Een C#-topologie project maken in Visual Studio:
 
 1. Voer in het venster **uw nieuwe project configureren** de **project naam** *WordCount* in, ga naar of maak een pad naar **de map voor** het project en selecteer vervolgens **maken**.
 
-    ![Storm-toepassing, het dialoog venster Nieuw project configureren, Visual Studio](./media/apache-storm-develop-csharp-visual-studio-topology/apache-storm-new-project.png)
+    :::image type="content" source="./media/apache-storm-develop-csharp-visual-studio-topology/apache-storm-new-project.png" alt-text="Storm-toepassing, het dialoog venster Nieuw project configureren, Visual Studio" border="true":::
 
 Nadat u het project hebt gemaakt, hebt u de volgende bestanden nodig:
 
@@ -333,7 +333,7 @@ Maak nu twee Storm-schichten in dit voor beeld:
 
 Spouts en schichten worden gerangschikt in een grafiek, waarmee wordt gedefinieerd hoe de gegevens stromen tussen onderdelen. Voor deze topologie is de grafiek als volgt:
 
-![Schema voor spout-en Schicht-onderdelen, Storm-topologie](./media/apache-storm-develop-csharp-visual-studio-topology/word-count-topology1.png)
+:::image type="content" source="./media/apache-storm-develop-csharp-visual-studio-topology/word-count-topology1.png" alt-text="Schema voor spout-en Schicht-onderdelen, Storm-topologie" border="false":::
 
 De Spout verzendt zinnen die worden gedistribueerd naar instanties van de Splits schicht. De Splits Schicht breekt de zinnen op in woorden, die worden gedistribueerd naar de Counter-bout.
 
@@ -413,7 +413,7 @@ U bent nu klaar om de topologie naar uw HDInsight-cluster te verzenden.
 
     Wanneer de topologie is verzonden, moet het **weergave venster Storm-topologieën** voor het cluster worden weer gegeven. Kies de **WordCount** -topologie in de lijst om informatie over de actieve topologie weer te geven.
 
-    ![Venster Storm-topologie weergave, HDInsight-cluster, Visual Studio](./media/apache-storm-develop-csharp-visual-studio-topology/storm-topology-view.png)
+    :::image type="content" source="./media/apache-storm-develop-csharp-visual-studio-topology/storm-topology-view.png" alt-text="Venster Storm-topologie weergave, HDInsight-cluster, Visual Studio" border="true":::
 
     > [!NOTE]  
     > U kunt Storm- **topologieën** ook bekijken vanuit **Server Explorer**. Vouw **Azure**  >  **HDInsight** uit, klik met de rechter muisknop op een storm in HDInsight-cluster en kies **Storm-topologieën weer geven**.
@@ -567,7 +567,7 @@ Hoewel het eenvoudig is om een topologie te implementeren in een cluster, moet u
 
 1. Klik in **Solution Explorer** met de rechter muisknop op het project en selecteer **Eigenschappen**. In de project eigenschappen. Wijzig vervolgens het **uitvoer type** in **console toepassing**.
 
-   ![HDInsight Storm-toepassing, project eigenschappen, uitvoer type](./media/apache-storm-develop-csharp-visual-studio-topology/hdi-output-type-window.png)
+   :::image type="content" source="./media/apache-storm-develop-csharp-visual-studio-topology/hdi-output-type-window.png" alt-text="HDInsight Storm-toepassing, project eigenschappen, uitvoer type" border="true":::
 
    > [!NOTE]
    > Vergeet niet om het **uitvoer type** terug te wijzigen in **Class Library** voordat u de topologie op een cluster implementeert.

@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 10/14/2019
-ms.openlocfilehash: 50a72d0400b23162e05b17b37bdad48783261072
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: ff963e661a2b258c1eb452ed63f41f4e7d84c6a0
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98944762"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104867777"
 ---
 # <a name="use-apache-zeppelin-to-run-apache-phoenix-queries-over-apache-hbase-in-azure-hdinsight"></a>Apache Zeppelin gebruiken om Apache Phoenix query's uit te voeren op Apache HBase in azure HDInsight
 
@@ -30,68 +30,68 @@ Een Apache HBase-cluster in HDInsight. Zie [aan de slag met Apache HBase](./apac
 
 1. Selecteer op de pagina Zeppelin de optie **nieuwe notitie maken**.
 
-    ![Zeppelin in Interactive Query in HDInsight](./media/apache-hbase-phoenix-zeppelin/hbase-zeppelin-create-note.png)
+   :::image type="content" source="./media/apache-hbase-phoenix-zeppelin/hbase-zeppelin-create-note.png" alt-text="Zeppelin in Interactive Query in HDInsight" border="true":::
 
 1. Typ of selecteer in het dialoogvenster **Create new note** de volgende waarden:
 
-    - Note Name (Naam van notitie): Voer een naam voor de notitie in.
-    - Default interpreter (Standaard-interpreter): Selecteer **jdbc** in de vervolgkeuzelijst.
+   - Note Name (Naam van notitie): Voer een naam voor de notitie in.
+   - Default interpreter (Standaard-interpreter): Selecteer **jdbc** in de vervolgkeuzelijst.
 
-    Selecteer vervolgens **notitie maken**.
+   Selecteer vervolgens **notitie maken**.
 
 1. Zorg ervoor dat de kop van het notitie blok een verbonden status bevat. Deze wordt aangeduid met een groene stip in de rechter bovenhoek.
 
-    ![Status van Zeppelin-notebook](./media/apache-hbase-phoenix-zeppelin/hbase-zeppelin-connected.png "Status van Zeppelin-notebook")
+   :::image type="content" source="./media/apache-hbase-phoenix-zeppelin/hbase-zeppelin-connected.png" alt-text="Status van Zeppelin-notebook" border="true":::
 
 1. Maak een HBase-tabel. Voer de volgende opdracht in en druk op **SHIFT + ENTER**:
 
-    ```sql
-    %jdbc(phoenix)
-    CREATE TABLE Company (
-        company_id INTEGER PRIMARY KEY,
-        name VARCHAR(225)
-    );
-    ```
+   ```sql
+   %jdbc(phoenix)
+   CREATE TABLE Company (
+       company_id INTEGER PRIMARY KEY,
+       name VARCHAR(225)
+   );
+   ```
 
-    De instructie **% JDBC (Phoenix)** in de eerste regel geeft aan dat het notitie blok de Phoenix JDBC-interpreter moet gebruiken.
+   De instructie **% JDBC (Phoenix)** in de eerste regel geeft aan dat het notitie blok de Phoenix JDBC-interpreter moet gebruiken.
 
 1. Gemaakte tabellen weer geven.
 
-    ```sql
-    %jdbc(phoenix)
-    SELECT DISTINCT table_name
-    FROM SYSTEM.CATALOG
-    WHERE table_schem is null or table_schem <> 'SYSTEM';
-    ```
+   ```sql
+   %jdbc(phoenix)
+   SELECT DISTINCT table_name
+   FROM SYSTEM.CATALOG
+   WHERE table_schem is null or table_schem <> 'SYSTEM';
+   ```
 
 1. Voeg waarden in de tabel in.
 
-    ```sql
-    %jdbc(phoenix)
-    UPSERT INTO dbo.Company VALUES(1, 'Microsoft');
-    UPSERT INTO dbo.Company (name, company_id) VALUES('Apache', 2);
-    ```
+   ```sql
+   %jdbc(phoenix)
+   UPSERT INTO dbo.Company VALUES(1, 'Microsoft');
+   UPSERT INTO dbo.Company (name, company_id) VALUES('Apache', 2);
+   ```
 
 1. Voer een query op de tabel uit.
 
-    ```sql
-    %jdbc(phoenix)
-    SELECT * FROM dbo.Company;
-    ```
+   ```sql
+   %jdbc(phoenix)
+   SELECT * FROM dbo.Company;
+   ```
 
 1. Verwijder een record.
 
-    ```sql
-    %jdbc(phoenix)
-    DELETE FROM dbo.Company WHERE COMPANY_ID=1;
-    ```
+   ```sql
+   %jdbc(phoenix)
+   DELETE FROM dbo.Company WHERE COMPANY_ID=1;
+   ```
 
 1. Verwijder de tabel.
 
-    ```sql
-    %jdbc(phoenix)
-    DROP TABLE dbo.Company;
-    ```
+   ```sql
+   %jdbc(phoenix)
+   DROP TABLE dbo.Company;
+   ```
 
 ## <a name="next-steps"></a>Volgende stappen
 

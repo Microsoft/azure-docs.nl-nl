@@ -6,7 +6,7 @@
       href: intro-kubernetes.md
     - name: Oplossingsarchitecturen
       href: /azure/architecture/reference-architectures/containers/aks-start-here?bc=%2fazure%2faks%2fbreadcrumb%2ftoc.json&toc=%2fazure%2faks%2ftoc.json?WT.mc_id=AKSDOCSTOC
-- name: Quickstarts
+- name: Snelstartgidsen
   expanded: true
   items:
     - name: Een AKS-cluster implementeren
@@ -270,7 +270,7 @@
           href: use-pod-security-policies.md
         - name: Gemachtigde IP-bereiken voor de API-server definiëren
           href: api-server-authorized-ip-ranges.md
-        - name: Implementaties beheren met Azure Policy (preview)
+        - name: Implementaties beheren met Azure Policy
           href: ../governance/policy/concepts/policy-for-kubernetes.md?toc=/azure/aks/toc.json
         - name: Clusterreferenties bijwerken
           href: update-credentials.md

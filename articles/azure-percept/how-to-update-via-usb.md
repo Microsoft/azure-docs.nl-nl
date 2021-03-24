@@ -7,12 +7,12 @@ ms.service: azure-percept
 ms.topic: how-to
 ms.date: 03/18/2021
 ms.custom: template-how-to
-ms.openlocfilehash: 12f6acda632b9c0fbee2db570df5293c1daf32ea
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: cd6e4e62123b4d4b927cf385aaf64a066eecc1e0
+ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104720811"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104887747"
 ---
 # <a name="how-to-update-azure-percept-dk-over-a-usb-connection"></a>Azure percept DK bijwerken via een USB-verbinding
 
@@ -66,7 +66,7 @@ In deze hand leiding wordt uitgelegd hoe u het besturings systeem en de firmware
 
     - Windows:
 
-        ```bash
+        ```console
         uuu -b emmc_full.txt fast-hab-fw.raw Azure-Percept-DK-<version number>.raw 
         ```
 

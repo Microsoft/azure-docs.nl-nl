@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 02/27/2018
-ms.openlocfilehash: 1ceb5d323ecfed54b4e01d13d66c640769a224ee
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 9e626d08e7fd315ca70765477c5dae56030521c6
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98945593"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104866400"
 ---
 # <a name="migrate-net-solutions-for-windows-based-hdinsight-to-linux-based-hdinsight"></a>.NET-oplossingen voor op Windows gebaseerde HDInsight migreren naar op Linux gebaseerde HDInsight
 
@@ -33,7 +33,7 @@ De [.net-portabiliteit Analyzer](https://marketplace.visualstudio.com/items?item
 
 2. Selecteer in Visual Studio 2015   >  __instellingen voor portabiliteit Analyzer__ analyseren en controleer of __4,5__ is ingeschakeld in het gedeelte __mono__ .
 
-    ![4,5 gecontroleerd in mono-sectie voor de analyse-instellingen](./media/hdinsight-hadoop-migrate-dotnet-to-linux/portability-analyzer-settings.png)
+    :::image type="content" source="./media/hdinsight-hadoop-migrate-dotnet-to-linux/portability-analyzer-settings.png" alt-text="4,5 gecontroleerd in mono-sectie voor de analyse-instellingen":::
 
     Selecteer __OK__ om de configuratie op te slaan.
 
@@ -41,7 +41,7 @@ De [.net-portabiliteit Analyzer](https://marketplace.visualstudio.com/items?item
 
 4. Wanneer de analyse is voltooid, selecteert u  >  __analyse rapporten analyseren weer geven__. Selecteer in de resultaten van de __portabiliteit-analyse__ de optie __rapport openen__ om een rapport te openen.
 
-    ![Dialoog venster resultaten van portabiliteit Analyzer](./media/hdinsight-hadoop-migrate-dotnet-to-linux/portability-analyzer-results.png)
+    :::image type="content" source="./media/hdinsight-hadoop-migrate-dotnet-to-linux/portability-analyzer-results.png" alt-text="Dialoog venster resultaten van portabiliteit Analyzer":::
 
 > [!IMPORTANT]  
 > Het analyseprogramma kan niet elk probleem met uw oplossing ondervangen. Een bestandspad van wordt bijvoorbeeld als `c:\temp\file.txt` OK beschouwd als mono op Windows wordt uitgevoerd. Hetzelfde pad is niet geldig op een Linux-platform.

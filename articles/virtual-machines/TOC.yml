@@ -101,6 +101,8 @@
       href: ./linux/tutorial-elasticsearch.md
     - name: Mainframe opnieuw hosten
       href: ./workloads/mainframe-rehosting/overview.md
+    - name: Azure vertrouwelijk compute
+      href: ../confidential-computing/overview.md
     - name: SQL op Virtual Machines
       href: ../azure-sql/virtual-machines/index.yml
     - name: HPC (High Performance Computing)

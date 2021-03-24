@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: tutorial
 ms.date: 06/21/2019
-ms.openlocfilehash: bd6015529fb521e3b157e46ee808aea43e993dee
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 07c004fa5f03c53ed0778613a0c16a0ba2aff11f
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98935674"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104869494"
 ---
 # <a name="tutorial-use-r-in-a-spark-compute-context-in-azure-hdinsight"></a>Zelfstudie: R gebruiken in een Spark-compute-context in Azure HDInsight
 
@@ -56,7 +56,7 @@ De *Airline 2012 On-Time Data Set* bestaat uit 12 door komma's gescheiden bestan
 
 1. Selecteer in het rechterdeelvenster het tabblad **Environment** (Omgeving). De variabelen worden weer gegeven onder **Values** (Waarden).
 
-    ![HDInsight RStudio-webconsole](./media/ml-services-tutorial-spark-compute/hdinsight-rstudio-image.png)
+    :::image type="content" source="./media/ml-services-tutorial-spark-compute/hdinsight-rstudio-image.png" alt-text="HDInsight RStudio-webconsole" border="true":::
 
 1. Maak een lokale map en download de voorbeeldgegevens. Voer in RStudio de volgende code in:
 

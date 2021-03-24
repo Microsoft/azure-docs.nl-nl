@@ -4,12 +4,12 @@ description: In dit artikel vindt u informatie over het herstellen van bestanden
 ms.topic: conceptual
 ms.date: 03/12/2020
 ms.custom: references_regions
-ms.openlocfilehash: 63714773d1b6f84b88bd2207aca4196fa16f1a94
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: ed231a4870af7489d48ff54548be380c2cf0799c
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103493523"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104864887"
 ---
 # <a name="recover-files-from-azure-virtual-machine-backup"></a>Bestanden herstellen vanuit de back-up van Azure-virtuele machine
 
@@ -35,7 +35,7 @@ Als u bestanden of mappen van het herstel punt wilt herstellen, gaat u naar de v
 
 3. Selecteer in het menu back-updashboard **File Recovery**.
 
-    ![Bestands herstel selecteren](./media/backup-azure-restore-files-from-vm/vm-backup-menu-file-recovery-button.png)
+    ![Bestands herstel selecteren](./media/backup-azure-restore-files-from-vm/vm-backup-menu-file-recovery-button.png)32
 
     Het menu **bestands herstel** wordt geopend.
 
@@ -81,6 +81,7 @@ Bekijk de vereisten voor het herstellen van bestanden van back-ups van virtuele 
 [Windows OS](#for-backed-up-vms-with-large-disks-windows)<br>
 [Linux-besturings systeem](#for-backed-up-vms-with-large-disks-linux)
 
+Nadat u de juiste computer hebt gekozen om het ILR-script uit te voeren, moet u ervoor zorgen dat het voldoet aan de vereisten en [toegangs vereisten](#step-4-access-requirements-to-successfully-run-the-script)van het [besturings systeem](#step-3-os-requirements-to-successfully-run-the-script) . 
 
 ## <a name="step-3-os-requirements-to-successfully-run-the-script"></a>Stap 3: vereisten voor het besturings systeem om het script uit te voeren
 
@@ -126,6 +127,8 @@ Het script vereist ook python-en bash-onderdelen om het herstel punt veilig uit 
 | .NET | 4.6.2 en hoger |
 | TLS | 1,2 moet worden ondersteund  |
 
+Zorg er ook voor dat u de [juiste computer hebt om het ILR-script uit te voeren](#step-2-ensure-the-machine-meets-the-requirements-before-executing-the-script) en dat het voldoet aan de [toegangs vereisten](#step-4-access-requirements-to-successfully-run-the-script).
+
 ## <a name="step-4-access-requirements-to-successfully-run-the-script"></a>Stap 4: toegangs vereisten voor het uitvoeren van het script
 
 Als u het script uitvoert op een computer met beperkte toegang, moet u toegang hebben tot:
@@ -148,12 +151,13 @@ Voor Linux is voor het script de onderdelen open-iscsi en lshw vereist om verbin
 
 De toegang tot `download.microsoft.com` is vereist voor het downloaden van onderdelen die worden gebruikt voor het bouwen van een beveiligd kanaal tussen de computer waarop het script wordt uitgevoerd en de gegevens in het herstel punt.
 
+Zorg er ook voor dat u de [juiste computer hebt om het ILR-script uit te voeren](#step-2-ensure-the-machine-meets-the-requirements-before-executing-the-script) en dat het voldoet aan de vereisten van het [besturings systeem](#step-3-os-requirements-to-successfully-run-the-script).
 
 ## <a name="step-5-running-the-script-and-identifying-volumes"></a>Stap 5: het script uitvoeren en volumes identificeren
 
 ### <a name="for-windows"></a>Voor Windows
 
-Nadat u voldoet aan alle vereisten die zijn vermeld in stap 2, stap 3 en stap 4, kopieert u het script van de gedownloade locatie (meestal de map down Loads), klikt u met de rechter muisknop op het uitvoer bare bestand of script en voert u dit uit met beheerders referenties. Wanneer u hierom wordt gevraagd, typt u het wacht woord of plakt u het wacht woord uit het geheugen en drukt u op ENTER. Zodra het geldige wacht woord is ingevoerd, maakt het script verbinding met het herstel punt.
+Als u voldoet aan alle vereisten die worden vermeld in [stap 2](#step-2-ensure-the-machine-meets-the-requirements-before-executing-the-script), [stap 3](#step-3-os-requirements-to-successfully-run-the-script) en [stap 4](#step-4-access-requirements-to-successfully-run-the-script), kopieert u het script van de gedownloade locatie (meestal de map down Loads), Zie [stap 1 voor meer informatie over het genereren en downloaden van script](#step-1-generate-and-download-script-to-browse-and-recover-files). Klik met de rechter muisknop op het uitvoer bare bestand en voer het uit met beheerders referenties. Wanneer u hierom wordt gevraagd, typt u het wacht woord of plakt u het wacht woord uit het geheugen en drukt u op ENTER. Zodra het geldige wacht woord is ingevoerd, maakt het script verbinding met het herstel punt.
 
   ![Uitvoer van uitvoer bare bestanden](./media/backup-azure-restore-files-from-vm/executable-output.png)
 
@@ -180,7 +184,7 @@ Als het bestands herstel proces vastloopt nadat u het script voor bestands herst
 
 ### <a name="for-linux"></a>Voor Linux
 
-Voor Linux-machines wordt een python-script gegenereerd. Down load het script en kopieer het naar de relevante/compatibele Linux-server. Mogelijk moet u de machtigingen wijzigen om deze uit te voeren met ```chmod +x <python file name>``` . Voer vervolgens het python-bestand uit met ```./<python file name>``` .
+Als u voldoet aan de vereisten die worden vermeld in [stap 2](#step-2-ensure-the-machine-meets-the-requirements-before-executing-the-script), [stap 3](#step-3-os-requirements-to-successfully-run-the-script) en [stap 4](#step-4-access-requirements-to-successfully-run-the-script), genereert u een python-script voor Linux-machines. Zie [stap 1 voor meer informatie over het genereren en downloaden van script](#step-1-generate-and-download-script-to-browse-and-recover-files). Down load het script en kopieer het naar de relevante/compatibele Linux-server. Mogelijk moet u de machtigingen wijzigen om deze uit te voeren met ```chmod +x <python file name>``` . Voer vervolgens het python-bestand uit met ```./<python file name>``` .
 
 
 In Linux worden de volumes van het herstel punt gekoppeld aan de map waarin het script wordt uitgevoerd. De gekoppelde schijven, volumes en de bijbehorende koppel paden worden dienovereenkomstig weer gegeven. Deze koppel paden zijn zichtbaar voor gebruikers die toegang hebben tot toegangs rechten op hoofd niveau. Blader door de volumes die worden vermeld in de script uitvoer.

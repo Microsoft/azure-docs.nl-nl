@@ -14,18 +14,18 @@ ms.devlang: na
 ms.topic: reference
 ms.date: 12/14/2020
 ms.author: phjensen
-ms.openlocfilehash: 1c6b7ec6c4ef24ec00fbfc55a65a968e00561c2e
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 793b4da8fcf46ba4d5618f8ada86f9c3c8026ffd
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "97632719"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104865261"
 ---
 # <a name="restore-using-azure-application-consistent-snapshot-tool-preview"></a>Herstellen met behulp van Azure-toepassing consistent momentopname programma (preview-versie)
 
 Dit artikel bevat een hand leiding voor het uitvoeren van de opdracht Restore van het hulp programma Azure-toepassing consistente moment opname dat u kunt gebruiken met Azure NetApp Files.
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 Het terugzetten van een volume herstel van een moment opname geschiedt met behulp van de `azacsnap -c restore` opdracht.
 
@@ -41,7 +41,7 @@ De `-c restore` opdracht heeft de volgende opties:
 - `--restore revertvolume` Hiermee wordt het doel volume teruggezet naar een eerdere status op basis van de meest recente moment opname.  Gebruik deze opdracht als onderdeel van de DR-failover in de gekoppelde DR-regio. Met deze opdracht wordt de opslag replicatie van de primaire site naar de secundaire site **gestopt** en wordt de doel-Dr-volume (s) teruggezet naar de meest recente beschik bare moment opname op de Dr-volumes, samen met het aanbevolen bestands systeem mountpoints voor de teruggedraaide Dr-volumes. Deze opdracht moet worden uitgevoerd op het grootschalige Azure-exemplaar systeem **in de Dr-regio** (dat wil zeggen, het failover systeem van het doel).
     > [!NOTE]
     > De subopdracht ( `--restore revertvolume` ) is alleen beschikbaar voor een groot Azure-exemplaar en is niet beschikbaar voor Azure NetApp files.
-- `--hanasid <SAP HANA SID>` is de SAP HANA SID geselecteerd uit het configuratie bestand waarop de opdrachten voor volume herstel moeten worden toegepast.
+- `--dbsid <SAP HANA SID>` is de SAP HANA SID geselecteerd uit het configuratie bestand waarop de opdrachten voor volume herstel moeten worden toegepast.
 
 - `[--configfile <config filename>]` is een optionele para meter voor het toestaan van aangepaste configuratie bestandsnamen.
 
@@ -64,7 +64,7 @@ Het configuratie bestand (bijvoorbeeld `DR.json` ) moet alleen de nood herstel v
 ### <a name="output-of-the-azacsnap--c-restore---restore-snaptovol-command-for-single-node-scenario"></a>Uitvoer van de `azacsnap -c restore --restore snaptovol` opdracht (voor Single-Node scenario)
 
 ```output
-> azacsnap --configfile DR.json -c restore --restore snaptovol --hanasid H80
+> azacsnap --configfile DR.json -c restore --restore snaptovol --dbsid H80
 * This program is designed for those customers who have previously installed the
   Production HANA instance in the Disaster Recovery Location either as a
   stand-alone instance or as part of a multi-purpose environment.

@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive, devx-track-csharp
 ms.date: 01/13/2020
-ms.openlocfilehash: bd52157e2f0e20e9282d944b07f656c08d9e57da
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: c993b3f70f609fb79c51ba9be08fa3d5dc7e8317
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98932632"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104864105"
 ---
 # <a name="scp-programming-guide-for-apache-storm-in-azure-hdinsight"></a>SCP-programmeer gids voor Apache Storm in azure HDInsight
 
@@ -28,7 +28,7 @@ De gegevens in SCP zijn gemodelleerd als continue streams van Tuples. Normaal ge
 1. Worden opgenomen en getransformeerd op bedrijfs logica die wordt gehost in een storm-topologie.
 1. Hun uitvoer pipet als Tuples naar een ander SCP-systeem of worden doorgevoerd in archieven zoals gedistribueerde bestands systemen en data bases zoals SQL Server.
 
-![Een diagram van een wachtrij verwerkings gegevens, die op zijn beurt een gegevens archief feeds](./media/apache-storm-scp-programming-guide/queue-feeding-data-to-processing-to-data-store.png)
+:::image type="content" source="./media/apache-storm-scp-programming-guide/queue-feeding-data-to-processing-to-data-store.png" alt-text="Een diagram van een wachtrij verwerkings gegevens, die op zijn beurt een gegevens archief feeds" border="false":::
 
 In Storm wordt in een toepassings topologie een reken grafiek gedefinieerd. Elk knoop punt in een topologie bevat verwerkings logica. Koppelingen tussen knoop punten geven de gegevens stroom aan.
 
@@ -570,7 +570,7 @@ Hier `examples\HybridTopology\java\target\` ziet u de map met het bestand Java S
 
 Een SCP-onderdeel bevat de Java-zijde en de C#-zijde. Voor interactie met systeem eigen Java spouts/-flitsen moet serialisatie en deserialisatie plaatsvinden tussen de Java-kant en de C#, zoals wordt geïllustreerd in de volgende grafiek:
 
-![Diagram van Java-onderdeel dat wordt verzonden naar een SCP-onderdeel, dat vervolgens naar een ander Java-onderdeel verzendt](./media/apache-storm-scp-programming-guide/java-compent-sending-to-scp-component-sending-to-java-component.png)
+:::image type="content" source="./media/apache-storm-scp-programming-guide/java-compent-sending-to-scp-component-sending-to-java-component.png" alt-text="Diagram van Java-onderdeel dat wordt verzonden naar een SCP-onderdeel, dat vervolgens naar een ander Java-onderdeel verzendt" border="false":::
 
 #### <a name="serialization-in-the-java-side-and-deserialization-in-the-c-side"></a>Serialisatie in de Java-zijde en deserialisatie in de C#-zijde
 

@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: troubleshooting
 ms.date: 08/15/2019
-ms.openlocfilehash: eae5b5e1430f4e9bf1db62a4413e3b7abe3744cc
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 660c80a471739f7dc0163e915f45e3a067e1e4b2
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101699314"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104871959"
 ---
 # <a name="troubleshoot-a-slow-or-failing-job-on-a-hdinsight-cluster"></a>Problemen met een trage of niet werkende taak in een HDInsight-cluster oplossen
 
@@ -51,7 +51,7 @@ Belang rijke cluster informatie omvat:
 
 De Azure Portal kan deze informatie leveren:
 
-![Gegevens van HDInsight-Azure Portal](./media/hdinsight-troubleshoot-failed-cluster/hdi-azure-portal-info.png)
+:::image type="content" source="./media/hdinsight-troubleshoot-failed-cluster/hdi-azure-portal-info.png" alt-text="Gegevens van HDInsight-Azure Portal":::
 
 U kunt ook [Azure cli](/cli/azure/)gebruiken:
 
@@ -77,7 +77,7 @@ Elk HDInsight-cluster is afhankelijk van verschillende Azure-Services en op open
 
 Apache Ambari biedt beheer en bewaking van een HDInsight-cluster met een web-UI en een REST API. Ambari is opgenomen in HDInsight-clusters op basis van Linux. Selecteer het deel venster **cluster dashboard** op de pagina Azure Portal HDInsight.  Selecteer het deel venster **dash board voor HDInsight-cluster** om de Ambari-gebruikers interface te openen en voer de aanmeldings referenties voor het cluster in.  
 
-![Overzicht van Apache Ambari-dash board](./media/hdinsight-troubleshoot-failed-cluster/apache-ambari-overview.png)
+:::image type="content" source="./media/hdinsight-troubleshoot-failed-cluster/apache-ambari-overview.png" alt-text="Overzicht van Apache Ambari-dash board":::
 
 Als u een lijst met Service weergaven wilt openen, selecteert u **Ambari-weer gaven** op de pagina Azure Portal.  Deze lijst is afhankelijk van welke bibliotheken zijn geïnstalleerd. Zo ziet u een voor beeld van een garen van het wachtrij beheer, Hive-weer gave en TEZ.  Selecteer een service koppeling om de configuratie-en service gegevens te bekijken.
 
@@ -124,7 +124,7 @@ curl -u admin:{HTTP PASSWD} https://{CLUSTERNAME}.azurehdinsight.net/templeton/v
 
 In Ambari wordt een waarschuwing weer gegeven met de hosts waarop de WebHCat-service niet beschikbaar is. U kunt proberen om de WebHCat-service terug te zetten door de service op de host opnieuw te starten.
 
-![Apache Ambari WebHCat-server opnieuw starten](./media/hdinsight-troubleshoot-failed-cluster/restart-webhcat-server.png)
+:::image type="content" source="./media/hdinsight-troubleshoot-failed-cluster/restart-webhcat-server.png" alt-text="Apache Ambari WebHCat-server opnieuw starten":::
 
 Als er nog geen WebHCat-server beschikbaar is, controleert u het operations-logboek op fout berichten. Controleer de `stderr` en de `stdout` bestanden waarnaar wordt verwezen in het knoop punt voor meer informatie.
 
@@ -173,7 +173,7 @@ Op het niveau van de GARENs zijn er twee soorten time-outs:
 
     In de volgende afbeelding ziet u de joblauncher-wachtrij met een overgebruik van 714,4%. Dit is acceptabel, zolang er nog steeds vrije capaciteit in de standaard wachtrij staat om van te lenen. Wanneer het cluster echter volledig wordt gebruikt en de capaciteit van het garen ten 100% is, moeten nieuwe taken wachten, waardoor de time-outs uiteindelijk worden veroorzaakt.
 
-    ![Wachtrij weergave van HDInsight-taak starten](./media/hdinsight-troubleshoot-failed-cluster/hdi-job-launcher-queue.png)
+    :::image type="content" source="./media/hdinsight-troubleshoot-failed-cluster/hdi-job-launcher-queue.png" alt-text="Wachtrij weergave van HDInsight-taak starten":::
 
     Er zijn twee manieren om dit probleem op te lossen: Verminder de snelheid van de nieuwe taken die worden verzonden of verg root de verbruiks snelheid van oude taken door het cluster omhoog te schalen.
 
@@ -205,7 +205,7 @@ U kunt deze problemen als volgt vaststellen:
 
 De pagina Ambari UI- **stack en-versie** bevat informatie over de configuratie van de Cluster Services en de geschiedenis van de service versie.  Onjuiste versies van de Hadoop-service bibliotheek kunnen een storing in de cluster veroorzaken.  Selecteer in de Ambari-gebruikers interface het menu **beheerder** en vervolgens  **stacks en versies**.  Selecteer op de pagina het tabblad **versies** om informatie over de service versie weer te geven:
 
-![Apache Ambari-stack en-versies](./media/hdinsight-troubleshoot-failed-cluster/ambari-stack-versions.png)
+:::image type="content" source="./media/hdinsight-troubleshoot-failed-cluster/ambari-stack-versions.png" alt-text="Apache Ambari-stack en-versies":::
 
 ## <a name="step-5-examine-the-log-files"></a>Stap 5: de logboek bestanden controleren
 
@@ -229,7 +229,7 @@ De gebruikers interface van HDInsight Ambari bevat een aantal secties **snelle k
 
 Bijvoorbeeld voor HDFS-logboeken:
 
-![Ambari snelle koppelingen naar logboek bestanden](./media/hdinsight-troubleshoot-failed-cluster/apache-ambari-quick-links.png)
+:::image type="content" source="./media/hdinsight-troubleshoot-failed-cluster/apache-ambari-quick-links.png" alt-text="Ambari snelle koppelingen naar logboek bestanden":::
 
 ### <a name="view-hadoop-generated-log-files"></a>Door Hadoop gegenereerde logboek bestanden weer geven
 

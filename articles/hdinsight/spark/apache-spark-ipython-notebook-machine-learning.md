@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: tutorial
 ms.custom: hdinsightactive,mvc, devx-track-python
 ms.date: 04/07/2020
-ms.openlocfilehash: 88a71eb5a8ca9a6f2bf1d17fc4eaf9780527d2cb
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 13e5609c965a28405804b8a993280b13755b2d3c
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98930541"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104866064"
 ---
 # <a name="tutorial-build-an-apache-spark-machine-learning-application-in-azure-hdinsight"></a>Zelfstudie: een Apache Spark-toepassing voor machine learning bouwen in Azure HDInsight
 
@@ -32,7 +32,7 @@ In deze zelfstudie leert u het volgende:
 
 De toepassing gebruikt de voorbeeldgegevens uit **HVAC.csv**. Dit bestand is standaard beschikbaar in alle clusters. Het bestand bevindt zich op `\HdiSamples\HdiSamples\SensorSampleData\hvac`. De gegevens hebben betrekking op de gewenste temperatuur en de werkelijke temperatuur in enkele gebouwen waarin HVAC-systemen zijn geïnstalleerd. De kolom **System** bevat de id van het betreffende systeem en de kolom **SystemAge** geeft het aantal jaren aan dat het HVAC-systeem wordt gebruikt in het gebouw. U kunt voorspellen of het in een gebouw warmer of kouder zal zijn gebaseerd op de richttemperatuur, een systeem-id en de leeftijd van het systeem.
 
-![Momentopname van gegevens die worden gebruikt voor het Spark-voorbeeld van machine learning](./media/apache-spark-ipython-notebook-machine-learning/spark-machine-learning-understand-data.png "Momentopname van gegevens die worden gebruikt voor het Spark-voorbeeld van machine learning")
+:::image type="content" source="./media/apache-spark-ipython-notebook-machine-learning/spark-machine-learning-understand-data.png " alt-text="Momentopname van gegevens die worden gebruikt voor het Spark-voorbeeld van machine learning" border="true":::
 
 ## <a name="develop-a-spark-machine-learning-application-using-spark-mllib"></a>Een Spark-toepassing voor machine learning ontwikkelen met Spark MLib
 
@@ -138,7 +138,7 @@ Deze toepassing gebruikt een [ML-pijplijn](https://spark.apache.org/docs/2.2.0/m
 
     Vergelijk de uitvoer met het onbewerkte CSV-bestand. De eerste rij van het CSV-bestand bevat bijvoorbeeld deze gegevens:
 
-    ![Momentopname van uitvoergegevens voor het Spark-voorbeeld van machine learning](./media/apache-spark-ipython-notebook-machine-learning/spark-machine-learning-output-data.png "Momentopname van uitvoergegevens voor het Spark-voorbeeld van machine learning")
+    :::image type="content" source="./media/apache-spark-ipython-notebook-machine-learning/spark-machine-learning-output-data.png " alt-text="Momentopname van uitvoergegevens voor het Spark-voorbeeld van machine learning" border="true":::
 
     U ziet hoe de werkelijke temperatuur lager is dan de richttemperatuur, wat betekent dat het koud is in het gebouw. De waarde voor **label** in de eerste rij is **0.0**, wat betekent dat het niet warm is in het gebouw.
 
@@ -199,7 +199,7 @@ Als u deze toepassing verder niet meer gebruikt, verwijdert u het cluster dat u 
 
 1. Selecteer **Verwijderen**. Selecteer **Ja**.
 
-![Azure-portal verwijdert een HDInsight-cluster](./media/apache-spark-ipython-notebook-machine-learning/hdinsight-azure-portal-delete-cluster.png "HDInsight-cluster verwijderen")
+:::image type="content" source="./media/apache-spark-ipython-notebook-machine-learning/hdinsight-azure-portal-delete-cluster.png " alt-text="Azure-portal verwijdert een HDInsight-cluster" border="true":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

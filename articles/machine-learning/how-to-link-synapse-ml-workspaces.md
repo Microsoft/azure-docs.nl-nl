@@ -11,12 +11,12 @@ author: nibaccam
 ms.reviewer: nibaccam
 ms.date: 03/08/2021
 ms.custom: how-to, devx-track-python, data4ml, synapse-azureml
-ms.openlocfilehash: d1c4defc53c4af0fb481a57c0a455e987fdd480a
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 9d2b416955234cae7a30ac65dff7d64dedad3b1d
+ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102519993"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104889107"
 ---
 # <a name="link-azure-synapse-analytics-and-azure-machine-learning-workspaces-preview"></a>Azure Synapse Analytics en Azure Machine Learning-werk ruimten (preview) koppelen
 
@@ -102,12 +102,14 @@ Koppel uw machine learning-werk ruimte en de Synapse-werk ruimte via de Azure Ma
 1. Meld u aan bij de [Azure machine learning Studio](https://ml.azure.com/).
 1. Selecteer **gekoppelde services** in het gedeelte **beheren** van het linkerdeel venster.
 1. Selecteer **integratie toevoegen**.
-1. Vul de velden in op het formulier **werk ruimte koppelen** 
-    Veld| Beschrijving    
-    ---|---
-    Name| Geef een naam op voor de gekoppelde service. Deze naam wordt gebruikt om te verwijzen naar deze specifieke gekoppelde service.
-    Abonnementsnaam | Selecteer de naam van uw abonnement dat is gekoppeld aan uw machine learning-werk ruimte. 
-    Synapse-werk ruimte | Selecteer de Synapse-werk ruimte waarmee u een koppeling wilt maken.
+1. Vul de velden in op het formulier **werk ruimte koppelen**
+
+    |Veld| Beschrijving    
+    |---|---
+    |Name| Geef een naam op voor de gekoppelde service. Deze naam wordt gebruikt om te verwijzen naar deze specifieke gekoppelde service.
+    |Abonnementsnaam | Selecteer de naam van uw abonnement dat is gekoppeld aan uw machine learning-werk ruimte. 
+    |Synapse-werk ruimte | Selecteer de Synapse-werk ruimte waarmee u een koppeling wilt maken.
+    
 1. Selecteer **volgende** om het formulier **Spark-Pools selecteren (optioneel)** te openen. Op dit formulier selecteert u welke Synapse Spark-pool u aan uw werk ruimte wilt koppelen
 
 1. Selecteer **volgende** om het **controle** formulier te openen en uw selecties te controleren.

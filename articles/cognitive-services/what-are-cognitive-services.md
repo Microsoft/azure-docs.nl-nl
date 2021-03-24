@@ -12,12 +12,12 @@ ms.topic: overview
 ms.date: 10/22/2020
 ms.author: nitinme
 ms.custom: cog-serv-seo-aug-2020
-ms.openlocfilehash: 85bcdb319431f1079cdbc8b94f0313f1dd6b67d6
-ms.sourcegitcommit: 27cd3e515fee7821807c03e64ce8ac2dd2dd82d2
+ms.openlocfilehash: 71f8635d1cd96a6436cfc902622bf18bc608a143
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103601998"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104867182"
 ---
 # <a name="what-are-azure-cognitive-services"></a>Wat zijn Azure Cognitive Services?
 
@@ -39,11 +39,11 @@ In de volgende secties in dit artikel vindt u een lijst met services die deel ui
 
 |Servicenaam|Beschrijving van de service|
 |:-----------|:------------------|
-|[Computer Vision](./computer-vision/index.yml "Computer Vision")|De Computer Vision-service geeft u toegang tot geavanceerde cognitieve algoritmen voor het verwerken van afbeeldingen en het retourneren van informatie.|
-|[Custom Vision Service](./custom-vision-service/overview.md "Custom Vision Service")|Met de Custom Vision Service kunt u aangepaste classificeerders voor afbeeldingen bouwen.|
-|[Face](./face/index.yml "Face")| De Face-service biedt toegang tot geavanceerde gezichtsalgoritmen, waardoor detectie en herkenning van gezichtskenmerken mogelijk worden.|
-|[Form Recognizer](./form-recognizer/index.yml "Form Recognizer")|Form Recognizer identificeert en extraheert sleutel-waardeparen en tabelgegevens uit formulierdocumenten. Vervolgens voert het gestructureerde gegevens uit, inclusief de relaties in het oorspronkelijke bestand.|
-|[Video Indexer](../media-services/video-indexer/video-indexer-overview.md "Video Indexer")|Extraheer inzichten uit uw video met Video Indexer.|
+|[Computer Vision](./computer-vision/index.yml "Computer Vision")|De Computer Vision-service geeft u toegang tot geavanceerde cognitieve algoritmen voor het verwerken van afbeeldingen en het retourneren van informatie. Zie [Computer Vision Snelstartgids](./computer-vision/quickstarts-sdk/client-library.md) om aan de slag te gaan met de service.|
+|[Custom Vision Service](./custom-vision-service/index.yml "Custom Vision Service")|Met de Custom Vision Service kunt u uw eigen afbeeldings classificaties bouwen, implementeren en verbeteren. Een afbeeldings classificatie is een AI-service waarmee labels worden toegepast op installatie kopieën, op basis van hun visuele kenmerken. |
+|[Face](./face/index.yml "Face")| De Face-service biedt toegang tot geavanceerde gezichtsalgoritmen, waardoor detectie en herkenning van gezichtskenmerken mogelijk worden. Zie [gezichts Snelstartgids](./face/quickstarts/client-libraries.md) om aan de slag te gaan met de service.|
+|[Form Recognizer](./form-recognizer/index.yml "Form Recognizer")|Form Recognizer identificeert en extraheert sleutel-waardeparen en tabelgegevens uit formulierdocumenten. Vervolgens voert het gestructureerde gegevens uit, inclusief de relaties in het oorspronkelijke bestand. Zie [Quick start voor formulier herkenning](./form-recognizer/quickstarts/client-library.md) om aan de slag te gaan.|
+|[Video Indexer](../media-services/video-indexer/video-indexer-overview.md "Video Indexer")|Extraheer inzichten uit uw video met Video Indexer. Zie [video indexer Snelstartgids](/media-services/video-indexer/video-indexer-get-started.md) om aan de slag te gaan.|
 
 ## <a name="speech-apis"></a>Speech-API's
 
@@ -59,20 +59,20 @@ In de volgende secties in dit artikel vindt u een lijst met services die deel ui
 
 |Servicenaam|Beschrijving van de service|
 |:-----------|:------------------|
-|[Language Understanding (LUIS)](./luis/index.yml "Taal begrijpen")|Met de service LUIS kunt u uw toepassing in staat stellen te begrijpen wat een persoon in zijn eigen woorden wil zeggen.|
-|[QnA Maker](./qnamaker/index.yml "QnA Maker")|Met QnA Maker kunt u een vraag-en-antwoordservice maken op basis van uw semi-gestructureerde inhoud.|
-|[Tekstanalyse](./text-analytics/index.yml "Tekstanalyse")| Text Analytics biedt natuurlijke taalverwerking via onbewerkte tekst voor sentimentanalyse, sleuteltermextractie en taaldetectie.|
+|[Language Understanding (LUIS)](./luis/index.yml "Taal begrijpen")|Language Understanding (LUIS) is een cloudgebaseerde AI met gespreksfuncties die aangepaste machine-learningintelligentie toepast op de natuurlijke spreektaal van een gebruiker in tekstvorm om daar de algemene betekenis van te voorspellen en relevante detailinformatie uit te destilleren. [Zie Luis Quick](./luis/get-started-portal-build-app.md) start om aan de slag te gaan met de service.|
+|[QnA Maker](./qnamaker/index.yml "QnA Maker")|Met QnA Maker kunt u een vraag-en-antwoordservice maken op basis van uw semi-gestructureerde inhoud. [Zie QnA Maker Snelstartgids](./qnamaker/quickstarts/create-publish-knowledge-base.md) om aan de slag te gaan met de service.|
+|[Tekstanalyse](./text-analytics/index.yml "Tekstanalyse")| Text Analytics biedt natuurlijke taalverwerking via onbewerkte tekst voor sentimentanalyse, sleuteltermextractie en taaldetectie. Zie [Text Analytics Snelstartgids](./text-analytics/quickstarts/client-libraries-rest-api.md) om aan de slag te gaan met de service.|
 |[Translator](./translator/index.yml "Vertaler")|Translator biedt bijna realtime machinevertaling van teksten.|
-| [Immersive Reader](./immersive-reader/index.yml "Immersive Reader") | De insluitende lezer voegt mogelijkheden voor het lezen en begrijpen van schermen toe aan uw toepassingen. |
+| [Immersive Reader](./immersive-reader/index.yml "Immersive Reader") | De insluitende lezer voegt mogelijkheden voor het lezen en begrijpen van schermen toe aan uw toepassingen. Zie [Snelstartgids voor insluitende lezer](./immersive-reader/quickstarts/client-libraries.md) om aan de slag te gaan met de service. |
 
 ## <a name="decision-apis"></a>Beslissings-API's
 
 |Servicenaam|Beschrijving van de service|
 |:-----------|:------------------|
-|[Anomaliedetectie](./anomaly-detector/index.yml "Anomaly Detector") |Met anomaliedetectie kunt u afwijkingen in uw tijdreeksgegevens controleren en detecteren.|
-|[Content Moderator](./content-moderator/overview.md "Content Moderator")|Content Moderator controleert mogelijk aanstootgevende, ongewenste en riskant inhoud.|
-|[Metrics Advisor](./metrics-advisor/index.yml) (preview) | Metrics Advisor bevat functies als aangepaste anomaliedetectie voor uiteenlopende tijdreeksgegevens en een volledig uitgeruste webportal om u te helpen bij het gebruik van de service.|
-|[Personalizer](./personalizer/index.yml "Personalizer")|Met Personalizer kunt u de beste ervaring kunt kiezen om aan uw gebruikers te laten zien, waarbij u leert van hun real-time gedrag.|
+|[Anomaliedetectie](./anomaly-detector/index.yml "Anomaly Detector") |Met anomaliedetectie kunt u afwijkingen in uw tijdreeksgegevens controleren en detecteren. Zie [Quick start voor anomalie detectie](./anomaly-detector/quickstarts/client-libraries.md) om aan de slag te gaan met de service|
+|[Content Moderator](./content-moderator/overview.md "Content Moderator")|Content Moderator controleert mogelijk aanstootgevende, ongewenste en riskant inhoud. Zie [Content moderator Snelstartgids](./content-moderator/client-libraries.md) om aan de slag te gaan met de service.|
+|[Metrics Advisor](./metrics-advisor/index.yml) (preview) | Metrics Advisor bevat functies als aangepaste anomaliedetectie voor uiteenlopende tijdreeksgegevens en een volledig uitgeruste webportal om u te helpen bij het gebruik van de service. Bekijk de Quick start voor [metrische gegevens Advisor](./metrics-advisor/quickstarts/rest-api-and-client-library.md) om aan de slag te gaan met de service. |
+|[Personalizer](./personalizer/index.yml "Personalizer")|Met Personalizer kunt u de beste ervaring kunt kiezen om aan uw gebruikers te laten zien, waarbij u leert van hun real-time gedrag. Zie de [Snelstartgids van personaler](./personalizer/quickstart-personalizer-sdk.md) om aan de slag te gaan met de service.|
 
 ## <a name="search-apis"></a>Search-API's
 
@@ -92,7 +92,16 @@ In de volgende secties in dit artikel vindt u een lijst met services die deel ui
 |[Bing Zoeken naar lokale bedrijven](/azure/cognitive-services/bing-local-business-search/ "Bing Zoeken naar lokale bedrijven")| Bing-API voor zoeken naar lokale bedrijven stelt uw toepassingen in staat om contact- en locatiegegevens van lokale bedrijven te vinden op basis van zoekquery's.|
 |[Bing Spellingcontrole](/azure/cognitive-services/bing-spell-check/ "Bing Spellingcontrole")|Met Bing Spellingcontrole kunt u contextuele grammatica- en spellingcontrole uitvoeren.|
 
-## <a name="development-options"></a>Ontwikkelingsopties 
+## <a name="get-started-with-cognitive-services"></a>Aan de slag met Cognitive Services
+
+Begin door een Cognitive Services-resource te maken met praktische quickstarts, met behulp van de:
+
+* [Azure Portal](cognitive-services-apis-create-account.md?tabs=multiservice%2Cwindows "Azure Portal")
+* [Azure-CLI](cognitive-services-apis-create-account-cli.md?tabs=windows "Azure CLI")
+* [Azure SDK-clientbibliotheken](cognitive-services-apis-create-account-cli.md?tabs=windows "cognitive-services-apis-create-account-client-library?pivots=programming-language-csharp")
+* [ARM-sjablonen (Azure Resource Manager)](./create-account-resource-manager-template.md?tabs=portal "ARM-sjablonen (Azure Resource Manager)")
+
+## <a name="using-cognitive-services-in-different-development-environments"></a>Cognitive Services gebruiken in verschillende ontwikkel omgevingen
 
 Met Azure en Cognitive Services hebt u toegang tot verschillende ontwikkelopties, zoals:
 
@@ -102,15 +111,6 @@ Met Azure en Cognitive Services hebt u toegang tot verschillende ontwikkelopties
 * Hulpprogramma's als Apache Spark, Azure Databricks, Azure Synapse Analytics en Azure Kubernetes Service voor big data-scenario's. 
 
 Zie [Ontwikkelopties voor Cognitive Services](./cognitive-services-development-options.md) voor meer informatie.
-
-## <a name="learn-with-the-quickstarts"></a>Leren met behulp van quickstarts
-
-Begin door een Cognitive Services-resource te maken met praktische quickstarts, met behulp van de:
-
-* [Azure Portal](cognitive-services-apis-create-account.md?tabs=multiservice%2Cwindows "Azure Portal")
-* [Azure-CLI](cognitive-services-apis-create-account-cli.md?tabs=windows "Azure CLI")
-* [Azure SDK-clientbibliotheken](cognitive-services-apis-create-account-cli.md?tabs=windows "cognitive-services-apis-create-account-client-library?pivots=programming-language-csharp")
-* [ARM-sjablonen (Azure Resource Manager)](./create-account-resource-manager-template.md?tabs=portal "ARM-sjablonen (Azure Resource Manager)")
 
 <!--
 ## Subscription management
@@ -128,7 +128,7 @@ Azure Cognitive Services biedt een gelaagd beveiligingsmodel, inclusief [verific
 
 ## <a name="containers-for-cognitive-services"></a>Containers voor Cognitive Services
 
- Cognitive Services biedt containers voor implementatie in de Azure-cloud of on-premises. Ontdek meer over [Cognitive Services-containers](cognitive-services-container-support.md "Cognitive Services-containers").
+ Azure Cognitive Services biedt verschillende docker-containers waarmee u dezelfde Api's kunt gebruiken die beschikbaar zijn in azure, on-premises. Met deze containers hebt u de flexibiliteit om Cognitive Services dichter bij uw gegevens te brengen voor naleving, beveiliging of andere operationele redenen. Ontdek meer over [Cognitive Services-containers](cognitive-services-container-support.md "Cognitive Services-containers").
 
 ## <a name="regional-availability"></a>Regionale beschikbaarheid
 
@@ -154,3 +154,4 @@ Cognitive Services biedt verschillende ondersteuningsopties die u kunt gebruiken
 
 * [Een Cognitive Services-account maken](cognitive-services-apis-create-account.md "Een Cognitive Services-account maken")
 * [Wat is er nieuw in Cognitive Services-documenten?](whats-new-docs.md "Wat is er nieuw in Cognitive Services-documenten?")
+* [Kosten plannen en beheren voor Cognitive Services](plan-manage-costs.md)

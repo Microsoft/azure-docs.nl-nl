@@ -4,12 +4,12 @@ description: Krijg antwoorden op veelgestelde vragen over het werken met Apache 
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 08/15/2019
-ms.openlocfilehash: b5b8ccbfd3e39415416cfc8fabcf9614f5934042
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 0cd2571276992812327e286ba9b935fcbf6fbbaf
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98931415"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104871806"
 ---
 # <a name="troubleshoot-apache-hadoop-yarn-by-using-azure-hdinsight"></a>Problemen met Apache Hadoop YARN oplossen met behulp van Azure HDInsight
 
@@ -31,27 +31,27 @@ In dit voor beeld worden twee bestaande wacht rijen (**standaard** en **thriftsv
 
 1. Selecteer het pictogram **Ambari weer gaven** en selecteer vervolgens het raster patroon. Selecteer vervolgens **garening Queue Manager**.
 
-    ![Ambari-dash board voor Apache-wachtrij beheer](media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-1.png)
+    :::image type="content" source="media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-1.png" alt-text="Ambari-dash board voor Apache-wachtrij beheer" border="false":::
 2. Selecteer de **standaard** wachtrij.
 
-    ![Apache Ambari-garen selecteren standaard wachtrij](media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-2.png)
+    :::image type="content" source="media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-2.png" alt-text="Apache Ambari-garen selecteren standaard wachtrij" border="false":::
 3. Voor de **standaard** wachtrij wijzigt u de **capaciteit** van 50% in 25%. Voor de **thriftsvr** -wachtrij wijzigt u de **capaciteit** in 25%.
 
-    ![De capaciteit wijzigen in 25% voor de standaard-en thriftsvr-wacht rijen](media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-3.png)
+    :::image type="content" source="media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-3.png" alt-text="De capaciteit wijzigen in 25% voor de standaard-en thriftsvr-wacht rijen" border="false":::
 4. Selecteer **wachtrij toevoegen** om een nieuwe wachtrij te maken.
 
-    ![Ambari-invoeg wachtrij voor Apache-garen](media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-4.png)
+    :::image type="content" source="media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-4.png" alt-text="Ambari-invoeg wachtrij voor Apache-garen" border="false":::
 
 5. Geef de nieuwe wachtrij een naam.
 
-    ![Naam wachtrij voor Apache Ambari GARENs-dash board](media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-5.png)  
+    :::image type="content" source="media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-5.png" alt-text="Naam wachtrij voor Apache Ambari GARENs-dash board" border="false":::  
 
 6. Wijzig de **capaciteits** waarden bij 50% en selecteer vervolgens de knop **acties** .
 
-    ![Bewerking voor Ambari-garen selecteren voor Apache](media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-6.png)  
+    :::image type="content" source="media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-6.png" alt-text="Bewerking voor Ambari-garen selecteren voor Apache" border="false":::  
 7. Selecteer **opslaan en wacht rijen vernieuwen**.
 
-    ![Selecteer opslaan en wacht rijen vernieuwen](media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-7.png)  
+    :::image type="content" source="media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-7.png" alt-text="Selecteer opslaan en wacht rijen vernieuwen" border="false":::  
 
 Deze wijzigingen zijn direct zichtbaar in de gebruikers interface van de GARENs-planner.
 

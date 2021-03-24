@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/20/2020
-ms.openlocfilehash: 4d42cedbc5dc20c929703be106e732b4806f3902
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 0c9c3b2d915e54cf954703c56c2087637cc80aa0
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98940606"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104864615"
 ---
 # <a name="use-hdinsight-spark-cluster-to-read-and-write-data-to-azure-sql-database"></a>HDInsight Spark-cluster gebruiken om gegevens te lezen en te schrijven naar Azure SQL Database
 
@@ -35,7 +35,7 @@ Maak eerst een Jupyter Notebook dat is gekoppeld aan het Spark-cluster. U gebrui
 1. Open uw cluster vanuit het [Azure Portal](https://portal.azure.com/).
 1. Selecteer **Jupyter notebook** onder **cluster dashboards** aan de rechter kant.  Als **cluster dashboards** niet worden weer gegeven, selecteert u **overzicht** in het menu links. Voer de beheerdersreferenties voor het cluster in als u daarom wordt gevraagd.
 
-    ![Jupyter Notebook op Apache Spark](./media/apache-spark-connect-to-sql-database/hdinsight-spark-cluster-dashboard-jupyter-notebook.png "Jupyter Notebook op Spark")
+    :::image type="content" source="./media/apache-spark-connect-to-sql-database/hdinsight-spark-cluster-dashboard-jupyter-notebook.png " alt-text="Jupyter Notebook op Apache Spark" border="true":::
 
    > [!NOTE]  
    > U kunt ook toegang krijgen tot de Jupyter Notebook in Spark-cluster door de volgende URL in uw browser te openen. Vervang **CLUSTERNAME** door de naam van uw cluster.
@@ -44,7 +44,7 @@ Maak eerst een Jupyter Notebook dat is gekoppeld aan het Spark-cluster. U gebrui
 
 1. Klik in de rechter bovenhoek van de Jupyter Notebook op **Nieuw** en klik vervolgens op **Spark** om een scala-notebook te maken. Jupyter notebooks in HDInsight Spark-cluster bieden ook de **PySpark** kernel voor Python2-toepassingen en de **PySpark3** -kernel voor Python3-toepassingen. Voor dit artikel maken we een scala-notebook.
 
-    ![Kernels voor Jupyter Notebook op Spark](./media/apache-spark-connect-to-sql-database/kernel-jupyter-notebook-on-spark.png "Kernels voor Jupyter Notebook op Spark")
+    :::image type="content" source="./media/apache-spark-connect-to-sql-database/kernel-jupyter-notebook-on-spark.png " alt-text="Kernels voor Jupyter Notebook op Spark" border="true":::
 
     Zie [Jupyter notebook-kernels met Apache Spark clusters in HDInsight gebruiken](apache-spark-jupyter-notebook-kernels.md)voor meer informatie over de kernels.
 
@@ -53,7 +53,7 @@ Maak eerst een Jupyter Notebook dat is gekoppeld aan het Spark-cluster. U gebrui
 
 1. Er wordt een nieuw notitie blok geopend met een standaard naam zonder **titel**. Klik op de naam van het notitie blok en voer de naam van uw keuze in.
 
-    ![Een naam opgeven voor de notebook](./media/apache-spark-connect-to-sql-database/hdinsight-spark-jupyter-notebook-name.png "Een naam opgeven voor de notebook")
+    :::image type="content" source="./media/apache-spark-connect-to-sql-database/hdinsight-spark-jupyter-notebook-name.png " alt-text="Een naam opgeven voor de notebook" border="true":::
 
 U kunt nu beginnen met het maken van uw toepassing.
 
@@ -100,7 +100,7 @@ In deze sectie leest u gegevens uit een tabel (bijvoorbeeld **tabel saleslt. Add
 
     U ziet een uitvoer die vergelijkbaar is met de volgende afbeelding:
 
-    ![schema-uitvoer](./media/apache-spark-connect-to-sql-database/read-from-sql-schema-output.png "schema-uitvoer")
+    :::image type="content" source="./media/apache-spark-connect-to-sql-database/read-from-sql-schema-output.png " alt-text="schema-uitvoer" border="true":::
 
 1. U kunt ook bewerkingen uitvoeren zoals, de bovenste 10 rijen ophalen.
 
@@ -167,11 +167,11 @@ In deze sectie gebruiken we een voor beeld van een CSV-bestand dat op het cluste
 
     a. Start SSMS en maak verbinding met de Azure SQL Database door verbindings gegevens op te geven, zoals wordt weer gegeven in de onderstaande scherm afbeelding.
 
-    ![Verbinding maken met SQL Database met behulp van SSMS1](./media/apache-spark-connect-to-sql-database/connect-to-sql-db-ssms.png "Verbinding maken met SQL Database met behulp van SSMS1")
+    :::image type="content" source="./media/apache-spark-connect-to-sql-database/connect-to-sql-db-ssms.png " alt-text="Verbinding maken met SQL Database met behulp van SSMS1" border="true":::
 
     b. Vouw vanuit **objectverkenner** de data base en het tabel knooppunt uit om te zien hoe **dbo. hvactable** is gemaakt.
 
-    ![Verbinding maken met SQL Database met behulp van SSMS2](./media/apache-spark-connect-to-sql-database/connect-to-sql-db-ssms-locate-table.png "Verbinding maken met SQL Database met behulp van SSMS2")
+    :::image type="content" source="./media/apache-spark-connect-to-sql-database/connect-to-sql-db-ssms-locate-table.png " alt-text="Verbinding maken met SQL Database met behulp van SSMS2" border="true":::
 
 1. Voer een query uit in SSMS om de kolommen in de tabel weer te geven.
 
@@ -209,7 +209,7 @@ In deze sectie worden gegevens gestreamd naar de `hvactable` die u in de vorige 
 
 1. De uitvoer toont het schema van **HVAC.csv**. De `hvactable` heeft ook hetzelfde schema. In de uitvoer worden de kolommen in de tabel weer gegeven.
 
-    ![' hdinsight-Apache Spark schema tabel '](./media/apache-spark-connect-to-sql-database/hdinsight-schema-table.png "Schema van tabel")
+    :::image type="content" source="./media/apache-spark-connect-to-sql-database/hdinsight-schema-table.png " alt-text="' hdinsight-Apache Spark schema tabel '" border="true":::
 
 1. Gebruik ten slotte het volgende fragment om gegevens van de HVAC.csv te lezen en deze in de `hvactable` Data Base te streamen. Plak het fragment in een code-cel, vervang de waarden van de tijdelijke aanduiding door de waarden voor uw data base en druk op **SHIFT + ENTER** om uit te voeren.
 

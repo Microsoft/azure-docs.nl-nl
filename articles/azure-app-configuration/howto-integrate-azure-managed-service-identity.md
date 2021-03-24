@@ -8,12 +8,12 @@ ms.service: azure-app-configuration
 ms.custom: devx-track-csharp, fasttrack-edit
 ms.topic: conceptual
 ms.date: 2/25/2020
-ms.openlocfilehash: 2f446df95c795eaac378340ed0d5de7b31dfcfee
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 386a0e27c0f73f5bcd42397ed515f7561d5097fd
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102219031"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104955054"
 ---
 # <a name="use-managed-identities-to-access-app-configuration"></a>Beheerde identiteiten gebruiken om App Configuration te openen
 
@@ -140,12 +140,12 @@ Als u een beheerde identiteit in de portal wilt instellen, maakt u eerst een toe
     ---
 
     > [!NOTE]
-    > In het geval dat u een door de **gebruiker toegewezen beheerde identiteit** wilt gebruiken, moet u de clientId opgeven bij het maken van de [ManagedIdentityCredential](https://docs.microsoft.com/dotnet/api/azure.identity.managedidentitycredential).
+    > In het geval dat u een door de **gebruiker toegewezen beheerde identiteit** wilt gebruiken, moet u de clientId opgeven bij het maken van de [ManagedIdentityCredential](/dotnet/api/azure.identity.managedidentitycredential).
     >```
     >config.AddAzureAppConfiguration(options =>
     >   options.Connect(new Uri(settings["AppConfig:Endpoint"]), new ManagedIdentityCredential(<your_clientId>)));
     >```
-    >Zoals uitgelegd in de [Veelgestelde vragen over beheerde identiteiten voor Azure-resources](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/known-issues#what-identity-will-imds-default-to-if-dont-specify-the-identity-in-the-request), is er een standaard manier om de beheerde identiteit op te lossen. In dit geval wordt u afgedwongen om de gewenste identiteit op te geven om aantal-runtime problemen in de toekomst te voor komen (bijvoorbeeld als een nieuwe door de gebruiker toegewezen beheerde identiteit wordt toegevoegd of als de door het systeem toegewezen beheerde identiteit is ingeschakeld). Daarom moet u de clientId opgeven, zelfs als er slechts één door de gebruiker toegewezen beheerde identiteit is gedefinieerd, en er geen door het systeem toegewezen beheerde identiteit is.
+    >Zoals uitgelegd in de [Veelgestelde vragen over beheerde identiteiten voor Azure-resources](../active-directory/managed-identities-azure-resources/known-issues.md#what-identity-will-imds-default-to-if-dont-specify-the-identity-in-the-request), is er een standaard manier om de beheerde identiteit op te lossen. In dit geval wordt u afgedwongen om de gewenste identiteit op te geven om aantal-runtime problemen in de toekomst te voor komen (bijvoorbeeld als een nieuwe door de gebruiker toegewezen beheerde identiteit wordt toegevoegd of als de door het systeem toegewezen beheerde identiteit is ingeschakeld). Daarom moet u de clientId opgeven, zelfs als er slechts één door de gebruiker toegewezen beheerde identiteit is gedefinieerd, en er geen door het systeem toegewezen beheerde identiteit is.
 
 
 1. Als u zowel app-configuratie waarden als Key Vault referenties wilt gebruiken, moet u *programma. cs* bijwerken zoals hieronder wordt weer gegeven. Deze code roept `SetCredential` als onderdeel van `ConfigureKeyVault` de configuratie provider aan welke referentie moet worden gebruikt bij het verifiëren van Key Vault.
@@ -203,7 +203,7 @@ Als u een beheerde identiteit in de portal wilt instellen, maakt u eerst een toe
     > [!NOTE]
     > De functie `ManagedIdentityCredential` werkt alleen in azure-omgevingen met services die ondersteuning bieden voor beheerde identiteits verificatie. Het werkt niet in de lokale omgeving. Gebruik deze [`DefaultAzureCredential`](/dotnet/api/azure.identity.defaultazurecredential) code om te werken in de lokale en Azure-omgeving, omdat deze terugvallen op enkele verificatie opties, waaronder beheerde identiteit.
     > 
-    > Als u een door de **gebruiker asigned beheerde identiteit** wilt gebruiken met de `DefaultAzureCredential` Wanneer geïmplementeerd naar Azure, [geeft u de clientId](https://docs.microsoft.com/dotnet/api/overview/azure/identity-readme#specifying-a-user-assigned-managed-identity-with-the-defaultazurecredential)op.
+    > Als u een door de **gebruiker asigned beheerde identiteit** wilt gebruiken met de `DefaultAzureCredential` Wanneer geïmplementeerd naar Azure, [geeft u de clientId](/dotnet/api/overview/azure/identity-readme#specifying-a-user-assigned-managed-identity-with-the-defaultazurecredential)op.
 
 [!INCLUDE [Prepare repository](../../includes/app-service-deploy-prepare-repo.md)]
 

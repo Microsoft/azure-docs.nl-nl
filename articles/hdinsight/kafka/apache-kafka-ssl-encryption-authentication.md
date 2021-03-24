@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 05/01/2019
-ms.openlocfilehash: 6c020153d5c5cb5aad593c5b15e60e67951b89d4
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: d061832022b983e4d5fd55e72c1d4789b82f6633
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98945190"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104863221"
 ---
 # <a name="set-up-tls-encryption-and-authentication-for-apache-kafka-in-azure-hdinsight"></a>TLS-versleuteling en-verificatie instellen voor Apache Kafka in azure HDInsight
 
@@ -128,11 +128,11 @@ Voer de volgende stappen uit om de configuratie wijziging te volt ooien:
 1. Stel de eigenschap **listeners** onder **Kafka Broker** in op`PLAINTEXT://localhost:9092,SSL://localhost:9093`
 1. Onder **Geavanceerd Kafka-Broker** stelt u de eigenschap **Security. intercompany Broker. Protocol** in op `SSL`
 
-    ![Kafka SSL-configuratie-eigenschappen bewerken in Ambari](./media/apache-kafka-ssl-encryption-authentication/editing-configuration-ambari.png)
+    :::image type="content" source="./media/apache-kafka-ssl-encryption-authentication/editing-configuration-ambari.png" alt-text="Kafka SSL-configuratie-eigenschappen bewerken in Ambari" border="true":::
 
 1. Stel de eigenschap **SSL. client. auth** onder **aangepast Kafka-Broker** in op `required` . Deze stap is alleen vereist als u verificatie en versleuteling instelt.
 
-    ![Kafka SSL-configuratie-eigenschappen bewerken in Ambari](./media/apache-kafka-ssl-encryption-authentication/editing-configuration-ambari2.png)
+    :::image type="content" source="./media/apache-kafka-ssl-encryption-authentication/editing-configuration-ambari2.png" alt-text="Kafka SSL-configuratie-eigenschappen bewerken in Ambari" border="true":::
 
 1. Voor HDI versie 3,6 gaat u naar de Ambari-gebruikers interface en voegt u de volgende configuraties toe onder **Geavanceerde Kafka-env** en de **Kafka-env-sjabloon** eigenschap.
 
@@ -153,11 +153,11 @@ Voer de volgende stappen uit om de configuratie wijziging te volt ooien:
 
     Voor HDI-versie 3,6:
 
-    ![De eigenschap Kafka-env-sjabloon bewerken in Ambari](./media/apache-kafka-ssl-encryption-authentication/editing-configuration-kafka-env.png)
+    :::image type="content" source="./media/apache-kafka-ssl-encryption-authentication/editing-configuration-kafka-env.png" alt-text="De eigenschap Kafka-env-sjabloon bewerken in Ambari" border="true":::
 
     Voor HDI-versie 4,0:
 
-     ![De Kafka-env-sjabloon eigenschap bewerken in Ambari vier](./media/apache-kafka-ssl-encryption-authentication/editing-configuration-kafka-env-four.png)
+     :::image type="content" source="./media/apache-kafka-ssl-encryption-authentication/editing-configuration-kafka-env-four.png" alt-text="De Kafka-env-sjabloon eigenschap bewerken in Ambari vier" border="true":::
 
 1. Start alle Kafka-Brokers opnieuw op.
 

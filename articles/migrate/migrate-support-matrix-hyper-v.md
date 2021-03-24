@@ -6,16 +6,16 @@ ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 03/18/2021
-ms.openlocfilehash: bdd8fd336da12b5549875cf53f9e221cc431c2b9
-ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
+ms.openlocfilehash: 8531d0b2252e6ddff75509046b5a4576b99d339f
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104773212"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104870786"
 ---
 # <a name="support-matrix-for-hyper-v-assessment"></a>Ondersteunings matrix voor Hyper-V-evaluatie
 
-In dit artikel vindt u een overzicht van de vereisten voor en ondersteuning bij het detecteren en evalueren van on-premises servers die worden uitgevoerd in een Hyper-V-omgeving voor migratie naar Azure, met behulp van de Azure Migrate: hulp programma voor [detectie en evaluatie](migrate-services-overview.md#azure-migrate-server-assessment-tool) . Als u servers wilt migreren die worden uitgevoerd op Hyper-V naar Azure, raadpleegt u de [ondersteunings matrix voor migratie](migrate-support-matrix-hyper-v-migration.md).
+In dit artikel vindt u een overzicht van de vereisten voor en ondersteuning bij het detecteren en evalueren van on-premises servers die worden uitgevoerd in een Hyper-V-omgeving voor migratie naar Azure, met behulp van de Azure Migrate: hulp programma voor [detectie en evaluatie](migrate-services-overview.md#azure-migrate-discovery-and-assessment-tool) . Als u servers wilt migreren die worden uitgevoerd op Hyper-V naar Azure, raadpleegt u de [ondersteunings matrix voor migratie](migrate-support-matrix-hyper-v-migration.md).
 
 Voor het instellen van detectie en evaluatie van servers die worden uitgevoerd op Hyper-V, maakt u een project en voegt u de Azure Migrate: hulp programma voor detectie en evaluatie toe aan het project. Wanneer het hulp programma is toegevoegd, implementeert u het [Azure migrate apparaat](migrate-appliance.md). Het apparaat detecteert voortdurend on-premises servers en verzendt meta gegevens en prestaties van de server naar Azure. Nadat de detectie is voltooid, verzamelt u gedetecteerde servers in groepen en voert u een evaluatie uit voor een groep.
 
@@ -23,7 +23,7 @@ Voor het instellen van detectie en evaluatie van servers die worden uitgevoerd o
 
 **Ondersteuning** | **Details**
 --- | ---
-**Beoordelings limieten** | U kunt Maxi maal 35.000 servers in één [project](migrate-support-matrix.md#azure-migrate-projects)detecteren en beoordelen.
+**Beoordelings limieten** | U kunt Maxi maal 35.000 servers in één [project](migrate-support-matrix.md#project)detecteren en beoordelen.
 **Project limieten** | U kunt meerdere projecten maken in een Azure-abonnement. Naast servers op Hyper-V kan een project servers op VMware-en fysieke servers bevatten, tot de evaluatie limieten voor elk.
 **Discovery** (Detectie) | Het Azure Migrate-apparaat kan Maxi maal 5000 servers detecteren die worden uitgevoerd op Hyper-V.<br/><br/> Het apparaat kan verbinding maken met Maxi maal 300 Hyper-V-hosts.
 **Evaluatie** | U kunt Maxi maal 35.000 servers in één groep toevoegen.<br/><br/> U kunt Maxi maal 35.000 servers in één evaluatie voor een groep evalueren.

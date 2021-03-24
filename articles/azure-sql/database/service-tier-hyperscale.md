@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 1/13/2021
-ms.openlocfilehash: 4b5020b6cf7ac2f7aec586d7e6499285c1447b68
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: a167fedcb42560dec55cdbce40e36180d65e0179
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98209760"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104951794"
 ---
 # <a name="hyperscale-service-tier"></a>Hyperscale-servicelaag
 
@@ -105,7 +105,7 @@ De logboek service accepteert logboek records van de primaire Compute-replica, s
 
 Azure Storage bevat alle gegevens bestanden in een Data Base. Pagina servers houden gegevens bestanden in Azure Storage up-to-date. Deze opslag wordt gebruikt voor back-updoeleinden en voor replicatie tussen Azure-regio's. Back-ups worden geïmplementeerd met behulp van opslag momentopnamen van gegevens bestanden. Herstel bewerkingen met behulp van moment opnamen zijn snel, ongeacht de grootte van de gegevens. Gegevens kunnen worden hersteld naar elk gewenst moment binnen de Bewaar periode van de back-up van de data base.
 
-## <a name="backup-and-restore"></a>Back-up en herstel
+## <a name="backup-and-restore"></a>Back-ups en herstellen
 
 Back-ups zijn gebaseerd op bestands momentopnamen en zijn daarom bijna direct. Met opslag-en Compute-schei ding kunt u de bewerking voor back-up/herstel naar de opslaglaag beperken om de verwerkings belasting van de primaire Compute replica te verminderen. Als gevolg hiervan heeft de back-up van de data base geen invloed op de prestaties van het primaire reken knooppunt. Op dezelfde manier wordt Point-in-time herstel (PITR) uitgevoerd door terug te keren naar moment opnamen van bestanden. Dit is geen grootte van de gegevens bewerking. Het herstellen van een grootschalige-data base in dezelfde Azure-regio is een constante tijd en zelfs meerdere terabyte-data bases kunnen in enkele minuten worden hersteld in plaats van uren of dagen. Het maken van nieuwe data bases door het herstellen van een bestaande back-up heeft ook voor deel van deze functie: het maken van database kopieën voor ontwikkelings-of test doeleinden, zelfs multi-terabyte-data bases, is doable binnen enkele minuten.
 
@@ -226,7 +226,7 @@ Dit zijn de huidige beperkingen voor het grootschalige van de service tier.  We 
 | Als Azure SQL Database servicelaag wijzigt in grootschalige, mislukt de bewerking als de data base gegevens bestanden heeft die groter zijn dan 1 TB | In sommige gevallen [is het mogelijk](file-space-manage.md#shrinking-data-files) om dit probleem te omzeilen door de grote bestanden kleiner te maken dan 1 TB voordat u probeert de servicelaag te wijzigen in grootschalige. Gebruik de volgende query om de huidige grootte van database bestanden te bepalen. `SELECT file_id, name AS file_name, size * 8. / 1024 / 1024 AS file_size_GB FROM sys.database_files WHERE type_desc = 'ROWS'`;|
 | SQL Managed Instance | Azure SQL Managed instance wordt momenteel niet ondersteund met grootschalige-data bases. |
 | Elastische pools |  Elastische Pools worden momenteel niet ondersteund met grootschalige.|
-| Migratie naar grootschalige is momenteel een eenrichtings bewerking | Wanneer een Data Base wordt gemigreerd naar grootschalige, kan deze niet rechtstreeks worden gemigreerd naar een niet-grootschalige. Op dit moment is de enige manier om een Data Base te migreren van grootschalige naar een niet-grootschalige, het exporteren/importeren met behulp van een Bacpac-bestand of andere technologieën voor gegevens verplaatsing (Bulk Copy, Azure Data Factory, Azure Databricks, SSIS, enzovoort). Bacpac exporteren/importeren uit Azure Portal, vanuit Power shell met [New-AzSqlDatabaseExport](/powershell/module/az.sql/new-azsqldatabaseexport) of [New-AzSqlDatabaseImport](/powershell/module/az.sql/new-azsqldatabaseimport), vanuit Azure CLI met [AZ SQL DB export](/cli/azure/sql/db#az-sql-db-export) en [az SQL DB import](/cli/azure/sql/db#az-sql-db-import), en van [rest API](/rest/api/sql/databases%20-%20import%20export) wordt niet ondersteund. Bacpac import/export voor kleinere grootschalige-data bases (tot 200 GB) wordt ondersteund met behulp van SSMS en [SqlPackage](/sql/tools/sqlpackage) versie 18,4 of hoger. Voor grotere data bases kan het maken van een Bacpac-export/-import enige tijd duren en kan om verschillende redenen mislukken.|
+| Migratie naar grootschalige is momenteel een eenrichtings bewerking | Wanneer een Data Base wordt gemigreerd naar grootschalige, kan deze niet rechtstreeks worden gemigreerd naar een niet-grootschalige. Op dit moment is de enige manier om een Data Base te migreren van grootschalige naar een niet-grootschalige, het exporteren/importeren met behulp van een Bacpac-bestand of andere technologieën voor gegevens verplaatsing (Bulk Copy, Azure Data Factory, Azure Databricks, SSIS, enzovoort). Bacpac exporteren/importeren uit Azure Portal, vanuit Power shell met [New-AzSqlDatabaseExport](/powershell/module/az.sql/new-azsqldatabaseexport) of [New-AzSqlDatabaseImport](/powershell/module/az.sql/new-azsqldatabaseimport), vanuit Azure CLI met [AZ SQL DB export](/cli/azure/sql/db#az-sql-db-export) en [az SQL DB import](/cli/azure/sql/db#az-sql-db-import), en van [rest API](/rest/api/sql/) wordt niet ondersteund. Bacpac import/export voor kleinere grootschalige-data bases (tot 200 GB) wordt ondersteund met behulp van SSMS en [SqlPackage](/sql/tools/sqlpackage) versie 18,4 of hoger. Voor grotere data bases kan het maken van een Bacpac-export/-import enige tijd duren en kan om verschillende redenen mislukken.|
 | Migratie van data bases met In-Memory OLTP-objecten | Grootschalige ondersteunt een subset van In-Memory OLTP-objecten, waaronder door het geheugen geoptimaliseerde tabel typen, tabel variabelen en systeem eigen, gecompileerde modules. Wanneer echter een soort In-Memory OLTP-objecten aanwezig zijn in de data base die wordt gemigreerd, wordt de migratie van Premium-en Bedrijfskritiek-service lagen naar grootschalige niet ondersteund. Als u een dergelijke Data Base wilt migreren naar grootschalige, moeten alle In-Memory OLTP-objecten en de bijbehorende afhankelijkheden worden verwijderd. Nadat de data base is gemigreerd, kunnen deze objecten opnieuw worden gemaakt. Duurzame en niet-duurzame tabellen die zijn geoptimaliseerd voor geheugen, worden momenteel niet ondersteund in grootschalige en moeten worden gewijzigd in schijf tabellen.|
 | Geo-replicatie  | U kunt geo-replicatie voor Azure SQL Database grootschalige nog niet configureren. |
 | Data base kopiëren | Het kopiëren van de Data Base op grootschalige is nu beschikbaar als open bare preview. |

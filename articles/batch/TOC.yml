@@ -163,6 +163,9 @@
         - name: Beheerde identiteiten configureren
           displayName: user-assigned
           href: managed-identity-pools.md
+        - name: Het draaien van certificaten inschakelen
+          displayName: 'key vault, keyvault, automatic'
+          href: automatic-certificate-rotation.md
         - name: Een virtueel bestandssysteem koppelen
           href: virtual-file-mount.md
         - name: Azure-bestandsshare koppelen

@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/24/2020
-ms.openlocfilehash: 148ba2ce256b11b623bf28cf7723dbb0cce60830
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 25ff8611cc988c9777b52a313cfd74d4ee0a638c
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98929750"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104870293"
 ---
 # <a name="configure-apache-spark-settings"></a>Apache Spark-instellingen configureren
 
@@ -18,7 +18,7 @@ An HDInsight Spark-cluster bevat een installatie van de Apache Spark-bibliotheek
 
 Het standaard HDInsight-Apache Spark cluster bevat de volgende knoop punten: drie Apache ZooKeeper knoop punten, twee hoofd knooppunten en een of meer worker-knoop punten:
 
-![Spark HDInsight-architectuur](./media/apache-spark-settings/spark-hdinsight-arch.png)
+:::image type="content" source="./media/apache-spark-settings/spark-hdinsight-arch.png" alt-text="Spark HDInsight-architectuur" border="false":::
 
 Het aantal Vm's en VM-grootten voor de knoop punten in uw HDInsight-cluster kunnen invloed hebben op uw Spark-configuratie. Niet-standaard-HDInsight-configuratie waarden vereisen vaak niet-standaard Spark-configuratie waarden. Wanneer u een HDInsight Spark-cluster maakt, worden de voorgestelde VM-grootten voor elk van de onderdelen weer gegeven. Momenteel zijn de door het [geheugen geoptimaliseerde Linux VM-grootten](../../virtual-machines/sizes-memory.md) voor Azure D12 v2 of hoger.
 
@@ -59,7 +59,7 @@ De Apache Ambari-webgebruikersinterface wordt weer gegeven, met een dash board m
 
 Als u de configuratie waarden voor Apache Spark wilt bekijken, selecteert u **configuratie geschiedenis** en selecteert u **Spark2**.  Selecteer het tabblad **configuraties** en selecteer vervolgens de `Spark` koppeling (of `Spark2` , afhankelijk van uw versie) in de lijst met Services.  U ziet een lijst met configuratie waarden voor het cluster:
 
-![Spark-configuraties](./media/apache-spark-settings/spark-configurations.png)
+:::image type="content" source="./media/apache-spark-settings/spark-configurations.png" alt-text="Spark-configuraties" border="true":::
 
 Als u afzonderlijke Spark-configuratie waarden wilt bekijken en wijzigen, selecteert u een koppeling met ' Spark ' in de titel.  Configuraties voor Spark bevatten zowel aangepaste als geavanceerde configuratie waarden in deze categorieën:
 
@@ -78,7 +78,7 @@ Als u een niet-standaard set configuratie waarden maakt, is de update geschieden
 
 Het volgende diagram toont de belangrijkste Spark-objecten: het stuur programma en de bijbehorende Spark-context, en de Cluster beheer-en de *n* worker-knoop punten.  Elk werk knooppunt bevat een uitvoerder, een cache en *n* taak exemplaren.
 
-![Cluster objecten](./media/apache-spark-settings/hdi-spark-architecture.png)
+:::image type="content" source="./media/apache-spark-settings/hdi-spark-architecture.png" alt-text="Cluster objecten" border="false":::
 
 Spark-taken gebruiken werk resources, met name geheugen, zodat het gebruikelijk is om Spark-configuratie waarden aan te passen voor uitvoerder van worker-knoop punten.
 
@@ -89,7 +89,7 @@ Drie belang rijke para meters die vaak worden aangepast aan het afstemmen van Sp
 
 Een andere bron van informatie over resources die worden gebruikt door Spark-uitvoerende modules is de gebruikers interface van Spark.  In de gebruikers interface geeft de  **uitvoerende** module samenvattings-en detail weergaven weer van de configuratie en verbruikte resources.  Bepaal of u de waarden van de runtime voor het hele cluster of een bepaalde set taak uitvoeringen wilt wijzigen.
 
-![Spark-Uitvoerendeers](./media/apache-spark-settings/apache-spark-executors.png)
+:::image type="content" source="./media/apache-spark-settings/apache-spark-executors.png" alt-text="Spark-Uitvoerendeers" border="true":::
 
 U kunt ook de Ambari-REST API gebruiken om de configuratie-instellingen voor HDInsight-en Spark-clusters programmatisch te controleren.  Meer informatie vindt u op de [AMBARI API-referentie van Apache op github](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md).
 
@@ -103,7 +103,7 @@ Afhankelijk van de Spark-workload kunt u bepalen dat een Spark-configuratie die 
 
 Hier volgt een voor beeld van twee worker-knoop punten met verschillende configuratie waarden:
 
-![Configuraties met twee knoop punten](./media/apache-spark-settings/executor-configuration.png)
+:::image type="content" source="./media/apache-spark-settings/executor-configuration.png" alt-text="Configuraties met twee knoop punten" border="false":::
 
 In de volgende lijst ziet u de para meters voor Key Spark-bewerkings geheugen.
 
@@ -116,7 +116,7 @@ In de volgende lijst ziet u de para meters voor Key Spark-bewerkings geheugen.
 
 GAREN beheert de maximale hoeveelheid geheugen die wordt gebruikt door de containers op elk Spark-knoop punt. In het volgende diagram ziet u de relaties per knoop punt tussen garen configuratie objecten en Spark-objecten.
 
-![Geheugenbeheer met YARN Spark](./media/apache-spark-settings/hdi-yarn-spark-memory.png)
+:::image type="content" source="./media/apache-spark-settings/hdi-yarn-spark-memory.png" alt-text="Geheugenbeheer met YARN Spark" border="false":::
 
 ## <a name="change-parameters-for-an-application-running-in-jupyter-notebook"></a>Para meters wijzigen voor een toepassing die wordt uitgevoerd in Jupyter Notebook
 

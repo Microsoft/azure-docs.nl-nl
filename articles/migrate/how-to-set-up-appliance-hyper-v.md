@@ -6,16 +6,16 @@ ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 03/13/2021
-ms.openlocfilehash: 85ab07e0b81bf258a56956f5f0f7e80bad6a32fe
-ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
+ms.openlocfilehash: 71fe30212b31e810bfe3e1ba10f80be6b09ad4fc
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104775218"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104863680"
 ---
 # <a name="set-up-an-appliance-for-servers-on-hyper-v"></a>Een apparaat instellen voor servers met Hyper-V
 
-Volg dit artikel om het Azure Migrate-apparaat in te stellen voor detectie en evaluatie van servers op Hyper-V met het Azure Migrate: hulp programma voor [detectie en evaluatie](migrate-services-overview.md#azure-migrate-server-assessment-tool) .
+Volg dit artikel om het Azure Migrate-apparaat in te stellen voor detectie en evaluatie van servers op Hyper-V met het Azure Migrate: hulp programma voor [detectie en evaluatie](migrate-services-overview.md#azure-migrate-discovery-and-assessment-tool) .
 
 Het [Azure migrate apparaat](migrate-appliance.md)  is een licht gewicht dat door Azure migrate wordt gebruikt: detectie en evaluatie/migratie om on-premises servers op Hyper-V te ontdekken en server meta gegevens/prestatie gegevens naar Azure te verzenden.
 
@@ -24,31 +24,31 @@ U kunt het apparaat implementeren met een aantal methoden:
 - Ingesteld op een server op Hyper-V met behulp van een gedownloade VHD. Deze methode wordt beschreven in dit artikel.
 - Ingesteld op een server op een Hyper-V-of fysieke server met een Power shell-installatie script. [Deze methode](deploy-appliance-script.md) moet worden gebruikt als u een server niet kunt instellen met behulp van een VHD of als u zich in azure Government bevindt.
 
-Nadat u het apparaat hebt gemaakt, controleert u of er verbinding kan worden gemaakt met Azure Migrate: detectie en evaluatie, het voor de eerste keer configureren en registreren bij het Azure Migrate-project.
+Nadat u het apparaat hebt gemaakt, controleert u of er verbinding kan worden gemaakt met Azure Migrate: detectie en evaluatie, het voor de eerste keer configureren en het met het project registreren.
 
 ## <a name="appliance-deployment-vhd"></a>Implementatie van het apparaat (VHD)
 
 Het apparaat instellen met behulp van een VHD-sjabloon:
 
-- Geef een naam op voor het apparaat en genereer een Azure Migrate-projectsleutel in de portal.
+- Geef een naam op voor het apparaat en Genereer een project sleutel in de portal.
 - Download een gecomprimeerde Hyper-V VHD vanuit de Azure Portal.
 - Maak het apparaat en controleer of het verbinding kan maken met Azure Migrate: detectie en evaluatie.
-- Configureer het apparaat voor het eerst en registreer het bij het Azure Migrate-project met behulp van de Azure Migrate-projectsleutel.
+- Configureer het apparaat voor de eerste keer en registreer het met het project met behulp van de project sleutel.
 
-### <a name="generate-the-azure-migrate-project-key"></a>Azure Migrate-projectsleutel genereren
+### <a name="generate-the-project-key"></a>De project sleutel genereren
 
 1. In **migratie doelen**  >  **Windows, Linux-en SQL-servers**  >  **Azure migrate: detectie en evaluatie**, selecteer **detecteren**.
 2. In **Discover-servers**  >  **zijn uw servers gevirtualiseerd?**, selecteert u **Ja, met Hyper-V**.
 3. Geef in **1: project sleutel genereren** een naam op voor het Azure migrate apparaat dat u wilt instellen voor de detectie van servers op Hyper-V. de naam moet alfanumeriek zijn met 14 tekens of minder.
 1. Klik op **Sleutel genereren** om de vereiste Azure-resources te gaan maken. Sluit de pagina servers detecteren niet af tijdens het maken van resources.
-1. Nadat de Azure-resources zijn gemaakt, wordt er een **Azure Migrate-projectsleutel** gegenereerd.
+1. Nadat het maken van de Azure-resources is voltooid, wordt een **project sleutel** gegenereerd.
 1. Kopieer de sleutel, omdat u deze nodig hebt om de registratie van het apparaat tijdens de configuratie te voltooien.
 
 ### <a name="download-the-vhd"></a>De VHD downloaden
 
 In **2: Azure Migrate-apparaat downloaden**, selecteert u het VHD-bestand en klikt u op **Downloaden**.
 
-   ![Selecties voor Computers detecteren](./media/tutorial-assess-hyper-v/servers-discover.png)
+   ![Selecties voor discover-servers](./media/tutorial-assess-hyper-v/servers-discover.png)
 
 
    ![Selecties voor Sleutel genereren](./media/tutorial-assess-hyper-v/generate-key-hyperv.png)

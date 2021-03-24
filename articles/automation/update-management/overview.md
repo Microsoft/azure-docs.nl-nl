@@ -5,12 +5,12 @@ services: automation
 ms.subservice: update-management
 ms.date: 03/19/2021
 ms.topic: conceptual
-ms.openlocfilehash: e24a90f05ef52c5164ce966e905e9c27055d1bf4
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: e5deefabd6a37dbfece9f32abdce5d5144681238
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104670610"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104950056"
 ---
 # <a name="update-management-overview"></a>Overzicht van Updatebeheer
 
@@ -22,7 +22,7 @@ U kunt Updatebeheer in Azure Automation gebruiken om updates van besturings syst
 > [!NOTE]
 > Op dit moment wordt het rechtstreeks inschakelen van Updatebeheer vanaf een server met Azure Arc niet ondersteund. Raadpleeg [Updatebeheer inschakelen vanuit uw Automation-account](../../automation/update-management/enable-from-automation-account.md) om te zien wat de vereisten zijn en hoe u updatebeheer voor uw server inschakelt.
 
-Als u de beschik bare *essentiële* en *beveiligings* patches automatisch op uw Azure-VM wilt downloaden en installeren, controleert u [automatische VM-gast patches](../../virtual-machines/windows/automatic-vm-guest-patching.md) voor Windows-vm's.
+Als u de beschik bare *essentiële* en *beveiligings* patches automatisch op uw Azure-VM wilt downloaden en installeren, controleert u [automatische VM-gast patches](../../virtual-machines/automatic-vm-guest-patching.md) voor Windows-vm's.
 
 Voordat u Updatebeheer implementeert en uw machines voor beheer inschakelt, moet u de informatie in de volgende secties begrijpen.  
 

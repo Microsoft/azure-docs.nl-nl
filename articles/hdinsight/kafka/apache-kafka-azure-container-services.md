@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/04/2019
-ms.openlocfilehash: d807b591229644984f6658cdacd0bf447759f292
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 2216eb5893b77761f4d31c5819d152ceeb985abc
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98933026"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104869647"
 ---
 # <a name="use-azure-kubernetes-service-with-apache-kafka-on-hdinsight"></a>Azure Kubernetes-service gebruiken met Apache Kafka op HDInsight
 
@@ -42,7 +42,7 @@ Zowel HDInsight als AKS gebruiken een Azure-Virtual Network als een container vo
 
 In het volgende diagram ziet u de netwerk topologie die in dit document wordt gebruikt:
 
-![HDInsight in één virtueel netwerk, AKS in een andere, met behulp van peering](./media/apache-kafka-azure-container-services/kafka-aks-architecture.png)
+:::image type="content" source="./media/apache-kafka-azure-container-services/kafka-aks-architecture.png" alt-text="HDInsight in één virtueel netwerk, AKS in een andere, met behulp van peering" border="false":::
 
 > [!IMPORTANT]  
 > Naam omzetting is niet ingeschakeld tussen de peered netwerken, zodat IP-adres Sering wordt gebruikt. Kafka op HDInsight is standaard geconfigureerd voor het retour neren van hostnamen in plaats van IP-adressen wanneer clients verbinding maken. Met de stappen in dit document wijzigt u Kafka om in plaats daarvan IP-reclame te gebruiken.
@@ -109,15 +109,15 @@ Gebruik de volgende stappen om Kafka te configureren voor het adverteren van IP-
 
 2. Als u informatie over Kafka wilt weer geven, selecteert u __Kafka__ in de lijst aan de linkerkant.
 
-    ![Service lijst met Kafka gemarkeerd](./media/apache-kafka-azure-container-services/select-kafka-service.png)
+    :::image type="content" source="./media/apache-kafka-azure-container-services/select-kafka-service.png" alt-text="Service lijst met Kafka gemarkeerd" border="true":::
 
 3. Als u de configuratie van Kafka wilt weer geven, selecteert u __configuraties__ in het bovenste midden.
 
-    ![Configuratie van Apache Ambari Services](./media/apache-kafka-azure-container-services/select-kafka-config1.png)
+    :::image type="content" source="./media/apache-kafka-azure-container-services/select-kafka-config1.png" alt-text="Configuratie van Apache Ambari Services" border="true":::
 
 4. Als u de __Kafka-env-__ configuratie wilt vinden, voert u `kafka-env` in het veld __filter__ in de rechter bovenhoek in.
 
-    ![Kafka-configuratie voor Kafka-env](./media/apache-kafka-azure-container-services/search-for-kafka-env.png)
+    :::image type="content" source="./media/apache-kafka-azure-container-services/search-for-kafka-env.png" alt-text="Kafka-configuratie voor Kafka-env" border="true":::
 
 5. Als u Kafka wilt configureren voor het adverteren van IP-adressen, voegt u de volgende tekst toe onder aan het veld __Kafka-env-Temp late__ :
 
@@ -135,15 +135,15 @@ Gebruik de volgende stappen om Kafka te configureren voor het adverteren van IP-
 
 8. Gebruik de knop __Opslaan__ om de configuratie wijzigingen op te slaan. Voer een tekst bericht in waarin de wijzigingen worden beschreven. Selecteer __OK__ zodra de wijzigingen zijn opgeslagen.
 
-    ![Apache Ambari-configuratie opslaan](./media/apache-kafka-azure-container-services/save-configuration-button.png)
+    :::image type="content" source="./media/apache-kafka-azure-container-services/save-configuration-button.png" alt-text="Apache Ambari-configuratie opslaan" border="true":::
 
 9. Als u fouten wilt voor komen bij het opnieuw starten van Kafka, gebruikt u de knop __service acties__ en selecteert u __onderhouds modus inschakelen__. Selecteer OK om deze bewerking te volt ooien.
 
-    ![Service acties, met ingeschakeld onderhoud inschakelen](./media/apache-kafka-azure-container-services/turn-on-maintenance-mode.png)
+    :::image type="content" source="./media/apache-kafka-azure-container-services/turn-on-maintenance-mode.png" alt-text="Service acties, met ingeschakeld onderhoud inschakelen" border="true":::
 
 10. Als u Kafka opnieuw wilt starten, gebruikt u de knop __opnieuw opstarten__ en selecteert u __alle betrokkenen opnieuw opstarten__. Bevestig het opnieuw opstarten en gebruik vervolgens de knop __OK__ nadat de bewerking is voltooid.
 
-    ![Knop opnieuw opstarten met alle betrokken gemarkeerd voor opnieuw opstarten](./media/apache-kafka-azure-container-services/restart-required-button.png)
+    :::image type="content" source="./media/apache-kafka-azure-container-services/restart-required-button.png" alt-text="Knop opnieuw opstarten met alle betrokken gemarkeerd voor opnieuw opstarten" border="true":::
 
 11. Als u de onderhouds modus wilt uitschakelen, gebruikt u de knop __service acties__ en selecteert u __onderhouds modus uitschakelen__. Selecteer **OK** om deze bewerking te volt ooien.
 
@@ -213,7 +213,7 @@ Op dit moment zijn de Kafka-en Azure Kubernetes-service in communicatie via de g
 
 11. Open een webbrowser en voer het externe IP-adres voor de service in. U ontvangt een pagina die vergelijkbaar is met de volgende afbeelding:
 
-    ![Afbeelding van de webpagina van Apache Kafka test](./media/apache-kafka-azure-container-services/test-web-page-image1.png)
+    :::image type="content" source="./media/apache-kafka-azure-container-services/test-web-page-image1.png" alt-text="Afbeelding van de webpagina van Apache Kafka test" border="true":::
 
 12. Voer tekst in het veld in en selecteer vervolgens de knop __verzenden__ . De gegevens worden verzonden naar Kafka. Vervolgens leest de Kafka-consument in de toepassing het bericht en voegt deze toe aan de sectie __berichten van Kafka__ .
 

@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 06/27/2018
-ms.openlocfilehash: c90642e58c026c78ce854e7fe74dd36963d48b67
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 7d597c4dbb81562050e9523c61d47d0020fc9059
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98944011"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104869462"
 ---
 # <a name="operationalize-ml-services-cluster-on-azure-hdinsight"></a>Operationeel maken ML-cluster in azure HDInsight
 
@@ -53,31 +53,31 @@ Nadat u het server gebruik van MILLILITERs in HDInsight hebt gebruikt om uw gege
 
 1. U krijgt de keuze uit de opties waaruit u kunt kiezen. Kies de eerste optie, zoals wordt weer gegeven in de volgende scherm afbeelding, om **ml server voor uitoefening te configureren**.
 
-    ![R Server Administration Utility selecteren](./media/r-server-operationalize/admin-util-one-box-1.png)
+    :::image type="content" source="./media/r-server-operationalize/admin-util-one-box-1.png" alt-text="R Server Administration Utility selecteren" border="true":::
 
 1. U krijgt nu de optie om te kiezen hoe u ML Server wilt operationeel maken. Kies in de weer gegeven opties de eerste door **een** te typen.
 
-    ![R Server Administration Utility operationeel maken](./media/r-server-operationalize/admin-util-one-box-2.png)
+    :::image type="content" source="./media/r-server-operationalize/admin-util-one-box-2.png" alt-text="R Server Administration Utility operationeel maken" border="true":::
 
 1. Wanneer u hierom wordt gevraagd, voert u het wacht woord voor een lokale gebruikers beheerder in en voert u het opnieuw in.
 
 1. Er moeten uitvoer resultaten worden weer geven waarin wordt voorgesteld dat de bewerking is geslaagd. U wordt ook gevraagd een andere optie te selecteren in het menu. Selecteer E om terug te gaan naar het hoofd menu.
 
-    ![R Server Administration-hulp programma geslaagd](./media/r-server-operationalize/admin-util-one-box-3.png)
+    :::image type="content" source="./media/r-server-operationalize/admin-util-one-box-3.png" alt-text="R Server Administration-hulp programma geslaagd" border="true":::
 
 1. U kunt ook diagnostische controles uitvoeren door de volgende diagnostische test uit te voeren:
 
     a. Selecteer in het hoofd menu de optie **6** om diagnostische tests uit te voeren.
 
-    ![Diagnostische R Server Administration-hulpprogram ma's](./media/r-server-operationalize/hdinsight-diagnostic1.png)
+    :::image type="content" source="./media/r-server-operationalize/hdinsight-diagnostic1.png" alt-text="Diagnostische R Server Administration-hulpprogram ma's" border="true":::
 
     b. Selecteer in het menu diagnostische tests **een**. Wanneer u hierom wordt gevraagd, voert u het wacht woord in dat u hebt opgegeven voor de gebruiker van de lokale beheerder.
 
-    ![Hulp programma R Server Administration-hulpprogram ma's](./media/r-server-operationalize/hdinsight-diagnostic2.png)
+    :::image type="content" source="./media/r-server-operationalize/hdinsight-diagnostic2.png" alt-text="Hulp programma R Server Administration-hulpprogram ma's" border="true":::
 
     c. Controleer of de uitvoer laat zien dat de algehele status is geslaagd.
 
-    ![Hulp programma voor het beheer van R-servers](./media/r-server-operationalize/hdinsight-diagnostic3.png)
+    :::image type="content" source="./media/r-server-operationalize/hdinsight-diagnostic3.png" alt-text="Hulp programma voor het beheer van R-servers" border="true":::
 
     d. Voer in de weer gegeven menu opties **E** in om terug te keren naar het hoofd menu en voer **8** in om het beheer hulpprogramma af te sluiten.
 
@@ -154,7 +154,7 @@ Volg deze stappen voor het buiten gebruik stellen van worker-knoop punten:
 
 1. Klik op **acties**  >  **geselecteerde hosts** hosts  >  **host** de  >  **onderhouds modus inschakelen**. In de volgende afbeelding zijn bijvoorbeeld wk3 en wk4 geselecteerd om uit bedrijf te worden genomen.  
 
-   ![Apache Ambari-onderhouds modus inschakelen](./media/r-server-operationalize/get-started-operationalization.png)  
+   :::image type="content" source="./media/r-server-operationalize/get-started-operationalization.png" alt-text="Apache Ambari-onderhouds modus inschakelen" border="true":::  
 
 * Selecteer **acties**  >  **geselecteerde hosts**  >  **DataNodes** > Klik op uit **bedrijf nemen**.
 * Selecteer **acties**  >  **geselecteerde hosts**  >  **NodeManagers** > Klik op uit **bedrijf nemen**.

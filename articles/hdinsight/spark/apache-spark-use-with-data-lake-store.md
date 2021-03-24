@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 06/13/2019
-ms.openlocfilehash: ad8239b3403d37a9e4c79de481fb9cb26306e243
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: e79c2f361108f1daa3c4a125491d1b399e050648
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98946330"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104863697"
 ---
 # <a name="use-hdinsight-spark-cluster-to-analyze-data-in-data-lake-storage-gen1"></a>HDInsight Spark-cluster gebruiken voor het analyseren van gegevens in Data Lake Storage Gen1
 
@@ -70,7 +70,7 @@ Als u een HDInsight-cluster hebt gemaakt met Data Lake Storage als extra opslag 
 
 3. Maak een nieuwe notebook. Klik op **Nieuw** en klik vervolgens op **PySpark**.
 
-    ![Een nieuwe Jupyter Notebook maken](./media/apache-spark-use-with-data-lake-store/hdinsight-create-jupyter-notebook.png "Een nieuwe Jupyter Notebook maken")
+    :::image type="content" source="./media/apache-spark-use-with-data-lake-store/hdinsight-create-jupyter-notebook.png " alt-text="Een nieuwe Jupyter Notebook maken" border="true":::
 
 4. Omdat u de notebook met behulp van de PySpark-kernel hebt gemaakt, hoeft u niet expliciet contexten te maken. De Spark- en Hive-contexten worden automatisch voor u gemaakt tijdens het uitvoeren van de eerste codecel. Als eerste stap importeert u de typen die voor dit scenario zijn vereist. Plak hiertoe het volgende codefragment in een cel en druk op **SHIFT + ENTER**.
 
@@ -80,7 +80,7 @@ Als u een HDInsight-cluster hebt gemaakt met Data Lake Storage als extra opslag 
 
     Telkens wanneer u een taak in Jupyter uitvoert, toont de venstertitel van uw webbrowser de status **(Bezet)** samen met de notebooktitel. Ook ziet u een gevulde cirkel naast de **PySpark**-tekst in de rechterbovenhoek. Nadat de taak is voltooid, verandert deze in een lege cirkel.
 
-     ![Status van een Jupyter Notebook taak](./media/apache-spark-use-with-data-lake-store/hdinsight-jupyter-job-status.png "Status van een Jupyter Notebook taak")
+     :::image type="content" source="./media/apache-spark-use-with-data-lake-store/hdinsight-jupyter-job-status.png " alt-text="Status van een Jupyter Notebook taak" border="true":::
 
 5. Laad voorbeeld gegevens in een tijdelijke tabel met behulp van het **HVAC.csv** -bestand dat u naar het data Lake Storage gen1-account hebt gekopieerd. U kunt toegang krijgen tot de gegevens in het Data Lake Storage-account met behulp van het volgende URL-patroon.
 
@@ -129,11 +129,11 @@ Als u een HDInsight-cluster hebt gemaakt met Data Lake Storage als extra opslag 
     ```
 7. Nadat de taak is voltooid, wordt standaard de volgende uitvoer in tabelvorm weergegeven.
 
-      ![Tabeluitvoer van het queryresultaat](./media/apache-spark-use-with-data-lake-store/jupyter-tabular-output.png "Tabeluitvoer van het queryresultaat")
+      :::image type="content" source="./media/apache-spark-use-with-data-lake-store/jupyter-tabular-output.png " alt-text="Tabeluitvoer van het queryresultaat" border="true":::
 
      U kunt de resultaten ook in andere visualisaties bekijken. Zo ziet een gebiedsgrafiek voor dezelfde uitvoer er als volgt uit.
 
-     ![Gebiedsgrafiek van het queryresultaat](./media/apache-spark-use-with-data-lake-store/jupyter-area-output1.png "Gebiedsgrafiek van het queryresultaat")
+     :::image type="content" source="./media/apache-spark-use-with-data-lake-store/jupyter-area-output1.png " alt-text="Gebiedsgrafiek van het queryresultaat" border="true":::
 
 8. Wanneer u klaar bent met het uitvoeren van de toepassing, moet u de notebook afsluiten om de resources vrij te geven. Dit doet u door in het menu **Bestand** in de notebook te klikken op **Sluiten en stoppen**. Hiermee wordt de notebook afgesloten.
 

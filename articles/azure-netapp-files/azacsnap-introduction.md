@@ -14,16 +14,25 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 12/14/2020
 ms.author: phjensen
-ms.openlocfilehash: b168167ce4f44d87c396746cca3f271f95f83163
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 4ba679459686340396e0e4d65344295c0fa9c4be
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "97632683"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104869953"
 ---
 # <a name="what-is-azure-application-consistent-snapshot-tool-preview"></a>Wat is Azure-toepassing consistent momentopname programma (preview-versie)
 
-Azure-toepassing consistent snap shot tool (AzAcSnap) is een opdracht regel programma waarmee u de gegevens beveiliging voor data bases van derden (SAP HANA) in Linux-omgevingen (bijvoorbeeld SUSE en RHEL) kunt vereenvoudigen.  
+Azure-toepassing consistent snap shot tool (AzAcSnap) is een opdracht regel programma waarmee gegevens beveiliging kan worden uitgevoerd voor data bases van derden door het verwerken van alle indelingen die vereist zijn om ze in een toepassings consistente status te brengen voordat er een opslag momentopname wordt gemaakt, waarna deze wordt geretourneerd naar een operationele status.
+
+## <a name="supported-platforms-and-os"></a>Ondersteunde platforms en besturings systemen
+
+- **Databases**
+  - SAP HANA (Zie de [ondersteunings matrix](azacsnap-get-started.md#snapshot-support-matrix-from-sap) voor meer informatie)
+
+- **Besturings systemen**
+  - SUSE Linux Enterprise Server 12 +
+  - Red Hat Enterprise Linux 7 +
 
 ## <a name="benefits-of-using-azacsnap"></a>Voor delen van het gebruik van AzAcSnap
 

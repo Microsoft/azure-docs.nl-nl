@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/27/2020
 ms.author: jeedes
-ms.openlocfilehash: d13619b818e18c64d9882f9e3181824173403859
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 383b49a7363fdca9327d419f5bed092d489a95d5
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96181387"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104951807"
 ---
 # <a name="tutorial-integrate-wandera-radar-admin-with-azure-active-directory"></a>Zelfstudie: Wandera RADAR Admin integreren met Azure Active Directory
 
@@ -82,7 +82,8 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
     In het tekstvak **Antwoord-URL** typt u een URL met het volgende patroon: `https://radar.wandera.com/saml/acs/<tenant id>`
 
     > [!NOTE]
-    > De waarde is niet echt. Werk de waarde bij met de werkelijke antwoord-URL. Neem contact op met het [klantondersteuningsteam van Wandera RADAR Admin](https://www.wandera.com/about-wandera/contact/#supportsection) om de waarde op te halen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
+    > De waarde is niet echt. Werk de waarde bij met de werkelijke antwoord-URL. Neem contact op met het [klantondersteuningsteam van Wandera RADAR Admin](https://www.wandera.com/about-wandera/contact/#supportsection) om de waarde op te halen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal. Vervang het <tenant id> gedeelte van de bovenstaande URL zorgvuldig door de Tenant-id die wordt weer gegeven op de pagina **instellingen**  >  **beheer**  >  **eenmalige aanmelding** in uw Wandera-account.
+
 
 1. Ga op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** naar **XML-bestand met federatieve metagegevens** en selecteer **Downloaden** om het certificaat te downloaden. Sla dit vervolgens op de computer op.
 

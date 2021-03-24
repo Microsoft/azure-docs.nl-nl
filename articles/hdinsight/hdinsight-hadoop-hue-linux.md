@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 03/31/2020
-ms.openlocfilehash: 8d4663aac6af4abb8d9855d2f972965e997d9c92
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 97a8dd2476642e693b589b4046f612c5569b9c0b
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98945686"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104865125"
 ---
 # <a name="install-and-use-hue-on-hdinsight-hadoop-clusters"></a>Tint op HDInsight Hadoop-clusters installeren en gebruiken
 
@@ -80,17 +80,17 @@ U kunt slechts één gebruikers account hebben met kleur Toon op gewone clusters
    > [!NOTE]  
    > Wanneer u zich voor de eerste keer aanmeldt, wordt u gevraagd een account te maken om u aan te melden bij de tint Portal. De referenties die u hier opgeeft, zijn beperkt tot de portal en zijn niet gerelateerd aan de beheerders-of SSH-gebruikers referenties die u hebt opgegeven tijdens het inrichten van het cluster.
 
-    ![Aanmeldings venster van HDInsight-tint Portal](./media/hdinsight-hadoop-hue-linux/hdinsight-hue-portal-login.png "Referenties opgeven voor de Toon van de portal")
+    :::image type="content" source="./media/hdinsight-hadoop-hue-linux/hdinsight-hue-portal-login.png" alt-text="Aanmeldings venster van HDInsight-tint Portal":::
 
 ### <a name="run-a-hive-query"></a>Een Hive-query uitvoeren
 
 1. Selecteer in de portal voor kleur Toon **query-editors** en selecteer vervolgens **Hive** om de Hive-editor te openen.
 
-    ![Portal voor HDInsight-tinten gebruiken Hive-editor](./media/hdinsight-hadoop-hue-linux/hdinsight-hue-portal-use-hive.png "Hive gebruiken")
+    :::image type="content" source="./media/hdinsight-hadoop-hue-linux/hdinsight-hue-portal-use-hive.png" alt-text="Portal voor HDInsight-tinten gebruiken Hive-editor":::
 
 2. Op het tabblad **assistent** , onder **Data Base**, ziet u **hivesampletable**. Dit is een voorbeeld tabel die wordt geleverd met alle Hadoop-clusters in HDInsight. Voer een voorbeeld query in het rechterdeel venster in en Bekijk de uitvoer op het tabblad **resultaten** in het onderstaande deel venster, zoals wordt weer gegeven in de scherm opname.
 
-    ![Portal Hive-query voor HDInsight-tint](./media/hdinsight-hadoop-hue-linux/hdinsight-hue-portal-hive-query.png "Hive-query uitvoeren")
+    :::image type="content" source="./media/hdinsight-hadoop-hue-linux/hdinsight-hue-portal-hive-query.png" alt-text="Portal Hive-query voor HDInsight-tint":::
 
     U kunt ook het tabblad **grafiek** gebruiken om een visuele weer gave van het resultaat te bekijken.
 
@@ -99,7 +99,7 @@ U kunt slechts één gebruikers account hebben met kleur Toon op gewone clusters
 1. Selecteer in de portal voor kleur Toon **bestands browser** in de rechter bovenhoek van de menu balk.
 2. De bestands browser wordt standaard geopend in de **/User/myuser** -map. Selecteer de slash direct vóór de gebruikers lijst in het pad om naar de hoofdmap te gaan van de Azure storage-container die aan het cluster is gekoppeld.
 
-    ![Portal bestands browser voor HDInsight-tinten](./media/hdinsight-hadoop-hue-linux/hdinsight-hue-portal-file-browser.png "Bestands browser gebruiken")
+    :::image type="content" source="./media/hdinsight-hadoop-hue-linux/hdinsight-hue-portal-file-browser.png" alt-text="Portal bestands browser voor HDInsight-tinten":::
 
 3. Klik met de rechter muisknop op een bestand of map om de beschik bare bewerkingen weer te geven. Gebruik de knop **uploaden** in de rechter bovenhoek om bestanden te uploaden naar de huidige map. Gebruik de knop **Nieuw** om nieuwe bestanden of mappen te maken.
 
@@ -118,7 +118,7 @@ U kunt slechts één gebruikers account hebben met kleur Toon op gewone clusters
 
 1. Met Linux-clusters kunt u een scenario hebben waarin uw services worden uitgevoerd op de primaire hoofd knooppunt terwijl de Resource Manager kan worden uitgevoerd op de secundaire server. Dit scenario kan leiden tot fouten (zie hieronder) als u de details van actieve taken op het cluster wilt weer geven met behulp van tint. U kunt de taak Details echter bekijken wanneer de taak is voltooid.
 
-   ![Voorbeeld bericht van de kleur tint Portal](./media/hdinsight-hadoop-hue-linux/hdinsight-hue-portal-error.png "Fout met tint Portal")
+   :::image type="content" source="./media/hdinsight-hadoop-hue-linux/hdinsight-hue-portal-error.png" alt-text="Voorbeeld bericht van de kleur tint Portal":::
 
    Dit is te wijten aan een bekend probleem. Als tijdelijke oplossing wijzigt u Ambari zodat de actieve Resource Manager ook wordt uitgevoerd op de primaire hoofd knooppunt.
 

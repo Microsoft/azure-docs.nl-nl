@@ -5,12 +5,12 @@ ms.topic: quickstart
 ms.date: 03/16/2021
 ms.reviewer: astay; kraigb
 ms.custom: mvc, seodec18, devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 11b9ab8e954827cfcc73e440bee1023504e14057
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 094755ed6c018b3ac82d6f62a43f17e2536bbd9a
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104577609"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104953507"
 ---
 # <a name="configure-a-linux-python-app-for-azure-app-service"></a>Een Linux Python-app voor Azure App Service configureren
 
@@ -114,7 +114,7 @@ Bestaande webtoepassingen kunnen als volgt opnieuw worden geïmplementeerd in Az
 
 1. **App-opstartproces**: Raadpleeg de sectie [Opstartproces met container](#container-startup-process) verderop in dit artikel voor meer informatie over hoe App Service probeert om uw app uit te voeren. App Service maakt standaard gebruik van de Gunicorn-webserver, die de map met uw app-object of *wsgi.py* moet kunnen vinden. U kunt zo nodig [de opstartopdracht aanpassen](#customize-startup-command).
 
-1. **Doorlopende implementatie**: Stel continue implementatie in, zoals beschreven in [continue implementatie naar Azure App Service](deploy-continuous-deployment.md) als u Azure-pijplijnen of Kudu-implementatie gebruikt, of kies voor een [implementatie naar App Service met GitHub Actions](deploy-github-actions.md) als u GitHub Actions gebruikt.
+1. **Doorlopende implementatie**: Stel continue implementatie in, zoals beschreven in [continue implementatie naar Azure App Service](deploy-continuous-deployment.md) als u Azure-pijplijnen of Kudu-implementatie gebruikt, of kies voor een [implementatie naar App Service met GitHub Actions](./deploy-continuous-deployment.md) als u GitHub Actions gebruikt.
 
 1. **Aangepaste acties**: Als u acties wilt uitvoeren in de App Service-container die als host fungeert voor uw app, zoals Django-databasemigraties, kunt u [verbinding maken met de container via SSH](configure-linux-open-ssh-session.md). Zie voor een voorbeeld van het uitvoeren van Django-databasemigraties [Zelfstudie: Een Django-web-app implementeren met PostgreSQL - databasemigraties uitvoeren](tutorial-python-postgresql-app.md#43-run-django-database-migrations).
     - Wanneer u continue implementatie gebruikt, kunt u deze acties uitvoeren met achteraf gebouwde opdrachten, zoals beschreven in [De automatisering van bouwbewerkingen aanpassen](#customize-build-automation).

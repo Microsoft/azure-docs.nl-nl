@@ -6,12 +6,12 @@ ms.author: sumuth
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 09/21/2020
-ms.openlocfilehash: b664dd406a1ab90b4ea5e85005a69935f345c609
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: a7978410dbe28a5da5dae81cb380d118fe13a159
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102034656"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104869375"
 ---
 # <a name="server-concepts-in-azure-database-for-mysql-flexible-server-preview"></a>Server concepten in Azure Database for MySQL flexibele server (preview-versie)
 
@@ -55,7 +55,14 @@ Tijdens de tijd server wordt gestopt, kunnen er geen beheer bewerkingen worden u
 
 ## <a name="how-do-i-manage-a-server"></a>Hoe kan ik een server beheren?
 
-U kunt Azure Database for MySQL flexibele server beheren door gebruik te maken van de [Azure Portal](./quickstart-create-server-portal.md) of de [Azure cli](./quickstart-create-server-cli.md).
+U kunt het maken, verwijderen, configureren van de server parameter (My. cnf), schalen, netwerken, beveiliging, hoge Beschik baarheid, back-& herstel, bewaking van uw Azure Database for MySQL flexibele server met behulp van de [Azure Portal](./quickstart-create-server-portal.md) of de [Azure cli](./quickstart-create-server-cli.md). Daarnaast zijn de volgende opgeslagen procedures beschikbaar in Azure Database for MySQL om bepaalde database beheer taken uit te voeren die vereist zijn als supergebruikers bevoegdheid wordt niet ondersteund op de server.
+
+|**Naam van opgeslagen procedure**|**Invoerparameters**|**Uitvoer parameters**|**Opmerking over gebruik**|
+|-----|-----|-----|-----|
+|*mysql.az_kill*|processlist_id|N.v.t.|Gelijk aan- [`KILL CONNECTION`](https://dev.mysql.com/doc/refman/8.0/en/kill.html) opdracht. De verbinding die is gekoppeld aan de geleverde processlist_id na het beëindigen van een instructie die wordt uitgevoerd, wordt beëindigd.|
+|*mysql.az_kill_query*|processlist_id|N.v.t.|Gelijk aan- [`KILL QUERY`](https://dev.mysql.com/doc/refman/8.0/en/kill.html) opdracht. Hiermee wordt de instructie beëindigd die momenteel wordt uitgevoerd door de verbinding. De verbinding zelf blijft actief.|
+|*mysql.az_load_timezone*|N.v.t.|N.v.t.|Laadt [tijd zone tabellen](../howto-server-parameters.md#working-with-the-time-zone-parameter) zodat de `time_zone` para meter kan worden ingesteld op benoemde waarden (bijvoorbeeld "VS/Pacific").|
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

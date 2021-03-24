@@ -6,14 +6,14 @@ ms.author: sumuth
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: 1ae35d1ac35dacfab2690980d57973dce050382b
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 438ef806f6c59c6f23877a3d3110f22f08ca8713
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "93242854"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104863561"
 ---
-# <a name="private-link-for-azure-database-for-mysql"></a>Persoonlijke koppeling voor Azure Database for MySQL
+# <a name="private-link-for-azure-database-for-mysql"></a>Private Link voor Azure Database for MySQL
 
 Met een Private Link kunt u via een privé-eindpunt verbinding maken met verschillende PaaS-services in Azure. Met Azure Private Link worden Azure-services binnen uw persoonlijke virtuele network (VNet) geplaatst. De PaaS-resources kunnen worden geopend met behulp van het privé-IP-adres, net zoals elke andere resource op het VNet.
 
@@ -84,7 +84,7 @@ Zodra de netwerk beheerder het persoonlijke eind punt (PE) heeft gemaakt, kan de
 
 ## <a name="use-cases-of-private-link-for-azure-database-for-mysql"></a>Cases van een persoonlijke koppeling gebruiken voor Azure Database for MySQL
 
-Clients kunnen verbinding maken met het persoonlijke eind punt van hetzelfde VNet, gepeerd VNet in dezelfde regio, of via VNet-naar-VNet-verbindingen tussen regio's. Daarnaast kunnen clients via on-premises verbinding maken met behulp van ExpressRoute, privé peering of VPN-tunneling. Hieronder ziet u een vereenvoudigd diagram waarin de algemene gebruikscases worden weergegeven.
+Clients kunnen verbinding maken met het persoonlijke eind punt van hetzelfde VNet, [gepeerd vnet](../virtual-network/virtual-network-peering-overview.md) in dezelfde regio of in verschillende regio's, of via [vnet-naar-VNet-verbindingen](../vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal.md) tussen regio's. Daarnaast kunnen clients via on-premises verbinding maken met behulp van ExpressRoute, privé peering of VPN-tunneling. Hieronder ziet u een vereenvoudigd diagram waarin de algemene gebruikscases worden weergegeven.
 
 :::image type="content" source="media/concepts-data-access-and-security-private-link/show-private-link-overview.png" alt-text="het overzicht van het persoonlijke eind punt selecteren":::
 

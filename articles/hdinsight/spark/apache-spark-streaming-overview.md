@@ -5,18 +5,18 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/23/2020
-ms.openlocfilehash: bde6c5b2bad12df8642dd3c9b4a49548f7bc9a6d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: e8a9f771827b870f493d6b0d7590feee7fc52b20
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98929522"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104870242"
 ---
 # <a name="overview-of-apache-spark-streaming"></a>Overzicht van Apache Spark-streaming
 
 [Apache Spark](https://spark.apache.org/) Streaming biedt verwerking van gegevens stromen in HDInsight Spark-clusters. Met een garantie dat elke invoer gebeurtenis precies één keer wordt verwerkt, zelfs als er een storing in een knoop punt optreedt. Een Spark-stroom is een langlopende taak waarmee invoer gegevens worden ontvangen van een groot aantal verschillende bronnen, waaronder Azure Event Hubs. Ook: Azure IoT Hub, Apache Kafka, Apache Flume, Twitter, `ZeroMQ` , onbewerkte TCP-sockets of bewaken Apache HADOOP garen bestands systeem. In tegens telling tot een enkel gebeurtenis gerichte proces, voert een Spark-stream batches invoer gegevens uit in tijd Vensters. Zoals een segment van twee seconden, en transformeert elke batch met gegevens met behulp van de bewerkingen kaart, verminderen, samen voegen en extra heren. De Spark-stroom schrijft vervolgens de getransformeerde gegevens uit naar bestands systeem, data bases, Dash boards en de-console.
 
-![Stroom verwerking met HDInsight en Spark-streaming](./media/apache-spark-streaming-overview/hdinsight-spark-streaming.png)
+:::image type="content" source="./media/apache-spark-streaming-overview/hdinsight-spark-streaming.png" alt-text="Stroom verwerking met HDInsight en Spark-streaming" border="false":::
 
 Spark-streaming-toepassingen moeten een fractie van een seconde wachten op het verzamelen `micro-batch` van alle gebeurtenissen voordat deze batch wordt verzonden voor verwerking. Daarentegen wordt elke gebeurtenis direct verwerkt door een gebeurtenis gerichte toepassing. De latentie van Spark-streaming is doorgaans een paar seconden. De voor delen van de micro batch-benadering zijn een efficiëntere verwerking van gegevens en complexe berekeningen.
 
@@ -30,7 +30,7 @@ Begin met één gebeurtenis, zeg een Tempe ratuur bij het lezen van een verbonde
 
 Elke RDD vertegenwoordigt gebeurtenissen die worden verzameld over een door de gebruiker gedefinieerde periode met de naam *batch-interval*. Als elke batch-interval is verstreken, wordt er een nieuw RDD gemaakt dat alle gegevens uit dat interval bevat. De doorlopende set Rdd's wordt verzameld in een DStream. Als het batch-interval bijvoorbeeld één seconde lang is, verzendt uw DStream elke seconde een batch met een RDD die alle gegevens bevat die tijdens die seconde zijn opgenomen. Bij het verwerken van de DStream wordt de temperatuur gebeurtenis weer gegeven in een van deze batches. Een Spark-streaming-toepassing verwerkt de batches die de gebeurtenissen bevatten en werkt uiteindelijk op de gegevens die zijn opgeslagen in elke RDD.
 
-![Voor beeld van DStream met een temperatuur gebeurtenis](./media/apache-spark-streaming-overview/hdinsight-spark-streaming-example.png)
+:::image type="content" source="./media/apache-spark-streaming-overview/hdinsight-spark-streaming-example.png" alt-text="Voor beeld van DStream met een temperatuur gebeurtenis" border="false":::
 
 ## <a name="structure-of-a-spark-streaming-application"></a>Structuur van een Spark-streaming-toepassing
 
@@ -168,9 +168,9 @@ Als u statistische berekeningen wilt uitvoeren op uw DStream over een bepaalde p
 
 Schuif vensters kunnen elkaar overlappen, maar u kunt bijvoorbeeld een venster met een lengte van twee seconden definiëren dat elke seconde een dia bevat. Deze actie betekent elke keer dat u een aggregatie berekening uitvoert, het venster bevat gegevens van de laatste één seconde van het vorige venster. En nieuwe gegevens in de volgende seconde.
 
-![Voor beeld van een begin venster met temperatuur gebeurtenissen](./media/apache-spark-streaming-overview/hdinsight-spark-streaming-window-01.png)
+:::image type="content" source="./media/apache-spark-streaming-overview/hdinsight-spark-streaming-window-01.png" alt-text="Voor beeld van een begin venster met temperatuur gebeurtenissen" border="false":::
 
-![Voorbeeld venster met temperatuur gebeurtenissen na het schuiven](./media/apache-spark-streaming-overview/hdinsight-spark-streaming-window-02.png)
+:::image type="content" source="./media/apache-spark-streaming-overview/hdinsight-spark-streaming-window-02.png" alt-text="Voorbeeld venster met temperatuur gebeurtenissen na het schuiven" border="false":::
 
 In het volgende voor beeld wordt de code die gebruikmaakt van de DummySource, gebruikt om de batches te verzamelen in een venster met een duur van één minuut en een dia van één minuut.
 
@@ -244,7 +244,7 @@ Voor het leveren van tolerantie en fout tolerantie is de controle punten voor Sp
 
 Doorgaans bouwt u een Spark-streaming-toepassing lokaal op in een JAR-bestand. Implementeer deze vervolgens in Spark op HDInsight door het JAR-bestand te kopiëren naar de standaard Attached Storage. U kunt de toepassing starten met de LIVY REST-Api's die beschikbaar zijn vanaf uw cluster met behulp van een POST-bewerking. De hoofd tekst van het bericht bevat een JSON-document dat het pad naar uw JAR verschaft. En de naam van de klasse waarvan de methode main de streaming-toepassing definieert en uitvoert, en optioneel de resource vereisten van de taak (zoals het aantal uitvoerendeers, het geheugen en de kernen). Daarnaast zijn er configuratie-instellingen vereist voor de toepassings code.
 
-![Een Spark streaming-toepassing implementeren](./media/apache-spark-streaming-overview/hdinsight-spark-streaming-livy.png)
+:::image type="content" source="./media/apache-spark-streaming-overview/hdinsight-spark-streaming-livy.png" alt-text="Een Spark streaming-toepassing implementeren" border="false":::
 
 De status van alle toepassingen kan ook worden gecontroleerd met een GET-aanvraag voor een LIVY-eind punt. Ten slotte kunt u een actieve toepassing beëindigen door een DELETE-aanvraag uit te geven voor het LIVY-eind punt. Zie [externe taken met Apache LIVY](apache-spark-livy-rest-interface.md) voor meer informatie over de LIVY-API
 

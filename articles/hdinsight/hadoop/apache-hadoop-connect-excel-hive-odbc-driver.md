@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017,seoapr2020
 ms.date: 04/22/2020
-ms.openlocfilehash: 2c528859ea5abc6267c10a2ede9c2ca99f84e22f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: c7125e25c9716a9934c97f9f8f85666d264d5f89
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98946794"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104866944"
 ---
 # <a name="connect-excel-to-apache-hadoop-in-azure-hdinsight-with-the-microsoft-hive-odbc-driver"></a>Excel verbinden met Apache Hadoop in Azure HDIsight met behulp van het Hive ODBC-stuurprogramma van Microsoft
 
@@ -37,7 +37,7 @@ De volgende stappen laten zien hoe u een Hive-ODBC-gegevens bron maakt.
 
 1. Ga vanuit Windows naar **Start > Windows-beheer programma's > ODBC-gegevens bronnen (32-bits)/(64-bits)**.  Met deze actie wordt het venster **ODBC-gegevens bron beheer** geopend.
 
-    ![ODBC-gegevensbronbeheerder](./media/apache-hadoop-connect-excel-hive-odbc-driver/simbahiveodbc-datasourceadmin1.png "Een DSN configureren met behulp van ODBC-gegevensbronbeheerder")
+   :::image type="content" source="./media/apache-hadoop-connect-excel-hive-odbc-driver/simbahiveodbc-datasourceadmin1.png" alt-text="ODBC-gegevensbronbeheerder" border="true":::
 
 1. Op het tabblad **gebruikers-DSN** selecteert u **Toevoegen** om het venster **Nieuwe gegevensbron maken** te openen.
 
@@ -63,7 +63,7 @@ De volgende stappen laten zien hoe u een Hive-ODBC-gegevens bron maakt.
    |  Opgehaalde rijen per blok |Bij het ophalen van een groot aantal records is het afstemmen van deze parameter mogelijk vereist om te zorgen voor optimale prestaties. |
    |  Standaardlengte van een tekenreekskolom, binaire kolomlengte, decimale kolomschaal |De lengten en precisie van het gegevenstype kunnen van invloed zijn op hoe gegevens worden geretourneerd. Ze leiden ertoe dat onjuiste gegevens worden geretourneerd vanwege verlies van nauw keurigheid en, of afkap ping. |
 
-    ![Geavanceerde DSN-configuratieopties](./media/apache-hadoop-connect-excel-hive-odbc-driver/hiveodbc-datasource-advancedoptions1.png "Geavanceerde DSN-configuratieopties")
+    :::image type="content" source="./media/apache-hadoop-connect-excel-hive-odbc-driver/hiveodbc-datasource-advancedoptions1.png" alt-text="Geavanceerde DSN-configuratieopties" border="true":::
 
 1. Selecteer **Testen** om de gegevensbron te testen. Wanneer de gegevens bron op de juiste wijze is geconfigureerd, toont het test resultaat de uitkomst **.**
 
@@ -81,7 +81,7 @@ In de volgende stappen wordt beschreven hoe u gegevens uit een Hive-tabel import
 
 2. Ga op het tabblad **gegevens** naar **gegevens ophalen**  >  **uit andere bronnen**  >  **van ODBC** om het venster **van ODBC** te starten.
 
-    ![Wizard Excel-gegevens verbinding openen](./media/apache-hadoop-connect-excel-hive-odbc-driver/simbahiveodbc-excel-dataconnection1.png "Wizard Excel-gegevens verbinding openen")
+   :::image type="content" source="./media/apache-hadoop-connect-excel-hive-odbc-driver/simbahiveodbc-excel-dataconnection1.png" alt-text="Wizard Excel-gegevens verbinding openen" border="true":::
 
 3. Selecteer in de vervolg keuzelijst de naam van de gegevens bron die u in de laatste sectie hebt gemaakt en selecteer vervolgens **OK**.
 
@@ -89,7 +89,7 @@ In de volgende stappen wordt beschreven hoe u gegevens uit een Hive-tabel import
 
 5. Navigeer vanuit **Navigator** naar **Hive**  >  **default**  >  **hivesampletable** en selecteer **Load**. Het duurt enkele minuten voordat de gegevens in Excel worden geïmporteerd.
 
-    ![ODBC-Navigator Excel-Hive van HDInsight](./media/apache-hadoop-connect-excel-hive-odbc-driver/hdinsight-hive-odbc-navigator.png "ODBC-Navigator Excel-Hive van HDInsight")
+   :::image type="content" source="./media/apache-hadoop-connect-excel-hive-odbc-driver/hdinsight-hive-odbc-navigator.png" alt-text="ODBC-Navigator Excel-Hive van HDInsight" border="true":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

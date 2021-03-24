@@ -11,12 +11,12 @@ ms.author: nilsp
 author: NilsPohlmann
 ms.date: 07/31/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: e2b5a3322f633ca8301357c2186d78d3ac437ae2
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 2a92fa8fd242482585ab3785e99f8239548ce369
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102521965"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104868338"
 ---
 # <a name="define-machine-learning-pipelines-in-yaml"></a>machine learning pijp lijnen definiëren in YAML
 
@@ -120,7 +120,7 @@ In stappen wordt een reken omgeving gedefinieerd, samen met de bestanden die in 
 | YAML-sleutel | Beschrijving |
 | ----- | ----- |
 | `script_name` | De naam van het U-SQL-script (ten opzichte van de `source_directory` ). |
-| `compute_target` | Het Azure Data Lake Compute-doel dat moet worden gebruikt voor deze stap. |
+| `compute` | Het Azure Data Lake Compute-doel dat moet worden gebruikt voor deze stap. |
 | `parameters` | [Para meters](#parameters) voor de pijp lijn. |
 | `inputs` | Invoer kan [InputPortBinding](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.inputportbinding), [DataReference](#data-reference), [PortDataReference](/python/api/azureml-pipeline-core/azureml.pipeline.core.portdatareference), [PipelineData](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata), [DataSet](/python/api/azureml-core/azureml.core.dataset%28class%29), [DatasetDefinition](/python/api/azureml-core/azureml.data.dataset_definition.datasetdefinition)of [PipelineDataset](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedataset)zijn. |
 | `outputs` | De uitvoer kan [PipelineData](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata) of [OutputPortBinding](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.outputportbinding)zijn. |
@@ -170,7 +170,7 @@ pipeline:
 
 | YAML-sleutel | Beschrijving |
 | ----- | ----- |
-| `compute_target` | Het Azure Batch Compute-doel dat moet worden gebruikt voor deze stap. |
+| `compute` | Het Azure Batch Compute-doel dat moet worden gebruikt voor deze stap. |
 | `inputs` | Invoer kan [InputPortBinding](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.inputportbinding), [DataReference](#data-reference), [PortDataReference](/python/api/azureml-pipeline-core/azureml.pipeline.core.portdatareference), [PipelineData](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata), [DataSet](/python/api/azureml-core/azureml.core.dataset%28class%29), [DatasetDefinition](/python/api/azureml-core/azureml.data.dataset_definition.datasetdefinition)of [PipelineDataset](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedataset)zijn. |
 | `outputs` | De uitvoer kan [PipelineData](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata) of [OutputPortBinding](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.outputportbinding)zijn. |
 | `source_directory` | Map die de module binaire bestanden, uitvoer bare onderdelen, enzovoort bevat. |
@@ -224,7 +224,7 @@ pipeline:
 
 | YAML-sleutel | Beschrijving |
 | ----- | ----- |
-| `compute_target` | Het Azure Databricks Compute-doel dat moet worden gebruikt voor deze stap. |
+| `compute` | Het Azure Databricks Compute-doel dat moet worden gebruikt voor deze stap. |
 | `inputs` | Invoer kan [InputPortBinding](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.inputportbinding), [DataReference](#data-reference), [PortDataReference](/python/api/azureml-pipeline-core/azureml.pipeline.core.portdatareference), [PipelineData](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata), [DataSet](/python/api/azureml-core/azureml.core.dataset%28class%29), [DatasetDefinition](/python/api/azureml-core/azureml.data.dataset_definition.datasetdefinition)of [PipelineDataset](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedataset)zijn. |
 | `outputs` | De uitvoer kan [PipelineData](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata) of [OutputPortBinding](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.outputportbinding)zijn. |
 | `run_name` | De naam in Databricks voor deze uitvoering. |
@@ -278,7 +278,7 @@ pipeline:
 
 | YAML-sleutel | Beschrijving |
 | ----- | ----- |
-| `compute_target` | Het Azure Data Factory Compute-doel dat moet worden gebruikt voor deze stap. |
+| `compute` | Het Azure Data Factory Compute-doel dat moet worden gebruikt voor deze stap. |
 | `source_data_reference` | Invoer verbinding die fungeert als bron van bewerkingen voor gegevens overdracht. Ondersteunde waarden zijn [InputPortBinding](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.inputportbinding), [DataReference](#data-reference), [PortDataReference](/python/api/azureml-pipeline-core/azureml.pipeline.core.portdatareference), [PipelineData](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata), [DataSet](/python/api/azureml-core/azureml.core.dataset%28class%29), [DatasetDefinition](/python/api/azureml-core/azureml.data.dataset_definition.datasetdefinition)of [PipelineDataset](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedataset). |
 | `destination_data_reference` | Invoer verbinding die fungeert als bestemming voor de overdracht van gegevens. Ondersteunde waarden zijn [PipelineData](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata) en [OutputPortBinding](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.outputportbinding). |
 | `allow_reuse` | Hiermee wordt bepaald of de stap eerdere resultaten opnieuw moet gebruiken wanneer deze opnieuw wordt uitgevoerd met dezelfde instellingen. |

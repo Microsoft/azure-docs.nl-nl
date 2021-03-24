@@ -6,12 +6,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seodec18,seoapr2020, contperf-fy21q2
 ms.date: 10/30/2020
-ms.openlocfilehash: 15869a547ec5debee939c956d7495bfa58357555
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 6f478b97464cd47e9d0e04bfe83bd48a2b3bfe7c
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98946924"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104867097"
 ---
 # <a name="configure-hdinsight-clusters-for-azure-active-directory-integration-with-enterprise-security-package"></a>HDInsight-clusters configureren voor integratie met Azure Active Directory met Enterprise Security Package
 
@@ -70,7 +70,7 @@ New-SelfSignedCertificate -Subject contoso100.onmicrosoft.com `
 
 Bekijk de status van Azure Active Directory Domain Services door de **status** te selecteren in de categorie **beheren** . Zorg ervoor dat de status van de Azure-AD DS groen is (wordt uitgevoerd) en de synchronisatie is voltooid.
 
-![Status van Azure AD DS](./media/apache-domain-joined-configure-using-azure-adds/hdinsight-aadds-health.png)
+:::image type="content" source="./media/apache-domain-joined-configure-using-azure-adds/hdinsight-aadds-health.png" alt-text="Status van Azure AD DS" border="true":::
 
 ### <a name="create-and-authorize-a-managed-identity"></a>Een beheerde identiteit maken en autoriseren
 
@@ -82,7 +82,7 @@ Als u ESP-clusters wilt instellen, moet u een door de gebruiker toegewezen behee
 
 Wijs vervolgens de rol van **HDInsight Domain Services-Inzender** toe aan de beheerde identiteit in **toegangs beheer** voor Azure AD DS. U hebt Azure AD DS-beheerders bevoegdheden nodig om deze roltoewijzing te kunnen maken.
 
-![Toegangs beheer Azure Active Directory Domain Services](./media/apache-domain-joined-configure-using-azure-adds/hdinsight-configure-managed-identity.png)
+:::image type="content" source="./media/apache-domain-joined-configure-using-azure-adds/hdinsight-configure-managed-identity.png" alt-text="Toegangs beheer Azure Active Directory Domain Services" border="true":::
 
 Als u de functie voor het toewijzen van de **HDInsight Domain Services-Inzender** hebt, zorgt u ervoor dat deze identiteit `on behalf of` over de juiste () toegang beschikt voor de bewerkingen van domein Services op het Azure AD DS domein. Deze bewerkingen zijn onder andere het maken en verwijderen van organisatie-eenheden.
 
@@ -90,7 +90,7 @@ Wanneer de beheerde identiteit de rol krijgt, beheert de Azure AD DS-beheerder w
 
 De Azure AD DS-beheerder kan bijvoorbeeld deze rol toewijzen aan de groep **MarketingTeam** voor de beheerde **sjmsi** -identiteit. Er wordt een voor beeld weer gegeven in de volgende afbeelding. Deze toewijzing zorgt ervoor dat de juiste personen in de organisatie de beheerde identiteit kunnen gebruiken om ESP-clusters te maken.
 
-![Roltoewijzing beheerde identiteits operator voor HDInsight](./media/apache-domain-joined-configure-using-azure-adds/hdinsight-managed-identity-operator-role-assignment.png)
+:::image type="content" source="./media/apache-domain-joined-configure-using-azure-adds/hdinsight-managed-identity-operator-role-assignment.png" alt-text="Roltoewijzing beheerde identiteits operator voor HDInsight" border="true":::
 
 ### <a name="network-configuration"></a>Netwerkconfiguratie
 
@@ -99,17 +99,17 @@ De Azure AD DS-beheerder kan bijvoorbeeld deze rol toewijzen aan de groep **Mark
 
 Schakel Azure AD DS in. Vervolgens wordt een lokale Domain Name System (DNS)-server uitgevoerd op de Active Directory virtuele machines (Vm's). Configureer uw Azure AD DS virtuele netwerk voor het gebruik van deze aangepaste DNS-servers. Als u de juiste IP-adressen wilt vinden, selecteert u **Eigenschappen** in de categorie **beheren** en kijkt u onder **IP-adres op virtueel netwerk**.
 
-![IP-adressen voor lokale DNS-servers zoeken](./media/apache-domain-joined-configure-using-azure-adds/hdinsight-aadds-dns1.png)
+:::image type="content" source="./media/apache-domain-joined-configure-using-azure-adds/hdinsight-aadds-dns1.png" alt-text="IP-adressen voor lokale DNS-servers zoeken" border="true":::
 
 Wijzig de configuratie van de DNS-servers in het virtuele netwerk van Azure AD DS. Als u deze aangepaste Ip's wilt gebruiken, selecteert u **DNS-servers** in de categorie **instellingen** . Vervolgens selecteert u de optie **aangepast** , voert u het eerste IP-adres in het tekstvak in en selecteert u **Opslaan**. Voeg meer IP-adressen toe aan de hand van dezelfde stappen.
 
-![De DNS-configuratie van het virtuele netwerk bijwerken](./media/apache-domain-joined-configure-using-azure-adds/hdinsight-aadds-vnet-configuration.png)
+:::image type="content" source="./media/apache-domain-joined-configure-using-azure-adds/hdinsight-aadds-vnet-configuration.png" alt-text="De DNS-configuratie van het virtuele netwerk bijwerken" border="true":::
 
 Het is eenvoudiger om zowel het Azure AD DS-exemplaar als het HDInsight-cluster in hetzelfde virtuele Azure-netwerk te plaatsen. Als u andere virtuele netwerken wilt gebruiken, moet u deze virtuele netwerken koppelen zodat de domein controller zichtbaar is voor HDInsight Vm's. Zie [peering van virtuele netwerken](../../virtual-network/virtual-network-peering-overview.md)voor meer informatie.
 
 Nadat de virtuele netwerken zijn gekoppeld, configureert u het virtuele HDInsight-netwerk voor het gebruik van een aangepaste DNS-server. En voer de Azure AD DS privé Ip's in als de DNS-server adressen. Als beide virtuele netwerken dezelfde DNS-servers gebruiken, wordt uw aangepaste domein naam omgezet in het juiste IP-adres en is deze bereikbaar vanaf HDInsight. Als uw domein naam bijvoorbeeld is `contoso.com` , moet na deze stap `ping contoso.com` worden omgezet naar het juiste Azure AD DS IP-adres.
 
-![Aangepaste DNS-servers configureren voor een gekoppeld virtueel netwerk](./media/apache-domain-joined-configure-using-azure-adds/hdinsight-aadds-peered-vnet-configuration.png)
+:::image type="content" source="./media/apache-domain-joined-configure-using-azure-adds/hdinsight-aadds-peered-vnet-configuration.png" alt-text="Aangepaste DNS-servers configureren voor een gekoppeld virtueel netwerk" border="true":::
 
 Als u regels voor netwerk beveiligings groepen (NSG) in uw HDInsight-subnet gebruikt, moet u de [vereiste ip's](../hdinsight-management-ip-addresses.md) toestaan voor zowel binnenkomend als uitgaand verkeer.
 
@@ -126,11 +126,11 @@ U kunt de functie [HDINSIGHT id Broker](identity-broker.md) ook inschakelen tijd
 > [!NOTE]  
 > De eerste zes tekens van de ESP-cluster namen moeten uniek zijn in uw omgeving. Als u bijvoorbeeld meerdere ESP-clusters in verschillende virtuele netwerken hebt, kiest u een naam Conventie die ervoor zorgt dat de eerste zes tekens op de cluster namen uniek zijn.
 
-![Domein validatie voor Azure HDInsight Enterprise Security Package](./media/apache-domain-joined-configure-using-azure-adds/azure-portal-cluster-security-networking-esp.png)
+:::image type="content" source="./media/apache-domain-joined-configure-using-azure-adds/azure-portal-cluster-security-networking-esp.png" alt-text="Domein validatie voor Azure HDInsight Enterprise Security Package" border="true":::
 
 Nadat u ESP hebt ingeschakeld, worden veelvoorkomende onjuiste configuratie-items die betrekking hebben op Azure AD DS automatisch gedetecteerd en gevalideerd. Nadat u deze fouten hebt opgelost, kunt u door gaan met de volgende stap.
 
-![Domein validatie van Azure HDInsight Enterprise Security Package is mislukt](./media/apache-domain-joined-configure-using-azure-adds/azure-portal-cluster-security-networking-esp-error.png)
+:::image type="content" source="./media/apache-domain-joined-configure-using-azure-adds/azure-portal-cluster-security-networking-esp-error.png" alt-text="Domein validatie van Azure HDInsight Enterprise Security Package is mislukt" border="true":::
 
 Wanneer u een HDInsight-cluster met ESP maakt, moet u de volgende para meters opgeven:
 
@@ -142,7 +142,7 @@ Wanneer u een HDInsight-cluster met ESP maakt, moet u de volgende para meters op
 
 De beheerde identiteit die u hebt gemaakt, kan worden gekozen in de vervolg keuzelijst door de **gebruiker toegewezen beheerde identiteit** wanneer u een nieuw cluster maakt.
 
-![Beheerde identiteit van Azure HDInsight ESP Active Directory Domain Services](./media/apache-domain-joined-configure-using-azure-adds/azure-portal-cluster-security-networking-identity.png).
+:::image type="content" source="./media/apache-domain-joined-configure-using-azure-adds/azure-portal-cluster-security-networking-identity.png" alt-text="Beheerde identiteit van Azure HDINSIGHT ESP Active Directory Domain Services" border="true":::.
 
 ## <a name="next-steps"></a>Volgende stappen
 

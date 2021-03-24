@@ -6,14 +6,14 @@ ms.author: ambhatna
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 09/21/2020
-ms.openlocfilehash: 24a8dd4d21cb6ab6edeb985db4e6e6a1349a758d
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 2e66b27f7f0c731e17bb9811e2376bbe09c1bc12
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "90936650"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104950141"
 ---
-# <a name="encrypted-connectivity-using-transport-layer-security-tls-12-in-azure-database-for-mysql---flexible-server"></a>Versleutelde connectiviteit met Transport Layer Security (TLS 1,2) in Azure Database for MySQL-flexibele server
+# <a name="connect-to-azure-database-for-mysql---flexible-server-over-tls12ssl"></a>Verbinding maken met Azure Database for MySQL-flexibele server via TLS 1.2/SSL
 
 > [!IMPORTANT]
 > Azure Database for MySQL Flexible Server is momenteel beschikbaar als openbare preview
@@ -22,8 +22,10 @@ Azure Database for MySQL flexibele server ondersteunt het verbinden van uw clien
 
 Azure Database for MySQL flexibele server ondersteunt alleen versleutelde verbindingen met behulp van Transport Layer Security (TLS 1,2) en alle binnenkomende verbindingen met TLS 1,0 en TLS 1,1 worden geweigerd. Voor alle flexibele servers is het afdwingen van TLS-verbindingen ingeschakeld en u kunt TLS/SSL niet uitschakelen om verbinding te maken met een flexibele server.
 
-## <a name="applications-that-require-certificate-verification-for-tlsssl-connectivity"></a>Toepassingen waarvoor certificaat verificatie is vereist voor TLS/SSL-connectiviteit
-In sommige gevallen vereist toepassingen een lokaal certificaat bestand dat is gegenereerd op basis van een certificaat bestand van een vertrouwde certificerings instantie (CA) om veilig verbinding te kunnen maken. Azure Database for MySQL flexibele server gebruikt *DigiCert globale basis certificerings instantie*. Down load dit certificaat dat nodig is om te communiceren via SSL van [DigiCert Global root CA](https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem) en sla het certificaat bestand op de gewenste locatie op. In deze zelfstudie wordt bijvoorbeeld `c:\ssl` gebruikt.
+## <a name="download-the-public-ssl-certificate"></a>Het open bare SSL-certificaat downloaden
+Als u met uw appliations wilt gebruiken, moet u het [open bare SSL-certificaat](https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem)downloaden.
+
+Sla het certificaat bestand op de gewenste locatie op. Deze zelf studie maakt bijvoorbeeld gebruik `c:\ssl` `\var\www\html\bin` van of in uw lokale omgeving of de client omgeving waar uw toepassing wordt gehost. Hierdoor kunnen toepassingen veilig verbinding maken met de data base via SSL. 
 
 ### <a name="connect-using-mysql-command-line-client-with-tlsssl"></a>Verbinding maken met behulp van de MySQL-opdracht regel client met TLS/SSL
 
@@ -58,6 +60,16 @@ Voor sommige toepassings raamwerken die gebruikmaken van MySQL voor hun database
 Verbindings reeksen die vooraf zijn gedefinieerd op de pagina verbindings reeksen die beschikbaar zijn voor uw server in de Azure Portal bevatten de vereiste para meters voor algemene talen om verbinding te maken met uw database server met behulp van TLS/SSL. De TLS/SSL-para meter varieert op basis van de connector. Bijvoorbeeld "useSSL = True", "sslmode = required" of "ssl_verify_cert = True" en andere variaties.
 
 Als u een versleutelde verbinding met uw flexibele server via TLS/SSL vanuit uw toepassing tot stand wilt brengen, raadpleegt u de volgende code voorbeelden:
+
+### <a name="wordpress"></a>WordPress
+Down load het [open bare SSL-certificaat](https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem) en voeg de volgende regels toe in wp-config. php na de regel ```// ** MySQL settings - You can get this info from your web host ** //``` .
+
+```php
+//** Connect with SSL** //
+define('MYSQL_CLIENT_FLAGS', MYSQLI_CLIENT_SSL);
+//** SSL CERT **//
+define('MYSQL_SSL_CERT','/FULLPATH/on-client/to/DigiCertGlobalRootCA.crt.pem');
+```
 
 ### <a name="php"></a>PHP
 

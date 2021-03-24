@@ -12,12 +12,12 @@ ms.date: 03/16/2021
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 71eaccd615f5c3460e7b48b2e92d5f874c8de12e
-ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
+ms.openlocfilehash: 7269a2435715834a2c1e6723de3fdc6e72eaad5f
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104772107"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104955445"
 ---
 # <a name="azure-ad-connect-version-release-history"></a>Azure AD Connect: release geschiedenis van versie
 Het Azure Active Directory (Azure AD)-team werkt Azure AD Connect regel matig bij met nieuwe functies en functionaliteit. Niet alle toevoegingen zijn van toepassing op alle doel groepen.
@@ -82,6 +82,7 @@ Volg deze link voor meer informatie over [automatische upgrade](how-to-connect-i
      - Als de gekloonde aangepaste synchronisatie regel geen e-mail-en uitwisselings kenmerken stroomt, worden deze kenmerken door nieuwe Exchange-synchronisatie regel toegevoegd.
  - Ondersteuning toegevoegd voor [selectieve wachtwoord-hash-synchronisatie](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-selective-password-hash-synchronization)
  - De nieuwe cmdlet voor het [synchroniseren van enkelvoudige objecten](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-single-object-sync)is toegevoegd. Gebruik deze cmdlet om problemen met de Azure AD Connect synchronisatie configuratie op te lossen. 
+ -  Azure AD Connect ondersteunt nu de rol van de hybride identiteits beheerder voor het configureren van de service.
  - De AADConnectHealth-agent is bijgewerkt naar 3.1.83.0
  - Nieuwe versie van de [ADSyncTools Power shell-module](https://docs.microsoft.com/azure/active-directory/hybrid/reference-connect-adsynctools), met diverse nieuwe of verbeterde cmdlets. 
  

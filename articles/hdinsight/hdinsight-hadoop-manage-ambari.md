@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 01/12/2021
-ms.openlocfilehash: 087f284bed7ab0c9eb551c1629ab4f9196c80d76
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 1b4570b09994f292de2b175396e4b6d1882658d9
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98945699"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104866485"
 ---
 # <a name="manage-hdinsight-clusters-by-using-the-apache-ambari-web-ui"></a>HDInsight-clusters beheren met behulp van de Apache Ambari-webinterface
 
@@ -44,7 +44,7 @@ Wanneer u verbinding maakt met de Ambari-webgebruikersinterface, wordt u gevraag
 
 Wanneer de pagina wordt geopend, ziet u de balk aan de bovenkant. Deze balk bevat de volgende informatie en besturings elementen:
 
-![Overzicht van Apache Ambari-dash board](./media/hdinsight-hadoop-manage-ambari/apache-ambari-dashboard.png)
+:::image type="content" source="./media/hdinsight-hadoop-manage-ambari/apache-ambari-dashboard.png" alt-text="Overzicht van Apache Ambari-dash board":::
 
 |Item |Beschrijving |
 |---|---|
@@ -73,15 +73,15 @@ Bij andere waarschuwingen dan **OK** wordt **het aantal waarschuwingen aan** de 
 
 Waarschuwingen zijn ingedeeld in verschillende standaard groepen, die kunnen worden weer gegeven op de pagina **waarschuwingen** .
 
-![Pagina overzicht van Apache Ambari-waarschuwingen](./media/hdinsight-hadoop-manage-ambari/hdinsight-alerts-page.png)
+:::image type="content" source="./media/hdinsight-hadoop-manage-ambari/hdinsight-alerts-page.png" alt-text="Pagina overzicht van Apache Ambari-waarschuwingen":::
 
 U kunt de groepen beheren via het menu **acties** en vervolgens **waarschuwings groepen beheren** selecteren.
 
-![Apache Ambari-waarschuwings groepen beheren](./media/hdinsight-hadoop-manage-ambari/ambari-manage-alerts.png)
+:::image type="content" source="./media/hdinsight-hadoop-manage-ambari/ambari-manage-alerts.png" alt-text="Apache Ambari-waarschuwings groepen beheren":::
 
 U beheert waarschuwings methoden en u maakt waarschuwings meldingen in het menu **acties** door __meldingen beheren__ te selecteren. Alle huidige meldingen worden weer gegeven. Hier kunt u meldingen maken. Meldingen kunnen worden verzonden via **e-mail** of **SNMP** wanneer specifieke combi Naties van waarschuwingen en ernst optreden. U kunt bijvoorbeeld een e-mail bericht verzenden wanneer een van de waarschuwingen in de **standaard groep garen** is ingesteld op **kritiek**.
 
-![Apache Ambari-waarschuwing maken](./media/hdinsight-hadoop-manage-ambari/create-alert-notification.png)
+:::image type="content" source="./media/hdinsight-hadoop-manage-ambari/create-alert-notification.png" alt-text="Apache Ambari-waarschuwing maken":::
 
 Ten slotte kunt u met het selecteren van __instellingen voor waarschuwingen beheren__ in het menu __acties__ instellen hoe vaak een waarschuwing moet worden gegeven voordat een melding wordt verzonden. Deze instelling kan worden gebruikt om meldingen voor tijdelijke fouten te voor komen.
 
@@ -91,29 +91,29 @@ Zie [Configure Apache Ambari Email Notifications in azure HDInsight](./apache-am
 
 Het tabblad **metrische gegevens** van het dash board bevat een reeks widgets waarmee u in één oogopslag de status van uw cluster kunt bewaken. Verschillende widgets, zoals **CPU-gebruik**, bieden aanvullende informatie wanneer erop wordt geklikt.
 
-![Apache Ambari-dash board met metrische gegevens](./media/hdinsight-hadoop-manage-ambari/hdi-metrics-dashboard.png)
+:::image type="content" source="./media/hdinsight-hadoop-manage-ambari/hdi-metrics-dashboard.png" alt-text="Apache Ambari-dash board met metrische gegevens":::
 
 Op het tabblad **Heatmaps** worden metrische gegevens weer gegeven als gekleurde Heatmaps, van groen naar rood.
 
-![Apache Ambari-dash board met Heatmaps](./media/hdinsight-hadoop-manage-ambari/hdi-heatmap-dashboard.png)
+:::image type="content" source="./media/hdinsight-hadoop-manage-ambari/hdi-heatmap-dashboard.png" alt-text="Apache Ambari-dash board met Heatmaps":::
 
 Selecteer **hosts** voor meer informatie over de knoop punten in het cluster. Selecteer vervolgens het specifieke knoop punt waarin u bent geïnteresseerd.
 
-![Overzichts Details van Apache Ambari-host](./media/hdinsight-hadoop-manage-ambari/ambari-host-details1.png)
+:::image type="content" source="./media/hdinsight-hadoop-manage-ambari/ambari-host-details1.png" alt-text="Overzichts Details van Apache Ambari-host":::
 
 ### <a name="services"></a>Services
 
 De Sidebar **Services** in het dash board biedt een snelle inzicht in de status van de services die op het cluster worden uitgevoerd. Er worden verschillende pictogrammen gebruikt om de status of acties aan te geven die moeten worden uitgevoerd. Zo wordt bijvoorbeeld een geel recycling symbool weer gegeven als een service opnieuw moet worden gerecycled.
 
 
-![Apache Ambari Services-zijkants balk](./media/hdinsight-hadoop-manage-ambari/apache-ambari-service-bar.png)
+:::image type="content" source="./media/hdinsight-hadoop-manage-ambari/apache-ambari-service-bar.png" alt-text="Apache Ambari Services-zijkants balk":::
 
 > [!NOTE]  
 > De weer gegeven Services verschillen per HDInsight-cluster type en-versie. De services die hier worden weer gegeven, kunnen afwijken van de services die voor uw cluster worden weer gegeven.
 
 Als u een service selecteert, wordt gedetailleerde informatie over de service weer gegeven.
 
-![Overzichts gegevens van Apache Ambari-service](./media/hdinsight-hadoop-manage-ambari/ambari-service-details.png)
+:::image type="content" source="./media/hdinsight-hadoop-manage-ambari/ambari-service-details.png" alt-text="Overzichts gegevens van Apache Ambari-service":::
 
 #### <a name="quick-links"></a>Snelkoppelingen
 
@@ -142,7 +142,7 @@ Werken met gebruikers, groepen en machtigingen wordt ondersteund. Zie [gebruiker
 
 Op de pagina **hosts** worden alle hosts in het cluster weer gegeven. Voer de volgende stappen uit om hosts te beheren.
 
-![Pagina overzicht van Apache Ambari-hosts](./media/hdinsight-hadoop-manage-ambari/hdinsight-hosts-page.png)
+:::image type="content" source="./media/hdinsight-hadoop-manage-ambari/hdinsight-hosts-page.png" alt-text="Pagina overzicht van Apache Ambari-hosts":::
 
 > [!NOTE]  
 > Het is niet mogelijk om een host toe te voegen, uit te stellen en opnieuw in te stellen met HDInsight-clusters.
@@ -179,7 +179,7 @@ De **actie** knop kan alle services opnieuw starten, vaak wilt u een specifieke 
 
 2. Klik vanaf de bovenkant van het tabblad **samen vatting** op de knop **service acties** en selecteer de actie die u wilt uitvoeren. Met deze actie wordt de service opnieuw gestart op alle knoop punten.
 
-    ![Ambari afzonderlijke service acties voor Apache](./media/hdinsight-hadoop-manage-ambari/individual-service-actions.png)
+    :::image type="content" source="./media/hdinsight-hadoop-manage-ambari/individual-service-actions.png" alt-text="Ambari afzonderlijke service acties voor Apache":::
 
    > [!NOTE]  
    > Als er services worden gestart terwijl het cluster wordt uitgevoerd, kunnen er waarschuwingen worden gegenereerd. Als u waarschuwingen wilt voor komen, kunt u de knop **service acties** gebruiken om de **onderhouds modus** voor de service in te scha kelen voordat u de computer opnieuw opstart.
@@ -195,7 +195,7 @@ Als u een service wilt configureren, gebruikt u de volgende stappen:
 
 2. Selecteer het tabblad **configuratie** . De huidige configuratie wordt weer gegeven. Er wordt ook een lijst met eerdere configuraties weer gegeven.
 
-    ![Configuratie van Apache Ambari-service](./media/hdinsight-hadoop-manage-ambari/ambari-service-configs.png)
+    :::image type="content" source="./media/hdinsight-hadoop-manage-ambari/ambari-service-configs.png" alt-text="Configuratie van Apache Ambari-service":::
 
 3. Gebruik de weer gegeven velden om de configuratie te wijzigen en selecteer vervolgens **Opslaan**. Of selecteer een vorige configuratie en selecteer vervolgens **huidige maken** om de vorige instellingen terug te draaien.
 

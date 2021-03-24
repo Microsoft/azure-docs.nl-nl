@@ -1,19 +1,20 @@
 ---
 title: Azure-witboeken over mainframe-onderwerpen met behulp van Azure Virtual Machines en Azure Storage
 description: Ontvang resources over mainframe migratie, het opnieuw hosten en verplaatsen van IBM Z-systemen naar Microsoft Azure.
-services: multiple
+services: virtual-machines
+ms.service: virtual-machines
+ms.subservice: mainframe-rehosting
 documentationcenter: ''
 author: njray
 ms.author: larryme
 ms.date: 04/02/2019
 ms.topic: article
-ms.service: multiple
-ms.openlocfilehash: dd91b4331a6093d1cf208893d5d88746707b473b
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 03a075cb2098557d72f0d864da4df910f5bc5f8c
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "74224746"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104954289"
 ---
 # <a name="azure-white-papers-about-mainframe-topics"></a>Azure-witboeken over mainframe-onderwerpen
 

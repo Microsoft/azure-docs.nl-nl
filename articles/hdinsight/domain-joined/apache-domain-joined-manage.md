@@ -4,12 +4,12 @@ description: Meer informatie over het beheren van Azure HDInsight-clusters met E
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 12/04/2019
-ms.openlocfilehash: b0f8ba4adfa4b08c23d3f69fa4e2b01f4580bb19
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: bc31c3d71590a6b8c0b324ffcb8c10129a9f8699
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101742208"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104863238"
 ---
 # <a name="manage-hdinsight-clusters-with-enterprise-security-package"></a>HDInsight-clusters beheren met Enterprise Security Package
 
@@ -116,7 +116,7 @@ HDInsight Enterprise Security Package heeft de volgende rollen:
 2. Selecteer in het menu links de optie **rollen**.
 3. Selecteer het blauwe vraag teken om de machtigingen te bekijken:
 
-    ![Machtigingen voor ESP HDInsight-rollen](./media/apache-domain-joined-manage/hdinsight-domain-joined-roles-permissions.png)
+    :::image type="content" source="./media/apache-domain-joined-manage/hdinsight-domain-joined-roles-permissions.png" alt-text="Machtigingen voor ESP HDInsight-rollen" border="true":::
 
 ## <a name="open-the-ambari-management-ui"></a>De gebruikers interface van Ambari Management openen
 
@@ -124,25 +124,25 @@ HDInsight Enterprise Security Package heeft de volgende rollen:
 1. Meld u aan bij Ambari met behulp van de domein gebruikers naam en het wacht woord van de Cluster beheerder.
 1. Selecteer de vervolg keuzelijst **beheerder** in de rechter bovenhoek en selecteer vervolgens **Ambari beheren**.
 
-    ![ESP HDInsight Manage Apache Ambari](./media/apache-domain-joined-manage/hdinsight-domain-joined-manage-ambari.png)
+    :::image type="content" source="./media/apache-domain-joined-manage/hdinsight-domain-joined-manage-ambari.png" alt-text="ESP HDInsight Manage Apache Ambari" border="true":::
 
     De gebruikers interface ziet er als volgt uit:
 
-    ![Gebruikers interface voor ESP HDInsight Apache Ambari Management](./media/apache-domain-joined-manage/hdinsight-domain-joined-ambari-management-ui.png)
+    :::image type="content" source="./media/apache-domain-joined-manage/hdinsight-domain-joined-ambari-management-ui.png" alt-text="Gebruikers interface voor ESP HDInsight Apache Ambari Management" border="true":::
 
 ## <a name="list-the-domain-users-synchronized-from-your-active-directory"></a>De domein gebruikers weer geven die zijn gesynchroniseerd vanuit uw Active Directory
 
 1. Open de gebruikers interface van Ambari-beheer.  Zie [de gebruikers interface van Ambari Management openen](#open-the-ambari-management-ui).
 2. Selecteer in het menu links de optie **gebruikers**. U ziet alle gebruikers die zijn gesynchroniseerd van uw Active Directory naar het HDInsight-cluster.
 
-    ![Gebruikers interface lijst van ESP HDInsight Ambari-beheer](./media/apache-domain-joined-manage/hdinsight-domain-joined-ambari-management-ui-users.png)
+    :::image type="content" source="./media/apache-domain-joined-manage/hdinsight-domain-joined-ambari-management-ui-users.png" alt-text="Gebruikers interface lijst van ESP HDInsight Ambari-beheer" border="true":::
 
 ## <a name="list-the-domain-groups-synchronized-from-your-active-directory"></a>De domein groepen weer geven die zijn gesynchroniseerd vanuit uw Active Directory
 
 1. Open de gebruikers interface van Ambari-beheer.  Zie [de gebruikers interface van Ambari Management openen](#open-the-ambari-management-ui).
 2. Selecteer in het menu links **groepen**. U ziet alle groepen die zijn gesynchroniseerd van uw Active Directory naar het HDInsight-cluster.
 
-    ![Lijst groepen van de gebruikers interface van ESP HDInsight Ambari Management](./media/apache-domain-joined-manage/hdinsight-domain-joined-ambari-management-ui-groups.png)
+    :::image type="content" source="./media/apache-domain-joined-manage/hdinsight-domain-joined-ambari-management-ui-groups.png" alt-text="Lijst groepen van de gebruikers interface van ESP HDInsight Ambari Management" border="true":::
 
 ## <a name="configure-hive-views-permissions"></a>Machtigingen voor Hive-weer gaven configureren
 
@@ -150,12 +150,12 @@ HDInsight Enterprise Security Package heeft de volgende rollen:
 2. Selecteer in het menu links de optie **weer gaven**.
 3. Selecteer **Hive** om de details weer te geven.
 
-    ![UI-Hive-weer gaven ESP HDInsight Ambari Management](./media/apache-domain-joined-manage/hdinsight-domain-joined-ambari-management-ui-hive-views.png)
+    :::image type="content" source="./media/apache-domain-joined-manage/hdinsight-domain-joined-ambari-management-ui-hive-views.png" alt-text="UI-Hive-weer gaven ESP HDInsight Ambari Management" border="true":::
 
 4. Selecteer de koppeling van de **Hive-weer gave** om Hive-weer gaven te configureren.
 5. Schuif omlaag naar de sectie **machtigingen** .
 
-    ![Gebruikers interface van ESP HDInsight Ambari Management-Hive machtigingen configureren](./media/apache-domain-joined-manage/hdinsight-domain-joined-ambari-management-ui-hive-views-permissions.png)
+    :::image type="content" source="./media/apache-domain-joined-manage/hdinsight-domain-joined-ambari-management-ui-hive-views-permissions.png" alt-text="Gebruikers interface van ESP HDInsight Ambari Management-Hive machtigingen configureren" border="true":::
 
 6. Selecteer **gebruiker toevoegen** of **groep toevoegen** en geef vervolgens de gebruikers of groepen op die Hive-weer gaven kunnen gebruiken.
 

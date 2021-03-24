@@ -14,18 +14,18 @@ ms.devlang: na
 ms.topic: reference
 ms.date: 12/14/2020
 ms.author: phjensen
-ms.openlocfilehash: 43d358f7050dcc831f9f2bf439fba6e688ee633b
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 1d6a5488ee761acec57e6a1030bcb17872b09258
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "97632722"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104865295"
 ---
 # <a name="obtain-details-using-azure-application-consistent-snapshot-tool-preview"></a>Details verkrijgen met Azure-toepassing consistent snap shot tool (preview)
 
 Dit artikel bevat een hand leiding voor het uitvoeren van de opdracht Details van het hulp programma Azure-toepassing consistente moment opname dat u kunt gebruiken met Azure NetApp Files.
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 De `azacsnap -c details` opdracht geeft de details weer van de moment opnamen (volume naam, naam van de moment opname, aanmaak tijd, opmerkingen, grootte van moment opname) die zijn opgeslagen op alle volumes in het configuratie bestand.  De console-uitvoer kan in een werk blad worden geplakt voor verdere analyse.
 
@@ -93,6 +93,46 @@ List snapshot details called with snapshotFilter ''
 
 > [!NOTE]
 > In dit voor beeld ziet u uitvoer voor moment opnamen die worden uitgevoerd met de vorige versie (v 4.3), evenals moment opnamen die zijn gemaakt met de nieuwste versie (5,0).
+
+In het volgende voor beeld is uitvoer voor **Azure NetApp files**. Let op de gereduceerde informatie met deze opdracht, omdat de gegevens niet worden weer gegeven door de service.
+
+```bash
+azacsnap -c details --details snapshots
+```
+
+```output
+List snapshot details called with snapshotFilter ''
+#, Volume, SnapshotName
+#1, HANADATA_P, snapmirror.dd59bda4-d507-11ea-99fc-00a098f31b77_2155201518.2021-03-22_020000
+#2, HANADATA_P, quarter_hourly__2021-03-22T020002-3678211Z
+#3, HANADATA_P, quarter_hourly__2021-03-22T014502-0716526Z
+#4, HANADATA_P, quarter_hourly__2021-03-22T013002-4080651Z
+#5, HANADATA_P, quarter_hourly__2021-03-22T011502-8376045Z
+#6, HANADATA_P, quarter_hourly__2021-03-22T010002-8810203Z
+#7, HANADATA_P, quarter_hourly__2021-03-22T004502-5983306Z
+#8, HANADATA_P, quarter_hourly__2021-03-22T003002-1168834Z
+#9, HANADATA_P, quarter_hourly__2021-03-22T001501-9781108Z
+#10, HANADATA_P, quarter_hourly__2021-03-22T000002-0865483Z
+#1, HANASHARED_P, quarter_hourly__2021-03-22T020002-3678211Z
+#2, HANASHARED_P, quarter_hourly__2021-03-22T014502-0716526Z
+#3, HANASHARED_P, quarter_hourly__2021-03-22T013002-4080651Z
+#4, HANASHARED_P, quarter_hourly__2021-03-22T011502-8376045Z
+#5, HANASHARED_P, quarter_hourly__2021-03-22T010002-8810203Z
+#6, HANASHARED_P, quarter_hourly__2021-03-22T004502-5983306Z
+#7, HANASHARED_P, quarter_hourly__2021-03-22T003002-1168834Z
+#8, HANASHARED_P, quarter_hourly__2021-03-22T001501-9781108Z
+#9, HANASHARED_P, quarter_hourly__2021-03-22T000002-0865483Z
+#10, HANASHARED_P, quarter_hourly__2021-03-21T234502-3935816Z
+#1, HANALOGBACKUP_P, logs_5mins__2021-03-22T021002-5462356Z
+#2, HANALOGBACKUP_P, logs_5mins__2021-03-22T020502-2390356Z
+#3, HANALOGBACKUP_P, logs_5mins__2021-03-22T015502-3928726Z
+#4, HANALOGBACKUP_P, logs_5mins__2021-03-22T015001-9228768Z
+#5, HANALOGBACKUP_P, logs_5mins__2021-03-22T014002-5554548Z
+#6, HANALOGBACKUP_P, logs_5mins__2021-03-22T013502-1781392Z
+#7, HANALOGBACKUP_P, logs_5mins__2021-03-22T012502-6686004Z
+#8, HANALOGBACKUP_P, logs_5mins__2021-03-22T012002-7348198Z
+#9, HANALOGBACKUP_P, logs_5mins__2021-03-22T011002-2234413Z
+```
 
 ### <a name="output-of-the-azacsnap--c-details---details-replication-command"></a>Uitvoer van de `azacsnap -c details --details replication` opdracht
 

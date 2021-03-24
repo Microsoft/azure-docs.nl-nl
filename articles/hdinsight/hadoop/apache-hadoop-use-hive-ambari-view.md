@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/23/2020
-ms.openlocfilehash: 1f2dbef014f1b48b554e6bc30af83b936fe532a7
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 87a4d3960937450713747fa16bd473b4c34eff0e
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98944875"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104867862"
 ---
 # <a name="use-apache-ambari-hive-view-with-apache-hadoop-in-hdinsight"></a>Apache Ambari Hive-weergave gebruiken met Apache Hadoop in HDInsight
 
@@ -30,11 +30,11 @@ Een Hadoop-cluster in HDInsight. Zie aan de [slag met HDInsight op Linux](./apac
 
 1. Selecteer in de lijst met weer gaven de __Hive-weer gave__.
 
-    ![Apache Ambari Select Apache Hive View](./media/apache-hadoop-use-hive-ambari-view/select-apache-hive-view.png)
+    :::image type="content" source="./media/apache-hadoop-use-hive-ambari-view/select-apache-hive-view.png" alt-text="Apache Ambari Select Apache Hive View" border="true":::
 
     De pagina Hive-weer gave is vergelijkbaar met de volgende afbeelding:
 
-    ![Afbeelding van het query werkblad voor de Hive-weer gave](./media/apache-hadoop-use-hive-ambari-view/ambari-worksheet-view.png)
+    :::image type="content" source="./media/apache-hadoop-use-hive-ambari-view/ambari-worksheet-view.png" alt-text="Afbeelding van het query werkblad voor de Hive-weer gave" border="true":::
 
 1. Plak op het tabblad __query__ de volgende HiveQL-instructies in het werk blad:
 
@@ -99,19 +99,19 @@ Als u de TEZ-gebruikers interface voor de query wilt weer geven, selecteert u he
 
 Op het tabblad __taken__ wordt een overzicht van Hive-query's weer gegeven.
 
-![Geschiedenis van tabblad taken Apache Hive weer geven](./media/apache-hadoop-use-hive-ambari-view/apache-hive-job-history.png)
+:::image type="content" source="./media/apache-hadoop-use-hive-ambari-view/apache-hive-job-history.png" alt-text="Geschiedenis van tabblad taken Apache Hive weer geven" border="true":::
 
 ## <a name="database-tables"></a>Database tabellen
 
 U kunt het tabblad __tabellen__ gebruiken om te werken met tabellen in een Hive-data base.
 
-![Afbeelding van het tabblad Apache Hive tabellen](./media/apache-hadoop-use-hive-ambari-view/hdinsight-tables-tab.png)
+:::image type="content" source="./media/apache-hadoop-use-hive-ambari-view/hdinsight-tables-tab.png" alt-text="Afbeelding van het tabblad Apache Hive tabellen" border="true":::
 
 ## <a name="saved-queries"></a>Opgeslagen query's
 
 Op het tabblad **query** kunt u desgewenst query's opslaan. Nadat u een query hebt opgeslagen, kunt u deze opnieuw gebruiken op het tabblad __opgeslagen query's__ .
 
-![Tabblad opgeslagen query's in Apache Hive weer gaven](./media/apache-hadoop-use-hive-ambari-view/ambari-saved-queries.png)
+:::image type="content" source="./media/apache-hadoop-use-hive-ambari-view/ambari-saved-queries.png" alt-text="Tabblad opgeslagen query's in Apache Hive weer gaven" border="true":::
 
 > [!TIP]  
 > Opgeslagen query's worden opgeslagen in de standaard cluster opslag. U kunt de opgeslagen query's vinden in het pad `/user/<username>/hive/scripts` . Deze worden opgeslagen als bestanden met tekst zonder opmaak `.hql` .
@@ -124,7 +124,7 @@ U kunt het onderdeel uitbreiden via door de gebruiker gedefinieerde functies (UD
 
 Declareer en sla een set Udf's op met behulp van het tabblad **UDF** boven aan de Hive-weer gave. Deze Udf's kunnen worden gebruikt in combi natie met de **query-editor**.
 
-![Weer gave van het tabblad Udf's Apache Hive weer geven](./media/apache-hadoop-use-hive-ambari-view/user-defined-functions.png)
+:::image type="content" source="./media/apache-hadoop-use-hive-ambari-view/user-defined-functions.png" alt-text="Weer gave van het tabblad Udf's Apache Hive weer geven" border="true":::
 
 Onder aan de **query-editor** wordt de knop **udf's toevoegen** weer gegeven. In deze vermelding wordt een vervolg keuzelijst weer gegeven van de Udf's die in de Hive-weer gave zijn gedefinieerd. Als u een UDF selecteert, worden HiveQL-instructies aan uw query toegevoegd om de UDF in te scha kelen.
 

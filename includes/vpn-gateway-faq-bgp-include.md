@@ -5,15 +5,15 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 09/17/2020
+ms.date: 03/22/2021
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 649c5805c600b6282be6d05fefb59cecaf249f4f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 3877134f8a00cd627909d7f889fd5b104ccbd8b1
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "92526076"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104863616"
 ---
 ### <a name="is-bgp-supported-on-all-azure-vpn-gateway-skus"></a>Wordt BGP ondersteund op alle Azure VPN-gateway SKU’s?
 BGP wordt ondersteund op alle Azure VPN Gateawy SKU's, behalve Basic SKU.
@@ -108,3 +108,8 @@ Voeg een hostroute van het IP-adres van de Azure BGP-peer toe aan uw VPN-apparaa
 Nee. Bidirectional Forwarding Detection (BFD) is een protocol dat u met BGP kunt gebruiken om sneller naburige downtime te detecteren dan u met standaard BGP-keepalives kan. BFD gebruikt timers die zijn ontworpen om te werken in LAN-omgevingen, maar niet in openbare internet- of Wide Area Network-verbindingen.
 
 Voor verbindingen via het openbare internet is het niet ongebruikelijk dat bepaalde pakketten worden vertraagd of zelfs wegvallen. Door deze agressieve timers te introduceren, ontstaat er instabiliteit. Die instabiliteit zorgt er mogelijk voor dat routes worden gedempt door BGP. Als alternatief kunt u uw on-premises apparaat configureren met timers die lager zijn dan de standaard keepalive-interval van 60 seconden en de holdtimer van 180 seconden. Dat leidt tot een snellere convergentietijd.
+
+### <a name="do-azure-vpn-gateways-initiate-bgp-peering-sessions-or-connections"></a>Initiëren Azure VPN-gateways BGP-peering sessies of verbindingen?
+
+De gateway initieert BGP-peering sessies naar de on-premises BGP-peer-IP-adressen die zijn opgegeven in de lokale netwerk gateway bronnen met behulp van de privé-IP-adressen op de VPN-gateways. Dit is onafhankelijk van het feit of de on-premises BGP IP-adressen zich in het APIPA-bereik of gewone privé-IP-adressen bevinden. Als uw on-premises VPN-apparaten APIPA-adressen gebruiken als BGP IP, moet u de BGP-luid spreker configureren om de verbindingen te initiëren.
+

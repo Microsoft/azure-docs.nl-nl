@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/20/2020
 ms.author: duau
-ms.openlocfilehash: 6fdcedd19c02251035a838d34ba51e786595134b
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: de6a94b36dab9dd5662062be99f4515d78558b5e
+ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102212445"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104889651"
 ---
 # <a name="frequently-asked-questions-for-azure-front-door"></a>Veelgestelde vragen over de voor deur van Azure
 
@@ -102,7 +102,7 @@ Als u uw toepassing wilt vergren delen om alleen verkeer van uw specifieke voor 
 
 - Zoek naar de `Front Door ID` waarde in het gedeelte Overzicht van de front-deur portal pagina. U kunt vervolgens filteren op de inkomende header '**X-Azure-FDID**' die door de voor deur naar uw back-end wordt verzonden met die waarde om ervoor te zorgen dat alleen uw eigen instantie voor de voor deur is toegestaan (omdat de IP-bereiken hierboven worden gedeeld met andere exemplaren van andere klanten aan de voor zijde).
 
-- Regel filtering Toep assen op uw back-end-webserver om verkeer te beperken op basis van de resulterende waarde ' X-Azure-FDID '. Houd er rekening mee dat sommige services, zoals Azure App Service, deze [op header gebaseerde filter](../app-service/app-service-ip-restrictions.md#restrict-access-to-a-specific-azure-front-door-instance-preview) mogelijkheden bieden zonder dat u uw toepassing of host hoeft te wijzigen.
+- Regel filtering Toep assen op uw back-end-webserver om verkeer te beperken op basis van de resulterende waarde ' X-Azure-FDID '. Houd er rekening mee dat sommige services, zoals Azure App Service, deze [op header gebaseerde filter](../app-service/app-service-ip-restrictions.md#restrict-access-to-a-specific-azure-front-door-instance) mogelijkheden bieden zonder dat u uw toepassing of host hoeft te wijzigen.
 
   Hier volgt een voor beeld van [micro soft Internet Information Services (IIS)](https://www.iis.net/):
 

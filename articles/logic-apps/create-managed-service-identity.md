@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: estfan, logicappspm, azla
 ms.topic: article
 ms.date: 03/09/2021
-ms.openlocfilehash: 7796fc7e2032559ca3ff5c738c46fe025719942d
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: b038a0530d392c80fc14d09486f298657fe0da17
+ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102556618"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104889328"
 ---
 # <a name="authenticate-access-to-azure-resources-by-using-managed-identities-in-azure-logic-apps"></a>Toegang tot Azure-bronnen verifiëren door beheerde identiteiten te gebruiken in Azure Logic Apps
 
@@ -402,52 +402,54 @@ Deze stappen laten zien hoe u de beheerde identiteit met een trigger of actie ku
 
      Voor meer informatie, Zie [voor beeld: Managed connector trigger or action with a Managed Identity](#authenticate-managed-connector-managed-identity)(Engelstalig).
 
-     Verbindingen die u maakt voor het gebruik van een beheerde identiteit zijn een speciaal verbindings type dat alleen werkt met een beheerde identiteit. Tijdens runtime maakt de verbinding gebruik van de beheerde identiteit die is ingeschakeld voor de logische app. Deze configuratie wordt opgeslagen in het object van de resource definitie van de logische app `parameters` , dat het `$connections` object bevat dat aanwijzers bevat naar de resource-id van de verbinding, samen met de resource-id van de identiteit, als de door de gebruiker toegewezen identiteit is ingeschakeld.
+### <a name="connections-that-use-managed-identities"></a>Verbindingen die beheerde identiteiten gebruiken
 
-     In dit voor beeld ziet u hoe de configuratie eruitziet wanneer de logische app de door het systeem toegewezen beheerde identiteit mogelijk maakt:
+De verbindingen die gebruikmaken van een beheerde identiteit zijn een speciaal verbindings type dat alleen werkt met een beheerde identiteit. Tijdens runtime maakt de verbinding gebruik van de beheerde identiteit die is ingeschakeld voor de logische app. Deze configuratie wordt opgeslagen in het object van de resource definitie van de logische app `parameters` , dat het `$connections` object bevat dat aanwijzers bevat naar de resource-id van de verbinding, samen met de resource-id van de identiteit, als de door de gebruiker toegewezen identiteit is ingeschakeld.
 
-     ```json
-     "parameters": {
-        "$connections": {
-           "value": {
-              "<action-name>": {
-                 "connectionId": "/subscriptions/{Azure-subscription-ID}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/connections/{connection-name}",
-                 "connectionName": "{connection-name}",
-                 "connectionProperties": {
-                    "authentication": {
-                       "type": "ManagedServiceIdentity"
-                    }
-                 },
-                 "id": "/subscriptions/{Azure-subscription-ID}/providers/Microsoft.Web/locations/{Azure-region}/managedApis/{managed-connector-type}"
-              }
-           }
-        }
-     }
-     ```
+In dit voor beeld ziet u hoe de configuratie eruitziet wanneer de logische app de door het systeem toegewezen beheerde identiteit mogelijk maakt:
 
-     In dit voor beeld ziet u hoe de configuratie eruitziet wanneer de logische app een door de gebruiker toegewezen beheerde identiteit mogelijk maakt:
+```json
+"parameters": {
+   "$connections": {
+      "value": {
+         "<action-name>": {
+            "connectionId": "/subscriptions/{Azure-subscription-ID}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/connections/{connection-name}",
+            "connectionName": "{connection-name}",
+            "connectionProperties": {
+               "authentication": {
+                  "type": "ManagedServiceIdentity"
+               }
+            },
+            "id": "/subscriptions/{Azure-subscription-ID}/providers/Microsoft.Web/locations/{Azure-region}/managedApis/{managed-connector-type}"
+         }
+      }
+   }
+}
+ ```
 
-     ```json
-     "parameters": {
-        "$connections": {
-           "value": {
-              "<action-name>": {
-                 "connectionId": "/subscriptions/{Azure-subscription-ID}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/connections/{connection-name}",
-                 "connectionName": "{connection-name}",
-                 "connectionProperties": {
-                    "authentication": {
-                       "identity": "/subscriptions/{Azure-subscription-ID}/resourceGroups/{resourceGroupName}/providers/microsoft.managedidentity/userassignedidentities/{managed-identity-name}",
-                       "type": "ManagedServiceIdentity"
-                    }
-                 },
-                 "id": "/subscriptions/{Azure-subscription-ID}/providers/Microsoft.Web/locations/{Azure-region}/managedApis/{managed-connector-type}"
-              }
-           }
-        }
-     }
-     ```
+In dit voor beeld ziet u hoe de configuratie eruitziet wanneer de logische app een door de gebruiker toegewezen beheerde identiteit mogelijk maakt:
 
-     Tijdens runtime controleert de Logic Apps-service of een trigger voor beheerde connectors en acties in de logische app is ingesteld voor het gebruik van de beheerde identiteit en dat alle vereiste machtigingen zijn ingesteld voor het gebruik van de beheerde identiteit voor toegang tot de doel resources die zijn opgegeven door de trigger en acties. Als dit lukt, haalt de Logic Apps-service het Azure AD-token op dat is gekoppeld aan de beheerde identiteit en gebruikt die identiteit om de toegang tot de doel bron te verifiëren en de geconfigureerde bewerking in trigger en acties uit te voeren.
+```json
+"parameters": {
+   "$connections": {
+      "value": {
+         "<action-name>": {
+            "connectionId": "/subscriptions/{Azure-subscription-ID}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/connections/{connection-name}",
+            "connectionName": "{connection-name}",
+            "connectionProperties": {
+               "authentication": {
+                  "identity": "/subscriptions/{Azure-subscription-ID}/resourceGroups/{resourceGroupName}/providers/microsoft.managedidentity/userassignedidentities/{managed-identity-name}",
+                  "type": "ManagedServiceIdentity"
+               }
+            },
+            "id": "/subscriptions/{Azure-subscription-ID}/providers/Microsoft.Web/locations/{Azure-region}/managedApis/{managed-connector-type}"
+         }
+      }
+   }
+}
+```
+
+Tijdens runtime controleert de Logic Apps-service of een trigger voor beheerde connectors en acties in de logische app is ingesteld voor het gebruik van de beheerde identiteit en dat alle vereiste machtigingen zijn ingesteld voor het gebruik van de beheerde identiteit voor toegang tot de doel resources die zijn opgegeven door de trigger en acties. Als dit lukt, haalt de Logic Apps-service het Azure AD-token op dat is gekoppeld aan de beheerde identiteit en gebruikt die identiteit om de toegang tot de doel bron te verifiëren en de geconfigureerde bewerking in trigger en acties uit te voeren.
 
 <a name="authenticate-built-in-managed-identity"></a>
 

@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: quickstart
 ms.date: 06/14/2019
 ms.custom: mvc
-ms.openlocfilehash: fe7b1cdc96ae95ac361183342ea491432c3ab4b4
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 73b0434065b06f25320a0666937fd7969c863b33
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98928846"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104870208"
 ---
 # <a name="quickstart-create-and-monitor-an-apache-storm-topology-in-azure-hdinsight"></a>Quickstart: Apache Storm-topologie maken/bewaken in Azure HDInsight
 
@@ -48,7 +48,7 @@ Voer de volgende stappen uit voor het bewaken van de topologie met behulp van de
 
 2. Selecteer onder **Topology summary** de vermelding **wordcount** in de kolom **Name**. Er wordt informatie over de topologie weergegeven.
 
-    ![Storm-dashboard met informatie over de Storm-Starter WordCount-topologie.](./media/apache-storm-quickstart/hdi-topology-summary.png)
+    :::image type="content" source="./media/apache-storm-quickstart/hdi-topology-summary.png" alt-text="Storm-dashboard met informatie over de Storm-Starter WordCount-topologie." border="true":::
 
     De nieuwe pagina bevat de volgende informatie:
 
@@ -65,7 +65,7 @@ Voer de volgende stappen uit voor het bewaken van de topologie met behulp van de
 
 3. Selecteer op deze pagina een item in de sectie **Spouts** of **Bolts**. Er wordt informatie over het geselecteerde onderdeel weergegeven.
 
-    ![Storm-dashboard met informatie over de geselecteerde onderdelen.](./media/apache-storm-quickstart/hdi-component-summary.png)
+    :::image type="content" source="./media/apache-storm-quickstart/hdi-component-summary.png" alt-text="Storm-dashboard met informatie over de geselecteerde onderdelen." border="true":::
 
     De nieuwe pagina geeft de volgende informatie weer:
 

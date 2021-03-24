@@ -6,7 +6,7 @@
       href: about-iot-develop.md
     - name: Welke SDK moet ik gebruiken?
       href: about-iot-sdks.md
-- name: Quickstarts
+- name: Snelstartgidsen
   expanded: true
   items:
     - name: Aan de slag met het ontwikkelen van Device Application
@@ -18,7 +18,11 @@
         - name: Telemetrie naar IoT Hub verzenden (node)
           href: quickstart-send-telemetry-cli-node.md
     - name: Aan de slag met Inge sloten ontwikkeling
-      href: quickstart-device-development.md
+      items:
+        - name: Snelstartgids voor het ontwikkelen van Inge sloten apparaten
+          href: quickstart-device-development.md
+        - name: Een MXCHIP-AZ3166 verbinden met IoT Central
+          href: quickstart-devkit-mxchip-az3166.md
 - name: Zelfstudies
   items:
     - name: IoT-apparaten veilig verbinden met de cloud

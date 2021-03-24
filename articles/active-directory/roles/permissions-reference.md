@@ -14,12 +14,12 @@ ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 99b74319581b4e74c63045afe73ee66b6efcf53c
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 64f74f3aff1153118c54c83bf526c036a775da40
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104585312"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104955231"
 ---
 # <a name="azure-ad-built-in-roles"></a>Ingebouwde Azure AD-rollen
 
@@ -71,7 +71,7 @@ Als best practice wordt u aangeraden deze rol toe te wijzen aan minder dan vijf 
 > | [Groepsbeheerder](#groups-administrator) | Leden van deze rol kunnen groepen maken/beheren, groepen instellingen maken/beheren, zoals naamgeving en verloop beleid, en groepen activiteiten en controle rapporten weer geven. | fdd7a751-b60b-444a-984c-02652fe8fa1c |
 > | [Afzender van gastuitnodigingen](#guest-inviter) | Kan gast gebruikers uitnodigen onafhankelijk van de instelling leden kunnen gasten uitnodigen. | 95e79109-95c0-4d8e-aee3-d01accf2d47b |
 > | [Helpdeskbeheerder](#helpdesk-administrator) | Kan wacht woorden voor niet-beheerders en helpdesk beheerders opnieuw instellen. | 729827e3-9c14-49f7-bb1b-9608f156bbb8 |
-> | [Hybrid Identity-beheerder](#hybrid-identity-administrator) | Kan AD naar Azure AD Cloud-inrichting en Federatie-instellingen beheren. | 8ac3fc64-6eca-42ea-9e69-59f4c7b60eb2 |
+> | [Hybrid Identity-beheerder](#hybrid-identity-administrator) | Kan AD naar Azure AD Cloud inrichting, Azure AD Connect en Federatie-instellingen beheren. | 8ac3fc64-6eca-42ea-9e69-59f4c7b60eb2 |
 > | [Insights-beheerder](#insights-administrator) | Heeft beheerders toegang in de Microsoft 365 Insights-app. | eb1f4a8d-243a-41f0-9fbd-c7cdf6c5ef7c |
 > | [Insights-bedrijfsleider](#insights-business-leader) | Kan Dash boards en inzichten bekijken en delen via de M365 Insights-app. | 31e939ad-9672-4796-9c2e-873181342d2d |
 > | [InTune-beheerder](#intune-administrator) | Kan alle aspecten van het intune-product beheren. | 3a2c62db-5318-420d-8d74-23affee5d9d5 |
@@ -997,7 +997,7 @@ Deze rol heette voorheen ' Wachtwoord beheerder ' in de [Azure Portal](https://p
 
 ## <a name="hybrid-identity-administrator"></a>Hybrid Identity-beheerder
 
-Gebruikers met deze rol kunnen configuratie-instellingen voor het inrichten van AD naar Azure AD maken, beheren en implementeren met behulp van Cloud inrichting en Federatie-instellingen beheren. Gebruikers kunnen ook logboeken met deze rol oplossen en controleren.
+Gebruikers met deze rol kunnen configuratie-instellingen voor het inrichten van AD naar Azure AD maken, beheren en implementeren met behulp van Cloud inrichting en Azure AD Connect-en Federatie-instellingen beheren. Gebruikers kunnen ook logboeken met deze rol oplossen en controleren.
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |

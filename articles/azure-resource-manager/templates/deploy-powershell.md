@@ -3,12 +3,12 @@ title: Resources implementeren met Power shell en sjabloon
 description: Gebruik Azure Resource Manager en Azure PowerShell om resources te implementeren in Azure. De resources worden gedefinieerd in een resource manager-sjabloon of een Bicep-bestand.
 ms.topic: conceptual
 ms.date: 03/04/2021
-ms.openlocfilehash: 784f17566ce4fb19a7ec5e3fd4a504d7c25f90fe
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: e1d2197064b94d428855bbb36aadbb5eb88d4032
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102521625"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104950855"
 ---
 # <a name="deploy-resources-with-arm-templates-and-azure-powershell"></a>Resources implementeren met ARM-sjablonen en Azure PowerShell
 
@@ -115,7 +115,7 @@ Het volt ooien van de implementatie kan enkele minuten duren.
 ## <a name="deploy-remote-template"></a>Externe sjabloon implementeren
 
 > [!NOTE]
-> Momenteel biedt Azure PowerShell geen ondersteuning voor het implementeren van externe Bicep-bestanden. Als u een extern Bicep-bestand wilt implementeren, gebruikt u CLI Bicep om eerst het Bicep-bestand te compileren naar een JSON-sjabloon.
+> Momenteel biedt Azure PowerShell geen ondersteuning voor het implementeren van externe Bicep-bestanden. Gebruik [BICEP cli](./bicep-install.md#development-environment) voor het compileren van het Bicep-bestand naar een JSON-sjabloon en laad vervolgens het JSON-bestand naar de externe locatie.
 
 In plaats van ARM-sjablonen op uw lokale computer op te slaan, kunt u ze beter opslaan op een externe locatie. U kunt sjablonen opslaan in een opslagplaats voor broncodebeheer (zoals GitHub). U kunt de sjablonen ook opslaan in een Azure-opslagaccount voor gedeelde toegang in uw organisatie.
 

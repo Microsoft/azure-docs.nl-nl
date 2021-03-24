@@ -11,18 +11,20 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: nigu
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a3ac799203cade3a907acbe28dee3a8023891db2
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 119540738ac2703afd79891d9bf8a4a9ff0c7472
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "93077639"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104952759"
 ---
 # <a name="troubleshoot-using-the-what-if-tool-in-conditional-access"></a>Problemen met het hulpprogramma What If in Voorwaardelijke toegang oplossen
 
 [Voorwaardelijke toegang](./overview.md) is een functie van Azure Active Directory (Azure AD) waarmee u kunt bepalen hoe geautoriseerde gebruikers toegang hebben tot uw Cloud-apps. Hoe weet u wat u kunt verwachten van het beleid voor voorwaardelijke toegang in uw omgeving? Als u deze vraag wilt beantwoorden, kunt u het **hulp programma voor voorwaardelijke toegang What if** gebruiken.
 
 In dit artikel wordt uitgelegd hoe u dit hulp programma kunt gebruiken om uw beleid voor voorwaardelijke toegang te testen.
+
+> [!VIDEO https://www.youtube.com/embed/M_iQVM-3C3E]
 
 ## <a name="what-it-is"></a>Wat het is
 

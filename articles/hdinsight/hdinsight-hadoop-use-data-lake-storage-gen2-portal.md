@@ -7,12 +7,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 09/17/2020
-ms.openlocfilehash: d54c005ffb17571be172b5716723febb742253a3
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 5eb6cfc7f0dbc0bc886550e1d601dc52dff66267
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98945388"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104866366"
 ---
 # <a name="create-a-cluster-with-data-lake-storage-gen2-using-the-azure-portal"></a>Een cluster met Data Lake Storage Gen2 maken met behulp van de Azure Portal
 
@@ -37,7 +37,7 @@ Maak een door de gebruiker toegewezen beheerde identiteit als u deze nog niet he
 
 Zie [beheerde identiteiten in azure hdinsight](hdinsight-managed-identities.md)voor meer informatie over de werking van beheerde identiteiten in azure hdinsight.
 
-![Een door de gebruiker toegewezen beheerde identiteit maken](./media/hdinsight-hadoop-use-data-lake-storage-gen2/create-user-assigned-managed-identity-portal.png)
+:::image type="content" source="./media/hdinsight-hadoop-use-data-lake-storage-gen2/create-user-assigned-managed-identity-portal.png" alt-text="Een door de gebruiker toegewezen beheerde identiteit maken":::
 
 ## <a name="create-a-storage-account-to-use-with-data-lake-storage-gen2"></a>Een opslag account maken voor gebruik met Data Lake Storage Gen2
 
@@ -57,7 +57,7 @@ Maak een opslag account om te gebruiken met Azure Data Lake Storage Gen2.
 
 Zie [Quick Start: een opslag account maken voor Azure data Lake Storage Gen2](../storage/blobs/create-data-lake-storage-account.md)voor meer informatie over andere opties tijdens het maken van een opslag account.
 
-![Scherm opname van het maken van een opslag account in de Azure Portal](./media/hdinsight-hadoop-use-data-lake-storage-gen2/azure-data-lake-storage-account-create-advanced.png)
+:::image type="content" source="./media/hdinsight-hadoop-use-data-lake-storage-gen2/azure-data-lake-storage-account-create-advanced.png" alt-text="Scherm opname van het maken van een opslag account in de Azure Portal":::
 
 ## <a name="set-up-permissions-for-the-managed-identity-on-the-data-lake-storage-gen2"></a>Stel machtigingen in voor de beheerde identiteit op de Data Lake Storage Gen2
 
@@ -66,12 +66,12 @@ Wijs de beheerde identiteit toe aan de rol van de eigenaar van de **opslag-BLOB*
 1. Ga in het [Azure Portal](https://portal.azure.com)naar uw opslag account.
 1. Selecteer uw opslag account en selecteer vervolgens **toegangs beheer (IAM)** om de instellingen voor toegangs beheer voor het account weer te geven. Selectter het tabblad **Roltoewijzingen** om de lijst met roltoewijzingen te zien.
 
-    ![Scherm opname van instellingen voor opslag toegangs beheer](./media/hdinsight-hadoop-use-data-lake-storage-gen2/portal-access-control.png)
+    :::image type="content" source="./media/hdinsight-hadoop-use-data-lake-storage-gen2/portal-access-control.png" alt-text="Scherm opname van instellingen voor opslag toegangs beheer":::
 
 1. Selecteer de knop **+ roltoewijzing toevoegen** om een nieuwe rol toe te voegen.
 1. Selecteer in het venster **roltoewijzing toevoegen** de rol **Storage BLOB-gegevens eigenaar** . Selecteer vervolgens het abonnement met het beheerde identiteits-en opslag account. Zoek vervolgens naar de door de gebruiker toegewezen beheerde identiteit die u eerder hebt gemaakt. Ten slotte selecteert u de beheerde identiteit en wordt deze weer gegeven onder **geselecteerde leden**.
 
-    ![Scherm afbeelding die laat zien hoe een Azure-rol kan worden toegewezen](./media/hdinsight-hadoop-use-data-lake-storage-gen2/add-rbac-role3-window.png)
+    :::image type="content" source="./media/hdinsight-hadoop-use-data-lake-storage-gen2/add-rbac-role3-window.png" alt-text="Scherm afbeelding die laat zien hoe een Azure-rol kan worden toegewezen":::
 
 1. Selecteer **Opslaan**. De gebruikers-id die u hebt geselecteerd, wordt nu weer gegeven onder de geselecteerde rol.
 1. Nadat deze initiële installatie is voltooid, kunt u een cluster maken via de portal. Het cluster moet zich in dezelfde Azure-regio bevinden als het opslag account. Selecteer op het tabblad **opslag** van het menu cluster maken de volgende opties:
@@ -81,7 +81,7 @@ Wijs de beheerde identiteit toe aan de rol van de eigenaar van de **opslag-BLOB*
 
     * Selecteer onder **identiteit** de zojuist gemaakte door de gebruiker toegewezen beheerde identiteit.
 
-        ![Opslag instellingen voor het gebruik van Data Lake Storage Gen2 met Azure HDInsight](./media/hdinsight-hadoop-use-data-lake-storage-gen2/azure-portal-cluster-storage-gentwo.png)
+        :::image type="content" source="./media/hdinsight-hadoop-use-data-lake-storage-gen2/azure-portal-cluster-storage-gentwo.png" alt-text="Opslag instellingen voor het gebruik van Data Lake Storage Gen2 met Azure HDInsight":::
 
     > [!NOTE]
     > * Als u een secundair opslag account met Data Lake Storage Gen2 wilt toevoegen, moet u op het niveau van het opslag account eenvoudigweg de beheerde identiteit toewijzen die u eerder hebt gemaakt voor de nieuwe Data Lake Storage Gen2 die u wilt toevoegen. U wordt aangeraden een secundair opslag account met Data Lake Storage Gen2 toe te voegen via de Blade ' extra opslag accounts ' op HDInsight wordt niet ondersteund.

@@ -3,18 +3,18 @@ title: Azure IoT Central uitbreiden met aangepaste analyses | Microsoft Docs
 description: Configureer als ontwikkelaar van oplossingen een IoT Central-toepassing om aangepaste analyses en visualisaties uit te voeren. Deze oplossing maakt gebruik van Azure Databricks.
 author: TheRealJasonAndrew
 ms.author: v-anjaso
-ms.date: 02/18/2020
+ms.date: 03/15/2021
 ms.topic: how-to
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: philmea
-ms.openlocfilehash: 11e5ba3c0700cc9b29b8a11c0f9aa20cb5adb132
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 0cee343e6769c815ecfb4b9c791783bd246caaac
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102551314"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104953874"
 ---
 # <a name="extend-azure-iot-central-with-custom-analytics-using-azure-databricks"></a>Azure IoT Central uitbreiden met aangepaste analyses met behulp van Azure Databricks
 
@@ -82,14 +82,14 @@ Gebruik de [Azure Portal om een Azure Databricks service te maken](https://porta
 
 Wanneer u de vereiste resources hebt gemaakt, ziet uw **IoTCentralAnalysis** -resource groep eruit als de volgende scherm afbeelding:
 
-![Resource groep IoT Central analyse](media/howto-create-custom-analytics/resource-group.png)
+:::image type="content" source="media/howto-create-custom-analytics/resource-group.png" alt-text="afbeelding van IoT Central analyse resource groep.":::
 
 ## <a name="create-an-event-hub"></a>Een Event Hub maken
 
 U kunt een IoT Central-toepassing configureren om voortdurend telemetrie te exporteren naar een Event Hub. In deze sectie maakt u een Event Hub voor het ontvangen van telemetrie van uw IoT Central-toepassing. De Event Hub levert de telemetrie naar uw Stream Analytics-taak voor verwerking.
 
 1. Ga in het Azure Portal naar uw Event Hubs-naam ruimte en selecteer **+ Event hub**.
-1. Geef uw Event Hub **centralexport** een naam en selecteer **maken**.
+1. Geef een naam op voor uw Event Hub **centralexport**.
 1. Selecteer **centralexport** in de lijst met Event hubs in uw naam ruimte. Kies vervolgens **beleid voor gedeelde toegang**.
 1. Selecteer **+ Toevoegen**. Maak een beleid met de naam **listen** met de **listener** -claim.
 1. Wanneer het beleid gereed is, selecteert u het in de lijst en kopieert u vervolgens de **verbindings reeks-primaire sleutel** waarde.
@@ -97,26 +97,42 @@ U kunt een IoT Central-toepassing configureren om voortdurend telemetrie te expo
 
 De naam ruimte van uw Event Hubs ziet eruit als in de volgende scherm afbeelding:
 
-![Event Hubs-naamruimte](media/howto-create-custom-analytics/event-hubs-namespace.png)
+:::image type="content" source="media/howto-create-custom-analytics/event-hubs-namespace.png" alt-text="afbeelding van Event Hubs naam ruimte.":::
 
-## <a name="configure-export-in-iot-central"></a>Exporteren configureren in IoT Central
+## <a name="configure-export-in-iot-central-and-create-a-new-destination"></a>Exporteren in IoT Central configureren en een nieuwe bestemming maken
 
 Ga op de website van [Azure IOT Central Application Manager](https://aka.ms/iotcentral) naar de IOT Central toepassing die u hebt gemaakt op basis van de contoso-sjabloon. In deze sectie configureert u de toepassing voor het streamen van de telemetrie van de gesimuleerde apparaten naar uw Event Hub. Het exporteren configureren:
 
-1. Ga naar de pagina voor het **exporteren van gegevens** , selecteer **+ Nieuw** en klik vervolgens op **Azure Event hubs**.
-1. Gebruik de volgende instellingen om het exporteren te configureren en selecteer vervolgens **Opslaan**:
+1. Ga naar de pagina voor het **exporteren van gegevens** en selecteer **+ nieuwe export**.
+1. Selecteer **een bestemming maken** voordat u het eerste venster voltooit.
+
+Het venster ziet er als volgt uit.  
+
+:::image type="content" source="media/howto-create-custom-analytics/data-export-2.png" alt-text="afbeelding van de configuratie van de gegevens export bestemming.":::
+
+3. Voer de volgende waarden in:
+
+| Instelling | Waarde |
+| ------- | ----- |
+| Doel naam | De doel naam |
+| Doel type | Azure Event Hubs |
+| Verbindingsreeks| De Event Hub connection string u eerder een notitie hebt gemaakt. | 
+| Event Hub| De naam van de Event hub|
+
+4. Klik op **maken** om te volt ooien.
+
+5. Gebruik de volgende instellingen om de export te configureren:
 
     | Instelling | Waarde |
     | ------- | ----- |
-    | Weergavenaam | Exporteren naar Event Hubs |
+    | Voer een export naam in | eventhubexport |
     | Ingeschakeld | Uit |
-    | Event Hubs-naamruimte | De naam van uw Event Hubs-naam ruimte |
-    | Event Hub | centralexport |
-    | Metingen | Uit |
-    | Apparaten | Aan |
-    | Apparaatsjablonen | Aan |
+    | Gegevens| Telemetrie selecteren | 
+    | Bestemmingen| Maak een bestemming, zoals hieronder wordt weer gegeven, voor uw export en selecteer deze in de vervolg keuzelijst bestemming. |
 
-![Configuratie voor gegevens export](media/howto-create-custom-analytics/cde-configuration.png)
+:::image type="content" source="media/howto-create-custom-analytics/data-export-1.png" alt-text="Scherm afbeelding van de configuratie van de gegevens export bestemming.":::
+
+6. Wanneer u klaar bent, selecteert u **Opslaan**.
 
 Wacht tot de export status **actief** is voordat u doorgaat.
 
@@ -164,7 +180,7 @@ De volgende stappen laten zien hoe u de bibliotheek kunt importeren die nodig is
 
 1. De status van de tape wisselaar is nu **geïnstalleerd**:
 
-    ![Bibliotheek is geïnstalleerd](media/howto-create-custom-analytics/cluster-libraries.png)
+:::image type="content" source="media/howto-create-custom-analytics/cluster-libraries.png" alt-text="Scherm opname van de geïnstalleerde bibliotheek.":::
 
 ### <a name="import-a-databricks-notebook"></a>Een Databricks-notebook importeren
 
@@ -178,9 +194,9 @@ Gebruik de volgende stappen om een Databricks-notebook te importeren dat de pyth
 
 1. Selecteer de **werk ruimte** om het geïmporteerde notitie blok weer te geven:
 
-    ![Geïmporteerd notitie blok](media/howto-create-custom-analytics/import-notebook.png)
+:::image type="content" source="media/howto-create-custom-analytics/import-notebook.png" alt-text="Scherm opname van het geïmporteerde notitie blok.":::
 
-1. Bewerk de code in de eerste python-cel om de Event Hubs connection string die u eerder hebt opgeslagen, toe te voegen:
+5. Bewerk de code in de eerste python-cel om de Event Hubs connection string die u eerder hebt opgeslagen, toe te voegen:
 
     ```python
     from pyspark.sql.functions import *
@@ -206,7 +222,7 @@ Er wordt mogelijk een fout in de laatste cel weer geven. Als dit het geval is, c
 
 Schuif in het notitie blok omlaag naar cel 14 om een grafiek van de gemiddelde vochtigheids graad op apparaattype te bekijken. Dit diagram blijft voortdurend bijgewerkt als streaming-telemetrie arriveert:
 
-![Vloeiende telemetrie-tekening](media/howto-create-custom-analytics/telemetry-plot.png)
+:::image type="content" source="media/howto-create-custom-analytics/telemetry-plot.png" alt-text="Scherm afbeelding van vloeiende telemetrie-grafieken.":::
 
 U kunt de grootte van de grafiek in het notitie blok wijzigen.
 
@@ -214,7 +230,7 @@ U kunt de grootte van de grafiek in het notitie blok wijzigen.
 
 Schuif in het notitie blok omlaag naar cel 20 om de [vakken](https://en.wikipedia.org/wiki/Box_plot)weer te geven. De vakken zijn gebaseerd op statische gegevens zodat u ze kunt bijwerken. u moet de cel opnieuw uitvoeren:
 
-![Boxplot](media/howto-create-custom-analytics/box-plots.png)
+:::image type="content" source="media/howto-create-custom-analytics/box-plots.png" alt-text="Scherm afbeelding van Boxplot.":::
 
 U kunt de grootte van de grafieken in het notitie blok wijzigen.
 

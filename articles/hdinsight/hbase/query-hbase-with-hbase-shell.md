@@ -6,12 +6,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: quickstart
 ms.date: 06/12/2019
-ms.openlocfilehash: 358e058667cb1750a6fc97dffebcbfb2c6e06f84
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 98844a7dab673fb98dcdb639fbc48c0f6035fbba
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98942927"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104865108"
 ---
 # <a name="quickstart-query-apache-hbase-in-azure-hdinsight-with-hbase-shell"></a>Snelstart: Query's uitvoeren op Apache HBase in Azure HDInsight met HBase Shell
 
@@ -29,11 +29,11 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 
 Voor de meeste mensen worden de gegevens weergegeven in een tabelindeling:
 
-![Tabelgegevens in HDInsight Apache HBase](./media/query-hbase-with-hbase-shell/hdinsight-hbase-contacts-tabular.png)
+:::image type="content" source="./media/query-hbase-with-hbase-shell/hdinsight-hbase-contacts-tabular.png" alt-text="Tabelgegevens in HDInsight Apache HBase" border="true":::
 
 In HBase (een implementatie van [Cloud BigTable](https://cloud.google.com/bigtable/)) zien dezelfde gegevens er als volgt uit:
 
-![BigTable-gegevens in HDInsight Apache HBase](./media/query-hbase-with-hbase-shell/hdinsight-hbase-contacts-bigtable.png)
+:::image type="content" source="./media/query-hbase-with-hbase-shell/hdinsight-hbase-contacts-bigtable.png" alt-text="BigTable-gegevens in HDInsight Apache HBase" border="true":::
 
 U kunt SSH gebruiken om verbinding te maken met HBase-clusters, en vervolgens Apache HBase Shell gebruiken om HBase-tabellen te maken, gegevens in te voegen en gegevens te doorzoeken.
 

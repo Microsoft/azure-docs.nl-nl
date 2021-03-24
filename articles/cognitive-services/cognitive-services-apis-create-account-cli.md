@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 keywords: cognitieve services, cognitieve intelligentie, cognitieve oplossingen, AI-services
 ms.topic: quickstart
-ms.date: 09/14/2020
+ms.date: 3/22/2021
 ms.author: aahi
-ms.openlocfilehash: c1e8b260f6c06d8f26f5ba99b4fb02edfa5e8656
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 08ff2f416a00002cde5767111ba5a6824a721324
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103472108"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104868168"
 ---
 # <a name="quickstart-create-a-cognitive-services-resource-using-the-azure-command-line-interfacecli"></a>Snelstartgids: een Cognitive Services resource maken met behulp van de Azure Command-Line interface (CLI)
 
@@ -196,7 +196,8 @@ az group delete --name cognitive-services-resource-group
 
 ## <a name="see-also"></a>Zie ook
 
-* [Aanvragen verifiëren bij Azure Cognitive Services](authentication.md)
-* [Wat is Azure Cognitive Services?](./what-are-cognitive-services.md)
-* [Ondersteuning voor natuurlijke taal](language-support.md)
-* [Ondersteuning voor Docker-container](cognitive-services-container-support.md)
+* Zie **[aanvragen verifiëren voor Azure Cognitive Services](authentication.md)** over het veilig werken met Cognitive Services.
+* Zie **[Wat is Azure Cognitive Services?](./what-are-cognitive-services.md)** voor een lijst met verschillende categorieën in cognitive Services.
+* Zie **[ondersteuning voor natuurlijke](language-support.md)** talen voor een overzicht van de natuurlijke talen die Cognitive Services ondersteunt.
+* Zie **[Cognitive Services als containers gebruiken](cognitive-services-container-support.md)** voor meer informatie over het gebruik van Cognitive Services on-premises.
+* Zie **[kosten plannen en beheren voor Cognitive Services](plan-manage-costs.md)** voor het schatten van de kosten van het gebruik van Cognitive Services.

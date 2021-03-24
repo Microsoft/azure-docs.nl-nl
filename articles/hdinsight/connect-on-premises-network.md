@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 03/04/2020
-ms.openlocfilehash: cd787e1c846bfe4728577cbbce069385ce064a10
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: f26813176d4286a052772d2096427231759aacc2
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98943396"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104863374"
 ---
 # <a name="connect-hdinsight-to-your-on-premises-network"></a>HDInsight verbinden met uw on-premises netwerk
 
@@ -37,7 +37,7 @@ Deze configuraties bieden het volgende gedrag:
 
 In het volgende diagram zijn groene lijnen aanvragen voor bronnen die eindigen op het DNS-achtervoegsel van het virtuele netwerk. Blauwe lijnen zijn aanvragen voor bronnen in het on-premises netwerk of op het open bare Internet.
 
-![Diagram van hoe DNS-aanvragen worden omgezet in de configuratie](./media/connect-on-premises-network/on-premises-to-cloud-dns.png)
+:::image type="content" source="./media/connect-on-premises-network/on-premises-to-cloud-dns.png" alt-text="Diagram van hoe DNS-aanvragen worden omgezet in de configuratie" border="false":::
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -64,7 +64,7 @@ In deze stappen wordt gebruikgemaakt van de [Azure Portal](https://portal.azure.
   
 1. Selecteer **+ Een resource maken** in het menu aan de bovenkant.
 
-    ![Een virtuele Ubuntu-machine maken](./media/connect-on-premises-network/azure-portal-create-resource.png)
+    :::image type="content" source="./media/connect-on-premises-network/azure-portal-create-resource.png" alt-text="Een virtuele Ubuntu-machine maken":::
 
 1. Selecteer   >  **virtuele machine** berekenen om naar de pagina **een virtuele machine maken** te gaan.
 
@@ -83,7 +83,7 @@ In deze stappen wordt gebruikgemaakt van de [Azure Portal](https://portal.azure.
     |Wacht woord of open bare SSH-sleutel | Het beschik bare veld wordt bepaald door uw keuze voor **verificatie type**.  Voer de juiste waarde in.|
     |Openbare poorten voor inkomend verkeer|Selecteer **Geselecteerde poorten toestaan**. Selecteer vervolgens **SSH (22)** in de vervolg keuzelijst **Selecteer binnenkomende poorten** .|
 
-    ![Basis configuratie van virtuele machine](./media/connect-on-premises-network/virtual-machine-basics.png)
+    :::image type="content" source="./media/connect-on-premises-network/virtual-machine-basics.png" alt-text="Basis configuratie van virtuele machine":::
 
     Geef andere vermeldingen op bij de standaard waarden en selecteer vervolgens het tabblad **netwerken** .
 
@@ -95,7 +95,7 @@ In deze stappen wordt gebruikgemaakt van de [Azure Portal](https://portal.azure.
     |Subnet | Selecteer het standaard subnet voor het virtuele netwerk dat u eerder hebt gemaakt. Selecteer __niet__ het subnet dat wordt gebruikt door de VPN-gateway.|
     |Openbare IP | Gebruik de waarde die automatisch is ingevuld.  |
 
-    ![Instellingen voor virtuele HDInsight-netwerken](./media/connect-on-premises-network/virtual-network-settings.png)
+    :::image type="content" source="./media/connect-on-premises-network/virtual-network-settings.png" alt-text="Instellingen voor virtuele HDInsight-netwerken":::
 
     Geef andere vermeldingen op bij de standaard waarden en selecteer vervolgens de **beoordeling + maken**.
 
@@ -109,7 +109,7 @@ Als de virtuele machine eenmaal is gemaakt, ontvangt u een melding over de **imp
 
 2. Noteer de waarden voor **openbaar IP-adres/DNS-naam label** en **privé-IP-adres** voor later gebruik.
 
-   ![Open bare en privé-IP-adressen](./media/connect-on-premises-network/virtual-machine-ip-addresses.png)
+   :::image type="content" source="./media/connect-on-premises-network/virtual-machine-ip-addresses.png" alt-text="Open bare en privé-IP-adressen":::
 
 ### <a name="install-and-configure-bind-dns-software"></a>Binding installeren en configureren (DNS-software)
 
@@ -245,7 +245,7 @@ Als u het virtuele netwerk wilt configureren voor het gebruik van de aangepaste 
 
 5. Selecteer __Opslaan__.  <br />  
 
-    ![De aangepaste DNS-server voor het netwerk instellen](./media/connect-on-premises-network/configure-custom-dns.png)
+    :::image type="content" source="./media/connect-on-premises-network/configure-custom-dns.png" alt-text="De aangepaste DNS-server voor het netwerk instellen":::
 
 ## <a name="configure-on-premises-dns-server"></a>On-premises DNS-server configureren
 

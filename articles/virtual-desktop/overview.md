@@ -6,12 +6,12 @@ ms.topic: overview
 ms.date: 09/14/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 36a15560b88c823ff2ae41f160839796bf21e4f8
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: f26d6b258c1e22d5d28353486378acc9aa0bbd5d
+ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98730782"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104889634"
 ---
 # <a name="what-is-windows-virtual-desktop"></a>Wat is Windows Virtual Desktop?
 
@@ -124,7 +124,7 @@ Zie de [Lijst met veilige URL's](safe-url-list.md) voor meer informatie over URL
 Windows Virtual Desktop biedt ondersteuning voor de volgende installatiekopieën van x64-besturingssystemen:
 
 * Windows 10 Enterprise voor meerdere sessies, versie 1809 of hoger
-* Windows 10 Enterprise, versie 1809 of hoger
+* Windows 10 Enter prise, versie 1809 of hoger (alleen Semi-Annual-kanaal)
 * Windows 7 Enterprise
 * Windows Server 2019
 * Windows Server 2016

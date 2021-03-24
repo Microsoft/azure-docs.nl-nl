@@ -8,12 +8,12 @@ adobe-target: true
 adobe-target-activity: DocsExp–386541–A/B–Enhanced-Readability-Quickstarts–2.19.2021
 adobe-target-experience: Experience B
 adobe-target-content: ./create-first-function-vs-code-csharp-ieux
-ms.openlocfilehash: b0c659c1b3bf373b7754dd9b058c74da35cc2e0a
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: ea0b66c49d6f37c6b8f7eaa7f667a63ab09155e0
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101704783"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104952683"
 ---
 # <a name="quickstart-create-a-c-function-in-azure-using-visual-studio-code"></a>Quickstart: Een C#-functie maken in Azure met behulp van Visual Studio Code
 
@@ -82,8 +82,10 @@ Nadat u hebt gecontroleerd of de functie correct wordt uitgevoerd op uw lokale c
 
 ## <a name="next-steps"></a>Volgende stappen
 
-U hebt [Visual Studio code](functions-develop-vs-code.md?tabs=csharp) gebruikt voor het maken van een functie-app met een eenvoudige, door http geactiveerde functie. In het volgende artikel vouwt u die functie uit door verbinding te maken met Azure Storage. Zie [bindingen toevoegen aan een bestaande functie in azure functions](add-bindings-existing-function.md?tabs=csharp)voor meer informatie over het maken van verbinding met andere Azure-Services. 
+U hebt [Visual Studio code](functions-develop-vs-code.md?tabs=csharp) gebruikt voor het maken van een functie-app met een eenvoudige, door http geactiveerde functie. In het volgende artikel vouwt u die functie uit door verbinding te maken met Azure Cosmos DB of Azure Storage. Zie [bindingen toevoegen aan een bestaande functie in azure functions](add-bindings-existing-function.md?tabs=csharp)voor meer informatie over het maken van verbinding met andere Azure-Services. 
 
+> [!div class="nextstepaction"]
+> [Verbinding maken met een Data Base](functions-add-output-binding-cosmos-db-vs-code.md?pivots=programming-language-csharp)
 > [!div class="nextstepaction"]
 > [Verbinding maken met een Azure Storage-wachtrij](functions-add-output-binding-storage-queue-vs-code.md?pivots=programming-language-csharp)
 

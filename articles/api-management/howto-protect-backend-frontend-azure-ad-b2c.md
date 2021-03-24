@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 02/18/2021
 ms.author: wieastbu
 ms.custom: fasttrack-new, fasttrack-update, devx-track-js
-ms.openlocfilehash: 812b54d10ea3cc3c405f534e36ac66abf3466808
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: baa6a0a6995e206924d14de25b98700e450f3a0c
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102449285"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104954918"
 ---
 # <a name="protect-spa-backend-with-oauth-20-azure-active-directory-b2c-and-azure-api-management"></a>Beveiligd-wachtwoord verificatie beveiligen met OAuth 2,0, Azure Active Directory B2C en Azure API Management
 
@@ -193,7 +193,7 @@ Open de Blade Azure AD B2C in de portal en voer de volgende stappen uit.
 1. Plak het bekende open-id-configuratie-eind punt van het beleid registreren en aanmelden in het vak URL van de certificaat verlener (deze configuratie is eerder vastgelegd).
 1. Klik op geheim weer geven en plak het client geheim van de back-end in het desbetreffende vak.
 1. Selecteer OK. Hiermee gaat u terug naar de Blade voor het selecteren van de identiteits provider/het scherm.
-1. Zorg ervoor dat het [token archief](https://docs.microsoft.com/azure/app-service/overview-authentication-authorization#token-store) is ingeschakeld onder Geavanceerde instellingen (standaard).
+1. Zorg ervoor dat het [token archief](../app-service/overview-authentication-authorization.md#token-store) is ingeschakeld onder Geavanceerde instellingen (standaard).
 1. Klik op opslaan (in de linkerbovenhoek van de Blade).
 
    > [!IMPORTANT]

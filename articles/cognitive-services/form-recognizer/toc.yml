@@ -7,40 +7,20 @@
       href: overview.md
     - name: Nieuwe functies
       href: whats-new.md
-- name: Aan de slag met Form Recognizer
-  expanded: true
+- name: Snelstartgidsen
   items:
-    - name: De clientbibliotheek of REST API gebruiken
+    - name: Aan de slag met client bibliotheek of REST API
       href: quickstarts/client-library.md
-    - name: Het voorbeeldhulpprogramma voor labelen gebruiken
+    - name: Het hulp programma voor het labelen van het voor beeld gebruiken
       href: quickstarts/label-tool.md
-- name: Zelfstudies
+- name: Voorbeelden
   items:
-    - name: Form Recognizer gebruiken met Cognitive Search
-      href: ../../search/cognitive-search-custom-skill-form.md
-    - name: Form Recognizer gebruiken met AI Builder
-      href: tutorial-ai-builder.md
-    - name: Formulier herkenner gebruiken met Azure Functions
-      href: tutorial-azure-function.md
-    - name: Formuliergegevens bulksgewijs ophalen
-      href: tutorial-bulk-processing.md
-- name: Concepten
-  items:
-    - name: Indelings-API
-      expanded: true
-      items:
-        - name: Formulier gegevens ophalen
-          href: concept-layout.md
-    - name: Aangepaste modellen
-      href: concept-custom.md
-    - name: Ontvangsten
-      href: concept-receipts.md
-    - name: Visitekaartjes
-      href: concept-business-cards.md
-    - name: Facturen
-      href: concept-invoices.md
-    - name: Identificatie kaarten
-      href: concept-identification-cards.md
+    - name: 'C#/.net-ontwikkeling.: Form Recognizer client Library SDK'
+      href: /samples/azure/azure-sdk-for-net/azure-form-recognizer-client-sdk-samples
+    - name: 'Java: Form Recognizer-client bibliotheek-SDK'
+      href: /samples/azure/azure-sdk-for-java/formrecognizer-java-samples
+    - name: 'Python: client bibliotheek-SDK voor formulier herkenning'
+      href: /samples/azure/azure-sdk-for-python/formrecognizer-samples
 - name: Instructiegidsen
   items:
     - name: Een set met trainingsgegevens samenstellen
@@ -64,7 +44,34 @@
           href: ../containers/index.yml
     - name: Back-ups maken en modellen herstellen
       href: disaster-recovery.md
-- name: Naslaginformatie
+- name: Concepten
+  items:
+    - name: Indelings-API
+      expanded: true
+      items:
+        - name: Formulier gegevens ophalen
+          href: concept-layout.md
+    - name: Aangepaste modellen
+      href: concept-custom.md
+    - name: Ontvangsten
+      href: concept-receipts.md
+    - name: Visitekaartjes
+      href: concept-business-cards.md
+    - name: Facturen
+      href: concept-invoices.md
+    - name: Identificatie kaarten
+      href: concept-identification-cards.md
+- name: Zelfstudies
+  items:
+    - name: Formuliergegevens bulksgewijs ophalen
+      href: tutorial-bulk-processing.md
+    - name: Form Recognizer gebruiken met Cognitive Search
+      href: ../../search/cognitive-search-custom-skill-form.md
+    - name: Form Recognizer gebruiken met AI Builder
+      href: tutorial-ai-builder.md
+    - name: Formulier herkenner gebruiken met Azure Functions
+      href: tutorial-azure-function.md
+- name: Referentie
   items:
     - name: API v 2.1 Preview voor formulier herkenning. 3
       href: 'https://westus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/AnalyzeWithCustomForm'

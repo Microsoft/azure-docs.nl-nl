@@ -398,7 +398,7 @@
           href: azure-stack-edge-replace-device.md
         - name: Migreren naar GPU-apparaat
           href: azure-stack-edge-migrate-fpga-gpu.md
-    - name: Releaseopmerkingen
+    - name: Opmerkingen bij de release
       items:
         - name: 2101-actueel
           href: azure-stack-edge-2101-release-notes.md

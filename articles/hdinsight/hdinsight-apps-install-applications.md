@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 06/17/2019
-ms.openlocfilehash: cfbbc1f11a24379561df26e2fb8d9da20b249317
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 46a22b78ade3d137f25b14e5cbdaff3264208228
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98942745"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104868389"
 ---
 # <a name="install-third-party-apache-hadoop-applications-on-azure-hdinsight"></a>Apache Hadoop-toepassingen van derden installeren op Azure HDInsight
 
@@ -53,10 +53,10 @@ De volgende procedure beschrijft hoe u HDInsight-toepassingen in een bestaand HD
 3. Selecteer een HDInsight-cluster in de lijst.  Als u deze niet hebt, maakt u die eerst.  Zie [Clusters maken](hadoop/apache-hadoop-linux-tutorial-get-started.md).
 4. Selecteer in de categorie **instellingen** de optie **toepassingen**. In het hoofd venster ziet u een lijst met geïnstalleerde toepassingen. 
    
-    ![Menu van HDInsight-toepassingenportal](./media/hdinsight-apps-install-applications/hdinsight-apps-portal-menu.png)
+    :::image type="content" source="./media/hdinsight-apps-install-applications/hdinsight-apps-portal-menu.png" alt-text="Menu van HDInsight-toepassingenportal":::
 5. Selecteer **+ toevoegen** in het menu. U kunt een lijst met beschik bare toepassingen weer geven.  Als **+ add** grijs wordt weer gegeven, betekent dit dat er geen toepassingen zijn voor deze versie van het HDInsight-cluster.
    
-    ![HDInsight-toepassingen, beschikbare toepassingen](./media/hdinsight-apps-install-applications/hdinsight-apps-list1.png)
+    :::image type="content" source="./media/hdinsight-apps-install-applications/hdinsight-apps-list1.png" alt-text="HDInsight-toepassingen, beschikbare toepassingen":::
 6. Selecteer een van de beschik bare toepassingen en volg de instructies om de juridische voor waarden te accepteren.
 
 U kunt de installatie status bekijken via de meldingen van de portal (Selecteer het klok pictogram boven aan de portal). Nadat de toepassing is geïnstalleerd, wordt de toepassing weer gegeven in de lijst met geïnstalleerde apps.
@@ -65,7 +65,7 @@ U kunt de installatie status bekijken via de meldingen van de portal (Selecteer 
 
 U hebt ook de optie HDInsight-toepassingen te installeren wanneer u een cluster maakt. Tijdens het proces worden HDInsight-toepassingen geïnstalleerd nadat het cluster is gemaakt en actief is. Als u toepassingen wilt installeren tijdens het maken van het cluster met behulp van de Azure Portal, klikt u op het tabblad **configuratie + prijzen** en selecteert u **+ toepassing toevoegen**.
 
-![Azure Portal cluster configuratie toepassingen](./media/hdinsight-apps-install-applications/azure-portal-cluster-configuration-applications.png)
+:::image type="content" source="./media/hdinsight-apps-install-applications/azure-portal-cluster-configuration-applications.png" alt-text="Azure Portal cluster configuratie toepassingen":::
 
 ## <a name="list-installed-hdinsight-apps-and-properties"></a>Lijst van geïnstalleerde HDInsight-apps en -eigenschappen
 De portal toont een lijst van de geïnstalleerde HDInsight-toepassingen voor een cluster en de eigenschappen van elke geïnstalleerde toepassing.
@@ -77,7 +77,7 @@ De portal toont een lijst van de geïnstalleerde HDInsight-toepassingen voor een
 3. Selecteer een HDInsight-cluster in de lijst.
 4. Selecteer in de categorie **instellingen** de optie **toepassingen**. In het hoofd venster ziet u een lijst met geïnstalleerde toepassingen. 
    
-    ![HDInsight-toepassingen, geïnstalleerde apps](./media/hdinsight-apps-install-applications/hdinsight-apps-installed-apps-with-apps.png)
+    :::image type="content" source="./media/hdinsight-apps-install-applications/hdinsight-apps-installed-apps-with-apps.png" alt-text="Apps die zijn geïnstalleerd met HDInsight-toepassingen":::
 5. Selecteer een van de geïnstalleerde toepassingen om de eigenschap weer te geven. De eigenschappen lijsten:
 
     |Eigenschap | Beschrijving |

@@ -3,12 +3,12 @@ title: Azure Arc-servers plannen en implementeren
 description: Meer informatie over het inschakelen van een groot aantal machines aan Azure Arc-servers om de configuratie van essentiële beveiligings-, beheer-en bewakings mogelijkheden in azure te vereenvoudigen.
 ms.date: 03/18/2021
 ms.topic: conceptual
-ms.openlocfilehash: 401725dcfed85a6675c95434270dd7dbff482b6e
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 5aa7022dba943fa3de247404522408f4660e80e3
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104591177"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105023279"
 ---
 # <a name="plan-and-deploy-arc-enabled-servers"></a>Arc-servers plannen en implementeren
 
@@ -57,7 +57,7 @@ In deze fase stellen systeem engineers of beheerders de belangrijkste functies i
 |Taak |Detail |Duur |
 |-----|-------|---------|
 | [Een resourcegroep maken](../../azure-resource-manager/management/manage-resource-groups-portal.md#create-resource-groups) | Een speciale resource groep die alleen de Arc ingeschakelde servers bevat en het beheer en de bewaking van deze resources centraliseren. | Een uur |
-| [Tags](../../azure-resource-manager/management/tag-resources.md) Toep assen om machines te organiseren. | Evalueer en ontwikkel een IT-uitgelijnde [coderings strategie](/cloud-adoption-framework/decision-guides/resource-tagging/) die u kan helpen de complexiteit van het beheer van uw Arc-servers te reduceren en te vereenvoudigen beheer beslissingen te nemen. | Eén dag |
+| [Tags](../../azure-resource-manager/management/tag-resources.md) Toep assen om machines te organiseren. | Evalueer en ontwikkel een IT-uitgelijnde [coderings strategie](/azure/cloud-adoption-framework/decision-guides/resource-tagging/) die u kan helpen de complexiteit van het beheer van uw Arc-servers te reduceren en te vereenvoudigen beheer beslissingen te nemen. | Eén dag |
 | [Azure monitor-logboeken](../../azure-monitor/logs/data-platform-logs.md) ontwerpen en implementeren | Beoordeling van [overwegingen voor ontwerpen en implementeren](../../azure-monitor/logs/design-logs-deployment.md) om te bepalen of uw organisatie een bestaande log Analytics werk ruimte moet gebruiken of implementeren om verzamelde logboek gegevens van hybride servers en computers op te slaan. <sup>1</sup> | Eén dag |
 | [Een Azure Policy](../../governance/policy/overview.md) governance-abonnement ontwikkelen | Bepaal hoe u bestuurt van hybride servers en machines op het abonnement of het bereik van de resource groep met Azure Policy. | Eén dag |
 | [Op rollen gebaseerd toegangs beheer](../../role-based-access-control/overview.md) (RBAC) configureren | Ontwikkel een toegangs plan om te bepalen wie toegang heeft tot het beheren van Arc ingeschakelde servers en de mogelijkheid om hun gegevens te bekijken uit andere Azure-Services en-oplossingen. | Eén dag |
@@ -71,7 +71,7 @@ We voegen vervolgens toe aan de basis die in fase 1 is vastgelegd door het voorb
 
 |Taak |Detail |Duur |
 |-----|-------|---------|
-| Het vooraf gedefinieerde installatie script downloaden | Bekijk en pas het vooraf gedefinieerde installatie script voor de implementatie van de verbonden machine-agent voor de geautomatiseerde implementatie vereisten aan.<br><br> Voor beeld van onboarding van resources op schaal:<br><br> <ul><li> [Script voor eenvoudige implementatie van grootte](onboard-service-principal.md)</ul></li> <ul><li>[Op schaal voor onboarding VMware vSphere Windows Server-Vm's](https://github.com/microsoft/azure_arc/blob/master/azure_arc_servers_jumpstart/docs/vmware_scaled_powercli_win.md)</ul></li> <ul><li>[Op schaal voor onboarding VMware vSphere Linux-Vm's](https://github.com/microsoft/azure_arc/blob/master/azure_arc_servers_jumpstart/docs/vmware_scaled_powercli_linux.md)</ul></li> <ul><li>[Onboarding van AWS EC2-instanties op schaal met Ansible](https://github.com/microsoft/azure_arc/blob/master/azure_arc_servers_jumpstart/docs/aws_scale_ansible.md)</ul></li> <ul><li>[Implementatie op schaal met behulp van externe communicatie met Power shell](https://docs.microsoft.com/azure/azure-arc/servers/onboard-powershell) (alleen Windows)</ul></li>| Een of meer dagen, afhankelijk van de vereisten, bedrijfs processen (bijvoorbeeld wijzigings-en release beheer) en de gebruikte automatiserings methode. |
+| Het vooraf gedefinieerde installatie script downloaden | Bekijk en pas het vooraf gedefinieerde installatie script voor de implementatie van de verbonden machine-agent voor de geautomatiseerde implementatie vereisten aan.<br><br> Voor beeld van op schaal onboarding-resources:<br><br> <ul><li> [Script voor eenvoudige implementatie op basis van grootte](onboard-service-principal.md)</ul></li> <ul><li>[Schaal bare onboarding VMware vSphere Windows Server-Vm's](https://github.com/microsoft/azure_arc/blob/main/docs/azure_arc_jumpstart/azure_arc_servers/scaled_deployment/vmware_scaled_powercli_win/_index.md)</ul></li> <ul><li>[Voor bereiding voor onboarding VMware vSphere Linux-Vm's](https://github.com/microsoft/azure_arc/blob/main/docs/azure_arc_jumpstart/azure_arc_servers/scaled_deployment/vmware_scaled_powercli_linux/_index.md)</ul></li> <ul><li>[AWS EC2-instanties op schaal met Ansible](https://github.com/microsoft/azure_arc/blob/main/docs/azure_arc_jumpstart/azure_arc_servers/scaled_deployment/aws_scaled_ansible/_index.md)</ul></li> <ul><li>[Implementatie op schaal met behulp van externe communicatie met Power shell](./onboard-powershell.md) (alleen Windows)</ul></li>| Een of meer dagen, afhankelijk van de vereisten, bedrijfs processen (bijvoorbeeld wijzigings-en release beheer) en de gebruikte automatiserings methode. |
 | [Een service-principal maken](onboard-service-principal.md#create-a-service-principal-for-onboarding-at-scale) |Maak een Service-Principal om machines niet-interactief te verbinden met Azure PowerShell of vanuit de portal.| Een uur |
 | De verbonden machine agent implementeren op uw doel servers en-computers |Gebruik uw automatiserings programma om de scripts te implementeren op uw servers en deze te verbinden met Azure.| Een of meer dagen, afhankelijk van uw release plan en na een gefaseerde implementatie. |
 

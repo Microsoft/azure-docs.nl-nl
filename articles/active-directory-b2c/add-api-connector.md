@@ -5,17 +5,17 @@ services: active-directory-b2c
 ms.service: active-directory
 ms.subservice: B2C
 ms.topic: how-to
-ms.date: 10/15/2020
+ms.date: 03/24/2021
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.custom: it-pro
-ms.openlocfilehash: 59246c3739ad4de27e65641cc9d2154b33a6ee5e
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 5d1b52ed0f862b544d4b90d466ddc1d2a231ca44
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103008430"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105023415"
 ---
 # <a name="add-an-api-connector-to-a-sign-up-user-flow-preview"></a>Een API-connector toevoegen aan een registratie gebruikers stroom (preview-versie)
 
@@ -51,14 +51,22 @@ Basis verificatie HTTP is gedefinieerd in [RFC 2617](https://tools.ietf.org/html
 > [!IMPORTANT]
 > Deze functionaliteit is beschikbaar als preview-versie en wordt uitgevoerd zonder een service overeenkomst. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
-Verificatie van client certificaten is een wederzijdse verificatie op basis van certificaten, waarbij de client een client certificaat voor de server biedt om zijn identiteit te bewijzen. In dit geval gebruikt Azure AD B2C het certificaat dat u uploadt als onderdeel van de configuratie van de API-connector. Dit gebeurt als onderdeel van de SSL-handshake. Alleen services die over de juiste certificaten beschikken, hebben toegang tot uw REST API-service. Het client certificaat is een X. 509-digitaal certificaat. In productie omgevingen moet het worden ondertekend door een certificerings instantie. 
+Verificatie van client certificaten is een wederzijdse verificatie methode op basis van certificaten waarbij de client een client certificaat aan de server levert om zijn identiteit te bewijzen. In dit geval gebruikt Azure AD B2C het certificaat dat u uploadt als onderdeel van de configuratie van de API-connector. Dit gebeurt als onderdeel van de SSL-handshake. De API-service kan vervolgens de toegang beperken tot services die over de juiste certificaten beschikken. Het client certificaat is een PKCS12/pfx-Profiel (PFX) X. 509-digitaal certificaat. In productie omgevingen moet het worden ondertekend door een certificerings instantie. 
 
+Als u een certificaat wilt maken, kunt u [Azure Key Vault](../key-vault/certificates/create-certificate.md)gebruiken, dat beschikt over opties voor zelfondertekende certificaten en integraties met leveranciers van uitgevers van certificaten voor ondertekende certificaten. De aanbevolen instellingen zijn onder andere:
+- **Onderwerp**: `CN=<yourapiname>.<tenantname>.onmicrosoft.com`
+- **Inhouds type**: `PKCS #12`
+- **Levens duur Acton type**: `Email all contacts at a given percentage lifetime` of `Email all contacts a given number of days before expiry`
+- **Exporteer bare persoonlijke sleutel**: `Yes` (om een pfx-bestand te kunnen exporteren)
 
-Als u een certificaat wilt maken, kunt u [Azure Key Vault](../key-vault/certificates/create-certificate.md)gebruiken, dat beschikt over opties voor zelfondertekende certificaten en integraties met leveranciers van uitgevers van certificaten voor ondertekende certificaten. Vervolgens kunt u [het certificaat exporteren](../key-vault/certificates/how-to-export-certificate.md) en uploaden voor gebruik in de API connectors-configuratie. Het wacht woord is alleen vereist voor certificaat bestanden die worden beveiligd met een wacht woord. U kunt ook de [cmdlet New-SelfSignedCertificate](./secure-rest-api.md#prepare-a-self-signed-certificate-optional) van Power shell gebruiken om een zelfondertekend certificaat te genereren.
+Vervolgens kunt u [het certificaat exporteren](../key-vault/certificates/how-to-export-certificate.md). U kunt ook de [cmdlet New-SelfSignedCertificate](../active-directory-b2c/secure-rest-api.md#prepare-a-self-signed-certificate-optional) van Power shell gebruiken om een zelfondertekend certificaat te genereren.
 
-Zie voor Azure App Service en Azure Functions [TLS-wederzijdse verificatie configureren](../app-service/app-service-web-configure-tls-mutual-auth.md) voor meer informatie over het inschakelen en valideren van het certificaat vanuit uw API-eind punt.
+Nadat u een certificaat hebt, kunt u het uploaden als onderdeel van de configuratie van de API-connector. Het wacht woord is alleen vereist voor certificaat bestanden die worden beveiligd met een wacht woord.
 
-U wordt aangeraden herinnerings waarschuwingen in te stellen voor wanneer uw certificaat verloopt. Als u een nieuw certificaat wilt uploaden naar een bestaande API-connector, selecteert u de API-connector onder API-connectors **(preview)** en klikt u op **Nieuw certificaat uploaden**. Het laatst geüploade certificaat dat niet is verlopen en na de begin datum valt, wordt automatisch door Azure AD B2C gebruikt.
+Uw API moet de autorisatie implementeren op basis van verzonden client certificaten om de API-eind punten te beveiligen. Zie voor Azure App Service en Azure Functions [TLS-wederzijdse verificatie configureren](../app-service/app-service-web-configure-tls-mutual-auth.md) voor meer informatie over het inschakelen en *valideren van het certificaat vanuit uw API-code*.  U kunt ook Azure API Management gebruiken om [Eigenschappen van client certificaten te controleren](
+../api-management/api-management-howto-mutual-certificates-for-clients.md)  aan de hand van de gewenste waarden met behulp van beleids expressies.
+
+U wordt aangeraden herinnerings waarschuwingen in te stellen voor wanneer uw certificaat verloopt. U moet een nieuw certificaat genereren en de bovenstaande stappen herhalen. Uw API-service kan oude en nieuwe certificaten tijdelijk blijven accepteren wanneer het nieuwe certificaat wordt geïmplementeerd. Als u een nieuw certificaat wilt uploaden naar een bestaande API-connector, selecteert u de API-connector onder **API** -connectors en klikt u op **Nieuw certificaat uploaden**. Het laatst geüploade certificaat dat niet is verlopen en na de begin datum valt, wordt automatisch door Azure Active Directory gebruikt.
 
 ### <a name="api-key"></a>API-sleutel
 Sommige services gebruiken een API-sleutel om de toegang tot uw HTTP-eind punten op te maken tijdens de ontwikkeling. Voor [Azure functions](../azure-functions/functions-bindings-http-webhook-trigger.md#authorization-keys)kunt u dit doen door de `code` para meter als query op te nemen in de **eind punt-URL**. Bijvoorbeeld `https://contoso.azurewebsites.net/api/endpoint` <b>`?code=0123456789`</b> ). 
@@ -302,7 +310,7 @@ Content-type: application/json
 | ----------- | ------- | -------- | -------------------------------------------------------------------------- |
 | versie     | Tekenreeks  | Ja      | De versie van uw API.                                                    |
 | actie      | Tekenreeks  | Ja      | Waarde moet zijn `ValidationError` .                                           |
-| status      | Geheel getal | Ja      | Dit moet een waarde zijn `400` voor een ValidationError-antwoord.                        |
+| status      | Geheel getal/teken reeks | Ja      | Dit moet een waarde zijn `400` of `"400"` een ValidationError-antwoord.  |
 | userMessage | Tekenreeks  | Ja      | Bericht dat wordt weergegeven aan de gebruiker.                                            |
 
 > [!NOTE]

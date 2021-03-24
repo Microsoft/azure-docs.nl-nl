@@ -5,14 +5,14 @@ author: jlian
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
-ms.date: 03/12/2021
+ms.date: 03/22/2021
 ms.author: jlian
-ms.openlocfilehash: 2a76cede4bc72da9f30564f98ab9bb84028680f7
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: bf9d58926c5a0fdc7c305e1d9daebfa1c8c9cf63
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104581487"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105023578"
 ---
 # <a name="use-ip-filters"></a>IP-filters gebruiken
 
@@ -32,11 +32,11 @@ Het **IP-filter** raster in de portal voor een IOT-hub is standaard leeg. Deze s
 
 ## <a name="add-or-edit-an-ip-filter-rule"></a>Een IP-filterregel toevoegen of bewerken
 
-Als u een IP-filterregel wilt toevoegen, selecteert u **+ IP-filterregel toevoegen**.
+Als u een IP-filterregel wilt toevoegen, selecteert u **+ IP-filterregel toevoegen**. Als u het IP-adres van uw computer snel wilt toevoegen, klikt u op het **IP-adres van uw client toevoegen**. 
 
 :::image type="content" source="./media/iot-hub-ip-filtering/ip-filter-add-rule.png" alt-text="Een IP-filter regel toevoegen aan een IoT-hub":::
 
-Vul de velden in nadat u **IP-filterregel toevoegen** hebt geselecteerd.
+Vul de velden in nadat u **IP-filterregel toevoegen** hebt geselecteerd. Deze velden worden vooraf ingevuld als u hebt geselecteerd om uw client-IP-adres toe te voegen.
 
 :::image type="content" source="./media/iot-hub-ip-filtering/ip-filter-after-selecting-add.png" alt-text="Nadat u IP-filterregel toevoegen hebt geselecteerd":::
 
@@ -85,6 +85,10 @@ Een verbindings poging van een IP-adres dat niet expliciet is toegestaan, ontvan
 IP-filter regels zijn regels voor *toestaan* en worden toegepast zonder te best Ellen. Alleen IP-adressen die u toevoegt, kunnen verbinding maken met IoT Hub. 
 
 Als u bijvoorbeeld adressen in het bereik wilt accepteren `192.168.100.0/22` en alles wilt weigeren, hoeft u slechts één regel in het raster met een adres bereik toe te voegen `192.168.100.0/22` .
+
+### <a name="azure-portal"></a>Azure Portal 
+
+IP-filter regels worden ook toegepast wanneer u IoT Hub via Azure Portal gebruikt. Dit komt doordat API-aanroepen naar de IoT Hub-service rechtstreeks via uw browser worden gedaan met uw referenties, die consistent zijn met andere Azure-Services. Om toegang te krijgen tot IoT Hub met behulp van Azure Portal wanneer IP-filter is ingeschakeld, voegt u het IP-adres van uw computer toe aan de allowlist. 
 
 ## <a name="retrieve-and-update-ip-filters-using-azure-cli"></a>IP-filters ophalen en bijwerken met behulp van Azure CLI
 

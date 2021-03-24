@@ -7,12 +7,12 @@ ms.service: azure-percept
 ms.topic: how-to
 ms.date: 02/15/2021
 ms.custom: template-how-to
-ms.openlocfilehash: 5e41dea3b47c608b9e82ac57fa1cfe5247ea6cc2
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 8f22379049b74428787b738af832802081be7bf8
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102099009"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105022888"
 ---
 # <a name="managing-your-voice-assistant"></a>Uw Voice Assistant beheren
 
@@ -60,7 +60,7 @@ Een tref woord is een woord of korte zin die wordt gebruikt om een Voice Assista
 
 Met [Speech Studio](https://speech.microsoft.com/)kunt u een aangepast tref woord maken voor uw telefoon assistent. Het duurt Maxi maal 30 minuten om een basis model voor aangepaste tref woorden te trainen.
 
-Volg de [documentatie van speech Studio](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-devices-sdk-create-kws) voor hulp bij het maken van een aangepast tref woord. Zodra het nieuwe tref woord is geconfigureerd, wordt het in de project Santa Cruz-Portal gebruikt voor gebruik met uw toepassing voor spraak assistentie.
+Volg de [documentatie van speech Studio](../cognitive-services/speech-service/custom-keyword-basics.md) voor hulp bij het maken van een aangepast tref woord. Zodra het nieuwe tref woord is geconfigureerd, wordt het in de project Santa Cruz-Portal gebruikt voor gebruik met uw toepassing voor spraak assistentie.
 
 ## <a name="commands-configuration"></a>Configuratie van opdrachten
 
@@ -88,7 +88,7 @@ Aangepaste opdrachten maken het eenvoudig om geavanceerde spraak opdrachten te b
 
 Met [Speech Studio](https://speech.microsoft.com/)kunt u aangepaste opdrachten voor het uitvoeren van uw telefoon assistent maken.
 
-Volg de [documentatie van speech Studio](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-custom-commands-application) voor hulp bij het maken van aangepaste opdrachten. Na de configuratie zijn uw nieuwe opdrachten beschikbaar in azure percept Studio, zodat u deze kunt gebruiken met uw Voice Assistant-toepassing.
+Volg de [documentatie van speech Studio](../cognitive-services/speech-service/quickstart-custom-commands-application.md) voor hulp bij het maken van aangepaste opdrachten. Na de configuratie zijn uw nieuwe opdrachten beschikbaar in azure percept Studio, zodat u deze kunt gebruiken met uw Voice Assistant-toepassing.
 
 ## <a name="next-steps"></a>Volgende stappen
 

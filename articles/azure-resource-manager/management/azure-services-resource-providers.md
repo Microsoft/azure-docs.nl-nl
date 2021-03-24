@@ -3,12 +3,12 @@ title: Resource providers door Azure-Services
 description: Een lijst met alle naam ruimten van de resource provider voor Azure Resource Manager en toont de Azure-service voor die naam ruimte.
 ms.topic: conceptual
 ms.date: 03/16/2021
-ms.openlocfilehash: ee8cb054f3f10c3b33d5235b2b03cdfeac266139
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: d8239a9305560eb77ac2c714b993373f0d5b16fb
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104592158"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105023007"
 ---
 # <a name="resource-providers-for-azure-services"></a>Resource providers for Azure services (Resourceproviders voor Azure-services)
 
@@ -28,7 +28,7 @@ De resource providers die zijn gemarkeerd met **-geregistreerd** , worden standa
 | Microsoft.AnalysisServices | [Azure Analysis Services](../../analysis-services/index.yml) |
 | Microsoft.ApiManagement | [API Management](../../api-management/index.yml) |
 | Micro soft. AppConfiguration | [Azure App Configuration](../../azure-app-configuration/index.yml) |
-| Micro soft. AppPlatform | [Azure Spring Cloud](../../spring-cloud/spring-cloud-overview.md) |
+| Micro soft. AppPlatform | [Azure Spring Cloud](../../spring-cloud/overview.md) |
 | Micro soft. Attestation | Azure Attestation-service |
 | Micro soft. autorisatie- [geregistreerd](#registration) | [Azure Resource Manager](../index.yml) |
 | Microsoft.Automation | [Automation](../../automation/index.yml) |
@@ -58,7 +58,7 @@ De resource providers die zijn gemarkeerd met **-geregistreerd** , worden standa
 | Micro soft. ClassicSubscription- [geregistreerd](#registration) | Klassiek implementatiemodel |
 | Microsoft.CognitiveServices | [Cognitive Services](../../cognitive-services/index.yml) |
 | Micro soft. commerce- [geregistreerd](#registration) | baan |
-| Microsoft.Compute | [Virtual Machines](../../virtual-machines/index.yml)<br />[Virtual Machine Scale Sets](../../virtual-machine-scale-sets/index.yml) |
+| Microsoft.Compute | [Virtual Machines](../../virtual-machines/index.yml)<br />[Virtuele-machineschaalsets](../../virtual-machine-scale-sets/index.yml) |
 | Micro soft. verbruik- [geregistreerd](#registration) | [Cost Management](/azure/cost-management/) |
 | Micro soft. ContainerInstance | [Container Instances](../../container-instances/index.yml) |
 | Microsoft.ContainerRegistry | [Container Registry](../../container-registry/index.yml) |
@@ -125,7 +125,7 @@ De resource providers die zijn gemarkeerd met **-geregistreerd** , worden standa
 | Micro soft. MarketplaceApps | baan |
 | Micro soft. MarketplaceOrdering- [geregistreerd](#registration) | baan |
 | Microsoft.Media | [Media Services](../../media-services/index.yml) |
-| Micro soft. Microservices4Spring | [Azure Spring Cloud](../../spring-cloud/spring-cloud-overview.md) |
+| Micro soft. Microservices4Spring | [Azure Spring Cloud](../../spring-cloud/overview.md) |
 | Micro soft. migrate | [Azure Migrate](../../migrate/migrate-services-overview.md) |
 | Micro soft. MixedReality | [Azure Spatial Anchors](../../spatial-anchors/index.yml) |
 | Micro soft. NetApp | [Azure NetApp Files](../../azure-netapp-files/index.yml) |
@@ -155,12 +155,12 @@ De resource providers die zijn gemarkeerd met **-geregistreerd** , worden standa
 | Microsoft.Search | [Azure Cognitive Search](../../search/index.yml) |
 | Microsoft.Security | [Beveiligingscentrum](../../security-center/index.yml) |
 | Micro soft. SecurityInsights | [Azure Sentinel](../../sentinel/index.yml) |
-| Micro soft. SerialConsole- [geregistreerd](#registration) | [Azure Serial console voor Windows](../../virtual-machines/troubleshooting/serial-console-windows.md) |
+| Micro soft. SerialConsole- [geregistreerd](#registration) | [Azure Serial console voor Windows](/troubleshoot/azure/virtual-machines/serial-console-windows) |
 | Microsoft.ServiceBus | [Service Bus](/azure/service-bus/) |
 | Micro soft. ServiceFabric | [Service Fabric](../../service-fabric/index.yml) |
 | Micro soft. ServiceFabricMesh | [Service Fabric Mesh](../../service-fabric-mesh/index.yml) |
 | Micro soft. Services | baan |
-| Micro soft. SignalRService | [Azure SignalR-service](../../azure-signalr/index.yml) |
+| Micro soft. SignalRService | [Azure SignalR Service](../../azure-signalr/index.yml) |
 | Micro soft. SoftwarePlan | Licentie |
 | Micro soft. Solutions | [Azure Managed Applications](../managed-applications/index.yml) |
 | Microsoft.Sql | [Azure SQL Database](../../azure-sql/database/index.yml)<br /> [Azure SQL Managed Instance](../../azure-sql/managed-instance/index.yml) <br />[Azure Synapse Analytics](/azure/sql-data-warehouse/) |

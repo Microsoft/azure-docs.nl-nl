@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/17/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 516a66ef64512cbe4fa4c3589e651c14ddf18550
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 38b6251c4b464214d66f7240dab9d5d23812f946
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101647622"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105023211"
 ---
 # <a name="azure-security-baseline-for-azure-cache-for-redis"></a>Azure-beveiligings basislijn voor Azure cache voor redis
 
@@ -34,7 +34,7 @@ U kunt ook firewall regels met een begin-en eind-IP-adres bereik opgeven. Wannee
 
 - [Virtual Network ondersteuning configureren voor een Premium Azure-cache voor redis](cache-how-to-premium-vnet.md)
 
-- [Azure-cache configureren voor redis-firewall regels](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-configure#firewall)
+- [Azure-cache configureren voor redis-firewall regels](./cache-configure.md#firewall)
 
 **Verantwoordelijkheid**: Klant
 
@@ -68,7 +68,7 @@ Schakel DDoS Protection standaard in op de VNets die is gekoppeld aan uw Azure-c
 
 - [Virtual Network ondersteuning configureren voor een Premium Azure-cache voor redis](cache-how-to-premium-vnet.md)
 
-- [Azure DDoS Protection Standard beheren met de Azure Portal](/azure/virtual-network/manage-ddos-protection)
+- [Azure DDoS Protection Standard beheren met de Azure Portal](../ddos-protection/manage-ddos-protection.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -118,7 +118,7 @@ U kunt ook toepassings beveiligings groepen (ASG) gebruiken om complexe beveilig
 
 - [Service tags van virtueel netwerk](../virtual-network/service-tags-overview.md)
 
-- [Toepassings beveiligings groepen](/azure/virtual-network/security-overview#application-security-groups)
+- [Toepassings beveiligings groepen](../virtual-network/network-security-groups-overview.md#application-security-groups)
 
 **Verantwoordelijkheid**: Klant
 
@@ -145,7 +145,7 @@ U kunt ook Azure-blauw drukken gebruiken om grootschalige Azure-implementaties t
 
 **Richt lijnen**: Gebruik labels voor netwerk bronnen die zijn gekoppeld aan uw Azure-cache voor redis-implementatie om ze logisch in een taxonomie te organiseren.
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -155,9 +155,9 @@ U kunt ook Azure-blauw drukken gebruiken om grootschalige Azure-implementaties t
 
 **Hulp**: gebruik het Azure-activiteiten logboek om netwerk resource configuraties te bewaken en wijzigingen te detecteren voor netwerk bronnen die betrekking hebben op uw Azure-cache voor redis-exemplaren. Maak waarschuwingen in Azure Monitor die worden geactiveerd wanneer er wijzigingen in kritieke netwerk bronnen plaatsvinden.
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](/azure/azure-monitor/platform/activity-log-view)
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Waarschuwingen maken in Azure Monitor](/azure/azure-monitor/platform/alerts-activity-log)
+- [Waarschuwingen maken in Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -171,7 +171,7 @@ U kunt ook Azure-blauw drukken gebruiken om grootschalige Azure-implementaties t
 
 **Hulp**: Schakel Diagnostische instellingen voor Azure-activiteiten logboek in en verzend de logboeken naar een log Analytics-werk ruimte, een Azure Event hub of een Azure-opslag account voor archivering. Met activiteiten Logboeken kunt u inzicht krijgen in de bewerkingen die zijn uitgevoerd op uw Azure-cache voor redis-exemplaren op het niveau van het besturings vlak. Met Azure-activiteiten logboek gegevens kunt u de ' What, wie en wanneer ' bepalen voor schrijf bewerkingen (PUT, POST, DELETE) die zijn uitgevoerd op het niveau van het besturings vlak voor uw Azure-cache voor redis-exemplaren.
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](/azure/azure-monitor/platform/diagnostic-settings-legacy)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -183,7 +183,7 @@ U kunt ook Azure-blauw drukken gebruiken om grootschalige Azure-implementaties t
 
 Als er metrische gegevens beschikbaar zijn door Diagnostische instellingen in te scha kelen, is controle logboek registratie op het gegevensvlak nog niet beschikbaar voor Azure-cache voor redis.
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](/azure/azure-monitor/platform/diagnostic-settings-legacy)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -195,7 +195,7 @@ Als er metrische gegevens beschikbaar zijn door Diagnostische instellingen in te
 
 Houd er rekening mee dat audit logboek registratie op het gegevens vlak nog niet beschikbaar is voor Azure cache voor redis.
 
-- [Para meters voor het bewaren van Logboeken instellen](/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period)
+- [Para meters voor het bewaren van Logboeken instellen](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Verantwoordelijkheid**: Klant
 
@@ -207,9 +207,9 @@ Houd er rekening mee dat audit logboek registratie op het gegevens vlak nog niet
 
 Houd er rekening mee dat audit logboek registratie op het gegevens vlak nog niet beschikbaar is voor Azure cache voor redis.
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](/azure/azure-monitor/platform/diagnostic-settings-legacy)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
-- [Azure-activiteiten logboeken verzamelen en analyseren in Log Analytics werk ruimte in Azure Monitor](/azure/azure-monitor/platform/activity-log-collect)
+- [Azure-activiteiten logboeken verzamelen en analyseren in Log Analytics werk ruimte in Azure Monitor](../azure-monitor/essentials/activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -221,7 +221,7 @@ Houd er rekening mee dat audit logboek registratie op het gegevens vlak nog niet
 
 Als er metrische gegevens beschikbaar zijn door Diagnostische instellingen in te scha kelen, is controle logboek registratie op het gegevensvlak nog niet beschikbaar voor Azure-cache voor redis.
 
-- [Waarschuwingen voor Azure cache configureren voor redis](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-how-to-monitor#alerts)
+- [Waarschuwingen voor Azure cache configureren voor redis](./cache-how-to-monitor.md#alerts)
 
 **Verantwoordelijkheid**: Klant
 
@@ -235,9 +235,9 @@ Als er metrische gegevens beschikbaar zijn door Diagnostische instellingen in te
 
 **Hulp**: Azure Active Directory (Azure AD) heeft ingebouwde rollen die expliciet moeten worden toegewezen en waarop query's kunnen worden doorzocht. Gebruik de Azure AD Power shell-module om ad hoc-query's uit te voeren om accounts te detecteren die lid zijn van beheer groepen.
 
-- [Een directory-rol verkrijgen in azure AD met Power shell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0&amp;preserve-view=true)
+- [Een directory-rol verkrijgen in azure AD met Power shell](/powershell/module/azuread/get-azureaddirectoryrole?preserve-view=true&view=azureadps-2.0)
 
-- [Leden van een directory-rol in azure AD ophalen met Power shell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0&amp;preserve-view=true)
+- [Leden van een directory-rol in azure AD ophalen met Power shell](/powershell/module/azuread/get-azureaddirectoryrolemember?preserve-view=true&view=azureadps-2.0)
 
 **Verantwoordelijkheid**: Klant
 
@@ -251,7 +251,7 @@ Toegang tot het gegevens vlak voor Azure cache voor redis wordt beheerd via toeg
 
 Het is niet raadzaam om standaard wachtwoorden te bouwen in uw toepassing. In plaats daarvan kunt u uw wacht woorden opslaan in Azure Key Vault en vervolgens Azure AD gebruiken om deze op te halen.
 
-- [Azure-cache opnieuw genereren voor redis-toegangs sleutels](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-configure#settings)
+- [Azure-cache opnieuw genereren voor redis-toegangs sleutels](./cache-configure.md#settings)
 
 **Verantwoordelijkheid**: Gedeeld
 
@@ -323,7 +323,7 @@ Daarnaast kunt u met Azure AD-risico detectie waarschuwingen en rapporten bekijk
 
 - [Privileged Identity Management implementeren (PIM)](../active-directory/privileged-identity-management/pim-deployment-plan.md)
 
-- [Meer informatie over Azure AD-risico detectie](/azure/active-directory/reports-monitoring/concept-risk-events)
+- [Meer informatie over Azure AD-risico detectie](../active-directory/identity-protection/overview-identity-protection.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -353,7 +353,7 @@ Azure AD-verificatie kan niet worden gebruikt voor directe toegang tot Azure cac
 
 **Hulp**: Azure Active Directory (Azure AD) bevat logboeken waarmee u verouderde accounts kunt detecteren. Daarnaast kunt u Azure Identity Access revisies gebruiken om groepslid maatschappen en de toegang tot bedrijfs toepassingen en roltoewijzingen op efficiënte wijze te beheren. Gebruikers toegang kan regel matig worden gecontroleerd om ervoor te zorgen dat alleen de juiste gebruikers toegang hebben.
 
-- [Meer informatie over Azure AD-rapportage](/azure/active-directory/reports-monitoring/)
+- [Meer informatie over Azure AD-rapportage](../active-directory/reports-monitoring/index.yml)
 
 - [Beoordelingen over Azure Identity Access gebruiken](../active-directory/governance/access-reviews-overview.md)
 
@@ -367,7 +367,7 @@ Azure AD-verificatie kan niet worden gebruikt voor directe toegang tot Azure cac
 
 U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-gebruikers accounts te maken en de audit logboeken en aanmeldings logboeken te verzenden naar een Log Analytics-werk ruimte. U kunt de gewenste logboek waarschuwingen configureren in Log Analytics.
 
-- [Azure-activiteitenlogboeken integreren in Azure Monitor](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+- [Azure-activiteitenlogboeken integreren in Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
 - [Azure-Sentinel aan de trein](../sentinel/quickstart-onboard.md)
 
@@ -379,7 +379,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 **Richt lijnen**: voor de afwijking van het aanmeldings gedrag van accounts op het besturings vlak, gebruikt u de functies voor identiteits beveiliging en risico detectie van Azure Active Directory (Azure AD) voor het configureren van automatische antwoorden op gedetecteerde verdachte acties die betrekking hebben op gebruikers identiteiten. U kunt ook gegevens opnemen in azure Sentinel voor verder onderzoek.
 
-- [Riskante Azure AD-aanmeldingen weergeven](/azure/active-directory/reports-monitoring/concept-risky-sign-ins)
+- [Riskante Azure AD-aanmeldingen weergeven](../active-directory/identity-protection/overview-identity-protection.md)
 
 - [Risico beleid voor identiteits beveiliging configureren en inschakelen](../active-directory/identity-protection/howto-identity-protection-configure-risk-policies.md)
 
@@ -397,7 +397,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 **Hulp**: Tags gebruiken om Azure-resources te helpen bij het bijhouden of verwerken van gevoelige informatie.
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -407,15 +407,15 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 **Richt lijnen**: afzonderlijke abonnementen en/of beheer groepen implementeren voor ontwikkeling, testen en productie. Azure cache voor redis-exemplaren moet worden gescheiden door het virtuele netwerk/subnet en op de juiste wijze worden gelabeld. Gebruik eventueel de Azure cache voor redis-firewall om regels te definiëren zodat alleen client verbindingen van opgegeven IP-adresbereiken verbinding kunnen maken met de cache.
 
-- [Aanvullende Azure-abonnementen maken](/azure/billing/billing-create-subscription)
+- [Aanvullende Azure-abonnementen maken](../cost-management-billing/manage/create-subscription.md)
 
-- [Beheergroepen maken](/azure/governance/management-groups/create)
+- [Beheergroepen maken](../governance/management-groups/create-management-group-portal.md)
 
 - [Azure cache implementeren voor redis in een Vnet](cache-how-to-premium-vnet.md)
 
-- [Azure-cache configureren voor redis-firewall regels](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-configure#firewall)
+- [Azure-cache configureren voor redis-firewall regels](./cache-configure.md#firewall)
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -439,7 +439,7 @@ Micro soft beheert de onderliggende infra structuur voor Azure cache voor redis 
 
 - [Meer informatie over versleuteling in transit voor Azure cache voor redis](cache-best-practices.md)
 
-- [Meer informatie over de vereiste poorten die worden gebruikt in Vnet-cache scenario's](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-how-to-premium-vnet#outbound-port-requirements)
+- [Meer informatie over de vereiste poorten die worden gebruikt in Vnet-cache scenario's](./cache-how-to-premium-vnet.md#outbound-port-requirements)
 
 **Verantwoordelijkheid**: Gedeeld
 
@@ -493,7 +493,7 @@ Gegevens in Azure Storage worden transparant versleuteld en ontsleuteld met 256-
 
 **Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken wanneer wijzigingen worden aangebracht in productie-exemplaren van Azure cache voor redis en andere kritieke of gerelateerde resources.
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](/azure/azure-monitor/platform/alerts-activity-log)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -527,7 +527,7 @@ Hoewel klassieke Azure-resources kunnen worden gedetecteerd via resource grafiek
 
 - [Query's maken met Azure resource Graph](../governance/resource-graph/first-query-portal.md)
 
-- [Uw Azure-abonnementen weer geven](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-4.8.0&amp;preserve-view=true)
+- [Uw Azure-abonnementen weer geven](/powershell/module/az.accounts/get-azsubscription?preserve-view=true&view=azps-4.8.0)
 
 - [Meer informatie over Azure RBAC](../role-based-access-control/overview.md)
 
@@ -539,7 +539,7 @@ Hoewel klassieke Azure-resources kunnen worden gedetecteerd via resource grafiek
 
 **Richt lijnen**: Tags Toep assen op Azure-resources die meta gegevens geven om ze logisch in een taxonomie te organiseren.
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -557,11 +557,11 @@ Gebruik Azure Policy bovendien om beperkingen te leggen voor het type resources 
 
 Raadpleeg de volgende bronnen voor meer informatie:
 
-- [Aanvullende Azure-abonnementen maken](/azure/billing/billing-create-subscription)
+- [Aanvullende Azure-abonnementen maken](../cost-management-billing/manage/create-subscription.md)
 
-- [Beheer groepen maken](/azure/governance/management-groups/create)
+- [Beheer groepen maken](../governance/management-groups/create-management-group-portal.md)
 
-- [Resource Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Resource Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -596,7 +596,7 @@ Raadpleeg de volgende bronnen voor meer informatie:
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Een specifiek resource type weigeren met Azure Policy](https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#general)
+- [Een specifiek resource type weigeren met Azure Policy](../governance/policy/samples/built-in-policies.md#general)
 
 **Verantwoordelijkheid**: Klant
 
@@ -624,7 +624,7 @@ Raadpleeg de volgende bronnen voor meer informatie:
 
 Raadpleeg de volgende bronnen voor meer informatie:
 
-- [Beschik bare Azure Policy aliassen weer geven](https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-4.8.0&amp;preserve-view=true)
+- [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias?preserve-view=true&view=azps-4.8.0)
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
@@ -648,9 +648,9 @@ Raadpleeg de volgende bronnen voor meer informatie:
 
 **Richt lijnen**: als u aangepaste Azure Policy definities of Azure Resource Manager sjablonen voor uw Azure-cache gebruikt voor redis-instanties en gerelateerde resources, gebruikt u Azure opslag plaatsen om uw code veilig op te slaan en te beheren.
 
-- [Code opslaan in azure DevOps](https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops&amp;preserve-view=true)
+- [Code opslaan in azure DevOps](/azure/devops/repos/git/gitworkflow?preserve-view=true&view=azure-devops)
 
-- [Documentatie voor Azure opslag plaatsen](https://docs.microsoft.com/azure/devops/repos/?view=azure-devops&amp;preserve-view=true)
+- [Documentatie voor Azure opslag plaatsen](/azure/devops/repos/?preserve-view=true&view=azure-devops)
 
 **Verantwoordelijkheid**: Klant
 
@@ -684,7 +684,7 @@ Raadpleeg de volgende bronnen voor meer informatie:
 
 - [Een Key Vault maken](../key-vault/general/quick-create-portal.md)
 
-- [Verifiëren bij Key Vault](/azure/key-vault/managed-identity)
+- [Verifiëren bij Key Vault](../key-vault/general/assign-access-policy-portal.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -772,7 +772,7 @@ Test gegevens herstel van uw Azure Key Vault geheimen regel matig.
 
 - [Azure cache gebruiken voor het importeren van redis](cache-how-to-import-export-data.md)
 
-- [Key Vault geheimen herstellen](https://docs.microsoft.com/powershell/module/az.keyvault/restore-azkeyvaultsecret?view=azps-4.8.0&amp;preserve-view=true)
+- [Key Vault geheimen herstellen](/powershell/module/az.keyvault/restore-azkeyvaultsecret?preserve-view=true&view=azps-4.8.0)
 
 **Verantwoordelijkheid**: Klant
 
@@ -868,5 +868,5 @@ Daarnaast kunt u ook duidelijk abonnementen markeren (voor bijvoorbeeld producti
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Overzicht Azure Security Benchmark V2](/azure/security/benchmarks/overview)
-- Meer informatie over [Azure-beveiligingsbasislijnen](/azure/security/benchmarks/security-baselines-overview)
+- Zie [Overzicht Azure Security Benchmark V2](../security/benchmarks/overview.md)
+- Meer informatie over [Azure-beveiligingsbasislijnen](../security/benchmarks/security-baselines-overview.md)

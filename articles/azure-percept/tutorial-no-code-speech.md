@@ -7,18 +7,18 @@ ms.service: azure-percept
 ms.topic: tutorial
 ms.date: 02/17/2021
 ms.custom: template-how-to
-ms.openlocfilehash: 3c5e6fd62e4f4db9ccc1306d32d09b8338cbf963
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 76333e11916641be71c72ce6142cd59b496a17e9
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102098023"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105023160"
 ---
 # <a name="create-a-voice-assistant-with-azure-percept-dk-and-azure-percept-audio"></a>Een spraak assistent maken met Azure percept DK en Azure percept-audio
 
 In deze zelf studie maakt u een spraak assistent op basis van een sjabloon die u kunt gebruiken met uw Azure percept DK-en Azure percept-audio. De ondergeschikte Voice-assistent wordt uitgevoerd in [Azure percept Studio](https://go.microsoft.com/fwlink/?linkid=2135819) en bevat een selectie van met spraak beheerde virtuele objecten. Als u een object wilt beheren, zegt u uw tref woord. Dit is een woord of korte zin waarmee uw apparaat wordt geactiveerd, gevolgd door een opdracht. Elke sjabloon reageert op een set specifieke opdrachten.
 
-In deze hand leiding vindt u instructies voor het instellen van uw apparaten, het maken van een spraak assistent en de benodigde bronnen voor [spraak Services](https://docs.microsoft.com/azure/cognitive-services/speech-service/overview) , het testen van uw Voice-assistent, het configureren van uw tref woord en het maken van aangepaste tref woorden.
+In deze hand leiding vindt u instructies voor het instellen van uw apparaten, het maken van een spraak assistent en de benodigde bronnen voor [spraak Services](../cognitive-services/speech-service/overview.md) , het testen van uw Voice-assistent, het configureren van uw tref woord en het maken van aangepaste tref woorden.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -172,7 +172,7 @@ Wanneer u een aangepaste opdracht hebt gemaakt, moet u naar [Speech Studio](http
 
     :::image type="content" source="./media/tutorial-no-code-speech/speech-studio.png" alt-text="Scherm afbeelding van het Start scherm van speech Studio.":::
 
-Raadpleeg de documentatie van de [Speech-Service](https://docs.microsoft.com/azure/cognitive-services/speech-service/custom-commands)voor meer informatie over het ontwikkelen van aangepaste opdrachten.
+Raadpleeg de documentatie van de [Speech-Service](../cognitive-services/speech-service/custom-commands.md)voor meer informatie over het ontwikkelen van aangepaste opdrachten.
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 

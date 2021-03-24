@@ -6,23 +6,22 @@ ms.date: 03/22/2021
 author: trask
 ms.custom: devx-track-java
 ms.author: trstalna
-ms.openlocfilehash: 03d3093f14d97b2cc64d91e0d1b7adf34204a021
-ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
+ms.openlocfilehash: 17979bd548ca0d7b704ebdeb4d060bf35973b319
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/24/2021
-ms.locfileid: "104962520"
+ms.locfileid: "105024143"
 ---
 # <a name="sampling-overrides-preview---azure-monitor-application-insights-for-java"></a>Steek proeven van onderdrukkingen (preview)-Azure Monitor Application Insights voor Java
 
 > [!NOTE]
-> De functie voor het controleren van de steek proeven is beschikbaar als preview-versie.
+> De functie voor het controleren van de steek proeven is in preview, vanaf 3.0.3-BETA. 2.
 
-Hier volgen enkele gebruiks voorbeelden voor steek proeven:
- * Het verzamelen van telemetrie onderdrukken voor status controles.
- * Het verzamelen van telemetrie voor ruis afhankelijke afhankelijkheids aanroepen onderdrukken.
- * Verminder het lawaai van status controles of ruis afhankelijke afhankelijkheids aanroepen zonder ze volledig te onderdrukken.
- * 100% van de telemetrie verzamelen voor een belang rijk aanvraag type (bijvoorbeeld `/login` ), hoewel u de standaard sampling hebt ingesteld op iets lager.
+Met bemonsterings onderdrukkingen kunt u het [standaard sampling percentage](./java-standalone-config.md#sampling)overschrijven, bijvoorbeeld:
+ * Stel het steekproef percentage in op 0 (of een kleine waarde) voor slechte status controles.
+ * Stel het steekproef percentage in op 0 (of een kleine waarde) voor ruis afhankelijke afhankelijkheids aanroepen.
+ * Stel het steekproef percentage in op 100 voor een belang rijk aanvraag type (bijvoorbeeld `/login` ), hoewel u de standaard steekproef hebt geconfigureerd voor iets lager.
 
 ## <a name="terminology"></a>Terminologie
 
@@ -79,7 +78,7 @@ Alleen de eerste vervangende steek proef die overeenkomt, wordt gebruikt.
 
 Als er geen steek proeven worden gevonden:
 
-* Als dit de eerste reeks in de tracering is, wordt het [normale steekproef percentage](./java-standalone-config.md#sampling) gebruikt.
+* Als dit de eerste reeks in de tracering is, wordt het [standaard sampling-percentage](./java-standalone-config.md#sampling) gebruikt.
 * Als dit niet de eerste reeks in de tracering is, wordt de bovenliggende steekproef beslissing gebruikt.
 
 > [!IMPORTANT]

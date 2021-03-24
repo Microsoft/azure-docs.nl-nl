@@ -7,14 +7,14 @@ manager: bsiva
 ms.topic: tutorial
 ms.date: 3/2/2021
 ms.author: rahugup
-ms.openlocfilehash: ecc31019ccedc21683eed1a3186cec91d4c5c567
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: ea7cdfbd30cf698cecbb14a1d70916764ad3247a
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103466589"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105023109"
 ---
-# <a name="containerize-java-web-applications-and-migrate-to-azure-kubernetes-service"></a>Container plaatsen Java-webtoepassingen en migreren naar Azure Kubernetes service
+# <a name="java-web-app-containerization-and-migration-to-azure-kubernetes-service"></a>Container opslag en migratie van Java-Web-app naar Azure Kubernetes service
 
 In dit artikel leert u hoe u Java-webtoepassingen kunt container plaatsen (uitgevoerd op Apache Tomcat) en deze kunt migreren naar [Azure Kubernetes service (AKS)](https://azure.microsoft.com/services/kubernetes-service/) met behulp van de Azure migrate: app container opslag tool. Het container opslag-proces vereist geen toegang tot uw code basis en biedt een eenvoudige manier om bestaande toepassingen te container plaatsen. Het hulp programma werkt met behulp van de actieve status van de toepassingen op een server om de toepassings onderdelen te bepalen en helpt u deze te verpakken in een container installatie kopie. De container toepassing kan vervolgens worden geïmplementeerd in azure Kubernetes service (AKS).
 
@@ -59,7 +59,7 @@ Voordat u aan deze zelfstudie begint, dient u eerst:
 
 **Vereiste** | **Details**
 --- | ---
-**Een computer identificeren om het hulp programma te installeren** | Een Windows-computer voor het installeren en uitvoeren van de Azure Migrate: app container opslag-hulp programma. De Windows-computer kan een server (Windows Server 2016 of hoger) of client (Windows 10) besturings systeem zijn, wat betekent dat het hulp programma ook op uw bureau blad kan worden uitgevoerd. <br/><br/> De Windows-computer waarop het hulp programma wordt uitgevoerd, moet een netwerk verbinding hebben met de servers/virtuele machines waarop de ASP.NET-toepassingen worden gehost die moeten worden container.<br/><br/> Zorg ervoor dat er 6 GB ruimte beschikbaar is op de Windows-computer waarop het Azure Migrate: app container opslag-hulp programma voor het opslaan van toepassings artefacten. <br/><br/> De Windows-computer moet toegang hebben tot internet, rechtstreeks of via een proxy. <br/> <br/>Installeer het hulp programma micro soft Web Deploy op de computer waarop het hulp programma voor de app container opslag helper en de toepassings server worden uitgevoerd als dat nog niet is gebeurd. U kunt het hulp programma [hier](https://aka.ms/webdeploy3.6) downloaden
+**Een computer identificeren om het hulp programma te installeren** | Een Windows-computer voor het installeren en uitvoeren van de Azure Migrate: app container opslag-hulp programma. De Windows-computer kan een server (Windows Server 2016 of hoger) of client (Windows 10) besturings systeem zijn, wat betekent dat het hulp programma ook op uw bureau blad kan worden uitgevoerd. <br/><br/> De Windows-computer waarop het hulpprogramma wordt uitgevoerd, moet een netwerkverbinding hebben met de servers/virtuele machines waarop de ASP.NET-toepassingen worden gehost die in containers moeten worden opgeslagen.<br/><br/> Zorg ervoor dat er 6 GB ruimte beschikbaar is op de Windows-computer waarop het Azure Migrate: app container opslag-hulp programma voor het opslaan van toepassings artefacten. <br/><br/> De Windows-computer moet toegang hebben tot internet, rechtstreeks of via een proxy. <br/> <br/>Installeer het hulp programma micro soft Web Deploy op de computer waarop het hulp programma voor de app container opslag helper en de toepassings server worden uitgevoerd als dat nog niet is gebeurd. U kunt het hulp programma [hier](https://aka.ms/webdeploy3.6) downloaden
 **Toepassingsservers** | -Schakel de SSH-verbinding (Secure Shell) in op poort 22 op de server (s) waarop de Java-toepassing (en) worden uitgevoerd. <br/>
 **Java-webtoepassing** | Het hulp programma ondersteunt momenteel <br/><br/> -Toepassingen die worden uitgevoerd op Tomcat 8 of hoger.<br/> -Toepassings servers op Ubuntu Linux 16.04/18.04/20.04, Debian 7/8, CentOS 6/7, Red Hat Enterprise Linux 5/6/7. <br/> -Toepassingen die gebruikmaken van Java versie 7 of hoger.  <br/><br/> Het hulp programma biedt momenteel geen ondersteuning voor <br/><br/> -Toepassings servers waarop meerdere Tomcat-instanties worden uitgevoerd <br/>  
 
@@ -104,7 +104,7 @@ Als u net pas een gratis Azure-account hebt gemaakt, bent u de eigenaar van uw a
 3. Voer het installatie script uit met behulp van de opdracht
 
    ```powershell
-   .\App ContainerizationInstaller.ps1
+   .\AppContainerizationInstaller.ps1
    ```
 
 ## <a name="launch-the-app-containerization-tool"></a>Het app container opslag-hulp programma starten

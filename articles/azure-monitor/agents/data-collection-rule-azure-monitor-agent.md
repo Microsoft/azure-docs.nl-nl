@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/16/2021
-ms.openlocfilehash: 2a91062a701ca1b07f47f381a04cdf06c57c5746
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 8943986bf8e8c082889d3a0b18618ac54c75e6d6
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104721525"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105022973"
 ---
 # <a name="configure-data-collection-for-the-azure-monitor-agent-preview"></a>Gegevens verzameling configureren voor de Azure Monitor-agent (preview)
 
@@ -92,7 +92,7 @@ De volgende tabel bevat voor beelden voor het filteren van gebeurtenissen met ee
 | Beschrijving |  XPath |
 |:---|:---|
 | Alleen systeem gebeurtenissen verzamelen met gebeurtenis-ID = 4648 |  `System!*[System[EventID=4648]]`
-| Verzamel alleen systeem gebeurtenissen met gebeurtenis-ID = 4648 en een proces naam van consent.exe |  `System!*[System[(EventID=4648) and (EventData[@Name='ProcessName']='C:\Windows\System32\consent.exe')]]`
+| Verzamel alleen systeem gebeurtenissen met gebeurtenis-ID = 4648 en een proces naam van consent.exe | `Security!*[System[(EventID=4648)]] and *[EventData[Data[@Name='ProcessName']='C:\Windows\System32\consent.exe']]` |
 | Alle gebeurtenissen met betrekking tot kritiek, fout, waarschuwing en informatie verzamelen in het gebeurtenis logboek van het systeem, met uitzonde ring van gebeurtenis-ID = 6 (stuur programma geladen) |  `System!*[System[(Level=1 or Level=2 or Level=3) and (EventID != 6)]]` |
 | Alle geslaagde en mislukte beveiligings gebeurtenissen verzamelen, behalve gebeurtenis-ID 4624 (geslaagde aanmelding) |  `Security!*[System[(band(Keywords,13510798882111488)) and (EventID != 4624)]]` |
 

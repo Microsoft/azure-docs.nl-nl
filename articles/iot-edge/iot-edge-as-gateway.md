@@ -4,19 +4,19 @@ description: Gebruik Azure IoT Edge om een transparant, dekkend of proxy gateway
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 11/10/2020
+ms.date: 03/23/2021
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom:
 - amqp
 - mqtt
-ms.openlocfilehash: ca8f02b375420590bcf1cc732c067a165e22b3fa
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: aa8b7372af91fc7cb194dfc3a6212cb4ce1fa0a2
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103492707"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105027343"
 ---
 # <a name="how-an-iot-edge-device-can-be-used-as-a-gateway"></a>Hoe een IoT Edge-apparaat kan worden gebruikt als gateway
 
@@ -24,12 +24,7 @@ ms.locfileid: "103492707"
 
 IoT Edge-apparaten kunnen als gateways fungeren, waardoor er een verbinding is tussen andere apparaten op het netwerk en IoT Hub.
 
-De module IoT Edge hub fungeert als IoT Hub, dus kan verbindingen van apparaten met een identiteit met IoT Hub, inclusief andere IoT Edge apparaten, afhandelen. Dit type gateway patroon wordt *transparant* genoemd, omdat berichten van downstream-apparaten kunnen worden door gegeven aan IOT hub alsof er geen gateway tussen hen is.
-
-<!-- 1.2.0 -->
-::: moniker range=">=iotedge-2020-11"
-Vanaf versie 1,2 van IoT Edge kunnen transparante gateways downstream-verbindingen van andere IoT Edge apparaten afhandelen.
-::: moniker-end
+De module IoT Edge hub fungeert als IoT Hub, zodat u verbindingen kunt afhandelen van andere apparaten die een identiteit hebben met dezelfde IoT-hub. Dit type gateway patroon wordt *transparant* genoemd, omdat berichten van downstream-apparaten kunnen worden door gegeven aan IOT hub alsof er geen gateway tussen hen is.
 
 Voor apparaten die niet of geen verbinding kunnen maken met IoT Hub zelf, kunnen IoT Edge gateways deze verbinding bieden. Dit type gateway patroon wordt *omzetting* genoemd, omdat het IOT edge apparaat de verwerking van inkomende downstream-apparaten moet uitvoeren voordat deze naar IOT hub kunnen worden doorgestuurd. Deze scenario's vereisen extra modules op de IoT Edge-gateway om de verwerkings stappen af te handelen.
 
@@ -51,17 +46,19 @@ Zie [inzicht in de Azure IOT Edge runtime en de architectuur](iot-edge-runtime.m
 
 <!-- 1.1 -->
 ::: moniker range="iotedge-2018-06"
-
-IoT Edge apparaten kunnen niet worden downstream van een IoT Edge gateway.
-
 ![Diagram-transparant gateway patroon](./media/iot-edge-as-gateway/edge-as-gateway-transparent.png)
+
+>[!NOTE]
+>In IoT Edge versie 1,1 en ouder kunnen IoT Edge apparaten niet worden downstream van een IoT Edge gateway.
+>
+>Vanaf versie 1,2 van IoT Edge kunnen transparante gateways verbindingen van downstream IoT Edge apparaten afhandelen. Voor meer informatie gaat u naar de [IoT Edge 1,2](?view=iotedge-2020-11&preserve-view=true) -versie van dit artikel.
 
 ::: moniker-end
 
-<!-- 1.2.0 -->
+<!-- 1.2 -->
 ::: moniker range=">=iotedge-2020-11"
 
-Vanaf versie 1.2.0 kunnen IoT Edge-apparaten verbinding maken via transparante gateways.
+Vanaf versie 1,2 van IoT Edge kunnen transparante gateways verbindingen van downstream IoT Edge apparaten afhandelen.
 
 <!-- TODO add a downstream IoT Edge device to graphic -->
 
@@ -188,6 +185,6 @@ De IoT Edge runtime bevat geen mogelijkheden voor het converteren van protocolle
 
 Meer informatie over de drie stappen voor het instellen van een transparante gateway:
 
-* [Een IoT Edge apparaat configureren om te fungeren als transparante gateway](how-to-create-transparent-gateway.md)
+* [Een IoT Edge-apparaat configureren zodat deze werkt als een transparante gateway](how-to-create-transparent-gateway.md)
 * [Een downstream-apparaat verifiëren voor Azure IoT Hub](how-to-authenticate-downstream-device.md)
 * [Een downstreamapparaat verbinden met een Azure IoT Edge-gateway](how-to-connect-downstream-device.md)

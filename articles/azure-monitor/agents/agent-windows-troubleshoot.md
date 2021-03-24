@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/21/2019
-ms.openlocfilehash: 4e2531d511193586ef4605cc3732968b6db28d9f
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 7ab67602ebba2ae5446ecc0052ef4b03bba1e1bf
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100609193"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104952980"
 ---
 # <a name="how-to-troubleshoot-issues-with-the-log-analytics-agent-for-windows"></a>Problemen met de Log Analytics-agent voor Windows oplossen 
 
@@ -19,7 +19,7 @@ In dit artikel vindt u informatie over het oplossen van problemen die u mogelijk
 Als geen van deze stappen voor u werkt, zijn de volgende ondersteunings kanalen ook beschikbaar:
 
 * Klanten met premier-ondersteunings voordelen kunnen een ondersteunings aanvraag openen met [premier](https://premier.microsoft.com/).
-* Klanten met ondersteunings overeenkomsten voor Azure kunnen een ondersteunings aanvraag openen [in de Azure Portal](https://manage.windowsazure.com/?getsupport=true).
+* Klanten met ondersteunings overeenkomsten voor Azure kunnen een ondersteunings aanvraag openen [in de Azure Portal](https://azure.microsoft.com/support/options/).
 * Ga naar de Log Analytics feedback pagina om de verzonden ideeën en bugs te bekijken [https://aka.ms/opinsightsfeedback](https://aka.ms/opinsightsfeedback) of een nieuwe bestand te openen. 
 
 ## <a name="log-analytics-troubleshooting-tool"></a>Hulp programma voor probleem oplossing Log Analytics
@@ -89,7 +89,7 @@ Er zijn verschillende manieren waarop u kunt controleren of de agent met succes 
 
     Als de computer met succes communiceert met de service, retourneert de query een resultaat. Als de query geen resultaat heeft geretourneerd, controleert u eerst of de agent is geconfigureerd om te rapporteren aan de juiste werk ruimte. Als de configuratie correct is geconfigureerd, gaat u verder met stap 3 en zoekt u in het Windows-gebeurtenis logboek om te bepalen of de agent een logboek registratie voor het probleem kan verhinderen dat deze communiceert met Azure Monitor.
 
-- Een andere methode om een connectiviteits probleem te identificeren, is door het **TestCloudConnectivity** -hulp programma uit te voeren. Het hulp programma wordt standaard geïnstalleerd met de agent in de map *%systemroot%\Program Files\Microsoft monitoring Agent\Agent*. Ga vanaf een opdracht prompt met verhoogde bevoegdheid naar de map en voer het hulp programma uit. Het hulp programma retourneert de resultaten en markeert waar de test is mislukt (bijvoorbeeld als deze is gekoppeld aan een bepaalde poort/URL die is geblokkeerd). 
+- Een andere methode om een connectiviteits probleem te identificeren, is door het **TestCloudConnectivity** -hulp programma uit te voeren. Het hulp programma wordt standaard geïnstalleerd met de agent in de map *%systemroot%\Program Files\Microsoft monitoring Agent\Agent*. Ga vanaf een opdrachtprompt met verhoogde bevoegdheid naar de map en voer het hulpprogramma uit. Het hulp programma retourneert de resultaten en markeert waar de test is mislukt (bijvoorbeeld als deze is gekoppeld aan een bepaalde poort/URL die is geblokkeerd). 
 
     ![Resultaten van de uitvoering van het TestCloudConnection-hulp programma](./media/agent-windows-troubleshoot/output-testcloudconnection-tool-01.png)
 

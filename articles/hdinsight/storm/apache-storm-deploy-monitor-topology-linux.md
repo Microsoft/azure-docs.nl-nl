@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/18/2019
-ms.openlocfilehash: 417819cad3bc2ee258381426dfcee7c800b69d42
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: fb57992c8e26560061faf68443c4993801f9713d
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98929183"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104871568"
 ---
 # <a name="deploy-and-manage-apache-storm-topologies-on-azure-hdinsight"></a>Apache Storm-topologieën implementeren en beheren in Azure HDInsight
 
@@ -43,7 +43,7 @@ U kunt de Data Lake-Hulpprogram Ma's voor Visual Studio gebruiken om C#-of hybri
 
 1. Voer in het venster **uw nieuwe project configureren** een **project naam** in en ga naar of maak een **locatie** om het nieuwe project in op te slaan. Selecteer vervolgens **Maken**.
 
-    ![Het nieuwe project venster configureren, Visual Studio](./media/apache-storm-deploy-monitor-topology-linux/apache-storm-sample1.png)
+    :::image type="content" source="./media/apache-storm-deploy-monitor-topology-linux/apache-storm-sample1.png" alt-text="Het nieuwe project venster configureren, Visual Studio" border="true":::
 
 1. Klik vanuit **Server Explorer** met de rechter muisknop op **Azure** en selecteer **verbinding maken met Microsoft Azure abonnement...** en voltooi het aanmeldings proces.
 
@@ -83,7 +83,7 @@ U kunt een topologie programmatisch implementeren met behulp van de Nimbus-servi
 
 Wanneer u een topologie verzendt met behulp van Visual Studio, wordt het venster **Storm-topologieën weer geven** weer gegeven. Selecteer de topologie in de lijst om informatie over de actieve topologie weer te geven.
 
-![Topologie bewaken, weergave venster Storm topologieën, Visual Studio](./media/apache-storm-deploy-monitor-topology-linux/visual-studio-monitor.png)
+:::image type="content" source="./media/apache-storm-deploy-monitor-topology-linux/visual-studio-monitor.png" alt-text="Topologie bewaken, weergave venster Storm topologieën, Visual Studio" border="true":::
 
 > [!NOTE]  
 > U kunt Storm- **topologieën** ook bekijken vanuit **Server Explorer**. Vouw **Azure**  >  **HDInsight** uit, klik met de rechter muisknop op een storm op HDInsight-cluster en selecteer vervolgens **Storm-topologieën weer geven**.
@@ -179,7 +179,7 @@ De hoofd pagina van de Storm-gebruikers interface bevat de volgende informatie:
 
 De hoofd pagina van de Storm-gebruikers interface ziet er ongeveer als volgt uit:
 
-![Hoofd pagina, Storm-gebruikers interface, Apache Storm topologieën, Azure](./media/apache-storm-deploy-monitor-topology-linux/apache-storm-web-ui-main-page.png)
+:::image type="content" source="./media/apache-storm-deploy-monitor-topology-linux/apache-storm-web-ui-main-page.png" alt-text="Hoofd pagina, Storm-gebruikers interface, Apache Storm topologieën, Azure" border="true":::
 
 #### <a name="topology-summary"></a>Topologie samenvatting
 
@@ -198,7 +198,7 @@ Als u een koppeling selecteert in het gedeelte **topologie overzicht** , wordt d
 
 De pagina overzicht van Storm-topologie ziet er ongeveer als volgt uit:
 
-![Pagina topologie overzicht, Storm-gebruikers interface, Apache Storm, Azure](./media/apache-storm-deploy-monitor-topology-linux/apache-storm-web-ui-topology-summary.png)
+:::image type="content" source="./media/apache-storm-deploy-monitor-topology-linux/apache-storm-web-ui-topology-summary.png" alt-text="Pagina topologie overzicht, Storm-gebruikers interface, Apache Storm, Azure" border="true":::
 
 In het gedeelte **topologie acties** kunt u de volgende knoppen selecteren om een actie uit te voeren:
 
@@ -229,7 +229,7 @@ Als u een Spout selecteert in de secties **Spouts** of **Bouts** , wordt de volg
 
 De overzichts pagina Storm-flits ziet er ongeveer als volgt uit:
 
-![Pagina samen vatting van bout, Storm-gebruikers interface, Apache Storm, Azure](./media/apache-storm-deploy-monitor-topology-linux/apache-storm-web-ui-bolt-summary.png)
+:::image type="content" source="./media/apache-storm-deploy-monitor-topology-linux/apache-storm-web-ui-bolt-summary.png" alt-text="Pagina samen vatting van bout, Storm-gebruikers interface, Apache Storm, Azure" border="true":::
 
 ## <a name="monitor-and-manage-the-topology-using-the-rest-api"></a>De topologie bewaken en beheren met de REST API
 

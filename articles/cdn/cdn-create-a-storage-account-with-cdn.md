@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 04/30/2020
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: 7cd1c6b0b11ba291a36f49a2a9990a2755cdd74b
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 444639d9e36b67f25ed9b82bd68102273c66ae00
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102561922"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104951229"
 ---
 # <a name="quickstart-integrate-an-azure-storage-account-with-azure-cdn"></a>Snelstart: Een Azure Storage-account integreren met Azure CDN
 
@@ -118,4 +118,4 @@ In de voorgaande stappen hebt u een CDN-profiel en een eindpunt in een resourceg
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Zelfstudie: CDN gebruiken om statische inhoud van een web-app weer te geven](cdn-add-to-web-app.md)
+> [Zelf studie: CDN gebruiken voor het leveren van statische inhoud van een web-app](cdn-add-to-web-app.md)

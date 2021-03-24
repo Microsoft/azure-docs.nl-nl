@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 03/03/2021
 ms.author: bwren
-ms.openlocfilehash: 89264bc17180aaf47611aef73c9fd20427bce104
-ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
+ms.openlocfilehash: 4d546401baa7edc7725e3fdb23065009895f9c1e
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104772277"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105027428"
 ---
 # <a name="manage-usage-and-costs-with-azure-monitor-logs"></a>Gebruik en kosten beheren met Azure Monitor-logboeken    
 
@@ -93,7 +93,7 @@ Als u de Log Analytics prijs categorie van uw werk ruimte wilt wijzigen,
     
 3. Als u de prijs categorie hebt gecontroleerd op basis van de laatste 31 dagen van gebruik, klikt u op **selecteren**.  
 
-U kunt [de prijs categorie ook instellen via Azure Resource Manager](../samples/resource-manager-workspace.md) met behulp `sku` van de para meter ( `pricingTier` in de Azure Resource Manager sjabloon). 
+U kunt [de prijs categorie ook instellen via Azure Resource Manager](./resource-manager-workspace.md) met behulp `sku` van de para meter ( `pricingTier` in de Azure Resource Manager sjabloon). 
 
 ## <a name="legacy-pricing-tiers"></a>Verouderde prijscategorieën
 
@@ -145,7 +145,7 @@ Als u de standaard retentie voor uw werk ruimte wilt instellen,
 
 Als de retentie is verlaagd, is er een respijt periode van een enkele dag voordat de gegevens die ouder zijn dan de nieuwe Bewaar instelling worden verwijderd. 
 
-Op de pagina **gegevens behoud** kunnen Bewaar instellingen van 30, 31, 60, 90, 120, 180, 270, 365, 550 en 730 dagen worden bewaard. Als een andere instelling vereist is, kan deze worden geconfigureerd met behulp van [Azure Resource Manager](../samples/resource-manager-workspace.md) met de `retentionInDays` para meter. Wanneer u de Bewaar periode van de gegevens instelt op 30 dagen, kunt u een onmiddellijke verwijdering van oudere gegevens activeren met behulp van de `immediatePurgeDataOn30Days` para meter (waardoor de enige dag wordt uitgesteld). Dit kan handig zijn voor nalevings scenario's waarbij onmiddellijke gegevens verwijdering nood zakelijk is. Deze functie direct opschonen wordt alleen weer gegeven via Azure Resource Manager. 
+Op de pagina **gegevens behoud** kunnen Bewaar instellingen van 30, 31, 60, 90, 120, 180, 270, 365, 550 en 730 dagen worden bewaard. Als een andere instelling vereist is, kan deze worden geconfigureerd met behulp van [Azure Resource Manager](./resource-manager-workspace.md) met de `retentionInDays` para meter. Wanneer u de Bewaar periode van de gegevens instelt op 30 dagen, kunt u een onmiddellijke verwijdering van oudere gegevens activeren met behulp van de `immediatePurgeDataOn30Days` para meter (waardoor de enige dag wordt uitgesteld). Dit kan handig zijn voor nalevings scenario's waarbij onmiddellijke gegevens verwijdering nood zakelijk is. Deze functie direct opschonen wordt alleen weer gegeven via Azure Resource Manager. 
 
 Werk ruimten met een Bewaar periode van 30 dagen kunnen de gegevens gedurende 31 dagen werkelijk bewaren. Als het van cruciaal belang is dat gegevens slechts gedurende 30 dagen worden bewaard, gebruikt u de Azure Resource Manager om de Bewaar periode in te stellen op 30 dagen en met de `immediatePurgeDataOn30Days` para meter.  
 
@@ -322,7 +322,7 @@ Het aantal eenheden op uw factuur is in eenheden van het knoop punt * maanden da
 
 
 > [!TIP]
-> Gebruik deze `find` query's spaarzaam als scans over gegevens typen [veel resources](../log-query/query-optimization.md#query-performance-pane) zijn om uit te voeren. Als u geen resultaten **per computer** nodig hebt, voert u een query uit op het type gebruiks gegevens (zie hieronder).
+> Gebruik deze `find` query's spaarzaam als scans over gegevens typen [veel resources](./query-optimization.md#query-performance-pane) zijn om uit te voeren. Als u geen resultaten **per computer** nodig hebt, voert u een query uit op het type gebruiks gegevens (zie hieronder).
 
 ## <a name="understanding-ingested-data-volume"></a>Meer informatie over opgenomen gegevens volume
 
@@ -406,7 +406,7 @@ find where TimeGenerated > ago(24h) project _IsBillable, Computer
 ```
 
 > [!TIP]
-> Gebruik deze `find` query's spaarzaam als scans over gegevens typen [veel resources](../log-query/query-optimization.md#query-performance-pane) zijn om uit te voeren. Als u geen resultaten **per computer** nodig hebt, voert u een query uit op het gegevens type gebruik.
+> Gebruik deze `find` query's spaarzaam als scans over gegevens typen [veel resources](./query-optimization.md#query-performance-pane) zijn om uit te voeren. Als u geen resultaten **per computer** nodig hebt, voert u een query uit op het gegevens type gebruik.
 
 ### <a name="data-volume-by-azure-resource-resource-group-or-subscription"></a>Gegevens volume per Azure-resource, resource groep of abonnement
 
@@ -445,7 +445,7 @@ U kunt ook de `_ResourceId` volledigere, indien nodig, parseren en gebruiken
 ```
 
 > [!TIP]
-> Gebruik deze `find` query's spaarzaam als scans over gegevens typen [veel resources](../log-query/query-optimization.md#query-performance-pane) zijn om uit te voeren. Als u geen resultaten per abonnement, resource groep of bron naam nodig hebt, voert u vervolgens een query uit op het gegevens type gebruik.
+> Gebruik deze `find` query's spaarzaam als scans over gegevens typen [veel resources](./query-optimization.md#query-performance-pane) zijn om uit te voeren. Als u geen resultaten per abonnement, resource groep of bron naam nodig hebt, voert u vervolgens een query uit op het gegevens type gebruik.
 
 > [!WARNING]
 > Sommige velden van het gegevens type gebruik, terwijl ze nog steeds in het schema zijn, zijn afgeschaft en hun waarden worden niet meer ingevuld. Dit zijn zowel **computers** als velden met betrekking tot opname (**TotalBatches**, **BatchesWithinSla**, **BatchesOutsideSla**, **BatchesCapped** en **AverageProcessingTimeMs**.
@@ -479,7 +479,7 @@ Hieronder vindt u enkele suggesties voor het verkleinen van het aantal logboeken
 
 | Bron van hoog gegevensvolume | Het gegevensvolume verminderen |
 | -------------------------- | ------------------------- |
-| Container Insights         | [Configureer container Insights](../insights/container-insights-cost.md#controlling-ingestion-to-reduce-cost) om alleen de gegevens te verzamelen die u nodig hebt. |
+| Container Insights         | [Configureer container Insights](../containers/container-insights-cost.md#controlling-ingestion-to-reduce-cost) om alleen de gegevens te verzamelen die u nodig hebt. |
 | Beveiligingsgebeurtenissen            | Selecteer [normale of minimale beveiligingsgebeurtenissen](../../security-center/security-center-enable-data-collection.md#data-collection-tier) <br> Wijzig het beleid voor beveiligingscontrole zodat alleen de gewenste gebeurtenissen worden verzameld. Controleer vooral de noodzaak voor het verzamelen van gebeurtenissen voor <br> - [filterplatform controleren](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772749(v=ws.10)) <br> - [register controleren](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd941614(v%3dws.10))<br> - [bestandssysteem controleren](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772661(v%3dws.10))<br> - [kernel-object controleren](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd941615(v%3dws.10))<br> - [greepbewerking controleren](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772626(v%3dws.10))<br> -Verwissel bare opslag controleren |
 | Prestatiemeteritems       | Wijzig de [Prestatiemeteritemconfiguratie](../agents/data-sources-performance-counters.md) in: <br> - Frequentie van het verzamelen van gegevens beperken <br> - Aantal prestatiemeteritems beperken |
 | Gebeurtenislogboeken                 | Wijzig [Configuratie van gebeurtenislogboek](../agents/data-sources-windows-events.md) in: <br> - Aantal verzamelde gebeurtenislogboeken beperken <br> - Alleen vereiste gebeurtenisniveaus verzamelen. Bijvoorbeeld, gebeurtenissen op *informatie* niveau niet verzamelen |
@@ -487,8 +487,8 @@ Hieronder vindt u enkele suggesties voor het verkleinen van het aantal logboeken
 | AzureDiagnostics           | Wijzig de [resource logboek verzameling](../essentials/diagnostic-settings.md#create-in-azure-portal) in: <br> - Het aantal resources dat logboeken naar Log Analytics verzendt te verkleinen <br> - Alleen vereiste logboeken te verzamelen |
 | Oplossingsgegevens van computers die de oplossing niet nodig hebben | Gebruik een [oplossing als doel](../insights/solution-targeting.md) voor het verzamelen van gegevens van alleen vereiste groepen computers. |
 | Application Insights | Beoordelings opties voor [https://docs.microsoft.com/azure/azure-monitor/app/pricing#managing-your-data-volume](managing Application Insights data volume) |
-| [SQL-analyse](https://docs.microsoft.com/azure/azure-monitor/insights/azure-sql) | Gebruik [set-AzSqlServerAudit](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlserveraudit) om de controle-instellingen af te stemmen. |
-| Azure Sentinel | Bekijk alle [Sentinel-gegevens bronnen](https://docs.microsoft.com/azure/sentinel/connect-data-sources) die u onlangs hebt ingeschakeld als bronnen van extra gegevens volume. |
+| [SQL-analyse](../insights/azure-sql.md) | Gebruik [set-AzSqlServerAudit](/powershell/module/az.sql/set-azsqlserveraudit) om de controle-instellingen af te stemmen. |
+| Azure Sentinel | Bekijk alle [Sentinel-gegevens bronnen](../../sentinel/connect-data-sources.md) die u onlangs hebt ingeschakeld als bronnen van extra gegevens volume. |
 
 ### <a name="getting-nodes-as-billed-in-the-per-node-pricing-tier"></a>Knoop punten ophalen als gefactureerd in de prijs categorie per knoop punt
 

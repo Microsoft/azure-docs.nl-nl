@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 86efd7781c7353b4846c77eba01ed34fb63067ff
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 75911e91bb61b84d2e9315421f794739f2b5088b
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102433247"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104953694"
 ---
 # <a name="manage-azure-digital-twins-models"></a>Azure Digital Apparaatdubbels-modellen beheren
 
@@ -179,7 +179,7 @@ Dingen die u **kunt** doen:
 * Leeseigenschappen
 * Uitgaande relaties lezen
 * Inkomende relaties toevoegen en verwijderen (zoals in kan andere apparaatdubbels nog steeds relaties *met* dit dubbele formulier vormen)
-  - De `target` in de definitie van de relatie kan nog steeds de DTMI van het verwijderde model weer spie gelen. Een relatie zonder gedefinieerd doel kan ook hier worden gebruikt.
+  - De `target` in de definitie van de relatie kan nog steeds de DTMI van het verwijderde model weer spie gelen. Een relatie zonder gedefinieerd doel kan ook hier worden gebruikt.      
 * Relaties verwijderen
 * Verwijder de dubbele
 

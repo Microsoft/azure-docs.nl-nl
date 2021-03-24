@@ -2,25 +2,20 @@
 title: VM-grootten en-installatie kopieën kiezen voor Pools
 description: Kiezen uit de beschik bare VM-grootten en versies van besturings systemen voor reken knooppunten in Azure Batch Pools
 ms.topic: conceptual
-ms.date: 11/24/2020
+ms.date: 03/18/2021
 ms.custom: seodec18
-ms.openlocfilehash: f108e1347ef6c3c7df45c4b3d807a754f4867097
-ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
+ms.openlocfilehash: 2c3b90d6188dc6660233ae659fb4280dc1d4f2a5
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104800479"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105027377"
 ---
 # <a name="choose-a-vm-size-and-image-for-compute-nodes-in-an-azure-batch-pool"></a>Een VM-grootte en-afbeelding kiezen voor reken knooppunten in een Azure Batch pool
 
 Wanneer u een knooppunt grootte voor een Azure Batch groep selecteert, kunt u kiezen uit vrijwel alle VM-grootten die beschikbaar zijn in Azure. Azure biedt tal van grootten voor Linux-en Windows-Vm's voor verschillende werk belastingen.
 
 ## <a name="supported-vm-series-and-sizes"></a>Ondersteunde VM-reeksen en-groottes
-
-Er zijn enkele uitzonde ringen en beperkingen voor het kiezen van een VM-grootte voor de batch-pool:
-
-- Sommige VM-reeksen of VM-grootten worden niet ondersteund in batch.
-- Sommige VM-grootten zijn beperkt en moeten specifiek worden ingeschakeld voordat ze kunnen worden toegewezen.
 
 ### <a name="pools-in-virtual-machine-configuration"></a>Groepen in de configuratie van de virtuele machine
 
@@ -32,16 +27,14 @@ Batch-Pools in de virtuele-machine configuratie ondersteunen bijna alle [VM-groo
 | A | Alle grootten *behalve* Standard_A0, Standard_A8, Standard_A9, Standard_A10, Standard_A11 |
 | Av2 | Alle grootten |
 | B | Niet ondersteund |
-| DC | Niet ondersteund |
+| DCsv2 | Alle grootten |
 | Dv2, DSv2 | Alle grootten |
 | Dv3, Dsv3 | Alle grootten |
-| Dav4 | Alle grootten |
-| Dasv4 | Alle grootten |
+| Dav4, Dasv4 | Alle grootten |
 | Ddv4, Ddsv4 |  Alle grootten |
 | Dv4, Dsv4 | Niet ondersteund |
 | Ev3, Esv3 | Alle grootten, met uitzonde ring van E64is_v3 |
-| Eav4 | Alle grootten |
-| Easv4 | Alle grootten |
+| Eav4, Easv4 | Alle grootten |
 | Edv4, Edsv4 |  Alle grootten |
 | Ev4, Esv4 | Niet ondersteund |
 | F, FS | Alle grootten |
@@ -50,6 +43,7 @@ Batch-Pools in de virtuele-machine configuratie ondersteunen bijna alle [VM-groo
 | H | Alle grootten |
 | HB | Alle grootten |
 | HBv2 | Alle grootten |
+| HBv3 | Standard_HB120rs_v3 (andere grootten zijn nog niet beschikbaar) |
 | KM | Alle grootten |
 | Ls | Alle grootten |
 | Lsv2 | Alle grootten |
@@ -58,7 +52,7 @@ Batch-Pools in de virtuele-machine configuratie ondersteunen bijna alle [VM-groo
 | NC | Alle grootten |
 | NCv2 | Alle grootten |
 | NCv3 | Alle grootten |
-| NCasT4_v3 | Geen-nog niet beschikbaar |
+| NCasT4_v3 | Alle grootten |
 | ND | Alle grootten |
 | NDv2 | Geen-nog niet beschikbaar |
 | NV | Alle grootten |

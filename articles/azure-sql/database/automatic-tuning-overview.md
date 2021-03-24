@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: danimir
 ms.author: danil
 ms.reviewer: wiassaf, sstein
-ms.date: 03/30/2020
-ms.openlocfilehash: 4204254754307f8310d5ccfda19400de57381075
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.date: 03/23/2021
+ms.openlocfilehash: 6bd8d6001fcd3bfa487259aa219ff771f26a8a94
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96500866"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104951280"
 ---
 # <a name="automatic-tuning-in-azure-sql-database-and-azure-sql-managed-instance"></a>Automatische afstemming in Azure SQL Database en Azure SQL Managed instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -54,8 +54,8 @@ Voor een overzicht van de werking van automatisch afstemmen en voor typische geb
 
 ## <a name="enable-automatic-tuning"></a>Automatisch instellen inschakelen
 
-- U [schakelt automatisch afstemmen in voor Azure SQL database in het Azure Portal](automatic-tuning-enable.md) of met behulp van de T-SQL-instructie [ALTER data base](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azuresqldb-current) .
-- U schakelt automatisch afstemmen in voor Azure SQL Managed instance met behulp van de T-SQL-instructie [ALTER data base](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azuresqldb-mi-current) .
+- U [schakelt automatisch afstemmen in voor Azure SQL database in het Azure Portal](automatic-tuning-enable.md) of met behulp van de T-SQL-instructie [ALTER data base](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azuresqldb-current&preserve-view=true) .
+- U schakelt automatisch afstemmen in voor Azure SQL Managed instance met behulp van de T-SQL-instructie [ALTER data base](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azuresqldb-mi-current&preserve-view=true) .
 
 ## <a name="automatic-tuning-options"></a>Opties voor automatisch afstemmen
 
@@ -64,7 +64,7 @@ De opties voor automatisch afstemmen die beschikbaar zijn in Azure SQL Database 
 | Optie voor automatisch afstemmen | Ondersteuning voor één data base en gepoolde data base | Ondersteuning voor instance data base |
 | :----------------------------- | ----- | ----- |
 | **Create Index** : identificeert indexen die de prestaties van uw workload kunnen verbeteren, maakt indexen en controleert automatisch of de prestaties van query's zijn verbeterd. | Ja | Nee |
-| **Drop Index** : detecteert dagelijks redundante en dubbele indexen, met uitzonde ring van unieke indexen en indexen die gedurende een lange periode niet zijn gebruikt (>90 dagen). Houd er rekening mee dat deze optie niet compatibel is met toepassingen die gebruikmaken van partitie switches en index hints. Het verwijderen van niet-gebruikte indexen wordt niet ondersteund voor Premium-en Bedrijfskritiek-service lagen. | Ja | Nee |
+| **Drop Index** -wordt ongebruikt (in de afgelopen 90 dagen) en dubbele indexen. Unieke indexen, inclusief indexen die primaire sleutel en unieke beperkingen ondersteunen, worden nooit verwijderd. Deze optie kan automatisch worden uitgeschakeld wanneer query's met index hints aanwezig zijn in de werk belasting of wanneer de werk belasting partitie switching uitvoert. In Premium-en Bedrijfskritiek-service lagen verwijdert deze optie niet-gebruikte indexen, maar worden dubbele indexen verwijderd, indien van toepassing. | Ja | Nee |
 | **Laatste goede planning afdwingen** (automatische plan correctie): identificeert Azure SQL-query's met behulp van een uitvoerings plan dat lager is dan het vorige goede plan en query's met behulp van het laatst bekende goede plan in plaats van het teruggedraaide-abonnement. | Ja | Ja |
 
 ### <a name="automatic-tuning-for-sql-database"></a>SQL Database automatisch afstemmen
@@ -90,7 +90,7 @@ Zie [e-mail meldingen voor automatisch afstemmen](automatic-tuning-email-notific
 
 ### <a name="automatic-tuning-for-azure-sql-managed-instance"></a>Automatisch afstemmen voor Azure SQL Managed instance
 
-Automatisch afstemmen voor SQL Managed instance ondersteunt alleen **GEFORCEERD plan forceren**. Zie voor meer informatie over het configureren van opties voor automatisch afstemmen via T-SQL [automatisch afstemmen introduceert automatisch corrigeren van plannen](https://azure.microsoft.com/blog/automatic-tuning-introduces-automatic-plan-correction-and-t-sql-management/) en [automatische correctie van plannen](/sql/relational-databases/automatic-tuning/automatic-tuning?view=sql-server-ver15#automatic-plan-correction).
+Automatisch afstemmen voor SQL Managed instance ondersteunt alleen **GEFORCEERD plan forceren**. Zie voor meer informatie over het configureren van opties voor automatisch afstemmen via T-SQL [automatisch afstemmen introduceert automatisch corrigeren van plannen](https://azure.microsoft.com/blog/automatic-tuning-introduces-automatic-plan-correction-and-t-sql-management/) en [automatische correctie van plannen](/sql/relational-databases/automatic-tuning/automatic-tuning#automatic-plan-correction).
 
 ## <a name="next-steps"></a>Volgende stappen
 

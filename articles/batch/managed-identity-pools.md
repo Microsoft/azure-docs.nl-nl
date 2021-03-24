@@ -2,14 +2,14 @@
 title: Beheerde identiteiten configureren in batch-Pools
 description: Meer informatie over het inschakelen van door de gebruiker toegewezen beheerde identiteiten in batch-Pools en het gebruik van beheerde identiteiten binnen de knoop punten.
 ms.topic: conceptual
-ms.date: 02/10/2021
+ms.date: 03/23/2021
 ms.custom: references_regions
-ms.openlocfilehash: 4a59383d119f88bb3ee180f629ba0a6ea6ac2f44
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 7fab213ac1545c0bff9b74bc46504717b6038e8e
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100417254"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104950158"
 ---
 # <a name="configure-managed-identities-in-batch-pools"></a>Beheerde identiteiten configureren in batch-Pools
 
@@ -100,3 +100,4 @@ Zie [Managed Identities voor Azure resources on an Azure VM](../active-directory
 
 - Meer informatie over [beheerde identiteiten voor Azure-resources](../active-directory/managed-identities-azure-resources/overview.md).
 - Meer informatie over het gebruik [van door de klant beheerde sleutels met door gebruikers beheerde identiteiten](batch-customer-managed-key.md).
+- Meer informatie over het [inschakelen van automatische rotatie van certificaten in een batch-pool](automatic-certificate-rotation.md).

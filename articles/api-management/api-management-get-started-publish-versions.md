@@ -7,12 +7,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.date: 02/10/2021
 ms.author: apimpm
-ms.openlocfilehash: f6ea02c32ec7fcb694d63f29c63c3880a7cfff9e
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: dc3d3b4658bd9a26363b6d41377d448059e30c0f
+ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100546649"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104889668"
 ---
 # <a name="tutorial-publish-multiple-versions-of-your-api"></a>Zelfstudie: Meerdere versies van uw API publiceren 
 
@@ -105,7 +105,7 @@ az apim api versionset list --resource-group apim-hello-word-resource-group \
 
 Wanneer de Azure Portal een versieset voor u maakt, wordt er een alfanumerieke naam toegewezen, die wordt weer gegeven in de kolom **naam** van de lijst. Gebruik deze naam in andere Azure CLI-opdrachten.
 
-Als u details wilt weer geven over een versieset, voert u de opdracht [AZ APIM API versionset show](/api/versionset#az_apim_api_versionset_show) uit:
+Als u details wilt weer geven over een versieset, voert u de opdracht [AZ APIM API versionset show](/cli/azure/apim/api/versionset#az_apim_api_versionset_show) uit:
 
 ```azurecli
 az apim api versionset show --resource-group apim-hello-word-resource-group \

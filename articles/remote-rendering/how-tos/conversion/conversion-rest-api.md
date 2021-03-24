@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/04/2020
 ms.topic: how-to
-ms.openlocfilehash: f33e5717cd5556e72d996e7e943867c16805e71b
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: e3db4b9c9b4a05142f1327f681b067748cb1a2f9
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101705174"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104951637"
 ---
 # <a name="use-the-model-conversion-rest-api"></a>De REST API voor modelconversie gebruiken
 
@@ -18,9 +18,9 @@ De [model conversie](model-conversion.md) service wordt beheerd via een [rest AP
 
 ## <a name="rest-api-reference"></a>Naslaginformatie over REST-API
 
-De documentatie voor de externe rendering REST API referentie vindt u [hier](/rest/api/mixedreality/2021-01-01preview/remoterendering)en [de definities van](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/mixedreality/data-plane/Microsoft.MixedReality)Swagger.
+De documentatie voor de externe rendering REST API referentie vindt u [hier](/rest/api/mixedreality/2021-01-01/remoterendering)en [de definities van](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/mixedreality/data-plane/Microsoft.MixedReality)Swagger.
 
-We bieden een Power shell-script in de voor [beelden-opslag plaats](https://github.com/Azure/azure-remote-rendering) in de map *Scripts* , genaamd *Conversion.ps1*, waarin het gebruik van onze service wordt gedemonstreerd. Het script en de bijbehorende configuratie worden hier beschreven: [voor beelden van Power shell-scripts](../../samples/powershell-example-scripts.md). We bieden ook Sdk's voor [.net](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/mixedreality/Azure.MixedReality.RemoteRendering), Java en python.
+We bieden een Power shell-script in de voor [beelden-opslag plaats](https://github.com/Azure/azure-remote-rendering) in de map *Scripts* , genaamd *Conversion.ps1*, waarin het gebruik van onze service wordt gedemonstreerd. Het script en de bijbehorende configuratie worden hier beschreven: [voor beelden van Power shell-scripts](../../samples/powershell-example-scripts.md). We bieden ook Sdk's voor [.net](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/remoterendering/Azure.MixedReality.RemoteRendering/README.md) en [Java]( https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/remoterendering/azure-mixedreality-remoterendering/README.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 

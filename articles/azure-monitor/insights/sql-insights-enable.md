@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/15/2021
-ms.openlocfilehash: 5ab51fc4ea64dfd678f5c9acfc80b5e380782153
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: ac37a6de4197d5e7cae20d2bde759b98fe474047
+ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104609409"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104889617"
 ---
 # <a name="enable-sql-insights-preview"></a>SQL Insights inschakelen (preview-versie)
 In dit artikel wordt beschreven hoe u [SQL Insights](sql-insights-overview.md) inschakelt om uw SQL-implementaties te bewaken. Bewaking wordt uitgevoerd vanaf een virtuele machine van Azure die verbinding maakt met uw SQL-implementaties en gebruikmaakt van dynamische beheer weergaven (Dmv's) om bewakings gegevens te verzamelen. U kunt bepalen welke gegevens sets worden verzameld en de frequentie van het verzamelen met behulp van een bewakings profiel.
@@ -92,13 +92,16 @@ Elk type SQL biedt methoden voor uw virtuele bewakings machine om veilig toegang
 
 ### <a name="azure-sql-databases"></a>Azure SQL Databases  
 
-[Zelf studie: verbinding maken met een Azure SQL-Server met behulp van een persoonlijk Azure-eind punt-Azure Portal](../../private-link/tutorial-private-endpoint-sql-portal.md) biedt een voor beeld van het instellen van een persoonlijk eind punt dat u kunt gebruiken om toegang te krijgen tot uw data base.  Als u deze methode gebruikt, moet u ervoor zorgen dat uw virtuele bewakings machines zich in hetzelfde VNET en subnet bevinden dat u voor het persoonlijke eind punt gaat gebruiken.  Als u dat nog niet hebt gedaan, kunt u het persoonlijke eind punt in uw data base maken. 
+SQL Insights biedt ondersteuning voor toegang tot uw Azure SQL Database via het open bare eind punt en het virtuele netwerk.
 
-Als u een [firewall instelling](../../azure-sql/database/firewall-configure.md) gebruikt om toegang te bieden tot uw SQL database, moet u een firewall regel toevoegen om toegang te bieden vanuit het open bare IP-adres van de virtuele machine voor bewaking. U kunt de firewall instellingen openen via de pagina **overzicht van Azure SQL database** in de portal. 
+Voor toegang via het open bare eind punt voegt u een regel toe op de pagina **firewall instellingen** en de sectie [IP-Firewall-instellingen](https://docs.microsoft.com/azure/azure-sql/database/network-access-controls-overview#ip-firewall-rules) .  Als u toegang vanuit een virtueel netwerk wilt opgeven, kunt u [firewall regels voor het virtuele netwerk](https://docs.microsoft.com/azure/azure-sql/database/network-access-controls-overview#virtual-network-firewall-rules) instellen en de [service tags instellen die vereist zijn voor de Azure monitor-agent](https://docs.microsoft.com/azure/azure-monitor/agents/azure-monitor-agent-overview#networking).  In [dit artikel](https://docs.microsoft.com/azure/azure-sql/database/network-access-controls-overview#ip-vs-virtual-network-firewall-rules) worden de verschillen tussen deze twee typen firewall regels beschreven.
 
 :::image type="content" source="media/sql-insights-enable/set-server-firewall.png" alt-text="Serverfirewall instellen" lightbox="media/sql-insights-enable/set-server-firewall.png":::
 
 :::image type="content" source="media/sql-insights-enable/firewall-settings.png" alt-text="Firewall instellingen." lightbox="media/sql-insights-enable/firewall-settings.png":::
+
+> [!NOTE]
+> SQL Insights biedt momenteel geen ondersteuning voor Azure private endpoint voor Azure SQL Database.  U kunt het beste [service Tags](https://docs.microsoft.com/azure/virtual-network/service-tags-overview) gebruiken in uw netwerk beveiligings groep of firewall instellingen van het virtuele netwerk die door de [Azure monitor-agent worden ondersteund](https://docs.microsoft.com/azure/azure-monitor/agents/azure-monitor-agent-overview#networking).
 
 ### <a name="azure-sql-managed-instances"></a>Azure SQL Managed Instances 
 

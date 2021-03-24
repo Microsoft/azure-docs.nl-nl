@@ -6,12 +6,12 @@ author: msangapu-msft
 ms.topic: article
 ms.date: 12/03/2020
 ms.author: msangapu
-ms.openlocfilehash: 0e08d016ab85587d451ad2a1e296e7f494ba283e
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: e9d92c60e74ac9106246ccd445afaca926065e5f
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104596022"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104871194"
 ---
 # <a name="monitor-app-service-instances-using-health-check"></a>App Service instanties controleren met status controle
 
@@ -48,7 +48,7 @@ In dit artikel wordt gebruikgemaakt van de status controle in de Azure Portal om
 
 Naast het configureren van de opties voor de status controle kunt u ook de volgende [app-instellingen](configure-common.md)configureren:
 
-| Naam van app-instelling | Toegestane waarden | Description |
+| Naam van app-instelling | Toegestane waarden | Beschrijving |
 |-|-|-|
 |`WEBSITE_HEALTHCHECK_MAXPINGFAILURES` | 2 - 10 | Het maximum aantal ping-fouten. Wanneer bijvoorbeeld is ingesteld op `2` , worden uw instanties verwijderd na `2` mislukte pings. Bovendien, wanneer u omhoog of omlaag schaalt, App Service pingt het Health Check-pad om ervoor te zorgen dat er nieuwe exemplaren gereed zijn. |
 |`WEBSITE_HEALTHCHECK_MAXUNHEALTYWORKERPERCENT` | 0 - 100 | Om te voor komen dat er overweldigende instanties zijn, worden niet meer dan de helft van de instanties uitgesloten. Als bijvoorbeeld een App Service plan wordt geschaald naar vier instanties en drie de status niet in orde hebben, worden er Maxi maal twee uitgesloten. De andere twee instanties (een gezonde en een slechte status) blijven aanvragen ontvangen. In het slechtste scenario waarbij alle instanties een slechte status hebben, wordt geen uitgesloten. Als u dit gedrag wilt overschrijven, stelt u de app-instelling in op een waarde tussen `0` en `100` . Een hogere waarde betekent dat er meer beschadigde instanties worden verwijderd (standaard is 50). |
@@ -57,7 +57,7 @@ Naast het configureren van de opties voor de status controle kunt u ook de volge
 
 Status controle integreert met de verificatie-en autorisatie functies van App Service. Er zijn geen aanvullende instellingen vereist als deze beveiligings functies zijn ingeschakeld. Als u echter uw eigen verificatie systeem gebruikt, moet het Health Check-pad anonieme toegang toestaan. Als de site HTTP **s**-only is ingeschakeld, wordt de status controle aanvraag verzonden via http **s**.
 
-Grote ontwikkel teams van ondernemingen moeten vaak voldoen aan de beveiligings vereisten voor weer gegeven Api's. Als u het eind punt voor de status controle wilt beveiligen, moet u eerst functies zoals [IP-beperkingen](app-service-ip-restrictions.md#set-an-ip-address-based-rule), [client certificaten](app-service-ip-restrictions.md#set-an-ip-address-based-rule)of een Virtual Network gebruiken om de toegang tot toepassingen te beperken. U kunt het eind punt voor de status controle beveiligen door de `User-Agent` van de inkomende aanvraag overeenkomsten te vereisen `ReadyForRequest/1.0` . Het User-Agent kan niet worden vervalst omdat de aanvraag al door eerdere beveiligings functies zou worden beveiligd.
+Grote ontwikkel teams van ondernemingen moeten vaak voldoen aan de beveiligings vereisten voor weer gegeven Api's. Als u het eind punt voor de status controle wilt beveiligen, moet u eerst functies zoals [IP-beperkingen](app-service-ip-restrictions.md#set-an-ip-address-based-rule), [client certificaten](app-service-ip-restrictions.md#set-an-ip-address-based-rule)of een Virtual Network gebruiken om de toegang tot toepassingen te beperken. U kunt het eind punt voor de status controle beveiligen door de `User-Agent` van de inkomende aanvraag overeenkomsten te vereisen `HealthCheck/1.0` . Het User-Agent kan niet worden vervalst omdat de aanvraag al door eerdere beveiligings functies zou worden beveiligd.
 
 ## <a name="monitoring"></a>Bewaking
 

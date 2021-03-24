@@ -1,14 +1,14 @@
 ---
 title: Voorbeelden van geavanceerde query's
 description: Gebruik Azure Resource Graph voor het uitvoeren van enkele geavanceerde query's, waaronder het werken met kolommen, het opvragen van alle gebruikte tags en het vinden van resources met behulp van reguliere expressies.
-ms.date: 01/27/2021
+ms.date: 03/23/2021
 ms.topic: sample
-ms.openlocfilehash: 5a87d63e597622ae5c0d8c8f48bc37281d4fd530
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: c6a140b0392affea252e05d63055232532305c75
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "99560346"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104949852"
 ---
 # <a name="advanced-resource-graph-query-samples"></a>Geavanceerde queryvoorbeelden van Resource Graph
 
@@ -28,7 +28,6 @@ We nemen de volgende geavanceerde query's door:
 - [Alle extensies weergeven die zijn geïnstalleerd op een virtuele machine](#join-vmextension)
 - [Opslagaccounts met een specifieke tag in de resourcegroep zoeken](#join-findstoragetag)
 - [Resultaten van twee query's combineren tot één resultaat](#unionresults)
-- [Namen van tenant en abonnement toevoegen met DisplayNames](#displaynames)
 - [Virtuele machine samenvatten op basis van de uitgebreide eigenschap energiestatus](#vm-powerstate)
 - [Aantal niet-compatibele gastconfiguratietoewijzingen](#count-gcnoncompliant)
 - [Query uitvoeren op de details van rapporten van gastconfiguratietoewijzingen](#query-gcreports)
@@ -559,26 +558,6 @@ Search-AzGraph -Query "Resources | where type == 'microsoft.compute/virtualmachi
 - Azure Portal: <a href="https://portal.azure.com/?feature.customportal=false#blade/HubsExtension/ArgQueryBlade/query/Resources%20%7C%20where%20type%20%3D%3D%20%27microsoft.compute%2Fvirtualmachines%27%20%7C%20summarize%20count%28%29%20by%20tostring%28properties.extended.instanceView.powerState.code%29" target="_blank">portal.azure.com</a>
 - Azure Government portal: <a href="https://portal.azure.us/?feature.customportal=false#blade/HubsExtension/ArgQueryBlade/query/Resources%20%7C%20where%20type%20%3D%3D%20%27microsoft.compute%2Fvirtualmachines%27%20%7C%20summarize%20count%28%29%20by%20tostring%28properties.extended.instanceView.powerState.code%29" target="_blank">Portal.Azure.us</a>
 - Azure China 21Vianet-portal: <a href="https://portal.azure.cn/?feature.customportal=false#blade/HubsExtension/ArgQueryBlade/query/Resources%20%7C%20where%20type%20%3D%3D%20%27microsoft.compute%2Fvirtualmachines%27%20%7C%20summarize%20count%28%29%20by%20tostring%28properties.extended.instanceView.powerState.code%29" target="_blank">Portal.Azure.cn</a>
-
----
-
-## <a name="include-the-tenant-and-subscription-names-with-displaynames"></a><a name="displaynames"></a>Namen van tenant en abonnement toevoegen met DisplayNames
-
-Deze query gebruikt de parameter **Include** met de optie _DisplayNames_ om **subscriptionDisplayName** en **tenantDisplayName** aan de resultaten toe te voegen. Deze parameter is alleen beschikbaar voor Azure CLI en Azure PowerShell.
-
-```azurecli-interactive
-az graph query -q "limit 1" --include displayNames
-```
-
-```azurepowershell-interactive
-Search-AzGraph -Query "limit 1" -Include DisplayNames
-```
-
-Een alternatieve manier om de naam van het abonnement op te halen, is door de operator `join` te gebruiken en verbinding maken met de tabel **ResourceContainers** en het type `Microsoft.Resources/subscriptions`. `join` werkt in Azure CLI, Azure PowerShell, de portal en alle ondersteunde SDK's. Zie [Sleutelkluizen met abonnementsnaam](#join) voor een voorbeeld.
-
-> [!NOTE]
-> Als in de query niet **project** wordt gebruikt om de geretourneerde eigenschappen op te geven, worden **subscriptionDisplayName** en **tenantDisplayName** automatisch opgenomen in de resultaten.
-> Als in de query **project** wel wordt gebruikt, moet elk van de _DisplayName_-velden expliciet worden opgenomen in het **project**, anders worden ze niet geretourneerd in de resultaten, zelfs niet wanneer de parameter **Include** wordt gebruikt. De parameter **Include** werkt niet met [tabellen](../concepts/query-language.md#resource-graph-tables).
 
 ---
 

@@ -2,13 +2,13 @@
 title: Fouten bij niet-gevonden resources
 description: Hierin wordt beschreven hoe u fouten oplost wanneer een bron niet kan worden gevonden. De fout kan optreden bij het implementeren van een Azure Resource Manager sjabloon of bij het nemen van beheer acties.
 ms.topic: troubleshooting
-ms.date: 06/10/2020
-ms.openlocfilehash: 40f3c2ac61b6a6d5fdbcefdf62761668b013b1db
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.date: 03/23/2021
+ms.openlocfilehash: b80c32683190167d5c0d6e0a7f75acce8bbdb833
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "99526243"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104950872"
 ---
 # <a name="resolve-resource-not-found-errors"></a>Fouten bij niet-gevonden resources oplossen
 
@@ -133,3 +133,9 @@ Bij het implementeren van een sjabloon zoekt u naar expressies die gebruikmaken 
 ```json
 "[reference(resourceId('exampleResourceGroup', 'Microsoft.Storage/storageAccounts', 'myStorage'), '2017-06-01')]"
 ```
+
+## <a name="solution-6---after-deleting-resource"></a>Oplossing 6-na het verwijderen van de resource
+
+Wanneer u een resource verwijdert, kan het korte tijd duren wanneer de resource nog steeds wordt weer gegeven in de portal, maar niet daad werkelijk beschikbaar is. Als u de resource selecteert, krijgt u een fout melding waarin wordt aangegeven dat de resource niet is gevonden. Vernieuw de portal om de meest recente weer gave te krijgen.
+
+[Neem contact op met de ondersteuning](https://azure.microsoft.com/support/options/)als het probleem zich blijft voordoen na een korte wacht tijd.

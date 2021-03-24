@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 06/02/2020
+ms.date: 03/08/2021
 ms.author: justinha
 author: justinha
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8f8f270f740951b95b0d4c00cbcf9b08e20a8e0c
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 5d332c831cc764c61a4672ea5ad1db231b68e106
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96743721"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104952368"
 ---
 # <a name="licensing-requirements-for-azure-active-directory-self-service-password-reset"></a>Licentie vereisten voor Azure Active Directory self-service voor wachtwoord herstel
 
@@ -26,7 +26,7 @@ In dit artikel vindt u meer informatie over de verschillende manieren waarop sel
 
 ## <a name="compare-editions-and-features"></a>Edities en functies vergelijken
 
-SSPR wordt per gebruiker in licentie gegeven. Voor het behoud van de naleving moeten organisaties de juiste licentie toewijzen aan hun gebruikers.
+SSPR vereist alleen een licentie voor de Tenant. 
 
 De volgende tabel bevat een overzicht van de verschillende SSPR-scenario's voor het wijzigen van wacht woorden, resetten of on-premises terugschrijven, en welke Sku's de functie bieden.
 
@@ -46,12 +46,6 @@ Zie de volgende pagina's voor aanvullende informatie over licenties, inclusief k
 * [Enterprise Mobility + Security](https://www.microsoft.com/cloud-platform/enterprise-mobility-security)
 * [Microsoft 365 Zakelijk](https://www.microsoft.com/microsoft-365/enterprise)
 * [Microsoft 365 Business](/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-business-service-description)
-
-## <a name="enable-group-or-user-based-licensing"></a>Op groep of gebruiker gebaseerde licentie verlening inschakelen
-
-Azure AD biedt ondersteuning voor op groepen gebaseerde licentie verlening. Beheerders kunnen licenties bulksgewijs toewijzen aan een groep gebruikers, in plaats van ze een voor een toe te wijzen. Zie [problemen met licenties toewijzen, controleren en oplossen](../enterprise-users/licensing-groups-assign.md#step-1-assign-the-required-licenses)voor meer informatie.
-
-Sommige micro soft-Services zijn niet op alle locaties beschikbaar. Voordat een licentie aan een gebruiker kan worden toegewezen, moet de beheerder de eigenschap **gebruiks locatie** opgeven voor de gebruiker. De toewijzing van licenties kan worden uitgevoerd in de sectie instellingen voor **gebruikers**  >  **profielen**  >   in de Azure Portal. *Wanneer u de toewijzing van een groeps licentie gebruikt, nemen alle gebruikers waarvoor geen gebruiks locatie is opgegeven, de locatie van de map over.*
 
 ## <a name="next-steps"></a>Volgende stappen
 

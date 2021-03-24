@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/15/2021
-ms.openlocfilehash: b9c5db14bec87b30e51d39b1430ecc1f3cbef855
-ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
+ms.openlocfilehash: b5add466a60bc855e08917d02fecaf60a35deeb1
+ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/23/2021
-ms.locfileid: "104798286"
+ms.locfileid: "104889566"
 ---
 # <a name="monitor-your-sql-deployments-with-sql-insights-preview"></a>Uw SQL-implementaties bewaken met SQL Insights (preview-versie)
 SQL Insights bewaakt de prestaties en de status van uw SQL-implementaties.  Dit kan helpen om voorspel bare prestaties en beschik baarheid te leveren van essentiële workloads die u rond een SQL-back-end hebt gemaakt door prestatie knelpunten en problemen te identificeren. De gegevens van SQL Insights worden opgeslagen in [Azure monitor-logboeken](../logs/data-platform-logs.md), zodat IT krachtige aggregatie en filteren kan leveren en gegevens trends in de loop van de tijd kan analyseren. U kunt deze gegevens weer geven van Azure Monitor in de weer gaven die worden geleverd als onderdeel van deze aanbieding. u kunt ook dieper in de logboek gegevens zoeken om query's uit te voeren en trends te analyseren.
@@ -59,7 +59,12 @@ Zie [SQL Insights inschakelen](sql-insights-enable.md) voor gedetailleerde proce
 
 
 ## <a name="data-collected-by-sql-insights"></a>Gegevens die worden verzameld door SQL Insights
-In de open bare preview ondersteunt SQL Insights alleen de externe bewakings methode. De [telegrafie agent](https://www.influxdata.com/time-series-platform/telegraf/) is niet geïnstalleerd op de SQL Server. Het maakt gebruik [van de SQL Server invoer-invoeg toepassing voor telegrafie](https://www.influxdata.com/integration/microsoft-sql-server/) en gebruikt de drie groepen query's voor de verschillende soorten SQL-bewaking: Azure SQL DB, Azure SQL Managed instance, SQL Server dat wordt uitgevoerd op een virtuele machine van Azure. 
+
+SQL Insights ondersteunt alleen de externe methode voor het bewaken van SQL. Er worden geen agents geïnstalleerd op de virtuele machines met SQL Server. Een of meer specifieke Vm's voor het controleren van virtuele machines zijn vereist voor het op afstand verzamelen van gegevens uit uw SQL-resources. 
+
+Voor elk van deze bewakings-Vm's is de [Azure monitor-agent](https://docs.microsoft.com/azure/azure-monitor/agents/azure-monitor-agent-overview) geïnstalleerd samen met de uitbrei ding workload INSIGHTS (WLI). 
+
+De WLI-extensie bevat de open source- [telegrafa-agent](https://www.influxdata.com/time-series-platform/telegraf/).  We gebruiken [regels](https://docs.microsoft.com/azure/azure-monitor/agents/data-collection-rule-overview) voor het verzamelen van gegevens om de [sqlserver-invoer-invoeg toepassing](https://www.influxdata.com/integration/microsoft-sql-server/) te configureren om de gegevens op te geven die moeten worden verzameld uit Azure SQL DB, Azure SQL managed instance en SQL Server uitgevoerd op een virtuele Azure-machine. 
 
 In de volgende tabellen ziet u een overzicht van het volgende:
 

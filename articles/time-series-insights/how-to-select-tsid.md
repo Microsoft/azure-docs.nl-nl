@@ -8,14 +8,14 @@ ms.workload: big-data
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 09/30/2020
+ms.date: 03/23/2021
 ms.custom: seodec18
-ms.openlocfilehash: c3f6f6a5ac1068f2eabca351e85376b8e16d1058
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 8aefa6efa5f10dae8a28e7126b91b7b5f6ac77a6
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "95016748"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104950736"
 ---
 # <a name="best-practices-for-choosing-a-time-series-id"></a>Best practices voor het kiezen van een tijdreeks-id
 
@@ -24,6 +24,11 @@ Dit artikel bevat een overzicht van het belang van de tijd reeks-ID voor uw Azur
 ## <a name="choose-a-time-series-id"></a>Een Time Series-id kiezen
 
 Het selecteren van de juiste tijd reeks-ID is van cruciaal belang. Het kiezen van een Time Series-id is net als het kiezen van een partitiesleutel voor een database. Dit is vereist wanneer u een Azure Time Series Insights Gen2-omgeving maakt.
+
+Bekijk de zelf studie over het inrichten van de omgeving voor een gedetailleerde uitleg van de tijd reeks-ID. U ziet twee verschillende voor beelden van JSON-telemetrie-nettolading en de juiste selectie van de tijd reeks-ID voor elke.</br>
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWzk3P]
+
 
 > [!IMPORTANT]
 > De time series-Id's zijn:

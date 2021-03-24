@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 05/07/2020
-ms.openlocfilehash: a539acc423feeab500830fb33262d1b824101072
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: b62e41f280d02664b3df631c3413960f1265356f
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98935839"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104863170"
 ---
 # <a name="requesting-quota-increases-for-azure-hdinsight"></a>Quota aanvragen verhogen voor Azure HDInsight
 
@@ -34,7 +34,7 @@ Voer de volgende stappen uit om een quotum verhoging aan te vragen:
 1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 1. Selecteer **Help en ondersteuning** aan de linkerkant van de pagina.
 
-    ![knop Help en ondersteuning](./media/quota-increase-request/help-support-button.png)
+    :::image type="content" source="./media/quota-increase-request/help-support-button.png" alt-text="knop Help en ondersteuning" border="true":::
 
 1. Selecteer **Nieuwe ondersteuningsaanvraag**.
 1. Selecteer op de pagina **Nieuwe ondersteuningsaanvraag** op het tabblad **Basisgegevens** de volgende opties:
@@ -43,20 +43,20 @@ Voer de volgende stappen uit om een quotum verhoging aan te vragen:
    - **Abonnement**: het abonnement dat u wilt wijzigen
    - **Quotum type**: **HDInsight**
 
-     ![Een ondersteunings aanvraag maken om het HDInsight-kern quotum te verhogen](./media/quota-increase-request/hdinsight-quota-support-request.png)
+     :::image type="content" source="./media/quota-increase-request/hdinsight-quota-support-request.png" alt-text="Een ondersteunings aanvraag maken om het HDInsight-kern quotum te verhogen" border="true":::
 
 1. Selecteer **volgende: >>oplossingen**.
 1. Voer op de pagina **Details** een beschrijving van het probleem in, selecteer de ernst van het probleem, uw favoriete contact wijze en andere vereiste velden. Gebruik de hieronder vermelde sjabloon om ervoor te zorgen dat u de benodigde informatie opgeeft. Quota verhogen aanvragen worden geëvalueerd door het Azure-capaciteits team en niet door het HDInsight-product team. Hoe meer volledige informatie u verstrekt, hoe waarschijnlijker uw aanvraag wordt goedgekeurd.
 
-    ```
-    I would like to request [SPECIFY DESIRED AMOUNT] on [DESIRED SKU] for [SUBSCRIPTION ID].
-    
-    My current quota on this subscription is [CURRENT QUOTA AMOUNT].
-    
-    I would like to use the extra cores for [DETAIL REASON].
-    ```
+   ```text
+   I would like to request [SPECIFY DESIRED AMOUNT] on [DESIRED SKU] for [SUBSCRIPTION ID].
+   
+   My current quota on this subscription is [CURRENT QUOTA AMOUNT].
+   
+   I would like to use the extra cores for [DETAIL REASON].
+   ```
 
-    ![Details van probleem](./media/quota-increase-request/problem-details.png)
+   :::image type="content" source="./media/quota-increase-request/problem-details.png" alt-text="Details van probleem" border="true":::
 
 1. Selecteer **volgende: controleren + >>maken**.
 1. Selecteer op het tabblad **Beoordelen en maken** de optie **Maken**.

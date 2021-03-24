@@ -3,13 +3,13 @@ author: v-dalc
 ms.service: databox
 ms.author: alkohli
 ms.topic: include
-ms.date: 03/02/2021
-ms.openlocfilehash: 57415ec76a3e8d9fc3c160b47668d3419ff6ea5c
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.date: 03/23/2021
+ms.openlocfilehash: 34d0d55ba6eb403055be96758b57b7bd0c2ab704
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103622120"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104988098"
 ---
 Gebruik de IoT Edge runtime-antwoorden van agent om problemen met betrekking tot berekeningen op te lossen. Hier volgt een lijst met mogelijke reacties:
 
@@ -66,3 +66,43 @@ Voer de volgende stappen uit in de lokale web-UI van uw apparaat:
 1. Selecteer **Toepassen**. Het gewijzigde IP-bereik moet direct van kracht worden.
 
 Zie [externe service ip's voor containers wijzigen](../articles/databox-online/azure-stack-edge-j-series-manage-compute.md#change-external-service-ips-for-containers)voor meer informatie.
+
+### <a name="configure-static-ips-for-iot-edge-modules"></a>Statische IP-adressen configureren voor IoT Edge modules
+
+#### <a name="problem-description"></a>Beschrijving van het probleem
+
+Kubernetes wijst dynamische IP-adressen toe aan elke IoT Edge module op uw Azure Stack Edge Pro GPU-apparaat. Er is een methode nodig om statische IP-adressen voor de modules te configureren.
+
+#### <a name="suggested-solution"></a>Voorgestelde oplossing
+
+U kunt vaste IP-adressen voor uw IoT Edge modules opgeven via de sectie K8s-experimentele, zoals hieronder wordt beschreven: 
+
+```yaml
+{
+  "k8s-experimental": {
+    "serviceOptions" : {
+      "loadBalancerIP" : "100.23.201.78",
+      "type" : "LoadBalancer"
+    }
+  }
+}
+```
+### <a name="expose-kubernetes-service-as-cluster-ip-service-for-internal-communication"></a>Kubernetes-service beschikbaar maken als IP-adres van de cluster voor interne communicatie
+
+#### <a name="problem-description"></a>Beschrijving van het probleem
+
+Het IoT-Service type is standaard van het type load balancer en wijst externe IP-adressen toe. U wilt mogelijk geen extern IP-adres voor uw toepassing. Mogelijk moet u het Peul in het KUbernetes-cluster zichtbaar maken voor toegang als andere peulen en niet als een extern beschik bare load balancer service. 
+
+#### <a name="suggested-solution"></a>Voorgestelde oplossing
+
+U kunt de opties voor maken gebruiken via de sectie K8s-experimentele. De volgende service optie moet werken met poort bindingen.
+
+```yaml
+{
+"k8s-experimental": {
+  "serviceOptions" : {
+    "type" : "ClusterIP"
+    }
+  }
+}
+```

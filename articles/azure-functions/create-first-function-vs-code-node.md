@@ -7,12 +7,12 @@ adobe-target: true
 adobe-target-activity: DocsExp–386541–A/B–Enhanced-Readability-Quickstarts–2.19.2021
 adobe-target-experience: Experience B
 adobe-target-content: ./create-first-function-vs-code-node_uiex
-ms.openlocfilehash: 6c32570c8ebea3c1d127fc26b0d78287dbeb817f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: f22a847be5fc750cb3a3d9e6736d08940f30e4fe
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101729280"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104954459"
 ---
 # <a name="quickstart-create-a-javascript-function-in-azure-using-visual-studio-code"></a>Quickstart: Een JavaScript-functie maken in Azure met behulp van Visual Studio Code
 
@@ -117,8 +117,10 @@ In deze sectie maakt u een functie-app en de bijbehorende resources in uw Azure-
 
 ## <a name="next-steps"></a>Volgende stappen
 
-U hebt [Visual Studio code](functions-develop-vs-code.md?tabs=javascript) gebruikt voor het maken van een functie-app met een eenvoudige, door http geactiveerde functie. In het volgende artikel vouwt u die functie uit door verbinding te maken met Azure Storage. Zie [bindingen toevoegen aan een bestaande functie in azure functions](add-bindings-existing-function.md?tabs=javascript)voor meer informatie over het maken van verbinding met andere Azure-Services.  
+U hebt [Visual Studio code](functions-develop-vs-code.md?tabs=javascript) gebruikt voor het maken van een functie-app met een eenvoudige, door http geactiveerde functie. In het volgende artikel vouwt u die functie uit door verbinding te maken met Azure Cosmos DB of Azure Storage. Zie [bindingen toevoegen aan een bestaande functie in azure functions](add-bindings-existing-function.md?tabs=javascript)voor meer informatie over het maken van verbinding met andere Azure-Services.  
 
+> [!div class="nextstepaction"]
+> [Verbinding maken met een Data Base](functions-add-output-binding-cosmos-db-vs-code.md?pivots=programming-language-javascript)
 > [!div class="nextstepaction"]
 > [Verbinding maken met een Azure Storage-wachtrij](functions-add-output-binding-storage-queue-vs-code.md?pivots=programming-language-javascript)
 

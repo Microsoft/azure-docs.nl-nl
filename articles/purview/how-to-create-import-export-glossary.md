@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 12/02/2020
-ms.openlocfilehash: 7466e143f345ea305c7e9ef118d09fb6f685ac16
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 6f7f481ae0e0c75b14d894080f791161346cd93f
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101694480"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104952402"
 ---
 # <a name="how-to-create-import-and-export-glossary-terms"></a>Termen van een woorden lijst maken, importeren en exporteren
 
@@ -80,6 +80,9 @@ U ziet dat de termen namen hoofdletter gevoelig zijn. `Sample`En `saMple` kunnen
 4. Wanneer u klaar bent met het invullen van het. CSV-bestand, selecteert u het bestand dat u wilt importeren en selecteert u **OK**.
 
 5. Het bestand wordt door het systeem geüpload en alle voor waarden aan uw catalogus toegevoegd.
+ 
+   > [!Important]
+   > Het e-mail adres voor de webgroepen en experts moet het primaire adres van de gebruiker zijn van AAD Group. Alternatieve e-mail berichten, user principal name en niet-AAD-e-mails worden nog niet ondersteund. 
 
 ## <a name="export-terms-from-glossary-with-custom-attributes"></a>Termen uit de woorden lijst exporteren met aangepaste kenmerken
 

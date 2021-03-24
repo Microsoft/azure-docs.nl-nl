@@ -5,19 +5,19 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: reference
-ms.date: 02/12/2021
+ms.date: 03/08/2021
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7879b233bf94442de2cad83de8adfe54b6b81e0e
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 3308c2263f80a0772a389900e08c81cfe8da32a2
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100365511"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104952623"
 ---
 # <a name="azure-active-directory-b2b-collaboration-faqs"></a>Veelgestelde vragen over Azure Active Directory B2B-samen werking
 
@@ -83,6 +83,7 @@ Ja. Multi-factor Authentication-en consumenten-e-mail accounts worden beide onde
 ### <a name="do-you-support-password-reset-for-azure-ad-b2b-collaboration-users"></a>Ondersteunt u het opnieuw instellen van wacht woorden voor Azure AD B2B-samenwerkings gebruikers?
 Als uw Azure AD-Tenant de basis directory voor een gebruiker is, kunt u [het wacht woord van de gebruiker opnieuw instellen](../fundamentals/active-directory-users-reset-password-azure-portal.md) via de Azure Portal. Maar u kunt een wacht woord niet rechtstreeks opnieuw instellen voor een gast gebruiker die zich aanmeldt met een account dat wordt beheerd door een andere Azure AD-adres lijst of een externe ID-provider. Alleen de gast gebruiker of een beheerder in de basismap van de gebruiker kan het wacht woord opnieuw instellen. Hier volgen enkele voor beelden van hoe het opnieuw instellen van wacht woorden werkt voor gast gebruikers:
  
+* Gast gebruikers in een Azure AD-Tenant die zijn gemarkeerd als ' gast ' (User type = gast), kunnen niet worden geregistreerd voor SSPR via [https://aka.ms/ssprsetup](https://aka.ms/ssprsetup) . Dit type gast gebruiker kan alleen SSPR uitvoeren via [https://aka.ms/sspr](https://aka.ms/sspr) . 
 * Gast gebruikers die zich aanmelden met een Microsoft-account (bijvoorbeeld guestuser@live.com ) kunnen hun eigen wacht woorden opnieuw instellen met behulp van Microsoft-account self-service voor wachtwoord herstel (SSPR). Lees [hoe u uw Microsoft-account wacht woord opnieuw instelt](https://support.microsoft.com/help/4026971/microsoft-account-how-to-reset-your-password).
 * Gast gebruikers die zich aanmelden met een Google-account of een andere externe ID-provider kunnen hun eigen wacht woord opnieuw instellen met behulp van de SSPR-methode van de identiteits provider. Een gast gebruiker met het Google-account kan bijvoorbeeld guestuser@gmail.com het wacht woord opnieuw instellen door de instructies te volgen in [uw wacht woord wijzigen of opnieuw instellen](https://support.google.com/accounts/answer/41078).
 * Als de identiteits Tenant een just-in-time-Tenant (JIT) of ' virale ' is (wat betekent dat het een afzonderlijke, niet-beheerde Azure-Tenant is), kan alleen de gast gebruiker het wacht woord opnieuw instellen. Soms neemt een organisatie het [beheer van virale tenants over](../enterprise-users/domains-admin-takeover.md) die worden gemaakt wanneer werk nemers hun werk-e-mail adressen gebruiken om zich aan te melden voor services. Nadat de organisatie een virale Tenant heeft overgenomen, kan alleen een beheerder in die organisatie het wacht woord van de gebruiker opnieuw instellen of SSPR inschakelen. Als dat nodig is, kunt u, als de uitnodigende organisatie, het gast gebruikers account uit uw Directory verwijderen en een uitnodiging opnieuw verzenden.

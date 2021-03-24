@@ -6,13 +6,13 @@ ms.author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.topic: overview
-ms.date: 03/22/2021
-ms.openlocfilehash: ede812dc2ce063ec38423db73f4b269a7618e00c
-ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
+ms.date: 03/23/2021
+ms.openlocfilehash: 1825f5be8a4f8a8ddfba931dfbc7e77186b4331f
+ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/23/2021
-ms.locfileid: "104799612"
+ms.locfileid: "104889447"
 ---
 # <a name="azure-security-center-free-vs-azure-defender-enabled"></a>Azure Security Center gratis VS Azure Defender ingeschakeld
 Azure Defender is gratis gedurende de eerste 30 dagen. Als u aan het einde van 30 dagen wilt door gaan met het gebruik van de service, worden er automatisch kosten voor gebruik in rekening gebracht.
@@ -48,7 +48,8 @@ Security Center wordt op twee manieren aangeboden:
 - [Als een Log Analytics-agent aan meerdere werkruimten rapporteert, worden er dan tweemaal kosten in rekening gebracht?](#if-a-log-analytics-agent-reports-to-multiple-workspaces-will-i-be-charged-twice)
 - [Als een Log Analytics-agent aan meerdere werkruimten rapporteert, is er dan voor elke werkruimte gratis gegevensopname van 500 MB beschikbaar?](#if-a-log-analytics-agent-reports-to-multiple-workspaces-is-the-500-mb-free-data-ingestion-available-on-all-of-them)
 - [Wordt de gratis gegevensopname van 500 MB berekend voor een gehele werkruimte of uitsluitend per machine?](#is-the-500-mb-free-data-ingestion-calculated-for-an-entire-workspace-or-strictly-per-machine)
-- [Welke gegevens typen zijn opgenomen in de limiet van 500 MB voor vrije gegevens?](#what-data-types-are-included-in-the-500-mb-free-data-limit)
+- [Welke gegevens typen worden er voor de dagelijkse limiet van 500 MB gebruikt?](#what-data-types-are-included-in-the-500-mb-data-daily-allowance)
+
 
 ### <a name="how-can-i-track-who-in-my-organization-enabled-azure-defender-changes-in-security-center"></a>Hoe kan ik bijhouden wie in mijn organisatie Azure Defender-wijzigingen in Security Center heeft ingeschakeld?
 Azure-abonnementen kunnen meerdere beheerders met machtigingen voor het wijzigen van prijsinstellingen hebben. Als u wilt weten welke gebruiker een wijziging heeft aangebracht, gebruikt u het Azure-activiteitenlogboek.
@@ -116,7 +117,7 @@ U krijgt 500 MB gratis gegevensopname per dag, voor elke machine die is verbonde
 
 Deze hoeveelheid gegevens is een dagelijks gemiddelde voor alle knooppunten. Er worden dus geen extra kosten in rekening gebracht als sommige machines 100 MB en andere 800 MB verzenden, mits het totaal de gratis limiet van **[aantal machines] x 500 MB** niet overschrijdt.
 
-### <a name="what-data-types-are-included-in-the-500-mb-free-data-limit"></a>Welke gegevens typen zijn opgenomen in de limiet van 500 MB voor vrije gegevens?
+### <a name="what-data-types-are-included-in-the-500-mb-data-daily-allowance"></a>Welke gegevens typen worden er voor de dagelijkse limiet van 500 MB gebruikt?
 
 De facturering van Security Center is nauw verbonden met de facturering voor Log Analytics. Security Center biedt een toewijzing van 500 MB/knoop punt/dag voor de volgende subset van [beveiligings gegevens typen](/azure/azure-monitor/reference/tables/tables-category.md#security):
 - WindowsEvent

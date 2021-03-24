@@ -12,12 +12,12 @@ ms.date: 12/15/2020
 ms.author: pafarley
 ms.custom: cog-serv-seo-aug-2020
 keywords: content moderator, azure content moderator, online moderator, content filtering software, content moderation service, content moderation
-ms.openlocfilehash: 57a390a1da1e3a10b9fda4b531a83ee48e91125b
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
-ms.translationtype: HT
+ms.openlocfilehash: a53611fdad84f06661f3b8928296b6a45851cea4
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97560370"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104867267"
 ---
 # <a name="what-is-azure-content-moderator"></a>Wat is Azure Content Moderator?
 
@@ -26,6 +26,13 @@ ms.locfileid: "97560370"
 Azure Content Moderator is een AI-service waarmee u inhoud kunt afhandelen die mogelijk aanstootgevend, riskant of anderszins ongewenst is. Het bevat de op AI gebaseerde service om content te modereren waarmee tekst, afbeeldingen en video's worden gescand en automatisch content gemarkeerd wordt, evenals de Controletool, een online moderatoromgeving voor een team van mensen die inhoud beoordelen.
 
 U kunt software toevoegen voor het filteren van inhoud aan uw app om te voldoen aan de regelgeving of om de beoogde omgeving voor gebruikers te behouden.
+
+Deze documentatie bevat de volgende artikel typen:  
+
+* [**Quick**](client-libraries.md) starts zijn aan de slag-instructies die u helpen bij het maken van aanvragen voor de service.  
+* [**Hand leidingen**](try-text-api.md) bevatten instructies voor het gebruik van de service op meer specifieke of aangepaste manieren.  
+* [**Concepten**](text-moderation-api.md) geven uitgebreide uitleg over de service functionaliteit en-functies.  
+* [**Zelf studies**](ecommerce-retail-catalog-moderation.md) zijn meer gidsen die laten zien hoe u de service kunt gebruiken als onderdeel in bredere zakelijke oplossingen.  
 
 ## <a name="where-its-used"></a>Waar het wordt gebruikt
 

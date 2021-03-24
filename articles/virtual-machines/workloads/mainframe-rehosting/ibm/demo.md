@@ -3,7 +3,7 @@ title: Een app voor toepassings ontwikkelaars (ADCD) instellen in IBM zD&T v1 | 
 description: Voer een zD&T-omgeving (IBM Z Development and Test Environment) uit op Azure Virtual Machines (Vm's).
 services: virtual-machines
 ms.service: virtual-machines
-ms.subservice: workloads
+ms.subservice: mainframe-rehosting
 documentationcenter: ''
 author: njray
 manager: edprice
@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 02/22/2019
 tags: ''
 keywords: ''
-ms.openlocfilehash: d390cca483444dadd278d783c5f93e09a1bf1ff8
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: fda59cc041cc540b95ababa6d56df6e69b0a8970
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102549444"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104956159"
 ---
 # <a name="set-up-an-application-developers-controlled-distribution-adcd-in-ibm-zdt-v1"></a>Een toepassings ontwikkelaars ADCD (Controlled Distribution) instellen in IBM zD&T v1
 
@@ -187,7 +187,7 @@ Uw installatie kopie kan nu worden geïmplementeerd en kan worden gekoppeld door
 
 Gefeliciteerd U voert nu een IBM mainframe-omgeving uit op Azure.
 
-## <a name="learn-more"></a>Meer informatie
+## <a name="learn-more"></a>Lees meer
 
 - [Mainframe migratie: mythen en feiten](/azure/architecture/cloud-adoption/infrastructure/mainframe-migration/myths-and-facts)
 - [IBM DB2 pureScale op Azure](ibm-db2-purescale-azure.md)

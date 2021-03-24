@@ -6,12 +6,12 @@ ms.author: nisgoel
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 05/28/2020
-ms.openlocfilehash: 6611f5ca7ddae243c4bc314be73a9030311cec89
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 57a3d76f24c33984a883e926a8d4c68736e9f121
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "99594431"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104869885"
 ---
 # <a name="integrate-apache-spark-and-apache-hive-with-hive-warehouse-connector-in-azure-hdinsight"></a>Apache Spark en Apache Hive integreren met hive Warehouse connector in azure HDInsight
 
@@ -23,7 +23,7 @@ Apache Hive biedt ondersteuning voor database transacties die atomisch, consiste
 
 Apache Spark heeft een Structured streaming API die streaming-mogelijkheden biedt die niet beschikbaar zijn in Apache Hive. Vanaf HDInsight 4,0 hebben Apache Spark 2.3.1 en Apache Hive 3.1.0 afzonderlijke meta Stores. De afzonderlijke meta Stores kunnen de interoperabiliteit lastig maken. De Hive-Warehouse connector maakt het gemakkelijker om Spark en Hive samen te gebruiken. De HWC-bibliotheek laadt gegevens van LLAP-daemons naar Spark-uitvoerende parallel. Dit proces maakt het efficiënter en aanpasbaarer dan een standaard JDBC-verbinding van Spark naar Hive.
 
-![architectuur van de Hive-Warehouse connector](./media/apache-hive-warehouse-connector/hive-warehouse-connector-architecture.png)
+:::image type="content" source="./media/apache-hive-warehouse-connector/hive-warehouse-connector-architecture.png" alt-text="architectuur van de Hive-Warehouse connector" border="true":::
 
 Enkele van de bewerkingen die worden ondersteund door de Hive Warehouse connector zijn:
 
@@ -72,7 +72,7 @@ Hive Warehouse connector heeft afzonderlijke clusters nodig voor Spark-en intera
 
 1. Vouw **aangepaste spark2-defaults**.
 
-    ![Configuratie van Apache Ambari Spark2](./media/apache-hive-warehouse-connector/hive-warehouse-connector-spark2-ambari.png)
+    :::image type="content" source="./media/apache-hive-warehouse-connector/hive-warehouse-connector-spark2-ambari.png" alt-text="Configuratie van Apache Ambari Spark2" border="true":::
 
 1. Selecteer **eigenschap toevoegen...** om de volgende configuraties toe te voegen:
 
@@ -103,11 +103,11 @@ Naast de configuraties die in de vorige sectie worden genoemd, voegt u de volgen
     
     * Navigeer vanuit een webbrowser naar `https://CLUSTERNAME.azurehdinsight.net/#/main/services/HIVE/summary` de naam van het interactieve query cluster. Klik op **HiveServer2 Interactive**. U ziet de FQDN-naam (Fully Qualified Domain Name) van het hoofd knooppunt waarop LLAP wordt uitgevoerd, zoals wordt weer gegeven in de scherm opname. Vervang door `<llap-headnode>` deze waarde.
 
-        ![Hoofd knooppunt van de component Warehouse-connector](./media/apache-hive-warehouse-connector/head-node-hive-server-interactive.png)
+        :::image type="content" source="./media/apache-hive-warehouse-connector/head-node-hive-server-interactive.png" alt-text="Hoofd knooppunt van de component Warehouse-connector" border="true":::
 
     * Gebruik de [SSH-opdracht](../hdinsight-hadoop-linux-use-ssh-unix.md) om verbinding te maken met uw interactieve query cluster. Zoek naar `default_realm` de para meter in het `/etc/krb5.conf` bestand. Vervang door `<AAD-DOMAIN>` deze waarde als een hoofd letter teken reeks, anders wordt de referentie niet gevonden.
 
-        ![AAD-domein van Hive Warehouse connector](./media/apache-hive-warehouse-connector/aad-domain.png)
+        :::image type="content" source="./media/apache-hive-warehouse-connector/aad-domain.png" alt-text="AAD-domein van Hive Warehouse connector" border="true":::
 
     * Bijvoorbeeld `hive/hn0-ng36ll.mjry42ikpruuxgs2qy2kpg4q5e.cx.internal.cloudapp.net@PKRSRVUQVMAE6J85.D2.INTERNAL.CLOUDAPP.NET`.
     
@@ -211,21 +211,21 @@ kinit USERNAME
     hive.executeQuery("SELECT * FROM demo").show()
     ```
 
-    ![demo tabel vóór het Toep assen van het beleid voor Zwerver](./media/apache-hive-warehouse-connector/hive-warehouse-connector-table-before-ranger-policy.png)
+    :::image type="content" source="./media/apache-hive-warehouse-connector/hive-warehouse-connector-table-before-ranger-policy.png" alt-text="demo tabel vóór het Toep assen van het beleid voor Zwerver" border="true":::
 
 1. Pas een kolom maskerings beleid toe dat alleen de laatste vier tekens van de kolom bevat.  
     1. Ga naar de gebruikers interface van zwerver op `https://LLAPCLUSTERNAME.azurehdinsight.net/ranger/` .
     1. Klik onder **Hive** op de component service voor uw cluster.
-        ![zwerver Service Manager](./media/apache-hive-warehouse-connector/hive-warehouse-connector-ranger-service-manager.png)
+        :::image type="content" source="./media/apache-hive-warehouse-connector/hive-warehouse-connector-ranger-service-manager.png" alt-text="zwerver Service Manager" border="true":::
     1. Klik op het tabblad **maskeren** en vervolgens op **Nieuw beleid toevoegen**
 
-        ![Hive-beleids lijst van de component Warehouse connector zwerver](./media/apache-hive-warehouse-connector/hive-warehouse-connector-ranger-hive-policy-list.png)
+        :::image type="content" source="./media/apache-hive-warehouse-connector/hive-warehouse-connector-ranger-hive-policy-list.png" alt-text="Hive-beleids lijst van de component Warehouse connector zwerver" border="true":::
 
     1. Geef een gewenste beleids naam op. Data base selecteren: **standaard**, Hive-tabel: **demo**, Hive-kolom: **naam**, gebruiker: **rsadmin2**, toegangs typen: **selecteren**, en **gedeeltelijk masker: weer geven laatste 4** van het menu **optie masker selecteren** . Klik op **Add**.
-                ![beleid maken](./media/apache-hive-warehouse-connector/hive-warehouse-connector-ranger-create-policy.png)
+                :::image type="content" source="./media/apache-hive-warehouse-connector/hive-warehouse-connector-ranger-create-policy.png" alt-text="beleid maken" border="true":::
 1. Bekijk de inhoud van de tabel opnieuw. Na het Toep assen van het beleid voor zwerver, kunnen we alleen de laatste vier tekens van de kolom zien.
 
-    ![demo tabel na toepassing van het beleid van zwerver](./media/apache-hive-warehouse-connector/hive-warehouse-connector-table-after-ranger-policy.png)
+    :::image type="content" source="./media/apache-hive-warehouse-connector/hive-warehouse-connector-table-after-ranger-policy.png" alt-text="demo tabel na toepassing van het beleid van zwerver" border="true":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

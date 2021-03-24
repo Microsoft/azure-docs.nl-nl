@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 08/06/2020
-ms.openlocfilehash: c68d342cf21d69fa97ba3d5171ba596662fd845f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 98d18044693bc6f4d23e04e9403e71686df39451
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98945823"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104872197"
 ---
 # <a name="create-linux-based-clusters-in-hdinsight-by-using-the-azure-portal"></a>Op Linux gebaseerde clusters maken in HDInsight met behulp van de Azure Portal
 
@@ -32,13 +32,13 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 
 1. Selecteer **+ Een resource maken** in het menu aan de bovenkant.
 
-    ![Een nieuw cluster maken in de Azure Portal](./media/hdinsight-hadoop-create-linux-clusters-portal/azure-portal-create-resource.png "Een nieuw cluster maken in de Azure Portal")
+    :::image type="content" source="./media/hdinsight-hadoop-create-linux-clusters-portal/azure-portal-create-resource.png" alt-text="Een nieuw cluster maken in de Azure Portal":::
 
 1. Selecteer **Analytics** > **Azure HDInsight** om naar de pagina **HDInsight-cluster maken** te gaan.
 
 ## <a name="basics"></a>Basisbeginselen
 
-![Basis beginselen van HDInsight-cluster maken](./media/hdinsight-hadoop-create-linux-clusters-portal/azure-portal-cluster-basics.png "Een nieuw cluster maken in de Azure Portal")
+:::image type="content" source="./media/hdinsight-hadoop-create-linux-clusters-portal/azure-portal-cluster-basics.png" alt-text="Basis beginselen van HDInsight-cluster maken":::
 
 Geef op het tabblad **Basis** de volgende gegevens op:
 
@@ -63,7 +63,7 @@ Selecteer **volgende: opslag >>** om naar het volgende tabblad te gaan.
 > [!WARNING] 
 > Vanaf 15 juni 2020 kunnen klanten geen nieuwe service-principal maken met HDInsight. Zie [Service-Principal en certificaten maken](../active-directory/develop/howto-create-service-principal-portal.md) met behulp van Azure Active Directory.
 
-![HDInsight-cluster opslag maken](./media/hdinsight-hadoop-create-linux-clusters-portal/azure-portal-cluster-storage.png "Een nieuw cluster maken in de Azure Portal-opslag")
+:::image type="content" source="./media/hdinsight-hadoop-create-linux-clusters-portal/azure-portal-cluster-storage.png" alt-text="HDInsight-cluster opslag maken":::
 
 ### <a name="primary-storage"></a>Primaire opslag
 
@@ -90,7 +90,7 @@ Selecteer **volgende: beveiliging en netwerk >>** om naar het volgende tabblad t
 
 ## <a name="security--networking"></a>Beveiliging en netwerken
 
-![HDInsight cluster beveiligings netwerken maken](./media/hdinsight-hadoop-create-linux-clusters-portal/azure-portal-cluster-security-networking.png "HDInsight cluster beveiligings netwerken maken")
+:::image type="content" source="./media/hdinsight-hadoop-create-linux-clusters-portal/azure-portal-cluster-security-networking.png" alt-text="HDInsight cluster beveiligings netwerken maken":::
 
 Op het tabblad **beveiliging en netwerk** geeft u de volgende informatie op:
 
@@ -107,7 +107,7 @@ Selecteer **volgende: Configuratie + prijs >>** om naar het volgende tabblad te 
 
 ## <a name="configuration--pricing"></a>Configuratie en prijzen
 
-![HDInsight-cluster configuratie maken](./media/hdinsight-hadoop-create-linux-clusters-portal/azure-portal-cluster-configuration.png "Tabblad Configuratie en prijzen")
+:::image type="content" source="./media/hdinsight-hadoop-create-linux-clusters-portal/azure-portal-cluster-configuration.png" alt-text="HDInsight-cluster configuratie maken":::
 
 Geef op het tabblad **configuratie en prijzen** de volgende informatie op:
 
@@ -123,7 +123,7 @@ Selecteer **controleren + >>maken** om de cluster configuratie te valideren en d
 
 ## <a name="review--create"></a>Controleren en maken
 
-![HDInsight-cluster overzicht maken](./media/hdinsight-hadoop-create-linux-clusters-portal/azure-portal-cluster-review-create-hadoop.png "Aantal cluster knooppunten opgeven")
+:::image type="content" source="./media/hdinsight-hadoop-create-linux-clusters-portal/azure-portal-cluster-review-create-hadoop.png" alt-text="HDInsight-cluster overzicht maken":::
 
 Controleer de instellingen. Selecteer **Maken** om het cluster te maken.
 
@@ -133,7 +133,7 @@ Meestal duurt het genereren van het cluster ongeveer 20 minuten. Bewaak **meldin
 
 Nadat het proces is gemaakt, selecteert **u naar resource gaan** vanuit de melding **implementatie geslaagd** . Het cluster venster bevat de volgende informatie:
 
-![Overzicht van HDI-Azure Portal cluster](./media/hdinsight-hadoop-create-linux-clusters-portal/hdinsight-create-cluster-completed.png "Cluster eigenschappen")
+:::image type="content" source="./media/hdinsight-hadoop-create-linux-clusters-portal/hdinsight-create-cluster-completed.png" alt-text="Overzicht van HDI-Azure Portal cluster":::
 
 Enkele van de pictogrammen in het venster worden als volgt uitgelegd:
 

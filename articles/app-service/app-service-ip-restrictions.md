@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 12/17/2020
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: fea189952b1452c680255ceb99e38609775a8bd6
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 4b85397eeda651678fe66c6e78199dd25630dcc4
+ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102502685"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104889881"
 ---
 # <a name="set-up-azure-app-service-access-restrictions"></a>Toegangs beperkingen voor Azure App Service instellen
 
@@ -97,26 +97,25 @@ Met Service-eind punten kunt u uw app configureren met toepassings gateways of a
 > [!NOTE]
 > - Service-eind punten worden momenteel niet ondersteund voor web-apps die gebruikmaken van IP-Secure Sockets Layer (VIP) voor virtueel IP-verkeer.
 >
-#### <a name="set-a-service-tag-based-rule-preview"></a>Een op code gebaseerde regel voor een service instellen (preview-versie)
+#### <a name="set-a-service-tag-based-rule"></a>Een op code gebaseerde regel voor een service instellen
 
-* Voor stap 4 selecteert u in de vervolg keuzelijst **type** de optie **service label (voor beeld)**.
+* Selecteer voor stap 4 in de vervolg keuzelijst **type** de optie **service label**.
 
-   :::image type="content" source="media/app-service-ip-restrictions/access-restrictions-service-tag-add.png" alt-text="Scherm afbeelding van het deel venster beperking toevoegen met het servicetag type geselecteerd.":::
+   :::image type="content" source="media/app-service-ip-restrictions/access-restrictions-service-tag-add.png?v2" alt-text="Scherm afbeelding van het deel venster beperking toevoegen met het servicetag type geselecteerd.":::
 
 Elke servicetag vertegenwoordigt een lijst met IP-adresbereiken van Azure-Services. Een lijst met deze services en koppelingen naar de specifieke bereiken vindt u in de documentatie voor de [service label][servicetags].
 
-De volgende lijst met Service tags wordt ondersteund in de toegangs beperkings regels tijdens de preview-fase:
+Alle beschik bare service tags worden ondersteund in toegangs beperkings regels. Ter vereenvoudiging is alleen een lijst met de meest voorkomende Tags beschikbaar via de Azure Portal. Gebruik Azure Resource Manager sjablonen of scripts om geavanceerde regels te configureren, zoals regionale regels voor het bereik. Dit zijn de tags die beschikbaar zijn via Azure Portal:
+
 * ActionGroup
+* ApplicationInsightsAvailability
 * AzureCloud
 * AzureCognitiveSearch
-* AzureConnectors
 * AzureEventGrid
 * AzureFrontDoor. back-end
 * AzureMachineLearning
-* AzureSignalR
 * AzureTrafficManager
 * LogicApps
-* ServiceFabric
 
 ### <a name="edit-a-rule"></a>Een regel bewerken
 
@@ -137,6 +136,31 @@ Als u een regel wilt verwijderen, selecteert u op de pagina **toegangs beperking
 
 ## <a name="access-restriction-advanced-scenarios"></a>Geavanceerde scenario's voor toegangs beperking
 In de volgende secties worden een aantal geavanceerde scenario's beschreven die gebruikmaken van toegangs beperkingen.
+
+### <a name="filter-by-http-header"></a>Filteren op http-header
+
+Als onderdeel van een regel kunt u extra http-header filters toevoegen. De volgende http-header namen worden ondersteund:
+* X-doorgestuurd-voor
+* X-doorgestuurd-host
+* X-Azure-FDID
+* X-FD-HealthProbe
+
+Voor elke koptekst naam kunt u Maxi maal 8 waarden toevoegen, gescheiden door komma's. De http-header filters worden geëvalueerd na de regel zelf en beide voor waarden moeten waar zijn om de regel toe te passen.
+
+### <a name="multi-source-rules"></a>Regels voor meerdere bronnen
+
+Met regels voor meerdere bronnen kunt u Maxi maal 8 IP-bereiken of 8 Service Tags combi neren in één regel. U kunt dit gebruiken als u meer dan 512 IP-bereiken hebt of als u logische regels wilt maken waarin meerdere IP-bereiken worden gecombineerd met één http-header filter.
+
+Regels voor meerdere bronnen worden op dezelfde manier gedefinieerd als voor het definiëren van regels met één bron, maar met elk bereik gescheiden door een komma.
+
+Power shell-voor beeld:
+
+  ```azurepowershell-interactive
+  Add-AzWebAppAccessRestrictionRule -ResourceGroupName "ResourceGroup" -WebAppName "AppName" `
+    -Name "Multi-source rule" -IpAddress "192.168.1.0/24,192.168.10.0/24,192.168.100.0/24" `
+    -Priority 100 -Action Allow
+  ```
+
 ### <a name="block-a-single-ip-address"></a>Eén IP-adres blok keren
 
 Wanneer u uw eerste toegangs beperkings regel toevoegt, voegt de service een expliciete regel voor het *weigeren van alle* regels toe met de prioriteit 2147483647. In de praktijk is de regel expliciet *Alles weigeren* de laatste regel die moet worden uitgevoerd en blokkeert deze de toegang tot een IP-adres dat niet expliciet is toegestaan door een regel voor *toestaan* .
@@ -151,17 +175,20 @@ Naast het beheren van de toegang tot uw app, kunt u de toegang beperken tot de S
 
 :::image type="content" source="media/app-service-ip-restrictions/access-restrictions-scm-browse.png" alt-text="Scherm afbeelding van de pagina toegangs beperkingen in de Azure Portal, waarin wordt weer gegeven dat er geen toegangs beperkingen zijn ingesteld voor de SCM-site of de app.":::
 
-### <a name="restrict-access-to-a-specific-azure-front-door-instance-preview"></a>Toegang tot een specifiek exemplaar van de Azure-front-deur beperken (preview-versie)
-Verkeer van de voor deur van Azure naar uw toepassing is afkomstig uit een bekende set IP-bereiken die zijn gedefinieerd in het label AzureFrontDoor. back-service. Met een beperkings regel voor service tags kunt u het verkeer beperken tot alleen de herkomst van de voor deur van Azure. Om ervoor te zorgen dat verkeer alleen afkomstig is uit uw specifieke exemplaar, moet u de binnenkomende aanvragen verder filteren op basis van de unieke http-header die door Azure front-deur wordt verzonden. Tijdens de preview kunt u dit doen met Power shell of REST/ARM. 
+### <a name="restrict-access-to-a-specific-azure-front-door-instance"></a>Toegang tot een specifiek exemplaar van de Azure-front-deur beperken
+Verkeer van de voor deur van Azure naar uw toepassing is afkomstig uit een bekende set IP-bereiken die zijn gedefinieerd in het label AzureFrontDoor. back-service. Met een beperkings regel voor service tags kunt u het verkeer beperken tot alleen de herkomst van de voor deur van Azure. Om ervoor te zorgen dat verkeer alleen afkomstig is uit uw specifieke exemplaar, moet u de binnenkomende aanvragen verder filteren op basis van de unieke http-header die door Azure front-deur wordt verzonden.
 
-* Power shell-voor beeld (de voor deur-ID vindt u in de Azure Portal):
+:::image type="content" source="media/app-service-ip-restrictions/access-restrictions-frontdoor.png" alt-text="Scherm afbeelding van de pagina toegangs beperkingen in het Azure Portal, waarin wordt weer gegeven hoe u de Azure front-deur kunt toevoegen.":::
 
-   ```azurepowershell-interactive
-    $frontdoorId = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    Add-AzWebAppAccessRestrictionRule -ResourceGroupName "ResourceGroup" -WebAppName "AppName" `
-      -Name "Front Door example rule" -Priority 100 -Action Allow -ServiceTag AzureFrontDoor.Backend `
-      -HttpHeader @{'x-azure-fdid' = $frontdoorId}
-    ```
+Power shell-voor beeld:
+
+  ```azurepowershell-interactive
+  $afd = Get-AzFrontDoor -Name "MyFrontDoorInstanceName"
+  Add-AzWebAppAccessRestrictionRule -ResourceGroupName "ResourceGroup" -WebAppName "AppName" `
+    -Name "Front Door example rule" -Priority 100 -Action Allow -ServiceTag AzureFrontDoor.Backend `
+    -HttpHeader @{'x-azure-fdid' = $afd.FrontDoorId}
+  ```
+
 ## <a name="manage-access-restriction-rules-programmatically"></a>Toegangs beperkings regels programmatisch beheren
 
 U kunt toegangs beperkingen programmatisch toevoegen door een van de volgende handelingen uit te voeren: 
@@ -181,7 +208,7 @@ U kunt toegangs beperkingen programmatisch toevoegen door een van de volgende ha
       -Name "Ip example rule" -Priority 100 -Action Allow -IpAddress 122.133.144.0/24
   ```
    > [!NOTE]
-   > Voor het werken met Service Tags, HTTP-headers of regels met meerdere bronnen is ten minste versie 5.1.0 vereist. U kunt de versie van de geïnstalleerde module controleren met: **Get-InstalledModule-name AZ**
+   > Voor het werken met Service Tags, HTTP-headers of regels met meerdere bronnen is ten minste versie 5.7.0 vereist. U kunt de versie van de geïnstalleerde module controleren met: **Get-InstalledModule-name AZ**
 
 U kunt waarden ook hand matig instellen door een van de volgende handelingen uit te voeren:
 

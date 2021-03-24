@@ -4,7 +4,7 @@
   items:
     - name: Wat zijn schaalsets voor virtuele machines?
       href: overview.md
-- name: Quickstarts
+- name: Snelstartgidsen
   items:
     - name: Maken in Azure Portal
       href: quick-create-portal.md

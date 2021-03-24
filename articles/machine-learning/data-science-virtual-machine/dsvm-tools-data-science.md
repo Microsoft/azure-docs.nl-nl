@@ -9,12 +9,12 @@ author: lobrien
 ms.author: laobri
 ms.topic: conceptual
 ms.date: 12/12/2019
-ms.openlocfilehash: ac71d8d7830f1d740d0156886a364b1d53ab247f
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: d78b106464bfbd3c86b9899a5c3543eed5dc0924
+ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100519555"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104888954"
 ---
 # <a name="machine-learning-and-data-science-tools-on-azure-data-science-virtual-machines"></a>Machine learning-en data Science-hulpprogram ma's op Azure data Science Virtual Machines
 Azure data Science Virtual Machines (Dsvm) beschikt over een uitgebreide set hulpprogram ma's en bibliotheken voor machine learning die beschikbaar zijn in populaire talen, zoals python, R en Julia.
@@ -99,7 +99,7 @@ Er zijn verschillende andere machine learning-bibliotheken op Dsvm, zoals het po
 | Ondersteunde versies     | Windows, Linux     |
 | Typische toepassingen      | Algemene machine-learning-bibliotheek      |
 | Hoe wordt het geconfigureerd of geïnstalleerd?      |  Geïnstalleerd met GPU-ondersteuning   |
-| Het gebruik of uitvoeren van het programma      | Als een python-bibliotheek (2,7 en 3,5), R-pakket en het opdracht regel programma op het pad ( `C:\dsvm\tools\xgboost\bin\xgboost.exe` voor Windows en `/dsvm/tools/xgboost/xgboost` voor Linux)    |
+| Het gebruik of uitvoeren van het programma      | Als een python-bibliotheek (2,7 en 3.6 +), R-pakket en het opdracht regel programma op het pad ( `C:\dsvm\tools\xgboost\bin\xgboost.exe` voor Windows en `/dsvm/tools/xgboost/xgboost` voor Linux)    |
 | Koppelingen naar voor beelden      | Voor beelden zijn beschikbaar op de virtuele machine, in `/dsvm/tools/xgboost/demo` op Linux en in `C:\dsvm\tools\xgboost\demo` Windows.   |
 | Verwante hulpprogramma's      | LightGBM, MXNet   |
 

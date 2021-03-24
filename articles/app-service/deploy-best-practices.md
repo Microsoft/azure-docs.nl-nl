@@ -7,12 +7,12 @@ ms.assetid: bb51e565-e462-4c60-929a-2ff90121f41d
 ms.topic: article
 ms.date: 07/31/2019
 ms.author: jafreebe
-ms.openlocfilehash: 3b49177eb592906e3bf84d359699b354f8c87c6e
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: ac4e8d93e2e729db387b0f9cf81017b6c58b6750
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98185662"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104951331"
 ---
 # <a name="deployment-best-practices"></a>Aanbevolen procedures voor implementatie
 
@@ -69,7 +69,7 @@ App Service heeft [ingebouwde continue levering](deploy-continuous-deployment.md
 
 ### <a name="use-github-actions"></a>GitHub-acties gebruiken
 
-U kunt de implementatie van de container ook automatiseren [met github-acties](deploy-container-github-action.md).  In het onderstaande werk stroom bestand wordt de container met de commit-ID samengesteld, gepusht naar een container register en wordt de opgegeven site sleuf bijgewerkt met de nieuwe afbeeldings code.
+U kunt de implementatie van de container ook automatiseren [met github-acties](./deploy-ci-cd-custom-container.md).  In het onderstaande werk stroom bestand wordt de container met de commit-ID samengesteld, gepusht naar een container register en wordt de opgegeven site sleuf bijgewerkt met de nieuwe afbeeldings code.
 
 ```yaml
 name: Build and deploy a container image to Azure Web Apps

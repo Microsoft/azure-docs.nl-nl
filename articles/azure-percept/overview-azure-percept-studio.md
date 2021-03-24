@@ -5,40 +5,31 @@ author: elqu20
 ms.author: v-elqu
 ms.service: azure-percept
 ms.topic: conceptual
-ms.date: 02/18/2021
+ms.date: 03/23/2021
 ms.custom: template-concept
-ms.openlocfilehash: d31f59d43765a80a4a57b640a1cf36e410728225
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 8aae976e94ebbef22a86e19f00bfe6248338c4d0
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104595869"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104953669"
 ---
 # <a name="azure-percept-studio-overview"></a>Overzicht van Azure percept Studio
 
 [Azure percept Studio](https://go.microsoft.com/fwlink/?linkid=2135819) is het enige start punt voor het maken van Edge AI-modellen en-oplossingen. Met Azure percept Studio kunt u begeleide werk stromen ontdekken en volt ooien waarmee u gemakkelijk te integreren Edge AI-compatibele hardware en krachtige Azure AI-en IoT-Cloud Services.
 
-In Studio kunt u de apparaten die geschikt zijn voor Edge AI als eind punten weer geven voor het verzamelen van de eerste en doorlopende trainings gegevens en de implementatie doelen voor model iteraties. Als u toegang hebt tot apparaten en trainings gegevens, is het mogelijk om snel een prototype te ontwikkelen en een iteratieve Edge-model ontwikkeling voor zowel de [visuele](./tutorial-nocode-vision.md) als de [spraak](./tutorial-no-code-speech.md) scenario's.
-<!---
-:::image type="content" source="./media/overview-azure-percept-studio/percept-studio-flow.png" alt-text="Flow from homepage in Azure Percept Studio.":::
---->
+In de Studio kunt u uw rand AI-compatibele apparaten als eind punten zien voor het verzamelen van de eerste en doorlopende trainings gegevens en de implementatie doelen voor model iteraties. Als u toegang hebt tot apparaten en trainings gegevens, is het mogelijk om snel een prototype te ontwikkelen en een iteratieve Edge-model ontwikkeling voor zowel de [visuele](./tutorial-nocode-vision.md) als de [spraak](./tutorial-no-code-speech.md) scenario's.
 
-De werk stromen in azure percept Studio zijn een groot aantal onderliggende Azure AI-en IoT-Services geïntegreerd, zoals Azure IoT Hub, Custom Vision, Speech Studio en Azure ML Services, zodat u deze services kunt gebruiken om een end-to-end oplossing te maken, zonder aanzienlijke bestaande kennis. Als u al bekend bent met deze Azure-Services, kunt u ook verbinding maken met bestaande resources buiten Azure percept Studio en deze wijzigen.
-<!---
-:::image type="content" source="./media/overview-azure-percept-studio/device-flow.png" alt-text="Device flow in Azure Percept Studio.":::
---->
+De werk stromen in azure percept Studio integreren veel Azure AI-en IoT-Services, zoals Azure IoT Hub, Custom Vision, Speech Studio en Azure ML, zodat u deze services kunt gebruiken om een end-to-end oplossing te maken zonder belang rijke bestaande kennis. Als u al bekend bent met deze Azure-Services, kunt u ook verbinding maken met bestaande Azure-service resources buiten Azure percept Studio en deze wijzigen.
 
-Ongeacht of u een beginner of een meer geavanceerde AI-model en oplossings ontwikkelaar bent, op een prototype werkt of overstapt naar een productie oplossing, voor spraak-of Vision Edge AI, biedt Azure percept Studio toegang tot werk stromen die u kunt gebruiken om de wrijving van het bouwen van Edge AI-oplossingen te verminderen.
-<!---
-:::image type="content" source="./media/overview-azure-percept-studio/image-flow.png" alt-text="Image capture flow in Azure Percept Studio.":::
---->
+Ongeacht of u een beginner of een geavanceerde AI-model en oplossings ontwikkelaar bent, aan een prototype werkt of naar een productie oplossing gaat, biedt Azure percept Studio toegang tot werk stromen die u kunt gebruiken om de wrijving over het bouwen van Edge AI-oplossingen te verminderen.
+
 </br>
 
 > [!VIDEO https://www.youtube.com/embed/rZsUuCytZWY]
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Bekijk [hier](https://go.microsoft.com/fwlink/?linkid=2135819) Azure percept Studio
+- Bekijk [Azure percept Studio](https://go.microsoft.com/fwlink/?linkid=2135819)
 - Down load de Azure percept DK-en Azure percept audio-accessoire in de [online winkel van micro soft](https://go.microsoft.com/fwlink/p/?LinkId=2155270)
-- De [Snelstartgids](./quickstart-percept-dk-set-up.md) voor de installatie van Azure percept DK volt ooien
-- Probeer zelf zelf studies voor het ontwikkelen van [visuele](./tutorial-nocode-vision.md) en [spraak](./tutorial-no-code-speech.md) oplossingen zonder code
+- Meer informatie over [Azure PERCEPT AI-modellen en-oplossingen](./overview-ai-models.md)

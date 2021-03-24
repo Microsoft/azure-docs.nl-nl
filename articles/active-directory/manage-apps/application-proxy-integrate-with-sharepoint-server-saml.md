@@ -16,12 +16,12 @@ ms.author: kenwith
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7cadf5b7d92e26e561e570f824295e69ca421e16
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 34aaafcd03e737b1e59529f8001e0c008bd39b70
+ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "101644511"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104888869"
 ---
 # <a name="integrate-with-sharepoint-saml"></a>Integreren met share point (SAML)
 
@@ -84,4 +84,4 @@ In deze stap maakt u een toepassing in uw Azure AD-Tenant die gebruikmaakt van d
  
 ## <a name="step-3-test-your-application"></a>Stap 3: de toepassing testen
 
-Als u een browser van een computer in een extern netwerk gebruikt, gaat u naar de URL ( https://portal.contoso.com/) die u tijdens de stap publiceren hebt geconfigureerd). Zorg ervoor dat u zich kunt aanmelden met het test account dat u hebt ingesteld.
+Als u een browser van een computer in een extern netwerk gebruikt, navigeert u naar de koppeling die u tijdens de stap publiceren hebt geconfigureerd. Zorg ervoor dat u zich kunt aanmelden met het test account dat u hebt ingesteld.

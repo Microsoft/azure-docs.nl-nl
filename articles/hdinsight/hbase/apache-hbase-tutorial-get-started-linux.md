@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: tutorial
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 01/22/2021
-ms.openlocfilehash: 5de98f5bf57626a408dd5bec8575856074f434c7
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 50216b83475e92cbabb5ed78c3836264ceff4600
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101705667"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104866604"
 ---
 # <a name="tutorial-use-apache-hbase-in-azure-hdinsight"></a>Zelfstudie: Apache HBase gebruiken in Azure HDInsight
 
@@ -64,11 +64,11 @@ U kunt SSH gebruiken om verbinding te maken met HBase-clusters en vervolgens [Ap
 
 Voor de meeste mensen worden de gegevens weergegeven in een tabelindeling:
 
-![Tabelgegevens in HDInsight Apache HBase](./media/apache-hbase-tutorial-get-started-linux/hdinsight-hbase-contacts-tabular.png)
+:::image type="content" source="./media/apache-hbase-tutorial-get-started-linux/hdinsight-hbase-contacts-tabular.png" alt-text="Tabelgegevens in HDInsight Apache HBase" border="false":::
 
 In HBase (een implementatie van [Cloud BigTable](https://cloud.google.com/bigtable/)) zien dezelfde gegevens er als volgt uit:
 
-![BigTable-gegevens in HDInsight Apache HBase](./media/apache-hbase-tutorial-get-started-linux/hdinsight-hbase-contacts-bigtable.png)
+:::image type="content" source="./media/apache-hbase-tutorial-get-started-linux/hdinsight-hbase-contacts-bigtable.png" alt-text="BigTable-gegevens in HDInsight Apache HBase" border="false":::
 
 **De HBase-shell gebruiken**
 
@@ -111,7 +111,7 @@ In HBase (een implementatie van [Cloud BigTable](https://cloud.google.com/bigtab
     scan 'Contacts'
     ```
 
-    ![HDInsight Apache Hadoop HBase-shell](./media/apache-hbase-tutorial-get-started-linux/hdinsight-hbase-shell.png)
+    :::image type="content" source="./media/apache-hbase-tutorial-get-started-linux/hdinsight-hbase-shell.png" alt-text="HDInsight Apache Hadoop HBase-shell" border="false":::
 
 1. Gebruik de opdracht `get` om de inhoud van een rij op te halen. Voer de volgende opdracht in:
 
@@ -331,7 +331,7 @@ HBase in HDInsight wordt geleverd met een webgebruikersinterface voor het bewake
 
 1. Selecteer **Snelkoppelingen** boven aan de pagina, wijs de actieve Zookeeper-knooppuntkoppeling aan en selecteer vervolgens **HBase Master UI**.  De interface wordt in een nieuw browsertabblad geopend:
 
-   ![HDInsight Apache HBase HMaster-interface](./media/apache-hbase-tutorial-get-started-linux/hdinsight-hbase-hmaster-ui.png)
+   :::image type="content" source="./media/apache-hbase-tutorial-get-started-linux/hdinsight-hbase-hmaster-ui.png" alt-text="HDInsight Apache HBase HMaster-interface" border="false":::
 
    De HBase-hoofdinterface bevat de volgende onderdelen:
 

@@ -14,12 +14,12 @@ ms.date: 02/05/2021
 ms.author: kenwith
 ms.reviewer: baselden
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: db695b55fbef16cb67dce6dc2d3c81ad177c9db6
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 629f71c429d6af8583cb15b9ebc96efe6867f78b
+ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103601794"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104888886"
 ---
 # <a name="migrate-application-authentication-to-azure-active-directory"></a>Toepassings verificatie migreren naar Azure Active Directory
 
@@ -29,7 +29,7 @@ In dit Witboek vindt u informatie over de planning voor en de voor delen van het
 
 Het proces in vier fasen opsplitsen, elk met gedetailleerde plannings-en afsluit criteria, is ontworpen om u te helpen uw migratie strategie te plannen en inzicht te krijgen in de manier waarop Azure AD-verificatie de doel stellingen van uw organisatie ondersteunt.
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 Uw organisatie vereist vandaag nog een Slew toepassingen (apps) zodat gebruikers hun werk kunnen doen. U kunt apps elke dag waarschijnlijk nog steeds toevoegen, ontwikkelen of buiten gebruik stellen. Gebruikers hebben toegang tot deze toepassingen vanuit een enorme verscheidenheid aan bedrijfs-en persoonlijke apparaten en locaties. Ze openen apps op verschillende manieren, waaronder:
 
@@ -489,7 +489,7 @@ Na de migratie kunt u ervoor kiezen om communicatie te verzenden die de gebruike
 
 Tijdens het proces van de migratie bevat uw app mogelijk al een test omgeving die wordt gebruikt tijdens reguliere implementaties. U kunt deze omgeving blijven gebruiken voor het testen van de migratie. Als er op dit moment geen test omgeving beschikbaar is, kunt u er mogelijk een instellen met behulp van Azure App Service of Azure Virtual Machines, afhankelijk van de architectuur van de toepassing. U kunt ervoor kiezen om een afzonderlijke test van Azure AD-Tenant in te stellen om te gebruiken tijdens het ontwikkelen van uw app-configuraties. Deze Tenant wordt in een schone status gestart en wordt niet geconfigureerd om te synchroniseren met een systeem.
 
-U kunt elke app testen door u aan te melden met een test gebruiker en ervoor te zorgen dat alle functionaliteit hetzelfde is als vóór de migratie. Als u tijdens het testen bepaalt dat gebruikers hun [MFA](/active-directory/authentication/howto-mfa-userstates) -of [SSPR](../authentication/tutorial-enable-sspr.md)-instellingen moeten bijwerken of als u deze functionaliteit tijdens de migratie toevoegt, moet u deze toevoegen aan uw communicatie plan voor eind gebruikers. Zie [MFA](https://aka.ms/mfatemplates) en [SSPR](https://aka.ms/ssprtemplates) -communicatie sjablonen voor eind gebruikers.
+U kunt elke app testen door u aan te melden met een test gebruiker en ervoor te zorgen dat alle functionaliteit hetzelfde is als vóór de migratie. Als u tijdens het testen bepaalt dat gebruikers hun [MFA](/azure/active-directory/authentication/howto-mfa-userstates) -of [SSPR](../authentication/tutorial-enable-sspr.md)-instellingen moeten bijwerken of als u deze functionaliteit tijdens de migratie toevoegt, moet u deze toevoegen aan uw communicatie plan voor eind gebruikers. Zie [MFA](https://aka.ms/mfatemplates) en [SSPR](https://aka.ms/ssprtemplates) -communicatie sjablonen voor eind gebruikers.
 
 Nadat u de apps hebt gemigreerd, gaat u naar de [Azure Portal](https://aad.portal.azure.com/) om te testen of de migratie is geslaagd. Volg de onderstaande instructies:
 
@@ -573,7 +573,7 @@ U kunt uw gebruikers helpen bij het detecteren van hun apps:
 
 Gebruikers kunnen een door **intune beheerde browser** downloaden:
 
-- **Voor Android-apparaten**, vanuit de [Google Play Store](https://play.google.com/store/apps/details?id=com.microsoft.intune.mam.managedbrowser)
+- **Voor Android-apparaten**, vanuit de [Google Play Store](/azure/active-directory/authentication/howto-mfa-userstates)
 
 - **Voor Apple-apparaten**, vanuit de [Apple App Store](https://itunes.apple.com/us/app/microsoft-intune-managed-browser/id943264951?mt=8) of ze kunnen de [mobiele app mijn apps voor IOS](https://apps.apple.com/us/app/my-apps-azure-active-directory/id824048653) downloaden
 

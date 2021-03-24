@@ -4,12 +4,12 @@ description: Discussie en analyse van mogelijke oorzaken en oplossingen voor Amb
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 01/22/2020
-ms.openlocfilehash: e31e5d5a5b27f4dcb267905eae6329666fc3292c
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 22985f295e504a2d73015f1dc96064f89be47bd7
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98946721"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104866927"
 ---
 # <a name="scenario-apache-ambari-stale-alerts-in-azure-hdinsight"></a>Scenario: Apache Ambari verouderde waarschuwingen in azure HDInsight
 
@@ -19,7 +19,7 @@ In dit artikel worden de stappen beschreven voor het oplossen van problemen en m
 
 In de Apache Ambari-gebruikers interface ziet u mogelijk een waarschuwing als volgt:
 
-![Voor beeld van een verlopen Ambari-waarschuwing voor Apache](./media/apache-ambari-troubleshoot-stale-alerts/ambari-stale-alerts-example.png)
+:::image type="content" source="./media/apache-ambari-troubleshoot-stale-alerts/ambari-stale-alerts-example.png" alt-text="Voor beeld van een verlopen Ambari-waarschuwing voor Apache" border="true":::
 
 ## <a name="cause"></a>Oorzaak
 

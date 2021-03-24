@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: tutorial
 ms.date: 06/25/2019
-ms.openlocfilehash: 304ba791d107ca497e65905657e87e84cdb9567d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 2078ba177d68cfaa0a91b79611d92e5c68e4e245
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98942719"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104868410"
 ---
 # <a name="tutorial-use-apache-storm-with-apache-kafka-on-hdinsight"></a>Zelfstudie: Apache Storm gebruiken met Apache Kafka in HDInsight
 
@@ -377,7 +377,7 @@ Apache Kafka in HDInsight biedt geen toegang tot de Kafka-brokers via het openba
 
 Het volgende diagram laat zien hoe de communicatie tussen Storm en Kafka verloopt:
 
-![Diagram met Storm- en Kafka-clusters in een virtueel netwerk van Azure](./media/hdinsight-apache-storm-with-kafka/apache-storm-kafka-vnet.png)
+:::image type="content" source="./media/hdinsight-apache-storm-with-kafka/apache-storm-kafka-vnet.png" alt-text="Diagram met Storm- en Kafka-clusters in een virtueel netwerk van Azure":::
 
 > [!NOTE]  
 > Andere services in het cluster, zoals SSH en [Apache Ambari](https://ambari.apache.org/), zijn toegankelijk via internet. Zie [Poorten en URI's die worden gebruikt door HDInsight](hdinsight-hadoop-port-settings-for-services.md) voor meer informatie over de openbare poorten die beschikbaar zijn voor HDInsight.
@@ -415,7 +415,7 @@ Gebruik de volgende stappen om eerst een virtueel Azure-netwerk te maken en verv
       | SSH-gebruikersnaam | De SSH-gebruiker die voor de clusters wordt gemaakt. |
       | SSH-wachtwoord | Het wachtwoord voor de SSH-gebruiker. |
    
-      ![Afbeelding van de sjabloonparameters](./media/hdinsight-apache-storm-with-kafka/storm-kafka-template.png)
+      :::image type="content" source="./media/hdinsight-apache-storm-with-kafka/storm-kafka-template.png" alt-text="Afbeelding van de sjabloonparameters":::
 
 3. Lees de **voorwaarden** en schakel vervolgens het selectievakje **Ik ga akkoord met de bovenstaande voorwaarden** in.
 

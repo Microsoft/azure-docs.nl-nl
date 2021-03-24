@@ -6,7 +6,7 @@
       href: overview.md
     - name: Overzicht van Bicep
       href: bicep-overview.md
-- name: Quickstarts
+- name: Snelstartgidsen
   items:
     - name: Sjablonen maken - portal
       href: quickstart-create-templates-use-the-portal.md
@@ -398,16 +398,16 @@
         - name: Meerdere exemplaren maken
           items:
             - name: Resources
-              displayName: 'iteration,copy'
+              displayName: 'iteration,copy,multiple'
               href: copy-resources.md
             - name: Eigenschappen
-              displayName: 'iteration,copy'
+              displayName: 'iteration,copy,multiple'
               href: copy-properties.md
             - name: Variabelen
-              displayName: 'iteration,copy'
+              displayName: 'iteration,copy,multiple'
               href: copy-variables.md
             - name: Uitvoer
-              displayName: 'iteration,copy'
+              displayName: 'iteration,copy,multiple'
               href: copy-outputs.md
     - name: Sjablonen implementeren
       items:

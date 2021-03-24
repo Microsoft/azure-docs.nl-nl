@@ -7,12 +7,12 @@ author: aniket-ms
 ms.author: aadnaik
 ms.reviewer: HDI HiveLLAP Team
 ms.date: 05/05/2020
-ms.openlocfilehash: 7df75077785c66215008e045ef0b1e451ba29f57
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: ca3ba61de13e0e451b43dc9c8ea40db33fed859a
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98931104"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104869664"
 ---
 # <a name="azure-hdinsight-interactive-query-cluster-hive-llap-sizing-guide"></a>Azure HDInsight Interactive query-cluster (Hive LLAP) formaat gids
 
@@ -47,7 +47,7 @@ In dit document wordt de grootte van het HDInsight Interactive query-cluster (Hi
 
 ### <a name="llap-architecturecomponents"></a>**LLAP-architectuur/-onderdelen:**  
 
-![' LLAP-architectuur/-onderdelen '](./media/hive-llap-sizing-guide/LLAP_architecture_sizing_guide.png "LLAP-architectuur/-onderdelen")
+:::image type="content" source="./media/hive-llap-sizing-guide/LLAP_architecture_sizing_guide.png " alt-text="' LLAP-architectuur/-onderdelen '" border="true":::
 
 ### <a name="llap-daemon-size-estimations"></a>**Schattingen voor de grootte van LLAP-daemon:** 
 
@@ -81,7 +81,7 @@ Het standaard HDInsight-cluster bevat vier LLAP-daemons die worden uitgevoerd op
 
 **Schuif regelaar van Ambari-gebruikers interface voor Hive-configuratie variabele `hive.server2.tez.sessions.per.default.queue` :**
 
-![' LLAP maximum aantal gelijktijdige query's '](./media/hive-llap-sizing-guide/LLAP_sizing_guide_max_concurrent_queries.png "Maximum aantal gelijktijdige query's LLAP")
+:::image type="content" source="./media/hive-llap-sizing-guide/LLAP_sizing_guide_max_concurrent_queries.png " alt-text="' LLAP maximum aantal gelijktijdige query's '" border="true":::
 
 #### <a name="5-tez-container-and-tez-application-master-size"></a>**5. TEZ-container en TEZ-toepassings hoofd grootte**    
 Configuratie: ***TEZ. am. resource. Memory. MB, component. TEZ. container. size***  
@@ -165,7 +165,7 @@ Voor D14 v2 is deze waarde 19 x 3 GB = **57 GB**
 
 `Ambari environment variable for LLAP heap size:`
 
-![Grootte van LLAP-heap](./media/hive-llap-sizing-guide/LLAP_sizing_guide_llap_heap_size.png "Grootte van LLAP-heap")
+:::image type="content" source="./media/hive-llap-sizing-guide/LLAP_sizing_guide_llap_heap_size.png " alt-text="Grootte van LLAP-heap" border="true":::
 
 Wanneer SSD-cache is uitgeschakeld, is de in-memory cache de hoeveelheid geheugen die wordt overgelaten na het uitvallen van de grootte van de ruimte en de Heap-grootte van de LLAP-daemon-container grootte.
 
@@ -197,11 +197,11 @@ Omgevings variabelen Ambari: ***num_llap_nodes, num_llap_nodes_for_llap_daemons*
 
 **num_llap_nodes** : Hiermee geeft u het aantal knoop punten op dat door de Hive llap-service wordt gebruikt. Dit zijn onder andere knoop punten met llap daemon, Llap service Master en TEZ Application Master (TEZ am).  
 
-![' Aantal knoop punten voor de LLAP-service '](./media/hive-llap-sizing-guide/LLAP_sizing_guide_num_llap_nodes.png "Aantal knoop punten voor de LLAP-service")  
+:::image type="content" source="./media/hive-llap-sizing-guide/LLAP_sizing_guide_num_llap_nodes.png " alt-text="' Aantal knoop punten voor de LLAP-service '" border="true":::  
 
 **num_llap_nodes_for_llap_daemons** -opgegeven aantal knoop punten dat alleen wordt gebruikt voor llap-daemons. De grootte van LLAP-daemon-containers is ingesteld op het knoop punt Max fit, dus resulteert dit in één LLAP-daemon op elk knoop punt.
 
-![' Aantal knoop punten voor LLAP-daemons '](./media/hive-llap-sizing-guide/LLAP_sizing_guide_num_llap_nodes_for_llap_daemons.png "Aantal knoop punten voor LLAP-daemons")
+:::image type="content" source="./media/hive-llap-sizing-guide/LLAP_sizing_guide_num_llap_nodes_for_llap_daemons.png " alt-text="' Aantal knoop punten voor LLAP-daemons '" border="true":::
 
 Het is raadzaam beide waarden hetzelfde te laten als het aantal worker-knoop punten in het interactieve query cluster.
 

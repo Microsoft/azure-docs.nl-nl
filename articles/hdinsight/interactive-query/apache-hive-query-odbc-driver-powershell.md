@@ -6,12 +6,12 @@ ms.service: hdinsight
 ms.topic: tutorial
 ms.date: 06/27/2019
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 1a6274ce36878af6cfbae04be935485c462bc86a
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 34ee7eb25b1d106ea8bb53197d69ca5a9d528773
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98941374"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104871602"
 ---
 # <a name="tutorial-query-apache-hive-with-odbc-and-powershell"></a>Zelfstudie: Query's uitvoeren op Apache Hive met ODBC en PowerShell
 
@@ -42,7 +42,7 @@ De volgende stappen laten zien hoe u een Apache Hive ODBC-gegevensbron maakt.
 
 1. Ga vanuit Windows naar **Start** > **Windows-beheertools** > **ODBC-gegevensbronnen (32-bits)/(64-bits)** .  Een venster **ODBC-gegevensbronbeheerder** wordt geopend.
 
-    ![ODBC-gegevensbronbeheerder](./media/apache-hive-query-odbc-driver-powershell/hive-odbc-driver-dsn-setup.png "Een DSN configureren met behulp van ODBC-gegevensbronbeheerder")
+    :::image type="content" source="./media/apache-hive-query-odbc-driver-powershell/hive-odbc-driver-dsn-setup.png " alt-text="ODBC-gegevensbronbeheerder" border="true":::
 
 1. Op het tabblad **gebruikers-DSN** selecteert u **Toevoegen** om het venster **Nieuwe gegevensbron maken** te openen.
 
@@ -68,7 +68,7 @@ De volgende stappen laten zien hoe u een Apache Hive ODBC-gegevensbron maakt.
    |  Opgehaalde rijen per blok |Bij het ophalen van een groot aantal records is het afstemmen van deze parameter mogelijk vereist om te zorgen voor optimale prestaties. |
    |  Standaardlengte van een tekenreekskolom, binaire kolomlengte, decimale kolomschaal |De lengten en precisie van het gegevenstype kunnen van invloed zijn op hoe gegevens worden geretourneerd. Ze leiden ertoe dat onjuiste gegevens worden geretourneerd vanwege verlies van precisie en afbrekingen. |
 
-    ![Geavanceerde DSN-configuratieopties](./media/apache-hive-query-odbc-driver-powershell/odbc-data-source-advanced-options.png "Geavanceerde DSN-configuratieopties")
+    :::image type="content" source="./media/apache-hive-query-odbc-driver-powershell/odbc-data-source-advanced-options.png " alt-text="Geavanceerde DSN-configuratieopties" border="true":::
 
 1. Selecteer **Testen** om de gegevensbron te testen. Wanneer de gegevensbron op de juiste wijze is geconfigureerd, geven de testresultaten **GESLAAGD** weer.  
 

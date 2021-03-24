@@ -5,17 +5,17 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: tutorial
-ms.date: 07/13/2020
+ms.date: 03/23/2021
 ms.author: justinha
 author: justinha
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8cd1a68b06814d13c386b873ed715f3b03a7b827
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 253aa080b9c160141a274c57e0895291c78d2048
+ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102198486"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104887764"
 ---
 # <a name="tutorial-enable-users-to-unlock-their-account-or-reset-passwords-using-azure-active-directory-self-service-password-reset"></a>Zelfstudie: Gebruikers in staat stellen hun account te ontgrendelen of wachtwoorden opnieuw in te stellen met self-service voor wachtwoordherstel voor Azure Active Directory
 
@@ -138,6 +138,22 @@ Als u niet langer gebruik wilt maken van de SSPR-functionaliteit die u als onder
 1. Zoek en selecteer **Azure Active Directory** en kies in het menu aan de linkerkant vervolgens **Wachtwoord opnieuw instellen**.
 1. Op de pagina **Eigenschappen** kiest u onder *Selfservice voor wachtwoord opnieuw instellen is ingeschakeld* de optie **Geen**.
 1. Als u de wijziging van de SSPR wilt toepassen, selecteert u **Opslaan**.
+
+## <a name="faqs"></a>Veelgestelde vragen
+
+In deze sectie worden algemene vragen van beheerders en eind gebruikers uitgelegd die het volgende proberen SSPR:
+
+- Waarom wachten federatieve gebruikers nog twee minuten nadat ze **uw wacht woord opnieuw hebben ingesteld** voordat ze wacht woorden kunnen gebruiken die zijn gesynchroniseerd van on-premises?
+
+  Voor federatieve gebruikers waarvan de wacht woorden worden gesynchroniseerd, is de bron van de autoriteit voor de wacht woorden on-premises. Als gevolg daarvan werkt SSPR alleen de on-premises wacht woorden bij. Synchronisatie van wacht woord-hash naar Azure AD wordt elke 2 minuten gepland.
+
+- Wanneer een nieuw gemaakte gebruiker die vooraf is gevuld met SSPR-gegevens, zoals telefoon-en e-mail, de registratie pagina van SSPR **kwijtraakt, hebt u geen toegang meer tot uw account.** wordt weer gegeven als de titel van de pagina. Waarom zie ik het bericht niet voor andere gebruikers die de SSPR-gegevens vooraf hebben ingevuld?
+
+  Een gebruiker die ziet dat **de toegang tot uw account niet verloren gaat.** is een lid van SSPR/gecombineerde registratie groepen die zijn geconfigureerd voor de Tenant. Gebruikers die niet zien, **hebben geen toegang meer tot uw account.** maakt geen deel uit van de SSPR/gecombineerde registratie groepen.
+
+- Waarom wordt de indicator voor wachtwoord sterkte niet weer geven wanneer sommige gebruikers het SSPR-proces door lopen en hun wacht woord opnieuw instellen?
+
+  Gebruikers die geen zwakke/sterke wachtwoord sterkte zien, hebben synchronisatie van wacht woord terugschrijven ingeschakeld. Omdat SSPR het wachtwoord beleid van de on-premises omgeving van de klant niet kan bepalen, kan de wachtwoord sterkte of zwakte niet worden gevalideerd. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

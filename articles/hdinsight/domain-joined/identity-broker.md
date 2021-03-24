@@ -4,12 +4,12 @@ description: Meer informatie over Azure HDInsight ID Broker voor het vereenvoudi
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 11/03/2020
-ms.openlocfilehash: 47ba11260c3b58566963e5a3ffac80ca461a8a23
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: c5bc5bc702dbd54bbad43aa4e1c6c8650c18e088
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98946817"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104863187"
 ---
 # <a name="azure-hdinsight-id-broker-hib"></a>Azure HDInsight ID Broker (HIB)
 
@@ -34,7 +34,7 @@ Gebruik de volgende tabel om de beste verificatie optie te bepalen op basis van 
 
 Het volgende diagram toont de moderne op OAuth gebaseerde verificatie stroom voor alle gebruikers, waaronder federatieve gebruikers, nadat HDInsight-ID Broker is ingeschakeld:
 
-:::image type="content" source="media/identity-broker/identity-broker-architecture.png" alt-text="Diagram waarin de verificatie stroom met HDInsight ID Broker wordt weer gegeven.":::
+:::image type="content" source="media/identity-broker/identity-broker-architecture.png" alt-text="Diagram waarin de verificatie stroom met HDInsight ID Broker wordt weer gegeven." border="false":::
 
 In dit diagram moet de-client (dat wil zeggen, een browser of app) eerst het OAuth-Token ophalen. Vervolgens wordt het token in een HTTP-aanvraag aan de gateway gepresenteerd. Als u zich al hebt aangemeld bij andere Azure-Services, zoals de Azure Portal, kunt u zich aanmelden bij uw HDInsight-cluster met eenmalige aanmelding.
 
@@ -42,8 +42,7 @@ Er zijn nog steeds veel oudere toepassingen die alleen basis verificatie onderst
 
 In het volgende diagram ziet u de basis verificatie stroom voor federatieve gebruikers. Eerst probeert de gateway de verificatie te volt ooien met behulp van de [ROPC-stroom](../../active-directory/develop/v2-oauth-ropc.md). Als er geen wacht woord-hashes zijn gesynchroniseerd met Azure AD, valt deze weer op het detecteren van het AD FS-eind punt en wordt de verificatie voltooid door toegang te krijgen tot het AD FS-eind punt.
 
-:::image type="content" source="media/identity-broker/basic-authentication.png" alt-text="Diagram waarin de architectuur met basis verificatie wordt weer gegeven.":::
-
+:::image type="content" source="media/identity-broker/basic-authentication.png" alt-text="Diagram waarin de architectuur met basis verificatie wordt weer gegeven." border="false":::
 
 ## <a name="enable-hdinsight-id-broker"></a>HDInsight ID Broker inschakelen
 
@@ -55,7 +54,7 @@ Een Enterprise Security Package cluster maken waarbij HDInsight ID Broker is ing
 
 Met de functie HDInsight ID Broker wordt één extra virtuele machine aan het cluster toegevoegd. Deze VM is het knoop punt HDInsight ID Broker en bevat Server onderdelen ter ondersteuning van verificatie. Het knoop punt HDInsight ID Broker is een domein dat is gekoppeld aan het Azure AD DS-domein.
 
-![Diagram waarin de optie wordt weer gegeven voor het inschakelen van HDInsight ID Broker.](./media/identity-broker/identity-broker-enable.png)
+:::image type="content" source="./media/identity-broker/identity-broker-enable.png" alt-text="Diagram waarin de optie wordt weer gegeven voor het inschakelen van HDInsight ID Broker." border="true":::
 
 ### <a name="use-azure-resource-manager-templates"></a>Azure Resource Manager-sjablonen gebruiken
 

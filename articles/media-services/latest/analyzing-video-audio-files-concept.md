@@ -2,21 +2,18 @@
 title: Video-en audio bestanden analyseren
 description: Meer informatie over het analyseren van audio-en video-inhoud met behulp van AudioAnalyzerPreset en VideoAnalyzerPreset in Azure Media Services.
 services: media-services
-documentationcenter: ''
 author: IngridAtMicrosoft
 manager: femila
-editor: ''
 ms.service: media-services
-ms.workload: ''
 ms.topic: conceptual
-ms.date: 03/17/2021
+ms.date: 03/22/2021
 ms.author: inhenkel
-ms.openlocfilehash: 002f900f03f7bd08753313cde0e6bd46b097a858
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: e062eb1ecc37a60567a6b8af0d4e0f27b1e73c36
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104581147"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104863340"
 ---
 # <a name="analyze-video-and-audio-files-with-azure-media-services"></a>Video-en audio bestanden analyseren met Azure Media Services
 
@@ -30,12 +27,9 @@ Er zijn twee modi voor de Audio Analyzer vooraf, basis en standaard. Zie de besc
 
 Als u uw inhoud wilt analyseren met Media Services v3-voor instellingen, maakt u een **trans formatie** en verzendt u een **taak** die gebruikmaakt van een van deze voor instellingen: [VideoAnalyzerPreset](/rest/api/media/transforms/createorupdate#videoanalyzerpreset) of **AudioAnalyzerPreset**. Zie [Video's analyseren met Azure Media Services](analyze-videos-tutorial-with-api.md)voor een zelf studie waarin wordt uitgelegd hoe u **VideoAnalyzerPreset** kunt gebruiken.
 
-> [!NOTE]
-> Wanneer u een video-of audio analyse-voor instelling gebruikt, gebruikt u de Azure Portal om uw account in te stellen op 10 S3-media gereserveerde eenheden, hoewel dit niet vereist is. U kunt S1 of S2 voor voor keuren voor audio gebruiken. Zie [Mediaverwerking schalen](media-reserved-units-cli-how-to.md) voor meer informatie.
-
 ## <a name="compliance-privacy-and-security"></a>Compliance, privacy en beveiliging
 
-Het is heel belangrijk dat u zich realiseert dat u zich bij het gebruik van Video Indexer moet houden aan alle toepasselijke wetgeving en dat het niet is toegestaan Video Indexer of een andere Azure-service te gebruiken op een manier die de rechten van anderen schendt of anderen schade berokkent. Voordat u video's, met inbegrip van eventuele biometrische gegevens, uploadt naar de Video Indexer-service om daar te worden verwerkt of opgeslagen, moet u over alle daarvoor benodigde rechten beschikken, waaronder alle toepasselijke toestemmingen van de persoon of personen in de video. Meer informatie over compliance, privacy en beveiliging in Video Indexer vindt u in de [voorwaarden van Microsoft Cognitive Services](https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/). Als u meer wilt weten over de privacyverplichtingen die Microsoft hanteert ten aanzien van uw gegevens, kunt u de [Privacyverklaring](https://privacy.microsoft.com/PrivacyStatement) van Microsoft, de [Voorwaarden voor Online Diensten](https://www.microsoft.com/licensing/product-licensing/products) ('OST') en het [Addendum met betrekking tot gegevensverwerking](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=67) ('DPA') raadplegen. Aanvullende informatie over privacy, waaronder informatie over de bewaarplicht voor gegevens en over de verwijdering/vernietiging ervan, is beschikbaar in de Voorwaarden voor Online Diensten (OST) en [hier](../video-indexer/faq.md). Door Video Indexer te gebruiken, gaat u akkoord met de voorwaarden van Cognitive Services, de OST, DPA en de Privacyverklaring.
+Het is heel belangrijk dat u zich realiseert dat u zich bij het gebruik van Video Indexer moet houden aan alle toepasselijke wetgeving en dat het niet is toegestaan Video Indexer of een andere Azure-service te gebruiken op een manier die de rechten van anderen schendt of anderen schade berokkent. Voordat u video's, met inbegrip van eventuele biometrische gegevens, uploadt naar de Video Indexer-service om daar te worden verwerkt of opgeslagen, moet u over alle daarvoor benodigde rechten beschikken, waaronder alle toepasselijke toestemmingen van de persoon of personen in de video. Voor meer informatie over naleving, privacy en beveiliging in Video Indexer, de Azure [Cognitive Services-voor waarden](https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/). Als u meer wilt weten over de privacyverplichtingen die Microsoft hanteert ten aanzien van uw gegevens, kunt u de [Privacyverklaring](https://privacy.microsoft.com/PrivacyStatement) van Microsoft, de [Voorwaarden voor Online Diensten](https://www.microsoft.com/licensing/product-licensing/products) ('OST') en het [Addendum met betrekking tot gegevensverwerking](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=67) ('DPA') raadplegen. Aanvullende informatie over privacy, waaronder informatie over de bewaarplicht voor gegevens en over de verwijdering/vernietiging ervan, is beschikbaar in de Voorwaarden voor Online Diensten (OST) en [hier](../video-indexer/faq.md). Door Video Indexer te gebruiken, gaat u akkoord met de voorwaarden van Cognitive Services, de OST, DPA en de Privacyverklaring.
 
 ## <a name="built-in-presets"></a>Ingebouwde voor instellingen
 

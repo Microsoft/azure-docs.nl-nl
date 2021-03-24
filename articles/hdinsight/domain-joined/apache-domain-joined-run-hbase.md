@@ -4,12 +4,12 @@ description: 'Zelfstudie: leer hoe u Apache Ranger-beleidsregels voor HBase conf
 ms.service: hdinsight
 ms.topic: tutorial
 ms.date: 09/04/2019
-ms.openlocfilehash: deefda126602e9b276b74752330a14cc3eb2aa95
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: a18e0b252facb4f00d9ba5c9b6bfe9fe6aefe1ef
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98933712"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104866995"
 ---
 # <a name="tutorial-configure-apache-hbase-policies-in-hdinsight-with-enterprise-security-package"></a>Zelfstudie: Apache HBase-beleidsregels configureren in HDInsight met Enterprise Security Package
 
@@ -86,7 +86,7 @@ U kunt SSH gebruiken om verbinding te maken met HBase-clusters en vervolgens [Ap
     scan 'Customers'
     ```
 
-    ![Uitvoer van de HDInsight Hadoop HBase-shell](./media/apache-domain-joined-run-hbase/hbase-shell-scan-table.png)
+    :::image type="content" source="./media/apache-domain-joined-run-hbase/hbase-shell-scan-table.png" alt-text="Uitvoer van de HDInsight Hadoop HBase-shell" border="true":::
 
 ## <a name="create-ranger-policies"></a>Ranger-beleidsregels maken
 
@@ -94,11 +94,11 @@ Maak een Ranger-beleid voor **sales_user1** en **marketing_user1**.
 
 1. Open de **beheerinterface van Ranger**. Klik onder **HBase** op **\<ClusterName>_hbase**.
 
-   ![Beheerinterface voor HDInsight Apache Ranger](./media/apache-domain-joined-run-hbase/apache-ranger-admin-login.png)
+   :::image type="content" source="./media/apache-domain-joined-run-hbase/apache-ranger-admin-login.png" alt-text="Beheerinterface voor HDInsight Apache Ranger" border="true":::
 
 2. Op het scherm **List of Policies** worden alle Ranger-beleidsregels weergegeven die voor dit cluster zijn gemaakt. Er kan één vooraf geconfigureerd beleid worden weergegeven. Klik op **Nieuw beleid toevoegen**.
 
-    ![Lijst met beleidsregels van Apache Ranger HBase](./media/apache-domain-joined-run-hbase/apache-ranger-hbase-policies-list.png)
+    :::image type="content" source="./media/apache-domain-joined-run-hbase/apache-ranger-hbase-policies-list.png" alt-text="Lijst met beleidsregels van Apache Ranger HBase" border="true":::
 
 3. Voer in het scherm **Create Policy** de volgende waarden in:
 
@@ -117,7 +117,7 @@ Maak een Ranger-beleid voor **sales_user1** en **marketing_user1**.
    * Gebruik `*` om nul of meer tekens aan te geven.
    * Gebruik `?` om één teken aan te geven.
 
-   ![Apache Ranger - beleid maken: verkoop](./media/apache-domain-joined-run-hbase/apache-ranger-hbase-policy-create-sales.png)
+   :::image type="content" source="./media/apache-domain-joined-run-hbase/apache-ranger-hbase-policy-create-sales.png" alt-text="Apache Ranger - beleid maken: verkoop" border="true":::
 
    >[!NOTE]
    >Als er niet automatisch een domeingebruiker wordt ingevuld bij **Select User**, wacht u even totdat Ranger is gesynchroniseerd met AAD.
@@ -136,7 +136,7 @@ Maak een Ranger-beleid voor **sales_user1** en **marketing_user1**.
    |Select User  | marketing_user1 |
    |Machtigingen  | Lezen |
 
-   ![Apache Ranger - beleid maken: marketing](./media/apache-domain-joined-run-hbase/apache-ranger-hbase-policy-create-marketing.png)  
+   :::image type="content" source="./media/apache-domain-joined-run-hbase/apache-ranger-hbase-policy-create-marketing.png" alt-text="Apache Ranger - beleid maken: marketing" border="true":::  
 
 6. Klik op **Toevoegen** om het beleid op te slaan.
 
@@ -226,7 +226,7 @@ Maak een Ranger-beleid voor **sales_user1** en **marketing_user1**.
 
 1. Bekijk de controlegebeurtenissen voor toegang vanuit de gebruikersinterface van Ranger.
 
-   ![Controle van beleid vanuit de HDInsight Ranger-gebruikersinterface](./media/apache-domain-joined-run-hbase/apache-ranger-admin-audit.png)
+   :::image type="content" source="./media/apache-domain-joined-run-hbase/apache-ranger-admin-audit.png" alt-text="Controle van beleid vanuit de HDInsight Ranger-gebruikersinterface" border="true":::
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

@@ -6,12 +6,12 @@ ms.author: lufittl
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 03/17/2021
-ms.openlocfilehash: 998154376895d8bcfc7cf36665a6a36f5c43e3b4
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: b6ae6c003284b93390bb4f53345d3ba0f8d35e21
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104594985"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104952555"
 ---
 # <a name="postgresql-extensions-in-azure-database-for-postgresql---flexible-server"></a>PostgreSQL-extensies in Azure Database for PostgreSQL-flexibele server
 
@@ -53,7 +53,6 @@ De volgende uitbrei dingen zijn beschikbaar in Azure Database for PostgreSQL fle
 > |[ltree](https://www.postgresql.org/docs/12/ltree.html)                        | 1.1             | gegevens type voor hiërarchische structuren in structuur|
 > |[pageinspect](https://www.postgresql.org/docs/12/pageinspect.html)                        | 1,7             | de inhoud van database pagina's op een laag niveau controleren|
 > |[pg_buffercache](https://www.postgresql.org/docs/12/pgbuffercache.html)               | 1.3             | de gedeelde buffer cache controleren|
-> |[pg_cron](https://github.com/citusdata/pg_cron/tree/b6e7dc9627515bf00e2086f168b3faa660e5fd36)                        | 1.2             | Job Scheduler voor PostgreSQL|
 > |[pg_freespacemap](https://www.postgresql.org/docs/12/pgfreespacemap.html)               | 1.2             | Bekijk de toewijzing van de vrije ruimte (FSM)|
 > |[pg_prewarm](https://www.postgresql.org/docs/12/pgprewarm.html)                   | 1.2             | prewarme-relatie gegevens|
 > |[pg_stat_statements](https://www.postgresql.org/docs/12/pgstatstatements.html)           | 1,7             | uitvoerings statistieken bijhouden van alle SQL-instructies die zijn uitgevoerd|
@@ -103,7 +102,6 @@ De volgende uitbrei dingen zijn beschikbaar in Azure Database for PostgreSQL fle
 > |[ltree](https://www.postgresql.org/docs/11/ltree.html)                        | 1.1             | gegevens type voor hiërarchische structuren in structuur|
 > |[pageinspect](https://www.postgresql.org/docs/11/pageinspect.html)                        | 1,7             | de inhoud van database pagina's op een laag niveau controleren|
 > |[pg_buffercache](https://www.postgresql.org/docs/11/pgbuffercache.html)               | 1.3             | de gedeelde buffer cache controleren|
-> |[pg_cron](https://github.com/citusdata/pg_cron/tree/b6e7dc9627515bf00e2086f168b3faa660e5fd36)                        | 1.2             | Job Scheduler voor PostgreSQL|
 > |[pg_freespacemap](https://www.postgresql.org/docs/11/pgfreespacemap.html)               | 1.2             | Bekijk de toewijzing van de vrije ruimte (FSM)|
 > |[pg_prewarm](https://www.postgresql.org/docs/11/pgprewarm.html)                   | 1.2             | prewarme-relatie gegevens|
 > |[pg_stat_statements](https://www.postgresql.org/docs/11/pgstatstatements.html)           | 1.6             | uitvoerings statistieken bijhouden van alle SQL-instructies die zijn uitgevoerd|
@@ -131,28 +129,6 @@ De volgende uitbrei dingen zijn beschikbaar in Azure Database for PostgreSQL fle
 met [dblink](https://www.postgresql.org/docs/current/contrib-dblink-function.html) en [postgres_fdw](https://www.postgresql.org/docs/current/postgres-fdw.html) kunt u verbinding maken met een postgresql-server of een andere Data Base op dezelfde server. Flexibele server ondersteunt zowel binnenkomende als uitgaande verbindingen met een wille keurige PostgreSQL-server. De verzendende server moet uitgaande verbindingen met de ontvangende server toestaan. Op dezelfde manier moet de ontvangende server verbindingen met de verzendende server toestaan. 
 
 U wordt aangeraden uw servers te implementeren met [VNet-integratie](concepts-networking.md) als u van plan bent om deze twee uitbrei dingen te gebruiken. Standaard maakt VNet-integratie verbindingen mogelijk tussen servers in het VNET. U kunt er ook voor kiezen om de toegang aan te passen met [VNet-netwerk beveiligings groepen](../../virtual-network/manage-network-security-group.md) .
-
-## <a name="pg_cron"></a>pg_cron
-
-[pg_cron](https://github.com/citusdata/pg_cron/tree/b6e7dc9627515bf00e2086f168b3faa660e5fd36) is een eenvoudige, cron taak planner voor postgresql die in de-data base wordt uitgevoerd als een uitbrei ding. De uitbrei ding pg_cron kan worden gebruikt om geplande onderhouds taken uit te voeren in een PostgreSQL-data base. U kunt bijvoorbeeld een periodieke vacuüm van een tabel uitvoeren of oude gegevens taken verwijderen.
-
-`pg_cron` kan meerdere taken parallel uitvoeren, maar deze kan Maxi maal één exemplaar van een taak tegelijk worden uitgevoerd. Als een tweede uitvoering moet worden gestart voordat de eerste wordt voltooid, wordt de tweede uitvoering in de wachtrij geplaatst en gestart zodra de eerste uitvoering is voltooid. Dit zorgt ervoor dat taken precies zo vaak als gepland worden uitgevoerd en niet gelijktijdig worden uitgevoerd.
-
-Een aantal voorbeelden:
-
-Oude gegevens verwijderen op zaterdag om 3: om 9:30 uur (GMT)
-```
-SELECT cron.schedule('30 3 * * 6', $$DELETE FROM events WHERE event_time < now() - interval '1 week'$$);
-```
-Voor het uitvoeren van vacuüm elke dag om 10: am (GMT)
-```
-SELECT cron.schedule('0 10 * * *', 'VACUUM');
-```
-
-De planning van alle taken van pg_cron ongewijzigd
-```
-SELECT cron.unschedule(jobid) FROM cron.job;
-```
 
 ## <a name="pg_prewarm"></a>pg_prewarm
 

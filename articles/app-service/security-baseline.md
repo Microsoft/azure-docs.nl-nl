@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/17/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: dd612e7e3c54a000d989c5a2f3a633d06d6d11cb
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 3193acf8ef19cdac97f6733a657610801d614f32
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101718342"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104952300"
 ---
 # <a name="azure-security-baseline-for-app-service"></a>Azure-beveiligings basislijn voor App Service
 
@@ -265,9 +265,9 @@ Bekijk gedetailleerde beveiligings waarschuwingen en aanbevelingen in Security C
 
 Het is raadzaam om een proces met automatische hulpprogram ma's te maken voor het bewaken van netwerk bron configuraties en om snel wijzigingen te detecteren.
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](/azure/azure-monitor/platform/activity-log#view-the-activity-log)
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Waarschuwingen maken in Azure Monitor](/azure/azure-monitor/platform/alerts-activity-log)
+- [Waarschuwingen maken in Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 - [Beveiligingswaarschuwingen en aanbevelingen exporteren](../security-center/continuous-export.md)
 
@@ -285,7 +285,7 @@ Het is raadzaam om een proces met automatische hulpprogram ma's te maken voor he
 
 Gebruik Microsoft Azure Sentinel, een schaalbaar, SIEM (Security Information Event Management) dat beschikbaar is om verbinding te maken met verschillende gegevens bronnen en connectors op basis van uw bedrijfs vereisten. U kunt ook gegevens in-of uitschakelen voor een SIEM-systeem (Security Information Event Management) van derden, zoals Barracuda in azure Marketplace.
 
-- [Logboek registratie ASE-activiteit](https://docs.microsoft.com/azure/app-service/environment/using-an-ase#logging)
+- [Logboek registratie ASE-activiteit](./environment/using-an-ase.md#logging)
 
 - [Diagnostische instellingen inschakelen voor Azure App Service](troubleshoot-diagnostic-logs.md)
 
@@ -305,7 +305,7 @@ De ' What, wie en wanneer ' voor schrijf bewerkingen (PUT, POST, DELETE) die zij
 
 Daarnaast biedt Azure Key Vault gecentraliseerd geheim beheer met toegangs beleid en controle geschiedenis. 
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](/azure/azure-monitor/platform/activity-log)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
 - [Diagnostische instellingen inschakelen voor Azure App Service](troubleshoot-diagnostic-logs.md)
 
@@ -322,7 +322,7 @@ Daarnaast biedt Azure Key Vault gecentraliseerd geheim beheer met toegangs belei
 ### <a name="25-configure-security-log-storage-retention"></a>2,5: Bewaar beveiliging van het beveiligings logboek configureren
 
 **Richt lijnen**: stel in azure monitor de Bewaar periode voor het logboek in voor de log Analytics-werk ruimten die zijn gekoppeld aan uw app service bronnen volgens de nalevings voorschriften van uw organisatie.
-- [Para meters voor het bewaren van Logboeken instellen](/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period)
+- [Para meters voor het bewaren van Logboeken instellen](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Verantwoordelijkheid**: Klant
 
@@ -338,7 +338,7 @@ Als u een Web Application firewall (WAF) hebt geïmplementeerd, kunt u aanvallen
 
 Gebruik Azure Sentinel, een schaalbaar en SIEM (native Security Information Event Management) van de cloud om te integreren met verschillende gegevens bronnen en connectors, conform de vereisten. U kunt gegevens in azure Marketplace eventueel inschakelen voor een oplossing voor het beheer van beveiligings gegevens van derden.
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](/azure/azure-monitor/platform/activity-log)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
 - [Application Insights inschakelen](../azure-monitor/app/app-insights-overview.md)
 
@@ -372,9 +372,9 @@ Bewaak aanvallen op uw App Service-apps met behulp van een realtime web applicat
 
 **Hulp**: Azure Active Directory (Azure AD) heeft ingebouwde rollen die expliciet moeten worden toegewezen en query's kunnen uitvoeren. Gebruik de Azure AD Power shell-module om ad hoc-query's uit te voeren om accounts te detecteren die lid zijn van beheer groepen.
 
-- [Leden van een directory-rol in azure AD ophalen met Power shell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0&amp;preserve-view=true)
+- [Leden van een directory-rol in azure AD ophalen met Power shell](/powershell/module/azuread/get-azureaddirectoryrolemember?preserve-view=true&view=azureadps-2.0)
 
-- [Beheerde identiteiten gebruiken voor App Service en Azure Functions](https://docs.microsoft.com/azure/app-service/overview-managed-identity?context=azure%2Factive-directory%2Fmanaged-identities-azure-resources%2Fcontext%2Fmsi-context&amp;tabs=dotnet)
+- [Beheerde identiteiten gebruiken voor App Service en Azure Functions](./overview-managed-identity.md?tabs=dotnet&context=azure%2factive-directory%2fmanaged-identities-azure-resources%2fcontext%2fmsi-context)
 
 - [Azure-rollen toewijzen met behulp van de Azure Portal](../role-based-access-control/role-assignments-portal.md)
 
@@ -390,7 +390,7 @@ Vermijd het implementeren van standaard wachtwoorden voor gebruikers toegang bij
 
 Schakel anonieme toegang uit, tenzij u deze moet ondersteunen. 
 
-- [Id-providers die standaard beschikbaar zijn in Azure App Service](https://docs.microsoft.com/azure/app-service/overview-authentication-authorization#identity-providers)
+- [Id-providers die standaard beschikbaar zijn in Azure App Service](./overview-authentication-authorization.md#identity-providers)
 
 - [Verificatie en autorisatie in Azure App Service en Azure Functions](overview-authentication-authorization.md)
 
@@ -437,7 +437,7 @@ App Service-apps gebruiken federatieve identiteit, waarin een id-provider van de
 
 Wanneer u verificatie en autorisatie met een van deze providers inschakelt, is het aanmeldings eindpunt beschikbaar voor gebruikers verificatie en voor validatie van verificatie tokens van de provider.
 
-- [Meer informatie over verificatie en autorisatie in Azure App Service](https://docs.microsoft.com/azure/app-service/overview-authentication-authorization#identity-providers)
+- [Meer informatie over verificatie en autorisatie in Azure App Service](./overview-authentication-authorization.md#identity-providers)
 
 - [Meer informatie over verificatie en autorisatie in Azure App Service](overview-authentication-authorization.md)
 
@@ -451,7 +451,7 @@ Wanneer u verificatie en autorisatie met een van deze providers inschakelt, is h
 
 Multi-factor Authentication implementeren voor Azure AD. Beheerders moeten ervoor zorgen dat de abonnements accounts in de portal zijn beveiligd. Het abonnement is kwetsbaar voor aanvallen omdat het de resources beheert die u hebt gemaakt. 
 
-- [Multi-factor Authentication voor Azure-beveiliging](/azure/security/develop/secure-aad-app)
+- [Multi-factor Authentication voor Azure-beveiliging](/previous-versions/azure/security/develop/secure-aad-app)
 
 - [Multi-factor Authentication inschakelen in azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
@@ -517,7 +517,7 @@ Beveiliging tegen bedreigingen in Security Center biedt uitgebreide beveiliginge
 
 **Hulp**: Detecteer verlopen accounts met de logboeken van Azure Active Directory (Azure AD). Gebruik Azure Identity Access revisies om groepslid maatschappen en de toegang tot bedrijfs toepassingen, evenals roltoewijzingen, op efficiënte wijze te beheren. Controleer regel matig de gebruikers toegang om ervoor te zorgen dat alleen de beoogde gebruikers de toegang blijven hebben. 
 
-- [Meer informatie over Azure AD-rapportage](/azure/active-directory/reports-monitoring/)
+- [Meer informatie over Azure AD-rapportage](../active-directory/reports-monitoring/index.yml)
 
 - [Beoordelingen over Azure Identity Access gebruiken](../active-directory/governance/access-reviews-overview.md)
 
@@ -533,7 +533,7 @@ Met toegang tot de Azure AD-aanmeldings activiteit, audit en risico logboek bron
 
 - [Uw Azure App Service-apps configureren voor het gebruik van Azure AD-aanmelding](configure-authentication-provider-aad.md)
 
-- [Azure-activiteitenlogboeken integreren in Azure Monitor](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+- [Azure-activiteitenlogboeken integreren in Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
 - [Azure-Sentinel aan de trein](../sentinel/quickstart-onboard.md)
 
@@ -561,7 +561,7 @@ Gebruik Azure AD Identity Protection om automatische antwoorden te configureren 
 
 **Richt lijnen**: niet beschikbaar; Klanten-lockbox wordt niet ondersteund voor Azure App Service.
 
-- [Lijst met door Klanten-lockbox ondersteunde services](https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview#supported-services-and-scenarios-in-general-availability)
+- [Lijst met door Klanten-lockbox ondersteunde services](../security/fundamentals/customer-lockbox-overview.md#supported-services-and-scenarios-in-general-availability)
 
 **Verantwoordelijkheid**: Klant
 
@@ -661,7 +661,7 @@ Door de klant verstrekte geheimen worden op rest versleuteld terwijl ze zijn opg
 
 Houd er rekening mee dat lokale gekoppelde schijven optioneel kunnen worden gebruikt door websites als tijdelijke opslag (bijvoorbeeld D:\Local en% TMP%), maar niet op rest versleuteld.
 
-- [Besturings elementen voor gegevens beveiliging begrijpen voor Azure App Service](https://docs.microsoft.com/azure/app-service/security-recommendations#data-protection)
+- [Besturings elementen voor gegevens beveiliging begrijpen voor Azure App Service](./security-recommendations.md#data-protection)
 
 - [Azure Storage versleuteling in rust begrijpen](../storage/common/storage-service-encryption.md)
 
@@ -673,7 +673,7 @@ Houd er rekening mee dat lokale gekoppelde schijven optioneel kunnen worden gebr
 
 **Hulp**: gebruik Azure monitor met Azure-activiteiten logboek om waarschuwingen te maken op basis van wijzigingen in productie app service apps en andere essentiële of verwante resources.
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](/azure/azure-monitor/platform/alerts-activity-log)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -689,7 +689,7 @@ Houd er rekening mee dat lokale gekoppelde schijven optioneel kunnen worden gebr
 
 Bekijk en volg de aanbevelingen van Security Center voor het beveiligen van uw App Service-apps.
 
-- [Continue beveiligings validatie toevoegen aan uw CI/CD-pijp lijn](https://docs.microsoft.com/azure/devops/migrate/security-validation-cicd-pipeline?preserve-view=true&amp;view=azure-devops)
+- [Continue beveiligings validatie toevoegen aan uw CI/CD-pijp lijn](/azure/devops/migrate/security-validation-cicd-pipeline?view=azure-devops&preserve-view=true)
 
 - [Aanbevelingen voor de evaluatie van Azure Security Center-beveiligings problemen implementeren](../security-center/deploy-vulnerability-assessment-vm.md)
 
@@ -719,7 +719,7 @@ Hoewel klassieke Azure-resources kunnen worden gedetecteerd via resource grafiek
 
 - [Query's maken met Azure resource Graph](../governance/resource-graph/first-query-portal.md)
 
-- [Uw Azure-abonnementen weer geven](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?preserve-view=true&amp;view=azps-4.8.0)
+- [Uw Azure-abonnementen weer geven](/powershell/module/az.accounts/get-azsubscription?view=azps-4.8.0&preserve-view=true)
 
 - [Meer informatie over Azure RBAC](../role-based-access-control/overview.md)
 
@@ -840,7 +840,7 @@ Gebruik webjobs in App Service voor het bewaken van niet-goedgekeurde software t
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Een specifiek resource type weigeren met Azure Policy](https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#general)
+- [Een specifiek resource type weigeren met Azure Policy](../governance/policy/samples/built-in-policies.md#general)
 
 - [Achtergrond taken uitvoeren met webjobs in Azure App Service](webjobs-create.md)
 
@@ -864,7 +864,7 @@ Gebruik ook webjobs in App Service voor het inventariseren van niet-goedgekeurde
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Een specifiek resource type weigeren met Azure Policy](https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#general)
+- [Een specifiek resource type weigeren met Azure Policy](../governance/policy/samples/built-in-policies.md#general)
 
 **Verantwoordelijkheid**: Klant
 
@@ -926,7 +926,7 @@ Pas ingebouwde beleids definities toe, zoals:
 
 Het is raadzaam om het proces te documenteren om de ingebouwde beleids definities toe te passen op gestandaardiseerd gebruik.   
 
-- [Beschik bare Azure Policy aliassen weer geven](https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?preserve-view=true&amp;view=azps-4.8.0)
+- [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias?view=azps-4.8.0&preserve-view=true)
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
@@ -952,9 +952,9 @@ Het is raadzaam om het proces te documenteren om de ingebouwde beleids definitie
 
 Gebruik uw bestaande, doorlopende integratie (CI) en continue levering (CD)-pijp lijn voor het implementeren van een bekende, beveiligde configuratie.
 
-- [Code opslaan in azure DevOps](https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?preserve-view=true&amp;view=azure-devops)
+- [Code opslaan in azure DevOps](/azure/devops/repos/git/gitworkflow?view=azure-devops&preserve-view=true)
 
-- [Documentatie voor Azure opslag plaatsen](https://docs.microsoft.com/azure/devops/repos/?preserve-view=true&amp;view=azure-devops)
+- [Documentatie voor Azure opslag plaatsen](/azure/devops/repos/?view=azure-devops&preserve-view=true)
 
 **Verantwoordelijkheid**: Klant
 
@@ -1060,7 +1060,7 @@ Meer informatie vindt u op de koppelingen waarnaar wordt verwezen.
 
 - [Een app die wordt uitgevoerd in Azure App Service herstellen](web-sites-restore.md)
 
-- [Meer informatie over versleuteling van data-at-rest in Azure](https://docs.microsoft.com/azure/security/fundamentals/encryption-atrest#encryption-at-rest-in-microsoft-cloud-services) 
+- [Meer informatie over versleuteling van data-at-rest in Azure](../security/fundamentals/encryption-atrest.md#encryption-at-rest-in-microsoft-cloud-services) 
 
 - [Versleutelings model en sleutel beheer tabel](../security/fundamentals/encryption-atrest.md)
 
@@ -1188,5 +1188,5 @@ Daarnaast kunt u ook eenvoudig abonnementen markeren (bijvoorbeeld productie, ni
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Overzicht Azure Security Benchmark V2](/azure/security/benchmarks/overview)
-- Meer informatie over [Azure-beveiligingsbasislijnen](/azure/security/benchmarks/security-baselines-overview)
+- Zie [Overzicht Azure Security Benchmark V2](../security/benchmarks/overview.md)
+- Meer informatie over [Azure-beveiligingsbasislijnen](../security/benchmarks/security-baselines-overview.md)

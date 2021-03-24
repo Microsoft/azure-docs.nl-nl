@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.date: 01/14/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 4393c6797f5a164a063b55f8994d7d37d278f3c4
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: ee483872535c58bde521cf0a751058fdc2fecd40
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98929197"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104871449"
 ---
 # <a name="process-events-from-azure-event-hubs-with-apache-storm-on-hdinsight-c"></a>Gebeurtenissen uit Azure Event Hubs verwerken met Apache Storm in HDInsight (C#)
 
@@ -126,7 +126,7 @@ Event Hubs is de gegevens bron voor dit voor beeld. Gebruik de informatie in de 
    | Writer |Verzenden |
    | gelezen |Luisteren |
 
-    ![Scherm afbeelding van het venster toegangs beleid delen](./media/apache-storm-develop-csharp-event-hub-topology/share-access-policies.png)
+    :::image type="content" source="./media/apache-storm-develop-csharp-event-hub-topology/share-access-policies.png" alt-text="Scherm afbeelding van het venster toegangs beleid delen" border="true":::
 
 2. Selecteer het beleid voor **lezer** en **Writer** . Kopieer de primaire-sleutel waarde voor beide beleids regels en sla deze op. deze waarden worden later gebruikt.
 
@@ -168,15 +168,15 @@ Event Hubs is de gegevens bron voor dit voor beeld. Gebruik de informatie in de 
 
 1. Klik vanuit **Solution Explorer** met de rechter muisknop op het project **EventHubReader** en selecteer **verzenden naar Storm op HDInsight**.
 
-    ![Scherm opname van Solution Explorer, met verzenden naar Storm op HDInsight gemarkeerd](./media/apache-storm-develop-csharp-event-hub-topology/submit-to-apache-storm.png)
+    :::image type="content" source="./media/apache-storm-develop-csharp-event-hub-topology/submit-to-apache-storm.png" alt-text="Scherm opname van Solution Explorer, met verzenden naar Storm op HDInsight gemarkeerd" border="true":::
 
 2. Selecteer in het dialoog venster **indienings topologie** het **Storm-cluster**. Vouw **extra configuraties** uit, selecteer **Java-bestands paden**, selecteer **...** en selecteer de map met het jar-bestand dat u eerder hebt gedownload. Klik ten slotte op **verzenden**.
 
-    ![Scherm afbeelding van het dialoog venster verzend topologie](./media/apache-storm-develop-csharp-event-hub-topology/submit-storm-topology.png)
+    :::image type="content" source="./media/apache-storm-develop-csharp-event-hub-topology/submit-storm-topology.png" alt-text="Scherm afbeelding van het dialoog venster verzend topologie" border="true":::
 
 3. Wanneer de topologie is verzonden, wordt de **Storm-topologie weergave** weer gegeven. Als u informatie over de topologie wilt weer geven, selecteert u de **EventHubReader** -topologie in het linkerdeel venster.
 
-    ![Scherm afbeelding van de viewer voor Storm-topologieën](./media/apache-storm-develop-csharp-event-hub-topology/storm-topology-viewer.png)
+    :::image type="content" source="./media/apache-storm-develop-csharp-event-hub-topology/storm-topology-viewer.png" alt-text="Scherm afbeelding van de viewer voor Storm-topologieën" border="true":::
 
 4. Klik vanuit **Solution Explorer** met de rechter muisknop op het project **EventHubWriter** en selecteer **verzenden naar Storm op HDInsight**.
 
@@ -200,7 +200,7 @@ Event Hubs is de gegevens bron voor dit voor beeld. Gebruik de informatie in de 
 
 Als u de topologieën wilt stoppen, selecteert u elke topologie in de **Storm-topologie Viewer** en klikt u vervolgens op **Kill**.
 
-![Scherm afbeelding van Storm-topologie viewer met de knop voor het afsluiten van de weer gave](./media/apache-storm-develop-csharp-event-hub-topology/kill-storm-topology1.png)
+:::image type="content" source="./media/apache-storm-develop-csharp-event-hub-topology/kill-storm-topology1.png" alt-text="Scherm afbeelding van Storm-topologie viewer met de knop voor het afsluiten van de weer gave" border="true":::
 
 ## <a name="delete-your-cluster"></a>Uw cluster verwijderen
 

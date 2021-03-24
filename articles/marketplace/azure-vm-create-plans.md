@@ -7,12 +7,12 @@ ms.topic: how-to
 author: mingshen-ms
 ms.author: mingshen
 ms.date: 10/19/2020
-ms.openlocfilehash: e5fb425afdd4b212a0b28ce91418eb0ee9e3632f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: c700cce5f50fda7f7a5773e07549e93da1c9f7a2
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "97964423"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104956251"
 ---
 # <a name="how-to-create-plans-for-a-virtual-machine-offer"></a>Plannen maken voor een aanbieding van een virtuele machine
 
@@ -221,6 +221,8 @@ Gegevens schijven (Selecteer **gegevens schijf toevoegen (Maxi maal 16)**) zijn 
 Ongeacht welk besturings systeem u gebruikt, voegt u alleen het minimum aantal gegevens schijven toe dat voor de oplossing nodig is. Tijdens de implementatie kunnen klanten geen schijven verwijderen die deel uitmaken van een installatie kopie, maar ze mogen altijd schijven toevoegen tijdens of na de implementatie.
 
 Selecteer **concept opslaan** en selecteer vervolgens **← plan Overview** in de linkerbovenhoek om het plan te zien dat u zojuist hebt gemaakt.
+
+Zodra de VM-installatie kopie is gepubliceerd, kunt u de installatie kopie uit uw Azure-opslag verwijderen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -3,12 +3,12 @@ title: Beleidsregels voor gastconfiguratie voor Windows maken
 description: Meer informatie over het maken van een Azure Policy-gast configuratie beleid voor Windows.
 ms.date: 08/17/2020
 ms.topic: how-to
-ms.openlocfilehash: ae9af51ad3b2eb237f8655c996a1345140a8a635
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 72772743eba23ea7c2a93f5037ac84b671256a66
+ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "99070641"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104887696"
 ---
 # <a name="how-to-create-guest-configuration-policies-for-windows"></a>Beleidsregels voor gastconfiguratie voor Windows maken
 
@@ -214,10 +214,11 @@ Configuration AuditBitLocker
 }
 
 # Compile the configuration to create the MOF files
-AuditBitLocker ./Config
+AuditBitLocker
 ```
 
-Sla het bestand op met `config.ps1` de naam in de projectmap. Voer deze uit in Power shell door `./config.ps1` uit te voeren in de Terminal. Er wordt een nieuw MOF-bestand gemaakt.
+Voer dit script uit in een Power shell-terminal of sla dit bestand `config.ps1` op met de naam in de projectmap.
+Voer deze uit in Power shell door `./config.ps1` uit te voeren in de Terminal. Er wordt een nieuw MOF-bestand gemaakt.
 
 De `Node AuditBitlocker` opdracht is niet technisch vereist, maar er wordt een bestand gemaakt met de naam `AuditBitlocker.mof` in plaats van de standaard waarde `localhost.mof` . Als u de bestands naam. MOF volgt, is het eenvoudig om veel bestanden te organiseren wanneer deze op schaal worden uitgevoerd.
 
@@ -234,7 +235,7 @@ Voer de volgende opdracht uit om een pakket te maken met behulp van de configura
 ```azurepowershell-interactive
 New-GuestConfigurationPackage `
   -Name 'AuditBitlocker' `
-  -Configuration './Config/AuditBitlocker.mof'
+  -Configuration './AuditBitlocker/AuditBitlocker.mof'
 ```
 
 Nadat u het configuratie pakket hebt gemaakt, maar voordat u het naar Azure publiceert, kunt u het pakket testen vanaf uw werk station of doorlopende integratie-en continue implementatie (CI/CD)-omgeving. De GuestConfiguration-cmdlet `Test-GuestConfigurationPackage` bevat dezelfde agent in uw ontwikkel omgeving als wordt gebruikt binnen Azure-machines. Met deze oplossing kunt u integratie lokaal testen voordat u overbrengt naar gefactureerde Cloud omgevingen.
@@ -257,10 +258,16 @@ Test-GuestConfigurationPackage `
 De cmdlet ondersteunt ook invoer van de Power shell-pijp lijn. Pipet de uitvoer van de `New-GuestConfigurationPackage` cmdlet naar de `Test-GuestConfigurationPackage` cmdlet.
 
 ```azurepowershell-interactive
-New-GuestConfigurationPackage -Name AuditBitlocker -Configuration ./Config/AuditBitlocker.mof | Test-GuestConfigurationPackage
+New-GuestConfigurationPackage -Name AuditBitlocker -Configuration ./AuditBitlocker/AuditBitlocker.mof | Test-GuestConfigurationPackage
 ```
 
-De volgende stap is het publiceren van het bestand naar Azure Blob Storage. Voor de opdracht `Publish-GuestConfigurationPackage` is de `Az.Storage` module vereist.
+De volgende stap is het publiceren van het bestand naar Azure Blob Storage. Er zijn geen speciale vereisten voor het opslag account, maar het is een goed idee om het bestand in een regio in de buurt van uw computers te hosten. Als u geen opslag account hebt, gebruikt u het volgende voor beeld. Voor de onderstaande opdrachten, inclusief `Publish-GuestConfigurationPackage` , is de `Az.Storage` module vereist.
+
+```azurepowershell-interactive
+# Creates a new resource group, storage account, and container
+New-AzResourceGroup -name myResourceGroupName -Location WestUS
+New-AzStorageAccount -ResourceGroupName myResourceGroupName -Name myStorageAccountName -SkuName 'Standard_LRS' -Location 'WestUs' | New-AzStorageContainer -Name guestconfiguration -Permission Blob
+```
 
 Para meters van de `Publish-GuestConfigurationPackage` cmdlet:
 
@@ -416,111 +423,6 @@ U kunt community-oplossingen detecteren door de PowerShell Gallery te doorzoeken
 > De uitbrei ding van gast configuratie is een scenario voor het nemen van uw eigen licentie. Zorg ervoor dat u voldoet aan de voor waarden van andere hulpprogram ma's van derden vóór gebruik.
 
 Nadat de DSC-resource in de ontwikkel omgeving is geïnstalleerd, gebruikt u de para meter **FilesToInclude** voor `New-GuestConfigurationPackage` om inhoud voor het platform van derden in het inhouds artefact op te neemt.
-
-### <a name="step-by-step-creating-a-content-artifact-that-uses-third-party-tools"></a>Stapsgewijze procedure, een inhouds artefact maken dat gebruikmaakt van hulpprogram ma's van derden
-
-Alleen de `New-GuestConfigurationPackage` cmdlet vereist een wijziging in de stapsgewijze richt lijnen voor DSC-inhouds artefacten. Voor dit voor beeld gebruikt u de `gcInSpec` module om de gast configuratie uit te breiden om Windows-computers te controleren met behulp van het INSPEC-platform in plaats van de ingebouwde module die in Linux wordt gebruikt. De module community wordt onderhouden als een [open-source project in github](https://github.com/microsoft/gcinspec).
-
-Installeer de vereiste modules in uw ontwikkel omgeving:
-
-```azurepowershell-interactive
-# Update PowerShellGet if needed to allow installing PreRelease versions of modules
-Install-Module PowerShellGet -Force
-
-# Install GuestConfiguration module prerelease version
-Install-Module GuestConfiguration -allowprerelease
-
-# Install commmunity supported gcInSpec module
-Install-Module gcInSpec
-```
-
-Maak eerst het YaML-bestand dat wordt gebruikt door de specificatie. Het bestand bevat algemene informatie over de omgeving. Hieronder ziet u een voor beeld:
-
-```YaML
-name: wmi_service
-title: Verify WMI service is running
-maintainer: Microsoft Corporation
-summary: Validates that the Windows Service 'winmgmt' is running
-copyright: Microsoft Corporation
-license: MIT
-version: 1.0.0
-supports:
-  - os-family: windows
-```
-
-Sla dit bestand `wmi_service.yml` op met de naam in een map `wmi_service` met de naam in de projectmap.
-
-Maak vervolgens het ruby-bestand met de specificatie van de Inspec-taal die wordt gebruikt om de machine te controleren.
-
-```Ruby
-control 'wmi_service' do
-  impact 1.0
-  title 'Verify windows service: winmgmt'
-  desc 'Validates that the service, is installed, enabled, and running'
-
-  describe service('winmgmt') do
-    it { should be_installed }
-    it { should be_enabled }
-    it { should be_running }
-  end
-end
-
-```
-
-Sla dit bestand `wmi_service.rb` op in een nieuwe map met de naam in `controls` de `wmi_service` map.
-
-Maak ten slotte een configuratie, importeer de resource module **GuestConfiguration** en gebruik de `gcInSpec` resource om de naam van het INSPEC-profiel in te stellen.
-
-```powershell
-# Define the configuration and import GuestConfiguration
-Configuration wmi_service
-{
-    Import-DSCResource -Module @{ModuleName = 'gcInSpec'; ModuleVersion = '2.1.0'}
-    node 'wmi_service'
-    {
-        gcInSpec wmi_service
-        {
-            InSpecProfileName       = 'wmi_service'
-            InSpecVersion           = '3.9.3'
-            WindowsServerVersion    = '2016'
-        }
-    }
-}
-
-# Compile the configuration to create the MOF files
-wmi_service -out ./Config
-```
-
-U hebt nu een project structuur als volgt:
-
-```file
-/ wmi_service
-    / Config
-        wmi_service.mof
-    / wmi_service
-        wmi_service.yml
-        / controls
-            wmi_service.rb 
-```
-
-De ondersteunende bestanden moeten samen worden verpakt. Het voltooide pakket wordt gebruikt door de gast configuratie om de Azure Policy definities te maken.
-
-Met de `New-GuestConfigurationPackage` cmdlet maakt u het pakket. Voor inhoud van derden gebruikt u de para meter **FilesToInclude** om de Inspec-inhoud toe te voegen aan het pakket. U hoeft de **ChefProfilePath** niet op te geven als voor Linux-pakketten.
-
-- **Naam**: naam van het gast configuratie pakket.
-- **Configuratie**: gecompileerd configuratie document volledig pad.
-- **Pad**: pad naar map voor uitvoer. Deze parameter is optioneel. Als u niets opgeeft, wordt het pakket gemaakt in de huidige map.
-- **FilesoInclude**: volledig pad naar het INSPEC-profiel.
-
-Voer de volgende opdracht uit om een pakket te maken met behulp van de configuratie die in de vorige stap is gegeven:
-
-```azurepowershell-interactive
-New-GuestConfigurationPackage `
-  -Name 'wmi_service' `
-  -Configuration './Config/wmi_service.mof' `
-  -FilesToInclude './wmi_service'  `
-  -Path './package' 
-```
 
 ## <a name="policy-lifecycle"></a>Levens duur van beleid
 

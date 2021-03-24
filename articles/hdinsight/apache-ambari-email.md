@@ -4,12 +4,12 @@ description: In dit artikel wordt beschreven hoe u SendGrid gebruikt met Apache 
 ms.service: hdinsight
 ms.topic: tutorial
 ms.date: 03/10/2020
-ms.openlocfilehash: 63d0f87925f14fddf3dbd722fa72326ee8b04f31
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 5b344c0c4b1db9159d0223c861e5d371cb225f5a
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98946974"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104867199"
 ---
 # <a name="tutorial-configure-apache-ambari-email-notifications-in-azure-hdinsight"></a>Zelfstudie: E-mailmeldingen voor Apache Ambari configureren in Azure HDInsight
 
@@ -33,15 +33,15 @@ In deze zelfstudie leert u het volgende:
 
 1. Selecteer op de pagina Overzicht de optie **Beheren** om naar de SendGrid-webpagina voor uw account te gaan.
 
-    ![Overzicht van SendGrid in Azure Portal](./media/apache-ambari-email/azure-portal-sendgrid-manage.png)
+    :::image type="content" source="./media/apache-ambari-email/azure-portal-sendgrid-manage.png" alt-text="Overzicht van SendGrid in Azure Portal":::
 
 1. Ga in het linkermenu naar uw accountnaam en klik op **Accountdetails**.
 
-    ![SendGrid-dashboardnavigatie](./media/apache-ambari-email/sendgrid-dashboard-navigation.png)
+    :::image type="content" source="./media/apache-ambari-email/sendgrid-dashboard-navigation.png" alt-text="SendGrid-dashboardnavigatie":::
 
 1. Registreer op de pagina **Accountdetails** de **Gebruikersnaam**.
 
-    ![SendGrid-accountdetails](./media/apache-ambari-email/sendgrid-account-details.png)
+    :::image type="content" source="./media/apache-ambari-email/sendgrid-account-details.png" alt-text="SendGrid-accountdetails":::
 
 ## <a name="configure-ambari-e-mail-notification"></a>E-mailmelding voor Ambari configureren
 
@@ -51,7 +51,7 @@ In deze zelfstudie leert u het volgende:
 
 1. Selecteer in het venster **Waarschuwingsmeldingen beheren** het pictogram **+** .
 
-    ![Schermafbeelding van het dialoogvenster Waarschuwingsmeldingen beheren.](./media/apache-ambari-email/azure-portal-create-notification.png)
+    :::image type="content" source="./media/apache-ambari-email/azure-portal-create-notification.png" alt-text="Schermafbeelding van het dialoogvenster Waarschuwingsmeldingen beheren.":::
 
 1. Geef in het dialoogvenster **Waarschuwingsmelding maken** de volgende informatie op:
 
@@ -72,7 +72,7 @@ In deze zelfstudie leert u het volgende:
     |Wachtwoord bevestigen|Voer het wachtwoord opnieuw in.|
     |TLS starten|Schakel dit selectievakje in|
 
-    ![Schermafbeelding van het dialoogvenster Waarschuwingsmeldingen maken.](./media/apache-ambari-email/ambari-create-alert-notification.png)
+    :::image type="content" source="./media/apache-ambari-email/ambari-create-alert-notification.png" alt-text="Schermafbeelding van het dialoogvenster Waarschuwingsmeldingen maken.":::
 
     Selecteer **Opslaan**. U gaat terug naar het venster **Waarschuwingsmeldingen beheren**.
 

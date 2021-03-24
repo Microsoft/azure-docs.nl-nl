@@ -9,12 +9,12 @@ ms.date: 03/01/2021
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: feb77339c9c7f36eb17b43dfe2c220dfb54efa25
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: b24276974eba76aa841cdd7f02145210713474eb
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104720522"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104872282"
 ---
 # <a name="update-the-iot-edge-security-daemon-and-runtime"></a>De IoT Edge-beveiligingsdaemon en -runtime bijwerken
 
@@ -203,7 +203,7 @@ Enkele van de belangrijkste verschillen tussen 1,2 en eerdere versies zijn:
 * De pakket naam is gewijzigd van **iotedge** naar **aziot-Edge**.
 * Het **libiothsm-STD-** pakket wordt niet meer gebruikt. Als u het standaard pakket hebt gebruikt dat deel uitmaakt van de IoT Edge release, kunnen uw configuraties worden overgedragen naar de nieuwe versie. Als u een andere implementatie van libiothsm-STD hebt gebruikt, moeten alle door de gebruiker aangelegde certificaten, zoals het apparaat-ID-certificaat, de certificerings instantie van het apparaat en de vertrouwens bundel, opnieuw worden geconfigureerd.
 * Een nieuwe identiteits service, **aziot-Identity-service** , werd geïntroduceerd als onderdeel van de 1,2-release. Met deze service wordt het inrichten en beheren van identiteiten voor IoT Edge en voor andere onderdelen van apparaten die met IoT Hub moeten communiceren, zoals Azure IoT Hub apparaat bijwerken, verwerkt. <!--TODO: add link to ADU when available -->
-* Het standaard configuratie bestand heeft een nieuwe naam en locatie. Voorheen `/etc/iotedge/config.yaml` zullen de configuratie gegevens van uw apparaat nu standaard worden ingevuld `/etc/aziot/congig.toml` . De `iotedge config import` opdracht kan worden gebruikt om configuratie gegevens te migreren van de oude locatie en syntaxis naar de nieuwe.
+* Het standaard configuratie bestand heeft een nieuwe naam en locatie. Voorheen `/etc/iotedge/config.yaml` zullen de configuratie gegevens van uw apparaat nu standaard worden ingevuld `/etc/aziot/config.toml` . De `iotedge config import` opdracht kan worden gebruikt om configuratie gegevens te migreren van de oude locatie en syntaxis naar de nieuwe.
 * Modules die gebruikmaken van de API van IoT Edge workload voor het versleutelen of ontsleutelen van permanente gegevens kunnen niet worden ontsleuteld na de update. IoT Edge genereert dynamisch een Master-id-sleutel en versleutelings sleutel voor intern gebruik. Deze sleutel wordt niet overgedragen naar de nieuwe service. IoT Edge v 1.2 genereert een nieuwe.
 
 Voordat u een update proces automatiseert, controleert u of het werkt op test machines.

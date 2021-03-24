@@ -3,17 +3,17 @@ title: Hotpatch voor Windows Server Azure Edition (preview-versie)
 description: Meer informatie over hoe hotpatch voor Windows Server Azure Edition werkt en hoe u deze functie inschakelt
 author: ju-shim
 ms.service: virtual-machines
-ms.subservice: automanage
+ms.subservice: hotpatch
 ms.workload: infrastructure
 ms.topic: conceptual
 ms.date: 02/22/2021
 ms.author: jushiman
-ms.openlocfilehash: 710e6902be6ebe28caaf40fb446e4ee7cd2bf4dc
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 92b8bf240dfd73cc9191675db07f20816b7156a8
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101687563"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104953388"
 ---
 # <a name="hotpatch-for-new-virtual-machines-preview"></a>Hotpatch voor nieuwe virtuele machines (preview-versie)
 
@@ -129,21 +129,21 @@ az provider register --namespace Microsoft.Compute
 
 ## <a name="patch-installation"></a>Installatie van patch
 
-Tijdens de preview-fase wordt [automatische VM-gast patches](https://docs.microsoft.com/azure/virtual-machines/automatic-vm-guest-patching) automatisch ingeschakeld voor alle vm's die zijn gemaakt met _Windows Server 2019 Data Center: Azure Edition_. Als automatische VM-gast patching is ingeschakeld:
+Tijdens de preview-fase wordt [automatische VM-gast patches](../virtual-machines/automatic-vm-guest-patching.md) automatisch ingeschakeld voor alle vm's die zijn gemaakt met _Windows Server 2019 Data Center: Azure Edition_. Als automatische VM-gast patching is ingeschakeld:
 * Patches die zijn geclassificeerd als kritiek of beveiliging, worden automatisch gedownload en toegepast op de virtuele machine.
 * Patches worden toegepast tijdens rustige uren in de tijd zone van de virtuele machine.
-* Patch indeling wordt beheerd door Azure en patches worden toegepast na de [eerste principes van Beschik baarheid](https://docs.microsoft.com/azure/virtual-machines/automatic-vm-guest-patching#availability-first-patching).
+* Patch indeling wordt beheerd door Azure en patches worden toegepast na de [eerste principes van Beschik baarheid](../virtual-machines/automatic-vm-guest-patching.md#availability-first-patching).
 * De status van de virtuele machine, zoals wordt bepaald door platform status signalen, wordt bewaakt om patch fouten te detecteren.
 
 ### <a name="how-does-automatic-vm-guest-patching-work"></a>Hoe werkt automatische VM-gast patches?
 
-Als [automatische VM-gast patches](https://docs.microsoft.com/azure/virtual-machines/automatic-vm-guest-patching) is ingeschakeld op een VM, worden de beschik bare essentiële en beveiligings patches automatisch gedownload en toegepast. Dit proces wordt elke maand automatisch uitgevoerd wanneer er nieuwe patches worden uitgebracht. De evaluatie en installatie van patches worden automatisch uitgevoerd en het proces omvat het opnieuw opstarten van de virtuele machine, indien nodig.
+Als [automatische VM-gast patches](../virtual-machines/automatic-vm-guest-patching.md) is ingeschakeld op een VM, worden de beschik bare essentiële en beveiligings patches automatisch gedownload en toegepast. Dit proces wordt elke maand automatisch uitgevoerd wanneer er nieuwe patches worden uitgebracht. De evaluatie en installatie van patches worden automatisch uitgevoerd en het proces omvat het opnieuw opstarten van de virtuele machine, indien nodig.
 
 Als hotpatch is ingeschakeld in _Windows Server 2019 Data Center: Azure Edition_ vm's, worden de meeste maandelijkse beveiligings updates geleverd als hotpatches die niet opnieuw hoeven te worden opgestart. Voor de meest recente cumulatieve updates die zijn verzonden op geplande of niet-geplande basislijn maanden, moet de VM opnieuw worden opgestart. Er zijn mogelijk ook extra essentiële of beveiligings patches beschikbaar waarvoor het opnieuw opstarten van de VM mogelijk is.
 
 De VM wordt elke paar dagen en meerdere keren binnen een periode van 30 dagen geëvalueerd om de toepasselijke patches voor die VM te bepalen. Deze automatische beoordeling zorgt ervoor dat eventuele ontbrekende patches zo snel mogelijk worden gedetecteerd.
 
-Patches worden binnen 30 dagen na de maandelijkse patch releases geïnstalleerd, met de [eerste principes van Beschik baarheid](https://docs.microsoft.com/azure/virtual-machines/automatic-vm-guest-patching#availability-first-patching). Patches worden alleen geïnstalleerd tijdens daluren voor de virtuele machine, afhankelijk van de tijd zone van de virtuele machine. De virtuele machine moet worden uitgevoerd gedurende de daluren van de patches die automatisch worden geïnstalleerd. Als een virtuele machine is uitgeschakeld tijdens een periodieke evaluatie, wordt de VM beoordeeld en worden de toepasselijke patches automatisch geïnstalleerd tijdens de volgende periodieke evaluatie wanneer de virtuele machine wordt ingeschakeld. De volgende periodieke evaluatie gebeurt doorgaans binnen een paar dagen.
+Patches worden binnen 30 dagen na de maandelijkse patch releases geïnstalleerd, met de [eerste principes van Beschik baarheid](../virtual-machines/automatic-vm-guest-patching.md#availability-first-patching). Patches worden alleen geïnstalleerd tijdens daluren voor de virtuele machine, afhankelijk van de tijd zone van de virtuele machine. De virtuele machine moet worden uitgevoerd gedurende de daluren van de patches die automatisch worden geïnstalleerd. Als een virtuele machine is uitgeschakeld tijdens een periodieke evaluatie, wordt de VM beoordeeld en worden de toepasselijke patches automatisch geïnstalleerd tijdens de volgende periodieke evaluatie wanneer de virtuele machine wordt ingeschakeld. De volgende periodieke evaluatie gebeurt doorgaans binnen een paar dagen.
 
 Definitie-updates en andere patches die niet zijn geclassificeerd als kritiek of beveiliging, worden niet geïnstalleerd via automatische VM-gast patches.
 
@@ -151,7 +151,7 @@ Definitie-updates en andere patches die niet zijn geclassificeerd als kritiek of
 
 Als u de patch status voor uw virtuele machine wilt bekijken, gaat u naar de sectie **gast-en host-updates** voor uw virtuele machine in de Azure Portal. Klik onder de sectie updates van het **gast besturingssysteem** op ' go to hotpatch (preview) ' om de nieuwste patch status voor uw virtuele machine weer te geven.
 
-In dit scherm ziet u de status van de hotpatch voor uw VM. U kunt ook controleren of er beschik bare patches beschikbaar zijn voor uw VM die nog niet zijn geïnstalleerd. Zoals beschreven in de sectie patch-installatie hierboven, worden alle beveiligings-en essentiële updates automatisch geïnstalleerd op uw virtuele machine met [automatische VM-gast patches](https://docs.microsoft.com/azure/virtual-machines/automatic-vm-guest-patching) . er zijn geen extra acties vereist. Patches met andere update classificaties worden niet automatisch geïnstalleerd. In plaats daarvan worden ze weer gegeven in de lijst met beschik bare patches op het tabblad Update naleving. U kunt ook de geschiedenis van update-implementaties op uw virtuele machine bekijken via de update geschiedenis. De update geschiedenis van de afgelopen 30 dagen wordt weer gegeven, samen met informatie over de installatie van de patch.
+In dit scherm ziet u de status van de hotpatch voor uw VM. U kunt ook controleren of er beschik bare patches beschikbaar zijn voor uw VM die nog niet zijn geïnstalleerd. Zoals beschreven in de sectie patch-installatie hierboven, worden alle beveiligings-en essentiële updates automatisch geïnstalleerd op uw virtuele machine met [automatische VM-gast patches](../virtual-machines/automatic-vm-guest-patching.md) . er zijn geen extra acties vereist. Patches met andere update classificaties worden niet automatisch geïnstalleerd. In plaats daarvan worden ze weer gegeven in de lijst met beschik bare patches op het tabblad Update naleving. U kunt ook de geschiedenis van update-implementaties op uw virtuele machine bekijken via de update geschiedenis. De update geschiedenis van de afgelopen 30 dagen wordt weer gegeven, samen met informatie over de installatie van de patch.
 
 
 :::image type="content" source="media\automanage-hotpatch\hotpatch-management-ui.png" alt-text="Hotpatch beheer.":::
@@ -225,5 +225,5 @@ Er zijn enkele belang rijke aandachtspunten voor het uitvoeren van een virtuele 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Meer informatie over Azure [updatebeheer.](https://docs.microsoft.com/azure/automation/update-management/overview)
-* Meer informatie over automatische VM-gast patches [hier](https://docs.microsoft.com/azure/virtual-machines/automatic-vm-guest-patching)
+* Meer informatie over Azure [updatebeheer.](../automation/update-management/overview.md)
+* Meer informatie over automatische VM-gast patches [hier](../virtual-machines/automatic-vm-guest-patching.md)

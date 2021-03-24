@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 3/18/2020
-ms.openlocfilehash: ed6d5d676fd2c6eefd3288b7609446eb61611ed6
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: a05037505c122bb974e6da3d11a6f25a715a6843
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100517974"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104869426"
 ---
 # <a name="server-concepts-in-azure-database-for-mysql"></a>Server concepten in Azure Database for MySQL
 
@@ -62,7 +62,13 @@ Tijdens de tijd server wordt gestopt, kunnen er geen beheer bewerkingen worden u
 
 ## <a name="how-do-i-manage-a-server"></a>Hoe kan ik een server beheren?
 
-U kunt Azure Database for MySQL servers beheren door gebruik te maken van de Azure Portal of de Azure CLI.
+U kunt het maken, verwijderen, configureren van de server parameters (My. cnf), schalen, netwerken, beveiliging, maximale Beschik baarheid, back-& herstel, bewaking van uw Azure Database for MySQL servers beheren met behulp van de Azure Portal of de Azure CLI. Daarnaast zijn de volgende opgeslagen procedures beschikbaar in Azure Database for MySQL om bepaalde database beheer taken uit te voeren die vereist zijn als supergebruikers bevoegdheid wordt niet ondersteund op de server.
+
+|**Naam van opgeslagen procedure**|**Invoerparameters**|**Uitvoer parameters**|**Opmerking over gebruik**|
+|-----|-----|-----|-----|
+|*mysql.az_kill*|processlist_id|N.v.t.|Gelijk aan- [`KILL CONNECTION`](https://dev.mysql.com/doc/refman/8.0/en/kill.html) opdracht. De verbinding die is gekoppeld aan de geleverde processlist_id na het beëindigen van een instructie die wordt uitgevoerd, wordt beëindigd.|
+|*mysql.az_kill_query*|processlist_id|N.v.t.|Gelijk aan- [`KILL QUERY`](https://dev.mysql.com/doc/refman/8.0/en/kill.html) opdracht. Hiermee wordt de instructie beëindigd die momenteel wordt uitgevoerd door de verbinding. De verbinding zelf blijft actief.|
+|*mysql.az_load_timezone*|N.v.t.|N.v.t.|Laadt [tijd zone tabellen](howto-server-parameters.md#working-with-the-time-zone-parameter) zodat de `time_zone` para meter kan worden ingesteld op benoemde waarden (bijvoorbeeld "VS/Pacific").|
 
 ## <a name="next-steps"></a>Volgende stappen
 

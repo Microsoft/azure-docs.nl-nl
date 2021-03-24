@@ -5,14 +5,14 @@ services: azure-resource-manager
 author: mumian
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 03/18/2021
+ms.date: 03/23/2021
 ms.author: jgao
-ms.openlocfilehash: 130deea4e5998d696065df4854a47bf7ffd1183c
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 9f4c21a4b7e58c4eed3a62ea844eb11ccf4ecb49
+ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104594239"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104889379"
 ---
 # <a name="use-deployment-scripts-in-arm-templates"></a>Implementatie scripts gebruiken in ARM-sjablonen
 
@@ -131,6 +131,9 @@ De volgende JSON is een voor beeld. Zie het meest recente [sjabloon schema](/azu
 > [!NOTE]
 > Het voor beeld is voor demonstratie doeleinden. De eigenschappen `scriptContent` en `primaryScriptUri` kunnen niet worden gecombineerd in een sjabloon.
 
+> [!NOTE]
+> De _scriptContent_ toont een script met meerdere regels.  Met de Azure Portal-en Azure DevOps-pijp lijn kan een implementatie script met meerdere regels niet worden geparseerd. U kunt de Power shell-opdrachten (met behulp van punt komma's of _\\ r \\ n_ of _\\ n_) koppelen aan één regel of de `primaryScriptUri` eigenschap gebruiken met een extern script bestand. Er zijn veel gratis Escape-of Escape-hulpprogram ma's voor de JSON-teken reeks beschikbaar. Bijvoorbeeld [https://www.freeformatter.com/json-escape.html](https://www.freeformatter.com/json-escape.html) .
+
 Details van eigenschaps waarde:
 
 - `identity`: Voor de API-versie 2020-10-01 of hoger van het implementatie script is een door de gebruiker toegewezen beheerde identiteit optioneel, tenzij u in het script specifieke acties van Azure moet uitvoeren.  Voor de API-versie 2019-10-01-preview is een beheerde identiteit vereist als de implementatie script service deze gebruikt voor het uitvoeren van de scripts. Op dit moment wordt alleen door de gebruiker toegewezen beheerde identiteit ondersteund.
@@ -159,9 +162,6 @@ Details van eigenschaps waarde:
 
 - `environmentVariables`: Geef de omgevings variabelen op die moeten worden door gegeven aan het script. Zie [implementatie scripts ontwikkelen](#develop-deployment-scripts)voor meer informatie.
 - `scriptContent`: Geef de scriptinhoud op. Als u een extern script wilt uitvoeren, gebruikt u in plaats daarvan `primaryScriptUri`. Zie [inline-script gebruiken](#use-inline-scripts) en [extern script gebruiken](#use-external-scripts)voor voor beelden.
-  > [!NOTE]
-  > Met de Azure Portal kan een implementatie script met meerdere regels niet worden geparseerd. Als u een sjabloon wilt implementeren met een implementatie script van de Azure Portal, kunt u de Power shell-opdrachten koppelen met behulp van punt komma's in één regel of de `primaryScriptUri` eigenschap gebruiken met een extern script bestand.
-
 - `primaryScriptUri`: Geef een openbaar toegankelijke URL op voor het primaire implementatie script met ondersteunde bestands extensies. Zie [externe scripts gebruiken](#use-external-scripts)voor meer informatie.
 - `supportingScriptUris`: Geef een matrix met openbaar toegankelijke Url's op voor de ondersteunende bestanden die worden genoemd in `scriptContent` of `primaryScriptUri` . Zie [externe scripts gebruiken](#use-external-scripts)voor meer informatie.
 - `timeout`: Geef de maximale toegestane uitvoeringstijd voor het script op, opgegeven in de [ISO 8601-indeling](https://en.wikipedia.org/wiki/ISO_8601). Standaardwaarde is **P1D**.

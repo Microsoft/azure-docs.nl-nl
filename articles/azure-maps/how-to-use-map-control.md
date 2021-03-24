@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: devx-track-js
-ms.openlocfilehash: 27d9d5d30dc4c96516d23acba6a11b411827071e
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: b283cacf94ff3567428787e50a3d7db9ba91fd9c
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100378703"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104864037"
 ---
 # <a name="use-the-azure-maps-map-control"></a>Het kaartbesturingselement in Azure Maps gebruiken
 
@@ -258,10 +258,10 @@ Als u rechtstreeks toegang hebt tot de Azure Maps REST-services, wijzigt u het U
 
 Bij het ontwikkelen met behulp van een JavaScript-framework kan een van de volgende opensource-projecten nuttig zijn:
 
-- [ng-azure-maps](https://github.com/arnaudleclerc/ng-azure-maps): Angular 10-wrapper rond Azure-kaarten.
-- [AzureMapsControl.Components](https://github.com/arnaudleclerc/AzureMapsControl.Components): een Azure Maps Blazor-onderdeel.
-- [Azure Maps React-onderdeel](https://github.com/WiredSolutions/react-azure-maps): een react-wrapper voor het Azure Maps-besturingselement.
-- [Vue Azure Maps](https://github.com/rickyruiz/vue-azure-maps): een Azure Maps-onderdeel voor de Vue-toepassing.
+* [ng-azure-maps](https://github.com/arnaudleclerc/ng-azure-maps): Angular 10-wrapper rond Azure-kaarten.
+* [AzureMapsControl.Components](https://github.com/arnaudleclerc/AzureMapsControl.Components): een Azure Maps Blazor-onderdeel.
+* [Azure Maps React-onderdeel](https://github.com/WiredSolutions/react-azure-maps): een react-wrapper voor het Azure Maps-besturingselement.
+* [Vue Azure Maps](https://github.com/rickyruiz/vue-azure-maps): een Azure Maps-onderdeel voor de Vue-toepassing.
 
 ## <a name="next-steps"></a>Volgende stappen
 
@@ -275,10 +275,10 @@ Meer informatie over het opmaken van een kaart:
 > [!div class="nextstepaction"]
 > [Een kaartstijl kiezen](choose-map-style.md)
 
-Meer gegevens toevoegen aan uw kaart:
+Lees de aanbevolen procedures en Bekijk voor beelden:
 
 > [!div class="nextstepaction"]
-> [Een kaart maken](map-create.md)
+> [Aanbevolen procedures](web-sdk-best-practices.md)
 
 > [!div class="nextstepaction"]
 > [Codevoorbeelden](/samples/browse/?products=azure-maps)

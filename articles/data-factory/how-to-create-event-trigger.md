@@ -7,12 +7,12 @@ ms.author: chez
 ms.reviewer: jburchel
 ms.topic: conceptual
 ms.date: 03/11/2021
-ms.openlocfilehash: deaa414a17240e8cdbdad7f4ba9b3e596b4f191f
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.openlocfilehash: ae8b1eab81e3c898c25a613f552a49c8de64f49d
+ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104780324"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104889124"
 ---
 # <a name="create-a-trigger-that-runs-a-pipeline-in-response-to-a-storage-event"></a>Een trigger maken waarmee een pijp lijn wordt uitgevoerd als reactie op een opslag gebeurtenis
 
@@ -43,10 +43,10 @@ In deze sectie wordt beschreven hoe u een opslag gebeurtenis trigger maakt in de
 
     :::image type="content" source="media/how-to-create-event-trigger/event-based-trigger-image1.png" alt-text="Scherm afbeelding van de pagina auteur om een nieuwe opslag gebeurtenis trigger in Data Factory gebruikers interface te maken.":::
 
-1. Selecteer uw opslag account in de vervolg keuzelijst van het Azure-abonnement of hand matig met de resource-ID van het opslag account. Kies op welke container de gebeurtenissen moeten worden uitgevoerd. Container selectie is optioneel, maar mindful het selecteren van alle containers kan leiden tot een groot aantal gebeurtenissen.
+1. Selecteer uw opslag account in de vervolg keuzelijst van het Azure-abonnement of hand matig met de resource-ID van het opslag account. Kies op welke container de gebeurtenissen moeten worden uitgevoerd. Container selectie is vereist, maar mindful het selecteren van alle containers kan leiden tot een groot aantal gebeurtenissen.
 
    > [!NOTE]
-   > De opslag gebeurtenis trigger ondersteunt momenteel alleen Azure Data Lake Storage Gen2 en algemene opslag accounts voor versie 2. Vanwege een Azure Event Grid beperking ondersteunt Azure Data Factory slechts een maximum van 500 opslag gebeurtenis triggers per opslag account.
+   > De opslag gebeurtenis trigger ondersteunt momenteel alleen Azure Data Lake Storage Gen2 en algemene opslag accounts voor versie 2. Vanwege een Azure Event Grid beperking ondersteunt Azure Data Factory slechts een maximum van 500 opslag gebeurtenis triggers per opslag account. Als u de limiet bereikt, neemt u contact op met de ondersteuning voor aanbevelingen en verhoogt u de limiet bij evaluatie door Event Grid team. 
 
    > [!NOTE]
    > Als u een nieuwe opslag gebeurtenis trigger wilt maken of wijzigen, moet het Azure-account dat wordt gebruikt om u aan te melden bij Data Factory en de opslag gebeurtenis trigger te publiceren, beschikken over de juiste op rollen gebaseerde toegangs beheer machtiging (Azure RBAC) voor het opslag account. Er is geen aanvullende machtiging vereist: de service-principal voor de Azure Data Factory heeft _geen_ speciale machtigingen nodig voor het opslag account of event grid. Zie voor meer informatie over toegangs beheer [op rollen gebaseerd toegangs beheer](#role-based-access-control) sectie.
@@ -54,7 +54,7 @@ In deze sectie wordt beschreven hoe u een opslag gebeurtenis trigger maakt in de
 1. Het **BLOB-pad begint met** en het **BLOB-pad eindigt** op Eigenschappen, zodat u de containers, mappen en BLOB-namen kunt opgeven waarvoor u gebeurtenissen wilt ontvangen. Voor de opslag gebeurtenis trigger moet ten minste één van deze eigenschappen worden gedefinieerd. U kunt verschillende patronen gebruiken voor beide **BLOB-paden begint met** en het **BLOB-pad eindigt met** eigenschappen, zoals wordt weer gegeven in de voor beelden verderop in dit artikel.
 
     * **Pad van BLOB begint met:** Het BLOB-pad moet beginnen met een mappad. Geldige waarden zijn `2018/` `2018/april/shoes.csv` : en. Dit veld kan niet worden geselecteerd als er geen container is geselecteerd.
-    * **Pad naar BLOB eindigt op:** Het pad naar de BLOB moet eindigen met een bestands naam of-extensie. Geldige waarden zijn `shoes.csv` `.csv` : en. De naam van de container en map zijn optioneel, maar als u deze opgeeft, moeten ze worden gescheiden door een `/blobs/` segment. Een container met de naam ' orders ' kan bijvoorbeeld een waarde van hebben `/orders/blobs/2018/april/shoes.csv` . Als u een map in een container wilt opgeven, laat u het voorloop teken '/' weg. `april/shoes.csv`Er wordt bijvoorbeeld een gebeurtenis geactiveerd voor elk bestand in de `shoes.csv` map met de naam ' april ' in een wille keurige container.
+    * **Pad naar BLOB eindigt op:** Het pad naar de BLOB moet eindigen met een bestands naam of-extensie. Geldige waarden zijn `shoes.csv` `.csv` : en. De namen van containers en mappen, indien opgegeven, moeten worden gescheiden door een `/blobs/` segment. Een container met de naam ' orders ' kan bijvoorbeeld een waarde van hebben `/orders/blobs/2018/april/shoes.csv` . Als u een map in een container wilt opgeven, laat u het voorloop teken '/' weg. `april/shoes.csv`Er wordt bijvoorbeeld een gebeurtenis geactiveerd voor elk bestand in de `shoes.csv` map met de naam ' april ' in een wille keurige container.
     * Houd er rekening mee dat het BLOB-pad **begint met** en **eindigt** op de enige patroon overeenkomst die is toegestaan in de gebeurtenis trigger voor opslag. Andere typen overeenkomende joker tekens worden niet ondersteund voor het trigger type.
 
 1. Selecteer of uw trigger reageert op een gebeurtenis **die** door een blob is gemaakt, een gebeurtenis voor het verwijderen van een **BLOB** of beide. In de opgegeven opslag locatie worden met elke gebeurtenis de Data Factory pijp lijnen geactiveerd die zijn gekoppeld aan de trigger.

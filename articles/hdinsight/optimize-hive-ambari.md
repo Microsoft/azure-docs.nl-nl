@@ -4,12 +4,12 @@ description: Gebruik de Apache Ambari Web-UI om Apache Hive te configureren en t
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 05/04/2020
-ms.openlocfilehash: 349f58720e6fff52191dfff65108cd1320e41eed
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 69a4e769677b6f0200f4157305a3a125f82ee76d
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98939248"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104864814"
 ---
 # <a name="optimize-apache-hive-with-apache-ambari-in-azure-hdinsight"></a>Apache Hive optimaliseren met Apache Ambari in azure HDInsight
 
@@ -26,11 +26,11 @@ Hive bevat twee uitvoerings engines: Apache Hadoop MapReduce en Apache TEZ. TEZ 
 
 1. Typ **Execution Engine** in het vak Filter op het tabblad **configuratie** van Hive.
 
-    ![Engine voor het uitvoeren van Apache Ambari Search](./media/optimize-hive-ambari/ambari-search-execution.png)
+    :::image type="content" source="./media/optimize-hive-ambari/ambari-search-execution.png" alt-text="Engine voor het uitvoeren van Apache Ambari Search" border="true":::
 
 1. De standaard waarde van de **optimalisatie** -eigenschap is **TEZ**.
 
-    ![Optimalisatie-Apache TEZ-engine](./media/optimize-hive-ambari/optimization-apache-tez.png)
+    :::image type="content" source="./media/optimize-hive-ambari/optimization-apache-tez.png" alt-text="Optimalisatie-Apache TEZ-engine" border="true":::
 
 ## <a name="tune-mappers"></a>Toewijzings toewijzingen afstemmen
 
@@ -47,7 +47,7 @@ Als u bijvoorbeeld vier toewijzings taken wilt instellen voor een gegevens groot
 
 1. Stel beide para meters in op **33.554.432** bytes (32 MB).
 
-    ![Ambari TEZ-groeperings grootte van Apache](./media/optimize-hive-ambari/apache-tez-grouping-size.png)
+    :::image type="content" source="./media/optimize-hive-ambari/apache-tez-grouping-size.png" alt-text="Ambari TEZ-groeperings grootte van Apache" border="true":::
 
 Deze wijzigingen zijn van invloed op alle TEZ-taken op de server. Kies de juiste parameter waarden om optimaal resultaat te krijgen.
 
@@ -63,11 +63,11 @@ Met de `hive.exec.reducers.bytes.per.reducer` para meter wordt het aantal verwer
 
 1. Als u de para meter wilt wijzigen, gaat u naar het tabblad **configuratie** van Hive en zoekt u de para meter **gegevens per verkorter** op de pagina instellingen.
 
-    ![Apache Ambari-gegevens per Reductier](./media/optimize-hive-ambari/ambari-data-per-reducer.png)
+    :::image type="content" source="./media/optimize-hive-ambari/ambari-data-per-reducer.png" alt-text="Apache Ambari-gegevens per Reductier" border="true":::
 
 1. Selecteer **bewerken** om de waarde te wijzigen in 128 MB (134.217.728 bytes) en druk vervolgens op **Enter** om op te slaan.
 
-    ![Ambari-gegevens per reductie bewerking](./media/optimize-hive-ambari/data-per-reducer-edited.png)
+    :::image type="content" source="./media/optimize-hive-ambari/data-per-reducer-edited.png" alt-text="Ambari-gegevens per reductie bewerking" border="true":::
   
     Op basis van een invoer grootte van 1.024 MB, met 128 MB aan gegevens per verkorter, zijn er acht verminderingen (1024/128).
 
@@ -81,7 +81,7 @@ Een Hive-query wordt uitgevoerd in een of meer fasen. Als de onafhankelijke fase
 
 1. Als u het aantal taken dat parallel moet worden uitgevoerd, wilt beperken, wijzigt u de `hive.exec.parallel.thread.number` eigenschap. De standaard waarde is 8.
 
-    ![Parallelle weer gave Apache Hive exec](./media/optimize-hive-ambari/apache-hive-exec-parallel.png)
+    :::image type="content" source="./media/optimize-hive-ambari/apache-hive-exec-parallel.png" alt-text="Parallelle weer gave Apache Hive exec" border="true":::
 
 ## <a name="enable-vectorization"></a>Vectorization inschakelen
 
@@ -91,7 +91,7 @@ Hive verwerkt gegevens rijen per rij. Vectorization-doorstuur component voor het
 
 1. Als u een vector uitvoering wilt inschakelen voor de reductie van de query, stelt `hive.vectorized.execution.reduce.enabled` u de para meter in op waar. De standaardwaarde is false.
 
-    ![Apache Hive vector uitvoering](./media/optimize-hive-ambari/hive-vectorized-execution.png)
+    :::image type="content" source="./media/optimize-hive-ambari/hive-vectorized-execution.png" alt-text="Apache Hive vector uitvoering" border="true":::
 
 ## <a name="enable-cost-based-optimization-cbo"></a>Optimalisatie op basis van kosten inschakelen (CBO)
 
@@ -99,7 +99,7 @@ Hive volgt standaard een set regels om één optimaal query-uitvoerings plan te 
 
 Om CBO in te scha kelen, gaat u naar **Hive**  >  **configuratie**  >  **instellingen** en zoek **optimalisatie op basis van kosten inschakelen**. vervolgens schakelt u de wissel knop in **op** aan.
 
-![Optimalisatie op basis van HDInsight-kosten](./media/optimize-hive-ambari/hdinsight-cbo-config.png)
+:::image type="content" source="./media/optimize-hive-ambari/hdinsight-cbo-config.png" alt-text="Optimalisatie op basis van HDInsight-kosten" border="true":::
 
 De volgende aanvullende configuratie parameters verhogen Hive-query prestaties wanneer CBO is ingeschakeld:
 
@@ -107,19 +107,19 @@ De volgende aanvullende configuratie parameters verhogen Hive-query prestaties w
 
     Als deze eigenschap is ingesteld op True, gebruikt Hive statistieken die zijn opgeslagen in de meta Store om eenvoudige query's te beantwoorden, zoals `count(*)` .
 
-    ![Reken query Apache Hive met behulp van statistieken](./media/optimize-hive-ambari/hive-compute-query-using-stats.png)
+    :::image type="content" source="./media/optimize-hive-ambari/hive-compute-query-using-stats.png" alt-text="Reken query Apache Hive met behulp van statistieken" border="true":::
 
 * `hive.stats.fetch.column.stats`
 
     Kolom statistieken worden gemaakt wanneer CBO is ingeschakeld. Hive maakt gebruik van kolom statistieken, die zijn opgeslagen in de meta Store, voor het optimaliseren van query's. Het ophalen van kolom statistieken voor elke kolom duurt langer wanneer het aantal kolommen hoog is. Als deze instelling is ingesteld op False, wordt het ophalen van kolom statistieken uit de meta Store uitgeschakeld.
 
-    ![Apache Hive stats kolom statistieken instellen](./media/optimize-hive-ambari/hive-stats-fetch-column-stats.png)
+    :::image type="content" source="./media/optimize-hive-ambari/hive-stats-fetch-column-stats.png" alt-text="Apache Hive stats kolom statistieken instellen" border="true":::
 
 * `hive.stats.fetch.partition.stats`
 
     Standaard partitie statistieken, zoals het aantal rijen, de grootte van de gegevens en de bestands grootte, worden opgeslagen in de meta Store. Als deze eigenschap is ingesteld op True, worden de partitie statistieken opgehaald uit de meta Store. Als false is ingesteld, wordt de bestands grootte opgehaald uit het bestands systeem. En het aantal rijen wordt opgehaald uit het schema van de rij.
 
-    ![Statistieken voor de Hive-partitie instellen](./media/optimize-hive-ambari/hive-stats-fetch-partition-stats.png)
+    :::image type="content" source="./media/optimize-hive-ambari/hive-stats-fetch-partition-stats.png" alt-text="Statistieken voor de Hive-partitie instellen" border="true":::
 
 ## <a name="enable-intermediate-compression"></a>Tussenliggende compressie inschakelen
 
@@ -140,7 +140,7 @@ Een algemene regel is dat de compressie methode splitsbaar belang rijk is, ander
 
 1. Als u tussenliggende compressie wilt inschakelen, gaat u naar het tabblad **configuratie** van Hive en stelt `hive.exec.compress.intermediate` u de para meter in op True. De standaardwaarde is false.
 
-    ![' Hive exec comp '](./media/optimize-hive-ambari/hive-exec-compress-intermediate.png)
+    :::image type="content" source="./media/optimize-hive-ambari/hive-exec-compress-intermediate.png" alt-text="' Hive exec comp '" border="true":::
 
     > [!NOTE]  
     > Als u tussenliggende bestanden wilt comprimeren, kiest u een compressie-codec met lagere CPU-kosten, zelfs als de codec geen hoge compressie-uitvoer heeft.
@@ -157,7 +157,7 @@ Een algemene regel is dat de compressie methode splitsbaar belang rijk is, ander
 
     d. Selecteer **Toevoegen**.
 
-    ![' Apache Hive aangepaste eigenschap toevoegen '](./media/optimize-hive-ambari/hive-custom-property.png)
+    :::image type="content" source="./media/optimize-hive-ambari/hive-custom-property.png" alt-text="' Apache Hive aangepaste eigenschap toevoegen '" border="true":::
 
     Met deze instelling wordt het tussenliggende bestand gecomprimeerd met Snappy-compressie. Zodra de eigenschap is toegevoegd, wordt deze weer gegeven in het deel venster aangepaste Hive-site.
 
@@ -172,7 +172,7 @@ De uiteindelijke Hive-uitvoer kan ook worden gecomprimeerd.
 
 1. Als u de compressie-codec voor uitvoer wilt kiezen, voegt `mapred.output.compression.codec` u de aangepaste eigenschap toe aan het deel venster aangepaste Hive-site, zoals wordt beschreven in stap 3 van de vorige sectie.
 
-    ![Aangepaste eigenschap ADD2 Apache Hive](./media/optimize-hive-ambari/hive-custom-property2.png)
+    :::image type="content" source="./media/optimize-hive-ambari/hive-custom-property2.png" alt-text="Aangepaste eigenschap ADD2 Apache Hive" border="true":::
 
 ## <a name="enable-speculative-execution"></a>Speculatieve uitvoering inschakelen
 
@@ -182,7 +182,7 @@ Speculatieve uitvoering moet niet worden ingeschakeld voor langlopende MapReduce
 
 * Als u speculatieve uitvoering wilt inschakelen, gaat u naar het tabblad **configuratie** van Hive en stelt `hive.mapred.reduce.tasks.speculative.execution` u de para meter in op True. De standaardwaarde is false.
 
-    ![' Hive mapred verminderen taken speculatieve uitvoering '](./media/optimize-hive-ambari/hive-mapred-reduce-tasks-speculative-execution.png)
+    :::image type="content" source="./media/optimize-hive-ambari/hive-mapred-reduce-tasks-speculative-execution.png" alt-text="' Hive mapred verminderen taken speculatieve uitvoering '" border="true":::
 
 ## <a name="tune-dynamic-partitions"></a>Dynamische partities afstemmen
 
@@ -202,7 +202,7 @@ Met de lokale modus kunnen componenten alle taken van een taak op één computer
 
 Als u de lokale modus wilt inschakelen, voegt `hive.exec.mode.local.auto` u de para meter toe aan het aangepaste Hive-site paneel, zoals wordt beschreven in stap 3 van de sectie [tussenliggende compressie inschakelen](#enable-intermediate-compression) .
 
-![Modus voor Apache Hive uitvoering lokale automatisch](./media/optimize-hive-ambari/hive-exec-mode-local-auto.png)
+:::image type="content" source="./media/optimize-hive-ambari/hive-exec-mode-local-auto.png" alt-text="Modus voor Apache Hive uitvoering lokale automatisch" border="true":::
 
 ## <a name="set-single-mapreduce-multigroup-by"></a>Eén MapReduce instellen op meerdere groepen
 
@@ -210,7 +210,7 @@ Als deze eigenschap is ingesteld op True, genereert een query met meerdere groep
 
 Als u dit gedrag wilt inschakelen, voegt `hive.multigroupby.singlereducer` u de para meter toe aan het deel venster aangepaste Hive-site, zoals wordt beschreven in stap 3 van de sectie [tussenliggende compressie inschakelen](#enable-intermediate-compression) .
 
-![Hive-set met één MapReduce meerdere groepen op](./media/optimize-hive-ambari/hive-multigroupby-singlereducer.png)
+:::image type="content" source="./media/optimize-hive-ambari/hive-multigroupby-singlereducer.png" alt-text="Hive-set met één MapReduce meerdere groepen op" border="true":::
 
 ## <a name="additional-hive-optimizations"></a>Aanvullende Hive-optimalisaties
 

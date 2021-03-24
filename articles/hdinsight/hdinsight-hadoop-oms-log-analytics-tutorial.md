@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020, devx-track-azurecli, devx-track-azurepowershell
 ms.date: 05/13/2020
-ms.openlocfilehash: b81a2021cabefd9587d448aa236e7e87bc254741
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 0dfa89f50dedad41394cb77f1cca9b2dd3a65308
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100590816"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104865533"
 ---
 # <a name="use-azure-monitor-logs-to-monitor-hdinsight-clusters"></a>Azure Monitor-logboeken gebruiken om HDInsight-clusters te bewaken
 
@@ -58,7 +58,7 @@ In deze sectie configureert u een bestaand HDInsight Hadoop-cluster voor het bew
 
 1. Selecteer **Opslaan**.  Het duurt enkele minuten om de instelling op te slaan.
 
-    ![Bewaking voor HDInsight-clusters inschakelen](./media/hdinsight-hadoop-oms-log-analytics-tutorial/azure-portal-monitoring.png "Bewaking voor HDInsight-clusters inschakelen")
+    :::image type="content" source="./media/hdinsight-hadoop-oms-log-analytics-tutorial/azure-portal-monitoring.png" alt-text="Bewaking voor HDInsight-clusters inschakelen":::
 
 ## <a name="enable-azure-monitor-using-azure-powershell"></a>Azure Monitor met behulp van Azure PowerShell inschakelen
 
@@ -138,7 +138,7 @@ Beschik bare HDInsight-oplossingen:
 
 Zie [beheer oplossingen in azure](../azure-monitor/insights/solutions.md#install-a-monitoring-solution)voor instructies voor beheer oplossingen. Als u wilt experimenteren, installeert u een HDInsight Hadoop-bewakings oplossing. Wanneer u klaar bent, ziet u een **HDInsightHadoop** -tegel die wordt weer gegeven onder **samen vatting**. Selecteer de tegel **HDInsightHadoop** . De HDInsightHadoop-oplossing ziet er als volgt uit:
 
-![Weer gave HDInsight-bewakings oplossing](media/hdinsight-hadoop-oms-log-analytics-tutorial/hdinsight-oms-hdinsight-hadoop-monitoring-solution.png)
+:::image type="content" source="media/hdinsight-hadoop-oms-log-analytics-tutorial/hdinsight-oms-hdinsight-hadoop-monitoring-solution.png" alt-text="Weer gave HDInsight-bewakings oplossing":::
 
 Omdat het cluster een gloed nieuw cluster is, worden in het rapport geen activiteiten weer gegeven.
 

@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: conceptual
 ms.date: 11/23/2020
-ms.openlocfilehash: 48966e481f9cf8796c866b5c15a4e2a8616eade7
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: e02ad9187743603d46259d70965e49d6839ecd71
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "97695862"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104949835"
 ---
 # <a name="azure-purview-deployment-best-practices"></a>Aanbevolen procedures voor de implementatie van Azure controle sfeer liggen
 
@@ -91,7 +91,7 @@ Enkele belang rijke belanghebbenden die u mogelijk wilt gebruiken:
 |**Gegevensanalist**|Kan een bedrijfs probleem melden en gegevens analyseren zodat leidinggevenden zakelijke beslissingen kunnen nemen|
 |**Data architect**|Data bases ontwerpen voor bedrijfskritische line-of-Business-Apps, samen met het ontwerpen en implementeren van gegevens beveiliging|
 |**Data Engineer**|De gegevens stack actief maken en onderhouden, gegevens uit verschillende bronnen ophalen, gegevens integreren en voorbereiden, gegevens pijplijnen instellen|
-|**Data scientist**|Bouw analytische modellen en stel gegevens producten in die moeten worden geopend door Api's|
+|**Data Scientist**|Bouw analytische modellen en stel gegevens producten in die moeten worden geopend door Api's|
 |**DB-beheerder**|Aan data base gerelateerde incidenten en aanvragen binnen Service Level Agreements (Sla's) vastleggen en oplossen; Kan gegevens pijplijnen instellen|
 |**DevOps**|De ontwikkeling en implementatie van line-of-business-toepassingen; kan schrijf scripts en indelings mogelijkheden bevatten|
 |**Specialist gegevens beveiliging**|Evalueer de algehele netwerk-en gegevens beveiliging, die betrekking heeft op gegevens die beschikbaar zijn in en uit controle sfeer liggen|
@@ -150,7 +150,7 @@ In controle sfeer liggen zijn er verschillende gebieden waar de catalogus beheer
 
 ### <a name="plan-and-implement-different-integration-points-with-purview"></a>Plannen en implementeren van verschillende integratie punten met controle sfeer liggen
 
-Waarschijnlijk heeft een rijpe organisatie al een bestaande Data Catalog. De belang rijke vraag is of u de bestaande technologie wilt blijven gebruiken en met controle sfeer liggen wilt synchroniseren. Met controle sfeer liggen kunt u informatie publiceren via de Atlas-Api's, maar deze zijn niet bedoeld om dit soort scenario te ondersteunen. Sommige organisaties kunnen het gebruik van controle sfeer liggen in eerste instantie zelf bepalen door te migreren over de bestaande gegevensassets van andere oplossingen voor gegevens catalogi. Dit kan worden gedaan via de Atlas Api's als een eenrichtings benadering. Voor synchronisatie tussen verschillende catalogus technologieën mag niet worden overwogen in het ontwerp voor de lange termijn. Wat er meestal gebeurt, is dat elke bedrijfs eenheid de bestaande oplossingen voor oudere gegevensassets blijft gebruiken terwijl controle sfeer liggen wordt gebruikt om te scannen op nieuwere gegevens bronnen.
+Waarschijnlijk heeft een rijpe organisatie al een bestaande Data Catalog. De belangrijkste vraag is of u de bestaande technologie kunt blijven gebruiken en synchroniseren met controle sfeer liggen of niet. Controle sfeer liggen biedt Atlas REST-Api's voor het afhandelen van synchronisatie met bestaande producten in een organisatie. Atlas-Api's bieden een krachtig en flexibel mechanisme voor het afhandelen van zowel push-als pull-scenario's. Informatie kan worden gepubliceerd naar controle sfeer liggen met behulp van Atlas-Api's voor Boots trap of voor het pushen van de meest recente updates van een ander systeem naar controle sfeer liggen. De informatie die beschikbaar is in controle sfeer liggen kan ook worden gelezen met behulp van Atlas-Api's en vervolgens weer worden gesynchroniseerd met bestaande producten. 
 
 Voor andere integratie scenario's zoals tickets, aangepaste gebruikers interface en indeling kunt u gebruikmaken van Atlas Api's en Kafka-eind punten. Over het algemeen zijn er vier integratie punten met controle sfeer liggen:
 

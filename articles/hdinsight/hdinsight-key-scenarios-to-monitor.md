@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 03/09/2020
-ms.openlocfilehash: f910054c803093eb62db494a596219c50791d136
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 5e6bec71c44d7fbcf2841e087af9887d99c94e6f
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98945349"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104867573"
 ---
 # <a name="monitor-cluster-performance-in-azure-hdinsight"></a>Cluster prestaties in azure HDInsight bewaken
 
@@ -33,11 +33,11 @@ Meld u aan bij de [Ambari-webgebruikersinterface](hdinsight-hadoop-manage-ambari
 
 U ziet ook kolommen met het aantal kernen en de hoeveelheid RAM-geheugen voor elke host, en het schijf gebruik en de gemiddelde belasting.
 
-![Overzicht van Apache Ambari hosts-tabblad](./media/hdinsight-key-scenarios-to-monitor/apache-ambari-hosts-tab.png)
+:::image type="content" source="./media/hdinsight-key-scenarios-to-monitor/apache-ambari-hosts-tab.png" alt-text="Overzicht van Apache Ambari hosts-tabblad":::
 
 Selecteer een van de hostnamen voor een gedetailleerde weer gave van de onderdelen die worden uitgevoerd op die host en de metrische gegevens. De metrische gegevens worden weer gegeven als een selecteerbaar tijd lijn van CPU-gebruik, belasting, schijf gebruik, geheugen gebruik, netwerk gebruik en aantal processen.
 
-![Overzicht van Apache Ambari host-Details](./media/hdinsight-key-scenarios-to-monitor/apache-ambari-host-details.png)
+:::image type="content" source="./media/hdinsight-key-scenarios-to-monitor/apache-ambari-host-details.png" alt-text="Overzicht van Apache Ambari host-Details":::
 
 Zie [HDInsight-clusters beheren met de Web-UI van Apache Ambari](hdinsight-hadoop-manage-ambari.md) voor meer informatie over het instellen van waarschuwingen en het weer geven van metrische gegevens.
 
@@ -53,19 +53,19 @@ Wanneer meerdere tenants een groot cluster delen, is er een competitie voor de r
 
 Met GARENs kunnen we resources toewijzen aan deze wacht rijen en kunt u zien of al uw beschik bare resources zijn toegewezen. Als u informatie over uw wacht rijen wilt weer geven, meldt u zich aan bij de Ambari-webgebruikersinterface en selecteert u vervolgens **garen wachtrij beheer** in het bovenste menu.
 
-![Apache Ambari GARENs-wachtrij beheer](./media/hdinsight-key-scenarios-to-monitor/apache-yarn-queue-manager.png)
+:::image type="content" source="./media/hdinsight-key-scenarios-to-monitor/apache-yarn-queue-manager.png" alt-text="Apache Ambari GARENs-wachtrij beheer":::
 
 Op de pagina GARENs Queue Manager wordt aan de linkerkant een lijst met uw wacht rijen weer gegeven, samen met het percentage toegewezen capaciteit.
 
-![Pagina Details van de garen-wachtrij beheerder](./media/hdinsight-key-scenarios-to-monitor/yarn-queue-manager-details.png)
+:::image type="content" source="./media/hdinsight-key-scenarios-to-monitor/yarn-queue-manager-details.png" alt-text="Pagina Details van de garen-wachtrij beheerder":::
 
 Voor een gedetailleerdere weer gave van uw wacht rijen, in het Ambari-dash board selecteert u de service **garen** in de lijst aan de linkerkant. Selecteer vervolgens in het vervolg keuzemenu **snelle koppelingen** de **gebruikers interface van Resource Manager** onder het actieve knoop punt.
 
-![Koppelingen in het Resource Manager-menu van de gebruikers interface](./media/hdinsight-key-scenarios-to-monitor/resource-manager-ui-menu-link.png)
+:::image type="content" source="./media/hdinsight-key-scenarios-to-monitor/resource-manager-ui-menu-link.png" alt-text="Koppelingen in het Resource Manager-menu van de gebruikers interface":::
 
 Selecteer in de gebruikers interface van Resource Manager **scheduler** in het menu aan de linkerkant. U ziet een lijst met uw wacht rijen onder *toepassings wachtrijen*. Hier ziet u de capaciteit die voor elk van uw wacht rijen wordt gebruikt, hoe goed de taken worden gedistribueerd en of alle taken zijn beperkt tot een resource.
 
-![Menu van Apache HAdoop Resource Manager-gebruikers interface](./media/hdinsight-key-scenarios-to-monitor/resource-manager-ui-menu.png)
+:::image type="content" source="./media/hdinsight-key-scenarios-to-monitor/resource-manager-ui-menu.png" alt-text="Menu van Apache HAdoop Resource Manager-gebruikers interface":::
 
 ## <a name="storage-throttling"></a>Opslagbeperking
 

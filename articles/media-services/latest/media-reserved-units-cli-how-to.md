@@ -2,29 +2,27 @@
 title: Media gereserveerde eenheden schalen (MRUs) CLI
 description: In dit onderwerp wordt beschreven hoe u CLI gebruikt om media verwerking met Azure Media Services te schalen.
 services: media-services
-documentationcenter: ''
 author: IngridAtMicrosoft
 manager: femila
-editor: ''
 ms.service: media-services
-ms.workload: media
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: how-to
-ms.date: 09/30/2020
+ms.date: 03/22/2021
 ms.author: inhenkel
-ms.openlocfilehash: a07c4a20b854e09daf3b320b8c99757ca99b2578
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 06c0c6333b84697415ef598d4c5e853d5c006f08
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102213807"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104870157"
 ---
 # <a name="how-to-scale-media-reserved-units"></a>Gereserveerde media-eenheden schalen
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Dit artikel laat u zien hoe u gereserveerde media-eenheden (MRSs) kunt schalen voor snellere code ring.
+
+> [!WARNING]
+> Deze opdracht werkt niet meer voor Media Services-accounts die zijn gemaakt met de 2020-05-01-versie van de API of hoger. Voor deze accounts zijn gereserveerde media-eenheden niet meer nodig omdat het systeem automatisch omhoog en omlaag wordt geschaald op basis van de belasting. Als u de optie voor het beheren van MRUs in de Azure Portal niet ziet, gebruikt u een account dat is gemaakt met de 2020-05-01-API of hoger.
 
 ## <a name="prerequisites"></a>Vereisten
 

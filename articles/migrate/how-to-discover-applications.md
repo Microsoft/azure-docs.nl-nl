@@ -6,21 +6,18 @@ ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 03/18/2021
-ms.openlocfilehash: 47ea06fa2143f9a5dc5808ccb98fc80c87fefd93
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.openlocfilehash: d68c3729e8a63f8342cd51b62413aec3276c6165
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104786699"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104871007"
 ---
 # <a name="discover-installed-software-inventory-and-sql-server-instances-and-databases"></a>Geïnstalleerde software-inventaris en SQL Server instanties en data bases detecteren
 
 In dit artikel wordt beschreven hoe u geïnstalleerde software-inventarisatie en SQL Server instanties en data bases detecteert op servers die in uw VMware-omgeving worden uitgevoerd, met behulp van Azure Migrate: hulp programma voor detectie en evaluatie.
 
 Door software-inventarisatie uit te voeren, kunt u een pad voor de migratie naar Azure identificeren en aanpassen voor uw workloads. Software-inventarisatie gebruikt het Azure Migrate apparaat om detectie uit te voeren met behulp van Server referenties. Het is volledig zonder agent: er zijn geen agents geïnstalleerd op de servers om deze gegevens te verzamelen.
-
-> [!NOTE]
-> Software-inventarisatie is momenteel als preview beschikbaar voor servers die alleen worden uitgevoerd in de VMware-omgeving en is beperkt tot alleen detectie. Momenteel bieden we geen evaluatie op basis van toepassingen.<br/> Detectie en evaluatie van SQL Server instanties en data bases die worden uitgevoerd in uw VMware-omgeving is nu beschikbaar als preview-versie. Als u deze functie wilt proberen, gebruikt u [**deze koppeling**](https://aka.ms/AzureMigrate/SQL) om een project te maken in de regio **Australië - oost**. Als u al een project in Australië-oost hebt en u deze functie wilt proberen, zorgt u ervoor dat u aan deze [**vereisten**](how-to-discover-sql-existing-project.md) voldoet in de portal.
 
 ## <a name="before-you-start"></a>Voordat u begint
 

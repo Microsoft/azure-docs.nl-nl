@@ -7,12 +7,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 09/09/2020
-ms.openlocfilehash: f0673523c74a0ea298e7d2d520952c3e98877e91
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: c950903522d42b3c279cb89f3a6031043fd49bf3
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98930039"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104868797"
 ---
 # <a name="manage-spark-application-dependencies"></a>Spark-toepassingsafhankelijkheden beheren
 
@@ -43,7 +43,7 @@ U gebruikt de `%%configure` Magic om het notitie blok te configureren voor het g
 
 Nadat u het pakket hebt gevonden vanuit de Maven-opslag plaats, moet u de waarden voor **GroupId**, **ArtifactId** en **Version** verzamelen. De drie waarden samen voegen, gescheiden door een dubbele punt (**:**).
 
-   ![Pakket schema samen voegen](./media/apache-spark-manage-dependencies/spark-package-schema.png "Pakket schema samen voegen")
+   :::image type="content" source="./media/apache-spark-manage-dependencies/spark-package-schema.png " alt-text="Pakket schema samen voegen" border="true":::stallatiekopiepakket schema "Border =" True ":::
 
 Zorg ervoor dat de waarden die u verzamelt, overeenkomen met het cluster. In dit geval gebruiken we het Spark Cosmos DB-connector pakket voor scala 2,11 en Spark 2,3 voor HDInsight 3,6 Spark-cluster. Als u het niet zeker weet, voert u `scala.util.Properties.versionString` in code-cel uit in Spark-kernel om de cluster scala-versie op te halen. Voer uit `sc.version` om de versie van het cluster Spark op te halen.
 
@@ -70,7 +70,7 @@ import com.microsoft.azure.cosmosdb.spark._
 ### <a name="use-azure-toolkit-for-intellij"></a>Azure-toolkit voor IntelliJ gebruiken
 [Azure-Toolkit voor IntelliJ-invoeg](./apache-spark-intellij-tool-plugin.md) toepassing biedt UI-ervaring voor het indienen van Spark scala-toepassingen naar een HDInsight-cluster. Het biedt `Referenced Jars` en `Referenced Files` Eigenschappen voor het configureren van jar bibliotheken-paden bij het verzenden van de Spark-toepassing. Zie voor meer informatie over [het gebruik van Azure-Toolkit voor IntelliJ-invoeg toepassing voor HDInsight](./apache-spark-intellij-tool-plugin.md#run-a-spark-scala-application-on-an-hdinsight-spark-cluster).
 
-![Het dialoogvenster voor de verzending van Spark](./media/apache-spark-intellij-tool-plugin/hdi-submit-spark-app-02.png)
+:::image type="content" source="./media/apache-spark-intellij-tool-plugin/hdi-submit-spark-app-02.png" alt-text="Het dialoogvenster voor de verzending van Spark" border="true":::
 
 ## <a name="jar-libs-for-cluster"></a>Jar bibliotheken voor cluster
 In sommige gevallen wilt u mogelijk de jar-afhankelijkheden op cluster niveau configureren zodat elke toepassing standaard met dezelfde afhankelijkheden kan worden ingesteld. De aanpak is om uw jar-paden toe te voegen aan Spark-stuur programma en het pad naar de uitvoerder klasse.
@@ -89,11 +89,11 @@ In sommige gevallen wilt u mogelijk de jar-afhankelijkheden op cluster niveau co
     spark.executor.extraClassPath=/usr/libs/sparklibs/*
     ```
 
-   ![Standaard configuratie van Spark wijzigen](./media/apache-spark-manage-dependencies/change-spark-default-config.png "Standaard configuratie van Spark wijzigen")
+   :::image type="content" source="./media/apache-spark-manage-dependencies/change-spark-default-config.png " alt-text="Wijzigen Spark standaard configuratie" border="true":::QL config "Border =" True ":::
 
 3. Sla de gewijzigde configuraties op en start betrokken services opnieuw op.
 
-   ![Services die van invloed zijn op opnieuw opstarten](./media/apache-spark-manage-dependencies/restart-impacted-services.png "Services die van invloed zijn op opnieuw opstarten")
+   Betrokken :::image type="content" source="./media/apache-spark-manage-dependencies/restart-impacted-services.png " alt-text="Services worden opnieuw opgestart" border="true":::: Ted-Services "Border =" True ",::
 
 U kunt de stappen automatiseren met [script acties](../hdinsight-hadoop-customize-cluster-linux.md). Script actie voor het [toevoegen van aangepaste bibliotheken met hive](https://hdiconfigactions.blob.core.windows.net/linuxsetupcustomhivelibsv01/setup-customhivelibs-v01.sh) is een goede verwijzing. Wanneer u de configuratie van Spark-service wijzigt, moet u ervoor zorgen dat u Ambari-Api's gebruikt in plaats van de configuratie bestanden rechtstreeks te wijzigen. 
 

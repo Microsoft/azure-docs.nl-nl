@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 ms.custom: seoapr2020
 ms.date: 04/21/2020
-ms.openlocfilehash: 7158e9f82ee01b320d448baeab51fcfd122be00d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 73b958964db2d0b308dd6dfc34024d61ce5ad8af
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98944681"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104871432"
 ---
 # <a name="troubleshoot-script-actions-in-azure-hdinsight"></a>Problemen met script acties in azure HDInsight oplossen
 
@@ -26,11 +26,11 @@ U kunt de Web-UI van Apache Ambari gebruiken om informatie te bekijken die is va
 
 1. Selecteer de **OPS** -vermelding in de balk boven aan de pagina. Er wordt een lijst weer gegeven met de huidige en vorige bewerkingen die op het cluster zijn uitgevoerd via Ambari.
 
-    ![Ambari Web UI-balk met OPS geselecteerd](./media/troubleshoot-script-action/hdi-apache-ambari-nav.png)
+    :::image type="content" source="./media/troubleshoot-script-action/hdi-apache-ambari-nav.png" alt-text="Ambari Web UI-balk met OPS geselecteerd" border="true":::
 
 1. Zoek de vermeldingen met **\_ customscriptaction** uit in de kolom **bewerkingen** . Deze vermeldingen worden gemaakt wanneer de script acties worden uitgevoerd.
 
-    ![Acties voor Apache Ambari-script actie](./media/troubleshoot-script-action/ambari-script-action.png)
+    :::image type="content" source="./media/troubleshoot-script-action/ambari-script-action.png" alt-text="Acties voor Apache Ambari-script actie" border="true":::
 
     Als u de **stdout** -en **stderr** -uitvoer wilt weer geven, selecteert u de vermelding **run\customscriptaction** en zoomt u in op de koppelingen. Deze uitvoer wordt gegenereerd wanneer het script wordt uitgevoerd en kan nuttige informatie bevatten.
 
@@ -40,7 +40,7 @@ Als het maken van een cluster mislukt vanwege een script fout, worden de logboek
 
 * De opslag logboeken zijn beschikbaar op `\STORAGE_ACCOUNT_NAME\DEFAULT_CONTAINER_NAME\custom-scriptaction-logs\CLUSTER_NAME\DATE` .
 
-    ![Script actie logboeken](./media/troubleshoot-script-action/script-action-logs-in-storage.png)
+    :::image type="content" source="./media/troubleshoot-script-action/script-action-logs-in-storage.png" alt-text="Script actie logboeken" border="true":::
 
     In deze map worden de logboeken afzonderlijk geordend voor **hoofd knooppunt**, **worker node** en **Zookeeper node**. Zie de volgende voorbeelden:
 

@@ -7,12 +7,12 @@ ms.service: attestation
 ms.topic: overview
 ms.date: 08/31/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 6a5460a691658bda1cd60e503be8c98433c9c343
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: de003025e98109599ecd69c0459e29950c9bd1fd
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101720151"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104950566"
 ---
 # <a name="examples-of-an-attestation-policy"></a>Voorbeelden van een attestation-beleid
 
@@ -35,9 +35,9 @@ c:[type=="x-ms-sgx-mrsigner"] => issue(type="<custom-name>", value=c.value);
 };
 
 ```
-Zie [claim sets](/azure/attestation/claim-sets)voor meer informatie over de binnenkomende claims die door Azure Attestation worden gegenereerd. Binnenkomende claims kunnen door auteurs van beleid worden gebruikt om autorisatie regels in een aangepast beleid te definiëren. 
+Zie [claim sets](./claim-sets.md)voor meer informatie over de binnenkomende claims die door Azure Attestation worden gegenereerd. Binnenkomende claims kunnen door auteurs van beleid worden gebruikt om autorisatie regels in een aangepast beleid te definiëren. 
 
-De sectie uitgifte regels is niet verplicht. Deze sectie kan door de gebruikers worden gebruikt voor het genereren van extra uitgaande claims in het Attestation-token met aangepaste namen. Zie [claim sets](/azure/attestation/claim-sets)voor meer informatie over de uitgaande claims die door de service in de Attestation-token worden gegenereerd.
+De sectie uitgifte regels is niet verplicht. Deze sectie kan door de gebruikers worden gebruikt voor het genereren van extra uitgaande claims in het Attestation-token met aangepaste namen. Zie [claim sets](./claim-sets.md)voor meer informatie over de uitgaande claims die door de service in de Attestation-token worden gegenereerd.
 
 ## <a name="default-policy-for-an-sgx-enclave"></a>Standaardbeleid voor een SGX-enclave
 
@@ -59,7 +59,7 @@ issuancerules
 };
 ```
 
-Claims die worden gebruikt in het standaard beleid, worden beschouwd als afgeschaft, maar worden wel volledig ondersteund en blijven in de toekomst opgenomen. Het is raadzaam om de niet-afgeschafte claim namen te gebruiken. Zie [claim sets](/azure/attestation/claim-sets)voor meer informatie over de aanbevolen claim namen. 
+Claims die worden gebruikt in het standaard beleid, worden beschouwd als afgeschaft, maar worden wel volledig ondersteund en blijven in de toekomst opgenomen. Het is raadzaam om de niet-afgeschafte claim namen te gebruiken. Zie [claim sets](./claim-sets.md)voor meer informatie over de aanbevolen claim namen. 
 
 ## <a name="sample-custom-policy-to-support-multiple-sgx-enclaves"></a>Voor beeld van een aangepast beleid ter ondersteuning van meerdere SGX-enclaves
 

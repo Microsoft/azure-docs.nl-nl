@@ -6,13 +6,13 @@ author: linda33wj
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 02/18/2020
-ms.openlocfilehash: 16126e8b9e5c34529016018273edcf65a31e2280
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.date: 03/24/2020
+ms.openlocfilehash: f343cf820632c8b53f74a938a039820ea4f56eac
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100379978"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105027394"
 ---
 # <a name="copy-data-to-or-from-azure-data-explorer-by-using-azure-data-factory"></a>Gegevens kopiëren van of naar Azure Data Explorer met behulp van Azure Data Factory
 
@@ -52,7 +52,14 @@ De volgende secties bevatten informatie over eigenschappen die worden gebruikt v
 
 ## <a name="linked-service-properties"></a>Eigenschappen van gekoppelde service
 
-De Azure Data Explorer-connector maakt gebruik van Service-Principal-verificatie. Volg deze stappen om een service-principal op te halen en machtigingen te verlenen:
+De Azure Data Explorer-connector ondersteunt de volgende verificatie typen. Zie de betreffende secties voor meer informatie:
+
+- [Service-Principal-verificatie](#service-principal-authentication)
+- [Beheerde identiteiten voor Azure-bronnen verificatie](#managed-identity)
+
+### <a name="service-principal-authentication"></a>Verificatie van service-principal
+
+Als u Service-Principal-verificatie wilt gebruiken, volgt u deze stappen om een service-principal op te halen en machtigingen te verlenen:
 
 1. Registreer een toepassings entiteit in Azure Active Directory door de stappen te volgen in [uw toepassing registreren bij een Azure AD-Tenant](../storage/common/storage-auth-aad-app.md#register-your-application-with-an-azure-ad-tenant). Noteer de volgende waarden, die u gebruikt om de gekoppelde service te definiëren:
 
@@ -66,7 +73,7 @@ De Azure Data Explorer-connector maakt gebruik van Service-Principal-verificatie
     - Ken **als Sink** ten minste de rol van **database opname** toe aan uw data base
 
 >[!NOTE]
->Wanneer u de Data Factory gebruikers interface gebruikt om te schrijven, wordt uw aanmeldings gebruikers account gebruikt voor het weer geven van Azure Data Explorer clusters, data bases en tabellen. Voer de naam hand matig in als u niet bent gemachtigd voor deze bewerkingen.
+>Wanneer u de Data Factory gebruikers interface gebruikt om te schrijven, wordt uw aanmeldings gebruikers account standaard gebruikt om Azure Data Explorer clusters, data bases en tabellen weer te geven. U kunt ervoor kiezen om de objecten weer te geven met behulp van de Service-Principal door te klikken op de vervolg keuzelijst naast de knop Vernieuwen of door de naam hand matig in te voeren als u geen machtiging hebt voor deze bewerkingen.
 
 De volgende eigenschappen worden ondersteund voor de gekoppelde Azure Data Explorer-service:
 
@@ -78,8 +85,9 @@ De volgende eigenschappen worden ondersteund voor de gekoppelde Azure Data Explo
 | tenant | Geef de Tenant gegevens op (domein naam of Tenant-ID) waaronder uw toepassing zich bevindt. Dit staat bekend als ' Authority-ID ' in [Kusto Connection String](/azure/kusto/api/connection-strings/kusto#application-authentication-properties). U kunt deze ophalen door de muis aanwijzer in de rechter bovenhoek van de Azure Portal aan te wijzen. | Ja |
 | servicePrincipalId | Geef de client-ID van de toepassing op. Dit wordt ook wel ' AAD-toepassings client-ID ' genoemd in [Kusto Connection String](/azure/kusto/api/connection-strings/kusto#application-authentication-properties). | Ja |
 | servicePrincipalKey | Geef de sleutel van de toepassing op. Dit wordt aangeduid als ' AAD-toepassings sleutel ' in [Kusto Connection String](/azure/kusto/api/connection-strings/kusto#application-authentication-properties). Markeer dit veld als een **SecureString** om het veilig op te slaan in Data Factory of om te [verwijzen naar beveiligde gegevens die zijn opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Ja |
+| connectVia | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. U kunt de Azure Integration runtime of een zelf-hostende Integration runtime gebruiken als uw gegevens archief zich in een particulier netwerk bevindt. Als dat niet is opgegeven, wordt de standaard Azure Integration runtime gebruikt. |Nee |
 
-**Voor beeld van eigenschappen van gekoppelde service:**
+**Voor beeld: verificatie met Service-Principal-sleutel**
 
 ```json
 {
@@ -95,6 +103,44 @@ De volgende eigenschappen worden ondersteund voor de gekoppelde Azure Data Explo
                 "type": "SecureString",
                 "value": "<service principal key>"
             }
+        }
+    }
+}
+```
+
+### <a name="managed-identities-for-azure-resources-authentication"></a><a name="managed-identity"></a> Beheerde identiteiten voor Azure-bronnen verificatie
+
+Voer de volgende stappen uit om machtigingen te verlenen voor het gebruik van beheerde identiteiten voor Azure-resource verificatie:
+
+1. [Haal de Data Factory beheerde identiteits gegevens](data-factory-service-identity.md#retrieve-managed-identity) op door de waarde van de **beheerde ID-object-id** die samen met uw fabriek is gegenereerd, te kopiëren.
+
+2. Verleen de beheerde identiteit de juiste machtigingen in azure Data Explorer. Zie [Azure Data Explorer-database machtigingen beheren](/azure/data-explorer/manage-database-permissions) voor gedetailleerde informatie over rollen en machtigingen en over het beheren van machtigingen. Over het algemeen moet u het volgende doen:
+
+    - Geef ten minste de rol van **Database Viewer** voor uw Data Base op **als bron**.
+    - Ken **als Sink** ten minste de rol van **database opname** toe aan uw data base
+
+>[!NOTE]
+>Wanneer u de Data Factory gebruikers interface gebruikt om te schrijven, wordt uw aanmeldings gebruikers account gebruikt voor het weer geven van Azure Data Explorer clusters, data bases en tabellen. Voer de naam hand matig in als u niet bent gemachtigd voor deze bewerkingen.
+
+De volgende eigenschappen worden ondersteund voor de gekoppelde Azure Data Explorer-service:
+
+| Eigenschap | Beschrijving | Vereist |
+|:--- |:--- |:--- |
+| type | De eigenschap **type** moet worden ingesteld op **AzureDataExplorer**. | Ja |
+| endpoint | Eind punt-URL van het Azure Data Explorer-cluster, met de indeling als `https://<clusterName>.<regionName>.kusto.windows.net` . | Ja |
+| database | De naam van de data base. | Ja |
+| connectVia | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. U kunt de Azure Integration runtime of een zelf-hostende Integration runtime gebruiken als uw gegevens archief zich in een particulier netwerk bevindt. Als dat niet is opgegeven, wordt de standaard Azure Integration runtime gebruikt. |Nee |
+
+**Voor beeld: beheerde identiteits verificatie gebruiken**
+
+```json
+{
+    "name": "AzureDataExplorerLinkedService",
+    "properties": {
+        "type": "AzureDataExplorer",
+        "typeProperties": {
+            "endpoint": "https://<clusterName>.<regionName>.kusto.windows.net ",
+            "database": "<database name>",
         }
     }
 }

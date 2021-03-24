@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: philmea
-ms.openlocfilehash: 0cee343e6769c815ecfb4b9c791783bd246caaac
-ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
+ms.openlocfilehash: 458c93fd3e13a958137c762a0979af918a70d930
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/24/2021
-ms.locfileid: "104953874"
+ms.locfileid: "105023033"
 ---
 # <a name="extend-azure-iot-central-with-custom-analytics-using-azure-databricks"></a>Azure IoT Central uitbreiden met aangepaste analyses met behulp van Azure Databricks
 
@@ -91,7 +91,7 @@ U kunt een IoT Central-toepassing configureren om voortdurend telemetrie te expo
 1. Ga in het Azure Portal naar uw Event Hubs-naam ruimte en selecteer **+ Event hub**.
 1. Geef een naam op voor uw Event Hub **centralexport**.
 1. Selecteer **centralexport** in de lijst met Event hubs in uw naam ruimte. Kies vervolgens **beleid voor gedeelde toegang**.
-1. Selecteer **+ Toevoegen**. Maak een beleid met de naam **listen** met de **listener** -claim.
+1. Selecteer **+ Toevoegen**. Maak een beleid met de naam **SendListen** met de claims **Send** en **listing** .
 1. Wanneer het beleid gereed is, selecteert u het in de lijst en kopieert u vervolgens de **verbindings reeks-primaire sleutel** waarde.
 1. Noteer deze connection string. u kunt dit later doen wanneer u uw Databricks-notebook configureert om te lezen van de Event Hub.
 
@@ -99,42 +99,46 @@ De naam ruimte van uw Event Hubs ziet eruit als in de volgende scherm afbeelding
 
 :::image type="content" source="media/howto-create-custom-analytics/event-hubs-namespace.png" alt-text="afbeelding van Event Hubs naam ruimte.":::
 
-## <a name="configure-export-in-iot-central-and-create-a-new-destination"></a>Exporteren in IoT Central configureren en een nieuwe bestemming maken
+## <a name="configure-export-in-iot-central"></a>Exporteren configureren in IoT Central
 
-Ga op de website van [Azure IOT Central Application Manager](https://aka.ms/iotcentral) naar de IOT Central toepassing die u hebt gemaakt op basis van de contoso-sjabloon. In deze sectie configureert u de toepassing voor het streamen van de telemetrie van de gesimuleerde apparaten naar uw Event Hub. Het exporteren configureren:
+In deze sectie configureert u de toepassing voor het streamen van telemetrie van de gesimuleerde apparaten naar uw Event Hub.
 
-1. Ga naar de pagina voor het **exporteren van gegevens** en selecteer **+ nieuwe export**.
-1. Selecteer **een bestemming maken** voordat u het eerste venster voltooit.
+Ga op de website van [Azure IOT Central Application Manager](https://aka.ms/iotcentral) naar de IOT Central toepassing die u eerder hebt gemaakt. Als u de export wilt configureren, maakt u eerst een doel:
 
-Het venster ziet er als volgt uit.  
+1. Ga naar de pagina voor het **exporteren van gegevens** en selecteer vervolgens **bestemmingen**.
+1. Selecteer **+ nieuwe bestemming**.
+1. Gebruik de waarden in de volgende tabel om een doel te maken:
 
-:::image type="content" source="media/howto-create-custom-analytics/data-export-2.png" alt-text="afbeelding van de configuratie van de gegevens export bestemming.":::
+    | Instelling | Waarde |
+    | ----- | ----- |
+    | Doel naam | Telemetrie-Event Hub |
+    | Doeltype | Azure Event Hubs |
+    | Verbindingsreeks | De Event Hub connection string u eerder een notitie hebt gemaakt |
 
-3. Voer de volgende waarden in:
+    De **Event hub** wordt weer gegeven als **centralexport**.
 
-| Instelling | Waarde |
-| ------- | ----- |
-| Doel naam | De doel naam |
-| Doel type | Azure Event Hubs |
-| Verbindingsreeks| De Event Hub connection string u eerder een notitie hebt gemaakt. | 
-| Event Hub| De naam van de Event hub|
+    :::image type="content" source="media/howto-create-custom-analytics/data-export-1.png" alt-text="Scherm opname van gegevens export bestemming":::
 
-4. Klik op **maken** om te volt ooien.
+1. Selecteer **Opslaan**.
 
-5. Gebruik de volgende instellingen om de export te configureren:
+De export definitie maken:
+
+1. Ga naar de pagina voor het **exporteren van gegevens** en selecteer **+ Nieuw exporteren**.
+
+1. Gebruik de waarden in de volgende tabel om de export te configureren:
 
     | Instelling | Waarde |
     | ------- | ----- |
-    | Voer een export naam in | eventhubexport |
+    | Export naam | Event hub exporteren |
     | Ingeschakeld | Uit |
-    | Gegevens| Telemetrie selecteren | 
-    | Bestemmingen| Maak een bestemming, zoals hieronder wordt weer gegeven, voor uw export en selecteer deze in de vervolg keuzelijst bestemming. |
+    | Type gegevens dat moet worden geëxporteerd | Telemetrie |
+    | Bestemmingen | Selecteer **+ bestemming** en selecteer vervolgens **telemetrie Event hub** |
 
-:::image type="content" source="media/howto-create-custom-analytics/data-export-1.png" alt-text="Scherm afbeelding van de configuratie van de gegevens export bestemming.":::
+1. Selecteer **Opslaan**.
 
-6. Wanneer u klaar bent, selecteert u **Opslaan**.
+    :::image type="content" source="media/howto-create-custom-analytics/data-export-2.png" alt-text="Scherm opname van definitie van gegevens export":::
 
-Wacht tot de export status **actief** is voordat u doorgaat.
+Wacht totdat de export status **in orde** is op de pagina voor het **exporteren van gegevens** voordat u doorgaat.
 
 ## <a name="configure-databricks-workspace"></a>Databricks-werk ruimte configureren
 

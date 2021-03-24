@@ -7,12 +7,12 @@ ms.service: azure-percept
 ms.topic: how-to
 ms.date: 02/18/2021
 ms.custom: template-how-to
-ms.openlocfilehash: 826759907bfe5ec3359bf5c9125909466372c68f
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 313ea98da0426af945dfdea00d33440ab2955cc7
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104608143"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105023075"
 ---
 # <a name="azure-percept-dk-dev-kit-troubleshooting"></a>Problemen oplossen met Azure percept DK (dev kit)
 
@@ -45,7 +45,7 @@ scp [remote username]@[IP address]:[remote file path]/[file name].txt [local hos
 
 ```[local host file path]``` verwijst naar de locatie op de host-PC waarnaar u het txt-bestand wilt kopiëren. ```[remote username]``` is de SSH-gebruikers naam die u hebt gekozen tijdens de [installatie-ervaring](./quickstart-percept-dk-set-up.md). Als u geen SSH-aanmelding tijdens het OOBE hebt ingesteld, is uw externe gebruikers naam ```root``` .
 
-Raadpleeg de documentatie voor het [oplossen van problemen met het Azure IOT edge-apparaat](https://docs.microsoft.com/azure/iot-edge/troubleshoot)voor meer informatie over de Azure IOT Edge-opdrachten.
+Raadpleeg de documentatie voor het [oplossen van problemen met het Azure IOT edge-apparaat](../iot-edge/troubleshoot.md)voor meer informatie over de Azure IOT Edge-opdrachten.
 
 |Categorie:         |Cmd                    |Functieassembly                  |
 |------------------|----------------------------|---------------------------|
@@ -66,9 +66,9 @@ Raadpleeg de documentatie voor het [oplossen van problemen met het Azure IOT edg
 |Azure IoT Edge          |```sudo journalctl -u iotedge -f``` |de logboeken van de Azure IoT Edge Security Manager weer geven |
 |Azure IoT Edge          |```sudo systemctl restart iotedge``` |de Azure IoT Edge-beveiligings-daemon opnieuw opstarten |
 |Azure IoT Edge          |```sudo iotedge list```           |de geïmplementeerde Azure IoT Edge modules weer geven |
-|Anders             |```df [option] [file]```          |informatie over beschik bare/totale ruimte in opgegeven bestands systeem (en) weer geven |
-|Anders             |`ip route get 1.1.1.1`        |apparaat-IP en interface-informatie weer geven |
-|Anders             |<code>ip route get 1.1.1.1 &#124; awk '{print $7}'</code> <br> `ifconfig [interface]` |alleen IP-adres van apparaat weer geven |
+|Overige             |```df [option] [file]```          |informatie over beschik bare/totale ruimte in opgegeven bestands systeem (en) weer geven |
+|Overige             |`ip route get 1.1.1.1`        |apparaat-IP en interface-informatie weer geven |
+|Overige             |<code>ip route get 1.1.1.1 &#124; awk '{print $7}'</code> <br> `ifconfig [interface]` |alleen IP-adres van apparaat weer geven |
 
 
 De ```journalctl``` Wi-Fi-opdrachten kunnen worden gecombineerd met de volgende opdracht:
@@ -105,5 +105,3 @@ Er zijn drie kleine Led's boven op de draag huis kaart. Er wordt een Cloud picto
 |LED 2 (Wi-Fi)   |Snel blinken |De verificatie is voltooid, de apparaats koppeling wordt uitgevoerd. |
 |LED 2 (Wi-Fi)   |Aan (vast) |De verificatie en koppeling zijn geslaagd; het apparaat is verbonden met een Wi-Fi netwerk. |
 |LED 3           |NA         |LED wordt niet gebruikt. |
-
-

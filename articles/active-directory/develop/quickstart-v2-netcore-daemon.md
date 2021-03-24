@@ -13,12 +13,12 @@ ms.date: 10/05/2020
 ms.author: jmprieur
 ms.reviewer: marsma
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:aspnet-core
-ms.openlocfilehash: 547906e3d3131483468d21623744ac243090ad84
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 1b539c168deab7c1893f071a2453be28310fc132
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104720233"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105022922"
 ---
 # <a name="quickstart-get-a-token-and-call-the-microsoft-graph-api-by-using-a-console-apps-identity"></a>Snelstartgids: een Token ophalen en de Microsoft Graph-API aanroepen met behulp van de identiteit van een console-app
 
@@ -116,12 +116,10 @@ Deze Snelstartgids vereist [.net core 3,1](https://www.microsoft.com/net/downloa
 >    ```
 >    In die code:
 >    - `Enter_the_Application_Id_Here` is de toepassings-ID van de toepassing die u hebt geregistreerd.
+        Ga naar de **overzichts** pagina van de app in het Azure Portal om de waarden voor de toepassings-id en de Directory-id (Tenant) te vinden.
 >    - Vervang door `Enter_the_Tenant_Id_Here` de Tenant-id of Tenant naam (bijvoorbeeld `contoso.microsoft.com` ).
 >    - Vervang door `Enter_the_Client_Secret_Here` het client geheim dat u in stap 1 hebt gemaakt.
-
-> [!div renderon="docs"]
-> > [!TIP]
-> > Ga naar de **overzichts** pagina van de app in het Azure Portal om de waarden voor de toepassings-id en de Directory-id (Tenant) te vinden. Als u een nieuwe sleutel wilt genereren, gaat u naar de pagina **certificaten & geheimen** .
+    Als u een nieuwe sleutel wilt genereren, gaat u naar de pagina **certificaten & geheimen** .
 
 > [!div class="sxs-lookup" renderon="portal"]
 > #### <a name="step-3-admin-consent"></a>Stap 3: toestemming van de beheerder
@@ -150,12 +148,11 @@ https://login.microsoftonline.com/Enter_the_Tenant_Id_Here/adminconsent?client_i
 ```
 
 > [!div renderon="docs"]
->> In die URL:
->> * Vervang door `Enter_the_Tenant_Id_Here` de Tenant-id of Tenant naam (bijvoorbeeld `contoso.microsoft.com` ).
->> * `Enter_the_Application_Id_Here` is de toepassings-ID van de toepassing die u hebt geregistreerd.
+> In die URL:
+> * Vervang door `Enter_the_Tenant_Id_Here` de Tenant-id of Tenant naam (bijvoorbeeld `contoso.microsoft.com` ).
+> * `Enter_the_Application_Id_Here` is de toepassings-ID van de toepassing die u hebt geregistreerd.
 
-> [!NOTE]
-> Mogelijk wordt de fout "AADSTS50011: er is geen antwoord adres geregistreerd voor de toepassing" weer gegeven nadat u toestemming voor de app hebt verleend met behulp van de voor gaande URL. Deze fout treedt op omdat deze toepassing en de URL geen omleidings-URI hebben. U kunt deze negeren.
+Mogelijk wordt de fout "AADSTS50011: er is geen antwoord adres geregistreerd voor de toepassing" weer gegeven nadat u toestemming voor de app hebt verleend met behulp van de voor gaande URL. Deze fout treedt op omdat deze toepassing en de URL geen omleidings-URI hebben. U kunt deze negeren.
 
 > [!div class="sxs-lookup" renderon="portal"]
 > #### <a name="step-4-run-the-application"></a>Stap 4: De toepassing uitvoeren
@@ -169,14 +166,12 @@ Als u Visual Studio of Visual Studio voor Mac gebruikt, drukt u op **F5** om de 
 cd {ProjectFolder}\1-Call-MSGraph\daemon-console
 dotnet run
 ```
-
-> In die code:
-> * `{ProjectFolder}` is de map waar u het zip-bestand hebt uitgepakt. Een voorbeeld is `C:\Azure-Samples\active-directory-dotnetcore-daemon-v2`.
+In die code:
+* `{ProjectFolder}` is de map waar u het zip-bestand hebt uitgepakt. Een voorbeeld is `C:\Azure-Samples\active-directory-dotnetcore-daemon-v2`.
 
 Als resultaat ziet u een lijst met gebruikers in Azure Active Directory.
 
-> [!IMPORTANT]
-> Deze quickstarttoepassing gebruikt een clientgeheim om zichzelf te identificeren als een vertrouwelijke client. Het client geheim wordt toegevoegd als een bestand met tekst zonder opmaak aan uw project bestanden. Uit veiligheids overwegingen wordt u aangeraden een certificaat te gebruiken in plaats van een client geheim voordat u de toepassing als een productie toepassing overweegt. Zie voor meer informatie over het gebruik van een certificaat [deze instructies](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/#variation-daemon-application-using-client-credentials-with-certificates) in de GitHub-opslagplaats voor dit voorbeeld.
+Deze quickstarttoepassing gebruikt een clientgeheim om zichzelf te identificeren als een vertrouwelijke client. Het client geheim wordt toegevoegd als een bestand met tekst zonder opmaak aan uw project bestanden. Uit veiligheids overwegingen wordt u aangeraden een certificaat te gebruiken in plaats van een client geheim voordat u de toepassing als een productie toepassing overweegt. Zie voor meer informatie over het gebruik van een certificaat [deze instructies](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/#variation-daemon-application-using-client-credentials-with-certificates) in de GitHub-opslagplaats voor dit voorbeeld.
 
 ## <a name="more-information"></a>Meer informatie
 Deze sectie bevat een overzicht van de code die vereist is voor het aanmelden van gebruikers. Dit overzicht kan handig zijn om te begrijpen hoe de code werkt, wat de belangrijkste argumenten zijn en hoe u aanmelden toevoegt aan een bestaande .NET core-console toepassing.
@@ -214,11 +209,11 @@ app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
                                           .Build();
 ```
 
-> | Element | Beschrijving |
-> |---------|---------|
-> | `config.ClientSecret` | Het client geheim dat is gemaakt voor de toepassing in de Azure Portal. |
-> | `config.ClientId` | De client-ID van de toepassing die is geregistreerd in de Azure Portal. U kunt deze waarde vinden op de **overzichts** pagina van de app in de Azure Portal. |
-> | `config.Authority`    | Beschrijving Het STS-eind punt (Security Token Service) voor de gebruiker die moet worden geverifieerd. Het is doorgaans `https://login.microsoftonline.com/{tenant}` voor de open bare Cloud, waarbij `{tenant}` de naam van uw Tenant of uw Tenant-id is.|
+ | Element | Beschrijving |
+ |---------|---------|
+ | `config.ClientSecret` | Het client geheim dat is gemaakt voor de toepassing in de Azure Portal. |
+ | `config.ClientId` | De client-ID van de toepassing die is geregistreerd in de Azure Portal. U kunt deze waarde vinden op de **overzichts** pagina van de app in de Azure Portal. |
+ | `config.Authority`    | Beschrijving Het STS-eind punt (Security Token Service) voor de gebruiker die moet worden geverifieerd. Het is doorgaans `https://login.microsoftonline.com/{tenant}` voor de open bare Cloud, waarbij `{tenant}` de naam van uw Tenant of uw Tenant-id is.|
 
 Zie de [referentie documentatie voor voor `ConfidentialClientApplication` ](/dotnet/api/microsoft.identity.client.iconfidentialclientapplication)meer informatie.
 
@@ -231,9 +226,9 @@ result = await app.AcquireTokenForClient(scopes)
                   .ExecuteAsync();
 ```
 
-> |Element| Beschrijving |
-> |---------|---------|
-> | `scopes` | Bevat de aangevraagde bereiken. Voor vertrouwelijke clients moet deze waarde een indeling hebben die vergelijkbaar is met `{Application ID URI}/.default` . Deze indeling geeft aan dat de aangevraagde scopes zijn die statisch zijn gedefinieerd in het app-object dat in de Azure Portal is ingesteld. Voor Microsoft Graph `{Application ID URI}` verwijst naar `https://graph.microsoft.com` . Voor aangepaste web-api's `{Application ID URI}` wordt gedefinieerd in de Azure portal onder **toepassings registratie (preview)**  >  **een API** weer te geven. |
+|Element| Beschrijving |
+|---------|---------|
+| `scopes` | Bevat de aangevraagde bereiken. Voor vertrouwelijke clients moet deze waarde een indeling hebben die vergelijkbaar is met `{Application ID URI}/.default` . Deze indeling geeft aan dat de aangevraagde scopes zijn die statisch zijn gedefinieerd in het app-object dat in de Azure Portal is ingesteld. Voor Microsoft Graph `{Application ID URI}` verwijst naar `https://graph.microsoft.com` . Voor aangepaste web-api's `{Application ID URI}` wordt gedefinieerd in de Azure portal onder **toepassings registratie (preview)**  >  **een API** weer te geven. |
 
 Zie de [referentie documentatie voor voor `AcquireTokenForClient` ](/dotnet/api/microsoft.identity.client.confidentialclientapplication.acquiretokenforclient)meer informatie.
 

@@ -7,14 +7,14 @@ manager: bsiva
 ms.topic: tutorial
 ms.date: 3/2/2021
 ms.author: rahugup
-ms.openlocfilehash: ffc97984a335b72a3aa8c8d8cca65a3fddf7af38
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.openlocfilehash: 422a911c2c0bb6aa1252ebb649368b61aa350b6e
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104780732"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105025574"
 ---
-# <a name="containerize-aspnet-applications-and-migrate-to-azure-kubernetes-service"></a>Container plaatsen ASP.NET-toepassingen en migreren naar Azure Kubernetes service
+# <a name="aspnet-app-containerization-and-migration-to-azure-kubernetes-service"></a>ASP.NET app container opslag en migratie naar Azure Kubernetes service
 
 In dit artikel leert u hoe u container plaatsen ASP.NET-toepassingen kunt maken en deze kunt migreren naar [Azure Kubernetes service (AKS)](https://azure.microsoft.com/services/kubernetes-service/) met behulp van de Azure migrate: app container opslag tool. Het container opslag-proces vereist geen toegang tot uw code basis en biedt een eenvoudige manier om bestaande toepassingen te container plaatsen. Het hulp programma werkt met behulp van de actieve status van de toepassingen op een server om de toepassings onderdelen te bepalen en helpt u deze te verpakken in een container installatie kopie. De container toepassing kan vervolgens worden geïmplementeerd in azure Kubernetes service (AKS).
 

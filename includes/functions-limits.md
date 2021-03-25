@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 05/04/2020
 ms.author: glenga
-ms.openlocfilehash: aa75d1d57f44bb1a4d6513823ac97ac9917b260f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 91f72117fdbcdbeda1d906a9760243e66404920c
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "97934459"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105104501"
 ---
 | Resource |[Verbruiksabonnement](../articles/azure-functions/consumption-plan.md)|[Premium-abonnement](../articles/azure-functions/functions-premium-plan.md)|[Toegewezen abonnement](../articles/azure-functions/dedicated-plan.md)|[ASE](../articles/app-service/environment/intro.md)| [Kubernetes](../articles/aks/quotas-skus-regions.md) |
 | --- | --- | --- | --- | --- | --- |
@@ -21,6 +21,7 @@ ms.locfileid: "97934459"
 | Maximale lengte voor aanvraag-URL's<sup>3</sup> | 8192 | 8192 | 8192 | 8192 | Afhankelijk van cluster |
 |[ACU](../articles/virtual-machines/acu.md) per exemplaar | 100 | 210-840 | 100-840 | 210-250<sup>8</sup> | [AKS-prijzen](https://azure.microsoft.com/pricing/details/container-service/) |
 | Maximaal geheugen (GB per exemplaar) | 1.5 | 3,5-14 | 1,75-14 | 3,5 - 14 | Elk knooppunt wordt ondersteund |
+| Maximum aantal exemplaren | 200 | 100<sup>9</sup> | varieert per SKU<sup>10</sup> | 100<sup>10</sup> | Afhankelijk van cluster |   
 | Functie-apps per abonnement |100 |100 |niet-gebonden<sup>4</sup> | niet-gebonden | niet-gebonden |
 | [App Service-abonnementen](../articles/app-service/overview-hosting-plans.md) | 100 per [regio](https://azure.microsoft.com/global-infrastructure/regions/) |100 per resourcegroep |100 per resourcegroep | - | - |
 | Opslag<sup>5</sup> |5 TB |250 GB |50-1000 GB | 1 TB | n.v.t. |
@@ -34,4 +35,6 @@ ms.locfileid: "97934459"
 <sup>5</sup> De opslaglimiet is de totale inhoudsgrootte in tijdelijke opslag voor alle apps in hetzelfde App Service-abonnement. Verbruiksabonnement maakt gebruik van Azure Files voor tijdelijke opslag.  
 <sup>6</sup> Wanneer uw functie-app in een [verbruiksabonnement](../articles/azure-functions/consumption-plan.md) wordt gehost, wordt alleen de optie CNAME ondersteund. Voor functie-apps in een [Premium-abonnement](../articles/azure-functions/functions-premium-plan.md) of een [App Service-abonnement](../articles/azure-functions/dedicated-plan.md) kunt u een aangepast domein toewijzen met een CNAME- of A-record.  
 <sup>7</sup> Gegarandeerd voor maximaal 60 minuten.  
-<sup>8</sup> Werkrollen zijn rollen die klanten-apps hosten. Werkrollen zijn beschikbaar in drie vaste grootten: Eén vCPU/3,5 GB RAM; Twee vCPU/7 GB RAM; Vier vCPU/14 GB RAM.
+<sup>8</sup> Werkrollen zijn rollen die klanten-apps hosten. Werkrollen zijn beschikbaar in drie vaste grootten: Eén vCPU/3,5 GB RAM; Twee vCPU/7 GB RAM; Vier vCPU/14 GB RAM.   
+<sup>9</sup> wanneer u in een Premium-abonnement op Linux wordt uitgevoerd, bent u momenteel beperkt tot 20 exemplaren.  
+<sup>10</sup> Zie [app service limieten](../articles/azure-resource-manager/management/azure-subscription-service-limits.md#app-service-limits) voor meer informatie.

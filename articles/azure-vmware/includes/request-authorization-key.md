@@ -3,12 +3,12 @@ title: Autorisatie sleutel voor ExpressRoute aanvragen
 description: Stappen voor het aanvragen van een autorisatie sleutel voor ExpressRoute.
 ms.topic: include
 ms.date: 03/15/2021
-ms.openlocfilehash: 54a610c8b0f3f3fe9d3ebe39291bba7767007839
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 99d9fba33d64fca1d9c5b960041fbabe1f9060db
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103491831"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105026970"
 ---
 <!-- used in expressroute-global-reach-private-cloud.md and create-ipsec-tunnel.md -->
 
@@ -22,7 +22,7 @@ ms.locfileid: "103491831"
 
    :::image type="content" source="../media/expressroute-global-reach/show-global-reach-auth-key.png" alt-text="Scherm opname van de ExpressRoute-Global Reach autorisatie sleutel.":::
   
-1. Noteer de autorisatie sleutel en de ExpressRoute-ID. U gebruikt deze voor het volt ooien van de peering.  
+1. Kopieer de autorisatie sleutel en de ExpressRoute-ID. U gebruikt deze voor het volt ooien van de peering.  
 
    > [!NOTE]
    > De autorisatie sleutel verdwijnt na enige tijd, dus kopieer deze zo snel als deze wordt weer gegeven.

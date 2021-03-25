@@ -5,12 +5,12 @@ author: rashi-ms
 ms.author: rajosh
 ms.topic: tutorial
 ms.date: 02/07/2021
-ms.openlocfilehash: d3077878dc02066b8ca5dd4441217e584f961725
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.openlocfilehash: 2bdb6a085bd9fa0e9967d723db63f2310a8e02db
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104782262"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105023092"
 ---
 # <a name="tutorial-assess-sql-instances-for-migration-to-azure-sql"></a>Zelf studie: SQL-exemplaren evalueren voor migratie naar Azure SQL
 
@@ -32,6 +32,8 @@ In deze zelfstudie leert u het volgende:
 - Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/pricing/free-trial/) aan voordat u begint.
 
 - Voordat u deze zelf studie volgt om uw SQL Server-exemplaren te evalueren voor migratie naar Azure SQL, moet u ervoor zorgen dat u de SQL-exemplaren hebt gedetecteerd die u wilt beoordelen met behulp van het Azure Migrate apparaat. [Volg deze zelf studie](tutorial-discover-vmware.md)
+- Als u deze functie in een bestaand project wilt uitproberen, moet u ervoor zorgen dat u de [vereisten](how-to-discover-sql-existing-project.md) in dit artikel hebt voltooid.
+
 
 ## <a name="run-an-assessment"></a>Een evaluatie uitvoeren
 Voer als volgt een evaluatie uit:

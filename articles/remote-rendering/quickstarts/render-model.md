@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 01/23/2020
 ms.topic: quickstart
-ms.openlocfilehash: 5b3e9c944aece3b3e22ee7a5a6144751725ddf67
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 3f565f456dde1d802a82faffb4a23f7a6e54d950
+ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101729960"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105031542"
 ---
 # <a name="quickstart-render-a-model-with-unity"></a>Quickstart: Een model weergeven met Unity
 
@@ -37,10 +37,7 @@ De volgende software moet zijn geïnstalleerd:
   * **Desktopontwikkeling met C++**
   * **Universal Windows Platform (UWP)-ontwikkeling**
 * Git [(downloaden)](https://git-scm.com/downloads)
-* Unity 2019.3.1 [(download)](https://unity3d.com/get-unity/download)
-  * Installeer de volgende modules in Unity:
-    * **UWP**: ondersteuning voor UWP-builds (Universeel Windows-platform)
-    * **IL2CPP**: ondersteuning voor Windows-builds (IL2CPP)
+* Unity (Zie [systeem vereisten](../overview/system-requirements.md#unity) voor ondersteunde versies)
 
 ## <a name="clone-the-sample-app"></a>De voorbeeld-app klonen
 

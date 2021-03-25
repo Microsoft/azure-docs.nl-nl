@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 02/01/2021
+ms.date: 03/22/2021
 ms.author: kenwith
 ms.reviewer: arvinh
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 1445e7959906966c58730521123ae03590bef1b3
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 8d517aaa6121120399e09bfef8aa6dd36e745563
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "101652093"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105022939"
 ---
 # <a name="tutorial-develop-and-plan-provisioning-for-a-scim-endpoint"></a>Zelf studie: inrichten opstellen en plannen voor een SCIM-eind punt
 
@@ -198,6 +198,7 @@ Binnen de [SCIM 2,0-protocol specificatie](http://www.simplecloud.info/#Specific
 |Het filter [excludedAttributes = leden](#get-group) bij het uitvoeren van een query op de groeps bron|sectie 3.4.2.5|
 |Accepteer één Bearer-token voor verificatie en autorisatie van AAD voor uw toepassing.||
 |Een gebruiker zacht verwijderen `active=false` en de gebruiker herstellen `active=true`|Het gebruikers object moet worden geretourneerd in een aanvraag, ongeacht of de gebruiker actief is. De enige keer dat een gebruiker niet wordt geretourneerd, is wanneer deze permanent wordt verwijderd uit de toepassing.|
+|Het/schemas-eind punt ondersteunen|[sectie 7](https://tools.ietf.org/html/rfc7643#page-30) Het schema detectie-eind punt wordt gebruikt om aanvullende kenmerken te detecteren.|
 
 Gebruik de algemene richt lijnen voor het implementeren van een SCIM-eind punt om te zorgen voor compatibiliteit met AAD:
 
@@ -210,7 +211,12 @@ Gebruik de algemene richt lijnen voor het implementeren van een SCIM-eind punt o
 * Micro soft AAD maakt aanvragen voor het ophalen van een wille keurige gebruiker en groep om ervoor te zorgen dat het eind punt en de referenties geldig zijn. Het wordt ook uitgevoerd als onderdeel van de **test verbindings** stroom in de [Azure Portal](https://portal.azure.com). 
 * Het kenmerk waarvan de bronnen kunnen worden opgevraagd, moet worden ingesteld als een overeenkomend kenmerk op de toepassing in de [Azure Portal](https://portal.azure.com). Zie [toewijzings kenmerk toewijzingen voor gebruikers inrichten aanpassen](customize-application-attributes.md).
 * Ondersteuning voor HTTPS op uw SCIM-eindpunt
-
+* [Schema detectie](#schema-discovery)
+  * Schema detectie wordt momenteel niet ondersteund voor de aangepaste toepassing, maar wordt wel gebruikt voor bepaalde galerie toepassingen. Schema detectie wordt voor Taan gebruikt als primaire methode voor het toevoegen van extra kenmerken aan een connector. 
+  * Als er geen waarde aanwezig is, verzendt u geen Null-waarden.
+  * Eigenschaps waarden moeten Camel-cases (bijvoorbeeld readWrite) zijn.
+  * Er moet een antwoord op een lijst worden geretourneerd.
+  
 ### <a name="user-provisioning-and-deprovisioning"></a>Inrichting en ongedaan maken van inrichting van gebruikers
 
 In de volgende afbeelding ziet u de berichten die AAD verzendt naar een SCIM-service voor het beheren van de levens cyclus van een gebruiker in de identiteits opslag van uw toepassing.  
@@ -252,6 +258,9 @@ Deze sectie bevat voor beelden van SCIM-aanvragen die worden verzonden door de A
   - [Groep bijwerken [leden toevoegen]](#update-group-add-members) ([Aanvraag](#request-11) / [Antwoord](#response-11))
   - [Groep bijwerken [leden verwijderen]](#update-group-remove-members) ([Aanvraag](#request-12) / [Antwoord](#response-12))
   - [Groep verwijderen](#delete-group) ([Aanvraag](#request-13) / [Antwoord](#response-13))
+
+[Schema detectie](#schema-discovery)
+  - [Schema detecteren](#discover-schema) ([](#request-15)  /  [antwoord](#response-15)van aanvraag)
 
 ### <a name="user-operations"></a>Gebruikersbewerkingen
 
@@ -749,6 +758,105 @@ Deze sectie bevat voor beelden van SCIM-aanvragen die worden verzonden door de A
 ##### <a name="response"></a><a name="response-13"></a>Response
 
 *HTTP/1.1 204 No Content*
+
+### <a name="schema-discovery"></a>Schema detectie
+#### <a name="discover-schema"></a>Schema detecteren
+
+##### <a name="request"></a><a name="request-15"></a>Aanvraag
+*/Schemas ophalen* 
+##### <a name="response"></a><a name="response-15"></a>Response
+*HTTP/1.1 200 OK*
+```json
+{
+    "schemas": [
+        "urn:ietf:params:scim:api:messages:2.0:ListResponse"
+    ],
+    "itemsPerPage": 50,
+    "startIndex": 1,
+    "totalResults": 3,
+    "Resources": [
+  {
+    "schemas": ["urn:ietf:params:scim:schemas:core:2.0:Schema"],
+    "id" : "urn:ietf:params:scim:schemas:core:2.0:User",
+    "name" : "User",
+    "description" : "User Account",
+    "attributes" : [
+      {
+        "name" : "userName",
+        "type" : "string",
+        "multiValued" : false,
+        "description" : "Unique identifier for the User, typically
+used by the user to directly authenticate to the service provider.
+Each User MUST include a non-empty userName value.  This identifier
+MUST be unique across the service provider's entire set of Users.
+REQUIRED.",
+        "required" : true,
+        "caseExact" : false,
+        "mutability" : "readWrite",
+        "returned" : "default",
+        "uniqueness" : "server"
+      },                
+    ],
+    "meta" : {
+      "resourceType" : "Schema",
+      "location" :
+        "/v2/Schemas/urn:ietf:params:scim:schemas:core:2.0:User"
+    }
+  },
+  {
+    "schemas": ["urn:ietf:params:scim:schemas:core:2.0:Schema"],
+    "id" : "urn:ietf:params:scim:schemas:core:2.0:Group",
+    "name" : "Group",
+    "description" : "Group",
+    "attributes" : [
+      {
+        "name" : "displayName",
+        "type" : "string",
+        "multiValued" : false,
+        "description" : "A human-readable name for the Group.
+REQUIRED.",
+        "required" : false,
+        "caseExact" : false,
+        "mutability" : "readWrite",
+        "returned" : "default",
+        "uniqueness" : "none"
+      },
+    ],
+    "meta" : {
+      "resourceType" : "Schema",
+      "location" :
+        "/v2/Schemas/urn:ietf:params:scim:schemas:core:2.0:Group"
+    }
+  },
+  {
+    "schemas": ["urn:ietf:params:scim:schemas:core:2.0:Schema"],
+    "id" : "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User",
+    "name" : "EnterpriseUser",
+    "description" : "Enterprise User",
+    "attributes" : [
+      {
+        "name" : "employeeNumber",
+        "type" : "string",
+        "multiValued" : false,
+        "description" : "Numeric or alphanumeric identifier assigned
+to a person, typically based on order of hire or association with an
+organization.",
+        "required" : false,
+        "caseExact" : false,
+        "mutability" : "readWrite",
+        "returned" : "default",
+        "uniqueness" : "none"
+      },
+    ],
+    "meta" : {
+      "resourceType" : "Schema",
+      "location" :
+"/v2/Schemas/urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"
+    }
+  }
+]
+}
+```
 
 ### <a name="security-requirements"></a>Beveiligingsvereisten
 **TLS Protocol Versions**

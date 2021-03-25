@@ -1,14 +1,14 @@
 ---
-ms.openlocfilehash: c1b74b43c6ef884c68282dcaaae8dfc9a5541453
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 52c5c0d9d13eba29e6f9cb6d50725d51b6877d47
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103622101"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105110729"
 ---
 ## <a name="add-managed-identity-to-your-communication-services-solution-net"></a>Beheerde identiteit toevoegen aan uw oplossing voor communicatie Services (.NET)
 
-### <a name="install-the-client-library-packages"></a>De client bibliotheek pakketten installeren
+### <a name="install-the-sdk-packages"></a>De SDK-pakketten installeren
 
 ```console
 dotnet add package Azure.Communication.Identity  --version 1.0.0-beta.5
@@ -16,9 +16,9 @@ dotnet add package Azure.Communication.Sms  --version 1.0.0-beta.4
 dotnet add package Azure.Identity
 ```
 
-### <a name="use-the-client-library-packages"></a>De client bibliotheek pakketten gebruiken
+### <a name="use-the-sdk-packages"></a>De SDK-pakketten gebruiken
 
-Voeg de volgende `using` instructies toe aan uw code voor het gebruik van de identiteits-en Azure Storage-client bibliotheken van Azure.
+Voeg de volgende- `using` instructies toe aan uw code om de Azure Identity-en Azure Storage sdk's te gebruiken.
 
 ```csharp
 using Azure.Identity;

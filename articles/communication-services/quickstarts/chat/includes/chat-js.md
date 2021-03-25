@@ -10,12 +10,12 @@ ms.date: 03/10/2021
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: 0805537fe0791a622eb1814cc233c04d914dbecd
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 5af681b6edf8abc8145caf599fc0fb3c4daf5c15
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104612136"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105107012"
 ---
 ## <a name="prerequisites"></a>Vereisten
 Voordat u aan de slag gaat, moet u het volgende doen:
@@ -43,7 +43,7 @@ npm init -y
 
 ### <a name="install-the-packages"></a>De pakketten installeren
 
-Gebruik de opdracht `npm install` voor het installeren van de onderstaande Communication Services-clientbibliotheken voor JavaScript.
+Gebruik de `npm install` opdracht om de onderstaande sdk's voor communicatie Services voor Java script te installeren.
 
 ```console
 npm install @azure/communication-common --save
@@ -56,7 +56,7 @@ npm install @azure/communication-chat --save
 
 ```
 
-De optie `--save` geeft de bibliotheek weer als afhankelijkheid in uw **package.json**-bestand.
+De optie `--save` geeft de bibliotheek weer als afhankelijkheid in het **package.json**-bestand.
 
 ### <a name="set-up-the-app-framework"></a>Het app-framework instellen
 
@@ -87,7 +87,7 @@ Een `start` script toevoegen aan uw `package.json` , we gebruiken dit voor het u
 }
 ```
 
-Maak een **index. html**-bestand in de hoofdmap van uw project. We zullen dit bestand gebruiken als een sjabloon om chat-functionaliteit toe te voegen met behulp van de Azure Communication chat-clientbibliotheek voor JavaScript.
+Maak een **index. html**-bestand in de hoofdmap van uw project. Dit bestand wordt gebruikt als sjabloon voor het toevoegen van chat mogelijkheden met behulp van de Azure Communication chat SDK voor Java script.
 
 ```html
 <!DOCTYPE html>
@@ -111,7 +111,7 @@ Als u een chat-client in uw web-app wilt maken, gebruikt u het **eind punt** van
 
 Met toegangstokens voor gebruikers kunt u clienttoepassingen maken die zich rechtstreeks verifiëren bij Azure Communication Services. Deze Snelstartgids heeft geen betrekking op het maken van een servicelaag voor het beheren van tokens voor uw chat toepassing. Zie [Chat concepten](../../../concepts/chat/concepts.md) voor meer informatie over de chat architectuur en [gebruikers toegangs tokens](../../access-tokens.md) voor meer informatie over toegangs tokens.
 
-In **client.js** het endpoint-en toegangs token in de onderstaande code gebruiken om chat mogelijkheden toe te voegen met de Azure Communication chat-client bibliotheek voor Java script.
+In **client.js** het endpoint-en toegangs token in de onderstaande code gebruiken om chat mogelijkheden toe te voegen met de Azure Communication chat SDK voor Java script.
 
 ```JavaScript
 
@@ -144,7 +144,7 @@ Azure Communication Chat client created!
 ```
 
 ## <a name="object-model"></a>Objectmodel
-De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Azure Communication Services chat-clientbibliotheek voor JavaScript.
+De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Azure Communication Services chat SDK voor Java script.
 
 | Naam                                   | Beschrijving                                                                                                                                                                           |
 | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

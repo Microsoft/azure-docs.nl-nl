@@ -2,14 +2,14 @@
 title: Resources verplaatsen naar een nieuw abonnement of een nieuwe resource groep
 description: Gebruik Azure Resource Manager om resources te verplaatsen naar een nieuwe resource groep of een nieuw abonnement.
 ms.topic: conceptual
-ms.date: 09/15/2020
+ms.date: 03/23/2021
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 1dd8877324b7eb0aac3ac12e3eeadb7c75b7795e
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 31710354d39c5c74fcbd3ce1bfb2917d79dfd670
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104670202"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105108635"
 ---
 # <a name="move-resources-to-a-new-resource-group-or-subscription"></a>Resources verplaatsen naar een nieuwe resourcegroep of een nieuw abonnement
 
@@ -18,6 +18,12 @@ In dit artikel wordt beschreven hoe u Azure-resources verplaatst naar een ander 
 Zowel de bron groep als de doel groep worden tijdens de verplaatsings bewerking vergrendeld. Schrijf- en verwijderingsbewerkingen voor de resourcegroepen worden vergrendeld tot de bewerking is voltooid. Deze vergren deling betekent dat u geen resources in de resource groepen kunt toevoegen, bijwerken of verwijderen. Dit betekent niet dat de resources zijn geblokkeerd. Als u bijvoorbeeld een logische Azure SQL-Server en de bijbehorende data bases verplaatst naar een nieuwe resource groep of een nieuw abonnement, hebben toepassingen die gebruikmaken van de data bases geen downtime. Ze kunnen nog steeds lezen en schrijven naar de data bases. De vergren deling kan Maxi maal vier uur duren, maar de meeste verplaatsingen worden veel minder tijd in beslag.
 
 Als u een resource verplaatst, wordt deze alleen verplaatst naar een nieuwe resourcegroep of nieuw abonnement. Hierdoor wordt de locatie van de resource niet gewijzigd.
+
+## <a name="changed-resource-id"></a>Resource-ID gewijzigd
+
+Wanneer u een resource verplaatst, wijzigt u de resource-ID. De standaard indeling voor een resource-ID is `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}` . Wanneer u een resource naar een nieuwe resource groep of een nieuw abonnement verplaatst, wijzigt u een of meer waarden in dat pad.
+
+Als u de resource-ID overal gebruikt, moet u deze waarde wijzigen. Als u bijvoorbeeld een [aangepast dash board](../../azure-portal/quickstart-portal-dashboard-azure-cli.md) in de portal hebt dat verwijst naar een resource-id, moet u die waarde bijwerken. Zoek naar scripts of sjablonen die moeten worden bijgewerkt voor de nieuwe resource-ID.
 
 ## <a name="checklist-before-moving-resources"></a>Controlelijst voordat u de resource verplaatst
 
@@ -36,7 +42,7 @@ Voordat u een resource verplaatst, moeten er enkele belangrijke stappen worden u
    * [Hulp Virtual Machines verplaatsen](./move-limitations/virtual-machines-move-limitations.md)
    * Zie [abonnementen verplaatsen](../../governance/management-groups/manage.md#move-subscriptions)voor informatie over het verplaatsen van een Azure-abonnement naar een nieuwe beheer groep.
 
-1. Als u een resource verplaatst waaraan een Azure-rol rechtstreeks is toegewezen aan de resource (of een onderliggende resource), wordt de roltoewijzing niet verplaatst en wordt deze zwevend. Nadat de verplaatsing is verplaatst, moet u de roltoewijzing opnieuw maken. Uiteindelijk wordt de zwevende roltoewijzing automatisch verwijderd, maar het is een best practice om de roltoewijzing te verwijderen voordat u de resource verplaatst.
+1. Als u een resource verplaatst waaraan een Azure-rol rechtstreeks is toegewezen aan de resource (of een onderliggende resource), wordt de roltoewijzing niet verplaatst en wordt deze zwevend. Nadat de verplaatsing is verplaatst, moet u de roltoewijzing opnieuw maken. Uiteindelijk wordt de zwevende roltoewijzing automatisch verwijderd, maar we raden u aan de roltoewijzing vóór de verplaatsing te verwijderen.
 
     Zie [Azure-roltoewijzingen weer geven](../../role-based-access-control/role-assignments-list-portal.md#list-role-assignments-at-a-scope) en [Azure-rollen toewijzen](../../role-based-access-control/role-assignments-portal.md)voor meer informatie over het beheren van roltoewijzingen.
 
@@ -260,7 +266,7 @@ Het verplaatsen van een resource is een complexe bewerking met verschillende fas
 
 **Vraag: Waarom is mijn resource groep gedurende vier uur vergrendeld tijdens het verplaatsen van de resource?**
 
-Een verplaatsings aanvraag mag Maxi maal vier uur zijn voltooid. Om te voor komen dat de resources worden verplaatst, worden de bron-en doel resource groepen vergrendeld voor de duur van het verplaatsen van de resource.
+Een verplaatsings aanvraag mag Maxi maal vier uur zijn voltooid. Om te voor komen dat de resources worden verplaatst, worden zowel de bron-als de doel resource groep vergrendeld tijdens het verplaatsen van de resource.
 
 Er zijn twee fasen in een verplaatsings aanvraag. In de eerste fase wordt de resource verplaatst. In de tweede fase worden meldingen verzonden naar andere resource providers die afhankelijk zijn van de resource die wordt verplaatst. Een resource groep kan voor de hele vier uur worden vergrendeld wanneer een resource provider niet in een fase werkt. Tijdens de toegestane tijd probeert Resource Manager de mislukte stap opnieuw.
 

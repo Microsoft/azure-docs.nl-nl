@@ -6,12 +6,12 @@ ms.service: data-lake-analytics
 ms.topic: overview
 ms.author: xujiang1
 ms.date: 07/31/2020
-ms.openlocfilehash: 6f4885594e4f67d91c595d8afdddc15e8ed4ae75
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: cc3f9623f3b09c14e0e478252768890e4de3acad
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "88263177"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105025455"
 ---
 # <a name="whats-new-in-data-lake-analytics"></a>Wat is er nieuw in Data Lake Analytics?
 
@@ -39,7 +39,7 @@ De runtime-versie wordt van tijd tot tijd bijgewerkt. En de vorige runtime blijf
 
 De volgende versie is de huidige standaard runtime-versie.
 
-- release-20200124live_adl_16283022_2
+- **release_20200707_scope_2b8d563_usql**
 
 Raadpleeg [Problemen met U-SQL-runtime oplossen](runtime-troubleshoot.md) voor meer informatie over het oplossen van problemen met SQL-runtime-fouten.
 

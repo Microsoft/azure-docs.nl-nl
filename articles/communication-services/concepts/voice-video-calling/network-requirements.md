@@ -9,12 +9,12 @@ ms.author: nmurav
 ms.date: 3/23/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 753bb7a88f8032d6ed9aeac1b1adf4f34d7cec43
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: 22bf8af89771e57621a0d8851ca31bb750b7cda2
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105051339"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105108346"
 ---
 # <a name="ensure-high-quality-media-in-azure-communication-services"></a>Media van hoge kwaliteit garanderen in azure Communication Services
 
@@ -36,7 +36,7 @@ De kwaliteit van real-time media via IP wordt aanzienlijk beïnvloed door de kwa
 
 Zorg ervoor dat uw netwerk is geconfigureerd voor de ondersteuning van de band breedte die is vereist voor gelijktijdige media sessies van Azure Communication Services en andere zakelijke toepassingen. Het testen van het end-to-end-netwerkpad voor bandbreedte knelpunten is van cruciaal belang voor de succes volle implementatie van uw multi media Communication Services-oplossing.
 
-Hieronder vindt u de vereisten voor de band breedte voor de Java script-client bibliotheken:
+Hieronder vindt u de vereisten voor de band breedte voor de Java script-Sdk's:
 
 |Bandbreedte|Scenario's|
 |:--|:--|
@@ -47,7 +47,7 @@ Hieronder vindt u de vereisten voor de band breedte voor de Java script-client b
 |500 Kbps|Groeps video die 360p aanroept op 30fps|
 |1,2 Mbps|HD Group video met een resolutie van HD 720p op 30fps| 
 
-Hieronder vindt u de vereisten voor band breedte voor de systeem eigen Android-en iOS-client bibliotheken:
+Hieronder vindt u de vereisten voor de band breedte voor de systeem eigen Android-en iOS-Sdk's:
 
 |Bandbreedte|Scenario's|
 |:--|:--|
@@ -79,7 +79,7 @@ U kunt het beste verder optimaliseren als:
 | Netwerk optimalisatie taak | Details |
 | :-- | :-- |
 | Uw netwerk plannen | In deze documentatie vindt u minimale vereisten voor uw netwerk voor aanroepen. Raadpleeg het [voor beeld van teams voor het plannen van uw netwerk](https://docs.microsoft.com/microsoftteams/tutorial-network-planner-example) |
-| Externe naam omzetting | Zorg ervoor dat alle computers waarop de client bibliotheken van Azure Communications Services worden uitgevoerd, externe DNS-query's kunnen oplossen om de services te detecteren die worden geboden door Azure Communication Services en dat uw firewalls geen toegang verhinderen. Controleer of de client bibliotheken adressen kunnen omzetten *. skype.com, *. microsoft.com, *. azure.net, *. azureedge.net, *. office.com, *. trouter.io  |
+| Externe naam omzetting | Zorg ervoor dat alle computers waarop de Sdk's van Azure Communications Services worden uitgevoerd, externe DNS-query's kunnen oplossen om de services te detecteren die worden geboden door Azure Communication Services en dat uw firewalls geen toegang verhinderen. Controleer of de Sdk's adressen kunnen omzetten *. skype.com, *. microsoft.com, *. azure.net, *. azureedge.net, *. office.com, *. trouter.io  |
 | Sessie persistentie onderhouden | Zorg ervoor dat uw firewall de toegewezen NAT-adressen (Network Address Translation) of-poorten voor UDP niet wijzigt
 Grootte van NAT-groep valideren | Valideer de grootte van de groep voor de Network Address Translation (NAT) die vereist is voor de connectiviteit van de gebruiker. Als meerdere gebruikers en apparaten Azure Communication Services gebruiken met [NAT (Network Address Translation) of Pat (netwerkadresomzetting)](https://docs.microsoft.com/office365/enterprise/nat-support-with-office-365), zorg er dan voor dat de apparaten verborgen achter elk openbaar routeerbaar IP-adres niet groter zijn dan het ondersteunde aantal. Zorg ervoor dat er voldoende open bare IP-adressen zijn toegewezen aan de NAT-groepen om te voor komen dat de poort wordt uitgeput. Poort uitputting draagt bij aan interne gebruikers en apparaten die geen verbinding kunnen maken met de Azure Communication Services |
 | Richt lijnen voor detectie en preventie van inbraak | Als uw omgeving een [Indringings detectie](https://docs.microsoft.com/azure/network-watcher/network-watcher-intrusion-detection-open-source-tools) of preventie systeem (ID'S/ip's) heeft die zijn geïmplementeerd voor een extra beveiligingslaag voor uitgaande verbindingen, alle Azure Communication Services-url's toestaan |
@@ -89,10 +89,10 @@ Grootte van NAT-groep valideren | Valideer de grootte van de groep voor de Netwo
 
 
 
-### <a name="operating-system-and-browsers-for-javascript-client-libraries"></a>Besturings systeem en browsers (voor Java script-client bibliotheken)
+### <a name="operating-system-and-browsers-for-javascript-sdks"></a>Besturings systeem en browsers (voor de Java script-Sdk's)
 
-Client bibliotheken voor spraak/video van Azure Communication Services ondersteunen bepaalde besturings systemen en browsers.
-Meer informatie over de besturings systemen en browsers die door de aanroepende client bibliotheken worden ondersteund in de [conceptuele documentatie](https://docs.microsoft.com/azure/communication-services/concepts/voice-video-calling/calling-sdk-features).
+De Sdk's voor spraak/video van Azure Communication Services ondersteunen bepaalde besturings systemen en browsers.
+Meer informatie over de besturings systemen en browsers die de aanroepende Sdk's ondersteunt in de [conceptuele documentatie](https://docs.microsoft.com/azure/communication-services/concepts/voice-video-calling/calling-sdk-features).
 
 ## <a name="next-steps"></a>Volgende stappen
 

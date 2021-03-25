@@ -10,12 +10,12 @@ ms.date: 03/10/2021
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: 146053ffd72b24216bfa86577787727257da2516
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 3cbed124963fe6e56d6721669d0feedc6e34ffc6
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103495389"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105107011"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -48,7 +48,7 @@ Het POM-bestand van uw toepassing bijwerken voor het gebruik van Java 8 of hoger
 </properties>
 ```
 
-### <a name="add-the-package-references-for-the-chat-client-library"></a>De pakketreferenties voor de chat-clientbibliotheek toevoegen
+### <a name="add-the-package-references-for-the-chat-sdk"></a>De pakket verwijzingen voor de chat-SDK toevoegen
 
 In uw POM-bestand verwijzen we naar het pakket `azure-communication-chat` met de chat-API's:
 
@@ -72,7 +72,7 @@ Voor verificatie moet uw client het pakket `azure-communication-common` verwijze
 
 ## <a name="object-model"></a>Objectmodel
 
-De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Azure Communication Services chat-clientbibliotheek voor Java
+De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Azure Communication Services chat SDK voor Java.
 
 | Naam                                  | Beschrijving                                                  |
 | ------------------------------------- | ------------------------------------------------------------ |
@@ -82,7 +82,7 @@ De volgende klassen en interfaces verwerken enkele van de belangrijkste functies
 | ChatThreadAsyncClient | Deze klasse is vereist voor de functionaliteit van de asynchrone chat-thread. U verkrijgt een instantie via de ChatAsyncClient en gebruikt deze om berichten te verzenden/ontvangen/bijwerken/verwijderen, gebruikers toe te voegen/te verwijderen of te verzenden, getypte meldingen te verzenden en bevestigingen te lezen. |
 
 ## <a name="create-a-chat-client"></a>Een chat-client maken
-Als u een chat-client wilt maken, gebruikt u het Communications Service-eindpunt en het toegangstoken dat is gegenereerd als onderdeel van de vereiste stappen. Met toegangstokens voor gebruikers kunt u clienttoepassingen maken die zich rechtstreeks verifiëren bij Azure Communication Services. Zodra u deze tokens op uw server hebt gegenereerd, geeft u ze terug op een clientapparaat. U moet de klasse CommunicationTokenCredential van de gemeen schappelijke client bibliotheek gebruiken om het token door te geven aan uw chat-client. 
+Als u een chat-client wilt maken, gebruikt u het Communications Service-eindpunt en het toegangstoken dat is gegenereerd als onderdeel van de vereiste stappen. Met toegangstokens voor gebruikers kunt u clienttoepassingen maken die zich rechtstreeks verifiëren bij Azure Communication Services. Zodra u deze tokens op uw server hebt gegenereerd, geeft u ze terug op een clientapparaat. U moet de CommunicationTokenCredential-klasse van de gemeen schappelijke SDK gebruiken om het token door te geven aan uw chat-client. 
 
 Meer informatie over de [architectuur van chatten](../../../concepts/chat/concepts.md)
 

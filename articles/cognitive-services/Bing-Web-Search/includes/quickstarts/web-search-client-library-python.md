@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/05/2020
 ms.author: aahi
-ms.openlocfilehash: db303d1e7bd5a9cb7b8441f0a5da634a13113066
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 5d5aaf84482dae6786ac7fd9f9ee837efca71b34
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98947300"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105105305"
 ---
 Met de Bing Web Search-clientbibliotheek kunt u Bing Web Search eenvoudig integreren in uw Python-toepassing. In deze snelstartgids leert u hoe u een aanvraag verzendt, een JSON-antwoord ontvangt en de resultaten filtert en parseert.
 
@@ -21,9 +21,9 @@ Wilt u de code nu zien? Voorbeelden voor de [Bing Search-clientbibliotheken voor
 
 
 ## <a name="prerequisites"></a>Vereisten
-De Bing Web Search SDK is compatibel met Python 2.7, 3.3, 3.4, 3.5 en 3.6. We raden u aan om een virtuele omgeving te gebruiken voor deze snelstartgids.
+De Bing Web Search SDK is compatibel met python 2,7 of 3.6 +. We raden u aan om een virtuele omgeving te gebruiken voor deze snelstartgids.
 
-* Python 2.7, 3.3, 3.4, 3.5 of 3.6
+* Python 2,7 of 3.6 +
 * [virtualenv](https://docs.python.org/3/tutorial/venv.html) voor Python 2.7
 * [venv](https://pypi.python.org/pypi/virtualenv) voor Python 3.x
 

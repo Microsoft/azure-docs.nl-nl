@@ -258,9 +258,11 @@
               href: create-new-saas-offer-technical.md
             - name: Plannen maken
               href: create-new-saas-offer-plans.md
+            - name: Een test aanbieding maken
+              href: create-saas-dev-test-offer.md
             - name: Een SaaS-aanbieding testen en publiceren
               href: test-publish-saas-offer.md
-        - name: Uw SaaS-aanbieding in de handel brengen
+        - name: Uw SaaS-aanbieding verkopen
           href: create-new-saas-offer-marketing.md
     - name: Aanbiedingen beoordelen en publiceren
       href: review-publish-offer.md

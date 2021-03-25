@@ -9,25 +9,27 @@ ms.topic: conceptual
 author: MashaMSFT
 ms.author: mathoma
 ms.date: 03/19/2021
-ms.openlocfilehash: e323b1c15d78da4e8c1a82ae8848df7f59b0dd87
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 99e0fd3665a0269710a9b0994a1340745f77236f
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104657229"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105027309"
 ---
 # <a name="migration-guide-access-to-azure-sql-database"></a>Migratie handleiding: toegang tot Azure SQL Database
 
 Deze migratie handleiding leert u uw micro soft Access-data bases te migreren naar Azure SQL Database met behulp van de SQL Server Migration Assistant voor toegang.
 
-Zie [Data Base Migration](https://datamigration.microsoft.com/)(Engelstalig) voor andere migratie handleidingen. 
+Zie [Data Base Migration](https://docs.microsoft.com/data-migration)(Engelstalig) voor andere migratie handleidingen. 
 
 ## <a name="prerequisites"></a>Vereisten
 
 Als u uw Access-Data Base naar Azure SQL Database wilt migreren, hebt u het volgende nodig:
 
-- u kunt controleren of uw bron omgeving wordt ondersteund. 
+- U kunt controleren of uw bron omgeving wordt ondersteund. 
 - [SQL Server Migration Assistant voor toegang](https://www.microsoft.com/download/details.aspx?id=54255). 
+- Connectiviteit en voldoende machtigingen voor toegang tot zowel de bron als het doel. 
+
 
 ## <a name="pre-migration"></a>Premigratie
 
@@ -36,24 +38,27 @@ Nadat u aan de vereisten hebt voldaan, bent u klaar om de topologie van uw omgev
 
 ### <a name="assess"></a>Evalueren 
 
-Een evaluatie maken met behulp [van SQL Server Migration Assistant voor toegang](https://www.microsoft.com/download/details.aspx?id=54255). 
+Gebruik SQL Server Migration Assistant (SSMA) voor toegang om database objecten en-gegevens te bekijken en data bases te beoordelen voor migratie. 
 
 Voer de volgende stappen uit om een evaluatie te maken: 
 
-1. Open SQL Server Migration Assistant voor toegang. 
-1. Selecteer **bestand** en kies vervolgens **Nieuw project**. Geef een naam op voor uw migratie project. 
+1. Open [SQL Server Migration Assistant voor toegang](https://www.microsoft.com/download/details.aspx?id=54255). 
+1. Selecteer **bestand** en kies vervolgens **Nieuw project**. 
+1. Geef een project naam op, een locatie om uw project op te slaan en selecteer vervolgens Azure SQL Database als migratie doel in de vervolg keuzelijst. Selecteer **OK**:
 
    ![Nieuw project kiezen](./media/access-to-sql-database-guide/new-project.png)
 
-1. Selecteer **data bases toevoegen** en kies data bases die aan het nieuwe project moeten worden toegevoegd. 
+1. Selecteer **data bases toevoegen** en kies data bases die aan het nieuwe project moeten worden toegevoegd:
 
    ![Data bases toevoegen kiezen](./media/access-to-sql-database-guide/add-databases.png)
 
-1. Klik in **Access Meta Data Explorer** met de rechter muisknop op de data base en kies **rapport maken**. 
+1. Klik in **Access Meta Data Explorer** met de rechter muisknop op de data base en kies **rapport maken**. U kunt ook **rapport maken** kiezen op de navigatie balk nadat u het schema hebt geselecteerd:
 
    ![Klik met de rechter muisknop op de data base en kies rapport maken.](./media/access-to-sql-database-guide/create-report.png)
 
-1. Bekijk de voorbeeld evaluatie. Bijvoorbeeld: 
+1. Bekijk het HTML-rapport om de conversie statistieken en eventuele fouten of waarschuwingen te begrijpen. U kunt het rapport ook openen in Excel om een overzicht te krijgen van de toegang tot objecten en de inspanningen die nodig zijn voor het uitvoeren van schema-conversies. De standaard locatie voor het rapport bevindt zich in de rapportmap in SSMAProjects
+
+   Bijvoorbeeld: `drive:\<username>\Documents\SSMAProjects\MyAccessMigration\report\report_<date>`
 
    ![De evaluatie van het voorbeeld rapport bekijken](./media/access-to-sql-database-guide/sample-assessment.png)
 
@@ -63,7 +68,7 @@ Valideer de standaard gegevens type toewijzingen en wijzig deze indien nodig op 
 
 1. Selecteer **extra** in het menu. 
 1. Selecteer de **project instellingen**. 
-1. Selecteer het tabblad **type toewijzingen** . 
+1. Selecteer het tabblad **type toewijzingen** :
 
    ![Type toewijzingen](./media/access-to-sql-database-guide/type-mappings.png)
 
@@ -74,37 +79,43 @@ Valideer de standaard gegevens type toewijzingen en wijzig deze indien nodig op 
 
 Voer de volgende stappen uit om database objecten te converteren: 
 
-1. Selecteer **verbinding maken met Azure SQL database** en geef de verbindings gegevens op.
+1. Selecteer **verbinding maken met Azure SQL database**. 
+    1. Voer de verbindings gegevens in om uw data base in Azure SQL Database te koppelen.
+    1. Kies uw doel SQL Database in de vervolg keuzelijst of geef een nieuwe naam op. in dat geval wordt er een Data Base op de doel server gemaakt. 
+    1. Geef verificatie Details op. 
+    1. Selecteer **verbinding maken**:
 
    ![Verbinding maken met Azure SQL Database](./media/access-to-sql-database-guide/connect-to-sqldb.png)
 
-1. Klik met de rechter muisknop op de data base in **Access-meta gegevens Verkenner** en kies **schema converteren**. U kunt ook **schema converteren** selecteren in de bovenste navigatie balk nadat u de Data Base hebt geselecteerd.
+1. Klik met de rechter muisknop op de data base in **Access-meta gegevens Verkenner** en kies **schema converteren**. U kunt ook **schema converteren** selecteren in de bovenste navigatie balk nadat u de Data Base hebt geselecteerd:
 
    ![Klik met de rechter muisknop op de data base en kies schema converteren](./media/access-to-sql-database-guide/convert-schema.png)
+   
 
-   Vergelijkt geconverteerde query's naar oorspronkelijke query's: 
-
-   ![Geconverteerde query's kunnen worden vergeleken met de bron code](./media/access-to-sql-database-guide/query-comparison.png)
-
-   Vergelijkt geconverteerde objecten met de oorspronkelijke objecten: 
+1. Nadat de conversie is voltooid, vergelijkt u de geconverteerde objecten met de oorspronkelijke objecten om potentiële problemen te identificeren en te verhelpen op basis van de aanbevelingen:
 
    ![Geconverteerde objecten kunnen worden vergeleken met de bron](./media/access-to-sql-database-guide/table-comparison.png)
+
+   Vergelijk de geconverteerde Transact-SQL-tekst met de oorspronkelijke code en Bekijk de aanbevelingen:
+
+   ![Geconverteerde query's kunnen worden vergeleken met de bron code](./media/access-to-sql-database-guide/query-comparison.png)
 
 1. Beschrijving Als u een afzonderlijk object wilt converteren, klikt u met de rechter muisknop op het object en kiest u **schema converteren**. Geconverteerde objecten worden vet weer gegeven in de **Access Meta Data Explorer**: 
 
    ![Vetgedrukte objecten in meta gegevens Verkenner zijn geconverteerd](./media/access-to-sql-database-guide/converted-items.png)
  
 1. Selecteer **resultaten controleren** in het deel venster uitvoer en Bekijk fouten in het deel venster **fouten lijst** . 
+1. Sla het project lokaal op voor een herbemiddeling van het offline schema. Selecteer **project opslaan** in het menu **bestand** . Dit biedt u de mogelijkheid om de bron-en doel schema's offline te evalueren en herstel bewerkingen uit te voeren voordat u het schema kunt publiceren naar SQL Database.
 
 
 ## <a name="migrate"></a>Migrate
 
 Nadat u klaar bent met het beoordelen van uw data bases en eventuele verschillen hebt opgelost, is de volgende stap het uitvoeren van het migratie proces. Het migreren van gegevens is een bewerking voor bulksgewijs laden waarmee rijen met gegevens worden verplaatst naar Azure SQL Database in trans acties. Het aantal rijen dat moet worden geladen in Azure SQL Database in elke trans actie, wordt geconfigureerd in de project instellingen.
 
-Voer de volgende stappen uit om gegevens te migreren met behulp van SSMA voor toegang: 
+Voer de volgende stappen uit om uw schema te publiceren en de gegevens te migreren met behulp van SSMA voor toegang: 
 
 1. Als u dat nog niet hebt gedaan, selecteert u **verbinding maken met Azure SQL database** en geeft u de verbindings gegevens op. 
-1. Klik met de rechter muisknop op de data base in de **meta gegevens Verkenner van Azure SQL database** en kies **synchroniseren met data base**. Met deze actie wordt het MySQL-schema gepubliceerd naar Azure SQL Database.
+1. Publiceer het schema: Klik met de rechter muisknop op de data base in de **meta gegevens Verkenner van Azure SQL database** en kies **synchroniseren met data base**. Met deze actie wordt het MySQL-schema gepubliceerd naar Azure SQL Database:
 
    ![Synchroniseren met data base](./media/access-to-sql-database-guide/synchronize-with-database.png)
 
@@ -112,17 +123,15 @@ Voer de volgende stappen uit om gegevens te migreren met behulp van SSMA voor to
 
    ![De synchronisatie met de data base controleren](./media/access-to-sql-database-guide/synchronize-with-database-review.png)
 
-1. **Access Meta Data Explorer** gebruiken om selectie vakjes in te checken naast de items die u wilt migreren. Als u de gehele Data Base wilt migreren, schakelt u het selectie vakje naast de data base in. 
-1. Klik met de rechter muisknop op de data base of het object dat u wilt migreren en kies **gegevens migreren**. 
-   Als u gegevens voor een hele Data Base wilt migreren, schakelt u het selectie vakje naast de naam van de data base in. Als u gegevens uit afzonderlijke tabellen wilt migreren, vouwt u de data base uit, vouwt u tabellen uit en schakelt u het selectie vakje naast de tabel in. Als u gegevens uit afzonderlijke tabellen wilt weglaten, schakelt u het selectie vakje uit.
+1. De gegevens migreren: Klik met de rechter muisknop op de data base of het object dat u wilt migreren in **Access Meta Data Explorer** en kies **gegevens migreren**. U kunt ook **gegevens migreren** selecteren in de bovenste navigatie balk. Als u gegevens voor een hele Data Base wilt migreren, schakelt u het selectie vakje naast de naam van de data base in. Als u gegevens uit afzonderlijke tabellen wilt migreren, vouwt u de data base uit, vouwt u tabellen uit en schakelt u het selectie vakje naast de tabel in. Als u gegevens uit afzonderlijke tabellen wilt weglaten, schakelt u het selectie vakje uit:
 
     ![Gegevens migreren](./media/access-to-sql-database-guide/migrate-data.png)
 
-    De gemigreerde gegevens controleren: 
+1. Nadat de migratie is voltooid, raadpleegt u het **rapport gegevens migratie**:  
 
     ![Gegevens controle migreren](./media/access-to-sql-database-guide/migrate-data-review.png)
 
-1. Maak verbinding met uw Azure SQL Database met behulp van [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) en valideer de migratie door de gegevens en het schema te controleren.
+1. Maak verbinding met uw Azure SQL Database met behulp van [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) en valideer de migratie door de gegevens en het schema te controleren:
 
    ![Valideren in SSMA](./media/access-to-sql-database-guide/validate-data.png)
 

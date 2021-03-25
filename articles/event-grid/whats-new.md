@@ -3,12 +3,12 @@ title: Wat is nieuw? Releaseopmerkingen voor Azure Event Grid
 description: Ontdek wat er nieuw is in Azure Event Grid, zoals de laatste opmerkingen bij de release, bekende problemen, opgeloste problemen, verminderde functionaliteit en aankomende wijzigingen.
 ms.topic: overview
 ms.date: 07/23/2020
-ms.openlocfilehash: 7528cef7007704bbf434f16622707da8920eec2b
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: da0b26e4f163f428e6955a37636ceb19bb34abc5
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96350004"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105107530"
 ---
 # <a name="whats-new-in-azure-event-grid"></a>Wat is er nieuw in Azure Event Grid?
 
@@ -73,14 +73,14 @@ Azure Event Grid wordt doorlopend verder verbeterd. Om u op de hoogte te houden 
 - Deze release komt overeen met de API-versie `2019-06-01`.
 - De release voegt ondersteuning toe voor de volgende nieuwe functies:
     * [Domeinen](event-domains.md)
-    * Paginering en zoekfilter voor bewerkingen op resourcelijsten. Zie [Onderwerpen: op abonnement weergeven](/rest/api/eventgrid/version2020-04-01-preview/topics/listbysubscription) voor een voorbeeld.
+    * Paginering en zoekfilter voor bewerkingen op resourcelijsten. Zie [Onderwerpen: op abonnement weergeven](/rest/api/eventgrid/version2020-10-15-preview/partnernamespaces/listbysubscription) voor een voorbeeld.
     * [Service Bus-wachtrij als bestemming](handler-service-bus.md)
     * [Geavanceerd filteren](event-filtering.md#advanced-filtering)
 
 ## <a name="410-preview-2019-03"></a>4.1.0-preview (2019-03)
 - Deze release komt overeen met de API-versie 2019-02-01-preview.
 - De release voegt ondersteuning toe voor de volgende nieuwe functies:
-    * Paginering en zoekfilter voor bewerkingen op resourcelijsten. Zie [Onderwerpen: op abonnement weergeven](/rest/api/eventgrid/version2020-04-01-preview/topics/listbysubscription) voor een voorbeeld.
+    * Paginering en zoekfilter voor bewerkingen op resourcelijsten. Zie [Onderwerpen: op abonnement weergeven](/rest/api/eventgrid/version2020-10-15-preview/partnernamespaces/listbysubscription) voor een voorbeeld.
     * [Domeinonderwerpen handmatig maken/verwijderen](how-to-event-domains.md)
     * [Service Bus-wachtrij als bestemming](handler-service-bus.md)
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/03/2021
 ms.author: TomSh
-ms.openlocfilehash: 1159736d59e15fa36c0feb7e5d5b5553953fb6b9
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: b5f9df4e6f682b5d1e9e3cd35affe6e4191e3d53
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103564508"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105047776"
 ---
 # <a name="introduction-to-azure-security"></a>Inleiding tot Azure-beveiliging
 
@@ -204,11 +204,11 @@ Azure-netwerken biedt ondersteuning voor verschillende scenario's voor beveiligd
 
 ### <a name="azure-private-link"></a>Azure Private Link
 
-Met [Azure private link](https://azure.microsoft.com/services/private-link/) kunt u toegang krijgen tot Azure PaaS-Services (bijvoorbeeld Azure Storage en SQL database) en Azure gehoste klant-eigendom/partner services privé in uw virtuele netwerk via een [persoonlijk eind punt](https://docs.microsoft.com/azure/private-link/private-endpoint-overview). Het instellen en gebruiken van Azure Private Link is consistent voor Azure PaaS-services, services die eigendom zijn van klanten en gedeelde partnerservices. Verkeer van uw virtuele netwerk naar de Azure-service blijft altijd op het Microsoft Azure backbone-netwerk.
+Met [Azure private link](https://azure.microsoft.com/services/private-link/) kunt u toegang krijgen tot Azure PaaS-Services (bijvoorbeeld Azure Storage en SQL database) en Azure gehoste klant-eigendom/partner services privé in uw virtuele netwerk via een [persoonlijk eind punt](../../private-link/private-endpoint-overview.md). Het instellen en gebruiken van Azure Private Link is consistent voor Azure PaaS-services, services die eigendom zijn van klanten en gedeelde partnerservices. Verkeer van uw virtuele netwerk naar de Azure-service blijft altijd op het Microsoft Azure backbone-netwerk.
 
-Met [persoonlijke eind punten](https://docs.microsoft.com/azure/private-link/private-endpoint-overview) kunt u uw kritieke Azure-service resources alleen op uw virtuele netwerken beveiligen. Azure private endpoint maakt gebruik van een privé-IP-adres van uw VNet om u privé en veilig te verbinden met een service die wordt aangestuurd door een persoonlijke Azure-koppeling, waardoor de service in uw VNet effectief wordt. Het beschikbaar maken van uw virtuele netwerk op het open bare Internet is niet langer nodig voor het gebruik van services in Azure. 
+Met [persoonlijke eind punten](../../private-link/private-endpoint-overview.md) kunt u uw kritieke Azure-service resources alleen op uw virtuele netwerken beveiligen. Azure private endpoint maakt gebruik van een privé-IP-adres van uw VNet om u privé en veilig te verbinden met een service die wordt aangestuurd door een persoonlijke Azure-koppeling, waardoor de service in uw VNet effectief wordt. Het beschikbaar maken van uw virtuele netwerk op het open bare Internet is niet langer nodig voor het gebruik van services in Azure. 
 
-U kunt ook uw eigen persoonlijke koppelings service in uw virtuele netwerk maken. [Persoonlijke koppelings service van Azure](https://docs.microsoft.com/azure/private-link/private-link-service-overview) is de verwijzing naar uw eigen service die wordt aangestuurd door een persoonlijke Azure-koppeling. De service die wordt uitgevoerd achter Azure Standard Load Balancer kan worden ingeschakeld voor toegang tot persoonlijke koppelingen, zodat gebruikers die toegang hebben tot uw service, privé kunnen zijn vanuit hun eigen virtuele netwerken. Uw klanten kunnen een persoonlijk eind punt in hun virtuele netwerk maken en dit aan deze service toewijzen. Het beschikbaar maken van uw service voor het open bare Internet is niet langer nodig voor het weer geven van services in Azure. 
+U kunt ook uw eigen persoonlijke koppelings service in uw virtuele netwerk maken. [Persoonlijke koppelings service van Azure](../../private-link/private-link-service-overview.md) is de verwijzing naar uw eigen service die wordt aangestuurd door een persoonlijke Azure-koppeling. De service die wordt uitgevoerd achter Azure Standard Load Balancer kan worden ingeschakeld voor toegang tot persoonlijke koppelingen, zodat gebruikers die toegang hebben tot uw service, privé kunnen zijn vanuit hun eigen virtuele netwerken. Uw klanten kunnen een persoonlijk eind punt in hun virtuele netwerk maken en dit aan deze service toewijzen. Het beschikbaar maken van uw service voor het open bare Internet is niet langer nodig voor het weer geven van services in Azure. 
 
 ### <a name="vpn-gateway"></a>VPN Gateway
 

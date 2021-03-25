@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
 ms.custom: devx-track-csharp
-ms.openlocfilehash: bb26a865ab8b8beba99fcba51e2d05e166b1e84b
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 82dcfa0942f21f01424c4744aa0b23f4672a135f
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102095354"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105106714"
 ---
 # <a name="quickstart-azure-blob-storage-client-library-v12-for-net"></a>Snelstartgids: Azure Blob Storage-client bibliotheek V12 voor .NET
 
@@ -164,7 +164,7 @@ Voeg deze code toe aan het einde van de `Main`-methode:
 
 ### <a name="download-blobs"></a>Blobs downloaden
 
-Download de eerder gemaakte blob door de methode [DownloadAsync](/dotnet/api/azure.storage.blobs.specialized.blobbaseclient.downloadasync) aan te roepen. Met de voorbeeldcode wordt het achtervoegsel 'DOWNLOADED' toegevoegd aan de naam van het bestand, zodat u beide bestanden in het lokale bestandssysteem kunt zien.
+Download de eerder gemaakte blob door de methode [DownloadAsync](/dotnet/api/azure.storage.blobs.specialized.blobbaseclient.downloadtoasync) aan te roepen. Met de voorbeeldcode wordt het achtervoegsel 'DOWNLOADED' toegevoegd aan de naam van het bestand, zodat u beide bestanden in het lokale bestandssysteem kunt zien.
 
 Voeg deze code toe aan het einde van de `Main`-methode:
 

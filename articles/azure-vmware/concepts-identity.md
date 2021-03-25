@@ -3,12 +3,12 @@ title: 'Concepten: identiteit en toegang'
 description: Meer informatie over de identiteits-en toegangs concepten van de Azure VMware-oplossing
 ms.topic: conceptual
 ms.date: 03/22/2021
-ms.openlocfilehash: f3a79c79acef07721bd0883fa70c835bee14ef0d
-ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
+ms.openlocfilehash: 7b1880ccdee1d4c3ce25e264c004b1a949134a96
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104799272"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105026901"
 ---
 # <a name="azure-vmware-solution-identity-concepts"></a>Concepten van Azure VMware-oplossings identiteiten
 
@@ -101,11 +101,11 @@ Gebruik het *beheerders* account om toegang te krijgen tot NSX-T-beheer. Het hee
 
 Nu u Azure VMware-oplossings toegang en identiteits concepten hebt behandeld, kunt u het volgende weten:
 
-- [Concepten](concepts-upgrades.md)van de upgrade van de privécloud.
-- [Informatie over het inschakelen van de Azure VMware Solution-resource](enable-azure-vmware-solution.md).
-- [Details van elke bevoegdheid](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.security.doc/GUID-ED56F3C4-77D0-49E3-88B6-B99B8B437B62.html).
-- [Hoe Azure VMware Solution bewaakt en herstelt persoonlijke Clouds](concepts-monitor-repair-private-cloud.md).
-- [Informatie over het inschakelen van de Azure VMware Solution-resource](enable-azure-vmware-solution.md).
+- [Concepten voor de upgrade van privécloud](concepts-upgrades.md)
+- [Azure VMware Solution resource inschakelen](enable-azure-vmware-solution.md)
+- [Details van elke bevoegdheid](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.security.doc/GUID-ED56F3C4-77D0-49E3-88B6-B99B8B437B62.html)
+- [Hoe Azure VMware Solution bewaakt en herstelt persoonlijke Clouds](concepts-monitor-repair-private-cloud.md)
+- [Azure VMware Solution resource inschakelen](enable-azure-vmware-solution.md)
 
 
 <!-- LINKS - external-->

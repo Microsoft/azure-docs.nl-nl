@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/21/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: e8641cada03577cf22e6627bdf53b2a8a0e836ef
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 4550be7ae8c543eea1bdfa085db6f23fe668a121
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102216380"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105025693"
 ---
 # <a name="azure-functions-http-trigger"></a>HTTP-trigger Azure Functions
 
@@ -596,7 +596,7 @@ Met deze configuratie is de functie nu adresseerbaar met de volgende route in pl
 http://<APP_NAME>.azurewebsites.net/api/products/electronics/357
 ```
 
-Met deze configuratie kan de functie code twee para meters ondersteunen in het adres, de _categorie_ en de _id_. Zie [route ring in ASP.net core](https://docs.microsoft.com/aspnet/core/fundamentals/routing#route-constraint-reference)voor meer informatie over hoe route parameters worden getokend in een URL.
+Met deze configuratie kan de functie code twee para meters ondersteunen in het adres, de _categorie_ en de _id_. Zie [route ring in ASP.net core](/aspnet/core/fundamentals/routing#route-constraint-reference)voor meer informatie over hoe route parameters worden getokend in een URL.
 
 # <a name="c"></a>[C#](#tab/csharp)
 

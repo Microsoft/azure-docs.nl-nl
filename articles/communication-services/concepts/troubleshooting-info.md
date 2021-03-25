@@ -8,12 +8,12 @@ ms.author: manoskow
 ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: daa89380894a57e58191edd95303a2160846da04
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 80db53a5ed8d2edc90bc847578d5df4d603cc437
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103492690"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105107224"
 ---
 # <a name="troubleshooting-in-azure-communication-services"></a>Problemen met Azure Communication Services oplossen
 
@@ -33,11 +33,11 @@ Om u te helpen bij het oplossen van bepaalde typen problemen, wordt u mogelijk g
 
 ## <a name="access-your-ms-cv-id"></a>De MS-CV-id ophalen
 
-U kunt de MS-CV-id ophalen door tijdens het initialiseren van uw clientbibliotheken diagnostische gegevens te configureren in het `clientOptions`-objectexemplaar. Diagnostische gegevens kunnen worden geconfigureerd voor een van de Azure-client Bibliotheken, waaronder chat-, identiteits-en VoIP-aanroepen.
+De MS-CV-ID is toegankelijk door Diagnostische gegevens te configureren in het `clientOptions` object exemplaar bij het initialiseren van uw sdk's. Diagnostische gegevens kunnen worden geconfigureerd voor een van de Azure-Sdk's, waaronder chat-, identiteits-en VoIP-aanroepen.
 
 ### <a name="client-options-example"></a>Voorbeeld van clientopties
 
-In de volgende codefragmenten wordt de configuratie van diagnostische gegevens gedemonstreerd. Wanneer de clientbibliotheken in combinatie met diagnostische gegevens worden gebruikt, worden er diagnostische gegevens verzonden naar de geconfigureerde gebeurtenislistener:
+In de volgende codefragmenten wordt de configuratie van diagnostische gegevens gedemonstreerd. Wanneer de Sdk's worden gebruikt voor diagnostische gegevens, worden diagnostische gegevens verzonden naar de geconfigureerde gebeurtenislistener:
 
 # <a name="c"></a>[C#](#tab/csharp)
 ```
@@ -79,7 +79,7 @@ chat_client = ChatClient(
 
 ## <a name="access-your-call-id"></a>De oproep-id ophalen
 
-Bij het indienen van een ondersteuningsaanvraag met betrekking tot oproepproblemen via Azure Portal wordt u mogelijk gevraagd de id op te geven van de oproep waarnaar u verwijst. Deze kan worden opgehaald via de aanroepende clientbibliotheek:
+Bij het indienen van een ondersteuningsaanvraag met betrekking tot oproepproblemen via Azure Portal wordt u mogelijk gevraagd de id op te geven van de oproep waarnaar u verwijst. Dit kan worden geopend via de aanroepende SDK:
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 ```javascript
@@ -127,7 +127,7 @@ console.log(result); // your message ID will be in the result
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-De volgende code kan worden gebruikt om `AzureLogger` te configureren voor de uitvoer van logboeken naar de-console met behulp van de JavaScript-clientbibliotheek:
+De volgende code kan worden gebruikt voor het configureren `AzureLogger` van uitvoer logboeken naar de-console met behulp van de Java script SDK:
 
 ```javascript
 import { AzureLogger } from '@azure/logger';
@@ -157,16 +157,16 @@ Ga in Android Studio naar Device File Explorer door Weergave > Hulpprogramma Win
 
 ---
 
-## <a name="calling-client-library-error-codes"></a>Foutcodes voor aanroepende clientbibliotheek
+## <a name="calling-sdk-error-codes"></a>SDK-fout codes aanroepen
 
-De aanroepende clientbibliotheek van Azure Communication Services maakt gebruik van de volgende foutcodes om u te helpen problemen met oproepen op te lossen. Deze foutcodes worden weergegeven via de eigenschap `call.callEndReason` nadat de oproep is beëindigd.
+De Azure Communication Services Calling SDK gebruikt de volgende fout codes om u te helpen bij het oplossen van problemen met aanroepen. Deze foutcodes worden weergegeven via de eigenschap `call.callEndReason` nadat de oproep is beëindigd.
 
 | Foutcode | Beschrijving | Actie die moet worden uitgevoerd |
 | -------- | ---------------| ---------------|
 | 403 | Verboden / Verificatiefout. | Controleer of het Communication Services-token geldig is, en niet is verlopen. |
 | 404 | Oproep is niet gevonden. | Controleer of het nummer dat u belt (of de oproep waaraan u deelneemt) bestaat. |
 | 408 | Time-out voor oproepcontroller. | Er is een time-out voor de oproepcontroller opgetreden tijdens het wachten op protocolberichten van gebruikerseindpunten. Controleer of de clients zijn verbonden en beschikbaar zijn. |
-| 410 | Fout met de lokale mediastack of media-infrastructuur. | Controleer of u de meest recente clientbibliotheek gebruikt in een ondersteunde omgeving. |
+| 410 | Fout met de lokale mediastack of media-infrastructuur. | Zorg ervoor dat u de nieuwste SDK gebruikt in een ondersteunde omgeving. |
 | 430 | Kan het bericht niet bezorgen bij de clienttoepassing. | Zorg ervoor dat de clienttoepassing actief en beschikbaar is. |
 | 480 | Het eindpunt van de externe client is niet geregistreerd. | Controleer of het externe eindpunt beschikbaar is. |
 | 481 | Verwerken van binnenkomende oproep is mislukt. | Dien een ondersteuningsaanvraag in via de Azure-portal |

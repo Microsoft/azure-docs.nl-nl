@@ -12,12 +12,12 @@ ms.date: 09/01/2020
 ms.author: trbye
 ms.custom: cog-serv-seo-aug-2020
 keywords: tekst naar spraak
-ms.openlocfilehash: 7722c9387e8d6475c6da4c771e9a0e355a4ac0af
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: e42f81ce0f06b3782972dbf4322f0590763d8704
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104654846"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105026322"
 ---
 # <a name="what-is-text-to-speech"></a>Wat is tekst-naar-spraak?
 
@@ -41,7 +41,10 @@ In dit overzicht vindt u meer informatie over de voor delen en mogelijkheden van
 
 * De stem stijlen aanpassen met SSML-SSML (Speech Synthesis Markup Language) is een op XML gebaseerde opmaak taal die wordt gebruikt voor het aanpassen van de uitvoer van spraak naar tekst. Met SSML kunt u de Toon hoogte aanpassen, onderbrekingen toevoegen, de uitspraak verbeteren, de spraak snelheid verlagen of vertragen, het volume verg Roten of verkleinen, en het kenmerk meerdere stemmen op één document. Zie de [instructies](speech-synthesis-markup.md) voor het aanpassen van de stijl van spreken.
 
-* Visemes- [Visemes](how-to-speech-synthesis-viseme.md) zijn de sleutel in waargenomen spraak, met inbegrip van de positie van de lippen, jaw en tong bij het produceren van een bepaalde foneem. Visemes hebben een sterke correlatie met stemmen en fonemen. U kunt met behulp van viseme-gebeurtenissen in spraak-SDK gelaat animatie gegevens genereren, die kunnen worden gebruikt voor het animeren van gezichten in lip-Lees communicatie, onderwijs, entertainment en klanten service. 
+* Visemes- [Visemes](how-to-speech-synthesis-viseme.md) zijn de sleutel in waargenomen spraak, met inbegrip van de positie van de lippen, jaw en tong bij het produceren van een bepaalde foneem. Visemes hebben een sterke correlatie met stemmen en fonemen. U kunt met behulp van viseme-gebeurtenissen in spraak-SDK gelaat animatie gegevens genereren, die kunnen worden gebruikt voor het animeren van gezichten in lip-Lees communicatie, onderwijs, entertainment en klanten service.
+
+> [!NOTE]
+> Viseme werkt alleen voor `en-US-AriaNeural` spraak in de regio vs-West 2 ( `westus2` ) voor nu.
 
 ## <a name="get-started"></a>Aan de slag
 

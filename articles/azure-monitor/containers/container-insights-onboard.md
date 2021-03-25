@@ -3,12 +3,12 @@ title: Container Insights inschakelen | Microsoft Docs
 description: In dit artikel wordt beschreven hoe u container Insights inschakelt en configureert, zodat u kunt begrijpen hoe uw container presteert en welke prestatie problemen zijn geïdentificeerd.
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: 58797221fa3380e4f7533a710e2f8dc658cb676c
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 01246a728f204ed9cb43eee392c637b495208aaf
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101708353"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105109349"
 ---
 # <a name="enable-container-insights"></a>Container Insights inschakelen
 
@@ -64,6 +64,7 @@ Voordat u begint, moet u ervoor zorgen dat u aan de volgende vereisten voldoet:
 - Als u de bewakings gegevens wilt bekijken, moet u de rol van [*log Analytics lezer*](../logs/manage-access.md#manage-access-using-azure-permissions) hebben in de log Analytics-werk ruimte, geconfigureerd met container Insights.
 
 - Prometheus-metrische gegevens worden niet standaard verzameld. Voordat u [de agent configureert](container-insights-prometheus-integration.md) voor het verzamelen van de metrische gegevens, is het belang rijk om de [Prometheus-documentatie](https://prometheus.io/) te controleren om te begrijpen welke informatie kan worden verzameld en welke methoden worden ondersteund.
+- Een AKS-cluster kan worden gekoppeld aan een Log Analytics-werk ruimte in een ander Azure-abonnement in dezelfde Azure AD-Tenant. Dit kan momenteel niet worden uitgevoerd met Azure Portal, maar kan wel worden uitgevoerd met een Azure CLI-of Resource Manager-sjabloon.
 
 ## <a name="supported-configurations"></a>Ondersteunde configuraties
 

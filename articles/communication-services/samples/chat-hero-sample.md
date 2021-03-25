@@ -9,12 +9,12 @@ ms.author: dademath
 ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 0eb396935b42b040ab9f152a4965922664deb451
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: b5960238893ae1e4dc307db98f9dc73889a2fa5b
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103487821"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105108890"
 ---
 # <a name="get-started-with-the-group-chat-hero-sample"></a>Aan de slag met het hero-voorbeeld van groeps-chat
 
@@ -30,7 +30,7 @@ ms.locfileid: "103487821"
 > [Dit voorbeeld is beschikbaar op GitHub.](https://github.com/Azure-Samples/communication-services-web-chat-hero)
 
 
-Het **hero-voorbeeld van groeps-chat** laat zien hoe de webclientbibliotheek van de Communication Services-chat kan worden gebruikt voor het bouwen van een groepsgesprekservaring.
+In het voor beeld van de Azure Communication Services- **groep chatten** ziet u hoe de websdk voor communicatie Services kan worden gebruikt voor het bouwen van een groeps ervaring.
 
 In deze quickstart over hero-voorbeelden komt u te weten hoe het voorbeeld werkt voordat u het op uw lokale computer gaat uitvoeren. Vervolgens gaat u het voorbeeld in Azure implementeren met behulp van uw eigen Azure Communication Services-resources.
 
@@ -111,7 +111,7 @@ Als u een Communication Services-abonnement wilt opschonen en verwijderen, kunt 
 Raadpleeg voor meer informatie de volgende artikelen:
 
 - Meer informatie over [chatconcepten](../concepts/chat/concepts.md)
-- Uzelf bekend maken met de [chatclientbibliotheek](../concepts/chat/sdk-features.md)
+- Vertrouwd raken met onze [Chat-SDK](../concepts/chat/sdk-features.md)
 - Het voor beeld van [Contoso med-app](https://github.com/Azure-Samples/communication-services-contoso-med-app) bekijken
 
 ## <a name="additional-reading"></a>Meer artikelen

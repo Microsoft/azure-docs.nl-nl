@@ -8,12 +8,12 @@ ms.service: private-link
 ms.topic: how-to
 ms.date: 09/02/2020
 ms.author: allensu
-ms.openlocfilehash: 3ed349616ae6456913c19bb073f6e9ea28e7d549
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 4fe43ec7661cfad25c48819183742c3f33951d92
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100575123"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105108142"
 ---
 # <a name="use-azure-firewall-to-inspect-traffic-destined-to-a-private-endpoint"></a>Azure Firewall gebruiken om verkeer te controleren dat is bestemd voor een privé-eindpunt
 
@@ -25,8 +25,8 @@ U moet mogelijk verkeer van clients controleren of blok keren naar de services d
 
 De volgende beperkingen zijn van toepassing:
 
-* Netwerk beveiligings groepen (Nsg's) zijn niet van toepassing op privé-eind punten
-* Door de gebruiker gedefinieerde routes (UDR) zijn niet van toepassing op privé-eind punten
+* Netwerk beveiligings groepen (NSG) worden overgeslagen door verkeer dat afkomstig is van privé-eind punten
+* Door de gebruiker gedefinieerde routes (UDR) worden overgeslagen door verkeer dat afkomstig is van privé-eind punten
 * U kunt één route tabel aan een subnet koppelen
 * Een route tabel ondersteunt Maxi maal 400 routes
 
@@ -35,7 +35,8 @@ Met Azure Firewall wordt verkeer gefilterd met behulp van:
 * [FQDN in netwerk regels](../firewall/fqdn-filtering-network-rules.md) voor TCP-en UDP-protocollen
 * [FQDN in toepassings regels](../firewall/features.md#application-fqdn-filtering-rules) voor http, HTTPS en MSSQL. 
 
-De meeste services die worden weer gegeven via privé-eind punten gebruiken HTTPS. Het gebruik van toepassings regels via netwerk regels wordt aanbevolen bij het gebruik van Azure SQL.
+> [!IMPORTANT] 
+> Het gebruik van toepassings regels via netwerk regels wordt aanbevolen bij het inspecteren van verkeer dat is bestemd voor privé-eind punten om stroom symmetrie te hand haven. Als er netwerk regels worden gebruikt, of als er een NVA wordt gebruikt in plaats van Azure Firewall, moet SNAT worden geconfigureerd voor verkeer dat is bestemd voor privé-eind punten.
 
 > [!NOTE]
 > SQL FQDN-filtering wordt alleen ondersteund in de [proxy modus](../azure-sql/database/connectivity-architecture.md#connection-policy) (poort 1433). **Proxy** modus kan leiden tot meer latentie in vergelijking met *omleiden*. Als u de omleidings modus wilt blijven gebruiken. Dit is de standaard instelling voor clients die verbinding maken in Azure. u kunt de toegang filteren met behulp van FQDN in Firewall-netwerk regels.
@@ -46,12 +47,9 @@ De meeste services die worden weer gegeven via privé-eind punten gebruiken HTTP
 
 Dit scenario is de meest uitbreid bare architectuur om persoonlijke verbinding te maken met meerdere Azure-Services met behulp van privé-eind punten. Er wordt een route gemaakt die verwijst naar de netwerk adres ruimte waar de persoonlijke eind punten worden geïmplementeerd. Deze configuratie vermindert de administratieve overhead en voor komt dat de limiet van 400 routes wordt uitgevoerd.
 
-Verbindingen van een virtueel netwerk van de client naar de Azure Firewall in een hub-virtueel netwerk zullen kosten in rekening brengen als de virtuele netwerken aan elkaar zijn gekoppeld.
+Verbindingen van een virtueel netwerk van de client naar de Azure Firewall in een hub-virtueel netwerk zullen kosten in rekening brengen als de virtuele netwerken aan elkaar zijn gekoppeld. Verbindingen van Azure Firewall in een hub virtueel netwerk naar privé-eind punten in een gekoppeld virtueel netwerk worden niet in rekening gebracht.
 
 Zie de sectie Veelgestelde vragen van de pagina met [prijzen](https://azure.microsoft.com/pricing/details/private-link/) voor meer informatie over de kosten voor verbindingen met gekoppelde virtuele netwerken.
-
->[!NOTE]
-> Dit scenario kan worden geïmplementeerd met behulp van NVA of Azure Firewall netwerk regels in plaats van toepassings regels.
 
 ## <a name="scenario-2-hub-and-spoke-architecture---shared-virtual-network-for-private-endpoints-and-virtual-machines"></a>Scenario 2: een hub-en spoke-architectuur-gedeeld virtueel netwerk voor persoonlijke eind punten en virtuele machines
 
@@ -69,21 +67,15 @@ De administratieve overhead van het onderhouden van de route tabel neemt toe naa
 
 Afhankelijk van uw algemene architectuur is het mogelijk om de limiet van 400 routes uit te voeren. Het is raadzaam om scenario 1 zoveel mogelijk te gebruiken.
 
-Verbindingen van een virtueel netwerk van de client naar de Azure Firewall in een hub-virtueel netwerk zullen kosten in rekening brengen als de virtuele netwerken aan elkaar zijn gekoppeld.
+Verbindingen van een virtueel netwerk van de client naar de Azure Firewall in een hub-virtueel netwerk zullen kosten in rekening brengen als de virtuele netwerken aan elkaar zijn gekoppeld. Verbindingen van Azure Firewall in een hub virtueel netwerk naar privé-eind punten in een gekoppeld virtueel netwerk worden niet in rekening gebracht.
 
 Zie de sectie Veelgestelde vragen van de pagina met [prijzen](https://azure.microsoft.com/pricing/details/private-link/) voor meer informatie over de kosten voor verbindingen met gekoppelde virtuele netwerken.
-
->[!NOTE]
-> Dit scenario kan worden geïmplementeerd met behulp van NVA of Azure Firewall netwerk regels in plaats van toepassings regels.
 
 ## <a name="scenario-3-single-virtual-network"></a>Scenario 3: Eén virtueel netwerk
 
 :::image type="content" source="./media/inspect-traffic-using-azure-firewall/single-vnet.png" alt-text="Eén virtueel netwerk" border="true":::
 
-Er zijn enkele beperkingen ten aanzien van de implementatie: een migratie naar een hub-en-spoke-architectuur is niet mogelijk. Dezelfde overwegingen als in scenario 2 zijn van toepassing. In dit scenario zijn de kosten voor peering voor virtuele netwerken niet van toepassing.
-
->[!NOTE]
-> Als u dit scenario wilt implementeren met een NVA of Azure Firewall van een derde partij, moeten netwerk regels in plaats van toepassings regels worden gebruikt voor het SNAT-verkeer dat bestemd is voor de persoonlijke eind punten. Anders kan de communicatie tussen de virtuele machines en het persoonlijke eind punt niet worden uitgevoerd.
+Gebruik dit patroon wanneer een migratie naar een hub-en-spoke-architectuur niet mogelijk is. Dezelfde overwegingen als in scenario 2 zijn van toepassing. In dit scenario zijn de kosten voor peering voor virtuele netwerken niet van toepassing.
 
 ## <a name="scenario-4-on-premises-traffic-to-private-endpoints"></a>Scenario 4: on-premises verkeer naar privé-eind punten
 
@@ -97,9 +89,6 @@ Deze architectuur kan worden geïmplementeerd als u verbinding met uw on-premise
 Als uw beveiligings vereisten client verkeer vereisen voor services die worden weer gegeven via persoonlijke eind punten om te worden gerouteerd via een beveiligings apparaat, implementeert u dit scenario.
 
 Dezelfde overwegingen als in scenario 2 hierboven zijn van toepassing. In dit scenario zijn er geen kosten voor peering van virtuele netwerken. Zie [on-premises workloads met een DNS-doorstuur server](./private-endpoint-dns.md#on-premises-workloads-using-a-dns-forwarder)voor meer informatie over het configureren van uw DNS-servers om on-premises workloads toegang te geven tot privé-eind punten.
-
->[!NOTE]
-> Als u dit scenario wilt implementeren met een NVA of Azure Firewall van een derde partij, moeten netwerk regels in plaats van toepassings regels worden gebruikt voor het SNAT-verkeer dat bestemd is voor de persoonlijke eind punten. Anders kan de communicatie tussen de virtuele machines en het persoonlijke eind punt niet worden uitgevoerd.
 
 ## <a name="prerequisites"></a>Vereisten
 

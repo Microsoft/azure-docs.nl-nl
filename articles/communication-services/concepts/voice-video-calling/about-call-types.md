@@ -9,19 +9,19 @@ ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: eea54be9d159c6aacbbc24e2fe8edf874f8e2d83
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 4ecc7033007361e27908e0881b80091ac660398e
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103492333"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105108384"
 ---
 # <a name="voice-and-video-concepts"></a>Voice- en videoconcepten
 
 [!INCLUDE [Public Preview Notice](../../includes/public-preview-include.md)]
 
 
-U kunt Azure Communication Services gebruiken om één-op-één of met een groep spraak- en video-oproepen te plaatsen en te ontvangen. U kunt bellen naar andere met internet verbonden apparaten en naar gewone telefoons. U kunt de JavaScript-, Android- of iOS-clientbibliotheken van Communication Services gebruiken om toepassingen te bouwen waarmee uw gebruikers met elkaar kunnen praten in privégesprekken of in groepsdiscussies. Azure Communication Services ondersteunt oproepen van en naar services of bots.
+U kunt Azure Communication Services gebruiken om één-op-één of met een groep spraak- en video-oproepen te plaatsen en te ontvangen. U kunt bellen naar andere met internet verbonden apparaten en naar gewone telefoons. U kunt de Sdk's van de communicatie services java script, Android of iOS gebruiken om toepassingen te bouwen waarmee uw gebruikers naar elkaar kunnen praten in privé gesprekken of in groeps discussies. Azure Communication Services ondersteunt oproepen van en naar services of bots.
 
 ## <a name="call-types-in-azure-communication-services"></a>Oproeptypen in Azure Communication Services
 
@@ -37,7 +37,7 @@ Elke keer dat uw gebruikers communiceren met een traditioneel telefoonnummer, ve
 
 ### <a name="one-to-one-call"></a>Eén-op-één-gesprek
 
-Een één-op-één-gesprek op Azure Communication Services vindt plaats wanneer een van uw gebruikers verbinding maakt met een andere gebruiker via een van onze clientbibliotheken. Het gesprek kan zowel via VoIP of PSTN verlopen.
+Een een-op-een-aanroep van Azure Communication Services treedt op wanneer een van uw gebruikers verbinding maakt met een andere gebruiker met behulp van een van onze Sdk's. Het gesprek kan zowel via VoIP of PSTN verlopen.
 
 ### <a name="group-call"></a>Groepsgesprek
 
@@ -61,4 +61,4 @@ Tijdens de preview kunt u de groeps-ID gebruiken om deel te nemen aan hetzelfde 
 Raadpleeg voor meer informatie de volgende artikelen:
 - Lees meer over algemene [oproepstromen](../call-flows.md)
 - [Telefoon nummer typen](../telephony-sms/plan-solution.md)
-- Meer informatie over de [mogelijkheden van de clientbibliotheek voor oproepen](../voice-video-calling/calling-sdk-features.md)
+- Meer informatie over de [aanroepende SDK-mogelijkheden](../voice-video-calling/calling-sdk-features.md)

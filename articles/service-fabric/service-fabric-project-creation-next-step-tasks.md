@@ -4,12 +4,12 @@ description: Meer informatie over het toepassings project dat u zojuist hebt gem
 ms.topic: conceptual
 ms.date: 12/21/2020
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 59c8eb0737d2cef1c4b1df34d673b74944fef4e1
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 4d162918644727d4c79ad606f1ed34816f543d81
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "97760432"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105044376"
 ---
 # <a name="your-service-fabric-application-and-next-steps"></a>Uw Service Fabric-toepassing en de volgende stappen
 Uw Azure Service Fabric-toepassing is gemaakt. Dit artikel bevat een aantal resources, wat meer informatie u mogelijk interesseert en mogelijke [volgende stappen](#next-steps).
@@ -59,7 +59,7 @@ Uw toepassing kan gevoelige informatie bevatten, zoals verbindings reeksen voor 
 Net als bij andere platforms gaat een Service Fabric-toepassing doorgaans door de volgende fasen: ontwerpen, ontwikkelen, testen, implementeren, bijwerken, onderhoud en verwijderen. [Dit artikel](service-fabric-application-lifecycle.md) bevat een overzicht van de api's en hoe deze worden gebruikt door de verschillende rollen in de fasen van de levens cyclus van de service Fabric-toepassing.
 
 ## <a name="learn-about-best-practices"></a>Meer informatie over best practices
-Service Fabric heeft een aantal artikelen waarin [Aanbevolen procedures](./service-fabric-best-practices-overview.md)worden beschreven. Profiteer van deze informatie om ervoor te zorgen dat het cluster en de toepassing zo goed mogelijk worden uitgevoerd.
+Service Fabric heeft een aantal artikelen waarin [Aanbevolen procedures](./service-fabric-best-practices-security.md)worden beschreven. Profiteer van deze informatie om ervoor te zorgen dat het cluster en de toepassing zo goed mogelijk worden uitgevoerd.
 De besproken onderwerpen zijn onder andere:
 * [Beveiliging](./service-fabric-best-practices-security.md)
 * [Netwerken](./service-fabric-best-practices-networking.md)

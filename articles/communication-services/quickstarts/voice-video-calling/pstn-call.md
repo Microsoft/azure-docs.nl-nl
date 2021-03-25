@@ -8,19 +8,19 @@ ms.date: 03/10/2021
 ms.topic: quickstart
 ms.service: azure-communication-services
 zone_pivot_groups: acs-plat-web-ios-android
-ms.openlocfilehash: 65a968747e7ed12e6ee03bd5fea4b7b4af7ee10e
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: a861ed27414ed407d00e8e886f20fb952a8ac95e
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104729512"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105109031"
 ---
 # <a name="quickstart-call-to-phone"></a>Snelstart: Bellen naar telefoon
 
 [!INCLUDE [Public Preview Notice](../../includes/public-preview-include.md)]
 
 
-Ga aan de slag met Azure Communication Services door de clientbibliotheek voor aanroepen van Communications Services te gebruiken om PSTN-oproepen aan uw app toe te voegen.
+Ga aan de slag met Azure Communication Services met behulp van de communicatie services die SDK aanroepen om PSTN-aanroepen toe te voegen aan uw app.
 
 ::: zone pivot="platform-web"
 [!INCLUDE [Calling with JavaScript](./includes/pstn-call-js.md)]
@@ -42,5 +42,5 @@ Als u een Communication Services-abonnement wilt opschonen en verwijderen, kunt 
 
 Raadpleeg voor meer informatie de volgende artikelen:
 
-- Meer informatie over de [mogelijkheden van de clientbibliotheek voor aanroepen](./calling-client-samples.md)
+- Meer informatie over het [aanroepen van SDK-mogelijkheden](./calling-client-samples.md)
 - Meer informatie over [de werking van aanroepen](../../concepts/voice-video-calling/about-call-types.md)

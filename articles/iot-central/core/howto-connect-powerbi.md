@@ -7,16 +7,18 @@ author: viv-liu
 ms.author: viviali
 ms.date: 10/4/2019
 ms.topic: conceptual
-ms.openlocfilehash: 191b57b08ba04844824dd5cf26875c21e494c5ef
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: dd67a4f1a005abc7319723efcc3f2944b18c4f5f
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "92123334"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105109230"
 ---
 # <a name="visualize-and-analyze-your-azure-iot-central-data-in-a-power-bi-dashboard"></a>Uw Azure IoT Central-gegevens visualiseren en analyseren in een Power BI dash board
 
 *Dit onderwerp is van toepassing op beheerders en ontwikkel aars van oplossingen.*
+
+[!Note] Deze oplossing maakt gebruik van [verouderde functies voor gegevens export](./howto-export-data-legacy.md). Blijf op de hoogte van bijgewerkte richt lijnen voor het maken van verbinding met Power BI met behulp van de meest recente gegevens export.
 
 :::image type="content" source="media/howto-connect-powerbi/iot-continuous-data-export.png" alt-text="Power BI solution-pijp lijn":::
 
@@ -27,7 +29,7 @@ Gebruik de Power BI-oplossing voor Azure IoT Central v3 om een krachtig Power BI
 - Filteren op gegevens die worden verzonden door specifieke apparaten
 - De meest recente telemetriegegevens in een tabel weer geven
 
-Met deze oplossing wordt een pijp lijn ingesteld waarmee gegevens worden gelezen uit uw [continue data export](./howto-export-data.md) Azure Blob Storage-account. De pijp lijn gebruikt Azure Functions, Azure Data Factory en Azure SQL Database om de gegevens te verwerken en te transformeren. u kunt de gegevens in een Power BI rapport dat u als een PBIX-bestand hebt gedownload, visualiseren en analyseren. Alle resources worden gemaakt in uw Azure-abonnement, zodat u elk onderdeel kunt aanpassen aan uw behoeften.
+Met deze oplossing wordt een pijp lijn ingesteld waarmee gegevens worden gelezen uit uw [continue data export](./howto-export-data-legacy.md) Azure Blob Storage-account. De pijp lijn gebruikt Azure Functions, Azure Data Factory en Azure SQL Database om de gegevens te verwerken en te transformeren. u kunt de gegevens in een Power BI rapport dat u als een PBIX-bestand hebt gedownload, visualiseren en analyseren. Alle resources worden gemaakt in uw Azure-abonnement, zodat u elk onderdeel kunt aanpassen aan uw behoeften.
 
 ## <a name="prerequisites"></a>Vereisten
 

@@ -11,12 +11,12 @@ ms.date: 03/22/2021
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 50eac71203a94ffb5c7dddc8995b56980c3f8815
-ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
+ms.openlocfilehash: e5053bd0c3d63b13b1021476a09dca39dd08f581
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104798711"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105108754"
 ---
 # <a name="pilot-cloud-sync-for-an-existing-synced-ad-forest"></a>Pilot Cloud Sync voor een bestaand gesynchroniseerd AD-forest 
 
@@ -39,7 +39,7 @@ Denk aan de volgende punten voordat u deze zelfstudie uitvoert:
 Dit zijn de vereisten voor het voltooien van deze zelfstudie
 - Een testomgeving met Azure AD Connect Sync versie 1.4.32.0 of hoger
 - Een OE of groep die is gesynchroniseerd en kan worden gebruikt als pilot. We raden u aan te beginnen met een kleine set objecten.
-- Een server met Windows Server 2012 R2 of hoger waarop de inrichtingsagent wordt gehost.  Dit magn niet dezelfde server zijn als de Azure AD Connect-server.
+- Een server met Windows Server 2012 R2 of hoger waarop de inrichtingsagent wordt gehost.
 - Bronanker voor Azure AD Connect Sync moet *​​objectGuid* of *ms-ds-consistencyGUID* zijn
 
 ## <a name="update-azure-ad-connect"></a>Azure AD Connect bijwerken

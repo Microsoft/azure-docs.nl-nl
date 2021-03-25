@@ -11,14 +11,14 @@ ms.topic: sample
 ms.date: 12/05/2019
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 7be5732b4e8897a9bc993b4e84b781e5f39bce55
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: f4b661ee66d3fb045dfa4891f1f1c1643927167c
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102565611"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105044036"
 ---
-# <a name="get-all-azure-ad-proxy-application-apps-published-with-no-certificate-uploaded"></a>Alle Azure AD-toepassingsproxy-apps publiceren waarvoor geen certificaat is geüpload
+# <a name="get-all-application-proxy-apps-published-with-no-certificate-uploaded"></a>Alle apps van de toepassings proxy publiceren zonder certificaat is geüpload
 
 In dit PowerShell-voorbeeld worden alle Azure Active Directory (Azure AD)-toepassingsproxy-apps vermeld die gebruikmaken van aangepaste domeinen maar waarvoor geen geldig TLS- of SSL-certificaat is geüpload.
 

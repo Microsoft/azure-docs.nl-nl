@@ -4,12 +4,12 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 03/10/2021
 ms.author: nikuklic
-ms.openlocfilehash: 1bdbfa0966f274d6c026110d7c50bf73266b1189
-ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.openlocfilehash: 43e3463a3284f57825073888146b38fa14cbf5d3
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "104729461"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105109030"
 ---
 [!INCLUDE [Emergency Calling Notice](../../../includes/emergency-calling-notice-include.md)]
 ## <a name="prerequisites"></a>Vereisten
@@ -23,7 +23,7 @@ ms.locfileid: "104729461"
 ### <a name="prerequisite-check"></a>Controle van vereisten
 
 - Als u de telefoonnummers wilt weergeven die zijn gekoppeld aan uw Communication Services-resource, meldt u zich aan bij [Azure Portal](https://portal.azure.com/), zoekt u uw Communication Services-resource en opent u het tabblad **telefoonnummers** vanuit het navigatiedeelvenster aan de linkerkant.
-- U kunt uw app bouwen en uitvoeren met de clientbibliotheek voor oproepen voor iOS in Azure Communication Services:
+- U kunt uw app bouwen en uitvoeren met Azure Communication Services die SDK voor iOS aanroepen:
 
 ## <a name="setting-up"></a>Instellen
 

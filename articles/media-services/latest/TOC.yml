@@ -341,13 +341,15 @@
           href: how-to-create-copyallbitratenoninterleaved-transform.md
         - name: Video's kopiëren zonder codering met REST
           href: how-to-create-copy-video-audio-transform.md
-        - name: Taken maken
+        - name: Taken maken met .NET
           href: cli-create-jobs.md
         - name: Taakinvoer maken met een lokaal bestand en .NET
           displayName: upload
           href: job-input-from-local-file-how-to.md
         - name: Taken met meerdere typen transformatie-uitvoer
           href: job-multiple-transform-outputs.md
+        - name: Twee of meer video bestanden samen voegen met .NET
+          href: stitch-howto.md
     - name: Inhoud coderen
       items:
         - name: HTTPS als taakinvoer

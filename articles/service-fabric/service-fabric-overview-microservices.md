@@ -3,12 +3,12 @@ title: Inleiding tot microservices in Azure
 description: Een overzicht van het bouwen van Cloud toepassingen met een micro Services-benadering is belang rijk voor het ontwikkelen van moderne toepassingen en hoe Azure Service Fabric een platform biedt om dit te bereiken.
 ms.topic: conceptual
 ms.date: 01/07/2020
-ms.openlocfilehash: d20e04820c87a7390d9c20e511259ee9860c27f5
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 46d4be7321057bd7a5ee19e0aca136c8c60d43bc
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96575649"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105044427"
 ---
 # <a name="why-use-a-microservices-approach-to-building-applications"></a>Waarom een micro Services-benadering gebruiken voor het ontwikkelen van toepassingen
 
@@ -194,7 +194,7 @@ De doel stelling van Service Fabric is het verminderen van de complexiteit van h
 
 * [Micro Services: een toepassings revolutie die wordt aangedreven door de Cloud](https://azure.microsoft.com/blog/microservices-an-application-revolution-powered-by-the-cloud/)
 * [Azure Architecture Center: Micro Services op Azure bouwen](/azure/architecture/microservices/)
-* [Aanbevolen procedures voor Azure Service Fabric-toepassingen en clusters](service-fabric-best-practices-overview.md)
+* [Aanbevolen procedures voor Azure Service Fabric-toepassingen en clusters](./service-fabric-best-practices-security.md)
 * [Overzicht van Service Fabric terminologie](service-fabric-technical-overview.md)
 
 [Image1]: media/service-fabric-overview-microservices/monolithic-vs-micro.png

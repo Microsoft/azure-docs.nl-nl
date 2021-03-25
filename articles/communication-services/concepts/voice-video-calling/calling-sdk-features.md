@@ -1,7 +1,7 @@
 ---
-title: Azure Communication Services-overzicht van de clientbibliotheek
+title: Overzicht van Azure Communication Services Calling SDK
 titleSuffix: An Azure Communication Services concept document
-description: Biedt een overzicht van de aanroepende clientbibliotheek.
+description: Biedt een overzicht van de aanroepende SDK.
 author: mikben
 manager: jken
 services: azure-communication-services
@@ -9,25 +9,25 @@ ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: e154e43f9e9378d6cccd23e2e5892f2a8ccf9a1e
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 39331cb83b233f6b91344e6e299ed81f187fe9d9
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104598878"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105108385"
 ---
-# <a name="calling-client-library-overview"></a>Overzicht van de aanroepende clientbibliotheek
+# <a name="calling-sdk-overview"></a>Overzicht van de SDK
 
 [!INCLUDE [Public Preview Notice](../../includes/public-preview-include.md)]
 
 
-Er zijn twee afzonderlijke families van het aanroepen van clientbibliotheken, voor *clients* en *services.* Momenteel beschikbare clientbibliotheken zijn bedoeld voor ervaringen van eindgebruikers: websites en systeemeigen apps.
+Er zijn twee afzonderlijke families van het aanroepen van Sdk's, voor- *clients* en- *Services.* Momenteel beschik bare Sdk's zijn bedoeld voor ervaringen van eind gebruikers: websites en systeem eigen apps.
 
-De service-clientbibliotheken zijn nog niet beschikbaar en bieden toegang tot de onbewerkte spraak- en videogegevensvlakken, geschikt voor integratie met bots en andere services.
+De Sdk's van de service zijn nog niet beschikbaar en bieden toegang tot de onbewerkte spraak-en video gegevens-abonnementen, geschikt voor integratie met bots en andere services.
 
-## <a name="calling-client-library-capabilities"></a>Mogelijkheden voor aanroepende clientbibliotheek
+## <a name="calling-sdk-capabilities"></a>SDK-mogelijkheden aanroepen
 
-De volgende lijst bevat de set van functies die momenteel beschikbaar zijn in de Azure Communication Services die clientbibliotheken aanroepen.
+De volgende lijst bevat de set functies die momenteel beschikbaar zijn in de Azure Communication Services die Sdk's aanroepen.
 
 | Groep van functies | Mogelijkheid                                                                                                          | JS  | Java (Android) | Objective-C (iOS)
 | ----------------- | ------------------------------------------------------------------------------------------------------------------- | ---  | -------------- | -------------
@@ -74,7 +74,7 @@ De volgende lijst bevat de set van functies die momenteel beschikbaar zijn in de
 
 
 
-## <a name="javascript-calling-client-library-support-by-os-and-browser"></a>Ondersteuning voor aanroepen van clientbibliotheek met JavaScript via besturingssysteem en browser
+## <a name="javascript-calling-sdk-support-by-os-and-browser"></a>Java script aanroepen van SDK-ondersteuning door besturings systeem en browser
 
 De volgende tabel bevat de set ondersteunde browsers die momenteel beschikbaar zijn. De meest recente drie versies van de browser worden ondersteund, tenzij anders aangegeven.
 
@@ -115,8 +115,8 @@ Met deze iframe kunt u bijvoorbeeld toegang tot de camera en microfoon toestaan:
 <iframe allow="camera *; microphone *">
 ```
 
-## <a name="calling-client-library-streaming-support"></a>Ondersteuning voor het streamen van aanroepende clientbibliotheek
-De aanroepende clientbibliotheek in Communication Services biedt ondersteuning voor de volgende configuraties:
+## <a name="calling-sdk-streaming-support"></a>Ondersteuning voor SDK-streaming aanroepen
+De communicatie services die SDK aanroept, ondersteunt de volgende streaming-configuraties:
 
 |           |Web | Android/iOS|
 |-----------|----|------------|

@@ -147,6 +147,8 @@
       href: /azure/templates/microsoft.netapp/allversions
     - name: Het hulpprogramma Azure Application Consistent Snapshot (AzAcSnap)
       items:
+        - name: Release opmerkingen voor AzAcSnap
+          href: azacsnap-release-notes.md
         - name: Aan de slag met AzAcSnap
           href: azacsnap-get-started.md
         - name: AzAcSnap installeren

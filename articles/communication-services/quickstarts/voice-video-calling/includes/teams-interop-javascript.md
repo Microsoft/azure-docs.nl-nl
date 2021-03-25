@@ -1,19 +1,19 @@
 ---
 title: 'Snelstartgids: deel nemen aan een team vergadering vanuit een web-app'
-description: In deze zelf studie leert u hoe u kunt deel nemen aan een team vergadering met behulp van de Azure Communication Services-client bibliotheek voor Java script
+description: In deze zelf studie leert u hoe u aan een team vergadering kunt deel nemen met de Azure Communication Services Call SDK voor Java script
 author: chpalm
 ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: 43f6241f0da0ecc9c68cf60e9f1a0482509374f3
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 4b6cf48c577bb6f22f497007c4b1c1b57ab6f187
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103487982"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105108174"
 ---
-In deze Quick Start leert u hoe u kunt deel nemen aan een team vergadering met behulp van de Azure Communication Services-client bibliotheek voor Java script.
+In deze Quick Start leert u hoe u kunt deel nemen aan een team vergadering met behulp van de Azure Communication Services-SDK voor Java script.
 
 ## <a name="prerequisites"></a>Vereisten
 

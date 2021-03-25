@@ -2,18 +2,19 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 03/17/2021
+ms.date: 03/24/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: bd66044e0b5ac2be592d18dbadfe948793cf6062
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 21b3f13691b5453abf355149f72bc2a8c1f46d83
+ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104591215"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105036187"
 ---
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
+|[Voor Azure Arc enabled Kubernetes-clusters moet de extensie van Azure Defender zijn geïnstalleerd](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F8dfab9c4-fe7b-49ad-85e4-1e9be085358f) |De uitbrei ding van Azure Defender voor Azure Arc biedt bedreigings beveiliging voor uw Kubernetes-clusters die zijn ingeschakeld voor uw Arc. De extensie verzamelt gegevens van alle knoop punten van het besturings element (Master) in het cluster en verzendt deze naar de back-end van Azure Defender voor Kubernetes in de Cloud voor verdere analyse. Meer informatie in [https://docs.microsoft.com/azure/security-center/defender-for-kubernetes-azure-arc](https://docs.microsoft.com/azure/security-center/defender-for-kubernetes-azure-arc) . |AuditIfNotExists, uitgeschakeld |[1.0.0-preview](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Kubernetes/ASC_Audit_Azure_Defender_Kubernetes_Arc_Extension.json) |
 |[Kubernetes-clusters met de opgegeven GitOps configuratie configureren met behulp van HTTPS-geheimen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fa6f560f4-f582-4b67-b123-a37dcd1bf7ea) |Implementeer een ' sourceControlConfiguration ' voor Kubernetes-clusters om ervoor te zorgen dat de clusters hun bron van waarheid ophalen voor werk belastingen en configuraties van de gedefinieerde Git-opslag plaats. Deze definitie vereist HTTPS-gebruikers en sleutel geheimen die zijn opgeslagen in Key Vault. Ga voor instructies naar [https://aka.ms/K8sGitOpsPolicy](https://aka.ms/K8sGitOpsPolicy) . |deployIfNotExists, auditIfNotExists, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Kubernetes/Deploy-GitOps-to-Kubernetes-cluster-HTTPS-secrets_DINE.json) |
 |[Kubernetes-clusters met de opgegeven GitOps configuratie configureren met geen geheimen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F1d61c4d2-aef2-432b-87fc-7f96b019b7e1) |Implementeer een ' sourceControlConfiguration ' voor Kubernetes-clusters om ervoor te zorgen dat de clusters hun bron van waarheid ophalen voor werk belastingen en configuraties van de gedefinieerde Git-opslag plaats. Voor deze definitie zijn geen geheimen vereist. Ga voor instructies naar [https://aka.ms/K8sGitOpsPolicy](https://aka.ms/K8sGitOpsPolicy) . |deployIfNotExists, auditIfNotExists, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Kubernetes/Deploy-GitOps-to-Kubernetes-cluster-no-secrets_DINE.json) |
 |[Kubernetes-clusters met de opgegeven GitOps configuratie configureren met behulp van SSH-geheimen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fc050047b-b21b-4822-8a2d-c1e37c3c0c6a) |Implementeer een ' sourceControlConfiguration ' voor Kubernetes-clusters om ervoor te zorgen dat de clusters hun bron van waarheid ophalen voor werk belastingen en configuraties van de gedefinieerde Git-opslag plaats. Voor deze definitie is een geheim van een persoonlijke SSH-sleutel in Key Vault vereist. Ga voor instructies naar [https://aka.ms/K8sGitOpsPolicy](https://aka.ms/K8sGitOpsPolicy) . |deployIfNotExists, auditIfNotExists, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Kubernetes/Deploy-GitOps-to-Kubernetes-cluster-SSH-secrets_DINE.json) |

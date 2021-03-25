@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/17/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 996159f7014e735c8a4b3e5975c2716ce1ab6910
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: cca60ba9948299f4e9557f26097d4a23e4ebea12
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101728490"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105025336"
 ---
 # <a name="azure-security-baseline-for-azure-resource-manager"></a>Azure-beveiligings basislijn voor Azure Resource Manager
 
@@ -32,9 +32,9 @@ Als u wilt zien hoe Azure Resource Manager volledig is toegewezen aan de beveili
 
 - [Azure-Sentinel onboarden](../../sentinel/quickstart-onboard.md) 
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](/azure/azure-monitor/platform/diagnostic-settings) 
+- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../../azure-monitor/essentials/diagnostic-settings.md) 
 
-- [Interne host-logboeken van de virtuele machine van Azure verzamelen met Azure Monitor](/azure/azure-monitor/learn/quick-collect-azurevm) 
+- [Interne host-logboeken van de virtuele machine van Azure verzamelen met Azure Monitor](../../azure-monitor/vm/quick-collect-azurevm.md) 
 
 - [Aan de slag met Azure Monitor en integratie van SIEM van derden](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/)
 
@@ -50,9 +50,9 @@ Als u wilt zien hoe Azure Resource Manager volledig is toegewezen aan de beveili
 
 **Richt lijnen**: Azure Resource Manager gebruikt activiteiten logboeken, die automatisch worden ingeschakeld, om gebeurtenis bron, datum, gebruiker, tijds tempel, bron adressen, doel adressen en andere nuttige elementen op te neemt.
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](/azure/azure-monitor/platform/diagnostic-settings) 
+- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../../azure-monitor/essentials/diagnostic-settings.md) 
 
-- [Logboek registratie en verschillende logboek typen in azure](/azure/azure-monitor/platform/platform-logs-overview)
+- [Logboek registratie en verschillende logboek typen in azure](../../azure-monitor/essentials/platform-logs-overview.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -66,9 +66,9 @@ U kunt ook gegevens in-en inschakelen voor Azure Sentinel of een SIEM van derden
 
 - [Azure-Sentinel onboarden](../../sentinel/quickstart-onboard.md) 
 
-- [Aan de slag met Log Analytics query's](/azure/azure-monitor/log-query/log-analytics-tutorial)
+- [Aan de slag met Log Analytics query's](../../azure-monitor/logs/log-analytics-tutorial.md)
 
-- [Aangepaste query's uitvoeren in Azure Monitor](/azure/azure-monitor/log-query/get-started-queries)
+- [Aangepaste query's uitvoeren in Azure Monitor](../../azure-monitor/logs/get-started-queries.md)
 
 **Verantwoordelijkheid**: Gedeeld
 
@@ -82,7 +82,7 @@ U kunt ook gegevens in-en inschakelen voor Azure Sentinel of een SIEM van derden
 
 - [Waarschuwingen beheren in Azure Security Center](../../security-center/security-center-managing-and-responding-alerts.md) 
 
-- [Een waarschuwing over Log Analytics logboek gegevens](/azure/azure-monitor/learn/tutorial-response)
+- [Een waarschuwing over Log Analytics logboek gegevens](../../azure-monitor/alerts/tutorial-response.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -119,7 +119,7 @@ Daarnaast kunt u aanbevelingen van Azure Security Center of ingebouwde Azure-bel
 
 U kunt ook Just-in-time-toegang inschakelen met behulp van Azure Active Directory (Azure AD) Privileged Identity Management en Azure Resource Manager.
 
-- [Meer informatie over Privileged Identity Management](/azure/active-directory/privileged-identity-management/)
+- [Meer informatie over Privileged Identity Management](../../active-directory/privileged-identity-management/index.yml)
 
 - [Azure Policy gebruiken](../../governance/policy/tutorials/create-and-manage.md)
 
@@ -205,7 +205,7 @@ U kunt ook Just-in-time-toegang inschakelen met behulp van Azure Active Director
 
 **Hulp**: Azure Active Directory (Azure AD) biedt logboeken waarmee u verlopen accounts kunt detecteren. Daarnaast kunt u Azure AD Identity and Access revisies gebruiken om groepslid maatschappen, toegang tot bedrijfs toepassingen en roltoewijzingen op efficiënte wijze te beheren. Gebruikers toegang kan regel matig worden gecontroleerd om ervoor te zorgen dat alleen de juiste gebruikers toegang hebben.
 
-- [Meer informatie over Azure AD-rapportage](/azure/active-directory/reports-monitoring/)
+- [Meer informatie over Azure AD-rapportage](../../active-directory/reports-monitoring/index.yml)
 
 - [Identiteits- en toegangsbeoordelingen van Azure AD](../../active-directory/governance/access-reviews-overview.md)
 
@@ -223,7 +223,7 @@ U kunt ook Just-in-time-toegang inschakelen met behulp van Azure Active Director
 
 U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-gebruikers accounts te maken en de audit logboeken en aanmeldings logboeken te verzenden naar een Log Analytics-werk ruimte. U kunt de gewenste waarschuwingen configureren in Log Analytics werk ruimte.
 
-- [Azure-activiteiten logboeken integreren met Azure Monitor](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+- [Azure-activiteiten logboeken integreren met Azure Monitor](../../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -275,7 +275,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 **Richt lijnen**: voor versleuteling aan de server zijde in rust, Azure Resource Manager ondersteunt door micro soft beheerde sleutels.
 
-- [Gegevens beveiliging in Azure Resource Manager begrijpen](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-resource-manager-security-controls#data-protection)
+- [Gegevens beveiliging in Azure Resource Manager begrijpen](#data-protection)
 
 **Verantwoordelijkheid**: Klant
 
@@ -285,7 +285,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 **Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken wanneer wijzigingen worden doorgevoerd in essentiële Azure-resources.
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](/azure/azure-monitor/platform/alerts-activity-log)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../../azure-monitor/alerts/alerts-activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -319,7 +319,7 @@ Hoewel klassieke Azure-resources kunnen worden gedetecteerd via Azure resource G
 
 **Richt lijnen**: gebruik de naam, beschrijving en categorie van het beleid om activa op een logische manier te organiseren op basis van een taxonomie.
 
-- [Zie voor meer informatie over het labelen van assets de hand leiding resource naamgeving en Tags toevoegen](https://docs.microsoft.com/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=/azure/azure-resource-manager/management/toc.json)
+- [Zie voor meer informatie over het labelen van assets de hand leiding resource naamgeving en Tags toevoegen](/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=%2fazure%2fazure-resource-manager%2fmanagement%2ftoc.json)
 
 **Verantwoordelijkheid**: Klant
 
@@ -379,7 +379,7 @@ Hieronder vindt u meer informatie over de Details
 
 - [Azure Policy configureren en beheren](../../governance/policy/tutorials/create-and-manage.md)
 
-- [Een specifiek resource type weigeren met Azure Policy](https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#general)
+- [Een specifiek resource type weigeren met Azure Policy](../../governance/policy/samples/built-in-policies.md#general)
 
 **Verantwoordelijkheid**: Klant
 
@@ -463,7 +463,7 @@ Daarnaast moet u, als beheerder, een abonnement, resource groep of resource verg
 
 - [Azure Policy configureren en beheren](../../governance/policy/tutorials/create-and-manage.md)
 
-- [Aliassen gebruiken](https://docs.microsoft.com/azure/governance/policy/concepts/definition-structure#aliases)
+- [Aliassen gebruiken](../../governance/policy/concepts/definition-structure.md#aliases)
 
 **Verantwoordelijkheid**: Klant
 
@@ -587,5 +587,5 @@ Referentie scanner implementeren om referenties in code te identificeren. Door h
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Overzicht Azure Security Benchmark V2](/azure/security/benchmarks/overview)
-- Meer informatie over [Azure-beveiligingsbasislijnen](/azure/security/benchmarks/security-baselines-overview)
+- Zie [Overzicht Azure Security Benchmark V2](../../security/benchmarks/overview.md)
+- Meer informatie over [Azure-beveiligingsbasislijnen](../../security/benchmarks/security-baselines-overview.md)

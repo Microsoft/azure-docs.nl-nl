@@ -1,18 +1,18 @@
 ---
 title: Controles voor naleving van Azure Policy-regelgeving voor Azure Database for MySQL
 description: Een overzicht van de beschikbare controles voor naleving van Azure Policy-regelgeving voor Azure Database for MySQL. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 03/17/2021
+ms.date: 03/24/2021
 ms.topic: sample
 author: savjani
 ms.author: pariks
 ms.service: mysql
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 9e133f3456dd972cbbb0a4314effa4869add74ee
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: ce826541098e210e92b92917f67b3ec3c025f2bf
+ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104595040"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105036426"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-database-for-mysql"></a>Controles voor naleving van Azure Policy-regelgeving voor Azure Database for MySQL
 

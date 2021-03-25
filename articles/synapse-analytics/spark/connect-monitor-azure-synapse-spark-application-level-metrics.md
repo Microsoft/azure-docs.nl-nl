@@ -2,19 +2,19 @@
 title: Zelf studie-metrische gegevens van Azure Synapse Spark-toepassings niveau verbinden en bewaken
 description: 'Zelf studie: informatie over het integreren van uw bestaande on-premises Prometheus-server met de Azure Synapse-werk ruimte voor bijna realtime Azure Spark-toepassings gegevens met behulp van de Synapse Prometheus-connector.'
 services: synapse-analytics
-author: hrasheed-msft
+author: julieMSFT
 ms.author: jejiang
 ms.reviewer: jrasnick
 ms.service: synapse-analytics
 ms.topic: tutorial
 ms.subservice: spark
 ms.date: 01/22/2021
-ms.openlocfilehash: cb27401b2925c800ebde3b554c076f0d8cb747ca
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 956d2f8f14b224609542783a8b18d3cdee43fff9
+ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104593013"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105035622"
 ---
 # <a name="tutorial-connect-and-monitor-azure-synapse-spark-application-level-metrics"></a>Zelf studie: metrische gegevens over het Azure Synapse Spark-toepassings niveau verbinden en bewaken
 
@@ -152,7 +152,7 @@ U kunt de client referenties stroom gebruiken om een toegangs token op te halen.
 | grant_type    | Waar     | Hiermee geeft u het aangevraagde toekennings type op. In een client referenties toekenning stroom moet de waarde client_credentials zijn. |
 | client_id     | Waar     | De toepassing (Service-Principal)-ID van de toepassing die u hebt geregistreerd in Azure Portal of Azure CLI.        |
 | client_secret | Waar     | Het geheim dat is gegenereerd voor de toepassing (Service-Principal)                                                  |
-| resource      | Waar     | Synapse-resource-URI moet https://dev.azuresynapse.net                                                  |
+| resource      | Waar     | Synapse-resource-URI moet ' https://dev.azuresynapse.net ' zijn                                                  |
 
 ```bash
 curl -X GET -H 'Content-Type: application/x-www-form-urlencoded' \

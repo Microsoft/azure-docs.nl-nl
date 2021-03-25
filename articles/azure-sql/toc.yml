@@ -37,7 +37,7 @@
           items:
             - name: Onderhoudsvenster
               href: database/maintenance-window.md
-            - name: Onderhouds venster configureren
+            - name: Onderhoudsvenster configureren
               href: database/maintenance-window-configure.md
             - name: Veelgestelde vragen over onderhouds Vensters
               href: database/maintenance-window-faq.yml
@@ -347,7 +347,7 @@
       items:
         - name: Vanuit Access
           href: migration-guides/database/access-to-sql-database-guide.md
-        - name: Vanaf DB2
+        - name: Van Db2
           href: migration-guides/database/db2-to-sql-database-guide.md
         - name: Van Oracle
           href: migration-guides/database/oracle-to-sql-database-guide.md
@@ -759,7 +759,7 @@
               href: managed-instance/replication-two-instances-and-sql-server-configure-tutorial.md
     - name: Migratiehandleidingen
       items:
-        - name: Vanaf DB2
+        - name: Van Db2
           href: migration-guides/managed-instance/db2-to-managed-instance-guide.md
         - name: Van Oracle
           href: migration-guides/managed-instance/oracle-to-managed-instance-guide.md
@@ -1262,7 +1262,7 @@
       items:
         - name: Overzicht
           href: migration-guides/virtual-machines/sql-server-to-sql-on-azure-vm-migration-overview.md
-        - name: Vanaf DB2
+        - name: Van Db2
           href: migration-guides/virtual-machines/db2-to-sql-on-azure-vm-guide.md
         - name: Van Oracle
           href: migration-guides/virtual-machines/oracle-to-sql-on-azure-vm-guide.md

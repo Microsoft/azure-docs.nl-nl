@@ -37,7 +37,7 @@
         - name: Verificatie en autorisatie
           href: relay-authentication-and-authorization.md
         - name: Ingebouwde beveiligingsmaatregelen
-          href: service-bus-relay-security-controls.md
+          href: ../service-bus-messaging/security-baseline.md
         - name: Netwerkbeveiliging
           href: network-security.md
     - name: Protocol hybride verbindingen

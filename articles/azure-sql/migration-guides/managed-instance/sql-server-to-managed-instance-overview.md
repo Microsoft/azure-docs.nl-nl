@@ -1,5 +1,5 @@
 ---
-title: 'SQL Server naar SQL Managed instance: migratie overzicht'
+title: 'SQL Server naar Azure SQL Managed instance: migratie overzicht'
 description: Meer informatie over de verschillende hulpprogram ma's en opties die beschikbaar zijn voor het migreren van uw SQL Server-data bases naar Azure SQL Managed instance.
 ms.service: sql-managed-instance
 ms.subservice: migration-guide
@@ -10,14 +10,14 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 02/18/2020
-ms.openlocfilehash: ac2b535b2e6b7a6b4169d08dd1768d69e685a216
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 1c187ae83ce87c9d4d8da4aa1a5dc38163261b52
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102561990"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105024894"
 ---
-# <a name="migration-overview-sql-server-to-sql-managed-instance"></a>Migratie overzicht: SQL Server naar een beheerd exemplaar van SQL
+# <a name="migration-overview-sql-server-to-azure-sql-managed-instance"></a>Migratie overzicht: SQL Server naar Azure SQL Managed instance
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlmi.md)]
 
 Meer informatie over verschillende migratie opties en overwegingen voor het migreren van uw SQL Server naar Azure SQL Managed instance. 
@@ -30,7 +30,7 @@ U kunt SQL Server die on-premises of op worden uitgevoerd, migreren:
 - Compute Engine (Google Cloud Platform-GCP)  
 - Cloud-SQL voor SQL Server (Google Cloud Platform – GCP) 
 
-Zie de [hand leiding voor database migratie](https://datamigration.microsoft.com/)voor andere scenario's. 
+Zie [Data Base Migration](https://docs.microsoft.com/data-migration)(Engelstalig) voor andere migratie handleidingen. 
 
 ## <a name="overview"></a>Overzicht
 
@@ -60,7 +60,7 @@ Enkele algemene richt lijnen om u te helpen bij het kiezen van de juiste service
 - Gebruik de IO-latentie van basis lijn van het subsysteem voor het bestand om te kiezen tussen Algemeen (latentie hoger dan 5 MS) en Bedrijfskritiek (latentie van minder dan 3 MS)-service lagen. 
 - Gebruik de basislijn doorvoer om de grootte van de gegevens en logboek bestanden vooraf toe te wijzen om de verwachte IO-prestaties te krijgen. 
 
-U kunt reken-en opslag Resources kiezen tijdens de implementatie en deze vervolgens wijzigen nadat u de [Azure Portal](../../database/scale-resources.md) hebt gebruikt zonder uitval tijd voor uw toepassing. 
+U kunt reken-en opslag Resources kiezen tijdens de implementatie en [deze vervolgens wijzigen nadat u de Azure Portal hebt gebruikt](../../database/scale-resources.md) zonder uitval tijd voor uw toepassing. 
 
 > [!IMPORTANT]
 > Elk verschil in de [vereisten voor virtuele netwerken van het beheerde exemplaar](../../managed-instance/connectivity-architecture-overview.md#network-requirements) kan verhinderen dat u nieuwe instanties maakt of bestaande exemplaren gebruikt. Meer informatie over [het maken van nieuwe en het](../../managed-instance/virtual-network-subnet-create-arm-template.md)   configureren van [bestaande](../../managed-instance/vnet-existing-add-subnet.md)   netwerken. 
@@ -100,9 +100,9 @@ De volgende tabel bevat de aanbevolen migratie hulpprogramma's:
 
 De volgende tabel bevat alternatieve hulpprogram ma's voor migratie: 
 
-|Technologie |Beschrijving  |
+|**Technologie** |**Beschrijving**  |
 |---------|---------|
-|[Transactionele replicatie](../../managed-instance/replication-transactional-overview.md) | Gegevens repliceren van bron-SQL Server database tabel (s) naar SQL Managed instance door een Publisher-abonnee type migratie optie te bieden terwijl transactionele consistentie wordt gehandhaafd. |  |
+|[Transactionele replicatie](../../managed-instance/replication-transactional-overview.md) | Gegevens repliceren van bron-SQL Server database tabel (s) naar SQL Managed instance door een Publisher-abonnee type migratie optie te bieden terwijl transactionele consistentie wordt gehandhaafd. | 
 |[Bulksgewijs kopiëren](/sql/relational-databases/import-export/import-and-export-bulk-data-by-using-the-bcp-utility-sql-server)| Het [hulp programma voor bulksgewijs kopiëren (BCP)](/sql/tools/bcp-utility) kopieert gegevens van een exemplaar van SQL Server naar een gegevens bestand. Gebruik het hulp programma BCP voor het exporteren van de gegevens uit uw bron en het importeren van het gegevens bestand in het door SQL beheerde doel exemplaar.</br></br> Voor het verplaatsen van gegevens naar Azure SQL Database, kunt u het [hulp programma](/samples/azure-samples/smartbulkcopy/smart-bulk-copy/) voor bulksgewijs kopiëren gebruiken om de overdrachts snelheid te maximaliseren door gebruik te maken van parallelle Kopieer taken. | 
 |[Wizard export exporteren/BACPAC](../../database/database-import.md?tabs=azure-powershell)| [BACPAC](/sql/relational-databases/data-tier-applications/data-tier-applications#bacpac) is een Windows-bestand met een `.bacpac` extensie waarmee het schema en de gegevens van een Data Base worden ingekapseld. BACPAC kan worden gebruikt om gegevens uit een bron SQL Server te exporteren en het bestand weer te importeren in Azure SQL Managed instance.  |  
 |[Azure Data Factory (ADF)](../../../data-factory/connector-azure-sql-managed-instance.md)| Met de [Kopieer activiteit](../../../data-factory/copy-activity-overview.md) in azure Data Factory worden gegevens van de bron-SQL Server Data Base (s) gemigreerd naar een SQL-beheerd exemplaar met behulp van ingebouwde connectors en een [Integration runtime](../../../data-factory/concepts-integration-runtime.md).</br> </br> ADF ondersteunt een breed scala aan [connectors](../../../data-factory/connector-overview.md) voor het verplaatsen van gegevens van SQL Server bronnen naar een door SQL beheerd exemplaar. |
@@ -241,7 +241,7 @@ Deze resources zijn ontwikkeld als onderdeel van het data SQL expert-programma, 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Raadpleeg de [migratie handleiding voor het SQL Server van SQL Managed instance](sql-server-to-managed-instance-guide.md)om te beginnen met het migreren van uw SQL Server naar Azure SQL Managed instance.
+Raadpleeg de [migratie handleiding voor Azure SQL Managed instance](sql-server-to-managed-instance-guide.md)om te beginnen met SQL Server het migreren van uw SQL Server naar Azure SQL Managed instance.
 
 - Zie [service en hulpprogram ma's voor gegevens migratie](../../../dms/dms-tools-matrix.md)voor een matrix van de services en hulpprogram Ma's van micro soft en van derden die beschikbaar zijn om u te helpen bij verschillende scenario's voor data base-en gegevens migratie, en voor speciale taken.
 

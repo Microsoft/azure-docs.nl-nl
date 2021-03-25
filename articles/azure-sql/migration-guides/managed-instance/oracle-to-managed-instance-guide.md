@@ -1,5 +1,5 @@
 ---
-title: 'Oracle naar SQL Managed instance: migratie handleiding'
+title: 'Oracle naar Azure SQL Managed instance: migratie handleiding'
 description: In deze hand leiding leert u hoe u uw Oracle-schema's naar Azure SQL Managed Instance kunt migreren met behulp van SQL Server Migration Assistant voor Oracle.
 ms.service: sql-managed-instance
 ms.subservice: migration-guide
@@ -10,19 +10,19 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: c54ec2cc6e17d9693e25f1471922da8c7c023e36
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 1c2fbc90d3956ab831e6d9fac4e1e2d3540e1c6d
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104602861"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105025421"
 ---
 # <a name="migration-guide-oracle-to-azure-sql-managed-instance"></a>Migratie handleiding: Oracle naar Azure SQL Managed instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../../includes/appliesto-sqlmi.md)]
 
 In deze hand leiding leert u hoe u uw Oracle-schema's naar Azure SQL Managed Instance kunt migreren met behulp van SQL Server Migration Assistant voor Oracle. 
 
-Zie de [hand leiding voor database migratie](https://datamigration.microsoft.com/)voor andere scenario's.
+Zie [Data Base Migration](https://docs.microsoft.com/data-migration)(Engelstalig) voor andere migratie handleidingen. 
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -49,11 +49,11 @@ Voer de volgende stappen uit om een evaluatie te maken:
 
 1. Open [SQL Server Migration Assistant voor Oracle](https://www.microsoft.com/en-us/download/details.aspx?id=54258). 
 1. Selecteer **bestand** en kies vervolgens **Nieuw project**. 
-1. Geef een project naam, een locatie op voor het opslaan van uw project en selecteer vervolgens Azure SQL Managed instance als migratie doel uit de vervolg keuzelijst. Selecteer **OK**.
+1. Geef een project naam, een locatie op voor het opslaan van uw project en selecteer vervolgens Azure SQL Managed instance als migratie doel uit de vervolg keuzelijst. Selecteer **OK**:
 
    ![Nieuw project](./media/oracle-to-managed-instance-guide/new-project.png)
 
-1. Selecteer **verbinding maken met Oracle**. Voer in het dialoog venster **verbinding maken met Oracle** de waarden in voor de details van de Oracle-verbinding.
+1. Selecteer **verbinding maken met Oracle**. Voer in het dialoog venster **verbinding maken met Oracle** de waarden in voor de verbindings Details van Oracle:
 
    ![Verbinding maken met Oracle](./media/oracle-to-managed-instance-guide/connect-to-oracle.png)
 
@@ -61,7 +61,7 @@ Voer de volgende stappen uit om een evaluatie te maken:
 
    ![Oracle-schema kiezen](./media/oracle-to-managed-instance-guide/select-schema.png)
 
-1. Klik met de rechter muisknop op het Oracle-schema dat u wilt migreren in de **Oracle-meta gegevens Verkenner**, en kies vervolgens **rapport maken**. Hiermee wordt een HTML-rapport gegenereerd. U kunt ook **rapport maken** kiezen op de navigatie balk nadat u de Data Base hebt geselecteerd.
+1. Klik met de rechter muisknop op het Oracle-schema dat u wilt migreren in de **Oracle-meta gegevens Verkenner**, en kies vervolgens **rapport maken**. Hiermee wordt een HTML-rapport gegenereerd. U kunt ook **rapport maken** kiezen op de navigatie balk nadat u de Data Base hebt geselecteerd:
 
    ![Rapport maken](./media/oracle-to-managed-instance-guide/create-report.png)
 
@@ -78,7 +78,7 @@ Valideer de standaard gegevens type toewijzingen en wijzig deze indien nodig op 
 
 1. Selecteer **extra** in het menu. 
 1. Selecteer de **project instellingen**. 
-1. Selecteer het tabblad **type toewijzingen** . 
+1. Selecteer het tabblad **type toewijzingen** :
 
    ![Type toewijzingen](./media/oracle-to-managed-instance-guide/type-mappings.png)
 
@@ -91,24 +91,26 @@ Voer de volgende stappen uit om het schema te converteren:
 1. Beschrijving Dynamische of ad-hoc query's toevoegen aan-instructies. Klik met de rechter muisknop op het knoop punt en kies vervolgens **instructies toevoegen**.
 1. Selecteer **verbinding maken met Azure SQL Managed instance**. 
     1. Voer de verbindings gegevens in om uw data base te verbinden in Azure SQL Managed instance.
-    1. Kies uw doel database in de vervolg keuzelijst.
-    1. Selecteer **Verbinding maken**.
+    1. Kies uw doel database in de vervolg keuzelijst of geef een nieuwe naam op. in dat geval wordt er een Data Base op de doel server gemaakt. 
+    1. Geef verificatie Details op. 
+    1. Selecteer **verbinding maken**:
 
     ![Verbinding maken met beheerd SQL-exemplaar](./media/oracle-to-managed-instance-guide/connect-to-sql-managed-instance.png)
 
-1. Klik met de rechter muisknop op het Oracle-schema in de **Oracle-meta gegevens Verkenner** en kies vervolgens **schema converteren**. U kunt ook **schema converteren** selecteren in de bovenste navigatie balk nadat u het schema hebt geselecteerd.
+1. Klik met de rechter muisknop op het Oracle-schema in de **Oracle-meta gegevens Verkenner** en kies vervolgens **schema converteren**. U kunt ook **schema converteren** selecteren in de bovenste navigatie balk nadat u het schema hebt geselecteerd:
 
    ![Schema converteren](./media/oracle-to-managed-instance-guide/convert-schema.png)
 
-1. Nadat de conversie is voltooid, vergelijkt u de geconverteerde objecten met de oorspronkelijke objecten om potentiële problemen te identificeren en te verhelpen op basis van de aanbevelingen.
+1. Nadat de conversie is voltooid, vergelijkt u de geconverteerde objecten met de oorspronkelijke objecten om potentiële problemen te identificeren en te verhelpen op basis van de aanbevelingen:
 
    ![Tabel aanbevelingen vergelijken](./media/oracle-to-managed-instance-guide/table-comparison.png)
 
-   Vergelijk de geconverteerde Transact-SQL-tekst met de originele opgeslagen procedures en Bekijk de aanbevelingen: 
+   Vergelijk de geconverteerde Transact-SQL-tekst met de oorspronkelijke code en Bekijk de aanbevelingen: 
 
    ![Aanbevelingen voor de procedure vergelijken](./media/oracle-to-managed-instance-guide/procedure-comparison.png)
 
-1. Sla het project lokaal op voor een herbemiddeling van het offline schema. Selecteer **project opslaan** in het menu **bestand** .
+1. Selecteer **resultaten controleren** in het deel venster uitvoer en Bekijk fouten in het deel venster **fouten lijst** . 
+1. Sla het project lokaal op voor een herbemiddeling van het offline schema. Selecteer **project opslaan** in het menu **bestand** . Dit biedt u de mogelijkheid om de bron-en doel schema's offline te evalueren en herstel bewerkingen uit te voeren voordat u het schema kunt publiceren naar een door SQL beheerd exemplaar.
 
 ## <a name="migrate"></a>Migrate
 
@@ -116,7 +118,7 @@ Nadat u klaar bent met het beoordelen van uw data bases en eventuele verschillen
 
 Als u uw schema wilt publiceren en uw gegevens wilt migreren, voert u de volgende stappen uit:
 
-1. Het schema publiceren: Klik met de rechter muisknop op de data base in het knoop punt **data bases** in de **meta gegevens Verkenner van het Azure SQL Managed instance** en kies **synchroniseren met data base**.
+1. Het schema publiceren: Klik met de rechter muisknop op het schema dat of het object dat u wilt migreren in **Oracle Meta Data Explorer**, en kies **gegevens migreren**. U kunt ook **gegevens migreren** selecteren in de bovenste navigatie balk. Als u gegevens voor een hele Data Base wilt migreren, schakelt u het selectie vakje naast de naam van de data base in. Als u gegevens uit afzonderlijke tabellen wilt migreren, vouwt u de data base uit, vouwt u tabellen uit en schakelt u het selectie vakje naast de tabel in. Als u gegevens uit afzonderlijke tabellen wilt weglaten, schakelt u het selectie vakje uit:
 
    ![Synchroniseren met data base](./media/oracle-to-managed-instance-guide/synchronize-with-database.png)
 
@@ -129,18 +131,17 @@ Als u uw schema wilt publiceren en uw gegevens wilt migreren, voert u de volgend
    ![Gegevens migreren](./media/oracle-to-managed-instance-guide/migrate-data.png)
 
 1. Geef verbindings Details op voor zowel Oracle als Azure SQL Managed instance.
-1. Het **gegevens migratie rapport** weer geven.
+1. Nadat de migratie is voltooid, raadpleegt u het **rapport gegevens migratie**:  
 
    ![Gegevens migratie rapport](./media/oracle-to-managed-instance-guide/data-migration-report.png)
 
-1. Maak verbinding met uw Azure SQL Managed instance met behulp van [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) en valideer de migratie door de gegevens en het schema te controleren.
+1. Maak verbinding met uw Azure SQL Managed instance met behulp van [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) en valideer de migratie door de gegevens en het schema te controleren:
 
    ![Valideren in SSMA](./media/oracle-to-managed-instance-guide/validate-data.png)
 
 
 U kunt ook SQL Server Integration Services (SSIS) gebruiken om de migratie uit te voeren. Raadpleeg voor meer informatie: 
 
-- [SQL Server Migration Assistant: gegevens van niet-micro soft-gegevens platformen evalueren en migreren naar SQL Server](https://blogs.msdn.microsoft.com/datamigration/2016/11/16/sql-server-migration-assistant-how-to-assess-and-migrate-databases-from-non-microsoft-data-platforms-to-sql-server/)
 - [Aan de slag met SQL Server Integration Services](https://docs.microsoft.com/sql/integration-services/sql-server-integration-services)
 - [SQL Server Integration Services: SSIS voor Azure en hybride gegevens verplaatsing](https://download.microsoft.com/download/D/2/0/D20E1C5F-72EA-4505-9F26-FEF9550EFD44/SSIS%20Hybrid%20and%20Azure.docx)
 
@@ -187,7 +188,7 @@ Voor aanvullende hulp bij het volt ooien van dit migratie scenario raadpleegt u 
 | [Oracle Inventory script artefacten](https://github.com/Microsoft/DataMigrationTeam/tree/master/Oracle%20Inventory%20Script%20Artifacts)                 | Deze asset bevat een PL/SQL-query die Oracle-systeem tabellen oplevert en een telling van objecten biedt per schema type, object type en status. Het biedt ook een ruwe schatting van ' onbewerkte gegevens ' in elk schema en de grootte van de tabellen in elk schema, met resultaten die zijn opgeslagen in een CSV-indeling.                                                                                                               |
 | [SSMA Oracle Assessment verzameling automatiseren & consolidatie](https://github.com/microsoft/DataMigrationTeam/tree/master/IP%20and%20Scripts/Automate%20SSMA%20Oracle%20Assessment%20Collection%20%26%20Consolidation)                                             | Deze resourceset gebruikt een CSV-bestand als vermelding (sources.csv in de project mappen) om de XML-bestanden te maken die nodig zijn voor het uitvoeren van de SSMA-evaluatie in de console modus. De source.csv wordt door de klant verschaft op basis van een inventaris van bestaande Oracle-exemplaren. De uitvoer bestanden zijn AssessmentReportGeneration_source_1.xml, ServersConnectionFile.xml en VariableValueFile.xml.|
 | [SSMA voor veelvoorkomende fouten in Oracle en hoe u deze kunt oplossen](https://aka.ms/dmj-wp-ssma-oracle-errors)                                                           | Met Oracle kunt u een niet-scalaire voor waarde toewijzen in de component WHERE. SQL Server biedt echter geen ondersteuning voor dit type voor waarde. Als gevolg hiervan wordt met SQL Server Migration Assistant (SSMA) voor Oracle geen query's geconverteerd met een niet-scalaire voor waarde in de WHERE-component, in plaats daarvan een fout O2SS0001 te genereren. Dit technisch document bevat meer informatie over het probleem en manieren om dit op te lossen.          |
-| [SQL Server migratie handleiding voor Oracle](https://github.com/microsoft/DataMigrationTeam/blob/master/Whitepapers/Oracle%20to%20SQL%20Server%20Migration%20Handbook.pdf)                | Dit document is gericht op de taken die zijn gekoppeld aan het migreren van een Oracle-schema naar de meest recente versie van SQL ServerBase. Als voor de migratie wijzigingen in functies/functionaliteit zijn vereist, moet de mogelijke gevolgen van elke wijziging in de toepassingen die gebruikmaken van de data base, zorgvuldig worden overwogen.                                                     |
+| [SQL Server migratie handleiding voor Oracle](https://github.com/microsoft/DataMigrationTeam/blob/master/Whitepapers/Oracle%20to%20SQL%20Server%20Migration%20Handbook.pdf)                | Dit document is gericht op de taken die zijn gekoppeld aan het migreren van een Oracle-schema naar de meest recente versie van SQL Server base. Als voor de migratie wijzigingen in functies/functionaliteit zijn vereist, moet de mogelijke gevolgen van elke wijziging in de toepassingen die gebruikmaken van de data base, zorgvuldig worden overwogen.                                                     |
 
 Deze resources zijn ontwikkeld als onderdeel van het data SQL expert-programma, dat wordt gesponsord door het technische team van de Azure-gegevens groep. Het kern Handvest van het data SQL expert-programma is het deblokkeren en versnellen van complexe modernisering en het concurreren van de migratie mogelijkheden van het gegevens platform naar het Azure-gegevens platform van micro soft. Als u denkt dat uw organisatie graag deelneemt aan het data SQL expert-programma, neemt u contact op met uw account team en vraagt u om een benoeming in te dienen.
 
@@ -196,7 +197,7 @@ Deze resources zijn ontwikkeld als onderdeel van het data SQL expert-programma, 
 - Zie de artikel [service en hulpprogram ma's voor gegevens migratie](https://docs.microsoft.com/azure/dms/dms-tools-matrix)voor een matrix van de services en hulpprogram Ma's van micro soft en van derden die beschikbaar zijn om u te helpen bij verschillende scenario's voor data base-en gegevens migratie, en voor speciale taken.
 
 - Zie voor meer informatie over Azure SQL Managed instance: 
-  - [Een overzicht van Azure SQL Managed instance](../../database/sql-database-paas-overview.md)
+  - [Een overzicht van Azure SQL Managed instance](../../managed-instance/sql-managed-instance-paas-overview.md)
   - [Berekening van de totale eigendoms kosten van Azure (TCO)](https://azure.microsoft.com/en-us/pricing/tco/calculator/)
 
 

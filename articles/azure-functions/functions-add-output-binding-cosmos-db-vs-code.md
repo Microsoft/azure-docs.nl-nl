@@ -6,12 +6,12 @@ ms.date: 03/23/2021
 ms.topic: quickstart
 ms.author: thweiss
 zone_pivot_groups: programming-languages-set-functions-temp
-ms.openlocfilehash: 91d27ce0d6f999ac5d13b079c877e49cdf3fcd61
-ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
+ms.openlocfilehash: 0a0c63ee54699185bcd02104b1a3f4d0070ea808
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/24/2021
-ms.locfileid: "104962831"
+ms.locfileid: "105023245"
 ---
 # <a name="connect-azure-functions-to-azure-cosmos-db-using-visual-studio-code"></a>Azure Functions verbinding maken met Azure Cosmos DB met behulp van Visual Studio code
 
@@ -20,11 +20,11 @@ ms.locfileid: "104962831"
 In dit artikel leest u hoe u met Visual Studio code verbinding maakt [Azure Cosmos DB](../cosmos-db/introduction.md) met de functie die u hebt gemaakt in het vorige artikel Snelstartgids. De uitvoer binding die u aan deze functie toevoegt, schrijft gegevens van de HTTP-aanvraag naar een JSON-document dat is opgeslagen in een Azure Cosmos DB container. 
 
 ::: zone pivot="programming-language-csharp"
-Voordat u begint, moet u het volgende artikel voltooien: [Quickstart: een Azure Functions-project maken via de opdrachtregel](create-first-function-cli-csharp.md). Als u de resources na voltooiing van dat artikel al had opgeruimd, doorloopt u de stappen voor het maken van de functie-app en de bijbehorende resources opnieuw in Azure.
+Voordat u begint, moet u de Snelstartgids volt ooien [: een C#-functie maken in azure met Visual Studio code](create-first-function-vs-code-csharp.md). Als u de resources na voltooiing van dat artikel al had opgeruimd, doorloopt u de stappen voor het maken van de functie-app en de bijbehorende resources opnieuw in Azure.
 ::: zone-end
 ::: zone pivot="programming-language-javascript"  
-Voordat u begint, moet u het volgende artikel voltooien: [Quickstart: een Azure Functions-project maken via de opdrachtregel](create-first-function-cli-node.md). Als u de resources na voltooiing van dat artikel al had opgeruimd, doorloopt u de stappen voor het maken van de functie-app en de bijbehorende resources opnieuw in Azure.  
-::: zone-end   
+Voordat u begint, moet u de [snelstartgids uitvoeren: een Java script-functie maken in azure met Visual Studio code](create-first-function-vs-code-node.md). Als u de resources na voltooiing van dat artikel al had opgeruimd, doorloopt u de stappen voor het maken van de functie-app en de bijbehorende resources opnieuw in Azure.  
+::: zone-end
 
 ## <a name="configure-your-environment"></a>Uw omgeving configureren
 

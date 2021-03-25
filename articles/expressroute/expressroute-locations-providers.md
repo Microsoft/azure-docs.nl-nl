@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 02/10/2021
 ms.author: duau
-ms.openlocfilehash: 69c600384a7877f3534bae0b57f862187feb32ca
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: a43f95ad65e95db2b69b32c3fe8d62db71a98a17
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104581504"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105025200"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Partners en peeringlocaties voor ExpressRoute
 
@@ -42,8 +42,8 @@ In de volgende tabel vindt u een toewijzing van Azure-regio's aan ExpressRoute-l
 | **Geopolitieke regio** | **Azure-regio's** | **ExpressRoute-locaties** |
 | --- | --- | --- |
 | **Australië - overheid** | Australië Centraal, Australië Centraal 2 |Canberra, Canberra2 |
-| **Europa** | Frankrijk-centraal, Frankrijk-zuid, Duitsland-noord, Duitsland-west-centraal, Europa-noord, Noor wegen Oost, Noor wegen West, Zwitserland-noord, Zwitserland-west, UK-west, UK-zuid, Europa-west |Amsterdam, Amsterdam2, Berlijn, kopen Hagen, Dublin, Frankfurt, Genève, Londen, London2, Marseille, Milaan, München, Newport (Wales), Utrecht, Parijs, Stavanger, Stockholm, Zürich |
-| **Noord-Amerika** | VS - oost, VS - west, VS - oost 2, VS - west 2, VS - centraal, VS - zuid-centraal, VS - noord-centraal, VS - west-centraal, Canada - centraal, Canada - oost |Atlanta, Chicago, Amsterdam, Denver, Las, Groningen, los Angeles2, Miami, Minneapolis, Montreal, New York, Phoenix, Quebec, Queretaro (Mexico), Quincy, San Antonio, Seattle, silicone dal, Silicon Valley2, Toronto, Vancouver, Washington DC, Washington DC2 |
+| **Europa** | Frankrijk-centraal, Frankrijk-zuid, Duitsland-noord, Duitsland-west-centraal, Europa-noord, Noor wegen Oost, Noor wegen West, Zwitserland-noord, Zwitserland-west, UK-west, UK-zuid, Europa-west |Amsterdam, Amsterdam2, Berlijn, kopen Hagen, Dublin, Frankfurt, Frankfurt2, Genève, Londen, London2, Madrid, Marseille, Milaan, München, Newport (Wales), Utrecht, Parijs, Stavanger, Stockholm, Zürich |
+| **Noord-Amerika** | VS - oost, VS - west, VS - oost 2, VS - west 2, VS - centraal, VS - zuid-centraal, VS - noord-centraal, VS - west-centraal, Canada - centraal, Canada - oost |Atlanta, Chicago, Rotterdam, Denver, Las, Groningen, los Angeles2, Miami, Minneapolis, Montreal, New York, Groningen, Quebec City, Queretaro (Mexico), Quincy, San Antonio, Seattle, Silicon dal, Silicon Valley2, Toronto, Toronto2, Vancouver, Washington DC, Washington DC2 |
 | **Azië** | Azië - oost, Azië - zuidoost | Bangkok, Hongkong, Hongkong Kong2, Jakarta, Kuala Lumpur, Singapore, Singapore2, Taiwan |
 | **India** | India - west, India - centraal, India - zuid |Chennai, Chennai2, Mumbai, Mumbai2 |
 | **Japan** | Japan - west, Japan - oost |Osaka, Tokio, Tokyo2 |
@@ -51,7 +51,7 @@ In de volgende tabel vindt u een toewijzing van Azure-regio's aan ExpressRoute-l
 | **Zuid-Korea** | Korea - centraal, Korea - zuid |Busan, Seoul|
 | **VAE** | UAE-centraal, UAE-noord | Dubai, Dubai2 |
 | **Zuid-Afrika** | Zuid-Afrika-west, Zuid-Afrika-noord |Kaapstad, Johannesburg |
-| **Zuid-Amerika** | Brazilië - zuid |Bogotá, Sao Paulo |
+| **Zuid-Amerika** | Brazilië - zuid |Bogotá, Rio de Janeiro, Sao Paulo |
 
 ## <a name="azure-regions-and-geopolitical-boundaries-for-national-clouds"></a>Azure-regio's en geopolitieke grenzen voor nationale Clouds
 De volgende tabel bevat informatie over regio's en geopolitieke grenzen voor nationale clouds.
@@ -167,7 +167,7 @@ Azure National Clouds zijn geïsoleerd van elkaar en van wereld wijde commercië
 | **Dallas** | [Equinix DA3](https://www.equinix.com/locations/americas-colocation/united-states-colocation/dallas-data-centers/da3/) | n.v.t. | 10G, 100G | Equinix, Megaport, Verizon |
 | **New York** | [Equinix NY5](https://www.equinix.com/locations/americas-colocation/united-states-colocation/new-york-data-centers/ny5/) | n.v.t. | 10G, 100G | Equinix, CenturyLink Cloud Connect, Verizon |
 | **Phoenix** | [CyrusOne Chandler](https://cyrusone.com/locations/arizona/phoenix-arizona-chandler/) | VS (overheid) - Arizona | 10G, 100G | BIJ&T netbond, CenturyLink Cloud Connect, Mega Port |
-| **San Antonio** | [CyrusOne SA2](https://cyrusone.com/locations/texas/san-antonio-texas-ii/) | VS (overheid) - Texas | n.v.t. | CenturyLink Cloud Connect, Megaport |
+| **San Antonio** | [CyrusOne SA2](https://cyrusone.com/locations/texas/san-antonio-texas-ii/) | VS (overheid) - Texas | 10G, 100G | CenturyLink Cloud Connect, Megaport |
 | **Silicon Valley** | [Equinix SV4](https://www.equinix.com/locations/americas-colocation/united-states-colocation/silicon-valley-data-centers/sv4/) | n.v.t. | 10G, 100G | OP&T, Equinix, Level 3 Communications, Verizon |
 | **Seattle** | [Equinix SE2](https://www.equinix.com/locations/americas-colocation/united-states-colocation/seattle-data-centers/se2/) | n.v.t. | 10G, 100G | Equinix, Megaport |
 | **Washington DC** | [Equinix DC2](https://www.equinix.com/locations/americas-colocation/united-states-colocation/washington-dc-data-centers/dc2/) | US DoD-oost, US Gov-Virginia | 10G, 100G | BIJ&T netobligatie, CenturyLink Cloud Connect, Equinix, Level 3 Communications, Mega Port, Verizon |

@@ -9,12 +9,12 @@ ms.subservice: face-api
 ms.topic: include
 ms.date: 12/06/2020
 ms.author: pafarley
-ms.openlocfilehash: 5523d89548ba08dfc5a43f5c21b5a12a5e5955c3
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 1a360a19da8006a8ab6d918560f1b1d566fdd66d
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102511056"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105105361"
 ---
 Aan de slag met gezichtsherkenning met behulp van de Face-REST API. De Face-service biedt u toegang tot geavanceerde algoritmen voor het detecteren en herkennen van menselijke gezichten in afbeeldingen.
 
@@ -32,7 +32,7 @@ Gebruik de Face-REST API voor het volgende:
 * Zodra u een Azure-abonnement hebt, <a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesFace"  title="Een Face-resource maken"  target="_blank">maakt u een Face-resource </a> in Azure Portal om uw sleutel en eindpunt op te halen. Nadat de app is geïmplementeerd, klikt u op **Ga naar resource**.
     * U hebt de sleutel en het eindpunt nodig van de resource die u maakt om de toepassing te verbinden met de Face-API. Later in de quickstart plakt u uw sleutel en eindpunt in de onderstaande code.
     * U kunt de gratis prijscategorie (`F0`) gebruiken om de service uit te proberen, en later upgraden naar een betaalde laag voor productie.
-* [Power shell versie 6.0 +](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows), of een vergelijk bare opdracht regel toepassing.
+* [Power shell versie 6.0 +](/powershell/scripting/install/installing-powershell-core-on-windows), of een vergelijk bare opdracht regel toepassing.
 
 
 ## <a name="detect-faces-in-an-image"></a>Gezichten in een afbeelding detecteren

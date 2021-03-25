@@ -1,14 +1,14 @@
 ---
 title: Beheerervaring in meerdere tenants
 description: Azure delegated Resource Management maakt een cross-Tenant beheer mogelijk.
-ms.date: 03/04/2021
+ms.date: 03/23/2021
 ms.topic: conceptual
-ms.openlocfilehash: 4a20f6efde9c3b01b4a2d7a1f111de23aec87647
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: ba3cee2ecd7efcbb33c19d7ed159083e843c84a8
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102177916"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104952113"
 ---
 # <a name="cross-tenant-management-experiences"></a>Beheerervaring in meerdere tenants
 
@@ -33,7 +33,7 @@ Azure Lighthouse biedt meer flexibiliteit voor het beheren van resources voor me
 
 U kunt Beheer taken op gedelegeerde resources rechtstreeks uitvoeren in de portal of met behulp van Api's en beheer hulpprogramma's (zoals Azure CLI en Azure PowerShell). Alle bestaande Api's kunnen worden gebruikt bij het werken met gedelegeerde resources, zolang de functionaliteit wordt ondersteund voor cross-Tenant beheer en de gebruiker de juiste machtigingen heeft.
 
-De Azure PowerShell [Get-AzSubscription-cmdlet](/powershell/module/Az.Accounts/Get-AzSubscription) toont `HomeTenantId` de `ManagedByTenantIds` kenmerken en voor elk abonnement, zodat u kunt bepalen of een geretourneerd abonnement behoort tot een beheerde Tenant of met uw Tenant beheren.
+Met de [cmdlet Azure PowerShell Get-AzSubscription](/powershell/module/Az.Accounts/Get-AzSubscription) wordt `TenantId` standaard de voor de Tenant beheren weer gegeven. U kunt de `HomeTenantId` kenmerken en `ManagedByTenantIds` voor elk abonnement gebruiken om te bepalen of een geretourneerd abonnement hoort bij een beheerde Tenant of voor uw beheer Tenant.
 
 Net als bij Azure CLI-opdrachten, zoals [AZ account list](/cli/azure/account#az-account-list) , worden de-en-kenmerken weer gegeven `homeTenantId` `managedByTenants` . Als u deze waarden niet ziet wanneer u Azure CLI gebruikt, probeert u de cache te wissen door uit te voeren, `az account clear` gevolgd door `az login --identity` .
 

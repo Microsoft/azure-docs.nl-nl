@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 ms.date: 09/02/2020
-ms.openlocfilehash: 238ef9ec80b01470e28535d0eb42dbb3a377b005
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: fb1514c146dcd352451597e6182c6d99ed8836d6
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96746434"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105044716"
 ---
 # <a name="how-to-create-plans-for-your-saas-offer"></a>Plannen maken voor uw SaaS-aanbieding
 
@@ -149,6 +149,10 @@ De acties die beschikbaar zijn in de kolom **actie** van het tabblad **plan over
 
 - Als de plan status **concept** is, wordt in de kolom **actie** **concept verwijderen** weer te zeggen.
 - Als de status van het abonnement **Live** is, is de koppeling in de kolom **actie** **stoppen** of wordt een **persoonlijke doel groep gesynchroniseerd**. Met de koppeling **persoonlijke doel groep synchroniseren** worden alleen de wijzigingen in uw persoonlijke doel groepen gepubliceerd, zonder dat u andere updates publiceert die u mogelijk hebt gemaakt in de aanbieding.
+
+## <a name="before-you-publish-your-offer"></a>Voordat u uw aanbieding publiceert
+
+Als u dit nog niet hebt gedaan, maakt u een aanbieding voor ontwikkelen en testen (DEV) om uw aanbieding te testen voordat u uw productie aanbieding Live publiceert. Zie [een ontwikkel-en test aanbieding maken](create-saas-dev-test-offer.md)voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

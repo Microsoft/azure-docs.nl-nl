@@ -11,12 +11,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/04/2021
 ms.author: terrylan
-ms.openlocfilehash: 00a44bd0a6176270e70eca030fcfada46effe3a5
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 54be25317717bcf98b9e296d5c9ed59643cd334e
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101735774"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105044750"
 ---
 # <a name="azure-security-technical-capabilities"></a>Technische mogelijkheden van Azure-beveiliging
 Dit artikel bevat een inleiding tot beveiligings Services in azure waarmee u uw gegevens, resources en toepassingen in de cloud kunt beveiligen en voldoen aan de beveiligings behoeften van uw bedrijf.
@@ -278,7 +278,7 @@ Azure-netwerken bieden ondersteuning voor de mogelijkheid om het routerings gedr
 
 Azure biedt ondersteuning voor speciale WAN-koppelings connectiviteit met uw on-premises netwerk en een Azure-Virtual Network met [ExpressRoute](../../expressroute/expressroute-introduction.md). De koppeling tussen Azure en uw site maakt gebruik van een speciale verbinding die niet via het open bare Internet gaat. Als uw Azure-toepassing wordt uitgevoerd in meerdere data centers, kunt u [Azure Traffic Manager](../../traffic-manager/traffic-manager-overview.md) gebruiken om aanvragen van gebruikers op intelligente wijze te routeren in verschillende exemplaren van de toepassing. U kunt ook verkeer routeren naar services die niet worden uitgevoerd in azure als ze toegankelijk zijn via internet.
 
-Azure biedt ook ondersteuning voor persoonlijke en veilige verbindingen met uw PaaS-bronnen (bijvoorbeeld Azure Storage en SQL Database) vanuit uw Azure Virtual Network met de [persoonlijke Azure-koppeling](https://docs.microsoft.com/azure/private-link/private-link-overview). PaaS-resource is toegewezen aan een [persoonlijk eind punt](https://docs.microsoft.com/azure/private-link/private-endpoint-overview) in uw virtuele netwerk. De koppeling tussen het persoonlijke eind punt in uw virtuele netwerk en uw PaaS-resource maakt gebruik van het micro soft backbone-netwerk en gaat niet over op het open bare Internet. U hoeft uw service niet langer bloot te stellen aan het openbare internet. U kunt ook een persoonlijke Azure-koppeling gebruiken om toegang te krijgen tot Azure gehoste klanten-en partner services in uw virtuele netwerk.  Daarnaast kunt u met Azure private link uw eigen [persoonlijke koppelings service](https://docs.microsoft.com/azure/private-link/private-link-service-overview) maken in uw virtuele netwerk en deze privé leveren aan uw klanten in hun virtuele netwerken. Het instellen en gebruiken van Azure Private Link is consistent voor Azure PaaS-services, services die eigendom zijn van klanten en gedeelde partnerservices.
+Azure biedt ook ondersteuning voor persoonlijke en veilige verbindingen met uw PaaS-bronnen (bijvoorbeeld Azure Storage en SQL Database) vanuit uw Azure Virtual Network met de [persoonlijke Azure-koppeling](../../private-link/private-link-overview.md). PaaS-resource is toegewezen aan een [persoonlijk eind punt](../../private-link/private-endpoint-overview.md) in uw virtuele netwerk. De koppeling tussen het persoonlijke eind punt in uw virtuele netwerk en uw PaaS-resource maakt gebruik van het micro soft backbone-netwerk en gaat niet over op het open bare Internet. U hoeft uw service niet langer bloot te stellen aan het openbare internet. U kunt ook een persoonlijke Azure-koppeling gebruiken om toegang te krijgen tot Azure gehoste klanten-en partner services in uw virtuele netwerk.  Daarnaast kunt u met Azure private link uw eigen [persoonlijke koppelings service](../../private-link/private-link-service-overview.md) maken in uw virtuele netwerk en deze privé leveren aan uw klanten in hun virtuele netwerken. Het instellen en gebruiken van Azure Private Link is consistent voor Azure PaaS-services, services die eigendom zijn van klanten en gedeelde partnerservices.
 
 ## <a name="virtual-machine-security"></a>Beveiliging van virtuele machines
 

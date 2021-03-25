@@ -6,7 +6,7 @@
       href: overview.md
     - name: Azure Arc-validatie programma
       href: validation-program.md
-- name: Quickstarts
+- name: Snelstartgidsen
   items:
     - name: Een cluster verbinden met Azure Arc
       href: quickstart-connect-cluster.md

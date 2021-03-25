@@ -8,12 +8,12 @@ ms.author: maheff
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/01/2021
-ms.openlocfilehash: 5a44c40838b7f7fa9ca499ade49317ff9ce828fe
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 5888a7cc8aa58d1c6edab191e1243ebc60000fd6
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102498894"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105048864"
 ---
 # <a name="how-to-configure-sharepoint-online-indexing-in-cognitive-search-preview"></a>Indexering van share point online configureren in Cognitive Search (preview)
 
@@ -147,7 +147,7 @@ api-key: [admin key]
 
 ```
 
-Zie [Create Index (rest API) (Engelstalig)](https://docs.microsoft.com/rest/api/searchservice/create-index)voor meer informatie.
+Zie [Create Index (rest API) (Engelstalig)](/rest/api/searchservice/create-index)voor meer informatie.
 
 ### <a name="step-5-create-an-indexer"></a>Stap 5: een Indexeer functie maken
 Een Indexeer functie verbindt een gegevens bron met een doel zoek index en biedt een planning voor het automatiseren van de gegevens vernieuwing. Zodra de index en gegevens bron zijn gemaakt, kunt u de Indexeer functie maken.
@@ -226,7 +226,7 @@ Content-Type: application/json
 api-key: [admin key]
 ```
 
-Meer informatie over de status van de Indexeer functie vindt u hier: de status van de [Indexeer functie ophalen](https://docs.microsoft.com/rest/api/searchservice/get-indexer-status).
+Meer informatie over de status van de Indexeer functie vindt u hier: de status van de [Indexeer functie ophalen](/rest/api/searchservice/get-indexer-status).
 
 ## <a name="updating-the-data-source"></a>De gegevens bron bijwerken
 Als er geen updates zijn voor het gegevens bron object, kan de Indexeer functie zonder tussen komst van de gebruiker worden uitgevoerd volgens een schema. Telkens wanneer het gegevens bron object van Azure Cognitive Search wordt bijgewerkt, moet u zich echter opnieuw aanmelden om de Indexeer functie uit te voeren. Als u bijvoorbeeld de query van de gegevens bron wijzigt, moet u zich opnieuw aanmelden met behulp van de `https://microsoft.com/devicelogin` en een nieuwe code.
@@ -241,7 +241,7 @@ Wanneer de gegevens bron is bijgewerkt, volgt u de onderstaande stappen:
     api-key: [admin key]
     ```
 
-    Meer informatie over de aanvraag voor het uitvoeren van de indexering vindt u hier: [Voer Indexeer functie uit](https://docs.microsoft.com/rest/api/searchservice/run-indexer).
+    Meer informatie over de aanvraag voor het uitvoeren van de indexering vindt u hier: [Voer Indexeer functie uit](/rest/api/searchservice/run-indexer).
 
 1.  Controleer de status van de Indexeer functie. Als er een fout optreedt in de laatste uitvoering van de Indexeer functie `https://microsoft.com/devicelogin` , gaat u naar die pagina en geeft u de nieuwe code op. 
 
@@ -251,7 +251,7 @@ Wanneer de gegevens bron is bijgewerkt, volgt u de onderstaande stappen:
     api-key: [admin key]
     ```
 
-    Meer informatie over de status van de Indexeer functie vindt u hier: de status van de [Indexeer functie ophalen](https://docs.microsoft.com/rest/api/searchservice/get-indexer-status).
+    Meer informatie over de status van de Indexeer functie vindt u hier: de status van de [Indexeer functie ophalen](/rest/api/searchservice/get-indexer-status).
 
 1.  Aanmelden
 
@@ -359,7 +359,7 @@ Voor sommige documenten kan Azure Cognitive Search het inhouds type niet bepalen
 "parameters" : { "configuration" : { "failOnUnprocessableDocument" : false } }
 ```
 
-Azure Cognitive Search beperkt de grootte van documenten die worden geïndexeerd. Deze limieten worden beschreven in de [service limieten in Azure Cognitive Search](https://docs.microsoft.com/azure/search/search-limits-quotas-capacity). Documenten met een grote grootte worden standaard als fouten beschouwd. U kunt echter wel de meta gegevens van de opslag van grote documenten indexeren als u de `indexStorageMetadataOnlyForOversizedDocuments` para meter Configuration instelt op True:
+Azure Cognitive Search beperkt de grootte van documenten die worden geïndexeerd. Deze limieten worden beschreven in de [service limieten in Azure Cognitive Search](./search-limits-quotas-capacity.md). Documenten met een grote grootte worden standaard als fouten beschouwd. U kunt echter wel de meta gegevens van de opslag van grote documenten indexeren als u de `indexStorageMetadataOnlyForOversizedDocuments` para meter Configuration instelt op True:
 
 ```http
 "parameters" : { "configuration" : { "indexStorageMetadataOnlyForOversizedDocuments" : true } }

@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/26/2020
 ms.topic: how-to
-ms.openlocfilehash: 9454bef52798650fc431f8df994e1a964662b453
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: bfb383a7079e98db1db1f9b5077558c187bcea96
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101720818"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105047725"
 ---
 # <a name="install-the-remote-rendering-package-for-unity"></a>Het Remote Rendering-pakket voor Unity installeren
 
@@ -22,11 +22,11 @@ U kunt een van de volgende opties kiezen om het Unity-pakket te installeren.
 
 ## <a name="install-remote-rendering-package-using-the-mixed-reality-feature-tool"></a>Extern rendering-pakket installeren met het onderdeel hulp programma Mixed Reality
 
-[Het hulp programma Mixed Reality](https://aka.ms/MRFeatureToolDocs) ([down load](https://aka.ms/mrfeaturetool)) is een hulp programma dat wordt gebruikt om de functie pakketten voor gemengde realiteit te integreren in Unity-projecten. Het pakket maakt geen deel uit van de [opslag plaats ARR](https://github.com/Azure/azure-remote-rendering)-voor beelden en is niet beschikbaar in het interne pakket register van de eenheid.
+[Het hulp programma Mixed Reality](/windows/mixed-reality/develop/unity/welcome-to-mr-feature-tool) ([down load](https://aka.ms/mrfeaturetool)) is een hulp programma dat wordt gebruikt om de functie pakketten voor gemengde realiteit te integreren in Unity-projecten. Het pakket maakt geen deel uit van de [opslag plaats ARR](https://github.com/Azure/azure-remote-rendering)-voor beelden en is niet beschikbaar in het interne pakket register van de eenheid.
 
 Als u het pakket aan een project wilt toevoegen, moet u het volgende doen:
 1. [Het hulp programma voor de functie voor gemengde realiteit downloaden](https://aka.ms/mrfeaturetool)
-1. Volg de [volledige instructies](https://aka.ms/MRFeatureToolDocs) voor het gebruik van het hulp programma.
+1. Volg de [volledige instructies](/windows/mixed-reality/develop/unity/welcome-to-mr-feature-tool) voor het gebruik van het hulp programma.
 1. Tik op de pagina **functies ontdekken** het selectie vakje voor het **Microsoft Azure externe rendering** -pakket in en selecteer de versie van het pakket dat u aan uw project wilt toevoegen
 
 ![Mixed_Reality_feature_tool_package](media/mixed-reality-feature-tool-package.png)

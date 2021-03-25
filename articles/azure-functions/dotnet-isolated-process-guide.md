@@ -5,12 +5,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 03/01/2021
 ms.custom: template-concept
-ms.openlocfilehash: be11c32cf06b9873e10247d7ccc4a84133a6c688
-ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
+ms.openlocfilehash: 4da685c247427e78297df1753779ee9b5c7866b8
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104774929"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105023194"
 ---
 # <a name="guide-for-running-functions-on-net-50-in-azure"></a>Hand leiding voor het uitvoeren van functies op .NET 5,0 in azure
 
@@ -147,15 +147,17 @@ Als u naar een uitvoer binding wilt schrijven, moet u een uitvoer binding kenmer
 
 ### <a name="multiple-output-bindings"></a>Meerdere uitvoer bindingen
 
-De gegevens die naar een uitvoer binding worden geschreven, zijn altijd de retour waarde van de functie. Als u naar meer dan één uitvoer binding wilt schrijven, moet u een aangepast retour type maken. Voor dit retour type moet het bindings kenmerk output worden toegepast op een of meer eigenschappen van de klasse. In het volgende voor beeld wordt naar zowel een HTTP-antwoord als een wachtrij-uitvoer binding geschreven:
+De gegevens die naar een uitvoer binding worden geschreven, zijn altijd de retour waarde van de functie. Als u naar meer dan één uitvoer binding wilt schrijven, moet u een aangepast retour type maken. Voor dit retour type moet het bindings kenmerk output worden toegepast op een of meer eigenschappen van de klasse. Het volgende voor beeld van een HTTP-trigger schrijft naar zowel het HTTP-antwoord als een wachtrij-uitvoer binding:
 
 :::code language="csharp" source="~/azure-functions-dotnet-worker/samples/Extensions/MultiOutput/MultiOutput.cs" id="docsnippet_multiple_outputs":::
+
+Het antwoord van een HTTP-trigger wordt altijd beschouwd als een uitvoer. Daarom is er geen retour waarde-kenmerk vereist.
 
 ### <a name="http-trigger"></a>HTTP-trigger
 
 Met HTTP-triggers wordt het binnenkomende HTTP-aanvraag bericht omgezet in een [HttpRequestData] -object dat wordt door gegeven aan de functie. Dit object bevat gegevens uit de aanvraag, inclusief `Headers` , `Cookies` , `Identities` , `URL` en optioneel een bericht `Body` . Dit object is een representatie van het HTTP-aanvraag object en niet de aanvraag zelf. 
 
-Op dezelfde manier retourneert de functie een object [HttpReponseData], dat gegevens bevat die worden gebruikt voor het maken van het HTTP-antwoord, inclusief bericht `StatusCode` , `Headers` en optioneel een bericht `Body` .  
+De functie retourneert ook een [HttpResponseData] -object, dat gegevens bevat die worden gebruikt voor het maken van het HTTP-antwoord, inclusief bericht `StatusCode` , `Headers` en optioneel een bericht `Body` .  
 
 De volgende code is een HTTP-trigger 
 

@@ -9,16 +9,16 @@ ms.author: mariusu
 ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 824fd19e8acfed75ab3d64048a00f579b70286d2
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 0f456581e14f17b0ea3ebbd54d0768d419e800b3
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103496232"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105110641"
 ---
 # <a name="get-started-with-the-web-calling-sample"></a>Aan de slag met het voorbeeld van aanroeping
 
-Het voorbeeld van webaanroeping is een webtoepassing die als stapsgewijze instructie dient voor de verschillende mogelijkheden van de Communication Services-clientbibliotheek voor webaanroeping.
+Het weboproepend voor beeld is een webtoepassing die als stapsgewijze instructie fungeert voor de verschillende mogelijkheden van de communicatie Services Web Calling SDK.
 
 Dit voorbeeld is gebouwd voor ontwikkelaars en maakt het eenvoudig om aan de slag te gaan met Communication Services. De gebruikersinterface is onderverdeeld in meerdere secties, elk met de knop 'Code weergeven' waarmee u rechtstreeks vanuit uw browser codes kunt kopiëren naar uw eigen Communication Services-toepassing.
 
@@ -51,7 +51,7 @@ U bent nu klaar om te beginnen met het plaatsen van oproepen met uw Communicatio
 
 ## <a name="placing-and-receiving-calls"></a>Oproepen plaatsen en ontvangen
 
-De weboproep-SDK van Communication Services maakt de volgende oproepen **1:1**, **1: N** en **groep**.
+De communicatie Services Web Call SDK maakt **1:1**, **1: N** en **groeps** aanroepen mogelijk.
 
 Voor 1:1 of 1: N uitgaande oproepen kunt u meerdere gebruikersidentiteiten voor Communication Services opgeven om aan te roepen met door komma's gescheiden waarden. U kunt ook traditionele (PSTN) telefoonnummers opgeven om aan te roepen met door komma's gescheiden waarden.
 
@@ -86,7 +86,7 @@ Dit voorbeeld bevat ook codefragmenten voor de volgende mogelijkheden:
 
 Raadpleeg voor meer informatie de volgende artikelen:
 
-- Vertrouwd raken met [het gebruik van de clientbibliotheek voor aanroepen](../quickstarts/voice-video-calling/calling-client-samples.md)
+- Vertrouwd raken met [het gebruik van de aanroepende SDK](../quickstarts/voice-video-calling/calling-client-samples.md)
 - Meer informatie over [de werking van aanroepen](../concepts/voice-video-calling/about-call-types.md)
 - Controleer de [API-referentiedocumenten](/javascript/api/azure-communication-services/@azure/communication-calling/)
 - Het voor beeld van [Contoso med-app](https://github.com/Azure-Samples/communication-services-contoso-med-app) bekijken

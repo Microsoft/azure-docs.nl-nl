@@ -7,12 +7,12 @@ ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: 28813a23b91f75f88e844b9e6b36d6ba0771569a
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: e7f74298b8bf8209a6b1473880b33d64bd17cfd9
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105048082"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105108091"
 ---
 # <a name="quickstart-add-11-video-calling-to-your-app-javascript"></a>Snelstartgids: 1:1 video toevoegen aan uw app (Java script)
 
@@ -33,9 +33,11 @@ Open uw terminal of opdrachtvenster, maak een nieuwe map voor uw app en navigeer
 mkdir calling-quickstart && cd calling-quickstart
 ```
 ### <a name="install-the-package"></a>Het pakket installeren
-Gebruik de opdracht `npm install` voor het installeren van de clientbibliotheek voor oproepen voor Javascript in Azure Communication Services.
+Gebruik de `npm install` opdracht om de Azure Communication Services-aanroepende SDK voor Java script te installeren.
 
-Deze Quick Start gebruikte Azure-communicatie die client bibliotheek aanroept `1.0.0.beta-6` . 
+> [!IMPORTANT]
+> Deze Snelstartgids maakt gebruik van de Azure Communication Services die SDK-versie aanroept `1.0.0.beta-10` . 
+
 
 ```console
 npm install @azure/communication-common --save
@@ -105,7 +107,7 @@ Hier volgt de code:
 Maak een bestand in de hoofdmap van uw project met `client.js` de naam zodat de toepassings logica voor deze Quick Start wordt opgenomen. Voeg de volgende code toe om de aanroepende client te importeren en om verwijzingen naar de DOM-elementen op te halen.
 
 ```JavaScript
-import { CallClient, CallAgent, Renderer, LocalVideoStream } from "@azure/communication-calling";
+import { CallClient, CallAgent, VideoStreamRenderer, LocalVideoStream } from "@azure/communication-calling";
 import { AzureCommunicationTokenCredential } from '@azure/communication-common';
 
 let call;
@@ -124,18 +126,18 @@ let rendererRemote;
 ```
 ## <a name="object-model"></a>Objectmodel
 
-De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Azure Communication Services-clientbibliotheek voor aanroepen:
+De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Azure Communication Services-aanroepende SDK:
 
 | Naam      | Beschrijving | 
 | :---        |    :----   |
-| CallClient  | De CallClient is het belangrijkste ingangspunt voor de clientbibliotheek voor oproepen.      |
+| CallClient  | De CallClient is het belangrijkste ingangs punt voor de aanroepende SDK.      |
 | CallAgent  | De CallAgent wordt gebruikt om oproepen te starten en te beheren.        |
 | DeviceManager | De DeviceManager wordt gebruikt voor het beheren van media apparaten.    |
 | AzureCommunicationTokenCredential | De klasse AzureCommunicationTokenCredential implementeert de CommunicationTokenCredential-interface die wordt gebruikt om de CallAgent te instantiëren.        |
 
 ## <a name="authenticate-the-client-and-access-devicemanager"></a>De client-en toegangs DeviceManager verifiëren
 
-U moet <USER_ACCESS_TOKEN> vervangen door een geldig token voor gebruikers toegang voor uw resource. Raadpleeg de documentatie inzake Token voor gebruikerstoegang als u nog geen token hebt. Met behulp van de CallClient initialiseert u een CallAgent-exemplaar met een CommunicationUserCredential, waarmee we aanroepen kunnen maken en ontvangen. Om toegang te krijgen tot de DeviceManager moet u eerst een callAgent-exemplaar maken. U kunt de-methode vervolgens gebruiken voor het `getDeviceManager` `CallClient` exemplaar om de te verkrijgen `DeviceManager` .
+U moet <USER_ACCESS_TOKEN> vervangen door een geldig token voor gebruikers toegang voor uw resource. Raadpleeg de documentatie inzake Token voor gebruikerstoegang als u nog geen token hebt. Met behulp van de `CallClient`initialiseert u een `CallAgent`-instantie met een `CommunicationUserCredential` waarmee we oproepen kunnen doen en ontvangen. Om toegang te krijgen tot het `DeviceManager` callAgent-exemplaar moet eerst worden gemaakt. U kunt de-methode vervolgens gebruiken voor het `getDeviceManager` `CallClient` exemplaar om de te verkrijgen `DeviceManager` .
 
 Voeg de volgende code toe aan `client.js`:
 
@@ -154,7 +156,7 @@ init();
 
 Een gebeurtenislistener toevoegen om een aanroep te initiëren wanneer `callButton` erop wordt geklikt:
 
-Eerst moet u lokale camera's opsommen met behulp van de deviceManager getCameraList-API. In deze Snelstartgids gebruiken we de eerste camera in de verzameling. Zodra de gewenste camera is geselecteerd, wordt een LocalVideoStream-exemplaar geconstrueerd en door gegeven binnen videoOptions als een item binnen de localVideoStream-matrix met de aanroep methode. Zodra uw gesprek verbinding maakt, wordt automatisch een video stroom naar de andere deel nemer verzonden. 
+Eerst moet u lokale camera's opsommen met behulp van de deviceManager- `getCameraList` API. In deze Snelstartgids gebruiken we de eerste camera in de verzameling. Zodra de gewenste camera is geselecteerd, wordt een LocalVideoStream-exemplaar geconstrueerd en door gegeven `videoOptions` als een item binnen de LocalVideoStream-matrix naar de aanroep methode. Zodra uw gesprek verbinding maakt, wordt automatisch een video stroom naar de andere deel nemer verzonden. 
 
 ```JavaScript
 callButton.addEventListener("click", async () => {
@@ -179,40 +181,40 @@ callButton.addEventListener("click", async () => {
     callButton.disabled = true;
 });
 ```  
-Als u een wilt weer geven `LocalVideoStream` , moet u een nieuw exemplaar van maken `Renderer` en vervolgens een nieuw RendererView-exemplaar maken met behulp van de asynchrone `createView` methode. U kunt vervolgens `view.target` aan elk UI-element worden gekoppeld. 
+Als u een wilt weer geven `LocalVideoStream` , moet u een nieuw exemplaar van maken `VideoStreamRenderer` en vervolgens een nieuw `VideoStreamRendererView` exemplaar maken met behulp van de asynchrone `createView` methode. U kunt vervolgens `view.target` aan elk UI-element worden gekoppeld. 
 
 ```JavaScript
 async function localVideoView() {
-    rendererLocal = new Renderer(localVideoStream);
+    rendererLocal = new VideoStreamRenderer(localVideoStream);
     const view = await rendererLocal.createView();
     document.getElementById("myVideo").appendChild(view.target);
 }
 ```
-Alle externe deel nemers zijn beschikbaar via de `remoteParticipants` verzameling op een aanroep exemplaar. U moet zich abonneren op de externe deel nemers van de huidige aanroep en Luis teren naar de gebeurtenis om u te `remoteParticipantsUpdated` Abonneren op toegevoegde externe deel nemers.
+Alle externe deel nemers zijn beschikbaar via de `remoteParticipants` verzameling op een aanroep exemplaar. U moet naar de gebeurtenis Luis teren `remoteParticipantsUpdated` om een melding te ontvangen wanneer een nieuwe externe deel nemer wordt toegevoegd aan de aanroep. U moet ook de verzameling herhalen `remoteParticipants` om u te abonneren op hun video-streams. 
 
 ```JavaScript
 function subscribeToRemoteParticipantInCall(callInstance) {
-    callInstance.remoteParticipants.forEach( p => {
-        subscribeToRemoteParticipant(p);
-    })
     callInstance.on('remoteParticipantsUpdated', e => {
         e.added.forEach( p => {
-            subscribeToRemoteParticipant(p);
+            subscribeToParticipantVideoStreams(p);
         })
-    });   
+    }); 
+    callInstance.remoteParticipants.forEach( p => {
+        subscribeToParticipantVideoStreams(p);
+    })
 }
 ```
-U kunt zich abonneren op de `remoteParticipants` verzameling van de huidige oproep en de `videoStreams` verzamelingen controleren om de streams van elke deel nemer weer te geven. U moet zich ook abonneren op de remoteParticipantsUpdated-gebeurtenis voor het afhandelen van toegevoegde externe deel nemers. 
+U moet zich abonneren op de `videoStreamsUpdated` gebeurtenis voor het afhandelen van toegevoegde video stromen van externe deel nemers. U kunt de `videoStreams` verzamelingen controleren om de streams van elke deel nemer weer te geven en door de `remoteParticipants` verzameling van de huidige aanroep door te nemen.
 
 ```JavaScript
-function subscribeToRemoteParticipant(remoteParticipant) {
-    remoteParticipant.videoStreams.forEach(v => {
-        handleVideoStream(v);
-    });
+function subscribeToParticipantVideoStreams(remoteParticipant) {
     remoteParticipant.on('videoStreamsUpdated', e => {
         e.added.forEach(v => {
             handleVideoStream(v);
         })
+    });
+    remoteParticipant.videoStreams.forEach(v => {
+        handleVideoStream(v);
     });
 }
 ```
@@ -231,11 +233,11 @@ function handleVideoStream(remoteVideoStream) {
     }
 }
 ```
-Als u een wilt weer geven `RemoteVideoStream` , moet u een nieuw exemplaar van maken `Renderer` en vervolgens een nieuw `RendererView` exemplaar maken met behulp van de asynchrone `createView` methode. U kunt vervolgens `view.target` aan elk UI-element worden gekoppeld. 
+Als u een wilt weer geven `RemoteVideoStream` , moet u een nieuw exemplaar van maken `VideoStreamRenderer` en vervolgens een nieuw `VideoStreamRendererView` exemplaar maken met behulp van de asynchrone `createView` methode. U kunt vervolgens `view.target` aan elk UI-element worden gekoppeld. 
 
 ```JavaScript
 async function remoteVideoView(remoteVideoStream) {
-    rendererRemote = new Renderer(remoteVideoStream);
+    rendererRemote = new VideoStreamRenderer(remoteVideoStream);
     const view = await rendererRemote.createView();
     document.getElementById("remoteVideo").appendChild(view.target);
 }
@@ -259,7 +261,7 @@ callAgent.on('incomingCall', async e => {
     const addedCall = await e.incomingCall.accept({videoOptions: {localVideoStreams:[localVideoStream]}});
     call = addedCall;
 
-    subscribeToRemoteParticipantInCall(addedCall);   
+    subscribeToRemoteParticipantInCall(addedCall);  
 });
 ```
 ## <a name="end-the-current-call"></a>De huidige oproep beëindigen
@@ -334,6 +336,8 @@ Als u een Communication Services-abonnement wilt opschonen en verwijderen, kunt 
 
 ## <a name="next-steps"></a>Volgende stappen
 Raadpleeg voor meer informatie de volgende artikelen:
-- Bekijk ons [webaanroep voor beeld](../../samples/web-calling-sample.md)
-- Meer informatie over de [mogelijkheden van de clientbibliotheek voor aanroepen](./calling-client-samples.md?pivots=platform-web)
-- Meer informatie over [de werking van aanroepen](../../concepts/voice-video-calling/about-call-types.md)
+
+- Bekijk ons [webaanroep voor beeld](https://docs.microsoft.com/azure/communication-services/samples/web-calling-sample)
+- Meer informatie over het [aanroepen van SDK-mogelijkheden](https://docs.microsoft.com/azure/communication-services/quickstarts/voice-video-calling/calling-client-samples?pivots=platform-web)
+- Meer informatie over [de werking van aanroepen](https://docs.microsoft.com/azure/communication-services/concepts/voice-video-calling/about-call-types)
+

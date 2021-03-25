@@ -10,21 +10,21 @@ ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
 zone_pivot_groups: acs-plat-azp-net
-ms.openlocfilehash: ffb40d7fb45f43349004fc4d18e7582aa3521185
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 91383ecba119959213804e0432f612c3f1ff636c
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103495873"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105110884"
 ---
 # <a name="quickstart-create-and-manage-communication-services-resources"></a>Quickstart: Communication Services-resources maken en beheren
 
 [!INCLUDE [Public Preview Notice](../includes/public-preview-include.md)]
 
-Ga aan de slag met Azure Communication Services door uw eerste Communication Services-resource te provisioneren. Communicatie services-resources kunnen worden ingericht via de [Azure Portal](https://portal.azure.com) of met de .net Management-client bibliotheek. Met de beheer-client bibliotheek en de Azure Portal kunt u uw resources en interface maken, configureren, bijwerken en verwijderen met [Azure Resource Manager](../../azure-resource-manager/management/overview.md), de implementatie-en beheer service van Azure. Alle beschikbare functies in de clientbibliotheken zijn beschikbaar in de Azure Portal. 
+Ga aan de slag met Azure Communication Services door uw eerste Communication Services-resource te provisioneren. Communicatie services-resources kunnen worden ingericht via de [Azure Portal](https://portal.azure.com) of met de .net Management SDK. Met de Management SDK en de Azure Portal kunt u uw resources en interface maken, configureren, bijwerken en verwijderen met [Azure Resource Manager](../../azure-resource-manager/management/overview.md), de implementatie-en beheer service van Azure. Alle beschik bare functies in de Sdk's zijn beschikbaar in de Azure Portal. 
 
 
-Ga aan de slag met Azure Communication Services door uw eerste Communication Services-resource te provisioneren. Communicatie services-resources kunnen worden ingericht via de [Azure Portal](https://portal.azure.com) of met de .net Management-client bibliotheek. Met de beheer-client bibliotheek en de Azure Portal kunt u uw resources en interface maken, configureren, bijwerken en verwijderen met [Azure Resource Manager](../../azure-resource-manager/management/overview.md), de implementatie-en beheer service van Azure. Alle beschikbare functies in de clientbibliotheken zijn beschikbaar in de Azure Portal.
+Ga aan de slag met Azure Communication Services door uw eerste Communication Services-resource te provisioneren. Communicatie services-resources kunnen worden ingericht via de [Azure Portal](https://portal.azure.com) of met de .net Management SDK. Met de Management SDK en de Azure Portal kunt u uw resources en interface maken, configureren, bijwerken en verwijderen met [Azure Resource Manager](../../azure-resource-manager/management/overview.md), de implementatie-en beheer service van Azure. Alle beschik bare functies in de Sdk's zijn beschikbaar in de Azure Portal.
 
 > [!WARNING]
 > Houd er rekening mee dat terwijl communicatie services beschikbaar is in meerdere geographs, om een telefoon nummer op te halen waarvoor de resource een gegevens locatie moet hebben ingesteld op ' US '. Houd er ook rekening mee dat communicatie bronnen niet kunnen worden overgedragen naar een ander abonnement tijdens de openbare preview.
@@ -43,9 +43,9 @@ Ga aan de slag met Azure Communication Services door uw eerste Communication Ser
 
 ## <a name="access-your-connection-strings-and-service-endpoints"></a>Toegang tot uw verbindingsreeksen en service-eindpunten
 
-Met verbindingsreeksen kunnen de Communication Services-clientbibliotheken verbinding maken met en verifiëren bij Azure. U hebt toegang tot uw verbindingsreeksen voor Communication Services en service-eindpunten van de Azure Portal of programmatisch met Azure Resource Manager-API‘s
+Met verbindings reeksen kunnen de Sdk's van de communicatie Services verbinding maken en verifiëren met Azure. U hebt toegang tot uw verbindingsreeksen voor Communication Services en service-eindpunten van de Azure Portal of programmatisch met Azure Resource Manager-API‘s
 
-Nadat u naar uw Communication Services-resource hebt genavigeerd, selecteert u **Sleutels** in het navigatiemenu en kopieert u de **Verbindingsreeks**- of **Eindpunt**-waarden voor gebruik door de Communication Services-clientbibliotheken. Houd er rekening mee dat u toegang hebt tot de primaire en secundaire sleutels. Dit kan handig zijn in scenario's waarin u tijdelijke toegang tot uw Communication Services-resources wilt verlenen aan een derde partij of staging-omgeving.
+Nadat u naar uw communicatie Services-resource hebt genavigeerd, selecteert u **sleutels** in het navigatie menu en kopieert u de **verbindings reeks** of **eind punt** waarden voor gebruik door de sdk's van de communicatie Services. Houd er rekening mee dat u toegang hebt tot de primaire en secundaire sleutels. Dit kan handig zijn in scenario's waarin u tijdelijke toegang tot uw Communication Services-resources wilt verlenen aan een derde partij of staging-omgeving.
 
 :::image type="content" source="./media/key.png" alt-text="Schermafbeelding van de sleutelpagina van de Communication Services.":::
 
@@ -59,7 +59,7 @@ az communication list-key --name "<communicationName>" --resource-group "<resour
 
 ## <a name="store-your-connection-string"></a>Uw verbindingsreeks bijwerken
 
-Clientbibliotheken voor Communication Services gebruiken verbindingsreeksen om aanvragen voor Communication Services te autoriseren. U hebt verschillende mogelijkheden om uw verbindingsreeks op te slaan:
+Sdk's voor communicatie Services gebruiken verbindings reeksen om aanvragen voor communicatie services te autoriseren. U hebt verschillende mogelijkheden om uw verbindingsreeks op te slaan:
 
 * Een toepassing die wordt uitgevoerd op het bureaublad of op een apparaat kan de verbindingsreeks opslaan in een bestand **app.config** of **web.config**. Voeg de verbindingsreeks toe aan de sectie **AppSettings** in deze bestanden.
 * Een toepassing die wordt uitgevoerd in een Azure App Service kan de verbindingsreeks opslaan in de [App Service-toepassingsinstellingen](../../app-service/configure-common.md). Voeg de verbindingsreeks toe aan de sectie **Verbindingsreeksen** van het tabblad Toepassingsinstellingen in de portal.

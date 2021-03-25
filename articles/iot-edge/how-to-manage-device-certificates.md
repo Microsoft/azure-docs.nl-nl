@@ -8,12 +8,12 @@ ms.date: 03/01/2021
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: e5c85d2c3049ea8718d0a9e0e574c13d0d99394c
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: f3b6bd19d47658e5ad079f0b731cbafc866bb333
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103200279"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105045770"
 ---
 # <a name="manage-certificates-on-an-iot-edge-device"></a>Certificaten op een IoT Edge apparaat beheren
 
@@ -67,9 +67,18 @@ Als u een voor beeld van deze certificaten wilt zien, bekijkt u de scripts die d
 
 Installeer uw certificaat keten op het IoT Edge apparaat en configureer de IoT Edge-runtime om te verwijzen naar de nieuwe certificaten.
 
-Kopieer de drie certificaat-en sleutel bestanden naar uw IoT Edge-apparaat. U kunt een service zoals [Azure Key Vault](../key-vault/index.yml) of een functie zoals [Secure Copy Protocol](https://www.ssh.com/ssh/scp/) gebruiken om de certificaat bestanden te verplaatsen.  Als u de certificaten op het IoT Edge apparaat zelf hebt gegenereerd, kunt u deze stap overs Laan en het pad naar de werkmap gebruiken.
+Kopieer de drie certificaat-en sleutel bestanden naar uw IoT Edge-apparaat. U kunt een service zoals [Azure Key Vault](../key-vault/index.yml) of een functie zoals [Secure Copy Protocol](https://www.ssh.com/ssh/scp/) gebruiken om de certificaat bestanden te verplaatsen. Als u de certificaten op het IoT Edge apparaat zelf hebt gegenereerd, kunt u deze stap overs Laan en het pad naar de werkmap gebruiken.
 
-Als u bijvoorbeeld de voorbeeld scripts hebt gebruikt om [demo certificaten te maken](how-to-create-test-certificates.md), kopieert u de volgende bestanden naar uw IoT-Edge-apparaat:
+Als u IoT Edge voor Linux op Windows gebruikt, moet u de SSH-sleutel in het Azure IoT Edge-bestand gebruiken `id_rsa` om bestands overdrachten tussen het besturings systeem van de host en de virtuele Linux-machine te verifiëren. U kunt een geverifieerd SCP uitvoeren met de volgende opdracht:
+
+   ```powershell-interactive
+   C:\WINDOWS\System32\OpenSSH\scp.exe -i 'C:\Program Files\Azure IoT Edge\id_rsa' <PATH_TO_SOURCE_FILE> iotedge-user@<VM_IP>:<PATH_TO_FILE_DESTINATION>
+   ```
+
+   >[!NOTE]
+   >Het IP-adres van de virtuele Linux-machine kan worden opgevraagd via de `Get-EflowVmAddr` opdracht.
+
+Als u de voorbeeld scripts hebt gebruikt om [demo certificaten te maken](how-to-create-test-certificates.md), kopieert u de volgende bestanden naar uw IoT-Edge-apparaat:
 
 * CA-certificaat van apparaat: `<WRKDIR>\certs\iot-edge-device-MyEdgeDeviceCA-full-chain.cert.pem`
 * Persoonlijke sleutel van de apparaat-CA: `<WRKDIR>\private\iot-edge-device-MyEdgeDeviceCA.key.pem`
@@ -80,21 +89,13 @@ Als u bijvoorbeeld de voorbeeld scripts hebt gebruikt om [demo certificaten te m
 
 1. Open het IoT Edge Security daemon config-bestand.
 
-   * Windows: `C:\ProgramData\iotedge\config.yaml`
-   * Linux: `/etc/iotedge/config.yaml`
+   * Linux en IoT Edge voor Linux op Windows: `/etc/iotedge/config.yaml`
+
+   * Windows met Windows-containers: `C:\ProgramData\iotedge\config.yaml`
 
 1. Stel de **certificaat** eigenschappen in config. yaml in op het pad naar het bestand-URI naar het certificaat en de sleutel bestanden op het IOT edge apparaat. Verwijder het `#` teken vóór de eigenschappen van het certificaat om de vier regels op te heffen. Zorg ervoor dat de regel **certificaten:** geen voor gaande witruimte heeft en dat geneste items met twee spaties worden inge sprongen. Bijvoorbeeld:
 
-   * Windows:
-
-      ```yaml
-      certificates:
-        device_ca_cert: "file:///C:/<path>/<device CA cert>"
-        device_ca_pk: "file:///C:/<path>/<device CA key>"
-        trusted_ca_certs: "file:///C:/<path>/<root CA cert>"
-      ```
-
-   * Linux:
+   * Linux en IoT Edge voor Linux op Windows:
 
       ```yaml
       certificates:
@@ -103,13 +104,23 @@ Als u bijvoorbeeld de voorbeeld scripts hebt gebruikt om [demo certificaten te m
         trusted_ca_certs: "file:///<path>/<root CA cert>"
       ```
 
+   * Windows met Windows-containers:
+
+      ```yaml
+      certificates:
+        device_ca_cert: "file:///C:/<path>/<device CA cert>"
+        device_ca_pk: "file:///C:/<path>/<device CA key>"
+        trusted_ca_certs: "file:///C:/<path>/<root CA cert>"
+      ```
+
 1. Controleer op Linux-apparaten of de gebruiker **iotedge** Lees machtigingen heeft voor de directory die de certificaten bevat.
 
 1. Als u eerder andere certificaten voor IoT Edge op het apparaat hebt gebruikt, verwijdert u de bestanden in de volgende twee directory's voordat u IoT Edge start of opnieuw opstart:
 
-   * Windows: `C:\ProgramData\iotedge\hsm\certs` en `C:\ProgramData\iotedge\hsm\cert_keys`
+   * Linux en IoT Edge voor Linux op Windows: `/var/lib/iotedge/hsm/certs` en `/var/lib/iotedge/hsm/cert_keys`
 
-   * Linux: `/var/lib/iotedge/hsm/certs` en `/var/lib/iotedge/hsm/cert_keys`
+   * Windows met Windows-containers: `C:\ProgramData\iotedge\hsm\certs` en `C:\ProgramData\iotedge\hsm\cert_keys`
+
 :::moniker-end
 <!-- end 1.1 -->
 
@@ -177,34 +188,36 @@ Na het verlopen van het opgegeven aantal dagen moet IoT Edge opnieuw worden gest
 
 1. Verwijder de inhoud van de `hsm` map om eerder gegenereerde certificaten te verwijderen.
 
-   Windows: `C:\ProgramData\iotedge\hsm\certs` en `C:\ProgramData\iotedge\hsm\cert_keys` Linux: `/var/lib/iotedge/hsm/certs` en `/var/lib/iotedge/hsm/cert_keys`
+   * Linux en IoT Edge voor Linux op Windows: `/var/lib/iotedge/hsm/certs` en `/var/lib/iotedge/hsm/cert_keys`
+
+   * Windows met Windows-containers: `C:\ProgramData\iotedge\hsm\certs` en `C:\ProgramData\iotedge\hsm\cert_keys`
 
 1. Start de IoT Edge-service opnieuw.
 
-   Windows:
-
-   ```powershell
-   Restart-Service iotedge
-   ```
-
-   Linux:
+   * Linux en IoT Edge voor Linux op Windows:
 
    ```bash
    sudo systemctl restart iotedge
    ```
 
-1. Bevestig de instelling voor de levens duur.
-
-   Windows:
+   * Windows met Windows-containers:
 
    ```powershell
-   iotedge check --verbose
+   Restart-Service iotedge
    ```
 
-   Linux:
+1. Bevestig de instelling voor de levens duur.
+
+   * Linux en IoT Edge voor Linux op Windows:
 
    ```bash
    sudo iotedge check --verbose
+   ```
+
+   * Windows met Windows-containers:
+
+   ```powershell
+   iotedge check --verbose
    ```
 
    Controleer de uitvoer van de **gereedheid voor productie: certificaten** controle, waarin het aantal dagen wordt vermeld waarna de automatisch GEGENEREERDe CA-certificaten verlopen.

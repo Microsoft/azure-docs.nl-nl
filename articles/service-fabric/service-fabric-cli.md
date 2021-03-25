@@ -5,12 +5,12 @@ author: jeffj6123
 ms.topic: conceptual
 ms.date: 5/19/2020
 ms.author: jejarry
-ms.openlocfilehash: a1b0598f34fe894e078dc647149cff4ac74e1fea
-ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
+ms.openlocfilehash: ff322cb3633616e9004bc8fa25b048b6f1263008
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104802145"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105046331"
 ---
 # <a name="azure-service-fabric-cli"></a>Azure Service Fabric-CLI
 
@@ -58,11 +58,11 @@ Er zijn diverse manieren waarop u pip en Python op uw platform kunt installeren.
 
 Voor Windows 10, Windows Server 2016 en Windows Server 2012 R2 gebruikt u de officiële standaardinstallatie-instructies. Tijdens de installatie van python wordt pip ook standaard geïnstalleerd.
 
-1. Ga naar de officiële [python-pagina met Down loads](https://www.python.org/downloads/)en down load de meest recente versie van python 3,7.
+1. Ga naar de officiële [python-pagina met Down loads](https://www.python.org/downloads/)en down load de meest recente versie van python 3. x.
 
 2. Start het installatieprogramma.
 
-3. Selecteer aan de onderkant van de prompt de optie **Python 3,7 toevoegen aan pad**.
+3. Selecteer aan de onderkant van de prompt de optie **python 3. x toevoegen aan pad**.
 
 4. Selecteer **Install Now** en voltooi de installatie.
 
@@ -118,8 +118,8 @@ sudo pip3 install sfctl
 Voer de volgende opdrachten uit om Service Fabric CLI te installeren op Red Hat:
 
 ```bash
-sudo yum install -y python34
-sudo yum install python34-setuptools
+sudo yum install -y python38
+sudo yum install python38-setuptools
 sudo easy_install-3.4 pip
 sudo pip3 install sfctl
 ```
@@ -135,7 +135,7 @@ Voor Mac OS is het raadzaam om [het pakketbeheerprogramma HomeBrew](https://brew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-Installeer vervolgens python 3,7, PIP en de Service Fabric CLI via de Terminal door de volgende opdrachten uit te voeren:
+Installeer vervolgens vanaf de Terminal de meest recente python 3. x, PIP en de Service Fabric CLI door de volgende opdrachten uit te voeren:
 
 ```bash
 brew install python3

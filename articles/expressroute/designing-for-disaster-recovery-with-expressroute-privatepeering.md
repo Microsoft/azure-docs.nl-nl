@@ -5,20 +5,20 @@ services: expressroute
 author: duongau
 ms.service: expressroute
 ms.topic: article
-ms.date: 05/25/2019
+ms.date: 03/22/2021
 ms.author: duau
-ms.openlocfilehash: 2a5730cd75ccb76d25897e9109555113f7355c2f
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 8b1691dc7358c03b924d710684ecd73841b4832d
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "92202410"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105044597"
 ---
 # <a name="designing-for-disaster-recovery-with-expressroute-private-peering"></a>Ontwerpen voor herstel na nood gevallen met persoonlijke ExpressRoute-peering
 
 ExpressRoute is ontworpen voor hoge Beschik baarheid om de communicatie van particuliere netwerken naar micro soft-resources te verzorgen. Met andere woorden: er is geen Single Point of Failure in het pad ExpressRoute in het micro soft-netwerk. Zie [ontwerpen voor hoge Beschik baarheid met ExpressRoute][HA]voor overwegingen bij het ontwerpen van de beschik baarheid van een ExpressRoute-circuit.
 
-*Als er echter iets mis gaat* met Murphy--adage, kunt u in dit artikel zich richten op oplossingen die verder gaan dan storingen die kunnen worden opgelost met één ExpressRoute-circuit. Met andere woorden, in dit artikel, kunnen we in het kader van de netwerk architectuur controleren op het bouwen van robuuste back-end-netwerk connectiviteit voor herstel na nood gevallen met geo-redundante ExpressRoute-circuits.
+*Als er echter iets mis gaat* met Murphy--adage, kunt u in dit artikel zich richten op oplossingen die verder gaan dan storingen die kunnen worden opgelost met één ExpressRoute-circuit. We kijken naar netwerk architectuur overwegingen voor het bouwen van robuuste back-end-netwerk connectiviteit voor nood herstel met behulp van geo-redundante ExpressRoute-circuits.
 
 >[!NOTE]
 >De concepten die in dit artikel worden beschreven, zijn ook van toepassing wanneer een ExpressRoute-circuit wordt gemaakt onder een virtueel WAN of daarbuiten.
@@ -26,7 +26,7 @@ ExpressRoute is ontworpen voor hoge Beschik baarheid om de communicatie van part
 
 ## <a name="need-for-redundant-connectivity-solution"></a>Behoefte aan redundante connectiviteits oplossing
 
-Er zijn mogelijkheden en instanties waarbij een volledige regionale service (die van micro soft, netwerk serviceproviders, klanten of andere Cloud serviceproviders) wordt gedegradeerd. De hoofd oorzaak van dergelijke regionale service-impact is onder andere natuurlijke Calamity. Daarom is het belang rijk om voor bedrijfs continuïteit en essentiële toepassingen te plannen voor herstel na nood gevallen.   
+Er zijn mogelijkheden en instanties waarbij een volledige regionale service (die van micro soft, netwerk serviceproviders, klanten of andere Cloud serviceproviders) wordt gedegradeerd. De hoofd oorzaak van dergelijke regionale service-impact is onder andere natuurlijke Calamity. Daarom is het belang rijk om bedrijfs continuïteit en essentiële toepassingen te plannen voor nood herstel.   
 
 Ongeacht of u uw essentiële bedrijfs toepassingen uitvoert in een Azure-regio of on-premises of op een wille keurige locatie, kunt u een andere Azure-regio gebruiken als uw failover-site. De volgende artikelen zijn bedoeld voor nood herstel van toepassingen en perspectieven voor toegang tot de frontend:
 
@@ -37,9 +37,19 @@ Als u afhankelijk bent van de ExpressRoute-verbinding tussen uw on-premises netw
 
 ## <a name="challenges-of-using-multiple-expressroute-circuits"></a>Problemen met het gebruik van meerdere ExpressRoute-circuits
 
-Wanneer u dezelfde set netwerken vergelijkt met meer dan één verbinding, maakt u parallelle paden tussen de netwerken. Parallelle paden, wanneer deze niet correct zijn ontworpen, kunnen leiden tot asymmetrische route ring. Als u stateful-entiteiten (bijvoorbeeld NAT, firewall) in het pad hebt, kan asymmetrische route ring de verkeers stroom blok keren.  Normaal gesp roken komt het over het ExpressRoute persoonlijke peering-pad niet over stateful-entiteiten zoals NAT of firewalls. Daarom blokkeert asymmetrische route ring via ExpressRoute persoonlijke peering niet noodzakelijkerwijs de verkeers stroom.
+Wanneer u dezelfde set netwerken vergelijkt met meer dan één verbinding, maakt u parallelle paden tussen de netwerken. Parallelle paden, wanneer deze niet correct zijn ontworpen, kunnen leiden tot asymmetrische route ring. Als u stateful-entiteiten (bijvoorbeeld NAT, firewall) in het pad hebt, kan asymmetrische route ring de verkeers stroom blok keren.  Normaal gesp roken komt het over het ExpressRoute persoonlijke peering-pad niet over stateful-entiteiten zoals NAT of firewalls. Daarom blokkeert asymmetrische route ring via ExpressRoute private-peering niet noodzakelijkerwijs de verkeers stroom.
  
-Als u echter taak verdeling van verkeer via Geo-redundante parallelle paden hebt, ongeacht of u stateful entiteiten hebt of niet, zou u inconsistente netwerk prestaties ondervinden. In dit artikel bespreken we hoe u deze uitdagingen kunt aanpakken.
+Als u echter taak verdeling van verkeer via Geo-redundante parallelle paden hebt, ongeacht of u stateful entiteiten hebt of niet, zou u inconsistente netwerk prestaties ondervinden. Deze geo redundante parallelle paden kunnen zich bevinden op dezelfde metro-of andere metro lijn op de pagina [providers per locatie](expressroute-locations-providers.md#partners) . 
+
+### <a name="same-metro"></a>Dezelfde metro lijn
+
+Wanneer u dezelfde metro gebruikt, moet u de secundaire locatie voor het tweede pad gebruiken om deze configuratie te laten werken. Een voor beeld van dezelfde metro lijn is *Amsterdam* en *Amsterdam2*. Het voor deel van het selecteren van dezelfde metro lijn is wanneer de failover van de toepassing plaatsvindt, de end-to-end-latentie tussen uw on-premises toepassingen en micro soft blijft hetzelfde. Als er echter sprake is van een natuur ramp, is connectiviteit voor beide paden mogelijk niet meer beschikbaar. 
+
+### <a name="different-metros"></a>Verschillende metro lijnen
+
+Wanneer u verschillende metro lijnen gebruikt voor standaard-SKU-circuits, moet de secundaire locatie zich in dezelfde [geo-politieke regio](expressroute-locations-providers.md#locations)bevinden. Als u een locatie buiten de geo-politieke regio wilt kiezen, moet u Premium SKU voor beide circuits in de parallelle paden gebruiken. Het voor deel van deze configuratie is de kans op een natuur ramp waardoor beide koppelingen veel lager zijn, maar de kosten voor end-to-end van de latentie verhogen.
+
+In dit artikel wordt beschreven hoe u problemen kunt aanpakken bij het configureren van geo-redundante paden.
 
 ## <a name="small-to-medium-on-premises-network-considerations"></a>Aandachtspunten voor kleine tot middel grote on-premises netwerken
 
@@ -100,13 +110,13 @@ Als u gebruikmaakt van een van de technieken, moet u er ook voor zorgen dat het 
 
 ## <a name="large-distributed-enterprise-network"></a>Groot gedistribueerd bedrijfs netwerk
 
-Wanneer u een groot gedistribueerd bedrijfs netwerk hebt, hebt u waarschijnlijk meerdere ExpressRoute-circuits. In dit gedeelte ziet u hoe u herstel na nood gevallen kunt ontwerpen met het actief-actief ExpressRoute-circuits, zonder extra standaard circuits. 
+Wanneer u een groot gedistribueerd bedrijfs netwerk hebt, hebt u waarschijnlijk meerdere ExpressRoute-circuits. In dit gedeelte ziet u hoe u herstel na nood gevallen kunt ontwerpen met het actief-actief ExpressRoute-circuits, zonder dat u een andere standaard-op circuits hoeft te gebruiken. 
 
 Laten we eens kijken naar het voor beeld in het volgende diagram. In het voor beeld heeft Contoso twee on-premises locaties die zijn verbonden met twee contoso IaaS-implementaties in twee verschillende Azure-regio's via ExpressRoute-circuits op twee verschillende peering locaties. 
 
 [![6,5]][6]
 
-De manier waarop het herstel na nood gevallen wordt beïnvloed, is van invloed op de manier waarop het verkeer van de regionale naar de andere locatie (region1/REGION2 naar location2/location1) wordt gerouteerd. Laten we eens kijken naar twee verschillende rampen architecturen die interregionale verkeer op verschillende locaties routeren.
+De manier waarop het herstel na nood gevallen wordt beïnvloed, is van invloed op de manier waarop cross-regionaal naar cross-Location (region1/REGION2 to location2/location1) verkeer wordt gerouteerd. Laten we eens kijken naar twee verschillende rampen architecturen die interregionale verkeer op verschillende locaties routeren.
 
 ### <a name="scenario-1"></a>Scenario 1
 

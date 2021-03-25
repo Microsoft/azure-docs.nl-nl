@@ -8,12 +8,12 @@ ms.author: nmurav
 ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 7cfc8fc24aea938b997fead4ca762ce7178e3386
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 7eb44987dca033ecdac9ef2ca63fb1da97dc9678
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103490616"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105109179"
 ---
 # <a name="tutorial-prepare-a-web-app-for-azure-communication-services-nodejs"></a>Zelf studie: een web-app voorbereiden voor Azure Communication Services (Node.js)
 
@@ -21,7 +21,7 @@ ms.locfileid: "103490616"
 
 U kunt Azure Communication Services gebruiken om realtime communicatie toe te voegen aan uw toepassingen. In deze zelf studie leert u hoe u een webtoepassing kunt instellen die Azure Communication Services ondersteunt. Dit is een inleidende zelf studie voor nieuwe ontwikkel aars die aan de slag willen gaan met realtime-communicatie.
 
-Aan het einde van deze zelf studie beschikt u over een basislijn webtoepassing die is geconfigureerd met Azure Communication Services-client bibliotheken. U kunt deze toepassing vervolgens gebruiken om aan de slag te gaan met het bouwen van uw realtime-communicatie oplossing.
+Aan het einde van deze zelf studie beschikt u over een basislijn webtoepassing die is geconfigureerd met de Azure Communication Services Sdk's. U kunt deze toepassing vervolgens gebruiken om aan de slag te gaan met het bouwen van uw realtime-communicatie oplossing.
 
 Ga naar de [Azure Communication Services github-pagina](https://github.com/Azure/communication) om feedback te geven.
 
@@ -37,7 +37,7 @@ In deze zelfstudie leert u het volgende:
 - Een Azure-account met een actief abonnement. Zie [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voor meer informatie. Het gratis account biedt $200 aan Azure-tegoed om een combi natie van services uit te proberen.
 - [Visual Studio code](https://code.visualstudio.com/) voor het bewerken van code in uw lokale ontwikkel omgeving.
 - [webpakket](https://webpack.js.org/) om uw code te bundelen en lokaal te hosten.
-- [Node.js](https://nodejs.org/en/) voor het installeren en beheren van afhankelijkheden, zoals Azure Communication Services-client bibliotheken en webpack.
+- [Node.js](https://nodejs.org/en/) voor het installeren en beheren van afhankelijkheden zoals Azure Communication Services sdk's en webpack.
 - [NVM en NPM](/windows/nodejs/setup-on-windows) voor het afhandelen van versie beheer.
 - De [uitbrei ding](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestorage) van de Azure Storage voor Visual Studio code. U hebt deze uitbrei ding nodig om uw toepassing te publiceren in Azure Storage. [Lees meer over het hosten van statische websites in azure Storage](../../storage/blobs/storage-blob-static-website.md).
 - De [uitbrei ding Azure app service](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice). Met de uitbrei ding kunnen websites worden geïmplementeerd met de optie voor het configureren van volledig beheerde continue integratie en continue levering (CI/CD).
@@ -293,7 +293,7 @@ Als u de server wilt stoppen, kunt u uitvoeren `Ctrl+C` in uw Terminal. Als u de
 
 ## <a name="add-the-azure-communication-services-packages"></a>De Azure Communication Services-pakketten toevoegen
 
-Gebruik de `npm install` opdracht voor het installeren van de client bibliotheek voor Azure Communication Services die aanroept voor Java script.
+Gebruik de `npm install` opdracht om de Azure Communication Services-aanroepende SDK voor Java script te installeren.
 
 ```Console
 npm install @azure/communication-common --save

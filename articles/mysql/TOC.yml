@@ -27,7 +27,7 @@
               href: concepts-pricing-tiers.md
             - name: Vooruitbetalen voor reservecapaciteit
               href: concept-reserved-pricing.md
-    - name: Quickstarts
+    - name: Snelstartgidsen
       expanded: true
       items:
         - name: Eén MySQL-server maken
@@ -387,23 +387,6 @@
           displayName: application
         - name: Aanbevolen operationele procedures
           href: concept-operation-excellence-best-practices.md
-    - name: Problemen oplossen
-      items:
-        - name: Prestatieproblemen van query's oplossen
-          href: howto-troubleshoot-query-performance.md
-          displayName: 'debug, performance issues, query performance'
-        - name: Weergaven gebruiken in sys-schema
-          href: howto-troubleshoot-sys-schema.md
-          displayName: 'sys schema, views'
-        - name: Problemen met gegevensversleuteling oplossen
-          href: howto-data-encryption-troubleshoot.md
-          displayName: 'encryption, security'
-        - name: Latentieproblemen bij replicatie oplossen
-          href: howto-troubleshoot-replication-latency.md
-          displayName: 'replication, latency, monitor'
-        - name: Databasebeschadiging oplosseen
-          href: how-to-fix-corrupt-database.md
-          displayName: corrupt data
 - name: Flexibele server (preview)
   items:
     - name: Documentatie voor flexibele server
@@ -416,7 +399,7 @@
           href: concepts-supported-versions.md
         - name: Berekeningen en opslag
           href: flexible-server/concepts-compute-storage.md
-    - name: Quickstarts
+    - name: Snelstartgidsen
       expanded: true
       items:
         - name: Een flexibele MySQL-server maken
@@ -567,6 +550,26 @@
     - name: Veelvoorkomende fouten oplossen
       href: howto-troubleshoot-common-errors.md
       displayName: 'SUPER privilege, DBA role, Access is denied'
+- name: Problemen oplossen
+  items:
+    - name: Migratie fouten oplossen
+      href: howto-troubleshoot-common-errors.md
+      displayName: 'SUPER privilege, DBA role, Access is denied'
+    - name: Prestatieproblemen van query's oplossen
+      href: howto-troubleshoot-query-performance.md
+      displayName: 'debug, performance issues, query performance'
+    - name: Weergaven gebruiken in sys-schema
+      href: howto-troubleshoot-sys-schema.md
+      displayName: 'sys schema, views'
+    - name: Problemen met gegevensversleuteling oplossen
+      href: howto-data-encryption-troubleshoot.md
+      displayName: 'encryption, security'
+    - name: Latentieproblemen bij replicatie oplossen
+      href: howto-troubleshoot-replication-latency.md
+      displayName: 'replication, latency, monitor'
+    - name: Problemen met de data base oplossen
+      href: how-to-fix-corrupt-database.md
+      displayName: corrupt data
 - name: Naslaginformatie
   items:
     - name: Azure CLI

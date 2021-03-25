@@ -8,12 +8,12 @@ ms.subservice: ip-services
 ms.topic: how-to
 ms.date: 02/22/2021
 ms.author: allensu
-ms.openlocfilehash: e6b7648188e2307da4ef40e0ab3daf6201f9d89d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: c1ac3f2fa1ef3f1a24077064ad3ad3f3c30c5f3f
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101694866"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105048354"
 ---
 # <a name="create-a-public-ip-address-using-the-azure-portal"></a>Een openbaar IP-adres maken met behulp van de Azure Portal
 
@@ -52,7 +52,7 @@ Voer de volgende stappen uit om een standaard zone-redundant openbaar IP-adres t
 
 > [!NOTE]
 > Deze selecties zijn geldig in regio's met [Beschikbaarheidszones](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json#availability-zones). </br>
-U kunt een specifieke zone selecteren in deze regio's, hoewel het niet mogelijk is om zonegebonden fout te voor komen. </br> Zie [overzicht van beschikbaarheids zones](https://docs.microsoft.com/azure/availability-zones/az-overview)voor meer informatie over beschikbaarheids zones.
+U kunt een specifieke zone selecteren in deze regio's, hoewel het niet mogelijk is om zonegebonden fout te voor komen. </br> Zie [overzicht van beschikbaarheids zones](../availability-zones/az-overview.md)voor meer informatie over beschikbaarheids zones.
 
 \* = De laag maakt deel uit van de functionaliteit voor [Load Balancer van meerdere regio's](../load-balancer/cross-region-overview.md) , momenteel als preview-versie beschikbaar.
 

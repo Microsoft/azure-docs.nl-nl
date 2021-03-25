@@ -1,5 +1,5 @@
 ---
-title: 'SQL Server SQL Database: migratie overzicht'
+title: 'SQL Server Azure SQL Database: migratie overzicht'
 description: Meer informatie over de verschillende hulpprogram ma's en opties die beschikbaar zijn voor het migreren van uw SQL Server-data bases naar Azure SQL Database.
 ms.service: sql-database
 ms.subservice: migration-guide
@@ -10,14 +10,14 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: 733b2375a26b0157f88bc148b52932e2f3e3f2e2
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: ecb9d1e25647e197614817116921140f0d7fbdf4
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102488270"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105024962"
 ---
-# <a name="migration-overview-sql-server-to-sql-database"></a>Migratie overzicht: SQL Server naar SQL Database
+# <a name="migration-overview-sql-server-to-azure-sql-database"></a>Migratie overzicht: SQL Server naar Azure SQL Database
 [!INCLUDE[appliesto--sqldb](../../includes/appliesto-sqldb.md)]
 
 Meer informatie over verschillende migratie opties en overwegingen voor het migreren van uw SQL Server naar Azure SQL Database. 
@@ -30,7 +30,7 @@ U kunt SQL Server die on-premises of op worden uitgevoerd, migreren:
 - Compute Engine (Google Cloud Platform-GCP)  
 - Cloud-SQL voor SQL Server (Google Cloud Platform – GCP) 
 
-Zie de [hand leiding voor database migratie](https://datamigration.microsoft.com/)voor andere scenario's. 
+Zie [Data Base Migration](https://docs.microsoft.com/data-migration)(Engelstalig) voor andere migratie handleidingen. 
 
 ## <a name="overview"></a>Overzicht
 
@@ -58,7 +58,7 @@ Er zijn verschillende hulpprogram ma's beschikbaar voor verschillende werk belas
 
 ## <a name="choose-appropriate-target"></a>Het juiste doel kiezen
 
-Bekijk algemene richt lijnen om u te helpen bij het kiezen van het juiste implementatie model en de servicelaag van Azure SQL Database. U kunt reken-en opslag Resources kiezen tijdens de implementatie en deze later wijzigen met behulp van de  [Azure Portal](../../database/scale-resources.md)  zonder uitval tijd voor uw toepassing.
+Bekijk algemene richt lijnen om u te helpen bij het kiezen van het juiste implementatie model en de servicelaag van Azure SQL Database. U kunt reken-en opslag Resources kiezen tijdens de implementatie en [deze later wijzigen met behulp van de Azure Portal](../../database/scale-resources.md) zonder uitval tijd voor uw toepassing.
 
 
 **Implementatie modellen**: inzicht in de werk belasting van uw toepassing en het gebruiks patroon om te bepalen of een enkele data base of elastische pool. 
@@ -212,7 +212,7 @@ Deze resources zijn ontwikkeld als onderdeel van het data SQL expert-programma, 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als u uw SQL Server wilt migreren naar Azure SQL Database, raadpleegt [u de SQL Server voor SQL database migratie handleiding](sql-server-to-sql-database-guide.md).
+Als u uw SQL Server wilt migreren naar SQL Database, raadpleegt [u de SQL Server voor Azure SQL database migratie handleiding](sql-server-to-sql-database-guide.md).
 
 - Zie [service en hulpprogram ma's voor gegevens migratie](../../../dms/dms-tools-matrix.md)voor een matrix van de services en hulpprogram Ma's van micro soft en van derden die beschikbaar zijn om u te helpen bij verschillende scenario's voor data base-en gegevens migratie, en voor speciale taken.
 

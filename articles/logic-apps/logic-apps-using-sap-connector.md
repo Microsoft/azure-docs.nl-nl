@@ -7,14 +7,14 @@ author: divyaswarnkar
 ms.author: divswa
 ms.reviewer: estfan, daviburg, logicappspm
 ms.topic: article
-ms.date: 03/08/2021
+ms.date: 03/24/2021
 tags: connectors
-ms.openlocfilehash: b9238d099c7b33e904c2fc8de3c4fc08369f1f36
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 86bc43e043e7d67ff149391b111831df8171f34e
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102489834"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105048762"
 ---
 # <a name="connect-to-sap-systems-from-azure-logic-apps"></a>Verbinding maken met SAP-systemen in Azure Logic Apps
 
@@ -125,9 +125,6 @@ De beheerde SAP-connector integreert met SAP-systemen via uw [on-premises gegeve
 ### <a name="ise-prerequisites"></a>Vereisten voor ISE
 
 Deze vereisten zijn van toepassing als u uw logische app uitvoert in een ISE op Premium-niveau. Ze zijn echter niet van toepassing op Logic apps die worden uitgevoerd in een ISE op ontwikkelaars niveau. Een ISE biedt toegang tot bronnen die worden beveiligd met een virtueel Azure-netwerk en biedt andere ISE-systeem eigen connectors waarmee Logic apps rechtstreeks toegang hebben tot on-premises resources zonder gebruik te maken van een on-premises gegevens gateway.
-
-> [!NOTE]
-> Terwijl de SAP ISE-connector zichtbaar is binnen een ISE op ontwikkelaars niveau, mislukt de installatie van de connector.
 
 1. Als u nog geen Azure Storage account met een BLOB-container hebt, maakt u een container met behulp van de [Azure Portal](../storage/blobs/storage-quickstart-blobs-portal.md) of [Azure Storage Explorer](../storage/blobs/storage-quickstart-blobs-storage-explorer.md).
 

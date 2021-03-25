@@ -6,12 +6,12 @@ manager: nitinme
 ms.author: lajanuar
 author: laujan
 ms.date: 03/05/2021
-ms.openlocfilehash: 21df853d9b1c7250e9a6eea37a68835a180f610d
-ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
+ms.openlocfilehash: 70c8bce840bca6f2e99b29dc32f5e71bbad8d379
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104773042"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105047232"
 ---
 # <a name="get-started-with-document-translation-preview"></a>Aan de slag met document vertalingen (preview-versie)
 
@@ -272,7 +272,7 @@ De volgende headers zijn opgenomen in elke document Translator API-aanvraag:
 
 > [!IMPORTANT]
 >
-> Voor de onderstaande code voorbeelden geeft u uw sleutel en het eind punt op waar aangegeven. Vergeet niet om de sleutel uit uw code te verwijderen wanneer u klaar bent en deze nooit openbaar te plaatsen.  Zie [Azure Cognitive Services Security](/azure/cognitive-services/cognitive-services-security?tabs=command-line%2Ccsharp) voor manieren om uw referenties veilig op te slaan en te openen.
+> Voor de onderstaande code voorbeelden geeft u uw sleutel en het eind punt op waar aangegeven. Vergeet niet om de sleutel uit uw code te verwijderen wanneer u klaar bent en deze nooit openbaar te plaatsen.  Zie [Azure Cognitive Services Security](../../cognitive-services-security.md?tabs=command-line%2ccsharp) voor manieren om uw referenties veilig op te slaan en te openen.
 >
 > Mogelijk moet u de volgende velden bijwerken, afhankelijk van de bewerking:
 >>>

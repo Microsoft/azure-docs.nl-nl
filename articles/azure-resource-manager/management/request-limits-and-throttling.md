@@ -4,12 +4,12 @@ description: Hierin wordt beschreven hoe u bandbreedte beperking gebruikt met Az
 ms.topic: conceptual
 ms.date: 12/15/2020
 ms.custom: seodec18
-ms.openlocfilehash: 181ed1a3059d86f78e40a9949448af77a551efbc
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: c1fd707bf9f13ed88bf9acb5d2ad70d56c453a90
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "97563123"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105024622"
 ---
 # <a name="throttling-resource-manager-requests"></a>Resource Manager-aanvragen beperken
 
@@ -58,7 +58,7 @@ De resource provider micro soft. Network heeft de volgende beperkings limieten:
 
 ### <a name="compute-throttling"></a>Reken beperking
 
-Zie [Troubleshooting API Throttle Errors-Compute](../../virtual-machines/troubleshooting/troubleshooting-throttling-errors.md)(Engelstalig) voor meer informatie over het beperken van limieten voor reken bewerkingen.
+Zie [Troubleshooting API Throttle Errors-Compute](/troubleshoot/azure/virtual-machines/troubleshooting-throttling-errors)(Engelstalig) voor meer informatie over het beperken van limieten voor reken bewerkingen.
 
 Voor het controleren van exemplaren van virtuele machines in een schaalset voor virtuele machines gebruikt u de [Virtual Machine Scale sets bewerkingen](/rest/api/compute/virtualmachinescalesetvms). Gebruik bijvoorbeeld de [virtuele machine Scale set vm's: lijst](/rest/api/compute/virtualmachinescalesetvms/list) met para meters om de energie status van exemplaren van virtuele machines te controleren. Deze API vermindert het aantal aanvragen.
 
@@ -98,7 +98,7 @@ U kunt het aantal resterende aanvragen bepalen door de antwoord headers te contr
 | x-MS-ratelimit-resterend-Tenant-resource-aanvragen |Resterende aanvragen voor het resource type van het Tenant bereik.<br /><br />Deze header wordt alleen toegevoegd voor aanvragen op Tenant niveau en alleen als de standaard limiet is overschreven door een service. Resource Manager voegt deze waarde toe in plaats van de Tenant leest of schrijft. |
 | x-MS-ratelimit-resterend-Tenant-bron-entiteiten-lezen |Aantal resterende aanvragen van het resource type voor het Tenant bereik.<br /><br />Deze header wordt alleen toegevoegd voor aanvragen op Tenant niveau en alleen als de standaard limiet is overschreven door een service. |
 
-De resource provider kan ook antwoord headers retour neren met informatie over de resterende aanvragen. Voor informatie over reactie headers die door de compute resource provider worden geretourneerd, Zie [aanroep frequentie informatie-antwoord headers](../../virtual-machines/troubleshooting/troubleshooting-throttling-errors.md#call-rate-informational-response-headers).
+De resource provider kan ook antwoord headers retour neren met informatie over de resterende aanvragen. Voor informatie over reactie headers die door de compute resource provider worden geretourneerd, Zie [aanroep frequentie informatie-antwoord headers](/troubleshoot/azure/virtual-machines/troubleshooting-throttling-errors#call-rate-informational-response-headers).
 
 ## <a name="retrieving-the-header-values"></a>De header waarden worden opgehaald
 

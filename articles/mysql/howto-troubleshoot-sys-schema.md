@@ -6,14 +6,15 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: troubleshooting
 ms.date: 3/30/2020
-ms.openlocfilehash: a20510ee2800a54f9a51a2f498ee8ae8a3e51d55
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 939d9f5f4cafc7a08ceb99368e8ede7a81b1eac0
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "94543146"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105110522"
 ---
 # <a name="how-to-use-sys_schema-for-performance-tuning-and-database-maintenance-in-azure-database-for-mysql"></a>Sys_schema gebruiken voor het afstemmen van prestaties en het beheren van data bases in Azure Database for MySQL
+[!INCLUDE[applies-to-single-flexible-server](includes/applies-to-single-flexible-server.md)]
 
 De MySQL-performance_schema, die voor het eerst beschikbaar is in MySQL 5,5, biedt instrumentatie voor veel cruciale Server bronnen, zoals geheugen toewijzing, opgeslagen Program ma's, vergren deling van meta gegevens, enzovoort. De performance_schema bevat echter meer dan 80 tabellen en het ophalen van de benodigde gegevens vereist vaak join-tabellen in de performance_schema, evenals de tabellen uit de information_schema. De sys_schema biedt op zowel performance_schema als information_schema een krachtige verzameling [gebruiks vriendelijke weer gaven](https://dev.mysql.com/doc/refman/5.7/en/sys-schema-views.html) in een alleen-lezen data base en is volledig ingeschakeld in Azure Database for MySQL versie 5,7.
 

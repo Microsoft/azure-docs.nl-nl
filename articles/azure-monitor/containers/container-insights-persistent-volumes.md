@@ -3,12 +3,12 @@ title: HW-bewaking configureren met container Insights | Microsoft Docs
 description: In dit artikel wordt beschreven hoe u bewakings Kubernetes-clusters met permanente volumes met container Insights kunt configureren.
 ms.topic: conceptual
 ms.date: 03/03/2021
-ms.openlocfilehash: 578cfe128b7445f8b09771999d1e653e92c4befa
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 16c87177a8911a7b88284606f54f7bf6e0e0daa3
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102200696"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105026101"
 ---
 # <a name="configure-pv-monitoring-with-container-insights"></a>HW-bewaking met container Insights configureren
 
@@ -19,7 +19,7 @@ Met container Insights wordt het gebruik van de HW automatisch gecontroleerd doo
 
 | Naam van metrische waarde | Metrische dimensie (Tags) | Beschrijving van metrische gegevens | | `pvUsedBytes`| podUID, podName, pvcName, pvcNamespace, capacityBytes, clusterId, clustername | Gebruikte ruimte in bytes voor een specifiek permanent volume met een claim die wordt gebruikt door een specifieke pod. `capacityBytes` wordt gevouwen in als een dimensie in het veld Tags om de kosten voor de opname van gegevens te verlagen en query's te vereenvoudigen. |
 
-Meer informatie over het configureren van verzamelde meet waarden voor [hw.](https://aka.ms/ci/pvconfig)
+Meer informatie over het configureren van verzamelde meet waarden voor [hw.](./container-insights-agent-config.md)
 
 ## <a name="pv-inventory"></a>HW-inventaris
 
@@ -48,7 +48,7 @@ U kunt een overzicht van de permanente volume inventaris in de **permanente volu
 :::image type="content" source="./media/container-insights-persistent-volumes/pv-details-workbook-example.PNG" alt-text="Voor beeld van een werkmap met Azure Monitor HW-Details":::
 
 ### <a name="persistent-volume-usage-recommended-alert"></a>Waarschuwing voor gebruik van permanente volume aanbevolen
-U kunt een aanbevolen waarschuwing inschakelen om u te waarschuwen wanneer het gemiddelde HW-gebruik voor een pod hoger is dan 80%. Meer informatie over waarschuwingen [vindt u hier](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-metric-alerts) en hoe u de [standaard drempelwaarde](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-metric-alerts#configure-alertable-metrics-in-configmaps)kunt negeren.
+U kunt een aanbevolen waarschuwing inschakelen om u te waarschuwen wanneer het gemiddelde HW-gebruik voor een pod hoger is dan 80%. Meer informatie over waarschuwingen [vindt u hier](./container-insights-metric-alerts.md) en hoe u de [standaard drempelwaarde](./container-insights-metric-alerts.md#configure-alertable-metrics-in-configmaps)kunt negeren.
 ## <a name="next-steps"></a>Volgende stappen
 
 - Meer informatie over verzamelde meet waarden voor hw [vindt u hier](./container-insights-agent-config.md).

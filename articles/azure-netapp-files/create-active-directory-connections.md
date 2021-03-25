@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 03/19/2021
+ms.date: 03/24/2021
 ms.author: b-juche
-ms.openlocfilehash: add907923cc2284939acd972237fd4ec74ee2d12
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.openlocfilehash: d238b566c1286b9b765fb574cd72ee68ccf4b4a7
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104864003"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105048371"
 ---
 # <a name="create-and-manage-active-directory-connections-for-azure-netapp-files"></a>Active Directory verbindingen voor Azure NetApp Files maken en beheren
 
@@ -86,6 +86,8 @@ Er moet een subnet zijn gedelegeerd aan Azure NetApp Files.
 * Azure NetApp Files ondersteunt [LDAP-ondertekening](/troubleshoot/windows-server/identity/enable-ldap-signing-in-windows-server), waarmee het LDAP-verkeer tussen de Azure NetApp files-service en de doel [Active Directory domein controllers](/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview)veilig kan worden verzonden. Als u de richt lijnen van micro soft Advisor [ADV190023](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/ADV190023) voor LDAP-ondertekening volgt, moet u de functie voor LDAP-ondertekening inschakelen in azure NetApp files door het selectie vakje **LDAP** in het venster [lid worden van Active Directory](#create-an-active-directory-connection) in te scha kelen. 
 
     Configuratie van [LDAP-kanaal binding](https://support.microsoft.com/help/4034879/how-to-add-the-ldapenforcechannelbinding-registry-entry) heeft alleen invloed op de Azure NetApp files-service. Als u echter zowel LDAP-kanaal binding als beveiligde LDAP gebruikt (bijvoorbeeld LDAPS of `start_tls` ), mislukt het maken van het SMB-volume.
+
+* Voor niet-AD Integrated DNS moet u een DNS A/PTR-record toevoegen om Azure NetApp Files in te scha kelen met behulp van een beschrijvende naam. 
 
 ## <a name="decide-which-domain-services-to-use"></a>Beslissen welke domein Services u wilt gebruiken 
 

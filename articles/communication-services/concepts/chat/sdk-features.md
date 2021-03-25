@@ -1,7 +1,7 @@
 ---
-title: Overzicht van de chat-clientbibliotheek voor Azure Communication Services
+title: Overzicht van de chat-SDK voor Azure Communication Services
 titleSuffix: An Azure Communication Services concept document
-description: Meer informatie over de chat-client bibliotheek voor Azure Communication Services.
+description: Meer informatie over de Azure Communication Services chat SDK.
 author: mikben
 manager: jken
 services: azure-communication-services
@@ -9,22 +9,22 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 705bd926c2ac6f414464254969b5c511c88891f0
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: b275c3af2e92dc5af677120b5082751d19676b2e
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104656104"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105110811"
 ---
-# <a name="chat-client-library-overview"></a>Overzicht van de chat-clientbibliotheek  
+# <a name="chat-sdk-overview"></a>Overzicht van chat-SDK 
 
 [!INCLUDE [Public Preview Notice](../../includes/public-preview-include.md)]    
 
-Chat-clientbibliotheken van Azure Communication Services kunnen worden gebruikt om uitgebreide realtime chatmogelijkheden aan uw toepassingen toe te voegen.
+De Sdk's van Azure Communication Services kunnen worden gebruikt voor het toevoegen van een rijke, realtime chat voor uw toepassingen.
     
-## <a name="chat-client-library-capabilities"></a>Mogelijkheden van chat-clientbibliotheken 
+## <a name="chat-sdk-capabilities"></a>Chat-SDK-mogelijkheden    
 
-De volgende lijst bevat de set van functies die momenteel beschikbaar zijn in de Communication Services die chat-clientbibliotheken aanroepen.  
+De volgende lijst bevat de set functies die momenteel beschikbaar zijn in de chat-Sdk's voor communicatie Services.  
 
 | Groep van functies | Mogelijkheid | Javascript  | Java | .NET | Python | iOS | Android |
 |-----------------|-------------------|---|-----|----|-----|----|----|
@@ -51,13 +51,13 @@ De volgende lijst bevat de set van functies die momenteel beschikbaar zijn in de
 
 * * Het pakket met de eigen signalering wordt geïmplementeerd met behulp van web sockets. Dit leidt tot een lange polling als web sockets niet worden ondersteund.  
 
-## <a name="javascript-chat-client-library-support-by-os-and-browser"></a>Java script chat-client bibliotheek ondersteuning per besturings systeem en browser 
+## <a name="javascript-chat-sdk-support-by-os-and-browser"></a>Java script chat SDK-ondersteuning per besturings systeem en browser    
 
 De volgende tabel bevat de set van ondersteunde browsers en versies die momenteel beschikbaar zijn.
     
 |                                  | Windows          | macOS          | Ubuntu | Linux  | Android | iOS    | iPad OS|
 |--------------------------------|----------------|--------------|-------|------|------|------|-------|
-| **Chat-client bibliotheek** | Firefox *, Chrome*, nieuwe Edge | Firefox *, Chrome*, Safari * | Chrome*  | Chrome* | Chrome* | Safari | Safari |
+| **Chat-SDK** | Firefox *, Chrome*, nieuwe Edge | Firefox *, Chrome*, Safari * | Chrome*  | Chrome* | Chrome* | Safari | Safari |
 
 * Naast de vorige twee releases wordt de meest recente versie ondersteund.<br/>   
 

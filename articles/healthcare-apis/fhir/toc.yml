@@ -137,6 +137,8 @@
       href: fhir-faq.md
     - name: Ondersteunde functies
       href: fhir-features-supported.md
+    - name: GitHub-projecten
+      href: fhir-github-projects.md
     - name: Partnerecosysteem
       href: partner-ecosystem.md
 - name: Naslaginformatie

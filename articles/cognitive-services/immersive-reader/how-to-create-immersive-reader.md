@@ -10,12 +10,12 @@ ms.subservice: immersive-reader
 ms.topic: how-to
 ms.date: 07/22/2019
 ms.author: rwaller
-ms.openlocfilehash: d7a8a598ab2d0c873cf07510cf40a08c22c0f1d4
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 369905ed5ee0ce9a93ec2be879b5e40114b0a380
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102608594"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105048660"
 ---
 # <a name="create-an-immersive-reader-resource-and-configure-azure-active-directory-authentication"></a>Een resource voor insluitende lezer maken en Azure Active Directory authenticatie configureren
 
@@ -198,7 +198,7 @@ Het script is zo ontworpen dat het flexibel is. Er wordt eerst gezocht naar best
 ## <a name="next-steps"></a>Volgende stappen
 
 * Bekijk de [Node.js Snelstartgids](./quickstarts/client-libraries.md?pivots=programming-language-nodejs) om te zien wat u nog meer kunt doen met de insluitende lezer-SDK met behulp van Node.js
-* Bekijk de zelfstudie over [Android](./tutorial-android.md) om te zien wat u nog meer kunt doen met de Insluitende lezer-SDK met Java of Kotlin voor Android
-* Bekijk de [iOS-zelfstudie](./tutorial-ios.md) om te zien wat u nog meer kunt doen met de Insluitende lezer-SDK met behulp van Swift voor iOS
-* Bekijk de [python-zelf studie](./tutorial-python.md) om te zien wat u nog meer kunt doen met de insluitende Reader SDK met behulp van python
+* Bekijk de zelfstudie over [Android](./how-to-launch-immersive-reader.md) om te zien wat u nog meer kunt doen met de Insluitende lezer-SDK met Java of Kotlin voor Android
+* Bekijk de [iOS-zelfstudie](./how-to-launch-immersive-reader.md) om te zien wat u nog meer kunt doen met de Insluitende lezer-SDK met behulp van Swift voor iOS
+* Bekijk de [python-zelf studie](./how-to-launch-immersive-reader.md) om te zien wat u nog meer kunt doen met de insluitende Reader SDK met behulp van python
 * De [SDK voor Insluitende lezer](https://github.com/microsoft/immersive-reader-sdk) en de [naslaginformatie voor de SDK voor Insluitende lezer](./reference.md) verkennen

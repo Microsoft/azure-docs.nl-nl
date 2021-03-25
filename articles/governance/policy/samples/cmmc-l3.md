@@ -1,15 +1,15 @@
 ---
 title: Details van de naleving van de regelgeving voor CMMC niveau 3
 description: Details van de CMMC Level 3-naleving ingebouwde voor Schriften. Elke beheeroptie wordt toegewezen aan een of meer Azure Policy-definities die helpen bij de evaluatie.
-ms.date: 03/17/2021
+ms.date: 03/24/2021
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: a97d6b0971b52baa52786df3433c36f30ec61eec
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: f567e195dd25fb69d57d84c76f42567e7411f634
+ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104590429"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105034551"
 ---
 # <a name="details-of-the-cmmc-level-3-regulatory-compliance-built-in-initiative"></a>Details van het ingebouwde initiatief voor naleving van de CMMC Level 3-regelgeving
 

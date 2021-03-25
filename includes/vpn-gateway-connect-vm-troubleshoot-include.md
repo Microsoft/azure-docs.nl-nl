@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/21/2018
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 7a28757a0a5fabcd2aeac4e772cb39287fff3580
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 3f689f24c80bcb49909bd28f077dc12520b4f47e
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "95557119"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105105282"
 ---
 Als u problemen ondervindt bij het verbinding maken met een virtuele machine via de VPN-verbinding, controleert u het volgende:
 
@@ -26,4 +26,4 @@ Als u verbinding via punt-naar-site maakt, controleert u de volgende extra items
 - Gebruik de opdracht 'ipconfig' om het IPv4-adres te controleren dat is toegewezen aan de ethernetadapter op de computer waarmee u de verbinding tot stand brengt. Als het IP-adres zich binnen het adresbereik bevindt van het VNet waarmee u verbinding maakt of binnen het adresbereik van uw VPNClientAddressPool, wordt dit een overlappende adresruimte genoemd. Als uw adresruimte op deze manier overlapt, kan het netwerkverkeer Azure niet bereiken en blijft het in het lokale netwerk.
 - Controleer of het configuratiepakket voor de VPN-client is gegenereerd nadat de IP-adressen van de DNS-server zijn opgegeven voor het VNet. Als u de IP-adressen van de DNS-server hebt bijgewerkt, genereert en installeert u een nieuw configuratiepakket voor de VPN-client.
 
-Zie [Problemen met Extern-bureaubladverbindingen met een VM oplossen](../articles/virtual-machines/troubleshooting/troubleshoot-rdp-connection.md) voor meer informatie over het oplossen van problemen met Extern-bureaubladverbindingen.
+Zie [Problemen met Extern-bureaubladverbindingen met een VM oplossen](/troubleshoot/azure/virtual-machines/troubleshoot-rdp-connection) voor meer informatie over het oplossen van problemen met Extern-bureaubladverbindingen.

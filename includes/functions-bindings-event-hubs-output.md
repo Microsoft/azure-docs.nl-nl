@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 02/21/2020
 ms.author: cshoe
-ms.openlocfilehash: 9fca69804220021ca7935e562f2026c11749515a
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: cdd8b42f3ef7530809c50925c631b7aa90ee213c
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102623419"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105105101"
 ---
 Gebruik de Event Hubs-uitvoerbinding om gebeurtenissen naar een gebeurtenisstroom te schrijven. U moet een verzendmachtiging voor een Event Hub hebben om er gebeurtenissen naar te kunnen schrijven.
 
@@ -265,14 +265,14 @@ U kunt de volgende parameter typen gebruiken voor de uitvoer binding van Event h
 * `string`
 * `byte[]`
 * `POCO`
-* `EventData` -De standaard eigenschappen van Event Data zijn opgenomen in de voor de [micro soft. Azure. Event hubs-naam ruimte](https://docs.microsoft.com/dotnet/api/microsoft.azure.eventhubs.eventdata?view=azure-dotnet).
+* `EventData` -De standaard eigenschappen van Event Data zijn opgenomen in de voor de [micro soft. Azure. Event hubs-naam ruimte](/dotnet/api/microsoft.azure.eventhubs.eventdata?view=azure-dotnet).
 
 Verzend berichten met behulp van een methodeparameter, zoals `out string paramName`. In C#-script is `paramName` de waarde die is opgegeven in de eigenschap `name` van *function.json*. Als u meerdere berichten wilt schrijven, kunt u `ICollector<string>` of `IAsyncCollector<string>` gebruiken in plaats van `out string`.
 
 ### <a name="additional-types"></a>Aanvullende typen 
-Apps die gebruikmaken van de 5.0.0 of een hogere versie van de Event hub-uitbrei ding gebruiken het `EventData` type in [Azure. Messa ging. Event hubs](https://docs.microsoft.com/dotnet/api/azure.messaging.eventhubs.eventdata?view=azure-dotnet) in plaats van de extensie in de [naam ruimte micro soft. Azure. Event hubs](https://docs.microsoft.com/dotnet/api/microsoft.azure.eventhubs.eventdata?view=azure-dotnet). Deze versie biedt geen ondersteuning voor het oudere `Body` type voor de volgende typen:
+Apps die gebruikmaken van de 5.0.0 of een hogere versie van de Event hub-uitbrei ding gebruiken het `EventData` type in [Azure. Messa ging. Event hubs](/dotnet/api/azure.messaging.eventhubs.eventdata?view=azure-dotnet) in plaats van de extensie in de [naam ruimte micro soft. Azure. Event hubs](/dotnet/api/microsoft.azure.eventhubs.eventdata?view=azure-dotnet). Deze versie biedt geen ondersteuning voor het oudere `Body` type voor de volgende typen:
 
-- [EventBody](https://docs.microsoft.com/dotnet/api/azure.messaging.eventhubs.eventdata.eventbody?view=azure-dotnet)
+- [EventBody](/dotnet/api/azure.messaging.eventhubs.eventdata.eventbody?view=azure-dotnet)
 
 # <a name="c-script"></a>[C# Script](#tab/csharp-script)
 
@@ -283,14 +283,14 @@ U kunt de volgende parameter typen gebruiken voor de uitvoer binding van Event h
 * `string`
 * `byte[]`
 * `POCO`
-* `EventData` -De standaard eigenschappen van Event Data zijn opgenomen in de voor de [micro soft. Azure. Event hubs-naam ruimte](https://docs.microsoft.com/dotnet/api/microsoft.azure.eventhubs.eventdata?view=azure-dotnet).
+* `EventData` -De standaard eigenschappen van Event Data zijn opgenomen in de voor de [micro soft. Azure. Event hubs-naam ruimte](/dotnet/api/microsoft.azure.eventhubs.eventdata?view=azure-dotnet).
 
 Verzend berichten met behulp van een methodeparameter, zoals `out string paramName`. In C#-script is `paramName` de waarde die is opgegeven in de eigenschap `name` van *function.json*. Als u meerdere berichten wilt schrijven, kunt u `ICollector<string>` of `IAsyncCollector<string>` gebruiken in plaats van `out string`.
 
 ### <a name="additional-types"></a>Aanvullende typen 
-Apps die gebruikmaken van de 5.0.0 of een hogere versie van de Event hub-uitbrei ding gebruiken het `EventData` type in [Azure. Messa ging. Event hubs](https://docs.microsoft.com/dotnet/api/azure.messaging.eventhubs.eventdata?view=azure-dotnet) in plaats van de extensie in de [naam ruimte micro soft. Azure. Event hubs](https://docs.microsoft.com/dotnet/api/microsoft.azure.eventhubs.eventdata?view=azure-dotnet). Deze versie biedt geen ondersteuning voor het oudere `Body` type voor de volgende typen:
+Apps die gebruikmaken van de 5.0.0 of een hogere versie van de Event hub-uitbrei ding gebruiken het `EventData` type in [Azure. Messa ging. Event hubs](/dotnet/api/azure.messaging.eventhubs.eventdata?view=azure-dotnet) in plaats van de extensie in de [naam ruimte micro soft. Azure. Event hubs](/dotnet/api/microsoft.azure.eventhubs.eventdata?view=azure-dotnet). Deze versie biedt geen ondersteuning voor het oudere `Body` type voor de volgende typen:
 
-- [EventBody](https://docs.microsoft.com/dotnet/api/azure.messaging.eventhubs.eventdata.eventbody?view=azure-dotnet)
+- [EventBody](/dotnet/api/azure.messaging.eventhubs.eventdata.eventbody?view=azure-dotnet)
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 

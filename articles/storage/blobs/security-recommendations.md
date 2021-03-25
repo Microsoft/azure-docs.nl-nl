@@ -10,16 +10,16 @@ ms.topic: conceptual
 ms.date: 03/01/2021
 ms.author: tamram
 ms.custom: security-recommendations
-ms.openlocfilehash: 40067815ad582191606ad5a53cf06c9584d83350
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 389d3507c3406743e14324c7b4667e045cfdb3b5
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102618012"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105048031"
 ---
 # <a name="security-recommendations-for-blob-storage"></a>Beveiligings aanbevelingen voor Blob Storage
 
-Dit artikel bevat beveiligings aanbevelingen voor Blob Storage. Als u deze aanbevelingen implementeert, kunt u voldoen aan uw beveiligings verplichtingen, zoals beschreven in ons gedeelde verantwoordelijkheids model. Zie [gedeelde verantwoordelijkheid in de Cloud](/azure/security/fundamentals/shared-responsibility)voor meer informatie over de manier waarop micro soft aan de verantwoordelijkheden van service providers voldoet.
+Dit artikel bevat beveiligings aanbevelingen voor Blob Storage. Als u deze aanbevelingen implementeert, kunt u voldoen aan uw beveiligings verplichtingen, zoals beschreven in ons gedeelde verantwoordelijkheids model. Zie [gedeelde verantwoordelijkheid in de Cloud](../../security/fundamentals/shared-responsibility.md)voor meer informatie over de manier waarop micro soft aan de verantwoordelijkheden van service providers voldoet.
 
 Enkele van de aanbevelingen in dit artikel kunnen automatisch worden bewaakt door Azure Security Center. Azure Security Center is de eerste verdedigings linie bij het beveiligen van uw resources in Azure. Zie [Wat is er Azure Security Center?](../../security-center/security-center-introduction.md) voor informatie over Azure Security Center.
 

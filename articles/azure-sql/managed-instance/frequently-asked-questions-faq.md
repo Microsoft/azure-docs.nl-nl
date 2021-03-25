@@ -12,12 +12,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein
 ms.date: 09/21/2020
-ms.openlocfilehash: 17e97503996b53868f12e74ed5a38dba63285426
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 42e263a47c6c771d2b1fef6586468cfc5a698e28
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102503195"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105047912"
 ---
 # <a name="azure-sql-managed-instance-frequently-asked-questions-faq"></a>Veelgestelde vragen over Azure SQL Managed Instance (FAQ)
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -214,9 +214,9 @@ Ja, u kunt extra opslag aanschaffen, onafhankelijk van compute, tot op zekere ho
 
 **Hoe kan ik mijn opslag prestaties in Algemeen servicelaag optimaliseren?**
 
-Zie [Aanbevolen procedures voor opslag in algemeen](https://techcommunity.microsoft.com)voor het optimaliseren van opslag prestaties.
+Zie [Aanbevolen procedures voor opslag in algemeen](https://techcommunity.microsoft.com/t5/datacat/storage-performance-best-practices-and-considerations-for-azure/ba-p/305525)voor het optimaliseren van opslag prestaties.
 
-## <a name="backup-and-restore"></a>Back-up en herstel
+## <a name="backup-and-restore"></a>Back-ups en herstellen
 
 **Wordt de back-upopslag afgetrokken van mijn beheerde exemplaar opslag?**
 

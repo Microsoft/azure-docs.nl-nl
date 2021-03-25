@@ -7,12 +7,12 @@ ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: 82f4d9028fa94d4df0ff089fda213d64e13d56ec
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 28813a23b91f75f88e844b9e6b36d6ba0771569a
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103487867"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105048082"
 ---
 # <a name="quickstart-add-11-video-calling-to-your-app-javascript"></a>Snelstartgids: 1:1 video toevoegen aan uw app (Java script)
 
@@ -23,8 +23,8 @@ De voltooide code voor deze Quick Start vinden op [github](https://github.com/Az
 ## <a name="prerequisites"></a>Vereisten
 - Een Azure-account verkrijgen met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
 - [Node.js](https://nodejs.org/en/) Actieve LTS en onderhoud LTS-versies (8.11.1 en 10.14.1)
-- Maak een actieve communicatie Services-resource. [Een Communication Services-resource maken](https://docs.microsoft.com/azure/communication-services/quickstarts/create-communication-resource?tabs=windows&pivots=platform-azp).
-- Maak een token voor gebruikers toegang om de aanroep-client te instantiëren. [Meer informatie over het maken en beheren van tokens voor gebruikers toegang](https://docs.microsoft.com/azure/communication-services/quickstarts/access-tokens?pivots=programming-language-csharp).
+- Maak een actieve communicatie Services-resource. [Een Communication Services-resource maken](../create-communication-resource.md?pivots=platform-azp&tabs=windows).
+- Maak een token voor gebruikers toegang om de aanroep-client te instantiëren. [Meer informatie over het maken en beheren van tokens voor gebruikers toegang](../access-tokens.md?pivots=programming-language-csharp).
 
 ## <a name="setting-up"></a>Instellen
 ### <a name="create-a-new-nodejs-application"></a>Een nieuwe Node.js-toepassing maken
@@ -330,10 +330,10 @@ U kunt een uitgaande video oproep van 1:1 maken door een gebruikers-ID op te gev
 U kunt de voor beeld-app downloaden van [github](https://github.com/Azure-Samples/communication-services-javascript-quickstarts/tree/main/add-1-on-1-video-calling).
 
 ## <a name="clean-up-resources"></a>Resources opschonen
-Als u een Communication Services-abonnement wilt opschonen en verwijderen, kunt u de resource of resourcegroep verwijderen. Als u de resourcegroep verwijdert, worden ook alle bijbehorende resources verwijderd. Meer informatie over het [opschonen van resources](https://docs.microsoft.com/azure/communication-services/quickstarts/create-communication-resource?tabs=windows&pivots=platform-azp#clean-up-resources).
+Als u een Communication Services-abonnement wilt opschonen en verwijderen, kunt u de resource of resourcegroep verwijderen. Als u de resourcegroep verwijdert, worden ook alle bijbehorende resources verwijderd. Meer informatie over het [opschonen van resources](../create-communication-resource.md?pivots=platform-azp&tabs=windows#clean-up-resources).
 
 ## <a name="next-steps"></a>Volgende stappen
 Raadpleeg voor meer informatie de volgende artikelen:
-- Bekijk ons [webaanroep voor beeld](https://docs.microsoft.com/azure/communication-services/samples/web-calling-sample)
-- Meer informatie over de [mogelijkheden van de clientbibliotheek voor aanroepen](https://docs.microsoft.com/azure/communication-services/quickstarts/voice-video-calling/calling-client-samples?pivots=platform-web)
-- Meer informatie over [de werking van aanroepen](https://docs.microsoft.com/azure/communication-services/concepts/voice-video-calling/about-call-types)
+- Bekijk ons [webaanroep voor beeld](../../samples/web-calling-sample.md)
+- Meer informatie over de [mogelijkheden van de clientbibliotheek voor aanroepen](./calling-client-samples.md?pivots=platform-web)
+- Meer informatie over [de werking van aanroepen](../../concepts/voice-video-calling/about-call-types.md)

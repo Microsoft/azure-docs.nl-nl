@@ -10,13 +10,13 @@ ms.topic: reference
 author: oslake
 ms.author: moslake
 ms.reviewer: sstein
-ms.date: 01/22/2021
-ms.openlocfilehash: 619f4deee81c97f2d7a0b4359e2b999c476b1ae2
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.date: 03/23/2021
+ms.openlocfilehash: 22653b54e53e181d27c8abe966acb91cb8c84214
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98737554"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105023845"
 ---
 # <a name="resource-limits-for-elastic-pools-using-the-vcore-purchasing-model"></a>Resource limieten voor elastische Pools met behulp van het vCore-aankoop model
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -182,7 +182,7 @@ U kunt de servicelaag, de reken grootte (Service doelstelling) en de opslag hoev
 |OLTP-opslag in het geheugen (GB)|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|
 |Maximale gegevens grootte (GB)|1024|1024|1024|1024|1536|
 |Maximale logboek grootte (GB)|336|336|336|336|512|
-|Maximale gegevens grootte TempDB (GB)|333|333|333|333|333|
+|Maximale gegevens grootte TempDB (GB)|37|46|56|65|74|
 |Opslagtype|Externe SSD|Externe SSD|Externe SSD|Externe SSD|Externe SSD|
 |I/o-latentie (bij benadering)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|
 |Max. aantal gegevens IOPS per pool <sup>2</sup>|2560|3200|3840|4480|5120|
@@ -215,7 +215,7 @@ U kunt de servicelaag, de reken grootte (Service doelstelling) en de opslag hoev
 |OLTP-opslag in het geheugen (GB)|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|
 |Maximale gegevens grootte (GB)|1536|1536|1536|3072|3072|4096|
 |Maximale logboek grootte (GB)|512|512|512|1024|1024|1024|
-|Maximale gegevens grootte TempDB (GB)|83,25|92,5|111|148|166,5|333|
+|Maximale gegevens grootte TempDB (GB)|83|93|111|148|167|333|
 |Opslagtype|Externe SSD|Externe SSD|Externe SSD|Externe SSD|Externe SSD|Externe SSD|
 |I/o-latentie (bij benadering)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|
 |Max. aantal gegevens IOPS per pool <sup>2</sup>|5760|6400|7680|10240|11520|12800|

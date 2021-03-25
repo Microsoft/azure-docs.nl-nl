@@ -4,12 +4,12 @@ ms.service: databox
 ms.topic: include
 ms.date: 03/08/2021
 ms.author: alkohli
-ms.openlocfilehash: 00ddc7cd806a9275de7b4ec579bdef62bdf8062d
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 0ad760caedffa97599548b8dd1b59a887b5690af
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102603335"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105104157"
 ---
 Afhankelijk van het besturings systeem van de client zijn de procedures om een externe verbinding met het apparaat te maken verschillend.
 
@@ -21,7 +21,7 @@ Afhankelijk van het besturings systeem van de client zijn de procedures om een e
 Zorg voordat u begint voor het volgende:
 
 - Windows Power shell 5,0 of hoger wordt uitgevoerd op uw Windows-client.
-- Uw Windows-client heeft de ondertekening keten (basis certificaat) die overeenkomt met het knooppunt certificaat dat op het apparaat is geïnstalleerd. Zie voor gedetailleerde instructies [certificaat installeren op uw Windows-client](../articles/databox-online/azure-stack-edge-j-series-manage-certificates.md#import-certificates-on-the-client-accessing-the-device).
+- Uw Windows-client heeft de ondertekening keten (basis certificaat) die overeenkomt met het knooppunt certificaat dat op het apparaat is geïnstalleerd. Zie voor gedetailleerde instructies [certificaat installeren op uw Windows-client](../articles/databox-online/azure-stack-edge-gpu-manage-certificates.md#import-certificates-on-the-client-accessing-the-device).
 - Het `hosts` bestand dat zich op de Windows-client bevindt, `C:\Windows\System32\drivers\etc` heeft een vermelding die overeenkomt met het knooppunt certificaat in de volgende indeling:
 
     `<Device IP>    <Node serial number>.<DNS domain of the device>`
@@ -95,7 +95,7 @@ Volg deze stappen om vanaf een NFS-client extern verbinding te maken.
  
 2. Als u verbinding wilt maken via de externe client, typt u:
 
-    `Enter-PSSession -ComputerName $ip -Authentication Negotiate -ConfigurationName Minishell -Credential ~\EdgeUser -UseSSL`
+    `Enter-PSSession -ComputerName $ip -Authentication Negotiate -ConfigurationName Minishell -Credential ~\EdgeUser`
 
     Wanneer u hierom wordt gevraagd, geeft u het wacht woord op waarmee u zich aanmeldt bij uw apparaat.
  

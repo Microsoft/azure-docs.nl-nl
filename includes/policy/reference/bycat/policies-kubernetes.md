@@ -2,18 +2,19 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 03/17/2021
+ms.date: 03/24/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: c57db8f55eb831f2da1b839c4dc5d4a7287ac6b6
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: b2b9bad685bc26b0da4ba6eabe0785b112ff0a20
+ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104605279"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105033100"
 ---
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
+|[\[Voor beeld \] : voor Azure Arc enabled Kubernetes-clusters moet de extensie van Azure Defender zijn geïnstalleerd](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F8dfab9c4-fe7b-49ad-85e4-1e9be085358f) |De uitbrei ding van Azure Defender voor Azure Arc biedt bedreigings beveiliging voor uw Kubernetes-clusters die zijn ingeschakeld voor uw Arc. De extensie verzamelt gegevens van alle knoop punten van het besturings element (Master) in het cluster en verzendt deze naar de back-end van Azure Defender voor Kubernetes in de Cloud voor verdere analyse. Meer informatie in [https://docs.microsoft.com/azure/security-center/defender-for-kubernetes-azure-arc](https://docs.microsoft.com/azure/security-center/defender-for-kubernetes-azure-arc) . |AuditIfNotExists, uitgeschakeld |[1.0.0-preview](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Kubernetes/ASC_Audit_Azure_Defender_Kubernetes_Arc_Extension.json) |
 |[Persoonlijke Azure Kubernetes-Service clusters moeten zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F040732e8-d947-40b8-95d6-854c95024bf8) |Schakel de functie privé-cluster in voor uw Azure Kubernetes-service cluster om ervoor te zorgen dat het netwerk verkeer tussen uw API-server en de knooppunt groepen alleen op het particuliere netwerk blijven. Dit is een algemene vereiste in veel regelgevings- en compliancestandaarden. |Controleren, Weigeren, Uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Kubernetes/AKS_PrivateCluster_Deny.json) |
 |[De Azure Policy-invoegtoepassing voor Kubernetes (AKS) moet worden geïnstalleerd en ingeschakeld op uw clusters](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0a15ec92-a229-4763-bb14-0ea34a568f8d) |De invoegtoepassing voor beheerbeleid van Azure Kubernetes (AKS) voorziet in uitbreiding van Gatekeeper v3, een webhook voor de toegangscontroller voor Open Policy Agent (OPA) waarmee afdwinging en beveiliging op schaal en via gecentraliseerde, consistente manier worden toegepast op uw clusters. |Controle, uitgeschakeld |[1.0.2](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Kubernetes/AKS_AzurePolicyAddOn_Audit.json) |
 |[Zowel besturingssystemen als gegevensschijven in Azure Kubernetes Service-clusters moeten worden versleuteld met door de klant beheerde sleutels](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F7d7be79c-23ba-4033-84dd-45e2a5ccdd67) |Het versleutelen van besturingssysteem- en gegevensschijven met door de klant beheerde sleutels biedt meer controle en flexibiliteit in sleutelbeheer. Dit is een algemene vereiste in veel regelgevings- en compliancestandaarden. |Controleren, Weigeren, Uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Kubernetes/AKS_CMK_Deny.json) |

@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 04/11/2019
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:JavaScript, devx-track-js
-ms.openlocfilehash: cf5b24bb55f278d9d33916d2d54d3ee5a169c3e8
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 8e35342bd704f662d41f676f58e2cc14b54f29a8
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103224398"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105023381"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-a-javascript-spa"></a>Quickstart: Gebruikers aanmelden en een toegangstoken verkrijgen in een JavaScript SPA
 
@@ -112,7 +112,7 @@ Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 > - `Enter_the_Application_Id_Here` is de **Toepassings-id (client-id)** voor de toepassing die u hebt geregistreerd.
 >
 >    Als u de waarde van de **toepassings-id (client)** wilt vinden, gaat u naar de **overzichts** pagina van de app in de Azure Portal.
-> - `Enter_the_Cloud_Instance_Id_Here` is de instantie van de Azure-cloud. Voer `https://login.microsoftonline.com` in voor de hoofd- (of globale) Azure-cloud. Zie [Nationale clouds](./authentication-national-cloud.md) voor **nationale** clouds (bijvoorbeeld China).
+> - `Enter_the_Cloud_Instance_Id_Here` is de instantie van de Azure-cloud. Voer `https://login.microsoftonline.com/` in voor de hoofd- (of globale) Azure-cloud. Zie [Nationale clouds](./authentication-national-cloud.md) voor **nationale** clouds (bijvoorbeeld China).
 > - `Enter_the_Tenant_info_here` is ingesteld op een van de volgende opties:
 >    - Als uw toepassing *accounts in deze organisatie Directory* ondersteunt, vervangt u deze waarde door de **Tenant-id** of **Tenant naam** (bijvoorbeeld `contoso.microsoft.com` ).
 >
@@ -121,7 +121,7 @@ Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 >    - Als uw toepassing *accounts in elke organisatiemap en persoonlijke Microsoft-accounts* ondersteunt, vervang deze waarde dan door `common`. Als u de ondersteuning wilt beperken tot *alleen persoonlijke Microsoft-accounts*, vervang deze waarde dan door `consumers`.
 >
 >    Ga naar de **overzichts** pagina van de app-registratie in de Azure Portal om de waarde van **ondersteunde account typen** te vinden.
->
+> - `Enter_the_Redirect_Uri_Here` is `http://localhost:3000/`.
 >
 > [!div class="sxs-lookup" renderon="portal"]
 > #### <a name="step-3-your-app-is-configured-and-ready-to-run"></a>Stap 3: Uw app is geconfigureerd en klaar om te worden uitgevoerd
@@ -147,7 +147,7 @@ Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 > [!div renderon="docs"]
 >
 > Waar:
-> - *\<Enter_the_Graph_Endpoint_Here>* is het eindpunt waarop API-aanroepen worden geplaatst. Voer `https://graph.microsoft.com` in voor de voornaamste of globale Microsoft Graph API-service. Zie [Implementatie van nationale clouds](/graph/deployments) voor meer informatie.
+> - *\<Enter_the_Graph_Endpoint_Here>* is het eindpunt waarop API-aanroepen worden geplaatst. Voer `https://graph.microsoft.com/` in voor de voornaamste of globale Microsoft Graph API-service. Zie [Implementatie van nationale clouds](/graph/deployments) voor meer informatie.
 >
 > #### <a name="step-4-run-the-project"></a>Stap 4: Het project uitvoeren
 
@@ -177,8 +177,8 @@ De MSAL-bibliotheek meldt gebruikers aan en verzoekt dat tokens worden gebruikt 
 ```html
 <script type="text/javascript" src="https://alcdn.msftauth.net/lib/1.2.1/js/msal.js" integrity="sha384-9TV1245fz+BaI+VvCjMYL0YDMElLBwNS84v3mY57pXNOt6xcUYch2QLImaTahcOP" crossorigin="anonymous"></script>
 ```
-> [!TIP]
-> U de voorgaande versie vervangen door de meest recente versie onder [MSAL.js releases](https://github.com/AzureAD/microsoft-authentication-library-for-js/releases).
+
+U de voorgaande versie vervangen door de meest recente versie onder [MSAL.js releases](https://github.com/AzureAD/microsoft-authentication-library-for-js/releases).
 
 Als Node.js is geïnstalleerd, kunt u de nieuwste versie downloaden via Node.js Package Manager (npm):
 
@@ -207,13 +207,13 @@ De quickstart-code laat ook zien hoe u de MSAL-bibliotheek kunt initialiseren:
 const myMSALObj = new Msal.UserAgentApplication(msalConfig);
 ```
 
-> |Waar  | Beschrijving |
-> |---------|---------|
-> |`clientId`     | De toepassings-id van de toepassing die is geregistreerd in het Azure-portal.|
-> |`authority`    | (Optioneel) De URL van de instantie die accounttypen ondersteunt zoals eerder beschreven in het configuratiegedeelte. De standaardinstantie is `https://login.microsoftonline.com/common`. |
-> |`redirectUri`     | De geconfigureerde reply/redirectUri van de toepassingsregistratie. In dit geval, `http://localhost:3000/`. |
-> |`cacheLocation`  | (Optioneel) Stelt de browseropslag in voor de verificatiestatus. De standaardwaarde is sessionStorage.   |
-> |`storeAuthStateInCookie`  | (Optioneel) De bibliotheek die de status van de verificatie-aanvraag opslaat die nodig is voor de validatie van de verificatiestromen in de browsercookies. Deze cookie is ingesteld voor IE- en Edge-browsers om bepaalde [bekende problemen](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki/Known-issues-on-IE-and-Edge-Browser#issues) te verhelpen. |
+|Waar  | Beschrijving |
+|---------|---------|
+|`clientId`     | De toepassings-id van de toepassing die is geregistreerd in het Azure-portal.|
+|`authority`    | (Optioneel) De URL van de instantie die accounttypen ondersteunt zoals eerder beschreven in het configuratiegedeelte. De standaardinstantie is `https://login.microsoftonline.com/common`. |
+|`redirectUri`     | De geconfigureerde reply/redirectUri van de toepassingsregistratie. In dit geval, `http://localhost:3000/`. |
+|`cacheLocation`  | (Optioneel) Stelt de browseropslag in voor de verificatiestatus. De standaardwaarde is sessionStorage.   |
+|`storeAuthStateInCookie`  | (Optioneel) De bibliotheek die de status van de verificatie-aanvraag opslaat die nodig is voor de validatie van de verificatiestromen in de browsercookies. Deze cookie is ingesteld voor IE- en Edge-browsers om bepaalde [bekende problemen](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki/Known-issues-on-IE-and-Edge-Browser#issues) te verhelpen. |
 
 Raadpleeg [Clienttoepassingen initialiseren](msal-js-initializing-client-applications.md) voor meer informatie over beschikbare opties die u kunt configureren.
 
@@ -235,12 +235,11 @@ myMSALObj.loginPopup(loginRequest)
 });
 ```
 
-> |Waar  | Beschrijving |
-> |---------|---------|
-> | `scopes`   | (Optioneel) Bevat bereiken die worden aangevraagd voor gebruikerstoestemming tijdens het aanmelden. Bijvoorbeeld, `[ "user.read" ]` voor Microsoft Graph of `[ "<Application ID URL>/scope" ]` voor aangepaste web-API’s (`api://<Application ID>/access_as_user`). |
+|Waar  | Beschrijving |
+|---------|---------|
+| `scopes`   | (Optioneel) Bevat bereiken die worden aangevraagd voor gebruikerstoestemming tijdens het aanmelden. Bijvoorbeeld, `[ "user.read" ]` voor Microsoft Graph of `[ "<Application ID URL>/scope" ]` voor aangepaste web-API’s (`api://<Application ID>/access_as_user`). |
 
-> [!TIP]
-> U kunt er ook voor kiezen om de methode `loginRedirect` te gebruiken om de huidige pagina om te leiden naar de aanmeldingspagina, in plaats van een pop-upvenster.
+U kunt er ook voor kiezen om de methode `loginRedirect` te gebruiken om de huidige pagina om te leiden naar de aanmeldingspagina, in plaats van een pop-upvenster.
 
 ### <a name="request-tokens"></a>Tokens aanvragen
 
@@ -265,9 +264,9 @@ myMSALObj.acquireTokenSilent(tokenRequest)
     });
 ```
 
-> |Waar  | Beschrijving |
-> |---------|---------|
-> | `scopes`   | Bevat bereiken die worden aangevraagd om te worden geretourneerd in het toegangstoken voor de API. Bijvoorbeeld, `[ "mail.read" ]` voor Microsoft Graph of `[ "<Application ID URL>/scope" ]` voor aangepaste web-API’s (`api://<Application ID>/access_as_user`).|
+|Waar  | Beschrijving |
+|---------|---------|
+| `scopes`   | Bevat bereiken die worden aangevraagd om te worden geretourneerd in het toegangstoken voor de API. Bijvoorbeeld, `[ "mail.read" ]` voor Microsoft Graph of `[ "<Application ID URL>/scope" ]` voor aangepaste web-API’s (`api://<Application ID>/access_as_user`).|
 
 #### <a name="get-a-user-token-interactively"></a>Een gebruikerstoken interactief ophalen
 

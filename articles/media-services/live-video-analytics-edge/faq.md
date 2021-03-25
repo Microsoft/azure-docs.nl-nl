@@ -3,12 +3,12 @@ title: Veelgestelde vragen over live video Analytics op IoT Edge-Azure
 description: In dit artikel vindt u antwoorden op veelgestelde vragen over live video Analytics op IoT Edge.
 ms.topic: conceptual
 ms.date: 12/01/2020
-ms.openlocfilehash: 72a07a1a509aebcd7ba4048d0c84e913481c978e
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 661b6155ce2d95e2111a1fa338fd5df438e61e7d
+ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101702246"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105032789"
 ---
 # <a name="live-video-analytics-on-iot-edge-faq"></a>Veelgestelde vragen over live video Analytics op IoT Edge
 
@@ -129,7 +129,7 @@ Oplossingen variëren, afhankelijk van het communicatie protocol dat wordt gebru
    
 *Het gRPC-protocol gebruiken*: 
 
-* Met de live video Analytics-module 1,0, wanneer u een gRPC-Protocol (Remote Procedure Call) gebruikt, is de enige manier om dit te doen als de gRPC-server verschillende AI-modellen via verschillende poorten beschikbaar stelt. In [Dit code voorbeeld](https://raw.githubusercontent.com/Azure/live-video-analytics/master/MediaGraph/topologies/grpcExtension/topology.json)wordt met één poort, 44000, alle Yolo modellen weer gegeven. In theorie kan de Yolo gRPC-server worden herschreven om sommige modellen op poort 44000 en anderen beschikbaar te maken op poort 45000. 
+* Met de live video Analytics-module 1,0, wanneer u een gRPC-Protocol (Remote Procedure Call) gebruikt, is de enige manier om dit te doen als de gRPC-server verschillende AI-modellen via verschillende poorten beschikbaar stelt. In [Dit code voorbeeld](https://github.com/Azure/live-video-analytics/blob/master/MediaGraph/topologies/grpcExtensionOpenVINO/2.0/topology.json)wordt met één poort, 44000, alle Yolo modellen weer gegeven. In theorie kan de Yolo gRPC-server worden herschreven om sommige modellen op poort 44000 en anderen beschikbaar te maken op poort 45000. 
 
 * Met de live video Analytics-module 2,0 wordt een nieuwe eigenschap toegevoegd aan het gRPC extension-knoop punt. Deze eigenschap, **extensionConfiguration**, is een optionele teken reeks die kan worden gebruikt als onderdeel van het gRPC-contract. Wanneer u meerdere AI-modellen hebt ingepakt in één server voor het afleiden van een storing, hoeft u geen knoop punt voor elk AI-model beschikbaar te maken. In plaats daarvan kunt u, als uitbreidings provider, voor een instantie van een grafiek definiëren hoe de verschillende AI-modellen moeten worden geselecteerd met behulp van de eigenschap **extensionConfiguration** . Tijdens de uitvoering wordt deze teken reeks door live video Analytics door gegeven aan de server voor het afleiden van de gegevens, zodat deze kan worden gebruikt om het gewenste AI-model aan te roepen. 
 

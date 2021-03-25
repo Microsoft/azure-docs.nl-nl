@@ -3,12 +3,12 @@ title: Gids voor probleem oplossing voor Azure Service Bus | Microsoft Docs
 description: Meer informatie over tips en aanbevelingen voor het oplossen van problemen die kunnen optreden bij het gebruik van Azure Service Bus.
 ms.topic: article
 ms.date: 03/03/2021
-ms.openlocfilehash: 7de39e5a3a7b6cbb8e5fa504f073023853e18366
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: b44587747a59acb3c0124c0a76b63de68d6d8ae7
+ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102179694"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105031287"
 ---
 # <a name="troubleshooting-guide-for-azure-service-bus"></a>Gids voor probleem oplossing voor Azure Service Bus
 In dit artikel vindt u tips en aanbevelingen voor het oplossen van problemen die kunnen optreden bij het gebruik van Azure Service Bus. 
@@ -52,7 +52,7 @@ De volgende stappen kunnen u helpen bij het oplossen van problemen met connectiv
     ```
     U kunt gelijkwaardige opdrachten gebruiken als u andere hulp middelen gebruikt, zoals `tnc` , `ping` , enzovoort. 
 - Verkrijg een netwerk tracering als de vorige stappen niet helpen en analyseren met behulp van hulpprogram ma's zoals [wireshark](https://www.wireshark.org/). Neem zo nodig contact op met [Microsoft ondersteuning](https://support.microsoft.com/) . 
-- Als u wilt zoeken naar de juiste IP-adressen die u wilt toevoegen aan de lijst toestaan voor uw verbindingen, raadpleegt u [welke IP-adressen moet ik toevoegen aan de acceptatie lijst](service-bus-faq.md#what-ip-addresses-do-i-need-to-add-to-allow-list). 
+- Als u de juiste IP-adressen wilt vinden die u wilt toevoegen aan allowlist voor uw verbindingen, raadpleegt u de [IP-adressen die ik moet toevoegen aan allowlist](service-bus-faq.md#what-ip-addresses-do-i-need-to-add-to-allow-list). 
 
 
 ## <a name="issues-that-may-occur-with-service-upgradesrestarts"></a>Problemen die zich kunnen voordoen met Service-upgrades/opnieuw opstarten
@@ -98,6 +98,25 @@ Er is een limiet voor het aantal tokens dat wordt gebruikt voor het verzenden en
 
 ### <a name="resolution"></a>Oplossing
 Open een nieuwe verbinding met de Service Bus naam ruimte om meer berichten te verzenden.
+
+## <a name="adding-virtual-network-rule-using-powershell-fails"></a>Het toevoegen van een regel voor het virtuele netwerk met Power shell mislukt
+
+### <a name="symptoms"></a>Symptomen
+U hebt twee subnetten geconfigureerd vanaf één virtueel netwerk in een regel voor een virtueel netwerk. Wanneer u probeert één subnet te verwijderen met de cmdlet [Remove-AzServiceBusVirtualNetworkRule](/powershell/module/az.servicebus/remove-azservicebusvirtualnetworkrule) , wordt het subnet niet verwijderd uit de regel van het virtuele netwerk. 
+
+```azurepowershell-interactive
+Remove-AzServiceBusVirtualNetworkRule -ResourceGroupName $resourceGroupName -Namespace $serviceBusName -SubnetId $subnetId
+```
+
+### <a name="cause"></a>Oorzaak
+De Azure Resource Manager-ID die u voor het subnet hebt opgegeven, is mogelijk ongeldig. Dit kan gebeuren wanneer het virtuele netwerk zich in een andere resource groep bevindt dan die waarvan de Service Bus naam ruimte is. Als u de resource groep van het virtuele netwerk niet expliciet opgeeft, bouwt de CLI-opdracht de Azure Resource Manager-ID met behulp van de resource groep van de Service Bus naam ruimte. Hierdoor kan het subnet niet worden verwijderd uit de netwerk regel. 
+
+### <a name="resolution"></a>Oplossing
+Geef de volledige Azure Resource Manager ID op van het subnet met de naam van de resource groep die het virtuele netwerk bevat. Bijvoorbeeld:
+
+```azurepowershell-interactive
+Remove-AzServiceBusVirtualNetworkRule -ResourceGroupName myRG -Namespace myNamespace -SubnetId "/subscriptions/SubscriptionId/resourcegroups/ResourceGroup/myOtherRG/providers/Microsoft.Network/virtualNetworks/myVNet/subnets/mySubnet"
+```
 
 ## <a name="next-steps"></a>Volgende stappen
 Zie de volgende artikelen: 

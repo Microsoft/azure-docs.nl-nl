@@ -5,14 +5,14 @@ author: markjbrown
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: conceptual
-ms.date: 10/14/2020
+ms.date: 03/24/2021
 ms.author: mjbrown
-ms.openlocfilehash: 52fa5957cdbc3ae73ebc4b36e04582741199414a
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 7163658024d150a7c5d75c3b3ac0b6b6b29cd3cb
+ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "93340597"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105037305"
 ---
 # <a name="azure-resource-manager-templates-for-azure-cosmos-db"></a>Azure Resource Manager-sjablonen voor Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -27,6 +27,7 @@ In dit artikel worden alleen Azure Resource Manager sjabloon voorbeelden weer ge
 |[Een Azure Cosmos-account, Data Base, container met een analytische opslag maken](manage-with-templates.md#create-analytical-store) | Met deze sjabloon maakt u een core-API-account (SQL) in één regio met een container die is geconfigureerd met de optie voor analyse-TTL ingeschakeld en selecteert u hand matig of automatisch schalen door voer. |
 |[Een Azure Cosmos-account, Data Base, container met de standaard doorvoer (hand matig) maken](manage-with-templates.md#create-manual) | Met deze sjabloon maakt u een core (SQL) API-account in twee regio's, een Data Base en container met een standaard doorvoer. |
 |[Een Azure Cosmos-account,-data base en-container maken met een opgeslagen procedure, trigger en UDF](manage-with-templates.md#create-sproc) | Met deze sjabloon maakt u een core-API-account (SQL) in twee regio's met een opgeslagen procedure, trigger en UDF voor een container. |
+|[Een Azure Cosmos-account maken met Azure AD-identiteit, roldefinities en roltoewijzing](manage-with-templates.md#create-rbac) | Met deze sjabloon maakt u een core (SQL) API-account met Azure AD-identiteit, roldefinities en roltoewijzing op een service-principal. |
 |[Een persoonlijk eind punt maken voor een bestaand Azure Cosmos-account](how-to-configure-private-endpoints.md#create-a-private-endpoint-by-using-a-resource-manager-template) |  Met deze sjabloon maakt u een persoonlijk eind punt voor een bestaand Azure Cosmos core-API-account in een bestaand virtueel netwerk. |
 |[Een Azure Cosmos-account met een gratis laag maken](manage-with-templates.md#free-tier) |  Met deze sjabloon wordt een Azure Cosmos DB core-API-account gemaakt op de laag gratis. |
 

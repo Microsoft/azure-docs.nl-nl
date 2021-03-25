@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: TomSh
-ms.openlocfilehash: 7d71820db3d58931f2fcd8d18441534ad36183c2
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: ab54243eb7109965941cf60edd9358133550c7d3
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101711991"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105046637"
 ---
 # <a name="azure-operational-security"></a>Operationele Azure-beveiliging
 ## <a name="introduction"></a>Inleiding
@@ -165,7 +165,7 @@ Azure Security Center verzamelt tijdelijke kopieën van uw crashdumpbestanden en
 
 ## <a name="azure-monitor"></a>Azure Monitor
 
-Met de beveiligings-en controle oplossing van de [Azure monitor-logboeken](../../security-center/security-center-monitoring.md) kunt u alle resources actief bewaken, waardoor de impact van beveiligings incidenten kan worden geminimaliseerd. Azure Monitor logboeken Beveiliging en audit beveiligings domeinen hebben die kunnen worden gebruikt voor het bewaken van resources. Het beveiligings domein biedt snelle toegang tot opties. voor beveiligings bewaking worden de volgende domeinen in meer details behandeld:
+Met de beveiligings-en controle oplossing van de [Azure monitor-logboeken](../../security-center/security-center-remediate-recommendations.md) kunt u alle resources actief bewaken, waardoor de impact van beveiligings incidenten kan worden geminimaliseerd. Azure Monitor logboeken Beveiliging en audit beveiligings domeinen hebben die kunnen worden gebruikt voor het bewaken van resources. Het beveiligings domein biedt snelle toegang tot opties. voor beveiligings bewaking worden de volgende domeinen in meer details behandeld:
 
 -   Malware-evaluatie
 -   Update-evaluatie

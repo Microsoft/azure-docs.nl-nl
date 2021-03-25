@@ -3,17 +3,17 @@ title: Azure-kosten toewijzen
 description: In dit artikel wordt uitgelegd hoe u regels voor kostentoewijzing maakt om de kosten van abonnementen, resourcegroepen of tags over anderen te verdelen.
 author: bandersmsft
 ms.author: banders
-ms.date: 08/11/2020
+ms.date: 03/23/2021
 ms.topic: how-to
 ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: benshy
-ms.openlocfilehash: 51baa26cf78846bd0a719b8b86056e2ea8176155
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
-ms.translationtype: HT
+ms.openlocfilehash: 414ce626d76c9b7a7d073d6cbfa5a5f4446c3073
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92131085"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105025523"
 ---
 # <a name="create-and-manage-azure-cost-allocation-rules-preview"></a>Azure-regels voor kostentoewijzing maken en beheren (preview-versie)
 
@@ -58,7 +58,7 @@ Wanneer kosten worden gedistribueerd op basis van de berekeningskosten, opslagko
 
 Wanneer kosten evenredig worden verdeeld over de totale kosten, wordt het evenredige percentage toegewezen door de som of de totale kosten van de geselecteerde doelen voor de huidige factureringsmaand.
 
-:::image type="content" source="./media/allocate-costs/cost-distribution.png" alt-text="Voorbeeld van het maken van een regelnaam" lightbox="./media/allocate-costs/cost-distribution.png" :::
+:::image type="content" source="./media/allocate-costs/cost-distribution.png" alt-text="Voorbeeld van een toewijzingspercentage" lightbox="./media/allocate-costs/cost-distribution.png" :::
 
 Eenmaal ingesteld, staan ​​de vooraf ingevulde percentages vast. Ze worden gebruikt voor alle actieve toewijzingen. De percentages worden alleen gewijzigd wanneer de regel handmatig wordt bijgewerkt.
 
@@ -84,7 +84,7 @@ Als de kostentoewijzingsregel actief is, worden de kosten van de geselecteerde b
 
 U bekijkt de impact van de toewijzingsregel in de kostenanalyse. Ga in de Azure-portal naar [Abonnementen](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade). Selecteer een abonnement in de lijst die is gericht op een actieve kostentoewijzingsregel. Selecteer vervolgens **Kostenanalyse** in het menu. Selecteer in kostenanalyse **Groeperen op** en selecteer vervolgens **Kostentoewijzing**. In de resulterende weergave ziet u een snelle kostenanalyse die door het abonnement is gegenereerd. De kosten die aan het abonnement zijn toegewezen, worden ook weergegeven, zoals in de volgende afbeelding.
 
-:::image type="content" source="./media/allocate-costs/cost-breakdown.png" alt-text="Voorbeeld van het maken van een regelnaam" lightbox="./media/allocate-costs/cost-breakdown.png" :::
+:::image type="content" source="./media/allocate-costs/cost-breakdown.png" alt-text="Voorbeeld van kostenuitsplitsing" lightbox="./media/allocate-costs/cost-breakdown.png" :::
 
 ### <a name="view-cost-allocation-for-a-resource-group"></a>Kostentoewijzing voor een resourcegroep weergeven
 
@@ -94,7 +94,12 @@ Gebruik een soortgelijk proces voor de impact van een kostentoewijzingsregel voo
 
 Navigeer in Azure Portal naar **Kostenbeheer en facturering** > **Kostenbeheer** > **Kostenanalyse**. Selecteer in Kostenanalyse **Filter toevoegen**. Selecteer **Tag**, kies de tagsleutel en tagwaarden waaraan kosten zijn toegewezen.
 
-:::image type="content" source="./media/allocate-costs/tagged-costs.png" alt-text="Voorbeeld van het maken van een regelnaam" lightbox="./media/allocate-costs/tagged-costs.png" :::
+:::image type="content" source="./media/allocate-costs/tagged-costs.png" alt-text="Voorbeeld van kosten voor items met tags" lightbox="./media/allocate-costs/tagged-costs.png" :::
+
+Hier volgt een video waarin wordt getoond hoe u een kosten toewijzings regel maakt.
+
+>[!VIDEO https://www.youtube.com/embed/nYzIIs2mx9Q]
+
 
 ## <a name="edit-an-existing-cost-allocation-rule"></a>Een bestaande regel voor kostentoewijzing bewerken
 

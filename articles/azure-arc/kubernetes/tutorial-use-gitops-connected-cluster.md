@@ -7,12 +7,12 @@ ms.service: azure-arc
 ms.topic: tutorial
 ms.date: 03/02/2021
 ms.custom: template-tutorial
-ms.openlocfilehash: 64299bd05e82cf6f5452cde3f3da5622eff25e56
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 1459d4a0f15595c6f658d73fcb9cb533023f0eb8
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102121470"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105025714"
 ---
 # <a name="tutorial-deploy-configurations-using-gitops-on-an-azure-arc-enabled-kubernetes-cluster"></a>Zelf studie: configuraties implementeren met behulp van GitOps op een Azure Arc enabled Kubernetes-cluster 
 
@@ -141,7 +141,7 @@ Net als persoonlijke sleutels kunt u uw known_hosts inhoud rechtstreeks of in ee
 >[!NOTE]
 >* Helm-operator grafiek versie 1.2.0 + ondersteunt de persoonlijke verificatie van de HTTPS helm-versie.
 >* De HTTPS helm-versie wordt niet ondersteund voor door AKS beheerde clusters.
->* Als u een stroom nodig hebt om toegang te krijgen tot de Git-opslag plaats via uw proxy, moet u de Azure Arc-agents bijwerken met de proxy instellingen. Zie [verbinding maken met een uitgaande proxy server](./connect-cluster.md#connect-using-an-outbound-proxy-server)voor meer informatie.
+>* Als u een stroom nodig hebt om toegang te krijgen tot de Git-opslag plaats via uw proxy, moet u de Azure Arc-agents bijwerken met de proxy instellingen. Zie [verbinding maken met een uitgaande proxy server](./quickstart-connect-cluster.md#connect-using-an-outbound-proxy-server)voor meer informatie.
 
 
 ## <a name="additional-parameters"></a>Aanvullende para meters

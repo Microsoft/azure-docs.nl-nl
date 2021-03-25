@@ -8,12 +8,12 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: 3338f7b6bd418cea2bfdbbcd40692b9342f48cfa
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 4db23982dfaed1447023edb417a3732dac94bdc4
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98744567"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105025234"
 ---
 # <a name="frequently-asked-questions-for-azure-cloud-services-extended-support"></a>Veelgestelde vragen over Azure Cloud Services (uitgebreide ondersteuning)
 In dit artikel vindt u informatie over veelgestelde vragen met betrekking tot Azure Cloud Services (uitgebreide ondersteuning).
@@ -82,6 +82,8 @@ Sjabloon-en parameter bestanden worden alleen gebruikt voor implementatie automa
 ### <a name="how-does-my-application-code-change-on-cloud-services-extended-support"></a>Hoe wordt mijn toepassings code gewijzigd op Cloud Services (uitgebreide ondersteuning)
 Er zijn geen wijzigingen vereist voor de toepassings code die in cspkg is verpakt. Uw bestaande toepassingen blijven werken zoals voorheen. 
 
+### <a name="does-cloud-services-extended-support-allow-ctp-package-format"></a>Staat Cloud Services (uitgebreide ondersteuning) CTP-pakket indeling toe?
+De indeling van het CTP-pakket wordt niet ondersteund in Cloud Services (uitgebreide ondersteuning). Hiermee kan echter een maximale pakket grootte van 800 MB worden bereikt
 
 ## <a name="migration"></a>Migratie
 

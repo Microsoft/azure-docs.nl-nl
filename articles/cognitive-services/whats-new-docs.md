@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.author: erhopf
 ms.service: cognitive-services
 ms.date: 03/08/2021
-ms.openlocfilehash: b5893ab7c616c30d4febf957c21da56caf7c9673
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 4334166f435612370e7e0b7b380814fe85075f78
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102631367"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105046620"
 ---
 # <a name="cognitive-services-docs-whats-new-for-february-1-2021---february-28-2021"></a>Cognitive Services documenten: wat is er nieuw voor 1 februari 2021 tot 28 februari 2021
 
@@ -28,25 +28,25 @@ Welkom bij wat er nieuw is in de Cognitive Services documenten vanaf 1 februari 
 
 ### <a name="new-articles"></a>Nieuwe artikelen
 
-- [Veelgestelde vragen over Azure Cognitive Services-containers (FAQ)](/azure/cognitive-services/containers/container-faq)
+- [Veelgestelde vragen over Azure Cognitive Services-containers (FAQ)](./containers/container-faq.yml)
 
 ### <a name="updated-articles"></a>Bijgewerkte artikelen
 
-- [Azure Cognitive Services container-afbeeldings Tags en opmerkingen bij de release](/azure/cognitive-services/containers/container-image-tags)
+- [Azure Cognitive Services container-afbeeldings Tags en opmerkingen bij de release](./containers/container-image-tags.md)
 
 ## <a name="form-recognizer"></a>Form Recognizer
 
 ### <a name="updated-articles"></a>Bijgewerkte artikelen
 
-- [Het voorbeeldhulpprogramma voor labelen implementeren](/azure/cognitive-services/form-recognizer/deploy-label-tool)
-- [Wat is Form Recognizer?](/azure/cognitive-services/form-recognizer/overview)
-- [Een Form Recognizer-model trainen met behulp van het voorbeeldhulpprogramma voor labelen](/azure/cognitive-services/form-recognizer/quickstarts/label-tool)
+- [Het voorbeeldhulpprogramma voor labelen implementeren](./form-recognizer/deploy-label-tool.md)
+- [Wat is Form Recognizer?](./form-recognizer/overview.md)
+- [Een Form Recognizer-model trainen met behulp van het voorbeeldhulpprogramma voor labelen](./form-recognizer/quickstarts/label-tool.md)
 
 ## <a name="text-analytics"></a>Text Analytics
 
 ### <a name="updated-articles"></a>Bijgewerkte artikelen
 
-- [Ondersteuning voor Text Analytics-API v3-taal](/azure/cognitive-services/text-analytics/language-support)
-- [De Text Analytics aanroepen REST API](/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-call-api)
+- [Ondersteuning voor Text Analytics-API v3-taal](./text-analytics/language-support.md)
+- [De Text Analytics aanroepen REST API](./text-analytics/how-tos/text-analytics-how-to-call-api.md)
 
 [!INCLUDE [Service specific updates](./includes/service-specific-updates.md)]

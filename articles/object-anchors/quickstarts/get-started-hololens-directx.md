@@ -7,12 +7,12 @@ ms.author: crtreasu
 ms.date: 02/02/2021
 ms.topic: quickstart
 ms.service: azure-object-anchors
-ms.openlocfilehash: 8a02bb7c70df4fed55c354638fe6662b85e6c164
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: b5db9f3766bdd7d754f49403665a371f9d10afd7
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102049622"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105047606"
 ---
 # <a name="quickstart-create-a-hololens-app-with-azure-object-anchors-in-cwinrt-and-directx"></a>Snelstartgids: een HoloLens-app maken met Azure object-ankers in C++/WinRT en DirectX
 
@@ -34,7 +34,7 @@ Zorg ervoor dat u over het volgende beschikt om deze snelstart te voltooien:
 * Een Windows-computer met het volgende geïnstalleerd:
   * <a href="https://git-scm.com" target="_blank">Git voor Windows</a>
   * <a href="https://www.visualstudio.com/downloads/" target="_blank">Visual Studio 2019</a> met de **universeel Windows-platform Development** -werk belasting en het onderdeel **Windows 10 SDK (10.0.18362.0 of hoger)**
-* Een apparaat van HoloLens 2 dat up-to-date is en waarvoor de [ontwikkelaars modus](https://docs.microsoft.com/windows/mixed-reality/using-visual-studio#enabling-developer-mode) is ingeschakeld.
+* Een apparaat van HoloLens 2 dat up-to-date is en waarvoor de [ontwikkelaars modus](/windows/mixed-reality/using-visual-studio#enabling-developer-mode) is ingeschakeld.
   * Als u wilt bijwerken naar de nieuwste release op HoloLens, opent u de app **Instellingen**, gaat u naar **Bijwerken en beveiliging** en selecteert u vervolgens **Controleren op updates**.
 
 ## <a name="open-the-sample-project"></a>Voorbeeldproject openen

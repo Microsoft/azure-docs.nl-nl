@@ -1,18 +1,18 @@
 ---
 title: Ingebouwde beleidsdefinities voor Key Vault
 description: Overzicht van de ingebouwde Azure Policy-beleidsdefinities voor Key Vault. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 03/17/2021
+ms.date: 03/24/2021
 ms.topic: reference
 author: msmbaldwin
 ms.author: mbaldwin
 ms.service: key-vault
 ms.custom: subject-policy-reference
-ms.openlocfilehash: a2b572b8a14e3af7126a8a1e80a6c60614bc68b2
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 4927fee70271d755bff870960eda118728c48de2
+ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104582483"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105038301"
 ---
 # <a name="azure-policy-built-in-definitions-for-key-vault"></a>Ingebouwde Azure Policy-definities voor Key Vault
 

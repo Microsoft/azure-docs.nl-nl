@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: wiassaf, sstein
 ms.date: 06/25/2019
-ms.openlocfilehash: 453d7e118b946d60eb3d84c6a66abdbea7db2410
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: ca1a2edec70b13f111ffd89278aa39d1ddea7f67
+ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96499217"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105035639"
 ---
 # <a name="dynamically-scale-database-resources-with-minimal-downtime"></a>Database resources dynamisch schalen met minimale downtime
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -60,6 +60,9 @@ Met Azure SQL Managed Instance kunt u ook schalen:
 - [SQL Managed instance](../managed-instance/sql-managed-instance-paas-overview.md) maakt gebruik van de modus [vCores](../managed-instance/sql-managed-instance-paas-overview.md#vcore-based-purchasing-model) en stelt u in staat om Maxi maal CPU-kernen en het maximum aan opslag ruimte te definiëren die aan uw exemplaar zijn toegewezen. Alle data bases in het beheerde exemplaar delen de resources die aan het exemplaar zijn toegewezen.
 
 Het starten van een actie omhoog of omlaag schalen in een van de versies zou het data base-engine proces opnieuw starten en naar een andere virtuele machine verplaatsen, indien nodig. Het proces voor het verplaatsen van de data base-engine naar een nieuwe virtuele machine is **online proces** waar u uw bestaande Azure SQL database-service kunt blijven gebruiken terwijl het proces wordt uitgevoerd. Zodra de engine van de doel database volledig is geïnitialiseerd en gereed is voor het verwerken van de query's, worden de verbindingen [van de bron-naar de doel database-engine overgeschakeld](single-database-scale.md#impact).
+
+> [!NOTE]
+> Het wordt afgeraden om uw beheerde exemplaar te schalen als een langlopende trans actie, zoals het importeren van gegevens, het verwerken van gegevens, het opnieuw opbouwen van indexen, enzovoort, wordt uitgevoerd, of als u een actieve verbinding hebt met het exemplaar. Als u wilt voor komen dat de schaal bewerking meer tijd in beslag neemt dan gebruikelijk, moet u het exemplaar schalen na het volt ooien van alle langlopende bewerkingen.
 
 > [!NOTE]
 > U kunt een korte verbinding verwachten wanneer het omhoog/omlaag schalen proces is voltooid. Als u [pogings logica hebt geïmplementeerd voor standaard tijdelijke fouten](troubleshoot-common-connectivity-issues.md#retry-logic-for-transient-errors), zult u de failover niet zien.

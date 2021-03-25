@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 03/15/2021
 ms.author: lajanuar
-ms.openlocfilehash: 47e145c5d96ba54b02f5453ff97d16dec302eabd
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 81115f5a9ed802f1d07c45ec928dc4b84ea2917b
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103493506"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105048745"
 ---
 <!-- markdownlint-disable MD024 -->
 # <a name="whats-new-in-form-recognizer"></a>Wat is er nieuw in Form Recognizer?
@@ -117,7 +117,7 @@ De Form Recognizer-service wordt doorlopend bijgewerkt. Gebruik dit artikel om o
 * **Valuta-ondersteuning** -detectie en extractie van globale valuta symbolen.
 * **Azure gov** -formulier herkenning is nu ook beschikbaar in azure gov.
 * **Verbeterde beveiligings functies**: 
-  * Als u **uw eigen sleutel** formulier Recognizer zet, worden uw gegevens automatisch versleuteld wanneer deze worden opgeslagen in de cloud om deze te beschermen en om u te helpen te voldoen aan de beveiligings-en nalevings verplichtingen van uw organisatie. Uw abonnement maakt standaard gebruik van door Microsoft beheerde versleutelingssleutels. U kunt uw abonnement nu ook beheren met uw eigen coderings sleutels. [Door de klant beheerde sleutels, ook wel bekend als uw eigen sleutel (BYOK)](./form-recognizer-encryption-of-data-at-rest.md), bieden meer flexibiliteit voor het maken, draaien, uitschakelen en intrekken van toegangs beheer. U kunt ook de versleutelingssleutels controleren die worden gebruikt voor het beveiligen van uw gegevens.  
+  * Als u **uw eigen sleutel** formulier Recognizer zet, worden uw gegevens automatisch versleuteld wanneer deze worden opgeslagen in de cloud om deze te beschermen en om u te helpen te voldoen aan de beveiligings-en nalevings verplichtingen van uw organisatie. Uw abonnement maakt standaard gebruik van door Microsoft beheerde versleutelingssleutels. U kunt uw abonnement nu ook beheren met uw eigen coderings sleutels. [Door de klant beheerde sleutels, ook wel bekend als uw eigen sleutel (BYOK)](./encrypt-data-at-rest.md), bieden meer flexibiliteit voor het maken, draaien, uitschakelen en intrekken van toegangs beheer. U kunt ook de versleutelingssleutels controleren die worden gebruikt voor het beveiligen van uw gegevens.  
   * **Persoonlijke eind punten** – Hiermee kunt u een virtueel netwerk (VNet) [gebruiken om veilig toegang te krijgen tot gegevens via een privé-koppeling.](../../private-link/private-link-overview.md)
 
 ## <a name="june-2020"></a>Juni 2020

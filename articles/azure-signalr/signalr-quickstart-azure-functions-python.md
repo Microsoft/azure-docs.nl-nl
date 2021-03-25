@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 12/14/2019
 ms.author: antchu
 ms.custom: devx-track-python
-ms.openlocfilehash: aaaf9011d38e7ec02e83db63757c434329b835e0
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 82a2e64d27fcbbb3801e6dab347343e086a0b70f
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "94960288"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105048218"
 ---
 # <a name="quickstart-create-a-chat-room-with-azure-functions-and-signalr-service-using-python"></a>Quickstart: Een chatruimte maken met Azure Functions en SignalR Service met behulp van Python
 
@@ -27,7 +27,7 @@ Zorg ervoor dat u een code-editor hebt geïnstalleerd, bijvoorbeeld [Visual Stud
 
 Installeer [Azure Functions Core Tools (versie 2.7.1505 of hoger)](https://github.com/Azure/azure-functions-core-tools#installing) om lokaal Azure Function-apps in Python uit te voeren.
 
-Voor Azure Functions is [Python 3.6 of 3.7](https://www.python.org/downloads/) vereist.
+Azure Functions vereist [python 3.6 +](https://www.python.org/downloads/). (Zie [ondersteunde python-versies](/azure/azure-functions/functions-reference-python#python-version))
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 

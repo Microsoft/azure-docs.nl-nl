@@ -4,7 +4,7 @@
   items:
     - name: Wat is Virtual WAN?
       href: virtual-wan-about.md
-- name: Quickstarts
+- name: Snelstartgidsen
   expanded: true
   items:
     - name: ARM-sjablonen
@@ -93,6 +93,8 @@
       href: pricing-concepts.md
     - name: Over NVA in een virtuele hub
       href: about-nva-hub.md
+    - name: Over beveiligde virtuele hubs
+      href: ../firewall-manager/secured-virtual-hub.md?toc=%2fazure%2fvirtual-wan%2ftoc.json
 - name: Instructiegidsen
   items:
     - name: Een virtuele WAN-SKU upgraden

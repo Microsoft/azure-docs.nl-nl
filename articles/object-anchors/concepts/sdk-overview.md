@@ -8,12 +8,12 @@ ms.author: crtreasu
 ms.date: 03/02/2021
 ms.topic: conceptual
 ms.service: azure-object-anchors
-ms.openlocfilehash: 74663f05c5ff995a090c7cd35e4edf46a754da17
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 551374824610c0257aaf52c45768d31849026524
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102034605"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105047538"
 ---
 # <a name="runtime-sdk-overview"></a>Overzicht van runtime-SDK
 
@@ -25,59 +25,59 @@ Alle typen die hieronder worden beschreven, kunt u vinden in de naam ruimte **mi
 
 ### <a name="objectmodel"></a>ObjectModel
 
-Een [objectmodel](https://docs.microsoft.com/dotnet/api/microsoft.azure.objectanchors.objectmodel) vertegenwoordigt de geometrie van een fysiek object en codeert de benodigde para meters voor detectie en een schatting. Deze moet worden gemaakt met behulp van de [object ankers-service](../quickstarts/get-started-model-conversion.md). Vervolgens kan een toepassing het gegenereerde model bestand laden met behulp van de object-ankers-API en een query uitvoeren op de net embedded in dat model voor visualisatie.
+Een [objectmodel](/dotnet/api/microsoft.azure.objectanchors.objectmodel) vertegenwoordigt de geometrie van een fysiek object en codeert de benodigde para meters voor detectie en een schatting. Deze moet worden gemaakt met behulp van de [object ankers-service](../quickstarts/get-started-model-conversion.md). Vervolgens kan een toepassing het gegenereerde model bestand laden met behulp van de object-ankers-API en een query uitvoeren op de net embedded in dat model voor visualisatie.
 
 ### <a name="objectsearcharea"></a>ObjectSearchArea
 
-Een [ObjectSearchArea](https://docs.microsoft.com/dotnet/api/microsoft.azure.objectanchors.objectsearcharea) Hiermee geeft u de ruimte op die moet worden gezocht voor een of meer objecten. Het wordt gedefinieerd door een knoop punt-ID van ruimtelijk diagram en ruimtelijke grenzen in het coördinaten systeem vertegenwoordigd door de knoop punt-ID van ruimtelijke grafiek. De SDK voor object ankerpunten ondersteunt vier typen grenzen, namelijk het **veld met de weer gave**, **het begrenzingsvak**, de **bol** en de **locatie**.
+Een [ObjectSearchArea](/dotnet/api/microsoft.azure.objectanchors.objectsearcharea) Hiermee geeft u de ruimte op die moet worden gezocht voor een of meer objecten. Het wordt gedefinieerd door een knoop punt-ID van ruimtelijk diagram en ruimtelijke grenzen in het coördinaten systeem vertegenwoordigd door de knoop punt-ID van ruimtelijke grafiek. De SDK voor object ankerpunten ondersteunt vier typen grenzen, namelijk het **veld met de weer gave**, **het begrenzingsvak**, de **bol** en de **locatie**.
 
 ### <a name="objectquery"></a>Object query
 
-Een [object query](https://docs.microsoft.com/dotnet/api/microsoft.azure.objectanchors.objectquery) vertelt een **object waarnemer** hoe objecten van een bepaald model moeten worden gevonden. Het biedt de volgende instel bare-para meters waarvan de standaard waarden kunnen worden opgehaald uit een object model.
+Een [object query](/dotnet/api/microsoft.azure.objectanchors.objectquery) vertelt een **object waarnemer** hoe objecten van een bepaald model moeten worden gevonden. Het biedt de volgende instel bare-para meters waarvan de standaard waarden kunnen worden opgehaald uit een object model.
 
 #### <a name="minsurfacecoverage"></a>MinSurfaceCoverage
 
-De eigenschap [MinSurfaceCoverage](https://docs.microsoft.com/dotnet/api/microsoft.azure.objectanchors.objectquery.minsurfacecoverage) geeft de waarde aan om een instantie zoals gedetecteerd te beschouwen.
+De eigenschap [MinSurfaceCoverage](/dotnet/api/microsoft.azure.objectanchors.objectquery.minsurfacecoverage) geeft de waarde aan om een instantie zoals gedetecteerd te beschouwen.
 
 Voor elke object kandidaat berekent een **waarnemer** de verhouding tussen de overlappende Opper vlakken tussen het getransformeerde object model en de scène. Vervolgens rapporteert dat kandidaat naar toepassing alleen wanneer de dekkings verhouding boven een bepaalde drempel waarde ligt.
 
 #### <a name="isexpectedtobestandingongroundplane"></a>IsExpectedToBeStandingOnGroundPlane
 
-De eigenschap [IsExpectedToBeStandingOnGroundPlane](https://docs.microsoft.com/dotnet/api/microsoft.azure.objectanchors.objectquery.isexpectedtobestandingongroundplane) geeft aan of het doel object naar verwachting op het massa vlak is.
+De eigenschap [IsExpectedToBeStandingOnGroundPlane](/dotnet/api/microsoft.azure.objectanchors.objectquery.isexpectedtobestandingongroundplane) geeft aan of het doel object naar verwachting op het massa vlak is.
 
 Een massa vlak is de laagste horizontale vloer in het zoek gebied. Het biedt een goede beperking voor het mogelijke object. Als u deze vlag inschakelt, wordt de **waarnemer** in staat gesteld om de pose te ramen in een beperkte ruimte en de nauw keurigheid te verbeteren. Deze para meter wordt genegeerd als het model niet op de massa plaat zou moeten worden opgebouwd.
 
 #### <a name="expectedmaxverticalorientationindegrees"></a>ExpectedMaxVerticalOrientationInDegrees
 
-De eigenschap [ExpectedMaxVerticalOrientationInDegrees](https://docs.microsoft.com/dotnet/api/microsoft.azure.objectanchors.objectquery.expectedmaxverticalorientationindegrees) geeft de verwachte maximum hoek in graden op tussen de richting van een object exemplaar en de ernst.
+De eigenschap [ExpectedMaxVerticalOrientationInDegrees](/dotnet/api/microsoft.azure.objectanchors.objectquery.expectedmaxverticalorientationindegrees) geeft de verwachte maximum hoek in graden op tussen de richting van een object exemplaar en de ernst.
 
 Deze para meter biedt een andere beperking voor de richting van een geschatte pose. Als een object bijvoorbeeld up-to-right is, kan deze para meter 0 zijn. Object ankerpunten moeten geen objecten detecteren die afwijken van het model. Als een model up-to-right is, detecteert het geen exemplaar dat naast elkaar wordt gedetecteerd. Er wordt een nieuw model gebruikt voor de indeling van de ondersteboven. Dezelfde regel is van toepassing op de aanscharniering.
 
 #### <a name="maxscalechange"></a>MaxScaleChange
 
-De eigenschap [MaxScaleChange](https://docs.microsoft.com/dotnet/api/microsoft.azure.objectanchors.objectquery.maxscalechange) geeft de maximale wijziging van de object schaal aan (binnen 0 ~ 1) ten opzichte van ruimtelijke toewijzing. De geschatte schaal wordt toegepast op getransformeerde object hoekpunten gecentreerd op basis van de oorsprong en as-uitgelijnd. Geschatte schalen zijn mogelijk niet de werkelijke schaal tussen een CAD-model en de fysieke weer gave ervan, maar sommige waarden waarmee de app een object model dicht bij ruimtelijke toewijzing op het fysieke object kan weer geven.
+De eigenschap [MaxScaleChange](/dotnet/api/microsoft.azure.objectanchors.objectquery.maxscalechange) geeft de maximale wijziging van de object schaal aan (binnen 0 ~ 1) ten opzichte van ruimtelijke toewijzing. De geschatte schaal wordt toegepast op getransformeerde object hoekpunten gecentreerd op basis van de oorsprong en as-uitgelijnd. Geschatte schalen zijn mogelijk niet de werkelijke schaal tussen een CAD-model en de fysieke weer gave ervan, maar sommige waarden waarmee de app een object model dicht bij ruimtelijke toewijzing op het fysieke object kan weer geven.
 
 #### <a name="searchareas"></a>SearchAreas
 
-De eigenschap [SearchAreas](https://docs.microsoft.com/dotnet/api/microsoft.azure.objectanchors.objectquery.searchareas) geeft een matrix van ruimtelijke grenzen aan waar object (en) moeten worden gevonden.
+De eigenschap [SearchAreas](/dotnet/api/microsoft.azure.objectanchors.objectquery.searchareas) geeft een matrix van ruimtelijke grenzen aan waar object (en) moeten worden gevonden.
 
 De **waarnemer** zoekt naar objecten in de samenvoeg ruimte van alle zoek gebieden die in een query zijn opgegeven. In deze release retour neren we Maxi maal één object met het hoogste vertrouwen om de latentie te verminderen.
 
 ### <a name="objectinstance"></a>ObjectInstance
 
-Een [ObjectInstance](https://docs.microsoft.com/dotnet/api/microsoft.azure.objectanchors.objectinstance) vertegenwoordigt een hypothetische positie waarbij een exemplaar van een bepaald model zich in het coördinaten systeem van HoloLens kan bevinden. Elk exemplaar wordt geleverd met een `SurfaceCoverage` eigenschap om aan te geven hoe goed de geschatte pose is.
+Een [ObjectInstance](/dotnet/api/microsoft.azure.objectanchors.objectinstance) vertegenwoordigt een hypothetische positie waarbij een exemplaar van een bepaald model zich in het coördinaten systeem van HoloLens kan bevinden. Elk exemplaar wordt geleverd met een `SurfaceCoverage` eigenschap om aan te geven hoe goed de geschatte pose is.
 
 Een exemplaar wordt gemaakt door de aanroepende `ObjectObserver.DetectAsync` methode en wordt automatisch bijgewerkt op de achtergrond wanneer dat actief is. Een toepassing kan worden geluisterd naar de gebeurtenis status gewijzigd in een bepaald exemplaar of door de tracerings modus te wijzigen om de update te onderbreken/hervatten. Er wordt automatisch een exemplaar van de **waarnemer** verwijderd wanneer het bijhouden is verbroken.
 
 ### <a name="objectobserver"></a>ObjectObserver
 
-Een [ObjectObserver](https://docs.microsoft.com/dotnet/api/microsoft.azure.objectanchors.objectobserver) laadt object modellen, detecteert hun instanties en rapporteert 6-DOF pose van elk exemplaar in het coördinaten systeem van HoloLens.
+Een [ObjectObserver](/dotnet/api/microsoft.azure.objectanchors.objectobserver) laadt object modellen, detecteert hun instanties en rapporteert 6-DOF pose van elk exemplaar in het coördinaten systeem van HoloLens.
 
 Hoewel elk object model of exemplaar wordt gemaakt op basis van een **waarnemer**, zijn hun levens duur onafhankelijk. Een toepassing kan een waarnemer verwijderen en het object model of exemplaar blijven gebruiken.
 
 ### <a name="objectdiagnosticssession"></a>ObjectDiagnosticsSession
 
-De [ObjectDiagnosticSession](https://docs.microsoft.com/dotnet/api/microsoft.azure.objectanchors.diagnostics.objectdiagnosticssession) registreert diagnose en schrijft gegevens naar een archief.
+De [ObjectDiagnosticSession](/dotnet/api/microsoft.azure.objectanchors.diagnostics.objectdiagnosticssession) registreert diagnose en schrijft gegevens naar een archief.
 
 Een diagnostische archief bevat de scène van de Cloud, de status van de waarneming en informatie over de modellen. Deze informatie is nuttig om mogelijke runtime problemen te identificeren. Raadpleeg de [Veelgestelde vragen](../faq.md)voor meer informatie.
 

@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/04/2020
 ms.author: aahi
-ms.openlocfilehash: d5d47f097fa216d69b8ed59fdb057378724c2228
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
-ms.translationtype: HT
+ms.openlocfilehash: 338e4f0c1c47a7786e21ad98bb3e56a1505f9bb2
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94625242"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105104124"
 ---
 Gebruik deze snelstart om voor de eerste keer afbeeldingen te zoeken met behulp van de Bing Afbeeldingen zoeken-clientbibliotheek, wat een wrapper is voor de API en die dus dezelfde functies bevat. Deze eenvoudige Python-toepassing verzendt een zoekquery voor afbeeldingen, parseert het JSON-antwoord en geeft de URL weer van de eerst geretourneerde afbeelding.
 
@@ -21,7 +21,7 @@ De broncode voor dit voorbeeld is beschikbaar op [GitHub](https://github.com/Azu
 
 ## <a name="prerequisites"></a>Vereisten
 
-* [Python 2.7 of 3.4](https://www.python.org/) en hoger.
+* [Python 2,7 of 3.6 +](https://www.python.org/).
 
 * De [Azure Image Search-clientbibliotheek](https://pypi.org/project/azure-cognitiveservices-search-imagesearch/) voor Python
     * Installeren met behulp van `pip install azure-cognitiveservices-search-imagesearch`

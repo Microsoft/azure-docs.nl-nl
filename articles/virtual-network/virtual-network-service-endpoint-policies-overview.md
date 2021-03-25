@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/21/2020
 ms.author: rdhillon
-ms.openlocfilehash: 9766379807e6d2708fd6935dd2ffbd7660f9988f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 633d0b9e454fe2906d98624ac2cdbcc9a8b6c7fa
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98216645"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105022259"
 ---
 # <a name="virtual-network-service-endpoint-policies-for-azure-storage"></a>Service-eindpuntbeleid voor virtueel netwerk voor Azure Storage
 
@@ -109,6 +109,8 @@ Voor beleid voor service-eindpunten is gecentraliseerde logboekregistratie niet 
   - Zorg ervoor dat de accounts geen **klassieke opslag accounts** met beleids regels voor service-eind punten in het subnet zijn.
 - Een beheerde Azure-service is gestopt nadat een service-eindpunt beleid is toegepast op het subnet
   - Beheerde services worden op dit moment niet ondersteund met beleids regels voor service-eind punten. *Bekijk deze ruimte op updates*.
+- Toegang tot beheerde opslag accounts is gestopt nadat een service-eindpunt beleid is toegepast op het subnet
+  - Beheerde opslag accounts worden niet ondersteund met beleids regels voor service-eind punten. Als het beleid is geconfigureerd, wordt de toegang tot alle beheerde opslag accounts standaard geweigerd. Als uw toepassing toegang nodig heeft tot beheerde opslag accounts, mag er geen eindpunt beleid worden gebruikt voor dit verkeer.
 
 ## <a name="provisioning"></a>Inrichten
 

@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/18/2019
-ms.openlocfilehash: 56ef6563982c315d34cfeb87070b9ebfa3d27a30
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 49122421f04ee6eef8828ca305cfb235aceee3fb
+ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102500424"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105035690"
 ---
 # <a name="log-data-ingestion-time-in-azure-monitor"></a>Opnametijd van gegevens vastleggen in een logboek in Azure Monitor
 Azure Monitor is een grootschalige gegevensservice die elke maand een groeiend aantal terabytes aan gegevens van duizenden klanten verwerkt. Er zijn vaak vragen over de tijd die nodig is om te zorgen dat logboek gegevens beschikbaar worden nadat deze zijn verzameld. In dit artikel worden de verschillende factoren beschreven die van invloed zijn op deze latentie.
@@ -81,8 +81,8 @@ De opname tijd kan variëren voor verschillende bronnen onder verschillende omst
 | Stap | Eigenschap of functie | Opmerkingen |
 |:---|:---|:---|
 | Record gemaakt in gegevens bron | [TimeGenerated](./log-standard-columns.md#timegenerated-and-timestamp) <br>Als de gegevens bron deze waarde niet instelt, wordt deze ingesteld op dezelfde tijd als _TimeReceived. |
-| Record ontvangen door Azure Monitor opname-eind punt | [_TimeReceived](./log-standard-columns.md#_timereceived) | |
-| Record opgeslagen in de werk ruimte en beschikbaar voor query's | [ingestion_time ()](/azure/kusto/query/ingestiontimefunction) | |
+| Record ontvangen door Azure Monitor opname-eind punt | [_TimeReceived](./log-standard-columns.md#_timereceived) | Dit veld is niet geoptimaliseerd voor massale verwerking en mag niet worden gebruikt voor het filteren van grote gegevens sets. |
+| Record opgeslagen in de werk ruimte en beschikbaar voor query's | [ingestion_time ()](/azure/kusto/query/ingestiontimefunction) | Het is raadzaam om ingestion_time () te gebruiken als u alleen records wilt filteren die zijn opgenomen in een bepaald tijd venster. In dat geval wordt u aangeraden ook TimeGenerated-filter toe te voegen met een groter bereik. |
 
 ### <a name="ingestion-latency-delays"></a>Vertragingen bij opname latentie
 U kunt de latentie van een specifieke record meten door het resultaat van de functie [ingestion_time ()](/azure/kusto/query/ingestiontimefunction) te vergelijken met de eigenschap _TimeGenerated_ . Deze gegevens kunnen met verschillende aggregaties worden gebruikt om te ontdekken hoe de latentie van opname wordt gedraagt. Bekijk een aantal percentiel van de opname tijd om inzicht te krijgen in grote hoeveel heden gegevens. 

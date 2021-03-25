@@ -2,15 +2,15 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 03/17/2021
+ms.date: 03/24/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: f087209cf7368f2051bae87bf79e7d485a278137
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: d3639f04cbfbef85585978cf1cd14128ae1d4748
+ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104605320"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105033153"
 ---
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -25,5 +25,5 @@ ms.locfileid: "104605320"
 |[Het virtuele netwerk van de beheerde werkruimte in Azure Synapse-werkruimten moet zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F2d9dbfa3-927b-4cf0-9d0f-08747f971650) |Als u een virtueel netwerk voor een beheerde werkruimte inschakelt zorgt u ervoor dat uw werkruimte binnen het netwerk is afgeschermd van andere werkruimten. Gegevensintegratie en Apache Spark-resources die zijn geïmplementeerd in dit virtuele netwerk, bieden ook isolatie op gebruikersniveau voor Apache Spark-activiteiten. |Controleren, Weigeren, Uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Synapse/SynapseWorkspaceManagedVnet_Audit.json) |
 |[Door Synapse beheerde privé-eindpunten mogen alleen verbinding maken met resources in goedgekeurde Azure Active Directory-tenants](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3a003702-13d2-4679-941b-937e58c443f0) |Beveilig uw Synapse-werkruimte door alleen verbindingen met resources in goedgekeurde Azure Active Directory-tenants (Azure AD) toe te staan. De goedgekeurde Azure AD-tenants kunnen worden gedefinieerd tijdens de beleidstoewijzing. |Controleren, uitgeschakeld, weigeren |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Synapse/Workspace_DataExfiltrationPrevention_Deny.json) |
 |[De controle-instellingen voor de Synapse-werk ruimte moeten actie groepen hebben die zijn geconfigureerd voor het vastleggen van kritieke activiteiten](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F2b18f286-371e-4b80-9887-04759970c0d3) |Om ervoor te zorgen dat uw audit logboeken zo uitgebreid mogelijk zijn, moet de eigenschap AuditActionsAndGroups alle relevante groepen bevatten. U kunt het beste ten minste SUCCESSFUL_DATABASE_AUTHENTICATION_GROUP, FAILED_DATABASE_AUTHENTICATION_GROUP en BATCH_COMPLETED_GROUP toevoegen. Dit is soms vereist om te voldoen aan de regelgevings normen. |AuditIfNotExists, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Synapse/SynapseWorkspaceSqlAuditing_ActionsAndGroups_Audit.json) |
-|[Synapse-werk ruimten moeten worden geconfigureerd met 90 dagen retentie of hoger.](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F529ea018-6afc-4ed4-95bd-7c9ee47b00bc) |Voor het onderzoeken van incidenten wordt aangeraden de gegevens retentie voor uw Synapse-werk ruimte in te stellen op ten minste 90 dagen. Controleer of u de benodigde Bewaar regels hebt voor de regio's waarin u werkt. Dit is soms vereist om te voldoen aan de regelgevings normen. |AuditIfNotExists, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Synapse/SynapseWorkspaceSqlAuditingRetentionDays_Audit.json) |
+|[Synapse-werk ruimten met SQL-controle naar het opslag account doel moeten worden geconfigureerd met een retentie van 90 dagen of hoger](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F529ea018-6afc-4ed4-95bd-7c9ee47b00bc) |Voor het onderzoeken van incidenten wordt aangeraden de gegevens retentie voor uw Synapse-werk ruimte in te stellen op een opslag account doel ten minste 90 dagen. Bevestig dat u voldoet aan de vereiste Bewaar regels voor de regio's waarin u werkt. Dit is soms vereist om te voldoen aan de regelgevings normen. |AuditIfNotExists, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Synapse/SynapseWorkspaceSqlAuditingRetentionDays_Audit.json) |
 |[De evaluatie van beveiligings problemen moet worden ingeschakeld op uw Synapse-werk ruimten](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0049a6b3-a662-4f3e-8635-39cf44ace45a) |Ontdek, volg en herstel mogelijke beveiligings problemen door het configureren van terugkerende SQL-evaluatie scans op uw Synapse-werk ruimten. |AuditIfNotExists, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Synapse/ASC_SQLVulnerabilityAssessmentOnSynapse_Audit.json) |

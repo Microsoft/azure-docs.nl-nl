@@ -9,12 +9,12 @@ ms.subservice: custom-vision
 ms.topic: how-to
 ms.date: 09/11/2020
 ms.author: pafarley
-ms.openlocfilehash: 2afac0e25c394c9bf265daf1fe3ded3d763a7c61
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: fd4ad1443f466a78abfc569d5f52f6bdeff2d5be
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102508500"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105048881"
 ---
 # <a name="integrate-azure-storage-for-notifications-and-backup"></a>Azure Storage integreren voor meldingen en back-ups
 
@@ -29,7 +29,7 @@ Deze hand leiding laat zien hoe u deze REST-Api's met krul kunt gebruiken. U kun
 
 - Een Custom Vision resource in Azure. Als u er nog geen hebt, gaat u naar de Azure Portal en [maakt u een nieuwe Custom Vision resource](https://portal.azure.com/?microsoft_azure_marketplace_ItemHideKey=microsoft_azure_cognitiveservices_customvision#create/Microsoft.CognitiveServicesCustomVision?azure-portal=true). Deze functie biedt momenteel geen ondersteuning voor de cognitieve service resource (allemaal in één sleutel).
 - Een Azure Storage-account met een BLOB-container. Volg [Oefening 1 van de Azure Storage Lab](https://github.com/Microsoft/computerscience/blob/master/Labs/Azure%20Services/Azure%20Storage/Azure%20Storage%20and%20Cognitive%20Services%20(MVC).md#Exercise1) als u hulp nodig hebt bij deze stap.
-* [Power shell versie 6.0 +](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows), of een vergelijk bare opdracht regel toepassing.
+* [Power shell versie 6.0 +](/powershell/scripting/install/installing-powershell-core-on-windows), of een vergelijk bare opdracht regel toepassing.
 
 ## <a name="set-up-azure-storage-integration"></a>Azure Storage-integratie instellen
 

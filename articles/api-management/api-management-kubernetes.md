@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 12/14/2019
 ms.author: apimpm
-ms.openlocfilehash: 293a47bc3e8499d7eda4e64bb68bc95eb4c85ab0
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 36dfc8c906c52c6822e583db3a08c891306f7e78
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98108395"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105047929"
 ---
 # <a name="use-azure-api-management-with-microservices-deployed-in-azure-kubernetes-service"></a>Azure API Management gebruiken met micro services die zijn geïmplementeerd in azure Kubernetes service
 
@@ -95,7 +95,7 @@ Als u een abonnements sleutel voor toegang tot Api's wilt ophalen, is een abonne
 
 ### <a name="option-3-deploy-apim-inside-the-cluster-vnet"></a>Optie 3: APIM implementeren in het cluster-VNet
 
-In sommige gevallen kunnen klanten met wettelijke beperkingen of strikte beveiligings vereisten de optie 1 en 2 geen levensvat bare oplossingen door open bare eind punten vinden. In andere gevallen kunnen het AKS-cluster en de toepassingen die gebruikmaken van de micro Services zich in hetzelfde VNet bevinden. Daarom is er geen reden om het cluster openbaar te maken, omdat al het API-verkeer binnen het VNet blijft. Voor deze scenario's kunt u API Management implementeren in het cluster-VNet. [API Management Premium-laag](https://aka.ms/apimpricing) ondersteunt VNet-implementatie. 
+In sommige gevallen kunnen klanten met wettelijke beperkingen of strikte beveiligings vereisten de optie 1 en 2 geen levensvat bare oplossingen door open bare eind punten vinden. In andere gevallen kunnen het AKS-cluster en de toepassingen die gebruikmaken van de micro Services zich in hetzelfde VNet bevinden. Daarom is er geen reden om het cluster openbaar te maken, omdat al het API-verkeer binnen het VNet blijft. Voor deze scenario's kunt u API Management implementeren in het cluster-VNet. [API Management ontwikkel aars en Premium-lagen](https://aka.ms/apimpricing) ondersteunen de VNet-implementatie. 
 
 Er zijn twee modi voor [het implementeren van API Management in een VNet](./api-management-using-with-vnet.md) – extern en intern. 
 

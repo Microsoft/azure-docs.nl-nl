@@ -6,15 +6,15 @@ author: saveenr
 ms.service: synapse-analytics
 ms.topic: overview
 ms.subservice: overview
-ms.date: 03/27/2021
+ms.date: 03/24/2021
 ms.author: saveenr
 ms.reviewer: jrasnick
-ms.openlocfilehash: 316a78f4725aa3c33a78b00c6de3b8419aea717e
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: a7dcd630b0d5987c796ebb5a02657af9130221e6
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104600204"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105045617"
 ---
 # <a name="what-is-azure-synapse-analytics"></a>Wat is Azure Synapse Analytics?
 
@@ -46,7 +46,7 @@ Azure Synapse verwijdert de traditionele technologische barrières tussen het ge
 * SQL en Spark kunnen Parquet-, CSV-, TSV- en JSON-bestanden die zijn opgeslagen in de data lake rechtstreeks verkennen en analyseren.
 * Snel schaalbare belasting en verwijderen van belasting voor gegevens die worden verzonden tussen SQL-en Spark-databases
 
-## <a name="built-in-data-integration-via-pipelines"></a>Ingebouwde gegevensintegratie via pijplijnen
+## <a name="built-in-data-integration"></a>Ingebouwde gegevens integratie
 
 Azure Synapse bevat dezelfde gegevens integratie-engine en ervaringen als Azure Data Factory, zodat u uitgebreide ETL-pijp lijnen kunt maken zonder Azure Synapse Analytics te verlaten.
 

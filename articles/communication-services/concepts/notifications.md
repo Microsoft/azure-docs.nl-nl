@@ -9,19 +9,19 @@ ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 21c247c2fb9e1532c4580eea894c97e2bff84f92
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 9bf3067737ee1f4e15deaf31677513e5ac99cbd1
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104657039"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105108125"
 ---
 # <a name="communication-services-notifications"></a>Communication Services-meldingen
 
 [!INCLUDE [Public Preview Notice](../includes/public-preview-include.md)]
 
 
-De Azure Communication Services-clientbibliotheken voor chatten en bellen maken een realtime berichtenkanaal waarmee het mogelijk is om op een efficiënte, betrouwbare manier signaleringsberichten naar verbonden clients te pushen. Zo kunt u uitgebreide, realtime communicatiefuncties in uw toepassingen inbouwen zonder dat u complexe logica voor HTTP-polling moet implementeren. In mobiele apps blijft dit kanaal echter slechts verbonden zolang uw app actief is op de voorgrond. Als u wilt dat uw gebruikers inkomende oproepen of chatberichten ontvangen wanneer uw app op de achtergrond staat, moet u pushmeldingen gebruiken.
+De Azure Communication Services-chat-en aanroepende Sdk's maken een realtime berichten kanaal waarmee het mogelijk is om op een efficiënte, betrouw bare manier signalerings berichten naar verbonden clients te pushen. Zo kunt u uitgebreide, realtime communicatiefuncties in uw toepassingen inbouwen zonder dat u complexe logica voor HTTP-polling moet implementeren. In mobiele apps blijft dit kanaal echter slechts verbonden zolang uw app actief is op de voorgrond. Als u wilt dat uw gebruikers inkomende oproepen of chatberichten ontvangen wanneer uw app op de achtergrond staat, moet u pushmeldingen gebruiken.
 
 Met pushmeldingen kunt u informatie verzenden van uw toepassing naar de mobiele apparaten van gebruikers. U kunt pushmeldingen gebruiken om een dialoogvenster weer te geven, een geluid af te spelen of de gebruikersinterface voor binnenkomende oproepen weer te geven. Azure Communication Services biedt integraties met [Azure Event Grid](../../event-grid/overview.md) en [Azure Notification Hubs](../../notification-hubs/notification-hubs-push-notification-overview.md) waarmee u pushmeldingen kunt toevoegen aan uw apps.
 

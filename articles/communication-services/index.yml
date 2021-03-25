@@ -9,12 +9,12 @@ metadata:
   author: mikben
   ms.author: mikben
   ms.date: 03/10/2021
-  ms.openlocfilehash: ec491509c80f69e000a67e40288b6e298ba9fb85
-  ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+  ms.openlocfilehash: b2aec44f3e80267d18844d887f5e2607192ea208
+  ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 03/19/2021
-  ms.locfileid: "104655781"
+  ms.lasthandoff: 03/25/2021
+  ms.locfileid: "105108074"
 landingContent:
 - title: Informatie over Azure Communication Services
   linkLists:
@@ -24,7 +24,7 @@ landingContent:
       url: overview.md
   - linkListType: concept
     links:
-    - text: Clientbibliotheekopties
+    - text: SDK-opties
       url: concepts/sdk-options.md
     - text: Teams Interop
       url: concepts/teams-interop.md
@@ -52,13 +52,13 @@ landingContent:
     links:
     - text: Audio- en videobellen aan uw app toevoegen
       url: quickstarts/voice-video-calling/getting-started-with-calling.md
-    - text: De aanroepende clientbibliotheek gebruiken
+    - text: De aanroepende SDK gebruiken
       url: quickstarts/voice-video-calling/calling-client-samples.md
   - linkListType: concept
     links:
-    - text: Audio- en videoconcepten
+    - text: Voice- en videoconcepten
       url: concepts/voice-video-calling/about-call-types.md
-    - text: Overzicht van de aanroepende clientbibliotheek
+    - text: Overzicht van de SDK
       url: concepts/voice-video-calling/calling-sdk-features.md
     - text: Aanroepstromen
       url: concepts/call-flows.md
@@ -76,7 +76,7 @@ landingContent:
     links:
     - text: Sms-concepten
       url: concepts/telephony-sms/concepts.md
-    - text: Overzicht van de sms-clientbibliotheek
+    - text: SMS-SDK-overzicht
       url: concepts/telephony-sms/sdk-features.md
     - text: Overzicht gesprekken
       url: concepts/voice-video-calling/calling-sdk-features.md
@@ -92,7 +92,7 @@ landingContent:
     links:
     - text: Chatconcepten
       url: concepts/chat/concepts.md
-    - text: Overzicht van de chat-clientbibliotheek
+    - text: Overzicht van chat-SDK
       url: concepts/chat/sdk-features.md
 - title: Voorbeelden
   linkLists:

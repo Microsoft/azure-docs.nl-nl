@@ -9,18 +9,18 @@ ms.topic: how-to
 ms.date: 03/10/2021
 ms.author: jbeauregardb
 ms.reviewer: mikben
-ms.openlocfilehash: b49ee61f3ee4ea8e8a177bca6aa566a07b7ef113
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: 2ef5a3b162d62fa79ed01a156345070ee12b4862
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105044733"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105110675"
 ---
 # <a name="authorize-access-with-managed-identity-to-your-communication-resource-in-your-development-environment"></a>Toegang verlenen met beheerde identiteit voor uw communicatie bron in uw ontwikkel omgeving
 
-De Azure Identity client-bibliotheek biedt Azure Active Directory (Azure AD)-token verificatie voor de Azure SDK. De nieuwste versies van de Azure Communication Services-client bibliotheken voor .NET, Java, python en Java script kunnen worden geïntegreerd met de Azure Identity-bibliotheek om een OAuth 2,0-token te verkrijgen voor autorisatie van aanvragen van Azure Communication Services.
+De Azure Identity SDK biedt Azure Active Directory-ondersteuning (Azure AD)-token verificatie voor de Azure SDK. De nieuwste versies van de Azure Communication Services Sdk's voor .NET, Java, python en Java script zijn geïntegreerd met de Azure-identiteits bibliotheek om een OAuth 2,0-token te verkrijgen voor autorisatie van aanvragen van Azure Communication Services.
 
-Een voor deel van de Azure Identity client-bibliotheek is dat u dezelfde code kunt gebruiken om te verifiëren in meerdere services, ongeacht of uw toepassing wordt uitgevoerd in de ontwikkel omgeving of in Azure. De Azure Identity client-bibliotheek verifieert een beveiligingsprincipal. Wanneer uw code wordt uitgevoerd in azure, is de beveiligingsprincipal een beheerde identiteit voor Azure-resources. In de ontwikkel omgeving bestaat de beheerde identiteit niet, zodat de client bibliotheek de gebruiker of een geregistreerde toepassing verifieert voor test doeleinden.
+Een voor deel van de Azure Identity SDK is dat u dezelfde code kunt gebruiken om te verifiëren in meerdere services, ongeacht of uw toepassing wordt uitgevoerd in de ontwikkel omgeving of in Azure. De Azure Identity SDK verifieert een beveiligingsprincipal. Wanneer uw code wordt uitgevoerd in azure, is de beveiligingsprincipal een beheerde identiteit voor Azure-resources. In de ontwikkel omgeving bestaat de beheerde identiteit niet, zodat de SDK de gebruiker of een geregistreerde toepassing verifieert voor test doeleinden.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -35,7 +35,7 @@ Beheerde identiteiten moeten zijn ingeschakeld op de Azure-resources die u wilt 
 - [Azure PowerShell](../../active-directory/managed-identities-azure-resources/qs-configure-powershell-windows-vm.md)
 - [Azure-CLI](../../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm.md)
 - [Azure Resource Manager-sjabloon](../../active-directory/managed-identities-azure-resources/qs-configure-template-windows-vm.md)
-- [Client bibliotheken Azure Resource Manager](../../active-directory/managed-identities-azure-resources/qs-configure-sdk-windows-vm.md)
+- [Azure Resource Manager Sdk's](../../active-directory/managed-identities-azure-resources/qs-configure-sdk-windows-vm.md)
 - [App-services](../../app-service/overview-managed-identity.md)
 
 ## <a name="authenticate-a-registered-application-in-the-development-environment"></a>Een geregistreerde toepassing verifiëren in de ontwikkel omgeving
@@ -68,7 +68,7 @@ Met de `az ad sp create-for-rbac` opdracht wordt een lijst met Service-Principal
 
 #### <a name="set-environment-variables"></a>Omgevingsvariabelen instellen
 
-De Azure Identity client-bibliotheek leest waarden uit drie omgevings variabelen tijdens runtime om de toepassing te verifiëren. De volgende tabel beschrijft de waarde die moet worden ingesteld voor elke omgevings variabele.
+De Azure Identity SDK leest waarden uit drie omgevings variabelen tijdens runtime om de toepassing te verifiëren. De volgende tabel beschrijft de waarde die moet worden ingesteld voor elke omgevings variabele.
 
 |Omgevingsvariabele|Waarde
 |-|-

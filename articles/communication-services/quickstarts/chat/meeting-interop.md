@@ -1,25 +1,25 @@
 ---
 title: Aan de slag met Teams-interop op Azure Communication Services
 titleSuffix: An Azure Communication Services quickstart
-description: In deze quickstart leert u hoe u kunt deelnemen aan een Teams-vergadering met de chatclientbibliotheek in Azure Communication
+description: In deze Quick Start leert u hoe u kunt deel nemen aan een team vergadering met de Azure Communication chat SDK
 author: askaur
 ms.author: askaur
 ms.date: 03/10/2021
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: 75580931b2df33b02b9759b6faaa5bec548daaae
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: d7ea3b67c3ce85ce104d16785e4e5f4d45b138f6
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103496168"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105106786"
 ---
 # <a name="quickstart-join-your-chat-app-to-a-teams-meeting"></a>Quickstart: Voeg u chat-app toe aan een Teams-meeting
 
 > [!IMPORTANT]
 > Vul [dit formulier](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR21ouQM6BHtHiripswZoZsdURDQ5SUNQTElKR0VZU0VUU1hMOTBBMVhESS4u)in om [teams Tenant interoperabiliteit](../../concepts/teams-interop.md)in of uit te scha kelen.
 
-Ga aan de slag met Azure Communication Services door uw chatoplossing te verbinden met Microsoft Teams, met behulp van de JavaScript-clientbibliotheek. 
+Ga aan de slag met Azure Communication Services door uw chat-oplossing te verbinden met micro soft teams met behulp van de Java script SDK. 
 
 ## <a name="prerequisites"></a>Vereisten 
 

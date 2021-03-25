@@ -2,19 +2,19 @@
 title: Zelf studie-metrische gegevens van Azure Synapse Spark-toepassings niveau verbinden en bewaken
 description: 'Zelf studie: informatie over het integreren van uw bestaande on-premises Prometheus-server met de Azure Synapse-werk ruimte voor bijna realtime Azure Spark-toepassings gegevens met behulp van de Synapse Prometheus-connector.'
 services: synapse-analytics
-author: julieMSFT
+author: jejiang
 ms.author: jejiang
 ms.reviewer: jrasnick
 ms.service: synapse-analytics
 ms.topic: tutorial
 ms.subservice: spark
 ms.date: 01/22/2021
-ms.openlocfilehash: 956d2f8f14b224609542783a8b18d3cdee43fff9
-ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
+ms.openlocfilehash: d22975199eedae353f2dc12588671ae4b54c85ab
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105035622"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105109315"
 ---
 # <a name="tutorial-connect-and-monitor-azure-synapse-spark-application-level-metrics"></a>Zelf studie: metrische gegevens over het Azure Synapse Spark-toepassings niveau verbinden en bewaken
 

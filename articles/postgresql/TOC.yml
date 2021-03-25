@@ -602,6 +602,8 @@
               displayName: 'hyperscale, ssl'
             - name: Beveiligingsbasislijn
               href: postgresql-hyperscale-security-baseline.md
+        - name: Gepland onderhoud
+          href: concepts-hyperscale-maintenance.md
         - name: Bedrijfscontinuïteit
           items:
             - name: Back-ups en herstellen

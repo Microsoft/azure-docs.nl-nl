@@ -1,15 +1,15 @@
 ---
 title: Details van de naleving van de regelgeving voor Azure Security Bench Mark v1
 description: Details van de Azure Security Bench Mark v1-regelgeving voor naleving ingebouwde initiatief. Elke beheeroptie wordt toegewezen aan een of meer Azure Policy-definities die helpen bij de evaluatie.
-ms.date: 03/17/2021
+ms.date: 03/24/2021
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: e8409cb7675e77648aa307ff8b1ecc3e8d8fc2a2
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 0d90cadb215dc1d67f2588d5434fec2202133917
+ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104604811"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105032583"
 ---
 # <a name="details-of-the-azure-security-benchmark-v1-regulatory-compliance-built-in-initiative"></a>Details van de Azure Security Bench Mark v1-regelgeving voor naleving ingebouwde initiatief
 
@@ -165,7 +165,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [Azure Se
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[SQL-servers moeten controle gegevens gedurende ten minste 90 dagen bewaren](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F89099bee-89e0-4b26-a5f4-165451757743) |Voor het onderzoeken van incidenten wordt aangeraden de gegevens retentie voor de controle gegevens van uw SQL-servers tot ten minste 90 dagen in te stellen. Controleer of u de benodigde Bewaar regels hebt voor de regio's waarin u werkt. Dit is soms vereist om te voldoen aan de regelgevings normen. |AuditIfNotExists, uitgeschakeld |[2.1.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlServerAuditingRetentionDays_Audit.json) |
+|[SQL-servers met controle naar het opslag account doel moeten worden geconfigureerd met een retentie van 90 dagen of hoger](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F89099bee-89e0-4b26-a5f4-165451757743) |Voor het onderzoeken van incidenten wordt aangeraden om de gegevens retentie voor uw SQL Server ' auditing to Storage account Destination ' in te stellen op ten minste 90 dagen. Bevestig dat u voldoet aan de vereiste Bewaar regels voor de regio's waarin u werkt. Dit is soms vereist om te voldoen aan de regelgevings normen. |AuditIfNotExists, uitgeschakeld |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlServerAuditingRetentionDays_Audit.json) |
 
 ### <a name="enable-alerts-for-anomalous-activity"></a>Waarschuwingen voor afwijkende activiteiten inschakelen
 

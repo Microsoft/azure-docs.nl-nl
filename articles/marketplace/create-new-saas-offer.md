@@ -7,13 +7,13 @@ ms.reviewer: dannyevers
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
-ms.date: 09/02/2020
-ms.openlocfilehash: f689993ce56a1125a1d1de8f65ce05d01f776ea9
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.date: 03/19/2021
+ms.openlocfilehash: f652858f22e26eb7167a0cc7a2cfb8ef4b600ace
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "93130065"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105047297"
 ---
 # <a name="how-to-create-a-saas-offer-in-the-commercial-marketplace"></a>Een SaaS-aanbieding maken in de commerciële Marketplace
 
@@ -22,6 +22,9 @@ Als commerciële Marketplace-Uitgever kunt u een SaaS-aanbieding (Software as a 
 ## <a name="before-you-begin"></a>Voordat u begint
 
 Als u dit nog niet hebt gedaan, kunt u [een SaaS-aanbieding plannen voor de commerciële Marketplace](plan-saas-offer.md). Hierin worden de technische vereisten voor uw SaaS-app uitgelegd en worden de gegevens en assets beschreven die u nodig hebt bij het maken van uw aanbieding. Tenzij u van plan bent een eenvoudige vermelding (**contact opnemen met** uw aanbiedings optie) in de commerciële Marketplace te publiceren, moet uw SaaS-toepassing voldoen aan de technische vereisten rond verificatie.
+
+> [!IMPORTANT]
+> We raden u aan om een afzonderlijke ontwikkelings-en test-aanbieding (DEV) en een afzonderlijke productie-aanbod (PROD) te maken. In dit artikel wordt beschreven hoe u een productie-aanbod maakt. Zie [een ontwikkel-en test aanbieding maken](create-saas-dev-test-offer.md)voor meer informatie over het maken van een ontwikkel aanbod.
 
 ## <a name="create-a-new-saas-offer"></a>Een nieuwe SaaS-aanbieding maken
 

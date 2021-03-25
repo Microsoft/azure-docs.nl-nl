@@ -5,12 +5,12 @@ ms.topic: include
 ms.date: 03/04/2021
 ms.author: trbye
 ms.custom: devx-track-js
-ms.openlocfilehash: dd92cf24cf007418e52cb5091eb390b46d7a5571
-ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
+ms.openlocfilehash: 7649f9c13db1a10bdb48d19f1019ec3b31244f45
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/24/2021
-ms.locfileid: "104988014"
+ms.locfileid: "105104378"
 ---
 Een van de belangrijkste functies van de Speech-service is de mogelijkheid om menselijke spraak te herkennen en te transcriberen (ook wel spraak-naar-tekst genoemd). In deze quickstart leert u meer over het gebruik van de Speech-SDK in uw apps en producten om spraak-naar-tekst-conversie van hoge kwaliteit uit te voeren.
 
@@ -26,7 +26,7 @@ In dit artikel wordt ervan uitgegaan dat u een Azure-account en een abonnement o
 
 ## <a name="install-the-speech-sdk"></a>De Speech-SDK installeren
 
-Voordat u iets kunt doen, moet u de Speech SDK installeren voor Node.js. Als u alleen de naam van het pakket wilt installeren, voert u uit `npm install microsoft-cognitiveservices-speech-sdk` . Zie het artikel [aan de slag](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/setup-platform?tabs=dotnet%2Clinux%2Cjre%2Cnodejs&pivots=programming-language-javascript) voor instructies voor de begeleide installatie.
+Voordat u iets kunt doen, moet u de Speech SDK installeren voor Node.js. Als u alleen de naam van het pakket wilt installeren, voert u uit `npm install microsoft-cognitiveservices-speech-sdk` . Zie het artikel [aan de slag](../../../quickstarts/setup-platform.md?pivots=programming-language-javascript&tabs=dotnet%2clinux%2cjre%2cnodejs) voor instructies voor de begeleide installatie.
 
 Gebruik de volgende `require` instructie om de SDK te importeren.
 

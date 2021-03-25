@@ -7,12 +7,12 @@ ms.author: crtreasu
 ms.date: 04/01/2020
 ms.topic: overview
 ms.service: azure-object-anchors
-ms.openlocfilehash: 6de027f317072512bd9893303d3a79d0f34f3e3e
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: aebc1013dcead6c32dab55512ce915e25f60f94a
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101748811"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105047572"
 ---
 # <a name="frequently-asked-questions-about-azure-object-anchors"></a>Veelgestelde vragen over Azure object-ankers
 
@@ -78,7 +78,7 @@ De eenheid vertegenwoordigt de maat eenheid van het model. Ondersteunde eenheden
  1. Voer de ogen kalibreren uit om nauw keurige rendering te krijgen.
  2. Zorg ervoor dat de ruimte een uitgebreid visueel patroon en een goede belichting heeft.
  3. Bewaar het object niet, indien mogelijk, weg van wirwar.
- 4. U kunt eventueel ook de cache voor [ruimtelijke toewijzing](https://docs.microsoft.com/windows/mixed-reality/spatial-mapping) wissen op uw HoloLens-apparaat.
+ 4. U kunt eventueel ook de cache voor [ruimtelijke toewijzing](/windows/mixed-reality/spatial-mapping) wissen op uw HoloLens-apparaat.
  5. Scan het object door dit rond te zetten. Zorg ervoor dat het grootste deel van het object wordt waargenomen.
  6. Stel een zoek gebied voldoende groot in om het object te kunnen behandelen.
  7. Het object moet stil blijven tijdens de detectie.

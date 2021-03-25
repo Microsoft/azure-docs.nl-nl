@@ -8,12 +8,12 @@ ms.subservice: fhir
 ms.topic: reference
 ms.date: 1/30/2021
 ms.author: cavoeg
-ms.openlocfilehash: a31fb48443cf760186faad705b8be21a62846a44
-ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
+ms.openlocfilehash: 9bd61d65d6d64dac6081d3491deb8a15efc4a45b
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "103018482"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105048416"
 ---
 # <a name="features"></a>Functies
 
@@ -35,14 +35,14 @@ Eerdere versies die momenteel worden ondersteund, zijn onder andere: `3.0.2`
 | bijwerken met optimistische vergren deling | Ja       | Ja       | Ja       |                                                     |
 | Update (voorwaardelijk)           | Ja       | Ja       | Ja       |                                                     |
 | verzenden                          | Nee        | Nee        | Nee        |                                                     |
-| delete                         | Ja       | Ja       | Ja       |  Zie de opmerking hieronder                                                   |
+| delete                         | Ja       | Ja       | Ja       |  Zie de opmerking hieronder.                                   |
 | verwijderen (voorwaardelijk)           | Nee        | Nee        | Nee        |                                                     |
 | geschiedenis                        | Ja       | Ja       | Ja       |                                                     |
 | maken                         | Ja       | Ja       | Ja       | Ondersteuning voor zowel POST/PUT                               |
 | maken (voorwaardelijk)           | Ja       | Ja       | Ja       | Probleem [#1382](https://github.com/microsoft/fhir-server/issues/1382) |
-| zoeken                         | Gedeeltelijk   | Gedeeltelijk   | Gedeeltelijk   | Zie hieronder                                           |
-| geketende zoek opdracht                 | Nee        | Ja       | Nee        |                                                     |
-| geketende zoek opdracht omkeren         | Nee        | Ja       | Nee        |                                                     |
+| zoeken                         | Gedeeltelijk   | Gedeeltelijk   | Gedeeltelijk   | Zie de sectie zoeken hieronder.                           |
+| geketende zoek opdracht                 | Ja       | Ja       | Gedeeltelijk   | Zie opmerking 2 hieronder.                                   |
+| geketende zoek opdracht omkeren         | Ja       | Ja       | Gedeeltelijk   | Zie opmerking 2 hieronder.                                   |
 | mogelijkheden                   | Ja       | Ja       | Ja       |                                                     |
 | batch                          | Ja       | Ja       | Ja       |                                                     |
 | trans actie                    | Nee        | Ja       | Nee        |                                                     |
@@ -51,6 +51,12 @@ Eerdere versies die momenteel worden ondersteund, zijn onder andere: `3.0.2`
 
 > [!Note]
 > Verwijderd door de FHIR spec vereist dat na het verwijderen van de volgende niet-versie specifieke Lees bewerkingen van een resource een 410 HTTP-status code retourneert en de resource niet meer kan worden gevonden via zoeken. Met de Azure-API voor FHIR kunt u ook de resource volledig verwijderen (inclusief alle geschiedenis). Als u de resource volledig wilt verwijderen, kunt u een parameter instelling door geven `hardDelete` aan True ( `DELETE {server}/{resource}/{id}?hardDelete=true` ). Als u deze para meter niet doorgeeft of instelt `hardDelete` op False, zullen de historische versies van de resource nog steeds beschikbaar zijn.
+
+
+ **Opmerking 2**
+* Hiermee wordt MVP-ondersteuning toegevoegd voor geketende en omgekeerde FHIR-Zoek opdrachten in CosmosDB. 
+
+  In de Azure-API voor FHIR en de open-source FHIR-server die wordt ondersteund door Cosmos, is de geketende zoek opdracht en de zoek opdracht omgekeerde keten een MVP-implementatie. Voor het uitvoeren van een geketende zoek opdracht op Cosmos DB, wordt in de implementatie de zoek expressie door lopen en worden er subquery's beschreven om de overeenkomende resources op te lossen. Dit gebeurt voor elk niveau van de expressie. Als een query meer dan 100 resultaten retourneert, wordt er een fout gegenereerd. Standaard bevindt de geketende zoek opdracht zich achter een functie vlag. Gebruik de koptekst om de geketende zoek opdracht te gebruiken in Cosmos DB `x-ms-enable-chained-search: true` . Zie [PR 1695](https://github.com/microsoft/fhir-server/pull/1695)voor meer informatie.
 
 ## <a name="search"></a>Zoeken
 
@@ -62,7 +68,7 @@ Alle typen zoek parameters worden ondersteund.
 | Datum/datum/tijd         | Ja       | Ja       | Ja       |         |
 | Tekenreeks                | Ja       | Ja       | Ja       |         |
 | Token                 | Ja       | Ja       | Ja       |         |
-| Naslaginformatie             | Ja       | Ja       | Ja       |         |
+| Referentie             | Ja       | Ja       | Ja       |         |
 | Composite             | Ja       | Ja       | Ja       |         |
 | Aantal              | Ja       | Ja       | Ja       |         |
 | URI                   | Ja       | Ja       | Ja       |         |

@@ -6,14 +6,14 @@ ms.reviewer: dhgandhi
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: how-to
-ms.date: 02/11/2021
+ms.date: 03/24/2021
 ms.author: banders
-ms.openlocfilehash: 63fbf76b2211e530707f3598d176b646c317cc53
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: b88a5bc10afeffe7e15ad7a90e28bd8b8ff28688
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100363046"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105046552"
 ---
 # <a name="transfer-azure-subscriptions-between-subscribers-and-csps"></a>Overdracht van Azure-abonnementen tussen abonnees en CSP's
 
@@ -21,7 +21,7 @@ Dit artikel bevat de algemene stappen voor het overdragen van Azure-abonnementen
 
 Voordat u een aanvraag voor een overdracht begint, moet u eventuele kosten- en factureringsgegevens downloaden of exporteren die u wilt blijven gebruiken. Facturerings- en gebruiksgegevens worden niet overgedragen met het abonnement. Zie [Geëxporteerde gegevens maken en beheren](../costs/tutorial-export-acm-data.md) voor meer informatie over het exporteren van gegevens over kostenbeheer. Zie [Uw Azure-factuurgegevens en dagelijkse gebruiksgegevens downloaden of weergeven](download-azure-invoice-daily-usage-date.md) voor meer informatie over het downloaden van uw factuur- en gebruiksgegevens.
 
-Als u bestaande reserveringen hebt, worden ze niet meer toegepast nadat u een abonnement hebt overgedragen. Zorg ervoor dat u [alle reserveringen annuleert en terugbetaalt](../reservations/exchange-and-refund-azure-reservations.md) voordat u een abonnement overdraagt.
+Als u bestaande reserve ringen hebt, wordt het Toep assen van 90 dagen na het overdragen van een abonnement gestopt. Zorg ervoor dat u [alle reserve ringen annuleert en terugbetaalt](../reservations/exchange-and-refund-azure-reservations.md) voordat u een abonnement overdraagt om de kosten na de respijt periode van 90 dagen te voor komen.
 
 ## <a name="transfer-ea-subscriptions-to-a-csp-partner"></a>EA-abonnementen overdragen naar een CSP-partner
 

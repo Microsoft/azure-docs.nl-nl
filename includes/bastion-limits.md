@@ -8,17 +8,18 @@ ms.topic: include
 ms.date: 03/25/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 40f8f5b234a6aecb1b44e4c565873b3badbd139a
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 4f8a66034990cd3e105759b9a5dad721ad3cb0a9
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96183882"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104988032"
 ---
-| Resource | Limiet |
+| Type werk belasting * | Limiet * * |
 | --- | --- |
-| Gelijktijdige RDP-verbindingen |25* |
-| Gelijktijdige SSH-verbindingen |50** |
+| Licht |100 |
+| Normaal |50 |
+| Zwaar |5 |
 
-*Kan variëren als gevolg van andere lopende RDP- of SSH-sessies.<br>
-**Kan variëren als er bestaande RDP-verbindingen zijn of er gebruik plaatsvindt vanuit andere lopende SSH-sessies.
+* Deze typen werk belasting worden hier gedefinieerd: [extern bureaublad workloads](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/remote-desktop-workloads)<br>
+* * Deze limieten zijn gebaseerd op RDP-prestatie tests voor Azure Bastion. De nummers kunnen variëren als gevolg van andere on-continue RDP-sessies of andere on-continue SSH-sessies. 

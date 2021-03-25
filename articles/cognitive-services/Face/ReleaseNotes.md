@@ -10,12 +10,12 @@ ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 03/05/2021
 ms.author: pafarley
-ms.openlocfilehash: 9293d47d8aade11f4cc3ee55bb32574f125dfafc
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: f280e1a70ab595a87789c7514d8cce4fccbe8e84
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102428283"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105046892"
 ---
 # <a name="whats-new-in-face-service"></a>Wat is er nieuw in de Face-service?
 
@@ -23,9 +23,9 @@ De Azure face-service wordt doorlopend bijgewerkt. Gebruik dit artikel om op de 
 
 ## <a name="february-2021"></a>Februari 2021
 
-* Nieuw detectie model voor Face-API: de nieuwe detectie 03-model is het meest nauw keurige detectie model dat momenteel beschikbaar is. Als u een nieuwe klant bent, raden we u aan dit model te gebruiken. Detectie 03 verbetert zowel inkomend als nauw keurigheid van kleinere gezichten gevonden binnen afbeeldingen (64x64 pixels). Aanvullende verbeteringen zijn onder andere een algehele verlaging van de fout-positieven en verbeterde detectie van geroteerde gezichts standen. Het combi neren van detectie 03 met de nieuwe opname 04 biedt ook een verbeterde nauw keurigheid van de herkenning. Zie [een gezichts detectie model opgeven](https://docs.microsoft.com/azure/cognitive-services/face/face-api-how-to-topics/specify-detection-model) voor meer informatie.
-* Kenmerk Face masker: het kenmerk Face masker is beschikbaar in het meest recente model van de detectie 03, samen met het extra kenmerk `"noseAndMouthCovered"` dat detecteert of het gezichts masker is verzorgd als bedoeld, waarbij zowel de neus als de mond worden belicht. Gebruikers moeten het detectie model opgeven in de API-aanvraag om de meest recente mogelijkheid voor masker detectie te gebruiken: wijs de model versie met de para meter _detectionModel_ toe aan `detection_03` . Zie [een gezichts detectie model opgeven](https://docs.microsoft.com/azure/cognitive-services/face/face-api-how-to-topics/specify-detection-model) voor meer informatie.
-* Nieuw Face-API herkennings model: het nieuwe model voor de herkenning 04 is het meest nauw keurige herkennings model dat momenteel beschikbaar is. Als u een nieuwe klant bent, kunt u dit model het beste gebruiken voor verificatie en identificatie. Het verbetert de nauw keurigheid van de erkenning 03, met inbegrip van verbeterde herkenning van geregistreerde gebruikers (chirurgische maskers, N95 Maskers, doek maskers). Klanten kunnen nu een veilige en naadloze gebruikers ervaring bouwen die detecteert of een geregistreerde gebruiker een gezicht bedekt met het meest recente model van de detectie 03 en herkennen wie ze zijn met het laatste model van de opname 04. Zie [een gezichts herkennings model opgeven](https://docs.microsoft.com/azure/cognitive-services/face/face-api-how-to-topics/specify-recognition-model) voor meer informatie.
+* Nieuw detectie model voor Face-API: de nieuwe detectie 03-model is het meest nauw keurige detectie model dat momenteel beschikbaar is. Als u een nieuwe klant bent, raden we u aan dit model te gebruiken. Detectie 03 verbetert zowel inkomend als nauw keurigheid van kleinere gezichten gevonden binnen afbeeldingen (64x64 pixels). Aanvullende verbeteringen zijn onder andere een algehele verlaging van de fout-positieven en verbeterde detectie van geroteerde gezichts standen. Het combi neren van detectie 03 met de nieuwe opname 04 biedt ook een verbeterde nauw keurigheid van de herkenning. Zie [een gezichts detectie model opgeven](./face-api-how-to-topics/specify-detection-model.md) voor meer informatie.
+* Kenmerk Face masker: het kenmerk Face masker is beschikbaar in het meest recente model van de detectie 03, samen met het extra kenmerk `"noseAndMouthCovered"` dat detecteert of het gezichts masker is verzorgd als bedoeld, waarbij zowel de neus als de mond worden belicht. Gebruikers moeten het detectie model opgeven in de API-aanvraag om de meest recente mogelijkheid voor masker detectie te gebruiken: wijs de model versie met de para meter _detectionModel_ toe aan `detection_03` . Zie [een gezichts detectie model opgeven](./face-api-how-to-topics/specify-detection-model.md) voor meer informatie.
+* Nieuw Face-API herkennings model: het nieuwe model voor de herkenning 04 is het meest nauw keurige herkennings model dat momenteel beschikbaar is. Als u een nieuwe klant bent, kunt u dit model het beste gebruiken voor verificatie en identificatie. Het verbetert de nauw keurigheid van de erkenning 03, met inbegrip van verbeterde herkenning van geregistreerde gebruikers (chirurgische maskers, N95 Maskers, doek maskers). Klanten kunnen nu een veilige en naadloze gebruikers ervaring bouwen die detecteert of een geregistreerde gebruiker een gezicht bedekt met het meest recente model van de detectie 03 en herkennen wie ze zijn met het laatste model van de opname 04. Zie [een gezichts herkennings model opgeven](./face-api-how-to-topics/specify-recognition-model.md) voor meer informatie.
 
 
 ## <a name="january-2021"></a>Januari 2021

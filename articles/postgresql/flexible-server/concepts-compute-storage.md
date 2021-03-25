@@ -6,12 +6,12 @@ ms.author: lufittl
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 02/19/2021
-ms.openlocfilehash: b76b6ff788d3d7f44db33af96944d528282f0ac7
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 6bcfbc19cbaa078373d6857bdac74eaf86eca104
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101712212"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105048048"
 ---
 # <a name="compute-and-storage-options-in-azure-database-for-postgresql---flexible-server"></a>Berekenings-en opslag opties in Azure Database for PostgreSQL-flexibele server
 
@@ -121,7 +121,7 @@ U kunt uw I/O-gebruik bewaken in de Azure Portal of met behulp van Azure CLI-opd
 Wanneer het is gemarkeerd met een \* , worden IOPS beperkt door het VM-type dat u hebt geselecteerd. Anders wordt IOPS beperkt door de geselecteerde opslag grootte.
 
 >[!NOTE]
-> Als gevolg van bursting op schijf niveau worden er meer IOPS in de metrische gegevens weer gegeven. Raadpleeg de [documentatie](https://docs.microsoft.com/azure/virtual-machines/disk-bursting#disk-level-bursting) voor meer informatie. 
+> Als gevolg van bursting op schijf niveau worden er meer IOPS in de metrische gegevens weer gegeven. Raadpleeg de [documentatie](../../virtual-machines/disk-bursting.md#disk-level-bursting) voor meer informatie. 
 
 ### <a name="maximum-io-bandwidth-mibsec-for-your-configuration"></a>Maximale I/O-band breedte (MiB/sec) voor uw configuratie
 

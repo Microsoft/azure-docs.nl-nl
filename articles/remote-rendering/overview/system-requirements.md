@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 02/03/2020
 ms.topic: article
 ms.custom: references_regions
-ms.openlocfilehash: dd91622344263dc366a76c913ce0be95718550cd
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 789233ce1ede751276f965143716694c6feca3ca
+ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101705157"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105032785"
 ---
 # <a name="system-requirements"></a>Systeemvereisten
 
@@ -111,12 +111,10 @@ De volgende software moet zijn geïnstalleerd:
 
 ## <a name="unity"></a>Unity
 
-Voor ontwikkeling met Unit, installeert u
-
-* Unity 2019.3.1 [(download)](https://unity3d.com/get-unity/download)
-* Installeer de volgende modules in Unity:
-  * **UWP**: ondersteuning voor UWP-builds (Universeel Windows-platform)
-  * **IL2CPP**: ondersteuning voor Windows-builds (IL2CPP)
+Voor ontwikkeling met Unit installeert u een huidige versie van Unity 2019,3 of 2019,4 LTS [(down load)](https://unity3d.com/get-unity/download). U kunt het beste Unity hub gebruiken voor het beheren van installaties.
+Zorg ervoor dat u de volgende modules opneemt in uw Unity-installatie:
+* **UWP**: ondersteuning voor UWP-builds (Universeel Windows-platform)
+* **IL2CPP**: ondersteuning voor Windows-builds (IL2CPP)
 
 ## <a name="next-steps"></a>Volgende stappen
 

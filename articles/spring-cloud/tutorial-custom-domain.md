@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 03/19/2020
 ms.author: brendm
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: d1ee13a464002a2e1503541964cd96957da3c651
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.openlocfilehash: a0fafad208d97e2a4d24036e226b4044764bccb4
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104879184"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105047079"
 ---
 # <a name="tutorial-map-an-existing-custom-domain-to-azure-spring-cloud"></a>Zelf studie: een bestaand aangepast domein toewijzen aan Azure lente-Cloud
 
@@ -156,7 +156,7 @@ Ga naar uw DNS-provider en voeg een CNAME-record toe om uw domein toe te wijzen 
 ![Pagina met DNS-records](./media/custom-dns-tutorial/dns-records.png)
 
 ## <a name="map-your-custom-domain-to-azure-spring-cloud-app"></a>Uw aangepaste domein toewijzen aan Azure Spring Cloud-app
-Als u geen toepassing in Azure Spring Cloud hebt, volgt u de instructies in [Snelstart: Start een bestaande Azure Spring Cloud-toepassing met behulp van het Azure- portal](/azure/spring-cloud/spring-cloud-quickstart-launch-app-portal).
+Als u geen toepassing in Azure Spring Cloud hebt, volgt u de instructies in [Snelstart: Start een bestaande Azure Spring Cloud-toepassing met behulp van het Azure- portal](./spring-cloud-quickstart.md).
 
 #### <a name="portal"></a>[Portal](#tab/Azure-portal)
 Ga naar de toepassingspagina.

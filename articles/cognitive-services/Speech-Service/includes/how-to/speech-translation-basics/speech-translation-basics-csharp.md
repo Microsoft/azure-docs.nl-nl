@@ -5,12 +5,12 @@ ms.topic: include
 ms.date: 04/13/2020
 ms.author: trbye
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 5efe6e9cf3227857300d649a8c2ecb4973627335
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 798db8e438a78fb818bd0af18f84c87c1f9ceb84
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102444440"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105105782"
 ---
 Een van de belangrijkste functies van de speech-service is de mogelijkheid om menselijke spraak te herkennen en te vertalen naar andere talen. In deze Snelstartgids leert u hoe u de Speech SDK in uw apps en producten kunt gebruiken om spraak vertalingen van hoge kwaliteit uit te voeren. In deze Quick Start vindt u onderwerpen, waaronder:
 
@@ -28,7 +28,7 @@ In dit artikel wordt ervan uitgegaan dat u een Azure-account en een abonnement o
 
 ## <a name="install-the-speech-sdk"></a>De Speech-SDK installeren
 
-Voordat u iets kunt doen, moet u de Speech SDK installeren. Volg afhankelijk van uw platform de instructies in de sectie <a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk#get-the-speech-sdk" target="_blank">de SDK voor spraak ophalen</a> van het artikel _over Speech SDK_ .
+Voordat u iets kunt doen, moet u de Speech SDK installeren. Volg afhankelijk van uw platform de instructies in de sectie <a href="/azure/cognitive-services/speech-service/speech-sdk#get-the-speech-sdk" target="_blank">de SDK voor spraak ophalen</a> van het artikel _over Speech SDK_ .
 
 ## <a name="import-dependencies"></a>Afhankelijkheden importeren
 

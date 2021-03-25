@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 08/28/2020
 ms.author: erhopf
 ms.custom: devx-track-python, devx-track-js, devx-track-csharp
-ms.openlocfilehash: 66de81387fe27bd2a81ebcfeab7d86aac7031ff1
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 90fbc41edbfea0ea99d436906d3052e43bfb4fb8
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102425291"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105043868"
 ---
 # <a name="azure-cognitive-services-security"></a>Azure Cognitive Services-beveiliging
 
@@ -29,13 +29,13 @@ Alle Cognitive Services-eind punten die worden weer gegeven via HTTP afdwingen T
 * De taal (en het platform) waarmee de HTTP-aanroep moet TLS 1,2 opgeven als onderdeel van de aanvraag
   * Afhankelijk van de taal en het platform wordt het opgeven van TLS impliciet of expliciet uitgevoerd
 
-Neem voor .NET-gebruikers rekening met de <a href="https://docs.microsoft.com/dotnet/framework/network-programming/tls" target="_blank">Aanbevolen procedures voor Transport Layer Security </a>.
+Neem voor .NET-gebruikers rekening met de <a href="/dotnet/framework/network-programming/tls" target="_blank">Aanbevolen procedures voor Transport Layer Security </a>.
 
 ## <a name="authentication"></a>Verificatie
 
 Bij het bespreken van verificatie zijn er verschillende veelvoorkomende problemen. Verificatie en autorisatie worden vaak voor elkaar verward. De identiteit is ook een belang rijk onderdeel van de beveiliging. Een identiteit is een verzameling gegevens over een <a href="https://en.wikipedia.org/wiki/Principal_(computer_security)" target="_blank">Principal </a>. Id-providers (IdP) bieden identiteiten aan verificatie services. Verificatie is het verifiëren van de identiteit van een gebruiker. Autorisatie is de specificatie van toegangs rechten en bevoegdheden voor bronnen voor een bepaalde identiteit. Enkele van de Cognitive Services-aanbiedingen, waaronder Azure op rollen gebaseerd toegangs beheer (Azure RBAC). Azure RBAC kan worden gebruikt om een aantal van de ceremonie die betrokken is bij het hand matig beheren van principals, te vereenvoudigen. Zie [toegangs beheer op basis van rollen voor Azure-resources](../role-based-access-control/overview.md)voor meer informatie.
 
-Zie <a href="https://docs.microsoft.com/azure/cognitive-services/authentication" target="_blank">aanvragen verifiëren voor Azure Cognitive Services</a>voor meer informatie over verificatie met abonnements sleutels, toegangs tokens en Azure Active Directory (Aad).
+Zie <a href="/azure/cognitive-services/authentication" target="_blank">aanvragen verifiëren voor Azure Cognitive Services</a>voor meer informatie over verificatie met abonnements sleutels, toegangs tokens en Azure Active Directory (Aad).
 
 ## <a name="environment-variables-and-application-configuration"></a>Omgevings variabelen en toepassings configuratie
 
@@ -113,7 +113,7 @@ Als u een omgevings variabele wilt ophalen, moet deze in het geheugen worden gel
 
 # <a name="c"></a>[C#](#tab/csharp)
 
-Zie <a href="https://docs.microsoft.com/dotnet/api/system.environment.getenvironmentvariable" target="_blank"> `Environment.GetEnvironmentVariable` </a>voor meer informatie.
+Zie <a href="/dotnet/api/system.environment.getenvironmentvariable" target="_blank"> `Environment.GetEnvironmentVariable` </a>voor meer informatie.
 
 ```csharp
 using static System.Environment;
@@ -132,7 +132,7 @@ class Program
 
 # <a name="c"></a>[C++](#tab/cpp)
 
-Zie <a href="https://docs.microsoft.com/cpp/c-runtime-library/reference/getenv-wgetenv" target="_blank"> `getenv` </a>voor meer informatie.
+Zie <a href="/cpp/c-runtime-library/reference/getenv-wgetenv" target="_blank"> `getenv` </a>voor meer informatie.
 
 ```cpp
 #include <stdlib.h>

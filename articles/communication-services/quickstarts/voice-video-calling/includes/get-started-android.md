@@ -1,22 +1,22 @@
 ---
 title: 'Quickstart: VOIP-aanroepen toevoegen aan een Android-app met behulp van Azure Communication Services'
-description: In deze zelfstudie leert u meer over het gebruik van de clientbibliotheek voor aanroepen van Azure Communication Services voor Android
+description: In deze zelf studie leert u hoe u de Azure Communication Services roept SDK voor Android te gebruiken
 author: chpalm
 ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: 094dbd090b5f2d68a9961f2fb9b8b611e486e7bc
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: b68d3a92015a8add2dd97313f9971cf896f8e77e
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104719766"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105108260"
 ---
-In deze quickstart leert u hoe u een oproep start met behulp van de clientbibliotheek voor oproepen van Azure Communication Services voor Android.
+In deze Snelstartgids leert u hoe u een gesprek start met behulp van de Azure Communication Services die SDK voor Android aanroept.
 
 > [!NOTE]
-> Dit document maakt gebruik van versie 1.0.0-Beta. 8 van de aanroepende client bibliotheek.
+> In dit document wordt versie 1.0.0-Beta. 8 van de aanroepende SDK gebruikt.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -37,7 +37,7 @@ Selecteer de projectsjabloon Lege activiteit onder Telefoon en tablet.
 
 :::image type="content" source="../media/android/studio-blank-activity.png" alt-text="Schermopname waarin de optie Lege activiteit is geselecteerd op het scherm Projectsjabloon.":::
 
-Selecteer ten minste clientbibliotheek API 26: Android 8.0 (Oreo) of hoger.
+Selecteer minimale SDK van ' API 26: Android 8,0 (Oreo) ' of hoger.
 
 :::image type="content" source="../media/android/studio-calling-min-api.png" alt-text="Schermopname waarin de optie Lege activiteit is geselecteerd op het scherm Projectsjabloon 2.":::
 
@@ -110,8 +110,8 @@ Als u machtigingen wilt aanvragen die nodig zijn om een aanroep te doen, moeten 
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <!--Our calling client library depends on the Apache HTTP client library.
-When targeting Android client library 28+, this library needs to be explicitly referenced.
+        <!--Our Calling SDK depends on the Apache HTTP SDK.
+When targeting Android SDK 28+, this library needs to be explicitly referenced.
 See https://developer.android.com/about/versions/pie/android-9.0-changes-28#apache-p-->
         <uses-library android:name="org.apache.http.legacy" android:required="false"/>
         <activity android:name=".MainActivity">
@@ -260,11 +260,11 @@ private void getAllPermissions() {
 
 ## <a name="object-model"></a>Objectmodel
 
-De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Azure Communication Services-clientbibliotheek voor aanroepen:
+De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Azure Communication Services-aanroepende SDK:
 
 | Naam                                  | Beschrijving                                                  |
 | ------------------------------------- | ------------------------------------------------------------ |
-| CallClient| De CallClient is het belangrijkste ingangspunt voor de clientbibliotheek voor oproepen.|
+| CallClient| De CallClient is het belangrijkste ingangs punt voor de aanroepende SDK.|
 | CallAgent | De CallAgent wordt gebruikt om oproepen te starten en te beheren. |
 | CommunicationUserCredential | De CommunicationUserCredential wordt als de tokenreferentie gebruikt om de CallAgent te instantiëren.|
 | CommunicationIdentifier | De CommunicationIdentifier wordt gebruikt als een ander type deel nemer dat zou kunnen deel nemen aan een aanroep.|

@@ -11,12 +11,12 @@ ms.date: 02/16/2020
 ms.topic: conceptual
 ms.reviewer: larryfr
 ms.custom: deploy
-ms.openlocfilehash: 2966b685e1904102467bf16994ea781556544047
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 0bb17ded6822c477fe2107c66711af5e2dc384d3
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102519194"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105107836"
 ---
 # <a name="high-performance-serving-with-triton-inference-server-preview"></a>Hoge prestaties met een Triton-inrichtings server (preview-versie) 
 
@@ -31,6 +31,9 @@ Triton is een raam werk dat is *geoptimaliseerd voor* demijnen. Het biedt een be
 
 > [!TIP]
 > De code fragmenten in dit document zijn bedoeld als illustratief en er wordt mogelijk geen volledige oplossing weer gegeven. Zie de [end-to-end-voor beelden van Triton in azure machine learning](https://aka.ms/triton-aml-sample)voor werk voorbeeld code.
+
+> [!NOTE]
+> De Triton-inrichtings [server van NVIDIA](https://aka.ms/nvidia-triton-docs) is een open-source software van derden die is geïntegreerd in azure machine learning.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -97,7 +100,7 @@ models
         - model_1
             - model_version
                 - model_file
-                - config_file
+            - config_file
         - model_2
             ...
 ```
@@ -114,6 +117,11 @@ az ml model register -n my_triton_model -p models --model-framework=Multi
 ```
 
 `az ml model register`Raadpleeg de [referentie documentatie](/cli/azure/ext/azure-cli-ml/ml/model)voor meer informatie.
+
+Bij het registreren van het model in Azure Machine Learning moet de waarde voor de `--model-path  -p` para meter de naam zijn van de bovenliggende map van de Triton.  
+In het bovenstaande voor beeld  `--model-path` is ' modellen '.
+
+De waarde voor de `--name  -n` para meter ' my_triton_model ' in het voor beeld is de model naam bekend als Azure machine learning-werkruimte. 
 
 # <a name="python"></a>[Python](#tab/python)
 
@@ -364,13 +372,17 @@ local_service.delete()
 
 
 ---
+## <a name="troubleshoot"></a>Problemen oplossen
+
+* [Problemen oplossen met een mislukte implementatie](how-to-troubleshoot-deployment.md), meer informatie over het oplossen van problemen en het oplossen van veelvoorkomende fouten die kunnen optreden bij het implementeren van een model.
+
+* Als er in de implementatie Logboeken wordt weer gegeven dat **TritonServer niet kan worden gestart**, raadpleegt u [de documentatie van de open source van NVIDIA.](https://github.com/triton-inference-server/server)
 
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Bekijk end-to-end-voor beelden van Triton in Azure Machine Learning](https://aka.ms/aml-triton-sample)
 * Bekijk de [voor beelden van Triton-clients](https://aka.ms/nvidia-client-examples)
 * Lees de [Triton-Server documentatie](https://aka.ms/nvidia-triton-docs) voor deservering
-* [Problemen met een mislukte implementatie oplossen](how-to-troubleshoot-deployment.md)
 * [Implementeren naar Azure Kubernetes Service](how-to-deploy-azure-kubernetes-service.md)
 * [Webservice bijwerken](how-to-deploy-update-web-service.md)
 * [Gegevens verzamelen voor modellen in productie](how-to-enable-data-collection.md)

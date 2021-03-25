@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
-ms.date: 10/28/2020
+ms.date: 03/24/2021
 ms.author: alkohli
-ms.openlocfilehash: f00be43d023d912d4b0b6e825dfe9d3e0ca2d250
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: a2cc0707c344c3ca537795666a3f60f648026596
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96466862"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105043764"
 ---
 # <a name="use-the-local-web-ui-to-manage-wireless-connectivity-on-your-azure-stack-edge-mini-r"></a>De lokale web-UI gebruiken voor het beheren van draadloze connectiviteit op uw Azure Stack Edge mini maal R
 
@@ -55,6 +55,8 @@ Voer de volgende stappen uit in de lokale gebruikers interface van uw apparaat o
     ![Netwerkinstellingen van Wi-Fi-poort van lokale webinterface](./media/azure-stack-edge-mini-r-deploy-configure-network-compute-web-proxy/add-wifi-profile-1.png)
     
     Het profiel van een draadloos netwerk bevat de SSID (netwerknaam), wachtwoordsleutel en beveiligingsgegevens waarmee verbinding kan worden gemaakt met een draadloos netwerk. U kunt het Wi-Fi-profiel voor uw omgeving van uw netwerkbeheerder krijgen.
+
+    Zie voor meer informatie over het voorbereiden van uw Wi-Fi profielen [Wi-Fi profielen gebruiken met Azure stack Edge mini-R-apparaten](azure-stack-edge-mini-r-use-wifi-profiles.md).
 
     ![Netwerkinstellingen van poort 2 van lokale webinterface](./media/azure-stack-edge-mini-r-deploy-configure-network-compute-web-proxy/add-wifi-profile-2.png)
 

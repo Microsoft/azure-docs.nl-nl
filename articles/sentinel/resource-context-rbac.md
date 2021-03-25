@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/03/2021
 ms.author: bagol
-ms.openlocfilehash: 26124f8f650e1006244b4871e26962d417d90fd4
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: fc1246d079760fd86513840aebbffa34d192f8ed
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102054629"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105044172"
 ---
 # <a name="manage-access-to-azure-sentinel-data-by-resource"></a>Toegang tot Azure-Sentinelgegevens per resource beheren
 
@@ -36,7 +36,7 @@ Wanneer gebruikers toegang hebben tot gegevens van het Azure-verklikker netwerk 
 
 - **Via Azure monitor**. Gebruik deze methode als u query's wilt maken die meerdere resources en/of resource groepen omvatten. Wanneer u naar Logboeken en werkmappen in Azure Monitor navigeert, definieert u uw bereik voor een of meer specifieke resource groepen of resources.
 
-Resource-context RBAC inschakelen in Azure Monitor. Zie [toegang tot logboek gegevens en werk ruimten in azure monitor beheren](/azure/azure-monitor/logs/manage-access)voor meer informatie.
+Resource-context RBAC inschakelen in Azure Monitor. Zie [toegang tot logboek gegevens en werk ruimten in azure monitor beheren](../azure-monitor/logs/manage-access.md)voor meer informatie.
 
 > [!NOTE]
 > Als uw gegevens geen Azure-resource zijn, zoals syslog-, CEF-of AAD-gegevens, of gegevens die door een aangepaste Collector zijn verzameld, moet u de resource-ID die wordt gebruikt om de gegevens te identificeren en toegang inschakelen, hand matig configureren.
@@ -66,7 +66,7 @@ De volgende lijst bevat scenario's waarin andere oplossingen voor gegevens toega
 |---------|---------|
 |**Een dochter onderneming heeft een SOC-team dat een volledige Azure-Sentinel-ervaring vereist**.     |  Gebruik in dit geval een architectuur met meerdere werk ruimten om uw gegevens machtigingen te scheiden. <br><br>Zie voor meer informatie: <br>- [Azure-Sentinel uitbreiden in werk ruimten en tenants](extend-sentinel-across-workspaces-tenants.md)<br>    - [Werk met incidenten in veel werk ruimten tegelijk](multiple-workspace-view.md)          |
 |**U toegang wilt bieden tot een specifiek type gebeurtenis**.     |  Geef bijvoorbeeld een Windows-beheerder met toegang tot Windows-beveiligings gebeurtenissen in alle systemen. <br><br>In dergelijke gevallen gebruikt u [RBAC op tabel niveau](https://techcommunity.microsoft.com/t5/azure-sentinel/table-level-rbac-in-azure-sentinel/ba-p/965043) om machtigingen voor elke tabel te definiëren.       |
-| **Beperk de toegang tot een gedetailleerdere niveau, niet op basis van de resource, of alleen voor een subset van de velden in een gebeurtenis**   |   Stel dat u de toegang tot Office 365-logboeken wilt beperken op basis van de dochter van een gebruiker. <br><br>In dit geval geeft u toegang tot gegevens met behulp van ingebouwde integratie met [Power bi Dash boards en rapporten](/azure/azure-monitor/platform/powerbi).      |
+| **Beperk de toegang tot een gedetailleerdere niveau, niet op basis van de resource, of alleen voor een subset van de velden in een gebeurtenis**   |   Stel dat u de toegang tot Office 365-logboeken wilt beperken op basis van de dochter van een gebruiker. <br><br>In dit geval geeft u toegang tot gegevens met behulp van ingebouwde integratie met [Power bi Dash boards en rapporten](../azure-monitor/visualize/powerbi.md).      |
 | | |
 
 ## <a name="explicitly-configure-resource-context-rbac"></a>Resource context RBAC expliciet configureren
@@ -77,11 +77,11 @@ Gegevens in uw Azure-Sentinel-werk ruimte die geen Azure-resources zijn, zijn bi
 
 De **resource context RBAC expliciet configureren**:
 
-1. Zorg ervoor dat u [resource-context RBAC hebt ingeschakeld](/azure/azure-monitor/platform/manage-access) in azure monitor. 
+1. Zorg ervoor dat u [resource-context RBAC hebt ingeschakeld](../azure-monitor/logs/manage-access.md) in azure monitor. 
 
-1. [Maak een resource groep](/azure/azure-resource-manager/management/manage-resource-groups-portal) voor elk team van gebruikers die toegang nodig hebben tot uw resources zonder de volledige Azure-Sentinel-omgeving.
+1. [Maak een resource groep](../azure-resource-manager/management/manage-resource-groups-portal.md) voor elk team van gebruikers die toegang nodig hebben tot uw resources zonder de volledige Azure-Sentinel-omgeving.
 
-    Wijs [machtigingen voor logboek lezers](/azure/azure-monitor/platform/manage-access#resource-permissions) toe voor elk van de team leden.
+    Wijs [machtigingen voor logboek lezers](../azure-monitor/logs/manage-access.md#resource-permissions) toe voor elk van de team leden.
 
 1. Wijs resources toe aan de resource team groepen die u hebt gemaakt en codeer gebeurtenissen met de relevante resource-Id's.
 
@@ -110,7 +110,7 @@ Als u meerdere teams hebt, moet u ervoor zorgen dat u een afzonderlijke virtuele
 Als u bijvoorbeeld uw Vm's scheidt, zorgt u ervoor dat syslog-gebeurtenissen die deel uitmaken van team A worden verzameld met behulp van de Collector-VM A.
 
 > [!TIP]
-> - Wanneer u een on-premises virtuele machine of een andere Cloud-VM gebruikt, zoals AWS, als uw logboek doorstuur server, moet u ervoor zorgen dat deze een resource-ID heeft door [Azure Arc](/azure/azure-arc/servers/overview)te implementeren.
+> - Wanneer u een on-premises virtuele machine of een andere Cloud-VM gebruikt, zoals AWS, als uw logboek doorstuur server, moet u ervoor zorgen dat deze een resource-ID heeft door [Azure Arc](../azure-arc/servers/overview.md)te implementeren.
 > - Als u de VM-omgeving voor het door sturen van logboeken wilt schalen, kunt u een [VM-schaalset](https://techcommunity.microsoft.com/t5/azure-sentinel/scaling-up-syslog-cef-collection/ba-p/1185854) maken om uw CEF-en SYLOG-logboeken te
 
 
@@ -145,7 +145,7 @@ De volgende code toont bijvoorbeeld een voor beeld van een Logstash-configuratie
 >
 ### <a name="resource-ids-with-the-log-analytics-api-collection"></a>Resource-Id's met de Log Analytics-API-verzameling
 
-Bij het verzamelen met behulp van de [log Analytics Data Collector-API](/azure/azure-monitor/platform/data-collector-api)kunt u gebeurtenissen met een resource-id toewijzen met behulp van de http [*x-MS-AzureResourceId-*](/azure/azure-monitor/platform/data-collector-api#request-headers) aanvraag header.
+Bij het verzamelen met behulp van de [log Analytics Data Collector-API](../azure-monitor/logs/data-collector-api.md)kunt u gebeurtenissen met een resource-id toewijzen met behulp van de http [*x-MS-AzureResourceId-*](../azure-monitor/logs/data-collector-api.md#request-headers) aanvraag header.
 
 Gebruik de resource-ID van de resource groep die u hebt [gemaakt voor uw gebruikers](#explicitly-configure-resource-context-rbac)als u gebruikmaakt van resource-context RBAC en wilt dat de gebeurtenissen die door de API worden verzameld, beschikbaar zijn voor specifieke gebruikers.
 

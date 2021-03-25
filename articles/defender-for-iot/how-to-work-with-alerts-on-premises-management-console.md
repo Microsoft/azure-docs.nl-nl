@@ -3,12 +3,12 @@ title: Werken met waarschuwingen in de on-premises beheerconsole
 description: Gebruik de on-premises beheer console om een Enter prise-weer gave van recente bedreigingen in uw netwerk te verkrijgen en beter te begrijpen hoe de gebruikers van de sensor ze verwerken.
 ms.date: 12/06/2020
 ms.topic: how-to
-ms.openlocfilehash: a99c489c54b2671a463c0c3dad1909c74b4fa203
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.openlocfilehash: 604650f0cb08eac4a3ab1cfd3fdcbf2e7ff0d19e
+ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104781463"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105032137"
 ---
 # <a name="work-with-alerts-on-the-on-premises-management-console"></a>Werken met waarschuwingen in de on-premises beheerconsole 
 
@@ -242,6 +242,7 @@ Regels die u maakt met behulp van de API, worden weer gegeven in het venster **u
 
 :::image type="content" source="media/how-to-work-with-alerts-on-premises-management-console/edit-exclusion-rule-screen.png" alt-text="Scherm opname van de weer gave uitsluitings regel voor bewerken.":::
 
-## <a name="see-also"></a>Zie ook
+## <a name="next-steps"></a>Volgende stappen
 
-[Werken met waarschuwingen op uw sensor](how-to-work-with-alerts-on-your-sensor.md)
+[Werk met waarschuwingen op uw sensor](how-to-work-with-alerts-on-your-sensor.md).
+Bekijk de [waarschuwingen voor de Defender-engine voor IOT](alert-engine-messages.md).

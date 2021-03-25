@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020, devx-track-azurecli, contperf-fy21q2
 ms.date: 03/09/2021
-ms.openlocfilehash: 0b0fc1062f9e57ab716aa0fa88f90924f0485b08
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.openlocfilehash: efd145732ecc119e2fdf9b73ca59729232a37d4c
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104864870"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105109519"
 ---
 # <a name="customize-azure-hdinsight-clusters-by-using-script-actions"></a>Azure HDInsight-clusters aanpassen met behulp van script acties
 
@@ -22,27 +22,32 @@ Script acties kunnen ook worden gepubliceerd naar Azure Marketplace als een HDIn
 
 Een script actie is een bash script dat wordt uitgevoerd op de knoop punten in een HDInsight-cluster. Kenmerken en functies van script acties zijn als volgt:
 
-- Moet worden opgeslagen op een URI die toegankelijk is vanuit het HDInsight-cluster. De volgende opslag locaties zijn mogelijk:
+- De bash-script-URI (de locatie voor toegang tot het bestand) moet toegankelijk zijn vanuit de HDInsight-resource provider en het cluster.
+- De volgende opslag locaties zijn mogelijk:
 
-  - Voor normale (niet-ESP) clusters:
-    - Data Lake Storage Gen1-Gen2: de Service-Principal HDInsight gebruikt om toegang te krijgen tot Data Lake Storage moet lees toegang hebben tot het script. De URI-indeling voor scripts die zijn opgeslagen in Data Lake Storage Gen1 is `adl://DATALAKESTOREACCOUNTNAME.azuredatalakestore.net/path_to_file` .
-    - Een BLOB in een Azure Storage-account dat ofwel het primaire of extra opslag account voor het HDInsight-cluster is. Bij het maken van het cluster wordt aan HDInsight toegang verleend tot beide typen opslag accounts.
+   - Voor normale (niet-ESP) clusters:
+     - Een BLOB in een Azure Storage-account dat ofwel het primaire of extra opslag account voor het HDInsight-cluster is. Bij het maken van het cluster wordt aan HDInsight toegang verleend tot beide typen opslag accounts.
+    
+       > [!IMPORTANT]  
+       > Roteer de opslag sleutel niet op dit Azure Storage account, omdat dit ertoe leidt dat volgende script acties worden uitgevoerd met scripts die daar zijn opgeslagen.
 
-    > [!IMPORTANT]  
-    > Roteer de opslag sleutel niet op dit Azure Storage account, omdat dit ertoe leidt dat volgende script acties worden uitgevoerd met scripts die daar zijn opgeslagen.
+     - Data Lake Storage Gen1: de Service-Principal HDInsight gebruikt om toegang te krijgen tot Data Lake Storage moet lees toegang hebben tot het script. De URI-indeling van het bash-script is `adl://DATALAKESTOREACCOUNTNAME.azuredatalakestore.net/path_to_file` . 
 
-    - Een open bare service voor het delen van bestanden die toegankelijk is via `http://` paden. Voor beelden zijn Azure Blob, GitHub of OneDrive. Zie [voorbeeld script actie scripts](#example-script-action-scripts)voor voor beelden van uri's.
+     - Data Lake Storage Gen2 wordt niet aanbevolen om te gebruiken voor script acties. `abfs://` wordt niet ondersteund voor de bash-script-URI. `https://` Uri's zijn mogelijk, maar deze werken voor containers met open bare toegang, en de firewall open voor de HDInsight-resource provider, en wordt daarom niet aanbevolen.
+
+     - Een open bare service voor het delen van bestanden die toegankelijk is via `https://` paden. Voor beelden zijn Azure Blob, GitHub of OneDrive. Zie [voorbeeld script actie scripts](#example-script-action-scripts)voor voor beelden van uri's.
+
   - Voor clusters met ESP worden de `wasb://` of `wasbs://` - `http[s]://` uri's ondersteund.
 
-- Kan alleen worden uitgevoerd op bepaalde knooppunt typen. Voor beelden zijn hoofd knooppunten of worker-knoop punten.
-- Kan persistent of *ad hoc* zijn.
+- De script acties kunnen worden beperkt om alleen te worden uitgevoerd op bepaalde knooppunt typen. Voor beelden zijn hoofd knooppunten of worker-knoop punten.
+- De script acties kunnen persistent of *ad hoc* zijn.
 
   - Persistente script acties moeten een unieke naam hebben. Persistente scripts worden gebruikt om nieuwe worker-knoop punten die aan het cluster worden toegevoegd, aan te passen via schaal bewerkingen. Een persistent script kan ook wijzigingen Toep assen op een ander type knoop punt wanneer er schaal bewerkingen worden uitgevoerd. Een voor beeld is een hoofd knooppunt.
   - *Ad-hoc* scripts zijn niet persistent. Script acties die worden gebruikt tijdens het maken van het cluster, worden automatisch bewaard. Ze worden niet toegepast op worker-knoop punten die zijn toegevoegd aan het cluster nadat het script is uitgevoerd. Vervolgens kunt u een *ad-hoc* script promo veren naar een persistent script of een persistent script naar een AD- *hoc* script verlagen. Scripts die niet worden bewaard, zelfs niet als u er specifiek voor hebt aangegeven dat ze moeten zijn.
 
-- Kan para meters accepteren die door het script worden gebruikt tijdens de uitvoering.
-- Uitvoeren met bevoegdheden op hoofd niveau op de cluster knooppunten.
-- Kan worden gebruikt via de Azure Portal, Azure PowerShell, Azure CLI of HDInsight .NET SDK.
+- Script acties kunnen para meters accepteren die door het script worden gebruikt tijdens de uitvoering.
+- Script acties worden uitgevoerd met bevoegdheden op hoofd niveau op de cluster knooppunten.
+- Script acties kunnen worden gebruikt via de Azure Portal, Azure PowerShell, Azure CLI of HDInsight .NET SDK.
 - Script acties waarmee service bestanden op de virtuele machine worden verwijderd of gewijzigd, kunnen van invloed zijn op de service status en beschik baarheid.
 
 Het cluster houdt een geschiedenis bij van alle scripts die zijn uitgevoerd. De geschiedenis helpt u bij het vinden van de ID van een script voor promotie-of degradatie bewerkingen.

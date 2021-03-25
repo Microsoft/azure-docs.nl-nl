@@ -1,18 +1,18 @@
 ---
 title: Azure Policy regulerende nalevings controles voor Azure-Signa lering
 description: Een lijst met Azure Policy regulerende nalevings controles die beschikbaar zijn voor Azure signalering. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 03/17/2021
+ms.date: 03/24/2021
 ms.topic: sample
 author: sffamily
 ms.author: zhshang
 ms.service: signalr
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 688c431b425e84fe76f9544080952a8b23b05d15
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: c381a0a3e103445e5b7117b750d256a61f896c3d
+ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104589091"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105037259"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-signalr"></a>Azure Policy regulerende nalevings controles voor Azure-Signa lering
 

@@ -1,22 +1,23 @@
 ---
 title: 'Snelstart: VOIP-oproepen toevoegen aan een web-app met behulp van Azure Communication Services'
-description: In deze zelfstudie leert u meer over het gebruik van de clientbibliotheek voor oproepen van Azure Communication Services voor JavaScript
+description: In deze zelf studie leert u hoe u de Azure Communication Services roept SDK voor Java script
 author: ddematheu
 ms.author: nimag
 ms.date: 03/10/2021
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: 8dc59250e3c00d161446e7361db0c085e12ab4cf
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 0c70e01aa4f27e40a2de5cddf329cae9ffe261bc
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104598814"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105108262"
 ---
-In deze snelstart leert u hoe u de clientbibliotheek voor oproepen van Azure Communication Services voor JavaScript.
+In deze Snelstartgids leert u hoe u een gesprek start met behulp van de Azure Communication Services-SDK voor Java script.
 
 > [!NOTE]
-> Dit document maakt gebruik van versie 1.0.0-Beta. 6 van de aanroepende client bibliotheek.
+> In dit document wordt versie 1.0.0-Beta. 10 van de aanroepende SDK gebruikt.
+
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -74,11 +75,11 @@ const hangUpButton = document.getElementById("hang-up-button");
 
 ## <a name="object-model"></a>Objectmodel
 
-De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Azure Communication Services-clientbibliotheek voor aanroepen:
+De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Azure Communication Services-aanroepende SDK:
 
 | Naam                             | Beschrijving                                                                                                                                 |
 | ---------------------------------| ------------------------------------------------------------------------------------------------------------------------------------------- |
-| CallClient                       | De CallClient is het belangrijkste ingangspunt voor de clientbibliotheek voor oproepen.                                                                       |
+| CallClient                       | De CallClient is het belangrijkste ingangs punt voor de aanroepende SDK.                                                                       |
 | CallAgent                        | De CallAgent wordt gebruikt om oproepen te starten en te beheren.                                                                                            |
 | AzureCommunicationTokenCredential | De klasse AzureCommunicationTokenCredential implementeert de CommunicationTokenCredential-interface die wordt gebruikt om de CallAgent te instantiëren. |
 

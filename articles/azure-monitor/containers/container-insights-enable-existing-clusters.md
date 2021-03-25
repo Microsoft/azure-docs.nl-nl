@@ -4,12 +4,12 @@ description: Meer informatie over het inschakelen van bewaking van een Azure Kub
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-terraform, devx-track-azurecli
-ms.openlocfilehash: e84e1c4ad3aa3950a433218255ccac3d91435231
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: fba12fb8dd5c6c91883a88d4acfdca6c6d332c24
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101717669"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105109621"
 ---
 # <a name="enable-monitoring-of-azure-kubernetes-service-aks-cluster-already-deployed"></a>Bewaking van het cluster van Azure Kubernetes service (AKS) inschakelen dat al is geïmplementeerd
 
@@ -21,6 +21,8 @@ U kunt de bewaking van een AKS-cluster inschakelen dat al is geïmplementeerd me
 * Terraform
 * [Vanuit Azure monitor](#enable-from-azure-monitor-in-the-portal) of [rechtstreeks vanuit het AKS-cluster](#enable-directly-from-aks-cluster-in-the-portal) in de Azure Portal
 * Met de [meegeleverde Azure Resource Manager sjabloon](#enable-using-an-azure-resource-manager-template) met behulp van de Azure PowerShell cmdlet `New-AzResourceGroupDeployment` of met Azure cli.
+
+Als u een bestaand AKS-cluster verbindt met een Azure Log Analytics-werk ruimte in een ander abonnement, moet de resource provider micro soft. container service zijn geregistreerd in het abonnement waarin de Log Analytics-werk ruimte is gemaakt. Zie [resource provider registreren](../../azure-resource-manager/management/resource-providers-and-types.md#register-resource-provider)voor meer informatie.
 
 ## <a name="sign-in-to-the-azure-portal"></a>Aanmelden bij Azure Portal
 

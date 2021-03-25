@@ -8,13 +8,13 @@ ms.topic: how-to
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-ms.date: 03/04/2021
-ms.openlocfilehash: 210f0c52a2b27492bfa2181473043df3537157d2
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.date: 03/23/2021
+ms.openlocfilehash: 8688458d85084f3d3dab4678fa91ed827a337739
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102183196"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105047348"
 ---
 # <a name="configure-maintenance-window-preview"></a>Onderhouds venster configureren (preview-versie)
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -27,7 +27,7 @@ Het *systeem standaard* onderhoud van de computer is tot 17:00 uur naar 8 a.m. D
 De mogelijkheid om te wijzigen in een ander onderhouds venster is niet beschikbaar voor elk service niveau of in elke regio. Zie [Beschik baarheid van onderhouds venster](maintenance-window.md#availability)voor meer informatie over beschik baarheid.
 
 > [!Important]
-> Het configureren van het onderhouds venster is een langlopende asynchrone bewerking, vergelijkbaar met het wijzigen van de servicelaag van de Azure SQL-resource. De resource is beschikbaar tijdens de bewerking, met uitzonde ring van een korte failover die aan het einde van de bewerking plaatsvindt en doorgaans tot 8 seconden duurt, zelfs in het geval van langdurige langlopende trans acties. Als u de gevolgen van de failover wilt beperken, moet u de bewerking buiten de piek uren uitvoeren.
+> Het configureren van het onderhouds venster is een langlopende asynchrone bewerking, vergelijkbaar met het wijzigen van de servicelaag van de Azure SQL-resource. De resource is beschikbaar tijdens de bewerking, met uitzonde ring van een korte herconfiguratie die aan het einde van de bewerking plaatsvindt, en die doorgaans tot 8 seconden duurt, zelfs in het geval van langdurige langlopende trans acties. Als u de gevolgen van de herconfiguratie wilt beperken, moet u de bewerking buiten de piek uren uitvoeren.
 
 ## <a name="configure-maintenance-window-during-database-creation"></a>Onderhouds venster configureren tijdens het maken van de data base 
 
@@ -257,7 +257,7 @@ In het volgende voor beeld wordt een nieuw beheerd exemplaar gemaakt en wordt he
 ## <a name="configure-maintenance-window-for-existing-databases"></a>Onderhouds venster voor bestaande data bases configureren
 
 
-Bij het Toep assen van een onderhouds venster selectie aan een Data Base kan een korte failover (enkele seconden) in sommige gevallen worden ervaren, omdat Azure de vereiste wijzigingen toepast.
+Bij het Toep assen van een onderhouds venster selectie voor een Data Base kan een korte herconfiguratie (enkele seconden) in sommige gevallen worden ervaren, omdat Azure de vereiste wijzigingen toepast.
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 

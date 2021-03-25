@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 10/08/2019
 ms.author: robinsh
-ms.openlocfilehash: b8f8403617a5fc8b442e8a3f74ab9226fe1479fe
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: c47e67375e093ff6e9a5cf7193c76eeeb5228e29
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "97588757"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105045644"
 ---
 # <a name="azure-iot-device-sdks-platform-support"></a>Ondersteuning voor Azure IoT Device Sdk's-platform
 
@@ -59,9 +59,9 @@ De [Azure IOT hub python Device SDK](https://github.com/Azure/azure-iot-sdk-pyth
 
 | Besturingssysteem                  | Programma's                          |
 |---------------------|-----------------------------------|
-| Linux               | Python 2,7. *, 3,5 of hoger |
-| macOS High Sierra   | Python 2,7. *, 3,5 of hoger |
-| Windows 10-serie   | Python 2,7. *, 3,5 of hoger |
+| Linux               | Python 2,7. *, 3,6 of hoger |
+| macOS High Sierra   | Python 2,7. *, 3,6 of hoger |
+| Windows 10-serie   | Python 2,7. *, 3,6 of hoger |
 
 Alleen python-versie 3.5.3 of hoger ondersteunen de asynchrone Api's. we raden u aan om versie 3,7 of hoger te gebruiken.
 

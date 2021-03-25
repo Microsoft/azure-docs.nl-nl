@@ -4,12 +4,12 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 03/10/2021
 ms.author: mikben
-ms.openlocfilehash: 8d4e573cefd595669d9cb2cf9a7b83595eea7971
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 40d9f03526e5232c0a7b33f64ff35a8501702609
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103621957"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105107719"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -23,9 +23,8 @@ ms.locfileid: "103621957"
 ### <a name="install-the-package"></a>Het pakket installeren
 
 > [!NOTE]
-> Dit document maakt gebruik van versie 1.0.0-Beta. 8 van de aanroepende client bibliotheek.
+> In dit document wordt versie 1.0.0-Beta. 8 van de aanroepende SDK gebruikt.
 
-<!-- TODO: update with instructions on how to download, install and add package to project -->
 Zoek de build.gradle op projectniveau op en vergeet niet `mavenCentral()` toe te voegen aan de lijst met opslagplaatsen onder `buildscript` en `allprojects`
 ```groovy
 buildscript {
@@ -59,11 +58,11 @@ dependencies {
 
 ## <a name="object-model"></a>Objectmodel
 
-De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Azure Communication Services-clientbibliotheek voor aanroepen:
+De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Azure Communication Services-aanroepende SDK:
 
 | Naam                                  | Beschrijving                                                  |
 | ------------------------------------- | ------------------------------------------------------------ |
-| CallClient| De CallClient is het belangrijkste ingangspunt voor de clientbibliotheek voor oproepen.|
+| CallClient| De CallClient is het belangrijkste ingangs punt voor de aanroepende SDK.|
 | CallAgent | De CallAgent wordt gebruikt om oproepen te starten en te beheren. |
 | CommunicationTokenCredential | De CommunicationTokenCredential wordt gebruikt als de token referentie voor het instantiëren van de CallAgent.|
 | CommunicationIdentifier | De CommunicationIdentifier wordt gebruikt als een ander type deel nemer dat zou kunnen deel nemen aan een aanroep.|
@@ -224,10 +223,10 @@ Er is een set machtigingen vereist voor de Android-toepassing om meldings berich
 
 Als u zich wilt registreren voor push meldingen, moet de toepassing `registerPushNotification()` een *CallAgent* -exemplaar aanroepen met een apparaat registratie token.
 
-Om het token voor apparaatregistratie te verkrijgen, voegt u de Firebase-client bibliotheek toe aan het bestand *Build. gradle* van uw toepassings module door de volgende regels toe te voegen in de `dependencies` sectie als deze nog niet bestaat:
+Om het token voor apparaatregistratie te verkrijgen, voegt u de Firebase-SDK toe aan het bestand *Build. gradle* van uw toepassings module door de volgende regels toe te voegen in de `dependencies` sectie als deze nog niet bestaat:
 
 ```
-    // Add the client library for Firebase Cloud Messaging
+    // Add the SDK for Firebase Cloud Messaging
     implementation 'com.google.firebase:firebase-core:16.0.8'
     implementation 'com.google.firebase:firebase-messaging:20.2.4'
 ```
@@ -244,7 +243,7 @@ Voeg de volgende invoeg toepassing toe aan het begin van het bestand als dit nog
 apply plugin: 'com.google.gms.google-services'
 ```
 
-Selecteer *Nu synchroniseren* in de werk balk. Voeg het volgende code fragment toe om het token voor apparaatregistratie op te halen dat door de Firebase Cloud Messa ging-client bibliotheek voor het exemplaar van de client toepassing wordt gegenereerd, en voeg de onderstaande import toe aan de koptekst van de hoofd activiteit voor het exemplaar. Ze zijn vereist voor het fragment om het token op te halen:
+Selecteer *Nu synchroniseren* in de werk balk. Voeg het volgende code fragment toe om het token voor apparaatregistratie op te halen dat is gegenereerd door de Firebase Cloud Messa ging SDK voor het exemplaar van de client toepassing. Voeg de onderstaande invoer toe aan de koptekst van de hoofd activiteit voor het exemplaar. Ze zijn vereist voor het fragment om het token op te halen:
 
 ```
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -272,7 +271,7 @@ Voeg dit fragment toe om het token op te halen:
                     }
                 });
 ```
-Registreer het token voor apparaatregistratie met de aanroepende Services-client bibliotheek voor push meldingen voor inkomende oproepen:
+Registreer het token voor apparaatregistratie met de Call Services SDK voor inkomende gesprek push meldingen:
 
 ```java
 String deviceRegistrationToken = "<Device Token from previous section>";
@@ -288,7 +287,7 @@ catch(Exception e) {
 
 Als u push meldingen voor inkomende oproepen wilt ontvangen, roept u *handlePushNotification ()* aan voor een *CallAgent* -exemplaar met een payload.
 
-Als u de payload van Firebase Cloud Messa ging wilt verkrijgen, begint u met het maken van een nieuwe service (bestand > nieuwe > service >-service) die de klasse *FirebaseMessagingService* Firebase-client bibliotheek uitbreidt en de methode overschrijft `onMessageReceived` . Deze methode is de gebeurtenis-handler die wordt aangeroepen wanneer Firebase Cloud Messa ging de push melding naar de toepassing levert.
+Als u de payload van Firebase Cloud Messa ging wilt verkrijgen, begint u met het maken van een nieuwe service (bestand > nieuwe > service > service) die de *FirebaseMessagingService* Firebase SDK-klasse uitbreidt en de methode overschrijft `onMessageReceived` . Deze methode is de gebeurtenis-handler die wordt aangeroepen wanneer Firebase Cloud Messa ging de push melding naar de toepassing levert.
 
 ```java
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
@@ -318,7 +317,7 @@ Voeg de volgende service definitie toe aan het `AndroidManifest.xml` bestand in 
         </service>
 ```
 
-- Zodra de payload is opgehaald, kan deze worden door gegeven aan de *communicatie Services* -client bibliotheek die moet worden geparseerd naar een intern *IncomingCallInformation* -object dat wordt verwerkt door de *handlePushNotification* -methode aan te roepen voor een *CallAgent* -exemplaar. Er `CallAgent` wordt een exemplaar gemaakt door de `createCallAgent(...)` methode aan te roepen voor de `CallClient` klasse.
+- Zodra de payload is opgehaald, kan deze worden door gegeven aan de SDK van de *communicatie Services* om te worden geparseerd naar een intern *IncomingCallInformation* -object dat wordt verwerkt door de *handlePushNotification* -methode aan te roepen voor een *CallAgent* -exemplaar. Er `CallAgent` wordt een exemplaar gemaakt door de `createCallAgent(...)` methode aan te roepen voor de `CallClient` klasse.
 
 ```java
 try {

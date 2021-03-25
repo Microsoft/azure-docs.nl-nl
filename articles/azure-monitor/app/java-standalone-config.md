@@ -6,12 +6,12 @@ ms.date: 11/04/2020
 author: MS-jgol
 ms.custom: devx-track-java
 ms.author: jgol
-ms.openlocfilehash: e58d69634712a9cc640ba9e4785a7bf1effaf88c
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 91ad5a6d95c634300db83d66df8f0407b4544cde
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103224653"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105024163"
 ---
 # <a name="configuration-options---azure-monitor-application-insights-for-java"></a>Configuratie opties-Azure Monitor Application Insights voor Java
 
@@ -122,6 +122,17 @@ U kunt het steekproef percentage ook instellen met behulp van de omgevings varia
 > [!NOTE]
 > Kies voor het steekproef percentage een percentage dat dicht bij 100/N ligt waarbij N een geheel getal is. De huidige steek proef biedt geen ondersteuning voor andere waarden.
 
+## <a name="sampling-overrides-preview"></a>Steek proeven van onderdrukkingen (preview-versie)
+
+Deze functie is beschikbaar als preview-versie, vanaf 3.0.3-BETA. 2.
+
+Met bemonsterings onderdrukkingen kunt u het [standaard sampling percentage](#sampling)overschrijven, bijvoorbeeld:
+* Stel het steekproef percentage in op 0 (of een kleine waarde) voor slechte status controles.
+* Stel het steekproef percentage in op 0 (of een kleine waarde) voor ruis afhankelijke afhankelijkheids aanroepen.
+* Stel het steekproef percentage in op 100 voor een belang rijk aanvraag type (bijvoorbeeld `/login` ), hoewel u de standaard steekproef hebt geconfigureerd voor iets lager.
+
+Raadpleeg voor meer informatie de documentatie voor [steek proeven met onderdrukkingen](./java-standalone-sampling-overrides.md) .
+
 ## <a name="jmx-metrics"></a>Metrische gegevens van JMX
 
 Als u een aantal aanvullende JMX-metrische gegevens wilt verzamelen:
@@ -176,9 +187,13 @@ Deze functie is beschikbaar als preview-versie.
 Hiermee kunt u regels configureren die worden toegepast op aanvraag-, afhankelijkheids-en traceer-telemetrie, bijvoorbeeld:
  * Masker gevoelige gegevens
  * Aangepaste dimensies voorwaardelijk toevoegen
- * De naam van de telemetrie bijwerken die wordt gebruikt voor aggregatie en weer gave
+ * Werk de naam van de span bij, die wordt gebruikt voor het samen voegen van vergelijk bare telemetrie in de Azure Portal.
+ * Specifieke span attributen verwijderen om opname kosten te bepalen.
 
 Raadpleeg de documentatie van de [telemetrie-processor](./java-standalone-telemetry-processors.md) voor meer informatie.
+
+> [!NOTE]
+> Zie [steekproef onderdrukkingen](./java-standalone-sampling-overrides.md)als u specifieke (hele) reeksen wilt verwijderen voor het beheren van opname kosten.
 
 ## <a name="auto-collected-logging"></a>Automatisch verzamelde logboek registratie
 

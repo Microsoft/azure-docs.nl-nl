@@ -9,12 +9,12 @@ ms.subservice: face-api
 ms.topic: include
 ms.date: 11/05/2020
 ms.author: v-jawe
-ms.openlocfilehash: b4a63f76cbcd9e98295f5edcf7ff2d06979e6556
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 590ad577f3648ea9214ec4dcb6b6cab59dd5a3f1
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102244458"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105104286"
 ---
 ## <a name="quickstart-face-client-library-for-javascript"></a>Snelstartgids: Face client-bibliotheek voor Java script
 
@@ -79,7 +79,7 @@ Maak variabelen voor het Azure-eindpunt en de Azure-sleutel voor uw resource.
 > [!IMPORTANT]
 > Ga naar Azure Portal. Als de bron van het gezicht die u hebt gemaakt in de sectie **vereisten** is geïmplementeerd, klikt u op de knop **Ga naar resource** onder **volgende stappen**. U vindt uw sleutel en eindpunt op de pagina **Sleutel en eindpunt** van de resource, onder **Resourcebeheer**. 
 >
-> Vergeet niet de sleutel uit uw code te verwijderen wanneer u klaar bent, en plaats deze sleutel nooit in het openbaar. Overweeg om voor productie een veilige manier te gebruiken voor het opslaan en openen van uw referenties. Zie het artikel Cognitive Services [Beveiliging](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-security) voor meer informatie.
+> Vergeet niet de sleutel uit uw code te verwijderen wanneer u klaar bent, en plaats deze sleutel nooit in het openbaar. Overweeg om voor productie een veilige manier te gebruiken voor het opslaan en openen van uw referenties. Zie het artikel Cognitive Services [Beveiliging](../../../cognitive-services-security.md) voor meer informatie.
 
 ```javascript
 key = "<paste-your-face-key-here>"
@@ -114,7 +114,7 @@ De onderstaande codefragmenten laten zien hoe u de volgende taken kunt uitvoeren
 
 ## <a name="authenticate-the-client"></a>De client verifiëren
 
-Instantieer een client met uw eindpunt en sleutel. Maak een **[ApiKeyCredentials](https://docs.microsoft.com/javascript/api/@azure/ms-rest-js/apikeycredentials)** -object met uw sleutel en gebruik het met uw eind punt om een **[FaceClient](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-face/faceclient)** -object te maken.
+Instantieer een client met uw eindpunt en sleutel. Maak een **[ApiKeyCredentials](/javascript/api/@azure/ms-rest-js/apikeycredentials)** -object met uw sleutel en gebruik het met uw eind punt om een **[FaceClient](/javascript/api/@azure/cognitiveservices-face/faceclient)** -object te maken.
 
 :::code language="js" source="~/cognitive-services-quickstart-code/javascript/Face/sdk_quickstart.js" id="credentials":::
 
@@ -216,7 +216,7 @@ Als u een Cognitive Services-abonnement wilt opschonen en verwijderen, kunt u de
 In deze Quick Start hebt u geleerd hoe u de face-client bibliotheek voor Java script kunt gebruiken om verlichtings taken uit te voeren. Bestudeer daarna het naslagmateriaal bij de Face-API voor meer informatie.
 
 > [!div class="nextstepaction"]
-> [Face-API referentie (Java script)](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-face/)
+> [Face-API referentie (Java script)](/javascript/api/@azure/cognitiveservices-face/)
 
 * [Wat is de Face-service?](../../overview.md)
 * De broncode voor dit voorbeeld is te vinden op [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/javascript/Face/sdk_quickstart.js).

@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/10/2020
-ms.openlocfilehash: 1b5fd10b3e0bd84aa7d34a918f4f2376130d2e45
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 9c4b15fa2a8be32aa7397ae425f28f1deaac6b71
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102052259"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105024605"
 ---
 # <a name="vm-insights-guest-health-alerts-preview"></a>VM Insights-status waarschuwingen voor gast (preview-versie)
 Met de VM Insights-gast status kunt u de status van een virtuele machine bekijken, zoals gedefinieerd door een set prestatie metingen die regel matig worden steek proeven. Er kan een waarschuwing worden gemaakt wanneer de status van een virtuele machine wordt gewijzigd of als de monitor wordt beschadigd. U kunt deze waarschuwingen weer geven en beheren met [gebruikers die zijn gemaakt door waarschuwings regels in azure monitor](../alerts/alerts-overview.md) en ervoor kiezen om proactief te worden gewaarschuwd wanneer er een nieuwe waarschuwing wordt gemaakt.
@@ -35,7 +35,7 @@ Er wordt een [Azure-waarschuwing](../alerts/alerts-overview.md) gemaakt voor elk
 Als er al een waarschuwing wordt **geactiveerd** wanneer de status van de virtuele machine wordt gewijzigd, wordt er geen tweede waarschuwing gemaakt, maar wordt de ernst van dezelfde waarschuwing gewijzigd zodat deze overeenkomt met de status van de virtuele machine. Als de virtuele machine bijvoorbeeld verandert in een **kritieke** status wanneer er al een **waarschuwing** is **geactiveerd** , wordt de ernst van de waarschuwing gewijzigd in **Sev1**. Als de virtuele machine verandert in een **waarschuwings** status wanneer er al een **Sev1** -waarschuwing is **geactiveerd** , wordt de ernst van de waarschuwing gewijzigd in **Sev2**. Als de virtuele machine weer in de status **in orde** wordt gezet, wordt de waarschuwing opgelost met de ernst gewijzigd in **Sev4**.
 
 ## <a name="viewing-alerts"></a>Waarschuwingen weer geven
-Waarschuwingen weer geven die zijn gemaakt door de VM Insights-gast status met andere [waarschuwingen in de Azure Portal](../platform/alerts-overview.md#alerts-experience). U kunt **waarschuwingen** selecteren in het menu **Azure monitor** om waarschuwingen weer te geven voor alle bewaakte resources, of **waarschuwingen** selecteren in het menu van een virtuele machine om waarschuwingen voor de virtuele machine weer te geven.
+Waarschuwingen weer geven die zijn gemaakt door de VM Insights-gast status met andere [waarschuwingen in de Azure Portal](../alerts/alerts-overview.md#alerts-experience). U kunt **waarschuwingen** selecteren in het menu **Azure monitor** om waarschuwingen weer te geven voor alle bewaakte resources, of **waarschuwingen** selecteren in het menu van een virtuele machine om waarschuwingen voor de virtuele machine weer te geven.
 
 ## <a name="alert-properties"></a>Waarschuwingseigenschappen
 

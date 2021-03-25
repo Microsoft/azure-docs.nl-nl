@@ -3,12 +3,12 @@ title: Een beheergroep maken met de portal
 description: In deze quickstart gebruikt u de Azure-portal om een beheergroep te maken om uw resources in een resource-hiërarchie in te delen.
 ms.date: 02/05/2021
 ms.topic: quickstart
-ms.openlocfilehash: 5a336fe4caf5d2f825a93b5c7b8f8d05f6255c39
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 2fa9b667079104fe9728ab41ecd87685c35de1b7
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "99592429"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105024683"
 ---
 # <a name="quickstart-create-a-management-group"></a>Quickstart: Een beheergroep maken
 
@@ -32,7 +32,7 @@ Het kan tot vijftien minuten duren voordat de eerste beheergroep die in de map i
 
 1. Selecteer **+ Beheergroep toevoegen**.
 
-   :::image type="content" source="./media/main.png" alt-text="Schermopname van de pagina Beheergroepen, met onderliggende beheergroepen en abonnementen." border="false":::
+   :::image type="content" source="./media/main.png" alt-text="Schermopname van de pagina Beheergroepen, met onderliggende beheergroepen en abonnementen.":::
 
 1. Houd **Nieuwe maken** ingedrukt en vul het veld Beheergroep-ID in.
 

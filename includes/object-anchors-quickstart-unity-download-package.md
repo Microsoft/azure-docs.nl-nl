@@ -4,12 +4,12 @@ ms.service: azure-object-anchors
 ms.topic: include
 ms.date: 02/18/2021
 ms.author: crtreasu
-ms.openlocfilehash: 4345810292896cf88de19baf419eee025ba5853f
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: ada83d6263ef033208200d810c53c5f045acc9a7
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102044634"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105104084"
 ---
 De volgende stap is het downloaden van het pakket met Azure object-ankers voor Unity.
 
@@ -38,6 +38,6 @@ Het pakket met Azure object-ankers wordt gedownload naar de map waarin u de opdr
 
 # <a name="install-with-mixed-reality-feature-tool-beta"></a>[Installeren met het hulp programma voor functie voor gemengde realiteit (bèta)](#tab/unity-package-mixed-reality-feature-tool)
 
-Ga door naar de volgende stap. U gebruikt het <a a href="https://aka.ms/MRFeatureToolDocs" target="_blank">hulp programma voor de functie voor gemengde realiteit</a> in een latere stap.
+Ga door naar de volgende stap. U gebruikt het <a a href="/windows/mixed-reality/develop/unity/welcome-to-mr-feature-tool" target="_blank">hulp programma voor de functie voor gemengde realiteit</a> in een latere stap.
 
 ---

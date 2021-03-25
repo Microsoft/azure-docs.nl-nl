@@ -4,14 +4,14 @@ ms.service: databox
 ms.topic: include
 ms.date: 01/15/2021
 ms.author: alkohli
-ms.openlocfilehash: 71d5a910e36762d096763c4f45a13cbdad47414d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: e459ea1e9d8d7d51a62ba3ed1d2de8815a1b4222
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101730618"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105105010"
 ---
-Voordat u Vm's op uw Azure Stack edge-apparaat kunt implementeren, moet u uw client configureren om verbinding te maken met het apparaat via Azure Resource Manager over Azure PowerShell. Zie [verbinding maken met Azure Resource Manager op uw Azure stack edge-apparaat](../articles/databox-online/azure-stack-edge-j-series-connect-resource-manager.md)voor gedetailleerde instructies.
+Voordat u Vm's op uw Azure Stack edge-apparaat kunt implementeren, moet u uw client configureren om verbinding te maken met het apparaat via Azure Resource Manager over Azure PowerShell. Zie [verbinding maken met Azure Resource Manager op uw Azure stack edge-apparaat](../articles/databox-online/azure-stack-edge-gpu-connect-resource-manager.md)voor gedetailleerde instructies.
 
 Zorg ervoor dat u de volgende stappen kunt gebruiken om toegang te krijgen tot het apparaat vanaf uw client. U hebt deze configuratie al uitgevoerd toen u verbinding hebt gemaakt met Azure Resource Manager en u controleert nu of de configuratie is geslaagd. 
 
@@ -38,5 +38,3 @@ Zorg ervoor dat u de volgende stappen kunt gebruiken om toegang te krijgen tot h
 
     > [!NOTE]
     > Als u GPU-Vm's maakt, selecteert u een netwerk interface die is verbonden met internet. Hierdoor kunt u een GPU-extensie op uw apparaat installeren.
-
-

@@ -9,14 +9,14 @@ author: deepakpalled
 ms.author: dpalled
 manager: cshankar
 ms.date: 10/02/2020
-ms.openlocfilehash: 0ce9575f078058c821ffffe1b9fe45eed5a4ad94
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 22411e5a80f555a3ead05d39466a7a175923d9bc
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101724167"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105104890"
 ---
-* Nadat u het juiste platform hebt geselecteerd in stap 4 van [platform instellingen configureren](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app#configure-platform-settings) , configureert u de **omleidings-Uri's** en **toegangs tokens** in het deel venster aan de rechter kant van de gebruikers interface.
+* Nadat u het juiste platform hebt geselecteerd in stap 4 van [platform instellingen configureren](../articles/active-directory/develop/quickstart-register-app.md#configure-platform-settings) , configureert u de **omleidings-Uri's** en **toegangs tokens** in het deel venster aan de rechter kant van de gebruikers interface.
 
     * **Omleidings-uri's** moeten overeenkomen met het adres dat is opgegeven door de verificatie aanvraag:
 
@@ -41,4 +41,4 @@ ms.locfileid: "101724167"
 
     [![Geef het type API-machtiging op dat voor uw app is vereist](media/time-series-insights-aad-registration/active-directory-app-permission-grant.png)](media/time-series-insights-aad-registration/active-directory-app-permission-grant.png#lightbox)
 
-* [Voeg referenties toe](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app#add-credentials) als de toepassing de api's van uw omgeving als zichzelf aanroept. Met referenties kan uw toepassing zichzelf verifiëren, waardoor er geen interactie van een gebruiker tijdens runtime nodig is.
+* [Voeg referenties toe](../articles/active-directory/develop/quickstart-register-app.md#add-credentials) als de toepassing de api's van uw omgeving als zichzelf aanroept. Met referenties kan uw toepassing zichzelf verifiëren, waardoor er geen interactie van een gebruiker tijdens runtime nodig is.

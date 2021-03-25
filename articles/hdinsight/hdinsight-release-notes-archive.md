@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 02/08/2021
-ms.openlocfilehash: 0a9a58e91202d42640264aba00e1a583be1cde70
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 4e7b25315aaadffe7f34b28195c25b77a36fa5f8
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101705650"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104872146"
 ---
 # <a name="archived-release-notes"></a>Gearchiveerde releaseopmerkingen
 
@@ -385,7 +385,7 @@ Service Tags vereenvoudigen de beveiliging van virtuele Azure-machines en virtue
 #### <a name="custom-ambari-db"></a>Aangepaste Ambari-database
 Met HDInsight kunt u nu uw eigen SQL-Data Base gebruiken voor Apache Ambari. U kunt deze aangepaste Ambari-data base configureren vanuit het Azure Portal of via de Resource Manager-sjabloon.  Met deze functie kunt u de juiste SQL-data base kiezen voor uw verwerkings-en capaciteits behoeften. U kunt ook eenvoudig een upgrade uitvoeren om te voldoen aan de vereisten voor bedrijfs groei. Zie [HDInsight-clusters instellen met een aangepaste AMBARI DB](hdinsight-custom-ambari-db.md)voor meer informatie.
 
-![Aangepaste Ambari-database](./media/hdinsight-release-notes/custom-ambari-db.png)
+:::image type="content" source="./media/hdinsight-release-notes/custom-ambari-db.png" alt-text="Aangepaste Ambari-database":::
 
 ### <a name="deprecation"></a>Afschaffing
 Geen afschaffing van deze release. Zie [aanstaande wijzigingen](#upcoming-changes)voor meer informatie over het voorbereiden van toekomstige afschaffing.

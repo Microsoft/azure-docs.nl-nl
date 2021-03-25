@@ -3,12 +3,12 @@ title: Een beheerde installatie kopie gebruiken om een aangepaste installatie ko
 description: Maak een aangepaste batch-installatie kopie groep van een beheerde installatie kopie om reken knooppunten in te richten met de software en gegevens voor uw toepassing.
 ms.topic: conceptual
 ms.date: 11/18/2020
-ms.openlocfilehash: 0a357a1d8a22341297f3bee73fb0867fb03f374f
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 9baa65c0f1c1844ea10e3d5b4f0b48924912d233
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "94916573"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105023874"
 ---
 # <a name="use-a-managed-image-to-create-a-custom-image-pool"></a>Een beheerde installatie kopie gebruiken om een aangepaste installatie kopie groep te maken
 
@@ -43,7 +43,7 @@ Als u batch-Pools betrouwbaar wilt schalen met een beheerde installatie kopie, r
 Als u een nieuwe VM voor de installatie kopie maakt, gebruikt u een Azure Marketplace-installatie kopie van de eerste partij die door batch wordt ondersteund als basis installatie kopie voor uw beheerde installatie kopie. Alleen installatie kopieën van de eerste partij kunnen worden gebruikt als basis installatie kopie. Voor een volledige lijst met voor beelden van Azure Marketplace-installatie kopieën die door Azure Batch worden ondersteund, raadpleegt u de [List node agent sku's](/java/api/com.microsoft.azure.batch.protocol.accounts.listnodeagentskus) -bewerking.
 
 > [!NOTE]
-> U kunt geen afbeelding van derden gebruiken die aanvullende licentie-en aankoop voorwaarden als uw basis installatie kopie heeft. Zie de richt lijnen voor [Linux](../virtual-machines/linux/cli-ps-findimage.md#deploy-an-image-with-marketplace-terms) -of [Windows](../virtual-machines/windows/cli-ps-findimage.md#deploy-an-image-with-marketplace-terms) -vm's voor meer informatie over deze installatie kopieën voor Marketplace.
+> U kunt geen afbeelding van derden gebruiken die aanvullende licentie-en aankoop voorwaarden als uw basis installatie kopie heeft. Zie de richt lijnen voor [Linux](../virtual-machines/linux/cli-ps-findimage.md#check-the-purchase-plan-information) -of [Windows](../virtual-machines/windows/cli-ps-findimage.md#view-purchase-plan-properties)-vm's voor meer informatie over deze installatie kopieën voor Marketplace.
 
 - Zorg ervoor dat de virtuele machine is gemaakt met een beheerde schijf. Dit is de standaard instelling voor opslag wanneer u een VM maakt.
 - Installeer geen Azure-extensies, zoals de aangepaste script extensie, op de VM. Als de installatie kopie een vooraf geïnstalleerde extensie bevat, kan Azure problemen ondervinden bij het implementeren van de batch-pool.

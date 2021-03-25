@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: cweining
 ms.author: cweining
 ms.date: 12/18/2020
-ms.openlocfilehash: ac25962cac36a149807b67a44b3b88a4f40c954a
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 48eb3cf81384446a07fea69572ac16e0b80cee38
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102211937"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105025625"
 ---
 # <a name="enable-snapshot-debugger-for-net-and-net-core-apps-in-azure-functions"></a>Snapshot Debugger voor .NET-en .NET core-apps in Azure Functions inschakelen
 
@@ -126,7 +126,7 @@ Hostbestand
 
 ## <a name="enable-snapshot-debugger-for-other-clouds"></a>Snapshot Debugger inschakelen voor andere Clouds
 
-Momenteel zijn de enige regio's waarvoor wijziging van het eind punt is vereist, [Azure Government](https://docs.microsoft.com/azure/azure-government/compare-azure-government-global-azure#application-insights) en [Azure China](https://docs.microsoft.com/azure/china/resources-developer-guide).
+Momenteel zijn de enige regio's waarvoor wijziging van het eind punt is vereist, [Azure Government](../../azure-government/compare-azure-government-global-azure.md#application-insights) en [Azure China](/azure/china/resources-developer-guide).
 
 Hieronder volgt een voor beeld van de `host.json` update met het eind punt van de Amerikaanse Government Cloud agent:
 ```json

@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 01/11/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: a1ee632e3aaae7b858ab43b45f6e72aff8d1fb77
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 5e0125f14570e917b228c5f713e636335755581d
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100361758"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105024265"
 ---
 # <a name="azure-active-directory-b2c-isv-partners"></a>Azure Active Directory B2C ISV-partners
 
@@ -26,12 +26,6 @@ Het ISV-partner netwerk breidt onze oplossings mogelijkheden uit om u te helpen 
 >De [Azure Active Directory B2C community-site op github](https://azure-ad-b2c.github.io/azureadb2ccommunity.io/) biedt ook voor beelden van aangepaste beleids regels van de community.
 
 ## <a name="identity-verification-and-proofing"></a>Identiteits verificatie en controle
-
-Met Azure AD B2C-partners kunnen klanten identiteits verificatie en controle van hun eind gebruikers inschakelen voordat ze account registratie of toegang toestaan. Identiteits verificatie en controle kunnen document, op kennis gebaseerde informatie en de Live-ervaring controleren.
-
-In een architectuur diagram op hoog niveau wordt de stroom uitgelegd.
-
-![Diagram toont de identiteits controle stroom](./media/partner-gallery/third-party-identity-proofing.png)
 
 Micro soft-partners met de volgende Isv's voor identiteits verificatie en controle.
 

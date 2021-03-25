@@ -9,12 +9,12 @@ manager: cgronlund
 ms.custom: include file
 ms.topic: include
 ms.date: 09/17/2020
-ms.openlocfilehash: 081eea7842652884363603bc5ba742ba48539f85
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 7c89527218e34bea0819a1e2446441216cde45ae
+ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102503608"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105105932"
 ---
 **Rekendoelen kunnen opnieuw worden gebruikt voor trainingstaken.** Als u een externe VM koppelt aan uw werkruimte, kunt u die bijvoorbeeld voor meerdere taken gebruiken. Voor machine learning-pijplijn gebruikt u de juiste [pijplijnstap](/python/api/azureml-pipeline-steps/azureml.pipeline.steps) voor elk rekendoel.
 
@@ -30,3 +30,6 @@ U kunt voor de meeste taken een van de volgende resources gebruiken voor een rek
 |[Azure Data Lake Analytics](../articles/machine-learning/how-to-attach-compute-targets.md#adla) | &nbsp; | Ja | &nbsp; |
 |[Azure HDInsight](../articles/machine-learning/how-to-attach-compute-targets.md#hdinsight) | &nbsp; | Ja | &nbsp; |
 |[Azure Batch](../articles/machine-learning/how-to-attach-compute-targets.md#azbatch) | &nbsp; | Ja | &nbsp; |
+
+> [!TIP]
+> Het Compute-exemplaar heeft 120 GB besturingssysteem schijf. Als er onvoldoende schijf ruimte beschikbaar is, wist u voldoende ruimte voordat u de reken instantie stopt of opnieuw opstart.

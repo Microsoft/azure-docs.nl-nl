@@ -15,12 +15,12 @@ ms.workload: iaas-sql-server
 ms.date: 10/07/2020
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 7c3950b1aeae2b4e90b1ae4acfb9439c2cb159ca
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.openlocfilehash: bf5c4c39ea8f5705cc9788fdcf2cddd01dcb4087
+ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/24/2021
-ms.locfileid: "105025999"
+ms.locfileid: "105034704"
 ---
 # <a name="configure-a-dnn-listener-for-an-availability-group"></a>Een DNN-listener configureren voor een beschikbaarheids groep
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -145,7 +145,7 @@ Een waarde van `1` voor `is_distributed_network_name` geeft aan dat de listener 
 
 ## <a name="update-connection-string"></a>connection string bijwerken
 
-Verbindings reeksen voor toepassingen bijwerken zodat ze verbinding maken met de DNN-listener. Als u wilt zorgen voor snelle connectiviteit bij failover, voegt `MultiSubnetFailover=True` u toe aan de Connection String als de SQL-Client dit ondersteunt.
+Verbindings reeksen voor toepassingen bijwerken zodat ze verbinding maken met de DNN-listener. Verbindings reeksen voor DNN-listeners moeten het DNN-poort nummer opgeven. Als u wilt zorgen voor snelle connectiviteit bij failover, voegt `MultiSubnetFailover=True` u toe aan de Connection String als de SQL-Client dit ondersteunt.
 
 ## <a name="test-failover"></a>Testfailover
 

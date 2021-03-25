@@ -7,12 +7,12 @@ ms.service: web-application-firewall
 ms.topic: conceptual
 ms.date: 05/22/2020
 ms.author: victorh
-ms.openlocfilehash: 66ca039a449e355e47563b689f5f44cced164fea
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 0e3073c491b251a1dbb505d4656de9c6a1e0ac7f
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101724146"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105048490"
 ---
 # <a name="azure-web-application-firewall-on-azure-front-door"></a>Web Application Firewall voor Azure Front Door
 
@@ -24,7 +24,7 @@ WAF voorkomt kwaadaardige aanvallen dicht bij de aanvalsbronnen, voordat ze uw v
 
 ![Azure Web Application Firewall](../media/overview/wafoverview.png)
 
-Azure front-deur introduceert [twee nieuwe sku's in Preview](https://docs.microsoft.com/azure/frontdoor/standard-premium/overview): voor deur standaard en voor-deur Premium-SKU. WAF is systeem eigen geïntegreerd met de voor deur Premium-SKU met volledige mogelijkheden. Voor de standaard-SKU voor de voor deur worden alleen [aangepaste regels](https://docs.microsoft.com/azure/web-application-firewall/afds/afds-overview#custom-authored-rules) ondersteund.
+Azure front-deur introduceert [twee nieuwe sku's in Preview](../../frontdoor/standard-premium/overview.md): voor deur standaard en voor-deur Premium-SKU. WAF is systeem eigen geïntegreerd met de voor deur Premium-SKU met volledige mogelijkheden. Voor de standaard-SKU voor de voor deur worden alleen [aangepaste regels](#custom-authored-rules) ondersteund.
 
 ## <a name="waf-policy-and-rules"></a>WAF-beleid en -regels
 

@@ -7,13 +7,13 @@ ms.reviewer: dannyevers
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 08/30/2020
-ms.openlocfilehash: e24e1afa0116bc1f240bddef47783b06f4f800d2
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.date: 03/25/2021
+ms.openlocfilehash: b1bb749400cfb1e289a0a335275f4654d37145e9
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104581300"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105046501"
 ---
 # <a name="how-to-plan-a-saas-offer-for-the-commercial-marketplace"></a>Een SaaS-aanbieding plannen voor de commerciële Marketplace
 
@@ -37,7 +37,7 @@ De volgende tabel bevat de vermeldings opties voor SaaS-aanbiedingen in de comme
 
 Zie voor meer informatie over deze aanbiedings opties [commerciële Marketplace Transact-mogelijkheden](marketplace-commercial-transaction-capabilities-and-considerations.md).
 
-Nadat uw aanbieding is gepubliceerd, wordt de optie voor de aanbieding die u voor uw aanbieding hebt gekozen, weer gegeven als een knop in de linkerbovenhoek van de aanbiedings pagina van uw aanbieding. In de volgende scherm afbeelding ziet u bijvoorbeeld een aanbiedings pagina in azure Marketplace met de knoppen **contact persoon** en **test station** .
+Nadat uw aanbieding is gepubliceerd, wordt de optie voor de aanbieding die u voor uw aanbieding hebt gekozen, weer gegeven als een knop in de linkerbovenhoek van de aanbiedings pagina van uw aanbieding. In de volgende scherm afbeelding ziet u bijvoorbeeld de pagina aanbiedings vermelding in azure Marketplace met de knoppen **nu downloaden** en **station testen** .
 
 ![Illustreert een aanbiedings vermelding in de online winkel.](./media/listing-options.png)
 
@@ -68,9 +68,9 @@ Als u een voor bereide aanbieding maakt, moet u de volgende informatie verzamele
 
 - **URL van de landings pagina**: de URL van de SaaS-site (bijvoorbeeld: `https://contoso.com/signup` ) waarmee gebruikers na het verkrijgen van uw aanbieding van de commerciële Marketplace worden omgeleid naar het configuratie proces van het zojuist gemaakte SaaS-abonnement. Deze URL ontvangt een token dat kan worden gebruikt om de fulfillment-Api's aan te roepen om de inrichtings gegevens voor uw interactieve registratie pagina op te halen.
 
-  Deze URL wordt aangeroepen met de para meter voor het kopen van id-tokens voor Marketplace waarmee de SaaS-aankoop van de specifieke klant uniek wordt geïdentificeerd. U moet dit token omruilen voor de bijbehorende details van het SaaS-abonnement met behulp van de [API voor omzetten](./partner-center-portal/pc-saas-fulfillment-api-v2.md#resolve-a-purchased-subscription). Deze details en andere personen die u wilt verzamelen, moeten worden gebruikt als onderdeel van een klant-interactieve webpagina die in uw ervaring is gebouwd om de registratie van de klant te volt ooien en hun aankoop te activeren. Op deze pagina moet de gebruiker zich aanmelden met één klik op verificatie met behulp van Azure Active Directory (Azure AD).
+  Deze URL wordt aangeroepen met de para meter voor het kopen van id-tokens voor Marketplace waarmee de SaaS-aankoop van de specifieke klant uniek wordt geïdentificeerd. U moet dit token omruilen voor de bijbehorende details van het SaaS-abonnement met behulp van de [API voor omzetten](./partner-center-portal/pc-saas-fulfillment-api-v2.md#resolve-a-purchased-subscription). Deze details en andere personen die u wilt verzamelen als onderdeel van een klant-interactieve webpagina kunnen worden gebruikt om de onboarding van de klant te starten, die uiteindelijk moet worden afgesloten met een activerings oproep voor de API voor het starten van de abonnements periode. Op deze pagina moet de gebruiker zich aanmelden met één klik op verificatie met behulp van Azure Active Directory (Azure AD).
 
-  Deze URL met Marketplace-aankoop identificatie token para meter wordt ook aangeroepen wanneer de klant een beheerde SaaS-ervaring start vanuit het Azure Portal-of M365-beheer centrum. U moet beide stromen afhandelen: wanneer het token voor de eerste keer wordt ingesteld na een nieuwe klant, en wanneer deze opnieuw wordt ingevoerd voor een bestaande klant die de SaaS-oplossing beheert.
+  Deze URL met Marketplace-aankoop identificatie token para meter wordt ook aangeroepen wanneer de klant een beheerde SaaS-ervaring start vanuit het Azure Portal of Microsoft 365 beheer centrum. U moet beide stromen afhandelen: wanneer het token voor de eerste keer wordt ingesteld na een nieuwe klant, en wanneer deze opnieuw wordt ingevoerd voor een bestaande klant die de SaaS-oplossing beheert.
 
     De landings pagina die u configureert, moet 24/7 zijn. Dit is de enige manier waarop u wordt geïnformeerd over nieuwe aankopen van uw SaaS-aanbiedingen die zijn gemaakt in de commerciële Marketplace of configuratie aanvragen voor een actief abonnement op een aanbieding.
 
@@ -79,7 +79,7 @@ Als u een voor bereide aanbieding maakt, moet u de volgende informatie verzamele
   De webhook die u opgeeft, moet 24/7 zijn. Dit is de enige manier waarop u wordt geïnformeerd over updates over de SaaS-abonnementen van uw klanten die zijn aangeschaft via de commerciële Marketplace.
 
   > [!NOTE]
-  > In het Azure Portal moet u een app met één Tenant [Azure Active Directory (Azure AD)](../active-directory/develop/howto-create-service-principal-portal.md) maken om één Azure-app-id te kunnen gebruiken om de verbinding tussen onze twee services te verifiëren. Als u de [Tenant-id](../active-directory/develop/howto-create-service-principal-portal.md#get-tenant-and-app-id-values-for-signing-in)wilt vinden, gaat u naar uw Azure Active Directory en selecteert u **Eigenschappen**. vervolgens zoekt u naar de map-id die wordt weer gegeven. Bijvoorbeeld `50c464d3-4930-494c-963c-1e951d15360e`.
+  > In het Azure Portal moet u een app-registratie voor één Tenant [Azure Active Directory (Azure AD)](../active-directory/develop/howto-create-service-principal-portal.md)maken. Gebruik de gegevens van de app-registratie om uw oplossing te verifiëren bij het aanroepen van Marketplace-Api's. Als u de [Tenant-id](../active-directory/develop/howto-create-service-principal-portal.md#get-tenant-and-app-id-values-for-signing-in)wilt vinden, gaat u naar uw Azure Active Directory en selecteert u **Eigenschappen**. vervolgens zoekt u naar de map-id die wordt weer gegeven. Bijvoorbeeld `50c464d3-4930-494c-963c-1e951d15360e`.
 
 - **Azure Active Directory Tenant-id**: (ook wel bekend als Directory-id). In het Azure Portal moet u [een Azure Active Directory (AD)-app registreren](../active-directory/develop/howto-create-service-principal-portal.md) , zodat we deze kunnen toevoegen aan de toegangs beheer lijst (ACL) van de API om ervoor te zorgen dat u gemachtigd bent om deze aan te roepen. Ga naar de Blade [app-registraties](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) in azure Active Directory om de Tenant-id voor uw Azure Active Directory-app (AD) te vinden. Selecteer de app in de kolom **weergave naam** . Zoek vervolgens naar de **map (Tenant) ID** die wordt weer gegeven (bijvoorbeeld `50c464d3-4930-494c-963c-1e951d15360e` ).
 
@@ -88,7 +88,7 @@ Als u een voor bereide aanbieding maakt, moet u de volgende informatie verzamele
   De Azure AD-toepassings-ID is gekoppeld aan uw uitgevers-ID in uw partner centrum-account. U moet dezelfde toepassings-ID gebruiken voor alle aanbiedingen in dat account.
 
   > [!NOTE]
-  > Als de uitgever twee of meer verschillende accounts in het partner centrum heeft, moeten er twee of meer verschillende Azure AD-App-Id's worden gebruikt, elk voor een van de accounts. Elk partner account in het partner centrum moet een unieke Azure AD-App-ID gebruiken voor alle SaaS-aanbiedingen die via dit account worden gepubliceerd.
+  > Als de uitgever twee of meer verschillende accounts in het partner centrum heeft, kunnen de registratie gegevens van de Azure AD-App alleen in één account worden gebruikt. Met dezelfde Tenant-ID wordt het combi neren van de App-ID voor een aanbieding onder een ander uitgevers account niet ondersteund.
 
 ## <a name="test-drives"></a>Test drives
 U kunt ervoor kiezen om een test drive in te scha kelen voor uw SaaS-app. Test stations geven klanten een vast aantal uur toegang tot een vooraf geconfigureerde omgeving. U kunt test stations voor elke publicatie optie inschakelen, maar deze functie heeft aanvullende vereisten. Zie [Wat is een test drive?](what-is-test-drive.md)voor meer informatie over test stations. Zie [technische configuratie testen](test-drive-technical-configuration.md)voor meer informatie over het configureren van verschillende soorten test stations.
@@ -150,7 +150,7 @@ Wanneer u [een nieuwe SaaS-aanbieding](create-new-saas-offer.md) in het partner 
 6. Privacybeleid
 7. Naam van aanbieding
 8. Samenvatting
-9. Description
+9. Beschrijving
 10. Scherm afbeeldingen/Video's
 11. Documenten
 
@@ -209,9 +209,6 @@ Om uw aanbieding gemakkelijker te maken, moet u enkele van deze items vooraf voo
 > [!Note]
 > Uw aanbieding moet voldoen aan het algemene [certificerings beleid voor commerciële Marketplace](/legal/marketplace/certification-policies#100-general) en de [software als een service beleid](/legal/marketplace/certification-policies#1000-software-as-a-service-saas) dat moet worden gepubliceerd op de commerciële Marketplace.
 
-## <a name="preview-audience"></a>Voor beeld van doel groep
-Een preview-doel groep heeft toegang tot uw aanbieding voordat u Live in de online winkels kunt publiceren om de end-to-end-functionaliteit te testen voordat u deze live publiceert. Op de pagina **voor beeld van doel groep** kunt u een beperkte preview-doel groep definiëren. Deze instelling is niet beschikbaar als u trans acties afzonderlijk wilt verwerken in plaats van uw aanbieding via micro soft te verkopen. Als dit het geval is, kunt u deze sectie overs Laan en naar [extra verkoop kansen](#additional-sales-opportunities)gaan.
-
 > [!NOTE]
 > Een preview-doel groep wijkt af van een privé-abonnement. Een privé-abonnement is één die u alleen beschikbaar maakt voor een specifieke doel groep. Zo kunt u een aangepast plan met specifieke klanten onderhandelen. Zie de volgende sectie: plannen voor meer informatie.
 
@@ -251,6 +248,50 @@ In het volgende voor beeld ziet u een voor beeld van een uitsplitsing van kosten
 |||
 
 **`*` Lagere kosten voor Marketplace-service** : voor bepaalde SaaS-aanbiedingen die u hebt gepubliceerd op de commerciële Marketplace, verlaagt micro soft de kosten voor Marketplace-service van 20% (zoals beschreven in de overeenkomst voor micro soft Publisher) tot 10%. Voor uw aanbieding (en) die u wilt kwalificeren, moeten uw aanbieding (en) zijn aangewezen door micro soft als Azure IP-gemotiveerd. Voor het einde van elke kalender maand moet aan de geschiktheid ten minste vijf (5) werk dagen worden voldaan om de lagere kosten voor Marketplace-service te ontvangen. Zodra aan de voor waarden is voldaan, worden de gereduceerde service kosten in rekening gebracht voor alle trans acties met ingang van de eerste dag van de volgende maand en blijven ze worden toegepast totdat de gemotiveerd-status van Azure IP co-sell gaat verloren. Zie [vereisten voor co-sell-status](/legal/marketplace/certification-policies#3000-requirements-for-co-sell-status)voor meer informatie over de geschiktheid voor het verkopen van IP-adressen. De gereduceerde service kosten voor Marketplace zijn ook van toepassing op Azure IP-gemotiveerd Vm's, beheerde apps en alle andere gekwalificeerd transactable-IaaS die beschikbaar worden gesteld via de commerciële Marketplace.
+
+## <a name="preview-audience"></a>Voor beeld van doel groep
+
+Een preview-doel groep kan toegang krijgen tot uw aanbieding voordat u deze Live in de online winkels publiceert. Ze kunnen zien hoe uw aanbieding eruitziet in de commerciële Marketplace en de end-to-end-functionaliteit testen voordat u deze live publiceert. 
+
+Op de pagina **voor beeld van doel groep** kunt u een beperkte preview-doel groep definiëren. Deze instelling is niet beschikbaar als u trans acties afzonderlijk wilt verwerken in plaats van uw aanbieding via micro soft te verkopen. Als dit het geval is, kunt u deze sectie overs Laan en naar [extra verkoop kansen](#additional-sales-opportunities)gaan.
+
+## <a name="test-offer"></a>Test aanbieding
+
+Voordat u uw aanbieding Live publiceert, moet u de Preview-functionaliteit gebruiken om uw technische implementatie te ontwikkelen, te testen en te experimenteren met verschillende prijs modellen.
+
+Voor het ontwikkelen en testen van uw SaaS-aanbieding met de laagst mogelijke risico, raden we u aan om een test-en ontwikkelings aanbod (DEV) te maken voor experimenteren en testen. De ontwikkel aanbieding is gescheiden van uw productie-aanbieding.
+
+Als u onbedoelde aankopen van de ONTWIKKELINGs aanbieding wilt voor komen, duwt u nooit de knop **Go Live** om de ontwikkel aanbieding Live te publiceren.
+
+![Illustreert de pagina overzicht van aanbieding voor een aanbieding in partner centrum. De knop Go Live en de preview-koppelingen worden weer gegeven. De koppeling weergave validatie rapport wordt ook weer gegeven onder Automatische validatie.](./media/review-publish-offer/publish-status-saas.png)
+
+Hier volgen enkele redenen voor het maken van een afzonderlijke ontwikkel aanbieding voor het ontwikkelings team dat moet worden gebruikt voor het ontwikkelen en testen van de productie-aanbod:
+
+- Voorkom onbedoelde klant kosten
+- Prijs modellen evalueren
+- Geen plannen toevoegen die geen werkelijke klanten bereiken
+
+### <a name="avoid-accidental-customer-charges"></a>Voorkom onbedoelde klant kosten
+
+Door gebruik te maken van een ontwikkel aanbod in plaats van de productie-aanbieding en te behandelen als ontwikkel-en productie omgeving, kunt u onbedoelde kosten voor klanten vermijden.
+
+We raden u aan om twee verschillende Azure AD-apps te registreren om de Marketplace-Api's aan te roepen. Ontwikkel aars gebruiken een Azure AD-app met de instellingen van de ONTWIKKELINGs aanbieding en het operations-team gebruikt de registratie van de app voor de productie. Op deze manier kunt u het ontwikkelings team isoleren om per ongeluk fouten te maken, zoals het aanroepen van de API voor het annuleren van het abonnement van een klant die $100.000 per maand betaalt. U kunt ook voor komen dat een klant wordt geloosd voor gebruik in de data limiet die ze niet hebben gebruikt.
+
+### <a name="evaluate-pricing-models"></a>Prijs modellen evalueren
+
+Het testen van prijs modellen in de ontwikkel aanbieding vermindert het risico wanneer ontwikkel aars experimenteren met verschillende prijs modellen.
+
+Uitgevers kunnen de plannen maken die ze nodig hebben in de ONTWIKKELINGs aanbieding om te bepalen welk prijs model het meest geschikt is voor hun aanbieding. Ontwikkel aars willen mogelijk meerdere plannen maken in de ONTWIKKELINGs aanbieding om verschillende prijs combinaties te testen. U kunt bijvoorbeeld plannen maken met verschillende sets aangepaste dimensies met meting. U kunt een ander plan maken met een combi natie van een vlakke prijs en aangepaste dimensies met meting.
+
+Als u meerdere prijs opties wilt testen, moet u een plan maken voor elk uniek prijs model. Zie [abonnementen](#plans)voor meer informatie.
+
+### <a name="not-adding-plans-that-do-not-target-actual-customers"></a>Geen plannen toevoegen die geen werkelijke klanten bereiken
+
+Door gebruik te maken van een ontwikkel aanbod voor ontwikkeling en testen, kunt u de overbodige wirwar van items in de productie-aanbieding verminderen. U kunt bijvoorbeeld geen plannen verwijderen die u maakt om verschillende prijs modellen of technische configuraties te testen (zonder een ondersteunings ticket in te dienen). Door plannen te maken voor het testen in de ontwikkel aanbieding, vermindert u de wirwar van de productie-aanbieding.
+
+Wirwar van de productie-aanbod is het product en het marketing team van het bedrijf, aangezien ze alle plannen verwachten van het doel van de daad werkelijke klanten. Met name bij grote teams die niet zijn verbonden en die alle verschillende sandboxs willen gebruiken, bieden twee aanbiedingen twee verschillende omgevingen voor DEV en PROD. In sommige gevallen wilt u mogelijk meerdere ontwikkel aanbiedingen maken ter ondersteuning van een groter team dat verschillende personen heeft die verschillende test scenario's uitvoeren. Het is de bedoeling dat verschillende team leden in de ontwikkel aanbieding gescheiden van de productie-aanbieding werken, zodat productie plannen zo dicht mogelijk bij de productie kunnen worden bewaard.
+
+Als u een ontwikkel aanbod test, kunt u voor komen dat de 30 aangepaste limiet voor meet dimensies per aanbieding. Ontwikkel aars kunnen verschillende combi Naties van maat eenheden uitproberen in de ONTWIKKELINGs aanbieding zonder dat dit van invloed is op de aangepaste limiet voor het meten van limieten in de productie aanbieding.
 
 ## <a name="additional-sales-opportunities"></a>Aanvullende verkoop kansen
 

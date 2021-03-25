@@ -8,12 +8,12 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: 7357703af41afc913ef63dff6ecae3d230c9eca0
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 4d771e77fcca05b090e5d47d70ae93ece8f79e3e
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104583289"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104865694"
 ---
 # <a name="use-certificates-with-azure-cloud-services-extended-support"></a>Certificaten gebruiken met Azure Cloud Services (uitgebreide ondersteuning)
 
@@ -27,9 +27,8 @@ Key Vault wordt gebruikt om certificaten op te slaan die zijn gekoppeld aan Clou
 
     :::image type="content" source="media/certs-and-key-vault-1.png" alt-text="Afbeelding toont het selecteren van toegangs beleid op de Blade sleutel kluis.":::
 
-3. Zorg ervoor dat het toegangs beleid de volgende eigenschappen bevat:
+3. Zorg ervoor dat het toegangs beleid de volgende eigenschap bevat:
     - **Toegang tot Azure Virtual Machines inschakelen voor implementatie**
-    - **Toegang tot Azure Resource Manager voor sjabloon implementatie inschakelen** 
 
     :::image type="content" source="media/certs-and-key-vault-2.png" alt-text="Afbeelding toont het venster toegangs beleid in de Azure Portal.":::
  
@@ -50,6 +49,9 @@ Key Vault wordt gebruikt om certificaten op te slaan die zijn gekoppeld aan Clou
     ```json
     <Certificate name="<your cert name>" thumbprint="<thumbprint in key vault" thumbprintAlgorithm="sha1" /> 
     ```
+6.  Voor implementatie via ARM-sjabloon kunt u certificateUrl vinden door te navigeren naar het certificaat in de sleutel kluis die is gelabeld als geheime id
+
+    :::image type="content" source="media/certs-and-key-vault-6.png" alt-text="Afbeelding toont het veld geheime id in de sleutel kluis.":::
 
 ## <a name="next-steps"></a>Volgende stappen 
 - Controleer de [vereisten voor implementatie](deploy-prerequisite.md) voor Cloud Services (uitgebreide ondersteuning).

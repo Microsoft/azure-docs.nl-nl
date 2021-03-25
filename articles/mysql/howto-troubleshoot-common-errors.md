@@ -7,12 +7,12 @@ ms.author: pariks
 ms.custom: mvc
 ms.topic: overview
 ms.date: 8/20/2020
-ms.openlocfilehash: ca75416a66bcf2c90028c7f1dc11fbe23a9a9bd9
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 546f29330b76548ea553cfb7e4e31ac35b19cb1c
+ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98631364"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105037543"
 ---
 # <a name="common-errors"></a>Algemene fouten
 
@@ -48,7 +48,7 @@ BEGIN
 END;
 ```
 
-**Oplossing**:  Om de fout op te lossen, stelt u log_bin_trust_function_creators in op 1 op de blade [Serverparameters](howto-server-parameters.md) in de portal, voert u de DDL-instructies uit of importeert u het schema om de gewenste objecten te maken en zet u de parameter log_bin_trust_function_creators terug naar de vorige waarde na het maken.
+**Oplossing**: als u de fout wilt oplossen, stelt u log_bin_trust_function_creators op 1 van de Blade [server parameters](howto-server-parameters.md) in de portal, voert u de DDL-instructies uit of importeert u het schema om de gewenste objecten te maken. U kunt log_bin_trust_function_creators op 1 blijven houden voor uw server om de fout in de toekomst te voor komen. Onze aanbeveling is om log_bin_trust_function_creators in te stellen als het beveiligings risico dat is gemarkeerd in de [mysql-community-documentatie](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_log_bin_trust_function_creators) , mini maal in azure DB voor mysql-service als bin-logboek niet wordt blootgesteld aan bedreigingen.
 
 #### <a name="error-1227-42000-at-line-101-access-denied-you-need-at-least-one-of-the-super-privileges-for-this-operation-operation-failed-with-exitcode-1"></a>ERROR 1227 (42000) at line 101: Access denied; you need (at least one of) the SUPER privilege(s) for this operation. Operation failed with exitcode 1
 

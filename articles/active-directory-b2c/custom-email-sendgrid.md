@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 03/15/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 86f40944af9fb49b0402a33e5009b99d60be61f0
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: c5381a93308b5b3c8988cb8e25df541af1043418
+ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103489182"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105031304"
 ---
 # <a name="custom-email-verification-with-sendgrid"></a>Aangepaste e-mail verificatie met SendGrid
 
@@ -43,7 +43,7 @@ Sla vervolgens de SendGrid API-sleutel op in een Azure AD B2C-beleids sleutel vo
 1. Selecteer **beleids sleutels** en selecteer vervolgens **toevoegen**.
 1. Kies voor **Opties** de optie **hand matig**.
 1. Voer een **naam** in voor de beleids sleutel. Bijvoorbeeld `SendGridSecret`. Het voor voegsel `B2C_1A_` wordt automatisch toegevoegd aan de naam van uw sleutel.
-1. Voer in het **geheim** uw client geheim in dat u eerder hebt vastgelegd.
+1. Voer in het **geheim** de SendGrid API-sleutel in die u eerder hebt vastgelegd.
 1. Selecteer voor **sleutel gebruik** **hand tekening**.
 1. Selecteer **Maken**.
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/16/2021
 ms.author: rosouz
 ms.custom: seo-nov-2020
-ms.openlocfilehash: bca4eb7f5f266a639916c0f8e520f025d259c39b
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 9a8ecf65426dfe92b84582ff98b567ea400c9209
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104577356"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105027173"
 ---
 # <a name="what-is-azure-cosmos-db-analytical-store"></a>Wat is Azure Cosmos DB Analytical Store?
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
@@ -110,9 +110,10 @@ De volgende beperkingen zijn van toepassing op de operationele gegevens in Azure
 
 * Op dit moment bieden we geen ondersteuning meer voor Azure Synapse Spark-Lees kolom namen die lege waarden bevatten (spaties).
 
-* Er wordt een ander gedrag met betrekking tot `NULL` waarden verwacht:
-  * In Spark-Pools in azure Synapse worden deze waarden als 0 (nul) gelezen.
-  * Met SQL serverloze Pools in azure Synapse worden deze waarden gelezen als `NULL` .
+* Voor expliciete waarden zou u een ander gedrag verwachten `null` :
+  * In Spark-Pools in azure Synapse worden deze waarden gelezen als `0` (nul).
+  * Met SQL serverloze Pools in azure Synapse worden deze waarden gelezen alsof `NULL` het eerste document van de verzameling voor dezelfde eigenschap een waarde heeft waarvan het gegevens type afwijkt van `integer` .
+  * SQL serverloze Pools in azure Synapse worden deze waarden gelezen als `0` (nul) als het eerste document van de verzameling voor dezelfde eigenschap een waarde heeft die een `integer` .
 
 * Er wordt een ander gedrag in rekening gehouden met ontbrekende kolommen:
   * In Spark-Pools in azure Synapse worden deze kolommen weer gegeven als `undefined` .
@@ -144,6 +145,11 @@ Met de goed gedefinieerde schema representatie maakt u een eenvoudige tabellaire
 
 > [!NOTE]
 > Als de Azure Cosmos DB Analytical Store de goed gedefinieerde schema weergave volgt en de bovenstaande specificatie wordt geschonden door bepaalde items, worden deze items niet opgenomen in de analytische opslag.
+
+* Er wordt een ander gedrag in rekening gehouden met de verschillende typen in een goed gedefinieerd schema:
+  * Spark-Pools in azure Synapse vertegenwoordigen deze waarden als `undefined` .
+  * SQL serverloze Pools in azure Synapse vertegenwoordigen deze waarden als `NULL` .
+
 
 **Schema representatie van volledig beeld kwaliteit**
 

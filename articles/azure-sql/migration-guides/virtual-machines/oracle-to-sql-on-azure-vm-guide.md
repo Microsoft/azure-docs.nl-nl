@@ -10,19 +10,19 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: 1767f1f990326e513393b8ce47e1ed8485f73849
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 5d24e056d397617c95a7ba301b58efc3631f40dd
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104656388"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105026518"
 ---
 # <a name="migration-guide-oracle-to-sql-server-on-azure-vm"></a>Migratie handleiding: Oracle naar SQL Server op Azure VM
 [!INCLUDE[appliesto-sqldb-sqlmi](../../includes/appliesto-sqldb.md)]
 
 In deze hand leiding leert u hoe u uw Oracle-schema's kunt migreren naar SQL Server op Azure VM met behulp van SQL Server Migration Assistant voor Oracle. 
 
-Zie de [hand leiding voor database migratie](https://datamigration.microsoft.com/)voor andere scenario's.
+Zie [Data Base Migration](https://docs.microsoft.com/data-migration)(Engelstalig) voor andere migratie handleidingen. 
 
 ## <a name="prerequisites"></a>Vereisten 
 
@@ -32,6 +32,8 @@ Als u uw Oracle-schema wilt migreren naar SQL Server op Azure VM, hebt u het vol
 - Voor het downloaden [van SQL Server Migration Assistant (SSMA) voor Oracle](https://www.microsoft.com/en-us/download/details.aspx?id=54258).
 - Een doel- [SQL Server-VM](../../virtual-machines/windows/sql-vm-create-portal-quickstart.md).
 - De [benodigde machtigingen voor SSMA voor Oracle](/sql/ssma/oracle/connecting-to-oracle-database-oracletosql) en [provider](/sql/ssma/oracle/connect-to-oracle-oracletosql).
+- Connectiviteit en voldoende machtigingen voor toegang tot zowel de bron als het doel. 
+
 
 ## <a name="pre-migration"></a>Premigratie
 
@@ -46,19 +48,19 @@ Gebruik de [kaart Toolkit](https://go.microsoft.com/fwlink/?LinkID=316883) om be
 Voer de volgende stappen uit om de kaart-Toolkit te gebruiken voor het uitvoeren van een inventaris scan: 
 
 1. Open de [kaart Toolkit](https://go.microsoft.com/fwlink/?LinkID=316883).
-1. Selecteer **Data Base maken/selecteren**.
+1. Selecteer **Data Base maken/selecteren**:
 
    ![Database selecteren](./media/oracle-to-sql-on-azure-vm-guide/select-database.png)
 
-1. Selecteer **een inventarisatie database maken**, voer een naam in voor de nieuwe inventarisatie database die u wilt maken, geef een korte beschrijving op en selecteer **OK**. 
+1. Selecteer **een inventarisatie database maken**, voer een naam in voor de nieuwe inventarisatie database die u wilt maken, geef een korte beschrijving op en selecteer **OK**:
 
    :::image type="content" source="media/oracle-to-sql-on-azure-vm-guide/create-inventory-database.png" alt-text="Een inventarisatie database maken":::
 
-1. Selecteer **inventaris gegevens verzamelen** om de **wizard inventaris en analyse** te openen. 
+1. Selecteer **inventaris gegevens verzamelen** om de **wizard inventaris en analyse** te openen:
 
    :::image type="content" source="media/oracle-to-sql-on-azure-vm-guide/collect-inventory-data.png" alt-text="Inventarisgegevens verzamelen":::
 
-1. Kies in de **wizard inventarisatie en analyse** de optie **Oracle** en selecteer vervolgens **volgende**. 
+1. Kies in de **wizard inventarisatie en analyse** de optie **Oracle** en selecteer vervolgens **volgende**:
 
    ![Oracle kiezen](./media/oracle-to-sql-on-azure-vm-guide/choose-oracle.png)
 
@@ -66,25 +68,25 @@ Voer de volgende stappen uit om de kaart-Toolkit te gebruiken voor het uitvoeren
 
    ![Kies de computer zoek optie die het beste past bij uw bedrijfs behoeften](./media/oracle-to-sql-on-azure-vm-guide/choose-search-option.png)
 
-1. Voer de referenties in of maak nieuwe referenties voor de systemen die u wilt verkennen, en selecteer vervolgens **volgende**.
+1. Voer de referenties in of maak nieuwe referenties voor de systemen die u wilt verkennen, en selecteer vervolgens **volgende**:
 
     ![Referenties opgeven](./media/oracle-to-sql-on-azure-vm-guide/choose-credentials.png)
 
-1. Stel de volg orde van de referenties in en selecteer **volgende**. 
+1. Stel de volg orde van de referenties in en selecteer **volgende**:
 
    ![Volg orde van Referenties instellen](./media/oracle-to-sql-on-azure-vm-guide/set-credential-order.png)  
 
-1. Geef de referenties op voor elke computer die u wilt detecteren. U kunt unieke referenties gebruiken voor elke computer/computer, of u kunt ervoor kiezen om de lijst **alle computer referenties** te gebruiken.  
+1. Geef de referenties op voor elke computer die u wilt detecteren. U kunt unieke referenties gebruiken voor elke computer/computer, of u kunt ervoor kiezen om de lijst **alle computer referenties** te gebruiken:
 
 
    ![Geef de referenties op voor elke computer die u wilt detecteren](./media/oracle-to-sql-on-azure-vm-guide/specify-credentials-for-each-computer.png)
 
 
-1. Controleer uw selectie samenvatting en selecteer vervolgens **volt ooien**.
+1. Controleer uw selectie samenvatting en selecteer vervolgens **volt ooien**:
 
    ![Samen vatting controleren](./media/oracle-to-sql-on-azure-vm-guide/review-summary.png)
 
-1. Nadat de scan is voltooid, bekijkt u het overzichts rapport van de **gegevens verzameling** . Het scannen kan een paar minuten duren en is afhankelijk van het aantal data bases. Selecteer **sluiten** wanneer u klaar bent. 
+1. Nadat de scan is voltooid, bekijkt u het overzichts rapport van de **gegevens verzameling** . Het scannen kan een paar minuten duren en is afhankelijk van het aantal data bases. Selecteer **sluiten** wanneer u klaar bent:
 
    ![Overzichts rapport verzameling](./media/oracle-to-sql-on-azure-vm-guide/collection-summary-report.png)
 
@@ -100,11 +102,11 @@ Voer de volgende stappen uit om een evaluatie te maken:
 
 1. Open de  [SQL Server Migration Assistant (SSMA) voor Oracle](https://www.microsoft.com/en-us/download/details.aspx?id=54258). 
 1. Selecteer **bestand** en kies vervolgens **Nieuw project**. 
-1. Geef een project naam, een locatie op voor het opslaan van uw project en selecteer vervolgens een SQL Server migratie doel in de vervolg keuzelijst. Selecteer **OK**. 
+1. Geef een project naam, een locatie op voor het opslaan van uw project en selecteer vervolgens een SQL Server migratie doel in de vervolg keuzelijst. Selecteer **OK**:
 
    ![Nieuw project](./media/oracle-to-sql-on-azure-vm-guide/new-project.png)
 
-1. Selecteer **verbinding maken met Oracle**. Voer in het dialoog venster **verbinding maken met Oracle** de waarden in voor de details van de Oracle-verbinding.
+1. Selecteer **verbinding maken met Oracle**. Voer in het dialoog venster **verbinding maken met Oracle** de waarden in voor de verbindings Details van Oracle:
 
    ![Verbinding maken met Oracle](./media/oracle-to-sql-on-azure-vm-guide/connect-to-oracle.png)
 
@@ -112,22 +114,16 @@ Voer de volgende stappen uit om een evaluatie te maken:
 
    ![Oracle-schema selecteren](./media/oracle-to-sql-on-azure-vm-guide/select-schema.png)
 
-1. Klik met de rechter muisknop op het Oracle-schema dat u wilt migreren in de **Oracle-meta gegevens Verkenner**, en kies vervolgens **rapport maken**. Hiermee wordt een HTML-rapport gegenereerd. U kunt ook **rapport maken** kiezen op de navigatie balk nadat u de Data Base hebt geselecteerd.
+1. Klik met de rechter muisknop op het Oracle-schema dat u wilt migreren in de **Oracle-meta gegevens Verkenner**, en kies vervolgens **rapport maken**. Hiermee wordt een HTML-rapport gegenereerd. U kunt ook **rapport maken** kiezen op de navigatie balk nadat u de Data Base hebt geselecteerd:
 
    ![Rapport maken](./media/oracle-to-sql-on-azure-vm-guide/create-report.png)
 
 1. Selecteer in **Oracle-meta gegevens Verkenner** het Oracle-schema en selecteer vervolgens **rapport maken** om een HTML-rapport met conversie statistieken en fout/waarschuwingen te genereren, indien van toepassing.
-1. Bekijk het HTML-rapport voor conversie statistieken, evenals fouten en waarschuwingen. Analyseer het om conversie problemen en oplossingen te begrijpen.
+1. Bekijk het HTML-rapport om de conversie statistieken en eventuele fouten of waarschuwingen te begrijpen. U kunt het rapport ook openen in Excel om een overzicht te krijgen van Oracle-objecten en de inspanningen die nodig zijn voor het uitvoeren van schema-conversies. De standaard locatie voor het rapport bevindt zich in de rapportmap in SSMAProjects. 
 
-   Dit rapport kan ook worden geopend vanuit de map SSMA projects, zoals geselecteerd in het eerste scherm. In het bovenstaande voor beeld gaat u naar het report.xml-bestand van: 
-
-   `drive:\<username>\Documents\SSMAProjects\MyOracleMigration\report\report_2016_11_12T02_47_55\`
-
-    en open het vervolgens in Excel om een inventaris van Oracle-objecten te ontvangen en de inspanningen die nodig zijn om schema conversies uit te voeren.
-
+   Bijvoorbeeld: `drive:\<username>\Documents\SSMAProjects\MyOracleMigration\report\report_2016_11_12T02_47_55\`
+    
    ![Conversie rapport](./media/oracle-to-sql-on-azure-vm-guide/conversion-report.png)
-
-
 
 ### <a name="validate-data-types"></a>Gegevens typen valideren
 
@@ -135,28 +131,30 @@ Valideer de standaard gegevens type toewijzingen en wijzig deze indien nodig op 
 
 1. Selecteer **extra** in het menu. 
 1. Selecteer de **project instellingen**. 
-1. Selecteer het tabblad **type toewijzingen** . 
+1. Selecteer het tabblad **type toewijzingen** :
 
    ![Type toewijzingen](./media/oracle-to-sql-on-azure-vm-guide/type-mappings.png)
 
 1. U kunt de type toewijzing voor elke tabel wijzigen door de tabel te selecteren in de **Oracle-meta gegevens Verkenner**. 
-
-
 
 ### <a name="convert-schema"></a>Schema converteren
 
 Voer de volgende stappen uit om het schema te converteren: 
 
 1. Beschrijving Als u dynamische of ad-hoc query's wilt converteren, klikt u met de rechter muisknop op het knoop punt en kiest u **instructie toevoegen**.
-1. Kies **verbinding maken met SQL Server** in de bovenste navigatie balk en geef de verbindings Details op voor uw SQL Server op de Azure-VM. U kunt ervoor kiezen om verbinding te maken met een bestaande data base of een nieuwe naam op te geven. in dat geval wordt er een Data Base op de doel server gemaakt.
+1. Selecteer **verbinding maken met SQL Server** in de bovenste navigatie balk. 
+     1. Voer de verbindings gegevens in voor uw SQL Server op de Azure-VM. 
+     1. Kies uw doel database in de vervolg keuzelijst of geef een nieuwe naam op. in dat geval wordt er een Data Base op de doel server gemaakt. 
+     1. Geef verificatie Details op. 
+     1. Selecteer **Verbinding maken**. 
 
    ![Verbinding maken met SQL](./media/oracle-to-sql-on-azure-vm-guide/connect-to-sql-vm.png)
 
-1. Klik met de rechter muisknop op het Oracle-schema in de **Oracle-meta gegevens Verkenner** en kies **schema converteren**.
+1. Klik met de rechter muisknop op het Oracle-schema in de **Oracle-meta gegevens Verkenner** en kies **schema converteren**. U kunt ook **schema converteren** selecteren in de bovenste navigatie balk:
 
    ![Schema converteren](./media/oracle-to-sql-on-azure-vm-guide/convert-schema.png)
 
-1. Nadat het schema is voltooid, vergelijkt en controleert u de structuur van het schema om mogelijke problemen te identificeren.
+1. Nadat de conversie is voltooid, vergelijkt u de geconverteerde objecten met de oorspronkelijke objecten om potentiële problemen te identificeren en te verhelpen op basis van de aanbevelingen:
 
    ![Aanbevelingen controleren](./media/oracle-to-sql-on-azure-vm-guide/table-mapping.png)
 
@@ -166,37 +164,38 @@ Voer de volgende stappen uit om het schema te converteren:
 
    U kunt het project lokaal opslaan voor een herbemiddeling van het offline schema. U kunt dit doen door **project opslaan** te selecteren in het menu **bestand** . Dit biedt u de mogelijkheid om de bron-en doel schema's offline te evalueren en herstel bewerkingen uit te voeren voordat u het schema kunt publiceren naar SQL Server.
 
+1. Selecteer **resultaten controleren** in het deel venster uitvoer en Bekijk fouten in het deel venster **fouten lijst** . 
+1. Sla het project lokaal op voor een herbemiddeling van het offline schema. Selecteer **project opslaan** in het menu **bestand** . Dit biedt u de mogelijkheid om de bron-en doel schema's offline te evalueren en herstel bewerkingen uit te voeren voordat u het schema kunt publiceren naar SQL Server op Azure VM.
+
 
 ## <a name="migrate"></a>Migrate
 
 Nadat u de vereiste onderdelen hebt geïnstalleerd en de taken hebt voltooid die zijn gekoppeld aan de fase **voorafgaand** aan de migratie, bent u klaar om het schema en de gegevens migratie uit te voeren. Migratie omvat twee stappen: het schema publiceren en de gegevens migreren. 
 
 
-Als u het schema wilt publiceren en de gegevens wilt migreren, voert u de volgende stappen uit: 
+Als u uw schema wilt publiceren en de gegevens wilt migreren, volgt u deze stappen: 
 
-1. Klik met de rechter muisknop op de data base in de **meta gegevens Verkenner van SQL Server**  en kies **synchroniseren met data base**. Met deze actie wordt het Oracle-schema gepubliceerd naar SQL Server op Azure VM. 
+1. Publiceer het schema: Klik met de rechter muisknop op de data base in de **meta gegevens Verkenner van SQL Server**  en kies **synchroniseren met data base**. Met deze actie wordt het Oracle-schema gepubliceerd naar SQL Server op Azure VM:
 
    ![Synchroniseren met data base](./media/oracle-to-sql-on-azure-vm-guide/synchronize-database.png)
 
-   Controleer de synchronisatie status: 
+   Controleer de toewijzing tussen uw bron project en uw doel:
 
    ![Synchronisatie status controleren](./media/oracle-to-sql-on-azure-vm-guide/synchronize-database-review.png)
 
 
-1. Klik met de rechter muisknop op het Oracle-schema in de **Oracle-meta gegevens Verkenner** en kies **gegevens migreren**. U kunt ook migreren van gegevens uit de navigatie op de bovenste regel selecteren.
+1. De gegevens migreren: Klik met de rechter muisknop op de data base of het object dat u wilt migreren in **Oracle Meta Data Explorer** en kies **gegevens migreren**. U kunt ook **gegevens migreren** selecteren in de bovenste navigatie balk. Als u gegevens voor een hele Data Base wilt migreren, schakelt u het selectie vakje naast de naam van de data base in. Als u gegevens uit afzonderlijke tabellen wilt migreren, vouwt u de data base uit, vouwt u tabellen uit en schakelt u het selectie vakje naast de tabel in. Als u gegevens uit afzonderlijke tabellen wilt weglaten, schakelt u het selectie vakje uit:
 
    ![Gegevens migreren](./media/oracle-to-sql-on-azure-vm-guide/migrate-data.png)
 
 1. Geef in het dialoog venster verbindings gegevens voor Oracle en SQL Server op Azure VM op.
-1. Nadat de migratie is voltooid, raadpleegt u het rapport gegevens migratie:
+1. Nadat de migratie is voltooid, raadpleegt u het **rapport gegevens migratie**:  
 
     ![Gegevens migratie rapport](./media/oracle-to-sql-on-azure-vm-guide/data-migration-report.png)
 
-1. Maak verbinding met uw SQL Server op Azure VM met behulp van [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) om gegevens en schema's te controleren in uw SQL Server-exemplaar. 
+1. Maak verbinding met uw SQL Server op een Azure VM-exemplaar met behulp van [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) en valideer de migratie door de gegevens en het schema te controleren:
 
    ![Valideren in SSMA](./media/oracle-to-sql-on-azure-vm-guide/validate-in-ssms.png)
-
-
 
 
 Naast het gebruik van SSMA kunt u ook SQL Server Integration Services (SSIS) gebruiken om de gegevens te migreren. Raadpleeg voor meer informatie: 

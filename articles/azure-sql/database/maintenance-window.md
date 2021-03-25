@@ -9,13 +9,13 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sstein
 ms.custom: references_regions
-ms.date: 03/11/2021
-ms.openlocfilehash: bd91c29ca97c2096c4d8f3df19dbb9eab306b8e7
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.date: 03/23/2021
+ms.openlocfilehash: 9c1e5af065e70cf7ec7b7c3b09fc9e3376858481
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103149746"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105047249"
 ---
 # <a name="maintenance-window-preview"></a>Onderhouds venster (preview-versie)
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -27,14 +27,14 @@ Met de functie onderhouds venster kunt u onderhouds planning voor [Azure SQL dat
 
 ## <a name="overview"></a>Overzicht
 
-Azure voert periodiek [gepland onderhoud](planned-maintenance.md) uit van SQL database en SQL Managed instance-resources. Tijdens een Azure SQL-onderhouds gebeurtenis zijn data bases volledig beschikbaar, maar kunnen ze onderhevig zijn aan korte failovers binnen de respectieve Beschik baarheid voor [SQL database](https://azure.microsoft.com/support/legal/sla/sql-database) en het door [SQL beheerde exemplaar](https://azure.microsoft.com/support/legal/sla/azure-sql-sql-managed-instance), omdat herconfiguratie van resources vereist is in sommige gevallen.
+Azure voert periodiek [gepland onderhoud](planned-maintenance.md) uit van SQL database en SQL Managed instance-resources. Tijdens de onderhouds gebeurtenis van Azure SQL zijn de data bases volledig beschikbaar, maar kunnen ze onderhevig zijn aan korte herconfiguraties binnen de verschillende beschikbaarheids-Sla's voor [SQL database](https://azure.microsoft.com/support/legal/sla/sql-database) en [SQL Managed instance](https://azure.microsoft.com/support/legal/sla/azure-sql-sql-managed-instance).
 
-Onderhouds venster is bedoeld voor productie werkbelastingen die niet flexibel zijn voor data base-of instance-failovers en geen snelle onderbrekingen in de verbinding kunnen opvangen die worden veroorzaakt door geplande onderhouds gebeurtenissen. Als u een onderhouds venster kiest, kunt u de gevolgen van gepland onderhoud minimaliseren, omdat deze buiten uw kantoor uren worden uitgevoerd. Flexibele workloads en niet-productiewerk belastingen kunnen afhankelijk zijn van het standaard onderhouds beleid van Azure SQL.
+Onderhouds venster is bedoeld voor productie werkbelastingen die niet kunnen worden geconfigureerd voor het opnieuw configureren van een Data Base of het exemplaar van exemplaren, en kan geen snelle onderbrekingen in de verbinding opvangen door geplande onderhouds gebeurtenissen. Als u een onderhouds venster kiest, kunt u de gevolgen van gepland onderhoud minimaliseren, omdat deze buiten uw kantoor uren worden uitgevoerd. Flexibele workloads en niet-productiewerk belastingen kunnen afhankelijk zijn van het standaard onderhouds beleid van Azure SQL.
 
 Het onderhouds venster kan worden geconfigureerd bij het maken of voor bestaande Azure SQL-resources. Het kan worden geconfigureerd met behulp van de Azure Portal, Power shell, CLI of de Azure-API.
 
 > [!Important]
-> Het configureren van het onderhouds venster is een langlopende asynchrone bewerking, vergelijkbaar met het wijzigen van de servicelaag van de Azure SQL-resource. De resource is beschikbaar tijdens de bewerking, met uitzonde ring van een korte failover die aan het einde van de bewerking plaatsvindt en doorgaans tot 8 seconden duurt, zelfs in het geval van langdurige langlopende trans acties. Als u de gevolgen van de failover wilt beperken, moet u de bewerking buiten de piek uren uitvoeren.
+> Het configureren van het onderhouds venster is een langlopende asynchrone bewerking, vergelijkbaar met het wijzigen van de servicelaag van de Azure SQL-resource. De resource is beschikbaar tijdens de bewerking, met uitzonde ring van een korte herconfiguratie die aan het einde van de bewerking plaatsvindt, en die doorgaans tot 8 seconden duurt, zelfs in het geval van langdurige langlopende trans acties. Als u de gevolgen van de herconfiguratie wilt beperken, moet u de bewerking buiten de piek uren uitvoeren.
 
 ### <a name="gain-more-predictability-with-maintenance-window"></a>Meer voorspel baarheid krijgen met het onderhouds venster
 
@@ -98,7 +98,7 @@ Het kiezen van een ander onderhouds venster dan de standaard instelling is momen
 
 Om het maximale voor deel van onderhouds Vensters te verkrijgen, moet u ervoor zorgen dat uw client toepassingen gebruikmaken van het verbindings beleid omleiden. Omleiding is het aanbevolen verbindings beleid, waarbij clients rechtstreeks verbinding maken met het knoop punt dat als host fungeert voor de data base, waardoor de latentie wordt beperkt en de door Voer is verbeterd.  
 
-* In Azure SQL Database kunnen alle verbindingen die gebruikmaken van het beleid voor proxy verbindingen, worden beïnvloed door het gekozen onderhouds venster en een onderhouds venster voor gateway knooppunten. Client verbindingen die gebruikmaken van het aanbevolen verbindings beleid voor omleiding worden echter niet beïnvloed door een onderhouds failover voor gateway knooppunten. 
+* In Azure SQL Database kunnen alle verbindingen die gebruikmaken van het beleid voor proxy verbindingen, worden beïnvloed door het gekozen onderhouds venster en een onderhouds venster voor gateway knooppunten. Client verbindingen die gebruikmaken van het aanbevolen verbindings beleid voor omleiding worden echter niet beïnvloed door de herconfiguratie van een gateway knooppunt onderhoud. 
 
 * In Azure SQL Managed instance worden de gateway knooppunten gehost [in het virtuele cluster](../../azure-sql/managed-instance/connectivity-architecture-overview.md#virtual-cluster-connectivity-architecture) en hebben hetzelfde onderhouds venster als het beheerde exemplaar, maar het gebruik van het verbindings beleid omleiden wordt nog steeds aanbevolen om het aantal onderbrekingen tijdens de onderhouds gebeurtenis te beperken.
 
@@ -115,7 +115,7 @@ Alle exemplaren die worden gehost in een virtueel cluster, delen het onderhouds 
 De verwachte duur van het configureren van het onderhouds venster op een beheerd exemplaar kan worden berekend op basis [van de geschatte duur van beheer bewerkingen voor instanties](/azure/azure-sql/managed-instance/management-operations-overview#duration).
 
 > [!Important]
-> Een korte failover wordt aan het einde van de onderhouds bewerking uitgevoerd en duurt doorgaans Maxi maal 8 seconden, zelfs in het geval van langlopende trans acties. Als u de gevolgen van de failover wilt beperken, moet u de bewerking buiten de piek uren plannen.
+> Een korte herconfiguratie vindt plaats aan het einde van de onderhouds bewerking en duurt doorgaans tot 8 seconden, zelfs in het geval van langdurige langlopende trans acties. Als u de gevolgen van de herconfiguratie wilt beperken, moet u de bewerking buiten de piek uren plannen.
 
 ### <a name="ip-address-space-requirements"></a>Vereisten voor de IP-adres ruimte
 Voor elk nieuw virtueel cluster in het subnet zijn extra IP-adressen vereist volgens de toewijzing van het [IP-adres van het virtuele cluster](/azure/azure-sql/managed-instance/vnet-subnet-determine-size#determine-subnet-size). Het wijzigen van het onderhouds venster voor een bestaand beheerd exemplaar vereist ook een [tijdelijke extra IP-capaciteit](/azure/azure-sql/managed-instance/vnet-subnet-determine-size#address-requirements-for-update-scenarios) , zoals bij het schalen van het vCores-scenario voor de bijbehorende servicelaag.
@@ -129,9 +129,9 @@ Het configureren en wijzigen van het onderhouds venster veroorzaakt een wijzigin
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Voorafgaande meldingen](advance-notifications.md)
-* [Onderhouds venster configureren](maintenance-window-configure.md)
+* [Onderhoudsvenster configureren](maintenance-window-configure.md)
 
-## <a name="learn-more"></a>Meer informatie
+## <a name="learn-more"></a>Lees meer
 
 * [Veelgestelde vragen over onderhouds Vensters](maintenance-window-faq.yml)
 * [Azure SQL Database](sql-database-paas-overview.md) 

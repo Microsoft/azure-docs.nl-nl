@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 09/24/2020
 ms.reviewer: mbullwin
 ms.custom: devx-track-python
-ms.openlocfilehash: d22174b269ba9cea3b2c9cb9de2b5521df2786fa
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 69472da4f774a1dfae86e1891255907ad711175a
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101704409"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105047419"
 ---
 # <a name="set-up-azure-monitor-for-your-python-application"></a>Azure Monitor instellen voor uw python-toepassing
 
@@ -19,7 +19,7 @@ Azure Monitor ondersteunt gedistribueerde tracering, metrische verzameling en lo
 ## <a name="prerequisites"></a>Vereisten
 
 - Een Azure-abonnement. Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/) aan voordat u begint.
-- Installatie van python. In dit artikel wordt [python 3.7.0](https://www.python.org/downloads/release/python-370/)gebruikt, hoewel andere versies waarschijnlijk zullen werken met kleine wijzigingen. De SDK biedt alleen ondersteuning voor python v 2.7 en v 3.4-v 3.7.
+- Installatie van python. In dit artikel wordt [python 3.7.0](https://www.python.org/downloads/release/python-370/)gebruikt, hoewel andere versies waarschijnlijk zullen werken met kleine wijzigingen. De SDK biedt alleen ondersteuning voor python-versies 2,7 en 3.6 +.
 - Een Application Insights- [resource](./create-new-resource.md)maken. U krijgt uw eigen instrumentatie sleutel (Ikey) toegewezen voor uw resource.
 
 ## <a name="instrument-with-opencensus-python-sdk-for-azure-monitor"></a>Instrument met opentellingen python SDK voor Azure Monitor

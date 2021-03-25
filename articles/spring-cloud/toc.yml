@@ -77,20 +77,30 @@
           href: 'https://code.visualstudio.com/docs/java/java-spring-cloud'
         - name: Azure Spring Cloud implementeren met Azure PowerShell
           href: how-to-deploy-powershell.md
-    - name: Configureren
+    - name: Beheren
       items:
         - name: 'Een app starten, stoppen en verwijderen'
           href: how-to-start-stop-delete.md
         - name: Permanente opslag gebruiken
           href: how-to-persistent-storage.md
+        - name: Uitgaande openbare IP-adressen identificeren
+          href: how-to-outbound-public-ip.md
     - name: Schalen
       items:
         - name: Schaal van een app handmatig aanpassen
           href: how-to-scale-manual.md
         - name: Een app automatisch schalen
           href: how-to-setup-autoscale.md
-        - name: Uitgaande openbare IP-adressen identificeren
-          href: how-to-outbound-public-ip.md
+    - name: Integreren
+      items:
+        - name: Een app verbinden met Azure CosmosDB
+          href: how-to-bind-cosmos.md
+        - name: Een app verbinden met Azure Cache voor Redis
+          href: how-to-bind-redis.md
+        - name: Een app verbinden met Azure MySQL
+          href: how-to-bind-mysql.md
+        - name: Met Azure Load Balance Solutions integreren
+          href: how-to-integrate-azure-load-balancers.md
     - name: Controleren
       items:
         - name: Gedistribueerde tracering en App Insights
@@ -123,16 +133,6 @@
           href: how-to-enable-system-assigned-managed-identity.md
         - name: Rollen en machtigingen maken
           href: how-to-permissions.md
-    - name: Integreren
-      items:
-        - name: Een app verbinden met Azure CosmosDB
-          href: how-to-bind-cosmos.md
-        - name: Een app verbinden met Azure Cache voor Redis
-          href: how-to-bind-redis.md
-        - name: Een app verbinden met Azure MySQL
-          href: how-to-bind-mysql.md
-        - name: Met Azure Load Balance Solutions integreren
-          href: how-to-integrate-azure-load-balancers.md
     - name: Automatiseren
       items:
         - name: CI/CD met Azure DevOps

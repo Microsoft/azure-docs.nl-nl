@@ -8,12 +8,12 @@ author: shashankbarsin
 ms.author: shasb
 description: Dit artikel bevat een lijst met veelgestelde vragen met betrekking tot Azure Arc enabled Kubernetes
 keywords: Kubernetes, Arc, azure, containers, configuratie, GitOps, veelgestelde vragen
-ms.openlocfilehash: d7facb842509bdf852957d46d91dfcb3912e99ba
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 84368cc63bd9aaf1df4fb281395b47a6e886cb7f
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102121708"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105025846"
 ---
 # <a name="frequently-asked-questions---azure-arc-enabled-kubernetes"></a>Veelgestelde vragen: Azure Arc enabled Kubernetes
 
@@ -72,6 +72,6 @@ Deze functie past basislijn configuraties (zoals netwerk beleid, Pod en beveilig
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Door loop onze Snelstartgids om [een Kubernetes-cluster te verbinden met Azure Arc](./connect-cluster.md).
-* Hebt u al een Kubernetes-cluster verbonden met Azure-Arc? [Maak configuraties op uw Kubernetes-cluster met Arc-functionaliteit](./use-gitops-connected-cluster.md).
+* Door loop onze Snelstartgids om [een Kubernetes-cluster te verbinden met Azure Arc](./quickstart-connect-cluster.md).
+* Hebt u al een Kubernetes-cluster verbonden met Azure-Arc? [Maak configuraties op uw Kubernetes-cluster met Arc-functionaliteit](./tutorial-use-gitops-connected-cluster.md).
 * Meer informatie over het [gebruik van Azure Policy om configuraties op schaal toe te passen](./use-azure-policy.md).

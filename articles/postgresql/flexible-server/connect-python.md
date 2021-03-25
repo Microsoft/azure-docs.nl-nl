@@ -8,12 +8,12 @@ ms.custom: mvc
 ms.devlang: python
 ms.topic: quickstart
 ms.date: 09/22/2020
-ms.openlocfilehash: 89dc36a9b1b1fee9ad10d55945c7fc17bf72f476
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 2bcf467eea9186cc57fb4c6c3d8964632b8fec03
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "90945030"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105047708"
 ---
 # <a name="quickstart-use-python-to-connect-and-query-data-in-azure-database-for-postgresql---flexible-server"></a>Quickstart: Python gebruiken om verbinding te maken en gegevens op te vragen in Azure Database for PostgreSQL - Flexible Server
 
@@ -28,7 +28,7 @@ In dit artikel wordt ervan uitgegaan dat u bekend bent met het ontwikkelen met b
 
 * Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)
 * Een Azure Database for PostgreSQL - Flexible Server. Zie [Een Azure Database for PostgreSQL - Flexible Server met behulp van Azure Portal](./quickstart-create-server-portal.md) voor meer informatie over het maken van een flexibele server.
-* [Python](https://www.python.org/downloads/) 2.7.9+ of 3.4+.
+* [Python](https://www.python.org/downloads/) 2,7 of 3.6 +.
 * Nieuwste [PIP](https://pip.pypa.io/en/stable/installing/)-pakketinstallatieprogramma.
 
 ## <a name="preparing-your-client-workstation"></a>Uw clientwerkstation voorbereiden

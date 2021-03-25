@@ -1,5 +1,5 @@
 ---
-title: Beoordelings regels voor het SQL Server van SQL Database migratie
+title: Beoordelings regels voor het SQL Server van Azure SQL Database migratie
 description: Beoordelings regels voor het identificeren van problemen met de bron SQL Server instantie die moet worden geadresseerd voordat de migratie naar Azure SQL Database.
 ms.service: sql-database
 ms.subservice: migration-guide
@@ -10,14 +10,14 @@ author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: MashaMSFT
 ms.date: 12/15/2020
-ms.openlocfilehash: bf825572226bf5d7432fd3ad825f2f3a13355c53
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: c407b62b5f0308fbb6d9ff7223a3554ca09592db
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102054573"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105027207"
 ---
-# <a name="assessment-rules-for-sql-server-to-sql-database-migration"></a>Beoordelings regels voor het SQL Server van SQL Database migratie
+# <a name="assessment-rules-for-sql-server-to-azure-sql-database-migration"></a>Beoordelings regels voor het SQL Server van Azure SQL Database migratie
 [!INCLUDE[appliesto--sqldb](../../includes/appliesto-sqldb.md)]
 
 Migratie hulpprogramma's valideren uw bron SQL Server-exemplaar door een aantal beoordelings regels uit te voeren om te bepalen welke problemen moeten worden opgelost voordat u uw SQL Server-Data Base naar Azure SQL Database migreert. 

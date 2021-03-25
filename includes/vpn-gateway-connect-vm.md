@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/23/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 6986651d2b48d82382aa26a0a3947104c7e09981
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 5d631d8492ed1869bdc244e2cc90595183892822
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96026911"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105105797"
 ---
 U kunt verbinding maken met een VM die op uw VNet is geïmplementeerd door een verbinding met extern bureaublad te maken voor uw VM. De beste manier om eerst te controleren of u verbinding met uw VM kunt maken is door verbinding te maken met behulp van het privé-IP-adres in plaats van de computernaam. Op die manier test u of u verbinding kunt maken, niet of naamomzetting correct is geconfigureerd.
 
@@ -50,4 +50,4 @@ Als u problemen ondervindt bij het verbinding maken met een virtuele machine via
 
 * Als u verbinding met de VM kunt maken met behulp van het privé-IP-adres, maar niet met de computernaam, controleert u of DNS correct is geconfigureerd. Zie [Naamomzetting voor VM's](../articles/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md) voor meer informatie over de werking van naamomzetting voor VM's.
 
-* Zie [Problemen met Extern-bureaubladverbindingen met een VM oplossen](../articles/virtual-machines/troubleshooting/troubleshoot-rdp-connection.md) voor meer informatie over Extern-bureaubladverbindingen.
+* Zie [Problemen met Extern-bureaubladverbindingen met een VM oplossen](/troubleshoot/azure/virtual-machines/troubleshoot-rdp-connection) voor meer informatie over Extern-bureaubladverbindingen.

@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: aamalvea
 ms.author: aamalvea
 ms.reviewer: wiassaf, sstein
-ms.date: 02/26/2019
-ms.openlocfilehash: 1a74a2f44ac9b03e39e9fea48a3428b82111a48c
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.date: 03/24/2021
+ms.openlocfilehash: 4434c796a41126444b8785440427123e88e0b528
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103471999"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105107785"
 ---
 # <a name="use-resource-health-to-troubleshoot-connectivity-for-azure-sql-database-and-azure-sql-managed-instance"></a>Resource Health gebruiken om problemen met de verbinding voor Azure SQL Database en Azure SQL Managed instance op te lossen
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -76,5 +76,5 @@ Herconfiguraties worden beschouwd als tijdelijke omstandigheden en worden verwac
 - Meer informatie over [logica voor opnieuw proberen voor tijdelijke fouten](troubleshoot-common-connectivity-issues.md#retry-logic-for-transient-errors).
 - [SQL-verbindings fouten oplossen, diagnosticeren en voor komen](troubleshoot-common-connectivity-issues.md).
 - Meer informatie over het [configureren van resource Health-waarschuwingen](../../service-health/resource-health-alert-arm-template-guide.md).
-- Bekijk een overzicht van [resource Health](../../application-gateway/resource-health-overview.md).
+- Bekijk een overzicht van [resource Health](../../service-health/resource-health-overview.md).
 - Lees de [resource Health Veelgestelde vragen](../../service-health/resource-health-faq.md).

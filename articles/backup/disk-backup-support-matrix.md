@@ -4,25 +4,20 @@ description: Hierin wordt een overzicht gegeven van de ondersteunings instelling
 ms.topic: conceptual
 ms.date: 01/07/2021
 ms.custom: references_regions
-ms.openlocfilehash: 922bd532275cdd6b09df83b0e9d36fdec1da0b47
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 38c35824118979c900dacd9c103ae8f9ec11ad65
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101707214"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105107275"
 ---
-# <a name="azure-disk-backup-support-matrix-in-preview"></a>Ondersteunings matrix voor Azure Disk Backup (in Preview)
-
->[!IMPORTANT]
->Azure Disk Backup is in Preview zonder service level agreement en wordt niet aanbevolen voor productie werkbelastingen. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
->
->[Vul dit formulier](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR1vE8L51DIpDmziRt_893LVUNFlEWFJBN09PTDhEMjVHS05UWFkxUlUzUS4u) in om u aan te melden voor de preview-versie.
+# <a name="azure-disk-backup-support-matrix"></a>Azure Disck Backup-ondersteuningsmatrix
 
 U kunt [Azure backup](./backup-overview.md) gebruiken om Azure-schijven te beveiligen. In dit artikel vindt u een overzicht van de beschik baarheid van regio's, ondersteunde scenario's en beperkingen.
 
 ## <a name="supported-regions"></a>Ondersteunde regio’s
 
-Azure Disk Backup is beschikbaar als preview in de volgende regio's: VS-West, West-Centraal VS, Oost-VS2, Canada-centraal, UK-west, Zwitserland-noord, Zwitserland-west, Australië-centraal, Australië-centraal 2, Korea-centraal, Korea-zuid, Japan-West, Azië-oost, UAE-noord, Brazilië-zuid, Centraal-India. 
+Azure schijf back-up is beschikbaar in de volgende regio's: VS-West, VS-West 2, West-Centraal VS, VS-Oost, Oost-VS2, VS-centraal, Zuid-Centraal VS, Noord-Centraal VS, Canada-centraal, Brazilië-zuid, Zuid-Afrika-noord, UK-zuid, UK-west, Europa-west, Europa-noord, Zwitserland-noord, Zwitserland-west, Duitsland-west-centraal, Frankrijk-centraal, Noor wegen Oost, UAE-noord, Australië-centraal, Australië-centraal 2 , Australië-oost, Korea-centraal, Korea-zuid, Japan-Oost, Japan-West, Azië-oost, Zuidoost-Azië, Centraal-India. 
 
 Er worden meer regio's aangekondigd wanneer deze beschikbaar komen.
 

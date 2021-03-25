@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/03/2021
 ms.author: yelevin
-ms.openlocfilehash: 30cd0181ff2c5fbb8918921be3515818128a98d0
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 270e7f748f0d7fda14d93ac753ba655117f7ad36
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102048230"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105044141"
 ---
 # <a name="useful-resources-for-working-with-azure-sentinel"></a>Nuttige bronnen voor het werken met Azure Sentinel
 
@@ -39,7 +39,7 @@ Azure Sentinel maakt gebruik van de Kusto query language (KQL) van Azure Monitor
 
 Maak Automation in azure Sentinel met behulp van Azure Logic Apps, met een groeiende galerie met ingebouwde playbooks. 
 
-Zie [Azure Logic apps connectors](https://docs.microsoft.com/connectors/)voor meer informatie.
+Zie [Azure Logic apps connectors](/connectors/)voor meer informatie.
 
 ## <a name="comment-on-our-blogs-and-forums"></a>Opmerkingen over onze blogs en forums
 
@@ -67,4 +67,3 @@ Down load voorbeeld inhoud van de GitHub-opslag plaats van de privé-community o
 
 > [!div class="nextstepaction"]
 > [Gebruiks Case verhalen van klanten lezen](https://customers.microsoft.com/en-us/search?sq=%22Azure%20Sentinel%20%22&ff=&p=0&so=story_publish_date%20desc)
-

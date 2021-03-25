@@ -4,12 +4,12 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 03/10/2021
 ms.author: mikben
-ms.openlocfilehash: 7fee393b694bf761cf052702a975239d6dff9a9c
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: 9aaaece7d60ceead80e51bdc2a1bb342d9a4d237
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105105423"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105107720"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -18,12 +18,12 @@ ms.locfileid: "105105423"
 - Een token voor gebruikers toegang om de aanroepende client in te scha kelen. Zie [toegangs tokens maken en beheren](../../access-tokens.md)voor meer informatie.
 - Optioneel: Voltooi de Snelstartgids om [gesp roken oproep toe te voegen aan uw toepassing](../getting-started-with-calling.md).
 
-## <a name="install-the-client-library"></a>De clientbibliotheek installeren
+## <a name="install-the-sdk"></a>De SDK installeren
 
 > [!NOTE]
-> Dit document maakt gebruik van versie 1.0.0-Beta. 6 van de aanroepende client bibliotheek.
+> In dit document wordt versie 1.0.0-Beta. 6 van de aanroepende SDK gebruikt.
 
-Gebruik de `npm install` opdracht om de Azure Communication Services-aanroep-en algemene client bibliotheken voor Java script te installeren.
+Gebruik de `npm install` opdracht om de Azure Communication Services-aanroepende en common sdk's voor Java script te installeren.
 In dit document wordt verwezen naar typen in versie 1.0.0-Beta. 5 van de aanroepende bibliotheek.
 
 ```console
@@ -34,11 +34,11 @@ npm install @azure/communication-calling --save
 
 ## <a name="object-model"></a>Objectmodel
 
-De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Azure Communication Services-client bibliotheek die aanroept:
+De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Azure Communication Services-aanroepende SDK:
 
 | Naam                             | Beschrijving                                                                                                                                 |
 | ---------------------------------| ------------------------------------------------------------------------------------------------------------------------------------------- |
-| `CallClient`                      | Het belangrijkste toegangs punt voor de aanroepende client bibliotheek.                                                                       |
+| `CallClient`                      | Het belangrijkste toegangs punt voor de aanroepende SDK.                                                                       |
 | `CallAgent`                        | Wordt gebruikt om aanroepen te starten en te beheren.                                                                                            |
 | `DeviceManager`                    | Gebruikt voor het beheren van media apparaten.                                                                                           |
 | `AzureCommunicationTokenCredential` | Implementeert de `CommunicationTokenCredential` Interface, die wordt gebruikt om een instantie te maken `callAgent` . |
@@ -63,7 +63,7 @@ const deviceManager = await callClient.getDeviceManager()
 
 ## <a name="place-a-call"></a>Een oproep doen
 
-Als u een oproep wilt maken en starten, gebruikt u een van de Api's in `callAgent` en geeft u een gebruiker op die u hebt gemaakt via de client bibliotheek van de communicatie Services-identiteit.
+Als u een oproep wilt maken en starten, gebruikt u een van de Api's in `callAgent` en geeft u een gebruiker op die u hebt gemaakt via de Communication Services-identiteits-SDK.
 
 Het maken van aanroepen en starten synchroon zijn. Met het gesprek exemplaar kunt u zich abonneren op het aanroepen van gebeurtenissen.
 

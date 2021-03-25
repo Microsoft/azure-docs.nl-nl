@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: aamalvea
 ms.author: aamalvea
 ms.reviewer: sstein
-ms.date: 1/21/2021
-ms.openlocfilehash: d38ac9731959cf9a23052753b09c9e7819846705
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.date: 3/23/2021
+ms.openlocfilehash: eedbc46ee5feb0aa6f6a26c3f5b3c67ac8ca0a5e
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "101664114"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105044257"
 ---
 # <a name="plan-for-azure-maintenance-events-in-azure-sql-database-and-azure-sql-managed-instance"></a>Azure-onderhouds gebeurtenissen plannen in Azure SQL Database en Azure SQL Managed instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -27,11 +27,11 @@ Meer informatie over het voorbereiden van geplande onderhouds gebeurtenissen in 
 
 Om ervoor te zorgen dat Azure SQL Database en Azure SQL Managed instance services veilig, compatibel, stabiel en met het uitvoeren van updates worden uitgevoerd via de service onderdelen bijna continu. Dankzij de moderne en robuuste service architectuur en innovatieve technologieën zoals [Hot patching](https://aka.ms/azuresqlhotpatching), zijn de meeste updates volledig transparant en zijn ze niet van invloed op de beschik baarheid van de service. Nog maar weinig typen updates leiden tot korte service interrupts en vereisen een speciale behandeling. 
 
-Voor elke Data Base bewaart Azure SQL Database en Azure SQL Managed instance een quorum van database replica's waarbij één replica het primaire is. Op elk moment moet een primaire replica online onderhoud zijn en moet ten minste één secundaire replica in orde zijn. Tijdens gepland onderhoud gaan leden van het database quorum één keer offline, met de bedoeling dat er één primaire replica is en ten minste één secundaire replica online om ervoor te zorgen dat er geen downtime van de client is. Wanneer de primaire replica offline moet worden gezet, treedt er een herconfiguratie/failover-proces op waarin de ene secundaire replica de nieuwe primair wordt.  
+Voor elke Data Base bewaart Azure SQL Database en Azure SQL Managed instance een quorum van database replica's waarbij één replica het primaire is. Op elk moment moet een primaire replica online onderhoud zijn en moet ten minste één secundaire replica in orde zijn. Tijdens gepland onderhoud gaan leden van het database quorum één keer offline, met de bedoeling dat er één primaire replica is en ten minste één secundaire replica online om ervoor te zorgen dat er geen downtime van de client is. Wanneer de primaire replica offline moet worden gezet, treedt er een herconfiguraties proces op waarin de ene secundaire replica de nieuwe primair wordt.  
 
 ## <a name="what-to-expect-during-a-planned-maintenance-event"></a>Wat u kunt verwachten tijdens een geplande onderhouds gebeurtenis
 
-Onderhouds gebeurtenis kan één of meerdere failovers veroorzaken, afhankelijk van de Constellation van de primaire en secundaire replica's aan het begin van de onderhouds gebeurtenis. Gemiddeld worden er 1,7 failovers uitgevoerd per geplande onderhouds gebeurtenis. Opnieuw configureren/failovers worden over het algemeen binnen 30 seconden voltooid. Het gemiddelde is acht seconden. Als er al een verbinding is gemaakt, moet uw toepassing opnieuw verbinding maken met de nieuwe primaire replica van uw data base. Als er een nieuwe verbinding tot stand wordt gebracht terwijl de Data Base een herconfiguratie ondergaat voordat de nieuwe primaire replica online is, krijgt u de fout 40613 (Data Base niet beschikbaar): *' data base {DATABASENAME} ' op server ' {servername} ' is momenteel niet beschikbaar. Probeer de verbinding later opnieuw. "* Als uw data base een langlopende query heeft, wordt deze query onderbroken tijdens een herconfiguratie en moet deze opnieuw worden gestart.
+Onderhouds gebeurtenis kan één of meerdere herconfiguraties veroorzaken, afhankelijk van de Constellation van de primaire en secundaire replica's aan het begin van de onderhouds gebeurtenis. Gemiddeld worden 1,7 herconfiguraties uitgevoerd per geplande onderhouds gebeurtenis. Herconfiguraties worden over het algemeen binnen 30 seconden voltooid. Het gemiddelde is acht seconden. Als er al een verbinding is gemaakt, moet uw toepassing opnieuw verbinding maken met de nieuwe primaire replica van uw data base. Als er een nieuwe verbinding tot stand wordt gebracht terwijl de Data Base een herconfiguratie ondergaat voordat de nieuwe primaire replica online is, krijgt u de fout 40613 (Data Base niet beschikbaar): *' data base {DATABASENAME} ' op server ' {servername} ' is momenteel niet beschikbaar. Probeer de verbinding later opnieuw. "* Als uw data base een langlopende query heeft, wordt deze query onderbroken tijdens een herconfiguratie en moet deze opnieuw worden gestart.
 
 ## <a name="how-to-simulate-a-planned-maintenance-event"></a>Een geplande onderhouds gebeurtenis simuleren
 
@@ -39,7 +39,7 @@ Om ervoor te zorgen dat uw client toepassing bestand is tegen onderhouds gebeurt
 
 ## <a name="retry-logic"></a>Logica voor opnieuw proberen
 
-Bij elke client productie toepassing die verbinding maakt met een Cloud database service, moet een robuuste logica voor verbinding [opnieuw](troubleshoot-common-connectivity-issues.md#retry-logic-for-transient-errors)worden geïmplementeerd. Dit helpt failovers transparant te maken voor de eind gebruikers of ten minste de negatieve effecten te minimaliseren.
+Bij elke client productie toepassing die verbinding maakt met een Cloud database service, moet een robuuste logica voor verbinding [opnieuw](troubleshoot-common-connectivity-issues.md#retry-logic-for-transient-errors)worden geïmplementeerd. Zo kunt u herconfiguraties transparant maken voor de eind gebruikers of ten minste de negatieve effecten minimaliseren.
 
 ## <a name="resource-health"></a>Status van resources
 

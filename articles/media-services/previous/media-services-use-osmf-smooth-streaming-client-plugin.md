@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 3/10/2021
 ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 70042a5c4c27ec5d163e5f05089ae50b92140c28
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: b0969ffae7963d6a5f9ac249e43750444ab11baa
+ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103011252"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105036047"
 ---
 # <a name="how-to-use-the-microsoft-smooth-streaming-plugin-for-the-adobe-open-source-media-framework"></a>De micro soft Smooth Streaming-invoeg toepassing voor het Adobe Open source-media Framework gebruiken
 
@@ -59,7 +59,7 @@ OSMF-invoeg toepassingen kunnen statisch worden geladen (tijdens het compileren)
 * Statisch laden: om statisch te laden, is een bestand met een statische bibliotheek (SWC) vereist. Statische invoeg toepassingen worden toegevoegd als een verwijzing naar de projecten en samengevoegd in het uiteindelijke uitvoer bestand tijdens de compilatie.
 * Dynamisch laden: om dynamisch te laden, is een vooraf gecompileerd (SWF-) bestand vereist. Dynamische invoeg toepassingen worden in de runtime geladen en niet opgenomen in de project uitvoer. (Gecompileerde uitvoer) Dynamische invoeg toepassingen kunnen worden geladen met behulp van HTTP-en BESTANDS protocollen.
 
-Zie de [pagina officiële OSMF-invoeg toepassing](http://osmf.org/dev/osmf/OtherPDFs/osmf_plugin_dev_guide.pdf)voor meer informatie over statische en dynamische belasting.
+Zie de [pagina officiële OSMF-invoeg toepassing](https://www.ibm.com/support/knowledgecenter/SSLTBW_2.3.0/com.ibm.zos.v2r3.izua300/IZUHPINFO_PluginsPlanning.htm)voor meer informatie over statische en dynamische belasting.
 
 ### <a name="ss-for-osmf-static-loading"></a>SS voor het statische laden van OSMF
 Het onderstaande code fragment laat zien hoe u de SS-invoeg toepassing voor OSMF statisch kunt laden en een eenvoudige video kunt afspelen met behulp van de OSMF MediaFactory-klasse. Voordat u de OSMF-code voor SS insluit, moet u ervoor zorgen dat de project verwijzing de statische invoeg toepassing MSAdaptiveStreamingPlugin-v 1.0.3-osmf 2.0. SWC bevat.

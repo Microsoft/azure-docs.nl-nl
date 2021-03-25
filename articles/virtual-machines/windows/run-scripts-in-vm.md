@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 05/02/2018
 ms.topic: how-to
 manager: carmonm
-ms.openlocfilehash: ab7d20a83c4cb8cb7a36c4603a5b0b2e69b0662f
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 24ff0d8089055f83c76156cf5fb163313faf9492
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102560664"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105043475"
 ---
 # <a name="run-scripts-in-your-windows-vm"></a>Scripts uitvoeren in uw Windows-VM
 
@@ -58,7 +58,7 @@ De [Hybrid Runbook worker](../../automation/automation-hybrid-runbook-worker.md)
 
 ## <a name="serial-console"></a>Seriële console
 
-De [seriële console](../troubleshooting/serial-console-windows.md) biedt directe toegang tot een virtuele machine, vergelijkbaar met een toetsen bord dat is verbonden met de virtuele machine.
+De [seriële console](/troubleshoot/azure/virtual-machines/serial-console-windows) biedt directe toegang tot een virtuele machine, vergelijkbaar met een toetsen bord dat is verbonden met de virtuele machine.
 
 * Voer opdrachten uit op virtuele machines van Azure.
 * Kan worden uitgevoerd met behulp van een op tekst gebaseerde console op de machine in de Azure Portal.
@@ -72,4 +72,4 @@ Meer informatie over de verschillende functies die beschikbaar zijn voor het uit
 * [Aangepaste scriptextensie](../extensions/custom-script-windows.md)
 * [Run-opdracht](run-command.md)
 * [Hybrid Runbook Worker](../../automation/automation-hybrid-runbook-worker.md)
-* [Seriële console](../troubleshooting/serial-console-windows.md)
+* [Seriële console](/troubleshoot/azure/virtual-machines/serial-console-windows)

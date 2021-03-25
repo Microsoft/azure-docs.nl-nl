@@ -9,12 +9,12 @@ ms.topic: article
 ms.workload: storage-backup-recovery
 ms.date: 01/08/2020
 ms.author: mayg
-ms.openlocfilehash: d2a0444483c382da7c54accf7dca49d097671771
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 8fe21ce5b92d672a2e025e0b45b8cbaea5951a8b
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "92371984"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105043900"
 ---
 # <a name="troubleshoot-errors-when-failing-over-vmware-vm-or-physical-machine-to-azure"></a>Problemen oplossen bij het uitvoeren van een failover van een virtuele VMware-machine of fysieke machine naar Azure
 
@@ -78,9 +78,9 @@ Volg de onderstaande stappen om het opstart type van Stuur Programma's voor **Wi
 
 ## <a name="unable-to-connectrdpssh-to-the-failed-over-virtual-machine-due-to-grayed-out-connect-button-on-the-virtual-machine"></a>Kan geen verbinding maken/RDP/SSH met de virtuele machine waarvoor een failover is uitgevoerd omdat de knop verbinding maken op de virtuele machine grijs wordt weer gegeven
 
-Raadpleeg [de documentatie voor](../virtual-machines/troubleshooting/troubleshoot-rdp-connection.md)gedetailleerde instructies voor het oplossen van problemen met RDP.
+Raadpleeg [de documentatie voor](/troubleshoot/azure/virtual-machines/troubleshoot-rdp-connection)gedetailleerde instructies voor het oplossen van problemen met RDP.
 
-Raadpleeg [de documentatie voor](../virtual-machines/troubleshooting/troubleshoot-ssh-connection.md)gedetailleerde instructies voor het oplossen van problemen met SSH.
+Raadpleeg [de documentatie voor](/troubleshoot/azure/virtual-machines/troubleshoot-ssh-connection)gedetailleerde instructies voor het oplossen van problemen met SSH.
 
 Als de knop **verbinden** op de virtuele machine waarvoor een failover is uitgevoerd in azure grijs is en u niet met Azure bent verbonden via een snelle route of een site-naar-site-VPN-verbinding, dan,
 
@@ -94,7 +94,7 @@ Als de knop **verbinden** op de virtuele machine waarvoor een failover is uitgev
 
 ## <a name="unable-to-connectrdpssh---vm-connect-button-available"></a>Kan geen verbinding maken/RDP/SSH: er is een VM-verbinding beschikbaar
 
-Als de knop **verbinden** op de virtuele machine waarvoor een failover is uitgevoerd in azure beschikbaar is (niet grijs), controleert u de **Diagnostische gegevens over opstarten** op de VM en controleert u op fouten zoals vermeld in [dit artikel](../virtual-machines/troubleshooting/boot-diagnostics.md).
+Als de knop **verbinden** op de virtuele machine waarvoor een failover is uitgevoerd in azure beschikbaar is (niet grijs), controleert u de **Diagnostische gegevens over opstarten** op de VM en controleert u op fouten zoals vermeld in [dit artikel](/troubleshoot/azure/virtual-machines/boot-diagnostics).
 
 1. Als de virtuele machine niet is gestart, kunt u een failover uitvoeren naar een ouder herstel punt.
 2. Als de toepassing in de virtuele machine niet actief is, kunt u een failover uitvoeren naar een toepassings consistent herstel punt.
@@ -182,7 +182,7 @@ Het probleem oplossen:
 
 
 ## <a name="next-steps"></a>Volgende stappen
-- Problemen met de [RDP-verbinding met de Windows VM](../virtual-machines/troubleshooting/troubleshoot-rdp-connection.md) oplossen
-- Problemen met [SSH-verbinding met Linux VM](../virtual-machines/troubleshooting/detailed-troubleshoot-ssh-connection.md) oplossen
+- Problemen met de [RDP-verbinding met de Windows VM](/troubleshoot/azure/virtual-machines/troubleshoot-rdp-connection) oplossen
+- Problemen met [SSH-verbinding met Linux VM](/troubleshoot/azure/virtual-machines/detailed-troubleshoot-ssh-connection) oplossen
 
 Als u meer hulp nodig hebt, plaatst u uw query op [micro soft Q&een vraag pagina voor site Recovery](/answers/topics/azure-site-recovery.html) of verlaat u een opmerking aan het einde van dit document. We hebben een actieve community die u kan helpen.

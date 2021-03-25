@@ -1,15 +1,15 @@
 ---
 title: Container installatie kopie opslag
 description: Meer informatie over hoe uw container installatie kopieën en andere artefacten worden opgeslagen in Azure Container Registry, met inbegrip van beveiliging, redundantie en capaciteit.
-ms.topic: article
-ms.date: 03/03/2021
+ms.topic: conceptual
+ms.date: 03/24/2021
 ms.custom: references_regions
-ms.openlocfilehash: ec4328b44d5493b8d765fa30c548adc3d747d446
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: a9c8ec877ddb17603e82b763223278a2e5e36714
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102183264"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105047742"
 ---
 # <a name="container-image-storage-in-azure-container-registry"></a>Opslag van container installatie kopieën in Azure Container Registry
 
@@ -21,11 +21,9 @@ Alle container installatie kopieën en andere artefacten in uw REGI ster worden 
 
 ## <a name="regional-storage"></a>Regionale opslag
 
-Azure Container Registry slaat gegevens op in de regio waarin het REGI ster is gemaakt, zodat klanten kunnen voldoen aan de vereisten voor gegevens locatie en naleving.
+Azure Container Registry slaat gegevens op in de regio waarin het REGI ster is gemaakt, zodat klanten kunnen voldoen aan de vereisten voor gegevens locatie en naleving. In alle regio's behalve Brazilië-zuid en Zuidoost-Azië kunnen Azure ook register gegevens in een gekoppelde regio in dezelfde geografie opslaan. In de regio's Brazilië-zuid en Zuidoost-Azië worden register gegevens altijd beperkt tot de regio, om gegevens locatie vereisten voor die regio's aan te passen.
 
-Voor een betere beveiliging tegen data centers is het mogelijk dat bepaalde regio's [zone redundantie](zone-redundancy.md)bieden, waarbij gegevens worden gerepliceerd over meerdere data centers in een bepaalde regio.
-
-Klanten die hun gegevens willen opslaan in meerdere regio's voor betere prestaties in verschillende geografische gebieden of die tolerantie willen hebben in het geval van een regionale storing, moeten [geo-replicatie](container-registry-geo-replication.md)inschakelen.
+Als er een regionale storing optreedt, zijn de register gegevens mogelijk niet meer beschikbaar en worden ze niet automatisch hersteld. Klanten die hun register gegevens in meerdere regio's willen opslaan voor betere prestaties in verschillende geografische gebieden of die tolerantie willen hebben in het geval van een regionale storing, moeten [geo-replicatie](container-registry-geo-replication.md)inschakelen.
 
 ## <a name="geo-replication"></a>Geo-replicatie
 
@@ -33,7 +31,7 @@ Voor scenario's waarvoor hoge Beschik baarheid is vereist, kunt u overwegen de [
 
 ## <a name="zone-redundancy"></a>Zoneredundantie
 
-Als u een robuust en Maxi maal beschik bare Azure container Registry wilt maken, schakelt u optioneel [zone redundantie](zone-redundancy.md) in in azure-regio's selecteren. Een functie van de service tier Premium maakt gebruik van Azure- [beschikbaarheids zones](../availability-zones/az-overview.md) om uw REGI ster te repliceren naar een minimum van drie afzonderlijke zones in elke ingeschakelde regio. Combi neer geo-replicatie en zone redundantie om zowel de betrouw baarheid als de prestaties van een REGI ster te verbeteren. 
+Als u een robuust en Maxi maal beschik bare Azure-container register wilt maken, schakelt u optioneel [zone redundantie](zone-redundancy.md) in in azure-regio's selecteren. Een functie van de service tier Premium maakt gebruik van Azure- [beschikbaarheids zones](../availability-zones/az-overview.md) om uw REGI ster te repliceren naar een minimum van drie afzonderlijke zones in elke ingeschakelde regio. Combi neer geo-replicatie en zone redundantie om zowel de betrouw baarheid als de prestaties van een REGI ster te verbeteren. 
 
 ## <a name="scalable-storage"></a>Schaal bare opslag
 

@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 07/17/2020
 ms.author: hahamil
 ms.custom: aaddev, scenarios:getting-started, languages:JavaScript, devx-track-js
-ms.openlocfilehash: dcb82e6cc50a2ff3291d5a900ec9367d69dcdde6
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 1e99e8ff25d895ba2248ddd1ba2520e9f14871a7
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103224908"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105022803"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-a-javascript-spa-using-the-auth-code-flow-with-pkce"></a>Snelstartgids: gebruikers aanmelden en een toegangs token verkrijgen in een Java script-beveiligd-wachtwoord verificatie met behulp van de auth-code stroom met PKCE 
 
@@ -25,7 +25,7 @@ In deze Snelstartgids downloadt en voert u een code voorbeeld uit waarmee wordt 
 
 Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 
-Deze quickstart maakt gebruik van MSAL.js 2.0 met de verificatiecodestroom. Raadpleeg voor een vergelijkbare quickstart die gebruikmaakt van MSAL.js 1.0 met de impliciete stroom [Quickstart: gebruikers aanmelden in JavaScript-apps met één pagina](./quickstart-v2-javascript.md).
+Deze Snelstartgids maakt gebruik van MSAL.js v2 met de autorisatie code stroom. Voor een vergelijk bare Snelstartgids waarbij MSAL.js v1 met de impliciete stroom wordt gebruikt, raadpleegt u [Quick Start: gebruikers aanmelden in Java script-apps met één pagina](./quickstart-v2-javascript.md).
 
 ## <a name="prerequisites"></a>Vereisten
 

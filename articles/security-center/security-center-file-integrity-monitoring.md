@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/22/2020
 ms.author: memildin
-ms.openlocfilehash: b858903b87dc6c4cc1f7c40338c09bf5b8204b3d
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 834df2387d037c19672e3287970300f4e84ca34b
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102176532"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105047980"
 ---
 # <a name="file-integrity-monitoring-in-azure-security-center"></a>Controle van bestands integriteit in Azure Security Center
 Meer informatie over het configureren van FIM (File Integrity Monitoring) in Azure Security Center met behulp van deze procedure.
@@ -31,7 +31,7 @@ Meer informatie over het configureren van FIM (File Integrity Monitoring) in Azu
 |Releasestatus:|Algemene Beschik baarheid (GA)|
 |Prijzen:|[Azure Defender voor servers](defender-for-servers-introduction.md)vereist.<br>FIM uploadt gegevens naar de Log Analytics-werk ruimte. De gegevens kosten zijn van toepassing op basis van de hoeveelheid gegevens die u uploadt. Zie [log Analytics prijzen](https://azure.microsoft.com/pricing/details/log-analytics/) voor meer informatie.|
 |Vereiste rollen en machtigingen:|**Eigenaar van de werk ruimte** kan FIM inschakelen/uitschakelen (Zie [Azure-rollen voor log Analytics](/services-hub/health/azure-roles#azure-roles)) voor meer informatie.<br>**Lezer** kan resultaten weer geven.|
-|Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja ](./media/icons/yes-icon.png) , National/soeverein (US gov, China gov, andere gov)<br>Wordt alleen ondersteund in regio's waar de oplossing voor het bijhouden van wijzigingen van Azure Automation beschikbaar is.<br>![Ja ](./media/icons/yes-icon.png) apparaten met [Azure-Arc](https://docs.microsoft.com/azure/azure-arc/servers/overview) ingeschakeld.<br>Zie [ondersteunde regio's voor gekoppelde log Analytics-werk ruimte](../automation/how-to/region-mappings.md).<br>Meer [informatie over het bijhouden van wijzigingen](../automation/change-tracking/overview.md).|
+|Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja ](./media/icons/yes-icon.png) , National/soeverein (US gov, China gov, andere gov)<br>Wordt alleen ondersteund in regio's waar de oplossing voor het bijhouden van wijzigingen van Azure Automation beschikbaar is.<br>![Ja ](./media/icons/yes-icon.png) apparaten met [Azure-Arc](../azure-arc/servers/overview.md) ingeschakeld.<br>Zie [ondersteunde regio's voor gekoppelde log Analytics-werk ruimte](../automation/how-to/region-mappings.md).<br>Meer [informatie over het bijhouden van wijzigingen](../automation/change-tracking/overview.md).|
 |||
 
 ## <a name="what-is-fim-in-security-center"></a>Wat is FIM in Security Center?

@@ -1,69 +1,41 @@
 ---
-title: Linux VM-installatie kopieën selecteren met Azure CLI
-description: Meer informatie over het gebruik van de Azure CLI om de uitgever, aanbieding, SKU en versie te bepalen voor VM-installatie kopieën van Marketplace.
+title: Informatie over het aankoop plan van Marketplace zoeken en gebruiken met de CLI
+description: Meer informatie over het gebruik van de Azure CLI voor het vinden van image URNs-en Purchase Plan-para meters, zoals de uitgever, aanbieding, SKU en versie, voor VM-installatie kopieën van Marketplace.
 author: cynthn
 ms.service: virtual-machines
 ms.subservice: imaging
 ms.topic: how-to
-ms.date: 01/25/2019
+ms.date: 03/22/2021
 ms.author: cynthn
 ms.collection: linux
-ms.openlocfilehash: efa0b91c9c0e43104f36017c3b1a1f3167190d63
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.custom: contperf-fy21q3-portal
+ms.openlocfilehash: 70cb4cc54c6f9a376d3bd38dc8bb6cd3a059a20c
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102562806"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105022838"
 ---
-# <a name="find-linux-vm-images-in-the-azure-marketplace-with-the-azure-cli"></a>Linux-VM-installatiekopieën zoeken in de Azure Marketplace met de Azure CLI
+# <a name="find-azure-marketplace-image-information-using-the-azure-cli"></a>Informatie over Azure Marketplace-installatie kopieën zoeken met behulp van Azure CLI
 
 In dit onderwerp wordt beschreven hoe u de Azure CLI gebruikt om VM-installatie kopieën te vinden in de Azure Marketplace. Gebruik deze informatie om een Marketplace-installatie kopie op te geven wanneer u via een programma een virtuele machine maakt met de CLI, Resource Manager-sjablonen of andere hulpprogram ma's.
 
-Blader ook naar beschik bare installatie kopieën en aanbiedingen met behulp van de [Azure Marketplace](https://azuremarketplace.microsoft.com/) -winkel, de [Azure Portal](https://portal.azure.com)of  [Azure PowerShell](../windows/cli-ps-findimage.md). 
+U kunt ook bladeren in beschik bare installatie kopieën en aanbiedingen met behulp van [Azure Marketplace](https://azuremarketplace.microsoft.com/) of  [Azure PowerShell](../windows/cli-ps-findimage.md). 
 
-Zorg ervoor dat u bent aangemeld bij een Azure-account ( `az login` ).
+## <a name="terminology"></a>Terminologie
 
-[!INCLUDE [virtual-machines-common-image-terms](../../../includes/virtual-machines-common-image-terms.md)]
+Een Marketplace-installatie kopie in azure heeft de volgende kenmerken:
 
-[!INCLUDE [azure-cli-prepare-your-environment.md](../../../includes/azure-cli-prepare-your-environment.md)]
+* **Uitgever**: de organisatie die de installatie kopie heeft gemaakt. Voorbeelden: Canonical, MicrosoftWindowsServer
+* **Aanbieding**: de naam van een groep gerelateerde installatie kopieën die door een uitgever zijn gemaakt. Voor beelden: UbuntuServer, WindowsServer
+* **SKU**: een exemplaar van een aanbieding, zoals een belang rijke release van een distributie. Voor beelden: 18,04-LTS, 2019-Data Center
+* **Versie**: het versie nummer van een afbeeldings-SKU. 
 
-## <a name="deploy-from-a-vhd-using-purchase-plan-parameters"></a>Implementeren vanaf een VHD met behulp van de para meters van het aankoop plan
+Deze waarden kunnen afzonderlijk of als afbeelding *urn* worden door gegeven, waarbij de waarden worden gecombineerd die worden gescheiden door de dubbele punt (:). Bijvoorbeeld: *Uitgever*:*aanbieding*:*SKU*:*versie*. U kunt het versie nummer in de URN vervangen door `latest` de nieuwste versie van de installatie kopie te gebruiken. 
 
-Als u een bestaande VHD hebt die is gemaakt met een betaalde Azure Marketplace-installatie kopie, moet u mogelijk de informatie van het aankoop plan opgeven wanneer u een nieuwe virtuele machine maakt op basis van die VHD. 
+Als de uitgever van de installatie kopie aanvullende licentie-en aankoop voorwaarden biedt, moet u deze accepteren voordat u de installatie kopie kunt gebruiken.  Zie [de informatie over het aankoop plan controleren](#check-the-purchase-plan-information)voor meer informatie.
 
-Als u nog steeds de oorspronkelijke virtuele machine hebt, of een andere virtuele machine die is gemaakt met dezelfde Marketplace-installatie kopie, kunt u de naam van het abonnement, de uitgever en de product informatie ophalen via [AZ VM Get-instance-View](/cli/azure/vm#az_vm_get_instance_view). In dit voor beeld wordt een virtuele machine met de naam *myVM* in de resource groep *myResourceGroup* opgehaald en worden de gegevens van het aankoop plan weer gegeven.
 
-```azurepowershell-interactive
-az vm get-instance-view -g myResourceGroup -n myVM --query plan
-```
-
-Als u de informatie over het abonnement niet hebt opgehaald voordat de oorspronkelijke VM werd verwijderd, kunt u een [ondersteunings aanvraag](https://ms.portal.azure.com/#create/Microsoft.Support)indienen. Ze moeten de VM-naam, abonnements-ID en het tijds tempel van de verwijderings bewerking hebben.
-
-Zodra u de plannings gegevens hebt, kunt u de nieuwe VM maken met behulp van de `--attach-os-disk` para meter om de VHD op te geven.
-
-```azurecli-interactive
-az vm create \
-   --resource-group myResourceGroup \
-  --name myNewVM \
-  --nics myNic \
-  --size Standard_DS1_v2 --os-type Linux \
-  --attach-os-disk myVHD \
-  --plan-name planName \
-  --plan-publisher planPublisher \
-  --plan-product planProduct 
-```
-
-## <a name="deploy-a-new-vm-using-purchase-plan-parameters"></a>Een nieuwe VM implementeren met behulp van de para meters van het aankoop plan
-
-Als u al informatie over de installatie kopie hebt, kunt u deze implementeren met behulp van de `az vm create` opdracht. In dit voor beeld implementeren we een virtuele machine met de RabbitMQ-installatie kopie gecertificeerd door BitNami:
-
-```azurecli
-az group create --name myResourceGroupVM --location westus
-
-az vm create --resource-group myResourceGroupVM --name myVM --image bitnami:rabbitmq:rabbitmq:latest --plan-name rabbitmq --plan-product rabbitmq --plan-publisher bitnami
-```
-
-Als u een bericht ontvangt over het accepteren van de voor waarden van de afbeelding, raadpleegt u de sectie [akkoord met de voor waarden](#accept-the-terms) verderop in dit artikel.
 
 ## <a name="list-popular-images"></a>Populaire installatie kopieën weer geven
 
@@ -73,20 +45,23 @@ Voer de opdracht [AZ VM Image List](/cli/azure/vm/image) uit zonder de `--all` o
 az vm image list --output table
 ```
 
-De uitvoer bevat de afbeelding URN (de waarde in de kolom *urn* ). Bij het maken van een virtuele machine met een van deze populaire Marketplace-installatie kopieën kunt u ook de *UrnAlias* opgeven, een Inge kort formulier, zoals *UbuntuLTS*.
+De uitvoer bevat de afbeelding URN. U kunt ook de *UrnAlias* gebruiken. Dit is een verkorte versie die is gemaakt voor populaire installatie kopieën zoals *UbuntuLTS*.
 
 ```output
-You are viewing an offline list of images, use --all to retrieve an up-to-date list
 Offer          Publisher               Sku                 Urn                                                             UrnAlias             Version
 -------------  ----------------------  ------------------  --------------------------------------------------------------  -------------------  ---------
 CentOS         OpenLogic               7.5                 OpenLogic:CentOS:7.5:latest                                     CentOS               latest
 CoreOS         CoreOS                  Stable              CoreOS:CoreOS:Stable:latest                                     CoreOS               latest
-Debian         credativ                8                   credativ:Debian:8:latest                                        Debian               latest
+debian-10      Debian                  10                  Debian:debian-10:10:latest                                      Debian               latest
 openSUSE-Leap  SUSE                    42.3                SUSE:openSUSE-Leap:42.3:latest                                  openSUSE-Leap        latest
-RHEL           RedHat                  7-RAW               RedHat:RHEL:7-RAW:latest                                        RHEL                 latest
-SLES           SUSE                    12-SP2              SUSE:SLES:12-SP2:latest                                         SLES                 latest
-UbuntuServer   Canonical               16.04-LTS           Canonical:UbuntuServer:16.04-LTS:latest                         UbuntuLTS            latest
-...
+RHEL           RedHat                  7-LVM               RedHat:RHEL:7-LVM:latest                                        RHEL                 latest
+SLES           SUSE                    15                  SUSE:SLES:15:latest                                             SLES                 latest
+UbuntuServer   Canonical               18.04-LTS           Canonical:UbuntuServer:18.04-LTS:latest                         UbuntuLTS            latest
+WindowsServer  MicrosoftWindowsServer  2019-Datacenter     MicrosoftWindowsServer:WindowsServer:2019-Datacenter:latest     Win2019Datacenter    latest
+WindowsServer  MicrosoftWindowsServer  2016-Datacenter     MicrosoftWindowsServer:WindowsServer:2016-Datacenter:latest     Win2016Datacenter    latest
+WindowsServer  MicrosoftWindowsServer  2012-R2-Datacenter  MicrosoftWindowsServer:WindowsServer:2012-R2-Datacenter:latest  Win2012R2Datacenter  latest
+WindowsServer  MicrosoftWindowsServer  2012-Datacenter     MicrosoftWindowsServer:WindowsServer:2012-Datacenter:latest     Win2012Datacenter    latest
+WindowsServer  MicrosoftWindowsServer  2008-R2-SP1         MicrosoftWindowsServer:WindowsServer:2008-R2-SP1:latest         Win2008R2SP1         latest
 ```
 
 ## <a name="find-specific-images"></a>Specifieke installatiekopieën zoeken
@@ -97,228 +72,77 @@ Met de volgende opdracht worden bijvoorbeeld alle Debian-aanbiedingen weer gegev
 
 ```azurecli
 az vm image list --offer Debian --all --output table 
-
 ```
 
 Gedeeltelijke uitvoer: 
 
 ```output
-Offer              Publisher    Sku                  Urn                                                    Version
------------------  -----------  -------------------  -----------------------------------------------------  --------------
-Debian             credativ     7                    credativ:Debian:7:7.0.201602010                        7.0.201602010
-Debian             credativ     7                    credativ:Debian:7:7.0.201603020                        7.0.201603020
-Debian             credativ     7                    credativ:Debian:7:7.0.201604050                        7.0.201604050
-Debian             credativ     7                    credativ:Debian:7:7.0.201604200                        7.0.201604200
-Debian             credativ     7                    credativ:Debian:7:7.0.201606280                        7.0.201606280
-Debian             credativ     7                    credativ:Debian:7:7.0.201609120                        7.0.201609120
-Debian             credativ     7                    credativ:Debian:7:7.0.201611020                        7.0.201611020
-Debian             credativ     7                    credativ:Debian:7:7.0.201701180                        7.0.201701180
-Debian             credativ     8                    credativ:Debian:8:8.0.201602010                        8.0.201602010
-Debian             credativ     8                    credativ:Debian:8:8.0.201603020                        8.0.201603020
-Debian             credativ     8                    credativ:Debian:8:8.0.201604050                        8.0.201604050
-Debian             credativ     8                    credativ:Debian:8:8.0.201604200                        8.0.201604200
-Debian             credativ     8                    credativ:Debian:8:8.0.201606280                        8.0.201606280
-Debian             credativ     8                    credativ:Debian:8:8.0.201609120                        8.0.201609120
-Debian             credativ     8                    credativ:Debian:8:8.0.201611020                        8.0.201611020
-Debian             credativ     8                    credativ:Debian:8:8.0.201701180                        8.0.201701180
-Debian             credativ     8                    credativ:Debian:8:8.0.201703150                        8.0.201703150
-Debian             credativ     8                    credativ:Debian:8:8.0.201704110                        8.0.201704110
-Debian             credativ     8                    credativ:Debian:8:8.0.201704180                        8.0.201704180
-Debian             credativ     8                    credativ:Debian:8:8.0.201706190                        8.0.201706190
-Debian             credativ     8                    credativ:Debian:8:8.0.201706210                        8.0.201706210
-Debian             credativ     8                    credativ:Debian:8:8.0.201708040                        8.0.201708040
-Debian             credativ     8                    credativ:Debian:8:8.0.201710090                        8.0.201710090
-Debian             credativ     8                    credativ:Debian:8:8.0.201712040                        8.0.201712040
-Debian             credativ     8                    credativ:Debian:8:8.0.201801170                        8.0.201801170
-Debian             credativ     8                    credativ:Debian:8:8.0.201803130                        8.0.201803130
-Debian             credativ     8                    credativ:Debian:8:8.0.201803260                        8.0.201803260
-Debian             credativ     8                    credativ:Debian:8:8.0.201804020                        8.0.201804020
-Debian             credativ     8                    credativ:Debian:8:8.0.201804150                        8.0.201804150
-Debian             credativ     8                    credativ:Debian:8:8.0.201805160                        8.0.201805160
-Debian             credativ     8                    credativ:Debian:8:8.0.201807160                        8.0.201807160
-Debian             credativ     8                    credativ:Debian:8:8.0.201901221                        8.0.201901221
+Offer                                    Publisher                         Sku                                      Urn                                                                                                   Version
+---------------------------------------  --------------------------------  ---------------------------------------  ----------------------------------------------------------------------------------------------------  --------------
+apache-solr-on-debian                    apps-4-rent                       apache-solr-on-debian                    apps-4-rent:apache-solr-on-debian:apache-solr-on-debian:1.0.0                                         1.0.0
+atomized-h-debian10-v1                   atomizedinc1587939464368          hdebian10plan                            atomizedinc1587939464368:atomized-h-debian10-v1:hdebian10plan:1.0.0                                   1.0.0
+atomized-h-debian9-v1                    atomizedinc1587939464368          hdebian9plan                             atomizedinc1587939464368:atomized-h-debian9-v1:hdebian9plan:1.0.0                                     1.0.0
+atomized-r-debian10-v1                   atomizedinc1587939464368          rdebian10plan                            atomizedinc1587939464368:atomized-r-debian10-v1:rdebian10plan:1.0.0                                   1.0.0
+atomized-r-debian9-v1                    atomizedinc1587939464368          rdebian9plan                             atomizedinc1587939464368:atomized-r-debian9-v1:rdebian9plan:1.0.0                                     1.0.0
+cis-debian-linux-10-l1                   center-for-internet-security-inc  cis-debian10-l1                          center-for-internet-security-inc:cis-debian-linux-10-l1:cis-debian10-l1:1.0.7                         1.0.7
+cis-debian-linux-10-l1                   center-for-internet-security-inc  cis-debian10-l1                          center-for-internet-security-inc:cis-debian-linux-10-l1:cis-debian10-l1:1.0.8                         1.0.8
+cis-debian-linux-10-l1                   center-for-internet-security-inc  cis-debian10-l1                          center-for-internet-security-inc:cis-debian-linux-10-l1:cis-debian10-l1:1.0.9                         1.0.9
+cis-debian-linux-9-l1                    center-for-internet-security-inc  cis-debian9-l1                           center-for-internet-security-inc:cis-debian-linux-9-l1:cis-debian9-l1:1.0.18                          1.0.18
+cis-debian-linux-9-l1                    center-for-internet-security-inc  cis-debian9-l1                           center-for-internet-security-inc:cis-debian-linux-9-l1:cis-debian9-l1:1.0.19                          1.0.19
+cis-debian-linux-9-l1                    center-for-internet-security-inc  cis-debian9-l1                           center-for-internet-security-inc:cis-debian-linux-9-l1:cis-debian9-l1:1.0.20                          1.0.20
+apache-web-server-with-debian-10         cognosys                          apache-web-server-with-debian-10         cognosys:apache-web-server-with-debian-10:apache-web-server-with-debian-10:1.2019.1008                1.2019.1008
+docker-ce-with-debian-10                 cognosys                          docker-ce-with-debian-10                 cognosys:docker-ce-with-debian-10:docker-ce-with-debian-10:1.2019.0710                                1.2019.0710
+Debian                                   credativ                          8                                        credativ:Debian:8:8.0.201602010                                                                       8.0.201602010
+Debian                                   credativ                          8                                        credativ:Debian:8:8.0.201603020                                                                       8.0.201603020
+Debian                                   credativ                          8                                        credativ:Debian:8:8.0.201604050                                                                       8.0.201604050
 ...
 ```
 
-Gelijksoortige filters toep assen met de `--location` `--publisher` Opties, en `--sku` . U kunt gedeeltelijke overeenkomsten op een filter uitvoeren, bijvoorbeeld `--offer Deb` om te zoeken naar alle Debian-installatie kopieën.
 
-Als u geen specifieke locatie met de optie opgeeft `--location` , worden de waarden voor de standaard locatie geretourneerd. (Stel een andere standaard locatie in door uit te voeren `az configure --defaults location=<location>` .)
-
-Met de volgende opdracht wordt bijvoorbeeld een lijst weer gegeven met alle Debian 8 Sku's op de locatie Europa-west:
-
-```azurecli
-az vm image list --location westeurope --offer Deb --publisher credativ --sku 8 --all --output table
-```
-
-Gedeeltelijke uitvoer:
-
-```output
-Offer    Publisher    Sku                Urn                                              Version
--------  -----------  -----------------  -----------------------------------------------  -------------
-Debian   credativ     8                  credativ:Debian:8:8.0.201602010                  8.0.201602010
-Debian   credativ     8                  credativ:Debian:8:8.0.201603020                  8.0.201603020
-Debian   credativ     8                  credativ:Debian:8:8.0.201604050                  8.0.201604050
-Debian   credativ     8                  credativ:Debian:8:8.0.201604200                  8.0.201604200
-Debian   credativ     8                  credativ:Debian:8:8.0.201606280                  8.0.201606280
-Debian   credativ     8                  credativ:Debian:8:8.0.201609120                  8.0.201609120
-Debian   credativ     8                  credativ:Debian:8:8.0.201611020                  8.0.201611020
-Debian   credativ     8                  credativ:Debian:8:8.0.201701180                  8.0.201701180
-Debian   credativ     8                  credativ:Debian:8:8.0.201703150                  8.0.201703150
-Debian   credativ     8                  credativ:Debian:8:8.0.201704110                  8.0.201704110
-Debian   credativ     8                  credativ:Debian:8:8.0.201704180                  8.0.201704180
-Debian   credativ     8                  credativ:Debian:8:8.0.201706190                  8.0.201706190
-Debian   credativ     8                  credativ:Debian:8:8.0.201706210                  8.0.201706210
-Debian   credativ     8                  credativ:Debian:8:8.0.201708040                  8.0.201708040
-Debian   credativ     8                  credativ:Debian:8:8.0.201710090                  8.0.201710090
-Debian   credativ     8                  credativ:Debian:8:8.0.201712040                  8.0.201712040
-Debian   credativ     8                  credativ:Debian:8:8.0.201801170                  8.0.201801170
-Debian   credativ     8                  credativ:Debian:8:8.0.201803130                  8.0.201803130
-Debian   credativ     8                  credativ:Debian:8:8.0.201803260                  8.0.201803260
-Debian   credativ     8                  credativ:Debian:8:8.0.201804020                  8.0.201804020
-Debian   credativ     8                  credativ:Debian:8:8.0.201804150                  8.0.201804150
-Debian   credativ     8                  credativ:Debian:8:8.0.201805160                  8.0.201805160
-Debian   credativ     8                  credativ:Debian:8:8.0.201807160                  8.0.201807160
-Debian   credativ     8                  credativ:Debian:8:8.0.201901221                  8.0.201901221
-...
-```
-
-## <a name="navigate-the-images"></a>Navigeren door de afbeeldingen
+## <a name="look-at-all-available-images"></a>Alle beschik bare installatie kopieën bekijken
  
 Een andere manier om een installatie kopie te vinden op een locatie is het uitvoeren van de [AZ VM Image List-Publishers](/cli/azure/vm/image), [AZ VM Image List-aanbiedingen](/cli/azure/vm/image)en [AZ VM Image List-sku's-](/cli/azure/vm/image) opdrachten in volg orde. Met deze opdrachten bepaalt u deze waarden:
 
-1. Geef de uitgevers van installatiekopieën weer.
-2. Geef de aanbiedingen voor een bepaalde uitgever weer.
-3. Geef de SKU's voor een bepaalde aanbieding weer.
+1. De installatie kopie-uitgevers voor een locatie weer geven. In dit voor beeld bekijken we de regio *VS-West* .
+    
+    ```azurecli
+    az vm image list-publishers --location westus --output table
+    ```
 
-Voor een geselecteerde SKU kunt u vervolgens een versie kiezen die u wilt implementeren.
+1. Geef de aanbiedingen voor een bepaalde uitgever weer. In dit voor beeld voegen we *canoniek* toe als de uitgever.
+    
+    ```azurecli
+    az vm image list-offers --location westus --publisher Canonical --output table
+    ```
 
-De volgende opdracht geeft bijvoorbeeld een lijst van de uitgevers van installatie kopieën op de locatie vs-West:
+1. Geef de SKU's voor een bepaalde aanbieding weer. In dit voor beeld voegen we *UbuntuServer* toe als de aanbieding.
+    ```azurecli
+    az vm image list-skus --location westus --publisher Canonical --offer UbuntuServer --output table
+    ```
 
-```azurecli
-az vm image list-publishers --location westus --output table
-```
+1. Voor een bepaalde uitgever, aanbieding en SKU, worden alle versies van de installatie kopie weer gegeven. In dit voor beeld voegen we *18,04-LTS* toe als de SKU.
 
-Gedeeltelijke uitvoer:
+    ```azurecli
+    az vm image list \
+        --location westus \
+        --publisher Canonical \  
+        --offer UbuntuServer \    
+        --sku 18.04-LTS \
+        --all --output table
+    ```
 
-```output
-Location    Name
-----------  ----------------------------------------------------
-westus      128technology
-westus      1e
-westus      4psa
-westus      5nine-software-inc
-westus      7isolutions
-westus      a10networks
-westus      abiquo
-westus      accellion
-westus      accessdata-group
-westus      accops
-westus      Acronis
-westus      Acronis.Backup
-westus      actian-corp
-westus      actian_matrix
-westus      actifio
-westus      activeeon
-westus      advantech-webaccess
-westus      aerospike
-westus      affinio
-westus      aiscaler-cache-control-ddos-and-url-rewriting-
-westus      akamai-technologies
-westus      akumina
-...
-```
-
-Gebruik deze informatie om aanbiedingen van een specifieke uitgever te vinden. Bijvoorbeeld, voor de *canonieke* uitgever op de locatie vs-West, zoek aanbiedingen door uit te voeren `azure vm image list-offers` . Geef de locatie en de uitgever op, zoals in het volgende voor beeld:
-
-```azurecli
-az vm image list-offers --location westus --publisher Canonical --output table
-```
-
-Uitvoer:
-
-```output
-Location    Name
-----------  -------------------------
-westus      Ubuntu15.04Snappy
-westus      Ubuntu15.04SnappyDocker
-westus      UbunturollingSnappy
-westus      UbuntuServer
-westus      Ubuntu_Core
-```
-U ziet dat in de regio vs-West, canonieke de *UbuntuServer* -aanbieding op Azure publiceert. Maar welke SKU's? Als u deze waarden wilt ophalen, moet `azure vm image list-skus` u de locatie, uitgever en aanbieding die u hebt gedetecteerd, uitvoeren en instellen:
-
-```azurecli
-az vm image list-skus --location westus --publisher Canonical --offer UbuntuServer --output table
-```
-
-Uitvoer:
-
-```output
-Location    Name
-----------  -----------------
-westus      12.04.3-LTS
-westus      12.04.4-LTS
-westus      12.04.5-LTS
-westus      14.04.0-LTS
-westus      14.04.1-LTS
-westus      14.04.2-LTS
-westus      14.04.3-LTS
-westus      14.04.4-LTS
-westus      14.04.5-DAILY-LTS
-westus      14.04.5-LTS
-westus      16.04-DAILY-LTS
-westus      16.04-LTS
-westus      16.04.0-LTS
-westus      18.04-DAILY-LTS
-westus      18.04-LTS
-westus      18.10
-westus      18.10-DAILY
-westus      19.04-DAILY
-```
-
-Gebruik tot slot de `az vm image list` opdracht om een specifieke versie te vinden van de SKU die u wilt gebruiken, bijvoorbeeld *18,04-LTS*:
-
-```azurecli
-az vm image list --location westus --publisher Canonical --offer UbuntuServer --sku 18.04-LTS --all --output table
-```
-
-Gedeeltelijke uitvoer:
-
-```output
-Offer         Publisher    Sku        Urn                                               Version
-------------  -----------  ---------  ------------------------------------------------  ---------------
-UbuntuServer  Canonical    18.04-LTS  Canonical:UbuntuServer:18.04-LTS:18.04.201804262  18.04.201804262
-UbuntuServer  Canonical    18.04-LTS  Canonical:UbuntuServer:18.04-LTS:18.04.201805170  18.04.201805170
-UbuntuServer  Canonical    18.04-LTS  Canonical:UbuntuServer:18.04-LTS:18.04.201805220  18.04.201805220
-UbuntuServer  Canonical    18.04-LTS  Canonical:UbuntuServer:18.04-LTS:18.04.201806130  18.04.201806130
-UbuntuServer  Canonical    18.04-LTS  Canonical:UbuntuServer:18.04-LTS:18.04.201806170  18.04.201806170
-UbuntuServer  Canonical    18.04-LTS  Canonical:UbuntuServer:18.04-LTS:18.04.201807240  18.04.201807240
-UbuntuServer  Canonical    18.04-LTS  Canonical:UbuntuServer:18.04-LTS:18.04.201808060  18.04.201808060
-UbuntuServer  Canonical    18.04-LTS  Canonical:UbuntuServer:18.04-LTS:18.04.201808080  18.04.201808080
-UbuntuServer  Canonical    18.04-LTS  Canonical:UbuntuServer:18.04-LTS:18.04.201808140  18.04.201808140
-UbuntuServer  Canonical    18.04-LTS  Canonical:UbuntuServer:18.04-LTS:18.04.201808310  18.04.201808310
-UbuntuServer  Canonical    18.04-LTS  Canonical:UbuntuServer:18.04-LTS:18.04.201809110  18.04.201809110
-UbuntuServer  Canonical    18.04-LTS  Canonical:UbuntuServer:18.04-LTS:18.04.201810030  18.04.201810030
-UbuntuServer  Canonical    18.04-LTS  Canonical:UbuntuServer:18.04-LTS:18.04.201810240  18.04.201810240
-UbuntuServer  Canonical    18.04-LTS  Canonical:UbuntuServer:18.04-LTS:18.04.201810290  18.04.201810290
-UbuntuServer  Canonical    18.04-LTS  Canonical:UbuntuServer:18.04-LTS:18.04.201811010  18.04.201811010
-UbuntuServer  Canonical    18.04-LTS  Canonical:UbuntuServer:18.04-LTS:18.04.201812031  18.04.201812031
-UbuntuServer  Canonical    18.04-LTS  Canonical:UbuntuServer:18.04-LTS:18.04.201812040  18.04.201812040
-UbuntuServer  Canonical    18.04-LTS  Canonical:UbuntuServer:18.04-LTS:18.04.201812060  18.04.201812060
-UbuntuServer  Canonical    18.04-LTS  Canonical:UbuntuServer:18.04-LTS:18.04.201901140  18.04.201901140
-UbuntuServer  Canonical    18.04-LTS  Canonical:UbuntuServer:18.04-LTS:18.04.201901220  18.04.201901220
-...
-```
-
-U kunt nu precies de installatie kopie kiezen die u wilt gebruiken door rekening te houden met de URN-waarde. Geef deze waarde door aan de `--image` para meter bij het maken van een virtuele machine met de opdracht [AZ VM Create](/cli/azure/vm) . Houd er rekening mee dat u het versie nummer in de URN kunt vervangen door "nieuwste". Deze versie is altijd de nieuwste versie van de installatie kopie. 
+Geef deze waarde van de kolom URN door met de `--image` para meter bij het maken van een virtuele machine met de opdracht [AZ VM Create](/cli/azure/vm) . U kunt ook het versie nummer in de URN vervangen door ' laatste ', zodat u gewoon de meest recente versie van de installatie kopie kunt gebruiken. 
 
 Als u een virtuele machine implementeert met een resource manager-sjabloon, stelt u de installatie kopie parameters afzonderlijk in de `imageReference` Eigenschappen in. Zie de [sjabloonverwijzing](/azure/templates/microsoft.compute/virtualmachines).
 
-[!INCLUDE [virtual-machines-common-marketplace-plan](../../../includes/virtual-machines-common-marketplace-plan.md)]
 
-### <a name="view-plan-properties"></a>Plan eigenschappen weer geven
+## <a name="check-the-purchase-plan-information"></a>De informatie van het aankoop plan controleren
 
-Als u de gegevens van het aankoop plan van een afbeelding wilt weer geven, voert u de opdracht [AZ VM Image Show](/cli/azure/image) uit. Als de `plan` eigenschap in de uitvoer niet is `null` , heeft de installatie kopie de voor waarden die u moet accepteren voordat u een programmatische implementatie uitvoert.
+Sommige VM-installatie kopieën in de Azure Marketplace hebben aanvullende licentie-en aankoop voorwaarden die u moet accepteren voordat u ze via een programma kunt implementeren.  
+
+Als u een virtuele machine van een dergelijke installatie kopie wilt implementeren, moet u de voor waarden van de installatie kopie accepteren wanneer u deze voor de eerste keer gebruikt, eenmaal per abonnement. U moet ook de para meters van het *aankoop plan* opgeven om een virtuele machine te implementeren vanuit die installatie kopie
+
+Als u de gegevens van het aankoop plan van een afbeelding wilt weer geven, voert u de opdracht [AZ VM Image Show](/cli/azure/image) uit met de urn van de installatie kopie. Als de `plan` eigenschap in de uitvoer niet is `null` , heeft de installatie kopie de voor waarden die u moet accepteren voordat u een programmatische implementatie uitvoert.
 
 De canonieke Ubuntu Server 18,04 LTS-installatie kopie heeft bijvoorbeeld geen aanvullende voor waarden, omdat de `plan` gegevens er als volgt uitziet `null` :
 
@@ -342,7 +166,7 @@ Uitvoer:
 }
 ```
 
-Als u een vergelijk bare opdracht uitvoert voor de RabbitMQ die door de BitNami-installatie kopie wordt gecertificeerd, worden de volgende eigenschappen weer gegeven `plan` : `name` , `product` en `publisher` . (Sommige installatie kopieën hebben ook een `promotion code` eigenschap.) Raadpleeg de volgende secties om de voor waarden te accepteren en de programmatische implementatie in te scha kelen om deze installatie kopie te implementeren.
+Als u een vergelijk bare opdracht uitvoert voor de RabbitMQ die door de BitNami-installatie kopie wordt gecertificeerd, worden de volgende eigenschappen weer gegeven `plan` : `name` , `product` en `publisher` . (Sommige installatie kopieën hebben ook een `promotion code` eigenschap.) 
 
 ```azurecli
 az vm image show --location westus --urn bitnami:rabbitmq:rabbitmq:latest
@@ -367,12 +191,14 @@ Uitvoer:
 }
 ```
 
+Als u deze installatie kopie wilt implementeren, moet u de voor waarden accepteren en de para meters van het aankoop plan opgeven wanneer u een virtuele machine implementeert met behulp van die installatie kopie.
+
 ## <a name="accept-the-terms"></a>De gebruiksvoorwaarden accepteren
 
-Als u de licentie voorwaarden wilt weer geven en accepteren, gebruikt u de opdracht [AZ VM image Accept-Terms](/cli/azure/vm/image?) . Wanneer u de voor waarden accepteert, schakelt u programmatische implementatie in voor uw abonnement. U hoeft slechts één keer per abonnement voor de installatie kopie te accepteren. Bijvoorbeeld:
+Als u de licentie voorwaarden wilt weer geven en accepteren, gebruikt u de opdracht [AZ VM image Accept-Terms](/cli/azure/vm/image/terms) . Wanneer u de voor waarden accepteert, schakelt u programmatische implementatie in voor uw abonnement. U hoeft slechts één keer per abonnement voor de installatie kopie te accepteren. Bijvoorbeeld:
 
 ```azurecli
-az vm image accept-terms --urn bitnami:rabbitmq:rabbitmq:latest
+az vm image terms show --urn bitnami:rabbitmq:rabbitmq:latest
 ``` 
 
 De uitvoer bevat een `licenseTextLink` aan de licentie voorwaarden en geeft aan dat de waarde van `accepted` is `true` :
@@ -393,6 +219,75 @@ De uitvoer bevat een `licenseTextLink` aan de licentie voorwaarden en geeft aan 
   "type": "Microsoft.MarketplaceOrdering/offertypes"
 }
 ```
+
+Als u de voor waarden wilt accepteren, typt u:
+
+```azurecli
+az vm image terms accept --urn bitnami:rabbitmq:rabbitmq:latest
+``` 
+
+## <a name="deploy-a-new-vm-using-the-image-parameters"></a>Een nieuwe VM implementeren met de para meters van de installatie kopie
+
+Met informatie over de installatie kopie kunt u deze implementeren met behulp van de `az vm create` opdracht. 
+
+Als u een installatie kopie wilt implementeren die geen plan informatie heeft, zoals de meest recente Ubuntu Server 18,04-installatie kopie van canonieke, geeft u de URN door voor `--image` :
+
+```azurecli-interactive
+az group create --name myURNVM --location westus
+az vm create \
+   --resource-group myURNVM \
+   --name myVM \
+   --admin-username azureuser \
+   --generate-ssh-keys \
+   --image Canonical:UbuntuServer:18.04-LTS:latest 
+```
+
+
+Voor een installatie kopie met de para meters van het aankoop plan, zoals de RabbitMQ gecertificeerd door BitNami, geeft u de URN voor en geeft u `--image` ook de para meters van het aankoop plan op:
+
+```azurecli
+az group create --name myPurchasePlanRG --location westus
+
+az vm create \
+   --resource-group myPurchasePlanRG \
+   --name myVM \
+   --admin-username azureuser \
+   --generate-ssh-keys \
+   --image bitnami:rabbitmq:rabbitmq:latest \
+   --plan-name rabbitmq \
+   --plan-product rabbitmq \
+   --plan-publisher bitnami
+```
+
+Als u een bericht ontvangt over het accepteren van de voor waarden van de afbeelding, raadpleegt u [de voor waarden](#accept-the-terms)in de sectie. Zorg ervoor dat de uitvoer van de `az vm image accept-terms` waarde retourneert `"accepted": true,` die aangeeft dat u de voor waarden van de afbeelding hebt geaccepteerd.
+
+
+## <a name="using-an-existing-vhd-with-purchase-plan-information"></a>Een bestaande VHD gebruiken met informatie over het aankoop plan
+
+Als u een bestaande VHD hebt van een virtuele machine die is gemaakt met een betaalde Azure Marketplace-installatie kopie, moet u mogelijk de informatie van het aankoop plan opgeven wanneer u een nieuwe virtuele machine maakt op basis van die VHD. 
+
+Als u nog steeds de oorspronkelijke virtuele machine hebt, of een andere virtuele machine die is gemaakt met dezelfde Marketplace-installatie kopie, kunt u de naam van het abonnement, de uitgever en de product informatie ophalen via [AZ VM Get-instance-View](/cli/azure/vm#az_vm_get_instance_view). In dit voor beeld wordt een virtuele machine met de naam *myVM* in de resource groep *myResourceGroup* opgehaald en worden de gegevens van het aankoop plan weer gegeven.
+
+```azurepowershell-interactive
+az vm get-instance-view -g myResourceGroup -n myVM --query plan
+```
+
+Als u de informatie over het abonnement niet hebt opgehaald voordat de oorspronkelijke VM werd verwijderd, kunt u een [ondersteunings aanvraag](https://ms.portal.azure.com/#create/Microsoft.Support)indienen. Ze moeten de VM-naam, abonnements-ID en het tijds tempel van de verwijderings bewerking hebben.
+
+Zodra u de plannings gegevens hebt, kunt u de nieuwe VM maken met behulp van de `--attach-os-disk` para meter om de VHD op te geven.
+
+```azurecli-interactive
+az vm create \
+  --resource-group myResourceGroup \
+  --name myNewVM \
+  --nics myNic \
+  --size Standard_DS1_v2 --os-type Linux \
+  --attach-os-disk myVHD \
+  --plan-name planName \
+  --plan-publisher planPublisher \
+  --plan-product planProduct 
+```
+
 
 ## <a name="next-steps"></a>Volgende stappen
 Zie [Linux Vm's maken en beheren met de Azure cli](tutorial-manage-vm.md)om snel een virtuele machine te maken met behulp van de installatie kopie-informatie.

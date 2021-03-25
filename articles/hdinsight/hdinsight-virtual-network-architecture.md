@@ -4,12 +4,12 @@ description: Meer informatie over de bronnen die beschikbaar zijn wanneer u een 
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/14/2020
-ms.openlocfilehash: d5b8bdf5577642290cee7250e0f21f8a69dfd248
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 43640a9de91b6b44a236090ff029a49313ee0247
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98931152"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104871670"
 ---
 # <a name="azure-hdinsight-virtual-network-architecture"></a>Azure HDInsight Virtual Network-architectuur
 
@@ -43,7 +43,7 @@ Als u alleen de hostnaam nodig hebt, gebruikt u alleen het eerste deel van de FQ
 
 In het volgende diagram ziet u de plaatsing van HDInsight-knoop punten en netwerk resources in Azure.
 
-![Diagram van HDInsight-entiteiten die zijn gemaakt in een aangepast Azure-VNET](./media/hdinsight-virtual-network-architecture/hdinsight-vnet-diagram.png)
+:::image type="content" source="./media/hdinsight-virtual-network-architecture/hdinsight-vnet-diagram.png" alt-text="Diagram van HDInsight-entiteiten die zijn gemaakt in een aangepast Azure-VNET" border="false":::
 
 De standaard resources in een Azure-Virtual Network bevatten de cluster knooppunt typen die in de vorige tabel worden vermeld. En netwerk apparaten die ondersteuning bieden voor communicatie tussen het virtuele netwerk en externe netwerken.
 

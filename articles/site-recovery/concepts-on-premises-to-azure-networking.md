@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/13/2019
 ms.author: harshacs
-ms.openlocfilehash: 123a68885346062b9e8a53b8d5066204b6b20f5e
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 4b88ed44632aa255837d8fb499782e11c716d443
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "89568775"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105048184"
 ---
 # <a name="connect-to-azure-vms-after-failover-from-on-premises"></a>Verbinding maken met virtuele Azure-machines na een failover van on-premises 
 
@@ -62,7 +62,7 @@ Na een failover voert u de volgende stappen uit op de virtuele Azure-machines di
 
 1. Wijs een openbaar IP-adres toe aan de VM om verbinding te maken met de VM via internet. U kunt niet hetzelfde open bare IP-adres gebruiken voor de Azure-VM die u hebt gebruikt voor uw on-premises machine. [Meer informatie](../virtual-network/virtual-network-public-ip-address.md)
 2. Controleer of de regels van de netwerkbeveiligingsgroep (NSG) op de VM inkomende verbindingen naar de RDP- of SSH-poort toestaan.
-3. Controleer de [Diagnostische gegevens over opstarten](../virtual-machines/troubleshooting/boot-diagnostics.md#enable-boot-diagnostics-on-existing-virtual-machine) om de virtuele machine weer te geven.
+3. Controleer de [Diagnostische gegevens over opstarten](/troubleshoot/azure/virtual-machines/boot-diagnostics#enable-boot-diagnostics-on-existing-virtual-machine) om de virtuele machine weer te geven.
 
 
 > [!NOTE]

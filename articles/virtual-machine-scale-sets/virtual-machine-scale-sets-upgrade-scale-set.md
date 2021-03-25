@@ -9,12 +9,12 @@ ms.subservice: management
 ms.date: 03/10/2020
 ms.reviewer: mimckitt
 ms.custom: mimckitt, devx-track-azurecli
-ms.openlocfilehash: bd16f0ef330d1d4a33dd796af0ec3e94dda5acfc
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 45c52e141ed2d93f89c9d7c1426a9d7cbbbd47f5
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98684590"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105023925"
 ---
 # <a name="modify-a-virtual-machine-scale-set"></a>Een virtuele-machineschaalset wijzigen
 
@@ -350,7 +350,7 @@ Sommige eigenschappen kunnen worden gewijzigd, met uitzonde ring van de huidige 
 
 - **singlePlacementGroup** -als singlePlacementGroup is ingesteld op True, kan dit worden gewijzigd in false. Als singlePlacementGroup echter False is, kan het **niet** worden gewijzigd in True.
 - **subnet** -het subnet van een schaalset kan worden gewijzigd zolang het oorspronkelijke subnet en het nieuwe subnet zich in hetzelfde virtuele netwerk bevinden.
-- **imageReferenceSku** -image-referentie-SKU kan worden bijgewerkt voor [distributies](../virtual-machines/linux/endorsed-distros.md), Windows Server/client-installatie kopieën en installatie kopieën zonder [plan gegevens](../virtual-machines/linux/cli-ps-findimage.md#view-plan-properties). 
+- **imageReferenceSku** -image-referentie-SKU kan worden bijgewerkt voor [distributies](../virtual-machines/linux/endorsed-distros.md), Windows Server/client-installatie kopieën en installatie kopieën zonder [plan gegevens](../virtual-machines/linux/cli-ps-findimage.md#check-the-purchase-plan-information). 
 
 ### <a name="properties-that-require-deallocation-to-change"></a>Eigenschappen waarvan de toewijzing moet worden gewijzigd
 Sommige eigenschappen kunnen alleen worden gewijzigd in bepaalde waarden als de toewijzing van de virtuele machines in de schaalset ongedaan wordt gemaakt. Deze eigenschappen zijn onder andere:
@@ -417,7 +417,7 @@ U kunt ook de installatie kopie wijzigen die door uw schaalset wordt gebruikt. H
 ### <a name="update-the-load-balancer-for-your-scale-set"></a>De load balancer voor uw schaalset bijwerken
 Stel dat u een schaalset hebt met een Azure Load Balancer en u de Azure Load Balancer wilt vervangen door een Azure-toepassing gateway. De eigenschappen load balancer en Application Gateway voor een schaalset maken deel uit van een lijst, zodat u de opdrachten kunt gebruiken om lijst elementen te verwijderen of toe te voegen in plaats van de eigenschappen rechtstreeks te wijzigen:
 
-- Azure Power shell:
+- Azure PowerShell:
 
     ```powershell
     # Get the current model of the scale set and store it in a local PowerShell object named $vmss

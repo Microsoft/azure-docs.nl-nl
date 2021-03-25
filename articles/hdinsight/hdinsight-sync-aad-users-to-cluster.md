@@ -6,12 +6,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 11/21/2019
-ms.openlocfilehash: a3307c5d677028c17717c0d591790f0373f131d6
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 2a753a33e9ddf16cc277ab10c1f91049a6382066
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98931621"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104871942"
 ---
 # <a name="synchronize-azure-active-directory-users-to-an-hdinsight-cluster"></a>Azure Active Directory-gebruikers synchroniseren met een HDInsight-cluster
 
@@ -29,11 +29,11 @@ Als u uw hosts wilt weer geven, opent u de Ambari-webgebruikersinterface. Elk kn
 
 2. Selecteer **alle gebruikers** in het menu aan de linkerkant en selecteer vervolgens **nieuwe gebruiker**.
 
-    ![Alle gebruikers en groepen Azure Portal](./media/hdinsight-sync-aad-users-to-cluster/users-and-groups-new.png)
+    :::image type="content" source="./media/hdinsight-sync-aad-users-to-cluster/users-and-groups-new.png" alt-text="Alle gebruikers en groepen Azure Portal":::
 
 3. Vul het nieuwe gebruikers formulier in. Selecteer groepen die u hebt gemaakt voor het toewijzen van machtigingen op basis van het cluster. In dit voor beeld maakt u een groep met de naam ' HiveUsers ', waaraan u nieuwe gebruikers kunt toewijzen. De [voorbeeld instructies](./domain-joined/apache-domain-joined-configure-using-azure-adds.md) voor het maken van een ESP-cluster zijn onder andere het toevoegen van twee groepen, `HiveUsers` en `AAD DC Administrators` .
 
-    ![Gebruikers deel venster Azure Portal groepen selecteren](./media/hdinsight-sync-aad-users-to-cluster/hdinsight-new-user-form.png)
+    :::image type="content" source="./media/hdinsight-sync-aad-users-to-cluster/hdinsight-new-user-form.png" alt-text="Gebruikers deel venster Azure Portal groepen selecteren":::
 
 4. Selecteer **Maken**.
 
@@ -129,15 +129,15 @@ Open de [Web-UI van Apache Ambari](hdinsight-hadoop-manage-ambari.md) om te cont
 
 1. Selecteer in het Ambari-dash board **Ambari beheren** onder het menu **beheer** .
 
-    ![Apache Ambari-dash board Ambari beheren](./media/hdinsight-sync-aad-users-to-cluster/manage-apache-ambari.png)
+    :::image type="content" source="./media/hdinsight-sync-aad-users-to-cluster/manage-apache-ambari.png" alt-text="Apache Ambari-dash board Ambari beheren":::
 
 2. Selecteer **gebruikers** onder de menu groep **gebruikers-en groeps beheer** aan de linkerkant van de pagina.
 
-    ![Het menu gebruikers en groepen van HDInsight](./media/hdinsight-sync-aad-users-to-cluster/hdinsight-users-menu-item.png)
+    :::image type="content" source="./media/hdinsight-sync-aad-users-to-cluster/hdinsight-users-menu-item.png" alt-text="Het menu gebruikers en groepen van HDInsight":::
 
 3. De nieuwe gebruiker moet worden weer gegeven in de tabel gebruikers. Het type wordt ingesteld op `LDAP` in plaats van  `Local` .
 
-    ![Overzicht van de pagina HDInsight Aad-gebruikers](./media/hdinsight-sync-aad-users-to-cluster/hdinsight-users-page.png)
+    :::image type="content" source="./media/hdinsight-sync-aad-users-to-cluster/hdinsight-users-page.png" alt-text="Overzicht van de pagina HDInsight Aad-gebruikers":::
 
 ## <a name="log-in-to-ambari-as-the-new-user"></a>Meld u aan bij Ambari als de nieuwe gebruiker
 

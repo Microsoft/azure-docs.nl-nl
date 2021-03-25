@@ -9,26 +9,27 @@ ms.topic: conceptual
 author: MashaMSFT
 ms.author: mathoma
 ms.date: 03/19/2021
-ms.openlocfilehash: ff7b2115b396bf42cdeffa9c58bffb1802e980d1
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 14b2c1f98ae977548edb635b8a8a7a956b3f2dd7
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104721882"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105023772"
 ---
 # <a name="migration-guide--mysql-to-azure-sql-database"></a>Migratie handleiding: MySQL naar Azure SQL Database
 [!INCLUDE[appliesto-sqldb-sqlmi](../../includes/appliesto-sqldb.md)]
 
 In deze hand leiding leert u hoe u uw MySQL-data base kunt migreren naar Azure SQL Database met behulp van SQL Server Migration Assistant voor MySQL (SSMA voor MySQL). 
 
-Zie [Data Base Migration](https://datamigration.microsoft.com/)(Engelstalig) voor andere migratie handleidingen. 
+Zie [Data Base Migration](https://docs.microsoft.com/data-migration)(Engelstalig) voor andere migratie handleidingen. 
 
 ## <a name="prerequisites"></a>Vereisten
 
 Als u uw MySQL-data base naar Azure SQL Database wilt migreren, hebt u het volgende nodig:
 
-- u kunt controleren of uw bron omgeving wordt ondersteund. Op dit moment wordt MySQL 5,6 en 5,7 ondersteund. 
-- [SQL Server Migration Assistant voor MySQL](https://www.microsoft.com/download/confirmation.aspx?id=54257)
+- U kunt controleren of uw bron omgeving wordt ondersteund. Op dit moment wordt MySQL 5,6 en 5,7 ondersteund. 
+- [SQL Server Migration Assistant voor MySQL](https://www.microsoft.com/download/details.aspx?id=54257)
+- Connectiviteit en voldoende machtigingen voor toegang tot zowel de bron als het doel. 
 
 
 ## <a name="pre-migration"></a>Premigratie 
@@ -37,32 +38,29 @@ Nadat u aan de vereisten hebt voldaan, bent u klaar om de topologie van uw omgev
 
 ### <a name="assess"></a>Evalueren 
 
-Met behulp van [SQL Server Migration Assistant voor mysql](https://www.microsoft.com/download/confirmation.aspx?id=54257)kunt u database objecten en-gegevens bekijken en data bases voor migratie beoordelen.
+Gebruik SQL Server Migration Assistant (SSMA) voor MySQL om database objecten en-gegevens te controleren en data bases te evalueren voor migratie. 
 
-Voer de volgende stappen uit om een evaluatie te maken.
+Voer de volgende stappen uit om een evaluatie te maken: 
 
-1. Open SQL Server Migration Assistant voor MySQL. 
-1. Selecteer **bestand** in het menu en kies vervolgens **Nieuw project**. Geef een naam op voor het project, een locatie om uw project op te slaan. Kies **Azure SQL database** als migratie doel. 
+1. Open [SQL Server Migration Assistant voor mysql](https://www.microsoft.com/download/details.aspx?id=54257). 
+1. Selecteer **bestand** in het menu en kies vervolgens **Nieuw project**. 
+1. Geef een naam op voor het project, een locatie om uw project op te slaan. Kies **Azure SQL database** als migratie doel. Selecteer **OK**:
 
    ![Nieuw project](./media/mysql-to-sql-database-guide/new-project.png)
 
-1. Kies **verbinding maken met MySQL** en geef de verbindings gegevens op om verbinding te maken met uw MySQL-server. 
+1. Kies **verbinding maken met MySQL** en geef de verbindings gegevens op om verbinding te maken met uw MySQL-server:
 
    ![Verbinding maken met MySQL](./media/mysql-to-sql-database-guide/connect-to-mysql.png)
 
-1. Klik met de rechter muisknop op het MySQL-schema in **MySQL Meta Data Explorer** en kies **rapport maken**. U kunt ook **rapport maken** selecteren in de bovenste navigatie balk. 
+1. Klik met de rechter muisknop op het MySQL-schema in **MySQL Meta Data Explorer** en kies **rapport maken**. U kunt ook **rapport maken** selecteren in de navigatie balk van de bovenste regel:
 
    ![Rapport maken](./media/mysql-to-sql-database-guide/create-report.png)
 
-1. Bekijk het HTML-rapport voor conversie statistieken, evenals fouten en waarschuwingen. Analyseer het om conversie problemen en oplossingen te begrijpen. 
-
-   Dit rapport kan ook worden geopend vanuit de map SSMA projects, zoals geselecteerd in het eerste scherm. In het bovenstaande voor beeld gaat u naar het report.xml-bestand van:
+1. Bekijk het HTML-rapport om de conversie statistieken en eventuele fouten of waarschuwingen te begrijpen. U kunt het rapport ook openen in Excel om een overzicht te krijgen van MySQL-objecten en de inspanningen die nodig zijn om schema conversies uit te voeren. De standaard locatie voor het rapport bevindt zich in de rapportmap in SSMAProjects.
  
-   `drive:\Users\<username>\Documents\SSMAProjects\MySQLMigration\report\report_2016_11_12T02_47_55\`
+   Bijvoorbeeld: `drive:\Users\<username>\Documents\SSMAProjects\MySQLMigration\report\report_2016_11_12T02_47_55\`
  
-   en open het in Excel om een overzicht te krijgen van MySQL-objecten en de inspanningen die nodig zijn voor het uitvoeren van schema-conversies.
-
-    ![Conversie rapport](./media/mysql-to-sql-database-guide/conversion-report.png)
+   ![Conversie rapport](./media/mysql-to-sql-database-guide/conversion-report.png)
 
 ### <a name="validate-data-types"></a>Gegevens typen valideren
 
@@ -70,7 +68,7 @@ Valideer de standaard gegevens type toewijzingen en wijzig deze indien nodig op 
 
 1. Selecteer **extra** in het menu. 
 1. Selecteer de **project instellingen**. 
-1. Selecteer het tabblad **type toewijzingen** . 
+1. Selecteer het tabblad **type toewijzingen** :
 
    ![Type toewijzingen](./media/mysql-to-sql-database-guide/type-mappings.png)
 
@@ -81,32 +79,38 @@ Valideer de standaard gegevens type toewijzingen en wijzig deze indien nodig op 
 Voer de volgende stappen uit om het schema te converteren: 
 
 1. Beschrijving Als u dynamische of ad-hoc query's wilt converteren, klikt u met de rechter muisknop op het knoop punt en kiest u **instructie toevoegen**. 
-1. Kies **verbinding maken met Azure SQL database** in de bovenste navigatie balk en geef de verbindings gegevens op. U kunt ervoor kiezen om verbinding te maken met een bestaande data base of een nieuwe naam op te geven. in dat geval wordt er een Data Base op de doel server gemaakt.
+1. Selecteer **verbinding maken met Azure SQL database**. 
+    1. Voer de verbindings gegevens in om uw data base in Azure SQL Database te koppelen.
+    1. Kies uw doel SQL Database in de vervolg keuzelijst of geef een nieuwe naam op. in dat geval wordt er een Data Base op de doel server gemaakt. 
+    1. Geef verificatie Details op. 
+    1. Selecteer **verbinding maken**:
 
    ![Verbinding maken met SQL](./media/mysql-to-sql-database-guide/connect-to-sqldb.png)
  
-1. Klik met de rechter muisknop op het schema en kies **schema converteren**. 
+1. Klik met de rechter muisknop op het schema en kies **schema converteren**. U kunt ook **schema converteren** selecteren in de navigatie balk van de bovenste regel nadat u de Data Base hebt gekozen:
 
    ![Schema converteren](./media/mysql-to-sql-database-guide/convert-schema.png)
 
-1. Nadat het schema is geconverteerd, vergelijkt u de geconverteerde code met de oorspronkelijke code om potentiële problemen te identificeren. 
+1. Nadat de conversie is voltooid, vergelijkt u de geconverteerde objecten met de oorspronkelijke objecten om potentiële problemen te identificeren en te verhelpen op basis van de aanbevelingen:
 
-   Vergelijkt geconverteerde objecten met de oorspronkelijke objecten: 
+   ![Geconverteerde objecten kunnen worden vergeleken met de bron](./media/mysql-to-sql-database-guide/table-comparison.png)
 
-   ![ Object vergelijken en evalueren ](./media/mysql-to-sql-database-guide/table-comparison.png)
+   Vergelijk de geconverteerde Transact-SQL-tekst met de oorspronkelijke code en Bekijk de aanbevelingen:
 
-   Geconverteerde procedures vergelijken met de oorspronkelijke procedures: 
+   ![Geconverteerde query's kunnen worden vergeleken met de bron code](./media/mysql-to-sql-database-guide/procedure-comparison.png)
 
-   ![Object code vergelijken en bekijken](./media/mysql-to-sql-database-guide/procedure-comparison.png)
+1. Selecteer **resultaten controleren** in het deel venster uitvoer en Bekijk fouten in het deel venster **fouten lijst** . 
+1. Sla het project lokaal op voor een herbemiddeling van het offline schema. Selecteer **project opslaan** in het menu **bestand** . Dit biedt u de mogelijkheid om de bron-en doel schema's offline te evalueren en herstel bewerkingen uit te voeren voordat u het schema kunt publiceren naar SQL Database.
+
 
 
 ## <a name="migrate"></a>Migrate 
 
 Nadat u klaar bent met het beoordelen van uw data bases en eventuele verschillen hebt opgelost, is de volgende stap het uitvoeren van het migratie proces. Migratie omvat twee stappen: het schema publiceren en de gegevens migreren. 
 
-Als u het schema wilt publiceren en de gegevens wilt migreren, voert u de volgende stappen uit: 
+Als u uw schema wilt publiceren en de gegevens wilt migreren, volgt u deze stappen: 
 
-1. Klik met de rechter muisknop op de data base in de **meta gegevens Verkenner van Azure SQL database** en kies **synchroniseren met data base**. Met deze actie wordt het MySQL-schema gepubliceerd naar Azure SQL Database.
+1. Publiceer het schema: Klik met de rechter muisknop op de data base in de **meta gegevens Verkenner van Azure SQL database** en kies **synchroniseren met data base**. Met deze actie wordt het MySQL-schema gepubliceerd naar Azure SQL Database:
 
    ![Synchroniseren met data base](./media/mysql-to-sql-database-guide/synchronize-database.png)
 
@@ -114,7 +118,7 @@ Als u het schema wilt publiceren en de gegevens wilt migreren, voert u de volgen
 
    ![Synchroniseren met database revisie](./media/mysql-to-sql-database-guide/synchronize-database-review.png)
 
-1. Klik met de rechter muisknop op het MySQL-schema in de **MySQL-meta gegevens Verkenner** en kies **gegevens migreren**. U kunt ook **migreren van gegevens** uit de navigatie op de bovenste regel selecteren. 
+1. De gegevens migreren: Klik met de rechter muisknop op de data base of het object dat u wilt migreren in **MySQL Meta Data Explorer** en kies **gegevens migreren**. U kunt ook **gegevens migreren** selecteren in de bovenste navigatie balk. Als u gegevens voor een hele Data Base wilt migreren, schakelt u het selectie vakje naast de naam van de data base in. Als u gegevens uit afzonderlijke tabellen wilt migreren, vouwt u de data base uit, vouwt u tabellen uit en schakelt u het selectie vakje naast de tabel in. Als u gegevens uit afzonderlijke tabellen wilt weglaten, schakelt u het selectie vakje uit:
 
    ![Gegevens migreren](./media/mysql-to-sql-database-guide/migrate-data.png)
 
@@ -122,7 +126,7 @@ Als u het schema wilt publiceren en de gegevens wilt migreren, voert u de volgen
 
    ![Gegevens migratie rapport](./media/mysql-to-sql-database-guide/data-migration-report.png)
 
-1.  Valideer de migratie door de gegevens en het schema op Azure SQL Database te controleren met behulp van SQL Server Management Studio (SSMS).
+1. Maak verbinding met uw Azure SQL Database met behulp van [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) en valideer de migratie door de gegevens en het schema te controleren:
 
     ![Valideren in SSMA](./media/mysql-to-sql-database-guide/validate-in-ssms.png)
 

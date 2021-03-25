@@ -7,12 +7,12 @@ ms.service: azure-percept
 ms.topic: tutorial
 ms.date: 02/10/2021
 ms.custom: template-tutorial
-ms.openlocfilehash: e661dbbe31e7624cba0a3d5421b81de16d0a5363
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 49e5db729dab7abaa440b1adf6a61e9e52a1efbc
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104608194"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105023126"
 ---
 # <a name="create-a-no-code-vision-solution-in-azure-percept-studio"></a>Een oplossing voor No-code Vision maken in azure percept Studio
 
@@ -106,7 +106,7 @@ Voordat u uw model hebt getraind, voegt u labels toe aan uw installatie kopieën
 
 1. Klik aan de linkerkant van de pagina **Custom Vision** op niet- **gelabeld** onder **labels** om de afbeeldingen weer te geven die u in de vorige stap hebt verzameld. Selecteer een of meer van uw niet-gecodeerde installatie kopieën.
 
-1. Klik in het venster **afbeeldings Details** op de afbeelding om te beginnen met labelen. Als u object detectie als uw project type hebt geselecteerd, moet u ook een [omsluitend kader](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/get-started-build-detector#upload-and-tag-images) tekenen rond specifieke objecten die u wilt labelen. Pas het selectie kader naar wens aan. Typ uw object code en klik **+** om de tag toe te passen. Als u bijvoorbeeld een Vision-oplossing maakt waarmee u op de hoogte zou worden gesteld wanneer een Store-plank opnieuw moet worden besteld, voegt u het label ' empty schap ' toe aan afbeeldingen van lege schappen en voegt u het label ' volledig schap ' toe aan afbeeldingen van de archiefen met volledige aandelen. Herhaal deze stap voor alle niet-gelabelde afbeeldingen.
+1. Klik in het venster **afbeeldings Details** op de afbeelding om te beginnen met labelen. Als u object detectie als uw project type hebt geselecteerd, moet u ook een [omsluitend kader](../cognitive-services/custom-vision-service/get-started-build-detector.md#upload-and-tag-images) tekenen rond specifieke objecten die u wilt labelen. Pas het selectie kader naar wens aan. Typ uw object code en klik **+** om de tag toe te passen. Als u bijvoorbeeld een Vision-oplossing maakt waarmee u op de hoogte zou worden gesteld wanneer een Store-plank opnieuw moet worden besteld, voegt u het label ' empty schap ' toe aan afbeeldingen van lege schappen en voegt u het label ' volledig schap ' toe aan afbeeldingen van de archiefen met volledige aandelen. Herhaal deze stap voor alle niet-gelabelde afbeeldingen.
 
     :::image type="content" source="./media/tutorial-nocode-vision/image-tagging.png" alt-text="Het scherm voor het coderen van afbeeldingen in Custom Vision.":::
 
@@ -116,7 +116,7 @@ Voordat u uw model hebt getraind, voegt u labels toe aan uw installatie kopieën
 
     :::image type="content" source="./media/tutorial-nocode-vision/train-model.png" alt-text="Keuze van de trainings afbeelding met de knop trainen gemarkeerd.":::
 
-1. Wanneer de training is voltooid, worden in uw scherm de prestaties van uw model weer gegeven. Raadpleeg de [documentatie voor model-evaluatie](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/get-started-build-detector#evaluate-the-detector)voor meer informatie over het evalueren van deze resultaten. Na de training wilt u mogelijk ook [uw model](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/test-your-model) op extra installatie kopieën testen en indien nodig opnieuw trainen. Telkens wanneer u uw model traint, wordt het opgeslagen als een nieuwe iteratie. Raadpleeg de [documentatie van Custom Vision](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/getting-started-improving-your-classifier) voor meer informatie over het verbeteren van de prestaties van modellen.
+1. Wanneer de training is voltooid, worden in uw scherm de prestaties van uw model weer gegeven. Raadpleeg de [documentatie voor model-evaluatie](../cognitive-services/custom-vision-service/get-started-build-detector.md#evaluate-the-detector)voor meer informatie over het evalueren van deze resultaten. Na de training wilt u mogelijk ook [uw model](../cognitive-services/custom-vision-service/test-your-model.md) op extra installatie kopieën testen en indien nodig opnieuw trainen. Telkens wanneer u uw model traint, wordt het opgeslagen als een nieuwe iteratie. Raadpleeg de [documentatie van Custom Vision](../cognitive-services/custom-vision-service/getting-started-improving-your-classifier.md) voor meer informatie over het verbeteren van de prestaties van modellen.
 
     :::image type="content" source="./media/tutorial-nocode-vision/iteration.png" alt-text="Model trainings resultaten.":::
 
@@ -143,7 +143,7 @@ Na het sluiten van dit venster kunt u op elk gewenst moment teruggaan en uw gezi
 
 ## <a name="improve-your-model-by-setting-up-retraining"></a>Verbeter uw model door trainingen in te stellen
 
-Nadat u uw model hebt getraind en op het apparaat hebt geïmplementeerd, kunt u de model prestaties verbeteren door para meters voor opnieuw trainen in te stellen voor het vastleggen van meer trainings gegevens. Deze functie wordt gebruikt voor het verbeteren van de prestaties van een getraind model door u de mogelijkheid te bieden installatie kopieën op te nemen op basis van een waarschijnlijkheids bereik. U kunt bijvoorbeeld instellen dat uw apparaat alleen trainings afbeeldingen vastlegt wanneer de kans laag is. Hier vindt u een aantal [aanvullende richt lijnen](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/getting-started-improving-your-classifier) voor het toevoegen van meer afbeeldingen en het verdelen van trainings gegevens.
+Nadat u uw model hebt getraind en op het apparaat hebt geïmplementeerd, kunt u de model prestaties verbeteren door para meters voor opnieuw trainen in te stellen voor het vastleggen van meer trainings gegevens. Deze functie wordt gebruikt voor het verbeteren van de prestaties van een getraind model door u de mogelijkheid te bieden installatie kopieën op te nemen op basis van een waarschijnlijkheids bereik. U kunt bijvoorbeeld instellen dat uw apparaat alleen trainings afbeeldingen vastlegt wanneer de kans laag is. Hier vindt u een aantal [aanvullende richt lijnen](../cognitive-services/custom-vision-service/getting-started-improving-your-classifier.md) voor het toevoegen van meer afbeeldingen en het verdelen van trainings gegevens.
 
 1. Als u trainingen wilt instellen, gaat u terug naar uw **project** en vervolgens naar **project Summary**
 1. Selecteer in het tabblad **vastleggen van installatie kopie** de optie **automatische installatie kopie vastleggen** en **Stel opnieuw training** in.

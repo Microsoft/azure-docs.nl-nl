@@ -10,12 +10,13 @@ ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: c42b79cb8b92b5f96f31eb58f091ff0ce79b84f5
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.custom: b2c-support
+ms.openlocfilehash: f2473955db5439911280360b169f469b8c93eb93
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "101652127"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105043594"
 ---
 # <a name="overview-of-user-accounts-in-azure-active-directory-b2c"></a>Overzicht van gebruikers accounts in Azure Active Directory B2C
 
@@ -36,7 +37,8 @@ Een werk account is op dezelfde manier gemaakt voor alle tenants op basis van Az
 
 Wanneer u een nieuw werk account toevoegt, moet u rekening houden met de volgende configuratie-instellingen:
 
-- **Naam** en **gebruikers naam** : de eigenschap **name** bevat de opgegeven en de achternaam van de gebruiker. De **gebruikers naam** is de id waarmee de gebruiker zich aanmeldt. De gebruikers naam bevat het volledige domein. Het domein naam gedeelte van de gebruikers naam moet de oorspronkelijke standaard domein naam *your-domain.onmicrosoft.com* of een geverifieerde, niet-federatieve [aangepaste domein](../active-directory/fundamentals/add-custom-domain.md) naam zijn, zoals *contoso.com*.
+- **Naam** en **gebruikers naam** : de eigenschap **name** bevat de opgegeven en de achternaam van de gebruiker. De **gebruikers naam** is de id waarmee de gebruiker zich aanmeldt. De gebruikers naam bevat het volledige domein. Het domein naam gedeelte van de gebruikers naam moet de oorspronkelijke standaard domein naam *your-domain.onmicrosoft.com* of een geverifieerde, niet-federatieve [aangepaste domein](../active-directory/fundamentals/add-custom-domain.md) naam zijn, zoals *contoso.com*. 
+- **E-mail** : de nieuwe gebruiker kan zich ook aanmelden met een e-mail adres. Speciale tekens of multi byte-tekens in e-mail worden niet ondersteund, bijvoorbeeld Japanse tekens.
 - **Profiel** : het account is ingesteld met een profiel van gebruikers gegevens. U hebt de mogelijkheid om een voor naam, achternaam, functie en afdelings naam in te voeren. U kunt het profiel bewerken nadat het account is gemaakt.
 - **Groepen** : gebruik groepen om beheer taken uit te voeren, zoals het toewijzen van licenties of machtigingen aan een groot aantal gebruikers of apparaten tegelijk. U kunt het nieuwe account in een bestaande [groep](../active-directory/fundamentals/active-directory-groups-create-azure-portal.md) in uw Tenant plaatsen.
 - **Directory-functie** : u moet het toegangs niveau opgeven dat de gebruikers account heeft voor de resources in uw Tenant. De volgende machtigings niveaus zijn beschikbaar:

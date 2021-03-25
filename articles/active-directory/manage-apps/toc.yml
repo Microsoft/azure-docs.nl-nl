@@ -47,7 +47,39 @@
         - name: Exporteren van geheimen en certificaten die na de vereiste datum verlopen
           href: ./scripts/powershell-export-apps-with-secrets-beyond-required.md
     - name: Power shell-voor beelden voor app proxy
-      href: application-proxy-powershell-samples.md
+      items:
+        - name: Overzicht van app proxy-voor beelden
+          href: application-proxy-powershell-samples.md
+        - name: Basis informatie over apps weer geven
+          href: ./scripts/powershell-get-all-app-proxy-apps-basic.md
+        - name: Uitgebreide informatie over apps weer geven
+          href: ./scripts/powershell-get-all-app-proxy-apps-extended.md
+        - name: Apps weer geven per connector groep
+          href: ./scripts/powershell-get-all-app-proxy-apps-by-connector-group.md
+        - name: Apps weer geven met beleid voor levens duur van token
+          href: ./scripts/powershell-get-all-app-proxy-apps-with-policy.md
+        - name: Connector groepen en-connectors weer geven
+          href: ./scripts/powershell-get-all-connectors.md
+        - name: Apps verplaatsen tussen connector groepen
+          href: ./scripts/powershell-move-all-apps-to-connector-group.md
+        - name: Gebruikers en groepen die zijn toegewezen aan de app weer geven
+          href: ./scripts/powershell-display-users-group-of-app.md
+        - name: Gebruiker toewijzen aan een app
+          href: ./scripts/powershell-assign-user-to-app.md
+        - name: Groep toewijzen aan een app
+          href: ./scripts/powershell-assign-group-to-app.md
+        - name: Apps weer geven met behulp van standaard domeinen
+          href: ./scripts/powershell-get-all-default-domain-apps.md
+        - name: Apps weer geven met behulp van joker tekens publiceren
+          href: ./scripts/powershell-get-all-wildcard-apps.md
+        - name: Alle aangepaste domeinen en certificaten weer geven
+          href: ./scripts/powershell-get-all-custom-domains-and-certs.md
+        - name: Apps zonder certificaten weer geven
+          href: ./scripts/powershell-get-all-custom-domain-no-cert.md
+        - name: Apps met identieke certificaten weer geven
+          href: ./scripts/powershell-get-custom-domain-identical-cert.md
+        - name: Identieke certificaten vervangen
+          href: ./scripts/powershell-get-custom-domain-replace-cert.md
 - name: Concepten
   expanded: true
   items:

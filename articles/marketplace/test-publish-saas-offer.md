@@ -7,17 +7,20 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 author: mingshen-ms
 ms.author: mingshen
-ms.date: 03/10/2021
-ms.openlocfilehash: ea647591194dfd6ba0bf818f4ce4d3a2005f0bc4
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.date: 03/25/2021
+ms.openlocfilehash: aeab671c9283d64f9c1ca37cf184b80b1eca8f35
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102630776"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105045243"
 ---
 # <a name="how-to-test-and-publish-a-saas-offer-to-the-commercial-marketplace"></a>Een SaaS-aanbieding testen en publiceren naar de commerciële Marketplace
 
 In dit artikel wordt uitgelegd hoe u partner centrum gebruikt om uw SaaS-aanbieding te verzenden, een voor beeld van uw aanbieding te bekijken, deze te testen en deze vervolgens te publiceren naar de commerciële Marketplace. U moet al een aanbieding hebben gemaakt die u wilt publiceren.
+
+> [!NOTE]
+> U kunt het beste een afzonderlijke test en ontwikkeling (DEV)-aanbieding maken als een laag risico om te testen voordat u uw productie-aanbod publiceert. Volg deze stappen om de ONTWIKKELINGs aanbieding te maken en te testen voordat u uw (PROD)-aanbieding publiceert.
 
 ## <a name="submit-your-offer-for-publishing"></a>Uw aanbieding voor publicatie verzenden
 
@@ -48,7 +51,7 @@ Gebruik de volgende stappen om een voor beeld van uw aanbieding te bekijken.
 
 1. Selecteer op de pagina **overzicht van aanbieding** een preview-koppeling onder de knop **Go Live** .
 
-1. Als u de end-to-end aankoop-en configuratie stroom wilt valideren, koopt u uw aanbieding terwijl u een preview-versie hebt. Informeer eerst micro soft met een [ondersteunings ticket](https://aka.ms/marketplacesupport) om ervoor te zorgen dat er geen kosten worden verwerkt.
+1. Als u de end-to-end aankoop-en configuratie stroom wilt valideren, koopt u de abonnementen in uw aanbieding terwijl u deze in Preview hebt. Informeer eerst micro soft met een [ondersteunings ticket](https://aka.ms/marketplacesupport) om ervoor te zorgen dat er geen kosten worden verwerkt.
 
 1. Als uw SaaS-aanbod ondersteuning biedt voor [het gebruik van een Data limiet met behulp van de commerciële Marketplace meter service](./partner-center-portal/saas-metered-billing.md), kunt u de aanbevolen procedures voor testen bekijken en volgen die in [Marketplace-facturerings api's](./partner-center-portal/marketplace-metering-service-apis.md#development-and-testing-best-practices)worden beschreven.
 
@@ -60,10 +63,10 @@ Gebruik de volgende stappen om een voor beeld van uw aanbieding te bekijken.
 
 ## <a name="publish-your-offer-live"></a>Uw aanbieding Live publiceren
 
-Nadat u alle tests voor uw Preview hebt voltooid, selecteert u **Live** om uw aanbieding Live naar de commerciële Marketplace te publiceren.
+Nadat u alle tests voor uw Preview hebt voltooid, selecteert u **Live** om uw aanbieding Live naar de commerciële Marketplace te publiceren. Als uw aanbieding al Live is in de commerciële Marketplace, worden de updates die u aanbrengt pas live als u **Live go** selecteert.
 
-   > [!TIP]
-   > Als uw aanbieding al Live is in de commerciële Marketplace, worden de updates die u aanbrengt pas live als u **Live go** selecteert.
+> [!IMPORTANT]
+> U hoeft niet ooit **Live go** voor een [ontwikkelings-en test aanbod](create-saas-dev-test-offer.md)te selecteren.
 
 Nu u ervoor hebt gekozen om uw aanbieding beschikbaar te stellen in de commerciële Marketplace, voeren we een reeks definitieve validatie controles uit om ervoor te zorgen dat de Live-aanbieding is geconfigureerd, net als de preview-versie van de aanbieding. Zie voor meer informatie over deze validatie controles de [fase publiceren](review-publish-offer.md#publish-phase).
 

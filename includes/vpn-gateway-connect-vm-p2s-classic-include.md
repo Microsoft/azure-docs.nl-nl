@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 12/06/2018
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 4fc14083b0912cf18f98c229adcb297b89bc8971
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 4732abacc80a24d268f0e5cb7d100079e5a8d90b
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "95555597"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105105933"
 ---
 Maak een verbinding met het externe bureaublad om verbinding te maken met een VM die op uw VNet is geïmplementeerd. De beste manier om te controleren of u verbinding met uw VM kunt maken is door verbinding te maken met het privé-IP-adres ervan in plaats van de computernaam. Op die manier test u of u verbinding kunt maken, niet of naamomzetting correct is geconfigureerd. 
 
@@ -32,4 +32,4 @@ Als u problemen ondervindt bij het verbinding maken met een virtuele machine via
 - Als u verbinding met de VM kunt maken met behulp van het privé-IP-adres, maar niet met de computernaam, controleert u of DNS correct is geconfigureerd. Zie [Naamomzetting voor VM's](../articles/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md) voor meer informatie over de werking van naamomzetting voor VM's.
 - Controleer of het configuratiepakket voor de VPN-client wordt gegenereerd nadat u de IP-adressen van de DNS-server heeft opgegeven voor het VNet. Als u de IP-adressen van de DNS-server bijwerkt, genereert en installeert u een nieuw configuratiepakket voor de VPN-client.
 
-Zie [Troubleshoot Remote Desktop connections to a VM](../articles/virtual-machines/troubleshooting/troubleshoot-rdp-connection.md) (Problemen met Extern-bureaubladverbindingen met een VM oplossen) voor meer informatie over het oplossen van problemen.
+Zie [Troubleshoot Remote Desktop connections to a VM](/troubleshoot/azure/virtual-machines/troubleshoot-rdp-connection) (Problemen met Extern-bureaubladverbindingen met een VM oplossen) voor meer informatie over het oplossen van problemen.

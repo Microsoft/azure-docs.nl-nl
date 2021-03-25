@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: virtual-machines-windows
 ms.collection: windows
 ms.subservice: imaging
-ms.openlocfilehash: 01b253747791fc29abf4434bebfd85865099f9ee
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 69718b219d239ac13e5d932b05a7dd29619adaa3
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103602015"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105045583"
 ---
 # <a name="create-a-windows-virtual-desktop-image-using-azure-vm-image-builder-and-powershell"></a>Een virtueel-bureaublad installatie kopie van Windows maken met behulp van Azure VM Image Builder en Power shell
 
@@ -22,11 +22,11 @@ In dit artikel wordt beschreven hoe u een virtueel-bureaublad installatie kopie 
 
 * [FsLogix](https://github.com/DeanCefola/Azure-WVD/blob/master/PowerShell/FSLogixSetup.ps1)installeren.
 * Een [Windows-optimalisatie script voor virtueel bureau blad](https://github.com/The-Virtual-Desktop-Team/Virtual-Desktop-Optimization-Tool) uitvoeren vanuit de opslag plaats van de community.
-* Installeer [micro soft teams](https://docs.microsoft.com/azure/virtual-desktop/teams-on-wvd).
-* [Opnieuw starten](https://docs.microsoft.com/azure/virtual-machines/linux/image-builder-json?toc=%2Fazure%2Fvirtual-machines%2Fwindows%2Ftoc.json&bc=%2Fazure%2Fvirtual-machines%2Fwindows%2Fbreadcrumb%2Ftoc.json#windows-restart-customizer)
-* [Windows Update](https://docs.microsoft.com/azure/virtual-machines/linux/image-builder-json?toc=%2Fazure%2Fvirtual-machines%2Fwindows%2Ftoc.json&bc=%2Fazure%2Fvirtual-machines%2Fwindows%2Fbreadcrumb%2Ftoc.json#windows-update-customizer) uitvoeren
+* Installeer [micro soft teams](../../virtual-desktop/teams-on-wvd.md).
+* [Opnieuw starten](../linux/image-builder-json.md?bc=%2fazure%2fvirtual-machines%2fwindows%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json#windows-restart-customizer)
+* [Windows Update](../linux/image-builder-json.md?bc=%2fazure%2fvirtual-machines%2fwindows%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json#windows-update-customizer) uitvoeren
 
-We laten u zien hoe u dit automatiseert met behulp van de opbouw functie voor installatie kopieën van Azure VM en de installatie kopie distribueert naar een [gedeelde galerie met installatie kopieën](https://docs.microsoft.com/azure/virtual-machines/windows/shared-image-galleries), waar u kunt repliceren naar andere regio's, de schaal beheert en de installatie kopie binnen en buiten uw organisaties deelt.
+We laten u zien hoe u dit automatiseert met behulp van de opbouw functie voor installatie kopieën van Azure VM en de installatie kopie distribueert naar een [gedeelde galerie met installatie kopieën](../shared-image-galleries.md), waar u kunt repliceren naar andere regio's, de schaal beheert en de installatie kopie binnen en buiten uw organisaties deelt.
 
 
 Voor het vereenvoudigen van de implementatie van een installatie kopie van de opbouw functie wordt in dit voor beeld een Azure Resource Manager sjabloon gebruikt waarbij de afbeelding Builder-sjabloon is genest. Dit biedt u enkele andere voor delen, zoals variabelen en parameter invoer. U kunt ook para meters door geven vanaf de opdracht regel.
@@ -73,7 +73,7 @@ Dit artikel is bedoeld als Kopieer-en plak oefening.
 
 ## <a name="prerequisites"></a>Vereisten
 
-U moet de nieuwste Azure PowerShell-CmdLets hebben geïnstalleerd. Zie [hier](https://docs.microsoft.com/powershell/azure/overview) voor installatie Details.
+U moet de nieuwste Azure PowerShell-CmdLets hebben geïnstalleerd. Zie [hier](/powershell/azure/overview) voor installatie Details.
 
 ```PowerShell
 # Register for Azure Image Builder Feature
@@ -279,7 +279,7 @@ $getStatus.LastRunStatusMessage
 $getStatus.LastRunStatusRunSubState
 ```
 ## <a name="create-a-vm"></a>Een virtuele machine maken
-Nu de build is voltooid, kunt u een VM maken op [basis van de installatie kopie. gebruik](https://docs.microsoft.com/powershell/module/az.compute/new-azvm#examples)hiervoor de voor beelden.
+Nu de build is voltooid, kunt u een VM maken op [basis van de installatie kopie. gebruik](/powershell/module/az.compute/new-azvm#examples)hiervoor de voor beelden.
 
 ## <a name="clean-up"></a>Opschonen
 

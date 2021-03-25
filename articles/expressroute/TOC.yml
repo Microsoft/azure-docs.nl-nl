@@ -4,7 +4,7 @@
   items:
     - name: Wat is ExpressRoute?
       href: expressroute-introduction.md
-- name: Quickstarts
+- name: Snelstartgidsen
   items:
     - name: Een ExpressRoute-circuit maken - Portal
       href: expressroute-howto-circuit-portal-resource-manager.md
@@ -144,6 +144,8 @@
           href: expressroute-howto-add-ipv6-powershell.md
     - name: Bewaking
       items:
+        - name: Netwerkinzichten
+          href: expressroute-network-insights.md
         - name: 'Bewaking, metrische gegevens en waarschuwingen voor ExpressRoute'
           href: expressroute-monitoring-metrics-alerts.md
         - name: Netwerkprestatiemeter configureren voor ExpressRoute

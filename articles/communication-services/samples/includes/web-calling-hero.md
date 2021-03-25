@@ -10,16 +10,16 @@ ms.date: 03/10/2021
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: f3da6fd75ac485a3e22a428934928795f1feae28
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 07aa1cb361f5f1853dbf93e5f4e064b1ed14f1de
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103487915"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105152711"
 ---
 [!INCLUDE [Public Preview Notice](../../includes/public-preview-include.md)]
 
-Het **hero-voorbeeld van groepsgesprekken** laat zien hoe de webclientbibliotheek van Communication Services-aanroepen kan worden gebruikt voor het bouwen van een groepsgesprekservaring.
+De Azure Communication Services- **groep die held steek proef aanroept** , laat zien hoe de communicatie services die Web-SDK aanroept, kunnen worden gebruikt voor het bouwen van een groeps ervaring.
 
 In deze quickstart over hero-voorbeelden komt u te weten hoe het voorbeeld werkt voordat u het op uw lokale computer gaat uitvoeren. Vervolgens gaat u het voorbeeld in Azure implementeren met behulp van uw eigen Azure Communication Services-resources.
 
@@ -96,7 +96,7 @@ Als u een Communication Services-abonnement wilt opschonen en verwijderen, kunt 
 
 Raadpleeg voor meer informatie de volgende artikelen:
 
-- Vertrouwd raken met [het gebruik van de clientbibliotheek voor aanroepen](../../quickstarts/voice-video-calling/calling-client-samples.md)
+- Vertrouwd raken met [het gebruik van de aanroepende SDK](../../quickstarts/voice-video-calling/calling-client-samples.md)
 - Meer informatie over [de werking van aanroepen](../../concepts/voice-video-calling/about-call-types.md)
 
 ### <a name="additional-reading"></a>Meer artikelen

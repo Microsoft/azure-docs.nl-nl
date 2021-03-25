@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/07/2021
 ms.author: vinigam
-ms.openlocfilehash: 998b0cb04d465f675423e2472a7ca8c6441b1fed
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 18d0a24de6f0775fdb35799512f9796a323d353a
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103010402"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105045481"
 ---
 # <a name="migrate-to-connection-monitor-from-network-performance-monitor"></a>Migreren naar verbindings monitor vanaf Netwerkprestatiemeter
 
@@ -31,7 +31,7 @@ U kunt tests migreren van Netwerkprestatiemeter (NPM) naar een nieuwe, verbeterd
 
 De migratie helpt de volgende resultaten te produceren:
 
-* On-premises agents en Firewall instellingen werken op dezelfde locatie. Er zijn geen wijzigingen vereist. Log Analytics agents die zijn geïnstalleerd op virtuele machines van Azure, moeten worden vervangen door de [Network Watcher extensie](https://docs.microsoft.com/azure/virtual-machines/extensions/network-watcher-windows).
+* On-premises agents en Firewall instellingen werken op dezelfde locatie. Er zijn geen wijzigingen vereist. Log Analytics agents die zijn geïnstalleerd op virtuele machines van Azure, moeten worden vervangen door de [Network Watcher extensie](../virtual-machines/extensions/network-watcher-windows.md).
 * Bestaande testen worden toegewezen aan de verbindings monitor > test groep > test-indeling. Als u **bewerken** selecteert, kunt u de eigenschappen van de nieuwe verbindings monitor weer geven en wijzigen, een sjabloon downloaden om deze wijzigingen aan te brengen en de sjabloon indienen via Azure Resource Manager.
 * Agents verzenden gegevens naar de Log Analytics-werk ruimte en de metrieken.
 * Gegevens bewaking:

@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 11/09/2020
-ms.openlocfilehash: afb396bc364a2fa2db923fbcbe6bfe1b7aedbc26
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: c2fad19bd84418d41aca1b2e0770eaa3cde488b0
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103467541"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105043356"
 ---
 # <a name="recommended-settings-for-network-isolation"></a>Aanbevolen instellingen voor netwerk isolatie
 
@@ -60,7 +60,7 @@ Cognitive Search exemplaar kan worden geïsoleerd via een persoonlijk eind punt 
 
 Als de QnA Maker App Service is beperkt met behulp van een App Service Environment, gebruikt u hetzelfde VNet om een privé-eindpunt verbinding te maken met het Cognitive Search-exemplaar. Maak een nieuwe DNS-vermelding in het VNet om het Cognitive Search-eind punt toe te wijzen aan het IP-adres van het Cognitive Search particuliere eind punt. 
 
-Als er geen App Service Environment wordt gebruikt voor de App Service van de QnAMaker, maakt u eerst een nieuwe VNet-resource en maakt u vervolgens de verbinding met het persoonlijke eind punt met het Cognitive Search exemplaar. In dit geval moet de QnA Maker App Service [worden geïntegreerd met het VNet](https://docs.microsoft.com/azure/app-service/web-sites-integrate-with-vnet) om verbinding te maken met het Cognitive Search exemplaar. 
+Als er geen App Service Environment wordt gebruikt voor de App Service van de QnAMaker, maakt u eerst een nieuwe VNet-resource en maakt u vervolgens de verbinding met het persoonlijke eind punt met het Cognitive Search exemplaar. In dit geval moet de QnA Maker App Service [worden geïntegreerd met het VNet](../../../app-service/web-sites-integrate-with-vnet.md) om verbinding te maken met het Cognitive Search exemplaar. 
 
 #  <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/v2)
 

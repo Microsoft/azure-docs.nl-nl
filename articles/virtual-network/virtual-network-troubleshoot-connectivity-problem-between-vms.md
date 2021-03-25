@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/30/2018
 ms.author: genli
-ms.openlocfilehash: 6ece3e639e0ef3516696e2a0bad7deeb833433a6
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 5e602f8bbdf6ad92acacac6688326a555a0420b6
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98219195"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105042863"
 ---
 # <a name="troubleshooting-connectivity-problems-between-azure-vms"></a>Problemen met de connectiviteit tussen virtuele Azure-machines oplossen
 
@@ -49,7 +49,7 @@ Volg deze stappen om het probleem op te lossen. Nadat u elke stap hebt voltooid,
 
 ### <a name="step-1-check-whether-nic-is-misconfigured"></a>Stap 1: controleren of de NIC onjuist is geconfigureerd
 
-Volg de stappen in de [netwerk interface opnieuw instellen voor Azure Windows VM](../virtual-machines/troubleshooting/reset-network-interface.md). 
+Volg de stappen in de [netwerk interface opnieuw instellen voor Azure Windows VM](/troubleshoot/azure/virtual-machines/reset-network-interface). 
 
 Als het probleem optreedt nadat u de netwerk interface (NIC) hebt gewijzigd, voert u de volgende stappen uit:
 
@@ -62,8 +62,8 @@ Zie [netwerk interfaces toevoegen aan of verwijderen uit virtuele machines](virt
 
 **Virtuele machine met één NIC** 
 
-- [Windows-VM opnieuw implementeren](../virtual-machines/troubleshooting/redeploy-to-new-node-windows.md)
-- [Linux-VM opnieuw implementeren](../virtual-machines/troubleshooting/redeploy-to-new-node-linux.md)
+- [Windows-VM opnieuw implementeren](/troubleshoot/azure/virtual-machines/redeploy-to-new-node-windows)
+- [Linux-VM opnieuw implementeren](/troubleshoot/azure/virtual-machines/redeploy-to-new-node-linux)
 
 ### <a name="step-2-check-whether-network-traffic-is-blocked-by-nsg-or-udr"></a>Stap 2: controleren of het netwerk verkeer wordt geblokkeerd door NSG of UDR
 
@@ -107,7 +107,7 @@ Alle Vm's die u in azure maakt met behulp van het klassieke implementatie model 
 
 ### <a name="step-8-try-to-connect-to-a-vm-network-share"></a>Stap 8: verbinding maken met een VM-netwerk share
 
-Als u geen verbinding kunt maken met een VM-netwerk share, kan het probleem worden veroorzaakt door niet-beschik bare Nic's in de VM. Als u de niet-beschik bare Nic's wilt verwijderen, raadpleegt [u de niet-beschik bare nic's verwijderen](../virtual-machines/troubleshooting/reset-network-interface.md#delete-the-unavailable-nics)
+Als u geen verbinding kunt maken met een VM-netwerk share, kan het probleem worden veroorzaakt door niet-beschik bare Nic's in de VM. Als u de niet-beschik bare Nic's wilt verwijderen, raadpleegt [u de niet-beschik bare nic's verwijderen](/troubleshoot/azure/virtual-machines/reset-network-interface#delete-the-unavailable-nics)
 
 ### <a name="step-9-check-inter-vnet-connectivity"></a>Stap 9: Inter-Vnet connectiviteit controleren
 

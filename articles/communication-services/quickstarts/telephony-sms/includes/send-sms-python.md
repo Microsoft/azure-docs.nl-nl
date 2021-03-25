@@ -10,14 +10,14 @@ ms.date: 03/11/2021
 ms.topic: include
 ms.custom: include file
 ms.author: lakshmans
-ms.openlocfilehash: f064e0c3ac00b4ab7aeb23356dd24fd89c91021e
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: 727e2166bad7f0d8980ffe4fa18c292a206c37d7
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105104203"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105110334"
 ---
-Ga aan de slag met Azure Communication Services door de sms-clientbibliotheek voor Python van Communications Services te gebruiken om sms-berichten te verzenden.
+Ga aan de slag met Azure Communication Services met behulp van de SMS-SDK voor SMS Services voor het verzenden van berichten.
 
 Voor het voltooien van deze quickstart worden kosten van een paar dollarcent of minder in rekening gebracht bij uw Azure-account.
 
@@ -62,7 +62,7 @@ except Exception as ex:
 
 ### <a name="install-the-package"></a>Het pakket installeren
 
-Blijf in de toepassingsmap en installeer met de opdracht `pip install` de Azure Communications Services sms-clientbibliotheek voor het Python-pakket.
+Terwijl u nog steeds in de toepassingsmap, installeert u de Azure Communication Services SMS SDK voor python-pakket met behulp van de `pip install` opdracht.
 
 ```console
 pip install azure-communication-sms --pre
@@ -70,7 +70,7 @@ pip install azure-communication-sms --pre
 
 ## <a name="object-model"></a>Objectmodel
 
-De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Azure Communication Services sms-clientbibliotheek voor Python.
+De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de SMS-SDK voor Azure Communication Services voor python.
 
 | Naam                                  | Beschrijving                                                  |
 | ------------------------------------- | ------------------------------------------------------------ |
@@ -79,16 +79,14 @@ De volgende klassen en interfaces verwerken enkele van de belangrijkste functies
 
 ## <a name="authenticate-the-client"></a>De client verifiëren
 
-Breng een **SmsClient** tot stand met uw verbindingsreeks. Met de onderstaande code wordt de verbindingsreeks voor de resource opgehaald uit een omgevingsvariabele met de naam `COMMUNICATION_SERVICES_CONNECTION_STRING`. Meer informatie over het [beheren van de verbindingsreeks van uw resource](../../create-communication-resource.md#store-your-connection-string).
+Breng een **SmsClient** tot stand met uw verbindingsreeks. Meer informatie over het [beheren van de verbindingsreeks van uw resource](../../create-communication-resource.md#store-your-connection-string).
 
 ```python
-# This code demonstrates how to fetch your connection string
-# from an environment variable.
-connection_string = os.getenv('COMMUNICATION_SERVICES_CONNECTION_STRING')
-
 # Create the SmsClient object which will be used to send SMS messages
-sms_client = SmsClient.from_connection_string(connection_string)
+sms_client = SmsClient.from_connection_string(<connection_string>)
 ```
+Ter vereenvoudiging maken we gebruik van verbindings reeksen in deze Snelstartgids, maar in productie omgevingen raden wij u aan [beheerde identiteiten](../../../quickstarts/managed-identity.md) te gebruiken, omdat ze op schaal veiliger en beheersbaar zijn.
+
 
 ## <a name="send-a-11-sms-message"></a>Een SMS-bericht van 1:1 verzenden
 
@@ -107,6 +105,9 @@ sms_responses = sms_client.send(
 ```
 
 U moet `<from-phone-number>` vervangen door een telefoonnummer met sms-functionaliteit dat is gekoppeld aan uw communicatieservice en `<to-phone-number>` met het telefoonnummer waarnaar u een bericht wilt verzenden. 
+
+> [!WARNING]
+> Telefoonnummers moeten worden opgegeven in de internationale standaardindeling E.164. (bijvoorbeeld: + 12223334444).
 
 ## <a name="send-a-1n-sms-message"></a>Een SMS-bericht van 1: N verzenden
 
@@ -133,9 +134,31 @@ De parameter `enable_delivery_report` is een optionele parameter die u kunt gebr
 De `tag` para meter is een optionele para meter die u kunt gebruiken voor het configureren van aangepaste labels.
 
 ## <a name="run-the-code"></a>De code uitvoeren
-
 Voer de toepassing op vanuit uw toepassingsmap met de opdracht `python`.
 
 ```console
 python send-sms.py
+```
+
+Het complete python-script moet er ongeveer als volgt uitzien:
+
+```python
+
+import os
+from azure.communication.sms import SmsClient
+
+try:
+    # Create the SmsClient object which will be used to send SMS messages
+    sms_client = SmsClient.from_connection_string("<connection string>")
+    # calling send() with sms values
+    sms_responses = sms_client.send(
+       from_="<from-phone-number>",
+       to="<to-phone-number>",
+       message="Hello World via SMS",
+       enable_delivery_report=True, # optional property
+       tag="custom-tag") # optional property
+
+except Exception as ex:
+    print('Exception:')
+    print(ex)
 ```

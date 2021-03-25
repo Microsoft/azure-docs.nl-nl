@@ -10,7 +10,7 @@
   items:
     - name: Overzicht van runtime-SDK
       href: concepts/sdk-overview.md
-- name: Quickstarts
+- name: Snelstartgidsen
   expanded: true
   items:
     - name: Een model maken
@@ -31,15 +31,15 @@
 - name: Referenties
   items:
     - name: Runtime SDK voor Unity
-      href: 'https://docs.microsoft.com/dotnet/api/Microsoft.Azure.ObjectAnchors/'
+      href: /dotnet/api/Microsoft.Azure.ObjectAnchors/
     - name: Runtime SDK voor HoloLens C++/WinRT
-      href: 'https://docs.microsoft.com/cpp/api/object-anchors/winrt/'
+      href: /cpp/api/object-anchors/winrt/
 - name: Resources
   items:
     - name: Releaseopmerkingen
       href: 'https://github.com/Azure/azure-object-anchors/releases'
     - name: REST API voor resourcebeheer in Azure Mixed Reality
-      href: 'https://docs.microsoft.com/rest/api/mixedreality/'
+      href: /rest/api/mixedreality/
     - name: Veelgestelde vragen
       href: faq.md
     - name: Stack Overflow

@@ -9,20 +9,20 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: e71917d917491037100b4ee666cbeb030b0a4786
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: e05bf1df503a13efc8e4ca30b3341216e01e678e
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104656138"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105110828"
 ---
 # <a name="chat-concepts"></a>Chatconcepten 
 
 [!INCLUDE [Public Preview Notice](../../includes/public-preview-include.md)]    
 
-Chat-clientbibliotheken van Azure Communication Services kunnen worden gebruikt om realtime tekstchats aan uw toepassingen toe te voegen. Op deze pagina vindt u een overzicht van de belangrijkste chatconcepten en mogelijkheden.    
+U kunt de Sdk's van Azure Communication Services chat gebruiken om chat teksten in realtime toe te voegen aan uw toepassingen. Op deze pagina vindt u een overzicht van de belangrijkste chatconcepten en mogelijkheden.    
 
-Raadpleeg het [Overzicht van de chat-clientbibliotheek in Communication Services](./sdk-features.md) voor meer informatie over specifieke talen en mogelijkheden van de clientbibliotheek.    
+Raadpleeg het [overzicht van de communicatie services Chat-SDK](./sdk-features.md) voor meer informatie over specifieke SDK-talen en-mogelijkheden.  
 
 ## <a name="chat-overview"></a>Overzicht van chat    
 
@@ -117,7 +117,7 @@ De chat functie van Communication Services deelt door gebruikers gegenereerde be
 
 ## <a name="real-time-signaling"></a>Signalering in realtime  
 
-De JavaScript-clientbibliotheek voor chat bevat signalering in realtime. Hiermee kunnen clients luisteren naar realtime updates en inkomende berichten in een chatgesprek zonder de API’s te hoeven gebruiken. Beschikbare gebeurtenissen zijn:
+De chat-java script SDK bevat real-time signalering. Hiermee kunnen clients luisteren naar realtime updates en inkomende berichten in een chatgesprek zonder de API’s te hoeven gebruiken. Beschikbare gebeurtenissen zijn:
 
  - `ChatMessageReceived` -Wanneer een nieuw bericht wordt verzonden naar een chat-thread. Deze gebeurtenis wordt niet verzonden voor automatisch gegenereerde systeem berichten die in het vorige onderwerp werden besproken.   
  - `ChatMessageEdited` -Wanneer een bericht wordt bewerkt in een chat-thread. 
@@ -136,9 +136,9 @@ De JavaScript-clientbibliotheek voor chat bevat signalering in realtime. Hiermee
 Met realtime signalering kunnen uw gebruikers in realtime chatten. Uw services kunnen Azure Event Grid gebruiken om u te abonneren op gebeurtenissen die betrekking hebben op chat. Zie [Het concept Gebeurtenisverwerking](https://docs.microsoft.com/azure/event-grid/event-schema-communication-services?tabs=event-grid-event-schema) voor meer informatie.
 
 
-## <a name="using-cognitive-services-with-chat-client-library-to-enable-intelligent-features"></a>Cognitive Services gebruiken met de chat-clientbibliotheek om intelligente functies in te schakelen 
+## <a name="using-cognitive-services-with-chat-sdk-to-enable-intelligent-features"></a>Cognitive Services met chat-SDK gebruiken om intelligente functies in te scha kelen    
 
-U kunt [Azure Cognitive-API’s](../../../cognitive-services/index.yml) gebruiken met de chat-clientbibliotheek om intelligente functies aan uw toepassingen toe te voegen. U kunt bijvoorbeeld:  
+U kunt [Azure cognitieve api's](../../../cognitive-services/index.yml) met de chat-SDK gebruiken om intelligente functies aan uw toepassingen toe te voegen. U kunt bijvoorbeeld: 
 
 - Gebruikers in staat stellen om met elkaar te chatten in verschillende talen.  
 - Een ondersteuningsagent helpen om tickets te prioriteren door een negatief sentiment van een inkomende kwestie van een klant te detecteren.   
@@ -156,4 +156,4 @@ Op deze manier bevat de berichtgeschiedenis zowel de oorspronkelijke als de vert
 > [Aan de slag met chat](../../quickstarts/chat/get-started.md)    
 
 De volgende documenten zijn mogelijk interessant voor u:  
-- Uzelf bekend maken met de [chat-clientbibliotheek](sdk-features.md)
+- Vertrouwd raken met de [Chat-SDK](sdk-features.md)

@@ -4,23 +4,23 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 03/10/2021
 ms.author: mikben
-ms.openlocfilehash: bf00b0829868b7099579c1a35113dbca1741cfe3
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 443595a52458d7ff7c168f4c120257cfb60fad2e
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103495872"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105110883"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
 - Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/dotnet/)
-- De nieuwste versie van [.NET Core-clientbibliotheek](https://dotnet.microsoft.com/download/dotnet-core) voor uw besturings systeem.
-- Download de nieuwste versie van de [clientbibliotheek voor de .NET-identiteit](/dotnet/api/azure.identity).
-- Download de nieuwste versie van de [clientbibliotheek voor het .NET-beheer](../../concepts/sdk-options.md).
+- De nieuwste versie [.net core SDK](https://dotnet.microsoft.com/download/dotnet-core) voor uw besturings systeem.
+- Down load de nieuwste versie van de [.net Identity SDK](/dotnet/api/azure.identity).
+- Down load de nieuwste versie van de [.net Management SDK](../../concepts/sdk-options.md).
 
-## <a name="installing-the-client-library"></a>De clientbibliotheek installeren
+## <a name="installing-the-sdk"></a>De SDK installeren
 
-Voeg eerst de clientbibliotheek voor Communication Services-beheer toe in uw C#-project:
+Neem eerst de Communication Services Management SDK op in uw C#-project:
 
 ```csharp
 using Azure.ResourceManager.Communication;
@@ -121,11 +121,11 @@ Wanneer u geverifieerd bent, kunt u uw beheerclient gebruiken voor API-aanroepen
 
 Voor elk van de volgende voorbeelden wijzen we onze Communication Services-resources toe aan een bestaande resourcegroep.
 
-Als u een resourcegroep wilt maken, kunt u dit doen via het [Azure-portaal](../../../azure-resource-manager/management/manage-resource-groups-portal.md) of de [Azure Resource Manager-clientbibliotheek](https://github.com/Azure/azure-sdk-for-net/blob/master/doc/mgmt_preview_quickstart.md).
+Als u een resource groep wilt maken, kunt u dit doen met behulp van de [Azure Portal](../../../azure-resource-manager/management/manage-resource-groups-portal.md) of de [Azure Resource Manager-SDK](https://github.com/Azure/azure-sdk-for-net/blob/master/doc/mgmt_preview_quickstart.md).
 
 ### <a name="create-and-manage-a-communication-services-resource"></a>Een Communication Services-resource maken en beheren
 
-Ons exemplaar van de client uit de clientbibliotheek van Communication Services Management (``Azure.ResourceManager.Communication.CommunicationManagementClient``) kan worden gebruikt om bewerkingen uit te voeren op Communication Services-resources.
+Ons exemplaar van de Communication Services Management SDK-client ( ``Azure.ResourceManager.Communication.CommunicationManagementClient`` ) kan worden gebruikt voor het uitvoeren van bewerkingen op communicatie services-resources.
 
 #### <a name="create-a-communication-services-resource"></a>Een Communication Services-resource maken
 
@@ -173,7 +173,7 @@ await acsClient.CommunicationService.StartDeleteAsync(resourceGroupName, resourc
 
 ## <a name="managing-keys-and-connection-strings"></a>Sleutels en verbindingsreeksen beheren
 
-Elke Communication Services-resource heeft een paar toegangssleutels en bijbehorende verbindingsreeksen. Deze sleutels kunnen opgehaald worden met de Management-clientbibliotheek en vervolgens gebruikt worden door andere Communication Services-clientbibliotheken om zichzelf te verifiëren bij Azure Communication Services.
+Elke Communication Services-resource heeft een paar toegangssleutels en bijbehorende verbindingsreeksen. Deze sleutels zijn toegankelijk met de Management SDK en kunnen vervolgens worden gebruikt door andere Sdk's voor communicatie Services om zichzelf te verifiëren bij Azure Communication Services.
 
 #### <a name="get-access-keys-for-a-communication-services-resource"></a>Toegangssleutels voor een Communication Services-resource ophalen
 

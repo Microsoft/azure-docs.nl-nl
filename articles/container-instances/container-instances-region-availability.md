@@ -4,12 +4,12 @@ description: Beschik baarheid van reken-en geheugen resources voor de Azure Cont
 ms.topic: article
 ms.date: 04/27/2020
 ms.custom: references_regions
-ms.openlocfilehash: 4decf29be23c2f1ed51f422052869e99abe4a511
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: b1783204ae416412579e63654ff236fbc6cf1a18
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103573605"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105046008"
 ---
 # <a name="resource-availability-for-azure-container-instances-in-azure-regions"></a>Beschik baarheid van resources voor Azure Container Instances in azure-regio's
 
@@ -88,21 +88,21 @@ De volgende regio's en maximum resources zijn beschikbaar voor container groepen
 | Brazilië - zuid | 4 | 16 | 4 | 16 | 20 |
 | Canada - midden | 2 | 8 | 2 | 3,5 | 20 |
 | India - centraal | 2 | 3,5 | 2 | 3,5 | 20 |
-| VS - centraal | 2 | 3,5 | 2 | 3,5 | 20 |
+| VS - centraal | 2 | 8 | 2 | 3,5 | 20 |
 | Azië - oost | 2 | 3,5 | 2 | 3,5 | 20 |
-| VS - oost | 4 | 16 | 2 | 8 | 20 |
-| VS - oost 2 | 2 | 3,5 | 4 | 16 | 20 |
+| VS - oost | 2 | 8 | 2 | 8 | 20 |
+| VS - oost 2 | 2 | 8 | 4 | 16 | 20 |
 | Japan - oost | 4 | 16 | 4 | 16 | 20 |
 | Korea - centraal | 4 | 16 | 4 | 16 | 20 |
-| VS - noord-centraal | 4 | 16 | 4 | 16 | 20 |
+| VS - noord-centraal | 2 | 8 | 4 | 16 | 20 |
 | Europa - noord | 2 | 8 | 2 | 8 | 20 |
-| VS - zuid-centraal | 2 | 3,5 | 2 | 8 | 20 |
+| VS - zuid-centraal | 2 | 8 | 2 | 8 | 20 |
 | Azië - zuidoost | N.v.t. | N.v.t. | 2 | 3,5 | 20 |
 | India - zuid | 2 | 3,5 | 2 | 3,5 | 20 |
 | Verenigd Koninkrijk Zuid | 2 | 8 | 2 | 3,5 | 20 |
-| VS - west-centraal | 4 | 16 | 2 | 8 | 20 |
+| VS - west-centraal | 2 | 8 | 2 | 8 | 20 |
 | Europa -west | 4 | 16 | 4 | 16 | 20 |
-| VS - west | 4 | 16 | 2 | 8 | 20 |
+| VS - west | 2 | 8 | 2 | 8 | 20 |
 | VS - west 2 | 2 | 8 | 2 | 3,5 | 20 |
 
 

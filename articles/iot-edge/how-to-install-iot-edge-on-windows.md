@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 01/20/2021
 ms.author: v-tcassi
 monikerRange: =iotedge-2018-06
-ms.openlocfilehash: 94c3917b0912835799818597f94f3880ea3a7639
-ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
+ms.openlocfilehash: c291bb701aca385a11631504f1a312b25cced633
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104889532"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105045668"
 ---
 # <a name="install-and-provision-azure-iot-edge-for-linux-on-a-windows-device-preview"></a>Azure IoT Edge voor Linux installeren en inrichten op een Windows-apparaat (preview)
 
@@ -370,4 +370,6 @@ Controleer of IoT Edge voor Linux in Windows is geïnstalleerd en geconfigureerd
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Ga door met het [implementeren van IOT Edge-modules](how-to-deploy-modules-portal.md) voor meer informatie over het implementeren van modules op uw apparaat.
+* Ga door met het [implementeren van IOT Edge-modules](how-to-deploy-modules-portal.md) voor meer informatie over het implementeren van modules op uw apparaat.
+* Meer informatie over het [beheren van certificaten op uw IOT Edge voor Linux op virtuele Windows-machines](how-to-manage-device-certificates.md) en over het overdragen van bestanden van het hostbesturingssysteem naar uw virtuele Linux-machine.
+* Meer informatie over het [configureren van uw IOT edge-apparaten voor communicatie via een proxy server](how-to-configure-proxy-support.md).

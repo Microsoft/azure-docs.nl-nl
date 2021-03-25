@@ -1,19 +1,19 @@
 ---
 title: 'Snelstartgids: deel nemen aan een team vergadering vanuit een Android-app'
-description: In deze zelf studie leert u hoe u kunt deel nemen aan een team vergadering met behulp van de Azure Communication Services-client bibliotheek voor Android
+description: In deze zelf studie leert u hoe u kunt deel nemen aan een team vergadering met behulp van de Azure Communication Services Calling SDK voor Android
 author: chpalm
 ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: 82e64af5cec8641abacf5afa323fc38382a124c4
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: e5361b92c2080c724b872be2ad27bc5bd4554e8d
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103487983"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105108173"
 ---
-In deze Quick Start leert u hoe u kunt deel nemen aan een team vergadering met behulp van de Azure Communication Services-client bibliotheek voor Android.
+In deze Quick Start leert u hoe u kunt deel nemen aan een team vergadering met behulp van de Azure Communication Services-SDK voor Android.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -254,7 +254,7 @@ public class MainActivity extends AppCompatActivity {
 ## <a name="get-the-teams-meeting-link"></a>Koppeling naar de Teams-vergadering ophalen
 
 De koppeling naar de Teams-vergadering kan worden opgehaald met behulp van Graph API’s. Dit wordt beschreven in [Graph-documentatie](/graph/api/onlinemeeting-createorget?tabs=http&view=graph-rest-beta).
-De communicatie services die client bibliotheek aanroept, accepteren een koppeling naar de vergadering volledige teams. Deze koppeling wordt geretourneerd als onderdeel van de `onlineMeeting` resource, toegankelijk via de [ `joinWebUrl` eigenschap](/graph/api/resources/onlinemeeting?view=graph-rest-beta). U kunt ook de vereiste gegevens van de vergadering ophalen van de **vergaderings** -URL voor deelname aan de team vergadering zelf uitnodigen.
+The aanroepende SDK voor Communication Services accepteert een volledige koppeling naar een Teams-vergadering. Deze koppeling wordt geretourneerd als onderdeel van de `onlineMeeting` resource, toegankelijk via de [ `joinWebUrl` eigenschap](/graph/api/resources/onlinemeeting?view=graph-rest-beta). U kunt ook de vereiste gegevens van de vergadering ophalen van de **vergaderings** -URL voor deelname aan de team vergadering zelf uitnodigen.
 
 ## <a name="launch-the-app-and-join-teams-meeting"></a>De app starten en deel nemen aan vergaderingen in teams
 

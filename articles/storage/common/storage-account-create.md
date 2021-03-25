@@ -10,12 +10,12 @@ ms.date: 01/11/2021
 ms.author: tamram
 ms.subservice: common
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: b8f5932985f90ce042d7b0df0d01e7c685098670
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 73bef1648b08f5c1e0664ef1da15375bc44149cc
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104576506"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105045345"
 ---
 # <a name="create-a-storage-account"></a>Een opslagaccount maken
 
@@ -279,7 +279,7 @@ U kunt ook de resource groep verwijderen, waardoor het opslag account en eventue
 > [!WARNING]
 > Het is niet mogelijk om een verwijderd opslagaccount te herstellen of om inhoud terug te halen die het account vóór verwijdering bevatte. Zorg ervoor dat u een back-up maakt van alles dat u wilt opslaan, voordat u het account verwijdert. Dit geldt ook voor alle resources in het account: als u blobs, tabellen, wachtrijen of bestanden verwijdert, worden deze permanent verwijderd.
 >
-> Als u probeert een opslagaccount te verwijderen dat is gekoppeld aan een virtuele machine van Azure, ziet u mogelijk een foutbericht dat het account nog in gebruik is. Zie [problemen oplossen bij het verwijderen van opslag accounts](../../virtual-machines/troubleshooting/index.yml)voor hulp bij het oplossen van deze fout.
+> Als u probeert een opslagaccount te verwijderen dat is gekoppeld aan een virtuele machine van Azure, ziet u mogelijk een foutbericht dat het account nog in gebruik is. Zie [problemen oplossen bij het verwijderen van opslag accounts](/troubleshoot/azure/virtual-machines/welcome-virtual-machines)voor hulp bij het oplossen van deze fout.
 
 ## <a name="next-steps"></a>Volgende stappen
 

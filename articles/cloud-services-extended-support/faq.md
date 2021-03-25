@@ -8,12 +8,12 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: 4db23982dfaed1447023edb417a3732dac94bdc4
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.openlocfilehash: 9cac6cdd8e68af77b611c89e8b62e6f8d8845fd0
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105025234"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105107513"
 ---
 # <a name="frequently-asked-questions-for-azure-cloud-services-extended-support"></a>Veelgestelde vragen over Azure Cloud Services (uitgebreide ondersteuning)
 In dit artikel vindt u informatie over veelgestelde vragen met betrekking tot Azure Cloud Services (uitgebreide ondersteuning).
@@ -93,7 +93,7 @@ Nee, de implementaties van Cloud Services (uitgebreide ondersteuning) zijn gekop
 ### <a name="when-do-i-need-to-migrate"></a>Wanneer moet ik migreren? 
 Het schatten van de tijd die nodig is en de complexiteits migratie is afhankelijk van een bereik van variabelen. Planning is de meest efficiënte stap om inzicht te krijgen in de reik wijdte van het werk, de blok keringen en de complexiteit van de migratie.
 
-## <a name="networking"></a>Netwerken
+## <a name="networking"></a>Netwerken 
 
 ### <a name="why-cant-i-create-a-deployment-without-virtual-network"></a>Waarom kan ik geen implementatie maken zonder virtueel netwerk?
 Virtuele netwerken zijn een vereiste bron voor elke implementatie op Azure Resource Manager. De implementatie van Cloud Services (uitgebreide ondersteuning) moet binnen een virtueel netwerk wonen. 
@@ -112,6 +112,9 @@ Klanten worden gefactureerd voor het gebruik van IP-adressen op Cloud Services (
 
 ### <a name="can-i-use-a-dns-name-with-cloud-services-extended-support"></a>Kan ik een DNS-naam met Cloud Services (uitgebreide ondersteuning) gebruiken? 
 Ja. Er kan ook een DNS-naam worden opgegeven voor Cloud Services (uitgebreide ondersteuning). Met Azure Resource Manager is het DNS-label een optionele eigenschap van het open bare IP-adres dat is toegewezen aan de Cloud service. De indeling van de DNS-naam voor implementaties op basis van Azure Resource Manager is `<userlabel>.<region>.cloudapp.azure.com`
+
+### <a name="can-i-update-or-change-the-virtual-network-reference-for-an-existing-cloud-service-extended-support"></a>Kan ik de verwijzing naar het virtuele netwerk voor een bestaande Cloud service bijwerken of wijzigen (uitgebreide ondersteuning)? 
+Nee. Verwijzing van virtueel netwerk is verplicht tijdens het maken van een Cloud service. Voor een bestaande Cloud service kan de verwijzing naar het virtuele netwerk niet worden gewijzigd. De adres ruimte van het virtuele netwerk zelf kan worden gewijzigd met behulp van VNet-Api's. 
 
 ## <a name="certificates--key-vault"></a>Certificaten & Key Vault
 

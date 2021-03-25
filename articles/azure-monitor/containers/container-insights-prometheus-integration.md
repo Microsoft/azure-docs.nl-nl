@@ -3,12 +3,12 @@ title: Prometheus-integratie met container Insights configureren | Microsoft Doc
 description: In dit artikel wordt beschreven hoe u de container Insights-agent zo kunt configureren dat metrische gegevens worden afgeleid van Prometheus met uw Kubernetes-cluster.
 ms.topic: conceptual
 ms.date: 04/22/2020
-ms.openlocfilehash: 8affeb472b9452e4d234e99e5ea6bb4509770fac
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 149cdc8613d5034989c7660608a29309353cdabe
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101731728"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105109638"
 ---
 # <a name="configure-scraping-of-prometheus-metrics-with-container-insights"></a>Het terugvallen van Prometheus-metrische gegevens met container Insights configureren
 
@@ -48,7 +48,7 @@ Wanneer een URL is opgegeven, wordt het eind punt alleen door container Insights
 |------|-----|-----------|-------|-------------|
 | Cluster-breed | | | | Geef een van de volgende drie methoden op om eind punten voor metrische gegevens af te vallen. |
 | | `urls` | Tekenreeks | Door komma's gescheiden matrix | HTTP-eind punt (ofwel een IP-adres of een geldig URL-pad opgegeven). Bijvoorbeeld: `urls=[$NODE_IP/metrics]`. ($NODE _IP is een specifieke container Insights-para meter en kan worden gebruikt in plaats van het IP-adres van het knoop punt. Mag alleen hoofd letters zijn.) |
-| | `kubernetes_services` | Tekenreeks | Door komma's gescheiden matrix | Een matrix met Kubernetes-Services voor het opwaarderen van metrische gegevens uit uitvoeren. Bijvoorbeeld `kubernetes_services = ["https://metrics-server.kube-system.svc.cluster.local/metrics",http://my-service-dns.my-namespace:9100/metrics]`.|
+| | `kubernetes_services` | Tekenreeks | Door komma's gescheiden matrix | Een matrix met Kubernetes-Services voor het opwaarderen van metrische gegevens uit uitvoeren. Volledig gekwalificeerde domein namen moeten hier worden gebruikt. Bijvoorbeeld `kubernetes_services = ["https://metrics-server.kube-system.svc.cluster.local/metrics",http://my-service-dns.my-namespace.svc.cluster.local:9100/metrics]`.|
 | | `monitor_kubernetes_pods` | Booleaans | waar of onwaar | Als deze optie is ingesteld op `true` in de instellingen voor het hele cluster, wordt in de container Insights-agent Kubernetes peul voor het hele cluster geschroot voor de volgende Prometheus-aantekeningen:<br> `prometheus.io/scrape:`<br> `prometheus.io/scheme:`<br> `prometheus.io/path:`<br> `prometheus.io/port:` |
 | | `prometheus.io/scrape` | Booleaans | waar of onwaar | Hiermee schakelt u de pod in. `monitor_kubernetes_pods` moet worden ingesteld op `true` . |
 | | `prometheus.io/scheme` | Tekenreeks | http of https | De standaard instelling is het uitvallen van HTTP. Stel, indien nodig, in op `https` . | 

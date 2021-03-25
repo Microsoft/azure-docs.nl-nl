@@ -7,12 +7,12 @@ ms.manager: abhemraj
 ms.topic: tutorial
 ms.date: 03/17/2021
 ms.custom: mvc
-ms.openlocfilehash: d0acf83ddfb0d2a3aff0db0f3d151869bce1c710
-ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
+ms.openlocfilehash: 1a0ad751a216e8da772fd5fdc96a0dc67cb27d01
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104771733"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105109846"
 ---
 # <a name="tutorial-discover-servers-running-in-vmware-environment-with-azure-migrate-discovery-and-assessment"></a>Zelf studie: servers die worden uitgevoerd in de VMware-omgeving detecteren met Azure Migrate: detectie en evaluatie
 
@@ -46,12 +46,10 @@ Controleer of deze vereisten aanwezig zijn voordat u met deze zelfstudie begint.
 **Apparaat** | vCenter Server hebt resources nodig om een server toe te wijzen voor het Azure Migrate apparaat:<br/><br/> -32 GB aan RAM, 8 Vcpu's en ongeveer 80 GB aan schijf opslag.<br/><br/> -Een externe virtuele switch en Internet toegang op de toestel server, rechtstreeks of via een proxy.
 **Servers** | Alle versies van het Windows-en Linux-besturings systeem worden ondersteund voor detectie van meta gegevens van de configuratie en prestaties. <br/><br/> Voor het uitvoeren van toepassings detectie op servers worden alle versies van Windows-en Linux-besturings systemen ondersteund. [Hier](migrate-support-matrix-vmware.md#dependency-analysis-requirements-agentless) kunt u controleren welke versies van het besturings systeem worden ondersteund voor afhankelijkheids analyse zonder agent.<br/><br/> Voor de detectie van geïnstalleerde toepassingen en afhankelijkheids analyse zonder agent moeten VMware-Hulpprogram Ma's (later dan 10.2.0) op servers worden geïnstalleerd en worden uitgevoerd. Op Windows-servers moet Power shell-versie 2,0 of hoger zijn geïnstalleerd.<br/><br/> Als u SQL Server instanties en data bases wilt detecteren, kunt u [hier](migrate-support-matrix-vmware.md#requirements-for-discovery-of-sql-server-instances-and-databases) een van de ondersteunde versies en edities SQL Server van het Windows-besturings systeem en de ondersteunde verificatie mechanismen controleren.
 
-> [!Note]
-> Detectie en evaluatie van SQL Server instanties en data bases die worden uitgevoerd in uw VMware-omgeving is nu beschikbaar als preview-versie. Als u deze functie wilt proberen, gebruikt u [**deze koppeling**](https://aka.ms/AzureMigrate/SQL) om een project te maken in de regio **Australië - oost**. Als u al een project in Australië-oost hebt en u deze functie wilt proberen, zorgt u ervoor dat u aan deze [**vereisten**](how-to-discover-sql-existing-project.md) voldoet in de portal.
-
 ## <a name="prepare-an-azure-user-account"></a>Een Azure-gebruikersaccount voorbereiden
 
 Als u een project wilt maken en het Azure Migrate apparaat wilt registreren, hebt u een account nodig met:
+
 - Inzender of eigenaars machtigingen voor het Azure-abonnement
 - Machtigingen voor het registreren van Azure Active Directory-apps (AAD)
 - Eigenaar of Inzender plus beheerders machtigingen voor gebruikers toegang voor het Azure-abonnement om een Key Vault te maken, die wordt gebruikt tijdens server migratie zonder agents
@@ -96,14 +94,13 @@ Stel in de vSphere-webclient als volgt een account in:
 3. Voeg onder **Gebruiker** een nieuwe gebruiker toe.
 4. Typ onder **Nieuwe gebruiker** de accountgegevens. Klik vervolgens op **OK**.
 5. Selecteer onder **Globale machtigingen** het gebruikersaccount en wijs de rol **Alleen-lezen** toe aan het account. Klik vervolgens op **OK**.
-6.  Als u ook de detectie van geïnstalleerde toepassingen en afhankelijkheids analyse zonder agent wilt uitvoeren, gaat u naar **rollen** > selecteert u de rol **alleen-lezen** en selecteert u in **bevoegdheden** **gast bewerkingen**. U kunt de bevoegdheden door geven aan alle objecten onder de vCenter Server door de selectie vakje ' door geven aan onderliggende items ' in te scha kelen.
+6. Als u ook de detectie van geïnstalleerde toepassingen en afhankelijkheids analyse zonder agent wilt uitvoeren, gaat u naar **rollen** > selecteert u de rol **alleen-lezen** en selecteert u in **bevoegdheden** **gast bewerkingen**. U kunt de bevoegdheden door geven aan alle objecten onder de vCenter Server door de selectie vakje ' door geven aan onderliggende items ' in te scha kelen.
 
     :::image type="content" source="./media/tutorial-discover-vmware/guest-operations.png" alt-text="Selectievakje om gastbewerkingen toe te staan voor de rol Alleen-lezen":::
 
 
 > [!NOTE]
 > U kunt de detectie beperken tot specifieke vCenter Server Data Centers, clusters, een map met clusters, hosts, een map van hosts of afzonderlijke servers door de vCenter Server-account te bereiknen. Meer [**informatie**](set-discovery-scope.md) over het bereik van de vCenter Server-gebruikers account.
-
 
 ### <a name="create-an-account-to-access-servers"></a>Een account maken voor toegang tot servers
 
@@ -154,7 +151,7 @@ Als u het apparaat wilt instellen met behulp van een OVA-sjabloon, doet u het vo
 1. In **migratie doelen**  >  **Windows, Linux-en SQL-servers**  >  **Azure migrate: detectie en evaluatie**, selecteer **detecteren**.
 2. In **Discover-servers**  >  **zijn uw servers gevirtualiseerd?**, selecteert u **Ja, met VMware vSphere Hyper Visor**.
 3. Geef in **1: project sleutel genereren** een naam op voor het Azure migrate apparaat dat u wilt instellen voor de detectie van servers in uw VMware-omgeving. De naam moet alfanumeriek zijn met 14 tekens of minder.
-1. Klik op **Sleutel genereren** om de vereiste Azure-resources te gaan maken. Sluit de detectie pagina niet tijdens het maken van resources.
+1. Klik op **Sleutel genereren** om de vereiste Azure-resources te gaan maken. Sluit de detectie pagina niet af tijdens het maken van resources.
 1. Nadat het maken van de Azure-resources is voltooid, wordt er een **project sleutel** gegenereerd.
 1. Kopieer de sleutel, omdat u deze nodig hebt om de registratie van het apparaat tijdens de configuratie te voltooien.
 
@@ -234,7 +231,6 @@ Het apparaat voor de eerste keer instellen.
 
     :::image type="content" source="./media/tutorial-discover-vmware/appliance-prerequisites.png" alt-text="Paneel 1 op het configuratie beheer van het apparaat":::
 
-
 ### <a name="register-the-appliance-with-azure-migrate"></a>Het apparaat registreren bij Azure Migrate
 
 1. Plak de **project sleutel** die u hebt gekopieerd uit de portal. Als u de sleutel niet hebt, gaat u naar **Azure migrate: detectie en evaluatie> detecteren> bestaande apparaten te beheren**, selecteert u de naam van het apparaat dat u hebt ingevoerd op het moment van sleutel genereren en kopieert u de bijbehorende sleutel.
@@ -274,9 +270,6 @@ In **stap 3: Server referenties opgeven voor het uitvoeren van software-inventar
 
 :::image type="content" source="./media/tutorial-discover-vmware/appliance-server-credentials-mapping.png" alt-text="Panel 3 op het apparaat Configuration Manager voor Server Details":::
 
-> [!Note]
-> Detectie en evaluatie van SQL Server instanties en data bases die worden uitgevoerd in uw VMware-omgeving is nu beschikbaar als preview-versie. Als u deze functie wilt proberen, gebruikt u [**deze koppeling**](https://aka.ms/AzureMigrate/SQL) om een project te maken in de regio **Australië - oost**. Als u al een project in Australië-oost hebt en u deze functie wilt proberen, zorgt u ervoor dat u aan deze [**vereisten**](how-to-discover-sql-existing-project.md) voldoet in de portal.
-
 Als u deze functies wilt gebruiken, kunt u de referenties van de server opgeven door de volgende stappen uit te voeren. Het apparaat zal proberen de referenties automatisch toe te wijzen aan de servers om de detectie functies uit te voeren.
 
 - U kunt Server referenties toevoegen door te klikken op de knop **referenties toevoegen** . Hiermee opent u een modaal, waar u het **type referenties** kunt kiezen in de vervolg keuzelijst.
@@ -289,6 +282,7 @@ Als u deze functies wilt gebruiken, kunt u de referenties van de server opgeven 
 - U kunt de **validatie status** voor alle domein referenties in de tabel referenties bekijken. Alleen domein referenties worden gevalideerd.
 - Als de validatie mislukt, kunt u op de status **mislukt** klikken om de gevonden fout te zien en klikt u op **referenties opnieuw valideren** nadat het probleem is opgelost en de referenties voor het mislukte domein opnieuw te valideren.
 
+     :::image type="content" source="./media/tutorial-discover-vmware/add-server-credentials-multiple.png" alt-text="Panel 3 op het apparaat Configuration Manager voor het opgeven van meerdere referenties":::
 
 ### <a name="start-discovery"></a>Detectie starten
 

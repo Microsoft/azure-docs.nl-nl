@@ -11,16 +11,16 @@ ms.topic: tutorial
 ms.date: 03/04/2021
 ms.author: lajanuar
 ms.custom: devx-track-python, devx-track-js
-ms.openlocfilehash: c04bac76453d565abb99a971386b9ce0461b88ae
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: 6ec951e57b40ae1440f541c02b26e7788b3cf151
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102172076"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105043730"
 ---
 # <a name="tutorial-build-a-flask-app-with-azure-cognitive-services"></a>Zelfstudie: Een Flask-app bouwen met Azure Cognitive Services
 
-In deze zelfstudie bouwt u een op Flask-web-app die gebruikmaakt van Azure Cognitive Services om tekst te vertalen, sentiment te analyseren en vertaalde tekst in spraak te synthetiseren. De nadruk ligt op de Python-code en Flask-routes die de toepassing mogelijk maken. U krijgt hulp met de HTML en JavaScript waarmee de app wordt opgebouwd. Als u problemen ondervindt, laat het ons weten met de feedback-knop hieronder.
+In deze zelfstudie bouwt u een op Flask-web-app die gebruikmaakt van Azure Cognitive Services om tekst te vertalen, sentiment te analyseren en vertaalde tekst in spraak te synthetiseren. Onze nadruk ligt op de python-code en kolven die onze toepassing inschakelen, maar we helpen u echter met de HTML en Java script die de app samen haalt. Als u problemen ondervindt, laat het ons weten met de feedback-knop hieronder.
 
 Deze zelfstudie bevat de volgende onderwerpen:
 
@@ -49,7 +49,7 @@ Voor degenen die zich na deze zelfstudie in de stof willen verdiepen, volgen hie
 
 Laten we de software en abonnementssleutels bekijken die u voor deze zelfstudie nodig hebt.
 
-* [Python 3.5.2 of hoger](https://www.python.org/downloads/)
+* [Python 3,6 of hoger](https://www.python.org/downloads/)
 * [Git-hulpprogramma's](https://git-scm.com/downloads)
 * Een IDE of teksteditor, zoals [Visual Studio Code](https://code.visualstudio.com/) of [Atom](https://atom.io/)  
 * [Chrome](https://www.google.com/chrome/browser/) of [Firefox](https://www.mozilla.org/firefox)
@@ -249,7 +249,7 @@ Nu u een idee hebt van de werking van een eenvoudige Flask-app, gaan we het volg
 * Enkele Python-instructies schrijven om Translator aan te roepen en een respons te retourneren
 * Een Flask-route maken om de Python-code aan te roepen
 * De HTML bijwerken met een gebied voor tekstinvoer en -vertaling, een taalselector en een vertaalknop
-* JavaScript-code schrijven waarmee gebruikers met behulp van HTML met de Flask-app kunnen communiceren
+* Schrijf java script waarmee gebruikers vanuit de HTML kunnen communiceren met uw erlenmeyer-app
 
 ### <a name="call-the-translator"></a>Translator aanroepen
 
@@ -409,7 +409,7 @@ We gaan `index.html` bijwerken.
    </div>
    ```
 
-De volgende stap bestaat uit het schrijven van wat code in JavaScript. Dit is de brug tussen de HTML en de Flask-route.
+De volgende stap is het schrijven van een Java script. Dit is de brug tussen de HTML en de Flask-route.
 
 ### <a name="create-mainjs"></a>`main.js` maken  
 
@@ -482,11 +482,11 @@ In deze sectie gaat u de volgende dingen doen:
 * Python-code schrijven om de Text Analytics-API aan te roepen om de sentimentanalyse uit te voeren en een response te retourneren
 * Een Flask-route maken om de Python-code aan te roepen
 * De HTML bijwerken met een gebied voor sentimentscores en een knop voor het uitvoeren van analyses
-* JavaScript-code schrijven waarmee gebruikers met behulp van HTML met de Flask-app kunnen communiceren
+* Schrijf java script waarmee gebruikers vanuit de HTML kunnen communiceren met uw erlenmeyer-app
 
 ### <a name="call-the-text-analytics-api"></a>De Tekstanalyse-API aanroepen
 
-We gaan een functie schrijven waarmee de Text Analytics-API wordt aangeroepen. De functie gebruikt vier argumenten: `input_text`, `input_language`, `output_text` en `output_language`. De functie wordt aangeroepen wanneer een gebruiker op de knop voor sentimentanalyse in de app drukt. Gegevens die door de gebruiker vanuit het tekstgebied en de taalselector worden verstrekt, evenals de gedetecteerde taal en de vertaaluitvoer, worden bij elke aanvraag meegeleverd. Het responseobject bevat sentimentscores voor de bron en de vertaling. In de volgende secties gaat u code in JavaScript schrijven om de response te parseren en in de app te gebruiken. We richten ons nu voorlopig op het aanroepen van de Text Analytics-API.
+We gaan een functie schrijven waarmee de Text Analytics-API wordt aangeroepen. De functie gebruikt vier argumenten: `input_text`, `input_language`, `output_text` en `output_language`. De functie wordt aangeroepen wanneer een gebruiker op de knop voor sentimentanalyse in de app drukt. Gegevens die door de gebruiker vanuit het tekstgebied en de taalselector worden verstrekt, evenals de gedetecteerde taal en de vertaaluitvoer, worden bij elke aanvraag meegeleverd. Het responseobject bevat sentimentscores voor de bron en de vertaling. In de volgende secties gaat u een Java script schrijven om het antwoord te parseren en te gebruiken in uw app. We richten ons nu voorlopig op het aanroepen van de Text Analytics-API.
 
 1. We maken een bestand met de naam `sentiment.py` in de hoofdmap van de werkmap.
 2. Voeg vervolgens deze code toe aan `sentiment.py`.
@@ -651,7 +651,7 @@ In deze sectie gaat u de volgende dingen doen:
 * Python-code schrijven om tekst naar spraak te converteren met de Tekst-naar-spraak-API
 * Een Flask-route maken om de Python-code aan te roepen
 * De HTML bijwerken met een knop om tekst naar spraak te converteren, en een element bijwerken voor het afspelen van audio
-* JavaScript-code schrijven waarmee gebruikers met de Flask-app kunnen communiceren
+* Schrijf java script waarmee gebruikers kunnen communiceren met uw erlenmeyer-app
 
 ### <a name="call-the-text-to-speech-api"></a>De Tekst-naar-spraak-API aanroepen
 

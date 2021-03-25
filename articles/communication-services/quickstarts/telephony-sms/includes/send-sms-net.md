@@ -10,14 +10,14 @@ ms.date: 03/11/2021
 ms.topic: include
 ms.custom: include file
 ms.author: peiliu
-ms.openlocfilehash: 96cdeb7c35cd1ccd503f7ce01e1098a6b83884c3
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: caca5f5a05a136248f7453337629fdd2b22f956a
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103621956"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105110336"
 ---
-Ga aan de slag met Azure Communication Services door de clientbibliotheek voor C#-sms van Communications Services te gebruiken om sms-berichten te verzenden.
+Ga aan de slag met Azure Communication Services met de SMS SDK van Communication Services C# om SMS-berichten te verzenden.
 
 Voor het voltooien van deze quickstart worden kosten van een paar dollarcent of minder in rekening gebracht bij uw Azure-account.
 
@@ -28,13 +28,13 @@ Voor het voltooien van deze quickstart worden kosten van een paar dollarcent of 
 ## <a name="prerequisites"></a>Vereisten
 
 - Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
-- De nieuwste versie van [.NET Core-clientbibliotheek](https://dotnet.microsoft.com/download/dotnet-core) voor uw besturingssysteem.
+- De nieuwste versie [.net core SDK](https://dotnet.microsoft.com/download/dotnet-core) voor uw besturings systeem.
 - Een actieve Communication Services-resource en verbindingsreeks. [Een Communication Services-resource maken](../../create-communication-resource.md).
 - Een telefoonnummer met sms-functionaliteit. [Een telefoonnummer aanvragen](../get-phone-number.md).
 
 ### <a name="prerequisite-check"></a>Controle van vereisten
 
-- Voer in een terminal- of opdrachtvenster de opdracht `dotnet` uit om te controleren of de .NET-clientbibliotheek is geïnstalleerd.
+- Voer in een Terminal-of opdracht venster de `dotnet` opdracht uit om te controleren of de .NET SDK is geïnstalleerd.
 - Als u de telefoonnummers wilt weergeven die zijn gekoppeld aan uw Communication Services-resource, meldt u zich aan bij [Azure Portal](https://portal.azure.com/), zoekt u uw Communication Services-resource en opent u het tabblad **telefoonnummers** vanuit het navigatiedeelvenster aan de linkerkant.
 
 ## <a name="setting-up"></a>Instellen
@@ -56,7 +56,7 @@ dotnet build
 
 ### <a name="install-the-package"></a>Het pakket installeren
 
-Blijf in de toepassingsmap en installeer met de opdracht `dotnet add package` de Azure Communications Services sms-clientbibliotheek voor het .NET-pakket.
+Terwijl u nog steeds in de toepassingsmap, installeert u het Azure Communication Services SMS SDK voor .NET-pakket met behulp van de `dotnet add package` opdracht.
 
 ```console
 dotnet add package Azure.Communication.Sms --version 1.0.0-beta.4
@@ -77,7 +77,7 @@ using Azure.Communication.Sms;
 
 ## <a name="object-model"></a>Objectmodel
 
-De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Azure Communication Services sms-clientbibliotheek voor C#.
+De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de SMS SDK voor Azure Communication Services voor C#.
 
 | Naam                                       | Beschrijving                                                                                                                                                       |
 | ------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |

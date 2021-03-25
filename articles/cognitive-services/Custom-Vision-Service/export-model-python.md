@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 11/23/2020
 ms.author: pafarley
 ms.custom: devx-track-python
-ms.openlocfilehash: a47475ad55c5e6262dc8ba1a384d89b9721fd2e9
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
-ms.translationtype: HT
+ms.openlocfilehash: 7422b88aa2f9c4894d550ee2bf7e397cd163f870
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95736422"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105046025"
 ---
 # <a name="tutorial-run-tensorflow-model-in-python"></a>Zelfstudie: TensorFlow-model uitvoeren in Python
 
@@ -29,7 +29,7 @@ Nadat u [uw TensorFlow-model](./export-your-model.md) hebt geëxporteerd uit de 
 
 Als u de zelfstudie wilt gebruiken, moet u het volgende doen:
 
-- Python 2.7 of hoger of Python 3.5 of hoger installeren.
+- Installeer Python 2.7 + of python 3.6 +.
 - Pip installeren.
 
 Vervolgens moet u de volgende pakketten installeren:

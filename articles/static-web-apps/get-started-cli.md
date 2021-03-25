@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: quickstart
 ms.date: 08/13/2020
 ms.author: cshoe
-ms.openlocfilehash: 98b40218d168133193410174bcc158ab8698c381
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: f3ac1c8076650a4075c33aeaa9128133b5b90296
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103225384"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105046076"
 ---
 # <a name="quickstart-building-your-first-static-site-using-the-azure-cli"></a>Quickstart: Uw eerste statische site bouwen met behulp van Azure CLI
 
@@ -110,7 +110,7 @@ Nu de opslagplaats is gemaakt, kunt u een statische web-app maken vanuit de Azur
 
     - `<RESOURCE_GROUP_NAME>`: Vervang deze waarde door een bestaande [naam van een Azure-resource groep](../azure-resource-manager/management/manage-resources-cli.md).
 
-      - Zie de documentatie van [AZ Group](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az_group_list) voor meer informatie over het weer geven van resource groepen.
+      - Zie de documentatie van [AZ Group](/cli/azure/group?view=azure-cli-latest#az_group_list) voor meer informatie over het weer geven van resource groepen.
 
     - `<YOUR_GITHUB_ACCOUNT_NAME>`: Vervang deze waarde door uw GitHub-gebruikersnaam.
 

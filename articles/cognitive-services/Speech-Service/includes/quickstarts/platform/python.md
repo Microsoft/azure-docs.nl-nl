@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 10/15/2020
 ms.author: trbye
-ms.openlocfilehash: 14048494c6fb3a0bf5b96f2e03824b47c5cc318c
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: 4f542970db5cf7015df4e0f276fccd8782d7beee
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105105674"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105152753"
 ---
 In deze gids ontdekt u hoe u de [Speech SDK](~/articles/cognitive-services/speech-service/speech-sdk.md) kunt installeren voor Python. Als u enkel de pakketnaam nodig heeft om zelf aan de slag te gaan, voer dan `pip install azure-cognitiveservices-speech` uit.
 
@@ -49,7 +49,7 @@ In deze gids ontdekt u hoe u de [Speech SDK](~/articles/cognitive-services/speec
 > - Volg op RHEL/CentOS 8 de instructies op [OpenSSL configureren voor Linux](~/articles/cognitive-services/speech-service/how-to-configure-openssl-linux.md).
 
 - In Windows hebt u het [Microsoft Visual C++ Redistributable for Visual Studio 2019](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads) voor uw platform nodig. Houd er rekening mee dat als u dit voor het eerst installeert, Windows opnieuw moet worden opgestart voordat u doorgaat met deze gids.
-- En ten slotte hebt u [python 3.6 +](https://www.python.org/downloads/)nodig. Om uw installatie te controleren, opent u een opdrachtprompt, typt u de opdracht `python --version` in en controleert u het resultaat. Als het correct is geïnstalleerd, krijgt u een antwoord als ' python 3.8.8 '.
+- En ten slotte hebt u [Python 3,6 tot 3,9](https://www.python.org/downloads/)nodig. Om uw installatie te controleren, opent u een opdrachtprompt, typt u de opdracht `python --version` in en controleert u het resultaat. Als het correct is geïnstalleerd, krijgt u een antwoord als ' python 3.8.8 '.
 
 ## <a name="install-the-speech-sdk-from-pypi"></a>De Speech-SDK installeren van PyPI
 

@@ -12,12 +12,12 @@ ms.date: 03/03/2021
 ms.author: yulili
 ms.custom: references_regions
 zone_pivot_groups: programming-languages-speech-services-nomore-variant
-ms.openlocfilehash: 7a196ff8c80a6f92e1205f5553a54913e281b52b
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.openlocfilehash: f74a242db2686eb4571ebbea80b88a75dda205d4
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/24/2021
-ms.locfileid: "105025880"
+ms.locfileid: "105044064"
 ---
 # <a name="get-facial-pose-events"></a>Gebeurtenissen voor gezichts pose ophalen
 
@@ -31,7 +31,7 @@ Er is geen-op-een-correspondentie tussen visemes en fonemen.
 Vaak zijn er verschillende fonemen die overeenkomen met één viseme, omdat meerdere fonemen er op het gezicht hetzelfde uitzien wanneer ze worden geproduceerd, zoals `s` en `z` .
 Zie de [tabel toewijzing tussen visemes en fonemen](#map-phonemes-to-visemes).
 
-Met behulp van visemes kunt u meer natuurlijke en intelligent News broadcast-assistent maken, meer interactieve gaming-en strip-tekens en meer intuïtieve taal onderwijs Video's. Het slechthorenden kan ook visueel geluid en ' lip-Lees ' spraak inhoud ophalen die visemes op een animatie gezicht laat zien.
+Met behulp van visemes kunt u meer natuurlijke en intelligent News broadcast-assistent maken, meer interactieve gaming-en strip-tekens en meer intuïtieve taal onderwijs Video's. Mensen met een gehoor-bijzondere waardevermindering kunnen ook visueel geluid ophalen en ' lip-lezen ' spraak inhoud die visemes op een animatie gezicht laat zien.
 
 ## <a name="get-viseme-events-with-the-speech-sdk"></a>Viseme-gebeurtenissen ophalen met de Speech SDK
 

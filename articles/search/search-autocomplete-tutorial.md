@@ -7,18 +7,18 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/24/2020
+ms.date: 03/24/2021
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 25c87971455ed3c5f59c92748794720d61e599e3
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 668b987dd8b367c143a91dc5adb11848321a9d5a
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96339605"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105044410"
 ---
 # <a name="add-autocomplete-and-suggestions-to-client-apps-using-azure-cognitive-search"></a>Automatisch aanvullen en suggesties toevoegen aan client-apps met behulp van Azure Cognitive Search
 
-Search-as-u-type is een algemene techniek voor het verbeteren van de productiviteit van door de gebruiker geïnitieerde query's. In azure Cognitive Search wordt deze ervaring ondersteund via *automatisch aanvullen*, waardoor een term of woord groep is gebaseerd op gedeeltelijke invoer (het volt ooien van ' micro ' met ' micro soft '). Een tweede gebruikers ervaring is *suggesties* of een korte lijst met overeenkomende documenten (waarbij Boek titels worden geretourneerd met een id zodat u een koppeling kunt maken naar een detail pagina over dat boek). Automatisch aanvullen en suggesties worden voorgesteld op basis van een overeenkomst in de index. De service biedt geen query's die nul resultaten retour neren.
+Search-as-u-type is een algemene techniek voor het verbeteren van de query productiviteit. In azure Cognitive Search wordt deze ervaring ondersteund via *automatisch aanvullen*, waardoor een term of woord groep is gebaseerd op gedeeltelijke invoer (het volt ooien van ' micro ' met ' micro soft '). Een tweede gebruikers ervaring is *suggesties* of een korte lijst met overeenkomende documenten (waarbij Boek titels worden geretourneerd met een id zodat u een koppeling kunt maken naar een detail pagina over dat boek). Automatisch aanvullen en suggesties worden voorgesteld op basis van een overeenkomst in de index. De service biedt geen query's die nul resultaten retour neren.
 
 Als u deze ervaringen wilt implementeren in azure Cognitive Search, hebt u het volgende nodig:
 
@@ -63,13 +63,16 @@ Volg deze koppelingen voor de REST-en .NET SDK-referentie pagina's:
 
 Antwoorden voor automatisch aanvullen en suggesties zijn wat u mogelijk verwacht voor het patroon: door [AutoAanvullen](/rest/api/searchservice/autocomplete#response) een lijst met termen te [retour neren,](/rest/api/searchservice/suggestions#response) worden voor waarden en een document-id geretourneerd, zodat u het document kunt ophalen (met behulp van de [opzoek document](/rest/api/searchservice/lookup-document) -API om het specifieke document voor een detail pagina op te halen).
 
-Antwoorden worden gevormd door de para meters in de aanvraag. Stel voor automatisch aanvullen [**autocompleteMode**](/rest/api/searchservice/autocomplete#autocomplete-modes) in om te bepalen of de tekst is voltooid op basis van één of twee voor waarden. Voor suggesties bepaalt het veld dat u kiest de inhoud van het antwoord.
+Antwoorden worden gevormd door de para meters in de aanvraag:
 
-Voor suggesties moet u het antwoord verder verfijnen om duplicaten te voor komen of wat niet-gerelateerde resultaten lijkt te zijn. Als u de resultaten wilt beheren, neemt u meer para meters op voor de aanvraag. De volgende para meters zijn van toepassing op zowel AutoAanvullen als suggesties, maar zijn mogelijk meer nodig voor suggesties, met name wanneer een suggestie meerdere velden bevat.
++ Stel voor automatisch aanvullen de [**autocompleteMode**](/rest/api/searchservice/autocomplete#query-parameters) in om te bepalen of de tekst is voltooid op basis van een of twee voor waarden. 
+
++ Stel [**$Select**](/rest/api/searchservice/suggestionse#query-parameters) voor suggesties in om velden te retour neren die unieke of afdoende waarden bevatten, zoals namen en beschrijvingen. Vermijd velden die dubbele waarden bevatten (zoals een categorie of plaats).
+
+De volgende aanvullende para meters zijn van toepassing op zowel AutoAanvullen als suggesties, maar zijn mogelijk meer nodig voor suggesties, met name wanneer een suggestie meerdere velden bevat.
 
 | Parameter | Gebruik |
 |-----------|-------|
-| **$select** | Als u meerdere **sourceFields** in een suggestie hebt, gebruikt u **$Select** om te kiezen welk veld waarden bijdraagt ( `$select=GameTitle` ). |
 | **searchFields** | De query beperken tot specifieke velden. |
 | **$filter** | Overeenkomst criteria Toep assen op de resultatenset ( `$filter=Category eq 'ActionAdventure'` ). |
 | **$top** | De resultaten beperken tot een bepaald aantal ( `$top=5` ).|

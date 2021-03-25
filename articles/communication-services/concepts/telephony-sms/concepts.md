@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: c866629677790447d0ed730ae9cc62cb37e338e9
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 0ddc9bfeb0df32614d835e0eaef9da52e917ee91
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103495501"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105108431"
 ---
 # <a name="sms-concepts"></a>Sms-concepten
 
@@ -23,9 +23,9 @@ ms.locfileid: "103495501"
 
 [!INCLUDE [Regional Availability Notice](../../includes/regional-availability-include.md)]
 
-Met Azure Communication Services kunt u sms-tekstberichten verzenden en ontvangen met behulp van de sms-clientbibliotheken van Communication Services. Deze clientbibliotheken kunnen worden gebruikt ter ondersteuning van klantenservicescenario's, afspraakherinneringen, tweeledige verificatie en andere communicatie in real time. Met sms in Communication Services kunt u op een betrouwbare manier berichten verzenden en inzicht krijgen in de bezorgings- en responspercentages voor uw campagnes.
+Met Azure Communication Services kunt u SMS-tekst berichten verzenden en ontvangen met behulp van de SMS-Sdk's voor communicatie Services. Deze Sdk's kunnen worden gebruikt ter ondersteuning van klanten service scenario's, afspraak herinneringen, twee ledige verificatie en andere realtime communicatie behoeften. Met sms in Communication Services kunt u op een betrouwbare manier berichten verzenden en inzicht krijgen in de bezorgings- en responspercentages voor uw campagnes.
 
-De belangrijkste kenmerken van de SMS-clientbibliotheken van Azure Communication Services zijn:
+De belangrijkste functies van de SMS-Sdk's voor Azure Communication Services zijn:
 
 -  **Eenvoudige** installatie om sms-mogelijkheden toe te voegen aan uw toepassingen.
 - **Snelle** ondersteuning voor berichten door het gebruik van gratis nummers voor A2P (Application to Person) in de Verenigde Staten.
@@ -46,6 +46,6 @@ De belangrijkste kenmerken van de SMS-clientbibliotheken van Azure Communication
 
 De volgende documenten zijn mogelijk interessant voor u:
 
-- Uzelf bekend maken met de [sms-clientbibliotheek](../telephony-sms/sdk-features.md)
+- Vertrouwd raken met de [SMS SDK](../telephony-sms/sdk-features.md)
 - Koop een [telefoonnummer](../../quickstarts/telephony-sms/get-phone-number.md) dat geschikt is voor sms
 - [Typen telefoonnummers in Azure Communication Services](../telephony-sms/plan-solution.md)

@@ -7,14 +7,16 @@ ms.author: pariks
 ms.custom: mvc
 ms.topic: overview
 ms.date: 8/20/2020
-ms.openlocfilehash: 546f29330b76548ea553cfb7e4e31ac35b19cb1c
-ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
+ms.openlocfilehash: 3bfcfee0f5dab2d978eb1856bdc915c270d43ed6
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105037543"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105109791"
 ---
-# <a name="common-errors"></a>Algemene fouten
+# <a name="commonly-encountered-errors-during-or-post-migration-to-azure-database-for-mysql-service"></a>Veelvoorkomende fouten tijdens of na de migratie naar Azure Database for MySQL service
+
+[!INCLUDE[applies-to-single-flexible-server](includes/applies-to-single-flexible-server.md)]
 
 Azure Database for MySQL is een volledig beheerde service die wordt ondersteund door de communityversie van MySQL. De MySQL-ervaring in een beheerde service-omgeving kan afwijken van het uitvoeren van MySQL in uw eigen omgeving. In dit artikel ziet u enkele veelvoorkomende fouten die gebruikers kunnen tegenkomen tijdens het voor de eerste keer migreren naar of ontwikkelen met de Azure Database for MySQL-service.
 
@@ -84,6 +86,14 @@ De bovenstaande fout kan optreden tijdens het uitvoeren van CREATE VIEW met DEFI
 
 > [!Tip] 
 > Gebruik sed of perl om een dumpbestand of SQL-script te wijzigen, om de instructie DEFINE= te vervangen
+
+#### <a name="error-1227-42000-at-line-18-access-denied-you-need-at-least-one-of-the-super-privileges-for-this-operation"></a>FOUT 1227 (42000) bij regel 18: toegang geweigerd; u hebt (ten minste één van) de SUPER-bevoegdheid (en) nodig voor deze bewerking
+
+De bovenstaande fout kan optreden als u probeert het dump bestand te importeren van MySQL-server waarop GTID is ingeschakeld voor de doel Azure Database for MySQL server. Mysqldump voegt @SESSION.sql_log_bin de instructie set @ = 0 toe aan een dump bestand van een server waar GTIDs in gebruik zijn, waardoor binaire logboek registratie wordt uitgeschakeld terwijl het dump bestand opnieuw wordt geladen.
+
+**Oplossing**: om deze fout op te lossen tijdens het importeren, verwijderen of uitchecken van de onderstaande regels in uw mysqldump-bestand en voer importeren uit om ervoor te zorgen dat het goed werkt. 
+
+SET @MYSQLDUMP_TEMP_LOG_BIN = @ @SESSION.SQL_LOG_BIN ; Stel @ @SESSION.SQL_LOG_BIN = 0; Stel @ @GLOBAL.GTID_PURGED = ' ' in Stel @ @SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN ; in
 
 ## <a name="common-connection-errors-for-server-admin-login"></a>Veelvoorkomende verbindingsfouten voor aanmeldgegevens van de serverbeheerder
 

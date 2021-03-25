@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.service: iot-central
 services: iot-central
 ms.custom: device-developer
-ms.openlocfilehash: bdfb5f65106f3f8843b4aa52b752f5e563ab03f0
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 4e88ad58c7baba1c66c30df3f4effdbf11371c18
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102620045"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105045328"
 ---
 # <a name="how-to-connect-devices-through-an-iot-edge-transparent-gateway"></a>Apparaten verbinden via een IoT Edge transparante gateway
 
@@ -186,7 +186,7 @@ Uw transparante gateway is nu geconfigureerd en gereed om het door sturen van te
 
 ## <a name="provision-a-downstream-device"></a>Een downstream-apparaat inrichten
 
-Momenteel kan IoT Edge niet automatisch een downstream-apparaat inrichten op uw IoT Central toepassing. De volgende stappen laten zien hoe u het apparaat kunt inrichten `thermostat1` . Als u deze stappen wilt uitvoeren, hebt u een omgeving met python 3,5 (of hoger) geïnstalleerd en hebt u een Internet verbinding nodig. De [Azure Cloud shell](https://shell.azure.com/) heeft python 3,5 vooraf geïnstalleerd:
+Momenteel kan IoT Edge niet automatisch een downstream-apparaat inrichten op uw IoT Central toepassing. De volgende stappen laten zien hoe u het apparaat kunt inrichten `thermostat1` . Als u deze stappen wilt uitvoeren, hebt u een omgeving met python 3,6 (of hoger) geïnstalleerd en hebt u een Internet verbinding nodig. De [Azure Cloud shell](https://shell.azure.com/) heeft python 3,7 vooraf geïnstalleerd:
 
 1. Voer de volgende opdracht uit om de `azure.iot.device` module te installeren:
 

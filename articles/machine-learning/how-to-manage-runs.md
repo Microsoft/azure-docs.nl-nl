@@ -1,7 +1,7 @@
 ---
 title: Trainings uitvoeringen in python starten, controleren en annuleren
 titleSuffix: Azure Machine Learning
-description: Meer informatie over het starten, status en beheren van uw machine learning-experiment met de Azure Machine Learning python SDK.
+description: Meer informatie over het starten, bewaken en bijhouden van uw machine learning-experiment met de Azure Machine Learning python SDK.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -12,24 +12,24 @@ ms.reviewer: nibaccam
 ms.date: 03/04/2021
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 977498abb17fe592cef344f407a662d3b79749b7
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 26880fd6e3688dd95cc9f16072a35d5c4ce7c31e
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102634763"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105110267"
 ---
-# <a name="start-monitor-and-track-runs"></a>Uitvoeringen, bewaken en bijhouden 
+# <a name="start-monitor-and-track-run-history"></a>De uitvoerings geschiedenis starten, bewaken en volgen 
 
-De [Azure machine learning SDK voor python](/python/api/overview/azure/ml/intro), [Machine Learning cli](reference-azure-machine-learning-cli.md)en [Azure machine learning Studio](https://ml.azure.com) bieden verschillende methoden om uw uitvoeringen te controleren, te organiseren en te beheren voor training en experimenten.
+De [Azure machine learning SDK voor python](/python/api/overview/azure/ml/intro), [Machine Learning cli](reference-azure-machine-learning-cli.md)en [Azure machine learning Studio](https://ml.azure.com) bieden verschillende methoden om uw uitvoeringen te controleren, te organiseren en bij te houden voor training en experimenten. Uw ML-uitvoerings geschiedenis is een belang rijk onderdeel van het ontwikkelings proces van een uitleggen en herhaal bare ML.
 
-In dit artikel vindt u voor beelden van de volgende taken:
+Dit artikel laat u zien hoe u de volgende taken kunt uitvoeren:
 
 * Prestaties van uitvoering bewaken.
 * De melding voor de uitvoerings status per e-mail bewaken.
 * Uitvoeringen en zoeken.
 * Voeg een beschrijving voor de uitvoering toe. 
-* Zoek opdracht uitvoeren. 
+* Voer de zoek opdracht over uw uitvoerings geschiedenis uit. 
 * Annuleren of niet uitvoeren.
 * Onderliggende uitvoeringen maken.
  
@@ -134,7 +134,7 @@ U hebt de volgende items nodig:
         print(notebook_run.get_status())
         ```
     
-    * Als u de uitvoerings-ID, uitvoerings tijd en aanvullende details over de uitvoering wilt ophalen, gebruikt u de- [`get_details()`](/python/api/azureml-core/azureml.core.workspace.workspace#get-details--) methode.
+    * Als u de uitvoerings-ID, uitvoerings tijd en andere details over de uitvoering wilt ophalen, gebruikt u de- [`get_details()`](/python/api/azureml-core/azureml.core.workspace.workspace#get-details--) methode.
     
         ```python
         print(notebook_run.get_details())
@@ -225,7 +225,7 @@ U hebt de volgende items nodig:
 
 Een uitvoerings beschrijving kan worden toegevoegd aan een uitvoering om meer context en informatie te bieden aan de uitvoering. U kunt ook in de lijst met uitvoeringen zoeken naar deze beschrijvingen en de beschrijving van de uitvoeringsrun toevoegen als een kolom in de lijst met uitvoeringen. 
 
-Navigeer naar de pagina **uitvoerings Details** voor de uitvoering en selecteer het pictogram bewerken of potlood om beschrijvingen voor uw uitvoering toe te voegen, te bewerken of te verwijderen. Als u de wijzigingen in de lijst met uitvoeringen wilt behouden, slaat u de wijzigingen in uw bestaande aangepaste weer gave of een nieuwe aangepaste weer gave op. De indeling voor prijs verlaging wordt ondersteund voor uitvoerings beschrijvingen waarmee de installatie kopie kan worden inge sloten en deep linking zoals hieronder wordt weer gegeven.
+Navigeer naar de pagina **uitvoerings Details** voor de uitvoering en selecteer het pictogram bewerken of potlood om beschrijvingen voor uw uitvoering toe te voegen, te bewerken of te verwijderen. Als u de wijzigingen in de lijst met uitvoeringen wilt behouden, slaat u de wijzigingen in uw bestaande aangepaste weer gave of een nieuwe aangepaste weer gave op. De indeling voor prijs verlaging wordt ondersteund voor uitvoerings beschrijvingen, waardoor afbeeldingen kunnen worden inge sloten en deep linking zoals hieronder wordt weer gegeven.
 
 :::image type="content" source="media/how-to-manage-runs/run-description.gif" alt-text="Scherm afbeelding: een beschrijving van de uitvoeringsrun maken"::: 
 
@@ -285,9 +285,9 @@ In Azure Machine Learning kunt u eigenschappen en tags gebruiken om uw uitvoerin
     
     # <a name="studio"></a>[Studio](#tab/azure-studio)
     
-    U kunt uit de Studio run-Tags toevoegen, bewerken of verwijderen. Navigeer naar de pagina **uitvoerings Details** voor de uitvoering en selecteer het pictogram bewerken of potlood om labels voor uw uitvoeringen toe te voegen, te bewerken of te verwijderen. U kunt deze labels ook zoeken en filteren op de pagina uitvoerings lijst.
+    U kunt uit de Studio run Tags toevoegen, bewerken of verwijderen. Navigeer naar de pagina **uitvoerings Details** voor de uitvoering en selecteer het pictogram bewerken of potlood om labels voor uw uitvoeringen toe te voegen, te bewerken of te verwijderen. U kunt deze labels ook zoeken en filteren op de pagina uitvoerings lijst.
     
-    :::image type="content" source="media/how-to-manage-runs/run-tags.gif" alt-text="Scherm opname: uitvoer Tags toevoegen, bewerken of verwijderen":::
+    :::image type="content" source="media/how-to-manage-runs/run-tags.gif" alt-text="Scherm afbeelding: Run Tags toevoegen, bewerken of verwijderen":::
     
     ---
 
@@ -405,9 +405,9 @@ Als u veel onderliggende items efficiënt wilt maken, gebruikt u de- [`create_ch
 
 Onderliggende uitvoeringen kunnen ook worden verzonden vanuit een bovenliggende run. Hierdoor kunt u hiërarchieën van bovenliggende en onderliggende uitvoeringen maken. U kunt geen bovenliggend element zonder onderliggende items maken: zelfs als de bovenliggende run niets doet maar geen onderliggende uitvoeringen start, is het nog steeds nodig om de hiërarchie te maken. De statussen van alle uitvoeringen zijn onafhankelijk: een bovenliggend item kan de `"Completed"` status geslaagd hebben, zelfs als een of meer onderliggende uitvoeringen zijn geannuleerd of mislukt.  
 
-Mogelijk wilt u dat uw kind een andere uitvoerings configuratie gebruikt dan de bovenliggende run. U kunt bijvoorbeeld een minder krachtige, op CPU gebaseerde configuratie voor het bovenliggende knoop punt gebruiken, terwijl u op GPU gebaseerde configuraties voor uw kinderen gebruikt. Een andere gang bare wens is om elke onderliggende andere argumenten en gegevens door te geven. Als u een onderliggende uitvoering wilt aanpassen, maakt u een- `ScriptRunConfig` object voor de onderliggende run. De onderstaande code doet het volgende:
+Mogelijk wilt u dat uw kind een andere uitvoerings configuratie gebruikt dan de bovenliggende run. U kunt bijvoorbeeld een minder krachtige, op CPU gebaseerde configuratie voor het bovenliggende knoop punt gebruiken, terwijl u op GPU gebaseerde configuraties voor uw kinderen gebruikt. Een andere common wens is het door geven van elke onderliggende andere argumenten en gegevens. Als u een onderliggende uitvoering wilt aanpassen, maakt u een- `ScriptRunConfig` object voor de onderliggende run. De onderstaande code:
 
-- Een compute-resource ophalen die wordt benoemd `"gpu-cluster"` vanuit de werk ruimte `ws`
+- Hiermee wordt een compute-resource opgehaald die wordt benoemd `"gpu-cluster"` vanuit de werk ruimte `ws`
 - Herhaalt de verschillende argument waarden die moeten worden door gegeven aan de onderliggende `ScriptRunConfig` objecten
 - Hiermee wordt een nieuwe onderliggende run gemaakt en verzonden met behulp van de aangepaste Compute-resource en het argument
 - Blokken totdat alle onderliggende bewerkingen zijn voltooid
@@ -455,7 +455,7 @@ print(parent_run.get_children())
 
 ### <a name="log-to-parent-or-root-run"></a>Aanmelden bij bovenliggend item of uitvoering van hoofdmap
 
-U kunt het `Run.parent` veld gebruiken om toegang te krijgen tot de uitvoering die de huidige onderliggende uitvoering heeft gestart. Een veelvoorkomend gebruik: dit is het geval wanneer u de resultaten van het logboek op één plek wilt consolideren. Houd er rekening mee dat onderliggende worden asynchroon uitgevoerd en dat er geen garantie is dat de volg orde of synchronisatie wordt gewacht op het volt ooien van de onderliggende uitvoering van het bovenliggende item.
+U kunt het `Run.parent` veld gebruiken om toegang te krijgen tot de uitvoering die de huidige onderliggende uitvoering heeft gestart. Een veelgebruikte use-case voor het gebruik van `Run.parent` is het combi neren van de resultaten van het logboek op één plek. Houd er rekening mee dat onderliggende items asynchroon worden uitgevoerd en er geen garantie is dat de volg orde of synchronisatie wordt gewacht op het volt ooien van de onderliggende uitvoering van het bovenliggende item.
 
 ```python
 # in child (or even grandchild) run

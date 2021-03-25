@@ -1,17 +1,17 @@
 ---
 title: Overzicht van netwerken-Azure Database for MySQL flexibele server
 description: Meer informatie over connectiviteit en netwerk opties in de optie flexibele server implementatie voor Azure Database for MySQL
-author: ambhatna
-ms.author: ambhatna
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 9/23/2020
-ms.openlocfilehash: a8e2d77ff3c7cb2e4352b21cd87d630331e28660
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: ec835073a1fe447490f6965fe41478319a47f503
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96906145"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105106833"
 ---
 # <a name="connectivity-and-networking-concepts-for-azure-database-for-mysql---flexible-server-preview"></a>Connectiviteits-en netwerk concepten voor Azure Database for MySQL-flexibele server (preview-versie)
 
@@ -29,9 +29,9 @@ U hebt twee netwerk opties voor uw Azure Database for MySQL flexibele server. De
 * **Privétoegang (VNet-integratie)** : u kunt uw flexibele server implementeren in uw [virtuele Azure-netwerk](../../virtual-network/virtual-networks-overview.md). Virtuele Azure-netwerken bieden privé- en beveiligde netwerkcommunicatie. Resources in een virtueel netwerk kunnen communiceren via privé-IP-adressen.
 
    Kies de optie van VNet-integratie als u over de volgende mogelijkheden wilt beschikken:
-   * Verbinding maken tussen Azure-resources in hetzelfde virtuele netwerk en uw flexibele server met behulp van privé-IP-adressen
+   * Verbinding maken tussen Azure-resources in hetzelfde virtuele netwerk of een gekoppeld [virtueel netwerk](../../virtual-network/virtual-network-peering-overview.md) naar uw flexibele server
    * VPN of ExpressRoute gebruiken om verbinding te maken met een flexibele server vanuit andere resources dan Azure
-   * De flexibele server heeft geen openbaar eind punt
+   * Geen openbaar eindpunt
 
 * **Open bare toegang (toegestane IP-adressen)** : uw flexibele server wordt geopend via een openbaar eind punt. Het openbare eindpunt is een openbaar omzetbaar DNS-adres. De zin 'toegestane IP-adressen' verwijst naar een bereik van IP's die u toestemming geeft om toegang te krijgen tot uw server. Deze machtigingen worden **firewallregels** genoemd. 
 
@@ -57,13 +57,32 @@ Hier volgen enkele concepten die u moet kennen bij het gebruik van virtuele netw
 
     Het virtuele netwerk moet zich in dezelfde Azure-regio bevinden als uw flexibele server.
 
-
 * **Gedelegeerd subnet** : een virtueel netwerk bevat subnetten (subnetwerken). Met subnetten kunt u het virtuele netwerk segmenteren in kleinere adres ruimten. Azure-resources worden geïmplementeerd in specifieke subnetten binnen een virtueel netwerk. 
 
    Uw MySQL-flexibele server moet zich in een subnet bevinden dat wordt **overgedragen** voor het flexibele gebruik van MySQL-servers. Deze delegatie houdt in dat alleen Azure Database for MySQL Flexibele servers dat subnet kunnen gebruiken. Er kunnen zich geen andere Azure-resourcetypen in het gedelegeerde subnet bevinden. U delegeert een subnet door de eigenschap Delegation toe te wijzen als micro soft. DBforMySQL/flexibleServers.
 
 * **Netwerk beveiligings groepen (NSG)** Met beveiligings regels in netwerk beveiligings groepen kunt u het type netwerk verkeer filteren dat in en uit de subnetten van het virtuele netwerk en netwerk interfaces kan stromen. Bekijk het [overzicht van de netwerk beveiligings groep](../../virtual-network/network-security-groups-overview.md) voor meer informatie.
 
+* **Peering op virtueel netwerk** Met Virtual Network-peering kunt u naadloos verbinding maken met twee of meer virtuele netwerken in Azure. De gekoppelde virtuele netwerken worden als een voor connectiviteits doeleinden weer gegeven. Het verkeer tussen virtuele machines in gekoppelde virtuele netwerken maakt gebruik van de micro soft backbone-infra structuur. Het verkeer tussen de client toepassing en de flexibele server in de peered VNets wordt alleen gerouteerd via het particuliere netwerk van micro soft en is alleen op dat netwerk geïsoleerd.
+
+Flexibele server ondersteunt de peering van virtuele netwerken binnen dezelfde Azure-regio. Peering-VNets tussen regio's **worden niet ondersteund**. Bekijk de [concepten van de peering van het virtuele netwerk](../../virtual-network/virtual-network-peering-overview.md) voor meer informatie.
+
+### <a name="connecting-from-peered-vnets-in-same-azure-region"></a>Verbinding maken vanaf een peered VNets in dezelfde Azure-regio
+Als de client toepassing probeert verbinding te maken met een flexibele server in het gekoppelde virtuele netwerk, kan het zijn dat er geen verbinding kan worden gemaakt met behulp van de flexibele server servername omdat de DNS-naam voor de flexibele server niet kan worden omgezet in een gekoppeld VNet. Er zijn twee opties om dit probleem op te lossen:
+* Privé IP-adres gebruiken (aanbevolen voor dev/test-scenario): deze optie kan worden gebruikt voor ontwikkelings-en test doeleinden. U kunt nslookup gebruiken om het privé-IP-adres voor uw flexibele server naam (Fully Qualified Domain Name) te reverse lookup en een privé IP-adres gebruiken om verbinding te maken vanuit de client toepassing. Het gebruik van het privé IP-adres voor de verbinding met een flexibele server wordt niet aanbevolen voor productie gebruik omdat het kan worden gewijzigd tijdens de geplande of niet-geplande gebeurtenis.
+* Privé-DNS zone gebruiken (aanbevolen voor productie): deze optie is geschikt voor productie doeleinden. U richt een [privé-DNS-zone](../../dns/private-dns-getstarted-portal.md) in en koppelt deze aan het virtuele netwerk van de client. In de privé-DNS-zone voegt u een [a-record](../../dns/dns-zones-records.md#record-types) toe voor uw flexibele server met behulp van het privé-IP-adres. U kunt vervolgens de A-record gebruiken om verbinding te maken tussen de client toepassing in een peered virtueel netwerk en een flexibele server.
+
+### <a name="connecting-from-on-premises-to-flexible-server-in-virtual-network-using-expressroute-or-vpn"></a>Verbinding maken tussen on-premises en flexibele server in Virtual Network met behulp van ExpressRoute of VPN
+Voor werk belastingen waarvoor toegang is vereist tot flexibele server in het virtuele netwerk vanaf een on-premises netwerk, hebt u [ExpressRoute](/azure/architecture/reference-architectures/hybrid-networking/expressroute/) of [VPN](/azure/architecture/reference-architectures/hybrid-networking/vpn/) en een virtueel netwerk nodig [die zijn verbonden met on-premises](/azure/architecture/reference-architectures/hybrid-networking/). Wanneer deze installatie is uitgevoerd, hebt u een DNS-doorstuur server nodig om de flexibele servername op te lossen als u verbinding wilt maken vanuit een client toepassing (zoals MySQL Workbench) die wordt uitgevoerd op een on-premises virtueel netwerk. Deze DNS-doorstuur server is verantwoordelijk voor het omzetten van alle DNS-query's via een doorstuur server van het [168.63.129.16](../../virtual-network/what-is-ip-address-168-63-129-16.md)naar de door Azure VERSCHAFTe DNS-service.
+
+U hebt de volgende resources nodig om correct te configureren:
+
+- On-premises netwerk
+- MySQL flexibele server ingericht met persoonlijke toegang (VNet-integratie)
+- Virtueel netwerk [verbonden met on-premises](/azure/architecture/reference-architectures/hybrid-networking/)
+- DNS-doorstuur server- [168.63.129.16](../../virtual-network/what-is-ip-address-168-63-129-16.md) gebruiken die zijn geïmplementeerd in azure
+
+U kunt vervolgens de flexibele server naam (FQDN) gebruiken om verbinding te maken tussen de client toepassing in een peered virtueel netwerk of een on-premises netwerk naar een flexibele server.
 
 ### <a name="unsupported-virtual-network-scenarios"></a>Niet-ondersteunde scenario's voor virtuele netwerken
 * Openbaar eind punt (of openbaar IP of DNS): een flexibele server die is geïmplementeerd in een virtueel netwerk kan geen openbaar eind punt hebben
@@ -119,11 +138,10 @@ Voorbeeld
 * Vermijd het gebruik van `hostname = 10.0.0.4` (een privé adres) of `hostname = 40.2.45.67` (een openbaar IP), indien mogelijk
 
 
-
 ## <a name="tls-and-ssl"></a>TLS en SSL
 Azure Database for MySQL flexibele server ondersteunt het verbinden van uw client toepassingen met de MySQL-service met behulp van Transport Layer Security (TLS). TLS is een industrie standaard protocol dat versleutelde netwerk verbindingen tussen uw database server en client toepassingen garandeert. TLS is een bijgewerkt Protocol van Secure Sockets Layer (SSL).
 
-Azure Database for MySQL flexibele server ondersteunt alleen versleutelde verbindingen met behulp van Transport Layer Security (TLS 1,2). Alle binnenkomende verbindingen met TLS 1,0 en TLS 1,1 worden geweigerd. U kunt de TLS-versie niet uitschakelen of wijzigen om verbinding te maken met Azure Database for MySQL flexibele server.
+Azure Database for MySQL flexibele server ondersteunt alleen versleutelde verbindingen met behulp van Transport Layer Security (TLS 1,2). Alle inkomende verbindingen met TLS 1.0 en TLS 1.1 worden geweigerd. U kunt de TLS-versie niet uitschakelen of wijzigen om verbinding te maken met Azure Database for MySQL flexibele server. Lees hoe u [verbinding maakt met behulp van SSL/TLS](how-to-connect-tls-ssl.md) voor meer informatie. 
 
 
 ## <a name="next-steps"></a>Volgende stappen

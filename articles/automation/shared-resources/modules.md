@@ -5,12 +5,12 @@ services: automation
 ms.subservice: shared-capabilities
 ms.date: 02/01/2021
 ms.topic: conceptual
-ms.openlocfilehash: ae3329401a138bc0566ea93a8fbf2071fd44f02c
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 57dfc388dcba926706a695c93d2afa1956432be8
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102503416"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104953932"
 ---
 # <a name="manage-modules-in-azure-automation"></a>Modules beheren in Azure Automation
 
@@ -142,10 +142,10 @@ Wanneer u een AZ-module importeert in uw Automation-account, wordt de module nie
 
 * Wanneer een runbook een cmdlet aanroept vanuit een module.
 * Wanneer een runbook de module expliciet importeert met de cmdlet [import-module](/powershell/module/microsoft.powershell.core/import-module) .
-* Wanneer een runbook de module expliciet importeert met de instructie [using module](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_using#module-syntax) . De instructie using wordt ondersteund vanaf Windows Power shell 5,0 en ondersteunt klassen en het importeren van het type Enum.
+* Wanneer een runbook de module expliciet importeert met de instructie [using module](/powershell/module/microsoft.powershell.core/about/about_using#module-syntax) . De instructie using wordt ondersteund vanaf Windows Power shell 5,0 en ondersteunt klassen en het importeren van het type Enum.
 * Wanneer een runbook een andere afhankelijke module importeert.
 
-U kunt de AZ-modules in de Azure Portal importeren. Vergeet niet om alleen de AZ-modules te importeren die u nodig hebt, niet de volledige AZ. Automation-module. Omdat [AZ. accounts](https://www.powershellgallery.com/packages/Az.Accounts/1.1.0) een afhankelijkheid voor de andere AZ-modules zijn, moet u deze module vóór andere importeren.
+U kunt de AZ-modules importeren in het Automation-account vanuit het Azure Portal. Vergeet niet om alleen de AZ-modules te importeren die u nodig hebt, niet elke AZ-module die beschikbaar is. Omdat [AZ. accounts](https://www.powershellgallery.com/packages/Az.Accounts/1.1.0) een afhankelijkheid voor de andere AZ-modules zijn, moet u deze module vóór andere importeren.
 
 1. Ga naar het Automation-account en selecteer **modules** onder **gedeelde resources**.
 2. Selecteer **Bladeren in Galerie**.  

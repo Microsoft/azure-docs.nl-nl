@@ -593,10 +593,10 @@
     - name: Azure Marketplace-installatie kopieën zoeken
       items:
         - name: CLI
-          displayName: 'Images, imaging, marketplace'
+          displayName: 'Images, imaging, marketplace, publisher, plan, offer, URN, purchase plan, terms'
           href: ./linux/cli-ps-findimage.md
         - name: PowerShell
-          displayName: 'Images, imaging, marketplace'
+          displayName: 'Images, imaging, marketplace, URN, purchase plan, terms'
           href: ./windows/cli-ps-findimage.md
         - name: Windows-client installatie kopieën
           displayName: 'Images, imaging, marketplace, Windows, Client'

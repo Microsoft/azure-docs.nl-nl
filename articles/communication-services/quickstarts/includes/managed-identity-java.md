@@ -1,14 +1,14 @@
 ---
-ms.openlocfilehash: f2e4bf603fa4cfb93c7ca51f64029ccaedcff727
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: ce575a67552c89b17ff4ed9b44ab43a4bd12d67f
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103020949"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105110726"
 ---
 ## <a name="add-managed-identity-to-your-communication-services-solution-java"></a>Beheerde identiteit toevoegen aan uw oplossing voor communicatie Services (Java)
 
-### <a name="install-the-client-library-packages"></a>De client bibliotheek pakketten installeren
+### <a name="install-the-sdk-packages"></a>De SDK-pakketten installeren
 Voeg in het pom.xml-bestand de volgende afhankelijkheids elementen toe aan de groep afhankelijkheden.
 
 ```xml
@@ -29,9 +29,9 @@ Voeg in het pom.xml-bestand de volgende afhankelijkheids elementen toe aan de gr
 </dependency>
 ```
 
-### <a name="use-the-client-library-packages"></a>De client bibliotheek pakketten gebruiken
+### <a name="use-the-sdk-packages"></a>De SDK-pakketten gebruiken
 
-Voeg de volgende- `import` instructies toe aan uw code voor het gebruik van de Azure-identiteits-en Azure-communicatie client bibliotheken.
+Voeg de volgende- `import` instructies toe aan uw code voor het gebruik van de Azure-identiteits-en Azure Communication-sdk's.
 
 ```java
 import com.azure.communication.common.*;

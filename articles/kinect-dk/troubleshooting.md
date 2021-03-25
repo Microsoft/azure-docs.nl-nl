@@ -7,12 +7,12 @@ ms.prod: kinect-dk
 ms.date: 03/05/2021
 ms.topic: conceptual
 keywords: problemen oplossen, bijwerken, bug, kinect, feedback, herstel, logboek registratie, tips
-ms.openlocfilehash: 6b83e2952a9039a52aa3b905e376e5d3beccaf8c
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.openlocfilehash: da5242a09934a756093a9e02b6d474e6c75fecda
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105026586"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105108737"
 ---
 # <a name="azure-kinect-known-issues-and-troubleshooting"></a>Bekende problemen met Azure Kinect en probleem oplossing
 
@@ -193,7 +193,7 @@ De Body tracking SDK ondersteunt CPU, CUDA, DirectML (alleen Windows) en TensorR
 > In ONNX runtime worden waarschuwingen weer gegeven voor opcodes die niet worden versneld. Deze kunnen worden genegeerd.
 
 ONNX runtime bevat omgevings variabelen voor het beheren van TensorRT-model cache. De aanbevolen waarden zijn:
-- ORT_TENSORRT_CACHE_ENABLE = 1 
+- ORT_TENSORRT_ENGINE_CACHE_ENABLE = 1 
 - ORT_TENSORRT_CACHE_PATH = "padnaam"
 
 De map moet worden gemaakt voordat het bijhouden van de hoofd tekst wordt gestart.

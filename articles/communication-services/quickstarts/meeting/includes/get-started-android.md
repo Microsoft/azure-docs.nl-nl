@@ -6,12 +6,12 @@ ms.author: palatter
 ms.date: 01/25/2021
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: e9069b5d43044ef0d0341717a12fcce7c4a72dc7
-ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
+ms.openlocfilehash: 5ac4c53550468d33e9ed533303749d29e772d766
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104803972"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105108469"
 ---
 In deze Quick Start leert u hoe u kunt deel nemen aan een team vergadering met behulp van de Azure Communication Services teams-bibliotheek voor Android.
 
@@ -34,7 +34,7 @@ Selecteer de projectsjabloon Lege activiteit onder Telefoon en tablet.
 
 :::image type="content" source="../media/android/studio-blank-activity.png" alt-text="Schermopname waarin de optie Lege activiteit is geselecteerd op het scherm Projectsjabloon.":::
 
-Noem het project `TeamsEmbedAndroidGettingStarted` , stel de taal in op Java en selecteer minimale client bibliotheek van API 21: Android 5,0 (Lollipop) of hoger.
+Noem het project `TeamsEmbedAndroidGettingStarted` , stel de taal in op Java en selecteer minimale SDK van ' API 21: Android 5,0 (Lollipop) ' of hoger.
 
 :::image type="content" source="../media/android/studio-calling-min-api.png" alt-text="Schermopname waarin de optie Lege activiteit is geselecteerd op het scherm Projectsjabloon 2.":::
 
@@ -299,7 +299,7 @@ public String fetchToken() {
 ## <a name="get-the-teams-meeting-link"></a>Koppeling naar de Teams-vergadering ophalen
 
 De koppeling naar de Teams-vergadering kan worden opgehaald met behulp van Graph API’s. Dit wordt beschreven in [Graph-documentatie](/graph/api/onlinemeeting-createorget?tabs=http&view=graph-rest-beta&preserve-view=true).
-De communicatie services die client bibliotheek aanroept, accepteren een koppeling naar de vergadering volledige teams. Deze koppeling wordt geretourneerd als onderdeel van de `onlineMeeting`-resource, die toegankelijk is bij de [eigenschap `joinWebUrl`](/graph/api/resources/onlinemeeting?view=graph-rest-beta&preserve-view=true). U kunt de vereiste vergaderingsgegevens ook ophalen via de **URL** in de uitnodiging voor de Teams-vergadering zelf.
+The aanroepende SDK voor Communication Services accepteert een volledige koppeling naar een Teams-vergadering. Deze koppeling wordt geretourneerd als onderdeel van de `onlineMeeting`-resource, die toegankelijk is bij de [eigenschap `joinWebUrl`](/graph/api/resources/onlinemeeting?view=graph-rest-beta&preserve-view=true). U kunt de vereiste vergaderingsgegevens ook ophalen via de **URL** in de uitnodiging voor de Teams-vergadering zelf.
 
 ## <a name="start-a-meeting-using-the-meeting-client"></a>Een vergadering starten met de Meeting-client
 

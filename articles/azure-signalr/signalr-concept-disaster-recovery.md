@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 03/01/2019
 ms.author: kenchen
-ms.openlocfilehash: b1cb48d1ae858dbcd0df80780b4c3cee3deac75b
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 996fa53aa105c0bcc27db7134c25d6d00e542a78
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "90976493"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105110284"
 ---
 # <a name="resiliency-and-disaster-recovery-in-azure-signalr-service"></a>Tolerantie en herstel na noodgevallen in Azure SignalR Service
 
@@ -44,13 +44,16 @@ Hieronder volgt een diagram waarin deze topologie wordt weergegeven:
 
 ![Diagram toont twee regio's elk met een app-server en een signalerings service, waarbij elke server wordt gekoppeld aan de seingevings service in de regio als primair en met de service in de andere regio als secundaire.](media/signalr-concept-disaster-recovery/topology.png)
 
-## <a name="configure-app-servers-with-multiple-signalr-service-instances"></a>App-servers configureren met meerdere exemplaren van SignalR-service
+## <a name="configure-multiple-signalr-service-instances"></a>Meerdere seingevings service-instanties configureren
 
-Zodra u SignalR-services en app-servers in elke regio hebt gemaakt, kunt u uw appservers configureren om verbinding te maken met alle SignalR-service-exemplaren.
+Meerdere seingevings service-instanties worden ondersteund op zowel app-servers als Azure Functions.
 
+Zodra u de Signa lering-service en app-servers/Azure Functions hebt gemaakt in elke regio, kunt u uw app-servers/Azure Functions configureren om verbinding te maken met alle seingevings service-exemplaren.
+
+### <a name="configure-on-app-servers"></a>Configureren op app-servers
 Er zijn twee manieren waarop u dit kunt doen:
 
-### <a name="through-config"></a>Via config
+#### <a name="through-config"></a>Via config
 
 U moet al weten hoe u de seingevings service kunt instellen connection string via omgevings variabelen/app-instellingen/web. cofig, in een configuratie vermelding met de naam `Azure:SignalR:ConnectionString` .
 Als u meerdere eindpunten hebt, kunt u ze instellen in meerdere configuratie-items, elk in de volgende indeling:
@@ -62,7 +65,7 @@ Azure:SignalR:ConnectionString:<name>:<role>
 Hier is `<name>` de naam van het eindpunt en is `<role>` de rol (primaire of secundaire).
 De naam is optioneel, maar dit is handig als u de werking van de routering tussen meerdere eindpunten verder wilt aanpassen.
 
-### <a name="through-code"></a>Via code
+#### <a name="through-code"></a>Via code
 
 Als u de verbindings reeksen liever ergens anders wilt opslaan, kunt u deze ook in uw code lezen en als para meters gebruiken bij het aanroepen `AddAzureSignalR()` van (in ASP.net core) of `MapAzureSignalR()` (in ASP.net).
 
@@ -93,6 +96,9 @@ U kunt meerdere primaire of secundaire exemplaren configureren. Als er meerdere 
 
 1. Als er ten minste één primair exemplaar online is, retourneert u een wille keurig primair online exemplaar.
 2. Als alle primaire instanties niet beschikbaar zijn, retourneert u een wille keurig secundair online exemplaar.
+
+### <a name="configure-on-azure-functions"></a>Configureren op Azure Functions
+Zie [dit artikel](https://github.com/Azure/azure-functions-signalrservice-extension/blob/dev/docs/sharding.md#configuration-method).
 
 ## <a name="failover-sequence-and-best-practice"></a>Failover-volgorde en best practice
 
@@ -137,3 +143,5 @@ U moet dergelijke gevallen aan clientzijde afhandelen om de situatie transparant
 In dit artikel hebt u geleerd hoe u uw toepassing moet configureren voor het bereiken van tolerantie voor SignalR-service. Voor meer informatie over server/client-verbindingen en verbindingsroutering in SignalR-service, kunt u [dit artikel](signalr-concept-internals.md) voor SignalR-service-inhoud lezen.
 
 Voor schaal scenario's zoals sharding die meerdere instanties gebruiken voor het verwerken van grote hoeveel heden verbindingen, Lees [hoe u meerdere instanties kunt schalen](signalr-howto-scale-multi-instances.md).
+
+Lees voor meer informatie over het configureren van Azure Functions met meerdere signaal service-instanties [meerdere service-exemplaren van Azure signalering in azure functions](https://github.com/Azure/azure-functions-signalrservice-extension/blob/dev/docs/sharding.md).

@@ -6,12 +6,12 @@ ms.author: vibansa
 ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 04/16/2020
-ms.openlocfilehash: 64be28838abb5d5021f0a8cefc0eed2c2516498b
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.openlocfilehash: c2ffa85ed6cb007dd766d4517a86783d21d4913e
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104865227"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105110505"
 ---
 # <a name="set-up-an-appliance-for-servers-in-vmware-environment"></a>Een apparaat instellen voor servers in VMware-omgeving
 
@@ -29,6 +29,7 @@ Nadat u het apparaat hebt gemaakt, controleert u of het een verbinding kan maken
 ## <a name="deploy-with-ova"></a>Implementeren met OVA
 
 Als u het apparaat wilt instellen met behulp van een OVA-sjabloon, doet u het volgende:
+
 1. Geef een naam op voor het apparaat en Genereer een project sleutel in de portal.
 1. Download een OVA-sjabloonbestand en importeer het naar vCenter Server. Controleer of de eicellen veilig zijn.
 1. Maak de toestel-VM op basis van het bestand van de eicellen en controleer of het verbinding kan maken met Azure Migrate.
@@ -39,8 +40,8 @@ Als u het apparaat wilt instellen met behulp van een OVA-sjabloon, doet u het vo
 1. In **migratie doelen**  >  **servers**  >  **Azure migrate: detectie en evaluatie** selecteert u **detecteren**.
 2. In **Discover-servers**  >  **zijn uw servers gevirtualiseerd?**, selecteert u **Ja, met VMware vSphere Hyper Visor**.
 3. Geef in **1: project sleutel genereren** een naam op voor het Azure migrate apparaat dat u wilt instellen voor de detectie van servers in uw VMware-omgeving. De naam moet alfanumeriek zijn met 14 tekens of minder.
-1. Klik op **Sleutel genereren** om de vereiste Azure-resources te gaan maken. Sluit de detectie pagina niet tijdens het maken van resources.
-1. Nadat het maken van de Azure-resources is voltooid, wordt een **project sleutel** gegenereerd.
+1. Klik op **Sleutel genereren** om de vereiste Azure-resources te gaan maken. Sluit de detectie pagina niet af tijdens het maken van resources.
+1. Nadat het maken van de Azure-resources is voltooid, wordt een project sleutel * * gegenereerd.
 1. Kopieer de sleutel, omdat u deze nodig hebt om de registratie van het apparaat tijdens de configuratie te voltooien.
 
 ### <a name="2-download-the-ova-template"></a>2. de sjabloon van de eicellen downloaden
@@ -123,7 +124,7 @@ Het apparaat voor de eerste keer instellen.
     :::image type="content" source="./media/tutorial-discover-vmware/device-code.png" alt-text="Modaal waarin de apparaatcode wordt weergegeven":::
 
 1. Klik op **Code kopiëren en aanmelden** om de apparaatcode te kopiëren en een Azure-aanmeldingsprompt te openen op een nieuw browsertabblad. Als dit niet wordt weergegeven, controleert u of de pop-upblokkering in de browser is uitgeschakeld.
-1. Plak de apparaatcode in het nieuwe tabblad en meld u aan met de gebruikersnaam en het wachtwoord van Azure.
+1. Plak op het tabblad Nieuw de code van het apparaat en meld u aan met behulp van uw Azure-gebruikers naam en-wacht woord.
    
    Aanmelden met een pincode wordt niet ondersteund.
 3. Als u het aanmeldingstabblad per ongeluk sluit zonder u aan te melden, vernieuwt u het browsertabblad van Apparaatconfiguratiebeheer om de knop Aanmelden opnieuw in te schakelen.
@@ -144,13 +145,13 @@ Het apparaat moet verbinding maken met vCenter Server om de configuratie-en pres
     - Als u de detectie van de scope wilt beperken tot specifieke VMware-objecten (vCenter Server Data Centers, clusters, een map met clusters, hosts, een map van hosts of afzonderlijke servers.), raadpleegt u de instructies in [dit artikel](set-discovery-scope.md) om het account dat wordt gebruikt door Azure migrate te begrenzen.
 1. In **stap 2: geef vCenter Server Details** op, klik op **detectie bron toevoegen** om de beschrijvende naam voor referenties in de vervolg keuzelijst te selecteren, geeft u het **IP-adres/de FQDN** van de vCenter Server op. U kunt **Poort** op 443 laten staan (de standaardinstelling) of een aangepaste poort opgeven waarop vCenter Server luistert en op **Opslaan** klikken.
 1. Wanneer u op **Opslaan** klikt, probeert het apparaat de verbinding met de vCenter Server te valideren met de referenties die zijn gegeven en wordt de **validatie status** in de tabel vergeleken met het vCenter Server IP-adres/de FQDN-naam.
-1. Voordat u de detectie start, kunt u de connectiviteit met vCenter Server altijd **opnieuw valideren**.
+1. U kunt de connectiviteit opnieuw **valideren** om op elk gewenst moment te vCenter Server voordat de detectie wordt gestart.
 
-    :::image type="content" source="./media/tutorial-discover-vmware/appliance-manage-sources.png" alt-text="Panel 3 op het apparaat Configuration Manager voor vCenter Server Details":::
+    :::image type="content" source="./media/tutorial-discover-vmware/appliance-manage-sources.png" alt-text="Paneel op toestel Configuration Manager voor vCenter Server Details":::
 
 ### <a name="provide-server-credentials"></a>Server referenties opgeven
 
-In **stap 3: Server referenties opgeven voor het uitvoeren van software-inventaris, afhankelijkheids analyse zonder agent en detectie van SQL Server instanties en data bases**. u kunt ervoor kiezen om meerdere Server referenties op te geven of als u deze functies niet wilt gebruiken, kunt u de stap overs Laan en door gaan met vCenter Server detectie. U kunt uw intentie op elk gewenst moment wijzigen.
+In **stap 3: Server referenties opgeven voor het uitvoeren van software-inventaris, afhankelijkheids analyse zonder agent en detectie van SQL Server instanties en data bases**. u kunt ervoor kiezen om meerdere Server referenties op te geven of als u deze functies niet wilt gebruiken, kunt u de stap overs Laan en door gaan met vCenter Server detectie. U kunt uw intentie op elk later tijdstip wijzigen.
 
 :::image type="content" source="./media/tutorial-discover-vmware/appliance-server-credentials-mapping.png" alt-text="Panel 3 op het apparaat Configuration Manager voor Server Details":::
 
@@ -166,7 +167,7 @@ Als u gebruik wilt maken van deze functies, kunt u de referenties van de server 
 - Wanneer u op **Opslaan** of **meer toevoegen** klikt, valideert het apparaat de domein referenties met de Active Directory van het domein voor de echtheid. Dit wordt gedaan om account vergrendelingen te voor komen wanneer het apparaat meerdere iteraties gebruikt om referenties aan de desbetreffende servers toe te wijzen.
 - U kunt de **validatie status** voor alle domein referenties in de tabel referenties bekijken. Alleen domein referenties worden gevalideerd.
 - Als de validatie mislukt, kunt u op de status **mislukt** klikken om de gevonden fout te zien en klikt u op **referenties opnieuw valideren** nadat het probleem is opgelost en de referenties voor het mislukte domein opnieuw te valideren.
-
+    :::image type="content" source="./media/tutorial-discover-vmware/add-server-credentials-multiple.png" alt-text="Panel 3 op het apparaat Configuration Manager voor het opgeven van meerdere referenties":::
 
 ### <a name="start-discovery"></a>Detectie starten
 
@@ -176,6 +177,7 @@ Als u gebruik wilt maken van deze functies, kunt u de referenties van de server 
 1. Tijdens software-inventarisatie worden de referenties van de toegevoegde servers herhaald op servers en gevalideerd voor de afhankelijkheids analyse zonder agent. U kunt afhankelijkheids analyse zonder agent inschakelen voor servers vanuit de portal. Alleen de servers waarop de validatie slaagt, kunnen worden geselecteerd voor het inschakelen van afhankelijkheids analyse zonder agent.
 
 Detectie werkt als volgt:
+
 - Het duurt ongeveer 15 minuten voordat de gedetecteerde servers inventarisatie wordt weer gegeven in de portal.
 - De detectie van geïnstalleerde toepassingen kan enige tijd duren. De duur is afhankelijk van het aantal gedetecteerde servers. Voor 500-servers duurt het ongeveer een uur voordat de gedetecteerde inventaris wordt weer gegeven in de Azure Migrate Portal.
 - Nadat de detectie van servers is voltooid, kunt u een afhankelijkheids analyse zonder agent inschakelen op de servers van de portal.

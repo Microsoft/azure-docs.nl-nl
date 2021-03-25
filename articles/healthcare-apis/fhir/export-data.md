@@ -5,14 +5,14 @@ author: caitlinv39
 ms.service: healthcare-apis
 ms.subservice: fhir
 ms.topic: reference
-ms.date: 2/19/2021
+ms.date: 3/18/2021
 ms.author: cavoeg
-ms.openlocfilehash: 9ed78baed35312b9a33c71a3e49b7e9dca22eb9f
-ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
+ms.openlocfilehash: aefb2b4a70fae4ad082243529c8eaf877fb35f22
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "103018272"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105045298"
 ---
 # <a name="how-to-export-fhir-data"></a>FHIR-gegevens exporteren
 
@@ -23,14 +23,19 @@ Voordat u $export gebruikt, moet u ervoor zorgen dat de Azure-API voor FHIR is g
 
 ## <a name="using-export-command"></a>$export opdracht gebruiken
 
-Na het configureren van de Azure-API voor FHIR voor het exporteren, kunt u de $export opdracht gebruiken om de gegevens uit de service te exporteren. De gegevens worden opgeslagen in het opslag account dat u hebt opgegeven tijdens het configureren van de export. Lees voor meer informatie over het aanroepen van $export-opdracht in FHIR-Server documentatie over de [HL7 FHIR $export-specificatie](https://hl7.org/Fhir/uv/bulkdata/export/index.html). 
+Na het configureren van de Azure-API voor FHIR voor het exporteren, kunt u de $export opdracht gebruiken om de gegevens uit de service te exporteren. De gegevens worden opgeslagen in het opslag account dat u hebt opgegeven tijdens het configureren van de export. Lees voor meer informatie over het aanroepen van $export-opdracht in FHIR-Server documentatie over de [HL7 FHIR $export-specificatie](https://hl7.org/Fhir/uv/bulkdata/export/index.html).
+
+
+**Taken die zijn vastgelopen met een slechte status**
+
+In sommige gevallen is het mogelijk dat een taak vastloopt in een slechte staat. Dit kan vooral gebeuren als de machtigingen voor het opslag account niet op de juiste wijze zijn ingesteld. Een manier om te controleren of uw export is gelukt, is door uw opslag account te controleren om te zien of de bijbehorende container bestanden (ndjson) aanwezig zijn. Als ze niet aanwezig zijn en er geen andere export taken worden uitgevoerd, is de huidige taak mogelijk vastgelopen in een ongeldige status. U moet de export taak annuleren door een annulerings aanvraag te verzenden en de taak opnieuw in de wachtrij te plaatsen. De standaard uitvoerings tijd voor een export met een slechte status is 10 minuten voordat deze wordt gestopt en naar een nieuwe taak wordt verplaatst of de export opnieuw wordt uitgevoerd. 
 
 De Azure API voor FHIR ondersteunt $export op de volgende niveaus:
 * [Systeem](https://hl7.org/Fhir/uv/bulkdata/export/index.html#endpoint---system-level-export): `GET https://<<FHIR service base URL>>/$export>>`
 * [Patiënt](https://hl7.org/Fhir/uv/bulkdata/export/index.html#endpoint---all-patients): `GET https://<<FHIR service base URL>>/Patient/$export>>`
 * [Groep patiënten *](https://hl7.org/Fhir/uv/bulkdata/export/index.html#endpoint---group-of-patients) -Azure-API voor FHIR exporteert alle gerelateerde resources, maar exporteert niet de kenmerken van de groep: `GET https://<<FHIR service base URL>>/Group/[ID]/$export>>`
 
-Wanneer gegevens worden geëxporteerd, wordt een afzonderlijk bestand gemaakt voor elk resource type. Om ervoor te zorgen dat de geëxporteerde bestanden niet te groot worden, maken we een nieuw bestand nadat het formaat van één geëxporteerd bestand groter is dan 64 MB. Het resultaat is dat er meerdere bestanden kunnen worden opgehaald voor elk bron type, dat wordt geïnventariseerd (d.w.z. patiënt-1. ndjson, patiënt-2. ndjson). 
+Wanneer gegevens worden geëxporteerd, wordt een afzonderlijk bestand gemaakt voor elk resource type. Om ervoor te zorgen dat de geëxporteerde bestanden niet te groot worden. Er wordt een nieuw bestand gemaakt nadat het formaat van één geëxporteerd bestand groter is dan 64 MB. Het resultaat is dat er meerdere bestanden kunnen worden opgehaald voor elk bron type, dat wordt geïnventariseerd (dat wil zeggen, patiënten-1. ndjson, patiënt-2. ndjson). 
 
 
 > [!Note] 
@@ -42,7 +47,7 @@ Daarnaast wordt het controleren van de export status via de URL die wordt gereto
 
 Momenteel ondersteunen we $export voor ADLS Gen2 ingeschakelde opslag accounts, met de volgende beperking:
 
-- De gebruiker kan nog niet profiteren van [hiërarchische naam ruimten](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-namespace) . Er is geen manier om het exporteren naar een specifieke submap binnen de container te richten. We bieden alleen de mogelijkheid om een specifieke container te richten (waarbij we een nieuwe map voor elke export maken).
+- De gebruiker kan geen gebruik maken van [hiërarchische naam ruimten](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-namespace), maar er is geen manier om het exporteren naar een specifieke submap binnen de container te richten. We bieden alleen de mogelijkheid om een specifieke container te richten (waarbij we een nieuwe map voor elke export maken).
 
 - Zodra een export is voltooid, worden er nooit opnieuw items naar die map geëxporteerd, omdat volgende export naar dezelfde container zich in een nieuw gemaakte map bevindt.
 
@@ -65,17 +70,20 @@ De Azure API voor FHIR ondersteunt de volgende query parameters. Al deze para me
 | \_typefilter | Ja | Als u een filter met een nauw keurig korrel wilt aanvragen, kunt u \_ typefilter gebruiken in combi natie met de \_ type-para meter. De waarde van de para meter _typeFilter is een door komma's gescheiden lijst met FHIR query's waarmee de resultaten verder worden beperkt |
 | \_verpakking | Nee |  Hiermee geeft u de container in het geconfigureerde opslag account op waarin de gegevens moeten worden geëxporteerd. Als er een container is opgegeven, worden de gegevens naar die container geëxporteerd in een nieuwe map met de naam. Als de container niet is opgegeven, wordt deze geëxporteerd naar een nieuwe container met de tijds tempel-en taak-ID. |
 
+> [!Note]
+> Alleen opslag accounts in hetzelfde abonnement als die voor Azure API voor FHIR mogen worden geregistreerd als bestemming voor $export bewerkingen.
+
 ## <a name="secure-export-to-azure-storage"></a>Beveiligde export naar Azure Storage
 
 De Azure-API voor FHIR ondersteunt een beveiligde export bewerking. Een optie voor het uitvoeren van een beveiligde export is het toestaan van specifieke IP-adressen die zijn gekoppeld aan de Azure API voor FHIR om toegang te krijgen tot het Azure-opslag account. Afhankelijk van of het opslag account zich op dezelfde of een andere locatie bevindt dan de Azure API voor FHIR, zijn de configuraties verschillend.
 
 ### <a name="when-the-azure-storage-account-is-in-a-different-region"></a>Wanneer het Azure-opslag account zich in een andere regio bevindt
 
-Selecteer de Blade netwerken van het Azure-opslag account in de portal. 
+Selecteer **netwerken** van het Azure Storage-account in de portal. 
 
    :::image type="content" source="media/export-data/storage-networking.png" alt-text="Azure Storage netwerk instellingen." lightbox="media/export-data/storage-networking.png":::
    
-Selecteer ' selected Network ' en geef het IP-adres op in het vak **adres bereik** onder het gedeelte Firewall \| Voeg IP-bereiken toe om toegang vanaf internet of uw on-premises netwerken toe te staan. U vindt het IP-adres uit de onderstaande tabel voor de Azure-regio waar de Azure API voor de FHIR-service is ingericht.
+Selecteer **Geselecteerde netwerken**. Geef in het gedeelte firewall het IP-adres op in het vak **adres bereik** . Voeg IP-bereiken toe om toegang vanaf internet of uw on-premises netwerken toe te staan. U vindt het IP-adres in de onderstaande tabel voor de Azure-regio waar de Azure API voor de FHIR-service is ingericht.
 
 |**Azure-regio**         |**Openbaar IP-adres** |
 |:----------------------|:-------------------|
@@ -106,11 +114,11 @@ Selecteer ' selected Network ' en geef het IP-adres op in het vak **adres bereik
 Het configuratie proces is hetzelfde als hierboven, behalve een specifiek IP-adres bereik in CIDR-indeling wordt gebruikt in plaats daarvan, 100.64.0.0/10. De reden waarom het IP-adres bereik, dat 100.64.0.0 – 100.127.255.255 bevat, moet worden opgegeven, is omdat het daad werkelijke IP-adres dat door de service wordt gebruikt, varieert, maar binnen het bereik valt voor elke $export aanvraag.
 
 > [!Note] 
-> Het is mogelijk dat in plaats daarvan een privé-IP-adres binnen het bereik van 10.0.2.0/24 kan worden gebruikt. In dat geval wordt de $export bewerking niet voltooid. U kunt de $export aanvraag opnieuw proberen, maar er is geen garantie dat een IP-adres binnen het bereik van 100.64.0.0/10 de volgende keer wordt gebruikt. Dat is het bekende netwerk gedrag per ontwerp. Het alternatief is het configureren van het opslag account in een andere regio.
+> Het is mogelijk dat in plaats daarvan een privé-IP-adres binnen het bereik van 10.0.2.0/24 kan worden gebruikt. In dat geval wordt de $export bewerking niet voltooid. U kunt de $export aanvraag opnieuw uitvoeren, maar er is geen garantie dat een IP-adres binnen het bereik van 100.64.0.0/10 de volgende keer wordt gebruikt. Dat is het bekende netwerk gedrag per ontwerp. Het alternatief is het configureren van het opslag account in een andere regio.
     
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel hebt u geleerd hoe u FHIR-resources kunt exporteren met behulp van $export opdracht. Meer informatie over het exporteren van de gegevens die u niet hebt geïdentificeerd:
+In dit artikel hebt u geleerd hoe u FHIR-resources kunt exporteren met behulp van $export opdracht. Zie voor meer informatie over het exporteren van de geïdentificeerde gegevens:
  
 >[!div class="nextstepaction"]
 >[De geïdentificeerde gegevens exporteren](de-identified-export.md)

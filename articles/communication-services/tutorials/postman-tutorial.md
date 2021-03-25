@@ -8,12 +8,12 @@ ms.author: rifox
 ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: c21d8696c0c4edd743aab6cbe7866d27ce46a314
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 5805734a9253962d672a4236a5650e9de8b37f0a
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103492605"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105044291"
 ---
 # <a name="tutorial-sign-and-make-requests-with-postman"></a>Zelf studie: ondertekenen en aanvragen indienen met de Postman
 In deze zelf studie wordt postman ingesteld en gebruikt om met behulp van HTTP een aanvraag uit te voeren voor services van Azure Communication Services (ACS). Aan het einde van deze zelf studie hebt u een SMS-bericht verzonden met behulp van ACS en postman. u kunt postman gebruiken om andere Api's binnen ACS te verkennen.
@@ -68,7 +68,7 @@ Lees [de documentatie van Postman voor](https://learning.postman.com/docs/sendin
 
 ### <a name="creating-a-pre-request-script"></a>Een pre-Request-script maken
 
-De volgende stap is het maken van een pre-Request-script in postman. Een script dat voorafgaat aan aanvragen, is een script dat vóór elke aanvraag in postman wordt uitgevoerd en kan namens u aanvragen voor het wijzigen of aanpassen van de para meters. We gebruiken deze om onze HTTP-aanvragen te ondertekenen zodat ze kunnen worden geautoriseerd door ACS-Services. Meer informatie over de vereisten voor ondertekening vindt u [in onze hand leiding over verificatie](https://docs.microsoft.com/rest/api/communication/authentication).
+De volgende stap is het maken van een pre-Request-script in postman. Een script dat voorafgaat aan aanvragen, is een script dat vóór elke aanvraag in postman wordt uitgevoerd en kan namens u aanvragen voor het wijzigen of aanpassen van de para meters. We gebruiken deze om onze HTTP-aanvragen te ondertekenen zodat ze kunnen worden geautoriseerd door ACS-Services. Meer informatie over de vereisten voor ondertekening vindt u [in onze hand leiding over verificatie](/rest/api/communication/authentication).
 
 We maken dit script in de verzameling zodanig dat deze wordt uitgevoerd op elke aanvraag in de verzameling. Hiertoe klikt u in het tabblad verzameling op het tabblad ' pre-Request-script '.
 
@@ -186,7 +186,7 @@ Nu alles is ingesteld, kunt u een ACS-aanvraag maken binnen een bericht. Als u a
 
 :::image type="content" source="media/postman/create-request.png" alt-text="De plus knop van postman.":::
 
-Hiermee maakt u een nieuw tabblad voor onze aanvraag binnen het bericht. Bij het maken moeten we het configureren. Er wordt een aanvraag gedaan voor de SMS Send API. Raadpleeg de [documentatie voor deze API voor hulp](https://docs.microsoft.com/rest/api/communication/sms/send). Laten we het verzoek van de Postman configureren.
+Hiermee maakt u een nieuw tabblad voor onze aanvraag binnen het bericht. Bij het maken moeten we het configureren. Er wordt een aanvraag gedaan voor de SMS Send API. Raadpleeg de [documentatie voor deze API voor hulp](/rest/api/communication/sms/send). Laten we het verzoek van de Postman configureren.
 
 Begin met instellen, het aanvraag type aan `POST` en invoeren `{{endpoint}}/sms?api-version=2021-03-07` in het veld aanvraag-URL. Deze URL maakt gebruik van onze eerder gemaakte `endpoint` variabele om deze automatisch te verzenden naar uw ACS-resource.
 
@@ -238,8 +238,8 @@ De mobiele telefoon, die eigenaar is van het nummer dat u hebt ingevoerd in de w
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [ACS Api's verkennen](https://docs.microsoft.com/rest/api/communication/) 
->  [Meer informatie over verificatie](https://docs.microsoft.com/rest/api/communication/authentication) 
+> [ACS Api's verkennen](/rest/api/communication/) 
+>  [Meer informatie over verificatie](/rest/api/communication/authentication) 
 >  Meer [informatie over verzen](https://learning.postman.com/) ding
 
 U kunt ook het volgende doen:

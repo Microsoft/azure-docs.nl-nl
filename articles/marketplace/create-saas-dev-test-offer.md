@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 ms.date: 03/25/2021
-ms.openlocfilehash: 58649e9a864e64ab5781cff3b663e190dac50cb6
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: dbf284305aa3201faeb77668af4198bafbf578b5
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105050541"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105110539"
 ---
 # <a name="create-a-test-offer"></a>Een test aanbieding maken
 
@@ -80,7 +80,7 @@ Gebruik de ONTWIKKELINGs aanbieding om te experimenteren met prijs modellen. Nad
 De ONTWIKKELINGs aanbieding moet plannen hebben met nul of zeer lage prijzen in de plannen. De productie-aanbieding heeft de prijzen die u aan klanten wilt kosten.
 
 > [!NOTE]
-> Informatie die de gebruiker moet zien, zelfs als skimmingPurchases die in Preview zijn gemaakt, worden verwerkt voor zowel ontwikkel-als productie aanbiedingen. Als een aanbieding een prijs van $100/mo heeft, wordt $100 in rekening gebracht voor uw bedrijf. Als dit het geval is, kunt u een [ondersteunings ticket](support.md) openen. er wordt een uitbetaling voor het volledige bedrag uitgegeven (en er worden geen kosten in rekening gebracht).
+> Aankopen die in de preview-versie zijn gemaakt, worden verwerkt voor ontwikkel-en productie aanbiedingen. Als een aanbieding een prijs van $100/mo heeft, wordt $100 in rekening gebracht voor uw bedrijf. Als dit het geval is, kunt u een [ondersteunings ticket](support.md) openen. er wordt een uitbetaling voor het volledige bedrag uitgegeven (en er worden geen kosten in rekening gebracht).
 
 #### <a name="pricing-model"></a>Prijsmodel
 

@@ -5,12 +5,12 @@ author: sideeksh
 manager: rochakm
 ms.date: 11/03/2019
 ms.topic: conceptual
-ms.openlocfilehash: d4fa7348df647cf699ebd55dd6415a79454ab5f1
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 5309fd60640c45ade42bab4c5727cf1f0a8d9d70
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "93397947"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105025472"
 ---
 # <a name="common-questions-azure-to-azure-disaster-recovery"></a>Veelgestelde vragen: Herstel na noodgeval van Azure naar Azure
 
@@ -73,7 +73,7 @@ Ja, u kunt virtuele Azure-machines repliceren naar elk abonnement binnen dezelfd
 
 ### <a name="can-i-replicate-vms-in-an-availability-zone-to-another-region"></a>Kan ik virtuele machines in een beschikbaarheids zone repliceren naar een andere regio?
 
-Ja, u kunt Vm's in beschikbaarheids zones repliceren naar een andere Azure-regio. De doel-VM kan worden geïmplementeerd als één exemplaar, in een beschikbaarheidsset of in een beschikbaarheids zone als deze wordt ondersteund in de doel regio. 
+Ja, u kunt Vm's in beschikbaarheids zones repliceren naar een andere Azure-regio. 
 
 ### <a name="can-i-replicate-non-zone-vms-to-a-zone-within-the-same-region"></a>Kan ik virtuele machines buiten de zone repliceren naar een zone binnen dezelfde regio? 
 
@@ -81,7 +81,7 @@ Dit wordt niet ondersteund in de portal. U kunt hiervoor de REST API/Power shell
 
 ### <a name="can-i-replicate-zoned-vms-to-a-different-zone-in-the-same-region"></a>Kan ik virtuele machines in een zone repliceren naar een andere zone in dezelfde regio?
 
-Ondersteuning voor dit is beperkt tot een aantal regio's. [Meer informatie](azure-to-azure-how-to-enable-zone-to-zone-disaster-recovery.md).
+Ondersteuning hiervoor is beperkt tot een aantal regio's. [Meer informatie](azure-to-azure-how-to-enable-zone-to-zone-disaster-recovery.md).
 
 ### <a name="can-i-exclude-disks-from-replication"></a>Kan ik schijven uitsluiten van replicatie?
 

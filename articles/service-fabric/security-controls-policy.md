@@ -1,18 +1,18 @@
 ---
 title: Controles voor naleving van Azure Policy-regelgeving voor Azure Service Fabric
 description: Een overzicht van de beschikbare controles voor naleving van Azure Policy-regelgeving voor Azure Service Fabric. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 03/17/2021
+ms.date: 03/24/2021
 ms.topic: sample
 author: erikadoyle
 ms.author: edoyle
 ms.service: service-fabric
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 0ba6e0a4e0b840aa325004ddc01f344dd41d7e3c
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 5338adaa5d030e4d207d0de48b44d9a004942be1
+ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104606431"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105035032"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-service-fabric"></a>Controles voor naleving van Azure Policy-regelgeving voor Azure Service Fabric
 

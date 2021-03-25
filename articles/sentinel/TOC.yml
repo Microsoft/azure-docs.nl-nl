@@ -320,7 +320,7 @@
         - name: Naslag informatie voor Kusto-query taal
           href: /azure/data-explorer/kql-quick-reference
         - name: Query optimalisatie van Azure Monitor-logboek
-          href: /azure/azure-monitor/logs/query-optimization
+          href: ../azure-monitor/logs/query-optimization.md
     - name: UEBA-verrijkingen
       href: ueba-enrichments.md
     - name: Toewijzing van CEF-logboek veld

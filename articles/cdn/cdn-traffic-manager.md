@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 10/08/2020
 ms.author: allensu
 ms.custom: ''
-ms.openlocfilehash: d2d3bd43a0f17167e855d7e678a96cd79fe42237
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: a003becba0bc1e42d8fe0c0c5b199402a430a8e1
+ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "92777738"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105034755"
 ---
 # <a name="failover-across-multiple-endpoints-with-azure-traffic-manager"></a>Failover over meerdere eind punten met Azure Traffic Manager
 
@@ -94,7 +94,10 @@ Nadat u uw CDN-en Traffic Manager-profielen hebt geconfigureerd, volgt u deze st
     > [!NOTE]
     > Als uw domein momenteel Live is en niet kan worden onderbroken, voert u deze stap als laatste uit. Controleer of de CDN-eind punten en Traffic Manager-domeinen Live zijn voordat u uw aangepaste domein-DNS bijwerkt naar Traffic Manager.
     >
-
+   
+    > [!NOTE]
+    > Voor implemeting deze failover over scenerio moeten beide eind punten zich in verschillende profielen benemen en moeten de verschillende profielen door verschillende CDN-providers zijn om domein naam conflicten te voor komen.
+    > 
 
 2.  Selecteer in uw Azure CDN profiel het eerste CDN-eind punt (Akamai). Selecteer **aangepast domein** en invoer **cdndemo101.dustydogpetcare.online** toevoegen. Controleer of het selectie vakje voor het valideren van het aangepaste domein groen is. 
 

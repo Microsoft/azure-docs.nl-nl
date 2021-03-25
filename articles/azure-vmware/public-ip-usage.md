@@ -3,12 +3,12 @@ title: De functionaliteit van het open bare IP-adres in azure VMware gebruiken
 description: In dit artikel wordt uitgelegd hoe u de open bare IP-functionaliteit in azure Virtual WAN kunt gebruiken.
 ms.topic: how-to
 ms.date: 02/04/2021
-ms.openlocfilehash: 640f359ed8934048bffd7f58b36e8a3eef71c2f1
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 794e24e531d464adf58d5a06b5a411ada18c4a60
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "99581377"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105023653"
 ---
 # <a name="how-to-use-the-public-ip-functionality-in-azure-vmware-solution"></a>De functionaliteit van het open bare IP-adres in azure VMware gebruiken
 
@@ -47,6 +47,9 @@ De webserver ontvangt de aanvraag en beantwoordt met de aangevraagde informatie 
 
 ## <a name="test-case"></a>Testcase
 In dit scenario publiceert u de IIS-webserver naar het internet. Gebruik de open bare IP-functie in de Azure VMware-oplossing om de website te publiceren op een openbaar IP-adres.  U configureert ook NAT-regels op de firewall en benaderen Azure VMware Solution resource (Vm's met een webserver) met een openbaar IP-adres.
+
+>[!TIP]
+>Als u uitgaand verkeer wilt inschakelen, moet u beveiligings configuratie > Internet verkeer instellen op **Azure firewall**.
 
 ## <a name="deploy-virtual-wan"></a>Virtual WAN implementeren
 
@@ -152,7 +155,7 @@ Zodra alle onderdelen zijn geïmplementeerd, kunt u ze weer geven in de toegevoe
 
 ## <a name="limitations"></a>Beperkingen
 
-U kunt 100 open bare Ip's per SDDCs hebben.
+U kunt 100 open bare Ip's per privécloud hebben.
 
 ## <a name="next-steps"></a>Volgende stappen
 

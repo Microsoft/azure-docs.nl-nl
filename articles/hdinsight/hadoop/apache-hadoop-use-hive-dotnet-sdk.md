@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive, devx-track-csharp
 ms.date: 12/24/2019
-ms.openlocfilehash: 17264fc2a7d0a51de545e329ccf12ad45ad49d46
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 032c070a9485fc4720ae7966a0991bc0c5ae3921
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98927238"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104867845"
 ---
 # <a name="run-apache-hive-queries-using-hdinsight-net-sdk"></a>Apache Hive query's uitvoeren met HDInsight .NET SDK
 
@@ -135,7 +135,7 @@ De HDInsight .NET SDK biedt .NET-client Bibliotheken, waardoor het gemakkelijker
 
 De uitvoer van de toepassing moet er ongeveer als volgt uitzien:
 
-![Uitvoer van HDInsight Hadoop-Hive-taak](./media/apache-hadoop-use-hive-dotnet-sdk/hdinsight-hadoop-use-hive-net-sdk-output.png)
+:::image type="content" source="./media/apache-hadoop-use-hive-dotnet-sdk/hdinsight-hadoop-use-hive-net-sdk-output.png" alt-text="Uitvoer van HDInsight Hadoop-Hive-taak" border="true":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -6,12 +6,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017,seodec18
 ms.topic: how-to
 ms.date: 04/14/2020
-ms.openlocfilehash: 8d8e9784ea21bf5f2b6902e3d93c5c09c1ec5670
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: c6969c3108fb1465a705d8e61b3a7bdf2083736a
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98944567"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104865652"
 ---
 # <a name="use-data-lake-tools-for-visual-studio-to-connect-to-azure-hdinsight-and-run-apache-hive-queries"></a>Data Lake-Hulpprogram Ma's voor Visual Studio gebruiken om verbinding te maken met Azure HDInsight en Apache Hive query's uit te voeren
 
@@ -41,7 +41,7 @@ Volg de onderstaande instructies om Data Lake-Hulpprogram Ma's te installeren vo
 
     Voor bestaande Visual Studio-installaties gaat u naar de IDE-menu balk en selecteert u **hulpprogram** ma's  >  **en functies ophalen** om Visual Studio Installer te openen. Op het tabblad **workloads** selecteert u ten minste de werk belasting van **Azure Development** (onder **Web & Cloud**). Of selecteer de werk belasting voor **gegevens opslag en-verwerking** (onder **andere sluit**).
 
-  ![Werkbelasting selectie, Visual Studio Installer](./media/apache-hadoop-visual-studio-tools-get-started/vs-installation.png)
+  :::image type="content" source="./media/apache-hadoop-visual-studio-tools-get-started/vs-installation.png" alt-text="Werkbelasting selectie, Visual Studio Installer" border="true":::
 
 * Voor Visual Studio 2015:
 
@@ -91,7 +91,7 @@ Verbinding maken met uw Azure-abonnement:
 
 5. Als u geen clusters hebt, kunt u er een maken met behulp van de Azure Portal, Azure PowerShell of de HDInsight SDK. Zie [clusters instellen in HDInsight](../hdinsight-hadoop-provision-linux-clusters.md)voor meer informatie.
 
-   ![HDInsight-cluster lijst, Server Explorer, Visual Studio](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-server-explorer.png)
+   :::image type="content" source="./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-server-explorer.png" alt-text="HDInsight-cluster lijst, Server Explorer, Visual Studio" border="true":::
 
 6. Een HDInsight-cluster uitbreiden. Het cluster bevat knoop punten voor **Hive-data bases**. Ook een standaard-opslag account, eventueel extra gekoppelde opslag accounts en **Hadoop-service logboek**. U kunt de entiteiten verder uitbreiden.
 
@@ -124,23 +124,23 @@ Een HDInsight-cluster koppelen:
 
 2. Voer een **verbindings-URL** in het formulier in `https://CLUSTERNAME.azurehdinsight.net` . De **cluster naam** wordt automatisch ingevuld met het cluster naam gedeelte van uw URL wanneer u naar een ander veld gaat. Voer vervolgens een **gebruikers naam** en **wacht woord** in en selecteer **volgende**.
 
-    ![Een cluster koppelen, HDInsight, Visual Studio](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-link-cluster-dialog.png)
+    :::image type="content" source="./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-link-cluster-dialog.png" alt-text="Een cluster koppelen, HDInsight, Visual Studio" border="true":::
 
 3. Selecteer **Finish**. Als de cluster koppeling is geslaagd, wordt het cluster weer gegeven onder het **HDInsight** -knoop punt.
 
 Als u een gekoppeld cluster wilt bijwerken, klikt u met de rechter muisknop op het cluster en selecteert u **bewerken**. U kunt vervolgens de cluster gegevens bijwerken.
 
-![Een gekoppeld cluster, HDInsight, Visual Studio bewerken](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-link-cluster-update.png)
+:::image type="content" source="./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-link-cluster-update.png" alt-text="Een gekoppeld cluster, HDInsight, Visual Studio bewerken" border="true":::
 
 ## <a name="explore-linked-resources"></a>Gekoppelde resources verkennen
 
 In Server Explorer worden het standaardaccount voor opslag en alle gekoppelde opslagaccounts weergegeven. Als u het standaardopslagaccount uitvouwt, kunt u de containers op het opslagaccount zien. Het standaardopslagaccount en de standaardcontainer worden gemarkeerd.
 
-![Data Lake-Hulpprogram Ma's voor Visual Studio gekoppelde resources in Server Explorer](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-linked-resources.png)
+:::image type="content" source="./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-linked-resources.png" alt-text="Data Lake-Hulpprogram Ma's voor Visual Studio gekoppelde resources in Server Explorer" border="true":::
 
 Klik met de rechter muisknop op een container en selecteer **container weer geven** om de inhoud van de container weer te geven. Nadat u een container hebt geopend, kunt u de knoppen op de werk balk gebruiken om de inhouds lijst te **vernieuwen** , **BLOB te uploaden**, **geselecteerde blobs te verwijderen**, blob te **openen** en te downloaden (**Opslaan als**) geselecteerde blobs.
 
-![Container lijst en BLOB-bewerkingen, HDInsight-cluster, Visual Studio](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-blob-operations.png)
+:::image type="content" source="./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-blob-operations.png" alt-text="Container lijst en BLOB-bewerkingen, HDInsight-cluster, Visual Studio" border="true":::
 
 ## <a name="run-interactive-apache-hive-queries"></a>Interactieve Apache Hive query's uitvoeren
 
@@ -185,7 +185,7 @@ U een Hive-tabel maken door de GUI te gebruiken of door Hive-query's te gebruike
 
 4. Selecteer de knop **tabel maken** om de taak te verzenden, waarmee de nieuwe Hive-tabel wordt gemaakt.
 
-    ![Tabel venster maken, Hive, HDInsight-cluster, Visual Studio](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-create-hive-table.png)
+    :::image type="content" source="./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-create-hive-table.png" alt-text="Tabel venster maken, Hive, HDInsight-cluster, Visual Studio" border="true":::
 
 ### <a name="create-and-run-hive-queries"></a>Hive-query's maken en uitvoeren
 
@@ -204,9 +204,9 @@ Een ad-hoc query maken en uitvoeren:
 
     De Hive-editor ondersteunt IntelliSense. Data Lake Tools voor Visual Studio biedt ondersteuning voor het laden van externe metagegevens wanneer u het Hive-script bewerkt. Als u bijvoorbeeld typt `SELECT * FROM` , geeft IntelliSense alle voorgestelde tabel namen weer. Wanneer een tabelnaam wordt opgegeven, geeft IntelliSense de kolomnamen weer. De hulpprogramma's ondersteunen de meeste DML-instructies, subquery's en ingebouwde UDF's van Hive.
 
-    ![IntelliSense-voor beeld 1, Hive ad-hoc query, HDInsight-cluster, Visual Studio](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-intellisense-table-names.png)
+    :::image type="content" source="./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-intellisense-table-names.png" alt-text="IntelliSense-voor beeld 1, Hive ad-hoc query, HDInsight-cluster, Visual Studio" border="true":::
 
-    ![IntelliSense-voor beeld 2, Hive ad-hoc query, HDInsight-cluster, Visual Studio](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-intellisense-column-names.png)
+    :::image type="content" source="./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-intellisense-column-names.png" alt-text="IntelliSense-voor beeld 2, Hive ad-hoc query, HDInsight-cluster, Visual Studio" border="true":::
 
     > [!NOTE]  
     > IntelliSense suggereert alleen de metagegevens van het cluster dat in de HDInsight-werkbalk is geselecteerd.
@@ -226,17 +226,17 @@ Een ad-hoc query maken en uitvoeren:
 
         Kies in de eerste vervolg keuzelijst de optie **interactief** en selecteer vervolgens **uitvoeren**.
 
-        ![Interactieve modus, Hive ad-hoc query, HDInsight-cluster, Visual Studio](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-query-execute.png)  
+        :::image type="content" source="./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-query-execute.png" alt-text="Interactieve modus, Hive ad-hoc query, HDInsight-cluster, Visual Studio" border="true":::  
 
     * **Batch**  
 
         Kies in de eerste vervolg keuzelijst **batch**, en selecteer vervolgens **verzenden**. Of selecteer het pictogram vervolg keuzelijst naast **verzenden** en kies **Geavanceerd**.
 
-        ![Batch-modus, Hive ad-hoc query, HDInsight-cluster, Visual Studio](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-query-batch.png)
+        :::image type="content" source="./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-query-batch.png" alt-text="Batch-modus, Hive ad-hoc query, HDInsight-cluster, Visual Studio" border="true":::
 
         Als u de optie Geavanceerde verzen ding selecteert, wordt het dialoog venster **script indienen** weer gegeven. Configureer de **taak naam**, **argumenten**, **aanvullende configuraties** en de **status Directory** voor het script.
 
-        ![Het dialoog venster script indienen, Hive ad-hoc query, HDInsight-cluster, Visual Studio](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-submit-jobs-advanced.png)
+        :::image type="content" source="./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-submit-jobs-advanced.png" alt-text="Het dialoog venster script indienen, Hive ad-hoc query, HDInsight-cluster, Visual Studio" border="true":::
 
       > [!NOTE]  
       > U kunt geen batches naar interactieve query clusters verzenden.  U moet de interactieve modus gebruiken.
@@ -251,7 +251,7 @@ Een Hive-oplossing maken en uitvoeren:
 
 3. Voer in het venster **uw nieuwe project configureren** een **project naam** in, selecteer of maak de project **locatie** en selecteer vervolgens **maken**.
 
-    ![Nieuwe Hive-toepassing, het nieuwe project venster configureren, HDInsight Visual Studio](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-new-hive-project.png)
+    :::image type="content" source="./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-new-hive-project.png" alt-text="Nieuwe Hive-toepassing, het nieuwe project venster configureren, HDInsight Visual Studio" border="true":::
 
 4. Dubbelklik in **Solution Explorer** op **Script.hql** om het script te openen.
 
@@ -259,7 +259,7 @@ Een Hive-oplossing maken en uitvoeren:
 
 De samen vatting van de taak varieert enigszins tussen **batch** en **interactieve** modus.
 
-![Overzicht van Hive-taken Windows, batch en interactieve modus, Visual Studio](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-job-summary.png)
+:::image type="content" source="./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-job-summary.png" alt-text="Overzicht van Hive-taken Windows, batch en interactieve modus, Visual Studio" border="true":::
 
 Gebruik het **vernieuwings** pictogram om de status bij te werken totdat de taak status is gewijzigd in **voltooid**.  
 
@@ -267,7 +267,7 @@ Gebruik het **vernieuwings** pictogram om de status bij te werken totdat de taak
 
 * Zie **de uitvoer-en** **HiveServer2 uitvoer** deel Vensters voor de taak Details van de **interactieve** modus.
 
-    ![Onderdeel interactieve taak uitvoer, HDInsight-cluster, Visual Studio](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-job-details.png)
+    :::image type="content" source="./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-job-details.png" alt-text="Onderdeel interactieve taak uitvoer, HDInsight-cluster, Visual Studio" border="true":::
 
 ### <a name="view-job-graph"></a>Taak grafiek weer geven
 
@@ -277,13 +277,13 @@ Dubbel klik op de hoek punten van de taak grafiek om alle Opera tors in het hoek
 
 Zelfs als TEZ is opgegeven als de uitvoerings engine, wordt de taak grafiek mogelijk niet weer gegeven als er geen TEZ-toepassing wordt gestart.  Deze situatie kan zich voordoen omdat de taak geen DML-instructies bevat. Of omdat de DML-instructies kunnen retour neren zonder een TEZ-toepassing te starten. `SELECT * FROM table1`De TEZ-toepassing kan bijvoorbeeld niet worden gestart.
 
-![Apache Hive-taak grafiek, Visual Studio](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-fast-path-hive-execution.png)
+:::image type="content" source="./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-fast-path-hive-execution.png" alt-text="Apache Hive-taak grafiek, Visual Studio" border="true":::
 
 ### <a name="view-task-execution-detail"></a>Details van taak uitvoering weer geven
 
 Vanuit de taak grafiek kunt u details van **taak uitvoering** selecteren om gestructureerde en gevisualiseerde informatie voor Hive-taken op te halen. U kunt ook meer taak Details ophalen. Als er prestatieproblemen optreden, kunt u de weergave gebruiken om meer informatie over het probleem op te vragen. U kunt bijvoorbeeld gegevens ophalen over de werking van elke taak en gedetailleerde informatie over elke taak (gegevens lezen/schrijven, planning/begin-en eind tijd en meer). Gebruik de informatie om taakconfiguraties of systeemarchitectuur bij te stellen op basis van de gevisualiseerde informatie.
 
-![Venster taak uitvoering weer geven, Data Lake Visual Studio Tools](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-task-execution-view.png)
+:::image type="content" source="./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-task-execution-view.png" alt-text="Venster taak uitvoering weer geven, Data Lake Visual Studio Tools" border="true":::
 
 ### <a name="view-hive-jobs"></a>Hive-taken weergeven
 
@@ -295,7 +295,7 @@ Hive-taken weergeven:
 
 1. Klik met de rechter muisknop op een HDInsight-cluster en selecteer **taken weer geven**.
 
-    ![Taken weer geven, Apache Hive, HDInsight-cluster, Visual Studio](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-view-hive-jobs.png)
+    :::image type="content" source="./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-view-hive-jobs.png" alt-text="Taken weer geven, Apache Hive, HDInsight-cluster, Visual Studio" border="true":::
 
     Er wordt een lijst weergegeven met de Hive-taken die op het cluster zijn uitgevoerd.  
 

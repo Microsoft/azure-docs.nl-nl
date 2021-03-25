@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 ms.devlang: python
 ms.custom: mvc, devx-track-python
-ms.openlocfilehash: c151f78c6164cc62aac618a141a26eb1da574e3c
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 5db02f8ca1f0c311617a787525ee2fa5856eb5dc
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "99218356"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105045260"
 ---
 # <a name="quickstart-create-and-provision-a-simulated-x509-device-using-python-device-sdk-for-iot-hub-device-provisioning-service"></a>Quickstart: Een gesimuleerd X.509-apparaat met de SDK voor Python maken en inrichten voor IoT Hub Device Provisioning Service
 
@@ -27,7 +27,7 @@ In deze Snelstartgids richt u een ontwikkel machine in als een python X. 509-app
 - Vertrouwd zijn met de concepten van [inrichten](about-iot-dps.md#provisioning-process).
 - U hebt [IoT Hub Device Provisioning Service instellen met Azure Portal](./quick-setup-auto-provision.md) voltooid.
 - Een Azure-account met een actief abonnement. [Maak er gratis een](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
-- [Python 3.5.3 of hoger](https://www.python.org/downloads/)
+- [Python 3,6 of hoger](https://www.python.org/downloads/)
 - [Git](https://git-scm.com/download/).
 
 

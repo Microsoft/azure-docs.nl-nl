@@ -1,22 +1,22 @@
 ---
 title: 'Snelstart: oproepen toevoegen aan een iOS-app met behulp van Azure Communication Services'
-description: In deze snelstart leert u hoe u de Azure Communication Services-clientbibliotheek voor iOS kunt gebruiken.
+description: In deze Quick Start leert u hoe u de Azure Communication Services roept SDK voor iOS te gebruiken.
 author: chpalm
 ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: 6cdd38f1e849efc416d62f22bd85ed7efb2e6349
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 5d3a282d108d197ea0c5c616e9ee84fb7b952026
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104719798"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105108264"
 ---
-In deze quickstart leert u hoe u een oproep start met behulp van de clientbibliotheek voor oproepen van Azure Communication Services voor iOS.
+In deze Snelstartgids leert u hoe u een gesprek start met behulp van de Azure Communication Services-SDK voor iOS.
 
 > [!NOTE]
-> Dit document maakt gebruik van versie 1.0.0-Beta. 8 van de aanroepende client bibliotheek.
+> In dit document wordt versie 1.0.0-Beta. 8 van de aanroepende SDK gebruikt.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -119,11 +119,11 @@ struct ContentView: View {
 
 ## <a name="object-model"></a>Objectmodel
 
-De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Azure Communication Services-clientbibliotheek voor aanroepen:
+De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Azure Communication Services-aanroepende SDK:
 
 | Naam                                  | Beschrijving                                                  |
 | ------------------------------------- | ------------------------------------------------------------ |
-| CallClient | De CallClient is het belangrijkste ingangspunt voor de clientbibliotheek voor oproepen.|
+| CallClient | De CallClient is het belangrijkste ingangs punt voor de aanroepende SDK.|
 | CallAgent | De CallAgent wordt gebruikt om oproepen te starten en te beheren. |
 | CommunicationTokenCredential | De CommunicationTokenCredential wordt gebruikt als de token referentie voor het instantiëren van de CallAgent.| 
 | CommunicationUserIdentifier | De CommunicationUserIdentifier wordt gebruikt om de identiteit van de gebruiker te vertegenwoordigen. Dit kan een van de volgende zijn: CommunicationUserIdentifier/PhoneNumberIdentifier/CallingApplication. |

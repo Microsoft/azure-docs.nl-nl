@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: conceptual
 ms.date: 11/06/2020
 ms.author: yajin1
-ms.openlocfilehash: 8eade7596e36389b1e345dc6f0aab1029dc100e0
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: e26def56fbd03626c3efc660db57012ee1b767ea
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104589159"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105048201"
 ---
 # <a name="troubleshooting-guide-for-azure-signalr-service-common-issues"></a>Probleemoplossings gids voor veelvoorkomende problemen met de Azure signalerings service
 
@@ -348,7 +348,7 @@ Voor ASP.NET-Signa lering is een bekend probleem opgelost in SDK 1.6.0. Upgrade 
 
 ## <a name="thread-pool-starvation"></a>Beroving thread pool
 
-Als uw server Starving is, betekent dit dat er geen threads werken aan bericht verwerking. Alle threads hangen in een bepaalde methode.
+Als uw server Starving is, betekent dit dat er geen threads werken aan bericht verwerking. Alle threads reageren niet in een bepaalde methode.
 
 Normaal gesp roken wordt dit scenario veroorzaakt door async over synchronisatie of door middel `Task.Result` / `Task.Wait()` van async-methoden.
 

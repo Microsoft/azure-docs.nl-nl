@@ -4,12 +4,12 @@ description: De verschillen en migratie stroom voor het migreren van Apache Stor
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 01/16/2019
-ms.openlocfilehash: aa57c01558cfdcf069b17fad9e86f7640553dcfd
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: b8b054d06c9c0987508abfdf03bbcf9470572bd1
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98944778"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104868763"
 ---
 # <a name="migrate-azure-hdinsight-36-apache-storm-to-hdinsight-40-apache-spark"></a>Azure HDInsight 3,6 Apache Storm migreren naar HDInsight 4,0 Apache Spark
 
@@ -25,8 +25,7 @@ Als u wilt migreren vanaf Apache Storm op HDInsight 3,6, hebt u meerdere opties:
 
 Dit document bevat een hand leiding voor het migreren van Apache Storm naar Spark streaming en Spark Structured streaming.
 
-> [!div class="mx-imgBorder"]
-> ![Migratie pad voor HDInsight Storm](./media/migrate-storm-to-spark/storm-migration-path.png)
+:::image type="content" source="./media/migrate-storm-to-spark/storm-migration-path.png" alt-text="Migratie pad voor HDInsight Storm" border="false":::
 
 ## <a name="comparison-between-apache-storm-and-spark-streaming-spark-structured-streaming"></a>Vergelijking tussen Apache Storm en Spark-streaming, met Spark gestructureerde streaming
 
@@ -47,8 +46,7 @@ Spark Structured streaming vervangt Spark-streaming (DStreams). Structured strea
 
 Storm biedt een model waarmee elke gebeurtenis wordt verwerkt. Dit betekent dat alle inkomende records worden verwerkt zodra ze binnenkomen. Toepassingen met Spark-streaming moeten een fractie van een seconde wachten op het verzamelen van elke micro batch gebeurtenissen voordat deze batch wordt verzonden voor verwerking. Daarentegen wordt elke gebeurtenis direct verwerkt door een gebeurtenis gerichte toepassing. De latentie van Spark-streaming is doorgaans een paar seconden. De voor delen van de micro batch-benadering zijn een efficiëntere verwerking van gegevens en complexe berekeningen.
 
-> [!div class="mx-imgBorder"]
-> ![streaming en micro batch-verwerking](./media/migrate-storm-to-spark/streaming-and-micro-batch-processing.png)
+:::image type="content" source="./media/migrate-storm-to-spark/streaming-and-micro-batch-processing.png" alt-text="streaming en micro batch-verwerking" border="false":::
 
 ## <a name="storm-architecture-and-components"></a>Storm-architectuur en-onderdelen
 
@@ -59,8 +57,7 @@ Storm-topologieën bestaan uit meerdere onderdelen die zijn gerangschikt in een 
 |Spout|Haalt gegevens op in een topologie. Deze onderdelen introduceren een of meer stromen in de topologie.|
 |Montagekit|Verbruikt stromen die zijn verzonden vanuit spouts of andere schichten. Bolts kunnen eventueel nieuwe stromen in de topologie introduceren. Bolts zijn ook verantwoordelijk voor het wegschrijven van gegevens naar externe services of opslag, zoals HDFS, Kafka of HBase.|
 
-> [!div class="mx-imgBorder"]
-> ![interactie van Storm-onderdelen](./media/migrate-storm-to-spark/apache-storm-components.png)
+:::image type="content" source="./media/migrate-storm-to-spark/apache-storm-components.png" alt-text="interactie van Storm-onderdelen" border="false":::
 
 Storm bestaat uit de volgende drie daemons, waarmee het Storm-cluster goed werkt.
 
@@ -70,8 +67,7 @@ Storm bestaat uit de volgende drie daemons, waarmee het Storm-cluster goed werkt
 |Zookeeper|Wordt gebruikt voor de coördinatie van het cluster.|
 |Supervisor|Luistert naar werk dat is toegewezen aan de computer en start en stopt werk processen op basis van de instructies van Nimbus. Elk werk proces voert een subset van een topologie uit. De toepassings logica van de gebruiker (Spouts en bout) voert u hier in.|
 
-> [!div class="mx-imgBorder"]
-> ![Nimbus-, Zookeeper-en supervisor-daemons](./media/migrate-storm-to-spark/nimbus-zookeeper-supervisor.png)
+:::image type="content" source="./media/migrate-storm-to-spark/nimbus-zookeeper-supervisor.png" alt-text="Nimbus-, Zookeeper-en supervisor-daemons" border="false":::
 
 ## <a name="spark-streaming-architecture-and-components"></a>Infra structuur en onderdelen van Spark-streaming
 
@@ -83,15 +79,13 @@ In de volgende stappen wordt beschreven hoe onderdelen in Spark streaming (DStre
 * Gegevens blokken worden gerepliceerd naar andere uitvoerendeers.
 * De verwerkte gegevens worden vervolgens opgeslagen in het doel gegevens archief.
 
-> [!div class="mx-imgBorder"]
-> ![Spark streaming-pad naar uitvoer](./media/migrate-storm-to-spark/spark-streaming-to-output.png)
+:::image type="content" source="./media/migrate-storm-to-spark/spark-streaming-to-output.png" alt-text="Spark streaming-pad naar uitvoer" border="false":::
 
 ## <a name="spark-streaming-dstream-workflow"></a>DStream-werk stroom (Spark streaming)
 
 Als elke batch-interval is verstreken, wordt er een nieuw RDD gemaakt dat alle gegevens uit dat interval bevat. De doorlopende sets van Rdd's worden verzameld in een DStream. Als het batch-interval bijvoorbeeld één seconde lang is, verzendt uw DStream elke seconde een batch met een RDD die alle gegevens bevat die tijdens die seconde zijn opgenomen. Bij het verwerken van de DStream wordt de temperatuur gebeurtenis weer gegeven in een van deze batches. Een Spark-streaming-toepassing verwerkt de batches die de gebeurtenissen bevatten en werkt uiteindelijk op de gegevens die zijn opgeslagen in elke RDD.
 
-> [!div class="mx-imgBorder"]
-> ![verwerkings batches voor Spark-streaming](./media/migrate-storm-to-spark/spark-streaming-batches.png)
+:::image type="content" source="./media/migrate-storm-to-spark/spark-streaming-batches.png" alt-text="verwerkings batches voor Spark-streaming" border="false":::
 
 Zie trans [formaties op DStreams](https://spark.apache.org/docs/latest/streaming-programming-guide.html#transformations-on-dstreams)voor meer informatie over de verschillende trans formaties die beschikbaar zijn met Spark streaming.
 
@@ -105,11 +99,9 @@ De query-uitvoer levert een *resultaat tabel* op die de resultaten van de query 
 
 Het tijdstip waarop de gegevens worden verwerkt vanuit de invoer tabel, wordt bepaald door het trigger interval. Standaard is het trigger interval nul, zodat gestructureerde streaming probeert de gegevens te verwerken zodra deze binnenkomen. In de praktijk betekent dit dat zodra Structured streaming de uitvoering van de vorige query heeft verwerkt, een andere verwerkings uitvoering wordt gestart op basis van recent ontvangen gegevens. U kunt de trigger zo configureren dat deze wordt uitgevoerd met een interval, zodat de streaminggegevens worden verwerkt in op tijd gebaseerde batches.
 
-> [!div class="mx-imgBorder"]
-> ![verwerking van gegevens in gestructureerde streaming](./media/migrate-storm-to-spark/structured-streaming-data-processing.png)
+:::image type="content" source="./media/migrate-storm-to-spark/structured-streaming-data-processing.png" alt-text="verwerking van gegevens in gestructureerde streaming" border="false":::
 
-> [!div class="mx-imgBorder"]
-> ![programmeer model voor Structured streaming](./media/migrate-storm-to-spark/structured-streaming-model.png)
+:::image type="content" source="./media/migrate-storm-to-spark/structured-streaming-model.png" alt-text="programmeer model voor Structured streaming" border="false":::
 
 ## <a name="general-migration-flow"></a>Algemene migratie stroom
 
@@ -119,30 +111,25 @@ De aanbevolen migratie stroom van Storm naar Spark gaat ervan uit dat de volgend
 * Kafka en Storm worden geïmplementeerd op hetzelfde virtuele netwerk
 * De gegevens die worden verwerkt door storm, worden geschreven naar een gegevens sink, zoals Azure Storage of Azure Data Lake Storage Gen2.
 
-    > [!div class="mx-imgBorder"]
-    > ![diagram van de veronderstelde huidige omgeving](./media/migrate-storm-to-spark/presumed-current-environment.png)
+   :::image type="content" source="./media/migrate-storm-to-spark/presumed-current-environment.png" alt-text="diagram van de veronderstelde huidige omgeving"  border="false":::
 
 Ga als volgt te werk om uw toepassing te migreren van Storm naar een van de Spark-streaming Api's:
 
 1. **Implementeer een nieuw cluster.** Implementeer een nieuw HDInsight 4,0 Spark-cluster in hetzelfde virtuele netwerk en implementeer uw toepassing met Spark-streaming of Spark Structured streaming en test het zorgvuldig.
 
-    > [!div class="mx-imgBorder"]
-    > ![nieuwe Spark-implementatie in HDInsight](./media/migrate-storm-to-spark/new-spark-deployment.png)
+   :::image type="content" source="./media/migrate-storm-to-spark/new-spark-deployment.png" alt-text="nieuwe Spark-implementatie in HDInsight" border="false":::
 
 1. **Stop het verbruik van het oude Storm-cluster.** Stop met het gebruiken van gegevens uit de gegevens bron streamen in de bestaande Storm en wacht totdat de gegevens zijn geschreven naar de doel-sink.
 
-    > [!div class="mx-imgBorder"]
-    > ![stoppen met verbruik op het huidige cluster](./media/migrate-storm-to-spark/stop-consuming-current-cluster.png)
+   :::image type="content" source="./media/migrate-storm-to-spark/stop-consuming-current-cluster.png" alt-text="stoppen met verbruik op het huidige cluster" border="false":::
 
 1. **Begin met verbruik van het nieuwe Spark-cluster.** Streamen van gegevens vanaf een nieuw geïmplementeerd HDInsight 4,0 Spark-cluster starten. Op dit moment wordt het proces overgenomen door gebruik te gaan van de meest recente Kafka-offset.
 
-    > [!div class="mx-imgBorder"]
-    > ![beginnen met verbruik op nieuw cluster](./media/migrate-storm-to-spark/start-consuming-new-cluster.png)
+   :::image type="content" source="./media/migrate-storm-to-spark/start-consuming-new-cluster.png" alt-text="beginnen met verbruik op nieuw cluster" border="false":::
 
 1. **Verwijder het oude cluster als dat nodig is.** Zodra de switch is voltooid en correct werkt, verwijdert u het oude 3,6 HDInsight-cluster van de verouderde, indien nodig.
 
-    > [!div class="mx-imgBorder"]
-    > ![oude HDInsight-clusters indien nodig verwijderen](./media/migrate-storm-to-spark/remove-old-clusters1.png)
+   :::image type="content" source="./media/migrate-storm-to-spark/remove-old-clusters1.png" alt-text="oude HDInsight-clusters indien nodig verwijderen" border="false":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

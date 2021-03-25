@@ -6,12 +6,12 @@ ms.author: bahusse
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 2/11/2021
-ms.openlocfilehash: 104e6503ba47d17c17cfec2b4e62ec3f69f18330
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: f7463b6234c03a9ed79f1c4a9fb310db7067a428
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103200020"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105043560"
 ---
 # <a name="connectivity-architecture-in-azure-database-for-postgresql"></a>Connectiviteits architectuur in Azure Database for PostgreSQL
 In dit artikel wordt uitgelegd wat de Azure Database for PostgreSQL connectiviteits architectuur is en hoe het verkeer wordt omgeleid naar uw Azure Database for PostgreSQL data base-exemplaar van clients, zowel binnen als buiten Azure.
@@ -99,7 +99,7 @@ Alleen gateway knooppunten worden buiten gebruik gesteld. Wanneer gebruikers ver
 ### <a name="how-can-you-validate-if-your-connections-are-going-to-old-gateway-nodes-or-new-gateway-nodes"></a>Hoe kunt u controleren of uw verbindingen naar oude gateway knooppunten of nieuwe gateway knooppunten gaan?
 Ping de FQDN van de server, bijvoorbeeld  ``ping xxx.postgres.database.azure.com`` . Als het geretourneerde IP-adres een van de IP-adressen is die in het bovenstaande document worden weer gegeven met de naam van de gateway (uit het buiten gebruik stellen), betekent dit dat uw verbinding via de oude gateway gaat. Daarentegen, als het geretourneerde IP-adres een van de IP-adressen is die worden weer gegeven onder gateway-ip's, betekent dit dat uw verbinding via de nieuwe gateway gaat.
 
-U kunt ook testen door [PSPing](https://docs.microsoft.com/sysinternals/downloads/psping) of TCPPing van de database server van uw client toepassing met poort 3306 en ervoor te zorgen dat het GERETOURNEERDe IP-adres niet de IP-adressen uit de buiten gebruik stelt.
+U kunt ook testen door [PSPing](/sysinternals/downloads/psping) of TCPPing van de database server van uw client toepassing met poort 3306 en ervoor te zorgen dat het GERETOURNEERDe IP-adres niet de IP-adressen uit de buiten gebruik stelt.
 
 ### <a name="how-do-i-know-when-the-maintenance-is-over-and-will-i-get-another-notification-when-old-ip-addresses-are-decommissioned"></a>Hoe kan ik weet wanneer het onderhoud wordt uitgevoerd en krijgt hij een andere melding wanneer oude IP-adressen buiten gebruik worden gesteld?
 U ontvangt een e-mail bericht waarin u wordt gewaarschuwd wanneer het onderhouds werk wordt gestart. Het onderhoud kan tot één maand duren, afhankelijk van het aantal servers dat in al regio's moet worden gemigreerd. Bereid uw client voor om verbinding te maken met de database server met behulp van de FQDN of gebruik het nieuwe IP-adres uit de bovenstaande tabel. 

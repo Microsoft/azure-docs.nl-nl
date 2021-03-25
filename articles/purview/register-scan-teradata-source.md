@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: overview
 ms.date: 2/25/2021
-ms.openlocfilehash: 2008e014e9f160b643ed5f591fff81c0b215e24a
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 8f300f214ed36b7a5257b7276364027b91edc746
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102175034"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105048099"
 ---
 # <a name="register-and-scan-teradata-source-preview"></a>Een Teradata-bron registreren en scannen (preview)
 
@@ -25,7 +25,7 @@ De Teradata-bron ondersteunt **Volledig scannen** om metagegevens uit een Terada
 ## <a name="prerequisites"></a>Vereisten
 
 1.  Stel de nieuwste [zelf-hostende Integration runtime](https://www.microsoft.com/download/details.aspx?id=39717)in.
-    Zie [een zelf-hostende Integration runtime maken en configureren](https://docs.microsoft.com/azure/data-factory/create-self-hosted-integration-runtime)voor meer informatie.
+    Zie [een zelf-hostende Integration runtime maken en configureren](../data-factory/create-self-hosted-integration-runtime.md)voor meer informatie.
 
 2.  Zorg ervoor dat de [jdk 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) is geïnstalleerd op uw virtuele machine waarop zelf-hostende Integration runtime is geïnstalleerd.
 
@@ -70,7 +70,7 @@ Ga als volgt te werk op het scherm **Bronnen registreren (Teradata)** :
 
 Doe het volgende om een nieuwe scan te maken en uit te voeren:
 
-1.  Klik in het Beheercentrum op **Integratieruntime**. Zorg ervoor dat een zelf-hostende Integration Runtime is ingesteld. Als deze niet is ingesteld, volgt u de stappen die [hier](https://docs.microsoft.com/azure/purview/manage-integration-runtimes) worden beschreven voor het instellen van een zelf-hostende Integration runtime
+1.  Klik in het Beheercentrum op **Integratieruntime**. Zorg ervoor dat een zelf-hostende Integration Runtime is ingesteld. Als deze niet is ingesteld, volgt u de stappen die [hier](./manage-integration-runtimes.md) worden beschreven voor het instellen van een zelf-hostende Integration runtime
 
 2.  Navigeer naar de **Bronnen**
 
@@ -90,7 +90,7 @@ Doe het volgende om een nieuwe scan te maken en uit te voeren:
     -   Geef een gebruikers naam op om verbinding te maken met de database server in het invoer veld voor de gebruikers naam
     -   Sla het database server wachtwoord op in de geheime sleutel.
 
-        Raadpleeg de koppeling [hier](https://docs.microsoft.com/azure/purview/manage-credentials) voor meer informatie over referenties
+        Raadpleeg de koppeling [hier](./manage-credentials.md) voor meer informatie over referenties
 
 6.  **Schema**: een subset van schema's weer geven die moeten worden geïmporteerd, uitgedrukt in een door punt komma's gescheiden lijst. bijvoorbeeld, Schema1; schema2. Alle gebruikers schema's worden geïmporteerd als de lijst leeg is. Alle systeemschema's (bijvoorbeeld SysAdmin) en objecten worden standaard genegeerd. Wanneer de lijst leeg is, worden alle beschik bare schema's geïmporteerd.
 

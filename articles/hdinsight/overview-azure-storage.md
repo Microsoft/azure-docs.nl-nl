@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: seoapr2020
 ms.date: 04/21/2020
-ms.openlocfilehash: f171ab9619f2bcb8ecf15c4bfb3b17146ab5a0ff
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 419b4939c19ee03651a406db44244897e17087f2
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98938946"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104865465"
 ---
 # <a name="azure-storage-overview-in-hdinsight"></a>Azure Storage overzicht in HDInsight
 
@@ -24,7 +24,7 @@ Als u ervoor kiest om uw opslag account te beveiligen met de **firewalls en bepe
 
 Het volgende diagram biedt een abstracte weer gave van de HDInsight-architectuur van Azure Storage:
 
-![' HDInsight Storage-architectuur '](./media/overview-azure-storage/storage-architecture.png "HDInsight Storage architectuur")
+:::image type="content" source="./media/overview-azure-storage/storage-architecture.png" alt-text="HDInsight Storage architectuur" border="false":::
 
 HDInsight biedt toegang tot het Distributed File System dat lokaal wordt gekoppeld aan de rekenknooppunten. Dit bestandssysteem is toegankelijk via de volledig gekwalificeerde URI, bijvoorbeeld:
 
@@ -40,7 +40,7 @@ Houd rekening met de volgende principes wanneer u een Azure Storage-account gebr
 
 * **Open bare containers of open bare blobs in opslag accounts die niet zijn verbonden met een cluster:** U hebt alleen-lezen-machtiging voor de blobs in de containers.
   
-  > [!NOTE]  
+  > [!NOTE]
   > Open bare containers bieden u de mogelijkheid een lijst op te halen met alle blobs die beschikbaar zijn in die container en om meta gegevens van de container op te halen. Openbare blobs zijn alleen toegankelijk als u de exacte URL weet. Zie [Anonieme leestoegang tot containers en blobs beheren](../storage/blobs/anonymous-read-access-configure.md) voor meer informatie.
 
 * **Persoonlijke containers in opslag accounts die niet zijn verbonden met een cluster:** U hebt geen toegang tot de blobs in de containers, tenzij u het opslag account definieert wanneer u de WebHCat-taken verzendt.

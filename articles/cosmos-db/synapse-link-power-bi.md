@@ -6,12 +6,13 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 11/30/2020
 ms.author: acomet
-ms.openlocfilehash: a16d22a49e42408271c91d961bcdb004536e3980
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.custom: synapse-cosmos-db
+ms.openlocfilehash: 7a9324923164d6d5cbbdc48bfa60fc444bdc4fb1
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "101659746"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104868967"
 ---
 # <a name="use-power-bi-and-serverless-synapse-sql-pool-to-analyze-azure-cosmos-db-data-with-synapse-link"></a>Power BI en serverloze Synapse SQL-groep gebruiken om Azure Cosmos DB gegevens te analyseren met Synapse-koppeling 
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]

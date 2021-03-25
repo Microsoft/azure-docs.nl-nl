@@ -7,12 +7,12 @@ ms.service: iot-develop
 ms.devlang: python
 ms.topic: quickstart
 ms.date: 01/11/2021
-ms.openlocfilehash: d0dcca0c4be801f385a48afcd41b6a547bab3fbe
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 5d872dd7c94a0b3ab23623bb246ff7ae81609779
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "100654862"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105047164"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-azure-iot-central-python"></a>Quick Start: verzend telemetrie van een apparaat naar Azure IoT Central (python)
 
@@ -266,5 +266,5 @@ In deze Quick Start hebt u een eenvoudige Azure IoT-toepassings werk stroom gele
 Als volgende stap moet u de Azure IoT python SDK verkennen via toepassings voorbeelden.
 
 - [Asynchrone voor beelden](https://github.com/Azure/azure-iot-sdk-python/tree/master/azure-iot-device/samples/async-hub-scenarios): deze map bevat asynchrone python-voor beelden voor aanvullende IOT hub scenario's.
-- [Synchrone voor beelden](https://github.com/Azure/azure-iot-sdk-python/tree/master/azure-iot-device/samples/sync-samples): deze map bevat python-voor beelden voor gebruik met python 2,7-of synchrone compatibiliteits Scenario's voor python 3.5 +
+- [Synchrone voor beelden](https://github.com/Azure/azure-iot-sdk-python/tree/master/azure-iot-device/samples/sync-samples): deze map bevat python-voor beelden voor gebruik met python 2,7-of synchrone compatibiliteits Scenario's voor python 3.6 +
 - [IOT Edge](https://github.com/Azure/azure-iot-sdk-python/tree/master/azure-iot-device/samples/async-edge-scenarios)-voor beelden: deze map bevat python-voor beelden voor het werken met Edge-modules en downstream-apparaten.

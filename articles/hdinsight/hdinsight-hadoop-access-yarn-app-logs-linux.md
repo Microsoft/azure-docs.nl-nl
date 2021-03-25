@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/23/2020
-ms.openlocfilehash: 882384b5e57db27cff981f80e790dfd41b624c93
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 9558e6c5ddd58b1d5fd70da03187caef50d1275d
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "99980691"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104865567"
 ---
 # <a name="access-apache-hadoop-yarn-application-logs-on-linux-based-hdinsight"></a>Toegang tot Apache Hadoop GARENs van toepassings logboeken op HDInsight op basis van Linux
 
@@ -152,11 +152,11 @@ De garen- `ResourceManager` UI wordt uitgevoerd op de cluster-hoofd knooppunt. H
 
 2. Selecteer in de lijst met services aan de linkerkant de optie **garens**.
 
-    ![Apache Ambari garen-service geselecteerd](./media/hdinsight-hadoop-access-yarn-app-logs-linux/yarn-service-selected.png)
+    :::image type="content" source="./media/hdinsight-hadoop-access-yarn-app-logs-linux/yarn-service-selected.png" alt-text="Apache Ambari garen-service geselecteerd":::
 
 3. Selecteer in de vervolg keuzelijst **snelle koppelingen** een van de cluster hoofd knooppunten en selecteer **`ResourceManager Log`** .
 
-    ![Snelle koppelingen voor Apache Ambari-garens](./media/hdinsight-hadoop-access-yarn-app-logs-linux/hdi-yarn-quick-links.png)
+    :::image type="content" source="./media/hdinsight-hadoop-access-yarn-app-logs-linux/hdi-yarn-quick-links.png" alt-text="Snelle koppelingen voor Apache Ambari-garens":::
 
     Er wordt een lijst weer gegeven met koppelingen naar GARENs in de logboeken.
 

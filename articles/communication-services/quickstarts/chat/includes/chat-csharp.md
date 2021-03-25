@@ -10,12 +10,12 @@ ms.date: 03/10/2021
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: 127031479d7ef414298d3096ebef814df1fe9a18
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.openlocfilehash: 7e4ffb800a65a9a1e436e50921e9c7f76f02b571
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105028010"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105107014"
 ---
 ## <a name="prerequisites"></a>Vereisten
 Voordat u aan de slag gaat, moet u het volgende doen:
@@ -43,7 +43,7 @@ dotnet build
 
 ### <a name="install-the-package"></a>Het pakket installeren
 
-De Azure Communication chat-clientbibliotheek installeren voor .NET
+De Azure Communication chat SDK voor .NET installeren
 
 ```PowerShell
 dotnet add package Azure.Communication.Chat --version 1.0.0-beta.5
@@ -51,7 +51,7 @@ dotnet add package Azure.Communication.Chat --version 1.0.0-beta.5
 
 ## <a name="object-model"></a>Objectmodel
 
-De volgende klassen verwerken enkele van de belangrijkste functies van de Azure Communication Services chat-clientbibliotheek voor C#.
+De volgende klassen behandelen enkele van de belangrijkste functies van de Azure Communication Services chat SDK voor C#.
 
 | Naam                                  | Beschrijving                                                  |
 | ------------------------------------- | ------------------------------------------------------------ |
@@ -60,7 +60,7 @@ De volgende klassen verwerken enkele van de belangrijkste functies van de Azure 
 
 ## <a name="create-a-chat-client"></a>Een chat-client maken
 
-Als u een chat-client wilt maken, gebruikt u uw communicatie Services-eind punt en het toegangs token dat is gegenereerd als onderdeel van de vereiste stappen. U moet de `CommunicationIdentityClient` klasse van de identiteits-client bibliotheek gebruiken om een gebruiker te maken en een token uit te geven om door te geven aan uw chat-client.
+Als u een chat-client wilt maken, gebruikt u uw communicatie Services-eind punt en het toegangs token dat is gegenereerd als onderdeel van de vereiste stappen. U moet de `CommunicationIdentityClient` klasse van de identiteits-SDK gebruiken om een gebruiker te maken en een token uit te geven om door te geven aan uw chat-client.
 
 Meer informatie over [tokens voor gebruikerstoegang](../../access-tokens.md).
 

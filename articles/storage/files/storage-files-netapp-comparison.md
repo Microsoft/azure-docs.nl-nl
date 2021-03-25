@@ -8,12 +8,12 @@ ms.subservice: files
 ms.topic: conceptual
 ms.date: 3/19/2021
 ms.author: jeffpatt
-ms.openlocfilehash: 9c6e57d45cb5647053283da687659cc5ff0217e9
-ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
+ms.openlocfilehash: 8389ce008531e8bf295b2f863dad1ab2c3eb825c
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/23/2021
-ms.locfileid: "104802179"
+ms.locfileid: "104870650"
 ---
 # <a name="azure-files-and-azure-netapp-files-comparison"></a>Vergelijking van Azure Files en Azure NetApp Files
 
@@ -26,7 +26,7 @@ De meeste werk belastingen waarvoor Cloud bestands opslag is vereist, zijn gesch
 | Categorie | Azure Files | Azure NetApp Files |
 |---------|-------------------------|---------|
 | Beschrijving | [Azure files](https://azure.microsoft.com/services/storage/files/) is een volledig beheerde, Maxi maal beschik bare service die is geoptimaliseerd voor wille keurige werk belastingen met gegevens updates in de locatie.<br><br> Azure Files is gebaseerd op hetzelfde Azure-opslag platform als andere services, zoals Azure-blobs. | [Azure NetApp files](https://azure.microsoft.com/services/netapp/) is een volledig beheerde NAS-service met hoge Beschik baarheid die de meest veeleisende workloads met lage latentie kan verwerken waarvoor geavanceerde gegevens beheer mogelijkheden zijn vereist. De werk belasting kan worden gemigreerd, die als niet-migreerbaar worden beschouwd.<br><br>  ANF is gebaseerd op de bare metal van NetApp met ONTAP-opslag besturingssysteem dat wordt uitgevoerd in het Azure-Data Center voor een consistente Azure-ervaring en een on-premises soort gelijke prestaties. |
-| Protocollen | Premium<br><ul><li>SMB 2,1, 3,0</li><li>NFS 4,1 (preview-versie)</li></ul><br>Standard<br><ul><li>SMB 2,1, 3,0</li><li>REST</li></ul><br> Zie [beschik bare bestands share protocollen](https://docs.microsoft.com/azure/storage/files/storage-files-compare-protocols)voor meer informatie. | Alle lagen<br><ul><li>SMB 1, 2. x, 3. x</li><li>NFS 3,0, 4,1</li><li>Toegang tot twee protocollen (NFSv3/SMB)</li></ul><br> Zie voor meer informatie over het maken van [NFS](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-create-volumes)-, [SMB](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-create-volumes-smb)-of [Dual-protocol](https://docs.microsoft.com/azure/azure-netapp-files/create-volumes-dual-protocol) volumes. |
+| Protocollen | Premium<br><ul><li>SMB 2,1, 3,0</li><li>NFS 4,1 (preview-versie)</li><li>REST</li></ul><br>Standard<br><ul><li>SMB 2,1, 3,0</li><li>REST</li></ul><br> Zie [beschik bare bestands share protocollen](https://docs.microsoft.com/azure/storage/files/storage-files-compare-protocols)voor meer informatie. | Alle lagen<br><ul><li>SMB 1, 2. x, 3. x</li><li>NFS 3,0, 4,1</li><li>Toegang tot twee protocollen (NFSv3/SMB)</li></ul><br> Zie voor meer informatie over het maken van [NFS](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-create-volumes)-, [SMB](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-create-volumes-smb)-of [Dual-protocol](https://docs.microsoft.com/azure/azure-netapp-files/create-volumes-dual-protocol) volumes. |
 | Beschik baarheid van regio | Premium<br><ul><li>30 + regio's</li></ul><br>Standard<br><ul><li>Alle regio's</li></ul><br> Zie [Beschikbare producten per regio](https://azure.microsoft.com/global-infrastructure/services/?products=storage) voor meer informatie. | Alle lagen<br><ul><li>25 + regio's</li></ul><br> Zie [Beschikbare producten per regio](https://azure.microsoft.com/global-infrastructure/services/?products=storage) voor meer informatie. |
 | Redundantie | Premium<br><ul><li>LRS</li><li>ZRS</li></ul><br>Standard<br><ul><li>LRS</li><li>ZRS</li><li>GRS</li><li>GZRS</li></ul><br> Zie [Redundantie](https://docs.microsoft.com/azure/storage/files/storage-files-planning#redundancy)voor meer informatie. | Alle lagen<br><ul><li>Ingebouwde lokale HA</li><li>[Replicatie in meerdere regio's](https://docs.microsoft.com/azure/azure-netapp-files/cross-region-replication-introduction)</li></ul> |
 | Service-Level Agreement (SLA)<br><br> Houd er rekening mee dat de Sla's voor Azure Files en Azure NetApp Files op verschillende manieren worden berekend. | [SLA voor Azure Files](https://azure.microsoft.com/support/legal/sla/storage/) | [SLA voor Azure NetApp Files](https://azure.microsoft.com/support/legal/sla/netapp) |  

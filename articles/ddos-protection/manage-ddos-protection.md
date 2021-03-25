@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/17/2019
 ms.author: kumud
-ms.openlocfilehash: 336eeee7d522647d11f55a65dc9dc4e65e8b7d47
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: d0b2ccc0bf5d38e9a72bf780875d3b6f29733189
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100535230"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105026748"
 ---
 # <a name="quickstart-create-and-configure-azure-ddos-protection-standard"></a>Snelstartgids: Azure DDoS Protection standaard maken en configureren
 
@@ -112,7 +112,7 @@ U kunt uw resources voor de volgende zelf studie blijven gebruiken. Als u deze n
 DDoS-beveiliging uitschakelen voor een virtueel netwerk: 
 
 1. Voer de naam in van het virtuele netwerk waarvoor u de DDoS-beveiligings standaard wilt uitschakelen in het **vak resources, services en documenten zoeken** bovenaan de portal. Wanneer de naam van het virtuele netwerk wordt weer gegeven in de zoek resultaten, selecteert u dit.
-2. Selecteer **onder DDoS Protection standaard** de optie **uitschakelen**.
+2. Selecteer onder **DDoS Protection standaard** de optie **uitschakelen**.
 
 Als u een DDoS-beschermings plan wilt verwijderen, moet u eerst alle virtuele netwerken loskoppelen. 
 

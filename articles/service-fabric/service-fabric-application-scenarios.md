@@ -3,12 +3,12 @@ title: Toepassings scenario's en-ontwerp
 description: Overzicht van categorieën Cloud toepassingen in Service Fabric. Beschrijft een toepassings ontwerp dat gebruikmaakt van stateful en stateless Services.
 ms.topic: conceptual
 ms.date: 01/08/2020
-ms.openlocfilehash: 6c3cc931a85b91fc02b8086ca5c2481153691e54
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 7d9459e6e0168657cf8e9062331fec0237f58c70
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96575666"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105045753"
 ---
 # <a name="service-fabric-application-scenarios"></a>Toepassings scenario's Service Fabric
 
@@ -68,7 +68,7 @@ Hier volgt een voorbeeld toepassing die gebruikmaakt van stateful Services: ![ d
 
 * Ga aan de slag met het bouwen van stateless en stateful Services met de Service Fabric [reliable Services](service-fabric-reliable-services-quick-start.md) en [reliable actors](service-fabric-reliable-actors-get-started.md) programmeer modellen.
 * Ga naar de Azure Architecture Center voor hulp bij het bouwen van micro [Services in azure](/azure/architecture/microservices/).
-* Ga naar de [Aanbevolen procedures voor Azure service Fabric-toepassingen en-clusters](service-fabric-best-practices-overview.md) voor hulp bij het ontwerpen van toepassingen.
+* Ga naar de [Aanbevolen procedures voor Azure service Fabric-toepassingen en-clusters](./service-fabric-best-practices-security.md) voor hulp bij het ontwerpen van toepassingen.
 
 * Zie ook:
   * [Uitleg over microservices](service-fabric-overview-microservices.md)

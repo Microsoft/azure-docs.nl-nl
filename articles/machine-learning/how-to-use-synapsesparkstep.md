@@ -10,12 +10,12 @@ author: lobrien
 ms.date: 03/04/2021
 ms.topic: conceptual
 ms.custom: how-to, synapse-azureml
-ms.openlocfilehash: 2a9f0a8c943f539166f18a1e41a36136fbb63a6f
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: b03915608c6143a9e205ba1a1e08e411b8aa9093
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104584280"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104868644"
 ---
 # <a name="how-to-use-apache-spark-powered-by-azure-synapse-analytics-in-your-machine-learning-pipeline-preview"></a>Apache Spark (mogelijk gemaakt door Azure Synapse Analytics) in uw machine learning-pijp lijn (preview) gebruiken
 
@@ -92,6 +92,8 @@ De eerste stap is het configureren van de `SynapseCompute` . Het `linked_service
 Zodra de configuratie is gemaakt, maakt u een machine learning `ComputeTarget` door door te geven in de `Workspace` , `ComputeTargetAttachConfiguration` en de naam waarmee u wilt verwijzen naar de reken kracht in de werk ruimte machine learning. De aanroep `ComputeTarget.attach()` is asynchroon, waardoor de voorbeeld blokken worden geblokkeerd totdat de aanroep is voltooid.
 
 ## <a name="create-a-synapsesparkstep-that-uses-the-linked-apache-spark-pool"></a>Maak een `SynapseSparkStep` die gebruikmaakt van de gekoppelde Apache Spark pool
+
+Met de voorbeeld [taak notebook Spark in Apache Spark pool](https://github.com/azure/machinelearningnotebooks/blob/master/how-to-use-azureml/azure-synapse/spark_job_on_synapse_spark_pool.ipynb) definieert u een eenvoudige machine learning-pijp lijn. Eerst definieert het notitie blok een stap voor gegevens voorbereiding die wordt ondersteund door de `synapse_compute` definitie in de vorige stap. Vervolgens definieert het notitie blok een trainings stap die wordt ondersteund door een reken doel dat beter geschikt is voor training. De voorbeeld notitieblok maakt gebruik van de Titanic-data base om gegevens invoer en-uitvoer te demonstreren. de gegevens worden niet daad werkelijk opgeschoond of maken een voorspellend model. Omdat er in dit voor beeld geen echte training is, gebruikt de trainings stap een goedkope, op CPU gebaseerde Compute-resource.
 
 Gegevens stromen naar een machine learning pijp lijn via `DatasetConsumptionConfig` objecten, die tabellaire gegevens of sets bestanden kunnen bevatten. De gegevens zijn vaak afkomstig uit bestanden in Blob Storage in de gegevens opslag van een werk ruimte. De volgende code toont een aantal typische code voor het maken van een invoer voor een machine learning-pijp lijn:
 

@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 09/12/2019
 ms.author: ramamill
-ms.openlocfilehash: a31a28728dd0521262bd0518cc49a385f4314302
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 96c3dce17ab78e08b28bb41c0100e51a72a666e7
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "87416227"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105110250"
 ---
 # <a name="run-a-failback-for-hyper-v-vms"></a>Een failback uitvoeren voor Hyper-V-VM's
 
@@ -26,7 +26,7 @@ In dit artikel wordt beschreven hoe u back-ups maakt van virtuele Azure-machines
 ## <a name="before-you-start"></a>Voordat u begint
 
 1. [Bekijk de typen failback](failover-failback-overview.md#hyper-v-reprotectionfailback) die u kunt gebruiken: herstel naar de oorspronkelijke locatie en herstel naar een alternatieve locatie.
-2. Zorg ervoor dat de virtuele machines van Azure gebruikmaken van een opslag account en geen beheerde schijven. Failback van virtuele Hyper-V-machines die zijn gerepliceerd met Managed disks, wordt niet ondersteund.
+2. Zorg ervoor dat de virtuele machines van Azure gebruikmaken van een opslag account en geen beheerde schijven. Failback van virtuele Hyper-V-machines, waarvoor failover is uitgevoerd naar Azure-machines met Managed disks, wordt niet ondersteund.
 3. Controleer of de on-premises Hyper-V-host (of System Center VMM-server als u gebruikt met Site Recovery) wordt uitgevoerd en is verbonden met Azure. 
 4. Zorg ervoor dat failover en door voeren zijn voltooid voor de Vm's. U hoeft geen specifieke Site Recovery onderdelen in te stellen voor failback van virtuele Hyper-V-machines vanuit Azure.
 5. De tijd die nodig is om gegevens synchronisatie te volt ooien en de on-premises VM te starten, is afhankelijk van een aantal factoren. Als u het downloaden van gegevens wilt versnellen, kunt u de micro soft Recovery Services-agent zo configureren dat er meer threads worden gebruikt om de down load te parallelliseren. [Meer informatie](https://support.microsoft.com/help/3056159/how-to-manage-on-premises-to-azure-protection-network-bandwidth-usage).

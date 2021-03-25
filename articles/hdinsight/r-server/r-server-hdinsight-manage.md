@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 06/19/2019
-ms.openlocfilehash: e4c9124ebd0b61b8db1b1da964355a3c36b5bba5
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: a5e623b0429194db6d03beb674679bd10e337844
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98930565"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104869467"
 ---
 # <a name="manage-ml-services-cluster-on-azure-hdinsight"></a>Een cluster van ML Services beheren in azure HDInsight
 
@@ -26,7 +26,7 @@ In dit artikel leert u hoe u een bestaand ML Services-cluster in azure HDInsight
 
 U kunt meerdere gelijktijdige gebruikers inschakelen voor een cluster van ML Services in HDInsight door meer gebruikers toe te voegen voor het Edge-knoop punt waarop de RStudio-Community-versie wordt uitgevoerd. Wanneer u een HDInsight-cluster maakt, moet u twee gebruikers opgeven, te weten een HTTP-gebruiker en een SSH-gebruiker:
 
-![HDI Azure Portal aanmeldings parameters](./media/r-server-hdinsight-manage/hdi-concurrent-users1.png)
+:::image type="content" source="./media/r-server-hdinsight-manage/hdi-concurrent-users1.png" alt-text="HDI Azure Portal aanmeldings parameters" border="true":::
 
 - **Gebruikersnaam voor aanmelding cluster**: een HTTP-gebruiker voor verificatie via de HDInsight-gateway die wordt gebruikt voor het beveiligen van de HDInsight-clusters die u hebt gemaakt. Deze HTTP-gebruiker wordt gebruikt voor toegang tot de Apache Ambari-gebruikers interface, Apache Hadoop garen gebruikers interface en andere GEBRUIKERSINTERFACE onderdelen.
 - **Secure Shell (SSH)-gebruikersnaam**: een SSH-gebruiker voor toegang tot het cluster via Secure Shell. Deze gebruiker is een gebruiker in het Linux-systeem voor alle hoofdknooppunten, werkknooppunten en Edge-knooppunten. U kunt Secure Shell gebruiken voor toegang tot alle knooppunten in een extern cluster.
@@ -63,7 +63,7 @@ sudo passwd <yournewusername>
 
 In de volgende scherm afbeelding ziet u de uitvoer.
 
-![scherm opname-uitvoer van gelijktijdige gebruikers](./media/r-server-hdinsight-manage/hdi-concurrent-users2.png)
+:::image type="content" source="./media/r-server-hdinsight-manage/hdi-concurrent-users2.png" alt-text="scherm opname-uitvoer van gelijktijdige gebruikers" border="true":::
 
 Wanneer u wordt gevraagd naar ' Huidig Kerberos-wacht woord: ', drukt u op **Enter** om het te negeren. De `-m`-optie in de opdracht `useradd` geeft aan dat het systeem een basismap voor de gebruiker maakt die vereist is voor RStudio Community-versie.
 
@@ -211,7 +211,7 @@ Als u R-pakketten wilt installeren op de worker-knoop punten van het cluster, mo
    > 2. Voor sommige R-pakketten zijn aanvullende Linux-systeembibliotheken vereist. Voor het gemak wordt de HDInsight ML-service vooraf geïnstalleerd met de afhankelijkheden die nodig zijn voor de populairste 100 meest populaire R-pakketten. Als voor de R-pakketten die u wilt installeren, meer bibliotheken zijn vereist, downloadt u het standaardscript dat hier wordt gebruikt, en voegt u stappen toe om de systeembibliotheken te installeren. Vervolgens moet u het gewijzigde script uploaden naar een openbare blobcontainer in Azure-opslag en het gewijzigde script gebruiken om de pakketten te installeren.
    >    Zie [Ontwikkeling van scriptacties](../hdinsight-hadoop-script-actions-linux.md) voor meer informatie over het ontwikkelen van scriptacties.
 
-   ![Azure Portal script actie verzenden](./media/r-server-hdinsight-manage/submit-script-action.png)
+   :::image type="content" source="./media/r-server-hdinsight-manage/submit-script-action.png" alt-text="Azure Portal script actie verzenden" border="true":::
 
 4. Selecteer **Maken** om het script uit te voeren. Nadat het script is voltooid, zijn de R-pakketten beschikbaar op alle werkknooppunten.
 

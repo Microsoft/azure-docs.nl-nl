@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/27/2020
 ms.author: trbye
-ms.openlocfilehash: 4a4705647b90d29f47e37b88531f3432c6a2f448
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: b68fb8cf5458081f96febbac75fd393a80345f60
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102434475"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105043204"
 ---
 Bij het ontwikkelen voor macOS zijn er drie spraak-Sdk's beschikbaar.
 
@@ -51,7 +51,7 @@ end
 
 :::row:::
     :::column span="3":::
-        Xamarin. Mac biedt de volledige macOS SDK voor .NET-ontwikkel aars om systeem eigen Mac-toepassingen te bouwen met C#. Zie <a href="https://docs.microsoft.com/xamarin/mac/" target="_blank">Xamarin. Mac </a>voor meer informatie.
+        Xamarin. Mac biedt de volledige macOS SDK voor .NET-ontwikkel aars om systeem eigen Mac-toepassingen te bouwen met C#. Zie <a href="/xamarin/mac/" target="_blank">Xamarin. Mac </a>voor meer informatie.
     :::column-end:::
     :::column:::
         <br>

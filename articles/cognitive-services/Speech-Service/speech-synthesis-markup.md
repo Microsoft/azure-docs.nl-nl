@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: trbye
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: aa5e499df976c08fef8f0b81eff1e189eebb5503
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.openlocfilehash: e78d98454ab374866f6fa18ec26a66837f749bfa
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/24/2021
-ms.locfileid: "105026305"
+ms.locfileid: "105046297"
 ---
 # <a name="improve-synthesis-with-speech-synthesis-markup-language-ssml"></a>De synthese verbeteren met Markup Language voor spraak synthese (SSML)
 
@@ -117,7 +117,7 @@ Afhankelijk van de taal van de Speech SDK, stelt u de `"SpeechServiceResponse_Sy
 
 # <a name="c"></a>[C#](#tab/csharp)
 
-Zie <a href="https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechconfig.setproperty" target="_blank"> `SetProperty` </a>voor meer informatie.
+Zie <a href="/dotnet/api/microsoft.cognitiveservices.speech.speechconfig.setproperty" target="_blank"> `SetProperty` </a>voor meer informatie.
 
 ```csharp
 speechConfig.SetProperty(
@@ -126,7 +126,7 @@ speechConfig.SetProperty(
 
 # <a name="c"></a>[C++](#tab/cpp)
 
-Zie <a href="https://docs.microsoft.com/cpp/cognitive-services/speech/speechconfig#setproperty" target="_blank"> `SetProperty` </a>voor meer informatie.
+Zie <a href="/cpp/cognitive-services/speech/speechconfig#setproperty" target="_blank"> `SetProperty` </a>voor meer informatie.
 
 ```cpp
 speechConfig->SetProperty(
@@ -135,7 +135,7 @@ speechConfig->SetProperty(
 
 # <a name="java"></a>[Java](#tab/java)
 
-Zie <a href="https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.speechconfig.setproperty#com_microsoft_cognitiveservices_speech_SpeechConfig_setProperty_String_String_" target="_blank"> `setProperty` </a>voor meer informatie.
+Zie <a href="/java/api/com.microsoft.cognitiveservices.speech.speechconfig.setproperty#com_microsoft_cognitiveservices_speech_SpeechConfig_setProperty_String_String_" target="_blank"> `setProperty` </a>voor meer informatie.
 
 ```java
 speechConfig.setProperty(
@@ -144,7 +144,7 @@ speechConfig.setProperty(
 
 # <a name="python"></a>[Python](#tab/python)
 
-Zie <a href="https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechconfig#set-property-by-name-property-name--str--value--str-" target="_blank"> `set_property_by_name` </a>voor meer informatie.
+Zie <a href="/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechconfig#set-property-by-name-property-name--str--value--str-" target="_blank"> `set_property_by_name` </a>voor meer informatie.
 
 ```python
 speech_config.set_property_by_name(
@@ -153,7 +153,7 @@ speech_config.set_property_by_name(
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-Zie <a href="https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/speechconfig#setproperty-string--string-" target="_blank"> `setProperty` </a>voor meer informatie.
+Zie <a href="/javascript/api/microsoft-cognitiveservices-speech-sdk/speechconfig#setproperty-string--string-" target="_blank"> `setProperty` </a>voor meer informatie.
 
 ```javascript
 speechConfig.setProperty(
@@ -162,7 +162,7 @@ speechConfig.setProperty(
 
 # <a name="objective-c"></a>[Objective-C](#tab/objectivec)
 
-Zie <a href="https://docs.microsoft.com/objectivec/cognitive-services/speech/spxspeechconfiguration#setpropertytobyname" target="_blank"> `setPropertyTo` </a>voor meer informatie.
+Zie <a href="/objectivec/cognitive-services/speech/spxspeechconfiguration#setpropertytobyname" target="_blank"> `setPropertyTo` </a>voor meer informatie.
 
 ```objectivec
 [speechConfig setPropertyTo:@"false" byName:@"SpeechServiceResponse_Synthesis_WordBoundaryEnabled"];
@@ -170,7 +170,7 @@ Zie <a href="https://docs.microsoft.com/objectivec/cognitive-services/speech/spx
 
 # <a name="swift"></a>[Swift](#tab/swift)
 
-Zie <a href="https://docs.microsoft.com/objectivec/cognitive-services/speech/spxspeechconfiguration#setpropertytobyname" target="_blank"> `setPropertyTo` </a>voor meer informatie.
+Zie <a href="/objectivec/cognitive-services/speech/spxspeechconfiguration#setpropertytobyname" target="_blank"> `setPropertyTo` </a>voor meer informatie.
 
 ```swift
 speechConfig!.setPropertyTo(

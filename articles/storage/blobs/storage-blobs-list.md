@@ -1,26 +1,24 @@
 ---
-title: Blobs weer geven met .NET-Azure Storage
-description: Meer informatie over het weer geven van blobs in een container in uw Azure Storage-account met behulp van de .NET-client bibliotheek. Code voorbeelden laten zien hoe blobs in een platte lijst worden weer gegeven of hoe blobs hiërarchisch moeten worden vermeld, alsof ze in mappen of mappen zijn ingedeeld.
+title: Blobs met Azure Storage-Api's weer geven
+description: Meer informatie over het weer geven van blobs in uw opslag account met behulp van de Azure Storage-client bibliotheken. Code voorbeelden laten zien hoe blobs in een platte lijst worden weer gegeven of hoe blobs hiërarchisch moeten worden vermeld, alsof ze in mappen of mappen zijn ingedeeld.
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 11/16/2020
+ms.date: 03/24/2021
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-csharp
-ms.openlocfilehash: ddd19c90c8c47016497e2c3b00e04595a94e7715
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: ff20b8bd0aab94cadadddbb7a4b7b32b1db1ee85
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "95543065"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105046939"
 ---
-# <a name="list-blobs-with-net"></a>Blobs weer geven met .NET
+# <a name="list-blobs-with-azure-storage-client-libraries"></a>Blobs met Azure Storage-client bibliotheken weer geven
 
 Wanneer u blobs uit uw code opneemt, kunt u een aantal opties opgeven om te beheren hoe de resultaten van Azure Storage worden geretourneerd. U kunt het aantal resultaten opgeven dat moet worden geretourneerd in elke set resultaten en vervolgens de volgende sets ophalen. U kunt een voor voegsel opgeven voor het retour neren van blobs waarvan de naam met dat teken of teken reeks begint. En u kunt blobs in een platte lijst structuur of hiërarchisch vermelden. Een hiërarchische vermelding retourneert blobs alsof ze zijn ingedeeld in mappen.
-
-In dit artikel wordt beschreven hoe u blobs kunt weer geven met behulp [van de Azure Storage-client bibliotheek voor .net](/dotnet/api/overview/azure/storage).  
 
 ## <a name="understand-blob-listing-options"></a>Informatie over de opties voor BLOB-vermeldingen
 
@@ -45,7 +43,9 @@ Als u de blobs in een container wilt weer geven, roept u een van deze methoden a
 - [CloudBlobContainer. ListBlobsSegmented](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.listblobssegmented)
 - [CloudBlobContainer. ListBlobsSegmentedAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.listblobssegmentedasync)
 
-De Overloads voor deze methoden bieden extra opties voor het beheren van de manier waarop blobs door de vermelding worden geretourneerd. Deze opties worden in de volgende secties beschreven.
+# <a name="python-v12"></a>[Python-V12](#tab/python)
+
+- [ContainerClient.list_blobs](/azure/developer/python/sdk/storage/azure-storage-blob/azure.storage.blob.containerclient#list-blobs-name-starts-with-none--include-none----kwargs-)
 
 ---
 
@@ -61,13 +61,25 @@ Als u de lijst met blobs wilt filteren, geeft u een teken reeks op voor de `pref
 
 U kunt BLOB-meta gegevens met de resultaten retour neren.
 
-- Als u de .NET V12 SDK gebruikt, geeft u de **meta gegevens** waarde voor de [BlobTraits](/dotnet/api/azure.storage.blobs.models.blobtraits) -inventarisatie op.
+# <a name="net-v12"></a>[.NET v12](#tab/dotnet)
 
-- Als u de .NET V11 SDK gebruikt, geeft u de **meta gegevens** waarde voor de [BlobListingDetails](/dotnet/api/microsoft.azure.storage.blob.bloblistingdetails) -inventarisatie op. Azure Storage bevat meta gegevens voor elke geretourneerde blob, dus u hoeft niet een van de **FetchAttributes** -methoden in deze context aan te roepen om de BLOB-meta gegevens op te halen.
+Geef de **meta gegevens** waarde op voor de [BlobTraits](/dotnet/api/azure.storage.blobs.models.blobtraits) -inventarisatie.
+
+# <a name="net-v11"></a>[.NET v11](#tab/dotnet11)
+
+Geef de **meta gegevens** waarde op voor de [BlobListingDetails](/dotnet/api/microsoft.azure.storage.blob.bloblistingdetails) -inventarisatie. Azure Storage bevat meta gegevens voor elke geretourneerde blob, dus u hoeft niet een van de **FetchAttributes** -methoden in deze context aan te roepen om de BLOB-meta gegevens op te halen.
+
+# <a name="python-v12"></a>[Python-V12](#tab/python)
+
+Geef `metadata` voor de `include=` para meter op bij het aanroepen van [list_blobs](/azure/developer/python/sdk/storage/azure-storage-blob/azure.storage.blob.containerclient#list-blobs-name-starts-with-none--include-none----kwargs-).
+
+---
 
 ### <a name="list-blob-versions-or-snapshots"></a>BLOB-versies of moment opnamen weer geven
 
-Als u BLOB-versies of moment opnamen wilt weer geven met de .NET V12-client bibliotheek, geeft u de para meter [BlobStates](/dotnet/api/azure.storage.blobs.models.blobstates) op met het veld **versie** of **moment opname** . Versies en moment opnamen worden weer gegeven van oudste naar nieuwste. Zie [BLOB-versies](versioning-enable.md#list-blob-versions)weer geven voor meer informatie over versies van vermeldingen.
+- Als u BLOB-versies of moment opnamen wilt weer geven met de .NET V12-client bibliotheek, geeft u de para meter [BlobStates](/dotnet/api/azure.storage.blobs.models.blobstates) op met het veld **versie** of **moment opname** . Versies en moment opnamen worden weer gegeven van oudste naar nieuwste. Zie [BLOB-versies](versioning-enable.md#list-blob-versions)weer geven voor meer informatie over versies van vermeldingen.
+
+- Als u wilt weer geven van het aantal moment opnamen met de python V12-client bibliotheek, geeft u `num_snapshots` in de `include=` para meter op bij het aanroepen van [list_blobs](/azure/developer/python/sdk/storage/azure-storage-blob/azure.storage.blob.containerclient#list-blobs-name-starts-with-none--include-none----kwargs-).
 
 ### <a name="flat-listing-versus-hierarchical-listing"></a>Platte aanbieding versus hiërarchische lijst
 
@@ -135,11 +147,15 @@ private static async Task ListBlobsFlatListingAsync(CloudBlobContainer container
 }
 ```
 
+# <a name="python-v12"></a>[Python-V12](#tab/python)
+
+:::code language="python" source="~/azure-storage-snippets/blobs/howto/python/python-v12/list_blobs.py" id="Snippet_ListBlobs":::
+
 ---
 
 De voorbeeld uitvoer is vergelijkbaar met:
 
-```
+```console
 Blob name: FolderA/blob1.txt
 Blob name: FolderA/blob2.txt
 Blob name: FolderA/blob3.txt
@@ -153,7 +169,7 @@ Blob name: FolderA/FolderB/FolderC/blob3.txt
 
 ## <a name="use-a-hierarchical-listing"></a>Een hiërarchische lijst gebruiken
 
-Wanneer u een vermelding hiërarchisch aanroept, retourneert Azure Storage de virtuele mappen en blobs op het eerste niveau van de hiërarchie. De eigenschap [prefix](/dotnet/api/microsoft.azure.storage.blob.cloudblobdirectory.prefix) van elke virtuele map wordt zo ingesteld dat u het voor voegsel in een recursieve aanroep kunt door geven om de volgende map op te halen.
+Wanneer u een vermelding hiërarchisch aanroept, retourneert Azure Storage de virtuele mappen en blobs op het eerste niveau van de hiërarchie.
 
 # <a name="net-v12"></a>[.NET v12](#tab/dotnet)
 
@@ -164,6 +180,8 @@ In het volgende voor beeld ziet u de blobs in de opgegeven container met behulp 
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/CRUD.cs" id="Snippet_ListBlobsHierarchicalListing":::
 
 # <a name="net-v11"></a>[.NET v11](#tab/dotnet11)
+
+De eigenschap [prefix](/dotnet/api/microsoft.azure.storage.blob.cloudblobdirectory.prefix) van elke virtuele map wordt zo ingesteld dat u het voor voegsel in een recursieve aanroep kunt door geven om de volgende map op te halen.
 
 Als u blobs hiërarchisch wilt weer geven, stelt u de `useFlatBlobListing` para meter van de vermeldings methode in op **Onwaar**.
 
@@ -222,11 +240,19 @@ private static async Task ListBlobsHierarchicalListingAsync(CloudBlobContainer c
 }
 ```
 
+# <a name="python-v12"></a>[Python-V12](#tab/python)
+
+Als u blobs hiërarchisch wilt weer geven, roept u de [walk_blobs](/azure/developer/python/sdk/storage/azure-storage-blob/azure.storage.blob.containerclient#walk-blobs-name-starts-with-none--include-none--delimiter--------kwargs-) methode aan.
+
+In het volgende voor beeld ziet u de blobs in de opgegeven container met behulp van een hiërarchische lijst, met een optionele segment grootte die is opgegeven en schrijft u de naam van de BLOB naar het console venster.
+
+:::code language="python" source="~/azure-storage-snippets/blobs/howto/python/python-v12/list_blobs.py" id="Snippet_WalkHierarchy":::
+
 ---
 
 De voorbeeld uitvoer is vergelijkbaar met:
 
-```
+```console
 Virtual directory prefix: FolderA/
 Blob name: FolderA/blob1.txt
 Blob name: FolderA/blob2.txt

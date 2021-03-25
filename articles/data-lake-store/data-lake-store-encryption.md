@@ -8,12 +8,12 @@ ms.service: data-lake-store
 ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: yagupta
-ms.openlocfilehash: f924cb7462f7f8c9939ec261b7ef200ceb8ea70b
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 51c9f924c6fe3ac6db86d60e26749d35bc4ab733
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "92109150"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105108941"
 ---
 # <a name="encryption-of-data-in-azure-data-lake-storage-gen1"></a>Versleuteling van gegevens in Azure Data Lake Storage Gen1
 
@@ -135,4 +135,4 @@ Houd er rekening mee dat als u de standaard opties voor versleuteling gebruikt, 
 Deze bewerking duurt minder dan twee minuten en er is geen verwachte uitvaltijd vanwege het rouleren van de sleutel. Nadat de bewerking is voltooid, wordt de nieuwe versie van de sleutel gebruikt.
 
 > [!IMPORTANT]
-> Nadat de sleutelroulatiebewerking voltooid is, wordt de oude versie van de sleutel niet meer actief gebruikt voor het versleutelen van uw gegevens.  In zeldzame gevallen van onverwachte fouten waardoor zelfs redundante exemplaren van uw gegevens zijn getroffen, kunnen gegevens echter mogelijk worden hersteld vanuit een back-up waarvoor nog de oude sleutel wordt gebruikt. Bewaar een kopie van de vorige versie van de versleutelingssleutel, om ervoor te zorgen dat uw gegevens in deze zeldzame omstandigheden toegankelijk zijn. Zie [richt lijnen voor herstel na nood gevallen voor gegevens in data Lake Storage gen1](data-lake-store-disaster-recovery-guidance.md) voor aanbevolen procedures voor het plannen van herstel na nood gevallen.
+> Nadat de bewerking voor het wijzigen van de sleutel is voltooid, wordt de oude versie van de sleutel niet meer actief gebruikt voor het versleutelen van nieuwe gegevens. Het kan echter voor komen dat voor het openen van oudere gegevens mogelijk de oude sleutel is vereist. Als u dergelijke oudere gegevens wilt lezen, moet u de oude sleutel niet verwijderen

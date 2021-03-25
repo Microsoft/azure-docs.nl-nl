@@ -7,12 +7,12 @@ ms.author: alkarche
 ms.date: 9/15/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 2fd0d9d2b6e80d54bdd45b7a13fab7bfa33841c9
-ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
+ms.openlocfilehash: de16932f1f77e569302b222fe2948de3046fabd6
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104889464"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104950587"
 ---
 # <a name="ingest-iot-hub-telemetry-into-azure-digital-twins"></a>IoT Hub telemetrie opnemen in azure Digital Apparaatdubbels
 
@@ -39,7 +39,7 @@ In deze procedure wordt beschreven hoe u berichten van IoT Hub naar Azure Digita
 
 Wanneer een Tempe ratuur-telemetrie-gebeurtenis wordt verzonden door het Thermo staat-apparaat, verwerkt een functie de telemetrie en de eigenschap *Tempe ratuur* van het digitale dubbele moet worden bijgewerkt. Dit scenario wordt beschreven in een diagram hieronder:
 
-:::image type="content" source="media/how-to-ingest-iot-hub-data/events.png" alt-text="Een diagram waarin een stroom diagram wordt weer gegeven. In de grafiek verzendt een IoT Hub apparaat een temperatuur telemetrie via IoT Hub naar een functie in azure, waarmee een temperatuur eigenschap wordt bijgewerkt op een dubbele in azure Digital Apparaatdubbels." border="false":::
+:::image type="content" source="media/how-to-ingest-iot-hub-data/events.png" alt-text="Diagram van IoT Hub apparaat het verzenden van de temperatuur-telemetrie via IoT Hub naar een functie in azure, waarmee een temperatuur eigenschap wordt bijgewerkt op een dubbele in azure Digital Apparaatdubbels." border="false":::
 
 ## <a name="add-a-model-and-twin"></a>Een model en een dubbel toevoegen
 
@@ -47,14 +47,7 @@ In deze sectie gaat u een [digitale](concepts-twins-graph.md) Apparaatdubbels in
 
 Als u een thermo staat wilt maken, moet u eerst het Thermo staats [model](concepts-models.md) uploaden naar uw exemplaar, waarin de eigenschappen van een thermo staat worden beschreven en later worden gebruikt voor het maken van de dubbele. 
 
-Het model ziet er als volgt uit:
-:::code language="json" source="~/digital-twins-docs-samples/models/Thermostat.json":::
-
-Als u **dit model wilt uploaden naar uw apparaatdubbels-exemplaar**, voert u de volgende Azure cli-opdracht uit, die het bovenstaande model uploadt als inline JSON. U kunt de opdracht uitvoeren in [Azure Cloud shell](/cloud-shell/overview.md) in uw browser of op uw computer als u de CLI lokaal hebt [geïnstalleerd](/cli/azure/install-azure-cli).
-
-```azurecli-interactive
-az dt model create --models '{  "@id": "dtmi:contosocom:DigitalTwins:Thermostat;1",  "@type": "Interface",  "@context": "dtmi:dtdl:context;2",  "contents": [    {      "@type": "Property",      "name": "Temperature",      "schema": "double"    }  ]}' -n {digital_twins_instance_name}
-```
+[!INCLUDE [digital-twins-thermostat-model-upload.md](../../includes/digital-twins-thermostat-model-upload.md)]
 
 Vervolgens moet u **een dubbele maken met behulp van dit model**. Gebruik de volgende opdracht om een thermo staat te maken met de naam **thermostat67** en stel 0,0 in als aanvankelijke temperatuur waarde.
 
@@ -62,13 +55,8 @@ Vervolgens moet u **een dubbele maken met behulp van dit model**. Gebruik de vol
 az dt twin create --dtmi "dtmi:contosocom:DigitalTwins:Thermostat;1" --twin-id thermostat67 --properties '{"Temperature": 0.0,}' --dt-name {digital_twins_instance_name}
 ```
 
->[!NOTE]
-> Als u Cloud Shell in de Power shell-omgeving gebruikt, moet u mogelijk de aanhalings tekens in de inline JSON-velden voor hun waarden weglaten worden geparseerd. Dit zijn de opdrachten voor het uploaden van het model en het maken van de dubbele met deze wijziging:
->
-> Model uploaden:
-> ```azurecli-interactive
-> az dt model create --models '{  \"@id\": \"dtmi:contosocom:DigitalTwins:Thermostat;1\",  \"@type\": \"Interface\",  \"@context\": \"dtmi:dtdl:context;2\",  \"contents\": [    {      \"@type\": \"Property\",      \"name\": \"Temperature\",      \"schema\": \"double\"    }  ]}' -n {digital_twins_instance_name}
-> ```
+> [!Note]
+> Als u Cloud Shell in de Power shell-omgeving gebruikt, moet u mogelijk de aanhalings tekens in de inline JSON-velden voor hun waarden weglaten worden geparseerd. Hier volgt de opdracht voor het maken van de dubbele met deze wijziging:
 >
 > Maken van twee:
 > ```azurecli-interactive
@@ -117,7 +105,7 @@ Sla uw functie code op.
 
 #### <a name="step-3-publish-the-function-app-to-azure"></a>Stap 3: de functie-app publiceren in azure
 
-Publiceer het project naar een functie-app in Azure.
+Publiceer het project met de functie *IoTHubtoTwins. cs* in een functie-app in Azure.
 
 Zie de sectie [**de functie-app publiceren in azure**](how-to-create-azure-function.md#publish-the-function-app-to-azure) van het artikel *How to: een functie voor het verwerken van gegevens* voor meer informatie over hoe u dit doet.
 

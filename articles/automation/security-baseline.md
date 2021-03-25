@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/17/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 55440c3bec940e0cd5fd4c4d644801e7012b5e95
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 6ab310681ae7b63cb4e9f4e07984983727ae5ff2
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101701469"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104953915"
 ---
 # <a name="azure-security-baseline-for-automation"></a>Azure-beveiligings basislijn voor Automation
 
@@ -40,7 +40,7 @@ Voor meer isolatie van uw runbooks kunt u Hybrid Runbook Workers gebruiken die w
 
 - [Azure Firewall implementeren en configureren](../firewall/tutorial-firewall-deploy-portal.md)
 
-- [Runbook Execution Environment](https://docs.microsoft.com/azure/automation/automation-runbook-execution#runbook-execution-environment)
+- [Runbook Execution Environment](./automation-runbook-execution.md#runbook-execution-environment)
 
 **Verantwoordelijkheid**: Klant
 
@@ -132,7 +132,7 @@ U kunt ook Azure-blauw drukken gebruiken om grootschalige Azure-implementaties t
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Voor beelden Azure Policy voor netwerken](https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#network)
+- [Voor beelden Azure Policy voor netwerken](../governance/policy/samples/built-in-policies.md#network)
 
 - [Een Azure Blueprint maken](../governance/blueprints/create-blueprint-portal.md)
 
@@ -162,9 +162,9 @@ U kunt Azure PowerShell of Azure CLI gebruiken om op basis van hun labels acties
 
 **Hulp**: Azure-activiteiten logboek gebruiken om resource configuraties te bewaken en wijzigingen in uw netwerk bronnen te detecteren. Maak waarschuwingen in Azure Monitor die worden geactiveerd wanneer er wijzigingen in kritieke resources plaatsvinden.
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](/azure/azure-monitor/platform/activity-log-view)
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Waarschuwingen maken in Azure Monitor](/azure/azure-monitor/platform/activity-log#view-the-activity-log)
+- [Waarschuwingen maken in Azure Monitor](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
 **Verantwoordelijkheid**: Klant
 
@@ -182,7 +182,7 @@ U kunt ook gegevens in-of uitschakelen voor Azure Sentinel of een SIEM van derde
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](/azure/azure-monitor/platform/diagnostic-settings)
+- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md)
 
 - [Aan de slag met Azure Monitor en integratie van SIEM van derden](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/)
 
@@ -202,9 +202,9 @@ U kunt ook gegevens in-of uitschakelen voor Azure Sentinel of een SIEM van derde
 
 **Hulp**: Schakel Azure monitor in voor toegang tot uw audit-en activiteiten logboeken, waaronder gebeurtenis bron, datum, gebruiker, tijds tempel, bron adressen, doel adressen en andere nuttige elementen. 
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](/azure/azure-monitor/platform/diagnostic-settings) 
+- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md) 
 
-- [Activiteiten logboek gebeurtenissen van Azure bekijken en ophalen](/azure/azure-monitor/platform/activity-log#view-the-activity-log)
+- [Activiteiten logboek gebeurtenissen van Azure bekijken en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
 **Verantwoordelijkheid**: Klant
 
@@ -214,9 +214,9 @@ U kunt ook gegevens in-of uitschakelen voor Azure Sentinel of een SIEM van derde
 
 **Hulp**: stel binnen Azure monitor uw Bewaar periode voor log Analytics werk ruimte in volgens de nalevings voorschriften van uw organisatie. Gebruik Azure Storage-accounts voor lange termijn/archiverings opslag.
 
-- [De Bewaar periode voor gegevens wijzigen in Log Analytics](/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period)
+- [De Bewaar periode voor gegevens wijzigen in Log Analytics](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
-- [Details van gegevens retentie voor Automation-accounts](https://docs.microsoft.com/azure/automation/automation-managing-data#data-retention)
+- [Details van gegevens retentie voor Automation-accounts](./automation-managing-data.md#data-retention)
 
 **Verantwoordelijkheid**: Klant
 
@@ -230,9 +230,9 @@ U kunt ook gegevens in-of uitschakelen voor Azure Sentinel of een SIEM van derde
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
-- [Logboek query's in Azure Monitor begrijpen](/azure/azure-monitor/log-query/log-analytics-tutorial)
+- [Logboek query's in Azure Monitor begrijpen](../azure-monitor/logs/log-analytics-tutorial.md)
 
-- [Aangepaste query's uitvoeren in Azure Monitor](/azure/azure-monitor/log-query/get-started-queries)
+- [Aangepaste query's uitvoeren in Azure Monitor](../azure-monitor/logs/get-started-queries.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -248,7 +248,7 @@ U kunt ook gegevens naar Azure-Sentinel inschakelen en op het bord zetten.
 
 - [Waarschuwingen beheren in Azure Security Center](../security-center/security-center-managing-and-responding-alerts.md)
 
-- [Een waarschuwing over Azure Monitor logboek gegevens](/azure/azure-monitor/learn/tutorial-response)
+- [Een waarschuwing over Azure Monitor logboek gegevens](../azure-monitor/alerts/tutorial-response.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -296,7 +296,7 @@ U kunt ook gegevens naar Azure-Sentinel inschakelen en op het bord zetten.
 
 U kunt ook Just-in-time/alleen-voldoende toegang inschakelen met behulp van Azure Active Directory (Azure AD) Privileged Identity Management geprivilegieerde rollen voor micro soft-Services en Azure Resource Manager.
 
-- [Meer informatie over Privileged Identity Management](/azure/active-directory/privileged-identity-management/)
+- [Meer informatie over Privileged Identity Management](../active-directory/privileged-identity-management/index.yml)
 
 - [Een Uitvoeren als- of klassiek Uitvoeren als-account verwijderen](delete-run-as-account.md)
 
@@ -352,7 +352,7 @@ U kunt ook Just-in-time/alleen-voldoende toegang inschakelen met behulp van Azur
 
 - [Azure-activiteitenlogboeken integreren in Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
-- [Actie groepen configureren voor aangepaste waarschuwingen en meldingen](/azure/azure-monitor/platform/action-groups)
+- [Actie groepen configureren voor aangepaste waarschuwingen en meldingen](../azure-monitor/alerts/action-groups.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -374,7 +374,7 @@ U kunt ook Just-in-time/alleen-voldoende toegang inschakelen met behulp van Azur
 
 - [Een Azure AD-instantie maken en configureren](../active-directory-domain-services/tutorial-create-instance.md)
 
-- [Runbook-verificatie gebruiken met beheerde identiteiten](https://docs.microsoft.com/azure/automation/automation-hrw-run-runbooks#runbook-auth-managed-identities)
+- [Runbook-verificatie gebruiken met beheerde identiteiten](./automation-hrw-run-runbooks.md#runbook-auth-managed-identities)
 
 **Verantwoordelijkheid**: Klant
 
@@ -384,7 +384,7 @@ U kunt ook Just-in-time/alleen-voldoende toegang inschakelen met behulp van Azur
 
 **Hulp**: Azure Active Directory (Azure AD) biedt logboeken waarmee u verlopen accounts kunt detecteren. Daarnaast kunt u Azure Identity Access revisies gebruiken om groepslid maatschappen en de toegang tot bedrijfs toepassingen en roltoewijzingen op efficiënte wijze te beheren. Gebruikers toegang kan regel matig worden gecontroleerd om ervoor te zorgen dat alleen de juiste gebruikers toegang hebben. Wanneer u een run as-account voor Automation-accounts gebruikt voor uw runbooks, moet u ervoor zorgen dat deze service-principals ook worden bijgehouden in uw inventaris, omdat deze vaak verhoogde machtigingen hebben. Verwijder ongebruikte run as-accounts om uw blootgestelde aanvals oppervlak te minimaliseren.
 
-- [Meer informatie over Azure AD-rapportage](/azure/active-directory/reports-monitoring/)
+- [Meer informatie over Azure AD-rapportage](../active-directory/reports-monitoring/index.yml)
 
 - [Beoordelingen over Azure Identity Access gebruiken](../active-directory/governance/access-reviews-overview.md)
 
@@ -412,7 +412,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 **Hulp**: gebruik Azure Active Directory (Azure AD) risico-en identiteits beveiligings functies voor het configureren van automatische antwoorden op gedetecteerde verdachte acties die betrekking hebben op gebruikers identiteiten voor uw netwerk bron. U kunt ook gegevens opnemen in azure Sentinel voor verder onderzoek.
 
-- [Riskante Azure AD-aanmeldingen weergeven](/azure/active-directory/reports-monitoring/concept-risky-sign-ins)
+- [Riskante Azure AD-aanmeldingen weergeven](../active-directory/identity-protection/overview-identity-protection.md)
 
 - [Risico beleid voor identiteits beveiliging configureren en inschakelen](../active-directory/identity-protection/howto-identity-protection-configure-risk-policies.md)
 
@@ -488,7 +488,7 @@ Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt mic
 
 Volg Azure Security Center aanbevelingen voor het versleutelen van de rest en de versleuteling in de door Voer, indien van toepassing.
 
-- [Meer informatie over versleuteling in transit met Azure](https://docs.microsoft.com/azure/security/fundamentals/encryption-overview#encryption-of-data-in-transit)
+- [Meer informatie over versleuteling in transit met Azure](../security/fundamentals/encryption-overview.md#encryption-of-data-in-transit)
 
 - [Azure Automation TLS 1,2 afdwingen](../active-directory/hybrid/reference-connect-tls-enforcement.md)
 
@@ -510,7 +510,7 @@ Volg Azure Security Center aanbevelingen voor het versleutelen van de rest en de
 
 - [Azure RBAC configureren](../role-based-access-control/role-assignments-portal.md)
 
-- [Runbook-machtigingen voor een Hybrid Runbook Worker](https://docs.microsoft.com/azure/automation/automation-hybrid-runbook-worker#runbook-permissions-for-a-hybrid-runbook-worker)
+- [Runbook-machtigingen voor een Hybrid Runbook Worker](./automation-hybrid-runbook-worker.md#runbook-permissions-for-a-hybrid-runbook-worker)
 
 - [Rolmachtigingen en beveiliging beheren](automation-role-based-access-control.md)
 
@@ -538,7 +538,7 @@ Bij het gebruik van Hybrid Runbook Workers worden de virtuele schijven op de vir
 
 - [Azure Disk Encryption voor Windows-Vm's](../virtual-machines/windows/disk-encryption-overview.md)
 
-- [Gebruik van door de klant beheerde sleutels voor een Automation-account](https://docs.microsoft.com/azure/automation/automation-secure-asset-encryption#use-of-customer-managed-keys-for-an-automation-account)
+- [Gebruik van door de klant beheerde sleutels voor een Automation-account](./automation-secure-asset-encryption.md#use-of-customer-managed-keys-for-an-automation-account)
 
 - [Beheerde variabelen in Azure Automation](shared-resources/variables.md)
 
@@ -554,9 +554,9 @@ Bij het gebruik van Hybrid Runbook Workers worden de virtuele schijven op de vir
 
 **Hulp**: gebruik Azure monitor met Azure-activiteiten logboek om waarschuwingen te maken voor wanneer wijzigingen worden aangebracht in essentiële Azure-resources, zoals netwerk onderdelen, Azure Automation accounts en runbooks. 
 
-- [Diagnostische logboek registratie voor een netwerk beveiligings groep](https://docs.microsoft.com/azure/private-link/private-link-overview#logging-and-monitoring)
+- [Diagnostische logboek registratie voor een netwerk beveiligings groep](../private-link/private-link-overview.md#logging-and-monitoring)
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](/azure/azure-monitor/platform/alerts-activity-log)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -689,7 +689,7 @@ Daarnaast kunt u met de Azure-resource grafiek bronnen in abonnementen opvragen/
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Een specifiek resource type weigeren met Azure Policy](https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#general)
+- [Een specifiek resource type weigeren met Azure Policy](../governance/policy/samples/built-in-policies.md#general)
 
 **Verantwoordelijkheid**: Klant
 
@@ -771,7 +771,7 @@ U kunt ook aanbevelingen van Azure Security Center gebruiken als een veilige con
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Aliassen gebruiken](https://docs.microsoft.com/azure/governance/policy/concepts/definition-structure#aliases)
+- [Aliassen gebruiken](../governance/policy/concepts/definition-structure.md#aliases)
 
 - [Azure Policy voor beeld van ingebouwde invoeg toepassingen voor Azure Automation](policy-reference.md)
 
@@ -831,7 +831,7 @@ Gebruik de functie integratie van bron beheer om uw runbooks in uw Automation-ac
 
 - [Hoe kan ik een back-up maken van sleutel kluis sleutels in azure?](/powershell/module/az.keyvault/backup-azkeyvaultkey)
 
-- [Gebruik van door de klant beheerde sleutels voor een Automation-account](https://docs.microsoft.com/azure/automation/automation-secure-asset-encryption#use-of-customer-managed-keys-for-an-automation-account)
+- [Gebruik van door de klant beheerde sleutels voor een Automation-account](./automation-secure-asset-encryption.md#use-of-customer-managed-keys-for-an-automation-account)
 
 - [Integratie van bronbeheer gebruiken](source-control-integration.md)
 
@@ -857,9 +857,9 @@ Gebruik de functie integratie van bron beheer om uw runbooks in uw Automation-ac
 
 - [Hoe kan ik een back-up maken van sleutel kluis sleutels in azure?](/powershell/module/az.keyvault/backup-azkeyvaultkey)
 
-- [Gebruik van door de klant beheerde sleutels voor een Automation-account](https://docs.microsoft.com/azure/automation/automation-secure-asset-encryption#use-of-customer-managed-keys-for-an-automation-account)
+- [Gebruik van door de klant beheerde sleutels voor een Automation-account](./automation-secure-asset-encryption.md#use-of-customer-managed-keys-for-an-automation-account)
 
-- [Azure data backup voor Automation-accounts](https://docs.microsoft.com/azure/automation/automation-managing-data#data-backup)
+- [Azure data backup voor Automation-accounts](./automation-managing-data.md#data-backup)
 
 **Verantwoordelijkheid**: Klant
 
@@ -873,7 +873,7 @@ Gebruik de functie integratie van bron beheer om uw runbooks in uw Automation-ac
 
 - [Sleutel kluis sleutels herstellen in azure](/powershell/module/az.keyvault/restore-azkeyvaultkey)
 
-- [Gebruik van door de klant beheerde sleutels voor een Automation-account](https://docs.microsoft.com/azure/automation/automation-secure-asset-encryption#use-of-customer-managed-keys-for-an-automation-account)
+- [Gebruik van door de klant beheerde sleutels voor een Automation-account](./automation-secure-asset-encryption.md#use-of-customer-managed-keys-for-an-automation-account)
 
 **Verantwoordelijkheid**: Klant
 
@@ -987,5 +987,5 @@ Daarnaast kunt u ook duidelijk abonnementen markeren (voor bijvoorbeeld producti
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Overzicht Azure Security Benchmark V2](/azure/security/benchmarks/overview)
-- Meer informatie over [Azure-beveiligingsbasislijnen](/azure/security/benchmarks/security-baselines-overview)
+- Zie [Overzicht Azure Security Benchmark V2](../security/benchmarks/overview.md)
+- Meer informatie over [Azure-beveiligingsbasislijnen](../security/benchmarks/security-baselines-overview.md)

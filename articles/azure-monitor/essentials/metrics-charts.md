@@ -6,12 +6,12 @@ services: azure-monitor
 ms.topic: conceptual
 ms.date: 01/22/2019
 ms.author: vitalyg
-ms.openlocfilehash: d728dfb364cb0f82326a472196cb28d79b85b1e9
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: a8a4f84db140ca442371cb71886bebf9214d3e43
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102031441"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105026535"
 ---
 # <a name="advanced-features-of-the-azure-metrics-explorer"></a>Geavanceerde functies van de Azure Metrics Explorer
 
@@ -261,7 +261,7 @@ Als u op de fout optie klikt, wordt u geleid tot een aangepaste Blade met de fou
 
 ### <a name="common-problems-with-drill-into-logs"></a>Veelvoorkomende problemen met Inzoomen op Logboeken
 
-* Het logboek en de query's zijn uitgeschakeld: als u de aanbevolen logboeken en query's wilt weer geven, moet u de diagnostische logboeken naar Log Analytics verzenden. Lees [dit document](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings) voor meer informatie over hoe u dit doet. 
+* Het logboek en de query's zijn uitgeschakeld: als u de aanbevolen logboeken en query's wilt weer geven, moet u de diagnostische logboeken naar Log Analytics verzenden. Lees [dit document](./diagnostic-settings.md) voor meer informatie over hoe u dit doet. 
 * Er worden alleen activiteiten logboeken weer gegeven. de functie voor het in-en uitzoomen van Logboeken is alleen beschikbaar voor Select Resource providers. Er worden standaard activiteiten logboeken gegeven. 
 
  
@@ -278,4 +278,3 @@ Als er geen gegevens in uw grafiek worden weer gegeven, raadpleegt u de volgende
 ## <a name="next-steps"></a>Volgende stappen
 
 Zie [aangepaste KPI-Dash boards](../app/tutorial-app-dashboards.md)maken voor het maken van Dash boards die kunnen worden uitgevoerd met behulp van metrische gegevens.
-

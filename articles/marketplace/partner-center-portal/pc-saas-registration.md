@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/10/2020
 author: mingshen-ms
 ms.author: mingshen
-ms.openlocfilehash: 39a0830806d2d9c7358d175cae703e9c81c45b02
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: e7bcfe1afc063d89bc6a5339bf62521cd644b8ca
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "93130014"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105048337"
 ---
 # <a name="register-a-saas-application"></a>Een SaaS-toepassing registreren
 
@@ -48,7 +48,7 @@ Elke toepassing die de mogelijkheden van Azure Active Directory wil gebruiken, m
 De **Azure AD-App-ID** is gekoppeld aan uw uitgevers-id, dus zorg ervoor dat dezelfde *App-ID* wordt gebruikt in al uw aanbiedingen.
 
 >[!Note]
->Als een uitgever twee verschillende accounts heeft in het partner centrum, moeten er twee verschillende Azure AD-App-Id's worden gebruikt.  Elk partner account in het partner centrum moet een unieke Azure AD-App-ID gebruiken voor alle SaaS-aanbiedingen die via dit account worden gepubliceerd.
+>Als de uitgever twee of meer verschillende accounts in het partner centrum heeft, kunnen de registratie gegevens van de Azure AD-App alleen in één account worden gebruikt. Met dezelfde Tenant-ID wordt het combi neren van de App-ID voor een aanbieding onder een ander uitgevers account niet ondersteund.
 
 ## <a name="how-to-get-the-publishers-authorization-token"></a>Het autorisatie token van de uitgever ophalen
 

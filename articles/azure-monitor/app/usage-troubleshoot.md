@@ -6,12 +6,12 @@ author: NumberByColors
 ms.author: daviste
 ms.date: 07/11/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: 02d1bd9d204d88ba90218b1254c66ac0da80be85
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: a1d77016fdf94de4fdd574b0d4cbd22d6b0b8490
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "87323499"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105024741"
 ---
 # <a name="troubleshoot-user-behavior-analytics-tools-in-application-insights"></a>Problemen oplossen met hulpprogram ma's voor analyse van gebruikers gedrag in Application Insights
 Hebt u vragen over de [hulpprogram ma's voor analyse van gebruikers gedrag in Application Insights](usage-overview.md): [gebruikers, sessies, gebeurtenissen](usage-segmentation.md), [trechters](usage-funnels.md), [Gebruikersstromen](usage-flows.md), [retentie](usage-retention.md)of cohorten? Hier volgen enkele antwoorden.
@@ -23,7 +23,7 @@ Alle telemetrie-gebeurtenissen in Application Insights hebben een [anonieme gebr
 
 Als u een web-app bewaken, is de eenvoudigste oplossing om de [Application Insights java script SDK](./javascript.md) toe te voegen aan uw app en ervoor te zorgen dat het script fragment wordt geladen op elke pagina die u wilt bewaken. Met de Java script SDK worden automatisch anonieme gebruikers-en sessie-Id's gegenereerd. vervolgens worden telemetrie-gebeurtenissen met deze Id's gevuld wanneer ze vanuit uw app worden verzonden.
 
-Als u een webservice bewaken (geen gebruikers interface), [maakt u een telemetrie-initialisatie functie waarmee de eigenschappen van de anonieme gebruikers-id en de sessie-id worden ingevuld](usage-send-user-context.md) op basis van de begrippen van de service van unieke gebruikers en sessies.
+Als u een webservice bewaken (geen gebruikers interface), [maakt u een telemetrie-initialisatie functie waarmee de eigenschappen van de anonieme gebruikers-id en de sessie-id worden ingevuld](./usage-overview.md) op basis van de begrippen van de service van unieke gebruikers en sessies.
 
 Als uw app [geverifieerde gebruikers-id's](./api-custom-events-metrics.md#authenticated-users)verzendt, kunt u tellen op basis van geverifieerde gebruikers-id's in het hulp programma gebruikers. Kies in de vervolg keuzelijst weer geven de optie geverifieerde gebruikers.
 
@@ -50,4 +50,3 @@ Als uw app te veel aangepaste gebeurtenis namen verzendt, wijzigt u de naam in d
 
 ## <a name="get-help"></a>Hulp vragen
 * [Stack Overflow](https://stackoverflow.com/questions/tagged/ms-application-insights)
-

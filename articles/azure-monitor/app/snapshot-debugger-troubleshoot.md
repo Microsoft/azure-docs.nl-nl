@@ -6,12 +6,12 @@ author: cweining
 ms.author: cweining
 ms.date: 03/07/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: a285f26a406caa88d91da5647b3b79cffc9b614f
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: bd83367ae073e03f03188cdf62cb60faaad7ac97
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102217411"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105026450"
 ---
 # <a name="troubleshoot-problems-enabling-application-insights-snapshot-debugger-or-viewing-snapshots"></a><a id="troubleshooting"></a> Problemen oplossen met het inschakelen van Application Insights Snapshot Debugger of het weer geven van moment opnamen
 Als u Application Insights Snapshot Debugger voor uw toepassing hebt ingeschakeld, maar geen moment opnamen voor uitzonde ringen ziet, kunt u deze instructies gebruiken om problemen op te lossen.
@@ -20,7 +20,7 @@ Er kunnen verschillende redenen zijn waarom moment opnamen niet worden gegeneree
 
 ## <a name="make-sure-youre-using-the-appropriate-snapshot-debugger-endpoint"></a>Zorg ervoor dat u het juiste Snapshot Debugger-eind punt gebruikt
 
-Momenteel zijn de enige regio's waarvoor wijziging van het eind punt is vereist, [Azure Government](https://docs.microsoft.com/azure/azure-government/compare-azure-government-global-azure#application-insights) en [Azure China](https://docs.microsoft.com/azure/china/resources-developer-guide).
+Momenteel zijn de enige regio's waarvoor wijziging van het eind punt is vereist, [Azure Government](../../azure-government/compare-azure-government-global-azure.md#application-insights) en [Azure China](/azure/china/resources-developer-guide).
 
 Voor App Service en toepassingen die gebruikmaken van de Application Insights SDK moet u de connection string bijwerken met behulp van de ondersteunde onderdrukkingen voor Snapshot Debugger zoals hieronder gedefinieerd:
 
@@ -28,7 +28,7 @@ Voor App Service en toepassingen die gebruikmaken van de Application Insights SD
 |---------------|---------------------|-------------|
 |SnapshotEndpoint         | `https://snapshot.monitor.azure.us`    | `https://snapshot.monitor.azure.cn` |
 
-Zie [Application Insights-documentatie](https://docs.microsoft.com/azure/azure-monitor/app/sdk-connection-string?tabs=net#connection-string-with-explicit-endpoint-overrides)voor meer informatie over andere verbindings onderdrukkingen.
+Zie [Application Insights-documentatie](./sdk-connection-string.md?tabs=net#connection-string-with-explicit-endpoint-overrides)voor meer informatie over andere verbindings onderdrukkingen.
 
 Voor functie-app moet u het `host.json` volgende bijwerken met behulp van de ondersteunde onderdrukkingen:
 

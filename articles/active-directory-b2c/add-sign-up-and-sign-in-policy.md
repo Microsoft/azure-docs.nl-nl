@@ -11,13 +11,14 @@ ms.topic: how-to
 ms.date: 12/16/2020
 ms.author: mimart
 ms.subservice: B2C
+ms.custom: b2c-support
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 29dd67e9e6e15aaafec0cc47d89da32cbf369938
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: fbcdef0002a227d5319fc01e625146480e4c99fc
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "97618752"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105043747"
 ---
 # <a name="set-up-a-sign-up-and-sign-in-flow-in-azure-active-directory-b2c"></a>Een registratie en aanmeldings stroom instellen in Azure Active Directory B2C
 
@@ -66,6 +67,7 @@ Met de gebruikersstroom voor registratie en aanmelding worden zowel registratie 
     ![Selectiepagina voor gebruikerskenmerken en claims met drie claims geselecteerd](./media/add-sign-up-and-sign-in-policy/signup-signin-attributes.png)
 
 1. Klik op **Maken** om de gebruikersstroom toe te voegen. Het voorvoegsel *B2C_1* wordt automatisch voor de naam geplaatst.
+2. Volg de stappen [voor het afhandelen van de stroom voor ' uw wacht woord verg eten? '](add-password-reset-policy.md?pivots=b2c-user-flow.md#self-service-password-reset-recommended) binnen het registratie-of aanmeldings beleid.
 
 ### <a name="test-the-user-flow"></a>De gebruikersstroom testen
 
@@ -73,7 +75,7 @@ Met de gebruikersstroom voor registratie en aanmelding worden zowel registratie 
 1. Selecteer voor **Toepassing** de webtoepassing met de naam *webapp1* die u eerder hebt geregistreerd. De **antwoord-URL** moet `https://jwt.ms` weergeven.
 1. Klik op **Gebruikersstroom uitvoeren** en selecteer **Nu registreren**.
 
-    ![De pagina Gebruikersstroom uitvoeren in de portal met de knop Gebruikersstroom uitvoeren gemarkeerd](./media/add-sign-up-and-sign-in-policy/signup-signin-run-now.PNG)
+    ![De pagina Gebruikersstroom uitvoeren in de portal met de knop Gebruikersstroom uitvoeren gemarkeerd](./media/add-sign-up-and-sign-in-policy/signup-signin-run-now.png)
 
 1. Voer een geldig e-mailadres in, klik op **Verificatiecode verzenden**, voer de verificatiecode in die u ontvangt en selecteer **Code verifiëren**.
 1. Voer een nieuw wachtwoord in en bevestig het wachtwoord.

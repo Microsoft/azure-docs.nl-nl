@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 02/22/2019
 tags: ''
 keywords: ''
-ms.openlocfilehash: fda59cc041cc540b95ababa6d56df6e69b0a8970
-ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
+ms.openlocfilehash: b1391f81c571879534258c289436d2d086b84bef
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/24/2021
-ms.locfileid: "104956159"
+ms.locfileid: "105045940"
 ---
 # <a name="set-up-an-application-developers-controlled-distribution-adcd-in-ibm-zdt-v1"></a>Een toepassings ontwikkelaars ADCD (Controlled Distribution) instellen in IBM zD&T v1
 
@@ -191,7 +191,7 @@ Gefeliciteerd U voert nu een IBM mainframe-omgeving uit op Azure.
 
 - [Mainframe migratie: mythen en feiten](/azure/architecture/cloud-adoption/infrastructure/mainframe-migration/myths-and-facts)
 - [IBM DB2 pureScale op Azure](ibm-db2-purescale-azure.md)
-- [Problemen oplossen](../../../troubleshooting/index.yml)
+- [Problemen oplossen](/troubleshoot/azure/virtual-machines/welcome-virtual-machines)
 - [Ontrafelen mainframe naar Azure-migratie](https://azure.microsoft.com/resources/demystifying-mainframe-to-azure-migration/)
 
 <!-- INTERNAL LINKS -->

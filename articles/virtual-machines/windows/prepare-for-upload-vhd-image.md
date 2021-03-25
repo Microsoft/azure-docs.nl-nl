@@ -10,12 +10,12 @@ ms.workload: infrastructure-services
 ms.topic: troubleshooting
 ms.date: 09/02/2020
 ms.author: genli
-ms.openlocfilehash: 12ef839cbbbc69230b314bf7c56a63f57a0d6b20
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: a177fc7e17dc91a0d57fa6dee87b80921d7fd8f5
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102556261"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105043577"
 ---
 # <a name="prepare-a-windows-vhd-or-vhdx-to-upload-to-azure"></a>Een Windows VHD of VHDX voorbereiden om te uploaden naar Azure
 
@@ -522,4 +522,4 @@ De volgende instellingen zijn niet van invloed op het uploaden van de VHD. We ra
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Een Windows VM-installatie kopie uploaden naar Azure voor implementaties van Resource Manager](upload-generalized-managed.md)
-- [Problemen met activering van Azure Windows VM oplossen](../troubleshooting/troubleshoot-activation-problems.md)
+- [Problemen met activering van Azure Windows VM oplossen](/troubleshoot/azure/virtual-machines/troubleshoot-activation-problems)

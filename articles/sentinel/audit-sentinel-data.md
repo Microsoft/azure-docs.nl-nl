@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/03/2021
 ms.author: bagol
-ms.openlocfilehash: a8ea32d84da521c8a1af926c6cb5e26bc2738de2
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: a02be0938b1ab925fb0343351ce1c414cc59c615
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102054582"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105044835"
 ---
 # <a name="audit-azure-sentinel-queries-and-activities"></a>Azure-Sentinel-query's en-activiteiten controleren
 
@@ -132,7 +132,7 @@ In de volgende tabel worden bijvoorbeeld de geselecteerde bewerkingen in azure-a
 |Update-instellingen    |Micro soft. SecurityInsights/Settings|
 | | |
 
-Zie [gebeurtenis schema voor Azure-activiteiten logboek](/azure/azure-monitor/essentials/activity-log-schema)voor meer informatie.
+Zie [gebeurtenis schema voor Azure-activiteiten logboek](../azure-monitor/essentials/activity-log-schema.md)voor meer informatie.
 
 
 ## <a name="auditing-with-laquerylogs"></a>Controleren met LAQueryLogs
@@ -157,7 +157,7 @@ LAQueryLogs-gegevens bevatten informatie zoals:
 
 1. De **LAQueryLogs** -tabel is niet standaard ingeschakeld in uw log Analytics-werk ruimte. Als u **LAQueryLogs** -gegevens wilt gebruiken bij het controleren in azure Sentinel, moet u eerst de **LAQueryLogs** inschakelen in het gebied **Diagnostische instellingen** van log Analytics werk ruimte.
 
-    Zie [Query's controleren in azure monitor-logboeken](/azure/azure-monitor/logs/query-audit)voor meer informatie.
+    Zie [Query's controleren in azure monitor-logboeken](../azure-monitor/logs/query-audit.md)voor meer informatie.
 
 
 1. Vervolgens voert u een query uit op de gegevens met behulp van KQL, zoals u zou doen met een andere tabel.

@@ -7,12 +7,12 @@ ms.service: azure-percept
 ms.topic: how-to
 ms.date: 02/18/2021
 ms.custom: template-how-to
-ms.openlocfilehash: b8f9e6f4bc091abbd1bb08ecbd649c1411e5ab20
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 2e627e582b47c5174e70f5d21d758148cde8dbdd
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102095388"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105022847"
 ---
 # <a name="update-your-azure-percept-dk-over-the-air"></a>Uw Azure percept DK via de lucht bijwerken
 
@@ -66,7 +66,7 @@ Vereisten voor groeps Tags:
 
 1. Voeg een tag toe aan uw apparaat (en).
     1. Zoek in het navigatie deel venster van **IOT Edge** in het linkernavigatievenster uw Azure percept DK en navigeer naar het **apparaat**.
-    1. Voeg een nieuwe **Update van het apparaat toe voor IOT hub** label waarde zoals hieronder wordt weer gegeven (Wijzig ```<CustomTagValue>``` uw waarde, d.w.z. AzurePerceptGroup1). Meer informatie over device-dubbele [JSON-document Tags](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-device-twins#device-twins).
+    1. Voeg een nieuwe **Update van het apparaat toe voor IOT hub** label waarde zoals hieronder wordt weer gegeven (Wijzig ```<CustomTagValue>``` uw waarde, d.w.z. AzurePerceptGroup1). Meer informatie over device-dubbele [JSON-document Tags](../iot-hub/iot-hub-devguide-device-twins.md#device-twins).
 
     ```
     "tags": {

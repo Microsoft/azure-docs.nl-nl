@@ -10,12 +10,12 @@ ms.date: 03/10/2021
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: 80d6c4d3f0b2eef5bc6012f2aab3fcbeab0e31b8
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 127031479d7ef414298d3096ebef814df1fe9a18
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103495390"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105028010"
 ---
 ## <a name="prerequisites"></a>Vereisten
 Voordat u aan de slag gaat, moet u het volgende doen:
@@ -115,6 +115,17 @@ string threadId = "<THREAD_ID>";
 ChatThreadClient chatThreadClient = chatClient.GetChatThreadClient(threadId: threadId);
 ```
 
+## <a name="list-all-chat-threads"></a>Alle chat-threads weer geven
+Gebruik `GetChatThreads` om alle chat-threads op te halen waarvan de gebruiker deel uitmaakt.
+
+```csharp
+AsyncPageable<ChatThreadItem> chatThreadItems = chatClient.GetChatThreadsAsync();
+await foreach (ChatThreadItem chatThreadItem in chatThreadItems)
+{
+    Console.WriteLine($"{ chatThreadItem.Id}");
+}
+```
+
 ## <a name="send-a-message-to-a-chat-thread"></a>Een bericht verzenden naar een chat-thread
 
 Gebruiken `SendMessage` om een bericht naar een thread te verzenden.
@@ -125,16 +136,6 @@ Gebruiken `SendMessage` om een bericht naar een thread te verzenden.
 
 ```csharp
 var messageId = await chatThreadClient.SendMessageAsync(content:"hello world", type: ChatMessageType.Text);
-```
-## <a name="get-a-message"></a>Een bericht ontvangen
-
-Gebruiken `GetMessage` om een bericht uit de service op te halen.
-`messageId` is de unieke ID van het bericht.
-
-`ChatMessage` is het antwoord dat het resultaat is van het ophalen van een bericht, het bevat een ID, de unieke id van het bericht, onder andere velden. Ga naar Azure. Communication. chat. ChatMessage
-
-```csharp
-ChatMessage chatMessage = await chatThreadClient.GetMessageAsync(messageId: messageId);
 ```
 
 ## <a name="receive-chat-messages-from-a-chat-thread"></a>Chatberichten ontvangen van een chat-thread
@@ -165,26 +166,7 @@ await foreach (ChatMessage message in allMessages)
 
 - `ParticipantRemoved`: Systeem bericht dat aangeeft dat een deel nemer is verwijderd uit de chat thread.
 
-Zie [Berichttypen](../../../concepts/chat/concepts.md#message-types) voor meer informatie.
-
-## <a name="update-a-message"></a>Een bericht bijwerken
-
-U kunt een bericht dat al is verzonden, bijwerken door `UpdateMessage` aan te roepen op `ChatThreadClient`.
-
-```csharp
-string id = "id-of-message-to-edit";
-string content = "updated content";
-await chatThreadClient.UpdateMessageAsync(messageId: id, content: content);
-```
-
-## <a name="deleting-a-message"></a>Een bericht verwijderen
-
-U kunt een bericht verwijderen door `DeleteMessage` aan te roepen op `ChatThreadClient`.
-
-```csharp
-string id = "id-of-message-to-delete";
-await chatThreadClient.DeleteMessageAsync(messageId: id);
-```
+Zie [Berichttypen](../../../concepts/chat/concepts.md#message-types)voor meer informatie.
 
 ## <a name="add-a-user-as-a-participant-to-the-chat-thread"></a>Een gebruiker toevoegen als deel nemer aan de chat thread
 
@@ -209,14 +191,6 @@ var participants = new[]
 
 await chatThreadClient.AddParticipantsAsync(participants: participants);
 ```
-## <a name="remove-user-from-a-chat-thread"></a>Gebruiker verwijderen uit een chat-thread
-
-Net als bij het toevoegen van een gebruiker aan een thread, kunt u gebruikers uit een chat-thread verwijderen. Hiervoor moet u de identiteit bijhouden `CommunicationUser` van de deel nemer die u hebt toegevoegd.
-
-```csharp
-var gloria = new CommunicationUserIdentifier(id: "<Access_ID_For_Gloria>");
-await chatThreadClient.RemoveParticipantAsync(identifier: gloria);
-```
 
 ## <a name="get-thread-participants"></a>Thread deelnemers ophalen
 
@@ -230,14 +204,6 @@ await foreach (ChatParticipant participant in allParticipants)
 }
 ```
 
-## <a name="send-typing-notification"></a>Bericht over verzend type
-
-Gebruik `SendTypingNotification` om aan te geven dat de gebruiker een antwoord in de thread typt.
-
-```csharp
-await chatThreadClient.SendTypingNotificationAsync();
-```
-
 ## <a name="send-read-receipt"></a>Lees bevestiging verzenden
 
 Gebruiken `SendReadReceipt` om andere deel nemers op de hoogte te stellen dat het bericht door de gebruiker is gelezen.
@@ -246,17 +212,6 @@ Gebruiken `SendReadReceipt` om andere deel nemers op de hoogte te stellen dat he
 await chatThreadClient.SendReadReceiptAsync(messageId: messageId);
 ```
 
-## <a name="get-read-receipts"></a>Lees bevestigingen ophalen
-
-Gebruik `GetReadReceipts` om de status van berichten te controleren om te zien welke items door andere deel nemers van een chat thread worden gelezen.
-
-```csharp
-AsyncPageable<ChatMessageReadReceipt> allReadReceipts = chatThreadClient.GetReadReceiptsAsync();
-await foreach (ChatMessageReadReceipt readReceipt in allReadReceipts)
-{
-    Console.WriteLine($"{readReceipt.ChatMessageId}:{((CommunicationUserIdentifier)readReceipt.Sender).Id}:{readReceipt.ReadOn}");
-}
-```
 ## <a name="run-the-code"></a>De code uitvoeren
 
 Voer de toepassing op vanuit uw toepassingsmap met de opdracht `dotnet run`.

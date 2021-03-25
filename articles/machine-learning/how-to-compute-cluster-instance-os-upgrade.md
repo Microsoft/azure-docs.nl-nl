@@ -11,18 +11,18 @@ ms.subservice: core
 ms.date: 03/03/2021
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 5f853c19015a70d596c32532a9c280c785b4597b
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 710a860b1ed87f176b6f42b4963dad17acb323b1
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104609227"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104954051"
 ---
 # <a name="upgrade-compute-instance-and-compute-cluster-host-os"></a>Reken instantie en reken cluster host-besturings systeem bijwerken
 
 Azure Machine Learning __Compute-Cluster__ en __reken instantie__ worden beheerde Compute-infra structuur. Als beheerde service beheert micro soft het besturings systeem van de host en de geïnstalleerde pakketten en software versies.
 
-Het besturings systeem voor de host voor het berekenings cluster en het reken exemplaar is Ubuntu 16,04 LTS. Op **30 April 2021** wordt de ondersteuning voor 16,04 voor Ubuntu beëindigd. Vanaf __15 maart 2021__ wordt het hostbesturingssysteem automatisch bijgewerkt naar Ubuntu 18,04 LTS. Bijwerken naar 18,04 zorgt voor voortdurende beveiligings updates en ondersteuning van de Ubuntu-community. Zie de [Ubuntu release-blog](https://wiki.ubuntu.com/Releases)voor meer informatie over de Ubuntu-ondersteuning voor 16,04.
+Het besturings systeem voor de host voor het berekenings cluster en het reken exemplaar is Ubuntu 16,04 LTS. Op **30 April 2021** wordt de ondersteuning voor 16,04 voor Ubuntu beëindigd. Vanaf __15 maart 2021__ wordt het hostbesturingssysteem automatisch bijgewerkt naar Ubuntu 18,04 LTS. Bijwerken naar 18,04 zorgt voor voortdurende beveiligings updates en ondersteuning van de Ubuntu-community. Deze update wordt doorgevoerd in azure-regio's en is beschikbaar in alle regio's van __9 April 2021__. Zie de [Ubuntu release-blog](https://wiki.ubuntu.com/Releases)voor meer informatie over de Ubuntu-ondersteuning voor 16,04.
 
 > [!TIP]
 > * Het besturings systeem van de host is niet de versie van het besturings systeem dat u kunt opgeven voor een [omgeving](how-to-use-environments.md) bij het trainen of implementeren van een model. Omgevingen worden uitgevoerd in docker. Docker wordt uitgevoerd op het besturings systeem van de host.
@@ -30,11 +30,11 @@ Het besturings systeem voor de host voor het berekenings cluster en het reken ex
 > * Wanneer u een Azure Machine Learning Compute-instantie gebruikt op basis van Ubuntu 18,04, is de standaard Python-versie _python 3,8_.
 ## <a name="creating-new-resources"></a>Nieuwe resources maken
 
-Reken cluster of reken instanties die na __15 maart 2021 zijn gemaakt,__ gebruiken Ubuntu 18,04 LTS standaard als besturings systeem van de host. U kunt geen ander host-besturings systeem selecteren.
+Compute-Cluster of COMPUTE-instanties die zijn gemaakt na __9 April 2021__ gebruiken Ubuntu 18,04 LTS standaard als hostbesturingssysteem. U kunt geen ander host-besturings systeem selecteren.
 
 ## <a name="upgrade-existing-resources"></a>Bestaande resources bijwerken
 
-Als u een bestaand reken cluster of reken instanties hebt gemaakt vóór __15 maart 2021__, moet u actie ondernemen om het hostbesturingssysteem bij te werken naar Ubuntu 18,04:
+Als u een bestaand reken cluster of reken instanties hebt gemaakt vóór __15 maart 2021__, moet u actie ondernemen om het hostbesturingssysteem bij te werken naar Ubuntu 18,04. Afhankelijk van de regio waar u toegang tot hebt Azure Machine Learning, raden we u aan deze acties na __9 April 2021__ te volgen om ervoor te zorgen dat de wijzigingen zijn doorgevoerd naar alle regio's:
 
 * __Azure machine learning Compute-Cluster__:
 

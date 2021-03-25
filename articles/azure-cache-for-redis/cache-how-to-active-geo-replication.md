@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 02/08/2021
 ms.author: yegu
-ms.openlocfilehash: fe777c3aa7b314dc56a42cc64712d18281a6ea7d
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 3fe3131263d3cf1984eae1692854d8d6bcd2746a
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102121164"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105109485"
 ---
 # <a name="configure-active-geo-replication-for-enterprise-azure-cache-for-redis-instances-preview"></a>Actieve geo-replicatie voor redis-exemplaren van Azure in Enter prise configureren (preview)
 
@@ -26,9 +26,11 @@ Actieve geo-replicatie groepen twee of meer Enter prise Azure-cache voor redis-i
 >
 >
 
-1. Klik in de **nieuwe** gebruikers interface voor het maken van redis cache op **configureren** om **actieve geo-replicatie** in te stellen op het tabblad **Geavanceerd** .
+1. Selecteer op het tabblad **Geavanceerd** van de nieuwe gebruikers interface voor het maken van de **redis cache** **Enter prise** voor **clustering beleid**.
 
     ![Actieve geo-replicatie configureren](./media/cache-how-to-active-geo-replication/cache-active-geo-replication-not-configured.png)
+
+1. Klik op **configureren** om **actieve geo-replicatie** in te stellen.
 
 1. Maak een nieuwe replicatie groep voor een eerste cache-exemplaar of selecteer een bestaande in de lijst.
 
@@ -38,7 +40,7 @@ Actieve geo-replicatie groepen twee of meer Enter prise Azure-cache voor redis-i
 
     ![Actieve geo-replicatie geconfigureerd](./media/cache-how-to-active-geo-replication/cache-active-geo-replication-configured.png)
 
-1. Herhaal de bovenstaande stappen voor elk extra cache-exemplaar in de groep geo-replicatie.
+1. Wacht totdat de eerste cache is gemaakt. Herhaal de bovenstaande stappen voor elk extra cache-exemplaar in de groep geo-replicatie.
 
 ## <a name="remove-from-an-active-geo-replication-group"></a>Verwijderen uit een actieve geo-replicatie groep
 

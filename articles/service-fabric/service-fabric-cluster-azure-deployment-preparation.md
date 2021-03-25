@@ -3,19 +3,19 @@ title: Een Azure Service Fabric-cluster implementatie plannen
 description: Meer informatie over het plannen en voorbereiden van een productie-Service Fabric cluster implementatie naar Azure.
 ms.topic: conceptual
 ms.date: 03/20/2019
-ms.openlocfilehash: 9de59811397eb47809c6d71f608e43beae5bfadb
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 82521487b9a3e9438784e010a32cf6df8e7be2ef
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "97109620"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105046314"
 ---
 # <a name="plan-and-prepare-for-a-cluster-deployment"></a>Plannen en voorbereiden voor een cluster implementatie
 
 Het plannen en voorbereiden van een productie cluster implementatie is zeer belang rijk.  Er zijn veel factoren waarmee u rekening moet houden.  Dit artikel begeleidt u stapsgewijs door de stappen voor het voorbereiden van de implementatie van uw cluster.
 
 ## <a name="read-the-best-practices-information"></a>Lees de informatie over best practices
-Voor het beheren van Azure Service Fabric-toepassingen en-clusters zijn er bewerkingen die u het beste kunt uitvoeren om de betrouw baarheid van uw productie omgeving te optimaliseren.  Lees [service Fabric aanbevolen procedures voor toepassingen en clusters](service-fabric-best-practices-overview.md)voor meer informatie.
+Voor het beheren van Azure Service Fabric-toepassingen en-clusters zijn er bewerkingen die u het beste kunt uitvoeren om de betrouw baarheid van uw productie omgeving te optimaliseren.  Lees [service Fabric aanbevolen procedures voor toepassingen en clusters](./service-fabric-best-practices-security.md)voor meer informatie.
 
 ## <a name="select-the-os-for-the-cluster"></a>Het besturings systeem voor het cluster selecteren
 Met Service Fabric kunt u Service Fabric-clusters maken op alle Vm's of computers met Windows Server of Linux.  Voordat u het cluster implementeert, moet u het besturings systeem: Windows of Linux kiezen.  Elk knoop punt (virtuele machine) in het cluster voert hetzelfde besturings systeem uit. u kunt geen Windows-en Linux-Vm's in hetzelfde cluster combi neren.
@@ -117,7 +117,7 @@ Een essentieel onderdeel van het leveren van hoge Beschik baarheid zorgt ervoor 
 Is uw toepassing en cluster klaar om productie verkeer te nemen? Voordat u uw cluster implementeert voor productie, voert u de [controle lijst voor productie gereedheids](service-fabric-production-readiness-checklist.md)uit. Zorg ervoor dat uw toepassing en cluster probleemloos werken door de items in deze controle lijst te door lopen. We raden u ten zeerste aan om al deze items uit te checken voordat u naar productie gaat.
 
 ## <a name="next-steps"></a>Volgende stappen
-* [Een Service Fabric cluster maken waarop Windows wordt uitgevoerd](service-fabric-best-practices-overview.md)
+* [Een Service Fabric cluster maken waarop Windows wordt uitgevoerd](./service-fabric-best-practices-security.md)
 * [Een Service Fabric cluster maken waarop Linux wordt uitgevoerd](service-fabric-tutorial-create-vnet-and-linux-cluster.md)
 
 [placementconstraints]: service-fabric-cluster-resource-manager-cluster-description.md#node-properties-and-placement-constraints

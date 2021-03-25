@@ -1,7 +1,7 @@
 ---
 title: Client bibliotheken en REST Api's voor Azure Communication Services
 titleSuffix: An Azure Communication Services concept document
-description: Meer informatie over Azure Communication Services-client bibliotheken en REST-Api's.
+description: Meer informatie over de Sdk's en REST-Api's van Azure Communication Services.
 author: mikben
 manager: jken
 services: azure-communication-services
@@ -9,37 +9,37 @@ ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: conceptual
 ms.service: azure-communication-services
-ms.openlocfilehash: 01a5f4a947f0b89b5881eddb3c743b9a9b184b19
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: effd7658bbfe7359e1f99f9452857824c2c45c2f
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103495637"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105107887"
 ---
 # <a name="client-libraries-and-rest-apis"></a>Clientbibliotheken en REST API's
 
 [!INCLUDE [Public Preview Notice](../includes/public-preview-include.md)]
 
 
-Mogelijkheden van Azure Communication Services zijn conceptueel onderverdeeld in zes gebieden. Sommige gebieden hebben volledig open-source-client bibliotheken. De aanroepende client bibliotheek maakt gebruik van eigen netwerk interfaces en is momenteel gesloten-bron en de chat bibliotheek bevat een afhankelijkheid van gesloten bronnen. Voor beelden en aanvullende technische Details voor client bibliotheken worden gepubliceerd in de [Azure Communication Services github opslag plaats](https://github.com/Azure/communication).
+Mogelijkheden van Azure Communication Services zijn conceptueel onderverdeeld in zes gebieden. Sommige gebieden hebben volledige open source-Sdk's. De aanroepende SDK maakt gebruik van eigen netwerk interfaces en is momenteel gesloten-bron en de chat bibliotheek bevat een afhankelijkheid van gesloten bronnen. Voor beelden en aanvullende technische gegevens voor Sdk's worden gepubliceerd in de [Azure Communication Services github opslag plaats](https://github.com/Azure/communication).
 
 ## <a name="client-libraries"></a>Clientbibliotheken
 
 | Assembly               | Protocollen             |Open versus gesloten bron| Naamruimten                          | Functies                                                      |
 | ---------------------- | --------------------- | ---|-------------------------- | --------------------------------------------------------------------------- |
 | Azure Resource Manager | REST | Openen            | Azure. Resource Manager. communicatie | Communicatie services-resources inrichten en beheren             |
-| Algemeen                 | REST | Openen               | Azure. Communication. common          | Biedt basis typen voor andere client bibliotheken |
+| Algemeen                 | REST | Openen               | Azure. Communication. common          | Biedt basis typen voor andere Sdk's |
 | Identiteit         | REST | Openen               | Azure. Communication. Identity  | Gebruikers beheren, toegangs tokens |
 | Telefoonnummers         | REST | Openen               | Azure. Communication. PhoneNumbers  | Telefoon nummers beheren |
 | Chat                   | REST met een eigen signaal | Openen met een pakket met gesloten bron signalen    | Azure. Communication. chat            | In realtime tekst gebaseerde chat berichten toevoegen aan uw toepassingen  |
 | Sms                    | REST | Openen              | Azure. Communication. SMS             | Sms-berichten verzenden en ontvangen |
 | Aanroepen                | Eigen Trans Port | Gesloten |Azure. Communication. Calling         | Gebruik spraak, video, scherm delen en andere realtime gegevens communicatie mogelijkheden          |
 
-Houd er rekening mee dat de Azure Resource Manager-, identiteits-en SMS-client bibliotheken gericht zijn op Service-integratie, en in veel gevallen kunnen er beveiligings problemen optreden als u deze functies integreert in toepassingen van eind gebruikers. De common-en chat-client bibliotheken zijn geschikt voor service-en client toepassingen. De aanroepende client bibliotheek is ontworpen voor client toepassingen. Een client bibliotheek die is gericht op service scenario's is in ontwikkeling.
+Houd er rekening mee dat de Azure Resource Manager-, id-en SMS-Sdk's gericht zijn op Service-integratie, en in veel gevallen kunnen er beveiligings problemen optreden als u deze functies integreert in toepassingen van eind gebruikers. De common-en chat-Sdk's zijn geschikt voor service-en client toepassingen. De aanroepende SDK is ontworpen voor client toepassingen. Een SDK die gericht is op service scenario's is in ontwikkeling.
 
 ### <a name="languages-and-publishing-locations"></a>Talen en publicatie locaties
 
-Publicatie locaties voor afzonderlijke client bibliotheek pakketten worden hieronder beschreven.
+Hieronder vindt u een beschrijving van de publicatie locaties voor afzonderlijke SDK-pakketten.
 
 | Gebied           | Javascript | .NET | Python | Java SE | iOS | Android | Anders                          |
 | -------------- | ---------- | ---- | ------ | ---- | -------------- | -------------- | ------------------------------ |
@@ -60,8 +60,8 @@ Api's voor communicatie services worden naast andere Azure REST Api's in [docs.M
 
 ### <a name="ios-and-android-support-details"></a>Details van iOS-en Android-ondersteuning
 
-- Communicatie Services iOS-client bibliotheken doel-iOS-versie 13 +, en Xcode 11 +.
-- Android Java-client bibliotheken doel Android-API-niveau 21 + en Android Studio 4.0 +
+- Communicatie Services iOS Sdk's doel-iOS-versie 13 +, en Xcode 11 +.
+- Android Java Sdk's target Android-API Level 21 + en Android Studio 4.0 +
 
 ### <a name="net-support-details"></a>Details voor .NET-ondersteuning
 
@@ -82,9 +82,9 @@ Ondersteuning via .NET Core 2,0:
 - Xamarin iOS 10,14
 - Xamarin Mac 3,8
 
-## <a name="calling-client-library-timeouts"></a>Time-outs van client bibliotheek aanroepen
+## <a name="calling-sdk-timeouts"></a>SDK-time-outs aanroepen
 
-De volgende time-outs zijn van toepassing op de communicatie services die client bibliotheken aanroepen:
+De volgende time-outs zijn van toepassing op de communicatie services die Sdk's aanroepen:
 
 | Bewerking           | Time-out in seconden |
 | -------------- | ---------- |
@@ -100,30 +100,30 @@ De volgende time-outs zijn van toepassing op de communicatie services die client
 ## <a name="api-stability-expectations"></a>API-stabiliteits verwachtingen
 
 > [!IMPORTANT]
-> Deze sectie bevat richt lijnen voor REST-Api's en client bibliotheken die **stabiel** zijn gemarkeerd. Api's die zijn gemarkeerd vóór release, preview of bèta, kunnen **zonder kennisgeving** worden gewijzigd of afgeschaft.
+> Deze sectie bevat richt lijnen voor REST Api's en Sdk's die **stabiel** zijn gemarkeerd. Api's die zijn gemarkeerd vóór release, preview of bèta, kunnen **zonder kennisgeving** worden gewijzigd of afgeschaft.
 
-In de toekomst kunnen we de versies van de client bibliotheken voor communicatie services buiten gebruik stellen en kunnen we wijzigingen aanbrengen in onze REST Api's en vrijgegeven client bibliotheken. Azure Communication Services volgt *doorgaans* twee ondersteunings beleid voor het buiten gebruik stellen van service versies:
+In de toekomst kunnen we de versies van de Sdk's van Communication Services buiten gebruik stellen en kunnen we wijzigingen aanbrengen in onze REST Api's en vrijgegeven Sdk's. Azure Communication Services volgt *doorgaans* twee ondersteunings beleid voor het buiten gebruik stellen van service versies:
 
-- U wordt ten minste drie jaar hiervan op de hoogte gebracht alvorens code te wijzigen als gevolg van een wijziging in de communicatie Services-Interface. Alle gedocumenteerde REST-Api's en client bibliotheek-Api's hebben over het algemeen een waarschuwing van ten minste drie jaar voordat de interfaces buiten gebruik worden gesteld.
-- U wordt ten minste één jaar hiervan op de hoogte gebracht voordat u de assembly's van de client bibliotheek bijwerkt naar de meest recente secundaire versie. Voor deze vereiste updates moeten geen code wijzigingen worden aangebracht omdat ze zich in dezelfde primaire versie bevinden. Dit geldt met name voor de aanroepen-en chat-bibliotheken die realtime-onderdelen bevatten waarvoor regel matig beveiligings-en prestatie-updates nodig zijn. We raden u ten zeerste aan om uw client bibliotheken voor communicatie services te laten bijwerken.
+- U wordt ten minste drie jaar hiervan op de hoogte gebracht alvorens code te wijzigen als gevolg van een wijziging in de communicatie Services-Interface. Alle gedocumenteerde REST Api's en SDK-Api's profiteren doorgaans van een waarschuwing van drie jaar voordat de interfaces uit bedrijf worden genomen.
+- U wordt ten minste één jaar gewaarschuwd voordat SDK-assembly's worden bijgewerkt naar de meest recente secundaire versie. Voor deze vereiste updates moeten geen code wijzigingen worden aangebracht omdat ze zich in dezelfde primaire versie bevinden. Dit geldt met name voor de aanroepen-en chat-bibliotheken die realtime-onderdelen bevatten waarvoor regel matig beveiligings-en prestatie-updates nodig zijn. Wij raden u ten zeerste aan om uw Sdk's voor Communication Services te laten bijwerken.
 
-### <a name="api-and-client-library-decommissioning-examples"></a>Voor beelden van het uit bedrijf nemen van de API en de client bibliotheek
+### <a name="api-and-sdk-decommissioning-examples"></a>Voor beelden van API en SDK uit bedrijf nemen
 
 **U hebt de V24-versie van de SMS-REST API in uw toepassing geïntegreerd. Azure Communication releases V25.**
 
 U ontvangt een waarschuwing van drie jaar voordat deze Api's werken en worden gedwongen om bij te werken naar V25. Voor deze update is mogelijk een code wijziging vereist.
 
-**U hebt de v 2.02-versie van de aanroepende client bibliotheek in uw toepassing geïntegreerd. Azure Communication releases v 2.05.**
+**U hebt de v 2.02-versie van de aanroepende SDK geïntegreerd in uw toepassing. Azure Communication releases v 2.05.**
 
-Mogelijk moet u worden bijgewerkt naar de v 2.05-versie van de aanroepende client bibliotheek binnen een periode van 12 maanden na de release van v 2.05. Dit moet een eenvoudige vervanging zijn van het artefact zonder dat er een code moet worden gewijzigd, omdat v 2.05 zich in de hoofd versie van v2 bevindt en geen wijzigingen heeft.
+Mogelijk moet u worden bijgewerkt naar de v 2.05-versie van de aanroepende SDK binnen een periode van 12 maanden na de release van v 2.05. Dit moet een eenvoudige vervanging zijn van het artefact zonder dat er een code moet worden gewijzigd, omdat v 2.05 zich in de hoofd versie van v2 bevindt en geen wijzigingen heeft.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie voor meer informatie de volgende overzichten van de client bibliotheek:
+Voor meer informatie raadpleegt u de volgende SDK-overzichten:
 
-- [Overzicht van client bibliotheek aanroepen](../concepts/voice-video-calling/calling-sdk-features.md)
-- [Overzicht van de chatten-client bibliotheek](../concepts/chat/sdk-features.md)
-- [Overzicht SMS-client bibliotheek](../concepts/telephony-sms/sdk-features.md)
+- [Overzicht van de SDK](../concepts/voice-video-calling/calling-sdk-features.md)
+- [Overzicht van chat-SDK](../concepts/chat/sdk-features.md)
+- [SMS-SDK-overzicht](../concepts/telephony-sms/sdk-features.md)
 
 Om aan de slag te gaan met Azure Communication Services:
 

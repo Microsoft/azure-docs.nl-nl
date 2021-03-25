@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 08/15/2017
 ms.author: luywang
 ms.subservice: disks
-ms.openlocfilehash: aeb8028468a1e1944a4fd39275f134bfae00dfa3
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: a8b58c72ee4e6d9d38dccb369a3d38c46f0c4afe
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102555343"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105046841"
 ---
 # <a name="migrate-to-premium-storage-by-using-azure-site-recovery"></a>Migreren naar Premium Storage met behulp van Azure Site Recovery
 
@@ -199,7 +199,7 @@ Site Recovery maakt een VM-exemplaar waarvan het type hetzelfde is als of vergel
    * Voor een virtuele machine die is gemaakt via het klassieke implementatie model: Voeg de virtuele machine toe aan de beschikbaarheidsset in de Azure Portal. Ga voor gedetailleerde stappen naar [een bestaande virtuele machine toevoegen aan een beschikbaarheidsset](/previous-versions/azure/virtual-machines/linux/classic/configure-availability-classic).
    * Voor een virtuele machine die is gemaakt via het Resource Manager-implementatie model: Sla uw configuratie van de virtuele machine op en verwijder de virtuele machines in de beschikbaarheidsset. Gebruik hiervoor het script op [set Azure Resource Manager-beschikbaarheidsset voor de virtuele machine](https://gallery.technet.microsoft.com/Set-Azure-Resource-Manager-f7509ec4). Voordat u dit script uitvoert, moet u de beperkingen controleren en uw downtime plannen.
 
-2. **Oude vm's en schijven verwijderen**. Zorg ervoor dat de Premium-schijven consistent zijn met de bron schijven en dat de nieuwe Vm's dezelfde functie uitvoeren als de bron-Vm's. Verwijder de virtuele machine en verwijder de schijven uit uw bron opslag accounts in de Azure Portal. Zie [problemen met het verwijderen van opslag resources oplossen](../troubleshooting/storage-resource-deletion-errors.md)als er een probleem is waarbij de schijf niet wordt verwijderd, ook al hebt u de virtuele machine verwijderd.
+2. **Oude vm's en schijven verwijderen**. Zorg ervoor dat de Premium-schijven consistent zijn met de bron schijven en dat de nieuwe Vm's dezelfde functie uitvoeren als de bron-Vm's. Verwijder de virtuele machine en verwijder de schijven uit uw bron opslag accounts in de Azure Portal. Zie [problemen met het verwijderen van opslag resources oplossen](/troubleshoot/azure/virtual-machines/storage-resource-deletion-errors)als er een probleem is waarbij de schijf niet wordt verwijderd, ook al hebt u de virtuele machine verwijderd.
 
 3. **Reinig de Azure site Recovery-infra structuur**. Als Site Recovery niet meer nodig is, kunt u de infra structuur ervan opschonen. Verwijder gerepliceerde items, de configuratie server en het herstel beleid en verwijder vervolgens de Azure Site Recovery kluis.
 

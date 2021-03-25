@@ -10,12 +10,12 @@ author: julieMSFT
 ms.author: jrasnick
 ms.reviewer: jrasnick
 ms.date: 03/10/2021
-ms.openlocfilehash: aa32083d48c868435ce77114f3a036b8bec47201
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 8a76a637c4862032b100308d8b02bced76af38fe
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104609231"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105023398"
 ---
 # <a name="migrating-a-data-warehouse-to-a-dedicated-sql-pool-in-azure-synapse-analytics"></a>Een Data Warehouse migreren naar een toegewezen SQL-groep in azure Synapse Analytics 
 In de volgende secties vindt u een overzicht van wat er is betrokken bij het migreren van een bestaande Data Warehouse-oplossing naar Azure Synapse Analytics exclusieve SQL-groep.
@@ -89,15 +89,14 @@ Als u een geslaagde migratie wilt uitvoeren, moet u de tabel schema's, code en g
 ## <a name="migration-assets-from-real-world-engagements"></a>Migratie-assets van werkelijke afspraken
 Voor aanvullende hulp bij het volt ooien van dit migratie scenario raadpleegt u de volgende bronnen, die zijn ontwikkeld ter ondersteuning van een echt toonaangevend migratie project.
 
-| Titel/koppeling                              | Description                                                                                                                       |
+| Titel/koppeling                              | Beschrijving                                                                                                                       |
 | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | [Beoordelings model en hulp programma voor gegevens workload](https://github.com/Microsoft/DataMigrationTeam/tree/master/Data%20Workload%20Assessment%20Model%20and%20Tool) | Dit hulp programma biedt voorgestelde ' Best passend ' doel platformen, Cloud gereedheids en toepassings-en database herstel niveau voor een bepaalde werk belasting. U kunt met één klik berekeningen en rapporten genereren waarmee u grote en kleine beoordelingen aanzienlijk sneller door middel van en geautomatiseerd en uniform platform besluitvormings proces. |
 | [Problemen met gegevens versleuteling verwerken tijdens het laden van gegevens in azure Synapse Analytics](https://azure.microsoft.com/en-us/blog/handling-data-encoding-issues-while-loading-data-to-sql-data-warehouse/) | Deze blog is bedoeld om inzicht te krijgen in een aantal gegevens coderings problemen die kunnen optreden bij het gebruik van poly Base om gegevens te laden naar SQL Data Warehouse. Dit artikel bevat ook enkele opties die u kunt gebruiken om dergelijke problemen op te lossen en de gegevens met succes te laden. |
 | [Tabel grootten in azure Synapse Analytics toegewezen SQL-groep ophalen](https://github.com/Microsoft/DataMigrationTeam/blob/master/Whitepapers/Getting%20table%20sizes%20in%20SQL%20DW.pdf) | Een van de belangrijkste taken die een architect moet uitvoeren, is het verkrijgen van metrische gegevens over een nieuwe omgeving na migratie: het verzamelen van laad tijden van on-premises naar de Cloud, het verzamelen van polybase load tijden, enzovoort. Van deze taken is een van de belangrijkste voor het bepalen van de opslag grootte in SQL Data Warehouse vergeleken met het huidige platform van de klant. |
 | [Hulp programma voor het verplaatsen van on-premises SQL Server aanmeldingen bij Azure Synapse Analytics](https://github.com/Microsoft/DataMigrationTeam/tree/master/IP%20and%20Scripts/MoveLogins) | Een Power shell-script waarmee een T-SQL-opdracht script wordt gemaakt om aanmeldingen opnieuw te maken en database gebruikers te selecteren van een on-premises SQL Server een Azure SQL PaaS-service. Met het hulp programma kunnen Windows AD-accounts automatisch worden toegewezen aan Azure AD-accounts of kan de UPN-zoek acties voor elke aanmelding worden uitgevoerd op basis van de on-premises Windows Active Directory. Met het hulp programma kunt u ook SQL Server systeem eigen aanmeldingen verplaatsen. Aangepaste server-en database rollen worden gescripteerd, evenals rollen lidmaatschap en databaserol en gebruikers machtigingen. Inge sloten data bases worden nog niet ondersteund en alleen een subset van mogelijke SQL Server machtigingen wordt gescripteerd. de machtigingen verlenen met toekenning worden dus niet ondersteund (complexe machtigings structuren). Meer informatie is beschikbaar in het ondersteunings document en het script bevat opmerkingen om inzicht te krijgen. |
 
-> [!NOTE]
-> Deze bovenstaande bronnen zijn ontwikkeld als onderdeel van het programma voor het maken van gegevens migratie (DM aan de slag), dat wordt gesponsord door het technische team van de Azure-gegevens groep. Het kern Handvest van DM meer is het deblokkeren en versnellen van complexe modernisering en het concurreren van de migratie mogelijkheden van het gegevens platform naar het Azure-gegevens platform van micro soft. Als u denkt dat uw organisatie deelneemt aan het programma DM aan de slag, neemt u contact op met uw account team en vraagt u om een aanstelling in te dienen.
+Deze resources zijn ontwikkeld als onderdeel van het data SQL expert-programma, dat wordt gesponsord door het technische team van de Azure-gegevens groep. Het kern Handvest van het data SQL expert-programma is het deblokkeren en versnellen van complexe modernisering en het concurreren van de migratie mogelijkheden van het gegevens platform naar het Azure-gegevens platform van micro soft. Als u denkt dat uw organisatie graag deelneemt aan het data SQL expert-programma, neemt u contact op met uw account team en vraagt u om een benoeming in te dienen.
 
 ## <a name="videos"></a>Video's
 - Bekijk hoe [Walgreens hun retail inventarissysteem heeft gemigreerd](https://www.youtube.com/watch?v=86dhd8N1lH4) met informatie over 100 TB gegevens van Netezza naar Azure Synapse Analytics (voorheen SQL DW) in record tijd. 

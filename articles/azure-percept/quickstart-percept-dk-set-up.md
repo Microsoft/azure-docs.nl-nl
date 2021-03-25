@@ -7,12 +7,12 @@ ms.service: azure-percept
 ms.topic: quickstart
 ms.date: 03/17/2021
 ms.custom: template-quickstart
-ms.openlocfilehash: 9567ec2458a01825568cb853728f71db10228ee3
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 8cecd1b57395fa51fd95c824e88885d9c3ae3f09
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104608258"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105023296"
 ---
 # <a name="set-up-your-azure-percept-dk-and-deploy-your-first-ai-model"></a>Stel uw Azure percept DK in en implementeer uw eerste AI-model
 
@@ -30,7 +30,7 @@ Als u problemen ondervindt tijdens dit proces, raadpleegt u de [hand leiding](./
 - Een Azure percept DK (dev kit).
 - Een Windows-, Linux-of OS X-hostcomputer met Wi-Fi mogelijkheden en een webbrowser.
 - Een Azure-account met een actief abonnement. [Maak gratis een account.](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
-- Het Azure-account moet de rol **eigenaar** of **Inzender** hebben binnen het abonnement. Volg de onderstaande stappen om de rol van uw Azure-account te controleren. Raadpleeg de [documentatie voor toegangs beheer op basis van rollen](https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles#azure-roles)voor meer informatie over Azure Role-definities.
+- Het Azure-account moet de rol **eigenaar** of **Inzender** hebben binnen het abonnement. Volg de onderstaande stappen om de rol van uw Azure-account te controleren. Raadpleeg de [documentatie voor toegangs beheer op basis van rollen](../role-based-access-control/rbac-and-directory-admin-roles.md#azure-roles)voor meer informatie over Azure Role-definities.
 
     > [!CAUTION]
     > Als u meerdere Azure-accounts hebt, kan uw browser referenties van een ander account in de cache opslaan. Om Verwar ring te voor komen, is het raadzaam om alle ongebruikte browser vensters te sluiten en u aan te melden bij de [Azure Portal](https://portal.azure.com/) voordat u de installatie-ervaring start. Raadpleeg de [hand leiding](./how-to-troubleshoot-setup.md) voor het oplossen van problemen voor aanvullende informatie over hoe u zeker weet dat u bent aangemeld met het juiste account.
@@ -43,7 +43,7 @@ Voer de volgende stappen uit om te controleren of uw Azure-account een ' eigenaa
 
 1. Klik op het pictogram **abonnementen** (dit lijkt op een gele toets).
 
-1. Selecteer uw abonnement in de lijst. Als u uw abonnement niet ziet, zorg er dan voor dat u bent aangemeld met het juiste Azure-account. Als u een nieuw abonnement wilt maken, voert u [de volgende stappen uit](https://docs.microsoft.com/azure/cost-management-billing/manage/create-subscription).
+1. Selecteer uw abonnement in de lijst. Als u uw abonnement niet ziet, zorg er dan voor dat u bent aangemeld met het juiste Azure-account. Als u een nieuw abonnement wilt maken, voert u [de volgende stappen uit](../cost-management-billing/manage/create-subscription.md).
 
 1. Selecteer **toegangs beheer (IAM)** in het menu abonnement.
 1. Klik op **Mijn toegang weer geven**.

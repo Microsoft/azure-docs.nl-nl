@@ -1,5 +1,5 @@
 ---
-title: 'SQL Server naar SQL Managed instance: migratie handleiding'
+title: 'SQL Server naar Azure SQL Managed instance: migratie handleiding'
 description: In deze hand leiding leert u uw SQL Server-data bases migreren naar Azure SQL Managed instance.
 ms.service: sql-managed-instance
 ms.subservice: migration-guide
@@ -10,14 +10,14 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: 6dcbf4a570fb5cdb58c914ea5e4b1164ed6a76ca
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: a1dcb72c30268dd82052e29232e79a485d86f72d
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103564487"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105025302"
 ---
-# <a name="migration-guide-sql-server-to-sql-managed-instance"></a>Migratie handleiding: SQL Server naar een door SQL beheerd exemplaar
+# <a name="migration-guide-sql-server-to-azure-sql-managed-instance"></a>Migratie handleiding: SQL Server naar Azure SQL Managed instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../../includes/appliesto-sqlmi.md)]
 
 Deze hand leiding helpt u bij het migreren van uw SQL Server-exemplaar naar Azure SQL Managed instance. 
@@ -30,7 +30,7 @@ U kunt SQL Server die on-premises of op worden uitgevoerd, migreren:
 - Compute Engine (Google Cloud Platform-GCP)  
 - Cloud-SQL voor SQL Server (Google Cloud Platform – GCP) 
 
-Zie het [migratie overzicht](sql-server-to-managed-instance-overview.md)voor meer informatie over migratie. Zie de [hand leiding voor database migratie](https://datamigration.microsoft.com/)voor andere scenario's.
+Zie het [migratie overzicht](sql-server-to-managed-instance-overview.md)voor meer informatie over migratie. Zie [Data Base Migration](https://docs.microsoft.com/data-migration)(Engelstalig) voor andere migratie handleidingen. 
 
 :::image type="content" source="media/sql-server-to-managed-instance-overview/migration-process-flow-small.png" alt-text="Migratie proces stroom":::
 
@@ -40,6 +40,8 @@ Als u uw SQL Server naar Azure SQL Managed instance wilt migreren, moet u de vol
 
 - Kies een [migratie methode](sql-server-to-managed-instance-overview.md#compare-migration-options) en de bijbehorende hulpprogram ma's die nodig zijn voor de gekozen methode
 - Installeer [Data Migration Assistant (DMA)](https://www.microsoft.com/download/details.aspx?id=53595) op een computer die verbinding kan maken met uw bron SQL Server
+- Connectiviteit en de juiste machtigingen voor toegang tot zowel de bron als het doel. 
+
 
 
 ## <a name="pre-migration"></a>Premigratie
@@ -130,7 +132,7 @@ Zie voor een gedetailleerde stapsgewijze zelf studie van deze migratie optie [SQ
    
 
 
-### <a name="backup-and-restore"></a>Back-up en herstel 
+### <a name="backup-and-restore"></a>Back-ups en herstellen 
 
 Een van de belangrijkste mogelijkheden van een Azure SQL Managed instance om snelle en eenvoudige database migratie mogelijk te maken is de systeem eigen terugzet bewerking van back-upbestanden van data bases () die zijn `.bak` opgeslagen op op [Azure Storage](https://azure.microsoft.com/services/storage/). Backup en Restore is een asynchrone bewerking op basis van de grootte van uw data base. 
 

@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 09/16/2020
+ms.date: 03/23/2021
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: hafowler
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4269ba32a22538eeba35ba484fae0c98cd219b7c
-ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
+ms.openlocfilehash: 18b43a99eb561cbfa340e0b3f318782bef2ca17c
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/24/2021
-ms.locfileid: "104952776"
+ms.locfileid: "105023432"
 ---
 # <a name="manage-device-identities-using-the-azure-portal"></a>Apparaat-id's beheren in Azure Portal
 
@@ -33,6 +33,7 @@ Op de pagina **alle apparaten** kunt u het volgende doen:
 - Configureer de instellingen voor uw apparaat-id.
 - Enterprise State Roaming in-of uitschakelen.
 - Audit logboeken met betrekking tot het apparaat controleren
+- Apparaten downloaden (preview-versie)
 
 [![Weer gave alle apparaten in de Azure Portal](./media/device-management-azure-portal/all-devices-azure-portal.png)](./media/device-management-azure-portal/all-devices-azure-portal.png#lightbox)
 
@@ -144,6 +145,14 @@ De functie voor beeld filtering inschakelen in de weer gave **alle apparaten** :
 1. Selecteer de banner waarin wordt **vermeld, probeer de nieuwe verbeteringen voor het filteren van apparaten uit. Klik om de preview-versie in te scha kelen.**
 
 U kunt nu **filters toevoegen** aan uw weer gave **alle apparaten** .
+
+### <a name="download-devices-preview"></a>Apparaten downloaden (preview-versie)
+
+Beheerders van Cloud apparaten, intune-beheerders en globale beheerders kunnen de optie **apparaten downloaden (preview)** gebruiken voor het exporteren van een CSV-bestand met apparaten op basis van toegepaste filters. Als er geen filters worden toegepast op de lijst, worden alle apparaten geëxporteerd. Een export kan worden uitgevoerd gedurende een periode van Maxi maal één uur, afhankelijk van de 
+
+De geëxporteerde lijst bevat de volgende kenmerken van de apparaat-id:
+
+`accountEnabled, approximateLastLogonTimeStamp, deviceOSType, deviceOSVersion, deviceTrustType, dirSyncEnabled, displayName, isCompliant, isManaged, lastDirSyncTime, objectId, profileType, registeredOwners, systemLabels, registrationTime, mdmDisplayName`
 
 ## <a name="configure-device-settings"></a>Apparaatinstellingen configureren
 

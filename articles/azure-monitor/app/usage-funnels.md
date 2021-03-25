@@ -6,12 +6,12 @@ author: NumberByColors
 ms.author: daviste
 ms.date: 07/17/2017
 ms.reviewer: mbullwin
-ms.openlocfilehash: d0e5cb5097a2f8833b10fec16a99b67c5c109fc8
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: c09667e0493fc39e8a2679a698f06301bab6ba45
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100583453"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105024945"
 ---
 # <a name="discover-how-customers-are-using-your-application-with-application-insights-funnels"></a>Ontdek hoe klanten uw toepassing gebruiken met Application Insights trechters
 
@@ -47,6 +47,5 @@ De vorige scherm afbeelding bevat vijf gemarkeerde gebieden. Dit zijn de functie
   * [Gebruikers, sessies en gebeurtenissen](usage-segmentation.md)
   * [Bewaar](usage-retention.md)
   * [Werkmappen](../visualize/workbooks-overview.md)
-  * [Gebruikers context toevoegen](usage-send-user-context.md)
+  * [Gebruikers context toevoegen](./usage-overview.md)
   * [Exporteren naar Power BI](./export-power-bi.md)
-

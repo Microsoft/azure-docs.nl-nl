@@ -92,6 +92,8 @@
           href: concepts/voice-video-calling/calling-sdk-features.md
         - name: Audio- en videoconcepten
           href: concepts/voice-video-calling/about-call-types.md
+        - name: Netwerkvereisten
+          href: concepts/voice-video-calling/network-requirements.md
         - name: Aanroepstromen
           href: concepts/call-flows.md
         - name: Topologieën voor oproep stromen

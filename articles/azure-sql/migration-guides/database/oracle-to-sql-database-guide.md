@@ -1,5 +1,5 @@
 ---
-title: 'Oracle to SQL Database: migratie handleiding'
+title: 'Oracle to Azure SQL Database: migratie handleiding'
 description: In deze hand leiding leert u hoe u uw Oracle-schema kunt migreren naar Azure SQL Database met behulp van SQL Server Migration Assistant voor Oracle (SSMA for Oracle).
 ms.service: sql-database
 ms.subservice: migration-guide
@@ -9,19 +9,19 @@ ms.topic: conceptual
 author: MashaMSFT
 ms.author: mathoma
 ms.date: 08/25/2020
-ms.openlocfilehash: f00740de5a327858fd250a0cb561b07c32f3b726
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 9b02b0e5d9e3229aafec9b8a4ca21b14c0e596a6
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104655444"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105022276"
 ---
 # <a name="migration-guide-oracle-to-azure-sql-database"></a>Migratie handleiding: Oracle naar Azure SQL Database
 [!INCLUDE[appliesto-sqldb-sqlmi](../../includes/appliesto-sqldb.md)]
 
 In deze hand leiding leert u hoe u uw Oracle-schema's kunt migreren naar Azure SQL Database met behulp van SQL Server Migration Assistant voor Oracle.
 
-Zie [Data Base Migration](https://datamigration.microsoft.com/)(Engelstalig) voor andere migratie handleidingen. 
+Zie [Data Base Migration](https://docs.microsoft.com/data-migration)(Engelstalig) voor andere migratie handleidingen. 
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -44,18 +44,15 @@ Nadat u aan de vereisten hebt voldaan, bent u klaar om de topologie van uw omgev
 
 Gebruik de SQL Server Migration Assistant (SSMA) voor Oracle om database objecten en-gegevens te bekijken, data bases te beoordelen voor migratie, database objecten te migreren naar Azure SQL Database en tenslotte gegevens naar de data base te migreren. 
 
-
 Voer de volgende stappen uit om een evaluatie te maken: 
-
 
 1. Open [SQL Server Migration Assistant voor Oracle](https://www.microsoft.com/en-us/download/details.aspx?id=54258). 
 1. Selecteer **bestand** en kies vervolgens **Nieuw project**. 
-1. Geef een project naam op, een locatie om uw project op te slaan en selecteer vervolgens Azure SQL Database als migratie doel in de vervolg keuzelijst. Selecteer **OK**.
+1. Geef een project naam op, een locatie om uw project op te slaan en selecteer vervolgens Azure SQL Database als migratie doel in de vervolg keuzelijst. Selecteer **OK**:
 
    ![Nieuw project](./media/oracle-to-sql-database-guide/new-project.png)
 
-
-1. Selecteer **verbinding maken met Oracle**. Voer in het dialoog venster **verbinding maken met Oracle** de waarden in voor de details van de Oracle-verbinding.
+1. Selecteer **verbinding maken met Oracle**. Voer in het dialoog venster **verbinding maken met Oracle** de waarden in voor de verbindings Details van Oracle:
 
    ![Verbinding maken met Oracle](./media/oracle-to-sql-database-guide/connect-to-oracle.png)
 
@@ -63,7 +60,7 @@ Voer de volgende stappen uit om een evaluatie te maken:
 
    ![Oracle-schema selecteren](./media/oracle-to-sql-database-guide/select-schema.png)
 
-1. Klik met de rechter muisknop op het Oracle-schema dat u wilt migreren in de **Oracle-meta gegevens Verkenner**, en kies vervolgens **rapport maken**. Hiermee wordt een HTML-rapport gegenereerd. U kunt ook **rapport maken** kiezen op de navigatie balk nadat u de Data Base hebt geselecteerd.
+1. Klik met de rechter muisknop op het Oracle-schema dat u wilt migreren in de **Oracle-meta gegevens Verkenner**, en kies vervolgens **rapport maken**. Hiermee wordt een HTML-rapport gegenereerd. U kunt ook **rapport maken** kiezen op de navigatie balk nadat u de Data Base hebt geselecteerd:
 
    ![Rapport maken](./media/oracle-to-sql-database-guide/create-report.png)
 
@@ -81,7 +78,7 @@ Valideer de standaard gegevens type toewijzingen en wijzig deze indien nodig op 
 
 1. Selecteer **extra** in het menu. 
 1. Selecteer de **project instellingen**. 
-1. Selecteer het tabblad **type toewijzingen** . 
+1. Selecteer het tabblad **type toewijzingen** : 
 
    ![Type toewijzingen](./media/oracle-to-sql-database-guide/type-mappings.png)
 
@@ -94,25 +91,27 @@ Voer de volgende stappen uit om het schema te converteren:
 1. Beschrijving Dynamische of ad-hoc query's toevoegen aan-instructies. Klik met de rechter muisknop op het knoop punt en kies vervolgens **instructies toevoegen**.
 1. Selecteer **verbinding maken met Azure SQL database**. 
     1. Voer de verbindings gegevens in om uw data base in Azure SQL Database te koppelen.
-    1. Kies uw doel SQL Database in de vervolg keuzelijst.
-    1. Selecteer **Verbinding maken**.
+    1. Kies uw doel SQL Database in de vervolg keuzelijst of geef een nieuwe naam op. in dat geval wordt er een Data Base op de doel server gemaakt. 
+    1. Geef verificatie Details op. 
+    1. Selecteer **verbinding maken**:
 
     ![Verbinding maken met SQL Database](./media/oracle-to-sql-database-guide/connect-to-sql-database.png)
 
 
-1. Klik met de rechter muisknop op het Oracle-schema in de **Oracle-meta gegevens Verkenner** en kies vervolgens **schema converteren**. U kunt ook **schema converteren** selecteren in de bovenste navigatie balk nadat u het schema hebt geselecteerd.
+1. Klik met de rechter muisknop op het Oracle-schema in de **Oracle-meta gegevens Verkenner** en kies vervolgens **schema converteren**. U kunt ook **schema converteren** selecteren in de bovenste navigatie balk nadat u het schema hebt geselecteerd:
 
    ![Schema converteren](./media/oracle-to-sql-database-guide/convert-schema.png)
 
-1. Nadat de conversie is voltooid, vergelijkt u de geconverteerde objecten met de oorspronkelijke objecten om potentiële problemen te identificeren en te verhelpen op basis van de aanbevelingen.
+1. Nadat de conversie is voltooid, vergelijkt u de geconverteerde objecten met de oorspronkelijke objecten om potentiële problemen te identificeren en te verhelpen op basis van de aanbevelingen:
 
    ![Aanbevelingen schema controleren](./media/oracle-to-sql-database-guide/table-mapping.png)
 
-   Vergelijk de geconverteerde Transact-SQL-tekst met de originele opgeslagen procedures en controleer de aanbevelingen. 
+   Vergelijk de geconverteerde Transact-SQL-tekst met de originele opgeslagen procedures en Bekijk de aanbevelingen:
 
    ![Aanbevelingen controleren](./media/oracle-to-sql-database-guide/procedure-comparison.png)
 
-1. Sla het project lokaal op voor een herbemiddeling van het offline schema. Selecteer **project opslaan** in het menu **bestand** .
+1. Selecteer **resultaten controleren** in het deel venster uitvoer en Bekijk fouten in het deel venster **fouten lijst** . 
+1. Sla het project lokaal op voor een herbemiddeling van het offline schema. Selecteer **project opslaan** in het menu **bestand** . Dit biedt u de mogelijkheid om de bron-en doel schema's offline te evalueren en herstel bewerkingen uit te voeren voordat u het schema kunt publiceren naar SQL Database.
 
 ## <a name="migrate"></a>Migrate
 
@@ -120,7 +119,7 @@ Nadat u klaar bent met het beoordelen van uw data bases en eventuele verschillen
 
 Als u uw schema wilt publiceren en uw gegevens wilt migreren, voert u de volgende stappen uit:
 
-1. Publiceer het schema: Klik met de rechter muisknop op de data base in het knoop punt **data bases** in de **Azure SQL database meta gegevens Verkenner** en kies **synchroniseren met data base**.
+1. Publiceer het schema: Klik met de rechter muisknop op de data base in het knoop punt **data bases** in de **Azure SQL database meta gegevens Verkenner** en kies **synchroniseren met data base**:
 
    ![Synchroniseren met data base](./media/oracle-to-sql-database-guide/synchronize-with-database.png)
 
@@ -129,22 +128,21 @@ Als u uw schema wilt publiceren en uw gegevens wilt migreren, voert u de volgend
    ![Synchroniseren met database revisie](./media/oracle-to-sql-database-guide/synchronize-with-database-review.png)
 
 
-1. De gegevens migreren: Klik met de rechter muisknop op het schema in de **Oracle-meta gegevens Verkenner** en kies **gegevens migreren**. U kunt er ook voor kiezen om **gegevens te migreren** vanaf de navigatie balk van de bovenste regel nadat u het schema hebt geselecteerd. 
+1. De gegevens migreren: Klik met de rechter muisknop op de data base of het object dat u wilt migreren in **Oracle Meta Data Explorer** en kies **gegevens migreren**. U kunt ook **gegevens migreren** selecteren in de bovenste navigatie balk. Als u gegevens voor een hele Data Base wilt migreren, schakelt u het selectie vakje naast de naam van de data base in. Als u gegevens uit afzonderlijke tabellen wilt migreren, vouwt u de data base uit, vouwt u tabellen uit en schakelt u het selectie vakje naast de tabel in. Als u gegevens uit afzonderlijke tabellen wilt weglaten, schakelt u het selectie vakje uit:
 
    ![Gegevens migreren](./media/oracle-to-sql-database-guide/migrate-data.png)
 
 1. Geef verbindings Details op voor zowel Oracle als Azure SQL Database.
-1. Het **gegevens migratie rapport** weer geven.
+1. Nadat de migratie is voltooid, raadpleegt u het **rapport gegevens migratie**:  
 
    ![Gegevens migratie rapport](./media/oracle-to-sql-database-guide/data-migration-report.png)
 
-1. Maak verbinding met uw Azure SQL Database met behulp van [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) en valideer de migratie door de gegevens en het schema te controleren.
+1. Maak verbinding met uw Azure SQL Database met behulp van [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) en valideer de migratie door de gegevens en het schema te controleren:
 
    ![Valideren in SSMA](./media/oracle-to-sql-database-guide/validate-data.png)
 
 U kunt ook SQL Server Integration Services (SSIS) gebruiken om de migratie uit te voeren. Raadpleeg voor meer informatie: 
 
-- [SQL Server Migration Assistant: gegevens van niet-micro soft-gegevens platformen evalueren en migreren naar SQL Server](https://blogs.msdn.microsoft.com/datamigration/2016/11/16/sql-server-migration-assistant-how-to-assess-and-migrate-databases-from-non-microsoft-data-platforms-to-sql-server/)
 - [Aan de slag met SQL Server Integration Services](https://docs.microsoft.com/sql/integration-services/sql-server-integration-services)
 - [SQL Server Integration Services: SSIS voor Azure en hybride gegevens verplaatsing](https://download.microsoft.com/download/D/2/0/D20E1C5F-72EA-4505-9F26-FEF9550EFD44/SSIS%20Hybrid%20and%20Azure.docx)
 

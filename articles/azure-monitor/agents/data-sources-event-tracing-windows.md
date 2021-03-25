@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.author: jamesfit
 author: jimmyfit
 ms.date: 01/29/2021
-ms.openlocfilehash: 096d16bb2c7249ec99f37fbee9d8ffc8f0e45db2
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 73135d95a56dc03790b3b7368a276ebfc99275fd
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102050763"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105025064"
 ---
 # <a name="collecting-event-tracing-for-windows-etw-events-for-analysis-azure-monitor-logs"></a>Het verzamelen van Event Tracing for Windows gebeurtenissen (ETW) voor analyse Azure Monitor-logboeken
 
@@ -71,7 +71,7 @@ Zodra overeenkomende gebeurtenissen zijn gegenereerd, moet u beginnen met het we
 
 ### <a name="step-4-configure-log-analytics-storage-account-collection"></a>Stap 4: Log Analytics verzameling opslag accounts configureren
 
-Volg [deze instructies](https://docs.microsoft.com/azure/azure-monitor/essentials/diagnostics-extension-logs#collect-logs-from-azure-storage) voor het verzamelen van de logboeken van Azure Storage. Zodra de gegevens van de ETW-gebeurtenis zijn geconfigureerd, moeten deze worden weer gegeven in Log Analytics onder de tabel **ETWEvent** .
+Volg [deze instructies](./diagnostics-extension-logs.md#collect-logs-from-azure-storage) voor het verzamelen van de logboeken van Azure Storage. Zodra de gegevens van de ETW-gebeurtenis zijn geconfigureerd, moeten deze worden weer gegeven in Log Analytics onder de tabel **ETWEvent** .
 
 ## <a name="next-steps"></a>Volgende stappen
 - [Aangepaste velden](../logs/custom-fields.md) gebruiken voor het maken van een structuur in uw etw-gebeurtenissen

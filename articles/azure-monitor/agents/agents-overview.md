@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 01/12/2021
-ms.openlocfilehash: a2f6023b86b96266be8e625fd5b0d6625500e3fc
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 4d1dd358c03d051be4be5733d9e729d1d7ef5b0c
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102551467"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105026169"
 ---
 # <a name="overview-of-azure-monitor-agents"></a>Overzicht van Azure Monitor agents
 
@@ -97,7 +97,7 @@ Gebruik de diagnostische extensie van Azure als u het volgende moet doen:
 - Gegevens verzenden naar Azure Storage voor archivering of het analyseren met hulpprogram ma's zoals [Azure Storage Explorer](../../vs-azure-tools-storage-manage-with-storage-explorer.md).
 - Gegevens verzenden naar [Azure monitor metrieken](../essentials/data-platform-metrics.md) om deze te analyseren met [metrische gegevens Verkenner](../essentials/metrics-getting-started.md) en te profiteren van functies zoals bijna realtime [waarschuwingen](../alerts/alerts-metric-overview.md) en [automatisch schalen](../autoscale/autoscale-overview.md) (alleen Windows).
 - Gegevens verzenden naar hulpprogram ma's van derden met behulp van [Azure Event hubs](./diagnostics-extension-stream-event-hubs.md).
-- Verzamel de [Diagnostische gegevens over opstarten](../../virtual-machines/troubleshooting/boot-diagnostics.md) om opstart problemen met de virtuele machine te onderzoeken.
+- Verzamel de [Diagnostische gegevens over opstarten](/troubleshoot/azure/virtual-machines/boot-diagnostics) om opstart problemen met de virtuele machine te onderzoeken.
 
 De beperkingen van de Azure Diagnostics-extensie zijn onder andere:
 

@@ -7,12 +7,12 @@ ms.service: security-center
 ms.topic: how-to
 ms.date: 03/08/2021
 ms.author: memildin
-ms.openlocfilehash: 17e54dfc5c369a8cbb35db50ff2cbab131d34c2d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 085f3a5295d60b83536683a57a34b51abccd3067
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102453764"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105043016"
 ---
 # <a name="protect-your-endpoints-with-security-centers-integrated-edr-solution-microsoft-defender-for-endpoint"></a>Bescherm uw eind punten met de geïntegreerde EDR-oplossing van Security Center: micro soft Defender voor eind punt
 
@@ -74,7 +74,7 @@ Nadat u de locatie hebt geconfigureerd, kunt u deze niet meer wijzigen. Als u uw
 1. Controleren of uw computer voldoet aan de vereiste vereisten voor Defender voor eind punt:
 
     - Voor **alle versies van Windows**:
-        - Configureer de netwerk instellingen die worden beschreven in [instellingen voor apparaat proxy en Internet connectiviteit configureren](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-proxy-internet)
+        - Configureer de netwerk instellingen die worden beschreven in [instellingen voor apparaat proxy en Internet connectiviteit configureren](/windows/security/threat-protection/microsoft-defender-atp/configure-proxy-internet)
         - Als u Defender naar een eind punt implementeert op een on-premises computer, verbindt u deze met Azure Arc zoals uitgelegd in [hybride computers verbinden met servers met Azure-Arc](../azure-arc/servers/learn/quick-enable-hybrid-vm.md)
     - Voor **Windows Server 2019-computers** moet u bovendien controleren of ze een geldige agent uitvoeren en de MicrosoftMonitoringAgent-extensie hebben
 

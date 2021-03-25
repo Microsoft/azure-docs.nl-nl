@@ -16,12 +16,12 @@ ms.date: 04/16/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c320c8497506a0269e65cd79e18aea1972354729
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 349aef1bb9382eec19d9ad9c7f6d4579c82b62de
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104589519"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105043934"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-quickstart"></a>Azure Active Directory naadloze eenmalige aanmelding: Quick Start
 
@@ -43,7 +43,7 @@ Zorg ervoor dat aan de volgende vereisten is voldaan:
     >Azure AD Connect versies 1.1.557.0, 1.1.558.0, 1.1.561.0 en 1.1.614.0 hebben een probleem met de synchronisatie van wacht woord-hashes. Als u de synchronisatie van wacht woord-hash _niet_ wilt gebruiken in combi natie met Pass-Through-verificatie, raadpleegt u de opmerkingen bij de [Azure AD Connect-release](./reference-connect-version-history.md) voor meer informatie.
     
     >[!NOTE]
-    >Als u een uitgaande HTTP-proxy hebt, controleert u of deze URL, autologon.microsoftazuread-sso.com, white list is. U moet deze URL expliciet opgeven omdat het Joker teken mogelijk niet wordt geaccepteerd. 
+    >Als u een uitgaande HTTP-proxy hebt, moet u ervoor zorgen dat deze URL, autologon.microsoftazuread-sso.com, voor komt in de lijst toegestaan. U moet deze URL expliciet opgeven omdat het Joker teken mogelijk niet wordt geaccepteerd. 
 
 * **Een ondersteunde Azure AD Connect topologie gebruiken**: Zorg ervoor dat u een van de ondersteunde topologieën van Azure AD Connect gebruikt die [hier](plan-connect-topologies.md)worden beschreven.
 

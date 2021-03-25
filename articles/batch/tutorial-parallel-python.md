@@ -5,12 +5,12 @@ ms.devlang: python
 ms.topic: tutorial
 ms.date: 11/29/2018
 ms.custom: mvc, devx-track-python
-ms.openlocfilehash: 7013ef1e9b6dda4554b665fa8199edb86a8a9adb
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 48df2cb6ac103d1f03d2d64fce0d10a8f2f128e2
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "97106509"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105043407"
 ---
 # <a name="tutorial-run-a-parallel-workload-with-azure-batch-using-the-python-api"></a>Zelfstudie: Een parallelle workload uitvoeren met Azure Batch met behulp van de Python API
 
@@ -30,7 +30,7 @@ In deze zelfstudie zet u MP4-mediabestanden parallel om in de MP3-indeling met b
 
 ## <a name="prerequisites"></a>Vereisten
 
-* [Python-versie 2.7 of 3.3 of later](https://www.python.org/downloads/)
+* [Python-versie 2,7 of 3.6 +](https://www.python.org/downloads/)
 
 * [PIP](https://pip.pypa.io/en/stable/installing/)-pakketbeheer
 

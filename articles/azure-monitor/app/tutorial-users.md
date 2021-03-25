@@ -7,12 +7,12 @@ author: lgayhardt
 ms.author: lagayhar
 ms.date: 09/20/2017
 ms.custom: mvc
-ms.openlocfilehash: 4f6eeb5265d99a17ed18ace91fa5f2d2f744dbb2
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: db63d763da8cfe13a07cab15f7f18ad6e2e73eb7
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100627218"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105026288"
 ---
 # <a name="use-azure-application-insights-to-understand-how-customers-are-using-your-application"></a>Gebruik Application Insights om inzicht te krijgen in de wijze waarop klanten van uw app gebruikmaken
 
@@ -38,7 +38,7 @@ Vereisten voor het voltooien van deze zelfstudie:
 - Download en installeer de [Visual Studio Snapshot Debugger](https://aka.ms/snapshotdebugger).
 - Implementeer een .NET-toepassing in Azure en [schakel de Application Insights-SDK](../app/asp-net.md)in. 
 - [Telemetrie van uw toepassing versturen](../app/usage-overview.md#send-telemetry-from-your-app) voor het toevoegen van aangepaste gebeurtenissen/paginaweergaven
-- [Gebruikerscontext](../app/usage-send-user-context.md) verzenden om bij te houden wat een gebruiker in de loop der tijd doet en volledig gebruikmaken van de gebruiksfuncties.
+- [Gebruikerscontext](./usage-overview.md) verzenden om bij te houden wat een gebruiker in de loop der tijd doet en volledig gebruikmaken van de gebruiksfuncties.
 
 ## <a name="log-in-to-azure"></a>Meld u aan bij Azure.
 Meld u aan bij de Azure-portal op [https://portal.azure.com](https://portal.azure.com).
@@ -165,4 +165,3 @@ Nu u hebt geleerd hoe u uw gebruikers kunt analyseren, gaat u door naar de volge
 
 > [!div class="nextstepaction"]
 > [Aangepaste dashboards maken](./tutorial-app-dashboards.md)
-

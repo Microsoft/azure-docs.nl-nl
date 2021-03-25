@@ -246,6 +246,8 @@
               href: azure-stack-edge-gpu-virtual-machine-sizes.md
             - name: Verbinding maken met VM-console
               href: azure-stack-edge-gpu-connect-virtual-machine-console.md
+            - name: Netwerk interfaces beheren
+              href: azure-stack-edge-gpu-manage-virtual-machine-network-interfaces-portal.md
         - name: Certificaten beheren
           items:
             - name: Vereisten

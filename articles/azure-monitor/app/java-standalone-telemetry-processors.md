@@ -6,12 +6,12 @@ ms.date: 10/29/2020
 author: kryalama
 ms.custom: devx-track-java
 ms.author: kryalama
-ms.openlocfilehash: 35e53454e5b2c6265082bbedb4a8b60e82df7191
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 991e52c13a5730b83552abb6b922d4d7a57c5429
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101734567"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105024112"
 ---
 # <a name="telemetry-processors-preview---azure-monitor-application-insights-for-java"></a>Telemetrie-processors (preview)-Azure Monitor Application Insights voor Java
 
@@ -21,10 +21,13 @@ ms.locfileid: "101734567"
 De Java 3,0-agent voor Application Insights kan telemetrie-gegevens verwerken voordat de gegevens worden geëxporteerd.
 
 Hier volgen enkele gebruiks voorbeelden voor telemetrie-processors:
- * Gevoelige gegevens maken.
+ * Masker gevoelige gegevens.
  * Aangepaste dimensies voorwaardelijk toevoegen.
  * Werk de naam van de span bij, die wordt gebruikt voor het samen voegen van vergelijk bare telemetrie in de Azure Portal.
- * Drop span-kenmerken om opname kosten te bepalen.
+ * Specifieke span-kenmerk (en) neerzetten om opname kosten te bepalen.
+
+> [!NOTE]
+> Zie [steekproef onderdrukkingen](./java-standalone-sampling-overrides.md)als u specifieke (hele) reeksen wilt verwijderen voor het beheren van opname kosten.
 
 ## <a name="terminology"></a>Terminologie
 

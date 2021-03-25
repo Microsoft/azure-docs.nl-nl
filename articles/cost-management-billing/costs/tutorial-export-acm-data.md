@@ -3,18 +3,18 @@ title: 'Zelfstudie: Gegevensexports uit Azure Cost Management instellen en beher
 description: In dit artikel leest u hoe u gegevensexports uit Azure Cost Management instelt en beheert, zodat u deze kunt gebruiken in externe systemen.
 author: bandersmsft
 ms.author: banders
-ms.date: 12/7/2020
+ms.date: 03/24/2020
 ms.topic: tutorial
 ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: adwise
 ms.custom: seodec18, devx-track-azurepowershell
-ms.openlocfilehash: e3c1fa071cd23b871f754e89d6f17eb2cc44b394
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
-ms.translationtype: HT
+ms.openlocfilehash: a386b214c4372c9d8de729a8b6bed4aac9edd9f3
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97400349"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105043458"
 ---
 # <a name="tutorial-create-and-manage-exported-data"></a>Zelfstudie: Geëxporteerde gegevens maken en beheren
 
@@ -80,6 +80,8 @@ Uw nieuwe export wordt weergegeven in de lijst met exports. Nieuwe exports zijn 
 Het kan 12 tot 24 uur duren voordat de export voor het eerst wordt uitgevoerd. Het kan echter langer duren voordat er in het exportbestand gegevens worden weergegeven.
 
 ### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
+Wanneer u een export programmatisch maakt, moet u de resource provider hand matig registreren `Microsoft.CostManagementExports` bij het abonnement waar het opslag account zich bevindt. Registratie gebeurt automatisch wanneer u de export maakt met behulp van de Azure Portal. Zie [resource provider registreren](../../azure-resource-manager/management/resource-providers-and-types.md#register-resource-provider)voor meer informatie over het registreren van resource providers.
 
 Begin door de omgeving voor te bereiden op de Azure CLI:
 
@@ -148,6 +150,8 @@ az costmanagement export delete --name DemoExport --scope "subscriptions/0000000
 ```
 
 ### <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
+
+Wanneer u een export programmatisch maakt, moet u de resource provider hand matig registreren `Microsoft.CostManagementExports` bij het abonnement waar het opslag account zich bevindt. Registratie gebeurt automatisch wanneer u de export maakt met behulp van de Azure Portal. Zie [resource provider registreren](../../azure-resource-manager/management/resource-providers-and-types.md#register-resource-provider)voor meer informatie over het registreren van resource providers.
 
 Begin door de omgeving voor te bereiden op Azure PowerShell:
 

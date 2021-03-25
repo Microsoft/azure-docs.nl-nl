@@ -1,5 +1,5 @@
 ---
-title: Beoordelings regels voor het SQL Server van de migratie van SQL-beheerde exemplaren
+title: Beoordelings regels voor het SQL Server van de migratie van Azure SQL Managed instance
 description: Beoordelings regels voor het identificeren van problemen met het bron SQL Server exemplaar dat moet worden geadresseerd voordat de migratie naar Azure SQL Managed instance kan worden gemigreerd.
 ms.service: sql-managed-instance
 ms.subservice: migration-guide
@@ -10,14 +10,14 @@ author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: MashaMSFT
 ms.date: 12/15/2020
-ms.openlocfilehash: 760a6496ff297ae6328810589f780b430d55b18a
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: fc8959d44fbacd90916a045d23db4bee872c4670
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102054570"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105026033"
 ---
-# <a name="assessment-rules-for-sql-server-to-sql-managed-instance-migration"></a>Beoordelings regels voor het SQL Server van de migratie van SQL-beheerde exemplaren
+# <a name="assessment-rules-for-sql-server-to--azure-sql-managed-instance-migration"></a>Beoordelings regels voor het SQL Server van de migratie van Azure SQL Managed instance
 [!INCLUDE[appliesto--sqldb](../../includes/appliesto-sqldb.md)]
 
 Migratie hulpprogramma's valideren uw bron SQL Server-exemplaar door een aantal beoordelings regels uit te voeren voor het identificeren van problemen die moeten worden opgelost voordat u uw SQL Server-Data Base naar Azure SQL Managed Instance kunt migreren. 

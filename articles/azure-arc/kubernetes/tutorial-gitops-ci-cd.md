@@ -7,12 +7,12 @@ ms.service: azure-arc
 ms.topic: tutorial
 ms.date: 03/03/2021
 ms.custom: template-tutorial
-ms.openlocfilehash: 72caca47cde960eb7298ec2cf0c6994755cb3159
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: f720cc196f4034d29ec1d628e28d3534b10f3e41
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102121606"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105025812"
 ---
 # <a name="tutorial-implement-cicd-with-gitops-using-azure-arc-enabled-kubernetes-clusters"></a>Zelf studie: CI/CD met GitOps implementeren met behulp van Azure Arc-Kubernetes-clusters
 
@@ -37,12 +37,12 @@ Als u nog geen abonnement op Azure hebt, maakt u een [gratis account](https://az
 In deze zelf studie wordt ervan uitgegaan dat u bekend bent met Azure DevOps, Azure opslag plaatsen en pijp lijnen en Azure CLI.
 
 * Meld u aan bij [Azure DevOps Services](https://dev.azure.com/).
-* Voltooi de [vorige zelf studie](https://docs.microsoft.com/azure/azure-arc/kubernetes/tutorial-use-gitops-connected-cluster) om te leren hoe u GitOps implementeert voor uw CI/CD-omgeving.
-* Meer informatie over de [voor delen en architectuur](https://docs.microsoft.com/azure/azure-arc/kubernetes/conceptual-configurations) van deze functie.
+* Voltooi de [vorige zelf studie](./tutorial-use-gitops-connected-cluster.md) om te leren hoe u GitOps implementeert voor uw CI/CD-omgeving.
+* Meer informatie over de [voor delen en architectuur](./conceptual-configurations.md) van deze functie.
 * Controleer of u het volgende hebt:
-  * Een [verbonden Kubernetes-cluster met](https://docs.microsoft.com/azure/azure-arc/kubernetes/quickstart-connect-cluster#connect-an-existing-kubernetes-cluster) de naam **Arc-cicd-cluster**.
-  * Een verbonden Azure Container Registry (ACR) met een [AKS-integratie](https://docs.microsoft.com/azure/aks/cluster-container-registry-integration) of een [niet-AKS-cluster verificatie](https://docs.microsoft.com/azure/container-registry/container-registry-auth-kubernetes).
-  * De machtigingen ' admin bouwen ' en ' Project beheerder ' voor [Azure opslag plaatsen](https://docs.microsoft.com/azure/devops/repos/get-started/what-is-repos) en [Azure pipelines](https://docs.microsoft.com/azure/devops/pipelines/get-started/pipelines-get-started).
+  * Een [verbonden Kubernetes-cluster met](./quickstart-connect-cluster.md#connect-an-existing-kubernetes-cluster) de naam **Arc-cicd-cluster**.
+  * Een verbonden Azure Container Registry (ACR) met een [AKS-integratie](../../aks/cluster-container-registry-integration.md) of een [niet-AKS-cluster verificatie](../../container-registry/container-registry-auth-kubernetes.md).
+  * De machtigingen ' admin bouwen ' en ' Project beheerder ' voor [Azure opslag plaatsen](/azure/devops/repos/get-started/what-is-repos) en [Azure pipelines](/azure/devops/pipelines/get-started/pipelines-get-started).
 * Installeer de volgende Kubernetes CLI-uitbrei dingen van Azure Arc enabled van versie >= 1.0.0:
 
   ```azurecli
@@ -67,7 +67,7 @@ Importeer een [toepassings opslag plaats](https://docs.microsoft.com/azure/azure
    * URL https://github.com/Azure/arc-cicd-demo-gitops
    * Werkt als basis voor uw cluster resources die de Azure stem-app gebruiken.
 
-Meer informatie over het [importeren van Git opslag plaatsen](https://docs.microsoft.com/azure/devops/repos/git/import-git-repository).
+Meer informatie over het [importeren van Git opslag plaatsen](/azure/devops/repos/git/import-git-repository).
 
 >[!NOTE]
 > Het importeren en gebruiken van twee afzonderlijke opslag plaatsen voor de toepassing en GitOps opslag plaatsen kan de beveiliging en eenvoud verbeteren. De machtigingen en zicht baarheid van de toepassing en de GitOps-opslag plaatsen kunnen afzonderlijk worden afgestemd.
@@ -86,7 +86,7 @@ De GitOps-verbinding die u maakt, wordt automatisch:
 De CI/CD-werk stroom vult de manifest Directory met extra manifesten voor het implementeren van de app.
 
 
-1. [Maak een nieuwe GitOps-verbinding](https://docs.microsoft.com/azure/azure-arc/kubernetes/tutorial-use-gitops-connected-cluster) met uw nieuw geïmporteerde **Arc-cicd-demo-GitOps** opslag plaats in azure opslag plaatsen.
+1. [Maak een nieuwe GitOps-verbinding](./tutorial-use-gitops-connected-cluster.md) met uw nieuw geïmporteerde **Arc-cicd-demo-GitOps** opslag plaats in azure opslag plaatsen.
 
    ```azurecli
    az k8sconfiguration create \
@@ -172,7 +172,7 @@ kubectl create secret docker-registry <secret-name> \
 ## <a name="create-environment-variable-groups"></a>Omgevings variabele groepen maken
 
 ### <a name="app-repo-variable-group"></a>Variabelen groep app opslag plaats
-[Maak een variabelen groep met de](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups) naam **AZ-stemmen-app-dev**. Stel de volgende waarden in:
+[Maak een variabelen groep met de](/azure/devops/pipelines/library/variable-groups) naam **AZ-stemmen-app-dev**. Stel de volgende waarden in:
 
 | Variabele | Waarde |
 | -------- | ----- |
@@ -182,13 +182,13 @@ kubectl create secret docker-registry <secret-name> \
 | ENVIRONMENT_NAME | Dev |
 | MANIFESTS_BRANCH | `master` |
 | MANIFESTS_REPO | De Git-connection string voor uw GitOps-opslag plaats |
-| Patrick | Een [gemaakt Pat-token](https://docs.microsoft.com/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?#create-a-pat) met lees-en schrijf machtigingen. Sla het bestand op om het later te gebruiken bij het maken van de `stage` variabelen groep. |
+| Patrick | Een [gemaakt Pat-token](/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate#create-a-pat) met lees-en schrijf machtigingen. Sla het bestand op om het later te gebruiken bij het maken van de `stage` variabelen groep. |
 | SRC_FOLDER | `azure-vote` | 
 | TARGET_CLUSTER | `arc-cicd-cluster` |
 | TARGET_NAMESPACE | `dev` |
 
 > [!IMPORTANT]
-> Markeer uw PAT als een geheim type. In uw toepassingen kunt u overwegen geheimen te koppelen vanuit een Azure-sleutel [kluis](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups#link-secrets-from-an-azure-key-vault).
+> Markeer uw PAT als een geheim type. In uw toepassingen kunt u overwegen geheimen te koppelen vanuit een Azure-sleutel [kluis](/azure/devops/pipelines/library/variable-groups#link-secrets-from-an-azure-key-vault).
 >
 ### <a name="stage-environment-variable-group"></a>Omgevings variabelen groep fase
 
@@ -255,7 +255,7 @@ Als de ontwikkelings omgeving na de implementatie een afbreek punt onthult, kunt
 1. Geef de goed keurders en een optioneel bericht op.
 1. Selecteer opnieuw **maken** om de toevoeging van de hand matige goedkeurings controle uit te voeren.
 
-Zie de zelf studie [goed keuring en controles definiëren](https://docs.microsoft.com/azure/devops/pipelines/process/approvals) voor meer informatie.
+Zie de zelf studie [goed keuring en controles definiëren](/azure/devops/pipelines/process/approvals) voor meer informatie.
 
 De volgende keer dat de CD-pijp lijn wordt uitgevoerd, wordt de pijp lijn onderbroken na het maken van de GitOps-PR. Controleer of de wijziging correct is gesynchroniseerd en de basis functionaliteit doorloopt. U kunt de controle goed keuren vanuit de pijp lijn zodat de wijziging stroomt naar de volgende omgeving.
 
@@ -291,7 +291,7 @@ Fouten die tijdens de uitvoering van de pijp lijn zijn gevonden, worden weer geg
 Zodra de uitvoering van de pijp lijn is voltooid, hebt u de kwaliteit van de toepassings code en de sjabloon waarmee deze wordt geïmplementeerd, gegarandeerd. U kunt nu de PR goed keuren en volt ooien. De CI wordt opnieuw uitgevoerd, waarna de sjablonen en manifesten opnieuw worden gegenereerd voordat de CD-pijp lijn wordt geactiveerd.
 
 > [!TIP]
-> Vergeet niet om vertakkings beleidsregels in te stellen in een echte omgeving om ervoor te zorgen dat de PR uw kwaliteits controles door gegeven. Zie voor meer informatie het artikel [set Branch policies](https://docs.microsoft.com/azure/devops/repos/git/branch-policies) .
+> Vergeet niet om vertakkings beleidsregels in te stellen in een echte omgeving om ervoor te zorgen dat de PR uw kwaliteits controles door gegeven. Zie voor meer informatie het artikel [set Branch policies](/azure/devops/repos/git/branch-policies) .
 
 ## <a name="cd-process-approvals"></a>Goed keuringen van CD-processen
 

@@ -8,12 +8,12 @@ author: tcare
 ms.author: tcare
 description: Dit artikel bevat een conceptueel overzicht van een CI/CD-werk stroom met behulp van GitOps
 keywords: GitOps, Kubernetes, K8s, azure, helm, Arc, AKS, Azure Kubernetes service, containers, CI, CD, Azure DevOps
-ms.openlocfilehash: a51a9f2b32f1088cec390dc4d74300a38f37b160
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 47633ed5bec1a07c878983d0e93e03149d8967ba
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102121776"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105025863"
 ---
 # <a name="cicd-workflow-using-gitops---azure-arc-enabled-kubernetes"></a>CI/CD-werk stroom met GitOps-Azure Arc enabled Kubernetes
 
@@ -30,7 +30,7 @@ Houd rekening met een toepassing die is geïmplementeerd in een of meer Kubernet
 ### <a name="application-repo"></a>Opslag plaats van toepassing
 De opslag plaats van de toepassing bevat de toepassings code die ontwikkel aars tijdens hun interne lus gebruiken. De implementatie sjablonen van de toepassing zijn Live in deze opslag plaats in een algemeen formulier, zoals helm of Kustomize. Omgeving-specifieke waarden worden niet opgeslagen. Wijzigingen in deze opslag plaats roepen een pull-of CI-pijp lijn op waarmee het implementatie proces wordt gestart.
 ### <a name="container-registry"></a>Container Registry
-Het container register bevat alle afbeeldingen van de eerste en derde partij die worden gebruikt in de Kubernetes-omgevingen. Codeer installatie kopieën van toepassingen met menselijke Lees bare Tags en de Git-door Voer die wordt gebruikt om de installatie kopie te bouwen. Cache kopieën van derden voor beveiliging, snelheid en flexibiliteit. Stel een plan in voor tijdige testen en integratie van beveiligings updates. Zie voor meer informatie de hand leiding [ACR verbruik en onderhoud van open bare inhoud](https://docs.microsoft.com/azure/container-registry/tasks-consume-public-content) voor een voor beeld.
+Het container register bevat alle afbeeldingen van de eerste en derde partij die worden gebruikt in de Kubernetes-omgevingen. Codeer installatie kopieën van toepassingen met menselijke Lees bare Tags en de Git-door Voer die wordt gebruikt om de installatie kopie te bouwen. Cache kopieën van derden voor beveiliging, snelheid en flexibiliteit. Stel een plan in voor tijdige testen en integratie van beveiligings updates. Zie voor meer informatie de hand leiding [ACR verbruik en onderhoud van open bare inhoud](../../container-registry/tasks-consume-public-content.md) voor een voor beeld.
 ### <a name="pr-pipeline"></a>PR-pijp lijn
 Pull aan de toepassings opslag plaats worden gegatedeerd op een geslaagde uitvoering van de PR-pijp lijn. Deze pijp lijn voert de basis kwaliteits poorten uit, zoals linting en eenheids tests voor de toepassings code. De pijp lijn test de toepassing en de Dockerfiles-en helm-sjablonen die worden gebruikt voor implementatie naar een Kubernetes-omgeving. Docker-installatie kopieën moeten worden gebouwd en getest, maar niet gepusht. Behoud de duur van de pijp lijn relatief kort om snelle herhalingen mogelijk te maken.
 ### <a name="ci-pipeline"></a>CI-pijp lijn

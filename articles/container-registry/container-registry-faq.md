@@ -3,14 +3,14 @@ title: Veelgestelde vragen
 description: Antwoorden op veelgestelde vragen met betrekking tot de Azure Container Registry-service
 author: sajayantony
 ms.topic: article
-ms.date: 09/18/2020
+ms.date: 03/15/2021
 ms.author: sajaya
-ms.openlocfilehash: 055f039d5bba0dba2906e1d3b8410af00c5600ef
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 8d5e161a0a663542142081c61bf1ad08be1be484
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "97606280"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105026237"
 ---
 # <a name="frequently-asked-questions-about-azure-container-registry"></a>Veelgestelde vragen over Azure Container Registry
 
@@ -260,11 +260,23 @@ Afbeeldings quarantaine is momenteel een preview-functie van ACR. U kunt de quar
 
 ### <a name="how-do-i-enable-anonymous-pull-access"></a>Anonieme pull-toegang Hoe kan ik inschakelen?
 
-Het instellen van een Azure container Registry voor anonieme toegang (openbaar) is momenteel een preview-functie. Als u een [bereik toewijzing (gebruiker) of Token bronnen](./container-registry-repository-scoped-permissions.md) in uw REGI ster hebt, moet u deze verwijderen voordat u een ondersteunings ticket gaat maken (systeem bereik toewijzingen kunnen worden genegeerd). Als u open bare toegang wilt inschakelen, opent u een ondersteunings ticket op https://aka.ms/acr/support/create-ticket . Zie het [Feedback forum van Azure](https://feedback.azure.com/forums/903958-azure-container-registry/suggestions/32517127-enable-anonymous-access-to-registries)voor meer informatie.
+Het instellen van een Azure container Registry voor anonieme (niet-geverifieerde) pull-toegang is momenteel een preview-functie die beschikbaar is in de Standard-en Premium- [service lagen](container-registry-skus.md). 
+
+Als u anonieme pull-toegang wilt inschakelen, werkt u een REGI ster bij met behulp van de Azure CLI (versie 2.21.0 of hoger) en geeft `--anonymous-pull-enabled` u de para meter door aan de opdracht [AZ ACR update](/cli/azure/acr#az_acr_update) :
+
+```azurecli
+az acr update --name myregistry --anonymous-pull-enabled
+``` 
+
+U kunt anonieme pull-toegang op elk gewenst moment uitschakelen door `--anonymous-pull-enabled` in te stellen op `false` .
 
 > [!NOTE]
-> * Alleen de Api's die zijn vereist voor het ophalen van een bekende installatie kopie, kunnen anoniem worden geopend. Geen andere Api's voor bewerkingen als label lijst of opslagplaats lijst zijn anoniem toegankelijk.
 > * Voordat u een anonieme pull-bewerking probeert `docker logout` uit te voeren, moet u uitvoeren om ervoor te zorgen dat u alle bestaande docker-referenties wist.
+> * Alleen gegevensvlak bewerkingen zijn beschikbaar voor niet-geverifieerde clients.
+> * Het REGI ster kan een hoog aantal niet-geverifieerde aanvragen vertragen.
+
+> [!WARNING]
+> Anonieme pull-toegang is momenteel van toepassing op alle opslag plaatsen in het REGI ster. Als u de toegang tot de opslag plaats beheert met behulp van opslag plaatsen die zijn beperkt door een [bibliotheek](container-registry-repository-scoped-permissions.md), moet u er rekening mee houden dat alle gebruikers uit die opslag plaatsen kunnen halen in een REGI ster dat is ingeschakeld voor anonieme pull. Het is raadzaam om tokens te verwijderen wanneer anonieme toegang tot pull is ingeschakeld.
 
 ### <a name="how-do-i-push-non-distributable-layers-to-a-registry"></a>Hoe kan ik niet-distribueer bare lagen pushen naar een REGI ster?
 

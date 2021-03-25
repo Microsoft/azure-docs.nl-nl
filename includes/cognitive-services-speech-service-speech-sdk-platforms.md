@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/03/2021
 ms.author: trbye
-ms.openlocfilehash: c91e95e96ef7b61f8c4537125b659c254e7bd3c8
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: c860d1da844cb3dfc319fa192115d6a0343cc4e0
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102109213"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105043205"
 ---
 | Programmeertaal | Platform | SDK-naslaginformatie |
 |----------------------|----------|---------------|
@@ -19,7 +19,7 @@ ms.locfileid: "102109213"
 | Java <sup>2</sup> | Android, Windows, Linux, macOS | [Java SDK](/java/api/com.microsoft.cognitiveservices.speech) |
 | Javascript | Browser, Node.js | [JavaScript SDK](/javascript/api/microsoft-cognitiveservices-speech-sdk/) |
 | Doel-C/Swift | iOS, macOS | [Doel-C SDK](/objectivec/cognitive-services/speech/) |
-| Python | Windows, Linux, macOS | [Python SDK](https://aka.ms/csspeech/pythonref) |
+| Python | Windows, Linux, macOS | [Python SDK](/python/api/azure-cognitiveservices-speech/) |
 
 <sup>1 de .NET Speech SDK is gebaseerd op .NET Standard 2,0 en ondersteunt daarom veel platforms. Zie <a href="https://docs.microsoft.com/dotnet/standard/net-standard#net-implementation-support" target="_blank">.net-implementatie ondersteuning <span class="docon docon-navigate-external x-hidden-focus"></span> </a>voor meer informatie.</sup>
 

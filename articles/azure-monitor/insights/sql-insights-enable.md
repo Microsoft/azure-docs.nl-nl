@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/15/2021
-ms.openlocfilehash: ac37a6de4197d5e7cae20d2bde759b98fe474047
-ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
+ms.openlocfilehash: e8dd887d151eb553131048f232940555dbef324b
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104889617"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105025030"
 ---
 # <a name="enable-sql-insights-preview"></a>SQL Insights inschakelen (preview-versie)
 In dit artikel wordt beschreven hoe u [SQL Insights](sql-insights-overview.md) inschakelt om uw SQL-implementaties te bewaken. Bewaking wordt uitgevoerd vanaf een virtuele machine van Azure die verbinding maakt met uw SQL-implementaties en gebruikmaakt van dynamische beheer weergaven (Dmv's) om bewakings gegevens te verzamelen. U kunt bepalen welke gegevens sets worden verzameld en de frequentie van het verzamelen met behulp van een bewakings profiel.
@@ -40,7 +40,7 @@ Controleer of de gebruiker is gemaakt.
 :::image type="content" source="media/sql-insights-enable/telegraf-user-database-verify.png" alt-text="Het telegrafie gebruikers script controleren." lightbox="media/sql-insights-enable/telegraf-user-database-verify.png":::
 
 ### <a name="azure-sql-managed-instance"></a>Azure SQL Managed Instance
-Meld u aan bij uw Azure SQL Managed instance en gebruik [SSMS](../../azure-sql/database/connect-query-ssms.md) of soortgelijk hulp programma om het volgende script uit te voeren om de bewakings gebruiker met de benodigde machtigingen te maken. Vervang de *gebruiker* door een gebruikers naam en *mystrongpassword* met een wacht woord.
+Meld u aan bij uw Azure SQL Managed instance en gebruik [SQL Server Management Studio](../../azure-sql/database/connect-query-ssms.md) of een soortgelijk hulp programma om het volgende script uit te voeren om de bewakings gebruiker met de benodigde machtigingen te maken. Vervang de *gebruiker* door een gebruikers naam en *mystrongpassword* met een wacht woord.
 
  
 ```
@@ -85,7 +85,7 @@ Voor de virtuele machines van Azure gelden de volgende vereisten.
 > [!NOTE]
 > De Standard_B2s (2 cpu's, 4 GiB geheugen) de grootte van de virtuele machine biedt ondersteuning voor Maxi maal 100 verbindings reeksen. U moet niet meer dan 100 verbindingen aan één virtuele machine toewijzen.
 
-De virtuele machines moeten in hetzelfde VNET worden geplaatst als uw SQL-systemen, zodat ze netwerk verbindingen kunnen maken om bewakings gegevens te verzamelen. Als u de virtuele machine voor bewaking gebruikt om SQL te bewaken die wordt uitgevoerd op virtuele machines van Azure of als een beheerd exemplaar van Azure, kunt u overwegen om de virtuele machine voor bewaking in een toepassings beveiligings groep of hetzelfde virtuele netwerk als die bronnen te plaatsen, zodat u geen openbaar netwerk eindpunt hoeft op te geven voor het bewaken van de SQL Server. 
+Afhankelijk van de netwerk instellingen van uw SQL-resources, moeten de virtuele machines mogelijk in hetzelfde virtuele netwerk worden geplaatst als uw SQL-resources, zodat ze netwerk verbindingen kunnen maken om bewakings gegevens te verzamelen.  
 
 ## <a name="configure-network-settings"></a>Netwerkinstellingen configureren
 Elk type SQL biedt methoden voor uw virtuele bewakings machine om veilig toegang te krijgen tot SQL.  In de volgende secties worden de opties behandeld op basis van het type SQL.
@@ -100,8 +100,6 @@ Voor toegang via het open bare eind punt voegt u een regel toe op de pagina **fi
 
 :::image type="content" source="media/sql-insights-enable/firewall-settings.png" alt-text="Firewall instellingen." lightbox="media/sql-insights-enable/firewall-settings.png":::
 
-> [!NOTE]
-> SQL Insights biedt momenteel geen ondersteuning voor Azure private endpoint voor Azure SQL Database.  U kunt het beste [service Tags](https://docs.microsoft.com/azure/virtual-network/service-tags-overview) gebruiken in uw netwerk beveiligings groep of firewall instellingen van het virtuele netwerk die door de [Azure monitor-agent worden ondersteund](https://docs.microsoft.com/azure/azure-monitor/agents/azure-monitor-agent-overview#networking).
 
 ### <a name="azure-sql-managed-instances"></a>Azure SQL Managed Instances 
 
@@ -213,12 +211,16 @@ Als u een lees bare secundaire wilt bewaken, neemt u de sleutel waarde `Applicat
 
 
 
-## <a name="profile-created"></a>Profiel gemaakt 
-Selecteer **virtuele machine voor bewaking toevoegen** om de virtuele machine te configureren voor het verzamelen van gegevens uit uw SQL-implementaties. Ga niet terug naar het tabblad **overzicht** .  In een paar minuten moet de kolom Status worden gewijzigd om ' verzamelen ' te zeggen, moeten de gegevens worden weer gegeven voor de systemen die u wilt bewaken.
+## <a name="monitoring-profile-created"></a>Bewakings profiel gemaakt 
+
+Selecteer **virtuele machine voor bewaking toevoegen** om de virtuele machine te configureren voor het verzamelen van gegevens uit uw SQL-resources. Ga niet terug naar het tabblad **overzicht** .  In een paar minuten moet de kolom Status worden gewijzigd in ' verzamelen ', dan worden de gegevens weer gegeven voor de SQL-resources die u wilt bewaken.
 
 Als u geen gegevens ziet, raadpleegt u [Troubleshooting SQL Insights](sql-insights-troubleshoot.md) om het probleem te identificeren. 
 
 :::image type="content" source="media/sql-insights-enable/profile-created.png" alt-text="Profiel gemaakt" lightbox="media/sql-insights-enable/profile-created.png":::
+
+> [!NOTE]
+> Als u uw bewakings profiel of de verbindings reeksen op uw virtuele machines voor bewaking wilt bijwerken, kunt u dit doen via het tabblad SQL Insights- **profiel beheren** .  Zodra uw updates zijn opgeslagen, worden de wijzigingen in ongeveer 5 minuten toegepast.
 
 ## <a name="next-steps"></a>Volgende stappen
 

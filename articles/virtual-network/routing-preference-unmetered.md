@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2021
 ms.author: mnayak
-ms.openlocfilehash: 1fcc918e5b4b54a415fed0f38d210aeeaa62c008
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 00e0d1afa2aa035fe27e73dae60e291ea53bd6b8
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101679790"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105042846"
 ---
 # <a name="what-is-routing-preference-unmetered"></a>Wat is de routerings voorkeur undataing?
 
@@ -45,4 +45,4 @@ U kunt ook routerings voorkeur inschakelen voor uw opslag account en een tweede 
 
 * [Routerings voorkeur configureren voor een virtuele machine met behulp van de Azure PowerShell](configure-routing-preference-virtual-machine-powershell.md)
 * [Routerings voorkeur configureren voor een virtuele machine met behulp van Azure CLI](configure-routing-preference-virtual-machine-cli.md)
-* [Routerings voorkeur voor uw opslag account configureren](/azure/storage/common/network-routing-preference)
+* [Routerings voorkeur voor uw opslag account configureren](../storage/common/network-routing-preference.md)

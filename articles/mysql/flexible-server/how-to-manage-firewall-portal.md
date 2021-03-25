@@ -1,17 +1,17 @@
 ---
 title: Firewall regels beheren-Azure Portal-Azure Database for MySQL-flexibele server
 description: Maak en beheer firewall regels voor Azure Database for MySQL-flexibele server met behulp van de Azure Portal
-author: ambhatna
-ms.author: ambhatna
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.topic: how-to
 ms.date: 9/21/2020
-ms.openlocfilehash: 132319575147c2ff1075881b1f1faec8bc5029f4
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: b26ce91b005fc7bd4d5b89ccf5306dc03a040b0f
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "90936632"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105106747"
 ---
 # <a name="create-and-manage-firewall-rules-for-azure-database-for-mysql---flexible-server-using-the-azure-portal"></a>Maak en beheer firewall regels voor Azure Database for MySQL-flexibele server met behulp van de Azure Portal
 

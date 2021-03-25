@@ -8,12 +8,12 @@ ms.author: vikurpad
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/28/2021
-ms.openlocfilehash: 22e48239631850d82cbb3e3208748416087da87c
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: ccee8537c2543b67c1bb60711737ec761ebc8cbf
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103422169"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105043067"
 ---
 # <a name="efficiently-scale-out-a-custom-skill"></a>Een aangepaste vaardigheid efficiënt uitschalen
 
@@ -42,7 +42,7 @@ Stel op de [aangepaste vaardigheid](cognitive-search-custom-skill-web-api.md) de
 
 3. Stel `timeout` in op een waarde die voldoende is voor de vaardigheid om te reageren met een geldig antwoord.
 
-4. Stel in de `indexer` definitie in [`batchSize`](https://docs.microsoft.com/rest/api/searchservice/create-indexer#indexer-parameters) op het aantal documenten dat moet worden gelezen van de gegevens bron en dat deze tegelijkertijd moeten worden uitgebreid.
+4. Stel in de `indexer` definitie in [`batchSize`](/rest/api/searchservice/create-indexer#indexer-parameters) op het aantal documenten dat moet worden gelezen van de gegevens bron en dat deze tegelijkertijd moeten worden uitgebreid.
 
 ### <a name="considerations"></a>Overwegingen
 
@@ -106,5 +106,5 @@ Gefeliciteerd! Uw aangepaste vaardigheid is nu aangepast om de door Voer van de 
 
 + [Power vaardig heden: een opslag plaats met aangepaste vaardig heden](https://github.com/Azure-Samples/azure-search-power-skills)
 + [Een aangepaste vaardigheid toevoegen aan een AI-verrijkings pijplijn](cognitive-search-custom-skill-interface.md)
-+ [Een Azure Machine Learning vaardigheid toevoegen](https://docs.microsoft.com/azure/search/cognitive-search-aml-skill)
-+ [Debug-sessies gebruiken om wijzigingen te testen](https://docs.microsoft.com/azure/search/cognitive-search-debug-session)
++ [Een Azure Machine Learning vaardigheid toevoegen](./cognitive-search-aml-skill.md)
++ [Debug-sessies gebruiken om wijzigingen te testen](./cognitive-search-debug-session.md)

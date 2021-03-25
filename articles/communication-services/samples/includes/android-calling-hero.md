@@ -10,16 +10,16 @@ ms.date: 9/1/2020
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: 8262b0c9abc4911c1e5c039eb02920c18e7de90b
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: f71f394f190c5de1c3d64d02fd6113817ecda1ea
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104783548"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105152761"
 ---
 [!INCLUDE [Public Preview Notice](../../includes/public-preview-include.md)]
 
-De Azure Communication Services- **groep voor het aanroepen van een voor beeld van een feed voor Android** laat zien hoe de communicatie services die Android-client bibliotheek aanroepen, kunnen worden gebruikt voor het bouwen van een groep waarmee u de ervaring met spraak en video hebt In dit voor beeld Quick Start leert u hoe u het voor beeld kunt instellen en uitvoeren. Er wordt een overzicht van het voor beeld gegeven voor context.
+De Azure Communication Services- **groep voor het aanroepen van een voor beeld van een feed voor Android** laat zien hoe de communicatie services die Android SDK aanroept, kunnen worden gebruikt voor het bouwen van een groep waarmee u de ervaring met spraak en video kunt opbouwen. In dit voor beeld Quick Start leert u hoe u het voor beeld kunt instellen en uitvoeren. Er wordt een overzicht van het voor beeld gegeven voor context.
 
 ## <a name="download-code"></a>Code downloaden
 
@@ -27,7 +27,7 @@ Zoek de voltooide code voor deze Quick Start op [github](https://github.com/Azur
 
 ## <a name="overview"></a>Overzicht
 
-Het voor beeld is een systeem eigen Android-toepassing die gebruikmaakt van de Azure Communication Services Android-client bibliotheken voor het bouwen van een gespreks ervaring die is voorzien van spraak-en video gesprekken. De toepassing maakt gebruik van een component aan de server zijde om toegangs tokens in te richten die vervolgens worden gebruikt om de Azure Communication Services-client bibliotheek te initialiseren. Als u dit onderdeel aan de server zijde wilt configureren, kunt u de [vertrouwde service met Azure functions](../../tutorials/trusted-service-tutorial.md) zelf studie volgen.
+Het voor beeld is een systeem eigen Android-toepassing die gebruikmaakt van de Android-Sdk's van Azure Communication Services voor het bouwen van een gespreks ervaring die is voorzien van spraak-en video gesprekken. De toepassing maakt gebruik van een component aan server zijde om toegangs tokens in te richten die vervolgens worden gebruikt om de Azure Communication Services SDK te initialiseren. Als u dit onderdeel aan de server zijde wilt configureren, kunt u de [vertrouwde service met Azure functions](../../tutorials/trusted-service-tutorial.md) zelf studie volgen.
 
 Het voorbeeld ziet er als volgt uit:
 
@@ -133,7 +133,7 @@ Als u een Communication Services-abonnement wilt opschonen en verwijderen, kunt 
 
 Raadpleeg voor meer informatie de volgende artikelen:
 
-- Vertrouwd raken met [het gebruik van de clientbibliotheek voor aanroepen](../../quickstarts/voice-video-calling/calling-client-samples.md)
+- Vertrouwd raken met [het gebruik van de aanroepende SDK](../../quickstarts/voice-video-calling/calling-client-samples.md)
 - Meer informatie over [de werking van aanroepen](../../concepts/voice-video-calling/about-call-types.md)
 
 ### <a name="additional-reading"></a>Meer artikelen

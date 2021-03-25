@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/13/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: eaa8a4c600864f636d49813d415621d46130fff7
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 78cbf94bfc19757a4264c7884c3e47b230de5e46
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100381649"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105044087"
 ---
 # <a name="azure-blob-storage-output-binding-for-azure-functions"></a>Azure Blob Storage-uitvoer binding voor Azure Functions
 
@@ -431,8 +431,8 @@ Open de BLOB-gegevens via een para meter die overeenkomt met de naam die is opge
 
 U kunt functie parameters declareren als de volgende typen om naar Blob Storage te schrijven:
 
-* Teken reeksen als `func.Out(str)`
-* Stromen als `func.Out(func.InputStream)`
+* Teken reeksen als `func.Out[str]`
+* Stromen als `func.Out[func.InputStream]`
 
 Raadpleeg het [uitvoer voorbeeld](#example) voor meer informatie.
 

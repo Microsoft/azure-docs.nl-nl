@@ -3,19 +3,14 @@ title: Veelgestelde vragen over back-ups van Azure-schijven
 description: Antwoorden vinden op veelgestelde vragen over Azure Disk Backup
 ms.topic: conceptual
 ms.date: 01/07/2021
-ms.openlocfilehash: 3ef18a7d178075194e24889477768583f05f0cdd
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 7729bc1120fc0e2f4361739a8e05f3a82ccb4268
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98734559"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105107309"
 ---
-# <a name="frequently-asked-questions-about-azure-disk-backup-in-preview"></a>Veelgestelde vragen over back-ups van Azure-schijven (in preview-versie)
-
->[!IMPORTANT]
->Azure Disk Backup is in Preview zonder service level agreement en wordt niet aanbevolen voor productie werkbelastingen. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie. Zie de [ondersteunings matrix](disk-backup-support-matrix.md)voor de beschik baarheid van regio's.
->
->[Vul dit formulier](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR1vE8L51DIpDmziRt_893LVUNFlEWFJBN09PTDhEMjVHS05UWFkxUlUzUS4u) in om u aan te melden voor de preview-versie.
+# <a name="frequently-asked-questions-about-azure-disk-backup"></a>Veelgestelde vragen over back-ups van Azure-schijven
 
 In dit artikel vindt u antwoorden op veelgestelde vragen over back-ups van Azure-schijven. Zie de [ondersteunings matrix](disk-backup-support-matrix.md)voor meer informatie over de beschik baarheid van [Azure schijf back-](disk-backup-overview.md) upregio, ondersteunde scenario's en beperkingen.
 

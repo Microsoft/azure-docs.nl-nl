@@ -3,19 +3,14 @@ title: Back-upfouten in azure Disk Backup oplossen
 description: Meer informatie over het oplossen van back-upfouten in azure Disk Backup
 ms.topic: conceptual
 ms.date: 01/07/2021
-ms.openlocfilehash: 855c6c5b19b10bdb699a25f89ebc29001b7941ac
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: f6e9bcbbd618cf820ce91f8a3092d5be4aa045cb
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98737724"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105107241"
 ---
-# <a name="troubleshooting-backup-failures-in-azure-disk-backup-in-preview"></a>Back-upfouten in azure Disk Backup oplossen (in preview-versie)
-
->[!IMPORTANT]
->Azure Disk Backup is in Preview zonder service level agreement en wordt niet aanbevolen voor productie werkbelastingen. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie. Zie de [ondersteunings matrix](disk-backup-support-matrix.md)voor de beschik baarheid van regio's.
->
->[Vul dit formulier](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR1vE8L51DIpDmziRt_893LVUNFlEWFJBN09PTDhEMjVHS05UWFkxUlUzUS4u) in om u aan te melden voor de preview-versie.
+# <a name="troubleshooting-backup-failures-in-azure-disk-backup"></a>Back-upfouten in azure Disk Backup oplossen
 
 In dit artikel vindt u informatie over het oplossen van problemen met back-ups en herstel met Azure disk. Zie de [ondersteunings matrix](disk-backup-support-matrix.md)voor meer informatie over de beschik baarheid van [Azure schijf back-](disk-backup-overview.md) upregio, ondersteunde scenario's en beperkingen.
 
@@ -157,7 +152,7 @@ Aanbevolen actie: overweeg het gebruik van een ander herstel punt dat u wilt her
 
 Fout bericht: schijf back-up is nog niet beschikbaar in de regio van de back-upkluis, waaronder het configureren van de beveiliging wordt uitgevoerd.
 
-Aanbevolen actie: de back-upkluis moet zich in een voor beeld van een ondersteunde regio bevinden. Zie de [ondersteunings matrix](disk-backup-support-matrix.md)voor de beschik baarheid van regio's.
+Aanbevolen actie: de back-upkluis moet zich in een ondersteunde regio bevinden. Zie de [ondersteunings matrix](disk-backup-support-matrix.md)voor de beschik baarheid van regio's.
 
 ### <a name="error-code-usererrordppdatasourcealreadyhasbackupinstance"></a>Fout code: UserErrorDppDatasourceAlreadyHasBackupInstance
 

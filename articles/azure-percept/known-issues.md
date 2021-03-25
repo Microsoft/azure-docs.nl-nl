@@ -6,12 +6,12 @@ ms.author: v-elqu
 ms.service: azure-percept
 ms.topic: reference
 ms.date: 03/03/2021
-ms.openlocfilehash: a04e53c8444a01bc42f3ce71393fc842f3419e74
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: a3f44f3d0cdf024bca12b0023891f21175f52b47
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102193475"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105026935"
 ---
 # <a name="known-issues"></a>Bekende problemen
 
@@ -30,7 +30,7 @@ Als u een van deze problemen ondervindt, hoeft u geen bug te openen. Als u probl
 | Apparaat bijwerken | Gebruikers kunnen een bericht ontvangen dat de update is mislukt, zelfs als deze is geslaagd. | Controleer of het apparaat is bijgewerkt door te navigeren naar het apparaat dubbele voor het apparaat in IoT Hub. Dit wordt opgelost na de eerste update. |
 | Apparaat bijwerken | Gebruikers kunnen hun Wi-Fi Verbindings instellingen na hun eerste update kwijt raken. | Voer de ervaring na het bijwerken uit om de Wi-Fi verbinding in te stellen. Dit wordt opgelost na de eerste update. |
 | Apparaat bijwerken | Na het uitvoeren van een OTA-update kunnen gebruikers zich niet meer aanmelden via SSH met behulp van eerder gemaakte gebruikers accounts en kunnen nieuwe SSH-gebruikers niet worden gemaakt via de on-boarding-ervaring. Dit probleem is van invloed op systemen die OTA-updates uitvoeren van de volgende vooraf geïnstalleerde installatie kopie versies: 2020.110.114.105 en 2020.109.101.105. | Voer de volgende stappen uit na de OTA-update om uw gebruikers profielen te herstellen: <br> [Ssh in uw Devkit](./how-to-ssh-into-percept-dk.md) met "root" als de gebruikers naam. Als u de SSH-gebruiker aanmelden met de gebruikers ervaring hebt uitgeschakeld, moet u deze weer inschakelen. Voer deze opdracht uit nadat u verbinding hebt gemaakt: <br> ```mkdir -p /var/custom-configs/home; chmod 755 /var/custom-configs/home``` <br> Voer de volgende opdracht uit om de start gegevens van de vorige gebruiker te herstellen: <br> ```mkdir -p /tmp/prev-rootfs && mount /dev/mmcblk0p3 /tmp/prev-rootfs && [ ! -L /tmp/prev-rootfs/home ] && cp -a /tmp/prev-rootfs/home/* /var/custom-configs/home/. && echo "User home migrated!"; umount /tmp/prev-rootfs``` |
-| Apparaat bijwerken | Wanneer u een OTA-update hebt door lopen, gaan er Update groepen verloren. | Werk de tag van het apparaat bij door [deze instructies](https://docs.microsoft.com/azure/azure-percept/how-to-update-over-the-air#create-a-device-update-group)te volgen. |
+| Apparaat bijwerken | Wanneer u een OTA-update hebt door lopen, gaan er Update groepen verloren. | Werk de tag van het apparaat bij door [deze instructies](./how-to-update-over-the-air.md#create-a-device-update-group)te volgen. |
 | Installatie programma voor dev tools pack | Optionele Caffe-installatie kan mislukken als docker niet op de juiste wijze op het systeem wordt uitgevoerd. | Zorg ervoor dat docker is geïnstalleerd en wordt uitgevoerd en voer de installatie van Caffe opnieuw uit. |
 | Installatie programma voor dev tools pack | Optionele CUDA-installatie mislukt op niet-compatibele systemen. | Controleer de systeem compatibiliteit met CUDA voordat u het installatie programma uitvoert. |
 | Docker, netwerk, IoT Edge | Als uw interne netwerk 172. x. x. x gebruikt, kunnen docker-containers geen verbinding maken met de rand. | Voeg als volgt een speciale sectie bip toe aan de/etc/docker/-daemon.js: `{    "bip": "192.168.168.1/24"}` |

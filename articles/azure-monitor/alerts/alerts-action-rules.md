@@ -3,16 +3,16 @@ title: Actie regels voor Azure Monitor waarschuwingen
 description: Meer informatie over actie regels in Azure Monitor zijn en hoe u deze kunt configureren en beheren.
 ms.topic: conceptual
 ms.date: 03/15/2021
-ms.openlocfilehash: f70d798270ad82193f7ae5935d34f8f418d35e05
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 12e7cf8e72c5423b4a2edd6ea2a0f4537e328b08
+ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103471677"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105036778"
 ---
 # <a name="action-rules-preview"></a>Actie regels (preview-versie)
 
-Met actie regels kunt u acties definiëren of onderdrukken voor elk Azure Resource Manager bereik (Azure-abonnement, resource groep of doel resource). Ze hebben verschillende filters waarmee u de specifieke subset van waarschuwings instanties kunt beperken waarop u wilt handelen.
+Met actie regels kunt u de actie groepen in uw gebrande waarschuwingen toevoegen of onderdrukken. Eén regel kan verschillende bereiken van doel resources omvatten, bijvoorbeeld elke waarschuwing voor een specifieke resource (zoals een specifieke virtuele machine) of elke waarschuwing die wordt geactiveerd voor een wille keurige bron in een abonnement. U kunt eventueel verschillende filters toevoegen om te bepalen welke waarschuwingen worden gedekt door een regel en een schema voor het project definiëren, bijvoorbeeld om het alleen van kracht te laten zijn buiten kantoor uren of tijdens een gepland onderhouds venster.
 
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4rBZ2]
 
@@ -31,7 +31,7 @@ Hoewel waarschuwings regels u helpen om de actie groep te definiëren die wordt 
 Met actie regels kunt u dit proces vereenvoudigen. Door acties op schaal te definiëren, kan een actie groep worden geactiveerd voor elke waarschuwing die wordt gegenereerd voor het geconfigureerde bereik. In het vorige voor beeld kan het team één actie regel definiëren voor **ContosoRG** die dezelfde actie groep activeren voor alle waarschuwingen die erin worden gegenereerd.
 
 > [!NOTE]
-> Actie regels zijn momenteel niet van toepassing op Azure Service Health-waarschuwingen.
+> Actie regels zijn niet van toepassing op Azure Service Health-waarschuwingen.
 
 ## <a name="configuring-an-action-rule"></a>Een actieregel configureren
 
@@ -308,7 +308,7 @@ Op de [pagina waarschuwingen lijst](./alerts-managing-alert-instances.md)kunt u 
 
 Onderdrukking heeft altijd voor rang op hetzelfde bereik.
 
-### <a name="what-happens-if-i-have-a-resource-thats-monitored-in-two-separate-action-rules-do-i-get-one-or-two-notifications-for-example-vm2-in-the-following-scenario"></a>Wat gebeurt er als er een resource is die in twee afzonderlijke actie regels wordt bewaakt? Ontvang ik een of twee meldingen? Bijvoorbeeld, **VM2** in het volgende scenario:
+### <a name="what-happens-if-i-have-a-resource-that-is-covered-by-two-action-rules-do-i-get-one-or-two-notifications-for-example-vm2-in-the-following-scenario"></a>Wat gebeurt er als er een resource is die wordt gedekt door twee actie regels? Ontvang ik een of twee meldingen? Bijvoorbeeld, **VM2** in het volgende scenario:
 
    `action rule AR1 defined for VM1 and VM2 with action group AG1`
 

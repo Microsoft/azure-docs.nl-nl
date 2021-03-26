@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.date: 10/20/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 1209c49cbd988a02b1e3503994fdbdac3f26216a
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: d098af394906dc120a252bdcda65fb3af31e28c8
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98946143"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104865788"
 ---
 # <a name="use-spark--hive-tools-for-visual-studio-code"></a>Gebruik de Spark-& Hive-Hulpprogram Ma's voor Visual Studio code
 
@@ -40,7 +40,7 @@ Wanneer u aan de vereisten voldoet, kunt u Spark & Hive Tools voor Visual Studio
 
 4. Selecteer **Spark & Hive Tools** in de zoekresultaten en selecteer vervolgens **Installeren**:
 
-   ![Spark & Hive voor Visual Studio Code Python installeren](./media/hdinsight-for-vscode/install-hdInsight-plugin.png)
+   :::image type="content" source="./media/hdinsight-for-vscode/install-hdInsight-plugin.png" alt-text="De Spark-& Hive voor Visual Studio code python installeren":::
 
 5. Selecteer zo nodig **Opnieuw laden**.
 
@@ -52,7 +52,7 @@ Voer de volgende stappen uit om een werkmap te openen en een bestand te maken in
 
 2. Selecteer in de **Verkenner** -weer gave de map **HDexample** en selecteer vervolgens het pictogram **nieuw bestand** naast de werkmap:
 
-   ![pictogram Nieuw bestand in Visual Studio Code](./media/hdinsight-for-vscode/visual-studio-code-new-file.png)
+   :::image type="content" source="./media/hdinsight-for-vscode/visual-studio-code-new-file.png" alt-text="pictogram Nieuw bestand in Visual Studio Code":::
 
 3. Geef het nieuwe bestand een naam met behulp van de `.hql` (Hive-query's) of de `.py` bestands extensie (Spark-script). In dit voor beeld wordt **HelloWorld. HQL** gebruikt.
 
@@ -64,7 +64,7 @@ Voor een nationale Cloud gebruiker voert u de volgende stappen uit om eerst de A
 2. Zoek naar de volgende teken reeks: **Azure: Cloud**.
 3. Selecteer de nationale Cloud in de lijst:
 
-   ![Configuratie van standaard aanmeldings vermelding instellen](./media/hdinsight-for-vscode/set-default-login-entry-configuration.png)
+   :::image type="content" source="./media/hdinsight-for-vscode/set-default-login-entry-configuration.png" alt-text="Configuratie van standaard aanmeldings vermelding instellen":::
 
 ## <a name="connect-to-an-azure-account"></a>Verbinding maken met een Azure-account
 
@@ -72,7 +72,7 @@ Voordat u scripts kunt verzenden naar uw clusters vanuit Visual Studio code, kan
 
 1. Ga op de menubalk naar **Beeld** > **Opdrachtpalet...** en voer **Azure: Aanmelden** in:
 
-   ![aanmelding bij Spark & Hive Tools voor Visual Studio Code](./media/hdinsight-for-vscode/hdinsight-for-vscode-extension-login.png)
+   :::image type="content" source="./media/hdinsight-for-vscode/hdinsight-for-vscode-extension-login.png" alt-text="Component Hulpprogramma's van Spark & voor Visual Studio code login":::
 
 2. Volg de instructies om u aan te melden bij Azure. Nadat u verbinding hebt gemaakt, ziet u de naam van uw Azure-account op de statusbalk onder in het Visual Studio Code-venster.  
 
@@ -84,7 +84,7 @@ U kunt een normaal cluster koppelen met behulp van een door [Apache Ambari](http
 
 1. Navigeer in de menu balk naar het **weer geven** van het  >  **opdracht palet...**, en voer **Spark/Hive: koppelen aan een cluster**.
 
-   ![Opdracht palet koppeling cluster opdracht](./media/hdinsight-for-vscode/link-cluster-command.png)
+   :::image type="content" source="./media/hdinsight-for-vscode/link-cluster-command.png" alt-text="Opdracht palet koppeling cluster opdracht":::
 
 2. Selecteer het gekoppelde cluster type **Azure HDInsight**.
 
@@ -127,7 +127,7 @@ U kunt een normaal cluster koppelen met behulp van een door [Apache Ambari](http
 
 3. Bekijk de **uitvoer** weergave. In deze weer gave worden uw gekoppelde cluster (of clusters) en alle clusters onder uw Azure-abonnement weer gegeven:
 
-   ![Een standaard cluster configuratie instellen](./media/hdinsight-for-vscode/list-cluster-result1.png)
+   :::image type="content" source="./media/hdinsight-for-vscode/list-cluster-result1.png" alt-text="Een standaard cluster configuratie instellen":::
 
 ## <a name="set-the-default-cluster"></a>Het standaard cluster instellen
 
@@ -141,7 +141,7 @@ U kunt een normaal cluster koppelen met behulp van een door [Apache Ambari](http
 
 5. Selecteer een cluster als het standaard cluster voor het huidige script bestand. Het configuratiebestand **.VSCode\settings.json** wordt automatisch bijgewerkt:
 
-   ![Standaardclusterconfiguratie instellen](./media/hdinsight-for-vscode/set-default-cluster-configuration.png)
+   :::image type="content" source="./media/hdinsight-for-vscode/set-default-cluster-configuration.png" alt-text="Standaardclusterconfiguratie instellen":::
 
 ## <a name="submit-interactive-hive-queries-and-hive-batch-scripts"></a>Interactieve Hive-query's en Hive batch scripts verzenden
 
@@ -163,7 +163,7 @@ Met Spark & Hive-Hulpprogram Ma's voor Visual Studio code kunt u interactieve Hi
 
 6. Als u geen standaard cluster hebt opgegeven, selecteert u een cluster. Met de hulpprogram ma's kunt u ook een blok code verzenden in plaats van het hele script bestand met behulp van het context menu. Na enkele ogen blikken worden de query resultaten weer gegeven op een nieuw tabblad:
 
-   ![Resultaat van interactieve Apache Hive query](./media/hdinsight-for-vscode/interactive-hive-result.png)
+   :::image type="content" source="./media/hdinsight-for-vscode/interactive-hive-result.png" alt-text="Resultaat van interactieve Apache Hive query":::
 
    - **Resultaten** paneel: u kunt het hele resultaat opslaan als een CSV-, JSON-of Excel-bestand naar een lokaal pad of door alleen meerdere regels te selecteren.
 
@@ -198,57 +198,57 @@ Voer de volgende stappen uit om de query's te verzenden met de interactieve opdr
 
 4. De prompt voor het installeren van PySpark/Synapse Pyspark-kernel wordt rechtsonder in het venster weergegeven. U kunt klikken op de knop **Installeren** om door te gaan met de installaties van PySpark/Synapse Pyspark. U kunt ook op de knop **Overslaan** klikken om deze stap over te slaan.
 
-   ![Scherm afbeelding toont een optie om de installatie van PySpark over te slaan.](./media/hdinsight-for-vscode/install-the-pyspark-kernel.png)
+   :::image type="content" source="./media/hdinsight-for-vscode/install-the-pyspark-kernel.png" alt-text="Scherm afbeelding toont een optie om de installatie van PySpark over te slaan.":::
 
 5. Als u het later opnieuw moet installeren, kunt u naar de instellingen van de **Bestands**  >  **voorkeur** navigeren  >  en vervolgens **HDInsight uitschakelen: Schakel overs Laan Pyspark-installatie** in de instellingen in. 
     
-    ![Scherm afbeelding toont de optie om de installatie overs Laan Pyspark in te scha kelen.](./media/hdinsight-for-vscode/enable-skip-pyspark-installation.png)
+    :::image type="content" source="./media/hdinsight-for-vscode/enable-skip-pyspark-installation.png" alt-text="Scherm afbeelding toont de optie om de installatie overs Laan Pyspark in te scha kelen.":::
 
 6. Als de installatie is geslaagd in stap 4, wordt het bericht venster ' PySpark geïnstalleerd ' weer gegeven in de rechter benedenhoek van het venster. Klik op de knop **Opnieuw laden** om het venster opnieuw te laden.
 
-   ![pyspark correct geïnstalleerd](./media/hdinsight-for-vscode/pyspark-kernel-installed-successfully.png)
+   :::image type="content" source="./media/hdinsight-for-vscode/pyspark-kernel-installed-successfully.png" alt-text="pyspark correct geïnstalleerd":::
 
 
 7. Ga op de menubalk naar **Beeld** > **Opdrachtpalet...** of gebruik de sneltoets **Shift + Ctrl + P** en voer **Python: selecteer Interpreter om Jupyter-server te starten** in.
 
-   ![selecteer interpreter om Jupyter-server te starten](./media/hdinsight-for-vscode/select-interpreter-to-start-jupyter-server.png)
+   :::image type="content" source="./media/hdinsight-for-vscode/select-interpreter-to-start-jupyter-server.png" alt-text="selecteer interpreter om Jupyter-server te starten":::
 
 8. Selecteer hieronder de Python-optie.
 
-   ![kies de onderstaande optie](./media/hdinsight-for-vscode/choose-the-below-option.png)
+   :::image type="content" source="./media/hdinsight-for-vscode/choose-the-below-option.png" alt-text="kies de onderstaande optie":::
     
 9. Ga op de menubalk naar **Beeld** > **Opdrachtpalet...** of gebruik de sneltoets **Shift + Ctrl + P** en voer **Developer: Venster opnieuw laden** in.
 
-    ![venster opnieuw laden](./media/hdinsight-for-vscode/reload-window.png)
+    :::image type="content" source="./media/hdinsight-for-vscode/reload-window.png" alt-text="venster opnieuw laden":::
 
 10. [Maak verbinding](#connect-to-an-azure-account) met uw Azure-account of koppel een cluster als u dit nog niet hebt gedaan.
 
 11. Selecteer alle code, klik met de rechter muisknop op de script editor en selecteer **Spark: PySpark Interactive/Synapse: PySpark Interactive** om de query te verzenden. 
 
-    ![contextmenu van pyspark interactive](./media/hdinsight-for-vscode/pyspark-interactive-right-click.png)
+    :::image type="content" source="./media/hdinsight-for-vscode/pyspark-interactive-right-click.png" alt-text="contextmenu van pyspark interactive":::
 
 12. Selecteer het cluster als u geen standaard cluster hebt opgegeven. Na enkele ogen blikken worden de **python-interactieve** resultaten weer gegeven op een nieuw tabblad. Klik op PySpark om de kernel over te scha kelen naar **PySpark/Synapse PySpark** en de code wordt uitgevoerd. Als u wilt overschakelen naar Synapse Pyspark kernel, wordt het uitschakelen van automatische instellingen in Azure Portal aangemoedigd. Anders kan het lang duren voordat het cluster wordt geactiveerd en de Synapse-kernel wordt ingesteld voor het eerste gebruik. Als u met de hulpprogram ma's ook een blok code in plaats van het hele script bestand kunt verzenden met behulp van het snelmenu:
 
-    ![interactief pyspark Interactive python-venster](./media/hdinsight-for-vscode/pyspark-interactive-python-interactive-window.png)
+    :::image type="content" source="./media/hdinsight-for-vscode/pyspark-interactive-python-interactive-window.png" alt-text="interactief pyspark Interactive python-venster":::
 
 13. Voer **%% info** in en druk op SHIFT + ENTER om de taak gegevens weer te geven (optioneel):
 
-    ![pyspark interactieve weergave taak gegevens](./media/hdinsight-for-vscode/pyspark-interactive-view-job-information.png)
+    :::image type="content" source="./media/hdinsight-for-vscode/pyspark-interactive-view-job-information.png" alt-text="pyspark interactieve weergave taak gegevens":::
 
 Het hulp programma biedt ook ondersteuning voor de **Spark SQL** -query:
 
-  ![resultaat van interactieve weer gave pyspark](./media/hdinsight-for-vscode/pyspark-ineteractive-select-result.png)
+  :::image type="content" source="./media/hdinsight-for-vscode/pyspark-ineteractive-select-result.png" alt-text="resultaat van interactieve weer gave pyspark":::
 
 
 ### <a name="perform-interactive-query-in-py-file-using-a--comment"></a>Interactieve query's uitvoeren in een PY-bestand met behulp van een #%%-opmerking
 
 1. Voeg **#%%** vóór de py-code toe om de notitieblok ervaring op te halen.
 
-   ![#%% toevoegen](./media/hdinsight-for-vscode/run-cell.png)
+   :::image type="content" source="./media/hdinsight-for-vscode/run-cell.png" alt-text="#%% toevoegen":::
 
 2. Klik op **Cel uitvoeren**. Na enkele ogen blikken worden de python-interactieve resultaten weer gegeven op een nieuw tabblad. Klik op PySpark om de kernel over te scha kelen naar PySpark/Synapse PySpark, klik vervolgens nogmaals op **cel uitvoeren** en de code wordt uitgevoerd.
 
-   ![celresultaten uitvoeren](./media/hdinsight-for-vscode/run-cell-get-results.png)
+   :::image type="content" source="./media/hdinsight-for-vscode/run-cell-get-results.png" alt-text="celresultaten uitvoeren":::
 
 ## <a name="leverage-ipynb-support-from-python-extension"></a>IPYNB-ondersteuning van Python-extensie gebruiken
 
@@ -256,11 +256,11 @@ Het hulp programma biedt ook ondersteuning voor de **Spark SQL** -query:
 
 2. Klik op de knop **Cel uitvoeren** en volg de aanwijzingen om **de standaard-Spark-pool in te stellen** (het is aan te raden om elke keer een standaardcluster/-pool in te stellen voordat u een notebook opent). U kunt nu het venster **Opnieuw laden**.
 
-   ![de standaard-Spark-pool instellen en opnieuw laden](./media/hdinsight-for-vscode/set-the-default-spark-pool-and-reload.png)
+   :::image type="content" source="./media/hdinsight-for-vscode/set-the-default-spark-pool-and-reload.png" alt-text="de standaard-Spark-pool instellen en opnieuw laden":::
 
 3. Klik op PySpark om de kernel over te scha kelen naar **PySpark/Synapse PySpark** en klik na een tijdje op de **cel run**. Daarna wordt het resultaat weer gegeven.
 
-   ![ipynb-resultaten uitvoeren](./media/hdinsight-for-vscode/run-ipynb-file-results.png)
+   :::image type="content" source="./media/hdinsight-for-vscode/run-ipynb-file-results.png" alt-text="ipynb-resultaten uitvoeren":::
 
 
 > [!NOTE]
@@ -302,7 +302,7 @@ Het hulp programma biedt ook ondersteuning voor de **Spark SQL** -query:
 
 6. Selecteer een cluster/Spark-groep om uw PySpark-taak in te dienen voor:
 
-   ![Uitvoer van de Python-taakresultaten verzenden](./media/hdinsight-for-vscode/submit-pythonjob-result.png)
+   :::image type="content" source="./media/hdinsight-for-vscode/submit-pythonjob-result.png" alt-text="Uitvoer van de Python-taakresultaten verzenden":::
 
 Nadat u een python-taak hebt verzonden, worden de inzendings logboeken weer gegeven in het **uitvoer** venster van Visual Studio code. De url's van de Spark-gebruikers interface en de URL van de garen-interface worden ook weer gegeven. Als u de batch-taak naar een Apache Spark pool verzendt, worden ook de URL van de gebruikers interface voor Spark-geschiedenis en de URL van de Spark-taak toepassing weer gegeven. U kunt de URL openen in een webbrowser om de taakstatus bij te houden.
 
@@ -338,7 +338,7 @@ Een bestand verzenden en u ziet dat de `.vscode` map automatisch wordt toegevoeg
 
 - De project instellingen:
 
-  ![Configuratie van HDInsight Apache livy](./media/hdinsight-for-vscode/hdi-apache-livy-config.png)
+  :::image type="content" source="./media/hdinsight-for-vscode/hdi-apache-livy-config.png" alt-text="Configuratie van HDInsight Apache livy":::
 
   >[!NOTE]
   >Stel de waarde en eenheid in voor de instellingen **driverMemory** en **executorMemory** . Bijvoorbeeld: 1g of 1024m.
@@ -395,11 +395,11 @@ U kunt de Hive-tabel in uw clusters rechtstreeks bekijken via de **Azure HDInsig
 
 5. Klik met de rechter muisknop op de Hive-tabel. Bijvoorbeeld: **hivesampletable**. Selecteer **voor beeld**.
 
-   ![Component tabel van Spark & voor Visual Studio code-Preview](./media/hdinsight-for-vscode/hdinsight-for-vscode-preview-hive-table.png)
+   :::image type="content" source="./media/hdinsight-for-vscode/hdinsight-for-vscode-preview-hive-table.png" alt-text="Component tabel van Spark & voor Visual Studio code-Preview":::
 
 6. Het venster **preview-resultaten** wordt geopend:
 
-   ![Het &-onderdeel Spark voor Visual Studio code-voorbeeld resultaten](./media/hdinsight-for-vscode/hdinsight-for-vscode-preview-results-window.png)
+   :::image type="content" source="./media/hdinsight-for-vscode/hdinsight-for-vscode-preview-results-window.png" alt-text="Het &-onderdeel Spark voor Visual Studio code-voorbeeld resultaten":::
 
 - Paneel resultaten
 
@@ -415,7 +415,7 @@ U kunt de Hive-tabel in uw clusters rechtstreeks bekijken via de **Azure HDInsig
      >
      >Installeer xclip in Linux om Kopieer tabel gegevens in te scha kelen.
      >
-     >![Spark-& Hive voor Visual Studio code in Linux](./media/hdinsight-for-vscode/hdinsight-for-vscode-preview-linux-install-xclip.png)
+     >:::image type="content" source="./media/hdinsight-for-vscode/hdinsight-for-vscode-preview-linux-install-xclip.png" alt-text="Spark-& Hive voor Visual Studio code in Linux":::
 
 ## <a name="additional-features"></a>Aanvullende functies
 
@@ -423,12 +423,12 @@ De Spark-& Hive voor Visual Studio code biedt ook ondersteuning voor de volgende
 
 - **Automatisch aanvullen IntelliSense**. Suggesties worden pop-ups gemaakt voor tref woorden, methoden, variabelen en andere programmeer elementen. Verschillende pictogrammen vertegenwoordigen verschillende typen objecten:
 
-    ![Hulp middelen voor Spark &-Hive voor Visual Studio code IntelliSense-objecten](./media/hdinsight-for-vscode/hdinsight-for-vscode-auto-complete-objects.png)
+    :::image type="content" source="./media/hdinsight-for-vscode/hdinsight-for-vscode-auto-complete-objects.png" alt-text="Hulp middelen voor Spark &-Hive voor Visual Studio code IntelliSense-objecten":::
 
 - **Fout markering voor IntelliSense**. De taal service onderstreept het bewerken van fouten in het Hive-script.     
 - **Syntaxis punten**. De taal service gebruikt verschillende kleuren om variabelen, tref woorden, gegevens typen, functies en andere programmeer elementen te onderscheiden:
 
-    ![De belangrijkste aandachtspunten voor de Visual Studio-code voor het onderdeel Spark &](./media/hdinsight-for-vscode/hdinsight-for-vscode-syntax-highlights.png)
+    :::image type="content" source="./media/hdinsight-for-vscode/hdinsight-for-vscode-syntax-highlights.png" alt-text="De belangrijkste aandachtspunten voor de Visual Studio-code voor het onderdeel Spark &":::
 
 ## <a name="reader-only-role"></a>Alleen-lezen rol
 
@@ -447,15 +447,15 @@ Bij het verzenden van een taak naar een HDInsight-cluster wordt u gevraagd het c
 1. Geef een geldige Ambari-gebruikers naam op.
 2. Voer een geldig wacht woord in.
 
-   ![De gebruikers naam van de & voor de Visual Studio-code van Spark-Hulpprogram Ma's](./media/hdinsight-for-vscode/hdi-azure-hdinsight-azure-username.png)
+   :::image type="content" source="./media/hdinsight-for-vscode/hdi-azure-hdinsight-azure-username.png" alt-text="De gebruikers naam van de & voor de Visual Studio-code van Spark-Hulpprogram Ma's":::
 
-   ![Onderdeel Hulpprogramma's van Spark & voor Visual Studio code-wacht woord](./media/hdinsight-for-vscode/hdi-azure-hdinsight-azure-password.png)
+   :::image type="content" source="./media/hdinsight-for-vscode/hdi-azure-hdinsight-azure-password.png" alt-text="Onderdeel Hulpprogramma's van Spark & voor Visual Studio code-wacht woord":::
 
    > [!NOTE]
    >
    >U kunt gebruiken `Spark / Hive: List Cluster` om het gekoppelde cluster te controleren:
    >
-   >![Koppeling naar het onderdeel Hulpprogramma's van Spark & voor Visual Studio code Reader](./media/hdinsight-for-vscode/list-cluster-result1.png)
+   >:::image type="content" source="./media/hdinsight-for-vscode/list-cluster-result1.png" alt-text="Koppeling naar het onderdeel Hulpprogramma's van Spark & voor Visual Studio code Reader":::
 
 ## <a name="azure-data-lake-storage-gen2"></a>Azure Data Lake Storage Gen2
 
@@ -467,7 +467,7 @@ Selecteer de Azure HDInsight Explorer om een Data Lake Storage Gen2 account uit 
 
 Een taak verzenden naar een HDInsight-cluster met behulp van Data Lake Storage Gen2. U wordt gevraagd om de toegangs sleutel voor opslag in te voeren als uw Azure-account geen schrijf toegang heeft tot Gen2-opslag. Nadat de toegangs sleutel is gevalideerd, wordt de taak verzonden.
 
-![Spark-& Hive-Hulpprogram Ma's voor Visual Studio code AccessKey](./media/hdinsight-for-vscode/hdi-azure-hdinsight-azure-accesskey.png)
+:::image type="content" source="./media/hdinsight-for-vscode/hdi-azure-hdinsight-azure-accesskey.png" alt-text="Spark-& Hive-Hulpprogram Ma's voor Visual Studio code AccessKey":::
 
 > [!NOTE]
 >

@@ -10,12 +10,12 @@ ms.subservice: custom-vision
 ms.topic: conceptual
 ms.date: 03/06/2020
 ms.author: shono
-ms.openlocfilehash: 0b1358f67e2b10078e24168bdb779cd708ac2403
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 8aba6f13957d37f843114572f001029baf41ded6
+ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102095660"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104889345"
 ---
 # <a name="select-a-domain-for-a-custom-vision-project"></a>Een domein voor een Custom Vision project selecteren
 
@@ -25,12 +25,17 @@ Op het tabblad instellingen van het Custom Vision project kunt u een domein voor
 
 |Domain|Doel|
 |---|---|
-|__Algemeen__| Geoptimaliseerd voor een breed scala aan afbeeldingsclassificatietaken. Als geen van de andere domeinen geschikt is, of als u niet zeker weet welk domein u wilt kiezen, selecteert u het domein algemeen. ID `ee85a74c-405e-4adc-bb47-ffa8ca0c9f31`|
+|__Algemeen__| Geoptimaliseerd voor een breed scala aan afbeeldingsclassificatietaken. Als geen van de andere specifieke domeinen geschikt is, of als u niet zeker weet welk domein u wilt kiezen, selecteert u een van de algemene domeinen. ID `ee85a74c-405e-4adc-bb47-ffa8ca0c9f31`|
 |__Algemeen [a1]__| Geoptimaliseerd voor een betere nauw keurigheid met een vergelijk bare Afleidings tijd als algemeen domein. Wordt aanbevolen voor grotere gegevens sets of moeilijkerere gebruikers scenario's. Dit domein vereist meer trainings tijd. ID `a8e3c40f-fb4a-466f-832a-5e457ae4a344`|
+|__Algemeen [a2]__| Geoptimaliseerd voor een betere nauw keurigheid met een snellere tijd voor het afleiden van de tijds duur in het algemeen [a1] en algemene domeinen. Aanbevolen voor de meeste gegevens sets. Dit domein vereist minder training tijd dan algemeen en algemeen [a1]-domeinen. ID `2e37d7fb-3a54-486a-b4d6-cfc369af0018` |
 |__Voedsel__|Geoptimaliseerd voor foto's van gerechten zoals op de menukaart van een restaurant. Gebruik het domein Voedsel als u foto's van afzonderlijke soorten fruit of groenten wilt classificeren. ID `c151d5b5-dd07-472a-acc8-15d29dea8518`|
 |__Oriëntatiepunten__|Geoptimaliseerd voor herkenbare oriëntatiepunten, zowel natuurlijke als kunstmatige. Dit domein werkt het beste wanneer het oriëntatiepunt duidelijk te zien is in de foto. Dit domein werkt ook als het oriëntatiepunt slechts gedeeltelijk zichtbaar is omdat er mensen voor staan. ID `ca455789-012d-4b50-9fec-5bb63841c793`|
 |__Retail__|Geoptimaliseerd voor afbeeldingen zoals die te vinden zijn in de catalogus of op de website van een winkel. Gebruik dit domein als u classificaties met hoge precisie wilt gebruiken tussen de pantss en shirts. ID `b30a91ae-e3c1-4f73-a81e-c270bff27c39`|
 |__Compacte domeinen__| Geoptimaliseerd voor de beperkingen van real-time classificatie op edge-apparaten.|
+
+
+> [!NOTE]
+> De algemene domeinen [a1] en algemeen [a2] kunnen worden gebruikt voor een groot aantal scenario's en zijn geoptimaliseerd voor nauw keurigheid. Gebruik het algemene model [a2] voor betere snelheid van de interferentie en kortere trainings tijd. Voor grotere gegevens sets kunt u algemene [a1] gebruiken om een betere nauw keurigheid weer te geven dan algemeen [a2], maar er is meer training en tijd nodig. Voor het model algemeen is meer tijd nodig dan voor algemeen [a1] en algemeen [a2].
 
 ## <a name="object-detection"></a>Objectdetectie
 

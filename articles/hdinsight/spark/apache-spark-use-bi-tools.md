@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: tutorial
 ms.custom: hdinsightactive,mvc,seoapr2020
 ms.date: 04/21/2020
-ms.openlocfilehash: 285c6c05a1a216303ee9d8019093c963cad60aa0
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: a688f47e11e76f573ba2b99816e1fb402f4c50d2
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98946476"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104870548"
 ---
 # <a name="tutorial-analyze-apache-spark-data-using-power-bi-in-hdinsight"></a>Zelfstudie: Gegevens van Apache Spark analyseren met Power BI in HDInsight
 
@@ -43,7 +43,7 @@ Het [Jupyter Notebook](https://jupyter.org/) dat u hebt gemaakt in de [vorige ze
 
     De uitvoer ziet er als volgt uit:
 
-    ![Tabellen weergeven in Spark](./media/apache-spark-use-bi-tools/apache-spark-show-tables.png)
+    :::image type="content" source="./media/apache-spark-use-bi-tools/apache-spark-show-tables.png" alt-text="Tabellen weergeven in Spark" border="true":::
 
     Als u het notebook voorafgaand aan deze zelfstudie hebt gesloten, is `hvactemptable` opgeschoond en wordt deze niet opgenomen in de uitvoer.  Alleen Hive-tabellen die zijn opgeslagen in de metastore (aangegeven met **False** in de kolom **isTemporary**) zijn toegankelijk vanuit de BI-hulpprogramma's. In deze zelfstudie maakt u verbinding met de **hvac**-tabel die u hebt gemaakt.
 
@@ -56,7 +56,7 @@ Het [Jupyter Notebook](https://jupyter.org/) dat u hebt gemaakt in de [vorige ze
 
     De uitvoer ziet er als volgt uit:
 
-    ![Rijen uit de hvac-tabel in Spark weergeven](./media/apache-spark-use-bi-tools/apache-spark-select-limit.png)
+    :::image type="content" source="./media/apache-spark-use-bi-tools/apache-spark-select-limit.png" alt-text="Rijen uit de hvac-tabel in Spark weergeven" border="true":::
 
 3. Klik in het menu **File** van het notebook op **Close and Halt**. Sluit het notebook om de resources vrij te geven.
 
@@ -72,11 +72,11 @@ De eerste stappen om te werken met Spark zijn verbinding maken met het cluster i
 
 2. Ga op het tabblad **Start** naar **Gegevens ophalen** > **Meer..** .
 
-    ![Gegevens ophalen in Power BI Desktop van HDInsight Apache Spark](./media/apache-spark-use-bi-tools/hdinsight-spark-power-bi-desktop-get-data.png "Gegevens in Power BI laden vanuit Apache Spark BI")
+    :::image type="content" source="./media/apache-spark-use-bi-tools/hdinsight-spark-power-bi-desktop-get-data.png " alt-text="Gegevens ophalen in Power bi Desktop van HDInsight Apache Spark" border="true":::er is een ' True ':::
 
 3. Typ `Spark` in het zoekvak, selecteer **Azure HDInsight Spark** en selecteer vervolgens **Verbinding maken**.
 
-    ![Gegevens in Power BI laden vanuit Apache Spark BI](./media/apache-spark-use-bi-tools/apache-spark-bi-import-data-power-bi.png "Gegevens in Power BI laden vanuit Apache Spark BI")
+    :::image type="content" source="./media/apache-spark-use-bi-tools/apache-spark-bi-import-data-power-bi.png " alt-text="Gegevens ophalen uit Power bi van Apache Spark bi" border="true":::er = "True":::
 
 4. Voer de cluster-URL (in de vorm `mysparkcluster.azurehdinsight.net`) in het tekstvak **Server** in.
 
@@ -88,7 +88,7 @@ De eerste stappen om te werken met Spark zijn verbinding maken met het cluster i
 
 7. Selecteer de tabel `hvac`, wacht tot u een voorbeeld van de gegevens ziet en selecteer dan **Laden**.
 
-    ![Gebruikersnaam en wachtwoord van Spark-cluster](./media/apache-spark-use-bi-tools/apache-spark-bi-select-table.png "Gebruikersnaam en wachtwoord van Spark-cluster")
+    :::image type="content" source="./media/apache-spark-use-bi-tools/apache-spark-bi-select-table.png " alt-text="Gebruikers naam en wacht woord voor Spark-cluster" border="true":::d "Border =" True ":::
 
     Power BI Desktop beschikt over de gegevens die nodig zijn om verbinding te maken met het Spark-cluster en om gegevens te laden uit de tabel `hvac`. De tabel en de kolommen worden weergegeven in het deelvenster **Velden**.
 
@@ -98,21 +98,21 @@ De eerste stappen om te werken met Spark zijn verbinding maken met het cluster i
 
     2. Sleep het veld **BuildingID** naar **As**, en sleep de velden **ActualTemp** en **TargetTemp** naar **Waarde**.
 
-        ![waardekolommen toevoegen](./media/apache-spark-use-bi-tools/apache-spark-bi-add-value-columns.png "waardekolommen toevoegen")
+        :::image type="content" source="./media/apache-spark-use-bi-tools/apache-spark-bi-add-value-columns.png " alt-text="kolom met waarden toevoegen" border="true":::t = "waarde kolommen toevoegen" Border = "True":::
 
         Het diagram ziet er zo uit:
 
-        ![som van gebiedsgrafiek](./media/apache-spark-use-bi-tools/apache-spark-bi-area-graph-sum.png "som van gebiedsgrafiek")
+        :::image type="content" source="./media/apache-spark-use-bi-tools/apache-spark-bi-area-graph-sum.png " alt-text="gebieds grafiek Sum" border="true":::lt-text = "gebieds grafiek Sum" Border = "True":::
 
         De visualisatie bevat standaard de som van **ActualTemp** en **TargetTemp**. Selecteer de pijl-omlaag naast **ActualTemp** en **TragetTemp** in het deelvenster Visualisaties. U ziet dat **Som** is geselecteerd.
 
     3. Selecteer de pijl omlaag naast **ActualTemp** en **TragetTemp** in het deelvenster Visualisaties, selecteer **Gemiddelde** om voor elk gebouw het gemiddelde weer te geven van de werkelijke temperatuur en de beoogde temperatuur.
 
-        ![gemiddelde van waarden](./media/apache-spark-use-bi-tools/apache-spark-bi-average-of-values.png "gemiddelde van waarden")
+        :::image type="content" source="./media/apache-spark-use-bi-tools/apache-spark-bi-average-of-values.png " alt-text="gemiddelde van waarden" border="true":::t = "gemiddelde van waarden" Border = "True":::
 
         De gegevensvisualisatie moet er ongeveer uitzien zoals in de schermafbeelding. Beweeg de cursor over de visualisatie om knopinfo met relevante gegevens weer te geven.
 
-        ![gebiedsgrafiek](./media/apache-spark-use-bi-tools/apache-spark-bi-area-graph.png "gebiedsgrafiek")
+        :::image type="content" source="./media/apache-spark-use-bi-tools/apache-spark-bi-area-graph.png " alt-text="vlak Graph" border="true":::. png "Alt-Text =" gebieds grafiek "Border =" True ":::
 
 9. Ga naar **Bestand** > **Opslaan**, voer de naam `BuildingTemperature` voor het bestand in en selecteer **Opslaan**.
 
@@ -124,31 +124,31 @@ Met behulp van de Power BI-service kunt u rapporten en dashboards delen binnen u
 
 1. Selecteer op het tabblad **Start** de optie **Publiceren**.
 
-    ![Publiceren vanuit Power BI Desktop](./media/apache-spark-use-bi-tools/apache-spark-bi-publish.png "Publiceren vanuit Power BI Desktop")
+    :::image type="content" source="./media/apache-spark-use-bi-tools/apache-spark-bi-publish.png " alt-text="Publiceren vanaf Power bi Desktop" border="true"::: Desktop "Border =" True ":::
 
 1. Selecteer de werkruimte waarnaar u de gegevensset wilt publiceren en rapporteren, en selecteer vervolgens **Selecteren**. In de volgende afbeelding is de standaardwerkruimte **Mijn werkruimte** geselecteerd.
 
-    ![Werkruimte selecteren waarnaar u de gegevensset en het rapport wilt publiceren](./media/apache-spark-use-bi-tools/apache-spark-bi-select-workspace.png "Werkruimte selecteren waarnaar u de gegevensset en het rapport wilt publiceren")
+    :::image type="content" source="./media/apache-spark-use-bi-tools/apache-spark-bi-select-workspace.png " alt-text="Werk ruimte selecteren voor het publiceren van gegevensset en rapport naar" border="true":::UE "::
 
 1. Nadat het publiceren is voltooid, selecteert u **'BuildingTemperature.pbix' openen in Power BI**.
 
-    ![Publiceren is voltooid, klik om referenties in te voeren](./media/apache-spark-use-bi-tools/apache-spark-bi-publish-success.png "Publiceren is voltooid, klik om referenties in te voeren")
+    :::image type="content" source="./media/apache-spark-use-bi-tools/apache-spark-bi-publish-success.png " alt-text="Publiceer succes, klik om referenties in te voeren" border="true":::= "True":::
 
 1. Selecteer in de Power BI-service **Referenties invoeren**.
 
-    ![Referenties invoeren in Power BI-service](./media/apache-spark-use-bi-tools/apache-spark-bi-enter-credentials.png "Referenties invoeren in Power BI-service")
+    :::image type="content" source="./media/apache-spark-use-bi-tools/apache-spark-bi-enter-credentials.png " alt-text="Voer de referenties in Power bi-service" border="true":::"Border =" True ":::
 
 1. Selecteer **Referenties bewerken**.
 
-    ![Referenties bewerken in Power BI-service](./media/apache-spark-use-bi-tools/apache-spark-bi-edit-credentials.png "Referenties bewerken in Power BI-service")
+    :::image type="content" source="./media/apache-spark-use-bi-tools/apache-spark-bi-edit-credentials.png " alt-text="Referenties bewerken in Power bi-service" border="true":::e "Border =" True ":::
 
 1. Voer de gegevens voor het aanmeldingsaccount van HDInsight in en selecteer vervolgens **Aanmelden**. De standaardaccountnaam is *admin*.
 
-    ![Aanmelden bij Spark-cluster](./media/apache-spark-use-bi-tools/apache-spark-bi-sign-in.png "Aanmelden bij Spark-cluster")
+    :::image type="content" source="./media/apache-spark-use-bi-tools/apache-spark-bi-sign-in.png " alt-text="Aanmelden bij Spark-cluster" border="true"::: Spark-cluster "Border =" True ":::
 
 1. Ga in het linkerdeelvenster naar **Werkruimten** > **Mijn werkruimte** > **RAPPORTEN** en selecteer **BuildingTemperature**.
 
-    ![Rapport vermeld onder rapporten in het linkerdeelvenster](./media/apache-spark-use-bi-tools/apache-spark-bi-service-left-pane.png "Rapport vermeld onder rapporten in het linkerdeelvenster")
+    :::image type="content" source="./media/apache-spark-use-bi-tools/apache-spark-bi-service-left-pane.png " alt-text="Rapport vermeld onder rapporten in het linkerdeel venster" border="true":::order = "True":::
 
     Ook moet **BuildingTemperature** worden vermeld **GEGEVENSSETS** in het linkerdeelvenster.
 
@@ -156,11 +156,11 @@ Met behulp van de Power BI-service kunt u rapporten en dashboards delen binnen u
 
 1. Beweeg de cursor over de visualisatie en selecteer vervolgens de speld in de rechterbovenhoek.
 
-    ![Rapport in de Power BI-service](./media/apache-spark-use-bi-tools/apache-spark-bi-service-report.png "Rapport in de Power BI-service")
+    :::image type="content" source="./media/apache-spark-use-bi-tools/apache-spark-bi-service-report.png " alt-text="Meld u in de Power bi-service" border="true":::-service "Border =" True ":::
 
 1. Selecteer 'Nieuw dashboard', voer de naam `Building temperature` in en selecteer vervolgens **Vastmaken**.
 
-    ![Vastmaken aan nieuw dashboard](./media/apache-spark-use-bi-tools/apache-spark-bi-pin-dashboard.png "Vastmaken aan nieuw dashboard")
+    Aan het nieuwe Dash :::image type="content" source="./media/apache-spark-use-bi-tools/apache-spark-bi-pin-dashboard.png " alt-text="Board vastmaken" border="true"::: aan het nieuwe dash board "Border =" True ":::
 
 1. Selecteer in het rapport **Naar dashboard**.
 

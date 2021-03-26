@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 10/1/2020
-ms.openlocfilehash: a3abde9092519be057dcd73ec63318f970fd5c74
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 48aef337326d58b2a503dc48862571efde0d37ab
+ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "94543082"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105034517"
 ---
 # <a name="limitations-in-azure-database-for-mysql---flexible-server-preview"></a>Beperkingen in Azure Database for MySQL flexibele server (preview-versie)
 
@@ -89,8 +89,12 @@ Het volgende wordt niet ondersteund:
 - Bij herstel naar een bepaald tijdstip worden nieuwe servers gemaakt met dezelfde Compute-en opslag configuraties als de bron server waarop deze is gebaseerd. De herstelde server Compute kan worden geschaald nadat de server is gemaakt.
 - Het herstellen van een verwijderde server wordt niet ondersteund.
 
+## <a name="features-available-in-single-server-but-not-yet-supported-in-flexible-server"></a>Beschik bare functies op één server, maar nog niet ondersteund op de flexibele server 
+Niet alle functies die beschikbaar zijn in Azure Database for MySQL-één server, zijn nog beschikbaar op de flexibele server. Voor een volledige lijst met functie vergelijking tussen één server en een flexibele server raadpleegt u [de optie juiste mysql-server kiezen in azure-documentatie.](../select-right-deployment-type.md#comparing-the-mysql-deployment-options-in-azure)
+
 ## <a name="next-steps"></a>Volgende stappen
 
-- Inzicht [in wat er beschikbaar is voor de berekenings-en opslag opties](concepts-compute-storage.md)
+- Meer informatie over [het kiezen van de juiste mysql-server optie in azure-documentatie](../select-right-deployment-type.md)
+- Inzicht [in wat er beschikbaar is voor de berekenings-en opslag opties van een flexibele server](concepts-compute-storage.md)
 - Meer informatie over [ondersteunde mysql-versies](concepts-supported-versions.md)
-- Lees [hoe u een back-up maakt en een server herstelt met behulp van de Azure Portal](how-to-restore-server-portal.md)
+- Snelstartgids: [Gebruik de Azure portal voor het maken van een Azure database for MySQL flexibele server](quickstart-create-server-portal.md)

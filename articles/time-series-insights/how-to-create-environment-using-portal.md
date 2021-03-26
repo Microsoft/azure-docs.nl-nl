@@ -10,16 +10,20 @@ services: time-series-insights
 ms.topic: how-to
 ms.date: 03/15/2021
 ms.custom: seodec18
-ms.openlocfilehash: 56f7ac6f4403867e5e4e53b55b241912cdc57454
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 09068d966df871d4b6804978a543db50bccbee37
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103464418"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104952844"
 ---
 # <a name="create-an-azure-time-series-insights-gen2-environment-using-the-azure-portal"></a>Een Azure Time Series Insights Gen2-omgeving maken met behulp van de Azure Portal
 
 In dit artikel wordt beschreven hoe u een Azure Time Series Insights Gen2-omgeving maakt met behulp van de [Azure Portal](https://portal.azure.com/).
+
+De zelf studie voor het inrichten van de omgeving begeleidt u stapsgewijs door het proces. Meer informatie over het selecteren van de juiste tijd reeks-ID en het weer geven van voor beelden uit twee JSON-nettoladingen.</br>
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWzk3P]
 
 ## <a name="overview"></a>Overzicht
 

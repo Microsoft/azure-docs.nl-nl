@@ -4,16 +4,16 @@ description: Meer informatie over het inschakelen van zacht verwijderen in azure
 author: roygara
 ms.service: storage
 ms.topic: how-to
-ms.date: 12/01/2020
+ms.date: 03/23/2021
 ms.author: rogarana
 ms.subservice: files
 services: storage
-ms.openlocfilehash: 77381700f4257006b50e56ab7ffc037ef99d297c
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 13e6668337b82ea4be86eadcbc6f7797a72771c6
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102218550"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105023474"
 ---
 # <a name="enable-soft-delete-on-azure-file-shares"></a>Zacht verwijderen inschakelen op Azure-bestands shares
 
@@ -26,16 +26,16 @@ In de volgende secties ziet u hoe u met voorlopig verwijderen voor Azure-bestand
 ## <a name="getting-started"></a>Aan de slag
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com/).
-1. Navigeer naar uw opslag account en selecteer **voorlopig verwijderen** onder **Bestands service**.
-1. Selecteer **ingeschakeld** voor het **voorlopig verwijderen van de bestands share**.
+1. Navigeer naar uw opslag account en selecteer **Bestands shares** onder **Bestands service**.
+1. Selecteer **ingeschakeld** voor **zacht verwijderen voor alle bestands shares**.
 1. Selecteer de **Bewaar periode voor bestands shares in dagen** en voer een nummer van uw keuze in.
 1. Selecteer **Opslaan** om de instellingen voor het bewaren van gegevens te bevestigen.
 
-:::image type="content" source="media/storage-how-to-recover-deleted-account/enable-soft-delete-files.png" alt-text="Scherm afbeelding van het deel venster instellingen voor voorlopig verwijderen van het opslag account. De sectie bestands shares markeren, scha kelen inschakelen, een Bewaar periode instellen en opslaan. Hiermee schakelt u tijdelijke verwijdering in voor alle bestands shares in uw opslag account.":::
+:::image type="content" source="media/storage-how-to-recover-deleted-account/enable-soft-delete-files.png" alt-text="Scherm afbeelding van het deel venster instellingen voor voorlopig verwijderen van het opslag account. Markeren van de sectie voor het voorlopig verwijderen van bestands shares, scha kelen inschakelen, een Bewaar periode instellen en opslaan. Hiermee schakelt u tijdelijke verwijdering in voor alle bestands shares in uw opslag account.":::
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-Tijdelijke Verwijder-cmdlets zijn beschikbaar in versie 2.1.3 en hoger van de [Azure cli-module](/cli/azure/install-azure-cli).
+Tijdelijke Verwijder-cmdlets zijn beschikbaar in versie 2.1.3 en hoger van de [Azure cli-module](/cli/azure/install-azure-cli?view=azure-cli-latest).
 
 ## <a name="getting-started-with-cli"></a>Aan de slag met CLI
 
@@ -125,12 +125,12 @@ Restore-AzRmStorageShare -ResourceGroupName $rgname -StorageAccountName $account
 
 ## <a name="disable-soft-delete"></a>Tijdelijke verwijdering uitschakelen
 
-Als u wilt stoppen met het gebruik van zacht verwijderen of als u een bestands share definitief wilt verwijderen, volgt u deze instructies:
+Als u wilt stoppen met het gebruik van zacht verwijderen, volgt u deze instructies. Als u een bestands share die tijdelijk is verwijderd permanent wilt verwijderen, moet u de verwijderen ongedaan maken, verwijderen uitschakelen en opnieuw verwijderen. 
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
-1. Navigeer naar uw opslag account en selecteer **voorlopig verwijderen** onder **instellingen**.
-1. Selecteer onder **Bestands shares** **uitgeschakeld** voor **zacht verwijderen voor bestands shares**.
+1. Navigeer naar uw opslag account en selecteer **Bestands shares** onder **Bestands service**.
+1. Selecteer **uitgeschakeld** voor **zacht verwijderen voor alle bestands shares**.
 1. Selecteer **Opslaan** om de instellingen voor het bewaren van gegevens te bevestigen.
 
     :::image type="content" source="media/storage-how-to-recover-deleted-account/disable-soft-delete-files.png" alt-text="Als u zacht verwijderen uitschakelt, kunt u de bestands shares in uw opslag account onmiddellijk en op uw gemak permanent verwijderen.":::

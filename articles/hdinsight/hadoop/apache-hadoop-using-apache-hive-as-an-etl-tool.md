@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/28/2020
-ms.openlocfilehash: e2b76fbc2afaad465773860ff45f18261edad138
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: bcf2f39423f033ccd5bfdb6bf51ebc89e254f802
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98933435"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104867811"
 ---
 # <a name="use-apache-hive-as-an-extract-transform-and-load-etl-tool"></a>Apache Hive gebruiken als een hulp programma voor uitpakken, transformeren en laden (ETL)
 
@@ -20,7 +20,7 @@ Normaal gesp roken moet u inkomende gegevens opschonen en transformeren voordat 
 
 In de volgende afbeelding ziet u een overzicht van de use-case en het model voor ETL-automatisering. Invoer gegevens worden getransformeerd om de juiste uitvoer te genereren.  Tijdens die trans formatie worden de gegevens vorm, het gegevens type en de even taal gewijzigd.  ETL-processen kunnen Britse naar metriek converteren, tijd zones wijzigen en de nauw keurigheid verbeteren om te uitlijnen met bestaande gegevens in het doel. ETL-processen kunnen ook nieuwe gegevens combi neren met bestaande gegevens om de rapportage up-to-date te houden of om meer inzicht te krijgen in bestaande gegevens. Toepassingen zoals rapportage hulpprogramma's en-services kunnen deze gegevens vervolgens in de gewenste indeling gebruiken.
 
-![Apache Hive als ETL-architectuur](./media/apache-hadoop-using-apache-hive-as-an-etl-tool/hdinsight-etl-architecture.png)
+:::image type="content" source="./media/apache-hadoop-using-apache-hive-as-an-etl-tool/hdinsight-etl-architecture.png" alt-text="Apache Hive als ETL-architectuur" border="false":::
 
 Hadoop wordt doorgaans gebruikt in ETL-processen die een groot aantal tekst bestanden importeren (zoals Csv's). Of een kleiner, maar vaak veranderende hoeveelheid tekst bestanden, of beide.  Hive is een uitstekend hulp programma dat u kunt gebruiken om de gegevens voor te bereiden voordat u deze in de gegevens bestemming laadt.  Met hive kunt u een schema maken over het CSV en een SQL-achtige taal gebruiken om MapReduce-Program ma's te genereren die met de gegevens werken.
 

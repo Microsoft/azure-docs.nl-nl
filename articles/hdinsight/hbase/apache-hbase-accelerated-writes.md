@@ -4,12 +4,12 @@ description: Geeft een overzicht van de functie voor versneld schrijven van Azur
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 01/24/2020
-ms.openlocfilehash: 1f5a9f05b94f43db9e1d883ef5e86f8621f39251
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: c42a9d47cabd803944b858fc470c1bedc39d2d77
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98943033"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104868899"
 ---
 # <a name="azure-hdinsight-accelerated-writes-for-apache-hbase"></a>Versnelde schrijfbewerkingen van Azure HDInsight voor Apache HBase
 
@@ -35,7 +35,7 @@ Met de functie voor versnelde schrijf bewerkingen wordt het probleem opgelost da
 
 Als u een nieuw HBase-cluster wilt maken met de functie voor versnelde schrijf bewerkingen, volgt u de stappen in [clusters instellen in HDInsight](../hdinsight-hadoop-provision-linux-clusters.md). Op het tabblad **basis beginselen** selecteert u cluster type als HBase, geeft u een onderdeel versie op en klikt u vervolgens op het selectie vakje naast **HBase versneld schrijven inschakelen**. Ga vervolgens door met de resterende stappen voor het maken van het cluster.
 
-![Optie voor versneld schrijven inschakelen voor HDInsight Apache HBase](./media/apache-hbase-accelerated-writes/azure-portal-create-hbase-wals.png)
+:::image type="content" source="./media/apache-hbase-accelerated-writes/azure-portal-create-hbase-wals.png" alt-text="Optie voor versneld schrijven inschakelen voor HDInsight Apache HBase" border="true":::
 
 ## <a name="other-considerations"></a>Andere overwegingen
 

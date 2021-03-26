@@ -3,19 +3,14 @@ title: Overzicht van Azure Disk Backup
 description: Meer informatie over de back-upoplossing voor Azure-schijven.
 ms.topic: conceptual
 ms.date: 01/07/2021
-ms.openlocfilehash: 4db2a5f3f02322f18fcf9203c3560905cde86996
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 9449fdc57909cb143d381ae074913c79d24c8893
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98915505"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105107292"
 ---
-# <a name="overview-of-azure-disk-backup-in-preview"></a>Overzicht van back-ups van Azure-schijf (in preview-versie)
-
->[!IMPORTANT]
->Azure Disk Backup is in Preview zonder service level agreement en wordt niet aanbevolen voor productie werkbelastingen. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie. Zie de [ondersteunings matrix](disk-backup-support-matrix.md)voor de beschik baarheid van regio's.
->
->[Vul dit formulier](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR1vE8L51DIpDmziRt_893LVUNFlEWFJBN09PTDhEMjVHS05UWFkxUlUzUS4u) in om u aan te melden voor de preview-versie.
+# <a name="overview-of-azure-disk-backup"></a>Overzicht van Azure Disk Backup
 
 Azure Disk Backup is een systeem eigen, cloud-gebaseerde back-upoplossing die uw gegevens beveiligt op beheerde schijven. Het is een eenvoudige, veilige en kosteneffectieve oplossing waarmee u in een paar stappen beveiliging voor beheerde schijven kunt configureren. Zo weet u zeker dat u uw gegevens kunt herstellen in een nood geval.
 

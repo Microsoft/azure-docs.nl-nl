@@ -10,12 +10,12 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 6586375d7db71274f40eb62aeb24f9daad0d7c2e
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: e247e372237572586e5a4647d24d9ed6067ea823
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101688294"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104949784"
 ---
 # <a name="use-postgresql-extensions-in-your-azure-arc-enabled-postgresql-hyperscale-server-group"></a>PostgreSQL-extensies gebruiken in uw Azure-PostgreSQL grootschalige-Server groep
 
@@ -55,7 +55,7 @@ Deze hand leiding gaat in een scenario over het gebruik van twee van deze uitbre
 ## <a name="add-extensions-to-the-shared_preload_libraries"></a>Extensies toevoegen aan de shared_preload_libraries
 Raadpleeg de PostgreSQL [-documentatie voor](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES)meer informatie over die shared_preload_libraries:
 - Deze stap is niet nodig voor de uitbrei dingen die deel uitmaken van `contrib`
-- deze stap is niet vereist voor uitbrei dingen die niet vooraf moeten worden geladen door shared_preload_libraries. Voor deze uitbrei dingen kunt u de volgende alinea een [extensie maken](https://docs.microsoft.com/azure/azure-arc/data/using-extensions-in-postgresql-hyperscale-server-group#create-extensions).
+- deze stap is niet vereist voor uitbrei dingen die niet vooraf moeten worden geladen door shared_preload_libraries. Voor deze uitbrei dingen kunt u de volgende alinea een [extensie maken](#create-extensions).
 
 ### <a name="add-an-extension-at-the-creation-time-of-a-server-group"></a>Een uitbrei ding toevoegen tijdens het maken van een server groep
 ```console

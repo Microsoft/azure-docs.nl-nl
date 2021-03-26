@@ -3,14 +3,14 @@ title: Uitvoering van runbooks in Azure Automation
 description: Dit artikel bevat een overzicht van de verwerking van runbooks in Azure Automation.
 services: automation
 ms.subservice: process-automation
-ms.date: 10/06/2020
+ms.date: 03/23/2021
 ms.topic: conceptual
-ms.openlocfilehash: ca28d5829689dca46bbf3a94ce7c1591c20cf7b0
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 165c9ea721bec7fc7a1657f5dde5c19d9e254e20
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100586045"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104954340"
 ---
 # <a name="runbook-execution-in-azure-automation"></a>Uitvoering van runbooks in Azure Automation
 
@@ -34,7 +34,8 @@ In het volgende diagram ziet u de levens cyclus van een runbook-taak voor [Power
 
 Runbooks in Azure Automation kunnen worden uitgevoerd op een Azure sandbox of een [Hybrid Runbook worker](automation-hybrid-runbook-worker.md). 
 
-Wanneer runbooks zijn ontworpen om te verifiëren en uit te voeren op resources in azure, worden ze uitgevoerd in een Azure-sandbox. Dit is een gedeelde omgeving die door meerdere taken kan worden gebruikt. Taken die gebruikmaken van dezelfde sandbox zijn gebonden aan de resource beperkingen van de sandbox. De Azure sandbox-omgeving biedt geen ondersteuning voor interactieve bewerkingen. Hiermee wordt voor komen dat alle out-of-process COM-servers toegankelijk zijn. Ook is het gebruik van lokale MOF-bestanden vereist voor runbooks die Win32-aanroepen maken.
+Wanneer runbooks zijn ontworpen om te verifiëren en uit te voeren op resources in azure, worden ze uitgevoerd in een Azure-sandbox. Dit is een gedeelde omgeving die door meerdere taken kan worden gebruikt. Taken die gebruikmaken van dezelfde sandbox zijn gebonden aan de resource beperkingen van de sandbox. De Azure sandbox-omgeving biedt geen ondersteuning voor interactieve bewerkingen. Het voor komt dat er toegang wordt geboden tot alle out-of-process COM-servers en biedt geen ondersteuning voor het maken van [WMI-aanroepen](/windows/win32/wmisdk/wmi-architecture) naar de Win32-provider in uw runbook.  Deze scenario's worden alleen ondersteund door het runbook uit te voeren op een Windows-Hybrid Runbook Worker.
+
 
 U kunt ook een [Hybrid Runbook worker](automation-hybrid-runbook-worker.md) gebruiken om runbooks rechtstreeks uit te voeren op de computer die de rol host en de lokale resources in de omgeving. Azure Automation runbooks opslaat en beheert en vervolgens aan een of meer toegewezen computers worden geleverd.
 

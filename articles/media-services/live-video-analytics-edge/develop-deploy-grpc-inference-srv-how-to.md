@@ -3,12 +3,12 @@ title: Een gRPC-uitstel server ontwikkelen en implementeren-Azure
 description: Dit artikel bevat richt lijnen voor het ontwikkelen en implementeren van een gRPC-inrichtings server.
 ms.topic: how-to
 ms.date: 12/02/2020
-ms.openlocfilehash: 6184a369e73c26d3a8a716f9daf1c0420a5239fe
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: dbf46a26626a4143d76385968d092c4f238729da
+ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98881649"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105034857"
 ---
 # <a name="how-to-guide--develop-and-deploy-a-grpc-inference-server"></a>Instructies voor het ontwikkelen en implementeren van een gRPC-Afleidings server
 
@@ -242,7 +242,7 @@ Nu u de extensie module gRPC hebt gemaakt, wordt de media grafiek topologie nu g
         * Bewerk onder GraphInstanceSet de naam van de grafiektopologie zodat deze overeenkomt met de waarde in de voorgaande koppeling:<br/>`"topologyName": "InferencingWithGrpcExtension"`
         * Bewerk de naam onder GraphTopologyDelete:<br/>`"name": "InferencingWithGrpcExtension"`
 
-            In de topologie (bijvoorbeeld `https://github.com/Azure/live-video-analytics/blob/master/MediaGraph/topologies/grpcExtension/topology.json` ) moet een extensie adres worden gedefinieerd:
+            In de topologie (bijvoorbeeld `https://github.com/Azure/live-video-analytics/blob/master/MediaGraph/topologies/grpcExtensionOpenVINO/2.0/topology.json` ) moet een extensie adres worden gedefinieerd:
     * Extensie adres parameter
 
         ```
@@ -308,4 +308,4 @@ Nu is de implementatie van Edge-modules op uw IoT Edge-apparaat gestart. Vernieu
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Volg de **voor bereiding voor het bewaken van gebeurtenissen die worden** vermeld in de Snelstartgids [Live video analyseren met uw model](use-your-model-quickstart.md) Quick Start om het voor beeld uit te voeren en de resultaten te interpreteren. Bekijk ook onze voor beelden van gRPC-topologieën: [gRPCExtension](https://github.com/Azure/live-video-analytics/blob/master/MediaGraph/topologies/grpcExtension/topology.json), [CVRWithGrpcExtension](https://github.com/Azure/live-video-analytics/blob/master/MediaGraph/topologies/cvr-with-grpcExtension/topology.json), [EVRtoAssetsByGrpcExtension en [EVROnMotionPlusGrpcExtension](https://github.com/Azure/live-video-analytics/blob/master/MediaGraph/topologies/motion-with-grpcExtension/topology.json).
+Volg de **voor bereiding voor het bewaken van gebeurtenissen die worden** vermeld in de Snelstartgids [Live video analyseren met uw model](use-your-model-quickstart.md) Quick Start om het voor beeld uit te voeren en de resultaten te interpreteren. Bekijk ook onze voor beelden van gRPC-topologieën: [gRPCExtension](https://github.com/Azure/live-video-analytics/blob/master/MediaGraph/topologies/grpcExtensionOpenVINO/2.0/topology.json), [CVRWithGrpcExtension](https://github.com/Azure/live-video-analytics/blob/master/MediaGraph/topologies/cvr-with-grpcExtension/topology.json), [EVRtoAssetsByGrpcExtension en [EVROnMotionPlusGrpcExtension](https://github.com/Azure/live-video-analytics/blob/master/MediaGraph/topologies/motion-with-grpcExtension/topology.json).

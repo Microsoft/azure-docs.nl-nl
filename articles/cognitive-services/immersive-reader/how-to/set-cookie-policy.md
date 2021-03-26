@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/06/2020
 ms.author: nitinme
 ms.custom: devx-track-js
-ms.openlocfilehash: 02901e6b4a75257b2cda8dee84dbe3438dc15c18
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 8b0a1f4a948aa6fec565130acb5267476a1d4401
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "91332369"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105048643"
 ---
 # <a name="how-to-set-the-cookie-policy-for-the-immersive-reader"></a>Het cookie beleid voor de insluitende lezer instellen
 
@@ -47,7 +47,7 @@ ImmersiveReader.launchAsync(YOUR_TOKEN, YOUR_SUBDOMAIN, YOUR_DATA, options);
 ## <a name="next-steps"></a>Volgende stappen
 
 * Bekijk de [Node.js Snelstartgids](../quickstarts/client-libraries.md?pivots=programming-language-nodejs) om te zien wat u nog meer kunt doen met de insluitende lezer-SDK met behulp van Node.js
-* Bekijk de zelfstudie over [Android](../tutorial-android.md) om te zien wat u nog meer kunt doen met de Insluitende lezer-SDK met Java of Kotlin voor Android
-* Bekijk de [iOS-zelfstudie](../tutorial-ios.md) om te zien wat u nog meer kunt doen met de Insluitende lezer-SDK met behulp van Swift voor iOS
-* Bekijk de [python-zelf studie](../tutorial-python.md) om te zien wat u nog meer kunt doen met de insluitende Reader SDK met behulp van python
+* Bekijk de zelfstudie over [Android](../how-to-launch-immersive-reader.md) om te zien wat u nog meer kunt doen met de Insluitende lezer-SDK met Java of Kotlin voor Android
+* Bekijk de [iOS-zelfstudie](../how-to-launch-immersive-reader.md) om te zien wat u nog meer kunt doen met de Insluitende lezer-SDK met behulp van Swift voor iOS
+* Bekijk de [python-zelf studie](../how-to-launch-immersive-reader.md) om te zien wat u nog meer kunt doen met de insluitende Reader SDK met behulp van python
 * De [SDK voor Insluitende lezer](https://github.com/microsoft/immersive-reader-sdk) en de [naslaginformatie voor de SDK voor Insluitende lezer](../reference.md) verkennen

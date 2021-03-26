@@ -10,12 +10,12 @@ ms.date: 03/10/2021
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: dedea2a622cb0eece92bb8b57871c76daa05fb68
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: ddc43d9a030b85f8a1becd4be2573303207ad345
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103495394"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105107013"
 ---
 ## <a name="prerequisites"></a>Vereisten
 Voordat u aan de slag gaat, moet u het volgende doen:
@@ -128,7 +128,7 @@ Deze Snelstartgids heeft geen betrekking op het maken van een servicelaag voor h
 Meer informatie over [tokens voor gebruikerstoegang](../../access-tokens.md).
 
 ## <a name="object-model"></a>Objectmodel 
-De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Azure Communication Services chat-clientbibliotheek voor JavaScript.
+De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Azure Communication Services chat SDK voor Java script.
 
 | Naam                                   | Beschrijving                                                                                                                                                                           |
 | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

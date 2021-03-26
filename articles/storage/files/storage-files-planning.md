@@ -4,16 +4,16 @@ description: Meer informatie over het plannen van een Azure Files-implementatie.
 author: roygara
 ms.service: storage
 ms.topic: conceptual
-ms.date: 09/15/2020
+ms.date: 03/23/2021
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions
-ms.openlocfilehash: 8a96b44a280e0aea15a6d0843f02f4ed16f8fcf4
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 267b68fbdae6d894acc3222a8d74a8e15e865dbc
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98879844"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105023517"
 ---
 # <a name="planning-for-an-azure-files-deployment"></a>Planning voor de implementatie van Azure Files
 [Azure files](storage-files-introduction.md) kunnen op twee manieren worden geïmplementeerd: door de Serverloze Azure-bestands shares rechtstreeks te koppelen of door Azure-bestands shares on-premises in de cache op te maken met behulp van Azure file sync. Welke implementatie optie u kiest, wijzigt de dingen die u moet overwegen bij het plannen van uw implementatie. 
@@ -65,7 +65,7 @@ Hoewel het vanuit een technisch perspectief aanzienlijk eenvoudiger is om uw Azu
 
 - **Netwerk tunneling met behulp van ExpressRoute, site-naar-site-of punt-naar-site-VPN**: tunneling naar een virtueel netwerk maakt toegang tot Azure-bestands shares van on-premises mogelijk, zelfs als poort 445 wordt geblokkeerd.
 - **Persoonlijke eind punten**: persoonlijke eind punten geven uw opslag account een toegewezen IP-adres binnen de adres ruimte van het virtuele netwerk. Hierdoor kan netwerk tunneling worden ingeschakeld zonder dat u on-premises netwerken hoeft te openen tot alle IP-adresbereiken die eigendom zijn van de Azure Storage-clusters. 
-- **Door sturen via DNS**: Configureer uw on-premises DNS om de naam van uw opslag account ( `storageaccount.file.core.windows.net` bijvoorbeeld voor de open bare Cloud regio's) om te zetten in het IP-adres van uw privé-eind punten.
+- **Door sturen via DNS**: Configureer uw on-premises DNS om de naam van uw opslag account ( `storageaccount.file.core.windows.net` voor de open bare-Cloud regio's) om te zetten in het IP-adres van uw privé-eind punten.
 
 Zie [Azure files netwerk overwegingen](storage-files-networking-overview.md)voor het plannen van de netwerken die zijn gekoppeld aan de implementatie van een Azure-bestands share.
 
@@ -94,7 +94,7 @@ Azure Files beschikt over een aanpak met meerdere lagen om ervoor te zorgen dat 
 ### <a name="soft-delete"></a>Voorlopig verwijderen
 Zacht verwijderen voor bestands shares (preview) is een instelling voor het niveau van een opslag account waarmee u uw bestands share kunt herstellen wanneer deze per ongeluk wordt verwijderd. Wanneer een bestands share wordt verwijderd, wordt deze overgezet naar een voorlopig verwijderde status in plaats van permanent te wissen. U kunt de hoeveelheid tijd waarvoor tijdelijke verwijderde gegevens kunnen worden hersteld, configureren voordat deze definitief wordt verwijderd en de share tijdens deze Bewaar periode op elk gewenst moment verwijderen. 
 
-U kunt het beste verwijderen voor de meeste bestands shares inschakelen. Als u een werk stroom hebt waarbij het verwijderen van shares gemeen schappelijk en verwacht is, kunt u ervoor kiezen om een zeer korte Bewaar periode te hebben of dat er geen tijdelijke verwijdering is ingeschakeld.
+U kunt het beste verwijderen voor de meeste bestands shares inschakelen. Als u een werk stroom hebt waarbij het verwijderen van shares gemeen schappelijk en verwacht is, kunt u ervoor kiezen om een korte Bewaar periode te hebben of dat u helemaal geen tijdelijke verwijdering hebt ingeschakeld.
 
 Voor meer informatie over zacht verwijderen, Zie [voor komen dat onbedoelde gegevens worden verwijderd](./storage-files-prevent-file-share-deletion.md).
 
@@ -107,10 +107,10 @@ U kunt op item niveau en op share niveau terugzetten in de Azure Portal met behu
 
 Zie [about Azure file share backup](../../backup/azure-file-share-backup-overview.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json)(Engelstalig) voor meer informatie over back-ups.
 
-### <a name="advanced-threat-protection-for-azure-files-preview"></a>Advanced Threat Protection voor Azure Files (preview-versie)
-Advanced Threat Protection (ATP) voor Azure Storage biedt een extra beveiligingslaag met waarschuwingen wanneer er afwijkende activiteiten in uw opslag account worden gedetecteerd, bijvoorbeeld ongebruikelijke pogingen om toegang te krijgen tot het opslag account. ATP voert ook malware-hash-reputatie analyse uit en geeft een waarschuwing over bekende malware. U kunt ATP op een niveau van een abonnement of opslag account configureren via Azure Security Center. 
+### <a name="azure-defender-for-azure-files"></a>Azure Defender voor Azure Files 
+Azure Defender voor Azure Storage (voorheen Advanced Threat Protection voor Azure Storage) biedt een extra beveiligingslaag met waarschuwingen wanneer er afwijkende activiteiten in uw opslag account worden gedetecteerd, bijvoorbeeld ongebruikelijke toegangs pogingen. Er wordt ook malware-hash-reputatie analyse uitgevoerd en er wordt gewaarschuwd voor bekende malware. U kunt Azure Defender op een abonnement of opslag account niveau configureren via Azure Security Center. 
 
-Zie [Advanced Threat Protection voor Azure Storage](../common/azure-defender-storage-configure.md)voor meer informatie.
+Zie [Inleiding tot Azure Defender voor opslag](../../security-center/defender-for-storage-introduction.md)voor meer informatie.
 
 ## <a name="storage-tiers"></a>Opslaglagen
 [!INCLUDE [storage-files-tiers-overview](../../../includes/storage-files-tiers-overview.md)]

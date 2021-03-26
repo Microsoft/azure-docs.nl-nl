@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017,seoapr2020
 ms.date: 04/20/2020
-ms.openlocfilehash: d23b376384262c208fed70306e62634592d0b46b
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 6073000f2f14f835e2bfbd91b41619101c36b10f
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98946767"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104866842"
 ---
 # <a name="query-apache-hive-through-the-jdbc-driver-in-hdinsight"></a>Query uitvoeren op Apache Hive via het JDBC-stuurprogramma in HDInsight
 
@@ -38,7 +38,7 @@ Vervang `CLUSTERNAME` door de naam van uw HDInsight-cluster.
 
 U kunt ook de verbinding via de **Ambari-gebruikers interface > Hive > configuraties > Geavanceerd** verkrijgen.
 
-![JDBC ophalen connection string via Ambari](./media/apache-hadoop-connect-hive-jdbc-driver/hdinsight-get-connection-string-through-ambari.png)
+:::image type="content" source="./media/apache-hadoop-connect-hive-jdbc-driver/hdinsight-get-connection-string-through-ambari.png" alt-text="JDBC ophalen connection string via Ambari" border="true":::
 
 ### <a name="host-name-in-connection-string"></a>Hostnaam in connection string
 
@@ -74,11 +74,11 @@ SQuirreL SQL is een JDBC-client die kan worden gebruikt om Hive-query's op afsta
 
 3. Start de SQuirreL-SQL-toepassing. Selecteer links in het venster **Stuur Programma's**.
 
-    ![Het tabblad Stuur Programma's aan de linkerkant van het venster](./media/apache-hadoop-connect-hive-jdbc-driver/hdinsight-squirreldrivers.png)
+    :::image type="content" source="./media/apache-hadoop-connect-hive-jdbc-driver/hdinsight-squirreldrivers.png" alt-text="Het tabblad Stuur Programma's aan de linkerkant van het venster" border="true":::
 
 4. Selecteer in de pictogrammen boven in het dialoog venster **Stuur Programma's** het **+** pictogram om een stuur programma te maken.
 
-    ![Pictogram voor SQuirreL SQL-toepassings Stuur Programma's](./media/apache-hadoop-connect-hive-jdbc-driver/hdinsight-driversicons.png)
+    :::image type="content" source="./media/apache-hadoop-connect-hive-jdbc-driver/hdinsight-driversicons.png" alt-text="Pictogram voor SQuirreL SQL-toepassings Stuur Programma's" border="true":::
 
 5. Voeg in het dialoog venster stuur programma toevoegen de volgende informatie toe:
 
@@ -89,13 +89,13 @@ SQuirreL SQL is een JDBC-client die kan worden gebruikt om Hive-query's op afsta
     |Extra klassepad|Gebruik de knop **toevoegen** om alle eerder gedownloade jar-bestanden toe te voegen.|
     |Klassenaam|org. apache. Hive. JDBC. HiveDriver|
 
-   ![dialoog venster stuur programma toevoegen met para meters](./media/apache-hadoop-connect-hive-jdbc-driver/hdinsight-add-driver.png)
+   :::image type="content" source="./media/apache-hadoop-connect-hive-jdbc-driver/hdinsight-add-driver.png" alt-text="dialoog venster stuur programma toevoegen met para meters" border="true":::
 
    Selecteer **OK** om deze instellingen op te slaan.
 
 6. Selecteer aan de linkerkant van het SQuirreL SQL-venster **aliassen**. Selecteer vervolgens het **+** pictogram om een verbindings alias te maken.
 
-    ![' SQuirreL SQL-dialoog venster nieuwe alias toevoegen '](./media/apache-hadoop-connect-hive-jdbc-driver/hdinsight-new-aliases.png)
+    :::image type="content" source="./media/apache-hadoop-connect-hive-jdbc-driver/hdinsight-new-aliases.png" alt-text="' SQuirreL SQL-dialoog venster nieuwe alias toevoegen '" border="true":::
 
 7. Gebruik de volgende waarden voor het dialoog venster **alias toevoegen** :
 
@@ -107,7 +107,7 @@ SQuirreL SQL is een JDBC-client die kan worden gebruikt om Hive-query's op afsta
     |Gebruikersnaam|De naam van het cluster aanmeldings account voor uw HDInsight-cluster. De standaard instelling is **admin**.|
     |Wachtwoord|Het wacht woord voor het cluster aanmeldings account.|
 
-    ![dialoog venster alias toevoegen met para meters](./media/apache-hadoop-connect-hive-jdbc-driver/hdinsight-addalias-dialog.png)
+    :::image type="content" source="./media/apache-hadoop-connect-hive-jdbc-driver/hdinsight-addalias-dialog.png" alt-text="dialoog venster alias toevoegen met para meters" border="true":::
 
     > [!IMPORTANT]
     > Gebruik de knop **testen** om te controleren of de verbinding werkt. Wanneer **verbinding maken met: Hive in HDInsight** dialoog venster wordt weer gegeven, selecteert u **verbinding maken** om de test uit te voeren. Als de test is geslaagd, ziet u een dialoog venster **verbinding geslaagd** . Zie [probleem oplossing](#troubleshooting)als er een fout optreedt.
@@ -116,7 +116,7 @@ SQuirreL SQL is een JDBC-client die kan worden gebruikt om Hive-query's op afsta
 
 8. Selecteer in de vervolg keuzelijst **verbinding maken** met de bovenkant van SQuirreL SQL **Hive op HDInsight**. Selecteer **Verbinding maken** wanneer hierom wordt gevraagd.
 
-    ![dialoog venster verbinding met para meters](./media/apache-hadoop-connect-hive-jdbc-driver/hdinsight-connect-dialog.png)
+    :::image type="content" source="./media/apache-hadoop-connect-hive-jdbc-driver/hdinsight-connect-dialog.png" alt-text="dialoog venster verbinding met para meters" border="true":::
 
 9. Als de verbinding tot stand is gebracht, voert u de volgende query in het dialoog venster SQL-query in en selecteert u vervolgens het pictogram **uitvoeren** (een actieve persoon). In het resultaten gebied moeten de resultaten van de query worden weer gegeven.
 
@@ -124,7 +124,7 @@ SQuirreL SQL is een JDBC-client die kan worden gebruikt om Hive-query's op afsta
     select * from hivesampletable limit 10;
     ```
 
-    ![dialoog venster SQL-query, inclusief resultaten](./media/apache-hadoop-connect-hive-jdbc-driver/hdinsight-sqlquery-dialog.png)
+    :::image type="content" source="./media/apache-hadoop-connect-hive-jdbc-driver/hdinsight-sqlquery-dialog.png" alt-text="dialoog venster SQL-query, inclusief resultaten" border="true":::
 
 ## <a name="connect-from-an-example-java-application"></a>Verbinding maken via een Java-voorbeeld toepassing
 

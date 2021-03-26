@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/24/2020
-ms.openlocfilehash: a5732c2dc0a92bd5727eeff39a529630e45683d7
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: bb448a4befb15618485b2b5951222761180a1f22
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98946675"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104866740"
 ---
 # <a name="visualize-apache-hive-data-with-microsoft-power-bi-using-odbc-in-azure-hdinsight"></a>Apache Hive-gegevens visualiseren met Microsoft Power BI met behulp van ODBC in Azure HDInsight
 
@@ -21,7 +21,7 @@ Meer informatie over het verbinden van micro soft Power BI Desktop met Azure HDI
 
 In dit artikel laadt u de gegevens uit een `hivesampletable` Hive-tabel naar Power bi. De Hive-tabel bevat een aantal gebruiks gegevens over mobiele telefoons. U kunt de gebruiks gegevens vervolgens op een wereld kaart uitzetten:
 
-![HDInsight-Power BI het kaart rapport](./media/apache-hadoop-connect-hive-power-bi/hdinsight-power-bi-visualization.png)
+:::image type="content" source="./media/apache-hadoop-connect-hive-power-bi/hdinsight-power-bi-visualization.png" alt-text="HDInsight-Power BI het kaart rapport" border="true":::
 
 De informatie is ook van toepassing op het nieuwe type [interactieve query](../interactive-query/apache-interactive-query-get-started.md) cluster. Zie voor informatie over het maken van een verbinding met HDInsight interactieve query met behulp van directe query de [Hive-gegevens van interactieve Query's visualiseren met micro soft power bi met behulp van directe query's in azure HDInsight](../interactive-query/apache-hadoop-connect-hive-power-bi-directquery.md).
 
@@ -45,7 +45,7 @@ De **hivesampletable** -Hive-tabel wordt geleverd met alle HDInsight-clusters.
 
 1. Ga in het bovenste menu naar **Start**  >  **gegevens ophalen**  >  **meer...**.
 
-    ![HDInsight Excel Power BI gegevens openen](./media/apache-hadoop-connect-hive-power-bi/hdinsight-power-bi-open-odbc.png)
+    :::image type="content" source="./media/apache-hadoop-connect-hive-power-bi/hdinsight-power-bi-open-odbc.png" alt-text="HDInsight Excel Power BI gegevens openen" border="true":::
 
 1. Selecteer in het dialoog venster **gegevens ophalen** **andere** links, selecteer **ODBC** aan de rechter kant en selecteer vervolgens **verbinding maken** aan de onderkant.
 
@@ -61,7 +61,7 @@ Door gaan met de laatste procedure.
 
 1. Selecteer in het deel venster visualisaties de optie **kaart**, het pictogram een wereldbol.
 
-    ![Power BI van HDInsight-rapport aanpassen](./media/apache-hadoop-connect-hive-power-bi/hdinsight-power-bi-customize.png)
+    :::image type="content" source="./media/apache-hadoop-connect-hive-power-bi/hdinsight-power-bi-customize.png" alt-text="Power BI van HDInsight-rapport aanpassen" border="true":::
 
 1. Selecteer in het deel venster **velden** de optie **land** en **devicemake**. U kunt de gegevens weer geven die zijn getekend op de kaart.
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/10/2021
 ms.author: jeedes
-ms.openlocfilehash: d1c1fba8da908133d1e4e4836832de3bed68476d
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 31a653df08108bc4f5d75e6dbbc6f31144be8b7e
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103202640"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104956023"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-thrive-lxp"></a>Zelf studie: Azure Active Directory-integratie met eenmalige aanmelding (SSO) met bloei LXP
 
@@ -132,10 +132,8 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 * Ga naar de URL voor LXP-aanmelding direct en start de aanmeldings stroom vanaf daar.
 
-* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel LXPe in de mijn apps klikt, wordt dit omgeleid naar de LXP-aanmeld URL voor de bloei. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel LXPe in de mijn apps klikt, wordt dit omgeleid naar de LXP-aanmeld URL voor de bloei. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zodra u de LXP hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
-
-
+Zodra u de LXP hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

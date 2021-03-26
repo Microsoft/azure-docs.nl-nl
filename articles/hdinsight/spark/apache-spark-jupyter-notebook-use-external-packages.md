@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 11/22/2019
-ms.openlocfilehash: a3d787059345b5971d99ebd7a1e26a9135b61bed
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 3ddfdfdfe10d5b6ea7c2d5cd99d325564163c0dd
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98930342"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104866009"
 ---
 # <a name="use-external-packages-with-jupyter-notebooks-in-apache-spark-clusters-on-hdinsight"></a>Externe pakketten met Jupyter-notebooks gebruiken in Apache Spark clusters in HDInsight
 
@@ -34,11 +34,11 @@ In dit artikel leert u hoe u het [Spark-CSV-](https://search.maven.org/#artifact
 
 1. Maak een nieuwe notebook. Selecteer **Nieuw** en selecteer vervolgens **Spark**.
 
-    ![Een nieuwe Spark-Jupyter Notebook maken](./media/apache-spark-jupyter-notebook-use-external-packages/hdinsight-spark-create-notebook.png "Een nieuwe Jupyter Notebook maken")
+    :::image type="content" source="./media/apache-spark-jupyter-notebook-use-external-packages/hdinsight-spark-create-notebook.png " alt-text="Een nieuwe Spark-Jupyter Notebook maken" border="true":::
 
 1. Er wordt een nieuwe notebook gemaakt en geopend met de naam Untitled.pynb. Selecteer de naam van het notitie blok bovenaan en geef een beschrijvende naam op.
 
-    ![Een naam opgeven voor de notebook](./media/apache-spark-jupyter-notebook-use-external-packages/hdinsight-spark-name-notebook.png "Een naam opgeven voor de notebook")
+    :::image type="content" source="./media/apache-spark-jupyter-notebook-use-external-packages/hdinsight-spark-name-notebook.png " alt-text="Een naam opgeven voor de notebook" border="true":::
 
 1. U gebruikt de `%%configure` Magic om het notitie blok te configureren voor het gebruik van een extern pakket. Zorg er in notitie blokken die gebruikmaken van externe pakketten voor dat u het Magic aanroept `%%configure` in de eerste cel van de code. Dit zorgt ervoor dat de kernel zo is geconfigureerd dat het pakket wordt gebruikt voordat de sessie wordt gestart.
 
@@ -56,7 +56,7 @@ In dit artikel leert u hoe u het [Spark-CSV-](https://search.maven.org/#artifact
 
     b. Verzamel de waarden voor **GroupId**, **ArtifactId** en **Version** uit de opslag plaats. Zorg ervoor dat de waarden die u verzamelt, overeenkomen met uw cluster. In dit geval gebruiken we een scala 2,11-en Spark 1.5.0-pakket, maar u moet mogelijk verschillende versies selecteren voor de juiste scala-of Spark-versie in uw cluster. U kunt de scala-versie in uw cluster vinden door uit te voeren `scala.util.Properties.versionString` op de Spark Jupyter-kernel of op Spark-verzen ding. U kunt de Spark-versie op uw cluster vinden door `sc.version` op Jupyter-notebooks uit te voeren.
 
-    ![Externe pakketten gebruiken met Jupyter Notebook](./media/apache-spark-jupyter-notebook-use-external-packages/use-external-packages-with-jupyter.png "Externe pakketten gebruiken met Jupyter Notebook")
+    :::image type="content" source="./media/apache-spark-jupyter-notebook-use-external-packages/use-external-packages-with-jupyter.png " alt-text="Externe pakketten gebruiken met Jupyter Notebook" border="true":::
 
     c. De drie waarden samen voegen, gescheiden door een dubbele punt (**:**).
 

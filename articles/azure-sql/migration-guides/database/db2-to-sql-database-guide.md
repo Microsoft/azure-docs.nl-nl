@@ -1,6 +1,6 @@
 ---
-title: 'DB2 naar SQL Database: migratie handleiding'
-description: In deze hand leiding leert u hoe u de DB2-data bases kunt migreren naar Azure SQL Database met behulp van SQL Server Migration Assistant voor DB2 (SSMA for DB2).
+title: 'Db2 naar Azure SQL Database: migratie handleiding'
+description: In deze hand leiding leert u hoe u de Db2-data bases kunt migreren naar Azure SQL Database met behulp van SQL Server Migration Assistant voor Db2 (SSMA for Db2).
 ms.service: sql-database
 ms.subservice: migration-guide
 ms.custom: ''
@@ -10,27 +10,29 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: 917390b43a772cbb9374c560fc3a65cfa7278839
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 1818675e4e5298291ffb5a77c11eebd5d920ebc8
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103563937"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105027088"
 ---
-# <a name="migration-guide-db2-to-sql-database"></a>Migratie handleiding: DB2 naar SQL Database
+# <a name="migration-guide-db2-to-azure-sql-database"></a>Migratie handleiding: Db2 naar Azure SQL Database
 [!INCLUDE[appliesto-sqldb-sqlmi](../../includes/appliesto-sqldb.md)]
 
-In deze hand leiding leert u hoe u uw DB2-data bases kunt migreren naar Azure SQL Database met behulp van SQL Server Migration Assistant voor DB2. 
+In deze hand leiding leert u hoe u uw Db2-data bases kunt migreren naar Azure SQL Database met behulp van SQL Server Migration Assistant voor Db2. 
 
-Zie de [hand leiding voor database migratie](https://datamigration.microsoft.com/)voor andere scenario's.
+Zie [Data Base Migration](https://docs.microsoft.com/data-migration)(Engelstalig) voor andere migratie handleidingen. 
 
 ## <a name="prerequisites"></a>Vereisten 
 
-Als u de DB2-Data Base naar SQL Database wilt migreren, hebt u het volgende nodig:
+Als u de Db2-Data Base naar SQL Database wilt migreren, hebt u het volgende nodig:
 
-- u kunt controleren of uw bron omgeving wordt ondersteund.
-- voor het downloaden [van SQL Server Migration Assistant (SSMA) voor DB2](https://www.microsoft.com/download/details.aspx?id=54254).
-- een doel [Azure SQL database](../../database/single-database-create-quickstart.md).
+- U kunt controleren of uw [bron omgeving wordt ondersteund](/sql/ssma/db2/installing-ssma-for-db2-client-db2tosql#prerequisites).
+- Voor het downloaden [van SQL Server Migration Assistant (SSMA) voor Db2](https://www.microsoft.com/download/details.aspx?id=54254).
+- Een doel [Azure SQL database](../../database/single-database-create-quickstart.md).
+- Connectiviteit en voldoende machtigingen voor toegang tot zowel de bron als het doel. 
+
 
 
 ## <a name="pre-migration"></a>Premigratie
@@ -39,29 +41,29 @@ Nadat u aan de vereisten hebt voldaan, bent u klaar om de topologie van uw omgev
 
 ### <a name="assess-and-convert"></a>Beoordelen en converteren
 
-Een evaluatie maken met behulp van SQL Server Migration Assistant (SSMA). 
+Gebruik SQL Server Migration Assistant (SSMA) voor DB2 om database objecten en-gegevens te controleren en data bases te evalueren voor migratie. 
 
 Voer de volgende stappen uit om een evaluatie te maken:
 
-1. Open SQL Server Migration Assistant (SSMA) voor DB2. 
+1. Open [SQL Server Migration Assistant (SSMA) voor Db2](https://www.microsoft.com/download/details.aspx?id=54254). 
 1. Selecteer **bestand** en kies vervolgens **Nieuw project**. 
-1. Geef een project naam op, een locatie om uw project op te slaan en selecteer vervolgens Azure SQL Database als migratie doel in de vervolg keuzelijst. Selecteer **OK**.  
+1. Geef een project naam op, een locatie om uw project op te slaan en selecteer vervolgens Azure SQL Database als migratie doel in de vervolg keuzelijst. Selecteer **OK**:
 
    :::image type="content" source="media/db2-to-sql-database-guide/new-project.png" alt-text="Geef project gegevens op en selecteer OK om op te slaan.":::
 
 
-1. Voer in het dialoog venster **verbinding maken met DB2** waarden in voor de gegevens van de DB2-verbinding. 
+1. Voer in het dialoog venster **verbinding maken met DB2** waarden in voor de gegevens van de Db2-verbinding. 
 
-   :::image type="content" source="media/db2-to-sql-database-guide/connect-to-db2.png" alt-text="Verbinding maken met uw DB2-exemplaar":::
+   :::image type="content" source="media/db2-to-sql-database-guide/connect-to-db2.png" alt-text="Verbinding maken met uw Db2-exemplaar":::
 
 
-1. Klik met de rechter muisknop op het DB2-schema dat u wilt migreren en kies vervolgens **rapport maken**. Hiermee wordt een HTML-rapport gegenereerd. U kunt ook **rapport maken** kiezen op de navigatie balk nadat u het schema hebt geselecteerd. 
+1. Klik met de rechter muisknop op het Db2-schema dat u wilt migreren en kies vervolgens **rapport maken**. Hiermee wordt een HTML-rapport gegenereerd. U kunt ook **rapport maken** kiezen op de navigatie balk nadat u het schema hebt geselecteerd:
 
    :::image type="content" source="media/db2-to-sql-database-guide/create-report.png" alt-text="Klik met de rechter muisknop op het schema en kies rapport maken.":::
 
-1. Bekijk het HTML-rapport om de conversie statistieken en eventuele fouten of waarschuwingen te begrijpen. U kunt het rapport ook openen in Excel om een inventaris van de DB2-objecten te verkrijgen en de vereiste inspanning om schema conversies uit te voeren. De standaard locatie voor het rapport bevindt zich in de rapportmap in SSMAProjects.
+1. Bekijk het HTML-rapport om de conversie statistieken en eventuele fouten of waarschuwingen te begrijpen. U kunt het rapport ook openen in Excel om een inventaris van de Db2-objecten te verkrijgen en de vereiste inspanning om schema conversies uit te voeren. De standaard locatie voor het rapport bevindt zich in de rapportmap in SSMAProjects.
 
-   Bijvoorbeeld: `drive:\<username>\Documents\SSMAProjects\MyDB2Migration\report\report_<date>`. 
+   Bijvoorbeeld: `drive:\<username>\Documents\SSMAProjects\MyDb2Migration\report\report_<date>`. 
 
    :::image type="content" source="media/db2-to-sql-database-guide/report.png" alt-text="Bekijk het rapport om eventuele fouten of waarschuwingen te identificeren":::
 
@@ -72,34 +74,36 @@ Valideer de standaard gegevens type toewijzingen en wijzig deze indien nodig op 
 
 1. Selecteer **extra** in het menu. 
 1. Selecteer de **project instellingen**. 
-1. Selecteer het tabblad **type toewijzingen** . 
+1. Selecteer het tabblad **type toewijzingen** :
 
    :::image type="content" source="media/db2-to-sql-database-guide/type-mapping.png" alt-text="Het schema selecteren en vervolgens type toewijzing":::
 
-1. U kunt de type toewijzing voor elke tabel wijzigen door de tabel te selecteren in de **DB2-meta gegevens Verkenner**. 
+1. U kunt de type toewijzing voor elke tabel wijzigen door de tabel te selecteren in de **Db2-meta gegevens Verkenner**. 
 
-### <a name="schema-conversion"></a>Schema conversie 
+### <a name="convert-schema"></a>Schema converteren
 
 Voer de volgende stappen uit om het schema te converteren:
 
 1. Beschrijving Dynamische of ad-hoc query's toevoegen aan-instructies. Klik met de rechter muisknop op het knoop punt en kies vervolgens **instructies toevoegen**. 
 1. Selecteer **verbinding maken met Azure SQL database**. 
-    1. Voer de verbindings gegevens in om uw data base in Azure SQL Database te koppelen. 
-    1. Kies uw doel SQL Database in de vervolg keuzelijst. 
-    1. Selecteer **Verbinding maken**. 
+    1. Voer de verbindings gegevens in om uw data base in Azure SQL Database te koppelen.
+    1. Kies uw doel SQL Database in de vervolg keuzelijst of geef een nieuwe naam op. in dat geval wordt er een Data Base op de doel server gemaakt. 
+    1. Geef verificatie Details op. 
+    1. Selecteer **verbinding maken**:
 
    :::image type="content" source="media/db2-to-sql-database-guide/connect-to-sql-database.png" alt-text="Vul de details in om verbinding te maken met de logische server in azure":::
 
 
-1. Klik met de rechter muisknop op het schema en kies vervolgens **schema converteren**. U kunt ook **schema converteren** selecteren in de bovenste navigatie balk nadat u het schema hebt geselecteerd. 
+1. Klik met de rechter muisknop op het schema en kies vervolgens **schema converteren**. U kunt ook **schema converteren** selecteren in de bovenste navigatie balk nadat u het schema hebt geselecteerd:
 
    :::image type="content" source="media/db2-to-sql-database-guide/convert-schema.png" alt-text="Klik met de rechter muisknop op het schema en kies schema converteren":::
 
-1. Nadat de conversie is voltooid, vergelijkt en controleert u de structuur van het schema om potentiële problemen te identificeren en te verhelpen op basis van de aanbevelingen. 
+1. Nadat de conversie is voltooid, vergelijkt en controleert u de structuur van het schema om potentiële problemen te identificeren en te verhelpen op basis van de aanbevelingen:
 
    :::image type="content" source="media/db2-to-sql-database-guide/compare-review-schema-structure.png" alt-text="Vergelijk en controleer de structuur van het schema om potentiële problemen te identificeren en op te lossen op basis van aanbevelingen.":::
 
-1. Sla het project lokaal op voor een herbemiddeling van het offline schema. Selecteer **project opslaan** in het menu **bestand** . 
+1. Selecteer **resultaten controleren** in het deel venster uitvoer en Bekijk fouten in het deel venster **fouten lijst** . 
+1. Sla het project lokaal op voor een herbemiddeling van het offline schema. Selecteer **project opslaan** in het menu **bestand** . Dit biedt u de mogelijkheid om de bron-en doel schema's offline te evalueren en herstel bewerkingen uit te voeren voordat u het schema kunt publiceren naar SQL Database.
 
 
 ## <a name="migrate"></a>Migrate
@@ -112,16 +116,16 @@ Als u uw schema wilt publiceren en uw gegevens wilt migreren, voert u de volgend
 
    :::image type="content" source="media/db2-to-sql-database-guide/synchronize-with-database.png" alt-text="Klik met de rechter muisknop op de data base en kies synchroniseren met data base":::
 
-1. De gegevens migreren: Klik met de rechter muisknop op het schema in de **DB2-meta gegevens Verkenner** en kies **gegevens migreren**. 
+1. De gegevens migreren: Klik met de rechter muisknop op de data base of het object dat u wilt migreren in de **Db2-meta gegevens Verkenner** en kies **gegevens migreren**. U kunt ook **gegevens migreren** selecteren in de bovenste navigatie balk. Als u gegevens voor een hele Data Base wilt migreren, schakelt u het selectie vakje naast de naam van de data base in. Als u gegevens uit afzonderlijke tabellen wilt migreren, vouwt u de data base uit, vouwt u tabellen uit en schakelt u het selectie vakje naast de tabel in. Als u gegevens uit afzonderlijke tabellen wilt weglaten, schakelt u het selectie vakje uit:
 
    :::image type="content" source="media/db2-to-sql-database-guide/migrate-data.png" alt-text="Klik met de rechter muisknop op het schema en kies gegevens migreren.":::
 
-1. Geef verbindings Details voor zowel de DB2-als de Azure SQL Database op. 
-1. Het **gegevens migratie rapport** weer geven. 
+1. Geef verbindings Details voor zowel de Db2-als de Azure SQL Database op. 
+1. Nadat de migratie is voltooid, raadpleegt u het **rapport gegevens migratie**:  
 
    :::image type="content" source="media/db2-to-sql-database-guide/data-migration-report.png" alt-text="Het gegevens migratie rapport controleren":::
 
-1. Maak verbinding met uw Azure SQL Database met behulp van SQL Server Management Studio en valideer de migratie door de gegevens en het schema te controleren. 
+1. Maak verbinding met uw data base in Azure SQL Database met behulp van [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) en valideer de migratie door de gegevens en het schema te controleren:
 
    :::image type="content" source="media/db2-to-sql-database-guide/compare-schema-in-ssms.png" alt-text="Het schema in SSMS vergelijken":::
 
@@ -158,9 +162,9 @@ Raadpleeg de volgende bronnen voor meer hulp, die zijn ontwikkeld ter ondersteun
 |Asset  |Beschrijving  |
 |---------|---------|
 |[Beoordelings model en hulp programma voor gegevens workload](https://github.com/Microsoft/DataMigrationTeam/tree/master/Data%20Workload%20Assessment%20Model%20and%20Tool)| Dit hulp programma biedt voorgestelde ' Best passend ' doel platformen, Cloud gereedheids en toepassings-en database herstel niveau voor een bepaalde werk belasting. U kunt met één klik berekeningen en rapporten genereren waarmee u grote voor-en hand-evaluaties versnelt door het besluitvormings proces voor een geautomatiseerd en uniform doel platform te bieden.|
-|[Detectie-en evaluatie pakket voor gegevens bronnen van DB2 zOS](https://github.com/Microsoft/DataMigrationTeam/tree/master/DB2%20zOS%20Data%20Assets%20Discovery%20and%20Assessment%20Package)|Nadat u het SQL-script op een Data Base hebt uitgevoerd, kunt u de resultaten exporteren naar een bestand op het bestands systeem. Verschillende bestands indelingen worden ondersteund, met inbegrip van *. CSV, zodat u de resultaten kunt vastleggen in externe hulpprogram ma's zoals werk bladen. Deze methode kan nuttig zijn als u eenvoudig resultaten wilt delen met teams waarop de workbench niet is geïnstalleerd.|
-|[IBM DB2 LUW inventaris scripts en artefacten](https://github.com/Microsoft/DataMigrationTeam/tree/master/IBM%20DB2%20LUW%20Inventory%20Scripts%20and%20Artifacts)|Deze asset bevat een SQL-query die voldoet aan de IBM DB2 LUW-versie 11,1-systeem tabellen en biedt een telling van objecten per schema en object type, een ruwe schatting van ' onbewerkte gegevens ' in elk schema en de grootte van tabellen in elk schema, met resultaten die zijn opgeslagen in een CSV-indeling.|
-|[DB2 LUW zuivere schaal op Azure-installatie handleiding](https://github.com/Microsoft/DataMigrationTeam/blob/master/Whitepapers/DB2%20PureScale%20on%20Azure.pdf)|Deze hand leiding fungeert als uitgangs punt voor een DB2-implementatie plan. Terwijl de bedrijfs vereisten verschillen, is hetzelfde basis patroon van toepassing. Dit architectuur patroon kan ook worden gebruikt voor OLAP-toepassingen op Azure.|
+|[Detectie-en evaluatie pakket voor gegevens bronnen van Db2 zOS](https://github.com/microsoft/DataMigrationTeam/tree/master/DB2%20zOS%20Data%20Assets%20Discovery%20and%20Assessment%20Package)|Nadat u het SQL-script op een Data Base hebt uitgevoerd, kunt u de resultaten exporteren naar een bestand op het bestands systeem. Verschillende bestands indelingen worden ondersteund, met inbegrip van *. CSV, zodat u de resultaten kunt vastleggen in externe hulpprogram ma's zoals werk bladen. Deze methode kan nuttig zijn als u eenvoudig resultaten wilt delen met teams waarop de workbench niet is geïnstalleerd.|
+|[IBM Db2 LUW inventaris scripts en artefacten](https://github.com/Microsoft/DataMigrationTeam/tree/master/IBM%20Db2%20LUW%20Inventory%20Scripts%20and%20Artifacts)|Deze asset bevat een SQL-query die voldoet aan de IBM Db2 LUW-versie 11,1-systeem tabellen en biedt een telling van objecten per schema en object type, een ruwe schatting van ' onbewerkte gegevens ' in elk schema en de grootte van tabellen in elk schema, met resultaten die zijn opgeslagen in een CSV-indeling.|
+|[Db2 LUW zuivere schaal op Azure-installatie handleiding](https://github.com/Microsoft/DataMigrationTeam/blob/master/Whitepapers/Db2%20PureScale%20on%20Azure.pdf)|Deze hand leiding fungeert als uitgangs punt voor een Db2-implementatie plan. Terwijl de bedrijfs vereisten verschillen, is hetzelfde basis patroon van toepassing. Dit architectuur patroon kan ook worden gebruikt voor OLAP-toepassingen op Azure.|
 
 Deze resources zijn ontwikkeld als onderdeel van het data SQL expert-programma, dat wordt gesponsord door het technische team van de Azure-gegevens groep. Het kern Handvest van het data SQL expert-programma is het deblokkeren en versnellen van complexe modernisering en het concurreren van de migratie mogelijkheden van het gegevens platform naar het Azure-gegevens platform van micro soft. Als u denkt dat uw organisatie graag deelneemt aan het data SQL expert-programma, neemt u contact op met uw account team en vraagt u om een benoeming in te dienen.
 

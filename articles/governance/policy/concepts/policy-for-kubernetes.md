@@ -1,14 +1,14 @@
 ---
 title: Azure Policy leren voor Kubernetes
 description: Lees hoe Azure Policy Rego gebruikt en beleids agent opent voor het beheren van clusters met Kubernetes in azure of on-premises.
-ms.date: 12/01/2020
+ms.date: 03/22/2021
 ms.topic: conceptual
-ms.openlocfilehash: 0aaf610cd5712ee195ed2a4108cf9e5ca9c65183
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 60ffcfac688eb40f47efefb74f79d27a2cb82446
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100577098"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104868151"
 ---
 # <a name="understand-azure-policy-for-kubernetes-clusters"></a>Azure Policy voor Kubernetes-clusters
 
@@ -68,7 +68,7 @@ De volgende beperkingen gelden alleen voor de Azure Policy-invoeg toepassing voo
 
 Hieronder vindt u algemene aanbevelingen voor het gebruik van de Azure Policy-invoeg toepassing:
 
-- Voor de invoeg toepassing Azure Policy zijn 3 gate keeper-onderdelen vereist om uit te voeren: 1 audit pod en 2 webhook pod-replica's. Deze onderdelen gebruiken meer bronnen als het aantal Kubernetes-resources en beleids toewijzingen toenames in het cluster waarvoor controle-en afdwingings bewerkingen vereist zijn.
+- Voor de Azure Policy-invoeg toepassing zijn drie gate keeper-onderdelen vereist om uit te voeren: 1 audit pod en 2 webhook pod-replica's. Deze onderdelen nemen meer bronnen in beslag omdat het aantal Kubernetes-resources en beleids toewijzingen toeneemt in het cluster, waarvoor controle-en afdwingings bewerkingen vereist zijn.
 
   - Voor minder dan 500 peul in één cluster met een maximum van 20 beperkingen: 2 Vcpu's en 350 MB geheugen per onderdeel.
   - Meer dan 500 peul in één cluster met een maximum van 40 beperkingen: 3 Vcpu's en 600 MB geheugen per onderdeel.
@@ -85,7 +85,7 @@ De volgende aanbeveling geldt alleen voor AKS en de invoeg toepassing Azure Poli
 
 ## <a name="install-azure-policy-add-on-for-aks"></a>Azure Policy-invoeg toepassing voor AKS installeren
 
-Voordat u de Azure Policy invoeg toepassing installeert of een van de service functies inschakelt, moet uw abonnement de resource providers **micro soft. container service** en **micro soft. PolicyInsights** inschakelen.
+Voordat u de Azure Policy invoeg toepassing installeert of een van de service functies inschakelt, moet uw abonnement de resource providers van **micro soft. PolicyInsights** inschakelen.
 
 1. U moet de Azure CLI-versie 2.12.0 of hoger hebben geïnstalleerd en geconfigureerd. Voer `az --version` uit om de versie te bekijken. Als u uw CLI wilt installeren of upgraden, raadpleegt u [De Azure CLI installeren](/cli/azure/install-azure-cli).
 
@@ -93,15 +93,12 @@ Voordat u de Azure Policy invoeg toepassing installeert of een van de service fu
 
    - Azure Portal:
 
-     Registreer de resource providers **micro soft. container service** en **micro soft. PolicyInsights** . Zie [resource providers en-typen](../../../azure-resource-manager/management/resource-providers-and-types.md#azure-portal)voor instructies.
+     Registreer de resource providers van **micro soft. PolicyInsights** . Zie [resource providers en-typen](../../../azure-resource-manager/management/resource-providers-and-types.md#azure-portal)voor instructies.
 
    - Azure CLI:
 
      ```azurecli-interactive
      # Log in first with az login if you're not using Cloud Shell
-
-     # Provider register: Register the Azure Kubernetes Service provider
-     az provider register --namespace Microsoft.ContainerService
 
      # Provider register: Register the Azure Policy provider
      az provider register --namespace Microsoft.PolicyInsights
@@ -440,14 +437,13 @@ Enkele andere overwegingen:
 
 - Als het cluster abonnement is geregistreerd bij Azure Security Center, wordt Azure Security Center Kubernetes-beleid automatisch toegepast op het cluster.
 
-- Wanneer een beleid voor weigeren wordt toegepast op een cluster met bestaande Kubernetes-resources, wordt een bestaande resource die niet voldoet aan het nieuwe beleid, nog steeds uitgevoerd. Wanneer de niet-compatibele resource opnieuw wordt gepland op een ander knoop punt, blokkeert de gate keeper het maken van de resource.
+- Wanneer een beleid voor weigeren wordt toegepast op een cluster met bestaande Kubernetes-resources, wordt elke bestaande resource die niet voldoet aan het nieuwe beleid, nog steeds uitgevoerd. Wanneer de niet-compatibele resource opnieuw wordt gepland op een ander knoop punt, blokkeert de gate keeper het maken van de resource.
 
 - Wanneer een cluster beleid voor weigeren heeft waarmee resources worden gevalideerd, wordt door de gebruiker geen afwijzings bericht weer gegeven bij het maken van een implementatie. Denk bijvoorbeeld aan een Kubernetes-implementatie die replicasets en peul bevat. Wanneer een gebruiker wordt uitgevoerd `kubectl describe deployment $MY_DEPLOYMENT` , wordt er geen afwijzings bericht geretourneerd als onderdeel van gebeurtenissen. Retourneert echter `kubectl describe replicasets.apps $MY_DEPLOYMENT` de gebeurtenissen die aan de weigering zijn gekoppeld.
 
 ## <a name="logging"></a>Logboekregistratie
 
-Als Kubernetes-controller/-container moeten zowel de _Azure-beleids-_ als de _gate keeper_ -Logboeken in het Kubernetes-cluster worden bewaard. De logboeken kunnen worden weer gegeven op de pagina **inzichten** van het Kubernetes-cluster.
-Zie voor meer informatie [uw Kubernetes-cluster prestaties bewaken met Azure monitor voor containers](../../../azure-monitor/containers/container-insights-analyze.md).
+Als Kubernetes-controller/-container hebben zowel het _Azure-beleid_ als de _gate keeper_ het grootst Logboeken in het Kubernetes-cluster bewaard. De logboeken kunnen worden weer gegeven op de pagina **inzichten** van het Kubernetes-cluster. Zie voor meer informatie [uw Kubernetes-cluster prestaties bewaken met Azure monitor voor containers](../../../azure-monitor/containers/container-insights-analyze.md).
 
 Als u de logboeken wilt weer geven, gebruikt u `kubectl` :
 

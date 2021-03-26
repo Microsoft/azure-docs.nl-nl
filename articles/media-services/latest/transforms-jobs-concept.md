@@ -1,9 +1,7 @@
 ---
 # <a name="mandatory-fields-see-more-on-akamsskyeyemeta"></a>Verplichte velden. Meer informatie over aka.ms/skyeye/meta.
-Titel: trans formaties en taken in Media Services: Azure Media Services beschrijving: informatie over het maken van een trans formatie om de regels voor het verwerken van uw Video's in Azure Media Services te beschrijven.
-Services: Media Services documentationcenter: ' ' Auteur: IngridAtMicrosoft Manager: femila editor: ' '
-
-MS. service: Media-Services MS. workload: MS. topic: conceptuele MS. date: 03/17/2021 MS. Author: inhenkel
+Titel: trans formaties en taken in Media Services: Azure Media Services beschrijving: transformaties beschrijven de regels voor het verwerken van uw Video's in Azure Media Services.
+Services: Media Services-Auteur: IngridAtMicrosoft Manager: femila MS. service: Media-Services MS. topic: conceptuele MS. date: 03/22/2021 MS. Author: inhenkel
 ---
 
 # <a name="transforms-and-jobs-in-media-services"></a>Trans formaties en taken in Media Services
@@ -90,12 +88,6 @@ Het volgende diagram toont het **taak** object en de objecten waarnaar wordt ver
 Klik op de afbeelding om deze in volledig formaat weer te geven.  
 
 [![Diagram met het taak object en de objecten waarnaar wordt verwezen, met inbegrip van de klasse-Afleidings relaties tussen de objecten.](./media/api-diagrams/job-small.png)](./media/api-diagrams/job-large.png#lightbox)
-
-## <a name="configure-media-reserved-units"></a>Gereserveerde media-eenheden configureren
-
-Voor de taken voor audio analyse en video analyse die worden geactiveerd door Media Services v3 of Video Indexer, wordt u ten zeerste aangeraden om uw account in te richten met 10 S3-media gereserveerde eenheden (MRUs). Als u meer dan 10 S3 MRUs nodig hebt, kunt u een ondersteunings ticket openen met behulp van de [Azure Portal](https://portal.azure.com/).
-
-Zie [Media verwerking schalen met CLI](media-reserved-units-cli-how-to.md)voor meer informatie.
 
 ## <a name="ask-questions-give-feedback-get-updates"></a>Vragen stellen, feedback geven, updates ophalen
 

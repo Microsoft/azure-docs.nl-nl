@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 12/23/2019
-ms.openlocfilehash: ccd642578c8c35ac6b5f23397788ad1e7f83a1f5
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: de838e094c8a37d375aa6c7649ee5717705ad33c
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98942614"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104866349"
 ---
 # <a name="debug-apache-spark-applications-on-an-hdinsight-cluster-with-azure-toolkit-for-intellij-through-ssh"></a>Fouten opsporen Apache Spark toepassingen op een HDInsight-cluster met Azure-toolkit voor IntelliJ via SSH
 
@@ -45,7 +45,7 @@ In dit artikel vindt u stapsgewijze richt lijnen voor het gebruik van HDInsight-
     * **Maven**, voor de ondersteuning van de wizard Scala-project maken.
     * **SBT**, voor het beheren van de afhankelijkheden en het maken van het Scala-project.
 
-     ![IntelliJ nieuwe project Spark maken](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-create-projectfor-debug-remotely.png)
+     :::image type="content" source="./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-create-projectfor-debug-remotely.png" alt-text="IntelliJ nieuwe project Spark maken" border="true":::
 
 1. Selecteer **Next**.
 
@@ -58,7 +58,7 @@ In dit artikel vindt u stapsgewijze richt lijnen voor het gebruik van HDInsight-
     |Project SDK|Als deze leeg is, selecteert u **Nieuw...** en navigeert u naar uw JDK.|
     |Spark-versie|De wizard voor het maken van het project integreert de juiste versie voor Spark SDK en Scala SDK. Selecteer **Spark 1.x** als de Spark-clusterversie ouder is dan 2.0. Selecteer anders **Spark 2. x.**. In dit voorbeeld wordt **Spark 2.3.0 (Scala 2.11.8)** gebruikt.|
 
-   ![IntelliJ nieuw project Spark-versie selecteren](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-new-project.png)
+   :::image type="content" source="./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-new-project.png" alt-text="IntelliJ nieuw project Spark-versie selecteren" border="true":::
 
 1. Selecteer **Finish**. Het kan enkele minuten duren voordat het project beschikbaar wordt. Bekijk de rechter benedenhoek voor de voortgang.
 
@@ -70,11 +70,11 @@ In dit artikel vindt u stapsgewijze richt lijnen voor het gebruik van HDInsight-
 
 1. Zodra de lokale uitvoering is voltooid, kunt u het uitvoer bestand opslaan in de standaard **gegevens** van de project Verkenner  >  ****.
 
-    ![Resultaat lokale uitvoering IntelliJ-project](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/spark-local-run-result.png)
+    :::image type="content" source="./media/apache-spark-intellij-tool-debug-remotely-through-ssh/spark-local-run-result.png" alt-text="Resultaat lokale uitvoering IntelliJ-project" border="true":::
 
 1. Onze tools hebben de standaard configuratie voor lokale uitvoering automatisch ingesteld wanneer u de lokale uitvoering en de lokale fout opsporing uitvoert. Open de configuratie **[Spark op hdinsight] xxx** . in de rechter bovenhoek ziet u de **[Spark op hdinsight] xxx** die al is gemaakt onder **Apache Spark op hdinsight**. Schakel over naar het tabblad **lokaal uitvoeren** .
 
-    ![Lokaal uitvoeren in Uitvoeren/fouten opsporen van configuraties in IntelliJ](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/local-run-configuration.png)
+    :::image type="content" source="./media/apache-spark-intellij-tool-debug-remotely-through-ssh/local-run-configuration.png" alt-text="Lokaal uitvoeren in Uitvoeren/fouten opsporen van configuraties in IntelliJ" border="true":::
 
     - [Omgevings variabelen](#prerequisites): als u de omgevings variabele van de systeem al hebt ingesteld **HADOOP_HOME** op **C:\WinUtils**, kan deze automatisch detecteren dat deze niet hand matig hoeft toe te voegen.
     - [WinUtils.exe locatie](#prerequisites): als u de omgevings variabele systeem niet hebt ingesteld, kunt u de locatie vinden door op de knop te klikken.
@@ -94,35 +94,35 @@ In dit artikel vindt u stapsgewijze richt lijnen voor het gebruik van HDInsight-
 
 1. Selecteer in het dialoog venster **configuraties voor uitvoeren/fout opsporing** het plus teken ( **+** ). Selecteer vervolgens de optie **Apache Spark op HDInsight** .
 
-   ![Nieuwe configuratie IntelliJ toevoegen](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-add-new-Configuration.png)
+   :::image type="content" source="./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-add-new-Configuration.png" alt-text="Nieuwe configuratie IntelliJ toevoegen" border="true":::
 
 1. Overschakelen naar **extern uitvoeren op** het tabblad cluster. Voer informatie in voor de **naam**, het **Spark-cluster** en de naam van de **hoofd klasse**. Klik vervolgens op **Geavanceerde configuratie (fout opsporing op afstand)**. Onze hulp middelen ondersteunen debug met **uitvoerende** software. De **numExectors**, de standaard waarde is 5. U kunt beter niet meer dan 3 instellen.
 
-   ![IntelliJ voor fout opsporing uitvoeren](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-run-debug-configurations.png)
+   :::image type="content" source="./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-run-debug-configurations.png" alt-text="IntelliJ voor fout opsporing uitvoeren" border="true":::
 
 1. Selecteer in het gedeelte **Geavanceerde configuratie (externe fout opsporing)** de optie **Spark externe fout opsporing inschakelen**. Voer de SSH-gebruikers naam in en voer een wacht woord in of gebruik een bestand met een persoonlijke sleutel. Als u fout opsporing op afstand wilt uitvoeren, moet u het instellen. U hoeft deze niet in te stellen als u alleen extern uitvoeren wilt gebruiken.
 
-   ![Geavanceerde configuratie van IntelliJ inschakelen Spark externe fout opsporing](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-enable-spark-remote-debug.png)
+   :::image type="content" source="./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-enable-spark-remote-debug.png" alt-text="Geavanceerde configuratie van IntelliJ inschakelen Spark externe fout opsporing" border="true":::
 
 1. De configuratie wordt nu opgeslagen met de naam die u hebt ingevoerd. Als u de configuratie gegevens wilt weer geven, selecteert u de naam van de configuratie. Als u wijzigingen wilt aanbrengen, selecteert u **configuraties bewerken**.
 
 1. Nadat u de configuratie-instellingen hebt voltooid, kunt u het project uitvoeren op het externe cluster of externe fout opsporing uitvoeren.
 
-   ![Knop voor externe uitvoering van IntelliJ fout opsporing voor externe Spark-taak](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/perform-remote-run-button.png)
+   :::image type="content" source="./media/apache-spark-intellij-tool-debug-remotely-through-ssh/perform-remote-run-button.png" alt-text="Knop voor externe uitvoering van IntelliJ fout opsporing voor externe Spark-taak" border="true":::
 
 1. Klik op de knop **verbinding verbreken** als de inzendings logboeken niet worden weer gegeven in het linkerdeel venster. Het is echter nog steeds actief op de back-end.
 
-   ![Resultaat van externe uitvoering van externe Spark-taak IntelliJ fout opsporing](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/spark-remote-run-result.png)
+   :::image type="content" source="./media/apache-spark-intellij-tool-debug-remotely-through-ssh/spark-remote-run-result.png" alt-text="Resultaat van externe uitvoering van externe Spark-taak IntelliJ fout opsporing" border="true":::
 
 ## <a name="perform-remote-debugging"></a>Fout opsporing op afstand uitvoeren
 
 1. Stel breuk punten in en klik vervolgens op het pictogram **fout opsporing op afstand** . Het verschil met externe verzen ding is dat de SSH-gebruikers naam en het wacht woord moeten worden geconfigureerd.
 
-   ![Pictogram fout opsporing externe Spark-taak IntelliJ](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-debug-icon.png)
+   :::image type="content" source="./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-debug-icon.png" alt-text="Pictogram fout opsporing externe Spark-taak IntelliJ" border="true":::
 
 1. Wanneer de uitvoering van het programma het breuk punt bereikt, ziet u een tabblad van het **stuur programma** **en twee tabbladen** voor uitvoeringen in het deel venster **fout opsporing** . Selecteer het pictogram **programma hervatten** om door te gaan met het uitvoeren van de code, waarna het volgende onderbrekings punt wordt bereikt. U moet overschakelen naar **het tabblad voor** de juiste uitvoerder om de doel-uitvoerder te vinden voor fout opsporing. U kunt de uitvoerings logboeken bekijken op het bijbehorende **console** tabblad.
 
-   ![IntelliJ fout opsporing externe Spark-taak fout opsporing](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-debugger-tab.png)
+   :::image type="content" source="./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-debugger-tab.png" alt-text="IntelliJ fout opsporing externe Spark-taak fout opsporing" border="true":::
 
 ### <a name="perform-remote-debugging-and-bug-fixing"></a>Fout opsporing op afstand en probleem oplossing uitvoeren
 
@@ -132,21 +132,21 @@ In dit artikel vindt u stapsgewijze richt lijnen voor het gebruik van HDInsight-
 
 1. Selecteer het pictogram **programma hervatten** om door te gaan. De code wordt op het tweede punt gestopt. De uitzonde ring wordt naar verwachting gedetecteerd.
 
-   ![Fout bij genereren van externe Spark-taak voor IntelliJ fouten](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-throw-error.png)
+   :::image type="content" source="./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-throw-error.png" alt-text="Fout bij genereren van externe Spark-taak voor IntelliJ fouten" border="true":::
 
 1. Selecteer opnieuw het pictogram **programma hervatten** . In het venster **HDInsight Spark-verzen ding** wordt de fout taak uitvoering is mislukt weer gegeven.
 
-   ![Fout bij het verzenden van externe Spark-taak fouten in IntelliJ](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-error-submission.png)
+   :::image type="content" source="./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-error-submission.png" alt-text="Fout bij het verzenden van externe Spark-taak fouten in IntelliJ" border="true":::
 
 1. Als u de waarde van de variabele dynamisch wilt bijwerken met behulp van de IntelliJ-functie voor fout opsporing, selecteert u **fout opsporing** opnieuw. Het deel venster **variabelen** wordt weer gegeven.
 
 1. Klik met de rechter muisknop op het doel op het tabblad **fout opsporing** en selecteer vervolgens **waarde instellen**. Voer vervolgens een nieuwe waarde in voor de variabele. Selecteer vervolgens **Enter** om de waarde op te slaan.
 
-   ![Waarde voor fout bij instellen van externe Spark-taak IntelliJ](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-set-value1.png)
+   :::image type="content" source="./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-set-value1.png" alt-text="Waarde voor fout bij instellen van externe Spark-taak IntelliJ" border="true":::
 
 1. Selecteer het pictogram **programma hervatten** om door te gaan met het programma uitvoeren. Deze keer wordt er geen uitzonde ring gedetecteerd. U kunt zien dat het project zonder uitzonde ringen correct wordt uitgevoerd.
 
-   ![IntelliJ externe Spark-taak fouten opsporen zonder uitzonde ring](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-debug-without-exception.png)
+   :::image type="content" source="./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-debug-without-exception.png" alt-text="IntelliJ externe Spark-taak fouten opsporen zonder uitzonde ring" border="true":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

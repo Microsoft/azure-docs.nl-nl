@@ -5,12 +5,12 @@ description: In dit artikel worden de twee coderings lagen beschreven die beschi
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 08/10/2020
-ms.openlocfilehash: 58b3d892ea24430a9d951a5a0230282f6c4fd584
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 3d4f9e3be02a64efa058ea1f84a3e261cb6166fc
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "99988616"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104867114"
 ---
 # <a name="azure-hdinsight-double-encryption-for-data-at-rest"></a>Dubbele versleuteling van Azure HDInsight voor Data-at-rest
 
@@ -18,7 +18,7 @@ In dit artikel worden methoden beschreven voor het versleutelen van gegevens in 
 
 Dit document bevat geen informatie over de gegevens die zijn opgeslagen in uw Azure Storage-account. Uw clusters kunnen een of meer gekoppelde Azure Storage-accounts bevatten waarbij de versleutelings sleutels ook door micro soft worden beheerd of door de klant worden beheerd, maar de versleutelings service verschilt. Zie [Azure Storage encryption for Data at rest](../storage/common/storage-service-encryption.md)(Engelstalig) voor meer informatie over Azure Storage versleuteling.
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 Er zijn drie hoofd rollen voor beheerde schijven in Azure: de gegevens schijf, de besturingssysteem schijf en de tijdelijke schijf. Zie [Introduction to Azure Managed disks](../virtual-machines/managed-disks-overview.md)(Engelstalig) voor meer informatie over verschillende typen Managed disks. 
 
@@ -76,25 +76,25 @@ HDInsight ondersteunt alleen Azure Key Vault. Als u uw eigen sleutel kluis hebt,
 
 1. Navigeer vanuit uw nieuwe sleutel kluis naar **instellingen**  >  **sleutels**  >  **+ genereren/importeren**.
 
-    ![Een nieuwe sleutel in Azure Key Vault genereren](./media/disk-encryption/create-new-key.png "Een nieuwe sleutel in Azure Key Vault genereren")
+    :::image type="content" source="./media/disk-encryption/create-new-key.png" alt-text="Een nieuwe sleutel in Azure Key Vault genereren":::
 
 1. Geef een naam op en selecteer **maken**. Het standaard **sleutel type** van **RSA** onderhouden.
 
-    ![genereert sleutel naam](./media/disk-encryption/create-key.png "Sleutel naam genereren")
+    :::image type="content" source="./media/disk-encryption/create-key.png" alt-text="genereert sleutel naam":::
 
 1. Wanneer u terugkeert naar de pagina **sleutels** , selecteert u de sleutel die u hebt gemaakt.
 
-    ![sleutel kluis sleutel lijst](./media/disk-encryption/key-vault-key-list.png)
+    :::image type="content" source="./media/disk-encryption/key-vault-key-list.png" alt-text="sleutel kluis sleutel lijst":::
 
 1. Selecteer de versie om de pagina met de **sleutel versie** te openen. Wanneer u uw eigen sleutel voor HDInsight-cluster versleuteling gebruikt, moet u de sleutel-URI opgeven. Kopieer de **sleutel-id** en sla deze ergens op totdat u klaar bent om uw cluster te maken.
 
-    ![sleutel-id ophalen](./media/disk-encryption/get-key-identifier.png)
+    :::image type="content" source="./media/disk-encryption/get-key-identifier.png" alt-text="sleutel-id ophalen":::
 
 ### <a name="create-access-policy"></a>Toegangs beleid maken
 
 1. Ga vanuit de nieuwe sleutel kluis naar **instellingen**  >  **toegangs beleid**  >  **+ toegangs beleid toevoegen**.
 
-    ![Nieuw toegangs beleid voor Azure Key Vault maken](./media/disk-encryption/key-vault-access-policy.png)
+    :::image type="content" source="./media/disk-encryption/key-vault-access-policy.png" alt-text="Nieuw toegangs beleid voor Azure Key Vault maken":::
 
 1. Geef op de pagina **toegangs beleid toevoegen** de volgende informatie op:
 
@@ -104,13 +104,13 @@ HDInsight ondersteunt alleen Azure Key Vault. Als u uw eigen sleutel kluis hebt,
     |Geheime machtigingen|Selecteer **ophalen**, **instellen** en **verwijderen**.|
     |Principal selecteren|Selecteer de door de gebruiker toegewezen beheerde identiteit die u eerder hebt gemaakt.|
 
-    ![Selecteer de principal voor Azure Key Vault toegangs beleid instellen](./media/disk-encryption/azure-portal-add-access-policy.png)
+    :::image type="content" source="./media/disk-encryption/azure-portal-add-access-policy.png" alt-text="Selecteer de principal voor Azure Key Vault toegangs beleid instellen":::
 
 1. Selecteer **Toevoegen**.
 
 1. Selecteer **Opslaan**.
 
-    ![Azure Key Vault toegangs beleid opslaan](./media/disk-encryption/add-key-vault-access-policy-save.png)
+    :::image type="content" source="./media/disk-encryption/add-key-vault-access-policy-save.png" alt-text="Azure Key Vault toegangs beleid opslaan":::
 
 ### <a name="create-cluster-with-customer-managed-key-disk-encryption"></a>Een cluster maken met door de klant beheerde sleutel schijf versleuteling
 
@@ -129,7 +129,7 @@ Tijdens het maken van een cluster kunt u een versie sleutel of een versieloze sl
 
 U moet de beheerde identiteit ook toewijzen aan het cluster.
 
-![Nieuw cluster maken](./media/disk-encryption/create-cluster-portal.png)
+:::image type="content" source="./media/disk-encryption/create-cluster-portal.png" alt-text="Nieuw cluster maken":::
 
 #### <a name="using-azure-cli"></a>Azure CLI gebruiken
 
@@ -367,7 +367,7 @@ U kunt de versleutelings sleutels die op uw actieve cluster worden gebruikt, wij
 
 Als u de sleutel wilt draaien, hebt u de URL van de basis sleutel kluis nodig. Als u dat hebt gedaan, gaat u naar de sectie eigenschappen van HDInsight-cluster in de portal en klikt u op de **sleutel wijzigen** onder URL voor de **schijf versleutelings sleutel**. Voer in de nieuwe sleutel-URL in en verzend de sleutel om deze te draaien.
 
-![schijf versleutelings sleutel draaien](./media/disk-encryption/change-key.png)
+:::image type="content" source="./media/disk-encryption/change-key.png" alt-text="schijf versleutelings sleutel draaien":::
 
 #### <a name="using-azure-cli"></a>Azure CLI gebruiken
 
@@ -400,7 +400,7 @@ Nee, alle beheerde schijven en bron schijven worden versleuteld met dezelfde sle
 
 Als het cluster de toegang tot de sleutel verliest, worden waarschuwingen weer gegeven in de Apache Ambari-Portal. In deze status mislukt de **wijzigings sleutel** bewerking. Zodra de toegang tot de sleutel is hersteld, worden de Ambari-waarschuwingen verwijderd en worden bewerkingen, zoals het draaien van sleutels, kunnen worden uitgevoerd.
 
-![Ambari-waarschuwing voor Key Access](./media/disk-encryption/ambari-alert.png)
+:::image type="content" source="./media/disk-encryption/ambari-alert.png" alt-text="Ambari-waarschuwing voor Key Access":::
 
 **Hoe kan ik het cluster herstellen als de sleutels worden verwijderd?**
 

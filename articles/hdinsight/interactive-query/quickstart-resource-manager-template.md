@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 03/13/2020
-ms.openlocfilehash: 4872dd29442a1503e04672a7c42fd7b49a0c506c
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 59209bd1b3b6026a229527c1fb0d4b6346a5f3f1
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98945244"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104869681"
 ---
 # <a name="quickstart-create-interactive-query-cluster-in-azure-hdinsight-using-arm-template"></a>Quickstart: Een Interactive Query-cluster maken in Azure HDInsight met ARM-sjabloon
 
@@ -20,7 +20,7 @@ In deze quickstart gebruikt u een Azure Resource Manager-sjabloon (ARM-sjabloon)
 
 Als uw omgeving voldoet aan de vereisten en u benkend bent met het gebruik van ARM-sjablonen, selecteert u de knop **Implementeren naar Azure**. De sjabloon wordt in Azure Portal geopend.
 
-[![Implementeren in Azure](../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-interactive-hive%2Fazuredeploy.json)
+[:::image type="content" source="../../media/template-deployments/deploy-to-azure.svg" alt-text="Implementeren in Azure" border="true":::](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-interactive-hive%2Fazuredeploy.json)
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -41,7 +41,7 @@ Er worden twee Azure-resources gedefinieerd in de sjabloon:
 
 1. Selecteer de knop **Implementeren in Azure** onderaan om u aan te melden bij Azure en de ARM-sjabloon te openen.
 
-    [![Implementeren in Azure](../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-interactive-hive%2Fazuredeploy.json)
+    [:::image type="content" source="../../media/template-deployments/deploy-to-azure.svg" alt-text="Implementeren in Azure" border="true":::](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-interactive-hive%2Fazuredeploy.json)
 
 1. Typ of selecteer de volgende waarden:
 
@@ -56,9 +56,9 @@ Er worden twee Azure-resources gedefinieerd in de sjabloon:
     |Ssh-gebruikersnaam|Geef de gebruikersnaam op; de standaardwaarde is sshuser|
     |Ssh-wachtwoord|Geef het wachtwoord op.|
 
-    ![Resource Manager-sjabloon HBase implementeren](./media/quickstart-resource-manager-template/resource-manager-template-hive.png)
+    :::image type="content" source="./media/quickstart-resource-manager-template/resource-manager-template-hive.png" alt-text="Resource Manager-sjabloon HBase implementeren" border="true":::
 
-1. Bekijk de **VOORWAARDEN**. Selecteer vervolgens **Ik ga akkoord met de bovenstaande voorwaarden** en daarna **Kopen**. U ontvangt een melding dat uw implementatie wordt uitgevoerd. Het duurt ongeveer 20 minuten om een cluster te maken.
+1. Bekijk de **ALGEMENE VOORWAARDEN**. Selecteer vervolgens **Ik ga akkoord met de bovenstaande voorwaarden** en daarna **Kopen**. U ontvangt een melding dat uw implementatie wordt uitgevoerd. Het duurt ongeveer 20 minuten om een cluster te maken.
 
 ## <a name="review-deployed-resources"></a>Geïmplementeerde resources bekijken
 

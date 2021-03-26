@@ -4,12 +4,12 @@ description: Meer informatie over het configureren van een aangepaste container 
 ms.topic: article
 ms.date: 02/23/2021
 zone_pivot_groups: app-service-containers-windows-linux
-ms.openlocfilehash: 8083c3c0c88d904ccb3ec75ae69a699867bd0f25
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 1d1a1292bc7583e4934ac176c34d2768700d11c5
+ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101704868"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105036761"
 ---
 # <a name="configure-a-custom-container-for-azure-app-service"></a>Een aangepaste container configureren voor Azure App Service
 
@@ -112,6 +112,8 @@ Set-AzWebApp -ResourceGroupName <group-name> -Name <app-name> -AppSettings @{"DB
 ```
 
 Wanneer uw app wordt uitgevoerd, worden de App Service app-instellingen automatisch in het proces geïnjecteerd als omgevings variabelen. U kunt container omgevings variabelen controleren met de URL `https://<app-name>.scm.azurewebsites.net/Env)` .
+
+Als uw app gebruikmaakt van installatie kopieën uit een persoonlijk REGI ster of vanuit docker hub, worden de referenties voor toegang tot de opslag plaats opgeslagen in omgevings variabelen: `DOCKER_REGISTRY_SERVER_URL` , `DOCKER_REGISTRY_SERVER_USERNAME` en `DOCKER_REGISTRY_SERVER_PASSWORD` . Vanwege beveiligings Risico's worden geen van deze gereserveerde variabelen namen weer gegeven aan de toepassing.
 
 ::: zone pivot="container-windows"
 Voor IIS-of .NET Framework (4,0 of hoger)-containers worden ze `System.ConfigurationManager` door app service als .net-app-instellingen en verbindings reeksen automatisch ingevoegd. Voor alle andere talen of Framework worden ze als omgevings variabelen voor het proces geboden, met een van de volgende corresponderende voor voegsels:

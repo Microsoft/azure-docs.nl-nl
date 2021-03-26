@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 11/27/2019
-ms.openlocfilehash: 3e54991f6afd2ace19bf7b70e57bda6f551f7780
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 4512c9d9fdb66713ba24fbf30278e5d5dbb2ae23
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98943168"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104863748"
 ---
 # <a name="run-apache-hive-queries-using-the-data-lake-tools-for-visual-studio"></a>Apache Hive-query's uitvoeren met de Data Lake-hulpprogramma's voor Visual Studio
 
@@ -49,11 +49,11 @@ Ad hoc-query's kunnen worden uitgevoerd in **batch** of **interactieve** modus.
 
 5. Selecteer **Uitvoeren**. De uitvoerings modus wordt standaard ingesteld op **interactief**.
 
-    ![Interactieve Hive-query uitvoeren, Visual Studio](./media/apache-hadoop-use-hive-visual-studio/vs-execute-hive-query.png)
+    :::image type="content" source="./media/apache-hadoop-use-hive-visual-studio/vs-execute-hive-query.png" alt-text="Interactieve Hive-query uitvoeren, Visual Studio" border="true":::
 
 6. Als u dezelfde query wilt uitvoeren in de **batch** modus, schakelt u in de vervolg keuzelijst van **interactief** naar **batch**. De knop uitvoeren wordt gewijzigd van **uitvoeren** naar **verzenden**.
 
-    ![Batch Hive-query, Visual Studio verzenden](./media/apache-hadoop-use-hive-visual-studio/visual-studio-batch-query.png)
+    :::image type="content" source="./media/apache-hadoop-use-hive-visual-studio/visual-studio-batch-query.png" alt-text="Batch Hive-query, Visual Studio verzenden" border="true":::
 
     De Hive-editor ondersteunt IntelliSense. Data Lake Tools voor Visual Studio biedt ondersteuning voor het laden van externe metagegevens wanneer u het Hive-script bewerkt. Als u bijvoorbeeld typt `SELECT * FROM` , geeft IntelliSense alle voorgestelde tabel namen weer. Wanneer een tabelnaam wordt opgegeven, geeft IntelliSense de kolomnamen weer. De hulpprogramma's ondersteunen de meeste DML-instructies, subquery's en ingebouwde UDF's van Hive. IntelliSense suggereert alleen de metagegevens van het cluster dat in de HDInsight-werkbalk is geselecteerd.
 
@@ -61,7 +61,7 @@ Ad hoc-query's kunnen worden uitgevoerd in **batch** of **interactieve** modus.
 
 8. Als u de optie Geavanceerd verzenden hebt geselecteerd, configureert u **taak naam**, **argumenten**, **aanvullende configuraties** en **status map** in het dialoog venster **script indienen** . Selecteer vervolgens **verzenden**.
 
-    ![Het dialoog venster script indienen, HDInsight Hadoop Hive-query](./media/apache-hadoop-use-hive-visual-studio/vs-tools-submit-jobs-advanced.png)
+    :::image type="content" source="./media/apache-hadoop-use-hive-visual-studio/vs-tools-submit-jobs-advanced.png" alt-text="Het dialoog venster script indienen, HDInsight Hadoop Hive-query" border="true":::
 
 ### <a name="create-a-hive-application"></a>Een Hive-toepassing maken
 
@@ -109,7 +109,7 @@ Voer de volgende stappen uit om een Hive-query uit te voeren door een Hive-toepa
 
    Het **overzicht** van de Hive-taak wordt weer gegeven en geeft informatie weer over de taak die wordt uitgevoerd. Gebruik de koppeling **vernieuwen** om de taak informatie te vernieuwen totdat de **taak status** is gewijzigd in **voltooid**.
 
-   ![Samen vatting van Hive-taak, Hive-toepassing, Visual Studio](./media/apache-hadoop-use-hive-visual-studio/hdinsight-job-summary.png)
+   :::image type="content" source="./media/apache-hadoop-use-hive-visual-studio/hdinsight-job-summary.png" alt-text="Samen vatting van Hive-taak, Hive-toepassing, Visual Studio" border="true":::
 
 7. Selecteer **taak uitvoer** om de uitvoer van deze taak weer te geven. Dit wordt weer gegeven `[ERROR] 3` . Dit is de waarde die wordt geretourneerd door deze query.
 

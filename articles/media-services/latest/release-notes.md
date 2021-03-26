@@ -11,12 +11,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 03/17/2021
 ms.author: inhenkel
-ms.openlocfilehash: 9e5a6737d2e37392efd305910ff5370adc84940f
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 9fe49f44e157708c3083e2c73757988877fbfcb5
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104596736"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105563460"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Release opmerkingen bij Azure Media Services v3
 
@@ -88,7 +88,7 @@ Versie 3 biedt:
 
 #### <a name="action-required"></a>Vereiste actie
 
-Als u de onderbreking van uw werk belastingen tot een minimum wilt beperken, raadpleegt u de [migratie handleiding](https://go.microsoft.com/fwlink/?linkid=2149150&clcid=0x409) om uw code over te stappen van versie 2 API en sdk's naar versie 3 API en SDK vóór 29 februari 2024.
+Als u de onderbreking van uw werk belastingen tot een minimum wilt beperken, raadpleegt u de [migratie handleiding](./migrate-v-2-v-3-migration-introduction.md) om uw code over te stappen van versie 2 API en sdk's naar versie 3 API en SDK vóór 29 februari 2024.
 **Na 29 februari 2024** wordt door Azure Media Services geen verkeer meer geaccepteerd op de rest API van versie 2, de arm Account Management API-versie 2015-10-01 of van de sdk's van versie 2 .net client. Dit geldt ook voor open source client-SDK'S van derden die de API van versie 2 kunnen aanroepen.  
 
 Zie de officiële [aankondiging van Azure-updates](https://azure.microsoft.com/updates/update-your-azure-media-services-rest-api-and-sdks-to-v3-by-29-february-2024/).
@@ -134,7 +134,7 @@ Zie de meest recente voor beelden in de **[Media-Services-v3-node-zelf studies](
 
 Live-gebeurtenissen bieden nu ondersteuning voor een goedkope facturerings modus voor "stand-by". Hierdoor kunnen klanten live-gebeurtenissen vooraf toewijzen tegen lagere kosten voor het maken van ' hot Pools '. Klanten kunnen vervolgens de stand-by-Live-gebeurtenissen gebruiken om sneller over te stappen op de actieve status dan bij het maken van koud.  Dit vermindert de tijd om het kanaal aanzienlijk te starten en maakt snelle toewijzing van dynamische groepen mogelijk van machines die in een lagere prijs modus worden uitgevoerd.
 Bekijk [hier](https://azure.microsoft.com/pricing/details/media-services)de meest recente prijs informatie.
-Zie het artikel- [live gebeurtenis Staten en facturering](https://docs.microsoft.com/azure/media-services/latest/live-event-states-billing) voor meer informatie over de stand-by status en de andere statussen van Live Events.
+Zie het artikel- [live gebeurtenis Staten en facturering](./live-event-states-billing.md) voor meer informatie over de stand-by status en de andere statussen van Live Events.
 
 ## <a name="december-2020"></a>December 2020
 

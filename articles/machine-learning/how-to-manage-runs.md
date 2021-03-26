@@ -12,12 +12,12 @@ ms.reviewer: nibaccam
 ms.date: 03/04/2021
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 26880fd6e3688dd95cc9f16072a35d5c4ce7c31e
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.openlocfilehash: f148a5b267edd3fc1dd33ef17d5ad01005b4a903
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105110267"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105566282"
 ---
 # <a name="start-monitor-and-track-run-history"></a>De uitvoerings geschiedenis starten, bewaken en volgen 
 
@@ -211,7 +211,7 @@ U hebt de volgende items nodig:
     1. Selecteer in de **doel gegevens** de **werk ruimte verzenden naar log Analytics**  en geef het **abonnement** en de **log Analytics-werk ruimte** op. 
 
     > [!NOTE]
-    > De **azure log Analytics-werk ruimte** is een ander type Azure-resource dan de **Azure machine learning service-werk ruimte**. Als er geen opties in die lijst staan, kunt u [een log Analytics-werk ruimte maken](https://docs.microsoft.com/azure/azure-monitor/logs/quick-create-workspace). 
+    > De **azure log Analytics-werk ruimte** is een ander type Azure-resource dan de **Azure machine learning service-werk ruimte**. Als er geen opties in die lijst staan, kunt u [een log Analytics-werk ruimte maken](../azure-monitor/logs/quick-create-workspace.md). 
     
     ![Locatie voor het opslaan van e-mail meldingen](./media/how-to-manage-runs/log-location.png)
 
@@ -219,7 +219,7 @@ U hebt de volgende items nodig:
 
     ![Nieuwe waarschuwingsregel](./media/how-to-manage-runs/new-alert-rule.png)
 
-1. Zie [logboek waarschuwingen maken en beheren met behulp van Azure monitor](https://docs.microsoft.com/azure/azure-monitor/alerts/alerts-log).
+1. Zie [logboek waarschuwingen maken en beheren met behulp van Azure monitor](../azure-monitor/alerts/alerts-log.md).
 
 ## <a name="run-description"></a>Beschrijving van de uitvoering 
 

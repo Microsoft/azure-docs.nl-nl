@@ -504,7 +504,7 @@
         - name: JobSizeExceeded
           href: error-job-size-exceeded.md
         - name: Linux-implementatieproblemen
-          href: ../../virtual-machines/troubleshooting/troubleshoot-deploy-vm-linux.md
+          href: /troubleshoot/azure/virtual-machines/troubleshoot-deploy-vm-linux
         - name: NoRegisteredProviderFound
           href: error-register-resource-provider.md
         - name: NotFound
@@ -512,9 +512,9 @@
         - name: ParentResourceNotFound
           href: error-parent-resource.md
         - name: Problemen met inrichten en toewijzen voor Linux
-          href: ../../virtual-machines/troubleshooting/troubleshoot-deployment-new-vm-linux.md
+          href: /troubleshoot/azure/virtual-machines/troubleshoot-deployment-new-vm-linux
         - name: Problemen met inrichten en toewijzen voor Windows
-          href: ../../virtual-machines/troubleshooting/troubleshoot-deployment-new-vm-windows.md
+          href: /troubleshoot/azure/virtual-machines/troubleshoot-deployment-new-vm-windows
         - name: RequestDisallowedByPolicy
           href: error-policy-requestdisallowedbypolicy.md
         - name: ReservedResourceName
@@ -524,7 +524,7 @@
         - name: SkuNotAvailable
           href: error-sku-not-available.md
         - name: Windows-implementatieproblemen
-          href: ../../virtual-machines/troubleshooting/troubleshoot-deploy-vm-windows.md
+          href: /troubleshoot/azure/virtual-machines/troubleshoot-deploy-vm-windows
 - name: Naslaginformatie
   items:
     - name: Sjabloonverwijzing

@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 01/05/2021
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to configure compute on Azure Stack Edge Pro so I can use it to transform the data before sending it to Azure.
-ms.openlocfilehash: 28b5c107fb35c7bda9b1680050b92004436b98ff
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 4962216612bde8adc69f332f17c35cee0ecd17e6
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "97935459"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105568151"
 ---
 # <a name="tutorial-transform-data-with-azure-stack-edge-pro"></a>Zelfstudie: Gegevens transformeren met Azure Stack Edge Pro
 
@@ -116,9 +116,9 @@ Voor de eenvoudige implementatie in deze zelfstudie hebt u twee shares nodig: é
 
 ## <a name="add-a-module"></a>Een module toevoegen
 
-U kunt een aangepaste of vooraf gemaakte module toevoegen. Er zijn geen aangepaste modules aanwezig op dit Edge-apparaat. Ga naar [Een C#-module ontwikkelen voor uw Azure Stack Edge Pro-apparaat](azure-stack-edge-j-series-create-iot-edge-module.md) voor meer informatie over het maken van een aangepaste module.
+U kunt een aangepaste of vooraf gemaakte module toevoegen. Er zijn geen aangepaste modules aanwezig op dit Edge-apparaat. Ga naar [Een C#-module ontwikkelen voor uw Azure Stack Edge Pro-apparaat](./azure-stack-edge-gpu-create-iot-edge-module.md) voor meer informatie over het maken van een aangepaste module.
 
-In dit gedeelte voegt u een aangepaste module toe aan het IoT Edge-apparaat dat u hebt gemaakt in [Een C#-module ontwikkelen voor uw Azure Stack Edge Pro](azure-stack-edge-j-series-create-iot-edge-module.md). Deze aangepaste module neemt bestanden van een lokale Edge-share op het Edge-apparaat en deze verplaatst naar een Edge-(cloud)share op het apparaat. De cloudshare pusht de bestanden vervolgens naar het Azure-opslagaccount dat is gekoppeld aan de cloudshare.
+In dit gedeelte voegt u een aangepaste module toe aan het IoT Edge-apparaat dat u hebt gemaakt in [Een C#-module ontwikkelen voor uw Azure Stack Edge Pro](./azure-stack-edge-gpu-create-iot-edge-module.md). Deze aangepaste module neemt bestanden van een lokale Edge-share op het Edge-apparaat en deze verplaatst naar een Edge-(cloud)share op het apparaat. De cloudshare pusht de bestanden vervolgens naar het Azure-opslagaccount dat is gekoppeld aan de cloudshare.
 
 1. Ga naar **Edge-rekenproces > Aan de slag**. Selecteer op de tegel **Modules toevoegen** het scenariotype als **Eenvoudig**. Selecteer **Toevoegen**.
 2. Voer op de blade **Module configureren en toevoegen** de volgende waarden in:

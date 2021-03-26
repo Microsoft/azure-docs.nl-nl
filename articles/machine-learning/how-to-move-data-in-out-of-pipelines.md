@@ -10,12 +10,12 @@ author: lobrien
 ms.date: 02/26/2021
 ms.topic: conceptual
 ms.custom: how-to, contperf-fy20q4, devx-track-python, data4ml
-ms.openlocfilehash: a4d1d1c4f4d6354d0206bf598a0622112dc99453
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 0c4f1fbc0ed27dbf3b7347e0e4c12f1926ac1377
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102518701"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105566248"
 ---
 # <a name="moving-data-into-and-between-ml-pipeline-steps-python"></a>Gegevens verplaatsen naar en tussen ML-pijplijnstappen (Python)
 
@@ -245,7 +245,7 @@ step1_output_ds = step1_output_data.register_on_complete(name='processed_data',
 Tussenliggende gegevens die zijn geschreven met, worden niet automatisch door Azure verwijderd `OutputFileDatasetConfig` . Om opslag kosten te voor komen voor grote hoeveel heden gegevens die niet meer nodig zijn, moet u:
 
 * Verwijder programmatisch tussenliggende gegevens aan het einde van een pijplijn uitvoering, wanneer deze niet meer nodig is
-* Blob-opslag gebruiken met een opslag beleid voor de korte termijn voor tussenliggende gegevens (Zie [kosten optimaliseren door Azure Blob Storage Access-lagen te automatiseren](https://docs.microsoft.com/azure/storage/blobs/storage-lifecycle-management-concepts?tabs=azure-portal)) 
+* Blob-opslag gebruiken met een opslag beleid voor de korte termijn voor tussenliggende gegevens (Zie [kosten optimaliseren door Azure Blob Storage Access-lagen te automatiseren](../storage/blobs/storage-lifecycle-management-concepts.md?tabs=azure-portal)) 
 * Gegevens die niet meer nodig zijn, regel matig controleren en verwijderen
 
 Zie [kosten plannen en beheren voor Azure machine learning](concept-plan-manage-cost.md)voor meer informatie.

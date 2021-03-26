@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 03/09/2021
+ms.date: 03/25/2021
 ms.author: b-juche
-ms.openlocfilehash: 330131ea7e9a364a31d25a6f3f0a75b1adbeb27a
-ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
+ms.openlocfilehash: f7d1e3bebf2fbdea3075d97e3829e38a3930909b
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104799884"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105566129"
 ---
 # <a name="faqs-about-azure-netapp-files"></a>Veelgestelde vragen over Azure NetApp Files
 
@@ -191,6 +191,10 @@ De grootte van het volume dat door de SMB-client wordt gerapporteerd, is de maxi
 ### <a name="im-having-issues-connecting-to-my-smb-share-what-should-i-do"></a>Ik ondervind problemen met het maken van verbinding met mijn SMB-share. Wat moet ik doen?
 
 Stel als best practice de maximale tolerantie voor de synchronisatie van computer klokken in op vijf minuten. Zie [Maximum tolerantie voor synchronisatie van computer klokken](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj852172(v=ws.11))voor meer informatie. 
+
+### <a name="how-can-i-obtain-the-ip-address-of-an-smb-volume-via-the-portal"></a>Hoe kan ik het IP-adres van een SMB-volume verkrijgen via de portal?
+
+Gebruik de koppeling **JSON-weer gave** in het deel venster volume overzicht en zoek naar de **startIp** -id onder **Eigenschappen**  ->  **mountTargets**.
 
 ## <a name="capacity-management-faqs"></a>Veelgestelde vragen over capaciteits beheer
 

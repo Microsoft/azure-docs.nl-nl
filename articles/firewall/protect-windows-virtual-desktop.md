@@ -7,12 +7,12 @@ services: firewall
 ms.topic: how-to
 ms.date: 05/06/2020
 ms.author: victorh
-ms.openlocfilehash: ad4f42d0e33f6d70c75abfcd1daab4f5aa9a515f
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: d5320f44aa5d922cea852ab09e5141fad277e2b0
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "94654980"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105566023"
 ---
 # <a name="use-azure-firewall-to-protect-window-virtual-desktop-deployments"></a>Azure Firewall gebruiken om Windows Virtual Desktop-implementaties te beveiligen
 
@@ -54,7 +54,7 @@ De virtuele Azure-machines die u voor virtuele Windows-Bureau bladen maakt, moet
 - Een verzameling voor netwerk regels maken Voeg de volgende regels toe:
 
    - DNS toestaan: verkeer toestaan van uw particuliere IP-adres toevoegen aan * voor TCP-en UDP-poorten 53.
-   - KMS toestaan: verkeer van uw virtuele Windows-bureau blad-machines naar de Windows Activation service TCP-poort 1688 toestaan. Zie [Windows-activering mislukt in scenario met geforceerde tunneling](../virtual-machines/troubleshooting/custom-routes-enable-kms-activation.md#solution)voor meer informatie over de doel-IP-adressen.
+   - KMS toestaan: verkeer van uw virtuele Windows-bureau blad-machines naar de Windows Activation service TCP-poort 1688 toestaan. Zie [Windows-activering mislukt in scenario met geforceerde tunneling](/troubleshoot/azure/virtual-machines/custom-routes-enable-kms-activation#solution)voor meer informatie over de doel-IP-adressen.
 
 > [!NOTE]
 > Voor sommige implementaties zijn mogelijk geen DNS-regels nodig, bijvoorbeeld Azure Active Directory domein controllers sturen DNS-query's door naar Azure DNS op 168.63.129.16.

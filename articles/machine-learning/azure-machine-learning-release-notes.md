@@ -9,12 +9,12 @@ ms.topic: reference
 ms.author: larryfr
 author: BlackMist
 ms.date: 02/18/2021
-ms.openlocfilehash: 04ed2e76797474a65d5c7c669066926225c1c1f9
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: a21411e4d1ee30e4f79687bfc07a53575497ca1f
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103471754"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105562219"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Opmerkingen bij de release Azure Machine Learning
 
@@ -56,9 +56,9 @@ __RSS-feed__: ontvang een melding wanneer deze pagina wordt bijgewerkt door de v
 ## <a name="2021-02-28"></a>2021-02-28
 ### <a name="azure-machine-learning-studio-notebooks-experience-february-update"></a>Ervaring met Azure Machine Learning Studio notitie blokken (update voor februari)
 + **Nieuwe functies**
-  + [Systeem eigen terminal (ga)](https://docs.microsoft.com/azure/machine-learning/how-to-access-terminal). Gebruikers hebben nu toegang tot een geïntegreerde Terminal en een Git-bewerking via de geïntegreerde Terminal.
+  + [Systeem eigen terminal (ga)](./how-to-access-terminal.md). Gebruikers hebben nu toegang tot een geïntegreerde Terminal en een Git-bewerking via de geïntegreerde Terminal.
   + [Notitieblok fragmenten (preview-versie)](https://azure.github.io/azureml-web/docs/vs-code-snippets/snippets). Algemene code fragmenten van Azure ML zijn nu beschikbaar in uw hand bereik. Navigeer naar het paneel code fragmenten dat toegankelijk is via de werk balk of Activeer het menu met code fragmenten met Ctrl + spatie.  
-  + [Sneltoetsen](https://docs.microsoft.com/azure/machine-learning/how-to-run-jupyter-notebooks#shortcut-keys). Volledige pariteit met sneltoetsen die beschikbaar zijn in Jupyter. 
+  + [Sneltoetsen](./how-to-run-jupyter-notebooks.md#useful-keyboard-shortcuts). Volledige pariteit met sneltoetsen die beschikbaar zijn in Jupyter. 
   + Geef de para meters van de cel aan. Toont gebruikers die cellen in een notitie blok zijn parameter cellen en kunnen notitie blokken met para meters uitvoeren via [Papermill](https://github.com/nteract/papermill) op het reken proces.
   + Terminal en kernel Session Manager: gebruikers kunnen alle kernels en Terminal sessies beheren die op hun Compute worden uitgevoerd.
   + Knop delen. Gebruikers kunnen nu bestanden in het notebook bestand Verkenner delen door met de rechter muisknop op het bestand te klikken en de knop delen te gebruiken.
@@ -68,7 +68,7 @@ __RSS-feed__: ontvang een melding wanneer deze pagina wordt bijgewerkt door de v
   + Verbeterde laad tijden voor pagina's
   + Verbeterde prestaties 
   + Verbeterde snelheid en kernel-betrouw baarheid
-  + Het draai wiel is toegevoegd om de voortgang weer te geven voor alle actieve [reken activiteiten](https://docs.microsoft.com/azure/machine-learning/how-to-run-jupyter-notebooks#status-indicators).
+  + Het draai wiel is toegevoegd om de voortgang weer te geven voor alle actieve [reken activiteiten](./how-to-run-jupyter-notebooks.md#status-indicators).
   + Klik met de rechter muisknop in Verkenner. Als u met de rechter muisknop op een bestand klikt, worden nu Bestands bewerkingen geopend. 
 
 
@@ -79,7 +79,7 @@ __RSS-feed__: ontvang een melding wanneer deze pagina wordt bijgewerkt door de v
   + **azureml-core**
     + [Experimentele functie] Voeg ondersteuning toe om Synapse-werk ruimte te koppelen aan AML als een gekoppelde service
     + [Experimentele functie] Voeg ondersteuning toe voor het koppelen van een Synapse Spark-pool in AML als reken kracht
-    + [Experimentele functie] Voeg ondersteuning toe voor toegang op basis van identiteits gegevens. Gebruikers kunnen gegevens opslag of gegevens sets registreren zonder referenties op te geven. In dat geval wordt het AAD-token van de gebruiker of de beheerde identiteit van het Compute-doel gebruikt voor verificatie. Klik [hier](https://aka.ms/data-access) voor meer informatie.
+    + [Experimentele functie] Voeg ondersteuning toe voor toegang op basis van identiteits gegevens. Gebruikers kunnen gegevens opslag of gegevens sets registreren zonder referenties op te geven. In dat geval wordt het AAD-token van de gebruiker of de beheerde identiteit van het Compute-doel gebruikt voor verificatie. Klik [hier](./how-to-identity-based-data-access.md) voor meer informatie.
   + **azureml-pipeline-steps**
     + [Experimentele functie] Ondersteuning voor [SynapseSparkStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.synapsesparkstep) toevoegen
   + **azureml-synapse**
@@ -1052,7 +1052,7 @@ U kunt nu machine learning-notitie blokken en bestanden rechtstreeks maken, bewe
 
 Toegang tot de volgende webgebaseerde hulp middelen voor ontwerpen vanuit Studio:
     
-| Webgebaseerd hulp programma  |     Beschrijving  |
+| Webgebaseerd hulp programma  |     Description  |
 |---|---|
 | Azure ML Studio-notebooks   |     Eerste in-class ontwerpen voor notebook-bestanden en biedt ondersteuning voor alle bewerkingen die beschikbaar zijn in de Azure ML python SDK. | 
 
@@ -1564,7 +1564,7 @@ Vanuit de Studio kunt u Azure Machine Learning assets trainen, testen, implement
 
 Toegang tot de volgende webgebaseerde hulp middelen voor ontwerpen vanuit Studio:
 
-| Webgebaseerd hulp programma | Beschrijving | 
+| Webgebaseerd hulp programma | Description | 
 |-|-|-|
 | VM van notebook (preview-versie) | Volledig beheerd werk station in de Cloud | 
 | [Automatische machine learning](tutorial-first-experiment-automated-ml.md) (preview-versie) | Geen code-ervaring voor het automatiseren van de ontwikkeling van machine learning modellen | 

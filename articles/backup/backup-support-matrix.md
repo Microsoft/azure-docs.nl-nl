@@ -4,12 +4,12 @@ description: Bevat een samenvatting van ondersteuningsinstellingen en -beperking
 ms.topic: conceptual
 ms.date: 02/17/2019
 ms.custom: references_regions
-ms.openlocfilehash: 655a90ebc3164f076c333760beffcef5acefcd91
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 2877b0085f31f39849e04678d5e0ddd65e3888e2
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103225544"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105564463"
 ---
 # <a name="support-matrix-for-azure-backup"></a>Ondersteunings matrix voor Azure Backup
 
@@ -40,7 +40,7 @@ In de volgende tabel worden de functies van Recovery Services kluizen beschreven
 **Gegevens verplaatsen tussen kluizen** | Het verplaatsen van gegevens waarvan een back-up wordt gemaakt tussen kluizen, wordt niet ondersteund.
 **Type kluis opslag wijzigen** | U kunt het type opslag replicatie (geografisch redundante opslag of lokaal redundante opslag) voor een kluis wijzigen voordat er back-ups worden opgeslagen. Nadat een back-ups in de kluis is begonnen, kan het replicatietype niet meer worden gewijzigd.
 **Zone-redundante opslag (ZRS)** | Beschikbaar in de regio's UK-zuid (UKS) en Zuid Azië-oost (SEA).
-**Privé-eindpunten** | Zie [deze sectie](https://docs.microsoft.com/azure/backup/private-endpoints#before-you-start) voor vereisten voor het maken van persoonlijke eind punten voor een Recovery service-kluis.  
+**Privé-eindpunten** | Zie [deze sectie](./private-endpoints.md#before-you-start) voor vereisten voor het maken van persoonlijke eind punten voor een Recovery service-kluis.  
 
 ## <a name="on-premises-backup-support"></a>On-premises ondersteuning voor back-ups
 
@@ -153,8 +153,8 @@ Azure Backup de functie voor het terugzetten van meerdere regio's heeft toegevoe
 | ---------------------- | ------------------------------------------------------------ | ----------------- |
 | Azure VM               | Ondersteund voor virtuele Azure-machines met zowel beheerde als onbeheerde schijven. Niet ondersteund voor klassieke virtuele machines. | Beschikbaar in alle open bare regio's en soevereine regio's van Azure, met uitzonde ring van Frankrijk-centraal, Australië-centraal, Zuid-Afrika-noord, UAE-noord, Zwitserland-noord, Duitsland-west-centraal, Noor wegen Oost. <br>Neem contact op met de voor informatie over het gebruik in deze regio's [AskAzureBackupTeam@microsoft.com](mailto:AskAzureBackupTeam@microsoft.com) |
 | SQL-/SAP HANA | In preview                                                      | Beschikbaar in alle open bare regio's en soevereine regio's van Azure, met uitzonde ring van Frankrijk-centraal, Australië-centraal, Zuid-Afrika-noord, UAE-noord, Zwitserland-noord, Duitsland-west-centraal, Noor wegen Oost. <br>Neem contact op met de voor informatie over het gebruik in deze regio's [AskAzureBackupTeam@microsoft.com](mailto:AskAzureBackupTeam@microsoft.com) |
-| MARS-agent/on-premises  | Nee                                                           | N.v.t.               |
-| AFS (Azure-bestands shares)                 | Nee                                                           | N.v.t.               |
+| MARS-agent/on-premises  | No                                                           | N.v.t.               |
+| AFS (Azure-bestands shares)                 | No                                                           | N.v.t.               |
 
 ## <a name="next-steps"></a>Volgende stappen
 

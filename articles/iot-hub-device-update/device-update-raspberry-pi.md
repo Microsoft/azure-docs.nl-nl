@@ -6,12 +6,12 @@ ms.author: valls
 ms.date: 2/11/2021
 ms.topic: tutorial
 ms.service: iot-hub-device-update
-ms.openlocfilehash: ca689df97e7268a5c0f7c0479e6514b98ffda9f2
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 74709d970f624f2d4cefaab77e8466361e4102cc
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102443451"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105563426"
 ---
 # <a name="device-update-for-azure-iot-hub-tutorial-using-the-raspberry-pi-3-b-reference-image"></a>Zelf studie over het bijwerken van apparaten voor Azure IoT Hub met behulp van de Raspberry Pi 3 B +-referentie-afbeelding
 
@@ -30,10 +30,8 @@ In deze zelfstudie leert u het volgende:
 > * Een update voor een installatie kopie implementeren
 > * De update-implementatie controleren
 
-Als u nog geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
-
 ## <a name="prerequisites"></a>Vereisten
-* Toegang tot een IoT Hub. U wordt aangeraden een S1-laag (Standard) of hoger te gebruiken.
+* Als u dit nog niet hebt gedaan, maakt u een [Update account en-exemplaar](create-device-update-account.md)voor het apparaat, met inbegrip van het configureren van een IOT hub.
 
 ## <a name="download-image"></a>Afbeelding downloaden
 

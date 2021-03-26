@@ -9,12 +9,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 08/17/2018
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: 4bea9f202d40090217219752a13ffde64b466140
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 5af77f34f8e82edf187c1a68b61995ec5c82a8d9
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104597572"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105566826"
 ---
 # <a name="azure-cosmos-db-table-net-api-download-and-release-notes"></a>Azure Cosmos DB Table .NET API: Download-en release-opmerkingen
 [!INCLUDE[appliesto-table-api](includes/appliesto-table-api.md)]
@@ -26,7 +26,7 @@ ms.locfileid: "104597572"
 > * [Node.js](table-sdk-nodejs.md)
 > * [Python](table-sdk-python.md)
 
-|   | Koppelingen  |
+|   | Koppelingen|
 |---|---|
 |**SDK downloaden**|[NuGet](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.Table)|
 |**Snelstartgids**|[Azure Cosmos DB: een app bouwen met .NET en de Table-API](create-table-dotnet.md)|
@@ -39,7 +39,7 @@ ms.locfileid: "104597572"
 > Als u tijdens de preview een tabel-API-account hebt gemaakt, moet u een [nieuw tabel-API-account](create-table-dotnet.md#create-a-database-account) maken om te kunnen werken met de algemeen beschikbare SDK’s voor tabel-API's.
 >
 
-## <a name="release-notes"></a>Releaseopmerkingen
+## <a name="release-notes"></a>Opmerkingen bij de release
 
 ### <a name="212"></a><a name="2.1.2"></a>omschreven
 

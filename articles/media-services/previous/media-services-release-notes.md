@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 03/10/2021
 ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 019f0bc98de45fa1fe6f9b8c72ef74beb50ea2c2
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 801d810a82e4e484ca1ab30c5c6d510860dbab6b
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103017355"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105566010"
 ---
 # <a name="azure-media-services-release-notes"></a>Opmerkingen bij de release Azure Media Services
 
@@ -64,7 +64,7 @@ Versie 3 biedt:
 
 #### <a name="action-required"></a>Actie vereist:
 
-Als u de onderbreking van uw werk belastingen tot een minimum wilt beperken, raadpleegt u de [migratie handleiding](https://go.microsoft.com/fwlink/?linkid=2149150&clcid=0x409) om uw code over te stappen van versie 2 API en sdk's naar versie 3 API en SDK vóór 29 februari 2024.
+Als u de onderbreking van uw werk belastingen tot een minimum wilt beperken, raadpleegt u de [migratie handleiding](../latest/migrate-v-2-v-3-migration-introduction.md) om uw code over te stappen van versie 2 API en sdk's naar versie 3 API en SDK vóór 29 februari 2024.
 **Na 29 februari 2024** wordt door Azure Media Services geen verkeer meer geaccepteerd op de rest API van versie 2, de arm Account Management API-versie 2015-10-01 of van de sdk's van versie 2 .net client. Dit geldt ook voor open source client-SDK'S van derden die de API van versie 2 kunnen aanroepen.  
 
 Zie de officiële [aankondiging van Azure-updates](https://azure.microsoft.com/updates/update-your-azure-media-services-rest-api-and-sdks-to-v3-by-29-february-2024/).

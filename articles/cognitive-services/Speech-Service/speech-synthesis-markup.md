@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: trbye
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: e78d98454ab374866f6fa18ec26a66837f749bfa
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: b0a96443e1f8596c48882bbdd92b9bb4b910beff
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105046297"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105567981"
 ---
 # <a name="improve-synthesis-with-speech-synthesis-markup-language-ssml"></a>De synthese verbeteren met Markup Language voor spraak synthese (SSML)
 
@@ -250,10 +250,11 @@ De bovenstaande wijzigingen worden toegepast op het niveau van de zin, en stijle
 
 Gebruik deze tabel om te bepalen welke spraak stijlen worden ondersteund voor elke Neural-stem.
 
-| Spraak                   | Stijl                     | Beschrijving                                                 |
+| Spraak                   | Stijl                     | Description                                                 |
 |-------------------------|---------------------------|-------------------------------------------------------------|
 | `en-US-AriaNeural`      | `style="newscast-formal"` | Een formele, vertrouwende en bindende Toon voor nieuws levering |
 |                         | `style="newscast-casual"` | Een veelzijdige en informe Toon voor algemene nieuws levering        |
+|                         | `style="narration-professional"` | Een Professional, objectief Toon voor het lezen van inhoud        |
 |                         | `style="customerservice"` | Een beschrijvende en handige Toon voor klant ondersteuning  |
 |                         | `style="chat"`            | Een informe en een ongeforceerde Toon                         |
 |                         | `style="cheerful"`        | Een positieve en fijne Toon                         |
@@ -398,7 +399,7 @@ Gebruik het `break` element om pauzes (of onderbrekingen) tussen woorden in te v
 | `strength` | Hiermee geeft u de relatieve duur van een onderbreking op met een van de volgende waarden:<ul><li>geen</li><li>x-zwak</li><li>Schakel</li><li>gemiddeld (standaard)</li><li>strakk</li><li>x-Strong</li></ul> | Optioneel |
 | `time` | Hiermee geeft u de absolute duur van een onderbreking in seconden of milliseconden, deze waarde moet worden ingesteld op minder dan 5000ms. Voor beelden van geldige waarden zijn `2s` en `500ms` | Optioneel |
 
-| Hoger                      | Beschrijving |
+| Hoger                      | Description |
 |-------------------------------|-------------|
 | Geen, of als er geen waarde wordt gegeven | 0 MS        |
 | x-zwak                        | 250 MS      |

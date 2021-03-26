@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: tutorial
 ms.date: 01/11/2021
 ms.author: duau
-ms.openlocfilehash: 11a4798c0cb3bc010bbdbae1fcb709951c67781a
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: c4f76a02a88b91c082106566ca236abe25d4ed88
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101721866"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105567345"
 ---
 # <a name="tutorial-create-and-modify-peering-for-an-expressroute-circuit-using-the-azure-portal"></a>Zelfstudie: Peering voor een ExpressRoute-circuit maken en wijzigen met de Azure-portal
 
@@ -124,7 +124,7 @@ U kunt de rij selecteren voor de peering die u wilt wijzigen, de eigenschappen v
 Deze sectie helpt u bij het maken, verkrijgen, bijwerken en verwijderen van de configuratie voor een persoonlijke Azure-peering voor een ExpressRoute-circuit.
 
 > [!IMPORTANT]
-> IPv6-ondersteuning voor persoonlijke peering is momenteel beschikbaar als **open bare preview**. Als u uw virtuele netwerk wilt verbinden met een ExpressRoute-circuit met op IPv6 gebaseerde privé-peering geconfigureerd, zorgt u ervoor dat uw virtuele netwerk dual stack is en volgt u de richt lijnen die [hier](https://docs.microsoft.com/azure/virtual-network/ipv6-overview)worden beschreven.
+> IPv6-ondersteuning voor persoonlijke peering is momenteel beschikbaar als **open bare preview**. Als u uw virtuele netwerk wilt verbinden met een ExpressRoute-circuit met op IPv6 gebaseerde privé-peering geconfigureerd, zorgt u ervoor dat uw virtuele netwerk dual stack is en volgt u de richt lijnen die [hier](../virtual-network/ipv6-overview.md)worden beschreven.
 > 
 > 
 

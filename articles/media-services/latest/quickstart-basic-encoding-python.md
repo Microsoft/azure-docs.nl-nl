@@ -9,18 +9,18 @@ ms.workload: ''
 ms.topic: quickstart
 ms.date: 2/26/2021
 ms.author: inhenkel
-ms.openlocfilehash: ed6bad4e81a1af654357912f6fe0cd03a3fcd62e
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: adaf18e4cbeed18bcf33a8d3ce191abca78b3ca6
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102500832"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105567879"
 ---
 # <a name="media-services-basic-encoding-with-python"></a>Media Services Basic-code ring met python
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 In deze Quick start ziet u hoe u basis codering kunt uitvoeren met python en Azure Media Services. De 2020-05-01-Media Service V3 API wordt gebruikt.
 
@@ -229,4 +229,4 @@ Wanneer u klaar bent met Quick Start, verwijdert u de resources die zijn gemaakt
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Vertrouwd raken met de [Media Services PYTHON SDK](https://docs.microsoft.com/python/api/azure-mgmt-media/)
+Vertrouwd raken met de [Media Services PYTHON SDK](/python/api/azure-mgmt-media/)

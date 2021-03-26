@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/18/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: d423a8aaf3ace78ccb4b2eb1d8424c6a1dfb61bc
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 6a804b6d6840b25993ad6e249305f531a818be32
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101705973"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105559448"
 ---
 # <a name="azure-security-baseline-for-azure-data-share"></a>Azure-beveiligings basislijn voor Azure-gegevens share
 
@@ -34,7 +34,7 @@ U kunt deze gegevens ook in-of uitschakelen voor Azure Sentinel of een SIEM van 
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md) 
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](/azure/azure-monitor/platform/diagnostic-settings) 
+- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md) 
 
 - [Aan de slag met Azure Monitor en integratie van SIEM van derden](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/)
 
@@ -48,11 +48,11 @@ U kunt deze gegevens ook in-of uitschakelen voor Azure Sentinel of een SIEM van 
 
 Schakel Diagnostische logboeken in voor Azure data share, met name de diagnostische logboeken voor MicrosoftDataShareSentShareSnapshotsLog &amp; MicrosoftDataShareReceivedShareSnapshotsLog. Met deze logboeken kunt u belang rijke informatie vastleggen, zoals de begin tijd van de synchronisatie, de eind tijd, de status en andere gegevens. Deze logboeken kunnen essentieel zijn voor het later onderzoeken van beveiligings incidenten en het uitvoeren van forensische-oefeningen.
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](/azure/azure-monitor/platform/diagnostic-settings) 
+- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md) 
 
-- [Logboek registratie en verschillende logboek typen in azure](/azure/azure-monitor/platform/platform-logs-overview)
+- [Logboek registratie en verschillende logboek typen in azure](../azure-monitor/essentials/platform-logs-overview.md)
 
-- [Diagnostische instellingen configureren voor het Azure-activiteiten logboek](/azure/azure-monitor/platform/activity-log)
+- [Diagnostische instellingen configureren voor het Azure-activiteiten logboek](../azure-monitor/essentials/activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -62,9 +62,9 @@ Schakel Diagnostische logboeken in voor Azure data share, met name de diagnostis
 
 **Richt lijnen**: Zorg ervoor dat voor opslag accounts of log Analytics-werk ruimten die worden gebruikt voor het opslaan van logboeken van Azure data share, de Bewaar periode voor logboeken is ingesteld volgens de nalevings voorschriften van uw organisatie.
 
-- [De Bewaar periode van Log Analytics Workspace configureren](/azure/azure-monitor/platform/manage-cost-storage)
+- [De Bewaar periode van Log Analytics Workspace configureren](../azure-monitor/logs/manage-cost-storage.md)
 
-- [Bron logboeken opslaan in een Azure Storage-account](/azure/azure-monitor/platform/resource-logs#send-to-azure-storage)
+- [Bron logboeken opslaan in een Azure Storage-account](../azure-monitor/essentials/resource-logs.md#send-to-azure-storage)
 
 **Verantwoordelijkheid**: Klant
 
@@ -78,9 +78,9 @@ U kunt ook gegevens in-en inschakelen voor Azure Sentinel of een SIEM van derden
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md) 
 
-- [Aan de slag met Log Analytics query's](/azure/azure-monitor/log-query/log-analytics-tutorial)
+- [Aan de slag met Log Analytics query's](../azure-monitor/logs/log-analytics-tutorial.md)
 
-- [Aangepaste query's uitvoeren in Azure Monitor](/azure/azure-monitor/log-query/get-started-queries)
+- [Aangepaste query's uitvoeren in Azure Monitor](../azure-monitor/logs/get-started-queries.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -94,7 +94,7 @@ U kunt ook gegevens in-en inschakelen voor Azure Sentinel of een SIEM van derden
 
 - [Waarschuwingen beheren in Azure Security Center](../security-center/security-center-managing-and-responding-alerts.md) 
 
-- [Een waarschuwing over logboek gegevens van log Analytics](/azure/azure-monitor/learn/tutorial-response)
+- [Een waarschuwing over logboek gegevens van log Analytics](../azure-monitor/alerts/tutorial-response.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -144,7 +144,7 @@ U kunt ook gegevens in-en inschakelen voor Azure Sentinel of een SIEM van derden
 
 - [Een Azure AD-instantie maken en configureren](../active-directory/fundamentals/active-directory-access-create-new-tenant.md) 
 
-- [Azure data share werkt met algemene Azure ingebouwde rollen ](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#general)
+- [Azure data share werkt met algemene Azure ingebouwde rollen ](../role-based-access-control/built-in-roles.md#general)
 
 **Verantwoordelijkheid**: Klant
 
@@ -154,11 +154,11 @@ U kunt ook gegevens in-en inschakelen voor Azure Sentinel of een SIEM van derden
 
 **Richt lijnen**: Azure AD biedt logboeken waarmee u verlopen accounts kunt detecteren. Daarnaast kunt u Azure AD Identity and Access revisies gebruiken om groepslid maatschappen, toegang tot bedrijfs toepassingen en roltoewijzingen op efficiënte wijze te beheren. Gebruikers toegang kan regel matig worden gecontroleerd om ervoor te zorgen dat alleen de juiste gebruikers toegang hebben.
 
-- [Meer informatie over Azure AD-rapportage](/azure/active-directory/reports-monitoring/) 
+- [Meer informatie over Azure AD-rapportage](../active-directory/reports-monitoring/index.yml) 
 
 - [Identiteits- en toegangsbeoordelingen van Azure AD](../active-directory/governance/access-reviews-overview.md) 
 
-- [Azure data share werkt met algemene Azure ingebouwde rollen ](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#general)
+- [Azure data share werkt met algemene Azure ingebouwde rollen ](../role-based-access-control/built-in-roles.md#general)
 
 **Verantwoordelijkheid**: Klant
 
@@ -170,7 +170,7 @@ U kunt ook gegevens in-en inschakelen voor Azure Sentinel of een SIEM van derden
 
 U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-gebruikers accounts te maken en de audit logboeken en aanmeldings logboeken te verzenden naar een Log Analytics-werk ruimte. U kunt de gewenste waarschuwingen configureren in Log Analytics werk ruimte.
 
-- [Azure-activiteiten logboeken integreren met Azure Monitor](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+- [Azure-activiteiten logboeken integreren met Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -208,7 +208,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 **Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om Azure monitor-waarschuwingen te maken wanneer wijzigingen worden doorgevoerd in essentiële Azure-resources.
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](/azure/azure-monitor/platform/alerts-activity-log)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -291,7 +291,7 @@ Gebruik Azure resource Graph om resources binnen hun abonnementen te doorzoeken 
 
 **Richt lijnen**: Azure-resources verwijderen wanneer ze niet meer nodig zijn, kunt u dit doen via de Azure Portal, Power shell of cli.
 
-- [Azure-resource groep en-resource verwijderen](https://docs.microsoft.com/azure/azure-resource-manager/management/delete-resource-group?tabs=azure-powershell)
+- [Azure-resource groep en-resource verwijderen](../azure-resource-manager/management/delete-resource-group.md?tabs=azure-powershell)
 
 De Azure-gegevens share maakt het besturings systeem niet zichtbaar of u kunt software toepassingen van derden op de bijbehorende resources installeren.
 
@@ -305,7 +305,7 @@ De Azure-gegevens share maakt het besturings systeem niet zichtbaar of u kunt so
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md) 
 
-- [Een specifiek resource type weigeren met Azure Policy](https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#general)
+- [Een specifiek resource type weigeren met Azure Policy](../governance/policy/samples/built-in-policies.md#general)
 
 **Verantwoordelijkheid**: Klant
 
@@ -343,7 +343,7 @@ De Azure-gegevens share maakt het besturings systeem niet zichtbaar of u kunt so
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md) 
 
-- [Aliassen gebruiken](https://docs.microsoft.com/azure/governance/policy/concepts/definition-structure#aliases)
+- [Aliassen gebruiken](../governance/policy/concepts/definition-structure.md#aliases)
 
 **Verantwoordelijkheid**: Klant
 
@@ -361,5 +361,5 @@ De Azure-gegevens share maakt het besturings systeem niet zichtbaar of u kunt so
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Overzicht Azure Security Benchmark V2](/azure/security/benchmarks/overview)
-- Meer informatie over [Azure-beveiligingsbasislijnen](/azure/security/benchmarks/security-baselines-overview)
+- Zie [Overzicht Azure Security Benchmark V2](../security/benchmarks/overview.md)
+- Meer informatie over [Azure-beveiligingsbasislijnen](../security/benchmarks/security-baselines-overview.md)

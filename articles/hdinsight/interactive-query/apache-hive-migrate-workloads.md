@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 11/4/2020
-ms.openlocfilehash: b13e8e088eff95071247a53ad1a4a18879f94053
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 43d616bc82c608918f5e7ee51481a393dd55a284
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101742191"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105566067"
 ---
 # <a name="migrate-azure-hdinsight-36-hive-workloads-to-hdinsight-40"></a>Azure HDInsight 3,6 Hive-workloads migreren naar HDInsight 4,0
 
@@ -71,7 +71,7 @@ Deze stap maakt gebruik [`Hive Schema Tool`](https://cwiki.apache.org/confluence
     > [!NOTE]
     > Dit hulp programma maakt gebruik `beeline` van client om SQL-scripts uit te voeren in `/usr/hdp/$STACK_VERSION/hive/scripts/metastore/upgrade/mssql/upgrade-*.mssql.sql` .
     >
-    > De SQL-syntaxis in deze scripts is niet noodzakelijkerwijs compatibel met andere client hulpprogramma's. [SSMS](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) en [query-editor in azure Portal](../../azure-sql/database/connect-query-portal.md) vereisen bijvoorbeeld een sleutel woord `GO` na elke opdracht.
+    > De SQL-syntaxis in deze scripts is niet noodzakelijkerwijs compatibel met andere client hulpprogramma's. [SSMS](/sql/ssms/download-sql-server-management-studio-ssms) en [query-editor in azure Portal](../../azure-sql/database/connect-query-portal.md) vereisen bijvoorbeeld een sleutel woord `GO` na elke opdracht.
     >
     > Als een script mislukt als gevolg van resource capaciteit of time-outs van trans acties, schaalt u de SQL Database.
 

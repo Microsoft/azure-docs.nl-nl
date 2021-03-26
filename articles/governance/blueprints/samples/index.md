@@ -1,14 +1,14 @@
 ---
 title: Index van blauwdrukvoorbeelden
 description: Index van compatibiliteits- en standaardvoorbeelden voor het implementeren van omgevingen, beleidsregels en grondbeginselen voor Cloud Adoptions Framework met Azure Blueprints.
-ms.date: 03/11/2021
+ms.date: 03/24/2021
 ms.topic: sample
-ms.openlocfilehash: 06dc65ca601c938f6610df3ed22b4ea0f3826208
-ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
+ms.openlocfilehash: 1758c684dca93089c69c1a06ed77b60a09f6579c
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104799459"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105558037"
 ---
 # <a name="azure-blueprints-samples"></a>Azure Blueprints-voorbeelden
 
@@ -24,6 +24,7 @@ De volgende tabel bevat links naar voorbeelden voor Azure Blueprints. Elk voorbe
 | [Canada Federal PBMM](./canada-federal-pbmm/index.md) | Voorziet in richtlijnen om te voldoen aan de naleving van PBMM (Canada Federal Protected B, Medium Integrity, Medium Availability). |
 | [CIS-Microsoft Azure Stichting voor bench Mark v 1.3.0](./cis-azure-1-3-0.md)| Voorziet in een set beleids regels die u helpen te voldoen aan de aanbevelingen van CIS Microsoft Azure Stichting-benchmark v 1.3.0. |
 | [CIS Microsoft Azure Foundations Benchmark v1.1.0](./cis-azure-1-1-0.md)| Voorziet in een set beleids regels die u helpen te voldoen aan de aanbevelingen van CIS Microsoft Azure Stichting-benchmark v 1.1.0. |
+| [CMMC niveau 3](./cmmc-l3.md)| Biedt Guardrails voor naleving met CMMC niveau 3. |
 | [DoD Impact Level 4](./dod-impact-level-4/index.md) | Bied een set beleidsregels om te helpen voldoen aan DoD Impact Level 4. |
 | [DoD Impact Level 5](./dod-impact-level-5/index.md) | Bied een set beleidsregels om te helpen voldoen aan DoD Impact Level 5. |
 | [FedRAMP Moderate](./fedramp-m/index.md) | Bied een set beleidsregels om te helpen voldoen aan FedRAMP Moderate. |

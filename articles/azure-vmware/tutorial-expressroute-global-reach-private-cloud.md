@@ -3,12 +3,12 @@ title: Zelfstudie - On-premises omgevingen peeren met een privécloud
 description: Meer informatie over hoe u ExpressRoute Global Reach-peering maakt met een privécloud in een Azure VMware Solution.
 ms.topic: tutorial
 ms.date: 03/17/2021
-ms.openlocfilehash: 08a461ab7d441eb813d435086dfcea121ef4a7f1
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.openlocfilehash: 59ddc2dd4aed850328807a4543d2fabd6f5a99f1
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104786903"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105564497"
 ---
 # <a name="tutorial-peer-on-premises-environments-to-a-private-cloud"></a>Zelfstudie: On-premises omgevingen peeren met een privécloud
 
@@ -71,7 +71,7 @@ U beschikt nu over een autorisatiesleutel voor het ExpressRoute-circuit van de p
 De [CLI-opdrachten](../expressroute/expressroute-howto-set-global-reach-cli.md) zijn uitgebreid met specifieke details en voorbeelden om u te helpen bij de configuratie van ExpressRoute Global Reach-peering tussen on-premises omgevingen en een privécloud van Azure VMware Solution.
 
 >[!TIP]
->Voor de boog van de Azure CLI-opdracht uitvoer kunnen deze instructies een [ `–query` argument](https://docs.microsoft.com/cli/azure/query-azure-cli) gebruiken om een JMESPath-query uit te voeren, zodat alleen de vereiste resultaten worden weer gegeven.
+>Voor de boog van de Azure CLI-opdracht uitvoer kunnen deze instructies een [ `–query` argument](/cli/azure/query-azure-cli) gebruiken om een JMESPath-query uit te voeren, zodat alleen de vereiste resultaten worden weer gegeven.
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) met hetzelfde abonnement als dat van het on-premises ExpressRoute-circuit. 
 

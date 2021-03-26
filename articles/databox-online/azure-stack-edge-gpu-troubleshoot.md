@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: troubleshooting
 ms.date: 02/22/2021
 ms.author: alkohli
-ms.openlocfilehash: 696faaecd2227c9b9ef74f20763e36661991ff67
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 62767898b52ef9d8c0a61fb5025dc59d06a00bd5
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102438980"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105568185"
 ---
 # <a name="troubleshoot-issues-on-your-azure-stack-edge-pro-gpu-device"></a>Problemen met uw Azure Stack Edge Pro GPU-apparaat oplossen 
 
@@ -144,9 +144,9 @@ Hier vindt u de fouten die kunnen worden weer gegeven tijdens de configuratie va
 |------------|-----------------|
 |Algemene problemen|<li>[Controleer of het edge-apparaat juist is geconfigureerd](#verify-the-device-is-configured-properly).<li> [Controleren of de client correct is geconfigureerd](#verify-the-client-is-configured-properly)|
 |Add-AzureRmEnvironment: er is een fout opgetreden tijdens het verzenden van de aanvraag.<br>Op regel: 1 teken: 1<br>+ Add-AzureRmEnvironment naam Az3-ARMEndpoint " https://management.dbe ...|Deze fout betekent dat uw Azure Stack Edge Pro-apparaat niet bereikbaar is of niet juist is geconfigureerd. Controleer of het edge-apparaat en de-client correct zijn geconfigureerd. Zie de rij met **algemene problemen** in deze tabel voor hulp.|
-|De service heeft een fout geretourneerd. Controleer InnerException voor meer details: de onderliggende verbinding is gesloten: kan geen vertrouwens relatie tot stand brengen voor het beveiligde SSL/TLS-kanaal. |   Deze fout wordt waarschijnlijk veroorzaakt door een of meer stappen voor het uitvoeren van uw eigen certificaat. U vindt [hier](./azure-stack-edge-j-series-connect-resource-manager.md#step-2-create-and-install-certificates)meer informatie. |
+|De service heeft een fout geretourneerd. Controleer InnerException voor meer details: de onderliggende verbinding is gesloten: kan geen vertrouwens relatie tot stand brengen voor het beveiligde SSL/TLS-kanaal. |   Deze fout wordt waarschijnlijk veroorzaakt door een of meer stappen voor het uitvoeren van uw eigen certificaat. U vindt [hier](./azure-stack-edge-gpu-connect-resource-manager.md#step-2-create-and-install-certificates)meer informatie. |
 |De bewerking heeft een ongeldige status code ServiceUnavailable geretourneerd <br> De antwoord status code geeft niet aan dat geslaagd is: 503 (service niet beschikbaar). | Deze fout kan het gevolg zijn van een van deze voor waarden.<li>ArmStsPool heeft de status gestopt.</li><li>Een van de websites van Azure Resource Manager/Security Token Services is niet beschikbaar.</li><li>De Azure Resource Manager cluster bron is niet beschikbaar.</li><br><strong>Opmerking:</strong> Door het apparaat opnieuw op te starten, kan het probleem worden opgelost, maar moet u het ondersteunings pakket verzamelen zodat u het verder kunt opsporen.|
-|AADSTS50126: Ongeldige gebruikers naam of wacht woord.<br>Traceer-ID: 29317da9-52fc-4ba0-9778-446ae5625e5a<br>Correlatie-ID: 1b9752c4-8cbf-4304-a714-8a16527410f4<br>Tijds tempel: 2019-11-15 09:21:57Z: de externe server heeft een fout geretourneerd: (400) ongeldige aanvraag.<br>Op regel: 1 teken: 1 |Deze fout kan het gevolg zijn van een van deze voor waarden.<li>Voor een ongeldige gebruikers naam en wacht woord controleert u of de klant het wacht woord heeft gewijzigd van Azure Portal door de volgende stappen te volgen en vervolgens het juiste wacht [woord te gebruiken](./azure-stack-edge-j-series-set-azure-resource-manager-password.md) .<li>De Tenant-id voor een ongeldige Tenant-ID is een vaste GUID en moet worden ingesteld op `c0257de7-538f-415c-993a-1b87a031879d`</li>|
+|AADSTS50126: Ongeldige gebruikers naam of wacht woord.<br>Traceer-ID: 29317da9-52fc-4ba0-9778-446ae5625e5a<br>Correlatie-ID: 1b9752c4-8cbf-4304-a714-8a16527410f4<br>Tijds tempel: 2019-11-15 09:21:57Z: de externe server heeft een fout geretourneerd: (400) ongeldige aanvraag.<br>Op regel: 1 teken: 1 |Deze fout kan het gevolg zijn van een van deze voor waarden.<li>Voor een ongeldige gebruikers naam en wacht woord controleert u of de klant het wacht woord heeft gewijzigd van Azure Portal door de volgende stappen te volgen en vervolgens het juiste wacht [woord te gebruiken](/azure/azure-stack-edge-gpu-set-azure-resource-manager-password) .<li>De Tenant-id voor een ongeldige Tenant-ID is een vaste GUID en moet worden ingesteld op `c0257de7-538f-415c-993a-1b87a031879d`</li>|
 |Connect-AzureRmAccount: AADSTS90056: de resource is uitgeschakeld of bestaat niet. Controleer de code van de app om te controleren of u de exacte resource-URL hebt opgegeven voor de resource die u wilt openen.<br>Traceer-ID: e19bdbc9-5dc8-4a74-85c3-ac6abdfda115<br>Correlatie-ID: 75c8ef5a-830e-48b5-b039-595a96488ff9-tijds tempel: 2019-11-18 07:00:51Z: de externe server heeft een fout geretourneerd: (400) ongeldig |De resource-eind punten die in de `Add-AzureRmEnvironment` opdracht worden gebruikt, zijn onjuist.|
 |Kan geen eind punten ophalen uit de Cloud.<br>Controleer of u verbinding hebt met het netwerk. Fout Details: HTTPSConnectionPool (host = ' management. dbg-of4k6suvm.microsoftdatabox.com ', poort = 30005): het maximale aantal nieuwe pogingen is overschreden met URL:/metadata/endpoints? API-Version = 2015-01-01 (veroorzaakt door SSLError (SSLError ("ongeldige handshake: error ([(' SSL-routines ', ' tls_process_server_certificate ', ' certificaat controleren is mislukt ')],),) |Deze fout wordt meestal weer gegeven in een Mac/Linux-omgeving en wordt veroorzaakt door de volgende problemen:<li>Er is geen PEM-indelings certificaat toegevoegd aan het python-certificaat archief.</li> |
 
@@ -154,7 +154,7 @@ Hier vindt u de fouten die kunnen worden weer gegeven tijdens de configuratie va
 
 1. Controleer in de lokale gebruikers interface of het doelnet werk juist is geconfigureerd.
 
-2. Controleer of de certificaten zijn bijgewerkt voor alle eind punten die [hier](azure-stack-edge-j-series-connect-resource-manager.md#step-2-create-and-install-certificates)worden vermeld.
+2. Controleer of de certificaten zijn bijgewerkt voor alle eind punten die [hier](./azure-stack-edge-gpu-connect-resource-manager.md#step-2-create-and-install-certificates)worden vermeld.
 
 3. Het Azure Resource Manager beheer en het eind punt voor aanmelding ophalen van de pagina **apparaat** in de lokale gebruikers interface.
 
@@ -163,18 +163,18 @@ Hier vindt u de fouten die kunnen worden weer gegeven tijdens de configuratie va
 
 ### <a name="verify-the-client-is-configured-properly"></a>Controleren of de client correct is geconfigureerd
 
-1. Controleer of de juiste Power shell-versie is geïnstalleerd, zoals [hier](azure-stack-edge-j-series-connect-resource-manager.md#step-3-install-powershell-on-the-client)wordt beschreven.
+1. Controleer of de juiste Power shell-versie is geïnstalleerd, zoals [hier](./azure-stack-edge-gpu-connect-resource-manager.md#step-3-install-powershell-on-the-client)wordt beschreven.
 
-2. Controleer of de juiste Power shell-modules zijn geïnstalleerd, zoals [hier](azure-stack-edge-j-series-connect-resource-manager.md#step-4-set-up-azure-powershell-on-the-client)wordt beschreven.
+2. Controleer of de juiste Power shell-modules zijn geïnstalleerd, zoals [hier](./azure-stack-edge-gpu-connect-resource-manager.md#step-4-set-up-azure-powershell-on-the-client)wordt beschreven.
 
 3. Controleer of Azure Resource Manager en aanmeldings eindpunten bereikbaar zijn. U kunt proberen om de eind punten te pingen. Bijvoorbeeld:
 
    `ping management.28bmdw2-bb9.microsoftdatabox.com`
    `ping login.28bmdw2-bb9.microsoftdatabox.com`
    
-   Als ze niet bereikbaar zijn, voegt u DNS/host-bestands vermeldingen toe zoals [hier](azure-stack-edge-j-series-connect-resource-manager.md#step-5-modify-host-file-for-endpoint-name-resolution)wordt vermeld.
+   Als ze niet bereikbaar zijn, voegt u DNS/host-bestands vermeldingen toe zoals [hier](./azure-stack-edge-gpu-connect-resource-manager.md#step-5-modify-host-file-for-endpoint-name-resolution)wordt vermeld.
    
-4. Controleer of de client certificaten zijn geïnstalleerd, zoals [hier](azure-stack-edge-j-series-connect-resource-manager.md#import-certificates-on-the-client-running-azure-powershell)wordt beschreven.
+4. Controleer of de client certificaten zijn geïnstalleerd, zoals [hier](./azure-stack-edge-gpu-connect-resource-manager.md#import-certificates-on-the-client-running-azure-powershell)wordt beschreven.
 
 5. Als de klant Power shell gebruikt, moet u de voor keuren voor fout opsporing inschakelen om gedetailleerde berichten te bekijken door deze Power shell-opdracht uit te voeren. 
 

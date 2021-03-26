@@ -5,25 +5,25 @@ services: frontdoor
 author: duongau
 ms.service: frontdoor
 ms.topic: conceptual
-ms.date: 02/18/2021
+ms.date: 03/24/2021
 ms.author: yuajia
-ms.openlocfilehash: 4c65d0e7f80fab59ca7df4849df7117d482352c1
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 039effb885463c1c53085535a6980601be890340
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "101099192"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105561441"
 ---
 # <a name="azure-front-door-standardpremium-preview-rule-set-match-conditions"></a>Voor waarden van de regel set voor Azure front deur Standard/Premium (preview)
 
 > [!Note]
 > Deze documentatie is voor Azure front deur Standard/Premium (preview). Zoekt u informatie over de voor deur van Azure? [Hier](../front-door-overview.md)weer geven.
 
-In deze zelf studie wordt uitgelegd hoe u een regelset maakt met uw eerste set regels in de Azure Portal. In de Azure front deur Standard/Premium- [regelset](concept-rule-set.md)bestaat een regel uit nul of meer match voorwaarden en een actie. Dit artikel bevat gedetailleerde beschrijvingen van de match-voor waarden die u kunt gebruiken in de Azure front deur Standard/Premium-regelset.
+In de Azure front deur Standard/Premium- [regelset](concept-rule-set.md)bestaat een regel uit nul of meer match voorwaarden en een actie. Dit artikel bevat gedetailleerde beschrijvingen van de match-voor waarden die u kunt gebruiken in de Azure front deur Standard/Premium-regelset.
 
-Het eerste deel van een regel is een voorwaarde van overeenkomst of een set voorwaarden van overeenkomst. Een regel kan uit maximaal 10 voorwaarden van overeenkomst bestaan. Een voorwaarde van overeenkomst identificeert specifieke typen aanvragen waarvoor gedefinieerde acties worden uitgevoerd. Als u meerdere voorwaarden van overeenkomst gebruikt, worden de voorwaarden van overeenkomst samen gegroepeerd met behulp van EN-logica. Voor alle voorwaarden van overeenkomst die ondersteuning bieden voor meerdere waarden (genoteerd als 'door spaties gescheiden'), wordt ervan uitgegaan dat de 'OF'-operator wordt gebruikt.
+Het eerste deel van een regel is een voorwaarde van overeenkomst of een set voorwaarden van overeenkomst. Een regel kan uit maximaal 10 voorwaarden van overeenkomst bestaan. Een voorwaarde van overeenkomst identificeert specifieke typen aanvragen waarvoor gedefinieerde acties worden uitgevoerd. Als u meerdere voorwaarden van overeenkomst gebruikt, worden de voorwaarden van overeenkomst samen gegroepeerd met behulp van EN-logica. Voor alle match-voor waarden die meerdere waarden ondersteunen, of logica wordt gebruikt.
 
-U kunt bijvoorbeeld een voorwaarde van overeenkomst gebruiken voor het volgende:
+U kunt een match-voor waarde gebruiken voor het volgende:
 
 * Aanvragen filteren op basis van een specifiek IP-adres, specifiek land of specifieke regio.
 * Aanvragen filteren op headergegevens.
@@ -36,192 +36,764 @@ U kunt bijvoorbeeld een voorwaarde van overeenkomst gebruiken voor het volgende:
 > Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt.
 > Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
-De volgende match-voor waarden zijn beschikbaar voor gebruik in de Azure front-deur Standard/Premium-regelset:
+## <a name="device-type"></a><a name="IsDevice"></a> Apparaattype
 
-## <a name="device-type"></a>Apparaattype
+Gebruik de voor waarde matching van het **Apparaattype** om aanvragen te identificeren die zijn gemaakt op een mobiel apparaat of desktop apparaat.  
 
-Hiermee worden aanvragen geïdentificeerd van een mobiel apparaat of desktopapparaat.  
+### <a name="properties"></a>Eigenschappen
 
-#### <a name="required-fields"></a>Vereiste velden
+| Eigenschap | Ondersteunde waarden |
+|-------|------------------|
+| Operator | <ul><li>In de Azure Portal: `Equal` , `Not Equal`</li><li>In ARM-sjablonen: `Equal` ; Gebruik de `negateCondition` eigenschap om _niet gelijk aan_ te geven |
+| Waarde | `Mobile`, `Desktop` |
 
-Operator | Ondersteunde waarden
----------|----------------
-Is gelijk aan, is niet gelijk aan | Mobiel, desktop
+### <a name="example"></a>Voorbeeld
 
-## <a name="post-argument"></a>Plaatsingsargument
+In dit voor beeld worden alle aanvragen vergeleken die zijn gedetecteerd als afkomstig van een mobiel apparaat.
 
-Hiermee worden aanvragen geïdentificeerd op basis van argumenten die zijn gedefinieerd voor de POST-aanvraagmethode die wordt gebruikt in de aanvraag.
+# <a name="portal"></a>[Portal](#tab/portal)
 
-#### <a name="required-fields"></a>Vereiste velden
+:::image type="content" source="../media/concept-rule-set-match-conditions/device-type.png" alt-text="Scherm opname van de portal met de voor waarde voor de overeenkomst voor het apparaattype.":::
 
-Argumentnaam | Operator | Argumentwaarde | Transformatie van hoofdletters en kleine letters
---------------|----------|----------------|---------------
-Tekenreeks | [Operator lijst](#operator-list) | Tekenreeks, int | Kleine letters, hoofd letters
+# <a name="json"></a>[JSON](#tab/json)
 
-## <a name="query-string"></a>Queryreeksen
+```json
+{
+  "name": "IsDevice",
+  "parameters": {
+    "operator": "Equal",
+    "negateCondition": false,
+    "matchValues": [
+      "Mobile"
+    ],
+    "@odata.type": "#Microsoft.Azure.Cdn.Models.DeliveryRuleIsDeviceConditionParameters"
+  }
+}
+```
 
-Hiermee worden aanvragen geïdentificeerd die een specifieke queryreeksparameter bevatten. Deze parameter wordt ingesteld op een waarde die overeenkomt met een specifiek patroon. Queryreeksparameters (bijvoorbeeld **parameter= waarde**) in de aanvraag-URL bepalen of aan deze voor waarde wordt voldaan. Deze voorwaarde van overeenkomst identificeert een queryreeksparameter op basis van de naam en accepteert een of meer waarden voor de parameterwaarde.
+# <a name="bicep"></a>[Bicep](#tab/bicep)
 
-#### <a name="required-fields"></a>Vereiste velden
+```bicep
+{
+  name: 'IsDevice'
+  parameters: {
+    operator: 'Equal'
+    negateCondition: false
+    matchValues: [
+      'Mobile'
+    ]
+    '@odata.type': '#Microsoft.Azure.Cdn.Models.DeliveryRuleIsDeviceConditionParameters'
+  }
+}
+```
 
-Operator | Queryreeksen | Transformatie van hoofdletters en kleine letters
----------|--------------|---------------
-[Operator lijst](#operator-list) | Tekenreeks, int | Kleine letters, hoofd letters
+---
 
-## <a name="remote-address"></a>Extern adres
+## <a name="post-args"></a><a name="PostArgs"></a> Argumenten plaatsen
 
-Hiermee worden aanvragen geïdentificeerd op basis van de locatie of het IP-adres van de aanvrager.
+Gebruik de voor waarde **argumenten na** overeenkomst om aanvragen te identificeren op basis van de argumenten die zijn opgegeven in de hoofd tekst van een post-aanvraag. Een enkele match-voor waarde komt overeen met één argument van de hoofd tekst van de aanvraag. U kunt meerdere waarden opgeven die moeten overeenkomen, die worden gecombineerd met of logica.
 
-#### <a name="required-fields"></a>Vereiste velden
+> [!NOTE]
+> De voor waarde voor het vergelijken van **argumenten** is geschikt voor het `application/x-www-form-urlencoded` inhouds type.
 
-Operator | Ondersteunde waarden
----------|-----------------
-Geografische overeenkomst | Landnummer
-IP-overeenkomst | IP-adres (door spaties gescheiden)
-Geen geografische overeenkomst | Landnummer
-Geen IP-overeenkomst | IP-adres (door spaties gescheiden)
+### <a name="properties"></a>Eigenschappen
 
-#### <a name="key-information"></a>Belangrijke informatie
+| Eigenschap | Ondersteunde waarden |
+|-|-|
+| Argumenten plaatsen | Een teken reeks waarde voor de naam van het POST-argument. |
+| Operator | Een operator uit de [lijst met standaard operators](#operator-list). |
+| Waarde | Een of meer teken reeks-of gehele waarden die de waarde van het argument POST moeten overeenkomen. Als er meerdere waarden worden opgegeven, worden ze geëvalueerd met of logica. |
+| Transformatie van hoofdletters en kleine letters | `Lowercase`, `Uppercase` |
 
-* Gebruik de CIDR-notatie.
-* Voor meerdere IP-adressen en IP-adres blokken, of logica, wordt gebruikt.
-    * **IPv4-voor beeld**: als u twee IP-adressen *1.2.3.4* en *10.20.30.40* toevoegt, wordt de voor waarde vergeleken als er aanvragen zijn die binnenkomen vanaf een van de adressen 1.2.3.4 of 10.20.30.40.
-    * **IPv6-voor beeld**: als u twee IP-adressen *1:2:3:4:5:6:7:8* en *10:20:30:40:50:60:70:80* toevoegt, wordt de voor waarde vergeleken als er aanvragen zijn die binnenkomen vanaf een van de adressen 1:2:3:4:5:6:7:8 of 10:20:30:40:50:60:70:80.
-* De syntaxis voor een IP-adresblok is het basis-IP-adres, gevolgd door een slash en de grootte van het voorvoegsel. Bijvoorbeeld:
-    * **Voorbeeld van IPv4**: *5.5.5.64/26* komt overeen met alle aanvragen die afkomstig zijn van adressen 5.5.5.64 tot en met 5.5.5.127.
-    * **Voorbeeld van IPv6**: *1:2:3:/48* komt overeen met aanvragen die afkomstig zijn van de adressen 1:2:3:0:0:0:0:0 tot en met 1:2:3:ffff:ffff:ffff:ffff:ffff.
+### <a name="example"></a>Voorbeeld
 
-## <a name="request-body"></a>Aanvraagbody
+In dit voor beeld komen we overeen met alle POST-aanvragen waarbij een `customerName` argument is opgegeven in de hoofd tekst van de aanvraag en waar de waarde `customerName` begint met de letter `J` of `K` . We gebruiken een aanvraag transformatie om de invoer waarden om te zetten in hoofd letters, zodat waarden die beginnen met `J` , `j` , `K` , en `k` allemaal overeenkomen.
 
-Hiermee worden aanvragen geïdentificeerd op basis van specifieke tekst die wordt weergegeven in de body van de aanvraag.
+# <a name="portal"></a>[Portal](#tab/portal)
 
-#### <a name="required-fields"></a>Vereiste velden
+:::image type="content" source="../media/concept-rule-set-match-conditions/post-args.png" alt-text="Scherm opname van de portal met de voor waarde bij overeenkomst met argumenten.":::
 
-Operator | Aanvraagbody | Transformatie van hoofdletters en kleine letters
----------|--------------|---------------
-[Operator lijst](#operator-list) | Tekenreeks, int | Kleine letters, hoofd letters
+# <a name="json"></a>[JSON](#tab/json)
 
-## <a name="request-header"></a>Aanvraagheader
+```json
+{
+  "name": "PostArgs",
+  "parameters": {
+    "selector": "customerName",
+    "operator": "BeginsWith",
+    "negateCondition": false,
+    "matchValues": [
+        "J",
+        "K"
+    ],
+    "transforms": [
+        "Uppercase"
+    ],
+    "@odata.type": "#Microsoft.Azure.Cdn.Models.DeliveryRulePostArgsConditionParameters"
+}
+```
 
-Hiermee worden aanvragen geïdentificeerd die gebruikmaken van een specifieke header in de aanvraag.
+# <a name="bicep"></a>[Bicep](#tab/bicep)
 
-#### <a name="required-fields"></a>Vereiste velden
+```bicep
+{
+  name: 'PostArgs'
+  parameters: {
+    selector: 'customerName'
+    operator: 'BeginsWith'
+    negateCondition: false
+    matchValues: [
+      'J'
+      'K'
+    ]
+    transforms: [
+      'Uppercase'
+    ]
+    '@odata.type': '#Microsoft.Azure.Cdn.Models.DeliveryRulePostArgsConditionParameters'
+  }
+}
+```
 
-Headernaam | Operator | Headerwaarde | Transformatie van hoofdletters en kleine letters
-------------|----------|--------------|---------------
-Tekenreeks | [Operator lijst](#operator-list) | Tekenreeks, int | Kleine letters, hoofd letters
+---
 
-## <a name="request-method"></a>Aanvraagmethode
+## <a name="query-string"></a><a name="QueryString"></a> Query reeks
 
-Hiermee worden aanvragen geïdentificeerd die gebruikmaken van de opgegeven aanvraagmethode.
+Gebruik de voor waarde voor de overeenkomst met de **query teken reeks** om aanvragen te identificeren die een specifieke query teken reeks bevatten. U kunt meerdere waarden opgeven die moeten overeenkomen, die worden gecombineerd met of logica.
 
-#### <a name="required-fields"></a>Vereiste velden
+> [!NOTE]
+> De hele query teken reeks wordt als één teken reeks vergeleken, zonder de regel afstand `?` .
 
-Operator | Ondersteunde waarden
----------|----------------
-Is gelijk aan, is niet gelijk aan | GET, POST, PUT, DELETE, HEAD, OPTIONS, TRACE
+### <a name="properties"></a>Eigenschappen
 
-#### <a name="key-information"></a>Belangrijke informatie
+| Eigenschap | Ondersteunde waarden |
+|-|-|
+| Operator | Een operator uit de [lijst met standaard operators](#operator-list). |
+| Queryreeksen | Een of meer teken reeks-of gehele waarden die de waarde van de query teken reeks moeten overeenkomen. Neem niet het `?` begin van de query teken reeks op. Als er meerdere waarden worden opgegeven, worden ze geëvalueerd met of logica. |
+| Transformatie van hoofdletters en kleine letters | `Lowercase`, `Uppercase` |
 
-Alleen de GET-aanvraagmethode kan inhoud in de cache in Azure Front Door genereren. Alle andere aanvraagmethoden worden via het netwerk geproxied.
+### <a name="example"></a>Voorbeeld
 
-## <a name="request-protocol"></a>Aanvraagprotocol
+In dit voor beeld worden alle aanvragen vergeleken waarin de query reeks de teken reeks bevat `language=en-US` . We willen dat de match-voor waarde hoofdletter gevoelig is. de aanvraag wordt dus niet getransformeerd.
 
-Hiermee worden aanvragen geïdentificeerd die gebruikmaken van het opgegeven protocol.
+# <a name="portal"></a>[Portal](#tab/portal)
 
-#### <a name="required-fields"></a>Vereiste velden
+:::image type="content" source="../media/concept-rule-set-match-conditions/query-string.png" alt-text="Scherm opname van de portal met de voor waarde query reeks overeenkomst.":::
 
-Operator | Ondersteunde waarden
----------|----------------
-Is gelijk aan, is niet gelijk aan | HTTP, HTTPS
+# <a name="json"></a>[JSON](#tab/json)
 
-## <a name="request-url"></a>Aanvraag-URL
+```json
+{
+  "name": "QueryString",
+  "parameters": {
+    "operator": "Contains",
+    "negateCondition": false,
+    "matchValues": [
+      "language=en-US"
+    ],
+    "@odata.type": "#Microsoft.Azure.Cdn.Models.DeliveryRuleQueryStringConditionParameters"
+  }
+}
+```
 
-Hiermee worden aanvragen geïdentificeerd die overeenkomen met de opgegeven URL.
+# <a name="bicep"></a>[Bicep](#tab/bicep)
 
-#### <a name="required-fields"></a>Vereiste velden
+```bicep
+{
+  name: 'QueryString'
+  parameters: {
+    operator: 'Contains'
+    negateCondition: false
+    matchValues: [
+      'language=en-US'
+    ]
+    '@odata.type': '#Microsoft.Azure.Cdn.Models.DeliveryRuleQueryStringConditionParameters'
+  }
+}
+```
 
-Operator | Aanvraag-URL | Transformatie van hoofdletters en kleine letters
----------|-------------|---------------
-[Operator lijst](#operator-list) | Tekenreeks, int | Kleine letters, hoofd letters
+---
 
-#### <a name="key-information"></a>Belangrijke informatie
+## <a name="remote-address"></a><a name="RemoteAddress"></a> Extern adres
 
-Wanneer u deze regelvoorwaarde gebruikt, moet u protocolgegevens toevoegen. Bijvoorbeeld: *https://www.\<yourdomain\>.com*.
+Met de voor waarde **extern adres** overeenkomst worden aanvragen geïdentificeerd op basis van de locatie of het IP-adres van de aanvrager. U kunt meerdere waarden opgeven die moeten overeenkomen, die worden gecombineerd met of logica.
 
-## <a name="request-file-extension"></a>Bestandsextensie aanvragen
+* Gebruik CIDR-notatie wanneer IP-adres blokken worden opgegeven. Dit betekent dat de syntaxis van een IP-adres blok het basis-IP-adres is, gevolgd door een slash en de grootte van het voor voegsel. Bijvoorbeeld:
+    * **IPv4-voor beeld**: `5.5.5.64/26` komt overeen met aanvragen die binnenkomen via 5.5.5.64 via 5.5.5.127.
+    * **IPv6-voor beeld**: `1:2:3:/48` komt overeen met aanvragen die afkomstig zijn van de adressen 1:2:3:0:0:0:0:0 tot en met 1:2:3: FFFF: FFFF: FFFF: FFFF: FFFF.
+* Wanneer u meerdere IP-adressen en IP-adres blokken opgeeft, wordt de logica ' OR ' toegepast.
+    * **IPv4-voor beeld**: als u twee IP-adressen toevoegt `1.2.3.4` en `10.20.30.40` , wordt de voor waarde vergeleken voor aanvragen die afkomstig zijn van een van de adressen 1.2.3.4 of 10.20.30.40.
+    * **IPv6-voor beeld**: als u twee IP-adressen toevoegt `1:2:3:4:5:6:7:8` en `10:20:30:40:50:60:70:80` , wordt de voor waarde vergeleken voor aanvragen die afkomstig zijn van de adressen 1:2:3:4:5:6:7:8 en 10:20:30:40:50:60:70:80.
 
-Hiermee worden aanvragen geïdentificeerd die de opgegeven bestandsextensie bevatten in de bestandsnaam in de aanvraag-URL.
+### <a name="properties"></a>Eigenschappen
 
-#### <a name="required-fields"></a>Vereiste velden
+| Eigenschap | Ondersteunde waarden |
+|-|-|
+| Operator | <ul><li>In de Azure portal: `Geo Match` , `Geo Not Match` , `IP Match` of `IP Not Match`</li><li>In ARM-sjablonen: `GeoMatch` , `IPMatch` ; Gebruik de `negateCondition` eigenschap om _geo-overeenkomsten_ op te geven of het _IP-adres komt niet overeen_</li></ul> |
+| Waarde | <ul><li>Voor de `IP Match` `IP Not Match` Opera tors or: Geef een of meer IP-adresbereiken op. Als meerdere IP-adresbereiken zijn opgegeven, worden ze geëvalueerd met of Logic.</li><li>Voor de `Geo Match` `Geo Not Match` Opera tors or: Geef een of meer locaties op met behulp van hun land nummer.</li></ul> |
 
-Operator | Toestelnummer | Transformatie van hoofdletters en kleine letters
----------|-----------|---------------
-[Operator lijst](#operator-list)  | Tekenreeks, int | Kleine letters, hoofd letters
+### <a name="example"></a>Voorbeeld
 
-#### <a name="key-information"></a>Belangrijke informatie
+In dit voor beeld worden alle aanvragen vergeleken waarvan de aanvraag afkomstig is uit het Verenigde Staten.
 
-Voeg voor de extensie geen voorlooppunt toe. Gebruik bijvoorbeeld *html* en niet *.html*.
+# <a name="portal"></a>[Portal](#tab/portal)
 
-## <a name="request-file-name"></a>Bestandsnaam van aanvraag
+:::image type="content" source="../media/concept-rule-set-match-conditions/remote-address.png" alt-text="Scherm opname van de portal met de voor waarde extern adres overeenkomst.":::
 
-Hiermee worden aanvragen geïdentificeerd die de opgegeven bestandsnaam bevatten in de aanvraag-URL.
+# <a name="json"></a>[JSON](#tab/json)
 
-#### <a name="required-fields"></a>Vereiste velden
+```json
+{
+  "name": "RemoteAddress",
+  "parameters": {
+    "operator": "GeoMatch",
+    "negateCondition": true,
+    "matchValues": [
+      "US"
+    ],
+    "@odata.type": "#Microsoft.Azure.Cdn.Models.DeliveryRuleRemoteAddressConditionParameters"
+  }
+}
+```
 
-Operator | Bestandsnaam | Transformatie van hoofdletters en kleine letters
----------|-----------|---------------
-[Operator lijst](#operator-list)| Tekenreeks, int | Kleine letters, hoofd letters
+# <a name="bicep"></a>[Bicep](#tab/bicep)
 
-## <a name="request-path"></a>Aanvraagpad
+```bicep
+{
+  name: 'RemoteAddress'
+  parameters: {
+    operator: 'GeoMatch'
+    negateCondition: true
+    matchValues: [
+      'US'
+    ]
+    '@odata.type': '#Microsoft.Azure.Cdn.Models.DeliveryRuleRemoteAddressConditionParameters'
+  }
+}
+```
 
-Hiermee worden aanvragen geïdentificeerd die het opgegeven pad bevatten in de aanvraag-URL.
+---
 
-#### <a name="required-fields"></a>Vereiste velden
+## <a name="request-body"></a><a name="RequestBody"></a> Aanvraag tekst
 
-Operator | Waarde | Transformatie van hoofdletters en kleine letters
----------|-------|---------------
-[Operator lijst](#operator-list) | Tekenreeks, int | Kleine letters, hoofd letters
+Met de voor waarde matching **Body van aanvraag** worden aanvragen geïdentificeerd op basis van specifieke tekst die wordt weer gegeven in de hoofd tekst van de aanvraag. U kunt meerdere waarden opgeven die moeten overeenkomen, die worden gecombineerd met of logica.
 
-## <a name="operator-list"></a><a name = "operator-list"></a>Operator lijst
+> [!NOTE]
+> Als een aanvraag tekst groter is dan 64 KB, wordt alleen de eerste 64 kB in rekening gebracht voor de match-voor waarde van de **aanvraag tekst** .
+
+### <a name="properties"></a>Eigenschappen
+
+| Eigenschap | Ondersteunde waarden |
+|-|-|
+| Operator | Een operator uit de [lijst met standaard operators](#operator-list). |
+| Waarde | Een of meer teken reeks-of gehele waarden die de waarde van de hoofd tekst van de aanvraag vertegenwoordigen. Als er meerdere waarden worden opgegeven, worden ze geëvalueerd met of logica. |
+| Transformatie van hoofdletters en kleine letters | `Lowercase`, `Uppercase` |
+
+### <a name="example"></a>Voorbeeld
+
+In dit voor beeld worden alle aanvragen vergeleken waarin de hoofd tekst van de aanvraag de teken reeks bevat `ERROR` . De hoofd tekst van de aanvraag wordt omgezet in hoofd letters voordat de overeenkomst wordt geëvalueerd, dus `error` en andere case variaties activeren ook deze overeenkomst.
+
+# <a name="portal"></a>[Portal](#tab/portal)
+
+:::image type="content" source="../media/concept-rule-set-match-conditions/request-body.png" alt-text="Scherm opname van de portal met de voor waarde aanvraag body.":::
+
+# <a name="json"></a>[JSON](#tab/json)
+
+```json
+{
+  "name": "RequestBody",
+  "parameters": {
+    "operator": "Contains",
+    "negateCondition": false,
+    "matchValues": [
+      "ERROR"
+    ],
+    "transforms": [
+      "Uppercase"
+    ],
+    "@odata.type": "#Microsoft.Azure.Cdn.Models.DeliveryRuleRequestBodyConditionParameters"
+  }
+}
+```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+{
+  name: 'RequestBody'
+  parameters: {
+    operator: 'Contains'
+    negateCondition: false
+    matchValues: [
+      'ERROR'
+    ]
+    transforms: [
+      'Uppercase'
+    ]
+    '@odata.type': '#Microsoft.Azure.Cdn.Models.DeliveryRuleRequestBodyConditionParameters'
+  }
+}
+```
+
+---
+
+## <a name="request-file-name"></a><a name="UrlFileName"></a> Bestands naam van aanvraag
+
+In de voor waarde voor de **aanvraag bestands naam** overeenkomst worden aanvragen geïdentificeerd die de opgegeven bestands naam in de aanvraag-URL bevatten. U kunt meerdere waarden opgeven die moeten overeenkomen, die worden gecombineerd met of logica.
+
+### <a name="properties"></a>Eigenschappen
+
+| Eigenschap | Ondersteunde waarden |
+|-|-|
+| Operator | Een operator uit de [lijst met standaard operators](#operator-list). |
+| Waarde | Een of meer teken reeks-of gehele waarden voor de waarde van de naam van het aanvraag bestand dat moet worden gevonden. Als er meerdere waarden worden opgegeven, worden ze geëvalueerd met of logica. |
+| Transformatie van hoofdletters en kleine letters | `Lowercase`, `Uppercase` |
+
+### <a name="example"></a>Voorbeeld
+
+In dit voor beeld worden alle aanvragen met de naam van het aanvraag bestand `media.mp4` . De bestands naam wordt omgezet in kleine letters voordat de overeenkomst wordt geëvalueerd, dus `MEDIA.MP4` en andere case variaties activeren ook deze overeenkomst.
+
+# <a name="portal"></a>[Portal](#tab/portal)
+
+:::image type="content" source="../media/concept-rule-set-match-conditions/request-file-name.png" alt-text="Scherm afbeelding van de portal met de voor waarde voor de bestands naam van de aanvraag.":::
+
+# <a name="json"></a>[JSON](#tab/json)
+
+```json
+{
+  "name": "UrlFileName",
+  "parameters": {
+    "operator": "Equal",
+    "negateCondition": false,
+    "matchValues": [
+      "media.mp4"
+    ],
+    "transforms": [
+      "Lowercase"
+    ],
+    "@odata.type": "#Microsoft.Azure.Cdn.Models.DeliveryRuleUrlFilenameConditionParameters"
+  }
+}
+```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+{
+  name: 'UrlFileName'
+  parameters: {
+    operator: 'Equal'
+    negateCondition: false
+    matchValues: [
+      'media.mp4'
+    ]
+    transforms: [
+      'Lowercase'
+    ]
+    '@odata.type': '#Microsoft.Azure.Cdn.Models.DeliveryRuleUrlFilenameConditionParameters'
+  }
+}
+```
+
+---
+
+## <a name="request-file-extension"></a><a name="UrlFileExtension"></a> Bestands extensie voor aanvraag
+
+In de voor waarde voor het vergelijken van het **aanvraag bestand** worden aanvragen geïdentificeerd die de opgegeven bestands extensie bevatten in de bestands naam in de aanvraag-URL. U kunt meerdere waarden opgeven die moeten overeenkomen, die worden gecombineerd met of logica.
+
+> [!NOTE]
+> Voeg geen voorloop periode toe. U kunt bijvoorbeeld `html` weergeven in plaats van `.html`.
+
+### <a name="properties"></a>Eigenschappen
+
+| Eigenschap | Ondersteunde waarden |
+|-|-|
+| Operator | Een operator uit de [lijst met standaard operators](#operator-list). |
+| Waarde | Een of meer teken reeks-of gehele waarden die de waarde van de bestands extensie van de aanvraag vertegenwoordigen die moet overeenkomen. Voeg geen voorloop periode toe. Als er meerdere waarden worden opgegeven, worden ze geëvalueerd met of logica. |
+| Transformatie van hoofdletters en kleine letters | `Lowercase`, `Uppercase` |
+
+### <a name="example"></a>Voorbeeld
+
+In dit voor beeld worden alle aanvragen met de extensie van het aanvraag bestand `pdf` of opgegeven `docx` . De uitbrei ding van het aanvraag bestand wordt omgezet in kleine letters voordat de overeenkomst wordt geëvalueerd, dus, `PDF` `DocX` en voor andere case-variaties wordt deze overeenkomst ook geactiveerd.
+
+# <a name="portal"></a>[Portal](#tab/portal)
+
+:::image type="content" source="../media/concept-rule-set-match-conditions/request-file-extension.png" alt-text="Scherm opname van de portal met de voor waarde voor het vergelijken van de bestands extensie.":::
+
+# <a name="json"></a>[JSON](#tab/json)
+
+```json
+{
+  "name": "UrlFileExtension",
+  "parameters": {
+    "operator": "Equal",
+    "negateCondition": false,
+    "matchValues": [
+      "pdf",
+      "docx"
+    ],
+    "transforms": [
+      "Lowercase"
+    ],
+    "@odata.type": "#Microsoft.Azure.Cdn.Models.DeliveryRuleUrlFileExtensionMatchConditionParameters"
+  }
+```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+{
+  name: 'UrlFileExtension'
+  parameters: {
+    operator: 'Equal'
+    negateCondition: false
+    matchValues: [
+      'pdf'
+      'docx'
+    ]
+    transforms: [
+      'Lowercase'
+    ]
+    '@odata.type': '#Microsoft.Azure.Cdn.Models.DeliveryRuleUrlFileExtensionMatchConditionParameters'
+  }
+}
+```
+
+---
+
+## <a name="request-header"></a><a name="RequestHeader"></a> Aanvraag header
+
+De voor waarde **aanvraag header** matching identificeert aanvragen die een specifieke header in de aanvraag bevatten. U kunt deze match-voor waarde gebruiken om te controleren of een header bestaat uit de waarde of om te controleren of de header overeenkomt met een opgegeven waarde. U kunt meerdere waarden opgeven die moeten overeenkomen, die worden gecombineerd met of logica.
+
+### <a name="properties"></a>Eigenschappen
+
+| Eigenschap | Ondersteunde waarden |
+|-|-|
+| Headernaam | Een teken reeks waarde voor de naam van het POST-argument. |
+| Operator | Een operator uit de [lijst met standaard operators](#operator-list). |
+| Waarde | Een of meer teken reeks-of gehele waarden voor de waarde van de aanvraag header die moet worden gezocht. Als er meerdere waarden worden opgegeven, worden ze geëvalueerd met of logica. |
+| Transformatie van hoofdletters en kleine letters | `Lowercase`, `Uppercase` |
+
+### <a name="example"></a>Voorbeeld
+
+In dit voor beeld worden alle aanvragen vergeleken waarin de aanvraag een header bevat met de naam `MyCustomHeader` , onafhankelijk van de waarde.
+
+# <a name="portal"></a>[Portal](#tab/portal)
+
+:::image type="content" source="../media/concept-rule-set-match-conditions/request-header.png" alt-text="Scherm opname van de portal met de voor waarde voor de overeenkomende aanvraag header.":::
+
+# <a name="json"></a>[JSON](#tab/json)
+
+```json
+{
+  "name": "RequestHeader",
+  "parameters": {
+    "selector": "MyCustomHeader",
+    "operator": "Any",
+    "negateCondition": false,
+    "@odata.type": "#Microsoft.Azure.Cdn.Models.DeliveryRuleRequestHeaderConditionParameters"
+  }
+}
+```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+{
+  name: 'RequestHeader'
+  parameters: {
+    selector: 'MyCustomHeader',
+    operator: 'Any'
+    negateCondition: false
+    '@odata.type': '#Microsoft.Azure.Cdn.Models.DeliveryRuleRequestHeaderConditionParameters'
+  }
+}
+```
+
+---
+
+## <a name="request-method"></a><a name="RequestMethod"></a> Aanvraag methode
+
+Met de voor waarde voor de matching- **methode** voor aanvragen worden aanvragen geïdentificeerd die de opgegeven HTTP-aanvraag methode gebruiken. U kunt meerdere waarden opgeven die moeten overeenkomen, die worden gecombineerd met of logica.
+
+### <a name="properties"></a>Eigenschappen
+
+| Eigenschap | Ondersteunde waarden |
+|-|-|
+| Operator | <ul><li>In de Azure Portal: `Equal` , `Not Equal`</li><li>In ARM-sjablonen: `Equal` ; Gebruik de `negateCondition` eigenschap om _niet gelijk aan_ te geven |
+| Aanvraagmethode | Een of meer HTTP-methoden van: `GET` , `POST` ,,,, `PUT` `DELETE` `HEAD` `OPTIONS` , `TRACE` . Als er meerdere waarden worden opgegeven, worden ze geëvalueerd met of logica. |
+
+### <a name="example"></a>Voorbeeld
+
+In dit voor beeld worden alle aanvragen vergeleken waarbij de-aanvraag gebruikmaakt van de- `DELETE` methode.
+
+# <a name="portal"></a>[Portal](#tab/portal)
+
+:::image type="content" source="../media/concept-rule-set-match-conditions/request-method.png" alt-text="Scherm opname van de portal met de voor waarde voor de matching methode.":::
+
+# <a name="json"></a>[JSON](#tab/json)
+
+```json
+{
+  "name": "RequestMethod",
+  "parameters": {
+    "operator": "Equal",
+    "negateCondition": false,
+    "matchValues": [
+      "DELETE"
+    ],
+    "@odata.type": "#Microsoft.Azure.Cdn.Models.DeliveryRuleRequestMethodConditionParameters"
+  }
+}
+```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+{
+  name: 'RequestMethod'
+  parameters: {
+    operator: 'Equal'
+    negateCondition: false
+    matchValues: [
+      'DELETE
+    ]
+    '@odata.type': '#Microsoft.Azure.Cdn.Models.DeliveryRuleRequestMethodConditionParameters'
+  }
+}
+```
+
+---
+
+## <a name="request-path"></a><a name="UrlPath"></a> Pad van aanvraag
+
+In de voor waarde voor het vergelijken van **aanvragen** worden aanvragen geïdentificeerd die het opgegeven pad bevatten in de aanvraag-URL. U kunt meerdere waarden opgeven die moeten overeenkomen, die worden gecombineerd met of logica.
+
+> [!NOTE]
+> Het pad is het deel van de URL na de hostnaam en een slash. Het pad is bijvoorbeeld in de URL `https://www.contoso.com/files/secure/file1.pdf` `files/secure/file1.pdf` .
+
+### <a name="properties"></a>Eigenschappen
+
+| Eigenschap | Ondersteunde waarden |
+|-|-|
+| Operator | Een operator uit de [lijst met standaard operators](#operator-list). |
+| Waarde | Een of meer teken reeks-of gehele waarden voor de waarde van het aanvraag pad dat moet worden gezocht. Neem de voorloop back slash niet op. Als er meerdere waarden worden opgegeven, worden ze geëvalueerd met of logica. |
+| Transformatie van hoofdletters en kleine letters | `Lowercase`, `Uppercase` |
+
+### <a name="example"></a>Voorbeeld
+
+In dit voor beeld worden alle aanvragen vergeleken waarbij het pad naar het aanvraag bestand begint met `files/secure/` . We transformeren de extensie van het aanvraag bestand naar kleine letters voordat u de overeenkomst evalueert, zodat aanvragen `files/SECURE/` en andere case-variaties ook deze match-voor waarde activeren.
+
+# <a name="portal"></a>[Portal](#tab/portal)
+
+:::image type="content" source="../media/concept-rule-set-match-conditions/request-path.png" alt-text="Scherm opname van de portal met de voor waarde aanvraag Path match.":::
+
+# <a name="json"></a>[JSON](#tab/json)
+
+```json
+{
+  "name": "UrlPath",
+  "parameters": {
+    "operator": "BeginsWith",
+    "negateCondition": false,
+    "matchValues": [
+      "files/secure/"
+    ],
+    "transforms": [
+      "Lowercase"
+    ],
+    "@odata.type": "#Microsoft.Azure.Cdn.Models.DeliveryRuleUrlPathMatchConditionParameters"
+  }
+}
+```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+{
+  name: 'UrlPath'
+  parameters: {
+    operator: 'BeginsWith'
+    negateCondition: false
+    matchValues: [
+      'files/secure/'
+    ]
+    transforms: [
+      'Lowercase'
+    ]
+    '@odata.type': '#Microsoft.Azure.Cdn.Models.DeliveryRuleUrlPathMatchConditionParameters'
+  }
+}
+```
+
+---
+
+## <a name="request-protocol"></a><a name="RequestScheme"></a> Aanvraag Protocol
+
+De voor waarde voor het vergelijken van het **aanvraag protocol** identificeert aanvragen die gebruikmaken van het opgegeven protocol (http of https).
+
+> [!NOTE]
+> Het *protocol* wordt soms ook wel *schema* genoemd.
+
+### <a name="properties"></a>Eigenschappen
+
+| Eigenschap | Ondersteunde waarden |
+|-|-|
+| Operator | <ul><li>In de Azure Portal: `Equal` , `Not Equal`</li><li>In ARM-sjablonen: `Equal` ; Gebruik de `negateCondition` eigenschap om _niet gelijk aan_ te geven |
+| Aanvraagmethode | `HTTP`, `HTTPS` |
+
+### <a name="example"></a>Voorbeeld
+
+In dit voor beeld worden alle aanvragen vergeleken waarbij de aanvraag gebruikmaakt van het `HTTP` protocol.
+
+# <a name="portal"></a>[Portal](#tab/portal)
+
+:::image type="content" source="../media/concept-rule-set-match-conditions/request-protocol.png" alt-text="Scherm opname van de portal met de voor waarde aanvraag protocol match.":::
+
+# <a name="json"></a>[JSON](#tab/json)
+
+```json
+{
+  "name": "RequestScheme",
+  "parameters": {
+    "operator": "Equal",
+    "negateCondition": false,
+    "matchValues": [
+      "HTTP"
+    ],
+    "@odata.type": "#Microsoft.Azure.Cdn.Models.DeliveryRuleRequestSchemeConditionParameters"
+  }
+}
+```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+{
+  name: 'RequestScheme'
+  parameters: {
+    operator: 'Equal'
+    negateCondition: false
+    matchValues: [
+      'HTTP
+    ]
+    '@odata.type': '#Microsoft.Azure.Cdn.Models.DeliveryRuleRequestSchemeConditionParameters'
+  }
+}
+```
+
+---
+
+## <a name="request-url"></a><a name="RequestUrl"></a> Aanvraag-URL
+
+Hiermee worden aanvragen geïdentificeerd die overeenkomen met de opgegeven URL. De volledige URL wordt geëvalueerd. U kunt meerdere waarden opgeven die moeten overeenkomen, die worden gecombineerd met of logica.
+
+> [!TIP]
+> Wanneer u deze regel voorwaarde gebruikt, moet u ervoor zorgen dat u het protocol bijvoegt. Gebruik bijvoorbeeld `https://www.contoso.com` in plaats van alleen `www.contoso.com` .
+
+### <a name="properties"></a>Eigenschappen
+
+| Eigenschap | Ondersteunde waarden |
+|-|-|
+| Operator | Een operator uit de [lijst met standaard operators](#operator-list). |
+| Waarde | Een of meer teken reeks-of gehele waarden die de waarde van de aanvraag-URL moeten overeenkomen. Als er meerdere waarden worden opgegeven, worden ze geëvalueerd met of logica. |
+| Transformatie van hoofdletters en kleine letters | `Lowercase`, `Uppercase` |
+
+### <a name="example"></a>Voorbeeld
+
+In dit voor beeld worden alle aanvragen vergeleken waarbij de aanvraag-URL begint met `https://api.contoso.com/customers/123` . We transformeren de extensie van het aanvraag bestand naar kleine letters voordat u de overeenkomst evalueert, zodat aanvragen `https://api.contoso.com/Customers/123` en andere case-variaties ook deze match-voor waarde activeren.
+
+# <a name="portal"></a>[Portal](#tab/portal)
+
+:::image type="content" source="../media/concept-rule-set-match-conditions/request-url.png" alt-text="Scherm afbeelding van de portal toont de voor waarde voor de overeenkomst-URL.":::
+
+# <a name="json"></a>[JSON](#tab/json)
+
+```json
+{
+  "name": "RequestUri",
+  "parameters": {
+    "operator": "BeginsWith",
+    "negateCondition": false,
+    "matchValues": [
+      "https://api.contoso.com/customers/123"
+    ],
+    "transforms": [
+      "Lowercase"
+    ],
+    "@odata.type": "#Microsoft.Azure.Cdn.Models.DeliveryRuleRequestUriConditionParameters"
+  }
+}
+```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+{
+  name: 'RequestUri'
+  parameters: {
+    operator: 'BeginsWith'
+    negateCondition: false
+    matchValues: [
+      'https://api.contoso.com/customers/123'
+    ]
+    transforms: [
+      'Lowercase'
+    ]
+    '@odata.type': '#Microsoft.Azure.Cdn.Models.DeliveryRuleRequestUriConditionParameters'
+  }
+}
+```
+
+---
+
+## <a name="operator-list"></a><a name = "operator-list"></a> Operator lijst
 
 De volgende operators zijn geldig voor regels die waarden accepteren van de lijst met standaardoperators:
 
-* Alle
-* Is gelijk aan
-* Contains
-* Begint met
-* Eindigt op
-* Kleiner dan
-* Kleiner dan of gelijk aan
-* Groter dan
-* Groter dan of gelijk aan
-* Geen
-* Bevat geen
-* Begint niet met
-* Eindigt niet op
-* Niet kleiner dan
-* Niet kleiner dan of gelijk aan
-* Niet groter dan
-* Niet groter dan of gelijk aan
-* Reguliere expressie
+| Operator                   | Beschrijving                                                                                                                    | Ondersteuning voor ARM-sjablonen                                            |
+|----------------------------|--------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------|
+| Alle                        | Komt overeen met een wille keurige waarde, ongeacht wat het is.                                                                     | `operator`: `Any`                                               |
+| Is gelijk aan                      | Komt overeen wanneer de waarde precies overeenkomt met de opgegeven teken reeks.                                                                   | `operator`: `Equal`                                             |
+| Contains                   | Komt overeen wanneer de waarde de opgegeven teken reeks bevat.                                                                          | `operator`: `Contains`                                          |
+| Kleiner dan                  | Komt overeen wanneer de lengte van de waarde kleiner is dan het opgegeven gehele getal.                                                       | `operator`: `LessThan`                                          |
+| Greater Than               | Komt overeen wanneer de lengte van de waarde groter is dan het opgegeven gehele getal.                                                    | `operator`: `GreaterThan`                                       |
+| Kleiner dan of gelijk aan         | Komt overeen wanneer de lengte van de waarde kleiner is dan of gelijk is aan het opgegeven gehele getal.                                           | `operator`: `LessThanOrEqual`                                   |
+| Groter dan of gelijk aan      | Komt overeen wanneer de lengte van de waarde groter is dan of gelijk is aan het opgegeven gehele getal.                                        | `operator`: `GreaterThanOrEqual`                                |
+| Begint met                | Komt overeen wanneer de waarde begint met de opgegeven teken reeks.                                                                       | `operator`: `BeginsWith`                                        |
+| Eindigt op                  | Komt overeen wanneer de waarde eindigt met de opgegeven teken reeks.                                                                         | `operator`: `EndsWith`                                          |
+| Reguliere                      | Komt overeen wanneer de waarde overeenkomt met de opgegeven reguliere expressie. [Zie hieronder voor meer informatie.](#regular-expressions)        | `operator`: `RegEx`                                             |
+| Geen                    | Komt overeen wanneer er geen waarde is.                                                                                                | `operator`: `Any` en `negateCondition` : `true`                |
+| Niet gelijk aan                  | Komt overeen wanneer de waarde niet overeenkomt met de opgegeven teken reeks.                                                                    | `operator`: `Equal` en `negateCondition` : `true`              |
+| Bevat geen               | Komt overeen wanneer de waarde de opgegeven teken reeks niet bevat.                                                                  | `operator`: `Contains` en `negateCondition` : `true`           |
+| Niet kleiner dan              | Komt overeen wanneer de lengte van de waarde niet kleiner is dan het opgegeven gehele getal.                                                   | `operator`: `LessThan` en `negateCondition` : `true`           |
+| Niet groter dan           | Komt overeen wanneer de lengte van de waarde niet groter is dan het opgegeven gehele getal.                                                | `operator`: `GreaterThan` en `negateCondition` : `true`        |
+| Niet kleiner dan of gelijk aan     | Komt overeen wanneer de lengte van de waarde niet kleiner is dan of gelijk is aan het opgegeven geheel getal.                                       | `operator`: `LessThanOrEqual` en `negateCondition` : `true`    |
+| Niet groter dan of gelijk aan | Komt overeen wanneer de lengte van de waarde niet groter is dan of gelijk is aan het opgegeven gehele getal.                                    | `operator`: `GreaterThanOrEqual` en `negateCondition` : `true` |
+| Begint niet met            | Komt overeen wanneer de waarde niet begint met de opgegeven teken reeks.                                                               | `operator`: `BeginsWith` en `negateCondition` : `true`         |
+| Eindigt niet met              | Komt overeen wanneer de waarde niet eindigt met de opgegeven teken reeks.                                                                 | `operator`: `EndsWith` en `negateCondition` : `true`           |
+| Geen RegEx                  | Komt overeen wanneer de waarde niet overeenkomt met de opgegeven reguliere expressie. [Zie hieronder voor meer informatie.](#regular-expressions) | `operator`: `RegEx` en `negateCondition` : `true`              |
 
-Voor numerieke operators zoals *Kleiner dan* en *Groter dan of gelijk aan* wordt de gebruikte vergelijking gebaseerd op lengte. De waarde in de voorwaarde van overeenkomst moet een geheel getal zijn dat gelijk is aan de lengte die u wilt vergelijken.
+> [!TIP]
+> Voor numerieke operators zoals *Kleiner dan* en *Groter dan of gelijk aan* wordt de gebruikte vergelijking gebaseerd op lengte. De waarde in de match-voor waarde moet een geheel getal zijn dat de lengte aangeeft die u wilt vergelijken.
 
-## <a name="regular-expression"></a>Reguliere expressie
+### <a name="regular-expressions"></a><a name="regular-expressions"></a> Reguliere expressies
 
-Regex biedt geen ondersteuning voor de volgende bewerkingen:
+Reguliere expressies bieden geen ondersteuning voor de volgende bewerkingen:
 
-* Backreferences en vastleggen van subexpressies
-* Wille keurige verklaringen met een breedte nul
-* Verwijzingen naar subroutines en recursieve patronen
-* Voorwaardelijke patronen
-* Backtracking
-* De \c single-byte-instructie
-* De instructie \R nieuwe-regel overeenkomst
-* De richt lijn \K begin van overeenkomst reset
-* Bijschriften en Inge sloten code
-* Atomische groepering en behorende Kwant oren
+* Backreferences en vastleggen van subexpressies.
+* Wille keurige verklaringen met een breedte nul.
+* Subroutine verwijzingen en recursieve patronen.
+* Voorwaardelijke patronen.
+* Backtracking-besturings woorden.
+* De `\C` instructie single-byte.
+* De `\R` instructie nieuwe regel komt overeen.
+* De `\K` instructie start of match reset.
+* Bijschriften en Inge sloten code.
+* Atomische groepering en behorende Kwant.
+
+## <a name="arm-template-support"></a>Ondersteuning voor ARM-sjablonen
+
+Regel sets kunnen worden geconfigureerd met behulp van Azure Resource Manager sjablonen. [Bekijk een voorbeeld sjabloon](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-standard-premium-rule-set). U kunt matching voorwaarden toevoegen met behulp van de JSON-of Bicep-fragmenten die zijn opgenomen in de bovenstaande voor beelden.
 
 ## <a name="next-steps"></a>Volgende stappen
 

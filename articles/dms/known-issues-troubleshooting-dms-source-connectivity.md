@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: troubleshooting
 ms.date: 02/20/2020
-ms.openlocfilehash: 93ac6ae3c8aed61557a239bb9c84d3587dce1daa
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: cffa8d9a0647ff5fe970801d5da98e23be0b2aaf
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "94962328"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105567322"
 ---
 # <a name="troubleshoot-dms-errors-when-connecting-to-source-databases"></a>DMS-fouten oplossen bij het verbinden van de brondatabases
 
@@ -74,8 +74,8 @@ Mogelijke problemen met het maken van verbinding met een bron AWS RDS SQL Server
 | **Fout 53** -SQL-verbinding is mislukt. Een netwerkgerelateerde of exemplaarspecifieke fout is opgetreden bij het maken van een verbinding met SQL Server. De server is niet gevonden of is niet toegankelijk. Controleer of de naam van het exemplaar juist is en of SQL Server is geconfigureerd om externe verbindingen toe te staan. (provider: named pipes-provider, fout: 40-kan geen verbinding openen met SQL Server | Deze fout treedt op als de service geen verbinding kan maken met de bron server. Om het probleem op te lossen, raadpleegt u de documenten voor probleem oplossing in de opmerking onder deze tabel en probeert u het opnieuw. |
 | **Fout 18456** -aanmelden is mislukt. De aanmelding is mislukt voor de gebruiker {User} | Deze fout treedt op als de service geen verbinding kan maken met de bron database met de T-SQL-referenties die worden gegeven. Controleer de ingevoerde referenties om het probleem op te lossen. U kunt ook verwijzen naar [MSSQLSERVER_18456](/sql/relational-databases/errors-events/mssqlserver-18456-database-engine-error?view=sql-server-2017) of naar de documenten voor het oplossen van problemen die worden vermeld in de opmerking onder deze tabel, en probeer het opnieuw. |
 | **Fout 87** : de verbindings reeks is ongeldig. Een netwerkgerelateerde of exemplaarspecifieke fout is opgetreden bij het maken van een verbinding met SQL Server. De server wordt niet gevonden of toegang tot de server is niet mogelijk. Controleer of de naam van het exemplaar juist is en of SQL Server is geconfigureerd om externe verbindingen toe te staan. (provider: SQL-netwerk interfaces, fout: 25-verbindings reeks is niet geldig) | Deze fout treedt op als de service geen verbinding kan maken met de bron server vanwege een ongeldige connection string. Om het probleem op te lossen, controleert u de beschik bare connection string. Als het probleem zich blijft voordoen, raadpleegt u de documenten voor probleem oplossing in de opmerking onder deze tabel en probeert u het opnieuw. |
-| **Fout: Server certificaat wordt niet vertrouwd.** Er is een verbinding met de server tot stand gebracht, maar vervolgens is er een fout opgetreden tijdens het aanmeldings proces. (provider: SSL-provider, fout: 0-de certificaat keten is uitgegeven door een niet-vertrouwde instantie.) | Deze fout treedt op als het gebruikte certificaat niet wordt vertrouwd. Om het probleem op te lossen, moet u een certificaat zoeken dat kan worden vertrouwd en het vervolgens inschakelen op de-server. U kunt ook de optie certificaat vertrouwen selecteren tijdens het verbinden. Voer deze actie alleen uit als u vertrouwd bent met het gebruikte certificaat en u deze vertrouwt. <br> TLS-verbindingen die zijn versleuteld met een zelfondertekend certificaat, bieden geen sterke beveiliging: ze zijn gevoelig voor man-in-the-middle-aanvallen. Vertrouw niet op TLS met zelfondertekende certificaten in een productie omgeving of op servers die zijn verbonden met internet. <br> Zie voor meer informatie [SSL gebruiken met een Microsoft SQL Server DB-exemplaar](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/SQLServer.Concepts.General.SSL.Using.html) of [zelf studie: migratie van RDS-SQL Server naar Azure met behulp van DMS](./tutorial-rds-sql-server-azure-sql-and-managed-instance-online.md#prerequisites). |
-| **Fout 300** -de gebruiker heeft niet de vereiste machtigingen. De machtiging voor het weer geven van de SERVER status is geweigerd voor het object {Server}, de data base {data base} | Deze fout treedt op als de gebruiker niet gemachtigd is om de migratie uit te voeren. Om het probleem op te lossen, raadpleegt u [Server machtigingen verlenen-Transact-SQL](/sql/t-sql/statements/grant-server-permissions-transact-sql?view=sql-server-2017) of [zelf studie: RDS SQL Server migreren naar Azure met behulp van DMS](./tutorial-rds-sql-server-azure-sql-and-managed-instance-online.md#prerequisites) voor meer informatie. |
+| **Fout: Server certificaat wordt niet vertrouwd.** Er is een verbinding met de server tot stand gebracht, maar vervolgens is er een fout opgetreden tijdens het aanmeldings proces. (provider: SSL-provider, fout: 0-de certificaat keten is uitgegeven door een niet-vertrouwde instantie.) | Deze fout treedt op als het gebruikte certificaat niet wordt vertrouwd. Om het probleem op te lossen, moet u een certificaat zoeken dat kan worden vertrouwd en het vervolgens inschakelen op de-server. U kunt ook de optie certificaat vertrouwen selecteren tijdens het verbinden. Voer deze actie alleen uit als u vertrouwd bent met het gebruikte certificaat en u deze vertrouwt. <br> TLS-verbindingen die zijn versleuteld met een zelfondertekend certificaat, bieden geen sterke beveiliging: ze zijn gevoelig voor man-in-the-middle-aanvallen. Vertrouw niet op TLS met zelfondertekende certificaten in een productie omgeving of op servers die zijn verbonden met internet. <br> Zie voor meer informatie [SSL gebruiken met een Microsoft SQL Server DB-exemplaar](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/SQLServer.Concepts.General.SSL.Using.html) of [zelf studie: migratie van RDS-SQL Server naar Azure met behulp van DMS](./index.yml). |
+| **Fout 300** -de gebruiker heeft niet de vereiste machtigingen. De machtiging voor het weer geven van de SERVER status is geweigerd voor het object {Server}, de data base {data base} | Deze fout treedt op als de gebruiker niet gemachtigd is om de migratie uit te voeren. Om het probleem op te lossen, raadpleegt u [Server machtigingen verlenen-Transact-SQL](/sql/t-sql/statements/grant-server-permissions-transact-sql?view=sql-server-2017) of [zelf studie: RDS SQL Server migreren naar Azure met behulp van DMS](./index.yml) voor meer informatie. |
 
 > [!NOTE]
 > Raadpleeg de volgende bronnen voor meer informatie over het oplossen van problemen met het maken van verbinding met een bron-AWS RDS SQL Server:
@@ -85,7 +85,7 @@ Mogelijke problemen met het maken van verbinding met een bron AWS RDS SQL Server
 
 ## <a name="known-issues"></a>Bekende problemen
 
-* [Bekende problemen/migratie beperkingen met online migraties naar Azure SQL Database](./known-issues-azure-sql-online.md)
+* [Bekende problemen/migratie beperkingen met online migraties naar Azure SQL Database](./index.yml)
 * [Bekende problemen/migratie beperkingen met online migraties naar Azure Database for MySQL](./known-issues-azure-mysql-online.md)
 * [Bekende problemen/migratie beperkingen met online migraties naar Azure Database for PostgreSQL](./known-issues-azure-postgresql-online.md)
 

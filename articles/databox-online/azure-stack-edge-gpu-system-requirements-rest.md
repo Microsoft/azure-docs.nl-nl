@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: conceptual
 ms.date: 10/21/2020
 ms.author: alkohli
-ms.openlocfilehash: 887aaf32592c74a5884916bc7ad63d79544fb554
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 7deba32eb9d0e098b75f98cc81fac2c01b8bb7f8
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "99575852"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105567250"
 ---
 # <a name="azure-stack-edge-blob-storage-requirements"></a>Vereisten voor Blob-opslag voor Azure Stack Edge
 
@@ -70,7 +70,7 @@ De PHP-client installeren via Composer:
 
 ## <a name="endpoint-declaration"></a>Eindpunt declaratie
 
-In de Azure Stack Edge Blob Storage SDK, het eind punt achtervoegsel- `<device serial number>.microsoftdatabox.com` -identificeert het domein Azure stack Edge. Ga voor meer informatie over het eind punt van de BLOB-service naar [gegevens overdragen via opslag accounts met Azure stack Edge Pro GPU](azure-stack-edge-j-series-deploy-add-storage-accounts.md).
+In de Azure Stack Edge Blob Storage SDK, het eind punt achtervoegsel- `<device serial number>.microsoftdatabox.com` -identificeert het domein Azure stack Edge. Ga voor meer informatie over het eind punt van de BLOB-service naar [gegevens overdragen via opslag accounts met Azure stack Edge Pro GPU](./azure-stack-edge-gpu-deploy-add-storage-accounts.md).
 
 
 ## <a name="examples"></a>Voorbeelden

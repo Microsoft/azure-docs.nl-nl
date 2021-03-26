@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: d1c2fd2ac7f809b4a70a0edffbddfb6e733fed57
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.openlocfilehash: b9a4c15c0942a0a5dffe2cfdb30dbea4184057ed
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104871398"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105565585"
 ---
 # <a name="media-services-v3-frequently-asked-questions"></a>Veelgestelde vragen over Media Services v3
 
@@ -31,7 +31,7 @@ In dit artikel vindt u antwoorden op veelgestelde vragen over Azure Media Servic
 - Klanten voegen hun eigen opslag accounts toe aan hun Azure Media Services-account.  Alle Asset-gegevens worden opgeslagen in deze gekoppelde opslag accounts en de klant beheert de locatie en het replicatie type van deze opslag.
 - Aanvullende gegevens die zijn gekoppeld aan het Media Services account (inclusief coderings sleutels voor inhoud, sleutels voor token verificatie, JobInputHttp url's en andere entiteits meta gegevens) worden opgeslagen in micro soft-opslag in eigendom binnen de regio die is geselecteerd voor het Media Services-account.
     - Vanwege de [vereisten voor gegevens locatie](https://azure.microsoft.com/global-infrastructure/data-residency/#more-information) in Brazilië-Zuid en Zuidoost-Azië, worden de extra account gegevens opgeslagen op een zone-redundante manier en bevinden zich in één regio. Voor Zuidoost-Azië worden alle extra account gegevens opgeslagen in Singapore en voor Brazilië-zuid worden de gegevens opgeslagen in Brazilië.
-    - In andere regio's dan Brazilië-zuid en Zuidoost-Azië kunnen de extra account gegevens ook worden opgeslagen in de opslag van micro soft in de [gekoppelde regio](https://docs.microsoft.com/azure/best-practices-availability-paired-regions).
+    - In andere regio's dan Brazilië-zuid en Zuidoost-Azië kunnen de extra account gegevens ook worden opgeslagen in de opslag van micro soft in de [gekoppelde regio](../../best-practices-availability-paired-regions.md).
 - Azure Media Services is een regionale service en biedt geen [hoge Beschik baarheid](media-services-high-availability-encoding.md) of gegevens replicatie. Klanten die deze functies nodig hebben, worden nadrukkelijk aangemoedigd om een oplossing te bouwen met behulp van Media Services accounts in meerdere regio's.  Een voor beeld waarin wordt getoond hoe u een oplossing bouwt voor hoge Beschik baarheid met Media Services video op aanvraag is beschikbaar als hand leiding.
 
 ### <a name="what-are-the-azure-portal-limitations-for-media-services-v3"></a>Wat zijn de Azure Portal beperkingen voor Media Services v3?

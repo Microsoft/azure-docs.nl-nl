@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/17/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 61e2813fdbb20610bc720e2deaff7d0a2a81a8b3
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 350ffc633268c7711b2a8f2246811b389f511cf4
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101740304"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105558207"
 ---
 # <a name="azure-security-baseline-for-expressroute"></a>Azure-beveiligings basislijn voor ExpressRoute
 
@@ -30,7 +30,7 @@ Als u wilt zien hoe ExpressRoute volledig is toegewezen aan de beveiligings benc
 
 **Hulp**: Schakel Diagnostische instellingen voor Azure-activiteiten logboek in en verzend de logboeken naar een log Analytics-werk ruimte, een Azure Event hub of een Azure-opslag account voor archivering. Activiteiten logboeken bieden inzicht in de bewerkingen die zijn uitgevoerd op uw Azure ExpressRoute-resources op het niveau van het besturings vlak. Met Azure-activiteiten logboek gegevens kunt u de ' What, wie en wanneer ' bepalen voor schrijf bewerkingen (PUT, POST, DELETE) die zijn uitgevoerd op het niveau van het besturings element van uw ExpressRoute-resources.
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](/azure/azure-monitor/platform/activity-log)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -40,7 +40,7 @@ Als u wilt zien hoe ExpressRoute volledig is toegewezen aan de beveiligings benc
 
 **Hulp**: Schakel Diagnostische instellingen voor Azure-activiteiten logboek in en verzend de logboeken naar een log Analytics-werk ruimte, een Azure Event hub of een Azure-opslag account voor archivering. Activiteiten logboeken bieden inzicht in de bewerkingen die zijn uitgevoerd op uw Azure ExpressRoute-resources op het niveau van het besturings vlak. Met Azure-activiteiten logboek gegevens kunt u de ' What, wie en wanneer ' bepalen voor schrijf bewerkingen (PUT, POST, DELETE) die zijn uitgevoerd op het niveau van het besturings element van uw ExpressRoute-resources.
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](/azure/azure-monitor/platform/activity-log)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -50,7 +50,7 @@ Als u wilt zien hoe ExpressRoute volledig is toegewezen aan de beveiligings benc
 
 **Richt lijnen**: stel in azure monitor de Bewaar periode voor logboek registratie In voor log Analytics werk ruimten die zijn gekoppeld aan uw Azure ExpressRoute-resources op basis van de nalevings voorschriften van uw organisatie.
 
-- [Para meters voor het bewaren van Logboeken instellen](/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period)
+- [Para meters voor het bewaren van Logboeken instellen](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Verantwoordelijkheid**: Klant
 
@@ -60,9 +60,9 @@ Als u wilt zien hoe ExpressRoute volledig is toegewezen aan de beveiligings benc
 
 **Hulp**: Schakel Diagnostische instellingen voor Azure-activiteiten logboek in en verzend de logboeken naar een log Analytics-werk ruimte. Voer query's uit in Log Analytics om zoek termen te zoeken, trends te identificeren, patronen te analyseren en veel andere inzichten te bieden op basis van de activiteiten logboek gegevens die mogelijk zijn verzameld voor Azure ExpressRoute.
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](/azure/azure-monitor/platform/activity-log)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
-- [Azure-activiteiten logboeken verzamelen en analyseren in Log Analytics werk ruimte in Azure Monitor](/azure/azure-monitor/platform/activity-log-collect)
+- [Azure-activiteiten logboeken verzamelen en analyseren in Log Analytics werk ruimte in Azure Monitor](../azure-monitor/essentials/activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -196,7 +196,7 @@ Daarnaast kunt u met Azure AD-risico detectie waarschuwingen en rapporten bekijk
 
 **Hulp**: Azure Active Directory (Azure AD) bevat logboeken waarmee u verouderde accounts kunt detecteren. Daarnaast kunt u Azure Identity Access revisies gebruiken om groepslid maatschappen en de toegang tot bedrijfs toepassingen en roltoewijzingen op efficiënte wijze te beheren. Gebruikers toegang kan regel matig worden gecontroleerd om ervoor te zorgen dat alleen de juiste gebruikers toegang hebben.
 
-- [Meer informatie over Azure AD-rapportage](/azure/active-directory/reports-monitoring/)
+- [Meer informatie over Azure AD-rapportage](../active-directory/reports-monitoring/index.yml)
 
 - [Beoordelingen over Azure Identity Access gebruiken](../active-directory/governance/access-reviews-overview.md)
 
@@ -212,7 +212,7 @@ U hebt toegang tot de Azure AD-aanmeldings activiteit, de controle-en risico geb
 
 U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-gebruikers accounts te maken en de audit logboeken en aanmeldings logboeken te verzenden naar een Log Analytics-werk ruimte. U kunt de gewenste logboek waarschuwingen configureren in Log Analytics.
 
-- [Azure-activiteitenlogboeken integreren in Azure Monitor](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+- [Azure-activiteitenlogboeken integreren in Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
 - [Azure-Sentinel aan de trein](../sentinel/quickstart-onboard.md)
 
@@ -262,7 +262,7 @@ Daarnaast kunnen partners die gebruikmaken van de ExpressRoute partner Resource 
 
 - [Gebruik Azure RBAC in de ExpressRoute-partner Resource Manager-API](cross-connections-api-development.md)
 
-- [Beheerders rollen in ExpressRoute begrijpen](https://docs.microsoft.com/azure/expressroute/expressroute-howto-linkvnet-portal-resource-manager#connect-a-vnet-to-a-circuit---different-subscription)
+- [Beheerders rollen in ExpressRoute begrijpen](./expressroute-howto-linkvnet-portal-resource-manager.md#connect-a-vnet-to-a-circuit---different-subscription)
 
 **Verantwoordelijkheid**: Klant
 
@@ -272,7 +272,7 @@ Daarnaast kunnen partners die gebruikmaken van de ExpressRoute partner Resource 
 
 **Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken wanneer wijzigingen worden aangebracht in productie-exemplaren van Azure ExpressRoute en andere essentiële of gerelateerde resources.
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](/azure/azure-monitor/platform/alerts-activity-log)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -290,7 +290,7 @@ Hoewel klassieke Azure-resources kunnen worden gedetecteerd via resource grafiek
 
 - [Query's maken met Azure resource Graph](../governance/resource-graph/first-query-portal.md)
 
-- [Uw Azure-abonnementen weer geven](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-4.8.0&amp;preserve-view=true)
+- [Uw Azure-abonnementen weer geven](/powershell/module/az.accounts/get-azsubscription?preserve-view=true&view=azps-4.8.0)
 
 - [Meer informatie over Azure RBAC](../role-based-access-control/overview.md)
 
@@ -343,7 +343,7 @@ Raadpleeg de volgende bronnen voor meer informatie:
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Een specifiek resource type weigeren met Azure Policy](https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#general)
+- [Een specifiek resource type weigeren met Azure Policy](../governance/policy/samples/built-in-policies.md#general)
 
 **Verantwoordelijkheid**: Klant
 
@@ -477,5 +477,5 @@ Daarnaast kunt u ook duidelijk abonnementen markeren (voor bijvoorbeeld producti
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Overzicht Azure Security Benchmark V2](/azure/security/benchmarks/overview)
-- Meer informatie over [Azure-beveiligingsbasislijnen](/azure/security/benchmarks/security-baselines-overview)
+- Zie [Overzicht Azure Security Benchmark V2](../security/benchmarks/overview.md)
+- Meer informatie over [Azure-beveiligingsbasislijnen](../security/benchmarks/security-baselines-overview.md)

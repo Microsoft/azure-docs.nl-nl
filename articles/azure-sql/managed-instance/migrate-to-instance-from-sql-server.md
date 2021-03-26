@@ -11,12 +11,12 @@ author: bonova
 ms.author: bonova
 ms.reviewer: ''
 ms.date: 07/11/2019
-ms.openlocfilehash: 49d37a5537ada260eae453bbb5f81716d42657a5
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: df0a28c4d2ba78e9b7a6b52e26537540164d28e0
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102565816"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105564276"
 ---
 # <a name="sql-server-instance-migration-to-azure-sql-managed-instance"></a>Migratie van SQL Server-exemplaren naar Azure SQL Managed instance
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -78,7 +78,7 @@ SELECT * FROM sys.table_types WHERE is_memory_optimized=1
 SELECT * FROM sys.sql_modules WHERE uses_native_compilation=1
 ```
 
-Zie [prestaties optimaliseren met in-Memory technologieën in Azure SQL database en Azure SQL Managed instance](https://docs.microsoft.com/azure/azure-sql/in-memory-oltp-overview) (Engelstalig) voor meer informatie over de technologieën in het geheugen.
+Zie [prestaties optimaliseren met in-Memory technologieën in Azure SQL database en Azure SQL Managed instance](../in-memory-oltp-overview.md) (Engelstalig) voor meer informatie over de technologieën in het geheugen.
 
 ### <a name="create-a-performance-baseline"></a>Een basis lijn voor prestaties maken
 

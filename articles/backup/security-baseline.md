@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/17/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 33408c65fdc09972807aaa8afdf123f1c39cfff5
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 0530baf5c198b5d82527cfb02c66765ec885bd94
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101700254"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105566707"
 ---
 # <a name="azure-security-baseline-for-azure-backup"></a>Azure-beveiligings basislijn voor Azure Backup
 
@@ -30,7 +30,7 @@ Als u wilt zien hoe Azure Backup volledig is toegewezen aan de beveiligings benc
 
 **Richt lijnen**: de eind punten die worden gebruikt door Azure backup (inclusief de Microsoft Azure Recovery Services agent) worden allemaal beheerd door micro soft. U bent verantwoordelijk voor alle extra besturings elementen die u wilt implementeren op uw on-premises systemen.
 
-- [Meer informatie over de ondersteuning van netwerken en toegang voor de MARS-agent](https://docs.microsoft.com/azure/backup/backup-support-matrix-mars-agent#networking-and-access-support)
+- [Meer informatie over de ondersteuning van netwerken en toegang voor de MARS-agent](./backup-support-matrix-mars-agent.md#networking-and-access-support)
 
 **Verantwoordelijkheid**: Klant
 
@@ -58,9 +58,9 @@ Als u wilt zien hoe Azure Backup volledig is toegewezen aan de beveiligings benc
 
 **Richt lijnen**: als u de Mars-agent gebruikt op een virtuele machine van Azure die wordt beveiligd door een netwerk beveiligings groep of Azure firewall, gebruikt u Azure-activiteiten logboek om de configuratie van de NSG of de firewall te bewaken. U kunt waarschuwingen maken binnen Azure Monitor die worden geactiveerd wanneer er wijzigingen in deze resources plaatsvinden.
 
-- [Activiteiten logboek gebeurtenissen van Azure bekijken en ophalen](/azure/azure-monitor/platform/activity-log#view-the-activity-log)
+- [Activiteiten logboek gebeurtenissen van Azure bekijken en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Waarschuwingen voor activiteiten logboek maken, weer geven en beheren met behulp van Azure Monitor](/azure/azure-monitor/platform/alerts-activity-log)
+- [Waarschuwingen voor activiteiten logboek maken, weer geven en beheren met behulp van Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -76,7 +76,7 @@ Als u wilt zien hoe Azure Backup volledig is toegewezen aan de beveiligings benc
 
 Neem ook opname logboeken via Azure Monitor op om beveiligings gegevens te verzamelen die zijn gegenereerd door Azure Backup. Gebruik in Azure Monitor Log Analytics-werk ruimten om analyses uit te voeren en te uitvoeren en gebruik opslag accounts voor lange termijn/archiverings opslag. U kunt ook on-board gegevens toevoegen aan Azure Sentinel of een beveiligings incident en gebeurtenis beheer van derden (SIEM).
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](/azure/azure-monitor/platform/activity-log)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
 - [Diagnostische instellingen gebruiken voor Recovery Services kluizen](backup-azure-diagnostic-events.md)
 
@@ -92,7 +92,7 @@ Neem ook opname logboeken via Azure Monitor op om beveiligings gegevens te verza
 
 Daarnaast verzendt Azure Backup diagnostische gebeurtenissen die kunnen worden verzameld en gebruikt voor analyse, waarschuwingen en rapportage. U kunt de diagnostische instellingen voor een Recovery Services kluis configureren via de Azure Portal. U kunt een of meer diagnostische gebeurtenissen verzenden naar een opslag account, Event hub of een Log Analytics-werk ruimte.
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](/azure/azure-monitor/platform/activity-log)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
 - [Diagnostische instellingen gebruiken voor Recovery Services kluizen](backup-azure-diagnostic-events.md)
 
@@ -104,7 +104,7 @@ Daarnaast verzendt Azure Backup diagnostische gebeurtenissen die kunnen worden v
 
 **Richt lijnen**: stel in azure monitor de Bewaar periode voor logboek registratie In voor log Analytics werk ruimten die zijn gekoppeld aan uw Azure Recovery Services-kluizen volgens de nalevings voorschriften van uw organisatie.
 
-- [Para meters voor het bewaren van Logboeken instellen](/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period)
+- [Para meters voor het bewaren van Logboeken instellen](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Verantwoordelijkheid**: Klant
 
@@ -118,9 +118,9 @@ Schakel Diagnostische instellingen voor Azure-activiteiten logboek in en verzend
 
 - [Bewaking Azure Backup werk belastingen](backup-azure-monitoring-built-in-monitor.md)
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](/azure/azure-monitor/platform/activity-log)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
-- [Azure-activiteiten logboeken verzamelen en analyseren in Log Analytics werk ruimte in Azure Monitor](/azure/azure-monitor/platform/activity-log)
+- [Azure-activiteiten logboeken verzamelen en analyseren in Log Analytics werk ruimte in Azure Monitor](../azure-monitor/essentials/activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -138,7 +138,7 @@ U kunt ook een Log Analytics werk ruimte onboarden naar Azure Sentinel, aangezie
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
-- [Logboek waarschuwingen maken, weer geven en beheren met behulp van Azure Monitor](/azure/azure-monitor/platform/alerts-log)
+- [Logboek waarschuwingen maken, weer geven en beheren met behulp van Azure Monitor](../azure-monitor/alerts/alerts-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -268,7 +268,7 @@ Daarnaast kunt u met Azure AD-risico detectie waarschuwingen en rapporten bekijk
 
 **Hulp**: Azure Active Directory (Azure AD) bevat logboeken waarmee u verouderde accounts kunt detecteren. Daarnaast kunt u Azure AD-toegangs beoordelingen gebruiken om groepslid maatschappen, toegang tot bedrijfs toepassingen en roltoewijzingen op efficiënte wijze te beheren. Gebruikers toegang moet regel matig worden gecontroleerd om ervoor te zorgen dat alleen de juiste gebruikers toegang hebben.
 
-- [Meer informatie over Azure AD-rapportage](/azure/active-directory/reports-monitoring/)
+- [Meer informatie over Azure AD-rapportage](../active-directory/reports-monitoring/index.yml)
 
 - [Azure AD-toegangs beoordelingen gebruiken](../active-directory/governance/access-reviews-overview.md)
 
@@ -284,7 +284,7 @@ U hebt toegang tot de Azure AD-aanmeldings activiteit, de controle-en risico geb
 
 U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-gebruikers accounts te maken en de audit logboeken en aanmeldings logboeken te verzenden naar een Log Analytics-werk ruimte. U kunt de gewenste logboek waarschuwingen configureren in Log Analytics.
 
-- [Azure-activiteitenlogboeken integreren in Azure Monitor](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+- [Azure-activiteitenlogboeken integreren in Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
 - [Azure-Sentinel aan de trein](../sentinel/quickstart-onboard.md)
 
@@ -310,7 +310,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 **Hulp**: momenteel niet beschikbaar; Klanten-lockbox wordt nog niet ondersteund voor Azure Backup.
 
-- [Lijst met door Klanten-lockbox ondersteunde services](https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview#supported-services-and-scenarios-in-general-availability)
+- [Lijst met door Klanten-lockbox ondersteunde services](../security/fundamentals/customer-lockbox-overview.md#supported-services-and-scenarios-in-general-availability)
 
 **Verantwoordelijkheid**: Klant
 
@@ -402,7 +402,7 @@ Wanneer u een back-up maakt van de MARS-agent of een Recovery Services kluis ver
 
 **Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken voor wanneer wijzigingen worden aangebracht in productie Azure Recovery Services kluizen, evenals andere essentiële of gerelateerde bronnen.
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](/azure/azure-monitor/platform/alerts-activity-log)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -418,7 +418,7 @@ Wanneer u een back-up maakt van de MARS-agent of een Recovery Services kluis ver
 
 Onderliggend platform gescand en bijgewerkt door micro soft. Bekijk beveiligings controles die beschikbaar zijn voor Azure Backup om beveiligings problemen met betrekking tot de service configuratie te verminderen.
 
-- [Informatie over beveiligings controles die beschikbaar zijn voor Azure Backup](/azure/backup/backup-security-controls)
+- [Informatie over beveiligings controles die beschikbaar zijn voor Azure Backup]()
 
 **Verantwoordelijkheid**: Klant
 
@@ -446,7 +446,7 @@ Hoewel klassieke Azure-resources kunnen worden gedetecteerd via resource grafiek
 
 - [Query's maken met Azure resource Graph](../governance/resource-graph/first-query-portal.md)
 
-- [Uw Azure-abonnementen weer geven](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-4.8.0&amp;preserve-view=true)
+- [Uw Azure-abonnementen weer geven](/powershell/module/az.accounts/get-azsubscription?preserve-view=true&view=azps-4.8.0)
 
 - [Meer informatie over Azure RBAC](../role-based-access-control/overview.md)
 
@@ -520,7 +520,7 @@ Meer informatie vindt u op de koppelingen waarnaar wordt verwezen.
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Een specifiek resource type weigeren met Azure Policy](https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#general)
+- [Een specifiek resource type weigeren met Azure Policy](../governance/policy/samples/built-in-policies.md#general)
 
 **Verantwoordelijkheid**: Klant
 
@@ -544,7 +544,7 @@ Meer informatie vindt u op de koppelingen waarnaar wordt verwezen.
 
 **Hulp**: Definieer en implementeer standaard beveiligings configuraties voor uw Recovery Services kluis met Azure Policy. Gebruik Azure Policy aliassen in de naam ruimte ' micro soft. Recovery Services ' om aangepaste beleids regels te maken om de configuratie van uw Recovery Services kluizen te controleren of af te dwingen.
 
-- [Beschik bare Azure Policy aliassen weer geven](https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-4.8.0&amp;preserve-view=true)
+- [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias?preserve-view=true&view=azps-4.8.0)
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
@@ -656,7 +656,7 @@ Back-ups van door de klant beheerde sleutels binnen Azure Key Vault.
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: de [Security Bench Mark van Azure](/home/mbaldwin/docs/asb/azure-docs-pr/articles/governance/policy/samples/azure-security-benchmark.md) is het standaard beleids initiatief voor Security Center en is de basis voor de [aanbevelingen van Security Center](/home/mbaldwin/docs/asb/azure-docs-pr/articles/security-center/security-center-recommendations.md). De Azure Policy definities die aan dit besturings element zijn gerelateerd, worden automatisch door Security Center ingeschakeld. Voor waarschuwingen met betrekking tot dit besturings element is mogelijk een [Azure Defender](/home/mbaldwin/docs/asb/azure-docs-pr/articles/security-center/azure-defender.md) -plan vereist voor de gerelateerde services.
+**Azure Security Center bewaking**: de [Security Bench Mark van Azure](/azure/governance/policy/samples/azure-security-benchmark) is het standaard beleids initiatief voor Security Center en is de basis voor de [aanbevelingen van Security Center](/azure/security-center/security-center-recommendations). De Azure Policy definities die aan dit besturings element zijn gerelateerd, worden automatisch door Security Center ingeschakeld. Voor waarschuwingen met betrekking tot dit besturings element is mogelijk een [Azure Defender](/azure/security-center/azure-defender) -plan vereist voor de gerelateerde services.
 
 **Ingebouwde definities Azure Policy-micro soft. Recovery Services**:
 
@@ -676,7 +676,7 @@ Back-ups van door de klant beheerde sleutels binnen Azure Key Vault.
 
 **Richt lijnen**: voor on-premises back-ups wordt versleuteling op rest verstrekt met behulp van de wachtwoordzin die u opgeeft wanneer u een back-up maakt naar Azure. Voot Azure-VM’s worden gegevens in rust versleuteld met behulp van SSE (Storage Service Encryption). U kunt zacht verwijderen inschakelen in Key Vault om sleutels te beschermen tegen onbedoelde of schadelijke verwijdering.
 
-- [Zacht verwijderen inschakelen in Key Vault](https://docs.microsoft.com/azure/storage/blobs/soft-delete-blob-overview?tabs=azure-portal)
+- [Zacht verwijderen inschakelen in Key Vault](../storage/blobs/soft-delete-blob-overview.md?tabs=azure-portal)
 
 **Verantwoordelijkheid**: Klant
 
@@ -772,5 +772,5 @@ Bovendien moet u de abonnementen duidelijk markeren en een naamgevings systeem m
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Overzicht Azure Security Benchmark V2](/azure/security/benchmarks/overview)
-- Meer informatie over [Azure-beveiligingsbasislijnen](/azure/security/benchmarks/security-baselines-overview)
+- Zie [Overzicht Azure Security Benchmark V2](../security/benchmarks/overview.md)
+- Meer informatie over [Azure-beveiligingsbasislijnen](../security/benchmarks/security-baselines-overview.md)

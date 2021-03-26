@@ -4,12 +4,12 @@ description: In dit artikel vindt u informatie over de bewakings-en meldings mog
 ms.topic: conceptual
 ms.date: 03/05/2019
 ms.assetid: 86ebeb03-f5fa-4794-8a5f-aa5cbbf68a81
-ms.openlocfilehash: 2273b66be88cb22a15d0779ed2918ba3d94da1ce
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 83ed5af00bb61d7a8929e710b52e60c33c0f479b
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101713368"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105559210"
 ---
 # <a name="monitoring-azure-backup-workloads"></a>Bewaking Azure Backup werk belastingen
 
@@ -130,7 +130,7 @@ Deze functie is momenteel beschikbaar voor Azure-data bases voor PostgreSQL-serv
 - Back-upfout (als u waarschuwingen wilt ontvangen voor een back-upfout, moet u de AFEC-markering met de naam **EnableAzureBackupJobFailureAlertsToAzureMonitor** registreren via de preview-Portal)
 - Fout bij het herstellen (als u waarschuwingen wilt ontvangen voor het herstellen is mislukt, moet u de AFEC-markering met de naam **EnableAzureBackupJobFailureAlertsToAzureMonitor** registreren via de preview-Portal)
 
-Zie [overzicht van waarschuwingen in azure](https://docs.microsoft.com/azure/azure-monitor/alerts/alerts-overview)voor meer informatie over Azure monitor waarschuwingen.
+Zie [overzicht van waarschuwingen in azure](../azure-monitor/alerts/alerts-overview.md)voor meer informatie over Azure monitor waarschuwingen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

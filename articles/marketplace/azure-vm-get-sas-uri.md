@@ -7,17 +7,17 @@ ms.topic: how-to
 author: iqshahmicrosoft
 ms.author: krsh
 ms.date: 03/10/2021
-ms.openlocfilehash: b8f5fbc076859be9f5ff5a215f92811d543ed7e4
-ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
+ms.openlocfilehash: 21ccafe3e15f902e35657a9aa31516bbaeb3b4c8
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104800105"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105558003"
 ---
 # <a name="how-to-generate-a-sas-uri-for-a-vm-image"></a>Een SAS-URI voor een VM-installatie kopie genereren
 
 > [!NOTE]
-> U hebt geen SAS-URI nodig om uw virtuele machine te publiceren. U kunt een afbeelding gewoon delen in het deel centrum. Raadpleeg [een virtuele machine maken met behulp van een goedgekeurde basis](https://docs.microsoft.com/azure/marketplace/azure-vm-create-using-approved-base) of [Maak een virtuele machine met behulp van uw eigen installatie kopie](https://docs.microsoft.com/azure/marketplace/azure-vm-create-using-own-image) -instructies.
+> U hebt geen SAS-URI nodig om uw virtuele machine te publiceren. U kunt een afbeelding gewoon delen in het deel centrum. Raadpleeg [een virtuele machine maken met behulp van een goedgekeurde basis](./azure-vm-create-using-approved-base.md) of [Maak een virtuele machine met behulp van uw eigen installatie kopie](./azure-vm-create-using-own-image.md) -instructies.
 
 Voor het genereren van SAS-Uri's voor uw Vhd's gelden de volgende vereisten:
 

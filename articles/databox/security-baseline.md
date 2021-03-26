@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/17/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 0a05a4692bb4a09213532ed29b2501f6b8056857
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 63b99cdeb7606798caa1b1d997dbb9f609c033b0
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101721987"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105562185"
 ---
 # <a name="azure-security-baseline-for-azure-data-box"></a>Azure-beveiligings basislijn voor Azure Data Box
 
@@ -88,7 +88,7 @@ U kunt bepalen wie toegang heeft tot uw bestelling wanneer de order voor het eer
 
 - [Azure RBAC voor werkmappen configureren](../sentinel/quickstart-get-visibility.md)
 
-- [Meer informatie over het instellen van toegangs beheer voor de order](https://docs.microsoft.com/azure/databox/data-box-logs#set-up-access-control-on-the-order)
+- [Meer informatie over het instellen van toegangs beheer voor de order](./data-box-logs.md#set-up-access-control-on-the-order)
 
 **Verantwoordelijkheid**: Klant
 
@@ -172,7 +172,7 @@ Daarnaast kunt u met Azure AD-risico detectie waarschuwingen en rapporten bekijk
 
 Voor het Data Box apparaat wordt dit niet in realtime ondersteund. U kunt de logboeken aan het einde van de taak bekijken.
 
-- [Meer informatie over Azure AD-rapportage](/azure/active-directory/reports-monitoring/)
+- [Meer informatie over Azure AD-rapportage](../active-directory/reports-monitoring/index.yml)
 
 - [Beoordelingen over Azure Identity Access gebruiken](../active-directory/governance/access-reviews-overview.md)
 
@@ -190,7 +190,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 Azure Data Box Service logboeken worden niet in Log Analytics werk ruimte geschreven.
 
-- [Azure-activiteitenlogboeken integreren in Azure Monitor](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+- [Azure-activiteitenlogboeken integreren in Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
 - [Azure-Sentinel aan de trein](../sentinel/quickstart-onboard.md)
 
@@ -216,7 +216,7 @@ Azure Data Box Service logboeken worden niet in Log Analytics werk ruimte geschr
 
 **Richt lijnen**: binnenkort beschikbaar. Klanten-lockbox wordt nog niet ondersteund voor Azure Data Box. 
 
-- [Lijst met door Klanten-lockbox ondersteunde services](https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview#supported-services-and-scenarios-in-general-availability)
+- [Lijst met door Klanten-lockbox ondersteunde services](../security/fundamentals/customer-lockbox-overview.md#supported-services-and-scenarios-in-general-availability)
 
 **Verantwoordelijkheid**: Klant
 
@@ -254,7 +254,7 @@ Azure Data Box Service logboeken worden niet in Log Analytics werk ruimte geschr
 
 - [Meer informatie over het aan de slag gaan met Azure Data Box](data-box-quickstart-portal.md)
 
-- [Meer informatie over het instellen van toegangs beheer](https://docs.microsoft.com/azure/databox/data-box-logs#set-up-access-control-on-the-order)
+- [Meer informatie over het instellen van toegangs beheer](./data-box-logs.md#set-up-access-control-on-the-order)
 
 **Verantwoordelijkheid**: Klant
 
@@ -281,7 +281,7 @@ Daarnaast beveiligt Azure Data Box de ontgrendelings sleutel van het apparaat (o
 
 **Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken voor wanneer er wijzigingen worden aangebracht in azure data box en andere kritieke of gerelateerde resources.
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](/azure/azure-monitor/platform/alerts-activity-log)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -459,5 +459,5 @@ Daarnaast kunt u ook duidelijk abonnementen markeren (voor bijvoorbeeld producti
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Overzicht Azure Security Benchmark V2](/azure/security/benchmarks/overview)
-- Meer informatie over [Azure-beveiligingsbasislijnen](/azure/security/benchmarks/security-baselines-overview)
+- Zie [Overzicht Azure Security Benchmark V2](../security/benchmarks/overview.md)
+- Meer informatie over [Azure-beveiligingsbasislijnen](../security/benchmarks/security-baselines-overview.md)

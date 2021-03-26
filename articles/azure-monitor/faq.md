@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/08/2020
-ms.openlocfilehash: 29cc0a3201b7c4ce1c685029de2a40f115b23e82
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: fa91644eab9d28ffb20de8ec8c0fe00488922b67
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104606953"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105563375"
 ---
 # <a name="azure-monitor-frequently-asked-questions"></a>Veelgestelde vragen over Azure Monitor
 
@@ -80,7 +80,7 @@ Azure Data Explorer is een snelle en zeer schaalbare service voor gegevensverken
 
 ### <a name="how-do-i-retrieve-log-data"></a>Hoe kan ik logboek gegevens ophalen?
 Alle gegevens worden opgehaald uit een Log Analytics-werk ruimte met behulp van een logboek query die is geschreven met Kusto query language (KQL). U kunt uw eigen query's schrijven of oplossingen en inzichten gebruiken die logboek query's bevatten voor een bepaalde toepassing of service. Zie [overzicht van logboek query's in azure monitor](logs/log-query-overview.md).
-p
+
 ### <a name="can-i-delete-data-from-a-log-analytics-workspace"></a>Kan ik gegevens verwijderen uit een Log Analytics-werk ruimte?
 Gegevens worden uit een werk ruimte verwijderd op basis van de [Bewaar periode](logs/manage-cost-storage.md#change-the-data-retention-period). U kunt specifieke gegevens verwijderen voor privacy-of nalevings redenen. Zie [persoonlijke gegevens exporteren en verwijderen](logs/personal-data-mgmt.md#how-to-export-and-delete-private-data) voor meer informatie.
 
@@ -828,26 +828,27 @@ Onder dit voor waarde wordt u gevraagd de optie **nu proberen** te kiezen wannee
 ## <a name="sql-insights-preview"></a>SQL Insights (preview-versie)
 
 ### <a name="what-versions-of-sql-server-are-supported"></a>Welke versies van SQL Server worden ondersteund?
-Zie [ondersteunde versies](insights/sql-insights-overview.md#supported-versions) voor ondersteunde versies van SQL.
+We ondersteunen SQL Server 2012 en alle nieuwere versies. Zie [ondersteunde versies](insights/sql-insights-overview.md#supported-versions) voor meer informatie.
 
 ### <a name="what-sql-resource-types-are-supported"></a>Welke SQL-resource typen worden ondersteund?
+- Azure SQL Database
+- Azure SQL Managed Instance
+- SQL Server op Azure Virtual Machines (SQL Server uitgevoerd op virtuele machines die zijn geregistreerd bij de [SQL virtual machine](../azure-sql/virtual-machines/windows/sql-agent-extension-manually-register-single-vm.md) provider)
+- Azure-Vm's (SQL Server die worden uitgevoerd op virtuele machines die niet zijn geregistreerd bij de SQL-provider voor [virtuele](../azure-sql/virtual-machines/windows/sql-agent-extension-manually-register-single-vm.md) machines)
 
-- Azure SQL Database. Alleen één data base, geen data bases in een Elastische pool.
-- Azure SQL Managed Instance 
-- Virtuele Azure SQL-machines ([Windows](../azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md#get-started-with-sql-server-vms), [Linux](../azure-sql/virtual-machines/linux/sql-server-on-linux-vm-what-is-iaas-overview.md#create)) en virtuele azure-machines waarop SQL Server is geïnstalleerd.
+Zie [ondersteunde versies](insights/sql-insights-overview.md#supported-versions) voor meer informatie en voor meer informatie over scenario's zonder ondersteuning of beperkte ondersteuning.
 
-### <a name="what-operating-systems-for-the-machine-running-sql-server-are-supported"></a>Welke besturings systemen voor de computer met SQL Server worden ondersteund?
-Elk besturings systeem dat ondersteunde versies van SQL ondersteunt.
+### <a name="what-operating-systems-for-the-virtual-machine-running-sql-server-are-supported"></a>Welke besturings systemen voor de virtuele machine met SQL Server worden ondersteund?
+We ondersteunen alle besturings systemen die zijn opgegeven door de [Windows](../azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md#get-started-with-sql-server-vms) -en [Linux](../azure-sql/virtual-machines/linux/sql-server-on-linux-vm-what-is-iaas-overview.md#create) -documentatie voor SQL Server op Azure virtual machines.
 
-### <a name="what-operating-system-for-the-remote-monitoring-server-are-supported"></a>Welk besturings systeem voor de server voor externe bewaking wordt ondersteund?
+### <a name="what-operating-system-for-the-monitoring-virtual-machine-are-supported"></a>Welk besturings systeem voor de virtuele bewakings machine wordt ondersteund?
+Ubuntu 18,04 is momenteel het enige besturings systeem dat wordt ondersteund voor de bewaking van de virtuele machine.
 
-Ubuntu 18,04 is momenteel het enige besturings systeem dat wordt ondersteund.
-
-### <a name="where-will-the-monitoring-data-be-stored-in-log-analytics"></a>Waar worden de bewakings gegevens opgeslagen in Log Analytics 
-Alle bewakings gegevens worden opgeslagen in de tabel **InsightsMetrics** . De kolom **Origin** heeft de waarde *Solutions.AZM.MS/Telegraf/SqlInsights*. De kolom **naam ruimte** heeft waarden die beginnen met *sqlserver_*.
+### <a name="where-will-the-monitoring-data-be-stored-in-log-analytics"></a>Waar worden de bewakings gegevens opgeslagen in Log Analytics?
+Alle bewakings gegevens worden opgeslagen in de tabel **InsightsMetrics** . De kolom **oorsprong** bevat de waarde `solutions.azm.ms/telegraf/SqlInsights` . De kolom **naam ruimte** heeft waarden die beginnen met `sqlserver_` .
 
 ### <a name="how-often-is-data-collected"></a>Hoe vaak worden gegevens verzameld? 
-Bekijk [gegevens die worden verzameld door SQL Insights](../insights/../azure-monitor/insights/sql-insights-overview.md#data-collected-by-sql-insights) voor meer informatie over de frequentie waarmee verschillende gegevens worden verzameld.
+De frequentie van het verzamelen van gegevens is aanpasbaar. Zie [gegevens die worden verzameld door SQL Insights](../insights/../azure-monitor/insights/sql-insights-overview.md#data-collected-by-sql-insights) voor meer informatie over de standaard frequenties en Zie [SQL-bewakings profiel maken](../insights/../azure-monitor/insights/sql-insights-enable.md#create-sql-monitoring-profile) voor instructies over het aanpassen van frequenties. 
 
 ## <a name="next-steps"></a>Volgende stappen
 Als uw vraag hier niet wordt beantwoord, kunt u de volgende forums raadplegen voor aanvullende vragen en antwoorden.

@@ -12,12 +12,12 @@ ms.reviewer: douglasl
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 03/05/2021
-ms.openlocfilehash: 2744d51b6d68ed494050be10a9f0e4d1f59cdc49
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: a426ee39ba3c0f50b9a6c1fb9c7de1ef8e7291b2
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102204062"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105566350"
 ---
 # <a name="configure-azure-ssis-integration-runtime-for-business-continuity-and-disaster-recovery-bcdr"></a>Azure-SSIS Integration runtime configureren voor bedrijfs continuïteit en herstel na nood gevallen (BCDR) 
 
@@ -25,7 +25,7 @@ ms.locfileid: "102204062"
 
 Azure SQL Database/Managed instance en SQL Server Integration Services (SSIS) in Azure Data Factory (ADF) kunnen worden gecombineerd als de aanbevolen PaaS-oplossing (all-platform as a Service) voor SQL Server migratie. U kunt uw SSIS-projecten implementeren in SSIS Catalog data base (SSISDB) die wordt gehost door Azure SQL Database/beheerd exemplaar en uw SSIS-pakketten uitvoeren op Azure SSIS Integration runtime (IR) in ADF.
 
-Voor bedrijfs continuïteit en herstel na nood gevallen (BCDR) kan Azure SQL Database/beheerd exemplaar worden geconfigureerd met een [geo-replicatie/failover-groep](https://docs.microsoft.com/azure/azure-sql/database/auto-failover-group-overview), waarbij SSISDB in een primaire Azure-regio met lees-en schrijf toegang (primaire rol) voortdurend wordt gerepliceerd naar een secundaire regio met alleen-lezen toegang (secundaire rol). Wanneer een nood situatie optreedt in de primaire regio, wordt een failover geactiveerd, waarbij de primaire en secundaire SSISDBs rollen zullen wisselen.
+Voor bedrijfs continuïteit en herstel na nood gevallen (BCDR) kan Azure SQL Database/beheerd exemplaar worden geconfigureerd met een [geo-replicatie/failover-groep](../azure-sql/database/auto-failover-group-overview.md), waarbij SSISDB in een primaire Azure-regio met lees-en schrijf toegang (primaire rol) voortdurend wordt gerepliceerd naar een secundaire regio met alleen-lezen toegang (secundaire rol). Wanneer een nood situatie optreedt in de primaire regio, wordt een failover geactiveerd, waarbij de primaire en secundaire SSISDBs rollen zullen wisselen.
 
 Voor BCDR kunt u ook een Dual standby-Azure SSIS IR-paar configureren dat wordt gesynchroniseerd met de failovergroep Azure SQL Database/Managed instance. Op die manier kunt u een combi natie van een Azure-SSIS-IRs die op elk gewenst moment toegang heeft tot de primaire SSISDB om pakketten op te halen en uit te voeren, evenals logboeken voor het uitvoeren van pakket uitvoer (primaire rol), terwijl de andere alleen hetzelfde kan doen voor pakketten die elders worden geïmplementeerd, bijvoorbeeld Azure Files (secundaire rol). Wanneer er een SSISDB-failover optreedt, worden de primaire en secundaire Azure-SSIS-IRs ook gebruikt om rollen te wisselen en als beide worden uitgevoerd, is er bijna nul uitval tijd.
 
@@ -39,7 +39,7 @@ Voer de volgende stappen uit als u een dubbele stand-by Azure-SSIS IR-paar wilt 
 
    Wanneer u [selecteert om SSISDB te gebruiken](./tutorial-deploy-ssis-packages-azure.md#creating-ssisdb) op de pagina **implementatie-instellingen** van het deel venster Setup van **Integration runtime** , selecteert u ook het selectie vakje **dubbele stand-by Azure-SSIS Integration runtime koppelen met SSISDB-failover** . Voer bij **dubbele stand-by-koppelings naam** een naam in om uw paar primaire en secundaire Azure-SSIS-IRs te identificeren. Wanneer u klaar bent met het maken van uw primaire Azure-SSIS IR, wordt het gestart en gekoppeld aan een primaire SSISDB die namens u wordt gemaakt met lees-/schrijftoegang. Als u het zojuist hebt geconfigureerd, moet u het opnieuw starten.
 
-1. Met Azure Portal kunt u controleren of de primaire SSISDB is gemaakt op de **overzichts** pagina van de primaire Azure SQL database-server. Zodra de app is gemaakt, kunt u [een failovergroep voor de primaire en secundaire Azure SQL database servers maken en SSISDB toevoegen aan de groep](https://docs.microsoft.com/azure/azure-sql/database/failover-group-add-single-database-tutorial?tabs=azure-portal#2---create-the-failover-group) op de pagina **failover-groepen** . Als uw failovergroep is gemaakt, kunt u controleren of de primaire SSISDB is gerepliceerd naar een secundaire-server met alleen-lezen toegang op de pagina **overzicht** van de secundaire Azure SQL database-servers.
+1. Met Azure Portal kunt u controleren of de primaire SSISDB is gemaakt op de **overzichts** pagina van de primaire Azure SQL database-server. Zodra de app is gemaakt, kunt u [een failovergroep voor de primaire en secundaire Azure SQL database servers maken en SSISDB toevoegen aan de groep](../azure-sql/database/failover-group-add-single-database-tutorial.md?tabs=azure-portal#2---create-the-failover-group) op de pagina **failover-groepen** . Als uw failovergroep is gemaakt, kunt u controleren of de primaire SSISDB is gerepliceerd naar een secundaire-server met alleen-lezen toegang op de pagina **overzicht** van de secundaire Azure SQL database-servers.
 
 1. Met behulp van Azure Portal/ADF-gebruikers interface kunt u een andere Azure-SSIS IR met uw secundaire Azure SQL Database-Server maken om SSISDB in de secundaire regio te hosten. Dit is uw secundaire Azure-SSIS IR. Zorg ervoor dat alle resources waarvan het afhankelijk is, zijn gemaakt in de secundaire regio, bijvoorbeeld Azure Storage voor het opslaan van aangepaste Setup-scripts/-bestanden, ADF voor het implementeren van het pakket en het plannen van pakketten, enzovoort.
 
@@ -51,13 +51,13 @@ Voer de volgende stappen uit als u een dubbele stand-by Azure-SSIS IR-paar wilt 
 
 1. Als u [ADF gebruikt voor het indelen/plannen van pakket uitvoeringen](./how-to-invoke-ssis-package-ssis-activity.md), moet u ervoor zorgen dat alle relevante ADF-pijp lijnen met activiteiten voor het uitvoeren van SSIS-pakketten en de bijbehorende triggers worden gekopieerd naar uw secundaire ADF, waarbij de triggers in eerste instantie zijn uitgeschakeld. Wanneer er een SSISDB-failover optreedt, moet u deze inschakelen.
 
-1. U kunt [uw Azure SQL database-failovergroep testen](https://docs.microsoft.com/azure/azure-sql/database/failover-group-add-single-database-tutorial?tabs=azure-portal#3---test-failover) en op [Azure-SSIS IR controle pagina in de ADF-Portal](./monitor-integration-runtime.md#monitor-the-azure-ssis-integration-runtime-in-azure-portal) controleren of uw primaire en secundaire Azure-SSIS-IRs rollen hebben gewisseld. 
+1. U kunt [uw Azure SQL database-failovergroep testen](../azure-sql/database/failover-group-add-single-database-tutorial.md?tabs=azure-portal#3---test-failover) en op [Azure-SSIS IR controle pagina in de ADF-Portal](./monitor-integration-runtime.md#monitor-the-azure-ssis-integration-runtime-in-azure-portal) controleren of uw primaire en secundaire Azure-SSIS-IRs rollen hebben gewisseld. 
 
 ## <a name="configure-a-dual-standby-azure-ssis-ir-pair-with-azure-sql-managed-instance-failover-group"></a>Een dubbele stand-by Azure-SSIS IR-set configureren met een failovergroep voor Azure SQL Managed instance
 
 Voer de volgende stappen uit als u een dubbele stand-by Azure-SSIS IR-koppeling wilt configureren die wordt gesynchroniseerd met de failovergroep van een Azure SQL Managed instance-groep.
 
-1. Met Azure Portal kunt u [een failovergroep voor uw primaire en secundaire Azure SQL Managed instances maken](https://docs.microsoft.com/azure/azure-sql/managed-instance/failover-group-add-instance-tutorial?tabs=azure-portal) op de pagina **failover-groepen** van uw primaire Azure SQL Managed instance.
+1. Met Azure Portal kunt u [een failovergroep voor uw primaire en secundaire Azure SQL Managed instances maken](../azure-sql/managed-instance/failover-group-add-instance-tutorial.md?tabs=azure-portal) op de pagina **failover-groepen** van uw primaire Azure SQL Managed instance.
 
 1. Met de Azure Portal/ADF-gebruikers interface kunt u een nieuwe Azure-SSIS IR maken met uw primaire Azure SQL Managed instance om SSISDB te hosten in de primaire regio. Als u een bestaande Azure-SSIS IR hebt die al is gekoppeld aan SSIDB die wordt gehost door uw primaire Azure SQL Managed instance en deze nog steeds wordt uitgevoerd, moet u deze eerst stoppen om deze opnieuw te configureren. Dit is uw primaire Azure-SSIS IR.
 
@@ -112,7 +112,7 @@ Voer de volgende stappen uit als u een dubbele stand-by Azure-SSIS IR-koppeling 
 
 1. Als u [ADF gebruikt voor het indelen/plannen van pakket uitvoeringen](./how-to-invoke-ssis-package-ssis-activity.md), moet u ervoor zorgen dat alle relevante ADF-pijp lijnen met activiteiten voor het uitvoeren van SSIS-pakketten en de bijbehorende triggers worden gekopieerd naar uw secundaire ADF, waarbij de triggers in eerste instantie zijn uitgeschakeld. Wanneer er een SSISDB-failover optreedt, moet u deze inschakelen.
 
-1. U kunt [de failovergroep voor uw Azure SQL Managed instance testen](https://docs.microsoft.com/azure/azure-sql/managed-instance/failover-group-add-instance-tutorial?tabs=azure-portal#test-failover) en op [Azure-SSIS IR bewakings pagina in de ADF-Portal](./monitor-integration-runtime.md#monitor-the-azure-ssis-integration-runtime-in-azure-portal) controleren of uw primaire en secundaire Azure-SSIS-IRs rollen hebben gewisseld. 
+1. U kunt [de failovergroep voor uw Azure SQL Managed instance testen](../azure-sql/managed-instance/failover-group-add-instance-tutorial.md?tabs=azure-portal#test-failover) en op [Azure-SSIS IR bewakings pagina in de ADF-Portal](./monitor-integration-runtime.md#monitor-the-azure-ssis-integration-runtime-in-azure-portal) controleren of uw primaire en secundaire Azure-SSIS-IRs rollen hebben gewisseld. 
 
 ## <a name="attach-a-new-azure-ssis-ir-to-existing-ssisdb-hosted-by-azure-sql-databasemanaged-instance"></a>Een nieuwe Azure-SSIS IR koppelen aan bestaande SSISDB die worden gehost door Azure SQL Database/beheerd exemplaar
 

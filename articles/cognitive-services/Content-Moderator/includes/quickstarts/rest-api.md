@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: include
 ms.date: 12/08/2020
 ms.author: pafarley
-ms.openlocfilehash: 1904b9aab80fbda5b774a5cd02d0adefac61deea
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.openlocfilehash: 747f97e54dbe10ca055281c189c805e3dd97c867
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105027978"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105582831"
 ---
 Ga aan de slag met de Azure Content Moderator-REST API. 
 
@@ -32,7 +32,7 @@ Gebruik de Content Moderator-REST API voor:
 * Zodra u een Azure-abonnement hebt, kunt u <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesContentModerator"  title="Een Content Moderator-resource maken"  target="_blank">een Content Moderator-resource maken </a> in Azure Portal om uw sleutel en eindpunt op te halen. Wacht tot deze is geïmplementeerd en klik op de knop **Naar de resource gaan**.
     * U hebt de sleutel en het eindpunt nodig van de resource die u maakt, om de toepassing te verbinden met Content Moderator. Later in de quickstart plakt u uw sleutel en eindpunt in de onderstaande code.
     * U kunt de gratis prijscategorie (`F0`) gebruiken om de service uit te proberen, en later upgraden naar een betaalde laag voor productie.
-* [Power shell versie 6.0 +](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows), of een vergelijk bare opdracht regel toepassing.
+* [Power shell versie 6.0 +](/powershell/scripting/install/installing-powershell-core-on-windows), of een vergelijk bare opdracht regel toepassing.
 
 
 ## <a name="moderate-text"></a>Tekst modereren

@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 02/18/2020
-ms.openlocfilehash: 1c187ae83ce87c9d4d8da4aa1a5dc38163261b52
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.openlocfilehash: 529bc5468c74ac9d50f64decad29fd070a7bda83
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105024894"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105566928"
 ---
 # <a name="migration-overview-sql-server-to-azure-sql-managed-instance"></a>Migratie overzicht: SQL Server naar Azure SQL Managed instance
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlmi.md)]
@@ -90,7 +90,7 @@ De volgende tabel bevat de aanbevolen migratie hulpprogramma's:
 
 |Technologie | Beschrijving|
 |---------|---------|
-| [Azure Migrate](/azure/migrate/how-to-create-azure-sql-assessment) | Met Azure Migrate voor Azure SQL kunt u uw SQL-gegevens op schaal ontdekken en beoordelen in VMware, met aanbevelingen voor de implementatie van Azure SQL, doel grootte en maandelijkse schattingen. | 
+| [Azure Migrate](../../../migrate/how-to-create-azure-sql-assessment.md) | Met Azure Migrate voor Azure SQL kunt u uw SQL-gegevens op schaal ontdekken en beoordelen in VMware, met aanbevelingen voor de implementatie van Azure SQL, doel grootte en maandelijkse schattingen. | 
 |[Azure Database Migration Service (DMS)](../../../dms/tutorial-sql-server-to-managed-instance.md)  | Azure-service van de eerste partij die migratie in de offline modus ondersteunt voor toepassingen die downtime tijdens het migratie proces kunnen veroorloven. In tegens telling tot de continue migratie in de online modus, voert migratie van de offline modus eenmalige herstel van een volledige database back-up uit van de bron naar het doel. | 
 |[Systeem eigen back-up en herstel](../../managed-instance/restore-sample-database-quickstart.md) | SQL Managed instance biedt ondersteuning voor herstel van systeem eigen SQL Server database back-ups (. bak-bestanden), waardoor het de eenvoudigste migratie optie is voor klanten die volledige database back-ups naar Azure Storage kunnen leveren. Volledige en differentiële back-ups worden ook ondersteund en beschreven in de [sectie migratie-assets](#migration-assets) verderop in dit artikel.| 
 |[Replay-service voor logboeken (LRS)](../../managed-instance/log-replay-service-migrate.md) | Dit is een Cloud service die is ingeschakeld voor beheerde exemplaren op basis van de SQL Server technieken voor het vastleggen van logboek bestanden, waardoor het een migratie optie is voor klanten die volledige, differentiële en logboek database back-ups kunnen bieden in azure Storage. LRS wordt gebruikt om back-upbestanden van Azure Blob Storage te herstellen naar een door SQL beheerd exemplaar.| 
@@ -212,7 +212,7 @@ SELECT * FROM sys.table_types WHERE is_memory_optimized=1
 SELECT * FROM sys.sql_modules WHERE uses_native_compilation=1
 ```
 
-Zie [prestaties optimaliseren met in-Memory technologieën in Azure SQL database en Azure SQL Managed instance](https://docs.microsoft.com/azure/azure-sql/in-memory-oltp-overview) (Engelstalig) voor meer informatie over de technologieën in het geheugen.
+Zie [prestaties optimaliseren met in-Memory technologieën in Azure SQL database en Azure SQL Managed instance](../../in-memory-oltp-overview.md) (Engelstalig) voor meer informatie over de technologieën in het geheugen.
 
 ## <a name="leverage-advanced-features"></a>Geavanceerde functies gebruiken 
 
@@ -228,7 +228,7 @@ Sommige functies zijn alleen beschikbaar als het [compatibiliteits niveau van de
 
 Raadpleeg de volgende bronnen die zijn ontwikkeld voor de echte wereld wijde migratie projecten voor meer hulp.
 
-|Asset  |Beschrijving  |
+|Asset  |Description  |
 |---------|---------|
 |[Beoordelings model en hulp programma voor gegevens workload](https://github.com/Microsoft/DataMigrationTeam/tree/master/Data%20Workload%20Assessment%20Model%20and%20Tool)| Dit hulp programma biedt voorgestelde ' Best passend ' doel platformen, Cloud gereedheids en toepassings-en database herstel niveau voor een bepaalde werk belasting. U kunt met één klik berekeningen en rapporten genereren waarmee u grote voor-en hand-evaluaties versnelt door het besluitvormings proces voor een geautomatiseerd en uniform doel platform te bieden.|
 |[Hulp programma DBLoader](https://github.com/microsoft/DataMigrationTeam/tree/master/DBLoader%20Utility)|De DBLoader kan worden gebruikt voor het laden van gegevens uit tekst bestanden met scheidings tekens naar SQL Server. Dit Windows-console hulpprogramma maakt gebruik van de SQL Server Native Client bulkload-interface, die werkt op alle versies van SQL Server, waaronder Azure SQL MI.|

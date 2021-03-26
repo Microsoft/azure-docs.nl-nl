@@ -3,12 +3,12 @@ title: Azure Backup-rapporten configureren
 description: Rapporten voor Azure Backup configureren en weer geven met behulp van Log Analytics en Azure-werkmappen
 ms.topic: conceptual
 ms.date: 02/10/2020
-ms.openlocfilehash: e9f3d9dfa33e71d827a338258001f2b52af62b06
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 0720af0848aa8263587dfd9573d205abf73303d4
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102509358"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105562321"
 ---
 # <a name="configure-azure-backup-reports"></a>Azure Backup-rapporten configureren
 
@@ -148,7 +148,7 @@ Er zijn twee soorten beleids beschik bare weer gaven beschikbaar:
 
 * **Inachtneming van het beleid voor de tijds periode**: in deze weer gave kunt u bepalen hoeveel items ten minste één geslaagde back-up hebben gehad in een bepaalde dag en hoeveel er in die dag geen geslaagde back-up is gemaakt. U kunt klikken op een rij om details weer te geven van alle back-uptaken die op de geselecteerde dag zijn geactiveerd. Houd er rekening mee dat als u het tijds bereik verhoogt naar een grotere waarde, zoals de laatste 60 dagen, het raster wordt weer gegeven in een wekelijkse weer gave en wordt het aantal items weer gegeven met ten minste één geslaagde back-up op elke dag in de opgegeven week. Op dezelfde manier is er een maandelijkse weer gave voor grotere Peri Oden.
 
-In het geval van items die wekelijks worden opgeslagen, kunt u met dit raster alle items identificeren waarvoor ten minste één geslaagde back-up in de opgegeven week. Voor een groter tijds bereik, zoals de laatste 120 dagen, wordt het raster weer gegeven in de maand weergave en wordt het aantal items weer gegeven met ten minste één geslaagde back-up in elke week in de opgegeven maand. Raadpleeg [conventies die in back-uprapporten worden gebruikt](https://docs.microsoft.com/azure/backup/configure-reports#conventions-used-in-backup-reports) voor meer informatie over dagelijkse, wekelijkse en maandelijkse weer gaven.
+In het geval van items die wekelijks worden opgeslagen, kunt u met dit raster alle items identificeren waarvoor ten minste één geslaagde back-up in de opgegeven week. Voor een groter tijds bereik, zoals de laatste 120 dagen, wordt het raster weer gegeven in de maand weergave en wordt het aantal items weer gegeven met ten minste één geslaagde back-up in elke week in de opgegeven maand. Raadpleeg [conventies die in back-uprapporten worden gebruikt](#conventions-used-in-backup-reports) voor meer informatie over dagelijkse, wekelijkse en maandelijkse weer gaven.
 
 ![Inachtneming van het beleid voor de tijds periode](./media/backup-azure-configure-backup-reports/policy-adherence-by-time-period.png)
 
@@ -166,7 +166,7 @@ Zodra de logische app is gemaakt, moet u verbindingen met Azure Monitor-logboeke
 
 Back-uprapporten gebruiken [systeem functies in azure monitor logboeken](backup-reports-system-functions.md). Deze functies werken op gegevens in de onbewerkte Azure Backup tabellen in LA en retour neren gegevens die u helpen bij het ophalen van gegevens van al uw back-upentiteiten, met behulp van eenvoudige query's. 
 
-Als u uw eigen rapport werkmappen wilt maken met behulp van back-uprapporten als basis, kunt u naar back-uprapporten gaan, op **bewerken** boven aan het rapport klikken en de query's weer geven/bewerken die in de rapporten worden gebruikt. Raadpleeg de [documentatie van Azure Workbooks](https://docs.microsoft.com/azure/azure-monitor/visualize/workbooks-overview) voor meer informatie over het maken van aangepaste rapporten. 
+Als u uw eigen rapport werkmappen wilt maken met behulp van back-uprapporten als basis, kunt u naar back-uprapporten gaan, op **bewerken** boven aan het rapport klikken en de query's weer geven/bewerken die in de rapporten worden gebruikt. Raadpleeg de [documentatie van Azure Workbooks](../azure-monitor/visualize/workbooks-overview.md) voor meer informatie over het maken van aangepaste rapporten. 
 
 ## <a name="export-to-excel"></a>Exporteren naar Excel
 

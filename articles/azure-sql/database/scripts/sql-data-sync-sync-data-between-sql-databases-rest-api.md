@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/12/2019
-ms.openlocfilehash: ef2823b870f76922dd0dc157341aea9b502fb4bb
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: d3ff8114c11b224a0bdbb0bd2d0e5686a7e57b55
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103565536"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105565881"
 ---
 # <a name="use-rest-api-to-sync-data-between-multiple-databases"></a>REST API gebruiken om gegevens te synchroniseren tussen meerdere data bases 
 
@@ -31,7 +31,7 @@ Zie [Gegevens synchroniseren tussen meerdere cloud- en on-premises databases met
 
 ## <a name="create-sync-group"></a>Synchronisatiegroep maken
 
-Gebruik de sjabloon [maken of bijwerken](https://docs.microsoft.com/rest/api/sql/syncgroups/createorupdate) om een synchronisatie groep te maken.
+Gebruik de sjabloon [maken of bijwerken](/rest/api/sql/syncgroups/createorupdate) om een synchronisatie groep te maken.
  
 Wanneer u een synchronisatie groep maakt, moet u het synchronisatie schema (table\column) niet door geven en niet door geven in masterSyncMemberName, omdat de synchronisatie groep op dit moment nog geen table\column-informatie heeft.
 
@@ -91,7 +91,7 @@ Status code: 201
 
 ## <a name="create-sync-member"></a>Sync-lid maken
 
-Gebruik de sjabloon [maken of bijwerken](https://docs.microsoft.com/rest/api/sql/syncmembers/createorupdate) om een synchronisatie lid te maken.
+Gebruik de sjabloon [maken of bijwerken](/rest/api/sql/syncmembers/createorupdate) om een synchronisatie lid te maken.
 
 Voorbeeld aanvraag voor het maken van een Sync-lid:
 
@@ -151,7 +151,7 @@ Status code: 201
 
 Wanneer de synchronisatie groep is gemaakt, vernieuwt u het schema met behulp van de volgende sjablonen.
 
-Gebruik de sjabloon voor het vernieuwen van een [hub](https://docs.microsoft.com/rest/api/sql/syncgroups/refreshhubschema)  om het schema voor de hub-data base te vernieuwen. 
+Gebruik de sjabloon voor het vernieuwen van een [hub](/rest/api/sql/syncgroups/refreshhubschema)  om het schema voor de hub-data base te vernieuwen. 
 
 Voorbeeld aanvraag voor het vernieuwen van een hub-database schema: 
 
@@ -165,17 +165,17 @@ Status code: 200
 
 Status code: 202
 
-Gebruik de [List hub schemas](https://docs.microsoft.com/rest/api/sql/syncgroups/listhubschemas) -sjabloon om het hub-database schema weer te geven. 
+Gebruik de [List hub schemas](/rest/api/sql/syncgroups/listhubschemas) -sjabloon om het hub-database schema weer te geven. 
 
-Gebruik de [schema sjabloon lid vernieuwen](https://docs.microsoft.com/rest/api/sql/syncmembers/refreshmemberschema) om het schema van het member-data base te vernieuwen. 
+Gebruik de [schema sjabloon lid vernieuwen](/rest/api/sql/syncmembers/refreshmemberschema) om het schema van het member-data base te vernieuwen. 
 
-Gebruik de [lijst met leden schema's](https://docs.microsoft.com/rest/api/sql/syncmembers/listmemberschemas) om het data base-schema van de lijst weer te geven. 
+Gebruik de [lijst met leden schema's](/rest/api/sql/syncmembers/listmemberschemas) om het data base-schema van de lijst weer te geven. 
 
 Ga pas verder met de volgende stap wanneer het schema is vernieuwd. 
 
 ## <a name="update-sync-group"></a>Synchronisatie groep bijwerken 
 
-Gebruik de sjabloon [maken of bijwerken](https://docs.microsoft.com/rest/api/sql/syncgroups/createorupdate) om uw synchronisatie groep bij te werken.
+Gebruik de sjabloon [maken of bijwerken](/rest/api/sql/syncgroups/createorupdate) om uw synchronisatie groep bij te werken.
 
 Werk de synchronisatie groep bij door het synchronisatie schema op te geven. Neem uw schema en masterSyncMemberName op. Dit is de naam die het schema bevat dat u wilt gebruiken. 
 
@@ -232,7 +232,7 @@ Voorbeeld antwoord voor het bijwerken van de synchronisatie groep:
 ```
 ## <a name="update-sync-member"></a>Synchronisatie lid bijwerken
 
-Gebruik de sjabloon [maken of bijwerken](https://docs.microsoft.com/rest/api/sql/syncmembers/createorupdate) om het Sync-lid bij te werken.
+Gebruik de sjabloon [maken of bijwerken](/rest/api/sql/syncmembers/createorupdate) om het Sync-lid bij te werken.
 
 Voorbeeld aanvraag voor het bijwerken van een Sync-lid: 
 
@@ -291,7 +291,7 @@ Status code: 201
 
 ## <a name="trigger-sync"></a>Synchronisatie activeren
 
-Gebruik de [trigger Sync](https://docs.microsoft.com/rest/api/sql/syncgroups/triggersync) -sjabloon om een synchronisatie bewerking te activeren.
+Gebruik de [trigger Sync](/rest/api/sql/syncgroups/triggersync) -sjabloon om een synchronisatie bewerking te activeren.
 
 Voorbeeld aanvraag voor het activeren van de synchronisatie bewerking: 
 

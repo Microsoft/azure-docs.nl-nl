@@ -1,18 +1,18 @@
 ---
 title: Server opnieuw opstarten-Azure CLI-Azure Database for PostgreSQL-één server
 description: In dit artikel wordt beschreven hoe u een Azure Database for PostgreSQL-één-server opnieuw kunt opstarten met behulp van de Azure CLI
-author: lfittl-msft
-ms.author: lufittl
+author: sunilagarwal
+ms.author: sunila
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 5/6/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: e812b7872dd4d41d9a6cb87d75403524106c5981
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: af870c495ae707dd8319645eca979f0906234b4f
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "97706861"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105608371"
 ---
 # <a name="restart-azure-database-for-postgresql---single-server-using-the-azure-cli"></a>Start Azure Database for PostgreSQL-één server opnieuw op met behulp van de Azure CLI
 In dit onderwerp wordt beschreven hoe u een Azure Database for PostgreSQL server opnieuw kunt starten. Mogelijk moet u de server opnieuw opstarten om onderhouds redenen te zorgen, waardoor er een korte storing optreedt terwijl de server de bewerking uitvoert.

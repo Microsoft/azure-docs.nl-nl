@@ -1,17 +1,17 @@
 ---
 title: Berekenings-en opslag opties-Azure Database for PostgreSQL-flexibele server
 description: In dit artikel worden de berekenings-en opslag opties in Azure Database for PostgreSQL flexibele server beschreven.
-author: lfittl-msft
-ms.author: lufittl
+author: sunilagarwal
+ms.author: sunila
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 02/19/2021
-ms.openlocfilehash: 6bcfbc19cbaa078373d6857bdac74eaf86eca104
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: 93a439c814b6bac630c5231f46d7a022a131687c
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105048048"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105608167"
 ---
 # <a name="compute-and-storage-options-in-azure-database-for-postgresql---flexible-server"></a>Berekenings-en opslag opties in Azure Database for PostgreSQL-flexibele server
 

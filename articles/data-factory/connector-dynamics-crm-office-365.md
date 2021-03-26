@@ -7,12 +7,12 @@ ms.author: jingwang
 author: linda33wj
 ms.custom: seo-lt-2019
 ms.date: 03/17/2021
-ms.openlocfilehash: ec24fa1bde21c70aa95fc33c92048aebc9f6659c
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: f2db75fdcd4519b5ba0869bf4ef89c8323435539
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104597382"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105565976"
 ---
 # <a name="copy-data-from-and-to-dynamics-365-common-data-servicemicrosoft-dataverse-or-dynamics-crm-by-using-azure-data-factory"></a>Gegevens kopiëren van en naar Dynamics 365 (Common Data Service/micro soft Dataverse) of Dynamics CRM door gebruik te maken van Azure Data Factory
 
@@ -370,7 +370,7 @@ De optimale combi natie van **writeBatchSize** en **parallelCopies** is afhankel
 
 Als u gegevens wilt ophalen uit Dynamics-weer gaven, moet u de opgeslagen query van de weer gave ophalen en de query gebruiken om de gegevens op te halen.
 
-Er zijn twee entiteiten die verschillende soorten weer gave opslaan: de systeem weergave ' opgeslagen query's ' en ' gebruikers query ' slaat gebruikers weergave op. Als u de gegevens van de weer gaven wilt ophalen, raadpleegt u de volgende FetchXML-query en vervangt u ' TARGETENTITY ' door `savedquery` of `userquery` . Elk entiteits type heeft meer beschik bare kenmerken die u aan de query kunt toevoegen op basis van uw behoeften. Meer informatie over de entiteit [savedquery](https://docs.microsoft.com/dynamics365/customer-engagement/web-api/savedquery) en [userquery](https://docs.microsoft.com/dynamics365/customer-engagement/web-api/userquery).
+Er zijn twee entiteiten die verschillende soorten weer gave opslaan: de systeem weergave ' opgeslagen query's ' en ' gebruikers query ' slaat gebruikers weergave op. Als u de gegevens van de weer gaven wilt ophalen, raadpleegt u de volgende FetchXML-query en vervangt u ' TARGETENTITY ' door `savedquery` of `userquery` . Elk entiteits type heeft meer beschik bare kenmerken die u aan de query kunt toevoegen op basis van uw behoeften. Meer informatie over de entiteit [savedquery](/dynamics365/customer-engagement/web-api/savedquery) en [userquery](/dynamics365/customer-engagement/web-api/userquery).
 
 ```xml
 <fetch top="5000" >

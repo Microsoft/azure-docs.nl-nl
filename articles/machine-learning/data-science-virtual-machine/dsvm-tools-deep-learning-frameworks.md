@@ -10,12 +10,12 @@ author: lobrien
 ms.author: laobri
 ms.topic: conceptual
 ms.date: 07/17/2020
-ms.openlocfilehash: 9ee0e8d8fa660313cb007d53c2bbbfc9b19feec9
-ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
+ms.openlocfilehash: 43a8004b6cdfe2e074304569b83360101784a87e
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104889770"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105567998"
 ---
 # <a name="deep-learning-and-ai-frameworks-for-the-azure-data-science-vm"></a>Diep gaande lessen en AI-frameworks voor Azure Data Science VM
 Uitgebreide lessen op het DSVM worden hieronder weer gegeven.
@@ -129,14 +129,14 @@ Uitgebreide lessen op het DSVM worden hieronder weer gegeven.
 | Hoe wordt het geconfigureerd/geïnstalleerd op de DSVM?  | Geïnstalleerd in Python 3,5 onder [Linux](dsvm-tools-languages.md#python-linux-edition) en python 3,6 op [Windows 2016](dsvm-tools-languages.md#python-windows-server-2016-edition) |
 | Het uitvoeren van het programma      | Terminal: Activeer de juiste omgeving en voer python uit. <br/> * Jupyter: Maak verbinding met [Jupyter](provision-vm.md) of [JupyterHub](dsvm-ubuntu-intro.md#how-to-access-the-ubuntu-data-science-virtual-machine)en open vervolgens de map tensor flow voor voor beelden.   |
 
-## <a name="tensorflow-serving"></a>[TensorFlow Serving](https://www.tensorflow.org/serving/)
+## <a name="tensorflow-serving"></a>[TensorFlow Serving](https://www.tensorflow.org/tfx/guide/serving)
 
 | Categorie | Waarde |
 | ------------- | ------------- |
 | Ondersteunde versies | 1.12 |
 | Ondersteunde DSVM-edities      | Ubuntu 16.04 |
 | Hoe wordt het geconfigureerd/geïnstalleerd op de DSVM?  | tensorflow_model_server is beschikbaar op de Terminal. |
-| Het uitvoeren van het programma      |  Voor beelden zijn [online](https://www.tensorflow.org/serving/)beschikbaar.   |
+| Het uitvoeren van het programma      |  Voor beelden zijn [online](https://www.tensorflow.org/tfx/guide/serving)beschikbaar.   |
 
 
 ## <a name="theano"></a>[Theano](https://github.com/Theano/Theano)

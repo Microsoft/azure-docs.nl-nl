@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: troubleshooting
 ms.date: 02/20/2020
-ms.openlocfilehash: f4baca7f261aa7544b54992a5e1ddf620794774f
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 785567685b77183df0f212897b923d911ac045f6
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "94962277"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105567304"
 ---
 # <a name="troubleshoot-common-azure-database-migration-service-issues-and-errors"></a>Veelvoorkomende problemen met Azure Database Migration Service oplossen
 
@@ -102,7 +102,7 @@ Als u verbinding wilt maken met de bron in de wizard Azure Database Migration-se
 
 | Oorzaak         | Oplossing    |
 | ------------- | ------------- |
-| Wanneer u [ExpressRoute](https://azure.microsoft.com/services/expressroute/)gebruikt, [moet](./tutorial-sql-server-azure-sql-online.md) Azure database Migration service drie service-eind punten inrichten op het Virtual Network subnet dat is gekoppeld aan de service:<br> --Service Bus-eind punt<br> --Eind punt van opslag<br> --Doel database-eind punt (bijvoorbeeld SQL-eind punt, Cosmos DB-eind punt)<br><br><br><br><br> | [Schakel](./tutorial-sql-server-azure-sql-online.md) de vereiste service-eind punten in voor de ExpressRoute-connectiviteit tussen de bron en de Azure database Migration service. <br><br><br><br><br><br><br><br> |
+| Wanneer u [ExpressRoute](https://azure.microsoft.com/services/expressroute/)gebruikt, [moet](./tutorial-sql-server-to-azure-sql.md) Azure database Migration service drie service-eind punten inrichten op het Virtual Network subnet dat is gekoppeld aan de service:<br> --Service Bus-eind punt<br> --Eind punt van opslag<br> --Doel database-eind punt (bijvoorbeeld SQL-eind punt, Cosmos DB-eind punt)<br><br><br><br><br> | [Schakel](./tutorial-sql-server-to-azure-sql.md) de vereiste service-eind punten in voor de ExpressRoute-connectiviteit tussen de bron en de Azure database Migration service. <br><br><br><br><br><br><br><br> |
 
 ## <a name="lock-wait-timeout-error-when-migrating-a-mysql-database-to-azure-db-for-mysql"></a>Fout tijdens vergren deling wacht tijd bij het migreren van een MySQL-data base naar Azure DB voor MySQL
 
@@ -126,7 +126,7 @@ Wanneer u probeert om Azure Database Migration Service verbinding te maken met S
 
 ## <a name="additional-known-issues"></a>Meer bekende problemen
 
-* [Bekende problemen/migratie beperkingen met online migraties naar Azure SQL Database](./known-issues-azure-sql-online.md)
+* [Bekende problemen/migratie beperkingen met online migraties naar Azure SQL Database](./index.yml)
 * [Bekende problemen/migratie beperkingen met online migraties naar Azure Database for MySQL](./known-issues-azure-mysql-online.md)
 * [Bekende problemen/migratie beperkingen met online migraties naar Azure Database for PostgreSQL](./known-issues-azure-postgresql-online.md)
 

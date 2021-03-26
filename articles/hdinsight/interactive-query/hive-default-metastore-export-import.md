@@ -7,12 +7,12 @@ ms.reviewer: ''
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 11/4/2020
-ms.openlocfilehash: 825204fe40125a65e8e6f27c6973417813700a9e
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 4a0258d5e448c59baa1cd63e98058fe7116a8485
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101745351"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105566112"
 ---
 # <a name="migrate-default-hive-metastore-db-to-external-metastore-db"></a>Standaard Hive-metastore data base migreren naar externe meta store-data base
 
@@ -46,7 +46,7 @@ De actie is vergelijkbaar met het vervangen van symlinks met hun volledige paden
 
 An HDInsight cluster alleen is gemaakt nadat 2020-10-15 SQL-export/-import ondersteunt voor de Hive-standaard META store-data base met behulp van `sqlpackage` .
 
-1. Installeer [sqlpackage](https://docs.microsoft.com/sql/tools/sqlpackage-download#get-sqlpackage-net-core-for-linux) in het cluster.
+1. Installeer [sqlpackage](/sql/tools/sqlpackage-download#get-sqlpackage-net-core-for-linux) in het cluster.
 
 2. Exporteer de standaard-BACPAC-data base door de volgende opdracht uit te voeren.
 

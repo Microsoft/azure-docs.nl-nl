@@ -11,29 +11,29 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
 ms.custom: mvc, seodec18
-ms.date: 12/07/2018
-ms.author: mbaldwin
-ms.openlocfilehash: 42bfa52721160a469db2aa0507dadfa85ff41389
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.date: 03/25/2021
+ms.author: keithp
+ms.openlocfilehash: 11118c9bd745480dc88380e718a9ab348ab1a3e3
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "97508268"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105606943"
 ---
 # <a name="troubleshooting-the-azure-dedicated-hsm-service"></a>Problemen met de Azure Toegewezen HSM-service oplossen
 
-De Azure Toegewezen HSM-service heeft twee afzonderlijke facetten. Ten eerste, de registratie en implementatie van de HSM-apparaten in Azure met hun onderliggende netwerkonderdelen. Ten tweede, de configuratie van de HSM-apparaten als voorbereiding op gebruik/integratie met een bepaalde workload of toepassing. Hoewel de Thales Luna Network HSM-apparaten hetzelfde zijn in Azure als wanneer u ze rechtstreeks bij Thales koopt, zorgt het feit dat ze een resource in Azure zijn voor een paar unieke overwegingen. Deze overwegingen en eventuele inzichten in probleemoplossing of aanbevolen procedures, zijn hier gedocumenteerd, voor hoge zichtbaarheid en toegang tot kritieke informatie. Zodra de service wordt gebruikt, is definitieve informatie beschikbaar via ondersteuningsaanvragen bij Microsoft of rechtstreeks bij Thales. 
+De Azure Toegewezen HSM-service heeft twee afzonderlijke facetten. Ten eerste, de registratie en implementatie van de HSM-apparaten in Azure met hun onderliggende netwerkonderdelen. Ten tweede, de configuratie van de HSM-apparaten als voorbereiding op gebruik/integratie met een bepaalde workload of toepassing. Hoewel de [Thales Luna-HSM](https://cpl.thalesgroup.com/encryption/hardware-security-modules/network-hsms) -apparaten in azure hetzelfde zijn als u rechtstreeks aanschaft vanuit Thales, maakt het feit dat ze een resource zijn in azure enkele unieke overwegingen. Deze overwegingen en eventuele inzichten in probleemoplossing of aanbevolen procedures, zijn hier gedocumenteerd, voor hoge zichtbaarheid en toegang tot kritieke informatie. Zodra de service wordt gebruikt, is definitieve informatie beschikbaar via ondersteuningsaanvragen bij Microsoft of rechtstreeks bij Thales. 
 
 > [!NOTE]
 > Let op: voordat u een onlangs geïmplementeerd HSM-apparaat configureert, moet dit apparaat worden bijgewerkt met alle eventuele relevante patches. Een specifieke patch die is vereist, is [KB0019789](https://supportportal.gemalto.com/csm?id=kb_article_view&sys_kb_id=19a81c8bdb9a1fc8d298728dae96197d&sysparm_article=KB0019789) in de Thales-ondersteuningsportal. Hiermee wordt een probleem opgelost waarbij het systeem niet reageert tijdens het opnieuw opstarten.
 
 ## <a name="hsm-registration"></a>HSM-registratie
 
-Toegewezen HSM is niet vrij beschikbaar voor gebruik omdat het hardwareresources in de cloud levert en daarom een kostbare resource is, die moet worden beveiligd. Er wordt dus een proces met een acceptatielijst via e-mail gebruikt met behulp van HSMrequest@microsoft.com. 
+Toegewezen HSM is niet vrij beschikbaar voor gebruik omdat het hardwareresources in de cloud levert en daarom een kostbare resource is, die moet worden beveiligd. We gebruiken daarom een allowlisiting-proces via e-mail met HSMrequest@microsoft.com . 
 
 ### <a name="getting-access-to-dedicated-hsm"></a>Toegang krijgen tot Toegewezen HSM
 
-Als u denkt dat Toegewezen HSM voldoet aan uw belangrijkste opslagvereisten, stuurt u een e-mail naar HSMrequest@microsoft.com om toegang aan te vragen. Geef een overzicht van uw toepassing, de regio’s waarin u HSM’s wilt gebruiken, en de hoeveelheid HSM’s waarnaar u op zoek bent. Als u werkt met een vertegenwoordiger van Microsoft, bijvoorbeeld een Account Executive of Cloud Solution Architect, voegt u deze persoon als e-mailgeadresseerde toe bij elke aanvraag.
+Stel eerst in welke use-cases u dat niet kunt doen door [Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/general/overview) of door [Azure beheerde HSM](https://docs.microsoft.com/en-us/azure/key-vault/managed-hsm/overview). Als u vervolgens denkt dat er alleen specifieke HSM aan uw sleutel opslag vereisten voldoet, krijgt u vervolgens een e-mail HSMrequest@microsoft.com om toegang aan te vragen. Bestudeer uw toepassings-en use-cases, de regio's die u wilt Hsm's en het volume van Hsm's dat u zoekt. Als u werkt met een vertegenwoordiger van Microsoft, bijvoorbeeld een Account Executive of Cloud Solution Architect, voegt u deze persoon als e-mailgeadresseerde toe bij elke aanvraag.
 
 ## <a name="hsm-provisioning"></a>HSM-inrichting
 
@@ -56,7 +56,7 @@ De ARM-standaardsjabloon die wordt geleverd voor de implementatie, beschikt over
 
 ### <a name="hsm-deployment-using-terraform"></a>HSM-implementatie met behulp van Terraform
 
-Een aantal klanten heeft Terraform gebruikt als automatiseringsomgeving, in plaats van de geleverde ARM-sjablonen, bij het registreren voor deze service. De HSM’s kunnen op deze manier niet worden geïmplementeerd, maar de afhankelijke netwerkresources wel. Terraform heeft een module voor het aanroepen van een minimale ARM-sjabloon die alleen de HSM-implementatie bevat.  In dit geval moet u ervoor zorgen dat netwerkresources, zoals de vereiste ExpressRoute-gateway, volledig zijn geïmplementeerd, voordat u HSM’s gaat implementeren. U kunt de volgende CLI-opdracht gebruiken om te testen of de implementatie volledig is uitgevoerd en geïntegreerd zoals vereist. Vervang de tijdelijke aanduiding met punthaken door uw specifieke naam. Het resultaat dat u moet zien, is: provisioningState is Geslaagd
+Een aantal klanten heeft Terraform gebruikt als automatiseringsomgeving, in plaats van de geleverde ARM-sjablonen, bij het registreren voor deze service. De HSM’s kunnen op deze manier niet worden geïmplementeerd, maar de afhankelijke netwerkresources wel. Terraform heeft een module voor het aanroepen van een minimale ARM-sjabloon die alleen de HSM-implementatie heeft.  In dit geval moet u ervoor zorgen dat netwerkresources, zoals de vereiste ExpressRoute-gateway, volledig zijn geïmplementeerd, voordat u HSM’s gaat implementeren. U kunt de volgende CLI-opdracht gebruiken om te testen of de implementatie volledig is uitgevoerd en geïntegreerd zoals vereist. Vervang de tijdelijke aanduiding met punthaken door uw specifieke naam. Het resultaat dat u moet zien, is: provisioningState is Geslaagd
 
 ```azurecli
 az resource show --ids /subscriptions/<subid>/resourceGroups/<myresourcegroup>/providers/Microsoft.Network/virtualNetworkGateways/<myergateway>
@@ -66,10 +66,10 @@ az resource show --ids /subscriptions/<subid>/resourceGroups/<myresourcegroup>/p
 Implementaties kunnen mislukken als u de limiet van 2 HSM's per stempel en 4 HSM's per regio overschrijdt. Om deze situatie te voorkomen moet u ervoor zorgen dat u de resources van eerder mislukte implementaties hebt verwijderd, voordat u opnieuw gaat implementeren. Raadpleeg hieronder het item Hoe kan ik HSM’s zien, om resources te controleren. Als u denkt dat u dit quotum, dat voornamelijk ter bescherming is ingesteld, gaat overschrijden, stuurt u een e-mail naar HSMrequest@microsoft.com met de details.
 
 ### <a name="deployment-failure-based-on-capacity"></a>Implementatiefout op basis van capaciteit
-Wanneer een bepaalde stempel of regio vol raakt - wanneer bijna alle beschikbare HSM’s zijn ingericht - kan dit leiden tot implementatiefouten. Elk stempel heeft 11 HSM’s beschikbaar voor klanten. Dat is 22 per regio. Elke stempel bevat ook 3 reserves en één testapparaat. Als u denkt dat u de limiet hebt bereikt, stuurt u een e-mail naar HSMrequest@microsoft.com voor informatie over het vulniveau van specifieke stempels.
+Wanneer een bepaalde stempel of regio vol raakt - wanneer bijna alle beschikbare HSM’s zijn ingericht - kan dit leiden tot implementatiefouten. Elk stempel heeft 12 Hsm's beschikbaar voor klanten, wat betekent 24 per regio. Er zijn ook twee reserves en één test apparaat in elk stempel. Als u denkt dat u de limiet hebt bereikt, stuurt u een e-mail naar HSMrequest@microsoft.com voor informatie over het vulniveau van specifieke stempels.
 
 ###  <a name="how-do-i-see-hsms-when-provisioned"></a>Hoe kan ik HSM’s zien wanneer ze zijn ingericht?
-Aangezien Dedicated HSM een service op de acceptatielijst is, wordt de service in Azure Portal beschouwd als een Verborgen type. Als u de HSM-resources wilt bekijken, moet u het selectievakje Verborgen typen weergeven inschakelen, zoals hieronder wordt weergegeven. De NIC-resource volgt altijd de HSM en is een goede plek om het IP-adres van de HSM te achterhalen vóórdat u SSH gaat gebruiken om verbinding te maken.
+Omdat een speciale HSM een allowlisted-service is, wordt deze als een ' verborgen type ' beschouwd in de Azure Portal. Als u de HSM-resources wilt bekijken, moet u het selectievakje Verborgen typen weergeven inschakelen, zoals hieronder wordt weergegeven. De NIC-resource volgt altijd de HSM en is een goede plek om het IP-adres van de HSM te achterhalen vóórdat u SSH gaat gebruiken om verbinding te maken.
 
 ![Schermopname waarin het selectievakje Verborgen typen weergeven is gemarkeerd](./media/troubleshoot/hsm-provisioned.png)
 
@@ -112,7 +112,7 @@ Het opgeven van onjuiste referenties voor HSM's kan destructieve gevolgen hebben
 Hieronder volgen situaties waarin configuratiefouten vaak voorkomen of waarin ze een impact hebben die het vermelden waard is:
 
 ### <a name="hsm-documentation-and-software"></a>HSM-documentatie en -software
-Software en documentatie voor Thales SafeNet Luna 7 HSM-apparaten is niet beschikbaar bij Microsoft en moet rechtstreeks bij Thales worden gedownload. Registratie met de Thales-klant-id die u tijdens het registratieproces hebt ontvangen, is vereist. De apparaten, zoals geleverd door Microsoft, hebben softwareversie 7.2 en firmwareversie 7.0.3. Begin 2020 heeft Thales de documentatie openbaar gemaakt. U vindt deze documentatie [hier](https://thalesdocs.com/gphsm/luna/7.2/docs/network/Content/Home_network.htm).  
+Software en documentatie voor de [Thales Luna 7 HSM](https://cpl.thalesgroup.com/encryption/hardware-security-modules/network-hsms) -apparaten zijn niet beschikbaar van micro soft en moeten rechtstreeks worden gedownload van Thales. Registratie met de Thales-klant-id die u tijdens het registratieproces hebt ontvangen, is vereist. De apparaten, zoals geleverd door Microsoft, hebben softwareversie 7.2 en firmwareversie 7.0.3. Begin 2020 heeft Thales de documentatie openbaar gemaakt. U vindt deze documentatie [hier](https://thalesdocs.com/gphsm/luna/7.2/docs/network/Content/Home_network.htm).  
 
 ### <a name="hsm-networking-configuration"></a>HSM-netwerkconfiguratie
 
@@ -120,7 +120,7 @@ Wees voorzichtig bij het configureren van het netwerk binnen de HSM.  De HSM hee
 
 ### <a name="hsm-device-reboot"></a>HSM-apparaat opnieuw opstarten
 
-Voor sommige configuratiewijzigingen moet de HSM worden uitgeschakeld en opnieuw ingeschakeld, of opnieuw worden opgestart. Tijdens Microsoft-tests voor de HSM in Azure is vastgesteld dat het apparaat in sommige gevallen vastloopt tijdens het opnieuw opstarten. De implicatie is dat er een ondersteuningsaanvraag moet worden gemaakt in de Azure-portal, waarin hard opstarten wordt aangevraagd. Het kan tot 48 uur duren voordat dit is voltooid, aangezien dit een handmatig proces in een Azure-datacentrum is.  Zorg ervoor dat u de patch voor opnieuw opstarten hebt geïmplementeerd om deze situatie te voorkomen. Deze patch is rechtstreeks beschikbaar bij Thales. Raadpleeg [KB0019789](https://supportportal.gemalto.com/csm?sys_kb_id=d66911e2db4ffbc0d298728dae9619b0&id=kb_article_view&sysparm_rank=1&sysparm_tsqueryId=d568c35bdb9a4850d6b31f3b4b96199e&sysparm_article=KB0019789) in de Thales Luna Network HSM 7.2-downloads voor een aanbevolen patch voor een probleem waarbij het systeem niet reageert tijdens het opnieuw opstarten. (Opmerking: u moet zijn geregistreerd in de Thales-ondersteuningsportal om te kunnen downloaden.)
+Voor sommige configuratiewijzigingen moet de HSM worden uitgeschakeld en opnieuw ingeschakeld, of opnieuw worden opgestart. Tijdens Microsoft-tests voor de HSM in Azure is vastgesteld dat het apparaat in sommige gevallen vastloopt tijdens het opnieuw opstarten. De implicatie is dat er een ondersteuningsaanvraag moet worden gemaakt in de Azure-portal, waarin hard opstarten wordt aangevraagd. Het kan tot 48 uur duren voordat dit is voltooid, aangezien dit een handmatig proces in een Azure-datacentrum is.  Zorg ervoor dat u de patch voor opnieuw opstarten hebt geïmplementeerd om deze situatie te voorkomen. Deze patch is rechtstreeks beschikbaar bij Thales. Raadpleeg [KB0019789](https://supportportal.gemalto.com/csm?sys_kb_id=d66911e2db4ffbc0d298728dae9619b0&id=kb_article_view&sysparm_rank=1&sysparm_tsqueryId=d568c35bdb9a4850d6b31f3b4b96199e&sysparm_article=KB0019789) in de Thales Luna 7 HSM 7,2 down loads voor een aanbevolen patch voor een probleem waarbij het systeem niet meer reageert tijdens het opnieuw opstarten (Opmerking: u moet zijn geregistreerd bij de Thales voor het downloaden van de [klant ondersteuning](https://supportportal.thalesgroup.com/csm) .
 
 ### <a name="ntls-certificates-out-of-sync"></a>NTLS-certificaten zijn niet gesynchroniseerd
 De verbinding tussen een client en een HSM kan worden verbroken wanneer een certificaat verloopt of is overschreven vanwege configuratie-updates. De configuratie van de uitwisselingsclient voor certificaten moet opnieuw worden toegepast voor elke HSM.

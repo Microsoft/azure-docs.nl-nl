@@ -9,14 +9,14 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.tgt_pltfrm: multiple
 ms.workload: media
-ms.date: 1/14/2020
+ms.date: 03/25/2021
 ms.author: inhenkel
-ms.openlocfilehash: f77a41a172bc868ad056d74d018b50f734286f0f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 07e43bdb0969c26120231013cc0c0354e6968ceb
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101702450"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105567947"
 ---
 # <a name="feature-gaps-between-azure-media-services-v2-and-v3"></a>Hiaten tussen onderdelen tussen Azure Media Services v2 en v3
 
@@ -48,6 +48,6 @@ De V3 API heeft de volgende functie hiaten met de v2 API. Een aantal geavanceerd
 
 - Opslag versleuteling aan de client zijde voor de beveiliging van assets op rest is verwijderd in de V3 API en vervangen door de opslag service versleuteling voor Data-at-rest. De V3-Api's blijven werken met bestaande opslag versleutelde assets, maar kunnen geen nieuwe worden gemaakt.
 
-## <a name="next-steps"></a>Volgende stappen
+## <a name="terminology-and-entity-changes"></a>Terminologie en entiteits wijzigingen
 
-[!INCLUDE [migration guide next steps](./includes/migration-guide-next-steps.md)]
+Zie [terminologie en entiteits](migrate-v-2-v-3-differences-terminology.md) wijzigingen voor aanvullende wijzigingen in de API.

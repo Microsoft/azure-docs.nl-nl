@@ -3,16 +3,16 @@ title: HTTP-extensieprotocol - Azure
 description: In dit artikel leert u het HTTP-extensieprotocol gebruiken om berichten te verzenden tussen de Live Video Analytics-module en uw aangepaste AI- of CV-module.
 ms.topic: overview
 ms.date: 09/14/2020
-ms.openlocfilehash: c3a9b5b70467479fdb9b1473a1f6738eaa8a7e1b
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 54b25894c60a39de9c0ec00cdc4982f691bf1ee3
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102455887"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105565738"
 ---
 # <a name="http-extension-protocol"></a>HTTP-extensieprotocol
 
-Met Live Video Analytics op IoT Edge kunt u de mogelijkheden voor mediagrafiekverwerking uitbreiden via een [grafiekextensieknooppunt](/azure/media-services/live-video-analytics-edge/media-graph-extension-concept). Als u de HTTP-extensieprocessor gebruikt als het extensieknooppunt, verloopt de communicatie tussen de Live Video Analytics-module en uw AI- of CV-module via HTTP
+Met Live Video Analytics op IoT Edge kunt u de mogelijkheden voor mediagrafiekverwerking uitbreiden via een [grafiekextensieknooppunt](./media-graph-extension-concept.md). Als u de HTTP-extensieprocessor gebruikt als het extensieknooppunt, verloopt de communicatie tussen de Live Video Analytics-module en uw AI- of CV-module via HTTP
 
 In dit artikel leert u het HTTP-extensieprotocol gebruiken om berichten te verzenden tussen de Live Video Analytics-module en uw aangepaste AI- of CV-module. 
 
@@ -87,11 +87,11 @@ Date: Fri, 17 Apr 2020 04:44:01 GMT
 }
 ```
 
-Het wordt aanbevolen om antwoorden te retourneren met behulp van geldige JSON-documenten, volgens het vooraf vastgelegde schema gedefinieerd in het [objectmodel voor het metagegevensschema voor deductie](/azure/media-services/live-video-analytics-edge/inference-metadata-schema). Dit zorgt voor betere interoperabiliteit met andere onderdelen en eventueel toekomstige mogelijkheden die aan de Live Video Analytics-module worden toegevoegd.
+Het wordt aanbevolen om antwoorden te retourneren met behulp van geldige JSON-documenten, volgens het vooraf vastgelegde schema gedefinieerd in het [objectmodel voor het metagegevensschema voor deductie](./inference-metadata-schema.md). Dit zorgt voor betere interoperabiliteit met andere onderdelen en eventueel toekomstige mogelijkheden die aan de Live Video Analytics-module worden toegevoegd.
 
 Als een antwoord wordt geretourneerd waarbij het inhoudstype niet 'application/json' is, wordt het bericht door Live Video Analytics als basis-64-inhoud versleuteld en geserialiseerd als een ondoorzichtige JSON-nettolading.
 
-Als er wel een antwoord met inhoudstype 'application/json' wordt geretourneerd maar het JSON-schema niet het hieronder beschreven metagegevensschema voor deductie volgt, wordt de nettolading van het bericht doorgestuurd via de pijplijn, maar dan is er wel sprake van beperkte interoperabiliteit. Kijk [hier](/azure/media-services/live-video-analytics-edge/inference-metadata-schema) voor gedetailleerde en up-to-date informatie met betrekking tot het metagegevensschema voor deductie.
+Als er wel een antwoord met inhoudstype 'application/json' wordt geretourneerd maar het JSON-schema niet het hieronder beschreven metagegevensschema voor deductie volgt, wordt de nettolading van het bericht doorgestuurd via de pijplijn, maar dan is er wel sprake van beperkte interoperabiliteit. Kijk [hier](./inference-metadata-schema.md) voor gedetailleerde en up-to-date informatie met betrekking tot het metagegevensschema voor deductie.
 
 > [!NOTE]
 > Als er geen enkel antwoord wordt geproduceerd, moet de HTTP 204-statuscode (geen inhoud) worden geretourneerd, met een lege hoofdtekst. Live Video Analytics interpreteert dit als een leeg resultaat. De gebeurtenis wordt niet via de pijplijn doorgestuurd.

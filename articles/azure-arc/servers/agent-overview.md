@@ -1,14 +1,14 @@
 ---
 title: Overzicht van de verbonden machine agent
 description: Dit artikel bevat een gedetailleerd overzicht van de beschik bare Azure Arc-servers agent, die ondersteuning biedt voor het bewaken van virtuele machines die worden gehost in hybride omgevingen.
-ms.date: 03/15/2021
+ms.date: 03/25/2021
 ms.topic: conceptual
-ms.openlocfilehash: 1fd863ccacc7768401e35254a98c7bb494b3d358
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 2db1758240dca448409af9f4ec00c01d684c920a
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103470486"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105609225"
 ---
 # <a name="overview-of-azure-arc-enabled-servers-agent"></a>Overzicht van de agent voor servers met Azure Arc ingeschakeld
 
@@ -18,6 +18,8 @@ Met de met Azure Arc ingeschakelde servers verbonden machine-agent kunt u uw Win
 >Met ingang van de algemene versie van Azure Arc-servers in september 2020, worden alle voorlopige versies van de met Azure verbonden machine agent (agents met versies lager dan 1,0) **verouderd** op **2 februari 2021**.  Met deze periode kunt u een upgrade uitvoeren naar versie 1,0 of hoger voordat de vooraf vrijgegeven agents niet meer kunnen communiceren met de service Azure Arc enabled servers.
 
 ## <a name="agent-component-details"></a>Details van agent onderdeel
+
+:::image type="content" source="media/agent-overview/connected-machine-agent.png" alt-text="Overzicht van agents voor Arc ingeschakelde servers." border="false":::
 
 Het pakket met de Azure Connected machine agent bevat verschillende logische onderdelen, die samen worden gebundeld.
 
@@ -130,7 +132,7 @@ Service Tags:
 
 Adres
 
-| Agentresource | Beschrijving |
+| Agentresource | Description |
 |---------|---------|
 |`management.azure.com`|Azure Resource Manager|
 |`login.windows.net`|Azure Active Directory|
@@ -142,7 +144,7 @@ Adres
 
 Voor preview-agents (versie 0,11 en lager) hebt u ook toegang tot de volgende Url's nodig:
 
-| Agentresource | Beschrijving |
+| Agentresource | Description |
 |---------|---------|
 |`agentserviceapi.azure-automation.net`|Gastconfiguratie|
 |`*-agentservice-prod-1.azure-automation.net`|Gastconfiguratie|
@@ -206,7 +208,7 @@ Na de installatie van de verbonden machine agent voor Windows, worden de volgend
 
 * De volgende installatie mappen worden tijdens de installatie gemaakt.
 
-    |Map |Beschrijving |
+    |Map |Description |
     |-------|------------|
     |%ProgramFiles%\AzureConnectedMachineAgent |Standaardpad met de agent ondersteunings bestanden.|
     |%ProgramData%\AzureConnectedMachineAgent |Bevat de configuratie bestanden voor de agent.|
@@ -218,7 +220,7 @@ Na de installatie van de verbonden machine agent voor Windows, worden de volgend
 
 * De volgende Windows-Services worden tijdens de installatie van de agent gemaakt op de doel machine.
 
-    |Servicenaam |Weergavenaam |Procesnaam |Beschrijving |
+    |Servicenaam |Weergavenaam |Procesnaam |Description |
     |-------------|-------------|-------------|------------|
     |himds |Azure Hybrid Instance Metadata Service |himds |Deze service implementeert de Azure instance meta data service (IMDS) voor het beheren van de verbinding met Azure en de Azure-identiteit van de verbonden machine.|
     |GCArcService |Gast configuratie Arc-service |gc_service |Bewaakt de gewenste status configuratie van de machine.|
@@ -233,7 +235,7 @@ Na de installatie van de verbonden machine agent voor Windows, worden de volgend
 
 * Er zijn verschillende logboek bestanden beschikbaar voor het oplossen van problemen. Deze worden beschreven in de volgende tabel.
 
-    |Logboek |Beschrijving |
+    |Logboek |Description |
     |----|------------|
     |%ProgramData%\AzureConnectedMachineAgent\Log\himds.log |Registreert gegevens van de agents (HIMDS) en de interactie met Azure.|
     |%ProgramData%\AzureConnectedMachineAgent\Log\azcmagent.log |Bevat de uitvoer van de azcmagent-hulp programma-opdrachten wanneer het argument uitgebreid (-v) wordt gebruikt.|
@@ -258,7 +260,7 @@ Na de installatie van de verbonden machine agent voor Linux worden de volgende w
 
 * De volgende installatie mappen worden tijdens de installatie gemaakt.
 
-    |Map |Beschrijving |
+    |Map |Description |
     |-------|------------|
     |/var/opt/azcmagent/ |Standaardpad met de agent ondersteunings bestanden.|
     |/opt/azcmagent/ |
@@ -270,7 +272,7 @@ Na de installatie van de verbonden machine agent voor Linux worden de volgende w
 
 * De volgende daemons worden tijdens de installatie van de agent gemaakt op de doel machine.
 
-    |Servicenaam |Weergavenaam |Procesnaam |Beschrijving |
+    |Servicenaam |Weergavenaam |Procesnaam |Description |
     |-------------|-------------|-------------|------------|
     |himdsd. service |Azure Connected machine Agent-service |himds |Deze service implementeert de Azure instance meta data service (IMDS) voor het beheren van de verbinding met Azure en de Azure-identiteit van de verbonden machine.|
     |gcad.servce |GC-Arc-service |gc_linux_service |Bewaakt de gewenste status configuratie van de machine. |
@@ -278,7 +280,7 @@ Na de installatie van de verbonden machine agent voor Linux worden de volgende w
 
 * Er zijn verschillende logboek bestanden beschikbaar voor het oplossen van problemen. Deze worden beschreven in de volgende tabel.
 
-    |Logboek |Beschrijving |
+    |Logboek |Description |
     |----|------------|
     |/var/opt/azcmagent/log/himds.log |Registreert gegevens van de agents (HIMDS) en de interactie met Azure.|
     |/var/opt/azcmagent/log/azcmagent.log |Bevat de uitvoer van de azcmagent-hulp programma-opdrachten wanneer het argument uitgebreid (-v) wordt gebruikt.|

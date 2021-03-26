@@ -5,20 +5,20 @@ author: mimcco
 ms.author: mimcco
 ms.service: azure-percept
 ms.topic: how-to
-ms.date: 02/18/2021
+ms.date: 03/25/2021
 ms.custom: template-how-to
-ms.openlocfilehash: 7639af0c6e616a6fd8683f2a529a570f7e856973
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: f81f7922431f85cfc2a98261a128ba66d23a984f
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105047331"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105608592"
 ---
 # <a name="dev-tools-pack-installer-overview"></a>Overzicht van het installatie programma dev tools pack
 
-Het installatie programma voor dev tools pack is een oplossing voor het oplossen van oplossingen waarmee alle hulpprogram ma's die nodig zijn voor het ontwikkelen van een intelligente EDGE-oplossing, worden geïnstalleerd en geconfigureerd. Als u een van de hieronder vermelde software pakketten al hebt geïnstalleerd, installeert het installatie programma voor dev tools pack die pakketten opnieuw zodat uw hulpprogram ma's consistent zijn met de versie van de Installer-software.
+Het installatie programma voor dev tools pack is een oplossing voor het oplossen van oplossingen waarmee alle hulpprogram ma's die nodig zijn voor het ontwikkelen van een geavanceerde intelligente rand oplossing, worden geïnstalleerd en geconfigureerd.
 
-## <a name="mandatory-tools-installed"></a>Verplichte Hulpprogram Ma's geïnstalleerd
+## <a name="mandatory-tools"></a>Verplichte hulpprogram ma's
 
 * [Visual Studio Code](https://code.visualstudio.com/)
 * [Python 3,6 of hoger](https://www.python.org/)
@@ -27,7 +27,7 @@ Het installatie programma voor dev tools pack is een oplossing voor het oplossen
 * [Tensor flow 1,13](https://www.tensorflow.org/)
 * [Azure Machine Learning SDK 1,1](/python/api/overview/azure/ml/)
 
-## <a name="optional-tools-available-for-installation"></a>Optionele Hulpprogram Ma's die beschikbaar zijn voor installatie
+## <a name="optional-tools"></a>Optionele hulpprogram ma's
 
 * [NVIDIA DEEPSTREAM SDK 5](https://developer.nvidia.com/deepstream-sdk) (Toolkit voor het ontwikkelen van oplossingen voor nvidia-Accelerators)
 * [Intel Openwijn toolkit 2020,2](https://docs.openvinotoolkit.org/) (Toolkit voor het ontwikkelen van oplossingen voor Intel-Accelerators)
@@ -42,104 +42,97 @@ Het installatie programma voor dev tools pack is een oplossing voor het oplossen
 
 ## <a name="known-issues"></a>Bekende problemen
 
-- Optionele Caffe-installatie kan mislukken als docker niet op de juiste wijze op het systeem wordt uitgevoerd. Als u Caffe wilt installeren, moet u ervoor zorgen dat docker is geïnstalleerd en wordt uitgevoerd voordat u probeert Caffe te installeren via het installatie programma voor dev tools pack. 
+- Optionele Caffe-installatie kan mislukken als docker niet goed wordt uitgevoerd. Als u Caffe wilt installeren, moet u ervoor zorgen dat docker is geïnstalleerd en wordt uitgevoerd voordat u de installatie van Caffe via het installatie programma dev tools pack uitvoert.
 
 - Optionele CUDA-installatie mislukt op niet-compatibele systemen. Voordat u probeert de [CUDA Toolkit 10.0.130](https://developer.nvidia.com/cuda-toolkit) te installeren via het installatie programma dev tools pack, moet u de systeem compatibiliteit controleren.
 
-## <a name="minimum-requirements"></a>Minimale vereisten
+## <a name="docker-minimum-requirements"></a>Minimale vereisten voor docker
 
-* Minimale vereisten voor docker:
+### <a name="windows"></a>Windows
 
-    * Windows:
-        * https://docs.docker.com/docker-for-windows/install/#system-requirements
+- Windows 10 64-bits: Pro, Enter prise of Education (build 16299 of hoger).
 
-        - Windows 10 64-bits: Pro, Enter prise of Education (build 16299 of hoger).
+- De Windows-onderdelen van Hyper-V en containers moeten zijn ingeschakeld. De volgende hardware-vereisten zijn vereist voor het uitvoeren van Hyper-V in Windows 10:
 
-             Zie docker Desktop installeren op Windows Home voor Windows 10 Home.
-           - De Windows-onderdelen van Hyper-V en containers moeten zijn ingeschakeld.
-           - De volgende hardware-vereisten zijn vereist voor het uitvoeren van client Hyper-V in Windows 10:
+    - 64-bits processor met het [tweede niveau adres omzetting (SLAT)](https://en.wikipedia.org/wiki/Second_Level_Address_Translation)
+    - 4 GB RAM-geheugen
+    - Ondersteuning voor hardware-virtualisatie op BIOS-niveau moet zijn ingeschakeld in de BIOS-instellingen. Zie virtualisatie voor meer informatie.
 
-              - 64-bits processor met het [tweede niveau adres omzetting (SLAT)](https://en.wikipedia.org/wiki/Second_Level_Address_Translation)
-              - 4 GB RAM-geheugen
-              - Ondersteuning voor hardware-virtualisatie op BIOS-niveau moet zijn ingeschakeld in de BIOS-instellingen. Zie virtualisatie voor meer informatie.
+> [!NOTE]
+> Docker ondersteunt docker desktop in Windows op basis van de ondersteunings levenscyclus van micro soft voor Windows 10-besturings systeem. Zie het [Windows levenscyclus](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)-overzicht voor meer informatie.
 
-        > [!NOTE]
-        > Docker ondersteunt docker desktop in Windows op basis van de ondersteunings levenscyclus van micro soft voor Windows 10-besturings systeem. Zie het [Windows levenscyclus](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)-overzicht voor meer informatie.
+Meer informatie over het [installeren van docker desktop in Windows](https://docs.docker.com/docker-for-windows/install/#install-docker-desktop-on-windows).
 
-    * Mac:
-        * https://docs.docker.com/docker-for-mac/install/#system-requirements
-       
-        Uw Mac moet voldoen aan de volgende vereisten om docker Desktop te kunnen installeren:
-         
-         - **Mac-hardware moet een 2010-of nieuwer model zijn met een Intel-processor**, met ondersteuning voor MMU-virtualisatie (Extended Page Tables) en een onbeperkte modus. U kunt controleren of deze ondersteuning voor uw computer is door de volgende opdracht uit te voeren in een Terminal: ```sysctl kern.hv_support```
+### <a name="mac"></a>Mac
 
-        Als uw Mac het Hyper Visor-Framework ondersteunt, wordt de opdracht afgedrukt ```kern.hv_support: 1``` .
+- Mac moet een 2010-of een nieuwer model zijn met de volgende kenmerken:
+    - Intel-processor
+    - Ondersteuning voor MMU-virtualisatie (Extended Page Tables) (EPT) en onbeperkte modus voor Intel-hardware. U kunt controleren of de computer deze ondersteuning heeft door de volgende opdracht uit te voeren in een Terminal: ```sysctl kern.hv_support``` . Als uw Mac het Hyper Visor-Framework ondersteunt, wordt de opdracht afgedrukt ```kern.hv_support: 1``` .
 
-         - **macOS moet versie 10,14 of nieuwer zijn**. Dat wil zeggen, Mojave, Catalina of Big Sur. U kunt het beste een upgrade uitvoeren naar de nieuwste versie van macOS.
+- macOS-versie 10,14 of hoger (Mojave, Catalina of Big Sur). U kunt het beste een upgrade uitvoeren naar de nieuwste versie van macOS. Als u problemen ondervindt nadat u uw macOS hebt bijgewerkt naar versie 10,15, moet u de nieuwste versie van docker Desktop installeren om compatibel te zijn met deze versie van macOS.
 
-        Als u problemen ondervindt nadat u uw macOS hebt bijgewerkt naar versie 10,15, moet u de nieuwste versie van docker Desktop installeren om compatibel te zijn met deze versie van macOS.
+- Ten minste 4 GB RAM-geheugen.
 
-        - Ten minste 4 GB RAM-geheugen.
-        - VirtualBox vóór versie 4.3.30 moet niet worden geïnstalleerd omdat het niet compatibel is met docker Desktop.
+- Installeer VirtualBox niet vóór versie 4.3.30--het is niet compatibel met docker Desktop.
 
-        > [!NOTE]
-        > Docker ondersteunt docker Desktop voor de meest recente versies van macOS. Dat wil zeggen, de huidige release van macOS en de vorige twee versies. Als nieuwe primaire versies van macOS zijn algemeen beschikbaar, docker stopt met de ondersteuning van de oudste versie en ondersteunt de nieuwste versie van macOS (naast de vorige twee releases). Docker Desktop biedt momenteel ondersteuning voor macOS Mojave, macOS Catalina en macOS Big Sur.
-        > 
-        - Het installatie programma wordt niet ondersteund op Apple M1.
+- Het installatie programma wordt niet ondersteund op Apple M1.
 
-## <a name="instructions"></a>Instructies
+Meer informatie over het [installeren van docker Desktop op Mac](https://docs.docker.com/docker-for-mac/install/#system-requirements).
 
-1. Down load het installatie programma voor dev tools pack voor [Windows](https://go.microsoft.com/fwlink/?linkid=2132187), [Linux](https://go.microsoft.com/fwlink/?linkid=2132186)en [Mac](https://go.microsoft.com/fwlink/?linkid=2132296).
+## <a name="launch-the-installer"></a>Start het installatieprogramma
 
-1. Afhankelijk van uw platform zijn er enkele verschillen bij het starten van het installatie programma.
+Down load het installatie programma voor dev tools pack voor [Windows](https://go.microsoft.com/fwlink/?linkid=2132187), [Linux](https://go.microsoft.com/fwlink/?linkid=2132186)of [Mac](https://go.microsoft.com/fwlink/?linkid=2132296). Start het installatie programma op basis van uw platform, zoals hieronder wordt beschreven.
 
-    1. Voor Windows:
-    
-        1. Klik op het **installatie programma dev-tools-Pack-Installer** om de installatie wizard te openen.
-        
-    1. Voor Mac:
-    
-        1. Nadat u het bestand hebt gedownload, verplaatst u het Dev-Tools-Pack-Installer.app naar de map toepassingen.
-        
-        1. Klik op **dev-tools-Pack-Installer.app** om de installatie wizard te openen.
-        
-        1. Als u het beveiligings dialoogvenster ' onbekende ontwikkelaar ' krijgt:
-        
-            1. Ga naar systeem voorkeuren-> Security & privacy-> algemeen en klik op de knop "toch openen" naast "Dev-Tools-Pack-Installer.app"
-        
-            1. Klik opnieuw op het pictogram van het Elektroon op de Dock
-        
-            1. Klik op de knop openen in het dialoog venster beveiliging
-    
-    1. Voor Linux:
-    
-        1. Klik op Opslaan om het downloaden van het installatie programma te volt ooien, wanneer u hierom wordt gevraagd
-        
-        1. Uitvoerings machtigingen toevoegen aan de **. appimage** -bestands methode 1 (commandline):
-            
-            1. De Linux-Terminal openen
-            
-            1. Typ het volgende in de terminal om naar de map down loads te gaan
-            
-                1. CD ~/downloads/
-                
-            1. Typ het volgende in de terminal om het uitvoer bare bestand van AppImage te maken
-            
-                1. chmod + x **dev-tools-Pack-Installer. AppImage**
-                
-            1. Typ het volgende in de terminal om het installatie programma uit te voeren
-            
-                1. ./Dev-Tools-Pack-Installer.AppImage
-        
-        1. Uitvoerings machtigingen toevoegen aan de **. appimage** -bestands methode 2 (UI):
-        
-            1. Klik met de rechter muisknop op het. appimage-bestand en selecteer Eigenschappen
-            
-            1. Tabblad machtigingen openen
-            
-            1. Schakel het selectie vakje bestand uitvoeren als programma toestaan in
-            
-            1. Eigenschappen sluiten en het. appimage-bestand openen
+### <a name="windows"></a>Windows
+
+1. Klik op **dev-tools-Pack-Installer** om de installatie wizard te openen.
+
+### <a name="mac"></a>Mac
+
+1. Nadat u het bestand hebt gedownload, verplaatst u het **dev-tools-Pack-Installer.app** naar de map **toepassingen** .
+
+1. Klik op **dev-tools-Pack-Installer.app** om de installatie wizard te openen.
+
+1. Als u het beveiligings dialoogvenster ' onbekende ontwikkelaar ' ontvangt:
+
+    1. Ga naar **systeem voorkeuren**  ->  **beveiliging & privacy**  ->  **Algemeen** en klik op **toch openen** naast **dev-tools-Pack-Installer.app**.
+    1. Klik op het pictogram van het elektroon.
+    1. Klik in het dialoog venster beveiliging op **openen** .
+
+### <a name="linux"></a>Linux
+
+1. Wanneer u wordt gevraagd door de browser, klikt u op **Opslaan** om het downloaden van het installatie programma te volt ooien.
+
+1. Uitvoerings machtigingen toevoegen aan het **. appimage** -bestand:
+
+    1. Open een Linux-Terminal.
+
+    1. Voer het volgende in de terminal in om naar de map **down loads** te gaan:
+
+        ```bash
+        cd ~/Downloads/
+        ```
+
+    1. Maak het uitvoer bare AppImage-bestand:
+
+        ```bash
+        chmod +x Dev-Tools-Pack-Installer.AppImage
+        ```
+
+    1. Voer het installatie programma uit:
+
+        ```bash
+        ./Dev-Tools-Pack-Installer.AppImage
+        ```
+
+1. Uitvoerings machtigingen toevoegen aan het **. appimage** -bestand:
+
+    1. Klik met de rechter muisknop op het. appimage-bestand en selecteer **Eigenschappen**.
+    1. Open het tabblad **machtigingen** .
+    1. Schakel het selectie vakje in naast het **uitvoeren van het bestand als een programma toestaan**.
+    1. Sluit de **Eigenschappen** en open het **. appimage** -bestand.
+
+## <a name="run-the-installer"></a>Het installatieprogramma uitvoeren
 
 1. Op de installatie pagina **dev tools pack installeren** klikt u op **licentie weer geven** om de licentie overeenkomsten weer te geven van elk software pakket dat is opgenomen in het installatie programma. Als u akkoord gaat met de voor waarden in de licentie overeenkomsten, schakelt u het selectie vakje in en klikt u op **volgende**.
 
@@ -165,21 +158,19 @@ Het installatie programma voor dev tools pack is een oplossing voor het oplossen
 
 Als het installatie programma u waarschuwt dat docker Desktop goed wordt uitgevoerd, raadpleegt u de volgende stappen:
 
-   1. Windows:
-   
-      1. Verborgen pictogrammen in systeemvak uitvouwen:
-      
-         1. Verborgen pictogrammen in systeemvak uitvouwen indien verborgen:
+### <a name="windows"></a>Windows
 
-            :::image type="content" source="./media/dev-tools-installer/system-tray.png" alt-text="Systeemvak.":::
-         
-         1. Controleer of het pictogram van het docker-bureau blad wordt uitgevoerd:
+1. Vouw verborgen pictogrammen in systeemvak uit.
 
-            :::image type="content" source="./media/dev-tools-installer/docker-status-running.png" alt-text="Docker-status.":::
-         
-         1. Als het bovenstaande pictogram in het systeemvak niet wordt weer gegeven, start u docker Desktop vanuit het menu Start.
-         
-         1. Als docker u vraagt om opnieuw op te starten, kunt u het installatie programma sluiten en opnieuw starten nadat het opnieuw opstarten is voltooid en de docker actief is. Alle geslaagde toepassingen van derden moeten worden gedetecteerd en worden niet automatisch opnieuw geïnstalleerd.
+    :::image type="content" source="./media/dev-tools-installer/system-tray.png" alt-text="Systeemvak.":::
+
+1. Controleer of het pictogram docker Desktop wordt uitgevoerd op het bureau blad van **docker**.
+
+    :::image type="content" source="./media/dev-tools-installer/docker-status-running.png" alt-text="Docker-status.":::
+
+1. Als het bovenstaande pictogram in het systeemvak niet wordt weer gegeven, start u docker Desktop vanuit het menu Start.
+
+1. Als docker u vraagt om opnieuw op te starten, kunt u het installatie programma sluiten en opnieuw starten nadat het opnieuw opstarten is voltooid en de docker actief is. Alle geslaagde toepassingen van derden moeten worden gedetecteerd en worden niet automatisch opnieuw geïnstalleerd.
 
 ## <a name="next-steps"></a>Volgende stappen
 

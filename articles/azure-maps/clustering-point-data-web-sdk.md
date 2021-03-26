@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: codepen, devx-track-js
-ms.openlocfilehash: 0af327f624d0fed648012ce1d12bacabca688cec
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: f798b4a7964eba112ed9948b2db4f6d5c3edd1e3
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102044184"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105608354"
 ---
 # <a name="clustering-point-data"></a>Clustering Point-gegevens
 
@@ -26,7 +26,7 @@ Bij het visualiseren van veel gegevens punten op de kaart kunnen gegevens punten
 
 ## <a name="enabling-clustering-on-a-data-source"></a>Clustering inschakelen op een gegevens bron
 
-Schakel clustering in de `DataSource` klasse in door de `cluster` optie in te stellen op True. Instellen `clusterRadius` om nabijgelegen punten te selecteren en deze te combi neren in een cluster. De waarde van `clusterRadius` is in pixels. Gebruik `clusterMaxZoom` om een zoom niveau op te geven waarmee de cluster logica wordt uitgeschakeld. Hier volgt een voor beeld van het inschakelen van clustering in een gegevens bron.
+Schakel clustering in de- `DataSource` klasse in door de `cluster` optie in te stellen op `true` . Instellen `clusterRadius` om nabijgelegen punten te selecteren en deze te combi neren in een cluster. De waarde van `clusterRadius` is in pixels. Gebruik `clusterMaxZoom` om een zoom niveau op te geven waarmee de cluster logica wordt uitgeschakeld. Hier volgt een voor beeld van het inschakelen van clustering in een gegevens bron.
 
 ```javascript
 //Create a data source and enable clustering.

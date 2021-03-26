@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 zone_pivot_groups: azure-maps-android
-ms.openlocfilehash: 36b3666f12b48468467e76f4c281d58d8018478c
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: aabe246c343537a42c33d3eaad0bfae3989022fe
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102098533"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105604512"
 ---
 # <a name="show-traffic-data-on-the-map-android-sdk"></a>Verkeers gegevens weer geven op de kaart (Android SDK)
 
@@ -31,7 +31,7 @@ Er zijn twee soorten verkeers gegevens beschikbaar in Azure Maps:
 - Incident gegevens: bestaat uit gegevens op basis van een punt en lijn voor dingen, zoals bouw, wegsluitingen en ongel ukken.
 - Stroom gegevens: voorziet in metrische informatie over de stroom van verkeer op de wegen. De verkeers stroom gegevens worden vaak gebruikt om de wegen te kleuren. De kleuren zijn gebaseerd op de hoeveelheid verkeer die de stroom vertraagt, ten opzichte van de snelheids limiet of een andere metriek. Er zijn vier waarden die kunnen worden door gegeven aan de verkeers `flow` optie van de kaart.
 
-    |Stroom waarde | Beschrijving|
+    |Stroom waarde | Description|
     | :-- | :-- |
     | Verkeers stroom. NONE | Verkeers gegevens worden niet weer gegeven op de kaart |
     | Verkeers stroom. RELATIVE | Geeft verkeers gegevens weer die relatief zijn ten opzichte van de vrije stroom snelheid van de weg |
@@ -63,7 +63,7 @@ map.setTraffic(
 
 ::: zone-end
 
-In de volgende scherm afbeelding ziet u de bovenstaande code rending in realtime verkeer op de kaart.
+In de volgende scherm afbeelding ziet u de code die in realtime verkeer wordt weer gegeven op de kaart.
 
 ![Toewijzing met gegevens over realtime verkeer](media/how-to-show-traffic-android/android-show-traffic.png)
 
@@ -179,7 +179,7 @@ map.events.add(OnFeatureClick { features: List<Feature>? ->
 
 ::: zone-end
 
-In de volgende scherm afbeelding ziet u informatie over het rending in realtime verkeer op de kaart met een pop-upbericht waarin de details van het incident worden weer gegeven.
+De volgende scherm afbeelding toont de voor gaande code rendering van informatie in realtime verkeer op de kaart met een pop-upbericht waarin de incident Details worden weer gegeven.
 
 ![Toewijzing met gegevens over realtime verkeer met een pop-upbericht met details over incidenten](media/how-to-show-traffic-android/android-traffic-details.png)
 

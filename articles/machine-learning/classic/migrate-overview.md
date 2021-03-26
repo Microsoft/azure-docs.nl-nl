@@ -8,12 +8,12 @@ ms.topic: how-to
 author: xiaoharper
 ms.author: zhanxia
 ms.date: 03/08/2021
-ms.openlocfilehash: fda34a7ee06d35846bcec571e904297d0421c38f
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 7cdf016d7de66c33973ec7818fa92df28c4639dd
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103564937"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105566949"
 ---
 # <a name="migrate-to-azure-machine-learning"></a>Migreren naar Azure Machine Learning
 
@@ -46,7 +46,7 @@ Als u wilt migreren naar Azure Machine Learning, raden we u aan de volgende aanp
 
 3. Controleer of uw essentiële Studio-modules (Classic) worden ondersteund in Azure Machine Learning Designer. Zie voor meer informatie de onderstaande [Studio-en ontwerp module-toewijzings](#studio-classic-and-designer-module-mapping) tabel.
 
-4. [Een Azure Machine Learning-werkruimte maken](https://docs.microsoft.com/azure/machine-learning/how-to-manage-workspace?tabs=azure-portal)
+4. [Een Azure Machine Learning-werkruimte maken](../how-to-manage-workspace.md?tabs=azure-portal)
 
 ## <a name="step-2-create-a-migration-plan"></a>Stap 2: een migratie plan maken
 
@@ -162,9 +162,3 @@ In dit artikel hebt u de vereisten voor het migreren naar Azure Machine Learning
 1. [Een studio-webservice (klassiek) opnieuw bouwen](migrate-rebuild-web-service.md).
 1. [Een Azure machine learning-webservice integreren met client-apps](migrate-rebuild-integrate-with-client-app.md).
 1. [Execute R-script migreren](migrate-execute-r-script.md).
-
-
-
-
-
-

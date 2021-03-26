@@ -7,12 +7,12 @@ ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: e7f74298b8bf8209a6b1473880b33d64bd17cfd9
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.openlocfilehash: 5b7fd8e8cd5bd3ab0f15115365ed057fc67f1204
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105108091"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105604427"
 ---
 # <a name="quickstart-add-11-video-calling-to-your-app-javascript"></a>Snelstartgids: 1:1 video toevoegen aan uw app (Java script)
 
@@ -221,7 +221,7 @@ function subscribeToParticipantVideoStreams(remoteParticipant) {
 U moet zich abonneren op een `isAvailableChanged` gebeurtenis om de weer te geven `remoteVideoStream` . Als de `isAvailable` eigenschap wordt gewijzigd in `true` , wordt een stroom door een externe deel nemer verzonden. Wanneer de beschik baarheid van een externe stroom verandert, kunt u ervoor kiezen om het geheel te vernietigen `Renderer` , een specifiek `RendererView` of te blijven, maar dit resulteert in het weer geven van een leeg video frame.
 ```JavaScript
 function handleVideoStream(remoteVideoStream) {
-    remoteVideoStream.on('availabilityChanged', async () => {
+    remoteVideoStream.on('isAvailableChanged', async () => {
         if (remoteVideoStream.isAvailable) {
             remoteVideoView(remoteVideoStream);
         } else {

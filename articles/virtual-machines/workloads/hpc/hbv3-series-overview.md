@@ -1,5 +1,5 @@
 ---
-title: Overzicht van de VM van de HBv3-serie-Azure Virtual Machines | Microsoft Docs
+title: Overzicht van de VM van de HBv3-serie, architectuur, topologie-Azure Virtual Machines | Microsoft Docs
 description: Meer informatie over de VM-grootte van de HBv3-serie in Azure.
 services: virtual-machines
 author: vermagit
@@ -8,33 +8,90 @@ ms.service: virtual-machines
 ms.subservice: workloads
 ms.workload: infrastructure-services
 ms.topic: article
-ms.date: 03/12/2021
+ms.date: 03/25/2021
 ms.author: amverma
 ms.reviewer: cynthn
-ms.openlocfilehash: d1abd03f517f9e0b13a2994418cbae5cfbe22454
-ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
+ms.openlocfilehash: f78420a65cd9c2402266eb9ba973eabe758d7ee5
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104801860"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105608239"
 ---
 # <a name="hbv3-series-virtual-machine-overview"></a>Overzicht van virtuele machines uit de HBv3-serie 
 
 Een [HBv3-](../../hbv3-series.md) server bevat 2 * 64-core EPYC 7V13 cpu's voor een totaal van 128 fysieke ' Zen3-kernen. Simultaan multi threading (SMT) is uitgeschakeld op HBv3. Deze 128 kernen zijn onderverdeeld in 16 secties (8 per socket), elke sectie met 8 processor kernen met eenvormige toegang tot een 32 MB L3-cache. Azure HBv3-servers voeren ook de volgende AMD BIOS-instellingen uit:
 
 ```bash
-Nodes per Socket =2
+Nodes per Socket (NPS) = 2
 L3 as NUMA = Disabled
+NUMA domains within VM OS = 4
+C-states = Enabled
 ```
 
 Als gevolg hiervan wordt de server opgestart met 4 NUMA-domeinen (2 per socket) elk 32-kern geheugen. Elk NUMA heeft directe toegang tot 4 kanalen van fysieke DRAM-verbinding met 3200 MT/s.
 
-Om ruimte te bieden voor de werking van de Azure-Hyper Visor zonder dat de virtuele machine wordt verstoord, worden er 8 fysieke kernen per server gereserveerd. 
+Om ruimte te bieden voor de werking van de Azure-Hyper Visor zonder dat de virtuele machine wordt verstoord, worden er 8 fysieke kernen per server gereserveerd.
 
-Houd er rekening mee dat de VM-grootten beperkte kernen alleen het aantal fysieke kernen beperken dat aan de virtuele machine wordt blootgesteld. Alle globale gedeelde assets (RAM, geheugen bandbreedte, L3-cache, GMI-en xGMI-connectiviteit, InfiniBand, Azure Ethernet-netwerk, lokale SSD) blijven constant. Hiermee kan een klant een VM-grootte kiezen die het beste kan worden afgestemd op een bepaalde reeks werk belasting-of software licentie vereisten.
+## <a name="vm-topology"></a>VM-topologie
 
-In het volgende diagram ziet u de schei ding van kern geheugens die zijn gereserveerd voor Azure-Hyper Visor (geel) en de HBv3-serie (groen).
-![Schei ding van kern geheugens gereserveerd voor Azure Hyper Visor en HBv3-serie VM](./media/architecture/hbv3-segregation-cores.png)
+Het volgende diagram toont de topologie van de-server. We behouden deze 8 Hyper Visor-host kernen (geel) symmetrisch over beide CPU-sockets, waarbij de eerste twee kernen van specifieke kernen (CCDs) op elk NUMA-domein worden genomen, met de resterende kernen voor de VM van de HBv3-serie (groen).
+
+![Topologie van de HBv3-serie-server](./media/architecture/hbv3/hbv3-topology-server.png)
+
+Houd er rekening mee dat de grens van de CCD niet gelijk is aan een NUMA-grens. Op HBv3 wordt een groep van vier opeenvolgende (4) CCDs geconfigureerd als een NUMA-domein, zowel op het niveau van de host als in een gast-VM. Alle HBv3 VM-grootten bieden dus vier NUMA-domeinen die worden weer gegeven in een besturings systeem en toepassing, zoals hieronder weer gegeven: 4 uniforme NUMA-domeinen, elk met een verschillend aantal kern geheugens, afhankelijk van de specifieke [HBv3-VM-grootte](../../hbv3-series.md).
+
+![Topologie van de virtuele machine uit de HBv3-serie](./media/architecture/hbv3/hbv3-topology-vm.png)
+
+Elke VM-grootte van HBv3 is vergelijkbaar met de fysieke indeling, functies en prestaties van een andere CPU van de AMD EPYC 7003-serie, als volgt:
+
+| VM-grootte van HBv3-serie             | NUMA-domeinen | Kernen per NUMA-domein  | Gelijkenis met AMD EPYC         |
+|---------------------------------|--------------|------------------------|----------------------------------|
+Standard_HB120rs_v3               | 4            | 30                     | Dual Socket EPYC 7713            |
+Standard_HB120r-96s_v3            | 4            | 24                     | Dual Socket EPYC 7643            |
+Standard_HB120r-64s_v3            | 4            | 16                     | Dual Socket EPYC 7543            |
+Standard_HB120r-32s_v3            | 4            | 8                      | Dual Socket EPYC 7313            |
+Standard_HB120r-16s_v3            | 4            | 4                      | Dual Socket EPYC 72F3            |
+
+> [!NOTE]
+> De VM-grootten met beperkte kernen beperken alleen het aantal fysieke kernen dat aan de virtuele machine wordt blootgesteld. Alle globale gedeelde assets (RAM, geheugen bandbreedte, L3-cache, GMI-en xGMI-connectiviteit, InfiniBand, Azure Ethernet-netwerk, lokale SSD) blijven constant. Hiermee kan een klant een VM-grootte kiezen die het beste kan worden afgestemd op een bepaalde reeks werk belasting-of software licentie vereisten.
+
+De virtuele NUMA-toewijzing van elke HBv3 VM-grootte wordt toegewezen aan de onderliggende fysieke NUMA-topologie. Er is geen mogelijk misleidende abstractie van de hardware-topologie. 
+
+De exacte topologie voor de verschillende [HBV3 VM-grootte](../../hbv3-series.md) ziet er als volgt uit met behulp van de uitvoer van [lstopo](https://linux.die.net/man/1/lstopo):
+```bash
+lstopo-no-graphics --no-io --no-legend --of txt
+```
+<br>
+<details>
+<summary>Klik hier om de lstopo-uitvoer voor Standard_HB120rs_v3 weer te geven</summary>
+
+![lstopo uitvoer voor HBv3-120 VM](./media/architecture/hbv3/hbv3-120-lstopo.png)
+</details>
+
+<details>
+<summary>Klik hier om de lstopo-uitvoer voor Standard_HB120rs-96_v3 weer te geven</summary>
+
+![lstopo uitvoer voor HBv3-96 VM](./media/architecture/hbv3/hbv3-96-lstopo.png)
+</details>
+
+<details>
+<summary>Klik hier om de lstopo-uitvoer voor Standard_HB120rs-64_v3 weer te geven</summary>
+
+![lstopo uitvoer voor HBv3-64 VM](./media/architecture/hbv3/hbv3-64-lstopo.png)
+</details>
+
+<details>
+<summary>Klik hier om de lstopo-uitvoer voor Standard_HB120rs-32_v3 weer te geven</summary>
+
+![lstopo uitvoer voor HBv3-32 VM](./media/architecture/hbv3/hbv3-32-lstopo.png)
+</details>
+
+<details>
+<summary>Klik hier om de lstopo-uitvoer voor Standard_HB120rs-16_v3 weer te geven</summary>
+
+![lstopo uitvoer voor HBv3-16 VM](./media/architecture/hbv3/hbv3-16-lstopo.png)
+</details>
 
 ## <a name="infiniband-networking"></a>InfiniBand-netwerken
 HBv3 Vm's maken ook gebruik van NVIDIA Mellanox HDR InfiniBand-netwerk adapters (Connectx-6) die met Maxi maal 200 gigabits per seconde werken. De NIC wordt door gegeven aan de virtuele machine via SRIOV, waardoor netwerk verkeer wordt ingeschakeld om de Hyper Visor over te slaan. Als gevolg hiervan laden klanten standaard Mellanox OFED-Stuur Programma's op HBv3 Vm's als een bare-metal omgeving.

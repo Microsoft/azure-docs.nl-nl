@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: dhanyahk
 ms.custom: it-pro, seo-update-azuread-jan, has-adal-ref
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e820194d36d2b80fcd28de7972dd5abe8a746345
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 40dafe13dc0e8866c99e56879bed419808a0487c
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104592945"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105560179"
 ---
 # <a name="archive-for-whats-new-in-azure-active-directory"></a>Wilt u archiveren wat er nieuw is in Azure Active Directory?
 
@@ -1481,7 +1481,7 @@ Werk ruimten, de filters beheerders kunnen configureren om de apps van hun gebru
 **Service categorie:** B2C-Consumer Identity Management  
 **Product mogelijkheden:** B2B/B2C
  
-Met het registreren van telefoon nummers en aanmelding kunnen ontwikkel aars en ondernemingen hun klanten toestaan zich aan te melden en zich aan te melden met een eenmalig wacht woord dat via SMS naar het telefoon nummer van de gebruiker wordt verzonden. Met deze functie kan de klant ook hun telefoon nummer wijzigen als de toegang tot hun telefoon verloren is gegaan. Met de kracht van aangepaste beleids regels en aanmelding via de telefoon kunnen ontwikkel aars en ondernemingen hun merk via de pagina aanpassen. Meer informatie over het [instellen van aanmelding via de telefoon en het aanmelden met aangepaste beleids regels in azure AD B2C](../../active-directory-b2c/phone-authentication.md).
+Met het registreren van telefoon nummers en aanmelding kunnen ontwikkel aars en ondernemingen hun klanten toestaan zich aan te melden en zich aan te melden met een eenmalig wacht woord dat via SMS naar het telefoon nummer van de gebruiker wordt verzonden. Met deze functie kan de klant ook hun telefoon nummer wijzigen als de toegang tot hun telefoon verloren is gegaan. Met de kracht van aangepaste beleids regels en aanmelding via de telefoon kunnen ontwikkel aars en ondernemingen hun merk via de pagina aanpassen. Meer informatie over het [instellen van aanmelding via de telefoon en het aanmelden met aangepaste beleids regels in azure AD B2C](../../active-directory-b2c/phone-authentication-user-flows.md).
  
 ---
  

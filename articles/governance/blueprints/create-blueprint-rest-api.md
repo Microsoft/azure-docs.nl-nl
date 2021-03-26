@@ -3,12 +3,12 @@ title: 'Quickstart: Een blauwdruk maken met de REST-API'
 description: In deze quickstart gebruikt u Azure Blueprints om artefacten te maken, te definiëren en te implementeren met de REST API.
 ms.date: 01/27/2021
 ms.topic: quickstart
-ms.openlocfilehash: eaf6dbb2ff14106ba8d2798d86a8f093855de85e
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: ceea54957e52f3b33d2c3fb2af190f15e6c94ec3
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98915621"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105558972"
 ---
 # <a name="quickstart-define-and-assign-an-azure-blueprint-with-rest-api"></a>Quickstart: Een Azure Blueprint definiëren en toewijzen met REST API
 
@@ -329,7 +329,7 @@ In elke REST API-URI zijn er verschillende variabelen die worden gebruikt en die
 - Vervang `{YourMG}` door de ID van uw beheergroep
 - Vervang `{subscriptionId}` door uw abonnements-ID
 
-1. Geef in de Azure Blueprint-service-principal de rol **Eigenaar** op in het doelabonnement. De AppId is statisch (`f71766dc-90d9-4b7d-bd9d-4499c4331c3f`), maar de service-principal-ID verschilt per tenant. U kunt voor uw tenant details aanvragen met de volgende REST API. Deze gebruikt [Azure Active Directory Graph API](../../active-directory/develop/active-directory-graph-api.md), die een andere autorisatie heeft.
+1. Geef in de Azure Blueprint-service-principal de rol **Eigenaar** op in het doelabonnement. De AppId is statisch (`f71766dc-90d9-4b7d-bd9d-4499c4331c3f`), maar de service-principal-ID verschilt per tenant. U kunt voor uw tenant details aanvragen met de volgende REST API. Deze gebruikt [Azure Active Directory Graph API](/graph/migrate-azure-ad-graph-planning-checklist), die een andere autorisatie heeft.
 
    - REST API-URI
 
@@ -337,7 +337,7 @@ In elke REST API-URI zijn er verschillende variabelen die worden gebruikt en die
      GET https://graph.windows.net/{tenantId}/servicePrincipals?api-version=1.6&$filter=appId eq 'f71766dc-90d9-4b7d-bd9d-4499c4331c3f'
      ```
 
-1. Voer de blauwdrukimplementatie uit door deze toe te wijzen aan een abonnement. Als de parameters **inzenders** en **eigenaren** voor de roltoewijzing een matrix van objectIds van de principals nodig hebben, gebruikt u [Azure Active Directory Graph API](../../active-directory/develop/active-directory-graph-api.md) om de objectIds op te halen voor gebruik in de **Aanvraagbody** voor uw eigen gebruikers, groepen of service-principals.
+1. Voer de blauwdrukimplementatie uit door deze toe te wijzen aan een abonnement. Als de parameters **inzenders** en **eigenaren** voor de roltoewijzing een matrix van objectIds van de principals nodig hebben, gebruikt u [Azure Active Directory Graph API](/graph/migrate-azure-ad-graph-planning-checklist) om de objectIds op te halen voor gebruik in de **Aanvraagbody** voor uw eigen gebruikers, groepen of service-principals.
 
    - REST API-URI
 

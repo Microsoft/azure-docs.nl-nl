@@ -2,13 +2,13 @@
 title: Limieten voor Azure VMware-oplossingen
 description: Beperkingen van de Azure VMware-oplossing.
 ms.topic: include
-ms.date: 03/16/2021
-ms.openlocfilehash: 0e2359d951f5348b69e95ab7fa046981b2b7b32d
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.date: 03/24/2021
+ms.openlocfilehash: 997a5ae96ff30226d055b7b966b128d7ec0ae5bd
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103621968"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105582832"
 ---
 <!-- Used in /azure/azure-resource-manager/management/azure-subscription-service-limits.md -->
 
@@ -19,7 +19,7 @@ In de volgende tabel worden de maximum limieten voor de Azure VMware-oplossing b
 | Clusters per privécloud | 12 |
 | Minimum aantal knoop punten per cluster | 3 |
 | Maximum aantal knoop punten per cluster | 16 |
-| Knoop punten per privécloud | 64 |
+| Knoop punten per privécloud | 96 |
 | vCenter per privécloud | 1  |
 | HCX-site koppeling | 3 met Advanced Edition, 10 met Enter prise Edition |
 | Aantal gekoppelde SDDCs voor AVS ExpressRoute | 4 |

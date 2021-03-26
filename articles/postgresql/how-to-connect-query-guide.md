@@ -7,12 +7,12 @@ ms.topic: how-to
 author: mksuni
 ms.author: sumuth
 ms.date: 09/21/2020
-ms.openlocfilehash: 413f5fc1f6579102b62042c1470816470c2e1449
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 1506ce311fe443247050a36e1b9fa4600360ac6e
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "92546548"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105604138"
 ---
 # <a name="connect-and-query-overview-for-azure-database-for-postgresql--single-server"></a>Overzicht van verbinding maken met en query's uitvoeren op Azure Database for PostgreSQL - Enkele server
 
@@ -44,7 +44,6 @@ PostgreSQL biedt de mogelijkheid om de functionaliteit van uw data base uit te b
 - [Post gres 11-extensies](./concepts-extensions.md#postgres-11-extensions)
 - [Post gres 10-extensies](./concepts-extensions.md#postgres-10-extensions)
 - [Post gres 9,6-extensies](./concepts-extensions.md#postgres-96-extensions)
-- [Post gres 9,5-extensies](./concepts-extensions.md#postgres-95-extensions)
 
 Zie [postgresql-extensies gebruiken op één server voor](concepts-extensions.md)meer informatie.
 

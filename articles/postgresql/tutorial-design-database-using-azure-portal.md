@@ -1,18 +1,18 @@
 ---
 title: 'Zelfstudie: Een Azure Database for PostgreSQL - Single Server ontwerpen - Azure Portal'
 description: Deze zelfstudie laat zien hoe u uw eerste Azure Database for PostgreSQL - Single Server ontwerpt met Azure Portal.
-author: lfittl-msft
-ms.author: lufittl
+author: sunilagarwal
+ms.author: sunila
 ms.service: postgresql
 ms.custom: tutorial, mvc
 ms.topic: tutorial
 ms.date: 06/25/2019
-ms.openlocfilehash: 179d4124e28abfffa83b16cfdb418d8e860192d8
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: dd7ae71d8c3bc5415654527d5a650e0f09a99168
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "93337129"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105605812"
 ---
 # <a name="tutorial-design-an-azure-database-for-postgresql---single-server-using-the-azure-portal"></a>Zelfstudie: Een Azure Database for PostgreSQL - Single Server ontwerpen met behulp van Azure Portal
 

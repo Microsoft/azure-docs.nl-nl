@@ -12,12 +12,12 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 774c78cbb09d2e5e60dfc0cafc0082b25e9b1b45
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 248d5e163eb046edd130d69307a1c553d434b92d
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103603027"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105604665"
 ---
 # <a name="selective-password-hash-synchronization-configuration-for-azure-ad-connect"></a>Configuratie van de synchronisatie van selectieve wachtwoord hash voor Azure AD Connect
 
@@ -36,6 +36,9 @@ Als u het beheer van de configuratie wilt verminderen, moet u eerst het aantal g
 
 > [!Important]
 > Als u een van beide configuratie opties kiest, wordt een vereiste initiële synchronisatie (volledige synchronisatie) voor het Toep assen van de wijzigingen automatisch uitgevoerd tijdens de volgende synchronisatie cyclus.
+
+> [!Important]
+> Het configureren van de synchronisatie van selectieve wachtwoord hash heeft invloed op wacht woord terugschrijven. Wachtwoord wijzigingen of wacht woorden worden opnieuw ingesteld die worden gestart in Azure Active Directory terugschrijven naar on-premises Active Directory alleen als de gebruiker binnen het bereik is voor het synchroniseren van wacht woord-hashes. 
 
 ### <a name="the-admindescription-attribute"></a>Het adminDescription-kenmerk
 Beide scenario's zijn afhankelijk van het instellen van het adminDescription-kenmerk van gebruikers op een specifieke waarde.  Hierdoor kunnen de regels worden toegepast en is selectief PHS werk.
@@ -134,6 +137,9 @@ Als alle configuraties zijn voltooid, moet u het kenmerk **adminDescription** be
    
   ![Kenmerk bewerken](media/how-to-connect-selective-password-hash-synchronization/exclude-11.png)
 
+U kunt ook de volgende Power shell-opdracht gebruiken om het kenmerk **adminDescription** van een gebruiker te bewerken:
+
+```Set-ADUser myuser -Replace @{adminDescription="PHSFiltered"}```
 
 ## <a name="excluded-users-is-larger-than-included-users"></a>Uitgesloten gebruikers is groter dan opgenomen gebruikers
 In de volgende sectie wordt beschreven hoe u selectieve wachtwoord hash-synchronisatie inschakelt wanneer het aantal gebruikers dat moet worden **uitgesloten** **groter** is dan het aantal gebruikers dat moet worden **opgenomen**.
@@ -202,7 +208,9 @@ Als alle configuraties zijn voltooid, moet u het kenmerk **adminDescription** be
 
   ![Kenmerken bewerken](media/how-to-connect-selective-password-hash-synchronization/include-11.png)
  
- 
+ U kunt ook de volgende Power shell-opdracht gebruiken om het kenmerk **adminDescription** van een gebruiker te bewerken:
+
+ ```Set-ADUser myuser -Replace @{adminDescription="PHSIncluded"}``` 
 
 ## <a name="next-steps"></a>Volgende stappen
 - [Wat is synchronisatie van wachtwoord-hashes?](whatis-phs.md)

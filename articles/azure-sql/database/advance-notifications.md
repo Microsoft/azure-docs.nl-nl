@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/02/2021
-ms.openlocfilehash: 07f6267a14a4604e1a43dd1a1a9930d63a419336
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 895b9081ba7eb6d7e8b5d3304d37168e4064ed39
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101690886"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105560032"
 ---
 # <a name="advance-notifications-for-planned-maintenance-events-preview"></a>Voorafgaande meldingen voor geplande onderhouds gebeurtenissen (preview-versie)
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -89,5 +89,5 @@ De volgende tabel bevat aanvullende meldingen die kunnen worden verzonden terwij
 
 - [Onderhoudsvenster](maintenance-window.md)
 - [Veelgestelde vragen over onderhouds Vensters](maintenance-window-faq.yml)
-- [Overzicht van waarschuwingen in Microsoft Azure](../../azure-monitor/platform/alerts-overview.md)
-- [E-mailadres voor Azure Resource Manager-rol](../../azure-monitor/platform/action-groups.md#email-azure-resource-manager-role)
+- [Overzicht van waarschuwingen in Microsoft Azure](../../azure-monitor/alerts/alerts-overview.md)
+- [E-mailadres voor Azure Resource Manager-rol](../../azure-monitor/alerts/action-groups.md#email-azure-resource-manager-role)

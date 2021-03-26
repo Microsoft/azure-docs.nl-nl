@@ -6,12 +6,12 @@ ms.author: mimcco
 ms.service: azure-percept
 ms.topic: conceptual
 ms.date: 03/25/2021
-ms.openlocfilehash: 086d7ec9d2bcae96ee64745a4382c4748aea291e
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.openlocfilehash: cfc20a30104e24a3950c71bdd8377544803d2f25
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/26/2021
-ms.locfileid: "105572391"
+ms.locfileid: "105604410"
 ---
 # <a name="azure-percept-firewall-configuration-and-security-recommendations"></a>Azure percept firewall-configuratie en beveiligings aanbevelingen
 
@@ -38,3 +38,8 @@ Azure percept DK biedt een groot aantal beveiligings mogelijkheden uit het kader
 - Zorg ervoor dat versleuteling van gegevens op rest is ingeschakeld
 - De postuur van het apparaat continu controleren en snel reageren op waarschuwingen
 - Het aantal beheerders beperken dat toegang heeft tot het apparaat
+
+## <a name="next-steps"></a>Volgende stappen
+
+> [!div class="nextstepaction"]
+> [Meer informatie over Azure percept-beveiliging](./overview-percept-security.md)

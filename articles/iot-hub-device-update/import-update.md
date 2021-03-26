@@ -6,22 +6,22 @@ ms.author: andbrown
 ms.date: 2/11/2021
 ms.topic: how-to
 ms.service: iot-hub-device-update
-ms.openlocfilehash: 15f76488790249f7e301d4474772c500c8829b77
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.openlocfilehash: 3644f26f989fec05ee76afd9f930c31b25234c7f
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/26/2021
-ms.locfileid: "105565636"
+ms.locfileid: "105608524"
 ---
 # <a name="import-new-update"></a>Nieuwe update importeren
 Meer informatie over het importeren van een nieuwe update voor het bijwerken van apparaten in IoT Hub. Als u dit nog niet hebt gedaan, moet u vertrouwd zijn met de basis concepten voor het [importeren](import-concepts.md).
 
 ## <a name="prerequisites"></a>Vereisten
 
-* [Toegang tot een IOT hub met het bijwerken van het apparaat voor IOT hub ingeschakeld](create-device-update-account.md). U kunt het beste een S1 (standaard)-laag of hoger gebruiken voor uw IoT Hub. 
+* [Toegang tot een IOT hub met het bijwerken van het apparaat voor IOT hub ingeschakeld](create-device-update-account.md). 
 * Een IoT-apparaat (of simulator) dat is ingericht voor het bijwerken van het apparaat binnen IoT Hub.
    * Als u een echt apparaat gebruikt, hebt u een update-installatie kopie bestand voor het bijwerken van de installatie kopie of het [apt-manifest bestand](device-update-apt-manifest.md) voor pakket updates nodig.
-* [Power shell 5](/powershell/scripting/install/installing-powershell) of hoger.
+* [Power shell 5](/powershell/scripting/install/installing-powershell) of hoger (inclusief Linux-, macOS-en Windows-installaties)
 * Ondersteunde browsers:
   * [Microsoft Edge](https://www.microsoft.com/edge)
   * Google Chrome

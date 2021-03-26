@@ -4,12 +4,12 @@ description: Hierin wordt beschreven hoe u veelvoorkomende fouten oplost wanneer
 tags: top-support-issue
 ms.topic: troubleshooting
 ms.date: 01/20/2021
-ms.openlocfilehash: 6cb2b611e694c6b72e063f3d8ab05b7667a34e29
-ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
+ms.openlocfilehash: 40e6317a1d879704ef00e928a971ae08fc9e0f72
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104888852"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105564344"
 ---
 # <a name="troubleshoot-common-azure-deployment-errors-with-azure-resource-manager"></a>Veelvoorkomende fouten met Azure-implementatie oplossen met Azure Resource Manager
 
@@ -23,7 +23,7 @@ Als u op zoek bent naar informatie over een fout code en deze informatie niet in
 | ---------- | ---------- | ---------------- |
 | AccountNameInvalid | Volg de naam beperkingen voor opslag accounts. | [Naam van opslag account oplossen](error-storage-account-name.md) |
 | AccountPropertyCannotBeSet | Controleer de beschik bare eigenschappen van het opslag account. | [Storage accounts](/azure/templates/microsoft.storage/storageaccounts) |
-| AllocationFailed | Het cluster of de regio heeft geen resources beschikbaar of kan de aangevraagde VM-grootte niet ondersteunen. Voer de aanvraag op een later tijdstip opnieuw uit of vraag een andere VM-grootte aan. | [Problemen met inrichten en toewijzen voor Linux](../../virtual-machines/troubleshooting/troubleshoot-deployment-new-vm-linux.md), [inrichting en toewijzing van problemen voor Windows](../../virtual-machines/troubleshooting/troubleshoot-deployment-new-vm-windows.md) en het [oplossen van toewijzings fouten](../../virtual-machines/troubleshooting/allocation-failure.md)|
+| AllocationFailed | Het cluster of de regio heeft geen resources beschikbaar of kan de aangevraagde VM-grootte niet ondersteunen. Voer de aanvraag op een later tijdstip opnieuw uit of vraag een andere VM-grootte aan. | [Problemen met inrichten en toewijzen voor Linux](/troubleshoot/azure/virtual-machines/troubleshoot-deployment-new-vm-linux), [inrichting en toewijzing van problemen voor Windows](/troubleshoot/azure/virtual-machines/troubleshoot-deployment-new-vm-windows) en het [oplossen van toewijzings fouten](/troubleshoot/azure/virtual-machines/allocation-failure)|
 | AnotherOperationInProgress | Wacht tot de gelijktijdige bewerking is voltooid. | |
 | AuthorizationFailed | Uw account of Service-Principal heeft onvoldoende toegangs rechten om de implementatie te volt ooien. Controleer de rol waartoe uw account behoort en de toegang tot het implementatie bereik.<br><br>Deze fout kan optreden wanneer een vereiste resource provider niet is geregistreerd. | [Azure RBAC (op rollen gebaseerd toegangsbeheer van Azure)](../../role-based-access-control/role-assignments-portal.md)<br><br>[Registratie oplossen](error-register-resource-provider.md) |
 | BadRequest | U hebt implementatie waarden verzonden die niet overeenkomen met wat er wordt verwacht door Resource Manager. Controleer het binnenste status bericht voor hulp bij het oplossen van problemen. | [Sjabloon verwijzing](/azure/templates/) en [ondersteunde locaties](resource-location.md) |

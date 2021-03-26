@@ -10,14 +10,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 12/07/2018
-ms.author: mbaldwin
-ms.openlocfilehash: ede1af4625d06af4e280eda86d09ae1db3dfdfd1
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.date: 03/25/2021
+ms.author: keithp
+ms.openlocfilehash: 8437d12075a148a3e8062f62e195bc019d89a85b
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "70881026"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105606960"
 ---
 # <a name="azure-dedicated-hsm-physical-security"></a>Exclusieve fysieke beveiliging van de HSM van Azure
 
@@ -25,7 +25,7 @@ Met de speciale HSM van Azure kunt u voldoen aan de geavanceerde beveiligings ve
 
 ## <a name="security-through-procurement"></a>Beveiliging via aanschaf
 
-Micro soft volgt een veilig aankoop proces. We beheren de keten van de bewaring en zorgen ervoor dat het apparaat dat wordt geleverd bij onze data centers, het specifieke apparaat besteld en verzonden is. De apparaten bevinden zich in een back-up van onrecht matige gebeurtenis plastic. Ze worden opgeslagen in een beveiligde opslag ruimte totdat ze in de data galerie van het Data Center worden uitgevoerd.  De racks met de HSM-apparaten worden beschouwd als een hoge impact op het bedrijf (HBI). De apparaten zijn op alle tijden van de voor-en achterkant vergrendeld en onder video toezicht.
+Micro soft volgt een veilig aankoop proces. We beheren de keten van de bewaring en zorgen ervoor dat het apparaat dat wordt geleverd bij onze data centers, het specifieke apparaat besteld en verzonden is. De apparaten zijn in serie onrecht matig gemanipuleerd: plastic tassen en containers van de gebeurtenis. Ze worden opgeslagen in een beveiligde opslag ruimte totdat ze in de data galerie van het Data Center worden uitgevoerd.  De racks met de HSM-apparaten worden beschouwd als een hoge impact op het bedrijf (HBI). De apparaten zijn op alle tijden van de voor-en achterkant vergrendeld en onder video toezicht.
 
 ## <a name="security-through-deployment"></a>Beveiliging via implementatie
 
@@ -49,7 +49,7 @@ Als een micro soft-Engineer toegang moet hebben tot het rek dat door HSM-apparat
 
 ## <a name="logical-level-security-considerations"></a>Beveiligings overwegingen voor logisch niveau
 
-Hsm's worden ingericht in een virtueel netwerk dat door de klant is gemaakt. Dit is de persoonlijke IUP-adres ruimte van de klant.  Deze configuratie biedt een waardevolle isolatie op logisch netwerk niveau en garandeert alleen toegang door de klant. Dit betekent dat alle beveiligings controles op logisch niveau de verantwoordelijkheid van de klant zijn.
+Hsm's worden ingericht in een virtueel netwerk dat door de klant is gemaakt binnen de privé-IP-adres ruimte van de klant.  Deze configuratie biedt een waardevolle isolatie op logisch netwerk niveau en garandeert alleen toegang door de klant. Dit betekent dat alle beveiligings controles op logisch niveau de verantwoordelijkheid van de klant zijn.
 
 ## <a name="next-steps"></a>Volgende stappen
 

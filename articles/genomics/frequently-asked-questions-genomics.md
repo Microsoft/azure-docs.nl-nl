@@ -9,12 +9,12 @@ ms.author: grhuynh
 ms.service: genomics
 ms.topic: troubleshooting
 ms.date: 12/07/2017
-ms.openlocfilehash: e8806bc4f761214e6740a22093b7e18030fdf881
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 40fff49aa3ed46417cdd9a6190f928707e41accb
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96018321"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105608609"
 ---
 # <a name="microsoft-genomics-common-questions"></a>Microsoft Genomics: algemene vragen
 
@@ -59,11 +59,15 @@ U hebt twee toegangs sleutels nodig voor het geval u deze wilt bijwerken (opnieu
 ## <a name="do-you-save-my-storage-account-keys"></a>Slaat u de sleutels van mijn opslag account op?
 De sleutel van uw opslag account wordt gebruikt om toegangs tokens voor de korte termijn te maken voor de Microsoft Genomics-service om uw invoer bestanden te lezen en de uitvoer bestanden te schrijven. De standaard duur van het token is 48 uur. De duur van het token kan worden gewijzigd met de `-sas/--sas-duration` optie voor de opdracht indienen. de waarde is in uren.
 
+## <a name="does-microsoft-genomics-store-customer-data"></a>Worden klant gegevens Microsoft Genomics opgeslagen?
+
+Nee. Microsoft Genomics slaat geen klant gegevens op.
+
 ## <a name="what-genome-references-can-i-use"></a>Welke genoom verwijzingen kan ik gebruiken?
 
 Deze verwijzingen worden ondersteund:
 
- |Naslaginformatie              | Waarde van `-pa/--process-args` |
+ |Referentie              | Waarde van `-pa/--process-args` |
  |:-------------         |:-------------                 |
  |b37                    | `R=b37m1`                     |
  |hg38                   | `R=hg38m1`                    |      

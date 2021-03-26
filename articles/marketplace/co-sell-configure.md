@@ -8,16 +8,16 @@ author: palanis-MSFT
 ms.author: palanis
 ms.reviewer: stmummer
 ms.date: 3/17/2021
-ms.openlocfilehash: e8019a30d4f5bf24814d88fc749cefd6b529b73b
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: db502f4652a6ae541a504249475898e3e771f90d
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104609268"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105563392"
 ---
 # <a name="configure-co-sell-for-a-commercial-marketplace-offer"></a>Co-sell configureren voor een commerciële Marketplace-aanbieding
 
-In dit artikel wordt beschreven hoe u het tabblad **verkopen met micro soft** kunt configureren voor een commerciële Marketplace-aanbieding. Het is volledig optioneel om informatie op dit tabblad op te geven, maar het is wel vereist voor het samen stellen van de voor [bereidingen op de verkoop en de gemotiveerd-status](https://aka.ms/CertificationPolicies#3000-requirements-for-co-sell-status). De gegevens die u verstrekt, worden door micro soft verkoop teams gebruikt om meer te weten te komen over uw aanbieding bij het evalueren van de geschiktheid voor klanten behoeften. Deze informatie is niet rechtstreeks beschikbaar voor klanten. Zie voor meer informatie over co-sell [samen verkopen met micro soft-verkopers en-partners overzicht](marketplace-co-sell.md) en [verkoop samen met micro soft](https://partner.microsoft.com/membership/co-sell-with-microsoft).
+In dit artikel wordt beschreven hoe u het tabblad **verkopen met micro soft** kunt configureren voor een commerciële Marketplace-aanbieding. Het is volledig optioneel om informatie op dit tabblad op te geven, maar het is wel vereist voor het samen stellen van de voor [bereidingen op de verkoop en de gemotiveerd-status](/legal/marketplace/certification-policies#3000-requirements-for-co-sell-status). De gegevens die u verstrekt, worden door micro soft verkoop teams gebruikt om meer te weten te komen over uw aanbieding bij het evalueren van de geschiktheid voor klanten behoeften. Deze informatie is niet rechtstreeks beschikbaar voor klanten. Zie voor meer informatie over co-sell [samen verkopen met micro soft-verkopers en-partners overzicht](marketplace-co-sell.md) en [verkoop samen met micro soft](https://partner.microsoft.com/membership/co-sell-with-microsoft).
 
 De optie co-Sell is beschikbaar voor de volgende aanbiedings typen.
 

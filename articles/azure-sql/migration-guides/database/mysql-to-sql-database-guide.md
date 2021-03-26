@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: MashaMSFT
 ms.author: mathoma
 ms.date: 03/19/2021
-ms.openlocfilehash: 14b2c1f98ae977548edb635b8a8a7a956b3f2dd7
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.openlocfilehash: 6b8d3afc214f6b78fcc11b3592cd51dadf37bf96
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105023772"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105564145"
 ---
 # <a name="migration-guide--mysql-to-azure-sql-database"></a>Migratie handleiding: MySQL naar Azure SQL Database
 [!INCLUDE[appliesto-sqldb-sqlmi](../../includes/appliesto-sqldb.md)]
@@ -162,7 +162,7 @@ Zie voor meer informatie over deze problemen en specifieke stappen om ze te bepe
 
 Voor aanvullende hulp bij het volt ooien van dit migratie scenario raadpleegt u de volgende bronnen, die zijn ontwikkeld ter ondersteuning van een echt toonaangevend migratie project.
 
-| Titel/koppeling     | Beschrijving    |
+| Titel/koppeling     | Description    |
 | ---------------------------------------------- | ---------------------------------------------------- |
 | [Beoordelings model en hulp programma voor gegevens workload](https://github.com/Microsoft/DataMigrationTeam/tree/master/Data%20Workload%20Assessment%20Model%20and%20Tool) | Dit hulp programma biedt voorgestelde ' Best passend ' doel platformen, Cloud gereedheids en toepassings-en database herstel niveau voor een bepaalde werk belasting. U kunt met één klik berekeningen en rapporten genereren waarmee u grote en kleine beoordelingen aanzienlijk sneller door middel van en geautomatiseerd en uniform platform besluitvormings proces. |
 
@@ -172,7 +172,7 @@ Deze resources zijn ontwikkeld als onderdeel van het data SQL expert-programma, 
 
 - Bekijk de [reken machine van de totale eigendoms kosten van Azure (TCO)](https://aka.ms/azure-tco) voor een schatting van de kosten besparingen die u kunt realiseren door uw workloads naar Azure te migreren.
 
-- Zie de artikel [service en hulpprogram ma's voor gegevens migratie](https://docs.microsoft.com/azure/dms/dms-tools-matrix)voor een matrix van de services en hulpprogram Ma's van micro soft en van derden die beschikbaar zijn om u te helpen bij verschillende scenario's voor data base-en gegevens migratie, en voor speciale taken.
+- Zie de artikel [service en hulpprogram ma's voor gegevens migratie](../../../dms/dms-tools-matrix.md)voor een matrix van de services en hulpprogram Ma's van micro soft en van derden die beschikbaar zijn om u te helpen bij verschillende scenario's voor data base-en gegevens migratie, en voor speciale taken.
 
 - Zie [Data Base Migration](https://datamigration.microsoft.com/)(Engelstalig) voor andere migratie handleidingen. 
 

@@ -7,12 +7,12 @@ ms.date: 03/13/2021
 ms.topic: troubleshooting
 ms.author: susabat
 ms.reviewer: susabat
-ms.openlocfilehash: f5039e5a49da202b2dbfa20e56639365ed597c79
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 72f2a5eec25b9acc2aedd7b006fe3380141781c8
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103461994"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105563409"
 ---
 # <a name="troubleshoot-pipeline-orchestration-and-triggers-in-azure-data-factory"></a>Problemen met het indelen van pijp lijnen en triggers in Azure Data Factory oplossen
 
@@ -95,7 +95,7 @@ Azure Data Factory evalueert het resultaat van alle activiteiten op Leaf-niveau.
 
 * Implementeer controles op activiteit niveau door [te volgen hoe er pijp lijn fouten en-fouten worden afgehandeld](https://techcommunity.microsoft.com/t5/azure-data-factory/understanding-pipeline-failures-and-error-handling/ba-p/1630459).
 * Gebruik Azure Logic Apps voor het bewaken van pijp lijnen met regel matige intervallen na het [uitvoeren van een query op Factory](/rest/api/datafactory/pipelineruns/querybyfactory).
-* [Pijp lijn visueel bewaken](https://docs.microsoft.com/azure/data-factory/monitor-visually)
+* [Pijp lijn visueel bewaken](./monitor-visually.md)
 
 ### <a name="how-to-monitor-pipeline-failures-in-regular-intervals"></a>Pijp lijn fouten met regel matige intervallen bewaken
 
@@ -105,7 +105,7 @@ Mogelijk moet u de mislukte Data Factory pijp lijnen in intervallen controleren,
 
 **Oplossing**
 * U kunt een Azure Logic-app zo instellen dat elke 5 minuten een query wordt uitgevoerd op alle mislukte pijp lijnen, zoals wordt beschreven in [query op Factory](/rest/api/datafactory/pipelineruns/querybyfactory). Vervolgens kunt u incidenten rapporteren aan uw ticket systeem.
-* [Pijp lijn visueel bewaken](https://docs.microsoft.com/azure/data-factory/monitor-visually)
+* [Pijp lijn visueel bewaken](./monitor-visually.md)
 
 ### <a name="degree-of-parallelism--increase-does-not-result-in-higher-throughput"></a>De mate van parallellisme toename resulteert niet in een hogere door Voer
 
@@ -146,8 +146,8 @@ Dit kan gebeuren als u geen tijd hebt geïmplementeerd voor een Live-functie voo
 
 **Oplossing**
 
-* Als elke kopieeractiviteit maximaal 2 minuten duurt om te starten, en het probleem zich voornamelijk voordoet bij een VNet-koppeling (in tegenstelling tot een Azure IR), kan dit een prestatieprobleem bij het kopiëren zijn. Als u de stappen voor het oplossen van problemen wilt bekijken, gaat u naar [Kopieer prestaties verbeteren.](https://docs.microsoft.com/azure/data-factory/copy-activity-performance-troubleshooting)
-* U kunt de functie time to Live gebruiken om de start tijd van het cluster voor gegevens stroom activiteiten te verlagen. Controleer Integration Runtime van de [gegevens stroom.](https://docs.microsoft.com/azure/data-factory/control-flow-execute-data-flow-activity#data-flow-integration-runtime)
+* Als elke kopieeractiviteit maximaal 2 minuten duurt om te starten, en het probleem zich voornamelijk voordoet bij een VNet-koppeling (in tegenstelling tot een Azure IR), kan dit een prestatieprobleem bij het kopiëren zijn. Als u de stappen voor het oplossen van problemen wilt bekijken, gaat u naar [Kopieer prestaties verbeteren.](./copy-activity-performance-troubleshooting.md)
+* U kunt de functie time to Live gebruiken om de start tijd van het cluster voor gegevens stroom activiteiten te verlagen. Controleer Integration Runtime van de [gegevens stroom.](./control-flow-execute-data-flow-activity.md#data-flow-integration-runtime)
 
  ### <a name="hitting-capacity-issues-in-shirself-hosted-integration-runtime"></a>Problemen met de capaciteit van de SHIR (zelf-Hostend Integration Runtime)
  
@@ -157,7 +157,7 @@ Dit kan gebeuren als u SHIR niet hebt geschaald volgens uw werk belasting.
 
 **Oplossing**
 
-* Als er een probleem met de capaciteit van SHIR optreedt, voert u een upgrade uit voor de virtuele machine om het knoop punt te verg Roten om de activiteiten te salderen Als er een fout bericht wordt weer gegeven over een zelf-hostende IR-fout of-fout, een zelf-hostende IR-upgrade of zelf-hostende IR-verbindings problemen, die een lange wachtrij kunnen genereren, gaat u naar [problemen met zelf-hostende Integration runtime oplossen.](https://docs.microsoft.com/azure/data-factory/self-hosted-integration-runtime-troubleshoot-guide)
+* Als er een probleem met de capaciteit van SHIR optreedt, voert u een upgrade uit voor de virtuele machine om het knoop punt te verg Roten om de activiteiten te salderen Als er een fout bericht wordt weer gegeven over een zelf-hostende IR-fout of-fout, een zelf-hostende IR-upgrade of zelf-hostende IR-verbindings problemen, die een lange wachtrij kunnen genereren, gaat u naar [problemen met zelf-hostende Integration runtime oplossen.](./self-hosted-integration-runtime-troubleshoot-guide.md)
 
 ### <a name="error-messages-due-to-long-queues-for-adf-copy-and-data-flow"></a>Fout berichten als gevolg van lange wacht rijen voor de ADF-kopie en de gegevens stroom
 
@@ -166,10 +166,10 @@ Dit kan gebeuren als u SHIR niet hebt geschaald volgens uw werk belasting.
 Lange wachtrij-gerelateerde fout berichten kunnen om verschillende redenen worden weer gegeven. 
 
 **Oplossing**
-* Als u een fout bericht van een wille keurige bron of bestemming ontvangt via connectors, waarmee u een lange wachtrij kunt genereren, gaat u naar [Connector Troubleshooting Guide (Engelstalig).](https://docs.microsoft.com/azure/data-factory/connector-troubleshoot-guide)
-* Als u een fout bericht ontvangt over het toewijzen van gegevens stroom, waardoor een lange wachtrij kan worden gegenereerd, gaat u naar de gids voor het [oplossen van problemen met gegevens stromen.](https://docs.microsoft.com/azure/data-factory/data-flow-troubleshoot-guide)
-* Als u een fout bericht ontvangt over andere activiteiten, zoals Databricks, aangepaste activiteiten of HDI, die een lange wachtrij kunnen genereren, gaat u naar [activiteiten gids voor het oplossen van problemen.](https://docs.microsoft.com/azure/data-factory/data-factory-troubleshoot-guide)
-* Als er een fout bericht wordt weer gegeven over het uitvoeren van SSIS-pakketten, die een lange wachtrij kan genereren, gaat u naar de [probleemoplossings gids voor het oplossen van problemen met het Azure-SSIS-pakket](https://docs.microsoft.com/azure/data-factory/ssis-integration-runtime-ssis-activity-faq) en de [richt lijnen](https://docs.microsoft.com/azure/data-factory/ssis-integration-runtime-management-troubleshoot) voor het oplossen van Integration runtime
+* Als u een fout bericht van een wille keurige bron of bestemming ontvangt via connectors, waarmee u een lange wachtrij kunt genereren, gaat u naar [Connector Troubleshooting Guide (Engelstalig).](./connector-troubleshoot-guide.md)
+* Als u een fout bericht ontvangt over het toewijzen van gegevens stroom, waardoor een lange wachtrij kan worden gegenereerd, gaat u naar de gids voor het [oplossen van problemen met gegevens stromen.](./data-flow-troubleshoot-guide.md)
+* Als u een fout bericht ontvangt over andere activiteiten, zoals Databricks, aangepaste activiteiten of HDI, die een lange wachtrij kunnen genereren, gaat u naar [activiteiten gids voor het oplossen van problemen.](./data-factory-troubleshoot-guide.md)
+* Als er een fout bericht wordt weer gegeven over het uitvoeren van SSIS-pakketten, die een lange wachtrij kan genereren, gaat u naar de [probleemoplossings gids voor het oplossen van problemen met het Azure-SSIS-pakket](./ssis-integration-runtime-ssis-activity-faq.md) en de [richt lijnen](./ssis-integration-runtime-management-troubleshoot.md) voor het oplossen van Integration runtime
 
 
 ## <a name="next-steps"></a>Volgende stappen

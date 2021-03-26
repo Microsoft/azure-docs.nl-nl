@@ -8,12 +8,12 @@ ms.service: synapse-analytics
 ms.topic: tutorial
 ms.subservice: spark
 ms.date: 10/16/2020
-ms.openlocfilehash: d125bca5ed67476897eec7cd32a586776d8b1ea8
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 15b67c969cb0464256caed58a2e7388eb7a76b9c
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102176617"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105608746"
 ---
 # <a name="tutorial-create-apache-spark-job-definition-in-synapse-studio"></a>Zelfstudie: Apache Spark-taakdefinitie maken in Synapse Studio
 
@@ -23,10 +23,13 @@ Deze zelfstudie bestaat uit de volgende taken:
 > [!div class="checklist"]
 >
 > - Een Apache Spark-taakdefinitie maken voor PySpark (Python)
-> - Een Apache Spark-taakdefinitie maken voor Spark (Scala)
-> - Een Apache Spark-taakdefinitie maken voor .NET Spark (C#/F#)
+> - Een Apache Spark-taak definitie maken voor Spark (scala)
+> - Een Apache Spark-taak definitie maken voor .NET Spark (C#/F #)
+> - Taak definitie maken door een JSON-bestand te importeren
+> - Een Apache Spark-taak definitie bestand naar een lokale exporteren
 > - Een Apache Spark-taakdefinitie verzenden als batchtaak
 > - Een Apache Spark-taakdefinitie toevoegen aan de pijplijn
+
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -36,6 +39,7 @@ Zorg ervoor dat u aan de volgende vereisten voldoet voordat u met deze zelfstudi
 * Een serverloze Apache Spark-pool.
 * Een ADLS Gen2-opslagaccount. U moet de Inzender voor **gegevens** van de opslag-blob van het ADLS Gen2 bestands systeem waarmee u wilt werken. Als dat niet het geval is, moet u de machtiging handmatig toevoegen.
 * Als u de standaardopslag van de werkruimte niet wilt gebruiken, koppelt u het vereiste ADLS Gen2-opslagaccount in Synapse Studio. 
+
 
 ## <a name="create-an-apache-spark-job-definition-for-pyspark-python"></a>Een Apache Spark-taakdefinitie maken voor PySpark (Python)
 
@@ -160,6 +164,57 @@ In deze sectie maakt u een Apache Spark-taakdefinitie voor .NET Spark(C#/F#).
 
       ![dotnet-definitie publiceren](./media/apache-spark-job-definitions/publish-dotnet-definition.png)
 
+## <a name="create-apache-spark-job-definition-by-importing-a-json-file"></a>Apache Spark taak definitie maken door een JSON-bestand te importeren
+
+ U kunt een bestaand lokaal JSON-bestand importeren in azure Synapse-werk ruimte vanuit het menu **acties** (...) van de Apache Spark taak definitie Verkenner om een nieuwe Apache Spark taak definitie te maken.
+
+ ![import definitie maken](./media/apache-spark-job-definitions/create-import-definition.png)
+
+ 
+ De Spark-taak definitie is volledig compatibel met de livy-API. U kunt aanvullende para meters toevoegen voor andere livy-eigenschappen [(livy docs-rest API (Apache.org)](https://livy.incubator.apache.org/docs/latest/rest-api.html) in het lokale JSON-bestand. U kunt ook de configuratie parameters opgeven die zijn gerelateerd aan Spark in de eigenschap config zoals hieronder wordt weer gegeven. Vervolgens kunt u het JSON-bestand weer importeren om een nieuwe Apache Spark taak definitie voor uw batch-taak te maken. Voor beeld van JSON voor importeren met Spark-definitie:
+ 
+```Scala
+   {
+  "targetBigDataPool": {
+    "referenceName": "socdemolarge",
+    "type": "BigDataPoolReference"
+  },
+  "requiredSparkVersion": "2.3",
+  "language": "scala",
+  "jobProperties": {
+    "name": "robinSparkDefinitiontest",
+    "file": "adl://socdemo-c14.azuredatalakestore.net/users/robinyao/wordcount.jar",
+    "className": "WordCount",
+    "args": [
+      "adl://socdemo-c14.azuredatalakestore.net/users/robinyao/shakespeare.txt"
+    ],
+    "jars": [],
+    "files": [],
+    "conf": {
+      "spark.dynamicAllocation.enabled": "false",
+      "spark.dynamicAllocation.minExecutors": "2",
+      "spark.dynamicAllocation.maxExecutors": "2"
+    },
+    "numExecutors": 2,
+    "executorCores": 8,
+    "executorMemory": "24g",
+    "driverCores": 8,
+    "driverMemory": "24g"
+  }
+}
+
+```
+
+![andere livy-eigenschappen](./media/apache-spark-job-definitions/other-livy-properties.png)
+
+## <a name="export-an-existing-apache-spark-job-definition-file"></a>Een bestaand Apache Spark-taak definitie bestand exporteren
+
+ U kunt bestaande Apache Spark-taak definitie bestanden exporteren naar lokaal vanuit het menu **acties** (...) van de bestanden Verkenner. U kunt het JSON-bestand verder bijwerken voor aanvullende livy-eigenschappen en dit indien nodig opnieuw importeren om een nieuwe taak definitie te maken.
+
+ ![definitie voor exporteren maken](./media/apache-spark-job-definitions/create-export-definition.png)
+
+ ![export definitie 2 maken](./media/apache-spark-job-definitions/create-export-definition-2.png)
+
 ## <a name="submit-an-apache-spark-job-definition-as-a-batch-job"></a>Een Apache Spark-taakdefinitie verzenden als batchtaak
 
 Nadat u een Apache Spark-taakdefinitie hebt gemaakt, kunt u deze verzenden naar een Apache Spark-pool. Zorg ervoor dat u de **Inzender** voor de opslag-blob van het ADLS Gen2 bestands systeem waarmee u wilt werken. Als dat niet het geval is, moet u de machtiging handmatig toevoegen.
@@ -202,6 +257,7 @@ In deze sectie voegt u een Apache Spark-taakdefinitie toe aan de pijplijn.
      ![toevoegen aan pipeline1](./media/apache-spark-job-definitions/add-to-pipeline01.png)
 
      ![toevoegen aan pipeline2](./media/apache-spark-job-definitions/add-to-pipeline02.png)
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

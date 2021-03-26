@@ -6,12 +6,12 @@ ms.service: data-factory
 ms.topic: troubleshooting
 ms.date: 02/24/2021
 ms.author: lle
-ms.openlocfilehash: fa410441203c50d96c0de1d9188fb73b6fd4d577
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 5e94ea989002d3d3c6d0e96123d5b8ddb5f078c3
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101706154"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105568032"
 ---
 # <a name="troubleshoot-azure-data-factory-security-and-access-control-issues"></a>Problemen met Azure Data Factory beveiliging en toegangs beheer oplossen
 
@@ -182,7 +182,7 @@ Bijvoorbeeld: de Azure Blob Storage-Sink gebruikt Azure IR (openbaar, niet behee
 
 #### <a name="cause"></a>Oorzaak
 
-ADF kan nog steeds beheerde VNet-IR gebruiken, maar u kunt wel een dergelijke fout tegen komen, omdat het open bare eind punt naar Azure Blob Storage in Managed VNet niet betrouwbaar is op basis van het test resultaat en Azure Blob Storage en Azure Data Lake Gen2 niet worden ondersteund om via een openbaar eind Virtual Network punt te worden verbonden met het beheerde [virtuele netwerk & beheerde persoonlijke eind punten](https://docs.microsoft.com/azure/data-factory/managed-virtual-network-private-endpoint#outbound-communications-through-public-endpoint-from-adf-managed-virtual-network).
+ADF kan nog steeds beheerde VNet-IR gebruiken, maar u kunt wel een dergelijke fout tegen komen, omdat het open bare eind punt naar Azure Blob Storage in Managed VNet niet betrouwbaar is op basis van het test resultaat en Azure Blob Storage en Azure Data Lake Gen2 niet worden ondersteund om via een openbaar eind Virtual Network punt te worden verbonden met het beheerde [virtuele netwerk & beheerde persoonlijke eind punten](./managed-virtual-network-private-endpoint.md#outbound-communications-through-public-endpoint-from-adf-managed-virtual-network).
 
 #### <a name="solution"></a>Oplossing
 

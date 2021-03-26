@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/12/2020
 ms.author: wellsi
-ms.openlocfilehash: 37bbc8c7c2b81c22ffd8704e655805cc63cd9d45
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: f9215469b1436ce9dc95c140e6969366d80d1ced
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105044988"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105607130"
 ---
 # <a name="release-notes-speech-devices-sdk"></a>Release opmerkingen: SDK voor spraak apparaten
 
@@ -107,7 +107,7 @@ De volgende secties bevatten een lijst met wijzigingen in de meest recente relea
 **Wijzigingen die fouten veroorzaken**
 
 - Met deze release wordt een aantal belang rijke wijzigingen geïntroduceerd. Raadpleeg [Deze pagina](https://aka.ms/csspeech/breakingchanges_1_0_0) voor meer informatie over de api's.
-- De KWS-model bestanden zijn niet compatibel met Speech-apparaten SDK 1.0.1. De bestaande trefwoord bestanden worden verwijderd nadat de nieuwe trefwoord bestanden naar het apparaat zijn geschreven.
+- De bestanden voor het herkennings model voor het tref woord zijn niet compatibel met Speech-apparaten SDK 1.0.1. De bestaande trefwoord bestanden worden verwijderd nadat de nieuwe trefwoord bestanden naar het apparaat zijn geschreven.
 
 ## <a name="speech-devices-sdk-050-2018-aug-release"></a>Speech-apparaten SDK 0.5.0:2018-aug release
 

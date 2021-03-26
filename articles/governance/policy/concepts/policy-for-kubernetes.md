@@ -3,12 +3,12 @@ title: Azure Policy leren voor Kubernetes
 description: Lees hoe Azure Policy Rego gebruikt en beleids agent opent voor het beheren van clusters met Kubernetes in azure of on-premises.
 ms.date: 03/22/2021
 ms.topic: conceptual
-ms.openlocfilehash: 60ffcfac688eb40f47efefb74f79d27a2cb82446
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.openlocfilehash: 4a6ca7fb5086401cab58d4bfb6a412089c11ef05
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104868151"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105564302"
 ---
 # <a name="understand-azure-policy-for-kubernetes-clusters"></a>Azure Policy voor Kubernetes-clusters
 
@@ -61,7 +61,7 @@ De volgende algemene beperkingen zijn van toepassing op de Azure Policy-invoeg t
 
 De volgende beperkingen gelden alleen voor de Azure Policy-invoeg toepassing voor AKS:
 
-- [AKS pod-beveiligings beleid](../../../aks/use-pod-security-policies.md) en de Azure Policy-invoeg toepassing voor AKS kunnen niet beide worden ingeschakeld. Zie [AKS pod Security beperking](../../../aks/use-pod-security-on-azure-policy.md#limitations)(Engelstalig) voor meer informatie.
+- [AKS pod-beveiligings beleid](../../../aks/use-pod-security-policies.md) en de Azure Policy-invoeg toepassing voor AKS kunnen niet beide worden ingeschakeld. Zie [AKS pod Security beperking](../../../aks/use-azure-policy.md)(Engelstalig) voor meer informatie.
 - Naam ruimten automatisch uitgesloten door Azure Policy invoeg toepassing voor evaluatie: _uitvoeren-System_, _gate keeper-System_ en _AKS-Peri Scope_.
 
 ## <a name="recommendations"></a>Aanbevelingen
@@ -201,7 +201,7 @@ Voordat u de Azure Policy invoeg toepassing installeert of een van de service fu
 
 1. Installeer [helm 3](https://v3.helm.sh/docs/intro/install/).
 
-1. Uw Kubernetes-cluster is ingeschakeld voor Azure Arc. Zie voor meer informatie [een onboarding van een Kubernetes-cluster naar Azure Arc](../../../azure-arc/kubernetes/connect-cluster.md).
+1. Uw Kubernetes-cluster is ingeschakeld voor Azure Arc. Zie voor meer informatie [een onboarding van een Kubernetes-cluster naar Azure Arc](../../../azure-arc/kubernetes/quickstart-connect-cluster.md).
 
 1. Hebben de volledig gekwalificeerde Azure-Resource-ID van het Kubernetes-cluster met Azure Arc enabled.
 

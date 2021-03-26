@@ -6,12 +6,12 @@ ms.author: anvar
 ms.manager: bsiva
 ms.topic: troubleshooting
 ms.date: 08/17/2020
-ms.openlocfilehash: 33e2bf641b75a5dd360498478f1ea70c7614fb38
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 5487e51ad73ab903e7b61de266e2c28d282a56c1
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98071371"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105568655"
 ---
 # <a name="troubleshooting-replication-issues-in-agentless-vmware-vm-migration"></a>Problemen met replicatie oplossen in VMware VM-migratie zonder agent
 
@@ -292,7 +292,7 @@ Dit probleem treedt op wanneer vCenter Server beheer agenten niet meer werken. R
 
 ### <a name="error-message-an-internal-error-occurred-snapshot-disk-size-invalid"></a>Fout bericht: er is een interne fout opgetreden. [Schijf grootte van moment opname is ongeldig]
 
-Dit is een bekend VMware-probleem waarin de schijf grootte die wordt aangegeven door de moment opname nul wordt. Volg de oplossing die is opgegeven in [VMware KB](https://go.microsoft.com/fwlink/?linkid=2138972).
+Dit is een bekend VMware-probleem waarin de schijf grootte die wordt aangegeven door de moment opname nul wordt. Volg de oplossing die is opgegeven in [VMware KB](https://kb.vmware.com/s/).
 
 ### <a name="error-message-an-internal-error-occurred-memory-allocation-failed-out-of-memory"></a>Fout bericht: er is een interne fout opgetreden. [Geheugen toewijzing is mislukt. Onvoldoende geheugen.]
 

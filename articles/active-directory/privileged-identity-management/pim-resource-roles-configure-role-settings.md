@@ -15,12 +15,12 @@ ms.date: 01/01/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4ded81389fae5954c0e488f634945b4f1c1fe4c8
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 40779e4517b610e52e41caacc46fc613b72023e5
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96009038"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105567132"
 ---
 # <a name="configure-azure-resource-role-settings-in-privileged-identity-management"></a>Instellingen voor Azure-resource-rollen configureren in Privileged Identity Management
 
@@ -78,14 +78,14 @@ U kunt kiezen uit twee opties voor de toewijzings duur voor elk toewijzings type
 
 U kunt kiezen uit een van **deze opties** voor de gewenste duur van de toewijzing:
 
-| | |
+| | Description |
 | --- | --- |
 | **Permanente toewijzing in aanmerking komend toestaan** | Resource beheerders kunnen een permanente, in aanmerking komende toewijzing toewijzen. |
 | **In aanmerking komende toewijzing laten verlopen na** | Resource beheerders kunnen vereisen dat alle in aanmerking komende toewijzingen een opgegeven begin-en eind datum hebben. |
 
 En u kunt een van deze **actieve** toewijzings duur opties kiezen:
 
-| | |
+| | Description |
 | --- | --- |
 | **Permanente actieve toewijzing toestaan** | Resource beheerders kunnen permanente actieve toewijzing toewijzen. |
 | **Actieve toewijzing laten verlopen na** | Resource beheerders kunnen vereisen dat alle actieve toewijzingen een opgegeven begin-en eind datum hebben. |

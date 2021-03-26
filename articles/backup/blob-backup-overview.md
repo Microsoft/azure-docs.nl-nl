@@ -3,12 +3,12 @@ title: Overzicht van operationele back-ups voor Azure-blobs
 description: Meer informatie over operationele back-ups voor Azure-blobs (in preview-versie).
 ms.topic: conceptual
 ms.date: 02/16/2021
-ms.openlocfilehash: b10191c8a01d3cc7a92dee8ca9bf59a506497a60
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 1f6bc98b92a2af4b05cae766a2186f2970b7133c
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101744582"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105558751"
 ---
 # <a name="overview-of-operational-backup-for-azure-blobs-in-preview"></a>Overzicht van operationele back-ups voor Azure-blobs (in preview-versie)
 
@@ -22,7 +22,7 @@ Operationele back-ups van blobs is een **lokale back-** upoplossing. De back-upg
 
 Operationele back-up gebruikt BLOB-platform mogelijkheden om uw gegevens te beveiligen en zo nodig herstel toe te staan:
 
-- **Herstel** naar een bepaald tijdstip: [BLOB Point-in-time Restore](https://docs.microsoft.com/azure/storage/blobs/point-in-time-restore-overview) maakt het mogelijk om BLOB-gegevens naar een eerdere status te herstellen. Dit maakt op zijn beurt gebruik van **zacht verwijderen**, wijzigen van de **feed** en de versie van de **BLOB** om gegevens te bewaren voor de opgegeven duur. Operationele back-up zorgt voor het inschakelen van herstel naar een bepaald tijdstip en de onderliggende mogelijkheden om ervoor te zorgen dat de gegevens behouden blijven voor de opgegeven duur.
+- **Herstel** naar een bepaald tijdstip: [BLOB Point-in-time Restore](../storage/blobs/point-in-time-restore-overview.md) maakt het mogelijk om BLOB-gegevens naar een eerdere status te herstellen. Dit maakt op zijn beurt gebruik van **zacht verwijderen**, wijzigen van de **feed** en de versie van de **BLOB** om gegevens te bewaren voor de opgegeven duur. Operationele back-up zorgt voor het inschakelen van herstel naar een bepaald tijdstip en de onderliggende mogelijkheden om ervoor te zorgen dat de gegevens behouden blijven voor de opgegeven duur.
 
 - **Verwijderings vergrendeling**: verwijderings vergrendeling voor komt dat het opslag account per ongeluk of niet-geautoriseerde gebruikers wordt verwijderd. Bij het configureren van een operationele back-up wordt ook automatisch een verwijderings vergrendeling toegepast om de mogelijkheden van gegevens verlies te verminderen vanwege het verwijderen van het opslag account.
 
@@ -63,9 +63,9 @@ Met Operational backup hebt u de optie om alle blok-blobs in het opslag account 
 
 Bij het gebruik van operationele back-ups voor blobs worden geen beheer kosten of instantie kosten in rekening gebracht. Er worden echter wel de volgende kosten in rekening gebracht:
 
-- Herstel bewerkingen worden uitgevoerd met behulp van BLOB Point-in-time Restore en brengt kosten aan op basis van de hoeveelheid verwerkte gegevens. Zie [prijzen voor herstellen](https://docs.microsoft.com/azure/storage/blobs/point-in-time-restore-overview#pricing-and-billing)naar een bepaald tijdstip voor meer informatie.
+- Herstel bewerkingen worden uitgevoerd met behulp van BLOB Point-in-time Restore en brengt kosten aan op basis van de hoeveelheid verwerkte gegevens. Zie [prijzen voor herstellen](../storage/blobs/point-in-time-restore-overview.md#pricing-and-billing)naar een bepaald tijdstip voor meer informatie.
 
-- Het bewaren van gegevens vanwege een [tijdelijke verwijdering voor blobs](https://docs.microsoft.com/azure/storage/blobs/soft-delete-blob-overview), [wijziging in de feed-ondersteuning in Azure Blob Storage](https://docs.microsoft.com/azure/storage/blobs/storage-blob-change-feed)en [BLOB-versie beheer](https://docs.microsoft.com/azure/storage/blobs/versioning-overview).
+- Het bewaren van gegevens vanwege een [tijdelijke verwijdering voor blobs](../storage/blobs/soft-delete-blob-overview.md), [wijziging in de feed-ondersteuning in Azure Blob Storage](../storage/blobs/storage-blob-change-feed.md)en [BLOB-versie beheer](../storage/blobs/versioning-overview.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: quickstart
 ms.date: 01/29/2021
-ms.openlocfilehash: 6232c842514c10a5440e574621ca74e2f4867d86
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 8a500104a0273b9e131815c4dc832bd33729cd51
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "99981621"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105566588"
 ---
 # <a name="quickstart-create-an-instance-of-the-azure-database-migration-service-by-using-the-azure-portal"></a>Quickstart: Een Azure Database Migration Service-exemplaar maken met behulp van Azure Portal
 
@@ -90,6 +90,6 @@ U kunt de resources die u in deze Quick Start hebt gemaakt, opschonen door de [A
 ## <a name="next-steps"></a>Volgende stappen
 
 * [SQL Server offline migreren naar Azure SQL Database](tutorial-sql-server-to-azure-sql.md)
-* [SQL Server online migreren naar Azure SQL Database](tutorial-sql-server-azure-sql-online.md)
+* [SQL Server online migreren naar Azure SQL Database](./tutorial-sql-server-to-azure-sql.md)
 * [SQL Server voor het offline migreren naar een beheerd exemplaar van Azure SQL](tutorial-sql-server-to-managed-instance.md)
 * [SQL Server naar een Azure SQL Managed instance online migreren](tutorial-sql-server-managed-instance-online.md)

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/17/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 105fd185900692669fdc40e0c47a03474524e250
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: c389cfd2af6fe83ec232e5f205041676ba46bd2a
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101731099"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105558190"
 ---
 # <a name="azure-security-baseline-for-azure-cloud-services"></a>Azure-beveiligings basislijn voor Azure Cloud Services
 
@@ -36,7 +36,7 @@ Microsoft Azure Cloud Services (klassiek) kan niet in Azure Resource Manager vir
 
 - [Overzicht van de netwerk beveiligings groep](../virtual-network/network-security-groups-overview.md)
 
-- [Peering van virtuele netwerken](https://docs.microsoft.com/azure/cloud-services/cloud-services-connectivity-and-networking-faq#how-can-i-use-azure-resource-manager-virtual-networks-with-cloud-services)
+- [Peering van virtuele netwerken](./cloud-services-connectivity-and-networking-faq.md#how-can-i-use-azure-resource-manager-virtual-networks-with-cloud-services)
 
 **Verantwoordelijkheid**: Klant
 
@@ -89,11 +89,11 @@ Voorkom binnenkomend verkeer naar de standaard-URL of de naam van uw Cloud Servi
 
 Configureer een regel voor het weigeren van regels voor klassieke abonnements beheerders toewijzingen. Nadat een intern eind punt is gedefinieerd, kan de communicatie standaard stromen van elke rol naar het interne eind punt van een rol zonder beperkingen. Als u de communicatie wilt beperken, moet u een NetworkTrafficRules-element toevoegen aan het element ServiceDefinition in het service definitie bestand.
 
-- [Hoe kan ik binnenkomend verkeer naar de standaard-URL van mijn Cloud service blok keren/uitschakelen](https://docs.microsoft.com/azure/cloud-services/cloud-services-connectivity-and-networking-faq#how-can-i-blockdisable-incoming-traffic-to-the-default-url-of-my-cloud-service)
+- [Hoe kan ik binnenkomend verkeer naar de standaard-URL van mijn Cloud service blok keren/uitschakelen](./cloud-services-connectivity-and-networking-faq.md#how-can-i-blockdisable-incoming-traffic-to-the-default-url-of-my-cloud-service)
 
-- [Azure DDOS-beveiliging](https://docs.microsoft.com/azure/cloud-services/cloud-services-connectivity-and-networking-faq#how-do-i-prevent-receiving-thousands-of-hits-from-unknown-ip-addresses-that-might-indicate-a-malicious-attack-to-the-cloud-service)
+- [Azure DDOS-beveiliging](./cloud-services-connectivity-and-networking-faq.md#how-do-i-prevent-receiving-thousands-of-hits-from-unknown-ip-addresses-that-might-indicate-a-malicious-attack-to-the-cloud-service)
 
-- [Een specifiek IP-adres blok keren](https://docs.microsoft.com/azure/cloud-services/cloud-services-startup-tasks-common#block-a-specific-ip-address)
+- [Een specifiek IP-adres blok keren](./cloud-services-startup-tasks-common.md#block-a-specific-ip-address)
 
 **Verantwoordelijkheid**: Klant
 
@@ -175,9 +175,9 @@ Verzamel inzicht van het activiteiten logboek, een platform logboek in azure, in
 
 Een diagnostische instelling maken om het activiteiten logboek te verzenden naar Azure Monitor, Azure Event Hubs om buiten Azure te worden doorgestuurd of om te Azure Storage voor archivering. Configureer Azure Monitor voor meldings waarschuwingen wanneer kritieke resources in uw Azure-Cloud Services worden gewijzigd. 
 
-- [Azure-activiteitenlogboek](/azure/azure-monitor/platform/activity-log)
+- [Azure-activiteitenlogboek](../azure-monitor/essentials/activity-log.md)
 
-- [Waarschuwingen voor activiteiten logboek maken, weer geven en beheren met behulp van Azure Monitor](/azure/azure-monitor/platform/alerts-activity-log)
+- [Waarschuwingen voor activiteiten logboek maken, weer geven en beheren met behulp van Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 - [Traffic Manager bewaking](../traffic-manager/traffic-manager-monitoring.md)
 
@@ -193,7 +193,7 @@ Een diagnostische instelling maken om het activiteiten logboek te verzenden naar
 
 **Richt lijnen**: micro soft onderhoudt tijd bronnen voor Azure-resources voor Azure Cloud Services. Klanten moeten mogelijk een netwerk regel maken om toegang te bieden tot een tijd server die in hun omgeving wordt gebruikt, via poort 123 met het UDP-protocol.
 
-- [NTP-server toegang](https://docs.microsoft.com/azure/firewall/protect-windows-virtual-desktop#additional-considerations)
+- [NTP-server toegang](../firewall/protect-windows-virtual-desktop.md#additional-considerations)
 
 **Verantwoordelijkheid**: Gedeeld
 
@@ -233,7 +233,7 @@ Azure Cloud Services kan worden bewaakt door Application Insights voor Beschik b
 
 - [Diagnostische gegevens inschakelen in Visual Studio vóór de implementatie](/visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines#to-turn-on-diagnostics-in-visual-studio-before-deployment)
 
-- [Wijzigings overzicht weer geven](/azure/azure-monitor/platform/activity-log#view-change-history)
+- [Wijzigings overzicht weer geven](../azure-monitor/essentials/activity-log.md#view-change-history)
 
 - [Application Insights voor Azure-Cloud service (klassiek)](../azure-monitor/app/cloudservices.md)
 
@@ -269,7 +269,7 @@ Met de diagnostische extensie van Azure worden gegevens verzameld en opgeslagen 
 
 - [Diagnostische gegevens inschakelen in azure Cloud Services met behulp van Power shell](cloud-services-diagnostics-powershell.md)
 
-- [Diagnostische gegevens opslaan en weergeven in Azure Storage](https://docs.microsoft.com/azure/cloud-services/diagnostics-extension-to-storage?&amp;preserve-view=true)
+- [Diagnostische gegevens opslaan en weergeven in Azure Storage](./diagnostics-extension-to-storage.md?preserve-view=)
 
 **Verantwoordelijkheid**: Klant
 
@@ -289,7 +289,7 @@ Met de diagnostische extensie van Azure worden gegevens verzameld en opgeslagen 
 
 **Richt lijnen**: micro soft antimalware voor Azure, beschermt Azure Cloud Services en virtuele machines. U hebt de mogelijkheid om ook beveiligings oplossingen van derden te implementeren, zoals fire walls van webtoepassingen, netwerk firewalls, antimalware, inbraak detectie en preventie systemen (ID'S of IP-adressen).
 
-- [Wat zijn de functies en mogelijkheden die Azure Basic IP'S/ID'S en DDOS biedt](https://docs.microsoft.com/azure/cloud-services/cloud-services-configuration-and-management-faq#what-are-the-features-and-capabilities-that-azure-basic-ipsids-and-ddos-provides)
+- [Wat zijn de functies en mogelijkheden die Azure Basic IP'S/ID'S en DDOS biedt](./cloud-services-configuration-and-management-faq.md#what-are-the-features-and-capabilities-that-azure-basic-ipsids-and-ddos-provides)
 
 **Verantwoordelijkheid**: Klant
 
@@ -315,7 +315,7 @@ Get-AzRoleAssignment-IncludeClassicAdministrators
 
 Bekijk de verschillen tussen de beheer rollen van klassieke abonnementen. 
 
-- [Verschillen tussen drie klassieke abonnements rollen voor abonnementen](https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles#classic-subscription-administrator-roles)
+- [Verschillen tussen drie klassieke abonnements rollen voor abonnementen](../role-based-access-control/rbac-and-directory-admin-roles.md#classic-subscription-administrator-roles)
 
 **Verantwoordelijkheid**: Klant
 
@@ -325,7 +325,7 @@ Bekijk de verschillen tussen de beheer rollen van klassieke abonnementen.
 
 **Richt lijnen**: het wordt aanbevolen om standaard procedures voor het gebruik van specifieke beheerders accounts te maken op basis van de beschik bare rollen en de vereiste machtigingen voor het uitvoeren en beheren van de Azure Cloud Services-resources.
 
-- [Verschillen tussen de beheerders rollen van het klassieke abonnement](https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles#classic-subscription-administrator-roles)
+- [Verschillen tussen de beheerders rollen van het klassieke abonnement](../role-based-access-control/rbac-and-directory-admin-roles.md#classic-subscription-administrator-roles)
 
 **Verantwoordelijkheid**: Klant
 
@@ -389,7 +389,7 @@ U kunt ook de ' permissionLevel ' in het certificaat element van de Azure Cloud 
 
 - [Beheer groepen maken](../governance/management-groups/create-management-group-portal.md)
 
-- [WebRole-schema](https://docs.microsoft.com/azure/cloud-services/schema-csdef-webrole#Certificate)
+- [WebRole-schema](./schema-csdef-webrole.md#Certificate)
 
 **Verantwoordelijkheid**: Klant
 
@@ -465,9 +465,9 @@ De toepassings gegevens die zijn opgeslagen op de tijdelijke schijven, worden ni
 
 Daarnaast kunt Application Insights Azure Cloud Services-apps bewaken voor Beschik baarheid, prestaties, fouten en gebruik. Dit maakt gebruik van gecombineerde gegevens van Application Insights Sdk's met Azure Diagnostics gegevens uit uw Azure-Cloud Services.
 
-- [Klassieke metrische waarschuwingen maken, weer geven en beheren met behulp van Azure Monitor](/azure/azure-monitor/platform/alerts-classic-portal)
+- [Klassieke metrische waarschuwingen maken, weer geven en beheren met behulp van Azure Monitor](../azure-monitor/alerts/alerts-classic-portal.md)
 
-- [Overzicht van metrische waarschuwingen](/azure/azure-monitor/platform/alerts-metric-overview) 
+- [Overzicht van metrische waarschuwingen](../azure-monitor/alerts/alerts-metric-overview.md) 
 
 - [Application Insights voor Azure-Cloud service (klassiek)](../azure-monitor/app/cloudservices.md)
 
@@ -493,7 +493,7 @@ Wanneer een klant een specifieke versie van het besturings systeem voor de Azure
 
 - [Cloud service (klassiek) configureren](cloud-services-how-to-configure-portal.md)
 
-- [De versie van het gast besturingssysteem beheren](https://docs.microsoft.com/azure/cloud-services/cloud-services-how-to-configure-portal#manage-guest-os-version)
+- [De versie van het gast besturingssysteem beheren](./cloud-services-how-to-configure-portal.md#manage-guest-os-version)
 
 **Verantwoordelijkheid**: Gedeeld
 
@@ -523,7 +523,7 @@ We suggereren deze scenario's:
 
 Ondersteunende documentatie:
 
-- [Risico-evaluatie van uw Azure-resources](https://docs.microsoft.com/azure/security/fundamentals/ddos-best-practices#risk-evaluation-of-your-azure-resources)
+- [Risico-evaluatie van uw Azure-resources](../security/fundamentals/ddos-best-practices.md#risk-evaluation-of-your-azure-resources)
 
 **Verantwoordelijkheid**: Klant
 
@@ -805,7 +805,7 @@ U kunt geheimen beveiligen, zoals referenties die worden gebruikt in azure Cloud
 
 Daarnaast is het raadzaam om de persoonlijke sleutels op te slaan voor certificaten die worden gebruikt in azure Cloud Services naar een beveiligde opslag.
 
-- [Extern bureaublad configureren vanuit Power shell](https://docs.microsoft.com/azure/cloud-services/cloud-services-role-enable-remote-desktop-powershell#configure-remote-desktop-from-powershell)
+- [Extern bureaublad configureren vanuit Power shell](./cloud-services-role-enable-remote-desktop-powershell.md#configure-remote-desktop-from-powershell)
 
 **Verantwoordelijkheid**: Klant
 
@@ -820,7 +820,7 @@ Als u wilt beginnen, geeft u een wacht woord voor onbewerkte tekst op, wijzigt u
 
 Sla de persoonlijke sleutels op voor certificaten die worden gebruikt in azure Cloud Services naar een beveiligde opslag locatie.
 
-- [Extern bureaublad configureren vanuit Power shell](https://docs.microsoft.com/azure/cloud-services/cloud-services-role-enable-remote-desktop-powershell#configure-remote-desktop-from-powershell)
+- [Extern bureaublad configureren vanuit Power shell](./cloud-services-role-enable-remote-desktop-powershell.md#configure-remote-desktop-from-powershell)
 
 **Verantwoordelijkheid**: Klant
 
@@ -840,9 +840,9 @@ Schakel de antimalware-uitbrei ding in met een Power shell-script in de opstart 
 
 Kies de functie adaptieve toepassings beheer in Azure Security Center, een intelligente, geautomatiseerde, end-to-end oplossing. Het helpt uw computers te beschermen tegen malware en kunt u de pogingen om schadelijke toepassingen uit te voeren, blok keren of waarschuwen, met inbegrip van de apparaten die anders kunnen worden gemist door antimalware-oplossingen.
 
-- [Hoe kan ik een anti-malware-extensie voor mijn Azure Cloud Services op een geautomatiseerde manier toevoegen](https://docs.microsoft.com/azure/cloud-services/cloud-services-configuration-and-management-faq#how-can-i-add-an-antimalware-extension-for-my-cloud-services-in-an-automated-way)
+- [Hoe kan ik een anti-malware-extensie voor mijn Azure Cloud Services op een geautomatiseerde manier toevoegen](./cloud-services-configuration-and-management-faq.md#how-can-i-add-an-antimalware-extension-for-my-cloud-services-in-an-automated-way)
 
-- [Implementatie Scenario's voor antimalware](https://docs.microsoft.com/azure/security/fundamentals/antimalware#antimalware-deployment-scenarios)
+- [Implementatie Scenario's voor antimalware](../security/fundamentals/antimalware.md#antimalware-deployment-scenarios)
 
 - [Adaptieve toepassingsbesturingselementen](../security-center/security-center-adaptive-application.md)
 
@@ -940,5 +940,5 @@ Markeer abonnementen duidelijk (bijvoorbeeld productie, niet-productie) en maak 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Overzicht Azure Security Benchmark V2](/azure/security/benchmarks/overview)
-- Meer informatie over [Azure-beveiligingsbasislijnen](/azure/security/benchmarks/security-baselines-overview)
+- Zie [Overzicht Azure Security Benchmark V2](../security/benchmarks/overview.md)
+- Meer informatie over [Azure-beveiligingsbasislijnen](../security/benchmarks/security-baselines-overview.md)

@@ -7,12 +7,12 @@ ms.subservice: reservations
 ms.topic: conceptual
 ms.date: 06/11/2020
 ms.author: banders
-ms.openlocfilehash: 8e735d623cc991d2e3720e0ec418eee77aa8c46c
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
-ms.translationtype: HT
+ms.openlocfilehash: a10e6204184f28dbb62083bc72c6963ea8db082b
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96350854"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105568627"
 ---
 # <a name="understand-how-the-red-hat-linux-enterprise-software-reservation-plan-discount-is-applied-for-azure"></a>Meer informatie over hoe de abonnementskorting voor Red Hat Linux Enterprise-softwarereservering wordt toegepast voor Azure
 
@@ -46,7 +46,7 @@ Namen op Marketplace van Azure-portal:
 - Red Hat Enterprise Linux 7.6
 - Red Hat Enterprise Linux 8.2
 
-[Red Hat Enterprise Linux meters controleren waarop het abonnement van toepassing is](https://isfratio.blob.core.windows.net/isfratio/RHELRatios.csv)
+[Red Hat Enterprise Linux meters controleren waarop het abonnement van toepassing is](https://phoenixnap.com/kb/how-to-check-redhat-version)
 
 ## <a name="next-steps"></a>Volgende stappen
 

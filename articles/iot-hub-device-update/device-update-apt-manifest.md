@@ -6,12 +6,12 @@ ms.author: vimeht
 ms.date: 2/17/2021
 ms.topic: conceptual
 ms.service: iot-hub-device-update
-ms.openlocfilehash: 0b68b78499aa3bf0d84d8bd0fa5ab55d1f969113
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 878748fcfc9b096e340b53c06969962af99f603f
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101679588"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105561165"
 ---
 # <a name="device-update-apt-manifest"></a>APT-manifest voor het bijwerken van het apparaat
 
@@ -103,7 +103,7 @@ Meer [informatie](https://www.debian.org/doc/debian-policy/ch-controlfields.html
 > APT package manager negeert de vereisten voor versie beheer die door een pakket worden gegeven wanneer de afhankelijke pakketten die moeten worden geïnstalleerd, automatisch worden opgelost. Tenzij er expliciete versies van afhankelijke pakketten worden opgegeven, gebruiken ze de meest recente, zelfs als het pakket zelf een strikte vereiste (=) voor een bepaalde versie kan opgeven. Deze automatische oplossing kan leiden tot fouten met betrekking tot een unmet-afhankelijkheid. [Meer informatie](https://unix.stackexchange.com/questions/350192/apt-get-not-properly-resolving-a-dependency-on-a-fixed-version-in-a-debian-ubunt)
 
 Als u een specifieke versie van de Azure IoT Edge Security daemon bijwerkt, moet u de gewenste versie van het `iotedge` pakket en het afhankelijke `libiothsm-std` pakket in uw apt-manifest toevoegen.
-[Meer informatie](https://docs.microsoft.com/azure/iot-edge/how-to-update-iot-edge#update-the-security-daemon)
+[Meer informatie](../iot-edge/how-to-update-iot-edge.md#update-the-security-daemon)
 
 > [!NOTE]
 > Een apt-manifest kan worden gebruikt voor het bijwerken van de Update Agent van het apparaat en de bijbehorende afhankelijkheden. Vermeld de naam van de apparaat-Update Agent en de gewenste versie in het apt-manifest, zoals u zou doen voor elk ander pakket. Dit apt-manifest kan vervolgens worden geïmporteerd en geïmplementeerd via de update van het apparaat voor IoT Hub pijp lijn. 
@@ -202,4 +202,3 @@ Deze update bevat het Foo-pakket en bevat ook een balk pakket.
 
 > [!div class="nextstepaction"]
 > [Nieuwe update importeren](import-update.md)
-

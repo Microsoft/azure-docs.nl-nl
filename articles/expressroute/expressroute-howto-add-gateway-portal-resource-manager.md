@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 03/03/2021
 ms.author: duau
 ms.custom: seodec18
-ms.openlocfilehash: 6c6969fdf413c4eb5e7bbcf046fc397834d6c0a2
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: e70b41dfba03b7439313350746724c6f8e90bc34
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102038914"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105564769"
 ---
 # <a name="tutorial-configure-a-virtual-network-gateway-for-expressroute-using-the-azure-portal"></a>Zelfstudie: Een virtuele-netwerkgateway configureren voor ExpressRoute met behulp van de Azure-portal
 > [!div class="op_single_selector"]
@@ -51,7 +51,7 @@ In de stappen voor deze taak gebruiken we een VNet dat is gebaseerd op de waarde
 U kunt een [video](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-a-vpn-gateway-for-your-virtual-network) van deze stappen bekijken voordat u begint met de configuratie.
 
 > [!IMPORTANT]
-> IPv6-ondersteuning voor persoonlijke peering is momenteel beschikbaar als **open bare preview**. Als u uw virtuele netwerk wilt verbinden met een ExpressRoute-circuit met op IPv6 gebaseerde privé-peering geconfigureerd, zorgt u ervoor dat uw virtuele netwerk dual stack is en volgt u de richt lijnen voor [IPv6 voor Azure VNet](https://docs.microsoft.com/azure/virtual-network/ipv6-overview).
+> IPv6-ondersteuning voor persoonlijke peering is momenteel beschikbaar als **open bare preview**. Als u uw virtuele netwerk wilt verbinden met een ExpressRoute-circuit met op IPv6 gebaseerde privé-peering geconfigureerd, zorgt u ervoor dat uw virtuele netwerk dual stack is en volgt u de richt lijnen voor [IPv6 voor Azure VNet](../virtual-network/ipv6-overview.md).
 > 
 > 
 

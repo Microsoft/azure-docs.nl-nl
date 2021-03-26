@@ -7,12 +7,12 @@ ms.manager: abhemraj
 ms.topic: tutorial
 ms.date: 03/17/2021
 ms.custom: mvc
-ms.openlocfilehash: 1a0ad751a216e8da772fd5fdc96a0dc67cb27d01
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.openlocfilehash: 9f433815838cc4d8dd41f3b95fc1bd6fe0acc955
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105109846"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105562729"
 ---
 # <a name="tutorial-discover-servers-running-in-vmware-environment-with-azure-migrate-discovery-and-assessment"></a>Zelf studie: servers die worden uitgevoerd in de VMware-omgeving detecteren met Azure Migrate: detectie en evaluatie
 
@@ -106,7 +106,7 @@ Stel in de vSphere-webclient als volgt een account in:
 
 U hebt een gebruikers account met de vereiste bevoegdheden op de servers nodig om de detectie van geïnstalleerde toepassingen, afhankelijkheids analyse zonder agent en detectie van SQL Server instanties en data bases te kunnen uitvoeren. U kunt het gebruikers account opgeven op de configuratie beheer van het apparaat. Op het apparaat worden geen agents op de servers geïnstalleerd.
 
-1. Maak voor Windows-servers een account (lokaal of domein) met beheerders machtigingen op de servers. Als u SQL Server instanties en data bases wilt detecteren, moet u het Windows-of SQL Server-account lid zijn van de serverrol sysadmin. Meer [informatie](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/server-level-roles) over het toewijzen van de vereiste rol aan het gebruikers account.
+1. Maak voor Windows-servers een account (lokaal of domein) met beheerders machtigingen op de servers. Als u SQL Server instanties en data bases wilt detecteren, moet u het Windows-of SQL Server-account lid zijn van de serverrol sysadmin. Meer [informatie](/sql/relational-databases/security/authentication-access/server-level-roles) over het toewijzen van de vereiste rol aan het gebruikers account.
 2. Maak voor Linux-servers een account met hoofd bevoegdheden. U kunt ook een account met de volgende machtigingen maken voor/bin/netstat-en/bin/ls-bestanden: CAP_DAC_READ_SEARCH en CAP_SYS_PTRACE.
 
 > [!NOTE]
@@ -292,8 +292,8 @@ Als u deze functies wilt gebruiken, kunt u de referenties van de server opgeven 
 1. Tijdens software-inventarisatie worden de referenties van de toegevoegde servers herhaald op servers en gevalideerd voor de afhankelijkheids analyse zonder agent. U kunt afhankelijkheids analyse zonder agent inschakelen voor servers vanuit de portal. Alleen de servers waarop de validatie slaagt, kunnen worden geselecteerd voor het inschakelen van afhankelijkheids analyse zonder agent.
 
 > [!Note]
->Azure Migrate versleutelt de communicatie tussen Azure Migrate apparaat en bron SQL Server instanties (waarbij de eigenschap versleutelings verbinding is ingesteld op TRUE). Deze verbindingen worden versleuteld met [**TrustServerCertificate**](https://docs.microsoft.com/dotnet/api/system.data.sqlclient.sqlconnectionstringbuilder.trustservercertificate) (ingesteld op True). de transportlaag gebruikt SSL om het kanaal te versleutelen en de certificaat keten te omzeilen om de vertrouwens relatie te valideren. De toestel server moet zijn ingesteld om [**de basis instantie van het certificaat te vertrouwen**](https://docs.microsoft.com/sql/database-engine/configure-windows/enable-encrypted-connections-to-the-database-engine).<br/>
-Als er geen certificaat is ingericht op de server wanneer het wordt gestart, SQL Server genereert een zelfondertekend certificaat dat wordt gebruikt om aanmeldings pakketten te versleutelen. [**Meer informatie**](https://docs.microsoft.com/sql/database-engine/configure-windows/enable-encrypted-connections-to-the-database-engine).
+>Azure Migrate versleutelt de communicatie tussen Azure Migrate apparaat en bron SQL Server instanties (waarbij de eigenschap versleutelings verbinding is ingesteld op TRUE). Deze verbindingen worden versleuteld met [**TrustServerCertificate**](/dotnet/api/system.data.sqlclient.sqlconnectionstringbuilder.trustservercertificate) (ingesteld op True). de transportlaag gebruikt SSL om het kanaal te versleutelen en de certificaat keten te omzeilen om de vertrouwens relatie te valideren. De toestel server moet zijn ingesteld om [**de basis instantie van het certificaat te vertrouwen**](/sql/database-engine/configure-windows/enable-encrypted-connections-to-the-database-engine).<br/>
+Als er geen certificaat is ingericht op de server wanneer het wordt gestart, SQL Server genereert een zelfondertekend certificaat dat wordt gebruikt om aanmeldings pakketten te versleutelen. [**Meer informatie**](/sql/database-engine/configure-windows/enable-encrypted-connections-to-the-database-engine).
 
 Detectie werkt als volgt:
 

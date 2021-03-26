@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 02/29/2020
 ms.author: kenwith
 ms.reviewer: baselden
-ms.openlocfilehash: f63a8fd05e1a6ed5e41eeb64aa852ff01db295af
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 5184639d8c34be705aeeb691f1cf38486f850673
+ms.sourcegitcommit: 44edde1ae2ff6c157432eee85829e28740c6950d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "101645464"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105543955"
 ---
 # <a name="plan-azure-active-directory-my-apps-configuration"></a>Azure Active Directory mijn apps-configuratie plannen
 
@@ -74,31 +74,19 @@ Beheerders kunnen het volgende configureren:
 
 ## <a name="plan-consent-configuration"></a>Configuratie van toestemming plannen
 
-Er zijn twee soorten toestemming: gebruikers toestemming en toestemming voor apps die toegang hebben tot gegevens.
-
-![Scherm opname van de configuratie van de toestemming](./media/my-apps-deployment-plan/my-apps-consent.png)
-
 ### <a name="user-consent-for-applications"></a>Gebruikers toestemming voor toepassingen 
 
-Gebruikers of beheerders moeten toestemming geven voor de gebruiks voorwaarden en het privacybeleid van de toepassing. U moet beslissen of gebruikers of alleen Administrators toestemming kunnen geven voor toepassingen. **Als uw bedrijfs regels zijn toegestaan, kunt u het beste de toestemming van de beheerder gebruiken om de controle over de toepassingen in uw Tenant te behouden**.
+Voordat een gebruiker zich kan aanmelden bij een toepassing en de toepassing toegang heeft tot de gegevens van uw organisatie, moet een gebruiker of een beheerder de toepassings machtigingen verlenen. U kunt configureren of toestemming van de gebruiker is toegestaan en onder welke voor waarden. **Micro soft raadt u aan alleen toestemming van de gebruiker toe te staan voor toepassingen van geverifieerde uitgevers.**
 
-Als u toestemming van de beheerder wilt gebruiken, moet u een globale beheerder van de organisatie zijn en moeten de toepassingen:
-
-* Geregistreerd in uw organisatie.
-
-* In een andere Azure AD-organisatie zijn geregistreerd en eerder aan ten minste één gebruiker is gezonden.
-
-Als u wilt toestaan dat gebruikers toestemming geven, moet u beslissen of u wilt dat ze op een wille keurige app of alleen onder specifieke omstandigheden.
-
-Zie [configureren hoe eind gebruikers toestemming geven voor een toepassing in azure Active Directory](../manage-apps/configure-user-consent.md) voor meer informatie.
+Zie [Configure the end-users instemming to Applications](../manage-apps/configure-user-consent.md) (Engelstalig) voor meer informatie.
 
 ### <a name="group-owner-consent-for-apps-accessing-data"></a>Toestemming van groeps eigenaar voor apps die toegang krijgen tot gegevens
 
-Bepaal of de eigen aren van de Azure AD-beveiligings groepen of M365-groepen kunnen toestaan dat toepassingen toegang hebben tot gegevens voor de groepen waarvan ze eigenaar zijn. U kunt niet toestaan, alle groeps eigenaren toestaan of alleen een subset van groeps eigenaren toestaan.
+Groeps-en team eigenaren kunnen toepassingen, zoals toepassingen die door derden worden gepubliceerd, machtigen om toegang te krijgen tot de gegevens van uw organisatie die aan een groep zijn gekoppeld. Zie [resource-specifieke toestemming in micro soft teams](https://docs.microsoft.com/microsoftteams/resource-specific-consent) voor meer informatie. 
+
+U kunt configureren of u deze functie wilt toestaan of uitschakelen.
 
 Zie [machtigingen voor groeps toestemming configureren](../manage-apps/configure-user-consent-groups.md)voor meer informatie.
-
-Configureer vervolgens de instellingen voor de toestemming van uw [gebruikers-en groeps eigenaar](https://portal.azure.com/) in de Azure Portal.
 
 ### <a name="plan-communications"></a>De communicatie plannen
 

@@ -8,12 +8,12 @@ author: cpercy737
 ms.author: camper
 ms.date: 03/22/2021
 ms.custom: devx-track-terraform
-ms.openlocfilehash: ed7f27b0b8fde902f4ae9b65b9f6b4ada78f79c6
-ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
+ms.openlocfilehash: 53edd3ec9a8d30d0c25f994db4a8b6f0199c2169
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104799187"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105558411"
 ---
 # <a name="azure-customer-usage-attribution"></a>Toewijzing van Azure-klant gebruik
 
@@ -34,7 +34,7 @@ Er zijn secundaire use cases voor de toewijzing van klant gebruik buiten de comm
 
 ## <a name="commercial-marketplace-azure-apps"></a>Commerciële Marketplace Azure-apps
 
-Het bijhouden van Azure-gebruik van Azure-apps die worden gepubliceerd naar de commerciële Marketplace is grotendeels automatisch. Wanneer u een resource manager-sjabloon uploadt als onderdeel van de [technische configuratie van het abonnement van de Azure-app van uw Marketplace](https://docs.microsoft.com/azure/marketplace/create-new-azure-apps-offer-solution#define-the-technical-configuration), voegt Partner Center een tracking-ID toe die kan worden gelezen door Azure Resource Manager.
+Het bijhouden van Azure-gebruik van Azure-apps die worden gepubliceerd naar de commerciële Marketplace is grotendeels automatisch. Wanneer u een resource manager-sjabloon uploadt als onderdeel van de [technische configuratie van het abonnement van de Azure-app van uw Marketplace](./create-new-azure-apps-offer-solution.md#define-the-technical-configuration), voegt Partner Center een tracking-ID toe die kan worden gelezen door Azure Resource Manager.
 
 Als u Azure Resource Manager Api's gebruikt, moet u uw tracking-ID toevoegen aan de hand van de [onderstaande instructies](#use-resource-manager-apis) om deze door te geven aan Azure Resource Manager als uw code resources implementeert. Deze ID is zichtbaar in het partner centrum op de pagina met technische configuratie van uw abonnement. 
 

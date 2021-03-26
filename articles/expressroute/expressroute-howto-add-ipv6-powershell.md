@@ -7,19 +7,19 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 03/02/2021
 ms.author: duau
-ms.openlocfilehash: e893216eb8e2d7e44e3f272f6b965b84c6253f7f
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.openlocfilehash: 7a9ac98a9566986767016720fda245712197b27f
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104870327"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105566537"
 ---
 # <a name="add-ipv6-support-for-private-peering-using-azure-powershell-preview"></a>IPv6-ondersteuning voor privé-peering toevoegen met behulp van Azure PowerShell (preview-versie)
 
 In dit artikel wordt beschreven hoe u IPv6-ondersteuning kunt toevoegen om via ExpressRoute verbinding te maken met uw resources in azure met behulp van Azure PowerShell.
 
 > [!Note]
-> Deze functie is momenteel beschikbaar voor preview in [Azure-regio's met Beschikbaarheidszones](https://docs.microsoft.com/azure/availability-zones/az-region#azure-regions-with-availability-zones). Uw ExpressRoute-circuit kan daarom worden gemaakt met behulp van een wille keurige locatie, maar de IPv6-implementaties waarmee deze verbinding maakt, moeten zich in een regio met Beschikbaarheidszones bevinden.
+> Deze functie is momenteel beschikbaar voor preview in [Azure-regio's met Beschikbaarheidszones](../availability-zones/az-region.md#azure-regions-with-availability-zones). Uw ExpressRoute-circuit kan daarom worden gemaakt met behulp van een wille keurige locatie, maar de IPv6-implementaties waarmee deze verbinding maakt, moeten zich in een regio met Beschikbaarheidszones bevinden.
 
 ## <a name="working-with-azure-powershell"></a>Werken met Azure PowerShell
 
@@ -46,7 +46,7 @@ Uw aanvraag wordt binnen 2-3 werk dagen goedgekeurd door het ExpressRoute-team.
 
 ## <a name="add-ipv6-private-peering-to-your-expressroute-circuit"></a>Persoonlijke IPv6-peering toevoegen aan uw ExpressRoute-circuit
 
-1. [Een ExpressRoute-circuit maken](https://docs.microsoft.com/azure/expressroute/expressroute-howto-circuit-arm) of een bestaand circuit gebruiken. Haal het circuit op door de opdracht **Get-AzExpressRouteCircuit** uit te voeren:
+1. [Een ExpressRoute-circuit maken](./expressroute-howto-circuit-arm.md) of een bestaand circuit gebruiken. Haal het circuit op door de opdracht **Get-AzExpressRouteCircuit** uit te voeren:
 
     ```azurepowershell-interactive
     $ckt = Get-AzExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
@@ -150,7 +150,7 @@ Voer de volgende stappen uit als u een bestaande omgeving van Azure-resources in
     Set-AzVirtualNetwork -VirtualNetwork $vnet
     ```
 
-4. Als u een bestaande zone-redundante gateway hebt, voert u de volgende handelingen uit om IPv6-connectiviteit in te scha kelen. Als dat niet het geval is, [maakt u de gateway van het virtuele netwerk](https://docs.microsoft.com/azure/expressroute/expressroute-howto-add-gateway-resource-manager) met behulp van een zone-redundante SKU (ErGw1AZ, ErGw2AZ, ErGw3AZ).
+4. Als u een bestaande zone-redundante gateway hebt, voert u de volgende handelingen uit om IPv6-connectiviteit in te scha kelen. Als dat niet het geval is, [maakt u de gateway van het virtuele netwerk](./expressroute-howto-add-gateway-resource-manager.md) met behulp van een zone-redundante SKU (ErGw1AZ, ErGw2AZ, ErGw3AZ).
 
     ```azurepowershell-interactive
     $gw = Get-AzVirtualNetworkGateway -Name "GatewayName" -ResourceGroupName "ExpressRouteResourceGroup"
@@ -161,13 +161,13 @@ Voer de volgende stappen uit als u een bestaande omgeving van Azure-resources in
 
 Volg de onderstaande stappen als u van plan bent om verbinding te maken met een nieuwe set Azure-resources in een regio met Beschikbaarheidszones met behulp van uw IPv6-persoonlijke peering.
 
-1. Maak een virtueel netwerk met dubbele stack met IPv4-en IPv6-adres ruimte. Zie [een virtueel netwerk maken](https://docs.microsoft.com/azure/virtual-network/quick-create-portal#create-a-virtual-network)voor meer informatie.
+1. Maak een virtueel netwerk met dubbele stack met IPv4-en IPv6-adres ruimte. Zie [een virtueel netwerk maken](../virtual-network/quick-create-portal.md#create-a-virtual-network)voor meer informatie.
 
-2. [Maak het subnet met dubbele stack-gateways](https://docs.microsoft.com/azure/expressroute/expressroute-howto-add-gateway-resource-manager#add-a-gateway).
+2. [Maak het subnet met dubbele stack-gateways](./expressroute-howto-add-gateway-resource-manager.md#add-a-gateway).
 
-3. [Maak de gateway van het virtuele netwerk](https://docs.microsoft.com/azure/expressroute/expressroute-howto-add-gateway-resource-manager#add-a-gateway) met behulp van een zone-redundante SKU (ErGw1AZ, ErGw2AZ, ErGw3AZ). Als u van plan bent FastPath te gebruiken, gebruikt u ErGw3AZ (Houd er rekening mee dat dit alleen beschikbaar is voor circuits met behulp van ExpressRoute direct).
+3. [Maak de gateway van het virtuele netwerk](./expressroute-howto-add-gateway-resource-manager.md#add-a-gateway) met behulp van een zone-redundante SKU (ErGw1AZ, ErGw2AZ, ErGw3AZ). Als u van plan bent FastPath te gebruiken, gebruikt u ErGw3AZ (Houd er rekening mee dat dit alleen beschikbaar is voor circuits met behulp van ExpressRoute direct).
 
-4. [Koppel uw virtuele netwerk aan uw ExpressRoute-circuit](https://docs.microsoft.com/azure/expressroute/expressroute-howto-linkvnet-arm).
+4. [Koppel uw virtuele netwerk aan uw ExpressRoute-circuit](./expressroute-howto-linkvnet-arm.md).
 
 ## <a name="limitations"></a>Beperkingen
 Hoewel IPv6-ondersteuning beschikbaar is voor verbindingen met implementaties in regio's met Beschikbaarheidszones, worden de volgende use-cases niet ondersteund:

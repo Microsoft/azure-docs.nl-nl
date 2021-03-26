@@ -5,22 +5,22 @@ author: mimcco
 ms.author: mimcco
 ms.service: azure-percept
 ms.topic: conceptual
-ms.date: 02/18/2021
+ms.date: 03/24/2021
 ms.custom: template-concept
-ms.openlocfilehash: 01196c34ea6afbaa5a1e3b81ab14dec037e1fed0
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 32254b1ca094ee3e34ca95088210bb7c2e7bc0e8
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104595937"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105562746"
 ---
 # <a name="azure-percept-dk-8020-integration-overview"></a>Overzicht van Azure percept DK 80/20-integratie
 
-De Azure percept DK en audio-accessoire zijn ontworpen om te integreren met het [80/20-spoorstaaf Systeem](https://8020.net/).
+De Azure percept DK en audio-accessoire zijn ontworpen om te integreren met het [aluminium gebouw van 80/20 T-sleuven](https://8020.net/).
 
 ## <a name="8020-features"></a>80/20-functies
 
-Elk hardwareonderdeel is gebouwd met de inkepingen en protrusions die passen bij het type extrusie van 1010. Met deze integratie kunnen klanten en oplossingen bouwers eenvoudiger hun bewijs van concepten uitbreiden naar productie omgevingen.
+De Azure percept DK-Carrier Board, het gezichts apparaat van Azure percept en de audio-accessoire van Azure percept worden vervaardigd met ingebouwde 80/20 1010-connectors, waarmee u de configuraties voor eindeloos kunt koppelen met 80/20 rails. Met deze integratie kunnen klanten en oplossingen bouwers eenvoudiger hun bewijs van concepten uitbreiden naar productie omgevingen.
 
 Bekijk deze video voor meer informatie over het gebruik van Azure percept DK met 80/20:
 
@@ -30,4 +30,5 @@ Bekijk deze video voor meer informatie over het gebruik van Azure percept DK met
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over de [Azure percept audio-accessoire](./overview-azure-percept-audio.md).
+> [!div class="nextstepaction"]
+> [Een Azure percept DK kopen via de online winkel van micro soft](https://go.microsoft.com/fwlink/p/?LinkId=2155270)

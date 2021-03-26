@@ -3,25 +3,23 @@ title: Verificatie tokens door geven aan Azure Media Services | Microsoft Docs
 description: Meer informatie over het verzenden van verificatie tokens van de client naar de Azure Media Services key delivery service
 services: media-services
 keywords: inhouds beveiliging, DRM, token verificatie
-documentationcenter: ''
 author: IngridAtMicrosoft
 manager: femila
-editor: ''
 ms.assetid: 7c3b35d9-1269-4c83-8c91-490ae65b0817
 ms.service: media-services
 ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/10/2021
+ms.date: 03/22/2021
 ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: ba4daec8ef5f2cc1da3a211113e7236dfd22803d
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 1fe692e1eb20956f339c9b861f50163cee9c5063
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103008235"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105564650"
 ---
 # <a name="learn-how-clients-pass-tokens-to-the-azure-media-services-key-delivery-service"></a>Meer informatie over hoe clients tokens door geven aan de Azure Media Services key delivery service
 
@@ -33,7 +31,7 @@ Klanten vragen vaak hoe een speler tokens kan door geven aan de Azure Media Serv
 
 - Via de HTTP-autorisatie-header.
     > [!NOTE]
-    > Het voor voegsel ' Bearer ' wordt verwacht volgens de OAuth 2,0-specificaties. Een voor beeld van een speler met de token configuratie wordt gehost op de pagina met de Azure Media Player- [demo](https://ampdemo.azureedge.net/). Als u de video bron wilt instellen, kiest u **AES (JWT-token)** of **AES (SWT-token)**. Het token wordt door gegeven via de autorisatie-header.
+    > Het voor voegsel ' Bearer ' wordt verwacht volgens de OAuth 2,0-specificaties. Als u de video bron wilt instellen, kiest u **AES (JWT-token)** of **AES (SWT-token)**. Het token wordt door gegeven via de autorisatie-header.
 
 - Via de toevoeging van een URL-query parameter met "token = tokenvalue."  
     > [!NOTE]

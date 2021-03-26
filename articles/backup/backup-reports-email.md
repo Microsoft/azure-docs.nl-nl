@@ -3,12 +3,12 @@ title: E-mail Azure Backup rapporten
 description: Geautomatiseerde taken maken voor het ontvangen van periodieke rapporten via e-mail
 ms.topic: conceptual
 ms.date: 03/01/2021
-ms.openlocfilehash: 8c18d4c7a3c7a9ba343296961fa9a44614366405
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: d3ec76fa1a23657578979e65c0e54bb428722244
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102510473"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105561335"
 ---
 # <a name="email-azure-backup-reports"></a>E-mail Azure Backup rapporten
 
@@ -30,7 +30,7 @@ Als u e-mail taken wilt configureren via back-uprapporten, voert u de volgende s
 
 ## <a name="authorize-connections-to-azure-monitor-logs-and-office-365"></a>Verbindingen met Azure Monitor-logboeken en Office 365 autoriseren
 
-De logische app maakt gebruik van de [azuremonitorlogs](https://docs.microsoft.com/connectors/azuremonitorlogs/) -connector voor het uitvoeren van query's op de werk ruimte (n) en maakt gebruik van de [Office365 Outlook](https://docs.microsoft.com/connectors/office365connector/) -connector voor het verzenden van e-mail berichten. U moet een eenmalige autorisatie uitvoeren voor deze twee connectors. 
+De logische app maakt gebruik van de [azuremonitorlogs](/connectors/azuremonitorlogs/) -connector voor het uitvoeren van query's op de werk ruimte (n) en maakt gebruik van de [Office365 Outlook](/connectors/office365connector/) -connector voor het verzenden van e-mail berichten. U moet een eenmalige autorisatie uitvoeren voor deze twee connectors. 
  
 Volg de onderstaande stappen om de autorisatie uit te voeren:
 
@@ -79,4 +79,4 @@ U kunt dit probleem als volgt oplossen:
 Als de problemen zich blijven voordoen, neemt u contact op met micro soft ondersteuning.
 
 ## <a name="next-steps"></a>Volgende stappen
-[Meer informatie over back-uprapporten](https://docs.microsoft.com/azure/backup/configure-reports)
+[Meer informatie over back-uprapporten](./configure-reports.md)

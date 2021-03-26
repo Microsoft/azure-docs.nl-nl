@@ -1,41 +1,43 @@
 ---
-title: Client bibliotheken en REST Api's voor Azure Communication Services
+title: Sdk's en REST-Api's voor Azure Communication Services
 titleSuffix: An Azure Communication Services concept document
 description: Meer informatie over de Sdk's en REST-Api's van Azure Communication Services.
 author: mikben
 manager: jken
 services: azure-communication-services
 ms.author: mikben
-ms.date: 03/10/2021
+ms.date: 03/25/2021
 ms.topic: conceptual
 ms.service: azure-communication-services
-ms.openlocfilehash: effd7658bbfe7359e1f99f9452857824c2c45c2f
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.openlocfilehash: b5115355133bdcf33825a05d4baa16408cb3fccd
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105107887"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105562440"
 ---
-# <a name="client-libraries-and-rest-apis"></a>Clientbibliotheken en REST API's
+# <a name="sdks-and-rest-apis"></a>Sdk's en REST-Api's
 
-[!INCLUDE [Public Preview Notice](../includes/public-preview-include.md)]
+Mogelijkheden van Azure Communication Services zijn conceptueel onderverdeeld in zes gebieden. De meeste gebieden hebben volledige open-source-client bibliotheken die zijn geprogrammeerd voor gepubliceerde REST-Api's die u rechtstreeks via internet kunt gebruiken. De aanroepende client bibliotheek maakt gebruik van eigen netwerk interfaces en is momenteel gesloten als bron. Voor beelden en technische informatie voor Sdk's worden gepubliceerd in de [Azure Communication Services github opslag plaats](https://github.com/Azure/communication).
+
+## <a name="rest-apis"></a>REST-API’s
+Api's voor communicatie services worden naast andere Azure REST Api's in [docs.Microsoft.com](/rest/api/azure/)gedocumenteerd. In deze documentatie wordt uitgelegd hoe u uw HTTP-berichten kunt structureren en hoe u postman kunt gebruiken. Deze documentatie wordt ook aangeboden in Swagger-indeling op [github](https://github.com/Azure/azure-rest-api-specs).
 
 
-Mogelijkheden van Azure Communication Services zijn conceptueel onderverdeeld in zes gebieden. Sommige gebieden hebben volledige open source-Sdk's. De aanroepende SDK maakt gebruik van eigen netwerk interfaces en is momenteel gesloten-bron en de chat bibliotheek bevat een afhankelijkheid van gesloten bronnen. Voor beelden en aanvullende technische gegevens voor Sdk's worden gepubliceerd in de [Azure Communication Services github opslag plaats](https://github.com/Azure/communication).
+## <a name="sdks"></a>SDK's
 
-## <a name="client-libraries"></a>Clientbibliotheken
+| Assembly | Naamruimten| Protocollen | Functies |
+|------------------------|-------------------------------------|---------------------------------|--------------------------------------------------------------------------------------------|
+| Azure Resource Manager | Azure. Resource Manager. communicatie | [REST](https://docs.microsoft.com/rest/api/communication/communicationservice)| Communicatie services-resources inrichten en beheren|
+| Algemeen | Azure. Communication. common| REST | Biedt basis typen voor andere client bibliotheken |
+| Identiteit | Azure. Communication. Identity| [REST](https://docs.microsoft.com/rest/api/communication/communicationidentity)| Gebruikers beheren, toegangs tokens|
+| Telefoon nummers _(bèta)_| Azure. Communication. PhoneNumbers| [REST](https://docs.microsoft.com/rest/api/communication/phonenumberadministration)| Telefoon nummers ophalen en beheren |
+| Chat | Azure. Communication. chat| [Rest](https://docs.microsoft.com/rest/api/communication/) met een eigen signaal | In realtime tekst gebaseerde chat berichten toevoegen aan uw toepassingen |
+| Sms| Azure. Communication. SMS | [REST](https://docs.microsoft.com/rest/api/communication/sms)| Sms-berichten verzenden en ontvangen|
+| Aanroepen| Azure. Communication. Calling | Eigen Trans Port | Spraak, video, scherm delen en andere realtime gegevens communicatie mogelijkheden gebruiken |
 
-| Assembly               | Protocollen             |Open versus gesloten bron| Naamruimten                          | Functies                                                      |
-| ---------------------- | --------------------- | ---|-------------------------- | --------------------------------------------------------------------------- |
-| Azure Resource Manager | REST | Openen            | Azure. Resource Manager. communicatie | Communicatie services-resources inrichten en beheren             |
-| Algemeen                 | REST | Openen               | Azure. Communication. common          | Biedt basis typen voor andere Sdk's |
-| Identiteit         | REST | Openen               | Azure. Communication. Identity  | Gebruikers beheren, toegangs tokens |
-| Telefoonnummers         | REST | Openen               | Azure. Communication. PhoneNumbers  | Telefoon nummers beheren |
-| Chat                   | REST met een eigen signaal | Openen met een pakket met gesloten bron signalen    | Azure. Communication. chat            | In realtime tekst gebaseerde chat berichten toevoegen aan uw toepassingen  |
-| Sms                    | REST | Openen              | Azure. Communication. SMS             | Sms-berichten verzenden en ontvangen |
-| Aanroepen                | Eigen Trans Port | Gesloten |Azure. Communication. Calling         | Gebruik spraak, video, scherm delen en andere realtime gegevens communicatie mogelijkheden          |
+De Azure Resource Manager-, identiteits-en SMS-client bibliotheken zijn gericht op Service-integratie, en in veel gevallen kunnen er beveiligings problemen optreden als u deze functies integreert in toepassingen van eind gebruikers. De common-en chat-client bibliotheken zijn geschikt voor service-en client toepassingen. De aanroepende client bibliotheek is ontworpen voor client toepassingen. Een client bibliotheek die is gericht op service scenario's is in ontwikkeling.
 
-Houd er rekening mee dat de Azure Resource Manager-, id-en SMS-Sdk's gericht zijn op Service-integratie, en in veel gevallen kunnen er beveiligings problemen optreden als u deze functies integreert in toepassingen van eind gebruikers. De common-en chat-Sdk's zijn geschikt voor service-en client toepassingen. De aanroepende SDK is ontworpen voor client toepassingen. Een SDK die gericht is op service scenario's is in ontwikkeling.
 
 ### <a name="languages-and-publishing-locations"></a>Talen en publicatie locaties
 
@@ -52,20 +54,27 @@ Hieronder vindt u een beschrijving van de publicatie locaties voor afzonderlijke
 | Aanroepen        | [npm](https://www.npmjs.com/package/@azure/communication-calling)         | -      | -      | -     | [GitHub](https://github.com/Azure/Communication/releases)     | [Maven](https://search.maven.org/artifact/com.azure.android/azure-communication-calling/)            | -                              |
 | Referentiedocumentatie     | [docs](https://azure.github.io/azure-sdk-for-js/communication.html)         | [docs](https://azure.github.io/azure-sdk-for-net/communication.html)      | -      | [docs](http://azure.github.io/azure-sdk-for-java/communication.html)     | [docs](/objectivec/communication-services/calling/)      | [docs](/java/api/com.azure.communication.calling)            | -                              |
 
-## <a name="rest-apis"></a>REST-API’s
 
-Api's voor communicatie services worden naast andere Azure REST Api's in [docs.Microsoft.com](/rest/api/azure/)gedocumenteerd. In deze documentatie wordt uitgelegd hoe u uw HTTP-berichten kunt structureren en hoe u postman kunt gebruiken. Deze documentatie wordt ook aangeboden in Swagger-indeling op [github](https://github.com/Azure/azure-rest-api-specs).
+## <a name="rest-api-throttles"></a>REST API gashendel
+Bepaalde REST-Api's en bijbehorende SDK-methoden hebben beperkings limieten waarvan u mindful moet zijn. Als u deze beperkings limiet overschrijdt, wordt er een fout bericht weer gegenereerd  `429 - Too Many Requests` . Deze limieten kunnen worden verhoogd met [een aanvraag voor ondersteuning van Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request).
 
-## <a name="additional-support-details"></a>Aanvullende ondersteunings Details
+| API                                                                                                                          | Vertragen            |
+|------------------------------------------------------------------------------------------------------------------------------|---------------------|
+| [Alle Api's voor het zoeken naar telefoon nummer plannen](https://docs.microsoft.com/rest/api/communication/phonenumberadministration)         | 4 aanvragen per dag      |
+| [Telefoon nummer abonnement kopen](https://docs.microsoft.com/rest/api/communication/phonenumberadministration/purchasesearch) | 1 aanvraag per dag       |
+| [SMS verzenden](https://docs.microsoft.com/rest/api/communication/sms/send)                                                       | 200 aanvragen per minuut |
 
-### <a name="ios-and-android-support-details"></a>Details van iOS-en Android-ondersteuning
+
+## <a name="sdk-platform-support-details"></a>Details van het SDK-platform ondersteunen
+
+### <a name="ios-and-android"></a>iOS en Android 
 
 - Communicatie Services iOS Sdk's doel-iOS-versie 13 +, en Xcode 11 +.
 - Android Java Sdk's target Android-API Level 21 + en Android Studio 4.0 +
 
-### <a name="net-support-details"></a>Details voor .NET-ondersteuning
+### <a name="net"></a>.NET 
 
-Met uitzonde ring van het aanroepen van de communicatie Services-pakketten van .NET Standard 2,0, die ondersteuning biedt voor de platforms die hieronder worden weer gegeven.
+Met uitzonde ring van de aanroep, worden communicatie Services-pakketten aangeboden .NET Standard 2,0, die ondersteuning biedt voor de platforms die hieronder worden weer gegeven.
 
 Ondersteuning via .NET Framework 4.6.1
 - Windows 10, 8,1, 8 en 7
@@ -82,21 +91,6 @@ Ondersteuning via .NET Core 2,0:
 - Xamarin iOS 10,14
 - Xamarin Mac 3,8
 
-## <a name="calling-sdk-timeouts"></a>SDK-time-outs aanroepen
-
-De volgende time-outs zijn van toepassing op de communicatie services die Sdk's aanroepen:
-
-| Bewerking           | Time-out in seconden |
-| -------------- | ---------- |
-| Deel nemer opnieuw verbinden/verwijderen | 120 |
-| Een nieuwe modale functie toevoegen aan of verwijderen uit een oproep (video starten/stoppen of scherm delen) | 40 |
-| Time-out voor overdracht van oproep | 60 |
-| time-out voor aanleg van 1:1-aanroepen | 85 |
-| Time-out voor groeperen van groeps aanroepen | 85 |
-| Time-out voor PSTN-aanroepen | 115 |
-| 1:1-aanroep promo veren naar een time-out voor groeps aanroepen | 115 |
-
-
 ## <a name="api-stability-expectations"></a>API-stabiliteits verwachtingen
 
 > [!IMPORTANT]
@@ -111,7 +105,7 @@ In de toekomst kunnen we de versies van de Sdk's van Communication Services buit
 
 **U hebt de V24-versie van de SMS-REST API in uw toepassing geïntegreerd. Azure Communication releases V25.**
 
-U ontvangt een waarschuwing van drie jaar voordat deze Api's werken en worden gedwongen om bij te werken naar V25. Voor deze update is mogelijk een code wijziging vereist.
+U krijgt een waarschuwing van drie jaar voordat deze Api's niet meer werken en moeten worden bijgewerkt naar V25. Voor deze update is mogelijk een code wijziging vereist.
 
 **U hebt de v 2.02-versie van de aanroepende SDK geïntegreerd in uw toepassing. Azure Communication releases v 2.05.**
 

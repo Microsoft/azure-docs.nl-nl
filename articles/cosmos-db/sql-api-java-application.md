@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 02/10/2021
 ms.author: anfeldma
 ms.custom: devx-track-java
-ms.openlocfilehash: 930594d2c1af198aba3dae936cd0ce8fcf91c336
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 01c9a8b62190f3b545169bb5ba6732e6799ff9f2
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102214096"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105559788"
 ---
 # <a name="tutorial-build-a-java-web-application-using-azure-cosmos-db-and-the-sql-api"></a>Zelfstudie: Een Java-webtoepassing maken met Azure Cosmos DB en de SQL-API
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -52,7 +52,7 @@ Voordat u met deze zelfstudie over het ontwikkelen van toepassingen aan de slag 
 * [Eclipse IDE voor Java EE-ontwikkelaars.](https://www.eclipse.org/downloads/packages/release/luna/sr1/eclipse-ide-java-ee-developers)
 * [Azure Web Sites waarvoor een Java Runtime Environment (bijvoorbeeld Tomcat of Jetty) is ingeschakeld.](../app-service/quickstart-java.md)
 
-Als u deze hulpprogramma's voor het eerst installeert, kunt u op coreservlets.com in de quickstart-sectie van het artikel [Tutorial: Installing TomCat7 and Using it with Eclipse](http://www.coreservlets.com/Apache-Tomcat-Tutorial/tomcat-7-with-eclipse.html) (Zelfstudie: TomCat7 installeren en gebruiken met Eclipse) een overzicht van het installatieproces vinden.
+Als u deze hulpprogramma's voor het eerst installeert, kunt u op coreservlets.com in de quickstart-sectie van het artikel [Tutorial: Installing TomCat7 and Using it with Eclipse](https://www.youtube.com/watch?v=jOdCfW7-ybI&t=2s) (Zelfstudie: TomCat7 installeren en gebruiken met Eclipse) een overzicht van het installatieproces vinden.
 
 ## <a name="create-an-azure-cosmos-db-account"></a><a id="CreateDB"></a>Een Azure Cosmos DB-account maken
 

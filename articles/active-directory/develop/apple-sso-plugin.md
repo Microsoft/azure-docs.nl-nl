@@ -13,12 +13,12 @@ ms.date: 09/15/2020
 ms.author: brandwe
 ms.reviewer: brandwe
 ms.custom: aaddev
-ms.openlocfilehash: 24a538686e101d40daba008f30a72ffc5078047a
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 05bfcc86c72d9eb393da919035ce198948b943f2
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104674514"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105559125"
 ---
 # <a name="microsoft-enterprise-sso-plug-in-for-apple-devices-preview"></a>Micro soft Enter prise SSO-invoeg toepassing voor Apple-apparaten (preview-versie)
 
@@ -52,14 +52,14 @@ Als u de micro soft Enter prise SSO-invoeg toepassing voor Apple-apparaten wilt 
 - Het apparaat moet worden *Inge schreven bij MDM*, bijvoorbeeld via Microsoft intune.
 - De configuratie moet worden *gepusht naar het apparaat* om de SSO-invoeg toepassing voor Enter prise in te scha kelen. Apple vereist deze beveiligings beperking.
 
-iOS-vereisten:
+### <a name="ios-requirements"></a>iOS-vereisten:
 - iOS 13,0 of hoger moet op het apparaat zijn geïnstalleerd.
-- Een micro soft-toepassing die de micro soft Enter prise SSO-invoeg toepassing voor Apple-apparaten levert, moet op het apparaat zijn geïnstalleerd. Tijdens de open bare preview is deze toepassing de [Microsoft Authenticator-app](/intune/user-help/user-help-auth-app-overview.md).
+- Een micro soft-toepassing die de micro soft Enter prise SSO-invoeg toepassing voor Apple-apparaten levert, moet op het apparaat zijn geïnstalleerd. Voor een open bare preview zijn deze toepassingen de [app Microsoft Authenticator](/azure/active-directory/user-help/user-help-auth-app-overview).
 
 
-macOS-vereisten:
+### <a name="macos-requirements"></a>macOS-vereisten:
 - macOS 10,15 of hoger moet op het apparaat zijn geïnstalleerd. 
-- Een micro soft-toepassing die de micro soft Enter prise SSO-invoeg toepassing voor Apple-apparaten levert, moet op het apparaat zijn geïnstalleerd. Tijdens de open bare preview is deze toepassing de [intune-bedrijfsportal-app](/intune/user-help/enroll-your-device-in-intune-macos-cp.md).
+- Een micro soft-toepassing die de micro soft Enter prise SSO-invoeg toepassing voor Apple-apparaten levert, moet op het apparaat zijn geïnstalleerd. Voor een open bare preview omvatten deze toepassingen de [app intune-bedrijfsportal](/mem/intune/user-help/enroll-your-device-in-intune-macos-cp).
 
 ## <a name="enable-the-sso-plug-in"></a>De SSO-invoeg toepassing inschakelen
 

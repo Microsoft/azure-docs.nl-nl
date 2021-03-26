@@ -7,12 +7,12 @@ ms.topic: tutorial
 author: amvin87
 ms.author: amitkh
 ms.reviewer: vanto
-ms.openlocfilehash: 0500f4143ad7cbdaaa8406af2b242e0d40b1caa2
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 07752eb5c7f18a8952c43e77afed78b06432aca6
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102227395"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105568529"
 ---
 # <a name="tutorial---setup-a-three-node-always-on-availability-group-with-dh2i-dxenterprise-running-on-linux-based-azure-virtual-machines"></a>Zelf studie: een drie knoop punt altijd on-beschikbaarheids groep instellen met DH2i DxEnterprise die wordt uitgevoerd op op Linux gebaseerde Azure Virtual Machines
 
@@ -39,22 +39,22 @@ In deze zelf studie gaat u een DxEnterprise-cluster instellen met behulp van [Dx
 
 ## <a name="prerequisites"></a>Vereisten
 
-- Maak vier virtuele machines in Azure. Volg de [Snelstartgids: virtuele Linux-machine maken in azure Portal](https://docs.microsoft.com/azure/virtual-machines/linux/quick-create-portal) artikel voor het maken van virtuele machines op basis van Linux. Voor het maken van de op Windows gebaseerde virtuele machine volgt u ook de [Snelstartgids: een virtuele Windows-machine maken in het Azure Portal](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-portal) -artikel.
-- Installeer .NET 3,1 op alle op Linux gebaseerde virtuele machines die deel gaan uitmaken van het cluster. Volg de instructies die [hier](https://docs.microsoft.com/dotnet/core/install/linux) worden beschreven op basis van het Linux-besturings systeem dat u kiest.
+- Maak vier virtuele machines in Azure. Volg de [Snelstartgids: virtuele Linux-machine maken in azure Portal](../../../virtual-machines/linux/quick-create-portal.md) artikel voor het maken van virtuele machines op basis van Linux. Voor het maken van de op Windows gebaseerde virtuele machine volgt u ook de [Snelstartgids: een virtuele Windows-machine maken in het Azure Portal](../../../virtual-machines/windows/quick-create-portal.md) -artikel.
+- Installeer .NET 3,1 op alle op Linux gebaseerde virtuele machines die deel gaan uitmaken van het cluster. Volg de instructies die [hier](/dotnet/core/install/linux) worden beschreven op basis van het Linux-besturings systeem dat u kiest.
 - Een geldige DxEnterprise-licentie met beschikbaarheids groep-beheer functies is vereist. Zie [DxEnterprise Free Trial](https://dh2i.com/trial/) (Engelstalig) voor meer informatie over hoe u een gratis proef versie kunt verkrijgen.
 
 ## <a name="install-sql-server-on-all-the-azure-vms-that-will-be-part-of-the-availability-group"></a>SQL Server installeren op alle virtuele Azure-machines die deel zullen uitmaken van de beschikbaarheids groep
 
-In deze zelf studie stelt u een Linux-cluster op basis van knoop punten in dat de beschikbaarheids groep uitvoert. Volg de documentatie voor [SQL Server installatie op Linux](https://docs.microsoft.com/sql/linux/sql-server-linux-overview#install) op basis van de keuze van uw Linux-platform. U wordt ook aangeraden de [SQL Server-hulpprogram ma's](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-tools) voor deze zelf studie te installeren.
+In deze zelf studie stelt u een Linux-cluster op basis van knoop punten in dat de beschikbaarheids groep uitvoert. Volg de documentatie voor [SQL Server installatie op Linux](/sql/linux/sql-server-linux-overview#install) op basis van de keuze van uw Linux-platform. U wordt ook aangeraden de [SQL Server-hulpprogram ma's](/sql/linux/sql-server-linux-setup-tools) voor deze zelf studie te installeren.
  
 > [!NOTE]
-> Zorg ervoor dat het Linux-besturings systeem dat u kiest een algemene distributie is die wordt ondersteund door zowel [DH2i DxEnterprise (Zie de sectie minimale systeem vereisten)](https://dh2i.com/wp-content/uploads/DxEnterprise-v20-Admin-Guide.pdf) als [Microsoft SQL Server](https://docs.microsoft.com/sql/linux/sql-server-linux-release-notes-2019#supported-platforms).
+> Zorg ervoor dat het Linux-besturings systeem dat u kiest een algemene distributie is die wordt ondersteund door zowel [DH2i DxEnterprise (Zie de sectie minimale systeem vereisten)](https://dh2i.com/wp-content/uploads/DxEnterprise-v20-Admin-Guide.pdf) als [Microsoft SQL Server](/sql/linux/sql-server-linux-release-notes-2019#supported-platforms).
 >
 > In dit voor beeld gebruiken we Ubuntu 18,04, dat wordt ondersteund door DH2i DxEnterprise en Microsoft SQL Server.
 
 Voor deze zelf studie gaan we SQL Server op de Windows-VM niet installeren omdat dit knoop punt niet deel zal uitmaken van het cluster en alleen wordt gebruikt voor het beheren van het cluster met behulp van DxAdmin.
 
-Nadat u deze stap hebt voltooid, moet u SQL Server en [SQL Server hulpprogram ma's](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-tools) (optioneel) geïnstalleerd op alle drie op Linux gebaseerde virtuele machines die deel uitmaken van de beschikbaarheids groep.
+Nadat u deze stap hebt voltooid, moet u SQL Server en [SQL Server hulpprogram ma's](/sql/linux/sql-server-linux-setup-tools) (optioneel) geïnstalleerd op alle drie op Linux gebaseerde virtuele machines die deel uitmaken van de beschikbaarheids groep.
  
 ## <a name="install-dxenterprise-on-all-the-vms-and-configure-the-cluster"></a>DxEnterprise op alle Vm's installeren en het cluster configureren
 
@@ -84,7 +84,7 @@ Als u alleen het DxAdmin-client hulpprogramma wilt installeren op de Windows-VM,
 Na deze stap moet het DxEnterprise-cluster zijn gemaakt op de virtuele Linux-machines en DxAdmin-client geïnstalleerd op de Windows-client computer. 
 
 > [!NOTE]
-> U kunt ook een cluster met drie knoop punten maken waarbij een van de knoop punten wordt toegevoegd als de *modus alleen configuratie*, zoals [hier](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/availability-modes-always-on-availability-groups#SupportedAvModes) wordt beschreven om automatische failover in te scha kelen. 
+> U kunt ook een cluster met drie knoop punten maken waarbij een van de knoop punten wordt toegevoegd als de *modus alleen configuratie*, zoals [hier](/sql/database-engine/availability-groups/windows/availability-modes-always-on-availability-groups#SupportedAvModes) wordt beschreven om automatische failover in te scha kelen. 
 
 ## <a name="create-the-virtual-hosts-to-provide-failover-support-and-high-availability"></a>De virtuele hosts maken voor het bieden van failover-ondersteuning en hoge Beschik baarheid
 
@@ -100,7 +100,7 @@ Maak verbinding met de Windows-client machine met DxAdmin om verbinding te maken
 
 ## <a name="create-the-internal-azure-load-balancer-for-listener-optional"></a>De interne Azure Load Balancer voor de listener maken (optioneel)
 
-In deze optionele stap kunt u de Azure Load Balancer maken en configureren die de IP-adressen voor de listeners van de beschikbaarheids groep bevat. Raadpleeg [Azure Load Balancer](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview)voor meer informatie over Azure Load Balancer. Voor het configureren van de listener voor Azure load balancer en beschikbaarheids groep met behulp van DxAdmin, volgt u de DxEnterprise- [hand leiding Azure Load Balancer snel starten](https://dh2i.com/docs/20-0/dxenterprise/dh2i-dxenterprise-20-0-software-azure-load-balancer-quick-start-guide/).
+In deze optionele stap kunt u de Azure Load Balancer maken en configureren die de IP-adressen voor de listeners van de beschikbaarheids groep bevat. Raadpleeg [Azure Load Balancer](../../../load-balancer/load-balancer-overview.md)voor meer informatie over Azure Load Balancer. Voor het configureren van de listener voor Azure load balancer en beschikbaarheids groep met behulp van DxAdmin, volgt u de DxEnterprise- [hand leiding Azure Load Balancer snel starten](https://dh2i.com/docs/20-0/dxenterprise/dh2i-dxenterprise-20-0-software-azure-load-balancer-quick-start-guide/).
 
 Na deze stap moet er een beschikbaarheids groep-listener zijn gemaakt en toegewezen aan de interne Azure-load balancer.
 
@@ -121,7 +121,7 @@ Voor meer informatie over meer bewerkingen in DxEnterprise gaat u naar de [DxEnt
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over [beschikbaarheids groepen in Linux](https://docs.microsoft.com/sql/linux/sql-server-linux-availability-group-overview)
-- [Quick Start: virtuele Linux-machine maken in Azure Portal](https://docs.microsoft.com/azure/virtual-machines/linux/quick-create-portal)
-- [Quickstart: Een virtuele Windows-machine maken in de Azure-portal](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-portal)
-- [Ondersteunde platforms voor SQL Server 2019 in Linux](https://docs.microsoft.com/sql/linux/sql-server-linux-release-notes-2019#supported-platforms)
+- Meer informatie over [beschikbaarheids groepen in Linux](/sql/linux/sql-server-linux-availability-group-overview)
+- [Quick Start: virtuele Linux-machine maken in Azure Portal](../../../virtual-machines/linux/quick-create-portal.md)
+- [Quickstart: Een virtuele Windows-machine maken in de Azure-portal](../../../virtual-machines/windows/quick-create-portal.md)
+- [Ondersteunde platforms voor SQL Server 2019 in Linux](/sql/linux/sql-server-linux-release-notes-2019#supported-platforms)

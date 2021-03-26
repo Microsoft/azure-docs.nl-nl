@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/17/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: e5e01c8d1ac16e5e8be405660a0726796789e645
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: ad8968fdb6548da29a031f0e44bd3671f67b5553
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101738970"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105557714"
 ---
 # <a name="azure-security-baseline-for-azure-resource-graph"></a>Azure-beveiligings basislijn voor Azure resource Graph
 
@@ -30,7 +30,7 @@ Voor een overzicht van de manier waarop Azure resource Graph volledig is toegewe
 
 **Hulp**: Azure resource Graph biedt toegang tot bron typen en eigenschappen op basis van op rollen gebaseerde toegangs beheer functies van Azure (Azure RBAC). Controleer en controleer of de toegang die is verleend aan beveiligings-principals (gebruikers, groepen en service accounts) regel matig wordt gecontroleerd om ervoor te zorgen dat query's resultaten voor de juiste resources retour neren.
 
-- [Machtigingen in Azure Resource Graph](https://docs.microsoft.com/azure/governance/resource-graph/overview#permissions-in-azure-resource-graph)
+- [Machtigingen in Azure Resource Graph](../overview.md#permissions-in-azure-resource-graph)
 
 - [Beoordelingen over Azure Identity Access gebruiken](../../../active-directory/governance/access-reviews-overview.md)
 
@@ -46,7 +46,7 @@ Voor een overzicht van de manier waarop Azure resource Graph volledig is toegewe
 
 **Hulp**: Azure RBAC gebruiken om de toegang tot gegevens en resources te beheren. Als u Azure resource Graph wilt gebruiken, moet u ook de juiste toegang hebben tot de resources die u wilt doorzoeken. Deze toegang moet worden beperkt tot alleen-lezen en alleen worden verleend aan het vereiste personeel.
 
-- [Machtigingen in Azure Resource Graph](https://docs.microsoft.com/azure/governance/resource-graph/overview#permissions-in-azure-resource-graph)
+- [Machtigingen in Azure Resource Graph](../overview.md#permissions-in-azure-resource-graph)
 
 - [Azure RBAC configureren](../../../role-based-access-control/role-assignments-rest.md)
 
@@ -96,5 +96,5 @@ Voor een overzicht van de manier waarop Azure resource Graph volledig is toegewe
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Overzicht Azure Security Benchmark V2](/azure/security/benchmarks/overview)
-- Meer informatie over [Azure-beveiligingsbasislijnen](/azure/security/benchmarks/security-baselines-overview)
+- Zie [Overzicht Azure Security Benchmark V2](../../../security/benchmarks/overview.md)
+- Meer informatie over [Azure-beveiligingsbasislijnen](../../../security/benchmarks/security-baselines-overview.md)

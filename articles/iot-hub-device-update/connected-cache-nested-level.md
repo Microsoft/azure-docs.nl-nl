@@ -7,18 +7,18 @@ ms.author: andyriv
 ms.date: 2/16/2021
 ms.topic: tutorial
 ms.service: iot-hub-device-update
-ms.openlocfilehash: 0128d0de4f078b62bc9571c8758d80cb26585354
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 7facb74cd407c576b2a7b119f19427dcd185f04e
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102615377"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105568814"
 ---
 # <a name="microsoft-connected-cache-preview-deployment-scenario-sample-two-level-nested-azure-iot-edge-gateway-with-outbound-unauthenticated-proxy"></a>Voor beeld van micro soft Connected cache preview Deployment scenario: geneste Azure IoT Edge gateway op twee niveaus met uitgaande niet-geverifieerde proxy
 
 Op basis van het onderstaande diagram is er in dit scenario een Azure IoT Edge gateway en een downstream Azure IoT Edge apparaat, een Azure IoT Edge gateway die is geparent op een andere Azure IoT Edge gateway en een proxy server op de IT-DMZ. Hieronder ziet u een voor beeld van de micro soft Connected cache environments Varia bles die in de Azure Portal UX worden ingesteld voor beide MCC-modules die zijn geïmplementeerd op de Azure IoT Edge gateways. In het voor beeld ziet u de configuratie voor twee niveaus van Azure IoT Edge gateways, maar er is geen limiet voor de diepte van upstream-hosts die door micro soft Connected cache worden ondersteund. Er is geen verschil in de MCC-container maken opties uit de vorige voor beelden.
 
-Raadpleeg voor meer informatie over het configureren van gelaagde implementaties van Azure IoT Edge gateways op de documentatie [verbinding maken downstream IOT edge apparaten-Azure IOT Edge](https://docs.microsoft.com/azure/iot-edge/how-to-connect-downstream-iot-edge-device?view=iotedge-2020-11&tabs=azure-portal&preserve-view=true) . Houd er ook rekening mee dat bij het implementeren van Azure IoT Edge, micro soft Connected cache en aangepaste modules, alle modules zich in hetzelfde container register moeten bevinden.
+Raadpleeg voor meer informatie over het configureren van gelaagde implementaties van Azure IoT Edge gateways op de documentatie [verbinding maken downstream IOT edge apparaten-Azure IOT Edge](../iot-edge/how-to-connect-downstream-iot-edge-device.md?preserve-view=true&tabs=azure-portal&view=iotedge-2020-11) . Houd er ook rekening mee dat bij het implementeren van Azure IoT Edge, micro soft Connected cache en aangepaste modules, alle modules zich in hetzelfde container register moeten bevinden.
 
 In het onderstaande diagram wordt het scenario beschreven waarbij één Azure IoT Edge gateway als rechtstreekse toegang tot CDN-bronnen fungeert als de bovenliggende site voor een andere Azure IoT Edge gateway die fungeert als bovenliggend item voor een Azure IoT-blad apparaat, zoals een Raspberry pi. Alleen de bovenliggende Azure IoT Edge gateway heeft Internet verbinding met CDN-bronnen en zowel het Azure IoT Edge onderliggende als het Azure IoT-apparaat zijn Internet geïsoleerd. 
 
@@ -70,7 +70,7 @@ In het onderstaande diagram wordt het scenario beschreven waarbij één Azure Io
 ## <a name="child-gateway-configuration"></a>Configuratie van onderliggende gateway
 
 >[!Note]
->Als u containers in uw eigen persoonlijke REGI ster hebt gebruikt in uw configuratie, moet u een wijziging aanbrengen in de configuratie. toml-instellingen en runtime-instellingen in de module-implementatie. Raadpleeg voor meer informatie [zelf studie: een hiërarchie van IOT edge apparaten maken-Azure IOT Edge](https://docs.microsoft.com/azure/iot-edge/tutorial-nested-iot-edge?view=iotedge-2020-11&tabs=azure-portal&preserve-view=true#deploy-modules-to-the-lower-layer-device) voor meer informatie.
+>Als u containers in uw eigen persoonlijke REGI ster hebt gebruikt in uw configuratie, moet u een wijziging aanbrengen in de configuratie. toml-instellingen en runtime-instellingen in de module-implementatie. Raadpleeg voor meer informatie [zelf studie: een hiërarchie van IOT edge apparaten maken-Azure IOT Edge](../iot-edge/tutorial-nested-iot-edge.md?preserve-view=true&tabs=azure-portal&view=iotedge-2020-11#deploy-modules-to-the-lower-layer-device) voor meer informatie.
 
 1. Wijzig het pad naar de afbeelding voor de Edge-agent, zoals wordt getoond in het volgende voor beeld:
 

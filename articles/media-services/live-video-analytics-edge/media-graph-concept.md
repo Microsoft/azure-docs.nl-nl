@@ -3,12 +3,12 @@ title: Media Graph-concept-Azure
 description: Met een media grafiek kunt u definiëren waar media moeten worden vastgelegd, hoe deze moeten worden verwerkt en waar de resultaten moeten worden bezorgd. Dit artikel bevat een gedetailleerde beschrijving van het concept van media Graph.
 ms.topic: conceptual
 ms.date: 05/01/2020
-ms.openlocfilehash: 6f23e7db8cecb46106a63fdecdb6ba04dbd99682
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: ad23acbbbdd0c15e92e471ee22a229470a8a3a75
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "97401097"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105557663"
 ---
 # <a name="media-graph"></a>Mediagrafiek
 
@@ -74,7 +74,7 @@ Een RTSP-bron knooppunt stelt u in staat om media van een [RTSP](https://tools.i
 
 #### <a name="iot-hub-message-source"></a>Bron van IoT Hub bericht 
 
-Net als andere [IOT Edge modules](../../iot-edge/iot-edge-glossary.md#iot-edge-module)kan live video Analytics op IOT Edge-module berichten ontvangen via de [IOT Edge hub](../../iot-edge/iot-edge-glossary.md#iot-edge-hub). Deze berichten kunnen worden verzonden vanuit andere modules of apps die worden uitgevoerd op het edge-apparaat of vanuit de Cloud. Dergelijke berichten worden verzonden naar een [benoemde invoer](../../iot-edge/module-composition.md#sink) in de module. Met een IoT Hub bron knooppunt van berichten kunnen dergelijke berichten een media grafiek bereiken. Deze berichten of signalen kunnen vervolgens intern worden gebruikt in de media grafiek, normaal gesp roken om signaal poorten te activeren (zie onderstaande [signaal poorten](#signal-gate-processor) ). 
+Net als andere [IOT Edge modules](../../iot-fundamentals/iot-glossary.md#iot-edge)kan live video Analytics op IOT Edge-module berichten ontvangen via de [IOT Edge hub](../../iot-fundamentals/iot-glossary.md#iot-edge-hub). Deze berichten kunnen worden verzonden vanuit andere modules of apps die worden uitgevoerd op het edge-apparaat of vanuit de Cloud. Dergelijke berichten worden verzonden naar een [benoemde invoer](../../iot-edge/module-composition.md#sink) in de module. Met een IoT Hub bron knooppunt van berichten kunnen dergelijke berichten een media grafiek bereiken. Deze berichten of signalen kunnen vervolgens intern worden gebruikt in de media grafiek, normaal gesp roken om signaal poorten te activeren (zie onderstaande [signaal poorten](#signal-gate-processor) ). 
 
 U kunt bijvoorbeeld een IoT Edge module hebben waarmee een bericht wordt gegenereerd wanneer een deur wordt geopend. Het bericht van die module kan worden doorgestuurd naar IoT Edge hub, vanaf waar het kan worden doorgestuurd naar de IoT hub-bericht bron van een media grafiek. In de media grafiek kan de bericht bron van de IoT hub de gebeurtenis door geven aan een signaal Gate-processor, waardoor de video van een RTSP-bron in een bestand kan worden opgenomen. 
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/17/2020
 ms.author: jeedes
-ms.openlocfilehash: 29384457f946eff5708c319e14161d670adf6ca8
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 5fe539521213a6c25804c5c0db1e6b18646cceea
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98729870"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105563834"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-clever"></a>Zelfstudie: Integratie van eenmalige aanmelding via Azure Active Directory bij Clever
 
@@ -118,7 +118,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
 ## <a name="configure-clever-sso"></a>Eenmalige aanmelding bij Clever configureren
 
-Volg de instructies in de [koppeling](https://support.clever.com/hc/articles/205889768-Single-Sign-On-SSO-Log-in-with-Office-365-Azure-) om eenmalige aanmelding te configureren aan de zijde van Clever.
+Volg de instructies in de [koppeling](https://support.clever.com/hc/s/articles/205889768) om eenmalige aanmelding te configureren aan de zijde van Clever.
 
 ### <a name="create-clever-test-user"></a>Testgebruiker voor Clever maken
 

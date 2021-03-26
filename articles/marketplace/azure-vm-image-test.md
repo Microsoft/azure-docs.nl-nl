@@ -7,12 +7,12 @@ ms.topic: how-to
 author: kriti-ms
 ms.author: krsh
 ms.date: 03/10/2021
-ms.openlocfilehash: 9ffba221625c57332cd695125651d92adc11cf60
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 467b7d605b57c479d84fc995b4e0dc53b3ac5275
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103200379"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105558292"
 ---
 # <a name="test-a-virtual-machine-image"></a>Een installatie kopie van een virtuele machine testen
 
@@ -28,7 +28,7 @@ Een virtuele machine implementeren vanuit de afbeelding van de galerie met gedee
 1. Klik op beoordeling + maken. Nadat de validatie is voltooid, klikt u op maken
 
 > [!NOTE]
-> Als u een virtuele machine uit een VHD-bestand moet maken, volgt u de instructies in de volgende artikelen, [bereidt u een Azure Resource Manager sjabloon](https://docs.microsoft.com/azure/marketplace/azure-vm-image-test#prepare-an-azure-resource-manager-template) voor of [implementeert u een Azure-VM met behulp van Power shell](https://docs.microsoft.com/azure/marketplace/azure-vm-image-test#deploy-an-azure-vm-using-powershell).
+> Als u een virtuele machine uit een VHD-bestand moet maken, volgt u de instructies in de volgende artikelen, [bereidt u een Azure Resource Manager sjabloon](#connect-the-certification-tool-to-a-vm-image) voor of [implementeert u een Azure-VM met behulp van Power shell](#how-to-use-powershell-to-consume-the-self-test-api).
 
 In dit artikel wordt beschreven hoe u een installatie kopie van een virtuele machine (VM) in de commerciële Marketplace kunt testen en verzenden om te controleren of deze voldoet aan de meest recente publicatie vereisten voor Azure Marketplace.
 

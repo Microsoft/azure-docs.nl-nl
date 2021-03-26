@@ -14,12 +14,12 @@ ms.date: 03/05/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a632c0e31de1c2d7e5417656d537e5f9f82ecfbe
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 26b519ce11747ab3374d9bd286800a6c93129019
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96180486"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105565228"
 ---
 # <a name="configure-security-alerts-for-azure-ad-roles-in-privileged-identity-management"></a>Beveiligings waarschuwingen configureren voor Azure AD-rollen in Privileged Identity Management
 
@@ -50,9 +50,10 @@ In deze sectie vindt u alle beveiligings waarschuwingen voor Azure AD-rollen, sa
 
 ### <a name="administrators-arent-using-their-privileged-roles"></a>Beheerders gebruiken hun geprivilegieerde rollen niet
 
-| | |
+Ernst: **laag**
+
+| | Description |
 | --- | --- |
-| **Ernst** | Beperkt |
 | **Waarom krijg ik deze waarschuwing?** | Gebruikers aan wie een Privileged is toegewezen, zijn niet meer nodig om de kans op een aanval te verhogen. Het is ook gemakkelijker voor kwaadwillende personen om niet te worden opgemerkt in accounts die niet actief worden gebruikt. |
 | **Hoe kunt u het probleem oplossen?** | Controleer de gebruikers in de lijst en verwijder ze uit geprivilegieerde rollen die ze niet nodig hebben. |
 | **Preventie** | Ken alleen geprivilegieerde rollen toe aan gebruikers die een zakelijke reden hebben. </br>Plan regel matige [toegangs beoordelingen](pim-how-to-start-security-review.md) om te controleren of gebruikers nog steeds hun toegang nodig hebben. |
@@ -62,9 +63,10 @@ In deze sectie vindt u alle beveiligings waarschuwingen voor Azure AD-rollen, sa
 
 ### <a name="roles-dont-require-multi-factor-authentication-for-activation"></a>Voor rollen is multi-factor Authentication niet vereist voor activering
 
-| | |
+Ernst: **laag**
+
+| | Description |
 | --- | --- |
-| **Ernst** | Beperkt |
 | **Waarom krijg ik deze waarschuwing?** | Zonder multi-factor Authentication kunnen gemanipuleerde gebruikers bevoegde rollen activeren. |
 | **Hoe kunt u het probleem oplossen?** | Bekijk de lijst met rollen en [vereis multi-factor Authentication](pim-how-to-change-default-settings.md) voor elke rol. |
 | **Preventie** | [Vereis MFA vereisen](pim-how-to-change-default-settings.md) voor elke rol.  |
@@ -72,17 +74,19 @@ In deze sectie vindt u alle beveiligings waarschuwingen voor Azure AD-rollen, sa
 
 ### <a name="the-organization-doesnt-have-azure-ad-premium-p2"></a>De organisatie heeft geen Azure AD Premium P2
 
-| | |
+Ernst: **laag**
+
+| | Description |
 | --- | --- |
-| **Ernst** | Beperkt |
 | **Waarom krijg ik deze waarschuwing?** | De huidige Azure AD-organisatie heeft geen Azure AD Premium P2. |
 | **Hoe kunt u het probleem oplossen?** | Lees de informatie over [Azure AD-edities](../fundamentals/active-directory-whatis.md). Voer een upgrade uit naar Azure AD Premium P2. |
 
 ### <a name="potential-stale-accounts-in-a-privileged-role"></a>Mogelijke verlopen accounts in een geprivilegieerde rol
 
-| | |
+Ernst: **gemiddeld**
+
+| | Description |
 | --- | --- |
-| **Ernst** | Normaal |
 | **Waarom krijg ik deze waarschuwing?** | Accounts in een geprivilegieerde rol hebben in de afgelopen 90 dagen geen wacht woord gewijzigd. Deze accounts zijn mogelijk service of gedeelde accounts die niet worden onderhouden en kwetsbaar zijn voor aanvallen. |
 | **Hoe kunt u het probleem oplossen?** | Controleer de accounts in de lijst. Als ze geen toegang meer nodig hebben, moet u ze verwijderen uit hun geprivilegieerde rollen. |
 | **Preventie** | Zorg ervoor dat accounts die worden gedeeld sterke wacht woorden draaien wanneer er een wijziging is in de gebruikers die het wacht woord kennen. </br>Controleer regel matig accounts met geprivilegieerde rollen met [toegangs beoordelingen](pim-how-to-start-security-review.md) en verwijder roltoewijzingen die niet meer nodig zijn. |
@@ -91,9 +95,10 @@ In deze sectie vindt u alle beveiligings waarschuwingen voor Azure AD-rollen, sa
 
 ### <a name="roles-are-being-assigned-outside-of-privileged-identity-management"></a>Rollen worden buiten Privileged Identity Management toegewezen
 
-| | |
+Ernst: **hoog**
+
+| | Description |
 | --- | --- |
-| **Ernst** | Hoog |
 | **Waarom krijg ik deze waarschuwing?** | Geprivilegieerde roltoewijzingen buiten Privileged Identity Management worden niet op de juiste wijze gecontroleerd en kunnen duiden op een actieve aanval. |
 | **Hoe kunt u het probleem oplossen?** | Controleer de gebruikers in de lijst en verwijder deze uit de geprivilegieerde rollen die buiten Privileged Identity Management zijn toegewezen. |
 | **Preventie** | Onderzoek waar gebruikers geprivilegieerde rollen worden toegewezen buiten Privileged Identity Management en de volgende toewijzingen van daaruit niet kunnen verbieden. |
@@ -101,9 +106,10 @@ In deze sectie vindt u alle beveiligings waarschuwingen voor Azure AD-rollen, sa
 
 ### <a name="there-are-too-many-global-administrators"></a>Er zijn te veel globale beheerders
 
-| | |
+Ernst: **laag**
+
+| | Description |
 | --- | --- |
-| **Ernst** | Beperkt |
 | **Waarom krijg ik deze waarschuwing?** | De globale beheerder is de rol met de hoogste bevoegdheden. Als een globale beheerder is aangetast, krijgt de aanvaller toegang tot alle machtigingen, waardoor het hele systeem risico loopt. |
 | **Hoe kunt u het probleem oplossen?** | Controleer de gebruikers in de lijst en verwijder alle die de rol globale beheerder niet absoluut nodig hebben. </br>Wijs in plaats daarvan beperkte rollen toe aan deze gebruikers. |
 | **Preventie** | Wijs gebruikers de minst bevoegde rol toe die ze nodig hebben. |
@@ -114,9 +120,10 @@ In deze sectie vindt u alle beveiligings waarschuwingen voor Azure AD-rollen, sa
 
 ### <a name="roles-are-being-activated-too-frequently"></a>Rollen worden te vaak geactiveerd
 
-| | |
+Ernst: **laag**
+
+| | Description |
 | --- | --- |
-| **Ernst** | Beperkt |
 | **Waarom krijg ik deze waarschuwing?** | Meerdere activeringen naar dezelfde bevoorrechte rol door dezelfde gebruiker is een aantekening van een aanval. |
 | **Hoe kunt u het probleem oplossen?** | Controleer de gebruikers in de lijst en zorg ervoor dat de [activerings duur](pim-how-to-change-default-settings.md) voor de bijbehorende rol lang genoeg is ingesteld om hun taken uit te voeren. |
 | **Preventie** | Zorg ervoor dat de [activerings duur](pim-how-to-change-default-settings.md) voor geprivilegieerde rollen lang genoeg is ingesteld voor gebruikers om hun taken uit te voeren.</br>[Multi-factor Authentication vereisen](pim-how-to-change-default-settings.md) voor geprivilegieerde rollen met accounts die worden gedeeld door meerdere beheerders. |
@@ -149,9 +156,10 @@ In deze sectie vindt u alle beveiligings waarschuwingen voor Azure AD-rollen, sa
 
 ### <a name="administrators-arent-using-their-privileged-roles"></a>Beheerders gebruiken hun geprivilegieerde rollen niet
 
-| | |
+Ernst: **laag**
+
+| | Description |
 | --- | --- |
-| **Ernst** | Beperkt |
 | **Waarom krijg ik deze waarschuwing?** | Gebruikers aan wie een Privileged is toegewezen, zijn niet meer nodig om de kans op een aanval te verhogen. Het is ook gemakkelijker voor kwaadwillende personen om niet te worden opgemerkt in accounts die niet actief worden gebruikt. |
 | **Hoe kunt u het probleem oplossen?** | Controleer de gebruikers in de lijst en verwijder ze uit geprivilegieerde rollen die ze niet nodig hebben. |
 | **Preventie** | Ken alleen geprivilegieerde rollen toe aan gebruikers die een zakelijke reden hebben. </br>Plan regel matige [toegangs beoordelingen](pim-how-to-start-security-review.md) om te controleren of gebruikers nog steeds hun toegang nodig hebben. |
@@ -161,9 +169,10 @@ In deze sectie vindt u alle beveiligings waarschuwingen voor Azure AD-rollen, sa
 
 ### <a name="roles-dont-require-multi-factor-authentication-for-activation"></a>Voor rollen is multi-factor Authentication niet vereist voor activering
 
-| | |
+Ernst: **laag**
+
+| | Description |
 | --- | --- |
-| **Ernst** | Beperkt |
 | **Waarom krijg ik deze waarschuwing?** | Zonder multi-factor Authentication kunnen gemanipuleerde gebruikers bevoegde rollen activeren. |
 | **Hoe kunt u het probleem oplossen?** | Bekijk de lijst met rollen en [vereis multi-factor Authentication](pim-how-to-change-default-settings.md) voor elke rol. |
 | **Preventie** | [Vereis MFA vereisen](pim-how-to-change-default-settings.md) voor elke rol.  |
@@ -171,17 +180,19 @@ In deze sectie vindt u alle beveiligings waarschuwingen voor Azure AD-rollen, sa
 
 ### <a name="the-organization-doesnt-have-azure-ad-premium-p2"></a>De organisatie heeft geen Azure AD Premium P2
 
-| | |
+Ernst: **laag**
+
+| | Description |
 | --- | --- |
-| **Ernst** | Beperkt |
 | **Waarom krijg ik deze waarschuwing?** | De huidige Azure AD-organisatie heeft geen Azure AD Premium P2. |
 | **Hoe kunt u het probleem oplossen?** | Lees de informatie over [Azure AD-edities](../fundamentals/active-directory-whatis.md). Voer een upgrade uit naar Azure AD Premium P2. |
 
 ### <a name="potential-stale-accounts-in-a-privileged-role"></a>Mogelijke verlopen accounts in een geprivilegieerde rol
 
-| | |
+Ernst: **gemiddeld**
+
+| | Description |
 | --- | --- |
-| **Ernst** | Normaal |
 | **Waarom krijg ik deze waarschuwing?** | Accounts in een geprivilegieerde rol hebben in de afgelopen 90 dagen geen wacht woord gewijzigd. Deze accounts zijn mogelijk service of gedeelde accounts die niet worden onderhouden en kwetsbaar zijn voor aanvallen. |
 | **Hoe kunt u het probleem oplossen?** | Controleer de accounts in de lijst. Als ze geen toegang meer nodig hebben, moet u ze verwijderen uit hun geprivilegieerde rollen. |
 | **Preventie** | Zorg ervoor dat accounts die worden gedeeld sterke wacht woorden draaien wanneer er een wijziging is in de gebruikers die het wacht woord kennen. </br>Controleer regel matig accounts met geprivilegieerde rollen met [toegangs beoordelingen](pim-how-to-start-security-review.md) en verwijder roltoewijzingen die niet meer nodig zijn. |
@@ -190,9 +201,10 @@ In deze sectie vindt u alle beveiligings waarschuwingen voor Azure AD-rollen, sa
 
 ### <a name="roles-are-being-assigned-outside-of-privileged-identity-management"></a>Rollen worden buiten Privileged Identity Management toegewezen
 
-| | |
+Ernst: **hoog**
+
+| | Description |
 | --- | --- |
-| **Ernst** | Hoog |
 | **Waarom krijg ik deze waarschuwing?** | Geprivilegieerde roltoewijzingen buiten Privileged Identity Management worden niet op de juiste wijze gecontroleerd en kunnen duiden op een actieve aanval. |
 | **Hoe kunt u het probleem oplossen?** | Controleer de gebruikers in de lijst en verwijder deze uit de geprivilegieerde rollen die buiten Privileged Identity Management zijn toegewezen. |
 | **Preventie** | Onderzoek waar gebruikers geprivilegieerde rollen worden toegewezen buiten Privileged Identity Management en de volgende toewijzingen van daaruit niet kunnen verbieden. |
@@ -200,9 +212,10 @@ In deze sectie vindt u alle beveiligings waarschuwingen voor Azure AD-rollen, sa
 
 ### <a name="there-are-too-many-global-administrators"></a>Er zijn te veel globale beheerders
 
-| | |
+Ernst: **laag**
+
+| | Description |
 | --- | --- |
-| **Ernst** | Beperkt |
 | **Waarom krijg ik deze waarschuwing?** | De globale beheerder is de rol met de hoogste bevoegdheden. Als een globale beheerder is aangetast, krijgt de aanvaller toegang tot alle machtigingen, waardoor het hele systeem risico loopt. |
 | **Hoe kunt u het probleem oplossen?** | Controleer de gebruikers in de lijst en verwijder alle die de rol globale beheerder niet absoluut nodig hebben. </br>Wijs in plaats daarvan beperkte rollen toe aan deze gebruikers. |
 | **Preventie** | Wijs gebruikers de minst bevoegde rol toe die ze nodig hebben. |
@@ -213,9 +226,10 @@ In deze sectie vindt u alle beveiligings waarschuwingen voor Azure AD-rollen, sa
 
 ### <a name="roles-are-being-activated-too-frequently"></a>Rollen worden te vaak geactiveerd
 
-| | |
+Ernst: **laag**
+
+| | Description |
 | --- | --- |
-| **Ernst** | Beperkt |
 | **Waarom krijg ik deze waarschuwing?** | Meerdere activeringen naar dezelfde bevoorrechte rol door dezelfde gebruiker is een aantekening van een aanval. |
 | **Hoe kunt u het probleem oplossen?** | Controleer de gebruikers in de lijst en zorg ervoor dat de [activerings duur](pim-how-to-change-default-settings.md) voor de bijbehorende rol lang genoeg is ingesteld om hun taken uit te voeren. |
 | **Preventie** | Zorg ervoor dat de [activerings duur](pim-how-to-change-default-settings.md) voor geprivilegieerde rollen lang genoeg is ingesteld voor gebruikers om hun taken uit te voeren.</br>[Multi-factor Authentication vereisen](pim-how-to-change-default-settings.md) voor geprivilegieerde rollen met accounts die worden gedeeld door meerdere beheerders. |

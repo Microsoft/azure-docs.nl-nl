@@ -6,12 +6,12 @@ ms.author: anvar
 ms.manager: bsiva
 ms.topic: how-to
 ms.date: 03/02/2021
-ms.openlocfilehash: 1425eafd92737e08596499e395dc62af3d967207
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 634eb2d22e3fa570ac9412d4fb8afd917b5c2eaa
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104607650"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105564004"
 ---
 # <a name="scale-agentless-migration-of-vmware-virtual-machines-to-azure"></a>De migratie van virtuele VMware-machines in een agent schalen naar Azure
 
@@ -176,4 +176,4 @@ In dit artikel hebt u het volgende geleerd:
 - Vm's repliceren met behulp van een scale-out apparaat
 
 
-Meer [informatie](https://docs.microsoft.com/azure/migrate/tutorial-migrate-vmware) over het migreren van servers naar Azure met Azure migrate: hulp programma voor server migratie.
+Meer [informatie](./tutorial-migrate-vmware.md) over het migreren van servers naar Azure met Azure migrate: hulp programma voor server migratie.

@@ -1,15 +1,15 @@
 ---
 title: Ondersteunde Azure Resource Manager resource typen
 description: Geef een lijst op met de Azure Resource Manager resource typen die worden ondersteund door de Azure-resource grafiek en de wijzigings geschiedenis.
-ms.date: 03/10/2021
+ms.date: 03/24/2021
 ms.topic: reference
 ms.custom: generated
-ms.openlocfilehash: d7b4be0b35fdfebd2f680a299bc7b90375e36afc
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 482c261586d5d077a61781eff28698fa9994f332
+ms.sourcegitcommit: 44edde1ae2ff6c157432eee85829e28740c6950d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102633764"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105544142"
 ---
 # <a name="azure-resource-graph-table-and-resource-type-reference"></a>Naslag informatie over de tabel en het resource type van Azure resource Graph
 
@@ -84,6 +84,7 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 - Citrix. Services/XenDesktopEssentials (Citrix Virtual Bureau bladen Essentials)
 - Conexlink. MyCloudIt/accounts (MyCloudIT-Azure Desktop hosting)
 - Crypteron. DataSecurity/apps (Crypteron)
+- github. Enter prise/accounts
 - gridpro. evops/accounts
 - gridpro. evops/accounts/eventrules
 - gridpro. evops/accounts/requesttemplates
@@ -142,7 +143,8 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 - Micro soft. AzureStackHCI/clusters (Azure Stack HCI)
 - micro soft. azurestackhci/galleryimages
 - micro soft. azurestackhci/networkinterfaces
-- Micro soft. AzureStackHCI/informatie (Azure Stack virtuele machine HCI-Azure-boog)
+- micro soft. azurestackhci/virtualharddisks
+- Micro soft. AzureStackHci/informatie (Azure Stack virtuele machine HCI-Azure-boog)
 - micro soft. azurestackhci/virtualnetworks
 - micro soft. baremetal/consoleconnections
 - Micro soft. BareMetal/crayServers (Cray-servers)
@@ -219,7 +221,8 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 - micro soft. connectedvehicle/platformaccounts
 - micro soft. connectedvmwarevsphere/resourcepools
 - micro soft. connectedvmwarevsphere/vCenter
-- micro soft. connectedvmwarevsphere/informatie
+- Micro soft. ConnectedVMwarevSphere/informatie (virtuele machines met VMware + AVS)
+- micro soft. connectedvmwarevsphere/informatie/Extensions
 - micro soft. connectedvmwarevsphere/virtualmachinetemplates
 - micro soft. connectedvmwarevsphere/virtualnetworks
 - Micro soft. ContainerInstance/containerGroups (container instanties)
@@ -254,6 +257,7 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 - Micro soft. DataMigration/Services (Azure data base Migration Services)
 - Micro soft. DataMigration/Services/project (Azure data base Migration projects)
 - micro soft. datamigration/-sleuven
+- micro soft. datamigration/sqlmigrationservices
 - Micro soft. DataProtection/BackupVaults (back-upkluizen)
 - micro soft. dataprotection/resourceoperationgatekeepers
 - Micro soft. DataShare/accounts (gegevens shares)
@@ -262,7 +266,7 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 - Micro soft. DBforMySQL/servers (Azure Database for MySQL servers)
 - Micro soft. DBforPostgreSQL/flexibleServers (Azure Database for PostgreSQL flexibele servers)
 - Micro soft. DBforPostgreSQL/serverGroups (Azure Database for PostgreSQL Server-groepen)
-- micro soft. dbforpostgresql/servergroupsv2
+- Micro soft. DBforPostgreSQL/serverGroupsv2 (Azure Database for PostgreSQL Server-groepen)
 - Micro soft. DBforPostgreSQL/servers (Azure Database for PostgreSQL servers)
 - Micro soft. DBforPostgreSQL/serversv2 (Azure Database for PostgreSQL servers v2)
 - micro soft. dbforpostgresql/singleservers
@@ -361,7 +365,7 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 - Micro soft. IntelligentITDigitalTwin/digitalTwins/testPlans (suites)
 - Micro soft. IntelligentITDigitalTwin/digitalTwins/tests (scripts)
 - Micro soft. IoTCentral/IoTApps (IoT Central-toepassingen)
-- Micro soft. IoTSpaces/Graph (digitale Apparaatdubbels (afgeschaft))
+- micro soft. iotspaces/Graph
 - micro soft. hsmpools
 - micro soft. managedhsms
 - Micro soft. sleutel kluis/kluizen (sleutel kluizen)
@@ -369,6 +373,8 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 - Micro soft. Kusto/clusters (Azure Data Explorer-clusters)
 - Micro soft. Kusto/clusters/data bases (Azure Data Explorer-data bases)
 - Micro soft. LabServices/labAccounts (Lab-Services)
+- micro soft. labservices/labplans
+- micro soft. labservices/Labs
 - Micro soft. LoadTestService/LoadTests (native belasting tests in de Cloud)
 - Micro soft. Logic/integrationAccounts (integratie accounts)
 - Micro soft. Logic/integrationServiceEnvironments (integratie service omgevingen)
@@ -380,6 +386,7 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 - Micro soft. MachineLearning/webservices (Machine Learning Studio (klassiek) webservices)
 - Micro soft. MachineLearning/werk ruimten (Machine Learning Studio (klassieke) werk ruimten)
 - micro soft. machinelearningcompute/operationalizationclusters
+- micro soft. machinelearningexperimentation/accounts/werk ruimten
 - micro soft. machinelearningservices/modelinventories
 - micro soft. machinelearningservices/modelinventory
 - micro soft. machinelearningservices/virtualclusters
@@ -517,6 +524,7 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 - micro soft. powerbi/workspacecollections
 - micro soft. powerbidedicated/autoscalevcores
 - Micro soft. PowerBIDedicated/capaciteiten (Power BI Embedded)
+- micro soft. powerplatform/enterprisepolicies
 - Micro soft. ProjectBabylon/accounts (Babylon-accounts)
 - Micro soft. controle sfeer liggen/accounts (controle sfeer liggen-accounts)
 - Micro soft. Quantum/werk ruimten (Quantum-werk ruimten)
@@ -525,7 +533,7 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 - Micro soft. relay/naam ruimten (relais)
 - micro soft. RemoteApp/verzamelingen
 - micro soft. tolerantie/chaosexperiments
-- Micro soft. ResourceConnector/toestellen (toestellen)
+- Micro soft. ResourceConnector/toestellen (resource bruggen)
 - Micro soft. resourcegraph/query's (resource Graph-query's)
 - Micro soft. resources/deploymentScripts (implementatie scripts)
 - Micro soft. resources/templateSpecs (sjabloon specificaties)
@@ -553,6 +561,7 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 - micro soft. servicefabricmesh/volumes
 - Micro soft. ServicesHub/connectors (Services hub-connectors)
 - Micro soft. SignalRService/Signa lering (seingevings)
+- Micro soft. SignalRService/WebPubSub (Web PubSub-service)
 - micro soft. enkelvoud/accounts
 - micro soft. Solutions/appliancedefinitions
 - micro soft. Solutions/toestellen
@@ -575,7 +584,7 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 - Micro soft. Storage/Storage accounts (opslag accounts)
 - micro soft. storagecache/amlfilesystems
 - Micro soft. StorageCache/caches (HPC-caches)
-- micro soft. storage pool/diskpools
+- Micro soft. storage pool/diskPools (schijf groepen)
 - Micro soft. StorageSync/storageSyncServices (Storage Sync Services)
 - Micro soft. StorageSyncDev/storageSyncServices (Storage Sync Services)
 - Micro soft. StorageSyncInt/storageSyncServices (Storage Sync Services)
@@ -603,7 +612,7 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 - micro soft. VMware/arczones
 - micro soft. VMware/resourcepools
 - micro soft. VMware/vCenter
-- Micro soft. VMware/informatie (virtuele machines van AVS)
+- micro soft. VMware/informatie
 - micro soft. VMware/virtualmachinetemplates
 - micro soft. VMware/virtualnetworks
 - Micro soft. VMwareCloudSimple/dedicatedCloudNodes (CloudSimple-knoop punten)
@@ -633,10 +642,6 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 - MyGet. Package Management/Services (MyGet-gehoste NuGet, NPM, Bower en Vsix)
 - Paraleap. CloudMonix/Services (CloudMonix)
 - Pokitdok. platform/Services (PokitDok-platform)
-- Providers. test-statefulIbizaEngines (toepassings beoordelingen)
-- providers. test-statefulresources
-- providers. test-statefulresources/nestedresources
-- providers. test-statelessresources
 - RavenHq. db/data bases (RavenHQ)
 - , Geeft Raygun. CrashReporting/apps (, geeft Raygun)
 - Sendgrid.Email/accounts (SendGrid-accounts)
@@ -661,6 +666,7 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 
 - micro soft. Security/beoordelingen
 - micro soft. Security/beoordelingen/subevaluaties
+- micro soft. Security/Insights/classificatie
 - micro soft. Security/iotalerts
 - micro soft. Security/locations/Alerts (beveiligings waarschuwingen)
 - micro soft. Security/prijzen

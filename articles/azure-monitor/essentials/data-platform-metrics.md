@@ -9,12 +9,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/26/2019
 ms.author: bwren
-ms.openlocfilehash: 8ecfd74a4d486a83add490501c2f7af4a4003b85
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 68e947a6e13ba5195815fe966ec69ec6a2f4b8e1
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101700971"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105562967"
 ---
 # <a name="azure-monitor-metrics-overview"></a>Overzicht van Azure Monitor metrische gegevens
 Azure Monitor metrieken is een functie van Azure Monitor die numerieke gegevens uit [bewaakte bronnen](../monitor-reference.md) in een time series-data base verzamelt. Metrische gegevens zijn numerieke waarden die met regel matige tussen pozen worden verzameld en een aspect van een systeem op een bepaald moment beschrijven. Metrische gegevens in Azure Monitor zijn licht gewicht en kunnen bijna realtime-scenario's ondersteunen, waardoor ze vooral nuttig zijn voor waarschuwingen en snelle detectie van problemen. U kunt ze interactief met metrische gegevens Verkenner analyseren, proactief een melding ontvangen wanneer een waarde een drempel overschrijdt of deze visualiseren in een werkmap of dash board.
@@ -27,7 +27,7 @@ Azure Monitor metrieken is een functie van Azure Monitor die numerieke gegevens 
 ## <a name="what-can-you-do-with-azure-monitor-metrics"></a>Wat kunt u doen met Azure Monitor metrische gegevens?
 De volgende tabel geeft een lijst van de verschillende manieren waarop u metrische gegevens kunt gebruiken in Azure Monitor.
 
-|  |  |
+|  | Description |
 |:---|:---|
 | **Analyseren** | Met [metrische gegevens Verkenner](metrics-charts.md) kunt u de verzamelde metrische gegevens in een grafiek analyseren en de metrische gegevens van verschillende resources vergelijken. |
 | **Waarschuwing** | Configureer een [waarschuwings regel voor metrische gegevens](../alerts/alerts-metric.md) die een melding verzendt of [geautomatiseerd actie](../alerts/action-groups.md) onderneemt wanneer de metrische waarde een drempel overschrijdt. |

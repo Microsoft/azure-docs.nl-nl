@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/17/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: bf2360bda55735aa8ef4258da5ae47f673f4d71b
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: c5ffdecf768be0962950bb3691dbb11fb0e70120
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101738919"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105565007"
 ---
 # <a name="azure-security-baseline-for-hdinsight"></a>Azure-beveiligings basislijn voor HDInsight
 
@@ -58,9 +58,9 @@ Om het risico van gegevens verlies via exfiltration te verminderen, beperkt u he
 
 **Richt lijnen**: voor beveiliging van DDoS-aanvallen schakelt u Azure DDoS Standard-beveiliging in op het virtuele netwerk waar uw Azure HDInsight is geïmplementeerd. Gebruik Azure Security Center geïntegreerde bedreigings informatie om communicatie met bekende of ongebruikte Internet-IP-adressen te weigeren.
 
-- [DDoS-beveiliging configureren](/azure/virtual-network/manage-ddos-protection)
+- [DDoS-beveiliging configureren](../ddos-protection/manage-ddos-protection.md)
 
-- [Meer informatie over Azure Security Center geïntegreerde bedreigings informatie](/azure/security-center/security-center-alerts-service-layer)
+- [Meer informatie over Azure Security Center geïntegreerde bedreigings informatie](../security-center/azure-defender.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -100,7 +100,7 @@ Om het risico van gegevens verlies via exfiltration te verminderen, beperkt u he
 
 **Richt lijnen**: gebruik Tags voor virtuele netwerken om netwerk toegangs beheer te definiëren voor netwerk beveiligings groepen (NSG) die zijn gekoppeld aan het subnet waarin uw Azure HDInsight-cluster is geïmplementeerd. U kunt servicetags gebruiken in plaats van specifieke IP-adressen wanneer u beveiligingsregels maakt. Door de naam van de service label (bijvoorbeeld ApiManagement) op te geven in het juiste bron-of doel veld van een regel, kunt u het verkeer voor de bijbehorende service toestaan of weigeren. Micro soft beheert de adres voorvoegsels die zijn opgenomen in het servicetag van de service en werkt de servicetag automatisch bij met gewijzigde adressen.
 
-- [Service tags voor Azure HDInsight begrijpen en gebruiken](/azure/virtual-network/security-overview#service-tags)
+- [Service tags voor Azure HDInsight begrijpen en gebruiken](../virtual-network/network-security-groups-overview.md#service-tags)
 
 **Verantwoordelijkheid**: Klant
 
@@ -130,7 +130,7 @@ Gebruik een van de ingebouwde Azure Policy definities die betrekking hebben op l
 
 U kunt Azure PowerShell of de Azure-opdracht regel interface (CLI) gebruiken om op basis van hun labels acties op te zoeken of uit te voeren op resources.
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 - [Een virtueel netwerk maken](../virtual-network/quick-create-portal.md)
 
@@ -144,9 +144,9 @@ U kunt Azure PowerShell of de Azure-opdracht regel interface (CLI) gebruiken om 
 
 **Hulp**: Azure-activiteiten logboek gebruiken om netwerk resource configuraties te bewaken en wijzigingen te detecteren voor netwerk bronnen die betrekking hebben op uw Azure HDInsight-implementaties. Maak waarschuwingen in Azure Monitor die worden geactiveerd wanneer er wijzigingen in kritieke netwerk bronnen plaatsvinden.
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](/azure/azure-monitor/platform/activity-log-view)
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Waarschuwingen maken in Azure Monitor](/azure/azure-monitor/platform/alerts-activity-log)
+- [Waarschuwingen maken in Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -186,7 +186,7 @@ U kunt Azure PowerShell of de Azure-opdracht regel interface (CLI) gebruiken om 
 
 - [Een Azure HDInsight-cluster onboarden naar Azure Monitor](hdinsight-hadoop-oms-log-analytics-tutorial.md)
 
-- [De Bewaar periode van Log Analytics Workspace configureren](/azure/azure-monitor/platform/manage-cost-storage)
+- [De Bewaar periode van Log Analytics Workspace configureren](../azure-monitor/logs/manage-cost-storage.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -198,7 +198,7 @@ U kunt Azure PowerShell of de Azure-opdracht regel interface (CLI) gebruiken om 
 
 - [Een Azure HDInsight-cluster onboarden naar Azure Monitor](hdinsight-hadoop-oms-log-analytics-tutorial.md)
 
-- [De Bewaar periode van Log Analytics Workspace configureren](/azure/azure-monitor/platform/manage-cost-storage)
+- [De Bewaar periode van Log Analytics Workspace configureren](../azure-monitor/logs/manage-cost-storage.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -220,7 +220,7 @@ U kunt Azure PowerShell of de Azure-opdracht regel interface (CLI) gebruiken om 
 
 - [Waarschuwingen beheren in Azure Security Center](../security-center/security-center-managing-and-responding-alerts.md)
 
-- [Een waarschuwing over logboek gegevens van log Analytics](/azure/azure-monitor/learn/tutorial-response)
+- [Een waarschuwing over logboek gegevens van log Analytics](../azure-monitor/alerts/tutorial-response.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -230,7 +230,7 @@ U kunt Azure PowerShell of de Azure-opdracht regel interface (CLI) gebruiken om 
 
 **Hulp**: Azure HDInsight wordt geleverd met clamscan vooraf geïnstalleerd en ingeschakeld voor de cluster knooppunt installatie kopieën, maar u moet de software echter wel beheren en hand matig aggregatie of bewakings logboeken clamscan genereren.
 
-- [Informatie over clamscan](https://docs.microsoft.com/azure/hdinsight/hdinsight-faq#security-and-certificates)
+- [Informatie over clamscan](./hdinsight-faq.md#security-and-certificates)
 
 **Verantwoordelijkheid**: Klant
 
@@ -300,7 +300,7 @@ Daarnaast kunt u de aanbevelingen van Azure Security Center identiteits-en toega
 
 **Richt lijnen**: gebruik Azure HDInsight id Broker om u aan te melden bij Enterprise Security Package-clusters (ESP) met behulp van multi-factor Authentication, zonder wacht woorden op te geven. Als u zich al hebt aangemeld bij andere Azure-Services, zoals de Azure Portal, kunt u zich aanmelden bij uw Azure HDInsight-cluster met een SSO-ervaring (eenmalige aanmelding).
 
-- [Azure HDInsight ID Broker inschakelen](https://docs.microsoft.com/azure/hdinsight/domain-joined/identity-broker#enable-hdinsight-id-broker)
+- [Azure HDInsight ID Broker inschakelen](./domain-joined/identity-broker.md#enable-hdinsight-id-broker)
 
 **Verantwoordelijkheid**: Klant
 
@@ -334,7 +334,7 @@ Daarnaast kunt u de aanbevelingen van Azure Security Center identiteits-en toega
 
 **Hulp**: Azure HDInsight-clusters met de geconfigureerde Enterprise Security Package kunnen worden verbonden met een domein, zodat domein gebruikers hun domein referenties kunnen gebruiken om zich te verifiëren. U kunt de beveiligings rapporten van Azure Active Directory (Azure AD) gebruiken voor het genereren van Logboeken en waarschuwingen wanneer verdachte of onveilige activiteiten in de Azure AD-omgeving plaatsvinden. Gebruik Azure Security Center om identiteits-en toegangs activiteiten te bewaken.
 
-- [Azure AD-gebruikers identificeren die zijn gemarkeerd voor riskante activiteiten](/azure/active-directory/reports-monitoring/concept-user-at-risk)
+- [Azure AD-gebruikers identificeren die zijn gemarkeerd voor riskante activiteiten](../active-directory/identity-protection/overview-identity-protection.md)
 
 - [Identiteits-en toegangs activiteiten van gebruikers controleren in Azure Security Center](../security-center/security-center-identity-access.md)
 
@@ -392,7 +392,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 **Hulp**: Azure HDInsight-clusters met Enterprise Security Package (ESP) die zijn geconfigureerd, kunnen worden verbonden met een domein zodat domein gebruikers hun domein referenties kunnen gebruiken om zich te verifiëren bij de clusters. Gebruik Azure Active Directory (Azure AD) risico detecties en functie voor identiteits beveiliging om automatische antwoorden te configureren op gedetecteerde verdachte acties die betrekking hebben op gebruikers identiteiten. Daarnaast kunt u gegevens opnemen in azure Sentinel voor verder onderzoek.
 
-- [Riskante Azure AD-aanmeldingen weergeven](/azure/active-directory/reports-monitoring/concept-risky-sign-ins)
+- [Riskante Azure AD-aanmeldingen weergeven](../active-directory/identity-protection/overview-identity-protection.md)
 
 - [Risico beleid voor identiteits beveiliging configureren en inschakelen](../active-directory/identity-protection/howto-identity-protection-configure-risk-policies.md)
 
@@ -404,7 +404,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 **Richt lijnen**: niet beschikbaar; Klanten-lockbox nog niet ondersteund voor Azure HDInsight.
 
-- [Lijst met door Klanten-lockbox ondersteunde services](https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview#supported-services-and-scenarios-in-general-availability)
+- [Lijst met door Klanten-lockbox ondersteunde services](../security/fundamentals/customer-lockbox-overview.md#supported-services-and-scenarios-in-general-availability)
 
 **Verantwoordelijkheid**: Klant
 
@@ -418,7 +418,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 **Richt lijnen**: Gebruik labels op resources die betrekking hebben op uw Azure HDInsight-implementaties om te helpen bij het bijhouden van Azure-resources die gevoelige informatie opslaan of verwerken.
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -432,7 +432,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 - [Azure Data Lake Storage beveiligen](../data-lake-store/data-lake-store-security-overview.md)
 
-- [Azure Storage accounts beveiligen](/azure/storage/common/storage-security-guide)
+- [Azure Storage accounts beveiligen](../storage/blobs/security-recommendations.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -506,13 +506,13 @@ Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt mic
 
 **Richt lijnen**: als u Azure SQL database gebruikt om Apache Hive-en Apache Oozie-meta gegevens op te slaan, zorgt u ervoor dat SQL-gegevens altijd versleuteld blijven. Voor Azure Storage accounts en Data Lake Storage (gen1 of Gen2) wordt aanbevolen micro soft toe te staan uw versleutelings sleutels te beheren, maar u hebt de mogelijkheid om uw eigen sleutels te beheren.
 
-- [Versleutelings sleutels voor Azure Storage accounts beheren](/azure/storage/common/storage-encryption-keys-portal)
+- [Versleutelings sleutels voor Azure Storage accounts beheren](../storage/common/customer-managed-keys-configure-key-vault.md)
 
 - [Azure Data Lake Storage maken met door de klant beheerde versleutelings sleutels](../data-lake-store/data-lake-store-get-started-portal.md)
 
-- [Informatie over versleuteling voor Azure SQL Database](/azure/sql-database/sql-database-technical-overview#data-encryption)
+- [Informatie over versleuteling voor Azure SQL Database](../azure-sql/database/sql-database-paas-overview.md#data-encryption)
 
-- [Transparent Data Encryption voor SQL Database configureren met door de klant beheerde sleutels](https://docs.microsoft.com/azure/sql-database/transparent-data-encryption-azure-sql?tabs=azure-portal)
+- [Transparent Data Encryption voor SQL Database configureren met door de klant beheerde sleutels](../azure-sql/database/transparent-data-encryption-tde-overview.md?tabs=azure-portal)
 
 **Verantwoordelijkheid**: Gedeeld
 
@@ -522,7 +522,7 @@ Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt mic
 
 **Richt lijnen**: Diagnostische instellingen configureren voor Azure Storage accounts die zijn gekoppeld aan Azure HDInsight-clusters om alle ruwe bewerkingen te controleren en te registreren voor cluster gegevens. Schakel controle in voor opslag accounts of Data Lake archieven die zijn gekoppeld aan het Azure HDInsight-cluster.
 
-- [Aanvullende logboek registratie/controle voor een Azure Storage account inschakelen](/azure/storage/common/storage-monitor-storage-account)
+- [Aanvullende logboek registratie/controle voor een Azure Storage account inschakelen](../storage/common/manage-storage-analytics-logs.md)
 
 - [Aanvullende logboek registratie/controle voor Azure Data Lake Storage inschakelen](../data-lake-analytics/data-lake-analytics-diagnostic-logs.md)
 
@@ -614,7 +614,7 @@ Hoewel klassieke Azure-resources kunnen worden gedetecteerd via Azure resource G
 
 **Richt lijnen**: Tags Toep assen op Azure-resources die meta gegevens geven om ze logisch in een taxonomie te organiseren.
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -624,11 +624,11 @@ Hoewel klassieke Azure-resources kunnen worden gedetecteerd via Azure resource G
 
 **Richt lijnen**: Gebruik labels, beheer groepen en afzonderlijke abonnementen, waar nodig, om assets te organiseren en bij te houden. Sluit de inventaris regel matig af en zorg ervoor dat niet-geautoriseerde resources tijdig worden verwijderd uit het abonnement.
 
-- [Aanvullende Azure-abonnementen maken](/azure/billing/billing-create-subscription)
+- [Aanvullende Azure-abonnementen maken](../cost-management-billing/manage/create-subscription.md)
 
-- [Beheergroepen maken](/azure/governance/management-groups/create)
+- [Beheergroepen maken](../governance/management-groups/create-management-group-portal.md)
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -697,7 +697,7 @@ Raadpleeg de volgende bronnen voor meer informatie:
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Een specifiek resource type weigeren met Azure Policy](https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#general)
+- [Een specifiek resource type weigeren met Azure Policy](../governance/policy/samples/built-in-policies.md#general)
 
 **Verantwoordelijkheid**: Klant
 
@@ -823,9 +823,9 @@ Alle beheerde schijven in azure HDInsight worden beveiligd met Azure Storage-ser
 
 Key Vault kunnen ook worden gebruikt met Azure HDInsight-implementaties voor het beheren van sleutels voor cluster opslag (Azure Storage accounts en Azure Data Lake Storage)
 
-- [Uw eigen sleutel voor Apache Kafka in azure HDInsight zetten](/azure/hdinsight/kafka/apache-kafka-byok)
+- [Uw eigen sleutel voor Apache Kafka in azure HDInsight zetten](./disk-encryption.md)
 
-- [Versleutelings sleutels voor Azure Storage accounts beheren](/azure/storage/common/storage-encryption-keys-portal)
+- [Versleutelings sleutels voor Azure Storage accounts beheren](../storage/common/customer-managed-keys-configure-key-vault.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -859,7 +859,7 @@ Key Vault kunnen ook worden gebruikt met Azure HDInsight-implementaties voor het
 
 **Hulp**: Azure HDInsight wordt geleverd met clamscan vooraf geïnstalleerd en ingeschakeld voor de cluster knooppunt installatie kopieën, maar u moet de software echter wel beheren en hand matig aggregatie of bewakings logboeken clamscan genereren.
 
-- [Meer informatie over clamscan voor Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-faq#security-and-certificates)
+- [Meer informatie over clamscan voor Azure HDInsight](./hdinsight-faq.md#security-and-certificates)
 
 **Verantwoordelijkheid**: Klant
 
@@ -881,7 +881,7 @@ Scan vooraf bestanden die worden geüpload naar Azure-resources die zijn gerelat
 
 **Hulp**: Azure HDInsight wordt geleverd met clamscan vooraf geïnstalleerd en ingeschakeld voor de cluster knooppunt installatie kopieën. Clamscan voert automatisch engine-en definitie-updates uit, maar aggregatie en beheer van Logboeken moet hand matig worden uitgevoerd.
 
-- [Meer informatie over clamscan voor Azure Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-faq#security-and-certificates)
+- [Meer informatie over clamscan voor Azure Azure HDInsight](./hdinsight-faq.md#security-and-certificates)
 
 **Verantwoordelijkheid**: Klant
 
@@ -897,7 +897,7 @@ Scan vooraf bestanden die worden geüpload naar Azure-resources die zijn gerelat
 
 - [Opslag redundantie configureren voor Azure Storage accounts](../storage/common/storage-redundancy.md)
 
-- [Redundantie voor Azure SQL Database configureren](/azure/sql-database/sql-database-active-geo-replication)
+- [Redundantie voor Azure SQL Database configureren](../azure-sql/database/active-geo-replication-overview.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -921,7 +921,7 @@ Scan vooraf bestanden die worden geüpload naar Azure-resources die zijn gerelat
 
 **Richt lijnen**: als Azure Key Vault wordt gebruikt in combi natie met uw Azure HDInsight-implementatie, test u het herstellen van back-ups van door de klant beheerde sleutels.
 
-- [Uw eigen sleutel voor Apache Kafka in azure HDInsight zetten](/azure/hdinsight/kafka/apache-kafka-byok)
+- [Uw eigen sleutel voor Apache Kafka in azure HDInsight zetten](./disk-encryption.md)
 
 - [Sleutel kluis sleutels herstellen in azure](/powershell/module/az.keyvault/restore-azkeyvaultkey)
 
@@ -933,7 +933,7 @@ Scan vooraf bestanden die worden geüpload naar Azure-resources die zijn gerelat
 
 **Richt lijnen**: als Azure Key Vault wordt gebruikt in combi natie met uw Azure HDInsight-implementatie, schakelt u zacht verwijderen in Key Vault in om sleutels te beschermen tegen onbedoelde of schadelijke verwijdering.
 
-- [Azure Key Vault voor het inschakelen van zacht verwijderen](/azure/key-vault/key-vault-ovw-soft-delete)
+- [Azure Key Vault voor het inschakelen van zacht verwijderen](../key-vault/general/soft-delete-overview.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -1025,5 +1025,5 @@ Scan vooraf bestanden die worden geüpload naar Azure-resources die zijn gerelat
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Overzicht Azure Security Benchmark V2](/azure/security/benchmarks/overview)
-- Meer informatie over [Azure-beveiligingsbasislijnen](/azure/security/benchmarks/security-baselines-overview)
+- Zie [Overzicht Azure Security Benchmark V2](../security/benchmarks/overview.md)
+- Meer informatie over [Azure-beveiligingsbasislijnen](../security/benchmarks/security-baselines-overview.md)

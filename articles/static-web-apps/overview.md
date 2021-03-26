@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: overview
 ms.date: 05/08/2020
 ms.author: cshoe
-ms.openlocfilehash: 9cd5136d69e4b14aa50a96d20f3187ce88db6e96
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: f4e900c8bcdcb5febec39421e098b19ad10b8b00
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "92320493"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105558887"
 ---
 # <a name="what-is-azure-static-web-apps-preview"></a>Wat is Azure Static Web Apps Preview?
 
@@ -24,7 +24,7 @@ De werkstroom van Azure Static Web Apps wordt aangepast aan de dagelijkse werkst
 
 Wanneer u een Azure Static Web Apps-resource maakt, wordt in Azure een werkstroom voor GitHub-acties ingesteld in de opslagplaats voor broncode van de app. Met deze werkstroom wordt een vertakking van uw keuze bewaakt. Elke keer dat u doorvoeringen pusht of pull-aanvragen accepteert in de bewaakte vertakking, worden met de GitHub-actie automatisch uw app en de bijbehorende API gebouwd en geïmplementeerd in Azure.
 
-Statische web-apps zijn doorgaans gebouwd met behulp van bibliotheken en frameworks, zoals Angular, React, Svelte, Vue of Blazor. Deze apps zijn onder andere HTML-, CSS-, JavaScript- en afbeeldingsactiva waaruit de toepassing bestaat. Met een traditionele webserver worden deze activa geleverd vanaf één server naast eventuele vereiste API-eindpunten.
+Statische web-apps zijn doorgaans gebouwd met behulp van bibliotheken en frameworks, zoals hoek, reageren, svelte, vue of razendsnelle, waarbij server side rendering niet is vereist. Deze apps zijn onder andere HTML-, CSS-, JavaScript- en afbeeldingsactiva waaruit de toepassing bestaat. Met een traditionele webserver worden deze activa geleverd vanaf één server naast eventuele vereiste API-eindpunten.
 
 Met Static Web Apps worden statische activa gescheiden van een traditionele webserver, en worden in plaats hiervan geleverd vanaf punten die geografisch wereldwijd zijn gedistribueerd. Deze distributie maakt het uitvoeren van bestanden veel sneller dan bestanden die zich fysiek dichter bij eindgebruikers bevinden. Daarnaast worden API-eindpunten gehost met behulp van een [serverloze architectuur](../azure-functions/functions-overview.md), waardoor er helemaal geen volledige back-end-server meer nodig is.
 

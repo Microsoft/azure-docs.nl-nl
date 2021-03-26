@@ -5,16 +5,16 @@ author: rashi-ms
 ms.author: rajosh
 ms.topic: conceptual
 ms.date: 02/07/2021
-ms.openlocfilehash: 2bb68c8c183e3de132bc7cf4504714a260ea2683
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.openlocfilehash: c2e739a45c7915c957ca89e5b01b98afa945d03e
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105025115"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105557187"
 ---
 # <a name="assessment-overview-migrate-to-azure-sql"></a>Overzicht van evaluatie (migreren naar Azure SQL)
 
-In dit artikel vindt u een overzicht van de evaluaties voor het migreren van on-premises SQL Server exemplaren van een VMware-omgeving naar Azure SQL-data bases of beheerde exemplaren met behulp van het [hulp programma Azure migrate: detectie en evaluatie](https://docs.microsoft.com/azure/migrate/migrate-services-overview#azure-migrate-discovery-and-assessment-tool).
+In dit artikel vindt u een overzicht van de evaluaties voor het migreren van on-premises SQL Server exemplaren van een VMware-omgeving naar Azure SQL-data bases of beheerde exemplaren met behulp van het [hulp programma Azure migrate: detectie en evaluatie](./migrate-services-overview.md#azure-migrate-discovery-and-assessment-tool).
 
 ## <a name="whats-an-assessment"></a>Wat is een evaluatie?
 Een evaluatie met het hulp programma detectie en evaluatie is een moment opname van gegevens en meet de gereedheid en schat het effect van het migreren van on-premises servers naar Azure.
@@ -80,7 +80,7 @@ Dit is what's opgenomen in de Azure SQL Assessment-eigenschappen:
 **Percentiel gebruik** | Percentiel gebruik geeft de percentiel waarde van het voor beeld van de prestaties die wordt gebruikt voor supportte.
 **Comfortfactor** | De buffer die wordt gebruikt tijdens de evaluatie. IT-accounts voor problemen zoals seizoen gebruik, korte prestatie geschiedenis en waarschijnlijk toename van toekomstig gebruik.<br/><br/> Zo resulteert een 10-kern exemplaar met 20% gebruik doorgaans in een exemplaar met twee kernen. Met een comfort factor van 2,0 is het resultaat een exemplaar van vier kernen.
 **Aanbieding/licentie programma** | De [Azure-aanbieding](https://azure.microsoft.com/support/legal/offer-details/) waarin u bent Inge schreven. Op dit moment kunt u alleen kiezen uit betalen per gebruik en betalen naar gebruik-dev/test. Houd er rekening mee dat u extra korting kunt verkrijgen door gereserveerde capaciteit en Azure Hybrid Benefit boven op de aanbieding voor betalen naar gebruik toe te passen.
-**Servicelaag** | De meest geschikte service tier-optie voor uw bedrijfs behoeften voor migratie naar Azure SQL Database en/of Azure SQL Managed instance:<br/><br/>**Aanbevolen** als u wilt dat Azure migrate de beste geschikte servicelaag voor uw servers aanbeveelt. Dit kan algemeen gebruik of bedrijfs kritiek zijn. <br/><br/> **Algemeen** Als u een Azure SQL-configuratie wilt die is ontworpen voor budget gerichte workloads. [Meer informatie](https://docs.microsoft.com/azure/azure-sql/database/service-tier-general-purpose) <br/><br/> **Bedrijfskritiek** Als u een Azure SQL-configuratie wilt die is ontworpen voor workloads met lage latentie met hoge tolerantie voor fouten en snelle failovers. [Meer informatie](https://docs.microsoft.com/azure/azure-sql/database/service-tier-business-critical)
+**Servicelaag** | De meest geschikte service tier-optie voor uw bedrijfs behoeften voor migratie naar Azure SQL Database en/of Azure SQL Managed instance:<br/><br/>**Aanbevolen** als u wilt dat Azure migrate de beste geschikte servicelaag voor uw servers aanbeveelt. Dit kan algemeen gebruik of bedrijfs kritiek zijn. <br/><br/> **Algemeen** Als u een Azure SQL-configuratie wilt die is ontworpen voor budget gerichte workloads. [Meer informatie](../azure-sql/database/service-tier-general-purpose.md) <br/><br/> **Bedrijfskritiek** Als u een Azure SQL-configuratie wilt die is ontworpen voor workloads met lage latentie met hoge tolerantie voor fouten en snelle failovers. [Meer informatie](../azure-sql/database/service-tier-business-critical.md)
 **Valuta** | De facturerings valuta voor uw account.
 **Korting (%)** | Alle abonnements kortingen die u boven op de Azure-aanbieding ontvangt. De standaardinstelling is 0%.
 **Azure Hybrid Benefit** | Hiermee geeft u op of u al een SQL Server licentie hebt. <br/><br/> Als u dit wel doet en de actieve Software Assurance van SQL Server-abonnementen wordt gebruikt, kunt u voor de Azure Hybrid Benefit aanvragen wanneer u licenties naar Azure brengt.
@@ -110,10 +110,10 @@ Als u het type doel implementatie selecteert zoals **Aanbevolen** in de Azure SQ
 
  **Gereedheid voor Azure SQL DB** | **Azure SQL MI-gereedheid** | **Aanbevolen implementatie type** | **Berekende Azure SQL-configuratie en kosten ramingen?**
  --- | --- | --- | --- |
- Gereed | Gereed | Azure SQL DB of <br/>Azure SQL MI | Ja
- Gereed | Niet gereed of<br/> Onbekend | Azure SQL Database | Ja
- Niet gereed of<br/>Onbekend | Gereed | Azure SQL MI | Ja
- Niet gereed | Niet gereed | Mogelijk klaar voor Azure VM | Nee
+ Gereed | Gereed | Azure SQL DB of <br/>Azure SQL MI | Yes
+ Gereed | Niet gereed of<br/> Onbekend | Azure SQL Database | Yes
+ Niet gereed of<br/>Onbekend | Gereed | Azure SQL MI | Yes
+ Niet gereed | Niet gereed | Mogelijk klaar voor Azure VM | No
  Niet gereed of<br/>Onbekend | Niet gereed of<br/>Onbekend | Onbekend | Nee
 
 > [!NOTE]
@@ -124,7 +124,7 @@ Als u het type doel implementatie selecteert zoals **Aanbevolen** in de Azure SQ
 Als het SQL-exemplaar niet gereed is voor Azure SQL Database en Azure SQL Managed instance, wordt het aanbevolen implementatie type gemarkeerd als *mogelijk gereed voor Azure VM*.
 - De gebruiker wordt aanbevolen een evaluatie te maken in Azure Migrate met het evaluatie type ' Azure VM ' om te bepalen of de server waarop het exemplaar wordt uitgevoerd, gereed is om te migreren naar een virtuele Azure-machine. Opmerking:
     - Azure VM-evaluaties in Azure Migrate zijn momenteel liften en verschuivingen en worden geen rekening gehouden met de specifieke prestatie gegevens voor het uitvoeren van SQL-exemplaren en-data bases op de virtuele machine van Azure. 
-    - Wanneer u een Azure VM-evaluatie uitvoert op een server, gelden de aanbevolen grootte en kostenramingen voor alle exemplaren die op de server worden uitgevoerd, en kunnen worden gemigreerd naar een Azure VM via het hulpprogramma voor servermigratie. Voordat u migreert, [raadpleegt u de richtlijnen voor prestaties](https://docs.microsoft.com/azure/azure-sql/virtual-machines/windows/performance-guidelines-best-practices) voor SQL Server op virtuele Azure-machines.
+    - Wanneer u een Azure VM-evaluatie uitvoert op een server, gelden de aanbevolen grootte en kostenramingen voor alle exemplaren die op de server worden uitgevoerd, en kunnen worden gemigreerd naar een Azure VM via het hulpprogramma voor servermigratie. Voordat u migreert, [raadpleegt u de richtlijnen voor prestaties](../azure-sql/virtual-machines/windows/performance-guidelines-best-practices.md) voor SQL Server op virtuele Azure-machines.
 
 
 ## <a name="calculate-sizing"></a>Grootte berekenen

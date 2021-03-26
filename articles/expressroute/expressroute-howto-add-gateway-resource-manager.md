@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 10/05/2020
 ms.author: duau
 ms.custom: seodec18
-ms.openlocfilehash: 2b75e6e0a8b79f374900e6cb2dfc49680d3d0190
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: c2fa1441f5b7d8af4d610c5341f60009e57173af
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101739055"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105560944"
 ---
 # <a name="tutorial-configure-a-virtual-network-gateway-for-expressroute-using-powershell"></a>Zelfstudie: Een virtuele netwerkgateway configureren voor ExpressRoute met behulp van PowerShell
 > [!div class="op_single_selector"]
@@ -54,7 +54,7 @@ In de stappen voor deze taak gebruiken we een VNet dat is gebaseerd op de waarde
 | Naam van openbare IP van gateway  | *gwpip* |
 
 > [!IMPORTANT]
-> IPv6-ondersteuning voor persoonlijke peering is momenteel beschikbaar als **open bare preview**. Als u uw virtuele netwerk wilt verbinden met een ExpressRoute-circuit met op IPv6 gebaseerde privé-peering geconfigureerd, zorgt u ervoor dat uw virtuele netwerk dual stack is en volgt u de richt lijnen die [hier](https://docs.microsoft.com/azure/virtual-network/ipv6-overview)worden beschreven.
+> IPv6-ondersteuning voor persoonlijke peering is momenteel beschikbaar als **open bare preview**. Als u uw virtuele netwerk wilt verbinden met een ExpressRoute-circuit met op IPv6 gebaseerde privé-peering geconfigureerd, zorgt u ervoor dat uw virtuele netwerk dual stack is en volgt u de richt lijnen die [hier](../virtual-network/ipv6-overview.md)worden beschreven.
 > 
 > 
 

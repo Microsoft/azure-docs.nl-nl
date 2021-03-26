@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/17/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: f7766b57b5a3b9ffc73691303b5d8bcaa63fce4c
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: ab3f651c610127399da83addd6463ae8cb3748a9
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101721664"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105565245"
 ---
 # <a name="azure-security-baseline-for-azure-firewall"></a>Azure-beveiligings basislijn voor Azure Firewall
 
@@ -36,7 +36,7 @@ Daarnaast gebruikt u Azure Security Center en voert u aanbevelingen voor netwerk
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: de [Security Bench Mark van Azure](/home/mbaldwin/docs/asb/azure-docs-pr/articles/governance/policy/samples/azure-security-benchmark.md) is het standaard beleids initiatief voor Security Center en is de basis voor de [aanbevelingen van Security Center](/home/mbaldwin/docs/asb/azure-docs-pr/articles/security-center/security-center-recommendations.md). De Azure Policy definities die aan dit besturings element zijn gerelateerd, worden automatisch door Security Center ingeschakeld. Voor waarschuwingen met betrekking tot dit besturings element is mogelijk een [Azure Defender](/home/mbaldwin/docs/asb/azure-docs-pr/articles/security-center/azure-defender.md) -plan vereist voor de gerelateerde services.
+**Azure Security Center bewaking**: de [Security Bench Mark van Azure](/azure/governance/policy/samples/azure-security-benchmark) is het standaard beleids initiatief voor Security Center en is de basis voor de [aanbevelingen van Security Center](/azure/security-center/security-center-recommendations). De Azure Policy definities die aan dit besturings element zijn gerelateerd, worden automatisch door Security Center ingeschakeld. Voor waarschuwingen met betrekking tot dit besturings element is mogelijk een [Azure Defender](/azure/security-center/azure-defender) -plan vereist voor de gerelateerde services.
 
 **Ingebouwde definities Azure Policy-micro soft. Network**:
 
@@ -52,7 +52,7 @@ Daarnaast gebruikt u Azure Security Center en voert u aanbevelingen voor netwerk
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: de [Security Bench Mark van Azure](/home/mbaldwin/docs/asb/azure-docs-pr/articles/governance/policy/samples/azure-security-benchmark.md) is het standaard beleids initiatief voor Security Center en is de basis voor de [aanbevelingen van Security Center](/home/mbaldwin/docs/asb/azure-docs-pr/articles/security-center/security-center-recommendations.md). De Azure Policy definities die aan dit besturings element zijn gerelateerd, worden automatisch door Security Center ingeschakeld. Voor waarschuwingen met betrekking tot dit besturings element is mogelijk een [Azure Defender](/home/mbaldwin/docs/asb/azure-docs-pr/articles/security-center/azure-defender.md) -plan vereist voor de gerelateerde services.
+**Azure Security Center bewaking**: de [Security Bench Mark van Azure](/azure/governance/policy/samples/azure-security-benchmark) is het standaard beleids initiatief voor Security Center en is de basis voor de [aanbevelingen van Security Center](/azure/security-center/security-center-recommendations). De Azure Policy definities die aan dit besturings element zijn gerelateerd, worden automatisch door Security Center ingeschakeld. Voor waarschuwingen met betrekking tot dit besturings element is mogelijk een [Azure Defender](/azure/security-center/azure-defender) -plan vereist voor de gerelateerde services.
 
 **Ingebouwde definities Azure Policy-micro soft. Network**:
 
@@ -72,7 +72,7 @@ U kunt geen eigen servicetag maken en opgeven welke IP-adressen zijn opgenomen i
 
 - [Azure Firewall-service Tags](service-tags.md)
 
-- [Beschik bare service Tags](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#available-service-tags)
+- [Beschik bare service Tags](../virtual-network/service-tags-overview.md#available-service-tags)
 
 - [IP-groepen in Azure Firewall](ip-groups.md)
 
@@ -90,7 +90,7 @@ U kunt ook Azure-blauw drukken gebruiken om grootschalige Azure-implementaties t
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Voor beelden Azure Policy voor netwerken](https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#network)
+- [Voor beelden Azure Policy voor netwerken](../governance/policy/samples/built-in-policies.md#network)
 
 - [Een Azure Blueprint maken](../governance/blueprints/create-blueprint-portal.md)
 
@@ -104,9 +104,9 @@ U kunt ook Azure-blauw drukken gebruiken om grootschalige Azure-implementaties t
 
 - [Azure Firewall-logboeken en metrische gegevens bewaken](firewall-diagnostics.md)
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](/azure/azure-monitor/platform/activity-log-view#view-the-activity-log)
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Waarschuwingen maken in Azure Monitor](/azure/azure-monitor/platform/alerts-activity-log)
+- [Waarschuwingen maken in Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -120,7 +120,7 @@ U kunt ook Azure-blauw drukken gebruiken om grootschalige Azure-implementaties t
 
 **Hulp**: micro soft onderhoudt tijd bronnen voor Azure-resources voor Azure firewall. Klanten moeten een netwerk regel maken om deze toegang toe te staan of voor een tijd server die u in hun omgeving gebruikt.
 
-- [NTP-server toegang](https://docs.microsoft.com/azure/firewall/protect-windows-virtual-desktop#additional-considerations)
+- [NTP-server toegang](./protect-windows-virtual-desktop.md#additional-considerations)
 
 **Verantwoordelijkheid**: Gedeeld
 
@@ -144,7 +144,7 @@ Opmerking: beide logboeken kunnen worden opgeslagen in een opslag account, gestr
 
 Lijst met resource acties in activiteiten logboeken: bewerkingen van Azure Resource Manager resource provider
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor ](/azure/azure-monitor/platform/diagnostic-settings)
+- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor ](../azure-monitor/essentials/diagnostic-settings.md)
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
@@ -188,9 +188,9 @@ Zie de onderstaande referentie koppelingen voor meer informatie.
 
 - [Azure Firewall-logboeken en metrische gegevens](logs-and-metrics.md)
 
-- [De Bewaar periode voor gegevens wijzigen in Log Analytics](/azure/azure-monitor/platform/manage-cost-storage)
+- [De Bewaar periode voor gegevens wijzigen in Log Analytics](../azure-monitor/logs/manage-cost-storage.md)
 
-- [Bewaar beleid configureren voor logboeken van Azure Storage-account](/azure/storage/common/storage-monitor-storage-account#configure-logging)
+- [Bewaar beleid configureren voor logboeken van Azure Storage-account](../storage/common/manage-storage-analytics-logs.md#configure-logging)
 
 **Verantwoordelijkheid**: Klant
 
@@ -214,7 +214,7 @@ Azure Monitor-logboeken kunnen worden gebruikt voor algemene realtime-bewaking v
 
 - [Azure Firewall-logboeken en metrische gegevens](logs-and-metrics.md)
 
-- [Diagnostische logboeken](https://docs.microsoft.com/azure/firewall/logs-and-metrics#diagnostic-logs)
+- [Diagnostische logboeken](./logs-and-metrics.md#diagnostic-logs)
 
 **Verantwoordelijkheid**: Klant
 
@@ -230,7 +230,7 @@ U kunt ook gegevens naar Azure-Sentinel inschakelen en op het bord zetten.
 
 - [Waarschuwingen beheren in Azure Security Center](../security-center/security-center-managing-and-responding-alerts.md)
 
-- [Een waarschuwing over logboek gegevens van log Analytics](/azure/azure-monitor/learn/tutorial-response)
+- [Een waarschuwing over logboek gegevens van log Analytics](../azure-monitor/alerts/tutorial-response.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -258,7 +258,7 @@ U kunt ook gegevens naar Azure-Sentinel inschakelen en op het bord zetten.
 
 U kunt ook Just-in-time/alleen-voldoende toegang inschakelen met behulp van Azure Active Directory (Azure AD) Privileged Identity Management geprivilegieerde rollen voor micro soft-Services en Azure Resource Manager.
 
-- [Meer informatie over Privileged Identity Management](/azure/active-directory/privileged-identity-management)
+- [Meer informatie over Privileged Identity Management](../active-directory/privileged-identity-management/index.yml)
 
 **Verantwoordelijkheid**: Klant
 
@@ -334,7 +334,7 @@ U kunt ook Just-in-time/alleen-voldoende toegang inschakelen met behulp van Azur
 
 **Hulp**: Azure Active Directory (Azure AD) biedt logboeken waarmee u verlopen accounts kunt detecteren. Daarnaast kunt u Azure Identity Access revisies gebruiken om groepslid maatschappen en de toegang tot bedrijfs toepassingen en roltoewijzingen op efficiënte wijze te beheren. Gebruikers toegang kan regel matig worden gecontroleerd om ervoor te zorgen dat alleen de juiste gebruikers toegang hebben.
 
-- [Meer informatie over Azure AD-rapportage](/azure/active-directory/reports-monitoring/)
+- [Meer informatie over Azure AD-rapportage](../active-directory/reports-monitoring/index.yml)
 
 - [Beoordelingen over Azure Identity Access gebruiken](../active-directory/governance/access-reviews-overview.md)
 
@@ -348,7 +348,7 @@ U kunt ook Just-in-time/alleen-voldoende toegang inschakelen met behulp van Azur
 
 U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-gebruikers accounts te maken en de audit logboeken en aanmeldings logboeken te verzenden naar een Log Analytics-werk ruimte. U kunt de gewenste waarschuwingen configureren in Log Analytics werk ruimte.
 
-- [Azure-activiteitenlogboeken integreren in Azure Monitor](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+- [Azure-activiteitenlogboeken integreren in Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -386,11 +386,11 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 **Richt lijnen**: isolatie implementeren met afzonderlijke abonnementen en beheer groepen voor afzonderlijke beveiligings domeinen, zoals omgevings type en gegevens gevoeligheids niveau. U kunt het toegangs niveau voor uw Azure Firewall resources beperken dat door uw toepassingen en bedrijfs omgevingen wordt vereist. U kunt de toegang tot Azure-resources beheren via op rollen gebaseerd toegangs beheer van Azure.
 
-- [Aanvullende Azure-abonnementen maken](/azure/billing/billing-create-subscription)
+- [Aanvullende Azure-abonnementen maken](../cost-management-billing/manage/create-subscription.md)
 
-- [Beheergroepen maken](/azure/governance/management-groups/create)
+- [Beheergroepen maken](../governance/management-groups/create-management-group-portal.md)
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -414,7 +414,7 @@ Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt mic
 
 Volg Azure Security Center aanbevelingen voor het versleutelen van de rest en de versleuteling in de door Voer, indien van toepassing. 
 
-- [Meer informatie over versleuteling in transit met Azure](https://docs.microsoft.com/azure/security/fundamentals/encryption-overview#encryption-of-data-in-transit)
+- [Meer informatie over versleuteling in transit met Azure](../security/fundamentals/encryption-overview.md#encryption-of-data-in-transit)
 
 **Verantwoordelijkheid**: Gedeeld
 
@@ -456,7 +456,7 @@ Volg Azure Security Center aanbevelingen voor het versleutelen van de rest en de
 
 **Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken voor wanneer wijzigingen in azure firewall plaatsvinden.
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](/azure/azure-monitor/platform/alerts-activity-log)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -470,7 +470,7 @@ Volg Azure Security Center aanbevelingen voor het versleutelen van de rest en de
 
 **Richt lijnen**: Tags Toep assen op Azure firewall en gerelateerde resources die meta gegevens geven om ze logisch in een taxonomie te organiseren. 
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -482,7 +482,7 @@ Volg Azure Security Center aanbevelingen voor het versleutelen van de rest en de
 
 - [Aanvullende Azure-abonnementen maken](../cost-management-billing/manage/create-subscription.md)
 
-- [Beheergroepen maken](/azure/governance/management-groups/create-management-group-portal)
+- [Beheergroepen maken](../governance/management-groups/create-management-group-portal.md)
 
 - [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
@@ -526,7 +526,7 @@ Gebruik Azure resource Graph voor het opvragen/detecteren van Azure Firewall res
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Een specifiek resource type weigeren met Azure Policy](https://docs.microsoft.com/azure/governance/policy/concepts/effects#deny)
+- [Een specifiek resource type weigeren met Azure Policy](../governance/policy/concepts/effects.md#deny)
 
 **Verantwoordelijkheid**: Klant
 
@@ -594,7 +594,7 @@ Azure Policy wordt op dit moment niet volledig ondersteund voor Azure Firewall.
 
 **Hulp**: Azure DevOps gebruiken om uw code veilig op te slaan en te beheren, zoals aangepaste Azure-beleids regels en Azure Resource Manager sjablonen. Als u toegang wilt krijgen tot de resources die u beheert in azure DevOps, kunt u machtigingen verlenen of weigeren aan specifieke gebruikers, ingebouwde beveiligings groepen of groepen die zijn gedefinieerd in Azure Active Directory (Azure AD) als deze zijn geïntegreerd met Azure DevOps, of Active Directory als dit is geïntegreerd met TFS.
 
-- [Code opslaan in azure DevOps](https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops&amp;preserve-view=true)
+- [Code opslaan in azure DevOps](/azure/devops/repos/git/gitworkflow?preserve-view=true&view=azure-devops)
 
 - [Over machtigingen en groepen in azure DevOps](/azure/devops/organizations/security/about-permissions)
 
@@ -608,7 +608,7 @@ Azure Policy wordt op dit moment niet volledig ondersteund voor Azure Firewall.
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Aliassen gebruiken](https://docs.microsoft.com/azure/governance/policy/concepts/definition-structure#aliases)
+- [Aliassen gebruiken](../governance/policy/concepts/definition-structure.md#aliases)
 
 **Verantwoordelijkheid**: Klant
 
@@ -682,7 +682,7 @@ Azure Policy wordt op dit moment niet volledig ondersteund voor Azure Firewall.
 
 **Hulp**: Azure DevOps gebruiken om uw code veilig op te slaan en te beheren, zoals aangepaste Azure-beleids regels, Azure Resource Manager sjablonen. Als u resources wilt beveiligen die u beheert in azure DevOps, kunt u machtigingen verlenen of weigeren aan specifieke gebruikers, ingebouwde beveiligings groepen of groepen die zijn gedefinieerd in Azure Active Directory (Azure AD) als deze zijn geïntegreerd met Azure DevOps, of Active Directory als dit is geïntegreerd met TFS.
 
-- [Code opslaan in azure DevOps](https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops&amp;preserve-view=true)
+- [Code opslaan in azure DevOps](/azure/devops/repos/git/gitworkflow?preserve-view=true&view=azure-devops)
 
 - [Over machtigingen en groepen in azure DevOps](/azure/devops/organizations/security/about-permissions)
 
@@ -784,5 +784,5 @@ Met doorlopend exporteren kunt u waarschuwingen en aanbevelingen hand matig of o
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Overzicht Azure Security Benchmark V2](/azure/security/benchmarks/overview)
-- Meer informatie over [Azure-beveiligingsbasislijnen](/azure/security/benchmarks/security-baselines-overview)
+- Zie [Overzicht Azure Security Benchmark V2](../security/benchmarks/overview.md)
+- Meer informatie over [Azure-beveiligingsbasislijnen](../security/benchmarks/security-baselines-overview.md)

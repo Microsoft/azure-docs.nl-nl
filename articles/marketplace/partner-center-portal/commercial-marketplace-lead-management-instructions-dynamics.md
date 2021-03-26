@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: trkeya
 ms.author: trkeya
 ms.date: 03/30/2020
-ms.openlocfilehash: d996a2e0732ad9b4da104265710970e04cdbd368
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 067a30d8f16b06b1b29ad494363d180886d1ab8b
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98199768"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105560077"
 ---
 # <a name="configure-lead-management-for-dynamics-365-customer-engagement"></a>Lead beheer configureren voor Dynamics 365-klant betrokkenheid
 
@@ -32,7 +32,7 @@ De volgende gebruikers machtigingen zijn nodig om de stappen in dit artikel uit 
 
 ## <a name="install-the-solution"></a>De oplossing installeren
 
-1. Down load de [Microsoft Marketplace lead Writer-oplossing](https://mpsapiprodwus.blob.core.windows.net/documentation/MicrosoftMarketplacesLeadIntegrationSolution_1_0_0_0_target_CRM_6.1_managed.zip)en sla deze lokaal op uw computer op.
+1. Down load de [Microsoft Marketplace lead Writer-oplossing](https://referralsflowpackages.blob.core.windows.net/documentation/MicrosoftMarketplacesLeadIntegrationSolution_1_0_0_0_target_CRM_6.1_managed.zip)en sla deze lokaal op uw computer op.
 
 1. Open Dynamics 365-klant betrokkenheid door naar de URL voor uw Dynamics-exemplaar te gaan, zoals `https://tenant.crm.dynamics.com` .
 

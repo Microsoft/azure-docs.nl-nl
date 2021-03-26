@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 03/03/2021
 ms.author: mjbrown
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: a7796b70d4d32e7023fbc88086a737dd76ae7723
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: b94b30851a5206c2183d999a3c024351cf415c90
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102122711"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105568236"
 ---
 # <a name="configure-ip-firewall-in-azure-cosmos-db"></a>IP-firewall in Azure Cosmos DB configureren
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -108,7 +108,7 @@ Wanneer u uw Azure Cosmos DB-account opent vanaf een computer op internet, moet 
 
 Als u toegang wilt krijgen tot een huidige lijst met uitgaande IP-bereiken die u wilt toevoegen aan uw firewall-instellingen, raadpleegt u [Azure IP-bereiken en service Tags downloaden](https://www.microsoft.com/download/details.aspx?id=56519).
 
-Zie [de service tag discovery-API (open bare preview) gebruiken](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#use-the-service-tag-discovery-api-public-preview)om de lijst te automatiseren.
+Zie [de service tag discovery-API (open bare preview) gebruiken](../virtual-network/service-tags-overview.md#use-the-service-tag-discovery-api-public-preview)om de lijst te automatiseren.
 
 ## <a name="configure-an-ip-firewall-by-using-a-resource-manager-template"></a><a id="configure-ip-firewall-arm"></a>Een IP-Firewall configureren met behulp van een resource manager-sjabloon
 

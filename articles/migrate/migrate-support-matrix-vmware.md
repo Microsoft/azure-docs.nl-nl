@@ -6,12 +6,12 @@ ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 03/17/2021
-ms.openlocfilehash: 520aedd9dbb618788107bc83c5d72ad237acea22
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.openlocfilehash: 4d51fc13e3587c21a7340b35db10d3cf36ab74b5
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104870735"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105557544"
 ---
 # <a name="support-matrix-for-vmware-assessment"></a>Ondersteunings matrix voor VMware-evaluatie 
 
@@ -94,8 +94,8 @@ Naast het detecteren van servers, Azure Migrate: detectie en evaluatie kan de so
 **Ondersteunde SQL-services** | Alleen SQL Server data base-engine wordt ondersteund. <br/> Detectie van SQL Server Reporting Services (SSRS), SQL Server Integration Services (SSIS) en SQL Server Analysis Services (SSAS) wordt niet ondersteund.
 
 > [!Note]
-> Azure Migrate versleutelt de communicatie tussen Azure Migrate apparaat en bron SQL Server instanties (waarbij de eigenschap versleutelings verbinding is ingesteld op TRUE). Deze verbindingen worden versleuteld met [**TrustServerCertificate**](https://docs.microsoft.com/dotnet/api/system.data.sqlclient.sqlconnectionstringbuilder.trustservercertificate) (ingesteld op True). de transportlaag gebruikt SSL om het kanaal te versleutelen en de certificaat keten te omzeilen om de vertrouwens relatie te valideren. De toestel server moet zijn ingesteld om [**de basis instantie van het certificaat te vertrouwen**](https://docs.microsoft.com/sql/database-engine/configure-windows/enable-encrypted-connections-to-the-database-engine).<br/>
-Als er geen certificaat is ingericht op de server wanneer het wordt gestart, SQL Server genereert een zelfondertekend certificaat dat wordt gebruikt om aanmeldings pakketten te versleutelen. [**Meer informatie**](https://docs.microsoft.com/sql/database-engine/configure-windows/enable-encrypted-connections-to-the-database-engine).
+> Azure Migrate versleutelt de communicatie tussen Azure Migrate apparaat en bron SQL Server instanties (waarbij de eigenschap versleutelings verbinding is ingesteld op TRUE). Deze verbindingen worden versleuteld met [**TrustServerCertificate**](/dotnet/api/system.data.sqlclient.sqlconnectionstringbuilder.trustservercertificate) (ingesteld op True). de transportlaag gebruikt SSL om het kanaal te versleutelen en de certificaat keten te omzeilen om de vertrouwens relatie te valideren. De toestel server moet zijn ingesteld om [**de basis instantie van het certificaat te vertrouwen**](/sql/database-engine/configure-windows/enable-encrypted-connections-to-the-database-engine).<br/>
+Als er geen certificaat is ingericht op de server wanneer het wordt gestart, SQL Server genereert een zelfondertekend certificaat dat wordt gebruikt om aanmeldings pakketten te versleutelen. [**Meer informatie**](/sql/database-engine/configure-windows/enable-encrypted-connections-to-the-database-engine).
 
 ## <a name="dependency-analysis-requirements-agentless"></a>Vereisten voor afhankelijkheids analyse (zonder agent)
 

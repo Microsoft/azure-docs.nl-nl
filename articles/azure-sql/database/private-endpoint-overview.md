@@ -9,12 +9,12 @@ ms.topic: overview
 ms.custom: sqldbrb=1, fasttrack-edit
 ms.reviewer: vanto
 ms.date: 03/09/2020
-ms.openlocfilehash: 506982a22fd53dfb4f8f3d94735c11fc491469eb
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 0ce8e45f301ac0fd84f7d5d27d81b63103768f89
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102097275"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105567709"
 ---
 # <a name="azure-private-link-for-azure-sql-database-and-azure-synapse-analytics"></a>Azure Private Link voor Azure SQL Database en Azure Synapse Analytics
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -62,7 +62,7 @@ Clients kunnen verbinding maken met het privé-eindpunt van hetzelfde virtuele n
 
  ![Schema van connectiviteitsopties][1]
 
-Bovendien kunnen services die niet rechtstreeks in het virtuele netwerk worden uitgevoerd, maar wel met deze zijn geïntegreerd (bijvoorbeeld App Service web-apps of-functies), ook een persoonlijke verbinding met de data base bezorgen. Zie voor meer informatie over deze specifieke use-case de [Web-app met persoonlijke connectiviteit met Azure SQL database](https://docs.microsoft.com/azure/architecture/example-scenario/private-web-app/private-web-app) architectuur scenario.
+Bovendien kunnen services die niet rechtstreeks in het virtuele netwerk worden uitgevoerd, maar wel met deze zijn geïntegreerd (bijvoorbeeld App Service web-apps of-functies), ook een persoonlijke verbinding met de data base bezorgen. Zie voor meer informatie over deze specifieke use-case de [Web-app met persoonlijke connectiviteit met Azure SQL database](/azure/architecture/example-scenario/private-web-app/private-web-app) architectuur scenario.
 
 ## <a name="test-connectivity-to-sql-database-from-an-azure-vm-in-same-virtual-network"></a>De connectiviteit met de SQL Database testen vanaf een Azure-VM in hetzelfde virtuele netwerk
 
@@ -185,7 +185,7 @@ PolyBase en de COPY-instructie worden vaak gebruikt voor het laden van gegevens 
 
 - Zie [Uw database beveiligen](security-overview.md) voor een overzicht van Azure SQL Database security
 - Zie [Azure SQL Database Architecture](connectivity-architecture.md) voor een overzicht van Azure SQL Database connectiviteit
-- Mogelijk bent u ook geïnteresseerd in de [Web-app met een particuliere verbinding met het Azure SQL database](https://docs.microsoft.com/azure/architecture/example-scenario/private-web-app/private-web-app) Architecture-scenario, waarmee een webtoepassing buiten het virtuele netwerk wordt verbonden met het persoonlijke eind punt van een Data Base.
+- Mogelijk bent u ook geïnteresseerd in de [Web-app met een particuliere verbinding met het Azure SQL database](/azure/architecture/example-scenario/private-web-app/private-web-app) Architecture-scenario, waarmee een webtoepassing buiten het virtuele netwerk wordt verbonden met het persoonlijke eind punt van een Data Base.
 
 <!--Image references-->
 [1]: media/quickstart-create-single-database/pe-connect-overview.png

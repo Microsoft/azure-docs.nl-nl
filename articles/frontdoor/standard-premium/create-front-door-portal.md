@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/18/2021
 ms.author: duau
-ms.openlocfilehash: 18956948a32a79c1435bf4fc1554b09480c9010c
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 175fb82a5fdf300915f89c3d8cdc238638a742e1
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "101100819"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105565126"
 ---
 # <a name="quickstart-create-an-azure-front-door-standardpremium-profile---azure-portal"></a>Snelstartgids: een Azure front deur Standard/Premium-profiel maken-Azure Portal
 
@@ -58,7 +58,7 @@ Een Azure-account met een actief abonnement. [Gratis een account maken](https://
     | **Naam van eind punt** | Voer een wereld wijd unieke naam in voor het eind punt. |
     | **Oorsprongtype** | Selecteer het type resource voor uw oorsprong. In dit voor beeld selecteren we een app-service als de oorsprong waarvoor een persoonlijke koppeling is ingeschakeld. |
     | **Hostnaam van oorsprong** | Voer de hostnaam in voor uw oorsprong. |
-    | **Persoonlijke koppeling inschakelen** | Als u een particuliere verbinding wilt hebben tussen uw Azure front-deur en uw oorsprong. Raadpleeg de [richt lijnen voor persoonlijke koppelingen](concept-private-link.md) en [Schakel persoonlijke koppelingen](how-to-enable-private-link.md)in voor meer informatie.
+    | **Persoonlijke koppeling inschakelen** | Als u een particuliere verbinding wilt hebben tussen uw Azure front-deur en uw oorsprong. Raadpleeg de [richt lijnen voor persoonlijke koppelingen](concept-private-link.md) en [Schakel persoonlijke koppelingen](./how-to-enable-private-link-web-app.md)in voor meer informatie.
     | **Caching** | Schakel het selectie vakje in als u de inhoud dichter bij gebruikers wilt opslaan, met behulp van de rand Pop's en het micro soft-netwerk van Azure front deur. |
     | **WAF-beleid** | Selecteer **nieuwe maken** of selecteer een bestaand WAF-beleid in de vervolg keuzelijst als u deze functie wilt inschakelen. |
 

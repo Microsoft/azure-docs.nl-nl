@@ -3,12 +3,12 @@ title: Livevideo analyseren met Computer Vision voor ruimtelijke analyse, Azure
 description: In deze zelfstudie leert u hoe u Live Video Analytics samen met de AI-functie Computer Vision ruimtelijke analyse gebruikt van Azure Cognitive Services om een livevideofeed van een (gesimuleerde) IP-camera te analyseren.
 ms.topic: tutorial
 ms.date: 09/08/2020
-ms.openlocfilehash: b20cdb9bbc64f9adc49cfbde4ff80576b149dbcd
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 1c3fd411e60cabb504f01bece62d497ddeea31d8
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101698753"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105561012"
 ---
 # <a name="analyze-live-video-with-computer-vision-for-spatial-analysis-preview"></a>Livevideo analyseren met Computer Vision voor ruimtelijke analyse (preview)
 
@@ -56,7 +56,7 @@ Dit diagram laat zien hoe de signalen in deze zelfstudie stromen. Een [Edge-modu
 
 De node MediaGraphCognitiveServicesVisionExtension speelt de rol van proxy. Het converteert videoframes naar het opgegeven afbeeldingstype. Vervolgens wordt de afbeelding via **gedeeld geheugen** doorgestuurd naar een andere Edge-module die AI-bewerkingen achter een gRPC-eindpunt uitvoert. In dit voorbeeld is die Edge-module de module ruimtelijke analyse. Het processorknooppunt MediaGraphCognitiveServicesVisionExtension voert twee dingen uit:
 
-* Het verzamelt de resultaten en publiceert gebeurtenissen naar het sinkknooppunt [IoT Hub](media-graph-concept.md#iot-hub-message-sink). Het knooppunt verzendt die gebeurtenissen vervolgens naar [IoT Edge-hub](../../iot-edge/iot-edge-glossary.md#iot-edge-hub). 
+* Het verzamelt de resultaten en publiceert gebeurtenissen naar het sinkknooppunt [IoT Hub](media-graph-concept.md#iot-hub-message-sink). Het knooppunt verzendt die gebeurtenissen vervolgens naar [IoT Edge-hub](../../iot-fundamentals/iot-glossary.md#iot-edge-hub). 
 * Het legt ook een videoclip van 30 seconden vast van de RTSP-bron met een [signaalpoortprocessor](media-graph-concept.md#signal-gate-processor) en slaat het op als een Media Services-asset.
 
 ## <a name="create-the-computer-vision-resource"></a>De Computer Vision-resource maken

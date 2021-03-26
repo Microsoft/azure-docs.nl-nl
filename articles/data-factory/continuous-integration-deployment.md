@@ -7,12 +7,12 @@ ms.author: weetok
 ms.reviewer: jburchel
 ms.topic: conceptual
 ms.date: 03/11/2021
-ms.openlocfilehash: aa2c5801e61fb73219934c5d38e894520c41ab26
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.openlocfilehash: 24aa3bc455bf716c074526d707594bd3b4170619
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104784030"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105564174"
 ---
 # <a name="continuous-integration-and-delivery-in-azure-data-factory"></a>Continue integratie en levering in Azure Data Factory
 
@@ -335,7 +335,7 @@ Hier volgt een uitleg van de manier waarop de vorige sjabloon is samengesteld, o
 * Hoewel het type-specifieke aanpassing beschikbaar is voor gegevens sets, kunt u een configuratie opgeven zonder dat u expliciet een configuratie op een niveau hoeft te maken \* . In het vorige voor beeld zijn alle eigenschappen van de gegevensset onder `typeProperties` para meters.
 
 > [!NOTE]
-> **Waarschuwingen en matrices van Azure**  als deze zijn geconfigureerd voor een pijp lijn, worden momenteel niet ondersteund als para meters voor arm-implementaties. Als u de waarschuwingen en matrices opnieuw wilt Toep assen in een nieuwe omgeving, volgt u [Data Factory bewaking, waarschuwingen en matrices.](https://docs.microsoft.com/azure/data-factory/monitor-using-azure-monitor#data-factory-metrics)
+> **Waarschuwingen en matrices van Azure**  als deze zijn geconfigureerd voor een pijp lijn, worden momenteel niet ondersteund als para meters voor arm-implementaties. Als u de waarschuwingen en matrices opnieuw wilt Toep assen in een nieuwe omgeving, volgt u [Data Factory bewaking, waarschuwingen en matrices.](./monitor-using-azure-monitor.md#data-factory-metrics)
 > 
 
 ### <a name="default-parameterization-template"></a>Standaard parameterisering-sjabloon

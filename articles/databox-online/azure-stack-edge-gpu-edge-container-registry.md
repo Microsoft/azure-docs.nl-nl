@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 02/22/2021
 ms.author: alkohli
-ms.openlocfilehash: f19625f1d558071ccb29487efe56146756c7692c
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 56b691b2755b5e248b16e338f8fd82864f5bf218
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102437533"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105560332"
 ---
 # <a name="enable-edge-container-registry-on-your-azure-stack-edge-pro-gpu-device"></a>Edge container Registry op uw Azure Stack Edge Pro GPU-apparaat inschakelen
 
@@ -294,4 +294,4 @@ Nadat u de ongebruikte installatie kopieën hebt verwijderd, wordt de ruimte die
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Implementeer een staatloze toepassing op uw Azure stack Edge Pro](azure-stack-edge-j-series-deploy-stateless-application-kubernetes.md).
+- [Implementeer een staatloze toepassing op uw Azure stack Edge Pro](./azure-stack-edge-gpu-deploy-stateless-application-kubernetes.md).

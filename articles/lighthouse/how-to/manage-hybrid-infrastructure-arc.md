@@ -3,12 +3,12 @@ title: Hybride infra structuur op schaal beheren met Azure Arc
 description: Meer informatie over het effectief beheren van de computers en Kubernetes-clusters van uw klanten buiten Azure.
 ms.date: 03/12/2021
 ms.topic: how-to
-ms.openlocfilehash: ec32389cd7444405580530a00c8b7c5bc48bcd56
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: da7f016b507f8f876d27f6924f87f078a7806563
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103419317"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105563596"
 ---
 # <a name="manage-hybrid-infrastructure-at-scale-with-azure-arc"></a>Hybride infra structuur op schaal beheren met Azure Arc
 
@@ -35,11 +35,11 @@ U kunt er bijvoorbeeld voor [zorgen dat dezelfde set beleids regels wordt toegep
 
 ## <a name="manage-hybrid-kubernetes-clusters-at-scale-with-azure-arc-enabled-kubernetes"></a>Hybride Kubernetes-clusters op schaal beheren met Azure-Arc ingeschakeld Kubernetes
 
-U kunt Kubernetes-clusters beheren die zijn [verbonden met het abonnement van een klant met Azure Arc](../../azure-arc/kubernetes/connect-cluster.md), net alsof ze in azure werden uitgevoerd.
+U kunt Kubernetes-clusters beheren die zijn [verbonden met het abonnement van een klant met Azure Arc](../../azure-arc/kubernetes/quickstart-connect-cluster.md), net alsof ze in azure werden uitgevoerd.
 
 Als uw klant een service- [Principal-account heeft gemaakt voor het voorbereiden van Kubernetes-clusters naar Azure Arc](../../azure-arc/kubernetes/create-onboarding-service-principal.md), hebt u toegang tot dit Service-Principal-account voor het onboarden en beheren van clusters. Dit kan worden gedaan door gebruikers in de Tenant voor het beheren van de ' Kubernetes-cluster: Azure Arc-onboarding '. de ingebouwde rol Azure-hand leiding wanneer het abonnement met het Service-Principal-account is geklaard [voor Azure Lighthouse](onboard-customer.md).
 
-U kunt [configuraties](../../azure-arc/kubernetes/use-gitops-connected-cluster.md) en [helm-grafieken](../../azure-arc/kubernetes/use-gitops-with-helm.md) implementeren met behulp van GitOps voor verbonden clusters.
+U kunt [configuraties](../../azure-arc/kubernetes/tutorial-use-gitops-connected-cluster.md) en [helm-grafieken](../../azure-arc/kubernetes/use-gitops-with-helm.md) implementeren met behulp van GitOps voor verbonden clusters.
 
 U kunt ook verbonden clusters bewaken met Azure Monitor en [Azure Policy gebruiken om cluster configuraties op schaal toe te passen](../../azure-arc/kubernetes/use-azure-policy.md).
 

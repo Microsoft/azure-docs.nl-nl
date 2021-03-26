@@ -5,12 +5,12 @@ author: rashi-ms
 ms.author: rajosh
 ms.topic: tutorial
 ms.date: 02/07/2021
-ms.openlocfilehash: e9243fc750843c83b7ca8c295655853d20dcd083
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.openlocfilehash: 9acc6de84c3e5bc43f482d36ade242d2315a2a4f
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105024981"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105565109"
 ---
 # <a name="create-an-azure-sql-assessment"></a>Een Azure SQL-evaluatie maken
 
@@ -135,17 +135,17 @@ De schatting van de maandelijkse kosten omvat reken-en opslag kosten voor Azure 
 
         **Gereedheid voor Azure SQL DB** | **Azure SQL MI-gereedheid** | **Aanbevolen implementatie type** | **Berekende Azure SQL-configuratie en kosten ramingen?**
          --- | --- | --- | --- |
-        Gereed | Gereed | [Meer informatie over](concepts-azure-sql-assessment-calculation.md#recommended-deployment-type) Azure SQL DB of Azure SQL mi | Ja
-        Gereed | Niet gereed of onbekend | Azure SQL Database | Ja
-        Niet gereed of onbekend | Gereed | Azure SQL MI | Ja
-        Niet gereed | Niet gereed | Mogelijk klaar voor Azure VM [meer informatie](concepts-azure-sql-assessment-calculation.md#potentially-ready-for-azure-vm) | Nee
+        Gereed | Gereed | [Meer informatie over](concepts-azure-sql-assessment-calculation.md#recommended-deployment-type) Azure SQL DB of Azure SQL mi | Yes
+        Gereed | Niet gereed of onbekend | Azure SQL Database | Yes
+        Niet gereed of onbekend | Gereed | Azure SQL MI | Yes
+        Niet gereed | Niet gereed | Mogelijk klaar voor Azure VM [meer informatie](concepts-azure-sql-assessment-calculation.md#potentially-ready-for-azure-vm) | No
         Niet gereed of onbekend | Niet gereed of onbekend | Onbekend | Nee
     
     - **Type doel implementatie** (zoals geselecteerd in de beoordelings eigenschappen): **Azure SQL DB**
     
         **Gereedheid voor Azure SQL DB** | **Berekende Azure SQL-configuratie en kosten ramingen?**
         --- | --- |
-        Gereed | Ja
+        Gereed | Yes
         Niet gereed | Nee
         Onbekend | Nee
     
@@ -153,7 +153,7 @@ De schatting van de maandelijkse kosten omvat reken-en opslag kosten voor Azure 
     
         **Azure SQL MI-gereedheid** | **Berekende Azure SQL-configuratie en kosten ramingen?**
          --- | --- |
-        Gereed | Ja
+        Gereed | Yes
         Niet gereed | Nee
         Onbekend | Nee
 
@@ -192,4 +192,4 @@ De betrouwbaarheidsclassificatie helpt u om de betrouwbaarheid in te schatten va
 ## <a name="next-steps"></a>Volgende stappen
 
 - Meer [informatie](concepts-azure-sql-assessment-calculation.md) over hoe Azure SQL-evaluaties worden berekend.
-- Beginnen met het migreren van SQL-exemplaren en-data bases met behulp van [Azure database Migration service](https://docs.microsoft.com/azure/dms/dms-overview).
+- Beginnen met het migreren van SQL-exemplaren en-data bases met behulp van [Azure database Migration service](../dms/dms-overview.md).

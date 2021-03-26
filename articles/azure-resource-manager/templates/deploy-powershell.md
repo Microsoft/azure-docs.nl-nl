@@ -2,13 +2,13 @@
 title: Resources implementeren met Power shell en sjabloon
 description: Gebruik Azure Resource Manager en Azure PowerShell om resources te implementeren in Azure. De resources worden gedefinieerd in een resource manager-sjabloon of een Bicep-bestand.
 ms.topic: conceptual
-ms.date: 03/04/2021
-ms.openlocfilehash: e1d2197064b94d428855bbb36aadbb5eb88d4032
-ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
+ms.date: 03/25/2021
+ms.openlocfilehash: 11a293ca58fc6acf3bd99bb0169d817dae11fb94
+ms.sourcegitcommit: 44edde1ae2ff6c157432eee85829e28740c6950d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "104950855"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105543802"
 ---
 # <a name="deploy-resources-with-arm-templates-and-azure-powershell"></a>Resources implementeren met ARM-sjablonen en Azure PowerShell
 
@@ -118,6 +118,8 @@ Het volt ooien van de implementatie kan enkele minuten duren.
 > Momenteel biedt Azure PowerShell geen ondersteuning voor het implementeren van externe Bicep-bestanden. Gebruik [BICEP cli](./bicep-install.md#development-environment) voor het compileren van het Bicep-bestand naar een JSON-sjabloon en laad vervolgens het JSON-bestand naar de externe locatie.
 
 In plaats van ARM-sjablonen op uw lokale computer op te slaan, kunt u ze beter opslaan op een externe locatie. U kunt sjablonen opslaan in een opslagplaats voor broncodebeheer (zoals GitHub). U kunt de sjablonen ook opslaan in een Azure-opslagaccount voor gedeelde toegang in uw organisatie.
+
+[!INCLUDE [Deploy templates in private GitHub repo](../../../includes/resource-manager-private-github-repo-templates.md)]
 
 Als u implementeert in een resource groep die niet bestaat, maakt u de resource groep. De naam van de resource groep mag alleen alfanumerieke tekens, punten, onderstrepings teken, afbreek streepjes en haakjes bevatten. Het kan Maxi maal 90 tekens lang zijn. De naam kan niet eindigen met een punt.
 

@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: 1c2fbc90d3956ab831e6d9fac4e1e2d3540e1c6d
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.openlocfilehash: 6cf6e8e3f19b11a49e91b781b1ef6d83bf647903
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105025421"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105562984"
 ---
 # <a name="migration-guide-oracle-to-azure-sql-managed-instance"></a>Migratie handleiding: Oracle naar Azure SQL Managed instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../../includes/appliesto-sqlmi.md)]
@@ -142,11 +142,8 @@ Als u uw schema wilt publiceren en uw gegevens wilt migreren, voert u de volgend
 
 U kunt ook SQL Server Integration Services (SSIS) gebruiken om de migratie uit te voeren. Raadpleeg voor meer informatie: 
 
-- [Aan de slag met SQL Server Integration Services](https://docs.microsoft.com/sql/integration-services/sql-server-integration-services)
+- [Aan de slag met SQL Server Integration Services](/sql/integration-services/sql-server-integration-services)
 - [SQL Server Integration Services: SSIS voor Azure en hybride gegevens verplaatsing](https://download.microsoft.com/download/D/2/0/D20E1C5F-72EA-4505-9F26-FEF9550EFD44/SSIS%20Hybrid%20and%20Azure.docx)
-
-    
-
 
 ## <a name="post-migration"></a>Postmigratie 
 
@@ -194,7 +191,7 @@ Deze resources zijn ontwikkeld als onderdeel van het data SQL expert-programma, 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie de artikel [service en hulpprogram ma's voor gegevens migratie](https://docs.microsoft.com/azure/dms/dms-tools-matrix)voor een matrix van de services en hulpprogram Ma's van micro soft en van derden die beschikbaar zijn om u te helpen bij verschillende scenario's voor data base-en gegevens migratie, en voor speciale taken.
+- Zie de artikel [service en hulpprogram ma's voor gegevens migratie](../../../dms/dms-tools-matrix.md)voor een matrix van de services en hulpprogram Ma's van micro soft en van derden die beschikbaar zijn om u te helpen bij verschillende scenario's voor data base-en gegevens migratie, en voor speciale taken.
 
 - Zie voor meer informatie over Azure SQL Managed instance: 
   - [Een overzicht van Azure SQL Managed instance](../../managed-instance/sql-managed-instance-paas-overview.md)

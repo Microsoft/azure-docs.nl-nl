@@ -7,12 +7,12 @@ ms.author: alkarche
 ms.date: 1/19/2021
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 6aeb7489b455840eeca0a8e1967c7e6e2ed50b7a
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 608f883304dbc8e1ea8b0127668125ae50ca0b11
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102199897"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105564939"
 ---
 # <a name="integrate-azure-digital-twins-with-azure-time-series-insights"></a>Azure Digital Apparaatdubbels integreren met Azure Time Series Insights
 
@@ -157,7 +157,7 @@ Vervolgens moet u de omgevings variabelen in uw functie-app van eerder instellen
 
 ## <a name="create-and-connect-a-time-series-insights-instance"></a>Een Time Series Insights-instantie maken en verbinden
 
-Vervolgens stelt u een Time Series Insights-exemplaar in om de gegevens van uw tweede (TSI) Event Hub te ontvangen. Volg de onderstaande stappen en Zie [*zelf studie: een Azure time series Insights GEN2 payg-omgeving instellen*](../time-series-insights/tutorials-set-up-tsi-environment.md)voor meer informatie over dit proces.
+Vervolgens stelt u een Time Series Insights-exemplaar in om de gegevens van uw tweede (TSI) Event Hub te ontvangen. Volg de onderstaande stappen en Zie [*zelf studie: een Azure time series Insights GEN2 payg-omgeving instellen*](../time-series-insights/tutorial-set-up-environment.md)voor meer informatie over dit proces.
 
 1. Begin met het maken van een Time Series Insights omgeving in het Azure Portal. 
     1. Selecteer de prijs categorie **Gen2 (L1)** .
@@ -201,7 +201,7 @@ Gegevens moeten nu worden gestroomd naar uw Time Series Insights-exemplaar, die 
 
 De digitale apparaatdubbels worden standaard opgeslagen als een platte hiërarchie in Time Series Insights, maar ze kunnen worden verrijkt met model gegevens en een hiërarchie met meerdere niveaus voor de organisatie. Lees voor meer informatie over dit proces: 
 
-* [*Zelf studie: een model definiëren en Toep assen*](../time-series-insights/tutorials-set-up-tsi-environment.md#define-and-apply-a-model) 
+* [*Zelf studie: een model definiëren en Toep assen*](../time-series-insights/tutorial-set-up-environment.md#define-and-apply-a-model) 
 
 U kunt aangepaste logica schrijven om deze informatie automatisch te verstrekken met behulp van het model en de grafiek gegevens die al zijn opgeslagen in azure Digital Apparaatdubbels. Zie de volgende verwijzingen voor meer informatie over het beheren, bijwerken en ophalen van gegevens uit de apparaatdubbels-grafiek:
 

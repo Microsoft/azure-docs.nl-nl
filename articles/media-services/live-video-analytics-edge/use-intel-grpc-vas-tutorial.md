@@ -6,12 +6,12 @@ ms.date: 02/04/2021
 ms.service: media-services
 ms.author: faneerde
 author: fvneerden
-ms.openlocfilehash: 20a22d11973f5bb01e2c1345538d5d94ce311dc7
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 07a7daf6363f0e528f84635ed6713ac462f89ca5
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103465756"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105562848"
 ---
 # <a name="tutorial-analyze-live-video-by-using-intel-openvino-dl-streamer--edge-ai-extension"></a>Zelf studie: Live video analyseren door gebruik te maken van Intel™ DL streamer-Edge ai-extensie 
 
@@ -66,7 +66,7 @@ In deze zelfstudie leert u het volgende:
 
 De open-wijn™ DL streamer-Edge AI-extensie module is een micro service op basis van de video analyse van Intel (in de staat van de vaste lijn) die video Analytics-pijp lijnen bevat die zijn gebouwd met open-wijnbouw™ DL-streamer. Ontwikkel aars kunnen gedecodeerde video frames verzenden naar de AI-extensie module waarmee detectie, classificatie of tracking wordt uitgevoerd en de resultaten worden geretourneerd. De AI-extensie module geeft gRPC-Api's weer die compatibel zijn met video analyse platforms zoals live video Analytics op IoT Edge van micro soft. 
 
-Als u complexe, hoogwaardige analyseoplossingen voor live videoanalyse wilt maken, moet u de module Live Video Analytics op IoT Edge koppelen aan een krachtige deductie-engine die de schaal aan de rand kan benutten. In deze zelf studie worden aanvragen voor het afschermen van e-mail verzonden naar de [Intel openwijnbouw™ DL streamer-Edge ai-extensie](https://aka.ms/lva-intel-openvino-dl-streamer), een Edge-module die is ontworpen voor gebruik met live video Analytics op IOT Edge. 
+Als u complexe, hoogwaardige analyseoplossingen voor live videoanalyse wilt maken, moet u de module Live Video Analytics op IoT Edge koppelen aan een krachtige deductie-engine die de schaal aan de rand kan benutten. In deze zelf studie worden aanvragen voor het afschermen van e-mail verzonden naar de [Intel openwijnbouw™ DL streamer-Edge ai-extensie](), een Edge-module die is ontworpen voor gebruik met live video Analytics op IOT Edge. 
 
 In de eerste versie van deze deductieserver hebt u toegang tot de volgende [modellen](https://github.com/intel/video-analytics-serving/tree/master/samples/lva_ai_extension#edge-ai-extension-module-options):
 

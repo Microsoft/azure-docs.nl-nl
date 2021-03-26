@@ -6,13 +6,13 @@ author: nabhishek
 ms.service: data-factory
 ms.topic: tutorial
 ms.custom: seo-lt-2019
-ms.date: 02/18/2021
-ms.openlocfilehash: 43097b520297ff17350620faff3da884dcbd2073
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.date: 03/26/2021
+ms.openlocfilehash: 70905d23b61ee9fee319bae41aeb421d808fa4d0
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104606715"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105566758"
 ---
 # <a name="copy-data-from-a-sql-server-database-to-azure-blob-storage-by-using-the-copy-data-tool"></a>Gegevens uit een SQL Server-database naar Azure Blob-opslag kopiëren met behulp van het hulpprogramma Copy Data
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]
@@ -87,21 +87,6 @@ In deze zelfstudie gaat u de naam en sleutel van uw opslagaccount gebruiken. Voe
 
 
 1. Kopieer de waarden in de vakken **opslagaccountnaam** en **key1** en plak deze in Kladblok of een andere editor voor later gebruik in de zelfstudie.
-
-#### <a name="create-the-adftutorial-container"></a>De container adftutorial maken
-In deze sectie maakt u in uw Blob Storage een blobcontainer met de naam **adftutorial**.
-
-1. Schakel in het venster **Opslagaccount** over naar **Overzicht** en klik vervolgens op **Blobs**.
-
-1. Selecteer in het venster **Blobs** **+ Container**.
-
-1. Voer in het venster **Nieuwe container** onder **Naam** **adftutorial** in en selecteer **OK**.
-
-1. Selecteer **adftutorial** in de lijst met containers.
-
-
-1. Houd het venster **Container** voor **adftutorial** geopend. U gaat hiermee aan het einde van deze zelfstudie de uitvoer controleren. In Data Factory wordt automatisch in deze container de uitvoermap gemaakt, zodat u er zelf geen hoeft te maken.
-
 
 ## <a name="create-a-data-factory"></a>Een gegevensfactory maken
 

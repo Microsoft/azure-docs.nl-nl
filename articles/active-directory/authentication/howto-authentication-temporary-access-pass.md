@@ -7,23 +7,23 @@ ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 03/18/2021
 ms.author: justinha
-author: inbarckms
+author: justinha
 manager: daveba
 ms.reviewer: inbarckms
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 44b80b9c6847cfdc8402cb3b4983f15873e367d3
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 0805ac84318a4fee98c30127ac80c0dac2b96309
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104579379"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105558258"
 ---
 # <a name="configure-temporary-access-pass-in-azure-ad-to-register-passwordless-authentication-methods-preview"></a>Tijdelijke toegangs fase configureren in azure AD om verificatie methoden met een wacht woord (preview-versie) te registreren
 
 Verificatie methoden met een wacht woord, zoals FIDO2 en wacht woordloze aanmelding via Microsoft Authenticator de app, zorgen ervoor dat gebruikers veilig kunnen worden aangemeld zonder wacht woord. Gebruikers kunnen methoden met een wacht woord op een van de volgende twee manieren Boots trapen:
 
-- Bestaande Azure AD-methoden voor multi-factor Authentication gebruiken 
-- Een tijdelijke toegangs doorvoer gebruiken 
+- Bestaande Azure AD Multi-Factor Authentication-methoden gebruiken 
+- Een tijdelijke toegangs doorvoer gebruiken (tik) 
 
 Een tijdelijke toegangs doorgifte is een tijdgebonden wachtwoord code die door een beheerder is uitgegeven en die voldoet aan de vereisten voor sterke verificatie, en kan worden gebruikt om andere verificatie methoden te gebruiken, met inbegrip van wacht woorden. Een tijdelijke toegangs doorgifte zorgt er ook voor dat de herstel bewerking eenvoudiger is wanneer een gebruiker de sterke authenticatie factor zoals een FIDO2 of Microsoft Authenticator-app kwijtraakt of vergeet, maar moet zich aanmelden om nieuwe krachtige authenticatie methoden te registreren.
 
@@ -49,13 +49,13 @@ Het beleid voor de verificatie methode van tijdelijke toegang door geven:
    De standaard waarde en het bereik van toegestane waarden worden in de volgende tabel beschreven.
 
 
-   | Instelling          | Standaardwaarden | Toegestane waarden               | Opmerkingen                                                                                                                                                                                                                                                                 |   |
-   |------------------|----------------|------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---|
-    Minimale levens duur | 1 uur         | 10 – 43200 minuten (30 dagen) | Minimum aantal minuten dat de tijdelijke toegangs doorgifte geldig is.                                                                                                                                                                                                                         |   |
-   | Maximale levens duur | 24 uur       | 10 – 43200 minuten (30 dagen) | Maximum aantal minuten dat de tijdelijke toegangs doorgifte geldig is.                                                                                                                                                                                                                         |   |
-   | Standaard levensduur | 1 uur         | 10 – 43200 minuten (30 dagen) | Standaard waarden kunnen worden overschreven door de afzonderlijke fasen, binnen de minimale en maximale levens duur die door het beleid zijn geconfigureerd                                                                                                                                                |   |
-   | Eenmalig gebruik     | Niet waar          | Waar/onwaar                 | Wanneer het beleid is ingesteld op ONWAAR, kunnen door gegeven in de Tenant één keer of meerdere keren worden gebruikt tijdens de geldigheid (maximale levens duur). Door eenmalig gebruik af te dwingen in het beleid voor tijdelijke toegang, worden alle door gegeven die zijn gemaakt in de Tenant, gemaakt als eenmalig gebruik. |   |
-   | Lengte           | 8              | 8-48 tekens              | Hiermee definieert u de lengte van de wachtwoord code.                                                                                                                                                                                                                                      |   |
+   | Instelling | Standaardwaarden | Toegestane waarden | Opmerkingen |
+   |---|---|---|---|
+   | Minimale levens duur | 1 uur | 10 – 43200 minuten (30 dagen) | Minimum aantal minuten dat de tijdelijke toegangs doorgifte geldig is. |
+   | Maximale levens duur | 24 uur | 10 – 43200 minuten (30 dagen) | Maximum aantal minuten dat de tijdelijke toegangs doorgifte geldig is. |
+   | Standaard levensduur | 1 uur | 10 – 43200 minuten (30 dagen) | Standaard waarden kunnen worden overschreven door de afzonderlijke fasen, binnen de minimale en maximale levens duur die door het beleid zijn geconfigureerd. |
+   | Eenmalig gebruik | Niet waar | Waar/onwaar | Wanneer het beleid is ingesteld op ONWAAR, kunnen door gegeven in de Tenant één keer of meerdere keren worden gebruikt tijdens de geldigheid (maximale levens duur). Door eenmalig gebruik af te dwingen in het beleid voor tijdelijke toegang, worden alle door gegeven die zijn gemaakt in de Tenant, gemaakt als eenmalig gebruik. |
+   | Lengte | 8 | 8-48 tekens | Hiermee definieert u de lengte van de wachtwoord code. |
 
 ## <a name="create-a-temporary-access-pass-in-the-azure-ad-portal"></a>Een tijdelijke toegangs fase maken in de Azure AD-Portal
 

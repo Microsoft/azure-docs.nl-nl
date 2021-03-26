@@ -3,12 +3,12 @@ title: Beheer vlak-en gegevenslaag bewerkingen
 description: Hierin wordt het verschil tussen besturings vlak en gegevenslaag bewerkingen beschreven. Bewerkingen voor het beheer vlak worden verwerkt door Azure Resource Manager. Data-vlak bewerkingen worden verwerkt door een service.
 ms.topic: conceptual
 ms.date: 09/10/2020
-ms.openlocfilehash: f478037c3e83c1d28cc900d64512a41619628dd7
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 76304c81a1af1eef87d12cfd4130867851a61d28
+ms.sourcegitcommit: 44edde1ae2ff6c157432eee85829e28740c6950d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "91371266"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105544091"
 ---
 # <a name="azure-control-plane-and-data-plane"></a>Beheer vlak en gegevenslaag van Azure
 
@@ -52,7 +52,7 @@ Het besturings vlak bevat twee scenario's voor het verwerken van aanvragen: "gro
 
 ## <a name="data-plane"></a>Gegevenslaag
 
-Aanvragen voor gegevens vlak bewerkingen worden verzonden naar een eind punt dat specifiek is voor uw exemplaar. De [bewerking taal detecteren](/rest/api/cognitiveservices/textanalytics/detect%20language/detect%20language) in cognitive Services is bijvoorbeeld een gegevensvlak bewerking, omdat de aanvraag-URL:
+Aanvragen voor gegevens vlak bewerkingen worden verzonden naar een eind punt dat specifiek is voor uw exemplaar. De [bewerking taal detecteren](/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-language-detection) in cognitive Services is bijvoorbeeld een gegevensvlak bewerking, omdat de aanvraag-URL:
 
 ```http
 POST {Endpoint}/text/analytics/v2.0/languages

@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 03/05/2021
 ms.author: alkohli
-ms.openlocfilehash: 4d75986880075f6eb07aa31b9322bdae15535802
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 1d42843805f4fce24368dd07de3a73fec2545957
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102437601"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105567522"
 ---
 # <a name="enable-azure-arc-on-kubernetes-cluster-on-your-azure-stack-edge-pro-gpu-device"></a>Azure Arc op Kubernetes-cluster op uw Azure Stack Edge Pro GPU-apparaat inschakelen
 
@@ -74,7 +74,7 @@ Voordat u Azure Arc op het Kubernetes-cluster inschakelt, moet u uw abonnement i
     
     ![Kubernetes-resource providers registreren 3](media/azure-stack-edge-gpu-connect-powershell-interface/register-k8-resource-providers-4.png)
 
-U kunt resource providers ook registreren via de `az cli` . Zie voor meer informatie [registreren van de twee providers voor Azure Arc enabled Kubernetes](../azure-arc/kubernetes/connect-cluster.md#register-the-two-providers-for-azure-arc-enabled-kubernetes)
+U kunt resource providers ook registreren via de `az cli` . Zie voor meer informatie [registreren van de twee providers voor Azure Arc enabled Kubernetes](../azure-arc/kubernetes/quickstart-connect-cluster.md#register-the-two-providers-for-azure-arc-enabled-kubernetes)
 
 ## <a name="create-service-principal-assign-role"></a>Een service-principal maken, een rol toewijzen
 
@@ -226,7 +226,7 @@ Voer de volgende stappen uit om Azure Arc management te verwijderen:
 
 
 > [!NOTE]
-> Wanneer `yamls` een resource wordt verwijderd uit de Git-opslag plaats, worden de bijbehorende resources standaard niet verwijderd uit het Kubernetes-cluster. U moet `--sync-garbage-collection`  in Arc OperatorParams instellen om het verwijderen van resources toe te staan wanneer deze uit de Git-opslag plaats wordt verwijderd. Zie [een configuratie verwijderen](../azure-arc/kubernetes/use-gitops-connected-cluster.md#additional-parameters) voor meer informatie.
+> Wanneer `yamls` een resource wordt verwijderd uit de Git-opslag plaats, worden de bijbehorende resources standaard niet verwijderd uit het Kubernetes-cluster. U moet `--sync-garbage-collection`  in Arc OperatorParams instellen om het verwijderen van resources toe te staan wanneer deze uit de Git-opslag plaats wordt verwijderd. Zie [een configuratie verwijderen](../azure-arc/kubernetes/tutorial-use-gitops-connected-cluster.md#additional-parameters) voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

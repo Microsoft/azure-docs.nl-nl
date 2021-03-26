@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 03/19/2021
-ms.openlocfilehash: ce155015373a096595dc61d75c876633e2e4f00a
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.openlocfilehash: e2de694a153276dcace1070d35af44dec1056e03
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105027186"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105564922"
 ---
 # <a name="migration-guide-sql-server-to-azure-sql-database"></a>Migratie handleiding: SQL Server naar Azure SQL Database
 [!INCLUDE[appliesto--sqldb](../../includes/appliesto-sqldb.md)]
@@ -152,7 +152,7 @@ Bij het gebruik van migratie opties die voortdurend wijzigingen repliceren/synch
 Nadat u hebt gecontroleerd of de gegevens in de bron en het doel gelijk zijn, kunt u cutover van de bron naar de doel omgeving. Het is belang rijk om het cutover-proces met Business/Application teams te plannen om ervoor te zorgen dat een minimale onderbreking tijdens cutover geen invloed heeft op de bedrijfs continuïteit. 
 
 > [!IMPORTANT]
-> Zie voor meer informatie over de specifieke stappen die zijn gekoppeld aan het uitvoeren van een cutover als onderdeel van de migraties met behulp van DMS, [migratie Cutover uitvoeren](../../../dms/tutorial-sql-server-azure-sql-online.md#perform-migration-cutover).
+> Zie voor meer informatie over de specifieke stappen die zijn gekoppeld aan het uitvoeren van een cutover als onderdeel van de migraties met behulp van DMS, [migratie Cutover uitvoeren](../../../dms/tutorial-sql-server-to-azure-sql.md).
 
 ## <a name="migration-recommendations"></a>Aanbevelingen voor migratie
 

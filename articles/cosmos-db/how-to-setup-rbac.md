@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 03/24/2021
 ms.author: thweiss
-ms.openlocfilehash: ec12deb5a7c77674026b849585552fd873aee5c1
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: f8028d69e376e2b71549be52267e2f6cbdb1f8ce
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105045991"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105568644"
 ---
 # <a name="configure-role-based-access-control-with-azure-active-directory-for-your-azure-cosmos-db-account-preview"></a>Op rollen gebaseerd toegangs beheer configureren met Azure Active Directory voor uw Azure Cosmos DB-account (preview-versie)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -323,9 +323,9 @@ Als u de Azure Cosmos DB RBAC wilt gebruiken in uw toepassing, moet u de manier 
 
 De manier waarop u een `TokenCredential` exemplaar maakt, valt buiten het bereik van dit artikel. Er zijn veel manieren om een dergelijke instantie te maken, afhankelijk van het type AAD-identiteit dat u wilt gebruiken (User Principal, Service Principal, Group, enz.). Het belangrijkste is dat uw `TokenCredential` exemplaar moet worden omgezet in de identiteit (Principal-id) waaraan u uw rollen hebt toegewezen. U kunt voor beelden van het maken van een `TokenCredential` klasse vinden:
 
-- [in .NET](https://docs.microsoft.com/dotnet/api/overview/azure/identity-readme#credential-classes)
-- [in Java](https://docs.microsoft.com/java/api/overview/azure/identity-readme#credential-classes)
-- [in Java script](https://docs.microsoft.com/javascript/api/overview/azure/identity-readme#credential-classes)
+- [in .NET](/dotnet/api/overview/azure/identity-readme#credential-classes)
+- [in Java](/java/api/overview/azure/identity-readme#credential-classes)
+- [in Java script](/javascript/api/overview/azure/identity-readme#credential-classes)
 
 In de onderstaande voor beelden wordt een service-principal met een `ClientSecretCredential` exemplaar gebruikt.
 

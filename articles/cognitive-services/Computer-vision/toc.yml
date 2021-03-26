@@ -48,13 +48,13 @@
     - name: Video's in realtime analyseren
       href: Vision-API-How-to-Topics/HowtoAnalyzeVideo_Vision.md
     - name: Virtuele netwerken configureren
-      href: /azure/cognitive-services/cognitive-services-virtual-networks?context=/azure/cognitive-services/computer-vision/context/context
+      href: ../cognitive-services-virtual-networks.md?context=%2fazure%2fcognitive-services%2fcomputer-vision%2fcontext%2fcontext
     - name: Upgraden van Read 2.x naar Read 3.x
       href: upgrade-api-versions.md
     - name: AAD-verificatie configureren
-      href: /azure/cognitive-services/authentication?tabs=powershell?context=/azure/cognitive-services/computer-vision/context/context
+      href: ../authentication.md?tabs=powershell%3fcontext%3d%2fazure%2fcognitive-services%2fcomputer-vision%2fcontext%2fcontext
     - name: Door de klant beheerde sleutels gebruiken
-      href: /azure/cognitive-services/encryption/cognitive-services-encryption-keys-portal?context=/azure/cognitive-services/computer-vision/context/context
+      href: ../encryption/cognitive-services-encryption-keys-portal.md?context=%2fazure%2fcognitive-services%2fcomputer-vision%2fcontext%2fcontext
     - name: Computer Vision implementeren
       items:
         - name: Containers
@@ -126,7 +126,7 @@
   items:
     - name: Metagegevens genereren voor afbeeldingen
       href: Tutorials/storage-lab-tutorial.md
-- name: Naslaginformatie
+- name: Referentie
   items:
     - name: Computer Vision REST API v 3.2 Preview
       href: 'https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-3/operations/56f91f2e778daf14a499f21b'
@@ -155,7 +155,7 @@
     - name: Ondersteuning voor regio
       href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
     - name: Modules leren
-      href: 'https://docs.microsoft.com/en-us/learn/paths/explore-computer-vision-microsoft-azure/'
+      href: /learn/paths/explore-computer-vision-microsoft-azure/
     - name: Ondersteuning voor & hulp
       href: ../cognitive-services-support-options.md?context=/azure/cognitive-services/computer-vision/context/context
     - name: Naleving

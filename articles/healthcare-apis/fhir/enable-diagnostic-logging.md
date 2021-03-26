@@ -9,12 +9,12 @@ ms.reviewer: dseven
 ms.author: cavoeg
 author: zxue
 ms.date: 03/03/2021
-ms.openlocfilehash: d8f7a2b2f31fb192147c1950866cff77064a3671
-ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
+ms.openlocfilehash: a884dac90273e98868fed6bfe1cbed23b939d286
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "103018275"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105557697"
 ---
 # <a name="enable-diagnostic-logging-in-azure-api-for-fhir"></a>Diagnostische logboek registratie inschakelen in azure API voor FHIR
 
@@ -42,11 +42,11 @@ U kunt de metrische gegevens bekijken onder bewaking | Metrische gegevens uit de
     2. **Stroom om te Event hub** voor opname door een service van derden of een aangepaste analytische oplossing. Voordat u deze stap kunt configureren, moet u een Event Hub naam ruimte en Event Hub-beleid maken.
     3. **Streamen naar de log Analytics** -werk ruimte in azure monitor. U moet de werk ruimte voor logboek analyse maken voordat u deze optie kunt selecteren.
 
-6. Selecteer **audit logs bevat** en/of **AllMetrics**. De metrische gegevens zijn onder andere service naam, Beschik baarheid, gegevens grootte, totale latentie, totaal aantal aanvragen, totaal aantal fouten en tijds tempel. U kunt meer informatie vinden over [ondersteunde metrische gegevens](https://docs.microsoft.com/azure/azure-monitor/essentials/metrics-supported#microsofthealthcareapisservices). 
+6. Selecteer **audit logs bevat** en/of **AllMetrics**. De metrische gegevens zijn onder andere service naam, Beschik baarheid, gegevens grootte, totale latentie, totaal aantal aanvragen, totaal aantal fouten en tijds tempel. U kunt meer informatie vinden over [ondersteunde metrische gegevens](../../azure-monitor/essentials/metrics-supported.md#microsofthealthcareapisservices). 
 
    :::image type="content" source="media/diagnostic-logging/fhir-diagnostic-setting.png" alt-text="Diagnostische instellingen voor Azure FHIR. Selecteer audit logs bevat en/of AllMetrics." lightbox="media/diagnostic-logging/fhir-diagnostic-setting.png":::
 
-7. Selecteer **Opslaan**.
+7. Selecteer **Opslaan**
 
 
 > [!Note] 

@@ -7,12 +7,12 @@ ms.reviewer: jburchel
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 03/08/2020
-ms.openlocfilehash: 090c738d06b9b8acd53a4c194e97fa3a0515e1d6
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.openlocfilehash: c9e1abc5fb6f66981f56bc262319587d9fc4265e
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104783384"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105566656"
 ---
 # <a name="how-to-use-parameters-expressions-and-functions-in-azure-data-factory"></a>Para meters, expressies en functies gebruiken in Azure Data Factory
 
@@ -25,7 +25,7 @@ In dit document wordt hoofd zakelijk aandacht besteed aan het leren van basis co
 
 ## <a name="azure-data-factory-ui-and-parameters"></a>Gebruikers interface en-para meters van Azure data factory
 
-Als u geen ervaring hebt met het gebruik van Azure data factory-para meters in de gebruikers interface van ADF, raadpleegt u [Data Factory-UI voor gekoppelde services met para meters](https://docs.microsoft.com/azure/data-factory/parameterize-linked-services#data-factory-ui)  en [Data Factory-gebruikers interface voor door meta gegevens gestuurde pijp lijnen met para meters](https://docs.microsoft.com/azure/data-factory/how-to-use-trigger-parameterization#data-factory-ui) voor visuele
+Als u geen ervaring hebt met het gebruik van Azure data factory-para meters in de gebruikers interface van ADF, raadpleegt u [Data Factory-UI voor gekoppelde services met para meters](./parameterize-linked-services.md#data-factory-ui)  en [Data Factory-gebruikers interface voor door meta gegevens gestuurde pijp lijnen met para meters](./how-to-use-trigger-parameterization.md#data-factory-ui) voor visuele
 
 ## <a name="parameter-and-expression-concepts"></a>Para meter-en expressie concepten 
 
@@ -313,11 +313,11 @@ In deze [zelf studie voor het door geven van de Azure Data Factory-pipeline-para
 
 ### <a name="detailed--mapping-data-flow-pipeline-with-parameters"></a>Gegevens stroom pijplijn voor gedetailleerde toewijzing met para meters 
 
-Volg de [toewijzings gegevens stroom met para meters](https://docs.microsoft.com/azure/data-factory/parameters-data-flow) voor een uitgebreid voor beeld over het gebruik van para meters in de gegevens stroom.
+Volg de [toewijzings gegevens stroom met para meters](./parameters-data-flow.md) voor een uitgebreid voor beeld over het gebruik van para meters in de gegevens stroom.
 
 ### <a name="detailed-metadata-driven-pipeline-with-parameters"></a>Gedetailleerde, door Meta gegevensgestuurde pijp lijn met para meters
 
-Volg de [META gegevensgestuurde pijp lijn met para meters](https://docs.microsoft.com/azure/data-factory/how-to-use-trigger-parameterization) voor meer informatie over het gebruik van para meters voor het ontwerpen van door Meta gegevensgestuurde pijp lijnen. Dit is een veelgebruikte use-case voor para meters.
+Volg de [META gegevensgestuurde pijp lijn met para meters](./how-to-use-trigger-parameterization.md) voor meer informatie over het gebruik van para meters voor het ontwerpen van door Meta gegevensgestuurde pijp lijnen. Dit is een veelgebruikte use-case voor para meters.
 
 
 ## <a name="next-steps"></a>Volgende stappen

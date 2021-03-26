@@ -6,12 +6,12 @@ ms.author: vimeht
 ms.date: 2/11/2021
 ms.topic: overview
 ms.service: iot-hub-device-update
-ms.openlocfilehash: 60dfd448a66ca67a241f97570c91f683323a7d6d
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 092078a79124682f7ee5c7824d4f7906c6e35475
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103232372"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105558496"
 ---
 # <a name="device-update-for-iot-hub-preview-overview"></a>Overzicht van updates voor apparaten voor IoT Hub (preview-versie)
 
@@ -82,7 +82,7 @@ Wanneer een update opdracht wordt ontvangen op een apparaat, wordt de aangevraag
 
 Importeren is hoe uw updates worden opgenomen in de update van het apparaat, zodat ze kunnen worden geïmplementeerd op apparaten. Het bijwerken van het apparaat ondersteunt het implementeren van één update per apparaat. Dit is ideaal voor updates met volledige installatie kopieën die een volledige OS-partitie tegelijk bijwerken, of een apt-manifest dat alle pakketten beschrijft die u op uw apparaat wilt bijwerken. Als u updates wilt importeren in een update van het apparaat, maakt u eerst een import manifest met een beschrijving van de update en uploadt u de update bestanden en het import manifest naar een locatie die toegankelijk is via internet. Daarna kunt u de Azure Portal of de [rest API update](https://github.com/Azure/iot-hub-device-update/tree/main/docs/publish-api-reference) voor het bijwerken van het apparaat gebruiken om het asynchrone proces van het importeren van updates te initiëren. Het bijwerken van het apparaat uploadt de bestanden, verwerkt ze en maakt ze beschikbaar voor distributie naar IoT-apparaten.
 
-Voor gevoelige inhoud kunt u de down load beveiligen met behulp van een Shared Access Signature (SAS), zoals een ad-hoc SAS voor Azure Blob Storage. [Meer informatie over SAS](https://docs.microsoft.com/azure/storage/common/storage-sas-overview)
+Voor gevoelige inhoud kunt u de down load beveiligen met behulp van een Shared Access Signature (SAS), zoals een ad-hoc SAS voor Azure Blob Storage. [Meer informatie over SAS](../storage/common/storage-sas-overview.md)
 
 :::image type="content" source="media/understand-device-update/import-update.png" alt-text="Diagram van apparaat bijwerken voor het importeren van IoT Hub werk stroom." lightbox="media/understand-device-update/import-update.png":::
 

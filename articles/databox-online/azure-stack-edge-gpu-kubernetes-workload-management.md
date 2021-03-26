@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: conceptual
 ms.date: 03/01/2021
 ms.author: alkohli
-ms.openlocfilehash: b962d66349bbed112114c010e8d185ba16c74c8d
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 67110a2a2bd7f34c735edd126cfc655f45247fc2
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102443077"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105560230"
 ---
 # <a name="kubernetes-workload-management-on-your-azure-stack-edge-pro-device"></a>Beheer van Kubernetes-werk belasting op uw Azure Stack Edge Pro-apparaat
 
@@ -83,7 +83,7 @@ Houd bij het implementeren van toepassingen rekening met de volgende informatie:
 
 Als u een app lokaal wilt implementeren via kubectl, raadpleegt u:
 
-- [Implementeer een staatloze toepassing op uw Azure stack Edge Pro via kubectl](azure-stack-edge-j-series-deploy-stateless-application-kubernetes.md).
+- [Implementeer een staatloze toepassing op uw Azure stack Edge Pro via kubectl](./azure-stack-edge-gpu-deploy-stateless-application-kubernetes.md).
 
 Ga als volgt te werk om een app te implementeren via IoT Edge:
 

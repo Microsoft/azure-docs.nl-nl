@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 01/20/2021
 ms.author: v-tcassi
 monikerRange: =iotedge-2018-06
-ms.openlocfilehash: c291bb701aca385a11631504f1a312b25cced633
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: 9eeb30d8d3ab0c884472a001149021c4d5cc362c
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105045668"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105558700"
 ---
 # <a name="install-and-provision-azure-iot-edge-for-linux-on-a-windows-device-preview"></a>Azure IoT Edge voor Linux installeren en inrichten op een Windows-apparaat (preview)
 
@@ -42,8 +42,8 @@ In dit artikel worden de stappen beschreven voor het instellen van IoT Edge op e
 
   * Windows 10 versie 1809 of hoger; Build 17763 of hoger
   * Professional-, Enter prise-of Server-edities
-  * Minimum-RAM: 4 GB (8 GB aanbevolen)
-  * Minimale opslag: 10 GB
+  * Mini maal beschikbaar geheugen: 2 GB
+  * Minimale vrije schijf ruimte: 10 GB
   * Als u een nieuwe implementatie maakt met behulp van Windows 10, moet u Hyper-V inschakelen. Zie [Hyper-V installeren op Windows 10](/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v.md)voor meer informatie.
   * Als u een nieuwe implementatie maakt met behulp van Windows Server, moet u de Hyper-V-functie installeren. Zie How to [install the Hyper-V Role op Windows Server](/windows-server/virtualization/hyper-v/get-started/install-the-hyper-v-role-on-windows-server.md)(Engelstalig) voor meer informatie.
   * Als u een nieuwe implementatie maakt met behulp van een VM, moet u ervoor zorgen dat geneste virtualisatie correct is geconfigureerd. Zie de [geneste virtualisatie](nested-virtualization.md) -hand leiding voor meer informatie.

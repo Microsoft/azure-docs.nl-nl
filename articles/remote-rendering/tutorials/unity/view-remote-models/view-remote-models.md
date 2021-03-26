@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 06/15/2020
 ms.topic: tutorial
 ms.custom: devx-track-csharp
-ms.openlocfilehash: dd3596dd7b2cd01e80d9cf4db9bbc179048e7fcf
-ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
+ms.openlocfilehash: b98f5253cc60edc8949c06a645d81849dff2de7c
+ms.sourcegitcommit: 44edde1ae2ff6c157432eee85829e28740c6950d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105035962"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105543683"
 ---
 # <a name="tutorial-viewing-a-remotely-rendered-model"></a>Zelfstudie: U bekijkt een model dat extern wordt weergegeven
 
@@ -753,7 +753,7 @@ De bovenstaande code voert de volgende stappen uit:
 1. Maak een [Externe entiteit](../../../concepts/entities.md).
 1. Maak een lokaal GameObject om de externe entiteit te vertegenwoordigen.
 1. Configureer het lokale GameObject om de status (bv. Transformeren) te synchroniseren met de externe entiteit voor elk frame.
-1. Stel een naam in en voeg een [**WorldAnchor**](https://docs.unity3d.com/ScriptReference/XR.WSA.WorldAnchor.html) toe om stabilisatie te bevorderen.
+1. Stel een naam in en voeg een [**WorldAnchor**](https://docs.unity3d.com/550/Documentation/ScriptReference/VR.WSA.WorldAnchor.html) toe om stabilisatie te bevorderen.
 1. Laad modelgegevens van Blob Storage in de externe entiteit.
 1. Retourneer de bovenliggende Entiteit, voor later.
 

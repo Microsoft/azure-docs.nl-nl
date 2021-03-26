@@ -6,12 +6,12 @@ ms.author: chugu
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 4/15/2020
-ms.openlocfilehash: 62bd5d2e70d3a66998907305fecee4dcc87cdb23
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 190def0e6e2f77d330d2307753dc9e9d53c55dd7
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102451724"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105564137"
 ---
 # <a name="use-azure-sql-managed-instance-with-sql-server-integration-services-ssis-in-azure-data-factory"></a>Azure SQL Managed instance met SQL Server Integration Services (SSIS) gebruiken in Azure Data Factory
 
@@ -39,7 +39,7 @@ U kunt nu uw SQL Server Integration Services (SSIS)-projecten, pakketten en work
             - Binnen hetzelfde virtuele netwerk als het beheerde exemplaar, met een **ander subnet**.
             - Binnen een ander virtueel netwerk dan het beheerde exemplaar, via virtuele netwerk peering (die beperkt is tot dezelfde regio als gevolg van globale VNet-peering-beperkingen) of een verbinding van een virtueel netwerk met een virtueel netwerk.
 
-            Zie [uw toepassing verbinden met Azure SQL Managed instance](/azure/sql-database/sql-database-managed-instance-connect-app)(Engelstalig) voor meer informatie over de connectiviteit van SQL Managed instance.
+            Zie [uw toepassing verbinden met Azure SQL Managed instance](../azure-sql/managed-instance/connect-application-instance.md)(Engelstalig) voor meer informatie over de connectiviteit van SQL Managed instance.
 
         1. [Configureer het virtuele netwerk](#configure-virtual-network).
 

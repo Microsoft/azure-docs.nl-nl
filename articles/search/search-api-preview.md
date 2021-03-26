@@ -7,13 +7,13 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 03/02/2021
-ms.openlocfilehash: 596113f9fcb7326010090e67b3a52ca03faa25d0
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.date: 03/25/2021
+ms.openlocfilehash: 2d3d1669dda4cbed1da7954558e99166faec5613
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102041974"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105563732"
 ---
 # <a name="preview-features-in-azure-cognitive-search"></a>Preview-functies in azure Cognitive Search
 
@@ -23,13 +23,13 @@ Preview-functies die worden overgezet naar algemene Beschik baarheid, worden ver
 
 |Functie&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Categorie | Beschrijving | Beschikbaarheid  |
 |---------|------------------|-------------|---------------|
-| [**Semantische zoekopdrachten**](semantic-search-overview.md) | Relevantie (Score) | Een algoritme voor semantische classificatie, query type en query-antwoord. | [Search REST API 2020-06-30-preview](/rest/api/searchservice/) |
-| [**speller**](cognitive-search-aml-skill.md) | Query | Optionele spelling correctie voor invoer van de query term voor eenvoudige, volledige en semantische query's. | [Search REST API 2020-06-30-preview](/rest/api/searchservice/) |
-| [**Indexer van share point online**](search-howto-index-sharepoint-online.md) | Gegevens bron van Indexeer functie | Nieuwe gegevens bron voor indexering op basis van Indexeer functie van share point-inhoud. | [Search REST API 2020-06-30-preview](/rest/api/searchservice/) |
+| [**Semantische zoekopdrachten**](semantic-search-overview.md) | Relevantie (Score) | Semantische classificatie van resultaten, bijschriften en antwoorden. | [Zoek REST API 2020-06-30-preview-versie](/rest/api/searchservice/preview-api/search-documents) en zoek Verkenner (Portal). |
+| [**speller**](cognitive-search-aml-skill.md) | Query | Optionele spelling correctie voor invoer van de query term voor eenvoudige, volledige en semantische query's. | [Search REST API 2020-06-30-preview](/rest/api/searchservice/preview-api/search-documents) |
+| [**Indexer van share point online**](search-howto-index-sharepoint-online.md) | Gegevens bron van Indexeer functie | Nieuwe gegevens bron voor indexering op basis van Indexeer functie van share point-inhoud. | [Search REST API 2020-06-30-preview](/rest/api/searchservice/preview-api/create-indexer) |
 | [**Vaardigheid van Azure Machine Learning (AML)**](cognitive-search-aml-skill.md) | AI-verrijking| Een nieuw vaardigheids type voor het integreren van een Afleidings eindpunt van Azure Machine Learning. Ga aan de slag met [deze zelfstudie](cognitive-search-tutorial-aml-custom-skill.md). | [Zoek REST API 2020-06-30-preview](/rest/api/searchservice/) of 2019-05-06-preview gebruiken. Ook beschikbaar in de portal, in het ontwerp van vaardig heden, aangenomen dat Cognitive Search en Azure ML-Services in hetzelfde abonnement zijn geïmplementeerd. |
 | [**featuresMode-para meter**](/rest/api/searchservice/preview-api/search-documents#query-parameters) | Relevantie (Score) | Uitbrei ding van relevantie score voor het toevoegen van Details: per veld vergelijk bare Score, per veld term frequentie en per veld aantal unieke tokens die overeenkomen. U kunt deze gegevens punten gebruiken in [aangepaste Score oplossingen](https://github.com/Azure-Samples/search-ranking-tutorial). | Voeg deze query parameter toe met behulp van [Zoek documenten (rest)](/rest/api/searchservice/preview-api/search-documents) met API-Version = 2020-06 -30-preview of 2019-05-06-preview. |
 | [**Sessies voor fout opsporing**](cognitive-search-debug-session.md) | Portal, AI-verrijking (vaardig heden) | Een in-Session kwalificatieset-editor die wordt gebruikt om problemen met een vaardig heden te onderzoeken en op te lossen. Oplossingen die worden toegepast tijdens een foutopsporingssessie, kunnen worden opgeslagen in een vakkennisset in de service. | Alleen Portal, met behulp van koppelingen op de pagina overzicht voor het openen van een foutopsporingssessie. |
-| [**Voorlopig verwijderen van systeem eigen BLOB**](search-howto-index-changed-deleted-blobs.md) | Indexeer functies, Azure-blobs| De Azure Blob Storage Indexeer functie in azure Cognitive Search herkent blobs met een voorlopig verwijderde status en verwijdert het bijbehorende Zoek document tijdens het indexeren. | Voeg deze configuratie-instelling toe met [Create Indexeer functie (rest)](/rest/api/searchservice/create-indexer) met API-Version = 2020-06 -30-preview of API-Version = 2019-05 -06-preview. |
+| [**Voorlopig verwijderen van systeem eigen BLOB**](search-howto-index-changed-deleted-blobs.md) | Indexeer functies, Azure-blobs| De Azure Blob Storage Indexeer functie in azure Cognitive Search herkent blobs met een voorlopig verwijderde status en verwijdert het bijbehorende Zoek document tijdens het indexeren. | Voeg deze configuratie-instelling toe met [Create Indexeer functie (rest)](/rest/api/searchservice/preview-api/create-indexer) met API-Version = 2020-06 -30-preview of API-Version = 2019-05 -06-preview. |
 | [**Zoek vaardigheid aangepaste entiteit**](cognitive-search-skill-custom-entity-lookup.md ) | AI-verrijking (vaardig heden) | Een cognitieve vaardigheid die zoekt naar tekst van een aangepaste, door de gebruiker gedefinieerde lijst met woorden en zinsdelen. Aan de hand van deze lijst worden alle documenten met overeenkomende entiteiten gelabeld. De vaardigheid ondersteunt ook het zoeken naar fuzzy overeenkomsten, waarmee overeenkomsten worden gevonden die vergelijkbaar zijn, maar niet helemaal exact. | Raadpleeg deze preview-vaardigheid met de editor van de vaardig heden in de portal of [Maak vaardig heden (rest)](/rest/api/searchservice/create-skillset) met API-Version = 2020-06 -30-preview of API-Version = 2019-05 -06-preview. |
 | [**PERSOONLIJKE detectie vaardigheid**](cognitive-search-skill-pii-detection.md) | AI-verrijking (vaardig heden) | Een cognitieve vaardigheid die wordt gebruikt tijdens de indexering die persoonlijke gegevens ophaalt uit een invoer tekst en u de mogelijkheid biedt om deze op verschillende manieren te maskeren uit die tekst. | Raadpleeg deze preview-vaardigheid met de editor van de vaardig heden in de portal of [Maak vaardig heden (rest)](/rest/api/searchservice/create-skillset) met API-Version = 2020-06 -30-preview of API-Version = 2019-05 -06-preview. |
 | [**Incrementele verrijking**](cognitive-search-incremental-indexing-conceptual.md) | Configuratie van de Indexeer functie| Voegt caching toe aan een verrijkings pijplijn, zodat u de bestaande uitvoer opnieuw kunt gebruiken als een gerichte wijziging, zoals een update van een vakkennisset of een ander object, de inhoud niet wijzigt. Caching is alleen van toepassing op verrijkte documenten die worden geproduceerd door een vaardig heden.| Voeg deze configuratie-instelling toe met [Create Indexeer functie (rest)](/rest/api/searchservice/create-indexer) met API-Version = 2020-06 -30-preview of API-Version = 2019-05 -06-preview. |

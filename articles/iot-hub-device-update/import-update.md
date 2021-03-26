@@ -6,12 +6,12 @@ ms.author: andbrown
 ms.date: 2/11/2021
 ms.topic: how-to
 ms.service: iot-hub-device-update
-ms.openlocfilehash: b9d40848abdd85beeca592001b697e3c50b7cd59
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 15f76488790249f7e301d4474772c500c8829b77
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103008559"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105565636"
 ---
 # <a name="import-new-update"></a>Nieuwe update importeren
 Meer informatie over het importeren van een nieuwe update voor het bijwerken van apparaten in IoT Hub. Als u dit nog niet hebt gedaan, moet u vertrouwd zijn met de basis concepten voor het [importeren](import-concepts.md).
@@ -21,7 +21,7 @@ Meer informatie over het importeren van een nieuwe update voor het bijwerken van
 * [Toegang tot een IOT hub met het bijwerken van het apparaat voor IOT hub ingeschakeld](create-device-update-account.md). U kunt het beste een S1 (standaard)-laag of hoger gebruiken voor uw IoT Hub. 
 * Een IoT-apparaat (of simulator) dat is ingericht voor het bijwerken van het apparaat binnen IoT Hub.
    * Als u een echt apparaat gebruikt, hebt u een update-installatie kopie bestand voor het bijwerken van de installatie kopie of het [apt-manifest bestand](device-update-apt-manifest.md) voor pakket updates nodig.
-* [Power shell 5](https://docs.microsoft.com/powershell/scripting/install/installing-powershell) of hoger.
+* [Power shell 5](/powershell/scripting/install/installing-powershell) of hoger.
 * Ondersteunde browsers:
   * [Microsoft Edge](https://www.microsoft.com/edge)
   * Google Chrome
@@ -57,8 +57,8 @@ Meer informatie over het importeren van een nieuwe update voor het bijwerken van
 
     | Parameter | Beschrijving |
     | --------- | ----------- |
-    | deviceManufacturer | Fabrikant van het apparaat waarmee de update compatibel is, bijvoorbeeld contoso. De eigenschap van het [apparaat](https://docs.microsoft.com/azure/iot-hub-device-update/device-update-plug-and-play#device-properties)van de _fabrikant_ moet overeenkomen.
-    | deviceModel | Model van het apparaat waarmee de update compatibel is, bijvoorbeeld pop-up. De eigenschap van het _model_ [apparaat](https://docs.microsoft.com/azure/iot-hub-device-update/device-update-plug-and-play#device-properties)moet overeenkomen.
+    | deviceManufacturer | Fabrikant van het apparaat waarmee de update compatibel is, bijvoorbeeld contoso. De eigenschap van het [apparaat](./device-update-plug-and-play.md#device-properties)van de _fabrikant_ moet overeenkomen.
+    | deviceModel | Model van het apparaat waarmee de update compatibel is, bijvoorbeeld pop-up. De eigenschap van het _model_ [apparaat](./device-update-plug-and-play.md#device-properties)moet overeenkomen.
     | updateProvider | Entiteit die de update maakt of rechtstreeks verantwoordelijk is. Het is vaak een bedrijfs naam.
     | updatenaam | Id voor een klasse van updates. De klasse kan alles zijn wat u kiest. Het is vaak een apparaat-of model naam.
     | updateVersion | Het versie nummer waarmee deze update wordt onderscheiden van anderen die dezelfde provider en naam hebben. Komt niet overeen met een versie van een afzonderlijk software onderdeel op het apparaat (maar kan desgewenst worden gekozen).

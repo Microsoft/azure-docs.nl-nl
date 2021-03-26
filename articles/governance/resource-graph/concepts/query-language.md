@@ -3,12 +3,12 @@ title: Inzicht krijgen in de querytaal
 description: Hierin worden resource grafiek tabellen en de beschik bare Kusto-gegevens typen,-Opera tors en-functies die bruikbaar zijn met Azure resource Graph beschreven.
 ms.date: 03/10/2021
 ms.topic: conceptual
-ms.openlocfilehash: f6cb13814fe725ff0253a0a5bf0098f0080fa407
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 5e600439d54a89dd9bd2510b2e47b71b60ee93a7
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102633798"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105557680"
 ---
 # <a name="understanding-the-azure-resource-graph-query-language"></a>Informatie over de query taal van Azure resource Graph
 
@@ -26,23 +26,23 @@ In dit artikel worden de taal onderdelen beschreven die worden ondersteund door 
 
 Resource grafiek biedt verschillende tabellen voor de gegevens die worden opgeslagen over Azure Resource Manager resource typen en hun eigenschappen. Sommige tabellen kunnen met of- `join` `union` Opera tors worden gebruikt voor het ophalen van eigenschappen van gerelateerde resource typen. Hier volgt de lijst met tabellen die beschikbaar zijn in resource grafiek:
 
-|Resource grafiek tabel |Kunnen `join` andere tabellen? |Beschrijving |
+|Resource grafiek tabel |Kunnen `join` andere tabellen? |Description |
 |---|---|---|
-|Resources |Ja |De standaard tabel als niets is gedefinieerd in de query. De resource typen en eigenschappen van Resource Manager zijn hier beschikbaar. |
-|ResourceContainers |Ja |Bevat een abonnement (in Preview-- `Microsoft.Resources/subscriptions` ) en resource groep ( `Microsoft.Resources/subscriptions/resourcegroups` )-resource typen en-gegevens. |
+|Resources |Yes |De standaard tabel als niets is gedefinieerd in de query. De resource typen en eigenschappen van Resource Manager zijn hier beschikbaar. |
+|ResourceContainers |Yes |Bevat een abonnement (in Preview-- `Microsoft.Resources/subscriptions` ) en resource groep ( `Microsoft.Resources/subscriptions/resourcegroups` )-resource typen en-gegevens. |
 |AdvisorResources |Ja (preview-versie) |Bevat resources met _betrekking_ tot `Microsoft.Advisor` . |
 |AlertsManagementResources |Ja (preview-versie) |Bevat resources met _betrekking_ tot `Microsoft.AlertsManagement` . |
-|ExtendedLocationResources |Nee |Bevat resources met _betrekking_ tot `Microsoft.ExtendedLocation` . |
-|GuestConfigurationResources |Nee |Bevat resources met _betrekking_ tot `Microsoft.GuestConfiguration` . |
-|KubernetesConfigurationResources |Nee |Bevat resources met _betrekking_ tot `Microsoft.KubernetesConfiguration` . |
+|ExtendedLocationResources |No |Bevat resources met _betrekking_ tot `Microsoft.ExtendedLocation` . |
+|GuestConfigurationResources |No |Bevat resources met _betrekking_ tot `Microsoft.GuestConfiguration` . |
+|KubernetesConfigurationResources |No |Bevat resources met _betrekking_ tot `Microsoft.KubernetesConfiguration` . |
 |MaintenanceResources |Gedeeltelijk, alleen toevoegen _aan_ . (preview) |Bevat resources met _betrekking_ tot `Microsoft.Maintenance` . |
-|PatchAssessmentResources|Nee |Bevat resources met _betrekking_ tot de evaluatie van de Azure virtual machines-patch. |
-|PatchInstallationResources|Nee |Bevat informatie _over_ de installatie van de Azure virtual machines-patch. |
-|PolicyResources |Nee |Bevat resources met _betrekking_ tot `Microsoft.PolicyInsights` . (**Preview-versie**)|
+|PatchAssessmentResources|No |Bevat resources met _betrekking_ tot de evaluatie van de Azure virtual machines-patch. |
+|PatchInstallationResources|No |Bevat informatie _over_ de installatie van de Azure virtual machines-patch. |
+|PolicyResources |No |Bevat resources met _betrekking_ tot `Microsoft.PolicyInsights` . (**Preview-versie**)|
 |RecoveryServicesResources |Gedeeltelijk, alleen toevoegen _aan_ . (preview) |Bevat resources met _betrekking_ tot `Microsoft.DataProtection` en `Microsoft.RecoveryServices` . |
 |SecurityResources |Gedeeltelijk, alleen toevoegen _aan_ . (preview) |Bevat resources met _betrekking_ tot `Microsoft.Security` . |
-|ServiceHealthResources |Nee |Bevat resources met _betrekking_ tot `Microsoft.ResourceHealth` . |
-|WorkloadMonitorResources |Nee |Bevat resources met _betrekking_ tot `Microsoft.WorkloadMonitor` . |
+|ServiceHealthResources |No |Bevat resources met _betrekking_ tot `Microsoft.ResourceHealth` . |
+|WorkloadMonitorResources |No |Bevat resources met _betrekking_ tot `Microsoft.WorkloadMonitor` . |
 
 Zie voor een volledige lijst, inclusief resource typen, [verwijzing: ondersteunde tabellen en resource typen](../reference/supported-tables-resources.md).
 
@@ -135,7 +135,7 @@ Hier volgt een lijst met KQL-Opera tors die worden ondersteund door resource gra
 |[Jointypen](/azure/kusto/query/joinoperator) |[Sleutel kluis met de naam van het abonnement](../samples/advanced.md#join) |Ondersteunde jointypen: [innerunique](/azure/kusto/query/joinoperator#default-join-flavor), [inner](/azure/kusto/query/joinoperator#inner-join), [leftouter](/azure/kusto/query/joinoperator#left-outer-join). De limiet van 3 `join` in één query, waarvan 1 een kruis tabel kan zijn `join` . Als alle verschillende tabellen `join` worden gebruikt tussen _resource_ en _ResourceContainers_, is 3 kruis tabel `join` toegestaan. Aangepaste deelname strategieën, zoals broadcast toevoegen, zijn niet toegestaan. `join`Zie [resource Graph Tables](#resource-graph-tables)(Engelstalig) voor welke tabellen kunnen worden gebruikt. |
 |[ondergrens](/azure/kusto/query/limitoperator) |[Een lijst van alle openbare IP-adressen weergeven](../samples/starter.md#list-publicip) |Synoniem van `take` . Werkt niet met [overs Laan](./work-with-data.md#skipping-records). |
 |[mvexpand](/azure/kusto/query/mvexpandoperator) | | Verouderde operator `mv-expand` . gebruik in plaats daarvan. _RowLimit_ maximum van 400. De standaard waarde is 128. |
-|[MV-uitvouwen](/azure/kusto/query/mvexpandoperator) |[Een lijst met Cosmos DB met specifieke schrijflocaties weergeven](../samples/advanced.md#mvexpand-cosmosdb) |_RowLimit_ maximum van 400. De standaard waarde is 128. De limiet van 3 `mv-expand` in één query.|
+|[MV-uitvouwen](/azure/kusto/query/mvexpandoperator) |[Een lijst met Cosmos DB met specifieke schrijflocaties weergeven](../samples/advanced.md#mvexpand-cosmosdb) |_RowLimit_ maximum van 400. De standaard waarde is 128. De limiet van 2 `mv-expand` in één query.|
 |[order](/azure/kusto/query/orderoperator) |[Een lijst van resources weergeven, gesorteerd op naam](../samples/starter.md#list-resources) |Synoniem van `sort` |
 |[project](/azure/kusto/query/projectoperator) |[Een lijst van resources weergeven, gesorteerd op naam](../samples/starter.md#list-resources) | |
 |[project-weg](/azure/kusto/query/projectawayoperator) |[Kolommen verwijderen uit resultaten](../samples/advanced.md#remove-column) | |

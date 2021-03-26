@@ -3,12 +3,12 @@ title: Ontwikkel-en implementatie omgevingen van Bicep instellen
 description: Ontwikkel-en implementatie omgevingen van Bicep configureren
 ms.topic: conceptual
 ms.date: 03/17/2021
-ms.openlocfilehash: d665a863affdec2009fc208f76b85a7f25de451d
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 7cd3721aca83488de61494a94826bfcd0b6acc26
+ms.sourcegitcommit: 44edde1ae2ff6c157432eee85829e28740c6950d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104594390"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105543734"
 ---
 # <a name="setup-bicep-development-and-deployment-environment"></a>Ontwikkel-en implementatie omgeving van Bicep instellen
 
@@ -31,7 +31,7 @@ U kunt Bicep-bestanden implementeren met behulp van Azure CLI of Azure PowerShel
 - [Azure CLI installeren in macOS](/cli/azure/install-azure-cli-macos)
 
 > [!NOTE]
-> Momenteel kunnen alleen lokale Bicep-bestanden worden geïmplementeerd met Azure CLI en Azure PowerShell. Zie [Deploy-cli](/deploy-cli.md#deploy-remote-template)voor meer informatie over het implementeren van Bicep-bestanden met behulp van Azure cli. Zie [Deploy-Power shell](/deploy-powershell.md#deploy-remote-template)(Engelstalig) voor meer informatie over het implementeren van Bicep-bestanden met behulp van Azure PowerShell.
+> Momenteel kunnen alleen lokale Bicep-bestanden worden geïmplementeerd met Azure CLI en Azure PowerShell. Zie [Deploy-cli](./deploy-cli.md#deploy-remote-template)voor meer informatie over het implementeren van Bicep-bestanden met behulp van Azure cli. Zie [Deploy-Power shell]( ./deploy-powershell.md#deploy-remote-template)(Engelstalig) voor meer informatie over het implementeren van Bicep-bestanden met behulp van Azure PowerShell.
 
 Nadat de ondersteunde versie van Azure PowerShell of Azure CLI is geïnstalleerd, kunt u een Bicep-bestand implementeren met:
 

@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/12/2020
-ms.openlocfilehash: 874df4301165aaf253dd0f4316adee7ab9ce7ce5
-ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
+ms.openlocfilehash: 695aa760d554946883f72692f0bed1babad933b1
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104798847"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105568797"
 ---
 # <a name="create-interactive-reports-vm-insights-with-workbooks"></a>Interactieve rapporten maken VM Insights met werkmappen
 
@@ -25,7 +25,7 @@ Werkmappen zijn handig voor scenario's zoals:
 
 De volgende tabel bevat een overzicht van de werkmappen die door VM Insights worden opgenomen om aan de slag te gaan.
 
-| Werkmap | Beschrijving | Bereik |
+| Werkmap | Description | Bereik |
 |----------|-------------|-------|
 | Prestaties | Biedt een aanpas bare versie van onze weer gave top N-lijsten en-diagrammen in één werkmap die gebruikmaakt van alle Log Analytics prestatie meter items die u hebt ingeschakeld.| Meerdere Vm's |
 | Prestatiemeteritems | Een bovenste N grafiek weergave in een breed scala aan prestatie meter items. | Meerdere Vm's |
@@ -103,13 +103,13 @@ Elke sectie heeft zijn eigen geavanceerde instellingen, die toegankelijk zijn vi
 
 ![Scherm afbeelding van het dialoog venster Geavanceerde instellingen in de sectie Virtual Machines werkmap van Azure Monitor. Het pictogram waarmee het dialoog venster wordt geopend, is gemarkeerd.](media/vminsights-workbooks/007-settings-expanded.png)
 
-|         |          |
+| Instelling | Beschrijving |
 | ---------------- |:-----|
-| **Aangepaste breedte**    | Hiermee maakt u een item een wille keurige grootte, zodat u veel items op één regel kunt aanpassen, zodat u uw grafieken en tabellen beter in uitgebreide, interactieve rapporten ordent.  |
-| **Voorwaardelijk zichtbaar** | Geef op of u de stappen wilt verbergen op basis van een para meter in de Lees modus. |
-| **Een para meter exporteren**| Een geselecteerde rij in het raster of diagram toestaan om waarden te wijzigen of zichtbaar te maken.  |
-| **Query weer geven wanneer deze niet wordt bewerkt** | Hiermee wordt de query boven de grafiek of tabel weer gegeven, zelfs in de Lees modus.
-| **De knop openen in Analytics weer geven wanneer deze niet wordt bewerkt** | Hiermee voegt u het pictogram voor een blauw analyse aan de rechter bovenhoek van de grafiek toe om toegang met één klik toe te staan.|
+| Aangepaste breedte    | Hiermee maakt u een item een wille keurige grootte, zodat u veel items op één regel kunt aanpassen, zodat u uw grafieken en tabellen beter in uitgebreide, interactieve rapporten ordent.  |
+| Voorwaardelijk zichtbaar | Geef op of u de stappen wilt verbergen op basis van een para meter in de Lees modus. |
+| Een para meter exporteren| Een geselecteerde rij in het raster of diagram toestaan om waarden te wijzigen of zichtbaar te maken.  |
+| Query weer geven wanneer deze niet wordt bewerkt | Hiermee wordt de query boven de grafiek of tabel weer gegeven, zelfs in de Lees modus.
+| De knop openen in Analytics weer geven wanneer deze niet wordt bewerkt | Hiermee voegt u het pictogram voor een blauw analyse aan de rechter bovenhoek van de grafiek toe om toegang met één klik toe te staan.|
 
 De meeste van deze instellingen zijn redelijk intuïtief, maar om **een para meter** te kunnen exporteren, is het beter om een werkmap te onderzoeken die gebruikmaakt van deze functionaliteit.
 
@@ -152,12 +152,12 @@ Para meters zijn lineair, vanaf de bovenkant van een werkmap en doorlopend naar 
  
 Er zijn vier verschillende typen para meters die momenteel worden ondersteund:
 
-|                  |      |
+| Parameter | Beschrijving |
 | ---------------- |:-----|
-| **Tekst**    | Hiermee kan de gebruiker een tekstvak bewerken en kunt u optioneel een query opgeven om de standaard waarde in te vullen. |
-| **Vervolgkeuzelijst** | Hiermee kan de gebruiker kiezen uit een reeks waarden. |
-| **Tijds bereik kiezer**| Hiermee kan de gebruiker kiezen uit een vooraf gedefinieerde set waarden voor tijds bereik of een aangepaste periode kiezen.|
-| **Resource kiezer** | Hiermee kan de gebruiker kiezen uit de resources die zijn geselecteerd voor de werkmap.|
+| Tekst    | Hiermee kan de gebruiker een tekstvak bewerken en kunt u optioneel een query opgeven om de standaard waarde in te vullen. |
+| Vervolgkeuzelijst | Hiermee kan de gebruiker kiezen uit een reeks waarden. |
+| Tijds bereik kiezer| Hiermee kan de gebruiker kiezen uit een vooraf gedefinieerde set waarden voor tijds bereik of een aangepaste periode kiezen.|
+| Resource kiezer | Hiermee kan de gebruiker kiezen uit de resources die zijn geselecteerd voor de werkmap.|
 
 ### <a name="using-a-text-parameter"></a>Een tekst parameter gebruiken
 

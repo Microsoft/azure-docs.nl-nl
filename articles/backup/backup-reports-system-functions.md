@@ -3,34 +3,34 @@ title: Systeem functies in Azure Monitor-logboeken
 description: Aangepaste query's schrijven in Azure Monitor logboeken met behulp van systeem functies
 ms.topic: conceptual
 ms.date: 03/01/2021
-ms.openlocfilehash: 1d26adfd2bd1a3fc1506a334b4b661b66172192d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: acb45e6ad0250a1f8d10377fdd509e40051f25b9
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102510492"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105564905"
 ---
 # <a name="system-functions-on-azure-monitor-logs"></a>Systeem functies in Azure Monitor-logboeken
 
 Azure Backup biedt een aantal functies, de zogenaamde systeem functies of oplossings functies, die standaard beschikbaar zijn in uw Log Analytics (LA)-werk ruimten.
  
-Deze functies werken op gegevens in de [onbewerkte Azure backup tabellen](https://docs.microsoft.com/azure/backup/backup-azure-reports-data-model) in La en retour neren gegevens die u helpen bij het ophalen van gegevens van al uw back-upentiteiten, met behulp van eenvoudige query's. Gebruikers kunnen para meters door geven aan deze functies om de gegevens te filteren die door deze functies worden geretourneerd. 
+Deze functies werken op gegevens in de [onbewerkte Azure backup tabellen](./backup-azure-reports-data-model.md) in La en retour neren gegevens die u helpen bij het ophalen van gegevens van al uw back-upentiteiten, met behulp van eenvoudige query's. Gebruikers kunnen para meters door geven aan deze functies om de gegevens te filteren die door deze functies worden geretourneerd. 
 
 Het is raadzaam om systeem functies te gebruiken voor het uitvoeren van query's in uw back-upgegevens in LA-werk ruimten voor het maken van aangepaste rapporten, aangezien deze een aantal voor delen bieden, zoals wordt beschreven in de volgende sectie.
 
 ## <a name="benefits-of-using-system-functions"></a>Voor delen van het gebruik van systeem functies
 
-* **Eenvoudigere query's**: het gebruik van functies helpt u bij het verminderen van het aantal benodigde koppelingen in uw query's. Standaard retour neren de functies ' afgevlakt ' schema's, waarbij alle informatie wordt opgenomen die betrekking heeft op de entiteit (back-upexemplaar, taak, kluis, enzovoort) die wordt opgevraagd. Als u bijvoorbeeld een lijst met geslaagde back-uptaken wilt ophalen op basis van de naam van het back-upitem en de bijbehorende container, geeft u een eenvoudige aanroep van de functie **_AzureBackup_getJobs ()** alle informatie over elke taak. Aan de andere kant zou het direct uitvoeren van een query op de onbewerkte tabellen vereisen dat u meerdere samen voegingen tussen [AddonAzureBackupJobs](https://docs.microsoft.com/azure/backup/backup-azure-reports-data-model#addonazurebackupjobs) -en [CoreAzureBackup](https://docs.microsoft.com/azure/backup/backup-azure-reports-data-model#coreazurebackup) -tabellen uitvoert.
+* **Eenvoudigere query's**: het gebruik van functies helpt u bij het verminderen van het aantal benodigde koppelingen in uw query's. Standaard retour neren de functies ' afgevlakt ' schema's, waarbij alle informatie wordt opgenomen die betrekking heeft op de entiteit (back-upexemplaar, taak, kluis, enzovoort) die wordt opgevraagd. Als u bijvoorbeeld een lijst met geslaagde back-uptaken wilt ophalen op basis van de naam van het back-upitem en de bijbehorende container, geeft u een eenvoudige aanroep van de functie **_AzureBackup_getJobs ()** alle informatie over elke taak. Aan de andere kant zou het direct uitvoeren van een query op de onbewerkte tabellen vereisen dat u meerdere samen voegingen tussen [AddonAzureBackupJobs](./backup-azure-reports-data-model.md#addonazurebackupjobs) -en [CoreAzureBackup](./backup-azure-reports-data-model.md#coreazurebackup) -tabellen uitvoert.
 
-* **Vloeiendere overgang van de verouderde diagnose gebeurtenis**: met behulp van systeem functies kunt u probleemloos overstappen van de [verouderde diagnostische gebeurtenis](https://docs.microsoft.com/azure/backup/backup-azure-diagnostic-events#legacy-event) (AzureBackupReport in de modus AzureDiagnostics) naar de [resource-specifieke gebeurtenissen](https://docs.microsoft.com/azure/backup/backup-azure-diagnostic-events#diagnostics-events-available-for-azure-backup-users). Alle systeem functies van Azure Backup bieden u de mogelijkheid om een para meter op te geven waarmee u kunt kiezen of de functie alleen gegevens uit de resource-specifieke tabellen moet opvragen, of dat er gegevens moeten worden opgehaald uit de verouderde tabel en de resource-specifieke tabellen (met ontdubbeling van records).
+* **Vloeiendere overgang van de verouderde diagnose gebeurtenis**: met behulp van systeem functies kunt u probleemloos overstappen van de [verouderde diagnostische gebeurtenis](./backup-azure-diagnostic-events.md#legacy-event) (AzureBackupReport in de modus AzureDiagnostics) naar de [resource-specifieke gebeurtenissen](./backup-azure-diagnostic-events.md#diagnostics-events-available-for-azure-backup-users). Alle systeem functies van Azure Backup bieden u de mogelijkheid om een para meter op te geven waarmee u kunt kiezen of de functie alleen gegevens uit de resource-specifieke tabellen moet opvragen, of dat er gegevens moeten worden opgehaald uit de verouderde tabel en de resource-specifieke tabellen (met ontdubbeling van records).
     * Als u met succes hebt gemigreerd naar de resource-specifieke tabellen, kunt u ervoor kiezen om de verouderde tabel uit te sluiten van query's door de functie.
     * Als u momenteel bezig bent met de migratie en een aantal gegevens in de verouderde tabellen hebt die u voor analyse nodig hebt, kunt u ervoor kiezen om de verouderde tabel op te nemen. Wanneer de overgang is voltooid en u geen gegevens meer nodig hebt van de verouderde tabel, kunt u de waarde van de para meter die is door gegeven aan de functie in uw query's gewoon bijwerken om de verouderde tabel uit te sluiten.
-    * Als u nog steeds alleen de verouderde tabel gebruikt, werken de functies nog steeds als u ervoor kiest om de verouderde tabel op te genomen via dezelfde para meter. Het wordt echter aanbevolen om op het eerste van de [resource-specifieke tabellen over te scha kelen](https://docs.microsoft.com/azure/backup/backup-azure-diagnostic-events#steps-to-move-to-new-diagnostics-settings-for-a-log-analytics-workspace) .
+    * Als u nog steeds alleen de verouderde tabel gebruikt, werken de functies nog steeds als u ervoor kiest om de verouderde tabel op te genomen via dezelfde para meter. Het wordt echter aanbevolen om op het eerste van de [resource-specifieke tabellen over te scha kelen](./backup-azure-diagnostic-events.md#steps-to-move-to-new-diagnostics-settings-for-a-log-analytics-workspace) .
 
 * **Minder kans op het aantal aangepaste query's**: als Azure backup verbeteringen doorvoert in het schema van de onderliggende La-tabellen voor toekomstige rapportage scenario's, wordt de definitie van de functies ook bijgewerkt om rekening te houden met de schema wijzigingen. Als u bijvoorbeeld systeem functies gebruikt voor het maken van aangepaste query's, worden uw query's niet onderbroken, zelfs niet als er wijzigingen zijn in het onderliggende schema van de tabellen.
 
 > [!NOTE]
-> Systeem functies worden beheerd door micro soft en hun definities kunnen niet worden bewerkt door gebruikers. Als u bewerkte functies nodig hebt, kunt u [opgeslagen functies](https://docs.microsoft.com/azure/azure-monitor/logs/functions) maken in La.
+> Systeem functies worden beheerd door micro soft en hun definities kunnen niet worden bewerkt door gebruikers. Als u bewerkte functies nodig hebt, kunt u [opgeslagen functies](../azure-monitor/logs/functions.md) maken in La.
 
 ## <a name="types-of-system-functions-offered-by-azure-backup"></a>Typen systeem functies die worden aangeboden door Azure Backup
 
@@ -390,4 +390,4 @@ Hieronder vindt u enkele voor beelden van query's waarmee u aan de slag kunt gaa
     ````
 
 ## <a name="next-steps"></a>Volgende stappen
-[Meer informatie over back-uprapporten](https://docs.microsoft.com/azure/backup/configure-reports)
+[Meer informatie over back-uprapporten](./configure-reports.md)

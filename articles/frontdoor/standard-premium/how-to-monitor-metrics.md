@@ -8,12 +8,12 @@ ms.service: frontdoor
 ms.topic: how-to
 ms.date: 02/18/2021
 ms.author: yuajia
-ms.openlocfilehash: bb10fb337972db2696960b530f2d7538bd36a2fb
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 72388eb8006ff1b9628db5066dc63e6a0811f3d5
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101098847"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105557323"
 ---
 # <a name="real-time-monitoring-in-azure-front-door-standardpremium"></a>Real-time bewaking in azure front deur Standard/Premium
 
@@ -22,11 +22,11 @@ ms.locfileid: "101098847"
 
 Azure front deur Standard/Premium is geïntegreerd met Azure Monitor en heeft 11 metrische gegevens om de voor deur standaard/Premium van Azure in realtime te bewaken om problemen op te sporen, op te lossen en te voor komen.  
 
-Voor waarden voor de standaard/Premium van de Azure-deur en worden de metrische gegevens binnen 60 seconden verzonden. De metrische gegevens kunnen Maxi maal drie minuten in de portal worden weer gegeven. Metrische gegevens kunnen worden weer gegeven in diagrammen of raster van uw keuze en zijn toegankelijk via Portal, Power shell, CLI en API. Zie [Azure monitor metrische](../../azure-monitor/platform/data-platform-metrics.md)gegevens voor meer informatie.  
+Voor waarden voor de standaard/Premium van de Azure-deur en worden de metrische gegevens binnen 60 seconden verzonden. De metrische gegevens kunnen Maxi maal drie minuten in de portal worden weer gegeven. Metrische gegevens kunnen worden weer gegeven in diagrammen of raster van uw keuze en zijn toegankelijk via Portal, Power shell, CLI en API. Zie [Azure monitor metrische](../../azure-monitor/essentials/data-platform-metrics.md)gegevens voor meer informatie.  
 
 De standaard waarden zijn gratis. U kunt extra metrische gegevens inschakelen voor extra kosten. 
 
-U kunt waarschuwingen voor elke metriek configureren, zoals een drempel waarde voor 4XXErrorRate of 5XXErrorRate. Wanneer de fout frequentie de drempel waarde overschrijdt, wordt er een waarschuwing geactiveerd zoals geconfigureerd. Zie [metrische waarschuwingen maken, weer geven en beheren met behulp van Azure monitor](../../azure-monitor/platform/alerts-metric.md)voor meer informatie. 
+U kunt waarschuwingen voor elke metriek configureren, zoals een drempel waarde voor 4XXErrorRate of 5XXErrorRate. Wanneer de fout frequentie de drempel waarde overschrijdt, wordt er een waarschuwing geactiveerd zoals geconfigureerd. Zie [metrische waarschuwingen maken, weer geven en beheren met behulp van Azure monitor](../../azure-monitor/alerts/alerts-metric.md)voor meer informatie. 
 
 > [!IMPORTANT]
 > Azure front deur Standard/Premium (preview) is momenteel beschikbaar als open bare preview.
@@ -35,7 +35,7 @@ U kunt waarschuwingen voor elke metriek configureren, zoals een drempel waarde v
 
 ## <a name="metrics-supported-in-azure-front-door-standardpremium"></a>Metrische gegevens die worden ondersteund in de voor deur standaard/Premium van Azure
 
-| Metrische gegevens  | Beschrijving | Dimensies |
+| Metrische gegevens  | Description | Dimensies |
 | ------------- | ------------- | ------------- |
 | Percentage treffers in cache | Het percentage van de uitvoer van de AFD-cache, berekend op basis van het totale aantal uitgangen. </br> **Verhouding van byte-treffers** = (uitgang van de rand van de oorsprong)/egress vanaf de rand. </br> **Scenario's die zijn uitgesloten voor de berekening van de verhouding treffers in bytes**:</br> 1. u kunt geen cache expliciet configureren door middel van regel Engine of cache gedrag van query reeks. </br> 2. u kunt de instructie cache-Control expliciet configureren met No-Store of private cache. </br>3. de verhouding van de byte treffer kan laag zijn als het meeste verkeer wordt doorgestuurd naar de oorsprong in plaats van dat de gegevens in de cache worden verwerkt op basis van uw configuraties of scenario's. | Eindpunt |
 | RequestCount | Het aantal client aanvragen dat door CDN wordt geleverd. | Eind punt, client land, client regio, HTTP-status, HTTP-status groep |
@@ -75,7 +75,7 @@ U kunt waarschuwingen voor elke metriek configureren, zoals een drempel waarde v
 
 1. Selecteer **nieuwe waarschuwings regel** voor metrische gegevens die worden weer gegeven in de sectie metrische gegevens.
 
-Er wordt een waarschuwing berekend op basis van Azure Monitor. Zie [Azure monitor-waarschuwingen](../../azure-monitor/platform/alerts-overview.md)voor meer informatie over waarschuwingen.
+Er wordt een waarschuwing berekend op basis van Azure Monitor. Zie [Azure monitor-waarschuwingen](../../azure-monitor/alerts/alerts-overview.md)voor meer informatie over waarschuwingen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

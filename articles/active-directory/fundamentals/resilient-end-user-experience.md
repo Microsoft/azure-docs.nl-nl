@@ -13,12 +13,12 @@ ms.reviewer: ''
 ms.date: 11/30/2020
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f6896a812ec173994a1299a28ff2e99a0f351391
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: b47a4a79fd423806693e86aef1edd132d844069e
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98724438"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105557901"
 ---
 # <a name="resilient-end-user-experience"></a>Flexibele ervaring voor eind gebruikers
 
@@ -62,7 +62,7 @@ Als onderdeel van het registratie proces van de externe ID-provider, moet u een 
 
 ## <a name="availability-of-multi-factor-authentication"></a>Beschik baarheid van multi-factor Authentication
 
-Wanneer u een [telefoon service voor multi-factor Authentication (MFA)](../../active-directory-b2c/phone-authentication.md)gebruikt, moet u rekening houden met een alternatieve service provider. De lokale telecommunicatie of Phone-service provider kan onderbrekingen ondervinden in hun service.
+Wanneer u een [telefoon service voor multi-factor Authentication (MFA)](../../active-directory-b2c/phone-authentication-user-flows.md)gebruikt, moet u rekening houden met een alternatieve service provider. De lokale telecommunicatie of Phone-service provider kan onderbrekingen ondervinden in hun service.
 
 ### <a name="how-to-choose-an-alternate-mfa"></a>Een alternatieve MFA kiezen  
 

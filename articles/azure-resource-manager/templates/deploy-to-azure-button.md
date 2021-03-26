@@ -2,13 +2,13 @@
 title: De knop Implementeren in Azure
 description: Gebruik de knop om Azure Resource Manager sjablonen te implementeren vanuit een GitHub-opslag plaats.
 ms.topic: conceptual
-ms.date: 11/10/2020
-ms.openlocfilehash: abe59f377474540e9209691df8b1d1a7b806c26d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.date: 03/25/2021
+ms.openlocfilehash: e25d49571347bb5ed27dbd52bb60c68cbeb4360d
+ms.sourcegitcommit: 44edde1ae2ff6c157432eee85829e28740c6950d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98028740"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105543772"
 ---
 # <a name="use-a-deployment-button-to-deploy-templates-from-github-repository"></a>Een implementatie knop gebruiken voor het implementeren van sjablonen uit de GitHub-opslag plaats
 
@@ -76,7 +76,7 @@ https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.github
 
 U hebt de volledige URL voor de koppeling.
 
-Normaal gesp roken host u de sjabloon in een open bare opslag plaats. Als u een privé-opslag plaats gebruikt, moet u een token toevoegen om toegang te krijgen tot de onbewerkte inhoud van de sjabloon. Het token dat door GitHub wordt gegenereerd, is slechts voor een korte periode geldig. U moet de koppeling vaak bijwerken.
+[!INCLUDE [Deploy templates in private GitHub repo](../../../includes/resource-manager-private-github-repo-templates.md)]
 
 Als u Git gebruikt [met Azure opslag plaatsen](/azure/devops/repos/git/) in plaats van een github opslag plaats, kunt u nog steeds de knop **implementeren in azure** gebruiken. Zorg ervoor dat uw opslag plaats openbaar is. Gebruik de [bewerking items](/rest/api/azure/devops/git/items/get) om de sjabloon op te halen. Uw aanvraag moet de volgende indeling hebben:
 

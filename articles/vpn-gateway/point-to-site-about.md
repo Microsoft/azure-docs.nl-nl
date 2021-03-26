@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 09/02/2020
 ms.author: cherylmc
-ms.openlocfilehash: 795b6f13913590041b463115c0be65a6201fedab
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 6caf72884ce2566ad25b7dd6d80b15d737bbe664
+ms.sourcegitcommit: 44edde1ae2ff6c157432eee85829e28740c6950d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "97654061"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105543581"
 ---
 # <a name="about-point-to-site-vpn"></a>Over punt-naar-site-VPN
 
@@ -61,9 +61,9 @@ Op hoog niveau moet u de volgende stappen uitvoeren om Azure AD-verificatie te c
 ### <a name="authenticate-using-active-directory-ad-domain-server"></a>Verifiëren met behulp van de domein server van Active Directory (AD)
 
 Met AD-domein verificatie kunnen gebruikers verbinding maken met Azure met behulp van de domein referenties van hun organisatie. Hiervoor is een RADIUS-server vereist die met de AD-server kan worden geïntegreerd. Organisaties kunnen ook gebruikmaken van de bestaande RADIUS-implementatie.
-  
-De RADIUS-server kan on-premises of in uw Azure VNet worden geïmplementeerd. Tijdens de verificatie fungeert de Azure-VPN Gateway als een Pass-Through en stuurt verificatie berichten terug tussen de RADIUS-server en het apparaat waarmee u verbinding maakt. Daarom is de gateway bereikbaar voor de RADIUS-server belang rijk. Als de RADIUS-server on-premises aanwezig is, is een VPN S2S-verbinding van Azure naar de on-premises site vereist voor bereik baarheid.  
-  
+
+De RADIUS-server kan on-premises of in uw Azure VNet worden geïmplementeerd. Tijdens de verificatie fungeert de Azure-VPN Gateway als een Pass-Through en stuurt verificatie berichten terug tussen de RADIUS-server en het apparaat waarmee u verbinding maakt. Daarom is de gateway bereikbaar voor de RADIUS-server belang rijk. Als de RADIUS-server on-premises aanwezig is, is een VPN S2S-verbinding van Azure naar de on-premises site vereist voor bereik baarheid.
+
 De RADIUS-server kan ook worden geïntegreerd met AD Certificate Services. Hiermee kunt u de RADIUS-server en de implementatie van het ondernemings certificaat voor P2S-certificaat verificatie gebruiken als alternatief voor de Azure-certificaat verificatie. Het voor deel is dat u geen basis certificaten en ingetrokken certificaten naar Azure hoeft te uploaden.
 
 Een RADIUS-server kan ook worden geïntegreerd met andere externe identiteits systemen. Hiermee opent u veel verificatie opties voor P2S VPN, waaronder multi-factor-opties.

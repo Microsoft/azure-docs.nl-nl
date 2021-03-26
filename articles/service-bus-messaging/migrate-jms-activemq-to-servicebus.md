@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 07/07/2020
 ms.author: aschhab
 ms.custom: devx-track-java
-ms.openlocfilehash: b8408dde86d1902cf5b4899c4783c9dd185449ee
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 4160a9ab4edbac8584eab2d4e5b9bf1ba11a9aec
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "92515743"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105568780"
 ---
 # <a name="migrate-existing-java-message-service-jms-20-applications-from-apache-activemq-to-azure-service-bus"></a>Bestaande JMS-toepassingen (Java Message Service 2,0) migreren van Apache ActiveMQ naar Azure Service Bus
 
@@ -159,60 +159,6 @@ Als u wilt zorgen voor naadloze connectiviteit met Service Bus, voegt `azure-ser
 ### <a name="application-server-configuration-changes"></a>Wijzigingen in de toepassings server configuratie
 
 Dit onderdeel is aangepast aan de toepassings server die als host fungeert voor uw client toepassingen die verbinding maken met ActiveMQ.
-
-#### <a name="tomcat"></a>Tomcat
-
-Hier begint u met de configuratie specifiek voor ActiveMQ, zoals wordt weer gegeven in het `/META-INF/context.xml` bestand.
-
-```XML
-<Context antiJARLocking="true">
-    <Resource
-        name="jms/ConnectionFactory"
-        auth="Container"
-        type="org.apache.activemq.ActiveMQConnectionFactory"
-        description="JMS Connection Factory"
-        factory="org.apache.activemq.jndi.JNDIReferenceFactory"
-        brokerURL="tcp://localhost:61616"
-        brokerName="LocalActiveMQBroker"
-        useEmbeddedBroker="false"/>
-
-    <Resource name="jms/topic/MyTopic"
-        auth="Container"
-        type="org.apache.activemq.command.ActiveMQTopic"
-        factory="org.apache.activemq.jndi.JNDIReferenceFactory"
-        physicalName="MY.TEST.FOO"/>
-    <Resource name="jms/queue/MyQueue"
-        auth="Container"
-        type="org.apache.activemq.command.ActiveMQQueue"
-        factory="org.apache.activemq.jndi.JNDIReferenceFactory"
-        physicalName="MY.TEST.FOO.QUEUE"/>
-</Context>
-```
-
-U kunt dit als volgt naar Service Bus wijzen:
-
-```xml
-<Context antiJARLocking="true">
-    <Resource
-        name="jms/ConnectionFactory"
-        auth="Container"
-        type="com.microsoft.azure.servicebus.jms.ServiceBusJmsConnectionFactory"
-        description="JMS Connection Factory"
-        factory="org.apache.qpid.jms.jndi.JNDIReferenceFactory"
-        connectionString="<INSERT YOUR SERVICE BUS CONNECTION STRING HERE>"/>
-
-    <Resource name="jms/topic/MyTopic"
-        auth="Container"
-        type="org.apache.qpid.jms.JmsTopic"
-        factory="org.apache.qpid.jms.jndi.JNDIReferenceFactory"
-        physicalName="MY.TEST.FOO"/>
-    <Resource name="jms/queue/MyQueue"
-        auth="Container"
-        type="org.apache.qpid.jms.JmsQueue"
-        factory="org.apache.qpid.jms.jndi.JNDIReferenceFactory"
-        physicalName="MY.TEST.FOO.QUEUE"/>
-</Context>
-```
 
 #### <a name="spring-applications"></a>Lente toepassingen
 

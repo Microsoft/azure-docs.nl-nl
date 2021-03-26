@@ -13,12 +13,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 04/15/2019
 ms.author: alkohli
-ms.openlocfilehash: 316b513f761aa422f87c83658e6c50efec25efb4
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 2386a7f03508be2a3e6c57111ae206807efaf3ed
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "94961138"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105567862"
 ---
 # <a name="options-to-migrate-data-from-storsimple-5000-7000-series"></a>Opties voor het migreren van gegevens uit de collectie StorSimple 5000-7000 
 
@@ -69,8 +69,7 @@ Nasuni heeft de ervaring om uw migratie eenvoudig te maken: vandaag kunt u aan d
 
 Talon maakt het eenvoudig voor StorSimple 5000-7000-klanten om de voor delen te blijven benutten die ze aanzienlijk hebben gewaardeerd in het StorSimple-platform (een kleine on-site footprint die wordt ondersteund door onbeperkte Cloud bronnen) met nog meer functies.  Met de Talon FAST-oplossing kunnen klanten hun gegevens in azure migreren en inperken, terwijl ze nu een zelfs kleinere op de werkloze manier bewerkte footprint hebben en voor delen zoals globale bestands vergrendeling, globale naam ruimte en samen werking op meerdere locaties toevoegen.  Talon is een toonaangevende Azure-ecosysteem oplossing, die samenwerkt met wereld wijde klanten om hun on-premises Bestands server werkbelastingen te migreren naar een geconsolideerd, op Azure gebaseerde footprint zonder in te leveren op de werk stroom of ervaring van de gebruiker.  
 
-Meer informatie over hoe u kunt samen werken met een onderneming in de Cloud op https://www.talonstorage.com/alliances/microsoft-storsimple .
-
+Meer informatie over hoe u kunt ontwikkelen naar een in de Cloud geconsolideerde onderneming.
 
 ## <a name="migration---frequently-asked-questions"></a>Migratie: veelgestelde vragen
 

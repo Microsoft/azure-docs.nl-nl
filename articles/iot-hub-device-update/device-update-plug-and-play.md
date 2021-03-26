@@ -6,22 +6,22 @@ ms.author: valls
 ms.date: 2/14/2021
 ms.topic: conceptual
 ms.service: iot-hub-device-update
-ms.openlocfilehash: 227488f165aaad2f204c647eed17467a4ef561a1
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 0283a84650abaadd454b4f5bca83d1473e443fb8
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "101662556"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105561811"
 ---
 # <a name="device-update-for-iot-hub-and-iot-plug-and-play"></a>Update van het apparaat voor IoT Hub en IoT Plug en Play
 
-Update van het apparaat voor IoT Hub maakt gebruik van [IoT Plug en Play](https://docs.microsoft.com/azure/iot-pnp/) om apparaten te detecteren en te beheren die via de lucht kunnen worden bijgewerkt. De Device Update-service verzendt en ontvangt eigenschappen en berichten van en naar apparaten met behulp van PnP-interfaces. Apparaat bijwerken voor IoT Hub vereist IoT-apparaten om de volgende interfaces en model-id te implementeren, zoals hieronder wordt beschreven.
+Update van het apparaat voor IoT Hub maakt gebruik van [IoT Plug en Play](../iot-pnp/index.yml) om apparaten te detecteren en te beheren die via de lucht kunnen worden bijgewerkt. De Device Update-service verzendt en ontvangt eigenschappen en berichten van en naar apparaten met behulp van PnP-interfaces. Apparaat bijwerken voor IoT Hub vereist IoT-apparaten om de volgende interfaces en model-id te implementeren, zoals hieronder wordt beschreven.
 
 ## <a name="adu-core-interface"></a>ADU-kern interface
 
 De ADUCoreInterface-interface wordt gebruikt om Update-acties en meta gegevens naar apparaten te verzenden en de update status van apparaten te ontvangen. De ADU core-interface is in twee object eigenschappen gesplitst.
 
-De verwachte onderdeel naam in uw model is **"azureDeviceUpdateAgent"** wanneer u deze interface implementeert. [Meer informatie over Azure IoT PnP-onderdelen](https://docs.microsoft.com/azure/iot-pnp/concepts-components)
+De verwachte onderdeel naam in uw model is **"azureDeviceUpdateAgent"** wanneer u deze interface implementeert. [Meer informatie over Azure IoT PnP-onderdelen](../iot-pnp/concepts-components.md)
 
 ### <a name="agent-metadata"></a>Meta gegevens van agent
 
@@ -50,7 +50,7 @@ Het is de status die door de Update Agent van het apparaat wordt gerapporteerd n
 
 Het is de set eigenschappen die de fabrikant en het model bevatten.
 
-|Name|Schema|Richting|Beschrijving|
+|Name|Schema|Richting|Description|
 |----|------|---------|-----------|
 |manufacturer|tekenreeks|apparaat naar Cloud|De fabrikant van het apparaat van het apparaat, gerapporteerd via `deviceProperties` . Deze eigenschap wordt van een van de twee locaties gelezen: de interface ' AzureDeviceUpdateCore ' probeert eerst de waarde ' aduc_manufacturer ' te lezen uit het bestand met het [configuratie bestand](device-update-configuration-file.md) .  Als de waarde niet wordt ingevuld in het configuratie bestand, wordt standaard de definitie van de compileer tijd voor ADUC_DEVICEPROPERTIES_MANUFACTURER gerapporteerd. Deze eigenschap wordt alleen gerapporteerd tijdens het opstarten.|
 |model|tekenreeks|apparaat naar Cloud|Het model van het apparaat van het apparaat, gerapporteerd via `deviceProperties` . Deze eigenschap wordt van een van de twee locaties gelezen: de AzureDeviceUpdateCore-interface probeert eerst de waarde aduc_model te lezen uit het bestand met het [configuratie bestand](device-update-configuration-file.md) .  Als de waarde niet wordt ingevuld in het configuratie bestand, wordt standaard de definitie van de compileer tijd voor ADUC_DEVICEPROPERTIES_MODEL gerapporteerd. Deze eigenschap wordt alleen gerapporteerd tijdens het opstarten.|
@@ -61,7 +61,7 @@ Het is de set eigenschappen die de fabrikant en het model bevatten.
 
 De meta gegevens van de service bevatten velden die door de Update Services van het apparaat worden gebruikt voor het communiceren van acties en gegevens naar de Update Agent van het apparaat.
 
-|Name|Schema|Richting|Beschrijving|
+|Name|Schema|Richting|Description|
 |----|------|---------|-----------|
 |actie|geheel getal|Cloud naar apparaat|Het is een geheel getal dat overeenkomt met een actie die de agent moet uitvoeren. Onderstaande waarden.|
 |updateManifest|tekenreeks|Cloud naar apparaat|Wordt gebruikt om de inhoud van een update te beschrijven. Gegenereerd vanuit het [import manifest](import-update.md#create-device-update-import-manifest)|
@@ -81,9 +81,9 @@ De meta gegevens van de service bevatten velden die door de Update Services van 
 
 ## <a name="device-information-interface"></a>Interface voor apparaatgegevens
 
-De apparaatgegevens interface is een concept dat in [IOT-Plug en Play architectuur](https://docs.microsoft.com/azure/iot-pnp/overview-iot-plug-and-play)wordt gebruikt. Het bevat apparaat-naar-Cloud-eigenschappen die informatie geven over de hardware en het besturings systeem van het apparaat. Bij het bijwerken van het apparaat voor IoT Hub worden de eigenschappen DeviceInformation. Manufacturer en DeviceInformation. model gebruikt voor telemetrie en diagnostische gegevens. Zie dit [voor beeld](https://devicemodels.azure.com/dtmi/azure/devicemanagement/deviceinformation-1.json)voor meer informatie over de interface met informatie over apparaten.
+De apparaatgegevens interface is een concept dat in [IOT-Plug en Play architectuur](../iot-pnp/overview-iot-plug-and-play.md)wordt gebruikt. Het bevat apparaat-naar-Cloud-eigenschappen die informatie geven over de hardware en het besturings systeem van het apparaat. Bij het bijwerken van het apparaat voor IoT Hub worden de eigenschappen DeviceInformation. Manufacturer en DeviceInformation. model gebruikt voor telemetrie en diagnostische gegevens. Zie dit [voor beeld](https://devicemodels.azure.com/dtmi/azure/devicemanagement/deviceinformation-1.json)voor meer informatie over de interface met informatie over apparaten.
 
-De verwachte onderdeel naam in uw model is **deviceInformation** wanneer u deze interface implementeert. [Meer informatie over Azure IoT PnP-onderdelen](https://docs.microsoft.com/azure/iot-pnp/concepts-components)
+De verwachte onderdeel naam in uw model is **deviceInformation** wanneer u deze interface implementeert. [Meer informatie over Azure IoT PnP-onderdelen](../iot-pnp/concepts-components.md)
 
 |Naam|Type|Schema|Richting|Beschrijving|Voorbeeld|
 |----|----|------|---------|-----------|-----------|
@@ -98,6 +98,6 @@ De verwachte onderdeel naam in uw model is **deviceInformation** wanneer u deze 
 
 ## <a name="model-id"></a>Model-id 
 
-Model-ID is hoe slimme apparaten hun mogelijkheden adverteren voor Azure IoT-toepassingen met IoT-Plug en Play.To meer informatie over het bouwen van smart-apparaten voor het adverteren van hun mogelijkheden voor Azure IoT-toepassingen vindt u de [ontwikkel handleiding voor IoT Plug en Play-apparaat](https://docs.microsoft.com/azure/iot-pnp/concepts-developer-guide-device-c).
+Model-ID is hoe slimme apparaten hun mogelijkheden adverteren voor Azure IoT-toepassingen met IoT-Plug en Play.To meer informatie over het bouwen van smart-apparaten voor het adverteren van hun mogelijkheden voor Azure IoT-toepassingen vindt u de [ontwikkel handleiding voor IoT Plug en Play-apparaat](../iot-pnp/concepts-developer-guide-device.md).
 
-Voor het bijwerken van apparaten voor IoT Hub moet de IoT-Plug en Play Smart Device een model-ID met de waarde **' dtmi: AzureDeviceUpdate; 1 '** aankondigen als onderdeel van de verbinding met het apparaat. [Meer informatie over het aankondigen van een model-id](https://docs.microsoft.com/azure/iot-pnp/concepts-developer-guide-device-c#model-id-announcement).
+Voor het bijwerken van apparaten voor IoT Hub moet de IoT-Plug en Play Smart Device een model-ID met de waarde **' dtmi: AzureDeviceUpdate; 1 '** aankondigen als onderdeel van de verbinding met het apparaat. [Meer informatie over het aankondigen van een model-id](../iot-pnp/concepts-developer-guide-device.md#model-id-announcement).

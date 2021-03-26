@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/17/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 6ab310681ae7b63cb4e9f4e07984983727ae5ff2
-ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
+ms.openlocfilehash: ea75b9c1e8c7a1a242406b5a7f73db1b05c70276
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "104953915"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105562202"
 ---
 # <a name="azure-security-baseline-for-automation"></a>Azure-beveiligings basislijn voor Automation
 
@@ -544,7 +544,7 @@ Bij het gebruik van Hybrid Runbook Workers worden de virtuele schijven op de vir
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: de [Security Bench Mark van Azure](/home/mbaldwin/docs/asb/azure-docs-pr/articles/governance/policy/samples/azure-security-benchmark.md) is het standaard beleids initiatief voor Security Center en is de basis voor de [aanbevelingen van Security Center](/home/mbaldwin/docs/asb/azure-docs-pr/articles/security-center/security-center-recommendations.md). De Azure Policy definities die aan dit besturings element zijn gerelateerd, worden automatisch door Security Center ingeschakeld. Voor waarschuwingen met betrekking tot dit besturings element is mogelijk een [Azure Defender](/home/mbaldwin/docs/asb/azure-docs-pr/articles/security-center/azure-defender.md) -plan vereist voor de gerelateerde services.
+**Azure Security Center bewaking**: de [Security Bench Mark van Azure](/azure/governance/policy/samples/azure-security-benchmark) is het standaard beleids initiatief voor Security Center en is de basis voor de [aanbevelingen van Security Center](/azure/security-center/security-center-recommendations). De Azure Policy definities die aan dit besturings element zijn gerelateerd, worden automatisch door Security Center ingeschakeld. Voor waarschuwingen met betrekking tot dit besturings element is mogelijk een [Azure Defender](/azure/security-center/azure-defender) -plan vereist voor de gerelateerde services.
 
 **Ingebouwde definities Azure Policy-micro soft. Automation**:
 
@@ -743,7 +743,7 @@ U kunt ook aanbevelingen van Azure Security Center gebruiken als een veilige con
 
 - [Wat zijn Azure Policy effecten?](../governance/policy/concepts/effects.md)
 
-- [Een Automation-account implementeren met behulp van een Azure Resource Manager sjabloon](/azure/automation/quickstart-create-account-template#deploy-the-template)
+- [Een Automation-account implementeren met behulp van een Azure Resource Manager sjabloon](/azure/automation/quickstart-create-automation-account-template)
 
 - [Azure Policy voor beeld van ingebouwde invoeg toepassingen voor Azure Automation](policy-reference.md)
 

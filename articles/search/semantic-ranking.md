@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/22/2021
-ms.openlocfilehash: c3a0a8bd5805757b92e3f5b046335c8883b4ba72
-ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
+ms.openlocfilehash: bf311eb2b2d0ff7a9c17380d2e384bc05c6f05f3
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104888920"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105562032"
 ---
 # <a name="semantic-ranking-in-azure-cognitive-search"></a>Semantische classificatie in azure Cognitive Search
 
@@ -24,32 +24,34 @@ Semantische classificatie is een uitbrei ding van de pijp lijn voor het uitvoere
 
 Semantische classificatie is zowel resource als tijd intensief. Voor het volt ooien van de verwerking binnen de verwachte latentie van een query bewerking, worden de invoer van de semantische rang orde geconsolideerd en beperkt zodat de onderliggende samenvattings-en herordenings stappen zo snel mogelijk kunnen worden voltooid.
 
-## <a name="preparation-for-semantic-ranking"></a>Voor bereiding voor semantische classificatie
+## <a name="pre-processing"></a>Vóór verwerking
 
-Voordat de score voor relevantie wordt genoteerd, moet de inhoud worden gereduceerd tot een aantal invoer waarden die efficiënt kunnen worden verwerkt door de semantische classificatie. Inhouds reductie omvat de volgende reeks stappen.
+Voordat de score voor relevantie wordt genoteerd, moet de inhoud worden gereduceerd tot een beheersbaar aantal ingangen dat efficiënt kan worden verwerkt door de semantische rangorde.
 
-1. Inhouds reductie begint met het gebruik van de oorspronkelijke resultatenset die wordt geretourneerd door het standaard [classificatie algoritme](index-ranking-similarity.md) voor het zoeken van overeenkomsten. Zoek resultaten kunnen Maxi maal 1.000 overeenkomsten omvatten, maar semantische classificatie verwerkt alleen de Top 50. 
+1. De eerste keer dat de inhoud wordt verkleind, begint de oorspronkelijke resultaten die worden geretourneerd door het standaard [classificatie algoritme](index-ranking-similarity.md) voor het vergelijken van de overeenkomst. Voor elke gewenste query kunnen de resultaten uit een aantal documenten bestaan, tot de maximum limiet van 1.000. Omdat de verwerking van een groot aantal overeenkomsten te lang duurt, wordt alleen de bovenste 50-voortgang naar de semantische classificatie genoteerd.
 
-   Op basis van de query kunnen initiële resultaten veel kleiner zijn dan 50, afhankelijk van het aantal treffers dat is gevonden. Ongeacht het aantal documenten, is de initiële resultatenset het document verzameling voor semantische classificatie.
+   Ongeacht het aantal documenten, of een van de twee of 50, wordt met de eerste resultatenset de eerste iteratie van het document verzameling voor semantische classificatie ingesteld.
 
-1. In de verzameling van het document wordt de inhoud van elk veld in ' searchFields ' geëxtraheerd en gecombineerd tot een lange teken reeks.
+1. Vervolgens wordt de inhoud van elk veld in ' searchFields ' geëxtraheerd en gecombineerd tot een lange teken reeks in de verzameling.
 
-1. Alle teken reeksen die buitensporig lang zijn, worden bijgesneden om ervoor te zorgen dat de totale lengte voldoet aan de invoer vereisten van de stap samen vatting. Daarom is het belang rijk om beknopte velden eerst in ' searchFields ' te plaatsen, zodat ze in de teken reeks zijn opgenomen. Als u zeer grote documenten met tekst zware velden hebt, hoeft u niets te doen nadat de maximum limiet is genegeerd.
+1. Na het samen voegen van de teken reeks worden alle teken reeksen die overmatig lang zijn, afgekapt om ervoor te zorgen dat de totale lengte voldoet aan de invoer vereisten van de stap samen vatting.
+
+   Daarom is het belang rijk om beknopte velden eerst in ' searchFields ' te plaatsen, zodat ze in de teken reeks zijn opgenomen. Als u zeer grote documenten met tekst zware velden hebt, hoeft u niets te doen nadat de maximum limiet is genegeerd.
 
 Elk document wordt nu vertegenwoordigd door één lange teken reeks.
 
 > [!NOTE]
-> Parameter invoer voor de modellen zijn tokens, geen tekens of woorden. Tokenisatie wordt bepaald door de analyse toewijzing voor Doorzoek bare velden. Voor inzichten in hoe teken reeksen worden getokend, kunt u de token uitvoer van een Analyzer controleren met behulp van de [test analyzer rest API](/rest/api/searchservice/test-analyzer).
+> De teken reeks bestaat uit tokens, geen tekens of woorden. Tokenisatie wordt bepaald door de analyse toewijzing voor Doorzoek bare velden. Als u gebruikmaakt van gespecialiseerde analyse, zoals nGram of EdgeNGram, kunt u dat veld het beste uitsluiten van searchFields. Voor inzichten in hoe teken reeksen worden getokend, kunt u de token uitvoer van een Analyzer controleren met behulp van de [test analyzer rest API](/rest/api/searchservice/test-analyzer).
 
-## <a name="summarization"></a>Samenvatting
+## <a name="extraction"></a>Extractie
 
-Na het verminderen van de teken reeks is het nu mogelijk om de gereduceerde invoer door te geven via machine Lees vaardigheid en taal weergave modellen om te bepalen welke zinnen en zinsdelen het document het beste samenvatten ten opzichte van de query.
+Na het verminderen van de teken reeks is het nu mogelijk om de gereduceerde invoer door te geven via machine Lees vaardigheid en taal weergave modellen om te bepalen welke zinnen en zinsdelen het document het beste samenvatten ten opzichte van de query. In deze fase wordt inhoud geëxtraheerd uit de teken reeks die naar de semantische rang orde gaat.
 
-Invoer voor samen vatting is de lange teken reeksen die voor elk document worden opgehaald in de voorbereidings fase. Vanuit een bepaalde invoer vindt het samenvattings model een door gang die het meest overeenkomt met het bijbehorende document. Deze passage vormt ook een [semantisch bijschrift](semantic-how-to-query-request.md) voor het document. Elk bijschrift is beschikbaar als tekst zonder opmaak, met hooglichten en is minder dan 200 woorden per document.
+Invoer voor samen vatting is de lange teken reeksen die voor elk document worden opgehaald in de voorbereidings fase. Vanuit elke teken reeks vindt u in het overzichts model een door gang die de meest representatief is. Deze passage vormt ook een [semantisch bijschrift](semantic-how-to-query-request.md) voor het document. Elk bijschrift is beschikbaar in een onbewerkte tekst versie en een markeerstift versie en is vaak minder dan 200 woorden per document.
 
 Er wordt ook een [semantisch antwoord](semantic-answers.md) gegeven als u de para meter ' antwoorden ' hebt opgegeven, als de query is opgenomen als een vraag en als er een passeren kan worden gevonden in de lange teken reeks die waarschijnlijk een antwoord op de vraag vormt.
 
-## <a name="scoring-and-ranking"></a>Score en rang schikking
+## <a name="semantic-ranking"></a>Semantische classificatie
 
 1. Bijschriften worden geëvalueerd op basis van conceptuele en semantische relevantie, ten opzichte van de opgegeven query.
 

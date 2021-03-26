@@ -10,12 +10,12 @@ ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
 zone_pivot_groups: acs-plat-azp-net
-ms.openlocfilehash: 91383ecba119959213804e0432f612c3f1ff636c
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.openlocfilehash: a1bdb1b8ac1f545933a92e78fd13b745606f1da3
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105110884"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105563771"
 ---
 # <a name="quickstart-create-and-manage-communication-services-resources"></a>Quickstart: Communication Services-resources maken en beheren
 
@@ -49,12 +49,25 @@ Nadat u naar uw communicatie Services-resource hebt genavigeerd, selecteert u **
 
 :::image type="content" source="./media/key.png" alt-text="Schermafbeelding van de sleutelpagina van de Communication Services.":::
 
-U hebt ook toegang tot belang rijke informatie met behulp van Azure CLI:
+U hebt ook toegang tot belang rijke informatie met behulp van Azure CLI, zoals uw resource groep of de sleutels voor een specifieke resource. 
 
+Installeer [Azure cli](https://docs.microsoft.com/cli/azure/install-azure-cli-windows?tabs=azure-cli) en gebruik de volgende opdracht om u aan te melden. U moet uw referenties opgeven om verbinding te maken met uw Azure-account.
+```azurecli
+az login
+```
+
+U hebt nu toegang tot belang rijke informatie over uw resources.
 ```azurecli
 az communication list --resource-group "<resourceGroup>"
 
 az communication list-key --name "<communicationName>" --resource-group "<resourceGroup>"
+```
+
+Als u een specifiek abonnement wilt selecteren, kunt u ook de vlag opgeven ```--subscription``` en de abonnements-id opgeven.
+```
+az communication list --resource-group  "resourceGroup>"  --subscription "<subscriptionID>"
+
+az communication list-key --name "<communicationName>" --resource-group "resourceGroup>" --subscription "<subscriptionID>"
 ```
 
 ## <a name="store-your-connection-string"></a>Uw verbindingsreeks bijwerken

@@ -6,12 +6,12 @@ ms.author: rajosh
 ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 06/09/2020
-ms.openlocfilehash: 0701ff53202d53131ceac8ceabb148fb5ff4f2b2
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.openlocfilehash: 629459d22b18b326307b45bb512d16622808b533
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105025149"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105562627"
 ---
 # <a name="discovery-assessment-and-dependency-analysis---common-questions"></a>Detectie, beoordeling en afhankelijkheids analyse-Veelgestelde vragen
 
@@ -143,7 +143,7 @@ Als uw exemplaar gereed is voor zowel Azure SQL DB als Azure SQL MI, raden we he
 Dit kan gebeuren wanneer het gekozen type doelimplementatie in de evaluatie-eigenschappen **Aanbevolen** is, en het SQL-exemplaar niet gereed is voor Azure SQL Database en Azure SQL Managed Instance. De gebruiker wordt aanbevolen om een evaluatie in Azure Migrate te maken met het evaluatietype **Azure VM**, om te bepalen of de server waarop het exemplaar wordt uitgevoerd, gereed is voor migratie naar een Azure VM.
 De gebruiker wordt aanbevolen een evaluatie te maken in Azure Migrate met een evaluatie type als **Azure VM** om te bepalen of de server waarop het exemplaar wordt uitgevoerd, gereed is om te migreren naar een virtuele machine van Azure:
 - Azure VM-evaluaties in Azure Migrate worden momenteel weer gegeven als een Shift-toets en beschouwt niet de specifieke prestatie gegevens voor het uitvoeren van SQL-instanties en data bases op de virtuele machine van Azure. 
-- Wanneer u een Azure VM-evaluatie uitvoert op een server, gelden de aanbevolen grootte en kostenramingen voor alle exemplaren die op de server worden uitgevoerd, en kunnen worden gemigreerd naar een Azure VM via het hulpprogramma voor servermigratie. Voordat u migreert, [raadpleegt u de richtlijnen voor prestaties](https://docs.microsoft.com/azure/azure-sql/virtual-machines/windows/performance-guidelines-best-practices) voor SQL Server op virtuele Azure-machines.
+- Wanneer u een Azure VM-evaluatie uitvoert op een server, gelden de aanbevolen grootte en kostenramingen voor alle exemplaren die op de server worden uitgevoerd, en kunnen worden gemigreerd naar een Azure VM via het hulpprogramma voor servermigratie. Voordat u migreert, [raadpleegt u de richtlijnen voor prestaties](../azure-sql/virtual-machines/windows/performance-guidelines-best-practices.md) voor SQL Server op virtuele Azure-machines.
 
 ## <a name="i-cant-see-some-databases-in-my-assessment-even-though-the-instance-is-part-of-the-assessment"></a>Ik zie sommige databases niet in mijn evaluatie, ongeacht het feit dat het exemplaar wel onderdeel uitmaakt van de evaluatie
 
@@ -151,7 +151,7 @@ De Azure SQL-evaluatie bevat alleen databases die een onlinestatus hebben. Als d
 
 ## <a name="i-want-to-compare-costs-for-running-my-sql-instances-on-azure-vm-vs-azure-sql-databaseazure-sql-managed-instance"></a>Ik wil de kosten voor het uitvoeren van mijn SQL-exemplaren op Azure VM versus Azure SQL Database/Azure SQL Managed instance vergelijken
 
-U kunt een evaluatie met het type **Azure VM** maken in dezelfde groep die is gebruikt voor uw **Azure SQL**-evaluatie. Vervolgens kunt u de twee rapporten naast elkaar leggen en ze vergelijken. Let op: Azure VM-evaluaties in Azure Migrate zijn momenteel gefocust op lift-and-shift, en de specifieke metrische prestatiegegevens voor de uitvoering van SQL-exemplaren en -databases worden niet in overweging genomen op de virtuele Azure-machine. Wanneer u een Azure VM-evaluatie uitvoert op een server, gelden de aanbevolen grootte en kostenramingen voor alle exemplaren die op de server worden uitgevoerd, en kunnen worden gemigreerd naar een Azure VM via het hulpprogramma voor servermigratie. Voordat u migreert, [raadpleegt u de richtlijnen voor prestaties](https://docs.microsoft.com/azure/azure-sql/virtual-machines/windows/performance-guidelines-best-practices) voor SQL Server op virtuele Azure-machines.
+U kunt een evaluatie met het type **Azure VM** maken in dezelfde groep die is gebruikt voor uw **Azure SQL**-evaluatie. Vervolgens kunt u de twee rapporten naast elkaar leggen en ze vergelijken. Let op: Azure VM-evaluaties in Azure Migrate zijn momenteel gefocust op lift-and-shift, en de specifieke metrische prestatiegegevens voor de uitvoering van SQL-exemplaren en -databases worden niet in overweging genomen op de virtuele Azure-machine. Wanneer u een Azure VM-evaluatie uitvoert op een server, gelden de aanbevolen grootte en kostenramingen voor alle exemplaren die op de server worden uitgevoerd, en kunnen worden gemigreerd naar een Azure VM via het hulpprogramma voor servermigratie. Voordat u migreert, [raadpleegt u de richtlijnen voor prestaties](../azure-sql/virtual-machines/windows/performance-guidelines-best-practices.md) voor SQL Server op virtuele Azure-machines.
 
 ## <a name="the-storage-cost-in-my-azure-sql-assessment-is-zero"></a>De opslag kosten in mijn Azure SQL-evaluatie zijn nul
 Voor Azure SQL Managed instance zijn er geen opslag kosten toegevoegd voor de eerste 32 GB/exemplaar/maand opslag en worden extra opslag kosten toegevoegd voor opslag in 32 GB. [Meer informatie](https://azure.microsoft.com/pricing/details/azure-sql/sql-managed-instance/single/)

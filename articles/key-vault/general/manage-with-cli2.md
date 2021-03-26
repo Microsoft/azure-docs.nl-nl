@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.date: 08/12/2019
 ms.author: mbaldwin
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: cb7e047d998342125a52af5ea3ae1e88fe88d313
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: c084df60fa2293a614726be44669a1465b399d2c
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "93289891"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105557204"
 ---
 # <a name="manage-key-vault-using-the-azure-cli"></a>Key Vault beheren met behulp van de Azure CLI 
 
@@ -147,7 +147,7 @@ Als u een bestaande sleutel hebt in een PEM-bestand, kunt u deze uploaden naar A
 az keyvault key import --vault-name "ContosoKeyVault" --name "ContosoFirstKey" --pem-file "./softkey.pem" --pem-password "hVFkk965BuUv" --protection software
 ```
 
-U kunt nu de URI van de sleutel gebruiken om te verwijzen naar de sleutel die u hebt gemaakt of geüpload naar Azure Key Vault. Gebruik **https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey** om altijd de meest recente versie op te halen. Gebruik https://[keyvault-name].vault.azure.net/keys/[keyname]/[key-unique-id] om deze specifieke versie op te halen. Bijvoorbeeld **https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey/cgacf4f763ar42ffb0a1gca546aygd87** . 
+U kunt nu de URI van de sleutel gebruiken om te verwijzen naar de sleutel die u hebt gemaakt of geüpload naar Azure Key Vault. Gebruik `https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey` om altijd de meest recente versie op te halen. Gebruik https://[keyvault-name].vault.azure.net/keys/[keyname]/[key-unique-id] om deze specifieke versie op te halen. Bijvoorbeeld `https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey/cgacf4f763ar42ffb0a1gca546aygd87`. 
 
 Voeg een geheim toe aan de kluis, wat een wachtwoord is met de naam SQLPassword, en die de waarde hVFkk965BuUv heeft voor Azure-sleutelkluizen. 
 

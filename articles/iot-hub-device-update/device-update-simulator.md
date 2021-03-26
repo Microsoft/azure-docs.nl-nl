@@ -6,12 +6,12 @@ ms.author: valls
 ms.date: 2/11/2021
 ms.topic: tutorial
 ms.service: iot-hub-device-update
-ms.openlocfilehash: 4740bf02c33314dd7c887356f2ef1ed12bea44cf
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 8b2a8ae76c79e4d3ff151334defe7f966c60f032
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102443808"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105559244"
 ---
 # <a name="device-update-for-azure-iot-hub-tutorial-using-the-ubuntu-1804-x64-simulator-reference-agent"></a>Zelf studie over het bijwerken van apparaten voor Azure IoT Hub met behulp van de Ubuntu (18,04 x64) Simulator-referentie agent
 
@@ -30,10 +30,8 @@ In deze zelfstudie leert u het volgende:
 > * Een update voor een installatie kopie implementeren
 > * De update-implementatie controleren
 
-Als u nog geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
-
 ## <a name="prerequisites"></a>Vereisten
-* Toegang tot een IoT Hub. U wordt aangeraden een S1-laag (Standard) of hoger te gebruiken.
+* Als u dit nog niet hebt gedaan, maakt u een [Update account en-exemplaar](create-device-update-account.md)voor het apparaat, met inbegrip van het configureren van een IOT hub.
 
 ### <a name="download-and-install"></a>Downloaden en installeren
 

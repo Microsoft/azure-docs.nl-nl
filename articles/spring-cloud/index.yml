@@ -11,71 +11,71 @@ metadata:
   author: bmitchell287
   ms.author: brendm
   ms.date: 09/26/2019
-  ms.openlocfilehash: 7598345ca1d687b8148b41454077ab5fca91e8f1
-  ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
-  ms.translationtype: HT
+  ms.openlocfilehash: ce74f1020a064b558c647bad488ba0efa8be7620
+  ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+  ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 12/09/2020
-  ms.locfileid: "96903944"
+  ms.lasthandoff: 03/23/2021
+  ms.locfileid: "104869069"
 landingContent:
 - title: Over Azure Spring Cloud
   linkLists:
   - linkListType: overview
     links:
     - text: Wat is Azure Spring Cloud?
-      url: spring-cloud-overview.md
+      url: overview.md
     - text: Informatie over quota en limieten voor Azure Spring Cloud
-      url: spring-cloud-quotas.md
+      url: quotas.md
 - title: Aan de slag
   linkLists:
   - linkListType: quickstart
     links:
     - text: Snelstart - Uw eerste Azure Spring Cloud-toepassing implementeren
-      url: spring-cloud-quickstart.md
+      url: quickstart.md
     - text: Inleiding tot de voorbeeld-app PiggyMetrics
-      url: spring-cloud-quickstart-sample-app-introduction.md
+      url: quickstart-sample-app-introduction.md
   - linkListType: tutorial
     links:
     - text: Een Spring- of Steeltoe-app voorbereiden voor implementatie
-      url: spring-cloud-tutorial-prepare-app-deployment.md
+      url: how-to-prepare-app-deployment.md
 - title: Uw service configureren
   linkLists:
   - linkListType: tutorial
     links:
     - text: Configuratie van uw toepassing onderhouden met een configuratieserver
-      url: spring-cloud-tutorial-config-server.md
+      url: how-to-config-server.md
     - text: Schaal van uw toepassing handmatig aanpassen
-      url: spring-cloud-tutorial-scale-manual.md
+      url: how-to-scale-manual.md
   - linkListType: how-to-guide
     links:
     - text: Uw CI/CD-pijplijn automatiseren in Azure Spring Cloud
-      url: spring-cloud-howto-cicd.md
+      url: how-to-cicd.md
     - text: Blauwgroene implementaties inschakelen met Azure Spring Cloud
-      url: spring-cloud-howto-staging-environment.md
+      url: how-to-staging-environment.md
     - text: Permanente opslag gebruiken in Azure Spring Cloud
-      url: spring-cloud-howto-persistent-storage.md
+      url: how-to-persistent-storage.md
 - title: Uw toepassing controleren
   linkLists:
   - linkListType: tutorial
     links:
     - text: Uw toepassing controleren met behulp van gedistribueerde tracering en App Insights
-      url: spring-cloud-tutorial-distributed-tracing.md
+      url: how-to-distributed-tracing.md
     - text: Diagnoseservices inschakelen voor uw Java Spring-toepassing
       url: diagnostic-services.md
   - linkListType: concept
     links:
     - text: Informatie over metrische gegevens van Azure Monitor voor Spring Cloud
-      url: spring-cloud-concept-metrics.md
+      url: concept-metrics.md
 - title: Verbinden met andere services
   linkLists:
   - linkListType: tutorial
     links:
     - text: Uw toepassing verbinden met Azure-cache voor Redis
-      url: spring-cloud-tutorial-bind-redis.md
+      url: how-to-bind-redis.md
     - text: Uw toepassing verbinden met een Azure MySQL-database
-      url: spring-cloud-tutorial-bind-mysql.md
+      url: how-to-bind-mysql.md
     - text: Uw toepassing verbinden met Azure CosmosDB
-      url: spring-cloud-tutorial-bind-cosmos.md
+      url: how-to-bind-cosmos.md
 - title: API-verwijzing
   linkLists:
   - linkListType: reference

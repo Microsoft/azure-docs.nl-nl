@@ -9,12 +9,12 @@ ms.author: chpalm
 ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: b7d992961fc165ce643bd0d6aba4d8a9bda1d38e
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 8b641ec37d134303ae6b31c092cd3c50811477a7
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103495586"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105108414"
 ---
 # <a name="teams-interoperability"></a>Interoperabiliteit met Teams
 
@@ -29,7 +29,7 @@ Met de interoperabiliteit van teams kunt u aangepaste toepassingen maken waarmee
 1. Vergaderings gegevens worden gedeeld met externe gebruikers via uw aangepaste toepassing.
    * **Graph API gebruiken** Uw aangepaste communicatie Services-toepassing maakt gebruik van de Microsoft Graph-Api's om toegang te krijgen tot de vergaderings gegevens die moeten worden gedeeld. 
    * **Andere opties gebruiken** Uw Vergader koppeling kan bijvoorbeeld worden gekopieerd uit uw agenda in micro soft teams.
-1. Externe gebruikers gebruiken uw aangepaste toepassing om deel te nemen aan de team vergadering (via de communicatie Services-client bibliotheken en chatten)
+1. Externe gebruikers gebruiken uw aangepaste toepassing om deel te nemen aan de team vergadering (via de communicatie Services en de chat-Sdk's)
 
 De architectuur op hoog niveau voor deze gebruikers-case ziet er als volgt uit: 
 
@@ -37,7 +37,7 @@ De architectuur op hoog niveau voor deze gebruikers-case ziet er als volgt uit:
 
 Hoewel bepaalde teams functies als verhoogde hand, samen modus en groepen alleen beschikbaar zijn voor teams gebruikers, heeft uw aangepaste toepassing toegang tot de kern functionaliteit van audio, video, chatten en scherm delen van de vergadering. De chat functie voor vergaderingen is toegankelijk voor uw aangepaste toepassings gebruiker terwijl deze wordt aangeroepen. Het is niet mogelijk om berichten te verzenden of te ontvangen voordat u deelneemt of nadat u de oproep hebt verlaten. 
 
-Wanneer een Communication Services-gebruiker deelneemt aan de Teams-vergadering, wordt de weergavenaam die via de Aanroepende clientbibliotheek wordt verschaft, weergegeven voor Teams-gebruikers. De Communication Services-gebruiker wordt anders behandeld als een anonieme gebruiker in Teams.  Uw aangepaste toepassing moet rekening houden met gebruikersverificatie en andere veiligheidsmaatregelen om Teams vergaderingen te beveiligen. Houd rekening met de beveiligingsimplicaties van het deel laten nemen van anonieme gebruikers aan vergaderingen, en gebruik de [Beveiligingshandleiding van Teams](/microsoftteams/teams-security-guide#addressing-threats-to-teams-meetings) om de mogelijkheden te configureren die beschikbaar zijn voor anonieme gebruikers.
+Wanneer een communicatie Services-gebruiker deelneemt aan de vergadering van de teams, wordt de weergave naam die via de aanroepende SDK is verschaft, weer gegeven voor teams gebruikers. De Communication Services-gebruiker wordt anders behandeld als een anonieme gebruiker in Teams.  Uw aangepaste toepassing moet rekening houden met gebruikersverificatie en andere veiligheidsmaatregelen om Teams vergaderingen te beveiligen. Houd rekening met de beveiligingsimplicaties van het deel laten nemen van anonieme gebruikers aan vergaderingen, en gebruik de [Beveiligingshandleiding van Teams](/microsoftteams/teams-security-guide#addressing-threats-to-teams-meetings) om de mogelijkheden te configureren die beschikbaar zijn voor anonieme gebruikers.
 
 Communication Services teams Interop bevindt zich momenteel in een persoonlijke preview. Wanneer het algemeen beschikbaar is, worden communicatie Services-gebruikers behandeld als gebruikers van externe toegang. Meer informatie over externe toegang in [gesprek, chat en samen werking met mensen buiten uw organisatie in micro soft teams](/microsoftteams/communicate-with-users-from-other-organizations).
 

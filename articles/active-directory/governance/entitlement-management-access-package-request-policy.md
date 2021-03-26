@@ -16,12 +16,12 @@ ms.date: 09/16/2020
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7b6bc00af8d54c8748dd82b934974282e0e8da0e
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 87792b8469c78e20a8716bd925d71933f9d97c5e
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102426957"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105560485"
 ---
 # <a name="change-request-settings-for-an-access-package-in-azure-ad-entitlement-management"></a>Instellingen voor wijzigings aanvragen voor een toegangs pakket in azure AD-rechts beheer
 
@@ -85,7 +85,7 @@ Volg deze stappen als u wilt toestaan dat gebruikers in uw directory dit toegang
 
 1. Selecteer één van de volgende opties:
 
-    |  |  |
+    |  | Description |
     | --- | --- |
     | **Specifieke gebruikers en groepen** | Kies deze optie als u wilt dat alleen de gebruikers en groepen in uw directory die u opgeeft, dit toegangs pakket kunnen aanvragen. |
     | **Alle leden (exclusief gasten)** | Kies deze optie als u wilt dat alle gebruikers in uw directory dit toegangs pakket kunnen aanvragen. Deze optie bevat geen gast gebruikers die u mogelijk hebt uitgenodigd voor uw Directory. |
@@ -122,7 +122,7 @@ Volg deze stappen als u wilt toestaan dat gebruikers die geen toegang hebben tot
 
 1. Selecteer één van de volgende opties:
 
-    |  |  |
+    |  | Description |
     | --- | --- |
     | **Specifieke verbonden organisaties** | Kies deze optie als u een selectie wilt selecteren in een lijst met organisaties die de beheerder eerder heeft toegevoegd. Alle gebruikers van de geselecteerde organisaties kunnen dit toegangs pakket aanvragen. |
     | **Alle geconfigureerde verbonden organisaties** | Kies deze optie als alle gebruikers van alle geconfigureerde verbonden organisaties dit toegangs pakket kunnen aanvragen. Alleen gebruikers van geconfigureerde verbonden organisaties kunnen toegangs pakketten aanvragen die worden weer gegeven voor gebruikers van alle geconfigureerde organisaties. |

@@ -13,12 +13,12 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: sstein
 ms.date: 03/23/2020
-ms.openlocfilehash: d03bce1566d4f56a576c980723571f587296236f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 6383c0fa3aad15da8abaea79136a75732ce9ea01
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96452428"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105605753"
 ---
 # <a name="authorize-database-access-to-sql-database-sql-managed-instance-and-azure-synapse-analytics"></a>Databasetoegang verlenen tot SQL Database, SQL Managed Instance, en Azure Synapse Analytics
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -142,7 +142,7 @@ Nadat u een gebruikers account in een Data Base hebt gemaakt, op basis van een a
   - Een gebruiker toevoegen aan een vaste databaserol:
 
     - Gebruik in Azure SQL Database de instructie [ALTER Role](/sql/t-sql/statements/alter-role-transact-sql) . Zie voor voor beelden [ALTER Role-voor beelden](/sql/t-sql/statements/alter-role-transact-sql#examples)
-    - Gebruik de [sp_addrolemember](/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql) -instructie om Azure Synapse te gebruiken. Zie [sp_addrolemember](/sql/t-sql/statements/alter-role-transact-sql)-voor beelden voor voor beelden.
+    - Gebruik de [sp_addrolemember](/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql) -instructie om Azure Synapse te gebruiken. Zie [sp_addrolemember](/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql#examples)-voor beelden voor voor beelden.
 
 - **Aangepaste databaserol**
 

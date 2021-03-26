@@ -2,21 +2,22 @@
 title: Taken uitvoeren onder gebruikers accounts
 description: Meer informatie over de typen gebruikers accounts en hoe u deze kunt configureren.
 ms.topic: how-to
-ms.date: 08/20/2020
+ms.date: 03/25/2021
 ms.custom: seodec18
-ms.openlocfilehash: cce374e7d7ffb513bed882b048ea54bcbad81b0b
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: b19e0c10834b3c5215d14c6c5ae20caaacb4bc64
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "88719356"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105606603"
 ---
 # <a name="run-tasks-under-user-accounts-in-batch"></a>Taken uitvoeren onder gebruikers accounts in batch
 
 > [!NOTE]
 > De gebruikers accounts die in dit artikel worden besproken, verschillen van gebruikers accounts die worden gebruikt voor Remote Desktop Protocol (RDP) of Secure Shell (SSH) om veiligheids redenen.
 >
-> Zie [extern bureaublad gebruiken voor een Linux-vm in azure](../virtual-machines/linux/use-remote-desktop.md)om verbinding te maken met een knoop punt met de configuratie van de virtuele Linux-machine via SSH. Zie [verbinding maken met een virtuele machine van Windows Server](../virtual-machines/windows/connect-logon.md)om verbinding te maken met knoop punten met Windows via RDP.<br /><br />
+> Zie [xrdp installeren en configureren om extern bureaublad met Ubuntu te gebruiken](../virtual-machines/linux/use-remote-desktop.md)om verbinding te maken met een knoop punt met de configuratie van de virtuele Linux-machine via SSH. Zie [verbinding maken en aanmelden bij een virtuele Azure-machine met Windows](../virtual-machines/windows/connect-logon.md)om verbinding te maken met knoop punten met Windows via RDP.
+>
 > Zie [verbinding met extern bureaublad inschakelen voor een rol in Azure Cloud Services](../cloud-services/cloud-services-role-enable-remote-desktop-new-portal.md)om verbinding te maken met een knoop punt met de Cloud service configuratie via RDP.
 
 Een taak in Azure Batch altijd onder een gebruikers account wordt uitgevoerd. Taken worden standaard uitgevoerd onder standaard gebruikers accounts, zonder beheerders machtigingen. Voor bepaalde scenario's kunt u het gebruikers account waaronder u een taak wilt uitvoeren, configureren. In dit artikel worden de typen gebruikers accounts beschreven en wordt uitgelegd hoe u deze kunt configureren voor uw scenario.
@@ -30,7 +31,7 @@ Azure Batch biedt twee typen gebruikers accounts voor het uitvoeren van taken:
 - **Een benoemde gebruikers account.** U kunt een of meer benoemde gebruikers accounts voor een pool opgeven wanneer u de groep maakt. Elk gebruikers account wordt gemaakt op elk knoop punt van de groep. Naast de account naam geeft u het wacht woord voor het gebruikers account, het verhogings niveau en, voor Linux-Pools, de persoonlijke SSH-sleutel op. Wanneer u een taak toevoegt, kunt u het benoemde gebruikers account opgeven waaronder die taak moet worden uitgevoerd.
 
 > [!IMPORTANT]
-> De batch-Service versie 2017 -01-01.4.0 introduceert een belang rijke wijziging die vereist dat u uw code bijwerkt om die versie aan te roepen. Als u code migreert vanuit een oudere versie van batch, moet u er rekening mee houden dat de eigenschap **runElevated** niet meer wordt ondersteund in de client bibliotheken van rest API of batch. Gebruik de nieuwe eigenschap **userIdentity** van een taak om het verhogings niveau op te geven. Zie [uw code bijwerken in de nieuwste batch-client bibliotheek](#update-your-code-to-the-latest-batch-client-library) voor snelle richt lijnen voor het bijwerken van uw batch-code als u een van de client bibliotheken gebruikt.
+> De batch-Service versie 2017 -01-01.4.0 heeft een belang rijke wijziging geïntroduceerd waarbij uw code moet worden bijgewerkt om die versie of later te kunnen aanroepen. Zie [uw code bijwerken in de nieuwste batch-client bibliotheek](#update-your-code-to-the-latest-batch-client-library) voor snelle richt lijnen voor het bijwerken van de batch code van een oudere versie.
 
 ## <a name="user-account-access-to-files-and-directories"></a>Gebruikers account toegang tot bestanden en mappen
 
@@ -77,6 +78,7 @@ De volgende code fragmenten laten zien hoe de automatische gebruikers specificat
 ```csharp
 task.UserIdentity = new UserIdentity(new AutoUserSpecification(elevationLevel: ElevationLevel.Admin, scope: AutoUserScope.Task));
 ```
+
 #### <a name="batch-java"></a>Batch Java
 
 ```java
@@ -278,7 +280,7 @@ task.UserIdentity = new UserIdentity(AdminUserAccountName);
 
 ## <a name="update-your-code-to-the-latest-batch-client-library"></a>Uw code bijwerken naar de laatste batch-client bibliotheek
 
-De batch-Service versie 2017 -01-01.4.0 introduceert een belang rijke wijziging, waarbij de eigenschap **runElevated** die in eerdere versies beschikbaar is, wordt vervangen door de eigenschap **userIdentity** . De volgende tabellen bevatten een eenvoudige toewijzing die u kunt gebruiken om uw code bij te werken uit eerdere versies van de client bibliotheken.
+Met de batch-Service versie 2017 -01-01.4.0 werd een belang rijke wijziging geïntroduceerd, waarbij de eigenschap **runElevated** die in eerdere versies beschikbaar is, wordt vervangen door de eigenschap **userIdentity** . De volgende tabellen bevatten een eenvoudige toewijzing die u kunt gebruiken om uw code bij te werken uit eerdere versies van de client bibliotheken.
 
 ### <a name="batch-net"></a>Batch .NET
 

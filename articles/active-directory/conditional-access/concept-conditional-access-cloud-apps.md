@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8ff9fe969c90a2bb4aa9f954b984f511fb490ba3
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 8c8024a2083d09fcbd53a37f0d391c4589748eea
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104579141"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105605073"
 ---
 # <a name="conditional-access-cloud-apps-or-actions"></a>Voorwaardelijke toegang: Cloud-apps of-acties
 
@@ -31,7 +31,7 @@ Cloud-apps of-acties zijn een belang rijk signaal in een beleid voor voorwaardel
 
 Veel van de bestaande micro soft-Cloud toepassingen zijn opgenomen in de lijst met toepassingen waaruit u kunt kiezen. 
 
-Beheerders kunnen een beleid voor voorwaardelijke toegang toewijzen aan de volgende Cloud-apps van micro soft. Sommige apps, zoals Office 365 en Microsoft Azure beheer, bevatten meerdere verwante onderliggende apps of services. De volgende lijst is niet limitatief en kan worden gewijzigd.
+Beheerders kunnen een beleid voor voorwaardelijke toegang toewijzen aan de volgende Cloud-apps van micro soft. Sommige apps, zoals Office 365 en Microsoft Azure beheer, bevatten meerdere verwante onderliggende apps of services. We voegen voortdurend meer apps toe, dus de volgende lijst is niet limitatief en kan worden gewijzigd.
 
 - [Office 365](#office-365)
 - Azure Analysis Services
@@ -61,11 +61,13 @@ Beheerders kunnen een beleid voor voorwaardelijke toegang toewijzen aan de volge
 - Office Delve
 - Office Sway
 - Outlook-groepen
-- Power BI Service
+- Power BI-service
 - Project Online
 - Skype voor Bedrijven Online
 - Virtueel particulier netwerk (VPN)
 - Windows Defender ATP
+
+Toepassingen die beschikbaar zijn voor voorwaardelijke toegang, hebben een onboarding-en validatie proces. Dit geldt niet voor alle micro soft-apps, net als bij back-endservers en niet op de bedoeling dat beleid rechtstreeks op deze services wordt toegepast. Als u zoekt naar een toepassing die ontbreekt, kunt u contact opnemen met het specifieke toepassings team of een aanvraag indienen op [UserVoice](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=167259).
 
 ### <a name="office-365"></a>Office 365
 

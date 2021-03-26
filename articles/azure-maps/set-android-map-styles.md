@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 zone_pivot_groups: azure-maps-android
-ms.openlocfilehash: aef8fbacf8302fb5dd4b5fe28afc615c6bf56090
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 9dcb5b84faa47b7307ce8441003e8591d7c2757b
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102100981"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105604784"
 ---
 # <a name="set-map-style-android-sdk"></a>Kaart stijl instellen (Android SDK)
 
@@ -83,7 +83,7 @@ Op de volgende scherm afbeelding ziet u de bovenstaande code die een kaart met d
 
 ## <a name="setting-the-map-camera"></a>De kaart camera instellen
 
-De kaart camera bepaalt welk deel van de kaart wordt weer gegeven in de kaart. De camera kan worden geprogrammeerd in de indeling van code. Wanneer u deze in code instelt, zijn er twee hoofd methoden voor het instellen van de positie van de kaart. centreren en zoomen gebruiken of in een selectie kader door geven. De volgende code laat zien hoe u alle optionele camera opties kunt instellen wanneer u `center` en gebruikt `zoom` .
+De kaart camera bepaalt welk deel van de wereld wordt weer gegeven in de kaart-View Port. De camera kan worden geprogrammeerd in de indeling van code. Wanneer u deze in code instelt, zijn er twee hoofd methoden voor het instellen van de positie van de kaart. centreren en zoomen gebruiken of in een selectie kader door geven. De volgende code laat zien hoe u alle optionele camera opties kunt instellen wanneer u `center` en gebruikt `zoom` .
 
 ::: zone pivot="programming-language-java-android"
 
@@ -104,7 +104,7 @@ map.setCamera(
     //The minimum zoom level the map will zoom-out to when animating from one location to another on the map.
     minZoom(10),
     
-    //The maximium zoom level the map will zoom-in to when animating from one location to another on the map.
+    //The maximum zoom level the map will zoom-in to when animating from one location to another on the map.
     maxZoom(14)
 );
 ```
@@ -130,7 +130,7 @@ map.setCamera(
     //The minimum zoom level the map will zoom-out to when animating from one location to another on the map.
     minZoom(10),
     
-    //The maximium zoom level the map will zoom-in to when animating from one location to another on the map.
+    //The maximum zoom level the map will zoom-in to when animating from one location to another on the map.
     maxZoom(14)
 )
 ```
@@ -162,7 +162,7 @@ map.setCamera(
     //Amount of pixel buffer around the bounding box to provide extra space around the bounding box.
     padding(20),
 
-    //The maximium zoom level the map will zoom-in to when animating from one location to another on the map.
+    //The maximum zoom level the map will zoom-in to when animating from one location to another on the map.
     maxZoom(14)
 );
 ```
@@ -192,14 +192,14 @@ map.setCamera(
     //Amount of pixel buffer around the bounding box to provide extra space around the bounding box.
     padding(20),
 
-    //The maximium zoom level the map will zoom-in to when animating from one location to another on the map.
+    //The maximum zoom level the map will zoom-in to when animating from one location to another on the map.
     maxZoom(14)
 )
 ```
 
 ::: zone-end
 
-Houd er rekening mee dat de hoogte-breedte verhouding van een selectie vakje mogelijk niet gelijk is aan de hoogte-breedte verhouding van de kaart, omdat de kaart vaak het volledige begrenzingsvak van het vak weergeeft, maar meestal alleen nauw keurig verticaal of horizon taal is.
+De hoogte-breedte verhouding van een selectie kader kan niet gelijk zijn aan de hoogte-breedte verhouding van de kaart, omdat de kaart vaak het volledige begrenzingsvak van het vak weergeeft, maar meestal alleen nauw keurig verticaal of horizon taal is.
 
 ## <a name="next-steps"></a>Volgende stappen
 

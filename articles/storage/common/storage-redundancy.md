@@ -6,15 +6,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 03/02/2021
+ms.date: 03/05/2021
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 7ecf3d23f745d9281008433eee471c14c7afe337
-ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
+ms.openlocfilehash: d01e125ef3e905191d76c9f4888e790958211dff
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104802196"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105607317"
 ---
 # <a name="azure-storage-redundancy"></a>Azure Storage-redundantie
 
@@ -73,9 +73,9 @@ In de volgende tabel ziet u welke typen opslag accounts ZRS ondersteunen in welk
 
 | Type opslagaccount | Ondersteunde regio’s | Ondersteunde services |
 |--|--|--|
-| Algemeen gebruik v2<sup>1</sup> | Azië - zuidoost<br /> Australië - oost<br /> Europa - noord<br />  Europa - west<br /> Frankrijk - centraal<br /> Japan - oost<br /> Zuid-Afrika - noord<br /> Verenigd Koninkrijk Zuid<br /> US - centraal<br /> US - oost<br /> US - oost 2<br /> US - west 2 | Blok-blobs<br /> Pagina-blobs<sup>2</sup><br /> Bestands shares (standaard)<br /> Tables<br /> Wachtrijen<br /> |
-| BlockBlobStorage<sup>1</sup> | Azië - zuidoost<br /> Australië - oost<br /> Europa - noord<br /> Europa - west<br /> Frankrijk - centraal <br /> Japan East<br /> Verenigd Koninkrijk Zuid <br /> US - oost <br /> US - oost 2 <br /> US - west 2| Alleen Premium-blok-blobs |
-| FileStorage | Azië - zuidoost<br /> Australië - oost<br /> Europa - noord<br /> Europa - west<br /> Frankrijk - centraal <br /> Japan East<br /> Verenigd Koninkrijk Zuid <br /> US - oost <br /> US - oost 2 <br /> US - west 2 | Premium-bestanden alleen shares |
+| Algemeen gebruik v2<sup>1</sup> | Africa Zuid-Afrika - noord<br /> (Azië en Stille Oceaan) Azië - oost<br /> (Azië en Stille Oceaan) Zuidoost-Azië<br /> (Azië en Stille Oceaan) Australië - oost<br /> (Azië en Stille Oceaan) Centraal-India<br /> (Azië en Stille Oceaan) Japan - oost<br /> (Azië en Stille Oceaan) Korea - centraal<br /> Benelux Canada - centraal<br /> Europa Europa - noord<br /> Europa Europa - west<br /> Europa Frankrijk - centraal<br /> Europa Duitsland - west-centraal<br /> Europa Noor wegen-Oost<br /> Europa Zwitserland - noord<br /> Europa UK - zuid<br /> (Midden-Oosten) UAE - noord<br /> (Zuid-Amerika) Brazilië - zuid<br /> VS VS-Centraal<br /> (US) US - oost<br /> VS VS-Oost 2<br /> (VS) VS - noord-centraal<br />VS VS Zuid-Centraal<br /> VS VS-West<br /> VS VS-West 2 | Blok-blobs<br /> Pagina-blobs<sup>2</sup><br /> Bestands shares (standaard)<br /> Tables<br /> Wachtrijen<br /> |
+| BlockBlobStorage<sup>1</sup> | Africa Zuid-Afrika - noord<br /> (Azië en Stille Oceaan) Azië - oost<br /> (Azië en Stille Oceaan) Zuidoost-Azië<br /> (Azië en Stille Oceaan) Australië - oost<br /> (Azië en Stille Oceaan) Centraal-India<br /> (Azië en Stille Oceaan) Japan - oost<br /> (Azië en Stille Oceaan) Korea - centraal<br /> Benelux Canada - centraal<br /> Europa Europa - noord<br /> Europa Europa - west<br /> Europa Frankrijk - centraal<br /> Europa Duitsland - west-centraal<br /> Europa Noor wegen-Oost<br /> Europa Zwitserland - noord<br /> Europa UK - zuid<br /> (Midden-Oosten) UAE - noord<br /> (Zuid-Amerika) Brazilië - zuid<br /> VS VS-Centraal<br /> (US) US - oost<br /> VS VS-Oost 2<br /> (VS) VS - noord-centraal<br />VS VS Zuid-Centraal<br /> VS VS-West<br /> VS VS-West 2 | Alleen Premium-blok-blobs |
+| FileStorage | Africa Zuid-Afrika - noord<br /> (Azië en Stille Oceaan) Azië - oost<br /> (Azië en Stille Oceaan) Zuidoost-Azië<br /> (Azië en Stille Oceaan) Australië - oost<br /> (Azië en Stille Oceaan) Centraal-India<br /> (Azië en Stille Oceaan) Japan - oost<br /> (Azië en Stille Oceaan) Korea - centraal<br /> Benelux Canada - centraal<br /> Europa Europa - noord<br /> Europa Europa - west<br /> Europa Frankrijk - centraal<br /> Europa Duitsland - west-centraal<br /> Europa Noor wegen-Oost<br /> Europa Zwitserland - noord<br /> Europa UK - zuid<br /> (Midden-Oosten) UAE - noord<br /> (Zuid-Amerika) Brazilië - zuid<br /> VS VS-Centraal<br /> (US) US - oost<br /> VS VS-Oost 2<br /> (VS) VS - noord-centraal<br />VS VS Zuid-Centraal<br /> VS VS-West<br /> VS VS-West 2 | Premium-bestanden alleen shares |
 
 <sup>1</sup> de Archive-laag wordt momenteel niet ondersteund voor ZRS-accounts.<br />
 <sup>2</sup> opslag accounts die Azure Managed disks voor virtuele machines bevatten, gebruiken altijd LRS. Onbeheerde schijven van Azure moeten ook LRS gebruiken. Het is mogelijk om een opslag account te maken voor Azure unmanaged disks die gebruikmaken van GRS, maar dit wordt niet aanbevolen vanwege mogelijke problemen met de consistentie van de asynchrone geo-replicatie. Geen van de beheerde schijven of niet-Managed disks ondersteunen ZRS of GZRS. Zie [prijzen voor Azure Managed disks](https://azure.microsoft.com/pricing/details/managed-disks/)(Engelstalig) voor meer informatie over Managed disks.
@@ -127,15 +127,30 @@ Alleen voor algemeen gebruik v2-opslag accounts bieden ondersteuning voor GZRS e
 
 GZRS en RA-GZRS worden ondersteund in de volgende regio's:
 
-- Azië - zuidoost
-- Europa - noord
-- Europa - west
-- Japan East
-- Verenigd Koninkrijk Zuid
-- US - centraal
-- US - oost
-- US - oost 2
-- US - west 2
+- Africa Zuid-Afrika - noord
+- (Azië en Stille Oceaan) Azië - oost
+- (Azië en Stille Oceaan) Zuidoost-Azië
+- (Azië en Stille Oceaan) Australië - oost
+- (Azië en Stille Oceaan) Centraal-India
+- (Azië en Stille Oceaan) Japan - oost
+- (Azië en Stille Oceaan) Korea - centraal
+- Benelux Canada - centraal
+- Europa Europa - noord
+- Europa Europa - west
+- Europa Frankrijk - centraal
+- Europa Duitsland - west-centraal
+- Europa Noor wegen-Oost
+- Europa Zwitserland - noord
+- Europa UK - zuid
+- (Midden-Oosten) UAE - noord
+- (Zuid-Amerika) Brazilië - zuid
+- VS VS-Centraal
+- (US) US - oost
+- VS VS-Oost 2
+- (VS) VS - noord-centraal
+- VS VS Zuid-Centraal
+- VS VS-West
+- VS VS-West 2
 
 Zie de prijs informatie voor [blobs](https://azure.microsoft.com/pricing/details/storage/blobs), [bestanden](https://azure.microsoft.com/pricing/details/storage/files/), [wacht rijen](https://azure.microsoft.com/pricing/details/storage/queues/)en [tabellen](https://azure.microsoft.com/pricing/details/storage/tables/)voor meer informatie over prijzen.
 
@@ -184,7 +199,7 @@ In de volgende tabel wordt aangegeven of uw gegevens duurzaam zijn en beschikbaa
 | Storings scenario | LRS | ZRS | GRS/RA-GRS | GZRS/RA-GZRS |
 |:-|:-|:-|:-|:-|
 | Een knoop punt in een Data Center wordt niet meer beschikbaar | Ja | Ja | Ja | Ja |
-| Een volledig Data Center (zonegebonden of niet-zonegebonden) is niet meer beschikbaar | Nee | Ja | Ja<sup>1</sup> | Ja |
+| Een volledig Data Center (zonegebonden of niet-zonegebonden) is niet meer beschikbaar | Nee | Ja | Ja<sup>1</sup> | Yes |
 | Er treedt een storing op de hele regio op in de primaire regio | Nee | Nee | Ja<sup>1</sup> | Ja<sup>1</sup> |
 | Lees toegang tot de secundaire regio is beschikbaar als de primaire regio niet beschikbaar is | Nee | Nee | Ja (met RA-GRS) | Ja (met RA-GZRS) |
 

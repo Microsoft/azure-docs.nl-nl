@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 03/25/2021
-ms.openlocfilehash: b1bb749400cfb1e289a0a335275f4654d37145e9
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: 2f12f33bf6108784b2eec252fb12d03eebd2a45c
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105046501"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105604928"
 ---
 # <a name="how-to-plan-a-saas-offer-for-the-commercial-marketplace"></a>Een SaaS-aanbieding plannen voor de commerciële Marketplace
 
@@ -37,9 +37,9 @@ De volgende tabel bevat de vermeldings opties voor SaaS-aanbiedingen in de comme
 
 Zie voor meer informatie over deze aanbiedings opties [commerciële Marketplace Transact-mogelijkheden](marketplace-commercial-transaction-capabilities-and-considerations.md).
 
-Nadat uw aanbieding is gepubliceerd, wordt de optie voor de aanbieding die u voor uw aanbieding hebt gekozen, weer gegeven als een knop in de linkerbovenhoek van de aanbiedings pagina van uw aanbieding. In de volgende scherm afbeelding ziet u bijvoorbeeld de pagina aanbiedings vermelding in azure Marketplace met de knoppen **nu downloaden** en **station testen** .
+Nadat uw aanbieding is gepubliceerd, wordt de optie voor de aanbieding die u voor uw aanbieding hebt gekozen, weer gegeven als een knop in de linkerbovenhoek van de aanbiedings pagina van uw aanbieding. Met de volgende scherm afbeelding ziet u bijvoorbeeld een pagina met een aanbieding in azure Marketplace met de knop **nu downloaden** .
 
-![Illustreert een aanbiedings vermelding in de online winkel.](./media/listing-options.png)
+![Illustreert een aanbiedings vermelding in de online winkel.](./media/saas/listing-options-saas-full.png)
 
 ## <a name="technical-requirements"></a>Technische vereisten
 
@@ -138,7 +138,7 @@ Als u kiest voor het gebruik van het standaard contract, hebt u de mogelijkheid 
 
 Wanneer u [een nieuwe SaaS-aanbieding](create-new-saas-offer.md) in het partner centrum maakt, voert u tekst, afbeeldingen, optionele Video's en andere informatie in op **de pagina aanbieding.** Dit is de informatie die klanten te zien krijgen wanneer ze uw aanbieding in de commerciële Marketplace detecteren, zoals wordt weer gegeven in het volgende voor beeld.
 
-:::image type="content" source="./media/example-saas-1.png" alt-text="Illustreert hoe deze aanbieding wordt weer gegeven in Microsoft AppSource.":::
+:::image type="content" source="./media/saas/example-saas-1.png" alt-text="Illustreert hoe deze aanbieding wordt weer gegeven in Microsoft AppSource.":::
 
 **Beschrijvingen van aanroepen**
 
@@ -150,7 +150,7 @@ Wanneer u [een nieuwe SaaS-aanbieding](create-new-saas-offer.md) in het partner 
 6. Privacybeleid
 7. Naam van aanbieding
 8. Samenvatting
-9. Beschrijving
+9. Description
 10. Scherm afbeeldingen/Video's
 11. Documenten
 

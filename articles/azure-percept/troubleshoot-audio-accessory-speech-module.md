@@ -5,14 +5,14 @@ author: mimcco
 ms.author: mimcco
 ms.service: azure-percept
 ms.topic: how-to
-ms.date: 02/18/2021
+ms.date: 03/25/2021
 ms.custom: template-how-to
-ms.openlocfilehash: f34013bdb14481bfe872a9b3c4234d603bc2d7ec
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: c4fc7d7564ecd30326fbec832639b2a81d55e6d5
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102635566"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105605651"
 ---
 # <a name="azure-percept-audio-and-speech-module-troubleshooting"></a>Problemen met de Azure percept-audio en spraak module oplossen
 
@@ -20,16 +20,24 @@ Gebruik de onderstaande richt lijnen voor het oplossen van problemen met toepass
 
 ## <a name="collecting-speech-module-logs"></a>Logboeken met spraak modules verzamelen
 
-Als u deze opdrachten wilt uitvoeren, [maakt u verbinding met het Azure PERCEPT DK Wi-Fi toegangs punt en maakt u verbinding met de dev kit via SSH](./how-to-ssh-into-percept-dk.md) en voert u de opdrachten in de SSH-terminal in.
+Als u deze opdrachten wilt uitvoeren, gaat u naar [de dev kit](./how-to-ssh-into-percept-dk.md) en voert u de opdrachten in bij de prompt van de SSH-client.
+
+Logboeken met spraak modules verzamelen:
 
 ```console
 sudo iotedge logs azureearspeechclientmodule
 ```
 
-Als u de uitvoer naar een txt-bestand wilt omleiden voor verdere analyse, gebruikt u de volgende syntaxis:
+Als u de uitvoer wilt omleiden naar een txt-bestand voor verdere analyse, gebruikt u de volgende syntaxis:
 
 ```console
 sudo [command] > [file name].txt
+```
+
+Wijzig de machtigingen van het txt-bestand zodat het kan worden gekopieerd:
+
+```console
+sudo chmod 666 [file name].txt
 ```
 
 Nadat de uitvoer naar een txt-bestand is omgeleid, kopieert u het bestand naar uw host-PC via SCP:
@@ -38,11 +46,11 @@ Nadat de uitvoer naar een txt-bestand is omgeleid, kopieert u het bestand naar u
 scp [remote username]@[IP address]:[remote file path]/[file name].txt [local host file path]
 ```
 
-[pad naar lokale hostbestand] verwijst naar de locatie op de host-PC waarnaar u het txt-bestand wilt kopiëren. [externe gebruikers naam] is de SSH-gebruikers naam die u hebt gekozen tijdens de [on-boarding-ervaring](./quickstart-percept-dk-set-up.md). Als u tijdens de on-boarding-ervaring van Azure percept DK geen SSH-aanmelding hebt ingesteld, is uw externe gebruikers naam root.
+[pad naar lokale hostbestand] verwijst naar de locatie op de host-PC waarnaar u het txt-bestand wilt kopiëren. [externe gebruikers naam] is de SSH-gebruikers naam die u hebt gekozen tijdens de [installatie-ervaring](./quickstart-percept-dk-set-up.md).
 
 ## <a name="checking-runtime-status-of-the-speech-module"></a>De runtime status van de spraak module controleren
 
-Controleer of de runtime status van **azureearspeechclientmodule** wordt weer gegeven als **actief**. Als u de runtime status van de apparaat modules wilt vinden, opent u de [Azure Portal](https://portal.azure.com/) en navigeert u naar **alle resources**  ->  **\<your IoT hub>**  ->  **IOT Edge**  ->  **\<your device ID>** . Klik op het tabblad **modules** om de runtime status van alle geïnstalleerde modules weer te geven.
+Controleer of de runtime status van **azureearspeechclientmodule** wordt weer gegeven als **actief**. Als u de runtime status van uw apparaat modules wilt vinden, opent u de [Azure Portal](https://portal.azure.com/) en navigeert u naar **alle resources**  ->  **[uw IOT hub]**  ->  **IOT Edge**  ->  **[uw apparaat-id]**. Klik op het tabblad **modules** om de runtime status van alle geïnstalleerde modules weer te geven.
 
 :::image type="content" source="./media/troubleshoot-audio-accessory-speech-module/over-the-air-iot-edge-device-page.png" alt-text="De pagina rand apparaat in de Azure Portal.":::
 
@@ -50,10 +58,10 @@ Als de runtime status van **azureearspeechclientmodule** niet wordt weer gegeven
 
 ## <a name="understanding-ear-som-led-indicators"></a>Informatie over de LED-Indica tors van het oormerk
 
-U kunt LED-indica toren gebruiken om te begrijpen in welke staat het apparaat zich bevindt. Doorgaans duurt het ongeveer twee minuten voordat de module volledig kan worden geïnitialiseerd na *inschakeling*. Tijdens de initialisatie stappen ziet u het volgende:
+U kunt LED-indica toren gebruiken om te begrijpen in welke staat het apparaat zich bevindt. Doorgaans duurt het ongeveer twee minuten voordat de module volledig kan worden geïnitialiseerd nadat het apparaat is ingeschakeld. Tijdens de initialisatie stappen ziet u het volgende:
 
-1. 1 Center-witte LED: het apparaat is ingeschakeld.
-2. 1 midden-wit LED-knipperend-verificatie wordt uitgevoerd.
+1. Gecentreerd, Wit LED on (statisch): het apparaat is ingeschakeld.
+2. Midden-witte LED (knipperend): de verificatie wordt uitgevoerd.
 3. Alle drie de Led's worden gewijzigd in blauw zodra het apparaat is geverifieerd en gereed is voor gebruik.
 
 |GELEID|LED-status|De SoM-status van het oormerk|

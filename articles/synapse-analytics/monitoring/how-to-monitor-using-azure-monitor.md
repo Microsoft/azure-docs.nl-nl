@@ -9,12 +9,12 @@ ms.subservice: monitoring
 ms.date: 11/30/2020
 ms.author: mahi
 ms.reviewer: mahi
-ms.openlocfilehash: ac5b1df5ff246623b73dbc41d18216396e6ed7ef
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 6861fd7a92c26fad883f14fb430a03b237c90122
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102549852"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105609255"
 ---
 # <a name="use-azure-monitor-with-your-azure-synapse-analytics-workspace"></a>Azure Monitor gebruiken met uw Azure Synapse Analytics-werk ruimte
 
@@ -103,7 +103,7 @@ Meld u aan bij de Azure Portal en selecteer **monitor**  >  **waarschuwingen** o
 
 Dit zijn de logboeken die worden gegenereerd door Azure Synapse Analytics-werk ruimten:
 
-| Naam van Log Analytics tabel | Naam van logboek categorie                 | Beschrijving |
+| Naam van Log Analytics tabel | Naam van logboek categorie                 | Description |
 |-------------------------------|-------------------------------------------------|-------------|
 | SynapseGatewayApiRequests     | GatewayApiRequests             | API-aanvragen van Azure Synapse gateway. |
 | SynapseRbacOperations         | SynapseRbacOperations          | Azure Synapse (SRBAC)-bewerkingen op basis van op rollen gebaseerde toegangs beheer. |
@@ -112,7 +112,7 @@ Dit zijn de logboeken die worden gegenereerd door Azure Synapse Analytics-werk r
 
 Dit zijn de logboeken die worden gegenereerd door toegewezen SQL-groepen:
 
-| Naam van Log Analytics tabel        | Naam van logboek categorie             | Beschrijving |
+| Naam van Log Analytics tabel        | Naam van logboek categorie             | Description |
 |----------------------|--------------------------------------|-------------|
 | SynapseSqlPoolExecRequests  | ExecRequests | Informatie over SQL-aanvragen/-query's in een door Azure Synapse toegewezen SQL-groep.
 | SynapseSqlPoolDmsWorkers    | DmsWorkers   | Informatie over werk nemers die de DMS-stappen in een door Azure Synapse toegewezen SQL-pool volt ooien.
@@ -131,7 +131,7 @@ Raadpleeg de volgende informatie voor meer informatie over deze logboeken:
 
 Hier volgt het logboek dat wordt verzonden door Apache Spark Pools:
 
-| Naam van Log Analytics tabel               | Naam van logboek categorie              | Beschrijving                 |
+| Naam van Log Analytics tabel               | Naam van logboek categorie              | Description                 |
 |-----------------------------|---------------------------------------|-----------------------------|
 | SynapseBigDataPoolApplicationsEnded | BigDataPoolAppsEnded | Informatie over beëindigde Apache Spark-toepassingen |
 
@@ -171,7 +171,7 @@ Diagnostische instellingen voor uw werk ruimte, toegewezen SQL-groep of Apache S
 1. Geef een naam op voor de instelling, selecteer **verzenden naar log Analytics** en selecteer een werk ruimte in **log Analytics werk ruimte**.
 
     > [!NOTE]
-    > Omdat een Azure-logboek tabel niet meer dan 500 kolommen kan bevatten, raden we u **ten zeerste** aan de _resource-specifieke modus_ te selecteren. Zie [AzureDiagnostics-logboeken](/azure-monitor/reference/tables/azurediagnostics#additionalfields-column)voor meer informatie.
+    > Omdat een Azure-logboek tabel niet meer dan 500 kolommen kan bevatten, raden we u **ten zeerste** aan de _resource-specifieke modus_ te selecteren. Zie [AzureDiagnostics-logboeken](/azure/azure-monitor/reference/tables/azurediagnostics)voor meer informatie.
 
 1. Selecteer **Opslaan**.
 

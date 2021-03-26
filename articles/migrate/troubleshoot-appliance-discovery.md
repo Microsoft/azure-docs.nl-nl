@@ -6,12 +6,12 @@ ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: troubleshooting
 ms.date: 01/02/2020
-ms.openlocfilehash: c952fe33b434aac972be6a1eb03b63698eb64fc6
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.openlocfilehash: 995914fab0e7112327ebf6ab8e32fb67181f481e
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104782313"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105608915"
 ---
 # <a name="troubleshoot-the-azure-migrate-appliance-and-discovery"></a>Problemen met het Azure Migrate apparaat en de detectie oplossen
 
@@ -260,6 +260,34 @@ Veelvoorkomende fouten bij het detecteren van apps worden in de tabel samenvatte
 | 10007: kan de gedetecteerde meta gegevens niet verwerken. | Er is een fout opgetreden tijdens het deserialiseren van de JSON. | Neem contact op met Microsoft Ondersteuning voor een oplossing. |
 | 10008: kan geen bestand maken op de server. | Het probleem kan optreden vanwege een interne fout. | Neem contact op met Microsoft Ondersteuning voor een oplossing. |
 | 10009: kan geen gedetecteerde meta gegevens schrijven naar een bestand op de server. | Het probleem kan optreden vanwege een interne fout. | Neem contact op met Microsoft Ondersteuning voor een oplossing. |
+
+## <a name="common-sql-server-instances-and-database-discovery-errors"></a>Veelvoorkomende SQL Server exemplaren en fouten in de database detectie
+
+Azure Migrate ondersteunt de detectie van SQL Server instanties en data bases die worden uitgevoerd op on-premises machines, met behulp van Azure Migrate: detectie en evaluatie. SQL-detectie wordt momenteel alleen ondersteund voor VMware. Raadpleeg de [Zoek](tutorial-discover-vmware.md) zelf studie om aan de slag te gaan.
+
+Typische SQL-detectie fouten worden in de tabel samenvatten.
+
+| **Fout** | **Oorzaak** | **Actie** |
+|--|--|--|
+|30000: de referenties die zijn gekoppeld aan dit SQL Server, zijn niet uitgevoerd.|Hand matig gekoppelde referenties zijn ongeldig of automatisch gekoppelde referenties hebben geen toegang meer tot de SQL Server.|Referenties toevoegen voor SQL Server op het apparaat en wachten tot de volgende SQL-detectie cyclus of het vernieuwen afdwingen.|
+|30001: kan geen verbinding maken met SQL Server vanaf het apparaat.|1. het apparaat heeft geen netwerk regel voor het SQL Server.<br/>2. de firewall blokkeert de verbinding tussen SQL Server en het apparaat.|1. Maak SQL Server bereikbaar vanaf het apparaat.<br/>2. sta binnenkomende verbindingen van het apparaat toe aan SQL Server.|
+|30003: het certificaat wordt niet vertrouwd.|Er is geen vertrouwd certificaat geïnstalleerd op de computer met SQL Server.|Stel een vertrouwd certificaat op de server in. [Meer informatie](https://go.microsoft.com/fwlink/?linkid=2153616)|
+|30004: onvoldoende machtigingen.|Deze fout kan optreden als er geen machtigingen zijn vereist voor het scannen van SQL Server exemplaren. |Ken de rol sysadmin toe aan de referenties/het account op het apparaat voor het detecteren van SQL Server instanties en data bases. [Meer informatie](https://go.microsoft.com/fwlink/?linkid=2153511)|
+|30005: SQL Server-aanmelding kan geen verbinding maken vanwege een probleem met de standaard master database.|De data base zelf is ongeldig of de aanmelding heeft geen VERBINDINGS machtiging voor de data base.|Gebruik ALTER LOGIN om de standaard database in te stellen op de hoofd database.<br/>Ken de rol sysadmin toe aan de referenties/het account op het apparaat voor het detecteren van SQL Server instanties en data bases. [Meer informatie](https://go.microsoft.com/fwlink/?linkid=2153615)|
+|30006: SQL Server-aanmelding kan niet worden gebruikt met Windows-verificatie.|1. de aanmelding is mogelijk een SQL Server aanmelding, maar de server accepteert alleen Windows-verificatie.<br/>2. u probeert verbinding te maken met behulp van SQL Server-verificatie, maar de gebruikte aanmelding bestaat niet op SQL Server.<br/>3. de aanmelding kan gebruikmaken van Windows-verificatie, maar de aanmelding is een niet-herkende Windows-principal. Een niet-herkende Windows-principal betekent dat de aanmelding niet door Windows kan worden geverifieerd. Dit komt mogelijk doordat de Windows-aanmelding afkomstig is van een niet-vertrouwd domein.|Als u verbinding probeert te maken met behulp van SQL Server-verificatie, controleert u of SQL Server is geconfigureerd in de modus voor gemengde verificatie en SQL Server aanmelding bestaat.<br/>Als u verbinding probeert te maken met behulp van Windows-verificatie, controleert u of u goed bent aangemeld bij het juiste domein. [Meer informatie](https://go.microsoft.com/fwlink/?linkid=2153421)|
+|30007: wacht woord is verlopen.|Het wacht woord van het account is verlopen.|Het SQL Server aanmeldings wachtwoord is mogelijk verlopen, het wacht woord opnieuw instellen en/of de verval datum van het wacht woord verlengen. [Meer informatie](https://go.microsoft.com/fwlink/?linkid=2153419)|
+|30008: wacht woord moet worden gewijzigd.|Het wacht woord van het account moet worden gewijzigd.|Wijzig het wacht woord van de referentie die is opgegeven voor SQL Server detectie. [Meer informatie](https://go.microsoft.com/fwlink/?linkid=2153318)|
+|30009: er is een interne fout opgetreden.|Er is een interne fout opgetreden tijdens het detecteren van SQL Server instanties en data bases. |Neem contact op met micro soft ondersteuning als het probleem zich blijft voordoen.|
+|30010: er zijn geen data bases gevonden.|Er kunnen geen data bases worden gevonden van het geselecteerde server exemplaar.|Ken de rol sysadmin toe aan de referenties/het account die op het apparaat zijn meegeleverd voor het detecteren van SQL-data bases.|
+|30011: er is een interne fout opgetreden tijdens het evalueren van een SQL-exemplaar of-Data Base.|Er is een interne fout opgetreden tijdens het uitvoeren van de evaluatie.|Neem contact op met micro soft ondersteuning als het probleem zich blijft voordoen.|
+|30012: SQL-verbinding is mislukt.|1. de firewall op de server heeft de verbinding geweigerd.<br/>2. de SQL Server Browser service (sqlbrowser) is niet gestart.<br/>3. SQL Server heeft niet gereageerd op de client aanvraag omdat de server waarschijnlijk niet is gestart.<br/>4. de SQL Server-client kan geen verbinding maken met de server. Deze fout kan optreden omdat de server niet is geconfigureerd om externe verbindingen te accepteren.<br/>5. de SQL Server-client kan geen verbinding maken met de server. De fout kan optreden omdat de client de naam van de server niet kan omzetten of omdat de naam van de server onjuist is.<br/>6. de TCP-of named pipe protocollen zijn niet ingeschakeld.<br/>7. de opgegeven SQL Server exemplaar naam is niet geldig.|Gebruik [deze](https://go.microsoft.com/fwlink/?linkid=2153317) interactieve gebruikers handleiding om het connectiviteits probleem op te lossen. Wacht 24 uur na het volgen van de hand leiding voor de gegevens die moeten worden bijgewerkt in de service. Neem contact op met micro soft ondersteuning als het probleem zich blijft voordoen.|
+|30013: er is een fout opgetreden tijdens het maken van een verbinding met het SQL Server-exemplaar.|1. de naam van de SQL Server kan niet worden omgezet vanaf het apparaat.<br/>2. het SQL Server staat geen externe verbindingen toe.|Als u SQL Server vanaf het apparaat kunt pingen, moet u 24 uur wachten om te controleren of dit probleem automatisch wordt opgelost. Als dat niet het geval is, neemt u contact op met micro soft ondersteuning. [Meer informatie](https://go.microsoft.com/fwlink/?linkid=2153316)|
+|30014: de gebruikers naam of het wacht woord is ongeldig.| Deze fout kan optreden vanwege een verificatie fout waarbij een onjuist wacht woord of gebruikers naam is betrokken.|Geef een referentie met een geldige gebruikers naam en een geldig wacht woord op. [Meer informatie](https://go.microsoft.com/fwlink/?linkid=2153315)|
+|30015: er is een interne fout opgetreden bij het detecteren van het SQL-exemplaar.|Er is een interne fout opgetreden bij het detecteren van het SQL-exemplaar.|Neem contact op met micro soft ondersteuning als het probleem zich blijft voordoen.|
+|30016: de verbinding met het exemplaar% instance; is mislukt vanwege een time-out.| Dit kan gebeuren als de firewall op de server de verbinding weigert.|Controleer of de firewall op de SQL Server is geconfigureerd om verbindingen te accepteren. Als de fout zich blijft voordoen, neemt u contact op met micro soft ondersteuning. [Meer informatie](https://go.microsoft.com/fwlink/?linkid=2153611)|
+|30017: er is een interne fout opgetreden.|Onverwerkte uitzonde ring.|Neem contact op met micro soft ondersteuning als het probleem zich blijft voordoen.|
+|30018: er is een interne fout opgetreden.|Er is een interne fout opgetreden bij het verzamelen van gegevens, zoals de grootte van de tijdelijke data base, de bestands grootte, enzovoort van het SQL-exemplaar.|Wacht 24 uur en neem contact op met micro soft ondersteuning als het probleem zich blijft voordoen.|
+|30019: er is een interne fout opgetreden.|Er is een interne fout opgetreden tijdens het verzamelen van metrische gegevens over prestaties, zoals geheugen gebruik, enzovoort, een Data Base of een exemplaar.|Wacht 24 uur en neem contact op met micro soft ondersteuning als het probleem zich blijft voordoen.|
 
 ## <a name="next-steps"></a>Volgende stappen
 

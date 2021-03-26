@@ -1,5 +1,5 @@
 ---
-title: Message Passing Interface instellen voor HPC-Azure-Virtual Machines | Microsoft Docs
+title: Message Passing Interface (MPI) instellen voor HPC-Azure Virtual Machines | Microsoft Docs
 description: Meer informatie over het instellen van MPI voor HPC op Azure.
 author: vermagit
 ms.service: virtual-machines
@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 03/18/2021
 ms.author: amverma
 ms.reviewer: cynthn
-ms.openlocfilehash: 8f071dfe817d15b745575fbfb70ff662a643db70
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 66de34c43ab1b3a6b4245f77196793bf9ad8530c
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104721365"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105606637"
 ---
 # <a name="set-up-message-passing-interface-for-hpc"></a>Bericht interface voor het door geven van HPC instellen
 
@@ -64,6 +64,11 @@ HPC-X uitvoeren
 ```bash
 ${HPCX_PATH}mpirun -np 2 --map-by ppr:2:node -x UCX_TLS=rc ${HPCX_PATH}/ompi/tests/osu-micro-benchmarks-5.3.2/osu_latency
 ```
+
+### <a name="optimizing-mpi-collectives"></a>MPI collectief optimaliseren
+
+MPI collectieve communicatie primitieven bieden een flexibele, draag bare manier voor het implementeren van groeps communicatie bewerkingen. Ze worden veel gebruikt voor diverse weten schappelijke parallelle toepassingen en hebben een aanzienlijke invloed op de algehele prestaties van de toepassing. Raadpleeg het [artikel TechCommunity](https://techcommunity.microsoft.com/t5/azure-compute/optimizing-mpi-collective-communication-using-hpc-x-on-azurehpc/ba-p/1356740) voor meer informatie over configuratie parameters voor het optimaliseren van gezamenlijke communicatie prestaties met behulp van de HPC-X-en HCOLL-bibliotheek voor collectieve communicatie.
+
 > [!NOTE] 
 > Met HPC-X 2.7.4 + kan het nodig zijn om LD_LIBRARY_PATH expliciet door te geven als de UCX-versie op MOFED vs. die in HPC-X verschilt.
 

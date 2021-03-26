@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/03/2021
-ms.openlocfilehash: c088625528190ad116676fbb51cec9f8de4b1578
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 21012848ba3624df6110eaea182beccc4646d234
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104600799"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105609272"
 ---
 # <a name="querying-in-azure-cognitive-search"></a>Query's uitvoeren in azure Cognitive Search
 
@@ -77,7 +77,7 @@ Als u een intensief gebruik van Booleaanse Opera tors verwacht, wat waarschijnli
 
 ## <a name="autocomplete-and-suggested-queries"></a>Automatisch aanvullen en voorgestelde query's
 
-[Automatisch aanvullen of voorgestelde resultaten](search-autocomplete-tutorial.md) zijn alternatieven voor **`search`** het activeren van opeenvolgende query aanvragen op basis van een gedeeltelijke teken reeks invoer (na elk teken) in een zoek-als-u-type-ervaring. U kunt **`autocomplete`** en **`suggestions`** para meter samen gebruiken, zoals wordt beschreven in [deze zelf studie](tutorial-csharp-type-ahead-and-suggestions.md), maar u kunt deze niet gebruiken met **`search`** . De volledige voor waarden en voorgestelde query's zijn afgeleid van de inhoud van de index. De engine retourneert nooit een teken reeks of suggestie die niet bestaat in de index. Zie AutoAanvullen [(rest API)](/rest/api/searchservice/autocomplete) en [suggesties (rest API)](/rest/api/searchservice/suggestions)voor meer informatie.
+[Automatisch aanvullen of voorgestelde resultaten](search-add-autocomplete-suggestions.md) zijn alternatieven voor **`search`** het activeren van opeenvolgende query aanvragen op basis van een gedeeltelijke teken reeks invoer (na elk teken) in een zoek-als-u-type-ervaring. U kunt **`autocomplete`** en **`suggestions`** para meter samen gebruiken, zoals wordt beschreven in [deze zelf studie](tutorial-csharp-type-ahead-and-suggestions.md), maar u kunt deze niet gebruiken met **`search`** . De volledige voor waarden en voorgestelde query's zijn afgeleid van de inhoud van de index. De engine retourneert nooit een teken reeks of suggestie die niet bestaat in de index. Zie AutoAanvullen [(rest API)](/rest/api/searchservice/autocomplete) en [suggesties (rest API)](/rest/api/searchservice/suggestions)voor meer informatie.
 
 ## <a name="filter-search"></a>Zoek filter
 

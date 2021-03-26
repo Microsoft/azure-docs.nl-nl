@@ -7,24 +7,24 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/24/2020
+ms.date: 03/26/2021
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 748ad9fdab781ba03135f026ab846099fe50c51f
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 6bf5e53d9f4a867c146cb01376fcd28d2797819c
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104604403"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105606212"
 ---
 # <a name="create-a-suggester-to-enable-autocomplete-and-suggested-results-in-a-query"></a>Een suggestie maken om automatisch aanvullen en voorgestelde resultaten in een query in te scha kelen
 
-In azure Cognitive Search is ' zoeken naar het type ' ingeschakeld via een *suggestie*. Een suggestie is een interne gegevens structuur die bestaat uit een verzameling velden. De velden worden extra tokening en het genereren van voorvoegsel reeksen ter ondersteuning van overeenkomsten op gedeeltelijke voor waarden.
+In azure Cognitive Search wordt typeahead of ' Search-as-u-type ' ingeschakeld via een *suggestie*. Een suggestie is een interne gegevens structuur die bestaat uit een verzameling velden. De velden worden extra tokening en het genereren van voorvoegsel reeksen ter ondersteuning van overeenkomsten op gedeeltelijke voor waarden. Een voor Stel dat bijvoorbeeld een veld plaats bevat, heeft voor voegsel ' Sea ', ' seat ', ' seat ' en ' seattl ' voor de term ' Seattle '.
 
-Als een suggestie bijvoorbeeld het veld City bevat, worden de resulterende voorvoegsel combinaties ' Sea ', ' seat ', ' seats ' en ' seattl ' gemaakt voor de term ' Seattle '. Voor voegsels worden opgeslagen in omgekeerde indexen, één voor elk veld dat is opgegeven in de verzameling suggesties van velden.
+Overeenkomsten op gedeeltelijke voor waarden kunnen een automatisch aanvullende query zijn of een voor waarde die overeenkomt. Dezelfde Voorst Ellen ondersteunen beide ervaringen.
 
 ## <a name="typeahead-experiences-in-cognitive-search"></a>Typeahead-ervaringen in Cognitive Search
 
-Een suggestie biedt ondersteuning voor twee ervaring: *automatisch aanvullen*, waarmee een gedeeltelijke invoer voor een volledige termijn query wordt voltooid en *suggesties* die door worden uitgenodigd, worden door middel van een bepaalde overeenkomst. Automatisch aanvullen produceert een query. Suggesties maken een overeenkomend document.
+Typeahead kan automatisch worden *voltooid*. Hiermee wordt een gedeeltelijke invoer voor een hele term query voltooid, of *suggesties* die door worden uitgenodigd voor een bepaalde overeenkomst. Automatisch aanvullen produceert een query. Suggesties maken een overeenkomend document.
 
 De volgende scherm afbeelding van [het maken van uw eerste app in C#](tutorial-csharp-type-ahead-and-suggestions.md) illustreert beide. Bij automatisch aanvullen wordt een mogelijke term verwacht, waarbij ' TW ' wordt voltooid met ' in '. Suggesties zijn de resultaten van een mini maal zoek opdracht, waarbij een veld zoals de naam van het hotel een overeenkomend Hotel Zoek document uit de index vertegenwoordigt. Voor suggesties kunt u elk veld dat beschrijvende informatie bevat, op elk gewenst Opper vlak weer gegeven.
 
@@ -40,11 +40,11 @@ De ondersteuning voor zoeken naar het type wordt ingeschakeld per veld voor teke
 
 ## <a name="how-to-create-a-suggester"></a>Een suggestie maken
 
-Als u een suggestie wilt maken, voegt u er een toe aan een [index definitie](/rest/api/searchservice/create-index). Een suggestie haalt een naam en een verzameling velden op waarvoor de typeahead-ervaring is ingeschakeld. en [Stel elke eigenschap](#property-reference)in. Het beste moment om een suggestie te maken, is wanneer u ook het veld definieert dat deze gebruikt.
+Als u een suggestie wilt maken, voegt u er een toe aan een [index definitie](/rest/api/searchservice/create-index). Een suggestie neemt een naam en een verzameling velden over waar de typeahead-ervaring is ingeschakeld. Het beste moment om een suggestie te maken, is wanneer u ook het veld definieert dat deze gebruikt.
 
 + Gebruik alleen teken reeks velden.
 
-+ Als het teken reeks veld deel uitmaakt van een complex type (bijvoorbeeld een veld plaats in adres), neemt u het bovenliggende item op in het veld: `"Address/City"` (rest en C# en python) of `["Address"]["City"]` (Java script).
++ Als het teken reeks veld deel uitmaakt van een complex type (bijvoorbeeld het veld plaats in adres), neemt u het bovenliggende item op in het pad naar het veld: `"Address/City"` (rest en C# en python) of `["Address"]["City"]` (Java script).
 
 + Gebruik de standaard standaard-lucene Analyzer ( `"analyzer": null` ) of een [taal analyse](index-add-language-analyzers.md) (bijvoorbeeld `"analyzer": "en.Microsoft"` ) in het veld.
 
@@ -58,7 +58,7 @@ Automatisch aanvullen heeft voor delen van een grotere groep velden waaruit kan 
 
 Suggesties, daarentegen, produceren betere resultaten wanneer uw veld keuze selectief is. Houd er rekening mee dat de suggestie een proxy voor een zoek document is, zodat u wilt dat velden die het beste een enkel resultaat vertegenwoordigen. Namen, titels of andere unieke velden die onderscheid maken tussen meerdere overeenkomsten, werken het beste. Als velden bestaan uit herhaalde waarden, bestaan de suggesties uit identieke resultaten en is een gebruiker niet op welke manier u hoeft te klikken.
 
-Als u wilt voldoen aan beide zoek functies, voegt u alle velden toe die u nodig hebt voor automatisch aanvullen, maar gebruikt u vervolgens **$Select**, **$Top**, **$filter** en **searchFields** om de resultaten voor suggesties te beheren.
+Als u wilt voldoen aan beide zoek functies, voegt u alle velden toe die u nodig hebt voor automatisch aanvullen, maar gebruikt u vervolgens ' $select ', ' $top ', ' $filter ' en ' searchFields ' om de resultaten voor suggesties te beheren.
 
 ### <a name="choose-analyzers"></a>Analyse functies kiezen
 
@@ -142,9 +142,9 @@ private static void CreateIndex(string indexName, SearchIndexClient indexClient)
 
 |Eigenschap      |Beschrijving      |
 |--------------|-----------------|
-|`name`        | Opgegeven in de suggestie definitie, maar wordt ook wel een aanvraag voor automatisch aanvullen of suggesties genoemd. |
-|`sourceFields`| Opgegeven in de suggestie definitie. Het is een lijst met een of meer velden in de index die de bron van de inhoud voor suggesties zijn. Velden moeten van het type `Edm.String` en zijn `Collection(Edm.String)` . Als er een analyse programma is opgegeven in het veld, moet dit een benoemde lexicale Analyzer zijn in [deze lijst](/dotnet/api/azure.search.documents.indexes.models.lexicalanalyzername) (geen aangepaste analyse functie).<p/> Geef als best practice alleen de velden op die aan een verwacht en passend antwoord worden uitgeleend, of het nu gaat om een voltooide teken reeks in een zoek balk of vervolg keuzelijst.<p/>De naam van een hotel is een goede kandidaat omdat deze precisie heeft. Uitgebreide velden, zoals beschrijvingen en opmerkingen, zijn te dicht bij. Zo zijn herhalende velden, zoals categorieën en tags, minder effectief. In de voor beelden bevatten we ' categorie ' om aan te tonen dat u meerdere velden kunt bevatten. |
-|`searchMode`  | De para meter alleen-lezen, maar is ook zichtbaar in de portal. Deze para meter is niet beschikbaar in de .NET SDK. Hiermee wordt de strategie aangegeven die wordt gebruikt om te zoeken naar kandidaten zinsdelen. De enige modus die momenteel wordt ondersteund `analyzingInfixMatching` , die momenteel overeenkomt met het begin van een term.|
+| naam        | Opgegeven in de suggestie definitie, maar wordt ook wel een aanvraag voor automatisch aanvullen of suggesties genoemd. |
+| sourceFields | Opgegeven in de suggestie definitie. Het is een lijst met een of meer velden in de index die de bron van de inhoud voor suggesties zijn. Velden moeten van het type `Edm.String` en zijn `Collection(Edm.String)` . Als er een analyse programma is opgegeven in het veld, moet dit een benoemde lexicale Analyzer zijn in [deze lijst](/dotnet/api/azure.search.documents.indexes.models.lexicalanalyzername) (geen aangepaste analyse functie). </br></br>Geef als best practice alleen de velden op die aan een verwacht en passend antwoord worden uitgeleend, of het nu gaat om een voltooide teken reeks in een zoek balk of vervolg keuzelijst. </br></br>De naam van een hotel is een goede kandidaat omdat deze precisie heeft. Uitgebreide velden, zoals beschrijvingen en opmerkingen, zijn te dicht bij. Zo zijn herhalende velden, zoals categorieën en tags, minder effectief. In de voor beelden bevatten we ' categorie ' om aan te tonen dat u meerdere velden kunt bevatten. |
+| Search mode  | De para meter alleen-lezen, maar is ook zichtbaar in de portal. Deze para meter is niet beschikbaar in de .NET SDK. Hiermee wordt de strategie aangegeven die wordt gebruikt om te zoeken naar kandidaten zinsdelen. De enige modus die momenteel wordt ondersteund `analyzingInfixMatching` , die momenteel overeenkomt met het begin van een term.|
 
 <a name="how-to-use-a-suggester"></a>
 
@@ -157,9 +157,9 @@ Een suggestie wordt gebruikt in een query. Nadat een suggestie is gemaakt, roept
 + [Methode SuggestAsync](/dotnet/api/azure.search.documents.searchclient.suggestasync)
 + [Methode AutocompleteAsync](/dotnet/api/azure.search.documents.searchclient.autocompleteasync)
 
-In een zoek toepassing moet de client code gebruikmaken van een bibliotheek zoals de [automatisch aanvullen van de jQuery-gebruikers interface](https://jqueryui.com/autocomplete/) om de gedeeltelijke query te verzamelen en de overeenkomst op te geven. Zie voor meer informatie over deze taak [automatisch aanvullen of voorgestelde resultaten aan client code toevoegen](search-autocomplete-tutorial.md).
+In een zoek toepassing moet de client code gebruikmaken van een bibliotheek zoals de [automatisch aanvullen van de jQuery-gebruikers interface](https://jqueryui.com/autocomplete/) om de gedeeltelijke query te verzamelen en de overeenkomst op te geven. Zie voor meer informatie over deze taak [automatisch aanvullen of voorgestelde resultaten aan client code toevoegen](search-add-autocomplete-suggestions.md).
 
-Het API-gebruik wordt geïllustreerd in de volgende aanroep van de REST API voor automatisch aanvullen. Er zijn twee Takeaways uit dit voor beeld. Ten eerste, net als bij alle query's wordt de bewerking vergeleken met de documenten verzameling van een index en de query bevat een **Zoek** parameter, in dit geval de gedeeltelijke query. Ten tweede moet u **suggesterName** toevoegen aan de aanvraag. Als een suggestie niet in de index is gedefinieerd, mislukt de aanroep van automatisch aanvullen of suggesties.
+Het API-gebruik wordt geïllustreerd in de volgende aanroep van de REST API voor automatisch aanvullen. Er zijn twee Takeaways uit dit voor beeld. Ten eerste, net als bij alle query's wordt de bewerking vergeleken met de documenten verzameling van een index en de query bevat de para meter ' Search ', wat in dit geval de gedeeltelijke query bevat. Ten tweede moet u ' suggesterName ' toevoegen aan de aanvraag. Als een suggestie niet in de index is gedefinieerd, mislukt de aanroep van automatisch aanvullen of suggesties.
 
 ```http
 POST /indexes/myxboxgames/docs/autocomplete?search&api-version=2020-06-30
@@ -178,4 +178,4 @@ POST /indexes/myxboxgames/docs/autocomplete?search&api-version=2020-06-30
 We raden u aan het volgende artikel te lezen om meer te weten te komen over de manier waarop aanvragen worden formulering.
 
 > [!div class="nextstepaction"]
-> [Automatisch aanvullen en suggesties aan client code toevoegen](search-autocomplete-tutorial.md)
+> [Automatisch aanvullen en suggesties aan client code toevoegen](search-add-autocomplete-suggestions.md)

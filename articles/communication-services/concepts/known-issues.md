@@ -8,43 +8,46 @@ ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: troubleshooting
 ms.service: azure-communication-services
-ms.openlocfilehash: aa5530dd279e8b45382fe6841b6f193a652c0ba3
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.openlocfilehash: 7be40ac5f6cda7a81d68ca0b17f377891dd58480
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/26/2021
-ms.locfileid: "105566792"
+ms.locfileid: "105606042"
 ---
-# <a name="known-issues-azure-communication-services-client-libraries"></a>Bekende problemen: client bibliotheken van Azure Communication Services
-Dit artikel bevat informatie over beperkingen en bekende problemen met betrekking tot de Azure Communication Services-client bibliotheken.
+# <a name="known-issues-azure-communication-services-sdks"></a>Bekende problemen: Sdk's van Azure Communication Services
+Dit artikel bevat informatie over beperkingen en bekende problemen met betrekking tot de Sdk's van Azure Communication Services.
 
 > [!IMPORTANT]
 > Er zijn meerdere factoren die van invloed kunnen zijn op de kwaliteit van uw gespreks ervaring. Raadpleeg de documentatie over **[netwerk vereisten](https://docs.microsoft.com/azure/communication-services/concepts/voice-video-calling/network-requirements)** voor meer informatie over communicatie Services netwerk configuratie en aanbevolen procedures testen.
 
 
-## <a name="javascript-client-library"></a>JavaScript-clientbibliotheek
+## <a name="javascript-sdk"></a>JavaScript SDK
 
-Deze sectie bevat informatie over bekende problemen met Java script spraak en video die client bibliotheken aanroepen in azure Communication Services.
+Deze sectie bevat informatie over bekende problemen die zijn gekoppeld aan de Azure Communication Services java script spraak en video waarmee Sdk's worden aangeroepen.
 
-### <a name="after-refreshing-the-page-user-is-not-removed-from-the-call-immediately"></a>Nadat de pagina is vernieuwd, wordt de gebruiker niet onmiddellijk uit de oproep verwijderd 
-Als de gebruiker zich in een aanroep bevindt en besluit om de pagina te vernieuwen, kan de client bibliotheek van de communicatie mogelijk niet in kennis worden gesteld van de communicatie services-media service die het op het punt staat om de verbinding te verbreken. De communicatie services-media service verwijdert deze gebruiker niet onmiddellijk van de aanroep, maar er wordt gewacht totdat een gebruiker opnieuw lid wordt van problemen met de netwerk verbinding. De gebruiker wordt verwijderd uit de oproep nadat de media service een time-out heeft.
+### <a name="refreshing-a-page-doesnt-immediately-remove-the-user-from-their-call"></a>Als u een pagina vernieuwt, wordt de gebruiker niet onmiddellijk uit de oproep verwijderd
 
-We moedigen ontwikkel aars aan om ervaring te bieden waarbij eind gebruikers de pagina van uw toepassing niet hoeven te vernieuwen en die deel nemen aan een gesprek. Als de gebruiker de pagina vernieuwt, is de beste manier om deze te verwerken voor de app, om dezelfde gebruikers-ID voor communicatie services opnieuw te gebruiken voor de gebruiker nadat hij terugkeert naar de toepassing nadat deze is vernieuwd.
+Als een gebruiker zich in een aanroep bevindt en besluit om de pagina te vernieuwen, wordt deze gebruiker niet direct vanuit de oproep verwijderd door de communicatie services-media service. Er wordt gewacht totdat de gebruiker opnieuw lid wordt. De gebruiker wordt verwijderd uit de oproep nadat de media service een time-out heeft.
 
-Voor het perspectief van andere deel nemers in de oproep blijft deze gebruiker in de aanroep voor een vooraf gedefinieerde hoeveelheid tijd (1-2 minuten). Als de gebruiker opnieuw lid wordt met dezelfde communicatie Services-gebruikers-ID, wordt hij weer gegeven als hetzelfde bestaande object in de `remoteParticipants` verzameling.
-Als een eerdere gebruiker de video heeft verzonden, blijft de `videoStreams` gegevens van de vorige stroom bewaard totdat de service een time-out krijgt en deze verwijdert. in dit scenario wordt mogelijk besloten om nieuwe stromen die aan de verzameling worden toegevoegd, te observeren en één met de hoogste weer te geven `id` . 
+Het is het beste om gebruikers ervaringen te bouwen waarvoor eind gebruikers de pagina van uw toepassing niet hoeven te vernieuwen tijdens een gesprek. Als een gebruiker de pagina vernieuwt, hergebruikt u dezelfde gebruikers-ID van de communicatie Services als deze terugkeert naar de toepassing.
+
+Vanuit het perspectief van andere deel nemers in de oproep blijft de gebruiker gedurende een periode (1-2 minuten). Als de gebruiker opnieuw lid wordt van dezelfde communicatie Services-gebruikers-ID, wordt deze weer gegeven als hetzelfde bestaande object in de `remoteParticipants` verzameling.
+
+Als de gebruiker video heeft verzonden voordat deze werd vernieuwd, `videoStreams` behoudt de verzameling de gegevens van de vorige stroom totdat de service een time-out krijgt en deze verwijdert. In dit scenario kan de toepassing besluiten om nieuwe stromen die zijn toegevoegd aan de verzameling te observeren en er een te genereren met de hoogste `id` . 
 
 
 ### <a name="its-not-possible-to-render-multiple-previews-from-multiple-devices-on-web"></a>Het is niet mogelijk om meerdere voor beelden van meerdere apparaten op internet weer te geven
-Dit is een bekende beperking. Raadpleeg het overzicht van de [aanroepende client bibliotheek](https://docs.microsoft.com/azure/communication-services/concepts/voice-video-calling/calling-sdk-features) voor meer informatie.
+Dit is een bekende beperking. Raadpleeg het overzicht van de [aanroepende SDK](https://docs.microsoft.com/azure/communication-services/concepts/voice-video-calling/calling-sdk-features)voor meer informatie.
 
-### <a name="enumeration-of-the-microphone-and-speaker-devices-is-not-possible-in-safari-when-the-application-runs-on-ios-or-ipados"></a>De inventarisatie van de microfoon en de luidspreker apparaten is niet mogelijk in Safari wanneer de toepassing wordt uitgevoerd op iOS of iPadOS 
+### <a name="enumerating-devices-isnt-possible-in-safari-when-the-application-runs-on-ios-or-ipados"></a>Het inventariseren van apparaten is niet mogelijk in Safari wanneer de toepassing wordt uitgevoerd op iOS of iPadOS
+
 Toepassingen kunnen Mic/speaker-apparaten (zoals Bluetooth) op Safari iOS/iPad niet inventariseren/selecteren. Dit is een bekende beperking van het besturings systeem.
 
 Als u Safari in macOS gebruikt, kan uw app de luid sprekers niet opsommen/selecteren via de communicatie Services Apparaatbeheer. In dit scenario moeten apparaten worden geselecteerd via het besturings systeem. Als u Chrome op macOS gebruikt, kan de app apparaten opsommen/selecteren via de communicatie Services-Apparaatbeheer.
 
 ### <a name="audio-connectivity-is-lost-when-receiving-sms-messages-or-calls-during-an-ongoing-voip-call"></a>Er is geen audio verbinding meer bij het ontvangen van SMS-berichten of-aanroepen tijdens een voortdurende VoIP-oproep
-Mobiele browsers behouden geen connectiviteit in de achtergrond status. Dit kan leiden tot een gedegradeerde oproep ervaring als de VoIP-oproep is onderbroken door een SMS-bericht of een inkomende PSTN-oproep waarmee uw toepassing op de achtergrond wordt gepusht.
+Mobiele browsers behouden geen connectiviteit in de achtergrond status. Dit kan leiden tot een gedegradeerde oproep ervaring als de VoIP-oproep is onderbroken door een gebeurtenis die uw toepassing naar de achtergrond pusht.
 
 <br/>Client bibliotheek: aanroepen (Java script)
 <br/>Browsers: Safari, Chrome
@@ -55,7 +58,7 @@ Mobiele browsers behouden geen connectiviteit in de achtergrond status. Dit kan 
 Scha kelen tussen video apparaten kan ertoe leiden dat uw video stroom wordt onderbroken terwijl de stroom wordt opgehaald van het geselecteerde apparaat.
 
 #### <a name="possible-causes"></a>Mogelijke oorzaken
-Het streamen van en scha kelen tussen media apparaten is reken intensief. Een regel matig overschakelen kan leiden tot verminderde prestaties. Ontwikkel aars wordt geadviseerd om één apparaat stroom te stoppen voordat ze een nieuwe starten.
+Het regel matig scha kelen tussen apparaten kan leiden tot verminderde prestaties. Ontwikkel aars wordt geadviseerd om één apparaat stroom te stoppen voordat ze een nieuwe starten.
 
 ### <a name="bluetooth-headset-microphone-is-not-detected-therefore-is-not-audible-during-the-call-on-safari-on-ios"></a>Bluetooth-hoofdtelefoon microfoon wordt niet gedetecteerd, dus niet hoorbaar tijdens het aanroepen van Safari op iOS
 Bluetooth-Head sets worden niet ondersteund door Safari op iOS. Uw Bluetooth-apparaat wordt niet weer gegeven in de beschik bare microfoon opties en andere deel nemers kunnen u niet meer horen als u gebruikmaakt van Bluetooth via Safari.
@@ -75,7 +78,7 @@ Gebruikers kunnen een gedegradeerde video kwaliteit ondervinden wanneer apparate
 
 
 ### <a name="camera-switching-makes-the-screen-freeze"></a>Het scherm wordt geblokkeerd door camera wisseling 
-Wanneer een communicatie Services-gebruiker deelneemt aan een aanroep via de Java script-client bibliotheek en vervolgens op de camera switch klikt, wordt de gebruikers interface mogelijk volledig niet meer reageert totdat de toepassing wordt vernieuwd of de browser door de gebruiker wordt gepusht naar de achtergrond.
+Wanneer een communicatie Services-gebruiker deelneemt aan een aanroep met behulp van de Java script-aanroepende SDK en vervolgens op de camera switch klikt, wordt de gebruikers interface mogelijk niet meer reageert totdat de toepassing wordt vernieuwd of de browser door de gebruiker wordt gepusht naar de achtergrond.
 
 <br/>Betrokken apparaten: Google pixels 4a
 <br/>Client bibliotheek: aanroepen (Java script)
@@ -97,4 +100,4 @@ Als gebruikers ervoor kiezen om de video aan/uit te scha kelen terwijl de aanroe
 Wordt onderzocht.
 
 ###  <a name="sometimes-it-takes-a-long-time-to-render-remote-participant-videos"></a>Soms duurt het lang om Video's van de externe deel nemers weer te geven
-Tijdens een doorlopende groeps aanroep verzendt _gebruiker A_ video en vervolgens wordt _gebruiker B_ lid van de aanroep. Soms wordt de video van gebruiker A niet weer gegeven, of de video van de gebruiker A wordt na een lange vertraging gerenderd. Dit kan worden veroorzaakt door een netwerk omgeving waarvoor verdere configuratie is vereist. Raadpleeg de documentatie over [netwerk vereisten](https://docs.microsoft.com/azure/communication-services/concepts/voice-video-calling/network-requirements) voor netwerk configuratie richtlijnen.
+Tijdens een doorlopende groeps aanroep verzendt _gebruiker A_ video en vervolgens wordt _gebruiker B_ lid van de aanroep. Soms wordt de video van gebruiker A niet weer gegeven, of de video van de gebruiker A wordt na een lange vertraging gerenderd. Dit probleem kan worden veroorzaakt door een netwerk omgeving waarvoor verdere configuratie is vereist. Raadpleeg de documentatie over [netwerk vereisten](https://docs.microsoft.com/azure/communication-services/concepts/voice-video-calling/network-requirements) voor netwerk configuratie richtlijnen.

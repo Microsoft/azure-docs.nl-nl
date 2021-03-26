@@ -1,17 +1,17 @@
 ---
 title: Extensies-Azure Database for PostgreSQL-één server
 description: Meer informatie over de beschik bare post gres-uitbrei dingen in Azure Database for PostgreSQL-één server
-author: lfittl-msft
-ms.author: lufittl
+author: sunilagarwal
+ms.author: sunila
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 09/14/2020
-ms.openlocfilehash: 78395873457f9fe53d45dfbfd94aa9ccdccd614d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.date: 03/25/2021
+ms.openlocfilehash: de395bed885804445146b01745edf5e93426cb13
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "92485457"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105606314"
 ---
 # <a name="postgresql-extensions-in-azure-database-for-postgresql---single-server"></a>PostgreSQL-extensies in Azure Database for PostgreSQL - individuele server
 PostgreSQL biedt de mogelijkheid om de functionaliteit van uw data base uit te breiden met behulp van extensies. Extensies bundelen meerdere SQL-objecten in één pakket dat met één opdracht kan worden geladen in of verwijderd uit uw database. Nadat de gegevens in de database zijn geladen, functioneren de extensies als ingebouwde functies.
@@ -62,7 +62,7 @@ De volgende uitbrei dingen zijn beschikbaar op Azure Database for PostgreSQL ser
 > |[postgis_topology](https://postgis.net/docs/Topology.html)             | 2.5.1           | Ruimtelijke typen en functies van de PostGIS-topologie|
 > |[postgres_fdw](https://www.postgresql.org/docs/11/postgres-fdw.html)                 | 1.0             | externe-gegevens wrapper voor externe PostgreSQL-servers|
 > |[tablefunc](https://www.postgresql.org/docs/11/tablefunc.html)                    | 1.0             | functies voor het bewerken van hele tabellen, inclusief Kruistabel query's|
-> |[timescaledb](https://docs.timescale.com/latest)                    | 1.3.2             | Schakelt schaal bare invoegen en complexe query's voor tijdreeks gegevens in|
+> |[timescaledb](https://docs.timescale.com/latest)                    | 1.3.2, 1.7.4             | Schakelt schaal bare invoegen en complexe query's voor tijdreeks gegevens in|
 > |[accenten opzeggen](https://www.postgresql.org/docs/11/unaccent.html)                     | 1.1             | Zoek woordenlijst voor tekst die accenten verwijdert|
 > |[uuid-ossp](https://www.postgresql.org/docs/11/uuid-ossp.html)                    | 1.1             | Universele unieke id's (UUID) genereren|
 
@@ -108,7 +108,7 @@ De volgende uitbrei dingen zijn beschikbaar op Azure Database for PostgreSQL ser
 > |[postgis_topology](https://postgis.net/docs/Topology.html)             | 2.4.3           | Ruimtelijke typen en functies van de PostGIS-topologie|
 > |[postgres_fdw](https://www.postgresql.org/docs/10/postgres-fdw.html)                 | 1.0             | externe-gegevens wrapper voor externe PostgreSQL-servers|
 > |[tablefunc](https://www.postgresql.org/docs/10/tablefunc.html)                    | 1.0             | functies voor het bewerken van hele tabellen, inclusief Kruistabel query's|
-> |[timescaledb](https://docs.timescale.com/latest)                    | 1.1.1             | Schakelt schaal bare invoegen en complexe query's voor tijdreeks gegevens in|
+> |[timescaledb](https://docs.timescale.com/latest)                    | 1.1.1, 1.7.4             | Schakelt schaal bare invoegen en complexe query's voor tijdreeks gegevens in|
 > |[accenten opzeggen](https://www.postgresql.org/docs/10/unaccent.html)                     | 1.1             | Zoek woordenlijst voor tekst die accenten verwijdert|
 > |[uuid-ossp](https://www.postgresql.org/docs/10/uuid-ossp.html)                    | 1.1             | Universele unieke id's (UUID) genereren|
 
@@ -154,11 +154,14 @@ De volgende uitbrei dingen zijn beschikbaar op Azure Database for PostgreSQL ser
 > |[postgis_topology](https://postgis.net/docs/Topology.html)             | 2.3.2           | Ruimtelijke typen en functies van de PostGIS-topologie|
 > |[postgres_fdw](https://www.postgresql.org/docs/9.6/postgres-fdw.html)                 | 1.0             | externe-gegevens wrapper voor externe PostgreSQL-servers|
 > |[tablefunc](https://www.postgresql.org/docs/9.6/tablefunc.html)                    | 1.0             | functies voor het bewerken van hele tabellen, inclusief Kruistabel query's|
-> |[timescaledb](https://docs.timescale.com/latest)                    | 1.1.1             | Schakelt schaal bare invoegen en complexe query's voor tijdreeks gegevens in|
+> |[timescaledb](https://docs.timescale.com/latest)                    | 1.1.1, 1.7.4             | Schakelt schaal bare invoegen en complexe query's voor tijdreeks gegevens in|
 > |[accenten opzeggen](https://www.postgresql.org/docs/9.6/unaccent.html)                     | 1.1             | Zoek woordenlijst voor tekst die accenten verwijdert|
 > |[uuid-ossp](https://www.postgresql.org/docs/9.6/uuid-ossp.html)                    | 1.1             | Universele unieke id's (UUID) genereren|
 
-## <a name="postgres-95-extensions"></a>Post gres 9,5-extensies 
+## <a name="postgres-95-extensions"></a>Post gres 9,5-extensies
+
+>[!NOTE]
+> PostgreSQL-versie 9,5 is buiten gebruik gesteld.
 
 De volgende uitbrei dingen zijn beschikbaar op Azure Database for PostgreSQL servers met post gres-versie 9,5.
 

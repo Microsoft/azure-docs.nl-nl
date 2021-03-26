@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 01/04/2021
 ms.author: trbye
-ms.openlocfilehash: 4ec9c847158c9b8a1160cb6f4510912ed83a9fae
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 407906727332f3db8d3d0a6840d0c865c6b33ff7
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98948491"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105609514"
 ---
 Laad eerst uw trefwoorden model bestand met behulp van de `FromFile()` statische functie. dit retourneert een `KeywordRecognitionModel` . Gebruik het pad naar het `.table` bestand dat u hebt gedownload vanuit speech Studio. Daarnaast maakt u een `AudioConfig` met de standaard microfoon en vervolgens een nieuw exemplaar `KeywordRecognizer` van de audio configuratie.
 
@@ -35,6 +35,6 @@ KeywordRecognitionResult result = await keywordRecognizer.RecognizeOnceAsync(key
 
 Andere klassen in de Speech SDK ondersteunen doorlopende herkenning (voor spraak-en intentie herkenning) met trefwoord herkenning. Zo kunt u dezelfde code gebruiken die u normaal gesp roken gebruikt voor continue herkenning, met de mogelijkheid om te verwijzen naar een `.table` bestand voor uw trefwoord model.
 
-Voor spraak naar tekst volgt u hetzelfde ontwerp patroon dat wordt weer gegeven in de [Quick](../../../get-started-speech-to-text.md?pivots=programming-language-csharp&tabs=script%2cbrowser%2cwindowsinstall#continuous-recognition) start om doorlopende herkenning in te stellen. Vervang vervolgens de aanroep door door `recognizer.StartContinuousRecognitionAsync()` `recognizer.StartKeywordRecognitionAsync(KeywordRecognitionModel)` en geef uw object door `KeywordRecognitionModel` . Als u doorlopende herkenning met trefwoord herkennen wilt stoppen, gebruikt u `recognizer.StopKeywordRecognitionAsync()` in plaats van `recognizer.StopContinuousRecognitionAsync()` .
+Voor spraak naar tekst volgt u hetzelfde ontwerp patroon dat wordt weer gegeven in de [Quick](../../../get-started-speech-to-text.md?pivots=programming-language-csharp&tabs=script%2cbrowser%2cwindowsinstall#continuous-recognition) start om doorlopende herkenning in te stellen. Vervang vervolgens de aanroep door door `recognizer.StartContinuousRecognitionAsync()` `recognizer.StartKeywordRecognitionAsync(KeywordRecognitionModel)` en geef uw object door `KeywordRecognitionModel` . Als u doorlopende herkenning met trefwoord herkenning wilt stoppen, gebruikt u `recognizer.StopKeywordRecognitionAsync()` in plaats van `recognizer.StopContinuousRecognitionAsync()` .
 
 De intentie herkenning gebruikt een identiek patroon met de [`StartKeywordRecognitionAsync`](/dotnet/api/microsoft.cognitiveservices.speech.intent.intentrecognizer.startkeywordrecognitionasync#Microsoft_CognitiveServices_Speech_Intent_IntentRecognizer_StartKeywordRecognitionAsync_Microsoft_CognitiveServices_Speech_KeywordRecognitionModel_) [`StopKeywordRecognitionAsync`](/dotnet/api/microsoft.cognitiveservices.speech.intent.intentrecognizer.stopkeywordrecognitionasync#Microsoft_CognitiveServices_Speech_Intent_IntentRecognizer_StopKeywordRecognitionAsync) functies en.

@@ -8,12 +8,12 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 03/11/2021
-ms.openlocfilehash: 52509dbf529076eaa0af73ea48db9a7f3fd10241
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 2363afc4c84ee7606410ceecd6819c12d0333dbb
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104584513"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105563290"
 ---
 # <a name="transform-data-using-mapping-data-flows"></a>Gegevens transformeren met toewijzingsgegevensstromen
 
@@ -24,7 +24,7 @@ Zie [Inleiding tot Azure Data Factory](introduction.md) als u niet bekend bent m
 In deze zelf studie gebruikt u de Azure Data Factory gebruikers interface (UX) om een pijp lijn te maken waarmee gegevens worden gekopieerd en getransformeerd van een Azure Data Lake Storage (ADLS) Gen2-bron naar een ADLS Gen2-Sink met toewijzings gegevens stroom. Het configuratie patroon in deze zelf studie kan worden uitgebreid bij het transformeren van gegevens met behulp van de toewijzings gegevens stroom
 
  >[!NOTE]
-   >Deze zelf studie is bedoeld voor het toewijzen van gegevens stromen in het algemeen. Gegevens stromen zijn beschikbaar in Azure Data Factory-en Synapse-pijp lijnen. Als u geen ervaring hebt met gegevens stromen in azure Synapse-pijp lijnen, kunt u de [gegevens stroom volgen met behulp van Azure Synapse-pijp lijnen](https://docs.microsoft.com/azure/synapse-analytics/concepts-data-flow-overview) 
+   >Deze zelf studie is bedoeld voor het toewijzen van gegevens stromen in het algemeen. Gegevens stromen zijn beschikbaar in Azure Data Factory-en Synapse-pijp lijnen. Als u geen ervaring hebt met gegevens stromen in azure Synapse-pijp lijnen, kunt u de [gegevens stroom volgen met behulp van Azure Synapse-pijp lijnen](../synapse-analytics/concepts-data-flow-overview.md) 
    
 In deze zelfstudie voert u de volgende stappen uit:
 

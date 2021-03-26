@@ -7,12 +7,12 @@ ms.topic: include
 ms.date: 03/14/2019
 ms.author: glenga
 ms.custom: include file
-ms.openlocfilehash: 54ce9438f768e347e306432a1874ab1816a1ae95
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: d1b2cbefe64add5048d4e3c7946277b1461a5434
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104719740"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105607083"
 ---
 Configuratie-instellingen voor [Durable Functions](../articles/azure-functions/durable/durable-functions-overview.md).
 
@@ -121,7 +121,7 @@ Namen van taakhubs moeten beginnen met een letter en mogen alleen letters en cij
 |eventGridPublishRetryInterval|5 minuten|Het interval voor nieuwe pogingen van Event Grid wordt gepubliceerd in de notatie *uu: mm: ss*.|
 |eventGridPublishEventTypes||Een lijst met gebeurtenistypen die moeten worden gepubliceerd op Event Grid. Als u niets opgeeft, worden alle gebeurtenistypen gepubliceerd. Toegestane waarden zijn `Started`, `Completed`, `Failed`, `Terminated`.|
 |useAppLease|true|Wanneer het is ingesteld op `true`, moeten apps een blob-lease op app-niveau verkrijgen voordat taakhub-berichten worden verwerkt. Zie voor meer informatie de documentatie over [herstel na noodgeval en geo-distributie](../articles/azure-functions/durable/durable-functions-disaster-recovery-geo-distribution.md). Vanaf v2.3.0 beschikbaar.
-|useLegacyPartitionManagement|true|Wanneer het is ingesteld op `false`, wordt een algoritme voor partitiebeheer gebruikt die het uitvoeren van dubbele functies vermindert bij het uitschalen.  Vanaf v2.3.0 beschikbaar. De standaardinstelling wordt in een toekomstige versie gewijzigd in `false`.|
+|useLegacyPartitionManagement|onjuist|Wanneer het is ingesteld op `false`, wordt een algoritme voor partitiebeheer gebruikt die het uitvoeren van dubbele functies vermindert bij het uitschalen.  Vanaf v2.3.0 beschikbaar.|
 |useGracefulShutdown|false|(Preview) Schakel probleemloos afsluiten in om de kans op het afsluiten van de host te verminderen tijdens het verwerken van functies die in uitvoer zijn.|
 
 Veel van deze instellingen zijn voor het optimaliseren van de prestaties. Zie [Prestaties en schaal aanpassen](../articles/azure-functions/durable/durable-functions-perf-and-scale.md) voor meer informatie.

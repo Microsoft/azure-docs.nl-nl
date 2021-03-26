@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 10/27/2020
 ms.author: olayemio
 ms.reviewer: cynthn
-ms.openlocfilehash: d80caf767d923ce2539ca254a8312371155a3104
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 015fa201fe1c31dde2e30c2fe689ac13452b1b01
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102553728"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105607589"
 ---
 # <a name="troubleshoot-shared-image-galleries-in-azure"></a>Problemen met gedeelde afbeeldings galerieën in azure oplossen
 
@@ -52,7 +52,7 @@ Als u problemen ondervindt bij het uitvoeren van bewerkingen in de gedeelde afbe
 **Oorzaak**: u hebt geprobeerd een galerie te verwijderen die ten minste één bestaande afbeeldings definitie bevat. Een galerie moet leeg zijn voordat deze kan worden verwijderd.  
 **Tijdelijke oplossing**: Verwijder alle afbeeldings definities in de galerie en ga vervolgens door met het verwijderen van de galerie. Als de definitie van de installatie kopie installatie kopieën bevat, moet u de installatie kopie versies verwijderen voordat u de afbeeldings definities verwijdert.
 
-**Bericht**: *de galerie naam <Gallery \> is niet uniek binnen het abonnement <subscriptionId> . Kies een andere naam voor de galerie.*  
+**Bericht**: *de galerie naam <Gallery \> is niet uniek binnen het abonnement <subscriptionID> . Kies een andere naam voor de galerie.*  
 **Oorzaak**: u hebt een bestaande galerie met dezelfde naam en hebt geprobeerd een andere galerie met dezelfde naam te maken.  
 **Tijdelijke oplossing**: Kies een andere naam voor de galerie.
 
@@ -127,7 +127,7 @@ Als u problemen ondervindt bij het uitvoeren van bewerkingen in de gedeelde afbe
 **Oorzaak**: u hebt geprobeerd een afbeeldings definitie te verwijderen die afbeeldings versies bevat. Een definitie van een installatie kopie moet leeg zijn voordat deze kan worden verwijderd.  
 **Tijdelijke oplossing**: Verwijder alle installatie kopieën in de definitie van de installatie kopie en verwijder vervolgens de definitie van de installatie kopie.
 
-**Bericht**: *kan para meter <eigenschap niet binden \> . Kan waarde <waarde niet converteren \> naar type <Property type \> . Kan de id-naam <waarde niet overeenkomen met \> een geldige inventarisatie naam. Geef een van de volgende inventarisatie namen op en probeer het opnieuw: <choice1 \> , <choice2 \> ,...*  
+**Bericht**: *kan para meter <eigenschap niet binden \> . Kan waarde <waarde niet converteren \> naar type <Property type \> . Kan de id-naam <waarde niet overeenkomen met \> een geldige inventarisatie naam. Geef een van de volgende inventarisatie namen op en probeer het opnieuw: <Choice \_ 1 \> , <keuze \_ 2 \> ,...*  
 **Oorzaak**: de eigenschap heeft een beperkte lijst van mogelijke waarden, en <waarde \> is niet een van beide.  
 **Tijdelijke oplossing**: Kies een van de mogelijke <keuze \> waarden.
 
@@ -185,7 +185,7 @@ Als u problemen ondervindt bij het uitvoeren van bewerkingen in de gedeelde afbe
 **Oorzaak**: wanneer u een installatie kopie versie maakt met behulp van een lijst met schijven en/of schijf momentopnamen, hebben twee of meer schijven of moment opnamen van schijven dezelfde resource-id.  
 **Tijdelijke oplossing**: Verwijder de bron-id's van de dubbele en andere schijven.
 
-**Bericht**: *eigenschaps-id <resourceID \> op pad properties. storageProfile. <diskImages \> . source.id is ongeldig. U verwacht een volledig gekwalificeerde resource-id die begint met '/subscriptions/{subscriptionId} ' of '/providers/{resourceProviderNamespace}/'.*  
+**Bericht**: *eigenschaps-id <resourceID \> op pad properties. storageProfile. <diskImages \> . source.id is ongeldig. Een volledig gekwalificeerde resource-id die begint met '/Subscriptions/ <subscriptionID> ' of '/providers/ <resourceProviderNamespace> /' verwacht.*  
 **Oorzaak**: de <resourceID- \> waarde heeft een onjuiste indeling.  
 **Tijdelijke oplossing**: Controleer of de resource-id juist is.
 
@@ -303,7 +303,7 @@ Als u problemen ondervindt bij het uitvoeren van bewerkingen in de gedeelde afbe
 **Oorzaak**: de definitie van de installatie kopie die u hebt gebruikt voor het implementeren van de virtuele machine bevat geen installatie kopieën die in de laatste versie zijn opgenomen.  
 **Tijdelijke oplossing**: Zorg ervoor dat er ten minste één installatie kopie versie is ingesteld op ' niet van laatste ' instellen op ONWAAR. 
 
-**Bericht**: *de client is gemachtigd om de actie ' micro soft. computes/afbeeldingen/versies/lezen ' op het bereik <resourceID uit te voeren \> , maar de huidige Tenant <tenantId1 \> is niet gemachtigd om toegang te krijgen tot het gekoppelde abonnement <subscriptionId2 \> .*  
+**Bericht**: *de client is gemachtigd om de actie ' micro soft. computes/afbeeldingen/versies/lezen ' op het bereik <resourceID uit te voeren \> , maar de huidige Tenant <tenantID \> is niet geautoriseerd voor toegang tot het gekoppelde abonnement <subscriptionID \> .*  
 **Oorzaak**: de virtuele machine of schaalset is gemaakt met behulp van een SIG-installatie kopie in een andere Tenant. U hebt geprobeerd een wijziging aan te brengen in de virtuele machine of schaalset, maar u hebt geen toegang tot het abonnement dat eigenaar is van de installatie kopie.  
 **Tijdelijke oplossing**: Neem contact op met de eigenaar van het abonnement van de versie van de installatie kopie om Lees toegang te verlenen tot de installatie kopie versie.
 
@@ -327,12 +327,17 @@ Als u problemen ondervindt bij het uitvoeren van bewerkingen in de gedeelde afbe
 **Oorzaak**: de huidige bron installatie kopie voor de schaalset is een gegeneraliseerde bron installatie kopie, maar wordt bijgewerkt met een bron installatie kopie die speciaal is ingesteld. De huidige bron installatie kopie en de nieuwe bron installatie kopie voor een schaalset moeten dezelfde status hebben.  
 **Tijdelijke oplossing**: gebruik een algemene versie van de installatie kopie om de schaalset bij te werken.
 
-**Bericht**: *schijf encryption set <diskEncryptionSetId \> in de galerie met gedeelde installatie kopieën <versionId \> behoort tot het abonnement <subscriptionId1 \> en kan niet worden gebruikt met resource \> ' ' in het abonnement <subscriptionId2*  
+**Bericht**: *schijf encryption set <diskEncryptionSetID \> in de galerie met gedeelde installatie kopieën <versionID \> behoort tot abonnement <subscriptionID \_ 1 \> en kan niet worden gebruikt met resource ' ' in het abonnement <subscriptionID \_ 2 \>*  
 **Oorzaak**: de schijf versleuteling die is gebruikt voor het versleutelen van de versie van de installatie kopie bevindt zich in een ander abonnement dan het abonnement om de installatie kopie versie te hosten.  
 **Tijdelijke oplossing**: gebruik hetzelfde abonnement voor de installatie kopie versie en de schijf versleutelings.
 
 **Bericht**: *het maken van de VM of virtuele-machine schaalset duurt lang.*  
 **Tijdelijke oplossing**: Controleer of de **OSTYPE** van de versie van de installatie kopie die u probeert te maken van de virtuele machine en de VM-schaalset hetzelfde **OSTYPE** heeft van de bron die u hebt gebruikt voor het maken van de installatie kopie versie. 
+
+**Bericht**: *de resource met de id <vmID \> heeft een ander abonnement [{ \" name \" : \" <name> \" , \" Publisher \" : \" <publisher> \" , \" product \" : \" <product> \" , \" promotionCode \" : \" <promotionCode> \" }] dan het bovenliggende galerie-installatie kopie schema [null].*  
+**Oorzaak**: de definitie van de bovenliggende installatie kopie voor de implementatie van de installatie kopie heeft geen informatie over het aankoop plan.  
+**Tijdelijke oplossing**: Maak een definitie van een installatie kopie met dezelfde Details van het aankoop plan uit het fout bericht en maak de installatie kopie versie in de definitie van de installatie kopie.
+
 
 ## <a name="creating-a-disk-from-an-image-version"></a>Een schijf maken op basis van een installatie kopie versie ##
 

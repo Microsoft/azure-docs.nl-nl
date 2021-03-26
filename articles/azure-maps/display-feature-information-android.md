@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 zone_pivot_groups: azure-maps-android
-ms.openlocfilehash: b9926d5d6a70d959c0baacd9602341bb69abe924
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: ea9ed2c74651a7719533340a24c4741d4e25b805
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102097241"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105605719"
 ---
 # <a name="display-feature-information"></a>Functie-informatie weergeven
 
@@ -75,6 +75,9 @@ map.events.add((OnFeatureClick) (features) -> {
     String msg = features.get(0).getStringProperty("title");
 
     //Do something with the message.
+
+    //Return a boolean indicating if event should be consumed or continue bubble up.
+    return false;
 }, layer.getId());    //Limit this event to the symbol layer.
 ```
 
@@ -93,6 +96,9 @@ map.events.add(OnFeatureClick { features: List<Feature> ->
     val msg = features[0].getStringProperty("title")
 
     //Do something with the message.
+
+    //Return a boolean indicating if event should be consumed or continue bubble up.
+    return false
 }, layer.getId()) //Limit this event to the symbol layer.
 ```
 
@@ -112,6 +118,9 @@ map.events.add((OnFeatureClick) (features) -> {
 
     //Display a toast message with the title information.
     Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+
+    //Return a boolean indicating if event should be consumed or continue bubble up.
+    return false;
 }, layer.getId());    //Limit this event to the symbol layer.
 ```
 
@@ -127,6 +136,9 @@ map.events.add(OnFeatureClick { features: List<Feature> ->
 
     //Display a toast message with the title information.
     Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+
+    //Return a boolean indicating if event should be consumed or continue bubble up.
+    return false
 }, layer.getId()) //Limit this event to the symbol layer.
 ```
 
@@ -143,7 +155,7 @@ Naast pop-upberichten zijn er nog vele andere manieren om de meta gegevens eigen
 
 ## <a name="display-a-popup"></a>Een pop-upvenster weer geven
 
-De Azure Maps Android SDK biedt een `Popup` klasse waarmee u eenvoudig ui-aantekeningen elementen kunt maken die zijn gekoppeld aan een positie op de kaart. Voor pop-ups moet u in een weer gave met een relatieve indeling door geven in de `content` optie van de pop-up. Hier volgt een eenvoudige indelings voorbeeld waarin donkere tekst boven op een achtergrond wordt weer gegeven.
+De Azure Maps Android SDK biedt een `Popup` klasse waarmee u eenvoudig ui-aantekeningen elementen kunt maken die zijn gekoppeld aan een positie op de kaart. Voor pop-ups moet u een weer gave met een relatieve indeling door geven in de `content` optie van de pop-up. Hier volgt een eenvoudige indelings voorbeeld waarin donkere tekst boven op een achtergrond wordt weer gegeven.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -210,6 +222,9 @@ map.events.add((OnFeatureClick)(feature) -> {
 
     //Open the popup.
     popup.open();
+
+    //Return a boolean indicating if event should be consumed or continue bubble up.
+    return false;
 });
 ```
 
@@ -255,6 +270,9 @@ map.events.add(OnFeatureClick { feature: List<Feature> ->
 
     //Open the popup.
     popup.open()
+
+    //Return a boolean indicating if event should be consumed or continue bubble up.
+    return false
 })
 ```
 

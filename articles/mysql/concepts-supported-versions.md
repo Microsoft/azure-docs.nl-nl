@@ -6,21 +6,31 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 6/3/2020
-ms.openlocfilehash: 8b85307f01a11366a2147c947f26658f548932e8
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 314462517ba4e63694266b5e49231cb8536f3635
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103467711"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105604720"
 ---
-# <a name="supported-azure-database-for-mysql-server-versions"></a>Ondersteunde Azure Database for MySQL server versies
+# <a name="supported-azure-database-for-mysql-server-versions"></a>Ondersteunde serverversies van Azure Database for MySQL
 
 Azure Database for MySQL is ontwikkeld vanuit de [MySQL Community Edition](https://www.mysql.com/products/community/), met behulp van de InnoDB-opslag engine. De service ondersteunt alle huidige primaire versie die wordt ondersteund door de community, namelijk MySQL 5,6, 5,7 en 8,0. MySQL maakt gebruik van het schema X. Y. Z waarbij X de primaire versie is, Y de secundaire versie en Z de release van de fout correctie. Zie de [MySQL-documentatie](https://dev.mysql.com/doc/refman/5.7/en/which-version.html)voor meer informatie over het schema.
 
-> [!NOTE]
-> In de implementatie optie voor één server wordt een gateway gebruikt om de verbindingen met Server exemplaren om te leiden. Nadat de verbinding tot stand is gebracht, wordt in de MySQL-client de versie van MySQL weergegeven die in de gateway is ingesteld, niet de feitelijke versie die wordt uitgevoerd op de MySQL-serverinstantie. Als u de versie van uw MySQL-serverinstantie wilt vaststellen, gebruikt u de `SELECT VERSION();`-opdracht bij de MySQL-prompt.
 
-Azure Database for MySQL ondersteunt momenteel de volgende primaire en secundaire versies van MySQL:
+
+## <a name="connect-to-a-gateway-node-that-is-running-a-specific-mysql-version"></a>Verbinding maken met een gateway knooppunt waarop een specifieke MySQL-versie wordt uitgevoerd
+
+In de implementatie optie voor één server wordt een gateway gebruikt om de verbindingen met Server exemplaren om te leiden. Nadat de verbinding tot stand is gebracht, wordt in de MySQL-client de versie van MySQL weergegeven die in de gateway is ingesteld, niet de feitelijke versie die wordt uitgevoerd op de MySQL-serverinstantie. Als u de versie van uw MySQL-serverinstantie wilt vaststellen, gebruikt u de `SELECT VERSION();`-opdracht bij de MySQL-prompt. Bekijk de [connectiviteits architectuur](https://docs.microsoft.com/azure/mysql/concepts-connectivity-architecture#connectivity-architecture) voor meer informatie over gateways in azure database for MySQL service-architectuur.
+
+Als Azure Database for MySQL ondersteunt primaire versie v 5.6, v 5.7 en v 8.0, de standaard poort 3306 om verbinding te maken met Azure Database for MySQL voert MySQL-client versie 5,6 (kleinste gemeen schappelijke noemer) uit voor de ondersteuning van verbindingen met servers van alle 3 ondersteunde primaire versies. Als uw toepassing echter een vereiste heeft om verbinding te maken met een specifieke primaire versie, bijvoorbeeld: v 5.7 of v 8.0, kunt u dit doen door de poort in uw server connection string te wijzigen.
+
+In Azure Database for MySQL-service luistert gateway knooppunten op poort 3308 voor v 5.7-clients en poort 3309 voor v 8.0-clients. Met andere woorden, als u verbinding wilt maken met de v 5.7-Gateway-client, moet u de volledig gekwalificeerde server naam en poort 3308 gebruiken om verbinding te maken met uw server via client toepassing. En als u verbinding wilt maken met de v 8.0 Gateway-client, kunt u de volledig gekwalificeerde server naam en poort 3309 gebruiken om verbinding te maken met uw server. Raadpleeg het volgende voor beeld voor meer duidelijkheid.
+
+:::image type="content" source="./media/concepts-supported-versions/concepts-supported-versions-gateway.png" alt-text="Voor beeld van verbinding maken via verschillende gateway-mysql-versies":::
+
+
+## <a name="azure-database-for-mysql-currently-supports-the-following-major-and-minor-versions-of-mysql"></a>Azure Database for MySQL ondersteunt momenteel de volgende primaire en secundaire versies van MySQL:
 
 
 | Versie | Enkele server <br/> Huidige secundaire versie |Flexibele server (preview) <br/> Huidige secundaire versie  |

@@ -11,14 +11,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 12/10/2020
+ms.date: 03/25/2021
 ms.author: keithp
-ms.openlocfilehash: 1f349931fb479be3b3ba936b3d0a665427357f29
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: f6705b5f72aaa8f990aaf3b1daa33697b690d1f1
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "97369035"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105608881"
 ---
 # <a name="frequently-asked-questions-faq"></a>Veelgestelde vragen
 
@@ -32,11 +32,11 @@ Een Hardware Security module (HSM) is een fysiek computer apparaat dat wordt geb
 
 ### <a name="q-what-is-the-azure-dedicated-hsm-offering"></a>V: wat is de voor Azure speciale HSM-aanbieding?
 
-De toegewezen HSM van Azure is een Cloud service die Hsm's ondervindt in azure-data centers die rechtstreeks zijn verbonden met het virtuele netwerk van een klant. Deze Hsm's zijn speciale netwerk apparaten (Thales Network Luna HSM 7). Ze worden direct geïmplementeerd in de privé-IP-adres ruimte van een klant en micro soft heeft geen toegang tot de cryptografische functionaliteit van de Hsm's. Alleen de klant heeft volledige beheer-en cryptografische controle over deze apparaten. Klanten zijn verantwoordelijk voor het beheer van het apparaat en ze kunnen volledige activiteiten logboeken rechtstreeks vanaf hun apparaten ontvangen. Gespecialiseerde Hsm's helpen klanten te voldoen aan nalevings vereisten, zoals FIPS 140-2 level 3, HIPAA, PCI-DSS en eIDAS en vele andere.
+De toegewezen HSM van Azure is een Cloud service die Hsm's ondervindt in azure-data centers die rechtstreeks zijn verbonden met het virtuele netwerk van een klant. Deze Hsm's zijn speciale [Thales Luna 7 HSM](https://cpl.thalesgroup.com/encryption/hardware-security-modules/network-hsms) -netwerk apparaten. Ze worden direct geïmplementeerd in de privé-IP-adres ruimte van een klant en micro soft heeft geen toegang tot de cryptografische functionaliteit van de Hsm's. Alleen de klant heeft volledige beheer-en cryptografische controle over deze apparaten. Klanten zijn verantwoordelijk voor het beheer van het apparaat en ze kunnen volledige activiteiten logboeken rechtstreeks vanaf hun apparaten ontvangen. Gespecialiseerde Hsm's helpen klanten te voldoen aan nalevings vereisten, zoals FIPS 140-2 level 3, HIPAA, PCI-DSS en eIDAS en vele andere.
 
 ### <a name="q-what-hardware-is-used-for-dedicated-hsm"></a>V: welke hardware wordt gebruikt voor een toegewezen HSM?
 
-Micro soft heeft een partnerschap met Thales voor het leveren van de toegewezen HSM-service van Azure. Het specifieke apparaat dat wordt gebruikt, is het [Thales-netwerk Luna HSM 7](https://cpl.thalesgroup.com/encryption/hardware-security-modules/network-hsms). Dit apparaat biedt niet alleen de FIPS 140-2-gevalideerde firmware op niveau 3, maar biedt ook lage latentie, hoge prestaties en hoge capaciteit via 10 partities. 
+Micro soft heeft een partnerschap met Thales voor het leveren van de toegewezen HSM-service van Azure. Het specifieke apparaat dat wordt gebruikt, is het [Thales Luna 7 HSM model A790](https://cpl.thalesgroup.com/encryption/hardware-security-modules/network-hsms). Dit apparaat biedt niet alleen het [FIPS 140-2-](https://csrc.nist.gov/publications/detail/fips/140/2/final) gevalideerde firmware niveau 3, maar biedt ook een lage latentie, hoge prestaties en hoge capaciteit via 10 partities. 
 
 ### <a name="q-what-is-an-hsm-used-for"></a>V: waarvoor wordt een HSM gebruikt?
 
@@ -48,7 +48,7 @@ Klanten kunnen Hsm's in specifieke regio's inrichten met behulp van Power shell 
 
 ### <a name="q-what-software-is-provided-with-the-dedicated-hsm-service"></a>V: welke software wordt meegeleverd met de speciale HSM-service?
 
-Thales levert alle software voor het HSM-apparaat nadat het is ingericht door micro soft. De software is beschikbaar op de [Thales-portal voor klant ondersteuning](https://supportportal.gemalto.com/csm/). Klanten die de speciale HSM-service gebruiken, moeten worden geregistreerd voor Thales-ondersteuning en beschikken over een klant-ID waarmee toegang kan worden gezocht en de relevante software kan worden gedownload. De ondersteunde client software is versie 7,2, die compatibel is met de gevalideerde firmware versie van de FIPS 140-2 level 3-7.0.3. 
+Thales levert alle software voor het HSM-apparaat nadat het is ingericht door micro soft. De software is beschikbaar op de [Thales-portal voor klant ondersteuning](https://supportportal.thalesgroup.com/csm). Klanten die de speciale HSM-service gebruiken, moeten worden geregistreerd voor Thales-ondersteuning en beschikken over een klant-ID waarmee toegang kan worden gezocht en de relevante software kan worden gedownload. De ondersteunde client software is versie 7,2, die compatibel is met de gevalideerde firmware versie van de FIPS 140-2 level 3-7.0.3. 
 
 ### <a name="q-what-extra-costs-may-be-incurred-with-dedicated-hsm-service"></a>V: welke extra kosten worden mogelijk gemaakt met een speciale HSM-service?
 
@@ -63,11 +63,11 @@ Op dit moment biedt Azure dedicated HSM alleen Hsm's met verificatie op basis va
 
 ### <a name="q-will-azure-dedicated-hsm-host-my-hsms-for-me"></a>V: zal Azure dedicated HSM host mijn Hsm's voor mij?
 
-Micro soft biedt alleen het Thales-netwerk Luna HSM 7 via de speciale HSM-service en kan geen door klanten geleverde apparaten hosten.
+Micro soft biedt alleen de Thales Luna 7 HSM model A790 via de exclusieve HSM-service en kan geen door klanten geleverde apparaten hosten.
 
 ### <a name="q-does-azure-dedicated-hsm-support-payment-pineft-features"></a>V: heeft Azure exclusieve HSM-functies voor de ondersteuning van betalingen (PINCODEs/EFT)?
 
-De specifieke HSM-service van Azure maakt gebruik van Thales netwerk Luna HSM 7-apparaten. Deze apparaten bieden geen ondersteuning voor het gebruik van de speciale HSM-specifieke functionaliteit (zoals pincode of EFT) of certificeringen. Als u wilt dat de exclusieve HSM-service van Azure in de toekomst betaling Hsm's ondersteunt, geeft u de feedback door aan uw micro soft-account vertegenwoordiger.
+De specifieke HSM-service van Azure maakt gebruik van Thales Luna 7 Hsm's. Deze apparaten bieden geen ondersteuning voor de specifieke functionaliteit voor betalings-HSM (zoals pincode of EFT) of certificeringen. Als u wilt dat de exclusieve HSM-service van Azure in de toekomst betaling Hsm's ondersteunt, geeft u de feedback door aan uw micro soft-account vertegenwoordiger.
 
 ### <a name="q-which-azure-regions-is-dedicated-hsm-available-in"></a>V: in welke Azure-regio's is een speciale HSM beschikbaar?
 
@@ -101,7 +101,7 @@ Vanaf eind maart 2019 is toegewezen HSM beschikbaar in de volgende 14 regio's. V
 
 ### <a name="q-how-does-my-application-connect-to-a-dedicated-hsm"></a>V: Hoe maakt mijn toepassing verbinding met een toegewezen HSM?
 
-U gebruikt Thales voor HSM-client hulpprogramma's/SDK/software voor het uitvoeren van cryptografische bewerkingen vanuit uw toepassingen. De software is beschikbaar op de [Thales-portal voor klant ondersteuning](https://supportportal.gemalto.com/csm/). Klanten die de speciale HSM-service gebruiken, moeten worden geregistreerd voor Thales-ondersteuning en beschikken over een klant-ID waarmee toegang kan worden gezocht en de relevante software kan worden gedownload.
+U gebruikt Thales voor HSM-client hulpprogramma's/SDK/software voor het uitvoeren van cryptografische bewerkingen vanuit uw toepassingen. De software is beschikbaar op de [Thales-portal voor klant ondersteuning](https://supportportal.thalesgroup.com/csm). Klanten die de speciale HSM-service gebruiken, moeten worden geregistreerd voor Thales-ondersteuning en beschikken over een klant-ID waarmee toegang kan worden gezocht en de relevante software kan worden gedownload.
 
 ### <a name="q-can-an-application-connect-to-dedicated-hsm-from-a-different-vnet-in-or-across-regions"></a>V: kan een toepassing verbinding maken met een specifieke HSM vanuit een ander VNET in of tussen verschillende regio's?
 
@@ -117,7 +117,7 @@ Nee. Toegewezen Azure-Hsm's zijn alleen toegankelijk vanuit uw virtuele netwerk.
 
 ### <a name="q-can-i-import-keys-from-an-existing-on-premises-hsm-to-dedicated-hsm"></a>V: kan ik sleutels uit een bestaande HSM op locatie importeren in een speciale HSM?
 
-Ja, als u een on-premises Thales-netwerk Luna HSM 7 Hsm's hebt. Er zijn meerdere methoden. Raadpleeg de [Thales HSM-documentatie](https://thalesdocs.com/gphsm/luna/7.2/docs/network/Content/Home_network.htm).
+Ja, als u on-premises Thales Luna 7 Hsm's hebt. Er zijn meerdere methoden. Raadpleeg de [Thales HSM-documentatie](https://thalesdocs.com/gphsm/luna/7.2/docs/network/Content/Home_network.htm).
 
 ### <a name="q-what-operating-systems-are-supported-by-dedicated-hsm-client-software"></a>V: welke besturings systemen worden ondersteund door toegewezen HSM-client software?
 
@@ -130,7 +130,7 @@ Als u maximale Beschik baarheid wilt, moet u de configuratie van de HSM-client t
 
 ### <a name="q-what-authentication-mechanisms-are-supported-by-dedicated-hsm"></a>V: welke verificatie mechanismen worden ondersteund door een toegewezen HSM?
 
-Azure dedicated HSM maakt gebruik van SafeNet netwerk HSM 7-apparaten (model A790) en biedt ondersteuning voor verificatie op basis van wacht woorden.
+De toegewezen HSM van Azure maakt gebruik van [Thales Luna 7 HSM model A790](https://cpl.thalesgroup.com/encryption/hardware-security-modules/network-hsms) -apparaten en ze ondersteunen verificatie op basis van wacht woorden.
 
 ### <a name="q-what-sdks-apis-client-software-is-available-to-use-with-dedicated-hsm"></a>V: welke Sdk's, Api's, client software is beschikbaar voor gebruik met toegewezen HSM?
 
@@ -207,7 +207,7 @@ Ja. Configuratie van hoge Beschik baarheid en Setup worden uitgevoerd in de HSM-
 
 ### <a name="q-can-i-add-hsms-from-my-on-premises-network-to-a-high-availability-group-with-azure-dedicated-hsm"></a>V: kan ik Hsm's van mijn on-premises netwerk toevoegen aan een groep met hoge Beschik baarheid met een toegewezen HSM van Azure?
 
-Ja. Ze moeten voldoen aan de vereisten voor hoge Beschik baarheid voor SafeNet Luna Network HSM 7.
+Ja. Ze moeten voldoen aan de vereisten voor hoge Beschik baarheid voor [Thales Luna 7 hsm's](https://cpl.thalesgroup.com/encryption/hardware-security-modules/network-hsms)
 
 ### <a name="q-can-i-add-luna-56-hsms-from-on-premises-networks-to-a-high-availability-group-with-azure-dedicated-hsm"></a>V: kan ik Luna 5/6 Hsm's van on-premises netwerken toevoegen aan een groep met hoge Beschik baarheid met een toegewezen HSM van Azure?
 
@@ -229,7 +229,7 @@ Azure-data centers hebben uitgebreide fysieke en procedures voor beveiligings co
 
 ### <a name="q-what-happens-if-there-is-a-security-breach-or-hardware-tampering-event"></a>V: wat gebeurt er als er sprake is van een inbreuk op de beveiliging of het knoeien met de hardware?
 
-De toegewezen HSM-service maakt gebruik van Thales netwerk Luna HSM 7-apparaten. Deze apparaten ondersteunen detectie van fysieke en logische manipulatie. Als er zich een onrecht matige gebeurtenis voordoet, worden de Hsm's automatisch nul.
+De toegewezen HSM-service maakt gebruik van [Thales Luna 7 HSM](https://cpl.thalesgroup.com/encryption/hardware-security-modules/network-hsms) -apparaten. Deze apparaten ondersteunen detectie van fysieke en logische manipulatie. Als er zich een onrecht matige gebeurtenis voordoet, worden de Hsm's automatisch nul.
 
 ### <a name="q-how-do-i-ensure-that-keys-in-my-dedicated-hsms-are-not-lost-due-to-error-or-a-malicious-insider-attack"></a>V: Hoe kan ik ervoor te zorgen dat sleutels in mijn toegewezen Hsm's niet verloren gaan als gevolg van een fout of een kwaadwillende Insider-aanval?
 
@@ -239,7 +239,7 @@ Het is raadzaam om een on-premises HSM-back-upapparaat te gebruiken om regel mat
 
 Ondersteuning wordt geboden door zowel micro soft als Thales.  Als u een probleem hebt met de hardware-of netwerk toegang, verhoogt u een ondersteunings aanvraag met micro soft en als u een probleem ondervindt met HSM-configuratie, software en toepassings ontwikkeling, wordt een ondersteunings aanvraag met Thales gegenereerd. Als u een onbepaald probleem hebt, kunt u een ondersteunings aanvraag indienen bij micro soft en kan Thales indien nodig worden ingeschakeld. 
 
-### <a name="q-how-do-i-get-the-client-software-documentation-and-access-to-integration-guidance-for-the-thales-network-luna-hsm-7"></a>V: Hoe kan ik de client software, documentatie en toegang verkrijgen tot integratie richtlijnen voor het Thales-netwerk Luna HSM 7?
+### <a name="q-how-do-i-get-the-client-software-documentation-and-access-to-integration-guidance-for-the-thales-luna-7-hsm"></a>V: Hoe kan ik de client software, documentatie en toegang verkrijgen tot integratie richtlijnen voor de Thales Luna 7 HSM?
 
 Nadat u zich hebt geregistreerd voor de service, wordt er een Thales-klant-ID gegeven die registratie toestaat in de Thales-portal voor klanten ondersteuning. Hiermee wordt toegang tot alle software en documentatie ingeschakeld en worden ondersteunings aanvragen rechtstreeks met Thales ingeschakeld.
 
@@ -255,11 +255,11 @@ De HSM heeft een optie voor opnieuw opstarten van de opdracht regel. Er treden e
 
 ### <a name="q-is-it-safe-to-store-encryption-keys-for-my-most-important-data-in-dedicated-hsm"></a>V: is het veilig om versleutelings sleutels voor mijn belangrijkste gegevens op te slaan in een toegewezen HSM?
 
-Ja, toegewezen HSM-bepalingen Thales netwerk Luna HSM 7-apparaten die gebruikmaken van FIPS 140-2 level 3 gevalideerd Hsm's. 
+Ja, speciale HSM-bepalingen Thales Luna 7 Hsm's die [FIPS 140-2-niveau 3](https://csrc.nist.gov/publications/detail/fips/140/2/final) zijn gevalideerd. 
 
 ### <a name="q-what-cryptographic-keys-and-algorithms-are-supported-by-dedicated-hsm"></a>V: welke cryptografische sleutels en algoritmen worden ondersteund door een toegewezen HSM?
 
-Speciale HSM-service bepalingen Thales netwerk Luna HSM 7-apparaten. Ze bieden ondersteuning voor een breed scala aan cryptografische sleutel typen en algoritmen, waaronder: volledige Suite B-ondersteuning
+Speciale HSM-service bepalingen Thales Luna 7 HSM-apparaten. Ze bieden ondersteuning voor een breed scala aan cryptografische sleutel typen en algoritmen, waaronder: volledige Suite B-ondersteuning
 
 * Asymmetrisch
   * RSA
@@ -283,11 +283,11 @@ Speciale HSM-service bepalingen Thales netwerk Luna HSM 7-apparaten. Ze bieden o
 
 ### <a name="q-is-dedicated-hsm-fips-140-2-level-3-validated"></a>V: is toegewezen HSM FIPS 140-2 level 3 gevalideerd?
 
-Ja. Speciale HSM-service bepalingen Thales netwerk Luna HSM 7-apparaten die gebruikmaken van FIPS 140-2 level 3 gevalideerd Hsm's.
+Ja. Speciale HSM-service bepalingen [Thales Luna 7 HSM model A790](https://cpl.thalesgroup.com/encryption/hardware-security-modules/network-hsms) -apparaten met [FIPS 140-2-niveau 3](https://csrc.nist.gov/publications/detail/fips/140/2/final) gevalideerd.
 
 ### <a name="q-what-do-i-need-to-do-to-make-sure-i-operate-dedicated-hsm-in-fips-140-2-level-3-validated-mode"></a>V: wat moet ik doen om ervoor te zorgen dat ik specifieke HSM in de modus voor de gevalideerde FIPS 140-2 level 3 heb?
 
-De speciale HSM-service voorziet Thales netwerk Luna HSM 7-apparaten. Op deze apparaten wordt gebruikgemaakt van FIPS 140-2 level 3-gevalideerde Hsm's. De standaard geïmplementeerde configuratie, het besturings systeem en de firmware zijn ook FIPS-validatie. U hoeft geen actie te ondernemen voor naleving van FIPS 140-2 level 3.
+De speciale HSM-service bepalingen Thales Luna 7 HSM-apparaten. Deze apparaten zijn gevalideerde Hsm's van FIPS 140-2 level 3. De standaard geïmplementeerde configuratie, het besturings systeem en de firmware zijn ook FIPS-validatie. U hoeft geen actie te ondernemen voor naleving van FIPS 140-2 level 3.
 
 ### <a name="q-how-does-a-customer-ensure-that-when-an-hsm-is-deprovisioned-all-the-key-material-is-wiped-out"></a>V: Hoe zorgt een klant ervoor dat wanneer de inrichting van een HSM ongedaan wordt gemaakt, het hoofd materiaal wordt gewist?
 
@@ -297,7 +297,7 @@ Voordat de inrichting wordt aangevraagd, moet een klant de HSM hebben gezerod me
 
 ### <a name="q-how-many-cryptographic-operations-are-supported-per-second-with-dedicated-hsm"></a>V: hoeveel cryptografische bewerkingen worden per seconde ondersteund met een toegewezen HSM?
 
-Toegewezen HSM-voorzieningen Thales netwerk Luna HSM 7 Hsm's. Hier volgt een samen vatting van de maximale prestaties voor bepaalde bewerkingen: 
+Speciale HSM-voorzieningen Thales Luna 7 Hsm's. Hier volgt een samen vatting van de maximale prestaties voor bepaalde bewerkingen: 
 
 * RSA-2048:10.000 trans acties per seconde
 * ECC-P256:20.000 trans acties per seconde
@@ -305,7 +305,7 @@ Toegewezen HSM-voorzieningen Thales netwerk Luna HSM 7 Hsm's. Hier volgt een sam
 
 ### <a name="q-how-many-partitions-can-be-created-in-dedicated-hsm"></a>V: Hoeveel partities kunnen worden gemaakt in een toegewezen HSM?
 
-Het SafeNet Luna HSM 7 model A790 gebruikt een licentie voor 10 partities in de kosten van de service. Het apparaat heeft een limiet van 100 partities en het toevoegen van partities tot deze limiet zou extra licentie kosten in beslag nemen en de installatie van een nieuw licentie bestand op het apparaat vereisen.
+Het [Thales Luna 7 HSM model A790](https://cpl.thalesgroup.com/encryption/hardware-security-modules/network-hsms) wordt gebruikt, bevat een licentie voor 10 partities in de kosten van de service. Het apparaat heeft een limiet van 100 partities en het toevoegen van partities tot deze limiet zou extra licentie kosten in beslag nemen en de installatie van een nieuw licentie bestand op het apparaat vereisen.
 
 ### <a name="q-how-many-keys-can-be-supported-in-dedicated-hsm"></a>V: Hoeveel sleutels kunnen worden ondersteund in een toegewezen HSM?
 

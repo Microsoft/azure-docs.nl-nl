@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/18/2021
 ms.author: oliversc
 ms.custom: seodec18
-ms.openlocfilehash: d3d10eb496899287e93a96f0cbb06dedf83c601d
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: 86a656630f6c41e2cf6682d0160cce345d1f564d
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105048626"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105606620"
 ---
 # <a name="speech-service-release-notes"></a>Release opmerkingen bij de spraak service
 
@@ -711,13 +711,13 @@ Dit is een release van de oplossing voor fouten en alleen van invloed op de syst
 **Opgeloste fouten**
 
 - Herstel FromSubscription wanneer het wordt gebruikt met de conversatie-transcriptie.
-- Los de fout op in trefwoord herkennen voor spraak assistenten.
+- Los de fout op in trefwoord herkenning voor spraak assistenten.
 
 ## <a name="speech-sdk-150-2019-may-release"></a>Speech SDK 1.5.0:2019-mei release
 
 **Nieuwe functies**
 
-- Trefwoord herkennen (KWS) is nu beschikbaar voor Windows en Linux. KWS-functionaliteit kan worden gebruikt met elk type microfoon, maar de officiële KWS-ondersteuning is momenteel beperkt tot de microfoon matrices die zijn gevonden in de Azure Kinect DK-hardware of de speech-apparaten SDK.
+- Herkenning van tref woorden is nu beschikbaar voor Windows en Linux. Deze functionaliteit werkt mogelijk met elk type microfoon, maar officiële ondersteuning is momenteel beperkt tot de microfoon matrices die zijn gevonden in de Azure Kinect DK-hardware of de speech-apparaten-SDK.
 - De functionaliteit van de woordgroepen Hint is beschikbaar via de SDK. Klik [hier](./get-started-speech-to-text.md) voor meer informatie.
 - De functionaliteit van de conversatie transcriptie is beschikbaar via de SDK. [Hier](./conversation-transcription.md)weer geven.
 - Voeg ondersteuning toe voor spraak assistenten met behulp van het directe lijn spraak kanaal.

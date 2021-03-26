@@ -10,12 +10,12 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 7726877efcb72caf5bb4c92e2e1c65e5df68f270
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 76cb2f94c949217c36fdccb8c64a53555bab227c
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "89002705"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105606331"
 ---
 # <a name="upgrade-to-azure-search-net-sdk-version-9"></a>Een upgrade uitvoeren naar Azure Search .NET SDK versie 9
 
@@ -40,7 +40,7 @@ Versie 9 van de Azure Search .NET SDK 2019-05-06-versie van Azure Search REST AP
 
 * [AI-verrijking](cognitive-search-concept-intro.md) is de mogelijkheid om tekst te extra heren uit afbeeldingen, blobs en andere ongestructureerde gegevens bronnen: de inhoud verrijken zodat deze meer doorzoekbaar is in een Azure search index.
 * Dankzij ondersteuning voor [complexe typen](search-howto-complex-data-types.md) kunt u nagenoeg elke geneste JSON-structuur in een Azure search index model leren.
-* [Automatisch aanvullen](search-autocomplete-tutorial.md) biedt een alternatief voor de API Voorst **Ellen** voor het implementeren van zoek gedrag op type. Met automatisch aanvullen wordt het woord of de woord groep voltooid die een gebruiker momenteel typt.
+* [Automatisch aanvullen](search-add-autocomplete-suggestions.md) biedt een alternatief voor de API Voorst **Ellen** voor het implementeren van zoek gedrag op type. Met automatisch aanvullen wordt het woord of de woord groep voltooid die een gebruiker momenteel typt.
 * Met de [JsonLines-parserings modus](search-howto-index-json-blobs.md), onderdeel van Azure Blob-indexering, wordt één Zoek document per JSON-entiteit gemaakt dat wordt gescheiden door een nieuwe regel.
 
 ### <a name="new-preview-features-in-version-80-preview"></a>Nieuwe preview-functies in versie 8,0-Preview

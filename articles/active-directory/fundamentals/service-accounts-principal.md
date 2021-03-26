@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bab8e8c6dfb944e496c636d53217e63175be9fbc
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 297c0a53fb2ab4ee0b2c5291cabf5a63c8841664
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104587845"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105604699"
 ---
 # <a name="securing-service-principals"></a>Service-principals beveiligen
 
@@ -96,6 +96,7 @@ Zie [Get-azureadserviceprincipal namelijk niet](/powershell/module/azuread/get-a
 Als u de beveiliging van de service-principals wilt beoordelen, moet u de bevoegdheden en de referentie opslag evalueren.
 
 Beperk mogelijke uitdagingen met behulp van de volgende gegevens.
+
 |Uitdagingen | Oplossingen|
 | - | - |
 | De gebruiker detecteren die is gezonden naar een multi tenant-app en illegale toestemming verleent aan een multi tenant-app | Voer de volgende Power shell uit om multi tenant-apps te zoeken.<br>`Get-AzureADServicePrincipal -All:$true ? {$_.Tags -eq WindowsAzureActiveDirectoryIntegratedApp"}`<br>Toestemming van de gebruiker uitschakelen. <br>Toestemming van de gebruiker van geverifieerde uitgevers toestaan voor geselecteerde machtigingen (aanbevolen) <br> Gebruik voorwaardelijke toegang om service-principals van niet-vertrouwde locaties te blok keren. Configureer deze onder de gebruikers context en hun tokens moeten worden gebruikt om de service-principal te activeren.|

@@ -343,7 +343,7 @@
             - name: Een suggester maken
               href: index-add-suggesters.md
             - name: Automatisch aanvullen en suggesties toevoegen
-              href: search-autocomplete-tutorial.md
+              href: search-add-autocomplete-suggestions.md
         - name: Paginering en aantallen
           href: search-pagination-page-layout.md
         - name: Naslaginformatie over syntaxis

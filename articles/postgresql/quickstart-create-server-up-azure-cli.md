@@ -1,19 +1,19 @@
 ---
 title: 'Quickstart: Server maken - az postgres up - Azure Database for PostgreSQL - Eén server'
 description: Quickstart-handleiding voor het maken van Azure Database for PostgreSQL - Eén server met behulp van de up-opdracht in Azure CLI (opdrachtregelinterface).
-author: lfittl-msft
-ms.author: lufittl
+author: sunilagarwal
+ms.author: sunila
 ms.service: postgresql
 ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 05/06/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: c11a98c04f81e7c111faf4aa449ab2bf9a4890bb
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 28007b4e17bd698e4aaa2bddbf0c8f9ffaaa8351
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "92485219"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105606450"
 ---
 # <a name="quickstart-use-an-azure-cli-command-az-postgres-up-preview-to-create-an-azure-database-for-postgresql---single-server"></a>Quickstart: Een Azure CLI-opdracht, az postgres up (preview), gebruiken om een Azure Database for PostgreSQL te maken - Eén server
 

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/30/2020
 ms.author: ajburnle
 ms.custom: include file
-ms.openlocfilehash: 61858a478ead93b3709bb3e05c26335c9acbc24d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 1bbc549a9ba457d5f515df25d6fdce0c2ede6f2e
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98698124"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105582476"
 ---
 ## <a name="for-users-in-your-directory"></a>Voor gebruikers in uw Directory
 
@@ -27,7 +27,7 @@ Volg deze stappen als u wilt toestaan dat gebruikers in uw directory dit toegang
 
 1. Selecteer één van de volgende opties:
 
-    |  |  |
+    |  | Description |
     | --- | --- |
     | **Specifieke gebruikers en groepen** | Kies deze optie als u wilt dat alleen de gebruikers en groepen in uw directory die u opgeeft, dit toegangs pakket kunnen aanvragen. |
     | **Alle leden (exclusief gasten)** | Kies deze optie als u wilt dat alle gebruikers in uw directory dit toegangs pakket kunnen aanvragen. Deze optie bevat geen gast gebruikers die u mogelijk hebt uitgenodigd voor uw Directory. |
@@ -62,7 +62,7 @@ Volg deze stappen als u wilt toestaan dat gebruikers die geen toegang hebben tot
 
 1. Selecteer één van de volgende opties:
 
-    |  |  |
+    |  | Description |
     | --- | --- |
     | **Specifieke verbonden organisaties** | Kies deze optie als u een selectie wilt selecteren in een lijst met organisaties die de beheerder eerder heeft toegevoegd. Alle gebruikers van de geselecteerde organisaties kunnen dit toegangs pakket aanvragen. |
     | **Alle verbonden organisaties** | Kies deze optie als alle gebruikers van alle verbonden organisaties dit toegangs pakket kunnen aanvragen. |

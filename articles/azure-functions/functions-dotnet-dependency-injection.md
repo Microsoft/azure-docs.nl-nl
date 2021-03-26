@@ -4,15 +4,15 @@ description: Meer informatie over het gebruik van afhankelijkheids injectie voor
 author: ggailey777
 ms.topic: conceptual
 ms.custom: devx-track-csharp
-ms.date: 01/27/2021
+ms.date: 03/24/2021
 ms.author: glenga
 ms.reviewer: jehollan
-ms.openlocfilehash: 66e2cd22f4bcb95be65d6d04345dcac622436a04
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 32cd2760eadc94466cdf55883611c78ac0cf24e6
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98955085"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105608116"
 ---
 # <a name="use-dependency-injection-in-net-azure-functions"></a>Afhankelijkheidsinjectie gebruiken in .NET Azure Functions
 
@@ -21,6 +21,11 @@ Azure Functions ondersteunt het ' Dependency Injection (DI)-ontwerp patroon voor
 - Het invoegen van afhankelijkheden in Azure Functions is gebaseerd op de functies van de .NET core-invoeg injectie. Het is raadzaam om vertrouwd te raken met het [invoeren van .net core-afhankelijkheid](/aspnet/core/fundamentals/dependency-injection) . Er zijn verschillen in hoe u afhankelijkheden overschrijft en hoe configuratie waarden worden gelezen met Azure Functions op het verbruiks plan.
 
 - Ondersteuning voor het invoegen van afhankelijkheden begint met Azure Functions 2. x.
+
+- De afhankelijkheids injectie patronen variëren, afhankelijk van of uw C#-functies [in-process](functions-dotnet-class-library.md) of [out-of-process](dotnet-isolated-process-guide.md)worden uitgevoerd.  
+
+> [!IMPORTANT]
+> De richt lijnen in dit artikel zijn alleen van toepassing op de [C#-klassen bibliotheek functies](functions-dotnet-class-library.md), die in-process met de runtime worden uitgevoerd. Dit model voor aangepaste afhankelijkheids injecties is niet van toepassing op door [.net geïsoleerde functies](dotnet-isolated-process-guide.md), waarmee u .net 5,0-functies out-of-process kunt uitvoeren. Het model voor het geïsoleerde proces van .NET is afhankelijk van normale injectie patronen van de afhankelijkheid van ASP.NET Core. Zie [afhankelijkheids injectie](dotnet-isolated-process-guide.md#dependency-injection) in de hand leiding voor geïsoleerde processen van .net voor meer informatie.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -190,7 +195,7 @@ Zie [logboek niveaus configureren](configure-monitoring.md#configure-log-levels)
 
 De functie-host registreert veel services. De volgende services zijn veilig als afhankelijkheid in uw toepassing:
 
-|Servicetype|Dood|Beschrijving|
+|Servicetype|Dood|Description|
 |--|--|--|
 |`Microsoft.Extensions.Configuration.IConfiguration`|Singleton|Runtime configuratie|
 |`Microsoft.Azure.WebJobs.Host.Executors.IHostIdProvider`|Singleton|Verantwoordelijk voor het opgeven van de ID van het exemplaar van de host|

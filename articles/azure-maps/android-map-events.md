@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 zone_pivot_groups: azure-maps-android
-ms.openlocfilehash: 86d1b9ec8a507a5cfaa5502efcb239bceabca665
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: ebe61e5956dc0f35794211a336eb7d884ee18d76
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102097343"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105608898"
 ---
 # <a name="interact-with-the-map-android-sdk"></a>Interactie met de kaart (Android SDK)
 
@@ -24,19 +24,19 @@ Dit artikel laat u zien hoe u het beheer van Maps-gebeurtenissen kunt gebruiken.
 
 De kaart beheert alle gebeurtenissen via de bijbehorende `events` eigenschap. De volgende tabel geeft een overzicht van alle ondersteunde toewijzings gebeurtenissen.
 
-| Gebeurtenis                  | Indeling van gebeurtenis-handler | Beschrijving |
+| Gebeurtenis                  | Indeling van gebeurtenis-handler | Description |
 |------------------------|----------------------|-------------|
 | `OnCameraIdle`         | `()`                 | <p>Deze gebeurtenis wordt gestart nadat het laatste frame is weer gegeven voordat de kaart de status ' inactief ' krijgt:<ul><li>Er worden geen camera overgangen uitgevoerd.</li><li>Alle momenteel aangevraagde tegels zijn geladen.</li><li>Alle animaties voor vervagen/overgangen zijn voltooid.</li></ul></p> |
 | `OnCameraMove`         | `()`                 | Wordt herhaaldelijk geactiveerd tijdens een bewegende overgang van de ene weer gave naar de andere, als gevolg van de interactie of methoden van een gebruiker. |
 | `OnCameraMoveCanceled` | `()`                 | Deze gebeurtenis wordt gestart wanneer een verplaatsings aanvraag naar de camera is geannuleerd. |
 | `OnCameraMoveStarted`  | `(int reason)`       | Wordt geactiveerd vlak voordat de kaart een overgang van de ene naar de andere weer gave start, als gevolg van de interactie of methoden van de gebruiker. Het `reason` argument van de gebeurtenislistener retourneert een geheel getal dat details geeft over de manier waarop de camera verplaatsing is gestart. De volgende lijst geeft een overzicht van mogelijke oorzaken:<ul><li>1: beweging</li><li>2: animatie van ontwikkel aars</li><li>3: API-animatie</li></ul>   |
-| `OnClick`              | `(double lat, double lon)` | Deze gebeurtenis wordt gestart wanneer de kaart op hetzelfde punt op de kaart wordt ingedrukt en losgelaten. |
-| `OnFeatureClick`       | `(List<Feature>)`    | Deze gebeurtenis wordt gestart wanneer de kaart op hetzelfde punt in een functie wordt ingedrukt en losgelaten.  |
+| `OnClick`              | `(double lat, double lon): boolean` | Deze gebeurtenis wordt gestart wanneer de kaart op hetzelfde punt op de kaart wordt ingedrukt en losgelaten. Deze gebeurtenis-handler retourneert een Booleaanse waarde die aangeeft of de gebeurtenis moet worden gebruikt of verder moet worden door gegeven aan andere gebeurtenislisteners. |
+| `OnFeatureClick`       | `(List<Feature>): boolean`    | Deze gebeurtenis wordt gestart wanneer de kaart op hetzelfde punt in een functie wordt ingedrukt en losgelaten. Deze gebeurtenis-handler retourneert een Booleaanse waarde die aangeeft of de gebeurtenis moet worden gebruikt of verder moet worden door gegeven aan andere gebeurtenislisteners. |
 | `OnLayerAdded` | `(Layer layer)` | Deze gebeurtenis wordt gestart wanneer een laag wordt toegevoegd aan de kaart. |
 | `OnLayerRemoved` | `(Layer layer)` | Deze gebeurtenis wordt gestart wanneer een laag uit de kaart wordt verwijderd. |
 | `OnLoaded` | `()` | Wordt onmiddellijk geactiveerd nadat alle benodigde resources zijn gedownload en de eerste visueel volledige rendering van de kaart heeft plaatsgevonden. |
-| `OnLongClick`          | `(double lat, double lon)` | Deze gebeurtenis wordt gestart wanneer de kaart wordt ingedrukt, even geduld en vervolgens op hetzelfde punt op de kaart worden vrijgegeven. |
-| `OnLongFeatureClick `  | `(List<Feature>)`    | Deze gebeurtenis wordt gestart wanneer de kaart wordt ingedrukt, even geduld en vervolgens op hetzelfde punt op een functie worden losgelaten. |
+| `OnLongClick`          | `(double lat, double lon): boolean` | Deze gebeurtenis wordt gestart wanneer de kaart wordt ingedrukt, even geduld en vervolgens op hetzelfde punt op de kaart worden vrijgegeven. Deze gebeurtenis-handler retourneert een Booleaanse waarde die aangeeft of de gebeurtenis moet worden gebruikt of verder moet worden door gegeven aan andere gebeurtenislisteners. |
+| `OnLongFeatureClick `  | `(List<Feature>): boolean`    | Deze gebeurtenis wordt gestart wanneer de kaart wordt ingedrukt, even geduld en vervolgens op hetzelfde punt op een functie worden losgelaten. Deze gebeurtenis-handler retourneert een Booleaanse waarde die aangeeft of de gebeurtenis moet worden gebruikt of verder moet worden door gegeven aan andere gebeurtenislisteners. |
 | `OnReady`              | `(AzureMap map)`     | Deze gebeurtenis wordt gestart wanneer de kaart in eerste instantie wordt geladen of wanneer de afdruk stand van de app wordt gewijzigd en de mini maal vereiste toewijzings resources worden geladen en de kaart gereed is om programmatisch te worden gecommuniceerd met. |
 | `OnSourceAdded` | `(Source source)` | Wordt geactiveerd wanneer een `DataSource` of `VectorTileSource` wordt toegevoegd aan de kaart. |
 | `OnSourceRemoved` | `(Source source)` | Wordt geactiveerd wanneer een `DataSource` of `VectorTileSource` wordt verwijderd uit de kaart. |
@@ -49,10 +49,16 @@ De volgende code laat zien hoe u de `OnClick` -, `OnFeatureClick` -en- `OnCamera
 ```java
 map.events.add((OnClick) (lat, lon) -> {
     //Map clicked.
+
+    //Return true indicating if event should be consumed and not passed further to other listeners registered afterwards, false otherwise.
+    return true;
 });
 
 map.events.add((OnFeatureClick) (features) -> {
     //Feature clicked.
+
+    //Return true indicating if event should be consumed and not passed further to other listeners registered afterwards, false otherwise.
+    return true;
 });
 
 map.events.add((OnCameraMove) () -> {
@@ -67,10 +73,16 @@ map.events.add((OnCameraMove) () -> {
 ```kotlin
 map.events.add(OnClick { lat: Double, lon: Double -> 
     //Map clicked.
+
+    //Return true indicating if event should be consumed and not passed further to other listeners registered afterwards, false otherwise.
+    return false
 })
 
 map.events.add(OnFeatureClick { features: List<Feature?>? -> 
     //Feature clicked.
+
+    //Return true indicating if event should be consumed and not passed further to other listeners registered afterwards, false otherwise.
+    return false
 })
 
 map.events.add(OnCameraMove {
@@ -103,11 +115,17 @@ map.layers.add(layer);
 //Add a feature click event to the map and pass the layer ID to limit the event to the specified layer.
 map.events.add((OnFeatureClick) (features) -> {
     //One or more features clicked.
+
+    //Return true indicating if event should be consumed and not passed further to other listeners registered afterwards, false otherwise.
+    return true;
 }, layer);
 
 //Add a long feature click event to the map and pass the layer ID to limit the event to the specified layer.
 map.events.add((OnLongFeatureClick) (features) -> {
     //One or more features long clicked.
+
+    //Return true indicating if event should be consumed and not passed further to other listeners registered afterwards, false otherwise.
+    return true;
 }, layer);
 ```
 
@@ -131,6 +149,9 @@ map.layers.add(layer)
 map.events.add(
     OnFeatureClick { features: List<Feature?>? -> 
         //One or more features clicked.
+
+        //Return true indicating if event should be consumed and not passed further to other listeners registered afterwards, false otherwise.
+        return false
     },
     layer
 )
@@ -139,6 +160,9 @@ map.events.add(
 map.events.add(
     OnLongFeatureClick { features: List<Feature?>? -> 
          //One or more features long clicked.
+
+        //Return true indicating if event should be consumed and not passed further to other listeners registered afterwards, false otherwise.
+        return false
     },
     layer
 )

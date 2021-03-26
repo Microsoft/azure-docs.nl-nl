@@ -9,16 +9,16 @@ ms.author: mikben
 ms.date: 03/25/2021
 ms.topic: conceptual
 ms.service: azure-communication-services
-ms.openlocfilehash: b5115355133bdcf33825a05d4baa16408cb3fccd
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.openlocfilehash: 92324d68eabfb1885a482a7f539140f93be77596
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/26/2021
-ms.locfileid: "105562440"
+ms.locfileid: "105605192"
 ---
 # <a name="sdks-and-rest-apis"></a>Sdk's en REST-Api's
 
-Mogelijkheden van Azure Communication Services zijn conceptueel onderverdeeld in zes gebieden. De meeste gebieden hebben volledige open-source-client bibliotheken die zijn geprogrammeerd voor gepubliceerde REST-Api's die u rechtstreeks via internet kunt gebruiken. De aanroepende client bibliotheek maakt gebruik van eigen netwerk interfaces en is momenteel gesloten als bron. Voor beelden en technische informatie voor Sdk's worden gepubliceerd in de [Azure Communication Services github opslag plaats](https://github.com/Azure/communication).
+Mogelijkheden van Azure Communication Services zijn conceptueel onderverdeeld in zes gebieden. De meeste gebieden hebben volledige open-sourcede Sdk's die zijn geprogrammeerd voor gepubliceerde REST-Api's die u rechtstreeks via internet kunt gebruiken. De aanroepende SDK maakt gebruik van eigen netwerk interfaces en is momenteel gesloten. Voor beelden en technische informatie voor Sdk's worden gepubliceerd in de [Azure Communication Services github opslag plaats](https://github.com/Azure/communication).
 
 ## <a name="rest-apis"></a>REST-API’s
 Api's voor communicatie services worden naast andere Azure REST Api's in [docs.Microsoft.com](/rest/api/azure/)gedocumenteerd. In deze documentatie wordt uitgelegd hoe u uw HTTP-berichten kunt structureren en hoe u postman kunt gebruiken. Deze documentatie wordt ook aangeboden in Swagger-indeling op [github](https://github.com/Azure/azure-rest-api-specs).
@@ -29,14 +29,14 @@ Api's voor communicatie services worden naast andere Azure REST Api's in [docs.M
 | Assembly | Naamruimten| Protocollen | Functies |
 |------------------------|-------------------------------------|---------------------------------|--------------------------------------------------------------------------------------------|
 | Azure Resource Manager | Azure. Resource Manager. communicatie | [REST](https://docs.microsoft.com/rest/api/communication/communicationservice)| Communicatie services-resources inrichten en beheren|
-| Algemeen | Azure. Communication. common| REST | Biedt basis typen voor andere client bibliotheken |
+| Algemeen | Azure. Communication. common| REST | Biedt basis typen voor andere Sdk's |
 | Identiteit | Azure. Communication. Identity| [REST](https://docs.microsoft.com/rest/api/communication/communicationidentity)| Gebruikers beheren, toegangs tokens|
 | Telefoon nummers _(bèta)_| Azure. Communication. PhoneNumbers| [REST](https://docs.microsoft.com/rest/api/communication/phonenumberadministration)| Telefoon nummers ophalen en beheren |
 | Chat | Azure. Communication. chat| [Rest](https://docs.microsoft.com/rest/api/communication/) met een eigen signaal | In realtime tekst gebaseerde chat berichten toevoegen aan uw toepassingen |
 | Sms| Azure. Communication. SMS | [REST](https://docs.microsoft.com/rest/api/communication/sms)| Sms-berichten verzenden en ontvangen|
 | Aanroepen| Azure. Communication. Calling | Eigen Trans Port | Spraak, video, scherm delen en andere realtime gegevens communicatie mogelijkheden gebruiken |
 
-De Azure Resource Manager-, identiteits-en SMS-client bibliotheken zijn gericht op Service-integratie, en in veel gevallen kunnen er beveiligings problemen optreden als u deze functies integreert in toepassingen van eind gebruikers. De common-en chat-client bibliotheken zijn geschikt voor service-en client toepassingen. De aanroepende client bibliotheek is ontworpen voor client toepassingen. Een client bibliotheek die is gericht op service scenario's is in ontwikkeling.
+De Azure Resource Manager-, id-en SMS-Sdk's zijn gericht op Service-integratie, en in veel gevallen kunnen er beveiligings problemen optreden als u deze functies integreert in toepassingen van eind gebruikers. De common-en chat-Sdk's zijn geschikt voor service-en client toepassingen. De aanroepende SDK is ontworpen voor client toepassingen. Een SDK die gericht is op service scenario's is in ontwikkeling.
 
 
 ### <a name="languages-and-publishing-locations"></a>Talen en publicatie locaties
@@ -61,7 +61,7 @@ Bepaalde REST-Api's en bijbehorende SDK-methoden hebben beperkings limieten waar
 | API                                                                                                                          | Vertragen            |
 |------------------------------------------------------------------------------------------------------------------------------|---------------------|
 | [Alle Api's voor het zoeken naar telefoon nummer plannen](https://docs.microsoft.com/rest/api/communication/phonenumberadministration)         | 4 aanvragen per dag      |
-| [Telefoon nummer abonnement kopen](https://docs.microsoft.com/rest/api/communication/phonenumberadministration/purchasesearch) | 1 aanvraag per dag       |
+| [Telefoon nummer abonnement kopen](https://docs.microsoft.com/rest/api/communication/phonenumberadministration/purchasesearch) | 1 aankoop per maand  |
 | [SMS verzenden](https://docs.microsoft.com/rest/api/communication/sms/send)                                                       | 200 aanvragen per minuut |
 
 

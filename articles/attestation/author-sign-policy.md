@@ -7,12 +7,12 @@ ms.service: attestation
 ms.topic: overview
 ms.date: 08/31/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 3e36de62b79788e2efdc3e9abf711924c4fba0c4
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: aaf05b293fa5a13c5fe6e341f7de987c6002a5cf
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "93341804"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105607963"
 ---
 # <a name="how-to-author-an-attestation-policy"></a>Attestation-beleid ontwerpen
 
@@ -24,12 +24,12 @@ Het beleid bevat regels die de autorisatiecriteria, eigenschappen en de inhoud v
 version=1.0;
 authorizationrules
 {
-   c:[type="secureBootEnables", issuer=="AttestationService"]=> permit()
+   c:[type="secureBootEnabled", issuer=="AttestationService"]=> permit()
 };
 
 issuancerules
 {
-  c:[type="secureBootEnables", issuer=="AttestationService"]=> issue(claim=c)
+  c:[type="secureBootEnabled", issuer=="AttestationService"]=> issue(claim=c)
   c:[type="notSafeMode", issuer=="AttestationService"]=> issue(claim=c)
 };
 ```

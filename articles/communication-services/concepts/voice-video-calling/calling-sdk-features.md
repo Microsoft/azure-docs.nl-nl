@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 240bdaee9073ab18e175e2911ac1c23ae49b3d7e
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.openlocfilehash: 31b8e2e9a8e69fd730edb2c826005104f5f82bdc
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/26/2021
-ms.locfileid: "105562406"
+ms.locfileid: "105609187"
 ---
 # <a name="calling-sdk-overview"></a>Overzicht van de SDK
 
@@ -72,17 +72,17 @@ De volgende lijst bevat de set functies die momenteel beschikbaar zijn in de Azu
 |                   | Schaal modus instellen/bijwerken                                                                                           | ✔️   | ✔️            | ✔️ 
 |                   | Externe video stroom weer geven                                                                                          | ✔️   | ✔️            | ✔️
 
-## <a name="calling-client-library-streaming-support"></a>Ondersteuning voor het streamen van aanroepende clientbibliotheek
-De communicatie services die client bibliotheek aanroept, ondersteunt de volgende streaming-configuraties:
+## <a name="calling-sdk-streaming-support"></a>Ondersteuning voor SDK-streaming aanroepen
+De communicatie services die SDK aanroept, ondersteunt de volgende streaming-configuraties:
 
 | Limiet          |Web | Android/iOS|
 |-----------|----|------------|
 |**Aantal uitgaande streams dat tegelijkertijd kan worden verzonden** |1 video + 1 scherm delen | 1 video + 1 scherm delen|
 |**Aantal binnenkomende streams dat tegelijkertijd kan worden weergegeven** |1 video + 1 scherm delen| 6 video + 1 scherm delen |
 
-## <a name="calling-client-library-timeouts"></a>Time-outs van client bibliotheek aanroepen
+## <a name="calling-sdk-timeouts"></a>SDK-time-outs aanroepen
 
-De volgende time-outs zijn van toepassing op de communicatie services die client bibliotheken aanroepen:
+De volgende time-outs zijn van toepassing op de communicatie services die Sdk's aanroepen:
 
 | Bewerking           | Time-out in seconden |
 | -------------- | ---------- |

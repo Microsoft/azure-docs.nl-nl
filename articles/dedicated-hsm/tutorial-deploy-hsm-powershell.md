@@ -11,14 +11,14 @@ ms.topic: tutorial
 ms.custom: mvc, seodec18, devx-track-azurepowershell
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/14/2020
-ms.author: mbaldwin
-ms.openlocfilehash: 52b62e463edc51b3d93d7af69623a88abd9cc6be
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.date: 03/25/2021
+ms.author: keithp
+ms.openlocfilehash: 5ed5ac90f446f74c54488f6d0cf23adbd63a3e1e
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98108582"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105606875"
 ---
 # <a name="tutorial--deploying-hsms-into-an-existing-virtual-network-using-powershell"></a>Zelfstudie: PowerShell gebruiken om HSM's te implementeren in een bestaand virtueel netwerk
 
@@ -68,7 +68,7 @@ De opdracht moet de status 'Geregistreerd' retourneren (zoals hieronder wordt we
 
 ### <a name="creating-hsm-resources"></a>HSM-resources maken
 
-Een HSM-apparaat is ingericht in het virtueel netwerk van een klant. Dit impliceert de vereiste voor een subnet. Een afhankelijkheid voor de HSM om communicatie tussen het virtuele netwerk en een fysiek apparaat mogelijk te maken, is een ExpressRoute-gateway. En tot slot hebt u een virtuele machine nodig om met behulp van de Gemalto-clientsoftware toegang te krijgen tot het HSM-apparaat. Deze resources zijn voor het gebruiksgemak verzameld in een sjabloonbestand met bijbehorend parameterbestand. Neem rechtstreeks via HSMrequest@Microsoft.com contact op met Microsoft voor de bestanden.
+Een HSM-apparaat is ingericht in het virtueel netwerk van een klant. Dit impliceert de vereiste voor een subnet. Een afhankelijkheid voor de HSM om communicatie tussen het virtuele netwerk en het fysieke apparaat mogelijk te maken, is een ExpressRoute-gateway en tot slot is een virtuele machine vereist voor toegang tot het HSM-apparaat via de Thales-client software. Deze resources zijn voor het gebruiksgemak verzameld in een sjabloonbestand met bijbehorend parameterbestand. Neem rechtstreeks via HSMrequest@Microsoft.com contact op met Microsoft voor de bestanden.
 
 Wanneer u de bestanden hebt, moet u het parameterbestand bewerken om uw voorkeursnamen voor resources in te voegen. Dit betekent dat u de regels met 'waarde' moet bewerken.
 
@@ -235,14 +235,14 @@ De uitvoer moet er uitzien als in de afbeelding hieronder wordt weergegeven:
 
 ![Schermopname van de uitvoer van de opdracht hsm show.](media/tutorial-deploy-hsm-powershell/output.png)
 
-Op dit moment hebt u alle resources toegewezen voor een implementatie van twee HSM's met hoge beschikbaarheid en hebt u de toegang en operationele status gevalideerd. Voor verdere configuratie of tests is meer werk met het HSM-apparaat zelf vereist. Hiervoor volgt u de instructies in hoofdstuk 7 van de beheerdershandleiding van Gemalto Luna Network HSM 7 om de HSM te initialiseren en partities te maken. Alle documentatie en software kunnen rechtstreeks via Gemalto worden gedownload zodra u bent geregistreerd in de Gemalto Customer Support Portal en een klant-id hebt. Download versie 7.2 van de clientsoftware om alle vereiste onderdelen op te halen.
+Op dit moment hebt u alle resources toegewezen voor een implementatie van twee HSM's met hoge beschikbaarheid en hebt u de toegang en operationele status gevalideerd. Voor verdere configuratie of tests is meer werk met het HSM-apparaat zelf vereist. Hiervoor moet u de instructies in de Thales Luna 7 HSM-beheer handleiding hoofd stuk 7 volgen om de HSM te initialiseren en partities te maken. Alle documentatie en software zijn direct beschikbaar vanaf Thales voor downloaden zodra u bent geregistreerd in de [Thales-portal voor klanten ondersteuning](https://supportportal.thalesgroup.com/csm) en een klant-id hebt. Download versie 7.2 van de clientsoftware om alle vereiste onderdelen op te halen.
 
 ## <a name="delete-or-clean-up-resources"></a>Resources verwijderen of opschonen
 
 Als u klaar bent met het HSM-apparaat, kan het als resource worden verwijderd en worden geretourneerd aan de vrije pool. Uiteraard moet u zorg dragen voor eventuele vertrouwelijke gegevens van klanten die zich op het apparaat bevinden. De snelste manier om een apparaat op nul te zetten is het HSM-beheerderswachtwoord 3 keer fout in te voeren. (Opmerking: dit is niet de apparaatbeheerder, maar de HSM-beheerder zelf.) Als veiligheidsmaatregel om belangrijk materiaal te beschermen, kan het apparaat pas worden verwijderd als Azure-resource als het de nulstatus heeft.
 
 > [!NOTE]
-> Als u problemen hebt met de configuratie van een Gemalto-apparaat, neemt u contact op met [Gemalto-klantondersteuning](https://safenet.gemalto.com/technical-support/).
+> Als u problemen hebt met de configuratie van een Thales-apparaat, neemt u contact op met [Thales-klantondersteuning](https://supportportal.thalesgroup.com/csm).
 
 Als u de HSM-resource in Azure wilt verwijderen, kunt u de volgende opdracht gebruiken om de '$'-variabelen te vervangen door uw unieke parameters:
 

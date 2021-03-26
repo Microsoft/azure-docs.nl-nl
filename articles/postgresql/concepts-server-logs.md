@@ -1,17 +1,17 @@
 ---
 title: Logboeken-Azure Database for PostgreSQL-één server
 description: Beschrijft configuratie van logboek registratie, opslag en analyse in Azure Database for PostgreSQL-één server
-author: lfittl-msft
-ms.author: lufittl
+author: sunilagarwal
+ms.author: sunila
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 06/25/2020
-ms.openlocfilehash: 621d5a6a91a8c22c52e6febc7c2638571f5bf113
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 31b3c0a1894280e90f696f6c107b67a3af7b1880
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100595810"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105605345"
 ---
 # <a name="logs-in-azure-database-for-postgresql---single-server"></a>Meldt zich aan Azure Database for PostgreSQL-één server
 

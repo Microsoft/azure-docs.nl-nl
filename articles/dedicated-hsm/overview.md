@@ -11,28 +11,28 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
 ms.custom: mvc, seodec18
-ms.date: 12/07/2018
-ms.author: mbaldwin
-ms.openlocfilehash: 6eb82400b2f598b4b54da4b238f4bce71d83de6b
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.date: 03/25/2021
+ms.author: keithp
+ms.openlocfilehash: 0e07839c3c5ce542335eeadc92e6a3c98fe87856
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "90970207"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105606977"
 ---
 # <a name="what-is-azure-dedicated-hsm"></a>Wat is Azure Toegewezen HSM?
 
 Azure Toegewezen HSM is een Azure-service die opslag van cryptografische sleutels biedt in Azure. Toegewezen HSM voldoet aan de strengste beveiligingseisen. Dit is de ideale oplossing voor klanten die apparaten willen gebruiken die zijn gevalideerd met FIPS 140-2 Niveau 3 en die volledige en exclusieve controle over het HSM-apparaat willen. 
 
- HSM-apparaten zijn wereldwijd geïmplementeerd in verschillende Azure-regio's. Ze kunnen eenvoudig worden ingericht als een paar apparaten en worden geconfigureerd voor hoge beschikbaarheid. HSM-apparaten kunnen ook worden ingericht in verschillende regio's als oplossing voor een eventuele failover op regionaal niveau. Microsoft levert de Dedicated HSM-service met behulp van het apparaat [SafeNet Luna Network HSM 7 (Model A790)](https://safenet.gemalto.com/data-encryption/hardware-security-modules-hsms/safenet-network-hsm/) van Gemalto. Dit apparaat biedt de hoogste prestatieniveaus en de beste opties voor cryptografische integratie. 
+ HSM-apparaten zijn wereldwijd geïmplementeerd in verschillende Azure-regio's. Ze kunnen eenvoudig worden ingericht als een paar apparaten en worden geconfigureerd voor hoge beschikbaarheid. HSM-apparaten kunnen ook worden ingericht in verschillende regio's als oplossing voor een eventuele failover op regionaal niveau. Micro soft levert de toegewezen HSM-service met behulp van het [Thales Luna 7 HSM model A790](https://cpl.thalesgroup.com/encryption/hardware-security-modules/network-hsms) -apparaten. Dit apparaat biedt de hoogste prestatieniveaus en de beste opties voor cryptografische integratie. 
 
-Nadat HSM-apparaten zijn ingericht, zijn ze rechtstreeks verbonden met het virtuele netwerk van een klant. Ze zijn dan ook toegankelijk voor on-premises hulpprogramma's voor toepassingen en beheer door een punt-naar-site-verbinding of site-naar-site-verbinding te configureren voor het VPN. Klanten krijgen in de Gemalto-ondersteuningsportal software en documentatie om de HSM-apparaten te configureren en te beheren.
+Nadat HSM-apparaten zijn ingericht, zijn ze rechtstreeks verbonden met het virtuele netwerk van een klant. Ze zijn dan ook toegankelijk voor on-premises hulpprogramma's voor toepassingen en beheer door een punt-naar-site-verbinding of site-naar-site-verbinding te configureren voor het VPN. Klanten krijgen de software en documentatie voor het configureren en beheren van HSM-apparaten vanuit de [Thales-portal voor klanten ondersteuning](https://supportportal.thalesgroup.com/csm).
 
 ## <a name="why-use-azure-dedicated-hsm"></a>Waarom Azure Dedicated HSM gebruiken?
 
 ### <a name="fips-140-2-level-3-compliance"></a>Naleving van FIPS 140-2 Niveau 3
 
-Veel organisaties hebben strenge brancheregels die voorschrijven dat cryptografische sleutelopslag voldoet aan de [FIPS 140-2 Niveau 3](https://csrc.nist.gov/publications/detail/fips/140/2/final)-vereisten. De Azure Key Vault-service met meerdere tenants van Microsoft biedt momenteel alleen ondersteuning voor FIPS 140-2 Niveau 2-certificatie. Azure Toegewezen HSM vervult de behoefte van de financiële branche, overheidsinstellingen, en anderen die moeten voldoen aan FIPS 140-2 Niveau 3-vereisten.
+Veel organisaties hebben strenge industriële voor Schriften die bepalen dat cryptografische sleutels moeten worden opgeslagen in het [FIPS 140-2-](https://csrc.nist.gov/publications/detail/fips/140/2/final) gevalideerde hsm's niveau 3. Met Azure dedicated HSM en een nieuwe aanbieding voor eenmalige tenants, [Azure Key Vault beheerde HSM (preview)](https://docs.microsoft.com/azure/key-vault/managed-hsm), helpen klanten van verschillende branche segmenten, zoals financiële dienst verleners, overheids instanties en anderen voldoen aan de vereisten van het niveau 3 van FIPS 140-2. Hoewel de multi tenant-service voor [Azure Key Vault](https://docs.microsoft.com/azure/key-vault) van micro soft momenteel gebruikmaakt van FIPS 140-2-hsm's niveau 2 gevalideerd. 
 
 ### <a name="single-tenant-devices"></a>Apparaten met één tenant
 
@@ -48,7 +48,7 @@ Veel klanten hebben behoefte aan volledig beheer en toegang tot hun apparaat die
 
 ### <a name="high-performance"></a>Hoge prestaties
 
-Het Gemalto-apparaat is om een aantal redenen geselecteerd voor deze service. Het biedt brede ondersteuning voor cryptografische algoritmen, een verscheidenheid aan ondersteunde besturingssystemen en brede API-ondersteuning. Het specifieke model dat is geïmplementeerd, biedt uitstekende prestaties met 10.000 bewerkingen per seconde voor RSA-2048. Het biedt ondersteuning voor 10 partities die kunnen worden gebruikt voor unieke toepassingsexemplaren. Het is een apparaat met een lage latentie, hoge capaciteit en hoge doorvoer.
+Het Thales-apparaat is om verschillende redenen geselecteerd voor deze service. Het biedt brede ondersteuning voor cryptografische algoritmen, een verscheidenheid aan ondersteunde besturingssystemen en brede API-ondersteuning. Het specifieke model dat is geïmplementeerd, biedt uitstekende prestaties met 10.000 bewerkingen per seconde voor RSA-2048. Het biedt ondersteuning voor 10 partities die kunnen worden gebruikt voor unieke toepassingsexemplaren. Het is een apparaat met een lage latentie, hoge capaciteit en hoge doorvoer.
 
 ### <a name="unique-cloud-based-offering"></a>Unieke cloudaanbieding
 
@@ -72,7 +72,7 @@ Azure Dedicated HSM is niet geschikt voor de volgende typen scenario's: Microsof
 
 ### <a name="it-depends"></a>Dat hangt ervan af
 
-Of Azure Dedicated HSM geschikt is voor u, is afhankelijk van een complexe mengeling van vereisten en van de compromissen die wel of niet kunnen worden gesloten. Een voorbeeld is de vereiste voor FIPS 140-2 Niveau 3. Deze vereiste is algemeen en Dedicated HSM is momenteel de enige optie die hieraan kan voldoen. Als deze verplichte vereisten niet relevant zijn, kunt u vaak kiezen tussen Azure Key Vault en Dedicated HSM. Bekijk wat uw vereisten zijn voordat u een keuze maakt.
+Of Azure Dedicated HSM geschikt is voor u, is afhankelijk van een complexe mengeling van vereisten en van de compromissen die wel of niet kunnen worden gesloten. Een voorbeeld is de vereiste voor FIPS 140-2 Niveau 3. Deze vereiste is gebruikelijk, en Azure dedicated HSM en een nieuwe aanbieding voor eenmalige tenants, [Azure Key Vault Managed HSM (preview)](https://docs.microsoft.com/azure/key-vault/managed-hsm) is momenteel de enige opties voor het beantwoorden van deze. Als deze verplichte vereisten niet relevant zijn, is het vaak een keuze tussen Azure Key Vault en een specifieke HSM van Azure. Bekijk wat uw vereisten zijn voordat u een keuze maakt.
 
 Situaties waarin u uw opties moet afwegen, zijn onder andere: 
 
@@ -85,7 +85,7 @@ Situaties waarin u uw opties moet afwegen, zijn onder andere:
 
 Dit is een zeer gespecialiseerde service. Het is daarom belangrijk dat u de belangrijkste concepten in deze documentatieset volledig begrijpt, inclusief de prijzen, de ondersteuning en de serviceovereenkomsten. 
 
-De [Gemalto-integratiehandleidingen](https://safenet.gemalto.com/partners/microsoft/) helpen u bij de inrichting van HSM's in een bestaand virtueel netwerk. Er zijn ook handleidingen waarmee u kunt bepalen hoe u uw implementatiearchitectuur instelt.
+Met de [Thales-integratie handleidingen](https://cpl.thalesgroup.com/partners/overview) kunt u het inrichten van hsm's naar een bestaande virtuele netwerk omgeving vereenvoudigen. Er zijn ook instructies om u te helpen bepalen hoe u uw implementatie architectuur kunt instellen.
 
 * [Hoge beschikbaarheid](high-availability.md)
 * [Fysieke beveiliging](physical-security.md)

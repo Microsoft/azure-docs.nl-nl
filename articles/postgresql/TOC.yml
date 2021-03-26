@@ -126,14 +126,14 @@
           href: concepts-supported-versions.md
         - name: PostgreSQL-extensies
           href: concepts-extensions.md
+        - name: Limieten
+          href: concepts-limits.md
         - name: Prijscategorieën begrijpen
           items:
             - name: Prijscategorieën
               href: concepts-pricing-tiers.md
             - name: Vooruitbetalen voor reservecapaciteit
               href: concept-reserved-pricing.md
-            - name: Limieten
-              href: concepts-limits.md
         - name: Beveiliging
           items:
             - name: Beveiligingsoverzicht

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/25/2021
 ms.author: b-juche
-ms.openlocfilehash: f7d1e3bebf2fbdea3075d97e3829e38a3930909b
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.openlocfilehash: 3ca4938d8666fd60ebac9e75bb2da1780e0914d3
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/26/2021
-ms.locfileid: "105566129"
+ms.locfileid: "105607997"
 ---
 # <a name="faqs-about-azure-netapp-files"></a>Veelgestelde vragen over Azure NetApp Files
 
@@ -208,9 +208,9 @@ Nee. Azure NetApp Files wordt niet ondersteund door Azure Storage Explorer.
 
 ### <a name="how-do-i-determine-if-a-directory-is-approaching-the-limit-size"></a>Hoe kan ik bepalen of een map de limiet grootte nadert?
 
-U kunt de `stat` opdracht van een client gebruiken om te zien of een directory de maximale grootte van Directory-meta gegevens (320 MB) nadert.
+U kunt de `stat` opdracht van een client gebruiken om te zien of een directory de maximale grootte van Directory-meta gegevens (320 MB) nadert.   
 
-Voor een map van 320 MB is het aantal blokken 655360, waarbij elke blok grootte 512 bytes is.  (Dat wil zeggen 320x1024x1024/512.)  
+Voor een map van 320 MB is het aantal blokken 655360, waarbij elke blok grootte 512 bytes is.  (Dat wil zeggen 320x1024x1024/512.)  Dit aantal vertaalt het maximum van ongeveer 4.000.000 bestanden voor een map van 320 MB. Het werkelijke aantal bestanden kan echter lager zijn, afhankelijk van factoren zoals het aantal bestanden met niet-ASCII-tekens in de map. Als zodanig gebruikt u de `stat` opdracht als volgt om te bepalen of de Directory de limiet nadert.  
 
 Voorbeelden:
 

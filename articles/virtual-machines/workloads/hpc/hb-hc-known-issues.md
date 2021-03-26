@@ -5,15 +5,15 @@ author: vermagit
 ms.service: virtual-machines
 ms.subservice: hpc
 ms.topic: article
-ms.date: 03/18/2021
+ms.date: 03/25/2021
 ms.author: amverma
 ms.reviewer: cynthn
-ms.openlocfilehash: 297bc24c570298dddf10a101a0c0c528bddecc10
-ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
+ms.openlocfilehash: d8c3a2d961cc5b6fd719b77dae07b6e46c3d8b65
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104889821"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105604835"
 ---
 # <a name="known-issues-with-h-series-and-n-series-vms"></a>Bekende problemen met VM's uit de H-serie en N-serie
 
@@ -24,9 +24,18 @@ Op Ubuntu-18,04 bleek de Mellanox OFED niet compatibel met de versie van de kern
 De tijdelijke oplossing is het gebruik van de **canonieke: UbuntuServer: 18_04-LTS-Gen2:18.04.202101290** Marketplace-installatie kopie of ouder en niet om de kernel bij te werken.
 Dit probleem wordt naar verwachting opgelost met een nieuwere MOFED (TBD).
 
-## <a name="known-issues-on-hbv3"></a>Bekende problemen met HBv3
-- Op dit moment wordt InfiniBand alleen ondersteund op de 120-core VM (Standard_HB120rs_v3).
-- Momenteel wordt Azure versneld netwerken niet ondersteund in de HBv3-serie in alle regio's.
+## <a name="mpi-qp-creation-errors"></a>Fouten bij het maken van MPI QP
+Als er in de midden van een MPI-werk belasting, InfiniBand QP-aanmaak fouten, zoals hieronder weer gegeven, worden gegenereerd, wordt u aangeraden de virtuele machine opnieuw op te starten en de werk belasting opnieuw te proberen. Dit probleem wordt in de toekomst opgelost.
+
+```bash
+ib_mlx5_dv.c:150  UCX  ERROR mlx5dv_devx_obj_create(QP) failed, syndrome 0: Invalid argument
+```
+
+U kunt de waarden van het maximum aantal wachtrij paren controleren wanneer het probleem als volgt wordt waargenomen.
+```bash
+[user@azurehpc-vm ~]$ ibv_devinfo -vv | grep qp
+max_qp: 4096
+```
 
 ## <a name="accelerated-networking-on-hb-hc-hbv2-and-ndv2"></a>Versneld netwerken op HB, HC, HBv2 en NDv2
 

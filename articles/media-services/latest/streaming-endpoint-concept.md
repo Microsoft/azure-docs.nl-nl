@@ -37,7 +37,7 @@ De maximale limiet voor de streaming-eenheid is doorgaans 10. Neem [hier](https:
 
 In de tabel worden de typen beschreven:
 
-|Type|Schaaleenheden|Beschrijving|
+|Type|Schaaleenheden|Description|
 |--------|--------|--------|  
 |**Standard**|0|Het standaard streaming-eind punt is een **standaard** type. Dit kan worden gewijzigd in het Premium-type door de aanpassing `scaleUnits` .|
 |**Premium**|>0|**Premium** Streaming-eind punten zijn geschikt voor geavanceerde workloads en bieden specifieke en schaal bare bandbreedte capaciteit. U gaat naar een **Premium** -type door aanpassing `scaleUnits` (streaming units). `scaleUnits` Geef een specifieke uitvoerige capaciteit die kan worden aangeschaft in stappen van 200 Mbps. Wanneer u het **Premium** -type gebruikt, biedt elke ingeschakelde eenheid extra bandbreedte capaciteit voor de app. |
@@ -63,6 +63,54 @@ Aanbevolen gebruik |Aanbevolen voor de meeste streaming-scenario's.|Professionee
 
 <sup>1</sup> wordt alleen rechtstreeks op het streaming-eind punt gebruikt wanneer CDN niet is ingeschakeld op het eind punt.<br/>
 
+### <a name="versions"></a>Versies
+
+|Type|StreamingEndpointVersion|ScaleUnits|CDN|Billing|
+|--------------|----------|-----------------|-----------------|-----------------|
+|Klassiek|1.0|0|NA|Gratis|
+|Standard streaming-eind punt (preview-versie)|2,0|0|Yes|Betaald|
+|Premium-streaming-eenheden|1.0|>0|Yes|Betaald|
+|Premium-streaming-eenheden|2,0|>0|Yes|Betaald|
+
+### <a name="features"></a>Functies
+
+Functie|Standard|Premium
+---|---|---
+Doorvoer |Maxi maal 600 Mbps en kan een veel hogere efficiënte door Voer bieden wanneer een CDN wordt gebruikt.|200 Mbps per streaming-eenheid (SU). Kan een veel hogere efficiënte door Voer bieden wanneer een CDN wordt gebruikt.
+CDN|Azure CDN, CDN van derden of geen CDN.|Azure CDN, CDN van derden of geen CDN.
+Facturering is naar verhouding| Dagelijks|Dagelijks
+Dynamische versleuteling|Ja|Ja
+Dynamische verpakking|Ja|Ja
+Schalen|Automatisch geschaald naar de beoogde door voer.|Extra streaming-eenheden.
+IP-filtering/G20/aangepaste host <sup>1</sup>|Ja|Ja
+Progressieve down load|Ja|Ja
+Aanbevolen gebruik |Aanbevolen voor de meeste streaming-scenario's.|Professioneel gebruik. 
+
+<sup>1</sup> alleen rechtstreeks op het streaming-eind punt gebruikt wanneer CDN niet is ingeschakeld op het eind punt.<br/>
+
+Zie [prijzen en sla](https://azure.microsoft.com/pricing/details/media-services/)voor informatie over sla.
+
+## <a name="migration-between-types"></a>Migratie tussen typen
+
+Van | Tot | Bewerking
+---|---|---
+Klassiek|Standard|Moet u zich aanmelden
+Klassiek|Premium| Schalen (extra streaming-eenheden)
+Standard/Premium|Klassiek|Niet beschikbaar (als de versie van het streaming-eind punt 1,0 is. Het is toegestaan te wijzigen in klassiek met instelling scaleunits in ' 0 ')
+Standard (met/zonder CDN)|Premium met dezelfde configuraties|Toegestaan in de status **gestart** . (via Azure Portal)
+Premium (met/zonder CDN)|Standaard met dezelfde configuraties|Toegestaan in de status **gestart** (via Azure Portal)
+Standard (met/zonder CDN)|Premium met andere configuratie|Toegestaan in de status **gestopt** (via Azure Portal). Niet toegestaan bij de status wordt uitgevoerd.
+Premium (met/zonder CDN)|Standaard met andere configuratie|Toegestaan in de status **gestopt** (via Azure Portal). Niet toegestaan bij de status wordt uitgevoerd.
+Versie 1,0 met SU >= 1 met CDN|Standard/Premium zonder CDN|Toegestaan in de status **gestopt** . Niet toegestaan in de status **gestart** .
+Versie 1,0 met SU >= 1 met CDN|Standaard met/zonder CDN|Toegestaan in de status **gestopt** . Niet toegestaan in de status **gestart** . Versie 1,0 CDN wordt verwijderd en er wordt een nieuwe gemaakt en gestart.
+Versie 1,0 met SU >= 1 met CDN|Premium met/zonder CDN|Toegestaan in de status **gestopt** . Niet toegestaan in de status **gestart** . Klassiek CDN wordt verwijderd en er wordt een nieuwe gemaakt en gestart.
+
+
+
+
+
+
+
 ## <a name="streaming-endpoint-properties"></a>Eigenschappen van streaming-eind punt
 
 Deze sectie bevat informatie over een aantal eigenschappen van het streaming-eind punt. Zie [streaming-eind punt](/rest/api/media/streamingendpoints/create)voor voor beelden van het maken van een nieuw streaming-eind punt en beschrijvingen van alle eigenschappen.
@@ -83,7 +131,7 @@ Deze sectie bevat informatie over een aantal eigenschappen van het streaming-ein
 - `crossSiteAccessPolicies`: Wordt gebruikt om beleid voor meerdere sites op te geven voor verschillende clients. Zie voor meer informatie [beleid voor meerdere domein beleids regels](https://www.adobe.com/devnet/articles/crossdomain_policy_file_spec.html) en [het beschikbaar maken van een service over domein grenzen](/previous-versions/azure/azure-services/gg185950(v=azure.100)). De instellingen zijn alleen van toepassing op Smooth Streaming.
 - `customHostNames`: Wordt gebruikt om een streaming-eind punt te configureren voor het accepteren van verkeer dat naar een aangepaste hostnaam wordt gestuurd. Deze eigenschap is geldig voor standaard-en Premium-streaming-eind punten en kan worden ingesteld als `cdnEnabled` : False.
 
-    Het eigendom van de domein naam moet worden bevestigd door Media Services. Media Services controleert het eigendom van de domein naam door een `CName` record te vereisen met de Media Services-account-id als onderdeel dat moet worden toegevoegd aan het domein dat in gebruik is. Een voor beeld: voor ' sports.contoso.com ' die moet worden gebruikt als aangepaste hostnaam voor het streaming-eind punt, moet een record voor `<accountId>.contoso.com` worden geconfigureerd om te verwijzen naar een van Media Services-namen van verificatie-hosts. De naam van de verificatie-host bestaat uit verifydns. \<mediaservices-dns-zone> .
+    Het eigendom van de domein naam moet worden bevestigd door Media Services. Media Services controleert het eigendom van de domein naam door een `CName` record te vereisen met de Media Services-account-id als onderdeel dat moet worden toegevoegd aan het domein dat in gebruik is. Een voor beeld: voor ' sports.contoso.com ' die moet worden gebruikt als aangepaste hostnaam voor het streaming-eind punt, moet een record voor `<accountId>.contoso.com` worden geconfigureerd om te verwijzen naar een van Media Services-namen van verificatie-hosts. De naam van de verificatie-host bestaat uit verifydns. `\<mediaservices-dns-zone>` .
 
     Hieronder ziet u de verwachte DNS-zones die moeten worden gebruikt in de record controleren voor verschillende Azure-regio's.
   

@@ -7,12 +7,12 @@ ms.service: virtual-machines
 ms.topic: conceptual
 ms.date: 03/08/2021
 ms.reviewer: cynthn
-ms.openlocfilehash: 1ea87d40430dbf3edabd557b80ab1456b49f4605
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 821c50b5cb48bddb586c3589326a7f31c7bafded
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102507871"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105604529"
 ---
 # <a name="availability-options-for-azure-virtual-machines"></a>Beschikbaarheids opties voor Azure Virtual Machines
 Dit artikel bevat een overzicht van de beschik bare opties voor Azure virtual machines (Vm's).
@@ -57,6 +57,6 @@ Met Site Recovery kunt u replicatie beheren voor:
 - On-premises VM's, Azure Stack-VM's en fysieke servers.
 
 ## <a name="next-steps"></a>Volgende stappen
-- [Een virtuele machine maken in een beschikbaarheids zone](/linux/create-cli-availability-zone.md)
-- [Een virtuele machine maken in een beschikbaarheidsset](/linux/tutorial-availability.md)
+- [Een virtuele machine maken in een beschikbaarheids zone](/azure/virtual-machines/linux/create-cli-availability-zone)
+- [Een virtuele machine maken in een beschikbaarheidsset](/azure/virtual-machines/linux/tutorial-availability-sets)
 - [Een virtuele-machineschaalset maken](../virtual-machine-scale-sets/quick-create-portal.md)

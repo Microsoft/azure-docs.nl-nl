@@ -5,25 +5,22 @@ author: mimcco
 ms.author: mimcco
 ms.service: azure-percept
 ms.topic: how-to
-ms.date: 02/18/2021
+ms.date: 03/25/2021
 ms.custom: template-how-to
-ms.openlocfilehash: 313ea98da0426af945dfdea00d33440ab2955cc7
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.openlocfilehash: c9c62ec07873272b956877ec51d8765ae0bbd100
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105023075"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105605634"
 ---
-# <a name="azure-percept-dk-dev-kit-troubleshooting"></a>Problemen oplossen met Azure percept DK (dev kit)
+# <a name="azure-percept-dk-troubleshooting"></a>Problemen met Azure percept DK oplossen
 
 Zie de onderstaande richt lijnen voor algemene tips voor probleem oplossing voor Azure percept DK.
 
 ## <a name="general-troubleshooting-commands"></a>Algemene opdrachten voor probleem oplossing
 
-Als u deze opdrachten wilt uitvoeren, 
-1. Verbinding maken met de [Wi-Fi-AP van de dev kit](./quickstart-percept-dk-set-up.md)
-1. [SSH in de dev kit](./how-to-ssh-into-percept-dk.md)
-1. Voer de opdrachten in de SSH-terminal in
+Als u deze opdrachten wilt uitvoeren, gaat u naar [de dev kit](./how-to-ssh-into-percept-dk.md) en voert u de opdrachten in bij de prompt van de SSH-client.
 
 Als u de uitvoer naar een txt-bestand wilt omleiden voor verdere analyse, gebruikt u de volgende syntaxis:
 
@@ -43,7 +40,7 @@ Nadat de uitvoer naar een txt-bestand is omgeleid, kopieert u het bestand naar u
 scp [remote username]@[IP address]:[remote file path]/[file name].txt [local host file path]
 ```
 
-```[local host file path]``` verwijst naar de locatie op de host-PC waarnaar u het txt-bestand wilt kopiëren. ```[remote username]``` is de SSH-gebruikers naam die u hebt gekozen tijdens de [installatie-ervaring](./quickstart-percept-dk-set-up.md). Als u geen SSH-aanmelding tijdens het OOBE hebt ingesteld, is uw externe gebruikers naam ```root``` .
+```[local host file path]``` verwijst naar de locatie op de host-PC waarnaar u het txt-bestand wilt kopiëren. ```[remote username]``` is de SSH-gebruikers naam die u hebt gekozen tijdens de [installatie-ervaring](./quickstart-percept-dk-set-up.md).
 
 Raadpleeg de documentatie voor het [oplossen van problemen met het Azure IOT edge-apparaat](../iot-edge/troubleshoot.md)voor meer informatie over de Azure IOT Edge-opdrachten.
 
@@ -66,9 +63,9 @@ Raadpleeg de documentatie voor het [oplossen van problemen met het Azure IOT edg
 |Azure IoT Edge          |```sudo journalctl -u iotedge -f``` |de logboeken van de Azure IoT Edge Security Manager weer geven |
 |Azure IoT Edge          |```sudo systemctl restart iotedge``` |de Azure IoT Edge-beveiligings-daemon opnieuw opstarten |
 |Azure IoT Edge          |```sudo iotedge list```           |de geïmplementeerde Azure IoT Edge modules weer geven |
-|Overige             |```df [option] [file]```          |informatie over beschik bare/totale ruimte in opgegeven bestands systeem (en) weer geven |
-|Overige             |`ip route get 1.1.1.1`        |apparaat-IP en interface-informatie weer geven |
-|Overige             |<code>ip route get 1.1.1.1 &#124; awk '{print $7}'</code> <br> `ifconfig [interface]` |alleen IP-adres van apparaat weer geven |
+|Anders             |```df [option] [file]```          |informatie over beschik bare/totale ruimte in opgegeven bestands systeem (en) weer geven |
+|Anders             |`ip route get 1.1.1.1`        |apparaat-IP en interface-informatie weer geven |
+|Anders             |<code>ip route get 1.1.1.1 &#124; awk '{print $7}'</code> <br> `ifconfig [interface]` |alleen IP-adres van apparaat weer geven |
 
 
 De ```journalctl``` Wi-Fi-opdrachten kunnen worden gecombineerd met de volgende opdracht:
@@ -88,11 +85,11 @@ sudo journalctl -u hostapd.service -u wpa_supplicant.service -u ztpd.service -u 
 |```sudo docker image prune``` |[Hiermee verwijdert u alle Dangling-installatie kopieën](https://docs.docker.com/engine/reference/commandline/image_prune/) |
 |```sudo watch docker ps``` <br> ```watch ifconfig [interface]``` |Download status van docker-container controleren |
 
-## <a name="usb-updating"></a>USB-update
+## <a name="usb-updates"></a>USB-updates
 
 |Fout:                                    |Oplossing:                                               |
 |------------------------------------------|--------------------------------------------------------|
-|LIBUSB_ERROR_XXX tijdens USB-Flash via UUU |Deze fout wordt veroorzaakt door een USB-verbindings fout tijdens het bijwerken van UUU. Als de USB-kabel niet goed is aangesloten op de USB-poorten op de PC of de PE-10X, treedt er een fout op in dit formulier. Probeer beide uiteinden van de USB-kabel los te koppelen en opnieuw te koppelen en jiggling de kabel om een beveiligde verbinding te garanderen. Hiermee wordt het probleem bijna altijd opgelost. |
+|LIBUSB_ERROR_XXX tijdens USB-Flash via UUU |Deze fout wordt veroorzaakt door een USB-verbindings fout tijdens het bijwerken van UUU. Als de USB-kabel niet op de juiste manier is aangesloten op de USB-poorten op de PC of het percept DK-verwerkings bord, treedt er een fout op in dit formulier. Probeer beide uiteinden van de USB-kabel los te koppelen en opnieuw te verbinden en jiggling de kabel om een beveiligde verbinding te garanderen. Hiermee wordt het probleem bijna altijd opgelost. |
 
 ## <a name="azure-percept-dk-carrier-board-led-states"></a>LED-statussen voor Azure percept DK-Carrier Board
 

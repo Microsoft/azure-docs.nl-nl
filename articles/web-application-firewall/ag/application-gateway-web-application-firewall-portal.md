@@ -5,14 +5,14 @@ services: web-application-firewall
 author: vhorne
 ms.service: web-application-firewall
 ms.topic: tutorial
-ms.date: 09/16/2020
+ms.date: 03/25/2021
 ms.author: victorh
-ms.openlocfilehash: b9733eeb0d9941f6e23dcc9c0fa4dba60f4e4d30
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 35bede052f06c0fcffe46460a376d10690fd4417
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "94561026"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105559605"
 ---
 # <a name="tutorial-create-an-application-gateway-with-a-web-application-firewall-using-the-azure-portal"></a>Zelfstudie: Een toepassingsgateway met een Web Application Firewall maken met behulp van de Azure-portal
 
@@ -42,11 +42,9 @@ Meld u aan bij de Azure Portal op [https://portal.azure.com](https://portal.azur
 
 ## <a name="create-an-application-gateway"></a>Een toepassingsgateway maken
 
-Azure heeft een virtueel netwerk nodig om te communiceren tussen resources. U kunt een nieuw virtueel netwerk maken of een bestaand gebruiken. In dit voorbeeld maakt u een nieuw virtueel netwerk. U kunt een virtueel netwerk maken op hetzelfde moment dat u de toepassingsgateway maakt. Instanties van toepassingsgateways worden in afzonderlijke subnetten gemaakt. In dit voorbeeld maakt u twee subnetten: één voor de toepassingsgateway en één voor de back-endservers.
+1. Selecteer **Een resource maken** in het linkermenu van de Azure-portal. Het venster **Nieuw** wordt weergegeven.
 
-Selecteer **Een resource maken** in het linkermenu van de Azure-portal. Het venster **Nieuw** wordt weergegeven.
-
-Selecteer **Netwerken** en vervolgens **Application Gateway** in de lijst **Aanbevolen**.
+2. Selecteer **Netwerken** en vervolgens **Application Gateway** in de lijst **Aanbevolen**.
 
 ### <a name="basics-tab"></a>Tabblad Basisbeginselen
 
@@ -60,7 +58,7 @@ Selecteer **Netwerken** en vervolgens **Application Gateway** in de lijst **Aanb
 
 2.  Er is een virtueel netwerk nodig voor communicatie tussen de resources die u maakt. U kunt een nieuw virtueel netwerk maken of een bestaand gebruiken. In dit voorbeeld maakt u een virtueel netwerk op hetzelfde moment dat u de toepassingsgateway maakt. Instanties van toepassingsgateways worden in afzonderlijke subnetten gemaakt. In dit voorbeeld maakt u twee subnetten: één voor de toepassingsgateway en één voor de back-endservers.
 
-    Maak onder **Virtueel netwerk configureren** een nieuw virtueel netwerk door **Nieuw netwerk maken** te selecteren. Voer in het venster **Virtueel netwerk maken** dat wordt geopend, de volgende waarden in om het virtuele netwerk en twee subnetten te maken:
+    Onder **virtueel netwerk configureren** selecteert u **nieuwe maken** om een nieuw virtueel netwerk te maken. Voer in het venster **Virtueel netwerk maken** dat wordt geopend, de volgende waarden in om het virtuele netwerk en twee subnetten te maken:
 
     - **Naam**: Typ *myVnet* als naam voor het virtuele netwerk.
 
@@ -82,7 +80,7 @@ Selecteer **Netwerken** en vervolgens **Application Gateway** in de lijst **Aanb
    > [!NOTE]
    > Voor de Application Gateway v2 SKU kunt u alleen een **openbare** front-end-IP-configuratie kiezen. De privé frontend-IP-configuratie is op dit moment niet ingeschakeld voor deze v2-SKU.
 
-2. Kies **Nieuw maken** voor het **Openbaar IP-adres** en voer *myAGPublicIPAddress* in als naam voor het openbaar IP-adres en selecteer vervolgens **OK**. 
+2. Kies **Nieuw toevoegen** voor het **open bare IP-adres** en voer *myAGPublicIPAddress* in voor de naam van het open bare IP-adres en selecteer vervolgens **OK**. 
 
      ![Nieuwe toepassingsgateway maken: front-ends](../media/application-gateway-web-application-firewall-portal/application-gateway-create-frontends.png)
 
@@ -90,9 +88,9 @@ Selecteer **Netwerken** en vervolgens **Application Gateway** in de lijst **Aanb
 
 ### <a name="backends-tab"></a>Tabblad Back-ends
 
-De back-endpool word gebruikt om aanvragen te routeren naar de back-endservers die de aanvraag verwerken. Back-endpools kunnen bestaan uit NIC's, virtuele-machineschaalsets, openbare IP's, interne IP's, FQDN's (Fully Qualified Domain Name) en multitenant back-ends als Azure App Service. In dit voorbeeld maakt u een lege back-endpool met uw toepassingsgateway en voegt u vervolgens back-enddoelen toe aan de back-endpool.
+De back-endpool word gebruikt om aanvragen te routeren naar de back-endservers die de aanvraag verwerken. Back-endpools kunnen bestaan uit NIC's, virtuele-machineschaalsets, openbare IP's, interne IP's, FQDN's (Fully Qualified Domain Name) en multitenant back-ends als Azure App Service. In dit voor beeld maakt u een lege back-end-pool met uw toepassings gateway en voegt u later back-endservers toe aan de back-end-groep.
 
-1. Selecteer in het tabblad **Back-ends** de optie **+Een back-endpool toevoegen**.
+1. Selecteer op het tabblad **back** -end **een back-end-groep toevoegen**.
 
 2. Voer in het venster **Een back-endpool toevoegen** dat wordt geopend, de volgende waarden in om een lege back-endpool te maken:
 
@@ -109,7 +107,7 @@ De back-endpool word gebruikt om aanvragen te routeren naar de back-endservers d
 
 In het tabblad **Configuratie** verbindt u de front-end- en de back-endpool die u hebt gemaakt met een regel voor doorsturen.
 
-1. Selecteer in de kolom **Routeringsregels** de optie **Een regel toevoegen**.
+1. Selecteer **een regel voor door sturen toevoegen** in de kolom **routerings regels** .
 
 2. Voer in het venster **Een regel voor doorsturen toevoegen** dat wordt geopend, *myRoutingRule* in als de **Regelnaam**.
 
@@ -124,7 +122,7 @@ In het tabblad **Configuratie** verbindt u de front-end- en de back-endpool die 
 
 4. Selecteer in het tabblad **Back-enddoelen** de optie **myBackendPool** als het **Back-enddoel**.
 
-5. Selecteer als **HTTP-instelling** de optie **Nieuwe maken** om een nieuwe HTTP-instelling te maken. De HTTP-instelling bepaalt het gedrag van de regel voor doorsturen. Voer in het venster **Een HTTP-instelling toevoegen** dat wordt geopend, *myHTTPSetting* in als de **naam van de HTTP-instelling**. Accepteer de standaardwaarden voor de overige instellingen in het venster **Een HTTP-instelling toevoegen** en selecteer vervolgens **Toevoegen** om terug te keren naar het venster **Een regel voor doorsturen toevoegen**. 
+5. Voor de **http-instelling** selecteert u **Nieuw toevoegen** om een nieuwe http-instelling te maken. De HTTP-instelling bepaalt het gedrag van de regel voor doorsturen. Voer in het venster **Een HTTP-instelling toevoegen** dat wordt geopend, *myHTTPSetting* in als de **naam van de HTTP-instelling**. Accepteer de standaardwaarden voor de overige instellingen in het venster **Een HTTP-instelling toevoegen** en selecteer vervolgens **Toevoegen** om terug te keren naar het venster **Een regel voor doorsturen toevoegen**. 
 
      ![Nieuwe toepassingsgateway maken: HTTP-instelling](../media/application-gateway-web-application-firewall-portal/application-gateway-create-httpsetting.png)
 
@@ -158,12 +156,12 @@ Hiervoor moet u het volgende doen:
 
     - **Resourcegroep**: Selecteer **myResourceGroupAG** als naam van de resourcegroep.
     - **Naam van virtuele machine**: Typ *myVM* als naam voor de virtuele machine.
-    - **Gebruikersnaam**: Typ *azureuser* als gebruikersnaam van de beheerder.
-    - **Wachtwoord**: Typ *Azure123456!* als beheerderswachtwoord.
+    - **Gebruikersnaam**: Voer een naam in voor de gebruikersnaam van de beheerder.
+    - **Wacht woord**: Voer een wacht woord in voor het beheerders wachtwoord.
 4. Accepteer de overige standaardwaarden en klik op **Volgende: Schijven**.  
 5. Accepteer de standaardwaarden op het tabblad **Schijven** en selecteer **Volgende: Netwerken**.
 6. Zorg ervoor dat, op het tabblad **Netwerken**, **myVNet** is geselecteerd bij **Virtueel netwerk** en dat **Subnet** is ingesteld op **myBackendSubnet**. Accepteer de overige standaardwaarden en klik op **Volgende: Beheer**.<br>Toepassingsgateway kan communiceren met instanties die zich buiten het virtuele netwerk van de gateway bevinden, maar u moet ervoor zorgen dat er een IP-verbinding is.
-7. Op het tabblad **Beheer** stelt u **Diagnostische gegevens over opstarten** in op **Uit**. Accepteer de overige standaardwaarden en selecteer **Beoordelen en maken**.
+7. Op het tabblad **Beheer** stelt u **Diagnostische gegevens over opstarten** in op **Uitschakelen**. Accepteer de overige standaardwaarden en selecteer **Beoordelen en maken**.
 8. Controleer de instellingen op het tabblad **Beoordelen en maken**, corrigeer eventuele validatiefouten en selecteer vervolgens **Maken**.
 9. Wacht tot de virtuele machine is gemaakt voordat u verder gaat.
 
@@ -175,7 +173,7 @@ In dit voorbeeld installeert u IIS alleen op de virtuele machines om te controle
 
     ![Aangepaste extensie installeren](../media/application-gateway-web-application-firewall-portal/application-gateway-extension.png)
 
-2. Voer de volgende opdracht uit om IIS op de virtuele machine te installeren: 
+2. Stel de locatie parameter voor uw omgeving in en voer de volgende opdracht uit om IIS op de virtuele machine te installeren: 
 
     ```azurepowershell-interactive
     Set-AzVMExtension `
@@ -199,48 +197,49 @@ In dit voorbeeld installeert u IIS alleen op de virtuele machines om te controle
 
 3. Selecteer **myBackendPool**.
 
-4. Onder **Doelen** selecteert u **Virtuele machine** in de vervolgkeuzelijst.
+4. Onder **doel type**, selecteer **virtuele machine** in de vervolg keuzelijst.
 
-5. Onder **VIRTUELE MACHINE** en **NETWERKINTERFACES** selecteert u de virtuele machines **myVM** en **myVM2** en de bijbehorende netwerkinterfaces in de vervolgkeuzelijsten.
+5. Onder **doel** selecteert u de bijbehorende netwerk interface voor **myVM** in de vervolg keuzelijst.
+1. Herhaal dit voor **myVM2**.
 
-    ![Back-endservers toevoegen](../media/application-gateway-web-application-firewall-portal/application-gateway-backend.png)
+   :::image type="content" source="../media/application-gateway-web-application-firewall-portal/application-gateway-backend.png" alt-text="Back-endservers toevoegen":::
+
 
 6. Selecteer **Opslaan**.
 
 7. Wacht tot de implementatie is voltooid voordat u doorgaat met de volgende stap.
 
-## <a name="create-a-storage-account-and-configure-diagnostics"></a>Een opslagaccount maken en diagnostische gegevens configureren
-
-### <a name="create-a-storage-account"></a>Create a storage account
-
-Voor dit artikel gebruikt de toepassingsgateway een opslagaccount voor het opslaan van gegevens voor detectie- en preventiedoeleinden. U kunt ook Azure Monitor-logboeken of Event Hub gebruiken om gegevens vast te leggen.
-
-1. Selecteer in de linkerbovenhoek van Azure Portal **Een resource maken**.
-1. Selecteer **Opslag** en selecteer vervolgens **Opslagaccount**.
-1. Voor *Resourcegroep* selecteert u **myResourceGroupAG** voor de resourcegroep.
-1. Typ *myagstore1* voor de naam van de opslagaccount.
-1. Accepteer de standaardwaarden voor de overige instellingen en selecteer **Controleren en maken**.
-1. Controleer de instellingen en selecteer vervolgens **Maken**.
-
-### <a name="configure-diagnostics"></a>Diagnostische gegevens configureren
-
-Configureer diagnostische gegevens om gegevens vast te leggen in de logboeken ApplicationGatewayAccessLog, ApplicationGatewayPerformanceLog en ApplicationGatewayFirewallLog.
-
-1. Selecteer in het linkermenu **Alle resources** en selecteer vervolgens *myAppGateway*.
-2. Selecteer **Diagnostische instellingen** onder Bewaking.
-3. selecteer **Diagnostische instelling toevoegen**.
-4. Voer *myDiagnosticsSettings* in als de naam voor de diagnostische instellingen.
-5. Selecteer **Archiveren naar een opslagaccount** en selecteer vervolgens **Configureren** om de opslagaccount *myagstore1* te selecteren die u eerder hebt gemaakt en selecteer vervolgens **OK**.
-6. Selecteer de logboeken van de toepassingsgateway die u wilt verzamelen en behouden.
-7. Selecteer **Opslaan**.
-
-    ![Diagnostische gegevens configureren](../media/application-gateway-web-application-firewall-portal/application-gateway-diagnostics.png)
-
+   
 ## <a name="create-and-link-a-web-application-firewall-policy"></a>Een Web Application Firewall-beleid maken en ernaar koppelen
 
-Alle WAF-aanpassingen en -instellingen bevinden zich in een afzonderlijk object, een WAF-beleid genoemd. Het beleid moet worden gekoppeld aan uw toepassingsgateway. Zie [Een WAF-beleid maken](create-waf-policy-ag.md) als u een WAF-beleid wilt maken. Zodra het beleid is gemaakt, kunt u dit beleid koppelen aan uw WAF (of een afzonderlijke listener) via het WAF-beleid in het tabblad **Gekoppelde toepassingsgateways**. 
+Alle WAF-aanpassingen en -instellingen bevinden zich in een afzonderlijk object, een WAF-beleid genoemd. Het beleid moet worden gekoppeld aan uw toepassingsgateway. 
 
-![Gekoppelde toepassingsgateways](../media/application-gateway-web-application-firewall-portal/associated-application-gateways.png)
+Maak een Basic-WAF-beleid met een beheerde standaardregelset (DRS).
+
+1. Selecteer in de linkerbovenhoek van de Portal de optie **een resource maken**. Zoek naar **WAF**, selecteer **Web Application firewall** en selecteer vervolgens **maken**.
+2. Op de pagina **een WAF-beleid maken** , tabblad **basis** gegevens, voer de volgende informatie in of Selecteer deze, accepteer de standaard waarden voor de overige instellingen en selecteer vervolgens **controleren + maken**:
+
+   |Instelling  |Waarde  |
+   |---------|---------|
+   |Beleid voor     |Regionale WAF (Application Gateway)|
+   |Abonnement     |De naam van uw abonnement selecteren|
+   |Resourcegroep     |**MyResourceGroupAG** selecteren|
+   |Beleidsnaam     |Typ een unieke naam voor uw WAF-beleid.|
+1. Selecteer **volgende: beleids instellingen**.
+1. Accepteer de standaard instellingen en selecteer vervolgens **volgende: beheerde regels**.
+1. Accepteer de standaard instelling en selecteer **volgende: aangepaste regels**.
+1. Selecteer **volgende: koppeling**.
+1. Selecteer **koppeling toevoegen** en selecteer vervolgens **Application Gateway**.
+1. Schakel het selectie vakje in voor **het Toep assen van de Web Application firewall-beleids configuratie, zelfs als deze niet overeenkomt met de huidige configuratie**.
+1. Selecteer **Toevoegen**.
+1. Selecteer op het tabblad **koppeling** de optie **koppeling toevoegen** en selecteer **Application Gateway**.
+
+   > [!NOTE]
+   > Als u een beleid toewijst aan uw Application Gateway (of listener) waaraan al een beleid is toegewezen, wordt het oorspronkelijke beleid overschreven en vervangen door het nieuwe beleid.
+4. Selecteer **Controleren en maken** en selecteer vervolgens **Maken**.
+1. Selecteer **Volgende: Labels**.
+1. Selecteer **Controleren + maken**.
+1. Selecteer **Maken**.
 
 ## <a name="test-the-application-gateway"></a>De toepassingsgateway testen
 

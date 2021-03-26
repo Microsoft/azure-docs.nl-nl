@@ -9,12 +9,12 @@ ms.topic: reference
 ms.date: 03/15/2021
 ms.author: kuthapar
 ms.custom: devx-track-java
-ms.openlocfilehash: 3c740aa00b158c7ddbca3e4f61d79e37978223c2
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 536c0ab78a4b7e08abb1532635aff722df9e15cd
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103493608"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105563103"
 ---
 # <a name="spring-data-azure-cosmos-db-v3-for-core-sql-api-release-notes-and-resources"></a>Lente gegevens Azure Cosmos DB v3 voor Core-API (SQL): release opmerkingen en bronnen
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -65,7 +65,7 @@ U kunt lente gegevens Azure Cosmos DB gebruiken in uw [Azure lente-Cloud](https:
 
 ## <a name="get-started-fast"></a>Snel aan de slag
 
-  Ga aan de slag met lente data Azure Cosmos DB door de [lente boot Starter Guide](https://docs.microsoft.com/azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-cosmos-db)te volgen. De Spring boot-start methode is de aanbevolen manier om aan de slag te gaan met de lente gegevens Azure Cosmos DB-connector.
+  Ga aan de slag met lente data Azure Cosmos DB door de [lente boot Starter Guide](/azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-cosmos-db)te volgen. De Spring boot-start methode is de aanbevolen manier om aan de slag te gaan met de lente gegevens Azure Cosmos DB-connector.
 
   U kunt ook de lente gegevens Azure Cosmos DB afhankelijkheid toevoegen aan uw `pom.xml` bestand, zoals hieronder wordt weer gegeven:
 

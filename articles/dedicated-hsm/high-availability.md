@@ -10,14 +10,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/15/2021
-ms.author: mbaldwin
-ms.openlocfilehash: 85aa9d355b2440535ea13c8c15e95500bac22352
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.date: 03/25/2021
+ms.author: keithp
+ms.openlocfilehash: c46ccbda35936ed94079a21e3e9c72405875b961
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98567250"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105608864"
 ---
 # <a name="azure-dedicated-hsm-high-availability"></a>Hoge Beschik baarheid van exclusieve HSM voor Azure
 
@@ -25,7 +25,7 @@ De specifieke HSM van Azure wordt uitgebreid door de Maxi maal beschik bare data
 
 ## <a name="high-availability-example"></a>Voor beeld van hoge Beschik baarheid
 
-Informatie over het configureren van HSM-apparaten voor hoge Beschik baarheid op het software niveau vindt u in de Thales Luna 7 HSM-beheer handleiding. Dit document is beschikbaar op de  [Thales HSM-pagina](https://thalesdocs.com/gphsm/Content/luna/network/luna_network_releases.htm).
+Informatie over het configureren van HSM-apparaten voor hoge Beschik baarheid op het software niveau vindt u in de Thales Luna 7 HSM-beheer handleiding. Dit document is beschikbaar op de  [Thales HSM-pagina](https://cpl.thalesgroup.com/encryption/hardware-security-modules/network-hsms).
 
 Het volgende diagram toont een Maxi maal beschik bare architectuur. Het gebruikt meerdere apparaten in de regio en meerdere apparaten die zijn gekoppeld aan een afzonderlijke regio. Deze architectuur maakt gebruik van Mini maal vier HSM-apparaten en onderdelen van virtuele netwerken.
 
@@ -42,4 +42,4 @@ Meer onderwerpen over het concept niveau:
 * [Ondersteuning](supportability.md)
 * [Controle](monitoring.md)
 
-Voor specifieke informatie over het configureren van HSM-apparaten voor maximale Beschik baarheid raadpleegt u de Thales-portal voor klanten ondersteuning voor de beheerders handleidingen en raadpleegt u sectie 6.
+Voor specifieke informatie over het configureren van HSM-apparaten voor maximale Beschik baarheid raadpleegt u de [Thales-portal voor klanten ondersteuning](https://supportportal.thalesgroup.com/csm) voor de beheerders handleidingen en raadpleegt u sectie 6.

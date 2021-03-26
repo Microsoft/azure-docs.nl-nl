@@ -14,12 +14,12 @@ ms.date: 02/28/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 06eb7e8d1be2e58fd6cf87167a585a2ffeee0d7f
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 676fdf264cb930069425a330c3da9cd753bf8e0a
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "97708480"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105567030"
 ---
 # <a name="configure-azure-ad-role-settings-in-privileged-identity-management"></a>Instellingen voor Azure AD-functies configureren in Privileged Identity Management
 
@@ -64,14 +64,14 @@ U kunt kiezen uit twee opties voor de toewijzings duur voor elk toewijzings type
 
 U kunt kiezen uit een van **deze opties** voor de gewenste duur van de toewijzing:
 
-| | |
+| | Description |
 | --- | --- |
 | **Permanente toewijzing in aanmerking komend toestaan** | Globale beheerders en beheerders met geprivilegieerde rollen kunnen een permanente, in aanmerking komende toewijzing toewijzen. |
 | **In aanmerking komende toewijzing laten verlopen na** | Globale beheerders en beheerders met geprivilegieerde rollen kunnen vereisen dat alle in aanmerking komende toewijzingen een opgegeven begin-en eind datum hebben. |
 
 En u kunt een van deze **actieve** toewijzings duur opties kiezen:
 
-| | |
+| | Description |
 | --- | --- |
 | **Permanente actieve toewijzing toestaan** | Globale beheerders en beheerders met geprivilegieerde rollen kunnen permanente actieve toewijzing toewijzen. |
 | **Actieve toewijzing laten verlopen na** | Globale beheerders en beheerders met geprivilegieerde rollen kunnen vereisen dat alle actieve toewijzingen een opgegeven begin-en eind datum hebben. |

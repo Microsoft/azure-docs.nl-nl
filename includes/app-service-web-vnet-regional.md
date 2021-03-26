@@ -4,12 +4,12 @@ ms.service: app-service-web
 ms.topic: include
 ms.date: 10/21/2020
 ms.author: ccompy
-ms.openlocfilehash: 7796b94609a9be05fdb72900d0725747440f8042
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.openlocfilehash: 821746856cb37781c8f6a2e58659ce7db43e1479
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/26/2021
-ms.locfileid: "105582325"
+ms.locfileid: "105609441"
 ---
 Door gebruik te maken van regionale VNet-integratie kan uw app toegang tot:
 
@@ -74,7 +74,7 @@ De functie wordt volledig ondersteund voor zowel Windows-als Linux-apps, waarond
 
 ### <a name="service-endpoints"></a>Service-eindpunten
 
-Met regionale VNet-integratie kunt u service-eind punten gebruiken. De basis stappen voor het verkrijgen van toegang tot een service vanuit uw app via service-eind punten is als volgt:
+Met regionale VNet-integratie kunt u Azure-Services bereiken die zijn beveiligd met Service-eind punten. Ga als volgt te werk om toegang te krijgen tot een service-eind punt-beveiligde service:
 
 1. Configureer de regionale VNet-integratie met uw web-app om verbinding te maken met een specifiek subnet voor integratie.
 1. Ga naar de doel service en configureer service-eind punten voor het integratie subnet.
@@ -101,9 +101,6 @@ Nadat uw app met uw VNet is geïntegreerd, maakt deze gebruik van dezelfde DNS-s
 1. `WEBSITE_VNET_ROUTE_ALL` met waarde `1`
 
 Met deze instellingen worden al uw uitgaande oproepen vanuit uw app naar uw VNet verzonden en kunnen uw apps toegang krijgen tot een Azure DNS privé zone. Met deze instellingen kan uw app Azure DNS gebruiken door een query uit te richten op de persoonlijke DNS-zone op het niveau van de werk nemer.  
-
-> [!NOTE]
-> Het is niet mogelijk om een aangepast domein toe te voegen aan een web-app met behulp van een persoonlijke DNS-zone met de VNET-integratie. De aangepaste domein validatie wordt uitgevoerd op het niveau van de controller, niet op het niveau van de werk nemer, waardoor de DNS-records niet zichtbaar zijn. Als u een aangepast domein van een persoonlijke DNS-zone wilt gebruiken, moet u de validatie overs laan met behulp van een [Application Gateway](../articles/app-service/networking/app-gateway-with-service-endpoints.md) of [ILB app service Environment](../articles/app-service/environment/create-ilb-ase.md).
 
 ### <a name="private-endpoints"></a>Privé-eindpunten
 

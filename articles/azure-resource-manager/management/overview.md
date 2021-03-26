@@ -2,14 +2,14 @@
 title: Overzicht van Azure Resource Manager
 description: Hierin wordt beschreven hoe u Azure Resource Manager kunt gebruiken voor implementatie, beheer, en beheer van toegang tot resources in Azure.
 ms.topic: overview
-ms.date: 09/01/2020
-ms.custom: contperf-fy21q1
-ms.openlocfilehash: fad49db94195bbd2f9e5e32f8596f33fab586752
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.date: 03/25/2021
+ms.custom: contperf-fy21q1,contperf-fy21q3-portal
+ms.openlocfilehash: 6cd9aa82ad2f8a821ae82a361b3f11b72ca25f7a
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "97858515"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105608541"
 ---
 # <a name="what-is-azure-resource-manager"></a>Wat is Azure Resource Manager?
 
@@ -91,7 +91,7 @@ Er zijn een aantal belangrijke factoren waarmee u rekening moet houden bij het d
 
 * Wanneer u een resourcegroep verwijdert, worden ook alle resources in de resourcegroep verwijderd. Zie [Azure Resource Manager-resourcegroep en het verwijderen van resources](delete-resource-group.md)voor meer informatie over hoe Azure Resource Manager deze verwijdert.
 
-* U kunt maximaal 800 exemplaren van een resourcetype implementeren in elke resourcegroep. Sommige resourcetypen worden [uitgesloten van de limiet van 800 exemplaren](resources-without-resource-group-limit.md).
+* U kunt maximaal 800 exemplaren van een resourcetype implementeren in elke resourcegroep. Sommige resourcetypen worden [uitgesloten van de limiet van 800 exemplaren](resources-without-resource-group-limit.md). Zie [limieten voor resource groepen](azure-subscription-service-limits.md#resource-group-limits)voor meer informatie.
 
 * Sommige resources kunnen buiten een resourcegroep bestaan. Deze resources worden geïmplementeerd in het [abonnement](../templates/deploy-to-subscription.md), de [beheergroep](../templates/deploy-to-management-group.md) of de [tenant](../templates/deploy-to-tenant.md). In deze bereiken worden alleen specifieke resourcetypen ondersteund.
 
@@ -112,6 +112,8 @@ De Azure Resource Manager-service is ontworpen voor tolerantie en voortdurende b
 Deze tolerantie is van toepassing op services die aanvragen ontvangen via Resource Manager. Key Vault heeft bijvoorbeeld voordelen vanwege deze tolerantie.
 
 ## <a name="next-steps"></a>Volgende stappen
+
+* Zie [Azure-abonnement en service limieten, quota's en beperkingen](azure-subscription-service-limits.md)voor meer informatie over de limieten die worden toegepast op Azure-Services.
 
 * Zie [Resources verplaatsen naar een nieuwe resourcegroep of een nieuw abonnement](move-resource-group-and-subscription.md) voor meer informatie over het verplaatsen van resources.
 

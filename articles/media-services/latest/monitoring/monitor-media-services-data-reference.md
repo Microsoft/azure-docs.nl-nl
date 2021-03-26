@@ -6,17 +6,18 @@ ms.author: inhenkel
 manager: femila
 ms.topic: reference
 ms.service: media-services
+ms.custom: subject-monitoring
 ms.date: 03/17/2021
-ms.openlocfilehash: 866b2faf473f06fc3f85cdb434d6555504a7f6a8
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 66fce608515d16c5418ddd18e00319a3cbf088f7
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104598181"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105609085"
 ---
 # <a name="monitoring-media-services-data-reference"></a>Media Services gegevens referentie bewaken
 
-In dit artikel worden de gegevens behandeld die nuttig zijn voor het bewaken van Media Services. Raadpleeg voor meer informatie over alle platform metrieken die worden ondersteund in Azure Monitor [ondersteunde metrische gegevens met Azure monitor](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-supported).
+In dit artikel worden de gegevens behandeld die nuttig zijn voor het bewaken van Media Services. Raadpleeg voor meer informatie over alle platform metrieken die worden ondersteund in Azure Monitor [ondersteunde metrische gegevens met Azure monitor](../../../azure-monitor/essentials/metrics-supported.md).
 
 ## <a name="media-services-metrics"></a>Media Services metrische gegevens
 
@@ -59,7 +60,7 @@ De volgende Media Services gegevens [stromen voor streaming-eind punten](/rest/a
 
 ## <a name="metric-dimensions"></a>Metrische dimensies
 
-Zie [multidimensionale metrische](https://docs.microsoft.com/azure/azure-monitor/platform/data-platform-metrics#multi-dimensional-metrics)gegevens voor meer informatie over de metrieke dimensies.
+Zie [multidimensionale metrische](../../../azure-monitor/essentials/data-platform-metrics.md#multi-dimensional-metrics)gegevens voor meer informatie over de metrieke dimensies.
 
 <!--**PLACEHOLDER** for dimensions table.-->
 
@@ -67,7 +68,7 @@ Zie [multidimensionale metrische](https://docs.microsoft.com/azure/azure-monitor
 
 ## <a name="media-services-diagnostic-logs"></a>Diagnostische logboeken Media Services
 
-Diagnostische logboeken bieden uitgebreide en frequente gegevens over de werking van een Azure-resource. Zie [logboek gegevens van uw Azure-resources verzamelen en gebruiken](https://docs.microsoft.com/azure/azure-monitor/essentials/platform-logs-overview.md)voor meer informatie.
+Diagnostische logboeken bieden uitgebreide en frequente gegevens over de werking van een Azure-resource. Zie [logboek gegevens van uw Azure-resources verzamelen en gebruiken](../../../azure-monitor/essentials/platform-logs-overview.md)voor meer informatie.
 
 Media Services ondersteunt de volgende Diagnostische logboeken:
 
@@ -81,7 +82,7 @@ Media Services ondersteunt de volgende Diagnostische logboeken:
 
 ## <a name="schemas"></a>Schema 's
 
-Zie [ondersteunde services, schema's en categorieën voor Diagnostische logboeken van Azure](https://docs.microsoft.com/azure/azure-monitor/essentials/resource-logs-schema.md)voor een gedetailleerde beschrijving van het schema voor Diagnostische logboeken op het hoogste niveau.
+Zie [ondersteunde services, schema's en categorieën voor Diagnostische logboeken van Azure](../../../azure-monitor/essentials/resource-logs-schema.md)voor een gedetailleerde beschrijving van het schema voor Diagnostische logboeken op het hoogste niveau.
 
 ## <a name="key-delivery-log-schema-properties"></a>Eigenschappen van schema voor sleutel leverings logboek
 

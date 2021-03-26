@@ -10,20 +10,20 @@ ms.subservice: metrics-advisor
 ms.topic: conceptual
 ms.date: 10/12/2020
 ms.author: mbullwin
-ms.openlocfilehash: c4d1d23da5fd9678cc5b9477ddeed0daf4f5ac36
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 4fd01256d94fbcb18fe8437be00c84e49d98f7d0
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96348616"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105606144"
 ---
 # <a name="add-data-feeds-from-different-data-sources-to-metrics-advisor"></a>Gegevensfeeds van verschillende gegevens bronnen toevoegen aan Metrics Advisor
 
-In dit artikel vindt u informatie over de instellingen en vereisten voor het verbinden van verschillende typen gegevens bronnen met metrische Advisor. Lees hoe u [uw gegevens kunt voorbereiden](how-tos/onboard-your-data.md) voor meer informatie over de belangrijkste concepten voor het gebruik van uw gegevens met metrische Advisor. 
+In dit artikel vindt u informatie over de instellingen en vereisten voor het verbinden van verschillende typen gegevens bronnen met metrische Advisor. Lees hoe u [uw gegevens kunt voorbereiden](how-tos/onboard-your-data.md) voor meer informatie over de belangrijkste concepten voor het gebruik van uw gegevens met metrische Advisor. \
 
 ## <a name="supported-authentication-types"></a>Ondersteunde verificatie typen
 
-| Verificatietypen | Beschrijving |
+| Verificatietypen | Description |
 | ---------------------|-------------|
 |**Basic** | U moet de algemene para meters voor toegang tot gegevens bronnen kunnen opgeven. Bijvoorbeeld een connection string of-sleutel. Beheerders van gegevens invoer kunnen deze referenties weer geven. |
 | **AzureManagedIdentity** | [Beheerde identiteiten](../../active-directory/managed-identities-azure-resources/overview.md) voor Azure-resources is een functie van Azure Active Directory. Het biedt Azure-Services met een automatisch beheerde identiteit in azure AD. U kunt de identiteit gebruiken om te verifiëren bij elke service die ondersteuning biedt voor Azure AD-verificatie.|
@@ -51,7 +51,7 @@ In dit artikel vindt u informatie over de instellingen en vereisten voor het ver
 |[**MySQL**](#mysql) | Basic |
 |[**PostgreSQL**](#pgsql)| Basic|
 
-Maak een **referentie-entiteit** en gebruik deze om te verifiëren met uw gegevens bronnen. De volgende secties bevatten de para meters die vereist zijn voor *basis* verificatie. 
+Maak een referentie-entiteit * * en gebruik deze om te verifiëren met uw gegevens bronnen. De volgende secties bevatten de para meters die vereist zijn voor *basis* verificatie. 
 
 ## <a name="span-idappinsightsazure-application-insightsspan"></a><span id="appinsights">Azure Application Insights</span>
 
@@ -212,15 +212,14 @@ The timestamp field must match one of these two formats:
 
 ## <a name="span-idtableazure-table-storagespan"></a><span id="table">Azure Table Storage</span>
 
-* **Verbindings reeks**: raadpleeg [een Connection String weer geven en kopiëren](../../storage/common/storage-account-keys-manage.md?tabs=azure-portal&toc=%2fazure%2fstorage%2ftables%2ftoc.json#view-account-access-keys) voor informatie over het ophalen van de Connection String van Azure Table Storage.
+* **Verbindings reeks**: Maak een SAS-URL (Shared Access Signature) en vul hier in. De meest eenvoudige manier om een SAS-URL te maken, is met behulp van Azure Portal. Met behulp van de Azure Portal kunt u grafisch navigeren. Als u via de Azure Portal een SAS-URL wilt maken, gaat u eerst naar het opslag account dat u wilt openen in het gedeelte instellingen en klikt u vervolgens op gedeelde toegangs handtekening. Controleer ten minste ' tabel ' en ' object ' selectie vakjes en klik vervolgens op de knop SAS-en connection string genereren. Table service SAS-URL is wat u nodig hebt om het tekstvak te kopiëren en in te vullen in de werk ruimte Metrics Advisor.
 
 * **Tabel naam**: Geef een tabel op waarop u een query wilt uitvoeren. Dit kan worden gevonden in uw exemplaar van het Azure Storage-account. Klik in de sectie **Table service** op **tabellen** .
 
-* **Query uitvoeren** U kunt de `@StartTime` in uw query gebruiken. `@StartTime` wordt vervangen door een teken reeks voor de notatie JJJJ-MM-DDTuu: mm: SS in het script.
+* **Query uitvoeren** U kunt de `@StartTime` in uw query gebruiken. `@StartTime` wordt vervangen door een teken reeks voor de notatie JJJJ-MM-DDTuu: mm: SS in het script. Tip: gebruik Azure Storage Explorer om een query met een specifiek tijds bereik te maken en ervoor te zorgen dat deze goed wordt uitgevoerd en voer de vervanging vervolgens uit.
 
     ``` mssql
-    let StartDateTime = datetime(@StartTime); let EndDateTime = StartDateTime + 1d; 
-    SampleTable | where Timestamp >= StartDateTime and Timestamp < EndDateTime | project Timestamp, Market, RPM
+    date ge datetime'@StartTime' and date lt datetime'@EndTime'
     ```
 
 ## <a name="span-ideselasticsearchspan"></a><span id="es">Elasticsearch</span>

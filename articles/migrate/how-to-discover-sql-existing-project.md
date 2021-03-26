@@ -6,12 +6,12 @@ ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 03/23/2021
-ms.openlocfilehash: 8caac0a111c3a1bdd88e0d5f43a4629ad4221496
-ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
+ms.openlocfilehash: 2de60880b511e43ffb2949a15fec2cf2a94f62fa
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104888937"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105567149"
 ---
 # <a name="discover-sql-server-instances-in-an-existing-project"></a>SQL Server exemplaren in een bestaand project detecteren 
 
@@ -41,7 +41,7 @@ Het detecteren van SQL Server instanties en data bases die worden uitgevoerd op 
     - Controleer of de services die op het apparaat worden uitgevoerd, zijn bijgewerkt naar de meest recente versie. Hiertoe start u het configuratie beheer van het toestel vanaf uw toestel server en selecteert u in het deel venster installatie vereisten de optie apparaten weer geven.
         - Het apparaat en de bijbehorende onderdelen worden automatisch bijgewerkt :::image type="content" source="./media/how-to-discover-sql-existing-project/appliance-services-version.png" alt-text="de versie van het apparaat controleren":::
     - Voeg in het paneel referenties en detectie bronnen beheren van het configuratie beheer voor Apparaatbeheer domein-of SQL Server authenticatie referenties toe die de sysadmin-toegang hebben op het SQL Server exemplaar en de data bases die moeten worden gedetecteerd.
-    U kunt gebruikmaken van de functie voor automatische referentie toewijzing van het apparaat of de referenties hand matig toewijzen aan de betreffende server, zoals [hier](/azure/migrate/tutorial-discover-vmware#start-continuous-discovery)is gemarkeerd.
+    U kunt gebruikmaken van de functie voor automatische referentie toewijzing van het apparaat of de referenties hand matig toewijzen aan de betreffende server, zoals [hier](./tutorial-discover-vmware.md#start-continuous-discovery)is gemarkeerd.
 
     Enkele punten om te noteren:
     - Zorg ervoor dat de software-inventarisatie al is ingeschakeld of geef domein-of niet-domein referenties op om hetzelfde in te scha kelen. Software-inventaris moet worden uitgevoerd om SQL Server exemplaren te detecteren.

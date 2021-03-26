@@ -7,17 +7,19 @@ ms.service: iot-develop
 ms.devlang: c
 ms.topic: quickstart
 ms.date: 03/17/2021
-ms.openlocfilehash: 4926aa40831056556060cbf564022fa7f5e3aa7a
-ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
+ms.openlocfilehash: 367f527180a310f2cbc74b1ccdc1102e1e53d1cf
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "104962844"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105605978"
 ---
 # <a name="quickstart-connect-an-mxchip-az3166-devkit-to-iot-central"></a>Quick Start: een MXCHIP AZ3166 Devkit verbinden met IoT Central
 
 **Van toepassing op**: [ontwikkelen van Inge sloten apparaten](about-iot-develop.md#embedded-device-development)<br>
 **Totale voltooiings tijd**: 30 minuten
+
+[![Code zoeken](media/common/browse-github-code.png)](https://github.com/azure-rtos/getting-started/tree/master/MXChip/AZ3166)
 
 In deze zelf studie gebruikt u Azure RTO'S om een MXCHIP AZ3166 IoT DevKit (hierna MXCHIP DevKit) te verbinden met Azure IoT. Het artikel maakt deel uit van de reeks aan de [slag met het ontwikkelen van Azure IOT embedded-apparaten](quickstart-device-development.md). De serie introduceert ontwikkel aars van apparaten met Azure RTO'S en laat zien hoe u verschillende evaluatie pakketten voor apparaten verbindt met Azure IoT.
 
@@ -26,9 +28,6 @@ U gaat de volgende taken uitvoeren:
 * Een set Inge sloten ontwikkel hulpprogramma's installeren voor het Program meren van een MXCHIP DevKit in C
 * Een installatie kopie bouwen en flashen op de MXCHIP-DevKit
 * Azure IoT Central gebruiken om Cloud onderdelen te maken, eigenschappen weer te geven, telemetrie van apparaat weer te geven en direct opdrachten aan te roepen
-
-> [!NOTE]
-> Als u liever de code wilt weer geven en dit artikel niet wilt volt ooien, raadpleegt u het voor beeld op [verbinding maken met een MXCHIP AZ3166 met Azure IOT](https://github.com/azure-rtos/getting-started/tree/master/MXChip/AZ3166). Als u van plan bent om dit artikel te volt ooien, kloont u de GitHub-opslag plaats in een latere stap.
 
 ## <a name="prerequisites"></a>Vereisten
 

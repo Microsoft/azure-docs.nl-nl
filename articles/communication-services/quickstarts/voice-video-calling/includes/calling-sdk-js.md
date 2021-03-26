@@ -4,12 +4,12 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 03/10/2021
 ms.author: mikben
-ms.openlocfilehash: 9aaaece7d60ceead80e51bdc2a1bb342d9a4d237
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.openlocfilehash: af5ec07a8fb2db0bd4b9b8f1af556ef54199400d
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105107720"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105609374"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -123,6 +123,12 @@ const call = callAgent.startCall(['acsUserId'], placeCallOptions);
 Wanneer uw gesprek verbinding maakt, begint het automatisch met het verzenden van een video stroom van de geselecteerde camera naar de andere deel nemer. Dit geldt ook voor de opties voor `Call.Accept()` video en `CallAgent.join()` video.
 
 ### <a name="join-a-group-call"></a>Deelnemen aan een groepsgesprek
+
+> [!NOTE]
+> De `groupId` para meter wordt beschouwd als meta gegevens van het systeem en kan door micro soft worden gebruikt voor bewerkingen die nodig zijn om het systeem uit te voeren. Neem geen persoonlijke gegevens op in de `groupId` waarde. Micro soft behandelt deze para meter niet als persoonlijke gegevens en is mogelijk zichtbaar voor micro soft-werk nemers of opgeslagen lange termijn.
+>
+> `groupId`Voor de para meter moeten gegevens in GUID-indeling zijn. U kunt het beste wille keurig gegenereerde GUID'S gebruiken die niet als persoonlijke gegevens in uw systemen worden beschouwd.
+>
 
 Als u een nieuwe groeps oproep wilt starten of lid wilt worden van een doorlopende groep, gebruikt u de- `join` methode en geeft u een object door met een `groupId` eigenschap. De `groupId` waarde moet een GUID zijn.
 

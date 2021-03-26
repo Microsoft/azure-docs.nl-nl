@@ -1,17 +1,17 @@
 ---
 title: Servers in Azure Database for PostgreSQL-flexibele server (preview-versie)
 description: In dit artikel vindt u overwegingen en richt lijnen voor het configureren en beheren van Azure Database for PostgreSQL-flexibele server.
-author: lfittl-msft
-ms.author: lufittl
+author: sunilagarwal
+ms.author: sunila
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/22/2020
-ms.openlocfilehash: 5cd4454d5b77d18940f6693a25a691a01f4fedec
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: e3b04563b0da3255c63208b73c9ecdbd62ff0cf7
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "90936599"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105609290"
 ---
 # <a name="servers---azure-database-for-postgresql---flexible-server"></a>Servers-Azure Database for PostgreSQL-flexibele server
 

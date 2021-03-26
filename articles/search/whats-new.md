@@ -8,12 +8,12 @@ ms.service: cognitive-search
 ms.topic: overview
 ms.date: 03/12/2021
 ms.custom: references_regions
-ms.openlocfilehash: 8e78fa46125b8aca378598c673ba76829e11d70e
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 99a7f08b6d366f2f928b99caba2424c2fae0d625
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104600425"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105559516"
 ---
 # <a name="whats-new-in-azure-cognitive-search"></a>Nieuwe functies in Azure Cognitive Search
 
@@ -23,7 +23,7 @@ Meer informatie over nieuwe functies in de service. Voeg een bladwijzer toe aan 
 
 |Functie&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |  Beschrijving | Beschikbaarheid  |
 |------------------------------|---------------|---------------|
-| [Semantische zoekopdrachten](semantic-search-overview.md) | Een verzameling query-gerelateerde functies waarmee de relevantie van zoek resultaten aanzienlijk wordt verbeterd met zeer weinig moeite. </br></br>Met [semantische classificatie](semantic-ranking.md) worden relevantie scores berekend op basis van de semantische betekenis achter woorden en inhoud. </br></br>[Semantische bijschriften](semantic-how-to-query-request.md) zijn relevante door gang van het document dat het document het beste samenvatten, met de nadruk op de belangrijkste termen of zinsdelen. </br></br>[Semantische antwoorden](semantic-answers.md) zijn sleutel overgangen, geëxtraheerd uit een zoek document, die worden geformuleerd als een direct antwoord op een query die eruitziet als een vraag. | Open bare Preview ([op aanvraag](https://aka.ms/SemanticSearchPreviewSignup)). </br></br>[Zoek documenten (rest)](/rest/api/searchservice/preview-api/search-documents) API-Version = 2020-06 -30-preview en [Search explorer](search-explorer.md) gebruiken in azure Portal. </br></br>De beperkingen voor de regio en de laag zijn van toepassing. |
+| [Semantische zoekopdrachten](semantic-search-overview.md) | Een verzameling query-gerelateerde functies waarmee de relevantie van zoek resultaten aanzienlijk wordt verbeterd door minimale aanpassingen van een query aanvraag. </br></br>Met [semantische classificatie](semantic-ranking.md) worden relevantie scores berekend op basis van de semantische betekenis achter woorden en inhoud. </br></br>[Semantische bijschriften](semantic-how-to-query-request.md) retour neren relevante door gangen uit het document die het document het beste samenvatten, met de nadruk op de belangrijkste termen of zinsdelen. </br></br>[Semantische antwoorden](semantic-answers.md) retour neren het passeren van sleutels, geëxtraheerd uit een zoek document dat wordt geformuleerd als een direct antwoord op een query die eruitziet als een vraag. | Open bare Preview ([op aanvraag](https://aka.ms/SemanticSearchPreviewSignup)). </br></br>[Zoek documenten (rest)](/rest/api/searchservice/preview-api/search-documents) API-Version = 2020-06 -30-preview of [Search explorer](search-explorer.md) gebruiken in azure Portal. </br></br>De beperkingen voor de regio en de laag zijn van toepassing. |
 | [Spelling controle van query termen](speller-how-to-add.md) | Voordat de query termen de zoek machine bereiken, kunt u ze controleren op spel fouten. De `speller` optie werkt met elk query type (eenvoudig, volledig of semantisch). |  Open bare preview, alleen REST, API-Version = 2020-06 -30-preview|
 | [Indexer van share point online](search-howto-index-sharepoint-online.md) | Met deze indexer maakt u verbinding met een share point online-site, zodat u inhoud kunt indexeren vanuit een document bibliotheek. | Open bare preview, alleen REST, API-Version = 2020-06 -30-preview |
 | [Normalisatie](search-normalizers.md) | Norma Lise ring van tekst, zoals hoofdletter gebruik, accenten verwijderen, asciifolding, enzovoort zonder de hele analyse keten te door lopen.| Open bare preview, alleen REST, API-Version = 2020-06 -30-preview |

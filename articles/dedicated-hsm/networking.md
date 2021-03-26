@@ -10,14 +10,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 12/06/2018
-ms.author: mbaldwin
-ms.openlocfilehash: 3764b261b491c660da16d7989be20742fead1fbf
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.date: 03/25/2021
+ms.author: keithp
+ms.openlocfilehash: 5365ba8c4fbc07c487dd40cfcdc9d566990c493c
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "91359151"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105607036"
 ---
 # <a name="azure-dedicated-hsm-networking"></a>Speciaal voor Azure toegewezen HSM-netwerken
 
@@ -84,6 +84,60 @@ Voor wereld wijd gedistribueerde toepassingen of voor regionale failover-scenari
 > Globale Vnet-peering is niet beschikbaar in scenario's voor connectiviteit tussen regio's met specifieke Hsm's op dit moment en VPN-gateway moet in plaats daarvan worden gebruikt. 
 
 ![Diagram toont twee regio's die zijn verbonden met twee V P N gateways. Elke regio bevat gepeerde virtuele netwerken.](media/networking/global-vnet.png)
+
+## <a name="networking-restrictions"></a>Netwerk beperkingen
+> [!NOTE]
+> Een beperking van de toegewezen HSM-service met behulp van subnet delegering is beperkt tot beperkingen die moeten worden overwogen bij het ontwerpen van de doelnet werk architectuur voor een HSM-implementatie. Het gebruik van subnet delegering betekent dat Nsg's, Udr's en Global VNet-peering niet worden ondersteund voor een toegewezen HSM. In de volgende secties vindt u hulp bij alternatieve technieken om dezelfde of een vergelijk bare uitkomst te verkrijgen voor deze mogelijkheden. 
+
+De HSM-NIC die zich in het toegewezen HSM VNet bevindt, kan geen netwerk beveiligings groepen of door de gebruiker gedefinieerde routes gebruiken. Dit betekent dat het niet mogelijk is om beleid voor standaard weigering in te stellen op basis van het toegewezen HSM VNet en dat andere netwerk segmenten moeten worden allowlisted om toegang te krijgen tot de toegewezen HSM-service. 
+
+Het toevoegen van de NVA-proxy oplossing (Network Virtual Appliances) zorgt er ook voor dat een NVA-firewall in de transit/DMZ-hub logisch kan worden geplaatst vóór de HSM-NIC, waardoor het benodigde alternatief is voor Nsg's en Udr's.
+
+### <a name="solution-architecture"></a>Architectuur van de oplossing
+Voor dit netwerk ontwerp zijn de volgende elementen vereist:
+1.  Een door Voer of DMZ hub VNet met een NVA-proxy-laag. In het ideale geval zijn er twee of meer Nva's aanwezig. 
+2.  Een ExpressRoute-circuit waarbij privé-peering is ingeschakeld en een verbinding met het VNet van de transito hub.
+3.  Een VNet-peering tussen het VNet van de transito hub en het toegewezen HSM-VNet.
+4.  Een NVA-firewall of-Azure Firewall kan worden geïmplementeerd DMZ Services in de hub als een optie. 
+5.  Extra VNets voor werk belasting kunnen worden gekoppeld aan de hub VNet. De Gemalto-client kan toegang krijgen tot de toegewezen HSM-service via de hub VNet.
+
+![Diagram toont een DMZ hub VNet met een NVA-proxy-laag voor NSG en UDR tijdelijke oplossing](media/networking/network-architecture.png)
+
+Omdat het toevoegen van de NVA-proxy oplossing ook in staat is om een NVA-firewall in de transito/DMZ-hub logisch te plaatsen vóór de HSM-NIC, waardoor het vereiste beleid voor standaard weigeren wordt geboden. In ons voor beeld gebruiken we de Azure Firewall voor dit doel en moeten de volgende elementen aanwezig zijn:
+1. Een Azure Firewall geïmplementeerd in het subnet ' AzureFirewallSubnet ' in de DMZ hub VNet
+2. Een routerings tabel met een UDR die verkeer toestuurt naar het persoonlijke Azure ILB-eind punt in de Azure Firewall. Deze routerings tabel wordt toegepast op de GatewaySubnet waar de virtuele ExpressRoute-gateway van de klant zich bevindt
+3. Netwerk beveiligings regels binnen de AzureFirewall om door sturen tussen een vertrouwd bron bereik en het Azure IBL-privé-eind punt te laten Luis teren op TCP-poort 1792. Met deze beveiligings logica wordt het benodigde beleid ' standaard weigeren ' toegevoegd aan de toegewezen HSM-service. Dit betekent dat alleen vertrouwde bron-IP-bereiken in de specifieke HSM-service worden toegestaan. Alle andere bereiken worden verwijderd.  
+4. Een routerings tabel met een UDR die verkeer naar de on-premises doorstuurt naar de Azure Firewall. Deze routerings tabel wordt toegepast op het NVA-proxy subnet. 
+5. Een NSG die wordt toegepast op het NVA-subnet van de proxy om alleen het subnet van de Azure Firewall als bron te vertrouwen en om alleen door sturen naar het HSM-NIC-IP-adres via TCP-poort 1792 toe te staan. 
+
+> [!NOTE]
+> Omdat de NVA-proxy laag het client-IP-adres wordt getrapt wanneer het wordt doorgestuurd naar de HSM-NIC, zijn er geen Udr's vereist tussen de HSM VNet en de DMZ hub VNet.  
+
+### <a name="alternative-to-udrs"></a>Alternatief voor Udr's
+De NVA-oplossing die hierboven wordt genoemd, werkt als een alternatief voor Udr's. Er zijn enkele belang rijke punten waarop u moet letten.
+1.  Netwerkadresomzetting moet worden geconfigureerd op NVA zodat het retour verkeer correct kan worden gerouteerd.
+2. Klanten moeten de client-IP-controle in Luna HSM-configuratie uitschakelen om VNA voor NAT te gebruiken. De volgende opdrachten servce als voor beeld.
+```
+Disable:
+[hsm01] lunash:>ntls ipcheck disable
+NTLS client source IP validation disabled
+Command Result : 0 (Success)
+
+Show:
+[hsm01] lunash:>ntls ipcheck show
+NTLS client source IP validation : Disable
+Command Result : 0 (Success)
+```
+3.  Implementeer Udr's voor binnenkomend verkeer in de laag NVA. 
+4. Volgens het ontwerp initiëren HSM-subnetten geen uitgaande verbindings aanvraag naar de platform-laag.
+
+### <a name="alternative-to-using-global-vnet-peering"></a>Alternatief voor het gebruik van globale VNET-peering
+Er zijn een aantal architecturen die u kunt gebruiken als alternatief voor wereld wijde VNet-peering.
+1.  [Verbinding met vnet-naar-Vnet-VPN gateway](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal) gebruiken 
+2.  Verbind HSM VNET met een ander VNET met een er-circuit. Dit werkt het beste wanneer een rechtstreeks on-premises pad vereist of VPN VNET is. 
+
+#### <a name="hsm-with-direct-express-route-connectivity"></a>HSM met connectiviteit voor directe Express-route
+![Diagram toont HSM met directe Express-route connectiviteit](media/networking/expressroute-connectivity.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 

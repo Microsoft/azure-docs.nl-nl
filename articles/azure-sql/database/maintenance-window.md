@@ -10,12 +10,12 @@ ms.author: wiassaf
 ms.reviewer: sstein
 ms.custom: references_regions
 ms.date: 03/23/2021
-ms.openlocfilehash: 9c1e5af065e70cf7ec7b7c3b09fc9e3376858481
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: 9d7ab0498673ad7006087b66575eea9371b96d11
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105047249"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105565876"
 ---
 # <a name="maintenance-window-preview"></a>Onderhouds venster (preview-versie)
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -55,7 +55,7 @@ Zodra de selectie van het onderhouds venster is gemaakt en de service configurat
 Het configureren en gebruiken van het onderhouds venster is gratis voor alle typen in aanmerking komende [aanbiedingen](https://azure.microsoft.com/support/legal/offer-details/): betalen per gebruik, Cloud Solution Provider (CSP), micro soft Enterprise overeenkomst of micro soft-klant overeenkomst.
 
 > [!Note]
-> Een Azure-aanbieding is het type Azure-abonnement dat u hebt. Een abonnement met [betalen per gebruik-tarieven](https://azure.microsoft.com/offers/ms-azr-0003p/), [Azure in open](https://azure.microsoft.com/offers/ms-azr-0111p/)en [Visual Studio Enter prise](https://azure.microsoft.com/offers/ms-azr-0063p/) is bijvoorbeeld allemaal Azure-aanbiedingen. Elke aanbieding of elk plan heeft verschillende voor delen. Uw aanbieding of abonnement wordt weer gegeven in het overzicht van het abonnement. Zie [uw Azure-abonnement wijzigen in een andere aanbieding](/azure/cost-management-billing/manage/switch-azure-offer)voor meer informatie over het overschakelen op een ander abonnement.
+> Een Azure-aanbieding is het type Azure-abonnement dat u hebt. Een abonnement met [betalen per gebruik-tarieven](https://azure.microsoft.com/offers/ms-azr-0003p/), [Azure in open](https://azure.microsoft.com/offers/ms-azr-0111p/)en [Visual Studio Enter prise](https://azure.microsoft.com/offers/ms-azr-0063p/) is bijvoorbeeld allemaal Azure-aanbiedingen. Elke aanbieding of elk plan heeft verschillende voor delen. Uw aanbieding of abonnement wordt weer gegeven in het overzicht van het abonnement. Zie [uw Azure-abonnement wijzigen in een andere aanbieding](../../cost-management-billing/manage/switch-azure-offer.md)voor meer informatie over het overschakelen op een ander abonnement.
 
 ## <a name="advance-notifications"></a>Voorafgaande meldingen
 
@@ -108,17 +108,17 @@ Zie [Azure SQL Managed instance Connect types](../../azure-sql/managed-instance/
 
 ## <a name="considerations-for-azure-sql-managed-instance"></a>Overwegingen voor Azure SQL Managed instance
 
-Azure SQL Managed instance bestaat uit service onderdelen die worden gehost op een speciale set van geïsoleerde virtuele machines die worden uitgevoerd in het subnet van het virtuele netwerk van de klant. Met deze virtuele machines kunt u [virtuele clusters (s)](/azure/azure-sql/managed-instance/connectivity-architecture-overview#high-level-connectivity-architecture) maken die meerdere beheerde instanties kunnen hosten. Het onderhouds venster dat op exemplaren van één subnet is geconfigureerd, kan invloed hebben op het aantal virtuele clusters binnen het subnet en de distributie van exemplaren tussen virtuele clusters. Dit kan vereisen dat er weinig effecten zijn.
+Azure SQL Managed instance bestaat uit service onderdelen die worden gehost op een speciale set van geïsoleerde virtuele machines die worden uitgevoerd in het subnet van het virtuele netwerk van de klant. Met deze virtuele machines kunt u [virtuele clusters (s)](../managed-instance/connectivity-architecture-overview.md#high-level-connectivity-architecture) maken die meerdere beheerde instanties kunnen hosten. Het onderhouds venster dat op exemplaren van één subnet is geconfigureerd, kan invloed hebben op het aantal virtuele clusters binnen het subnet en de distributie van exemplaren tussen virtuele clusters. Dit kan vereisen dat er weinig effecten zijn.
 
 ### <a name="maintenance-window-configuration-is-long-running-operation"></a>Configuratie van onderhouds venster is een langlopende bewerking 
 Alle exemplaren die worden gehost in een virtueel cluster, delen het onderhouds venster. Standaard worden alle beheerde exemplaren gehost in het virtuele cluster met het standaard onderhouds venster. Als u een ander onderhouds venster voor een beheerd exemplaar opgeeft tijdens het maken of later, betekent dit dat het in een virtueel cluster met het bijbehorende onderhouds venster moet worden geplaatst. Als er zich geen virtueel cluster in het subnet bevindt, moet het eerst worden gemaakt om aan het exemplaar te kunnen voldoen. Voor het maken van extra exemplaren in het bestaande virtuele cluster is het mogelijk dat het cluster kleiner wordt. Beide bewerkingen dragen bij aan de duur van het configureren van het onderhouds venster voor een beheerd exemplaar.
-De verwachte duur van het configureren van het onderhouds venster op een beheerd exemplaar kan worden berekend op basis [van de geschatte duur van beheer bewerkingen voor instanties](/azure/azure-sql/managed-instance/management-operations-overview#duration).
+De verwachte duur van het configureren van het onderhouds venster op een beheerd exemplaar kan worden berekend op basis [van de geschatte duur van beheer bewerkingen voor instanties](../managed-instance/management-operations-overview.md#duration).
 
 > [!Important]
 > Een korte herconfiguratie vindt plaats aan het einde van de onderhouds bewerking en duurt doorgaans tot 8 seconden, zelfs in het geval van langdurige langlopende trans acties. Als u de gevolgen van de herconfiguratie wilt beperken, moet u de bewerking buiten de piek uren plannen.
 
 ### <a name="ip-address-space-requirements"></a>Vereisten voor de IP-adres ruimte
-Voor elk nieuw virtueel cluster in het subnet zijn extra IP-adressen vereist volgens de toewijzing van het [IP-adres van het virtuele cluster](/azure/azure-sql/managed-instance/vnet-subnet-determine-size#determine-subnet-size). Het wijzigen van het onderhouds venster voor een bestaand beheerd exemplaar vereist ook een [tijdelijke extra IP-capaciteit](/azure/azure-sql/managed-instance/vnet-subnet-determine-size#address-requirements-for-update-scenarios) , zoals bij het schalen van het vCores-scenario voor de bijbehorende servicelaag.
+Voor elk nieuw virtueel cluster in het subnet zijn extra IP-adressen vereist volgens de toewijzing van het [IP-adres van het virtuele cluster](../managed-instance/vnet-subnet-determine-size.md#determine-subnet-size). Het wijzigen van het onderhouds venster voor een bestaand beheerd exemplaar vereist ook een [tijdelijke extra IP-capaciteit](../managed-instance/vnet-subnet-determine-size.md#address-requirements-for-update-scenarios) , zoals bij het schalen van het vCores-scenario voor de bijbehorende servicelaag.
 
 ### <a name="ip-address-change"></a>IP-adreswijziging
 Het configureren en wijzigen van het onderhouds venster veroorzaakt een wijziging van het IP-adres van de instantie binnen het IP-adres bereik van het subnet.
@@ -137,8 +137,3 @@ Het configureren en wijzigen van het onderhouds venster veroorzaakt een wijzigin
 * [Azure SQL Database](sql-database-paas-overview.md) 
 * [SQL-beheerd exemplaar](../managed-instance/sql-managed-instance-paas-overview.md)
 * [Azure-onderhouds gebeurtenissen plannen in Azure SQL Database en Azure SQL Managed instance](planned-maintenance.md)
-
-
-
-
-

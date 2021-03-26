@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 04/03/2020
 ms.author: trbye
-ms.openlocfilehash: afba973570d75eace8cae8d1ed6ed470db21ef0e
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: 65e55d8e9d81f4045dde29c943f034ed0a24bf4c
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105043206"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105608082"
 ---
 # <a name="about-the-speech-sdk"></a>Info over de Speech-SDK
 
@@ -67,17 +67,17 @@ Ondersteuning voor de **Voice-assistent** is beschikbaar op de volgende platform
   - Java/Windows & Linux & macOS & Android (Speech apparaten SDK)
   - Go
 
-#### <a name="keyword-spotting"></a>Tref woord herkennen
+#### <a name="keyword-recognition"></a>Trefwoord herkenning
 
-Het concept van [trefwoord herkennen](./custom-keyword-basics.md) wordt ondersteund in de Speech SDK. Trefwoord herkennen is de handeling van het identificeren van een sleutel woord in spraak, gevolgd door een actie na het horen van het sleutel woord. Bijvoorbeeld: "Hey Cortana" zou de Cortana-assistent activeren.
+Het concept van [trefwoord herkenning](./custom-keyword-basics.md) wordt ondersteund in de Speech SDK. Herkenning van tref woorden is de handeling van het identificeren van een sleutel woord in spraak, gevolgd door een actie na het horen van het sleutel woord. Bijvoorbeeld: "Hey Cortana" zou de Cortana-assistent activeren.
 
-**Trefwoord herkennen (KWS)** is beschikbaar op de volgende platformen:
+**Herkenning van tref woorden** is beschikbaar op de volgende platformen:
 
   - C++/Windows & Linux
   - C#/Windows & Linux
   - Python/Windows & Linux
   - Java/Windows & Linux & Android (Speech-apparaten SDK)
-  - De functionaliteit van trefwoord herkennen (KWS) kan worden gebruikt voor elk type microfoon, maar de ondersteuning van officiële KWS is momenteel beperkt tot de microfoon matrices die zijn gevonden in de Azure Kinect DK-hardware of de speech-apparaten SDK
+  - De functie voor trefwoord herkenning kan worden gebruikt voor elk type microfoon, de officiële ondersteuning voor trefwoord herkenning is momenteel beperkt tot de microfoon matrices die zijn gevonden in de Azure Kinect DK-hardware of de speech-apparaten SDK
 
 ### <a name="meeting-scenarios"></a>Scenario's voor vergaderingen
 

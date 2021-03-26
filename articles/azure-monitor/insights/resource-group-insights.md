@@ -6,12 +6,12 @@ author: NumberByColors
 ms.author: daviste
 ms.date: 09/19/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: ab2c56b5e5cfc3dcb7411db27e7faabb2589be6c
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: bfe197befc781548dc41ff389f2d9558af7a8aae
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101704324"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105567399"
 ---
 # <a name="monitor-resource-groups-with-azure-monitor-preview"></a>Resource groepen bewaken met Azure Monitor (preview-versie)
 
@@ -43,7 +43,7 @@ De resources zijn standaard gegroepeerd op app-laag en resource type. **App-laag
 
 De pagina resource groep Insights bevat verschillende andere hulpprogram ma's die u helpen bij het vaststellen van problemen
 
-   |         |          |
+   | Hulpprogramma | Beschrijving |
    | ---------------- |:-----|
    | [**Waarschuwingen**](../alerts/alerts-overview.md)      |  Uw waarschuwingen weer geven, maken en beheren. |
    | [**Metrische gegevens**](../data-platform.md) | Visualiseer en verken uw metrische gegevens op basis van metriek.    |

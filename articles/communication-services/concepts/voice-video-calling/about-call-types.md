@@ -6,15 +6,15 @@ author: mikben
 manager: jken
 services: azure-communication-services
 ms.author: mikben
-ms.date: 03/10/2021
+ms.date: 03/25/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 4ecc7033007361e27908e0881b80091ac660398e
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.openlocfilehash: 6ec616047a99465bace0b401f659765e4399634b
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105108384"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105604563"
 ---
 # <a name="voice-and-video-concepts"></a>Voice- en videoconcepten
 
@@ -44,14 +44,10 @@ Een een-op-een-aanroep van Azure Communication Services treedt op wanneer een va
 Een groepsgesprek op Azure Communication Services vindt plaats wanneer drie of meer deelnemers met elkaar verbinding maken. Elke combinatie van VoIP- en PSTN-verbonden gebruikers kan aanwezig zijn bij een groepsgesprek. Een één-op-één-gesprek kan worden omgezet in een groepsgesprek door meer deelnemers aan het gesprek toe te voegen. Een van deze deelnemers kan een bot zijn.
 
 ### <a name="supported-video-standards"></a>Ondersteunde videostandaarden
-We ondersteunen H.264 (MPEG-4)
+We ondersteunen H. 264 (MPEG-4).
 
 ### <a name="video-quality"></a>Met videokwaliteit 
 We ondersteunen tot Full HD 1080p op de native SDK's (iOS, Android). Voor Web (JS) SDK ondersteunen we standaard HD 720p. De kwaliteit is afhankelijk van de beschikbare bandbreedte.
-
-### <a name="rooms-concept"></a>Ruimtes
-Ruimtes is een reeks API's en SDK's waarmee u eenvoudig audio-, video-, schermdeling-, PSTN- en sms-interacties kunt toevoegen aan uw website of eigen toepassing.
-Tijdens de preview kunt u de groeps-ID gebruiken om deel te nemen aan hetzelfde gesprek. U kunt zoveel groeps-id's aanmaken als u nodig hebt en de gebruikers scheiden op basis van de 'ruimtes'. Als u verdergaat, worden er meer besturingselementen voor "ruimtes" geïntroduceerd
 
 ## <a name="next-steps"></a>Volgende stappen
 

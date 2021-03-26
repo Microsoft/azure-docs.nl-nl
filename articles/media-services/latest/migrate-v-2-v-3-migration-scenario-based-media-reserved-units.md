@@ -7,14 +7,14 @@ manager: femila
 ms.service: media-services
 ms.topic: conceptual
 ms.workload: media
-ms.date: 1/14/2020
+ms.date: 03/25/2021
 ms.author: inhenkel
-ms.openlocfilehash: 5ca01bcea348b866c0f40f82ebe90dc31d032739
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 00e1fa623fc625a568f6580998443758c3916be8
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98927080"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105563069"
 ---
 # <a name="media-reserved-units-mrus-scenario-based-migration-guidance"></a>Richt lijnen voor migratie van MRUs-scenario's (Media gereserveerde eenheden)
 
@@ -48,7 +48,3 @@ Zie [gereserveerde media-eenheden](concept-media-reserved-units.md) en [het scha
 ## <a name="samples"></a>Voorbeelden
 
 U kunt ook [de v2-en V3-code vergelijken in de code voorbeelden](migrate-v-2-v-3-migration-samples.md).
-
-## <a name="next-steps"></a>Volgende stappen
-
-[!INCLUDE [migration guide next steps](./includes/migration-guide-next-steps.md)]

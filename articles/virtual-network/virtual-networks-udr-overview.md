@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/26/2017
 ms.author: aldomel
-ms.openlocfilehash: 512694d75bace40f33e346d28289f62e2adb04b8
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: bd46a09653f4d479ed0a09b73868d938aff1b825
+ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98221011"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105605209"
 ---
 # <a name="virtual-network-traffic-routing"></a>Routering van verkeer in virtuele netwerken
 
@@ -96,6 +96,36 @@ U kunt de onderstaande 'volgende hoptypen' opgeven wanneer u een door de gebruik
 
 **VNet-peering** en **VirtualNetworkServiceEndpoint** kunt u niet opgeven als het 'volgende hoptype' in door de gebruiker gedefinieerde routes. Routes met het hoptype **VNet-peering** of **VirtualNetworkServiceEndpoint** worden alleen gemaakt door Azure, wanneer u peering van virtuele netwerken of een service-eindpunt configureert.
 
+### <a name="service-tags-for-user-defined-routes-public-preview"></a>Service tags voor door de gebruiker gedefinieerde routes (open bare preview)
+
+U kunt nu [een servicetag opgeven als het](service-tags-overview.md) adres voorvoegsel voor een door de gebruiker gedefinieerde route in plaats van een expliciet IP-bereik. Een servicetag vertegenwoordigt een groep IP-adres voorvoegsels van een bepaalde Azure-service. Micro soft beheert de adres voorvoegsels die zijn opgenomen in het service label en werkt de servicetag automatisch bij met gewijzigde adressen, waardoor de complexiteit van regel matige updates voor door de gebruiker gedefinieerde routes wordt geminimaliseerd en het aantal routes dat u moet maken, wordt verminderd. U kunt momenteel 25 of minder routes maken met Service tags in elke route tabel. </br>
+
+
+#### <a name="exact-match"></a>Exacte overeenkomst
+Wanneer er een exacte voor voegsel komt overeen met een route met een expliciet IP-voor voegsel en een route met een servicetag, wordt de voor keur gegeven aan de route met het expliciete voor voegsel. Wanneer meerdere routes met Service Tags overeenkomen met IP-voor voegsels, worden routes in de volgende volg orde geëvalueerd: 
+
+   1. Regionale Tags (bijvoorbeeld Opslag. Oostus, AppService. AustraliaCentral)
+   2. Labels op het hoogste niveau (bijvoorbeeld Opslag, AppService)
+   3. Cloud regionale Tags (bijvoorbeeld Cloud. canadacentral, Cloud. EastAsia)
+   4. De Cloud-Tag </br></br>
+
+Als u deze functie wilt gebruiken, geeft u een servicetag naam op voor de para meter adres voorvoegsel in de opdrachten van de route tabel. In Power shell kunt u bijvoorbeeld een nieuwe route maken naar direct verkeer dat naar een Azure Storage IP-voor voegsel naar een virtueel apparaat wordt verzonden met behulp van: </br>
+
+```azurepowershell-interactive
+New-AzRouteConfig -Name "StorageRoute" -AddressPrefix “Storage” -NextHopType "VirtualAppliance" -NextHopIpAddress "10.0.100.4"
+```
+
+Dezelfde opdracht voor CLI is: </br>
+
+```azurecli-interactive
+az network route-table route create -g MyResourceGroup --route-table-name MyRouteTable -n StorageRoute --address-prefix Storage --next-hop-type VirtualAppliance --next-hop-ip-address 10.0.100.4
+```
+</br>
+
+
+> [!NOTE] 
+> In de open bare preview zijn er enkele beperkingen. De functie wordt momenteel niet ondersteund in de Azure-Portal en is alleen beschikbaar via Power shell en CLI. Er is geen ondersteuning voor gebruik met containers. 
+
 ## <a name="next-hop-types-across-azure-tools"></a>'Volgende hoptypen' in Azure-hulpprogramma's
 
 De naam die wordt weergegeven en waarnaar wordt verwezen voor 'volgende hoptypen' is verschillend voor de Azure-portal en voor opdrachtregelprogramma's, evenals voor het implementatiemodel Azure Resource Manager en het klassieke implementatiemodel. De onderstaande tabel bevat de namen die worden gebruikt om te verwijzen naar elk 'volgend hoptype' in de verschillende hulpprogramma's en [implementatiemodellen](../azure-resource-manager/management/deployment-models.md?toc=%2fazure%2fvirtual-network%2ftoc.json):
@@ -109,6 +139,8 @@ De naam die wordt weergegeven en waarnaar wordt verwezen voor 'volgende hoptypen
 |Geen                            |Geen                                            |Null (niet beschikbaar in de klassieke CLI in de asm-modus)|
 |Peering op virtueel netwerk         |VNet-peering                                    |Niet van toepassing|
 |Service-eindpunt voor virtueel netwerk|VirtualNetworkServiceEndpoint                   |Niet van toepassing|
+
+
 
 ### <a name="border-gateway-protocol"></a>Border Gateway Protocol
 

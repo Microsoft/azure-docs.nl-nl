@@ -4,12 +4,12 @@ description: Een virtuele Azure-machine herstellen vanaf een herstel punt met be
 ms.reviewer: geg
 ms.topic: conceptual
 ms.date: 08/02/2020
-ms.openlocfilehash: 506c764250347bfccc3f80dcb055f1203583748c
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 83681d2bb3622857fb9141a3cec79d92d278a814
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103016522"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105568746"
 ---
 # <a name="how-to-restore-azure-vm-data-in-azure-portal"></a>Azure VM-gegevens herstellen in Azure Portal
 
@@ -249,10 +249,10 @@ Er zijn enkele dingen die u moet weten na het herstellen van een virtuele machin
 - Uitbrei dingen die aanwezig zijn tijdens de back-upconfiguratie, worden geïnstalleerd, maar niet ingeschakeld. Als er een probleem wordt weer geven, installeert u de uitbrei dingen opnieuw.
 - Als de back-up van de virtuele machine een statisch IP-adres heeft, heeft de herstelde VM een dynamisch IP-adres om een conflict te voor komen. U kunt [een statisch IP-adres toevoegen aan de herstelde VM](/powershell/module/az.network/set-aznetworkinterfaceipconfig#description).
 - Een herstelde VM heeft geen beschikbaarheidsset. Als u de optie schijf herstellen gebruikt, kunt u [een beschikbaarheidsset opgeven](../virtual-machines/windows/tutorial-availability-sets.md) wanneer u een virtuele machine van de schijf maakt met behulp van de meegeleverde sjabloon of Power shell.
-- Als u een Linux-distributie op basis van Cloud-init gebruikt, zoals Ubuntu, om veiligheids redenen wordt het wacht woord na het herstellen geblokkeerd. Gebruik de VMAccess-extensie op de herstelde VM om [het wacht woord opnieuw](../virtual-machines/troubleshooting/reset-password.md)in te stellen. U kunt het beste SSH-sleutels gebruiken voor deze distributies, dus u hoeft het wacht woord niet opnieuw in te stellen na het herstellen.
+- Als u een Linux-distributie op basis van Cloud-init gebruikt, zoals Ubuntu, om veiligheids redenen wordt het wacht woord na het herstellen geblokkeerd. Gebruik de VMAccess-extensie op de herstelde VM om [het wacht woord opnieuw](/troubleshoot/azure/virtual-machines/reset-password)in te stellen. U kunt het beste SSH-sleutels gebruiken voor deze distributies, dus u hoeft het wacht woord niet opnieuw in te stellen na het herstellen.
 - Als u na het herstellen geen toegang hebt tot een virtuele machine omdat de virtuele machine een verbroken relatie met de domein controller heeft, volgt u de onderstaande stappen om de virtuele machine te openen:
   - Koppel de besturingssysteem schijf als een gegevens schijf aan een herstelde VM.
-  - Installeer de VM-agent hand matig als de Azure agent niet meer reageert door deze [koppeling](../virtual-machines/troubleshooting/install-vm-agent-offline.md)te volgen.
+  - Installeer de VM-agent hand matig als de Azure agent niet meer reageert door deze [koppeling](/troubleshoot/azure/virtual-machines/install-vm-agent-offline)te volgen.
   - Toegang tot seriële console inschakelen op VM om opdracht regel toegang tot de virtuele machine toe te staan
 
   ```cmd

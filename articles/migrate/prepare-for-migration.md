@@ -6,12 +6,12 @@ ms.author: anvar
 ms.manager: bsiva
 ms.topic: how-to
 ms.date: 06/08/2020
-ms.openlocfilehash: 8083b9edd49f65f29fe9c9b2cfa30edfacf89507
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: d8f9d4e0b002348f286f45c6b45c96531c5d6530
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102614884"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105558224"
 ---
 # <a name="prepare-on-premises-machines-for-migration-to-azure"></a>On-premises machines voorbereiden voor migratie naar Azure
 
@@ -86,7 +86,7 @@ Vereiste wijzigingen worden samengevat in de tabel.
 --- | --- | --- | ---
 **Het SAN-beleid configureren als Alles online**<br/><br/> Dit zorgt ervoor dat Windows-volumes in de Azure-VM dezelfde stationsletters krijgen toegewezen als de on-premises VM. | Wordt automatisch ingesteld voor machines met Windows Server 2008 R2 of later.<br/><br/> Moet handmatig worden geconfigureerd voor eerdere besturingssystemen. | Wordt in de meeste gevallen automatisch ingesteld. | Configureer handmatig.
 **Hyper-V Guest Integration installeren** | [Installeer handmatig](prepare-windows-server-2003-migration.md#install-on-vmware-vms) op machines met Windows Server 2003. | [Installeer handmatig](prepare-windows-server-2003-migration.md#install-on-vmware-vms) op machines met Windows Server 2003. | [Installeer handmatig](prepare-windows-server-2003-migration.md#install-on-hyper-v-vms) op machines met Windows Server 2003.
-**Schakel Azure Serial Console voor Linux in**.<br/><br/>[Schakel de console in](../virtual-machines/troubleshooting/serial-console-windows.md) op Azure VM's om te helpen bij het oplossen van problemen. U hoeft de VM niet opnieuw te starten. De Azure-VM wordt opgestart met behulp van de installatiekopie van de schijf. Het opstarten van de installatiekopie is equivalent aan het opnieuw opstarten van de nieuwe VM. | Handmatig inschakelen | Handmatig inschakelen | Handmatig inschakelen
+**Schakel Azure Serial Console voor Linux in**.<br/><br/>[Schakel de console in](/troubleshoot/azure/virtual-machines/serial-console-windows) op Azure VM's om te helpen bij het oplossen van problemen. U hoeft de VM niet opnieuw te starten. De Azure-VM wordt opgestart met behulp van de installatiekopie van de schijf. Het opstarten van de installatiekopie is equivalent aan het opnieuw opstarten van de nieuwe VM. | Handmatig inschakelen | Handmatig inschakelen | Handmatig inschakelen
 **Verbinding maken na de migratie**<br/><br/> Om verbinding te maken na de migratie moet u vóór de migratie enkele stappen uitvoeren. | Handmatig [instellen](#prepare-to-connect-to-azure-windows-vms). | Handmatig [instellen](#prepare-to-connect-to-azure-windows-vms). | Handmatig [instellen](#prepare-to-connect-to-azure-windows-vms).
 
 
@@ -126,7 +126,7 @@ Bereid voor andere versies de machines voor zoals samengevat in de tabel.
 **Actie** | **Details** | **Linux-versie**
 --- | --- | ---
 **Hyper-V Linux Integration Services installeren** | Bouw de Linux-initialisatie-installatiekopie opnieuw op zodat deze de benodigde Hyper-V-stuurprogramma's bevat. Door de initialisatie-installatiekopie opnieuw op te bouwen, zorgt u ervoor dat de VM in Azure kan worden opgestart. | In meeste nieuwe versies van Linux-distributies is dit standaard opgenomen.<br/><br/> Als het niet is opgenomen, moet u het handmatig installeren voor alle versies behalve de hierboven genoemde.
-**Azure Serial Console-logboekregistratie inschakelen** | Het inschakelen van consolelogboekregistratie helpt u bij het oplossen van problemen. U hoeft de VM niet opnieuw te starten. De Azure-VM wordt opgestart met behulp van de installatiekopie van de schijf. Het opstarten van de installatiekopie is equivalent aan het opnieuw opstarten van de nieuwe VM.<br/><br/> Volg [deze instructies](../virtual-machines/troubleshooting/serial-console-linux.md) om het in te schakelen.
+**Azure Serial Console-logboekregistratie inschakelen** | Het inschakelen van consolelogboekregistratie helpt u bij het oplossen van problemen. U hoeft de VM niet opnieuw te starten. De Azure-VM wordt opgestart met behulp van de installatiekopie van de schijf. Het opstarten van de installatiekopie is equivalent aan het opnieuw opstarten van de nieuwe VM.<br/><br/> Volg [deze instructies](/troubleshoot/azure/virtual-machines/serial-console-linux) om het in te schakelen.
 **Apparaattoewijzingsbestand bijwerken** | Werk het apparaattoewijzingsbestand bij met de koppelingen van apparaatnaam en volume, zodat u persistente apparaat-id's gebruikt. | Installeer handmatig voor alle versies behalve de hierboven genoemde. (Alleen van toepassing in VMware-scenario's op basis van een agent)
 **fstab-items bijwerken** |  Werk items bij om persistente volume-id's te gebruiken.    | Werk handmatig bij voor alle versies behalve de hierboven genoemde.
 **udev-regel verwijderen** | Verwijder alle udev-regels die interfacenamen reserveren op basis van MAC-adres enzovoort. | Verwijder handmatig voor alle versies behalve de hierboven genoemde.
@@ -148,7 +148,7 @@ De volgende tabel bevat een samenvatting van de stappen die automatisch worden u
 
 Lees meer over stappen voor het [uitvoeren van een Linux-VM op Azure](../virtual-machines/linux/create-upload-generic.md) en instructies voor enkele populaire Linux-distributies.
 
-Bekijk de lijst met [vereiste pakketten](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-linux#requirements) om de Linux VM-agent te installeren. Azure Migrate installeert de Linux VM-agent automatisch voor RHEL6, RHEL7, CentOS7 (6 moet worden ondersteund, vergelijkbaar met RHEL), Ubuntu 14,04, Ubuntu 16,04, Ubuntu 18.04 bij het gebruik van de agentloze methode van VMware-migratie.
+Bekijk de lijst met [vereiste pakketten](../virtual-machines/extensions/agent-linux.md#requirements) om de Linux VM-agent te installeren. Azure Migrate installeert de Linux VM-agent automatisch voor RHEL6, RHEL7, CentOS7 (6 moet worden ondersteund, vergelijkbaar met RHEL), Ubuntu 14,04, Ubuntu 16,04, Ubuntu 18.04 bij het gebruik van de agentloze methode van VMware-migratie.
 
 ## <a name="check-azure-vm-requirements"></a>Vereisten voor Azure-VM's controleren
 
@@ -187,7 +187,7 @@ Voer na de migratie de volgende stappen uit op de gemaakte Azure-VM's:
 
 1. Wijs een openbaar IP-adres toe aan de VM om verbinding te maken met de VM via internet. U moet een ander openbaar IP-adres voor de Azure-VM gebruiken dan het adres dat u gebruikte voor uw on-premises machine. [Meer informatie](../virtual-network/virtual-network-public-ip-address.md).
 2. Controleer of de regels van de netwerkbeveiligingsgroep (NSG) op de VM inkomende verbindingen naar de RDP- of SSH-poort toestaan.
-3. Controleer [diagnostische gegevens over opstarten](../virtual-machines/troubleshooting/boot-diagnostics.md#enable-boot-diagnostics-on-existing-virtual-machine) om de VM te bekijken.
+3. Controleer [diagnostische gegevens over opstarten](/troubleshoot/azure/virtual-machines/boot-diagnostics#enable-boot-diagnostics-on-existing-virtual-machine) om de VM te bekijken.
 
 
 ## <a name="next-steps"></a>Volgende stappen
@@ -200,4 +200,4 @@ Voor VMware-VM's ondersteunt Server Migration [migratie met of zonder agents](se
 
 - **VMware-VM's**: verifieer [migratievereisten en ondersteuning](migrate-support-matrix-vmware-migration.md) voor VMware-VM's.
 - **Hyper-V-VM's**: verifieer [migratievereisten en ondersteuning](migrate-support-matrix-hyper-v-migration.md) voor Hyper-V-VM's.
-- **Fysieke machines**: verifieer [migratievereisten en ondersteuning](migrate-support-matrix-physical-migration.md) voor on-premises fysieke machines en andere gevirtualiseerde servers. 
+- **Fysieke machines**: verifieer [migratievereisten en ondersteuning](migrate-support-matrix-physical-migration.md) voor on-premises fysieke machines en andere gevirtualiseerde servers.

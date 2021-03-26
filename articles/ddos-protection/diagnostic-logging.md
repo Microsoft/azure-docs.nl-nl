@@ -3,7 +3,7 @@ title: Azure DDoS Protection standaard rapporten en stroom logboeken
 description: Meer informatie over het configureren van rapporten en stroom Logboeken.
 services: ddos-protection
 documentationcenter: na
-author: yitoh
+author: aletheatoh
 ms.service: ddos-protection
 ms.devlang: na
 ms.topic: article
@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/28/2020
 ms.author: yitoh
-ms.openlocfilehash: cc5b3b85d6d13fda532da0993fa7f733126b8eae
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 7f8e3df927b74cff7e4dc8bf1456600740c07088
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100591870"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105567675"
 ---
 # <a name="view-and-configure-ddos-diagnostic-logging"></a>Registratie in DDoS-diagnoselogboek bekijken en configureren
 
@@ -130,7 +130,7 @@ De volgende tabel bevat de namen en beschrijvingen van velden:
 
 Met deze [sjabloon](https://aka.ms/ddosdiaglogs) maakt u een definitie van een Azure Policy om automatisch diagnostische logboek registratie in te scha kelen voor alle open bare IP-Logboeken in een gedefinieerd bereik.
 
-[![Implementeren in Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FAzure-Network-Security%2Fmaster%2FAzure%2520DDoS%2520Protection%2FEnable%2520Diagnostic%2520Logging%2FAzure%2520Policy%2FDDoSLogs.json)
+[![Implementeren in Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FAzure-Network-Security%2Fmaster%2FAzure%20DDoS%20Protection%2FPolicy%20-%20DDOS%20Enable%20Diagnostic%20Logging%2FAzure%20Policy%2FDDoSLogs.json)
 
 ## <a name="view-log-data-in-workbooks"></a>Logboek gegevens in werkmappen weer geven
 
@@ -144,7 +144,7 @@ U kunt Logboeken verbinden met Azure Sentinel, uw gegevens in werkmappen bekijke
 
 U kunt [deze Azure Resource Manager (arm)-sjabloon](https://aka.ms/ddosworkbook) gebruiken voor het implementeren van een aanvals Analytics-werkmap. Met deze werkmap kunt u aanvals gegevens op verschillende deel Vensters visualiseren om eenvoudig inzicht te krijgen in wat het aandeel is. 
 
-[![Implementeren in Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FAzure-Network-Security%2Fmaster%2FAzure%2520DDoS%2520Protection%2FAzure%2520DDoS%2520Protection%2520Workbook%2FAzureDDoSWorkbook_ARM.json)
+[![Implementeren in Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FAzure-Network-Security%2Fmaster%2FAzure%20DDoS%20Protection%2FWorkbook%20-%20Azure%20DDOS%20monitor%20workbook%2FAzureDDoSWorkbook_ARM.json)
 
 ![DDoS Protection werkmap](./media/ddos-attack-telemetry/ddos-attack-analytics-workbook.png)
 

@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 03/03/2021
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to prepare the portal to deploy Azure Stack Edge Pro so I can use it to transfer data to Azure.
-ms.openlocfilehash: b108e757ed9fe9ab7038cae4240f0f749ac19675
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: a58146c2c8121f3f0e3b564caafbb09396d39672
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102036041"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105568530"
 ---
 # <a name="tutorial-prepare-to-deploy-azure-stack-edge-pro-with-gpu"></a>Zelfstudie: Voorbereidingen voor de implementatie van Azure Stack Edge Pro met GPU 
 
@@ -47,8 +47,8 @@ Voor de implementatie van Azure Stack Edge Pro moet u eerst uw omgeving voorbere
 |**[6. Beveiligingsinstellingen configureren voor Azure Stack Edge Pro](azure-stack-edge-gpu-deploy-configure-certificates.md)** |Configureer certificaten voor het apparaat. Gebruik certificaten die door het apparaat zijn gegenereerd of gebruik uw eigen certificaten.   |
 |**[7. Azure Stack Edge Pro activeren](azure-stack-edge-gpu-deploy-activate.md)** |Gebruik de activeringssleutel van de service om het apparaat te activeren. Het apparaat is klaar om er SMB- of NFS-shares op in te stellen of om via REST verbinding te maken. |
 |**[8. Rekenproces configureren](azure-stack-edge-gpu-deploy-configure-compute.md)** |Configureer de rekenprocesrol op het apparaat. Er wordt ook een Kubernetes-cluster gemaakt. |
-|**[9A. Gegevens overdragen met behulp van Edge-shares](azure-stack-edge-j-series-deploy-add-shares.md)** |Voeg shares toe en maak verbinding met shares via SMB of NFS. |
-|**[9B. Gegevens overdragen met Edge-opslagaccounts](azure-stack-edge-j-series-deploy-add-storage-accounts.md)** |Voeg opslagaccounts toe en maak verbinding met de blobopslag via REST API's. |
+|**[9A. Gegevens overdragen met behulp van Edge-shares](./azure-stack-edge-gpu-deploy-add-shares.md)** |Voeg shares toe en maak verbinding met shares via SMB of NFS. |
+|**[9B. Gegevens overdragen met Edge-opslagaccounts](./azure-stack-edge-gpu-deploy-add-storage-accounts.md)** |Voeg opslagaccounts toe en maak verbinding met de blobopslag via REST API's. |
 
 
 U kunt nu beginnen met het verzamelen van informatie over de softwareconfiguratie voor uw Azure Stack Edge Pro-apparaat.

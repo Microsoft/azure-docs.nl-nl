@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/17/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 80b630bb2f06d3eb634b9d9d32649ea8a47c0b0b
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 1bc1df4582c83b093b6ed25d03cc73aef9a81483
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101739140"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105563936"
 ---
 # <a name="azure-security-baseline-for-event-grid"></a>Azure-beveiligings basislijn voor Event Grid
 
@@ -32,15 +32,15 @@ Als u wilt zien hoe Azure Event Grid volledig is toegewezen aan de beveiligings 
 
 Azure Event Grid biedt ook ondersteuning voor open bare IP-toegangs beheer voor het publiceren naar onderwerpen en domeinen. Met besturings elementen op basis van IP kunt u de uitgevers beperken tot een onderwerp of domein tot een set goedgekeurde computers en Cloud Services. Deze functie is een aanvulling op de verificatie mechanismen die door Event Grid worden ondersteund. 
 
-- [Meer informatie over Event Grid privé-eind punten](https://docs.microsoft.com/azure/event-grid/network-security#private-endpoints)
+- [Meer informatie over Event Grid privé-eind punten](./network-security.md#private-endpoints)
 
-- [Meer informatie over Event Grid IP-firewall](https://docs.microsoft.com/azure/event-grid/network-security#ip-firewall)
+- [Meer informatie over Event Grid IP-firewall](./network-security.md#ip-firewall)
 
 - [Azure Event Grid netwerk beveiliging](network-security.md) 
 
 - [Overzicht van Azure Private Link](../private-link/private-link-overview.md)
 
-- [Azure-netwerk beveiligings groep](/azure/virtual-network/security-overview)
+- [Azure-netwerk beveiligings groep](../virtual-network/network-security-groups-overview.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -80,7 +80,7 @@ Schakel DDoS Protection standaard in op deze virtuele netwerken om te beschermen
 
 - [DDoS-beveiliging configureren](../ddos-protection/manage-ddos-protection.md)
 
-- [Voor meer informatie over de Azure Security Center geïntegreerde bedreigings informatie](/azure/security-center/security-center-alerts-service-layer)
+- [Voor meer informatie over de Azure Security Center geïntegreerde bedreigings informatie](../security-center/azure-defender.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -132,7 +132,7 @@ Implementeer de door u gewenste firewall oplossing op elk van de netwerk grenzen
 
 **Richt lijnen**: voor bronnen in virtuele netwerken die toegang nodig hebben tot uw Azure Event grid-resources, gebruikt u Virtual Network Service Tags om netwerk toegangs beheer te definiëren voor netwerk beveiligings groepen of Azure firewall. U kunt servicetags gebruiken in plaats van specifieke IP-adressen wanneer u beveiligingsregels maakt. Door de naam van de service label (bijvoorbeeld AzureEventGrid) op te geven in het juiste bron-of doel veld van een regel, kunt u het verkeer voor de bijbehorende service toestaan of weigeren. Micro soft beheert de adres voorvoegsels die zijn opgenomen in het servicetag van de service en werkt de servicetag automatisch bij met gewijzigde adressen.
 
-- [Het gebruik van de service label voor Azure Event Grid](https://docs.microsoft.com/azure/event-grid/network-security#service-tags)
+- [Het gebruik van de service label voor Azure Event Grid](./network-security.md#service-tags)
 
 - [Voor meer informatie over het gebruik van service Tags](../virtual-network/service-tags-overview.md)
 
@@ -149,7 +149,7 @@ U kunt ook gebruik maken van ingebouwde beleids definities die betrekking hebben
 - Voor Azure Event Grid-domeinen moeten privékoppelingen worden gebruikt
 
 - Azure Event Grid onderwerpen moeten persoonlijke koppelingen gebruiken
-- [ingebouwd beleid voor Event Grid bronnen](https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#event-grid)
+- [ingebouwd beleid voor Event Grid bronnen](../governance/policy/samples/built-in-policies.md#event-grid)
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
@@ -161,7 +161,7 @@ U kunt ook gebruik maken van ingebouwde beleids definities die betrekking hebben
 
 **Hulp**: Gebruik labels voor netwerk bronnen die zijn gekoppeld aan uw Azure Event grid resources om ze logisch in een taxonomie te organiseren.
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -171,9 +171,9 @@ U kunt ook gebruik maken van ingebouwde beleids definities die betrekking hebben
 
 **Hulp**: Azure-activiteiten logboek gebruiken om netwerk resource configuraties te bewaken en wijzigingen te detecteren voor netwerk bronnen die betrekking hebben op Azure Event grid. Maak waarschuwingen in Azure Monitor die worden geactiveerd wanneer er wijzigingen in kritieke netwerk bronnen plaatsvinden.
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](/azure/azure-monitor/platform/activity-log-view)
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Waarschuwingen maken in Azure Monitor](/azure/azure-monitor/platform/alerts-activity-log)
+- [Waarschuwingen maken in Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -217,7 +217,7 @@ U kunt ook gebruik maken van ingebouwde beleids definities die betrekking hebben
 
 **Richt lijnen**: stel in azure monitor de Bewaar periode voor het logboek In voor log Analytics werk ruimten die zijn gekoppeld aan uw Azure Event grid bronnen volgens de nalevings voorschriften van uw organisatie.
 
-- [Para meters voor het bewaren van Logboeken instellen](/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period)
+- [Para meters voor het bewaren van Logboeken instellen](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Verantwoordelijkheid**: Klant
 
@@ -235,9 +235,9 @@ U kunt ook gegevens in-en inschakelen voor Azure Sentinel of een SIEM van derden
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
-- [Aan de slag met Log Analytics query's](/azure/azure-monitor/log-query/log-analytics-tutorial)
+- [Aan de slag met Log Analytics query's](../azure-monitor/logs/log-analytics-tutorial.md)
 
-- [Aangepaste query's uitvoeren in Azure Monitor](/azure/azure-monitor/log-query/get-started-queries)
+- [Aangepaste query's uitvoeren in Azure Monitor](../azure-monitor/logs/get-started-queries.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -257,7 +257,7 @@ Daarnaast kunt u uw Log Analytics-werk ruimte onboarden naar Azure Sentinel, omd
 
 - [Details van Event Grid diagnostische logboek schema](diagnostic-logs.md)
 
-- [Logboek waarschuwingen maken, weer geven en beheren met behulp van Azure Monitor](/azure/azure-monitor/platform/alerts-log)
+- [Logboek waarschuwingen maken, weer geven en beheren met behulp van Azure Monitor](../azure-monitor/alerts/alerts-log.md)
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
@@ -329,7 +329,7 @@ Event Grid kunt een beheerde service-identiteit voor Azure Event grid-onderwerpe
 
 - [Publicerend clients verifiëren (Azure Event Grid)](security-authenticate-publishing-clients.md)
 
-- [Meer informatie over Privileged Identity Management](/azure/active-directory/privileged-identity-management/)
+- [Meer informatie over Privileged Identity Management](../active-directory/privileged-identity-management/index.yml)
 
 **Verantwoordelijkheid**: Klant
 
@@ -363,7 +363,7 @@ Event Grid kunt een beheerde service-identiteit voor Azure Event grid-onderwerpe
 
 **Hulp**: gebruik Azure Active Directory (Azure AD) beveiligings rapporten en-bewaking om te detecteren wanneer verdachte of onveilige activiteiten in de omgeving worden uitgevoerd. Gebruik Azure Security Center om identiteits-en toegangs activiteiten te bewaken.
 
-- [Azure AD-gebruikers identificeren die zijn gemarkeerd voor riskante activiteiten](/azure/active-directory/reports-monitoring/concept-user-at-risk)
+- [Azure AD-gebruikers identificeren die zijn gemarkeerd voor riskante activiteiten](../active-directory/identity-protection/overview-identity-protection.md)
 
 - [Identiteits- en toegangsactiviteiten van gebruikers controleren in Azure Security Center](../security-center/security-center-identity-access.md)
 
@@ -401,11 +401,11 @@ Event Grid kunt een beheerde service-identiteit voor Azure Event grid-onderwerpe
 
 Gebruik Azure AD Privileged Identity Management (PIM) voor het genereren van Logboeken en waarschuwingen wanneer verdachte of onveilige activiteiten in de omgeving worden uitgevoerd.
 
-- [Meer informatie over Azure AD-rapportage](/azure/active-directory/reports-monitoring)
+- [Meer informatie over Azure AD-rapportage](../active-directory/reports-monitoring/index.yml)
 
 - [Identiteits- en toegangsbeoordelingen van Azure AD](../active-directory/governance/access-reviews-overview.md)
 
-- [Azure AD Privileged Identity Management implementeren (PIM)](/azure/active-directory/privileged-identity-management/pim-deployment-plan)
+- [Azure AD Privileged Identity Management implementeren (PIM)](../active-directory/privileged-identity-management/pim-deployment-plan.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -417,7 +417,7 @@ Gebruik Azure AD Privileged Identity Management (PIM) voor het genereren van Log
 
 U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-gebruikers accounts te maken en de audit logboeken en aanmeldings logboeken te verzenden naar een Log Analytics-werk ruimte. U kunt de gewenste waarschuwingen configureren in Log Analytics werk ruimte.
 
-- [Azure-activiteiten logboeken integreren met Azure Monitor](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+- [Azure-activiteiten logboeken integreren met Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -427,7 +427,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 **Hulp**: gebruik Azure Active Directory-functies (Azure AD) voor identiteits beveiliging om automatische antwoorden te configureren op gedetecteerde verdachte acties die betrekking hebben op gebruikers identiteiten. U kunt ook gegevens opnemen in azure Sentinel voor verder onderzoek.
 
-- [Riskante Azure AD-aanmeldingen weergeven](/azure/active-directory/reports-monitoring/concept-risky-sign-ins)
+- [Riskante Azure AD-aanmeldingen weergeven](../active-directory/identity-protection/overview-identity-protection.md)
 
 - [Risico beleid voor identiteits beveiliging configureren en inschakelen](../active-directory/identity-protection/howto-identity-protection-configure-risk-policies.md)
 
@@ -455,7 +455,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
  
  
  
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -465,11 +465,11 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 **Richt lijnen**: isolatie implementeren met afzonderlijke abonnementen en beheer groepen voor afzonderlijke beveiligings domeinen, zoals omgevings type en gegevens gevoeligheids niveau. U kunt het toegangs niveau voor uw Azure-resources beperken die worden vereist door uw toepassingen en bedrijfs omgevingen. U kunt de toegang tot Azure-resources beheren via Azure RBAC.
 
-- [Aanvullende Azure-abonnementen maken](/azure/billing/billing-create-subscription)
+- [Aanvullende Azure-abonnementen maken](../cost-management-billing/manage/create-subscription.md)
 
-- [Beheer groepen maken](/azure/governance/management-groups/create)
+- [Beheer groepen maken](../governance/management-groups/create-management-group-portal.md)
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -519,7 +519,7 @@ Voor het onderliggende platform, dat wordt beheerd door micro soft, behandelt mi
 
 **Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken voor wanneer er wijzigingen worden aangebracht in productie-exemplaren van Azure Event grid resources en andere kritieke of verwante resources.
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](/azure/azure-monitor/platform/alerts-activity-log)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -569,7 +569,7 @@ Voor het onderliggende platform, dat wordt beheerd door micro soft, behandelt mi
 
 **Richt lijnen**: Tags Toep assen op Azure-resources die meta gegevens geven om ze logisch in een taxonomie te organiseren.
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -581,11 +581,11 @@ Voor het onderliggende platform, dat wordt beheerd door micro soft, behandelt mi
  
  
  
-- [Aanvullende Azure-abonnementen maken](/azure/billing/billing-create-subscription)
+- [Aanvullende Azure-abonnementen maken](../cost-management-billing/manage/create-subscription.md)
 
-- [Beheer groepen maken](/azure/governance/management-groups/create)
+- [Beheer groepen maken](../governance/management-groups/create-management-group-portal.md)
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -764,7 +764,7 @@ Azure Resource Manager kunt de sjabloon in JavaScript Object Notation (JSON) exp
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Aliassen gebruiken](https://docs.microsoft.com/azure/governance/policy/concepts/definition-structure#aliases)
+- [Aliassen gebruiken](../governance/policy/concepts/definition-structure.md#aliases)
 
 **Verantwoordelijkheid**: Klant
 
@@ -930,7 +930,7 @@ Event Grid ondersteunt momenteel geen door de klant beheerde sleutels.
 
 - [Beveiligingswaarschuwingen in Azure Security Center](../security-center/security-center-alerts-overview.md)
 
-- [Tags gebruiken om Azure-resources te organiseren](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags gebruiken om Azure-resources te organiseren](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -1000,5 +1000,5 @@ Event Grid ondersteunt momenteel geen door de klant beheerde sleutels.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Overzicht Azure Security Benchmark V2](/azure/security/benchmarks/overview)
-- Meer informatie over [Azure-beveiligingsbasislijnen](/azure/security/benchmarks/security-baselines-overview)
+- Zie [Overzicht Azure Security Benchmark V2](../security/benchmarks/overview.md)
+- Meer informatie over [Azure-beveiligingsbasislijnen](../security/benchmarks/security-baselines-overview.md)

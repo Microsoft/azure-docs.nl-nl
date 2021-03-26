@@ -3,12 +3,12 @@ title: Privé-eindpunten
 description: Meer informatie over het proces van het maken van privé-eind punten voor Azure Backup en de scenario's waarbij persoonlijke eind punten worden gebruikt om de beveiliging van uw resources te hand haven.
 ms.topic: conceptual
 ms.date: 05/07/2020
-ms.openlocfilehash: 7423157abbc0833394af055f5e31f724caa10b46
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 1775ec2c337dba0a618f9e7d186af9ed11a0e303
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103224704"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105559380"
 ---
 # <a name="private-endpoints-for-azure-backup"></a>Privé-eind punten voor Azure Backup
 
@@ -24,7 +24,7 @@ In dit artikel vindt u informatie over het proces van het maken van privé-eind 
 - Een particuliere endpoint-verbinding voor back-up gebruikt een totaal van 11 privé Ip's in uw subnet, inclusief de IP-adressen die worden gebruikt door Azure Backup voor opslag. Dit aantal kan hoger zijn (Maxi maal 25) voor bepaalde Azure-regio's. Daarom raden we aan dat u voldoende privé Ip's hebt die beschikbaar zijn wanneer u persoonlijke eind punten voor back-ups probeert te maken.
 - Hoewel een Recovery Services kluis wordt gebruikt door (beide) Azure Backup en Azure Site Recovery, wordt in dit artikel alleen het gebruik van privé-eind punten voor Azure Backup besproken.
 - Azure Active Directory biedt momenteel geen ondersteuning voor persoonlijke eind punten. IP-adressen en FQDN-namen die vereist zijn voor de Azure Active Directory om in een regio te werken, moeten dus uitgaande toegang hebben tot het beveiligde netwerk wanneer ze back-ups maken van data bases in azure-Vm's en-back-ups met behulp van de MARS-agent. U kunt ook NSG Tags en Azure Firewall Tags gebruiken om toegang te verlenen tot Azure AD, zoals van toepassing.
-- Virtuele netwerken met netwerk beleidsregels worden niet ondersteund voor privé-eind punten. U moet [netwerk beleid uitschakelen](https://docs.microsoft.com/azure/private-link/disable-private-endpoint-network-policy) voordat u doorgaat.
+- Virtuele netwerken met netwerk beleidsregels worden niet ondersteund voor privé-eind punten. U moet [netwerk beleid uitschakelen](../private-link/disable-private-endpoint-network-policy.md) voordat u doorgaat.
 - U moet de Recovery Services resource provider bij het abonnement opnieuw registreren als u deze vóór 1 2020 mei hebt geregistreerd. Als u de provider opnieuw wilt registreren, gaat u naar uw abonnement in het Azure Portal, navigeert u naar **resource provider** in de linkernavigatiebalk en selecteert u vervolgens **micro soft. Recovery Services** en selecteert u **opnieuw registreren**.
 - Het [terugzetten van meerdere regio's](backup-create-rs-vault.md#set-cross-region-restore) voor SQL-en SAP Hana database back-ups wordt niet ondersteund als de kluis een persoonlijk eind punt heeft ingeschakeld.
 - Wanneer u een Recovery Services kluis verplaatst die al gebruikmaakt van privé-eind punten naar een nieuwe Tenant, moet u de Recovery Services kluis bijwerken om de beheerde identiteit van de kluis opnieuw te maken en opnieuw te configureren, en zo nodig nieuwe persoonlijke eind punten maken (deze moeten zich in de nieuwe Tenant bevinden). Als dat niet het geval is, mislukken de back-up-en herstel bewerkingen. Daarnaast moeten alle RBAC-machtigingen (op rollen gebaseerd toegangs beheer) die in het abonnement zijn ingesteld, opnieuw worden geconfigureerd.
@@ -299,7 +299,7 @@ Maar als u persoonlijke eind punten voor de kluis verwijdert nadat er een MARS-a
 
 ## <a name="deleting-private-endpoints"></a>Privé-eind punten verwijderen
 
-Zie [deze sectie](https://docs.microsoft.com/rest/api/virtualnetwork/privateendpoints/delete) voor meer informatie over het verwijderen van privé-eind punten.
+Zie [deze sectie](/rest/api/virtualnetwork/privateendpoints/delete) voor meer informatie over het verwijderen van privé-eind punten.
 
 ## <a name="additional-topics"></a>Extra onderwerpen
 

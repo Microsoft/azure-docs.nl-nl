@@ -4,12 +4,12 @@ description: Het ophalen van de pagina weergave en aantal sessies, webclientgege
 ms.topic: conceptual
 ms.date: 08/06/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 9b8824a0f73f3a79ab70810c529cb0ed9331a797
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 04cda044b002e226c49f8647d4705d7c0f2a514e
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102485483"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105565262"
 ---
 # <a name="application-insights-for-web-pages"></a>Application Insights voor webpagina’s
 
@@ -107,8 +107,8 @@ Alle configuratie opties zijn nu aan het einde van het script geplaatst om te vo
 Elke configuratie optie wordt hierboven op een nieuwe regel weer gegeven. Als u de standaard waarde van een item dat wordt weer gegeven als [Optioneel] niet wilt overschrijven, kunt u die regel verwijderen om de resulterende grootte van de geretourneerde pagina te minimaliseren.
 
 De beschik bare configuratie opties zijn
-
-| Naam | Type | Beschrijving
+ 
+| Naam | Type | Description
 |------|------|----------------
 | src | teken reeks **[vereist]** | De volledige URL van waaruit de SDK moet worden geladen. Deze waarde wordt gebruikt voor het kenmerk src van een dynamisch toegevoegd &lt; script/ &gt; label. U kunt de open bare CDN-locatie of uw eigen privé-hostserver gebruiken.
 | naam | teken reeks *[Optioneel]* | De globale naam voor de geïnitialiseerde SDK, wordt standaard ingesteld op `appInsights` . Dit is dus ```window.appInsights``` een verwijzing naar het geïnitialiseerde exemplaar. Opmerking: als u een naam waarde opgeeft of een vorige instantie lijkt te zijn toegewezen (via de globale naam appInsightsSDK), wordt deze naam ook gedefinieerd in de globale naam ruimte, omdat ```window.appInsightsSDK=<name value>``` Dit vereist is voor de SDK-initialisatie code om ervoor te zorgen dat deze de juiste skelet-en proxy methoden van het fragment initialiseert en bijwerkt.
@@ -171,52 +171,87 @@ appInsights.trackTrace({message: 'this message will not be sent'}); // Not sent
 ## <a name="configuration"></a>Configuratie
 De meeste configuratie velden hebben de naam zo, dat ze standaard kunnen worden ingesteld op ONWAAR. Alle velden zijn optioneel, behalve voor `instrumentationKey` .
 
-| Name | Standaard | Beschrijving |
-|------|---------|-------------|
-| instrumentationKey | null | **Vereist**<br>Instrumentatie sleutel die u hebt verkregen van de Azure Portal. |
-| accountId | null | Een optionele account-ID als uw app gebruikers in accounts groepeert. Geen spaties, komma's, punt komma's, is gelijk aan of verticale balken |
-| sessionRenewalMs | 1800000 | Er wordt een sessie geregistreerd als de gebruiker gedurende deze tijd inactief is in milliseconden. De standaard waarde is 30 minuten |
-| sessionExpirationMs | 86400000 | Een sessie wordt geregistreerd als deze de tijd in milliseconden heeft geduurd. De standaard waarde is 24 uur |
-| maxBatchSizeInBytes | 10.000 | De maximale grootte van de telemetrie batch. Als een batch deze limiet overschrijdt, wordt deze onmiddellijk verzonden en wordt een nieuwe batch gestart |
-| maxBatchInterval | 15.000 | Hoe lang batch-telemetrie voor verzen ding (in milliseconden) |
-| disableExceptionTracking | onjuist | Als deze eigenschap waar is, worden uitzonde ringen niet verzameld. De standaardinstelling is onwaar. |
-| disableTelemetry | onjuist | Indien waar, wordt de telemetrie niet verzameld of verzonden. De standaardinstelling is onwaar. |
-| enableDebug | onjuist | Indien waar, worden **interne** fout opsporingsgegevens gegenereerd als een uitzonde ring **in plaats** van vastgelegd, ongeacht de instellingen voor de logboek registratie van de SDK. De standaardinstelling is onwaar. <br>**_Opmerking:_** Als u deze instelling inschakelt, wordt de telemetrie verwijderd wanneer er een interne fout optreedt. Dit kan handig zijn voor het snel identificeren van problemen met uw configuratie of het gebruik van de SDK. Als u geen telemetriegegevens wilt verliezen tijdens het opsporen van fouten, kunt u overwegen `consoleLoggingLevel` of `telemetryLoggingLevel` in plaats van te gebruiken `enableDebug` . |
-| loggingLevelConsole | 0 | Registreert **interne** Application Insights fouten in de console. <br>0: uit, <br>1: alleen kritieke fouten, <br>2: alles (fouten & waarschuwingen) |
-| loggingLevelTelemetry | 1 | Hiermee worden **interne** Application Insights-fouten als telemetriegegevens verzonden. <br>0: uit, <br>1: alleen kritieke fouten, <br>2: alles (fouten & waarschuwingen) |
-| diagnosticLogInterval | 10.000 | binnen Polling-interval (in MS) voor interne logboek registratie wachtrij |
-| samplingPercentage | 100 | Het percentage gebeurtenissen dat wordt verzonden. De standaard waarde is 100, wat betekent dat alle gebeurtenissen worden verzonden. Stel deze waarde in als u uw gegevens limiet voor grootschalige toepassingen wilt behouden. |
-| autoTrackPageVisitTime | onjuist | Indien true, op een pagina weergave, wordt de vorige gestuurde pagina tijd bijgehouden als telemetrie en wordt er een nieuwe timer gestart voor de huidige pagina weergave. De standaardinstelling is onwaar. |
-| disableAjaxTracking | onjuist | Indien true, worden Ajax-aanroepen niet autoinnen. De standaardinstelling is onwaar. |
-| disableFetchTracking | true | Indien waar, worden aanvragen voor ophalen niet meer verzameld. De standaard waarde is True |
-| overridePageViewDuration | onjuist | Als deze eigenschap waar is, wordt het standaard gedrag van trackPageView gewijzigd om het eind punt van de pagina weergave te registreren wanneer trackPageView wordt aangeroepen. Als deze eigenschap onwaar is en er geen aangepaste duur wordt gegeven aan trackPageView, wordt de prestaties van de pagina weergave berekend met behulp van de API voor navigatie tijd. De standaardinstelling is onwaar. |
-| maxAjaxCallsPerView | 500 | Standaard 500-bepaalt hoeveel Ajax-aanroepen worden bewaakt per pagina weergave. Stel deze waarde in op-1 om alle Ajax-aanroepen (onbeperkt) op de pagina te bewaken. |
-| disableDataLossAnalysis | true | Indien onwaar, worden interne telemetriegegevens van de verzender bij het opstarten gecontroleerd op items die nog niet zijn verzonden. |
-| disableCorrelationHeaders | onjuist | Als deze eigenschap onwaar is, voegt de SDK twee headers (' aanvraag-id ' en ' request-context ') toe aan alle afhankelijkheids aanvragen om ze te correleren met bijbehorende aanvragen aan de server zijde. De standaardinstelling is onwaar. |
-| correlationHeaderExcludedDomains |  | Correlatie headers voor specifieke domeinen uitschakelen |
-| correlationHeaderDomains |  | Correlatie headers voor specifieke domeinen inschakelen |
-| disableFlushOnBeforeUnload | onjuist | De standaard waarde is False. Indien waar, wordt de methode flush niet aangeroepen wanneer onBeforeUnload gebeurtenis triggers |
-| enableSessionStorageBuffer | true | Standaard waarde waar. Als deze eigenschap waar is, wordt de buffer met alle niet-verzonden telemetrie opgeslagen in de sessie opslag. De buffer wordt hersteld bij het laden van pagina's |
-| isCookieUseDisabled | onjuist | De standaard waarde is False. Als deze eigenschap waar is, worden er geen gegevens van cookies opgeslagen of gelezen met de SDK. Houd er rekening mee dat hiermee de gebruikers-en sessie cookies worden uitgeschakeld en de Blade gebruiks weergaven worden weer gegeven. |
-| cookieDomain | null | Aangepast cookie domein. Dit is handig als u Application Insights cookies wilt delen in subdomeinen. |
-| isRetryDisabled | onjuist | De standaard waarde is False. Indien onwaar, opnieuw proberen op 206 (gedeeltelijk geslaagd), 408 (time-out), 429 (te veel aanvragen), 500 (interne server fout), 503 (service niet beschikbaar) en 0 (alleen offline, alleen indien gedetecteerd) |
-| isStorageUseDisabled | onjuist | Als deze eigenschap waar is, worden er geen gegevens uit lokale en sessie opslag opgeslagen of gelezen met de SDK. De standaardinstelling is onwaar. |
-| isBeaconApiDisabled | true | Als deze eigenschap onwaar is, verzendt de SDK alle telemetrie met behulp van de [Beacon-API](https://www.w3.org/TR/beacon) |
-| onunloadDisableBeacon | onjuist | De standaard waarde is False. Wanneer het tabblad wordt gesloten, verzendt de SDK alle resterende telemetrie met behulp van de [Beacon-API](https://www.w3.org/TR/beacon) |
-| sdkExtension | null | Hiermee stelt u de naam van de SDK-extensie. Alleen alfabetische tekens zijn toegestaan. De naam van de extensie wordt toegevoegd als een voor voegsel voor de tag ' ai. internal. sdkVersion ' (bijvoorbeeld ' ext_javascript: 2.0.0 '). De standaard waarde is null. |
-| isBrowserLinkTrackingEnabled | onjuist | De standaardinstelling is onwaar. Indien waar, worden alle aanvragen voor [browser koppelingen](/aspnet/core/client-side/using-browserlink) door de SDK bijgehouden. |
-| appId | null | AppId wordt gebruikt voor de correlatie tussen AJAX-afhankelijkheden die zich voordoen aan de client zijde met de aanvragen aan de server zijde. Als Beacon-API is ingeschakeld, kan deze niet automatisch worden gebruikt, maar deze kan hand matig worden ingesteld in de configuratie. De standaard waarde is null |
-| enableCorsCorrelation | onjuist | Als deze eigenschap waar is, voegt de SDK twee headers (' aanvraag-id ' en ' request-context ') toe aan alle CORS-aanvragen voor het correleren van uitgaande AJAX-afhankelijkheden met bijbehorende aanvragen aan de server zijde. De standaard waarde is False |
-| namePrefix | gedefinieerde | Een optionele waarde die wordt gebruikt als naam achtervoegsel voor localStorage en cookie naam.
-| enableAutoRouteTracking | onjuist | Route wijzigingen automatisch bijhouden in toepassingen met één pagina (SPA). Indien waar, stuurt elke route wijziging een nieuwe pagina weergave naar Application Insights. Hash-route wijzigingen ( `example.com/foo#bar` ) worden ook vastgelegd als nieuwe pagina weergaven.
-| enableRequestHeaderTracking | onjuist | Indien waar, worden AJAX-& aanvraag headers voor ophalen bijgehouden. de standaard waarde is False.
-| enableResponseHeaderTracking | onjuist | Als deze waarde True is, wordt de antwoord headers voor de aanvraag van AJAX & ophalen bijgehouden. de standaard waarde is False.
-| distributedTracingMode | `DistributedTracingModes.AI` | Hiermee stelt u de gedistribueerde traceer modus in. Als AI_AND_W3C modus of de W3C-modus is ingesteld, worden W3C-tracering context headers (traceparent/tracestate) gegenereerd en opgenomen in alle uitgaande aanvragen. AI_AND_W3C is voorzien van back-compatibiliteit met alle verouderde services die zijn Application Insights instrumented. Zie [hier](./correlation.md#enable-w3c-distributed-tracing-support-for-web-apps)voor beeld.
-| enableAjaxErrorStatusText | onjuist | De standaard waarde is False. Indien waar, wordt tekst met een reactie fout gegevens in afhankelijkheids gebeurtenis ingevoegd op mislukte AJAX-aanvragen.
-| enableAjaxPerfTracking | onjuist | De standaard waarde is False. Vlag waarmee u het opzoeken van het aanvullende browser venster kunt inschakelen. de prestatie-instellingen in de gerapporteerde `ajax` (xhr en Fetch) gerapporteerde metrische gegevens.
-| maxAjaxPerfLookupAttempts | 3 | Standaardwaarde is 3. Het maximum aantal keer dat er naar het venster moet worden gekeken. prestatie tijd (indien beschikbaar). Dit is vereist omdat niet alle browsers het venster invullen. prestaties vóór het rapporteren van het einde van de XHR-aanvraag en voor aanvragen voor ophalen wordt deze toegevoegd na het volt ooien.
-| ajaxPerfLookupDelay | 25 | De standaard waarde is 25 MS. De hoeveelheid tijd die moet worden gewacht voordat opnieuw wordt geprobeerd om de Vensters te vinden. prestatie-instellingen voor een `ajax` aanvraag, tijd is in milliseconden en wordt direct door gegeven aan setTimeout ().
-| enableUnhandledPromiseRejectionTracking | onjuist | Indien waar, worden niet-verwerkte beloofings afwijzingen automatisch verzameld en gerapporteerd als Java script-fout. Wanneer disableExceptionTracking is ingesteld op True (geen uitzonde ringen bijhouden), wordt de configuratie waarde genegeerd en worden niet-verwerkte beloofe weigeringen niet gerapporteerd.
+| Naam | Beschrijving | Standaard |
+|------|-------------|---------|
+| instrumentationKey | **Vereist**<br>Instrumentatie sleutel die u hebt verkregen van de Azure Portal. | tekenreeks<br/>null |
+| accountId | Een optionele account-ID als uw app gebruikers in accounts groepeert. Geen spaties, komma's, punt komma's, is gelijk aan of verticale balken | tekenreeks<br/>null |
+| sessionRenewalMs | Er wordt een sessie geregistreerd als de gebruiker gedurende deze tijd inactief is in milliseconden. | numeriek<br/>1800000<br/>(30 minuten) |
+| sessionExpirationMs | Een sessie wordt geregistreerd als deze de tijd in milliseconden heeft geduurd. | numeriek<br/>86400000<br/>(24 uur) |
+| maxBatchSizeInBytes | De maximale grootte van de telemetrie batch. Als een batch deze limiet overschrijdt, wordt deze onmiddellijk verzonden en wordt een nieuwe batch gestart | numeriek<br/>10.000 |
+| maxBatchInterval | Hoe lang batch-telemetrie voor verzen ding (in milliseconden) | numeriek<br/>15.000 |
+| &#8203;ExceptionTracking uitschakelen | Als deze eigenschap waar is, worden uitzonde ringen niet verzameld. | booleaans<br/> onjuist |
+| disableTelemetry | Indien waar, wordt de telemetrie niet verzameld of verzonden. | booleaans<br/>onjuist |
+| enableDebug | Indien waar, worden **interne** fout opsporingsgegevens gegenereerd als een uitzonde ring **in plaats** van vastgelegd, ongeacht de instellingen voor de logboek registratie van de SDK. De standaardinstelling is onwaar. <br>**_Opmerking:_** Als u deze instelling inschakelt, wordt de telemetrie verwijderd wanneer er een interne fout optreedt. Dit kan handig zijn voor het snel identificeren van problemen met uw configuratie of het gebruik van de SDK. Als u geen telemetriegegevens wilt verliezen tijdens het opsporen van fouten, kunt u overwegen `consoleLoggingLevel` of `telemetryLoggingLevel` in plaats van te gebruiken `enableDebug` . | booleaans<br/>onjuist |
+| loggingLevelConsole | Registreert **interne** Application Insights fouten in de console. <br>0: uit, <br>1: alleen kritieke fouten, <br>2: alles (fouten & waarschuwingen) | numeriek<br/> 0 |
+| loggingLevelTelemetry | Hiermee worden **interne** Application Insights-fouten als telemetriegegevens verzonden. <br>0: uit, <br>1: alleen kritieke fouten, <br>2: alles (fouten & waarschuwingen) | numeriek<br/> 1 |
+| diagnosticLogInterval | binnen Polling-interval (in MS) voor interne logboek registratie wachtrij | numeriek<br/> 10.000 |
+| samplingPercentage | Het percentage gebeurtenissen dat wordt verzonden. De standaard waarde is 100, wat betekent dat alle gebeurtenissen worden verzonden. Stel deze waarde in als u uw gegevens limiet voor grootschalige toepassingen wilt behouden. | numeriek<br/>100 |
+| autoTrackPageVisitTime | Indien true, op een pagina weergave, wordt de vorige gestuurde pagina tijd bijgehouden als telemetrie en wordt er een nieuwe timer gestart voor de huidige pagina weergave. | booleaans<br/>onjuist |
+| disableAjaxTracking | Indien true, worden Ajax-aanroepen niet autoinnen. | booleaans<br/> onjuist |
+| disableFetchTracking | Indien waar, worden aanvragen voor ophalen niet meer verzameld.|booleaans<br/>true |
+| overridePageViewDuration | Als deze eigenschap waar is, wordt het standaard gedrag van trackPageView gewijzigd om het eind punt van de pagina weergave te registreren wanneer trackPageView wordt aangeroepen. Als deze eigenschap onwaar is en er geen aangepaste duur wordt gegeven aan trackPageView, wordt de prestaties van de pagina weergave berekend met behulp van de API voor navigatie tijd. |booleaans<br/>
+| maxAjaxCallsPerView | Standaard 500-bepaalt hoeveel Ajax-aanroepen worden bewaakt per pagina weergave. Stel deze waarde in op-1 om alle Ajax-aanroepen (onbeperkt) op de pagina te bewaken. | numeriek<br/> 500 |
+| disableDataLossAnalysis | Indien onwaar, worden interne telemetriegegevens van de verzender bij het opstarten gecontroleerd op items die nog niet zijn verzonden. | booleaans<br/> true |
+| &#8203;CorrelationHeaders uitschakelen | Als deze eigenschap onwaar is, voegt de SDK twee headers (' aanvraag-id ' en ' request-context ') toe aan alle afhankelijkheids aanvragen om ze te correleren met bijbehorende aanvragen aan de server zijde. | booleaans<br/> onjuist |
+| correlationHeader&#8203;ExcludedDomains | Correlatie headers voor specifieke domeinen uitschakelen | teken reeks []<br/>gedefinieerde |
+| correlationHeader&#8203;ExcludePatterns | Correlatie headers uitschakelen met reguliere expressies | regex []<br/>gedefinieerde |
+| correlationHeader&#8203;domeinen | Correlatie headers voor specifieke domeinen inschakelen | teken reeks []<br/>gedefinieerde |
+| disableFlush&#8203;OnBeforeUnload | Indien waar, wordt de methode flush niet aangeroepen wanneer onBeforeUnload gebeurtenis triggers | booleaans<br/> onjuist |
+| enableSessionStorageBuffer | Als deze eigenschap waar is, wordt de buffer met alle niet-verzonden telemetrie opgeslagen in de sessie opslag. De buffer wordt hersteld bij het laden van pagina's | booleaans<br />true |
+| cookieCfg | Standaard wordt het gebruik van cookies ingeschakeld Zie [ICookieCfgConfig](#icookiemgrconfig) -instellingen voor de volledige standaard waarden. | [ICookieCfgConfig](#icookiemgrconfig)<br>(Sinds 2.6.0)<br/>gedefinieerde |
+| ~~isCookieUseDisabled~~<br>disableCookiesUsage | Als deze eigenschap waar is, worden er geen gegevens van cookies opgeslagen of gelezen met de SDK. Houd er rekening mee dat hiermee de gebruikers-en sessie cookies worden uitgeschakeld en de Blade gebruiks weergaven worden weer gegeven. isCookieUseDisable is afgeschaft in het voor deel van disableCookiesUsage, wanneer beide worden weer gegeven disableCookiesUsage voor rang heeft.<br>(Sinds v-2.6.0) En als `cookieCfg.enabled` ook is gedefinieerd, heeft het een hogere prioriteit dan deze waarden. het cookie gebruik kan na de initialisatie opnieuw worden ingeschakeld via de core. getCookieMgr (). setEnabled (true). | alias voor [`cookieCfg.enabled`](#icookiemgrconfig)<br>onjuist |
+| cookieDomain | Aangepast cookie domein. Dit is handig als u Application Insights cookies wilt delen in subdomeinen.<br>(Sinds v-2.6.0) Als `cookieCfg.domain` is gedefinieerd, heeft dit prioriteit boven deze waarde. | alias voor [`cookieCfg.domain`](#icookiemgrconfig)<br>null |
+| cookiePath | Pad voor aangepaste cookies. Dit is handig als u Application Insights cookies achter een toepassings gateway wilt delen.<br>Als `cookieCfg.path` is gedefinieerd, heeft dit prioriteit boven deze waarde. | alias voor [`cookieCfg.path`](#icookiemgrconfig)<br>(Sinds 2.6.0)<br/>null |
+| isRetryDisabled | Indien onwaar, opnieuw proberen op 206 (gedeeltelijk geslaagd), 408 (time-out), 429 (te veel aanvragen), 500 (interne server fout), 503 (service niet beschikbaar) en 0 (alleen offline, alleen indien gedetecteerd) | booleaans<br/>onjuist |
+| isStorageUseDisabled | Als deze eigenschap waar is, worden er geen gegevens uit lokale en sessie opslag opgeslagen of gelezen met de SDK. | booleaans<br/> onjuist |
+| isBeaconApiDisabled | Als deze eigenschap onwaar is, verzendt de SDK alle telemetrie met behulp van de [Beacon-API](https://www.w3.org/TR/beacon) | booleaans<br/>true |
+| onunloadDisableBeacon | Wanneer het tabblad wordt gesloten, verzendt de SDK alle resterende telemetrie met behulp van de [Beacon-API](https://www.w3.org/TR/beacon) | booleaans<br/> onjuist |
+| sdkExtension | Hiermee stelt u de naam van de SDK-extensie. Alleen alfabetische tekens zijn toegestaan. De naam van de extensie wordt toegevoegd als een voor voegsel voor de tag ' ai. internal. sdkVersion ' (bijvoorbeeld ' ext_javascript: 2.0.0 '). | tekenreeks<br/> null |
+| isBrowserLink&#8203;TrackingEnabled | Indien waar, worden alle aanvragen voor [browser koppelingen](/aspnet/core/client-side/using-browserlink) door de SDK bijgehouden. | booleaans<br/>onjuist |
+| appId | AppId wordt gebruikt voor de correlatie tussen AJAX-afhankelijkheden die zich voordoen aan de client zijde met de aanvragen aan de server zijde. Als Beacon-API is ingeschakeld, kan deze niet automatisch worden gebruikt, maar deze kan hand matig worden ingesteld in de configuratie. |tekenreeks<br/> null |
+| &#8203;CorsCorrelation inschakelen | Als deze eigenschap waar is, voegt de SDK twee headers (' aanvraag-id ' en ' request-context ') toe aan alle CORS-aanvragen voor het correleren van uitgaande AJAX-afhankelijkheden met bijbehorende aanvragen aan de server zijde. | booleaans<br/>onjuist |
+| namePrefix | Een optionele waarde die wordt gebruikt als naam achtervoegsel voor localStorage en cookie naam. | tekenreeks<br/>gedefinieerde |
+| &#8203;AutoRoute&#8203;bijhouden inschakelen | Route wijzigingen automatisch bijhouden in toepassingen met één pagina (SPA). Indien waar, stuurt elke route wijziging een nieuwe pagina weergave naar Application Insights. Hash-route wijzigingen ( `example.com/foo#bar` ) worden ook vastgelegd als nieuwe pagina weergaven.| booleaans<br/>onjuist |
+| enableRequest&#8203;HeaderTracking | Indien waar, worden AJAX-& aanvraag headers voor ophalen bijgehouden. | booleaans<br/> onjuist |
+| enableResponse&#8203;HeaderTracking | Indien waar, worden de antwoord headers van de AJAX-& ophalen bijgehouden. | booleaans<br/> onjuist |
+| distributedTracingMode | Hiermee stelt u de gedistribueerde traceer modus in. Als AI_AND_W3C modus of de W3C-modus is ingesteld, worden W3C-tracering context headers (traceparent/tracestate) gegenereerd en opgenomen in alle uitgaande aanvragen. AI_AND_W3C is voorzien van back-compatibiliteit met alle verouderde services die zijn Application Insights instrumented. Zie [hier](./correlation.md#enable-w3c-distributed-tracing-support-for-web-apps)voor beeld.| `DistributedTracingModes`of<br/>numeriek<br/>(Sinds v-2.6.0) `DistributedTracingModes.AI_AND_W3C`<br />(v 2.5.11 of eerder) `DistributedTracingModes.AI` |
+| &#8203;AjaxErrorStatusText inschakelen | Indien waar, wordt tekst met een reactie fout gegevens in afhankelijkheids gebeurtenis ingevoegd op mislukte AJAX-aanvragen. | booleaans<br/> onjuist |
+| &#8203;AjaxPerfTracking inschakelen |Vlag waarmee u het opzoeken van het aanvullende browser venster kunt inschakelen. de prestatie-instellingen in de gerapporteerde `ajax` (xhr en Fetch) gerapporteerde metrische gegevens. | booleaans<br/> onjuist |
+| maxAjaxPerf&#8203;LookupAttempts | Het maximum aantal keer dat er naar het venster moet worden gekeken. prestatie tijd (indien beschikbaar). Dit is vereist omdat niet alle browsers het venster invullen. prestaties vóór het rapporteren van het einde van de XHR-aanvraag en voor aanvragen voor ophalen wordt deze toegevoegd na het volt ooien.| numeriek<br/> 3 |
+| ajaxPerfLookupDelay | De hoeveelheid tijd die moet worden gewacht voordat opnieuw wordt geprobeerd om de Vensters te vinden. prestatie-instellingen voor een `ajax` aanvraag, tijd is in milliseconden en wordt direct door gegeven aan setTimeout (). | numeriek<br/> 25 MS |
+| enableUnhandled&#8203;PromiseRejection&#8203;bijhouden | Indien waar, worden niet-verwerkte beloofings afwijzingen automatisch verzameld en gerapporteerd als Java script-fout. Wanneer disableExceptionTracking is ingesteld op True (geen uitzonde ringen bijhouden), wordt de configuratie waarde genegeerd en worden niet-verwerkte beloofe weigeringen niet gerapporteerd. | booleaans<br/> onjuist |
+| Validatie van&#8203;InstrumentationKey&#8203;uitschakelen | Als deze optie is ingesteld op True, wordt de validatie controle van de instrumentatie sleutel overgeslagen. | booleaans<br/>onjuist |
+| enablePerfMgr | Wanneer deze functie is ingeschakeld (waar), maakt de lokale perfEvents voor code die is instrumenteel om perfEvents te verzenden (via de helper van doPerf ()). Dit kan worden gebruikt om prestatie problemen binnen de SDK te identificeren op basis van uw gebruik of optioneel binnen uw eigen code met instrumentatie. [Meer informatie vindt u in de basis documentatie](https://github.com/microsoft/ApplicationInsights-JS/blob/master/docs/PerformanceMonitoring.md). Sinds v 2.5.7 | booleaans<br/>onjuist |
+| perfEvtsSendAll | Wanneer _enablePerfMgr_ is ingeschakeld en de [IPerfManager](https://github.com/microsoft/ApplicationInsights-JS/blob/master/shared/AppInsightsCore/src/JavaScriptSDK.Interfaces/IPerfManager.ts) een [INotificationManager](https://github.com/microsoft/ApplicationInsights-JS/blob/master/shared/AppInsightsCore/src/JavaScriptSDK.Interfaces/INotificationManager.ts). perfEvent () wordt gestart, bepaalt deze vlag of een gebeurtenis wordt gestart (en naar alle listeners verzonden) voor alle gebeurtenissen (true) of alleen voor ' Parent ' gebeurtenissen (false &lt; standaard &gt; ).<br />Een bovenliggende [IPerfEvent](https://github.com/microsoft/ApplicationInsights-JS/blob/master/shared/AppInsightsCore/src/JavaScriptSDK.Interfaces/IPerfEvent.ts) is een gebeurtenis waarbij er nog geen andere IPerfEvent wordt uitgevoerd op het moment dat deze gebeurtenis wordt gemaakt. de _bovenliggende_ eigenschap is niet null of niet gedefinieerd. Sinds v 2.5.7 |  booleaans<br />onjuist |
+| idLength | Hiermee wordt de standaard lengte aangegeven die wordt gebruikt voor het genereren van nieuwe waarden voor een wille keurige sessie en gebruiker. Standaard ingesteld op 22, vorige standaard waarde is 5 (v 2.5.8 of minder), als u de voor gaande maximum lengte moet gebruiken, moet u deze waarde instellen op 5. |  numeriek<br />22 |
+
+## <a name="cookie-handling"></a>Cookie-verwerking
+
+Vanuit versie 2.6.0 is cookie beheer nu direct beschikbaar vanuit het exemplaar en kan het worden uitgeschakeld en opnieuw ingeschakeld na de initialisatie.
+
+Als u deze optie uitschakelt tijdens de initialisatie via de `disableCookiesUsage` of `cookieCfg.enabled` -configuraties, kunt u nu weer inschakelen via de functie [ICookieMgr](https://github.com/microsoft/ApplicationInsights-JS/blob/master/shared/AppInsightsCore/src/JavaScriptSDK.Interfaces/ICookieMgr.ts) `setEnabled` .
+
+Het op exemplaren gebaseerd cookie beheer vervangt ook de vorige CoreUtils globale functies `disableCookies()` van `setCookie(...)` , `getCookie(...)` en `deleteCookie(...)` . En om te profiteren van de uitbrei dingen voor de onderhouds weergave die ook worden geïntroduceerd als onderdeel van versie 2.6.0, moet u de globale functies niet meer gebruiken.
+
+### <a name="icookiemgrconfig"></a>ICookieMgrConfig
+
+Cookie configuratie voor op exemplaren gebaseerd cookie beheer toegevoegd in versie 2.6.0.
+
+| Naam | Beschrijving | Type en standaard |
+|------|-------------|------------------|
+| enabled | Een Booleaanse waarde die aangeeft of het gebruik van cookies door de SDK is ingeschakeld door het huidige exemplaar. Indien onwaar, wordt het exemplaar van de SDK dat door deze configuratie is geïnitialiseerd, geen gegevens van cookies opgeslagen of gelezen | booleaans<br/> true |
+| domein | Aangepast cookie domein. Dit is handig als u Application Insights cookies wilt delen in subdomeinen. Als niet wordt vermeld, wordt de waarde uit de basis `cookieDomain` waarde gebruikt. | tekenreeks<br/>null |
+| leertraject | Hiermee geeft u het pad op dat voor de cookie moet worden gebruikt als dit niet is opgegeven, wordt een wille keurige waarde uit de hoofd `cookiePath` waarde gebruikt. | tekenreeks <br/> / |
+| getCookie | De functie voor het ophalen van de benoemde cookie waarde, indien deze niet is opgegeven, gebruikt de interne cookie voor het parseren/opslaan in de cache. | `(name: string) => string` <br/> null |
+| setCookie | Functie voor het instellen van de benoemde cookie met de opgegeven waarde, die alleen wordt aangeroepen bij het toevoegen of bijwerken van een cookie. | `(name: string, value: string) => void` <br/> null |
+| delCookie | Functie voor het verwijderen van de benoemde cookie met de opgegeven waarde, gescheiden van setCookie om te voor komen dat de waarde moet worden geparseerd om te bepalen of de cookie wordt toegevoegd of verwijderd. Als u deze niet opgeeft, wordt de interne cookie voor het parseren/opslaan van de cache gebruikt. | `(name: string, value: string) => void` <br/> null |
+
+### <a name="simplified-usage-of-new-instance-cookie-manager"></a>Vereenvoudigd gebruik van nieuwe instantie Cookie Manager
+
+- appInsights. [getCookieMgr ()](https://github.com/microsoft/ApplicationInsights-JS/blob/master/shared/AppInsightsCore/src/JavaScriptSDK.Interfaces/ICookieMgr.ts). setEnabled (waar/onwaar);
+- appInsights. [getCookieMgr ()](https://github.com/microsoft/ApplicationInsights-JS/blob/master/shared/AppInsightsCore/src/JavaScriptSDK.Interfaces/ICookieMgr.ts). set ("myCookie", ""% 20encoded% 20value ");
+- appInsights. [getCookieMgr ()](https://github.com/microsoft/ApplicationInsights-JS/blob/master/shared/AppInsightsCore/src/JavaScriptSDK.Interfaces/ICookieMgr.ts). Get ("myCookie");
+- appInsights. [getCookieMgr ()](https://github.com/microsoft/ApplicationInsights-JS/blob/master/shared/AppInsightsCore/src/JavaScriptSDK.Interfaces/ICookieMgr.ts). del ("myCookie");
 
 ## <a name="enable-time-on-page-tracking"></a>Bijhouden van tijd op pagina inschakelen
 

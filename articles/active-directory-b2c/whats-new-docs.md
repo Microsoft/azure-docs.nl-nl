@@ -9,12 +9,12 @@ ms.workload: identity
 ms.author: mimart
 author: msmimart
 manager: CelesteDG
-ms.openlocfilehash: 00be0a18984f1ad3eacf86a2cf3477d8b0d9065f
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 3fcc4f01d926f5c624adabd51e6215e0106af1fa
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102454614"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105557867"
 ---
 # <a name="azure-active-directory-b2c-whats-new"></a>Azure Active Directory B2C: wat is er nieuw
 
@@ -73,7 +73,7 @@ Welkom bij wat is er nieuw in Azure Active Directory B2C documentatie. In dit ar
 
 ### <a name="new-articles"></a>Nieuwe artikelen
 
-- [Een gebruikersstroom maken in Azure Active Directory B2C](create-user-flow.md)
+- [Een gebruikersstroom maken in Azure Active Directory B2C](add-sign-up-and-sign-in-policy.md)
 - [Registratie van de telefoon en aanmelding voor gebruikers stromen instellen (preview-versie)](phone-authentication-user-flows.md)
 
 ### <a name="updated-articles"></a>Bijgewerkte artikelen
@@ -114,7 +114,7 @@ Welkom bij wat is er nieuw in Azure Active Directory B2C documentatie. In dit ar
 ### <a name="updated-articles"></a>Bijgewerkte artikelen
 - [Omleidings-Url's instellen op b2clogin.com voor Azure Active Directory B2C](b2clogin.md)
 - [Een OpenID Connect Connect Technical-profiel definiëren in een Azure Active Directory B2C aangepast beleid](openid-connect-technical-profile.md)
-- [Stel aanmelding via de telefoon in en meld u aan met aangepast beleid in Azure AD B2C](phone-authentication.md)
+- [Stel aanmelding via de telefoon in en meld u aan met aangepast beleid in Azure AD B2C](phone-authentication-user-flows.md)
 
 
 ## <a name="august-2020"></a>Augustus 2020

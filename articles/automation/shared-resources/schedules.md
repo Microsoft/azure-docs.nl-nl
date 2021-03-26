@@ -5,12 +5,12 @@ services: automation
 ms.subservice: shared-capabilities
 ms.date: 03/19/2021
 ms.topic: conceptual
-ms.openlocfilehash: 6f7cd1f3684bb14d25a77fe8e3980e8e2041808a
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: a829cd946f36fb5996405ba00945e9f9cb65d162
+ms.sourcegitcommit: 44edde1ae2ff6c157432eee85829e28740c6950d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104669556"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105544227"
 ---
 # <a name="manage-schedules-in-azure-automation"></a>Schema's in Azure Automation beheren
 
@@ -26,7 +26,7 @@ Als u een runbook in Azure Automation wilt plannen om op een opgegeven tijdstip 
 
 Met de cmdlets in de volgende tabel worden Automation-schema's gemaakt en beheerd met Power shell. Ze worden geleverd als onderdeel van de [AZ-modules](modules.md#az-modules).
 
-| Cmdlets | Beschrijving |
+| Cmdlets | Description |
 |:--- |:--- |
 | [Get-AzAutomationSchedule](/powershell/module/Az.Automation/Get-AzAutomationSchedule) |Hiermee wordt een planning opgehaald. |
 | [Get-AzAutomationScheduledRunbook](/powershell/module/az.automation/get-azautomationscheduledrunbook) |Hiermee worden geplande runbooks opgehaald. |
@@ -123,7 +123,7 @@ New-AzAutomationSchedule -AutomationAccountName "TestAzureAuto" -Name "1st, 15th
 
 ## <a name="create-a-schedule-with-a-resource-manager-template"></a>Een schema maken met een resource manager-sjabloon
 
-In dit voor beeld gebruiken we een Automation Resource Manager-sjabloon (ARM) waarmee een nieuwe taak planning wordt gemaakt. Zie voor algemene informatie over deze sjabloon voor het beheren van Automation-taak schema's [micro soft. Automation automationAccounts/jobSchedules Temp late Reference](/templates/microsoft.automation/automationaccounts/jobschedules#quickstart-templates).
+In dit voor beeld gebruiken we een Automation Resource Manager-sjabloon (ARM) waarmee een nieuwe taak planning wordt gemaakt. Zie voor algemene informatie over deze sjabloon voor het beheren van Automation-taak schema's [micro soft. Automation automationAccounts/jobSchedules Temp late Reference](/azure/templates/microsoft.automation/2015-10-31/automationaccounts/jobschedules#quickstart-templates).
 
 Kopieer dit sjabloon bestand naar een tekst editor:
 

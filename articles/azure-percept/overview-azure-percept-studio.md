@@ -1,18 +1,18 @@
 ---
 title: Overzicht van Azure percept Studio
 description: Meer informatie over Azure percept Studio
-author: elqu20
-ms.author: v-elqu
+author: mimcco
+ms.author: mimcco
 ms.service: azure-percept
 ms.topic: conceptual
 ms.date: 03/23/2021
 ms.custom: template-concept
-ms.openlocfilehash: 8aae976e94ebbef22a86e19f00bfe6248338c4d0
-ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
+ms.openlocfilehash: e6f9641179a9c2490dcb65316a80b4ba7fd4b639
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "104953669"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105567692"
 ---
 # <a name="azure-percept-studio-overview"></a>Overzicht van Azure percept Studio
 
@@ -23,6 +23,8 @@ In de Studio kunt u uw rand AI-compatibele apparaten als eind punten zien voor h
 De werk stromen in azure percept Studio integreren veel Azure AI-en IoT-Services, zoals Azure IoT Hub, Custom Vision, Speech Studio en Azure ML, zodat u deze services kunt gebruiken om een end-to-end oplossing te maken zonder belang rijke bestaande kennis. Als u al bekend bent met deze Azure-Services, kunt u ook verbinding maken met bestaande Azure-service resources buiten Azure percept Studio en deze wijzigen.
 
 Ongeacht of u een beginner of een geavanceerde AI-model en oplossings ontwikkelaar bent, aan een prototype werkt of naar een productie oplossing gaat, biedt Azure percept Studio toegang tot werk stromen die u kunt gebruiken om de wrijving over het bouwen van Edge AI-oplossingen te verminderen.
+
+## <a name="video-walkthrough"></a>Video-overzicht
 
 </br>
 

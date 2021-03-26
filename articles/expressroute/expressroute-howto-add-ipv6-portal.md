@@ -7,19 +7,19 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 03/09/2021
 ms.author: duau
-ms.openlocfilehash: 9b85caa3611c484fc17423637dc36ce20b48b823
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.openlocfilehash: 7f5afc05a8d03d33366a2f76318bcf5e039d4d30
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104868474"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105561658"
 ---
 # <a name="add-ipv6-support-for-private-peering-using-the-azure-portal-preview"></a>IPv6-ondersteuning voor privé-peering toevoegen met behulp van de Azure Portal (preview-versie)
 
 In dit artikel wordt beschreven hoe u IPv6-ondersteuning kunt toevoegen om via ExpressRoute verbinding te maken met uw resources in azure met behulp van de Azure Portal. 
 
 > [!Note]
-> Deze functie is momenteel beschikbaar voor preview in [Azure-regio's met Beschikbaarheidszones](https://docs.microsoft.com/azure/availability-zones/az-region#azure-regions-with-availability-zones). Uw ExpressRoute-circuit kan daarom worden gemaakt met behulp van een wille keurige locatie, maar de IPv6-implementaties waarmee deze verbinding maakt, moeten zich in een regio met Beschikbaarheidszones bevinden.
+> Deze functie is momenteel beschikbaar voor preview in [Azure-regio's met Beschikbaarheidszones](../availability-zones/az-region.md#azure-regions-with-availability-zones). Uw ExpressRoute-circuit kan daarom worden gemaakt met behulp van een wille keurige locatie, maar de IPv6-implementaties waarmee deze verbinding maakt, moeten zich in een regio met Beschikbaarheidszones bevinden.
 
 ## <a name="register-for-public-preview"></a>Registreren voor open bare preview
 Voordat u IPv6-ondersteuning toevoegt, moet u uw abonnement eerst registreren. Als u wilt inschrijven, voert u de volgende opdrachten uit via Azure PowerShell:

@@ -6,12 +6,12 @@ ms.author: vimeht
 ms.date: 2/11/2021
 ms.topic: how-to
 ms.service: iot-hub-device-update
-ms.openlocfilehash: a0201882b74d2acf57c246d2dc63530ca8b1f010
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 5956b7b74d27a4f9a2b79ee3950c8ac765610c70
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101692607"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105558479"
 ---
 # <a name="device-update-for-iot-hub-resource-management"></a>Resourcebeheer van Device Update for IoT Hub
 
@@ -127,7 +127,11 @@ Gebruikers moeten toegang hebben tot deze bron om andere gebruikers toegang te g
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Een update importeren met apparaat bijwerken voor IoT Hub.](import-update.md)
+Probeer een apparaat bij te werken met een van de volgende snelle zelf studies:
+
+ - [Apparaat bijwerken op een simulator](device-update-simulator.md)
+ - [Apparaat bijwerken op Raspberry pi](device-update-raspberry-pi.md)
+ - [Apparaat bijwerken op Ubuntu Server 18,04 x64-pakket agent](device-update-ubuntu-agent.md)
 
 [Meer informatie over het update account en-exemplaar van het apparaat.](device-update-resources.md) 
 

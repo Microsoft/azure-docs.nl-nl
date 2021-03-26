@@ -8,16 +8,16 @@ ms.subservice: core
 ms.author: gopalv
 author: gvashishtha
 ms.reviewer: larryfr
-ms.date: 01/13/2021
+ms.date: 03/25/2021
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, deploy, devx-track-azurecli
 adobe-target: true
-ms.openlocfilehash: ed397e9f8db721a6baa641fc958af0dda570ce57
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 4d2aa4d43fbc8cf9040702afb1877e0271b2eab2
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103561937"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105568287"
 ---
 # <a name="deploy-machine-learning-models-to-azure"></a>machine learning modellen implementeren in azure
 
@@ -195,11 +195,50 @@ Er kan een minimale configuratie van de inmodus worden geschreven als:
 ```json
 {
     "entryScript": "score.py",
-    "sourceDirectory": "./working_dir"
+    "sourceDirectory": "./working_dir",
+    "environment": {
+    "docker": {
+        "arguments": [],
+        "baseDockerfile": null,
+        "baseImage": "mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04",
+        "enabled": false,
+        "sharedVolumes": true,
+        "shmSize": null
+    },
+    "environmentVariables": {
+        "EXAMPLE_ENV_VAR": "EXAMPLE_VALUE"
+    },
+    "name": "my-deploy-env",
+    "python": {
+        "baseCondaEnvironment": null,
+        "condaDependencies": {
+            "channels": [
+                "conda-forge",
+                "pytorch"
+            ],
+            "dependencies": [
+                "python=3.6.2",
+                "torchvision"
+                {
+                    "pip": [
+                        "azureml-defaults",
+                        "azureml-telemetry",
+                        "scikit-learn==0.22.1",
+                        "inference-schema[numpy-support]"
+                    ]
+                }
+            ],
+            "name": "project_environment"
+        },
+        "condaDependenciesFile": null,
+        "interpreterPath": "python",
+        "userManagedDependencies": false
+    },
+    "version": "1"
 }
 ```
 
-Hiermee geeft u op dat de machine learning-implementatie het bestand `score.py` in de `./working_dir` Directory gebruikt voor het verwerken van binnenkomende aanvragen.
+Hiermee geeft u op dat de machine learning-implementatie het bestand `score.py` in de directory zal gebruiken `./working_dir` voor het verwerken van binnenkomende aanvragen en dat de docker-installatie kopie wordt gebruikt met de Python-pakketten die zijn opgegeven in de `project_environment` omgeving.
 
 [Raadpleeg dit artikel](./reference-azure-machine-learning-cli.md#inference-configuration-schema) voor een uitgebreidere bespreking van de configuraties voor het afzien van de configuratie. 
 
@@ -290,7 +329,7 @@ az ml model deploy -m mymodel:1 --ic inferenceconfig.json --dc deploymentconfig.
 Als u uw model liever niet wilt registreren, kunt u de para meter ' Source Directory ' in uw inferenceconfig.jsdoor geven aan om een lokale map op te geven van waaruit uw model moet worden gebruikt.
 
 ```azurecli-interactive
-az ml model deploy --ic inferenceconfig.json --dc deploymentconfig.json
+az ml model deploy --ic inferenceconfig.json --dc deploymentconfig.json --name my_deploy
 ```
 
 # <a name="python"></a>[Python](#tab/python)
@@ -316,13 +355,13 @@ Tijdens de implementatie van het model ziet u mogelijk de wijziging van de servi
 
 In de volgende tabel worden de verschillende service statussen beschreven:
 
-| Status van webservice | Beschrijving | Eind status?
+| Status van webservice | Description | Eind status?
 | ----- | ----- | ----- |
-| Overstappen | De service is in het implementatie proces. | Nee |
-| Niet in orde | De service is geïmplementeerd, maar is momenteel niet bereikbaar.  | Nee |
-| Unschedulable | De service kan op dit moment niet worden geïmplementeerd vanwege een gebrek aan resources. | Nee |
-| Mislukt | De implementatie van de service is mislukt vanwege een fout of een crash. | Ja |
-| In orde | De service is in orde en het eind punt is beschikbaar. | Ja |
+| Overstappen | De service is in het implementatie proces. | No |
+| Niet in orde | De service is geïmplementeerd, maar is momenteel niet bereikbaar.  | No |
+| Unschedulable | De service kan op dit moment niet worden geïmplementeerd vanwege een gebrek aan resources. | No |
+| Mislukt | De implementatie van de service is mislukt vanwege een fout of een crash. | Yes |
+| In orde | De service is in orde en het eind punt is beschikbaar. | Yes |
 
 > [!TIP]
 > Tijdens de implementatie worden docker-installatie kopieën voor Compute-doelen gemaakt en geladen van Azure Container Registry (ACR). Azure Machine Learning maakt standaard een ACR die gebruikmaakt van de *Basic* -servicelaag. Het wijzigen van de ACR voor uw werk ruimte in de standaard-of Premium-laag kan de tijd verminderen die nodig is om installatie kopieën te bouwen en implementeren in uw reken doelen. Zie [Azure container Registry service lagen](../container-registry/container-registry-skus.md)voor meer informatie.

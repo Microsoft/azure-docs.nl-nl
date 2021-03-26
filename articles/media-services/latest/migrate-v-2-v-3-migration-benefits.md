@@ -7,14 +7,14 @@ manager: femila
 ms.service: media-services
 ms.topic: conceptual
 ms.workload: media
-ms.date: 1/14/2020
+ms.date: 03/25/2021
 ms.author: inhenkel
-ms.openlocfilehash: b6d51e05598f60de0e9c8fb85472b7c14bba990e
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 114635722a0a131fc146eb2ab69984effb211a88
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104598385"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105559754"
 ---
 # <a name="step-1---understand-the-benefits-of-migrating-to-media-services-api-v3"></a>Stap 1: inzicht krijgen in de voor delen van migreren naar Media Services API v3
 
@@ -23,6 +23,8 @@ ms.locfileid: "104598385"
 <hr color="#5ea0ef" size="10">
 
 ![migratie stappen 2](./media/migration-guide/steps-1.svg)
+
+## <a name="use-the-latest-api"></a>De nieuwste API gebruiken
 
 We raden u aan om versie 2020-05-01 van de Azure Media Services v3 API nu te gebruiken om de voor delen te verkrijgen, omdat nieuwe functies, functionaliteit en prestatie optimalisaties zijn alleen beschikbaar in de huidige v3 API.
 
@@ -60,7 +62,3 @@ Er zijn belang rijke verbeteringen aangebracht in Media Services met v3.
 | **Controle** | |
 | Ondersteuning voor [Azure EventGrid](monitoring/reacting-to-media-services-events.md) -meldingen | EventGrid-meldingen zijn uitgebreidere functies. Er zijn meer typen meldingen, bredere SDK-ondersteuning voor het ontvangen van meldingen in uw eigen toepassing en meer bestaande Azure-Services die als gebeurtenis-handlers kunnen fungeren. |
 | [Azure Monitor ondersteuning en integratie in het Azure Portal](monitoring/monitor-events-portal-how-to.md) | Hierdoor kunnen klanten Media Services account quotum gebruik, realtime statistieken van streaming-eind punten en opname-en archief statistieken voor Live-gebeurtenissen visualiseren. Klanten kunnen nu waarschuwingen instellen en de benodigde acties uitvoeren op basis van real-time metrische gegevens. |
-
-## <a name="next-steps"></a>Volgende stappen
-
-[!INCLUDE [migration guide next steps](./includes/migration-guide-next-steps.md)]

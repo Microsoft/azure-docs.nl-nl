@@ -3,12 +3,12 @@ title: 'Quickstart: Een blauwdruk maken met de Azure CLI'
 description: In deze quickstart gebruikt u Azure Blueprints om artefacten te maken, te definiëren en te implementeren met de Azure CLI.
 ms.date: 01/27/2021
 ms.topic: quickstart
-ms.openlocfilehash: 6ce3031c93f973c2efb251fad371a6f3750ae0fd
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: fbe5c12f1c94d4b59dbdc2a97b6a4cb9af5a2328
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98920237"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105563664"
 ---
 # <a name="quickstart-define-and-assign-an-azure-blueprint-with-azure-cli"></a>Quickstart: Een Azure Blueprint definiëren en toewijzen met Azure CLI
 
@@ -311,7 +311,7 @@ De waarde voor `{BlueprintVersion}` is een reeks letters, cijfers en afbreekstre
 
 Nadat een blauwdruk is gepubliceerd met Azure CLI, kan deze worden toegewezen aan een abonnement. Wijs de blauwdruk die u hebt gemaakt toe aan een van de abonnementen in uw beheergroephiërarchie. Als de blauwdruk is opgeslagen in een abonnement, kan deze alleen aan dat abonnement worden toegewezen. De parameter **blauwdruknaam** vermeldt de blauwdruk die moet worden toegewezen. Als u de parameters naam, locatie, identiteit, vergrendeling en blauwdruk wilt opgeven, gebruikt u de overeenkomende Azure CLI-parameters op de `az blueprint assignment create`-opdracht of geeft u deze op in het JSON-bestand **parameters**.
 
-1. Voer de blauwdrukimplementatie uit door deze toe te wijzen aan een abonnement. Als voor de parameters **inzenders** en **eigenaren** voor de roltoewijzing een matrix van objectIds van de principals vereist is, gebruikt u [Azure Active Directory Graph API](../../active-directory/develop/active-directory-graph-api.md) om de objectIds op te halen voor gebruik in de **parameters** voor uw eigen gebruikers, groepen of service-principals.
+1. Voer de blauwdrukimplementatie uit door deze toe te wijzen aan een abonnement. Als voor de parameters **inzenders** en **eigenaren** voor de roltoewijzing een matrix van objectIds van de principals vereist is, gebruikt u [Azure Active Directory Graph API](/graph/migrate-azure-ad-graph-planning-checklist) om de objectIds op te halen voor gebruik in de **parameters** voor uw eigen gebruikers, groepen of service-principals.
 
    - JSON-bestand - blueprintAssignment.json
 

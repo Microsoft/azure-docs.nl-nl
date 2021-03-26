@@ -4,12 +4,12 @@ description: In deze zelfstudie gebruikt u een AI-modelserver van Intel om de li
 ms.topic: tutorial
 ms.date: 09/08/2020
 titleSuffix: Azure
-ms.openlocfilehash: 68b5b7561cc31e156a745bcfb07e3203de10d425
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 5751184493fffeeaf647507e9e9b00834f63ab5e
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101702212"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105557255"
 ---
 # <a name="tutorial-analyze-live-video-by-using-openvino-model-server--ai-extension-from-intel"></a>Zelfstudie: Live video analyseren met OpenVINO™ Model Server – AI Extension van Intel 
 
@@ -51,7 +51,7 @@ In deze quickstart gebruikt u Live Video Analytics op IoT Edge en de OpenVINO™
 
 Dit diagram laat zien hoe de signalen in deze quickstart stromen. Een [Edge-module](https://github.com/Azure/live-video-analytics/tree/master/utilities/rtspsim-live555) simuleert een IP-camera die als host fungeert voor een RTSP-server (Real-Time Streaming Protocol). Een [RTSP-bron](media-graph-concept.md#rtsp-source)-knooppunt haalt de videofeed van deze server en verstuurt videoframes naar het [HTTP-extensieprocessor](media-graph-concept.md#http-extension-processor)-knooppunt. 
 
-Het knooppunt HTTP-extensie speelt de rol van een proxy. Het knooppunt samplet de door uw '`samplingOptions`'-veld ingestelde binnenkomende videoframes en converteert de videoframes bovendien naar het gespecificeerde afbeeldingstype. Vervolgens wordt de afbeelding via REST doorgestuurd naar een andere Edge-module die AI-modellen achter een HTTP-eindpunt uitvoert. In dit voorbeeld is die Edge-module de OpenVINO™ Model Server – AI Extension van Intel. Het HTTP-extensieprocessor-knooppunt verzamelt de detectieresultaten en publiceert de gebeurtenissen naar het [IoT Hub Sink](media-graph-concept.md#iot-hub-message-sink)-knooppunt. Het knooppunt verzendt die gebeurtenissen vervolgens naar [IoT Edge-hub](../../iot-edge/iot-edge-glossary.md#iot-edge-hub).
+Het knooppunt HTTP-extensie speelt de rol van een proxy. Het knooppunt samplet de door uw '`samplingOptions`'-veld ingestelde binnenkomende videoframes en converteert de videoframes bovendien naar het gespecificeerde afbeeldingstype. Vervolgens wordt de afbeelding via REST doorgestuurd naar een andere Edge-module die AI-modellen achter een HTTP-eindpunt uitvoert. In dit voorbeeld is die Edge-module de OpenVINO™ Model Server – AI Extension van Intel. Het HTTP-extensieprocessor-knooppunt verzamelt de detectieresultaten en publiceert de gebeurtenissen naar het [IoT Hub Sink](media-graph-concept.md#iot-hub-message-sink)-knooppunt. Het knooppunt verzendt die gebeurtenissen vervolgens naar [IoT Edge-hub](../../iot-fundamentals/iot-glossary.md#iot-edge-hub).
 
 In deze zelfstudie leert u het volgende:
 

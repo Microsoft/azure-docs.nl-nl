@@ -10,42 +10,42 @@ ms.topic: reference
 author: stevestein
 ms.author: sstein
 ms.reviewer: sashan,moslake,josack
-ms.date: 02/02/2021
-ms.openlocfilehash: 34613633b6b27fc3387e6a9fa63caf4a194ba963
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.date: 03/25/2021
+ms.openlocfilehash: 5e95bc50a74413389bd2583beb90128b3fd0810a
+ms.sourcegitcommit: 44edde1ae2ff6c157432eee85829e28740c6950d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101691226"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105543513"
 ---
 # <a name="resource-limits-for-azure-sql-database-and-azure-synapse-analytics-servers"></a>Resource limieten voor Azure SQL Database en Azure Synapse Analytics-servers
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
 
-Dit artikel bevat een overzicht van de resource limieten voor de logische server die wordt gebruikt door Azure SQL Database en Azure Synapse Analytics. Het bevat informatie over wat er gebeurt wanneer deze resource limieten worden bereikt of overschreden en beschrijft de resource governance-mechanismen die worden gebruikt om deze limieten af te dwingen.
+Dit artikel bevat een overzicht van de resource limieten voor de [logische server](logical-servers.md) die wordt gebruikt door Azure SQL database en Azure Synapse Analytics. Het bevat informatie over wat er gebeurt wanneer deze resource limieten worden bereikt of overschreden en beschrijft de resource governance-mechanismen die worden gebruikt om deze limieten af te dwingen.
 
 > [!NOTE]
-> Zie [SQL database resource limieten voor beheerde instanties](../managed-instance/resource-limits.md)voor de limieten voor Azure SQL Managed instances.
+> Zie [resource limieten voor beheerde instanties](../managed-instance/resource-limits.md)voor Azure SQL Managed instance limits.
 
 ## <a name="maximum-resource-limits"></a>Maximum aantal resource limieten
 
 | Resource | Limiet |
 | :--- | :--- |
-| Data bases per server | 5000 |
-| Standaard aantal servers per abonnement in een wille keurige regio | 20 |
-| Maximum aantal servers per abonnement in een regio | 200 |  
-| DTU/eDTU-quotum per server | 54.000 |  
-| vCore quotum per Server/exemplaar | 540 |
-| Maximum aantal groepen per server | Beperkt door het aantal Dtu's of vCores. Als bijvoorbeeld elke groep 1000 Dtu's is, kan een server 54 groepen ondersteunen.|
+| Data bases per logische server | 5000 |
+| Standaard aantal logische servers per abonnement in een regio | 20 |
+| Maximum aantal logische servers per abonnement in een regio | 200 |  
+| DTU/eDTU-quotum per logische server | 54.000 |  
+| vCore-quotum per logische server | 540 |
+| Maximum aantal Pools per logische server | Beperkt door het aantal Dtu's of vCores. Als bijvoorbeeld elke groep 1000 Dtu's is, kan een server 54 groepen ondersteunen.|
 |||
 
 > [!IMPORTANT]
-> Wanneer het aantal data bases de limiet per server nadert, kunnen de volgende problemen optreden:
+> Wanneer het aantal data bases de limiet per logische server nadert, kunnen de volgende problemen optreden:
 >
-> - De latentie verhogen bij het uitvoeren van query's op de hoofd database.  Dit geldt ook voor weer gaven van gegevens over het resource gebruik, zoals sys.resource_stats.
+> - De latentie verhogen bij het uitvoeren van query's op de hoofd database.  Dit omvat weer gaven van gegevens over het resource gebruik, zoals `sys.resource_stats` .
 > - Het verg Roten van latentie in beheer bewerkingen en het weer geven van portal-gezichts punten waarbij de data bases op de server worden geïnventariseerd.
 
 > [!NOTE]
-> Als u meer DTU/eDTU-quotum, vCore quotum of meer servers dan het standaard aantal wilt verkrijgen, moet u een nieuwe ondersteunings aanvraag indienen in de Azure Portal. Zie [aanvraag quotum verhogingen voor Azure SQL database](quota-increase-request.md)voor meer informatie.
+> Als u meer DTU/eDTU-quotum, vCore quota of meer logische servers wilt verkrijgen dan het standaard aantal, moet u een nieuwe ondersteunings aanvraag indienen in de Azure Portal. Zie [aanvraag quotum verhogingen voor Azure SQL database](quota-increase-request.md)voor meer informatie.
 
 ### <a name="storage-size"></a>Opslag grootte
 
@@ -97,7 +97,7 @@ Als er geheugen fouten optreden, zijn de volgende opties beschikbaar:
 - De servicelaag of de reken grootte van de data base of elastische pool wordt verhoogd. Zie bronnen van [één data base schalen](single-database-scale.md) en [elastische pool resources schalen](elastic-pool-scale.md).
 - Query's en configuratie optimaliseren om het geheugen gebruik te beperken. Algemene oplossingen worden beschreven in de volgende tabel.
 
-|Oplossing|Beschrijving|
+|Oplossing|Description|
 | :----- | :----- |
 |De grootte van geheugen subsidies verminderen|Voor meer informatie over geheugen subsidies, zie het blog bericht [over SQL Server geheugen toekenning](https://techcommunity.microsoft.com/t5/sql-server/understanding-sql-server-memory-grant/ba-p/383595) . Een gemeen schappelijke oplossing om te voor komen dat buitensporig grote geheugen subsidies worden gebruikt, houdt [Statistieken](/sql/relational-databases/statistics/statistics) up-to-date. Dit resulteert in een nauw keurige schatting van het geheugen verbruik door de query-engine, waardoor onnodig grote geheugen subsidies worden voor komen.</br></br>In data bases die gebruikmaken van het compatibiliteits niveau 140 en hoger, kan de data base-engine automatisch de grootte van het geheugen toewijzen met behulp van [feedback van geheugen toekenning in batch modus](/sql/relational-databases/performance/intelligent-query-processing#batch-mode-memory-grant-feedback) In data bases die gebruikmaken van het compatibiliteits niveau 150 en hoger, gebruikt de data base-engine ook [feedback over geheugen toekenning](/sql/relational-databases/performance/intelligent-query-processing#row-mode-memory-grant-feedback)in de rij, voor meer veelgebruikte query's in de rij-modus. Deze ingebouwde functionaliteit helpt bij het vermijden van geheugen fouten als gevolg van onnodig grote geheugen subsidies.|
 |De grootte van de cache voor query plannen beperken|De data base-engine slaat query plannen op in het geheugen, om te voor komen dat een query plan wordt gecompileerd voor elke uitvoering van de query. Schakel de OPTIMIZE_FOR_AD_HOC_WORKLOADS [database bereik configuratie](/sql/t-sql/statements/alter-database-scoped-configuration-transact-sql)in om te voor komen dat de cache van het query plan wordt veroorzaakt door schema's die slechts één keer worden gebruikt.|

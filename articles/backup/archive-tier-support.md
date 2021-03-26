@@ -3,12 +3,12 @@ title: Ondersteuning voor archief lagen (preview-versie)
 description: Meer informatie over de ondersteuning van de archiefmap voor Azure Backup
 ms.topic: conceptual
 ms.date: 02/18/2021
-ms.openlocfilehash: 6c597d640f24dc4c680bfd5db16f9df09017ee54
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 322bc9d7e2160cc9156c793859b9fda833b3df09
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102609849"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105563970"
 ---
 # <a name="archive-tier-support-preview"></a>Ondersteuning voor archief lagen (preview-versie)
 
@@ -46,7 +46,7 @@ Ondersteunde clients:
     install-module -name Az.RecoveryServices -Repository PSGallery -RequiredVersion 4.0.0-preview -AllowPrerelease -force
     ```
 
-1. Maak verbinding met Azure met behulp van de cmdlet [Connect-AzAccount](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount) .
+1. Maak verbinding met Azure met behulp van de cmdlet [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) .
 1. Meld u aan bij uw abonnement:
 
    `Set-AzContext -Subscription "SubscriptionName"`
@@ -128,7 +128,7 @@ $rp = Get-AzRecoveryServicesBackupRecoveryPoint -VaultId $vault.ID -Item $bckItm
 
 Azure Backup biedt een geïntegreerde herstel methodologie voor herstel punten in archief.
 
-De geïntegreerde herstel bewerking is een proces dat uit twee stappen bestaat. De eerste stap omvat het reactiveren van de herstel punten die zijn opgeslagen in het archief en deze tijdelijk op te slaan in de standaardlaag voor een duur (ook wel bekend als de rehydratatie duur), variërend van een periode van 10 tot 30 dagen. De standaard waarde is 15 dagen. Er zijn twee verschillende prioriteiten voor rehydratatie: standaard en hoge prioriteit. Meer informatie over de [rehydratatie-prioriteit](https://docs.microsoft.com/azure/storage/blobs/storage-blob-rehydration#rehydrate-an-archived-blob-to-an-online-tier).
+De geïntegreerde herstel bewerking is een proces dat uit twee stappen bestaat. De eerste stap omvat het reactiveren van de herstel punten die zijn opgeslagen in het archief en deze tijdelijk op te slaan in de standaardlaag voor een duur (ook wel bekend als de rehydratatie duur), variërend van een periode van 10 tot 30 dagen. De standaard waarde is 15 dagen. Er zijn twee verschillende prioriteiten voor rehydratatie: standaard en hoge prioriteit. Meer informatie over de [rehydratatie-prioriteit](../storage/blobs/storage-blob-rehydration.md#rehydrate-an-archived-blob-to-an-online-tier).
 
 >[!NOTE]
 >

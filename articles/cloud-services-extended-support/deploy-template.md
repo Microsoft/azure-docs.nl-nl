@@ -8,12 +8,12 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: 6d54216d8992b5bb233c79919284f96b24385651
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.openlocfilehash: 6cb4abd536cc0d4177df424ac6a774e4e2e328d7
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104865584"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105564752"
 ---
 # <a name="deploy-a-cloud-service-extended-support-using-arm-templates"></a>Een Cloud service (uitgebreide ondersteuning) implementeren met ARM-sjablonen
 
@@ -29,15 +29,15 @@ In deze zelf studie wordt uitgelegd hoe u een implementatie van een Cloud servic
 
 1. Controleer de [vereisten voor implementatie](deploy-prerequisite.md) voor Cloud Services (uitgebreide ondersteuning) en maak de bijbehorende resources.
 
-2. Maak een nieuwe resource groep met behulp van de [Azure Portal](/azure/azure-resource-manager/management/manage-resource-groups-portal) of [Power shell](/azure/azure-resource-manager/management/manage-resource-groups-powershell). Deze stap is optioneel als u een bestaande resource groep gebruikt.
+2. Maak een nieuwe resource groep met behulp van de [Azure Portal](../azure-resource-manager/management/manage-resource-groups-portal.md) of [Power shell](../azure-resource-manager/management/manage-resource-groups-powershell.md). Deze stap is optioneel als u een bestaande resource groep gebruikt.
  
-3. Maak een nieuw opslag account met behulp van de [Azure Portal](/azure/storage/common/storage-account-create?tabs=azure-portal) of [Power shell](/azure/storage/common/storage-account-create?tabs=azure-powershell). Deze stap is optioneel als u een bestaand opslag account gebruikt.
+3. Maak een nieuw opslag account met behulp van de [Azure Portal](../storage/common/storage-account-create.md?tabs=azure-portal) of [Power shell](../storage/common/storage-account-create.md?tabs=azure-powershell). Deze stap is optioneel als u een bestaand opslag account gebruikt.
 
-4. Upload uw service definition (csdef) en service configuratie bestanden (. cscfg) naar het opslag account met behulp van de [Azure Portal](/azure/storage/blobs/storage-quickstart-blobs-portal#upload-a-block-blob), [AzCopy](/azure/storage/common/storage-use-azcopy-blobs-upload?toc=/azure/storage/blobs/toc.json) of [Power shell](/azure/storage/blobs/storage-quickstart-blobs-powershell#upload-blobs-to-the-container). Verkrijg de SAS-Uri's van beide bestanden die u later in deze zelf studie moet toevoegen aan de ARM-sjabloon.
+4. Upload uw service definition (csdef) en service configuratie bestanden (. cscfg) naar het opslag account met behulp van de [Azure Portal](../storage/blobs/storage-quickstart-blobs-portal.md#upload-a-block-blob), [AzCopy](../storage/common/storage-use-azcopy-blobs-upload.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) of [Power shell](../storage/blobs/storage-quickstart-blobs-powershell.md#upload-blobs-to-the-container). Verkrijg de SAS-Uri's van beide bestanden die u later in deze zelf studie moet toevoegen aan de ARM-sjabloon.
 
 5. Beschrijving Maak een sleutel kluis en upload de certificaten.
 
-    -  Certificaten kunnen worden gekoppeld aan Cloud Services om beveiligde communicatie van en naar de service mogelijk te maken. Om certificaten te kunnen gebruiken, moeten hun vinger afdrukken worden opgegeven in het service configuratie bestand (. cscfg) en worden geüpload naar een sleutel kluis. Een sleutel kluis kan worden gemaakt via de [Azure Portal](/azure/key-vault/general/quick-create-portal) of [Power shell](/azure/key-vault/general/quick-create-powershell).
+    -  Certificaten kunnen worden gekoppeld aan Cloud Services om beveiligde communicatie van en naar de service mogelijk te maken. Om certificaten te kunnen gebruiken, moeten hun vinger afdrukken worden opgegeven in het service configuratie bestand (. cscfg) en worden geüpload naar een sleutel kluis. Een sleutel kluis kan worden gemaakt via de [Azure Portal](../key-vault/general/quick-create-portal.md) of [Power shell](../key-vault/general/quick-create-powershell.md).
     - De bijbehorende sleutel kluis moet zich in dezelfde regio en hetzelfde abonnement bevinden als de Cloud service.
     - Voor de bijbehorende sleutel kluis voor moeten de juiste machtigingen zijn ingeschakeld, zodat de Cloud Services (uitgebreide ondersteunings resource) certificaten kan ophalen van Key Vault. Zie [certificaten en Key Vault](certificates-and-key-vault.md) voor meer informatie.
     - In de sectie OsProfile van de ARM-sjabloon die wordt weer gegeven in de onderstaande stappen, moet worden verwezen naar de sleutel kluis.

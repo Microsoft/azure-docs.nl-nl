@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
 ms.custom: devx-track-csharp
-ms.openlocfilehash: dab938a526aa89f6fe5a014e10869bd8da8b475d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 5d7b512601d066000f1f64bf99d1fd4be3532b7a
+ms.sourcegitcommit: 44edde1ae2ff6c157432eee85829e28740c6950d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98802352"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105544125"
 ---
 # <a name="quickstart-azure-blob-storage-client-library-v12-with-xamarin"></a>Snelstartgids: Azure Blob Storage-client bibliotheek V12 met Xamarin
 
@@ -196,7 +196,7 @@ async void List_Clicked(object sender, EventArgs e)
 
 ### <a name="download-blobs"></a>Blobs downloaden
 
-Download de eerder gemaakte blob door de methode [DownloadAsync](/dotnet/api/azure.storage.blobs.specialized.blobbaseclient.downloadasync) aan te roepen. De voorbeeldcode kopieert de `Stream`-weergave van de blob eerst naar een `MemoryStream` en vervolgens naar een `StreamReader` zodat de tekst kan worden weergegeven.
+Down load de eerder gemaakte BLOB door de methode [DownloadToAsync](/dotnet/api/azure.storage.blobs.specialized.blobbaseclient.downloadtoasync) aan te roepen. De voorbeeldcode kopieert de `Stream`-weergave van de blob eerst naar een `MemoryStream` en vervolgens naar een `StreamReader` zodat de tekst kan worden weergegeven.
 
 Voeg deze code toe aan het bestand *MainPage.xaml.cs*:
 

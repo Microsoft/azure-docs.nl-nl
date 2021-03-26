@@ -7,12 +7,12 @@ ms.subservice: fhir
 ms.topic: reference
 ms.date: 3/18/2021
 ms.author: cavoeg
-ms.openlocfilehash: aefb2b4a70fae4ad082243529c8eaf877fb35f22
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: a5b3daa499546f3a30b5a4d133d77786a1916b6a
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105045298"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105559193"
 ---
 # <a name="how-to-export-fhir-data"></a>FHIR-gegevens exporteren
 
@@ -47,8 +47,7 @@ Daarnaast wordt het controleren van de export status via de URL die wordt gereto
 
 Momenteel ondersteunen we $export voor ADLS Gen2 ingeschakelde opslag accounts, met de volgende beperking:
 
-- De gebruiker kan geen gebruik maken van [hiërarchische naam ruimten](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-namespace), maar er is geen manier om het exporteren naar een specifieke submap binnen de container te richten. We bieden alleen de mogelijkheid om een specifieke container te richten (waarbij we een nieuwe map voor elke export maken).
-
+- De gebruiker kan geen gebruik maken van [hiërarchische naam ruimten](../../storage/blobs/data-lake-storage-namespace.md), maar er is geen manier om het exporteren naar een specifieke submap binnen de container te richten. We bieden alleen de mogelijkheid om een specifieke container te richten (waarbij we een nieuwe map voor elke export maken).
 - Zodra een export is voltooid, worden er nooit opnieuw items naar die map geëxporteerd, omdat volgende export naar dezelfde container zich in een nieuw gemaakte map bevindt.
 
 
@@ -62,13 +61,13 @@ Er zijn twee vereiste header parameters die moeten worden ingesteld voor $export
 ### <a name="query-parameters"></a>Queryparameters
 De Azure API voor FHIR ondersteunt de volgende query parameters. Al deze para meters zijn optioneel:
 
-|Queryparameter        | Gedefinieerd door de FHIR spec?    |  Beschrijving|
+|Queryparameter        | Gedefinieerd door de FHIR spec?    |  Description|
 |------------------------|---|------------|
-| \_Output | Ja | Ondersteunt momenteel drie waarden om uit te lijnen op de FHIR spec: Application/FHIR + ndjson, Application/ndjson of net ndjson. Alle export taken worden geretourneerd `ndjson` en de door gegeven waarde heeft geen effect op het gedrag van de code. |
-| \_moment | Ja | Hiermee kunt u alleen resources exporteren die zijn gewijzigd sinds de gegeven tijd |
-| \_voert | Ja | Hiermee kunt u opgeven welke typen resources worden opgenomen. \_Typ bijvoorbeeld = patiënt retourneert alleen patiënten-resources|
-| \_typefilter | Ja | Als u een filter met een nauw keurig korrel wilt aanvragen, kunt u \_ typefilter gebruiken in combi natie met de \_ type-para meter. De waarde van de para meter _typeFilter is een door komma's gescheiden lijst met FHIR query's waarmee de resultaten verder worden beperkt |
-| \_verpakking | Nee |  Hiermee geeft u de container in het geconfigureerde opslag account op waarin de gegevens moeten worden geëxporteerd. Als er een container is opgegeven, worden de gegevens naar die container geëxporteerd in een nieuwe map met de naam. Als de container niet is opgegeven, wordt deze geëxporteerd naar een nieuwe container met de tijds tempel-en taak-ID. |
+| \_Output | Yes | Ondersteunt momenteel drie waarden om uit te lijnen op de FHIR spec: Application/FHIR + ndjson, Application/ndjson of net ndjson. Alle export taken worden geretourneerd `ndjson` en de door gegeven waarde heeft geen effect op het gedrag van de code. |
+| \_moment | Yes | Hiermee kunt u alleen resources exporteren die zijn gewijzigd sinds de gegeven tijd |
+| \_voert | Yes | Hiermee kunt u opgeven welke typen resources worden opgenomen. \_Typ bijvoorbeeld = patiënt retourneert alleen patiënten-resources|
+| \_typefilter | Yes | Als u een filter met een nauw keurig korrel wilt aanvragen, kunt u \_ typefilter gebruiken in combi natie met de \_ type-para meter. De waarde van de para meter _typeFilter is een door komma's gescheiden lijst met FHIR query's waarmee de resultaten verder worden beperkt |
+| \_verpakking | No |  Hiermee geeft u de container in het geconfigureerde opslag account op waarin de gegevens moeten worden geëxporteerd. Als er een container is opgegeven, worden de gegevens naar die container geëxporteerd in een nieuwe map met de naam. Als de container niet is opgegeven, wordt deze geëxporteerd naar een nieuwe container met de tijds tempel-en taak-ID. |
 
 > [!Note]
 > Alleen opslag accounts in hetzelfde abonnement als die voor Azure API voor FHIR mogen worden geregistreerd als bestemming voor $export bewerkingen.

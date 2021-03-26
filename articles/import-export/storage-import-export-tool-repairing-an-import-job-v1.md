@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 01/19/2021
 ms.author: alkohli
 ms.subservice: common
-ms.openlocfilehash: af6234a81e8f79424cc3b1ec4178a175d9ff0146
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: b0eeb73ffb5436284f4f23cef943db0a3307a2b2
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98706457"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105564565"
 ---
 # <a name="repairing-an-import-job"></a>Een importtaak herstellen
 De Microsoft Azure Import/Export-service kan een aantal van uw bestanden of delen van een bestand niet kopiëren naar de Windows Azure Blob-service. Enkele mogelijke oorzaken:  
@@ -30,7 +30,7 @@ U kunt het Microsoft Azure Import/Export-hulp programma uitvoeren met de Kopieer
 
 De volgende para meters kunnen worden opgegeven met **RepairImport**: 
   
-|||  
+| Parameter | Beschrijving |  
 |-|-|  
 |**/r:**<RepairFile\>|**Vereist.** Het pad naar het reparatie bestand, dat de voortgang van de reparatie bijhoudt en u kunt een onderbroken reparatie hervatten. Elk station moet één en slechts één herstel bestand hebben. Wanneer u een herstel start voor een bepaald station, geeft u het pad door aan een herstel bestand dat nog niet bestaat. Als u een onderbroken reparatie wilt hervatten, moet u de naam van een bestaand herstel bestand door geven. Geef altijd het herstel bestand op dat overeenkomt met het doel station.|  
 |**/logdir:**<LogDirectory\>|**Optioneel.** De logboekmap. Uitgebreide logboek bestanden worden naar deze map geschreven. Als er geen Logboekmap is opgegeven, wordt de huidige map gebruikt als Logboekmap.|  

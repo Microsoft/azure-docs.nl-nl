@@ -1,14 +1,14 @@
 ---
 title: Een browsertracering vastleggen om problemen op te lossen
 description: Leg netwerk gegevens vast van een browser tracering om problemen met de Azure Portal op te lossen.
-ms.date: 05/11/2020
+ms.date: 03/25/2021
 ms.topic: troubleshooting
-ms.openlocfilehash: 504a32fb63022f97e8049c7c1ccc7721bbac31ab
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 63bc3e93187274db607b5f60216de461729801dc
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96745992"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105563481"
 ---
 # <a name="capture-a-browser-trace-for-troubleshooting"></a>Een browsertracering vastleggen om problemen op te lossen
 
@@ -190,13 +190,13 @@ De volgende stappen laten zien hoe u de hulpprogram ma's voor ontwikkel aars in 
 
     ![Scherm opname van resultaten van browser tracering](media/capture-browser-trace/firefox-browser-trace-results.png)
 
-1. Nadat u het onverwachte gedrag van de portal hebt gemaakt, selecteert u **har exporteren/importeren** en slaat u vervolgens **alles op als har**.
+1. Nadat u het onverwachte gedrag van de portal hebt gemaakt, selecteert u **Alles opslaan als har**.
 
     ![Scherm afbeelding van "uitvoer HAR"](media/capture-browser-trace/firefox-network-export-har.png)
 
 1. Stop stappen voor het opnemen van de opname in Windows of het scherm op Mac en sla de opname op.
 
-1. Selecteer in het deel venster ontwikkel hulpprogramma's van de browser het tabblad **console** . Klik met de rechter muisknop op een van de berichten, selecteer **zichtbaar bericht exporteren naar** en sla de uitvoer van de console op in een tekst bestand.
+1. Selecteer in het deel venster ontwikkel hulpprogramma's van de browser het tabblad **console** . Klik met de rechter muisknop op een van de berichten, selecteer **zicht bare berichten exporteren naar** en sla de console-uitvoer op in een tekst bestand.
 
     ![Scherm opname van console-uitvoer](media/capture-browser-trace/firefox-console-select.png)
 

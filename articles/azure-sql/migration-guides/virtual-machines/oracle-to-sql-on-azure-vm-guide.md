@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: 5d24e056d397617c95a7ba301b58efc3631f40dd
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.openlocfilehash: 4173fe34c6966514ef4f150527cd712c9d95ab7e
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105026518"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105561709"
 ---
 # <a name="migration-guide-oracle-to-sql-server-on-azure-vm"></a>Migratie handleiding: Oracle naar SQL Server op Azure VM
 [!INCLUDE[appliesto-sqldb-sqlmi](../../includes/appliesto-sqldb.md)]
@@ -199,7 +199,7 @@ Als u uw schema wilt publiceren en de gegevens wilt migreren, volgt u deze stapp
 
 
 Naast het gebruik van SSMA kunt u ook SQL Server Integration Services (SSIS) gebruiken om de gegevens te migreren. Raadpleeg voor meer informatie: 
-- Het artikel [aan de slag met SQL Server Integration Services](https://docs.microsoft.com//sql/integration-services/sql-server-integration-services).
+- Het artikel [aan de slag met SQL Server Integration Services](//sql/integration-services/sql-server-integration-services).
 - De White paper [SQL Server Integration Services: SSIS voor Azure en hybride gegevens verplaatsing](https://download.microsoft.com/download/D/2/0/D20E1C5F-72EA-4505-9F26-FEF9550EFD44/SSIS%20Hybrid%20and%20Azure.docx).
 
 
@@ -271,4 +271,3 @@ Deze resources zijn ontwikkeld als onderdeel van het data SQL expert-programma, 
 
 - Zie [Data Access Migration Toolkit (preview) voor informatie](https://marketplace.visualstudio.com/items?itemName=ms-databasemigration.data-access-migration-toolkit) over het beoordelen van de toegangs laag van de toepassing.
 - Zie [database Experimentation Assistant](/sql/dea/database-experimentation-assistant-overview)voor meer informatie over het uitvoeren van een test voor de toegang tot een Data Access Layer A/B.
-

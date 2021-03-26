@@ -13,12 +13,12 @@ ms.workload: infrastructure
 ms.date: 01/16/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 20a2639716048a8c549ec6d584e807cb209f83d9
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: f1c1397416943e3e25719204a5ccfd593559476e
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101670955"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105557595"
 ---
 # <a name="how-to-install-and-configure-sap-hana-large-instances-on-azure"></a>SAP HANA (grote instanties) installeren en configureren in azure
 
@@ -90,7 +90,7 @@ Zie [Resource Library/White papers](https://www.suse.com/products/sles-for-sap/r
 Hieronder vindt u aanvullende en nuttige SAP op SUSE-gerelateerde koppelingen:
 
 - [SAP HANA op SUSE Linux-site](https://wiki.scn.sap.com/wiki/display/ATopics/SAP+on+SUSE)
-- [Aanbevolen procedures voor SAP: in wachtrij plaatsen van replicatie – SAP net-Weaver op SUSE Linux Enter prise 12](https://www.suse.com/media/guide/SLES4SAP-NetWeaver-ha-guide-EnqRepl-12_color_en.pdf)
+- [Aanbevolen procedures voor SAP: in wachtrij plaatsen van replicatie – SAP net-Weaver op SUSE Linux Enter prise 12](https://www.scribd.com/document/351887168/SLES4SAP-NetWeaver-ha-guide-EnqRepl-12-color-en-pdf)
 - [ClamSAP – SLES-virus beveiliging voor SAP](https://scn.sap.com/community/linux/blog/2014/04/14/clamsap--suse-linux-enterprise-server-integrates-virus-protection-for-sap) (inclusief SLES 12 voor SAP-toepassingen)
 
 Hieronder vindt u SAP-ondersteunings opmerkingen die van toepassing zijn op het implementeren van SAP HANA op SLES 12:

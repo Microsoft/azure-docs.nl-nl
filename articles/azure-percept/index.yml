@@ -3,19 +3,19 @@ title: Documentatie voor Azure percept
 summary: Azure percept is een end-to-end oplossing voor het bouwen en implementeren van op de rand gebaseerde AI.
 metadata:
   title: Documentatie voor Azure percept
-  description: Azure percept is een end-to-end Edge AI-platform.
+  description: Azure percept is een end-to-end Edge AI-platform en Development Kit.
   services: azure-percept
   ms.service: azure-percept
   ms.topic: landing-page
-  author: elqu20
-  ms.author: v-elqu
-  ms.date: 02/11/2021
-  ms.openlocfilehash: b979f147c67e8e877b5bb0e9d3dc557317c7aa50
-  ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+  author: mimcco
+  ms.author: mimcco
+  ms.date: 03/25/2021
+  ms.openlocfilehash: 61e9d784d899cb8f0741f27aee0bdb7031bb37d1
+  ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 03/04/2021
-  ms.locfileid: "102097492"
+  ms.lasthandoff: 03/26/2021
+  ms.locfileid: "105562542"
 landingContent:
 - title: Wat is Azure percept?
   linkLists:
@@ -31,6 +31,8 @@ landingContent:
       url: overview-azure-percept-studio.md
     - text: Overzicht van Azure percept-beveiliging
       url: overview-percept-security.md
+    - text: 80/20-integratie
+      url: overview-8020-integration.md
 - title: Aan de slag met Azure percept DK
   linkLists:
   - linkListType: quickstart

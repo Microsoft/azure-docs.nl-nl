@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 02/22/2021
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to configure compute on Azure Stack Edge Pro device so I can use it to transform the data before sending it to Azure.
-ms.openlocfilehash: 6054e7e79acaa6abf304508221c63143b9d14a45
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: c11a89d91693075ca54c0689223dcf2af06df521
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102436529"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105568508"
 ---
 # <a name="deploy-vms-on-your-azure-stack-edge-pro-gpu-device-via-the-azure-portal"></a>Implementeer Vm's op uw Azure Stack Edge Pro GPU-apparaat via de Azure Portal
 
@@ -52,7 +52,7 @@ De samen vatting van het hoge niveau van de implementatie werk stroom is als vol
 
 Voordat u begint met het maken en beheren van virtuele machines op uw apparaat via de Azure Portal, moet u ervoor zorgen dat:
 
-1. U hebt de netwerk instellingen op uw Azure Stack Edge Pro-apparaat voltooid, zoals wordt beschreven in [stap 1: Azure stack Edge Pro-apparaat configureren](azure-stack-edge-j-series-connect-resource-manager.md#step-1-configure-azure-stack-edge-pro-device).
+1. U hebt de netwerk instellingen op uw Azure Stack Edge Pro-apparaat voltooid, zoals wordt beschreven in [stap 1: Azure stack Edge Pro-apparaat configureren](./azure-stack-edge-gpu-connect-resource-manager.md#step-1-configure-azure-stack-edge-pro-device).
 
     1. U hebt een netwerk interface ingeschakeld voor compute. Het IP-adres van de netwerkinterface wordt gebruikt om een virtuele switch te maken voor de VM-implementatie. Ga in de lokale gebruikers interface van uw apparaat naar **Compute**. Selecteer de netwerkinterface die u wilt gebruiken om een virtuele switch te maken.
 

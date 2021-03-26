@@ -4,12 +4,12 @@ description: Meer informatie over het gebruik van Azure Custom Vision om een con
 ms.topic: tutorial
 ms.date: 09/08/2020
 zone_pivot_groups: ams-lva-edge-programming-languages
-ms.openlocfilehash: e6b911ad555c4ce10a9576861e1c2e650e63cd94
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 1abf123883a89bb41909e8aa67aedfadffc3d37e
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101698804"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105561199"
 ---
 # <a name="tutorial-analyze-live-video-with-live-video-analytics-on-iot-edge-and-azure-custom-vision"></a>Zelfstudie: Live video analyseren met Live Video Analytics op IoT Edge en Azure Custom Vision
 
@@ -77,7 +77,7 @@ In deze zelfstudie gebruikt u Live Video Analytics op IoT Edge om dergelijke spe
 
 Dit diagram laat zien hoe de signalen in deze zelfstudie stromen. Een [Edge-module](https://github.com/Azure/live-video-analytics/tree/master/utilities/rtspsim-live555) simuleert een IP-camera die als host fungeert voor een RTSP-server (Real-Time Streaming Protocol). Een [RTSP-bron](media-graph-concept.md#rtsp-source)-knooppunt haalt de videofeed van deze server en verstuurt videoframes naar het [HTTP-extensieprocessor](media-graph-concept.md#http-extension-processor)-knooppunt.
 
-Het knooppunt HTTP-extensie speelt de rol van een proxy.  Het knooppunt samplet de binnenkomende videoframes die u hebt ingesteld met het veld `samplingOptions`, en converteert de videoframes bovendien naar het gespecificeerde afbeeldingstype. Vervolgens wordt de afbeelding via REST doorgestuurd naar een andere Edge-module die een AI-model achter een HTTP-eindpunt uitvoert. In dit voorbeeld is die Edge-module het detectormodel van de speelgoedwagen, gebouwd met behulp van Custom Vision. Het HTTP-extensieprocessor-knooppunt verzamelt de detectieresultaten en publiceert de gebeurtenissen naar het [Azure IoT Hub Sink](media-graph-concept.md#iot-hub-message-sink)-knooppunt. Het knooppunt verzendt die gebeurtenissen vervolgens naar de [IoT Edge-hub](../../iot-edge/iot-edge-glossary.md#iot-edge-hub).
+Het knooppunt HTTP-extensie speelt de rol van een proxy.  Het knooppunt samplet de binnenkomende videoframes die u hebt ingesteld met het veld `samplingOptions`, en converteert de videoframes bovendien naar het gespecificeerde afbeeldingstype. Vervolgens wordt de afbeelding via REST doorgestuurd naar een andere Edge-module die een AI-model achter een HTTP-eindpunt uitvoert. In dit voorbeeld is die Edge-module het detectormodel van de speelgoedwagen, gebouwd met behulp van Custom Vision. Het HTTP-extensieprocessor-knooppunt verzamelt de detectieresultaten en publiceert de gebeurtenissen naar het [Azure IoT Hub Sink](media-graph-concept.md#iot-hub-message-sink)-knooppunt. Het knooppunt verzendt die gebeurtenissen vervolgens naar de [IoT Edge-hub](../../iot-fundamentals/iot-glossary.md#iot-edge-hub).
 
 ## <a name="build-and-deploy-a-custom-vision-toy-detection-model"></a>Een Custom Vision-detectiemodel voor speelgoed bouwen en implementeren 
 

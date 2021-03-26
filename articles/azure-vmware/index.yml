@@ -9,12 +9,12 @@ metadata:
   author: shortpatti
   ms.author: v-patsho
   ms.date: 03/22/2021
-  ms.openlocfilehash: 30d83fe98253e9681d9c2d14c0b4081909326c44
-  ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
+  ms.openlocfilehash: 4c5717404a5a16b84f573f522b53b5d56e1e327b
+  ms.sourcegitcommit: 44edde1ae2ff6c157432eee85829e28740c6950d
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 03/23/2021
-  ms.locfileid: "104800241"
+  ms.lasthandoff: 03/25/2021
+  ms.locfileid: "105544074"
 landingContent:
 - title: Over Azure VMware Solution
   linkLists:
@@ -138,6 +138,8 @@ landingContent:
     links:
     - text: Azure CLI
       url: /cli/azure/ext/vmware/vmware
+    - text: Azure CLI-gegevens archief
+      url: /cli/azure/ext/vmware/vmware/datastore
     - text: Azure PowerShell
       url: /powershell/module/az.vmware
     - text: Terraform Azure-provider

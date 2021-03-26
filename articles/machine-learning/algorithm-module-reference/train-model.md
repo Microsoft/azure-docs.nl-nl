@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 03/10/2021
-ms.openlocfilehash: 77927472dae6c8e7e6fddacf9088b479636edd37
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 41b327e793c6b35a2b2aeae825c493a484d84fb4
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103224321"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105562763"
 ---
 # <a name="train-model-module"></a>Train model-module
 
@@ -71,7 +71,7 @@ In Azure Machine Learning is het maken en gebruiken van een machine learning mod
 
 Model interpretatie biedt de mogelijkheid om het ML-model te begrijpen en de onderliggende basis te presen teren om besluit vorming op een manier die begrijpelijk is voor mensen.
 
-De huidige **Train model** -module ondersteunt [het gebruik van interpretatief pakket om ml-modellen te verklaren](https://docs.microsoft.com/azure/machine-learning/how-to-machine-learning-interpretability-aml#generate-feature-importance-values-via-remote-runs). De volgende ingebouwde algoritmen worden ondersteund:
+De huidige **Train model** -module ondersteunt [het gebruik van interpretatief pakket om ml-modellen te verklaren](../how-to-machine-learning-interpretability-aml.md#generate-feature-importance-values-via-remote-runs). De volgende ingebouwde algoritmen worden ondersteund:
 
 - Lineaire regressie
 - Regressie neuraal netwerk
@@ -87,7 +87,7 @@ Nadat de uitvoering van de pijp lijn is voltooid, kunt u het tabblad **uitleg** 
 
 ![Scherm opname van diagrammen met uitleg over modellen](./media/module/train-model-explanations-tab.gif)
 
-Raadpleeg het artikel over het [interpreteren van milliliters modellen](https://docs.microsoft.com/azure/machine-learning/how-to-machine-learning-interpretability-aml#generate-feature-importance-values-via-remote-runs)voor meer informatie over het gebruik van model verklaringen in azure machine learning.
+Raadpleeg het artikel over het [interpreteren van milliliters modellen](../how-to-machine-learning-interpretability-aml.md#generate-feature-importance-values-via-remote-runs)voor meer informatie over het gebruik van model verklaringen in azure machine learning.
 
 ## <a name="results"></a>Resultaten
 
@@ -101,4 +101,4 @@ Nadat het model is getraind:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Bekijk de [set met modules die beschikbaar zijn](module-reference.md) voor Azure machine learning. 
+Bekijk de [set met modules die beschikbaar zijn](module-reference.md) voor Azure machine learning.

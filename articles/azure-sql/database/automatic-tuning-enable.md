@@ -11,12 +11,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: wiassaf, sstein
 ms.date: 03/03/2021
-ms.openlocfilehash: d60810c291984e0f57df1968f69678de8179273c
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 1362d8c1f15b64b9d76b28fd354cdae8919504b0
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102042518"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105558275"
 ---
 # <a name="enable-automatic-tuning-in-the-azure-portal-to-monitor-queries-and-improve-workload-performance"></a>Automatisch afstemmen inschakelen in de Azure Portal om query's te bewaken en de prestaties van de werk belasting te verbeteren
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -120,7 +120,7 @@ In het geval van fout berichten dat geautomatiseerd aanbevelings beheer is uitge
 - Het query archief is gestopt omdat het de toegewezen opslag ruimte gebruikt.
 
 De volgende stappen kunnen worden overwogen om dit probleem op te lossen:
-- Schoon het query archief op of wijzig de Bewaar periode voor gegevens in ' auto ' door gebruik te maken van T-SQL. Zie [Aanbevolen Bewaar-en vastleg beleid configureren voor query Store](/azure/azure-sql/database/query-performance-insight-use#recommended-retention-and-capture-policy).
+- Schoon het query archief op of wijzig de Bewaar periode voor gegevens in ' auto ' door gebruik te maken van T-SQL. Zie [Aanbevolen Bewaar-en vastleg beleid configureren voor query Store](./query-performance-insight-use.md#recommended-retention-and-capture-policy).
 - Gebruik SQL Server Management Studio (SSMS) en voer de volgende stappen uit:
   - Verbinding maken met de Azure SQL Database
   - Klik met de rechter muisknop op de data base

@@ -4,12 +4,12 @@ description: In dit artikel vindt u informatie over het oplossen van fouten die 
 ms.reviewer: srinathv
 ms.topic: troubleshooting
 ms.date: 08/30/2019
-ms.openlocfilehash: 2cda13ea089ac08dff7c1ba5ca93ba56ab3c23cf
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 2d09081533cdb2de5ee97cb000e9844b41a85ac3
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "97831547"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105559363"
 ---
 # <a name="troubleshooting-backup-failures-on-azure-virtual-machines"></a>Back-upfouten op virtuele machines van Azure oplossen
 
@@ -139,7 +139,7 @@ Als u wilt controleren, gaat u naar ***systeem-en logboeken toepassings logboeke
 
 Oplossing:
 
-* Controleer op mogelijkheden voor het verdelen van de belasting over de VM-schijven. Hierdoor wordt de belasting van enkele schijven verminderd. U kunt [de limiet voor IOPs controleren door Diagnostische gegevens op opslag niveau in te scha kelen](../virtual-machines/troubleshooting/performance-diagnostics.md#install-and-run-performance-diagnostics-on-your-vm).
+* Controleer op mogelijkheden voor het verdelen van de belasting over de VM-schijven. Hierdoor wordt de belasting van enkele schijven verminderd. U kunt [de limiet voor IOPs controleren door Diagnostische gegevens op opslag niveau in te scha kelen](/troubleshoot/azure/virtual-machines/performance-diagnostics#install-and-run-performance-diagnostics-on-your-vm).
 * Wijzig het back-upbeleid voor het uitvoeren van back-ups tijdens piek uren, wanneer de belasting van de virtuele machine op het laagste niveau is.
 * Voer een upgrade uit voor de Azure-schijven ter ondersteuning van hogere IOPs. [Klik hier voor meer informatie](../virtual-machines/disks-types.md)
 
@@ -371,12 +371,12 @@ Normaal gesp roken is de VM-agent al aanwezig in de Vm's die zijn gemaakt in de 
 #### <a name="windows-vms---set-up-the-agent"></a>Windows-Vm's: Stel de agent in
 
 * Download en installeer de [agent-MSI](https://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409). U hebt beheerders bevoegdheden nodig om de installatie te volt ooien.
-* Voor virtuele machines die zijn gemaakt met behulp van het klassieke implementatie model, [werkt u de eigenschap VM](../virtual-machines/troubleshooting/install-vm-agent-offline.md#use-the-provisionguestagent-property-for-classic-vms) bij om aan te geven dat de agent is geïnstalleerd. Deze stap is niet vereist voor het Azure Resource Manager van virtuele machines.
+* Voor virtuele machines die zijn gemaakt met behulp van het klassieke implementatie model, [werkt u de eigenschap VM](/troubleshoot/azure/virtual-machines/install-vm-agent-offline#use-the-provisionguestagent-property-for-classic-vms) bij om aan te geven dat de agent is geïnstalleerd. Deze stap is niet vereist voor het Azure Resource Manager van virtuele machines.
 
 #### <a name="linux-vms---set-up-the-agent"></a>Linux-Vm's: de agent instellen
 
 * Installeer de nieuwste versie van de agent vanuit de distributie opslagplaats. Raadpleeg de [opslag plaats](https://github.com/Azure/WALinuxAgent)van de Linux-agent voor meer informatie over de pakket naam.
-* Voor virtuele machines die zijn gemaakt met behulp van het klassieke implementatie model, [werkt u de VM-eigenschap](../virtual-machines/troubleshooting/install-vm-agent-offline.md#use-the-provisionguestagent-property-for-classic-vms) bij en controleert u of de agent is geïnstalleerd. Deze stap is niet vereist voor virtuele machines van Resource Manager.
+* Voor virtuele machines die zijn gemaakt met behulp van het klassieke implementatie model, [werkt u de VM-eigenschap](/troubleshoot/azure/virtual-machines/install-vm-agent-offline#use-the-provisionguestagent-property-for-classic-vms) bij en controleert u of de agent is geïnstalleerd. Deze stap is niet vereist voor virtuele machines van Resource Manager.
 
 ### <a name="update-the-vm-agent"></a>De VM-agent bijwerken
 

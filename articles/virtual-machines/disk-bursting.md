@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: virtual-machines
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: 4024d2b1357f3dda8216e9ebdd2055b28b064d33
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 9758b026ef205e6608f7fc4110219dc5f267369e
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101677484"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105568712"
 ---
 # <a name="managed-disk-bursting"></a>Bursting van beheerde schijven
 [!INCLUDE [managed-disks-bursting](../../includes/managed-disks-bursting.md)]
@@ -27,10 +27,10 @@ Daarnaast kan de [prestatie-laag van Managed disks worden gewijzigd](disks-chang
 
 |  |Op Credit gebaseerde burstisatie  |Bursting op aanvraag  |Prestatie niveau wijzigen  |
 |---------|---------|---------|---------|
-| Scenario's|Ideaal voor het schalen op korte termijn (30 minuten of minder).|Ideaal voor kortetermijnbeveiliging (niet beperkt).|Ideaal als uw werk belasting anders voortdurend in burst zou worden uitgevoerd.|
-|Kosten     |Gratis         |Kosten zijn variabel, zie de sectie [facturering](#billing) voor meer informatie.        |De kosten van elke laag van de prestaties zijn vast, Zie [Managed disks prijzen](https://azure.microsoft.com/pricing/details/managed-disks/) voor meer informatie.         |
-|Beschikbaarheid     |Alleen beschikbaar voor Premium Ssd's 512 GiB en kleiner.         |Alleen beschikbaar voor Premium-Ssd's die groter zijn dan 512 GiB.         |Beschikbaar voor alle Premium SSD-grootten.         |
-|Activering     |Standaard ingeschakeld op in aanmerking komende schijven.         |Moet worden ingeschakeld door de gebruiker.         |Gebruikers moeten hun laag hand matig wijzigen.         |
+| **Scenario's**|Ideaal voor het schalen op korte termijn (30 minuten of minder).|Ideaal voor kortetermijnbeveiliging (niet beperkt).|Ideaal als uw werk belasting anders voortdurend in burst zou worden uitgevoerd.|
+|**Kosten**     |Gratis         |Kosten zijn variabel, zie de sectie [facturering](#billing) voor meer informatie.        |De kosten van elke laag van de prestaties zijn vast, Zie [Managed disks prijzen](https://azure.microsoft.com/pricing/details/managed-disks/) voor meer informatie.         |
+|**Beschikbaarheid**     |Alleen beschikbaar voor Premium Ssd's 512 GiB en kleiner.         |Alleen beschikbaar voor Premium-Ssd's die groter zijn dan 512 GiB.         |Beschikbaar voor alle Premium SSD-grootten.         |
+|**Activering**     |Standaard ingeschakeld op in aanmerking komende schijven.         |Moet worden ingeschakeld door de gebruiker.         |Gebruikers moeten hun laag hand matig wijzigen.         |
 
 ## <a name="common-scenarios"></a>Algemene scenario's
 De volgende scenario's kunnen aanzienlijk van bursting profiteren:

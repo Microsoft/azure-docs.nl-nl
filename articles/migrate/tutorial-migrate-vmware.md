@@ -7,12 +7,12 @@ ms.manager: bsiva
 ms.topic: tutorial
 ms.date: 06/09/2020
 ms.custom: mvc
-ms.openlocfilehash: 0dcb750871eeae504ddb3d4e3851c834bcad125c
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: a1d745c95b89efefabbd0b83061f9dcd9fe13911
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104604539"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105567115"
 ---
 # <a name="migrate-vmware-vms-to-azure-agentless"></a>VMware-VM's migreren naar Azure (zonder agent)
 
@@ -91,7 +91,7 @@ Schakel als volgt replicatie in:
     - Dubbele versleuteling met door platform en door klant beheerde sleutels
 
    > [!NOTE]
-   > Als u VM's met CMK wilt repliceren, moet u [een schijfversleutelingsset maken](https://go.microsoft.com/fwlink/?linkid=2151800) in de doelresourcegroep. Met een schijfversleutelingssetobject worden beheerde schijven toegewezen aan een sleutelkluis die de CMK bevat die moet worden gebruikt voor SSE.
+   > Als u VM's met CMK wilt repliceren, moet u [een schijfversleutelingsset maken](../virtual-machines/disks-enable-customer-managed-keys-portal.md#set-up-your-disk-encryption-set) in de doelresourcegroep. Met een schijfversleutelingssetobject worden beheerde schijven toegewezen aan een sleutelkluis die de CMK bevat die moet worden gebruikt voor SSE.
   
 10. In **Azure Hybrid Benefit**:
 
@@ -189,7 +189,7 @@ Nadat u hebt geverifieerd dat de testmigratie naar verwachting werkt, kunt u de 
 ## <a name="complete-the-migration"></a>Migratie voltooien
 
 1. Nadat de migratie is voltooid, klikt u met de rechtermuisknop op de VM > **Replicatie stoppen**. Hiermee stopt de replicatie voor de on-premises machine, en worden de gegevens over de replicatiestatus voor de VM opgeschoond.
-2. Tijdens de migratie wordt de VM-agent voor Windows-Vm's en Linux automatisch geïnstalleerd. Bekijk de [vereisten](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-linux#requirements) voor de Azure VM Linux-agent op de gemigreerde computers als de computer Linux-besturings systeem heeft om ervoor te zorgen dat de installatie van de Linux VM-agent correct wordt uitgevoerd. 
+2. Tijdens de migratie wordt de VM-agent voor Windows-Vm's en Linux automatisch geïnstalleerd. Bekijk de [vereisten](../virtual-machines/extensions/agent-linux.md#requirements) voor de Azure VM Linux-agent op de gemigreerde computers als de computer Linux-besturings systeem heeft om ervoor te zorgen dat de installatie van de Linux VM-agent correct wordt uitgevoerd. 
 3. Voer correcties van de app uit na de migratie, zoals updates van de databaseverbindingsreeksen en webserverconfiguraties.
 4. Voer acceptatietesten van de toepassing en de migratie uit op de gemigreerde toepassing die nu wordt uitgevoerd in Azure.
 5. Leid het verkeer naar het gemigreerde Azure VM-exemplaar.

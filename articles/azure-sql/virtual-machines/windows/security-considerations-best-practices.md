@@ -15,12 +15,12 @@ ms.workload: iaas-sql-server
 ms.date: 03/23/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 54010359f226fe02336f039e3dcbb98075e9b06a
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 7ff77a407dfa87e408170573249876bbefee0abe
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "97360081"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105558569"
 ---
 # <a name="security-considerations-for-sql-server-on-azure-virtual-machines"></a>Veiligheidsoverwegingen voor SQL Server in virtuele Azure-machines
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -87,7 +87,7 @@ U wilt niet dat aanvallers eenvoudig account namen of wacht woorden raden. Gebru
 
 - Maak een uniek lokaal Administrator-account dat niet de naam **Administrator** heeft.
 
-- Gebruik complexe sterke wacht woorden voor al uw accounts. Zie een artikel met [een sterk wacht woord maken](https://support.microsoft.com/instantanswers/9bd5223b-efbe-aa95-b15a-2fb37bef637d/create-a-strong-password) voor meer informatie over het maken van een sterk wacht woord.
+- Gebruik complexe sterke wacht woorden voor al uw accounts. Zie een artikel met [een sterk wacht woord maken](https://support.microsoft.com/account-billing/how-to-create-a-strong-password-for-your-microsoft-account-f67e4ddd-0dbe-cd75-cebe-0cfda3cf7386) voor meer informatie over het maken van een sterk wacht woord.
 
 - In azure wordt standaard Windows-verificatie geselecteerd tijdens de installatie van de virtuele machine SQL Server. Daarom is de **sa** -aanmelding uitgeschakeld en wordt er een wacht woord toegewezen door Setup. U wordt aangeraden de **sa** -aanmelding niet te gebruiken of in te scha kelen. Als u een SQL-aanmelding nodig hebt, gebruikt u een van de volgende strategieën:
 

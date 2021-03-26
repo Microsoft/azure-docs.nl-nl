@@ -4,12 +4,12 @@ description: Biedt een overzicht van de ondersteunings instellingen en-beperking
 ms.topic: conceptual
 ms.date: 02/16/2021
 ms.custom: references_regions
-ms.openlocfilehash: ade43350bbe3fa1bcf58f47e93b948db3a5b21bc
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 12d289fdc3f84e7cbb3489a3ece283179e51772c
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101745527"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105561896"
 ---
 # <a name="support-matrix-for-azure-blobs-backup-in-preview"></a>Ondersteunings matrix voor back-ups van Azure-blobs (in preview-versie)
 
@@ -27,9 +27,9 @@ Operationele back-up van blobs maakt gebruik van BLOB Point-in-time Restore, Blo
 
 **Andere beperkingen:**
 
-- Als u een container tijdens de Bewaar periode hebt verwijderd, wordt die container niet hersteld met de herstel bewerking naar een bepaald tijdstip. Als u probeert een aantal blobs te herstellen dat blobs bevat in een verwijderde container, mislukt de herstel bewerking naar een bepaald tijdstip. Zie [voorlopig verwijderen voor containers (preview)](https://docs.microsoft.com/azure/storage/blobs/soft-delete-container-overview)voor meer informatie over het beveiligen van containers tegen verwijderen.
-- Als een BLOB tussen de warme en koele lagen is verplaatst in de periode tussen het huidige moment en het herstel punt, wordt de BLOB teruggezet naar de vorige laag. Het herstellen van blok-blobs in de opslaglaag wordt niet ondersteund. Als een BLOB in de warme laag bijvoorbeeld twee dagen geleden is verplaatst naar de archief laag en een herstel bewerking herstelt naar een bepaald punt drie dagen geleden, wordt de BLOB niet teruggezet naar de warme laag. Als u een gearchiveerde BLOB wilt herstellen, moet u deze eerst uit de laag archief verplaatsen. Zie BLOB-gegevens opnieuw [inbreken vanuit de laag archief](https://docs.microsoft.com/azure/storage/blobs/storage-blob-rehydration)voor meer informatie.
-- Een blok dat is geüpload via de [put-blok kering](https://docs.microsoft.com/rest/api/storageservices/put-block) of het [put-blok van de URL](https://docs.microsoft.com/rest/api/storageservices/put-block-from-url), maar niet is doorgevoerd via een [put-lijst](https://docs.microsoft.com/rest/api/storageservices/put-block-list), maakt geen deel uit van een BLOB en wordt dus niet hersteld als onderdeel van een herstel bewerking.
+- Als u een container tijdens de Bewaar periode hebt verwijderd, wordt die container niet hersteld met de herstel bewerking naar een bepaald tijdstip. Als u probeert een aantal blobs te herstellen dat blobs bevat in een verwijderde container, mislukt de herstel bewerking naar een bepaald tijdstip. Zie [voorlopig verwijderen voor containers (preview)](../storage/blobs/soft-delete-container-overview.md)voor meer informatie over het beveiligen van containers tegen verwijderen.
+- Als een BLOB tussen de warme en koele lagen is verplaatst in de periode tussen het huidige moment en het herstel punt, wordt de BLOB teruggezet naar de vorige laag. Het herstellen van blok-blobs in de opslaglaag wordt niet ondersteund. Als een BLOB in de warme laag bijvoorbeeld twee dagen geleden is verplaatst naar de archief laag en een herstel bewerking herstelt naar een bepaald punt drie dagen geleden, wordt de BLOB niet teruggezet naar de warme laag. Als u een gearchiveerde BLOB wilt herstellen, moet u deze eerst uit de laag archief verplaatsen. Zie BLOB-gegevens opnieuw [inbreken vanuit de laag archief](../storage/blobs/storage-blob-rehydration.md)voor meer informatie.
+- Een blok dat is geüpload via de [put-blok kering](/rest/api/storageservices/put-block) of het [put-blok van de URL](/rest/api/storageservices/put-block-from-url), maar niet is doorgevoerd via een [put-lijst](/rest/api/storageservices/put-block-list), maakt geen deel uit van een BLOB en wordt dus niet hersteld als onderdeel van een herstel bewerking.
 - Een blob met een actieve lease kan niet worden hersteld. Als een blob met een actieve lease is opgenomen in het bereik van blobs dat moet worden hersteld, mislukt de herstel bewerking automatisch. Verbreekt actieve leases voordat u de herstel bewerking start.
 - Moment opnamen worden niet gemaakt of verwijderd als onderdeel van een herstel bewerking. Alleen de basis-BLOB wordt teruggezet naar de vorige status.
 

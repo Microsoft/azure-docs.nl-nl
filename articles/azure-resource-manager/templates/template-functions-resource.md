@@ -3,12 +3,12 @@ title: 'Sjabloon functies: bronnen'
 description: Hierin worden de functies beschreven die u kunt gebruiken in een Azure Resource Manager sjabloon (ARM-sjabloon) om waarden over resources op te halen.
 ms.topic: conceptual
 ms.date: 02/10/2021
-ms.openlocfilehash: da85308e7d214f198b29b40bc380a4d33947c865
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: efd7c554e6da8b60d4834d1a1290407a6b9e94d4
+ms.sourcegitcommit: 44edde1ae2ff6c157432eee85829e28740c6950d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100364559"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105544108"
 ---
 # <a name="resource-functions-for-arm-templates"></a>Resource functies voor ARM-sjablonen
 
@@ -37,12 +37,12 @@ Retourneert de resource-ID voor een [extensie resource](../management/extension-
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Beschrijving |
+| Parameter | Vereist | Type | Description |
 |:--- |:--- |:--- |:--- |
-| resourceId |Ja |tekenreeks |De resource-ID voor de resource waarop de uitbreidings resource wordt toegepast. |
-| resourceType |Ja |tekenreeks |Het type resource, inclusief de naam ruimte van de resource provider. |
-| resourceName1 |Ja |tekenreeks |De naam van de resource. |
-| resourceName2 |Nee |tekenreeks |Volgend resource naam segment, indien nodig. |
+| resourceId |Yes |tekenreeks |De resource-ID voor de resource waarop de uitbreidings resource wordt toegepast. |
+| resourceType |Yes |tekenreeks |Het type resource, inclusief de naam ruimte van de resource provider. |
+| resourceName1 |Yes |tekenreeks |De naam van de resource. |
+| resourceName2 |No |tekenreeks |Volgend resource naam segment, indien nodig. |
 
 Ga door met het toevoegen van resource namen als para meters wanneer het resource type meer segmenten bevat.
 
@@ -179,11 +179,11 @@ De syntaxis voor deze functie is afhankelijk van de naam van de lijst bewerkinge
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Beschrijving |
+| Parameter | Vereist | Type | Description |
 |:--- |:--- |:--- |:--- |
-| ResourceName of resourceIdentifier |Ja |tekenreeks |De unieke id voor de resource. |
-| apiVersion |Ja |tekenreeks |API-versie van de runtime status van de resource. Doorgaans in de notatie **jjjj-mm-dd**. |
-| functionValues |Nee |object | Een object met waarden voor de functie. Geef dit object alleen op voor functies die ondersteuning bieden voor het ontvangen van een object met parameter waarden, zoals **listAccountSas** op een opslag account. In dit artikel wordt een voor beeld gegeven van het door geven van functie waarden. |
+| ResourceName of resourceIdentifier |Yes |tekenreeks |De unieke id voor de resource. |
+| apiVersion |Yes |tekenreeks |API-versie van de runtime status van de resource. Doorgaans in de notatie **jjjj-mm-dd**. |
+| functionValues |No |object | Een object met waarden voor de functie. Geef dit object alleen op voor functies die ondersteuning bieden voor het ontvangen van een object met parameter waarden, zoals **listAccountSas** op een opslag account. In dit artikel wordt een voor beeld gegeven van het door geven van functie waarden. |
 
 ### <a name="valid-uses"></a>Geldige toepassingen
 
@@ -245,9 +245,9 @@ Het mogelijke gebruik van lijst * wordt weer gegeven in de volgende tabel.
 | Micro soft. DevTestLab/Labs/planningen | [ListApplicable](/rest/api/dtl/schedules/listapplicable) |
 | Micro soft. DevTestLab/Labs/users/serviceFabrics | [ListApplicableSchedules](/rest/api/dtl/servicefabrics/listapplicableschedules) |
 | Micro soft. DevTestLab/Labs/informatie | [ListApplicableSchedules](/rest/api/dtl/virtualmachines/listapplicableschedules) |
-| Microsoft.DocumentDB/databaseAccounts | [listConnectionStrings](/rest/api/cosmos-db-resource-provider/2020-06-01-preview/databaseaccounts/listconnectionstrings) |
-| Microsoft.DocumentDB/databaseAccounts | [Listkeys ophalen](/rest/api/cosmos-db-resource-provider/2020-06-01-preview/databaseaccounts/listkeys) |
-| Microsoft.DocumentDB/databaseAccounts/notebookWorkspaces | [listConnectionInfo](/rest/api/cosmos-db-resource-provider/2020-06-01/notebookworkspaces/listconnectioninfo) |
+| Microsoft.DocumentDB/databaseAccounts | [listConnectionStrings](/rest/api/cosmos-db-resource-provider/2021-03-01-preview/databaseaccounts/listconnectionstrings) |
+| Microsoft.DocumentDB/databaseAccounts | [Listkeys ophalen](/rest/api/cosmos-db-resource-provider/2021-03-01-preview/databaseaccounts/listkeys) |
+| Microsoft.DocumentDB/databaseAccounts/notebookWorkspaces | [listConnectionInfo](/rest/api/cosmos-db-resource-provider/2021-03-01-preview/notebookworkspaces/listconnectioninfo) |
 | Micro soft. DomainRegistration | [listDomainRecommendations](/rest/api/appservice/domains/listrecommendations) |
 | Micro soft. DomainRegistration/topLevelDomains | [listAgreements](/rest/api/appservice/topleveldomains/listagreements) |
 | Micro soft. EventGrid/domeinen | [Listkeys ophalen](/rest/api/eventgrid/version2020-06-01/domains/listsharedaccesskeys) |
@@ -287,7 +287,7 @@ Het mogelijke gebruik van lijst * wordt weer gegeven in de volgende tabel.
 | Micro soft. notification hubs/naam ruimten/notification hubs/authorizationRules | [listkeys ophalen](/rest/api/notificationhubs/notificationhubs/listkeys) |
 | Microsoft.OperationalInsights/workspaces | [list](/rest/api/loganalytics/workspaces/list) |
 | Microsoft.OperationalInsights/workspaces | Listkeys ophalen |
-| Micro soft. PolicyInsights/herstel bewerkingen | [listDeployments](/rest/api/policy-insights/remediations/listdeploymentsatresourcegroup) |
+| Micro soft. PolicyInsights/herstel bewerkingen | [listDeployments](/rest/api/policy/remediations/listdeploymentsatresourcegroup) |
 | Micro soft. RedHatOpenShift/openShiftClusters | [listCredentials](/rest/api/openshift/openshiftclusters/listcredentials) |
 | Micro soft. relay/naam ruimten/authorizationRules | [listkeys ophalen](/rest/api/relay/namespaces/listkeys) |
 | Micro soft. relay/naam ruimten/disasterRecoveryConfigs/authorizationRules | listkeys ophalen |
@@ -439,13 +439,13 @@ Hiermee wordt bepaald of een resource type zones voor een regio ondersteunt.
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Beschrijving |
+| Parameter | Vereist | Type | Description |
 |:--- |:--- |:--- |:--- |
-| providerNamespace | Ja | tekenreeks | De naam ruimte van de resource provider voor het bron type om te controleren op zone-ondersteuning. |
-| resourceType | Ja | tekenreeks | Het bron type om te controleren op zone-ondersteuning. |
-| location | Ja | tekenreeks | De regio die moet worden gecontroleerd op zone ondersteuning. |
-| numberOfZones | Nee | geheel getal | Het aantal logische zones dat moet worden geretourneerd. De standaardwaarde is 1. Het getal moet een positief geheel getal tussen 1 en 3 zijn.  Gebruik 1 voor bronnen met één zone. Voor resources met meerdere zones moet de waarde kleiner zijn dan of gelijk zijn aan het aantal ondersteunde zones. |
-| offset | Nee | geheel getal | De offset van de eerste logische zone. De functie retourneert een fout als offset plus numberOfZones het aantal ondersteunde zones overschrijdt. |
+| providerNamespace | Yes | tekenreeks | De naam ruimte van de resource provider voor het bron type om te controleren op zone-ondersteuning. |
+| resourceType | Yes | tekenreeks | Het bron type om te controleren op zone-ondersteuning. |
+| location | Yes | tekenreeks | De regio die moet worden gecontroleerd op zone ondersteuning. |
+| numberOfZones | No | geheel getal | Het aantal logische zones dat moet worden geretourneerd. De standaardwaarde is 1. Het getal moet een positief geheel getal tussen 1 en 3 zijn.  Gebruik 1 voor bronnen met één zone. Voor resources met meerdere zones moet de waarde kleiner zijn dan of gelijk zijn aan het aantal ondersteunde zones. |
+| offset | No | geheel getal | De offset van de eerste logische zone. De functie retourneert een fout als offset plus numberOfZones het aantal ondersteunde zones overschrijdt. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -548,10 +548,10 @@ Retourneert informatie over een resource provider en de ondersteunde resource ty
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Beschrijving |
+| Parameter | Vereist | Type | Description |
 |:--- |:--- |:--- |:--- |
-| providerNamespace |Ja |tekenreeks |Naam ruimte van de provider |
-| resourceType |Nee |tekenreeks |Het type resource binnen de opgegeven naam ruimte. |
+| providerNamespace |Yes |tekenreeks |Naam ruimte van de provider |
+| resourceType |No |tekenreeks |Het type resource binnen de opgegeven naam ruimte. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -636,11 +636,11 @@ Retourneert een-object dat de runtime status van een resource aangeeft.
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Beschrijving |
+| Parameter | Vereist | Type | Description |
 |:--- |:--- |:--- |:--- |
-| ResourceName of resourceIdentifier |Ja |tekenreeks |De naam of de unieke id van een resource. Als u naar een resource in de huidige sjabloon verwijst, geeft u alleen de resource naam op als para meter. Als er wordt verwezen naar een eerder geïmplementeerde resource of als de naam van de bron ambigu is, geeft u de resource-ID op. |
-| apiVersion |Nee |tekenreeks |API-versie van de opgegeven resource. **Deze para meter is vereist als de resource niet binnen dezelfde sjabloon is ingericht.** Doorgaans in de notatie **jjjj-mm-dd**. Zie voor een geldige API-versie voor uw resource [sjabloon verwijzing](/azure/templates/). |
-| Waard |Nee |tekenreeks |Waarde die aangeeft of het volledige Resource-object moet worden geretourneerd. Als u niet opgeeft `'Full'` , wordt alleen het eigenschappen object van de resource geretourneerd. Het volledige object bevat waarden zoals de resource-ID en de locatie. |
+| ResourceName of resourceIdentifier |Yes |tekenreeks |De naam of de unieke id van een resource. Als u naar een resource in de huidige sjabloon verwijst, geeft u alleen de resource naam op als para meter. Als er wordt verwezen naar een eerder geïmplementeerde resource of als de naam van de bron ambigu is, geeft u de resource-ID op. |
+| apiVersion |No |tekenreeks |API-versie van de opgegeven resource. **Deze para meter is vereist als de resource niet binnen dezelfde sjabloon is ingericht.** Doorgaans in de notatie **jjjj-mm-dd**. Zie voor een geldige API-versie voor uw resource [sjabloon verwijzing](/azure/templates/). |
+| Waard |No |tekenreeks |Waarde die aangeeft of het volledige Resource-object moet worden geretourneerd. Als u niet opgeeft `'Full'` , wordt alleen het eigenschappen object van de resource geretourneerd. Het volledige object bevat waarden zoals de resource-ID en de locatie. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -1108,13 +1108,13 @@ Retourneert de unieke id van een resource. U gebruikt deze functie als de resour
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Beschrijving |
+| Parameter | Vereist | Type | Description |
 |:--- |:--- |:--- |:--- |
-| subscriptionId |Nee |teken reeks (in GUID-indeling) |De standaard waarde is het huidige abonnement. Geef deze waarde op als u een resource in een ander abonnement wilt ophalen. Geef deze waarde alleen op wanneer u implementeert in het bereik van een resource groep of een abonnement. |
-| resourceGroupName |Nee |tekenreeks |De standaard waarde is de huidige resource groep. Geef deze waarde op wanneer u een resource in een andere resource groep wilt ophalen. Geef deze waarde alleen op wanneer u implementeert voor het bereik van een resource groep. |
-| resourceType |Ja |tekenreeks |Het type resource, inclusief de naam ruimte van de resource provider. |
-| resourceName1 |Ja |tekenreeks |De naam van de resource. |
-| resourceName2 |Nee |tekenreeks |Volgend resource naam segment, indien nodig. |
+| subscriptionId |No |teken reeks (in GUID-indeling) |De standaard waarde is het huidige abonnement. Geef deze waarde op als u een resource in een ander abonnement wilt ophalen. Geef deze waarde alleen op wanneer u implementeert in het bereik van een resource groep of een abonnement. |
+| resourceGroupName |No |tekenreeks |De standaard waarde is de huidige resource groep. Geef deze waarde op wanneer u een resource in een andere resource groep wilt ophalen. Geef deze waarde alleen op wanneer u implementeert voor het bereik van een resource groep. |
+| resourceType |Yes |tekenreeks |Het type resource, inclusief de naam ruimte van de resource provider. |
+| resourceName1 |Yes |tekenreeks |De naam van de resource. |
+| resourceName2 |No |tekenreeks |Volgend resource naam segment, indien nodig. |
 
 Ga door met het toevoegen van resource namen als para meters wanneer het resource type meer segmenten bevat.
 
@@ -1411,12 +1411,12 @@ Retourneert de unieke id voor een resource die is geïmplementeerd op het abonne
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Beschrijving |
+| Parameter | Vereist | Type | Description |
 |:--- |:--- |:--- |:--- |
-| subscriptionId |Nee |teken reeks (in GUID-indeling) |De standaard waarde is het huidige abonnement. Geef deze waarde op als u een resource in een ander abonnement wilt ophalen. |
-| resourceType |Ja |tekenreeks |Het type resource, inclusief de naam ruimte van de resource provider. |
-| resourceName1 |Ja |tekenreeks |De naam van de resource. |
-| resourceName2 |Nee |tekenreeks |Volgend resource naam segment, indien nodig. |
+| subscriptionId |No |teken reeks (in GUID-indeling) |De standaard waarde is het huidige abonnement. Geef deze waarde op als u een resource in een ander abonnement wilt ophalen. |
+| resourceType |Yes |tekenreeks |Het type resource, inclusief de naam ruimte van de resource provider. |
+| resourceName1 |Yes |tekenreeks |De naam van de resource. |
+| resourceName2 |No |tekenreeks |Volgend resource naam segment, indien nodig. |
 
 Ga door met het toevoegen van resource namen als para meters wanneer het resource type meer segmenten bevat.
 
@@ -1543,11 +1543,11 @@ Retourneert de unieke id voor een resource die is geïmplementeerd op Tenant niv
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Beschrijving |
+| Parameter | Vereist | Type | Description |
 |:--- |:--- |:--- |:--- |
-| resourceType |Ja |tekenreeks |Het type resource, inclusief de naam ruimte van de resource provider. |
-| resourceName1 |Ja |tekenreeks |De naam van de resource. |
-| resourceName2 |Nee |tekenreeks |Volgend resource naam segment, indien nodig. |
+| resourceType |Yes |tekenreeks |Het type resource, inclusief de naam ruimte van de resource provider. |
+| resourceName1 |Yes |tekenreeks |De naam van de resource. |
+| resourceName2 |No |tekenreeks |Volgend resource naam segment, indien nodig. |
 
 Ga door met het toevoegen van resource namen als para meters wanneer het resource type meer segmenten bevat.
 

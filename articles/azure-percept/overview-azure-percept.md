@@ -1,18 +1,18 @@
 ---
 title: Overzicht van Azure percept
 description: Meer informatie over het Azure percept-platform
-author: elqu20
-ms.author: v-elqu
+author: mimcco
+ms.author: mimcco
 ms.service: azure-percept
 ms.topic: overview
 ms.date: 03/23/2021
 ms.custom: template-overview
-ms.openlocfilehash: 12ca7dff7d106941cc8947d9d3040bcefefde00a
-ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
+ms.openlocfilehash: 09ee8346b62f868be3811ebfb6b3dc36ff9d0f83
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "104953586"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105567658"
 ---
 # <a name="introduction-to-azure-percept"></a>Inleiding tot Azure percept
 
@@ -28,21 +28,21 @@ De integratie van een gezichten bij het implementeren van Edge AI-oplossingen op
 
 De belangrijkste onderdelen van Azure percept zijn:
 
-1. [Azure percept DK.](./overview-azure-percept-dk.md)
+- [Azure percept DK.](./overview-azure-percept-dk.md)
 
     - Een Development Kit die flexibeler is voor het ondersteunen van een groot aantal verschillende scenario's voor het maken van prototypen voor apparaten voor apparaat bouwers, oplossings bouwers en klanten.
 
         > [!div class="nextstepaction"]
         > [Nu kopen](https://go.microsoft.com/fwlink/p/?LinkId=2155270)
 
-1. Services en werk stromen die het ontwikkelen van Edge AI-modellen en oplossingen versnellen.
+- Services en werk stromen die het ontwikkelen van Edge AI-modellen en oplossingen versnellen.
 
     - Ontwikkel werk stromen en vooraf gebouwde modellen die toegankelijk zijn vanuit [Azure percept Studio](https://go.microsoft.com/fwlink/?linkid=2135819).
     - Model ontwikkelings Services.
     - Apparaatbeheer Services voor schalen.
     - End-to-end beveiliging.
 
-1. AI-hardware-referentie ontwerp en-certificerings Programma's.
+- AI-hardware-referentie ontwerp en-certificerings Programma's.
 
     - Biedt het ecosysteem van hardware-ontwikkel aars met patronen en aanbevolen procedures voor het ontwikkelen van Edge AI-hardware die eenvoudig kan worden geïntegreerd met Azure AI-en IoT-Services.
 

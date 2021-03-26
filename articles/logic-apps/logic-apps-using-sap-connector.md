@@ -9,12 +9,12 @@ ms.reviewer: estfan, daviburg, logicappspm
 ms.topic: article
 ms.date: 03/24/2021
 tags: connectors
-ms.openlocfilehash: 86bc43e043e7d67ff149391b111831df8171f34e
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: c81e40f769ab9eefdd919f3336591dc065d6cfc9
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105048762"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105564110"
 ---
 # <a name="connect-to-sap-systems-from-azure-logic-apps"></a>Verbinding maken met SAP-systemen in Azure Logic Apps
 
@@ -568,7 +568,7 @@ U kunt [alle configuratie-en service logboeken van uw gateway exporteren](/data-
 
 #### <a name="capture-etw-events"></a>ETW-gebeurtenissen vastleggen
 
-Geavanceerde gebruikers kunnen optioneel ETW-gebeurtenissen rechtstreeks vastleggen. U kunt vervolgens [uw gegevens in azure Diagnostics gebruiken in Event hubs](../azure-monitor/agents/diagnostics-extension-stream-event-hubs.md) of [uw gegevens verzamelen in azure monitor logboeken](/azure/azure-monitor/agents/diagnostics-extension-logs). Zie voor meer informatie de [Aanbevolen procedures voor het verzamelen en opslaan van gegevens](/azure/architecture/best-practices/monitoring#collecting-and-storing-data). U kunt [PerfView](https://github.com/Microsoft/perfview/blob/master/README.md) gebruiken om te werken met de resulterende etl-bestanden of u kunt uw eigen programma schrijven. In deze walkthrough wordt gebruikgemaakt van PerfView:
+Geavanceerde gebruikers kunnen optioneel ETW-gebeurtenissen rechtstreeks vastleggen. U kunt vervolgens [uw gegevens in azure Diagnostics gebruiken in Event hubs](../azure-monitor/agents/diagnostics-extension-stream-event-hubs.md) of [uw gegevens verzamelen in azure monitor logboeken](../azure-monitor/agents/diagnostics-extension-logs.md). Zie voor meer informatie de [Aanbevolen procedures voor het verzamelen en opslaan van gegevens](/azure/architecture/best-practices/monitoring#collecting-and-storing-data). U kunt [PerfView](https://github.com/Microsoft/perfview/blob/master/README.md) gebruiken om te werken met de resulterende etl-bestanden of u kunt uw eigen programma schrijven. In deze walkthrough wordt gebruikgemaakt van PerfView:
 
 1. Selecteer in het menu **PerfView verzamelen Collect** &gt;  om de gebeurtenissen vast te leggen.
 
@@ -763,7 +763,7 @@ Hier volgt een voor beeld waarin wordt uitgelegd hoe u afzonderlijke IDocs uit e
 
    ![SAP-trigger toevoegen aan de logische app](./media/logic-apps-using-sap-connector/first-step-trigger.png)
 
-1. [Voeg een reactie actie toe aan uw logische app](/azure/connectors/connectors-native-reqres#add-a-response-action) om direct te antwoorden met de status van uw SAP-aanvraag. Het is een best practice om deze actie onmiddellijk na de trigger toe te voegen, om het communicatie kanaal met uw SAP-server vrij te maken. Kies een van de volgende status codes ( `statusCode` ) die u wilt gebruiken in uw reactie actie:
+1. [Voeg een reactie actie toe aan uw logische app](../connectors/connectors-native-reqres.md#add-a-response-action) om direct te antwoorden met de status van uw SAP-aanvraag. Het is een best practice om deze actie onmiddellijk na de trigger toe te voegen, om het communicatie kanaal met uw SAP-server vrij te maken. Kies een van de volgende status codes ( `statusCode` ) die u wilt gebruiken in uw reactie actie:
 
     * **202 geaccepteerd**, wat betekent dat de aanvraag is geaccepteerd voor verwerking, maar de verwerking nog niet is voltooid.
 

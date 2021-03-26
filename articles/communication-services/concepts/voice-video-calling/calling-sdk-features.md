@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 39331cb83b233f6b91344e6e299ed81f187fe9d9
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.openlocfilehash: 240bdaee9073ab18e175e2911ac1c23ae49b3d7e
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105108385"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105562406"
 ---
 # <a name="calling-sdk-overview"></a>Overzicht van de SDK
 
@@ -72,13 +72,33 @@ De volgende lijst bevat de set functies die momenteel beschikbaar zijn in de Azu
 |                   | Schaal modus instellen/bijwerken                                                                                           | ✔️   | ✔️            | ✔️ 
 |                   | Externe video stroom weer geven                                                                                          | ✔️   | ✔️            | ✔️
 
+## <a name="calling-client-library-streaming-support"></a>Ondersteuning voor het streamen van aanroepende clientbibliotheek
+De communicatie services die client bibliotheek aanroept, ondersteunt de volgende streaming-configuraties:
 
+| Limiet          |Web | Android/iOS|
+|-----------|----|------------|
+|**Aantal uitgaande streams dat tegelijkertijd kan worden verzonden** |1 video + 1 scherm delen | 1 video + 1 scherm delen|
+|**Aantal binnenkomende streams dat tegelijkertijd kan worden weergegeven** |1 video + 1 scherm delen| 6 video + 1 scherm delen |
+
+## <a name="calling-client-library-timeouts"></a>Time-outs van client bibliotheek aanroepen
+
+De volgende time-outs zijn van toepassing op de communicatie services die client bibliotheken aanroepen:
+
+| Bewerking           | Time-out in seconden |
+| -------------- | ---------- |
+| Deel nemer opnieuw verbinden/verwijderen | 120 |
+| Een nieuwe modale functie toevoegen aan of verwijderen uit een oproep (video starten/stoppen of scherm delen) | 40 |
+| Time-out voor overdracht van oproep | 60 |
+| time-out voor aanleg van 1:1-aanroepen | 85 |
+| Time-out voor groeperen van groeps aanroepen | 85 |
+| Time-out voor PSTN-aanroepen | 115 |
+| 1:1-aanroep promo veren naar een time-out voor groeps aanroepen | 115 |
 
 ## <a name="javascript-calling-sdk-support-by-os-and-browser"></a>Java script aanroepen van SDK-ondersteuning door besturings systeem en browser
 
 De volgende tabel bevat de set ondersteunde browsers die momenteel beschikbaar zijn. De meest recente drie versies van de browser worden ondersteund, tenzij anders aangegeven.
 
-|                                  | Chrome | Safari  | Rand (chroom) | 
+| Platform                         | Chrome | Safari  | Rand (chroom) | 
 | -------------------------------- | -------| ------  | --------------  |
 | Android                          |  ✔️    | ❌     | ❌             |
 | iOS                              |  ❌    | ✔️**** | ❌             |
@@ -114,15 +134,6 @@ Met deze iframe kunt u bijvoorbeeld toegang tot de camera en microfoon toestaan:
 ```html
 <iframe allow="camera *; microphone *">
 ```
-
-## <a name="calling-sdk-streaming-support"></a>Ondersteuning voor SDK-streaming aanroepen
-De communicatie services die SDK aanroept, ondersteunt de volgende streaming-configuraties:
-
-|           |Web | Android/iOS|
-|-----------|----|------------|
-|**Aantal uitgaande streams dat tegelijkertijd kan worden verzonden** |1 video of 1 scherm delen | 1 video + 1 scherm delen|
-|**Aantal binnenkomende streams dat tegelijkertijd kan worden weergegeven** |1 video of 1 scherm delen| 6 video + 1 scherm delen |
-
 
 ## <a name="next-steps"></a>Volgende stappen
 

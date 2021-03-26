@@ -8,12 +8,12 @@ ms.service: frontdoor
 ms.topic: conceptual
 ms.date: 02/18/2021
 ms.author: duau
-ms.openlocfilehash: 73b2e8e59774e12ddb9aa684382510d1f2c151b8
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 63ea252a4b4c673ae3028adb7ab793ac21fb2e99
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "101099240"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105564582"
 ---
 # <a name="caching-with-azure-front-door-standardpremium-preview"></a>Opslaan in cache met Azure front deur Standard/Premium (preview)
 
@@ -26,6 +26,10 @@ In dit artikel leert u hoe front deur Standard/Premium (preview) routes en regel
 > Azure front deur Standard/Premium (preview) is momenteel beschikbaar als open bare preview.
 > Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt.
 > Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+
+## <a name="request-methods"></a>Aanvraag methoden
+
+Alleen de GET-aanvraagmethode kan inhoud in de cache in Azure Front Door genereren. Alle andere aanvraag methoden worden altijd via het netwerk geproxyeerd.
 
 ## <a name="delivery-of-large-files"></a>Levering van grote bestanden
 

@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 author: mathapli
 ms.author: mathapli
 ms.date: 01/18/2021
-ms.openlocfilehash: adcd91d58b3bb5fde3ffa81c828c58d4b6db48d4
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 7a9fa4a6f44e88caa6f98d5e1c56adaa065fa29a
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101721154"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105558705"
 ---
 # <a name="troubleshoot-virtual-machine-certification"></a>Problemen met certificering van virtuele machines oplossen
 
@@ -620,11 +620,10 @@ Zie [aanbiedingen bekijken en publiceren](review-publish-offer.md)om het publica
 * Python-versie hoger dan 2,8 
 
 
-Ga voor meer informatie naar [VM-extensie](https://docs.microsoft.com/azure/virtual-machines/extensions/diagnostics-linux).
+Ga voor meer informatie naar [VM-extensie](../virtual-machines/extensions/diagnostics-linux.md).
      
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Eigenschappen van een VM-aanbieding configureren](azure-vm-create-properties.md)
 - [Beloonde actieve Marketplace](partner-center-portal/marketplace-rewards.md)
 - Als u vragen of feedback over verbeteringen hebt, neemt u contact op met het [partner centrum-ondersteuning](https://aka.ms/marketplacepublishersupport).
- 

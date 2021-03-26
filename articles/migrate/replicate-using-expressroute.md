@@ -6,19 +6,19 @@ ms.author: deseelam
 ms.manager: bsiva
 ms.topic: how-to
 ms.date: 02/22/2021
-ms.openlocfilehash: 5dd27e4502ac70ef10f2623ed6dfb2f62de37f06
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 9aa9a42422f3c114490d1dbb28a146b6e76ca8cd
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102448780"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105558615"
 ---
 # <a name="replicate-data-over-expressroute-with-azure-migrate-server-migration"></a>Gegevens repliceren via ExpressRoute met Azure Migrate: Server migratie
 
-In dit artikel vindt u informatie over het configureren van [Azure migrate: Server migratie](https://docs.microsoft.com/azure/migrate/migrate-services-overview#azure-migrate-server-migration-tool) om gegevens te repliceren via een ExpressRoute-circuit tijdens het migreren van servers naar Azure.
+In dit artikel vindt u informatie over het configureren van [Azure migrate: Server migratie](./migrate-services-overview.md#azure-migrate-server-migration-tool) om gegevens te repliceren via een ExpressRoute-circuit tijdens het migreren van servers naar Azure.
 
 ## <a name="understand-azure-expressroute-circuits"></a>Meer informatie over Azure ExpressRoute-circuits
-Een ExpressRoute-circuit (er) is een verbinding met uw on-premises infra structuur met micro soft via een connectiviteits provider. ExpressRoute-circuits kunnen worden geconfigureerd voor het gebruik van privé-peering, micro soft-peering of beide. Raadpleeg het artikel over [ExpressRoute-circuits en peering](https://docs.microsoft.com/azure/expressroute/expressroute-circuit-peerings#peeringcompare) voor meer informatie over de verschillende opties voor peering die beschikbaar zijn met ExpressRoute.
+Een ExpressRoute-circuit (er) is een verbinding met uw on-premises infra structuur met micro soft via een connectiviteits provider. ExpressRoute-circuits kunnen worden geconfigureerd voor het gebruik van privé-peering, micro soft-peering of beide. Raadpleeg het artikel over [ExpressRoute-circuits en peering](../expressroute/expressroute-circuit-peerings.md#peeringcompare) voor meer informatie over de verschillende opties voor peering die beschikbaar zijn met ExpressRoute.
 
 Het hulp programma voor server migratie van Azure Migrate helpt u bij het migreren van on-premises servers en servers van andere Clouds naar Azure virtual machines. Het hulp programma werkt door een doorlopende replicatie stroom in te stellen voor het repliceren van gegevens van de servers die moeten worden gemigreerd naar Managed disks in uw Azure-abonnement. Wanneer u klaar bent om de servers te migreren, worden de gerepliceerde gegevens in azure gebruikt voor het migreren van de servers.
 
@@ -104,7 +104,7 @@ U kunt alleen privé-eind punten maken op een GPv2-opslag account (Algemeen v2).
     > [!Note]
     > Het virtuele netwerk moet het ExpressRoute gateway-eind punt bevatten of moeten zijn verbonden met het virtuele netwerk met de ExpressRoute-gateway. 
 
-    Selecteer in de sectie **integratie** van privé-DNS **Ja** en integreer met een privé-DNS-zone. Als u **Ja** selecteert, wordt de DNS-zone automatisch gekoppeld aan het geselecteerde virtuele netwerk en worden de DNS-records toegevoegd die vereist zijn voor de DNS-omzetting van nieuwe ip's en volledig gekwalificeerde domein namen die zijn gemaakt voor het persoonlijke eind punt. Meer informatie over [privé-DNS-zones.](https://docs.microsoft.com/azure/dns/private-dns-overview)
+    Selecteer in de sectie **integratie** van privé-DNS **Ja** en integreer met een privé-DNS-zone. Als u **Ja** selecteert, wordt de DNS-zone automatisch gekoppeld aan het geselecteerde virtuele netwerk en worden de DNS-records toegevoegd die vereist zijn voor de DNS-omzetting van nieuwe ip's en volledig gekwalificeerde domein namen die zijn gemaakt voor het persoonlijke eind punt. Meer informatie over [privé-DNS-zones.](../dns/private-dns-overview.md)
 
     ![privatednszone](./media/replicate-using-expressroute/private-dns-zone.png)
 
@@ -144,14 +144,14 @@ Als u niet de optie hebt geselecteerd om te integreren met een privé-DNS-zone o
     b. Voeg op de pagina **recordset toevoegen** een vermelding voor de Fully Qualified Domain name en het persoonlijke IP-adres toe als een type record.
 
 > [!Important]
-> U kunt extra DNS-instellingen vereisen om het privé-IP-adres van het privé-eind punt van het opslag account op te lossen vanuit de bron omgeving. [Lees dit artikel](https://docs.microsoft.com/azure/private-link/private-endpoint-dns#on-premises-workloads-using-a-dns-forwarder) om inzicht te krijgen in de vereiste DNS-configuratie.
+> U kunt extra DNS-instellingen vereisen om het privé-IP-adres van het privé-eind punt van het opslag account op te lossen vanuit de bron omgeving. [Lees dit artikel](../private-link/private-endpoint-dns.md#on-premises-workloads-using-a-dns-forwarder) om inzicht te krijgen in de vereiste DNS-configuratie.
 
 ## <a name="replicate-data-using-an-expressroute-circuit-with-microsoft-peering"></a>Gegevens repliceren met behulp van een ExpressRoute-circuit met micro soft-peering
 
 U kunt micro soft-peering of een bestaand openbaar peering domein (afgeschaft voor nieuwe ExpressRoute-verbindingen) gebruiken om het replicatie verkeer via een ExpressRoute-circuit te routeren, zoals in het onderstaande diagram wordt geïllustreerd.
 ![replicationwithmicrosoftpeering](./media/replicate-using-expressroute/replication-with-microsoft-peering.png)
 
-Zelfs als er replicatie gegevens over het micro soft-peered circuit worden overgenomen, hebt u nog steeds Internet verbinding nodig vanaf de on-premises site voor andere communicatie (besturings vlak) met de Azure Migrate service. Er zijn enkele extra Url's die niet bereikbaar zijn via ExpressRoute, dat de replicatie-en Hyper-V-host toegang nodig heeft om het replicatie proces te organiseren. U kunt de URL-vereisten controleren op basis van het migratie scenario, [VMware-agentloze migraties](https://docs.microsoft.com/azure/migrate/migrate-appliance#public-cloud-urls) of [migraties op basis](https://docs.microsoft.com/azure/migrate/migrate-replication-appliance)van een agent.  
+Zelfs als er replicatie gegevens over het micro soft-peered circuit worden overgenomen, hebt u nog steeds Internet verbinding nodig vanaf de on-premises site voor andere communicatie (besturings vlak) met de Azure Migrate service. Er zijn enkele extra Url's die niet bereikbaar zijn via ExpressRoute, dat de replicatie-en Hyper-V-host toegang nodig heeft om het replicatie proces te organiseren. U kunt de URL-vereisten controleren op basis van het migratie scenario, [VMware-agentloze migraties](./migrate-appliance.md#public-cloud-urls) of [migraties op basis](./migrate-replication-appliance.md)van een agent.  
 
 Als u een proxy op uw on-premises site gebruikt en ExpressRoute voor het replicatie verkeer wilt gebruiken, moet u een proxy-bypass voor relevante Url's op het on-premises apparaat configureren. 
 
@@ -172,7 +172,7 @@ Als u een proxy op uw on-premises site gebruikt en ExpressRoute voor het replica
 
 Volg de onderstaande stappen voor het configureren van de lijst proxy bypass op de configuratie server en de proces servers:
 
-1. [Down load het PsExec-hulp programma](https://docs.microsoft.com/sysinternals/downloads/psexec) om toegang te krijgen tot de systeem gebruikers context.
+1. [Down load het PsExec-hulp programma](/sysinternals/downloads/psexec) om toegang te krijgen tot de systeem gebruikers context.
 2. Open Internet Explorer in de context van het systeem gebruikers door de volgende opdracht regel PsExec-s-i "%programfiles%\Internet Explorer\iexplore.exe" uit te voeren.
 3. Proxy-instellingen toevoegen in Internet Explorer.
 4. Voeg in de lijst overs Laan de Azure Storage URL. *. blob. core. Windows. net toe.  
@@ -185,10 +185,10 @@ Daarnaast moet u routes adverteren in het route filter voor de volgende BGP-comm
 - Regionale BGP-Community voor de Azure-doel regio (regio voor migratie)
 - BGP-Community voor Azure Active Directory (12076:5060)
 
-Meer informatie over [route filters](https://docs.microsoft.com/azure/expressroute/how-to-routefilter-portal) en de lijst met [BGP-community's voor ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-routing#bgp). 
+Meer informatie over [route filters](../expressroute/how-to-routefilter-portal.md) en de lijst met [BGP-community's voor ExpressRoute](../expressroute/expressroute-routing.md#bgp). 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over [ExpressRoute-circuits](https://docs.microsoft.com/azure/expressroute/expressroute-circuit-peerings).
-- Meer informatie over [ExpressRoute-routerings domeinen](https://docs.microsoft.com/azure/expressroute/expressroute-circuit-peerings#peeringcompare).
-- Meer informatie over [privé-eind punten](https://docs.microsoft.com/azure/private-link/private-endpoint-overview).
+- Meer informatie over [ExpressRoute-circuits](../expressroute/expressroute-circuit-peerings.md).
+- Meer informatie over [ExpressRoute-routerings domeinen](../expressroute/expressroute-circuit-peerings.md#peeringcompare).
+- Meer informatie over [privé-eind punten](../private-link/private-endpoint-overview.md).

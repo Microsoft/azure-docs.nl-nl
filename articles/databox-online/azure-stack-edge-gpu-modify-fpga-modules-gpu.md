@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 02/22/2021
 ms.author: alkohli
-ms.openlocfilehash: 660fbf7cc4dd28c800d8f49fd5d990c99f97c4c8
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 1276a242efb1917a0c4a24aa73c3e0d11f81e158
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102442992"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105559159"
 ---
 # <a name="run-existing-iot-edge-modules-from-azure-stack-edge-pro-fpga-devices-on-azure-stack-edge-pro-gpu-device"></a>Bestaande IoT Edge-modules uitvoeren vanaf Azure Stack Edge Pro FPGA-apparaten op Azure Stack Edge Pro GPU-apparaat
 
@@ -248,4 +248,4 @@ Voor de op Kubernetes gebaseerde IoT Edge-instellingen op GPU-apparaten moet u d
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over hoe u [GPU kunt configureren voor het gebruik van een module](azure-stack-edge-j-series-configure-gpu-modules.md).
+- Meer informatie over hoe u [GPU kunt configureren voor het gebruik van een module](./azure-stack-edge-gpu-configure-gpu-modules.md).

@@ -8,12 +8,12 @@ ms.service: load-balancer
 ms.topic: how-to
 ms.date: 02/12/2021
 ms.author: allensu
-ms.openlocfilehash: 9ec217cefb05929ed6f5c7395df5e68891e823ac
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 95d0e1ceb9e05ce58f388c3f88dc98b2cf6a0cc5
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101739777"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105559584"
 ---
 # <a name="retrieve-load-balancer-metadata-using-the-azure-instance-metadata-service-imds"></a>Load balancer meta gegevens ophalen met behulp van de Azure Instance Metadata Service (IMDS)
 
@@ -30,7 +30,7 @@ ms.locfileid: "101739777"
 Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -NoProxy -Uri "http://169.254.169.254:80/metadata/loadbalancer?api-version=2020-10-01" | ConvertTo-Json
 ```
 > [!NOTE]
-> De para meter-geen proxy is geïntroduceerd in Power shell 6,0. Als u een oudere versie van Power shell gebruikt, verwijdert u-de proxy in de hoofd tekst van de aanvraag en zorgt u ervoor dat u geen proxy gebruikt tijdens het ophalen van IMDS-gegevens. Klik [hier](https://docs.microsoft.com/azure/virtual-machines/windows/instance-metadata-service?tabs=windows#proxies) voor meer informatie.
+> De para meter-geen proxy is geïntroduceerd in Power shell 6,0. Als u een oudere versie van Power shell gebruikt, verwijdert u-de proxy in de hoofd tekst van de aanvraag en zorgt u ervoor dat u geen proxy gebruikt tijdens het ophalen van IMDS-gegevens. Klik [hier](../virtual-machines/windows/instance-metadata-service.md?tabs=windows#proxies) voor meer informatie.
 > 
 ### <a name="linux"></a>[Linux](#tab/linux/)
 
@@ -89,4 +89,3 @@ Meer informatie over [Azure instance metadata service](../virtual-machines/windo
 [Alle meta gegevens voor een exemplaar ophalen](../virtual-machines/windows/instance-metadata-service.md?tabs=windows#access-azure-instance-metadata-service)
 
 [Een standaard load balancer implementeren](quickstart-load-balancer-standard-public-portal.md)
-

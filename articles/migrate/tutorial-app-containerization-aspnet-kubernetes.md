@@ -7,12 +7,12 @@ manager: bsiva
 ms.topic: tutorial
 ms.date: 3/2/2021
 ms.author: rahugup
-ms.openlocfilehash: 422a911c2c0bb6aa1252ebb649368b61aa350b6e
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.openlocfilehash: 464e2450b4d4dea9fc650ad8869af4215d3db1a7
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105025574"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105561794"
 ---
 # <a name="aspnet-app-containerization-and-migration-to-azure-kubernetes-service"></a>ASP.NET app container opslag en migratie naar Azure Kubernetes service
 
@@ -60,7 +60,7 @@ Voordat u aan deze zelfstudie begint, dient u eerst:
 **Vereiste** | **Details**
 --- | ---
 **Een computer identificeren om het hulp programma te installeren** | Een Windows-computer voor het installeren en uitvoeren van de Azure Migrate: app container opslag-hulp programma. De Windows-computer kan een server (Windows Server 2016 of hoger) of client (Windows 10) besturings systeem zijn, wat betekent dat het hulp programma ook op uw bureau blad kan worden uitgevoerd. <br/><br/> De Windows-computer waarop het hulpprogramma wordt uitgevoerd, moet een netwerkverbinding hebben met de servers/virtuele machines waarop de ASP.NET-toepassingen worden gehost die in containers moeten worden opgeslagen.<br/><br/> Zorg ervoor dat er 6 GB ruimte beschikbaar is op de Windows-computer waarop het Azure Migrate: app container opslag-hulp programma voor het opslaan van toepassings artefacten. <br/><br/> De Windows-computer moet toegang hebben tot internet, rechtstreeks of via een proxy. <br/> <br/>Installeer het hulp programma micro soft Web Deploy op de computer waarop het hulp programma voor de app container opslag helper en de toepassings server worden uitgevoerd als dat nog niet is gebeurd. U kunt het hulp programma [hier](https://aka.ms/webdeploy3.6) downloaden
-**Toepassingsservers** | Externe communicatie van Power shell inschakelen op de toepassings servers: Meld u aan bij de toepassings server en volg [deze](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting) instructies om externe communicatie van Power shell in te scha kelen. <br/><br/> Als op de toepassings server Windows Server 2008 R2 wordt uitgevoerd, moet u ervoor zorgen dat Power shell 5,1 op de toepassings server is geïnstalleerd. Volg de [onderstaande](https://docs.microsoft.com/powershell/scripting/windows-powershell/wmf/setup/install-configure) instructie om power shell 5,1 te downloaden en te installeren op de toepassings server. <br/><br/> Installeer het hulp programma micro soft Web Deploy op de computer waarop het hulp programma voor de app container opslag helper en de toepassings server worden uitgevoerd als dat nog niet is gebeurd. U kunt het hulp programma [hier](https://aka.ms/webdeploy3.6) downloaden
+**Toepassingsservers** | Externe communicatie van Power shell inschakelen op de toepassings servers: Meld u aan bij de toepassings server en volg [deze](/powershell/module/microsoft.powershell.core/enable-psremoting) instructies om externe communicatie van Power shell in te scha kelen. <br/><br/> Als op de toepassings server Windows Server 2008 R2 wordt uitgevoerd, moet u ervoor zorgen dat Power shell 5,1 op de toepassings server is geïnstalleerd. Volg de [onderstaande](/powershell/scripting/windows-powershell/wmf/setup/install-configure) instructie om power shell 5,1 te downloaden en te installeren op de toepassings server. <br/><br/> Installeer het hulp programma micro soft Web Deploy op de computer waarop het hulp programma voor de app container opslag helper en de toepassings server worden uitgevoerd als dat nog niet is gebeurd. U kunt het hulp programma [hier](https://aka.ms/webdeploy3.6) downloaden
 **ASP.NET-toepassing** | Het hulp programma ondersteunt momenteel <br/><br/> -ASP.NET-toepassingen die gebruikmaken van Microsoft .NET Framework 3,5 of hoger.<br/> -Toepassings servers met Windows Server 2008 R2 of hoger (op toepassings servers moet Power shell versie 5,1 worden uitgevoerd). <br/> -Toepassingen die worden uitgevoerd op Internet Information Services (IIS) 7,5 of hoger. <br/><br/> Het hulp programma biedt momenteel geen ondersteuning voor <br/><br/> -Toepassingen die Windows-verificatie vereisen (AKS ondersteunt momenteel geen gMSA). <br/> -Toepassingen die afhankelijk zijn van andere Windows-services die buiten IIS worden gehost.
 
 
@@ -180,7 +180,7 @@ Parameterizing de configuratie is beschikbaar als para meter voor implementatie 
 
 ### <a name="externalize-file-system-dependencies"></a>Afhankelijkheden van Externalize-bestands systeem
 
- U kunt andere mappen toevoegen die door uw toepassing worden gebruikt. Geef op of ze moeten deel uitmaken van de container installatie kopie of moeten worden extern via permanente volumes op een Azure-bestands share. Het gebruik van permanente volumes werkt prima voor stateful toepassingen die de status buiten de container opslaan of andere statische inhoud die is opgeslagen op het bestands systeem. [Meer informatie](https://docs.microsoft.com/azure/aks/concepts-storage)
+ U kunt andere mappen toevoegen die door uw toepassing worden gebruikt. Geef op of ze moeten deel uitmaken van de container installatie kopie of moeten worden extern via permanente volumes op een Azure-bestands share. Het gebruik van permanente volumes werkt prima voor stateful toepassingen die de status buiten de container opslaan of andere statische inhoud die is opgeslagen op het bestands systeem. [Meer informatie](../aks/concepts-storage.md)
 
 1. Klik op **bewerken** onder app-mappen om de gedetecteerde toepassings mappen te controleren. De gedetecteerde toepassings mappen zijn geïdentificeerd als verplichte artefacten die nodig zijn voor de toepassing en worden gekopieerd naar de container installatie kopie.
 
@@ -195,7 +195,7 @@ Parameterizing de configuratie is beschikbaar als para meter voor implementatie 
 ## <a name="build-container-image"></a>Containerinstallatiekopie maken
 
 
-1. **Selecteer Azure container Registry**: gebruik de vervolg keuzelijst om een [Azure container Registry](https://docs.microsoft.com/azure/container-registry/) te selecteren dat wordt gebruikt om de container installatie kopieën voor de apps te maken en op te slaan. U kunt een bestaande Azure Container Registry gebruiken of ervoor kiezen om een nieuwe te maken met behulp van de optie nieuwe REGI ster maken.
+1. **Selecteer Azure container Registry**: gebruik de vervolg keuzelijst om een [Azure container Registry](../container-registry/index.yml) te selecteren dat wordt gebruikt om de container installatie kopieën voor de apps te maken en op te slaan. U kunt een bestaande Azure Container Registry gebruiken of ervoor kiezen om een nieuwe te maken met behulp van de optie nieuwe REGI ster maken.
 
     ![Scherm afbeelding voor de selectie van de app-ACR.](./media/tutorial-containerize-apps-aks/build-aspnet-app.png)
 

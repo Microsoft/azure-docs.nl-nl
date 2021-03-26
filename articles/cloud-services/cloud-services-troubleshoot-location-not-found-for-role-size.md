@@ -7,12 +7,12 @@ ms.author: v-mibufo
 ms.service: cloud-services
 ms.topic: troubleshooting
 ms.date: 02/22/2021
-ms.openlocfilehash: b11aedb52be3c263c781c2ac68d1d5197ba4def2
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 3d1a1135db0421d89d4c6c9f278c86e02cb5cb32
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101745719"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105558955"
 ---
 # <a name="troubleshoot-locationnotfoundforrolesize-when-deploying-a-cloud-service-classic-to-azure"></a>Problemen met LocationNotFoundForRoleSize oplossen bij het implementeren van een Cloud service (klassiek) naar Azure
 
@@ -47,7 +47,7 @@ In dit scenario moet u een andere regio of SKU selecteren om uw Cloud service (k
 
 ### <a name="list-skus-in-region-using-azure-cli"></a>Sku's in regio weer geven met behulp van Azure CLI
 
-U kunt de opdracht [AZ VM List-sku's](https://docs.microsoft.com/cli/azure/vm.html#az_vm_list_skus) gebruiken.
+U kunt de opdracht [AZ VM List-sku's](/cli/azure/vm.html#az_vm_list_skus) gebruiken.
 
 - Gebruik de `--location` para meter voor het filteren van uitvoer naar de locatie die u gebruikt.
 - Gebruik de `--size` para meter om te zoeken op een gedeeltelijke grootte naam.
@@ -63,7 +63,7 @@ U kunt de opdracht [AZ VM List-sku's](https://docs.microsoft.com/cli/azure/vm.ht
 
 #### <a name="list-skus-in-region-using-powershell"></a>Sku's in regio weer geven met behulp van Power shell
 
-U kunt de opdracht [Get-AzComputeResourceSku](https://docs.microsoft.com/powershell/module/az.compute/get-azcomputeresourcesku) gebruiken.
+U kunt de opdracht [Get-AzComputeResourceSku](/powershell/module/az.compute/get-azcomputeresourcesku) gebruiken.
 
 - De resultaten filteren op locatie.
 - U moet de meest recente versie van Power shell voor deze opdracht hebben.
@@ -91,7 +91,7 @@ Get-AzComputeResourceSku | where {$_.Locations.Contains("centralus") -and $_.Res
 
 #### <a name="list-skus-in-region-using-rest-api"></a>Sku's in regio weer geven met REST API
 
-U kunt de bewerking [resource-sku's-List](https://docs.microsoft.com/rest/api/compute/resourceskus/list) gebruiken. Het retourneert beschik bare Sku's en regio's in de volgende indeling:
+U kunt de bewerking [resource-sku's-List](/rest/api/compute/resourceskus/list) gebruiken. Het retourneert beschik bare Sku's en regio's in de volgende indeling:
 
 ```json
 {

@@ -329,6 +329,8 @@
           href: how-to-create-asset.md
         - name: Media uploaden
           href: how-to-upload-media.md
+        - name: Meerdere opslag accounts beheren
+          href: media-services-managing-multiple-storage-accounts.md
     - name: Transformaties en taken maken
       items:
         - name: Transformaties maken
@@ -367,6 +369,8 @@
                   href: how-to-create-overlay.md
                 - name: Miniaturen genereren met .NET
                   href: media-services-generate-thumbnails-dotnet.md
+                - name: Video's bijsnijden met .NET
+                  href: crop-howto.md
             - name: Met CLI
               displayName: 'encode, encoding, custom, transform'
               href: custom-preset-cli-howto.md
@@ -417,6 +421,12 @@
           href: offline-widevine-for-android.md
         - name: Offline PlayReady voor Windows 10
           href: offline-plaready-streaming-for-windows-10.md
+    - name: Azure Functions gebruiken
+      items:
+        - name: Met .NET
+          items:
+            - name: Azure Functions .NET gebruiken
+              href: media-services-dotnet-how-to-use-azure-functions.md
     - name: Filters maken
       items:
         - name: Met .NET
@@ -440,6 +450,10 @@
           href: download-results-howto.md
         - name: Beschrijvende audio signaleren
           href: signal-descriptive-audio-howto.md
+    - name: Beveiliging
+      items:
+        - name: Toegangs sleutels voor opslag rollen
+          href: media-services-roll-storage-access-keys.md
     - name: Mediaspelers gebruiken
       items:
         - name: Volledige installatie van Azure Media Player
@@ -448,6 +462,8 @@
           href: how-to-video-js-player.md
         - name: De Shaka-videospeler gebruiken
           href: how-to-shaka-player.md
+        - name: Verificatie tokens door geven
+          href: media-services-pass-authentication-tokens.md
 - name: Naslaginformatie
   items:
     - name: OpenAPI-specificatie (Swagger)

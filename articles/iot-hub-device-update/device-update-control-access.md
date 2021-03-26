@@ -6,12 +6,12 @@ ms.author: vimeht
 ms.date: 2/11/2021
 ms.topic: conceptual
 ms.service: iot-hub-device-update
-ms.openlocfilehash: 07310a5b6f275d4a35a3649c22aeea68045dde8b
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: ca55b1df347b47a6eb82557658d59a3de666b703
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101662277"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105558394"
 ---
 # <a name="azure-role-based-access-control-rbac-and-device-update"></a>Op rollen gebaseerd toegangs beheer (RBAC) van Azure en updates van het apparaat
 
@@ -39,7 +39,7 @@ Bij het bijwerken van apparaten wordt ook Azure AD gebruikt voor verificatie voo
 
 ### <a name="create-client-azure-ad-app"></a>Client Azure AD-app maken
 
-Als u een toepassing of service met Azure AD wilt integreren, moet u eerst een toepassing [registreren](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app) bij Azure AD. De installatie van de client toepassing is afhankelijk van de gebruikte autorisatie stroom.  Hieronder vindt u meer informatie over het gebruik van de update REST Api's van het apparaat.
+Als u een toepassing of service met Azure AD wilt integreren, moet u eerst een toepassing [registreren](../active-directory/develop/quickstart-register-app.md) bij Azure AD. De installatie van de client toepassing is afhankelijk van de gebruikte autorisatie stroom.  Hieronder vindt u meer informatie over het gebruik van de update REST Api's van het apparaat.
 
 * Client authenticatie instellen: ' omleidings-Uri's voor native of webclient '.
 * API-machtigingen instellen: voor het bijwerken van het apparaat voor IoT Hub wordt het volgende getoond:

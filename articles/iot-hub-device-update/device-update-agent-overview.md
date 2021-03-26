@@ -6,18 +6,18 @@ ms.author: valls
 ms.date: 2/12/2021
 ms.topic: conceptual
 ms.service: iot-hub-device-update
-ms.openlocfilehash: e932238849baf267983fb3ca1ebb082db169d9fd
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: efe5d0171463668bda19a0d0445fc67f3734aaee
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101679598"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105561233"
 ---
 # <a name="device-update-for-iot-hub-agent-overview"></a>Overzicht van Device Update for IoT Hub Agent
 
 De Update-Agent van het apparaat bestaat uit twee conceptuele lagen:
 
-* De interface-laag bouwt voort op [Azure IoT Plug en Play (PnP)](https://docs.microsoft.com/azure/iot-pnp/overview-iot-plug-and-play) zodat berichten kunnen stromen tussen de Update-Agent van het apparaat en de Update Services van het apparaat.
+* De interface-laag bouwt voort op [Azure IoT Plug en Play (PnP)](../iot-pnp/overview-iot-plug-and-play.md) zodat berichten kunnen stromen tussen de Update-Agent van het apparaat en de Update Services van het apparaat.
 * De laag van het platform is verantwoordelijk voor het downloaden, installeren en Toep assen van de Update acties op hoog niveau die mogelijk platform of apparaat specifiek zijn.
 
 :::image type="content" source="media/understand-device-update/client-agent-reference-implementations.png" alt-text="Agent implementaties." lightbox="media/understand-device-update/client-agent-reference-implementations.png":::
@@ -72,8 +72,7 @@ De APT-updatehandler verwerkt een APT-specifiek update manifest en roept APT aan
 
 ## <a name="self-update-device-update-agent"></a>Update-Agent voor apparaat zelf bijwerken
 
-De Update-Agent van het apparaat en de bijbehorende afhankelijkheden kunnen worden bijgewerkt via de update van het apparaat voor IoT Hub pijp lijn. Als u een update op basis van een installatie kopie gebruikt, neemt u de meest recente apparaat Update Agent op in de nieuwe installatie kopie. Als u een update op basis van een pakket gebruikt, neemt u de Update Agent voor het apparaat en de gewenste versie op in het apt-manifest, zoals elk ander pakket. Meer [informatie](device-update-apt-manifest.md) over apt-manifest. U kunt de geïnstalleerde versie van de Update Agent van het apparaat en de agent voor de leverings optimalisatie controleren in het gedeelte apparaateigenschappen van uw [IOT-apparaat](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-device-twins). Meer [informatie over apparaateigenschappen onder de Adu core-interface](device-update-plug-and-play.md#device-properties).
+De Update-Agent van het apparaat en de bijbehorende afhankelijkheden kunnen worden bijgewerkt via de update van het apparaat voor IoT Hub pijp lijn. Als u een update op basis van een installatie kopie gebruikt, neemt u de meest recente apparaat Update Agent op in de nieuwe installatie kopie. Als u een update op basis van een pakket gebruikt, neemt u de Update Agent voor het apparaat en de gewenste versie op in het apt-manifest, zoals elk ander pakket. Meer [informatie](device-update-apt-manifest.md) over apt-manifest. U kunt de geïnstalleerde versie van de Update Agent van het apparaat en de agent voor de leverings optimalisatie controleren in het gedeelte apparaateigenschappen van uw [IOT-apparaat](../iot-hub/iot-hub-devguide-device-twins.md). Meer [informatie over apparaateigenschappen onder de Adu core-interface](device-update-plug-and-play.md#device-properties).
 
 ## <a name="next-steps"></a>Volgende stappen
 [Informatie over het configuratie bestand van de apparaat-Update Agent](device-update-configuration-file.md)
-

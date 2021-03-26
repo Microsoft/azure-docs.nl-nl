@@ -12,12 +12,12 @@ ms.date: 05/19/2020
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 76dcb9aec935dd4ea4f57a1362953d9741d8eaf0
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: c175a6d225be268f27854b9ab63886892cf029fb
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102095796"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105557272"
 ---
 # <a name="developer-notes-for-custom-policies-in-azure-active-directory-b2c"></a>Opmerkingen voor ontwikkel aars voor aangepast beleid in Azure Active Directory B2C
 
@@ -68,7 +68,7 @@ Aangepaste beleids mogelijkheden zijn constant ontwikkeld. De volgende tabel bev
 | [OAuth2-autorisatie code](authorization-code-flow.md) |  |  | X |  |
 | OAuth2-verificatie code met PKCE |  |  | X | [Open bare clients en toepassingen met één pagina](authorization-code-flow.md)  |
 | [OAuth2 impliciete stroom](implicit-flow-single-page-application.md) |  |  | X |  |
-| [Referenties voor wacht woord van OAuth2-resource-eigenaar](ropc-custom.md) |  | X |  |  |
+| [Referenties voor wacht woord van OAuth2-resource-eigenaar](add-ropc-policy.md) |  | X |  |  |
 | [OIDC verbinding maken](openid-connect.md) |  |  | X |  |
 | [SAML2](saml-service-provider.md)  |  |  |X  | Bindingen na plaatsen en omleiden. |
 | OAuth1 |  |  |  | Wordt niet ondersteund. |

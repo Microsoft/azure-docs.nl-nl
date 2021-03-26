@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: tutorial
 ms.date: 03/11/2021
 ms.author: alkohli
-ms.openlocfilehash: 24d6528a105d593d1cb4c9c66d981c8787f85633
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 430e34a1ca631be00ef46170affd4b56c79894a9
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103573270"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105566401"
 ---
 # <a name="migrate-workloads-from-an-azure-stack-edge-pro-fpga-to-an-azure-stack-edge-pro-gpu"></a>Werk belastingen migreren van een Azure Stack Edge Pro-FPGA naar een Azure Stack Edge Pro GPU
 
@@ -173,7 +173,7 @@ Voer de volgende stappen uit om de gegevens te herstellen vanaf lokale shares:
 
 1. [Configureer Compute op het apparaat](azure-stack-edge-gpu-deploy-configure-compute.md).
 1. Voeg alle lokale shares op het doel apparaat toe. Zie de gedetailleerde stappen in [een lokale share toevoegen](azure-stack-edge-gpu-manage-shares.md#add-a-local-share).
-1. Als u de SMB-shares op het bron apparaat opent, worden de IP-adressen gebruikt die op het doel apparaat worden gebruikt. Zie [verbinding maken met een SMB-share op Azure stack Edge Pro GPU](azure-stack-edge-j-series-deploy-add-shares.md#connect-to-an-smb-share). Als u verbinding wilt maken met NFS-shares op het doel apparaat, moet u de nieuwe IP-adressen gebruiken die zijn gekoppeld aan het apparaat. Zie [verbinding maken met een NFS-share op Azure stack Edge Pro GPU](azure-stack-edge-j-series-deploy-add-shares.md#connect-to-an-nfs-share). 
+1. Als u de SMB-shares op het bron apparaat opent, worden de IP-adressen gebruikt die op het doel apparaat worden gebruikt. Zie [verbinding maken met een SMB-share op Azure stack Edge Pro GPU](./azure-stack-edge-gpu-deploy-add-shares.md#connect-to-an-smb-share). Als u verbinding wilt maken met NFS-shares op het doel apparaat, moet u de nieuwe IP-adressen gebruiken die zijn gekoppeld aan het apparaat. Zie [verbinding maken met een NFS-share op Azure stack Edge Pro GPU](./azure-stack-edge-gpu-deploy-add-shares.md#connect-to-an-nfs-share). 
 
     Als u uw share gegevens hebt gekopieerd naar een tussenliggende server via SMB of NFS, kunt u de gegevens van de tussenliggende server kopiëren naar shares op het doel apparaat. Als zowel de bron als het doel apparaat *online* zijn, kunt u de gegevens ook rechtstreeks vanaf het bron apparaat kopiëren.
 

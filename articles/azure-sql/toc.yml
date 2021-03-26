@@ -1062,18 +1062,26 @@
                   href: virtual-machines/windows/azure-storage-sql-server-backup-restore-use.md
                 - name: Beschikbaarheidsgroep (AG)
                   href: virtual-machines/windows/availability-group-overview.md
-                - name: Failover-clusterexemplaar
+                - name: Failover-clusterexemplaar (FCI)
                   href: virtual-machines/windows/failover-cluster-instance-overview.md
             - name: Aanbevolen procedures
               items:
-                - name: Prestaties
-                  href: virtual-machines/windows/performance-guidelines-best-practices.md
                 - name: Beveiliging
                   href: virtual-machines/windows/security-considerations-best-practices.md
                 - name: Clusterconfiguratie
                   href: virtual-machines/windows/hadr-cluster-best-practices.md
                 - name: Toepassingspatronen
                   href: virtual-machines/windows/application-patterns-development-strategies.md
+                - name: Prestaties
+                  items:
+                    - name: Snelle controle lijst
+                      href: virtual-machines/windows/performance-guidelines-best-practices-checklist.md
+                    - name: VM-grootte
+                      href: virtual-machines/windows/performance-guidelines-best-practices-vm-size.md
+                    - name: Storage
+                      href: virtual-machines/windows/performance-guidelines-best-practices-storage.md
+                    - name: Basis lijn verzamelen
+                      href: virtual-machines/windows/performance-guidelines-best-practices-collect-baseline.md
             - name: Beheer
               items:
                 - name: SQL IaaS Agent-extensie

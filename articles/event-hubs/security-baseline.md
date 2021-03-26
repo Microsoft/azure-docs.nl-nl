@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/17/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 1e1a8cb24b47277b38bd2d64b733a6f28ee8acff
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 57862a450d313f5d8850b14047ecc3d25d6ba5c1
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101742490"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105563681"
 ---
 # <a name="azure-security-baseline-for-event-hubs"></a>Azure-beveiligings basislijn voor Event Hubs
 
@@ -44,7 +44,7 @@ U kunt uw Azure Event Hubs-naam ruimte ook beveiligen met behulp van firewalls. 
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: de [Security Bench Mark van Azure](/home/mbaldwin/docs/asb/azure-docs-pr/articles/governance/policy/samples/azure-security-benchmark.md) is het standaard beleids initiatief voor Security Center en is de basis voor de [aanbevelingen van Security Center](/home/mbaldwin/docs/asb/azure-docs-pr/articles/security-center/security-center-recommendations.md). De Azure Policy definities die aan dit besturings element zijn gerelateerd, worden automatisch door Security Center ingeschakeld. Voor waarschuwingen met betrekking tot dit besturings element is mogelijk een [Azure Defender](/home/mbaldwin/docs/asb/azure-docs-pr/articles/security-center/azure-defender.md) -plan vereist voor de gerelateerde services.
+**Azure Security Center bewaking**: de [Security Bench Mark van Azure](/azure/governance/policy/samples/azure-security-benchmark) is het standaard beleids initiatief voor Security Center en is de basis voor de [aanbevelingen van Security Center](/azure/security-center/security-center-recommendations). De Azure Policy definities die aan dit besturings element zijn gerelateerd, worden automatisch door Security Center ingeschakeld. Voor waarschuwingen met betrekking tot dit besturings element is mogelijk een [Azure Defender](/azure/security-center/azure-defender) -plan vereist voor de gerelateerde services.
 
 **Ingebouwde definities Azure Policy-micro soft. EventHub**:
 
@@ -68,7 +68,7 @@ U kunt uw Azure Event Hubs-naam ruimte ook beveiligen met behulp van firewalls. 
 
 - [DDoS-beveiliging configureren](../ddos-protection/manage-ddos-protection.md)
 
-- [Voor meer informatie over de Azure Security Center geïntegreerde bedreigings informatie](/azure/security-center/security-center-alerts-service-layer)
+- [Voor meer informatie over de Azure Security Center geïntegreerde bedreigings informatie](../security-center/azure-defender.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -112,9 +112,9 @@ Meer informatie vindt u op de koppelingen waarnaar wordt verwezen.
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Ingebouwd beleid voor Azure voor Event Hubs naam ruimte](https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#event-hub)
+- [Ingebouwd beleid voor Azure voor Event Hubs naam ruimte](../governance/policy/samples/built-in-policies.md#event-hub)
 
-- [Voor beelden Azure Policy voor netwerken](https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#network)
+- [Voor beelden Azure Policy voor netwerken](../governance/policy/samples/built-in-policies.md#network)
 
 - [Een Azure Blueprint maken](../governance/blueprints/create-blueprint-portal.md)
 
@@ -126,7 +126,7 @@ Meer informatie vindt u op de koppelingen waarnaar wordt verwezen.
 
 **Hulp**: Labels gebruiken voor virtuele netwerken en andere bronnen die betrekking hebben op netwerk beveiliging en verkeers stroom die zijn gekoppeld aan uw event hubs.
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -136,9 +136,9 @@ Meer informatie vindt u op de koppelingen waarnaar wordt verwezen.
 
 **Hulp**: Azure-activiteiten logboek gebruiken om netwerk resource configuraties te bewaken en wijzigingen te detecteren voor netwerk bronnen die betrekking hebben op Azure Event hubs. Maak waarschuwingen in Azure Monitor die worden geactiveerd wanneer er wijzigingen in kritieke netwerk bronnen plaatsvinden.
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](/azure/azure-monitor/platform/activity-log-view)
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Waarschuwingen maken in Azure Monitor](/azure/azure-monitor/platform/alerts-activity-log)
+- [Waarschuwingen maken in Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -154,7 +154,7 @@ Meer informatie vindt u op de koppelingen waarnaar wordt verwezen.
 
 - [Diagnostische instellingen voor Azure Event Hubs configureren](event-hubs-diagnostic-logs.md)
 
-- [Informatie over Azure-activiteiten logboek](/azure/azure-monitor/platform/platform-logs-overview)
+- [Informatie over Azure-activiteiten logboek](../azure-monitor/essentials/platform-logs-overview.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -168,11 +168,11 @@ Daarnaast kunt u Diagnostische instellingen voor Azure-activiteiten logboek insc
 
 - [Diagnostische instellingen inschakelen voor Azure Event Hubs](event-hubs-diagnostic-logs.md)
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](/azure/azure-monitor/platform/diagnostic-settings-legacy)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: de [Security Bench Mark van Azure](/home/mbaldwin/docs/asb/azure-docs-pr/articles/governance/policy/samples/azure-security-benchmark.md) is het standaard beleids initiatief voor Security Center en is de basis voor de [aanbevelingen van Security Center](/home/mbaldwin/docs/asb/azure-docs-pr/articles/security-center/security-center-recommendations.md). De Azure Policy definities die aan dit besturings element zijn gerelateerd, worden automatisch door Security Center ingeschakeld. Voor waarschuwingen met betrekking tot dit besturings element is mogelijk een [Azure Defender](/home/mbaldwin/docs/asb/azure-docs-pr/articles/security-center/azure-defender.md) -plan vereist voor de gerelateerde services.
+**Azure Security Center bewaking**: de [Security Bench Mark van Azure](/azure/governance/policy/samples/azure-security-benchmark) is het standaard beleids initiatief voor Security Center en is de basis voor de [aanbevelingen van Security Center](/azure/security-center/security-center-recommendations). De Azure Policy definities die aan dit besturings element zijn gerelateerd, worden automatisch door Security Center ingeschakeld. Voor waarschuwingen met betrekking tot dit besturings element is mogelijk een [Azure Defender](/azure/security-center/azure-defender) -plan vereist voor de gerelateerde services.
 
 **Ingebouwde definities Azure Policy-micro soft. EventHub**:
 
@@ -182,7 +182,7 @@ Daarnaast kunt u Diagnostische instellingen voor Azure-activiteiten logboek insc
 
 **Richt lijnen**: stel binnen Azure monitor uw Bewaar periode voor log Analytics werk ruimte in volgens de nalevings regels van uw organisatie om event hub-gerelateerde incidenten vast te leggen en te controleren.
 
-- [Para meters voor het bewaren van Logboeken instellen voor Log Analytics-werk ruimten](/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period)
+- [Para meters voor het bewaren van Logboeken instellen voor Log Analytics-werk ruimten](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Verantwoordelijkheid**: Klant
 
@@ -192,9 +192,9 @@ Daarnaast kunt u Diagnostische instellingen voor Azure-activiteiten logboek insc
 
 **Hulp**: Analyseer en bewaak logboeken voor afwijkend gedrag en controleer regel matig de resultaten die betrekking hebben op uw event hubs. Gebruik de Log Analytics van Azure Monitor om logboeken te controleren en query's uit te voeren op logboek gegevens. U kunt ook gegevens in-of uitschakelen voor Azure Sentinel of een systeem informatie en gebeurtenis beheer oplossing van derden.
 
-- [Voor meer informatie over de Log Analytics-werk ruimte](/azure/azure-monitor/log-query/get-started-portal)
+- [Voor meer informatie over de Log Analytics-werk ruimte](../azure-monitor/logs/log-analytics-tutorial.md)
 
-- [Aangepaste query's uitvoeren in Azure Monitor](/azure/azure-monitor/log-query/get-started-queries)
+- [Aangepaste query's uitvoeren in Azure Monitor](../azure-monitor/logs/get-started-queries.md)
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
@@ -208,11 +208,11 @@ Daarnaast kunt u Diagnostische instellingen voor Azure-activiteiten logboek insc
 
 U kunt ook gegevens naar Azure-Sentinel inschakelen en op het bord zetten. 
 
-- [Meer informatie over het Azure-activiteiten logboek](/azure/azure-monitor/platform/platform-logs-overview)
+- [Meer informatie over het Azure-activiteiten logboek](../azure-monitor/essentials/platform-logs-overview.md)
 
 - [Diagnostische instellingen voor Azure Event Hubs configureren](event-hubs-diagnostic-logs.md)
 
-- [Waarschuwingen voor Log Analytics werkruimte logboek gegevens](/azure/azure-monitor/learn/tutorial-response)
+- [Waarschuwingen voor Log Analytics werkruimte logboek gegevens](../azure-monitor/alerts/tutorial-response.md)
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
@@ -310,9 +310,9 @@ Meer informatie vindt u op de koppelingen waarnaar wordt verwezen.
 
 **Hulp**: gebruik Azure Active Directory (Azure AD) privileged Identity Management voor het genereren van Logboeken en waarschuwingen wanneer verdachte of onveilige activiteiten in de omgeving worden uitgevoerd. Gebruik Azure AD-risico detecties om waarschuwingen en rapporten weer te geven over Risk ante gebruikers gedrag. Voor aanvullende logboek registratie kunt u waarschuwingen voor Azure Security Center risico detectie verzenden naar Azure Monitor en aangepaste waarschuwingen/meldingen configureren met actie groepen.
 
-- [Meer informatie over Azure AD-risico detectie](/azure/active-directory/reports-monitoring/concept-risk-events)
+- [Meer informatie over Azure AD-risico detectie](../active-directory/identity-protection/overview-identity-protection.md)
 
-- [Actie groepen configureren voor aangepaste waarschuwingen en meldingen](/azure/azure-monitor/platform/action-groups)
+- [Actie groepen configureren voor aangepaste waarschuwingen en meldingen](../azure-monitor/alerts/action-groups.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -346,7 +346,7 @@ Meer informatie vindt u op de koppelingen waarnaar wordt verwezen.
 
 U kunt bovendien uw Event Hubs hand tekeningen voor gedeelde toegang ook regel matig draaien.
 
-- [Meer informatie over Azure AD-rapportage](/azure/active-directory/reports-monitoring/)
+- [Meer informatie over Azure AD-rapportage](../active-directory/reports-monitoring/index.yml)
 
 - [Beoordelingen over Azure Identity Access gebruiken](../active-directory/governance/access-reviews-overview.md)
 
@@ -362,7 +362,7 @@ U kunt bovendien uw Event Hubs hand tekeningen voor gedeelde toegang ook regel m
 
 U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-gebruikers accounts te maken en de audit logboeken en aanmeldings logboeken te verzenden naar een Log Analytics-werk ruimte. U kunt de gewenste logboek waarschuwingen configureren in Log Analytics.
 
-- [Azure-activiteitenlogboeken integreren in Azure Monitor](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+- [Azure-activiteitenlogboeken integreren in Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
 - [Toegang tot Event Hubs resources autoriseren met behulp van Azure AD](authorize-access-azure-active-directory.md)
 
@@ -374,7 +374,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 **Hulp**: gebruik functies voor identiteits beveiliging en risico detectie in azure Active Directory (Azure AD) voor het configureren van automatische antwoorden op gedetecteerde verdachte acties die betrekking hebben op uw event hubs-resources. Schakel automatische antwoorden via Azure Sentinel in om de beveiligings reacties van uw organisatie te implementeren.
 
-- [Riskante Azure AD-aanmeldingen weergeven](/azure/active-directory/reports-monitoring/concept-risky-sign-ins)
+- [Riskante Azure AD-aanmeldingen weergeven](../active-directory/identity-protection/overview-identity-protection.md)
 
 - [Risico beleid voor identiteits beveiliging configureren en inschakelen](../active-directory/identity-protection/howto-identity-protection-configure-risk-policies.md)
 
@@ -388,7 +388,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 **Hulp**: momenteel niet beschikbaar; Klanten-lockbox wordt nog niet ondersteund voor Event Hubs.
 
-- [Lijst met door Klanten-lockbox ondersteunde services](https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview#supported-services-and-scenarios-in-general-availability)
+- [Lijst met door Klanten-lockbox ondersteunde services](../security/fundamentals/customer-lockbox-overview.md#supported-services-and-scenarios-in-general-availability)
 
 **Verantwoordelijkheid**: Klant
 
@@ -402,7 +402,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 **Hulp**: Gebruik labels op resources die betrekking hebben op uw event hubs voor het bijhouden van Azure-resources die gevoelige informatie opslaan of verwerken.
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -414,13 +414,13 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 U kunt uw Azure Event Hubs-naam ruimte ook beveiligen met behulp van firewalls. Azure Event Hubs ondersteunt toegangs beheer op basis van IP voor binnenkomende firewall ondersteuning. U kunt Firewall regels instellen met behulp van de Azure Portal, Azure Resource Manager sjablonen of via de Azure CLI of Azure PowerShell.
 
-- [Aanvullende Azure-abonnementen maken](/azure/billing/billing-create-subscription)
+- [Aanvullende Azure-abonnementen maken](../cost-management-billing/manage/create-subscription.md)
 
-- [Beheergroepen maken](/azure/governance/management-groups/create)
+- [Beheergroepen maken](../governance/management-groups/create-management-group-portal.md)
 
 - [IP-firewall regels voor Azure Event Hubs-naam ruimten configureren](event-hubs-ip-filtering.md)
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 - [Een Virtual Network maken](../virtual-network/quick-create-portal.md)
 
@@ -440,7 +440,7 @@ Micro soft beheert de onderliggende infra structuur voor Azure Event Hubs en hee
 
 - [Azure-Event Hubs integreren met persoonlijke Azure-koppeling](private-link-service.md)
 
-- [Meer informatie over netwerk beveiligings groepen en service Tags](/azure/virtual-network/security-overview)
+- [Meer informatie over netwerk beveiligings groepen en service Tags](../virtual-network/network-security-groups-overview.md)
 
 - [Informatie over beveiliging van klantgegevens in Azure](../security/fundamentals/protection-customer-data.md)
 
@@ -484,7 +484,7 @@ Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt mic
 
 **Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken wanneer wijzigingen worden aangebracht in productie-exemplaren van Azure Event hubs en andere essentiële of gerelateerde resources.
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](/azure/azure-monitor/platform/alerts-activity-log)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -512,7 +512,7 @@ Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt mic
 
 **Richt lijnen**: Tags Toep assen op Azure-resources die meta gegevens geven om ze logisch in een taxonomie te organiseren.
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -522,11 +522,11 @@ Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt mic
 
 **Richt lijnen**: Gebruik labels, beheer groepen en afzonderlijke abonnementen, waar nodig, om Azure Event hubs-naam ruimten en gerelateerde resources te organiseren en bij te houden. Sluit de inventaris regel matig af en zorg ervoor dat niet-geautoriseerde resources tijdig worden verwijderd uit het abonnement.
 
-- [Aanvullende Azure-abonnementen maken](/azure/billing/billing-create-subscription)
+- [Aanvullende Azure-abonnementen maken](../cost-management-billing/manage/create-subscription.md)
 
-- [Beheergroepen maken](/azure/governance/management-groups/create)
+- [Beheergroepen maken](../governance/management-groups/create-management-group-portal.md)
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -562,7 +562,7 @@ Meer informatie vindt u op de koppelingen waarnaar wordt verwezen.
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Een specifiek resource type weigeren met Azure Policy](https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#general)
+- [Een specifiek resource type weigeren met Azure Policy](../governance/policy/samples/built-in-policies.md#general)
 
 **Verantwoordelijkheid**: Klant
 
@@ -592,7 +592,7 @@ Meer informatie vindt u op de koppelingen waarnaar wordt verwezen.
 
 Meer informatie vindt u op de koppelingen waarnaar wordt verwezen.
 
-- [Ingebouwd beleid voor Azure voor Event Hubs naam ruimte](https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#event-hub)
+- [Ingebouwd beleid voor Azure voor Event Hubs naam ruimte](../governance/policy/samples/built-in-policies.md#event-hub)
 
 - [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias)
 
@@ -639,15 +639,15 @@ Meer informatie vindt u op de koppelingen waarnaar wordt verwezen.
 
 **Richt lijnen**: voor virtuele machines van Azure of webtoepassingen die worden uitgevoerd op Azure app service worden gebruikt voor toegang tot uw event hubs, gebruikt u Managed Service Identity in combi natie met Azure Key Vault om het beheer van de hand tekening van gedeelde toegang te vereenvoudigen en te beveiligen voor uw Azure Event hubs-implementaties. Zorg ervoor dat Key Vault is geconfigureerd met zacht verwijderen ingeschakeld.
 
-- [Een beheerde identiteit verifiëren met Azure Active Directory (Azure AD) voor toegang tot Event Hubs resources](https://docs.microsoft.com/azure/event-hubs/authenticate-managed-identity?tabs=latest)
+- [Een beheerde identiteit verifiëren met Azure Active Directory (Azure AD) voor toegang tot Event Hubs resources](./authenticate-managed-identity.md?tabs=latest)
 
 - [Door de klant beheerde sleutels voor Event Hubs configureren](configure-customer-managed-key.md)
 
 - [Integratie met door Azure beheerde identiteiten](../azure-app-configuration/howto-integrate-azure-managed-service-identity.md)
 
-- [Een Key Vault maken](/azure/key-vault/quick-create-portal)
+- [Een Key Vault maken](../key-vault/secrets/quick-create-portal.md)
 
-- [Key Vault verificatie bieden met een beheerde identiteit](/azure/key-vault/managed-identity)
+- [Key Vault verificatie bieden met een beheerde identiteit](../key-vault/general/assign-access-policy-portal.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -659,7 +659,7 @@ Meer informatie vindt u op de koppelingen waarnaar wordt verwezen.
 
 Gebruik beheerde identiteiten om Azure-Services te voorzien van een automatisch beheerde identiteit in Azure Active Directory (Azure AD). Met beheerde identiteiten kunt u zich verifiëren bij elke service die ondersteuning biedt voor Azure AD-verificatie, met inbegrip van Azure Key Vault, zonder enige referenties in uw code.
 
-- [Een beheerde identiteit verifiëren met Azure AD om toegang te krijgen tot Event Hubs bronnen](https://docs.microsoft.com/azure/event-hubs/authenticate-managed-identity?tabs=latest)
+- [Een beheerde identiteit verifiëren met Azure AD om toegang te krijgen tot Event Hubs bronnen](./authenticate-managed-identity.md?tabs=latest)
 
 - [Door de klant beheerde sleutels voor Event Hubs configureren](configure-customer-managed-key.md)
 
@@ -703,7 +703,7 @@ Micro soft anti-malware is ingeschakeld op de onderliggende host die ondersteuni
 
 **Hulp** bij het configureren van geo-nood herstel voor Azure Event hubs. Als er voor de hele Azure-regio's of-Data Centers (als er geen beschikbaarheids zones worden gebruikt) downtime actief is, is het van essentieel belang dat de gegevens worden verwerkt in een andere regio of Data Center. Daarom zijn geo-nood herstel en geo-replicatie belang rijke functies voor elke onderneming. Azure Event Hubs ondersteunt zowel geo-nood herstel als geo-replicatie op het niveau van de naam ruimte. 
 
-- [Meer informatie over geo-nood herstel voor Azure Event Hubs](https://docs.microsoft.com/azure/event-hubs/event-hubs-geo-dr#availability-zones)
+- [Meer informatie over geo-nood herstel voor Azure Event Hubs](./event-hubs-geo-dr.md#availability-zones)
 
 **Verantwoordelijkheid**: Klant
 
@@ -739,11 +739,11 @@ Zorg voor regel matige automatische back-ups van uw Key Vault geheimen met de vo
 
 Configureer de tijdelijke verwijdering voor het Azure-opslag account dat wordt gebruikt voor het vastleggen van Event Hubs gegevens. Houd er rekening mee dat deze functie nog niet wordt ondersteund voor Azure Data Lake Storage gen 2.
 
-- [Zacht verwijderen inschakelen in Key Vault](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal)
+- [Zacht verwijderen inschakelen in Key Vault](../storage/blobs/soft-delete-blob-overview.md?tabs=azure-portal)
 
 - [Een sleutel kluis met sleutels instellen](configure-customer-managed-key.md)
 
-- [Voorlopig verwijderen voor Azure Storage-blobs](https://docs.microsoft.com//azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal)
+- [Voorlopig verwijderen voor Azure Storage-blobs](//azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal)
 
 **Verantwoordelijkheid**: Klant
 
@@ -831,5 +831,5 @@ Configureer de tijdelijke verwijdering voor het Azure-opslag account dat wordt g
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Overzicht Azure Security Benchmark V2](/azure/security/benchmarks/overview)
-- Meer informatie over [Azure-beveiligingsbasislijnen](/azure/security/benchmarks/security-baselines-overview)
+- Zie [Overzicht Azure Security Benchmark V2](../security/benchmarks/overview.md)
+- Meer informatie over [Azure-beveiligingsbasislijnen](../security/benchmarks/security-baselines-overview.md)

@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 02/22/2021
 ms.author: alkohli
-ms.openlocfilehash: 28988af0c1b3b5e4e5ce359abb617a66af816d69
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 90925f30e84ec3c06e715669ebd982c823dfaf5a
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102439813"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105568321"
 ---
 # <a name="deploy-vms-on-your-azure-stack-edge-device-via-azure-powershell"></a>Implementeer Vm's op uw Azure Stack edge-apparaat via Azure PowerShell
 
@@ -127,7 +127,7 @@ New-AzureRmStorageAccount -Name <Storage account name> -ResourceGroupName <Resou
 ```
 
 > [!NOTE]
-> U kunt met behulp van Azure Resource Manager alleen lokale opslag accounts maken, zoals lokaal redundante opslag (Standard of Premium). Zie [zelf studie: gegevens overdragen via opslag accounts met Azure stack Edge Pro met GPU](azure-stack-edge-j-series-deploy-add-storage-accounts.md)om gelaagde opslag accounts te maken.
+> U kunt met behulp van Azure Resource Manager alleen lokale opslag accounts maken, zoals lokaal redundante opslag (Standard of Premium). Zie [zelf studie: gegevens overdragen via opslag accounts met Azure stack Edge Pro met GPU](./azure-stack-edge-gpu-deploy-add-storage-accounts.md)om gelaagde opslag accounts te maken.
 
 Hier volgt een voor beeld van uitvoer:
 
@@ -179,7 +179,7 @@ key2 gd34TcaDzDgsY9JtDNMUgLDOItUU0Qur3CBo6Q...
 
 ## <a name="add-the-blob-uri-to-the-host-file"></a>De BLOB-URI toevoegen aan het hostbestand
 
-U hebt de BLOB-URI al toegevoegd in het hosts-bestand voor de client die u gebruikt om verbinding te maken met Azure Blob Storage in stap 5: hostbestand wijzigen voor naam omzetting van eind punten voor het [implementeren van vm's op uw Azure stack edge-apparaat via Azure PowerShell](azure-stack-edge-j-series-connect-resource-manager.md#step-5-modify-host-file-for-endpoint-name-resolution). Dit item is gebruikt om de BLOB-URI toe te voegen:
+U hebt de BLOB-URI al toegevoegd in het hosts-bestand voor de client die u gebruikt om verbinding te maken met Azure Blob Storage in stap 5: hostbestand wijzigen voor naam omzetting van eind punten voor het [implementeren van vm's op uw Azure stack edge-apparaat via Azure PowerShell](./azure-stack-edge-gpu-connect-resource-manager.md#step-5-modify-host-file-for-endpoint-name-resolution). Dit item is gebruikt om de BLOB-URI toe te voegen:
 
 \<Azure consistent network services VIP \>\<storage name\>. blob. \<appliance name\> .\<dnsdomain\>
 

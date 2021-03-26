@@ -9,12 +9,12 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto
 ms.date: 08/14/2020
-ms.openlocfilehash: 5764a8df862610fc076ce2810fcc0d4bf8dbda3c
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: dec29dc92f70a3f02f3fb598659aa86477fb59bf
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "99094553"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105558241"
 ---
 # <a name="directory-readers-role-in-azure-active-directory-for-azure-sql"></a>Rol Directory Readers in Azure Active Directory voor Azure SQL
 
@@ -25,7 +25,7 @@ ms.locfileid: "99094553"
 
 Azure Active Directory (Azure AD) heeft [het gebruik van Cloud groepen geïntroduceerd om roltoewijzingen in azure Active Directory (preview-versie) te beheren](../../active-directory/roles/groups-concept.md). Hierdoor kunnen Azure AD-rollen worden toegewezen aan groepen.
 
-Wanneer u een [beheerde identiteit](../../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types) inschakelt voor Azure SQL database, Azure SQL Managed instance of Azure Synapse Analytics, moet de rol van Azure AD- [**adreslijst lezers**](../../active-directory/roles/permissions-reference.md#directory-readers) worden toegewezen aan de identiteit om Lees toegang tot de [Azure AD-Graph API](../../active-directory/develop/active-directory-graph-api.md)toe te staan. De beheerde identiteit van SQL Database en Azure Synapse wordt aangeduid als de server identiteit. De beheerde identiteit van het beheerde exemplaar van SQL wordt aangeduid als de identiteit van het beheerde exemplaar en wordt automatisch toegewezen wanneer het exemplaar wordt gemaakt. Zie [service-principals inschakelen voor het maken van Azure AD-gebruikers](authentication-aad-service-principal.md#enable-service-principals-to-create-azure-ad-users)voor meer informatie over het toewijzen van een server identiteit aan SQL database of Azure Synapse.
+Wanneer u een [beheerde identiteit](../../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types) inschakelt voor Azure SQL database, Azure SQL Managed instance of Azure Synapse Analytics, moet de rol van Azure AD- [**adreslijst lezers**](../../active-directory/roles/permissions-reference.md#directory-readers) worden toegewezen aan de identiteit om Lees toegang tot de [Azure AD-Graph API](/graph/migrate-azure-ad-graph-planning-checklist)toe te staan. De beheerde identiteit van SQL Database en Azure Synapse wordt aangeduid als de server identiteit. De beheerde identiteit van het beheerde exemplaar van SQL wordt aangeduid als de identiteit van het beheerde exemplaar en wordt automatisch toegewezen wanneer het exemplaar wordt gemaakt. Zie [service-principals inschakelen voor het maken van Azure AD-gebruikers](authentication-aad-service-principal.md#enable-service-principals-to-create-azure-ad-users)voor meer informatie over het toewijzen van een server identiteit aan SQL database of Azure Synapse.
 
 De functie voor het **lezers van mappen** is nodig voor het volgende:
 

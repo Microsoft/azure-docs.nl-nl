@@ -4,7 +4,7 @@ description: Meer informatie over hoe Azure Hybrid Benefit u kan helpen om geld 
 services: virtual-machines
 documentationcenter: ''
 author: mathapli
-manager: westonh
+manager: rochakm
 ms.service: virtual-machines
 ms.subservice: azure-hybrid-benefit
 ms.collection: linux
@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 09/22/2020
 ms.author: mathapli
-ms.openlocfilehash: 17b2e260f9a90ddda6e246058cefb1bec8b1ac5e
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 73747222b9131fa85ae6ac01c9dedd5b0bbe1d63
+ms.sourcegitcommit: 44edde1ae2ff6c157432eee85829e28740c6950d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101695478"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105543399"
 ---
 # <a name="how-azure-hybrid-benefit-applies-for-linux-virtual-machines"></a>Hoe Azure Hybrid Benefit van toepassing is op virtuele Linux-machines
 
@@ -39,7 +39,7 @@ U kunt er ook voor kiezen om een VM die het voor deel heeft ingeschakeld, te con
 
 Azure Hybrid Benefit is beschikbaar voor alle RHEL-en SLES-PAYG-installatie kopieën van Azure Marketplace. Het voor deel is nog niet beschikbaar voor RHEL-of SLES BYOS-installatie kopieën of aangepaste installatie kopieën van Azure Marketplace.
 
-Gereserveerde instanties, Azure-specifieke host-instanties en SQL Hybrid bene fits komen niet in aanmerking voor Azure Hybrid Benefit als u het voor deel van Linux-Vm's al gebruikt.
+Azure dedicated host instances en SQL Hybrid bene fits komen niet in aanmerking voor Azure Hybrid Benefit als u het voor deel van Linux-Vm's al gebruikt.
 
 ## <a name="get-started"></a>Aan de slag
 
@@ -90,11 +90,8 @@ U kunt het voor deel van bestaande Vm's inschakelen door aan de linkerkant de **
 1. Ga naar de **configuratie** optie aan de linkerkant. De sectie licentie verlening wordt weer geven. Als u de AHB-conversie wilt inschakelen, schakelt u het keuze rondje ja in en schakelt u het selectie vakje bevestiging in.
 ![AHB-configuratie Blade na het maken](./media/azure-hybrid-benefit/create-configuration-blade.png)
 
-
 >[!NOTE]
 > Als u een **aangepaste moment opname** of een **gedeelde installatie kopie (SIG)** van een RHEL-of SLES payg Marketplace-installatie kopie hebt gemaakt, kunt u Azure CLI alleen gebruiken om Azure Hybrid benefit in te scha kelen. Dit is een bekende beperking en er is momenteel geen tijd lijn om deze mogelijkheid te bieden in de Azure-Portal.
-
-
 
 ## <a name="enable-and-disable-the-benefit-in-the-azure-cli"></a>Het voor deel in de Azure CLI inschakelen en uitschakelen
 
@@ -179,6 +176,15 @@ Zie voor meer informatie over de naleving van Red Hat-abonnementen, software-upd
 
 Zie [SuSE Linux Enter prise en Azure Hybrid Benefit](https://www.suse.com/c/suse-linux-enterprise-and-azure-hybrid-benefit/)voor meer informatie over het gebruik van Azure Hybrid Benefit voor uw SLES-vm's en over het overstappen van SLES payg naar BYOS of het verplaatsen van SLES BYOS naar payg. 
 
+## <a name="azure-hybrid-benefit-on-reserved-instances-is-in-preview"></a>De preview-versie van Azure Hybrid Benefit op gereserveerde instanties
+
+Met Azure Reservations (Azure Reserved Virtual Machine Instances) kunt u geld besparen door over te nemen naar abonnementen van één of drie jaar voor meerdere producten. Meer informatie over [gereserveerde instanties](https://docs.microsoft.com/azure/cost-management-billing/reservations/save-compute-costs-reservations)vindt u hier. De Azure Hybrid Benefit is beschikbaar als preview-versie voor [gereserveerde virtuele-machine-instanties (RIs)](https://review.docs.microsoft.com/azure/cost-management-billing/reservations/save-compute-costs-reservations#charges-covered-by-reservation). Dit betekent dat als u de reken kosten hebt gekocht tegen een korting met behulp van RI, u AHB-voor deel kunt Toep assen op de licentie kosten voor RHEL en SUSE bovenop it. De stappen voor het Toep assen van AHB-voor deel voor een RI-exemplaar blijven precies hetzelfde als voor een gewone virtuele machine.
+![AHB voor RIs](./media/azure-hybrid-benefit/reserved-instances.png)
+
+>[!NOTE]
+>Als u al reserve ringen hebt gekocht voor RHEL-of SUSE PAYG-software op Azure Marketplace, wacht u totdat de reserve ring dienst is voltooid voordat u de Azure Hybrid Benefit.
+
+
 ## <a name="frequently-asked-questions"></a>Veelgestelde vragen
 *V: kan ik een licentie type van `RHEL_BYOS` met een SLES-installatie kopie of andersom gebruiken?*
 
@@ -206,11 +212,11 @@ A: Ja, dat is mogelijk. U kunt het licentie type van `RHEL_BYOS` voor RHEL-vm's 
 
 *V: kan ik Azure Hybrid Benefit gebruiken op schaal sets voor virtuele machines voor RHEL en SLES?*
 
-A: Nee, dat kan niet. Virtuele-machine schaal sets bevinden zich momenteel niet in het bereik van Azure Hybrid Benefit voor RHEL en SLES.
+A: Ja, Azure Hybrid Benefit op virtuele-machine schaal sets voor RHEL en SLES is in preview. [Meer informatie over dit voor deel en hoe u dit kunt gebruiken](https://docs.microsoft.com/azure/virtual-machine-scale-sets/azure-hybrid-benefit-linux-vmss). 
 
 *V: kan ik Azure Hybrid Benefit gebruiken op gereserveerde instanties voor RHEL en SLES?*
 
-A: Nee, dat kan niet. Gereserveerde instanties bevinden zich momenteel niet in het bereik van Azure Hybrid Benefit voor RHEL en SLES.
+A: Ja, Azure Hybrid Benefit op een gereserveerde instantie voor RHEL en SLES is in preview. [Meer informatie over dit voor deel en hoe u dit kunt gebruiken](#azure-hybrid-benefit-on-reserved-instances-is-in-preview).
 
 *V: kan ik Azure Hybrid Benefit gebruiken op een virtuele machine die is geïmplementeerd voor SQL Server op RHEL-installatie kopieën?*
 

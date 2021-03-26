@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 03/04/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: b69492dc41786a677043df5e77c9d12aa26893f6
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 929463e346311d58da5ac75b28c774bcfe258f08
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102119770"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105557527"
 ---
 # <a name="about-claim-resolvers-in-azure-active-directory-b2c-custom-policies"></a>Over claim resolvers in Azure Active Directory B2C aangepast beleid
 
@@ -72,12 +72,12 @@ De volgende secties bevatten een lijst met beschik bare claim resolvers.
 | {OIDC: LoginHint} |  De `login_hint` query teken reeks parameter. | someone@contoso.com |
 | {OIDC: MaxAge} | De `max_age`. | N.v.t. |
 | {OIDC: nonce} |De `Nonce`  query teken reeks parameter. | defaultNonce |
-| {OIDC: wacht woord}| Het wacht woord van de gebruiker van het [wacht woord voor de resource-eigenaar loopt](ropc-custom.md) .| Wachtwoord1| 
+| {OIDC: wacht woord}| Het wacht woord van de gebruiker van het [wacht woord voor de resource-eigenaar loopt](add-ropc-policy.md) .| Wachtwoord1| 
 | {OIDC: prompt} | De `prompt` query teken reeks parameter. | aanmelding |
 | {OIDC: RedirectUri} |De `redirect_uri`  query teken reeks parameter. | https://jwt.ms |
 | {OIDC: resource} |De `resource`  query teken reeks parameter. | N.v.t. |
 | {OIDC: bereik} |De `scope`  query teken reeks parameter. | OpenID Connect |
-| {OIDC: gebruikers naam}| De gebruikers naam van de gebruiker van het [wacht woord](ropc-custom.md) voor de resource-eigenaar.| emily@contoso.com| 
+| {OIDC: gebruikers naam}| De gebruikers naam van de gebruiker van het [wacht woord](add-ropc-policy.md) voor de resource-eigenaar.| emily@contoso.com| 
 
 ### <a name="context"></a>Context
 

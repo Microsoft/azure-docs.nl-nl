@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/17/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 5f9cf6dba0a1e670e3a27cb3546de9237466e7ce
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: dead43f2e9f2e8913bcebde43d543b8df8d33ced
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "101659423"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105565670"
 ---
 # <a name="azure-security-baseline-for-azure-cosmos-db"></a>Azure-beveiligings basislijn voor Azure Cosmos DB
 
@@ -44,7 +44,7 @@ U kunt ook de gegevens beveiligen die zijn opgeslagen in uw Azure Cosmos-account
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: de [Security Bench Mark van Azure](/home/mbaldwin/docs/asb/azure-docs-pr/articles/governance/policy/samples/azure-security-benchmark.md) is het standaard beleids initiatief voor Security Center en is de basis voor de [aanbevelingen van Security Center](/home/mbaldwin/docs/asb/azure-docs-pr/articles/security-center/security-center-recommendations.md). De Azure Policy definities die aan dit besturings element zijn gerelateerd, worden automatisch door Security Center ingeschakeld. Voor waarschuwingen met betrekking tot dit besturings element is mogelijk een [Azure Defender](/home/mbaldwin/docs/asb/azure-docs-pr/articles/security-center/azure-defender.md) -plan vereist voor de gerelateerde services.
+**Azure Security Center bewaking**: de [Security Bench Mark van Azure](/azure/governance/policy/samples/azure-security-benchmark) is het standaard beleids initiatief voor Security Center en is de basis voor de [aanbevelingen van Security Center](/azure/security-center/security-center-recommendations). De Azure Policy definities die aan dit besturings element zijn gerelateerd, worden automatisch door Security Center ingeschakeld. Voor waarschuwingen met betrekking tot dit besturings element is mogelijk een [Azure Defender](/azure/security-center/azure-defender) -plan vereist voor de gerelateerde services.
 
 **Azure Policy ingebouwde definities-Microsoft.DocumentDB**:
 
@@ -84,9 +84,9 @@ Schakel DDoS Protection standaard in op de virtuele netwerken die zijn gekoppeld
 
 - [Azure Cosmos DB Advanced Threat Protection configureren](cosmos-db-advanced-threat-protection.md)
 
-- [DDoS-beveiliging configureren](/azure/virtual-network/manage-ddos-protection)
+- [DDoS-beveiliging configureren](../ddos-protection/manage-ddos-protection.md)
 
-- [Meer informatie over Azure Security Center geïntegreerde bedreigings informatie](/azure/security-center/security-center-alerts-service-layer)
+- [Meer informatie over Azure Security Center geïntegreerde bedreigings informatie](../security-center/azure-defender.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -146,7 +146,7 @@ U kunt ook Azure-blauw drukken gebruiken om grootschalige Azure-implementaties t
 
 **Richt lijnen**: Gebruik labels voor netwerk bronnen die zijn gekoppeld aan uw Azure Cosmos DB-implementatie om ze logisch in een taxonomie te organiseren.
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -156,9 +156,9 @@ U kunt ook Azure-blauw drukken gebruiken om grootschalige Azure-implementaties t
 
 **Hulp**: Azure-activiteiten logboek gebruiken om netwerk resource configuraties te bewaken en wijzigingen te detecteren voor netwerk bronnen die betrekking hebben op uw Azure Cosmos DB exemplaren. Maak waarschuwingen in Azure Monitor die worden geactiveerd wanneer er wijzigingen in kritieke netwerk bronnen plaatsvinden. 
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](/azure/azure-monitor/platform/activity-log-view)
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Waarschuwingen maken in Azure Monitor](/azure/azure-monitor/platform/alerts-activity-log)
+- [Waarschuwingen maken in Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -172,7 +172,7 @@ U kunt ook Azure-blauw drukken gebruiken om grootschalige Azure-implementaties t
 
 **Hulp**: opname logboeken via Azure monitor voor het verzamelen van beveiligings gegevens die zijn gegenereerd door Azure Cosmos db. Gebruik in Azure Monitor Log Analytics-werk ruimten om analyses uit te voeren en te uitvoeren en gebruik opslag accounts voor lange termijn/archiverings opslag. U kunt ook on-board gegevens toevoegen aan Azure Sentinel of een beveiligings incident en gebeurtenis beheer van derden (SIEM). 
 
-- [Diagnostische logboeken inschakelen voor Azure Cosmos DB](/azure/cosmos-db/logging)
+- [Diagnostische logboeken inschakelen voor Azure Cosmos DB](./monitor-cosmos-db.md)
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
@@ -186,9 +186,9 @@ U kunt ook Azure-blauw drukken gebruiken om grootschalige Azure-implementaties t
 
 U kunt ook diagnostische instellingen van Azure-activiteiten logboek inschakelen en deze logboeken verzenden naar dezelfde Log Analytics werk ruimte die u voor Azure Cosmos DB-logboeken gebruikt.
 
-- [Diagnostische instellingen inschakelen voor Azure Cosmos DB](/azure/cosmos-db/logging)
+- [Diagnostische instellingen inschakelen voor Azure Cosmos DB](./monitor-cosmos-db.md)
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](/azure/azure-monitor/platform/diagnostic-settings-legacy)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -198,7 +198,7 @@ U kunt ook diagnostische instellingen van Azure-activiteiten logboek inschakelen
 
 **Richt lijnen**: stel in azure monitor de Bewaar periode voor het logboek In voor log Analytics werk ruimten die zijn gekoppeld aan uw Azure Cosmos DB-instanties volgens de nalevings voorschriften van uw organisatie.
 
-- [Para meters voor het bewaren van Logboeken instellen](/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period)
+- [Para meters voor het bewaren van Logboeken instellen](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Verantwoordelijkheid**: Klant
 
@@ -222,11 +222,11 @@ U kunt ook diagnostische instellingen van Azure-activiteiten logboek inschakelen
 
 U kunt uw Log Analytics-werk ruimte ook vrijgeven aan Azure Sentinel, omdat deze een via-oplossing (Security Orchestration Automated Response) biedt. Hiermee kunnen playbooks (geautomatiseerde oplossingen) worden gemaakt en gebruikt om beveiligings problemen op te lossen. Daarnaast kunt u aangepaste logboek waarschuwingen maken in uw Log Analytics-werk ruimte met behulp van Azure Monitor.
 
-- [Lijst met beveiligings waarschuwingen voor bedreigingen voor Azure Cosmos DB](https://docs.microsoft.com/azure/security-center/alerts-reference#alerts-azurecosmos)
+- [Lijst met beveiligings waarschuwingen voor bedreigingen voor Azure Cosmos DB](../security-center/alerts-reference.md#alerts-azurecosmos)
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
-- [Logboek waarschuwingen maken, weer geven en beheren met behulp van Azure Monitor](/azure/azure-monitor/platform/alerts-log)
+- [Logboek waarschuwingen maken, weer geven en beheren met behulp van Azure Monitor](../azure-monitor/alerts/alerts-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -248,13 +248,13 @@ Daarnaast kunnen sommige acties in Azure Cosmos DB worden beheerd met Azure AD e
 
 - [Informatie over op rollen gebaseerd toegangs beheer in Azure Cosmos DB](role-based-access-control.md)
 
-- [Bouw uw eigen aangepaste rollen met behulp van Azure Cosmos DB acties (Microsoft.DocumentDB-naam ruimte)](https://docs.microsoft.com/azure/role-based-access-control/resource-provider-operations#microsoftdocumentdb)
+- [Bouw uw eigen aangepaste rollen met behulp van Azure Cosmos DB acties (Microsoft.DocumentDB-naam ruimte)](../role-based-access-control/resource-provider-operations.md#microsoftdocumentdb)
 
 - [Een nieuwe rol maken in azure AD](../role-based-access-control/custom-roles.md)
 
-- [Een directory-rol verkrijgen in azure AD met Power shell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0&amp;preserve-view=true)
+- [Een directory-rol verkrijgen in azure AD met Power shell](/powershell/module/azuread/get-azureaddirectoryrole?preserve-view=true&view=azureadps-2.0)
 
-- [Leden van een directory-rol in azure AD ophalen met Power shell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0&amp;preserve-view=true)
+- [Leden van een directory-rol in azure AD ophalen met Power shell](/powershell/module/azuread/get-azureaddirectoryrolemember?preserve-view=true&view=azureadps-2.0)
 
 - [Gebruikerstoegang beperken tot alleen gegevensbewerkingen](how-to-restrict-user-data.md)
 
@@ -268,7 +268,7 @@ Daarnaast kunnen sommige acties in Azure Cosmos DB worden beheerd met Azure AD e
 
 - [Beveiligde toegang tot gegevens in Azure Cosmos DB](secure-access-to-data.md)
 
-- [Azure Cosmos DB sleutels opnieuw genereren](https://docs.microsoft.com/azure/cosmos-db/manage-with-powershell#regenerate-keys)
+- [Azure Cosmos DB sleutels opnieuw genereren](./manage-with-powershell.md#regenerate-keys)
 
 - [Programmatisch toegang krijgen tot sleutels met Azure AD](certificate-based-authentication.md)
 
@@ -330,7 +330,7 @@ Gebruik Azure AD-risico detecties om waarschuwingen en rapporten weer te geven o
 
 - [Privileged Identity Management implementeren (PIM)](../active-directory/privileged-identity-management/pim-deployment-plan.md)
 
-- [Meer informatie over Azure AD-risico detectie](/azure/active-directory/reports-monitoring/concept-risk-events)
+- [Meer informatie over Azure AD-risico detectie](../active-directory/identity-protection/overview-identity-protection.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -352,7 +352,7 @@ Gebruik Azure AD-risico detecties om waarschuwingen en rapporten weer te geven o
 
 - [Een Azure AD-instantie maken en configureren](../active-directory-domain-services/tutorial-create-instance.md)
 
-- [Azure AD-verificatie configureren en beheren met Azure SQL](/azure/sql-database/sql-database-aad-authentication-configure)
+- [Azure AD-verificatie configureren en beheren met Azure SQL](../azure-sql/database/authentication-aad-configure.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -384,7 +384,7 @@ Gebruik Azure AD-risico detecties om waarschuwingen en rapporten weer te geven o
 
 U kunt ook de functie voor identiteits beveiliging en risico detectie van Azure Active Directory (Azure AD) gebruiken voor het configureren van automatische antwoorden op gedetecteerde verdachte acties die betrekking hebben op gebruikers identiteiten. Daarnaast kunt u Logboeken opnemen in azure Sentinel voor verder onderzoek.
 
-- [Riskante Azure AD-aanmeldingen weergeven](/azure/active-directory/reports-monitoring/concept-risky-sign-ins)
+- [Riskante Azure AD-aanmeldingen weergeven](../active-directory/identity-protection/overview-identity-protection.md)
 
 - [Risico beleid voor identiteits beveiliging configureren en inschakelen](../active-directory/identity-protection/howto-identity-protection-configure-risk-policies.md)
 
@@ -402,7 +402,7 @@ U kunt ook de functie voor identiteits beveiliging en risico detectie van Azure 
 
 **Hulp**: Tags gebruiken bij het volgen van Azure Cosmos DB exemplaren die gevoelige informatie opslaan of verwerken.
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -412,11 +412,11 @@ U kunt ook de functie voor identiteits beveiliging en risico detectie van Azure 
 
 **Richt lijnen**: afzonderlijke abonnementen en/of beheer groepen implementeren voor ontwikkeling, testen en productie. Azure Cosmos DB exemplaren worden van elkaar gescheiden door een virtueel netwerk/subnet, worden op de juiste wijze gelabeld en beveiligd in een netwerk beveiligings groep (NSG) of Azure Firewall. Azure Cosmos DB instanties waarin gevoelige gegevens worden opgeslagen, moeten worden geïsoleerd. Met behulp van een persoonlijke Azure-koppeling kunt u verbinding maken met een Azure Cosmos DB exemplaar account via een persoonlijk eind punt. Het persoonlijke eind punt is een reeks privé-IP-adressen in een subnet binnen het virtuele netwerk. Vervolgens kunt u de toegang tot de geselecteerde privé-IP-adressen beperken. 
 
-- [Aanvullende Azure-abonnementen maken](/azure/billing/billing-create-subscription)
+- [Aanvullende Azure-abonnementen maken](../cost-management-billing/manage/create-subscription.md)
 
-- [Beheer groepen maken](/azure/governance/management-groups/create)
+- [Beheer groepen maken](../governance/management-groups/create-management-group-portal.md)
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 - [Een persoonlijk eind punt configureren voor Azure Cosmos DB](how-to-configure-private-endpoints.md)
 
@@ -450,7 +450,7 @@ Daarnaast kunt u, wanneer u virtuele machines gebruikt om toegang te krijgen tot
 
 Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt micro soft alle inhoud van de klant als gevoelig en gaat u naar een fantastische lengte om te beschermen tegen verlies en bloot stelling van klant gegevens. Om ervoor te zorgen dat klant gegevens binnen Azure veilig blijven, heeft micro soft een reeks robuuste besturings elementen en mogelijkheden voor gegevens bescherming geïmplementeerd en onderhouden.
 
-- [Azure Cosmos DB gegevens indexeren met Azure Cognitive Search](https://docs.microsoft.com/azure/search/search-howto-index-cosmosdb?toc=/azure/cosmos-db/toc.json&amp;bc=/azure/cosmos-db/breadcrumb/toc.json)
+- [Azure Cosmos DB gegevens indexeren met Azure Cognitive Search](../search/search-howto-index-cosmosdb.md?bc=%2fazure%2fcosmos-db%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fcosmos-db%2ftoc.json)
 
 - [Informatie over beveiliging van klantgegevens in Azure](../security/fundamentals/protection-customer-data.md)
 
@@ -476,7 +476,7 @@ Standaard beheert micro soft de sleutels die worden gebruikt voor het versleutel
 
 - [Meer informatie over versleuteling in rust met Azure Cosmos DB](database-encryption-at-rest.md)
 
-- [Meer informatie over sleutel beheer voor versleuteling in rust met Azure Cosmos DB](/azure/cosmos-db/cosmos-db-security-controls)
+- [Meer informatie over sleutel beheer voor versleuteling in rust met Azure Cosmos DB]()
 
 - [Door de klant beheerde sleutels voor uw Azure Cosmos DB-account configureren](how-to-setup-cmk.md)
 
@@ -488,9 +488,9 @@ Standaard beheert micro soft de sleutels die worden gebruikt voor het versleutel
 
 **Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken wanneer wijzigingen worden aangebracht in productie-exemplaren van Azure Cosmos db.
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](/azure/azure-monitor/platform/alerts-activity-log)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](/azure/azure-monitor/platform/alerts-activity-log)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -506,7 +506,7 @@ Standaard beheert micro soft de sleutels die worden gebruikt voor het versleutel
 
 Micro soft voert systeem patches en beveiligings beheer uit op de onderliggende hosts die uw Azure Cosmos DB-instanties ondersteunen. Om ervoor te zorgen dat klant gegevens binnen Azure veilig blijven, heeft micro soft een reeks robuuste besturings elementen en mogelijkheden voor gegevens bescherming geïmplementeerd en onderhouden.
 
-- [Ondersteunde functies zijn beschikbaar in Azure Security Center](https://docs.microsoft.com/azure/security-center/security-center-services?tabs=features-windows)
+- [Ondersteunde functies zijn beschikbaar in Azure Security Center](../security-center/security-center-services.md?tabs=features-windows)
 
 **Verantwoordelijkheid**: Gedeeld
 
@@ -524,7 +524,7 @@ Hoewel klassieke Azure-resources kunnen worden gedetecteerd via resource grafiek
 
 - [Query's maken met Azure resource Graph](../governance/resource-graph/first-query-portal.md)
 
-- [Uw Azure-abonnementen weer geven](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-4.8.0&amp;preserve-view=true)
+- [Uw Azure-abonnementen weer geven](/powershell/module/az.accounts/get-azsubscription?preserve-view=true&view=azps-4.8.0)
 
 - [Meer informatie over toegangs beheer op basis van rollen in azure](../role-based-access-control/overview.md)
 
@@ -536,9 +536,9 @@ Hoewel klassieke Azure-resources kunnen worden gedetecteerd via resource grafiek
 
 **Richt lijnen**: Tags Toep assen op uw Azure Cosmos DB instanties en gerelateerde resources met meta gegevens om ze logisch in een taxonomie te organiseren.
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
-- [Welke Azure Cosmos DB-bronnen Tags ondersteunen](https://docs.microsoft.com/azure/azure-resource-manager/management/tag-support#microsoftdocumentdb)
+- [Welke Azure Cosmos DB-bronnen Tags ondersteunen](../azure-resource-manager/management/tag-support.md#microsoftdocumentdb)
 
 **Verantwoordelijkheid**: Klant
 
@@ -548,11 +548,11 @@ Hoewel klassieke Azure-resources kunnen worden gedetecteerd via resource grafiek
 
 **Richt lijnen**: Gebruik labels, beheer groepen en afzonderlijke abonnementen, waar nodig, om assets te organiseren en bij te houden, inclusief, maar niet beperkt tot Azure Cosmos DB resources. Sluit de inventaris regel matig af en zorg ervoor dat niet-geautoriseerde resources tijdig worden verwijderd uit het abonnement.
 
-- [Aanvullende Azure-abonnementen maken](/azure/billing/billing-create-subscription)
+- [Aanvullende Azure-abonnementen maken](../cost-management-billing/manage/create-subscription.md)
 
-- [Beheergroepen maken](/azure/governance/management-groups/create)
+- [Beheergroepen maken](../governance/management-groups/create-management-group-portal.md)
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -584,7 +584,7 @@ Daarnaast gebruikt u de resource grafiek van Azure om resources in de abonnement
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Een specifiek resource type weigeren met Azure Policy](https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#general)
+- [Een specifiek resource type weigeren met Azure Policy](../governance/policy/samples/built-in-policies.md#general)
 
 **Verantwoordelijkheid**: Klant
 
@@ -610,7 +610,7 @@ Daarnaast gebruikt u de resource grafiek van Azure om resources in de abonnement
 - Advanced Threat Protection implementeren voor Cosmos DB-accounts
 - Cosmos DB moet gebruikmaken van een service-eindpunt voor een virtueel netwerk
 
-- [Beschik bare Azure Policy aliassen weer geven](https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-4.8.0&amp;preserve-view=true)
+- [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias?preserve-view=true&view=azps-4.8.0)
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
@@ -668,7 +668,7 @@ Daarnaast gebruikt u de resource grafiek van Azure om resources in de abonnement
 
 - [Integratie met door Azure beheerde identiteiten](../azure-app-configuration/howto-integrate-azure-managed-service-identity.md)
 
-- [Een Key Vault maken](/azure/key-vault/quick-create-portal)
+- [Een Key Vault maken](../key-vault/secrets/quick-create-portal.md)
 
 - [Verifiëren bij Key Vault](../key-vault/general/authentication.md)
 
@@ -728,7 +728,7 @@ Als Key Vault gebruiken om referenties voor uw Cosmos DB-instanties op te slaan,
 
 - [Meer informatie over Azure Cosmos DB automatische back-ups](online-backup-and-restore.md)
 
-- [Gegevens herstellen in Azure Cosmos DB](/azure/cosmos-db/how-to-backup-and-restore)
+- [Gegevens herstellen in Azure Cosmos DB](./online-backup-and-restore.md)
 
 - [Back-ups maken van Key Vault sleutels](/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey)
 
@@ -744,9 +744,9 @@ Test het herstellen van uw geheimen die zijn opgeslagen in Azure Key Vault met b
 
 - [Meer informatie over Azure Cosmos DB automatische back-ups](online-backup-and-restore.md)
 
-- [Gegevens herstellen in Azure Cosmos DB](/azure/cosmos-db/how-to-backup-and-restore)
+- [Gegevens herstellen in Azure Cosmos DB](./online-backup-and-restore.md)
 
-- [Azure Key Vault geheimen herstellen](https://docs.microsoft.com/powershell/module/az.keyvault/restore-azkeyvaultkey?view=azps-4.8.0&amp;preserve-view=true)
+- [Azure Key Vault geheimen herstellen](/powershell/module/az.keyvault/restore-azkeyvaultkey?preserve-view=true&view=azps-4.8.0)
 
 **Verantwoordelijkheid**: Gedeeld
 
@@ -760,7 +760,7 @@ Schakel Soft-Delete in Key Vault in om sleutels te beschermen tegen onbedoelde o
 
 - [Gegevens versleuteling in Azure Cosmos DB begrijpen](database-encryption-at-rest.md)
 
-- [Soft-Delete in Key Vault inschakelen](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal)
+- [Soft-Delete in Key Vault inschakelen](../storage/blobs/soft-delete-blob-overview.md?tabs=azure-portal)
 
 **Verantwoordelijkheid**: Gedeeld
 
@@ -856,5 +856,5 @@ Daarnaast kunt u ook duidelijk abonnementen markeren (voor bijvoorbeeld producti
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Overzicht Azure Security Benchmark V2](/azure/security/benchmarks/overview)
-- Meer informatie over [Azure-beveiligingsbasislijnen](/azure/security/benchmarks/security-baselines-overview)
+- Zie [Overzicht Azure Security Benchmark V2](../security/benchmarks/overview.md)
+- Meer informatie over [Azure-beveiligingsbasislijnen](../security/benchmarks/security-baselines-overview.md)

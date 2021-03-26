@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/17/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 13585173b54c79158161da54f968ba66eb018f6a
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 27a0d5b809480b2ce4aff36c5acd43c149ed5bb3
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101705735"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105562831"
 ---
 # <a name="azure-security-baseline-for-azure-devtest-labs"></a>Azure-beveiligings basislijn voor Azure DevTest Labs
 
@@ -78,11 +78,11 @@ Implementeer Azure Firewall op elke netwerk grenzen van de organisatie met behul
 
 - [Een virtueel netwerk voor Azure DevTest Labs configureren](devtest-lab-configure-vnet.md)
 
-- [DDoS-beveiliging configureren](/azure/virtual-network/manage-ddos-protection)
+- [DDoS-beveiliging configureren](../ddos-protection/manage-ddos-protection.md)
 
 - [Azure Firewall implementeren](../firewall/tutorial-firewall-deploy-portal.md)
 
-- [Meer informatie over Azure Security Center geïntegreerde bedreigings informatie](/azure/security-center/threat-protection)
+- [Meer informatie over Azure Security Center geïntegreerde bedreigings informatie](../security-center/azure-defender.md)
 
 - [Meer informatie over Azure Security Center adaptieve netwerk beveiliging](../security-center/security-center-adaptive-network-hardening.md)
 
@@ -144,7 +144,7 @@ U kunt ook toepassings beveiligings groepen gebruiken om complexe beveiligings c
 
 - [Service Tags begrijpen en gebruiken](../virtual-network/service-tags-overview.md)
 
-- [Toepassings beveiligings groepen begrijpen en gebruiken](/azure/virtual-network/security-overview#application-security-groups)
+- [Toepassings beveiligings groepen begrijpen en gebruiken](../virtual-network/network-security-groups-overview.md#application-security-groups)
 
 **Verantwoordelijkheid**: Klant
 
@@ -158,7 +158,7 @@ U kunt ook Azure-blauw drukken gebruiken om grootschalige Azure-implementaties t
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Voor beelden Azure Policy voor netwerken](https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#network)
+- [Voor beelden Azure Policy voor netwerken](../governance/policy/samples/built-in-policies.md#network)
 
 - [Een Azure Blueprint maken](../governance/blueprints/create-blueprint-portal.md)
 
@@ -188,9 +188,9 @@ U kunt Azure PowerShell of Azure CLI gebruiken om op basis van hun labels acties
 
 **Hulp**: Azure-activiteiten logboek gebruiken om resource configuraties te bewaken en wijzigingen in uw Azure-resources te detecteren. Maak waarschuwingen in Azure Monitor die worden geactiveerd wanneer er wijzigingen in kritieke resources plaatsvinden.
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](/azure/azure-monitor/platform/activity-log#view-the-activity-log)
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Waarschuwingen maken in Azure Monitor](/azure/azure-monitor/platform/alerts-activity-log)
+- [Waarschuwingen maken in Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -214,7 +214,7 @@ U kunt Azure PowerShell of Azure CLI gebruiken om op basis van hun labels acties
 
 **Hulp**: Schakel Diagnostische instellingen voor Azure-activiteiten logboek in en verzend de logboeken naar een log Analytics-werk ruimte, een Azure Event hub of een Azure-opslag account voor archivering. Activiteiten logboeken bieden inzicht in de bewerkingen die zijn uitgevoerd op uw Azure DevTest Labs exemplaren op het niveau van het beheer vlak. Met Azure activiteiten logboek gegevens kunt u bepalen ' wat, wie en wanneer ' voor schrijf bewerkingen (PUT, POST, DELETE) die zijn uitgevoerd op het niveau van het beheer vlak voor uw DevTest Labs-instanties.
 
-- [Diagnostische instellingen maken om logboeken en metrische gegevens van het platform te verzenden naar verschillende bestemmingen](/azure/azure-monitor/platform/diagnostic-settings)
+- [Diagnostische instellingen maken om logboeken en metrische gegevens van het platform te verzenden naar verschillende bestemmingen](../azure-monitor/essentials/diagnostic-settings.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -224,7 +224,7 @@ U kunt Azure PowerShell of Azure CLI gebruiken om op basis van hun labels acties
 
 **Hulp**: Schakel Diagnostische instellingen voor Azure-activiteiten logboek in en verzend de logboeken naar een log Analytics-werk ruimte, een Azure Event hub of een Azure-opslag account voor archivering. Activiteiten logboeken bieden inzicht in de bewerkingen die zijn uitgevoerd op uw Azure DevTest Labs exemplaren op het niveau van het beheer vlak. Met Azure-activiteiten logboek gegevens kunt u de ' What, wie en wanneer ' bepalen voor schrijf bewerkingen (PUT, POST, DELETE) die zijn uitgevoerd op het niveau van het beheer vlak voor uw DevTest Labs-instanties.
 
-- [Diagnostische instellingen maken om logboeken en metrische gegevens van het platform te verzenden naar verschillende bestemmingen](/azure/azure-monitor/platform/diagnostic-settings)
+- [Diagnostische instellingen maken om logboeken en metrische gegevens van het platform te verzenden naar verschillende bestemmingen](../azure-monitor/essentials/diagnostic-settings.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -236,7 +236,7 @@ U kunt Azure PowerShell of Azure CLI gebruiken om op basis van hun labels acties
 
 Raadpleeg voor meer informatie de volgende artikelen:
 
-- [Interne host-logboeken van de virtuele machine van Azure verzamelen met Azure Monitor](/azure/azure-monitor/learn/quick-collect-azurevm)
+- [Interne host-logboeken van de virtuele machine van Azure verzamelen met Azure Monitor](../azure-monitor/vm/quick-collect-azurevm.md)
 
 - [Meer informatie over het verzamelen van Azure Security Center gegevens](../security-center/security-center-enable-data-collection.md)
 
@@ -248,7 +248,7 @@ Raadpleeg voor meer informatie de volgende artikelen:
 
 **Richt lijnen**: stel in azure monitor de Bewaar periode voor logboek registratie In voor log Analytics werk ruimten die zijn gekoppeld aan uw Azure DevTest Labs-instanties volgens de nalevings voorschriften van uw organisatie.
 
-- [Zie het volgende artikel voor meer informatie](/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period)
+- [Zie het volgende artikel voor meer informatie](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Verantwoordelijkheid**: Klant
 
@@ -260,9 +260,9 @@ Raadpleeg voor meer informatie de volgende artikelen:
 
 Raadpleeg voor meer informatie de volgende artikelen:
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](/azure/azure-monitor/platform/diagnostic-settings)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/diagnostic-settings.md)
 
-- [Azure-activiteiten logboeken verzamelen en analyseren in Log Analytics werk ruimte in Azure Monitor](/azure/azure-monitor/platform/activity-log)
+- [Azure-activiteiten logboeken verzamelen en analyseren in Log Analytics werk ruimte in Azure Monitor](../azure-monitor/essentials/activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -272,7 +272,7 @@ Raadpleeg voor meer informatie de volgende artikelen:
 
 **Hulp**: gebruik Azure log Analytics-werk ruimte voor het bewaken en waarschuwen over afwijkende activiteiten in beveiligings logboeken en gebeurtenissen met betrekking tot uw Azure DevTest Labs.
 
-- [Een waarschuwing over logboek gegevens van log Analytics](/azure/azure-monitor/learn/tutorial-response)
+- [Een waarschuwing over logboek gegevens van log Analytics](../azure-monitor/alerts/tutorial-response.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -333,7 +333,7 @@ Daarnaast kunt u aanbevelingen van Azure Security Center of ingebouwde Azure-bel
 - Resource beheer: het biedt toegang tot de Azure Portal om resources te beheren (Vm's te maken, omgevingen te maken, te starten, te stoppen, opnieuw op te starten, te verwijderen en artefacten toe te passen). Resource beheer wordt uitgevoerd in azure met behulp van Azure RBAC (op rollen gebaseerd toegangs beheer). U wijst rollen toe aan gebruikers en stelt machtigingen voor de resource en toegangs niveau in.
 - Virtuele machines (netwerk niveau): in de standaard configuratie gebruikt Vm's een lokaal beheerders account. Als er een domein beschikbaar is (Azure Active Directory Domain Services (Azure AD DS), een on-premises domein of een domein in de Cloud, kunnen machines worden toegevoegd aan het domein. Gebruikers kunnen vervolgens hun domein identiteiten gebruiken met behulp van het samen voegen van het domein om verbinding te maken met de computers.
 
-- [Referentie architectuur voor DevTest Labs](https://docs.microsoft.com/azure/devtest-labs/devtest-lab-reference-architecture#architecture)
+- [Referentie architectuur voor DevTest Labs](./devtest-lab-reference-architecture.md#architecture)
 
 - [Informatie over eenmalige aanmelding met Azure AD](../active-directory/manage-apps/what-is-single-sign-on.md)
 
@@ -463,7 +463,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 **Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken wanneer wijzigingen worden aangebracht in DevTest Labs-instanties en andere kritieke of verwante resources.
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](/azure/azure-monitor/platform/alerts-activity-log)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
 - [Waarschuwingen maken voor activiteiten logboek gebeurtenissen van DevTest Labs](create-alerts.md)
 
@@ -481,7 +481,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 - [Query's maken met Azure Graph](../governance/resource-graph/first-query-portal.md)
 
-- [Uw Azure-abonnementen weer geven](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-4.8.0&amp;preserve-view=true)
+- [Uw Azure-abonnementen weer geven](/powershell/module/az.accounts/get-azsubscription?preserve-view=true&view=azps-4.8.0)
 
 - [Meer informatie over Azure RBAC](../role-based-access-control/overview.md)
 
@@ -595,7 +595,7 @@ Referentie materiaal:
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Een specifiek resource type weigeren met Azure Policy](https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#general)
+- [Een specifiek resource type weigeren met Azure Policy](../governance/policy/samples/built-in-policies.md#general)
 
 **Verantwoordelijkheid**: Klant
 
@@ -625,7 +625,7 @@ Referentie materiaal:
 
 **Richt lijnen**: afhankelijk van het type scripts kunt u specifieke configuraties van het besturings systeem of bronnen van derden gebruiken om de mogelijkheden van gebruikers te beperken voor het uitvoeren van scripts in de vm's die worden gehost in DevTest Labs. U kunt ook Azure Security Center adaptieve toepassings besturings elementen gebruiken om ervoor te zorgen dat alleen geautoriseerde software wordt uitgevoerd en alle niet-geautoriseerde software wordt geblokkeerd voor het uitvoeren van de onderliggende Azure-Vm's.
 
-- [De uitvoering van Power shell-scripts beheren in Windows-omgevingen](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7&amp;preserve-view=true)
+- [De uitvoering van Power shell-scripts beheren in Windows-omgevingen](/powershell/module/microsoft.powershell.security/set-executionpolicy?preserve-view=true&view=powershell-7)
 
 - [Azure Security Center adaptieve toepassings besturings elementen gebruiken](../security-center/security-center-adaptive-application.md)
 
@@ -665,7 +665,7 @@ Azure Resource Manager heeft ook de mogelijkheid om de sjabloon in JavaScript Ob
 
 U kunt ook aanbevelingen van Azure Security Center gebruiken als een veilige configuratie basislijn voor uw Azure-resources.
 
-- [Beschik bare Azure Policy aliassen weer geven](https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-4.8.0&amp;preserve-view=true)
+- [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias?preserve-view=true&view=azps-4.8.0)
 
 - [Zelfstudie: Beleidsregels voor het afdwingen van naleving maken en beheren](../governance/policy/tutorials/create-and-manage.md)
 
@@ -721,7 +721,7 @@ Azure Marketplace-installatie kopieën voor virtuele machines die zijn gepublice
 
 - [Overzicht van Azure Automation status configuratie](../automation/automation-dsc-overview.md)
 
-- [Voorbeeld van een script voor het uploaden van een VHD naar Azure om een nieuwe VM te maken](/azure/virtual-machines/scripts/virtual-machines-windows-powershell-upload-generalized-script)
+- [Voorbeeld van een script voor het uploaden van een VHD naar Azure om een nieuwe VM te maken](/previous-versions/azure/virtual-machines/scripts/virtual-machines-windows-powershell-upload-generalized-script)
 
 - [Een image Factory maken in DevTest Labs](image-factory-create.md)
 
@@ -735,7 +735,7 @@ Azure Marketplace-installatie kopieën voor virtuele machines die zijn gepublice
 
 - [Azure opslag plaatsen Git-zelf studie](/azure/devops/repos/git/gitworkflow)
 
-- [Over machtigingen en groepen](https://docs.microsoft.com/azure/devops/organizations/security/about-permissions?view=azure-devops&amp;tabs=preview-page&amp;preserve-view=true)
+- [Over machtigingen en groepen](/azure/devops/organizations/security/about-permissions?preserve-view=true&tabs=preview-page&view=azure-devops)
 
 - [Integratie tussen Azure DevTest Labs en de Azure DevOps-werk stroom](devtest-lab-dev-ops.md)
 
@@ -765,7 +765,7 @@ Azure Marketplace-installatie kopieën voor virtuele machines die zijn gepublice
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Aliassen gebruiken](https://docs.microsoft.com/azure/governance/policy/concepts/definition-structure#aliases)
+- [Aliassen gebruiken](../governance/policy/concepts/definition-structure.md#aliases)
 
 **Verantwoordelijkheid**: Klant
 
@@ -853,7 +853,7 @@ Azure Marketplace-installatie kopieën voor virtuele machines die zijn gepublice
 
 - [Micro soft antimalware voor Azure configureren](../security/fundamentals/antimalware.md) 
 
-- [Bescherming tegen bedreiging in Azure Security Center](/azure/security-center/threat-protection)
+- [Bescherming tegen bedreiging in Azure Security Center](../security-center/azure-defender.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -869,7 +869,7 @@ Gebruik Azure Security Center bedreigings detectie voor gegevens Services om mal
 
 - [Micro soft antimalware voor Azure begrijpen](../security/fundamentals/antimalware.md) 
 
-- [Meer informatie over de detectie van bedreigingen van Azure Security Center voor gegevens Services](/azure/security-center/security-center-alerts-data-services)
+- [Meer informatie over de detectie van bedreigingen van Azure Security Center voor gegevens Services](../security-center/azure-defender.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -913,7 +913,7 @@ Schakel Azure Backup in op doel-Azure-Vm's en de gewenste frequentie en retentie
 
 - [Een overzicht van Azure VM backup](../backup/backup-azure-vms-introduction.md)
 
-- [Een back-up maken van Key Vault sleutels in azure](https://docs.microsoft.com/powershell/module/az.keyvault/backup-azkeyvaultkey?view=azps-4.8.0&amp;preserve-view=true)
+- [Een back-up maken van Key Vault sleutels in azure](/powershell/module/az.keyvault/backup-azkeyvaultkey?preserve-view=true&view=azps-4.8.0)
 
 **Verantwoordelijkheid**: Klant
 
@@ -929,7 +929,7 @@ Als u gebruikmaakt van Azure Disk Encryption, kunt u de Azure VM herstellen met 
 
 - [Bestanden herstellen vanuit een back-up van Azure VM](../backup/backup-azure-restore-files-from-vm.md)
 
-- [Sleutel kluis sleutels herstellen in azure](https://docs.microsoft.com/powershell/module/az.keyvault/restore-azkeyvaultkey?view=azps-4.8.0&amp;preserve-view=true)
+- [Sleutel kluis sleutels herstellen in azure](/powershell/module/az.keyvault/restore-azkeyvaultkey?preserve-view=true&view=azps-4.8.0)
 
 - [Een back-up maken van een versleutelde VM en deze herstellen](../backup/backup-azure-vms-encryption.md)
 
@@ -975,7 +975,7 @@ Markeer bovendien abonnementen met tags en maak een naamgevings systeem voor het
 
 - [Beveiligingswaarschuwingen in Azure Security Center](../security-center/security-center-alerts-overview.md) 
 
-- [Tags gebruiken om Azure-resources te organiseren](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags gebruiken om Azure-resources te organiseren](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -1041,5 +1041,5 @@ Markeer bovendien abonnementen met tags en maak een naamgevings systeem voor het
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Overzicht Azure Security Benchmark V2](/azure/security/benchmarks/overview)
-- Meer informatie over [Azure-beveiligingsbasislijnen](/azure/security/benchmarks/security-baselines-overview)
+- Zie [Overzicht Azure Security Benchmark V2](../security/benchmarks/overview.md)
+- Meer informatie over [Azure-beveiligingsbasislijnen](../security/benchmarks/security-baselines-overview.md)

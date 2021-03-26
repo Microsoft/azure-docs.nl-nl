@@ -8,12 +8,12 @@ ms.date: 07/27/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: dineshm
-ms.openlocfilehash: 244012f0945f467fe79e95d652ba22e3b62a1b7a
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 9c699cd865746bf430193eba38ec6fa79575692e
+ms.sourcegitcommit: 44edde1ae2ff6c157432eee85829e28740c6950d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100596943"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105543445"
 ---
 # <a name="configure-optimize-and-troubleshoot-azcopy"></a>Configureren, optimaliseren en problemen oplossen in AzCopy
 
@@ -103,14 +103,16 @@ Voordat u deze variabele instelt, wordt u aangeraden een bench Mark-test uit te 
 
 ### <a name="optimize-memory-use"></a>Geheugen gebruik optimaliseren
 
-Stel de `AZCOPY_BUFFER_GB` omgevings variabele in om de maximale hoeveelheid van uw systeem geheugen op te geven die door AzCopy moet worden gebruikt bij het downloaden en uploaden van bestanden.
-Deze waarde in gigabytes (GB) uitdrukken.
+Stel de `AZCOPY_BUFFER_GB` omgevings variabele in om de maximale hoeveelheid van het systeem geheugen op te geven dat u wilt gebruiken voor buffers bij het downloaden en uploaden van bestanden. Deze waarde in gigabytes (GB) uitdrukken.
 
 | Besturingssysteem | Opdracht  |
 |--------|-----------|
 | **Windows** | `set AZCOPY_BUFFER_GB=<value>` |
 | **Linux** | `export AZCOPY_BUFFER_GB=<value>` |
 | **MacOS** | `export AZCOPY_BUFFER_GB=<value>` |
+
+> [!NOTE]
+> Taak tracking maakt altijd extra overhead in het geheugen gebruik. De hoeveelheid is afhankelijk van het aantal overdrachten in een taak. Buffers zijn het grootste onderdeel van het geheugen gebruik. U kunt de overhead beheren door `AZCOPY_BUFFER_GB` te gebruiken om ongeveer aan uw vereisten te voldoen, maar er is geen vlag voor een strikt Cap-geheugen gebruik beschikbaar.
 
 ### <a name="optimize-file-synchronization"></a>Bestands synchronisatie optimaliseren
 

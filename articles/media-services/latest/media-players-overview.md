@@ -6,12 +6,12 @@ ms.author: inhenkel
 ms.service: media-services
 ms.topic: overview
 ms.date: 3/08/2021
-ms.openlocfilehash: 1a1d415b374818d9a51c87e78e7ac422fa374bc5
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 47ef56a770ca9965cef3e50630be4b69342a038d
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102509591"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105559856"
 ---
 # <a name="media-players-for-media-services"></a>Media spelers voor Media Services
 
@@ -21,7 +21,7 @@ U kunt verschillende media spelers gebruiken met Media Services.
 
 Azure Media Player is een video speler voor een groot aantal browsers en apparaten. Azure Media Player maakt gebruik van industriestandaarden zoals HTML5, MSE (Media Source Extensions) en EME (Encrypted Media Extensions) om een geavanceerde adaptieve streamingervaring te bieden. Wanneer deze standaarden niet beschikbaar zijn op een apparaat of in een browser, Azure Media Player gebruikt Flash en Silverlight als terugval technologie. Ongeacht de afspeel technologie die wordt gebruikt, hebben ontwikkel aars een uniforme java script-interface voor toegang tot Api's. Inhoud die wordt geleverd door Azure Media Services kan worden gespeeld over een breed scala aan apparaten en browsers zonder extra inspanning.
 
-Raadpleeg de [Azure Media Player-documentatie](https://docs.microsoft.com/azure/media-services/azure-media-player/azure-media-player-overview).
+Raadpleeg de [Azure Media Player-documentatie](../azure-media-player/azure-media-player-overview.md).
 
 ## <a name="shaka"></a>Schud
 

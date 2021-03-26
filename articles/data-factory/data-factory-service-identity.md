@@ -4,14 +4,14 @@ description: Meer informatie over beheerde identiteit voor Azure Data Factory.
 author: linda33wj
 ms.service: data-factory
 ms.topic: conceptual
-ms.date: 03/23/2021
+ms.date: 03/25/2021
 ms.author: jingwang
-ms.openlocfilehash: 89da1a22bb3fd0eff22a7bed7ed70b72f220fbf9
-ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
+ms.openlocfilehash: 65512f8e46b5545929a798392ac5f19ddeab39ed
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104888988"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105562457"
 ---
 # <a name="managed-identity-for-data-factory"></a>Beheerde identiteit voor Data Factory
 
@@ -28,8 +28,7 @@ Bij het maken van een data factory kan een beheerde identiteit worden gemaakt, s
 Beheerde identiteit voor Data Factory voor delen de volgende functies:
 
 - [Sla referentie op in azure Key Vault](store-credentials-in-key-vault.md). in dat geval wordt Data Factory beheerde identiteit gebruikt voor Azure Key Vault verificatie.
-- Connectors, waaronder [Azure Blob Storage](connector-azure-blob-storage.md), [Azure data Lake Storage gen1](connector-azure-data-lake-store.md), [Azure data Lake Storage Gen2](connector-azure-data-lake-storage.md), [Azure SQL database](connector-azure-sql-database.md)en [Azure Synapse Analytics](connector-azure-sql-data-warehouse.md).
-- [Webactiviteit](control-flow-web-activity.md).
+- Toegang tot gegevens archieven of berekeningen met beheerde identiteits verificatie, waaronder Azure Blob Storage, Azure Data Explorer, Azure Data Lake Storage Gen1, Azure Data Lake Storage Gen2, Azure SQL Database, Azure SQL Managed instance, Azure Synapse Analytics, REST, Databricks activiteit, webactiviteit en meer. Raadpleeg de artikelen connector en activiteit voor meer informatie.
 
 ## <a name="generate-managed-identity"></a>Beheerde identiteit genereren
 
@@ -157,11 +156,10 @@ U kunt de informatie over beheerde identiteiten vinden in Azure Portal-> uw data
 
 - ID van beheerd identiteits object
 - Beheerde identiteits Tenant
-- Toepassings-ID van beheerde identiteit
 
 De beheerde identiteits gegevens worden ook weer gegeven wanneer u een gekoppelde service maakt, die beheerde identiteits verificatie ondersteunt, zoals Azure Blob, Azure Data Lake Storage, Azure Key Vault, enzovoort.
 
-Gebruik bij het verlenen van machtigingen de object-ID of data factory naam (als naam van de beheerde identiteit) om deze identiteit te vinden.
+Bij het verlenen van machtigingen, op het tabblad Access Control van Azure resource-> roltoewijzing toevoegen-> toegang toewijzen aan-> Selecteer Data Factory onder door het systeem toegewezen beheerde identiteit-> Selecteer op fabrieks naam. of in het algemeen kunt u de object-ID of data factory naam (als beheerde identiteits naam) gebruiken om deze identiteit te vinden. Als u de toepassings-ID van de beheerde identiteit wilt ophalen, kunt u Power shell gebruiken.
 
 ### <a name="retrieve-managed-identity-using-powershell"></a>Beheerde identiteit ophalen met behulp van Power shell
 

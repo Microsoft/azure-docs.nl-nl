@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4584b0a605bd63c1f71082014d3c0622ca7d2c37
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 16cd14aa447fb56af4cd9dd809696aecdc0c47a5
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104587828"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105557833"
 ---
 # <a name="securing-managed-identities"></a>Beheerde identiteiten beveiligen
 
@@ -38,7 +38,7 @@ Beheerde identiteiten worden het beste gebruikt voor communicatie tussen service
 
 Een bron systeem vraagt toegang tot een doel service. Elke Azure-resource kan een bron systeem zijn. Een voor beeld: een exemplaar van een Azure-VM, een Azure-functie en een Azure-app-service ondersteunt beheerde identiteiten.
 
-[!VIDEO https://www.youtube.com/embed/5lqayO_oeEo]
+   > [!VIDEO https://www.youtube.com/embed/5lqayO_oeEo]
 
 ### <a name="how-authentication-and-authorization-work"></a>Hoe verificatie en autorisatie werkt
 
@@ -86,7 +86,7 @@ Er zijn verschillende manieren waarop u beheerde identiteiten kunt vinden:
 
 ### <a name="using-the-azure-portal"></a>Azure Portal gebruiken
 
-1. Selecteer bedrijfs toepassing in azure AD.
+1. Selecteer in Azure Active Directory bedrijfs toepassingen.
 
 2. Het filter voor beheerde identiteiten selecteren 
 
@@ -120,7 +120,7 @@ U kunt dit doen door de leden van uw groepen met hoge bevoegdheden te inventaris
 
 ## <a name="move-to-managed-identities"></a>Verplaatsen naar beheerde identiteiten
 
-Als u een service-principal of een Azure AD-gebruikers account gebruikt, evalueer dan of u in plaats daarvan een beheerd kunt gebruiken om te voor komen dat referenties moeten worden beveiligd, gedraaid en beheerd. 
+Als u een service-principal of een Azure AD-gebruikers account gebruikt, evalueer dan of u in plaats daarvan een beheerde identiteit kunt gebruiken om te voor komen dat referenties moeten worden beveiligd, gedraaid en beheerd. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

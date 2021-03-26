@@ -6,21 +6,21 @@ ms.topic: conceptual
 author: milismsft
 ms.author: adrianmi
 ms.date: 09/21/2020
-ms.openlocfilehash: 23f85fa69224d78d748e6fc94436fd08fa6d971f
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 442fa1c76d4667a54f1c13b411b1c052c9a5b134
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104586009"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105566639"
 ---
 # <a name="azure-cosmos-db-emulator---release-notes-and-download-information"></a>Azure Cosmos DB-emulator - opmerkingen bij de release en downloadgegevens
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
 
-Dit artikel bevat de opmerkingen bij de release voor Azure Cosmos DB-emulator met een lijst met functie-updates die in elke release zijn uitgevoerd. Ook wordt de meest recente versie van de emulator weergegeven die u kunt downloaden en gebruiken.
+Dit artikel bevat de opmerkingen bij de release voor Azure Cosmos DB-emulator met een lijst met functie-updates die in elke release zijn uitgevoerd. Er wordt ook een lijst weer gegeven met de nieuwste versie van de emulator die u kunt downloaden en gebruiken.
 
 ## <a name="download"></a>Downloaden
 
-| |Koppelingen |
+| | Koppeling |
 |---------|---------|
 |**MSI-download**|[Microsoft Downloadcentrum](https://aka.ms/cosmosdb-emulator)|
 |**Aan de slag**|[Lokaal ontwikkelen met Azure Cosmos DB-emulator](local-emulator.md)|

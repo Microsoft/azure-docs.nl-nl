@@ -18,9 +18,9 @@
       href: overview-percept-security.md
     - name: 80/20-integratie
       href: overview-8020-integration.md
-    - name: Uw percept-apparaten bijwerken
+    - name: Apparaatupdates
       href: overview-update-experience.md
-- name: Quickstarts
+- name: Snelstartgidsen
   items:
     - name: Uw Azure percept-apparaten instellen
       items:
@@ -44,6 +44,10 @@
       items:
         - name: LED-en knop gedrag
           href: audio-button-led-behavior.md
+    - name: Beveiliging
+      items:
+        - name: Firewall configuratie en aanbevelingen voor beveiliging
+          href: concept-security-configuration.md
 - name: Instructiegidsen
   items:
     - name: Ontwikkeling van Vision-oplossingen met Azure percept DK

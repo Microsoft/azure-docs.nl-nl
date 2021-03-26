@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: pepogors
-ms.openlocfilehash: 95ee4e5f326dd9b76645d22ff735bc36437c72fb
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.openlocfilehash: a49fd6f97a9130fa0369d2a36cdc38e59613afc1
+ms.sourcegitcommit: 44edde1ae2ff6c157432eee85829e28740c6950d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104870110"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105544380"
 ---
 # <a name="deploy-an-azure-service-fabric-cluster-across-availability-zones"></a>Een Azure Service Fabric-cluster implementeren via Beschikbaarheidszones
 Beschikbaarheidszones in Azure is een aanbieding met hoge Beschik baarheid die uw toepassingen en gegevens beveiligt tegen Data Center-fouten. Een beschikbaarheids zone is een unieke fysieke locatie die is voorzien van onafhankelijke voeding, koeling en netwerken binnen een Azure-regio.
@@ -347,6 +347,8 @@ Set-AzureRmPublicIpAddress -PublicIpAddress $PublicIP
 ## <a name="preview-enable-multiple-availability-zones-in-single-virtual-machine-scale-set"></a>Evaluatie Meerdere beschikbaarheids zones inschakelen in één schaalset voor virtuele machines
 
 De eerder genoemde oplossing maakt gebruik van één nodeType per AZ. Met de volgende oplossing kunnen gebruikers 3 AZ in hetzelfde nodeType implementeren.
+
+**Omdat deze functie momenteel als preview-versie beschikbaar is, wordt deze momenteel niet ondersteund voor productie scenario's.**
 
 De volledige voorbeeld sjabloon is [hier](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/15-VM-Windows-Multiple-AZ-Secure)aanwezig.
 

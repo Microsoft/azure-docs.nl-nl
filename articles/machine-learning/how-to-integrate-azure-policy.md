@@ -4,27 +4,30 @@ titleSuffix: Azure Machine Learning
 description: Meer informatie over het gebruik van Azure Policy voor het gebruik van ingebouwde beleids regels voor Azure Machine Learning om ervoor te zorgen dat uw werk ruimten voldoen aan uw vereisten.
 author: aashishb
 ms.author: aashishb
-ms.date: 03/12/2021
+ms.date: 03/25/2021
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: how-to
 ms.reviewer: larryfr
-ms.openlocfilehash: 21b07130e99ad4fac9a0a9b2d11aca852a1f205f
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: f708e2181511da97ecffcd6f1636a2b232b4fbc6
+ms.sourcegitcommit: 44edde1ae2ff6c157432eee85829e28740c6950d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104584309"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105544363"
 ---
 # <a name="audit-and-manage-azure-machine-learning-using-azure-policy"></a>Azure Machine Learning controleren en beheren met behulp van Azure Policy
 
 [Azure Policy](../governance/policy/index.yml) is een beheer programma waarmee u ervoor kunt zorgen dat Azure-resources voldoen aan uw beleid. Met Azure Machine Learning kunt u de volgende beleids regels toewijzen:
 
-* Door de **klant beheerde sleutel**: controleren of afdwingen of werk ruimten een door de klant beheerde sleutel moeten gebruiken.
-* **Persoonlijke koppeling**: controleren of afdwingen of werk ruimten een persoonlijk eind punt gebruiken om te communiceren met een virtueel netwerk.
-* **Persoonlijk eind punt**: Configureer het Azure Virtual Network-subnet waar het persoonlijke eind punt moet worden gemaakt.
-* **Privé-DNS zone**: Configureer de privé-DNS-zone die moet worden gebruikt voor de privé-koppeling.
+| Beleid | Description |
+| ----- | ----- |
+| **Door de klant beheerde sleutel** | Controleren of afdwingen of werk ruimten een door de klant beheerde sleutel moeten gebruiken. |
+| **Persoonlijke koppeling** | Controleren of afdwingen of werk ruimten een persoonlijk eind punt gebruiken om te communiceren met een virtueel netwerk. |
+| **Persoonlijk eind punt** | Configureer het Azure Virtual Network-subnet waar het persoonlijke eind punt moet worden gemaakt. |
+| **Privé-DNS zone** | Configureer de privé-DNS-zone die moet worden gebruikt voor de privé-koppeling. |
+| **Door de gebruiker toegewezen beheerde identiteit** | Controleren of afdwingen of werk ruimten gebruikmaken van een door de gebruiker toegewezen beheerde identiteit. |
 
 Beleids regels kunnen worden ingesteld op verschillende bereiken, zoals op het niveau van het abonnement of de resource groep. Zie de [Azure Policy-documentatie](../governance/policy/overview.md)voor meer informatie.
 
@@ -68,6 +71,14 @@ Als u dit beleid wilt configureren, stelt u de effect parameter in op __DeployIf
 Hiermee configureert u een werk ruimte voor het gebruik van een privé-DNS-zone, waarbij de standaard-DNS-omzetting voor een persoonlijk eind punt wordt genegeerd.
 
 Als u dit beleid wilt configureren, stelt u de effect parameter in op __DeployIfNotExists__. Stel de __privateDnsZoneId__ in op de Azure Resource Manager-id van de privé-DNS-zone die moet worden gebruikt. 
+
+## <a name="workspace-should-use-user-assigned-managed-identity"></a>De werk ruimte moet een door de gebruiker toegewezen beheerde identiteit gebruiken
+
+Hiermee wordt bepaald of een werk ruimte wordt gemaakt met een door het systeem toegewezen beheerde identiteit (standaard) of een door de gebruiker toegewezen beheerde identiteit. De beheerde identiteit voor de werk ruimte wordt gebruikt om toegang te krijgen tot gekoppelde resources, zoals Azure Storage, Azure Container Registry, Azure Key Vault en Azure-toepassing inzichten. Zie [Managed Identities met Azure machine learning](how-to-use-managed-identities.md)voor meer informatie.
+
+Als u dit beleid wilt configureren, stelt u de para meter effect in op __controleren__, __weigeren__ of __uitgeschakeld__. Als u deze instelling inschakelt, kunt u een werk ruimte maken zonder een door de gebruiker toegewezen beheerde identiteit __op te geven__. Er wordt een door het systeem toegewezen identiteit gebruikt en er wordt een waarschuwings gebeurtenis in het activiteiten logboek gemaakt.
+
+Als het beleid is ingesteld op __weigeren__, kunt u geen werk ruimte maken, tenzij u een door de gebruiker toegewezen identiteit hebt opgegeven tijdens het maken van het proces. Als u een werk ruimte probeert te maken zonder een door de gebruiker toegewezen identiteit, resulteert dit in een fout. De fout wordt ook geregistreerd in het activiteiten logboek. De beleids-id wordt geretourneerd als onderdeel van deze fout.
 
 ## <a name="next-steps"></a>Volgende stappen
 

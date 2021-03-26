@@ -3,12 +3,12 @@ title: MABS (Azure Backup Server) v3 UR1 Protection-matrix
 description: In dit artikel wordt een ondersteunings matrix weer gegeven met alle werk belastingen, gegevens typen en installaties die Azure Backup Server beveiligt.
 ms.date: 03/19/2020
 ms.topic: conceptual
-ms.openlocfilehash: d8f2a38db468ec57cdc0a4f0813fe7ae8e341d52
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: cfdd227135a2124e22a604bad4bd41594a38fb37
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102609767"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105561267"
 ---
 # <a name="mabs-azure-backup-server-v3-ur1-protection-matrix"></a>MABS (Azure Backup Server) v3 UR1 Protection-matrix
 
@@ -127,7 +127,7 @@ Azure Backup Server kunt de cluster werkbelastingen beveiligen die zich in hetze
   * Bestandsserver
   * Hyper-V
 
-  Deze werkbelastingen kunnen worden uitgevoerd op een enkele server of in een clusterconfiguratie. Als u een werk belasting wilt beveiligen die zich niet in een vertrouwd domein bevindt, raadpleegt u [computers in werk groepen en niet-vertrouwde domeinen voorbereiden](https://docs.microsoft.com/system-center/dpm/prepare-environment-for-dpm) voor exacte details van wat er wordt ondersteund en welke verificatie is vereist.
+  Deze werkbelastingen kunnen worden uitgevoerd op een enkele server of in een clusterconfiguratie. Als u een werk belasting wilt beveiligen die zich niet in een vertrouwd domein bevindt, raadpleegt u [computers in werk groepen en niet-vertrouwde domeinen voorbereiden](/system-center/dpm/prepare-environment-for-dpm) voor exacte details van wat er wordt ondersteund en welke verificatie is vereist.
 
 ## <a name="unsupported-data-types"></a>Niet-ondersteunde gegevens typen
 

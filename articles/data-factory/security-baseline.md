@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/17/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: d1cbd314861a4d5079a5c8e5213f45c7164344f0
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: a21ae2ce79c500455c5735f4d82e7852e8474ad1
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102204164"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105559142"
 ---
 # <a name="azure-security-baseline-for-azure-data-factory"></a>Azure-beveiligings basislijn voor Azure Data Factory
 
@@ -157,9 +157,9 @@ U kunt Azure PowerShell of Azure CLI gebruiken om op basis van hun labels acties
 
 **Hulp**: Azure-activiteiten logboek gebruiken om netwerk resource configuraties te bewaken en wijzigingen te detecteren voor netwerk bronnen die betrekking hebben op uw Azure Data Factory exemplaren. Maak waarschuwingen in Azure Monitor die worden geactiveerd wanneer er wijzigingen in kritieke netwerk bronnen plaatsvinden.
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](/azure/azure-monitor/platform/activity-log#view-the-activity-log)
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Waarschuwingen maken in Azure Monitor](/azure/azure-monitor/platform/alerts-activity-log)
+- [Waarschuwingen maken in Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -175,7 +175,7 @@ U kunt Azure PowerShell of Azure CLI gebruiken om op basis van hun labels acties
 
 U kunt ook gegevens in-of uitschakelen voor Azure Sentinel of een beveiligings incident en gebeurtenis beheer van derden (SIEM). U kunt Azure Data Factory ook integreren met Git om diverse voor delen van broncode beheer te benutten, zoals de mogelijkheid om wijzigingen op te sporen/te controleren en de mogelijkheid om wijzigingen te herstellen die fouten veroorzaken.
 
-- [Diagnostische instellingen configureren](/azure/azure-monitor/platform/diagnostic-settings#create-in-azure-portal)
+- [Diagnostische instellingen configureren](../azure-monitor/essentials/diagnostic-settings.md#create-in-azure-portal)
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
@@ -193,7 +193,7 @@ U kunt ook gegevens in-of uitschakelen voor Azure Sentinel of een beveiligings i
 
 Diagnostische instellingen gebruiken voor het configureren van Diagnostische logboeken voor niet-reken resources in Azure Data Factory, zoals metrische gegevens en informatie over het uitvoeren van de pijp lijn. Azure Data Factory Stores-pijp lijn-gegevens gedurende 45 dagen worden uitgevoerd. Als u deze gegevens langer wilt bewaren, slaat u de diagnostische logboeken op in een opslag account voor controle of hand matige inspectie en geeft u de retentie tijd op in dagen.  U kunt de logboeken ook streamen naar Azure Event Hubs of de logboeken naar een Log Analytics-werk ruimte verzenden voor analyse.
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](/azure/azure-monitor/platform/activity-log)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
 - [Informatie over Azure Data Factory Diagnostische logboeken](monitor-using-azure-monitor.md)
 
@@ -207,9 +207,9 @@ Diagnostische instellingen gebruiken voor het configureren van Diagnostische log
 
 Als uw organisatie de gegevens van het beveiligings gebeurtenis logboek wil behouden, kan deze worden opgeslagen in een gegevensverzamelings tier, op welk moment een query kan worden uitgevoerd in Log Analytics.
 
-- [Gegevens verzamelen van Azure-Virtual Machines in Azure Monitor](/azure/azure-monitor/learn/quick-collect-azurevm)
+- [Gegevens verzamelen van Azure-Virtual Machines in Azure Monitor](../azure-monitor/vm/quick-collect-azurevm.md)
 
-- [Gegevens verzameling inschakelen in Azure Security Center](https://docs.microsoft.com/azure/security-center/security-center-enable-data-collection#data-collection-tier)
+- [Gegevens verzameling inschakelen in Azure Security Center](../security-center/security-center-enable-data-collection.md#data-collection-tier)
 
 **Verantwoordelijkheid**: Klant
 
@@ -221,7 +221,7 @@ Als uw organisatie de gegevens van het beveiligings gebeurtenis logboek wil beho
 
 - [Diagnostische logboeken inschakelen in Azure Data Factory](monitor-using-azure-monitor.md)
 
-- [Para meters voor het bewaren van Logboeken instellen voor Log Analytics-werk ruimten](/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period)
+- [Para meters voor het bewaren van Logboeken instellen voor Log Analytics-werk ruimten](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Verantwoordelijkheid**: Klant
 
@@ -235,9 +235,9 @@ Als u uw Integration Runtime uitvoert in een virtuele Azure-machine (VM), schake
 
 U kunt ook gegevens in-of uitschakelen voor Azure Sentinel of een SIEM van derden.
 
-- [Log Analytics schema](https://docs.microsoft.com/azure/data-factory/monitor-using-azure-monitor#schema-of-logs-and-events)
+- [Log Analytics schema](./monitor-using-azure-monitor.md#schema-of-logs-and-events)
 
-- [Gegevens verzamelen van een virtuele machine van Azure met Azure Monitor](/azure/azure-monitor/learn/quick-collect-azurevm)
+- [Gegevens verzamelen van een virtuele machine van Azure met Azure Monitor](../azure-monitor/vm/quick-collect-azurevm.md)
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
@@ -253,11 +253,11 @@ Diagnostische instellingen configureren voor Azure Data Factory en logboeken naa
 
 Zorg er bovendien voor dat u Diagnostische instellingen inschakelt voor services die betrekking hebben op uw gegevens archieven. U kunt de beveiligings basislijn van elke service raadplegen voor hulp.
 
-- [Waarschuwingen in Azure Data Factory](https://docs.microsoft.com/azure/data-factory/monitor-visually#alerts)
+- [Waarschuwingen in Azure Data Factory](./monitor-visually.md#alerts)
 
-- [Pagina alle ondersteunde metrische gegevens](/azure/azure-monitor/platform/metrics-supported)
+- [Pagina alle ondersteunde metrische gegevens](../azure-monitor/essentials/metrics-supported.md)
 
-- [Waarschuwingen configureren in Log Analytics werk ruimte](/azure/azure-monitor/platform/alerts-log)
+- [Waarschuwingen configureren in Log Analytics werk ruimte](../azure-monitor/alerts/alerts-log.md)
 
 **Verantwoordelijkheid**: Klant
 
@@ -279,7 +279,7 @@ Zorg er bovendien voor dat u Diagnostische instellingen inschakelt voor services
 
 **Richt lijnen**: als u uw Integration runtime uitvoert op een virtuele machine (VM) van Azure, kunt u de opdracht regel controle logboek registratie inschakelen. De Azure Security Center biedt bewaking van beveiligings logboeken voor Azure-Vm's.  Security Center richt micro soft monitoring agent in op alle ondersteunde virtuele machines van Azure en nieuwe die worden gemaakt als automatische inrichting is ingeschakeld, of u kunt de agent hand matig installeren.  De agent maakt de gebeurtenis 4688 voor het maken van processen en het veld CommandLine in gebeurtenis 4688 mogelijk. Nieuwe processen die op de virtuele machine worden gemaakt, worden vastgelegd door EventLog en gecontroleerd door de detectie services van Security Center.
 
-- [Gegevensverzameling in Azure Security Center](https://docs.microsoft.com/azure/security-center/security-center-enable-data-collection#data-collection-tier)
+- [Gegevensverzameling in Azure Security Center](../security-center/security-center-enable-data-collection.md#data-collection-tier)
 
 **Verantwoordelijkheid**: Klant
 
@@ -305,7 +305,7 @@ Azure AD is de aanbevolen methode voor het beheren van gebruikers toegang. Houd 
 
 - [Leden van een directory-rol in azure AD ophalen met Power shell](/powershell/module/azuread/get-azureaddirectoryrolemember)
 
-- [Informatie voor lokale accounts](https://docs.microsoft.com/azure/active-directory/devices/assign-local-admin#manage-the-device-administrator-role)
+- [Informatie voor lokale accounts](../active-directory/devices/assign-local-admin.md#manage-the-device-administrator-role)
 
 **Verantwoordelijkheid**: Klant
 
@@ -434,7 +434,7 @@ Als u de runtime-integratie uitvoert op een virtuele machine van Azure, moet u d
 
 - [Beoordelingen over Azure Identity Access gebruiken](../active-directory/governance/access-reviews-overview.md)
 
-- [Meer informatie over Azure AD-rapportage](/azure/active-directory/reports-monitoring/)
+- [Meer informatie over Azure AD-rapportage](../active-directory/reports-monitoring/index.yml)
 
 - [Beoordelingen over Azure Identity Access gebruiken](../active-directory/governance/access-reviews-overview.md)
 
@@ -448,7 +448,7 @@ Als u de runtime-integratie uitvoert op een virtuele machine van Azure, moet u d
 
 Als u uw Integration Runtime uitvoert in een virtuele Azure-machine (VM), wordt deze VM naar Azure Sentinel. Microsoft Azure Sentinel is een schaalbaar, cloudoplossing voor Security Information Event Management (SIEM) en Security Orchestration Automated Response (SOAR). Azure Sentinel levert intelligente beveiligingsanalyses en bedreigingsinformatie voor de hele onderneming en is daardoor één oplossing voor waarschuwingsdetectie, zichtbaarheid van bedreigingen, proactieve opsporing en reactie op bedreigingen.
 
-- [Azure-activiteitenlogboeken integreren in Azure Monitor](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+- [Azure-activiteitenlogboeken integreren in Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
 - [Toegang tot Event Hubs resources autoriseren met behulp van Azure AD](../event-hubs/authorize-access-azure-active-directory.md)
 
@@ -468,7 +468,7 @@ Als u uw Integration Runtime uitvoert in een virtuele Azure-machine (VM), wordt 
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
-- [Azure AD-verificatie configureren en beheren met SQL](https://docs.microsoft.com/azure/azure-sql/database/authentication-aad-configure?tabs=azure-powershell)
+- [Azure AD-verificatie configureren en beheren met SQL](../azure-sql/database/authentication-aad-configure.md?tabs=azure-powershell)
 
 - [Azure AD-verificatie voor Azure-SSIS Integration Runtime inschakelen](enable-aad-authentication-azure-ssis-ir.md)
 
@@ -620,9 +620,9 @@ U kunt referenties of geheime waarden opslaan in een Azure Key Vault en deze geb
 
 **Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken wanneer wijzigingen worden doorgevoerd in azure Data Factory en gerelateerde resources.
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](/azure/azure-monitor/platform/alerts-activity-log)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](/azure/azure-monitor/platform/alerts-activity-log)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
 - [Azure Storage-analyselogboeken](../storage/common/storage-analytics-logging.md)
 
@@ -1019,7 +1019,7 @@ U kunt ook referenties of geheime waarden opslaan in een Azure Key Vault en deze
 
 - [Integratie met door Azure beheerde identiteiten](../azure-app-configuration/howto-integrate-azure-managed-service-identity.md)
 
-- [Een Key Vault maken](/azure/key-vault/quick-create-portal)
+- [Een Key Vault maken](../key-vault/secrets/quick-create-portal.md)
 
 - [Verifiëren bij Key Vault](../key-vault/general/authentication.md)
 
@@ -1243,5 +1243,5 @@ Daarnaast kunt u ook duidelijk abonnementen markeren (voor bijvoorbeeld producti
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [overzicht van Azure Security Bench Mark v2](/azure/security/benchmarks/overview)
-- Meer informatie over [Azure-beveiligingsbasislijnen](/azure/security/benchmarks/security-baselines-overview)
+- Zie [overzicht van Azure Security Bench Mark v2](../security/benchmarks/overview.md)
+- Meer informatie over [Azure-beveiligingsbasislijnen](../security/benchmarks/security-baselines-overview.md)

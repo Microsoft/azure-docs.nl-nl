@@ -2,13 +2,13 @@
 title: Koppelings sjablonen voor implementatie
 description: Hierin wordt beschreven hoe u gekoppelde sjablonen gebruikt in een Azure Resource Manager sjabloon (ARM-sjabloon) om een modulaire sjabloon oplossing te maken. Toont hoe parameter waarden worden door gegeven, geef een parameter bestand op en dynamisch gemaakte Url's.
 ms.topic: conceptual
-ms.date: 01/26/2021
-ms.openlocfilehash: 6076cbae43e420ac354b5c9d7d101a9c541c078d
-ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
+ms.date: 03/25/2021
+ms.openlocfilehash: 981e9f10e118012911108d634fbb8bdb9524cb88
+ms.sourcegitcommit: 44edde1ae2ff6c157432eee85829e28740c6950d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104889175"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105543972"
 ---
 # <a name="using-linked-and-nested-templates-when-deploying-azure-resources"></a>Gekoppelde en geneste sjablonen gebruiken bij het implementeren van Azure-resources
 
@@ -444,6 +444,8 @@ U kunt verwijzen naar sjablonen met behulp van para meters die HTTP of HTTPS bev
 Als u een koppeling maakt naar een sjabloon in GitHub, gebruikt u de onbewerkte URL. De koppeling heeft de volgende indeling: `https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/get-started-with-templates/quickstart-template/azuredeploy.json` . Als u de RAW-koppeling wilt ophalen, selecteert u **RAW**.
 
 :::image type="content" source="./media/linked-templates/select-raw.png" alt-text="Onbewerkte URL selecteren":::
+
+[!INCLUDE [Deploy templates in private GitHub repo](../../../includes/resource-manager-private-github-repo-templates.md)]
 
 ### <a name="parameters-for-linked-template"></a>Para meters voor gekoppelde sjabloon
 
@@ -882,7 +884,7 @@ az deployment group create --resource-group ExampleGroup --template-uri $url?$to
 
 In de volgende voor beelden ziet u veelvoorkomende toepassingen van gekoppelde sjablonen.
 
-|Hoofd sjabloon  |Een gekoppelde sjabloon |Beschrijving  |
+|Hoofd sjabloon  |Een gekoppelde sjabloon |Description  |
 |---------|---------| ---------|
 |[Hallo wereld](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/helloworldparent.json) |[gekoppelde sjabloon](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/helloworld.json) | Retourneert een teken reeks uit een gekoppelde sjabloon. |
 |[Load Balancer met openbaar IP-adres](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/public-ip-parentloadbalancer.json) |[gekoppelde sjabloon](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/public-ip.json) |Hiermee wordt het open bare IP-adres uit de gekoppelde sjabloon geretourneerd en wordt die waarde ingesteld in load balancer. |

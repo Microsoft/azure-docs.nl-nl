@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: MashaMSFT
 ms.author: mathoma
 ms.date: 08/25/2020
-ms.openlocfilehash: 9b02b0e5d9e3229aafec9b8a4ca21b14c0e596a6
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.openlocfilehash: 62b1924a1aeb1c1e5bc06ec0783d83d6918d162c
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105022276"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105557918"
 ---
 # <a name="migration-guide-oracle-to-azure-sql-database"></a>Migratie handleiding: Oracle naar Azure SQL Database
 [!INCLUDE[appliesto-sqldb-sqlmi](../../includes/appliesto-sqldb.md)]
@@ -143,7 +143,7 @@ Als u uw schema wilt publiceren en uw gegevens wilt migreren, voert u de volgend
 
 U kunt ook SQL Server Integration Services (SSIS) gebruiken om de migratie uit te voeren. Raadpleeg voor meer informatie: 
 
-- [Aan de slag met SQL Server Integration Services](https://docs.microsoft.com/sql/integration-services/sql-server-integration-services)
+- [Aan de slag met SQL Server Integration Services](/sql/integration-services/sql-server-integration-services)
 - [SQL Server Integration Services: SSIS voor Azure en hybride gegevens verplaatsing](https://download.microsoft.com/download/D/2/0/D20E1C5F-72EA-4505-9F26-FEF9550EFD44/SSIS%20Hybrid%20and%20Azure.docx)
 
 
@@ -196,7 +196,7 @@ Deze resources zijn ontwikkeld als onderdeel van het data SQL expert-programma, 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie de artikel [service en hulpprogram ma's voor gegevens migratie](https://docs.microsoft.com/azure/dms/dms-tools-matrix)voor een matrix van de services en hulpprogram Ma's van micro soft en van derden die beschikbaar zijn om u te helpen bij verschillende scenario's voor data base-en gegevens migratie, en voor speciale taken.
+- Zie de artikel [service en hulpprogram ma's voor gegevens migratie](../../../dms/dms-tools-matrix.md)voor een matrix van de services en hulpprogram Ma's van micro soft en van derden die beschikbaar zijn om u te helpen bij verschillende scenario's voor data base-en gegevens migratie, en voor speciale taken.
 
 - Voor meer informatie over Azure SQL Database raadpleegt u: 
   - [Een overzicht van Azure SQL Database](../../database/sql-database-paas-overview.md)
@@ -209,5 +209,3 @@ Deze resources zijn ontwikkeld als onderdeel van het data SQL expert-programma, 
 
 - Zie voor video-inhoud: 
     - [Overzicht van de migratie traject en de hulpprogram ma's/services die worden aanbevolen voor het uitvoeren van de evaluatie en migratie](https://azure.microsoft.com/resources/videos/overview-of-migration-and-recommended-tools-services/)
-
-

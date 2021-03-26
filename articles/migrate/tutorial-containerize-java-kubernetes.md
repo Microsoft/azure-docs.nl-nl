@@ -7,12 +7,12 @@ manager: bsiva
 ms.topic: tutorial
 ms.date: 3/2/2021
 ms.author: rahugup
-ms.openlocfilehash: ea7cdfbd30cf698cecbb14a1d70916764ad3247a
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.openlocfilehash: 2c1a0ee78e866a12105eca77653b1063943d06db
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105023109"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105561063"
 ---
 # <a name="java-web-app-containerization-and-migration-to-azure-kubernetes-service"></a>Container opslag en migratie van Java-Web-app naar Azure Kubernetes service
 
@@ -59,7 +59,7 @@ Voordat u aan deze zelfstudie begint, dient u eerst:
 
 **Vereiste** | **Details**
 --- | ---
-**Een computer identificeren om het hulp programma te installeren** | Een Windows-computer voor het installeren en uitvoeren van de Azure Migrate: app container opslag-hulp programma. De Windows-computer kan een server (Windows Server 2016 of hoger) of client (Windows 10) besturings systeem zijn, wat betekent dat het hulp programma ook op uw bureau blad kan worden uitgevoerd. <br/><br/> De Windows-computer waarop het hulpprogramma wordt uitgevoerd, moet een netwerkverbinding hebben met de servers/virtuele machines waarop de ASP.NET-toepassingen worden gehost die in containers moeten worden opgeslagen.<br/><br/> Zorg ervoor dat er 6 GB ruimte beschikbaar is op de Windows-computer waarop het Azure Migrate: app container opslag-hulp programma voor het opslaan van toepassings artefacten. <br/><br/> De Windows-computer moet toegang hebben tot internet, rechtstreeks of via een proxy. <br/> <br/>Installeer het hulp programma micro soft Web Deploy op de computer waarop het hulp programma voor de app container opslag helper en de toepassings server worden uitgevoerd als dat nog niet is gebeurd. U kunt het hulp programma [hier](https://aka.ms/webdeploy3.6) downloaden
+**Een computer identificeren om het hulp programma te installeren** | Een Windows-computer voor het installeren en uitvoeren van de Azure Migrate: app container opslag-hulp programma. De Windows-computer kan een server (Windows Server 2016 of hoger) of client (Windows 10) besturings systeem zijn, wat betekent dat het hulp programma ook op uw bureau blad kan worden uitgevoerd. <br/><br/> De Windows-computer waarop het hulp programma wordt uitgevoerd, moet een netwerk verbinding hebben met de servers/virtuele machines die als host fungeren voor de Java-webtoepassingen die moeten worden container.<br/><br/> Zorg ervoor dat er 6 GB ruimte beschikbaar is op de Windows-computer waarop het Azure Migrate: app container opslag-hulp programma voor het opslaan van toepassings artefacten. <br/><br/> De Windows-computer moet toegang hebben tot internet, rechtstreeks of via een proxy.
 **Toepassingsservers** | -Schakel de SSH-verbinding (Secure Shell) in op poort 22 op de server (s) waarop de Java-toepassing (en) worden uitgevoerd. <br/>
 **Java-webtoepassing** | Het hulp programma ondersteunt momenteel <br/><br/> -Toepassingen die worden uitgevoerd op Tomcat 8 of hoger.<br/> -Toepassings servers op Ubuntu Linux 16.04/18.04/20.04, Debian 7/8, CentOS 6/7, Red Hat Enterprise Linux 5/6/7. <br/> -Toepassingen die gebruikmaken van Java versie 7 of hoger.  <br/><br/> Het hulp programma biedt momenteel geen ondersteuning voor <br/><br/> -Toepassings servers waarop meerdere Tomcat-instanties worden uitgevoerd <br/>  
 
@@ -178,7 +178,7 @@ Parameterizing de configuratie is beschikbaar als para meter voor implementatie 
 
 ### <a name="externalize-file-system-dependencies"></a>Afhankelijkheden van Externalize-bestands systeem
 
- U kunt andere mappen toevoegen die door uw toepassing worden gebruikt. Geef op of ze moeten deel uitmaken van de container installatie kopie of moeten worden extern via permanente volumes op een Azure-bestands share. Het gebruik van permanente volumes werkt prima voor stateful toepassingen die de status buiten de container opslaan of andere statische inhoud die is opgeslagen op het bestands systeem. [Meer informatie](https://docs.microsoft.com/azure/aks/concepts-storage)
+ U kunt andere mappen toevoegen die door uw toepassing worden gebruikt. Geef op of ze moeten deel uitmaken van de container installatie kopie of moeten worden extern via permanente volumes op een Azure-bestands share. Het gebruik van permanente volumes werkt prima voor stateful toepassingen die de status buiten de container opslaan of andere statische inhoud die is opgeslagen op het bestands systeem. [Meer informatie](../aks/concepts-storage.md)
 
 1. Klik op **bewerken** onder app-mappen om de gedetecteerde toepassings mappen te controleren. De gedetecteerde toepassings mappen zijn geïdentificeerd als verplichte artefacten die nodig zijn voor de toepassing en worden gekopieerd naar de container installatie kopie.
 
@@ -194,7 +194,7 @@ Parameterizing de configuratie is beschikbaar als para meter voor implementatie 
 ## <a name="build-container-image"></a>Containerinstallatiekopie maken
 
 
-1. **Selecteer Azure container Registry**: gebruik de vervolg keuzelijst om een [Azure container Registry](https://docs.microsoft.com/azure/container-registry/) te selecteren dat wordt gebruikt om de container installatie kopieën voor de apps te maken en op te slaan. U kunt een bestaande Azure Container Registry gebruiken of ervoor kiezen om een nieuwe te maken met behulp van de optie nieuwe REGI ster maken.
+1. **Selecteer Azure container Registry**: gebruik de vervolg keuzelijst om een [Azure container Registry](../container-registry/index.yml) te selecteren dat wordt gebruikt om de container installatie kopieën voor de apps te maken en op te slaan. U kunt een bestaande Azure Container Registry gebruiken of ervoor kiezen om een nieuwe te maken met behulp van de optie nieuwe REGI ster maken.
 
     ![Scherm afbeelding voor de selectie van de app-ACR.](./media/tutorial-containerize-apps-aks/build-java-app.png)
 

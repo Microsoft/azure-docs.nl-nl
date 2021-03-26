@@ -3,12 +3,12 @@ title: Bewaking en logboek registratie-Azure
 description: Dit artikel bevat een overzicht van bewaking en logboek registratie in live video Analytics op IoT Edge.
 ms.topic: reference
 ms.date: 04/27/2020
-ms.openlocfilehash: e81b1e98fb30bb8876c78c8c911585f5448db8f2
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 08b2f5cce80581d71ce73e97ab30900aa8957c77
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101730236"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105564479"
 ---
 # <a name="monitoring-and-logging"></a>Bewaking en registratie
 
@@ -208,7 +208,7 @@ Gebeurtenis typen worden toegewezen aan een naam ruimte op basis van dit schema:
 
 #### <a name="event-classes"></a>Gebeurtenisklassen
 
-|Klassenaam|Beschrijving|
+|Klassenaam|Description|
 |---|---|
 |Analyse  |Gebeurtenissen die worden gegenereerd als onderdeel van inhouds analyse.|
 |Diagnostiek    |Gebeurtenissen die helpen bij het diagnosticeren van problemen en prestaties.|
@@ -230,7 +230,7 @@ De tijd van de gebeurtenis wordt opgemaakt in een ISO 8601-teken reeks. Deze gee
 
 Deze metrische gegevens worden gerapporteerd uit de live video Analytics op IoT Edge module:  
 
-|Naam van metrische gegevens|Type|Label|Beschrijving|
+|Naam van metrische gegevens|Type|Label|Description|
 |-----------|----|-----|-----------|
 |lva_active_graph_instances|Meter|iothub, edge_device, module_name, graph_topology|Totaal aantal actieve grafieken per topologie.|
 |lva_received_bytes_total|Prestatiemeteritem|iothub, edge_device, module_name, graph_topology, graph_instance, graph_node|Totaal aantal bytes dat door een knoop punt is ontvangen. Alleen ondersteund voor RTSP-bronnen.|
@@ -312,7 +312,7 @@ Volg deze stappen om het verzamelen van metrische gegevens in te scha kelen op d
    In dit geval gaat u naar de IoT-hub in het Azure Portal en selecteert u **metrische gegevens** in het linkerdeel venster. Hier ziet u de metrische gegevens.
 
 ### <a name="log-analytics-metrics-collection"></a>Verzameling Log Analytics metrische gegevens
-Met behulp van [Prometheus-eind punt](https://prometheus.io/docs/practices/naming/) samen met [log Analytics](https://docs.microsoft.com/azure/azure-monitor/log-query/log-analytics-tutorial)kunt u [metrische gegevens genereren en bewaken](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-supported) , zoals het gebruik van CPUPercent, MemoryUsedPercent, enzovoort.   
+Met behulp van [Prometheus-eind punt](https://prometheus.io/docs/practices/naming/) samen met [log Analytics](../../azure-monitor/logs/log-analytics-tutorial.md)kunt u [metrische gegevens genereren en bewaken](../../azure-monitor/essentials/metrics-supported.md) , zoals het gebruik van CPUPercent, MemoryUsedPercent, enzovoort.   
 
 > [!NOTE]
 > In de onderstaande configuratie worden geen logboeken verzameld, **alleen metrische gegevens**. Het is haalbaar om de module Collector uit te breiden om ook logboeken te verzamelen en te uploaden.

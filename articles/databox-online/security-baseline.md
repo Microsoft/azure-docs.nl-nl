@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 12/18/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 460fd66ed4651248639334caa55eb8facbce866d
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: d88284f3b9759ce04af9e44ae591c4796dde4e84
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102452370"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105565194"
 ---
 # <a name="azure-security-baseline-for-azure-stack-edge"></a>Azure-beveiligings basislijn voor Azure Stack Edge
 
@@ -38,7 +38,7 @@ Intern verkeer wordt verder beveiligd door:
 
 Meer informatie vindt u op de koppelingen waarnaar wordt verwezen.
  
-- [TLS 1,2 configureren op Windows-clients die toegang krijgen tot Azure Stack Edge Pro GPU-apparaat](azure-stack-edge-j-series-configure-tls-settings.md)
+- [TLS 1,2 configureren op Windows-clients die toegang krijgen tot Azure Stack Edge Pro GPU-apparaat](./azure-stack-edge-gpu-configure-tls-settings.md)
 
 - [Snelstartgids: aan de slag met Azure Stack Edge Pro met GPU](azure-stack-edge-gpu-quickstart.md)
 
@@ -54,7 +54,7 @@ Klanten kunnen via de Azure Portal of via de Azure PowerShell een virtueel parti
 
 - [Azure VPN configureren via Azure PowerShell script voor Azure Stack Edge Pro R en Azure Stack Edge mini-R](azure-stack-edge-mini-r-configure-vpn-powershell.md)
 
-- [TLS 1,2 configureren op Windows-clients die toegang krijgen tot Azure Stack Edge Pro GPU-apparaat](azure-stack-edge-j-series-configure-tls-settings.md)
+- [TLS 1,2 configureren op Windows-clients die toegang krijgen tot Azure Stack Edge Pro GPU-apparaat](./azure-stack-edge-gpu-configure-tls-settings.md)
 
 - [Zelfstudie: Certificaten voor uw Azure Stack Edge Pro R configureren](azure-stack-edge-pro-r-deploy-configure-certificates-vpn-encryption.md)
 
@@ -68,7 +68,7 @@ Klanten kunnen via de Azure Portal of via de Azure PowerShell een virtueel parti
 
 - [Azure VPN configureren via Azure PowerShell script voor Azure Stack Edge Pro R en Azure Stack Edge mini-R](azure-stack-edge-mini-r-configure-vpn-powershell.md)
 
-- [TLS 1,2 configureren op Windows-clients die toegang krijgen tot Azure Stack Edge Pro GPU-apparaat](azure-stack-edge-j-series-configure-tls-settings.md)
+- [TLS 1,2 configureren op Windows-clients die toegang krijgen tot Azure Stack Edge Pro GPU-apparaat](./azure-stack-edge-gpu-configure-tls-settings.md)
 
 - [Zelfstudie: Certificaten voor uw Azure Stack Edge Pro R configureren](azure-stack-edge-pro-r-deploy-configure-certificates-vpn-encryption.md)
 
@@ -298,7 +298,7 @@ Houd er rekening mee dat er extra machtigingen nodig zijn om de werk belasting e
 
 **Richt lijnen**: alleen gemachtigde gebruikers, bijvoorbeeld ' EdgeArmUser ', hebben toegang tot de api's van het Azure stack edge-apparaat via de lokale Azure Resource Manager. Wacht woorden van gebruikers accounts kunnen alleen worden beheerd op het Azure Portal. 
 
-- [Wachtwoord instellen voor Azure Resource Manager](azure-stack-edge-j-series-set-azure-resource-manager-password.md)
+- [Wachtwoord instellen voor Azure Resource Manager](/azure/azure-stack-edge-gpu-set-azure-resource-manager-password)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 

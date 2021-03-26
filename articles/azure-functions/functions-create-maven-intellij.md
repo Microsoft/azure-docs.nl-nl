@@ -1,17 +1,17 @@
 ---
 title: Een Java-functie maken in Azure Functions met behulp van IntelliJ
 description: Meer informatie over hoe u IntelliJ kunt gebruiken om een eenvoudige HTTP-geactiveerde Java-functie te maken, die u vervolgens publiceert om te worden uitgevoerd in een serverloze omgeving in Azure.
-author: jeffhollan
+author: yucwan
 ms.topic: how-to
 ms.date: 07/01/2018
-ms.author: jehollan
+ms.author: yucwan
 ms.custom: mvc, devcenter, devx-track-java
-ms.openlocfilehash: 1edfbca2f2a16aeebc1244b298426dc46d72c6d5
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 45fb62b446e6b589dc0cb9287a8aebe7f4e699b1
+ms.sourcegitcommit: 44edde1ae2ff6c157432eee85829e28740c6950d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101708812"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105543636"
 ---
 # <a name="create-your-first-java-function-in-azure-using-intellij"></a>Uw eerste Java-functie maken in azure met behulp van IntelliJ
 
@@ -104,17 +104,9 @@ In deze sectie gebruikt u Azure-toolkit voor IntelliJ om een lokaal Azure Functi
 
     ![Project implementeren in azure](media/functions-create-first-java-intellij/deploy-functions-to-azure.png)
 
-1. Als u nog geen functie-app hebt, klikt u op *geen beschik bare functie. Klik hier om een nieuwe te maken*.
+1. Als u nog geen functie-app hebt, klikt u op *+* de *functie* regel. Typ de naam van de functie-app en kies het juiste platform. hier kunt u gewoon de standaard waarde accepteren. Klik op *OK* en de nieuwe functie-app die u zojuist hebt gemaakt, wordt automatisch geselecteerd. Klik op *uitvoeren* om uw functies te implementeren.
 
     ![Functie-app maken in azure](media/functions-create-first-java-intellij/deploy-functions-create-app.png)
-
-1. Typ de naam van de functie-app en kies het juiste abonnement/platform/resource groep/App Service plan, u kunt hier ook resource groep/App Service plan maken. Behoud de app-instellingen ongewijzigd. Klik op *OK* en wacht enkele minuten totdat de nieuwe functie-app is gemaakt. Na *het maken van een nieuwe functie-app...* de voortgangs balk verdwijnt.
-
-    ![Functie-app implementeren naar Azure wizard app maken](media/functions-create-first-java-intellij/deploy-functions-create-app-wizard.png)
-
-1. Selecteer de functie-app die u wilt implementeren. (de nieuwe functie-app die u zojuist hebt gemaakt, wordt automatisch geselecteerd). Klik op *uitvoeren* om uw functies te implementeren.
-
-    ![Scherm afbeelding toont het dialoog venster Azure Functions implementeren.](media/functions-create-first-java-intellij/deploy-functions-run.png)
 
     ![Functie-app implementeren in azure-logboek](media/functions-create-first-java-intellij/deploy-functions-log.png)
 

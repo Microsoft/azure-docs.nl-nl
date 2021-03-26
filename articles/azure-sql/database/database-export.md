@@ -11,12 +11,12 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/11/2021
 ms.topic: how-to
-ms.openlocfilehash: 866500e9cd9e3fe6aac6a5bfded0dbb21ab137fc
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 14854f839d6dfe3c8a08a4a1453fd78e389fe8d3
+ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102614238"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105568729"
 ---
 # <a name="export-to-a-bacpac-file---azure-sql-database-and-azure-sql-managed-instance"></a>Exporteren naar een BACPAC-bestand-Azure SQL Database en Azure SQL Managed instance
 
@@ -106,7 +106,7 @@ $exportStatus
 ```
 ## <a name="cancel-the-export-request"></a>De export aanvraag annuleren
 
-Gebruik de [API data base-annuleren](https://docs.microsoft.com/rest/api/sql/databaseoperations/cancel) of de Power shell [-opdracht stop-AzSqlDatabaseActivity](https://docs.microsoft.com/powershell/module/az.sql/Stop-AzSqlDatabaseActivity). Hier volgt een voor beeld van een Power shell-opdracht.
+Gebruik de [API data base-annuleren](/rest/api/sql/databaseoperations/cancel) of de Power shell [-opdracht stop-AzSqlDatabaseActivity](/powershell/module/az.sql/Stop-AzSqlDatabaseActivity). Hier volgt een voor beeld van een Power shell-opdracht.
 
 ```cmd
 Stop-AzSqlDatabaseActivity -ResourceGroupName $ResourceGroupName -ServerName $ServerName -DatabaseName $DatabaseName -OperationId $Operation.OperationId

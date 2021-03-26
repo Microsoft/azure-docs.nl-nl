@@ -7,12 +7,12 @@ ms.date: 03/30/2020
 ms.topic: article
 ms.service: virtual-machines
 ms.subservice: mainframe-rehosting
-ms.openlocfilehash: 7c9a9f355def492f04f47b49045fadb5afb6acd6
-ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
+ms.openlocfilehash: 9ef9dd27183b6c23762dcdc2d5a844123d35559a
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/24/2021
-ms.locfileid: "104950532"
+ms.locfileid: "105045957"
 ---
 # <a name="set-up-micro-focus-cics-bankdemo-for-micro-focus-enterprise-developer-40-on-azure"></a>Micro Focus CICS BankDemo instellen voor micro focus Enter prise Developer 4,0 op Azure
 
@@ -276,5 +276,5 @@ Gefeliciteerd U voert nu een CICS-toepassing uit in azure met micro focus Enter 
 - [Enter prise server uitvoeren in docker-containers in azure](run-enterprise-server-container.md)
 - [Mainframe-migratie-Portal](/archive/blogs/azurecat/mainframe-migration-to-azure-portal)
 - [Virtual Machines](../../../linux/overview.md)
-- [Problemen oplossen](../../../troubleshooting/index.yml)
+- [Problemen oplossen](/troubleshoot/azure/virtual-machines/welcome-virtual-machines)
 - [Ontrafelen mainframe naar Azure-migratie](https://azure.microsoft.com/resources/demystifying-mainframe-to-azure-migration/en-us/)

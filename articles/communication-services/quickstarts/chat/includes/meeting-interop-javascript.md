@@ -5,20 +5,20 @@ ms.author: askaur
 ms.date: 03/10/2021
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: dd183e9088f24aa8b94955bc8ed2a68b4a7eb27c
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 773bca81694534346019e30e9d55190af6f51e74
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103496169"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105106787"
 ---
 ## <a name="joining-the-meeting-chat"></a>Deel nemen aan de chat functie van de vergadering 
 
-Zodra teams interoperabiliteit is ingeschakeld, kan een communicatie Services-gebruiker worden toegevoegd als een externe gebruiker via de aanroepende client bibliotheek. Als een gebruiker wordt toegevoegd aan de oproep, wordt deze ook deelnemer aan de vergaderchat. Hier kan de gebruiker vervolgens berichten verzenden naar en ontvangen van andere gebruikers in de oproep. De gebruiker heeft geen toegang tot de chatberichten die zijn verzonden vóór deelname aan de oproep. U kunt de volgende stappen volgen om deel te nemen aan de vergadering en te beginnen met chatten.
+Zodra teams interoperabiliteit is ingeschakeld, kan een communicatie Services-gebruiker worden toegevoegd als een externe gebruiker via de aanroepende SDK. Als een gebruiker wordt toegevoegd aan de oproep, wordt deze ook deelnemer aan de vergaderchat. Hier kan de gebruiker vervolgens berichten verzenden naar en ontvangen van andere gebruikers in de oproep. De gebruiker heeft geen toegang tot de chatberichten die zijn verzonden vóór deelname aan de oproep. U kunt de volgende stappen volgen om deel te nemen aan de vergadering en te beginnen met chatten.
 
 ## <a name="install-the-chat-packages"></a>Chat-pakketten installeren
 
-Gebruik de `npm install` opdracht om de benodigde communicatie Services-client bibliotheken voor Java script te installeren.
+Gebruik de `npm install` opdracht om de benodigde communicatie Services-sdk's voor Java script te installeren.
 
 ```console
 npm install @azure/communication-common --save

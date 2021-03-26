@@ -5,12 +5,12 @@ services: automation
 ms.subservice: shared-capabilities
 ms.date: 03/10/2021
 ms.topic: conceptual
-ms.openlocfilehash: e41e9af418b08210f5f0f40de9951d03711dc8e7
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: c3d1dfc5d6ea16a128f5f3bc1129f5f50bc9cb61
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102616113"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104954670"
 ---
 # <a name="management-of-azure-automation-data"></a>Beheer van Azure Automation-gegevens
 
@@ -56,7 +56,7 @@ De volgende tabel bevat een overzicht van het Bewaar beleid voor verschillende r
 | Knooppunt rapporten |Een knooppunt rapport wordt 90 dagen na het genereren van een nieuw rapport voor dat knoop punt definitief verwijderd. |
 | Runbooks |Een runbook wordt definitief verwijderd 30 dagen nadat een gebruiker de resource heeft verwijderd, of 30 dagen nadat een gebruiker het account heeft verwijderd dat de resource<sup>1</sup>bevat. |
 
-<sup>1</sup> Het runbook kan worden hersteld in het 30-dagen venster door een ondersteunings incident voor Azure te archiveren met Microsoft Azure ondersteuning. Ga naar de [ondersteunings site van Azure](/support/options) en selecteer **een ondersteunings aanvraag indienen**.
+<sup>1</sup> Het runbook kan worden hersteld in het 30-dagen venster door een ondersteunings incident voor Azure te archiveren met Microsoft Azure ondersteuning. Ga naar de [ondersteunings site van Azure](https://azure.microsoft.com/support/options/) en selecteer **een ondersteunings aanvraag indienen**.
 
 ## <a name="data-backup"></a>Gegevens back-up
 

@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 02/19/2021
 author: tfitzmac
 ms.author: tomfitz
-ms.openlocfilehash: 1a76f79f31d1f4518c069afb7fccbad5bd22d4e2
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 04aef540bc134e5ec307be6a232ce47f0923e528
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101745294"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105046348"
 ---
 # <a name="manage-the-datadog-resource"></a>De Datadog-resource beheren
 
@@ -61,7 +61,7 @@ U kunt de lijst met resources filteren op resource type, naam van resource groep
 De kolom **Logboeken in Datadog** geeft aan of de resource logboeken naar Datadog verzendt. Als de resource geen logboeken verzendt, wordt in dit veld aangegeven waarom er geen logboeken naar Datadog worden verzonden. Dit kan de volgende oorzaken hebben:
 
 - De resource ondersteunt het verzenden van logboeken niet. Alleen resource typen met bewakings logboek categorieën kunnen worden geconfigureerd voor het verzenden van logboeken naar Datadog.
-- De limiet van vijf Diagnostische instellingen is bereikt. Elke Azure-resource kan Maxi maal vijf Diagnostische instellingen hebben. Zie [Diagnostische instellingen](../../azure-monitor/platform/diagnostic-settings.md)voor meer informatie.
+- De limiet van vijf Diagnostische instellingen is bereikt. Elke Azure-resource kan Maxi maal vijf Diagnostische instellingen hebben. Zie [Diagnostische instellingen](../../azure-monitor/essentials/diagnostic-settings.md)voor meer informatie.
 - Fout. De resource is geconfigureerd voor het verzenden van logboeken naar Datadog, maar wordt geblokkeerd door een fout.
 - De logboeken zijn niet geconfigureerd. Alleen Azure-resources met de juiste resource Tags zijn geconfigureerd voor het verzenden van logboeken naar Datadog.
 - De regio wordt niet ondersteund. De Azure-resource bevindt zich in een regio die momenteel geen ondersteuning biedt voor het verzenden van logboeken naar Datadog.

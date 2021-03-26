@@ -42,7 +42,7 @@
           href: quickstarts/voice-video-calling/getting-started-with-calling.md
         - name: Video toevoegen aan uw app (Java script)
           href: quickstarts/voice-video-calling/get-started-with-video-calling.md
-        - name: De aanroepende clientbibliotheek gebruiken
+        - name: De aanroepende SDK gebruiken
           href: quickstarts/voice-video-calling/calling-client-samples.md
         - name: Voeg u aanroepende app toe aan een Teams-meeting
           href: quickstarts/voice-video-calling/get-started-teams-interop.md
@@ -70,13 +70,13 @@
   items:
     - name: Chat
       items:
-        - name: Overzicht van de chat-clientbibliotheek
+        - name: Overzicht van chat-SDK
           href: concepts/chat/sdk-features.md
         - name: Chatconcepten
           href: concepts/chat/concepts.md
     - name: Telefonie en sms
       items:
-        - name: Overzicht van de sms-clientbibliotheek
+        - name: SMS-SDK-overzicht
           href: concepts/telephony-sms/sdk-features.md
         - name: Sms-concepten
           href: concepts/telephony-sms/concepts.md
@@ -88,9 +88,9 @@
           href: concepts/telephony-sms/sip-interface-infrastructure.md
     - name: Audio- en videobellen
       items:
-        - name: Overzicht van de aanroepende clientbibliotheek
+        - name: Overzicht van de SDK
           href: concepts/voice-video-calling/calling-sdk-features.md
-        - name: Audio- en videoconcepten
+        - name: Voice- en videoconcepten
           href: concepts/voice-video-calling/about-call-types.md
         - name: Netwerkvereisten
           href: concepts/voice-video-calling/network-requirements.md

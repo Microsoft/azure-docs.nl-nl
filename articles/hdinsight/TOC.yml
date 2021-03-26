@@ -190,6 +190,8 @@
                   href: ./optimize-hive-ambari.md
                 - name: Apache Pig optimaliseren
                   href: ./optimize-pig-ambari.md
+            - name: Hostnamen van cluster knooppunten zoeken
+              href: ./find-host-name.md
             - name: Clusterknooppunten opnieuw opstarten
               href: ./cluster-reboot-vm.md
             - name: Apache Ambari REST API gebruiken

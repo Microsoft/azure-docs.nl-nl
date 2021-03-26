@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: overview
 ms.date: 2/25/2021
-ms.openlocfilehash: 37f6a779e7dd83a6aa61de9850ad3b49b57393f9
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 76aadd667691e12c61e0e5e13c13ca0241a9f0ce
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103010434"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105045498"
 ---
 # <a name="register-and-scan-oracle-source-preview"></a>Oracle-bron registreren en scannen (preview)
 
@@ -25,7 +25,7 @@ De Oracle-bron ondersteunt **volledige scan** om meta gegevens uit een Oracle-Da
 ## <a name="prerequisites"></a>Vereisten
 
 1.  Stel de nieuwste [zelf-hostende Integration runtime](https://www.microsoft.com/download/details.aspx?id=39717)in.
-    Zie [een zelf-hostende Integration runtime maken en configureren](https://docs.microsoft.com/azure/data-factory/create-self-hosted-integration-runtime)voor meer informatie.
+    Zie [een zelf-hostende Integration runtime maken en configureren](../data-factory/create-self-hosted-integration-runtime.md)voor meer informatie.
 
 2.  Zorg ervoor dat [jdk 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) is geïnstalleerd op uw virtuele machine waarop zelf-hostende Integration runtime is geïnstalleerd.
 
@@ -105,7 +105,7 @@ Ga als volgt te werk op het scherm **bronnen registreren (Oracle)** :
 
 Doe het volgende om een nieuwe scan te maken en uit te voeren:
 
-1.  Klik in het Beheercentrum op Integratieruntime. Zorg ervoor dat een zelf-hostende Integration Runtime is ingesteld. Als deze niet is ingesteld, volgt u de stappen die [hier](https://docs.microsoft.com/azure/purview/manage-integration-runtimes) worden beschreven om een zelf-hostende Integration runtime te maken.
+1.  Klik in het Beheercentrum op Integratieruntime. Zorg ervoor dat een zelf-hostende Integration Runtime is ingesteld. Als deze niet is ingesteld, volgt u de stappen die [hier](./manage-integration-runtimes.md) worden beschreven om een zelf-hostende Integration runtime te maken.
 
 2.  Navigeer naar **bronnen**.
 

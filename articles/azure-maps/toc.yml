@@ -4,7 +4,7 @@
   items:
     - name: Wat is Azure Maps?
       href: about-azure-maps.md
-- name: Quickstarts
+- name: Snelstartgidsen
   expanded: true
   items:
     - name: Een webtoepassing maken
@@ -238,6 +238,8 @@
               href: spatial-io-supported-data-format-details.md
         - name: Browsers die Web-SDK ondersteunen
           href: supported-browsers.md
+        - name: Aanbevolen procedures
+          href: web-sdk-best-practices.md
     - name: Ontwikkelen met de Android SDK
       items:
         - name: Aan de slag gaan met Android-kaartbesturingselementen

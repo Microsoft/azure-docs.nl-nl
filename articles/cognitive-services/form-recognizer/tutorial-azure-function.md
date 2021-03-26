@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: tutorial
 ms.date: 03/19/2021
 ms.author: lajanuar
-ms.openlocfilehash: 8c72a018f03b5284d3fc53be02d9eb526cdfcf28
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: bf455d9401593b5c09fa295e492368a2a5bee240
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104722239"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105048689"
 ---
 # <a name="tutorial-use-an-azure-function-to-process-stored-documents"></a>Zelf studie: een Azure-functie gebruiken om opgeslagen documenten te verwerken
 
@@ -40,9 +40,9 @@ In deze zelfstudie leert u het volgende:
 * Een lokaal PDF-document dat moet worden geanalyseerd. U kunt dit [voorbeeld document](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/curl/form-recognizer/sample-layout.pdf) downloaden om te gebruiken.
 * [Python 3.8. x](https://www.python.org/downloads/) is geïnstalleerd.
 * [Azure Storage Explorer](https://azure.microsoft.com/features/storage-explorer/) geïnstalleerd.
-* [Azure functions core tools](https://docs.microsoft.com/azure/azure-functions/functions-run-local?tabs=windows%2Ccsharp%2Cbash#install-the-azure-functions-core-tools) geïnstalleerd.
+* [Azure functions core tools](../../azure-functions/functions-run-local.md?tabs=windows%2ccsharp%2cbash#install-the-azure-functions-core-tools) geïnstalleerd.
 * Visual Studio code met de volgende uitbrei dingen geïnstalleerd:
-  * [Azure Functions extensie](https://docs.microsoft.com/azure/developer/python/tutorial-vs-code-serverless-python-01#visual-studio-code-python-and-the-azure-functions-extension)
+  * [Azure Functions extensie](/azure/developer/python/tutorial-vs-code-serverless-python-01#visual-studio-code-python-and-the-azure-functions-extension)
   * [Python-extensie](https://code.visualstudio.com/docs/python/python-tutorial#_install-visual-studio-code-and-the-python-extension)
 
 ## <a name="create-an-azure-storage-account"></a>Een Azure Storage-account maken

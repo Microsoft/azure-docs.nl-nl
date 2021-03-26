@@ -9,13 +9,13 @@ ms.reviewer: jrasnick
 ms.service: synapse-analytics
 ms.subservice: spark
 ms.topic: tutorial
-ms.date: 12/31/2020
-ms.openlocfilehash: 8559bd0a354a64872e58d014d1027ed971773b60
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.date: 03/24/2021
+ms.openlocfilehash: 0becbbdb68f75072e10a51f5a2eae95291b9ed77
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104655339"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105108329"
 ---
 # <a name="analyze-with-apache-spark"></a>Analyseren met behulp van Apache Spark
 
@@ -37,9 +37,10 @@ Een Spark-groep zonder server is een manier om aan te geven hoe een gebruiker me
 ## <a name="analyze-nyc-taxi-data-in-blob-storage-using-spark"></a>NYC Taxi-gegevens analyseren in blob-opslag met Spark
 
 1. Ga in Synapse Studio naar de **ontwikkelende** hub
-2. Maak een newnNotebook met de standaard taal ingesteld op **PySpark (python)**.
+2. Maak een nieuw notitie blok met de standaard taal ingesteld op **PySpark (python)**.
 3. Maak een nieuwe code-cel en plak de volgende code in die cel.
-    ```
+    ```py
+    %%pyspark
     from azureml.opendatasets import NycTlcYellow
 
     data = NycTlcYellow()
@@ -62,6 +63,7 @@ Gegevens zijn beschikbaar via de data frame met de naam **gegevens**. Laad deze 
 1. Voeg een nieuwe toe aan het notitie blok en voer de volgende code in:
 
     ```py
+    spark.sql("CREATE DATABASE IF NOT EXISTS nyctaxi")
     df.write.mode("overwrite").saveAsTable("nyctaxi.trip")
     ```
 ## <a name="analyze-the-nyc-taxi-data-using-spark-and-notebooks"></a>De gegevens over de NYC-taxi met behulp van Apache Spark en notebooks analyseren
@@ -76,16 +78,16 @@ Gegevens zijn beschikbaar via de data frame met de naam **gegevens**. Laad deze 
    ```
 
 1. Voer de cel uit om de NYC-taxi gegevens weer te geven die we in de **nyctaxi** Spark-data base hebben geladen.
-1. Maak een nieuwe code-cel en voer de volgende code in. Voer vervolgens de cel uit om dezelfde analyse uit te voeren die eerder met de toegewezen SQL-groep **SQLPOOL1** is uitgevoerd. Met deze code worden de resultaten van de analyse opgeslagen en weer gegeven in een tabel met de naam **nyctaxi. passengercountstats**.
+1. Maak een nieuwe code-cel en voer de volgende code in. Deze gegevens worden geanalyseerd en de resultaten worden opgeslagen in een tabel met de naam **nyctaxi. passengercountstats**.
 
    ```py
    %%pyspark
    df = spark.sql("""
       SELECT PassengerCount,
-          SUM(TripDistanceMiles) as SumTripDistance,
-          AVG(TripDistanceMiles) as AvgTripDistance
+          SUM(TripDistance) as SumTripDistance,
+          AVG(TripDistance) as AvgTripDistance
       FROM nyctaxi.trip
-      WHERE TripDistanceMiles > 0 AND PassengerCount > 0
+      WHERE TripDistance > 0 AND PassengerCount > 0
       GROUP BY PassengerCount
       ORDER BY PassengerCount
    """) 

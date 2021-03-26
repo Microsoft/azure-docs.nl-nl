@@ -1,7 +1,7 @@
 ---
 title: Snelstart - Toegangstoken maken en beheren
 titleSuffix: An Azure Communication Services quickstart
-description: Meer informatie over het beheren van identiteits-en toegangs tokens met behulp van de Azure Communication Services Identity client-bibliotheek.
+description: Meer informatie over het beheren van identiteits-en toegangs tokens met behulp van de Azure Communication Services Identity SDK.
 author: tomaschladek
 manager: nmurav
 services: azure-communication-services
@@ -10,16 +10,16 @@ ms.date: 03/10/2021
 ms.topic: quickstart
 ms.service: azure-communication-services
 zone_pivot_groups: acs-js-csharp-java-python
-ms.openlocfilehash: 921934e581d9b3d32cba644d85987ebb9802f73b
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: c7b705fd90888b33cebb46324ab442d3b5ef326c
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103495298"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105107117"
 ---
 # <a name="quickstart-create-and-manage-access-tokens"></a>Quickstart: Toegangstokens maken en beheren
 
-Ga aan de slag met Azure Communication Services met behulp van de client bibliotheek van de communicatie Services-identiteit. Hiermee kunt u identiteiten maken en uw toegangstokens beheren. De identiteit geeft de entiteit weer van uw toepassing in de Azure Communication Service (bijvoorbeeld gebruiker of apparaat). Met toegangstokens kunt u uw chat- en aanroep-clientbibliotheken rechtstreeks verifiëren tegen Azure Communication Services. Het wordt aanbevolen om toegangstokens te genereren voor een service aan de serverzijde. Toegangstokens worden vervolgens gebruikt voor het initialiseren van de Communication Services-clientbibliotheken op clientapparaten.
+Ga aan de slag met Azure Communication Services met behulp van de communicatie Services Identity SDK. Hiermee kunt u identiteiten maken en uw toegangstokens beheren. De identiteit geeft de entiteit weer van uw toepassing in de Azure Communication Service (bijvoorbeeld gebruiker of apparaat). Met toegangs tokens kunt u uw chat-en aanroepen van Sdk's rechtstreeks verifiëren voor Azure Communication Services. Het wordt aanbevolen om toegangstokens te genereren voor een service aan de serverzijde. Toegangs tokens worden vervolgens gebruikt voor het initialiseren van de communicatie Services-Sdk's op client apparaten.
 
 Prijzen die in de afbeeldingen in deze zelfstudie worden getoond, zijn alleen bedoeld voor demonstratiedoeleinden.
 
@@ -67,7 +67,7 @@ In deze snelstart hebt u de volgende zaken geleerd:
 > [!div class="checklist"]
 > * Identiteiten beheren
 > * Toegangstokens uitgeven
-> * De client bibliotheek voor identiteit van communicatie Services gebruiken
+> * De Communication Services-identiteits-SDK gebruiken
 
 
 > [!div class="nextstepaction"]

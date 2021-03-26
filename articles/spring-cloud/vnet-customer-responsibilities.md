@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: conceptual
 ms.date: 12/02/2020
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 0c73d0394486472c2c3c92450aab6a1a0d329cf7
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.openlocfilehash: 32b41c1c4446ba34e3bfad52f1d3cbd7ed72096d
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104878195"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105108806"
 ---
 # <a name="customer-responsibilities-for-running-azure-spring-cloud-in-vnet"></a>Verantwoordelijkheden van klanten voor het uitvoeren van Azure lente Cloud in VNET
 Dit document bevat specificaties voor het gebruik van Azure lente-Cloud in een virtueel netwerk.
@@ -54,7 +54,8 @@ Azure Firewall biedt een Fully Qualified Domain Name (FQDN)-tag **AzureKubernete
   | *. cdn.mscr.io | HTTPS: 443 | MCR-opslag ondersteund door de Azure CDN. |
   | *. data.mcr.microsoft.com | HTTPS: 443 | MCR-opslag ondersteund door de Azure CDN. |
   | <i>management.azure.com</i> | HTTPS: 443 | Onderliggend Kubernetes-Cluster beheer. |
-  | <i>login.microsoftonline.com</i> | HTTPS: 443 | Azure Active Directory-verificatie. |
+  | <i>* login.microsoftonline.com</i> | HTTPS: 443 | Azure Active Directory-verificatie. |
+  | <i>* login.microsoft.com</i> | HTTPS: 443 | Azure Active Directory-verificatie. |
   |<i>packages.microsoft.com</i>    | HTTPS: 443 | Micro soft packages-opslag plaats. |
   | <i>acs-mirror.azureedge.net</i> | HTTPS: 443 | De opslag plaats is vereist om de vereiste binaire bestanden te installeren, zoals kubenet en Azure CNI. |
   | *mscrl.microsoft.com* | HTTPS: 80 | Vereiste micro soft-certificaat keten paden. |
@@ -62,5 +63,5 @@ Azure Firewall biedt een Fully Qualified Domain Name (FQDN)-tag **AzureKubernete
   | *crl3.digicert.com* | HTTPS: 80 | SSL-certificaat keten paden van derden. |
 
 ## <a name="see-also"></a>Zie ook
-* [Toegang tot uw toepassing in een privé netwerk](spring-cloud-access-app-virtual-network.md)
-* [Apps beschikbaar maken met Application Gateway en Azure Firewall](spring-cloud-expose-apps-gateway-azure-firewall.md)
+* [Toegang tot uw toepassing in een privé netwerk](access-app-virtual-network.md)
+* [Apps beschikbaar maken met Application Gateway en Azure Firewall](expose-apps-gateway-azure-firewall.md)

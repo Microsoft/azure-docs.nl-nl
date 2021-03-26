@@ -10,14 +10,14 @@ ms.date: 03/11/2021
 ms.topic: include
 ms.custom: include file
 ms.author: bertong
-ms.openlocfilehash: 0d142c477e1de2a2a34a8abfd948800cc0b607ee
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: b0a173d605da859830e288aebf355117b928090a
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103622190"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105110337"
 ---
-Ga aan de slag met Azure Communication Services door de sms-clientbibliotheek in JavaScript van Communications Services te gebruiken om sms-berichten te verzenden.
+Ga aan de slag met Azure Communication Services met de SMS SDK voor communicatie services java script om SMS-berichten te verzenden.
 
 Voor het voltooien van deze quickstart worden kosten van een paar dollarcent of minder in rekening gebracht bij uw Azure-account.
 
@@ -57,7 +57,7 @@ Gebruik een teksteditor om een bestand met de naam **send-sms.js** te maken in d
 
 ### <a name="install-the-package"></a>Het pakket installeren
 
-Gebruik de `npm install`-opdracht voor het installeren van de sms-clientbibliotheek voor Javascript in Azure Communication Services.
+Gebruik de `npm install` opdracht voor het installeren van de Azure Communication Services SMS SDK voor Java script.
 
 ```console
 npm install @azure/communication-sms --save
@@ -67,7 +67,7 @@ De optie `--save` geeft de bibliotheek weer als afhankelijkheid in het **package
 
 ## <a name="object-model"></a>Objectmodel
 
-De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de sms-clientbibliotheek voor Node.js in Azure Communication Services.
+De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de SMS SDK van Azure Communication Services voor Node.js.
 
 | Naam                                  | Beschrijving                                                  |
 | ------------------------------------- | ------------------------------------------------------------ |
@@ -78,7 +78,7 @@ De volgende klassen en interfaces verwerken enkele van de belangrijkste functies
 
 ## <a name="authenticate-the-client"></a>De client verifiëren
 
-Importeer de **SmsClient** uit de clientbibliotheek en instantieer deze met uw verbindingsreeks. Met de onderstaande code wordt de verbindingsreeks voor de resource opgehaald uit een omgevingsvariabele met de naam `COMMUNICATION_SERVICES_CONNECTION_STRING`. Meer informatie over het [beheren van de verbindingsreeks van uw resource](../../create-communication-resource.md#store-your-connection-string).
+Importeer de **SmsClient** uit de SDK en instantie deze met uw Connection String. Met de onderstaande code wordt de verbindingsreeks voor de resource opgehaald uit een omgevingsvariabele met de naam `COMMUNICATION_SERVICES_CONNECTION_STRING`. Meer informatie over het [beheren van de verbindingsreeks van uw resource](../../create-communication-resource.md#store-your-connection-string).
 
 Voeg de volgende code toe aan het bestand **send-sms.js**:
 

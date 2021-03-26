@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: conceptual
 ms.service: azure-communication-services
-ms.openlocfilehash: 74a48b05e7e3b00d331da4fcf66092490ae70374
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: f52d907c36c7900d5f5eada3ca4a7328e42f9729
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103490667"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105110845"
 ---
 # <a name="client-and-server-architecture"></a>Client-en server architectuur
 
@@ -34,7 +34,7 @@ Elke Azure Communication Services-toepassing heeft **client toepassingen** die g
 
 ## <a name="user-access-management"></a>Beheer van gebruikers toegang
 
-Voor client bibliotheken van Azure Communication Services moet `user access tokens` u beveiligde communicatie Services-bronnen gebruiken. `User access tokens` moet worden gegenereerd en beheerd door een vertrouwde service vanwege de gevoelige aard van het token en de connection string die nodig zijn om ze te genereren. Fout bij het goed beheren van toegangs tokens kan leiden tot extra kosten als gevolg van misbruik van resources. Het wordt sterk aanbevolen om een vertrouwde service voor gebruikers beheer te gebruiken. De vertrouwde service genereert de tokens en geeft deze door aan de client met behulp van de juiste versleuteling. Hieronder vindt u een voor beeld van een architectuur stroom:
+Voor de Sdk's van Azure Communication Services moet `user access tokens` u beveiligde communicatie Services-bronnen gebruiken. `User access tokens` moet worden gegenereerd en beheerd door een vertrouwde service vanwege de gevoelige aard van het token en de connection string die nodig zijn om ze te genereren. Fout bij het goed beheren van toegangs tokens kan leiden tot extra kosten als gevolg van misbruik van resources. Het wordt sterk aanbevolen om een vertrouwde service voor gebruikers beheer te gebruiken. De vertrouwde service genereert de tokens en geeft deze door aan de client met behulp van de juiste versleuteling. Hieronder vindt u een voor beeld van een architectuur stroom:
 
 :::image type="content" source="../media/scenarios/archdiagram-access.png" alt-text="Diagram waarin de architectuur van de gebruikers toegangs token wordt weer gegeven.":::
 
@@ -42,7 +42,7 @@ Bekijk de [best mogelijke procedures voor identiteits beheer](../../security/fun
 
 ## <a name="browser-communication"></a>Browser communicatie
 
-Azure Communications java script-client bibliotheken kunnen webtoepassingen inschakelen met de interactie van tekst, spraak en video. De toepassing communiceert rechtstreeks met Azure Communication Services via de client bibliotheek om toegang te krijgen tot het gegevens vlak en om in realtime tekst, spraak en video communicatie te leveren. Hieronder vindt u een voor beeld van een architectuur stroom:
+Ontwikkelers van Azure Communications java script kunnen webtoepassingen inschakelen met de interactie van tekst, spraak en video. De toepassing communiceert rechtstreeks met Azure Communication Services via de SDK om toegang te krijgen tot het gegevens vlak en om in realtime tekst, spraak en video communicatie te leveren. Hieronder vindt u een voor beeld van een architectuur stroom:
 
 :::image type="content" source="../media/scenarios/archdiagram-browser.png" alt-text="Diagram waarin de browser wordt weer gegeven voor de browser architectuur voor communicatie Services.":::
 
@@ -54,7 +54,7 @@ Veel scenario's worden het beste geleverd met systeem eigen toepassingen. Azure 
 
 ## <a name="voice-and-sms-over-the-public-switched-telephony-network-pstn"></a>Spraak-en SMS-verkeer via het open bare telefoon netwerk (PSTN)
 
-Door te communiceren via het telefoon systeem kan het bereik van uw toepassing aanzienlijk toenemen. Ter ondersteuning van PSTN-spraak-en SMS-scenario's kunt u met Azure Communication Services [telefoon nummers](../quickstarts/telephony-sms/get-phone-number.md) rechtstreeks van de Azure Portal ophalen of rest-api's en client bibliotheken gebruiken. Zodra de telefoon nummers zijn verkregen, kunnen ze worden gebruikt om klanten te bereiken met behulp van PSTN-aanroepen en SMS-berichten in zowel binnenkomende als uitgaande scenario's. Hieronder vindt u een voor beeld van een architectuur stroom:
+Door te communiceren via het telefoon systeem kan het bereik van uw toepassing aanzienlijk toenemen. Voor het ondersteunen van PSTN-spraak-en SMS-scenario's kunt u met Azure Communication Services [telefoon nummers](../quickstarts/telephony-sms/get-phone-number.md) rechtstreeks van de Azure Portal ophalen of rest Api's en sdk's gebruiken. Zodra de telefoon nummers zijn verkregen, kunnen ze worden gebruikt om klanten te bereiken met behulp van PSTN-aanroepen en SMS-berichten in zowel binnenkomende als uitgaande scenario's. Hieronder vindt u een voor beeld van een architectuur stroom:
 
 > [!Note]
 > Tijdens de open bare preview is de inrichting van telefoon nummers in de Verenigde Staten beschikbaar voor klanten met facturerings adressen die zich binnen de Verenigde Staten en Canada bevinden.
@@ -65,7 +65,7 @@ Zie voor meer informatie over PSTN-telefoon nummers [telefoon nummer typen](../c
 
 ## <a name="humans-communicating-with-bots-and-other-services"></a>Mensen die communiceren met bots en andere services
 
-Azure Communication Services ondersteunt Human-to-System-communicatie, met tekst-en spraak kanalen, met services die rechtstreeks toegang hebben tot het gegevens vlak van Azure Communication Services. U kunt bijvoorbeeld een bot laten beantwoorden van binnenkomende telefoon gesprekken of deel nemen aan een web-chat. Azure Communication Services biedt client bibliotheken die deze scenario's mogelijk maken voor aanroepen en chatten. Hieronder vindt u een voor beeld van een architectuur stroom:
+Azure Communication Services ondersteunt Human-to-System-communicatie, met tekst-en spraak kanalen, met services die rechtstreeks toegang hebben tot het gegevens vlak van Azure Communication Services. U kunt bijvoorbeeld een bot laten beantwoorden van binnenkomende telefoon gesprekken of deel nemen aan een web-chat. Azure Communication Services biedt Sdk's die deze scenario's mogelijk maken voor aanroepen en chatten. Hieronder vindt u een voor beeld van een architectuur stroom:
 
 :::image type="content" source="../media/scenarios/archdiagram-bot.png" alt-text="Diagram van de architectuur van de communicatie Services-bot.":::
 
@@ -73,7 +73,7 @@ Azure Communication Services ondersteunt Human-to-System-communicatie, met tekst
 
 Mogelijk wilt u wille keurige gegevens uitwisselen tussen gebruikers, bijvoorbeeld om een gedeelde gemengde realiteit of gaming ervaring te synchroniseren. Het realtime gegevens vlak dat wordt gebruikt voor tekst-, spraak-en video communicatie, is op twee manieren beschikbaar voor u:
 
-- **Client bibliotheek aanroepen** : apparaten in een aanroep hebben toegang tot api's voor het verzenden en ontvangen van gegevens via het aanroep kanaal. Dit is de eenvoudigste manier om gegevens communicatie toe te voegen aan een bestaande interactie.
+- Het **aanroepen van SDK** -apparaten in een aanroep hebben toegang tot api's voor het verzenden en ontvangen van gegevens via het aanroep kanaal. Dit is de eenvoudigste manier om gegevens communicatie toe te voegen aan een bestaande interactie.
 - **Stun/turn** : Azure Communication Services maakt standaarden compatibel met stun en schakelt services beschikbaar voor u. Hierdoor kunt u een sterk aangepaste transport laag maken boven op deze gestandaardiseerde primitieven. U kunt uw eigen standaard client ontwerpen of gebruikmaken van open-source bibliotheken zoals [WinRTC](https://github.com/microsoft/winrtc).
 
 ## <a name="next-steps"></a>Volgende stappen

@@ -2,13 +2,13 @@
 title: Inleiding
 description: Meer informatie over de functies en voordelen van Azure VMware Solution voor het implementeren en beheren van VMware-workloads in Azure.
 ms.topic: overview
-ms.date: 11/11/2020
-ms.openlocfilehash: 255d3599385c60d3b13f4769796ced41a1177311
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.date: 03/24/2021
+ms.openlocfilehash: a75c04cf6b51068ef9867e3f9438b2820da703fe
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100579290"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105048813"
 ---
 # <a name="what-is-azure-vmware-solution"></a>Wat is Azure VMware Solution?
 
@@ -19,6 +19,11 @@ Azure VMware Solution is een VMware-gevalideerde oplossing met voortdurende vali
 In het diagram wordt de verdeling weergegeven tussen privéclouds en VNets in Azure, Azure-services en on-premises omgevingen. Netwerktoegang van privéclouds naar Azure-services of VNets biedt SLA-gestuurde integratie van Azure-service-eindpunten. ExpressRoute Global Reach verbindt uw on-premises omgeving verbindt met uw Azure VMware Solution-privécloud. 
 
 ![Afbeelding van nabijheid van Azure VMware Solution-privécloud ten opzichte van Azure en on-premises](./media/adjacency-overview-drawing-final.png)
+
+## <a name="customer-communication"></a>Communicatie van klanten
+Problemen met de service, gepland onderhoud, status adviezen, meldingen van beveiligings adviezen worden gepubliceerd via **service Health** in de Azure Portal. U kunt tijdig acties ondernemen wanneer u waarschuwingen voor activiteiten logboeken instelt voor deze meldingen. Zie [service Health Alerts maken met behulp van de Azure Portal](../service-health/alerts-activity-log-service-notifications-portal.md#create-service-health-alert-using-azure-portal)voor meer informatie.
+
+:::image type="content" source="media/service-health.png" alt-text="Scherm opname van Service Health meldingen":::
 
 ## <a name="hosts-clusters-and-private-clouds"></a>Hosts, clusters en privéclouds
 

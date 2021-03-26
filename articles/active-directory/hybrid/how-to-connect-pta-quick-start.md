@@ -16,12 +16,12 @@ ms.date: 04/13/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 60d7d4888c17ffe46340aa85b8d2a1cc4fa7ed34
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 3200dc6ad7756f77dc0d74df83a33c7e89d4bedb
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104581827"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105044563"
 ---
 # <a name="azure-active-directory-pass-through-authentication-quickstart"></a>Pass-Through-verificatie Azure Active Directory: Quick Start
 
@@ -73,7 +73,7 @@ Zorg ervoor dat aan de volgende vereisten is voldaan.
      
      Als met uw firewall regels worden afgedwongen op basis van de herkomst van gebruikers, opent u deze poorten voor verkeer dat afkomstig is van Windows-services die als een netwerkservice worden uitgevoerd.
    - Als uw firewall of proxy u in staat stelt om DNS-vermeldingen toe te voegen aan een allowlist, voegt u verbindingen toe aan **\* . msappproxy.net** en **\* . servicebus.Windows.net**. Als dat niet het geval is, moet u toegang toestaan tot de [IP-adresbereiken van Azure Datacenter](https://www.microsoft.com/download/details.aspx?id=41653), die elke week worden bijgewerkt.
-   - Als u een uitgaande HTTP-proxy hebt, controleert u of deze URL, autologon.microsoftazuread-sso.com, white list is. U moet deze URL expliciet opgeven omdat het Joker teken mogelijk niet wordt geaccepteerd. 
+   - Als u een uitgaande HTTP-proxy hebt, moet u ervoor zorgen dat deze URL, autologon.microsoftazuread-sso.com, voor komt in de lijst toegestaan. U moet deze URL expliciet opgeven omdat het Joker teken mogelijk niet wordt geaccepteerd. 
    - Uw verificatie agenten hebben toegang tot **login.Windows.net** en **login.microsoftonline.com** nodig voor de eerste registratie. Open uw firewall ook voor deze URL's.
     - Voor validatie van het certificaat kunt u de volgende Url's blok keren: **crl3.Digicert.com:80**, **crl4.Digicert.com:80**, **ocsp.digicert.com:80**, **www \. d-trust.net:80**, **root-C3-Ca2-2009.OCSP.d-Trust.net:80**, **CRL.Microsoft.com:80**, **oneocsp.Microsoft.com:80** en **OCSP.msocsp.com:80**. Omdat deze URL's worden gebruikt voor certificaatvalidatie met andere Microsoft-producten, is het mogelijk dat u deze URL's al hebt gedeblokkeerd.
 

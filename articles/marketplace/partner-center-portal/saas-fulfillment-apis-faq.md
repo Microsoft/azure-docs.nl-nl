@@ -4,15 +4,15 @@ description: Meer informatie over een aantal integratie vereisten voor de micro 
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 07/11/2019
+ms.date: 03/19/2021
 author: mingshen-ms
 ms.author: mingshen
-ms.openlocfilehash: 4c5d8b438764fa9aa3838b2225c63d412afc519b
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 760e7210d054e44dfec6d6a6e480baecd04d6807
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "88606802"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105044121"
 ---
 # <a name="common-questions-about-saas-fulfillment-apis"></a>Veelgestelde vragen over Api's voor SaaS-uitvoering
 
@@ -40,7 +40,10 @@ Tijdens het abonneren op de SaaS-aanbieding heeft de gebruiker besloten om te be
 
 Nadat u zich hebt geabonneerd op een aanbieding, kan de Azure-gebruiker al hun aanbiedingen in azure detecteren en beheren. Standaard wordt de status van een nieuw geabonneerde SaaS-aanbieding weer gegeven als **inrichting, in afwachting** van de uitvoering. In deze status wordt de Azure-gebruiker gevraagd om het **account te configureren**, om te bladeren naar de beheer ervaring van het SaaS-abonnement in de Azure Portal.
 
-Wanneer de gebruiker **account configureren** selecteert, wordt deze omgeleid naar de website van de SaaS-service. De uitgever heeft de URL geconfigureerd op het moment van publicatie van de aanbieding. Deze pagina wordt de landings pagina van de uitgever genoemd. Azure-gebruikers melden zich aan bij de SaaS-landings pagina op basis van hun bestaande AAD-referenties in Azure.
+Wanneer de gebruiker **account configureren** selecteert, wordt deze omgeleid naar de website van de SaaS-service. De uitgever heeft de URL geconfigureerd op het moment van publicatie van de aanbieding. Deze pagina wordt de landings pagina van de uitgever genoemd. Azure-gebruikers melden zich aan bij de SaaS-landings pagina op basis van hun bestaande Azure Active Directory (Azure AD)-referenties in Azure.
+
+> [!IMPORTANT]
+> U moet de kopende gebruiker aanmelden met behulp van Azure Active Directory, eenmalige aanmelding (Azure AD SSO), zoals door het [beleid](/legal/marketplace/certification-policies?context=/azure/marketplace/context/context)wordt doorgestuurd. De `mail` eigenschap van de gebruikers resource die wordt opgehaald uit de Microsoft Graph-API bevat de contact gegevens voor het geval van Azure AD en `userPrincipalName` MSA. Het is mogelijk dat het veld ' mail ' leeg is voor Azure AD en dat de gebruiker mogelijk geen e-mail berichten heeft opgenomen. Als dit het geval is, raden we u aan dat u een e-mail adres van een contact persoon detecteert. Dit is uw enige kans om een contact-e-mail te ontvangen om een klant te bereiken tijdens of na het on-board proces van de klant.
 
 Wanneer de Azure-gebruiker wordt omgeleid naar de landings pagina, wordt een token toegevoegd aan de query-URL. Dit token is korte tijd en geldig voor een tijds duur van 24 uur. U kunt vervolgens de aanwezigheid van dit token detecteren en de API van micro soft aanroepen om meer context te verkrijgen die aan het token is gekoppeld.
 

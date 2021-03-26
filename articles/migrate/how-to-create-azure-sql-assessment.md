@@ -5,12 +5,12 @@ author: rashi-ms
 ms.author: rajosh
 ms.topic: tutorial
 ms.date: 02/07/2021
-ms.openlocfilehash: 21553adf81d5b34813785db7cd6bbe3caf71c210
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.openlocfilehash: e9243fc750843c83b7ca8c295655853d20dcd083
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104780481"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105024981"
 ---
 # <a name="create-an-azure-sql-assessment"></a>Een Azure SQL-evaluatie maken
 
@@ -18,7 +18,7 @@ Als onderdeel van uw migratietraject naar Azure, beoordeelt u uw on-premises wer
 Dit artikel laat u zien hoe u gedetecteerde SQL-instanties in de voor bereiding voor de migratie naar Azure SQL kunt beoordelen met behulp van het hulp programma Azure Migrate: detectie en evaluatie.
 
 > [!Note]
-> Detectie en evaluatie van SQL Server instanties en data bases die worden uitgevoerd in uw VMware-omgeving is nu beschikbaar als preview-versie. 
+> Detectie en evaluatie van SQL Server instanties en data bases die worden uitgevoerd in uw VMware-omgeving is nu beschikbaar als preview-versie. Ga aan de slag met [deze zelfstudie](tutorial-discover-vmware.md). Als u deze functie in een bestaand project wilt uitproberen, moet u ervoor zorgen dat u de [vereisten](how-to-discover-sql-existing-project.md) in dit artikel hebt voltooid.
 
 ## <a name="before-you-start"></a>Voordat u begint
 

@@ -7,12 +7,12 @@ ms.custom:
 - seo-python-october2019
 - mvc
 - devx-track-python
-ms.openlocfilehash: e3792a88104c359b014a7a12cf6e48e690c2a865
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: e213ec7aee7172bb5ebb49097ad9fd09f9106255
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "88511011"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105046807"
 ---
 # <a name="quickstart-use-python-api-to-run-an-azure-batch-job"></a>Quickstart: De Python-API gebruiken om een Azure Batch-job uit te voeren
 
@@ -28,7 +28,7 @@ Nadat u deze quickstart hebt voltooid, begrijpt u de belangrijkste principes van
 
 - Een Batch-account en een gekoppeld Azure Storage-account. Raadpleeg de Batch-quickstarts met behulp van [Azure Portal](quick-create-portal.md) of [Azure CLI](quick-create-cli.md) voor instructies voor het maken van deze accounts.
 
-- [Python](https://python.org/downloads)-versie 2.7 of 3.3 of hoger, inclusief de [PIP](https://pip.pypa.io/en/stable/installing/)-pakketmanager
+- [Python](https://python.org/downloads) -versie 2,7 of 3,6, inclusief [PIP](https://pip.pypa.io/en/stable/installing/) -pakket beheer
 
 ## <a name="sign-in-to-azure"></a>Aanmelden bij Azure
 

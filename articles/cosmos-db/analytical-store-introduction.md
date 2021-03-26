@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/16/2021
 ms.author: rosouz
 ms.custom: seo-nov-2020
-ms.openlocfilehash: 9a8ecf65426dfe92b84582ff98b567ea400c9209
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.openlocfilehash: 450514541a90a01ea6b70f77491f116adb404887
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/24/2021
-ms.locfileid: "105027173"
+ms.locfileid: "105046209"
 ---
 # <a name="what-is-azure-cosmos-db-analytical-store"></a>Wat is Azure Cosmos DB Analytical Store?
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
@@ -112,8 +112,8 @@ De volgende beperkingen zijn van toepassing op de operationele gegevens in Azure
 
 * Voor expliciete waarden zou u een ander gedrag verwachten `null` :
   * In Spark-Pools in azure Synapse worden deze waarden gelezen als `0` (nul).
-  * Met SQL serverloze Pools in azure Synapse worden deze waarden gelezen alsof `NULL` het eerste document van de verzameling voor dezelfde eigenschap een waarde heeft waarvan het gegevens type afwijkt van `integer` .
-  * SQL serverloze Pools in azure Synapse worden deze waarden gelezen als `0` (nul) als het eerste document van de verzameling voor dezelfde eigenschap een waarde heeft die een `integer` .
+  * Met SQL serverloze Pools in azure Synapse worden deze waarden gelezen alsof `NULL` het eerste document van de verzameling voor dezelfde eigenschap een waarde met een `non-numeric` gegevens type heeft.
+  * SQL serverloze Pools in azure Synapse lezen deze waarden als `0` (nul) als het eerste document van de verzameling voor dezelfde eigenschap een waarde heeft met een `numeric` gegevens type.
 
 * Er wordt een ander gedrag in rekening gehouden met ontbrekende kolommen:
   * In Spark-Pools in azure Synapse worden deze kolommen weer gegeven als `undefined` .

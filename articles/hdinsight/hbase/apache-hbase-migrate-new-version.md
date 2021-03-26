@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 01/02/2020
-ms.openlocfilehash: 24a0c09ba78c668dab017ec80adda19f59d89a4f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 43b46d19503856f5eae38272299f73d9c80055b8
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98942983"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104868882"
 ---
 # <a name="migrate-an-apache-hbase-cluster-to-a-new-version"></a>Een Apache HBase-cluster migreren naar een nieuwe versie
 
@@ -49,7 +49,7 @@ Voer de volgende stappen uit om uw Apache HBase-cluster in azure HDInsight bij t
 
 1. [Stel een nieuw doel-HDInsight-cluster](../hdinsight-hadoop-provision-linux-clusters.md) in met hetzelfde opslag account, maar met een andere container naam:
 
-   ![Hetzelfde opslag account gebruiken, maar een andere container maken](./media/apache-hbase-migrate-new-version/same-storage-different-container.png)
+   :::image type="content" source="./media/apache-hbase-migrate-new-version/same-storage-different-container.png" alt-text="Hetzelfde opslag account gebruiken, maar een andere container maken" border="true":::
 
 1. Maak uw bron HBase-cluster leeg, het cluster dat u wilt upgraden. HBase schrijft inkomende gegevens naar een in-Memory Store, een _geheugen opslag_ genoemd. Nadat de geheugen opslag een bepaalde grootte heeft bereikt, wordt deze door HBase naar de schijf leeg gemaakt voor lange termijn opslag in het opslag account van het cluster. Wanneer u het oude cluster verwijdert, worden de memstores gerecycled, waardoor gegevens verloren kunnen gaan. Als u de geheugen opslag voor elke tabel hand matig wilt leegmaken, voert u het volgende script uit. De meest recente versie van dit script bevindt zich in de [github](https://raw.githubusercontent.com/Azure/hbase-utils/master/scripts/flush_all_tables.sh)van Azure.
 
@@ -175,9 +175,9 @@ Voer de volgende stappen uit om uw Apache HBase-cluster in azure HDInsight bij t
 
 1. Meld u aan bij [Apache Ambari](https://ambari.apache.org/) op het oude cluster ( `https://OLDCLUSTERNAME.azurehdidnsight.net` ) en stop de HBase-Services. Wanneer u wordt gevraagd om te bevestigen dat u de services wilt stoppen, schakelt u het selectie vakje onderhouds modus inschakelen voor HBase in. Zie [HDInsight-clusters beheren met behulp van de Ambari-webgebruikersinterface](../hdinsight-hadoop-manage-ambari.md)voor meer informatie over het maken van verbinding met en het gebruik van Ambari.
 
-    ![Klik in Ambari op Services > HBase > stop onder service acties](./media/apache-hbase-migrate-new-version/stop-hbase-services1.png)
+    :::image type="content" source="./media/apache-hbase-migrate-new-version/stop-hbase-services1.png" alt-text="Klik in Ambari op Services > HBase > stop onder service acties" border="true":::
 
-    ![Schakel het selectie vakje onderhouds modus inschakelen voor HBase in en bevestig](./media/apache-hbase-migrate-new-version/turn-on-maintenance-mode.png)
+    :::image type="content" source="./media/apache-hbase-migrate-new-version/turn-on-maintenance-mode.png" alt-text="Schakel het selectie vakje onderhouds modus inschakelen voor HBase in en bevestig" border="true":::
 
 1. Als u geen HBase-clusters gebruikt met de verbeterde functie voor schrijf bewerkingen, slaat u deze stap over. Het is alleen nodig voor HBase-clusters met verbeterde functie voor schrijf bewerkingen.
 
@@ -190,15 +190,15 @@ Voer de volgende stappen uit om uw Apache HBase-cluster in azure HDInsight bij t
     
 1. Meld u aan bij Ambari op het nieuwe HDInsight-cluster. Wijzig de `fs.defaultFS` instelling HDFS zodat deze verwijst naar de container naam die door het oorspronkelijke cluster wordt gebruikt. Deze instelling bevindt zich onder **HDFS > configs > advanced > Advanced core-site**.
 
-   ![Klik in Ambari op Services > HDFS > configs > Advanced](./media/apache-hbase-migrate-new-version/hdfs-advanced-settings.png)
+   :::image type="content" source="./media/apache-hbase-migrate-new-version/hdfs-advanced-settings.png" alt-text="Klik in Ambari op Services > HDFS > configs > Advanced" border="true":::
 
-   ![Wijzig in Ambari de naam van de container](./media/apache-hbase-migrate-new-version/change-container-name.png)
+   :::image type="content" source="./media/apache-hbase-migrate-new-version/change-container-name.png" alt-text="Wijzig in Ambari de naam van de container" border="true":::
 
 1. Als u geen HBase-clusters gebruikt met de verbeterde functie voor schrijf bewerkingen, slaat u deze stap over. Het is alleen nodig voor HBase-clusters met verbeterde functie voor schrijf bewerkingen.
 
    Wijzig het `hbase.rootdir` pad zodat dit verwijst naar de container van het oorspronkelijke cluster.
 
-   ![Wijzig in Ambari de container naam voor HBase rootdir](./media/apache-hbase-migrate-new-version/change-container-name-for-hbase-rootdir.png)
+   :::image type="content" source="./media/apache-hbase-migrate-new-version/change-container-name-for-hbase-rootdir.png" alt-text="Wijzig in Ambari de container naam voor HBase rootdir" border="true":::
     
 1. Als u geen HBase-clusters gebruikt met de verbeterde functie voor schrijf bewerkingen, slaat u deze stap over. Het is alleen nodig voor HBase-clusters met verbeterde schrijf functies en alleen in gevallen waarin uw oorspronkelijke cluster een HBase-cluster was met verbeterde functie voor schrijf bewerkingen.
 

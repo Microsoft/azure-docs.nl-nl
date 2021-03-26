@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/25/2021
 ms.author: jeedes
-ms.openlocfilehash: bd7203aa9c9efe3b4eeefbda6043720c2bbaa066
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 13327beb5c40a1b00aedd754cb6d02dbca585f8c
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102449472"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104953354"
 ---
 # <a name="tutorial-integrate-learning-at-work-with-azure-active-directory"></a>Zelfstudie: Learning at Work integreren met Azure Active Directory
 
@@ -136,8 +136,8 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 * Ga rechtstreeks naar de aanmeldings-URL voor leren op het werk en start de aanmeldings stroom.
 
-* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel leren op het werk in de mijn apps klikt, wordt dit omgeleid naar de aanmeldings-URL voor leren op het werk. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel leren op het werk in de mijn apps klikt, wordt dit omgeleid naar de aanmeldings-URL voor leren op het werk. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zodra u leren op het werk configureert, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+Zodra u leren op het werk configureert, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

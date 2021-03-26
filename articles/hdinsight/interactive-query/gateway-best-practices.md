@@ -4,12 +4,12 @@ description: Meer informatie over het navigeren in de aanbevolen procedures voor
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/01/2020
-ms.openlocfilehash: 63484d882d8ccd387257c6f246c2048a09c77bc8
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 549eab1547b75eb9461b23df2c157290943b4ed9
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98933109"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104869783"
 ---
 # <a name="gateway-deep-dive-and-best-practices-for-apache-hive-in-azure-hdinsight"></a>Uitgebreide en aanbevolen procedures voor het Apache Hive in azure HDInsight
 
@@ -21,7 +21,7 @@ De HDInsight-gateway is het enige deel van een HDInsight-cluster dat openbaar to
 
 Het volgende diagram bevat een ruwe illustratie van de manier waarop de gateway een samen vatting vormt van de verschillende mogelijkheden voor het omzetten van de host in HDInsight.
 
-![Diagram van host-omzetting](./media/gateway-best-practices/host-resolution-diagram.png "Diagram van host-omzetting")
+:::image type="content" source="./media/gateway-best-practices/host-resolution-diagram.png " alt-text="Diagram van host-omzetting" border="true":::
 
 ## <a name="motivation"></a>Motivatie
 
@@ -39,7 +39,7 @@ De prestaties van de gateway van een grote omvang worden vertraagd omdat de gege
 
 In het volgende diagram ziet u de stappen van een SELECT-query.
 
-![Resultaat diagram](./media/gateway-best-practices/result-retrieval-diagram.png "Resultaat diagram")
+:::image type="content" source="./media/gateway-best-practices/result-retrieval-diagram.png " alt-text="Resultaat diagram" border="true":::
 
 Apache Hive is een relationele samen vatting van een bestands systeem dat compatibel is met HDFS. Deze abstractie betekent dat **Select** -instructies in Hive overeenkomen met **Lees** bewerkingen op het bestands systeem. De **Lees** bewerkingen worden vertaald naar het juiste schema voordat ze aan de gebruiker worden gerapporteerd. De latentie van dit proces neemt toe met de grootte van de gegevens en het totale aantal hops dat nodig is om de eind gebruiker te bereiken.
 

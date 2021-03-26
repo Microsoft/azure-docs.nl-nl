@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: overview
 ms.date: 2/25/2021
-ms.openlocfilehash: b72538c61d1a68bca655b0d9529f654068727f86
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: af3f54778882df9aaa06297f291c12a0f4b1577c
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101696150"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105046042"
 ---
 # <a name="register-and-scan-sap-ecc-source-preview"></a>SAP ECC-bron registreren en scannen (preview)
 
@@ -25,7 +25,7 @@ De SAP ECC-bron ondersteunt **volledige scan** voor het extra heren van meta geg
 ## <a name="prerequisites"></a>Vereisten
 
 1.  Stel de nieuwste [zelf-hostende Integration runtime](https://www.microsoft.com/download/details.aspx?id=39717)in.
-    Zie [een zelf-hostende Integration runtime maken en configureren](https://docs.microsoft.com/azure/data-factory/create-self-hosted-integration-runtime)voor meer informatie.
+    Zie [een zelf-hostende Integration runtime maken en configureren](../data-factory/create-self-hosted-integration-runtime.md)voor meer informatie.
 
 2.  Zorg ervoor dat de [jdk 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) is geïnstalleerd op uw virtuele machine waarop zelf-hostende Integration runtime is geïnstalleerd.
 
@@ -80,7 +80,7 @@ Ga als volgt te werk in het scherm **bronnen registreren (SAP ECC)** :
 
 Doe het volgende om een nieuwe scan te maken en uit te voeren:
 
-1.  Klik in het Beheercentrum op Integratieruntime. Zorg ervoor dat een zelf-hostende Integration Runtime is ingesteld. Als deze niet is ingesteld, volgt u de stappen die [hier](https://docs.microsoft.com/azure/purview/manage-integration-runtimes) worden beschreven om een zelf-hostende Integration runtime te maken.
+1.  Klik in het Beheercentrum op Integratieruntime. Zorg ervoor dat een zelf-hostende Integration Runtime is ingesteld. Als deze niet is ingesteld, volgt u de stappen die [hier](./manage-integration-runtimes.md) worden beschreven om een zelf-hostende Integration runtime te maken.
 
 2.  Navigeren naar **bronnen**
 

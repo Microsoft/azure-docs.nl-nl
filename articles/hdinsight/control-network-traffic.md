@@ -4,12 +4,12 @@ description: Leer technieken voor het beheren van binnenkomend en uitgaand verke
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 09/02/2020
-ms.openlocfilehash: 0cbda0b533a64e627bfeef9589ab95c4163ae73e
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 66b078e8dfa1daa100978f04283e9bba7158bddf
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98943366"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104867029"
 ---
 # <a name="control-network-traffic-in-azure-hdinsight"></a>Netwerk verkeer in azure HDInsight beheren
 
@@ -21,7 +21,7 @@ Netwerk verkeer in een virtuele Azure-netwerken kan worden beheerd met behulp va
 
 Als beheerde service vereist HDInsight onbeperkte toegang tot de HDInsight-status-en beheer Services voor binnenkomend en uitgaand verkeer van het VNET. Wanneer u Nsg's gebruikt, moet u ervoor zorgen dat deze services nog steeds kunnen communiceren met het HDInsight-cluster.
 
-![Diagram van HDInsight-entiteiten die zijn gemaakt in een aangepast Azure-VNET](./media/control-network-traffic/hdinsight-vnet-diagram.png)
+:::image type="content" source="./media/control-network-traffic/hdinsight-vnet-diagram.png" alt-text="Diagram van HDInsight-entiteiten die zijn gemaakt in een aangepast Azure-VNET" border="false":::
 
 ## <a name="hdinsight-with-network-security-groups"></a>HDInsight met netwerk beveiligings groepen
 

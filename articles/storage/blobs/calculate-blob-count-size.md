@@ -8,12 +8,12 @@ ms.date: 03/10/2021
 ms.service: storage
 ms.subservice: blobs
 ms.topic: how-to
-ms.openlocfilehash: 92e5b00cd655677cdc3096bc2142dfe1b704adf2
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: d1aa91ea0f698e609e786d87a0072e6a07c143a3
+ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102637902"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105047314"
 ---
 # <a name="calculate-blob-count-and-total-size-per-container-using-azure-storage-inventory"></a>Aantal blobs en totale grootte per container berekenen met behulp van Azure Storage-inventarisatie
 
@@ -43,7 +43,7 @@ Wanneer u een inventaris rapport hebt om te analyseren, verleent u de BLOB Lees 
 
 ## <a name="create-an-azure-synapse-workspace"></a>Een Azure Synapse-werkruimte maken
 
-Maak vervolgens [een Azure Synapse-werk ruimte](/azure/synapse-analytics/get-started-create-workspace) waar u een SQL-query gaat uitvoeren om de inventarisatie resultaten te rapporteren.
+Maak vervolgens [een Azure Synapse-werk ruimte](../../synapse-analytics/get-started-create-workspace.md) waar u een SQL-query gaat uitvoeren om de inventarisatie resultaten te rapporteren.
 
 ## <a name="create-the-sql-query"></a>De SQL-query maken
 
@@ -58,7 +58,7 @@ Nadat u de Azure Synapse-werk ruimte hebt gemaakt, voert u de volgende stappen u
 
 ## <a name="run-the-sql-query"></a>De SQL-query uitvoeren
 
-1. Voeg de volgende SQL-query toe aan de Azure Synapse-werk ruimte om [het inventarisatie CSV-bestand te lezen](/azure/synapse-analytics/sql/query-single-csv-file#read-a-csv-file).
+1. Voeg de volgende SQL-query toe aan de Azure Synapse-werk ruimte om [het inventarisatie CSV-bestand te lezen](../../synapse-analytics/sql/query-single-csv-file.md#read-a-csv-file).
 
     Voor de `bulk` para meter gebruikt u de URL van het CSV-bestand van het inventarisatie rapport dat u wilt analyseren.
 

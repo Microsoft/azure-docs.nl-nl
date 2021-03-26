@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 04/04/2019
 ms.topic: troubleshooting
-ms.openlocfilehash: ff2ef8970afa21c0218da20a5b79ea2fb782dd5c
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: f6d2696a68643f87de0fcaf2e723da9365d9953e
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "99053581"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104953847"
 ---
 # <a name="troubleshoot-startstop-vms-during-off-hours-issues"></a>Problemen met VM's buiten bedrijfsuren starten/stoppen oplossen
 
@@ -149,7 +149,7 @@ Bekijk de volgende lijst voor mogelijke oplossingen:
   ```
 
 * Voor het starten en stoppen van Vm's moet het uitvoeren als-account voor het Automation-account de juiste machtigingen hebben voor de virtuele machine. Zie voor meer informatie over het controleren van de machtigingen voor een resource [Quick Start: rollen weer geven die zijn toegewezen aan een gebruiker met behulp van de Azure Portal](../../role-based-access-control/check-access.md). U moet de toepassings-ID opgeven voor de service-principal die wordt gebruikt door het run as-account. U kunt deze waarde ophalen door naar uw Automation-account te gaan in de Azure Portal. Selecteer **uitvoeren als-accounts** onder **account instellingen** en selecteer het juiste uitvoeren als-account.
-* Als de virtuele machine een probleem ondervindt bij het starten of ongedaan maken van de toewijzing, is er mogelijk een probleem op de VM zelf. Voor beelden zijn een update die wordt toegepast wanneer de virtuele machine wordt afgesloten, een service die vastloopt en nog veel meer. Ga naar de VM-resource en controleer de **activiteiten logboeken** om te zien of er fouten in de logboeken zijn. U kunt ook proberen u aan te melden bij de virtuele machine om te zien of er fouten zijn in de gebeurtenis Logboeken. Zie [problemen met virtuele Azure-machines oplossen](../../virtual-machines/troubleshooting/index.yml)voor meer informatie over het oplossen van problemen met uw VM.
+* Als de virtuele machine een probleem ondervindt bij het starten of ongedaan maken van de toewijzing, is er mogelijk een probleem op de VM zelf. Voor beelden zijn een update die wordt toegepast wanneer de virtuele machine wordt afgesloten, een service die vastloopt en nog veel meer. Ga naar de VM-resource en controleer de **activiteiten logboeken** om te zien of er fouten in de logboeken zijn. U kunt ook proberen u aan te melden bij de virtuele machine om te zien of er fouten zijn in de gebeurtenis Logboeken. Zie [problemen met virtuele Azure-machines oplossen](/troubleshoot/azure/virtual-machines/welcome-virtual-machines)voor meer informatie over het oplossen van problemen met uw VM.
 * Controleer de [taak stromen](../automation-runbook-execution.md#job-statuses) om te controleren of er fouten zijn opgetreden. Ga in de portal naar uw Automation-account en selecteer **taken** onder **proces automatisering**.
 
 ## <a name="scenario-my-custom-runbook-fails-to-start-or-stop-my-vms"></a><a name="custom-runbook"></a>Scenario: mijn aangepaste runbook kan mijn Vm's niet starten of stoppen

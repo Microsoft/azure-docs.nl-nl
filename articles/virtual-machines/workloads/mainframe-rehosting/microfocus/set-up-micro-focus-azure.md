@@ -11,13 +11,14 @@ ms.topic: conceptual
 ms.date: 06/29/2020
 tags: ''
 keywords: ''
-ms.service: multiple
-ms.openlocfilehash: 0d0a7d9060d751dbf05d39545b332c13010cbfae
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.service: virtual-machines
+ms.subservice: mainframe-rehosting
+ms.openlocfilehash: 5001f5df8ebab3e8366a2b31b1c5eb8ccc69c985
+ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102553575"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "104951348"
 ---
 # <a name="install-micro-focus-enterprise-server-50-and-enterprise-developer-50-on-azure"></a>Micro Focus Enter prise Server 5,0 en Enter prise Developer 5,0 op Azure installeren
 

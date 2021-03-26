@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020, devx-track-python
 ms.date: 04/29/2020
-ms.openlocfilehash: 8fbbe137ece7aac2dd2196c5ebec435e118297ad
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: c3f912b4f4c2e78c44425f489927cee185b3d312
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98929823"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104868712"
 ---
 # <a name="safely-manage-python-environment-on-azure-hdinsight-using-script-action"></a>Een Python-omgeving veilig beheren in Azure HDInsight met scriptactie
 
@@ -104,7 +104,7 @@ HDInsight-cluster is afhankelijk van de ingebouwde python-omgeving, zowel python
 
     1. Open Ambari-gebruikers interface, ga naar Spark2-pagina, tabblad Configuratie.
 
-        ![Spark-en livy-configuratie wijzigen via Ambari](./media/apache-spark-python-package-installation/ambari-spark-and-livy-config.png)
+        :::image type="content" source="./media/apache-spark-python-package-installation/ambari-spark-and-livy-config.png" alt-text="Spark-en livy-configuratie wijzigen via Ambari" border="true":::
 
     2. Vouw Geavanceerd livy2-env uit en voeg onderaan de instructies toe. Als u de virtuele omgeving met een ander voor voegsel hebt geïnstalleerd, wijzigt u het pad dienovereenkomstig.
 
@@ -113,7 +113,7 @@ HDInsight-cluster is afhankelijk van de ingebouwde python-omgeving, zowel python
         export PYSPARK_DRIVER_PYTHON=/usr/bin/anaconda/envs/py35new/bin/python
         ```
 
-        ![Livy-configuratie wijzigen via Ambari](./media/apache-spark-python-package-installation/ambari-livy-config.png)
+        :::image type="content" source="./media/apache-spark-python-package-installation/ambari-livy-config.png" alt-text="Livy-configuratie wijzigen via Ambari" border="true":::
 
     3. Vouw Advanced spark2-env uit en vervang de bestaande instructie export PYSPARK_PYTHON onderaan. Als u de virtuele omgeving met een ander voor voegsel hebt geïnstalleerd, wijzigt u het pad dienovereenkomstig.
 
@@ -121,11 +121,11 @@ HDInsight-cluster is afhankelijk van de ingebouwde python-omgeving, zowel python
         export PYSPARK_PYTHON=${PYSPARK_PYTHON:-/usr/bin/anaconda/envs/py35new/bin/python}
         ```
 
-        ![Spark-configuratie wijzigen via Ambari](./media/apache-spark-python-package-installation/ambari-spark-config.png)
+        :::image type="content" source="./media/apache-spark-python-package-installation/ambari-spark-config.png" alt-text="Spark-configuratie wijzigen via Ambari" border="true":::
 
     4. Sla de wijzigingen op en start de betrokken services opnieuw. Voor deze wijzigingen moet de Spark2-service opnieuw worden gestart. De Ambari-gebruikers interface vraagt een vereiste herinnering opnieuw op te starten. Klik op opnieuw opstarten om alle betrokken services opnieuw te starten.
 
-        ![Services opnieuw starten](./media/apache-spark-python-package-installation/ambari-restart-services.png)
+        :::image type="content" source="./media/apache-spark-python-package-installation/ambari-restart-services.png" alt-text="Services opnieuw starten" border="true":::
 
     5. Stel twee eigenschappen in op uw Spark-sessie om ervoor te zorgen dat de taak naar de bijgewerkte Spark-configuratie verwijst: `spark.yarn.appMasterEnv.PYSPARK_PYTHON` en `spark.yarn.appMasterEnv.PYSPARK_DRIVER_PYTHON` . 
 
@@ -153,7 +153,7 @@ HDInsight-cluster is afhankelijk van de ingebouwde python-omgeving, zowel python
 
     U kunt de python-omgeving in Jupyter Notebook dubbel bevestigen door de volgende code uit te voeren:
 
-    ![Python-versie controleren in Jupyter Notebook](./media/apache-spark-python-package-installation/check-python-version-in-jupyter.png)
+    :::image type="content" source="./media/apache-spark-python-package-installation/check-python-version-in-jupyter.png" alt-text="Python-versie controleren in Jupyter Notebook" border="true":::
 
 ## <a name="known-issue"></a>Bekend probleem
 

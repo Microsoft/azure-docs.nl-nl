@@ -3,12 +3,12 @@ title: Sjabloon functies-datum
 description: Hierin worden de functies beschreven die u kunt gebruiken in een Azure Resource Manager sjabloon (ARM-sjabloon) om met datums te werken.
 ms.topic: conceptual
 ms.date: 11/18/2020
-ms.openlocfilehash: 58d865f109ecca2629b89eeb55e554743824c195
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: abff5b86ad1e10042596b11f613cdb594e307209
+ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96920492"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104889923"
 ---
 # <a name="date-functions-for-arm-templates"></a>Datum functies voor ARM-sjablonen
 
@@ -287,7 +287,7 @@ In het volgende voor beeld ziet u hoe u een waarde uit de functie gebruikt wanne
   "resources": [
     {
       "type": "Microsoft.Resources/resourceGroups",
-      "apiVersion": "2018-05-01",
+      "apiVersion": "2020-10-01",
       "name": "[parameters('rgName')]",
       "location": "westeurope",
       "tags": {
@@ -311,7 +311,7 @@ In het volgende voor beeld ziet u hoe u een waarde uit de functie gebruikt wanne
 param utcShort string = utcNow('d')
 param rgName string
 
-resource myRg 'Microsoft.Resources/resourceGroups@2018-05-01' = {
+resource myRg 'Microsoft.Resources/resourceGroups@2020-10-01' = {
   name: rgName
   location: 'westeurope'
   tags: {

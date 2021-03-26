@@ -9,19 +9,19 @@ ms.topic: conceptual
 author: MashaMSFT
 ms.author: mathoma
 ms.date: 03/19/2021
-ms.openlocfilehash: 81956a16142f314f54afd9d5a1b9055a559e906c
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: fd03ebc87a1c0ef0a55b0e6ac0be6d841fee4b0a
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103564921"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105027292"
 ---
 # <a name="migration-guide-sap-ase-to-azure-sql-database"></a>Migratie handleiding: SAP ASE naar Azure SQL Database
 [!INCLUDE[appliesto-sqldb-sqlmi](../../includes/appliesto-sqldb.md)]
 
 Deze hand leiding leert u uw SAP ASE-data bases te migreren naar Azure SQL Database met behulp van SQL Server Migration Assistant voor SAP adapter server Enter prise.
 
-Zie [Data Base Migration](https://datamigration.microsoft.com/)(Engelstalig) voor andere migratie handleidingen. 
+Zie [Data Base Migration](https://docs.microsoft.com/data-migration)(Engelstalig) voor andere migratie handleidingen. 
 
 ## <a name="prerequisites"></a>Vereisten 
 
@@ -29,6 +29,8 @@ Als u uw SAP SE-Data Base naar Azure SQL Database wilt migreren, hebt u het volg
 
 - u kunt controleren of uw bron omgeving wordt ondersteund. 
 - [SQL Server Migration Assistant voor SAP Adaptive Server Enter prise (voorheen SAP Sybase ASE)](https://www.microsoft.com/en-us/download/details.aspx?id=54256). 
+- Connectiviteit en voldoende machtigingen voor toegang tot zowel de bron als het doel. 
+
 
 ## <a name="pre-migration"></a>Premigratie
 
@@ -44,10 +46,10 @@ Voer de volgende stappen uit om een evaluatie te maken:
 1. Selecteer **bestand** en kies vervolgens **Nieuw project**. 
 1. Geef een project naam op, een locatie om uw project op te slaan en selecteer vervolgens Azure SQL Database als migratie doel in de vervolg keuzelijst. Selecteer **OK**.
 1. Voer in het dialoog venster **verbinding maken met Sybase** de waarden voor SAP-verbindings gegevens in. 
-1. Klik met de rechter muisknop op de SAP-data base die u wilt migreren en kies vervolgens **rapport maken**. Hiermee wordt een HTML-rapport gegenereerd.
-1. Bekijk het HTML-rapport om de conversie statistieken en eventuele fouten of waarschuwingen te begrijpen. U kunt het rapport ook openen in Excel om een inventaris van de DB2-objecten te verkrijgen en de vereiste inspanning om schema conversies uit te voeren. De standaard locatie voor het rapport bevindt zich in de rapportmap in SSMAProjects.
+1. Klik met de rechter muisknop op de SAP-data base die u wilt migreren en kies vervolgens **rapport maken**. Hiermee wordt een HTML-rapport gegenereerd. U kunt ook **rapport maken** kiezen op de navigatie balk nadat u de Data Base hebt geselecteerd:
+1. Bekijk het HTML-rapport om de conversie statistieken en eventuele fouten of waarschuwingen te begrijpen. U kunt het rapport ook openen in Excel om een overzicht te krijgen van SAP ASE-objecten en de inspanning die nodig is voor het uitvoeren van schema-conversies. De standaard locatie voor het rapport bevindt zich in de rapportmap in SSMAProjects.
 
-   Bijvoorbeeld: `drive:\<username>\Documents\SSMAProjects\MyDB2Migration\report\report_<date>`. 
+   Bijvoorbeeld: `drive:\<username>\Documents\SSMAProjects\MySAPMigration\report\report_<date>`. 
 
 
 ### <a name="validate-type-mappings"></a>Type toewijzingen valideren
@@ -66,19 +68,19 @@ Voer de volgende stappen uit om het schema te converteren:
 
    Na schema conversie kunt u dit project lokaal opslaan voor een herbemiddeling van het offline schema. Selecteer **project opslaan** in het menu **bestand** . Dit biedt u de mogelijkheid om de bron-en doel schema's offline te evalueren en herstel bewerkingen uit te voeren voordat u het schema kunt publiceren naar Azure SQL Database.
 
-Zie [schema converteren](/sql/ssma/sybase/converting-sybase-ase-database-objects-sybasetosql) voor meer informatie.
-
+1. Selecteer **resultaten controleren** in het deel venster uitvoer en Bekijk fouten in het deel venster **fouten lijst** . 
+1. Sla het project lokaal op voor een herbemiddeling van het offline schema. Selecteer **project opslaan** in het menu **bestand** . Dit biedt u de mogelijkheid om de bron-en doel schema's offline te evalueren en herstel bewerkingen uit te voeren voordat u het schema kunt publiceren naar SQL Database.
 
 ## <a name="migrate"></a>Migrate 
 
 Nadat u de vereiste onderdelen hebt geïnstalleerd en de taken hebt voltooid die zijn gekoppeld aan de fase **voorafgaand** aan de migratie, bent u klaar om het schema en de gegevens migratie uit te voeren.
 
-Als u het schema wilt publiceren en de gegevens wilt migreren, voert u de volgende stappen uit: 
+Als u uw schema wilt publiceren en de gegevens wilt migreren, volgt u deze stappen: 
 
-1. Klik met de rechter muisknop op de data base in **Azure SQL database meta gegevens Verkenner** en kies **synchroniseren met data base**.  Met deze actie wordt het SAP ASE-schema gepubliceerd naar het Azure SQL Database-exemplaar.
-1. Klik met de rechter muisknop op het SAP ASE-schema in **SAP ASE Meta Data Explorer** en kies **gegevens migreren**.  U kunt ook **gegevens migreren** selecteren in de bovenste navigatie balk.  
+1. Het schema publiceren: Klik met de rechter muisknop op de data base in **Azure SQL database meta gegevens Verkenner** en kies **synchroniseren met data base**.  Met deze actie wordt het SAP ASE-schema gepubliceerd naar het Azure SQL Database-exemplaar.
+1. De gegevens migreren: Klik met de rechter muisknop op de data base of het object dat u wilt migreren in de **ASE-meta gegevens Verkenner** en kies **gegevens migreren**. U kunt ook **gegevens migreren** selecteren in de bovenste navigatie balk. Als u gegevens voor een hele Data Base wilt migreren, schakelt u het selectie vakje naast de naam van de data base in. Als u gegevens uit afzonderlijke tabellen wilt migreren, vouwt u de data base uit, vouwt u tabellen uit en schakelt u het selectie vakje naast de tabel in. Als u gegevens uit afzonderlijke tabellen wilt weglaten, schakelt u het selectie vakje uit: 
 1. Nadat de migratie is voltooid, raadpleegt u het **rapport gegevens migratie**: 
-1. Valideer de migratie door de gegevens en het schema te bekijken op het Azure SQL Database-exemplaar met behulp van Azure SQL Database Management Studio (SSMS).
+1. Maak verbinding met uw Azure SQL Database met behulp van [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) en valideer de migratie door de gegevens en het schema te controleren. 
 
 
 ## <a name="post-migration"></a>Postmigratie 

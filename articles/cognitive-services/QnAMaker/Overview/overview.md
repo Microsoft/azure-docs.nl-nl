@@ -7,18 +7,20 @@ ms.topic: overview
 ms.date: 01/22/2021
 ms.custom: cog-serv-seo-aug-2020
 keywords: qna maker, chatbots met weinig code, gesprekken met meerdere paden
-ms.openlocfilehash: a75b5939e8848ca898d7279b55ab2c4faa4ed72a
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 8df9daa213156fc38ed08bced44ea919da95e6a4
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98919558"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104869205"
 ---
 # <a name="what-is-qna-maker"></a>Wat is QnA Maker?
 
 QnA Maker is een cloud-NLP-service (Natuurlijke taalverwerking) waarmee u een natuurlijke gesprekslaag kunt maken over uw gegevens. Het wordt gebruikt om het meest geschikte antwoord te vinden voor invoer van uw aangepaste Knowledge Base (KB) aan informatie.
 
 QnA Maker wordt vaak gebruikt voor het bouwen van pratende clienttoepassingen, waaronder social media-toepassingen, chatbots en desktoptoepassingen met spraakfunctionaliteit.
+
+QnA Maker slaat geen klant gegevens op. Alle klant gegevens (vraag antwoorden en chatlogs) worden opgeslagen in de regio waarin de klant de afhankelijke service-instanties implementeert in. Zie [hier](https://docs.microsoft.com/azure/cognitive-services/qnamaker/concepts/plan?tabs=v1)voor meer informatie over afhankelijke services.
 
 ## <a name="when-to-use-qna-maker"></a>Wanneer kunt u QnA Maker gebruiken
 

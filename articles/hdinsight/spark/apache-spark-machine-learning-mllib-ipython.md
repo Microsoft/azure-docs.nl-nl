@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017,seoapr2020, devx-track-python
 ms.date: 04/27/2020
-ms.openlocfilehash: d2054058bb00b0801aa1c3694c73b6a2edb46c80
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 224ebae58a5688f81d1b64b4a9c81d5abd8a9690
+ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98930046"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104868848"
 ---
 # <a name="use-apache-spark-mllib-to-build-a-machine-learning-application-and-analyze-a-dataset"></a>Apache Spark MLlib gebruiken om een machine learning-toepassing te bouwen en een gegevensset te analyseren
 
@@ -175,7 +175,7 @@ Laten we een idee krijgen van wat de gegevensset bevat.
 
     Dit is de uitvoer:
 
-    ![SQL-query-uitvoer](./media/apache-spark-machine-learning-mllib-ipython/spark-machine-learning-query-output.png "SQL-query-uitvoer")
+    :::image type="content" source="./media/apache-spark-machine-learning-mllib-ipython/spark-machine-learning-query-output.png " alt-text="SQL-query-uitvoer" border="true":::
 
 3. U kunt ook matplotlib gebruiken, een bibliotheek die wordt gebruikt om visualisatie van gegevens te maken, om een plot te creëren. Omdat het waarnemings punt moet worden gemaakt van de lokaal blijvende persistente **countResultsdf** -data frame, moet het code fragment beginnen met het `%%local` Magic. Met deze actie zorgt u ervoor dat de code lokaal wordt uitgevoerd op de Jupyter-server.
 
@@ -348,7 +348,7 @@ U kunt nu een definitieve visualisatie maken om u te helpen de testresultaten te
 
     U moet de volgende uitvoer zien:
 
-    ![Spark machine learning toepassings uitvoer-cirkel diagram percentages van mislukte voedings inspecties.](./media/apache-spark-machine-learning-mllib-ipython/spark-machine-learning-result-output-2.png "Uitvoer resultaat van Spark machine learning")
+    :::image type="content" source="./media/apache-spark-machine-learning-mllib-ipython/spark-machine-learning-result-output-2.png " alt-text="Spark machine learning toepassings uitvoer-cirkel diagram percentages van mislukte voedings inspecties." border="true":::
 
     In dit diagram verwijst een ' positief ' resultaat naar de mislukte voedsel inspectie, terwijl een negatief resultaat naar een geslaagde inspectie verwijst.
 

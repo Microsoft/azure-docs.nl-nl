@@ -1,30 +1,27 @@
 ---
 title: SQL Server instanties detecteren in een bestaand Azure Migrate-project
 description: Meer informatie over het detecteren van SQL Server exemplaren in een bestaand Azure Migrate-project.
-author: rashi-ms
-ms.author: rajosh
+author: vineetvikram
+ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: how-to
-ms.date: 11/23/2020
-ms.openlocfilehash: ca0052eebd8d3c8e80943ca8c0e0346216436800
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.date: 03/23/2021
+ms.openlocfilehash: 8caac0a111c3a1bdd88e0d5f43a4629ad4221496
+ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102452761"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104888937"
 ---
 # <a name="discover-sql-server-instances-in-an-existing-project"></a>SQL Server exemplaren in een bestaand project detecteren 
 
 In dit artikel wordt beschreven hoe u SQL Server instanties en data bases detecteert in een [Azure migrate](./migrate-services-overview.md) project dat is gemaakt vóór de preview-versie van de Azure SQL-evaluatie functie.
 
-Het detecteren van SQL Server instanties en data bases die worden uitgevoerd op on-premises machines, helpt bij het identificeren en aanpassen van een migratie naar Azure SQL. Het Azure Migrate-apparaat voert deze detectie uit met behulp van de domein referenties of SQL Server verificatie referenties die toegang hebben tot de SQL Server instanties en data bases die worden uitgevoerd op de doel servers. Dit detectie proces is zonder agent, dat wil zeggen dat er niets is geïnstalleerd op de doel servers.
-
-> [!Note]
-> Detectie en evaluatie van SQL Server instanties en data bases die worden uitgevoerd in uw VMware-omgeving is nu beschikbaar als preview-versie. Als u deze functie wilt proberen, gebruikt u [**deze koppeling**](https://aka.ms/AzureMigrate/SQL) om een project te maken in de regio **Australië - oost**. Als u al een project in Australië-oost hebt en u deze functie wilt uitproberen, moet u ervoor zorgen dat u de [**vereisten**](how-to-discover-sql-existing-project.md) in dit artikel hebt voltooid.
+Het detecteren van SQL Server instanties en data bases die worden uitgevoerd op on-premises machines, helpt bij het identificeren en aanpassen van een migratie naar Azure SQL. Het Azure Migrate-apparaat voert deze detectie uit met behulp van de domein referenties of SQL Server verificatie referenties die toegang hebben tot de SQL Server instanties en data bases die worden uitgevoerd op de doel servers. Dit detectie proces is zonder agent, maar er is niets geïnstalleerd op de doel servers.
 
 ## <a name="before-you-start"></a>Voordat u begint
 
-- Zorg ervoor dat u: 
+- Zorg ervoor dat u:
     - Een [Azure migrate project](./create-manage-projects.md) gemaakt vóór de aankondiging van de functie voor SQL-evaluatie voor uw regio
     - De Azure Migrate: hulp programma voor [detectie en evaluatie](./how-to-assess.md) is toegevoegd aan een project
 - Bekijk [ondersteuning en vereisten voor app-detectie](./migrate-support-matrix-vmware.md#vmware-requirements).
@@ -41,18 +38,18 @@ Het detecteren van SQL Server instanties en data bases die worden uitgevoerd op 
 2. Voer in Discover SQL Server-instanties en-data bases de volgende stappen uit:
     - Selecteer **upgrade** om de vereiste resource te maken.
         :::image type="content" source="./media/how-to-discover-sql-existing-project/discovery-upgrade-appliance.png" alt-text="Knop voor het bijwerken van het Azure Migrate apparaat":::
-    - Controleer of de services die op het apparaat worden uitgevoerd, zijn bijgewerkt naar de meest recente versie. Hiertoe start u de configuratie manager van het toestel vanaf uw toestel server en selecteert u in het paneel vereisten instellen de optie apparaatdiensten weer geven.
+    - Controleer of de services die op het apparaat worden uitgevoerd, zijn bijgewerkt naar de meest recente versie. Hiertoe start u het configuratie beheer van het toestel vanaf uw toestel server en selecteert u in het deel venster installatie vereisten de optie apparaten weer geven.
         - Het apparaat en de bijbehorende onderdelen worden automatisch bijgewerkt :::image type="content" source="./media/how-to-discover-sql-existing-project/appliance-services-version.png" alt-text="de versie van het apparaat controleren":::
-    - Voeg in het paneel referenties en detectie bronnen beheren van het configuratie beheer voor Apparaatbeheer domein-of SQL Server authenticatie referenties toe die de sysadmin-toegang hebben op het SQL Server exemplaar en de data bases die moeten worden gedetecteerd. 
+    - Voeg in het paneel referenties en detectie bronnen beheren van het configuratie beheer voor Apparaatbeheer domein-of SQL Server authenticatie referenties toe die de sysadmin-toegang hebben op het SQL Server exemplaar en de data bases die moeten worden gedetecteerd.
     U kunt gebruikmaken van de functie voor automatische referentie toewijzing van het apparaat of de referenties hand matig toewijzen aan de betreffende server, zoals [hier](/azure/migrate/tutorial-discover-vmware#start-continuous-discovery)is gemarkeerd.
-        
+
     Enkele punten om te noteren:
     - Zorg ervoor dat de software-inventarisatie al is ingeschakeld of geef domein-of niet-domein referenties op om hetzelfde in te scha kelen. Software-inventaris moet worden uitgevoerd om SQL Server exemplaren te detecteren.
-    - Het apparaat zal proberen de domein referenties te valideren met AD, omdat deze worden toegevoegd. Zorg ervoor dat de toestel server de netwerk regel heeft voor de AD-server die aan de referenties is gekoppeld. Referenties die zijn gekoppeld aan SQL Server authenticatie, worden niet gevalideerd. 
+    - Het apparaat zal proberen de domein referenties te valideren met AD, omdat deze worden toegevoegd. Zorg ervoor dat de toestel server de netwerk regel heeft voor de AD-server die aan de referenties is gekoppeld. Referenties die zijn gekoppeld aan SQL Server authenticatie, worden niet gevalideerd.
 
 3. Zodra de gewenste referenties zijn toegevoegd, selecteert u detectie starten om de scan te starten.
 
-> [!Note] 
+> [!Note]
 >Zorg ervoor dat SQL Discovery enige tijd wordt uitgevoerd voordat u evaluaties voor Azure SQL maakt. Als de detectie van SQL Server instanties en data bases niet mag worden voltooid, worden de respectieve exemplaren in het beoordelings rapport als **onbekend** gemarkeerd.
 
 ## <a name="next-steps"></a>Volgende stappen

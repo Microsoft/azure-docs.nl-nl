@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jlu
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 562c90dcc4f802290b0ed8b4d544fce9d526fa10
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 9a2c83fc0f4776e1ded2c8c12cb990ab227f048b
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "99524665"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105109009"
 ---
 # <a name="continuous-access-evaluation"></a>Continue toegangsevaluatie
 
@@ -52,6 +52,9 @@ De evaluatie van voortdurende toegang wordt geïmplementeerd door services, zoal
 
 Dit proces maakt het scenario mogelijk dat gebruikers geen toegang meer hebben tot de share point online-bestanden, e-mail, agenda of taken van de organisatie, en teams van Microsoft 365 client-apps binnen minuten na een van deze kritieke gebeurtenissen. 
 
+> [!NOTE] 
+> Teams bieden nog geen ondersteuning voor gebruikers risico gebeurtenissen.
+
 ### <a name="conditional-access-policy-evaluation-preview"></a>Evaluatie van voorwaardelijk toegangs beleid (preview-versie)
 
 Exchange en share point kunnen sleutels voor voorwaardelijk toegangs beleid synchroniseren zodat ze binnen de service zelf kunnen worden geëvalueerd.
@@ -59,11 +62,11 @@ Exchange en share point kunnen sleutels voor voorwaardelijk toegangs beleid sync
 Met dit proces wordt het scenario ingeschakeld waarbij gebruikers de toegang tot bedrijfs bestanden, e-mail, agenda of taken van Microsoft 365 client-apps of share point online direct na wijzigingen in de netwerk locatie kwijt raken.
 
 > [!NOTE]
-> Niet alle combi Naties van app-en resource providers worden ondersteund. Zie de tabel hieronder. Office heeft betrekking op Word, Excel en Power Point
+> Niet alle combi Naties van app-en resource providers worden ondersteund. Zie de tabel hieronder. Office heeft betrekking op Word, Excel en Power Point.
 
 | | Outlook Web | Outlook Win32 | Outlook iOS | Outlook Android | Outlook Mac |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **SharePoint Online** | Ondersteund | Ondersteund | Niet ondersteund | Niet ondersteund | Ondersteund |
+| **SharePoint Online** | Ondersteund | Ondersteund | Ondersteund | Ondersteund | Ondersteund |
 | **Exchange Online** | Ondersteund | Ondersteund | Ondersteund | Ondersteund | Ondersteund |
 
 | | Office Web apps | Office Win32-apps | Office voor iOS | Office voor Android | Office voor Mac |
@@ -71,23 +74,20 @@ Met dit proces wordt het scenario ingeschakeld waarbij gebruikers de toegang tot
 | **SharePoint Online** | Niet ondersteund | Ondersteund | Ondersteund | Ondersteund | Ondersteund |
 | **Exchange Online** | Niet ondersteund | Ondersteund | Ondersteund | Ondersteund | Ondersteund |
 
+| | OneDrive-Web | OneDrive Win32 | OneDrive iOS | OneDrive Android | OneDrive Mac |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **SharePoint Online** | Ondersteund | Ondersteund | Ondersteund | Ondersteund | Ondersteund |
+
 ### <a name="client-side-claim-challenge"></a>Claim vraag aan client zijde
 
 Voordat de evaluatie doorlopend wordt gedetecteerd, proberen clients altijd het toegangs token opnieuw af te spelen uit de cache zolang het niet is verlopen. Met CAE wordt een nieuw geval geïntroduceerd dat een resource provider een token kan afwijzen, zelfs wanneer het niet is verlopen. Om ervoor te zorgen dat clients hun cache overs Laan, zelfs als de tokens in de cache niet zijn verlopen, introduceren we een mechanisme met de naam **claim Challenge** om aan te geven dat het token is afgewezen en dat er een nieuw toegangs token moet worden uitgegeven door Azure AD. Voor CAE is een client update vereist om de claim Challenge te begrijpen. De meest recente versie van de volgende toepassingen ondersteunen claim Challenge:
 
-- Outlook-vensters
-- Outlook iOS
-- Outlook Android
-- Outlook Mac
-- Outlook Web App
-- Teams voor Windows (alleen voor de resource teams)
-- Teams iOS (alleen voor resource teams)
-- Teams Android (alleen voor teams resource)
-- Teams Mac (alleen voor resource teams)
-- Word/Excel/Power Point voor Windows
-- Word/Excel/Power Point voor iOS
-- Word/Excel/Power Point voor Android
-- Word/Excel/Power Point voor Mac
+| | Web | - | iOS | Android | Mac |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **Outlook** | Ondersteund | Ondersteund | Ondersteund | Ondersteund | Ondersteund |
+| **Teams** | Ondersteund | Ondersteund | Ondersteund | Ondersteund | Ondersteund |
+| **Office** | Niet ondersteund | Ondersteund | Ondersteund | Ondersteund | Ondersteund |
+| **OneDrive** | Ondersteund | Ondersteund | Ondersteund | Ondersteund | Ondersteund |
 
 ### <a name="token-lifetime"></a>Levens duur van token
 
@@ -165,9 +165,9 @@ Zie [overzicht van update kanalen voor Microsoft 365-apps](/deployoffice/overvie
 
 ### <a name="policy-change-timing"></a>Timing van beleids wijzigingen
 
-Als gevolg van de kans op replicatie vertraging tussen Azure AD en resource providers, kunnen beleids wijzigingen die door beheerders zijn aangebracht, tot twee uur effectief duren voor Exchange Online.
+Beleids wijzigingen die door beheerders zijn aangebracht, kunnen tot een dag duren. Er is een aantal optimalisaties uitgevoerd om de vertraging tot twee uur te verminderen. Dit geldt echter niet voor alle scenario's. 
 
-Voor beeld: de beheerder voegt een beleid toe om te voor komen dat een bereik van IP-adressen op 11:00 uur toegang krijgt tot e-mail, een gebruiker die afkomstig is van dat IP-bereik voordat de toegang tot 1:00 uur kan worden voortgezet.
+Als er een nood geval is en u ervoor wilt zorgen dat uw bijgewerkte beleids regels direct worden toegepast op bepaalde gebruikers, moet u deze [Power shell-opdracht](/powershell/module/azuread/revoke-azureaduserallrefreshtoken?view=azureadps-2.0) gebruiken of de sessie intrekken in de gebruikers profiel pagina om de sessie van de gebruiker in te trekken, zodat de bijgewerkte beleids regels onmiddellijk worden toegepast.
 
 ### <a name="coauthoring-in-office-apps"></a>Cocreatie in Office-apps
 

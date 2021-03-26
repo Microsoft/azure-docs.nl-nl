@@ -1,23 +1,23 @@
 ---
 title: Melding over gepland onderhoud-Azure Database for MySQL-één server
 description: In dit artikel wordt de functie voor gepland onderhouds meldingen in Azure Database for MySQL-één server beschreven
-author: ambhatna
-ms.author: ambhatna
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 10/21/2020
-ms.openlocfilehash: ff197f8add65782a594d64661ffecdaced4598c2
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: c6d1bfbf1592da3a5e632eb875221225630aed3f
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "94919621"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105108669"
 ---
 # <a name="planned-maintenance-notification-in-azure-database-for-mysql---single-server"></a>Melding over gepland onderhoud in Azure Database for MySQL-één server
 
 Meer informatie over het voorbereiden van geplande onderhouds gebeurtenissen op uw Azure Database for MySQL.
 
-## <a name="what-is-a-planned-maintenance"></a>Wat is een gepland onderhoud?
+## <a name="what-is-a-planned-maintenance"></a>Wat is gepland onderhoud?
 
 Azure Database for MySQL-service voert automatische patching uit van de onderliggende hardware, het besturings systeem en de data base-engine. De patch omvat nieuwe service functies, beveiliging en software-updates. Voor de MySQL-engine worden kleine versie-upgrades automatisch uitgevoerd. Deze zijn onderdeel van de patchrelease. Gebruikers hoeven zelf geen actie te ondernemen en er zijn geen configuratie-instellingen vereist voor patches. De patch wordt uitgebreid getest en geïmplementeerd met behulp van veilige implementatie procedures.
 
@@ -67,7 +67,7 @@ Zie [waarschuwingen voor activiteiten logboek maken voor service meldingen](../s
 
 Er is onderhoud nodig om uw server veilig, stabiel en up-to-date te houden. De geplande onderhouds gebeurtenis kan niet worden geannuleerd of uitgesteld. Zodra de melding is verzonden naar een bepaalde Azure-regio, kunnen de wijzigingen in het patch schema niet worden gemaakt voor een afzonderlijke server in die regio. De patch wordt uitgerold voor de hele regio tegelijk. Azure Database for MySQL-service met één server is ontworpen voor native Cloud toepassingen waarvoor geen gedetailleerde controle of aanpassing van de service nodig is. Als u op zoek bent naar het plannen van onderhoud voor uw servers, raden we u aan [flexibele servers](./flexible-server/overview.md)te overwegen.
 
-## <a name="are-all-the-azure-regions-patched-at-the-same-time"></a>Worden alle Azure-regio's tegelijkertijd patches uitgevoerd?
+## <a name="are-all-the-azure-regions-patched-at-the-same-time"></a>Worden in alle Azure-regio's tegelijkertijd patches uitgevoerd?
 
 Nee, alle Azure-regio's worden bijgewerkt tijdens de timing van het implementatie venster. Het venster implementaties wordt doorgaans uitgerekt van 5 PM-8 uur lokale tijd volgende dag in een bepaalde Azure-regio. Geografisch gekoppelde Azure-regio's worden op verschillende dagen gepatcheerd. Voor hoge Beschik baarheid en bedrijfs continuïteit van database servers wordt het gebruik van [meerdere regio's met lees replica's](./concepts-read-replicas.md#cross-region-replication) aanbevolen.
 

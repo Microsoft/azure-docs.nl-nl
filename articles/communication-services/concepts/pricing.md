@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: fc5da3f4ac5bf9a08e16a931d54dfbf6a2fb9f48
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: ad88a7a6c91128bb863eeb51cc7f26c8d71b9eed
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103495790"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105107904"
 ---
 # <a name="pricing-scenarios"></a>Prijsscenario's
 
@@ -25,7 +25,7 @@ Prijzen voor Azure Communication Services zijn doorgaans gebaseerd op een model 
 
 ## <a name="voicevideo-calling-and-screen-sharing"></a>Spraak-/video-oproepen en scherm delen
 
-Met Azure Communication Services kunt u functionaliteit voor spraak-/video-oproepen en scherm delen aan uw toepassingen toevoegen. U kunt de ervaring insluiten in uw toepassingen met behulp van JavaScript-, Objective-C- (Apple), Java- (Android) of .NET-clientbibliotheken. Raadpleeg onze [volledige lijst met beschikbare clientbibliotheken](./sdk-options.md).
+Met Azure Communication Services kunt u functionaliteit voor spraak-/video-oproepen en scherm delen aan uw toepassingen toevoegen. U kunt de ervaring insluiten in uw toepassingen met behulp van Java script, objectief-C (Apple), java (Android) of .NET Sdk's. Raadpleeg onze [volledige lijst met beschik bare sdk's](./sdk-options.md).
 
 ### <a name="pricing"></a>Prijzen
 
@@ -33,9 +33,9 @@ De kosten voor de services voor oproepen en scherm delen bedragen $0,004 per min
 
 Voor elke deelnemer van de oproep worden kosten in rekening gebracht voor elke minuut die men verbonden is met de oproep. Dit is altijd zo, ongeacht of de gebruiker deelneemt aan een video- of spraakoproep of het scherm deelt.
 
-### <a name="pricing-example-group-audiovideo-call-using-js-and-ios-client-libraries"></a>Prijsvoorbeeld: Audio/video-groepsoproep met JS- en iOS-clientbibliotheken
+### <a name="pricing-example-group-audiovideo-call-using-js-and-ios-sdks"></a>Prijs voorbeeld: audio/video-oproep groeperen met JS en iOS Sdk's
 
-Alice heeft een groepsoproep gemaakt met haar collega's, Bob en Charlie. Alice en Bob hebben JS-clientbibliotheken gebruikt, en Charlie iOS-clientbibliotheken.
+Alice heeft een groepsoproep gemaakt met haar collega's, Bob en Charlie. Alice en Bob hebben de JS-Sdk's, Charlie iOS-Sdk's gebruikt.
 
 - De oproep duurt in totaal 60 minuten.
 - Alice en Bob hebben aan de hele oproep deelgenomen. Alice heeft haar video 5 minuten aan gehad en haar scherm 23 minuten gedeeld. Bob heeft zijn video gedurende de hele oproep (60 minuten) aan gehad en zijn scherm 12 minuten gedeeld.
@@ -48,9 +48,9 @@ Alice heeft een groepsoproep gemaakt met haar collega's, Bob en Charlie. Alice e
 
 **Totale kosten voor de groepsoproep**: $0,48 + $0,172 = $0,652
 
-### <a name="pricing-example-a-user-of-the-communication-services-js-client-library-joins-a-scheduled-microsoft-teams-meeting"></a>Prijs voorbeeld: een gebruiker van de JS-client bibliotheek van Communication Services maakt deel uit van een geplande micro soft teams-vergadering
+### <a name="pricing-example-a-user-of-the-communication-services-javascript-sdk-joins-a-scheduled-microsoft-teams-meeting"></a>Prijs voorbeeld: een gebruiker van de Java script SDK van Communication Services neemt een geplande micro soft teams-vergadering samen
 
-Anja is een dokters bijeenkomst met haar patiënt, Bob. Anja wordt toegevoegd aan het bezoek vanuit de team bureau blad-toepassing. Bob ontvangt een koppeling met de website van de gezondheids zorg die verbinding maakt met de vergadering via de client bibliotheek van de Communication Services JS. Bob gebruikt zijn mobiele telefoon om de vergadering in te voeren met een webbrowser (iPhone met Safari). Chatten is beschikbaar op het virtuele bezoek.
+Anja is een dokters bijeenkomst met haar patiënt, Bob. Anja wordt toegevoegd aan het bezoek vanuit de team bureau blad-toepassing. Bob ontvangt een koppeling met de website van de gezondheids zorg, die verbinding maakt met de vergadering met de SDK van de communicatie services java script. Bob gebruikt zijn mobiele telefoon om de vergadering in te voeren met een webbrowser (iPhone met Safari). Chatten is beschikbaar op het virtuele bezoek.
 
 - De aanroep duurt een totaal van 30 minuten.
 - Anne en Robert nemen deel aan de volledige oproep. Anne draait haar video vijf minuten nadat het gesprek is gestart en deelt het scherm gedurende 13 minuten. Bob heeft zijn video aan voor de hele oproep.
@@ -67,13 +67,13 @@ Anja is een dokters bijeenkomst met haar patiënt, Bob. Anja wordt toegevoegd aa
 * De deelname van Alice valt onder de licentie van haar teams. In uw Azure-factuur worden de notulen en chat berichten weer gegeven die gebruikers van teams hebben met communicatie Services-gebruikers voor uw gemak, maar die minuten en berichten die afkomstig zijn van de teams-client, worden niet op prijs.
 
 **Totale kosten voor het bezoek**:
-- Gebruiker die lid is van de communicatie Services JS-client bibliotheek: $0,12 + $0,0024 = $0,1224
+- Gebruiker die deelneemt aan de Communication Services java script SDK: $0,12 + $0,0024 = $0,1224
 - Gebruiker die deelneemt aan teams bureaublad toepassing: $0 (gedekt door teams licentie)
 
 
 ## <a name="chat"></a>Chat
 
-Met communicatie Services kunt u uw toepassing uitbreiden met de mogelijkheid om chat berichten tussen twee of meer gebruikers te verzenden en te ontvangen. Chat-clientbibliotheken zijn beschikbaar voor JavaScript, .NET, Python en Java. Raadpleeg [deze pagina voor meer informatie over clientbibliotheken](./sdk-options.md)
+Met communicatie Services kunt u uw toepassing uitbreiden met de mogelijkheid om chat berichten tussen twee of meer gebruikers te verzenden en te ontvangen. Chat-Sdk's zijn beschikbaar voor Java script, .NET, python en Java. Raadpleeg [Deze pagina voor meer informatie over sdk's](./sdk-options.md)
 
 ### <a name="price"></a>Prijs
 

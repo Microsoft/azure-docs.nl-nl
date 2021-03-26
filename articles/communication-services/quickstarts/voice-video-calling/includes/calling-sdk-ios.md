@@ -4,12 +4,12 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 03/10/2021
 ms.author: mikben
-ms.openlocfilehash: e9c889dcffe42fde244f8a35ce42032e84d78fff
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: d36bf92a1b1bdef4e45b22b934728b3e8c46c3da
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103488089"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105107717"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -23,7 +23,7 @@ ms.locfileid: "103488089"
 ### <a name="creating-the-xcode-project"></a>Het Xcode-project maken
 
 > [!NOTE]
-> Dit document maakt gebruik van versie 1.0.0-Beta. 8 van de aanroepende client bibliotheek.
+> In dit document wordt versie 1.0.0-Beta. 8 van de aanroepende SDK gebruikt.
 
 Maak in Xcode een nieuw iOS-project en selecteer de sjabloon **Single View-app** (Toepassing met één weergave). Deze Snelstartgids maakt gebruik van het [SwiftUI-Framework](https://developer.apple.com/xcode/swiftui/), dus u moet de **taal** instellen op **Swift** en de **gebruikers interface** op **SwiftUI**. U gaat tijdens deze Quick Start geen eenheids tests of UI-tests maken. Schakel het selectie vakje **include-tests toevoegen** uit en schakel ook **ui-tests** uit.
 
@@ -68,12 +68,12 @@ import AVFoundation
 
 ## <a name="object-model"></a>Objectmodel
 
-De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Azure Communication Services die de client bibliotheek voor iOS aanroepen.
+De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Azure Communication Services die SDK voor iOS aanroepen.
 
 
 | Naam                                  | Beschrijving                                                  |
 | ------------------------------------- | ------------------------------------------------------------ |
-| CallClient | De CallClient is het belangrijkste ingangspunt voor de clientbibliotheek voor oproepen.|
+| CallClient | De CallClient is het belangrijkste ingangs punt voor de aanroepende SDK.|
 | CallAgent | De CallAgent wordt gebruikt om oproepen te starten en te beheren. |
 | CommunicationTokenCredential | De CommunicationTokenCredential wordt gebruikt als de token referentie voor het instantiëren van de CallAgent.| 
 | CommunicationIdentifier | De CommunicationIdentifier wordt gebruikt om de identiteit van de gebruiker te vertegenwoordigen. Dit kan een van de volgende zijn: CommunicationUserIdentifier/PhoneNumberIdentifier/CallingApplication. |
@@ -131,7 +131,7 @@ callClient?.createCallAgent(userCredential: userCredential!,
 
 ## <a name="place-an-outgoing-call"></a>Een uitgaande oproep plaatsen
 
-Als u een gesprek wilt maken en starten, moet u een van de Api's aanroepen `CallAgent` en de communicatie Services-identiteit opgeven van een gebruiker die u hebt ingericht met de client bibliotheek voor communicatie Services-beheer.
+Als u een gesprek wilt maken en starten, moet u een van de Api's aanroepen `CallAgent` en de communicatie Services-identiteit opgeven van een gebruiker die u hebt ingericht met de SDK voor communicatie Services-beheer.
 
 Aanroepen maken en starten is synchroon. U ontvangt een gespreks exemplaar waarmee u zich kunt abonneren op alle gebeurtenissen in de aanroep.
 

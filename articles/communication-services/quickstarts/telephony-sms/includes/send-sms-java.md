@@ -10,14 +10,14 @@ ms.date: 03/12/2021
 ms.topic: include
 ms.custom: include file
 ms.author: pvicencio
-ms.openlocfilehash: 2739079b67d80f3e4a9f367aaa58f6dcbbb650ca
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 4a9deded16de6b0de2ef5f88ffebd813b8e5b8c0
+ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103622194"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105110335"
 ---
-Ga aan de slag met Azure Communication Services door de sms-clientbibliotheek in Java van Communications Services te gebruiken om sms-berichten te verzenden.
+Ga aan de slag met Azure Communication Services met behulp van de SMS-SDK voor communicatie Services om SMS-berichten te verzenden.
 
 Voor het voltooien van deze quickstart worden kosten van een paar dollarcent of minder in rekening gebracht bij uw Azure-account.
 
@@ -100,7 +100,7 @@ public class App
 
 ## <a name="object-model"></a>Objectmodel
 
-De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Azure Communication Services sms-clientbibliotheek voor Java.
+De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de SMS-SDK voor Azure Communication Services voor Java.
 
 | Naam                                                             | Beschrijving                                                                                     |
 | ---------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |

@@ -4,14 +4,14 @@ description: In dit onderwerp wordt beschreven hoe u kunt omgaan met gescheiden 
 author: linda33wj
 ms.service: data-factory
 ms.topic: conceptual
-ms.date: 12/07/2020
+ms.date: 03/23/2021
 ms.author: jingwang
-ms.openlocfilehash: 5b6367d2765277493ea34a4f7a23cae4b24c4dc4
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: daf3691b48f7bf12e9ef51de7d4253dad9dbd2b1
+ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100386591"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105026867"
 ---
 # <a name="delimited-text-format-in-azure-data-factory"></a>Tekst indeling met scheidings tekens in Azure Data Factory
 
@@ -183,8 +183,10 @@ De onderstaande tabel geeft een lijst van de eigenschappen die worden ondersteun
 | Naam | Beschrijving | Vereist | Toegestane waarden | Eigenschap gegevens stroom script |
 | ---- | ----------- | -------- | -------------- | ---------------- |
 | De map wissen | Als de doelmap vóór het schrijven is gewist | nee | `true` of `false` | afkappen |
-| Optie Bestands naam | De naamgevings indeling van de gegevens die zijn geschreven. Standaard één bestand per partitie in de indeling `part-#####-tid-<guid>` | nee | Patroon: teken reeks <br> Per partitie: teken reeks [] <br> Als gegevens in kolom: teken reeks <br> Uitvoer naar één bestand: `['<fileName>']`  | filePattern <br> partitionFileNames <br> rowUrlColumn <br> partitionFileNames |
+| Optie Bestands naam | De naamgevings indeling van de gegevens die zijn geschreven. Standaard één bestand per partitie in de indeling `part-#####-tid-<guid>` | nee | Patroon: teken reeks <br> Per partitie: teken reeks [] <br> Naam van bestand als kolom gegevens: teken reeks <br> Uitvoer naar één bestand: `['<fileName>']` <br> Map een naam gegeven als kolom gegevens: teken reeks | filePattern <br> partitionFileNames <br> rowUrlColumn <br> partitionFileNames <br> rowFolderUrlColumn |
 | Alle offertes | Alle waarden tussen aanhalings tekens plaatsen | nee | `true` of `false` | quoteAll |
+
+rowFolderUrlColumn:
 
 ### <a name="sink-example"></a>Sink-voor beeld
 

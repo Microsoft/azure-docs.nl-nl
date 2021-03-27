@@ -9,12 +9,12 @@ ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: spark
 ms.date: 09/13/2020
-ms.openlocfilehash: f11693b34048b11c02668e086561b9a6521a5213
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 7e57cdca1d212e6077d685d95a8f869c12e546a8
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98121522"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105627945"
 ---
 # <a name="visualize-data"></a>Gegevens visualiseren
 Azure Synapse is een geïntegreerde analyse service waarmee tijd kan worden versneld, in data warehouses en big data Analytics-systemen. Gegevens visualisatie is een belang rijk onderdeel waarmee u inzicht kunt krijgen in uw gegevens. Het helpt grote en kleine gegevens gemakkelijker te maken voor mensen. Daarnaast is het gemakkelijker om patronen, trends en uitschieters in groepen gegevens te detecteren. 
@@ -34,6 +34,7 @@ Voor toegang tot de grafiek opties:
    ![ingebouwde grafieken](./media/apache-spark-development-using-notebooks/synapse-built-in-charts.png#lightbox)
 
 3. U kunt uw visualisatie nu aanpassen door de volgende waarden op te geven:
+
    | Configuratie | Beschrijving |
    |--|--| 
    | Grafiektype | De ```display``` functie ondersteunt een breed scala aan grafiek typen, waaronder staaf diagrammen, spreidings grafieken, lijn grafieken en meer |
@@ -148,6 +149,37 @@ svg
 ## <a name="popular-libraries"></a>Populaire bibliotheken
 Wanneer het gaat om gegevens visualisatie, biedt python meerdere Graph-bibliotheken die in veel verschillende functies zijn verpakt. Standaard bevat elke Apache Spark groep in azure Synapse Analytics een set met gehoste en populaire open-source bibliotheken. U kunt ook extra bibliotheken & versies toevoegen of beheren met behulp van de Azure Synapse Analytics-bibliotheek beheer mogelijkheden. 
 
+### <a name="matplotlib"></a>Matplotlib
+U kunt standaard uitzet bibliotheken weer geven, zoals matplotlib, met behulp van de ingebouwde rendering-functies voor elke bibliotheek.
+
+De volgende afbeelding is een voor beeld van het maken van een staaf diagram met behulp van **matplotlib**.
+   ![Voor beeld van lijn diagram.](./media/apache-spark-data-viz/matplotlib-example.png#lightbox)
+
+Voer de volgende voorbeeld code uit om de bovenstaande afbeelding te tekenen.
+
+```python
+# Bar chart
+
+import matplotlib.pyplot as plt
+
+x1 = [1, 3, 4, 5, 6, 7, 9]
+y1 = [4, 7, 2, 4, 7, 8, 3]
+
+x2 = [2, 4, 6, 8, 10]
+y2 = [5, 6, 2, 6, 2]
+
+plt.bar(x1, y1, label="Blue Bar", color='b')
+plt.bar(x2, y2, label="Green Bar", color='g')
+plt.plot()
+
+plt.xlabel("bar number")
+plt.ylabel("bar height")
+plt.title("Bar Chart Example")
+plt.legend()
+plt.show()
+```
+
+
 ### <a name="bokeh"></a>Bokeh
 U kunt HTML-of interactieve Bibliotheken, zoals **bokeh**, weer geven met behulp van de ```displayHTML(df)``` . 
 
@@ -186,41 +218,49 @@ html = file_html(p, CDN, "my plot1")
 displayHTML(html)
 ```
 
-### <a name="matplotlib"></a>Matplotlib
-U kunt standaard uitzet bibliotheken weer geven, zoals matplotlib, met behulp van de ingebouwde rendering-functies voor elke bibliotheek.
 
-De volgende afbeelding is een voor beeld van het maken van een staaf diagram met behulp van **matplotlib**.
-   ![Voor beeld van lijn diagram.](./media/apache-spark-data-viz/matplotlib-example.png#lightbox)
+### <a name="plotly"></a>Plotly
+U kunt HTML-of interactieve bibliotheken als een **grafiek** weer geven met behulp van de **displayHTML ()**.
 
-Voer de volgende voorbeeld code uit om de bovenstaande afbeelding te tekenen.
+Voer de volgende voorbeeld code uit om de onderstaande afbeelding te tekenen.
+
+   ![voor beeld in een grafiek](./media/apache-spark-development-using-notebooks/synapse-plotly-image.png#lightbox)
+
 
 ```python
-# Bar chart
+from urllib.request import urlopen
+import json
+with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
+    counties = json.load(response)
 
-import matplotlib.pyplot as plt
+import pandas as pd
+df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv",
+                   dtype={"fips": str})
 
-x1 = [1, 3, 4, 5, 6, 7, 9]
-y1 = [4, 7, 2, 4, 7, 8, 3]
+import plotly.express as px
 
-x2 = [2, 4, 6, 8, 10]
-y2 = [5, 6, 2, 6, 2]
+fig = px.choropleth(df, geojson=counties, locations='fips', color='unemp',
+                           color_continuous_scale="Viridis",
+                           range_color=(0, 12),
+                           scope="usa",
+                           labels={'unemp':'unemployment rate'}
+                          )
+fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 
-plt.bar(x1, y1, label="Blue Bar", color='b')
-plt.bar(x2, y2, label="Green Bar", color='g')
-plt.plot()
+# create an html document that embeds the Plotly plot
+h = plotly.offline.plot(fig, output_type='div')
 
-plt.xlabel("bar number")
-plt.ylabel("bar height")
-plt.title("Bar Chart Example")
-plt.legend()
-plt.show()
+# display this html
+displayHTML(h)
 ```
+
 
 ### <a name="additional-libraries"></a>Extra bibliotheken 
 Naast deze bibliotheken bevat de Azure Synapse Analytics-runtime ook de volgende set bibliotheken die vaak worden gebruikt voor gegevens visualisatie:
 - [Matplotlib](https://matplotlib.org/)
 - [Bokeh](https://bokeh.org/)
 - [Seaborn](https://seaborn.pydata.org/) 
+- [Plotly](https://plotly.com/)
 
 U kunt de Azure Synapse Analytics runtime- [documentatie](./spark/../apache-spark-version-support.md) raadplegen voor de meest recente informatie over de beschik bare bibliotheken en versies.
 

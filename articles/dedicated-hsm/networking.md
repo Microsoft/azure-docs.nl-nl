@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/25/2021
 ms.author: keithp
-ms.openlocfilehash: 5365ba8c4fbc07c487dd40cfcdc9d566990c493c
-ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
+ms.openlocfilehash: 3370389027805cfb5a68b5b0551d14dc31154804
+ms.sourcegitcommit: c94e282a08fcaa36c4e498771b6004f0bfe8fb70
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/26/2021
-ms.locfileid: "105607036"
+ms.locfileid: "105611834"
 ---
 # <a name="azure-dedicated-hsm-networking"></a>Speciaal voor Azure toegewezen HSM-netwerken
 
@@ -133,7 +133,7 @@ Command Result : 0 (Success)
 
 ### <a name="alternative-to-using-global-vnet-peering"></a>Alternatief voor het gebruik van globale VNET-peering
 Er zijn een aantal architecturen die u kunt gebruiken als alternatief voor wereld wijde VNet-peering.
-1.  [Verbinding met vnet-naar-Vnet-VPN gateway](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal) gebruiken 
+1.  [Verbinding met vnet-naar-Vnet-VPN gateway](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal) gebruiken 
 2.  Verbind HSM VNET met een ander VNET met een er-circuit. Dit werkt het beste wanneer een rechtstreeks on-premises pad vereist of VPN VNET is. 
 
 #### <a name="hsm-with-direct-express-route-connectivity"></a>HSM met connectiviteit voor directe Express-route

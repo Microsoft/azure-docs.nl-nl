@@ -12,12 +12,12 @@ ms.date: 09/03/2020
 ms.author: marsma
 ms.custom: aaddev, identityplatformtop40, contperf-fy21q1, contperf-fy21q2
 ms.reviewer: aragra, lenalepa, sureshja
-ms.openlocfilehash: 413f0be32b54ee6da39934cf3f8753246fbce924
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: fa5ecd19863e8a37efdf533e68aeaed053c552f8
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104578801"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105625676"
 ---
 # <a name="quickstart-register-an-application-with-the-microsoft-identity-platform"></a>Snelstart: Een toepassing registreren bij het Microsoft-identiteitsplatform
 
@@ -56,7 +56,10 @@ Volg deze stappen om de app-registratie te maken:
 
     :::image type="content" source="media/quickstart-register-app/portal-02-app-reg-01.png" alt-text="Scherm afbeelding van de Azure Portal in een webbrowser, met daarin het deel venster een toepassing registreren.":::
 
-Wanneer de registratie is voltooid, wordt in de Azure Portal het deel venster **overzicht** van de app-registratie weer gegeven. U ziet de **toepassing-id (client)**. Deze waarde wordt ook wel de *client-id* genoemd en is een unieke aanduiding van uw toepassing in het micro soft Identity-platform.
+Wanneer de registratie is voltooid, wordt in de Azure Portal het deel venster **overzicht** van de app-registratie weer gegeven. U ziet de **toepassing-id (client)**. Deze waarde wordt ook wel de *client-id* genoemd en is een unieke aanduiding van uw toepassing in het micro soft Identity-platform. 
+
+> [!IMPORTANT]
+> Nieuwe app-registraties zijn standaard verborgen voor gebruikers. Wanneer u klaar bent voor gebruikers om de app op hun [pagina mijn apps](../user-help/my-apps-portal-end-user-access.md) te zien, kunt u deze inschakelen. Als u de app wilt inschakelen, gaat u in de Azure Portal naar **Azure Active Director**  >  **Enter prise-toepassingen** en selecteert u de app. Vervolgens schakelt u op de pagina **Eigenschappen** **zichtbaar voor gebruikers** in en klikt u op Ja.
 
 De code van uw toepassing, of meer meestal een verificatie bibliotheek die in uw toepassing wordt gebruikt, gebruikt ook de client-ID. De ID wordt gebruikt als onderdeel van het valideren van de beveiligings tokens die worden ontvangen van het identiteits platform.
 

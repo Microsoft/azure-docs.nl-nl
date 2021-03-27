@@ -12,12 +12,12 @@ author: emlisa
 ms.author: emlisa
 ms.reviewer: sstein, emlisa
 ms.date: 10/28/2020
-ms.openlocfilehash: 1c210eab0332d01fc6514edc790d729172ed2174
-ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
+ms.openlocfilehash: a14f8e0ba3ae5cca75cf6518320023703a6d1700
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104889056"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105626381"
 ---
 # <a name="high-availability-for-azure-sql-database-and-sql-managed-instance"></a>Hoge Beschik baarheid voor Azure SQL Database en SQL Managed instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -48,22 +48,22 @@ Wanneer de data base-engine of het besturings systeem wordt bijgewerkt, of als e
 
 ## <a name="general-purpose-service-tier-zone-redundant-availability-preview"></a>Redundante Beschik baarheid Algemeen service tier-zone (preview-versie)
 
-Zone redundante configuratie voor de servicelaag voor algemeen gebruik [Azure-beschikbaarheidszones](../../availability-zones/az-overview.md)   om data bases te repliceren op meerdere fysieke locaties binnen een Azure-regio.Door zone redundantie te selecteren, kunt u uw nieuwe en bestaande afzonderlijke data bases en elastische Pools voor algemeen gebruik tot een veel grotere set storingen leiden, met inbegrip van een onherstelbare uitval van het Data Center, zonder dat u de toepassings logica hoeft te wijzigen.
+Zone redundante configuratie voor de servicelaag voor algemeen gebruik wordt aangeboden voor zowel serverloze als ingerichte reken kracht. Deze configuratie maakt gebruik van [Azure-beschikbaarheidszones](../../availability-zones/az-overview.md)   om data bases te repliceren op meerdere fysieke locaties binnen een Azure-regio.Door zone redundantie te selecteren, kunt u uw nieuwe en bestaande serverlesss en ingerichte afzonderlijke data bases en elastische Pools tot een veel grotere set storingen leiden, zonder dat u de toepassings logica hoeft te wijzigen.
 
 De redundante configuratie zone voor de laag voor algemeen gebruik heeft twee lagen:  
 
-- Een stateful gegevenslaag met de database bestanden (. MDF/. ldf) die zijn opgeslagen in ZRS PFS (zone-redundante [opslag Premium-bestands share](../../storage/files/storage-how-to-create-file-share.md). Met [zone-redundante opslag](../../storage/common/storage-redundancy.md) worden de gegevens en logboek bestanden synchroon gekopieerd over drie fysiek geïsoleerde Azure-beschikbaarheids zones.
-- Een stateless Compute-laag die het sqlservr.exe proces uitvoert en bevat alleen tijdelijke en in de cache opgeslagen gegevens, zoals TempDB, model databases op de gekoppelde SSD en de plannings cache, de buffer groep en de column Store-groep in het geheugen. Dit stateless knoop punt wordt gebruikt door Azure Service Fabric dat sqlservr.exe initialiseert, de status van het knoop punt beheert en een failover naar een ander knoop punt uitvoert, indien nodig. Voor zone-redundante algemene doel databases zijn knoop punten met reserve capaciteit direct beschikbaar in andere Beschikbaarheidszones voor failover.
+- Een stateful gegevenslaag met de database bestanden (. MDF/. ldf) die zijn opgeslagen in ZRS (zone-redundante opslag). Met [ZRS](../../storage/common/storage-redundancy.md) worden de gegevens en logboek bestanden synchroon gekopieerd over drie fysiek geïsoleerde Azure-beschikbaarheids zones.
+- Een stateless Compute-laag die het sqlservr.exe proces uitvoert en bevat alleen tijdelijke en in de cache opgeslagen gegevens, zoals TempDB, model databases op de gekoppelde SSD en de plannings cache, de buffer groep en de column Store-groep in het geheugen. Dit stateless knoop punt wordt gebruikt door Azure Service Fabric dat sqlservr.exe initialiseert, de status van het knoop punt beheert en een failover naar een ander knoop punt uitvoert, indien nodig. Voor zones met redundante serverloze en ingerichte data bases voor algemeen gebruik zijn knoop punten met reserve capaciteit direct beschikbaar in andere Beschikbaarheidszones voor failover.
 
 De zone redundante versie van de architectuur met hoge Beschik baarheid voor de servicelaag voor algemeen gebruik wordt geïllustreerd in het volgende diagram:
 
 ![Zone redundante configuratie voor algemeen gebruik](./media/high-availability-sla/zone-redundant-for-general-purpose.png)
 
 > [!IMPORTANT]
-> De zone-redundante configuratie is alleen beschikbaar wanneer de GEN5 Compute-hardware is geselecteerd. Deze functie is niet beschikbaar in het door SQL beheerde exemplaar. Zone redundante configuratie voor de laag algemeen is alleen beschikbaar in de volgende regio's: VS-Oost, VS-Oost 2, VS-West 2, Europa-noord, Europa-west, Zuidoost-Azië, Australië-oost, Japan-Oost, UK-zuid en Frankrijk-centraal.
+> De zone-redundante configuratie is alleen beschikbaar wanneer de GEN5 Compute-hardware is geselecteerd. Deze functie is niet beschikbaar in het door SQL beheerde exemplaar. Zone-redundante configuratie voor de laag van de serverloze en ingerichte algemene doel stelling is alleen beschikbaar in de volgende regio's: VS-Oost, VS-Oost 2, VS-West 2, Europa-noord, Europa-west, Zuidoost-Azië, Australië-oost, Japan-Oost, UK-zuid en Frankrijk-centraal.
 
 > [!NOTE]
-> Algemeen-data bases met een grootte van 80 VCore kan de prestaties afnemen met de zone redundante configuratie. Bewerkingen zoals back-ups maken, herstellen, kopiëren van data bases en instellen van geo-DR-relaties kunnen leiden tot tragere prestaties voor afzonderlijke data bases die groter zijn dan 1 TB. 
+> Algemeen-data bases met een grootte van 80 VCore kan de prestaties afnemen met de zone redundante configuratie. Daarnaast kunnen bewerkingen zoals back-up, herstel, database kopie, het instellen van geo-DR-relaties en het downgradeen van een zone redundante data base van Bedrijfskritiek naar Algemeen tragere prestaties bieden voor afzonderlijke data bases die groter zijn dan 1 TB. Raadpleeg onze [latentie documentatie over het schalen van een Data Base](single-database-scale.md) voor meer informatie.
 > 
 > [!NOTE]
 > De preview wordt niet gedekt door het gereserveerde exemplaar

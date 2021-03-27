@@ -2,23 +2,24 @@
 title: Sjabloon implementeren - Azure Portal
 description: Leer hoe u uw eerste Azure Resource Manager-sjabloon (ARM-sjabloon) maakt via Azure Portal en hoe u deze implementeert.
 author: mumian
-ms.date: 03/09/2021
+ms.date: 03/26/2021
 ms.topic: quickstart
 ms.author: jgao
-ms.openlocfilehash: 20b1bf47ae2fd63e91a11c8cccd1f03cf3464899
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.custom: contperfq1
+ms.openlocfilehash: 279dde9c4cd7b19086d29d3ba31a32c60a8cdf0b
+ms.sourcegitcommit: c94e282a08fcaa36c4e498771b6004f0bfe8fb70
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102548128"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105612922"
 ---
 # <a name="quickstart-create-and-deploy-arm-templates-by-using-the-azure-portal"></a>Quickstart: ARM-sjablonen maken en implementeren met behulp van Azure Portal
 
 Leer hoe u een ARM-sjabloon (Azure Resource Manager) genereert met behulp van Azure Portal en hoe u de sjabloon vanuit de portal bewerkt en implementeert. ARM-sjablonen zijn JSON-bestanden waarmee de resources worden gedefinieerd die u voor uw oplossing moet implementeren. Zie het [overzicht van het implementeren van sjablonen](overview.md) om de concepten te begrijpen die verband houden met het implementeren en beheren van Azure-oplossingen.
 
-![Diagram van de quickstart voor Resource Manager-sjablonen via de portal](./media/quickstart-create-templates-use-the-portal/azure-resource-manager-export-deploy-template-portal.png)
-
 Na het voltooien van de zelfstudie implementeert u een Azure Storage-account. Hetzelfde proces kan worden gebruikt voor het implementeren van andere Azure-resources.
+
+![Diagram van de quickstart voor Resource Manager-sjablonen via de portal](./media/quickstart-create-templates-use-the-portal/azure-resource-manager-export-deploy-template-portal.png)
 
 Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
 

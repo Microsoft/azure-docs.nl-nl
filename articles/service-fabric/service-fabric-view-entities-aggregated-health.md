@@ -1,17 +1,15 @@
 ---
 title: De cumulatieve status van Azure Service Fabric-entiteiten weer geven
 description: Hierin wordt beschreven hoe u de geaggregeerde status van Azure Service Fabric-entiteiten kunt opvragen, bekijken en evalueren via status query's en algemene query's.
-author: georgewallace
 ms.topic: conceptual
 ms.date: 2/28/2018
-ms.author: gwallace
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 7127d9906cfe1ba87241bd3810a9567e77bf0391
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 261343537b6d18c98c27c9cc9453d2a64f064216
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98785495"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105628064"
 ---
 # <a name="view-service-fabric-health-reports"></a>Service Fabric status rapporten weer geven
 Azure Service Fabric introduceert een [status model](service-fabric-health-introduction.md) met status entiteiten waarop systeem onderdelen en watchdog lokale voor waarden kunnen rapporteren die ze controleren. De [Health Store](service-fabric-health-introduction.md#health-store) aggregeert alle statusgegevens om te bepalen of de entiteiten in orde zijn.

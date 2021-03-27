@@ -5,12 +5,12 @@ author: cgillum
 ms.topic: conceptual
 ms.date: 11/03/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 120335a7bce83bc3d4771ea64f665d67c7d1079a
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: d41b06bb0c2b26776f9d9c195c3a713e4dae9f82
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98572796"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105626635"
 ---
 # <a name="performance-and-scale-in-durable-functions-azure-functions"></a>Prestaties en schaalbaarheid in Durable Functions (Azure Functions)
 
@@ -40,7 +40,7 @@ Er bevindt zich één werk item wachtrij per taak-hub in Durable Functions. Het 
 
 ### <a name="control-queues"></a>Controle wachtrij (en)
 
-Er zijn meerdere *controle wachtrijen* per taak hub in Durable functions. Een *controle wachtrij* is geavanceerder dan de vereenvoudigde wachtrij voor werk items. Controle wachtrijen worden gebruikt voor het activeren van stateful Orchestrator-en Entity-functies. Omdat de functie instanties van Orchestrator en Entity stateful Singleton zijn, is het niet mogelijk een concurrerend consument model te gebruiken om de belasting over Vm's te verdelen. In plaats daarvan worden Orchestrator-en entiteits berichten verdeeld over de controle wachtrijen. Meer informatie over dit gedrag vindt u in de volgende secties.
+Er zijn meerdere *controle wachtrijen* per taak hub in Durable functions. Een *controle wachtrij* is geavanceerder dan de vereenvoudigde wachtrij voor werk items. Controle wachtrijen worden gebruikt voor het activeren van stateful Orchestrator-en Entity-functies. Omdat de functie instanties van Orchestrator en Entity stateful Singleton zijn, is het belang rijk dat elke indeling of entiteit slechts door één werk nemer tegelijk wordt verwerkt. Om dit te doen, wordt elk Orchestration-exemplaar of entiteit toegewezen aan één controle wachtrij. Deze controle wachtrijen worden verdeeld over werk nemers om ervoor te zorgen dat elke wachtrij slechts door één werk nemer tegelijk wordt verwerkt. Meer informatie over dit gedrag vindt u in de volgende secties.
 
 Controle wachtrijen bevatten diverse indelings levenscyclus bericht typen. Voor beelden zijn [Orchestrator-besturings berichten](durable-functions-instance-management.md), *antwoord* berichten over de functie van de activiteit en timer berichten. Net als 32 berichten worden in een enkele poll van een controle wachtrij uit de wachtrij verwijderd. Deze berichten bevatten payload-gegevens en meta gegevens met inbegrip van de indeling waarvoor deze is bedoeld. Als meerdere uit de wachtrij geplaatste berichten zijn bedoeld voor hetzelfde exemplaar van de indeling, worden deze verwerkt als een batch.
 
@@ -56,7 +56,7 @@ De maximale polling vertraging kan worden geconfigureerd via de `maxQueuePolling
 ### <a name="orchestration-start-delays"></a>Start vertragingen voor orchestration
 Indelings instanties worden gestart door een bericht te plaatsen `ExecutionStarted` in een van de beheer wachtrijen van de taak hub. Onder bepaalde omstandigheden kunt u vertragingen in meerdere seconden waarnemen tussen het moment waarop een indeling is gepland en wanneer deze daad werkelijk wordt uitgevoerd. Tijdens dit tijds interval blijft de Orchestration-instantie in de `Pending` status. Er zijn twee mogelijke oorzaken van deze vertraging:
 
-1. **Wacht rijen voor achterstand**: als de controle wachtrij voor dit exemplaar een groot aantal berichten bevat, kan het enige tijd duren voordat het `ExecutionStarted` bericht door de runtime wordt ontvangen en verwerkt. Bericht achterstand kan gebeuren wanneer de indelingen gelijktijdig worden verwerkt. Gebeurtenissen die in de controle wachtrij worden opgenomen, zijn onder andere indelings begin gebeurtenissen, voltooiingen van activiteiten, duurzame timers, beëindiging en externe gebeurtenissen. Als deze vertraging onder normale omstandigheden optreedt, kunt u overwegen een nieuwe taak hub te maken met een groter aantal partities. Het configureren van meer partities zorgt ervoor dat de runtime meer controle wachtrijen maakt voor de verdeling van de belasting.
+1. **Wacht rijen voor achterstand**: als de controle wachtrij voor dit exemplaar een groot aantal berichten bevat, kan het enige tijd duren voordat het `ExecutionStarted` bericht door de runtime wordt ontvangen en verwerkt. Bericht achterstand kan gebeuren wanneer de indelingen gelijktijdig worden verwerkt. Gebeurtenissen die in de controle wachtrij worden opgenomen, zijn onder andere indelings begin gebeurtenissen, voltooiingen van activiteiten, duurzame timers, beëindiging en externe gebeurtenissen. Als deze vertraging onder normale omstandigheden optreedt, kunt u overwegen een nieuwe taak hub te maken met een groter aantal partities. Het configureren van meer partities zorgt ervoor dat de runtime meer controle wachtrijen maakt voor de verdeling van de belasting. Elke partitie komt overeen met 1:1 met een controle wachtrij, met een maximum van 16 partities.
 
 2. **Achterwaartse polling-vertragingen**: een andere veelvoorkomende oorzaak van de herstels vertraging is het [eerder beschreven polling gedrag van de back-up voor controle wachtrijen](#queue-polling). Deze vertraging wordt echter alleen verwacht wanneer een app wordt geschaald naar twee of meer exemplaren. Als er slechts één app-exemplaar is, of als het app-exemplaar dat de indeling start ook hetzelfde exemplaar is dat de doel beheer wachtrij navraagt, wordt er geen polling vertraging voor de wachtrij. Uitstel vertraging kan worden beperkt door de **host.jsop instellingen bij** te werken, zoals eerder beschreven.
 
@@ -94,7 +94,12 @@ Als u niets opgeeft, wordt het standaard `AzureWebJobsStorage` opslag account ge
 
 ## <a name="orchestrator-scale-out"></a>Orchestrator-uitschalen
 
-Activiteit functies zijn stateless en worden automatisch geschaald door Vm's toe te voegen. Orchestrator-functies en-entiteiten zijn daarentegen *gepartitioneerd* over een of meer controle wachtrijen. Het aantal controle wachtrijen wordt gedefinieerd in de **host.jsvoor** het bestand. In het volgende voor beeld host.jsop fragment de `durableTask/storageProvider/partitionCount` eigenschap (of `durableTask/partitionCount` in Durable functions 1. x) ingesteld op `3` .
+Hoewel activiteit functies oneindig kunnen worden uitgebreid door meer Vm's op een flexibele manier toe te voegen, worden afzonderlijke Orchestrator-exemplaren en-entiteiten beperkt tot inhabit één partitie en het maximum aantal partities dat wordt begrensd door de `partitionCount` instelling in uw `host.json` . 
+
+> [!NOTE]
+> Over het algemeen zijn Orchestrator-functies lichter en zijn ze niet vereist voor een grote hoeveelheid reken kracht. Daarom is het niet nodig om een groot aantal controle wachtrij partities te maken om een goede door Voer voor de integratie te verkrijgen. De meeste zware werkzaamheden moeten worden uitgevoerd in stateless activiteiten functies, die oneindig kunnen worden uitgebreid.
+
+Het aantal controle wachtrijen wordt gedefinieerd in de **host.jsvoor** het bestand. In het volgende voor beeld host.jsop fragment de `durableTask/storageProvider/partitionCount` eigenschap (of `durableTask/partitionCount` in Durable functions 1. x) ingesteld op `3` . Houd er rekening mee dat er zoveel controle wachtrijen zijn als er partities zijn.
 
 ### <a name="durable-functions-2x"></a>Durable Functions 2.x
 
@@ -124,11 +129,25 @@ Activiteit functies zijn stateless en worden automatisch geschaald door Vm's toe
 
 Een task hub kan worden geconfigureerd met tussen de 1 en 16 partities. Als deze niet is opgegeven, is het standaard aantal partities **4**.
 
-Bij het uitschalen naar meerdere functie-instanties (meestal op verschillende Vm's), krijgt elk exemplaar een vergren deling van een van de controle wachtrijen. Deze vergren delingen worden intern geïmplementeerd als Blob Storage-leases en zorgen ervoor dat een Orchestrator-exemplaar of-entiteit alleen op één exemplaar van een host tegelijk wordt uitgevoerd. Als een taak hub is geconfigureerd met drie controle wachtrijen, kunnen indelings instanties en entiteiten worden verdeeld over Maxi maal drie Vm's. Er kunnen extra Vm's worden toegevoegd om de capaciteit voor de uitvoering van de activiteit functie te verhogen.
+Tijdens scenario's met weinig verkeer wordt uw toepassing geschaald, zodat de partities door een klein aantal werk rollen worden beheerd. Bekijk bijvoorbeeld het onderstaande diagram.
+
+![Diagram voor het schalen van de indeling](./media/durable-functions-perf-and-scale/scale-progression-1.png)
+
+In het vorige diagram ziet u dat Orchestrator 1 t/m 6 taak verdeling over verschillende partities heeft. Op dezelfde manier worden partities, zoals activiteiten, gelijkmatig verdeeld over werk nemers. Partities worden verdeeld over werk nemers, ongeacht het aantal Orchestrator dat aan de slag gaat.
+
+Als u werkt met de Azure Functions verbruiks-of elastische Premium-abonnementen of als u automatisch schalen hebt geconfigureerd op basis van de werk belasting, worden er meer gebruikers toegewezen naarmate het verkeer toeneemt en worden de partities uiteindelijk gelijkmatig over alle werk nemers verdeeld. Als we uitschalen blijven, wordt elke partitie uiteindelijk door één werk nemer beheerd. Activiteiten worden daarentegen nog steeds gelijkmatig verdeeld over alle werk nemers. Dit wordt weer gegeven in de onderstaande afbeelding.
+
+![Diagram voor eerste uitgeschaalde Orchestrations](./media/durable-functions-perf-and-scale/scale-progression-2.png)
+
+De bovengrens van het maximum aantal gelijktijdige _actieve_ integraties op *een bepaald moment* is gelijk aan het aantal werk nemers _dat_ aan uw toepassing is toegewezen, waarbij uw waarde voor `maxConcurrentOrchestratorFunctions` . Deze bovengrens kan nauw keuriger worden gemaakt wanneer uw partities volledig worden uitgebreid voor alle werk nemers. Wanneer een volledig uitgeschaalde werk nemer slechts één exemplaar van de host van functies heeft, is het maximum aantal _actieve_ gelijktijdige Orchestrator-instanties gelijk aan het _aantal partities waarvoor_ uw waarde geldt `maxConcurrentOrchestratorFunctions` . In de onderstaande afbeelding ziet u een volledig uitgeschaald scenario waarin meer Orchestrator wordt toegevoegd, maar sommige zijn inactief, grijs weer gegeven.
+
+![Het tweede uitgeschaalde Orchestrations diagram](./media/durable-functions-perf-and-scale/scale-progression-3.png)
+
+Tijdens uitschalen kunnen controle wachtrij vergrendelingen opnieuw worden gedistribueerd in instanties van de host om ervoor te zorgen dat partities gelijkmatig worden gedistribueerd. Deze vergren delingen worden intern geïmplementeerd als Blob Storage-leases en zorgen ervoor dat een wille keurig exemplaar of entiteit op één instantie tegelijk wordt uitgevoerd. Als een taak hub is geconfigureerd met drie partities (en dus drie controle wachtrijen), kunnen indelings instanties en-entiteiten gelijkmatig worden verdeeld over alle drie de lease-exemplaren van de host. Er kunnen extra Vm's worden toegevoegd om de capaciteit voor de uitvoering van de activiteit functie te verhogen.
 
 In het volgende diagram ziet u hoe de Azure Functions host communiceert met de opslag entiteiten in een geschaalde omgeving.
 
-![Diagram schalen](./media/durable-functions-perf-and-scale/scale-diagram.png)
+![Diagram schalen](./media/durable-functions-perf-and-scale/scale-interactions-diagram.png)
 
 Zoals u in het vorige diagram ziet, concurreren alle Vm's met berichten in de werk wachtrij. Er kunnen echter maar drie Vm's berichten van controle wachtrijen ophalen en elke VM vergrendelt één controle wachtrij.
 

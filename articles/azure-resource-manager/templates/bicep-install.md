@@ -2,13 +2,13 @@
 title: Ontwikkel-en implementatie omgevingen van Bicep instellen
 description: Ontwikkel-en implementatie omgevingen van Bicep configureren
 ms.topic: conceptual
-ms.date: 03/25/2021
-ms.openlocfilehash: 9a35355d1035943081ac58b36623af772fb8d547
-ms.sourcegitcommit: c94e282a08fcaa36c4e498771b6004f0bfe8fb70
+ms.date: 03/26/2021
+ms.openlocfilehash: 0e62e6a4633bee09fcbe8b783118cc95ccd5702e
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105612582"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105626098"
 ---
 # <a name="install-bicep-preview"></a>Bicep installeren (preview-versie)
 
@@ -19,21 +19,25 @@ Meer informatie over het instellen van Bicep-ontwikkel-en implementatie omgeving
 Voor de beste ervaring voor het ontwerpen van Bicep hebt u twee onderdelen nodig:
 
 - **Bicep-extensie voor Visual Studio code**. Als u Bicep-bestanden wilt maken, hebt u een goede Bicep-editor nodig. We raden [Visual Studio code](https://code.visualstudio.com/) aan met de [Bicep-extensie](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-bicep). Deze hulpprogram ma's bieden taal ondersteuning en automatisch aanvullen van resources. Ze helpen u bij het maken en valideren van Bicep-bestanden. Zie [Quick Start: Bicep-bestanden maken met Visual Studio code](./quickstart-create-bicep-use-visual-studio-code.md)voor meer informatie over het gebruik van Visual Studio code en de Bicep-extensie.
-- **BICEP cli**. Gebruik Bicep CLI voor het compileren van Bicep-bestanden voor ARM JSON-sjablonen en het decompileren van ARM JSON-sjablonen op Bicep-bestanden. Zie [install BICEP cli](#install-bicep-cli)(Engelstalig) voor meer informatie.
+- **BICEP cli**. Gebruik Bicep CLI voor het compileren van Bicep-bestanden voor ARM JSON-sjablonen en het decompileren van ARM JSON-sjablonen op Bicep-bestanden. Zie [install BICEP cli](#install-manually)(Engelstalig) voor de installatie-instructies.
 
 ## <a name="deployment-environment"></a>Implementatieomgeving
 
-U kunt Bicep-bestanden implementeren met behulp van Azure CLI of Azure PowerShell. Voor Azure CLI hebt u versie 2.20.0 of hoger nodig. voor Azure PowerShell hebt u versie 5.6.0 of hoger nodig. Zie voor installatie-instructies:
+Voor het implementeren van lokale Bicep-bestanden hebt u twee onderdelen nodig:
 
-- [Azure PowerShell installeren](/powershell/azure/install-az-ps)
-- [Azure CLI installeren in Windows](/cli/azure/install-azure-cli-windows)
-- [Azure CLI installeren in Linux](/cli/azure/install-azure-cli-linux)
-- [Azure CLI installeren in macOS](/cli/azure/install-azure-cli-macos)
+- **Azure CLI-versie 2.20.0 of hoger, of Azure PowerShell versie 5.6.0 of hoger**. Zie voor installatie-instructies:
 
-> [!NOTE]
-> Momenteel kunnen alleen lokale Bicep-bestanden worden geïmplementeerd met Azure CLI en Azure PowerShell. Zie [Deploy-cli](./deploy-cli.md#deploy-remote-template)voor meer informatie over het implementeren van Bicep-bestanden met behulp van Azure cli. Zie [Deploy-Power shell]( ./deploy-powershell.md#deploy-remote-template)(Engelstalig) voor meer informatie over het implementeren van Bicep-bestanden met behulp van Azure PowerShell.
+  - [Azure PowerShell installeren](/powershell/azure/install-az-ps)
+  - [Azure CLI installeren in Windows](/cli/azure/install-azure-cli-windows)
+  - [Azure CLI installeren in Linux](/cli/azure/install-azure-cli-linux)
+  - [Azure CLI installeren in macOS](/cli/azure/install-azure-cli-macos)
 
-Nadat de ondersteunde versie van Azure PowerShell of Azure CLI is geïnstalleerd, kunt u een Bicep-bestand implementeren met:
+  > [!NOTE]
+  > Momenteel kunnen alleen lokale Bicep-bestanden worden geïmplementeerd met Azure CLI en Azure PowerShell. Zie [Deploy-cli](./deploy-cli.md#deploy-remote-template)voor meer informatie over het implementeren van Bicep-bestanden met behulp van Azure cli. Zie [Deploy-Power shell]( ./deploy-powershell.md#deploy-remote-template)(Engelstalig) voor meer informatie over het implementeren van Bicep-bestanden met behulp van Azure PowerShell.
+
+- **BICEP cli**. Bicep CLI is vereist voor het compileren van Bicep-bestanden naar JSON-sjablonen vóór de implementatie. Zie [install BICEP cli](#install-bicep-cli)(Engelstalig) voor de installatie-instructies.
+
+Nadat de onderdelen zijn geïnstalleerd, kunt u een Bicep-bestand implementeren met:
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -59,11 +63,23 @@ az deployment group create \
 
 ## <a name="install-bicep-cli"></a>Bicep CLI installeren
 
-U kunt Bicep CLI installeren met behulp van Azure CLI met behulp van Azure PowerShell of hand matig.
+- Zie [hand matig installeren](#install-manually)om Bicep CLI te gebruiken voor het compileren en decompileren van Bicep-bestanden.
+- Zie [gebruiken met Azure cli](#use-with-azure-cli)om Azure CLI te gebruiken voor het implementeren van Bicep-bestanden.
+- Zie [gebruiken met Azure PowerShell](#use-with-azure-powershell)om Azure PowerShell te gebruiken voor het implementeren van Bicep-bestanden.
 
-### <a name="use-azure-cli"></a>Azure CLI gebruiken
+### <a name="use-with-azure-cli"></a>Gebruiken met Azure CLI
 
-Als AZ CLI version 2.20.0 of hoger is geïnstalleerd, wordt de Bicep-CLI automatisch geïnstalleerd wanneer een opdracht die ervan afhankelijk is, wordt uitgevoerd. Bijvoorbeeld `az deployment ... -f *.bicep` of `az bicep ...`.
+Als Azure CLI-versie 2.20.0 of hoger is geïnstalleerd, wordt de Bicep-CLI automatisch geïnstalleerd wanneer een opdracht die ervan afhankelijk is, wordt uitgevoerd. Bijvoorbeeld:
+
+```azurecli
+az deployment group create --template-file azuredeploy.bicep --resource-group myResourceGroup
+```
+
+of
+
+```azurecli
+az bicep ...
+```
 
 U kunt de CLI ook hand matig installeren met behulp van de ingebouwde opdrachten:
 
@@ -80,17 +96,11 @@ az bicep upgrade
 Een specifieke versie installeren:
 
 ```bash
-az bicep install --version v0.2.212
+az bicep install --version v0.3.126
 ```
 
-> [!NOTE]
-> AZ CLI installeert een afzonderlijke versie van de Bicep CLI die niet in conflict is met andere Bicep-installaties die u mogelijk hebt, en AZ CLI voegt Bicep niet toe aan uw pad.
-
-De geïnstalleerde versies weer geven:
-
-```bash
-az bicep version
-```
+> [!IMPORTANT]
+> Met Azure CLI wordt een afzonderlijke versie van de Bicep-CLI geïnstalleerd die niet in conflict is met andere installaties van Bicep die u mogelijk hebt, en voegt Azure CLI geen Bicep CLI toe aan uw pad. Zie [hand matig installeren](#install-manually) of [gebruiken met Azure Power shell](#use-with-azure-powershell)als u Bicep cli wilt gebruiken voor het compileren/decompileren van Bicep-bestanden of als u Azure PowerShell wilt gebruiken voor het implementeren van Bicep-bestanden.
 
 Alle beschik bare versies van Bicep CLI weer geven:
 
@@ -98,9 +108,30 @@ Alle beschik bare versies van Bicep CLI weer geven:
 az bicep list-versions
 ```
 
-### <a name="use-azure-powershell"></a>Azure PowerShell gebruiken
+De geïnstalleerde versies weer geven:
 
-Azure PowerShell beschikt niet over de mogelijkheid om de Bicep-CLI nog te installeren. Azure PowerShell (v 5.6.0 of hoger) verwacht dat de Bicep CLI al is geïnstalleerd en beschikbaar is op het pad. Voer een van de [hand matige installatie methoden](#install-manually)uit. Zodra de Bicep CLI is geïnstalleerd, wordt Bicep CLI aangeroepen wanneer dit nodig is voor een implementatie-cmdlet. Bijvoorbeeld `New-AzResourceGroupDeployment ... -TemplateFile main.bicep`.
+```bash
+az bicep version
+```
+
+### <a name="use-with-azure-powershell"></a>Gebruiken met Azure PowerShell
+
+Azure PowerShell beschikt niet over de mogelijkheid om de Bicep-CLI nog te installeren. Azure PowerShell (v 5.6.0 of hoger) verwacht dat de Bicep CLI al is geïnstalleerd en beschikbaar is op het pad. Voer een van de [hand matige installatie methoden](#install-manually)uit.
+
+Voor het implementeren van Bicep-bestanden is Bicep CLI-versie 0.3.1 of later vereist. De Bicep CLI-versie controleren:
+
+```cmd
+bicep --version
+```
+
+> [!IMPORTANT]
+> Met Azure CLI wordt een eigen, op zichzelf staande versie van Bicep CLI geïnstalleerd. Azure PowerShell implementatie mislukt, zelfs als u de vereiste versies voor Azure CLI hebt geïnstalleerd.
+
+Zodra de Bicep CLI is geïnstalleerd, wordt Bicep CLI aangeroepen wanneer dit nodig is voor een implementatie-cmdlet. Bijvoorbeeld:
+
+```azurepowershell
+New-AzResourceGroupDeployment -ResourceGroupName myResourceGroup -TemplateFile azuredeploy.bicep
+```
 
 ### <a name="install-manually"></a>De installatie handmatig uitvoeren
 

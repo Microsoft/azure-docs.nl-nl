@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 10/02/2020
-ms.openlocfilehash: 3f41a68feafe2f0a3eae1e0026a4c350b0959aec
-ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
+ms.openlocfilehash: 4bc9ed87a243a1efb45d7db660ccdd86a19d9801
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105036982"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105628234"
 ---
 # <a name="what-is-an-azure-machine-learning-compute-instance"></a>Wat is een Azure Machine Learning-rekeninstantie?
 
@@ -32,7 +32,7 @@ Zorg ervoor dat de communicatie tussen websockets niet is uitgeschakeld voor de 
 
 Een reken instantie is een volledig beheerd, op de cloud gebaseerd werk station dat is geoptimaliseerd voor uw machine learning-ontwikkel omgeving. Dit biedt de volgende voordelen:
 
-|Belangrijkste voordelen|Beschrijving|
+|Belangrijkste voordelen|Description|
 |----|----|
 |Productiviteit|U kunt modellen bouwen en implementeren met behulp van geïntegreerde notebooks en de volgende hulpprogram ma's in Azure Machine Learning studio:<br/>-Jupyter<br/>-Jjupyterlab<br/>-RStudio (preview-versie)<br/>Reken instantie is volledig geïntegreerd met Azure Machine Learning werk ruimte en Studio. U kunt notitie blokken en gegevens delen met andere gegevens wetenschappers in de werk ruimte.<br/> U kunt ook [VS code](https://techcommunity.microsoft.com/t5/azure-ai/power-your-vs-code-notebooks-with-azml-compute-instances/ba-p/1629630) gebruiken met reken instanties.
 |Beheerde & beveiligd|Verminder uw beveiligings footprint en voeg naleving toe met beveiligings vereisten voor ondernemingen. Reken instanties bieden robuust beheer beleid en beveiligde netwerk configuraties zoals:<br/><br/>-Autoinrichting van Resource Manager-sjablonen of Azure Machine Learning SDK<br/>- [Op rollen gebaseerd toegangs beheer op basis van Azure (Azure RBAC)](../role-based-access-control/overview.md)<br/>- [Ondersteuning voor virtuele netwerken](./how-to-secure-training-vnet.md#compute-instance)<br/>-SSH-beleid voor het inschakelen/uitschakelen van SSH-toegang<br/>TLS 1,2 ingeschakeld |
@@ -180,7 +180,7 @@ Een reken instantie:
 U kunt reken instantie gebruiken als een lokaal doel voor het afwijzen van de implementatie voor scenario's voor testen en fout opsporing.
 
 > [!TIP]
-> Het Compute-exemplaar heeft 120 GB besturingssysteem schijf. Als er onvoldoende schijf ruimte beschikbaar is, wist u voldoende ruimte voordat u de reken instantie stopt of opnieuw opstart.
+> Het Compute-exemplaar heeft 120 GB besturingssysteem schijf. Als er onvoldoende schijf ruimte beschikbaar is, [gebruikt u de Terminal](how-to-access-terminal.md) om ten minste 1-2 GB te wissen voordat u het reken exemplaar [stopt of opnieuw opstart](how-to-create-manage-compute-instance.md#manage) .
 
 
 ## <a name="what-happened-to-notebook-vm"></a><a name="notebookvm"></a>Wat is er gebeurd met de VM van de notebook?

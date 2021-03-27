@@ -6,12 +6,12 @@ ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 03/13/2021
-ms.openlocfilehash: 71fe30212b31e810bfe3e1ba10f80be6b09ad4fc
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.openlocfilehash: 8f0e7ec2566928897d2b84357b599506520e8d95
+ms.sourcegitcommit: c94e282a08fcaa36c4e498771b6004f0bfe8fb70
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104863680"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105612021"
 ---
 # <a name="set-up-an-appliance-for-servers-on-hyper-v"></a>Een apparaat instellen voor servers met Hyper-V
 
@@ -39,9 +39,9 @@ Het apparaat instellen met behulp van een VHD-sjabloon:
 
 1. In **migratie doelen**  >  **Windows, Linux-en SQL-servers**  >  **Azure migrate: detectie en evaluatie**, selecteer **detecteren**.
 2. In **Discover-servers**  >  **zijn uw servers gevirtualiseerd?**, selecteert u **Ja, met Hyper-V**.
-3. Geef in **1: project sleutel genereren** een naam op voor het Azure migrate apparaat dat u wilt instellen voor de detectie van servers op Hyper-V. de naam moet alfanumeriek zijn met 14 tekens of minder.
+3. Geef in **1: project sleutel genereren** een naam op voor het Azure migrate apparaat dat u wilt instellen voor de detectie van servers op Hyper-V. De naam moet alfanumeriek zijn met 14 tekens of minder.
 1. Klik op **Sleutel genereren** om de vereiste Azure-resources te gaan maken. Sluit de pagina servers detecteren niet af tijdens het maken van resources.
-1. Nadat het maken van de Azure-resources is voltooid, wordt een **project sleutel** gegenereerd.
+1. Nadat het maken van de Azure-resources is voltooid, wordt er een **project sleutel** gegenereerd.
 1. Kopieer de sleutel, omdat u deze nodig hebt om de registratie van het apparaat tijdens de configuratie te voltooien.
 
 ### <a name="download-the-vhd"></a>De VHD downloaden
@@ -53,7 +53,6 @@ In **2: Azure Migrate-apparaat downloaden**, selecteert u het VHD-bestand en kli
 
    ![Selecties voor Sleutel genereren](./media/tutorial-assess-hyper-v/generate-key-hyperv.png)
 
-
 ### <a name="verify-security"></a>Beveiliging controleren
 
 Controleer of het zip-bestand veilig is voordat u het implementeert.
@@ -63,9 +62,7 @@ Controleer of het zip-bestand veilig is voordat u het implementeert.
     - ```C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]```
     - Gebruiksvoorbeeld: ```C:\>Get-FileHash -Path ./AzureMigrateAppliance_v3.20.09.25.zip -Algorithm SHA256```
 
-
-
-
+Controleer de meest recente hash-waarde door het resultaat van de bovenstaande opdracht te vergelijken met de waarde die [hier](https://docs.microsoft.com/azure/migrate/tutorial-discover-hyper-v#verify-security) wordt beschreven
 
 ## <a name="create-the-appliance"></a>Het apparaat maken
 
@@ -85,7 +82,6 @@ Importeer het gedownloade bestand en maak een apparaat.
 5. Geef in **netwerk kiezen** de virtuele switch op die door de server wordt gebruikt. De switch heeft internetverbinding nodig om gegevens naar Azure te verzenden.
 6. Controleer de instellingen in **Samenvatting**. Klik vervolgens op **Voltooien**.
 7. Start de virtuele machine in Hyper-V-beheer > **Virtual Machines**.
-
 
 ### <a name="verify-appliance-access-to-azure"></a>Apparaattoegang tot Azure controleren
 
@@ -128,8 +124,6 @@ Het apparaat voor de eerste keer instellen.
 1. Als u bent aangemeld, gaat u terug naar het vorige tabblad in Apparaatconfiguratiebeheer.
 4. Als het Azure-gebruikersaccount dat wordt gebruikt voor logboekregistratie de juiste [machtigingen ](./tutorial-discover-hyper-v.md#prepare-an-azure-user-account) heeft voor de Azure-resources die tijdens het genereren van de sleutel zijn gemaakt, wordt de registratie van het apparaat gestart.
 1. Nadat het apparaat is geregistreerd, kunt u de registratiedetails zien door op **Details weergeven** te klikken.
-
-
 
 ### <a name="delegate-credentials-for-smb-vhds"></a>Referenties voor SMB-VHD's delegeren
 

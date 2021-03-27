@@ -16,22 +16,29 @@ ms.date: 10/20/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: effdd156858caf5717aac92433e8bc5f4f6147ad
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 8e81cb9018d817fb206915a81fdc3bdd60f6b08c
+ms.sourcegitcommit: c94e282a08fcaa36c4e498771b6004f0bfe8fb70
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101686866"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105611885"
 ---
 # <a name="renew-federation-certificates-for-microsoft-365-and-azure-active-directory"></a>Federatie certificaten voor Microsoft 365 en Azure Active Directory vernieuwen
 ## <a name="overview"></a>Overzicht
 Voor een geslaagde Federatie tussen Azure Active Directory (Azure AD) en Active Directory Federation Services (AD FS), moeten de certificaten die worden gebruikt door AD FS beveiligings tokens ondertekenen met Azure AD, overeenkomen met wat er in azure AD is geconfigureerd. Niet-overeenkomend kan leiden tot een verbroken vertrouwens relatie. Azure AD zorgt ervoor dat deze informatie synchroon blijft wanneer u AD FS en Web Application proxy (voor extranet toegang) implementeert.
+
+> [!NOTE]
+> Dit artikel bevat informatie over het manging van uw Federatie cerficates.  Zie [nood draaiing van de AD FS-certificaten](how-to-connect-emergency-ad-fs-certificate-rotation.md) voor meer informatie.
 
 In dit artikel vindt u meer informatie over het beheren van uw token handtekening certificaten en het synchroniseren met Azure AD in de volgende gevallen:
 
 * U implementeert de webtoepassingsproxy niet en daarom is de federatieve meta gegevens niet beschikbaar in het extranet.
 * U gebruikt niet de standaard configuratie van AD FS voor token handtekening certificaten.
 * U gebruikt een id-provider van een derde partij.
+
+> [!IMPORTANT]
+> Micro soft raadt u ten zeerste aan een HSM (Hardware Security module) te gebruiken voor het beveiligen en beveiligen van certificaten.
+> Zie [Hardware Security module](https://docs.microsoft.com/windows-server/identity/ad-fs/deployment/best-practices-securing-ad-fs#hardware-security-module-hsm) (aanbevolen procedures voor het beveiligen van AD FS) voor meer informatie.
 
 ## <a name="default-configuration-of-ad-fs-for-token-signing-certificates"></a>Standaard configuratie van AD FS voor token handtekening certificaten
 Het ondertekenen van tokens en certificaten voor het ontsleutelen van tokens zijn meestal zelfondertekende certificaten en zijn goed voor één jaar. AD FS bevat standaard een proces voor automatische vernieuwing, met de naam **AutoCertificateRollover**. Als u AD FS 2,0 of hoger gebruikt, wordt uw certificaat automatisch bijgewerkt door Microsoft 365 en Azure AD voordat het verloopt.
@@ -108,7 +115,7 @@ Controleer in de uitvoer van Get-MsolFederationProperty of Get-AdfsCertificate v
 |:---:|:---:|:---:|:---:|:---:|
 | Ja |Ja |Ja |- |Geen actie nodig. Zie [token handtekening certificaat automatisch vernieuwen](#autorenew). |
 | Ja |Nee |- |Minder dan 15 dagen |Vernieuw direct. Zie [token handtekening certificaat hand matig vernieuwen](#manualrenew). |
-| Nee |- |- |Minder dan 30 dagen |Vernieuw direct. Zie [token handtekening certificaat hand matig vernieuwen](#manualrenew). |
+| No |- |- |Minder dan 30 dagen |Vernieuw direct. Zie [token handtekening certificaat hand matig vernieuwen](#manualrenew). |
 
 \[-] Is niet van belang
 

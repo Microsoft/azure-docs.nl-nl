@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.reviewer: Blackmist
 ms.author: nigup
 author: nishankgu
-ms.date: 01/20/2020
+ms.date: 03/26/2021
 ms.custom: how-to, seodec18, devx-track-azurecli, contperf-fy21q2
-ms.openlocfilehash: bdd59c80408910bf8ca51bf787c8ff15dc2a4893
-ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
+ms.openlocfilehash: 4d037bdf266e70a2621b2627bc88abce30af652c
+ms.sourcegitcommit: c94e282a08fcaa36c4e498771b6004f0bfe8fb70
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104889753"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105612616"
 ---
 # <a name="manage-access-to-an-azure-machine-learning-workspace"></a>De toegang tot een Azure Machine Learning-werkruimte beheren
 
@@ -470,6 +470,7 @@ Hier volgen enkele dingen waarvan u op de hoogte moet zijn terwijl u Azure RBAC 
     Zie voor meer informatie over Azure RBAC met netwerken de [ingebouwde rollen voor netwerken](../role-based-access-control/built-in-roles.md#networking).
 
 - Het kan soms Maxi maal 1 uur duren voordat de nieuwe roltoewijzingen van kracht worden over machtigingen in de cache in de stack.
+- [Voorwaardelijke toegang](../role-based-access-control/conditional-access-azure-management.md) wordt momenteel niet ondersteund met Azure machine learning.
 
 ## <a name="next-steps"></a>Volgende stappen
 

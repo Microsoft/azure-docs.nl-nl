@@ -148,6 +148,22 @@
       items:
         - name: REST API van document vertalingen
           href: /rest/api/cognitiveservices/translator/documenttranslation
+        - name: Document indelingen ophalen
+          href: document-translation/reference/get-document-formats.md
+        - name: Woordenlijst indelingen ophalen
+          href: document-translation/reference/get-glossary-formats.md
+        - name: Bron voor document opslag ophalen
+          href: document-translation/reference/get-document-storage-source.md
+        - name: Batch-aanvraag indienen
+          href: document-translation/reference/submit-batch-request.md
+        - name: Status van bewerkings documenten ophalen
+          href: document-translation/reference/get-operation-documents-status.md
+        - name: Status van documenten ophalen
+          href: document-translation/reference/get-document-status.md
+        - name: Get-bewerkingen
+          href: document-translation/reference/get-operations.md
+        - name: Bewerking annuleren
+          href: document-translation/reference/cancel-operation.md
 - name: Vertaal bronnen
   items:
     - name: Opties voor ondersteuning en hulp

@@ -6,12 +6,12 @@ ms.author: panshar
 ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 07/23/2020
-ms.openlocfilehash: b9ea447b0204ad91065f27d265584c8787167fc2
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.openlocfilehash: af0b8a4d3dfbce32e412f5294fb19ade61fd7661
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104870718"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105628166"
 ---
 # <a name="azure-migrate-support-matrix"></a>Ondersteunings matrix Azure Migrate
 
@@ -44,7 +44,7 @@ Azure Migrate: Server Migration | N.v.t. | Migreer [VMware-vm's](tutorial-migrat
 [Cloudamize](https://www.cloudamize.com/platform#tab-0)| Evalueer virtuele VMware-machines, virtuele Hyper-V-machines, fysieke servers en andere Cloud werkbelastingen. | N.v.t.
 [Corent Technology](https://go.microsoft.com/fwlink/?linkid=2084928) | Evalueer VMware-Vm's, Hyper-V-Vm's, fysieke server zand andere Cloud werkbelastingen. |  Migreer VMware-Vm's, virtuele Hyper-V-machines, fysieke servers, open bare Cloud werkbelastingen.
 [Apparaat 42](https://go.microsoft.com/fwlink/?linkid=2097158) | Evalueer virtuele VMware-machines, Hyper-V-Vm's, fysieke servers en andere Cloud werkbelastingen.| N.v.t.
-[DMA](/sql/dma/dma-overview?view=sql-server-2017) | Beoordeel SQL Server data bases. | N.v.t.
+[DMA](/sql/dma/dma-overview) | Beoordeel SQL Server data bases. | N.v.t.
 [DMS](../dms/dms-overview.md) | N.v.t. | Migrate SQL Server, Oracle, MySQL, PostgreSQL, MongoDB. 
 [Lakeside](https://go.microsoft.com/fwlink/?linkid=2104908) | Virtual Desktop Infrastructure (VDI) evalueren | N.v.t.
 [Movere](https://www.movere.io/) | Evalueer virtuele VMware-machines, Hyper-V-Vm's, xen-Vm's, fysieke servers, werk stations (inclusief VDI) en andere Cloud werkbelastingen. | N.v.t.

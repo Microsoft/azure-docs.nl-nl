@@ -9,16 +9,16 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/26/2021
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 6bf5e53d9f4a867c146cb01376fcd28d2797819c
-ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
+ms.openlocfilehash: a03ca4bcad9bb577db68e2728ff9dbebb5779a7a
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105606212"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105626823"
 ---
 # <a name="create-a-suggester-to-enable-autocomplete-and-suggested-results-in-a-query"></a>Een suggestie maken om automatisch aanvullen en voorgestelde resultaten in een query in te scha kelen
 
-In azure Cognitive Search wordt typeahead of ' Search-as-u-type ' ingeschakeld via een *suggestie*. Een suggestie is een interne gegevens structuur die bestaat uit een verzameling velden. De velden worden extra tokening en het genereren van voorvoegsel reeksen ter ondersteuning van overeenkomsten op gedeeltelijke voor waarden. Een voor Stel dat bijvoorbeeld een veld plaats bevat, heeft voor voegsel ' Sea ', ' seat ', ' seat ' en ' seattl ' voor de term ' Seattle '.
+In azure Cognitive Search wordt typeahead of ' Search-as-u-type ' ingeschakeld via een *suggestie*. Een suggestie bevat een lijst met velden die extra tokening ondergaan, waardoor er voorvoegsel reeksen worden gegenereerd ter ondersteuning van overeenkomsten op gedeeltelijke voor waarden. Een voor beeld met een veld plaats met de waarde ' Seattle ' bevat bijvoorbeeld de voor voegsels van ' Sea ', ' seat ', ' seats ' en ' seattl ' ter ondersteuning van typeahead.
 
 Overeenkomsten op gedeeltelijke voor waarden kunnen een automatisch aanvullende query zijn of een voor waarde die overeenkomt. Dezelfde Voorst Ellen ondersteunen beide ervaringen.
 
@@ -171,11 +171,13 @@ POST /indexes/myxboxgames/docs/autocomplete?search&api-version=2020-06-30
 
 ## <a name="sample-code"></a>Voorbeeldcode
 
-+ [Uw eerste app maken in C# (Les 3-zoek opdracht toevoegen aan het type)](tutorial-csharp-type-ahead-and-suggestions.md) demonstreert aanbevolen query's, automatisch aanvullen en facet navigatie. Dit code voorbeeld wordt uitgevoerd op een sandbox Azure Cognitive Search-service en maakt gebruik van een vooraf geladen Hotels-index met een suggestie die al is gemaakt. u hoeft dus alleen op F5 te drukken om de toepassing uit te voeren. Er is geen abonnement of aanmelding vereist.
++ Het toevoegen van een [Zoek opdracht aan een website (Java script)](tutorial-javascript-search-query-integration.md#azure-function-suggestions-from-the-catalog) maakt gebruik van een open source Suggestions-pakket voor een gedeeltelijke termijn voltooiing in de client-app.
+
++ [Uw eerste app maken in C# (Les 3-zoek opdracht toevoegen aan het type)](tutorial-csharp-type-ahead-and-suggestions.md) demonstreert aanbevolen query's, automatisch aanvullen en facet navigatie. Deze code biedt systeem eigen ondersteuning voor typeahead in plaats van een widget te gebruiken.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-We raden u aan het volgende artikel te lezen om meer te weten te komen over de manier waarop aanvragen worden formulering.
+Meer informatie over aanvragen \ formulering.
 
 > [!div class="nextstepaction"]
 > [Automatisch aanvullen en suggesties aan client code toevoegen](search-add-autocomplete-suggestions.md)

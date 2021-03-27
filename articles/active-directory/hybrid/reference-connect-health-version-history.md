@@ -16,12 +16,12 @@ ms.topic: reference
 ms.date: 08/10/2020
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e7653f850edc910fc78b14a628b87dcb22aeb903
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 408e972eb5950baa75fa1bdf33fb2cd507154bcb
+ms.sourcegitcommit: c94e282a08fcaa36c4e498771b6004f0bfe8fb70
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "89279411"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105612837"
 ---
 # <a name="azure-ad-connect-health-version-release-history"></a>Versiegeschiedenis van status Azure AD Connect
 Het Azure Active Directory team werkt Azure AD Connect Health regel matig bij met nieuwe functies en functionaliteit. In dit artikel vindt u een overzicht van de versies en functies die zijn uitgebracht.  
@@ -32,12 +32,25 @@ Het Azure Active Directory team werkt Azure AD Connect Health regel matig bij me
 
 Azure AD Connect Health voor synchronisatie is geïntegreerd met Azure AD Connect-installatie. Meer informatie over het Azure AD Connect van de [release geschiedenis](./reference-connect-version-history.md) voor functie feedback, stemmen bij [verbindings status van gebruikers Voice Channel](https://feedback.azure.com/forums/169401-azure-active-directory/filters/new?category_id=165591)
 
+## <a name="march-2021"></a>2021 maart
+**Agent update**
+
+- Azure AD Connect Health Agent voor AD FS (versie 3.1.95.0)
+
+  - Oplossing voor het omzetten van een gebruikers naam met NT4-indeling naar een UPN tijdens aanmeldings gebeurtenissen.
+  - Oplossing om onjuiste toepassings-id-scenario's met een toegewezen fout code te identificeren.
+  - Wijzigingen om een nieuwe eigenschap voor OAuth-client-id toe te voegen.
+  - Oplossing voor het weer geven van de juiste waarden in de velden **protocol** en **verificatie type** in azure AD Sign-In rapport voor bepaalde aanmeldings scenario's.
+  - Oplossing voor het weer geven van IP-adressen in azure AD Sign-In het veld IP-keten in volg orde van de aanvraag.
+  - Wijzigingen voor het introduceren van een nieuw veld om onderscheid te maken als secundaire verificatie is aangevraagd tijdens een aanmelding.
+  - Oplossing voor de AD FS toepassings-id-eigenschap die moet worden weer gegeven in het rapport van Azure AD-Sign-In.
+
 ## <a name="april-2020"></a>April 2020
 **Agent update**
 
 - Azure AD Connect Health Agent voor AD FS (versie 3.1.77.0)
 
-   1.   Er is een fout opgelost voor de waarschuwing ' ongeldige SPN (Service Principal Name) voor de AD FS-service ', waarvoor de waarschuwing onjuist is gerapporteerd.
+   - Er is een fout opgelost voor de waarschuwing ' ongeldige SPN (Service Principal Name) voor de AD FS-service ', waarvoor de waarschuwing onjuist is gerapporteerd.
 
 
 ## <a name="july-2019"></a>Juli 2019

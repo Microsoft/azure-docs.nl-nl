@@ -2,14 +2,14 @@
 title: Een pool inrichten in een virtueel netwerk
 description: Het maken van een batch-pool in een virtueel Azure-netwerk, zodat reken knooppunten veilig kunnen communiceren met andere virtuele machines in het netwerk, zoals een bestands server.
 ms.topic: how-to
-ms.date: 03/15/2021
+ms.date: 03/26/2021
 ms.custom: seodec18
-ms.openlocfilehash: d6e5de75164e098fc95f6c086d9f98a652dcee4a
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 7213637e89cfccd1352861002c47a696d942d30f
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103561907"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105629305"
 ---
 # <a name="create-an-azure-batch-pool-in-a-virtual-network"></a>Een Azure Batch groep maken in een virtueel netwerk
 
@@ -56,6 +56,8 @@ Om ervoor te zorgen dat de knoop punten in uw pool werken in een VNet waarvoor g
 - De batch-service moet communiceren met knoop punten voor het plannen van taken. Als u deze communicatie wilt inschakelen, voegt u een UDR toe voor elk IP-adres dat wordt gebruikt door de batch-service in de regio waar uw batch-account zich bevindt. Zie [on-premises service Tags](../virtual-network/service-tags-overview.md)voor een lijst met IP-adressen van de batch-service.
 
 - Zorg ervoor dat uitgaand verkeer naar Azure Storage (met name Url's van het formulier `<account>.table.core.windows.net` , `<account>.queue.core.windows.net` en `<account>.blob.core.windows.net` ) niet wordt geblokkeerd door uw on-premises netwerk.
+
+- Als u virtuele bestands koppelingen gebruikt, controleert u de [netwerk vereisten](virtual-file-mount.md#networking-requirements) en zorgt u ervoor dat er geen vereist verkeer wordt geblokkeerd.
 
 Wanneer u een UDR toevoegt, definieert u de route voor elk gerelateerde IP-adres voorvoegsel voor batch en stelt u het **type volgende hop** in op **Internet**.
 

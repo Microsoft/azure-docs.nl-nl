@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 3/18/2020
-ms.openlocfilehash: a05037505c122bb974e6da3d11a6f25a715a6843
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.openlocfilehash: cb8394de49c2c5daeae156a9316466928eded148
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104869426"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105628472"
 ---
 # <a name="server-concepts-in-azure-database-for-mysql"></a>Server concepten in Azure Database for MySQL
 
@@ -38,7 +38,7 @@ Op een Azure Database voor MySQL-server kunt u een of meerdere databases maken. 
 
 De volgende elementen helpen veilige toegang tot uw data base te garanderen.
 
-|     |     |
+| Beveiligings concept | Description     |
 | :-- | :-- |
 | **Verificatie en autorisatie** | Azure Database for MySQL-server ondersteunt native MySQL-verificatie. U kunt verbinding maken met en verifiëren met een server met de beheerders aanmelding van de server. |
 | **Protocol** | De service ondersteunt een op berichten gebaseerd protocol dat wordt gebruikt door MySQL. |

@@ -6,13 +6,13 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: include
 author: mingshen-ms
 ms.author: krsh
-ms.date: 10/20/2020
-ms.openlocfilehash: c60d2a9b13cce9251ff0f730081a9d677206770d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.date: 03/25/2021
+ms.openlocfilehash: 8898a762e8a1e7a2d5c104f99d12032c676a5ca4
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102630101"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105630119"
 ---
 ## <a name="generalize-the-image"></a>De installatie kopie generaliseren
 
@@ -52,7 +52,9 @@ Zodra uw VM klaar is, kunt u deze vastleggen in een galerie met gedeelde install
 8. Selecteer **beoordeling + maken** om uw keuzes te controleren.
 9. Nadat de validatie is voltooid, selecteert u **maken**.
 
-Voor het publiceren moet het account van de uitgever een eigenaar hebben van de toegang tot de SIG. Toegang verlenen:
+Het Azure-abonnement met de SIG moet zich onder dezelfde Tenant benemen als het Publisher-account om te kunnen publiceren. Ook moet de eigenaar van het uitgevers account toegang hebben tot de SIG. 
+
+Toegang verlenen:
 
 1. Ga naar de galerie met gedeelde afbeeldingen.
 2. Selecteer **toegangs beheer** (IAM) in het linkerdeel venster.

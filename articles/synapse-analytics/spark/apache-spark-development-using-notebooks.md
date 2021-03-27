@@ -10,12 +10,12 @@ ms.date: 10/19/2020
 ms.author: ruxu
 ms.reviewer: ''
 ms.custom: devx-track-python
-ms.openlocfilehash: d5ff3fb988a7e907308ccccc8d0900d45a0601c0
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: c5dfd442bb52a5b1d319bd0a40b656d549134e7e
+ms.sourcegitcommit: c94e282a08fcaa36c4e498771b6004f0bfe8fb70
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101671597"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105612306"
 ---
 # <a name="create-develop-and-maintain-synapse-studio-notebooks-in-azure-synapse-analytics"></a>Synapse Studio-notitie blokken maken, ontwikkelen en onderhouden in azure Synapse Analytics
 
@@ -41,9 +41,6 @@ Het Synapse-team heeft het nieuwe notitieblok onderdeel in Synapse Studio gebrac
 |%% HTML| Niet ondersteund |&#9745;|
 |Slepen en neerzetten om een cel te verplaatsen| Niet ondersteund |&#9745;|
 |Uitvoer van permanente weer gave ()|&#9745;| Niet beschikbaar |
-|Alles annuleren| &#9745;| Niet beschikbaar|
-|Alle cellen hierboven uitvoeren|&#9745;| Niet beschikbaar |
-|Alle onderliggende cellen uitvoeren|&#9745;| Niet beschikbaar |
 |Tekst cel opmaken met werkbalk knoppen|&#9745;| Niet beschikbaar |
 |Bewerking voor cel ongedaan maken| &#9745;| Niet beschikbaar |
 
@@ -104,7 +101,7 @@ U kunt de primaire taal voor nieuwe toegevoegde cellen instellen in de vervolg k
 
 U kunt meerdere talen gebruiken in één notebook door de juiste Magic-opdracht voor de taal aan het begin van een cel op te geven. De volgende tabel bevat de Magic-opdrachten om te scha kelen tussen talen in cellen.
 
-|Opdracht Magic |Taal | Beschrijving |  
+|Opdracht Magic |Taal | Description |  
 |---|------|-----|
 |%% pyspark| Python | Voer een **python** -query uit op Spark-context.  |
 |% Spark| Scala | Voer een **scala** -query uit op Spark-context.  |  
@@ -152,7 +149,7 @@ De IntelliSense-functies bevinden zich op verschillende niveaus van de verval da
 |PySpark (Python)|Ja|Ja|Ja|Ja|Ja|Ja|Ja|Ja|
 |Spark (Scala)|Ja|Ja|Ja|Ja|-|-|-|Ja|
 |SparkSQL|Ja|Ja|-|-|-|-|-|-|
-|.NET voor Spark (C#)|Ja|-|-|-|-|-|-|-|
+|.NET voor Spark (C#)|Yes|-|-|-|-|-|-|-|
 
 ### <a name="format-text-cell-with-toolbar-buttons"></a>Tekst cel opmaken met werkbalk knoppen
 
@@ -273,28 +270,38 @@ Selecteer de knop **alles uitvoeren** om alle cellen in het huidige notitie blok
    ![run-alle-cellen](./media/apache-spark-development-using-notebooks/synapse-run-all.png)
 
 
-# <a name="classical-notebook"></a>[Klassiek notebook](#tab/classical)
-
 ### <a name="run-all-cells-above-or-below"></a>Alle cellen boven of onder uitvoeren
+
+# <a name="classical-notebook"></a>[Klassiek notebook](#tab/classical)
 
 Selecteer de weglatings tekens (**...**) om het menu met de extra celwaarden helemaal rechts te openen. Selecteer vervolgens **cellen hierboven uitvoeren** om alle cellen boven de huidige in de reeks uit te voeren. Selecteer **onderstaande cellen uitvoeren** om alle cellen onder de huidige in de reeks uit te voeren.
 
    ![Run-cellen-boven-of-onder](./media/apache-spark-development-using-notebooks/synapse-run-cells-above-or-below.png)
 
+# <a name="preview-notebook"></a>[Voor beeld van notebook](#tab/preview)
+
+Vouw de vervolg keuzelijst uit op de knop **alles uitvoeren** en selecteer vervolgens **cellen uitvoeren hierboven** om alle cellen boven de huidige in de reeks uit te voeren. Selecteer **onderstaande cellen uitvoeren** om alle cellen onder de huidige in de reeks uit te voeren.
+
+   ![Azure-notebook-run-Cells-boven-of-onder](./media/apache-spark-development-using-notebooks/synapse-aznb-run-cells-above-or-below.png)
+
+---
 
 ### <a name="cancel-all-running-cells"></a>Alle actieve cellen annuleren
+
+# <a name="classical-notebook"></a>[Klassiek notebook](#tab/classical)
 Selecteer de knop **Alles annuleren** om de actieve cellen of cellen in de wachtrij te annuleren. 
    ![annuleren-alle cellen](./media/apache-spark-development-using-notebooks/synapse-cancel-all.png) 
 
 # <a name="preview-notebook"></a>[Voor beeld van notebook](#tab/preview)
 
-Annuleren van alle actieve cellen is nog niet beschikbaar voor de preview-versie van het notitie blok. 
+Selecteer de knop **Alles annuleren** om de actieve cellen of cellen in de wachtrij te annuleren. 
+   ![Azure-notebook-annuleren-alle cellen](./media/apache-spark-development-using-notebooks/synapse-aznb-cancel-all.png) 
 
 ---
 
 
 
-### <a name="reference-notebook"></a>Referentie notitieblok
+### <a name="notebook-reference"></a>Notitieblok referentie
 
 # <a name="classical-notebook"></a>[Klassiek notebook](#tab/classical)
 
@@ -305,6 +312,11 @@ Wordt niet ondersteund.
 U kunt ```%run <notebook path>``` de opdracht Magic gebruiken om te verwijzen naar een andere notebook binnen de context van het huidige notitie blok. Alle variabelen die zijn gedefinieerd in de referentie notitieblok, zijn beschikbaar in het huidige notitie blok. ```%run``` de opdracht Magic ondersteunt geneste aanroepen, maar biedt geen ondersteuning voor recursieve aanroepen. Er wordt een uitzonde ring weer gegeven als de diepte van de verklaring groter is dan vijf. ```%run``` de opdracht ondersteunt momenteel alleen om een pad naar een notitie blok door te geven als para meter. 
 
 Bijvoorbeeld: ``` %run /path/notebookA ```.
+
+> [!NOTE]
+> Notebook-verwijzing wordt niet ondersteund in de Synapse-pijp lijn.
+>
+>
 
 ---
 
@@ -346,7 +358,10 @@ U kunt ook Spark-sessie-instellingen opgeven via een Magic-opdracht **%% Configu
     }
 }
 ```
-
+> [!NOTE]
+> Spark Session config Magic opdracht wordt niet ondersteund in de Synapse-pijp lijn.
+>
+>
 
 ## <a name="bring-data-to-a-notebook"></a>Gegevens naar een notitie blok brengen
 
@@ -420,6 +435,11 @@ In de eigenschappen van het notitie blok kunt u configureren of de celinhoud moe
 ## <a name="magic-commands"></a>Magic-opdrachten
 U kunt vertrouwde Jupyter Magic-opdrachten gebruiken in azure Synapse Studio-notebooks. Bekijk de volgende lijst als de huidige beschik bare Magic-opdrachten. Vertel ons [uw use cases op github](https://github.com/MicrosoftDocs/azure-docs/issues/new) zodat we meer Magic-opdrachten kunnen blijven bouwen om aan uw behoeften te voldoen.
 
+> [!NOTE]
+> Alleen de volgende Magic-opdrachten worden ondersteund in de Synapse-pijp lijn:%% pyspark,%% Spark,%% csharp,%% SQL. 
+>
+>
+
 # <a name="classical-notebook"></a>[Klassiek notebook](#tab/classical)
 
 Beschik bare lijn-magices: [% lsmagic](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-lsmagic), [% time](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time), [% timeit](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit)
@@ -430,7 +450,7 @@ Beschik bare cel magics: [%% time](https://ipython.readthedocs.io/en/stable/inte
 
 # <a name="preview-notebook"></a>[Voor beeld van notebook](#tab/preview)
 
-Beschik bare lijn-magices: [% lsmagic](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-lsmagic), [% time](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time), [% timeit](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit), [% history](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-history), [% Run](#reference-notebook), [% Load](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-load)
+Beschik bare lijn-magices: [% lsmagic](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-lsmagic), [% time](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time), [% timeit](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit), [% history](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-history), [% Run](#notebook-reference), [% Load](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-load)
 
 Beschik bare cel-magische: [%% time](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time), [%% timeit](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit), [%% Capture](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-capture), [%% Write File](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-writefile), [%% SQL](#use-multiple-languages), [%% pyspark](#use-multiple-languages), [%% Spark](#use-multiple-languages), [%% csharp](#use-multiple-languages), [%% HTML](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-html), [%% configureren](#spark-session-config-magic-command)
 

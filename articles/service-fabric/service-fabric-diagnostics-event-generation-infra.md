@@ -1,16 +1,14 @@
 ---
 title: Bewaking van Azure Service Fabric platform niveau
 description: Meer informatie over gebeurtenissen op platform niveau en logboeken die worden gebruikt voor het bewaken en diagnosticeren van Azure Service Fabric-clusters.
-author: srrengar
 ms.topic: conceptual
 ms.date: 11/21/2018
-ms.author: srrengar
-ms.openlocfilehash: f9db0df9370197190c11b740f1fd1af3fb69f19c
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: f9104c390ab4115c626beb4759c6b6952d691ca9
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100581415"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105626517"
 ---
 # <a name="monitoring-the-cluster"></a>Het cluster bewaken
 

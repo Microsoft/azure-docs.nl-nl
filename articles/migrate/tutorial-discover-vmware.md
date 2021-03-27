@@ -7,12 +7,12 @@ ms.manager: abhemraj
 ms.topic: tutorial
 ms.date: 03/25/2021
 ms.custom: mvc
-ms.openlocfilehash: 2e9dafc111478f35263dc9db0cc07d913327c936
-ms.sourcegitcommit: c94e282a08fcaa36c4e498771b6004f0bfe8fb70
+ms.openlocfilehash: 09b04c67519bfa920a3781612823c5755cbc6d2d
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105612055"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105627792"
 ---
 # <a name="tutorial-discover-servers-running-in-vmware-environment-with-azure-migrate-discovery-and-assessment"></a>Zelf studie: servers die worden uitgevoerd in de VMware-omgeving detecteren met Azure Migrate: detectie en evaluatie
 
@@ -115,7 +115,7 @@ Stel een nieuw project in.
 
 1. Zoek in de Azure-portal in **Alle services** naar **Azure Migrate**.
 2. Onder **Services** selecteert u **Azure Migrate**.
-3. Selecteer onder **Overzicht** de optie **Project maken**.
+3. Selecteer **in overzicht** > op basis van uw migratie doelen: **Windows, Linux en SQL Server** of **SQL Server (alleen)** of **Verken meer scenario's** > Selecteer **project maken**.
 5. Selecteer onder **Project maken** uw Azure-abonnement en resourcegroep. Maak een resourcegroep als u er nog geen hebt.
 6. Geef in **Projectdetails** de projectnaam en het geografische gebied op waarin u het project wilt maken. Bekijk ondersteunde geografische regio's voor [openbare](migrate-support-matrix.md#supported-geographies-public-cloud) clouds en [overheidsclouds](migrate-support-matrix.md#supported-geographies-azure-government).
 

@@ -11,14 +11,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: error-reference
-ms.date: 02/12/2020
+ms.date: 03/26/2021
 ms.author: inhenkel
-ms.openlocfilehash: 5463f1d8376cbe1a6e81d17c1f95a84e67f3b418
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 7c30649fe3486f812569cb51f609356a6cbfd58f
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104581079"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105627537"
 ---
 # <a name="media-services-live-event-error-codes"></a>Fout codes voor Live-gebeurtenissen Media Services
 
@@ -83,7 +83,8 @@ Mogelijk wordt een van de volgende fouten weer geven in de [LiveEventEncoderDisc
 >| Description|Coderings programma verzendt gegevens te snel. |
 >| Voorgestelde oplossing|Dit gebeurt wanneer het coderings programma een grote set fragmenten in een korte periode opsplitst.  Dit kan theoretisch gebeuren wanneer het coderings programma geen gegevens kan pushen tijdens een netwerk probleem en de gegevens uitbreek wanneer het netwerk beschikbaar is. Zoek de reden in het logboek van de encoder of het systeem logboek. |
 >|**Onbekende fout codes** |
->| Description| Deze fout codes kunnen variëren van geheugen fout om vermeldingen in de hash-map te dupliceren. |
+>| Description| Deze fout codes kunnen variëren van geheugen fout om vermeldingen in de hash-map te dupliceren. Dit kan gebeuren wanneer het coderings programma een grote set fragmenten in een korte periode verzendt.  Dit kan ook gebeuren wanneer het coderings programma geen gegevens kan pushen tijdens een netwerk probleem en vervolgens alle vertraagde fragmenten in één keer verzendt wanneer het netwerk beschikbaar wordt. |
+>|Voorgestelde oplossing| Controleer de encoder-Logboeken.|
 
 ## <a name="other-error-codes"></a>Overige foutcodes
 
@@ -95,13 +96,13 @@ Mogelijk wordt een van de volgende fouten weer geven in de [LiveEventEncoderDisc
 >|Voorgestelde oplossing| Geen.||
 >|**MPI_SYSTEM_MAINTENANCE** ||Yes|
 >| Description|De verbinding met het coderings programma is verbroken vanwege een service-update of systeem onderhoud. ||
->|Voorgestelde oplossing|Zorg ervoor dat het coderings programma automatische verbinding maken is ingeschakeld. Dit is een coderings functie voor het herstellen van de onverwachte sessie verbreken. ||
+>|Voorgestelde oplossing|Zorg ervoor dat het coderings programma automatische verbinding maken is ingeschakeld. Hiermee kan het coderings programma opnieuw verbinding maken met het redundante Live Event-eind punt dat zich niet in onderhoud bevindt. ||
 >|**MPE_BAD_URL_SYNTAX** ||Yes|
 >| Description|De opname-URL heeft een onjuiste indeling. ||
 >|Voorgestelde oplossing|Zorg ervoor dat de opname-URL correct is ingedeeld. Voor RTMP moet het `rtmp[s]://hostname:port/live/GUID_APPID/streamname` ||
 >|**MPE_CLIENT_TERMINATED_SESSION** ||Yes|
 >| Description|Het coderings programma heeft de sessie verbroken.  ||
->|Voorgestelde oplossing|Dit is niet het probleem. Dit is het geval waarbij het coderings programma de verbinding heeft verbroken, inclusief een probleemloze verbreken van de verbinding. Als dit een onverwacht verbreking van de verbinding is, controleert u het coderings logboek of het systeem logboek. |
+>|Voorgestelde oplossing|Dit is niet het probleem. De verbreken van de verbinding met het coderings programma is gestart. Als dit een onverwachte verbinding is, controleert u de logboeken van de encoder. |
 >|**MPE_INGEST_BITRATE_NOT_MATCH** ||Nee|
 >| Beschrijving|De binnenkomende gegevens verhouding komt niet overeen met de verwachte bitrate. ||
 >|Voorgestelde oplossing|Dit is een waarschuwing die zich voordoet wanneer de frequentie van binnenkomende gegevens te langzaam of snel is. Controleer het coderings logboek of het systeem logboek.||

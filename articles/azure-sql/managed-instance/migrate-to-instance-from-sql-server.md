@@ -11,12 +11,12 @@ author: bonova
 ms.author: bonova
 ms.reviewer: ''
 ms.date: 07/11/2019
-ms.openlocfilehash: df0a28c4d2ba78e9b7a6b52e26537540164d28e0
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.openlocfilehash: ccc6acfd27a1430a4f6a31886c06322c5c09e224
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105564276"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105628370"
 ---
 # <a name="sql-server-instance-migration-to-azure-sql-managed-instance"></a>Migratie van SQL Server-exemplaren naar Azure SQL Managed instance
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -89,7 +89,7 @@ De basis lijn voor prestaties is een set para meters, zoals gemiddeld/Maxi maal 
 Enkele van de para meters die u moet meten op uw SQL Server-exemplaar zijn:
 
 - [Controleer het CPU-gebruik op uw SQL Server-exemplaar](https://techcommunity.microsoft.com/t5/Azure-SQL-Database/Monitor-CPU-usage-on-SQL-Server/ba-p/680777#M131) en noteer het gemiddelde en maximum CPU-gebruik.
-- [Controleer het geheugen gebruik op uw SQL Server-exemplaar](/sql/relational-databases/performance-monitor/monitor-memory-usage) en bepaal de hoeveelheid geheugen die wordt gebruikt door verschillende onderdelen, zoals de buffer groep, de plannings cache, de column-Store-groep, [in-Memory OLTP](/sql/relational-databases/in-memory-oltp/monitor-and-troubleshoot-memory-usage?view=sql-server-2017), enzovoort. Bovendien moet u de gemiddelde en piek waarden voor het prestatie meter item pagina-levens verwachting geheugen vinden.
+- [Controleer het geheugen gebruik op uw SQL Server-exemplaar](/sql/relational-databases/performance-monitor/monitor-memory-usage) en bepaal de hoeveelheid geheugen die wordt gebruikt door verschillende onderdelen, zoals de buffer groep, de plannings cache, de column-Store-groep, [in-Memory OLTP](/sql/relational-databases/in-memory-oltp/monitor-and-troubleshoot-memory-usage), enzovoort. Bovendien moet u de gemiddelde en piek waarden voor het prestatie meter item pagina-levens verwachting geheugen vinden.
 - Controleer het gebruik van de schijf-i/o op het bron SQL Server exemplaar met behulp van [sys.dm_io_virtual_file_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-io-virtual-file-stats-transact-sql) weergave of [prestatie meter items](/sql/relational-databases/performance-monitor/monitor-disk-usage).
 - Controleer de werk belasting-en query prestaties of uw SQL Server-exemplaar door dynamische beheer weergaven of query Store te controleren als u migreert van een SQL Server 2016 + versie. Bepaal de gemiddelde duur en het CPU-gebruik van de belangrijkste query's in uw workload om ze te vergelijken met de query's die worden uitgevoerd op het beheerde exemplaar.
 

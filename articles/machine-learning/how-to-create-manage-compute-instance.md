@@ -11,12 +11,12 @@ ms.author: sgilley
 author: sdgilley
 ms.reviewer: sgilley
 ms.date: 10/02/2020
-ms.openlocfilehash: 6c29bf87c5f0ecaaeb6d608069791431a949c89b
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 2778f52b312e5d2fda7879b834fcd204285b7144
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103009960"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105628948"
 ---
 # <a name="create-and-manage-an-azure-machine-learning-compute-instance"></a>Een Azure Machine Learning Compute-exemplaar maken en beheren
 
@@ -127,6 +127,9 @@ De gegevens wetenschapper kunnen het reken proces starten, stoppen en opnieuw st
 
 Een reken instantie starten, stoppen, opnieuw starten en verwijderen. Een reken instantie wordt niet automatisch omlaag geschaald, dus zorg ervoor dat u de resource stopt om lopende kosten te voor komen.
 
+> [!TIP]
+> Het Compute-exemplaar heeft 120 GB besturingssysteem schijf. Als er onvoldoende schijf ruimte beschikbaar is, [gebruikt u de Terminal](how-to-access-terminal.md) om ten minste 1-2 GB te wissen voordat u het reken exemplaar stopt of opnieuw opstart.
+
 # <a name="python"></a>[Python](#tab/python)
 
 In de onderstaande voor beelden is de naam van het reken exemplaar **instance**
@@ -225,6 +228,7 @@ Voor elk reken exemplaar in uw werk ruimte die u hebt gemaakt (of die u voor u h
 * Details ophalen over een specifiek reken exemplaar, zoals het IP-adres en de regio.
 
 ---
+
 
 Met [Azure RBAC](../role-based-access-control/overview.md) kunt u bepalen welke gebruikers in de werk ruimte een reken instantie kunnen maken, verwijderen, starten, stoppen en opnieuw starten. Alle gebruikers in de rol Inzender en eigenaar van de werk ruimte kunnen reken instanties maken, verwijderen, starten, stoppen en opnieuw starten in de werk ruimte. Maar alleen de maker van een specifiek reken exemplaar of de gebruiker die is toegewezen als deze namens hen is gemaakt, heeft toegang tot Jupyter, Jjupyterlab en RStudio op die reken instantie. Een reken instantie is toegewezen aan één gebruiker met hoofd toegang en kan worden terminal in via Jupyter/Jjupyterlab/RStudio. Reken instantie heeft aanmelding voor één gebruiker en alle acties gebruiken de identiteit van die gebruiker voor Azure RBAC en de toewijzing van experimenten. SSH-toegang wordt beheerd via het mechanisme voor open bare/persoonlijke sleutels.
 

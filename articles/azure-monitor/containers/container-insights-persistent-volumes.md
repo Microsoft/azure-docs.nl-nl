@@ -3,12 +3,12 @@ title: HW-bewaking configureren met container Insights | Microsoft Docs
 description: In dit artikel wordt beschreven hoe u bewakings Kubernetes-clusters met permanente volumes met container Insights kunt configureren.
 ms.topic: conceptual
 ms.date: 03/03/2021
-ms.openlocfilehash: 16c87177a8911a7b88284606f54f7bf6e0e0daa3
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.openlocfilehash: 7c6ddd62bf06d313987289e444962378cea43fc8
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105026101"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105627894"
 ---
 # <a name="configure-pv-monitoring-with-container-insights"></a>HW-bewaking met container Insights configureren
 
@@ -17,7 +17,9 @@ Met ingang van agent versie *ciprod10052020* ondersteunt Azure monitor voor cont
 
 Met container Insights wordt het gebruik van de HW automatisch gecontroleerd door de volgende metrische gegevens te verzamelen om 60 sec-intervallen en op te slaan in de tabel **InsightMetrics** .
 
-| Naam van metrische waarde | Metrische dimensie (Tags) | Beschrijving van metrische gegevens | | `pvUsedBytes`| podUID, podName, pvcName, pvcNamespace, capacityBytes, clusterId, clustername | Gebruikte ruimte in bytes voor een specifiek permanent volume met een claim die wordt gebruikt door een specifieke pod. `capacityBytes` wordt gevouwen in als een dimensie in het veld Tags om de kosten voor de opname van gegevens te verlagen en query's te vereenvoudigen. |
+| Naam van metrische gegevens | Metrische dimensie (Tags) | Beschrijving van metrische gegevens |
+|-----|-----------|----------|
+| `pvUsedBytes`| podUID, podName, pvcName, pvcNamespace, capacityBytes, clusterId, clustername| Gebruikte ruimte in bytes voor een specifiek permanent volume met een claim die wordt gebruikt door een specifieke pod. `capacityBytes` wordt gevouwen in als een dimensie in het veld Tags om de kosten voor de opname van gegevens te verlagen en query's te vereenvoudigen.|
 
 Meer informatie over het configureren van verzamelde meet waarden voor [hw.](./container-insights-agent-config.md)
 
@@ -27,7 +29,7 @@ Azure Monitor voor containers wordt het bewaken van PVs automatisch gestart door
 
 |Gegevens |Gegevensbron| Gegevenstype| Velden|
 |-----|-----------|----------|-------|
-|Inventarisatie van permanente volumes in een Kubernetes-cluster |Uitvoeren-API |`KubePVInventory` | PVName, PVCapacityBytes, PVCName, PVCNamespace, PVStatus, PVAccessModes, PVType, PVTypeInfo, PVStorageClassName, PVCreationTimestamp, TimeGenerated, ClusterId, clustername, _ResourceId |
+|Inventarisatie van permanente volumes in een Kubernetes-cluster |Uitvoeren-API |`KubePVInventory` |    PVName, PVCapacityBytes, PVCName, PVCNamespace, PVStatus, PVAccessModes, PVType, PVTypeInfo, PVStorageClassName, PVCreationTimestamp, TimeGenerated, ClusterId, clustername, _ResourceId |
 
 ## <a name="monitor-persistent-volumes"></a>Permanente volumes bewaken
 

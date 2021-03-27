@@ -146,11 +146,14 @@
           href: content-aware-encoding.md
         - name: Door media gereserveerde eenheden
           href: concept-media-reserved-units.md
-    - name: Inhoud wordt geanalyseerd (Video Indexer)
+    - name: Analyseren en redactie
       items:
         - name: Overzicht
           href: analyzing-video-audio-files-concept.md
           displayName: 'analyze, analyzing, presets, jobs'
+        - name: Gezichten detecteren en redigeren (vervagen)
+          href: analyze-face-redaction-concept.md
+          displayName: 'analyze, redact, face, detect, presets, jobs, blur, faces, redaction'
     - name: Transformaties en taken
       href: transforms-jobs-concept.md
     - name: Live streamen
@@ -159,9 +162,9 @@
           href: live-streaming-overview.md
         - name: Livegebeurtenissen en live-uitvoer
           href: live-events-outputs-concept.md
-          displayName: 'vanity, ingest'
+          displayName: 'vanity, ingest, static, hostname, rtmp, ingest'
         - name: 'Geteste, on-premises live coderingsprogramma''s'
-          displayName: recommended
+          displayName: 'recommended, on-premises, live, encoder, OBS, FFMPEG, Wirecast'
           href: recommended-on-premises-live-encoders.md
         - name: Tijdsverschuiving en live-naar-VOD
           displayName: 'archive, dvr'

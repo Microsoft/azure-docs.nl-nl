@@ -100,7 +100,7 @@ De bewerking heeft de volgende hoofd tekst (waarbij een Pass-through live-gebeur
         "language": "en-US"
       }
     ],
-    "vanityUrl": false,
+    "useStaticHostname": false,
     "streamOptions": [
       "Default"
     ]
@@ -161,7 +161,7 @@ VERZENDEN ```https://management.azure.com/subscriptions/:subscriptionId/resource
         "language": "en-US"
       }
     ],
-    "vanityUrl": false,
+    "useStaticHostname": false,
     "streamOptions": [
       "Default"
     ]

@@ -5,18 +5,18 @@ author: vineetvikram
 ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: tutorial
-ms.date: 03/10/2021
+ms.date: 03/25/2021
 ms.custom: mvc
-ms.openlocfilehash: d108774aea2d7ac7773dab06efc977dd9e501eb5
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.openlocfilehash: f461778f988fafeacc480e100b00be7d4c165dfb
+ms.sourcegitcommit: c94e282a08fcaa36c4e498771b6004f0bfe8fb70
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105108771"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105612514"
 ---
 # <a name="tutorial-discover-servers-running-on-hyper-v-with-azure-migrate-discovery-and-assessment"></a>Zelf studie: servers die worden uitgevoerd op Hyper-V detecteren met Azure Migrate: detectie en evaluatie
 
-Als onderdeel van de migratie naar Azure, detecteert u uw on-premises inventaris en werkbelastingen. 
+Als onderdeel van de migratie naar Azure, detecteert u uw on-premises inventaris en werkbelastingen.
 
 Deze zelf studie laat zien hoe u on-premises servers op Hyper-V-hosts kunt detecteren met de Azure Migrate: hulp programma voor detectie en evaluatie met behulp van een licht gewicht Azure Migrate apparaat. U implementeert het apparaat als een server op een Hyper-V-host, zodat de meta gegevens van de computer en de prestaties continu worden gedetecteerd.
 
@@ -42,7 +42,7 @@ Controleer of deze vereisten aanwezig zijn voordat u met deze zelfstudie begint.
 --- | ---
 **Hyper-V-host** | Hyper-V-hosts waarop servers zich bevinden, kunnen zelfstandig zijn of in een cluster.<br/><br/> Op deze host moet Windows Server 2019 R2, Windows Server 2016 of Windows Server 2012 R2 worden uitgevoerd.<br/><br/> Controleer of binnenkomende verbindingen zijn toegestaan op WinRM-poort 5985 (HTTP), zodat het apparaat verbinding kan maken met de meta gegevens van de server en de prestaties, met behulp van een Common Information Model CIM-sessie.
 **Implementatie van het apparaat** | De Hyper-V-host heeft resources nodig om een server toe te wijzen aan het apparaat:<br/><br/> -16 GB aan RAM, 8 Vcpu's en ongeveer 80 GB aan schijf opslag.<br/><br/> -Een externe virtuele switch en Internet toegang op het apparaat rechtstreeks of via een proxy.
-**Servers** | Op servers kan elk Windows-of Linux-besturings systeem worden uitgevoerd. 
+**Servers** | Op servers kan elk Windows-of Linux-besturings systeem worden uitgevoerd.
 
 ## <a name="prepare-an-azure-user-account"></a>Een Azure-gebruikersaccount voorbereiden
 
@@ -56,7 +56,7 @@ Als u net pas een gratis Azure-account hebt gemaakt, bent u de eigenaar van uw a
 
     ![Zoekvak om te zoeken naar het Azure-abonnement](./media/tutorial-discover-hyper-v/search-subscription.png)
 
-2. Selecteer op de pagina **abonnementen** het abonnement waarin u een project wilt maken. 
+2. Selecteer op de pagina **abonnementen** het abonnement waarin u een project wilt maken.
 3. Selecteer onder het abonnement de optie **Toegangsbeheer (IAM)**  > **Toegang controleren**.
 4. Zoek onder **Toegang controleren** naar het relevante gebruikersaccount.
 5. Klik onder **Een roltoewijzing toevoegen** op **Toevoegen**.
@@ -176,7 +176,7 @@ Controleer of het zip-bestand veilig is voordat u het implementeert.
 
         **Scenario** | **Downloaden** | **SHA256**
         --- | --- | ---
-        Hyper-V (8,91 GB) | [Nieuwste versie](https://go.microsoft.com/fwlink/?linkid=2140422) |  40aa037987771794428b1c6ebee2614b092e6d69ac56d48a2bbc75eeef86c99a
+        Hyper-V (8,91 GB) | [Nieuwste versie](https://go.microsoft.com/fwlink/?linkid=2140422) |  79c151588de049cc102f61b910d6136e02324dc8d8a14f47772da351b46d9127
 
     - Voor Azure Government:
 
@@ -293,5 +293,3 @@ Nadat de detectie is voltooid, kunt u controleren of de servers worden weergegev
 
 - [Servers op de Hyper-V-omgeving beoordelen](tutorial-assess-hyper-v.md) voor migratie naar virtuele Azure-machines.
 - [De gegevens controleren ](migrate-appliance.md#collected-data---hyper-v) die door het apparaat worden verzameld tijdens de detectie.
-
-

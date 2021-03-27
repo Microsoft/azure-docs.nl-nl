@@ -3,12 +3,12 @@ title: Wat is er nieuw in Azure Backup
 description: Meer informatie over nieuwe functies in Azure Backup.
 ms.topic: conceptual
 ms.date: 11/11/2020
-ms.openlocfilehash: 48c8c189d956c4003d24511a54975fe86a982832
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: c5e6734c6a962fa43d79fc90fdfaa85923b6339f
+ms.sourcegitcommit: c94e282a08fcaa36c4e498771b6004f0bfe8fb70
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102095711"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105612480"
 ---
 # <a name="whats-new-in-azure-backup"></a>Wat is er nieuw in Azure Backup
 
@@ -19,6 +19,7 @@ Meer informatie over de nieuwe releases vindt u in blad wijzers op deze pagina o
 ## <a name="updates-summary"></a>Samen vatting van updates
 
 - 2021 maart
+  - [Back-ups van Azure-schijven zijn nu algemeen beschikbaar](#azure-disk-backup-is-now-generally-available)
   - [Back-upcentrum is nu algemeen verkrijgbaar](#backup-center-is-now-generally-available)
   - [Ondersteuning voor de archief tier voor Azure Backup (in preview-versie)](#archive-tier-support-for-azure-backup-in-preview)
 - Februari 2021
@@ -39,6 +40,12 @@ Meer informatie over de nieuwe releases vindt u in blad wijzers op deze pagina o
   - [Back-SAP HANA in RHEL Azure Virtual Machines (in preview-versie)](#backup-sap-hana-in-rhel-azure-virtual-machines-in-preview)
   - [Zone redundant Storage (ZRS) voor back-upgegevens (in preview-versie)](#zone-redundant-storage-zrs-for-backup-data-in-preview)
   - [Zacht verwijderen voor SQL Server en SAP HANA workloads in azure-Vm's](#soft-delete-for-sql-server-and-sap-hana-workloads)
+
+## <a name="azure-disk-backup-is-now-generally-available"></a>Back-ups van Azure-schijven zijn nu algemeen beschikbaar
+
+Azure Backup biedt levenscyclus beheer voor de moment opname naar Azure Managed Disks door het periodiek maken van moment opnamen te automatiseren en deze te bewaren voor geconfigureerde tijds duren met behulp van het back-upbeleid.
+
+Zie [overzicht van Azure Disk Backup](disk-backup-overview.md)voor meer informatie.
 
 ## <a name="backup-center-is-now-generally-available"></a>Back-upcentrum is nu algemeen verkrijgbaar
 

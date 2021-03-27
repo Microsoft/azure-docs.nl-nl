@@ -7,18 +7,19 @@ author: viv-liu
 ms.author: viviali
 ms.date: 10/4/2019
 ms.topic: conceptual
-ms.openlocfilehash: dd67a4f1a005abc7319723efcc3f2944b18c4f5f
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.openlocfilehash: ea4a47f1ba3eac39820e839a10330840f57afe42
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105109230"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105629067"
 ---
 # <a name="visualize-and-analyze-your-azure-iot-central-data-in-a-power-bi-dashboard"></a>Uw Azure IoT Central-gegevens visualiseren en analyseren in een Power BI dash board
 
 *Dit onderwerp is van toepassing op beheerders en ontwikkel aars van oplossingen.*
 
-[!Note] Deze oplossing maakt gebruik van [verouderde functies voor gegevens export](./howto-export-data-legacy.md). Blijf op de hoogte van bijgewerkte richt lijnen voor het maken van verbinding met Power BI met behulp van de meest recente gegevens export.
+> [!Note] 
+> Deze oplossing maakt gebruik van [verouderde functies voor gegevens export](./howto-export-data-legacy.md). Blijf op de hoogte van bijgewerkte richt lijnen voor het maken van verbinding met Power BI met behulp van de meest recente gegevens export.
 
 :::image type="content" source="media/howto-connect-powerbi/iot-continuous-data-export.png" alt-text="Power BI solution-pijp lijn":::
 
@@ -29,7 +30,7 @@ Gebruik de Power BI-oplossing voor Azure IoT Central v3 om een krachtig Power BI
 - Filteren op gegevens die worden verzonden door specifieke apparaten
 - De meest recente telemetriegegevens in een tabel weer geven
 
-Met deze oplossing wordt een pijp lijn ingesteld waarmee gegevens worden gelezen uit uw [continue data export](./howto-export-data-legacy.md) Azure Blob Storage-account. De pijp lijn gebruikt Azure Functions, Azure Data Factory en Azure SQL Database om de gegevens te verwerken en te transformeren. u kunt de gegevens in een Power BI rapport dat u als een PBIX-bestand hebt gedownload, visualiseren en analyseren. Alle resources worden gemaakt in uw Azure-abonnement, zodat u elk onderdeel kunt aanpassen aan uw behoeften.
+Met deze oplossing wordt een pijp lijn ingesteld waarmee gegevens worden gelezen uit uw [oude gegevens export](./howto-export-data-legacy.md) Azure Blob Storage-account. De pijp lijn gebruikt Azure Functions, Azure Data Factory en Azure SQL Database om de gegevens te verwerken en te transformeren. u kunt de gegevens in een Power BI rapport dat u als een PBIX-bestand hebt gedownload, visualiseren en analyseren. Alle resources worden gemaakt in uw Azure-abonnement, zodat u elk onderdeel kunt aanpassen aan uw behoeften.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -38,7 +39,7 @@ Als u de stappen in deze hand leiding wilt uitvoeren, hebt u een actief Azure-ab
 Voor het instellen van de oplossing zijn de volgende resources vereist:
 
 - Een IoT Central toepassing van versie 3. Zie [over uw toepassing](./howto-get-app-info.md)voor meer informatie over het controleren van de versie van uw toepassing. Zie [een Azure IOT Central-toepassing maken](./quick-deploy-iot-central.md)voor meer informatie over het maken van een IOT Central-toepassing.
-- Continue gegevens export geconfigureerd voor het exporteren van telemetrie, apparaten en apparaatinstellingen naar Azure Blob-opslag. Zie [IOT-gegevens exporteren naar bestemmingen in azure](howto-export-data.md)voor meer informatie.
+- Verouderde voortdurende gegevens export die is geconfigureerd voor het exporteren van telemetrie, apparaten en Apparaatprofielen naar Azure Blob-opslag. Zie de [documentatie over verouderde gegevens export](howto-export-data-legacy.md)voor meer informatie.
   - Zorg ervoor dat alleen uw IoT Central-toepassing gegevens exporteert naar de BLOB-container.
   - Uw [apparaten moeten JSON-gecodeerde berichten verzenden](../../iot-hub/iot-hub-devguide-messages-d2c.md). Apparaten moeten `contentType:application/JSON` en `contentEncoding:utf-8` of of worden opgegeven `contentEncoding:utf-16` `contentEncoding:utf-32` in de eigenschappen van het bericht systeem.
 - Power BI Desktop (meest recente versie). Zie [Power bi down loads](https://powerbi.microsoft.com/downloads/).

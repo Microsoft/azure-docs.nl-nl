@@ -11,12 +11,12 @@ author: sachinpMSFT
 ms.author: sachinp
 ms.reviewer: sstein
 ms.date: 07/28/2020
-ms.openlocfilehash: d87c5d162b96209c0ce3d3276dc518f42373590f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: aa520b7d77a283e7dda883e99475947a8ccfa862
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "92780809"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105625618"
 ---
 # <a name="resources-limits-for-elastic-pools-using-the-dtu-purchasing-model"></a>Bronnen limieten voor elastische Pools met behulp van het DTU-aankoop model
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -154,7 +154,7 @@ Voor hetzelfde aantal Dtu's kunnen resources die aan een elastische pool worden 
 Als alle DTU's van een elastische groep zijn gebruikt, ontvangt elke database in de groep een gelijke hoeveelheid resources om query's te verwerken. De service SQL Database verdeelt resources eerlijk over databases door gelijke hoeveelheden rekentijd te garanderen. Gelijke verdeling van resources in een elastische groep vindt plaats naast een bepaalde hoeveelheid resources die sowieso voor elke database wordt gegarandeerd wanneer het aantal DTU's per database is ingesteld op een andere waarde dan nul.
 
 > [!NOTE]
-> `tempdb`Zie voor limieten [tempdb-limieten](/sql/relational-databases/databases/tempdb-database?view=sql-server-2017#tempdb-database-in-sql-database).
+> `tempdb`Zie voor limieten [tempdb-limieten](/sql/relational-databases/databases/tempdb-database#tempdb-database-in-sql-database).
 
 ### <a name="database-properties-for-pooled-databases"></a>Data base-eigenschappen voor gegroepeerde Data bases
 

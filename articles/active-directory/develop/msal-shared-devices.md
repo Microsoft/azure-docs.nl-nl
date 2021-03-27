@@ -13,12 +13,12 @@ ms.date: 03/31/2020
 ms.author: brandwe
 ms.reviewer: brandwe
 ms.custom: aaddev
-ms.openlocfilehash: 9e48d8f55efa8bc4c82eaa973a6feaeb42390064
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: cf8869002fb3e0170331709af3da5b971a098740
+ms.sourcegitcommit: c94e282a08fcaa36c4e498771b6004f0bfe8fb70
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104578771"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105612395"
 ---
 # <a name="overview-of-shared-device-mode"></a>Overzicht van de modus gedeeld apparaat
 

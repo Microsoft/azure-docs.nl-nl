@@ -1,18 +1,18 @@
 ---
 title: Power BI en serverloze SQL-groep voor het analyseren van Azure Cosmos DB gegevens met een Synapse-koppeling
 description: Meer informatie over het maken van een serverloze SQL-groeps database en weer gaven via de Synapse-koppeling voor Azure Cosmos DB, het opvragen van de Azure Cosmos DB containers en het bouwen van een model met Power BI over die weer gaven.
-author: ArnoMicrosoft
+author: Rodrigossz
 ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 11/30/2020
-ms.author: acomet
+ms.author: rosouz
 ms.custom: synapse-cosmos-db
-ms.openlocfilehash: 7a9324923164d6d5cbbdc48bfa60fc444bdc4fb1
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.openlocfilehash: d84508a7629481a7138f1080c86f4a203d35894d
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104868967"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105626245"
 ---
 # <a name="use-power-bi-and-serverless-synapse-sql-pool-to-analyze-azure-cosmos-db-data-with-synapse-link"></a>Power BI en serverloze Synapse SQL-groep gebruiken om Azure Cosmos DB gegevens te analyseren met Synapse-koppeling 
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]

@@ -9,17 +9,17 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: sstein, vanto
 ms.date: 07/06/2020
-ms.openlocfilehash: 84fdca96f2ce42c608e7def98f6a3400964cfe46
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 0c45a48e6cafa722945400554f2f81916da13775
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101691923"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105627605"
 ---
 # <a name="azure-sql-connectivity-settings"></a>Azure SQL-Verbindings instellingen
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
 
-Dit artikel bevat een inleiding tot de instellingen die de verbinding met de server voor Azure SQL Database en Azure Synapse Analytics regelen. Deze instellingen zijn van toepassing op alle SQL Database-en Azure Synapse Analytics-data bases die zijn gekoppeld aan de server.
+In dit artikel worden de instellingen beschreven waarmee de verbinding met de server wordt beheerd voor Azure SQL Database en [toegewezen SQL-groep (voorheen SQL DW)](../../synapse-analytics\sql-data-warehouse\sql-data-warehouse-overview-what-is.md) in azure Synapse Analytics. Deze instellingen zijn van toepassing op alle SQL Database en toegewezen SQL-groep (voorheen SQL DW)-data bases die zijn gekoppeld aan de server.
 
 > [!IMPORTANT]
 > Dit artikel is niet van toepassing op Azure SQL Managed instance.

@@ -13,12 +13,12 @@ ms.topic: how-to
 ms.custom: mvc, seodec18
 ms.date: 03/25/2021
 ms.author: keithp
-ms.openlocfilehash: 11118c9bd745480dc88380e718a9ab348ab1a3e3
-ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
+ms.openlocfilehash: 0791f2e8d5119c2087286a24cf83b4259ee9e7af
+ms.sourcegitcommit: c94e282a08fcaa36c4e498771b6004f0bfe8fb70
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/26/2021
-ms.locfileid: "105606943"
+ms.locfileid: "105611647"
 ---
 # <a name="troubleshooting-the-azure-dedicated-hsm-service"></a>Problemen met de Azure Toegewezen HSM-service oplossen
 
@@ -33,7 +33,7 @@ Toegewezen HSM is niet vrij beschikbaar voor gebruik omdat het hardwareresources
 
 ### <a name="getting-access-to-dedicated-hsm"></a>Toegang krijgen tot Toegewezen HSM
 
-Stel eerst in welke use-cases u dat niet kunt doen door [Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/general/overview) of door [Azure beheerde HSM](https://docs.microsoft.com/en-us/azure/key-vault/managed-hsm/overview). Als u vervolgens denkt dat er alleen specifieke HSM aan uw sleutel opslag vereisten voldoet, krijgt u vervolgens een e-mail HSMrequest@microsoft.com om toegang aan te vragen. Bestudeer uw toepassings-en use-cases, de regio's die u wilt Hsm's en het volume van Hsm's dat u zoekt. Als u werkt met een vertegenwoordiger van Microsoft, bijvoorbeeld een Account Executive of Cloud Solution Architect, voegt u deze persoon als e-mailgeadresseerde toe bij elke aanvraag.
+Stel eerst in welke use-cases u dat niet kunt doen door [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/general/overview) of door [Azure beheerde HSM](https://docs.microsoft.com/azure/key-vault/managed-hsm/overview). Als u vervolgens denkt dat er alleen specifieke HSM aan uw sleutel opslag vereisten voldoet, krijgt u vervolgens een e-mail HSMrequest@microsoft.com om toegang aan te vragen. Bestudeer uw toepassings-en use-cases, de regio's die u wilt Hsm's en het volume van Hsm's dat u zoekt. Als u werkt met een vertegenwoordiger van Microsoft, bijvoorbeeld een Account Executive of Cloud Solution Architect, voegt u deze persoon als e-mailgeadresseerde toe bij elke aanvraag.
 
 ## <a name="hsm-provisioning"></a>HSM-inrichting
 

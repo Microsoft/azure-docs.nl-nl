@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 03/17/2020
 ms.author: philmea
-ms.openlocfilehash: c665e30ed9b284f7c93cf8588b710c9f22457a0a
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 9d2ffac813456398c02066c978c37bdb09501aeb
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "92151679"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105628982"
 ---
 # <a name="iot-hub-high-availability-and-disaster-recovery"></a>Hoge beschikbaarheid en herstel na noodgevallen van IoT Hub
 
@@ -64,7 +64,7 @@ Zodra de failoverbewerking voor de IoT-hub is voltooid, worden alle bewerkingen 
 >
 > - Als u Azure Functions of Azure Stream Analytics gebruikt om verbinding te maken met het ingebouwde eind punt van gebeurtenissen, moet u mogelijk **opnieuw opstarten**. Dit komt doordat tijdens de voorafgaande failover geen geldige offset meer geldig zijn.
 >
-> - Bij het door sturen naar de opslag wordt u aangeraden de blobs of bestanden weer te geven en vervolgens te herhalen, om ervoor te zorgen dat alle blobs of bestanden worden gelezen zonder dat er veronderstellingen worden gemaakt van de partitie. Het partitie bereik kan mogelijk worden gewijzigd tijdens een door micro soft geïnitieerde failover of hand matige failover. U kunt de [List blobs API](/rest/api/storageservices/list-blobs) gebruiken om de lijst met blobs of de [lijst ADLS Gen2-API](/rest/api/storageservices/datalakestoragegen2/path/list) voor de lijst met bestanden op te sommen. Zie [Azure Storage als een eind punt van een route ring](iot-hub-devguide-messages-d2c.md#azure-storage-as-a-routing-endpoint)voor meer informatie.
+> - Bij het door sturen naar de opslag wordt u aangeraden de blobs of bestanden weer te geven en vervolgens te herhalen, om ervoor te zorgen dat alle blobs of bestanden worden gelezen zonder dat er veronderstellingen worden gemaakt van de partitie. Het partitie bereik kan mogelijk worden gewijzigd tijdens een door micro soft geïnitieerde failover of hand matige failover. U kunt de [List blobs API](/rest/api/storageservices/list-blobs) gebruiken om de lijst met blobs of de [lijst ADLS Gen2-API](/rest/api/storageservices/datalakestoragegen2/filesystem/listpaths) voor de lijst met bestanden op te sommen. Zie [Azure Storage als een eind punt van een route ring](iot-hub-devguide-messages-d2c.md#azure-storage-as-a-routing-endpoint)voor meer informatie.
 
 ## <a name="microsoft-initiated-failover"></a>Door micro soft geïnitieerde failover
 
@@ -134,9 +134,9 @@ Hier volgt een samen vatting van de HA/DR-opties die in dit artikel worden gepre
 
 | HA/DR-optie | RTO | RPO | Is hand matige interventie vereist? | Implementatie complexiteit | Extra kosten impact|
 | --- | --- | --- | --- | --- | --- |
-| Door micro soft geïnitieerde failover |2-26 uur|Bovenstaande RPO-tabel verwijzen|Nee|Geen|Geen|
-| Handmatige failover |10 min-2 uur|Bovenstaande RPO-tabel verwijzen|Ja|Zeer laag. U hoeft alleen deze bewerking vanuit de portal te activeren.|Geen|
-| Kruis regio HA |< 1 minuut|Is afhankelijk van de replicatie frequentie van uw aangepaste HA-oplossing|Nee|Hoog|> 1x de kosten van 1 IoT hub|
+| Door micro soft geïnitieerde failover |2-26 uur|Bovenstaande RPO-tabel verwijzen|No|Geen|Geen|
+| Handmatige failover |10 min-2 uur|Bovenstaande RPO-tabel verwijzen|Yes|Zeer laag. U hoeft alleen deze bewerking vanuit de portal te activeren.|Geen|
+| Kruis regio HA |< 1 minuut|Is afhankelijk van de replicatie frequentie van uw aangepaste HA-oplossing|No|Hoog|> 1x de kosten van 1 IoT hub|
 
 ## <a name="next-steps"></a>Volgende stappen
 

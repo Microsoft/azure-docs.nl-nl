@@ -12,12 +12,12 @@ metadata:
   author: mumian
   ms.author: jgao
   ms.date: 03/03/2021
-  ms.openlocfilehash: f2410c25aa6c23cc6fe1546e36f379bfecab60df
-  ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
+  ms.openlocfilehash: 01f89fa12654a949c701d728e23f7ae79e0c69e7
+  ms.sourcegitcommit: c94e282a08fcaa36c4e498771b6004f0bfe8fb70
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 03/08/2021
-  ms.locfileid: "102452353"
+  ms.lasthandoff: 03/26/2021
+  ms.locfileid: "105611953"
 landingContent:
 - title: Over ARM-sjablonen
   linkLists:
@@ -47,12 +47,12 @@ landingContent:
   linkLists:
   - linkListType: quickstart
     links:
-    - text: JSON-sjablonen maken-Portal
-      url: quickstart-create-templates-use-the-portal.md
     - text: JSON-sjablonen maken-VS code
       url: quickstart-create-templates-use-visual-studio-code.md
     - text: Bicep-sjablonen maken-VS code
       url: quickstart-create-bicep-use-visual-studio-code.md
+    - text: JSON-sjablonen maken-Portal
+      url: quickstart-create-templates-use-the-portal.md
     - text: SjabSjabloonspecificaties maken en implementeren maken en implementeren
       url: quickstart-create-template-specs.md
   - linkListType: tutorial

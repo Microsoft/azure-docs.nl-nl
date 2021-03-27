@@ -1,16 +1,14 @@
 ---
 title: Prestatie bewaking met Windows Azure Diagnostics
 description: Gebruik Windows Azure Diagnostics om prestatie meter items voor uw Azure Service Fabric-clusters te verzamelen.
-author: srrengar
 ms.topic: conceptual
 ms.date: 11/21/2018
-ms.author: srrengar
-ms.openlocfilehash: c2114f5392da788bb440589e69e704a148731e02
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 6803494d29bf97336e30128f9f5ad20ec73ce202
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "86258611"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105627401"
 ---
 # <a name="performance-monitoring-with-the-windows-azure-diagnostics-extension"></a>Prestatie bewaking met de uitbrei ding voor Windows-Azure Diagnostics
 

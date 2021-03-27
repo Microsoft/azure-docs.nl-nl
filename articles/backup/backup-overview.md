@@ -4,12 +4,12 @@ description: Geeft een overzicht van de Azure Backup-service en hoe deze bijdraa
 ms.topic: overview
 ms.date: 04/24/2019
 ms.custom: mvc
-ms.openlocfilehash: 2879d104d534733651ba76ab5521541adad0a51c
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 07fc6ee0afb29f9d6c701c7eb2c65be988971eaf
+ms.sourcegitcommit: c94e282a08fcaa36c4e498771b6004f0bfe8fb70
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101725353"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105612633"
 ---
 # <a name="what-is-the-azure-backup-service"></a>Wat is de Azure Backup-service?
 
@@ -21,7 +21,7 @@ De Azure Backup-service biedt eenvoudige, beveiligde en kosteneffectieve oplossi
 
 - **On-premises**: Maak back-ups van bestanden, mappen, systeemstatus met behulp van de [Microsoft Azure Recovery Services-agent (MARS)](backup-support-matrix-mars-agent.md). Of gebruik de DPM- of Azure Backup Server-agent (MABS) voor bescherming van on-premises virtuele machines ([Hyper-V](back-up-hyper-v-virtual-machines-mabs.md) en [VMware](backup-azure-backup-server-vmware.md)) en andere [on-premises werkbelastingen](backup-mabs-protection-matrix.md)
 - **Virtuele Azure-machines** - [Maak back-ups van volledige virtuele machines op basis van Windows/Linux](backup-azure-vms-introduction.md) (met back-upextensies) of van bestanden, mappen en systeemstatus met behulp van de [MARS-agent](backup-azure-manage-mars.md).
-- **Azure Managed disks**  -  [Back-up van Azure Managed disks (in preview-versie)](backup-managed-disks.md)
+- **Azure Managed disks**  -  [Back-up maken van Azure Managed disks](backup-managed-disks.md)
 - **Azure Files-shares** - [Maak back-ups van Azure-bestandsshares in een opslagaccount](backup-afs.md)
 - **SQL Server op virtuele Azure-machines** -  [Maak back-ups van SQL Server-databases die worden uitgevoerd op virtuele Azure-machines](backup-azure-sql-database.md)
 - **SAP HANA-databases op virtuele Azure-machines** - [Maak back-ups van SAP HANA-databases die worden uitgevoerd op virtuele Azure-machines](backup-azure-sap-hana-database.md)

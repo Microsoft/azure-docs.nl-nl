@@ -5,15 +5,15 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
-ms.date: 12/01/2020
+ms.date: 3/25/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 29c49ceb3647964030f53c94276e831dc0f648c7
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 7b824bc13bc4f553d22358b69237173effb51594
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100576619"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105627129"
 ---
 # <a name="azure-monitor-for-windows-virtual-desktop-preview-glossary"></a>Azure Monitor voor de woorden lijst voor het virtuele bureau blad (preview) van Windows
 
@@ -24,7 +24,7 @@ In dit artikel vindt u een korte beschrijving van belang rijke termen en concept
 
 ## <a name="alerts"></a>Waarschuwingen
 
-Actieve Azure Monitor waarschuwingen die u in het abonnement hebt geconfigureerd en die zijn geclassificeerd als [Ernst 1](#severity-1-alerts) worden weer gegeven op de pagina overzicht. Zie [reageren op gebeurtenissen met Azure monitor waarschuwingen](../azure-monitor/alerts/tutorial-response.md)voor meer informatie over het instellen van waarschuwingen.
+Alle actieve Azure Monitor waarschuwingen die u in het abonnement hebt geconfigureerd en die zijn geclassificeerd als [Ernst 0](#severity-0-alerts) , worden weer gegeven op de pagina overzicht. Zie [reageren op gebeurtenissen met Azure monitor waarschuwingen](../azure-monitor/alerts/tutorial-response.md)voor meer informatie over het instellen van waarschuwingen.
 
 ## <a name="available-sessions"></a>Beschikbare sessies
 
@@ -40,7 +40,7 @@ Het totale aantal gebruikers dat in de afgelopen 24 uur een sessie heeft gestart
 
 ## <a name="daily-alerts"></a>Dagelijkse waarschuwingen
 
-Het totaal aantal [waarschuwingen met Ernst 1](#severity-1-alerts) dat in de afgelopen 24 uur is geactiveerd.
+Het totale aantal waarschuwingen dat elke dag wordt geactiveerd.
 
 ## <a name="daily-connections-and-reconnections"></a>Dagelijkse verbindingen en vernieuwde verbindingen
 
@@ -78,7 +78,7 @@ Elk probleem met diagnostische gegevens of een fout bevat een bericht waarin wor
 
 ## <a name="input-delay"></a>Invoervertraging
 
-"Invoer vertraging" in Azure Monitor voor virtueel bureau blad van Windows betekent het prestatie meter item invoer vertraging per proces voor elke sessie. Op de pagina host prestaties op <aka.ms/azmonwvdi> wordt dit prestatie meter item zo geconfigureerd dat er één keer per 30 seconden een rapport naar de service wordt verzonden. Deze intervallen van 30 seconden worden ' voor beelden ' genoemd en het slechtste geval in dat venster worden gerapporteerd. De mediaan-en P95-waarden geven het mediaan-en 95e percentiel over alle voor beelden.
+"Invoer vertraging" in Azure Monitor voor virtueel bureau blad van Windows betekent het prestatie meter item invoer vertraging per proces voor elke sessie. Op de pagina host prestaties op [aka.MS/azmonwvdi](https://portal.azure.com/#blade/Microsoft_Azure_WVD/WvdManagerMenuBlade/workbooks)wordt dit prestatie meter item zo geconfigureerd dat er één keer per 30 seconden een rapport naar de service wordt verzonden. Deze intervallen van 30 seconden worden ' voor beelden ' genoemd en het slechtste geval in dat venster worden gerapporteerd. De mediaan-en P95-waarden geven het mediaan-en 95e percentiel over alle voor beelden.
 
 Onder **invoer vertraging per host** kunt u een rij Session Host selecteren om alle andere visuele elementen op de pagina te filteren op die host. U kunt ook een proces naam selecteren om het mediaan van de invoer vertraging voor een tijd diagram te filteren.
 
@@ -114,16 +114,11 @@ De volgende tabel bevat de aanbevolen prestatie meter items en tijds intervallen
 |Fysieke \* schijf () \\ gemiddeld aantal seconden per Lees bewerking|30 seconden|
 |Fysieke \* schijf () \\ gemiddeld aantal seconden per overdracht|30 seconden|
 |Fysieke \* schijf () \\ gemiddeld aantal seconden per schrijf bewerking|30 seconden|
-|Proces ( \* ) \\ % processor tijd|20 seconden|
-|Proces ( \* ) \\ % gebruikers tijd|30 seconden|
-|Proces ( \* ) \\ aantal threads|30 seconden|
-|Process ( \* ) \\ i/o-schrijf bewerkingen per seconde|30 seconden|
-|Process ( \* ) \\ i/o-Lees bewerkingen per seconde|30 seconden|
 |Processor informatie (_Total) \\ % processor tijd|30 seconden|
 |Terminal Services ( \* ) \\ actieve sessies|60 seconden|
 |Inactieve sessies van Terminal Services ( \* ) \\|60 seconden|
 |Aantal sessies van Terminal Services ( \* ) \\|60 seconden|
-|\*Gebruikers invoer vertraging per proces ( \* ) \\ maximale invoer dela|30 seconden|
+|\*Gebruikers invoer vertraging per proces ( \* ) \\ maximale invoer vertraging|30 seconden|
 |\*Gebruikers invoer vertraging per sessie ( \* ) \\ maximale invoer vertraging|30 seconden|
 |RemoteFX-netwerk ( \* ) \\ huidige TCP RTT|30 seconden|
 |RemoteFX-netwerk ( \* ) \\ huidige UDP-band breedte|30 seconden|
@@ -149,13 +144,13 @@ U kunt ook items selecteren om aanvullende informatie weer te geven. U kunt zien
 
 ## <a name="round-trip-time-rtt"></a>Retour tijd (RTT)
 
-Round-trip tijd (RTT) is een schatting van de retour tijd van de verbinding tussen de locatie van de eind gebruiker en de Azure-regio van de virtuele machine. Als u wilt zien welke locaties de beste latentie hebben, zoekt u de gewenste locatie op in het [Windows-hulp programma Virtual Desktop Experience Estimator](https://azure.microsoft.com/services/virtual-desktop/assessment/).
+Round-trip tijd (RTT) is een schatting van de retour tijd van de verbinding tussen de locatie van de eind gebruiker en de Azure-regio van de sessiehost. Als u wilt zien welke locaties de beste latentie hebben, zoekt u de gewenste locatie op in het [Windows-hulp programma Virtual Desktop Experience Estimator](https://azure.microsoft.com/services/virtual-desktop/assessment/).
 
 ## <a name="session-history"></a>Sessiegeschiedenis
 
 In het **sessie** -item wordt de status van alle sessies weer gegeven, verbonden en verbroken. Bij **niet-actieve sessies** worden alleen de verbroken sessies weer gegeven.
 
-## <a name="severity-1-alerts"></a>Waarschuwingen Ernst 1
+## <a name="severity-0-alerts"></a>Waarschuwingen Ernst 0
 
 De meest dringende items die u direct moet uitvoeren. Als u deze problemen niet verhelpt, kunnen ze ervoor zorgen dat de implementatie van Windows virtueel bureau blad niet meer werkt.
 
@@ -171,11 +166,11 @@ Op de pagina gebruikers rapport kunt u de verbindings geschiedenis en diagnostis
 
 Dit is het aantal gebruikers in elke kern van de virtuele machine. Bij het bijhouden van het maximum aantal gebruikers per kern geheugen kan worden bepaald of de omgeving consistent wordt uitgevoerd op een hoog, laag of schommelend aantal gebruikers per kern. Als u weet hoeveel gebruikers actief zijn, kunt u op efficiënte wijze resources en schalen maken voor de omgeving.
 
-## <a name="windows-events"></a>Windows-gebeurtenissen
+## <a name="windows-event-logs"></a>Windows-gebeurtenislogboeken
 
 Windows-gebeurtenis logboeken zijn gegevens bronnen die worden verzameld door Log Analytics agents op virtuele Windows-machines. U kunt gebeurtenissen verzamelen uit standaard logboeken zoals systeem en toepassing, evenals aangepaste logboeken die zijn gemaakt door toepassingen die u wilt bewaken.
 
-De volgende tabel geeft een lijst van de vereiste Windows-gebeurtenissen voor Azure Monitor voor virtueel bureau blad van Windows:
+De volgende tabel bevat de vereiste Windows-gebeurtenis logboeken voor Azure Monitor voor virtueel bureau blad van Windows:
 
 |Gebeurtenis naam|Gebeurtenistype|
 |---|---|
@@ -186,7 +181,7 @@ De volgende tabel geeft een lijst van de vereiste Windows-gebeurtenissen voor Az
 | Micro soft-FSLogix-apps/operationeel|Fout, waarschuwing en informatie|
 |Micro soft-FSLogix-Apps/beheerder|Fout, waarschuwing en informatie|
 
-Zie [Eigenschappen van Windows-gebeurtenis records](../azure-monitor/agents/data-sources-windows-events.md)voor meer informatie over Windows-gebeurtenissen.
+Zie [Eigenschappen van Windows-gebeurtenis records](../azure-monitor/agents/data-sources-windows-events.md#configuring-windows-event-logs)voor meer informatie over Windows-gebeurtenis Logboeken.
 
 ## <a name="next-steps"></a>Volgende stappen
 
@@ -203,4 +198,4 @@ Als u hulp nodig hebt of vragen hebt, raadpleeg dan onze community-bronnen:
    
 - Zie [probleemoplossings overzicht, feedback en ondersteuning voor virtueel bureau blad van Windows](troubleshoot-set-up-overview.md#report-issues)voor meer informatie over het geven van feedback.
 
-- U kunt ook feedback geven voor Windows virtueel bureau blad op de [Windows Virtual Desktop feedback hub](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app) of [ons UserVoice-forum](https://windowsvirtualdesktop.uservoice.com/forums/921118-general).
+- U kunt ook feedback geven voor Windows virtueel bureau blad op de [Windows Virtual Desktop feedback hub](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app)

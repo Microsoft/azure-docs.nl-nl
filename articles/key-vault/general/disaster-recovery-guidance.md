@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: tutorial
 ms.date: 08/28/2020
 ms.author: sudbalas
-ms.openlocfilehash: d66fe736936963e601aad7cba7bdaa94f0c3ec3f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 27184e267bb0472dad6fc9176dfdeee68d5eae58
+ms.sourcegitcommit: c94e282a08fcaa36c4e498771b6004f0bfe8fb70
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96518444"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105611817"
 ---
 # <a name="azure-key-vault-availability-and-redundancy"></a>Beschikbaarheid en redundantie in Azure Key Vault
 
@@ -23,7 +23,7 @@ Azure Key Vault bevat meerdere lagen van redundantie om ervoor te zorgen dat uw 
 > [!NOTE]
 > Deze informatie is van toepassing op kluizen. Voor beheerde HSM-groepen wordt een ander model voor hoge beschikbaarheid en herstel na noodgevallen gebruikt. Raadpleeg de [documentatie over herstel na noodgevallen voor beheerde HSM's](../managed-hsm/disaster-recovery-guide.md) voor meer informatie.
 
-De inhoud van uw sleutelkluis wordt gerepliceerd binnen de regio en naar een secundaire regio op minstens 150 mijl afstand, maar binnen dezelfde geografische locatie voor het behoud van de hoge duurzaamheid van uw sleutels en geheimen. Raadpleeg [Azure-gekoppelde regio's](../../best-practices-availability-paired-regions.md) voor meer informatie over specifieke regioparen. De uitzondering op het model voor gekoppelde regio's is Brazilië - zuid, waarmee alleen de optie voor het behoud van gegevens in Brazilië - zuid wordt toegestaan. Brazilië - zuid maakt gebruik van ZRS (zone-redundante opslag) om uw gegevens drie keer te repliceren binnen één locatie/regio.   
+De inhoud van uw sleutelkluis wordt gerepliceerd binnen de regio en naar een secundaire regio op minstens 150 mijl afstand, maar binnen dezelfde geografische locatie voor het behoud van de hoge duurzaamheid van uw sleutels en geheimen. Raadpleeg [Azure-gekoppelde regio's](../../best-practices-availability-paired-regions.md) voor meer informatie over specifieke regioparen. De uitzondering op het model voor gekoppelde regio's is Brazilië - zuid, waarmee alleen de optie voor het behoud van gegevens in Brazilië - zuid wordt toegestaan. Brazilië - zuid maakt gebruik van ZRS (zone-redundante opslag) om uw gegevens drie keer te repliceren binnen één locatie/regio. Voor Azure Premium worden slechts 2 van de drie regio's gebruikt voor het repliceren van gegevens van de HSM.  
 
 Als afzonderlijke onderdelen van de sleutelkluis-service niet meer werken, nemen alternatieve onderdelen in de regio het over om uw aanvraag te verwerken om ervoor te zorgen dat de functionaliteit niet wordt verminderd. U hoeft geen actie te ondernemen om dit proces te starten. Dit gebeurt automatisch en is transparant voor u.
 

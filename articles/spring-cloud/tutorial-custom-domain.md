@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 03/19/2020
 ms.author: brendm
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: a0fafad208d97e2a4d24036e226b4044764bccb4
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: 7aa1982fc880ac5733cc4453808c18956969572f
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105047079"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105627010"
 ---
 # <a name="tutorial-map-an-existing-custom-domain-to-azure-spring-cloud"></a>Zelf studie: een bestaand aangepast domein toewijzen aan Azure lente-Cloud
 
@@ -27,6 +27,14 @@ Certificaten versleutelen webverkeer. Deze TLS/SSL-certificaten kunnen worden op
 * Een domeinnaam met toegang hebt tot het DNS-register voor uw domeinprovider zoals GoDaddy.
 * Een persoonlijk certificaat (dat wil zeggen uw zelfondertekende certificaat) van een externe provider. Het certificaat moet overeenkomen met het domein.
 * Een geïmplementeerd exemplaar van [Azure Key Vault](../key-vault/general/overview.md)
+
+## <a name="keyvault-private-link-considerations"></a>Aandachtspunten voor de persoonlijke koppeling van de sleutel kluis
+
+De Azure veer Cloud beheer Ip's maken geen deel uit van de vertrouwde micro soft-services van Azure. Daarom moet u de volgende Ip's toevoegen aan Azure Key Vault firewall om ervoor te zorgen dat Azure lente-Cloud certificaten laadt van een Key Vault die zijn beveiligd met een privé-eindpunt verbinding:
+
+```
+20.53.123.160 52.143.241.210 40.65.234.114 52.142.20.14 20.54.40.121 40.80.210.49 52.253.84.152 20.49.137.168 40.74.8.134 51.143.48.243
+```
 
 ## <a name="import-certificate"></a>Certificaat importeren
 ### <a name="prepare-your-certificate-file-in-pfx-optional"></a>U certificaatbestand voorbereiden in PFX (optioneel)

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 01/20/2021
 ms.author: v-tcassi
 monikerRange: =iotedge-2018-06
-ms.openlocfilehash: 9eeb30d8d3ab0c884472a001149021c4d5cc362c
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.openlocfilehash: 8b549d868aed443e19d639ba6f6df7db20e014b1
+ms.sourcegitcommit: c94e282a08fcaa36c4e498771b6004f0bfe8fb70
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/26/2021
-ms.locfileid: "105558700"
+ms.locfileid: "105612111"
 ---
 # <a name="install-and-provision-azure-iot-edge-for-linux-on-a-windows-device-preview"></a>Azure IoT Edge voor Linux installeren en inrichten op een Windows-apparaat (preview)
 
@@ -117,7 +117,16 @@ Als u wilt implementeren op een extern doel apparaat in plaats van uw lokale app
 
    ![Selecteer uw apparaat om te controleren of dit wordt ondersteund](./media/how-to-install-iot-edge-on-windows/evaluate-supported-device.png)
 
-1. Accepteer de standaard instellingen op het tabblad **2,2-instellingen** .
+1. Controleer op het tabblad **2,2-instellingen** de configuratie-instellingen van uw implementatie. Wanneer u tevreden bent met de instellingen, selecteert u **volgende**.
+
+   ![Controleer de configuratie-instellingen van uw implementatie](./media/how-to-install-iot-edge-on-windows/default-deployment-configuration-settings.png)
+
+   >[!NOTE]
+   >Als u een virtuele Windows-machine gebruikt, is het raadzaam een standaard switch te gebruiken in plaats van een externe switch om ervoor te zorgen dat de virtuele Linux-machine die in de implementatie wordt gemaakt, een IP-adres kan verkrijgen.
+   >
+   >Als u een standaard switch gebruikt, wordt de virtuele Linux-machine een intern IP-adres toegewezen. Dit interne IP-adres kan niet worden bereikt buiten de virtuele Windows-machine, maar kan worden verbonden met lokaal wanneer u bent aangemeld bij de virtuele Windows-machine.
+   >
+   >Als u Windows Server gebruikt, moet u er rekening mee houden dat Azure IoT Edge voor Linux in Windows niet automatisch de standaard switch ondersteunt. Zorg ervoor dat de virtuele Linux-machine een IP-adres via de externe switch kan verkrijgen voor een lokale virtuele machine met Windows Server. Voor een virtuele Windows Server-machine in azure stelt u een interne switch in voordat u IoT Edge voor Linux implementeert in Windows.
 
 1. Op het tabblad **2,3-implementatie** kunt u de voortgang van de implementatie bekijken. Het volledige proces omvat het downloaden van de Azure IoT Edge voor Linux op Windows-pakket, het installeren van het pakket, het configureren van het hostapparaat en het instellen van de virtuele Linux-machine. Het kan enkele minuten duren voordat dit proces is voltooid. Hieronder vindt u een geslaagde implementatie.
 
@@ -168,7 +177,7 @@ Installeer IoT Edge voor Linux in Windows op uw doel apparaat als u dat nog niet
    ```
 
    > [!NOTE]
-   > U kunt deze opdracht zonder para meters uitvoeren of implementatie optioneel aanpassen met para meters. Raadpleeg [de naslag informatie over het IOT Edge voor Linux op Windows Power shell-scripts](reference-iot-edge-for-linux-on-windows-scripts.md#deploy-eflow) om de betekenis ervan te bekijken.
+   > U kunt deze opdracht zonder para meters uitvoeren of implementatie optioneel aanpassen met para meters. Raadpleeg [de naslag informatie over het IOT Edge voor Linux op Windows Power shell-script voor een overzicht van de](reference-iot-edge-for-linux-on-windows-scripts.md#deploy-eflow) betekenissen en standaard waarden voor para meters.
 
 1. Voer ' Y ' in om de licentie voorwaarden te accepteren.
 

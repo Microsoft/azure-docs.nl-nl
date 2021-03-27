@@ -4,7 +4,7 @@
   items:
     - name: Wat is Kostenbeheer en facturering?
       href: cost-management-billing-overview.md
-- name: Quickstarts
+- name: Snelstartgidsen
   expanded: true
   items:
     - name: Beginnen met analyseren van kosten
@@ -206,6 +206,8 @@
               href: manage/transfer-subscriptions-subscribers-csp.md
             - name: Abonnement annuleren
               href: manage/cancel-azure-subscription.md
+            - name: Abonnements beleid beheren
+              href: manage/manage-azure-subscription-policy.md
         - name: Programmatisch abonnementen maken
           items:
             - name: Programmatisch abonnementen maken

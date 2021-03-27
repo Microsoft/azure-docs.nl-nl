@@ -6,12 +6,12 @@ ms.author: sunila
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
-ms.openlocfilehash: 215b7e908b21b1843b36a1e55972038c49ee101a
-ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
+ms.openlocfilehash: 1d1751ed56f63105ce7775ceaed9ea2dcca1f8bf
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105605311"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105628132"
 ---
 # <a name="azure-database-for-postgresql---single-server"></a>Azure Database for PostgreSQL - één server
 In dit artikel vindt u overwegingen en richt lijnen voor het werken met Azure Database for PostgreSQL-één server.
@@ -36,7 +36,7 @@ Binnen een Azure Database for PostgreSQL-server kunt u een of meer data bases ma
 ## <a name="how-do-i-connect-and-authenticate-to-an-azure-database-for-postgresql-server"></a>Hoe kan ik verbinding maken en verifiëren met een Azure Database for PostgreSQL-server?
 De volgende elementen zorgen voor veilige toegang tot uw Data Base:
 
-|||
+|Beveiligings concept|Description|
 |:--|:--|
 | **Verificatie en autorisatie** | Azure Database for PostgreSQL-Server ondersteunt native PostgreSQL-verificatie. U kunt verbinding maken met en verifiëren met de server met de beheerders aanmelding van de server. |
 | **Protocol** | De service ondersteunt een op berichten gebaseerd protocol dat door PostgreSQL wordt gebruikt. |

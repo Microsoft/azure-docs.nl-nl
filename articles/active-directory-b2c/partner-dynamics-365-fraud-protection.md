@@ -11,16 +11,16 @@ ms.topic: how-to
 ms.date: 02/10/2021
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 8b725b7fcde8ad24934d74d3ce849260312d2f5f
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: 24fe28eafc1d1da90b6a7b7f9d41b7e645e62855
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105043611"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105625769"
 ---
 # <a name="tutorial-configure-microsoft-dynamics-365-fraud-protection-with-azure-active-directory-b2c"></a>Zelf studie: micro soft Dynamics 365 fraude beveiliging configureren met Azure Active Directory B2C
 
-In deze voorbeeld zelfstudie bieden we richt lijnen voor het integreren van [micro soft Dynamics 365 fraude Protection](/dynamics365/fraud-protection/overview) (DFP) met de Azure Active Directory (AD) B2C.
+In deze voorbeeld zelfstudie bieden we richt lijnen voor het integreren van [micro soft Dynamics 365 fraude Protection](https://docs.microsoft.com/dynamics365/fraud-protection/overview) (DFP) met de Azure Active Directory (AD) B2C.
 
 Micro soft DFP biedt clients de mogelijkheid om te beoordelen of het risico van pogingen om nieuwe accounts te maken en om zich aan te melden bij het ecosysteem van de client frauduleus is. De evaluatie van micro soft DFP kan door de klant worden gebruikt om verdachte pogingen om nieuwe valse accounts te maken of om bestaande accounts te misbruiken. Account beveiliging omvat kunst matige intelligentie voor het bewaken van apparaten, Api's voor realtime risico beoordeling, regel-en lijst ervaring om de risico strategie te optimaliseren zoals de bedrijfs behoeften van de client, en een score card voor het controleren van de effectiviteit en tendensen van fraude beveiliging in het ecosysteem van de client.
 
@@ -103,7 +103,7 @@ Configureer de toepassings instellingen in de [app service in azure](../app-serv
 |FraudProtectionSettings: InstanceId | Micro soft DFP-configuratie |     |
 |FraudProtectionSettings:DeviceFingerprintingCustomerId | Uw klant-ID voor micro soft-apparaten met vinger afdruk |     |
 | FraudProtectionSettings:ApiBaseUrl |  Uw basis-URL van micro soft DFP Portal   | -Int verwijderen om de productie-API aan te roepen|
-|  TokenProviderConfig: resource  |     | -Int verwijderen om de productie-API aan te roepen|
+|  TokenProviderConfig: resource  | Uw basis-URL- https://api.dfp.dynamics-int.com     | -Int verwijderen om de productie-API aan te roepen|
 |   TokenProviderConfig: ClientId       |De Azure AD-client-ID van uw zakelijke fraude beveiliging      |       |
 | TokenProviderConfig: instantie | https://login.microsoftonline.com/<directory_ID> | Uw zakelijke Azure AD-Tenant instantie voor fraude beveiliging |
 | TokenProviderConfig: CertificateThumbprint * | De vinger afdruk van het certificaat dat moet worden gebruikt voor verificatie bij uw zakelijke Azure AD-client-app |

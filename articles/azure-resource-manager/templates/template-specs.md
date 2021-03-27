@@ -2,15 +2,15 @@
 title: SjabSjabloonspecificaties maken en implementeren maken en implementeren
 description: Hierin wordt beschreven hoe u sjabloon specificaties maakt en deze deelt met andere gebruikers in uw organisatie.
 ms.topic: conceptual
-ms.date: 03/02/2021
+ms.date: 03/26/2021
 ms.author: tomfitz
 author: tfitzmac
-ms.openlocfilehash: 76573e4415dffb2212dd025ed486d834446d3851
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 2f4aec6d9fa07edf36dea68a23ba12eb5f72d308
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102043895"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105626081"
 ---
 # <a name="azure-resource-manager-template-specs-preview"></a>Azure Resource Manager sjabloon specificaties (preview-versie)
 
@@ -25,9 +25,16 @@ Als u de sjabloon specificatie wilt implementeren, gebruikt u standaard Azure-hu
 
 ## <a name="why-use-template-specs"></a>Waarom sjabloon specificaties gebruiken?
 
-Als u uw sjablonen momenteel in een GitHub-opslag plaats of-opslag account hebt, kunt u een aantal uitdagingen uitvoeren wanneer u de sjablonen probeert te delen en gebruiken. Een gebruiker kan deze alleen implementeren als de sjabloon lokaal of de URL voor de sjabloon openbaar toegankelijk is. Om deze beperking te omzeilen, kunt u kopieën van de sjabloon delen met gebruikers die deze moeten implementeren, of toegang tot de opslag plaats of het opslag account openen. Wanneer gebruikers een eigen lokale kopie van een sjabloon hebben, kunnen deze kopieën uiteindelijk afwijken van de oorspronkelijke sjabloon. Wanneer u een opslag plaats-of opslag account openbaar maakt, kunt u onbedoelde gebruikers toegang geven tot de sjabloon.
+Sjabloon specificaties bieden de volgende voor delen:
 
-Het voor deel van het gebruik van sjabloon specificaties is dat u canonieke sjablonen kunt maken en delen met teams in uw organisatie. De sjabloon specificaties zijn veilig omdat ze beschikbaar zijn voor Azure Resource Manager voor implementatie, maar niet toegankelijk zijn voor gebruikers zonder Azure RBAC-machtiging. Gebruikers hebben alleen lees toegang tot de sjabloon specificatie nodig om de sjabloon te implementeren, zodat u de sjabloon kunt delen zonder dat anderen deze kunnen wijzigen.
+* U gebruikt standaard ARM-sjablonen voor uw sjabloon specificatie.
+* U beheert de toegang via Azure RBAC, in plaats van SAS-tokens.
+* Gebruikers kunnen de sjabloon specificatie implementeren zonder schrijf toegang tot de sjabloon.
+* U kunt de sjabloon specificatie integreren in een bestaand implementatie proces, zoals een Power shell-script of DevOps-pijp lijn.
+
+Met sjabloon specificaties kunt u canonieke sjablonen maken en deze delen met teams in uw organisatie. De sjabloon specificaties zijn veilig omdat ze beschikbaar zijn voor Azure Resource Manager voor implementatie, maar niet toegankelijk zijn voor gebruikers zonder de juiste machtiging. Gebruikers hebben alleen lees toegang tot de sjabloon specificatie nodig om de sjabloon te implementeren, zodat u de sjabloon kunt delen zonder dat anderen deze kunnen wijzigen.
+
+Als u uw sjablonen momenteel in een GitHub-opslag plaats of-opslag account hebt, kunt u een aantal uitdagingen uitvoeren wanneer u de sjablonen probeert te delen en gebruiken. Als u de sjabloon wilt implementeren, moet u de sjabloon openbaar toegankelijk maken of de toegang beheren met SAS-tokens. Om deze beperking te omzeilen, kunnen gebruikers lokale kopieën maken, die uiteindelijk afwijken van de oorspronkelijke sjabloon. Sjabloon specificaties vereenvoudigen het delen van sjablonen.
 
 De sjablonen die u in een sjabloon specificatie opneemt, moeten worden geverifieerd door beheerders in uw organisatie om de vereisten en richt lijnen van de organisatie te volgen.
 

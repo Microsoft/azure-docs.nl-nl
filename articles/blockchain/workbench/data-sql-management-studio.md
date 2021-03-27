@@ -5,12 +5,12 @@ ms.date: 11/20/2019
 ms.topic: how-to
 ms.service: azure-blockchain
 ms.reviewer: mmercuri
-ms.openlocfilehash: 16e7f9a6c36ea42e1d0a4144e680baebee5a6c21
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: d34affa93af65acf5fd7d6558e2d8077a2efc360
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96009463"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105625157"
 ---
 # <a name="using-azure-blockchain-workbench-data-with-sql-server-management-studio"></a>Gegevens van Azure Blockchain Workbench gebruiken met SQL Server Management Studio
 
@@ -18,7 +18,7 @@ Microsoft SQL Server Management Studio biedt de mogelijkheid om snel query's te 
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Down load [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017).
+* Down load [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms).
 
 ## <a name="connecting-sql-server-management-studio-to-data-in-azure-blockchain-workbench"></a>SQL Server Management Studio verbinden met gegevens in Azure Blockchain Workbench
 

@@ -6,12 +6,12 @@ ms.author: vibansa
 ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 04/16/2020
-ms.openlocfilehash: c2ffa85ed6cb007dd766d4517a86783d21d4913e
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.openlocfilehash: 685d7f0a0aaab2f38967e0eb6c32c3fb4067dbe3
+ms.sourcegitcommit: c94e282a08fcaa36c4e498771b6004f0bfe8fb70
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105110505"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105612820"
 ---
 # <a name="set-up-an-appliance-for-servers-in-vmware-environment"></a>Een apparaat instellen voor servers in VMware-omgeving
 
@@ -67,7 +67,6 @@ Controleer of het OVA-bestand veilig is voordat u het implementeert:
         --- | --- | ---
         VMware (11,9 GB) | [Nieuwste versie](https://go.microsoft.com/fwlink/?linkid=2140333) | e9c9a1fe4f3ebae81008328e8f3a7933d78ff835ecd871d1b17f367621ce3c74
 
-
 ### <a name="3-create-the-appliance-server"></a>3. de toestel server maken
 
 Het gedownloade bestand importeren en een server maken in de VMware-omgeving
@@ -81,11 +80,9 @@ Het gedownloade bestand importeren en een server maken in de VMware-omgeving
 8. Geef bij **netwerk toewijzing** het netwerk op waarmee de server verbinding maakt. Het netwerk heeft Internet connectiviteit nodig om meta gegevens naar Azure Migrate te verzenden.
 9. Controleer en bevestig de instellingen en klik op **Voltooien**.
 
-
 ### <a name="verify-appliance-access-to-azure"></a>Apparaattoegang tot Azure controleren
 
 Zorg ervoor dat de toestel server verbinding kan maken met Azure-Url's voor [open bare](migrate-appliance.md#public-cloud-urls) en [overheids](migrate-appliance.md#government-cloud-urls) Clouds.
-
 
 ### <a name="4-configure-the-appliance"></a>4. het apparaat configureren
 
@@ -114,7 +111,6 @@ Het apparaat voor de eerste keer instellen.
 1. Als u wilt, kunt u **de vereisten op elk gewenst moment opnieuw uitvoeren** tijdens de configuratie van het apparaat om te controleren of het apparaat nog steeds voldoet aan alle vereisten.
 
     :::image type="content" source="./media/tutorial-discover-vmware/appliance-prerequisites.png" alt-text="Paneel 1 op het configuratie beheer van het apparaat":::
-
 
 ## <a name="register-the-appliance-with-azure-migrate"></a>Het apparaat registreren bij Azure Migrate
 

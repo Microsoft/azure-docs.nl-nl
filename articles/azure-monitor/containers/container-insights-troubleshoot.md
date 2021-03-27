@@ -2,13 +2,13 @@
 title: Problemen met container Insights oplossen | Microsoft Docs
 description: In dit artikel wordt beschreven hoe u problemen met container Insights kunt oplossen en oplossen.
 ms.topic: conceptual
-ms.date: 07/21/2020
-ms.openlocfilehash: 60a6e76d43d954b27336b9631c48328aeff0b69b
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.date: 03/25/2021
+ms.openlocfilehash: b7618e9073308da67a8e17c82375a0f05925a542
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101708302"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105627112"
 ---
 # <a name="troubleshooting-container-insights"></a>Problemen met container Insights oplossen
 
@@ -113,6 +113,54 @@ Container Insights-agent peulen maakt gebruik van het cAdvisor-eind punt op de k
 ## <a name="non-azure-kubernetes-cluster-are-not-showing-in-container-insights"></a>Niet-Azure Kubernetes-cluster wordt niet weer gegeven in container Insights
 
 Voor het weer geven van het niet-Azure Kubernetes-cluster in container Insights, lees toegang is vereist in de Log Analytics-werk ruimte die dit inzicht ondersteunt, en op de resource **-ContainerInsights (*werk ruimte*)** van de container Insights-oplossing.
+
+## <a name="metrics-arent-being-collected"></a>Er worden geen metrische gegevens verzameld
+
+1. Controleer of het cluster zich in een [ondersteunde regio voor aangepaste metrische gegevens](../essentials/metrics-custom-overview.md#supported-regions)bevindt.
+
+2. Controleer of de toewijzing van de functie voor het controleren van de rol van **Uitgever** bestaat met behulp van de volgende CLI-opdracht:
+
+    ``` azurecli
+    az role assignment list --assignee "SP/UserassignedMSI for omsagent" --scope "/subscriptions/<subid>/resourcegroups/<RG>/providers/Microsoft.ContainerService/managedClusters/<clustername>" --role "Monitoring Metrics Publisher"
+    ```
+    Voor clusters met MSI is de door de gebruiker toegewezen client-id voor omsagent gewijzigd telkens wanneer bewaking is ingeschakeld en uitgeschakeld. Daarom moet de roltoewijzing bestaan op de huidige MSI-client-id. 
+
+3. Voor clusters met Azure Active Directory pod-identiteit ingeschakeld en met behulp van MSI:
+
+   - Controleer het vereiste label **kubernetes.Azure.com/managedby: aks**  is aanwezig op de omsagent-peul met de volgende opdracht:
+
+        `kubectl get pods --show-labels -n kube-system | grep omsagent`
+
+    - Controleer of uitzonde ringen zijn ingeschakeld wanneer de pod-identiteit is ingeschakeld met behulp van een van de ondersteunde methoden op https://github.com/Azure/aad-pod-identity#1-deploy-aad-pod-identity .
+
+        Voer de volgende opdracht uit om te controleren:
+
+        `kubectl get AzurePodIdentityException -A -o yaml`
+
+        U ontvangt uitvoer die er ongeveer als volgt uitziet:
+
+        ```
+        apiVersion: "aadpodidentity.k8s.io/v1"
+        kind: AzurePodIdentityException
+        metadata:
+        name: mic-exception
+        namespace: default
+        spec:
+        podLabels:
+        app: mic
+        component: mic
+        ---
+        apiVersion: "aadpodidentity.k8s.io/v1"
+        kind: AzurePodIdentityException
+        metadata:
+        name: aks-addon-exception
+        namespace: kube-system
+        spec:
+        podLabels:
+        kubernetes.azure.com/managedby: aks
+        ```
+
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

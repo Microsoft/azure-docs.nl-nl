@@ -7,13 +7,13 @@ ms.reviewer: dannyevers
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 03/25/2021
-ms.openlocfilehash: 2f12f33bf6108784b2eec252fb12d03eebd2a45c
-ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
+ms.date: 03/26/2021
+ms.openlocfilehash: 7d421cf20aa054fb3e1e4877ee610a284eeff7c9
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105604928"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105627048"
 ---
 # <a name="how-to-plan-a-saas-offer-for-the-commercial-marketplace"></a>Een SaaS-aanbieding plannen voor de commerciële Marketplace
 
@@ -39,7 +39,7 @@ Zie voor meer informatie over deze aanbiedings opties [commerciële Marketplace 
 
 Nadat uw aanbieding is gepubliceerd, wordt de optie voor de aanbieding die u voor uw aanbieding hebt gekozen, weer gegeven als een knop in de linkerbovenhoek van de aanbiedings pagina van uw aanbieding. Met de volgende scherm afbeelding ziet u bijvoorbeeld een pagina met een aanbieding in azure Marketplace met de knop **nu downloaden** .
 
-![Illustreert een aanbiedings vermelding in de online winkel.](./media/saas/listing-options-saas-full.png)
+![Illustreert een aanbiedings vermelding in de online winkel.](./media/saas/listing-options-saas.png)
 
 ## <a name="technical-requirements"></a>Technische vereisten
 

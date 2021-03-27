@@ -2,24 +2,19 @@
 title: De definities van Azure-functies weer geven-Azure RBAC
 description: Leer hoe u ingebouwde en aangepaste rollen van Azure kunt weer geven met behulp van Azure Portal, Azure PowerShell, Azure CLI of REST API.
 services: active-directory
-documentationcenter: ''
 author: rolyon
 manager: mtillman
-ms.assetid: 8078f366-a2c4-4fbb-a44b-fc39fd89df81
 ms.service: role-based-access-control
-ms.devlang: na
 ms.topic: how-to
-ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 06/17/2020
+ms.date: 03/26/2021
 ms.author: rolyon
-ms.reviewer: bagovind
-ms.openlocfilehash: 3c9018322c9e5075ff59024f9d791e7431035e3d
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: f354e3bb7fc0f7ced17d43acacf29c726ce1329c
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100555956"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105629147"
 ---
 # <a name="list-azure-role-definitions"></a>Definities van Azure-rollen weer geven
 
@@ -33,6 +28,10 @@ Zie [beheerders rollen in azure Active Directory](../active-directory/roles/perm
 
 Volg deze stappen om alle rollen in de Azure Portal weer te geven.
 
+Als u geïnteresseerd bent in het weer geven van een bijgewerkte functie-ervaring, raadpleegt u het tabblad **rollen (preview)** , dat momenteel beschikbaar is als open bare preview. Op het tabblad **rollen (preview)** wordt dezelfde lijst met rollen weer gegeven als het tabblad **rollen** met een aantal extra functies. U kunt het tabblad rollen gebruiken om met uw rollen te werken, maar als u aangepaste rollen maakt of verwijdert, moet u de pagina mogelijk hand matig vernieuwen om de meest recente wijzigingen te zien.
+
+#### <a name="roles"></a>[Rollen](#tab/roles/)
+
 1. Klik in de Azure Portal op **alle services** en selecteer vervolgens een bereik. U kunt bijvoorbeeld **beheer groepen**, **abonnementen**, **resource groepen** of een resource selecteren.
 
 1. Klik op de specifieke resource.
@@ -43,7 +42,29 @@ Volg deze stappen om alle rollen in de Azure Portal weer te geven.
 
    U kunt het aantal gebruikers en groepen zien dat is toegewezen aan elke rol in het huidige bereik.
 
-   ![Lijst met rollen](./media/role-definitions-list/roles-list.png)
+   ![Lijst met rollen](./media/role-definitions-list/roles-list-current.png)
+
+#### <a name="roles-preview"></a>[Rollen (preview-versie)](#tab/roles-preview/)
+
+1. Klik in de Azure Portal op **alle services** en selecteer vervolgens een bereik. U kunt bijvoorbeeld **beheer groepen**, **abonnementen**, **resource groepen** of een resource selecteren.
+
+1. Klik op de specifieke resource.
+
+1. Klik op **Toegangsbeheer (IAM)**.
+
+1. Klik op het tabblad **rollen (preview)** om een lijst met alle ingebouwde en aangepaste rollen weer te geven.
+
+   ![Lijst met rollen met preview-ervaring](./media/role-definitions-list/roles-list.png)
+
+1. Klik in de kolom **Details** op de koppeling **weer geven** om de machtigingen voor een bepaalde rol weer te geven.
+
+    Het deel venster machtigingen wordt weer gegeven.
+
+1. Klik op het tabblad **machtigingen** om de machtigingen voor de geselecteerde rol weer te geven en te zoeken.
+
+   ![Rolmachtigingen met preview-ervaring](./media/role-definitions-list/role-permissions.png)
+
+---
 
 ## <a name="azure-powershell"></a>Azure PowerShell
 
@@ -356,7 +377,7 @@ Als u roldefinities wilt weer geven, gebruikt u de [functie definities-lijst](/r
 1. Vervang *{filter}* door de voor waarde die u wilt Toep assen om de lijst met functie definities te filteren.
 
     > [!div class="mx-tableFixed"]
-    > | Filter | Beschrijving |
+    > | Filter | Description |
     > | --- | --- |
     > | `$filter=atScopeAndBelow()` | Hiermee worden roldefinities voor het opgegeven bereik en eventuele subbereiken weer gegeven. |
     > | `$filter=type+eq+'{type}'` | Hiermee wordt een lijst met roldefinities van het opgegeven type weer gegeven. Type rol kan of zijn `CustomRole` `BuiltInRole` . |

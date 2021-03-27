@@ -1,17 +1,17 @@
 ---
-title: Zelf studie over het bijwerken van apparaten voor Azure IoT Hub voor Azure-real-time-besturings systeem | Microsoft Docs
-description: Aan de slag met het bijwerken van het apparaat voor Azure IoT Hub met behulp van Azure-Real-Time-Operating System
+title: Update van het apparaat voor Azure Real-Time-Operating System | Microsoft Docs
+description: Aan de slag met het apparaat bijwerken voor Azure realtime-besturings systeem
 author: valls
 ms.author: valls
 ms.date: 3/18/2021
 ms.topic: tutorial
 ms.service: iot-hub-device-update
-ms.openlocfilehash: aaf954642fb276e16dfe4581c2675f817a708f3b
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.openlocfilehash: 66da860a5cdae1f5c7c18e4136b1f2d960492ca8
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105572617"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105629050"
 ---
 # <a name="device-update-for-azure-iot-hub-tutorial-using-azure-real-time-operating-system-rtos"></a>Zelf studie over het bijwerken van apparaten voor Azure IoT Hub met behulp van Azure real-time besturings systeem (RTO'S)
 

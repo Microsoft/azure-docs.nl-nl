@@ -1,16 +1,14 @@
 ---
 title: Status controle in Service Fabric
 description: Een inleiding tot het Azure Service Fabric Health Monitoring-model, waarmee de cluster en de bijbehorende toepassingen en services kunnen worden bewaakt.
-author: georgewallace
 ms.topic: conceptual
 ms.date: 2/28/2018
-ms.author: gwallace
-ms.openlocfilehash: 6c96651fa48acc2f88658148c7e60be2f3fa09da
-ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
+ms.openlocfilehash: a1c545048739182e3baba3e3d94da1accca227d1
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104800156"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105627412"
 ---
 # <a name="introduction-to-service-fabric-health-monitoring"></a>Inleiding tot de statuscontrole Service Fabric
 Azure Service Fabric introduceert een status model dat voorziet in uitgebreide, flexibele en uitbreid bare status-en rapportage doeleinden. Het model staat bijna realtime bewaking toe van de status van het cluster en de services die hierop worden uitgevoerd. U kunt eenvoudig status informatie verkrijgen en mogelijke problemen corrigeren voordat ze trapsgewijs worden gecascaded en aanzienlijke storingen veroorzaken. In het typische model verzenden Services rapporten op basis van hun lokale weer gaven en wordt deze informatie geaggregeerd om een algemene weer gave op cluster niveau te bieden.

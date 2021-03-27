@@ -1,16 +1,14 @@
 ---
 title: Overzicht van Azure Service Fabric bewaking en diagnostische gegevens
 description: Meer informatie over controle en diagnostische gegevens voor Azure Service Fabric-clusters,-toepassingen en-services.
-author: srrengar
 ms.topic: conceptual
 ms.date: 1/17/2019
-ms.author: srrengar
-ms.openlocfilehash: 25a50a2841a03929804be45be8012f9b5d0457ff
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 71ec86f26de1e94b4e17e0990d2eafd1fff954e2
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "91357128"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105627741"
 ---
 # <a name="monitoring-and-diagnostics-for-azure-service-fabric"></a>Bewaking en diagnostische gegevens voor Azure Service Fabric
 

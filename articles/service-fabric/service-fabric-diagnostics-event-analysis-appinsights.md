@@ -1,16 +1,14 @@
 ---
 title: Azure Service Fabric-gebeurtenis analyse met Application Insights
 description: Meer informatie over het visualiseren en analyseren van gebeurtenissen met Application Insights voor het bewaken en diagnosticeren van Azure Service Fabric-clusters.
-author: srrengar
 ms.topic: conceptual
 ms.date: 11/21/2018
-ms.author: srrengar
-ms.openlocfilehash: f4d77cc3b2f2182b02d47f047070b819daa5f3c1
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 0e84c3c1ab542dc4541ebdcfbc49f45e02458d9c
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100589018"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105626211"
 ---
 # <a name="event-analysis-and-visualization-with-application-insights"></a>Gebeurtenis analyse en visualisatie met Application Insights
 

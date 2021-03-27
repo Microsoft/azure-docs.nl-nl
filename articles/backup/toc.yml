@@ -224,10 +224,18 @@
       items:
         - name: Overzicht
           href: disk-backup-overview.md
-        - name: Backup
-          href: backup-managed-disks.md
-        - name: Herstellen
-          href: restore-managed-disks.md
+        - name: Vanuit Azure Portal
+          items:
+            - name: Backup
+              href: backup-managed-disks.md
+            - name: Herstellen
+              href: restore-managed-disks.md
+        - name: Met PowerShell
+          items:
+            - name: Backup
+              href: backup-managed-disks-ps.md
+            - name: Herstellen
+              href: restore-managed-disks-ps.md
     - name: Back-ups van Azure-blobs
       items:
         - name: Overzicht

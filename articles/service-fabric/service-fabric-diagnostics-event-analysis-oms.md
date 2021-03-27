@@ -1,16 +1,14 @@
 ---
 title: Azure Service Fabric-gebeurtenis analyse met Azure Monitor-logboeken
 description: Meer informatie over het visualiseren en analyseren van gebeurtenissen met behulp van Azure Monitor logboeken voor het bewaken en diagnosticeren van Azure Service Fabric-clusters.
-author: srrengar
 ms.topic: conceptual
 ms.date: 02/21/2019
-ms.author: srrengar
-ms.openlocfilehash: 678e96c9b5611cd6d72abd7c4582691b55ffe479
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: f1e22213c857b400cc36c51cefb90e2379352893
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100581548"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105628965"
 ---
 # <a name="event-analysis-and-visualization-with-azure-monitor-logs"></a>Gebeurtenis analyse en visualisatie met Azure Monitor-logboeken
  Met Azure Monitor-logboeken wordt telemetrie vastgelegd, verzameld en geanalyseerd op basis van toepassingen en services die worden gehost in de cloud en worden er analysehulpprogramma's geboden waarmee u de beschikbaarheid en prestaties hiervan kunt maximaliseren. In dit artikel wordt beschreven hoe u query's uitvoert in Azure Monitor Logboeken om inzicht te krijgen in wat er in uw cluster gebeurt. De volgende veelgestelde vragen worden behandeld:

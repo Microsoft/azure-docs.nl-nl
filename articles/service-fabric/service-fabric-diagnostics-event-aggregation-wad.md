@@ -1,16 +1,14 @@
 ---
 title: Gebeurtenissen samen voegen met Windows Azure Diagnostics
 description: Meer informatie over het samen voegen en verzamelen van gebeurtenissen met WAD voor bewaking en diagnose van Azure Service Fabric-clusters.
-author: srrengar
 ms.topic: conceptual
 ms.date: 04/03/2018
-ms.author: srrengar
-ms.openlocfilehash: eaf40bafb68820b56fc9bf00dd4c11fbb337406f
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: bbc8efcb2600e1832ad8a37560ab231a4a7f3185
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102613456"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105626725"
 ---
 # <a name="event-aggregation-and-collection-using-windows-azure-diagnostics"></a>Gebeurtenis aggregatie en verzameling met behulp van Windows Azure Diagnostics
 > [!div class="op_single_selector"]
